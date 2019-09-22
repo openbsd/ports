@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.88 2019/09/19 07:31:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.89 2019/09/22 08:06:26 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1424,6 +1424,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/export-client-vpn-c
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/export-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-capacity-reservation-usage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-output.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-screenshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ebs-default-kms-key-id.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ebs-encryption-by-default.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-host-reservation-purchase-preview.rst
@@ -1482,7 +1483,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reject-vpc-endpoint
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reject-vpc-peering-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/release-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/release-hosts.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/replace-iam-instance-profile.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/replace-iam-instance-profile-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/replace-network-acl-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/replace-network-acl-entry.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/replace-route-table-association.rst
@@ -1819,6 +1820,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/set-data-retrie
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/set-vault-notifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/upload-archive.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/upload-multipart-part.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-endpoint-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-listener.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-endpoint-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/associate-service-role-to-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/create-connector-definition-version.rst
@@ -2067,6 +2075,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-data/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-data/delete-thing-shadow.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-data/get-thing-shadow.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-data/update-thing-shadow.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/describe-job-execution.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/get-pending-job-executions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/start-next-pending-job-execution.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/update-job-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/add-thing-to-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/add-thing-to-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/associate-targets-with-job.rst
