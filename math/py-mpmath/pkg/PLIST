@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/19 19:02:43 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/22 15:29:26 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/mpmath/
 lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mpmath/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}ctx_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}ctx_fp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}ctx_iv.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}approxi
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}calculus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}differentiation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}extrapolation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}inverselaplace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}odes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}optimization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}polynomials.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,11 +32,11 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/approximation.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/calculus.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/differentiation.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/extrapolation.py
+lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/inverselaplace.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/odes.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/optimization.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/polynomials.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/quadrature.py
-lib/python${MODPY_VERSION}/site-packages/mpmath/conftest.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/ctx_base.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/ctx_fp.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/ctx_iv.py
@@ -114,7 +114,6 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/tests/
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}extratest_bessel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}extratest_gamma.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}extratest_zeta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}runtests.${MODPY_PYC_MAGIC_TAG}pyc
@@ -150,7 +149,6 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}test_summa
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}test_trig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}test_visualization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}torture.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mpmath/tests/extratest_bessel.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/extratest_gamma.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/extratest_zeta.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/runtests.py
