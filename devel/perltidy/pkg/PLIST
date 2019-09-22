@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/03/12 18:54:35 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/09/22 09:25:27 fcambus Exp $
 bin/perltidy
 ${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy/
@@ -32,6 +32,7 @@ share/examples/perltidy/
 share/examples/perltidy/README
 share/examples/perltidy/bbtidy.pl
 share/examples/perltidy/break_long_quotes.pl
+share/examples/perltidy/delete_ending_blank_lines.pl
 share/examples/perltidy/ex_mp.pl
 share/examples/perltidy/filter_example.in
 share/examples/perltidy/filter_example.pl
