@@ -1,11 +1,11 @@
-$OpenBSD: patch-test_engine_imap-db_imap-db-database-test_vala,v 1.1 2019/02/19 13:28:35 landry Exp $
+$OpenBSD: patch-test_engine_imap-db_imap-db-database-test_vala,v 1.2 2019/09/22 18:10:44 landry Exp $
 
 fix conflict with stdin symbol in headers
 
 Index: test/engine/imap-db/imap-db-database-test.vala
 --- test/engine/imap-db/imap-db-database-test.vala.orig
 +++ test/engine/imap-db/imap-db-database-test.vala
-@@ -138,16 +138,16 @@ class Geary.ImapDB.DatabaseTest : TestCase {
+@@ -189,16 +189,16 @@ class Geary.ImapDB.DatabaseTest : TestCase {
              GLib.SubprocessFlags.STDIN_PIPE,
              "tar", "-xJf", "-", "-C", dest.get_path()
          );
