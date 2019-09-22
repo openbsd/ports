@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:19 espie Exp $
+$OpenBSD: README,v 1.3 2019/09/22 17:59:03 chrisz Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,5 +8,11 @@ Unison uses native OCaml marshalling in its prococol. This
 means that unison might not work when the OCaml versions of
 two instances are out of sync.
 One way to work around this limitation of unison is to use
-the OPAM OCaml package and compiler manager to sync the
-OCaml versions on your machines.
+the OPAM OCaml package manager to build unison with the same
+version of the OCaml compiler on all machines:
+
+doas pkg_add opam
+opam init --no-setup --root ~/opam_unison \
+       --compiler ocaml-base-compiler.4.09.0
+opam install unison lablgtk  # To build without the gui, remove lablgtk
+$(opam var bin)/unison
