@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2019/01/03 17:55:08 thfr Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2019/09/22 15:46:26 thfr Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -123,7 +123,7 @@ LT_AGE      = @LT_AGE@
+@@ -125,7 +125,7 @@ LT_AGE      = @LT_AGE@
  LT_CURRENT  = @LT_CURRENT@
  LT_RELEASE  = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_LDFLAGS  = -no-undefined -rpath $(libdir) -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
 +LT_LDFLAGS  = -no-undefined -rpath $(DESTDIR)$(libdir) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
- all: $(srcdir)/configure Makefile $(objects) $(objects)/$(TARGET) $(objects)/$(SDLMAIN_TARGET) $(objects)/$(SDLTEST_TARGET)
+ all: $(srcdir)/configure Makefile $(objects)/$(TARGET) $(objects)/$(SDLMAIN_TARGET) $(objects)/$(SDLTEST_TARGET)
  

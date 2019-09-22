@@ -1,15 +1,26 @@
-$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.3 2019/01/03 17:55:08 thfr Exp $
+$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.4 2019/09/22 15:46:26 thfr Exp $
 
 enable GameController API the Linux fallback way (by posing as Xbox360
 controller)
 also disable checking string "Xbox 360 Wireless Receiver", so for now
 everything will be Xbox360 controller (works with generic joysticks)
 map to SDL_GAMECONTROLLERCONFIG envvar if available
+Use layout for XBox360 controller to maximize compatibility because
+many controllers use this mapping
 
 Index: src/joystick/SDL_gamecontroller.c
 --- src/joystick/SDL_gamecontroller.c.orig
 +++ src/joystick/SDL_gamecontroller.c
-@@ -1008,17 +1008,23 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
+@@ -735,7 +735,7 @@ static char *SDL_PrivateGetControllerGUIDFromMappingSt
+             SDL_memcpy(&pchGUID[8], &pchGUID[0], 4);
+             SDL_memcpy(&pchGUID[0], "03000000", 8);
+         }
+-#elif __MACOSX__
++#else if(__MACOSX__) || (__OpenBSD__)
+         if (SDL_strlen(pchGUID) == 32 &&
+             SDL_memcmp(&pchGUID[4], "000000000000", 12) == 0 &&
+             SDL_memcmp(&pchGUID[20], "000000000000", 12) == 0) {
+@@ -1022,17 +1022,21 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
      ControllerMapping_t *mapping;
  
      mapping = SDL_PrivateGetControllerMappingForGUID(&guid, SDL_FALSE);
@@ -17,21 +28,21 @@ Index: src/joystick/SDL_gamecontroller.c
 +#if defined(__LINUX__) || defined(__OpenBSD__)
      if (!mapping && name) {
 -        if (SDL_strstr(name, "Xbox 360 Wireless Receiver")) {
-+        //if (SDL_strstr(name, "Xbox 360 Wireless Receiver")) {
-             /* The Linux driver xpad.c maps the wireless dpad to buttons */
-             SDL_bool existing;
--            mapping = SDL_PrivateAddMappingForGUID(guid,
-+	    char guid_str[1024];
-+            SDL_JoystickGetGUIDString(guid, guid_str, sizeof(guid_str));
-+	    if (SDL_GetHint(SDL_HINT_GAMECONTROLLERCONFIG) == NULL) {
-+		    mapping = SDL_PrivateAddMappingForGUID(guid,
- "none,X360 Wireless Controller,a:b0,b:b1,back:b6,dpdown:b14,dpleft:b11,dpright:b12,dpup:b13,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,",
-                           &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
--        }
-+	    } else {
-+		    mapping = SDL_PrivateAddMappingForGUID(guid, SDL_GetHint(SDL_HINT_GAMECONTROLLERCONFIG), &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
-+	    }
-+        //}
+-            /* The Linux driver xpad.c maps the wireless dpad to buttons */
+-            SDL_bool existing;
++        /* The Linux driver xpad.c maps the wireless dpad to buttons */
++        SDL_bool existing;
++        char guid_str[1024];
++        SDL_JoystickGetGUIDString(guid, guid_str, sizeof(guid_str));
++        if (SDL_GetHint(SDL_HINT_GAMECONTROLLERCONFIG) == NULL) {
+             mapping = SDL_PrivateAddMappingForGUID(guid,
+-"none,X360 Wireless Controller,a:b0,b:b1,back:b6,dpdown:b14,dpleft:b11,dpright:b12,dpup:b13,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3",
+-                          &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
++"none,XBox360 Controller,a:b7,b:b8,back:b1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b2,lefttrigger:a2,leftx:a0,lefty:a1~,rightshoulder:b5,rightstick:b3,righttrigger:a5,rightx:a3,righty:a4~,start:b0,x:b9,y:b10",
++                &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
++        } else {
++            mapping = SDL_PrivateAddMappingForGUID(guid, SDL_GetHint(SDL_HINT_GAMECONTROLLERCONFIG), &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
+         }
      }
 -#endif /* __LINUX__ */
 +#endif /* __LINUX__ || __OpenBSD__ */

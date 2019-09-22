@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_video_SDL_egl_c,v 1.3 2018/03/11 22:40:20 sthen Exp $
+$OpenBSD: patch-src_video_SDL_egl_c,v 1.4 2019/09/22 15:46:26 thfr Exp $
 Index: src/video/SDL_egl.c
 --- src/video/SDL_egl.c.orig
 +++ src/video/SDL_egl.c
-@@ -72,6 +72,13 @@
+@@ -73,6 +73,13 @@
  #define DEFAULT_OGL_ES_PVR "libGLES_CM.dylib"   //???
  #define DEFAULT_OGL_ES "libGLESv1_CM.dylib"     //???
  
