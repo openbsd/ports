@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_common_pgstdinit_h,v 1.1 2019/09/22 01:34:32 bcallah Exp $
+
+size_t is always unsigned long on OpenBSD.
+
+Index: lib/common/pgstdinit.h
+--- lib/common/pgstdinit.h.orig
++++ lib/common/pgstdinit.h
+@@ -39,7 +39,7 @@ typedef unsigned long long size_t;
+ #if defined(LINUX8664) || defined(TARGET_OSX_X8664) || defined(TARGET_LLVM_64)
+ typedef unsigned long size_t;
+ #else
+-typedef unsigned size_t;
++typedef unsigned long size_t;
+ #endif
+ #endif
+ #endif
