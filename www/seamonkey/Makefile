@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.231 2019/09/03 16:25:31 landry Exp $
+# $OpenBSD: Makefile,v 1.232 2019/09/22 17:19:07 sthen Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -55,12 +55,6 @@ CONFIGURE_ARGS +=	--enable-calendar
 
 # SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
-
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=	--disable-debug-symbols
-# override parallel
-DPB_PROPERTIES =	lonesome
-.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/

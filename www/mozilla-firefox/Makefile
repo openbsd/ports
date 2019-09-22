@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.394 2019/09/18 16:58:05 landry Exp $
+# $OpenBSD: Makefile,v 1.395 2019/09/22 17:19:06 sthen Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -62,12 +62,6 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1"
 
 CONFIGURE_ARGS +=	--enable-release #1386371
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=	--disable-debug-symbols
-MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
-# override parallel
-DPB_PROPERTIES =	lonesome
-.endif
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 SUBST_VARS +=	LOCALBASE X11BASE

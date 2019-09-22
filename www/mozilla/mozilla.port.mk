@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.126 2019/09/03 16:25:03 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.127 2019/09/22 17:19:06 sthen Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -8,7 +8,14 @@
 # seamonkey-2.22/comm-release/mozilla/js/src/vm/Interpreter.cpp:743
 # firefox-25.0/mozilla-release/js/src/builtin/MapObject.cpp:1119
 
+.if ${MACHINE_ARCH} == "i386"
+MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
+# reduce build memory usage:
+CONFIGURE_ARGS +=	--disable-debug-symbols
+DPB_PROPERTIES +=	lonesome
+.else
 DPB_PROPERTIES +=	parallel
+.endif
 
 .for _lib in ${MOZILLA_LIBS}
 SHARED_LIBS +=	${_lib}	${SO_VERSION}

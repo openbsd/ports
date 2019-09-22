@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2019/09/19 19:15:55 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2019/09/22 17:19:06 sthen Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
@@ -62,11 +62,6 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 CONFIGURE_ARGS +=	--with-app-name=firefox-esr
 
 CONFIGURE_ARGS +=	--enable-release #1386371
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=	--disable-debug-symbols
-MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
-DPB_PROPERTIES =	lonesome
-.endif
 CONFIGURE_ARGS +=	--enable-sandbox --enable-content-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 CONFIGURE_ARGS +=	--with-clang-path=${LOCALBASE}/bin/clang
