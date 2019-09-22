@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.57 2019/09/22 05:28:20 jsg Exp $
+#	$OpenBSD: Makefile,v 1.58 2019/09/22 09:39:28 kn Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -28,7 +28,6 @@ BUILD_DEPENDS=	devel/bison \
 		textproc/gsed
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 MODPY_ADJ_FILES=\
@@ -39,7 +38,7 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 
 .if "${FLAVOR}" == "aarch64"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
-		devel/py-elftools,python3 \
+		devel/py-elftools \
 		sysutils/arm-trusted-firmware
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
