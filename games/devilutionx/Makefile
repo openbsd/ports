@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/09/18 13:32:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/09/22 14:35:18 bcallah Exp $
 
 COMMENT =	open source engine recreation for Diablo 1 game
 DISTNAME =	devilutionx-0.4.0pl20190914
@@ -14,6 +14,9 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer SDL2_ttf c m pthread
+
+# C++14
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
