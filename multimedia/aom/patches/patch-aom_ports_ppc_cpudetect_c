@@ -1,4 +1,4 @@
-$OpenBSD: patch-aom_ports_ppc_cpudetect_c,v 1.1.1.1 2019/09/19 14:21:27 ajacoutot Exp $
+$OpenBSD: patch-aom_ports_ppc_cpudetect_c,v 1.2 2019/09/22 08:45:58 ajacoutot Exp $
 
 Allow PowerPC CPU runtime detection code to build on OpenBSD.
 
@@ -9,7 +9,7 @@ Index: aom_ports/ppc_cpudetect.c
   * PATENTS file, you can obtain it at www.aomedia.org/license/patent.
   */
  
-+#i defined(__linux__)
++#if defined(__linux__)
  #include <fcntl.h>
  #include <unistd.h>
  #include <stdint.h>
