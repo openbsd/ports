@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/08/09 00:00:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.26 2019/09/22 21:46:07 kmos Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
@@ -35,10 +35,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 BUILD_DEPENDS=	devel/py-babel${MODPY_FLAVOR} \
 		textproc/py-sphinx${MODPY_FLAVOR}
 
-# axe tests until py-twisted+deps have a python3 flavor
-NO_TEST =	Yes
-#TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
-#		devel/py-twisted${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
+		devel/py-twisted${MODPY_FLAVOR}
 
 # de-conflict flavors
 post-install:
