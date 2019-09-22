@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/09/22 11:37:04 edd Exp $
+# $OpenBSD: Makefile,v 1.35 2019/09/22 20:15:51 kn Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -121,22 +121,21 @@ do-install:
 	cp -rp ${WRKSRC}/lib-python/2.7/* ${PREFIX}/pypy/lib-python/2.7
 	${PYPY_LD_LIBRARY_PATH} ${PREFIX}/pypy/bin/pypy \
 		-m compileall ${PREFIX}/pypy/lib_pypy
-	${PYPY_LD_LIBRARY_PATH} sh -c \
-		'find ${PREFIX}/pypy/lib-python/2.7 -name "*.py" | grep -v test \
-		  | xargs ${PREFIX}/pypy/bin/pypy -m compileall'
+	${PYPY_LD_LIBRARY_PATH} ${PREFIX}/pypy/bin/pypy \
+		-m compileall -x test ${PREFIX}/pypy/lib-python/2.7
 	# make cffi shared objects
 	cd ${WRKSRC} && ${PYPY_LD_LIBRARY_PATH} \
 		LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		PYTHONPATH=`pwd` \
 		${PREFIX}/pypy/bin/pypy pypy/tool/build_cffi_imports.py
-	find ${PREFIX}/pypy/lib_pypy/ -name '*.c' -or -name '*.o' | xargs rm
+	find ${PREFIX}/pypy/lib_pypy/ -name '*.[co]' -delete
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
 	cd ${PREFIX}/lib && ln -s ../pypy/lib/libpypy-c.so
 	# remove patch orig files so they dont appear in the plist
-	find ${PREFIX} -name '*.py.orig' | xargs rm
+	find ${PREFIX} -name '*.py.orig' -delete
 
 PYPY_PKG = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME}.tgz
 
