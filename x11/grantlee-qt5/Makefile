@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/22 09:10:55 cwen Exp $
 
 COMMENT =		template and text document library for Qt5
 
 VERSION =		5.1.0
 PKGNAME =		grantlee-qt5-${VERSION}
 DISTNAME =		grantlee-${VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  Grantlee_Templates        0.0 # 5.1
 SHARED_LIBS +=  Grantlee_TextDocument     0.0 # 5.1
