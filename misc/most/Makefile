@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:51 sthen Exp $
-
-PORTROACH=	skipv:5.0.0
+# $OpenBSD: Makefile,v 1.24 2019/09/22 09:20:44 fcambus Exp $
 
 COMMENT=	browse or page through a text file
 
-DISTNAME=	most-5.0.0a
-REVISION=	1
+DISTNAME=	most-5.1.0
 CATEGORIES=	misc
 
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/
+MASTER_SITES=	https://www.jedsoft.org/releases/most/
 
 LIB_DEPENDS=	devel/libslang
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses m slang
+WANTLIB += c m slang
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}
