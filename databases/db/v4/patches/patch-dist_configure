@@ -1,6 +1,7 @@
-$OpenBSD: patch-dist_configure,v 1.9 2007/10/26 14:06:02 steven Exp $
---- dist/configure.orig	Fri Aug 10 17:47:40 2007
-+++ dist/configure	Sat Sep 15 16:44:27 2007
+$OpenBSD: patch-dist_configure,v 1.10 2019/09/23 15:16:43 kurt Exp $
+Index: dist/configure
+--- dist/configure.orig
++++ dist/configure
 @@ -849,7 +849,9 @@ MAKEFILE_CC
  MAKEFILE_CCLINK
  MAKEFILE_CXX
@@ -77,21 +78,21 @@ $OpenBSD: patch-dist_configure,v 1.9 2007/10/26 14:06:02 steven Exp $
  }
  EOF
 -if { ac_try='$JAVAC $JAVACFLAGS $JAVA_TEST'
-+if { ac_try='$JAVAC -source 1.3 -target 1.3 $JAVACFLAGS $JAVA_TEST'
++if { ac_try='$JAVAC -source 1.8 -target 1.8 $JAVACFLAGS $JAVA_TEST'
    { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
    (eval $ac_try) 2>&5
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; } >/dev/null 2>&1; then
-+  JAVACFLAGS="-source 1.3 -target 1.3 $JAVACFLAGS"
++  JAVACFLAGS="-source 1.8 -target 1.8 $JAVACFLAGS"
    ac_cv_prog_javac_works=yes
-+elif { ac_try='$JAVAC -target 1.3 $JAVACFLAGS $JAVA_TEST'
++elif { ac_try='$JAVAC -target 1.8 $JAVACFLAGS $JAVA_TEST'
 +  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
 +  (eval $ac_try) 2>&5
 +  ac_status=$?
 +  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 +  (exit $ac_status); }; } >/dev/null 2>&1; then
-+  JAVACFLAGS="-target 1.3 $JAVACFLAGS"
++  JAVACFLAGS="-target 1.8 $JAVACFLAGS"
 +  ac_cv_prog_javac_works=yes
  else
    { { echo "$as_me:$LINENO: error: The Java compiler $JAVAC failed (see config.log, check the CLASSPATH?)" >&5
@@ -104,6 +105,20 @@ $OpenBSD: patch-dist_configure,v 1.9 2007/10/26 14:06:02 steven Exp $
  	hp*)		_JNI_INC_SUBDIRS="hp-ux";;
  	linux*)		_JNI_INC_SUBDIRS="linux genunix";;
  	osf*)		_JNI_INC_SUBDIRS="alpha";;
+@@ -21967,10 +21989,10 @@ echo $ECHO_N "checking java version... $ECHO_C" >&6; }
+ 	{ echo "$as_me:$LINENO: result: $JAVA_VERSION" >&5
+ echo "${ECHO_T}$JAVA_VERSION" >&6; }
+ 	case "$JAVA_VERSION" in
+-	1.[3456789]* | 1.[1-9][0-9]* | [23456789]* ) ;;
++	1.[3456789]* | 1.[1-9][0-9]* | [23456789]* | 1[0-9].*) ;;
+ 	* )
+-		{ { echo "$as_me:$LINENO: error: Java version 1.3 or higher required, got $JAVA_VERSION" >&5
+-echo "$as_me: error: Java version 1.3 or higher required, got $JAVA_VERSION" >&2;}
++		{ { echo "$as_me:$LINENO: error: Java version 1.8 or higher required, got $JAVA_VERSION" >&5
++echo "$as_me: error: Java version 1.8 or higher required, got $JAVA_VERSION" >&2;}
+    { (exit 1); exit 1; }; } ;;
+ 	esac
+ 
 @@ -30504,7 +30526,7 @@ int
  main ()
  {
