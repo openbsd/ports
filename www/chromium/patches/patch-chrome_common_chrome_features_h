@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.17 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.18 2019/09/23 07:18:04 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -65,7 +65,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -61,10 +61,10 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kAutoFetchOnNetErrorPage;
  #endif
  
@@ -11,13 +11,26 @@ Index: chrome/common/chrome_features.h
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
- #endif  // defined(OS_WIN) || defined(OS_LINUX)
-@@ -84,7 +84,7 @@ extern const base::Feature kBrowserHangFixesExperiment
+-#endif  // defined(OS_WIN) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ 
  COMPONENT_EXPORT(CHROME_FEATURES)
- extern const base::Feature kBundledConnectionHelpFeature;
+ extern const base::Feature kBlockPromptsIfDismissedOften;
+@@ -83,7 +83,7 @@ extern const base::Feature kBundledConnectionHelpFeatu
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kCaptionSettings;
  
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kCertDualVerificationTrialFeature;
  #endif
+@@ -129,7 +129,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kUploadZippedSystemLogs;
+ #endif
+ 
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kTerminalSystemApp;
+ #endif
+ 

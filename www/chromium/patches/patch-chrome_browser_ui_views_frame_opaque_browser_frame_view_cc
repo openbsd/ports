@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.38 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.39 2019/09/23 07:18:04 robert Exp $
 Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 --- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
@@ -11,7 +11,7 @@ Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -353,7 +353,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
+@@ -352,7 +352,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
  void OpaqueBrowserFrameView::OnMenuButtonClicked(views::Button* source,
                                                   const gfx::Point& point,
                                                   const ui::Event* event) {
@@ -20,7 +20,7 @@ Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
    views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
                                  views::MenuRunner::HAS_MNEMONICS);
    menu_runner.RunMenuAt(
-@@ -479,7 +479,7 @@ bool OpaqueBrowserFrameView::EverHasVisibleBackgroundT
+@@ -478,7 +478,7 @@ bool OpaqueBrowserFrameView::EverHasVisibleBackgroundT
  
  OpaqueBrowserFrameView::FrameButtonStyle
  OpaqueBrowserFrameView::GetFrameButtonStyle() const {

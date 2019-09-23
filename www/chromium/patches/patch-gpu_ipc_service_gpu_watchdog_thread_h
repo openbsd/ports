@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.5 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.6 2019/09/23 07:18:04 robert Exp $
 
 Index: gpu/ipc/service/gpu_watchdog_thread.h
 --- gpu/ipc/service/gpu_watchdog_thread.h.orig
 +++ gpu/ipc/service/gpu_watchdog_thread.h
-@@ -191,8 +191,10 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThread : publi
+@@ -228,8 +228,10 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
    XDisplay* display_;
    gfx::AcceleratedWidget window_;
    XAtom atom_;
@@ -13,4 +13,4 @@ Index: gpu/ipc/service/gpu_watchdog_thread.h
 +#endif
  #endif
  
-   base::RepeatingClosure alternative_terminate_for_testing_;
+   base::WeakPtrFactory<GpuWatchdogThreadImplV1> weak_factory_{this};

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.13 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.14 2019/09/23 07:18:04 robert Exp $
 
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -42,8 +42,10 @@
+@@ -45,8 +45,10 @@
  #include <cpu-features.h>
  #endif  // defined(OS_ANDROID) && defined(__arm__)
  
@@ -15,7 +15,7 @@ Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -201,7 +203,9 @@ void RecordStartupMetrics() {
+@@ -230,7 +232,9 @@ void RecordStartupMetrics() {
                          base::TimeTicks::IsHighResolution());
  #endif  // defined(OS_WIN)
  

@@ -1,0 +1,23 @@
+$OpenBSD: patch-media_gpu_linux_platform_video_frame_utils_cc,v 1.1 2019/09/23 07:18:04 robert Exp $
+
+Index: media/gpu/linux/platform_video_frame_utils.cc
+--- media/gpu/linux/platform_video_frame_utils.cc.orig
++++ media/gpu/linux/platform_video_frame_utils.cc
+@@ -121,7 +121,7 @@ gfx::GpuMemoryBufferHandle CreateGpuMemoryBufferHandle
+   DCHECK(video_frame);
+ 
+   gfx::GpuMemoryBufferHandle handle;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   handle.type = gfx::NATIVE_PIXMAP;
+ 
+   std::vector<base::ScopedFD> duped_fds =
+@@ -136,7 +136,7 @@ gfx::GpuMemoryBufferHandle CreateGpuMemoryBufferHandle
+   }
+ #else
+   NOTREACHED();
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+   return handle;
+ }
+ 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.7 2019/06/26 17:22:41 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.8 2019/09/23 07:18:04 robert Exp $
 Index: media/capture/video/linux/v4l2_capture_delegate.cc
 --- media/capture/video/linux/v4l2_capture_delegate.cc.orig
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
@@ -26,7 +26,7 @@ Index: media/capture/video/linux/v4l2_capture_delegate.cc
  
  // TODO(aleksandar.stojiljkovic): Wrap this with kernel version check once the
  // format is introduced to kernel.
-@@ -658,7 +660,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
+@@ -657,7 +659,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
  
  V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
@@ -35,7 +35,7 @@ Index: media/capture/video/linux/v4l2_capture_delegate.cc
    int num_retries = 0;
    for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
         ++num_retries) {
-@@ -668,7 +670,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+@@ -667,7 +669,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
    return num_retries != kMaxIOCtrlRetries;
  }
  

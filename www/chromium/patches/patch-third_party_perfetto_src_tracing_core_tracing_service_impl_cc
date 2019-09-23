@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_perfetto_src_tracing_core_tracing_service_impl_cc,v 1.8 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-third_party_perfetto_src_tracing_core_tracing_service_impl_cc,v 1.9 2019/09/23 07:18:04 robert Exp $
 
 Index: third_party/perfetto/src/tracing/core/tracing_service_impl.cc
 --- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig
 +++ third_party/perfetto/src/tracing/core/tracing_service_impl.cc
-@@ -2053,7 +2053,8 @@ void TracingServiceImpl::OnStartTriggersTimeout(Tracin
+@@ -2083,7 +2083,8 @@ void TracingServiceImpl::OnStartTriggersTimeout(Tracin
  
  void TracingServiceImpl::UpdateMemoryGuardrail() {
  #if !PERFETTO_BUILDFLAG(PERFETTO_EMBEDDER_BUILD) && \
@@ -13,7 +13,7 @@ Index: third_party/perfetto/src/tracing/core/tracing_service_impl.cc
    uint64_t total_buffer_bytes = 0;
  
    // Sum up all the shared memory buffers.
-@@ -2106,7 +2107,8 @@ void TracingServiceImpl::SnapshotClocks(std::vector<Tr
+@@ -2136,7 +2137,8 @@ void TracingServiceImpl::SnapshotClocks(std::vector<Tr
    protos::ClockSnapshot* clock_snapshot = packet.mutable_clock_snapshot();
  
  #if !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) && \

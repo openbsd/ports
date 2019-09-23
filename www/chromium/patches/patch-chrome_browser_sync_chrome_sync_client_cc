@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.27 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.28 2019/09/23 07:18:04 robert Exp $
 
 Index: chrome/browser/sync/chrome_sync_client.cc
 --- chrome/browser/sync/chrome_sync_client.cc.orig
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -372,7 +372,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
-           dump_stack));
+@@ -383,7 +383,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+           GetSyncableServiceForType(syncer::APP_LIST), dump_stack));
  #endif  // BUILDFLAG(ENABLE_APP_LIST)
  
 -#if defined(OS_LINUX) || defined(OS_WIN)

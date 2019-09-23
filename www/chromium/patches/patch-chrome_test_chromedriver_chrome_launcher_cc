@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_test_chromedriver_chrome_launcher_cc,v 1.1 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-chrome_test_chromedriver_chrome_launcher_cc,v 1.2 2019/09/23 07:18:04 robert Exp $
 
 Index: chrome/test/chromedriver/chrome_launcher.cc
 --- chrome/test/chromedriver/chrome_launcher.cc.orig
 +++ chrome/test/chromedriver/chrome_launcher.cc
-@@ -62,6 +62,7 @@
+@@ -63,6 +63,7 @@
  #include <fcntl.h>
  #include <sys/stat.h>
  #include <sys/types.h>

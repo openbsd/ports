@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_json_schema_compiler_cpp_bundle_generator_py,v 1.1 2019/09/23 07:18:04 robert Exp $
+
+Index: tools/json_schema_compiler/cpp_bundle_generator.py
+--- tools/json_schema_compiler/cpp_bundle_generator.py.orig
++++ tools/json_schema_compiler/cpp_bundle_generator.py
+@@ -145,7 +145,7 @@ class CppBundleGenerator(object):
+       if platform == Platforms.CHROMEOS:
+         ifdefs.append('defined(OS_CHROMEOS)')
+       elif platform == Platforms.LINUX:
+-        ifdefs.append('(defined(OS_LINUX) && !defined(OS_CHROMEOS))')
++        ifdefs.append('(defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)')
+       elif platform == Platforms.MAC:
+         ifdefs.append('defined(OS_MACOSX)')
+       elif platform == Platforms.WIN:

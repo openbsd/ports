@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_common_feature_switch_cc,v 1.4 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-extensions_common_feature_switch_cc,v 1.5 2019/09/23 07:18:04 robert Exp $
 
 Index: extensions/common/feature_switch.cc
 --- extensions/common/feature_switch.cc.orig
 +++ extensions/common/feature_switch.cc
-@@ -44,11 +44,7 @@ class CommonSwitches {
+@@ -41,11 +41,7 @@ class CommonSwitches {
                           FeatureSwitch::DEFAULT_ENABLED),
          load_media_router_component_extension(
              kLoadMediaRouterComponentExtensionFlag,

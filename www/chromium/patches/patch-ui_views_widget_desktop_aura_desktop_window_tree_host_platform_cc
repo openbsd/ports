@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.2 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.3 2019/09/23 07:18:04 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -102,7 +102,7 @@ void DesktopWindowTreeHostPlatform::OnNativeWidgetCrea
+@@ -104,7 +104,7 @@ void DesktopWindowTreeHostPlatform::OnNativeWidgetCrea
      const Widget::InitParams& params) {
    native_widget_delegate_->OnNativeWidgetCreated();
  
@@ -12,7 +12,7 @@ Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
    // Setup a non_client_window_event_filter, which handles resize/move, double
    // click and other events.
    DCHECK(!non_client_window_event_filter_);
-@@ -552,7 +552,7 @@ void DesktopWindowTreeHostPlatform::Relayout() {
+@@ -551,7 +551,7 @@ void DesktopWindowTreeHostPlatform::Relayout() {
  }
  
  void DesktopWindowTreeHostPlatform::RemoveNonClientEventFilter() {

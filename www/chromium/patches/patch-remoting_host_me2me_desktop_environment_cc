@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_me2me_desktop_environment_cc,v 1.5 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-remoting_host_me2me_desktop_environment_cc,v 1.6 2019/09/23 07:18:04 robert Exp $
 
 Index: remoting/host/me2me_desktop_environment.cc
 --- remoting/host/me2me_desktop_environment.cc.orig
 +++ remoting/host/me2me_desktop_environment.cc
-@@ -131,7 +131,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
+@@ -129,7 +129,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
  
    // Otherwise, if the session is shared with the local user start monitoring
    // the local input and create the in-session UI.

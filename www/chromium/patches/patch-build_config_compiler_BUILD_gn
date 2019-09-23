@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.32 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.33 2019/09/23 07:18:03 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -54,7 +54,7 @@ declare_args() {
+@@ -57,7 +57,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,7 +12,7 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -269,7 +269,7 @@ config("compiler") {
+@@ -295,7 +295,7 @@ config("compiler") {
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
@@ -21,7 +21,7 @@ Index: build/config/compiler/BUILD.gn
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -353,6 +353,7 @@ config("compiler") {
+@@ -379,6 +379,7 @@ config("compiler") {
      }
  
      ldflags += [
@@ -29,7 +29,7 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,noexecstack",
        "-Wl,-z,relro",
      ]
-@@ -361,13 +362,8 @@ config("compiler") {
+@@ -387,13 +388,8 @@ config("compiler") {
        ldflags += [ "-Wl,-z,now" ]
      }
  
@@ -45,7 +45,7 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -471,7 +467,7 @@ config("compiler") {
+@@ -497,7 +493,7 @@ config("compiler") {
      }
    }
  
@@ -54,7 +54,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" +
                  rebase_path("//tools/clang/crashreports", root_build_dir) ]
  
-@@ -727,7 +723,7 @@ config("compiler_cpu_abi") {
+@@ -753,7 +749,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -63,7 +63,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -741,7 +737,7 @@ config("compiler_cpu_abi") {
+@@ -767,7 +763,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -72,7 +72,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1102,7 +1098,7 @@ config("compiler_deterministic") {
+@@ -1128,7 +1124,7 @@ config("compiler_deterministic") {
        "-Xclang",
        ".",
      ]
@@ -81,7 +81,7 @@ Index: build/config/compiler/BUILD.gn
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1701,7 +1697,7 @@ config("thin_archive") {
+@@ -1732,7 +1728,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -90,7 +90,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2170,21 +2166,21 @@ config("afdo_optimize_size") {
+@@ -2201,21 +2197,21 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -127,7 +127,7 @@ Index: build/config/compiler/BUILD.gn
  }
  
  # Symbols ----------------------------------------------------------------------
-@@ -2288,7 +2284,7 @@ config("symbols") {
+@@ -2319,7 +2315,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {

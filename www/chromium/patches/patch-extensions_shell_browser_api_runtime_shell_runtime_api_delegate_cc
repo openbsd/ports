@@ -1,0 +1,14 @@
+$OpenBSD: patch-extensions_shell_browser_api_runtime_shell_runtime_api_delegate_cc,v 1.1 2019/09/23 07:18:04 robert Exp $
+
+Index: extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc
+--- extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc.orig
++++ extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc
+@@ -45,7 +45,7 @@ void ShellRuntimeAPIDelegate::OpenURL(const GURL& unin
+ bool ShellRuntimeAPIDelegate::GetPlatformInfo(PlatformInfo* info) {
+ #if defined(OS_CHROMEOS)
+   info->os = api::runtime::PLATFORM_OS_CROS;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   info->os = api::runtime::PLATFORM_OS_LINUX;
+ #endif
+   return true;

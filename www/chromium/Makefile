@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.461 2019/08/28 18:34:56 robert Exp $
+# $OpenBSD: Makefile,v 1.462 2019/09/23 07:18:03 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,13 +12,16 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			76.0.3809.132
+V=			77.0.3865.90
+ECV=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		chromium-${V}${EXTRACT_SUFX} \
-			electron-${ELECTRON_V}_${V}${EXTRACT_SUFX}:0
+			chromium-${ECV}${EXTRACT_SUFX} \
+			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
+			chromium-patches-${ECV}.tar.gz:0
 
 CATEGORIES=		www
 
@@ -118,9 +121,8 @@ SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
 
 .if ${FLAVOR:Melectron}
 REVISION=		0
-ELECTRON_V=		6.0.3
 DISTNAME=		electron-${ELECTRON_V}
-WRKDIST=		${WRKDIR}/chromium-${V}
+WRKDIST=		${WRKDIR}/chromium-${ECV}
 FULLPKGNAME=		${DISTNAME}
 FULLPKGPATH=		www/chromium,electron
 ALL_TARGET=		electron
@@ -128,13 +130,16 @@ DIST_TARGET=		dist.zip chromedriver.zip mksnapshot.zip
 DIST_TARGET_DIR=	electron
 PLIST=			${PKGDIR}/PLIST-electron
 DESCR=			${PKGDIR}/DESCR-electron
-PATCH_LIST=		patch-* epatch-*
+PATCH_LIST=		epatch-*
 
 BUILD_DEPENDS+=		devel/libnotify
 LIB_DEPENDS+=		www/nghttp2
 WANTLIB+=		nghttp2
+
+WRKSRC=			${WRKDIR}/chromium-${ECV}
+EXTRACT_ONLY=		${DISTFILES:C/chromium-${V}.*//:C/:0//}
 .else
-EXTRACT_ONLY=		${DISTFILES:C/electron.*//}
+EXTRACT_ONLY=		${DISTFILES:C/chromium-${ECV}.*//:C/electron.*//:C/chromium-patches.*//}
 ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests
 DIST_TARGET_DIR=	chrome
@@ -191,7 +196,6 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 		proprietary_codecs=true
 
 .if ${FLAVOR:Mdebug}
-GN_ARGS+=	remove_webcore_debug_symbols=true
 MAKE_ENV+=	V=1
 .endif
 
@@ -214,6 +218,11 @@ ELECTRON_PATCH_CONFIG+= electron/patches/common/boringssl:third_party/boringssl/
 ELECTRON_PATCH_CONFIG+= electron/patches/common/ffmpeg:third_party/ffmpeg
 ELECTRON_PATCH_CONFIG+= electron/patches/common/v8:v8
 ELECTRON_PATCH_CONFIG+= electron/patches/node:third_party/electron_node
+
+do-distpatch:
+	@for _p in ${WRKDIR}/chromium-patches-${ECV}/patch-*; do \
+		${PATCH} ${PATCH_DIST_ARGS} < $${_p}; \
+	done
 
 pre-patch:
 .  for pair in ${ELECTRON_PATCH_CONFIG}
@@ -327,8 +336,7 @@ do-install:
 	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 .if !${FLAVOR:Melectron}
-.for f in libVkICD_mock_icd libVkLayer_core_validation libVkLayer_object_lifetimes \
-		libVkLayer_stateless_validation libVkLayer_thread_safety libVkLayer_unique_objects
+.for f in libVkICD_mock_icd
 	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 .endif
@@ -346,7 +354,7 @@ do-install:
 .endif
 
 .if !${FLAVOR:Melectron}
-.for s in 22 24 48 64 128 256
+.for s in 22_mono 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/${DIST_TARGET_DIR}/app/theme/chromium/product_logo_${s}.png \
 		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/chrome.png
@@ -356,7 +364,8 @@ do-install:
 		${PREFIX}/share/applications/chromium-browser.desktop
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/chromium
-.for f in pledge.main unveil.gpu unveil.main unveil.plugin unveil.renderer unveil.utility
+.for f in pledge.main pledge.utility_audio pledge.utility_network unveil.gpu unveil.main \
+    unveil.plugin unveil.renderer unveil.utility unveil.utility_audio unveil.utility_network
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
 .endif

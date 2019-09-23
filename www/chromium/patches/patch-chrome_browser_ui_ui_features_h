@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_ui_ui_features_h,v 1.1 2019/09/23 07:18:04 robert Exp $
+
+Index: chrome/browser/ui/ui_features.h
+--- chrome/browser/ui/ui_features.h.orig
++++ chrome/browser/ui/ui_features.h
+@@ -35,7 +35,7 @@ extern const char kTabHoverCardsFeatureParameterName[]
+ 
+ extern const base::Feature kTabHoverCardImages;
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ extern const base::Feature kEnableDbusAndX11StatusIcons;
+ #endif
+ 

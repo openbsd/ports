@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.6 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.7 2019/09/23 07:18:04 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_cache.h
 --- third_party/blink/renderer/platform/fonts/font_cache.h.orig
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
-@@ -155,7 +155,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -154,7 +154,7 @@ class PLATFORM_EXPORT FontCache {
    sk_sp<SkFontMgr> FontManager() { return font_manager_; }
    static void SetFontManager(sk_sp<SkFontMgr>);
  
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -216,7 +216,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -215,7 +215,7 @@ class PLATFORM_EXPORT FontCache {
        const FontDescription&);
  #endif  // defined(OS_ANDROID)
  
@@ -20,17 +20,17 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
 +#if defined(OS_LINUX) || defined(OS_BSD)
    struct PlatformFallbackFont {
      String name;
-     CString filename;
-@@ -301,7 +301,7 @@ class PLATFORM_EXPORT FontCache {
+     std::string filename;
+@@ -299,7 +299,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
-                                    CString& name);
+                                    std::string& name);
  
 -#if defined(OS_ANDROID) || defined(OS_LINUX)
 +#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -338,7 +338,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -336,7 +336,7 @@ class PLATFORM_EXPORT FontCache {
    bool is_test_font_mgr_ = false;
  #endif  // defined(OS_WIN)
  

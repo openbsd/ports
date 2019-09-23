@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_perfetto_include_perfetto_ext_base_event_fd_h,v 1.1 2019/09/23 07:18:04 robert Exp $
+
+Index: third_party/perfetto/include/perfetto/ext/base/event_fd.h
+--- third_party/perfetto/include/perfetto/ext/base/event_fd.h.orig
++++ third_party/perfetto/include/perfetto/ext/base/event_fd.h
+@@ -20,7 +20,7 @@
+ #include "perfetto/base/build_config.h"
+ #include "perfetto/ext/base/scoped_file.h"
+ 
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)) || \
+     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
+ #define PERFETTO_USE_EVENTFD() 1
+ #else

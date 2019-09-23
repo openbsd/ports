@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.48 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.49 2019/09/23 07:18:04 robert Exp $
 
 Index: chrome/common/chrome_switches.cc
 --- chrome/common/chrome_switches.cc.orig
 +++ chrome/common/chrome_switches.cc
-@@ -853,7 +853,7 @@ const char kAllowNaClFileHandleAPI[]        = "allow-n
+@@ -860,7 +860,7 @@ const char kAllowNaClFileHandleAPI[]        = "allow-n
  const char kAllowNaClSocketAPI[]            = "allow-nacl-socket-api";
  #endif
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
  const char kEnableNewAppMenuIcon[] = "enable-new-app-menu-icon";
- #endif
  
+ // Causes the browser to launch directly in guest mode.

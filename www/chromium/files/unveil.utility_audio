@@ -1,0 +1,9 @@
+# $OpenBSD: unveil.utility_audio,v 1.1 2019/09/23 07:18:03 robert Exp $
+
+# needed for chromium
+/etc/chromium r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+~/.sndio rwc

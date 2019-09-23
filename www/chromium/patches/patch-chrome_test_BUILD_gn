@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_test_BUILD_gn,v 1.8 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-chrome_test_BUILD_gn,v 1.9 2019/09/23 07:18:04 robert Exp $
 
 Index: chrome/test/BUILD.gn
 --- chrome/test/BUILD.gn.orig
 +++ chrome/test/BUILD.gn
-@@ -5475,7 +5475,7 @@ test("chrome_app_unittests") {
-     "//components/crash/core/common",
+@@ -5664,7 +5664,7 @@ test("chrome_app_unittests") {
      "//components/flags_ui:switches",
+     "//components/tracing",
    ]
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_openbsd) {

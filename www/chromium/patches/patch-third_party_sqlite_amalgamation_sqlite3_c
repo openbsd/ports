@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_sqlite_amalgamation_sqlite3_c,v 1.9 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-third_party_sqlite_amalgamation_sqlite3_c,v 1.10 2019/09/23 07:18:04 robert Exp $
 
 Index: third_party/sqlite/amalgamation/sqlite3.c
 --- third_party/sqlite/amalgamation/sqlite3.c.orig
 +++ third_party/sqlite/amalgamation/sqlite3.c
-@@ -38938,7 +38938,12 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -39003,7 +39003,12 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
    memset(zBuf, 0, nBuf);
    randomnessPid = osGetpid(0);
  #if !defined(SQLITE_TEST) && !defined(SQLITE_OMIT_RANDOMNESS)
@@ -16,7 +16,7 @@ Index: third_party/sqlite/amalgamation/sqlite3.c
      int fd, got;
      fd = robust_open("/dev/urandom", O_RDONLY, 0);
      if( fd<0 ){
-@@ -38953,6 +38958,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -39018,6 +39023,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
        robust_close(0, fd, __LINE__);
      }
    }

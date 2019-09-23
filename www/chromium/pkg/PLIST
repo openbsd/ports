@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.91 2019/08/01 08:32:00 robert Exp $
+@comment $OpenBSD: PLIST,v 1.92 2019/09/23 07:18:04 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -12,11 +12,6 @@ chrome/libEGL.so
 chrome/libGLESv2.so
 %%component%%
 chrome/libVkICD_mock_icd.so
-chrome/libVkLayer_core_validation.so
-chrome/libVkLayer_object_lifetimes.so
-chrome/libVkLayer_stateless_validation.so
-chrome/libVkLayer_thread_safety.so
-chrome/libVkLayer_unique_objects.so
 chrome/locales/
 chrome/locales/am.pak
 chrome/locales/am.pak.info
@@ -140,11 +135,11 @@ chrome/resources/inspector/Images/accelerometer-left.png
 chrome/resources/inspector/Images/accelerometer-right.png
 chrome/resources/inspector/Images/accelerometer-top.png
 chrome/resources/inspector/Images/audits_logo.svg
-chrome/resources/inspector/Images/breakpoint.png
-chrome/resources/inspector/Images/breakpointConditional.png
-chrome/resources/inspector/Images/breakpointConditional_2x.png
-chrome/resources/inspector/Images/breakpoint_2x.png
+chrome/resources/inspector/Images/breakpoint.svg
+chrome/resources/inspector/Images/breakpointConditional.svg
+chrome/resources/inspector/Images/checkboxCheckmark.svg
 chrome/resources/inspector/Images/checker.png
+chrome/resources/inspector/Images/chevrons.svg
 chrome/resources/inspector/Images/chromeDisabledSelect.png
 chrome/resources/inspector/Images/chromeDisabledSelect_2x.png
 chrome/resources/inspector/Images/chromeLeft.png
@@ -152,14 +147,11 @@ chrome/resources/inspector/Images/chromeMiddle.png
 chrome/resources/inspector/Images/chromeRight.png
 chrome/resources/inspector/Images/chromeSelect.png
 chrome/resources/inspector/Images/chromeSelect_2x.png
-chrome/resources/inspector/Images/errorWave.png
-chrome/resources/inspector/Images/errorWave_2x.png
+chrome/resources/inspector/Images/errorWave.svg
 chrome/resources/inspector/Images/ic_info_black_18dp.svg
 chrome/resources/inspector/Images/ic_warning_black_18dp.svg
-chrome/resources/inspector/Images/largeIcons.png
-chrome/resources/inspector/Images/largeIcons_2x.png
-chrome/resources/inspector/Images/mediumIcons.png
-chrome/resources/inspector/Images/mediumIcons_2x.png
+chrome/resources/inspector/Images/largeIcons.svg
+chrome/resources/inspector/Images/mediumIcons.svg
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
 chrome/resources/inspector/Images/nodeIcon.png
@@ -183,16 +175,13 @@ chrome/resources/inspector/Images/resourcePlainIconSmall.png
 chrome/resources/inspector/Images/resourcesTimeGraphIcon.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
-chrome/resources/inspector/Images/securityIcons.png
-chrome/resources/inspector/Images/securityIcons_2x.png
-chrome/resources/inspector/Images/smallIcons.png
-chrome/resources/inspector/Images/smallIcons_2x.png
+chrome/resources/inspector/Images/securityIcons.svg
+chrome/resources/inspector/Images/smallIcons.svg
 chrome/resources/inspector/Images/speech.png
 chrome/resources/inspector/Images/toolbarResizerVertical.png
 chrome/resources/inspector/Images/touchCursor.png
 chrome/resources/inspector/Images/touchCursor_2x.png
-chrome/resources/inspector/Images/treeoutlineTriangles.png
-chrome/resources/inspector/Images/treeoutlineTriangles_2x.png
+chrome/resources/inspector/Images/treeoutlineTriangles.svg
 chrome/resources/inspector/Images/whatsnew.png
 chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
@@ -206,13 +195,13 @@ chrome/resources/inspector/animation/
 chrome/resources/inspector/animation/animation_module.js
 chrome/resources/inspector/application_test_runner/
 chrome/resources/inspector/application_test_runner/application_test_runner_module.js
-chrome/resources/inspector/audits2/
-chrome/resources/inspector/audits2/audits2_module.js
-chrome/resources/inspector/audits2_test_runner/
-chrome/resources/inspector/audits2_test_runner/audits2_test_runner_module.js
-chrome/resources/inspector/audits2_worker/
-chrome/resources/inspector/audits2_worker.js
-chrome/resources/inspector/audits2_worker/audits2_worker_module.js
+chrome/resources/inspector/audits/
+chrome/resources/inspector/audits/audits_module.js
+chrome/resources/inspector/audits_test_runner/
+chrome/resources/inspector/audits_test_runner/audits_test_runner_module.js
+chrome/resources/inspector/audits_worker/
+chrome/resources/inspector/audits_worker.js
+chrome/resources/inspector/audits_worker/audits_worker_module.js
 chrome/resources/inspector/axe_core_test_runner/
 chrome/resources/inspector/axe_core_test_runner/axe_core_test_runner_module.js
 chrome/resources/inspector/bindings_test_runner/
@@ -403,6 +392,10 @@ share/examples/chromium/
 @sample ${SYSCONFDIR}/chromium/
 share/examples/chromium/pledge.main
 @sample ${SYSCONFDIR}/chromium/pledge.main
+share/examples/chromium/pledge.utility_audio
+@sample ${SYSCONFDIR}/chromium/pledge.utility_audio
+share/examples/chromium/pledge.utility_network
+@sample ${SYSCONFDIR}/chromium/pledge.utility_network
 share/examples/chromium/unveil.gpu
 @sample ${SYSCONFDIR}/chromium/unveil.gpu
 share/examples/chromium/unveil.main
@@ -413,11 +406,17 @@ share/examples/chromium/unveil.renderer
 @sample ${SYSCONFDIR}/chromium/unveil.renderer
 share/examples/chromium/unveil.utility
 @sample ${SYSCONFDIR}/chromium/unveil.utility
+share/examples/chromium/unveil.utility_audio
+@sample ${SYSCONFDIR}/chromium/unveil.utility_audio
+share/examples/chromium/unveil.utility_network
+@sample ${SYSCONFDIR}/chromium/unveil.utility_network
 share/icons/hicolor/128x128/apps/chrome.png
-share/icons/hicolor/22x22/apps/chrome.png
+share/icons/hicolor/22_monox22_mono/
+share/icons/hicolor/22_monox22_mono/apps/
+share/icons/hicolor/22_monox22_mono/apps/chrome.png
 share/icons/hicolor/24x24/apps/chrome.png
 share/icons/hicolor/256x256/apps/chrome.png
 share/icons/hicolor/48x48/apps/chrome.png
-share/icons/hicolor/64x64/apps/chrome.png
+share/icons/hicolor/64${ELECTRON_ARCH}/apps/chrome.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.7 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.8 2019/09/23 07:18:04 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -108,7 +108,7 @@
+@@ -109,7 +109,7 @@
  #include "chrome/browser/policy/browser_signin_policy_handler.h"
  #endif
  
@@ -12,17 +12,22 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -321,7 +321,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
-   { key::kSafeSitesFilterBehavior,
-     policy_prefs::kSafeSitesFilterBehavior,
-     base::Value::Type::INTEGER},
+@@ -326,11 +326,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     prefs::kSafeBrowsingRealTimeLookupEnabled,
+     base::Value::Type::BOOLEAN
+   },
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1020,7 +1020,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
-     prefs::kAllowPopupsDuringPageUnload,
+-#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #if defined(OS_POSIX)
+   { key::kNtlmV2Enabled,
+     prefs::kNtlmV2Enabled,
+@@ -1031,7 +1031,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     prefs::kUserFeedbackAllowed,
      base::Value::Type::BOOLEAN },
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -30,3 +35,12 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    { key::kAlternativeBrowserPath,
      browser_switcher::prefs::kAlternativeBrowserPath,
+@@ -1072,7 +1072,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     browser_switcher::prefs::kChromeParameters,
+     base::Value::Type::LIST },
+ #endif
+-#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD)
+   { key::kBrowserGuestModeEnforced,
+     prefs::kBrowserGuestModeEnforced,
+     base::Value::Type::BOOLEAN },

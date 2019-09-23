@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.10 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.11 2019/09/23 07:18:04 robert Exp $
 
 Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
 --- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html
-@@ -64,7 +64,7 @@
+@@ -63,7 +63,7 @@
            <cr-link-row class="first" hidden="[[!pageVisibility.setTheme]]"
                label="$i18n{themes}" sub-label="[[themeSublabel_]]"
                on-click="openThemeUrl_" external></cr-link-row>
@@ -11,17 +11,17 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
 +<if expr="not is_posix or chromeos">
            <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
              <div class="separator"></div>
-             <paper-button id="useDefault" on-click="onUseDefaultTap_"
-@@ -73,7 +73,7 @@
-             </paper-button>
+             <cr-button id="useDefault" on-click="onUseDefaultTap_">
+@@ -71,7 +71,7 @@
+             </cr-button>
            </template>
  </if>
 -<if expr="is_linux and not chromeos">
 +<if expr="is_posix and not chromeos">
            <div class="settings-row continuation"
                hidden="[[!showThemesSecondary_(
-               prefs.extensions.theme.id.value, useSystemTheme_)]]"
-@@ -138,7 +138,7 @@
+                   prefs.extensions.theme.id.value, useSystemTheme_)]]"
+@@ -134,7 +134,7 @@
              pref="{{prefs.bookmark_bar.show_on_all_tabs}}"
              label="$i18n{showBookmarksBar}">
          </settings-toggle-button>
