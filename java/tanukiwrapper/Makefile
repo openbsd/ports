@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/09/23 14:04:25 kurt Exp $
+
+# manually set to arches list for jdk 1.8; bsd.port.arch.mk interferes
+# with java MODULES. can be removed if moved to MODJAVA_VER=1.8+
+ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	Tanuki Java Service Wrapper
 
 SVN_REV=	1780
 DISTNAME=	wrapper-code-${SVN_REV}-trunk
 PKGNAME=	java-tanukiwrapper-3.5.19.1
-REVISION=	6
+REVISION=	7
 CATEGORIES=	java
 
 HOMEPAGE=	http://wrapper.tanukisoftware.com/
@@ -19,7 +23,7 @@ PERMIT_PACKAGE=	Yes
 EXTRACT_SUFX=	.zip
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	1.8
 MODJAVA_BUILD=	ant
 
 .include <bsd.port.arch.mk>
