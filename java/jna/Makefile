@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/09/23 13:39:27 kurt Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=	java-native-access
 GH_TAGNAME=	4.4.0
 CATEGORIES=	devel
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://github.com/java-native-access/jna
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://github.com/java-native-access/jna
 PERMIT_PACKAGE=	Yes
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	1.8
 MODJAVA_BUILD=	ant
 
 # use the system libffi
