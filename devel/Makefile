@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1891 2019/09/07 15:52:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1892 2019/09/23 20:45:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1506,7 +1506,6 @@
      SUBDIR += py-modulegraph
      SUBDIR += py-modulegraph,python3
      SUBDIR += py-monotonic
-     SUBDIR += py-monotonic,python3
      SUBDIR += py-more-itertools
      SUBDIR += py-more-itertools,python3
      SUBDIR += py-mox
