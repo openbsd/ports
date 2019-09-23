@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/09/20 09:21:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/23 19:59:12 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
 V =		3.4.0
@@ -41,7 +41,8 @@ RUN_DEPENDS =	x11/py-xcbgen \
 		fonts/unifont
 
 CONFIGURE_ARGS =	-DENABLE_CCACHE=OFF \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -lintl -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify"
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -lintl -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify" \
+			-DENABLE_I3=OFF
 
 NO_TEST =	Yes
 
