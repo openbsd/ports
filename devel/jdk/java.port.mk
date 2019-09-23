@@ -1,11 +1,10 @@
-# $OpenBSD: java.port.mk,v 1.37 2019/06/11 00:36:04 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.38 2019/09/23 16:54:23 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version of the jdk needed
 # for the port. x.y means any x.y jdk. x.y+ means any x.y jdk or higher
 # version. Valid values for x.y are 1.8 or 11.
 
 MODJAVA_VER?=
-ONLY_FOR_ARCHS?= i386 amd64
 
 # Based on the MODJAVA_VER, NO_BUILD and MACHINE_ARCH, the following
 # things will be setup:
@@ -25,14 +24,27 @@ ONLY_FOR_ARCHS?= i386 amd64
 # to set the default JAVA_HOME or JAVACMD vars for a package.
 #
 
-.if ${MODJAVA_VER:S/+//} == "1.8"
-    JAVA_HOME= ${LOCALBASE}/jdk-1.8.0
-    MODJAVA_BUILD_DEPENDS= jdk->=1.8v0,<1.9v0:devel/jdk/1.8
-.elif ${MODJAVA_VER:S/+//} == "11"
+.if ${MODJAVA_VER:S/+//} != "1.8" && ${MODJAVA_VER:S/+//} != "11"
+    ERRORS+="Fatal: MODJAVA_VER must be set to a valid value."
+.endif
+
+.if ${MODJAVA_VER} == "1.8"
+    ONLY_FOR_ARCHS?= i386 amd64
+.else
+    ONLY_FOR_ARCHS?= i386 amd64 aarch64
+.endif
+
+.if ${MACHINE_ARCH} == "aarch64"
     JAVA_HOME= ${LOCALBASE}/jdk-11
     MODJAVA_BUILD_DEPENDS+= jdk->=11v0,<12v0:devel/jdk/11
 .else
-    ERRORS+="Fatal: MODJAVA_VER must be set to a valid value."
+.   if ${MODJAVA_VER:S/+//} == "1.8"
+        JAVA_HOME= ${LOCALBASE}/jdk-1.8.0
+        MODJAVA_BUILD_DEPENDS= jdk->=1.8v0,<1.9v0:devel/jdk/1.8
+.   else
+        JAVA_HOME= ${LOCALBASE}/jdk-11
+        MODJAVA_BUILD_DEPENDS+= jdk->=11v0,<12v0:devel/jdk/11
+.   endif
 .endif
 
 .if ${MODJAVA_VER:M*+}
