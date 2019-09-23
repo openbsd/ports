@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2019/07/12 20:48:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/09/23 15:14:25 kurt Exp $
 
 COMMENT=	XMPP real time collaboration server
 V=		4.2.3
-REVISION=	0
+REVISION=	1
 DISTNAME=	openfire_src_${V:S/./_/g}
 PKGNAME=	openfire-$V
 CATEGORIES=	net
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 NO_TEST=	yes
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	1.8
 MODJAVA_JRE=	Yes
 MODJAVA_BUILD=	ant
 
