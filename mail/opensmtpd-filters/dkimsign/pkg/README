@@ -1,0 +1,26 @@
+$OpenBSD: README,v 1.1 2019/09/23 19:24:45 martijn Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To use filter-dkimsign, you must first generate a key:
+
+  doas -u _dkimsign openssl genrsa -out ${SYSCONFDIR}/mail/dkim/private.key 2048
+
+To generate the public ready for dns:
+  openssl rsa -in ${SYSCONFDIR}/mail/dkim/private.key -pubout | \
+    sed '1s/.*/v=DKIM1;p=/;:nl;${s/-----.*//;q;};N;s/\n//g;b nl;'
+
+This value needs to be placed in a DNS txt record with the following syntax:
+   <selector>._domainkey.<domain>
+
+Edit the /etc/mail/smtpd.conf file to declare the filter:
+
+  filter "dkimsign" proc-exec "filter-dkimsign -d <domain> -s <selector> -k ${SYSCONFDIR}/mail/dkim/private.key" user _dkimsign group _dkimsign
+
+Then add the filter to each listener that should be signed:
+
+  listen on all filter "dkimsign"
+
+For a full list of options see filter-dkimsign(8).

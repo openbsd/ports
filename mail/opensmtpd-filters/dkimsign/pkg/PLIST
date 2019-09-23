@@ -1,4 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/20 12:57:48 martijn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/23 19:24:45 martijn Exp $
+@newgroup _dkimsign:843
+@newuser _dkimsign:843:843:daemon:OpenSMTP DKIM signer:/nonexistent:/sbin/nologin
 libexec/smtpd/
 @bin libexec/smtpd/filter-dkimsign
 @man man/man8/filter-dkimsign.8
+@mode 0770
+@owner _dkimsign
+@group _dkimsign
+@sample ${SYSCONFDIR}/mail/dkim
+@mode
+@owner
+@group
+share/doc/pkg-readmes/${PKGSTEM}
