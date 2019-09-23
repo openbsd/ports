@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.109 2019/07/12 20:50:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2019/09/23 15:13:22 sthen Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
 COMMENT=		simple GTK desktop news aggregator
 
-V=			1.12.4
-DISTNAME=		liferea-${V}
-REVISION=		1
+V=			1.12.6
+DISTNAME=		liferea-${V}b
 
 CATEGORIES=		www news x11
 
@@ -15,23 +14,22 @@ HOMEPAGE=		https://lzone.de/liferea/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
-WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xt Xxf86vm aspell atk-1.0 atk-bridge-2.0
-WANTLIB += atspi brotlicommon brotlidec c cairo cairo-gobject
-WANTLIB += dbus-1 drm enchant-2 epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glapi glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz harfbuzz-icu
-WANTLIB += hyphen iconv icudata icui18n icuuc intl javascriptcoregtk-4.0
-WANTLIB += jpeg json-glib-1.0 lzma m notify orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
-WANTLIB += pixman-1 png secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0
-WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3
-WANTLIB += xcb-glx xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
-WANTLIB += xml2 xshmfence xslt z
+WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xt Xxf86vm aspell atk-1.0 atk-bridge-2.0 brotlicommon brotlidec
+WANTLIB += c cairo cairo-gobject drm enchant-2 epoxy expat ffi fontconfig
+WANTLIB += freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += girepository-1.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv icudata
+WANTLIB += icui18n icuuc idn2 intl javascriptcoregtk-4.0 jpeg json-glib-1.0
+WANTLIB += lzma m notify openjp2 orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png psl
+WANTLIB += secret-1 soup-2.4 sqlite3 tasn1 unistring webkit2gtk-4.0 webp
+WANTLIB += webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes xml2
+WANTLIB += xshmfence xslt z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -54,10 +52,9 @@ LIB_DEPENDS=		devel/json-glib \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-# lib/liferea/plugins/{gnome-keyring,libnotify,media-player}.py
+# lib/liferea/plugins/{libnotify,media-player}.py
 RUN_DEPENDS +=		devel/libnotify \
-			multimedia/gstreamer1/core \
-			x11/gnome/libgnome-keyring
+			multimedia/gstreamer1/core
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--docdir=${PREFIX}/share/doc/liferea
