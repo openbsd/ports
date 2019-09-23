@@ -1,4 +1,11 @@
-# $OpenBSD: Makefile,v 1.215 2019/09/20 13:34:54 robert Exp $
+# $OpenBSD: Makefile,v 1.216 2019/09/23 12:04:10 sthen Exp $
+
+BROKEN-i386= redefinition of __class_type_info/__si_class_type_info
+# bridges/source/cpp_uno/gcc3_linux_intel/share.hxx:65:12: error: redefinition of '__class_type_info'
+# bridges/source/cpp_uno/gcc3_linux_intel/share.hxx:40:7: note: previous definition is here
+# bridges/source/cpp_uno/gcc3_linux_intel/share.hxx:71:12: error: redefinition of '__si_class_type_info'
+# bridges/source/cpp_uno/gcc3_linux_intel/share.hxx:52:7: note: previous definition is here
+# ... more logs in https://marc.info/?l=openbsd-ports-cvs&m=156915667215970&w=2
 
 USE_WXNEEDED=	Yes
 
