@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/08/27 15:35:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/09/23 13:41:38 landry Exp $
 @conflict py-buildbot-*
 @pkgpath devel/py-buildbot
 @newgroup _buildbot:673
@@ -195,6 +195,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/051_add_wo
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/052_cascading_set_null.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/053_add_changes_committer.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/054_add_index_to_steps.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/055_fix_changes_committer.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}040_add_builder_tags.${MODPY_PYC_MAGIC_TAG}pyc
@@ -212,6 +213,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}052_cascading_set_null.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}053_add_changes_committer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}054_add_index_to_steps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}055_fix_changes_committer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate_utils.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/model.py
@@ -853,6 +855,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_db_migrate_versions_052_cascading_set_null.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_db_migrate_versions_053_add_changes_committer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_db_migrate_versions_054_add_index_to_steps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_db_migrate_versions_055_add_changes_committer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_db_model.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_db_pool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_db_schedulers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1115,6 +1118,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_migrate_vers
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_migrate_versions_052_cascading_set_null.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_migrate_versions_053_add_changes_committer.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_migrate_versions_054_add_index_to_steps.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_migrate_versions_055_add_changes_committer.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_model.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_pool.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_schedulers.py
