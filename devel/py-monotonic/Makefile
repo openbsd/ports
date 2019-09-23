@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/23 13:27:37 kmos Exp $
 
 COMMENT =		implementation of time.monotonic()
 
-MODPY_EGG_VERSION =	1.3
+MODPY_EGG_VERSION =	1.5
 DISTNAME =		monotonic-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,8 +17,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-FLAVORS =		python3
-FLAVOR ?=
 
 .include <bsd.port.mk>
