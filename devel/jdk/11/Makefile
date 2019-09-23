@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2019/09/13 16:18:33 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2019/09/23 16:09:24 kurt Exp $
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	11.0.4
-PATCH_VER=	11
+BASE_VER=	11.0.5
+PATCH_VER=	8
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
@@ -18,7 +18,7 @@ DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/openjdk-jdk11u-jdk-${BASE_VER}-${PATCH_VER}-${BSD_PORT_REL}
-BOOTJDK_DATE=	20190325
+BOOTJDK_DATE=	20190919
 
 CATEGORIES=	devel/jdk java
 
@@ -42,7 +42,8 @@ WANTLIB += iconv jpeg lcms2 m png pthread z
 NO_TEST=	Yes
 
 SUPDISTFILES+=	openjdk-jdk11u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
-		openjdk-jdk11u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1
+		openjdk-jdk11u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
+		openjdk-jdk11u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz:1
 
 COMPILER=	base-clang ports-gcc
 
@@ -56,8 +57,8 @@ ERRORS += "Fatal: This flavor requires an installed jdk-11v0 or greater jdk pack
 BUILD_DEPENDS+=	jdk->=11v0,<12v0:devel/jdk/11
 BOOT_JDK=	${LOCALBASE}/jdk-11
 .else
-BOOT_JDK_DIST=	openjdk-jdk11u-bootjdk-${ARCH}-${BOOTJDK_DATE}.tar.gz
-.  if (${ARCH}==amd64) || (${ARCH}==i386)
+BOOT_JDK_DIST=	openjdk-jdk11u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
+.  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || (${MACHINE_ARCH}==aarch64)
 DISTFILES+=	${BOOT_JDK_DIST}:1
 .  endif
 MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
@@ -125,7 +126,15 @@ ALL_TARGET=	images
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS+=	-Daot=1
 .else
+# aot is not working yet on aarch64 and not supported on i386
+CONFIGURE_ARGS+=--enable-aot=no
 PKG_ARGS+=	-Daot=0
+.endif
+
+.if ${MACHINE_ARCH} == "aarch64"
+PKG_ARGS+=	-Dci=1
+.else
+PKG_ARGS+=	-Dci=0
 .endif
 
 JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}
@@ -156,7 +165,7 @@ build-bootjdk: build
 		find ${WRKTMP}/bootjdk -type f -perm -500 -exec ldd {} \; 2>/dev/null | \
 		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
 		xargs -I % cp /% ${WRKTMP}/bootjdk-libs
-	@cd ${WRKTMP} && tar czf openjdk-jdk11u-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*
-	@echo "New bootjdk is located at ${WRKTMP}/openjdk-jdk11u-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz"
+	@cd ${WRKTMP} && tar czf openjdk-jdk11u-bootjdk-${MACHINE_ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*
+	@echo "New bootjdk is located at ${WRKTMP}/openjdk-jdk11u-bootjdk-${MACHINE_ARCH}-$$(date +%Y%m%d).tar.gz"
 
 .include <bsd.port.mk>
