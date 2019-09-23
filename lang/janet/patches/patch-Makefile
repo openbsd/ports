@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.7 2019/09/06 23:31:45 jturner Exp $
+$OpenBSD: patch-Makefile,v 1.8 2019/09/23 22:22:10 jturner Exp $
 
 Use a date stamp for JANET_BUILD to avoid using git.
 Replace hardcoded -O2.
@@ -28,7 +28,7 @@ Index: Makefile
  	   -DJANET_BUILD=$(JANET_BUILD)
  LDFLAGS=-rdynamic
  
-@@ -288,23 +288,20 @@ build/janet.pc: $(JANET_TARGET)
+@@ -295,23 +295,20 @@ build/janet.pc: $(JANET_TARGET)
  	echo 'Libs.private: $(CLIBS)' >> $@
  
  install: $(JANET_TARGET) build/janet.pc
@@ -48,7 +48,7 @@ Index: Makefile
 -	cp jpm.1 '$(MANPATH)'
 -	mkdir -p '$(PKG_CONFIG_PATH)'
 -	cp build/janet.pc '$(PKG_CONFIG_PATH)/janet.pc'
--	-ldconfig $(LIBDIR)
+-	-$(LDCONFIG)
 +	mkdir -p '$(DESTDIR)$(BINDIR)'
 +	cp $(JANET_TARGET) '$(DESTDIR)$(BINDIR)/janet'
 +	mkdir -p '$(DESTDIR)$(INCLUDEDIR)/janet'
