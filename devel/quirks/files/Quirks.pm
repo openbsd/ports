@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.806 2019/09/13 09:54:46 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.807 2019/09/24 11:47:53 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1314,6 +1314,7 @@ my $obsolete_reason = {
 	'g77' => 5,
 	'libf2c' => 5,
 	'p5-WWW-Curl' => 3,
+	'java-tanukiwraper' => 5,
 };
 
 # reasons for obsolete packages
