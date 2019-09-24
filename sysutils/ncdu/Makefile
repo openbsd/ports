@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/09/24 15:37:34 fcambus Exp $
 
 COMMENT=		ncurses-based du(1)
 
-DISTNAME=		ncdu-1.14
+DISTNAME=		ncdu-1.14.1
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://dev.yorhel.nl/ncdu/
