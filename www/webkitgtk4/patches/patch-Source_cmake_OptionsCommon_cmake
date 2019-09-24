@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.14 2019/05/30 12:43:30 jca Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.15 2019/09/24 06:56:43 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 
 Index: Source/cmake/OptionsCommon.cmake
 --- Source/cmake/OptionsCommon.cmake.orig
 +++ Source/cmake/OptionsCommon.cmake
-@@ -5,10 +5,10 @@ option(USE_THIN_ARCHIVES "Produce all static libraries
+@@ -9,10 +9,10 @@ option(USE_THIN_ARCHIVES "Produce all static libraries
  if (USE_THIN_ARCHIVES)
      execute_process(COMMAND ${CMAKE_AR} -V OUTPUT_VARIABLE AR_VERSION)
      if ("${AR_VERSION}" MATCHES "^GNU ar")

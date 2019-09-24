@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.3 2019/03/14 09:48:28 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.4 2019/09/24 06:56:43 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/jit/ExecutableAllocator.cpp
 --- Source/JavaScriptCore/jit/ExecutableAllocator.cpp.orig
 +++ Source/JavaScriptCore/jit/ExecutableAllocator.cpp
-@@ -92,7 +92,8 @@ static const size_t fixedExecutableMemoryPoolSize = FI
+@@ -97,7 +97,8 @@ static const size_t fixedExecutableMemoryPoolSize = FI
  static const size_t fixedExecutableMemoryPoolSize = 16 * 1024 * 1024;
  #elif CPU(ARM64)
  static const size_t fixedExecutableMemoryPoolSize = 128 * 1024 * 1024;

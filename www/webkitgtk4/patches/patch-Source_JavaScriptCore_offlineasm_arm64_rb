@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_offlineasm_arm64_rb,v 1.3 2019/03/14 09:48:28 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_offlineasm_arm64_rb,v 1.4 2019/09/24 06:56:43 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/offlineasm/arm64.rb
 --- Source/JavaScriptCore/offlineasm/arm64.rb.orig
 +++ Source/JavaScriptCore/offlineasm/arm64.rb
-@@ -1034,7 +1034,7 @@ class Instruction
+@@ -1041,7 +1041,7 @@ class Instruction
              $asm.puts "ldr #{operands[1].arm64Operand(:quad)}, [#{operands[1].arm64Operand(:quad)}, #{operands[0].asmLabel}@GOTPAGEOFF]"
  
              # On Linux, use ELF GOT relocation specifiers.

@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.108 2019/08/30 13:02:19 cwen Exp $
+# $OpenBSD: Makefile,v 1.109 2019/09/24 06:56:43 ajacoutot Exp $
+
+# XXX does *NOT* build if a previous version is installed (e.g 2.24 vs 2.26)
+# -L/usr/local/lib is put first and we end up with undefined symbols
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,8 +15,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.24.4
-REVISION =		0
+V =			2.26.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -21,8 +23,8 @@ API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     3.0 # 18.13.3
-SHARED_LIBS +=  webkit2gtk-${API}            3.0 # 37.37.2
+SHARED_LIBS +=  javascriptcoregtk-${API}     3.1 # 18.13.3
+SHARED_LIBS +=  webkit2gtk-${API}            3.1 # 37.37.2
 
 CATEGORIES =		www
 
@@ -98,6 +100,9 @@ CONFIGURE_ARGS +=	-DENABLE_PLUGIN_PROCESS_GTK2=OFF
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 .endif
+
+# XXX fatal error: 'X11/Xlib.h' file not found
+CXXFLAGS +=		-I${X11BASE}/include
 
 .include <bsd.port.arch.mk>
 

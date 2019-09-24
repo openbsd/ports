@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.15 2019/03/14 09:48:28 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.16 2019/09/24 06:56:43 ajacoutot Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=129963
 
@@ -28,7 +28,7 @@ Index: Source/WTF/wtf/Platform.h
  #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
  #endif
  
-@@ -710,7 +717,7 @@
+@@ -707,7 +714,7 @@
  
  #endif /* OS(DARWIN) */
  
@@ -37,7 +37,7 @@ Index: Source/WTF/wtf/Platform.h
  #define HAVE_MACHINE_CONTEXT 1
  #endif
  
-@@ -818,7 +825,7 @@
+@@ -823,7 +830,7 @@
  
  #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT)
  /* Enable the DFG JIT on X86 and X86_64. */
