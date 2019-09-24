@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/10 14:40:29 jasper Exp $
-@bin sbin/tanukiwrapper
-lib/tanukuwrapper/
-lib/tanukuwrapper/libwrapper.so
-share/java/
-share/java/classes/
-share/java/classes/tanukiwrapper.jar

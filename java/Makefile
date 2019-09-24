@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/06/17 02:07:21 lteo Exp $
+# $OpenBSD: Makefile,v 1.16 2019/09/24 11:47:40 jasper Exp $
 
      SUBDIR =
      SUBDIR += gradle
@@ -6,6 +6,5 @@
      SUBDIR += javaPathHelper
      SUBDIR += jlint
      SUBDIR += jna
-     SUBDIR += tanukiwrapper
 
 .include <bsd.port.subdir.mk>
