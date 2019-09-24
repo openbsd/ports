@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/06/28 16:48:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/09/24 13:15:19 espie Exp $
 bin/openbsd-wallpaper
 @man man/man1/openbsd-wallpaper.1
 ${BG}/
@@ -8,6 +8,8 @@ ${BG}/README.md
 ${BG}/aspect-9:16
 @comment ${BG}/example
 ${LPICS}/
+${LPICS}-large.list
+${LPICS}.list
 ${LPICS}/deraadt/
 ${LPICS}/deraadt/chobe-0512-162406tdr.jpg
 ${LPICS}/deraadt/chobe-0512-165545tdr.jpg
@@ -39,6 +41,8 @@ ${LPICS}/espie/autumn-lake.jpg
 ${LPICS}/espie/autumn.jpg
 ${LPICS}/espie/belgrade1.jpg
 ${LPICS}/espie/magic-sunset.jpg
+${LPICS}/espie/norway-sky.jpg
+${LPICS}/espie/norway-sky2.jpg
 ${LPICS}/espie/train+sky.jpg
 ${LPICS}/giovanni/
 ${LPICS}/giovanni/DSCN0547_Vettore.jpg
@@ -221,8 +225,11 @@ ${LPICS}/tj/DSC_6154.jpg
 ${LPICS}/tj/DSC_6228.jpg
 ${LPICS}/tj/DSC_6254.jpg
 ${LPICS}/tj/DSC_6315.jpg
+${BG}/larger
 ${BG}/list
 ${PPICS}/
+${PPICS}-large.list
+${PPICS}.list
 ${PPICS}/deraadt/
 ${PPICS}/deraadt/limestone-0727-094133tdr.jpg
 ${PPICS}/deraadt/limestone-0727-171837tdr.jpg
@@ -232,6 +239,10 @@ ${PPICS}/espie/IMG_20180403_191952.jpg
 ${PPICS}/espie/angry_sea.jpg
 ${PPICS}/espie/colorful_plants.jpg
 ${PPICS}/espie/hellish_sunset.jpg
+${PPICS}/espie/norway-postcard.jpg
+${PPICS}/espie/norway-sky3.jpg
+${PPICS}/espie/sky-painting.jpg
+${PPICS}/espie/sky-painting2.jpg
 ${PPICS}/espie/snowwave.jpg
 ${PPICS}/espie/sunset_vertical.jpg
 ${PPICS}/gonzalo/
