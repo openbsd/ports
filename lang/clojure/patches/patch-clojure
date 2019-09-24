@@ -1,0 +1,14 @@
+$OpenBSD: patch-clojure,v 1.1 2019/09/24 13:05:22 kurt Exp $
+
+Index: clojure
+--- clojure.orig
++++ clojure
+@@ -111,7 +111,7 @@ done
+ 
+ # Find java executable
+ set +e
+-JAVA_CMD=$(type -p java)
++JAVA_CMD=$(javaPathHelper -c clojure)
+ set -e
+ if [[ ! -n "$JAVA_CMD" ]]; then
+   if [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]]; then
