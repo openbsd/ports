@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_tools_run_py,v 1.6 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-v8_tools_run_py,v 1.7 2019/09/24 14:11:07 robert Exp $
 
 Index: v8/tools/run.py
 --- v8/tools/run.py.orig
@@ -8,4 +8,4 @@ Index: v8/tools/run.py
  import sys
  
 -sys.exit(subprocess.call(sys.argv[1:]))
-+sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"/usr/ports/pobj/chromium-77.0.3865.90/chromium-77.0.3865.90/out/Release"}))
++sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release"}))
