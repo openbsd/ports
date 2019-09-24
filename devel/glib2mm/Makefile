@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2019/09/24 11:19:59 ajacoutot Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -6,7 +6,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT=		C++ interface for glib2
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.60.0
+GNOME_VERSION=		2.60.1
 PKGNAME=		glib2mm-${GNOME_VERSION}
 
 V=			2.4
