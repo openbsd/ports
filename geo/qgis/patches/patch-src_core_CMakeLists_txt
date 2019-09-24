@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_core_CMakeLists_txt,v 1.20 2019/07/12 21:36:21 sthen Exp $
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.21 2019/09/24 18:10:05 landry Exp $
 
 takes many hours with the default (225)
 
 Index: src/core/CMakeLists.txt
 --- src/core/CMakeLists.txt.orig
 +++ src/core/CMakeLists.txt
-@@ -820,6 +820,7 @@ ELSE(MSVC)
+@@ -821,6 +821,7 @@ ELSE(MSVC)
    SET_SOURCE_FILES_PROPERTIES(${QGIS_CORE_MOC_SRCS} PROPERTIES COMPILE_FLAGS "-Wno-deprecated-declarations" )
    IF ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" AND (CMAKE_BUILD_TYPE MATCHES Release OR CMAKE_BUILD_TYPE MATCHES RelWithDebInfo))
      SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_BINARY_DIR}/qgsexpression_texts.cpp PROPERTIES COMPILE_FLAGS "-O1")
