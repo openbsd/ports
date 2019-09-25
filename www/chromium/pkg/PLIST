@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.92 2019/09/23 07:18:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.93 2019/09/25 20:22:23 sthen Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -417,6 +417,6 @@ share/icons/hicolor/22_monox22_mono/apps/chrome.png
 share/icons/hicolor/24x24/apps/chrome.png
 share/icons/hicolor/256x256/apps/chrome.png
 share/icons/hicolor/48x48/apps/chrome.png
-share/icons/hicolor/64${ELECTRON_ARCH}/apps/chrome.png
+share/icons/hicolor/64x64/apps/chrome.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
