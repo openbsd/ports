@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.95 2019/07/06 13:34:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2019/09/25 16:00:28 sthen Exp $
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		3.32.2
+REVISION=		0
 
 SHARED_LIBS += gweather-3                3.3 # 15.0.0
 

@@ -1,0 +1,24 @@
+$OpenBSD: patch-libgweather_weather-metar_c,v 1.1 2019/09/25 16:00:28 sthen Exp $
+
+metar_start_open():
+
+gnome-shell: vfprintf %s NULL in "metar_start_open, requesting: https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&fields=raw_text&stationString=%s"
+
+metar_finish(), called from metar_start_open():
+
+gnome-shell: vfprintf %s NULL in "METAR data for %s"
+gnome-shell: vfprintf %s NULL in "<raw_text>%s "
+
+Index: libgweather/weather-metar.c
+--- libgweather/weather-metar.c.orig
++++ libgweather/weather-metar.c
+@@ -651,6 +651,9 @@ metar_start_open (GWeatherInfo *info)
+     if (!loc->latlon_valid)
+         return;
+ 
++    if (!loc->code)
++        return;
++
+     g_debug ("metar_start_open, requesting: https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&fields=raw_text&stationString=%s", loc->code);
+     msg = soup_form_request_new (
+ 	"GET", "https://www.aviationweather.gov/adds/dataserver_current/httpparam",
