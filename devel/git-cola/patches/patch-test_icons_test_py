@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_icons_test_py,v 1.1 2019/09/25 12:40:25 bket Exp $
+
+Fix unit test. Taken from https://github.com/git-cola/git-cola/pull/993.
+
+Index: test/icons_test.py
+--- test/icons_test.py.orig
++++ test/icons_test.py
+@@ -11,7 +11,7 @@ from cola import icons
+ class IconTestCase(unittest.TestCase):
+ 
+     def test_from_filename_unicode(self):
+-        filename = compat.uchr(0x400) + '.odt'
++        filename = compat.uchr(0x400) + '.py'
+         expect = 'file-code.svg'
+         actual = icons.basename_from_filename(filename)
+         self.assertEqual(expect, actual)
