@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.16 2019/04/22 16:34:46 jca Exp $
+$OpenBSD: patch-configure,v 1.17 2019/09/25 22:10:51 jca Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9258,9 +9258,7 @@ case "$opsys" in
+@@ -9263,9 +9263,7 @@ case "$opsys" in
     ;;
  
    openbsd)
