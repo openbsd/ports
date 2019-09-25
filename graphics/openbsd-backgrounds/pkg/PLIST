@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/09/24 13:15:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/09/25 10:03:19 espie Exp $
 bin/openbsd-wallpaper
 @man man/man1/openbsd-wallpaper.1
 ${BG}/
@@ -53,6 +53,7 @@ ${LPICS}/giovanni/IMG_0617_Spring.jpg
 ${LPICS}/giovanni/IMG_064131_Portugal.jpg
 ${LPICS}/giovanni/IMG_1793_Machu_Picchu.jpg
 ${LPICS}/giovanni/IMG_183607_Sky.jpg
+${LPICS}/giovanni/IMG_2653_Petra.jpg
 ${LPICS}/gonzalo/
 ${LPICS}/gonzalo/3675.jpg
 ${LPICS}/gonzalo/3678.jpg
