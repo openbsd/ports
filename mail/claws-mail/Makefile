@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2019/07/12 20:47:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2019/09/25 00:33:55 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -6,7 +6,7 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.17.3
+V=			3.17.4
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
@@ -14,13 +14,9 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
 
-REVISION=		0
-REVISION-pdfviewer=	1
-
 CATEGORIES=		mail news
 
-HOMEPAGE=		http://www.claws-mail.org/
-MAINTAINER=		Daniel Jakots <obsd@chown.me>
+HOMEPAGE=		https://www.claws-mail.org/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -52,17 +48,17 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sasl2 ssl xcb xcb-render xcb-shm z
 
 WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += ICE SM X11-xcb archive assuan bz2 c canberra canberra-gtk
-WANTLIB-main += croco-0.6 db dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error
+WANTLIB-main += ICE SM X11-xcb archive assuan b2 bz2 c canberra canberra-gtk
+WANTLIB-main += charset croco-0.6 db dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error
 WANTLIB-main += gpgme hogweed ical icalss icalvcal icudata icui18n icuuc idn2
 WANTLIB-main += ltdl lz4 lzma nettle notify ogg p11-kit perl rsvg-2
 WANTLIB-main += startup-notification-1 ${COMPILER_LIBCXX} tasn1 unistring vorbis
 WANTLIB-main += vorbisfile xcb-util xml2 zstd
 
 WANTLIB-gdata = ${WANTLIB}
-WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error json-glib-1.0
+WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error idn2 json-glib-1.0
 WANTLIB-gdata += lzma nspr4 nss3 oauth p11-kit plc4 plds4 smime3 nssutil3
-WANTLIB-gdata += soup-2.4 sqlite3 ssl3 xml2
+WANTLIB-gdata += psl soup-2.4 sqlite3 ssl3 unistring xml2
 
 WANTLIB-pdfviewer =  ${WANTLIB}
 WANTLIB-pdfviewer += jpeg lcms2 openjp2 png poppler poppler-glib tiff
@@ -86,6 +82,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/startup-notification \
 			security/gnutls>=2.2 \
 			security/gpgme \
+			security/libb2 \
 			security/libnettle \
 			textproc/enchant \
 			textproc/libical \

@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.20 2019/01/01 18:01:20 danj Exp $
+$OpenBSD: patch-configure_ac,v 1.21 2019/09/25 00:33:55 danj Exp $
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -166,7 +166,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
+@@ -176,7 +176,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
  
  if test "$GCC" = "yes"
  then
@@ -11,7 +11,7 @@ Index: configure.ac
  	#CFLAGS="-g -Wall -Wno-unused-function"
  fi
  
-@@ -785,6 +785,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -797,6 +797,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -19,7 +19,7 @@ Index: configure.ac
  		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  				 $LDAP_LIBS)
  
-@@ -857,7 +858,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -869,7 +870,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  		fi
  
