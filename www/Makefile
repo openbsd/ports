@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.924 2019/09/18 16:34:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.925 2019/09/25 12:07:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -380,7 +380,7 @@
      SUBDIR += pecl-raphf,php73
      SUBDIR += pecl-ssh2,php71
      SUBDIR += pecl-ssh2,php72
-     #SUBDIR += pecl-ssh2,php73			# no 7.3 yet
+     SUBDIR += pecl-ssh2,php73
      SUBDIR += pelican
      SUBDIR += perlbal
      SUBDIR += php-markdown
