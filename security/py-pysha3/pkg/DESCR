@@ -1,0 +1,2 @@
+This module provides SHA3, SHAKE and Keccak constructors for hash
+objects with a PEP 247 compatible interface.
