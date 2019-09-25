@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/04/21 08:49:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2019/09/25 22:48:02 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-stats-${API}
@@ -157,15 +157,17 @@ libexec/gstreamer-${API}/
 @man man/man1/gst-stats-${API}.1
 @man man/man1/gst-typefind-${API}.1
 share/aclocal/gst-element-check-${API}.m4
-share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.1600.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.1601.0-gdb.py
 share/gir-${API}/
 share/gir-${API}/Gst-${API}.gir
 share/gir-${API}/GstBase-${API}.gir
 share/gir-${API}/GstCheck-${API}.gir
 share/gir-${API}/GstController-${API}.gir
 share/gir-${API}/GstNet-${API}.gir
-share/glib-2.0/gdb/glib_gobject_helper.py
-share/glib-2.0/gdb/gst_gdb.py
+share/gstreamer-${API}/
+share/gstreamer-${API}/gdb/
+share/gstreamer-${API}/gdb/glib_gobject_helper.py
+share/gstreamer-${API}/gdb/gst_gdb.py
 share/locale/af/LC_MESSAGES/gstreamer-${API}.mo
 share/locale/ast/LC_MESSAGES/gstreamer-${API}.mo
 share/locale/az/LC_MESSAGES/gstreamer-${API}.mo

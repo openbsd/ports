@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/08/21 06:37:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/09/25 22:48:02 ajacoutot Exp $
 lib/gstreamer-${API}/libgstasf.so
 lib/gstreamer-${API}/libgstcdio.so
 lib/gstreamer-${API}/libgstdvdlpcmdec.so
@@ -7,7 +7,6 @@ lib/gstreamer-${API}/libgstdvdsub.so
 lib/gstreamer-${API}/libgstrealmedia.so
 lib/gstreamer-${API}/libgstx264.so
 lib/gstreamer-${API}/libgstxingmux.so
-share/gstreamer-${API}/
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstX264Enc.prs
 share/locale/af/LC_MESSAGES/gst-plugins-ugly-${API}.mo

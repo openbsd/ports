@@ -1,11 +1,11 @@
-$OpenBSD: patch-meson_build,v 1.1 2019/07/19 11:33:24 sthen Exp $
+$OpenBSD: patch-meson_build,v 1.2 2019/09/25 22:48:02 ajacoutot Exp $
 
 don't pick up the annoying useless port
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -365,18 +365,6 @@ else
+@@ -367,18 +367,6 @@ else
    message('NO backtraces support.')
  endif
  

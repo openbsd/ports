@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/04/21 08:50:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2019/09/25 22:48:02 ajacoutot Exp $
 include/gstreamer-${API}/gst/audio/audio-bad-prelude.h
 include/gstreamer-${API}/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-${API}/gst/audio/gstplanaraudioadapter.h
@@ -90,6 +90,7 @@ lib/gstreamer-${API}/libgstbz2.so
 lib/gstreamer-${API}/libgstcamerabin.so
 lib/gstreamer-${API}/libgstclosedcaption.so
 lib/gstreamer-${API}/libgstcoloreffects.so
+lib/gstreamer-${API}/libgstcolormanagement.so
 lib/gstreamer-${API}/libgstdashdemux.so
 lib/gstreamer-${API}/libgstdebugutilsbad.so
 lib/gstreamer-${API}/libgstdvbsuboverlay.so
@@ -156,9 +157,7 @@ lib/gstreamer-${API}/libgstyadif.so
 @lib lib/libgstmpegts-${API}.so.${LIBgstmpegts-${API}_VERSION}
 @lib lib/libgstphotography-${API}.so.${LIBgstphotography-${API}_VERSION}
 @lib lib/libgstplayer-${API}.so.${LIBgstplayer-${API}_VERSION}
-lib/libgstsctp-${API}.so
-lib/libgstsctp-${API}.so.0
-@bin lib/libgstsctp-${API}.so.0.1600.0
+@lib lib/libgstsctp-${API}.so.${LIBgstsctp-${API}_VERSION}
 @lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-${API}_VERSION}
 @lib lib/libgstwebrtc-${API}.so.${LIBgstwebrtc-${API}_VERSION}
 lib/pkgconfig/gstreamer-bad-audio-${API}.pc
@@ -173,7 +172,6 @@ share/gir-${API}/GstInsertBin-${API}.gir
 share/gir-${API}/GstMpegts-${API}.gir
 share/gir-${API}/GstPlayer-${API}.gir
 share/gir-${API}/GstWebRTC-${API}.gir
-share/gstreamer-${API}/
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstFreeverb.prs
 share/locale/af/LC_MESSAGES/gst-plugins-bad-${API}.mo

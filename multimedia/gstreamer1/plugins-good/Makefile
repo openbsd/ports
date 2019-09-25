@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/08/24 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2019/09/25 22:48:02 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -11,21 +11,19 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
-REVISION-main=		2
-REVISION-pulse=		0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
 WANTLIB += glib-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gstvideo-1.0 intl
+WANTLIB += intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += FLAC X11 Xdamage Xext Xfixes atk-1.0 bz2 cairo cairo-gobject
+WANTLIB-main += FLAC X11 Xdamage Xext Xfixes bz2 cairo cairo-gobject
 WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 gstallocators-1.0 gstfft-1.0
 WANTLIB-main += gstgl-1.0 gstnet-1.0 gstpbutils-1.0 gstriff-1.0 gstrtp-1.0
-WANTLIB-main += gstrtsp-1.0 gstsdp-1.0 gsttag-1.0 gtk-3 jpeg m
-WANTLIB-main += ogg orc-0.4 pango-1.0 pangocairo-1.0 png shout soup-2.4
-WANTLIB-main += speex tag twolame v4l2 vpx wavpack z
+WANTLIB-main += gstrtsp-1.0 gstsdp-1.0 gsttag-1.0 gtk-3 jpeg m orc-0.4 png
+WANTLIB-main += shout soup-2.4 speex tag twolame v4l2 vpx wavpack z
+WANTLIB-main +=	gstvideo-1.0
 
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope

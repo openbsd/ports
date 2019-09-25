@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2019/08/24 08:46:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2019/09/25 22:48:02 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.14.0
 @conflict gstreamer1-plugins-ugly-<1.14.0
 lib/gstreamer-${API}/libgstalaw.so
@@ -63,7 +63,6 @@ lib/gstreamer-${API}/libgstwavpack.so
 lib/gstreamer-${API}/libgstwavparse.so
 lib/gstreamer-${API}/libgstximagesrc.so
 lib/gstreamer-${API}/libgsty4menc.so
-share/gstreamer-${API}/
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstIirEqualizer10Bands.prs
 share/gstreamer-${API}/presets/GstIirEqualizer3Bands.prs
