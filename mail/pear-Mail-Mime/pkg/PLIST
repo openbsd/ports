@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/06/16 13:59:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/09/26 13:18:29 sthen Exp $
 @group daemon
 lib/
 lib/php/
@@ -47,6 +47,7 @@ pear/tests/Mail_Mime/tests/test_Bug_20564.phpt
 pear/tests/Mail_Mime/tests/test_Bug_21098.phpt
 pear/tests/Mail_Mime/tests/test_Bug_21205.phpt
 pear/tests/Mail_Mime/tests/test_Bug_21206.phpt
+pear/tests/Mail_Mime/tests/test_Bug_21255.phpt
 pear/tests/Mail_Mime/tests/test_Bug_3513_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_3513_2.phpt
 pear/tests/Mail_Mime/tests/test_Bug_3513_3.phpt
