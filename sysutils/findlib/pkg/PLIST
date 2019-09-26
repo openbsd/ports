@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/03/04 12:51:16 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/09/26 09:46:11 chrisz Exp $
 %%native%%
 @bin bin/ocamlfind
 lib/ocaml/bigarray/
@@ -28,9 +28,10 @@ lib/ocaml/findlib/fl_package_base.cmi
 lib/ocaml/findlib/fl_package_base.mli
 lib/ocaml/findlib/topfind.cmi
 lib/ocaml/findlib/topfind.mli
+@comment will be installed by graphics/ocaml-graphics
+@comment lib/ocaml/graphics/
+@comment lib/ocaml/graphics/META
 @comment will be installed by devel/ocaml-ocamlbuild
-lib/ocaml/graphics/
-lib/ocaml/graphics/META
 @comment lib/ocaml/ocamlbuild/
 @comment lib/ocaml/ocamlbuild/META
 lib/ocaml/ocamldoc/META

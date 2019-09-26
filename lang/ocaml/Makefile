@@ -1,24 +1,20 @@
-# $OpenBSD: Makefile,v 1.84 2019/09/18 17:49:37 chrisz Exp $
+# $OpenBSD: Makefile,v 1.85 2019/09/26 09:46:11 chrisz Exp $
 
-MULTI_PACKAGES = -graphics -main
-
-COMMENT-main =	   ML language with complete class-based objective system
-COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
+COMMENT =	   ML language with complete class-based objective system
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
-VERSION=		4.08.1
+VERSION=		4.09.0
 
-PKGNAME-main =		ocaml-${VERSION}
-PKGNAME-graphics =	ocaml-graphics-${VERSION}
+PKGNAME =		ocaml-${VERSION:C/\+//}
 
 # OCaml has no binary compatibility between releases.
-PKGSPEC-main =	ocaml-=${VERSION}
+PKGSPEC =	ocaml-=${VERSION:C/\+//}
 
 CATEGORIES=	lang
 # Remove last version component ocaml-X.XX.X -> ocaml-X.XX
 BASENAME =	${DISTNAME:C/\.[^.]*$//}
-MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
+MASTER_SITES=	https://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 DISTNAME =	ocaml-${VERSION}
@@ -45,13 +41,10 @@ LDFLAGS+=		-Wl,-z,notext
 
 USE_GMAKE=	Yes
 
-RUN_DEPENDS-graphics +=	lang/ocaml
-WANTLIB-main =		c m pthread
-WANTLIB-graphics =	X11
+WANTLIB =		c iberty m pthread z
 
 # for libbfd (used by ocamlobjinfo on .cmxs files)
 BUILD_DEPENDS +=	devel/gdb
-WANTLIB-main +=		iberty z
 
 .include <bsd.port.arch.mk>
 

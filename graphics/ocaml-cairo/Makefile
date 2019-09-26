@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/18 17:49:36 chrisz Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/26 09:46:10 chrisz Exp $
 
 COMMENT =	binding to cairo, a 2D vector graphics library
 CATEGORIES =	graphics
@@ -6,7 +6,7 @@ CATEGORIES =	graphics
 GH_ACCOUNT =	Chris00
 GH_PROJECT =	ocaml-cairo
 GH_TAGNAME =	0.6.1
-REVISION =	0
+REVISION =	1
 
 # LGPL 3.0
 PERMIT_PACKAGE = Yes
@@ -18,10 +18,9 @@ WANTLIB += intl pango-1.0 pangocairo-1.0 pangoft2-1.0 c m z
 
 MODULES =	lang/ocaml
 
-# findlib provides the ocaml-graphics META file
 BUILD_DEPENDS = devel/dune \
 		sysutils/findlib \
-		lang/ocaml,-graphics \
+		graphics/ocaml-graphics \
 		x11/lablgtk2
 
 LIB_DEPENDS =	devel/pango \

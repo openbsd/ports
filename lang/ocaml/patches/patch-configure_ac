@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2019/09/18 17:49:37 chrisz Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2019/09/26 09:46:11 chrisz Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -644,6 +644,11 @@ AS_CASE([$CC,$host],
+@@ -640,6 +640,11 @@ AS_CASE([$CC,$host],
  )
  
  
@@ -15,7 +15,7 @@ Index: configure.ac
  ## Program to use to install files
  AC_PROG_INSTALL
  
-@@ -760,8 +765,8 @@ AS_IF([test x"$enable_shared" != "xno"],
+@@ -756,8 +761,8 @@ AS_IF([test x"$enable_shared" != "xno"],
      [[*-*-linux*|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*\
      |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*]],
        [sharedlib_cflags="-fPIC"
@@ -25,7 +25,7 @@ Index: configure.ac
        rpath="-Wl,-rpath,"
        mksharedlibrpath="-Wl,-rpath,"
        natdynlinkopts="-Wl,-E"
-@@ -1564,27 +1569,39 @@ AS_IF([test x"$enable_graph_lib" = "xno" ],
+@@ -1438,27 +1443,39 @@ AS_IF([test x"$enable_systhreads" = "xno"],
  ## libbfd
  
  AC_CHECK_HEADER([bfd.h],

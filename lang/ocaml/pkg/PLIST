@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2019/09/18 17:49:37 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/09/26 09:46:11 chrisz Exp $
+@pkgpath lang/ocaml,-main
 %%native%%
 bin/ocaml
 bin/ocaml-instr-graph
@@ -78,9 +79,6 @@ lib/ocaml/caml/hash.h
 lib/ocaml/caml/hooks.h
 lib/ocaml/caml/instrtrace.h
 lib/ocaml/caml/instruct.h
-lib/ocaml/caml/int64_emul.h
-lib/ocaml/caml/int64_format.h
-lib/ocaml/caml/int64_native.h
 lib/ocaml/caml/interp.h
 lib/ocaml/caml/intext.h
 lib/ocaml/caml/io.h
@@ -115,74 +113,43 @@ lib/ocaml/caml/version.h
 lib/ocaml/caml/weak.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
+lib/ocaml/camlheaderd
+lib/ocaml/camlheaderi
 lib/ocaml/camlinternalFormat.cmi
 lib/ocaml/camlinternalFormat.cmt
 lib/ocaml/camlinternalFormat.cmti
 lib/ocaml/camlinternalFormat.ml
 lib/ocaml/camlinternalFormat.mli
-lib/ocaml/camlinternalFormat.p.cmt
 lib/ocaml/camlinternalFormatBasics.cmi
 lib/ocaml/camlinternalFormatBasics.cmt
 lib/ocaml/camlinternalFormatBasics.cmti
 lib/ocaml/camlinternalFormatBasics.ml
 lib/ocaml/camlinternalFormatBasics.mli
-lib/ocaml/camlinternalFormatBasics.p.cmt
 lib/ocaml/camlinternalLazy.cmi
 lib/ocaml/camlinternalLazy.cmt
 lib/ocaml/camlinternalLazy.cmti
 lib/ocaml/camlinternalLazy.ml
 lib/ocaml/camlinternalLazy.mli
-lib/ocaml/camlinternalLazy.p.cmt
 lib/ocaml/camlinternalMod.cmi
 lib/ocaml/camlinternalMod.cmt
 lib/ocaml/camlinternalMod.cmti
 lib/ocaml/camlinternalMod.ml
 lib/ocaml/camlinternalMod.mli
-lib/ocaml/camlinternalMod.p.cmt
 lib/ocaml/camlinternalOO.cmi
 lib/ocaml/camlinternalOO.cmt
 lib/ocaml/camlinternalOO.cmti
 lib/ocaml/camlinternalOO.ml
 lib/ocaml/camlinternalOO.mli
-lib/ocaml/camlinternalOO.p.cmt
 lib/ocaml/char.ml
 lib/ocaml/char.mli
 lib/ocaml/compiler-libs/
-lib/ocaml/compiler-libs/CSE.cmi
-lib/ocaml/compiler-libs/CSE.cmt
-lib/ocaml/compiler-libs/CSEgen.cmi
-lib/ocaml/compiler-libs/CSEgen.cmt
-lib/ocaml/compiler-libs/CSEgen.cmti
-lib/ocaml/compiler-libs/afl_instrument.cmi
-lib/ocaml/compiler-libs/afl_instrument.cmt
-lib/ocaml/compiler-libs/afl_instrument.cmti
-lib/ocaml/compiler-libs/alias_analysis.cmi
-lib/ocaml/compiler-libs/alias_analysis.cmt
-lib/ocaml/compiler-libs/alias_analysis.cmti
-lib/ocaml/compiler-libs/allocated_const.cmi
-lib/ocaml/compiler-libs/allocated_const.cmt
-lib/ocaml/compiler-libs/allocated_const.cmti
 lib/ocaml/compiler-libs/annot.cmi
 lib/ocaml/compiler-libs/annot.cmti
 lib/ocaml/compiler-libs/annot.mli
-lib/ocaml/compiler-libs/arch.cmi
-lib/ocaml/compiler-libs/arch.cmt
 lib/ocaml/compiler-libs/arg_helper.cmi
 lib/ocaml/compiler-libs/arg_helper.cmt
 lib/ocaml/compiler-libs/arg_helper.cmti
 lib/ocaml/compiler-libs/arg_helper.mli
-lib/ocaml/compiler-libs/asmgen.cmi
-lib/ocaml/compiler-libs/asmgen.cmt
-lib/ocaml/compiler-libs/asmgen.cmti
-lib/ocaml/compiler-libs/asmlibrarian.cmi
-lib/ocaml/compiler-libs/asmlibrarian.cmt
-lib/ocaml/compiler-libs/asmlibrarian.cmti
-lib/ocaml/compiler-libs/asmlink.cmi
-lib/ocaml/compiler-libs/asmlink.cmt
-lib/ocaml/compiler-libs/asmlink.cmti
-lib/ocaml/compiler-libs/asmpackager.cmi
-lib/ocaml/compiler-libs/asmpackager.cmt
-lib/ocaml/compiler-libs/asmpackager.cmti
 lib/ocaml/compiler-libs/ast_helper.cmi
 lib/ocaml/compiler-libs/ast_helper.cmt
 lib/ocaml/compiler-libs/ast_helper.cmti
@@ -206,27 +173,10 @@ lib/ocaml/compiler-libs/attr_helper.cmi
 lib/ocaml/compiler-libs/attr_helper.cmt
 lib/ocaml/compiler-libs/attr_helper.cmti
 lib/ocaml/compiler-libs/attr_helper.mli
-lib/ocaml/compiler-libs/augment_specialised_args.cmi
-lib/ocaml/compiler-libs/augment_specialised_args.cmt
-lib/ocaml/compiler-libs/augment_specialised_args.cmti
-lib/ocaml/compiler-libs/backend_intf.cmi
-lib/ocaml/compiler-libs/backend_intf.cmti
-lib/ocaml/compiler-libs/backend_var.cmi
-lib/ocaml/compiler-libs/backend_var.cmt
-lib/ocaml/compiler-libs/backend_var.cmti
-lib/ocaml/compiler-libs/backend_var.mli
-lib/ocaml/compiler-libs/branch_relaxation.cmi
-lib/ocaml/compiler-libs/branch_relaxation.cmt
-lib/ocaml/compiler-libs/branch_relaxation.cmti
-lib/ocaml/compiler-libs/branch_relaxation_intf.cmi
-lib/ocaml/compiler-libs/branch_relaxation_intf.cmt
 lib/ocaml/compiler-libs/btype.cmi
 lib/ocaml/compiler-libs/btype.cmt
 lib/ocaml/compiler-libs/btype.cmti
 lib/ocaml/compiler-libs/btype.mli
-lib/ocaml/compiler-libs/build_export_info.cmi
-lib/ocaml/compiler-libs/build_export_info.cmt
-lib/ocaml/compiler-libs/build_export_info.cmti
 lib/ocaml/compiler-libs/build_path_prefix_map.cmi
 lib/ocaml/compiler-libs/build_path_prefix_map.cmt
 lib/ocaml/compiler-libs/build_path_prefix_map.cmti
@@ -263,44 +213,14 @@ lib/ocaml/compiler-libs/ccomp.cmi
 lib/ocaml/compiler-libs/ccomp.cmt
 lib/ocaml/compiler-libs/ccomp.cmti
 lib/ocaml/compiler-libs/ccomp.mli
-lib/ocaml/compiler-libs/clambda.cmi
-lib/ocaml/compiler-libs/clambda.cmt
-lib/ocaml/compiler-libs/clambda.cmti
 lib/ocaml/compiler-libs/clflags.cmi
 lib/ocaml/compiler-libs/clflags.cmt
 lib/ocaml/compiler-libs/clflags.cmti
 lib/ocaml/compiler-libs/clflags.mli
-lib/ocaml/compiler-libs/closure.cmi
-lib/ocaml/compiler-libs/closure.cmt
-lib/ocaml/compiler-libs/closure.cmti
-lib/ocaml/compiler-libs/closure_conversion.cmi
-lib/ocaml/compiler-libs/closure_conversion.cmt
-lib/ocaml/compiler-libs/closure_conversion.cmti
-lib/ocaml/compiler-libs/closure_conversion_aux.cmi
-lib/ocaml/compiler-libs/closure_conversion_aux.cmt
-lib/ocaml/compiler-libs/closure_conversion_aux.cmti
-lib/ocaml/compiler-libs/closure_element.cmi
-lib/ocaml/compiler-libs/closure_element.cmt
-lib/ocaml/compiler-libs/closure_element.cmti
-lib/ocaml/compiler-libs/closure_id.cmi
-lib/ocaml/compiler-libs/closure_id.cmt
-lib/ocaml/compiler-libs/closure_id.cmti
-lib/ocaml/compiler-libs/closure_offsets.cmi
-lib/ocaml/compiler-libs/closure_offsets.cmt
-lib/ocaml/compiler-libs/closure_offsets.cmti
-lib/ocaml/compiler-libs/closure_origin.cmi
-lib/ocaml/compiler-libs/closure_origin.cmt
-lib/ocaml/compiler-libs/closure_origin.cmti
 lib/ocaml/compiler-libs/cmi_format.cmi
 lib/ocaml/compiler-libs/cmi_format.cmt
 lib/ocaml/compiler-libs/cmi_format.cmti
 lib/ocaml/compiler-libs/cmi_format.mli
-lib/ocaml/compiler-libs/cmm.cmi
-lib/ocaml/compiler-libs/cmm.cmt
-lib/ocaml/compiler-libs/cmm.cmti
-lib/ocaml/compiler-libs/cmmgen.cmi
-lib/ocaml/compiler-libs/cmmgen.cmt
-lib/ocaml/compiler-libs/cmmgen.cmti
 lib/ocaml/compiler-libs/cmo_format.cmi
 lib/ocaml/compiler-libs/cmo_format.cmti
 lib/ocaml/compiler-libs/cmo_format.mli
@@ -310,35 +230,14 @@ lib/ocaml/compiler-libs/cmt_format.cmti
 lib/ocaml/compiler-libs/cmt_format.mli
 lib/ocaml/compiler-libs/cmx_format.cmi
 lib/ocaml/compiler-libs/cmx_format.cmti
-lib/ocaml/compiler-libs/coloring.cmi
-lib/ocaml/compiler-libs/coloring.cmt
-lib/ocaml/compiler-libs/coloring.cmti
-lib/ocaml/compiler-libs/comballoc.cmi
-lib/ocaml/compiler-libs/comballoc.cmt
-lib/ocaml/compiler-libs/comballoc.cmti
-lib/ocaml/compiler-libs/compdynlink.cmi
-lib/ocaml/compiler-libs/compdynlink.cmt
-lib/ocaml/compiler-libs/compdynlink.cmti
-lib/ocaml/compiler-libs/compdynlink.mli
-lib/ocaml/compiler-libs/compdynlink_common.cmi
-lib/ocaml/compiler-libs/compdynlink_common.cmt
-lib/ocaml/compiler-libs/compdynlink_common.cmti
-lib/ocaml/compiler-libs/compdynlink_common.mli
-lib/ocaml/compiler-libs/compdynlink_platform_intf.cmi
-lib/ocaml/compiler-libs/compdynlink_platform_intf.cmt
-lib/ocaml/compiler-libs/compdynlink_platform_intf.cmti
-lib/ocaml/compiler-libs/compdynlink_platform_intf.mli
-lib/ocaml/compiler-libs/compdynlink_types.cmi
-lib/ocaml/compiler-libs/compdynlink_types.cmt
-lib/ocaml/compiler-libs/compdynlink_types.cmti
-lib/ocaml/compiler-libs/compdynlink_types.mli
+lib/ocaml/compiler-libs/cmx_format.mli
+lib/ocaml/compiler-libs/cmxs_format.cmi
+lib/ocaml/compiler-libs/cmxs_format.cmti
+lib/ocaml/compiler-libs/cmxs_format.mli
 lib/ocaml/compiler-libs/compenv.cmi
 lib/ocaml/compiler-libs/compenv.cmt
 lib/ocaml/compiler-libs/compenv.cmti
 lib/ocaml/compiler-libs/compenv.mli
-lib/ocaml/compiler-libs/compilation_unit.cmi
-lib/ocaml/compiler-libs/compilation_unit.cmt
-lib/ocaml/compiler-libs/compilation_unit.cmti
 lib/ocaml/compiler-libs/compile.cmi
 lib/ocaml/compiler-libs/compile.cmt
 lib/ocaml/compiler-libs/compile.cmti
@@ -347,17 +246,10 @@ lib/ocaml/compiler-libs/compile_common.cmi
 lib/ocaml/compiler-libs/compile_common.cmt
 lib/ocaml/compiler-libs/compile_common.cmti
 lib/ocaml/compiler-libs/compile_common.mli
-lib/ocaml/compiler-libs/compilenv.cmi
-lib/ocaml/compiler-libs/compilenv.cmt
-lib/ocaml/compiler-libs/compilenv.cmti
 lib/ocaml/compiler-libs/compmisc.cmi
 lib/ocaml/compiler-libs/compmisc.cmt
 lib/ocaml/compiler-libs/compmisc.cmti
 lib/ocaml/compiler-libs/compmisc.mli
-lib/ocaml/compiler-libs/compplugin.cmi
-lib/ocaml/compiler-libs/compplugin.cmt
-lib/ocaml/compiler-libs/compplugin.cmti
-lib/ocaml/compiler-libs/compplugin.mli
 lib/ocaml/compiler-libs/config.cmi
 lib/ocaml/compiler-libs/config.cmt
 lib/ocaml/compiler-libs/config.cmti
@@ -374,12 +266,10 @@ lib/ocaml/compiler-libs/datarepr.cmi
 lib/ocaml/compiler-libs/datarepr.cmt
 lib/ocaml/compiler-libs/datarepr.cmti
 lib/ocaml/compiler-libs/datarepr.mli
-lib/ocaml/compiler-libs/deadcode.cmi
-lib/ocaml/compiler-libs/deadcode.cmt
-lib/ocaml/compiler-libs/deadcode.cmti
 lib/ocaml/compiler-libs/debuginfo.cmi
 lib/ocaml/compiler-libs/debuginfo.cmt
 lib/ocaml/compiler-libs/debuginfo.cmti
+lib/ocaml/compiler-libs/debuginfo.mli
 lib/ocaml/compiler-libs/depend.cmi
 lib/ocaml/compiler-libs/depend.cmt
 lib/ocaml/compiler-libs/depend.cmti
@@ -392,15 +282,6 @@ lib/ocaml/compiler-libs/docstrings.cmi
 lib/ocaml/compiler-libs/docstrings.cmt
 lib/ocaml/compiler-libs/docstrings.cmti
 lib/ocaml/compiler-libs/docstrings.mli
-lib/ocaml/compiler-libs/effect_analysis.cmi
-lib/ocaml/compiler-libs/effect_analysis.cmt
-lib/ocaml/compiler-libs/effect_analysis.cmti
-lib/ocaml/compiler-libs/emit.cmi
-lib/ocaml/compiler-libs/emit.cmt
-lib/ocaml/compiler-libs/emit.cmti
-lib/ocaml/compiler-libs/emitaux.cmi
-lib/ocaml/compiler-libs/emitaux.cmt
-lib/ocaml/compiler-libs/emitaux.cmti
 lib/ocaml/compiler-libs/emitcode.cmi
 lib/ocaml/compiler-libs/emitcode.cmt
 lib/ocaml/compiler-libs/emitcode.cmti
@@ -417,48 +298,12 @@ lib/ocaml/compiler-libs/errors.cmi
 lib/ocaml/compiler-libs/errors.cmt
 lib/ocaml/compiler-libs/errors.cmti
 lib/ocaml/compiler-libs/errors.mli
-lib/ocaml/compiler-libs/export_id.cmi
-lib/ocaml/compiler-libs/export_id.cmt
-lib/ocaml/compiler-libs/export_id.cmti
-lib/ocaml/compiler-libs/export_info.cmi
-lib/ocaml/compiler-libs/export_info.cmt
-lib/ocaml/compiler-libs/export_info.cmti
-lib/ocaml/compiler-libs/export_info_for_pack.cmi
-lib/ocaml/compiler-libs/export_info_for_pack.cmt
-lib/ocaml/compiler-libs/export_info_for_pack.cmti
 lib/ocaml/compiler-libs/expunge.cmi
 lib/ocaml/compiler-libs/expunge.cmt
-lib/ocaml/compiler-libs/extract_projections.cmi
-lib/ocaml/compiler-libs/extract_projections.cmt
-lib/ocaml/compiler-libs/extract_projections.cmti
-lib/ocaml/compiler-libs/find_recursive_functions.cmi
-lib/ocaml/compiler-libs/find_recursive_functions.cmt
-lib/ocaml/compiler-libs/find_recursive_functions.cmti
-lib/ocaml/compiler-libs/flambda.cmi
-lib/ocaml/compiler-libs/flambda.cmt
-lib/ocaml/compiler-libs/flambda.cmti
-lib/ocaml/compiler-libs/flambda_invariants.cmi
-lib/ocaml/compiler-libs/flambda_invariants.cmt
-lib/ocaml/compiler-libs/flambda_invariants.cmti
-lib/ocaml/compiler-libs/flambda_iterators.cmi
-lib/ocaml/compiler-libs/flambda_iterators.cmt
-lib/ocaml/compiler-libs/flambda_iterators.cmti
-lib/ocaml/compiler-libs/flambda_to_clambda.cmi
-lib/ocaml/compiler-libs/flambda_to_clambda.cmt
-lib/ocaml/compiler-libs/flambda_to_clambda.cmti
-lib/ocaml/compiler-libs/flambda_utils.cmi
-lib/ocaml/compiler-libs/flambda_utils.cmt
-lib/ocaml/compiler-libs/flambda_utils.cmti
-lib/ocaml/compiler-libs/freshening.cmi
-lib/ocaml/compiler-libs/freshening.cmt
-lib/ocaml/compiler-libs/freshening.cmti
 lib/ocaml/compiler-libs/genprintval.cmi
 lib/ocaml/compiler-libs/genprintval.cmt
 lib/ocaml/compiler-libs/genprintval.cmti
 lib/ocaml/compiler-libs/genprintval.mli
-lib/ocaml/compiler-libs/id_types.cmi
-lib/ocaml/compiler-libs/id_types.cmt
-lib/ocaml/compiler-libs/id_types.cmti
 lib/ocaml/compiler-libs/ident.cmi
 lib/ocaml/compiler-libs/ident.cmt
 lib/ocaml/compiler-libs/ident.cmti
@@ -467,9 +312,6 @@ lib/ocaml/compiler-libs/identifiable.cmi
 lib/ocaml/compiler-libs/identifiable.cmt
 lib/ocaml/compiler-libs/identifiable.cmti
 lib/ocaml/compiler-libs/identifiable.mli
-lib/ocaml/compiler-libs/import_approx.cmi
-lib/ocaml/compiler-libs/import_approx.cmt
-lib/ocaml/compiler-libs/import_approx.cmti
 lib/ocaml/compiler-libs/includeclass.cmi
 lib/ocaml/compiler-libs/includeclass.cmt
 lib/ocaml/compiler-libs/includeclass.cmti
@@ -482,35 +324,6 @@ lib/ocaml/compiler-libs/includemod.cmi
 lib/ocaml/compiler-libs/includemod.cmt
 lib/ocaml/compiler-libs/includemod.cmti
 lib/ocaml/compiler-libs/includemod.mli
-lib/ocaml/compiler-libs/inconstant_idents.cmi
-lib/ocaml/compiler-libs/inconstant_idents.cmt
-lib/ocaml/compiler-libs/inconstant_idents.cmti
-lib/ocaml/compiler-libs/initialize_symbol_to_let_symbol.cmi
-lib/ocaml/compiler-libs/initialize_symbol_to_let_symbol.cmt
-lib/ocaml/compiler-libs/initialize_symbol_to_let_symbol.cmti
-lib/ocaml/compiler-libs/inline_and_simplify.cmi
-lib/ocaml/compiler-libs/inline_and_simplify.cmt
-lib/ocaml/compiler-libs/inline_and_simplify.cmti
-lib/ocaml/compiler-libs/inline_and_simplify_aux.cmi
-lib/ocaml/compiler-libs/inline_and_simplify_aux.cmt
-lib/ocaml/compiler-libs/inline_and_simplify_aux.cmti
-lib/ocaml/compiler-libs/inlining_cost.cmi
-lib/ocaml/compiler-libs/inlining_cost.cmt
-lib/ocaml/compiler-libs/inlining_cost.cmti
-lib/ocaml/compiler-libs/inlining_decision.cmi
-lib/ocaml/compiler-libs/inlining_decision.cmt
-lib/ocaml/compiler-libs/inlining_decision.cmti
-lib/ocaml/compiler-libs/inlining_decision_intf.cmi
-lib/ocaml/compiler-libs/inlining_decision_intf.cmti
-lib/ocaml/compiler-libs/inlining_stats.cmi
-lib/ocaml/compiler-libs/inlining_stats.cmt
-lib/ocaml/compiler-libs/inlining_stats.cmti
-lib/ocaml/compiler-libs/inlining_stats_types.cmi
-lib/ocaml/compiler-libs/inlining_stats_types.cmt
-lib/ocaml/compiler-libs/inlining_stats_types.cmti
-lib/ocaml/compiler-libs/inlining_transforms.cmi
-lib/ocaml/compiler-libs/inlining_transforms.cmt
-lib/ocaml/compiler-libs/inlining_transforms.cmti
 lib/ocaml/compiler-libs/instruct.cmi
 lib/ocaml/compiler-libs/instruct.cmt
 lib/ocaml/compiler-libs/instruct.cmti
@@ -519,18 +332,6 @@ lib/ocaml/compiler-libs/int_replace_polymorphic_compare.cmi
 lib/ocaml/compiler-libs/int_replace_polymorphic_compare.cmt
 lib/ocaml/compiler-libs/int_replace_polymorphic_compare.cmti
 lib/ocaml/compiler-libs/int_replace_polymorphic_compare.mli
-lib/ocaml/compiler-libs/interf.cmi
-lib/ocaml/compiler-libs/interf.cmt
-lib/ocaml/compiler-libs/interf.cmti
-lib/ocaml/compiler-libs/internal_variable_names.cmi
-lib/ocaml/compiler-libs/internal_variable_names.cmt
-lib/ocaml/compiler-libs/internal_variable_names.cmti
-lib/ocaml/compiler-libs/interval.cmi
-lib/ocaml/compiler-libs/interval.cmt
-lib/ocaml/compiler-libs/interval.cmti
-lib/ocaml/compiler-libs/invariant_params.cmi
-lib/ocaml/compiler-libs/invariant_params.cmt
-lib/ocaml/compiler-libs/invariant_params.cmti
 lib/ocaml/compiler-libs/lambda.cmi
 lib/ocaml/compiler-libs/lambda.cmt
 lib/ocaml/compiler-libs/lambda.cmti
@@ -539,27 +340,6 @@ lib/ocaml/compiler-libs/lexer.cmi
 lib/ocaml/compiler-libs/lexer.cmt
 lib/ocaml/compiler-libs/lexer.cmti
 lib/ocaml/compiler-libs/lexer.mli
-lib/ocaml/compiler-libs/lift_code.cmi
-lib/ocaml/compiler-libs/lift_code.cmt
-lib/ocaml/compiler-libs/lift_code.cmti
-lib/ocaml/compiler-libs/lift_constants.cmi
-lib/ocaml/compiler-libs/lift_constants.cmt
-lib/ocaml/compiler-libs/lift_constants.cmti
-lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmi
-lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmt
-lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmti
-lib/ocaml/compiler-libs/linearize.cmi
-lib/ocaml/compiler-libs/linearize.cmt
-lib/ocaml/compiler-libs/linearize.cmti
-lib/ocaml/compiler-libs/linkage_name.cmi
-lib/ocaml/compiler-libs/linkage_name.cmt
-lib/ocaml/compiler-libs/linkage_name.cmti
-lib/ocaml/compiler-libs/linscan.cmi
-lib/ocaml/compiler-libs/linscan.cmt
-lib/ocaml/compiler-libs/linscan.cmti
-lib/ocaml/compiler-libs/liveness.cmi
-lib/ocaml/compiler-libs/liveness.cmt
-lib/ocaml/compiler-libs/liveness.cmti
 lib/ocaml/compiler-libs/load_path.cmi
 lib/ocaml/compiler-libs/load_path.cmt
 lib/ocaml/compiler-libs/load_path.cmti
@@ -572,9 +352,6 @@ lib/ocaml/compiler-libs/longident.cmi
 lib/ocaml/compiler-libs/longident.cmt
 lib/ocaml/compiler-libs/longident.cmti
 lib/ocaml/compiler-libs/longident.mli
-lib/ocaml/compiler-libs/mach.cmi
-lib/ocaml/compiler-libs/mach.cmt
-lib/ocaml/compiler-libs/mach.cmti
 lib/ocaml/compiler-libs/main.cmi
 lib/ocaml/compiler-libs/main.cmo
 lib/ocaml/compiler-libs/main.cmt
@@ -596,9 +373,6 @@ lib/ocaml/compiler-libs/meta.cmi
 lib/ocaml/compiler-libs/meta.cmt
 lib/ocaml/compiler-libs/meta.cmti
 lib/ocaml/compiler-libs/meta.mli
-lib/ocaml/compiler-libs/middle_end.cmi
-lib/ocaml/compiler-libs/middle_end.cmt
-lib/ocaml/compiler-libs/middle_end.cmti
 lib/ocaml/compiler-libs/misc.cmi
 lib/ocaml/compiler-libs/misc.cmt
 lib/ocaml/compiler-libs/misc.cmti
@@ -607,9 +381,6 @@ lib/ocaml/compiler-libs/mtype.cmi
 lib/ocaml/compiler-libs/mtype.cmt
 lib/ocaml/compiler-libs/mtype.cmti
 lib/ocaml/compiler-libs/mtype.mli
-lib/ocaml/compiler-libs/mutable_variable.cmi
-lib/ocaml/compiler-libs/mutable_variable.cmt
-lib/ocaml/compiler-libs/mutable_variable.cmti
 lib/ocaml/compiler-libs/numbers.cmi
 lib/ocaml/compiler-libs/numbers.cmt
 lib/ocaml/compiler-libs/numbers.cmti
@@ -619,21 +390,14 @@ lib/ocaml/compiler-libs/ocamlcommon.cma
 lib/ocaml/compiler-libs/ocamltoplevel.cma
 lib/ocaml/compiler-libs/opcodes.cmi
 lib/ocaml/compiler-libs/opcodes.cmt
+lib/ocaml/compiler-libs/opcodes.cmti
+lib/ocaml/compiler-libs/opcodes.mli
 lib/ocaml/compiler-libs/oprint.cmi
 lib/ocaml/compiler-libs/oprint.cmt
 lib/ocaml/compiler-libs/oprint.cmti
 lib/ocaml/compiler-libs/oprint.mli
-lib/ocaml/compiler-libs/optcompile.cmi
-lib/ocaml/compiler-libs/optcompile.cmt
-lib/ocaml/compiler-libs/optcompile.cmti
 lib/ocaml/compiler-libs/optcompile.mli
-lib/ocaml/compiler-libs/opterrors.cmi
-lib/ocaml/compiler-libs/opterrors.cmt
-lib/ocaml/compiler-libs/opterrors.cmti
 lib/ocaml/compiler-libs/opterrors.mli
-lib/ocaml/compiler-libs/optmain.cmi
-lib/ocaml/compiler-libs/optmain.cmt
-lib/ocaml/compiler-libs/optmain.cmti
 lib/ocaml/compiler-libs/optmain.mli
 lib/ocaml/compiler-libs/opttopdirs.mli
 lib/ocaml/compiler-libs/opttoploop.mli
@@ -641,9 +405,6 @@ lib/ocaml/compiler-libs/opttopmain.mli
 lib/ocaml/compiler-libs/outcometree.cmi
 lib/ocaml/compiler-libs/outcometree.cmti
 lib/ocaml/compiler-libs/outcometree.mli
-lib/ocaml/compiler-libs/parameter.cmi
-lib/ocaml/compiler-libs/parameter.cmt
-lib/ocaml/compiler-libs/parameter.cmti
 lib/ocaml/compiler-libs/parmatch.cmi
 lib/ocaml/compiler-libs/parmatch.cmt
 lib/ocaml/compiler-libs/parmatch.cmti
@@ -659,13 +420,14 @@ lib/ocaml/compiler-libs/parser.mli
 lib/ocaml/compiler-libs/parsetree.cmi
 lib/ocaml/compiler-libs/parsetree.cmti
 lib/ocaml/compiler-libs/parsetree.mli
-lib/ocaml/compiler-libs/pass_wrapper.cmi
-lib/ocaml/compiler-libs/pass_wrapper.cmt
-lib/ocaml/compiler-libs/pass_wrapper.cmti
 lib/ocaml/compiler-libs/path.cmi
 lib/ocaml/compiler-libs/path.cmt
 lib/ocaml/compiler-libs/path.cmti
 lib/ocaml/compiler-libs/path.mli
+lib/ocaml/compiler-libs/persistent_env.cmi
+lib/ocaml/compiler-libs/persistent_env.cmt
+lib/ocaml/compiler-libs/persistent_env.cmti
+lib/ocaml/compiler-libs/persistent_env.mli
 lib/ocaml/compiler-libs/pparse.cmi
 lib/ocaml/compiler-libs/pparse.cmt
 lib/ocaml/compiler-libs/pparse.cmti
@@ -686,12 +448,6 @@ lib/ocaml/compiler-libs/printast.cmi
 lib/ocaml/compiler-libs/printast.cmt
 lib/ocaml/compiler-libs/printast.cmti
 lib/ocaml/compiler-libs/printast.mli
-lib/ocaml/compiler-libs/printclambda.cmi
-lib/ocaml/compiler-libs/printclambda.cmt
-lib/ocaml/compiler-libs/printclambda.cmti
-lib/ocaml/compiler-libs/printcmm.cmi
-lib/ocaml/compiler-libs/printcmm.cmt
-lib/ocaml/compiler-libs/printcmm.cmti
 lib/ocaml/compiler-libs/printinstr.cmi
 lib/ocaml/compiler-libs/printinstr.cmt
 lib/ocaml/compiler-libs/printinstr.cmti
@@ -700,12 +456,6 @@ lib/ocaml/compiler-libs/printlambda.cmi
 lib/ocaml/compiler-libs/printlambda.cmt
 lib/ocaml/compiler-libs/printlambda.cmti
 lib/ocaml/compiler-libs/printlambda.mli
-lib/ocaml/compiler-libs/printlinear.cmi
-lib/ocaml/compiler-libs/printlinear.cmt
-lib/ocaml/compiler-libs/printlinear.cmti
-lib/ocaml/compiler-libs/printmach.cmi
-lib/ocaml/compiler-libs/printmach.cmt
-lib/ocaml/compiler-libs/printmach.cmti
 lib/ocaml/compiler-libs/printpat.cmi
 lib/ocaml/compiler-libs/printpat.cmt
 lib/ocaml/compiler-libs/printpat.cmti
@@ -718,106 +468,22 @@ lib/ocaml/compiler-libs/printtyped.cmi
 lib/ocaml/compiler-libs/printtyped.cmt
 lib/ocaml/compiler-libs/printtyped.cmti
 lib/ocaml/compiler-libs/printtyped.mli
-lib/ocaml/compiler-libs/proc.cmi
-lib/ocaml/compiler-libs/proc.cmt
-lib/ocaml/compiler-libs/proc.cmti
 lib/ocaml/compiler-libs/profile.cmi
 lib/ocaml/compiler-libs/profile.cmt
 lib/ocaml/compiler-libs/profile.cmti
 lib/ocaml/compiler-libs/profile.mli
-lib/ocaml/compiler-libs/projection.cmi
-lib/ocaml/compiler-libs/projection.cmt
-lib/ocaml/compiler-libs/projection.cmti
 lib/ocaml/compiler-libs/rec_check.cmi
 lib/ocaml/compiler-libs/rec_check.cmt
 lib/ocaml/compiler-libs/rec_check.cmti
 lib/ocaml/compiler-libs/rec_check.mli
-lib/ocaml/compiler-libs/ref_to_variables.cmi
-lib/ocaml/compiler-libs/ref_to_variables.cmt
-lib/ocaml/compiler-libs/ref_to_variables.cmti
-lib/ocaml/compiler-libs/reg.cmi
-lib/ocaml/compiler-libs/reg.cmt
-lib/ocaml/compiler-libs/reg.cmti
-lib/ocaml/compiler-libs/reload.cmi
-lib/ocaml/compiler-libs/reload.cmt
-lib/ocaml/compiler-libs/reload.cmti
-lib/ocaml/compiler-libs/reloadgen.cmi
-lib/ocaml/compiler-libs/reloadgen.cmt
-lib/ocaml/compiler-libs/reloadgen.cmti
-lib/ocaml/compiler-libs/remove_free_vars_equal_to_args.cmi
-lib/ocaml/compiler-libs/remove_free_vars_equal_to_args.cmt
-lib/ocaml/compiler-libs/remove_free_vars_equal_to_args.cmti
-lib/ocaml/compiler-libs/remove_unused_arguments.cmi
-lib/ocaml/compiler-libs/remove_unused_arguments.cmt
-lib/ocaml/compiler-libs/remove_unused_arguments.cmti
-lib/ocaml/compiler-libs/remove_unused_closure_vars.cmi
-lib/ocaml/compiler-libs/remove_unused_closure_vars.cmt
-lib/ocaml/compiler-libs/remove_unused_closure_vars.cmti
-lib/ocaml/compiler-libs/remove_unused_program_constructs.cmi
-lib/ocaml/compiler-libs/remove_unused_program_constructs.cmt
-lib/ocaml/compiler-libs/remove_unused_program_constructs.cmti
 lib/ocaml/compiler-libs/runtimedef.cmi
 lib/ocaml/compiler-libs/runtimedef.cmt
 lib/ocaml/compiler-libs/runtimedef.cmti
 lib/ocaml/compiler-libs/runtimedef.mli
-lib/ocaml/compiler-libs/schedgen.cmi
-lib/ocaml/compiler-libs/schedgen.cmt
-lib/ocaml/compiler-libs/schedgen.cmti
-lib/ocaml/compiler-libs/scheduling.cmi
-lib/ocaml/compiler-libs/scheduling.cmt
-lib/ocaml/compiler-libs/scheduling.cmti
-lib/ocaml/compiler-libs/selectgen.cmi
-lib/ocaml/compiler-libs/selectgen.cmt
-lib/ocaml/compiler-libs/selectgen.cmti
-lib/ocaml/compiler-libs/selection.cmi
-lib/ocaml/compiler-libs/selection.cmt
-lib/ocaml/compiler-libs/selection.cmti
-lib/ocaml/compiler-libs/semantics_of_primitives.cmi
-lib/ocaml/compiler-libs/semantics_of_primitives.cmt
-lib/ocaml/compiler-libs/semantics_of_primitives.cmti
-lib/ocaml/compiler-libs/semantics_of_primitives.mli
-lib/ocaml/compiler-libs/set_of_closures_id.cmi
-lib/ocaml/compiler-libs/set_of_closures_id.cmt
-lib/ocaml/compiler-libs/set_of_closures_id.cmti
-lib/ocaml/compiler-libs/set_of_closures_origin.cmi
-lib/ocaml/compiler-libs/set_of_closures_origin.cmt
-lib/ocaml/compiler-libs/set_of_closures_origin.cmti
-lib/ocaml/compiler-libs/share_constants.cmi
-lib/ocaml/compiler-libs/share_constants.cmt
-lib/ocaml/compiler-libs/share_constants.cmti
-lib/ocaml/compiler-libs/simple_value_approx.cmi
-lib/ocaml/compiler-libs/simple_value_approx.cmt
-lib/ocaml/compiler-libs/simple_value_approx.cmti
 lib/ocaml/compiler-libs/simplif.cmi
 lib/ocaml/compiler-libs/simplif.cmt
 lib/ocaml/compiler-libs/simplif.cmti
 lib/ocaml/compiler-libs/simplif.mli
-lib/ocaml/compiler-libs/simplify_boxed_integer_ops.cmi
-lib/ocaml/compiler-libs/simplify_boxed_integer_ops.cmt
-lib/ocaml/compiler-libs/simplify_boxed_integer_ops.cmti
-lib/ocaml/compiler-libs/simplify_boxed_integer_ops_intf.cmi
-lib/ocaml/compiler-libs/simplify_boxed_integer_ops_intf.cmti
-lib/ocaml/compiler-libs/simplify_common.cmi
-lib/ocaml/compiler-libs/simplify_common.cmt
-lib/ocaml/compiler-libs/simplify_common.cmti
-lib/ocaml/compiler-libs/simplify_primitives.cmi
-lib/ocaml/compiler-libs/simplify_primitives.cmt
-lib/ocaml/compiler-libs/simplify_primitives.cmti
-lib/ocaml/compiler-libs/spacetime_profiling.cmi
-lib/ocaml/compiler-libs/spacetime_profiling.cmt
-lib/ocaml/compiler-libs/spacetime_profiling.cmti
-lib/ocaml/compiler-libs/spill.cmi
-lib/ocaml/compiler-libs/spill.cmt
-lib/ocaml/compiler-libs/spill.cmti
-lib/ocaml/compiler-libs/split.cmi
-lib/ocaml/compiler-libs/split.cmt
-lib/ocaml/compiler-libs/split.cmti
-lib/ocaml/compiler-libs/static_exception.cmi
-lib/ocaml/compiler-libs/static_exception.cmt
-lib/ocaml/compiler-libs/static_exception.cmti
-lib/ocaml/compiler-libs/strmatch.cmi
-lib/ocaml/compiler-libs/strmatch.cmt
-lib/ocaml/compiler-libs/strmatch.cmti
 lib/ocaml/compiler-libs/strongly_connected_components.cmi
 lib/ocaml/compiler-libs/strongly_connected_components.cmt
 lib/ocaml/compiler-libs/strongly_connected_components.cmti
@@ -834,9 +500,6 @@ lib/ocaml/compiler-libs/switch.cmi
 lib/ocaml/compiler-libs/switch.cmt
 lib/ocaml/compiler-libs/switch.cmti
 lib/ocaml/compiler-libs/switch.mli
-lib/ocaml/compiler-libs/symbol.cmi
-lib/ocaml/compiler-libs/symbol.cmt
-lib/ocaml/compiler-libs/symbol.cmti
 lib/ocaml/compiler-libs/symtable.cmi
 lib/ocaml/compiler-libs/symtable.cmt
 lib/ocaml/compiler-libs/symtable.cmti
@@ -845,13 +508,14 @@ lib/ocaml/compiler-libs/syntaxerr.cmi
 lib/ocaml/compiler-libs/syntaxerr.cmt
 lib/ocaml/compiler-libs/syntaxerr.cmti
 lib/ocaml/compiler-libs/syntaxerr.mli
-lib/ocaml/compiler-libs/tag.cmi
-lib/ocaml/compiler-libs/tag.cmt
-lib/ocaml/compiler-libs/tag.cmti
 lib/ocaml/compiler-libs/targetint.cmi
 lib/ocaml/compiler-libs/targetint.cmt
 lib/ocaml/compiler-libs/targetint.cmti
 lib/ocaml/compiler-libs/targetint.mli
+lib/ocaml/compiler-libs/tast_iterator.cmi
+lib/ocaml/compiler-libs/tast_iterator.cmt
+lib/ocaml/compiler-libs/tast_iterator.cmti
+lib/ocaml/compiler-libs/tast_iterator.mli
 lib/ocaml/compiler-libs/tast_mapper.cmi
 lib/ocaml/compiler-libs/tast_mapper.cmt
 lib/ocaml/compiler-libs/tast_mapper.cmti
@@ -903,9 +567,6 @@ lib/ocaml/compiler-libs/translprim.cmi
 lib/ocaml/compiler-libs/translprim.cmt
 lib/ocaml/compiler-libs/translprim.cmti
 lib/ocaml/compiler-libs/translprim.mli
-lib/ocaml/compiler-libs/traverse_for_exported_symbols.cmi
-lib/ocaml/compiler-libs/traverse_for_exported_symbols.cmt
-lib/ocaml/compiler-libs/traverse_for_exported_symbols.cmti
 lib/ocaml/compiler-libs/typeclass.cmi
 lib/ocaml/compiler-libs/typeclass.cmt
 lib/ocaml/compiler-libs/typeclass.cmti
@@ -938,10 +599,6 @@ lib/ocaml/compiler-libs/typedtree.cmi
 lib/ocaml/compiler-libs/typedtree.cmt
 lib/ocaml/compiler-libs/typedtree.cmti
 lib/ocaml/compiler-libs/typedtree.mli
-lib/ocaml/compiler-libs/typedtreeIter.cmi
-lib/ocaml/compiler-libs/typedtreeIter.cmt
-lib/ocaml/compiler-libs/typedtreeIter.cmti
-lib/ocaml/compiler-libs/typedtreeIter.mli
 lib/ocaml/compiler-libs/typemod.cmi
 lib/ocaml/compiler-libs/typemod.cmt
 lib/ocaml/compiler-libs/typemod.cmti
@@ -958,46 +615,14 @@ lib/ocaml/compiler-libs/typetexp.cmi
 lib/ocaml/compiler-libs/typetexp.cmt
 lib/ocaml/compiler-libs/typetexp.cmti
 lib/ocaml/compiler-libs/typetexp.mli
-lib/ocaml/compiler-libs/un_anf.cmi
-lib/ocaml/compiler-libs/un_anf.cmt
-lib/ocaml/compiler-libs/un_anf.cmti
-lib/ocaml/compiler-libs/unbox_closures.cmi
-lib/ocaml/compiler-libs/unbox_closures.cmt
-lib/ocaml/compiler-libs/unbox_closures.cmti
-lib/ocaml/compiler-libs/unbox_free_vars_of_closures.cmi
-lib/ocaml/compiler-libs/unbox_free_vars_of_closures.cmt
-lib/ocaml/compiler-libs/unbox_free_vars_of_closures.cmti
-lib/ocaml/compiler-libs/unbox_specialised_args.cmi
-lib/ocaml/compiler-libs/unbox_specialised_args.cmt
-lib/ocaml/compiler-libs/unbox_specialised_args.cmti
 lib/ocaml/compiler-libs/untypeast.cmi
 lib/ocaml/compiler-libs/untypeast.cmt
 lib/ocaml/compiler-libs/untypeast.cmti
 lib/ocaml/compiler-libs/untypeast.mli
-lib/ocaml/compiler-libs/var_within_closure.cmi
-lib/ocaml/compiler-libs/var_within_closure.cmt
-lib/ocaml/compiler-libs/var_within_closure.cmti
-lib/ocaml/compiler-libs/variable.cmi
-lib/ocaml/compiler-libs/variable.cmt
-lib/ocaml/compiler-libs/variable.cmti
 lib/ocaml/compiler-libs/warnings.cmi
 lib/ocaml/compiler-libs/warnings.cmt
 lib/ocaml/compiler-libs/warnings.cmti
 lib/ocaml/compiler-libs/warnings.mli
-lib/ocaml/compiler-libs/x86_ast.cmi
-lib/ocaml/compiler-libs/x86_ast.cmti
-lib/ocaml/compiler-libs/x86_dsl.cmi
-lib/ocaml/compiler-libs/x86_dsl.cmt
-lib/ocaml/compiler-libs/x86_dsl.cmti
-lib/ocaml/compiler-libs/x86_gas.cmi
-lib/ocaml/compiler-libs/x86_gas.cmt
-lib/ocaml/compiler-libs/x86_gas.cmti
-lib/ocaml/compiler-libs/x86_masm.cmi
-lib/ocaml/compiler-libs/x86_masm.cmt
-lib/ocaml/compiler-libs/x86_masm.cmti
-lib/ocaml/compiler-libs/x86_proc.cmi
-lib/ocaml/compiler-libs/x86_proc.cmt
-lib/ocaml/compiler-libs/x86_proc.cmti
 lib/ocaml/complex.ml
 lib/ocaml/complex.mli
 lib/ocaml/digest.ml
@@ -1160,230 +785,173 @@ lib/ocaml/std_exit.cmi
 lib/ocaml/std_exit.cmo
 lib/ocaml/std_exit.cmt
 lib/ocaml/std_exit.ml
-lib/ocaml/std_exit.p.cmt
 lib/ocaml/stdlib.cma
 lib/ocaml/stdlib.cmi
 lib/ocaml/stdlib.cmt
 lib/ocaml/stdlib.cmti
 lib/ocaml/stdlib.ml
 lib/ocaml/stdlib.mli
-lib/ocaml/stdlib.p.cmt
 lib/ocaml/stdlib__arg.cmi
 lib/ocaml/stdlib__arg.cmt
 lib/ocaml/stdlib__arg.cmti
-lib/ocaml/stdlib__arg.p.cmt
 lib/ocaml/stdlib__array.cmi
 lib/ocaml/stdlib__array.cmt
 lib/ocaml/stdlib__array.cmti
-lib/ocaml/stdlib__array.p.cmt
 lib/ocaml/stdlib__arrayLabels.cmi
 lib/ocaml/stdlib__arrayLabels.cmt
 lib/ocaml/stdlib__arrayLabels.cmti
-lib/ocaml/stdlib__arrayLabels.p.cmt
 lib/ocaml/stdlib__bigarray.cmi
 lib/ocaml/stdlib__bigarray.cmt
 lib/ocaml/stdlib__bigarray.cmti
-lib/ocaml/stdlib__bigarray.p.cmt
 lib/ocaml/stdlib__bool.cmi
 lib/ocaml/stdlib__bool.cmt
 lib/ocaml/stdlib__bool.cmti
-lib/ocaml/stdlib__bool.p.cmt
 lib/ocaml/stdlib__buffer.cmi
 lib/ocaml/stdlib__buffer.cmt
 lib/ocaml/stdlib__buffer.cmti
-lib/ocaml/stdlib__buffer.p.cmt
 lib/ocaml/stdlib__bytes.cmi
 lib/ocaml/stdlib__bytes.cmt
 lib/ocaml/stdlib__bytes.cmti
-lib/ocaml/stdlib__bytes.p.cmt
 lib/ocaml/stdlib__bytesLabels.cmi
 lib/ocaml/stdlib__bytesLabels.cmt
 lib/ocaml/stdlib__bytesLabels.cmti
-lib/ocaml/stdlib__bytesLabels.p.cmt
 lib/ocaml/stdlib__callback.cmi
 lib/ocaml/stdlib__callback.cmt
 lib/ocaml/stdlib__callback.cmti
-lib/ocaml/stdlib__callback.p.cmt
 lib/ocaml/stdlib__char.cmi
 lib/ocaml/stdlib__char.cmt
 lib/ocaml/stdlib__char.cmti
-lib/ocaml/stdlib__char.p.cmt
 lib/ocaml/stdlib__complex.cmi
 lib/ocaml/stdlib__complex.cmt
 lib/ocaml/stdlib__complex.cmti
-lib/ocaml/stdlib__complex.p.cmt
 lib/ocaml/stdlib__digest.cmi
 lib/ocaml/stdlib__digest.cmt
 lib/ocaml/stdlib__digest.cmti
-lib/ocaml/stdlib__digest.p.cmt
 lib/ocaml/stdlib__ephemeron.cmi
 lib/ocaml/stdlib__ephemeron.cmt
 lib/ocaml/stdlib__ephemeron.cmti
-lib/ocaml/stdlib__ephemeron.p.cmt
 lib/ocaml/stdlib__filename.cmi
 lib/ocaml/stdlib__filename.cmt
 lib/ocaml/stdlib__filename.cmti
-lib/ocaml/stdlib__filename.p.cmt
 lib/ocaml/stdlib__float.cmi
 lib/ocaml/stdlib__float.cmt
 lib/ocaml/stdlib__float.cmti
-lib/ocaml/stdlib__float.p.cmt
 lib/ocaml/stdlib__format.cmi
 lib/ocaml/stdlib__format.cmt
 lib/ocaml/stdlib__format.cmti
-lib/ocaml/stdlib__format.p.cmt
 lib/ocaml/stdlib__fun.cmi
 lib/ocaml/stdlib__fun.cmt
 lib/ocaml/stdlib__fun.cmti
-lib/ocaml/stdlib__fun.p.cmt
 lib/ocaml/stdlib__gc.cmi
 lib/ocaml/stdlib__gc.cmt
 lib/ocaml/stdlib__gc.cmti
-lib/ocaml/stdlib__gc.p.cmt
 lib/ocaml/stdlib__genlex.cmi
 lib/ocaml/stdlib__genlex.cmt
 lib/ocaml/stdlib__genlex.cmti
-lib/ocaml/stdlib__genlex.p.cmt
 lib/ocaml/stdlib__hashtbl.cmi
 lib/ocaml/stdlib__hashtbl.cmt
 lib/ocaml/stdlib__hashtbl.cmti
-lib/ocaml/stdlib__hashtbl.p.cmt
 lib/ocaml/stdlib__int.cmi
 lib/ocaml/stdlib__int.cmt
 lib/ocaml/stdlib__int.cmti
-lib/ocaml/stdlib__int.p.cmt
 lib/ocaml/stdlib__int32.cmi
 lib/ocaml/stdlib__int32.cmt
 lib/ocaml/stdlib__int32.cmti
-lib/ocaml/stdlib__int32.p.cmt
 lib/ocaml/stdlib__int64.cmi
 lib/ocaml/stdlib__int64.cmt
 lib/ocaml/stdlib__int64.cmti
-lib/ocaml/stdlib__int64.p.cmt
 lib/ocaml/stdlib__lazy.cmi
 lib/ocaml/stdlib__lazy.cmt
 lib/ocaml/stdlib__lazy.cmti
-lib/ocaml/stdlib__lazy.p.cmt
 lib/ocaml/stdlib__lexing.cmi
 lib/ocaml/stdlib__lexing.cmt
 lib/ocaml/stdlib__lexing.cmti
-lib/ocaml/stdlib__lexing.p.cmt
 lib/ocaml/stdlib__list.cmi
 lib/ocaml/stdlib__list.cmt
 lib/ocaml/stdlib__list.cmti
-lib/ocaml/stdlib__list.p.cmt
 lib/ocaml/stdlib__listLabels.cmi
 lib/ocaml/stdlib__listLabels.cmt
 lib/ocaml/stdlib__listLabels.cmti
-lib/ocaml/stdlib__listLabels.p.cmt
 lib/ocaml/stdlib__map.cmi
 lib/ocaml/stdlib__map.cmt
 lib/ocaml/stdlib__map.cmti
-lib/ocaml/stdlib__map.p.cmt
 lib/ocaml/stdlib__marshal.cmi
 lib/ocaml/stdlib__marshal.cmt
 lib/ocaml/stdlib__marshal.cmti
-lib/ocaml/stdlib__marshal.p.cmt
 lib/ocaml/stdlib__moreLabels.cmi
 lib/ocaml/stdlib__moreLabels.cmt
 lib/ocaml/stdlib__moreLabels.cmti
-lib/ocaml/stdlib__moreLabels.p.cmt
 lib/ocaml/stdlib__nativeint.cmi
 lib/ocaml/stdlib__nativeint.cmt
 lib/ocaml/stdlib__nativeint.cmti
-lib/ocaml/stdlib__nativeint.p.cmt
 lib/ocaml/stdlib__obj.cmi
 lib/ocaml/stdlib__obj.cmt
 lib/ocaml/stdlib__obj.cmti
-lib/ocaml/stdlib__obj.p.cmt
 lib/ocaml/stdlib__oo.cmi
 lib/ocaml/stdlib__oo.cmt
 lib/ocaml/stdlib__oo.cmti
-lib/ocaml/stdlib__oo.p.cmt
 lib/ocaml/stdlib__option.cmi
 lib/ocaml/stdlib__option.cmt
 lib/ocaml/stdlib__option.cmti
-lib/ocaml/stdlib__option.p.cmt
 lib/ocaml/stdlib__parsing.cmi
 lib/ocaml/stdlib__parsing.cmt
 lib/ocaml/stdlib__parsing.cmti
-lib/ocaml/stdlib__parsing.p.cmt
 lib/ocaml/stdlib__pervasives.cmi
 lib/ocaml/stdlib__pervasives.cmt
-lib/ocaml/stdlib__pervasives.p.cmi
-lib/ocaml/stdlib__pervasives.p.cmt
 lib/ocaml/stdlib__printexc.cmi
 lib/ocaml/stdlib__printexc.cmt
 lib/ocaml/stdlib__printexc.cmti
-lib/ocaml/stdlib__printexc.p.cmt
 lib/ocaml/stdlib__printf.cmi
 lib/ocaml/stdlib__printf.cmt
 lib/ocaml/stdlib__printf.cmti
-lib/ocaml/stdlib__printf.p.cmt
 lib/ocaml/stdlib__queue.cmi
 lib/ocaml/stdlib__queue.cmt
 lib/ocaml/stdlib__queue.cmti
-lib/ocaml/stdlib__queue.p.cmt
 lib/ocaml/stdlib__random.cmi
 lib/ocaml/stdlib__random.cmt
 lib/ocaml/stdlib__random.cmti
-lib/ocaml/stdlib__random.p.cmt
 lib/ocaml/stdlib__result.cmi
 lib/ocaml/stdlib__result.cmt
 lib/ocaml/stdlib__result.cmti
-lib/ocaml/stdlib__result.p.cmt
 lib/ocaml/stdlib__scanf.cmi
 lib/ocaml/stdlib__scanf.cmt
 lib/ocaml/stdlib__scanf.cmti
-lib/ocaml/stdlib__scanf.p.cmt
 lib/ocaml/stdlib__seq.cmi
 lib/ocaml/stdlib__seq.cmt
 lib/ocaml/stdlib__seq.cmti
-lib/ocaml/stdlib__seq.p.cmt
 lib/ocaml/stdlib__set.cmi
 lib/ocaml/stdlib__set.cmt
 lib/ocaml/stdlib__set.cmti
-lib/ocaml/stdlib__set.p.cmt
 lib/ocaml/stdlib__spacetime.cmi
 lib/ocaml/stdlib__spacetime.cmt
 lib/ocaml/stdlib__spacetime.cmti
-lib/ocaml/stdlib__spacetime.p.cmt
 lib/ocaml/stdlib__stack.cmi
 lib/ocaml/stdlib__stack.cmt
 lib/ocaml/stdlib__stack.cmti
-lib/ocaml/stdlib__stack.p.cmt
 lib/ocaml/stdlib__stdLabels.cmi
 lib/ocaml/stdlib__stdLabels.cmt
 lib/ocaml/stdlib__stdLabels.cmti
-lib/ocaml/stdlib__stdLabels.p.cmt
 lib/ocaml/stdlib__stream.cmi
 lib/ocaml/stdlib__stream.cmt
 lib/ocaml/stdlib__stream.cmti
-lib/ocaml/stdlib__stream.p.cmt
 lib/ocaml/stdlib__string.cmi
 lib/ocaml/stdlib__string.cmt
 lib/ocaml/stdlib__string.cmti
-lib/ocaml/stdlib__string.p.cmt
 lib/ocaml/stdlib__stringLabels.cmi
 lib/ocaml/stdlib__stringLabels.cmt
 lib/ocaml/stdlib__stringLabels.cmti
-lib/ocaml/stdlib__stringLabels.p.cmt
 lib/ocaml/stdlib__sys.cmi
 lib/ocaml/stdlib__sys.cmt
 lib/ocaml/stdlib__sys.cmti
-lib/ocaml/stdlib__sys.p.cmt
 lib/ocaml/stdlib__uchar.cmi
 lib/ocaml/stdlib__uchar.cmt
 lib/ocaml/stdlib__uchar.cmti
-lib/ocaml/stdlib__uchar.p.cmt
 lib/ocaml/stdlib__unit.cmi
 lib/ocaml/stdlib__unit.cmt
 lib/ocaml/stdlib__unit.cmti
-lib/ocaml/stdlib__unit.p.cmt
 lib/ocaml/stdlib__weak.cmi
 lib/ocaml/stdlib__weak.cmt
 lib/ocaml/stdlib__weak.cmti
-lib/ocaml/stdlib__weak.p.cmt
 lib/ocaml/str.cma
 lib/ocaml/str.cmi
 lib/ocaml/str.cmti
@@ -1400,11 +968,8 @@ lib/ocaml/stublibs/dllcamlstr.so
 @comment lib/ocaml/stublibs/dllraw_spacetime_lib.so
 lib/ocaml/stublibs/dllthreads.so
 lib/ocaml/stublibs/dllunix.so
-lib/ocaml/stublibs/dllvmthreads.so
 lib/ocaml/sys.ml
 lib/ocaml/sys.mli
-lib/ocaml/target_camlheaderd
-lib/ocaml/target_camlheaderi
 lib/ocaml/threads/
 lib/ocaml/threads/condition.cmi
 lib/ocaml/threads/condition.cmti
@@ -1437,26 +1002,6 @@ lib/ocaml/unix.mli
 lib/ocaml/unixLabels.cmi
 lib/ocaml/unixLabels.cmti
 lib/ocaml/unixLabels.mli
-lib/ocaml/vmthreads/
-lib/ocaml/vmthreads/condition.cmi
-lib/ocaml/vmthreads/condition.cmti
-lib/ocaml/vmthreads/condition.mli
-lib/ocaml/vmthreads/event.cmi
-lib/ocaml/vmthreads/event.cmti
-lib/ocaml/vmthreads/event.mli
-lib/ocaml/vmthreads/libvmthreads.a
-lib/ocaml/vmthreads/mutex.cmi
-lib/ocaml/vmthreads/mutex.cmti
-lib/ocaml/vmthreads/mutex.mli
-lib/ocaml/vmthreads/stdlib.cma
-lib/ocaml/vmthreads/thread.cmi
-lib/ocaml/vmthreads/thread.cmti
-lib/ocaml/vmthreads/thread.mli
-lib/ocaml/vmthreads/threadUnix.cmi
-lib/ocaml/vmthreads/threadUnix.cmti
-lib/ocaml/vmthreads/threadUnix.mli
-lib/ocaml/vmthreads/threads.cma
-lib/ocaml/vmthreads/unix.cma
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
 @man man/man1/ocaml.1
@@ -1576,6 +1121,7 @@ lib/ocaml/weak.mli
 @man man/man3/Condition.3o
 @man man/man3/Config.3o
 @man man/man3/Consistbl.3o
+@man man/man3/Consistbl.Make.3o
 @man man/man3/Depend.3o
 @man man/man3/Depend.String.3o
 @man man/man3/Digest.3o
@@ -1605,8 +1151,6 @@ lib/ocaml/weak.mli
 @man man/man3/Fun.3o
 @man man/man3/Gc.3o
 @man man/man3/Genlex.3o
-@man man/man3/Graphics.3o
-@man man/man3/GraphicsX11.3o
 @man man/man3/Hashtbl.3o
 @man man/man3/Hashtbl.HashedType.3o
 @man man/man3/Hashtbl.Make.3o
@@ -1632,6 +1176,7 @@ lib/ocaml/weak.mli
 @man man/man3/Int.3o
 @man man/man3/Int32.3o
 @man man/man3/Int64.3o
+@man man/man3/Int_replace_polymorphic_compare.3o
 @man man/man3/Lazy.3o
 @man man/man3/Lexer.3o
 @man man/man3/Lexing.3o
@@ -1648,11 +1193,10 @@ lib/ocaml/weak.mli
 @man man/man3/Marshal.3o
 @man man/man3/Misc.3o
 @man man/man3/Misc.Color.3o
+@man man/man3/Misc.EnvLazy.3o
 @man man/man3/Misc.Error_style.3o
-@man man/man3/Misc.HookSig.3o
 @man man/man3/Misc.Int_literal_converter.3o
 @man man/man3/Misc.LongString.3o
-@man man/man3/Misc.MakeHooks.3o
 @man man/man3/Misc.Stdlib.3o
 @man man/man3/Misc.Stdlib.Array.3o
 @man man/man3/Misc.Stdlib.List.3o
@@ -1699,8 +1243,6 @@ lib/ocaml/weak.mli
 @man man/man3/Pervasives.3o
 @man man/man3/Pervasives.LargeFile.3o
 @man man/man3/Pparse.3o
-@man man/man3/Pparse.ImplementationHooks.3o
-@man man/man3/Pparse.InterfaceHooks.3o
 @man man/man3/Pprintast.3o
 @man man/man3/Printast.3o
 @man man/man3/Printexc.3o
@@ -1718,8 +1260,6 @@ lib/ocaml/weak.mli
 @man man/man3/Set.Make.3o
 @man man/man3/Set.OrderedType.3o
 @man man/man3/Set.S.3o
-@man man/man3/Simplif.3o
-@man man/man3/Simplif.Hooks.3o
 @man man/man3/Spacetime.3o
 @man man/man3/Spacetime.Series.3o
 @man man/man3/Spacetime.Snapshot.3o
@@ -1799,11 +1339,6 @@ lib/ocaml/weak.mli
 @man man/man3/Terminfo.3o
 @man man/man3/Thread.3o
 @man man/man3/ThreadUnix.3o
-@man man/man3/Typemod.3o
-@man man/man3/Typemod.ImplementationHooks.3o
-@man man/man3/Typemod.InterfaceHooks.3o
-@man man/man3/Typemod.Sig_component_kind.3o
-@man man/man3/Typemod.Signature_names.3o
 @man man/man3/Uchar.3o
 @man man/man3/Unit.3o
 @man man/man3/Unix.3o
@@ -1893,8 +1428,6 @@ share/doc/ocaml/html/libref/Format.html
 share/doc/ocaml/html/libref/Fun.html
 share/doc/ocaml/html/libref/Gc.html
 share/doc/ocaml/html/libref/Genlex.html
-share/doc/ocaml/html/libref/Graphics.html
-share/doc/ocaml/html/libref/GraphicsX11.html
 share/doc/ocaml/html/libref/Hashtbl.HashedType.html
 share/doc/ocaml/html/libref/Hashtbl.Make.html
 share/doc/ocaml/html/libref/Hashtbl.MakeSeeded.html
@@ -2095,8 +1628,6 @@ share/doc/ocaml/html/libref/type_Format.html
 share/doc/ocaml/html/libref/type_Fun.html
 share/doc/ocaml/html/libref/type_Gc.html
 share/doc/ocaml/html/libref/type_Genlex.html
-share/doc/ocaml/html/libref/type_Graphics.html
-share/doc/ocaml/html/libref/type_GraphicsX11.html
 share/doc/ocaml/html/libref/type_Hashtbl.HashedType.html
 share/doc/ocaml/html/libref/type_Hashtbl.Make.html
 share/doc/ocaml/html/libref/type_Hashtbl.MakeSeeded.html
@@ -2269,7 +1800,7 @@ share/doc/ocaml/html/manual044.html
 share/doc/ocaml/html/manual045.html
 share/doc/ocaml/html/manual046.html
 share/doc/ocaml/html/manual057.html
-share/doc/ocaml/html/manual073.html
+share/doc/ocaml/html/manual072.html
 share/doc/ocaml/html/modtypes.html
 share/doc/ocaml/html/moduleexamples.html
 share/doc/ocaml/html/modules.html
@@ -2280,7 +1811,6 @@ share/doc/ocaml/html/objectexamples.html
 share/doc/ocaml/html/ocamldoc.html
 share/doc/ocaml/html/parsing.html
 share/doc/ocaml/html/patterns.html
-share/doc/ocaml/html/plugins.html
 share/doc/ocaml/html/polymorphism.html
 share/doc/ocaml/html/previous_motif.gif
 share/doc/ocaml/html/profil.html

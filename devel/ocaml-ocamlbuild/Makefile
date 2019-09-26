@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/18 17:49:36 chrisz Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/26 09:46:10 chrisz Exp $
 
 COMMENT =	ocamlbuild
 CATEGORIES =	devel
 
 V =		0.14.0
-REVISION =	0
+REVISION =	1
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	ocamlbuild
 GH_TAGNAME =	${V}

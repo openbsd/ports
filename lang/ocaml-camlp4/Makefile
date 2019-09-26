@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/09/18 19:42:58 chrisz Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/26 09:46:11 chrisz Exp $
 
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 CATEGORIES =	lang
 
 V =		4.08+1
+REVISION =	0
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	camlp4
 GH_TAGNAME =	${V}

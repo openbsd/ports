@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/18 19:12:29 chrisz Exp $
+# $OpenBSD: Makefile,v 1.9 2019/09/26 09:46:09 chrisz Exp $
 
 COMMENT =		OCaml build system
 
@@ -7,6 +7,7 @@ CATEGORIES =		devel
 GH_ACCOUNT =		ocaml
 GH_PROJECT =		dune
 GH_TAGNAME =		1.11.3
+REVISION =		0
 
 HOMEPAGE =		https://github.com/ocaml/dune
 
