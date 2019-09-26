@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 21:07:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/09/26 06:29:20 sebastia Exp $
 
 COMMENT =		support libraries and Ruby extensions extracted from Rails
 
-DISTNAME =		activesupport-5.2.3
+DISTNAME =		activesupport-6.0.0
 CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -15,6 +15,7 @@ BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/ruby-concurrent-ruby,${MODRUBY_FLAVOR},>=1.0.2,<2 \
 			devel/ruby-i18n,${MODRUBY_FLAVOR},>=0.7,<2 \
 			devel/ruby-minitest,${MODRUBY_FLAVOR}>=5.1,<6 \
+			devel/ruby-zeitwerk,${MODRUBY_FLAVOR}>=2.1.8,<3 \
 			sysutils/ruby-tzinfo,${MODRUBY_FLAVOR}>=1.1,<2
 				
 
