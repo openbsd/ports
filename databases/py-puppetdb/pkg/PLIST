@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/07/19 05:39:15 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/09/26 10:15:56 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -21,3 +21,5 @@ lib/python${MODPY_VERSION}/site-packages/pypuppetdb/errors.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/package.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/types.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/utils.py
+@comment requirements_for_tests/
+@comment requirements_for_tests/requirements-test.txt
