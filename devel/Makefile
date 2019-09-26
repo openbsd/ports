@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1893 2019/09/26 06:26:55 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1894 2019/09/26 21:52:48 kmos Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1318,6 +1318,7 @@
      SUBDIR += py-binplist
      SUBDIR += py-biplist
      SUBDIR += py-biplist,python3
+     SUBDIR += py-bitcoinlib
      SUBDIR += py-bitstring
      SUBDIR += py-bitstring,python3
      SUBDIR += py-blessings
