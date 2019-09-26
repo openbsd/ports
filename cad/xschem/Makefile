@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/26 14:55:22 sthen Exp $
 
 COMMENT =		hierarchical schematic capture program
 
-DISTNAME =		xschem-2.8.2
+DISTNAME =		xschem-2.9.2
 
 CATEGORIES =		cad
 
@@ -41,6 +41,6 @@ FAKE_FLAGS =		MANDIR="${DESTDIR}${PREFIX}/man" \
 NO_TEST =		Yes
 
 pre-configure:
-	${MODTCL_WISH_ADJ} ${WRKSRC}/src/xschem.tcl ${WRKSRC}/utile/utile.tcl
+	${MODTCL_WISH_ADJ} ${WRKSRC}/src/utile/utile.tcl
 
 .include <bsd.port.mk>

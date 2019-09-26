@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/12 17:17:24 kn Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/09/26 14:55:22 sthen Exp $
 @bin bin/xschem
 @man man/man1/xschem.1
 share/doc/xschem/
@@ -182,6 +182,7 @@ share/doc/xschem/xschem_man/xschem_ngspice.png
 share/doc/xschem/xschem_man/xschem_polygons.png
 share/doc/xschem/xschem_man/xschem_properties.html
 share/doc/xschem/xschem_man/xschem_rectangles.png
+share/doc/xschem/xschem_man/xschem_remote.html
 share/doc/xschem/xschem_man/xschem_saveas.png
 share/doc/xschem/xschem_man/xschem_symbols.png
 share/doc/xschem/xschem_man/xschem_texts.png
@@ -266,8 +267,10 @@ share/examples/xschem/test_ne555.sym
 share/examples/xschem/xnor.sym
 share/xschem/
 share/xschem/break.awk
+share/xschem/change_index.tcl
 share/xschem/convert_to_verilog2001.awk
 share/xschem/flatten.awk
+share/xschem/hspice_backannotate.tcl
 share/xschem/keys.help
 share/xschem/make_sym.awk
 share/xschem/order_labels.awk
@@ -364,6 +367,7 @@ share/xschem/xschem_library/devices/vcvs.sym
 share/xschem/xschem_library/devices/vdd.sym
 share/xschem/xschem_library/devices/verilog_delay.sch
 share/xschem/xschem_library/devices/verilog_delay.sym
+share/xschem/xschem_library/devices/verilog_preprocessor.sym
 share/xschem/xschem_library/devices/verilog_timescale.sym
 share/xschem/xschem_library/devices/vsource.sym
 share/xschem/xschem_library/devices/vsource_arith.sym
