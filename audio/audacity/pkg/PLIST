@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/03/26 18:26:45 rapha Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/09/26 13:54:54 sthen Exp $
 @bin bin/audacity
 @man man/man1/audacity.1
 share/appdata/
@@ -79,6 +79,7 @@ share/audacity/plug-ins/highpass.ny
 share/audacity/plug-ins/limiter.ny
 share/audacity/plug-ins/lowpass.ny
 share/audacity/plug-ins/notch.ny
+share/audacity/plug-ins/nyquist-plug-in-installer.ny
 share/audacity/plug-ins/pluck.ny
 share/audacity/plug-ins/rhythmtrack.ny
 share/audacity/plug-ins/rissetdrum.ny
