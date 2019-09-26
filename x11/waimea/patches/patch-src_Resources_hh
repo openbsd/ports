@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Resources_hh,v 1.1 2019/09/26 10:36:53 cwen Exp $
+
+ports-gcc fix for:
+error: changes meaning of 'list' from 'class std::__cxx11::list<_WaAction*>'
+
+Index: src/Resources.hh
+--- src/Resources.hh.orig
++++ src/Resources.hh
+@@ -193,13 +193,13 @@ class WaActionExtList { (public)
+         delete name;
+         delete cl;
+         delete title;
+-        ACTLISTCLEAR(list);
++        ACTLISTCLEAR(alist);
+     }
+     
+     Regex *name;
+     Regex *cl;
+     Regex *title;
+-    list<WaAction *> list;
++    list<WaAction *> alist;
+ };
+ 
+ class StrComp {

@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/09/26 10:36:53 cwen Exp $
 
 COMMENT=		virtual desktop manager for X11
 
 VERSION=		0.4.0
 DISTNAME=		waimea-${VERSION}
-REVISION =		9
+REVISION=		10
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.freedesktop.org/wiki/Software/waimea
+HOMEPAGE=		https://www.freedesktop.org/wiki/Software/waimea
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext Xft Xinerama Xrandr
+WANTLIB += Xrender c m
+
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=waimea/}
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender
-WANTLIB += c expat fontconfig freetype m ${COMPILER_LIBCXX}
-WANTLIB += xcb z
-
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc
 
 AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf

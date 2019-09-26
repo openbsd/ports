@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_Window_cc,v 1.1 2019/09/26 10:36:53 cwen Exp $
+
+ports-gcc fix for:
+error: changes meaning of 'list' from 'class std::__cxx11::list<_WaAction*>'
+
+Index: src/Window.cc
+--- src/Window.cc.orig
++++ src/Window.cc
+@@ -280,13 +280,13 @@ list <WaAction *> *WaWindow::GetActionList(list<WaActi
+         if (classhint) {
+             if (classhint->res_name &&
+                 (*it)->name->Match(classhint->res_name))
+-                return &((*it)->list);
++                return &((*it)->alist);
+             else if (classhint->res_class &&
+                      (*it)->cl->Match(classhint->res_class))
+-                return &((*it)->list);
++                return &((*it)->alist);
+         }
+         if ((*it)->title->Match(name))
+-            return &((*it)->list);
++            return &((*it)->alist);
+     }
+     return NULL;
+ }
