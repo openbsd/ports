@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/07/18 20:48:26 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/09/26 06:37:40 sebastia Exp $
 ${GEM_BIN}/wpscan
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -17,6 +17,7 @@ ${GEM_LIB}/gems/${DISTNAME}/app/controllers/enumeration/cli_options.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/enumeration/enum_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/main_theme.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/password_attack.rb
+${GEM_LIB}/gems/${DISTNAME}/app/controllers/vuln_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/wp_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/
 ${GEM_LIB}/gems/${DISTNAME}/app/finders.rb
@@ -138,6 +139,8 @@ ${GEM_LIB}/gems/${DISTNAME}/app/views/cli/password_attack/
 ${GEM_LIB}/gems/${DISTNAME}/app/views/cli/password_attack/users.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/cli/theme.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/cli/usage.erb
+${GEM_LIB}/gems/${DISTNAME}/app/views/cli/vuln_api/
+${GEM_LIB}/gems/${DISTNAME}/app/views/cli/vuln_api/status.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/cli/vulnerability.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/cli/wp_item.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/cli/wp_version/
@@ -163,6 +166,8 @@ ${GEM_LIB}/gems/${DISTNAME}/app/views/json/main_theme/theme.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/json/password_attack/
 ${GEM_LIB}/gems/${DISTNAME}/app/views/json/password_attack/users.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/json/theme.erb
+${GEM_LIB}/gems/${DISTNAME}/app/views/json/vuln_api/
+${GEM_LIB}/gems/${DISTNAME}/app/views/json/vuln_api/status.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/json/wp_item.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/json/wp_version/
 ${GEM_LIB}/gems/${DISTNAME}/app/views/json/wp_version/version.erb
@@ -184,9 +189,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/dynamic_finders/wordpress.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/fingerprints.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/plugin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/plugins.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/sponsor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/theme.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/themes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/updater.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/vuln_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/wp_item.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/wp_items.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/db/wp_version.rb
@@ -195,6 +202,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/errors/enumeration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/errors/http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/errors/update.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/errors/vuln_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/errors/wordpress.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/errors/xmlrpc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/finders/
@@ -226,6 +234,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/target/platform/
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/target/platform/wordpress/
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/target/platform/wordpress.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/target/platform/wordpress/custom_directories.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/typhoeus/
+${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/typhoeus/response.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/vulnerability.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/vulnerable.rb
