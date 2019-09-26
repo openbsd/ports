@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.462 2019/09/23 07:18:03 robert Exp $
+# $OpenBSD: Makefile,v 1.463 2019/09/26 11:59:20 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -173,15 +173,15 @@ GN_ARGS=	enable_nacl=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
 .if ${MACHINE_ARCH} == "i386"
-ELECTRON_ARCH=	ia32
+ELECTRON_ARCH=	ia32.zip
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
-ELECTRON_ARCH=	x64
+ELECTRON_ARCH=	x64.zip
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 .endif
 
 .if ${MACHINE_ARCH} == "aarch64"
-ELECTRON_ARCH=	arm64
+ELECTRON_ARCH=	arm64.zip
 PKG_ARGS+=	-Dswiftshader=0
 .else
 PKG_ARGS+=	-Dswiftshader=1
