@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.136 2019/07/12 20:51:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2019/09/26 21:59:02 sthen Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
 V=		4.9.0.1
+REVISION=	0
 
 PKGNAME=	phpMyAdmin-$V
 DISTNAME=	phpMyAdmin-$V-all-languages
@@ -28,7 +29,6 @@ SUBST_VARS=	INSTDIR V VARBASE
 
 MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysqli \
-		lang/php/${MODPHP_VERSION},-mcrypt \
 		lang/php/${MODPHP_VERSION},-gd
 
 post-extract:
