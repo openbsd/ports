@@ -1,36 +1,22 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/09/26 13:23:37 sthen Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	1.2.0
+VERSION=	1.6.0
 
 DISTNAME=	kea-${VERSION}
 PKGNAME=	${DISTNAME:S/-P/pl/}
-REVISION=	4
 
-SHARED_LIBS +=  kea-asiodns               0.0 # 0.0
-SHARED_LIBS +=  kea-asiolink              2.0 # 4.0
-SHARED_LIBS +=  kea-cc                    1.0 # 2.0
-SHARED_LIBS +=  kea-cfgclient             1.0 # 3.0
-SHARED_LIBS +=  kea-cryptolink            1.0 # 2.0
-SHARED_LIBS +=  kea-dhcp++                2.0 # 5.0
-SHARED_LIBS +=  kea-dhcp_ddns             0.2 # 1.2
-SHARED_LIBS +=  kea-dhcpsrv               2.0 # 7.0
-SHARED_LIBS +=  kea-dns++                 1.0 # 1.1
-SHARED_LIBS +=  kea-eval                  2.0 # 5.0
-SHARED_LIBS +=  kea-exceptions            0.0 # 0.0
-SHARED_LIBS +=  kea-hooks                 2.0 # 3.0
-SHARED_LIBS +=  kea-http                  0.0 # 0.0
-SHARED_LIBS +=  kea-log                   2.0 # 3.0
-SHARED_LIBS +=  kea-process               0.0 # 0.0
-SHARED_LIBS +=  kea-stats                 0.0 # 1.0
-SHARED_LIBS +=  kea-threads               1.0 # 1.0
-SHARED_LIBS +=  kea-util-io               0.0 # 0.0
-SHARED_LIBS +=  kea-util                  1.1 # 2.1
+.for i in kea-exceptions kea-util kea-util-io kea-threads kea-log \
+  kea-cryptolink kea-dns++ kea-asiolink kea-cc kea-database kea-hooks \
+  kea-dhcp++ kea-cfgclient kea-stats kea-asiodns kea-dhcp_ddns \
+  kea-eval kea-process kea-dhcpsrv kea-http
+SHARED_LIBS +=  $i 3.0
+.endfor
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://kea.isc.org/
+HOMEPAGE=	https://kea.isc.org/
 
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
@@ -57,19 +43,15 @@ FLAVORS=	mysql postgresql
 FLAVOR?=
 
 .if ${FLAVOR:Mmysql}
-WANTLIB += mysqlclient ssl z
-
+WANTLIB += iconv mariadb ssl z
 LIB_DEPENDS+=	databases/mariadb
-
 CONFIGURE_ARGS+= --with-dhcp-mysql=${LOCALBASE}/bin/mysql_config
 .endif
 
 .if ${FLAVOR:Mpostgresql}
 WANTLIB += pq ssl
-
 BUILD_DEPENDS+=	databases/postgresql,-server
 LIB_DEPENDS+=	databases/postgresql
-
 CONFIGURE_ARGS+= --with-dhcp-pgsql=${LOCALBASE}/bin/pg_config
 .endif
 

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_bin_keactrl_kea-dhcp4_conf_pre,v 1.1 2019/09/26 13:23:37 sthen Exp $
+
+Index: src/bin/keactrl/kea-dhcp4.conf.pre
+--- src/bin/keactrl/kea-dhcp4.conf.pre.orig
++++ src/bin/keactrl/kea-dhcp4.conf.pre
+@@ -49,7 +49,7 @@
+     // more. For detailed description, see Sections 8.8, 16 and 15.
+     "control-socket": {
+         "socket-type": "unix",
+-        "socket-name": "/tmp/kea-dhcp4-ctrl.sock"
++        "socket-name": ""@localstatedir@/run/kea/kea-dhcp4-ctrl.sock"
+     },
+ 
+     // Use Memfile lease database backend to store leases in a CSV file.
+@@ -428,7 +428,7 @@
+                 // - syslog (logs to syslog)
+                 // - syslog:name (logs to syslog using specified name)
+                 // Any other value is considered a name of a time
+-                "output": "@localstatedir@/log/kea-dhcp4.log"
++                "output": "syslog:daemon"
+ 
+                 // Shorter log pattern suitable for use with systemd,
+                 // avoids redundant information

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_bin_keactrl_keactrl_conf_in,v 1.1 2017/08/27 11:14:51 sthen Exp $
+$OpenBSD: patch-src_bin_keactrl_keactrl_conf_in,v 1.2 2019/09/26 13:23:37 sthen Exp $
 
 Index: src/bin/keactrl/keactrl.conf.in
 --- src/bin/keactrl/keactrl.conf.in.orig
 +++ src/bin/keactrl/keactrl.conf.in
-@@ -2,6 +2,9 @@
- # the startup, shutdown, reconfiguration and gathering the status
- # of the Kea's processes.
+@@ -4,6 +4,9 @@
+ 
+ # Note that control agent must be launched after servers and netconf last.
  
 +# Log to syslog.
 +KEA_LOGGER_DESTINATION=syslog:daemon
