@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/08/21 13:26:01 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.43 2019/09/26 22:01:47 sthen Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
@@ -38,7 +38,6 @@ VR=			${V:R}
 MAJOR=			${VR:R}
 SUBST_VARS=		INSTDIR TINSTDIR MODPHP_BIN VR MAJOR
 
-MODPHP_VERSION=		7.3
 RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \
 			lang/php/${MODPHP_VERSION},-zip \
 			${MODPHP_PDO_DEPENDS}

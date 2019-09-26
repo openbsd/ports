@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:05:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/26 22:01:47 sthen Exp $
 
 COMMENT=	dependency manager for PHP
 
@@ -17,7 +17,6 @@ EXTRACT_ONLY=
 HOMEPAGE=	https://getcomposer.org/
 
 MODULES=	lang/php
-MODPHP_VERSION=	7.3
 
 # MIT
 PERMIT_PACKAGE=	Yes
