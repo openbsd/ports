@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2019/08/19 15:13:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/09/26 21:14:42 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -273,7 +273,7 @@ icinga-web2/doc/res/GraphExample#3.png
 icinga-web2/doc/res/GraphExample#4.png
 icinga-web2/doc/res/GraphExample#5.png
 icinga-web2/doc/res/GraphExample#6.png
-icinga-web2/doc/res/GraphExample#${MODPHP_VERSION}.png
+icinga-web2/doc/res/GraphExample#7.1.png
 icinga-web2/doc/res/GraphExample#7.png
 icinga-web2/doc/res/GraphExample#8.png
 icinga-web2/doc/res/GraphExample#9.png
