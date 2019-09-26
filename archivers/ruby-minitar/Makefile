@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/26 06:41:33 sebastia Exp $
 
 COMMENT =	command-line utility for POSIX tar(1) archive files
 
-DISTNAME =	minitar-0.8
+DISTNAME =	minitar-0.9
 CATEGORIES =	archivers
 
 HOMEPAGE =	http://www.github.com/atoulme/minitar
