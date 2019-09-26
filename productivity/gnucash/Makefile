@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2019/09/20 16:36:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2019/09/26 10:22:41 sthen Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
@@ -44,8 +44,7 @@ MODULES =		devel/dconf \
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
 
 BUILD_DEPENDS =		databases/libdbi-drivers,-sqlite3 \
-			devel/gtest \
-			shells/bash
+			devel/gtest
 
 RUN_DEPENDS =		databases/libdbi-drivers,-sqlite3
 
@@ -62,7 +61,8 @@ LIB_DEPENDS =		databases/libdbi \
 			www/webkitgtk4
 
 CONFIGURE_ARGS =	-DENABLE_BINRELOC=OFF \
-			-DCOMPILE_GSCHEMAS=OFF
+			-DCOMPILE_GSCHEMAS=OFF \
+			-DGNC_SHELL=/bin/sh
 
 # XXX make sure guile2 headers are picked up first (over guile1);
 # cannot use CPPFLAGS/CFLAGS since they get appended last
