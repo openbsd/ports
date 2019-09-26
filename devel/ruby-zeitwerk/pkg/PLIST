@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/26 06:25:46 sebastia Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/error.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/explicit_namespace.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/gem_inflector.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/inflector.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/kernel.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/callbacks.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/real_mod_name.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/registry.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/version.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
