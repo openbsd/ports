@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/08/06 17:38:05 landry Exp $
+# $OpenBSD: Makefile,v 1.76 2019/09/26 21:59:30 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -9,25 +9,26 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
+REVISION-php=		0
 
-SHARED_LIBS += 		gps	20.0 # 25.0
+SHARED_LIBS +=		gps	20.0 # 25.0
 CATEGORIES=		misc geo
 
-HOMEPAGE = 		https://gpsd.gitlab.io/gpsd/index.html
+HOMEPAGE =		https://gpsd.gitlab.io/gpsd/index.html
 
 # BSD
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES = 		${MASTER_SITE_SAVANNAH:=gpsd/}
+MASTER_SITES =		${MASTER_SITE_SAVANNAH:=gpsd/}
 
 # C++11
 COMPILER =		base-clang ports-gcc
 WANTLIB-main +=	c dbus-1 m curses pthread usb-1.0 ${COMPILER_LIBCXX}
 WANTLIB-php =
 
-MODULES += 		devel/scons lang/python lang/php
+MODULES +=		devel/scons lang/python lang/php
 MODPHP_BUILDDEP=	No
-MODSCONS_FLAGS += 	gpsd_user=_gpsd \
+MODSCONS_FLAGS +=	gpsd_user=_gpsd \
 			qt=no \
 			mandir=man \
 			pps=no \
@@ -36,7 +37,7 @@ MODSCONS_FLAGS += 	gpsd_user=_gpsd \
 			target_python=${MODPY_BIN} \
 			python_libdir=${DESTDIR}/${MODPY_SITEPKG}
 
-MULTI_PACKAGES = 	-main -php -x11
+MULTI_PACKAGES =	-main -php -x11
 
 BUILD_DEPENDS=		devel/py-gobject3 \
 			textproc/xmlto \
@@ -46,13 +47,13 @@ BUILD_DEPENDS=		devel/py-gobject3 \
 TEST_DEPENDS=		${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			x11/dbus
 
-LIB_DEPENDS-main = 	devel/libusb1 \
+LIB_DEPENDS-main =	devel/libusb1 \
 			x11/dbus \
 			${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			devel/py-serial
 
-RUN_DEPENDS-x11 = 	${BASE_PKGPATH} \
+RUN_DEPENDS-x11 =	${BASE_PKGPATH} \
 			devel/py-gobject3 \
 			devel/desktop-file-utils \
 			x11/py-gtk2
@@ -63,9 +64,9 @@ PKG_ARCH-php=		*
 RUN_DEPENDS-php=	lang/php/${MODPHP_VERSION},-gd
 PREFIX-php=		${VARBASE}/www
 
-SUBST_VARS += 		VERSION
+SUBST_VARS +=		VERSION
 
-MODPY_ADJ_FILES = 	gegps gpsprof gps/gps.py gpsfake gpscat xgps xgpsspeed \
+MODPY_ADJ_FILES =	gegps gpsprof gps/gps.py gpsfake gpscat xgps xgpsspeed \
 			leapsecond.py test_maidenhead.py test_misc.py ubxtool zerk
 
 pre-configure:

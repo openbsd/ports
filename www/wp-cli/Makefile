@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/26 21:59:31 sthen Exp $
 
 COMMENT =	command line tool for wordpress
 
 V =		2.1.0
 DISTNAME =	wp-cli-${V}
+REVISION =	0
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =	.phar

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/09/23 13:42:19 landry Exp $
+# $OpenBSD: Makefile,v 1.69 2019/09/26 21:59:30 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -15,6 +15,8 @@ PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 PKGNAME-python=	py3-mapscript-${V}
+
+REVISION-php=	0
 
 SHARED_LIBS +=	mapserver 4.0
 

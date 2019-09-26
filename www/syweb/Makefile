@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/09/26 21:59:31 sthen Exp $
 
 COMMENT=	web frontend to symon
 DISTNAME=	syweb-0.65
-REVISION=	8
+REVISION=	9
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	http://www.xs4all.nl/~wpd/symon

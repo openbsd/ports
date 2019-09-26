@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/23 18:45:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/09/26 21:59:31 sthen Exp $
 
 COMMENT =	KDE GUI for profilers
 DISTNAME =	kcachegrind-${MODKDE4_VERSION}
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kcachegrind

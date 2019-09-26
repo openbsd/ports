@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/08/22 18:19:34 robert Exp $
+# $OpenBSD: Makefile,v 1.46 2019/09/26 21:59:30 sthen Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -10,7 +10,7 @@ PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
 
 REVISION-main=	1
-REVISION-mapi=	0
+REVISION-mapi=	1
 
 CATEGORIES=	mail www productivity
 
