@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/03/15 07:33:16 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/09/26 06:35:09 sebastia Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -90,5 +90,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/nokogiri.rb
 ${GEM_LIB}/gems/${DISTNAME}/patches/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0001-Revert-Do-not-URI-escape-in-server-side-includes.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0002-Remove-script-macro-support.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0003-Update-entities-to-remove-handling-of-ssi.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/
+${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/0001-Fix-security-framework-bypass.patch
 ${GEM_LIB}/gems/${DISTNAME}/ports/
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
