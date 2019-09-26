@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_unix_open_c,v 1.1.1.1 2019/09/26 09:33:14 chrisz Exp $
+
+Index: src/unix/open.c
+--- src/unix/open.c.orig
++++ src/unix/open.c
+@@ -365,7 +365,7 @@ value caml_gr_sigio_handler(void)
+ 
+ /* Processing of graphic errors */
+ 
+-static value * graphic_failure_exn = NULL;
++const static value * graphic_failure_exn = NULL;
+ 
+ void caml_gr_fail(const char *fmt, const char *arg)
+ {

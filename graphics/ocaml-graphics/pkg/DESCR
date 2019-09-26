@@ -1,0 +1,2 @@
+The Graphics module provides portable basic drawing primitives.
+It used to be distributed with the OCaml compiler up to OCaml 4.08.

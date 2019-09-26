@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/26 09:33:14 chrisz Exp $
+@pkgpath lang/ocaml,-graphics
+%%native%%
+doc/
+lib/ocaml/graphics/
+lib/ocaml/graphics/META
+lib/ocaml/graphics/dune-package
+lib/ocaml/graphics/graphics.cma
+lib/ocaml/graphics/graphics.cmi
+lib/ocaml/graphics/graphics.cmt
+lib/ocaml/graphics/graphics.cmti
+lib/ocaml/graphics/graphics.ml
+lib/ocaml/graphics/graphics.mli
+lib/ocaml/graphics/graphicsX11.cmi
+lib/ocaml/graphics/graphicsX11.cmt
+lib/ocaml/graphics/graphicsX11.cmti
+lib/ocaml/graphics/graphicsX11.ml
+lib/ocaml/graphics/graphicsX11.mli
+lib/ocaml/graphics/libgraphics_stubs.a
+lib/ocaml/graphics/opam
+lib/ocaml/stublibs/dllgraphics_stubs.so
+share/doc/ocaml-graphics/
+share/doc/ocaml-graphics/CHANGES.md
+share/doc/ocaml-graphics/LICENSE
+share/doc/ocaml-graphics/README.md

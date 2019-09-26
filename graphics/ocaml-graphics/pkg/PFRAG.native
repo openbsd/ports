@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2019/09/26 09:33:14 chrisz Exp $
+lib/ocaml/graphics/graphics.a
+lib/ocaml/graphics/graphics.cmx
+lib/ocaml/graphics/graphics.cmxa
+lib/ocaml/graphics/graphics.cmxs
+lib/ocaml/graphics/graphicsX11.cmx
