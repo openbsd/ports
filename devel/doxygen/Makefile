@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 20:44:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/09/27 08:11:10 rsadowski Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -7,10 +7,9 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	source code documentation generator tool
 
-VERSION=	1.8.14
+VERSION=	1.8.16
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
-REVISION=	1
 
 CATEGORIES=	devel textproc
 
@@ -23,10 +22,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv m pthread ${COMPILER_LIBCXX} xapian z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
-		ftp://ftp.stack.nl/pub/users/dimitri/
+MASTER_SITES=	http://doxygen.nl/files/
 
 LIB_DEPENDS=	converters/libiconv \
 		databases/xapian-core

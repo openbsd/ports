@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.3 2018/01/21 10:33:03 rsadowski Exp $
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.4 2019/09/27 08:11:10 rsadowski Exp $
 
 - only manual pages
 - remove doxywizard.1, see devel/doxygen-gui
@@ -7,12 +7,12 @@ $OpenBSD: patch-doc_CMakeLists_txt,v 1.3 2018/01/21 10:33:03 rsadowski Exp $
 Index: doc/CMakeLists.txt
 --- doc/CMakeLists.txt.orig
 +++ doc/CMakeLists.txt
-@@ -152,12 +152,7 @@ add_custom_target(doxygen_pdf
+@@ -165,12 +165,7 @@ add_custom_target(doxygen_pdf
          WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/latex
  )
  add_custom_target(docs
--        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/doc/doxygen_logo.gif      ${PROJECT_BINARY_DIR}/html/
--        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/doc/doxygen_logo_low.gif  ${PROJECT_BINARY_DIR}/html/
+-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/doc/doxygen_logo.gif      ${PROJECT_BINARY_HTML_DIR}
+-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/doc/doxygen_logo_low.gif  ${PROJECT_BINARY_HTML_DIR}
          DEPENDS ${PROJECT_BINARY_DIR}/man/doxygen.1
 -                ${PROJECT_BINARY_DIR}/man/doxywizard.1
 -                ${PROJECT_BINARY_DIR}/man/doxysearch.1
@@ -20,7 +20,7 @@ Index: doc/CMakeLists.txt
                  doxygen_pdf
          VERBATIM
          )
-@@ -165,18 +160,5 @@ add_custom_target(docs
+@@ -178,18 +173,5 @@ add_custom_target(docs
  ################################################################################
  install(FILES
          "${PROJECT_BINARY_DIR}/man/doxygen.1"
