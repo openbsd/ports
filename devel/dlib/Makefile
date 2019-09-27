@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/27 10:59:00 rsadowski Exp $
 
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-DISTNAME =		dlib-19.17
-REVISION =		0
+DISTNAME =		dlib-19.18
 
-SHARED_LIBS +=  dlib                      3.4 # 19.7
+SHARED_LIBS +=  dlib                      3.5 # 19.7
 
 CATEGORIES =		devel
 

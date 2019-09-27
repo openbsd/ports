@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/15 21:58:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/09/27 10:59:00 rsadowski Exp $
 include/dlib/
 include/dlib/algs.h
 include/dlib/all/
@@ -91,12 +91,16 @@ include/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
 include/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/find_blas.cmake
+include/dlib/cmake_utils/find_libjpeg.cmake
+include/dlib/cmake_utils/find_libpng.cmake
 include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 include/dlib/cmake_utils/test_for_avx/
 include/dlib/cmake_utils/test_for_cpp11/
 include/dlib/cmake_utils/test_for_cuda/
 include/dlib/cmake_utils/test_for_cudnn/
+include/dlib/cmake_utils/test_for_libjpeg/
+include/dlib/cmake_utils/test_for_libpng/
 include/dlib/cmake_utils/test_for_neon/
 include/dlib/cmake_utils/test_for_sse4/
 include/dlib/cmake_utils/use_cpp_11.cmake
@@ -255,10 +259,10 @@ include/dlib/external/cblas/
 include/dlib/external/cblas/cblas.h
 include/dlib/external/cblas/cblas_f77.h
 include/dlib/external/libjpeg/
-include/dlib/external/libjpeg/jchuff.h
+include/dlib/external/libjpeg/cderror.h
+include/dlib/external/libjpeg/cdjpeg.h
 include/dlib/external/libjpeg/jconfig.h
 include/dlib/external/libjpeg/jdct.h
-include/dlib/external/libjpeg/jdhuff.h
 include/dlib/external/libjpeg/jerror.h
 include/dlib/external/libjpeg/jinclude.h
 include/dlib/external/libjpeg/jmemsys.h
@@ -266,6 +270,7 @@ include/dlib/external/libjpeg/jmorecfg.h
 include/dlib/external/libjpeg/jpegint.h
 include/dlib/external/libjpeg/jpeglib.h
 include/dlib/external/libjpeg/jversion.h
+include/dlib/external/libjpeg/transupp.h
 include/dlib/external/libpng/
 include/dlib/external/libpng/arm/
 include/dlib/external/libpng/png.h
