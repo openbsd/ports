@@ -1,0 +1,14 @@
+$OpenBSD: patch-plat_rockchip_rk3328_rk3328_def_h,v 1.1 2019/09/27 15:43:29 kurt Exp $
+
+Index: plat/rockchip/rk3328/rk3328_def.h
+--- plat/rockchip/rk3328/rk3328_def.h.orig
++++ plat/rockchip/rk3328/rk3328_def.h
+@@ -98,7 +98,7 @@
+  * UART related constants
+  **************************************************************************/
+ #define RK3328_UART2_BASE	UART2_BASE
+-#define RK3328_BAUDRATE	1500000
++#define RK3328_BAUDRATE	115200
+ #define RK3328_UART_CLOCK	24000000
+ 
+ /******************************************************************************

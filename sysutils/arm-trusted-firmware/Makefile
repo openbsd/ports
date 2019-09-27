@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.11 2019/07/12 20:49:39 sthen Exp $
+#	$OpenBSD: Makefile,v 1.12 2019/09/27 15:43:29 kurt Exp $
 
 PKG_ARCH=		*
 
@@ -9,6 +9,7 @@ GH_PROJECT=	arm-trusted-firmware
 GH_TAGNAME=	v2.1
 
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -24,7 +25,13 @@ MAKE_ENV+= BUILD_STRING="${GH_TAGNAME:S/v//}"
 NO_TEST=	Yes
 USE_GMAKE=	Yes
 
+# Disable passing CFLAGS to allow the build to use various
+# optimization levels. Allowing ports to override CFLAGS
+# causes the build to fail.
+CFLAGS=
+
 PLATFORMS=\
+	rk3328 \
 	rk3399 \
 	sun50i_a64
 
@@ -37,6 +44,8 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/arm-trusted-firmware/
+	${INSTALL_DATA} ${WRKBUILD}/build/rk3328/debug/bl31/bl31.elf \
+	    ${PREFIX}/share/arm-trusted-firmware/rk3328-bl31.elf
 	${INSTALL_DATA} ${WRKBUILD}/build/rk3399/debug/bl31/bl31.elf \
 	    ${PREFIX}/share/arm-trusted-firmware/rk3399-bl31.elf
 	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_a64/debug/bl31.bin \
