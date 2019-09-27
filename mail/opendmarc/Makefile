@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/09/27 21:28:14 jasper Exp $
 
 COMMENT=	library and milter for DMARC
 
 DISTNAME=	opendmarc-1.3.2
+REVISION =	0
 
 SHARED_LIBS +=	opendmarc             0.0
 

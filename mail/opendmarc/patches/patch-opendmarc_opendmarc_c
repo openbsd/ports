@@ -1,0 +1,17 @@
+$OpenBSD: patch-opendmarc_opendmarc_c,v 1.1 2019/09/27 21:28:14 jasper Exp $
+
+Security fix for CVE-2019-16378
+https://github.com/trusteddomainproject/OpenDMARC/pull/48
+
+Index: opendmarc/opendmarc.c
+--- opendmarc/opendmarc.c.orig
++++ opendmarc/opendmarc.c
+@@ -2193,7 +2193,7 @@ mlfi_eom(SMFICTX *ctx)
+ 	strncpy(dfc->mctx_fromdomain, domain, sizeof dfc->mctx_fromdomain - 1);
+ 
+ 	ostatus = opendmarc_policy_store_from_domain(cc->cctx_dmarc,
+-	                                             from->hdr_value);
++	                                             dfc->mctx_fromdomain);
+ 	if (ostatus != DMARC_PARSE_OKAY)
+ 	{
+ 		if (conf->conf_dolog)
