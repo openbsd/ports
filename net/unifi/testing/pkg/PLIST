@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/09/13 10:48:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/09/27 21:29:31 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -4359,10 +4359,10 @@ share/unifi/webapps/ROOT/app-unifi/setup/static/images/hardware/index.js
 share/unifi/webapps/ROOT/app-unifi/setup/static/images/logo.svg
 share/unifi/webapps/ROOT/app-unifi/setup/static/images/logo.svg.br
 share/unifi/webapps/ROOT/app-unifi/setup/static/js/
-share/unifi/webapps/ROOT/app-unifi/setup/static/js/main.ea62d2db71ca85006408.js
-share/unifi/webapps/ROOT/app-unifi/setup/static/js/main.ea62d2db71ca85006408.js.br
-share/unifi/webapps/ROOT/app-unifi/setup/static/js/vendor.ea62d2db71ca85006408.js
-share/unifi/webapps/ROOT/app-unifi/setup/static/js/vendor.ea62d2db71ca85006408.js.br
+share/unifi/webapps/ROOT/app-unifi/setup/static/js/main.20cd2910e1d952e6d3f4.js
+share/unifi/webapps/ROOT/app-unifi/setup/static/js/main.20cd2910e1d952e6d3f4.js.br
+share/unifi/webapps/ROOT/app-unifi/setup/static/js/vendor.20cd2910e1d952e6d3f4.js
+share/unifi/webapps/ROOT/app-unifi/setup/static/js/vendor.20cd2910e1d952e6d3f4.js.br
 share/unifi/webapps/ROOT/app-unifi/setup/static/locales/
 share/unifi/webapps/ROOT/app-unifi/setup/static/locales/en/
 share/unifi/webapps/ROOT/app-unifi/setup/static/locales/en/apiMessages.json
