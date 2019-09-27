@@ -1,9 +1,9 @@
-$OpenBSD: patch-php_ini-production,v 1.3 2019/05/04 07:57:00 sthen Exp $
+$OpenBSD: patch-php_ini-production,v 1.4 2019/09/27 16:00:55 sthen Exp $
 
 Index: php.ini-production
 --- php.ini-production.orig
 +++ php.ini-production
-@@ -713,11 +713,8 @@ default_charset = "UTF-8"
+@@ -708,11 +708,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -16,7 +16,7 @@ Index: php.ini-production
  ; PHP's default setting for include_path is ".;/path/to/php/pear"
  ; http://php.net/include-path
  
-@@ -739,6 +736,7 @@ user_dir =
+@@ -734,6 +731,7 @@ user_dir =
  ; extension_dir = "./"
  ; On windows:
  ; extension_dir = "ext"
@@ -24,7 +24,7 @@ Index: php.ini-production
  
  ; Directory where the temporary files should be placed.
  ; Defaults to the system default (see sys_get_temp_dir)
-@@ -835,7 +833,7 @@ max_file_uploads = 20
+@@ -830,7 +828,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-fopen
@@ -33,7 +33,7 @@ Index: php.ini-production
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
-@@ -938,7 +936,7 @@ cli_server.color = On
+@@ -933,7 +931,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; http://php.net/date.timezone
