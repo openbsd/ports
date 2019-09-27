@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/27 08:11:54 rsadowski Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -7,10 +7,9 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	GUI front-end for doxygen
 
-VERSION=	1.8.14
+VERSION=	1.8.16
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
-REVISION=	1
 
 CATEGORIES=	devel textproc
 
@@ -21,17 +20,17 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += QtGui QtXml c m ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += c m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
-		ftp://ftp.stack.nl/pub/users/dimitri/
+MASTER_SITES=	http://doxygen.nl/files/
 
 LIB_DEPENDS=	${MODQT_LIB_DEPENDS}
 
 MODULES=	devel/cmake \
-		x11/qt4 \
+		x11/qt5 \
 		lang/python
 
 MODPY_RUNDEP=	No
@@ -45,8 +44,7 @@ BUILD_DEPENDS+=	devel/bison \
 
 RUN_DEPENDS=	devel/doxygen
 
-CONFIGURE_ARGS=	-Dbuild_wizard:Bool=ON \
-		-Dforce_qt4:Bool=ON
+CONFIGURE_ARGS=	-Dbuild_wizard=ON \
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
