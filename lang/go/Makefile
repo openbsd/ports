@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/09/15 02:00:34 jsing Exp $
+# $OpenBSD: Makefile,v 1.72 2019/09/27 19:04:57 tb Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -96,6 +96,9 @@ do-test:
 		ulimit -d $$(ulimit -H -d) -n 256 && \
 		CC="${CC}" \
 		CXX="${CXX}" \
+		GOCACHE=${WRKDIST}/go-cache \
+		GOPATH=${WRKDIR} \
+		HOME=${WRKDIR} \
 		PATH=${WRKDIST}/bin:${PATH} \
 		    /bin/ksh -c "exec 3>&-; exec 4>&-; ./run.bash"
 
