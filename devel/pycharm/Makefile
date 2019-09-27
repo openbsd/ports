@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2019/08/07 06:02:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2019/09/27 06:02:48 rsadowski Exp $
 
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2019.2
+V=			2019.2.2
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		https://download.jetbrains.com/python/
 
 MODULES=		java
-MODJAVA_VER=		1.8+
+MODJAVA_VER=		11
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
