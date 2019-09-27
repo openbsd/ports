@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.4 2019/05/19 08:27:30 espie Exp $
+# $OpenBSD: Trace.pm,v 1.5 2019/09/27 11:13:30 espie Exp $
 #
 # Copyright (c) 2015 Marc Espie <espie@openbsd.org>
 #
@@ -18,8 +18,39 @@
 package DPB::Trace;
 
 # inspired by Carp::Always
-sub trace_message
+
+
+sub dump
 {
+	my ($class, $arg, $full) = @_;
+	if (!defined $arg) {
+		return '<undef>';
+	} else {
+		my $string;
+		eval { $string = $arg->debug_dump };
+		if (defined $string) {
+			return "$arg($string)";
+		}
+	}
+	if ($full) {
+		require Data::Dumper;
+		my $msg = Data::Dumper->new([$arg])->
+		    Indent(0)->Maxdepth(1)->Quotekeys(0)->Sortkeys(1)->
+		    Deparse(1)-> Dump;
+
+		$msg =~ s/^\$VAR1 = //;
+		$msg =~ s/\;$//;
+
+		return $msg;
+	} else {
+		return $arg;
+	}
+}
+
+sub stack
+{
+	my ($self, $full) = @_;
+
 	my $msg = '';
 	my $x = 1;
 	while (1) {
@@ -30,20 +61,9 @@ sub trace_message
 			@c = caller($x+1);
 		}
 		last if !@c;
-		$msg .= "$c[3](". 
-		    join(', ', map { 
-			    if (!defined $_) {
-				'<undef>';
-			    } else {
-				my $string;
-				eval { $string = $_->debug_dump };
-				if (defined $string) {
-				    "$_($string)";
-				} else {
-				    $_;
-				}
-			    }
-			} @DB::args). 
+		my $fn = "$c[3]";
+		$msg .= $fn."(".
+		    join(', ', map { $self->dump($_, $full); } @DB::args).
 		    ") called at $c[1] line $c[2]\n";
 		$x++;
 	}
@@ -60,10 +80,10 @@ sub setup
 	$oldwarn = $SIG{__WARN__};
 	$sig->{__WARN__} = sub {
 		$sig->{__WARN__} = $oldwarn;
-		my $a = pop @_;
+		my $a = pop @_; # XXX need copy because contents of @_ are RO.
 		$a =~ s/(.*)( at .*? line .*?)\n$/$1$2/s;
 		push @_, $a;
-		my $msg = join("\n", @_, &trace_message);
+		my $msg = join("\n", @_, $class->stack(0));
 		if (defined $logfile) {
 			print $logfile $msg;
 			print $logfile '-'x70, "\n";
@@ -78,13 +98,13 @@ sub setup
 	$sig->{__DIE__} = sub {
 		die @_ if $^S;
 		$sig->{__DIE__} = $olddie;
-		my $a = pop @_;
+		my $a = pop @_; # XXX need copy because contents of @_ are RO.
 		$a =~ s/(.*)( at .*? line .*?)\n$/$1$2/s;
 		push @_, $a;
 		if (defined $reporter) {
 			$reporter->reset_cursor;
 		}
-		my $msg = join("\n", @_, &trace_message);
+		my $msg = join("\n", @_, $class->stack(1));
 		if (defined $logfile) {
 			print $logfile $msg;
 			print $logfile '-'x70, "\n";
@@ -94,7 +114,7 @@ sub setup
 	};
 
 	$sig->{INFO} = sub {
-		print "Trace:\n", &trace_message;
+		print "Trace:\n", $class->stack(0);
 		sleep 1;
 	};
 }
