@@ -1,8 +1,8 @@
-$OpenBSD: patch-cmake_OpenCVFindLibsVideo_cmake,v 1.6 2019/03/23 07:26:56 rsadowski Exp $
+$OpenBSD: patch-cmake_OpenCVFindLibsVideo_cmake,v 1.7 2019/09/27 05:49:56 rsadowski Exp $
 Index: cmake/OpenCVFindLibsVideo.cmake
 --- cmake/OpenCVFindLibsVideo.cmake.orig
 +++ cmake/OpenCVFindLibsVideo.cmake
-@@ -186,7 +186,6 @@ if(WITH_V4L)
+@@ -185,7 +185,6 @@ if(WITH_V4L)
      endif()
    endif()
    CHECK_INCLUDE_FILE(linux/videodev.h HAVE_CAMV4L)

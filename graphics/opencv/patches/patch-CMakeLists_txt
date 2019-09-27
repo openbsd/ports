@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.9 2019/09/27 05:49:56 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -616,7 +616,7 @@ else()
+     ocv_update(OPENCV_SAMPLES_SRC_INSTALL_PATH    share/OpenCV/samples)
+     ocv_update(OPENCV_JAR_INSTALL_PATH share/OpenCV/java)
+     ocv_update(OPENCV_OTHER_INSTALL_PATH   share/OpenCV)
+-    ocv_update(OPENCV_LICENSES_INSTALL_PATH      "${CMAKE_INSTALL_DATAROOTDIR}/licenses/opencv3")
++    ocv_update(OPENCV_LICENSES_INSTALL_PATH      "${CMAKE_INSTALL_DATAROOTDIR}/OpenCV/licenses/")
+ 
+     if(NOT DEFINED OPENCV_CONFIG_INSTALL_PATH)
+       math(EXPR SIZEOF_VOID_P_BITS "8 * ${CMAKE_SIZEOF_VOID_P}")

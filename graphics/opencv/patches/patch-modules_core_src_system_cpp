@@ -1,9 +1,9 @@
-$OpenBSD: patch-modules_core_src_system_cpp,v 1.5 2019/03/23 07:26:56 rsadowski Exp $
+$OpenBSD: patch-modules_core_src_system_cpp,v 1.6 2019/09/27 05:49:56 rsadowski Exp $
 Fix build on i386.
 Index: modules/core/src/system.cpp
 --- modules/core/src/system.cpp.orig
 +++ modules/core/src/system.cpp
-@@ -185,9 +185,12 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
+@@ -189,9 +189,12 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
  
  #endif
  #else
