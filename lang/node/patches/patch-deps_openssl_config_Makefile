@@ -1,9 +1,9 @@
-$OpenBSD: patch-deps_openssl_config_Makefile,v 1.1 2019/01/21 23:46:01 abieber Exp $
+$OpenBSD: patch-deps_openssl_config_Makefile,v 1.2 2019/09/27 02:07:45 abieber Exp $
 
 Index: deps/openssl/config/Makefile
 --- deps/openssl/config/Makefile.orig
 +++ deps/openssl/config/Makefile
-@@ -1,15 +1,15 @@
+@@ -1,19 +1,15 @@
  # This Makefile is confirmed to be run only on Linux (CentOS and
  # Ubuntu). perl5 and gas(>=2.26) are needed.
  
@@ -19,8 +19,21 @@ Index: deps/openssl/config/Makefile
  PERL    = perl
  
  # Supported architecture list
--ARCHS = aix-gcc aix64-gcc BSD-x86_64 \
-+ARCHS = aix-gcc aix64-gcc BSD-x86-elf BSD-x86_64 \
- darwin64-x86_64-cc darwin-i386-cc linux-aarch64 \
- linux-armv4 linux-elf linux-x32 linux-x86_64 linux-ppc \
- linux-ppc64 linux-ppc64le linux32-s390x linux64-s390x \
+-ASM_ARCHS = aix-gcc aix64-gcc BSD-x86_64 \
+-darwin64-x86_64-cc darwin-i386-cc linux-aarch64 \
+-linux-armv4 linux-elf linux-x32 linux-x86_64 linux-ppc \
+-linux-ppc64 linux-ppc64le linux32-s390x linux64-s390x \
+-solaris-x86-gcc solaris64-x86_64-gcc VC-WIN64A VC-WIN32
++ASM_ARCHS = BSD-x86-elf BSD-x86_64
+ 
+ NO_ASM_ARCHS = VC-WIN64-ARM
+ 
+@@ -42,7 +38,7 @@ INT_CFG_DIR = $(OPSSL_SRC)/crypto/include/internal
+ PHONY = all clean replace
+ .PHONY: $(PHONY)
+ 
+-all: $(ASM_ARCHS) $(NO_ASM_ARCHS) replace
++all: $(ASM_ARCHS) replace
+ 
+ # Configure and generate openssl asm files for each archs
+ $(ASM_ARCHS):

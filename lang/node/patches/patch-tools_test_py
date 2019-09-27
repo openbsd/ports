@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_test_py,v 1.6 2019/01/21 23:46:01 abieber Exp $
+$OpenBSD: patch-tools_test_py,v 1.7 2019/09/27 02:07:45 abieber Exp $
 Index: tools/test.py
 --- tools/test.py.orig
 +++ tools/test.py
-@@ -905,9 +905,9 @@ class Context(object):
- 
-   def GetVm(self, arch, mode):
+@@ -883,9 +883,9 @@ class Context(object):
+     if self.vm is not None:
+       return self.vm
      if arch == 'none':
 -      name = 'out/Debug/node' if mode == 'debug' else 'out/Release/node'
 +      name = '${WRKDIST}/out/Debug/node' if mode == 'debug' else '${WRKDIST}/out/Release/node'

@@ -1,4 +1,4 @@
-$OpenBSD: patch-deps_uv_src_unix_openbsd_c,v 1.6 2018/09/19 19:10:27 abieber Exp $
+$OpenBSD: patch-deps_uv_src_unix_openbsd_c,v 1.7 2019/09/27 02:07:45 abieber Exp $
 
 Fix from Fabian Raetz <fabian.raetz@gmail.com>, currently set for 
 the next release of 1.x: https://github.com/libuv/libuv/pull/652
@@ -20,7 +20,7 @@ Index: deps/uv/src/unix/openbsd.c
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
-@@ -68,12 +70,53 @@ void uv_loadavg(double avg[3]) {
+@@ -58,12 +60,53 @@ void uv_loadavg(double avg[3]) {
  }
  
  
@@ -75,7 +75,7 @@ Index: deps/uv/src/unix/openbsd.c
    pid_t mypid;
    int err;
  
-@@ -101,18 +144,11 @@ int uv_exepath(char* buffer, size_t* size) {
+@@ -91,18 +134,11 @@ int uv_exepath(char* buffer, size_t* size) {
      argsbuf_size *= 2U;
    }
  
