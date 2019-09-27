@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.159 2019/09/07 16:28:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2019/09/27 14:25:32 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.25.5
+DISTNAME=	cups-filters-1.25.6
 
 CATEGORIES=	print
 
@@ -88,6 +88,8 @@ pre-configure:
 		${WRKSRC}/filter/foomatic-rip/spooler.c
 	sed -i 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/filter/foomatic-rip/foomaticrip.c
+# XXX missing in the tarball
+	${SUBST_CMD} -m 0755 -c ${FILESDIR}/ln-srf ${WRKSRC}/ln-srf
 
 post-install:
 	rm -rf ${WRKINST}/rc?.d

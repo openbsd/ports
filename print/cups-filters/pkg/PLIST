@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2019/06/15 09:46:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2019/09/27 14:25:33 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -98,6 +98,7 @@ share/cups/mime/cupsfilters.types
 share/cups/ppdc/escp.h
 share/cups/ppdc/pcl.h
 share/doc/cups-filters/
+share/doc/cups-filters/ABOUT-NLS
 share/doc/cups-filters/AUTHORS
 share/doc/cups-filters/COPYING
 share/doc/cups-filters/INSTALL

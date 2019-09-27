@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# Author: Carlos Santos <unixmania@gmail.com>
+# This file is in public domain.
+#
+
+error() {
+	echo "$@" 1>&2
+	exit 1
+}
+
+src="$1"
+dst="$2"
+
+check_path() {
+	case "$2" in
+		*/../*|*/./*|*/.|*/..) error "$1 path '$2' must be absolute";;
+		*/) error "$1 path '$2' must not end with '/'";;
+		/?*) ;;
+		*) error "$1 path '$2' must start with '/'";;
+	esac
+}
+
+check_path "source" "$src"
+check_path "destination" "$dst"
+
+# strip leading '/'
+src=${src#/*}
+tmp=${dst#/*}
+
+s_prefix=${src%%/*}
+d_prefix=${tmp%%/*}
+
+# strip leading common
+while [ "$s_prefix" = "$d_prefix" ]; do
+	src="${src#$s_prefix/}"
+	tmp="${tmp#$d_prefix/}"
+	s_prefix=${src%%/*}
+	d_prefix=${tmp%%/*}
+done
+
+s_prefix="../"
+while [ -n "$d_prefix" ] && [ "$tmp" != "$d_prefix" ]; do
+	s_prefix="../$s_prefix"
+	tmp="${tmp#$d_prefix/}"
+	d_prefix=${tmp%%/*}
+done
+
+ln -s -f "$s_prefix$src" "$dst"
