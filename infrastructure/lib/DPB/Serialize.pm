@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Serialize.pm,v 1.2 2018/01/07 10:49:15 espie Exp $
+# $OpenBSD: Serialize.pm,v 1.3 2019/09/28 12:20:35 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -36,15 +36,25 @@ sub read
 		}
 		while (@e > 0) {
 			my $v = shift @e;
+			my $k;
 			if ($v =~ m/^(\w+)\=(.*)$/) {
-				$r->{$1} = $2;
+				$k = $1;
+				$v = $2;
 			} else {
-				my $k = shift @list or return;
-				$r->{$k} = $v;
+				$k = shift @list or return;
 			}
+			if ($class->numbers->{$k} && $v !~ m/^\d+(\.\d+)?$/) {
+				return;
+			}
+			$r->{$k} = $v;
 		}
     	}
 	return $r;
+}
+
+sub numbers
+{
+	return {time => 1, size => 1, ts => 1};
 }
 
 sub write
