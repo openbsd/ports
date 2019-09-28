@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/09/27 05:49:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.52 2019/09/28 18:19:13 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -15,6 +15,9 @@ GH_TAGNAME =	${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
 
+REVISION-main =		0
+REVISION-java =		0
+
 HOMEPAGE =		https://www.opencv.org/
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
@@ -29,18 +32,18 @@ DISTFILES =		opencv-{opencv/archive/}${V}${EXTRACT_SUFX}
 SHARED_LIBS += $i 5.0
 .endfor
 
-WANTLIB += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
-WANTLIB += atk-1.0 avcodec avformat avresample avutil c cairo
-WANTLIB += cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gthread-2.0
-WANTLIB += gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0 png
-WANTLIB += swscale tiff webp z
+WANTLIB-main += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
+WANTLIB-main += atk-1.0 avcodec avformat avresample avutil c cairo
+WANTLIB-main += cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
+WANTLIB-main += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gthread-2.0
+WANTLIB-main += gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0 png
+WANTLIB-main += swscale tiff webp z
 
-WANTLIB += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_dnn
-WANTLIB += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
-WANTLIB += opencv_imgproc opencv_ml opencv_objdetect opencv_photo
-WANTLIB += opencv_video opencv_videoio
+WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_dnn
+WANTLIB-java += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
+WANTLIB-java += opencv_imgproc opencv_ml opencv_objdetect opencv_photo
+WANTLIB-java += opencv_video opencv_videoio
 
 COMPILER =		base-clang ports-gcc
 
@@ -68,7 +71,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/ffmpeg \
 			graphics/ilmbase \
 			graphics/jpeg \
-			graphics/libgphoto2 \
 			graphics/libwebp \
 			graphics/openexr \
 			graphics/png \
