@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/09/27 08:11:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2019/09/28 09:42:56 ajacoutot Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -40,6 +40,7 @@ CXXFLAGS+=	-mxgot
 .endif
 
 BUILD_DEPENDS+=	devel/bison \
+		devel/git \
 		converters/libiconv
 
 RUN_DEPENDS=	devel/doxygen
