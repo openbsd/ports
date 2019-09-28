@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.13 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.14 2019/09/28 16:29:40 robert Exp $
 
 XXX pledge(2)
 
@@ -14,3 +14,13 @@ Index: base/threading/platform_thread_posix.cc
      // Threads on linux/android may inherit their priority from the thread
      // where they were created. This explicitly sets the priority of all new
      // threads.
+@@ -327,6 +327,9 @@ void PlatformThread::SetCurrentThreadPriorityImpl(Thre
+ ThreadPriority PlatformThread::GetCurrentThreadPriority() {
+ #if defined(OS_NACL)
+   NOTIMPLEMENTED();
++  return ThreadPriority::NORMAL;
++// avoid pledge(2) violation
++#elif defined(OS_BSD)
+   return ThreadPriority::NORMAL;
+ #else
+   // Mirrors SetCurrentThreadPriority()'s implementation.

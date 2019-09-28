@@ -298,7 +298,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  } else if (process_type == switches::kRendererProcess) {
 +    // prot_exec needed by v8
 +    // flock needed by sqlite3 locking
-+    SetPledge("stdio rpath flock prot_exec recvfd sendfd ps id", NULL);
++    SetPledge("stdio rpath flock prot_exec recvfd sendfd ps", NULL);
 +  } else if (process_type == switches::kGpuProcess) {
 +    SetPledge("stdio drm prot_exec recvfd sendfd tmppath", NULL);
 +  } else if (process_type == switches::kPpapiPluginProcess) {
