@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_rpi_3_defconfig,v 1.6 2019/01/15 05:44:18 jsg Exp $
+$OpenBSD: patch-configs_rpi_3_defconfig,v 1.7 2019/09/28 01:40:24 jsg Exp $
 
 rpi: Use firmware provided device tree
 
@@ -19,7 +19,7 @@ to variants of RPi hardware.
 Index: configs/rpi_3_defconfig
 --- configs/rpi_3_defconfig.orig
 +++ configs/rpi_3_defconfig
-@@ -15,7 +15,7 @@ CONFIG_CMD_GPIO=y
+@@ -18,7 +18,7 @@ CONFIG_CMD_GPIO=y
  CONFIG_CMD_MMC=y
  CONFIG_CMD_USB=y
  CONFIG_CMD_FS_UUID=y

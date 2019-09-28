@@ -1,0 +1,34 @@
+$OpenBSD: patch-arch_arm_mach-imx_spl_c,v 1.1 2019/09/28 01:40:24 jsg Exp $
+
+revert 14d319b1856b86e593e01abd0a1e3c2d63b52a8a
+spl: imx6: Let spl_boot_device return USDHC1 or USDHC2
+
+breaks cubox
+
+Index: arch/arm/mach-imx/spl.c
+--- arch/arm/mach-imx/spl.c.orig
++++ arch/arm/mach-imx/spl.c
+@@ -24,7 +24,6 @@ u32 spl_boot_device(void)
+ {
+ 	unsigned int bmode = readl(&src_base->sbmr2);
+ 	u32 reg = imx6_src_get_boot_mode();
+-	u32 mmc_index = ((reg >> 11) & 0x03);
+ 
+ 	/*
+ 	 * Check for BMODE if serial downloader is enabled
+@@ -85,12 +84,11 @@ u32 spl_boot_device(void)
+ 	/* SD/eSD: 8.5.3, Table 8-15  */
+ 	case IMX6_BMODE_SD:
+ 	case IMX6_BMODE_ESD:
++		return BOOT_DEVICE_MMC1;
++	/* MMC/eMMC: 8.5.3 */
+ 	case IMX6_BMODE_MMC:
+ 	case IMX6_BMODE_EMMC:
+-		if (mmc_index == 1)
+-			return BOOT_DEVICE_MMC2;
+-		else
+-			return BOOT_DEVICE_MMC1;
++		return BOOT_DEVICE_MMC1;
+ 	/* NAND Flash: 8.5.2, Table 8-10 */
+ 	case IMX6_BMODE_NAND_MIN ... IMX6_BMODE_NAND_MAX:
+ 		return BOOT_DEVICE_NAND;

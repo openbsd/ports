@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.58 2019/09/22 09:39:28 kn Exp $
+#	$OpenBSD: Makefile,v 1.59 2019/09/28 01:40:24 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,8 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2019.07
-REVISION=	2
+VERSION=	2019.10-rc4
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -44,7 +43,7 @@ MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
 SUNXI_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_a64-bl31.bin"
 .elif "${FLAVOR}" == "arm"
-BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro
+BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro>=7.4.2019.02
 MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
 .endif
 
@@ -69,7 +68,9 @@ BOARDS=\
 	mvebu_espressobin-88f3720 \
 	mvebu_mcbin-88f8040 \
 	qemu_arm64 \
-	rpi_3
+	rockpro64-rk3399 \
+	rpi_3 \
+	rpi_4
 .elif "${FLAVOR}" == "arm"
 OMAP=\
 	omap4_panda \
@@ -160,7 +161,7 @@ do-build:
 	        idbloader.img && \
 	    cat spl/u-boot-spl-dtb.bin >> idbloader.img
 .endif
-.if "${BOARD}" == "firefly-rk3399"
+.if "${BOARD}" == "firefly-rk3399" || "${BOARD}" == "rockpro64-rk3399"
 	cd ${WRKSRC}/build/${BOARD} && \
 	    ${SETENV} ${MAKE_ENV} BL31=${RK3399_BL31} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} O="build/${BOARD}" \

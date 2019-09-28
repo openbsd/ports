@@ -1,12 +1,12 @@
-$OpenBSD: patch-configs_rockpro64-rk3399_defconfig,v 1.1 2019/07/28 06:57:20 jsg Exp $
+$OpenBSD: patch-configs_rockpro64-rk3399_defconfig,v 1.2 2019/09/28 01:40:24 jsg Exp $
 
 Index: configs/rockpro64-rk3399_defconfig
 --- configs/rockpro64-rk3399_defconfig.orig
 +++ configs/rockpro64-rk3399_defconfig
-@@ -41,7 +41,7 @@ CONFIG_PMIC_RK8XX=y
- CONFIG_REGULATOR_PWM=y
+@@ -43,7 +43,7 @@ CONFIG_REGULATOR_PWM=y
  CONFIG_REGULATOR_RK8XX=y
  CONFIG_PWM_ROCKCHIP=y
+ CONFIG_RAM_RK3399_LPDDR4=y
 -CONFIG_BAUDRATE=1500000
 +CONFIG_BAUDRATE=115200
  CONFIG_DEBUG_UART_SHIFT=2
