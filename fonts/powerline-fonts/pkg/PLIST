@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/28 12:22:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/09/28 19:33:32 sthen Exp $
 share/fonts/
 share/fonts/powerline/
 @fontdir share/fonts/powerline/AnonymousPro/
@@ -22,6 +22,8 @@ share/fonts/powerline/Cousine/Cousine Italic for Powerline.ttf
 share/fonts/powerline/Cousine/Cousine for Powerline.ttf
 share/fonts/powerline/Cousine/LICENSE.txt
 share/fonts/powerline/Cousine/README.rst
+share/fonts/powerline/D2Coding/
+share/fonts/powerline/D2Coding/README.rst
 @fontdir share/fonts/powerline/DejaVuSansMono/
 share/fonts/powerline/DejaVuSansMono/DejaVu Sans Mono Bold Oblique for Powerline.ttf
 share/fonts/powerline/DejaVuSansMono/DejaVu Sans Mono Bold for Powerline.ttf
@@ -47,6 +49,13 @@ share/fonts/powerline/FiraMono/FuraMono-Medium Powerline.otf
 share/fonts/powerline/FiraMono/FuraMono-Regular Powerline.otf
 share/fonts/powerline/FiraMono/LICENSE.txt
 share/fonts/powerline/FiraMono/README.rst
+@fontdir share/fonts/powerline/GoMono/
+share/fonts/powerline/GoMono/Go Mono Bold Italic for Powerline.ttf
+share/fonts/powerline/GoMono/Go Mono Bold for Powerline.ttf
+share/fonts/powerline/GoMono/Go Mono Italic for Powerline.ttf
+share/fonts/powerline/GoMono/Go Mono for Powerline.ttf
+share/fonts/powerline/GoMono/LICENCE.TXT
+share/fonts/powerline/GoMono/README.rst
 @fontdir share/fonts/powerline/Hack/
 share/fonts/powerline/Hack/Hack-Bold.ttf
 share/fonts/powerline/Hack/Hack-BoldItalic.ttf
@@ -60,6 +69,7 @@ share/fonts/powerline/Hack/hack-specimen-for-Powerline.png
 share/fonts/powerline/Inconsolata-g/Inconsolata-g for Powerline.otf
 share/fonts/powerline/Inconsolata-g/LICENSE.txt
 share/fonts/powerline/Inconsolata-g/README.rst
+share/fonts/powerline/Inconsolata/Inconsolata Bold for Powerline.ttf
 share/fonts/powerline/Inconsolata/Inconsolata for Powerline.otf
 share/fonts/powerline/Inconsolata/LICENSE.txt
 share/fonts/powerline/Inconsolata/README.rst
@@ -76,20 +86,54 @@ share/fonts/powerline/LiberationMono/Literation Mono Powerline Bold.ttf
 share/fonts/powerline/LiberationMono/Literation Mono Powerline Italic.ttf
 share/fonts/powerline/LiberationMono/Literation Mono Powerline.ttf
 share/fonts/powerline/LiberationMono/README.rst
-@fontdir share/fonts/powerline/Meslo/
-share/fonts/powerline/Meslo/LICENSE.txt
-share/fonts/powerline/Meslo/Meslo LG L DZ Regular for Powerline.otf
-share/fonts/powerline/Meslo/Meslo LG L Regular for Powerline.otf
-share/fonts/powerline/Meslo/Meslo LG M DZ Regular for Powerline.otf
-share/fonts/powerline/Meslo/Meslo LG M Regular for Powerline.otf
-share/fonts/powerline/Meslo/Meslo LG S DZ Regular for Powerline.otf
-share/fonts/powerline/Meslo/Meslo LG S Regular for Powerline.otf
-share/fonts/powerline/Meslo/README.rst
+@fontdir share/fonts/powerline/Meslo Dotted/
+share/fonts/powerline/Meslo Dotted/LICENSE.txt
+share/fonts/powerline/Meslo Dotted/Meslo LG L DZ Bold Italic for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG L DZ Bold for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG L DZ Italic for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG L DZ Regular for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG M DZ Bold Italic for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG M DZ Bold for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG M DZ Italic for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG M DZ Regular for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG S DZ Bold Italic for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG S DZ Bold for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG S DZ Italic for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/Meslo LG S DZ Regular for Powerline.ttf
+share/fonts/powerline/Meslo Dotted/README.rst
+@fontdir share/fonts/powerline/Meslo Slashed/
+share/fonts/powerline/Meslo Slashed/LICENSE.txt
+share/fonts/powerline/Meslo Slashed/Meslo LG L Bold Italic for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG L Bold for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG L Italic for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG L Regular for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG M Bold Italic for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG M Bold for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG M Italic for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG M Regular for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG S Bold Italic for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG S Bold for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG S Italic for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/Meslo LG S Regular for Powerline.ttf
+share/fonts/powerline/Meslo Slashed/README.rst
 @fontdir share/fonts/powerline/Monofur/
 share/fonts/powerline/Monofur/LICENSE.txt
 share/fonts/powerline/Monofur/Monofur Bold for Powerline.ttf
 share/fonts/powerline/Monofur/Monofur Italic for Powerline.ttf
 share/fonts/powerline/Monofur/Monofur for Powerline.ttf
+@fontdir share/fonts/powerline/NotoMono/
+share/fonts/powerline/NotoMono/LICENSE_OFL.txt
+share/fonts/powerline/NotoMono/Noto Mono for Powerline.ttf
+share/fonts/powerline/NotoMono/README.rst
+@fontdir share/fonts/powerline/NovaMono/
+share/fonts/powerline/NovaMono/LICENSE.txt
+share/fonts/powerline/NovaMono/NovaMono for Powerline.ttf
+share/fonts/powerline/NovaMono/README.rst
+@fontdir share/fonts/powerline/ProFont/
+share/fonts/powerline/ProFont/LICENSE
+share/fonts/powerline/ProFont/ProFont Bold For Powerline.ttf
+share/fonts/powerline/ProFont/ProFont For Powerline.ttf
+share/fonts/powerline/ProFont/README.rst
 share/fonts/powerline/README.rst
 @fontdir share/fonts/powerline/RobotoMono/
 share/fonts/powerline/RobotoMono/LICENSE.txt
@@ -107,13 +151,31 @@ share/fonts/powerline/RobotoMono/Roboto Mono for Powerline.ttf
 @fontdir share/fonts/powerline/SourceCodePro/
 share/fonts/powerline/SourceCodePro/LICENSE.txt
 share/fonts/powerline/SourceCodePro/README.rst
-share/fonts/powerline/SourceCodePro/Sauce Code Powerline Black.otf
-share/fonts/powerline/SourceCodePro/Sauce Code Powerline Bold.otf
-share/fonts/powerline/SourceCodePro/Sauce Code Powerline ExtraLight.otf
-share/fonts/powerline/SourceCodePro/Sauce Code Powerline Light.otf
-share/fonts/powerline/SourceCodePro/Sauce Code Powerline Medium.otf
-share/fonts/powerline/SourceCodePro/Sauce Code Powerline Regular.otf
-share/fonts/powerline/SourceCodePro/Sauce Code Powerline Semibold.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Black for Powerline.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Bold for Powerline.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro ExtraLight for Powerline.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Light for Powerline.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Medium for Powerline.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Powerline BlackItalic.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Powerline BoldItalic.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Powerline ExtraLightItalic.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Powerline Italic.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Powerline LightItalic.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Powerline MediumItalic.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Powerline SemiboldItalic.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro Semibold for Powerline.otf
+share/fonts/powerline/SourceCodePro/Source Code Pro for Powerline.otf
+@fontdir share/fonts/powerline/SpaceMono/
+share/fonts/powerline/SpaceMono/LICENSE.txt
+share/fonts/powerline/SpaceMono/README.rst
+share/fonts/powerline/SpaceMono/Space Mono Bold Italic for Powerline.ttf
+share/fonts/powerline/SpaceMono/Space Mono Bold for Powerline.ttf
+share/fonts/powerline/SpaceMono/Space Mono Italic for Powerline.ttf
+share/fonts/powerline/SpaceMono/Space Mono for Powerline.ttf
+share/fonts/powerline/SpaceMono/SpaceMono-Bold.ttf
+share/fonts/powerline/SpaceMono/SpaceMono-BoldItalic.ttf
+share/fonts/powerline/SpaceMono/SpaceMono-Italic.ttf
+share/fonts/powerline/SpaceMono/SpaceMono-Regular.ttf
 @fontdir share/fonts/powerline/SymbolNeu/
 share/fonts/powerline/SymbolNeu/LICENSE.txt
 share/fonts/powerline/SymbolNeu/README.rst
