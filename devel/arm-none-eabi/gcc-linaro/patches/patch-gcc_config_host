@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_host,v 1.3 2018/05/15 11:32:01 kettenis Exp $
+$OpenBSD: patch-gcc_config_host,v 1.4 2019/09/28 00:29:11 jsg Exp $
 Index: gcc/config.host
 --- gcc/config.host.orig
 +++ gcc/config.host
@@ -6,7 +6,7 @@ Index: gcc/config.host
  esac
  
  case ${host} in
--  aarch64*-*-freebsd* | aarch64*-*-linux*)
+-  aarch64*-*-freebsd* | aarch64*-*-linux* | aarch64*-*-fuchsia*)
 +  aarch64*-*-*)
      case ${target} in
        aarch64*-*-*)
@@ -15,7 +15,7 @@ Index: gcc/config.host
  	;;
      esac
      ;;
--  arm*-*-freebsd* | arm*-*-linux*)
+-  arm*-*-freebsd* | arm*-*-linux* | arm*-*-fuchsia*)
 +  arm*-*-*)
      case ${target} in
        arm*-*-*)

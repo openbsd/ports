@@ -1,7 +1,8 @@
-$OpenBSD: patch-gcc_configure,v 1.2 2017/05/09 05:58:36 patrick Exp $
---- gcc/configure.orig	Sun May  7 21:29:07 2017
-+++ gcc/configure	Sun May  7 21:29:20 2017
-@@ -29513,14 +29513,14 @@ if test "$gcc_cv_c_no_fpie" = "yes"; then
+$OpenBSD: patch-gcc_configure,v 1.3 2019/09/28 00:29:11 jsg Exp $
+Index: gcc/configure
+--- gcc/configure.orig
++++ gcc/configure
+@@ -29836,14 +29836,14 @@ if test "$gcc_cv_c_no_fpie" = "yes"; then
  fi
  
  
@@ -20,7 +21,7 @@ $OpenBSD: patch-gcc_configure,v 1.2 2017/05/09 05:58:36 patrick Exp $
     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  int main(void) {return 0;}
-@@ -29537,7 +29537,7 @@ fi
+@@ -29860,7 +29860,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $gcc_cv_no_pie" >&5
  $as_echo "$gcc_cv_no_pie" >&6; }
  if test "$gcc_cv_no_pie" = "yes"; then

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/09/28 00:29:11 jsg Exp $
 
 BROKEN-powerpc=	libgcc/libgcc2.c:1999:1: internal compiler error: in create_edge, at cgraph.c:850
 
 COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
-VERSION=	6.3-2017.02
+VERSION=	7.4-2019.02
 DISTNAME=	gcc-linaro-${VERSION}
-REVISION=	3
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${CONFIG}-gcc-linaro-${VERSION:S/-/./g}
 
@@ -21,7 +20,7 @@ CONFIG=		arm-none-eabi
 ERRORS+=	"either aarch64 or arm FLAVOR should be set"
 .endif
 
-GCC_VERSION=	6.3.1
+GCC_VERSION=	7.4.1
 SUBST_VARS+=	VERSION CONFIG GCC_VERSION
 
 WANTLIB=	c m ${COMPILER_LIBCXX} gmp mpfr mpc
@@ -37,7 +36,7 @@ MAKE_ADA=	No
 
 # The "base" prefix is somewhat arbitrary, and introduced mostly because
 # portcheck complains about lines longer than 80 characters.
-MASTER_SITE_BASE=http://releases.linaro.org/components
+MASTER_SITE_BASE=https://releases.linaro.org/components
 MASTER_SITES= 	${MASTER_SITE_BASE}/toolchain/gcc-linaro/${VERSION}/
 
 BUILD_DEPENDS+=	devel/autoconf/2.13	\
@@ -65,7 +64,8 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--with-gmp=${LOCALBASE}		\
 		--with-newlib			\
 		--disable-lto			\
-		--enable-cpp
+		--enable-cpp			\
+		--disable-plugin
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

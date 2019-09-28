@@ -1,7 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
---- Makefile.in.orig	Wed Feb 15 01:14:40 2017
-+++ Makefile.in	Wed May  3 09:53:45 2017
-@@ -952,32 +952,8 @@ configure-host:  \
+$OpenBSD: patch-Makefile_in,v 1.3 2019/09/28 00:29:11 jsg Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -977,31 +977,8 @@ configure-host:  \
      maybe-configure-gotools
  .PHONY: configure-target
  configure-target:  \
@@ -19,13 +21,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -    maybe-configure-target-libgfortran \
 -    maybe-configure-target-libobjc \
 -    maybe-configure-target-libgo \
+-    maybe-configure-target-libhsail-rt \
 -    maybe-configure-target-libtermcap \
 -    maybe-configure-target-winsup \
 -    maybe-configure-target-libgloss \
 -    maybe-configure-target-libffi \
--    maybe-configure-target-libjava \
 -    maybe-configure-target-zlib \
--    maybe-configure-target-boehm-gc \
 -    maybe-configure-target-rda \
 -    maybe-configure-target-libada \
 -    maybe-configure-target-libgomp \
@@ -35,7 +36,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  # The target built for a native non-bootstrap build.
  .PHONY: all
-@@ -1109,44 +1085,10 @@ all-host: maybe-all-gotools
+@@ -1133,43 +1110,10 @@ all-host: maybe-all-gotools
  
  .PHONY: all-target
  
@@ -63,13 +64,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -all-target: maybe-all-target-libgfortran
 -all-target: maybe-all-target-libobjc
 -all-target: maybe-all-target-libgo
+-all-target: maybe-all-target-libhsail-rt
 -all-target: maybe-all-target-libtermcap
 -all-target: maybe-all-target-winsup
 -all-target: maybe-all-target-libgloss
 -all-target: maybe-all-target-libffi
--all-target: maybe-all-target-libjava
 -all-target: maybe-all-target-zlib
--all-target: maybe-all-target-boehm-gc
 -all-target: maybe-all-target-rda
 -all-target: maybe-all-target-libada
 -@if target-libgomp-no-bootstrap
@@ -80,7 +80,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  # Do a target for all the subdirectories.  A ``make do-X'' will do a
  # ``make X'' in all subdirectories (because, in general, there is a
-@@ -1213,32 +1155,8 @@ info-host: maybe-info-gotools
+@@ -1236,31 +1180,8 @@ info-host: maybe-info-gotools
  
  .PHONY: info-target
  
@@ -98,13 +98,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -info-target: maybe-info-target-libgfortran
 -info-target: maybe-info-target-libobjc
 -info-target: maybe-info-target-libgo
+-info-target: maybe-info-target-libhsail-rt
 -info-target: maybe-info-target-libtermcap
 -info-target: maybe-info-target-winsup
 -info-target: maybe-info-target-libgloss
 -info-target: maybe-info-target-libffi
--info-target: maybe-info-target-libjava
 -info-target: maybe-info-target-zlib
--info-target: maybe-info-target-boehm-gc
 -info-target: maybe-info-target-rda
 -info-target: maybe-info-target-libada
 -info-target: maybe-info-target-libgomp
@@ -113,31 +112,30 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-dvi
  do-dvi:
-@@ -1300,32 +1218,8 @@ dvi-host: maybe-dvi-gotools
+@@ -1322,31 +1243,8 @@ dvi-host: maybe-dvi-gotools
  
  .PHONY: dvi-target
  
 -dvi-target: maybe-dvi-target-libstdc++-v3
 -dvi-target: maybe-dvi-target-libsanitizer
--dvi-target: maybe-dvi-target-libmpx
+ dvi-target: maybe-dvi-target-libmpx
 -dvi-target: maybe-dvi-target-libvtv
 -dvi-target: maybe-dvi-target-libcilkrts
 -dvi-target: maybe-dvi-target-liboffloadmic
 -dvi-target: maybe-dvi-target-libssp
- dvi-target: maybe-dvi-target-newlib
+-dvi-target: maybe-dvi-target-newlib
  dvi-target: maybe-dvi-target-libgcc
 -dvi-target: maybe-dvi-target-libbacktrace
 -dvi-target: maybe-dvi-target-libquadmath
 -dvi-target: maybe-dvi-target-libgfortran
 -dvi-target: maybe-dvi-target-libobjc
 -dvi-target: maybe-dvi-target-libgo
+-dvi-target: maybe-dvi-target-libhsail-rt
 -dvi-target: maybe-dvi-target-libtermcap
 -dvi-target: maybe-dvi-target-winsup
 -dvi-target: maybe-dvi-target-libgloss
 -dvi-target: maybe-dvi-target-libffi
--dvi-target: maybe-dvi-target-libjava
 -dvi-target: maybe-dvi-target-zlib
--dvi-target: maybe-dvi-target-boehm-gc
 -dvi-target: maybe-dvi-target-rda
 -dvi-target: maybe-dvi-target-libada
 -dvi-target: maybe-dvi-target-libgomp
@@ -146,7 +144,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-pdf
  do-pdf:
-@@ -1387,32 +1281,8 @@ pdf-host: maybe-pdf-gotools
+@@ -1408,31 +1306,8 @@ pdf-host: maybe-pdf-gotools
  
  .PHONY: pdf-target
  
@@ -164,13 +162,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -pdf-target: maybe-pdf-target-libgfortran
 -pdf-target: maybe-pdf-target-libobjc
 -pdf-target: maybe-pdf-target-libgo
+-pdf-target: maybe-pdf-target-libhsail-rt
 -pdf-target: maybe-pdf-target-libtermcap
 -pdf-target: maybe-pdf-target-winsup
 -pdf-target: maybe-pdf-target-libgloss
 -pdf-target: maybe-pdf-target-libffi
--pdf-target: maybe-pdf-target-libjava
 -pdf-target: maybe-pdf-target-zlib
--pdf-target: maybe-pdf-target-boehm-gc
 -pdf-target: maybe-pdf-target-rda
 -pdf-target: maybe-pdf-target-libada
 -pdf-target: maybe-pdf-target-libgomp
@@ -179,7 +176,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-html
  do-html:
-@@ -1474,32 +1344,8 @@ html-host: maybe-html-gotools
+@@ -1494,31 +1369,8 @@ html-host: maybe-html-gotools
  
  .PHONY: html-target
  
@@ -197,13 +194,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -html-target: maybe-html-target-libgfortran
 -html-target: maybe-html-target-libobjc
 -html-target: maybe-html-target-libgo
+-html-target: maybe-html-target-libhsail-rt
 -html-target: maybe-html-target-libtermcap
 -html-target: maybe-html-target-winsup
 -html-target: maybe-html-target-libgloss
 -html-target: maybe-html-target-libffi
--html-target: maybe-html-target-libjava
 -html-target: maybe-html-target-zlib
--html-target: maybe-html-target-boehm-gc
 -html-target: maybe-html-target-rda
 -html-target: maybe-html-target-libada
 -html-target: maybe-html-target-libgomp
@@ -212,7 +208,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-TAGS
  do-TAGS:
-@@ -1561,32 +1407,8 @@ TAGS-host: maybe-TAGS-gotools
+@@ -1580,31 +1432,8 @@ TAGS-host: maybe-TAGS-gotools
  
  .PHONY: TAGS-target
  
@@ -230,13 +226,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -TAGS-target: maybe-TAGS-target-libgfortran
 -TAGS-target: maybe-TAGS-target-libobjc
 -TAGS-target: maybe-TAGS-target-libgo
+-TAGS-target: maybe-TAGS-target-libhsail-rt
 -TAGS-target: maybe-TAGS-target-libtermcap
 -TAGS-target: maybe-TAGS-target-winsup
 -TAGS-target: maybe-TAGS-target-libgloss
 -TAGS-target: maybe-TAGS-target-libffi
--TAGS-target: maybe-TAGS-target-libjava
 -TAGS-target: maybe-TAGS-target-zlib
--TAGS-target: maybe-TAGS-target-boehm-gc
 -TAGS-target: maybe-TAGS-target-rda
 -TAGS-target: maybe-TAGS-target-libada
 -TAGS-target: maybe-TAGS-target-libgomp
@@ -245,7 +240,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-install-info
  do-install-info:
-@@ -1648,32 +1470,8 @@ install-info-host: maybe-install-info-gotools
+@@ -1666,31 +1495,8 @@ install-info-host: maybe-install-info-gotools
  
  .PHONY: install-info-target
  
@@ -263,13 +258,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -install-info-target: maybe-install-info-target-libgfortran
 -install-info-target: maybe-install-info-target-libobjc
 -install-info-target: maybe-install-info-target-libgo
+-install-info-target: maybe-install-info-target-libhsail-rt
 -install-info-target: maybe-install-info-target-libtermcap
 -install-info-target: maybe-install-info-target-winsup
 -install-info-target: maybe-install-info-target-libgloss
 -install-info-target: maybe-install-info-target-libffi
--install-info-target: maybe-install-info-target-libjava
 -install-info-target: maybe-install-info-target-zlib
--install-info-target: maybe-install-info-target-boehm-gc
 -install-info-target: maybe-install-info-target-rda
 -install-info-target: maybe-install-info-target-libada
 -install-info-target: maybe-install-info-target-libgomp
@@ -278,7 +272,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-install-pdf
  do-install-pdf:
-@@ -1735,32 +1533,8 @@ install-pdf-host: maybe-install-pdf-gotools
+@@ -1752,31 +1558,8 @@ install-pdf-host: maybe-install-pdf-gotools
  
  .PHONY: install-pdf-target
  
@@ -296,13 +290,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -install-pdf-target: maybe-install-pdf-target-libgfortran
 -install-pdf-target: maybe-install-pdf-target-libobjc
 -install-pdf-target: maybe-install-pdf-target-libgo
+-install-pdf-target: maybe-install-pdf-target-libhsail-rt
 -install-pdf-target: maybe-install-pdf-target-libtermcap
 -install-pdf-target: maybe-install-pdf-target-winsup
 -install-pdf-target: maybe-install-pdf-target-libgloss
 -install-pdf-target: maybe-install-pdf-target-libffi
--install-pdf-target: maybe-install-pdf-target-libjava
 -install-pdf-target: maybe-install-pdf-target-zlib
--install-pdf-target: maybe-install-pdf-target-boehm-gc
 -install-pdf-target: maybe-install-pdf-target-rda
 -install-pdf-target: maybe-install-pdf-target-libada
 -install-pdf-target: maybe-install-pdf-target-libgomp
@@ -311,7 +304,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-install-html
  do-install-html:
-@@ -1822,32 +1596,8 @@ install-html-host: maybe-install-html-gotools
+@@ -1838,31 +1621,8 @@ install-html-host: maybe-install-html-gotools
  
  .PHONY: install-html-target
  
@@ -329,13 +322,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -install-html-target: maybe-install-html-target-libgfortran
 -install-html-target: maybe-install-html-target-libobjc
 -install-html-target: maybe-install-html-target-libgo
+-install-html-target: maybe-install-html-target-libhsail-rt
 -install-html-target: maybe-install-html-target-libtermcap
 -install-html-target: maybe-install-html-target-winsup
 -install-html-target: maybe-install-html-target-libgloss
 -install-html-target: maybe-install-html-target-libffi
--install-html-target: maybe-install-html-target-libjava
 -install-html-target: maybe-install-html-target-zlib
--install-html-target: maybe-install-html-target-boehm-gc
 -install-html-target: maybe-install-html-target-rda
 -install-html-target: maybe-install-html-target-libada
 -install-html-target: maybe-install-html-target-libgomp
@@ -344,7 +336,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-installcheck
  do-installcheck:
-@@ -1909,32 +1659,8 @@ installcheck-host: maybe-installcheck-gotools
+@@ -1924,31 +1684,8 @@ installcheck-host: maybe-installcheck-gotools
  
  .PHONY: installcheck-target
  
@@ -362,13 +354,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -installcheck-target: maybe-installcheck-target-libgfortran
 -installcheck-target: maybe-installcheck-target-libobjc
 -installcheck-target: maybe-installcheck-target-libgo
+-installcheck-target: maybe-installcheck-target-libhsail-rt
 -installcheck-target: maybe-installcheck-target-libtermcap
 -installcheck-target: maybe-installcheck-target-winsup
 -installcheck-target: maybe-installcheck-target-libgloss
 -installcheck-target: maybe-installcheck-target-libffi
--installcheck-target: maybe-installcheck-target-libjava
 -installcheck-target: maybe-installcheck-target-zlib
--installcheck-target: maybe-installcheck-target-boehm-gc
 -installcheck-target: maybe-installcheck-target-rda
 -installcheck-target: maybe-installcheck-target-libada
 -installcheck-target: maybe-installcheck-target-libgomp
@@ -377,7 +368,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-mostlyclean
  do-mostlyclean:
-@@ -1996,32 +1722,8 @@ mostlyclean-host: maybe-mostlyclean-gotools
+@@ -2010,31 +1747,8 @@ mostlyclean-host: maybe-mostlyclean-gotools
  
  .PHONY: mostlyclean-target
  
@@ -395,13 +386,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -mostlyclean-target: maybe-mostlyclean-target-libgfortran
 -mostlyclean-target: maybe-mostlyclean-target-libobjc
 -mostlyclean-target: maybe-mostlyclean-target-libgo
+-mostlyclean-target: maybe-mostlyclean-target-libhsail-rt
 -mostlyclean-target: maybe-mostlyclean-target-libtermcap
 -mostlyclean-target: maybe-mostlyclean-target-winsup
 -mostlyclean-target: maybe-mostlyclean-target-libgloss
 -mostlyclean-target: maybe-mostlyclean-target-libffi
--mostlyclean-target: maybe-mostlyclean-target-libjava
 -mostlyclean-target: maybe-mostlyclean-target-zlib
--mostlyclean-target: maybe-mostlyclean-target-boehm-gc
 -mostlyclean-target: maybe-mostlyclean-target-rda
 -mostlyclean-target: maybe-mostlyclean-target-libada
 -mostlyclean-target: maybe-mostlyclean-target-libgomp
@@ -410,7 +400,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-clean
  do-clean:
-@@ -2083,32 +1785,8 @@ clean-host: maybe-clean-gotools
+@@ -2096,31 +1810,8 @@ clean-host: maybe-clean-gotools
  
  .PHONY: clean-target
  
@@ -428,13 +418,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -clean-target: maybe-clean-target-libgfortran
 -clean-target: maybe-clean-target-libobjc
 -clean-target: maybe-clean-target-libgo
+-clean-target: maybe-clean-target-libhsail-rt
 -clean-target: maybe-clean-target-libtermcap
 -clean-target: maybe-clean-target-winsup
 -clean-target: maybe-clean-target-libgloss
 -clean-target: maybe-clean-target-libffi
--clean-target: maybe-clean-target-libjava
 -clean-target: maybe-clean-target-zlib
--clean-target: maybe-clean-target-boehm-gc
 -clean-target: maybe-clean-target-rda
 -clean-target: maybe-clean-target-libada
 -clean-target: maybe-clean-target-libgomp
@@ -443,7 +432,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-distclean
  do-distclean:
-@@ -2170,32 +1848,8 @@ distclean-host: maybe-distclean-gotools
+@@ -2182,31 +1873,8 @@ distclean-host: maybe-distclean-gotools
  
  .PHONY: distclean-target
  
@@ -461,13 +450,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -distclean-target: maybe-distclean-target-libgfortran
 -distclean-target: maybe-distclean-target-libobjc
 -distclean-target: maybe-distclean-target-libgo
+-distclean-target: maybe-distclean-target-libhsail-rt
 -distclean-target: maybe-distclean-target-libtermcap
 -distclean-target: maybe-distclean-target-winsup
 -distclean-target: maybe-distclean-target-libgloss
 -distclean-target: maybe-distclean-target-libffi
--distclean-target: maybe-distclean-target-libjava
 -distclean-target: maybe-distclean-target-zlib
--distclean-target: maybe-distclean-target-boehm-gc
 -distclean-target: maybe-distclean-target-rda
 -distclean-target: maybe-distclean-target-libada
 -distclean-target: maybe-distclean-target-libgomp
@@ -476,7 +464,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  .PHONY: do-maintainer-clean
  do-maintainer-clean:
-@@ -2257,32 +1911,8 @@ maintainer-clean-host: maybe-maintainer-clean-gotools
+@@ -2268,31 +1936,9 @@ maintainer-clean-host: maybe-maintainer-clean-gotools
  
  .PHONY: maintainer-clean-target
  
@@ -489,18 +477,17 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -maintainer-clean-target: maybe-maintainer-clean-target-libssp
  maintainer-clean-target: maybe-maintainer-clean-target-newlib
  maintainer-clean-target: maybe-maintainer-clean-target-libgcc
--maintainer-clean-target: maybe-maintainer-clean-target-libbacktrace
+ maintainer-clean-target: maybe-maintainer-clean-target-libbacktrace
 -maintainer-clean-target: maybe-maintainer-clean-target-libquadmath
 -maintainer-clean-target: maybe-maintainer-clean-target-libgfortran
 -maintainer-clean-target: maybe-maintainer-clean-target-libobjc
 -maintainer-clean-target: maybe-maintainer-clean-target-libgo
+-maintainer-clean-target: maybe-maintainer-clean-target-libhsail-rt
 -maintainer-clean-target: maybe-maintainer-clean-target-libtermcap
 -maintainer-clean-target: maybe-maintainer-clean-target-winsup
 -maintainer-clean-target: maybe-maintainer-clean-target-libgloss
 -maintainer-clean-target: maybe-maintainer-clean-target-libffi
--maintainer-clean-target: maybe-maintainer-clean-target-libjava
 -maintainer-clean-target: maybe-maintainer-clean-target-zlib
--maintainer-clean-target: maybe-maintainer-clean-target-boehm-gc
 -maintainer-clean-target: maybe-maintainer-clean-target-rda
 -maintainer-clean-target: maybe-maintainer-clean-target-libada
 -maintainer-clean-target: maybe-maintainer-clean-target-libgomp
@@ -509,7 +496,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  
  # Here are the targets which correspond to the do-X targets.
-@@ -2400,32 +2030,8 @@ check-host:  \
+@@ -2410,31 +2056,8 @@ check-host:  \
  
  .PHONY: check-target
  check-target:  \
@@ -527,13 +514,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -    maybe-check-target-libgfortran \
 -    maybe-check-target-libobjc \
 -    maybe-check-target-libgo \
+-    maybe-check-target-libhsail-rt \
 -    maybe-check-target-libtermcap \
 -    maybe-check-target-winsup \
 -    maybe-check-target-libgloss \
 -    maybe-check-target-libffi \
--    maybe-check-target-libjava \
 -    maybe-check-target-zlib \
--    maybe-check-target-boehm-gc \
 -    maybe-check-target-rda \
 -    maybe-check-target-libada \
 -    maybe-check-target-libgomp \
@@ -543,7 +529,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  do-check:
  	@: $(MAKE); $(unstage)
-@@ -2583,32 +2189,8 @@ install-host:  \
+@@ -2592,31 +2215,8 @@ install-host:  \
  
  .PHONY: install-target
  install-target:  \
@@ -561,13 +547,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -    maybe-install-target-libgfortran \
 -    maybe-install-target-libobjc \
 -    maybe-install-target-libgo \
+-    maybe-install-target-libhsail-rt \
 -    maybe-install-target-libtermcap \
 -    maybe-install-target-winsup \
 -    maybe-install-target-libgloss \
 -    maybe-install-target-libffi \
--    maybe-install-target-libjava \
 -    maybe-install-target-zlib \
--    maybe-install-target-boehm-gc \
 -    maybe-install-target-rda \
 -    maybe-install-target-libada \
 -    maybe-install-target-libgomp \
@@ -577,7 +562,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
  
  uninstall:
  	@echo "the uninstall target is not supported in this tree"
-@@ -2690,32 +2272,8 @@ install-strip-host:  \
+@@ -2698,31 +2298,8 @@ install-strip-host:  \
  
  .PHONY: install-strip-target
  install-strip-target:  \
@@ -595,13 +580,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2017/05/08 09:04:54 patrick Exp $
 -    maybe-install-strip-target-libgfortran \
 -    maybe-install-strip-target-libobjc \
 -    maybe-install-strip-target-libgo \
+-    maybe-install-strip-target-libhsail-rt \
 -    maybe-install-strip-target-libtermcap \
 -    maybe-install-strip-target-winsup \
 -    maybe-install-strip-target-libgloss \
 -    maybe-install-strip-target-libffi \
--    maybe-install-strip-target-libjava \
 -    maybe-install-strip-target-zlib \
--    maybe-install-strip-target-boehm-gc \
 -    maybe-install-strip-target-rda \
 -    maybe-install-strip-target-libada \
 -    maybe-install-strip-target-libgomp \

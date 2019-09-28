@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/12/06 17:24:02 patrick Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/09/28 00:29:11 jsg Exp $
 %%aarch64%%
 %%arm%%
 @bin bin/${CONFIG}-c++
@@ -21,11 +21,11 @@ libexec/gcc/${CONFIG}/${GCC_VERSION}/install-tools/fixinc.sh
 libexec/gcc/${CONFIG}/${GCC_VERSION}/install-tools/mkheaders
 libexec/gcc/${CONFIG}/${GCC_VERSION}/install-tools/mkinstalldirs
 @bin libexec/gcc/${CONFIG}/${GCC_VERSION}/lto-wrapper
-libexec/gcc/${CONFIG}/${GCC_VERSION}/plugin/
-@bin libexec/gcc/${CONFIG}/${GCC_VERSION}/plugin/gengtype
 @man man/man1/${CONFIG}-cpp.1
 @man man/man1/${CONFIG}-g++.1
 @man man/man1/${CONFIG}-gcc.1
+@man man/man1/${CONFIG}-gcov-dump.1
+@man man/man1/${CONFIG}-gcov-tool.1
 @man man/man1/${CONFIG}-gcov.1
 @comment @man man/man7/fsf-funding.7
 @comment @man man/man7/gfdl.7
