@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:50:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/09/28 09:37:54 ajacoutot Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
 V =		6.6.1
-REVISION =	0
+REVISION =	1
 PKGNAME =	kibana-${V}
 DISTNAME =	kibana-oss-${V}-darwin-x86_64
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://artifacts.elastic.co/downloads/kibana/
 
-RUN_DEPENDS =	lang/node>=10.15.0,<10.16.0
+RUN_DEPENDS =	lang/node
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
