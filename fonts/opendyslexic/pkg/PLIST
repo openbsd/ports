@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/28 23:01:59 pamela Exp $
+share/doc/opendyslexic/
+share/doc/opendyslexic/OFL-FAQ.txt
+share/doc/opendyslexic/OFL.txt
+share/doc/opendyslexic/README.md
+share/fonts/
+@fontdir share/fonts/opendyslexic/
+share/fonts/opendyslexic/OpenDyslexic-Bold-Italic.otf
+share/fonts/opendyslexic/OpenDyslexic-Bold-Italic.woff
+share/fonts/opendyslexic/OpenDyslexic-Bold.otf
+share/fonts/opendyslexic/OpenDyslexic-Bold.woff
+share/fonts/opendyslexic/OpenDyslexic-Italic.otf
+share/fonts/opendyslexic/OpenDyslexic-Italic.woff
+share/fonts/opendyslexic/OpenDyslexic-Regular.otf
+share/fonts/opendyslexic/OpenDyslexic-Regular.woff
