@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.98 2019/07/01 12:03:41 espie Exp $
+# $OpenBSD: Core.pm,v 1.99 2019/09/28 12:22:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,6 +17,7 @@
 use strict;
 use warnings;
 use DPB::Util;
+use Time::HiRes;
 
 # here, a "core" is an entity responsible for scheduling cpu, such as
 # running a job, which is a collection of tasks.
@@ -425,12 +426,11 @@ sub mark_ready
 	return $self;
 }
 
-use Time::HiRes qw(time);
 sub start_job
 {
 	my ($core, $job) = @_;
 	$core->{job} = $job;
-	$core->{started} = time;
+	$core->{started} = Time::HiRes::time();
 	$core->{status} = 0;
 	$core->start_task;
 }
@@ -597,7 +597,7 @@ sub one_core
 
 sub report
 {
-	my $current = time();
+	my $current = Time::HiRes::time();
 
 	my $s = join("\n", map {one_core($_, $current)} sort {$a->{started} <=> $b->{started}} values %$running). "\n";
 	for my $a (@extra_report) {
@@ -608,7 +608,7 @@ sub report
 
 sub important
 {
-	my $current = time();
+	my $current = Time::HiRes::time();
 	my $s = '';
 	for my $j (values %$running) {
 		if ($j->job->really_watch($current)) {

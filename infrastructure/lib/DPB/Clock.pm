@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.14 2018/01/03 14:23:06 espie Exp $
+# $OpenBSD: Clock.pm,v 1.15 2019/09/28 12:22:12 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,7 +19,7 @@ use warnings;
 
 # everything needed to handle clock
 
-use Time::HiRes qw(time);
+use Time::HiRes;
 
 # explicit stop/restart clock where needed
 package DPB::Clock;
@@ -44,12 +44,12 @@ my $stopped_clock;
 
 sub stop
 {
-	$stopped_clock = time();
+	$stopped_clock = Time::HiRes::time();
 }
 
 sub restart
 {
-	my $gap = time() - $stopped_clock;
+	my $gap = Time::HiRes::time() - $stopped_clock;
 
 	for my $o (values %$items) {
 		$o->stopped_clock($gap, $stopped_clock);
@@ -64,7 +64,7 @@ sub fork
 {
 	my ($self, $core) = @_;
 
-	$self->{started} = time();
+	$self->{started} = Time::HiRes::time();
 	DPB::Clock->register($self);
 	return $self->SUPER::fork($core);
 }
@@ -72,7 +72,7 @@ sub fork
 sub finalize
 {
 	my ($self, $core) = @_;
-	$self->{ended} = time();
+	$self->{ended} = Time::HiRes::time();
 	DPB::Clock->unregister($self);
 	return $self->SUPER::finalize($core);
 }
