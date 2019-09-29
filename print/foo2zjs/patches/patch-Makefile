@@ -1,6 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
---- Makefile.orig	Sun Mar 26 21:48:24 2017
-+++ Makefile	Tue Apr  4 15:31:27 2017
+$OpenBSD: patch-Makefile,v 1.31 2019/09/29 13:41:11 ajacoutot Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -16,11 +16,6 @@ SYSNAME := $(shell uname -n)
  # No version number yet...
  VERSION=0.0
@@ -29,7 +31,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  
  # User ID's
  LPuid=-oroot
-@@ -252,9 +247,9 @@ FILES	=	\
+@@ -253,9 +248,9 @@ FILES	=	\
  		$(NULL)
  
  # CUPS vars
@@ -42,7 +44,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  
  # hpclj2600n-0.icm km2430_0.icm km2430_1.icm km2430_2.icm samclp300-0.icm
  # sihp1000.img sihp1005.img sihp1020.img sihp1018.img
-@@ -304,7 +299,7 @@ endif
+@@ -305,7 +300,7 @@ endif
  
  # Compiler flags
  #CFLAGS +=	-O2 -Wall -Wno-unused-but-set-variable
@@ -51,7 +53,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  #CFLAGS +=	-g
  
  #
-@@ -436,12 +431,6 @@ all-test:
+@@ -441,12 +436,6 @@ all-test:
  	    echo "      ***"; \
  	    exit 1; \
  	fi
@@ -64,7 +66,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  ifeq ($(UNAME),Darwin)
  	@if ! type gsed >/dev/null 2>&1; then \
  	    echo "      ***"; \
-@@ -620,7 +609,7 @@ zjsdecode: zjsdecode.o $(LIBJBG)
+@@ -625,7 +614,7 @@ zjsdecode: zjsdecode.o $(LIBJBG)
  	$(CC) $(CFLAGS) zjsdecode.o $(LIBJBG) -o $@
  
  command2foo2lava-pjl: command2foo2lava-pjl.o
@@ -73,7 +75,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  
  command2foo2lava-pjl.o: command2foo2lava-pjl.c
  	$(CC) $(CFLAGS) -I/usr/local/include -c command2foo2lava-pjl.c
-@@ -628,9 +617,8 @@ command2foo2lava-pjl.o: command2foo2lava-pjl.c
+@@ -633,9 +622,8 @@ command2foo2lava-pjl.o: command2foo2lava-pjl.c
  #
  # Installation rules
  #
@@ -81,10 +83,10 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
 +install: all install-prog install-icc2ps install-osx-hotplug \
  	    install-extra install-crd install-foo install-ppd \
 -	    install-gui install-desktop install-filter \
- 	    install-man install-doc
+ 	    install-man install-doc install-aa
  	#
  	# If you use CUPS, then restart the spooler:
-@@ -689,11 +677,6 @@ install-prog:
+@@ -694,11 +682,6 @@ install-prog:
  	$(INSTALL) -d $(SHAREZJS)/
  	$(INSTALL) -c -m 644 gamma.ps $(SHAREZJS)/
  	$(INSTALL) -c -m 644 gamma-lookup.ps $(SHAREZJS)/
@@ -96,7 +98,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  
  install-foo:
  	#
-@@ -712,24 +695,14 @@ install-foo:
+@@ -717,24 +700,14 @@ install-foo:
  	#
  	# Install current database files
  	#
@@ -123,7 +125,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  	#
  	# Clear foomatic cache and rebuild database if needed
  	#
-@@ -866,7 +839,7 @@ install-extra:
+@@ -878,7 +851,7 @@ install-extra:
  	done
  
  MODEL=$(PREFIX)/share/cups/model
@@ -132,7 +134,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  MACMODEL=/Library/Printers/PPDs/Contents/Resources
  PPD=$(PREFIX)/share/ppd
  VARPPD=/var/lp/ppd
-@@ -874,43 +847,8 @@ install-ppd:
+@@ -886,44 +859,8 @@ install-ppd:
  	#
  	# Install PPD files for CUPS
  	#
@@ -156,6 +158,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
 -	    find $(PPD) -name '*foo2slx*' | xargs rm -rf; \
 -	    find $(PPD) -name '*foo2hiperc*' | xargs rm -rf; \
 -	    find $(PPD) -name '*foo2hbpl*' | xargs rm -rf; \
+-	    find $(PPD) -name '*foo2ddst*' | xargs rm -rf; \
 -	    [ -d $(PPD)/foo2zjs ] || mkdir $(PPD)/foo2zjs; \
 -	    cd PPD; \
 -	    for ppd in *.ppd; do \
@@ -178,7 +181,7 @@ $OpenBSD: patch-Makefile,v 1.30 2017/04/04 21:24:44 ajacoutot Exp $
  	    rm -f $(LOCALMODEL)/KonicaMinolta*; \
  	    cd PPD; \
  	    for ppd in *.ppd; do \
-@@ -1581,11 +1519,8 @@ install-doc: doc
+@@ -1618,11 +1555,8 @@ install-doc: doc
  	#
  	$(INSTALL) -d -m 755 $(DOCDIR)
  	$(INSTALL) -c -m 644 manual.pdf $(DOCDIR)
