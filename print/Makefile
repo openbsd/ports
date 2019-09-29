@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2019/03/13 07:12:28 bentley Exp $
+# $OpenBSD: Makefile,v 1.129 2019/09/29 13:22:55 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -18,6 +18,7 @@
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += enscript
+    SUBDIR += epson-inkjet-printer-escpr
     SUBDIR += foiltex
     SUBDIR += fontforge
     SUBDIR += foo2zjs
