@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.1 2019/09/29 10:51:26 espie Exp $
+# $OpenBSD: Trace.pm,v 1.2 2019/09/29 10:58:10 espie Exp $
 #
 # Copyright (c) 2015-2019 Marc Espie <espie@openbsd.org>
 #
@@ -27,6 +27,16 @@ package OpenBSD::Trace;
 
 my $forbidden = qr{[^[:print:]\s]};
 
+sub dumper
+{
+	my $self = shift;
+
+	require Data::Dumper;
+	return Data::Dumper->new(@_)->
+	    Indent(0)->Maxdepth(1)->Quotekeys(0)->Sortkeys(1)->
+	    Deparse(1);
+}
+
 sub dump_param
 {
 	my ($self, $arg, $full) = @_;
@@ -40,10 +50,7 @@ sub dump_param
 		}
 	}
 	if ($full) {
-		require Data::Dumper;
-		my $msg = Data::Dumper->new([$arg])->
-		    Indent(0)->Maxdepth(1)->Quotekeys(0)->Sortkeys(1)->
-		    Deparse(1)-> Dump;
+		my $msg = $self->dumper([$arg])->Dump;
 
 		$msg =~ s/^\$VAR1 = //;
 		$msg =~ s/\;$//;
@@ -214,11 +221,17 @@ the stack dumping message is built using C<$self-E<gt>stack_dump($full)>
 
 =item *
 
-the __WARN__ handler calls C<$self-E<gt>do_warn($msg)>
+the Data::Dumper object with options is built using C<$self-E<gt>dumper(@_)>
 
 =item *
 
-the __DIE__ handler calls C<$self-E<gt>do_die($msg)>
+the C<$SIG{__WARN__}> handler calls C<$self-E<gt>do_warn($msg)> after doing a
+C<local $SIG{__WARN__} = 'DEFAULT';>
+
+=item *
+
+the C<$SIG{__DIE__}> handler calls C<$self-E<gt>do_die($msg)> after doing a
+C<local $SIG{__DIE__} = 'DEFAULT';>
 
 =item *
 
