@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.130 2019/07/01 08:59:41 espie Exp $
+# $OpenBSD: dpb,v 1.131 2019/09/29 12:57:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -118,12 +118,12 @@ for my $S (qw(INT HUP TERM QUIT)) {
 	};
 }
 
-DPB::Trace->setup(\%SIG, $cleanup);
+my $trace = DPB::Trace->new($cleanup);
 
 $state = DPB::State->new;
 $state->handle_options;
 my $reporter = DPB::Reporter->new($state, "main", "DPB::Core");
-DPB::Trace->set_reporter($reporter);
+$trace->set_reporter($reporter);
 
 $state->{all} = 1;
 
@@ -197,7 +197,7 @@ if (!$state->{fetch_only} && !$state->{scan_only} &&
 
 my $dump = DPB::Util->make_hot($state->logger->append('dump'));
 my $debug = DPB::Util->make_hot($state->logger->append('debug'));
-DPB::Trace->set_logger($debug);
+$trace->set_logger($debug);
 
 sub handle_non_waiting_jobs
 {

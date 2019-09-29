@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.5 2019/09/27 11:13:30 espie Exp $
+# $OpenBSD: Trace.pm,v 1.6 2019/09/29 12:57:51 espie Exp $
 #
-# Copyright (c) 2015 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2015-2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -15,126 +15,60 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+use OpenBSD::Trace;
+
 package DPB::Trace;
+our @ISA = qw(OpenBSD::Trace);
 
-# inspired by Carp::Always
-
-
-sub dump
+sub init
 {
-	my ($class, $arg, $full) = @_;
-	if (!defined $arg) {
-		return '<undef>';
-	} else {
-		my $string;
-		eval { $string = $arg->debug_dump };
-		if (defined $string) {
-			return "$arg($string)";
-		}
-	}
-	if ($full) {
-		require Data::Dumper;
-		my $msg = Data::Dumper->new([$arg])->
-		    Indent(0)->Maxdepth(1)->Quotekeys(0)->Sortkeys(1)->
-		    Deparse(1)-> Dump;
-
-		$msg =~ s/^\$VAR1 = //;
-		$msg =~ s/\;$//;
-
-		return $msg;
-	} else {
-		return $arg;
-	}
-}
-
-sub stack
-{
-	my ($self, $full) = @_;
-
-	my $msg = '';
-	my $x = 1;
-	while (1) {
-		my @c;
-		{
-			package DB;
-			our @args;
-			@c = caller($x+1);
-		}
-		last if !@c;
-		my $fn = "$c[3]";
-		$msg .= $fn."(".
-		    join(', ', map { $self->dump($_, $full); } @DB::args).
-		    ") called at $c[1] line $c[2]\n";
-		$x++;
-	}
-	return $msg;
-}
-
-my ($reporter, $sig, $olddie, $oldwarn, $logfile, $cleanup);
-sub setup
-{
-	my $class = shift;
-	$sig = shift;
-	$cleanup = shift;
-	$olddie = $SIG{__DIE__};
-	$oldwarn = $SIG{__WARN__};
-	$sig->{__WARN__} = sub {
-		$sig->{__WARN__} = $oldwarn;
-		my $a = pop @_; # XXX need copy because contents of @_ are RO.
-		$a =~ s/(.*)( at .*? line .*?)\n$/$1$2/s;
-		push @_, $a;
-		my $msg = join("\n", @_, $class->stack(0));
-		if (defined $logfile) {
-			print $logfile $msg;
-			print $logfile '-'x70, "\n";
-		}
-		if (defined $reporter) {
-			$reporter->myprint($msg);
-		} else {
-			warn $msg;
-		}
-	};
-
-	$sig->{__DIE__} = sub {
-		die @_ if $^S;
-		$sig->{__DIE__} = $olddie;
-		my $a = pop @_; # XXX need copy because contents of @_ are RO.
-		$a =~ s/(.*)( at .*? line .*?)\n$/$1$2/s;
-		push @_, $a;
-		if (defined $reporter) {
-			$reporter->reset_cursor;
-		}
-		my $msg = join("\n", @_, $class->stack(1));
-		if (defined $logfile) {
-			print $logfile $msg;
-			print $logfile '-'x70, "\n";
-		}
-		&$cleanup();
-		die $msg;
-	};
-
-	$sig->{INFO} = sub {
-		print "Trace:\n", $class->stack(0);
+	my ($self, $cleanup) = @_;
+	$self->SUPER::init;
+	$self->{cleanup} = $cleanup;
+	$SIG{INFO} = sub {
+		print "Trace:\n", $self->stack(0);
 		sleep 1;
+	}
+}
+
+sub do_warn
+{
+	my ($self, $msg) = @_;
+	if (defined $self->{logfile}) {
+		print {$self->{logfile}} $msg, '-'x70, "\n";
+	}
+	if (defined $self->{reporter}) {
+			$self->{reporter}->myprint($msg);
+	} else {
+		$self->SUPER::do_warn($msg);
 	};
 }
 
-END {
-	$sig->{__DIE__} = $olddie;
-	$sig->{__WARN__} = $oldwarn;
+sub do_die
+{
+	my ($self, $msg) = @_;
+	if (defined $self->{reporter}) {
+		$self->{reporter}->reset_cursor;
+	}
+	if (defined $self->{logfile}) {
+		print {$self->{logfile}} $msg, '-'x70, "\n";
+	}
+	&{$self->{cleanup}}();
+	$self->SUPER::do_die($msg);
 }
 
 sub set_reporter
 {
-	my $class = shift;
-	$reporter = shift;
+	my ($self, $reporter) = @_;
+	$self->{reporter} = $reporter;
+	return $self;
 }
 
 sub set_logger
 {
-	my $class = shift;
-	$logfile = shift;
+	my ($self, $logfile) = @_;
+	$self->{logfile} = $logfile;
+	return $self;
 }
 
 1;
-
