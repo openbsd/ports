@@ -1,0 +1,9 @@
+$OpenBSD: patch-lib_epson-escpr-api-private_h,v 1.1.1.1 2019/09/29 13:22:28 ajacoutot Exp $
+
+Index: lib/epson-escpr-api-private.h
+--- lib/epson-escpr-api-private.h.orig
++++ lib/epson-escpr-api-private.h
+@@ -0,0 +1,3 @@
++EPS_ERR_CODE SetupJobAttrib(const EPS_JOB_ATTRIB*);
++EPS_ERR_CODE SendStartJob(EPS_BOOL);
++EPS_ERR_CODE PrintBand(const EPS_UINT8*, EPS_UINT32, EPS_UINT32*);

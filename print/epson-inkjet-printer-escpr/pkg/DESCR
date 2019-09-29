@@ -1,0 +1,3 @@
+This is a filter program for use with CUPS (Common UNIX Printing System)
+offering high quality printing with Seiko Epson colour ink jet printers.
+It can only be used with printers that support the Epson ESC/P-R language.

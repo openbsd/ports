@@ -1,0 +1,40 @@
+$OpenBSD: patch-lib_epson-escpr-api_c,v 1.1.1.1 2019/09/29 13:22:28 ajacoutot Exp $
+
+Index: lib/epson-escpr-api.c
+--- lib/epson-escpr-api.c.orig
++++ lib/epson-escpr-api.c
+@@ -62,6 +62,7 @@
+ 
+ /*------------------------------------  Includes   -------------------------------------*/
+ /*******************************************|********************************************/
++#include <stddef.h>
+ #include "epson-escpr-pvt.h"
+ #include "epson-escpr-services.h"
+ #include "epson-escpr-pm.h"
+@@ -231,7 +232,7 @@ static const EPS_UINT8 PrintQualityCmd[] = {
+ 
+     /*** ESC/P-R Commands (Print Num)                                                   */
+     /*** -------------------------------------------------------------------------------*/
+-static const EPS_UINT8 PrintNumCmd[] = {
++static const EPS_UINT8 PrintNumCmd[] __unused = {
+ 	                        0x1B, 'n', 0x02, 0x00, 0x00, 0x00,
+                             's', 'e', 't', 'n',
+                             0x00, 0x00};
+@@ -244,7 +245,7 @@ static const EPS_UINT8 PrintNumCmd2[] = {
+ 
+     /*** ESC/P-R Commands (custom setting)                                              */
+     /*** -------------------------------------------------------------------------------*/
+-static const EPS_UINT8 CustomCmd[]       = {
++static const EPS_UINT8 CustomCmd[] __unused       = {
+ 	                        0x1B, 'm', 0x01, 0x00, 0x00, 0x00,
+                             's', 'e', 't', 'c',
+                             0x00 };
+@@ -4474,7 +4475,7 @@ EPS_UINT8       array4[4] = {0, 0, 0, 0};   /* Tempora
+ /*======================================================================================*/
+ /*** Set up ESC/PR "Print Num" Command                                                  */
+ /*======================================================================================*/
+-static void    MakePageNumCmd (
++static void    __unused MakePageNumCmd (
+ 
+         EPS_UINT8*		pBuf
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mem_c,v 1.1.1.1 2019/09/29 13:22:28 ajacoutot Exp $
+
+Index: src/mem.c
+--- src/mem.c.orig
++++ src/mem.c
+@@ -23,6 +23,7 @@
+ 
+ #include <stdlib.h>
+ #include "mem.h"
++#include "err.h"
+ 
+ void *
+ mem_malloc (unsigned int size, bool_t crit)

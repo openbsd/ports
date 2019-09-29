@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_epson-usb_c,v 1.1.1.1 2019/09/29 13:22:28 ajacoutot Exp $
+
+Index: lib/epson-usb.c
+--- lib/epson-usb.c.orig
++++ lib/epson-usb.c
+@@ -2325,7 +2325,7 @@ static EPS_ERR_CODE   GetSerialNumber (
+ 		EPS_RETURN( ret );
+ 	}
+ 
+-	tmpBuff = (EPS_INT8*)EPS_ALLOC(tmpBuffSize);
++	tmpBuff = (EPS_UINT8*)EPS_ALLOC(tmpBuffSize);
+ 	if (tmpBuff == NULL) {
+ 		EPS_RETURN( EPS_ERR_MEMORY_ALLOCATION );
+ 	}
