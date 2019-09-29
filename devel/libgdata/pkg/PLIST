@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2019/06/30 12:00:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/09/29 12:38:25 jasper Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -81,6 +81,7 @@ include/libgdata/gdata/services/documents/gdata-documents-folder.h
 include/libgdata/gdata/services/documents/gdata-documents-metadata.h
 include/libgdata/gdata/services/documents/gdata-documents-pdf.h
 include/libgdata/gdata/services/documents/gdata-documents-presentation.h
+include/libgdata/gdata/services/documents/gdata-documents-property.h
 include/libgdata/gdata/services/documents/gdata-documents-query.h
 include/libgdata/gdata/services/documents/gdata-documents-service.h
 include/libgdata/gdata/services/documents/gdata-documents-spreadsheet.h
