@@ -1,18 +1,20 @@
-$OpenBSD: patch-rules_mk,v 1.1.1.1 2009/03/17 18:37:20 ajacoutot Exp $
---- rules.mk.orig	Tue Mar 17 18:07:38 2009
-+++ rules.mk	Tue Mar 17 18:08:04 2009
+$OpenBSD: patch-rules_mk,v 1.2 2019/09/29 13:36:28 ajacoutot Exp $
+
+Index: rules.mk
+--- rules.mk.orig
++++ rules.mk
 @@ -6,12 +6,12 @@
  
  $(rastertoqpdl_TARGET): $(rastertoqpdl_OBJ)
  	$(call printCmd, $(cmd_link))
 -	$(Q)g++ -o $@ $^ $(rastertoqpdl_CXXFLAGS) $(rastertoqpdl_LDFLAGS) \
-+	$(Q)${CXX} -o $@ $^ $(rastertoqpdl_CXXFLAGS) $(rastertoqpdl_LDFLAGS) \
++	$(Q)${CXX} -o $@ $^ $(rastertoqpdl_CXXFLAGS) $(rastertoqpdl_LDFLAGS) $(LDFLAGS) \
  		$(rastertoqpdl_LIBS)
  
  $(pstoqpdl_TARGET): $(pstoqpdl_OBJ)
  	$(call printCmd, $(cmd_link))
 -	$(Q)g++ -o $@ $^ $(pstoqpdl_CXXFLAGS) $(pstoqpdl_LDFLAGS) \
-+	$(Q)${CXX} -o $@ $^ $(pstoqpdl_CXXFLAGS) $(pstoqpdl_LDFLAGS) \
++	$(Q)${CXX} -o $@ $^ $(pstoqpdl_CXXFLAGS) $(pstoqpdl_LDFLAGS) $(LDFLAGS) \
  		$(pstoqpdl_LIBS)
  
  .PHONY: install installcms

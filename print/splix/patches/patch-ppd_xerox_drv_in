@@ -1,0 +1,45 @@
+$OpenBSD: patch-ppd_xerox_drv_in,v 1.1 2019/09/29 13:36:28 ajacoutot Exp $
+
+Index: ppd/xerox.drv.in
+--- ppd/xerox.drv.in.orig
++++ ppd/xerox.drv.in
+@@ -31,6 +31,7 @@ Manufacturer "Xerox"
+ 	    Resolution k 1 0 0 0 "300dpi/300 DPI"
+ 
+             ModelName "WorkCentre 3119"
++            Attribute "1284DeviceID" "" "MFG:Xerox;MDL:WorkCentre 3119 Series;CMD:GDI;"
+             PCFileName "wc3119.ppd"
+ 	} {
+             Resolution k 1 0 0 0 "300dpi/300 DPI"
+@@ -66,6 +67,7 @@ Manufacturer "Xerox"
+                 } {
+                     #import "manualduplex.defs"
+                     ModelName "Phaser 3120"
++                    Attribute "1284DeviceID" "" "MFG:Xerox;MDL:Phaser 3120;CMD:GDI;"
+                     PCFileName "ph3120.ppd"
+                 } {
+                     #import "manualduplex.defs"
+@@ -74,6 +76,7 @@ Manufacturer "Xerox"
+                 } {
+                     #import "manualduplex.defs"
+                     ModelName "Phaser 3130"
++                    Attribute "1284DeviceID" "" "MFG:Xerox;MDL:Phaser 3130;CMD:PCL5E,PCL6;"
+                     PCFileName "ph3130.ppd"
+                 } {
+                     // Multi-tray
+@@ -118,6 +121,7 @@ Manufacturer "Xerox"
+ 
+             {
+                 ModelName "Phaser 3117"
++                Attribute "1284DeviceID" "" "MFG:Xerox;MDL:Phaser 3117;CMD:GDI;"
+                 PCFileName "ph3117.ppd"
+             } {
+                 Resolution k 1 0 0 0 "1200x600dpi/1200x600 DPI"
+@@ -131,6 +135,7 @@ Manufacturer "Xerox"
+ 
+                 {
+                     ModelName "Phaser 3124"
++                    Attribute "1284DeviceID" "" "MFG:Xerox;MDL:Phaser 3124;CMD:GDI;"
+                     PCFileName "ph3124.ppd"
+                 }
+             }
