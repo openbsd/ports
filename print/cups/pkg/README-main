@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.22 2019/09/08 19:19:06 ajacoutot Exp $
+$OpenBSD: README-main,v 1.23 2019/09/29 13:25:15 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -29,7 +29,8 @@ documentation for more information and creating PPD files;
 ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
 
 Printer backends are also available as packages.
-e.g. cups-bjnp, hpcups/hplip, ptouch-driver, splix...
+e.g. cups-bjnp, hpcups, hplip, ptouch-driver, epson-inkjet-printer-escpr,
+splix, brlaser...
 
 Some PPD files are only available as part of vendor distributed Linux
 driver packages (deb or rpm); if you're lucky, extracting the PPD file and
