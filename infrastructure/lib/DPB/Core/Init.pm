@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.39 2019/09/02 13:22:34 espie Exp $
+# $OpenBSD: Init.pm,v 1.40 2019/09/29 17:19:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -99,22 +99,23 @@ sub finalize
 			}
 		}
 	}
-	$self->{signature}->print_out($core, $self->{logger});
-	if ($self->{signature}->matches($core, $self->{logger})) {
-		if (defined $prop->{squiggles}) {
-			$core->host->{wantsquiggles} = $prop->{squiggles};
-		} elsif ($prop->{jobs} > 3) {
-			$core->host->{wantsquiggles} = 1;
-		} elsif ($prop->{jobs} > 1) {
-			$core->host->{wantsquiggles} = 0.8;
+	if (defined $self->{signature}) {
+		$self->{signature}->print_out($core, $self->{logger});
+		if (!$self->{signature}->matches($core, $self->{logger})) {
+			return 0;
 		}
-		for my $i (1 .. $prop->{jobs}) {
-			$core->clone->mark_ready;
-		}
-		return 1;
-	} else {
-		return 0;
-    	}
+	}
+	if (defined $prop->{squiggles}) {
+		$core->host->{wantsquiggles} = $prop->{squiggles};
+	} elsif ($prop->{jobs} > 3) {
+		$core->host->{wantsquiggles} = 1;
+	} elsif ($prop->{jobs} > 1) {
+		$core->host->{wantsquiggles} = 0.8;
+	}
+	for my $i (1 .. $prop->{jobs}) {
+		$core->clone->mark_ready;
+	}
+	return 1;
 }
 
 # this is a weird one !
@@ -243,7 +244,9 @@ sub init_cores
 		if (!defined $core->prop->{jobs}) {
 			$job->add_tasks(DPB::Task::Ncpu->new);
 		}
-		DPB::Signature->add_tasks($job);
+		if (!$state->{fetch_only}) {
+			DPB::Signature->add_tasks($job);
+		}
 #		$self->add_startup($state, $logger, $core, $job, "/bin/sh",
 #		    $state->ports."/infrastructure/bin/default-dpb-startup");
 		if (defined $startup) {
