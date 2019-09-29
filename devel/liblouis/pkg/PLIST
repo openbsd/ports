@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/05/13 22:14:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/09/29 07:58:35 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -21,7 +21,6 @@ bin/lou_maketable.d/wrap_patgen.sh
 @bin bin/lou_trace
 @bin bin/lou_translate
 include/liblouis/
-include/liblouis/internal.h
 include/liblouis/liblouis.h
 lib/liblouis.a
 lib/liblouis.la
@@ -29,7 +28,7 @@ lib/liblouis.la
 lib/pkgconfig/liblouis.pc
 lib/python${MODPY_VERSION}/site-packages/louis/
 lib/python${MODPY_VERSION}/site-packages/louis/__init__.py
-lib/python${MODPY_VERSION}/site-packages/louis/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/louis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/louis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @man man/man1/lou_allround.1
 @man man/man1/lou_checkhyphens.1
@@ -48,6 +47,7 @@ share/liblouis/tables/Lv-Lv-g1.utb
 share/liblouis/tables/Pl-Pl-g1.utb
 share/liblouis/tables/Se-Se-g1.utb
 share/liblouis/tables/afr-za-g1.ctb
+share/liblouis/tables/afr-za-g2.ctb
 share/liblouis/tables/ar-ar-comp8.utb
 share/liblouis/tables/ar-ar-g1.utb
 share/liblouis/tables/ar-ar-g2.ctb
@@ -72,7 +72,6 @@ share/liblouis/tables/braille-patterns.cti
 share/liblouis/tables/ca-chardefs.cti
 share/liblouis/tables/ca-g1.ctb
 share/liblouis/tables/ca.tbl
-share/liblouis/tables/chardefs.cti
 share/liblouis/tables/chr-us-g1.ctb
 share/liblouis/tables/ckb-chardefs.cti
 share/liblouis/tables/ckb-g1.ctb
@@ -129,12 +128,13 @@ share/liblouis/tables/digits8Dots.uti
 share/liblouis/tables/dra.ctb
 share/liblouis/tables/dra.tbl
 share/liblouis/tables/el.ctb
-share/liblouis/tables/el.tbl
 share/liblouis/tables/en-GB-g2.ctb
+share/liblouis/tables/en-chardefs.cti
 share/liblouis/tables/en-chess.ctb
 share/liblouis/tables/en-gb-comp8.ctb
 share/liblouis/tables/en-gb-g1.utb
 share/liblouis/tables/en-in-g1.ctb
+share/liblouis/tables/en-nabcc.utb
 share/liblouis/tables/en-ueb-chardefs.uti
 share/liblouis/tables/en-ueb-g1.ctb
 share/liblouis/tables/en-ueb-g2.ctb
@@ -143,7 +143,7 @@ share/liblouis/tables/en-us-brf.dis
 share/liblouis/tables/en-us-comp6.ctb
 share/liblouis/tables/en-us-comp8-ext.utb
 share/liblouis/tables/en-us-comp8.ctb
-share/liblouis/tables/en-us-compbrl.ctb
+share/liblouis/tables/en-us-compbrl.uti
 share/liblouis/tables/en-us-g1.ctb
 share/liblouis/tables/en-us-g2.ctb
 share/liblouis/tables/en-us-interline.ctb
@@ -170,8 +170,6 @@ share/liblouis/tables/eurodefs.cti
 share/liblouis/tables/fa-ir-comp8.ctb
 share/liblouis/tables/fa-ir-g1.utb
 share/liblouis/tables/fi-fi-8dot.ctb
-share/liblouis/tables/fi-fi.ctb
-share/liblouis/tables/fi.tbl
 share/liblouis/tables/fi.utb
 share/liblouis/tables/fi1.ctb
 share/liblouis/tables/fi2.ctb
@@ -181,14 +179,16 @@ share/liblouis/tables/fr-bfu-comp8.utb
 share/liblouis/tables/fr-bfu-g2.ctb
 share/liblouis/tables/ga-g1.utb
 share/liblouis/tables/ga-g2.ctb
-share/liblouis/tables/ga.tbl
 share/liblouis/tables/gd.ctb
 share/liblouis/tables/gd.tbl
 share/liblouis/tables/gez.tbl
 share/liblouis/tables/gon.ctb
 share/liblouis/tables/gon.tbl
-share/liblouis/tables/gr-bb.ctb
 share/liblouis/tables/gr-pl-comp8.uti
+share/liblouis/tables/grc-international-common.uti
+share/liblouis/tables/grc-international-composed.uti
+share/liblouis/tables/grc-international-decomposed.uti
+share/liblouis/tables/grc-international-en.utb
 share/liblouis/tables/gu-in-g1.utb
 share/liblouis/tables/gu.tbl
 share/liblouis/tables/gujarati.cti
@@ -210,6 +210,7 @@ share/liblouis/tables/hu-chardefs.cti
 share/liblouis/tables/hu-exceptionwords.cti
 share/liblouis/tables/hu-hu-comp8.ctb
 share/liblouis/tables/hu-hu-g1.ctb
+share/liblouis/tables/hu-hu-g1_braille_input.cti
 share/liblouis/tables/hu-hu-g2.ctb
 share/liblouis/tables/hu-hu-g2_exceptions.cti
 share/liblouis/tables/hu.tbl
@@ -386,7 +387,6 @@ share/liblouis/tables/uni-text.dis
 share/liblouis/tables/unicode-braille.utb
 share/liblouis/tables/unicode-without-blank.dis
 share/liblouis/tables/unicode.dis
-share/liblouis/tables/unicodedefs.cti
 share/liblouis/tables/ur-pk-g1.utb
 share/liblouis/tables/ur-pk-g2.ctb
 share/liblouis/tables/us-table.dis
