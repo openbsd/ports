@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_test_ui_out-of-stack_rs,v 1.1 2019/09/29 08:23:17 semarie Exp $
+
+Index: src/test/ui/out-of-stack.rs
+--- src/test/ui/out-of-stack.rs.orig
++++ src/test/ui/out-of-stack.rs
+@@ -4,6 +4,7 @@
+ #![allow(unconditional_recursion)]
+ // ignore-android: FIXME (#20004)
+ // ignore-musl
++// ignore-openbsd
+ // ignore-cloudabi no processes
+ // ignore-emscripten no processes
+ // ignore-sgx no processes

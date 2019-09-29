@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_libunwind_build_rs,v 1.3 2019/08/16 18:14:21 semarie Exp $
+$OpenBSD: patch-src_libunwind_build_rs,v 1.4 2019/09/29 08:23:17 semarie Exp $
 some archs are still using estdc++ and not c++
 https://github.com/rust-lang/rust/pull/63595
 
 Index: src/libunwind/build.rs
 --- src/libunwind/build.rs.orig
 +++ src/libunwind/build.rs
-@@ -23,7 +23,11 @@ fn main() {
+@@ -25,7 +25,11 @@ fn main() {
      } else if target.contains("netbsd") {
          println!("cargo:rustc-link-lib=gcc_s");
      } else if target.contains("openbsd") {

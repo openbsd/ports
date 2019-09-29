@@ -1,0 +1,14 @@
+$OpenBSD: patch-vendor_libc_src_unix_bsd_netbsdlike_openbsd_sparc64_rs,v 1.1 2019/09/29 08:23:17 semarie Exp $
+define sparc64 on libc (the patch is minimal to avoid too intrusive changes)
+part of https://github.com/rust-lang/libc/pull/1470
+
+Index: vendor/libc/src/unix/bsd/netbsdlike/openbsd/sparc64.rs
+--- vendor/libc/src/unix/bsd/netbsdlike/openbsd/sparc64.rs.orig
++++ vendor/libc/src/unix/bsd/netbsdlike/openbsd/sparc64.rs
+@@ -0,0 +1,6 @@
++pub type c_long = i64;
++pub type c_ulong = u64;
++pub type c_char = i8;
++
++#[doc(hidden)]
++pub const _ALIGNBYTES: usize = 0xf;

@@ -1,0 +1,40 @@
+$OpenBSD: patch-vendor_libgit2-sys_lib_rs,v 1.1 2019/09/29 08:23:17 semarie Exp $
+Workaround for https://github.com/rust-lang/git2-rs/issues/458
+
+libgit2-sys 0.8.2 switched to libgit2 0.29 API without bumping minor
+version and adjusting pkg-config check. devel/libgit2 is still at
+0.28, so FFI silently fails with a confusing error e.g.,
+
+  invalid version 3 on git_proxy_options; class=Invalid (3)
+
+(patch from FreeBSD)
+
+Index: vendor/libgit2-sys/lib.rs
+--- vendor/libgit2-sys/lib.rs.orig
++++ vendor/libgit2-sys/lib.rs
+@@ -331,7 +331,6 @@ pub struct git_remote_callbacks {
+     pub push_negotiation: Option<git_push_negotiation>,
+     pub transport: Option<git_transport_cb>,
+     pub payload: *mut c_void,
+-    pub resolve_url: Option<git_url_resolve_cb>,
+ }
+ 
+ #[repr(C)]
+@@ -385,8 +384,6 @@ pub type git_push_negotiation =
+ 
+ pub type git_push_update_reference_cb =
+     extern "C" fn(*const c_char, *const c_char, *mut c_void) -> c_int;
+-pub type git_url_resolve_cb =
+-    extern "C" fn(*mut git_buf, *const c_char, c_int, *mut c_void) -> c_int;
+ 
+ #[repr(C)]
+ pub struct git_push_update {
+@@ -1892,7 +1889,7 @@ extern "C" {
+         repo: *mut git_repository,
+         options: *const git_status_options,
+     ) -> c_int;
+-    pub fn git_status_list_entrycount(list: *mut git_status_list) -> size_t;
++    pub fn git_status_list_entrycount(list: *mut git_status_list) -> c_uint;
+     pub fn git_status_byindex(
+         statuslist: *mut git_status_list,
+         idx: size_t,

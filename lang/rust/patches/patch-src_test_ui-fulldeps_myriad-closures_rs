@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_test_ui-fulldeps_myriad-closures_rs,v 1.1 2019/09/29 08:23:17 semarie Exp $
+
+Index: src/test/ui-fulldeps/myriad-closures.rs
+--- src/test/ui-fulldeps/myriad-closures.rs.orig
++++ src/test/ui-fulldeps/myriad-closures.rs
+@@ -7,6 +7,8 @@
+ // Make sure we don't optimize anything away:
+ // compile-flags: -C no-prepopulate-passes -Cpasses=name-anon-globals
+ 
++// ignore-openbsd
++
+ // Expand something exponentially
+ macro_rules! go_bacterial {
+     ($mac:ident) => ($mac!());
