@@ -1,27 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/09/10 13:51:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/09/30 13:00:11 kili Exp $
 @tag ghc-pkg-recache
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
+lib/ghc/${DISTNAME}/Crypto/CPoly.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/CPoly.hi
 lib/ghc/${DISTNAME}/Crypto/CPoly.p_hi
 lib/ghc/${DISTNAME}/Crypto/Classes/
+lib/ghc/${DISTNAME}/Crypto/Classes.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/Classes.hi
 lib/ghc/${DISTNAME}/Crypto/Classes.p_hi
+lib/ghc/${DISTNAME}/Crypto/Classes/Exceptions.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/Classes/Exceptions.hi
 lib/ghc/${DISTNAME}/Crypto/Classes/Exceptions.p_hi
+lib/ghc/${DISTNAME}/Crypto/HMAC.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/HMAC.hi
 lib/ghc/${DISTNAME}/Crypto/HMAC.p_hi
+lib/ghc/${DISTNAME}/Crypto/Modes.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/Modes.hi
 lib/ghc/${DISTNAME}/Crypto/Modes.p_hi
+lib/ghc/${DISTNAME}/Crypto/Padding.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/Padding.hi
 lib/ghc/${DISTNAME}/Crypto/Padding.p_hi
+lib/ghc/${DISTNAME}/Crypto/Random.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/Random.hi
 lib/ghc/${DISTNAME}/Crypto/Random.p_hi
+lib/ghc/${DISTNAME}/Crypto/Types.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/Types.hi
 lib/ghc/${DISTNAME}/Crypto/Types.p_hi
+lib/ghc/${DISTNAME}/Crypto/Util.dyn_hi
 lib/ghc/${DISTNAME}/Crypto/Util.hi
 lib/ghc/${DISTNAME}/Crypto/Util.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/package.conf.d/${DISTNAME}.conf
@@ -38,10 +47,12 @@ share/doc/hs-${DISTNAME}/html/Crypto-Types.html
 share/doc/hs-${DISTNAME}/html/Crypto-Util.html
 share/doc/hs-${DISTNAME}/html/crypto-api.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
 share/doc/hs-${DISTNAME}/html/synopsis.png

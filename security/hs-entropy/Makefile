@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/09/10 13:51:29 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2019/09/30 13:00:12 kili Exp $
 
 COMMENT =		platform independent entropy source
 
 DISTNAME =		entropy-0.2.1
-REVISION =		8
+REVISION =		9
 CATEGORIES =		security
 
 # BSD3
@@ -13,6 +13,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	JZfH4MzgSpW7rZ4CqqUMjz
+MODGHC_PACKAGE_KEY =	IfZwtxgTnXI3i1BomgGL89
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/10 13:51:28 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/30 13:00:11 kili Exp $
 
 COMMENT =		SHA message digests
 
 DISTNAME =		SHA-1.6.4.2
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		security
 
@@ -16,6 +16,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	1gNz0XEXVc9D2LWQ8o29zI
+MODGHC_PACKAGE_KEY =	K17FqRah5DD3xPZWh9IJHt
 
 .include <bsd.port.mk>

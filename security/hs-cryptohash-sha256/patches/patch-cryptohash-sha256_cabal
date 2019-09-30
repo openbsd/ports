@@ -1,0 +1,55 @@
+$OpenBSD: patch-cryptohash-sha256_cabal,v 1.1 2019/09/30 13:00:12 kili Exp $
+
+https://hackage.haskell.org/package/cryptohash-sha256-0.11.101.0/revision/2.cabal
+
+Index: cryptohash-sha256.cabal
+--- cryptohash-sha256.cabal.orig
++++ cryptohash-sha256.cabal
+@@ -1,6 +1,7 @@
+ cabal-version:       1.12
+ name:                cryptohash-sha256
+ version:             0.11.101.0
++x-revision: 2
+ 
+ synopsis:            Fast, pure and practical SHA-256 implementation
+ description: {
+@@ -16,8 +17,6 @@ for instance, on an /Intel Core i7-3770/ at 3.40GHz th
+ compute a SHA-256 hash over 230 MiB of data in under one second.
+ (If, instead, you require a pure Haskell implementation and performance is secondary, please refer to the [SHA package](https://hackage.haskell.org/package/SHA).)
+ .
+-
+-.
+ Additionally, this package provides support for
+ .
+ - HMAC-SHA-256: SHA-256-based [Hashed Message Authentication Codes](https://en.wikipedia.org/wiki/HMAC) (HMAC)
+@@ -25,6 +24,13 @@ Additionally, this package provides support for
+ .
+ conforming to [RFC6234](https://tools.ietf.org/html/rfc6234), [RFC4231](https://tools.ietf.org/html/rfc4231), [RFC5869](https://tools.ietf.org/html/rfc5869), et al..
+ .
++=== Packages in the @cryptohash-*@ family
++.
++- <https://hackage.haskell.org/package/cryptohash-md5    cryptohash-md5>
++- <https://hackage.haskell.org/package/cryptohash-sha1   cryptohash-sha1>
++- <https://hackage.haskell.org/package/cryptohash-sha256 cryptohash-sha256>
++- <https://hackage.haskell.org/package/cryptohash-sha512 cryptohash-sha512>
++.
+ === Relationship to the @cryptohash@ package and its API
+ .
+ This package has been originally a fork of @cryptohash-0.11.7@ because the @cryptohash@
+@@ -54,6 +60,7 @@ tested-with:         GHC == 7.4.2
+                    , GHC == 7.10.3
+                    , GHC == 8.0.2
+                    , GHC == 8.2.1
++                   , GHC == 8.4.1
+ 
+ extra-source-files:  cbits/hs_sha256.h
+                      changelog.md
+@@ -74,7 +81,7 @@ library
+                      Trustworthy
+                      Unsafe
+ 
+-  build-depends:     base             >= 4.5   && < 4.11
++  build-depends:     base             >= 4.5   && < 4.13
+                    , bytestring       >= 0.9.2 && < 0.11
+ 
+   ghc-options:       -Wall
