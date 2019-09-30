@@ -1,0 +1,14 @@
+$OpenBSD: patch-arch_arm64_boot_dts_rockchip_rk3399-rockpro64_dts,v 1.1 2019/09/30 15:14:50 kurt Exp $
+
+Index: arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+--- arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts.orig
++++ arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+@@ -15,7 +15,7 @@
+ 	compatible = "pine64,rockpro64", "rockchip,rk3399";
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	clkin_gmac: external-gmac-clock {

@@ -1,0 +1,14 @@
+$OpenBSD: patch-arch_arm64_boot_dts_rockchip_rk3328-rock64_dts,v 1.1 2019/09/30 15:14:50 kurt Exp $
+
+Index: arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+--- arch/arm64/boot/dts/rockchip/rk3328-rock64.dts.orig
++++ arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+@@ -11,7 +11,7 @@
+ 	compatible = "pine64,rock64", "rockchip,rk3328";
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	gmac_clkin: external-gmac-clock {
