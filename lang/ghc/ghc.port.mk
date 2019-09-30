@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.43 2019/09/10 13:51:21 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.44 2019/09/30 11:44:18 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-MODGHC_VER =		8.2.2
+MODGHC_VER =		8.6.4
 SUBST_VARS +=		MODGHC_VER
 
 MODGHC_BIN =		${LOCALBASE}/bin/ghc
@@ -64,13 +64,15 @@ MODGHC_SETUP_CONF_ENV ?=
 MODGHC_SETUP_CONF_ARGS +=	--datasubdir=hs-\$$pkgid
 MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/hs-\$$pkgid
 MODGHC_SETUP_CONF_ARGS +=	--libsubdir=ghc/\$$pkgid
+MODGHC_SETUP_CONF_ARGS +=	--dynlibdir=${PREFIX}/lib/ghc/\$$pkgid
 MODGHC_SETUP_CONF_ARGS +=	--enable-library-profiling
 .  else
 # Override Cabal defaults, which are $arch-$os-$compiler/$pkgid for
-# datasubdir and libsubdir and $datadir/doc/$arch-$os-$compiler/$pkgid
-# for docdir.
+# datasubdir and libsubdir, $datadir/doc/$arch-$os-$compiler/$pkgid
+# for docdir and ${PREFIX}/lib/$arch-$os-$compiler/$pkgid for dynlibdir.
 MODGHC_SETUP_CONF_ARGS +=	--datasubdir=\$$pkgid
 MODGHC_SETUP_CONF_ARGS +=	--libsubdir=\$$pkgid
+MODGHC_SETUP_CONF_ARGS +=	--dynlibdir=${PREFIX}/lib/ghc/\$$pkgid
 MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/\$$pkgid
 .  endif
 

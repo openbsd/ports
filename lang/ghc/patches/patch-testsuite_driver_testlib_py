@@ -1,8 +1,8 @@
-$OpenBSD: patch-testsuite_driver_testlib_py,v 1.9 2018/01/22 00:42:30 kili Exp $
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.10 2019/09/30 11:44:18 kili Exp $
 Index: testsuite/driver/testlib.py
 --- testsuite/driver/testlib.py.orig
 +++ testsuite/driver/testlib.py
-@@ -1551,6 +1551,13 @@ def compare_outputs(way, kind, normaliser, expected_fi
+@@ -1573,6 +1573,13 @@ def compare_outputs(way, kind, normaliser, expected_fi
      actual_raw = read_no_crs(actual_path)
      actual_str = normaliser(actual_raw)
  
@@ -16,7 +16,7 @@ Index: testsuite/driver/testlib.py
      # See Note [Output comparison].
      if whitespace_normaliser(expected_str) == whitespace_normaliser(actual_str):
          return 1
-@@ -1566,14 +1573,14 @@ def compare_outputs(way, kind, normaliser, expected_fi
+@@ -1588,14 +1595,14 @@ def compare_outputs(way, kind, normaliser, expected_fi
  
          if config.verbose >= 1 and _expect_pass(way):
              # See Note [Output comparison].

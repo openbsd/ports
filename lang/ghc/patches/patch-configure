@@ -1,8 +1,25 @@
-$OpenBSD: patch-configure,v 1.18 2018/01/22 00:42:30 kili Exp $
+$OpenBSD: patch-configure,v 1.19 2019/09/30 11:44:18 kili Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9152,7 +9152,7 @@ $as_echo_n "checking for extra options to pass gcc whe
+@@ -9048,11 +9048,11 @@ OptCmd="$OPT"
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: Creating links for in-tree file handling routines." >&5
+ $as_echo "$as_me: Creating links for in-tree file handling routines." >&6;}
+-ln -f -v utils/fs/fs.* utils/lndir/
+-ln -f -v utils/fs/fs.* utils/unlit/
+-ln -f -v utils/fs/fs.* rts/
+-ln -f -v utils/fs/fs.h libraries/base/include/
+-ln -f -v utils/fs/fs.c libraries/base/cbits/
++ln -f utils/fs/fs.* utils/lndir/
++ln -f utils/fs/fs.* utils/unlit/
++ln -f utils/fs/fs.* rts/
++ln -f utils/fs/fs.h libraries/base/include/
++ln -f utils/fs/fs.c libraries/base/cbits/
+ { $as_echo "$as_me:${as_lineno-$LINENO}: Routines in place. Packages can now be build normally." >&5
+ $as_echo "$as_me: Routines in place. Packages can now be build normally." >&6;}
+ 
+@@ -9296,7 +9296,7 @@ $as_echo_n "checking for extra options to pass gcc whe
  if ${fp_cv_gcc_extra_opts+:} false; then :
    $as_echo_n "(cached) " >&6
  else

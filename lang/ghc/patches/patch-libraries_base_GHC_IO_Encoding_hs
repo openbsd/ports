@@ -1,7 +1,8 @@
-$OpenBSD: patch-libraries_base_GHC_IO_Encoding_hs,v 1.4 2015/09/19 07:42:57 kili Exp $
---- libraries/base/GHC/IO/Encoding.hs.orig	Tue Jul 21 21:50:11 2015
-+++ libraries/base/GHC/IO/Encoding.hs	Sun Aug  9 17:35:52 2015
-@@ -101,7 +101,9 @@ utf32le = UTF32.utf32le
+$OpenBSD: patch-libraries_base_GHC_IO_Encoding_hs,v 1.5 2019/09/30 11:44:18 kili Exp $
+Index: libraries/base/GHC/IO/Encoding.hs
+--- libraries/base/GHC/IO/Encoding.hs.orig
++++ libraries/base/GHC/IO/Encoding.hs
+@@ -102,7 +102,9 @@ utf32le = UTF32.utf32le
  utf32be  :: TextEncoding
  utf32be = UTF32.utf32be
  

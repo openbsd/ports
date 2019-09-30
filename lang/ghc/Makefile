@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.164 2019/09/10 13:51:21 kili Exp $
+# $OpenBSD: Makefile,v 1.165 2019/09/30 11:44:18 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
+
+BROKEN =		do not disturb the package builds
 
 # Note: please never ever set DPB_PROPERTIES=parallel (or some other
 # magic that enables parallel builds) for this port! Not even if it
@@ -8,16 +10,15 @@ COMMENT =		compiler for the functional language Haskell
 # "non-deterministic", "unresolved symbol", "signature mismatch" etc. to
 # find the appropriate bug tickets)
 
-# ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache 
+# ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		5
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.2.2.20180330
+BIN_VER =		8.4.2.20190113
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -27,18 +28,26 @@ MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-# BSD w/o advertising clause + LGPLv3 (from libgmp).
+# BSD w/o advertising clause.
 # Distfile is bundled with other stuff like libffi, mingw
 # binaries, with BSD, GPLv2 and Perl artistic license.
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += c curses iconv m pthread util
+WANTLIB += c charset curses ffi gmp iconv m pthread util
 
-LIB_DEPENDS =		converters/libiconv
+LIB_DEPENDS =		converters/libiconv \
+			devel/gmp \
+			devel/libffi
 
-BUILD_DEPENDS =		archivers/gtar \
-			textproc/py-sphinx 
+BUILD_DEPENDS =		archivers/bzip2 \
+			archivers/gtar \
+			textproc/py-sphinx
 RUN_DEPENDS =
+
+# The bootstrapping compiler needs gcc4, but the new ghc can be built
+# with clang. So we just BUILD_DEPEND on gcc instead of using the gcc4
+# MODULE, because the latter would also add some wrapper scripts
+BUILD_DEPENDS +=	lang/gcc/8>=8,<9
 
 # We can't use the wrapper script, because it then gets hardcoded into
 # the packaged ghc. So we explicitely use -Wl,-z,wxneeded (see
@@ -64,33 +73,38 @@ BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz:0 \
 SUPDISTFILES +=		${BINDISTFILE-$m}
 .endfor
 
-# Substvars for all libraries, assuming that ghc-bnot, ghc-boot-th and
-# ghci will always have the same version number as ghc.
+# Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
+# ghc-heap, libiserv and ghci will always have the same version number
+# as ghc.
 GHC_ITEMS = \
-	CABAL			2.0.1.0	\
-	ARRAY			0.5.2.0		\
-	BASE			4.10.1.0	\
-	BINARY			0.8.5.1		\
+	CABAL			2.4.0.1		\
+	ARRAY			0.5.3.0		\
+	BASE			4.12.0.0	\
+	BINARY			0.8.6.0		\
 	BYTESTRING		0.10.8.2	\
-	CONTAINERS		0.5.10.2	\
-	DEEPSEQ			1.4.3.0		\
-	DIRECTORY		1.3.0.2		\
-	FILEPATH		1.4.1.2		\
-	GHC			8.2.2		\
+	CONTAINERS		0.6.0.1		\
+	DEEPSEQ			1.4.4.0		\
+	DIRECTORY		1.3.3.0		\
+	FILEPATH		1.4.2.1		\
+	GHC			8.6.4		\
 	GHC_COMPACT		0.1.0.0		\
-	GHC_PRIM		0.5.1.1		\
-	HASKELINE		0.7.4.0		\
-	HOOPL			3.10.2.2	\
+	GHC_PRIM		0.5.3		\
+	HASKELINE		0.7.4.3		\
 	HPC			0.6.0.3		\
-	INTEGER_GMP		1.0.1.0		\
-	PRETTY			1.1.3.3		\
-	PROCESS			1.6.1.0		\
-	TEMPLATE_HASKELL	2.12.0.0	\
-	TERMINFO		0.4.1.0		\
+	INTEGER_GMP		1.0.2.0		\
+	LIBISERV		8.6.3		\
+	MTL			2.2.2		\
+	PARSEC			3.1.13.0	\
+	PRETTY			1.1.3.6		\
+	PROCESS			1.6.5.0		\
+	STM			2.5.0.0		\
+	TEMPLATE_HASKELL	2.14.0.0	\
+	TERMINFO		0.4.1.2		\
+	TEXT			1.2.3.1		\
 	TIME			1.8.0.2		\
-	TRANSFORMERS		0.5.2.0		\
+	TRANSFORMERS		0.5.6.2		\
 	UNIX			2.7.2.2		\
-	XHTML			3000.2.2
+	XHTML			3000.2.2.1
 
 .for _i _v in ${GHC_ITEMS}
 ${_i}_VER =	${_v}
@@ -105,8 +119,13 @@ CFLAGS +=		-fno-pie -Wl,-znotext
 .endif
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
+CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
+			--with-ffi-libraries=${LOCALBASE}/lib \
+			--with-gmp-includes=${LOCALBASE}/include \
+			--with-gmp-libraries=${LOCALBASE}/lib \
+			--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib \
+			--with-system-libffi \
 			CC="${CC}"
 
 # Don't autodetect ld.lld. It fails at some point during the build
@@ -154,8 +173,7 @@ post-patch:
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	CONFIGURE_ENV=${CONFIGURE_ENV} \
 	./configure --prefix=${WRKDIR}/bootstrap \
-	    --with-gcc="${CC}" \
-	    --with-clang="${CC}" && \
+		    CC=${LOCALBASE}/bin/egcc && \
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
@@ -181,7 +199,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20180330
+BOOTSTRAP_DATE =	20190113
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
@@ -216,8 +234,8 @@ bootstrap: patch
 
 	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
 
-	env MAKE_ENV="AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.4" \
-	${MAKE} build ALL_TARGET="all binary-dist"
+	${MAKE} build ALL_TARGET="all binary-dist" \
+		AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.4
 
 	mkdir -p ${WRKBUILD}/ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
 	ldd ${WRKBUILD}/ghc/stage2/build/tmp/ghc-stage2 | \

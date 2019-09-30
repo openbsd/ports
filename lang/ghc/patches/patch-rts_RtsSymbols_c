@@ -1,0 +1,30 @@
+$OpenBSD: patch-rts_RtsSymbols_c,v 1.1 2019/09/30 11:44:18 kili Exp $
+
+Fix symbol collision on _DYNAMIC.
+
+From upstream commit 1638350f0629365f20e97554e872d85b75f48d73 by
+Sergei Trofimovich.
+
+Index: rts/RtsSymbols.c
+--- rts/RtsSymbols.c.orig
++++ rts/RtsSymbols.c
+@@ -27,6 +27,10 @@
+ #include <shfolder.h> /* SHGetFolderPathW */
+ #endif
+ 
++#if defined(openbsd_HOST_OS)
++#include <elf.h> /* _DYNAMIC */
++#endif
++
+ /* -----------------------------------------------------------------------------
+  * Symbols to be inserted into the RTS symbol table.
+  */
+@@ -280,7 +284,7 @@
+ #if defined(openbsd_HOST_OS)
+ #define RTS_OPENBSD_ONLY_SYMBOLS                            \
+      SymE_NeedsProto(__guard_local)                         \
+-     SymE_NeedsProto(_DYNAMIC)
++     SymE_HasProto(_DYNAMIC)
+ #else
+ #define RTS_OPENBSD_ONLY_SYMBOLS
+ #endif

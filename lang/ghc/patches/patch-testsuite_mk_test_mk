@@ -1,4 +1,4 @@
-$OpenBSD: patch-testsuite_mk_test_mk,v 1.9 2018/02/13 21:17:51 kili Exp $
+$OpenBSD: patch-testsuite_mk_test_mk,v 1.10 2019/09/30 11:44:18 kili Exp $
 
 Fix detection of available library ways in case the library-dirs:
 field of ghc-prim contains more than one entry (only checks file
@@ -11,7 +11,7 @@ tests are failing).
 Index: testsuite/mk/test.mk
 --- testsuite/mk/test.mk.orig
 +++ testsuite/mk/test.mk
-@@ -83,7 +83,7 @@ else
+@@ -86,7 +86,7 @@ else
  RUNTEST_OPTS += -e ghc_with_native_codegen=0
  endif
  
@@ -20,7 +20,7 @@ Index: testsuite/mk/test.mk
  HAVE_VANILLA := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.hi ]; then echo YES; else echo NO; fi)
  HAVE_DYNAMIC := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.dyn_hi ]; then echo YES; else echo NO; fi)
  HAVE_PROFILING := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.p_hi ]; then echo YES; else echo NO; fi)
-@@ -154,16 +154,7 @@ else
+@@ -171,16 +171,7 @@ else
  RUNTEST_OPTS += -e ghc_with_smp=0
  endif
  

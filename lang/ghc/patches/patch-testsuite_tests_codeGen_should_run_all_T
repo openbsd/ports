@@ -1,11 +1,11 @@
-$OpenBSD: patch-testsuite_tests_codeGen_should_run_all_T,v 1.5 2018/01/28 19:40:29 kili Exp $
+$OpenBSD: patch-testsuite_tests_codeGen_should_run_all_T,v 1.6 2019/09/30 11:44:18 kili Exp $
 
 With 8k of stack, this test fails for WAY=normal.
 
 Index: testsuite/tests/codeGen/should_run/all.T
 --- testsuite/tests/codeGen/should_run/all.T.orig
 +++ testsuite/tests/codeGen/should_run/all.T
-@@ -84,7 +84,7 @@ test('T2080', normal, compile_and_run, [''])
+@@ -86,7 +86,7 @@ test('T2080', normal, compile_and_run, [''])
  test('T2838', normal, compile_and_run, [''])
  test('T3207', normal, compile_and_run, [''])
  test('T3561', normal, compile_and_run, [''])

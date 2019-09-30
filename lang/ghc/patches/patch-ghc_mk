@@ -1,4 +1,4 @@
-$OpenBSD: patch-ghc_mk,v 1.13 2018/01/22 00:42:30 kili Exp $
+$OpenBSD: patch-ghc_mk,v 1.14 2019/09/30 11:44:18 kili Exp $
 
 Fix the bindist-list (for building the bootstrapper); without this,
 gtar creates an archive which our tar can't extract.
@@ -6,7 +6,7 @@ gtar creates an archive which our tar can't extract.
 Index: ghc.mk
 --- ghc.mk.orig
 +++ ghc.mk
-@@ -1105,6 +1105,8 @@ unix-binary-dist-prep:
+@@ -1102,6 +1102,8 @@ unix-binary-dist-prep:
  	echo "CrossCompiling     = $(CrossCompiling)"     >> $(BIN_DIST_MK)
  	cd $(BIN_DIST_PREP_DIR) && autoreconf
  	$(call removeFiles,$(BIN_DIST_PREP_TAR))
