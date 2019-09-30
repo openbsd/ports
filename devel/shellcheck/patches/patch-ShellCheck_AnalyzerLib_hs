@@ -1,0 +1,44 @@
+$OpenBSD: patch-ShellCheck_AnalyzerLib_hs,v 1.1 2019/09/30 12:50:08 kili Exp $
+
+Index: ShellCheck/AnalyzerLib.hs
+--- ShellCheck/AnalyzerLib.hs.orig
++++ ShellCheck/AnalyzerLib.hs
+@@ -57,17 +57,19 @@ runChecker params checker = notes
+         check = perScript checker `composeAnalyzers` (\(Root x) -> void $ doAnalysis (perToken checker) x)
+         notes = snd $ evalRWS (check $ Root root) params Cache
+ 
++instance Semigroup Checker where
++    x <> y = Checker {
++        perScript = perScript x `composeAnalyzers` perScript y,
++        perToken = perToken x `composeAnalyzers` perToken y
++        }
++
+ instance Monoid Checker where
+     mempty = Checker {
+         perScript = nullCheck,
+         perToken = nullCheck
+         }
+-    mappend x y = Checker {
+-        perScript = perScript x `composeAnalyzers` perScript y,
+-        perToken = perToken x `composeAnalyzers` perToken y
+-        }
++    mappend = (<>)
+ 
+-
+ composeAnalyzers :: (a -> Analysis) -> (a -> Analysis) -> a -> Analysis
+ composeAnalyzers f g x = f x >> g x
+ 
+@@ -232,9 +234,10 @@ getParentTree t =
+   where
+     pre t = modify (first ((:) t))
+     post t = do
+-        (_:rest, map) <- get
+-        case rest of [] -> put (rest, map)
+-                     (x:_) -> put (rest, Map.insert (getId t) x map)
++        (x, map) <- get
++        case x of
++          _:rest -> case rest of []    -> put (rest, map)
++                                 (x:_) -> put (rest, Map.insert (getId t) x map)
+ 
+ -- Given a root node, make a map from Id to Token
+ getTokenMap :: Token -> Map.Map Id Token

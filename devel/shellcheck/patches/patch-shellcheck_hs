@@ -1,0 +1,21 @@
+$OpenBSD: patch-shellcheck_hs,v 1.1 2019/09/30 12:50:08 kili Exp $
+
+Update to newer GHC (Semigroup proposal).
+
+Index: shellcheck.hs
+--- shellcheck.hs.orig
++++ shellcheck.hs
+@@ -56,9 +56,12 @@ data Status =
+     | RuntimeException
+   deriving (Ord, Eq, Show)
+ 
++instance Semigroup Status where
++    (<>) = max
++
+ instance Monoid Status where
+     mempty = NoProblems
+-    mappend = max
++    mappend = (<>)
+ 
+ data Options = Options {
+     checkSpec :: CheckSpec,

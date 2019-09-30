@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/10 13:51:28 kili Exp $
-
-BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
+# $OpenBSD: Makefile,v 1.6 2019/09/30 12:50:08 kili Exp $
 
 COMMENT-main =		shell script analysis tool
 COMMENT-lib =		ShellCheck library
 
 V =			0.4.7
 DISTNAME =		ShellCheck-${V}
-REVISION-main =		0
-REVISION-lib =		2
+REVISION-main =		1
+REVISION-lib =		3
 PKGNAME-main =		shellcheck-${V}
 PKGNAME-lib =		hs-shellcheck-${V}
 CATEGORIES =		devel
@@ -20,23 +18,23 @@ MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
 PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -lib
-WANTLIB-main =		c iconv m pthread util
+WANTLIB-main =		c charset ffi gmp iconv m pthread util
 WANTLIB-lib =
 
 MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	FGszl8wDu4DoQ1UCsbZPa
+MODGHC_PACKAGE_KEY =	1v0sx5oDTF9BoGzz61tUYo
 
 BUILD_DEPENDS =		${RUN_DEPENDS-lib}
-RUN_DEPENDS-lib =	devel/hs-mtl>=2.2.1 \
-			devel/hs-parsec \
-			devel/hs-QuickCheck>=2.7.4 \
+RUN_DEPENDS-lib =	devel/hs-QuickCheck>=2.7.4 \
 			devel/hs-regex-tdfa \
 			lang/ghc=${MODGHC_VER} \
 			textproc/hs-json
-LIB_DEPENDS-main =	converters/libiconv
+LIB_DEPENDS-main =	converters/libiconv \
+			devel/gmp \
+			devel/libffi
 RUN_DEPENDS-main =
 
 NO_TEST =		Yes
