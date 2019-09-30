@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/09/10 13:51:22 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2019/09/30 11:58:17 kili Exp $
 
 COMMENT =		ANSI Wadler/Leijen pretty printer
 
-DISTNAME =		ansi-wl-pprint-0.6.7.3
-REVISION =		4
+DISTNAME =		ansi-wl-pprint-0.6.8.2
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/ansi-wl-pprint/
@@ -17,9 +16,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	zyMuJetY2226EtVjwCLvk
+MODGHC_PACKAGE_KEY =	9mA7ckPlKRf5aGqviJvBkZ
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/hs-ansi-terminal>=0.4.0,<0.6
+RUN_DEPENDS =		devel/hs-ansi-terminal>=0.4.0,<0.9
 
 .include <bsd.port.mk>
