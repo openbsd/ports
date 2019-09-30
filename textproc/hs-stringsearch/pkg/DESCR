@@ -1,4 +1,0 @@
-This package provides several functions to quickly search for
-substrings in strict or lazy ByteStrings.  It also provides functions
-for breaking or splitting on substrings and replacing all occurrences
-of a substring (the first in case of overlaps) with another.
