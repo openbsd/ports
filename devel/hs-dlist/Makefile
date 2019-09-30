@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/09/10 13:51:23 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2019/09/30 12:05:46 kili Exp $
 
 COMMENT =		list-like type supporting O(1) append
 
-DISTNAME =		dlist-0.7.1.2
-REVISION =		5
+DISTNAME =		dlist-0.8.0.5
 CATEGORIES =		devel
 
 # BSD3
@@ -13,6 +12,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	KqjNiWYSO8f46M5pKiubUe
+MODGHC_PACKAGE_KEY =	FMMQwM1hD2kK7b7715Z2vG
 
 .include <bsd.port.mk>
