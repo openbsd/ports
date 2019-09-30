@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2019/09/10 13:51:27 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2019/09/30 12:24:32 kili Exp $
 
 COMMENT =		tar bindings for Haskell
 
-DISTNAME =		tar-0.5.0.3
-REVISION =		1
+DISTNAME =		tar-0.5.1.0
 CATEGORIES =		devel archivers
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,6 +14,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	4RaKOzbHzG1EpSAqFcpBFH
+MODGHC_PACKAGE_KEY =	HaIVxa1LuWJqqT6yxHWqZ
 
 .include <bsd.port.mk>

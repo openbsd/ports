@@ -1,0 +1,17 @@
+$OpenBSD: patch-tar_cabal,v 1.1 2019/09/30 12:24:32 kili Exp $
+
+Relaxed containers bound, same as
+https://hackage.haskell.org/package/tar-0.5.1.0/revision/1.cabal
+
+Index: tar.cabal
+--- tar.cabal.orig
++++ tar.cabal
+@@ -41,7 +41,7 @@ library
+   build-depends: base       == 4.*,
+                  filepath             < 1.5,
+                  array                < 0.6,
+-                 containers >= 0.2 && < 0.6,
++                 containers >= 0.2 && < 0.7,
+                  deepseq    >= 1.1 && < 1.5
+ 
+   if flag(old-time)
