@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/30 11:31:05 kili Exp $
+@tag ghc-pkg-recache
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/Data/
+lib/ghc/${DISTNAME}/Data/Byteable.dyn_hi
+lib/ghc/${DISTNAME}/Data/Byteable.hi
+lib/ghc/${DISTNAME}/Data/Byteable.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
+lib/ghc/package.conf.d/${DISTNAME}.conf
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Data-Byteable.html
+share/doc/hs-${DISTNAME}/html/byteable.haddock
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
+share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
+share/doc/hs-${DISTNAME}/html/synopsis.png
+share/hs-${DISTNAME}/
+share/hs-${DISTNAME}/README.md
