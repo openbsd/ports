@@ -1,4 +1,4 @@
-$OpenBSD: patch-xmobar_cabal,v 1.18 2017/04/27 09:00:44 dcoppa Exp $
+$OpenBSD: patch-xmobar_cabal,v 1.19 2019/09/30 12:54:32 kili Exp $
 
 commit dfb5dbd6cc5342348fbb46bd117c226d5e8127e4
 Author: jao <jao@gnu.org>
@@ -6,8 +6,9 @@ Date:   Thu Feb 23 00:54:19 2017 +0100
 
 Compiling with --with-rtsopts=-V0 to reduce wakeups (issue #89)
 
---- xmobar.cabal.orig	Mon Sep  5 17:49:18 2016
-+++ xmobar.cabal	Thu Apr 27 10:47:39 2017
+Index: xmobar.cabal
+--- xmobar.cabal.orig
++++ xmobar.cabal
 @@ -74,6 +74,10 @@ flag with_threaded
    description: Use threaded runtime.
    default: False
@@ -31,6 +32,15 @@ Compiling with --with-rtsopts=-V0 to reduce wakeups (issue #89)
      extra-libraries: Xrandr Xrender
  
      build-depends:
+@@ -124,7 +129,7 @@ executable xmobar
+       mtl >= 2.1 && < 2.3,
+       parsec == 3.1.*,
+       HTTP >= 4000.2.4,
+-      stm >= 2.3 && < 2.5
++      stm >= 2.3 && < 2.6
+ 
+     if flag(with_conduit)
+        -- use http-conduit  instead of simple-http
 @@ -138,6 +143,9 @@ executable xmobar
         ghc-options: -threaded
         cpp-options: -DTHREADED_RUNTIME
