@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1894 2019/09/26 21:52:48 kmos Exp $
+# $OpenBSD: Makefile,v 1.1895 2019/09/30 13:09:23 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -199,8 +199,10 @@
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-ansi-wl-pprint
      SUBDIR += hs-async
+     SUBDIR += hs-base-compat
      SUBDIR += hs-base16-bytestring
      SUBDIR += hs-base64-bytestring
+     SUBDIR += hs-byteable
      SUBDIR += hs-cereal
      SUBDIR += hs-cmdargs
      SUBDIR += hs-conduit
@@ -223,13 +225,12 @@
      SUBDIR += hs-mmap
      SUBDIR += hs-mmorph
      SUBDIR += hs-monad-control
-     SUBDIR += hs-mtl
+     SUBDIR += hs-mono-traversable
      SUBDIR += hs-nats
      SUBDIR += hs-network
      SUBDIR += hs-network-uri
      SUBDIR += hs-old-locale
      SUBDIR += hs-old-time
-     SUBDIR += hs-parsec
      SUBDIR += hs-primitive
      SUBDIR += hs-random
      SUBDIR += hs-regex-applicative
@@ -244,7 +245,6 @@
      SUBDIR += hs-semigroups
      SUBDIR += hs-shelly
      SUBDIR += hs-split
-     SUBDIR += hs-stm
      SUBDIR += hs-syb
      SUBDIR += hs-system-fileio
      SUBDIR += hs-system-filepath
@@ -254,13 +254,15 @@
      SUBDIR += hs-test-framework
      SUBDIR += hs-test-framework-hunit
      SUBDIR += hs-test-framework-quickcheck2
-     SUBDIR += hs-text
      SUBDIR += hs-tf-random
      SUBDIR += hs-transformers-base
      SUBDIR += hs-transformers-compat
      SUBDIR += hs-unix-compat
+     SUBDIR += hs-unliftio-core
+     SUBDIR += hs-unordered-containers
      SUBDIR += hs-utf8-string
      SUBDIR += hs-vector
+     SUBDIR += hs-vector-algorithms
      SUBDIR += hs-void
      SUBDIR += hub
      SUBDIR += hyena
