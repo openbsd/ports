@@ -1,6 +1,6 @@
-$OpenBSD: patch-exceptions_cabal,v 1.1 2018/01/22 21:23:53 kili Exp $
+$OpenBSD: patch-exceptions_cabal,v 1.2 2019/09/30 12:07:02 kili Exp $
 
-Metadata dependency changes.
+Version relaxation.
 
 Index: exceptions.cabal
 --- exceptions.cabal.orig
@@ -9,14 +9,8 @@ Index: exceptions.cabal
    build-depends:
      base                       >= 4.3      && < 5,
      stm                        >= 2.2      && < 3,
--    template-haskell           >= 2.2      && < 2.12,
-+    template-haskell           >= 2.2      && < 2.13,
+-    template-haskell           >= 2.2      && < 2.14,
++    template-haskell           >= 2.2      && < 2.15,
      transformers               >= 0.2      && < 0.6,
-     transformers-compat        >= 0.3      && < 0.6,
+     transformers-compat        >= 0.3      && < 0.7,
      mtl                        >= 2.0      && < 2.3
-@@ -62,4 +62,4 @@ test-suite exceptions-tests
-     mtl,
-     test-framework             >= 0.8      && < 0.9,
-     test-framework-quickcheck2 >= 0.3      && < 0.4,
--    QuickCheck                 >= 2.5      && < 2.10
-+    QuickCheck                 >= 2.5      && < 2.11
