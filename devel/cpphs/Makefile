@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.47 2019/09/10 13:51:22 kili Exp $
+# $OpenBSD: Makefile,v 1.48 2019/09/30 12:51:25 kili Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
 
 DISTNAME =	cpphs-1.19.3
 PKGNAME-main =	${DISTNAME}
+REVISION-main =	0
 PKGNAME-lib =	hs-${DISTNAME}
-REVISION-lib =	6
+REVISION-lib =	7
 CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
@@ -14,17 +15,19 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -lib
-WANTLIB-main =		${WANTLIB} c m pthread
 
 SUBST_VARS +=		DISTNAME
 
-WANTLIB-main +=		util
 MODULES =		lang/ghc
 LIB_DEPENDS +=		converters/libiconv
-WANTLIB +=		iconv
+
+WANTLIB-main =		c charset ffi gmp m iconv pthread util
+
 MODGHC_BUILD =		hackage cabal haddock register
-MODGHC_PACKAGE_KEY =	43cw6nz5tRs1k35NR3VSIs
-LIB_DEPENDS-main =	${LIB_DEPENDS}
+MODGHC_PACKAGE_KEY =	3CUnFHz9uegIX6e6hlBlNd
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			devel/gmp \
+			devel/libffi
 RUN_DEPENDS-main =
 LIB_DEPENDS-lib =
 RUN_DEPENDS-lib =	devel/hs-old-locale \
