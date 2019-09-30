@@ -1,4 +1,4 @@
-$OpenBSD: patch-unix_uxnoise_c,v 1.5 2019/07/20 11:55:25 sthen Exp $
+$OpenBSD: patch-unix_uxnoise_c,v 1.6 2019/09/30 08:45:39 sthen Exp $
 
 Index: unix/uxnoise.c
 --- unix/uxnoise.c.orig
@@ -12,16 +12,16 @@ Index: unix/uxnoise.c
 -
 -    fd = open("/dev/urandom", O_RDONLY);
 -    if (fd < 0)
--	return false;
+-        return false;
 -
 -    ngot = 0;
 -    while (ngot < len) {
--	ret = read(fd, buf+ngot, len-ngot);
--	if (ret < 0) {
--	    close(fd);
--	    return false;
--	}
--	ngot += ret;
+-        ret = read(fd, buf+ngot, len-ngot);
+-        if (ret < 0) {
+-            close(fd);
+-            return false;
+-        }
+-        ngot += ret;
 -    }
 -
 -    close(fd);
@@ -41,32 +41,32 @@ Index: unix/uxnoise.c
 +    char buf[32];
  
 -    if (read_dev_urandom(buf, 32)) {
--	got_dev_urandom = true;
--	func(buf, 32);
+-        got_dev_urandom = true;
+-        func(buf, 32);
 -    }
 +    if (read_dev_urandom(buf, sizeof(buf)))
-+	func(buf, sizeof(buf));
++        func(buf, sizeof(buf));
  
 -    fp = popen("ps -axu 2>/dev/null", "r");
 -    if (fp) {
--	while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
--	    func(buf, ret);
--	pclose(fp);
+-        while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
+-            func(buf, ret);
+-        pclose(fp);
 -    } else if (!got_dev_urandom) {
--	fprintf(stderr, "popen: %s\n"
--		"Unable to access fallback entropy source\n", strerror(errno));
--	exit(1);
+-        fprintf(stderr, "popen: %s\n"
+-                "Unable to access fallback entropy source\n", strerror(errno));
+-        exit(1);
 -    }
 -
 -    fp = popen("ls -al /tmp 2>/dev/null", "r");
 -    if (fp) {
--	while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
--	    func(buf, ret);
--	pclose(fp);
+-        while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
+-            func(buf, ret);
+-        pclose(fp);
 -    } else if (!got_dev_urandom) {
--	fprintf(stderr, "popen: %s\n"
--		"Unable to access fallback entropy source\n", strerror(errno));
--	exit(1);
+-        fprintf(stderr, "popen: %s\n"
+-                "Unable to access fallback entropy source\n", strerror(errno));
+-        exit(1);
 -    }
 -
      read_random_seed(func);
@@ -83,14 +83,14 @@ Index: unix/uxnoise.c
      struct rusage rusage;
  
 -    if ((fd = open("/proc/meminfo", O_RDONLY)) >= 0) {
--	while ( (ret = read(fd, buf, sizeof(buf))) > 0)
--	    random_add_noise(NOISE_SOURCE_MEMINFO, buf, ret);
--	close(fd);
+-        while ( (ret = read(fd, buf, sizeof(buf))) > 0)
+-            random_add_noise(NOISE_SOURCE_MEMINFO, buf, ret);
+-        close(fd);
 -    }
 -    if ((fd = open("/proc/stat", O_RDONLY)) >= 0) {
--	while ( (ret = read(fd, buf, sizeof(buf))) > 0)
--	    random_add_noise(NOISE_SOURCE_STAT, buf, ret);
--	close(fd);
+-        while ( (ret = read(fd, buf, sizeof(buf))) > 0)
+-            random_add_noise(NOISE_SOURCE_STAT, buf, ret);
+-        close(fd);
 -    }
 +    arc4random_buf(buf, 8);
 +    random_add_noise(NOISE_SOURCE_ARC4RANDOM, buf, sizeof(buf));
