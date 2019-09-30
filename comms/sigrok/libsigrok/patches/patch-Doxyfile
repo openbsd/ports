@@ -1,0 +1,23 @@
+$OpenBSD: patch-Doxyfile,v 1.1 2019/09/30 06:34:50 rsadowski Exp $
+
+Behavior of FILE_PATTERNS was unintentionally changed in doxygen 1.8.16,
+this lead to the libsigrok doxygen invocation generating almost no data,
+and missing all the enums needed for the binding generation, resulting
+in build failures.
+
+Workaround this by commenting out `FILE_PATTERNS`.
+
+Upstream-issue: https://github.com/doxygen/doxygen/issues/7190
+
+Index: Doxyfile
+--- Doxyfile.orig
++++ Doxyfile
+@@ -763,7 +763,7 @@ INPUT_ENCODING         = UTF-8
+ # *.md, *.mm, *.dox, *.py, *.f90, *.f, *.for, *.tcl, *.vhd, *.vhdl, *.ucf,
+ # *.qsf, *.as and *.js.
+ 
+-FILE_PATTERNS          =
++#FILE_PATTERNS          =
+ 
+ # The RECURSIVE tag can be used to specify whether or not subdirectories should
+ # be searched for input files as well.
