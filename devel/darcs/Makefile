@@ -1,48 +1,46 @@
-# $OpenBSD: Makefile,v 1.70 2019/07/12 20:44:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2019/09/30 11:54:43 kili Exp $
 
 USE_WXNEEDED =		Yes
 
 COMMENT =		advanced revision control system written in Haskell
 
-DISTNAME =		darcs-2.12.5
-REVISION =		0
-
+DISTNAME =		darcs-2.14.2
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
 
-WANTLIB =		c curl>=2 curses iconv m pthread util z
+WANTLIB =		c charset curl>=2 curses ffi gmp iconv m \
+			pthread util z
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage nort
 MODGHC_SETUP_CONF_ARGS =-f 'curl -library' --enable-tests
 LIB_DEPENDS =		converters/libiconv \
+			devel/gmp \
+			devel/libffi \
 			net/curl
 
 # Yes, build dependencies, because GHC libs are still static and we
 # don't want to pull in all of ghc.
 BUILD_DEPENDS =		archivers/hs-zip-archive>=0.2.3,<0.4 \
-			archivers/hs-zlib>=0.5.4.1,<0.7.0.0 \
-			devel/hs-async>=2.0.1.4,<2.2 \
+			archivers/hs-zlib>=0.6.1.2,<0.7.0.0 \
+			devel/hs-async>=2.0.1.4,<2.3 \
 			devel/hs-base16-bytestring>=0.1,<0.2 \
 			devel/hs-data-ordlist>=0.4,<0.5 \
-			devel/hs-fgl>=5.5.0.1,<5.6 \
+			devel/hs-fgl>=5.7.0.1,<5.8 \
 			devel/hs-hashable>=1.1.2.5,<1.3 \
-			devel/hs-mmap>=0.5,<0.6 \
-			devel/hs-mtl>=2.1.2,<2.3 \
+			devel/hs-mmap>=0.5.9,<0.6 \
 			devel/hs-old-time>=1.1,<1.2 \
-			devel/hs-parsec>=3.1,<3.2 \
 			devel/hs-random>=1.0.1.1,<1.2 \
 			devel/hs-regex-applicative>=0.2,<0.4 \
 			devel/hs-regex-compat-tdfa>=0.95.1,<0.96 \
-			devel/hs-sandi>=0.4,<0.5 \
+			devel/hs-sandi>=0.5,<0.6 \
 			devel/hs-tar>=0.4,<0.6 \
-			devel/hs-text>=1.2.1.3,<1.3 \
 			devel/hs-transformers-compat>=0.4,<0.6 \
-			devel/hs-unix-compat>=0.1.2,<0.5 \
+			devel/hs-unix-compat>=0.4.2,<0.6\
 			devel/hs-utf8-string>=0.3.6,<1.1 \
 			devel/hs-vector>=0.10.0.1,<0.13 \
-			graphics/hs-graphviz>=2999.17.0.1,<2999.19 \
+			graphics/hs-graphviz>=2999.20.0.3,<2999.21 \
 			net/hs-HTTP>=4000.2.8,<4000.4 \
-			security/hs-cryptohash>=0.4,<0.12 \
+			security/hs-cryptohash>=0.11,<0.12 \
 			textproc/hs-attoparsec>=0.11,<0.14 \
 			www/hs-html>=1.0.1.2,<1.1 \
 			${RUN_DEPENDS}
@@ -50,7 +48,7 @@ BUILD_DEPENDS =		archivers/hs-zip-archive>=0.2.3,<0.4 \
 # Used for building the test suite (which is done during normal
 # build time, not during regress time).
 BUILD_DEPENDS +=	devel/hs-cmdargs>=0.10,<0.11 \
-			devel/hs-shelly>=1.6.2,<1.7 \
+			devel/hs-shelly>=1.8,<1.9 \
 			devel/hs-split>=0.2.2,<0.3 \
 			devel/hs-FindBin>=0.0,<0.1 \
 			devel/hs-QuickCheck>=2.6,<2.10 \
