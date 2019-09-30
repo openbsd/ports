@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/09/30 12:52:39 kili Exp $
 
 BROKEN-i386 =		Could NOT find GLEW (missing: GLEW_LIBRARY GLEW_INCLUDE_DIR)
 
@@ -15,7 +15,7 @@ DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
 PKGNAME-server =	hedgewars-server-$V
 REVISION-main =		0
-REVISION-server =	0
+REVISION-server =	1
 
 CATEGORIES =		games
 
@@ -33,7 +33,7 @@ WANTLIB-main += m physfs png z
 # dlopen()ed; do not remove.
 WANTLIB-main += GL GLU glut
 
-WANTLIB-server += c iconv m
+WANTLIB-server += c ffi gmp iconv m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -68,7 +68,9 @@ LIB_DEPENDS-main =	devel/sdl2-image \
 			${MODQT5_LIB_DEPENDS} \
 			${MODLUA_LIB_DEPENDS}
 
-LIB_DEPENDS-server =	converters/libiconv
+LIB_DEPENDS-server =	converters/libiconv \
+			devel/gmp \
+			devel/libffi
 
 CONFIGURE_ARGS +=	-DNOVIDEOREC=ON
 
