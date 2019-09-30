@@ -1,0 +1,5 @@
+Type classes for mapping, folding, and traversing monomorphic and
+polymorphic containers. Haskell is good at operating over polymorphic
+containers such as a list [a]. A monomorphic container is one such as
+Text which has a type Text that does not expose a type variable for
+the underlying characters.
