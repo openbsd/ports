@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2019/05/10 12:01:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2019/09/30 21:05:56 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.6,<3.7
@@ -2339,9 +2339,9 @@ lib/python3.6/lib-dynload/xxlimited.so
 lib/python3.6/lib-dynload/zlib.so
 lib/python3.6/lib2to3/
 lib/python3.6/lib2to3/Grammar.txt
-lib/python3.6/lib2to3/Grammar3.6.8.final.0.pickle
+lib/python3.6/lib2to3/Grammar3.6.9.final.0.pickle
 lib/python3.6/lib2to3/PatternGrammar.txt
-lib/python3.6/lib2to3/PatternGrammar3.6.8.final.0.pickle
+lib/python3.6/lib2to3/PatternGrammar3.6.9.final.0.pickle
 lib/python3.6/lib2to3/__init__.py
 lib/python3.6/lib2to3/__main__.py
 lib/python3.6/lib2to3/__pycache__/
@@ -2957,6 +2957,7 @@ lib/python3.6/test/support/__pycache__/testresult.cpython-36.opt-1.pyc
 lib/python3.6/test/support/__pycache__/testresult.cpython-36.opt-2.pyc
 lib/python3.6/test/support/__pycache__/testresult.cpython-36.pyc
 lib/python3.6/test/support/testresult.py
+lib/python3.6/test/talos-2019-0758.pem
 lib/python3.6/test/test_bdb.py
 lib/python3.6/textwrap.py
 lib/python3.6/this.py
