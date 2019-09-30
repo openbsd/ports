@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_DBus_Client_hs,v 1.1 2019/09/30 13:02:54 kili Exp $
+
+Index: lib/DBus/Client.hs
+--- lib/DBus/Client.hs.orig
++++ lib/DBus/Client.hs
+@@ -135,6 +135,7 @@ import           Data.IORef
+ import           Data.List (foldl', intercalate)
+ import qualified Data.Map
+ import           Data.Map (Map)
++import           Data.Map.Strict (insertWith)
+ import           Data.Maybe (catMaybes, listToMaybe)
+ import           Data.Typeable (Typeable)
+ import           Data.Unique
+@@ -739,7 +740,7 @@ export client path methods = atomicModifyIORef (client
+     addObject objs = (Data.Map.insert path info objs, ())
+ 
+     info = foldl' addMethod Data.Map.empty (defaultIntrospect : methods)
+-    addMethod m (Method iface name inSig outSig cb) = Data.Map.insertWith'
++    addMethod m (Method iface name inSig outSig cb) = Data.Map.Strict.insertWith
+         Data.Map.union iface
+         (Data.Map.fromList [(name, MethodInfo inSig outSig (wrapCB cb))]) m
+ 
