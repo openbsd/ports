@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.165 2019/09/30 11:44:18 kili Exp $
+# $OpenBSD: Makefile,v 1.166 2019/09/30 13:15:39 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
-
-BROKEN =		do not disturb the package builds
 
 # Note: please never ever set DPB_PROPERTIES=parallel (or some other
 # magic that enables parallel builds) for this port! Not even if it
