@@ -1,28 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/09/10 13:51:26 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/09/30 12:21:39 kili Exp $
 @tag ghc-pkg-recache
+lib/ghc/package.conf.d/${DISTNAME}.conf
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/List/
 lib/ghc/${DISTNAME}/Data/List/Split/
+lib/ghc/${DISTNAME}/Data/List/Split.dyn_hi
 lib/ghc/${DISTNAME}/Data/List/Split.hi
 lib/ghc/${DISTNAME}/Data/List/Split.p_hi
+lib/ghc/${DISTNAME}/Data/List/Split/Internals.dyn_hi
 lib/ghc/${DISTNAME}/Data/List/Split/Internals.hi
 lib/ghc/${DISTNAME}/Data/List/Split/Internals.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
-lib/ghc/package.conf.d/${DISTNAME}.conf
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Data-List-Split-Internals.html
 share/doc/hs-${DISTNAME}/html/Data-List-Split.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
 share/doc/hs-${DISTNAME}/html/split.haddock
 share/doc/hs-${DISTNAME}/html/synopsis.png

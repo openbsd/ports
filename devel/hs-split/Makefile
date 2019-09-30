@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/09/10 13:51:26 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2019/09/30 12:21:39 kili Exp $
 
 COMMENT =		library for splitting lists
 
@@ -6,8 +6,7 @@ COMMENT =		library for splitting lists
 # Please do *not* update without thinking.
 PORTROACH =		ignore:1
 
-DISTNAME =		split-0.2.3.2
-REVISION =		0
+DISTNAME =		split-0.2.3.3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,6 +18,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	7cayvoeRj5XIrIBUB58mMy
+MODGHC_PACKAGE_KEY =	6n1iQ0JLFvkeXvJXsAqQc
 
 .include <bsd.port.mk>
