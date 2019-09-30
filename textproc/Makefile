@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.606 2019/08/14 19:00:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.607 2019/09/30 13:07:09 kili Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -73,7 +73,6 @@
      SUBDIR += hs-json
      SUBDIR += hs-libxml-sax
      SUBDIR += hs-polyparse
-     SUBDIR += hs-stringsearch
      SUBDIR += hs-wl-pprint-text
      SUBDIR += hs-xml
      SUBDIR += hs-xml-types
