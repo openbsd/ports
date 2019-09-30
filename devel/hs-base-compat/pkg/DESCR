@@ -1,0 +1,6 @@
+The scope of base-compat is to provide functions available in later
+versions of base to a wider (older) range of compilers.
+
+In addition, successful library proposals that have been accepted to
+be part of upcoming versions of base are also included. This package
+is not intended to replace base, but to complement it.
