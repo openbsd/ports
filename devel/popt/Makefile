@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/09/30 22:58:03 jca Exp $
 
 COMMENT=	getopt(3)-like library with a number of enhancements
 
 DISTNAME=	popt-1.16
 CATEGORIES=	devel
-MASTER_SITES=	http://rpm5.org/files/popt/
+MASTER_SITES=	http://ftp.rpm.org/mirror/popt/
 REVISION=	2
 
 SHARED_LIBS=	popt	1.0
