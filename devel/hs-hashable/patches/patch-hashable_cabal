@@ -1,0 +1,18 @@
+$OpenBSD: patch-hashable_cabal,v 1.1 2019/09/30 12:08:54 kili Exp $
+
+Upstream bound relaxed, no release yet.
+
+https://github.com/tibbe/hashable/commit/082a236ae3c780db69c12043d092dbdca1d1024d#diff-9b77caf145e90378688902060b96b906
+
+Index: hashable.cabal
+--- hashable.cabal.orig
++++ hashable.cabal
+@@ -48,7 +48,7 @@ Library
+   Exposed-modules:   Data.Hashable
+                      Data.Hashable.Lifted
+   Other-modules:     Data.Hashable.Class
+-  Build-depends:     base >= 4.4 && < 4.12,
++  Build-depends:     base >= 4.4 && < 4.13,
+                      bytestring >= 0.9 && < 0.11,
+                      deepseq >= 1.3 && < 1.5
+   if impl(ghc)
