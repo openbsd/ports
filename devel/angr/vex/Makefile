@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
-
-ONLY_FOR_ARCHS =amd64
+# $OpenBSD: Makefile,v 1.2 2019/09/30 08:24:44 jasper Exp $
 
 COMMENT =	modified version of Valgrind VEX for PyVEX
 

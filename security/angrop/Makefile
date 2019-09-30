@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2019/09/15 13:29:50 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/09/30 08:24:44 jasper Exp $
+
+# sync with devel/angr/Makefile.inc
+ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		ROP chain builder based off of angr
 
