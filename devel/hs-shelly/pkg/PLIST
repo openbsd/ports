@@ -1,23 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/09/10 13:51:26 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/09/30 12:20:41 kili Exp $
 @tag ghc-pkg-recache
+lib/ghc/package.conf.d/${DISTNAME}.conf
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Shelly/
+lib/ghc/${DISTNAME}/Shelly.dyn_hi
 lib/ghc/${DISTNAME}/Shelly.hi
 lib/ghc/${DISTNAME}/Shelly.p_hi
+lib/ghc/${DISTNAME}/Shelly/Base.dyn_hi
 lib/ghc/${DISTNAME}/Shelly/Base.hi
 lib/ghc/${DISTNAME}/Shelly/Base.p_hi
+lib/ghc/${DISTNAME}/Shelly/Find.dyn_hi
 lib/ghc/${DISTNAME}/Shelly/Find.hi
 lib/ghc/${DISTNAME}/Shelly/Find.p_hi
+lib/ghc/${DISTNAME}/Shelly/Lifted.dyn_hi
 lib/ghc/${DISTNAME}/Shelly/Lifted.hi
 lib/ghc/${DISTNAME}/Shelly/Lifted.p_hi
+lib/ghc/${DISTNAME}/Shelly/Pipe.dyn_hi
 lib/ghc/${DISTNAME}/Shelly/Pipe.hi
 lib/ghc/${DISTNAME}/Shelly/Pipe.p_hi
+lib/ghc/${DISTNAME}/Shelly/Unix.dyn_hi
 lib/ghc/${DISTNAME}/Shelly/Unix.hi
 lib/ghc/${DISTNAME}/Shelly/Unix.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
-lib/ghc/package.conf.d/${DISTNAME}.conf
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
@@ -50,11 +56,13 @@ share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-V.html
 share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
 share/doc/hs-${DISTNAME}/html/shelly.haddock
 share/doc/hs-${DISTNAME}/html/synopsis.png
