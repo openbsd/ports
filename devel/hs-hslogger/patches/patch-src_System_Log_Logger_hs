@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_System_Log_Logger_hs,v 1.1 2019/09/30 12:58:08 kili Exp $
+
+Replaced deprecated fold with foldr.
+
+Index: src/System/Log/Logger.hs
+--- src/System/Log/Logger.hs.orig
++++ src/System/Log/Logger.hs
+@@ -476,7 +476,7 @@ updateGlobalLogger ln func =
+ removeAllHandlers :: IO ()
+ removeAllHandlers =
+     modifyMVar_ logTree $ \lt -> do
+-        let allHandlers = Map.fold (\l r -> concat [r, handlers l]) [] lt
++        let allHandlers = Map.foldr (\l r -> concat [r, handlers l]) [] lt
+         mapM_ (\(HandlerT h) -> close h) allHandlers
+         return $ Map.map (\l -> l {handlers = []}) lt
+ 

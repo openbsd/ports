@@ -1,38 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/09/10 13:51:25 kili Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/09/30 12:58:09 kili Exp $
 @conflict hs-network-bytestring-*
 @pkgpath net/hs-network-bytestring
 @tag ghc-pkg-recache
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Network/
+lib/ghc/${DISTNAME}/Network.dyn_hi
 lib/ghc/${DISTNAME}/Network.hi
 lib/ghc/${DISTNAME}/Network.p_hi
+lib/ghc/${DISTNAME}/Network/BSD.dyn_hi
 lib/ghc/${DISTNAME}/Network/BSD.hi
 lib/ghc/${DISTNAME}/Network/BSD.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/
+lib/ghc/${DISTNAME}/Network/Socket.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket.hi
 lib/ghc/${DISTNAME}/Network/Socket.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/
+lib/ghc/${DISTNAME}/Network/Socket/ByteString.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString.hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString.p_hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/IOVec.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/IOVec.hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/IOVec.p_hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/Internal.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Internal.hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Internal.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy/
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy.hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy.p_hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy/Posix.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy/Posix.hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/Lazy/Posix.p_hi
+lib/ghc/${DISTNAME}/Network/Socket/ByteString/MsgHdr.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/MsgHdr.hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/MsgHdr.p_hi
+lib/ghc/${DISTNAME}/Network/Socket/Internal.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket/Internal.hi
 lib/ghc/${DISTNAME}/Network/Socket/Internal.p_hi
+lib/ghc/${DISTNAME}/Network/Socket/Types.dyn_hi
 lib/ghc/${DISTNAME}/Network/Socket/Types.hi
 lib/ghc/${DISTNAME}/Network/Socket/Types.p_hi
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsNet.h
 lib/ghc/${DISTNAME}/include/HsNetworkConfig.h
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/package.conf.d/${DISTNAME}.conf
@@ -68,11 +79,13 @@ share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index-Z.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/network.haddock
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
 share/doc/hs-${DISTNAME}/html/synopsis.png

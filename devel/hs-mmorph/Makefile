@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/09/10 13:51:24 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2019/09/30 12:58:09 kili Exp $
 
 COMMENT =		monad morphisms
 
 DISTNAME =		mmorph-1.0.9
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,11 +15,10 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	8UaKrPqOttEJIi786pOOKJ
+MODGHC_PACKAGE_KEY =	5nK9LlJVZhp6HBh22XokjD
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-RUN_DEPENDS =		devel/hs-mtl>=2.0.1,<2.3 \
-			devel/hs-transformers-compat>=0.3,<0.6
+RUN_DEPENDS =		devel/hs-transformers-compat>=0.3,<0.6
 
 .include <bsd.port.mk>

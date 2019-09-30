@@ -1,26 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/09/10 13:51:24 kili Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/09/30 12:58:09 kili Exp $
 @tag ghc-pkg-recache
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Log/
+lib/ghc/${DISTNAME}/System/Log.dyn_hi
 lib/ghc/${DISTNAME}/System/Log.hi
 lib/ghc/${DISTNAME}/System/Log.p_hi
+lib/ghc/${DISTNAME}/System/Log/Formatter.dyn_hi
 lib/ghc/${DISTNAME}/System/Log/Formatter.hi
 lib/ghc/${DISTNAME}/System/Log/Formatter.p_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/
+lib/ghc/${DISTNAME}/System/Log/Handler.dyn_hi
 lib/ghc/${DISTNAME}/System/Log/Handler.hi
 lib/ghc/${DISTNAME}/System/Log/Handler.p_hi
+lib/ghc/${DISTNAME}/System/Log/Handler/Growl.dyn_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Growl.hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Growl.p_hi
+lib/ghc/${DISTNAME}/System/Log/Handler/Log4jXML.dyn_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Log4jXML.hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Log4jXML.p_hi
+lib/ghc/${DISTNAME}/System/Log/Handler/Simple.dyn_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Simple.hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Simple.p_hi
+lib/ghc/${DISTNAME}/System/Log/Handler/Syslog.dyn_hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Syslog.hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Syslog.p_hi
+lib/ghc/${DISTNAME}/System/Log/Logger.dyn_hi
 lib/ghc/${DISTNAME}/System/Log/Logger.hi
 lib/ghc/${DISTNAME}/System/Log/Logger.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/package.conf.d/${DISTNAME}.conf
@@ -36,11 +44,13 @@ share/doc/hs-${DISTNAME}/html/System-Log-Handler.html
 share/doc/hs-${DISTNAME}/html/System-Log-Logger.html
 share/doc/hs-${DISTNAME}/html/System-Log.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
 share/doc/hs-${DISTNAME}/html/hslogger.haddock
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
 share/doc/hs-${DISTNAME}/html/synopsis.png

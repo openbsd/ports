@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/09/10 13:51:22 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2019/09/30 12:58:07 kili Exp $
 
 COMMENT =		locate directory of original program
 
 DISTNAME =		FindBin-0.0.5
-REVISION =		10
+REVISION =		11
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/audreyt/findbin
 
@@ -13,6 +13,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	7YUNl8W6bN9GM4CQnaO2CD
+MODGHC_PACKAGE_KEY =	6QSFjAP4vvy4WhAg9UfF4U
 
 .include <bsd.port.mk>

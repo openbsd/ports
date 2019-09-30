@@ -1,27 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/09/10 13:51:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/09/30 12:58:10 kili Exp $
 @tag ghc-pkg-recache
+lib/ghc/package.conf.d/${DISTNAME}.conf
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/
 lib/ghc/${DISTNAME}/Control/Monad/Trans/
+lib/ghc/${DISTNAME}/Control/Monad/Trans/Instances.dyn_hi
 lib/ghc/${DISTNAME}/Control/Monad/Trans/Instances.hi
 lib/ghc/${DISTNAME}/Control/Monad/Trans/Instances.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/Paths_transformers_compat.dyn_hi
 lib/ghc/${DISTNAME}/Paths_transformers_compat.hi
 lib/ghc/${DISTNAME}/Paths_transformers_compat.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
-lib/ghc/package.conf.d/${DISTNAME}.conf
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Control-Monad-Trans-Instances.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
 share/doc/hs-${DISTNAME}/html/synopsis.png
 share/doc/hs-${DISTNAME}/html/transformers-compat.haddock

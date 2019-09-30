@@ -1,29 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/09/10 13:51:25 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/09/30 12:58:09 kili Exp $
 @tag ghc-pkg-recache
+lib/ghc/package.conf.d/${DISTNAME}.conf
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Regex/
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/
+lib/ghc/${DISTNAME}/Text/Regex/Applicative.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative.hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Applicative/Common.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Common.hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Common.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Applicative/Compile.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Compile.hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Compile.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Applicative/Interface.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Interface.hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Interface.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Applicative/Object.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Object.hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Object.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Applicative/Reference.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Reference.hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Reference.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Applicative/StateQueue.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/StateQueue.hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/StateQueue.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Applicative/Types.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Types.hi
 lib/ghc/${DISTNAME}/Text/Regex/Applicative/Types.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
-lib/ghc/package.conf.d/${DISTNAME}.conf
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
@@ -33,11 +41,13 @@ share/doc/hs-${DISTNAME}/html/Text-Regex-Applicative-Reference.html
 share/doc/hs-${DISTNAME}/html/Text-Regex-Applicative-StateQueue.html
 share/doc/hs-${DISTNAME}/html/Text-Regex-Applicative.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
 share/doc/hs-${DISTNAME}/html/regex-applicative.haddock
 share/doc/hs-${DISTNAME}/html/synopsis.png

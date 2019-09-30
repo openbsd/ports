@@ -1,26 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/09/10 13:51:26 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/09/30 12:58:10 kili Exp $
 @tag ghc-pkg-recache
+lib/ghc/package.conf.d/${DISTNAME}.conf
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Regex/
 lib/ghc/${DISTNAME}/Text/Regex/Posix/
+lib/ghc/${DISTNAME}/Text/Regex/Posix.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix.hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix.p_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString/
+lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString.hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString/Lazy.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString/Lazy.hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/ByteString/Lazy.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/Sequence.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/Sequence.hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/Sequence.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/String.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/String.hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/String.p_hi
+lib/ghc/${DISTNAME}/Text/Regex/Posix/Wrap.dyn_hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/Wrap.hi
 lib/ghc/${DISTNAME}/Text/Regex/Posix/Wrap.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}-ghc${MODGHC_VER}.so
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
-lib/ghc/package.conf.d/${DISTNAME}.conf
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
@@ -31,11 +37,13 @@ share/doc/hs-${DISTNAME}/html/Text-Regex-Posix-String.html
 share/doc/hs-${DISTNAME}/html/Text-Regex-Posix-Wrap.html
 share/doc/hs-${DISTNAME}/html/Text-Regex-Posix.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
-share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock-bundle.min.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/meta.json
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/quick-jump.css
 share/doc/hs-${DISTNAME}/html/regex-posix.haddock
 share/doc/hs-${DISTNAME}/html/synopsis.png

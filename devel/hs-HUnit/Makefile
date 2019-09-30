@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/09/10 13:51:22 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2019/09/30 12:58:07 kili Exp $
 
 COMMENT =		unit testing framework for Haskell
 
@@ -7,7 +7,7 @@ COMMENT =		unit testing framework for Haskell
 PORTROACH =		ignore:1
 
 DISTNAME =		HUnit-1.3.1.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 HOMEPAGE =		http://hunit.sourceforge.net/
 
@@ -20,6 +20,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	KJLZRoakQejA9CNEGako1f
+MODGHC_PACKAGE_KEY =	fpJTntHxjpEWtL7XQ9CwB
 
 .include <bsd.port.mk>
