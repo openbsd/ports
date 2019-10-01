@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2019/06/29 10:39:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2019/10/01 10:13:31 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/applications/stellarium.desktop
@@ -25,7 +25,7 @@ share/stellarium/data/countryCodes.dat
 share/stellarium/data/default_cfg.ini
 share/stellarium/data/iso3166.tab
 share/stellarium/data/iso639-1.utf8
-share/stellarium/data/nomenclature.fab
+share/stellarium/data/nomenclature.dat
 share/stellarium/data/shaders/
 share/stellarium/data/shaders/planet.frag
 share/stellarium/data/shaders/planet.vert
@@ -390,6 +390,7 @@ share/stellarium/nebulae/default/GammaCygni-vasey.png
 share/stellarium/nebulae/default/Jones-Emberson1-vasey.png
 share/stellarium/nebulae/default/Medusa-vasey.png
 share/stellarium/nebulae/default/barnard142-vasey.png
+share/stellarium/nebulae/default/barnard150.png
 share/stellarium/nebulae/default/barnard173-vasey.png
 share/stellarium/nebulae/default/barnard207.png
 share/stellarium/nebulae/default/barnard22-vasey.png
@@ -437,6 +438,9 @@ share/stellarium/nebulae/default/ic4628-trev.png
 share/stellarium/nebulae/default/ic5146.png
 share/stellarium/nebulae/default/ic883h.png
 share/stellarium/nebulae/default/lbn438.png
+share/stellarium/nebulae/default/ldn1622.png
+share/stellarium/nebulae/default/ldn673.png
+share/stellarium/nebulae/default/leo_cluster.png
 share/stellarium/nebulae/default/lmc_01.png
 share/stellarium/nebulae/default/lmc_02.png
 share/stellarium/nebulae/default/lmc_03.png
@@ -708,6 +712,7 @@ share/stellarium/nebulae/default/n5257h.png
 share/stellarium/nebulae/default/n5286.png
 share/stellarium/nebulae/default/n5367.png
 share/stellarium/nebulae/default/n5466.png
+share/stellarium/nebulae/default/n5474.png
 share/stellarium/nebulae/default/n55.png
 share/stellarium/nebulae/default/n5566.png
 share/stellarium/nebulae/default/n5694-dss.png
@@ -737,8 +742,11 @@ share/stellarium/nebulae/default/n6388.png
 share/stellarium/nebulae/default/n6397.png
 share/stellarium/nebulae/default/n6441-2mass.png
 share/stellarium/nebulae/default/n6445.png
+share/stellarium/nebulae/default/n6522.png
 share/stellarium/nebulae/default/n6541-dss.png
 share/stellarium/nebulae/default/n6543kepler.png
+share/stellarium/nebulae/default/n6544.png
+share/stellarium/nebulae/default/n6553.png
 share/stellarium/nebulae/default/n6563.png
 share/stellarium/nebulae/default/n6590.png
 share/stellarium/nebulae/default/n660.png
@@ -816,6 +824,7 @@ share/stellarium/nebulae/default/rho-a01.png
 share/stellarium/nebulae/default/rho-a10.png
 share/stellarium/nebulae/default/rho-a11.png
 share/stellarium/nebulae/default/sh2-101-vasey.png
+share/stellarium/nebulae/default/sh2-106.png
 share/stellarium/nebulae/default/sh2-136.png
 share/stellarium/nebulae/default/sh2-155.png
 share/stellarium/nebulae/default/sh2-240.png
@@ -824,6 +833,7 @@ share/stellarium/nebulae/default/sh2-263.png
 share/stellarium/nebulae/default/sh2-264.png
 share/stellarium/nebulae/default/sh2-297.png
 share/stellarium/nebulae/default/sh2-308.png
+share/stellarium/nebulae/default/sh2-80.png
 share/stellarium/nebulae/default/smc-ha.png
 share/stellarium/nebulae/default/smc29-1.png
 share/stellarium/nebulae/default/smc29-2.png
@@ -941,6 +951,7 @@ share/stellarium/scripts/largest_known_stars.ssc
 share/stellarium/scripts/lunar_partial.ssc
 share/stellarium/scripts/lunar_total.ssc
 share/stellarium/scripts/martian_analemma.ssc
+share/stellarium/scripts/messier_marathon.ssc
 share/stellarium/scripts/messier_tour.ssc
 share/stellarium/scripts/morsels_1.ssc
 share/stellarium/scripts/morsels_2.ssc
@@ -952,6 +963,7 @@ share/stellarium/scripts/phobos_phun_3.ssc
 share/stellarium/scripts/phobos_phun_4.ssc
 share/stellarium/scripts/phobos_phun_5.ssc
 share/stellarium/scripts/planets_tour.ssc
+share/stellarium/scripts/saturnian_analemma.ssc
 share/stellarium/scripts/save_state.inc
 share/stellarium/scripts/screensaver.ssc
 share/stellarium/scripts/sky_cultures.ssc
@@ -964,9 +976,18 @@ share/stellarium/scripts/supernova.ssc
 share/stellarium/scripts/transit_of_venus.ssc
 share/stellarium/scripts/translation.inc
 share/stellarium/scripts/triple_sunrise_and_sunsets.ssc
+share/stellarium/scripts/uranian_analemma.ssc
 share/stellarium/scripts/western_constellations_tour.ssc
 share/stellarium/scripts/zodiac.ssc
 share/stellarium/skycultures/
+share/stellarium/skycultures/anutan/
+share/stellarium/skycultures/anutan/constellation_names.eng.fab
+share/stellarium/skycultures/anutan/constellationship.fab
+share/stellarium/skycultures/anutan/description.en.utf8
+share/stellarium/skycultures/anutan/dso_names.fab
+share/stellarium/skycultures/anutan/info.ini
+share/stellarium/skycultures/anutan/planet_names.fab
+share/stellarium/skycultures/anutan/star_names.fab
 share/stellarium/skycultures/arabic/
 share/stellarium/skycultures/arabic/Bearer-of-the-Demons-Head.png
 share/stellarium/skycultures/arabic/Book_of_Fixed_Stars3.png
@@ -1882,6 +1903,27 @@ share/stellarium/skycultures/tupi/description.zh_HK.utf8
 share/stellarium/skycultures/tupi/description.zh_TW.utf8
 share/stellarium/skycultures/tupi/info.ini
 share/stellarium/skycultures/tupi/star_names.fab
+share/stellarium/skycultures/vanuatu_netwar/
+share/stellarium/skycultures/vanuatu_netwar/constellation_names.eng.fab
+share/stellarium/skycultures/vanuatu_netwar/constellation_names.fra.fab
+share/stellarium/skycultures/vanuatu_netwar/constellationsart.fab
+share/stellarium/skycultures/vanuatu_netwar/constellationship.fab
+share/stellarium/skycultures/vanuatu_netwar/description.cs.utf8
+share/stellarium/skycultures/vanuatu_netwar/description.en.utf8
+share/stellarium/skycultures/vanuatu_netwar/description.fr.utf8
+share/stellarium/skycultures/vanuatu_netwar/dso_names.fab
+share/stellarium/skycultures/vanuatu_netwar/info.ini
+share/stellarium/skycultures/vanuatu_netwar/kahau.png
+share/stellarium/skycultures/vanuatu_netwar/kasulia_apam.png
+share/stellarium/skycultures/vanuatu_netwar/kasulia_rerparep.png
+share/stellarium/skycultures/vanuatu_netwar/kilil.png
+share/stellarium/skycultures/vanuatu_netwar/kou.png
+share/stellarium/skycultures/vanuatu_netwar/nemrau.png
+share/stellarium/skycultures/vanuatu_netwar/nowanuman_l.png
+share/stellarium/skycultures/vanuatu_netwar/nowanuman_s.png
+share/stellarium/skycultures/vanuatu_netwar/planet_names.fab
+share/stellarium/skycultures/vanuatu_netwar/star_names.fab
+share/stellarium/skycultures/vanuatu_netwar/suatu_kywer.png
 share/stellarium/skycultures/western/
 share/stellarium/skycultures/western/andromeda.png
 share/stellarium/skycultures/western/antlia.png
@@ -2218,6 +2260,7 @@ share/stellarium/translations/stellarium-planetary-features/sr.qm
 share/stellarium/translations/stellarium-planetary-features/sv.qm
 share/stellarium/translations/stellarium-planetary-features/sw.qm
 share/stellarium/translations/stellarium-planetary-features/ta.qm
+share/stellarium/translations/stellarium-planetary-features/te.qm
 share/stellarium/translations/stellarium-planetary-features/tg.qm
 share/stellarium/translations/stellarium-planetary-features/th.qm
 share/stellarium/translations/stellarium-planetary-features/tl.qm
@@ -2308,6 +2351,7 @@ share/stellarium/translations/stellarium-remotecontrol/sr.qm
 share/stellarium/translations/stellarium-remotecontrol/sv.qm
 share/stellarium/translations/stellarium-remotecontrol/sw.qm
 share/stellarium/translations/stellarium-remotecontrol/ta.qm
+share/stellarium/translations/stellarium-remotecontrol/te.qm
 share/stellarium/translations/stellarium-remotecontrol/tg.qm
 share/stellarium/translations/stellarium-remotecontrol/th.qm
 share/stellarium/translations/stellarium-remotecontrol/tl.qm
@@ -2398,6 +2442,7 @@ share/stellarium/translations/stellarium-scripts/sr.qm
 share/stellarium/translations/stellarium-scripts/sv.qm
 share/stellarium/translations/stellarium-scripts/sw.qm
 share/stellarium/translations/stellarium-scripts/ta.qm
+share/stellarium/translations/stellarium-scripts/te.qm
 share/stellarium/translations/stellarium-scripts/tg.qm
 share/stellarium/translations/stellarium-scripts/th.qm
 share/stellarium/translations/stellarium-scripts/tl.qm
@@ -2504,6 +2549,7 @@ share/stellarium/translations/stellarium-skycultures/sr.qm
 share/stellarium/translations/stellarium-skycultures/sv.qm
 share/stellarium/translations/stellarium-skycultures/sw.qm
 share/stellarium/translations/stellarium-skycultures/ta.qm
+share/stellarium/translations/stellarium-skycultures/te.qm
 share/stellarium/translations/stellarium-skycultures/tg.qm
 share/stellarium/translations/stellarium-skycultures/th.qm
 share/stellarium/translations/stellarium-skycultures/tl.qm
@@ -2608,6 +2654,7 @@ share/stellarium/translations/stellarium/sr.qm
 share/stellarium/translations/stellarium/sv.qm
 share/stellarium/translations/stellarium/sw.qm
 share/stellarium/translations/stellarium/ta.qm
+share/stellarium/translations/stellarium/te.qm
 share/stellarium/translations/stellarium/tg.qm
 share/stellarium/translations/stellarium/th.qm
 share/stellarium/translations/stellarium/tl.qm
