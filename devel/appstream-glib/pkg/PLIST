@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/02/28 19:20:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/10/01 13:42:06 ajacoutot Exp $
 @bin bin/appstream-builder
 @bin bin/appstream-compose
 @bin bin/appstream-util
@@ -64,6 +64,7 @@ share/locale/da/LC_MESSAGES/appstream-glib.mo
 share/locale/de/LC_MESSAGES/appstream-glib.mo
 share/locale/en_GB/LC_MESSAGES/appstream-glib.mo
 share/locale/es/LC_MESSAGES/appstream-glib.mo
+share/locale/fa/LC_MESSAGES/appstream-glib.mo
 share/locale/fi/LC_MESSAGES/appstream-glib.mo
 share/locale/fr/LC_MESSAGES/appstream-glib.mo
 share/locale/fur/LC_MESSAGES/appstream-glib.mo
