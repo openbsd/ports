@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2019/09/22 17:19:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2019/10/01 04:39:31 semarie Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
@@ -65,6 +65,10 @@ CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox --enable-content-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 CONFIGURE_ARGS +=	--with-clang-path=${LOCALBASE}/bin/clang
+
+post-patch:
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/third_party/rust/cssparser/.cargo-checksum.json
 
 post-install:
 	# install prefs

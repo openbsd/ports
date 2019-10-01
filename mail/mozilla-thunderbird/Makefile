@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.296 2019/09/22 17:19:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.297 2019/10/01 04:39:31 semarie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -89,6 +89,10 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} #\
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/extensions/
 
+post-patch:
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/third_party/rust/cssparser/.cargo-checksum.json
+	
 post-install:
 .for xpi guid in ${GUIDS}
 	cp ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi ${EXTDIR}/${guid}.xpi

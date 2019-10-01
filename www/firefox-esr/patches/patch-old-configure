@@ -1,11 +1,11 @@
-$OpenBSD: patch-old-configure,v 1.1 2019/09/06 17:13:22 landry Exp $
+$OpenBSD: patch-old-configure,v 1.2 2019/10/01 04:39:32 semarie Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1579323
 
 Index: old-configure
 --- old-configure.orig
 +++ old-configure
-@@ -10113,7 +10113,7 @@ fi
+@@ -10191,7 +10191,7 @@ fi
  
  
  case "$OS_TARGET" in
