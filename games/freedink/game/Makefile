@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/06 18:29:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2019/10/01 17:58:40 naddy Exp $
 
 COMMENT =	free clone of Dink Smallwood game
 DISTNAME =	freedink-109.6
-REVISION =	2
+REVISION =	3
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_gfx-1.0 SDL2_image SDL2_mixer
 WANTLIB += SDL2_ttf c fontconfig freetype iconv intl m z

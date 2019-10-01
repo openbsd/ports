@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_platform_julius_c,v 1.5 2019/10/01 17:58:40 naddy Exp $
+
+replace SDL_HINT_ANDROID_SEPARATE_MOUSE_AND_TOUCH with
+SDL_HINT_MOUSE_TOUCH_EVENTS and SDL_HINT_TOUCH_MOUSE_EVENTS per sdl2
+2.0.10 update instructions.
+
+Index: src/platform/julius.c
+--- src/platform/julius.c.orig
++++ src/platform/julius.c
+@@ -369,7 +369,8 @@ static int init_sdl(void)
+         return 0;
+     }
+ #if SDL_VERSION_ATLEAST(2, 0, 4)
+-    SDL_SetHint(SDL_HINT_ANDROID_SEPARATE_MOUSE_AND_TOUCH, "1");
++    SDL_SetHint(SDL_HINT_MOUSE_TOUCH_EVENTS, "0");
++    SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
+ #endif
+     SDL_Log("SDL initialized");
+     return 1;
