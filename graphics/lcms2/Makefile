@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/10/01 18:44:42 kurt Exp $
 
 COMMENT =		color management library
 
 DISTNAME =		lcms2-2.9
+REVISION =		0
 CATEGORIES =		graphics
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lcms/}
 
