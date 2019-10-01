@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure,v 1.7 2016/08/03 06:38:47 benoit Exp $
---- configure.orig	Mon Jul 25 23:09:47 2016
-+++ configure	Tue Aug  2 12:36:59 2016
-@@ -827,7 +827,7 @@
+$OpenBSD: patch-configure,v 1.8 2019/10/01 11:38:15 sthen Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -827,7 +827,7 @@ datarootdir='${prefix}/share'
  datadir='${datarootdir}'
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
@@ -10,7 +12,7 @@ $OpenBSD: patch-configure,v 1.7 2016/08/03 06:38:47 benoit Exp $
  runstatedir='${localstatedir}/run'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
-@@ -7003,7 +7003,7 @@
+@@ -7060,7 +7060,7 @@ fi
  
  
  saved_CFLAGS="$CFLAGS"

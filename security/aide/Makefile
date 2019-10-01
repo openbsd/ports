@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/10/01 11:38:15 sthen Exp $
 
 COMMENT=		Advanced Intrusion Detection Environment
 
-V=			0.16.1
-REVISION=		0
+V=			0.16.2
 DISTNAME=		aide-${V}
 CATEGORIES=		security
 

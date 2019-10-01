@@ -1,6 +1,8 @@
-$OpenBSD: patch-doc_aide_conf_in,v 1.5 2010/05/04 14:42:28 ajacoutot Exp $
---- doc/aide.conf.in.orig	Wed Feb 17 21:19:18 2010
-+++ doc/aide.conf.in	Tue May  4 16:41:43 2010
+$OpenBSD: patch-doc_aide_conf_in,v 1.6 2019/10/01 11:38:15 sthen Exp $
+
+Index: doc/aide.conf.in
+--- doc/aide.conf.in.orig
++++ doc/aide.conf.in
 @@ -19,7 +19,7 @@
  # corresponding line.
  #
@@ -25,7 +27,7 @@ $OpenBSD: patch-doc_aide_conf_in,v 1.5 2010/05/04 14:42:28 ajacoutot Exp $
  
  # Whether to gzip the output to database
  # gzip_dbout=no
-@@ -115,22 +115,32 @@ All=R+a+sha1+rmd160+sha256+sha512+tiger@aideextragroup
+@@ -123,22 +123,32 @@ All=R+a+sha1+rmd160+sha256+sha512+tiger@aideextragroup
  # Attributes that can be used to verify that aide in intact
  # by people that have downloaded it from the web.
  # Let's be paranoid

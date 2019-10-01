@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_util_c,v 1.4 2016/08/03 06:38:47 benoit Exp $
---- src/util.c~	Mon Jul 25 22:56:55 2016
-+++ src/util.c	Tue Aug  2 14:43:18 2016
-@@ -522,7 +522,7 @@
+$OpenBSD: patch-src_util_c,v 1.5 2019/10/01 11:38:15 sthen Exp $
+
+Index: src/util.c
+--- src/util.c.orig
++++ src/util.c
+@@ -522,7 +522,7 @@ int syslog_facility_lookup(char *s)
  /* We need these dummy stubs to fool the linker into believing that
     we do not need them at link time */
  
@@ -10,7 +12,7 @@ $OpenBSD: patch-src_util_c,v 1.4 2016/08/03 06:38:47 benoit Exp $
  {
    return NULL;
  }
-@@ -541,6 +541,7 @@
+@@ -541,6 +541,7 @@ const char* dlerror(void)
  {
    return NULL;
  }

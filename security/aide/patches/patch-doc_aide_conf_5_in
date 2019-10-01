@@ -1,7 +1,9 @@
-$OpenBSD: patch-doc_aide_conf_5_in,v 1.1 2010/05/05 05:32:24 ajacoutot Exp $
---- doc/aide.conf.5.in.orig	Tue May  4 16:52:24 2010
-+++ doc/aide.conf.5.in	Tue May  4 16:52:47 2010
-@@ -30,11 +30,11 @@ valid urls. 
+$OpenBSD: patch-doc_aide_conf_5_in,v 1.2 2019/10/01 11:38:15 sthen Exp $
+
+Index: doc/aide.conf.5.in
+--- doc/aide.conf.5.in.orig
++++ doc/aide.conf.5.in
+@@ -30,11 +30,11 @@ valid urls.
  .IP "database"
  The url from which database is read. There can only be one of these
  lines. If there are multiple database lines then the first is used.
