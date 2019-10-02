@@ -1,0 +1,12 @@
+--- coregrind/pub_core_transtab.h.orig
++++ coregrind/pub_core_transtab.h
+@@ -45,6 +45,9 @@ typedef
+    struct {
+       Addr guest;
+       Addr host;
++#if defined(__OpenBSD__)
++      UInt len;
++#endif
+    }
+    FastCacheEntry;
+

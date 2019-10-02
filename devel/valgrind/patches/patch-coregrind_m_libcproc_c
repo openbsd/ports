@@ -1,0 +1,16 @@
+--- coregrind/m_libcproc.c.orig
++++ coregrind/m_libcproc.c
+@@ -1033,6 +1033,13 @@ void VG_(flush_dcache) ( void *ptr, SizeT nbytes )
+ #  endif
+ }
+ 
++#if defined(__OpenBSD__)
++void VG_(__set_tcb)(void *tcb)
++{
++   (void)VG_(do_syscall1)(__NR___set_tcb, tcb);
++}
++#endif
++
+ /*--------------------------------------------------------------------*/
+ /*--- end                                                          ---*/
+ /*--------------------------------------------------------------------*/

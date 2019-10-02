@@ -1,4 +1,4 @@
-$OpenBSD: patch-coregrind_m_main_c,v 1.2 2019/02/04 23:34:10 jca Exp $
+$OpenBSD: patch-coregrind_m_main_c,v 1.3 2019/10/02 17:19:29 rsadowski Exp $
 
 https://bugs.kde.org/show_bug.cgi?id=357833
 https://bitbucket.org/uebayasi/valgrind-openbsd/issues/40/mmap-failure-cannot-allocate-memory-on
@@ -6,16 +6,101 @@ https://bitbucket.org/uebayasi/valgrind-openbsd/issues/40/mmap-failure-cannot-al
 Index: coregrind/m_main.c
 --- coregrind/m_main.c.orig
 +++ coregrind/m_main.c
-@@ -1725,7 +1725,9 @@ Int valgrind_main ( Int argc, HChar **argv, HChar **en
+@@ -1524,7 +1524,38 @@
+ 
+ /* --- end of Forwards decls to do with shutdown --- */
+ 
++#if defined(__OpenBSD__)
++#include <tib.h>
+ 
++#define ELF_ROUND(x,malign)	(((x) + (malign)-1) & ~((malign)-1))
++
++extern void setup_static_tib(void);
++
++void
++setup_static_tib(void)
++{
++	struct tib *tib;
++	char *base;
++	SysRes sres;
++	SizeT size;
++
++	size = ELF_ROUND(0 + sizeof *tib, 4096);
++	sres = VG_(am_mmap_anon_float_valgrind)(size);
++        if (sr_isError(sres)) {
++           VG_(out_of_memory_NORETURN)("TIB", size);
++	   /*NOTREACHED*/
++        }
++        base = (char *)(AddrH)sr_Res(sres);
++
++	tib = (struct tib *)base;
++
++	TIB_INIT(tib, NULL, NULL);
++	tib->tib_tid = VG_(gettid)();
++
++	VG_(__set_tcb)(TIB_TO_TCB(tib));
++}
++#endif
++
+ /* By the time we get to valgrind_main, the_iicii should already have
+    been filled in with any important details as required by whatever
+    OS we have been built for.
+@@ -1612,6 +1643,7 @@
+    // Ensure we're on a plausible stack.
+    //   p: logging
+    //--------------------------------------------------------------
++#if !defined(__OpenBSD__)
+    VG_(debugLog)(1, "main", "Checking current stack is plausible\n");
+    { HChar* limLo  = (HChar*)(&VG_(interim_stack).bytes[0]);
+      HChar* limHi  = limLo + sizeof(VG_(interim_stack));
+@@ -1643,6 +1675,7 @@
+         VG_(exit)(1);
+      }
+    }
++#endif
+ 
+    //--------------------------------------------------------------
+    // Ensure we have a plausible pointer to the stack on which
+@@ -1725,7 +1758,9 @@
     // child processes will have a reasonable brk value.
     VG_(getrlimit)(VKI_RLIMIT_DATA, &VG_(client_rlimit_data));
     zero.rlim_max = VG_(client_rlimit_data).rlim_max;
-+#if 0
++#if !defined(__OpenBSD__)
     VG_(setrlimit)(VKI_RLIMIT_DATA, &zero);
 +#endif
  
     // Get the current process stack rlimit.
     VG_(getrlimit)(VKI_RLIMIT_STACK, &VG_(client_rlimit_stack));
+@@ -2433,6 +2468,10 @@
+    VG_(address_of_m_main_shutdown_actions_NORETURN)
+       = & shutdown_actions_NORETURN;
+ 
++#if defined(__OpenBSD__)
++   setup_static_tib();
++#endif
++
+    /* Run the first thread, eventually ending up at the continuation
+       address. */
+    VG_(main_thread_wrapper_NORETURN)(1);
+@@ -3159,6 +3198,8 @@
+     "__start:\n"
+     /* pass args (long argc, char **argv, ...) on stack */
+     "\tmovq  %rsp, %rdi\n"
++#if !defined(__OpenBSD__)
++    /* OpenBSD 6.4 and later can not use BBS for stack area */
+     /* set up the new stack in %rsi */
+     "\tmovq  $vgPlain_interim_stack, %rsi\n"
+     "\taddq  $"VG_STRINGIFY(VG_STACK_GUARD_SZB)", %rsi\n"
+@@ -3166,6 +3207,9 @@
+     "\tandq  $~15, %rsi\n"
+     /* install it, and collect the original one */
+     "\txchgq %rsi, %rsp\n"
++#else
++    "\tmov   %rsp, %rsi\n"
++#endif
+     /* call _start_in_C_amd64_freebsd, passing it the startup %rsp */
+     "\tcall  _start_in_C_amd64_openbsd\n"
+     "\thlt\n"
 @@ -3233,7 +3235,7 @@ __asm(" .section \".note.openbsd.ident\", \"a\"\n"
  #if !defined(VGO_openbsd)
  #include <elf.h>

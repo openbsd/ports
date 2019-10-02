@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/10/02 17:19:29 rsadowski Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 
 V =			3.10.1
 PV =			20160331
-REVISION =		12
+REVISION =		13
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 
@@ -38,4 +38,10 @@ AUTORECONF =		/bin/sh ./autogen.sh
 .if ${PROPERTIES:Mclang}
 # replace -lgcc
 MAKE_FLAGS =	TOOL_LDADD_COMMON=-lcompiler_rt
+# XXX The '-s' option was not specified when executing the install command.
+# Instead '--strip-all' is now executed at link time.
+# strip command rewrite offset and align in ELF file. Therefor, when valgrind
+# launch memcheck-amd64-openbsd, an Abort trap occurs in the execvp() system
+# call.
+INSTALL_STRIP =
 .endif

@@ -1,0 +1,57 @@
+--- coregrind/m_aspacemgr/aspacemgr-linux.c.orig
++++ coregrind/m_aspacemgr/aspacemgr-linux.c
+@@ -2543,6 +2543,54 @@ SysRes VG_(am_mmap_anon_float_valgrind)( SizeT length )
+    return sres;
+ }
+
++#if defined(__OpenBSD__)
++SysRes VG_(am_mmap_anon_float_valgrind_stack)( SizeT length )
++{
++   SysRes     sres;
++   NSegment   seg;
++   Addr       advised;
++   Bool       ok;
++   MapRequest req;
++
++   /* Not allowable. */
++   if (length == 0)
++      return VG_(mk_SysRes_Error)( VKI_EINVAL );
++
++   /* Ask for an advisory.  If it's negative, fail immediately. */
++   req.rkind = MAny;
++   req.start = 0;
++   req.len   = length;
++   advised = VG_(am_get_advisory)( &req, False/*forClient*/, &ok );
++   if (!ok)
++      return VG_(mk_SysRes_Error)( VKI_EINVAL );
++
++   /* We have been advised that the mapping is allowable at the
++      specified address.  So hand it off to the kernel, and propagate
++      any resulting failure immediately. */
++   sres = VG_(am_do_mmap_NO_NOTIFY)(
++             advised, length,
++             VKI_PROT_READ|VKI_PROT_WRITE|VKI_PROT_EXEC,
++             VKI_MAP_PRIVATE|VKI_MAP_ANONYMOUS|VKI_MAP_STACK,
++             VM_TAG_VALGRIND, 0
++          );
++   if (sr_isError(sres))
++      return sres;
++
++   /* Ok, the mapping succeeded.  Now notify the interval map. */
++   init_nsegment( &seg );
++   seg.kind  = SkAnonV;
++   seg.start = sr_Res(sres);
++   seg.end   = seg.start + VG_PGROUNDUP(length) - 1;
++   seg.hasR  = True;
++   seg.hasW  = True;
++   seg.hasX  = True;
++   add_segment( &seg );
++
++   AM_SANITY_CHECK;
++   return sres;
++}
++#endif
++
+ /* Really just a wrapper around VG_(am_mmap_anon_float_valgrind). */
+
+ void* VG_(am_shadow_alloc)(SizeT size)

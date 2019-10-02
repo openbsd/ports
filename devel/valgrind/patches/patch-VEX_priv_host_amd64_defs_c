@@ -1,0 +1,148 @@
+--- VEX/priv/host_amd64_defs.c.orig
++++ VEX/priv/host_amd64_defs.c
+@@ -1009,6 +1009,23 @@ AMD64Instr* AMD64Instr_ProfInc ( void ) {
+    i->tag        = Ain_ProfInc;
+    return i;
+ }
++#if defined(__OpenBSD__)
++AMD64Instr* AMD64Instr_MovFromSeg64 ( HReg off, HReg dst ) {
++   AMD64Instr* i      = LibVEX_Alloc(sizeof(AMD64Instr));
++   i->tag             = Ain_MovFromSeg64;
++   i->Ain.MovSeg.off  = off;
++   i->Ain.MovSeg.dst  = dst;
++   return i;
++}
++
++AMD64Instr* AMD64Instr_MovToSeg64 ( HReg src, HReg off ) {
++   AMD64Instr* i      = LibVEX_Alloc(sizeof(AMD64Instr));
++   i->tag             = Ain_MovToSeg64;
++   i->Ain.MovSeg.src  = src;
++   i->Ain.MovSeg.off  = off;
++   return i;
++}
++#endif
+ 
+ void ppAMD64Instr ( AMD64Instr* i, Bool mode64 ) 
+ {
+@@ -1320,6 +1337,21 @@ void ppAMD64Instr ( AMD64Instr* i, Bool mode64 )
+       case Ain_ProfInc:
+          vex_printf("(profInc) movabsq $NotKnownYet, %%r11; incq (%%r11)");
+          return;
++#if defined(__OpenBSD__)
++      case Ain_MovFromSeg64:
++         vex_printf("addr32 mov fs:(");
++         ppHRegAMD64(i->Ain.MovSeg.off);
++         vex_printf("),");
++         ppHRegAMD64(i->Ain.MovSeg.dst);
++         return;
++      case Ain_MovToSeg64:
++         vex_printf("mov ");
++         ppHRegAMD64(i->Ain.MovSeg.src);
++         vex_printf(",fs:(");
++         ppHRegAMD64(i->Ain.MovSeg.off);
++         vex_printf("),");
++         return;
++#endif
+       default:
+          vpanic("ppAMD64Instr");
+    }
+@@ -1625,6 +1657,16 @@ void getRegUsage_AMD64Instr ( HRegUsage* u, AMD64Instr* i, Bool mode64 )
+       case Ain_ProfInc:
+          addHRegUse(u, HRmWrite, hregAMD64_R11());
+          return;
++#if defined(__OpenBSD__)
++      case Ain_MovFromSeg64:
++         addHRegUse(u, HRmRead,  i->Ain.MovSeg.off);
++         addHRegUse(u, HRmWrite, i->Ain.MovSeg.dst);
++         return;
++      case Ain_MovToSeg64:
++         addHRegUse(u, HRmRead,  i->Ain.MovSeg.src);
++         addHRegUse(u, HRmWrite, i->Ain.MovSeg.off);
++         return;
++#endif
+       default:
+          ppAMD64Instr(i, mode64);
+          vpanic("getRegUsage_AMD64Instr");
+@@ -1808,6 +1850,16 @@ void mapRegs_AMD64Instr ( HRegRemap* m, AMD64Instr* i, Bool mode64 )
+       case Ain_ProfInc:
+          /* hardwires r11 -- nothing to modify. */
+          return;
++#if defined(__OpenBSD__)
++      case Ain_MovFromSeg64:
++         mapReg(m, &i->Ain.MovSeg.off);
++         mapReg(m, &i->Ain.MovSeg.dst);
++         return;
++      case Ain_MovToSeg64:
++         mapReg(m, &i->Ain.MovSeg.src);
++         mapReg(m, &i->Ain.MovSeg.off);
++         return;
++#endif
+       default:
+          ppAMD64Instr(i, mode64);
+          vpanic("mapRegs_AMD64Instr");
+@@ -3522,6 +3574,65 @@ Int emit_AMD64Instr ( /*MB_MOD*/Bool* is_profInc,
+       goto done;
+    }
+ 
++#if defined(__OpenBSD__)
++   case Ain_MovFromSeg64: {
++      /* Following rm and reg are means r/m and reg of prefix ModR/M.
++         bit 7 6 5 4 3 2 1 0
++            +---+-----+-----+
++             mod| reg | r/m
++      */
++      UChar rm = 0;
++      UChar d_reg = 0;
++      *p++ = 0x64; /* Prefix of FS register */
++      *p++ = rexAMode_R( i->Ain.MovSeg.dst, i->Ain.MovSeg.off );
++      *p++ = 0x8b; /* Opcode of mov */
++      rm = hregNumber( i->Ain.MovSeg.off );
++      d_reg = hregNumber( i->Ain.MovSeg.dst );
++      switch (rm) {
++      case 4:  /* rsp */
++      case 12: /* r12 */
++         *p++ = 0x4 | ((d_reg & 0x7) << 3);
++         *p++ = 0x24;
++         goto done;
++      case 5:  /* rbp */
++      case 13: /* r13 */
++         *p++ = 0x45 | ((d_reg & 0x7) << 3);
++         *p++ = 0x00;
++         goto done;
++      }
++      rm = iregBits210( i->Ain.MovSeg.off );
++      d_reg = iregBits210( i->Ain.MovSeg.dst) << 3;
++      *p++ = rm | d_reg;
++      goto done;
++   }
++
++   case Ain_MovToSeg64: {
++      UChar rm = 0;
++      UChar s_reg = 0;
++      UChar o_reg = 0;
++      *p++ = 0x64; /* Prefix of FS register */
++      *p++ = rexAMode_R( i->Ain.MovSeg.src, i->Ain.MovSeg.off );
++      *p++ = 0x89; /* Opcode of mov */
++      rm = hregNumber( i->Ain.MovSeg.off );
++      o_reg = rm & 0x7;
++      s_reg = (hregNumber( i->Ain.MovSeg.src ) & 0x7) << 3;
++      switch (rm) {
++      case 4: /* rsp */
++      case 12: /* r12 */
++          *p++ = s_reg | o_reg;
++          *p++ = 0x24;
++          goto done;
++      case 5: /* rbp */
++      case 13: /* r13 */
++          *p++ = 0x40 | s_reg | o_reg;
++          *p++ = 0x00;
++          goto done;
++      }
++      *p++ = s_reg | o_reg;
++      goto done;
++   }
++#endif
++
+    default: 
+       goto bad;
+    }

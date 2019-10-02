@@ -1,0 +1,14 @@
+--- coregrind/m_aspacemgr/aspacemgr-common.c.orig
++++ coregrind/m_aspacemgr/aspacemgr-common.c
+@@ -458,7 +458,11 @@ VgStack* VG_(am_alloc_VgStack)( /*OUT*/Addr* initial_sp )
+    szB = VG_STACK_GUARD_SZB
+          + VG_STACK_ACTIVE_SZB + VG_STACK_GUARD_SZB;
+
++#if defined(__OpenBSD__)
++   sres = VG_(am_mmap_anon_float_valgrind_stack)( szB );
++#else
+    sres = VG_(am_mmap_anon_float_valgrind)( szB );
++#endif
+    if (sr_isError(sres))
+       return NULL;
+

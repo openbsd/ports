@@ -1,0 +1,15 @@
+--- memcheck/mc_translate.c.orig
++++ memcheck/mc_translate.c
+@@ -4222,6 +4222,12 @@ IRAtom* expr2vbits_Binop ( MCEnv* mce,
+                           binop(Iop_V128HLtoV256, qV, shV));
+       }
+ 
++#if defined(__OpenBSD__)
++      case Iop_MovFromSeg64:
++      case Iop_MovToSeg64:
++         return assignNew('V', mce, Ity_I64, binop(op, atom1, atom2));
++#endif
++
+       default:
+          ppIROp(op);
+          VG_(tool_panic)("memcheck:expr2vbits_Binop");

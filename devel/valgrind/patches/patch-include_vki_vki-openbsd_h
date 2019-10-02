@@ -1,0 +1,13 @@
+--- include/vki/vki-openbsd.h.orig
++++ include/vki/vki-openbsd.h
+@@ -1544,9 +1544,9 @@
+ #define VKI_MAP_PRIVATE	0x02		/* Changes are private */
+ #define VKI_MAP_FIXED	0x10		/* Interpret addr exactly */
+ #define VKI_MAP_NORESERVE	0x0040		/* don't check for reservations */
+-#define	VKI_MAP_STACK	0x400
+ #define VKI_MAP_ANON	0x1000	/* don't use a file */
+ #define	VKI_MAP_ANONYMOUS	VKI_MAP_ANON
++#define	VKI_MAP_STACK	0x4000
+
+ //----------------------------------------------------------------------
+ // From sys/stat.h

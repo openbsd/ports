@@ -1,0 +1,16 @@
+--- VEX/priv/guest_amd64_helpers.c.orig
++++ VEX/priv/guest_amd64_helpers.c
+@@ -3744,6 +3744,13 @@ void LibVEX_GuestAMD64_initialise ( /*OUT*/VexGuestAMD64State* vex_state )
+    /* HACK: represent the offset associated with %fs==0. This
+       assumes that %fs is only ever zero. */
+    vex_state->guest_FS_ZERO = 0;
++#if defined(__OpenBSD__)
++{
++   int fs;
++   __asm__("mov %%fs,%0" : "=r" (fs));
++   vex_state->guest_FS_ZERO = fs;
++}
++#endif
+ 
+    vex_state->guest_RIP = 0;
+ 

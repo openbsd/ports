@@ -1,0 +1,13 @@
+--- coregrind/pub_core_aspacemgr.h.orig
++++ coregrind/pub_core_aspacemgr.h
+@@ -242,6 +242,9 @@ extern SysRes VG_(am_mmap_anon_float_client) ( SizeT length,
+ Int prot );
+    segment array accordingly.  This is fundamentally how V allocates
+    itself more address space when needed. */
+ extern SysRes VG_(am_mmap_anon_float_valgrind)( SizeT cszB );
++#if defined(__OpenBSD__)
++extern SysRes VG_(am_mmap_anon_float_valgrind_stack)( SizeT cszB );
++#endif
+
+ /* Map privately a file at an unconstrained address for V, and update the
+    segment array accordingly.  This is used by V for transiently

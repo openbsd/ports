@@ -1,0 +1,205 @@
+--- VEX/priv/guest_amd64_toIR.c.orig
++++ VEX/priv/guest_amd64_toIR.c
+@@ -312,7 +312,11 @@ static IROp mkSizedOp ( IRType ty, IROp op8 )
+            || op8 == Iop_Shl8 || op8 == Iop_Shr8 || op8 == Iop_Sar8
+            || op8 == Iop_CmpEQ8 || op8 == Iop_CmpNE8
+            || op8 == Iop_CasCmpNE8
++#if !defined(__OpenBSD__)
+            || op8 == Iop_Not8 );
++#else
++           || op8 == Iop_Not8 || op8 == Iop_MovFromSeg8);
++#endif
+    switch (ty) {
+       case Ity_I8:  return 0 +op8;
+       case Ity_I16: return 1 +op8;
+@@ -709,6 +713,12 @@ static Bool haveF3 ( Prefix pfx ) {
+    return toBool((pfx & PFX_F3) > 0);
+ }
+ 
++#if defined(__OpenBSD__)
++static Bool haveFS( Prefix pfx ) {
++   return toBool((pfx & PFX_FS) > 0);
++}
++#endif
++
+ static Bool have66 ( Prefix pfx ) {
+    return toBool((pfx & PFX_66) > 0);
+ }
+@@ -1213,7 +1223,6 @@ static void putIRegRexB ( Int sz, Prefix pfx, UInt lo3bits, IRExpr* e )
+    ));
+ }
+ 
+-
+ /* Functions for getting register numbers from modrm bytes and REX
+    when we don't have to consider the complexities of integer subreg
+    accesses.
+@@ -3137,6 +3146,136 @@ ULong dis_op2_G_E ( VexAbiInfo* vbi,
+ }
+ 
+ 
++#if defined(__OpenBSD__)
++/* Handle binary integer instructions of the form
++      op S, G, E  meaning
++      op segment reg, reg, reg
++   Is passed the a ptr to the modRM byte, the actual operation, and the
++   data size.  Returns the address advanced completely over this
++   instruction.
++
++   S(segment) is reg.
++   G(src) is reg.
++
++   OP  %S:%G, tmp
++   PUT tmp,   %E
++*/
++static
++Int dis_op3_S_G_E ( VexAbiInfo* vbi,
++                    Prefix      pfx,
++                    IROp        op,
++                    Int         size,
++                    Long        delta0,
++                    /*OUT*/HChar* buf)
++{
++   IRType ty    = szToITy(size);
++   IRTemp dst1  = newTemp(ty);
++   IRTemp off   = newTemp(ty);
++   IRTemp dst0  = newTemp(ty);
++   Long   delta = delta0;
++   UChar  modrm = getUChar(delta0++);
++   UChar  rm    = (modrm & 7);
++
++   assign(dst0, getIRegG(size, pfx, modrm));
++   assign(off, getIRegE(size, pfx, modrm | 0xc0));
++   assign(dst1, binop(op, mkexpr(dst0), mkexpr(off)));
++   putIRegG(size, pfx, modrm, mkexpr(dst1));
++
++   if (rm == 0x4) {
++      UChar tmp = getUChar(delta0++);
++      vassert(tmp == 0x24);
++   } else if (rm == 0x05) {
++      UChar tmp = getUChar(delta0++);
++      vassert(tmp == 0x00);
++   }
++
++   DIS(buf, "%s(%s)", segRegTxt(pfx),
++                      nameIRegRexB(haveASO(pfx) ? 4 : 8, pfx, rm));
++
++   return delta0 - delta;
++}
++
++static void
++dis_op3_assignDst(IROp op, Int size, IRTemp src, IRTemp dst, IRTemp off)
++{
++   switch (size) {
++   case 4: {
++      IRTemp src1 = newTemp(szToITy(8));
++      assign(src1, unop(Iop_32Uto64, mkexpr(src)));
++      assign(dst, binop(op, mkexpr(src1), mkexpr(off)));
++      break;
++   }
++   case 8:
++      assign(dst, binop(op, mkexpr(src), mkexpr(off)));
++      break;
++   default:
++      vpanic("dis_op3_assignSrc(amd64)");
++   }
++}
++
++/* XXX Insert unnecessary putIReG(). Because, in order to not be deleted
++   by optimization after here. */
++static void
++dis_op3_putIRegG(Int size, Prefix pfx, UChar modrm, IRTemp dst)
++{
++   switch (size) {
++   case 4:
++      putIRegG(size, pfx, modrm, unop(Iop_64to32, mkexpr(dst)));
++      break;
++   case 8:
++      putIRegG(size, pfx, modrm, mkexpr(dst));
++      break;
++   default:
++      vpanic("dis_op3_putIRegG(amd64)");
++   }
++}
++
++static
++Int dis_op3_G_S_E ( VexAbiInfo* vbi,
++                    Prefix      pfx,
++                    IROp        op,
++                    Int         size,
++                    Long        delta0,
++                    /*OUT*/HChar* buf)
++{
++   IRType ty    = szToITy(size);
++   IRTemp src   = newTemp(ty);
++   IRTemp dst   = newTemp(szToITy(8));
++   IRTemp off   = newTemp(szToITy(8));
++   Long   delta = delta0;
++   UChar  modrm = getUChar(delta0++);
++   UChar  rm    = (modrm & 7);
++
++   if (rm == 0x4 || rm == 0x5) {
++      UChar sib     = getUChar(delta0++);
++      UChar scale   = toUChar((sib >> 6) & 3);
++      UChar index_r = toUChar((sib >> 3) & 7);
++      UChar base_r  = toUChar(sib & 7);
++      if (scale == 0x00 && index_r == R_RSP && base_r == R_RBP) {
++         Long d = getSDisp32(delta0);
++         delta0 += 4;
++         assign(src, getIRegG(size,pfx,modrm));
++         assign(off, mkU64(d));
++         dis_op3_assignDst(op, size, src, dst, off);
++         dis_op3_putIRegG(size, pfx, modrm, dst);
++
++         DIS(buf, "%s%lld", segRegTxt(pfx), d);
++         return delta0 - delta;
++      }
++   }
++
++   vassert(size == 8); /* XXX 64bit only */
++   assign(src, getIRegG(size,pfx,modrm));
++   assign(off, getIRegE(size, pfx, modrm | 0xc0));
++   assign(dst, binop(op, mkexpr(src), mkexpr(off)));
++   dis_op3_putIRegG(size, pfx, modrm, dst);
++
++   DIS(buf, "%s(%s)", segRegTxt(pfx),
++                      nameIRegRexB(haveASO(pfx) ? 4 : 8, pfx, rm));
++   return delta0 - delta;
++}
++#endif
++
+ /* Handle move instructions of the form
+       mov E, G  meaning
+       mov reg-or-mem, reg
+@@ -3173,6 +3312,15 @@ ULong dis_mov_E_G ( VexAbiInfo* vbi,
+ 
+    /* E refers to memory */    
+    {
++#if defined(__OpenBSD__)
++      if (haveFS(pfx)) {
++         len = dis_op3_S_G_E(vbi, pfx, Iop_MovFromSeg64, size, delta0, dis_buf);
++         DIP("mov%c %s,%s\n", nameISize(size),
++                              dis_buf,
++                              nameIRegG(size,pfx,rm));
++         return delta0+len;
++      }
++#endif
+       IRTemp addr = disAMode ( &len, vbi, pfx, delta0, dis_buf, 0 );
+       putIRegG(size, pfx, rm, loadLE(szToITy(size), mkexpr(addr)));
+       DIP("mov%c %s,%s\n", nameISize(size), 
+@@ -3213,6 +3361,16 @@ ULong dis_mov_G_E ( VexAbiInfo*  vbi,
+
+    *ok = True;
+
++#if defined(__OpenBSD__)
++   if (haveFS(pfx)) {
++      len = dis_op3_G_S_E(vbi, pfx, Iop_MovToSeg64, size, delta0, dis_buf);
++      DIP("mov%c %s,%s\n", nameISize(size),
++                           nameIRegG(size,pfx,rm),
++                           dis_buf);
++      return delta0+len;
++   }
++#endif
++
+    if (epartIsReg(rm)) {
+       if (haveF2orF3(pfx)) { *ok = False; return delta0; }
+       putIRegE(size, pfx, rm, getIRegG(size, pfx, rm));

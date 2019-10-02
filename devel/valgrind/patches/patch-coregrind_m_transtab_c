@@ -1,0 +1,60 @@
+--- coregrind/m_transtab.c.orig	Wed Nov 26 04:41:21 2014
++++ coregrind/m_transtab.c	Mon Dec 10 17:05:02 2018
+@@ -1322,11 +1321,18 @@
+    return k32 % N_TTES_PER_SECTOR;
+ }
+
++#if defined(__OpenBSD__)
++static void setFastCacheEntry ( Addr64 key, ULong* tcptr, UInt len )
++#else
+ static void setFastCacheEntry ( Addr64 key, ULong* tcptr )
++#endif
+ {
+    UInt cno = (UInt)VG_TT_FAST_HASH(key);
+    VG_(tt_fast)[cno].guest = (Addr)key;
+    VG_(tt_fast)[cno].host  = (Addr)tcptr;
++#if defined(__OpenBSD__)
++   VG_(tt_fast)[cno].len   = (Addr)len;
++#endif
+    n_fast_updates++;
+    /* This shouldn't fail.  It should be assured by m_translate
+       which should reject any attempt to make translation of code
+@@ -1670,7 +1676,11 @@
+    }
+
+    /* Update the fast-cache. */
++#if defined(__OpenBSD__)
++   setFastCacheEntry( entry, tcptr, code_len );
++#else
+    setFastCacheEntry( entry, tcptr );
++#endif
+
+    /* Note the eclass numbers for this translation. */
+    upd_eclasses_after_add( &sectors[y], i );
+@@ -1712,8 +1722,13 @@
+              && sectors[sno].tt[k].entry == guest_addr) {
+             /* found it */
+             if (upd_cache)
++#if defined(__OpenBSD__)
++               setFastCacheEntry(
++                  guest_addr, sectors[sno].tt[k].tcptr, 0 );
++#else
+                setFastCacheEntry( 
+                   guest_addr, sectors[sno].tt[k].tcptr );
++#endif
+             if (res_hcode)
+                *res_hcode = (AddrH)sectors[sno].tt[k].tcptr;
+             if (res_sNo)
+@@ -2204,7 +2219,12 @@
+    vg_assert(sizeof(Addr64) == 8);
+    /* check fast cache entries really are 2 words long */
+    vg_assert(sizeof(Addr) == sizeof(void*));
++#if defined(__OpenBSD__)
++   vg_assert(sizeof(FastCacheEntry) ==
++      (2 * sizeof(Addr) + (2 * sizeof (UInt))));
++#else
+    vg_assert(sizeof(FastCacheEntry) == 2 * sizeof(Addr));
++#endif
+    /* check fast cache entries are packed back-to-back with no spaces */
+    vg_assert(sizeof( VG_(tt_fast) ) == VG_TT_FAST_SIZE * sizeof(FastCacheEntry));
+    /* check fast cache is aligned as we requested.  Not fatal if it

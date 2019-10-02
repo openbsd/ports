@@ -1,0 +1,38 @@
+--- VEX/priv/host_amd64_defs.h.orig
++++ VEX/priv/host_amd64_defs.h
+@@ -403,6 +403,10 @@ typedef
+       //uu Ain_AvxReRg,     /* AVX binary general reg-reg, Re, Rg */
+       Ain_EvCheck,     /* Event check */
+       Ain_ProfInc      /* 64-bit profile counter increment */
++#if defined(__OpenBSD__)
++      ,Ain_MovFromSeg64    /* 64-bit move sreg:(reg),reg */
++      ,Ain_MovToSeg64    /* 64-bit move sreg:(reg),reg */
++#endif
+    }
+    AMD64InstrTag;
+ 
+@@ -686,6 +690,13 @@ typedef
+                installed later, post-translation, by patching it in,
+                as it is not known at translation time. */
+          } ProfInc;
++#if defined(__OpenBSD__)
++         struct {
++            HReg       src;
++            HReg       off;
++            HReg       dst;
++         } MovSeg;
++#endif
+ 
+       } Ain;
+    }
+@@ -744,6 +755,10 @@ extern AMD64Instr* AMD64Instr_SseShuf    ( Int order, HReg src, HReg dst );
+ extern AMD64Instr* AMD64Instr_EvCheck    ( AMD64AMode* amCounter,
+                                            AMD64AMode* amFailAddr );
+ extern AMD64Instr* AMD64Instr_ProfInc    ( void );
++#if defined(__OpenBSD__)
++extern AMD64Instr* AMD64Instr_MovFromSeg64 ( HReg, HReg );
++extern AMD64Instr* AMD64Instr_MovToSeg64 ( HReg, HReg );
++#endif
+ 
+ 
+ extern void ppAMD64Instr ( AMD64Instr*, Bool );

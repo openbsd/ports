@@ -1,0 +1,14 @@
+--- VEX/pub/libvex_ir.h.orig
++++ VEX/pub/libvex_ir.h
+@@ -1815,6 +1815,11 @@ typedef
+       Iop_RSqrtEst32Fx8,
+       Iop_RecipEst32Fx8,
+ 
++#if defined(__OpenBSD__)
++      Iop_MovFromSeg8, Iop_MovFromSeg16, Iop_MovFromSeg32, Iop_MovFromSeg64,
++      Iop_MovToSeg8, Iop_MovToSeg16, Iop_MovToSeg32, Iop_MovToSeg64,
++#endif
++
+       Iop_Max32Fx8, Iop_Min32Fx8,
+       Iop_Max64Fx4, Iop_Min64Fx4,
+       Iop_LAST      /* must be the last enumerator */
