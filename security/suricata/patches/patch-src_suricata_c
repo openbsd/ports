@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_suricata_c,v 1.4 2019/05/03 06:22:34 gonzalo Exp $
+$OpenBSD: patch-src_suricata_c,v 1.5 2019/10/02 17:42:24 jasper Exp $
 
 https://github.com/OISF/suricata/commit/0ea3fa92a8955b065f052fb378aab253622f1a4e
 Use setresuid/gid() directly to change user and group.  Otherwise
@@ -8,7 +8,7 @@ https://github.com/OISF/suricata/commit/00917a0415629abbf675fd14d8752a0a27ab1ff5
 Index: src/suricata.c
 --- src/suricata.c.orig
 +++ src/suricata.c
-@@ -3039,6 +3039,8 @@ int main(int argc, char **argv)
+@@ -3041,6 +3041,8 @@ int main(int argc, char **argv)
  #endif
  #endif
  

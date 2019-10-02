@@ -1,10 +1,12 @@
-$OpenBSD: patch-rust_vendor_libc_src_unix_bsd_netbsdlike_openbsdlike_openbsd_mod_rs,v 1.1 2019/09/02 07:03:39 semarie Exp $
+$OpenBSD: patch-rust_vendor_libc_src_unix_bsd_netbsdlike_openbsd_mod_rs,v 1.1 2019/10/02 17:42:24 jasper Exp $
+
 add minimal sparc64 support
 could be removed with libc>=0.2.63
-Index: vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs
---- rust/vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs.orig
-+++ rust/vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs
-@@ -273,6 +273,11 @@ cfg_if! {
+
+Index: rust/vendor/libc/src/unix/bsd/netbsdlike/openbsd/mod.rs
+--- rust/vendor/libc/src/unix/bsd/netbsdlike/openbsd/mod.rs.orig
++++ rust/vendor/libc/src/unix/bsd/netbsdlike/openbsd/mod.rs
+@@ -1437,6 +1437,11 @@ cfg_if! {
      } else if #[cfg(target_arch = "aarch64")] {
          mod aarch64;
          pub use self::aarch64::*;
