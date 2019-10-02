@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/01/06 17:18:08 solene Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/10/02 08:16:33 solene Exp $
 bin/mp
 share/mailpile/
 share/mailpile/AGPLv3.txt
 @comment share/mailpile/CODE_OF_CONDUCT.md
 share/mailpile/CONTRIBUTING.md
 share/mailpile/COPYING.md
+@comment share/mailpile/Vagrantfile
 @comment share/mailpile/DEV_FAQ.md
 @comment share/mailpile/Dockerfile
 @comment share/mailpile/Dockerfile.dev
@@ -12,7 +13,6 @@ share/mailpile/COPYING.md
 @comment share/mailpile/MANIFEST.in
 @comment share/mailpile/Makefile
 @comment share/mailpile/README.md
-@comment share/mailpile/Vagrantfile
 @comment share/mailpile/babel.cfg
 share/mailpile/bower.json
 share/mailpile/default-theme
@@ -130,7 +130,6 @@ share/mailpile/doc/
 @comment share/mailpile/docker-compose.dev.yml
 @comment share/mailpile/docker-compose.yml
 share/mailpile/external-plugins
-share/mailpile/indie.json
 share/mailpile/install_hooks.py
 share/mailpile/install_hooks.pyc
 share/mailpile/lib/
@@ -253,6 +252,8 @@ share/mailpile/mailpile/mailutils/html.py
 share/mailpile/mailpile/mailutils/html.pyc
 share/mailpile/mailpile/mailutils/safe.py
 share/mailpile/mailpile/mailutils/safe.pyc
+share/mailpile/mailpile/mailutils/vcal.py
+share/mailpile/mailpile/mailutils/vcal.pyc
 share/mailpile/mailpile/packing.py
 share/mailpile/mailpile/packing.pyc
 share/mailpile/mailpile/platforms.py
@@ -295,12 +296,8 @@ share/mailpile/mailpile/plugins/html_magic.pyc
 share/mailpile/mailpile/plugins/keylookup/
 share/mailpile/mailpile/plugins/keylookup/__init__.py
 share/mailpile/mailpile/plugins/keylookup/__init__.pyc
-share/mailpile/mailpile/plugins/keylookup/dnspka.py
-share/mailpile/mailpile/plugins/keylookup/dnspka.pyc
 share/mailpile/mailpile/plugins/keylookup/email_keylookup.py
 share/mailpile/mailpile/plugins/keylookup/email_keylookup.pyc
-share/mailpile/mailpile/plugins/keylookup/nicknym.py
-share/mailpile/mailpile/plugins/keylookup/nicknym.pyc
 share/mailpile/mailpile/plugins/keylookup/wkd.py
 share/mailpile/mailpile/plugins/keylookup/wkd.pyc
 share/mailpile/mailpile/plugins/migrate.py
@@ -347,6 +344,22 @@ share/mailpile/mailpile/security.py
 share/mailpile/mailpile/security.pyc
 share/mailpile/mailpile/smtp_client.py
 share/mailpile/mailpile/smtp_client.pyc
+share/mailpile/mailpile/spambayes/
+share/mailpile/mailpile/spambayes/LICENSE.txt
+share/mailpile/mailpile/spambayes/Options.py
+share/mailpile/mailpile/spambayes/Options.pyc
+share/mailpile/mailpile/spambayes/OptionsClass.py
+share/mailpile/mailpile/spambayes/OptionsClass.pyc
+share/mailpile/mailpile/spambayes/Tester.py
+share/mailpile/mailpile/spambayes/Tester.pyc
+share/mailpile/mailpile/spambayes/__init__.py
+share/mailpile/mailpile/spambayes/__init__.pyc
+share/mailpile/mailpile/spambayes/chi2.py
+share/mailpile/mailpile/spambayes/chi2.pyc
+share/mailpile/mailpile/spambayes/classifier.py
+share/mailpile/mailpile/spambayes/classifier.pyc
+share/mailpile/mailpile/spambayes/safepickle.py
+share/mailpile/mailpile/spambayes/safepickle.pyc
 share/mailpile/mailpile/ui.py
 share/mailpile/mailpile/ui.pyc
 share/mailpile/mailpile/urlmap.py
@@ -388,6 +401,7 @@ share/mailpile/scripts/compile-messages.sh
 @comment share/mailpile/scripts/docker-dev/up
 share/mailpile/scripts/email-parsing-test.py
 share/mailpile/scripts/email-parsing-test.pyc
+share/mailpile/scripts/gitwhere.sh
 share/mailpile/scripts/gpg
 share/mailpile/scripts/less-compiler.in
 share/mailpile/scripts/mailpile
@@ -473,7 +487,6 @@ share/mailpile/shared-data/contrib/hints/hints/gravatar.html
 share/mailpile/shared-data/contrib/hints/hints/keyboard-shortcuts.html
 share/mailpile/shared-data/contrib/hints/hints/organize-sidebar.html
 share/mailpile/shared-data/contrib/hints/hints/spam.html
-share/mailpile/shared-data/contrib/hints/hints/spambayes.html
 share/mailpile/shared-data/contrib/hints/manifest.json
 share/mailpile/shared-data/contrib/i18nhelper/
 share/mailpile/shared-data/contrib/i18nhelper/i18n.png
@@ -489,28 +502,10 @@ share/mailpile/shared-data/contrib/maildeck/maildeck.py
 share/mailpile/shared-data/contrib/maildeck/maildeck.pyc
 share/mailpile/shared-data/contrib/maildeck/manifest.json
 share/mailpile/shared-data/contrib/maildeck/viking.png
-share/mailpile/shared-data/contrib/media-message/
-share/mailpile/shared-data/contrib/media-message/README.md
-share/mailpile/shared-data/contrib/media-message/compose.html
-share/mailpile/shared-data/contrib/media-message/config.json
-share/mailpile/shared-data/contrib/media-message/search.html
 share/mailpile/shared-data/contrib/print/
 share/mailpile/shared-data/contrib/remoteaccess/
 share/mailpile/shared-data/contrib/remoteaccess/manifest.json
 share/mailpile/shared-data/contrib/remoteaccess/settings-remote.html
-share/mailpile/shared-data/contrib/sms/
-share/mailpile/shared-data/contrib/sms/README.md
-share/mailpile/shared-data/contrib/sms/compose.html
-share/mailpile/shared-data/contrib/sms/config.json
-share/mailpile/shared-data/contrib/sms/twilio_sms.py
-share/mailpile/shared-data/contrib/sms/twilio_sms.pyc
-share/mailpile/shared-data/contrib/social-feed/
-share/mailpile/shared-data/contrib/social-feed/manifest.json
-share/mailpile/shared-data/contrib/social-feed/social-feed.css
-share/mailpile/shared-data/contrib/social-feed/social-feed.html
-share/mailpile/shared-data/contrib/social-feed/social-feed.js
-share/mailpile/shared-data/contrib/social-feed/social-feed.png
-share/mailpile/shared-data/contrib/social-feed/viking.png
 share/mailpile/shared-data/contrib/unthread/
 share/mailpile/shared-data/contrib/unthread/i18n-stubs.html
 share/mailpile/shared-data/contrib/unthread/manifest.json
@@ -876,73 +871,28 @@ share/mailpile/shared-data/default-theme/webfonts/Mailpile-Normal.woff
 share/mailpile/shared-data/default-theme/webfonts/index.html
 share/mailpile/shared-data/locale/
 @comment share/mailpile/shared-data/locale/README.md
-share/mailpile/shared-data/locale/ar/
-share/mailpile/shared-data/locale/ar/LC_MESSAGES/
-share/mailpile/shared-data/locale/ar/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/da_DK/
-share/mailpile/shared-data/locale/da_DK/LC_MESSAGES/
-share/mailpile/shared-data/locale/da_DK/LC_MESSAGES/mailpile.po
 share/mailpile/shared-data/locale/de/
 share/mailpile/shared-data/locale/de/LC_MESSAGES/
 share/mailpile/shared-data/locale/de/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/el_GR/
-share/mailpile/shared-data/locale/el_GR/LC_MESSAGES/
-share/mailpile/shared-data/locale/el_GR/LC_MESSAGES/mailpile.po
 share/mailpile/shared-data/locale/en_GB/
 share/mailpile/shared-data/locale/en_GB/LC_MESSAGES/
 share/mailpile/shared-data/locale/en_GB/LC_MESSAGES/mailpile.po
 share/mailpile/shared-data/locale/es_ES/
 share/mailpile/shared-data/locale/es_ES/LC_MESSAGES/
 share/mailpile/shared-data/locale/es_ES/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/fr/
-share/mailpile/shared-data/locale/fr/LC_MESSAGES/
-share/mailpile/shared-data/locale/fr/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/fr_FR/
-share/mailpile/shared-data/locale/fr_FR/LC_MESSAGES/
-share/mailpile/shared-data/locale/fr_FR/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/hr/
-share/mailpile/shared-data/locale/hr/LC_MESSAGES/
-share/mailpile/shared-data/locale/hr/LC_MESSAGES/mailpile.po
 share/mailpile/shared-data/locale/is/
 share/mailpile/shared-data/locale/is/LC_MESSAGES/
 share/mailpile/shared-data/locale/is/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/ja/
-share/mailpile/shared-data/locale/ja/LC_MESSAGES/
-share/mailpile/shared-data/locale/ja/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/lt/
-share/mailpile/shared-data/locale/lt/LC_MESSAGES/
-share/mailpile/shared-data/locale/lt/LC_MESSAGES/mailpile.po
 share/mailpile/shared-data/locale/mailpile.pot
 share/mailpile/shared-data/locale/nb_NO/
 share/mailpile/shared-data/locale/nb_NO/LC_MESSAGES/
 share/mailpile/shared-data/locale/nb_NO/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/nl_BE/
-share/mailpile/shared-data/locale/nl_BE/LC_MESSAGES/
-share/mailpile/shared-data/locale/nl_BE/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/nl_NL/
-share/mailpile/shared-data/locale/nl_NL/LC_MESSAGES/
-share/mailpile/shared-data/locale/nl_NL/LC_MESSAGES/mailpile.po
 share/mailpile/shared-data/locale/pl/
 share/mailpile/shared-data/locale/pl/LC_MESSAGES/
 share/mailpile/shared-data/locale/pl/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/pt_BR/
-share/mailpile/shared-data/locale/pt_BR/LC_MESSAGES/
-share/mailpile/shared-data/locale/pt_BR/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/ru_RU/
-share/mailpile/shared-data/locale/ru_RU/LC_MESSAGES/
-share/mailpile/shared-data/locale/ru_RU/LC_MESSAGES/mailpile.po
 share/mailpile/shared-data/locale/sq/
 share/mailpile/shared-data/locale/sq/LC_MESSAGES/
 share/mailpile/shared-data/locale/sq/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/sv/
-share/mailpile/shared-data/locale/sv/LC_MESSAGES/
-share/mailpile/shared-data/locale/sv/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/uk/
-share/mailpile/shared-data/locale/uk/LC_MESSAGES/
-share/mailpile/shared-data/locale/uk/LC_MESSAGES/mailpile.po
-share/mailpile/shared-data/locale/zh_CN/
-share/mailpile/shared-data/locale/zh_CN/LC_MESSAGES/
-share/mailpile/shared-data/locale/zh_CN/LC_MESSAGES/mailpile.po
 share/mailpile/shared-data/mailpile-gui/
 share/mailpile/shared-data/mailpile-gui/icons-dark/
 share/mailpile/shared-data/mailpile-gui/icons-dark/attention.png
