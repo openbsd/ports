@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.20 2019/07/13 10:59:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2019/10/02 17:59:43 jasper Exp $
 
 PORTROACH=	limitw:1,even
 
 CATEGORIES +=	net
 
-HOMEPAGE_TP=	http://telepathy.freedesktop.org/wiki/
+HOMEPAGE_TP=	https://telepathy.freedesktop.org/components/
 
 # If there is no real page, or only a CategoryFoo,
 # fallback to the default homepage.
@@ -12,7 +12,7 @@ HOMEPAGE_TP=	http://telepathy.freedesktop.org/wiki/
 HOMEPAGE=	${HOMEPAGE_TP}
 .endif
 
-MASTER_SITES_TP=	http://telepathy.freedesktop.org/releases/
+MASTER_SITES_TP=	https://telepathy.freedesktop.org/releases/
 DIST_SUBDIR=		telepathy
 
 # BSD/GPL/LGPL
