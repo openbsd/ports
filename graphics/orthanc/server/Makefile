@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/12 15:52:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/10/02 18:29:33 jasper Exp $
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.3.0
 PKGNAME =		${DISTNAME:L}
-REVISION =		4
+REVISION =		5
 
-HOMEPAGE =		http://www.orthanc-server.com/
+HOMEPAGE =		https://www.orthanc-server.com/
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}:0 \
 			mongoose-3.8.tgz:1
 
-MASTER_SITES0 =		http://www.orthanc-server.com/downloads/get.php?path=/orthanc/
-MASTER_SITES1 =		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/
+MASTER_SITES0 =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
+MASTER_SITES1 =		https://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
