@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/04/28 08:29:50 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/10/02 19:00:49 rsadowski Exp $
 
 Add options for building and installing shared, static libraries
 
@@ -31,7 +31,7 @@ Index: CMakeLists.txt
 +foreach (TYPE IN ITEMS STATIC SHARED)
 +  if (NOT DISABLE_${TYPE}_LIBS)
 +    string (TOLOWER "${TYPE}" type)
-+    add_library(matroska-${type} ${TYPE} ${libmatroska_SOURCES} ${limatroska_PUBLIC_HEADERS} ${libmatroska_C_PUBLIC_HEADERS})
++    add_library(matroska-${type} ${TYPE} ${libmatroska_SOURCES} ${libmatroska_PUBLIC_HEADERS} ${libmatroska_C_PUBLIC_HEADERS})
 +    set_target_properties(matroska-${type} PROPERTIES
 +      VERSION 6.0.0
 +      SOVERSION 6)
