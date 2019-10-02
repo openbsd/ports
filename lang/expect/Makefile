@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.72 2019/07/12 20:47:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2019/10/02 18:34:28 jasper Exp $
 
 COMMENT =	sophisticated scripter based on Tcl/Tk
 
 VERSION =	5.45
 DISTNAME =	expect${VERSION}
 PKGNAME =	expect-${VERSION}
-REVISION =	6
+REVISION =	7
 SHARED_LIBS =	expect545 0.0
 CATEGORIES =	lang
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=expect/}
 
-HOMEPAGE =	http://expect.nist.gov/
+HOMEPAGE =	https://core.tcl-lang.org/expect/index
 # PD
 PERMIT_PACKAGE =	Yes
 
