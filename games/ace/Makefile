@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/10/02 21:11:08 cwen Exp $
 
 COMMENT =		solitaire games
 
 DISTNAME =		ace-1.4
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  cards                     0.0 # 1.0
 
