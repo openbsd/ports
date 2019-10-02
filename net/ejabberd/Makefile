@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 20:48:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/10/02 14:46:31 sthen Exp $
 
 COMMENT=		jabber server written in Erlang
 
 V=			2.1.12
 DISTNAME=		ejabberd-$V
-REVISION=		12
+REVISION=		13
 
 CATEGORIES=		net
 
-HOMEPAGE=		http://www.ejabberd.im/
+HOMEPAGE=		https://www.ejabberd.im/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		crypto expat iconv ssl z
 
-MASTER_SITES=		http://www.process-one.net/downloads/ejabberd/$V/
+MASTER_SITES=		https://www.process-one.net/downloads/ejabberd/$V/
 EXTRACT_SUFX=		.tgz
 
 MODULES=		lang/erlang
@@ -76,6 +76,6 @@ post-install:
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/ejabberd
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/ejabberd
 	@chmod ${SHAREMODE} ${PREFIX}/share/examples/ejabberd/*.cfg
-	@find ${WRKINST} -type f -name '*.beforesubst' -exec rm {} \;
+	@find ${WRKINST} -type f -name '*.beforesubst' -delete
 
 .include <bsd.port.mk>
