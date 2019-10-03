@@ -1,22 +1,29 @@
-$OpenBSD: patch-sxiv_1,v 1.2 2017/12/12 00:25:48 jca Exp $
+$OpenBSD: patch-sxiv_1,v 1.3 2019/10/03 10:29:32 kn Exp $
+
+Substitute paths.
+
 Index: sxiv.1
 --- sxiv.1.orig
 +++ sxiv.1
-@@ -381,7 +381,7 @@ and the arguments given to it are: 1) path to image fi
+@@ -384,7 +384,7 @@ and the arguments given to it are: 1) path to image fi
  3) image height.
  .P
  There is also an example script installed together with sxiv as
 -.IR PREFIX/share/sxiv/exec/image-info .
-+.IR PREFIX/share/examples/sxiv/image-info .
++.IR ${PREFIX}/share/sxiv/exec/image-info .
  .SH EXTERNAL KEY HANDLER
  Additional external keyboard commands can be defined using a handler program
  located in
-@@ -399,7 +399,7 @@ where C/M/S indicate Ctrl/Meta(Alt)/Shift modifier sta
- keysym as listed in /usr/include/X11/keysymdef.h without the "XK_" prefix.
+@@ -399,10 +399,10 @@ have been modified and reloads them.
+ 
+ The key combo argument has the following form: "[C-][M-][S-]KEY",
+ where C/M/S indicate Ctrl/Meta(Alt)/Shift modifier states and KEY is the X
+-keysym as listed in /usr/include/X11/keysymdef.h without the "XK_" prefix.
++keysym as listed in ${X11BASE}/include/X11/keysymdef.h without the "XK_" prefix.
  
  There is also an example script installed together with sxiv as
 -.IR PREFIX/share/sxiv/exec/key-handler .
-+.IR PREFIX/share/examples/sxiv/key-handler .
++.IR {PREFIX}/share/sxiv/exec/key-handler .
  .SH THUMBNAIL CACHING
  sxiv stores all thumbnails under
  .IR $XDG_CACHE_HOME/sxiv/ .

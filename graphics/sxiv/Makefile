@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/10/03 10:29:32 kn Exp $
 
 COMMENT =	simple X Image Viewer
 
 GH_PROJECT =	sxiv
 GH_ACCOUNT =	muennich
-GH_TAGNAME =	v24
-REVISION =	2
+GH_TAGNAME =	v25
 
 CATEGORIES =	graphics x11
 
-MAINTAINER =	Klemens Nanni <kl3@posteo.org>
+MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB +=	Imlib2 X11 Xft c exif gif lib/inotify/inotify
+WANTLIB +=	Imlib2 X11 Xft c exif fontconfig gif lib/inotify/inotify
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
@@ -32,8 +31,12 @@ MAKE_FLAGS =	CC="${CC}" \
 
 NO_TEST =	Yes
 
+# Git errors break version.h build; this makes it fall back to a hardcoded value
+pre-build:
+	ln -sf /usr/bin/true ${WRKDIR}/bin/git
+
 post-install:
-	cd ${WRKSRC}/icon && make install
+	${MAKE_PROGRAM} -C ${WRKSRC}/icon/ DESTDIR='' ${FAKE_TARGET}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/sxiv.desktop ${PREFIX}/share/applications
 

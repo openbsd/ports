@@ -1,0 +1,14 @@
+$OpenBSD: patch-exec_key-handler,v 1.1 2019/10/03 10:29:32 kn Exp $
+
+Index: exec/key-handler
+--- exec/key-handler.orig
++++ exec/key-handler
+@@ -14,7 +14,7 @@
+ 
+ rotate() {
+ 	degree="$1"
+-	tr '\n' '\0' | xargs -0 realpath | sort | uniq | while read file; do
++	tr '\n' '\0' | xargs -0 readlink -f | sort | uniq | while read file; do
+ 		case "$(file -b -i "$file")" in
+ 		image/jpeg*) jpegtran -rotate "$degree" -copy all -outfile "$file" "$file" ;;
+ 		*)           mogrify  -rotate "$degree" "$file" ;;
