@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-common,v 1.4 2019/04/18 15:11:55 rsadowski Exp $
+@comment $OpenBSD: PLIST-common,v 1.5 2019/10/03 16:49:11 naddy Exp $
 @pkgpath math/fftw3,-common,double
 @pkgpath math/fftw3,-common,float
 bin/fftw-wisdom-to-conf
@@ -8,10 +8,8 @@ include/fftw3.h
 include/fftw3l.f03
 include/fftw3q.f03
 @info info/fftw3.info
+lib/cmake/
+lib/cmake/fftw3/
 @man man/man1/fftw-wisdom-to-conf.1
 share/doc/fftw3/
 share/doc/fftw3/fftw3.pdf
-lib/cmake/
-lib/cmake/fftw3/
-lib/cmake/fftw3/FFTW3Config.cmake
-lib/cmake/fftw3/FFTW3ConfigVersion.cmake

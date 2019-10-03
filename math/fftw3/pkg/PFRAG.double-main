@@ -1,7 +1,9 @@
-@comment $OpenBSD: PFRAG.double-main,v 1.4 2016/03/23 21:14:58 naddy Exp $
+@comment $OpenBSD: PFRAG.double-main,v 1.5 2019/10/03 16:49:11 naddy Exp $
 @pkgpath math/fftw3
 @pkgpath math/fftw3,double
 @bin bin/fftw-wisdom
+lib/cmake/fftw3/FFTW3Config.cmake
+lib/cmake/fftw3/FFTW3ConfigVersion.cmake
 lib/libfftw3.a
 lib/libfftw3.la
 @lib lib/libfftw3.so.${LIBfftw3_VERSION}
