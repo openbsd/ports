@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/05/11 18:33:42 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/10/03 14:36:12 robert Exp $
 @bin bin/eom
 include/eom-2.20/
 include/eom-2.20/eom/
@@ -898,6 +898,9 @@ share/locale/hu/LC_MESSAGES/eom.mo
 share/locale/hy/LC_MESSAGES/eom.mo
 share/locale/ia/LC_MESSAGES/eom.mo
 share/locale/id/LC_MESSAGES/eom.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/eom.mo
 share/locale/ig/LC_MESSAGES/eom.mo
 share/locale/is/LC_MESSAGES/eom.mo
 share/locale/it/LC_MESSAGES/eom.mo
