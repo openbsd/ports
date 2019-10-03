@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/03 06:14:15 giovanni Exp $
+libexec/smtpd/
+@bin libexec/smtpd/filter-spamassassin
+@man man/man1/filter-spamassassin.1
+share/doc/pkg-readmes/${PKGSTEM}

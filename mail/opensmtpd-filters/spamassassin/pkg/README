@@ -1,0 +1,19 @@
+$OpenBSD: README,v 1.1.1.1 2019/10/03 06:14:15 giovanni Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To use filter-spamassassin, you must declare it in smtpd.
+
+Edit the /etc/mail/smtpd.conf file to declare the filter:
+
+  filter "spamassassin" proc-exec "filter-spamassassin"
+
+Then add the filter to each listener that should be filtered:
+
+  listen on socket filter "spamassassin"
+  listen on all filter "spamassassin"
+
+The filter itself does have some additional configurations, you can look at them
+in filter-spamassassin(1) man page.
