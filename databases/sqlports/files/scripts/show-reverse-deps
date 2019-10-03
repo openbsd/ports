@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: show-reverse-deps,v 1.6 2019/06/04 16:05:52 espie Exp $
+# $OpenBSD: show-reverse-deps,v 1.7 2019/10/03 12:41:22 kn Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,7 @@
 set -e
 if [ $# -eq 0 ]
 then
-    echo 2>&1 "Usage: show-reverse-deps path [sqlite_db]"
+    echo 2>&1 "Usage: show-reverse-deps pkgpath [sqlite_db]"
     exit 1
 fi
 if [ $# -ge 2 ]
@@ -33,7 +33,7 @@ then
 else
     file=${TRUEPREFIX}/share/sqlports
 fi
-cat <<EOSQL |sqlite3 $file
+sqlite3 "$file" <<EOSQL
 with recursive d (fullpkgpath, dependspath) as
 	(select root.fullpkgpath, root.dependspath 
 		from _canonical_depends root
