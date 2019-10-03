@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/05/11 18:33:43 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/10/03 14:37:24 robert Exp $
 @bin bin/mate-system-monitor
 libexec/mate-system-monitor/
 @bin libexec/mate-system-monitor/msm-kill
@@ -908,6 +908,24 @@ share/help/id/mate-system-monitor/figures/systemMonitor.png
 share/help/id/mate-system-monitor/figures/viewMenu.png
 share/help/id/mate-system-monitor/index.docbook
 share/help/id/mate-system-monitor/legal.xml
+share/help/ie/
+share/help/ie/mate-system-monitor/
+share/help/ie/mate-system-monitor/figures/
+share/help/ie/mate-system-monitor/figures/addColumn.png
+share/help/ie/mate-system-monitor/figures/changePriority.png
+share/help/ie/mate-system-monitor/figures/colorPanel.png
+share/help/ie/mate-system-monitor/figures/columnContextMenu.png
+share/help/ie/mate-system-monitor/figures/mate-system-monitor_window.png
+share/help/ie/mate-system-monitor/figures/memoryMaps.png
+share/help/ie/mate-system-monitor/figures/moreInfo.png
+share/help/ie/mate-system-monitor/figures/processListing.png
+share/help/ie/mate-system-monitor/figures/sortButton.png
+share/help/ie/mate-system-monitor/figures/sortMenu.png
+share/help/ie/mate-system-monitor/figures/sortMenu2.png
+share/help/ie/mate-system-monitor/figures/systemMonitor.png
+share/help/ie/mate-system-monitor/figures/viewMenu.png
+share/help/ie/mate-system-monitor/index.docbook
+share/help/ie/mate-system-monitor/legal.xml
 share/help/is/
 share/help/is/mate-system-monitor/
 share/help/is/mate-system-monitor/figures/
@@ -2030,6 +2048,9 @@ share/locale/hu/LC_MESSAGES/mate-system-monitor.mo
 share/locale/hy/LC_MESSAGES/mate-system-monitor.mo
 share/locale/ia/LC_MESSAGES/mate-system-monitor.mo
 share/locale/id/LC_MESSAGES/mate-system-monitor.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/mate-system-monitor.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/mate-system-monitor.mo
