@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/05/11 18:33:42 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/10/03 14:35:54 robert Exp $
 @bin bin/caja
 @bin bin/caja-autorun-software
 @bin bin/caja-connect-server
@@ -175,6 +175,9 @@ share/locale/hu/LC_MESSAGES/caja.mo
 share/locale/hy/LC_MESSAGES/caja.mo
 share/locale/ia/LC_MESSAGES/caja.mo
 share/locale/id/LC_MESSAGES/caja.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/caja.mo
 share/locale/ig/LC_MESSAGES/caja.mo
 share/locale/is/LC_MESSAGES/caja.mo
 share/locale/it/LC_MESSAGES/caja.mo
