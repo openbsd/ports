@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/10/03 05:27:47 chrisz Exp $
+# $OpenBSD: Makefile,v 1.17 2019/10/03 05:28:31 chrisz Exp $
 
 COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
 V =			2.0.5
-REVISION =		0
+REVISION =		1
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
 
