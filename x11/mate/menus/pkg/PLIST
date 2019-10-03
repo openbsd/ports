@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/27 18:13:38 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/10/03 14:36:35 robert Exp $
 include/mate-menus/
 include/mate-menus/matemenu-tree.h
 lib/girepository-1.0/
@@ -104,6 +104,9 @@ share/locale/hr/LC_MESSAGES/mate-menus.mo
 share/locale/hu/LC_MESSAGES/mate-menus.mo
 share/locale/hy/LC_MESSAGES/mate-menus.mo
 share/locale/id/LC_MESSAGES/mate-menus.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/mate-menus.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/mate-menus.mo
