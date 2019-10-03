@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/07/12 05:08:21 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/10/03 10:29:00 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -9,6 +9,7 @@ share/raspberrypi-firmware/boot/bcm2708-rpi-cm.dtb
 share/raspberrypi-firmware/boot/bcm2708-rpi-zero-w.dtb
 share/raspberrypi-firmware/boot/bcm2708-rpi-zero.dtb
 share/raspberrypi-firmware/boot/bcm2709-rpi-2-b.dtb
+share/raspberrypi-firmware/boot/bcm2710-rpi-2-b.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-3-b-plus.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-3-b.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-cm3.dtb
@@ -25,8 +26,10 @@ share/raspberrypi-firmware/boot/fixup_x.dat
 @comment share/raspberrypi-firmware/boot/kernel.img
 @comment share/raspberrypi-firmware/boot/kernel7.img
 @comment share/raspberrypi-firmware/boot/kernel7l.img
+@comment share/raspberrypi-firmware/boot/kernel8.img
 share/raspberrypi-firmware/boot/overlays/
 share/raspberrypi-firmware/boot/overlays/README
+share/raspberrypi-firmware/boot/overlays/act-led.dtbo
 share/raspberrypi-firmware/boot/overlays/adau1977-adc.dtbo
 share/raspberrypi-firmware/boot/overlays/adau7002-simple.dtbo
 share/raspberrypi-firmware/boot/overlays/ads1015.dtbo
@@ -52,6 +55,8 @@ share/raspberrypi-firmware/boot/overlays/bmp085_i2c-sensor.dtbo
 share/raspberrypi-firmware/boot/overlays/dht11.dtbo
 share/raspberrypi-firmware/boot/overlays/dionaudio-loco-v2.dtbo
 share/raspberrypi-firmware/boot/overlays/dionaudio-loco.dtbo
+share/raspberrypi-firmware/boot/overlays/disable-bt.dtbo
+share/raspberrypi-firmware/boot/overlays/disable-wifi.dtbo
 share/raspberrypi-firmware/boot/overlays/dpi18.dtbo
 share/raspberrypi-firmware/boot/overlays/dpi24.dtbo
 share/raspberrypi-firmware/boot/overlays/draws.dtbo
@@ -76,6 +81,8 @@ share/raspberrypi-firmware/boot/overlays/hifiberry-amp.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dacplus.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dacplusadc.dtbo
+share/raspberrypi-firmware/boot/overlays/hifiberry-dacplusadcpro.dtbo
+share/raspberrypi-firmware/boot/overlays/hifiberry-dacplusdsp.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-digi-pro.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-digi.dtbo
 share/raspberrypi-firmware/boot/overlays/hy28a.dtbo
@@ -90,13 +97,16 @@ share/raspberrypi-firmware/boot/overlays/i2c-rtc-gpio.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c-rtc.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c-sensor.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c0-bcm2708.dtbo
+share/raspberrypi-firmware/boot/overlays/i2c0.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c1-bcm2708.dtbo
+share/raspberrypi-firmware/boot/overlays/i2c1.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c3.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c4.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c5.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c6.dtbo
 share/raspberrypi-firmware/boot/overlays/i2s-gpio28-31.dtbo
 share/raspberrypi-firmware/boot/overlays/ilitek251x.dtbo
+share/raspberrypi-firmware/boot/overlays/imx219.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-codec.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-dacplus.dtbo
@@ -117,6 +127,7 @@ share/raspberrypi-firmware/boot/overlays/mcp342x.dtbo
 share/raspberrypi-firmware/boot/overlays/media-center.dtbo
 share/raspberrypi-firmware/boot/overlays/midi-uart0.dtbo
 share/raspberrypi-firmware/boot/overlays/midi-uart1.dtbo
+share/raspberrypi-firmware/boot/overlays/miniuart-bt.dtbo
 share/raspberrypi-firmware/boot/overlays/mmc.dtbo
 share/raspberrypi-firmware/boot/overlays/mpu6050.dtbo
 share/raspberrypi-firmware/boot/overlays/mz61581.dtbo
