@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/05/11 18:33:43 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/10/03 14:36:30 robert Exp $
 @bin bin/mate-volume-control
 @bin bin/mate-volume-control-status-icon
 @bin libexec/mate-volume-control-applet
@@ -44,39 +44,17 @@ share/locale/es/LC_MESSAGES/mate-media.mo
 share/locale/es_AR/LC_MESSAGES/mate-media.mo
 share/locale/es_CL/LC_MESSAGES/mate-media.mo
 share/locale/es_CO/LC_MESSAGES/mate-media.mo
-share/locale/es_CR/
-share/locale/es_CR/LC_MESSAGES/
 share/locale/es_CR/LC_MESSAGES/mate-media.mo
-share/locale/es_DO/
-share/locale/es_DO/LC_MESSAGES/
 share/locale/es_DO/LC_MESSAGES/mate-media.mo
-share/locale/es_EC/
-share/locale/es_EC/LC_MESSAGES/
 share/locale/es_EC/LC_MESSAGES/mate-media.mo
-share/locale/es_ES/
-share/locale/es_ES/LC_MESSAGES/
 share/locale/es_ES/LC_MESSAGES/mate-media.mo
 share/locale/es_MX/LC_MESSAGES/mate-media.mo
-share/locale/es_NI/
-share/locale/es_NI/LC_MESSAGES/
 share/locale/es_NI/LC_MESSAGES/mate-media.mo
-share/locale/es_PA/
-share/locale/es_PA/LC_MESSAGES/
 share/locale/es_PA/LC_MESSAGES/mate-media.mo
-share/locale/es_PE/
-share/locale/es_PE/LC_MESSAGES/
 share/locale/es_PE/LC_MESSAGES/mate-media.mo
-share/locale/es_PR/
-share/locale/es_PR/LC_MESSAGES/
 share/locale/es_PR/LC_MESSAGES/mate-media.mo
-share/locale/es_SV/
-share/locale/es_SV/LC_MESSAGES/
 share/locale/es_SV/LC_MESSAGES/mate-media.mo
-share/locale/es_UY/
-share/locale/es_UY/LC_MESSAGES/
 share/locale/es_UY/LC_MESSAGES/mate-media.mo
-share/locale/es_VE/
-share/locale/es_VE/LC_MESSAGES/
 share/locale/es_VE/LC_MESSAGES/mate-media.mo
 share/locale/et/LC_MESSAGES/mate-media.mo
 share/locale/eu/LC_MESSAGES/mate-media.mo
@@ -99,6 +77,7 @@ share/locale/hu/LC_MESSAGES/mate-media.mo
 share/locale/hy/LC_MESSAGES/mate-media.mo
 share/locale/ia/LC_MESSAGES/mate-media.mo
 share/locale/id/LC_MESSAGES/mate-media.mo
+share/locale/ie/LC_MESSAGES/mate-media.mo
 share/locale/ig/LC_MESSAGES/mate-media.mo
 share/locale/is/LC_MESSAGES/mate-media.mo
 share/locale/it/LC_MESSAGES/mate-media.mo
@@ -109,14 +88,10 @@ share/locale/kab/LC_MESSAGES/mate-media.mo
 share/locale/kk/LC_MESSAGES/mate-media.mo
 share/locale/kn/LC_MESSAGES/mate-media.mo
 share/locale/ko/LC_MESSAGES/mate-media.mo
-share/locale/ks/
-share/locale/ks/LC_MESSAGES/
 share/locale/ks/LC_MESSAGES/mate-media.mo
 share/locale/ku/LC_MESSAGES/mate-media.mo
 share/locale/ku_IQ/LC_MESSAGES/mate-media.mo
 share/locale/ky/LC_MESSAGES/mate-media.mo
-share/locale/la/
-share/locale/la/LC_MESSAGES/
 share/locale/la/LC_MESSAGES/mate-media.mo
 share/locale/li/LC_MESSAGES/mate-media.mo
 share/locale/lt/LC_MESSAGES/mate-media.mo
@@ -227,8 +202,6 @@ share/mate-media/icons/hicolor/scalable/status/audio-input-microphone-medium.svg
 share/mate-media/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
 share/mate-media/sounds/
 share/mate-media/sounds/mate-sounds-default.xml
-share/mate-panel/
-share/mate-panel/applets/
 share/mate-panel/applets/org.mate.applets.GvcApplet.mate-panel-applet
 share/sounds/mate/
 share/sounds/mate/default/
