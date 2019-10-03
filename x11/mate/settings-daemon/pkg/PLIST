@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/27 18:13:39 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/10/03 14:37:18 robert Exp $
 include/mate-settings-daemon/
 include/mate-settings-daemon/mate-settings-client.h
 include/mate-settings-daemon/mate-settings-plugin.h
@@ -109,6 +109,7 @@ share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml
 share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml
 share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.mouse.gschema.xml
 share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.mpris.gschema.xml
+share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml
 share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml
 share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.sound.gschema.xml
 share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml
@@ -183,6 +184,9 @@ share/locale/hr/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/hu/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/hy/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/id/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/is/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/it/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ja/LC_MESSAGES/mate-settings-daemon.mo
