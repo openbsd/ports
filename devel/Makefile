@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1895 2019/09/30 13:09:23 kili Exp $
+# $OpenBSD: Makefile,v 1.1896 2019/10/03 09:29:26 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1586,6 +1586,8 @@
      SUBDIR += py-radix
      SUBDIR += py-radix,python3
      SUBDIR += py-rcsparse
+     SUBDIR += py-rencode
+     SUBDIR += py-rencode,python3
      SUBDIR += py-rfc6555
      SUBDIR += py-rfc6555,python3
      SUBDIR += py-robotframework
