@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/03/27 18:13:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/10/03 14:36:07 robert Exp $
 @bin bin/engrampa
 lib/caja/
 lib/caja/extensions-2.0/
@@ -1076,6 +1076,7 @@ share/locale/hu/LC_MESSAGES/engrampa.mo
 share/locale/hy/LC_MESSAGES/engrampa.mo
 share/locale/ia/LC_MESSAGES/engrampa.mo
 share/locale/id/LC_MESSAGES/engrampa.mo
+share/locale/ie/LC_MESSAGES/engrampa.mo
 share/locale/ig/LC_MESSAGES/engrampa.mo
 share/locale/is/LC_MESSAGES/engrampa.mo
 share/locale/it/LC_MESSAGES/engrampa.mo
