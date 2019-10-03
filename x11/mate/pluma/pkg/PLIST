@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/04/24 09:31:51 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/10/03 14:36:53 robert Exp $
 @bin bin/pluma
 include/pluma/
 include/pluma/pluma-app.h
@@ -522,6 +522,13 @@ share/help/id/pluma/figures/pluma_recent_files_menu_icon.png
 share/help/id/pluma/figures/pluma_window.png
 share/help/id/pluma/index.docbook
 share/help/id/pluma/legal.xml
+share/help/ie/
+share/help/ie/pluma/
+share/help/ie/pluma/figures/
+share/help/ie/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/ie/pluma/figures/pluma_window.png
+share/help/ie/pluma/index.docbook
+share/help/ie/pluma/legal.xml
 share/help/is/
 share/help/is/pluma/
 share/help/is/pluma/figures/
@@ -967,6 +974,9 @@ share/locale/hu/LC_MESSAGES/pluma.mo
 share/locale/hy/LC_MESSAGES/pluma.mo
 share/locale/ia/LC_MESSAGES/pluma.mo
 share/locale/id/LC_MESSAGES/pluma.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/pluma.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/pluma.mo
