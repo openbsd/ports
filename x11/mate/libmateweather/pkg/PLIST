@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/20 11:16:03 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/10/03 14:36:19 robert Exp $
 include/libmateweather/
 include/libmateweather/location-entry.h
 include/libmateweather/mateweather-enum-types.h
@@ -587,6 +587,9 @@ share/locale/hr/LC_MESSAGES/libmateweather.mo
 share/locale/hu/LC_MESSAGES/libmateweather.mo
 share/locale/hy/LC_MESSAGES/libmateweather.mo
 share/locale/id/LC_MESSAGES/libmateweather.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/libmateweather.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/libmateweather.mo

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/10/03 14:36:19 robert Exp $
 
 COMMENT=		weather library for MATE
-REVISION=		0
 
 SHARED_LIBS +=  mateweather               7.9 # 7.9
 
 MATE_PROJECT=		libmateweather
+MATE_VERSION=		1.22.1
 
 CATEGORIES=		net
 
