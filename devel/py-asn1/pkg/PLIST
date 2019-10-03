@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/10/24 05:53:09 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/10/03 20:10:30 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/pyasn1/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -77,6 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1/type/${MODPY_PYCACHE}constraint.
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/${MODPY_PYCACHE}namedtype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/${MODPY_PYCACHE}namedval.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/type/${MODPY_PYCACHE}opentype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/${MODPY_PYCACHE}tag.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/${MODPY_PYCACHE}tagmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/${MODPY_PYCACHE}univ.${MODPY_PYC_MAGIC_TAG}pyc
@@ -87,6 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1/type/constraint.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/error.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/namedtype.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/namedval.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/type/opentype.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/tag.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/tagmap.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/univ.py

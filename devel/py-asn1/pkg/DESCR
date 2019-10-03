@@ -1,4 +1,4 @@
-pyasn1 is an implementation of ASN.1 types and codecs in Python
-programming language. It has been first written to support particular
-protocol (SNMP) but then generalized to be suitable for a wide range of
-protocols based on ASN.1 specification.
+pyasn1 is an implementation of ASN.1 types and DER/BER/CER codecs in
+Python programming language. It has been first written to support
+particular protocol (SNMP) but then generalized to be suitable for a
+wide range of protocols based on ASN.1 specification.
