@@ -1,0 +1,24 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/10/03 09:25:16 kn Exp $
+
+Avoid cython due to build error:
+	ValueError: 'rencode/rencode.pyx' doesn't match any files
+
+Remove platform specific optimizations.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -36,12 +36,12 @@ except ImportError as ex:
+     from setuptools.command.build_ext import build_ext
+     cythonize = False
+ 
++cythonize = False
+ source_ext = ".pyx" if cythonize else ".c"
+ 
+ ext_modules = [
+     Extension(
+         "rencode._rencode",
+-        extra_compile_args=["-O3"],
+         sources=["rencode/rencode" + source_ext],
+     ),
+ ]
