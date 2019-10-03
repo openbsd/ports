@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/12/09 13:41:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/10/03 14:37:07 robert Exp $
 @bin bin/mate-screensaver
 @bin bin/mate-screensaver-command
 @bin bin/mate-screensaver-preferences
@@ -97,6 +97,7 @@ share/locale/hu/LC_MESSAGES/mate-screensaver.mo
 share/locale/hy/LC_MESSAGES/mate-screensaver.mo
 share/locale/ia/LC_MESSAGES/mate-screensaver.mo
 share/locale/id/LC_MESSAGES/mate-screensaver.mo
+share/locale/ie/LC_MESSAGES/mate-screensaver.mo
 share/locale/is/LC_MESSAGES/mate-screensaver.mo
 share/locale/it/LC_MESSAGES/mate-screensaver.mo
 share/locale/ja/LC_MESSAGES/mate-screensaver.mo
