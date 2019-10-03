@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/08/30 15:58:26 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2019/10/03 18:38:54 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.6,<2.7
 bin/bundle26
@@ -42,7 +42,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.6.4.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.6.5.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 lib/libruby26.so
