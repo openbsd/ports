@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/03/27 18:13:38 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/10/03 14:36:48 robert Exp $
 @bin bin/mate-desktop-item-edit
 @bin bin/mate-panel
 @bin bin/mate-panel-test-applets
@@ -742,6 +742,17 @@ share/help/id/mate-fish/figures/
 share/help/id/mate-fish/figures/fish_applet.png
 share/help/id/mate-fish/index.docbook
 share/help/id/mate-fish/legal.xml
+share/help/ie/
+share/help/ie/mate-clock/
+share/help/ie/mate-clock/figures/
+share/help/ie/mate-clock/figures/clock_applet.png
+share/help/ie/mate-clock/index.docbook
+share/help/ie/mate-clock/legal.xml
+share/help/ie/mate-fish/
+share/help/ie/mate-fish/figures/
+share/help/ie/mate-fish/figures/fish_applet.png
+share/help/ie/mate-fish/index.docbook
+share/help/ie/mate-fish/legal.xml
 share/help/ig/
 share/help/ig/mate-clock/
 share/help/ig/mate-clock/figures/
@@ -1596,6 +1607,7 @@ share/locale/hu/LC_MESSAGES/mate-panel.mo
 share/locale/hy/LC_MESSAGES/mate-panel.mo
 share/locale/ia/LC_MESSAGES/mate-panel.mo
 share/locale/id/LC_MESSAGES/mate-panel.mo
+share/locale/ie/LC_MESSAGES/mate-panel.mo
 share/locale/ig/LC_MESSAGES/mate-panel.mo
 share/locale/is/LC_MESSAGES/mate-panel.mo
 share/locale/it/LC_MESSAGES/mate-panel.mo
