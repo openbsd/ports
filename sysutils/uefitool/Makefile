@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/10/03 17:51:59 kn Exp $
+
+# ignore A* and t* (pre) releases
+PORTROACH =		limit:^[0-9]
 
 COMMENT =		parse, extract and modify UEFI firmware images
 
