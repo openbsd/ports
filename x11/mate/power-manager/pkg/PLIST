@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/27 18:13:38 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/10/03 14:37:00 robert Exp $
 @bin bin/mate-power-manager
 @bin bin/mate-power-preferences
 @bin bin/mate-power-statistics
@@ -906,6 +906,23 @@ share/help/id/mate-power-manager/figures/gpm-unplugged.png
 share/help/id/mate-power-manager/figures/gs-prefs.png
 share/help/id/mate-power-manager/index.docbook
 share/help/id/mate-power-manager/legal.xml
+share/help/ie/mate-power-manager/
+share/help/ie/mate-power-manager/figures/
+share/help/ie/mate-power-manager/figures/applet-brightness.png
+share/help/ie/mate-power-manager/figures/applet-inhibit.png
+share/help/ie/mate-power-manager/figures/gpm-cell-capacity.png
+share/help/ie/mate-power-manager/figures/gpm-charged.png
+share/help/ie/mate-power-manager/figures/gpm-critical.png
+share/help/ie/mate-power-manager/figures/gpm-low.png
+share/help/ie/mate-power-manager/figures/gpm-prefs-ac.png
+share/help/ie/mate-power-manager/figures/gpm-prefs-battery.png
+share/help/ie/mate-power-manager/figures/gpm-prefs-general.png
+share/help/ie/mate-power-manager/figures/gpm-stats-graph.png
+share/help/ie/mate-power-manager/figures/gpm-suspend-problem.png
+share/help/ie/mate-power-manager/figures/gpm-unplugged.png
+share/help/ie/mate-power-manager/figures/gs-prefs.png
+share/help/ie/mate-power-manager/index.docbook
+share/help/ie/mate-power-manager/legal.xml
 share/help/ig/mate-power-manager/
 share/help/ig/mate-power-manager/figures/
 share/help/ig/mate-power-manager/figures/applet-brightness.png
@@ -2079,6 +2096,7 @@ share/locale/hu/LC_MESSAGES/mate-power-manager.mo
 share/locale/hy/LC_MESSAGES/mate-power-manager.mo
 share/locale/ia/LC_MESSAGES/mate-power-manager.mo
 share/locale/id/LC_MESSAGES/mate-power-manager.mo
+share/locale/ie/LC_MESSAGES/mate-power-manager.mo
 share/locale/ig/LC_MESSAGES/mate-power-manager.mo
 share/locale/is/LC_MESSAGES/mate-power-manager.mo
 share/locale/it/LC_MESSAGES/mate-power-manager.mo
