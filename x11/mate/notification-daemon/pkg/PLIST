@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/12/22 11:33:48 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/10/03 14:36:42 robert Exp $
 @bin bin/mate-notification-properties
 lib/mate-notification-daemon/
 lib/mate-notification-daemon/engines/
@@ -91,6 +91,9 @@ share/locale/hr/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/hu/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/hy/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/id/LC_MESSAGES/mate-notification-daemon.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/mate-notification-daemon.mo

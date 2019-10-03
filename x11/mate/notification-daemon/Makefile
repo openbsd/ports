@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/10/03 14:36:42 robert Exp $
 
 COMMENT=		MATE notification daemon
 
 MATE_PROJECT=		mate-notification-daemon
-REVISION=		1
+MATE_VERSION=		1.22.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
