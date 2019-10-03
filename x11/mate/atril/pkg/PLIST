@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/03/27 18:13:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/10/03 14:35:48 robert Exp $
 @bin bin/atril
 @bin bin/atril-previewer
 @bin bin/atril-thumbnailer
@@ -585,6 +585,12 @@ share/help/id/atril/figures/
 share/help/id/atril/figures/atril_start_window.png
 share/help/id/atril/index.docbook
 share/help/id/atril/legal.xml
+share/help/ie/
+share/help/ie/atril/
+share/help/ie/atril/figures/
+share/help/ie/atril/figures/atril_start_window.png
+share/help/ie/atril/index.docbook
+share/help/ie/atril/legal.xml
 share/help/ig/
 share/help/ig/atril/
 share/help/ig/atril/figures/
@@ -1039,6 +1045,9 @@ share/locale/hu/LC_MESSAGES/atril.mo
 share/locale/hy/LC_MESSAGES/atril.mo
 share/locale/ia/LC_MESSAGES/atril.mo
 share/locale/id/LC_MESSAGES/atril.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/atril.mo
 share/locale/ig/LC_MESSAGES/atril.mo
 share/locale/is/LC_MESSAGES/atril.mo
 share/locale/it/LC_MESSAGES/atril.mo
