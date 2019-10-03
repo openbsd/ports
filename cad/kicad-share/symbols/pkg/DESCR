@@ -1,0 +1,3 @@
+The KiCad symbol libraries are the individual .lib files, with the
+corresponding .dcm files containing symbol metadata. These symbols
+are best used in combination with the official footprint libs.

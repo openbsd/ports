@@ -1,0 +1,4 @@
+The KiCad 3D model libraries are the individual .3dshapes directories.
+These 3d models are best used in combination with the official footprint libs.
+Each directory directory contains multiple 3D model files, supporting the
+WRL and STEP file formats.
