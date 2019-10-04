@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/10/04 12:45:12 kn Exp $
 
 COMMENT =		lightweight and flexible command-line JSON processor
 
 V =			1.6
 DISTNAME =		jq-$V
+REVISION =		0
+
+# prevent clobbering existing distfile
+DISTFILES =		${DISTNAME}-new{${DISTNAME}}${EXTRACT_SUFX}
 
 SHARED_LIBS +=	jq                        1.0 # 1.4
 
