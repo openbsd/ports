@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/10/02 18:29:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/10/04 15:06:15 naddy Exp $
 
 COMMENT =		web viewer plugin for Orthanc
 
 VERSION =		2.3
 PLUGIN =		WebViewer
-REVISION =		0
+REVISION =		2
 
 PLUGIN_3RDPARTY =	cornerstone-0.11.0.zip \
 			jquery-ui-1.11.3.zip \
@@ -16,7 +16,6 @@ DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES +=		${PLUGIN_3RDPARTY:C/$/:1/}
-REVISION =		1
 
 MASTER_SITES1 =		https://www.orthanc-server.com/downloads/third-party/WebViewer/
 
