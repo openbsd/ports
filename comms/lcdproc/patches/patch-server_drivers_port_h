@@ -1,0 +1,17 @@
+$OpenBSD: patch-server_drivers_port_h,v 1.1 2019/10/04 20:56:02 naddy Exp $
+
+Skip unused code for accessing I/O ports: clang on non-x86 does not
+handle x86 inline assembly.
+
+Index: server/drivers/port.h
+--- server/drivers/port.h.orig
++++ server/drivers/port.h
+@@ -333,7 +333,7 @@ static inline int port_deny_multiple (unsigned short p
+ 	return i386_set_ioperm(port, count, 0);
+ }
+ 
+-#else
++#elif 0
+ 
+ /*  ------------------------- Everything else ----------------------------- */
+ /*  Last chance! Use /dev/io and i386 ASM code (BSD4.3 ?) */
