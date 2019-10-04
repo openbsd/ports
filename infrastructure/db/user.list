@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.353 2019/09/23 19:24:45 martijn Exp $
+$OpenBSD: user.list,v 1.354 2019/10/04 20:30:27 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -352,3 +352,4 @@ id  user		group		port options
 841 _rt			_rt		www/rt
 842 _e2guardian		_e2guardian	www/e2guardian
 843 _dkimsign		_dkimsign	mail/opensmtpd-filters/dkimsign
+844 _routinator		_routinator	net/routinator
