@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/04 10:30:38 bentley Exp $
+@bin bin/xe
+@man man/man1/xe.1
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_xe

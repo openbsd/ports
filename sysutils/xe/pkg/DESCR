@@ -1,0 +1,4 @@
+The xe utility constructs command lines from specified arguments,
+combining some of the best features of xargs(1) and apply(1).
+
+xe means "execute for every ...".
