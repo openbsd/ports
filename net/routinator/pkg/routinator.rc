@@ -1,0 +1,14 @@
+#!/bin/ksh
+#
+# $OpenBSD: routinator.rc,v 1.1.1.1 2019/10/04 20:58:20 sthen Exp $
+
+# config path must be given before "server --detach" which tells it to
+# daemonize, so can't be handled via daemon_flags.
+daemon="${TRUEPREFIX}/bin/routinator -c ${SYSCONFDIR}/routinator/routinator.conf server --detach"
+daemon_user="_routinator"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

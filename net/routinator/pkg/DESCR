@@ -1,0 +1,11 @@
+"Routinator 3000" is RPKI relying party software written in Rust.
+
+The Resource Public Key Infrastructure (RPKI) provides cryptographically
+signed statements about the association of Internet routing resources.
+In particular, it allows the holder of an IP address prefix to publish
+which AS number will be the origin of BGP route announcements for it.
+
+All of these statements are published in a distributed repository.
+Routinator will collect these statements into a local copy, validate
+their signatures, and output a list of associations between IP address
+prefixes and AS numbers in a number of useful formats.

@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/04 20:58:20 sthen Exp $
+@newgroup _routinator:844
+@newuser _routinator:844:_routinator:daemon:routinator user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/routinator
+@bin bin/routinator
+@man man/man1/routinator.1
+share/examples/routinator/
+@sample ${SYSCONFDIR}/routinator/
+share/examples/routinator/routinator.conf.example
+share/examples/routinator/routinator.conf.system-service
+@sample ${SYSCONFDIR}/routinator/routinator.conf
+share/routinator/
+share/routinator/repository/
+share/routinator/repository/http/
+share/routinator/repository/rrdp/
+share/routinator/repository/rsync/
+share/routinator/repository/tmp/
+@owner _routinator
+@sample /var/db/routinator/
+@sample /var/db/routinator/repository/
+@sample /var/db/routinator/repository/http/
+@sample /var/db/routinator/repository/rrdp/
+@sample /var/db/routinator/repository/rsync/
+@sample /var/db/routinator/repository/tmp/
+@extraunexec rm -rf /var/db/routinator/repository/{http,rrdp,rsync,tmp}/*

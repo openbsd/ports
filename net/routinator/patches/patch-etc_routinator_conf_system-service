@@ -1,0 +1,35 @@
+$OpenBSD: patch-etc_routinator_conf_system-service,v 1.1.1.1 2019/10/04 20:58:20 sthen Exp $
+
+Index: etc/routinator.conf.system-service
+--- etc/routinator.conf.system-service.orig
++++ etc/routinator.conf.system-service
+@@ -2,23 +2,23 @@
+ # ========================================================
+ #
+ # This configuration assumes that the TALs are placed in
+-# /etc/routinator/tals and the repository is maintained in
+-# /var/lib/routinator/repository.
++# /etc/rpki (as installed in the OpenBSD base system) and the
++# repository is maintained in /var/db/routinator/repository.
+ #
+ # It will start Routinator with an RTR server listening on port 3323 and
+ # an HTTP server listening on port 8323. Both are limited to localhost by
+ # default.
+ #
+ # You can use this configuration as
+-# /etc/routinator/routinator.conf and start Routinator with
+-# --config /etc/routinator/routinator.conf.
++# ${SYSCONFDIR}/routinator/routinator.conf and start Routinator with
++# --config ${SYSCONFDIR}/routinator/routinator.conf.
+ #
+ # This file contains only the relevant configuration options. For a complete
+ # example, see etc/routinator.conf.example in the source distribution or
+ # consult the manual page.
+ 
+-repository-dir = "/var/lib/routinator"
+-tal-dir = "/etc/routinator/tals"
++repository-dir = "/var/db/routinator"
++tal-dir = "/etc/rpki"
+ rtr-listen = ["127.0.0.1:3323"]
+ http-listen = ["127.0.0.1:8323"]
+ 
