@@ -1,11 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2019/09/23 12:04:10 sthen Exp $
-
-BROKEN-i386= redefinition of __class_type_info/__si_class_type_info
-# bridges/source/cpp_uno/gcc3_linux_intel/share.hxx:65:12: error: redefinition of '__class_type_info'
-# bridges/source/cpp_uno/gcc3_linux_intel/share.hxx:40:7: note: previous definition is here
-# bridges/source/cpp_uno/gcc3_linux_intel/share.hxx:71:12: error: redefinition of '__si_class_type_info'
-# bridges/source/cpp_uno/gcc3_linux_intel/share.hxx:52:7: note: previous definition is here
-# ... more logs in https://marc.info/?l=openbsd-ports-cvs&m=156915667215970&w=2
+# $OpenBSD: Makefile,v 1.217 2019/10/04 06:33:55 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -20,7 +13,7 @@ SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
 BV=		6.3
-VERSION=	${BV}.1.2
+VERSION=	${BV}.2.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -102,7 +95,7 @@ DISTFILES += edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-i
 DISTFILES += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0
 DISTFILES += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0
 DISTFILES += language-subtag-registry-2019-04-03.tar.bz2:0
-DISTFILES += libabw-0.1.2.tar.xz:0
+DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.5.tar.xz:0
 DISTFILES += libcdr-0.1.3.tar.bz2:0
 DISTFILES += libcmis-0.5.2.tar.xz:0
@@ -124,7 +117,7 @@ DISTFILES += libpagemaker-0.0.4.tar.xz:0
 DISTFILES += libqxp-0.0.2.tar.xz:0
 DISTFILES += librevenge-0.0.4.tar.bz2:0
 DISTFILES += libstaroffice-0.0.6.tar.xz:0
-DISTFILES += libvisio-0.1.6.tar.xz:0
+DISTFILES += libvisio-0.1.7.tar.xz:0
 DISTFILES += libwpd-0.10.3.tar.xz:0
 DISTFILES += libwpg-0.3.3.tar.xz:0
 DISTFILES += libwps-0.4.10.tar.xz:0
