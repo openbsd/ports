@@ -1,27 +1,30 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/10/04 09:57:43 kevlo Exp $
 
 COMMENT=	web framework for python
 
-VERSION=	0.38
-DISTNAME=	web.py-${VERSION}
-PKGNAME=	py-webpy-${VERSION}
+MODPY_EGG_VERSION=	0.40
+DISTNAME=	web.py-${MODPY_EGG_VERSION}
+PKGNAME=	py-webpy-${MODPY_EGG_VERSION}
+
 CATEGORIES=	www
 
-MASTER_SITES=	${HOMEPAGE}/static/
 HOMEPAGE=	http://webpy.org
+
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Public Domain, except wsgiserver
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-SUBST_VARS=	VERSION
+MODPY_PI=	Yes
+MODPY_PYTEST=	Yes
+MODPY_SETUPTOOLS=	Yes
 
-TEST_DEPENDS= databases/py-sqlite2 \
-		${BASE_PKGPATH}
+RUN_DEPENDS=	textproc/py-markdown${MODPY_FLAVOR} \
+		www/py-cheroot${MODPY_FLAVOR}
 
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ./web/test.py 
-	cd ${WRKSRC} && ${MODPY_BIN} ./web/db.py SqliteTest
+FLAVORS=	python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
