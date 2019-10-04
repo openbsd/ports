@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1142 2019/09/14 23:42:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.1143 2019/10/04 20:58:44 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -651,6 +651,7 @@
      SUBDIR += rabbitmq-c
      SUBDIR += radcli
      SUBDIR += rbldnsd
+     SUBDIR += routinator
      SUBDIR += rrdtool
      SUBDIR += rsnapshot
      SUBDIR += rsync
