@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.49 2019/09/07 11:08:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.50 2019/10/04 14:18:17 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -1026,7 +1026,6 @@ share/gtk-doc/html/gtk3/gtk-migrating-checklist.html
 share/gtk-doc/html/gtk3/gtk-migrating-smclient-GtkApplication.html
 share/gtk-doc/html/gtk3/gtk-migrating-theme-GtkStyleContext-engines.html
 share/gtk-doc/html/gtk3/gtk-migrating-unique-GtkApplication.html
-share/gtk-doc/html/gtk3/gtk-mir.html
 share/gtk-doc/html/gtk3/gtk-osx.html
 share/gtk-doc/html/gtk3/gtk-query-immodules-3.0.html
 share/gtk-doc/html/gtk3/gtk-query-settings.html
