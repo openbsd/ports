@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1478 2019/09/16 16:50:08 kmos Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1479 2019/10/05 14:10:33 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -79,6 +79,10 @@ FETCH_PACKAGES ?= No
 CLEANDEPENDS ?= No
 BULK ?= Auto
 WRKDIR_LINKNAME ?=
+
+.if ${FETCH_PACKAGES:L} == "yes"
+ERRORS += "Fatal: old syntax for FETCH_PACKAGES, see ports(7)"
+.endif
 
 USE_MFS ?= No
 WRKOBJDIR ?= ${PORTSDIR}/pobj
