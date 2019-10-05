@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/24 11:56:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2019/10/05 07:33:50 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  dolphinprivate            0.1 # 5.0
 SHARED_LIBS +=  dolphinvcs                0.1 # 5.0
@@ -32,10 +32,11 @@ BUILD_DEPENDS +=	devel/kf5/kfilemetadata \
 			devel/kf5/kinit
 
 RUN_DEPENDS +=	devel/kf5/kfilemetadata \
+		devel/kf5/kinit \
 		misc/shared-mime-info \
 		x11/kde-applications/ffmpegthumbs \
-		x11/kde-applications/konsole \
-		x11/kde-applications/kio-extras
+		x11/kde-applications/kio-extras \
+		x11/kde-applications/konsole
 
 # XXX devel/kf5/baloo
 # kf5-baloo-5.46.0p0v0 conflicts with baloo-4.14.3 in a bulk build
