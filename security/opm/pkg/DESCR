@@ -1,0 +1,2 @@
+opm is a minimalistic password manager written in shell utilizing openssl(1)
+and signify(1) to handle the password store
