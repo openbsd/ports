@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.551 2019/09/25 14:39:04 kmos Exp $
+# $OpenBSD: Makefile,v 1.552 2019/10/05 18:53:56 robert Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -159,6 +159,7 @@
      SUBDIR += opensc
      SUBDIR += openssl
      SUBDIR += ophcrack
+     SUBDIR += opm
      SUBDIR += opmsg
      SUBDIR += origami
      SUBDIR += ossec-hids
