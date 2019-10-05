@@ -1,0 +1,33 @@
+$OpenBSD: patch-Source_WebCore_dom_Document_cpp,v 1.1 2019/10/05 09:46:45 ajacoutot Exp $
+
+From: "commit-queue@webkit.org"
+Date: Fri, 4 Oct 2019 21:51:37 +0000
+Subject: [PATCH] Fix build with icu 65.1 https://bugs.webkit.org/show_bug.cgi?id=202600
+
+Index: Source/WebCore/dom/Document.cpp
+--- Source/WebCore/dom/Document.cpp.orig
++++ Source/WebCore/dom/Document.cpp
+@@ -4944,12 +4944,12 @@ static bool isValidNameNonASCII(const UChar* character
+     unsigned i = 0;
+ 
+     UChar32 c;
+-    U16_NEXT(characters, i, length, c)
++    U16_NEXT(characters, i, length, c);
+     if (!isValidNameStart(c))
+         return false;
+ 
+     while (i < length) {
+-        U16_NEXT(characters, i, length, c)
++        U16_NEXT(characters, i, length, c);
+         if (!isValidNamePart(c))
+             return false;
+     }
+@@ -5009,7 +5009,7 @@ ExceptionOr<std::pair<AtomString, AtomString>> Documen
+ 
+     for (unsigned i = 0; i < length; ) {
+         UChar32 c;
+-        U16_NEXT(qualifiedName, i, length, c)
++        U16_NEXT(qualifiedName, i, length, c);
+         if (c == ':') {
+             if (sawColon)
+                 return Exception { InvalidCharacterError };
