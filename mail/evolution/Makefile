@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.305 2019/07/16 07:47:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.306 2019/10/05 10:05:03 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.32.4
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -54,9 +55,6 @@ BUILD_DEPENDS +=	textproc/highlight
 RUN_DEPENDS +=		textproc/highlight
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
-
-# without --as-needed, evolution takes ages to start
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,--as-needed
 
 CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
 			-DWITH_SA_LEARN="${LOCALBASE}/bin/sa-learn" \
