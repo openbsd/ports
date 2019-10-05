@@ -1,4 +1,4 @@
-$OpenBSD: patch-3rdparty_map2rmp_CFileGenerator_cpp,v 1.1 2018/04/16 18:16:45 landry Exp $
+$OpenBSD: patch-3rdparty_map2rmp_CFileGenerator_cpp,v 1.2 2019/10/05 22:29:30 naddy Exp $
 
 Index: 3rdparty/map2rmp/CFileGenerator.cpp
 --- 3rdparty/map2rmp/CFileGenerator.cpp.orig
@@ -12,3 +12,38 @@ Index: 3rdparty/map2rmp/CFileGenerator.cpp
  
  
  extern "C"
+@@ -57,7 +57,7 @@ extern "C"
+ 
+ static std::vector<JOCTET> jpgbuf;
+ 
+-static const char bmp2bit[] =
++static const signed char bmp2bit[] =
+ {
+     73, 99, 111, 110, 32, 102, 105, 108, 101, 32, 118, 101,
+     114, 115, 105, 111, 110, 32, 49, 46, 48, 46, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0,
+@@ -82,7 +82,7 @@ static const char bmp2bit[] =
+     -1, -1, 0, -1, -1
+ };
+ 
+-static const char bmp4bit[] =
++static const signed char bmp4bit[] =
+ {
+     73, 99, 111, 110, 32, 102, 105, 108, 101, 32, 118, 101,
+     114, 115, 105, 111, 110, 32, 49, 46, 48, 46, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0,
+@@ -764,14 +764,14 @@ void CFileGenerator::writeBmp2Bit(QDataStream& stream,
+ {
+     rmp.directory[INDEX_BMP2BIT].offset = stream.device()->pos();
+     rmp.directory[INDEX_BMP2BIT].length = sizeof(bmp2bit);
+-    stream.writeRawData(bmp2bit, sizeof(bmp2bit));
++    stream.writeRawData(reinterpret_cast<const char *>(bmp2bit), sizeof(bmp2bit));
+ }
+ 
+ void CFileGenerator::writeBmp4Bit(QDataStream& stream, rmp_file_t& rmp)
+ {
+     rmp.directory[INDEX_BMP4BIT].offset = stream.device()->pos();
+     rmp.directory[INDEX_BMP4BIT].length = sizeof(bmp4bit);
+-    stream.writeRawData(bmp4bit, sizeof(bmp4bit));
++    stream.writeRawData(reinterpret_cast<const char *>(bmp4bit), sizeof(bmp4bit));
+ }
+ 
+ void CFileGenerator::writeCvgMap(QDataStream& stream, rmp_file_t& rmp)
