@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.24 2018/07/11 14:43:31 espie Exp $
+# $OpenBSD: User.pm,v 1.25 2019/10/05 15:52:38 espie Exp $
 #
-# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -20,6 +20,11 @@ use warnings;
 
 # handling user personalities
 
+# note that all the "running around" starts with dpb
+# having a saved uid of 0, so we can switch back to root
+# in order to change personality
+
+# the main class is a user that can be used for various operations
 package DPB::User;
 use Fcntl;
 
@@ -33,7 +38,7 @@ sub from_uid
 			$gid = $g;
 		}
 		my $group = getgrgid($gid);
-		bless { user => $l, uid => $uid, 
+		return bless { user => $l, uid => $uid, 
 		    group => $group, gid => $gid,
 		    grouplist => "$gid $groups" }, $class;
 	} else {
@@ -44,16 +49,20 @@ sub from_uid
 sub new
 {
 	my ($class, $u) = @_;
-	# XXX getpwnam for local access, distant access is different
+	# local users are used to do operations
+	# otherwise, distant users are "just" a name for the distant
+	# exec stuff
 	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
+		# XXX getgrouplist(3) is bsd specific.  This happens
+		# seldom enough that we can delegate
 		my $groups = `/usr/bin/id -G $u`;
 		chomp $groups;
 		my $group = getgrgid($gid);
-		bless { user => $l, uid => $uid, 
+		return bless { user => $l, uid => $uid, 
 		    group => $group, gid => $gid,
 		    grouplist => "$gid $groups" }, $class;
 	} else {
-		bless { user => $u}, $class;
+		return bless { user => $u}, $class;
 	}
 }
 
@@ -212,6 +221,12 @@ sub rewrite_file
 	    });
 }
 
+# this is the class we can inherit from
+# the derived class is responsible for implementing ->user
+# (if the default ->{user} isn't enough)
+# to get the actual user object (we encapsulate)
+# then we delegate most of the actual operations to user
+
 package DPB::UserProxy;
 sub run_as
 {
@@ -296,6 +311,8 @@ sub redirect
 # since we don't want to keep too many open files, encapsulate
 # filename + file
 package DPB::UserFile;
+
+# can't inherit from UserProxy, open/stat have different calling mechanisms
 
 sub new
 {

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.16 2019/06/21 23:14:05 espie Exp $
+# $OpenBSD: Job.pm,v 1.17 2019/10/05 15:52:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -21,7 +21,9 @@ use DPB::Util;
 # a "job" is the actual stuff a core runs at some point.
 # it's mostly an abstract class here... it's organized
 # as a list of tasks, with a finalization routine
+
 package DPB::Task;
+# this is used to gc resources from a task (pipes for instance)
 sub end
 {
 }
@@ -41,7 +43,7 @@ sub name
 sub new
 {
 	my ($class, $code) = @_;
-	bless {code => $code}, $class;
+	return bless {code => $code}, $class;
 }
 
 sub run
@@ -50,6 +52,8 @@ sub run
 	&{$self->code($core)}($core->shell);
 }
 
+# this is a placeholder in the parent when the task starts
+# TODO gc ? this isn't actually used
 sub process
 {
 	my ($self, $core) = @_;
@@ -148,7 +152,7 @@ sub really_watch
 sub new
 {
 	my ($class, $name) = @_;
-	bless {name => $name, status => ""}, $class;
+	return bless {name => $name, status => ""}, $class;
 }
 
 sub set_status
