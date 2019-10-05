@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_vmime_charsetConverter_icu_cpp,v 1.1 2019/10/05 08:50:39 ajacoutot Exp $
+
+From e96aeeb14dc51deeea70e6fdffa95f80af78fdfc Mon Sep 17 00:00:00 2001
+From: 0xd34df00d <0xd34df00d@gmail.com>
+Date: Sun, 22 Sep 2019 08:26:11 -0400
+Subject: [PATCH] Avoid extern "C" blocks around ICU includes
+
+Index: src/vmime/charsetConverter_icu.cpp
+--- src/vmime/charsetConverter_icu.cpp.orig
++++ src/vmime/charsetConverter_icu.cpp
+@@ -34,15 +34,12 @@
+ #include "vmime/utility/outputStreamStringAdapter.hpp"
+ 
+ 
+-extern "C" {
+-
+ #ifndef VMIME_BUILDING_DOC
+ 
+ 	#include <unicode/ucnv.h>
+ 	#include <unicode/ucnv_err.h>
+ 
+ #endif // VMIME_BUILDING_DOC
+-}
+ 
+ 
+ #include <unicode/unistr.h>
