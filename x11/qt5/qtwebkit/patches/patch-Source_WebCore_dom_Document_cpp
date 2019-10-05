@@ -1,0 +1,31 @@
+$OpenBSD: patch-Source_WebCore_dom_Document_cpp,v 1.1 2019/10/05 09:51:36 ajacoutot Exp $
+
+Fix build with icu4c >=65
+
+Index: Source/WebCore/dom/Document.cpp
+--- Source/WebCore/dom/Document.cpp.orig
++++ Source/WebCore/dom/Document.cpp
+@@ -3846,12 +3846,12 @@ static bool isValidNameNonASCII(const UChar* character
+     unsigned i = 0;
+ 
+     UChar32 c;
+-    U16_NEXT(characters, i, length, c)
++    U16_NEXT(characters, i, length, c);
+     if (!isValidNameStart(c))
+         return false;
+ 
+     while (i < length) {
+-        U16_NEXT(characters, i, length, c)
++        U16_NEXT(characters, i, length, c);
+         if (!isValidNamePart(c))
+             return false;
+     }
+@@ -3914,7 +3914,7 @@ bool Document::parseQualifiedName(const String& qualif
+     const UChar* s = qualifiedName.characters();
+     for (unsigned i = 0; i < length;) {
+         UChar32 c;
+-        U16_NEXT(s, i, length, c)
++        U16_NEXT(s, i, length, c);
+         if (c == ':') {
+             if (sawColon) {
+                 ec = NAMESPACE_ERR;

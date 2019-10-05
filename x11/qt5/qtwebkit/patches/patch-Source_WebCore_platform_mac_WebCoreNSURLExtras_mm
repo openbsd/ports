@@ -1,0 +1,25 @@
+$OpenBSD: patch-Source_WebCore_platform_mac_WebCoreNSURLExtras_mm,v 1.1 2019/10/05 09:51:36 ajacoutot Exp $
+
+Fix build with icu4c >=65
+
+Index: Source/WebCore/platform/mac/WebCoreNSURLExtras.mm
+--- Source/WebCore/platform/mac/WebCoreNSURLExtras.mm.orig
++++ Source/WebCore/platform/mac/WebCoreNSURLExtras.mm
+@@ -175,7 +175,7 @@ static BOOL allCharactersInIDNScriptWhiteList(const UC
+     int32_t i = 0;
+     while (i < length) {
+         UChar32 c;
+-        U16_NEXT(buffer, i, length, c)
++        U16_NEXT(buffer, i, length, c);
+         UErrorCode error = U_ZERO_ERROR;
+         UScriptCode script = uscript_getScript(c, &error);
+         if (error != U_ZERO_ERROR) {
+@@ -746,7 +746,7 @@ static CFStringRef createStringWithEscapedUnsafeCharac
+     CFIndex i = 0;
+     while (i < length) {
+         UChar32 c;
+-        U16_NEXT(sourceBuffer, i, length, c)
++        U16_NEXT(sourceBuffer, i, length, c);
+         
+         if (isLookalikeCharacter(c)) {
+             uint8_t utf8Buffer[4];

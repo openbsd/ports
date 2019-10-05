@@ -1,0 +1,16 @@
+$OpenBSD: patch-Source_WebCore_platform_graphics_SegmentedFontData_cpp,v 1.1 2019/10/05 09:51:36 ajacoutot Exp $
+
+Fix build with icu4c >=65
+
+Index: Source/WebCore/platform/graphics/SegmentedFontData.cpp
+--- Source/WebCore/platform/graphics/SegmentedFontData.cpp.orig
++++ Source/WebCore/platform/graphics/SegmentedFontData.cpp
+@@ -61,7 +61,7 @@ bool SegmentedFontData::containsCharacters(const UChar
+ {
+     UChar32 c;
+     for (int i = 0; i < length; ) {
+-        U16_NEXT(characters, i, length, c)
++        U16_NEXT(characters, i, length, c);
+         if (!containsCharacter(c))
+             return false;
+     }
