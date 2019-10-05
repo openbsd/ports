@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/10/04 09:57:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2019/10/05 16:20:37 kmos Exp $
 
 COMMENT=	web framework for python
 
 MODPY_EGG_VERSION=	0.40
 DISTNAME=	web.py-${MODPY_EGG_VERSION}
 PKGNAME=	py-webpy-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	www
 
