@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/16 20:38:03 bket Exp $
+# $OpenBSD: Makefile,v 1.10 2019/10/05 16:28:41 kmos Exp $
 
 COMMENT =		data analysis and manipulation library
 
 MODPY_EGG_VERSION =	0.24.2
+REVISION =		0
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -26,7 +27,8 @@ WANTLIB +=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS +=	math/py-numpy${MODPY_FLAVOR}>=1.9.0
+BUILD_DEPENDS +=	lang/cython${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}>=1.9.0
 
 RUN_DEPENDS +=		devel/py-dateutil${MODPY_FLAVOR}>=2.5.0 \
 			devel/py-tz${MODPY_FLAVOR} \
