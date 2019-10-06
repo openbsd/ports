@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:56 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/10/06 13:35:07 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/${MODPY_PYCACHE}address.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/${MODPY_PYCACHE}category.${MODPY_PYC_MAGIC_TAG}pyc
@@ -49,7 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/party.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/party.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/${MODPY_PYCACHE}test_party.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/scenario_party_erase.rst
