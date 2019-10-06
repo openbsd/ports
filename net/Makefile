@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1143 2019/10/04 20:58:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.1144 2019/10/06 20:34:22 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -13,6 +13,7 @@
      SUBDIR += argus
      SUBDIR += argus-clients
      SUBDIR += arp-scan
+     SUBDIR += arouteserver
      SUBDIR += arpcatch
      SUBDIR += arpd
      SUBDIR += arping
