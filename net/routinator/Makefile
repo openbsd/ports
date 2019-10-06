@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/10/04 20:58:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/10/06 20:12:26 sthen Exp $
 
 COMMENT =		RPKI "relying party" software
 
 GH_ACCOUNT =		NLnetLabs
 GH_PROJECT =		routinator
 GH_TAGNAME =		v0.6.1
+REVISION =		0
 
 CATEGORIES =		net
+
+MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
