@@ -310,7 +310,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +    else if (sandbox_type == service_manager::SANDBOX_TYPE_NETWORK)
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_network");
 +    else
-+      SetPledge("stdio rpath cpath wpath fattr sendfd recvfd", NULL);
++      SetPledge("stdio rpath cpath wpath fattr sendfd recvfd prot_exec", NULL);
 +  } else {
 +    LOG(ERROR) << "non-pledge()'d process: " << process_type;
 +    return false;

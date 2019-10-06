@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.component,v 1.4 2019/10/05 18:55:13 robert Exp $
-chrome/libVkICD_mock_icd.so
+@comment $OpenBSD: PFRAG.component,v 1.5 2019/10/06 11:03:15 robert Exp $
 chrome/libaccessibility.so
 chrome/libandroid_mojo_bindings_shared.so
 chrome/libanimation.so
@@ -80,7 +79,6 @@ chrome/libextras.so
 chrome/libffmpeg.so
 chrome/libfido.so
 chrome/libfingerprint.so
-chrome/libfontconfig.so
 chrome/libfreetype_harfbuzz.so
 chrome/libgamepad_mojom.so
 chrome/libgamepad_mojom_blink.so
