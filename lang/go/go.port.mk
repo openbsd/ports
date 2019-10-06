@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.25 2019/09/15 02:04:00 jsing Exp $
+# $OpenBSD: go.port.mk,v 1.26 2019/10/06 15:37:15 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -11,10 +11,20 @@ MODGO_BUILD_DEPENDS =	lang/go
 BUILD_DEPENDS +=	${MODGO_BUILD_DEPENDS}
 .endif
 
+.if ${MACHINE_ARCH} == "amd64"
+_GOARCH =	amd64
+.elif ${MACHINE_ARCH} == "arm"
+_GOARCH =	arm
+.elif ${MACHINE_ARCH} == "aarch64"
+_GOARCH =	arm64
+.elif ${MACHINE_ARCH} == "i386"
+_GOARCH =	386
+.endif
+
 MODGO_PACKAGE_PATH =	${PREFIX}/go-pkg
-MODGO_PACKAGES =	go-pkg/pkg/openbsd_${MACHINE_ARCH:S/i386/386/}
+MODGO_PACKAGES =	go-pkg/pkg/openbsd_${_GOARCH}
 MODGO_SOURCES =		go-pkg/src
-MODGO_TOOLS =		go-pkg/tool/openbsd_${MACHINE_ARCH:S/i386/386/}
+MODGO_TOOLS =		go-pkg/tool/openbsd_${_GOARCH}
 
 SUBST_VARS +=		MODGO_TOOLS MODGO_PACKAGES MODGO_SOURCES
 

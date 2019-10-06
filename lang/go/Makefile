@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/10/04 17:02:11 jsing Exp $
+# $OpenBSD: Makefile,v 1.74 2019/10/06 15:37:15 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -44,6 +44,7 @@ GOARCH =		unknown
 GOROOT =		${PREFIX}/go
 GOROOT_BOOTSTRAP =
 
+# sync with go.port.mk
 .if ${MACHINE_ARCH} == "amd64"
 GOARCH =		amd64
 .elif ${MACHINE_ARCH} == "arm"
