@@ -1,0 +1,2 @@
+Core utilities for Python packages. Includes version handling,
+specifiers, markers, requirements, tags, utilities.
