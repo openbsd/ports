@@ -1,0 +1,10 @@
+ARouteServer is a Python tool to automatically build (and test)
+configurations for BGP route servers.
+
+Given YAML files providing general policies and clients' configuration
+options, ARouteServer acquires external information to enrich them
+(i.e. bgpq3 for IRR data, PeeringDB for max-prefix limit and AS-SETs)
+and uses built-in Jinja2 templates to render configuration files for
+route servers.
+
+Currently it supports BIRD and OpenBGPd.
