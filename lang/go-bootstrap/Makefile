@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/14 02:16:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/10/06 15:34:20 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
+NOT_FOR_ARCHS =		aarch64
 
 COMMENT =		Go programming language
 
