@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.467 2019/10/06 11:03:15 robert Exp $
+# $OpenBSD: Makefile,v 1.468 2019/10/06 14:06:10 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -18,7 +18,7 @@ ELECTRON_V=		6.0.3
 
 DISTNAME=		chromium-${V}
 
-REVISION=		3
+REVISION=		4
 
 DISTFILES+=		chromium-${V}${EXTRACT_SUFX} \
 			chromium-${ECV}${EXTRACT_SUFX} \
