@@ -1,5 +1,7 @@
 # $OpenBSD $
 
+BROKEN =	Crashes immediately when you add a clip to the timeline
+
 #Qt5Webkit
 USE_WXNEEDED =	Yes
 
