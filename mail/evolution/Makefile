@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.306 2019/10/05 10:05:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.307 2019/10/06 10:48:37 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
@@ -54,6 +54,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 BUILD_DEPENDS +=	textproc/highlight
 RUN_DEPENDS +=		textproc/highlight
 
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
