@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_js_src_jit_ProcessExecutableMemory_h,v 1.5 2019/09/13 15:05:17 landry Exp $
+$OpenBSD: patch-mozilla_js_src_jit_ProcessExecutableMemory_h,v 1.6 2019/10/07 13:43:06 kurt Exp $
 
 Index: js/src/jit/ProcessExecutableMemory.h
 --- js/src/jit/ProcessExecutableMemory.h.orig
@@ -11,4 +11,4 @@ Index: js/src/jit/ProcessExecutableMemory.h
 +#if JS_BITS_PER_WORD == 32 || defined (__OpenBSD__)
  static const size_t MaxCodeBytesPerProcess = 140 * 1024 * 1024;
  #else
- static const size_t MaxCodeBytesPerProcess = 1 * 1024 * 1024 * 1024;
+ // This is the largest number which satisfies various alignment static
