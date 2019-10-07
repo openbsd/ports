@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.24 2019/07/20 10:59:08 espie Exp $
+# $OpenBSD: Distant.pm,v 1.25 2019/10/07 04:52:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -55,7 +55,7 @@ sub ssh
 sub new
 {
 	my ($class, $host) = @_;
-	bless {
+	return bless {
 	    master => DPB::Ssh::Master->find($host),
 	    prop => $host->{prop}
 	    }, $class;
@@ -63,23 +63,26 @@ sub new
 
 sub is_alive
 {
-	shift->{master}->is_alive;
+	my $shell = shift;
+	return $shell->{master}->is_alive;
 }
 
 sub socket
 {
-	shift->{master}->socket;
+	my $shell = shift;
+	return $shell->{master}->socket;
 }
 
 sub hostname
 {
-	shift->{master}->hostname;
+	my $shell = shift;
+	return $shell->{master}->hostname;
 }
 
 sub stringize_master_pid
 {
 	my $shell = shift;
-	my $pid = $shell->{master}->{pid};
+	my $pid = $shell->{master}{pid};
 
 	return " [$pid]";
 }

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.14 2019/09/02 13:15:38 espie Exp $
+# $OpenBSD: Host.pm,v 1.15 2019/10/07 04:52:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,7 +16,31 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
+
 # we have unique objects for hosts, so we can put properties in there.
+# synopsis
+# 	$host = DPB::Host->new('name', $prop);
+# then it can be used to obtain a shell to run things
+# ... and also the core class responsible for forking
+# so the full run is usually
+# 	$core = $host->shellclass->new($host);
+#		attach job to core (a job is a list of tasks)
+# 	$core->task->run;
+# 		where task knows how to fork, and then it uses
+#	$core->host->shell to execute commands
+
+# there is a registry of hosts accessible by name:
+# 	DPB::Host->retrieve(name)
+# a host specific for fetching
+# 	DPB::Host->fetch_host($prop)
+# a quick way to run shitz before full initialization
+#	DPB::Host::Localhost->getshell($state)
+#		(this will make use of default_prop/chroot in state
+#		if already setup)
+
+# actually, the cores are created through host->new_init_core
+#	which will start up the initialization for each core
+#	and the finalization code will clone and register actual cores
 package DPB::Host;
 
 my $hosts = {};

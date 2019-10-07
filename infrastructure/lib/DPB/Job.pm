@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.17 2019/10/05 15:52:38 espie Exp $
+# $OpenBSD: Job.pm,v 1.18 2019/10/07 04:52:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -46,6 +46,7 @@ sub new
 	return bless {code => $code}, $class;
 }
 
+# TODO this should probably be called exec since we're after the fork
 sub run
 {
 	my ($self, $core) = @_;

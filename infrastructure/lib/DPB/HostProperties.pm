@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.16 2016/04/30 09:15:58 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.17 2019/10/07 04:52:14 espie Exp $
 #
-# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -18,6 +18,22 @@
 use strict;
 use warnings;
 
+# HostProperties is basically a hash of properties associated to a host
+#   this contains the tricky stuff
+#	- sf speed factor. Only comes into play with heterogeneous hosts
+#	- likewise, build in memory
+#	- taint/untaint: marking a host with a taint from a pkgpath
+#	and of course checking it's still okay
+#	- the associated build_user
+#
+# it's generally built straight from a hash:
+#	my $prop = DPB::HostProperties->new(KEY => value...);
+# and "finalized" after reading a host line
+#	$prop->finalize_with_overrides(another_hash);
+# 		(the overrides come from the command line)
+# and THEN the host is constructed:
+#	$host = DPB::Host->new($host, $prop)
+
 package DPB::HostProperties;
 use DPB::User;
 
@@ -29,7 +45,7 @@ sub new
 {
 	my ($class, $default) = @_;
 	$default //= {};
-	bless {%$default}, $class;
+	return bless {%$default}, $class;
 }
 
 sub add_overrides
@@ -110,7 +126,7 @@ sub finalize_with_overrides
 {
 	my ($self, $overrides) = @_;
 	$self->add_overrides($overrides);
-	$self->finalize;
+	return $self->finalize;
 }
 
 sub taint

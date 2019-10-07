@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.18 2018/08/01 15:52:00 espie Exp $
+# $OpenBSD: Shell.pm,v 1.19 2019/10/07 04:52:14 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -18,21 +18,43 @@ use strict;
 use warnings;
 
 # the shell package is used to exec commands.
+# It works together with the Host class that actually
+# contains various properties (distant/local host, chrooted, running as root)
+# synopsis:
+#	$host->shell->tweaks...->exec('cmd', 'args'...)
+#		with tweaks being 
+#		->chdir('dir')
+#		->env(VAR=>value...)
+#		->as_root(bool)		# defaults to "true"
+#		->run_as('user')
+#		->nochroot
+
 # note that we're dealing with exec, so we can modify the object/context
 # itself with abandon
 package DPB::Shell::Abstract;
 
+# actual creation is done through
+# $host->shellclass->new($host)
+
 sub new
 {
 	my ($class, $host) = @_;
-	$host //= {}; # this makes it possible to build "localhost" shells
-	bless {as_root => 0, prop => $host->{prop}}, $class;
+	$host //= {}; 	# this makes it possible to build "localhost" shells
+			# without any prop.
+	return bless {as_root => 0, prop => $host->{prop}}, $class;
 }
 
+# the abstract class doesn't know how to exec anything
+# but it has accessors and tweakers
 sub prop
 {
 	my $self = shift;
 	return $self->{prop};
+}
+
+sub is_alive
+{
+	return 1;
 }
 
 sub stringize_master_pid
@@ -83,11 +105,6 @@ sub nochroot
 
 package DPB::Shell::Local;
 our @ISA = qw(DPB::Shell::Abstract);
-
-sub is_alive
-{
-	return 1;
-}
 
 sub chdir
 {
@@ -183,15 +200,10 @@ sub quote
 	return $cmd;
 }
 
-sub is_alive
-{
-	return 1;
-}
-
 sub nochroot
 {
 	my $self = shift;
-	bless $self, 'DPB::Shell::Local';
+	return bless $self, 'DPB::Shell::Local';
 }
 
 package DPB::Shell::Local::Root;
