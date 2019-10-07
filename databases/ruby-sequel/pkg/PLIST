@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/03/01 14:30:11 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.31 2019/10/07 17:34:12 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -92,7 +92,14 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.15.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.16.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.17.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.18.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.19.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.2.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.20.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.21.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.22.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.23.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.24.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.25.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.3.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.4.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.5.0.txt
@@ -294,6 +301,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/accessed_columns.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/active_model.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/after_initialize.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/association_dependencies.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/association_multi_add_remove.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/association_pks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/association_proxies.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/auto_validations.rb
@@ -321,6 +329,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/finder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/force_encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/hook_class_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/input_transformer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/insert_conflict.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/insert_returning_select.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/instance_filters.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/instance_hooks.rb
@@ -347,6 +356,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/singular_table_names.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/skip_create_refresh.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/split_values.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/static_cache.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/static_cache_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/string_stripper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/subclasses.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/subset_conditions.rb
@@ -406,6 +416,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/active_model_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/after_initialize_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/arbitrary_servers_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/association_dependencies_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/association_multi_add_remove_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/association_pks_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/association_proxies_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/auto_literal_strings_spec.rb
@@ -456,6 +467,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/implicit_subquery_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/index_caching_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/inflector_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/input_transformer_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/insert_conflict_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/insert_returning_select_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/instance_filters_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/instance_hooks_spec.rb
@@ -520,6 +532,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/split_array_nil_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/split_values_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/sql_comments_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/sql_expr_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/static_cache_cache_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/static_cache_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/string_agg_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/string_date_time_spec.rb
