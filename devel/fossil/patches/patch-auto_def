@@ -1,8 +1,8 @@
-$OpenBSD: patch-auto_def,v 1.10 2018/09/24 01:41:52 jturner Exp $
+$OpenBSD: patch-auto_def,v 1.11 2019/10/07 01:25:17 jturner Exp $
 Index: auto.def
 --- auto.def.orig
 +++ auto.def
-@@ -234,7 +234,7 @@ if {[opt-bool with-th1-hooks]} {
+@@ -264,7 +264,7 @@ if {[opt-bool with-th1-hooks]} {
  
  if {[opt-bool static]} {
      # XXX: This will not work on all systems.
