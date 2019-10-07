@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.532 2019/10/06 20:20:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.533 2019/10/07 10:20:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -280,6 +280,7 @@
      SUBDIR += rdiff-backup
      SUBDIR += reed-alert
      SUBDIR += remotebox
+     SUBDIR += reposync
      SUBDIR += resmon
      SUBDIR += restic
      SUBDIR += restic-rest-server
