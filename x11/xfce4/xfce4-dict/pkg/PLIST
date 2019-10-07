@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/11/29 21:14:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/10/07 09:35:46 landry Exp $
 @bin bin/xfce4-dict
 lib/xfce4/panel/plugins/libxfce4dict.so
 @man man/man1/xfce4-dict.1
@@ -23,6 +23,7 @@ share/locale/gl/LC_MESSAGES/xfce4-dict.mo
 share/locale/he/LC_MESSAGES/xfce4-dict.mo
 share/locale/hr/LC_MESSAGES/xfce4-dict.mo
 share/locale/hu/LC_MESSAGES/xfce4-dict.mo
+share/locale/hy_AM/LC_MESSAGES/xfce4-dict.mo
 share/locale/id/LC_MESSAGES/xfce4-dict.mo
 share/locale/is/LC_MESSAGES/xfce4-dict.mo
 share/locale/it/LC_MESSAGES/xfce4-dict.mo

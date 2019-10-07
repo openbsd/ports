@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2019/08/15 07:08:15 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2019/10/07 09:35:46 landry Exp $
 
 COMMENT=	Xfce4 dictionary application
 
-XFCE_VERSION=	0.8.2
+XFCE_VERSION=	0.8.3
 XFCE_GOODIE=	xfce4-dict
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
