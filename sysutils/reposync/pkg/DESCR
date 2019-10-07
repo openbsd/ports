@@ -1,0 +1,5 @@
+reposync is a script, intended to run from cron, to update an OpenBSD
+CVS repository using rsync. To reduce disk io, it only does a full update
+if either the ChangeLog has been updated, or some larger time has elapsed
+since the last run (to ensure changes with no ChangeLog entry, such as
+tagging, are also picked up).

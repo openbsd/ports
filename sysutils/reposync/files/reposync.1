@@ -1,0 +1,68 @@
+.\"	$OpenBSD: reposync.1,v 1.1.1.1 2019/10/07 10:20:09 sthen Exp $
+.\"
+.\" Copyright (c) 2019 Stuart Henderson <sthen@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: October 7 2019 $
+.Dt REPOSYNC 1
+.Os
+.Sh NAME
+.Nm reposync
+.Nd update OpenBSD source repository
+.Sh SYNOPSIS
+.Nm
+.Ar rsync://upstream/path
+.Op Ar destination
+.Sh DESCRIPTION
+.Nm
+is a utility to update the
+.Ox
+source repository.
+.Pp
+It connects to an rsync server, optionally using
+.Xr ssh 1
+port forwarding to allow verification of the upstream server.
+If only a short time has elapsed since the previous update, the
+.Pa CVSROOT
+directory on the upstream server is checked for changes and the update
+is skipped if none are detected.
+.Pp
+The directory
+.Pa /var/db/reposync
+must exist and be writable by the user running
+.Nm .
+.Sh EXAMPLES
+.Dl $ reposync rsync://anoncvs.example.org/cvs /home/cvs
+.Pp
+Fetch files using the cleartext rsync protocol from
+.Pa rsync://anoncvs.example.org/cvs
+to update the local directory
+.Pa /home/cvs .
+.Pp
+.Dl $ reposync rsync://anoncvs@anoncvs.example.org/cvs
+.Pp
+Connect via
+.Xr ssh 1
+to anoncvs@anoncvs.example.org and use the port-forward functionality
+to connect to rsync using an encrypted, authenticated channel.
+As
+.Ar destination
+is not given, files are updated in
+.Pa /cvs
+by default.
+.El
+.Sh SEE ALSO
+.Xr ssh 1 ,
+.Xr rsync 1 ,
+.Xr cvs 1 .

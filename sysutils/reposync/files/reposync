@@ -1,0 +1,103 @@
+#!/bin/ksh
+#
+# $OpenBSD: reposync,v 1.1.1.1 2019/10/07 10:20:09 sthen Exp $
+#
+# Copyright (c) 2018, 2019 Stuart Henderson <sthen@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+err()
+{
+        echo "${0##*/}: $*" >&2
+	exit 1
+}
+
+usage()
+{
+        echo "usage: ${0##*/} rsync://upstream/cvs [/path/to/cvs]" >&2
+	exit 1
+}
+
+if [[ -z $1 ]]; then
+	usage
+	exit 1
+fi
+synchost="$1"
+repodir=/cvs
+[[ -n $2 ]] && repodir=$2
+
+run_rsync()
+{
+	case $synchost in
+		rsync://*@*)
+			# reach rsync on the server via an ssh port-forward
+			rsync -e "ssh -W localhost:rsync" $* ;;
+		*)
+			rsync $* ;;
+	esac
+}
+
+rundir="/var/db/reposync"
+
+for i in $rundir $repodir; do
+	[ ! -d $i ] || [ ! -w $i ] &&
+	    err "$i must exist as a writable directory"
+done
+
+oldhash="invalid"
+hashfile="$rundir/reposync.hash"
+lockfile="$rundir/reposync.lock"
+
+if [ -h $lockfile ]; then
+        # read the pid from $lockfile symlink target
+        lockedpid=$(stat -f %Y $lockfile)
+
+        # exit if it's A) still running and B) looks like this script
+        if ps -o command -p $lockedpid | grep -q "${0##*/}"; then
+		err "already running?"
+        fi
+
+        # not still running, the lock must be stale (machine panicked, etc) so zap it
+        rm -f $lockfile
+fi
+
+ln -s $$ $lockfile || err "could not lock $lockfile"
+
+trap "rm -f $lockfile" 0 1 2 15
+
+# check CVSROOT directory listing to identify updates; primarily for
+# ChangeLog but val-tags may also be updated after a checkout was done
+# using a new tag. ignore "history" (lists read-only operations).
+newhash=`run_rsync ${synchost}/CVSROOT/ | grep -v history | sha256`
+
+if [ -r $hashfile ]; then
+	age=$((`date +%s` - `stat -t %s -f %m $hashfile`))
+	# don't entirely rely on CVSROOT files; not all tree operations
+	# result in a change there so also do a full update run at least
+	# every 6h.
+	if [ $age -lt $((6*60*60)) ]; then
+		oldhash=`cat $hashfile`
+	fi
+fi
+
+if [[ $oldhash != $newhash ]]; then
+	# only update saved hash if sync was successful; otherwise leave
+	# the old one so sync is reattempted next run
+	if run_rsync -rlptiz --omit-dir-times --delete \
+	    --exclude='#cvs.rfl.*' --exclude='CVSROOT/history*' \
+	    ${synchost}/{CVSROOT,www,xenocara,ports,src} $repodir/; then
+		echo $newhash > $hashfile
+	else
+		err "rsync failed"
+	fi
+fi
