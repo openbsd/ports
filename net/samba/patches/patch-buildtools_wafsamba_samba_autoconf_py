@@ -1,4 +1,4 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.9 2018/08/29 11:40:23 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.10 2019/10/07 12:50:13 jca Exp $
 
 1. Sort -L flags to unbreak linking when any other version of Samba is installed.
 
@@ -7,7 +7,7 @@ $OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.9 2018/08/29 11:40:23 
 Index: buildtools/wafsamba/samba_autoconf.py
 --- buildtools/wafsamba/samba_autoconf.py.orig
 +++ buildtools/wafsamba/samba_autoconf.py
-@@ -825,6 +825,27 @@ def ADD_LDFLAGS(conf, flags, testflags=False):
+@@ -848,6 +848,27 @@ def ADD_LDFLAGS(conf, flags, testflags=False):
      if not 'EXTRA_LDFLAGS' in conf.env:
          conf.env['EXTRA_LDFLAGS'] = []
      conf.env['EXTRA_LDFLAGS'].extend(TO_LIST(flags))
@@ -35,7 +35,7 @@ Index: buildtools/wafsamba/samba_autoconf.py
      return flags
  
  
-@@ -888,10 +909,9 @@ def SETUP_CONFIGURE_CACHE(conf, enable):
+@@ -911,10 +932,9 @@ def SETUP_CONFIGURE_CACHE(conf, enable):
  def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(conf):
      # we don't want any libraries or modules to rely on runtime
      # resolution of symbols

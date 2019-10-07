@@ -1,11 +1,11 @@
-$OpenBSD: patch-auth_auth_log_c,v 1.1 2018/09/02 16:41:56 jca Exp $
+$OpenBSD: patch-auth_auth_log_c,v 1.2 2019/10/07 12:50:13 jca Exp $
 
 Avoid printf("%s", NULL);
 
 Index: auth/auth_log.c
 --- auth/auth_log.c.orig
 +++ auth/auth_log.c
-@@ -716,7 +716,8 @@ static void log_authentication_event_human_readable(
+@@ -566,7 +566,8 @@ static void log_authentication_event_human_readable(
  			ui->netlogon_trust_account.account_name);
  		nl = talloc_asprintf(frame,
  			" NETLOGON computer [%s] trust account [%s]",
@@ -15,7 +15,7 @@ Index: auth/auth_log.c
  	}
  
  	remote = tsocket_address_string(ui->remote_host, frame);
-@@ -735,8 +736,10 @@ static void log_authentication_event_human_readable(
+@@ -585,8 +586,10 @@ static void log_authentication_event_human_readable(
  		logon_line = talloc_asprintf(
  				frame,
  				" mapped to [%s]\\[%s].",
@@ -28,7 +28,7 @@ Index: auth/auth_log.c
  	}
  
  	DEBUGC(DBGC_AUTH_AUDIT, debug_level,
-@@ -746,13 +749,15 @@ static void log_authentication_event_human_readable(
+@@ -596,13 +599,15 @@ static void log_authentication_event_human_readable(
  		"%s local host [%s]"
  		" %s\n",
  		ui->service_description,

@@ -1,4 +1,4 @@
-$OpenBSD: patch-source3_wscript_build,v 1.1 2019/01/23 01:46:19 jca Exp $
+$OpenBSD: patch-source3_wscript_build,v 1.2 2019/10/07 12:50:13 jca Exp $
 
 XXX is lld-7.0.1 being too picky here?
 
@@ -9,7 +9,7 @@ Work around by spelling out the affected symbols.
 Index: source3/wscript_build
 --- source3/wscript_build.orig
 +++ source3/wscript_build
-@@ -124,7 +124,9 @@ ldapsam_pdb_match = ['!priv2ld', '!smbldap_search_doma
+@@ -135,7 +135,9 @@ ldapsam_pdb_match = ['!priv2ld', '!smbldap_search_doma
                       '!get_attr_list']
  private_pdb_match.append('!pdb_nds_*')
  private_pdb_match.append('!pdb_ldapsam_init*')

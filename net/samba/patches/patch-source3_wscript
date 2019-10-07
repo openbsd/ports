@@ -1,4 +1,4 @@
-$OpenBSD: patch-source3_wscript,v 1.8 2019/04/11 14:05:58 jca Exp $
+$OpenBSD: patch-source3_wscript,v 1.9 2019/10/07 12:50:13 jca Exp $
 
 - use more generic check for OpenBSD.
 - avoid nested function error with clang
@@ -15,7 +15,7 @@ Index: source3/wscript
          conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
  
      # We crash without vfs_default
-@@ -1534,6 +1534,7 @@ main() {
+@@ -1521,6 +1521,7 @@ main() {
  
      conf.CHECK_CODE('void seekdir(DIR *d, long loc) { return; }',
                      'SEEKDIR_RETURNS_VOID',

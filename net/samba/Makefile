@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.275 2019/06/22 23:58:23 jca Exp $
+# $OpenBSD: Makefile,v 1.276 2019/10/07 12:50:13 jca Exp $
 
-VERSION =		4.8.12
+VERSION =		4.9.13
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -17,19 +17,15 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			1.3.8
-TEVENT_V =		0.9.36
-
-REVISION-main =		1
-REVISION-ldb =		0
-REVISION-tevent =	6
+LDB_V =			1.4.7
+TEVENT_V =		0.9.37
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
 			dcerpc			0.0 \
 			dcerpc-binding		1.1 \
 			dcerpc-samr		0.0 \
-			dcerpc-server		4.0 \
+			dcerpc-server		5.0 \
 			gssapi-samba4		0.0 \
 			hcrypto-samba4		0.0 \
 			hdb-samba4		0.0 \
@@ -48,20 +44,20 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			roken-samba4		0.0 \
 			samba-credentials	0.2 \
 			samba-errors		1.0 \
-			samba-hostconfig	4.0 \
+			samba-hostconfig	4.1 \
 			samba-passdb		2.1 \
 			samba-policy		0.0 \
-			samba-util		3.2 \
-			samdb			0.1 \
-			smbclient		4.2 \
-			smbconf			5.1 \
+			samba-util		4.0 \
+			samdb			0.2 \
+			smbclient		4.3 \
+			smbconf			6.0 \
 			smbldap			0.1 \
-			tevent			0.4 \
-			tevent-util		1.0 \
+			tevent			0.5 \
+			tevent-util		1.1 \
 			wbclient		3.2 \
 			wind-samba4		0.0 \
-			replace			8.0 \
-			util-setid		8.0
+			replace			9.0 \
+			util-setid		9.0
 
 CATEGORIES =		net sysutils security
 
@@ -97,7 +93,8 @@ WANTLIB-util =		${WANTLIB-common}
 
 WANTLIB-docs =
 
-MASTER_SITES =		https://download.samba.org/pub/samba/stable/ \
+MASTER_SITES =		https://autogeree.net/~jca/distfiles/ \
+			https://download.samba.org/pub/samba/stable/ \
 			https://download.samba.org/pub/samba/old-versions/
 
 MULTI_PACKAGES =	-main -ldb -tevent -util -docs
@@ -167,7 +164,8 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--without-libarchive \
 			--disable-rpath \
 			--with-ntvfs-fileserver \
-			--without-gpgme
+			--without-gpgme \
+			--without-ldb-lmdb
 
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
 #CONFIGURE_ARGS +=	--enable-developer

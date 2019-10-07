@@ -1,9 +1,9 @@
-$OpenBSD: patch-source4_dsdb_samdb_ldb_modules_acl_c,v 1.1 2018/09/02 16:41:56 jca Exp $
+$OpenBSD: patch-source4_dsdb_samdb_ldb_modules_acl_c,v 1.2 2019/10/07 12:50:13 jca Exp $
 
 Index: source4/dsdb/samdb/ldb_modules/acl.c
 --- source4/dsdb/samdb/ldb_modules/acl.c.orig
 +++ source4/dsdb/samdb/ldb_modules/acl.c
-@@ -631,7 +631,7 @@ fail:
+@@ -643,7 +643,7 @@ fail:
  		      "nbname[%s] ntds[%s] forest[%s] domain[%s]\n",
  		      spn_value, (unsigned)userAccountControl,
  		      samAccountName, dnsHostName,
