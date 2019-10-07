@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/09/22 20:15:51 kn Exp $
+# $OpenBSD: Makefile,v 1.36 2019/10/07 16:16:09 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -21,6 +21,7 @@ COMMENT =		fast implementation of the Python language
 # CPython to build PyPy instead. Note this is slower.
 
 V =			7.1.1
+REVISION =		0
 BOOTSTRAP_V =		${V}
 DISTNAME =		pypy2.7-v${V}-src
 PKGNAME =		pypy-${V}
@@ -28,7 +29,7 @@ BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://pypy.org/
+HOMEPAGE =		https://pypy.org/
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
@@ -66,6 +67,9 @@ USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx \
 			databases/gdbm \
 			${MODTK_BUILD_DEPENDS}
+.if ${FLAVOR:Mno_bootstrap}
+BUILD_DEPENDS +=	devel/py-cparser
+.endif
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 			databases/gdbm
 
