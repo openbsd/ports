@@ -1,10 +1,11 @@
-@comment $OpenBSD: PFRAG.no-native,v 1.1 2019/03/04 12:51:15 chrisz Exp $
+@comment $OpenBSD: PFRAG.no-native,v 1.2 2019/10/07 06:40:15 chrisz Exp $
 lib/ocaml/coq/clib/clib.cma
+lib/ocaml/coq/config/config.cma
 lib/ocaml/coq/dev/top_printers.cmi
 lib/ocaml/coq/engine/engine.cma
+lib/ocaml/coq/gramlib/.pack/gramlib.cma
 lib/ocaml/coq/ide/ide.cma
 lib/ocaml/coq/interp/interp.cma
-lib/ocaml/coq/intf/intf.cma
 lib/ocaml/coq/kernel/kernel.cma
 lib/ocaml/coq/lib/lib.cma
 lib/ocaml/coq/library/library.cma
@@ -24,6 +25,7 @@ lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellString.c
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZInt.cmo
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZInteger.cmo
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZNum.cmo
+lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOCamlInt63.cmo
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlBasic.cmo
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlBigIntConv.cmo
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlIntConv.cmo
@@ -35,17 +37,17 @@ lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlZInt.cmo
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_Extraction.cmo
 lib/ocaml/coq/plugins/extraction/extraction_plugin.cmo
 lib/ocaml/coq/plugins/firstorder/ground_plugin.cmo
-lib/ocaml/coq/plugins/fourier/.coq-native/NCoq_fourier_Fourier.cmo
-lib/ocaml/coq/plugins/fourier/.coq-native/NCoq_fourier_Fourier_util.cmo
-lib/ocaml/coq/plugins/fourier/fourier_plugin.cmo
 lib/ocaml/coq/plugins/funind/.coq-native/NCoq_funind_FunInd.cmo
 lib/ocaml/coq/plugins/funind/.coq-native/NCoq_funind_Recdef.cmo
 lib/ocaml/coq/plugins/funind/recdef_plugin.cmo
 lib/ocaml/coq/plugins/ltac/.coq-native/NCoq_ltac_Ltac.cmo
 lib/ocaml/coq/plugins/ltac/ltac_plugin.cmo
 lib/ocaml/coq/plugins/ltac/tauto_plugin.cmo
+lib/ocaml/coq/plugins/micromega/.coq-native/NCoq_micromega_DeclConstant.cmo
 lib/ocaml/coq/plugins/micromega/.coq-native/NCoq_micromega_Env.cmo
 lib/ocaml/coq/plugins/micromega/.coq-native/NCoq_micromega_EnvRing.cmo
+lib/ocaml/coq/plugins/micromega/.coq-native/NCoq_micromega_Fourier.cmo
+lib/ocaml/coq/plugins/micromega/.coq-native/NCoq_micromega_Fourier_util.cmo
 lib/ocaml/coq/plugins/micromega/.coq-native/NCoq_micromega_Lia.cmo
 lib/ocaml/coq/plugins/micromega/.coq-native/NCoq_micromega_Lqa.cmo
 lib/ocaml/coq/plugins/micromega/.coq-native/NCoq_micromega_Lra.cmo
@@ -69,11 +71,6 @@ lib/ocaml/coq/plugins/omega/.coq-native/NCoq_omega_OmegaPlugin.cmo
 lib/ocaml/coq/plugins/omega/.coq-native/NCoq_omega_OmegaTactic.cmo
 lib/ocaml/coq/plugins/omega/.coq-native/NCoq_omega_PreOmega.cmo
 lib/ocaml/coq/plugins/omega/omega_plugin.cmo
-lib/ocaml/coq/plugins/quote/.coq-native/NCoq_quote_Quote.cmo
-lib/ocaml/coq/plugins/quote/quote_plugin.cmo
-lib/ocaml/coq/plugins/romega/.coq-native/NCoq_romega_ROmega.cmo
-lib/ocaml/coq/plugins/romega/.coq-native/NCoq_romega_ReflOmegaCore.cmo
-lib/ocaml/coq/plugins/romega/romega_plugin.cmo
 lib/ocaml/coq/plugins/rtauto/.coq-native/NCoq_rtauto_Bintree.cmo
 lib/ocaml/coq/plugins/rtauto/.coq-native/NCoq_rtauto_Rtauto.cmo
 lib/ocaml/coq/plugins/rtauto/rtauto_plugin.cmo
@@ -108,12 +105,10 @@ lib/ocaml/coq/plugins/ssr/.coq-native/NCoq_ssr_ssrfun.cmo
 lib/ocaml/coq/plugins/ssr/ssreflect_plugin.cmo
 lib/ocaml/coq/plugins/ssrmatching/.coq-native/NCoq_ssrmatching_ssrmatching.cmo
 lib/ocaml/coq/plugins/ssrmatching/ssrmatching_plugin.cmo
-lib/ocaml/coq/plugins/syntax/ascii_syntax_plugin.cmo
-lib/ocaml/coq/plugins/syntax/int31_syntax_plugin.cmo
-lib/ocaml/coq/plugins/syntax/nat_syntax_plugin.cmo
+lib/ocaml/coq/plugins/syntax/int63_syntax_plugin.cmo
+lib/ocaml/coq/plugins/syntax/numeral_notation_plugin.cmo
 lib/ocaml/coq/plugins/syntax/r_syntax_plugin.cmo
-lib/ocaml/coq/plugins/syntax/string_syntax_plugin.cmo
-lib/ocaml/coq/plugins/syntax/z_syntax_plugin.cmo
+lib/ocaml/coq/plugins/syntax/string_notation_plugin.cmo
 lib/ocaml/coq/pretyping/pretyping.cma
 lib/ocaml/coq/printing/printing.cma
 lib/ocaml/coq/proofs/proofs.cma
@@ -164,9 +159,9 @@ lib/ocaml/coq/theories/Classes/.coq-native/NCoq_Classes_SetoidClass.cmo
 lib/ocaml/coq/theories/Classes/.coq-native/NCoq_Classes_SetoidDec.cmo
 lib/ocaml/coq/theories/Classes/.coq-native/NCoq_Classes_SetoidTactics.cmo
 lib/ocaml/coq/theories/Compat/.coq-native/NCoq_Compat_AdmitAxiom.cmo
-lib/ocaml/coq/theories/Compat/.coq-native/NCoq_Compat_Coq86.cmo
-lib/ocaml/coq/theories/Compat/.coq-native/NCoq_Compat_Coq87.cmo
+lib/ocaml/coq/theories/Compat/.coq-native/NCoq_Compat_Coq810.cmo
 lib/ocaml/coq/theories/Compat/.coq-native/NCoq_Compat_Coq88.cmo
+lib/ocaml/coq/theories/Compat/.coq-native/NCoq_Compat_Coq89.cmo
 lib/ocaml/coq/theories/FSets/.coq-native/NCoq_FSets_FMapAVL.cmo
 lib/ocaml/coq/theories/FSets/.coq-native/NCoq_FSets_FMapFacts.cmo
 lib/ocaml/coq/theories/FSets/.coq-native/NCoq_FSets_FMapFullAVL.cmo
@@ -188,6 +183,7 @@ lib/ocaml/coq/theories/FSets/.coq-native/NCoq_FSets_FSetProperties.cmo
 lib/ocaml/coq/theories/FSets/.coq-native/NCoq_FSets_FSetToFiniteSet.cmo
 lib/ocaml/coq/theories/FSets/.coq-native/NCoq_FSets_FSetWeakList.cmo
 lib/ocaml/coq/theories/FSets/.coq-native/NCoq_FSets_FSets.cmo
+lib/ocaml/coq/theories/Init/.coq-native/NCoq_Init_Byte.cmo
 lib/ocaml/coq/theories/Init/.coq-native/NCoq_Init_Datatypes.cmo
 lib/ocaml/coq/theories/Init/.coq-native/NCoq_Init_Decimal.cmo
 lib/ocaml/coq/theories/Init/.coq-native/NCoq_Init_Logic.cmo
@@ -241,6 +237,7 @@ lib/ocaml/coq/theories/Logic/.coq-native/NCoq_Logic_PropFacts.cmo
 lib/ocaml/coq/theories/Logic/.coq-native/NCoq_Logic_RelationalChoice.cmo
 lib/ocaml/coq/theories/Logic/.coq-native/NCoq_Logic_SetIsType.cmo
 lib/ocaml/coq/theories/Logic/.coq-native/NCoq_Logic_SetoidChoice.cmo
+lib/ocaml/coq/theories/Logic/.coq-native/NCoq_Logic_StrictProp.cmo
 lib/ocaml/coq/theories/Logic/.coq-native/NCoq_Logic_WKL.cmo
 lib/ocaml/coq/theories/Logic/.coq-native/NCoq_Logic_WeakFan.cmo
 lib/ocaml/coq/theories/MSets/.coq-native/NCoq_MSets_MSetAVL.cmo
@@ -266,6 +263,7 @@ lib/ocaml/coq/theories/NArith/.coq-native/NCoq_NArith_Ndiv_def.cmo
 lib/ocaml/coq/theories/NArith/.coq-native/NCoq_NArith_Ngcd_def.cmo
 lib/ocaml/coq/theories/NArith/.coq-native/NCoq_NArith_Nnat.cmo
 lib/ocaml/coq/theories/NArith/.coq-native/NCoq_NArith_Nsqrt_def.cmo
+lib/ocaml/coq/theories/Numbers/.coq-native/NCoq_Numbers_AltBinNotations.cmo
 lib/ocaml/coq/theories/Numbers/.coq-native/NCoq_Numbers_BinNums.cmo
 lib/ocaml/coq/theories/Numbers/.coq-native/NCoq_Numbers_DecimalFacts.cmo
 lib/ocaml/coq/theories/Numbers/.coq-native/NCoq_Numbers_DecimalN.cmo
@@ -281,6 +279,9 @@ lib/ocaml/coq/theories/Numbers/Cyclic/Abstract/.coq-native/NCoq_Numbers_Cyclic_A
 lib/ocaml/coq/theories/Numbers/Cyclic/Int31/.coq-native/NCoq_Numbers_Cyclic_Int31_Cyclic31.cmo
 lib/ocaml/coq/theories/Numbers/Cyclic/Int31/.coq-native/NCoq_Numbers_Cyclic_Int31_Int31.cmo
 lib/ocaml/coq/theories/Numbers/Cyclic/Int31/.coq-native/NCoq_Numbers_Cyclic_Int31_Ring31.cmo
+lib/ocaml/coq/theories/Numbers/Cyclic/Int63/.coq-native/NCoq_Numbers_Cyclic_Int63_Cyclic63.cmo
+lib/ocaml/coq/theories/Numbers/Cyclic/Int63/.coq-native/NCoq_Numbers_Cyclic_Int63_Int63.cmo
+lib/ocaml/coq/theories/Numbers/Cyclic/Int63/.coq-native/NCoq_Numbers_Cyclic_Int63_Ring63.cmo
 lib/ocaml/coq/theories/Numbers/Cyclic/ZModulo/.coq-native/NCoq_Numbers_Cyclic_ZModulo_ZModulo.cmo
 lib/ocaml/coq/theories/Numbers/Integer/Abstract/.coq-native/NCoq_Numbers_Integer_Abstract_ZAdd.cmo
 lib/ocaml/coq/theories/Numbers/Integer/Abstract/.coq-native/NCoq_Numbers_Integer_Abstract_ZAddOrder.cmo
@@ -424,6 +425,7 @@ lib/ocaml/coq/theories/Reals/.coq-native/NCoq_Reals_Rtrigo_calc.cmo
 lib/ocaml/coq/theories/Reals/.coq-native/NCoq_Reals_Rtrigo_def.cmo
 lib/ocaml/coq/theories/Reals/.coq-native/NCoq_Reals_Rtrigo_fun.cmo
 lib/ocaml/coq/theories/Reals/.coq-native/NCoq_Reals_Rtrigo_reg.cmo
+lib/ocaml/coq/theories/Reals/.coq-native/NCoq_Reals_Runcountable.cmo
 lib/ocaml/coq/theories/Reals/.coq-native/NCoq_Reals_SeqProp.cmo
 lib/ocaml/coq/theories/Reals/.coq-native/NCoq_Reals_SeqSeries.cmo
 lib/ocaml/coq/theories/Reals/.coq-native/NCoq_Reals_SplitAbsolu.cmo
@@ -464,6 +466,11 @@ lib/ocaml/coq/theories/Sorting/.coq-native/NCoq_Sorting_Permutation.cmo
 lib/ocaml/coq/theories/Sorting/.coq-native/NCoq_Sorting_Sorted.cmo
 lib/ocaml/coq/theories/Sorting/.coq-native/NCoq_Sorting_Sorting.cmo
 lib/ocaml/coq/theories/Strings/.coq-native/NCoq_Strings_Ascii.cmo
+lib/ocaml/coq/theories/Strings/.coq-native/NCoq_Strings_BinaryString.cmo
+lib/ocaml/coq/theories/Strings/.coq-native/NCoq_Strings_Byte.cmo
+lib/ocaml/coq/theories/Strings/.coq-native/NCoq_Strings_ByteVector.cmo
+lib/ocaml/coq/theories/Strings/.coq-native/NCoq_Strings_HexString.cmo
+lib/ocaml/coq/theories/Strings/.coq-native/NCoq_Strings_OctalString.cmo
 lib/ocaml/coq/theories/Strings/.coq-native/NCoq_Strings_String.cmo
 lib/ocaml/coq/theories/Structures/.coq-native/NCoq_Structures_DecidableType.cmo
 lib/ocaml/coq/theories/Structures/.coq-native/NCoq_Structures_DecidableTypeEx.cmo
@@ -529,8 +536,4 @@ lib/ocaml/coq/theories/ZArith/.coq-native/NCoq_ZArith_Zsqrt_compat.cmo
 lib/ocaml/coq/theories/ZArith/.coq-native/NCoq_ZArith_Zwf.cmo
 lib/ocaml/coq/theories/ZArith/.coq-native/NCoq_ZArith_auxiliary.cmo
 lib/ocaml/coq/toplevel/toplevel.cma
-lib/ocaml/coq/toploop/coqidetop.cma
-lib/ocaml/coq/toploop/queryworkertop.cma
-lib/ocaml/coq/toploop/proofworkertop.cma
-lib/ocaml/coq/toploop/tacworkertop.cma
 lib/ocaml/coq/vernac/vernac.cma

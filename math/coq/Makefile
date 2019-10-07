@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2019/09/27 09:58:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2019/10/07 06:40:15 chrisz Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
 V=			8.10+beta3
+REVISION =		0
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}

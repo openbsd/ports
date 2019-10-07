@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/09/20 03:28:34 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/10/07 06:40:15 chrisz Exp $
 %%native%%
+!%%native%%
 @bin bin/coq-tex
 @bin bin/coq_makefile
 @bin bin/coqc
@@ -8,7 +9,11 @@
 @bin bin/coqdoc
 @bin bin/coqide
 @bin bin/coqidetop
+@comment bin/coqidetop.byte
 bin/coqpp
+@comment bin/coqproofworker.byte
+@comment bin/coqqueryworker.byte
+@comment bin/coqtacticworker.byte
 @bin bin/coqtop
 @comment bin/coqtop.byte
 @bin bin/coqwc
@@ -767,7 +772,6 @@ lib/ocaml/coq/proofs/refine.cmi
 lib/ocaml/coq/proofs/refiner.cmi
 lib/ocaml/coq/proofs/tacmach.cmi
 lib/ocaml/coq/proofs/tactypes.cmi
-lib/ocaml/coq/revision
 lib/ocaml/coq/stm/
 lib/ocaml/coq/stm/asyncTaskQueue.cmi
 lib/ocaml/coq/stm/coqworkmgrApi.cmi
@@ -2576,7 +2580,6 @@ lib/ocaml/coq/tools/coqdoc/coqdoc.sty
 lib/ocaml/coq/tools/make-both-single-timing-files.py
 lib/ocaml/coq/tools/make-both-time-files.py
 lib/ocaml/coq/tools/make-one-time-file.py
-lib/ocaml/coq/topbin/
 lib/ocaml/coq/toplevel/
 lib/ocaml/coq/toplevel/ccompile.cmi
 lib/ocaml/coq/toplevel/coqargs.cmi

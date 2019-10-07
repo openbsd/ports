@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.5 2019/09/20 03:28:34 daniel Exp $
+@comment $OpenBSD: PFRAG.native,v 1.6 2019/10/07 06:40:15 chrisz Exp $
 %%dynlink%%
 @bin bin/coqidetop.opt
 @bin bin/coqproofworker.opt
@@ -578,6 +578,7 @@ lib/ocaml/coq/proofs/refine.cmx
 lib/ocaml/coq/proofs/refiner.cmx
 lib/ocaml/coq/proofs/tacmach.cmx
 lib/ocaml/coq/proofs/tactypes.cmx
+lib/ocaml/coq/revision
 lib/ocaml/coq/stm/asyncTaskQueue.cmx
 lib/ocaml/coq/stm/coqworkmgrApi.cmx
 lib/ocaml/coq/stm/dag.cmx
@@ -1461,6 +1462,7 @@ lib/ocaml/coq/theories/ZArith/.coq-native/NCoq_ZArith_Zwf.cmx
 lib/ocaml/coq/theories/ZArith/.coq-native/NCoq_ZArith_Zwf.o
 lib/ocaml/coq/theories/ZArith/.coq-native/NCoq_ZArith_auxiliary.cmx
 lib/ocaml/coq/theories/ZArith/.coq-native/NCoq_ZArith_auxiliary.o
+lib/ocaml/coq/topbin/
 lib/ocaml/coq/topbin/coqc_bin.cmx
 lib/ocaml/coq/topbin/coqproofworker_bin.cmx
 lib/ocaml/coq/topbin/coqqueryworker_bin.cmx
