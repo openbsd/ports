@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/10/07 13:35:48 jca Exp $
 
 # not useful on anything else
 ONLY_FOR_ARCHS=	i386
@@ -10,7 +10,8 @@ REVISION=	1
 DISTFILES=	tphdisk.c
 CATEGORIES=	sysutils
 
-MASTER_SITES=	http://samba.org/ftp/unpacked/junkcode/
+MASTER_SITES=	https://filedump.se.rit.edu/pub/distfiles/ \
+		https://www.samba.org//ftp/unpacked/junkcode/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

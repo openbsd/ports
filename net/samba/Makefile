@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2019/10/07 12:50:13 jca Exp $
+# $OpenBSD: Makefile,v 1.277 2019/10/07 13:35:48 jca Exp $
 
 VERSION =		4.9.13
 DISTNAME =		samba-${VERSION}
@@ -93,7 +93,7 @@ WANTLIB-util =		${WANTLIB-common}
 
 WANTLIB-docs =
 
-MASTER_SITES =		https://autogeree.net/~jca/distfiles/ \
+MASTER_SITES =		https://filedump.se.rit.edu/pub/distfiles/ \
 			https://download.samba.org/pub/samba/stable/ \
 			https://download.samba.org/pub/samba/old-versions/
 
