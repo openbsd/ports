@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.59 2019/09/28 01:40:24 jsg Exp $
+#	$OpenBSD: Makefile,v 1.60 2019/10/08 01:10:28 kurt Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,6 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.10-rc4
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -40,6 +41,7 @@ BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
 		devel/py-elftools \
 		sysutils/arm-trusted-firmware
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
+RK3328_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3328-bl31.elf"
 RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
 SUNXI_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_a64-bl31.bin"
 .elif "${FLAVOR}" == "arm"
@@ -68,6 +70,7 @@ BOARDS=\
 	mvebu_espressobin-88f3720 \
 	mvebu_mcbin-88f8040 \
 	qemu_arm64 \
+	rock64-rk3328 \
 	rockpro64-rk3399 \
 	rpi_3 \
 	rpi_4
@@ -151,23 +154,27 @@ do-build:
 	    mkdir -p build/${BOARD} && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	        O="build/${BOARD}" \
-	        -f ${MAKE_FILE} "${BOARD}"_defconfig && \
+	        -f ${MAKE_FILE} "${BOARD}"_defconfig
+.if "${BOARD}" == "firefly-rk3399" || "${BOARD}" == "rockpro64-rk3399"
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} BL31=${RK3399_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.elif "${BOARD}" == "rock64-rk3328"
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} BL31=${RK3328_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET} u-boot.itb
+.else
+	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	        O="build/${BOARD}" \
 	        -f ${MAKE_FILE} ${ALL_TARGET}
+.endif
 .if "${BOARD}" == "tinker-rk3288"
 	cd ${WRKSRC}/build/${BOARD} && \
 	    tools/mkimage -n rk3288 -T rksd -d tpl/u-boot-tpl.bin \
 	        idbloader.img && \
-	    cat spl/u-boot-spl-dtb.bin >> idbloader.img
-.endif
-.if "${BOARD}" == "firefly-rk3399" || "${BOARD}" == "rockpro64-rk3399"
-	cd ${WRKSRC}/build/${BOARD} && \
-	    ${SETENV} ${MAKE_ENV} BL31=${RK3399_BL31} ${MAKE_PROGRAM} \
-		${MAKE_FLAGS} O="build/${BOARD}" \
-	        -f ${MAKE_FILE} u-boot.itb && \
-	    tools/mkimage -n rk3399 -T rksd -d tpl/u-boot-tpl.bin \
-		idbloader.img && \
 	    cat spl/u-boot-spl-dtb.bin >> idbloader.img
 .endif
 .endfor

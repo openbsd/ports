@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_rock64-rk3328_defconfig,v 1.1 2019/10/08 01:10:28 kurt Exp $
+
+Index: configs/rock64-rk3328_defconfig
+--- configs/rock64-rk3328_defconfig.orig
++++ configs/rock64-rk3328_defconfig
+@@ -76,7 +76,7 @@ CONFIG_RAM=y
+ CONFIG_SPL_RAM=y
+ CONFIG_TPL_RAM=y
+ CONFIG_DM_RESET=y
+-CONFIG_BAUDRATE=1500000
++CONFIG_BAUDRATE=115200
+ CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_SYSRESET=y
+ CONFIG_USB=y
