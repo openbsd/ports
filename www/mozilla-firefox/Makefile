@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.397 2019/10/07 13:40:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.398 2019/10/08 20:16:08 sthen Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -50,8 +50,10 @@ BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen>=0.9.0
-# 67 requires nasm for bundled libav1d
+.if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
+# 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
+.endif
 
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm ${COMPILER_LIBCXX}
 
@@ -60,7 +62,7 @@ NO_TEST =	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
-MAKE_ENV +=		BUILD_VERBOSE_LOG="1"
+MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
