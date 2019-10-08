@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.468 2019/10/06 14:06:10 robert Exp $
+# $OpenBSD: Makefile,v 1.469 2019/10/08 18:41:26 kurt Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -122,7 +122,7 @@ BUILDTYPE=	Release
 SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
 
 .if ${FLAVOR:Melectron}
-REVISION=		0
+REVISION=		1
 DISTNAME=		electron-${ELECTRON_V}
 WRKDIST=		${WRKDIR}/chromium-${ECV}
 FULLPKGNAME=		${DISTNAME}
