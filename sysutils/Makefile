@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.533 2019/10/07 10:20:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.534 2019/10/08 07:33:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -351,6 +351,7 @@
      SUBDIR += tenshi
      SUBDIR += tentakel
      SUBDIR += terraform
+     SUBDIR += terragrunt
      SUBDIR += testdisk
      SUBDIR += tkdvd
      SUBDIR += tmate
