@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.46 2019/10/07 06:40:15 chrisz Exp $
+# $OpenBSD: Makefile,v 1.47 2019/10/08 10:56:29 sthen Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
 V=			8.10+beta3
-REVISION =		0
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}
 DISTNAME =		${GH_PROJECT}-${V:S/+//}
 WRKDIST =		${WRKDIR}/${GH_PROJECT}-${V:S/+/-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES=		math
 HOMEPAGE=		https://coq.inria.fr/
