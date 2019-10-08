@@ -1,0 +1,17 @@
+$OpenBSD: patch-sc_source_core_data_attarray_cxx,v 1.1 2019/10/08 13:10:15 robert Exp $
+
+Index: sc/source/core/data/attarray.cxx
+--- sc/source/core/data/attarray.cxx.orig
++++ sc/source/core/data/attarray.cxx
+@@ -375,7 +375,11 @@ void ScAttrArray::RemoveCondFormat( SCROW nStartRow, S
+                     if(itr != rCondFormatData.end())
+                     {
+                         ScCondFormatIndexes aNewCondFormatData(rCondFormatData);
++#if defined(__i386__)
++                        aNewCondFormatData.erase(aNewCondFormatData.begin() + nIndex);
++#else
+                         aNewCondFormatData.erase(nIndex);
++#endif
+                         ScCondFormatItem aItem( std::move(aNewCondFormatData) );
+                         pPatternAttr->GetItemSet().Put( aItem );
+                         SetPatternArea( nTempStartRow, nTempEndRow, std::move(pPatternAttr), true );

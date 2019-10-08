@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.218 2019/10/07 12:16:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.219 2019/10/08 13:10:15 robert Exp $
 
-BROKEN-i386=	sc/source/core/data/attarray.cxx:378:44: error: call to member function 'erase' is ambiguous
 USE_WXNEEDED=	Yes
 
 ONLY_FOR_ARCHS= amd64 i386
