@@ -1,7 +1,8 @@
-$OpenBSD: patch-lib_keyringer_functions,v 1.4 2019/04/25 15:04:44 jca Exp $
+$OpenBSD: patch-lib_keyringer_functions,v 1.5 2019/10/08 12:26:01 jca Exp $
 
 - no mount -l/tmpfs in OpenBSD
 - use gpg2, upstream seems to rely on gpg being gpg2
+- use date(1) -r instead of GNU date(1) --date=
 
 Index: lib/keyringer/functions
 --- lib/keyringer/functions.orig
@@ -54,7 +55,7 @@ Index: lib/keyringer/functions
    if [ "$?" != "0" ]; then
      if [ "$BASENAME" == "check" ]; then
        refresh="no"
-@@ -727,7 +727,7 @@ function keyringer_check_expiration {
+@@ -727,14 +727,14 @@ function keyringer_check_expiration {
    seconds="`date +%s`"
  
    # Check the main key
@@ -63,7 +64,21 @@ Index: lib/keyringer/functions
  
    # TODO: Time to expire can be configured via repository options.
    ahead="$((86400 * 30 + $seconds))"
-@@ -754,7 +754,7 @@ function keyringer_check_expiration {
+ 
+   # Check if key is expired
+   if [ ! -z "$expiry" ] && [[ "$seconds" -gt "$expiry" ]]; then
+-    echo -n "Warning: primary key for $recipient expired on `date --date="@$expiry"`"
++    echo -n "Warning: primary key for $recipient expired on `date -r "$expiry"`"
+ 
+     if [ "$KEYRINGER_MODE" == "write" ] || [ "$KEYRINGER_MODE" == "readwrite" ]; then
+       echo ", aborting."
+@@ -749,12 +749,12 @@ function keyringer_check_expiration {
+   # TODO: Users can be alerted by mail if configured by user preferences.
+   # TODO: Outgoing emails can be encrypted.
+   if [ "$BASENAME" == "check" ] && [ ! -z "$expiry" ] && [[ "$ahead" -gt "$expiry" ]]; then
+-    echo "Warning: key $recipient will expire soon, on `date --date="@$expiry"`"
++    echo "Warning: key $recipient will expire soon, on `date -r "$expiry"`"
+   fi
  
    # Check the subkeys
    local subkey=""
@@ -72,6 +87,15 @@ Index: lib/keyringer/functions
      local expiry=$(cut -d : -f 7 <<< "$subkey")
  
      if [[ -z "$expiry" ]]; then
+@@ -765,7 +765,7 @@ function keyringer_check_expiration {
+       not_expired="1"
+ 
+       if [[ "$ahead" -gt "$expiry" ]] && [ "$BASENAME" == "check" ]; then
+-        echo "Warning: subkey from $recipient will expire soon, on `date --date="@$expiry"`"
++        echo "Warning: subkey from $recipient will expire soon, on `date -r "$expiry"`"
+       fi
+     fi
+   done
 @@ -851,7 +851,7 @@ function keyringer_create_new_recipients {
        recipient="`grep -e "^default-key" ~/.gnupg/gpg.conf | cut -d ' ' -f 2`"
  
