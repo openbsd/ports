@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:47:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/10/09 11:22:03 naddy Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -10,7 +10,7 @@ GH_PROJECT = 		oiio
 V =			1.8.6
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5
@@ -53,7 +53,8 @@ LIB_DEPENDS =		devel/boost \
 			graphics/libraw
 
 CONFIGURE_ARGS +=	-DUSE_OPENCV=OFF \
-			-DCMAKE_INSTALL_MANDIR="man/man1"
+			-DCMAKE_INSTALL_MANDIR="man/man1" \
+			-DSTOP_ON_WARNING=OFF
 
 CXXFLAGS +=		-pthread
 .if ${MACHINE_ARCH} == "i386"
