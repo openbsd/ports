@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_VTexture_h,v 1.1 2019/10/09 17:59:09 kirby Exp $
+
+Fix text rendering
+
+Index: src/VTexture.h
+--- src/VTexture.h.orig
++++ src/VTexture.h
+@@ -135,7 +135,7 @@ class TextureManager { (private)
+ 
+   void cleanUnregistredTextures();
+ 
+-  HashNamespace::hash_map<const char*, int*, HashNamespace::hash<const char*>, hashcmp_str> m_textureSizeCache;
++  HashNamespace::hash_map<std::string, int*> m_textureSizeCache;
+   std::vector<std::string> m_textureSizeCacheKeys;
+   std::vector<int*> m_textureSizeCacheValues;
+ 

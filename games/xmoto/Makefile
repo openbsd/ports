@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/10/09 17:59:09 kirby Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
 V =	 	0.5.11
-REVISION =	7
+REVISION =	8
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
 CATEGORIES =	games
