@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/10/09 23:12:39 cwen Exp $
 
 COMMENT =		DDoS detector with multiple packet capture engines
 
 GH_ACCOUNT =		pavel-odintsov
 GH_PROJECT =		fastnetmon
 GH_TAGNAME =		v1.1.4
+REVISION =		0
 
 HOMEPAGE =		https://fastnetmon.com/guides/
 
@@ -35,6 +36,13 @@ CONFIGURE_ARGS +=	-DENABLE_LUA_SUPPORT=Off \
 			-DLOG4CPP_INCLUDES_FOLDER="${LOCALBASE}/include/log4cpp" \
 			-DJSONC_INCLUDES_FOLDER="${LOCALBASE}/include/json-c" \
 			-DHIREDIS_INCLUDES_FOLDER="${LOCALBASE}/include/hiredis"
+
+# Use __atomic* function instead of __sync* ones, allowing to build on
+# the following archs.
+CONFIGURE_ARGS +=	-DUSE_NEW_ATOMIC_BUILTINS=On
+.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+WANTLIB +=		atomic
+.endif
 
 WRKSRC =		${WRKDIST}/src
 
