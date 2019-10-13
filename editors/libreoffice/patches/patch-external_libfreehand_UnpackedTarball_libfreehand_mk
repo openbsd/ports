@@ -1,0 +1,16 @@
+$OpenBSD: patch-external_libfreehand_UnpackedTarball_libfreehand_mk,v 1.1 2019/10/13 18:36:02 robert Exp $
+
+Index: external/libfreehand/UnpackedTarball_libfreehand.mk
+--- external/libfreehand/UnpackedTarball_libfreehand.mk.orig
++++ external/libfreehand/UnpackedTarball_libfreehand.mk
+@@ -15,6 +15,10 @@ $(eval $(call gb_UnpackedTarball_set_patchlevel,libfre
+ 
+ $(eval $(call gb_UnpackedTarball_update_autoconf_configs,libfreehand))
+ 
++$(eval $(call gb_UnpackedTarball_add_patches,libfreehand, \
++    external/libfreehand/icu651.patch \
++))
++
+ ifeq ($(NEED_CLANG_LINUX_UBSAN_RTTI_VISIBILITY),TRUE)
+ $(eval $(call gb_UnpackedTarball_add_patches,libfreehand, \
+     external/libfreehand/ubsan-visibility.patch \

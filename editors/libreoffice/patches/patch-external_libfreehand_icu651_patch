@@ -1,0 +1,17 @@
+$OpenBSD: patch-external_libfreehand_icu651_patch,v 1.1 2019/10/13 18:36:02 robert Exp $
+
+Index: external/libfreehand/icu651.patch
+--- external/libfreehand/icu651.patch.orig
++++ external/libfreehand/icu651.patch
+@@ -0,0 +1,11 @@
++--- src/lib/libfreehand_utils.cpp.orig	Sun Oct 13 18:35:27 2019
+++++ src/lib/libfreehand_utils.cpp	Sun Oct 13 18:35:33 2019
++@@ -162,7 +162,7 @@
++   while (j < length)
++   {
++     UChar32 c;
++-    U16_NEXT(s, j, length, c)
+++    U16_NEXT(s, j, length, c);
++     unsigned char outbuf[U8_MAX_LENGTH+1];
++     int i = 0;
++     U8_APPEND_UNSAFE(&outbuf[0], i, c);
