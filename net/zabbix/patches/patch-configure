@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.24 2019/08/19 13:36:29 robert Exp $
+$OpenBSD: patch-configure,v 1.25 2019/10/14 14:11:36 robert Exp $
 Index: configure
 --- configure.orig
 +++ configure
@@ -10,7 +10,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main ()
-@@ -9455,7 +9456,7 @@ $as_echo "yes" >&6; }
+@@ -9461,7 +9462,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
@@ -19,7 +19,7 @@ Index: configure
  
  fi
         else
-@@ -9465,7 +9466,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -9471,7 +9472,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"
@@ -28,7 +28,7 @@ Index: configure
  		       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
                 else
-@@ -12782,12 +12783,12 @@ LIBS="$LIBS $ICONV_LIBS"
+@@ -12788,12 +12789,12 @@ LIBS="$LIBS $ICONV_LIBS"
  RANLIB="ranlib"
  
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.36 2019/08/19 13:36:29 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.37 2019/10/14 14:11:36 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -49,6 +49,9 @@ zabbix/app/controllers/CControllerMediatypeEnable.php
 zabbix/app/controllers/CControllerMediatypeList.php
 zabbix/app/controllers/CControllerMediatypeUpdate.php
 zabbix/app/controllers/CControllerMenuPopup.php
+zabbix/app/controllers/CControllerNotificationsGet.php
+zabbix/app/controllers/CControllerNotificationsMute.php
+zabbix/app/controllers/CControllerNotificationsRead.php
 zabbix/app/controllers/CControllerPopupGeneric.php
 zabbix/app/controllers/CControllerPopupHttpStep.php
 zabbix/app/controllers/CControllerPopupMedia.php
@@ -188,13 +191,13 @@ zabbix/assets/styles/dark-theme.css
 zabbix/assets/styles/hc-dark.css
 zabbix/assets/styles/hc-light.css
 zabbix/audio/
-zabbix/audio/alarm_average.wav
-zabbix/audio/alarm_disaster.wav
-zabbix/audio/alarm_high.wav
-zabbix/audio/alarm_information.wav
-zabbix/audio/alarm_ok.wav
-zabbix/audio/alarm_warning.wav
-zabbix/audio/no_sound.wav
+zabbix/audio/alarm_average.mp3
+zabbix/audio/alarm_disaster.mp3
+zabbix/audio/alarm_high.mp3
+zabbix/audio/alarm_information.mp3
+zabbix/audio/alarm_ok.mp3
+zabbix/audio/alarm_warning.mp3
+zabbix/audio/no_sound.mp3
 zabbix/auditacts.php
 zabbix/auditlogs.php
 zabbix/browserwarning.php
@@ -867,12 +870,12 @@ zabbix/js/
 zabbix/js/browsers.js
 zabbix/js/chkbxrange.js
 zabbix/js/class.bbcode.js
+zabbix/js/class.browsertab.js
 zabbix/js/class.calendar.js
 zabbix/js/class.cclock.js
 zabbix/js/class.cdate.js
 zabbix/js/class.cdebug.js
 zabbix/js/class.cmap.js
-zabbix/js/class.cmessages.js
 zabbix/js/class.cnavtree.js
 zabbix/js/class.cookie.js
 zabbix/js/class.coverride.js
@@ -884,8 +887,14 @@ zabbix/js/class.ctree.js
 zabbix/js/class.curl.js
 zabbix/js/class.cverticalaccordion.js
 zabbix/js/class.cviewswitcher.js
+zabbix/js/class.localstorage.js
 zabbix/js/class.mapWidget.js
+zabbix/js/class.notification.js
+zabbix/js/class.notification.collection.js
+zabbix/js/class.notifications.js
+zabbix/js/class.notifications.audio.js
 zabbix/js/class.pmaster.js
+zabbix/js/class.promise.js
 zabbix/js/class.rpc.js
 zabbix/js/colorpicker.js
 zabbix/js/common.js
