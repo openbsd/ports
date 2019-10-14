@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.74 2019/07/25 21:41:38 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.75 2019/10/14 20:41:44 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -546,6 +546,7 @@ include/dovecot/sha1.h
 include/dovecot/sha2.h
 include/dovecot/sha3.h
 include/dovecot/shared-storage.h
+include/dovecot/sleep.h
 include/dovecot/smtp-address.h
 include/dovecot/smtp-client-command.h
 include/dovecot/smtp-client-connection.h
@@ -684,6 +685,7 @@ libexec/dovecot/deliver
 @bin libexec/dovecot/doveadm-server
 @bin libexec/dovecot/dovecot-lda
 @bin libexec/dovecot/gdbhelper
+libexec/dovecot/health-check.sh
 @bin libexec/dovecot/imap
 @bin libexec/dovecot/imap-hibernate
 @bin libexec/dovecot/imap-login
