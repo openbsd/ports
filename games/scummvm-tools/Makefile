@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/10/14 09:19:11 jsg Exp $
 
 COMMENT=	collection of various tools for scummvm
-V=		2.0.0
-REVISION=	4
+V=		2.1.0
 DISTNAME=	scummvm-tools-${V}
 CATEGORIES=	games
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm-tools/${V}/
@@ -49,7 +48,7 @@ do-install:
 	${INSTALL_PROGRAM} \
 		${WRKBUILD}/scummvm-tools \
 		${WRKBUILD}/scummvm-tools-cli \
-		${WRKBUILD}/de{cine,kyra,scumm,sword2,gob,riven} \
+		${WRKBUILD}/de{cine,gob,kyra,prince,scumm,sword2} \
 		${WRKBUILD}/extract_mohawk \
 		${WRKBUILD}/construct_mohawk \
 		${WRKBUILD}/gob_loadcalc \
