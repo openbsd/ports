@@ -1,35 +1,36 @@
-$OpenBSD: patch-g3_g3cat_c,v 1.1 2017/04/25 22:56:25 jca Exp $
---- g3/g3cat.c.orig	Wed Apr 26 00:53:07 2017
-+++ g3/g3cat.c	Wed Apr 26 00:54:07 2017
-@@ -43,6 +43,7 @@ static int padding = 0;			/* default: no padding done 
+$OpenBSD: patch-g3_g3cat_c,v 1.2 2019/10/14 21:05:07 jcs Exp $
+Index: g3/g3cat.c
+--- g3/g3cat.c.orig
++++ g3/g3cat.c
+@@ -60,6 +60,7 @@ static int padding = 0;			/* default: no padding done 
  static int b_written = 0;		/* bytes of a line already */
  					/* written */
  
 +static
  #ifdef __GNUC__
- inline
+ static inline
  #endif
-@@ -66,6 +67,7 @@ void putcode _P2( (code, len), int code, int len )
+@@ -83,6 +84,7 @@ void putcode _P2( (code, len), int code, int len )
      }
  }
  
 +static
  #ifdef __GNUC__
- inline
+ static inline
  #endif
-@@ -97,6 +99,7 @@ void putwhitespan _P1( (l), int l )
+@@ -114,6 +116,7 @@ void putwhitespan _P1( (l), int l )
      putcode( t_white[l].bit_code, t_white[l].bit_length );
  }
  
 +static
  #ifdef __GNUC__
- inline
+ static inline
  #endif
-@@ -128,6 +131,7 @@ void putblackspan _P1( (l), int l )
+@@ -145,6 +148,7 @@ void putblackspan _P1( (l), int l )
      putcode( t_black[l].bit_code, t_black[l].bit_length );
  }
  
 +static
  #ifdef __GNUC__
- inline
+ static inline
  #endif

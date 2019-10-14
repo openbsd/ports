@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/10/14 21:05:07 jcs Exp $
 
 COMMENT=	handle external logins, send and receive faxes
 
-VERSION=	1.1.37
-RELEASE=	Jun05
-DISTNAME=	mgetty${VERSION}-${RELEASE}
+VERSION=	1.2.1
+DISTNAME=	mgetty-${VERSION}
 PKGNAME=	mgetty+sendfax-${VERSION}
 CATEGORIES=	comms
-
-REVISION=	5
 
 HOMEPAGE=	http://mgetty.greenie.net/
 
@@ -17,8 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m util
 
-MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.2/ \
-		ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
+MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/${VERSION:R}/
 
 RUN_DEPENDS=	print/ghostscript/gnu \
 		graphics/netpbm
@@ -44,6 +40,7 @@ pre-install:
 	sed -i "s,usage\: faxrm,usage\: mgetty-faxrm,g" ${WRKSRC}/fax/faxrm.in
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mgetty+sendfax
+	chmod a+x ${WRKSRC}/mkidirs
 
 post-install:
 	mv ${PREFIX}/bin/faxrm ${PREFIX}/bin/mgetty-faxrm

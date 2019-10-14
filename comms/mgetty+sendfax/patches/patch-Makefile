@@ -1,34 +1,27 @@
-$OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
---- Makefile.orig	Sat Jun  5 11:48:22 2010
-+++ Makefile	Mon Jun  7 07:56:18 2010
+$OpenBSD: patch-Makefile,v 1.7 2019/10/14 21:05:07 jcs Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -6,7 +6,7 @@
  # grok my code, so please use gcc there. On ISC 4.0, use "icc".).
  #
  # if you are cross-compiling, this is the C compiler for the target platform
--CC=gcc
-+#CC=gcc
- #CC=cc
+-CC=cc
++#CC=cc
+ #CC=gcc
  #
  # if you are cross-compiling, *this* needs to be the C compiler that 
-@@ -109,7 +109,7 @@ HOSTCC=$(CC)
+@@ -109,7 +109,8 @@ HOSTCC=$(CC)
  #	    USTAT	  - ustat(), no statfs etc.
  #
  #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
--CFLAGS=-O2 -Wall -pipe
+-CFLAGS=-Wall -O2 -pipe
++#CFLAGS=-Wall -O2 -pipe
 +CFLAGS+=-DAUTO_PPP -DPREFIX=\"${PREFIX}\"
  #CFLAGS=-O -DSVR4
  #CFLAGS=-O -DSVR4 -DSVR42
  #CFLAGS=-O -DUSE_POLL
-@@ -151,7 +151,7 @@ CFLAGS=-O2 -Wall -pipe
- # For Linux, add "-lutil" if the linker complains about "updwtmp".
- #
- LDFLAGS=
--LIBS=
-+LIBS=-lutil
- #LIBS=-lprot -lsocket				# SCO Unix
- #LIBS=-lsocket
- #LIBS=-lbsd					# OSF/1
-@@ -171,7 +171,7 @@ LIBS=
+@@ -171,7 +172,7 @@ LIBS=-lutil					# FreeBSD or Linux/GNU libc2
  #
  # if your systems doesn't have one, use the shell script that I provide
  # in "inst.sh" (taken from X11R5). Needed on IRIX5.2
@@ -37,7 +30,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  #INSTALL=install -c -o root -g wheel		# NeXT/BSD
  #INSTALL=/usr/ucb/install -c -o bin -g bin	# AIX, Solaris 2.x
  #INSTALL=installbsd -c -o bin -g bin		# OSF/1, AIX 4.1, 4.2
-@@ -179,11 +179,11 @@ INSTALL=install -c -o bin -g bin
+@@ -179,11 +180,11 @@ INSTALL=install -c -o bin -g bin
  #
  # prefix, where most (all?) of the stuff lives, usually /usr/local or /usr
  #
@@ -51,7 +44,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  #
  # where the mgetty + sendfax binaries live (used for "make install")
  #
-@@ -199,7 +199,7 @@ LIBDIR=$(prefix)/lib/mgetty+sendfax
+@@ -199,7 +200,7 @@ LIBDIR=$(prefix)/lib/mgetty+sendfax
  #
  # where the configuration files (*.config, aliases, fax.allow/deny) go to
  #
@@ -60,7 +53,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  #CONFDIR=/etc/default/
  #
  #
-@@ -223,7 +223,7 @@ FAX_SPOOL_OUT=$(FAX_SPOOL)/outgoing
+@@ -223,7 +224,7 @@ FAX_SPOOL_OUT=$(FAX_SPOOL)/outgoing
  # (it's possible to run faxrunq(d) as root, but the FAX_OUT_USER 
  #  MUST NOT BE root or any other privileged account).
  #
@@ -69,7 +62,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  #
  #
  # Where section 1 manual pages should be placed
-@@ -270,7 +270,7 @@ PERL="/usr/bin/perl -w"
+@@ -270,7 +271,7 @@ PERL="/usr/bin/perl -w"
  # If you have Perl with TK extentions, define it here. This may be the
  # same as PERL=... above, or different, if you have TkPerl statically
  # linked.
@@ -78,7 +71,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  #
  #
  # An echo program that understands escapes like "\n" for newline or
-@@ -292,7 +292,7 @@ ECHO="echo"
+@@ -292,7 +293,7 @@ ECHO="echo -e"
  
  # To maintain security, I recommend creating a new group for
  # users who are allowed to manipulate the recorded voice messages.
@@ -87,7 +80,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  PHONE_PERMS=770
  
  # Add -DNO_STRSTR to CFLAGS if you don't have strstr().
-@@ -324,7 +324,7 @@ SFAXOBJ=sendfax.o logfile.o locks.o modem.o \
+@@ -325,7 +326,7 @@ SFAXOBJ=sendfax.o logfile.o locks.o modem.o \
  
  all:	bin-all doc-man-only
  
@@ -96,7 +89,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  
  # a few C files need extra compiler arguments
  
-@@ -585,7 +585,7 @@ bindist: all doc-all sedscript
+@@ -585,7 +586,7 @@ bindist: all doc-all sedscript
  	cd bindist; gtar cvvfz mgetty$(MR).$(SR)-bin.tgz *
  
  
@@ -105,7 +98,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  
  install.bin: mgetty sendfax newslock \
  		login.config mgetty.config sendfax.config 
-@@ -593,32 +593,22 @@ install.bin: mgetty sendfax newslock \
+@@ -593,32 +594,22 @@ install.bin: mgetty sendfax newslock \
  # binaries
  #
  	-test -d $(BINDIR)  || ( ./mkidirs $(BINDIR)  ; chmod 755 $(BINDIR)  )
@@ -147,7 +140,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  #
  # test for outdated stuff
  #
-@@ -632,28 +622,17 @@ install.bin: mgetty sendfax newslock \
+@@ -632,28 +623,17 @@ install.bin: mgetty sendfax newslock \
  #
  # fax spool directories
  #
@@ -179,7 +172,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  				FAX_OUT_USER=$(FAX_OUT_USER) \
  				BINDIR=$(BINDIR) SBINDIR=$(SBINDIR) \
  				LIBDIR=$(LIBDIR) CONFDIR=$(CONFDIR)
-@@ -663,14 +642,14 @@ install.bin: mgetty sendfax newslock \
+@@ -663,14 +643,14 @@ install.bin: mgetty sendfax newslock \
  	if [ ! -z "$(INSTALL_MECHO)" ] ; then \
  	    cd compat ; \
  	    $(CC) $(CFLAGS) -o mg.echo mg.echo.c && \
@@ -196,7 +189,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  				MAN1DIR=$(MAN1DIR) \
  				MAN4DIR=$(MAN4DIR) \
  				MAN5DIR=$(MAN5DIR) \
-@@ -681,7 +660,7 @@ install.doc:
+@@ -681,7 +661,7 @@ install.doc:
  # WWW frontend stuff
  #
  install.www:
@@ -205,7 +198,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/06/07 05:59:27 ajacoutot Exp $
  				BINDIR=$(BINDIR) \
  				LIBDIR=$(LIBDIR) CONFDIR=$(CONFDIR)
  #
-@@ -699,7 +678,7 @@ vgetty:
+@@ -699,7 +679,7 @@ vgetty:
  
  vgetty-install: sedscript
  	cd voice; $(MAKE) CFLAGS="$(CFLAGS)" CC="$(CC)" LDFLAGS="$(LDFLAGS)" \

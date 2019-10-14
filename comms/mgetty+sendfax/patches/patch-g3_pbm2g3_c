@@ -1,13 +1,14 @@
-$OpenBSD: patch-g3_pbm2g3_c,v 1.1 2017/04/25 22:56:25 jca Exp $
---- g3/pbm2g3.c.orig	Wed Apr 26 00:51:45 2017
-+++ g3/pbm2g3.c	Wed Apr 26 00:54:34 2017
+$OpenBSD: patch-g3_pbm2g3_c,v 1.2 2019/10/14 21:05:07 jcs Exp $
+Index: g3/pbm2g3.c
+--- g3/pbm2g3.c.orig
++++ g3/pbm2g3.c
 @@ -39,6 +39,7 @@ static unsigned int out_hibit = 0;
  
  static int out_byte_tab[ 256 ];			/* for g3 byte reversal */
  
 +static
  #ifdef __GNUC__
- inline
+ static inline
  #endif
 @@ -59,6 +60,7 @@ void putcode _P2( (code, len), int code, int len )
      }
@@ -15,7 +16,7 @@ $OpenBSD: patch-g3_pbm2g3_c,v 1.1 2017/04/25 22:56:25 jca Exp $
  
 +static
  #ifdef __GNUC__
- inline
+ static inline
  #endif
 @@ -68,6 +70,7 @@ void puteol _P0( void )			/* write byte-aligned EOL */
      putcode( 0x800, 12 );
@@ -23,7 +24,7 @@ $OpenBSD: patch-g3_pbm2g3_c,v 1.1 2017/04/25 22:56:25 jca Exp $
  
 +static
  #ifdef __GNUC__
- inline
+ static inline
  #endif
 @@ -99,6 +102,7 @@ void putwhitespan _P1( (l), int l )
      putcode( t_white[l].bit_code, t_white[l].bit_length );
@@ -31,5 +32,5 @@ $OpenBSD: patch-g3_pbm2g3_c,v 1.1 2017/04/25 22:56:25 jca Exp $
  
 +static
  #ifdef __GNUC__
- inline
+ static inline
  #endif

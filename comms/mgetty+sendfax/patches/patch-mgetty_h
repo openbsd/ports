@@ -1,4 +1,4 @@
-$OpenBSD: patch-mgetty_h,v 1.2 2017/12/26 06:08:48 jca Exp $
+$OpenBSD: patch-mgetty_h,v 1.3 2019/10/14 21:05:07 jcs Exp $
 
 Add mips64 and arm64 to the list of arches where pointers are longs, otherwise
 char gets typedef'd to an int as p_int and breaks in conf_mg.c.
@@ -6,7 +6,7 @@ char gets typedef'd to an int as p_int and breaks in conf_mg.c.
 Index: mgetty.h
 --- mgetty.h.orig
 +++ mgetty.h
-@@ -198,7 +198,7 @@ typedef unsigned char uch;
+@@ -220,7 +220,7 @@ typedef unsigned char uch;
   */
  #if defined(__alpha__) || defined(__sparc64__) || \
  	    defined(__ia64__) || defined(__s390x__) || defined(__x86_64__) || \

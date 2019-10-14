@@ -1,6 +1,7 @@
-$OpenBSD: patch-doc_mgetty_texi_in,v 1.3 2007/03/23 20:28:28 ajacoutot Exp $
---- doc/mgetty.texi-in.orig	Fri Dec 30 22:43:49 2005
-+++ doc/mgetty.texi-in	Fri Mar 23 20:32:36 2007
+$OpenBSD: patch-doc_mgetty_texi_in,v 1.4 2019/10/14 21:05:07 jcs Exp $
+Index: doc/mgetty.texi-in
+--- doc/mgetty.texi-in.orig
++++ doc/mgetty.texi-in
 @@ -17,6 +17,11 @@ This is the online documentation for the mgetty + send
  package.
  
@@ -13,7 +14,7 @@ $OpenBSD: patch-doc_mgetty_texi_in,v 1.3 2007/03/23 20:28:28 ajacoutot Exp $
  @end ifinfo
  
  @titlepage
-@@ -1480,7 +1485,7 @@ FAX_NOTIFY_PROGRAM @var{<hangup code>} '@var{<sender i
+@@ -1517,7 +1522,7 @@ FAX_NOTIFY_PROGRAM @var{<hangup code>} '@var{<sender i
  
  @var{<hangup code>} is 0 if the receive was successful, non-zero
  otherwise.  @var{<sender id>} is the fax identification string received
