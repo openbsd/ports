@@ -1,17 +1,17 @@
-$OpenBSD: patch-configure,v 1.19 2017/12/21 10:10:01 jsg Exp $
+$OpenBSD: patch-configure,v 1.20 2019/10/14 09:18:00 jsg Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -2024,22 +2024,6 @@ if test "$_use_cxx11" = "yes" ; then
+@@ -2239,22 +2239,6 @@ if test "$_release_build" = yes; then
+ 	append_var DEFINES "-DRELEASE_BUILD"
  fi
- echo $_use_cxx11
  
 -# By default, we add -pedantic to the CXXFLAGS to catch some potentially
 -# non-portable constructs, like use of GNU extensions.
 -# However, some platforms use GNU extensions in system header files, so
 -# for these we must not use -pedantic.
 -case $_host_os in
--android | androidsdl | gamecube | psp | tizen | wii | webos)
+-3ds | android | androidsdl | gamecube | ps2 | psp | switch | tizen | wii | webos)
 -	;;
 -*)
 -	# ICC does not support pedantic, while GCC and clang do.
@@ -24,8 +24,8 @@ Index: configure
 -
  # If possible, we want to use -Wglobal-constructors
  # However, not all compilers support that, so check whether the active one does.
- echocheck "whether -Wglobal-constructors work"
-@@ -3929,16 +3913,15 @@ if test "$_vorbis" = auto ; then
+ echocheck "whether C++ compiler accepts -Wglobal-constructors"
+@@ -4275,16 +4259,15 @@ if test "$_vorbis" = auto ; then
  int main(void) { vorbis_packet_blocksize(0,0); return 0; }
  EOF
  	if test "$_ogg" = yes ; then
@@ -47,7 +47,7 @@ Index: configure
  fi
  define_in_config_if_yes "$_vorbis" 'USE_VORBIS'
  echo "$_vorbis"
-@@ -4002,16 +3985,14 @@ int main(void) {
+@@ -4369,16 +4352,14 @@ int main(void) {
  }
  EOF
  	if test "$_ogg" = yes ; then

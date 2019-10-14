@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/27 21:03:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/10/14 09:18:00 jsg Exp $
 @bin bin/scummvm
 @man man/man6/scummvm.6
 share/appdata/
@@ -10,9 +10,10 @@ share/doc/scummvm/COPYING
 share/doc/scummvm/COPYING.BSD
 share/doc/scummvm/COPYING.FREEFONT
 share/doc/scummvm/COPYING.LGPL
+share/doc/scummvm/COPYING.OFL
 share/doc/scummvm/COPYRIGHT
-share/doc/scummvm/NEWS
-share/doc/scummvm/README
+share/doc/scummvm/NEWS.md
+share/doc/scummvm/README.md
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/scalable/
@@ -22,7 +23,9 @@ share/pixmaps/
 share/pixmaps/scummvm.xpm
 share/scummvm/
 share/scummvm/access.dat
+share/scummvm/cryomni3d.dat
 share/scummvm/drascula.dat
+share/scummvm/fonts.dat
 share/scummvm/hugo.dat
 share/scummvm/kyra.dat
 share/scummvm/lure.dat
@@ -32,7 +35,9 @@ share/scummvm/pred.dic
 share/scummvm/queen.tbl
 share/scummvm/scummclassic.zip
 share/scummvm/scummmodern.zip
+share/scummvm/scummremastered.zip
 share/scummvm/sky.cpt
+share/scummvm/supernova.dat
 share/scummvm/teenagent.dat
 share/scummvm/titanic.dat
 share/scummvm/tony.dat
@@ -40,3 +45,5 @@ share/scummvm/toon.dat
 share/scummvm/translations.dat
 @tag update-desktop-database
 share/scummvm/wintermute.zip
+share/scummvm/xeen.ccs
+@tag gtk-update-icon-cache %D/share/icons/hicolor

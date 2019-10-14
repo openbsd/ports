@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.82 2019/07/12 20:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2019/10/14 09:18:00 jsg Exp $
 
 COMMENT=	graphical adventure game interpreter
-V=		2.0.0
+V=		2.1.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://www.scummvm.org/frs/scummvm/${V}/
-REVISION=	5
 
 HOMEPAGE=	https://www.scummvm.org/
 
@@ -21,7 +20,8 @@ WANTLIB += ${COMPILER_LIBCXX} theoradec vorbis vorbisfile z
 # just use a newer compiler everywhere.
 COMPILER=	base-clang ports-gcc
 
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 LIB_DEPENDS=	audio/libmad \
 		audio/libvorbis \
 		audio/flac \

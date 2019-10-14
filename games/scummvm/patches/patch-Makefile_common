@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_common,v 1.9 2016/11/01 13:03:14 jsg Exp $
---- Makefile.common.orig	Tue Nov  1 20:19:09 2016
-+++ Makefile.common	Tue Nov  1 20:19:36 2016
-@@ -171,22 +171,6 @@ AMIGA_DATE = $(shell gdate '+%d.%m.%Y')
+$OpenBSD: patch-Makefile_common,v 1.10 2019/10/14 09:18:00 jsg Exp $
+Index: Makefile.common
+--- Makefile.common.orig
++++ Makefile.common
+@@ -195,22 +195,6 @@ AMIGA_DATE = $(shell gdate '+%d.%m.%Y')
  base/version.o: CXXFLAGS:=$(CXXFLAGS) -DAMIGA_DATE=\"$(AMIGA_DATE)\"
  endif
  
