@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/10/14 22:31:20 kmos Exp $
 
 COMMENT =		autocompletion tool for Python
 
-MODPY_EGG_VERSION =	0.13.2
+MODPY_EGG_VERSION =	0.15.1
 DISTNAME =		jedi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -19,12 +18,14 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	jedi test
 
-RUN_DEPENDS =		devel/py-parso${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-parso${MODPY_FLAVOR}>=0.5.0
 
 TEST_DEPENDS =		devel/py-docopt${MODPY_FLAVOR} \
 			devel/py-colorama${MODPY_FLAVOR}
+
+# some tests need HOME to be writable
+PORTHOME =		/tmp
 
 FLAVORS =		python3
 FLAVOR ?=
