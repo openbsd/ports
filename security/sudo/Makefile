@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/10/14 15:17:27 millert Exp $
 
 COMMENT=	execute a command as another user
 
-DISTNAME=	sudo-1.8.27
+DISTNAME=	sudo-1.8.28
 CATEGORIES=	security
-REVISION=	1
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
 
@@ -17,9 +16,9 @@ WANTLIB+=	c util z
 HOMEPAGE=	https://www.sudo.ws/
 
 MASTER_SITES=	https://www.sudo.ws/dist/ \
-		ftp://plier.ucar.edu/pub/sudo/ \
-		ftp://ftp.tux.org/pub/security/sudo/ \
-		ftp://sunsite.ualberta.ca/pub/Mirror/sudo/
+		https://bigsearcher.com/mirrors/sudo/ \
+		https://mirrors.concertpass.com/sudo/ \
+		ftp://ftp.uwsg.indiana.edu/pub/security/sudo/
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
