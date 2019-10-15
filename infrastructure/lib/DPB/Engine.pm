@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.129 2019/10/15 13:43:47 espie Exp $
+# $OpenBSD: Engine.pm,v 1.130 2019/10/15 13:45:16 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -466,7 +466,7 @@ sub new_path
 {
 	my ($self, $v) = @_;
 	if (defined $v->{info}{IGNORE} && 
-	    !$self->{state}->{fetch_only}) {
+	    !$self->{state}{fetch_only}) {
 		$self->log('!', $v, " ".$v->{info}{IGNORE}->string);
 		$self->stub_out($v);
 		return;
