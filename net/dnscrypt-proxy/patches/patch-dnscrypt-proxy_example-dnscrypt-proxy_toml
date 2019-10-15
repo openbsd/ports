@@ -1,9 +1,9 @@
-$OpenBSD: patch-dnscrypt-proxy_example-dnscrypt-proxy_toml,v 1.5 2019/09/10 13:19:25 bket Exp $
+$OpenBSD: patch-dnscrypt-proxy_example-dnscrypt-proxy_toml,v 1.6 2019/10/15 04:18:20 bket Exp $
 
 Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
 --- dnscrypt-proxy/example-dnscrypt-proxy.toml.orig
 +++ dnscrypt-proxy/example-dnscrypt-proxy.toml
-@@ -46,7 +46,7 @@ max_clients = 250
+@@ -45,7 +45,7 @@ max_clients = 250
  ## Note (2): this feature is not compatible with systemd socket activation.
  ## Note (3): when using -pidfile, the PID file directory must be writable by the new user
  
