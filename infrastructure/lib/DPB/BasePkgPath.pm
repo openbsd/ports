@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.7 2019/10/15 13:41:59 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.8 2019/10/15 13:45:04 espie Exp $
 #
-# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -23,6 +23,12 @@ use DPB::Util;
 # everything is done to normalize PkgPaths, so that we have
 # one pkgpath object for each distinct flavor/subpackage combination
 
+# this is the base abstract class that is shared by dpb and sqlports so they
+# both normalize paths the same way
+
+
+# see also dump-vars in bsd.port.mk(5)
+
 package DPB::BasePkgPath;
 my $cache = {};
 
@@ -39,6 +45,7 @@ sub create
 		if ($v =~ m/^\-/) {
 			DPB::Util->die("$fullpkgpath has >1 multi") 
 			    if exists $o->{m};
+			# XXX micro-optimization, don't save -main. Worth it ?
 			if ($v eq '-main') {
 				$o->{m} = undef;
 			} else {
