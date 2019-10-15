@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.6 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.7 2019/10/15 13:41:59 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -151,9 +151,20 @@ sub add_to_subdirlist
 }
 
 # XXX
-# in the ports tree, when you build with SUBDIR=n/value, you'll
-# get all the -multi packages, but with the default flavor.
-# we have to strip the flavor part to match the SUBDIR we asked for.
+# dump-vars shows the actual pkgpaths with multi,
+# but with pseudo-flavors stripped.
+# we have to reconstitute pseudo-flavors from the
+# subdir line
+# for instance, if SUBDIR=devel/gmp,no_cxx
+# you'll see
+# ===> devel/gmp,no_cxx
+# devel/gmp,-main.VAR=value
+
+# so:
+# with $subdir = PkgPath->new('devel/gmp,no_cxx');
+# $actual = PkgPath->compose('devel/gmp,-main', $subdir);
+# yields devel/gmp,no_cxx,-main
+# as wanted.
 
 sub compose
 {
@@ -187,6 +198,8 @@ sub may_create
 # subdirs, we have to deal with them.
 # so, create $h that holds all paths, and selectively copy the ones from
 # todo, along with the set in $want that corresponds to the subdirlist.
+
+# (also, in the above case, we get devel/gmp,-cxx as IGNORE'd)
 
 sub handle_equivalences
 {
