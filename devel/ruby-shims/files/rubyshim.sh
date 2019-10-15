@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -
 #
 # Copyright (c) 2019 joshua stein <jcs@jcs.org>
 #
@@ -15,14 +15,14 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
 
+set +o sh
+set -o noglob
+
 me=`basename $0`
-origargs=$*
+ver=""
 
 parsefile() {
-	local _file=$1
-
-	ver=`sed -e 's/^\([0-9]\)\./\1/' -e 's/\..*//' < ${_file}`
-	exec ${me}${ver} $origargs
+	ver=`sed -e 's/^\([0-9]\)\./\1/' -e 's/\..*//' < ${1}`
 }
 
 # check current-directory, then walk back to /
@@ -30,6 +30,7 @@ dir=$PWD
 while true; do
 	if [ -s "${dir}/.ruby-version" ]; then
 		parsefile "${dir}/.ruby-version"
+		break
 	elif [ ! -n "$dir" ]; then
 		break
 	else
@@ -37,11 +38,23 @@ while true; do
 	fi
 done
 
-# check system-wide /etc/ruby-version
-if [ -s /etc/ruby-version ]; then
-	parsefile /etc/ruby-version
+if [[ $ver == "" ]]; then
+	# check system-wide /etc/ruby-version
+	if [ -s /etc/ruby-version ]; then
+		parsefile /etc/ruby-version
+	fi
 fi
 
-# otherwise use the newest installed ruby
-highver=`echo /usr/local/bin/ruby?? | sort -n | tail -1 | sed 's/.*ruby//'`
-exec ${me}${highver} $origargs
+if [[ $ver == "" ]]; then
+	# otherwise find the newest installed ruby
+	set +o noglob
+	ver=`echo /usr/local/bin/ruby?? | sort -n | tail -1 | sed 's/.*ruby//'`
+	set -o noglob
+fi
+
+if [[ $ver == "" ]]; then
+	echo "can't find a ruby version to use" >/dev/stderr
+	exit 1
+fi
+
+exec ${me}${ver} "$@"
