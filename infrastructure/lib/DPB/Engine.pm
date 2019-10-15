@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.130 2019/10/15 13:45:16 espie Exp $
+# $OpenBSD: Engine.pm,v 1.131 2019/10/15 14:41:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -21,6 +21,7 @@ use warnings;
 use DPB::Limiter;
 use DPB::SubEngine;
 use DPB::ErrorList;
+use DPB::Queue;
 use Time::HiRes;
 
 package DPB::Engine;
@@ -40,10 +41,10 @@ use DPB::Util;
 sub new
 {
 	my ($class, $state) = @_;
-	my $o = bless {built => {},
-	    tobuild => {},
+	my $o = bless {built => DPB::HashQueue->new,
+	    tobuild => DPB::HashQueue->new,
 	    state => $state,
-	    installable => {},
+	    installable => DPB::HashQueue->new,
 	    heuristics => $state->heuristics,
 	    sizer => $state->sizer,
 	    locker => $state->locker,
@@ -52,9 +53,9 @@ sub new
 	    errors => DPB::ErrorList->new,
 	    locks => DPB::LockList->new,
 	    nfslist => DPB::NFSList->new,
-	    ts => time(),
-	    requeued => [],
-	    ignored => []}, $class;
+	    ts => Time::HiRes::time(),
+	    requeued => DPB::ListQueue->new,
+	    ignored => DPB::ListQueue->new}, $class;
 	$o->{buildable} = $class->build_subengine_class($state)->new($o, 
 	    $state->builder);
 	if ($state->{want_fetchinfo}) {
@@ -89,16 +90,8 @@ sub status
 	my ($self, $v) = @_;
 	# each path is in one location only
 	# this is not efficient but we don't care, as this is user ui
-	for my $k (qw(built tobuild installable)) {
-		if ($self->{$k}{$v}) {
-			return $k;
-		}
-	}
-	if ($self->{buildable}->contains($v)) {
-		return "buildable";
-	}
-	for my $k (qw(errors locks nfslist)) {
-		if (grep {$_ == $v} @{$self->{$k}}) {
+	for my $k (qw(built tobuild installable buildable errors locks nfslist)) {
+		if ($self->{$k}->contains($v)) {
 			return $k;
 		}
 	}
@@ -139,19 +132,6 @@ sub flush
 	$self->{log}->flush;
 }
 
-sub count
-{
-	my ($self, $field) = @_;
-	my $r = $self->{$field};
-	if (ref($r) eq 'HASH') {
-		return scalar keys %$r;
-	} elsif (ref($r) eq 'ARRAY') {
-		return scalar @$r;
-	} else {
-		return "?";
-    	}
-}
-
 # returns the number of distfiles to fetch
 # XXX side-effect: changes the heuristics based
 # on actual Q number, e.g., tries harder to
@@ -159,7 +139,7 @@ sub count
 # and doesn't really caret otherwise
 sub fetchcount
 {
-	my ($self, $q, $t)= @_;
+	my ($self, $q)= @_;
 	return () unless defined $self->{tofetch};
 	if ($self->{state}{fetch_only}) {
 		$self->{tofetch}{queue}->set_fetchonly;
@@ -175,13 +155,12 @@ sub statline
 {
 	my $self = shift;
 	my $q = $self->{buildable}->count;
-	my $t = $self->count("tobuild");
 	return join(" ",
-	    "I=".$self->count("installable"),
-	    "B=".$self->count("built"),
+	    "I=".$self->{installable}->count,
+	    "B=".$self->{built}->count,
 	    "Q=$q",
-	    "T=$t",
-	    $self->fetchcount($q, $t));
+	    "T=".$self->{tobuild}->count,
+	    $self->fetchcount($q));
 }
 
 # see next method, don't bother adding stuff if not needed.
@@ -199,10 +178,10 @@ sub report
 {
 	my $self = shift;
 	my $q = $self->{buildable}->count;
-	my $t = $self->count("tobuild");
+	my $t = $self->{tobuild}->count;
 	return join(" ",
 	    $self->statline,
-	    "!=".$self->count("ignored"))."\n".
+	    "!=".$self->{ignored}->count)."\n".
 	    $self->may_add("L=", $self->{locks}->stringize).
 	    $self->may_add("E=", $self->{errors}->stringize). 
 	    $self->may_add("H=", $self->{nfslist}->stringize);
@@ -451,7 +430,6 @@ sub check_buildable
 {
 	my ($self, $forced) = @_;
 	my $r = $self->limit($forced, 50, "ENG", 1,
-#	    $self->{buildable}->count > 0,
 	    sub {
 		$self->log('+');
 		1 while $self->adjust_built;

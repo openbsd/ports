@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: ErrorList.pm,v 1.5 2019/10/15 13:44:19 espie Exp $
+# $OpenBSD: ErrorList.pm,v 1.6 2019/10/15 14:41:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -21,15 +21,11 @@ use warnings;
 # Abstract interface to problems that must be handled asynchronously
 # by the engine
 
+use DPB::Queue;
 # the base class manages a list of issues, and has a basic "recheck"
 # call (template method pattern) that will be specialized.
 package DPB::ErrorList::Base;
-
-sub new
-{
-	my $class = shift;
-	return bless [], $class;
-}
+our @ISA = qw(DPB::ListQueue);
 
 sub recheck
 {
