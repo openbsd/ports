@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/15 12:46:02 espie Exp $
+bin/unwebp
+@man man/man1/unwebp.1

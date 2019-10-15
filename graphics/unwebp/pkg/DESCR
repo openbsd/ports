@@ -1,0 +1,6 @@
+unwebp is a simple script to get rid of google new image format,
+by converting it back to something decent like gif or png that can
+be read outside of a browser.
+
+Unsurprisingly, libwebp only offers support into webp, not for converting
+things back to gifs.
