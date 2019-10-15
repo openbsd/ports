@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.486 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.487 2019/10/15 13:08:33 espie Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -298,6 +298,7 @@
      SUBDIR += tkpng
      SUBDIR += ttfautohint
      SUBDIR += ufraw
+     SUBDIR += unwebp
      SUBDIR += vcdimager
      SUBDIR += vid
      SUBDIR += videod
