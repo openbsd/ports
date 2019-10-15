@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/09/07 20:09:35 bket Exp $
+# $OpenBSD: Makefile,v 1.4 2019/10/15 04:19:59 bket Exp $
 
 COMMENT =	extremely fast non-cryptographic hash algorithm
 
 GH_ACCOUNT =	Cyan4973
 GH_PROJECT =	xxHash
-GH_TAGNAME =	v0.7.1
-REVISION =	1
+GH_TAGNAME =	v0.7.2
 PKGNAME =	${DISTNAME:L}
 
 SHARED_LIBS =	xxhash 0.1	# 0.7.1
