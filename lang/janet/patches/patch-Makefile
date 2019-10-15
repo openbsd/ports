@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.8 2019/09/23 22:22:10 jturner Exp $
+$OpenBSD: patch-Makefile,v 1.9 2019/10/15 19:05:51 jturner Exp $
 
 Use a date stamp for JANET_BUILD to avoid using git.
 Replace hardcoded -O2.
@@ -8,27 +8,27 @@ Index: Makefile
 --- Makefile.orig
 +++ Makefile
 @@ -27,17 +27,17 @@ PREFIX?=/usr/local
- INCLUDEDIR=$(PREFIX)/include
- BINDIR=$(PREFIX)/bin
- LIBDIR=$(PREFIX)/lib
+ INCLUDEDIR?=$(PREFIX)/include
+ BINDIR?=$(PREFIX)/bin
+ LIBDIR?=$(PREFIX)/lib
 -JANET_BUILD?="\"$(shell git log --pretty=format:'%h' -n 1)\""
 +JANET_BUILD?="\"$(shell date +%Y%m%d)\""
  CLIBS=-lm
  JANET_TARGET=build/janet
  JANET_LIBRARY=build/libjanet.so
  JANET_STATIC_LIBRARY=build/libjanet.a
- JANET_PATH?=$(PREFIX)/lib/janet
+ JANET_PATH?=$(LIBDIR)/janet
 -MANPATH?=$(PREFIX)/share/man/man1/
 +MANPATH?=$(PREFIX)/man/man1/
- PKG_CONFIG_PATH?=$(PREFIX)/lib/pkgconfig
+ PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
  DEBUGGER=gdb
  
--CFLAGS=-std=c99 -Wall -Wextra -Isrc/include -Isrc/conf -fpic -O2 -fvisibility=hidden \
+-CFLAGS=-std=c99 -Wall -Wextra -Isrc/include -Isrc/conf -fPIC -O2 -fvisibility=hidden \
 +CFLAGS=-std=c99 -Wall -Wextra -Isrc/include -Isrc/conf -fPIC $(FLAGS) -fvisibility=hidden \
  	   -DJANET_BUILD=$(JANET_BUILD)
  LDFLAGS=-rdynamic
  
-@@ -295,23 +295,20 @@ build/janet.pc: $(JANET_TARGET)
+@@ -296,23 +296,20 @@ build/janet.pc: $(JANET_TARGET)
  	echo 'Libs.private: $(CLIBS)' >> $@
  
  install: $(JANET_TARGET) build/janet.pc
