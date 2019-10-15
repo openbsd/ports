@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.128 2019/05/12 12:12:53 espie Exp $
+# $OpenBSD: Engine.pm,v 1.129 2019/10/15 13:43:47 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -21,6 +21,7 @@ use warnings;
 use DPB::Limiter;
 use DPB::SubEngine;
 use DPB::ErrorList;
+use Time::HiRes;
 
 package DPB::Engine;
 our @ISA = qw(DPB::Limiter);
@@ -28,16 +29,13 @@ our @ISA = qw(DPB::Limiter);
 use DPB::Heuristics;
 use DPB::Util;
 
-sub subengine_class
-{
-	my ($class, $state) = @_;
-	if ($state->{fetch_only}) {
-		return "DPB::SubEngine::NoBuild";
-	} else {
-		require DPB::SubEngine::Build;
-		return "DPB::SubEngine::Build";
-	}
-}
+# this is the main dpb engine, responsible for moving stuff that can
+# be built to the right location, and starting the actual builds
+
+# - it delegates to a subengine class for actually doing stuff
+# (e.g., build/fetch/roach)
+
+# - it's responsible for (more or less) monitoring locks and errors
 
 sub new
 {
@@ -57,7 +55,8 @@ sub new
 	    ts => time(),
 	    requeued => [],
 	    ignored => []}, $class;
-	$o->{buildable} = $class->subengine_class($state)->new($o, $state->builder);
+	$o->{buildable} = $class->build_subengine_class($state)->new($o, 
+	    $state->builder);
 	if ($state->{want_fetchinfo}) {
 		require DPB::SubEngine::Fetch;
 		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
@@ -67,6 +66,18 @@ sub new
 	return $o;
 }
 
+sub build_subengine_class
+{
+	my ($class, $state) = @_;
+	if ($state->{fetch_only}) {
+		return "DPB::SubEngine::NoBuild";
+	} else {
+		require DPB::SubEngine::Build;
+		return "DPB::SubEngine::Build";
+	}
+}
+
+# forwarder for the wipe external command
 sub wipe
 {
 	my $o = shift;
@@ -76,6 +87,8 @@ sub wipe
 sub status
 {
 	my ($self, $v) = @_;
+	# each path is in one location only
+	# this is not efficient but we don't care, as this is user ui
 	for my $k (qw(built tobuild installable)) {
 		if ($self->{$k}{$v}) {
 			return $k;
@@ -116,7 +129,7 @@ sub log_no_ts
 sub log
 {
 	my $self = shift;
-	$self->{ts} = time();
+	$self->{ts} = Time::HiRes::time();
 	$self->log_no_ts(@_);
 }
 
@@ -139,6 +152,11 @@ sub count
     	}
 }
 
+# returns the number of distfiles to fetch
+# XXX side-effect: changes the heuristics based
+# on actual Q number, e.g., tries harder to
+# fetch if the queue is "low" (30, not tweakable)
+# and doesn't really caret otherwise
 sub fetchcount
 {
 	my ($self, $q, $t)= @_;
@@ -166,6 +184,7 @@ sub statline
 	    $self->fetchcount($q, $t));
 }
 
+# see next method, don't bother adding stuff if not needed.
 sub may_add
 {
 	my ($self, $prefix, $s) = @_;
@@ -202,6 +221,8 @@ sub important
 	if (@{$self->{errors}} != $self->{lasterrors}) {
 		$self->{lasterrors} = @{$self->{errors}};
 		return "Error in ".join(' ', map {$_->fullpkgpath} @{$self->{errors}})."\n";
+	} else {
+		return undef;
 	}
 }
 
@@ -705,8 +726,7 @@ sub dump
 # namely, scan the most important ports first.
 #
 # use case: when we restart dpb after a few hours, we want the listing job
-# to get to groff very quickly, as the queue will stay desperately empty
-# otherwise...
+# to get to gettext/iconv/gmake very quickly.
 
 sub dump_dependencies
 {
