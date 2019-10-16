@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/09/30 20:42:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/10/16 19:36:57 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -3459,7 +3459,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/ca/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/ca/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/transactions.json
@@ -3512,7 +3511,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/cs/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/cs/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/transactions.json
@@ -3565,7 +3563,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/da/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/da/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/transactions.json
@@ -3618,7 +3615,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/de_DE/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/de_DE/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/transactions.json
@@ -3672,7 +3668,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/el/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/el/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/transactions.json
@@ -3725,7 +3720,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/en/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/en/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/transactions.json
@@ -3778,7 +3772,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/es_ES/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/es_ES/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/transactions.json
@@ -3831,7 +3824,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/fr/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/fr/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/transactions.json
@@ -3884,7 +3876,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/ja/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/ja/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/ja/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/ja/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/ja/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/ja/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/ja/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/ja/transactions.json
@@ -3937,7 +3928,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/nl/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/nl/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/transactions.json
@@ -3990,7 +3980,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/pl/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/pl/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/transactions.json
@@ -4043,7 +4032,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/transactions.json
@@ -4096,7 +4084,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/ru/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/ru/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/transactions.json
@@ -4149,7 +4136,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/sv/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/sv/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/transactions.json
@@ -4202,7 +4188,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/tr/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/tr/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/transactions.json
@@ -4255,7 +4240,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/transactions.json
@@ -4308,7 +4292,6 @@ share/unifi/webapps/ROOT/app-unifi/locales/zh_TW/remoteUserVpn.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_TW/routing.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_TW/settings.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_TW/statistics.json
-share/unifi/webapps/ROOT/app-unifi/locales/zh_TW/store.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_TW/streams.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_TW/switchStats.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_TW/transactions.json
