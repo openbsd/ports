@@ -1,19 +1,14 @@
-$OpenBSD: patch-source_common_unicode_uconfig_h,v 1.1 2017/05/24 15:44:42 ajacoutot Exp $
-
-Output of "./configure --disable-renaming ...":
-/* ICU customizations: put these lines at the top of uconfig.h */
-/* -DU_DISABLE_RENAMING=1 */
-#define U_DISABLE_RENAMING 1
+$OpenBSD: patch-source_common_unicode_uconfig_h,v 1.2 2019/10/16 13:42:58 ajacoutot Exp $
 
 Index: source/common/unicode/uconfig.h
 --- source/common/unicode/uconfig.h.orig
 +++ source/common/unicode/uconfig.h
-@@ -17,6 +17,8 @@
- #ifndef __UCONFIG_H__
- #define __UCONFIG_H__
- 
-+/* -DU_DISABLE_RENAMING=1 */
+@@ -89,7 +88,7 @@
+  * @internal
+  */
+ #ifndef U_DISABLE_RENAMING
+-#define U_DISABLE_RENAMING 0
 +#define U_DISABLE_RENAMING 1
+ #endif
  
- /*!
-  * \file
+ /**

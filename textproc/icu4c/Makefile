@@ -1,21 +1,17 @@
-# $OpenBSD: Makefile,v 1.72 2019/09/28 09:45:28 ajacoutot Exp $
-
-PORTROACH=		skipv:release-64-2
+# $OpenBSD: Makefile,v 1.73 2019/10/16 13:42:58 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT-main=		International Components for Unicode
 COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
-VERSION=		64.2
+VERSION=		65.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
-REVISION-main=		0
-REVISION-wwwdata=	0
 
 MAJ_V=			${VERSION:R}
-SO_VERSION=		15.0
+SO_VERSION=		16.0
 .for _lib in icudata icui18n icuio icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -35,8 +31,7 @@ WANTLIB-main=		c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://github.com/unicode-org/icu/releases/download/release-${VERSION:S/./-/g}/ \
-			http://download.icu-project.org/files/icu4c/${VERSION}/
+MASTER_SITES=		https://github.com/unicode-org/icu/releases/download/release-${VERSION:S/./-/g}/
 
 EXTRACT_SUFX=		.tgz
 

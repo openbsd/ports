@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_common_putil_cpp,v 1.3 2019/06/10 08:07:50 ajacoutot Exp $
+$OpenBSD: patch-source_common_putil_cpp,v 1.4 2019/10/16 13:42:58 ajacoutot Exp $
 
 https://reviews.freebsd.org/D10128
 
 Index: source/common/putil.cpp
 --- source/common/putil.cpp.orig
 +++ source/common/putil.cpp
-@@ -1917,7 +1917,7 @@ remapPlatformDependentCodepage(const char *locale, con
+@@ -1931,7 +1931,7 @@ remapPlatformDependentCodepage(const char *locale, con
           */
          name = "ISO-8859-1";
      }
@@ -14,7 +14,7 @@ Index: source/common/putil.cpp
      if (locale == NULL && *name == 0) {
          /*
          No locale was specified, and an empty name was passed in.
-@@ -1936,11 +1936,6 @@ remapPlatformDependentCodepage(const char *locale, con
+@@ -1950,11 +1950,6 @@ remapPlatformDependentCodepage(const char *locale, con
           */
          name = "UTF-8";
      }
@@ -26,7 +26,7 @@ Index: source/common/putil.cpp
  #elif U_PLATFORM == U_PF_HPUX
      if (locale != NULL && uprv_strcmp(locale, "zh_HK") == 0 && uprv_strcmp(name, "big5") == 0) {
          /* HP decided to extend big5 as hkbig5 even though it's not compatible :-( */
-@@ -2096,7 +2091,7 @@ int_getDefaultCodepage()
+@@ -2110,7 +2105,7 @@ int_getDefaultCodepage()
         nl_langinfo may use the same buffer as setlocale. */
      {
          const char *codeset = nl_langinfo(U_NL_LANGINFO_CODESET);

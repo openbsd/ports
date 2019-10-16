@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_common_Makefile_in,v 1.12 2019/06/10 08:07:50 ajacoutot Exp $
+$OpenBSD: patch-source_common_Makefile_in,v 1.13 2019/10/16 13:42:58 ajacoutot Exp $
 
 Don't strip static libraries.
 
 Index: source/common/Makefile.in
 --- source/common/Makefile.in.orig
 +++ source/common/Makefile.in
-@@ -154,7 +154,7 @@ install-local: install-headers install-library
+@@ -156,7 +156,7 @@ install-local: install-headers install-library
  install-library: all-local
  	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
  ifneq ($(ENABLE_STATIC),)

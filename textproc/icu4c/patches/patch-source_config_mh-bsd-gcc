@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.8 2018/12/09 21:00:26 ajacoutot Exp $
+$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.9 2019/10/16 13:42:58 ajacoutot Exp $
 
 Sync with config/mh-linux.
 
@@ -31,7 +31,7 @@ Index: source/config/mh-bsd-gcc
  ## Compiler switch to embed a library name
 -LD_SONAME = -Wl,-soname -Wl,$(notdir $(MIDDLE_SO_TARGET))
 +# The initial tab in the next line is to prevent icu-config from reading it.
-+	LD_SONAME = -Wl,-soname -Wl,$(notdir $(FINAL_SO_TARGET))
++	LD_SONAME = -Wl,-soname -Wl,$(notdir $(MIDDLE_SO_TARGET))
 +#SH# # We can't depend on MIDDLE_SO_TARGET being set.
 +#SH# LD_SONAME=
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2019/06/10 08:07:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2019/10/16 13:42:59 ajacoutot Exp $
 @pkgpath textproc/icu4c
 @bin bin/derb
 @bin bin/genbrk
@@ -58,6 +58,7 @@ include/unicode/icuplug.h
 include/unicode/idna.h
 include/unicode/listformatter.h
 include/unicode/localebuilder.h
+include/unicode/localematcher.h
 include/unicode/localpointer.h
 include/unicode/locdspnm.h
 include/unicode/locid.h
