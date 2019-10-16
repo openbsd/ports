@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/10/16 06:45:54 claudio Exp $
 
 COMMENT =		prometheus utility tool
 
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		promu
-GH_TAGNAME =		v0.3.0
+GH_TAGNAME =		v0.5.0
 
 CATEGORIES =		devel
 
