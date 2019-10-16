@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2019/02/19 11:06:52 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.29 2019/10/16 06:51:42 giovanni Exp $
 @pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/
@@ -94,8 +94,13 @@ share/geany/filedefs/filetypes.Clojure.conf
 share/geany/filedefs/filetypes.Cython.conf
 share/geany/filedefs/filetypes.Genie.conf
 share/geany/filedefs/filetypes.Graphviz.conf
+share/geany/filedefs/filetypes.Groovy.conf
 share/geany/filedefs/filetypes.JSON.conf
+share/geany/filedefs/filetypes.Kotlin.conf
+share/geany/filedefs/filetypes.Nim.conf
 share/geany/filedefs/filetypes.Scala.conf
+share/geany/filedefs/filetypes.Swift.conf
+share/geany/filedefs/filetypes.TypeScript.conf
 share/geany/filedefs/filetypes.abaqus
 share/geany/filedefs/filetypes.abc
 share/geany/filedefs/filetypes.actionscript
@@ -258,6 +263,7 @@ share/locale/it/LC_MESSAGES/geany.mo
 share/locale/ja/LC_MESSAGES/geany.mo
 share/locale/kk/LC_MESSAGES/geany.mo
 share/locale/ko/LC_MESSAGES/geany.mo
+share/locale/ku/LC_MESSAGES/geany.mo
 share/locale/lb/
 share/locale/lb/LC_MESSAGES/
 share/locale/lb/LC_MESSAGES/geany.mo
