@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/10/16 06:50:09 claudio Exp $
 
 COMMENT =		prometheus exporter for hardware and OS metrics
 
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		node_exporter
-GH_TAGNAME =		v0.18.0
+GH_TAGNAME =		v0.18.1
 
 CATEGORIES =		sysutils
 

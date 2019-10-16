@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_common,v 1.1.1.1 2019/05/08 12:37:09 claudio Exp $
+$OpenBSD: patch-Makefile_common,v 1.2 2019/10/16 06:50:09 claudio Exp $
 
 Index: Makefile.common
 --- Makefile.common.orig
 +++ Makefile.common
-@@ -175,11 +175,7 @@ common-docker-tag-latest:
+@@ -233,11 +233,7 @@ common-docker-manifest:
  promu: $(PROMU)
  
  $(PROMU):
