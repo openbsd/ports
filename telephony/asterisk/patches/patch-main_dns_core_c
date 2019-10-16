@@ -1,0 +1,40 @@
+$OpenBSD: patch-main_dns_core_c,v 1.1 2019/10/16 22:50:30 sthen Exp $
+
+cope with ancient nameser.h
+
+Index: main/dns_core.c
+--- main/dns_core.c.orig
++++ main/dns_core.c
+@@ -376,12 +376,12 @@ int ast_dns_resolve_ipv6_and_ipv4(struct ast_sockaddr 
+ 		ast_log(LOG_ERROR, "Couldn't allocate DNS query structure\n");
+ 		return -1;
+ 	}
+-	rc = ast_dns_query_set_add(queries, host, ns_t_aaaa, ns_c_in);
++	rc = ast_dns_query_set_add(queries, host, T_AAAA, C_IN);
+ 	if (rc != 0) {
+ 		ast_log(LOG_ERROR, "Couldn't add 'AAAA' DNS query for '%s'\n", host);
+ 		return -1;
+ 	}
+-	rc = ast_dns_query_set_add(queries, host, ns_t_a, ns_c_in);
++	rc = ast_dns_query_set_add(queries, host, T_A, C_IN);
+ 	if (rc != 0) {
+ 		ast_log(LOG_ERROR, "Couldn't add 'A' DNS query for '%s'\n", host);
+ 		return -1;
+@@ -406,7 +406,7 @@ int ast_dns_resolve_ipv6_and_ipv4(struct ast_sockaddr 
+ 			const unsigned char *data = (unsigned char *)ast_dns_record_get_data(record);
+ 			int rr_type = ast_dns_record_get_rr_type(record);
+ 
+-			if (rr_type == ns_t_aaaa && data_size == 16) {
++			if (rr_type == T_AAAA && data_size == 16) {
+ 				struct sockaddr_in6 sin6 = { 0, };
+ 
+ 				sin6.sin6_port = in_port;
+@@ -416,7 +416,7 @@ int ast_dns_resolve_ipv6_and_ipv4(struct ast_sockaddr 
+ 				address->len = sizeof(sin6);
+ 
+ 				return 0;
+-			} else if (rr_type == ns_t_a && data_size == 4) {
++			} else if (rr_type == T_A && data_size == 4) {
+ 				struct sockaddr_in sin4 = { 0, };
+ 
+ 				sin4.sin_port = in_port;
