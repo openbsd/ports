@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/09/03 13:48:25 uaa Exp $
+# $OpenBSD: Makefile,v 1.36 2019/10/16 18:59:54 cwen Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
@@ -12,6 +12,8 @@ DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
 PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
+REVISION-main=		0
+REVISION-qt=		0
 CATEGORIES=		geo
 
 HOMEPAGE=		https://www.gpsbabel.org/
@@ -34,7 +36,8 @@ MULTI_PACKAGES=		-main -tk -qt
 MODULES=		devel/qmake x11/tk x11/qt5
 MODQMAKE_PROJECTS =	gui/app.pro
 
-LIB_DEPENDS-main=	devel/libusb-compat \
+LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
+			devel/libusb-compat \
 			devel/shapelib
 
 cWANTLIB = 		c m pthread
@@ -44,7 +47,8 @@ WANTLIB-qt += GL Qt5Core Qt5Gui Qt5Network Qt5WebKit Qt5WebKitWidgets
 WANTLIB-qt += Qt5Widgets Qt5Xml ${COMPILER_LIBCXX} ${cWANTLIB}
 
 LIB_DEPENDS-tk=
-LIB_DEPENDS-qt=		x11/qt5/qtwebkit
+LIB_DEPENDS-qt=		${MODGCC4_CPPLIBDEP} \
+			x11/qt5/qtwebkit
 PKG_ARCH-tk=	*
 RUN_DEPENDS-tk=		geo/gpsbabel \
 			${MODTK_RUN_DEPENDS}
