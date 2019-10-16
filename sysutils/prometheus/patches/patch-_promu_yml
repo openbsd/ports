@@ -1,0 +1,16 @@
+$OpenBSD: patch-_promu_yml,v 1.1 2019/10/16 06:47:12 claudio Exp $
+
+Don't include user and hostname into build.
+
+Index: .promu.yml
+--- .promu.yml.orig
++++ .promu.yml
+@@ -17,7 +17,7 @@ build:
+         -X github.com/prometheus/common/version.Version={{.Version}}
+         -X github.com/prometheus/common/version.Revision={{.Revision}}
+         -X github.com/prometheus/common/version.Branch={{.Branch}}
+-        -X github.com/prometheus/common/version.BuildUser={{user}}@{{host}}
++        -X github.com/prometheus/common/version.BuildUser=OpenBSD
+         -X github.com/prometheus/common/version.BuildDate={{date "20060102-15:04:05"}}
+ tarball:
+     files:

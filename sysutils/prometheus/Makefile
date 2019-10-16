@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/10/16 06:47:12 claudio Exp $
 
 COMMENT =		systems monitoring and alerting toolkit
 
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		prometheus
-GH_TAGNAME =		v2.9.2
+GH_TAGNAME =		v2.13.0
 
 CATEGORIES =		sysutils
 
@@ -37,6 +37,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/prometheus/console_libraries
 	${INSTALL_PROGRAM} ${WRKSRC}/prometheus ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/promtool ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tsdb/tsdb ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/consoles/* \
 		${PREFIX}/share/examples/prometheus/consoles/
 	${INSTALL_DATA} ${WRKSRC}/console_libraries/{menu.lib,prom.lib} \

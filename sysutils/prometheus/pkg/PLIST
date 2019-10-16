@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/06 06:16:27 claudio Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/10/16 06:47:12 claudio Exp $
 @newgroup _prometheus:799
 @newuser _prometheus:799:_prometheus:daemon:prometheus:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/prometheus/
 @rcscript ${RCDIR}/prometheus
 @bin bin/prometheus
 @bin bin/promtool
+@bin bin/tsdb
 share/doc/prometheus/
 share/doc/prometheus/LICENSE
 share/doc/prometheus/NOTICE

@@ -1,9 +1,11 @@
-$OpenBSD: patch-Makefile_common,v 1.1 2019/05/06 06:16:27 claudio Exp $
+$OpenBSD: patch-Makefile_common,v 1.2 2019/10/16 06:47:12 claudio Exp $
+
+Don't fetch promu form internet. This is just a build-dependency
 
 Index: Makefile.common
 --- Makefile.common.orig
 +++ Makefile.common
-@@ -213,11 +213,7 @@ common-docker-tag-latest:
+@@ -236,11 +236,7 @@ common-docker-manifest:
  promu: $(PROMU)
  
  $(PROMU):
