@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2018/11/26 14:17:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.19 2019/10/16 13:45:05 ajacoutot Exp $
 
 COMMENT =	GNUstep client for Music Player Daemon
 
 DISTNAME =	MPDCon-1.5.1
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	http://gap.nongnu.org/mpdcon/
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2018/11/26 14:17:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.38 2019/10/16 13:45:05 ajacoutot Exp $
 
 COMMENT=	GNUstep workspace manager
 
 DISTNAME =	gworkspace-0.9.4
-REVISION =	4
+REVISION =	5
 
 CATEGORIES=	x11
 
@@ -29,7 +29,8 @@ CONFIGURE_ENV += GNUSTEP_MAKEFILES=`gnustep-config --variable=GNUSTEP_MAKEFILES`
 
 # XXX libDBKit does not use XXX_INTERFACE_VERSION
 # drawback: all solibs will get version from LIBDBKit_VERSION
-MAKE_FLAGS+=	INTERFACE_VERSION=${LIBDBKit_VERSION}
+MAKE_FLAGS+=	INTERFACE_VERSION=${LIBDBKit_VERSION} \
+		LDFLAGS="${LDFLAGS} -fuse-ld=bfd"
 
 MAKE_ENV+=	FSNode_VERSION=${LIBFSNode_VERSION} \
 		FSNode_INTERFACE_VERSION=${LIBFSNode_VERSION} \

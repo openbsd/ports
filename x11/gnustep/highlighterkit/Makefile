@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2018/11/26 14:17:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.19 2019/10/16 13:45:05 ajacoutot Exp $
 
 COMMENT =	framework for highlighting and coloring syntax
 
-REVISION =	6
+REVISION =	7
 DISTNAME =	HighlighterKit-0.1.3
 SHARED_LIBS =	HighlighterKit 0.1
 

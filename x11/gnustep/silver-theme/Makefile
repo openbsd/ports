@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/11/26 14:17:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2019/10/16 13:45:06 ajacoutot Exp $
 
 COMMENT =	GNUstep theme with silvered controls
 
 V =		3.1
-REVISION =	7
+REVISION =	8
 DISTNAME =	Silver.theme-${V}
 PKGNAME =	gnustep-silver-theme-${V}
 

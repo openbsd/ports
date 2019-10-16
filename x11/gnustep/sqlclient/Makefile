@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2018/11/26 14:17:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2019/10/16 13:45:06 ajacoutot Exp $
 
 COMMENT =	GNUstep database abstraction layer
 
 VERSION =	1.8.1
-REVISION =	6
+REVISION =	7
 DISTNAME =	SQLClient-${VERSION}
 PKGNAME =	gnustep-sqlclient-${VERSION}
 
@@ -18,7 +18,7 @@ MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI = 	No
-WANTLIB +=		Performance pq ecpg mysqlclient sqlite3
+WANTLIB +=		Performance pq ecpg mariadb sqlite3
 WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS +=		x11/gnustep/performance \
 			databases/mariadb \

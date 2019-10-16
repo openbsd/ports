@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/11/26 14:17:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2019/10/16 13:45:05 ajacoutot Exp $
 
 COMMENT =	extended TicTacToe game for GNUstep
 
 DISTNAME =	Gomoku-1.2.9
-REVISION =	10
+REVISION =	11
 CATEGORIES =	games
 
 HOMEPAGE =	http://www.gnustep.it/nicola/Applications/Gomoku/

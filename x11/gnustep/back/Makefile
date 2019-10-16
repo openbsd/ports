@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2019/02/12 19:17:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.47 2019/10/16 13:45:03 ajacoutot Exp $
 
 COMMENT=	GNUstep gui backend
 
 V =		0.27.0
+REVISION =	0
 DISTNAME=	gnustep-back-${V}
 
 CATEGORIES=	devel
@@ -23,7 +24,7 @@ BACKENDV=	${V:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 SUBST_VARS=	BACKENDV
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm -fuse-ld=bfd"
 CONFIGURE_ARGS=	--with-x \
 		--disable-glitz \
 		--enable-graphics=cairo
