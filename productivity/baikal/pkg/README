@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2018/09/04 12:46:20 espie Exp $
+$OpenBSD: README,v 1.8 2019/10/16 20:17:28 remi Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -38,10 +38,11 @@ server "default" {
 
 Database Configuration
 ======================
-Baikal can work with a MySQL or SQLite3 database.
-Support for SQLite3 is included with the main php package; to use
-another database, the corresponding package needs to be installed:
+Baikal can work with a MySQL/MariaDB or SQLite3 database. For either
+database the corresponding package needs to be installed:
     php-pdo_mysql
+or
+    php-pdo_sqlite
 
 Post-installation
 =================
