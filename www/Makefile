@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.926 2019/10/04 14:52:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.927 2019/10/16 20:10:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -256,7 +256,6 @@
      SUBDIR += p5-HTML-Widget
      SUBDIR += p5-HTTP-Async
      SUBDIR += p5-HTTP-Body
-     SUBDIR += p5-HTTP-BrowserDetect
      SUBDIR += p5-HTTP-CookieJar
      SUBDIR += p5-HTTP-Cookies
      SUBDIR += p5-HTTP-DAV

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1896 2019/10/03 09:29:26 kn Exp $
+# $OpenBSD: Makefile,v 1.1897 2019/10/16 20:10:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -710,7 +710,6 @@
      SUBDIR += p5-Devel-TraceUse
      SUBDIR += p5-Devel-ebug
      SUBDIR += p5-Devel-ptkdb
-     SUBDIR += p5-Device-USB
      SUBDIR += p5-Dir-Self
      SUBDIR += p5-Directory-Scratch
      SUBDIR += p5-Dist-CheckConflicts

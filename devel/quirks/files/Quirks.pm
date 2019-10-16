@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.808 2019/09/27 05:56:17 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.809 2019/10/16 20:10:58 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1316,6 +1316,9 @@ my $obsolete_reason = {
 	'p5-WWW-Curl' => 3,
 	'java-tanukiwraper' => 5,
 	'opencv-docs' => 6,
+	'p5-Device-USB' => 6,
+	'p5-Crypt-GpgME' => 0,
+	'p5-HTTP-BrowserDetect' => 6,
 };
 
 # reasons for obsolete packages

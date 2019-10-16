@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/27 14:00:45 sturm Exp $
-${P5SITE}/HTTP/
-${P5SITE}/HTTP/BrowserDetect.pm
-@man man/man3p/HTTP::BrowserDetect.3p
