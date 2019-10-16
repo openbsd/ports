@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/05/15 08:19:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.31 2019/10/16 13:47:22 jasper Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 !%%no_luajit%%
@@ -66,6 +66,7 @@ share/examples/rspamd/modules.d/elastic.conf
 share/examples/rspamd/modules.d/emails.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/emails.conf
 share/examples/rspamd/modules.d/external_services.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/external_services.conf
 share/examples/rspamd/modules.d/force_actions.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/force_actions.conf
 share/examples/rspamd/modules.d/forged_recipients.conf
