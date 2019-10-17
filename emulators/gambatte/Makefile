@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/10/17 13:29:53 cwen Exp $
 
 COMMENT-main =		highly accurate Game Boy Color emulator
 COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
@@ -38,7 +38,8 @@ MODQMAKE_PROJECTS =	gambatte_qt
 SEPARATE_BUILD =	No
 CONFIGURE_STYLE =	qmake specific		# avoid qmake.port.mk add do-build
 
-LIB_DEPENDS-main =	devel/sdl
+LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
+			devel/sdl
 
 TEST_DEPENDS =		graphics/png
 
