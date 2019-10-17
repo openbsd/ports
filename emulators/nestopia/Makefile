@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/10/17 13:32:31 cwen Exp $
 
 COMMENT-main =		accurate Nintendo Entertainment System emulator
 COMMENT-libretro =	Nintendo Entertainment System core for retroarch
@@ -38,7 +38,7 @@ LIB_DEPENDS-main =	archivers/libarchive \
 			audio/libao \
 			devel/sdl2 \
 			x11/gtk+3
-LIB_DEPENDS-libretro =
+LIB_DEPENDS-libretro =	${MODGCC4_CPPLIBDEP}
 
 MAKE_FLAGS =		CC="${CC}" \
 			CXX="${CXX}" \
