@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/10/17 20:15:55 sthen Exp $
 
-GH_ACCOUNT =    imapsync
-GH_PROJECT =    imapsync
+GH_ACCOUNT=	imapsync
+GH_PROJECT=	imapsync
+GH_TAGNAME=	imapsync-1.727
+DISTNAME=	${GH_TAGNAME}
 
 COMMENT=	IMAP synchronization tool
 
-DISTNAME=	imapsync-1.727
 CATEGORIES=	mail
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
-# NO_LIMIT
+# "NO LIMIT PUBLIC LICENSE"; see ./LICENSE
 PERMIT_PACKAGE=	Yes
-
-WRKDIST=	${WRKDIR}/imapsync-${DISTNAME}
 
 RUN_DEPENDS=	converters/p5-DateManip \
 		security/p5-IO-Socket-SSL \
