@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2019/08/14 18:43:01 kmos Exp $
+# $OpenBSD: Makefile,v 1.169 2019/10/17 19:55:35 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -15,6 +15,7 @@
      SUBDIR += cgal
      SUBDIR += coq
      SUBDIR += dieharder
+     SUBDIR += double-conversion
      SUBDIR += ebc
      SUBDIR += ecm
      SUBDIR += eigen
