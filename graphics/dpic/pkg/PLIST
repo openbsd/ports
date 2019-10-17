@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/09/09 22:56:49 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/10/17 20:44:24 fcambus Exp $
 @bin bin/dpic
 @man man/man1/dpic.1
 share/examples/dpic/
@@ -58,6 +58,8 @@ share/examples/dpic/sources/man36.pic
 share/examples/dpic/sources/man45.pic
 share/examples/dpic/sources/man46.pic
 share/examples/dpic/sources/man47.pic
+share/examples/dpic/sources/man48.pic
+share/examples/dpic/sources/man49.pic
 share/examples/dpic/sources/mode.tex
 share/examples/dpic/sources/test1.tex
 share/examples/dpic/sources/test2.tex

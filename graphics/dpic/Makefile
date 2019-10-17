@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/10/17 20:44:24 fcambus Exp $
 
 COMMENT =		pic-like interpreter for producing line graphics
 
-DISTNAME =		dpic-2017.08.01
+DISTNAME =		dpic-2019.08.30
 
 CATEGORIES =		graphics
 
