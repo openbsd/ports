@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 20:47:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/10/17 14:03:55 cwen Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 
 V=		7.10.0
 DISTNAME=	parrot-$V
-REVISION=	7
+REVISION=	8
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	11.0
 
@@ -16,10 +16,10 @@ MASTER_SITES=	http://ftp.parrot.org/releases/all/$V/ \
 # Artistic2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += GL GLU c glut gmp iconv icudata icuuc intl m ncurses pthread
-WANTLIB += readline ${COMPILER_LIBCXX} util z ffi
+WANTLIB += ${COMPILER_LIBCXX} GL GLU c ffi glut gmp icudata icuuc
+WANTLIB += intl m readline z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS=		graphics/glew \
 			devel/pcre
@@ -55,6 +55,11 @@ INSTALL_TARGET =	install install-doc
 TEST_TARGET=		fulltest
 
 SUBST_VARS +=		V
+
+# fix for error: "_CALL_ELF" is not defined, evaluates to 0
+.if ${MACHINE_ARCH:Mpowerpc}
+CFLAGS +=		-D_CALL_ELF=1
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config/init/hints/openbsd.pm

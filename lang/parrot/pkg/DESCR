@@ -1,4 +1,4 @@
 Parrot is a virtual machine designed with the needs of dynamically typed
 languages (such as Perl and Python) in mind, and should be able to run
 programs written in these languages more efficiently than VMs developed
-with static languages in mind (JVM, .NET). 
+with static languages in mind (JVM, .NET).
