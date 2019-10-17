@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2019/09/20 22:34:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.37 2019/10/17 06:55:13 bentley Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
-V =			0.7.2
+V =			0.7.3
 DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
 PKGNAME-libretro =	libretro-mgba-$V
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -qt -libretro
 
@@ -31,7 +30,7 @@ cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
 			pthread sqlite3 swresample swscale z zip elf \
 			avresample
 WANTLIB-main =		${cWANTLIB}
-WANTLIB-qt =		${cWANTLIB} Qt5Core Qt5Gui Qt5Multimedia \
+WANTLIB-qt =		${cWANTLIB} mgba Qt5Core Qt5Gui Qt5Multimedia \
 			Qt5Network Qt5OpenGL Qt5Widgets ${COMPILER_LIBCXX}
 WANTLIB-libretro =	m pthread z
 
