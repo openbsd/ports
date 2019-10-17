@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/20 10:56:21 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/10/17 09:31:47 bentley Exp $
 @newgroup _apertium-apy:822
 @newuser _apertium-apy:822:822:daemon:Apertium Python Interface:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/apertium_apy
@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/apertium_apy-${MODPY_EGG_VERSION}-py${M
 lib/python${MODPY_VERSION}/site-packages/apertium_apy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/apertium_apy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/__init__.py
-lib/python${MODPY_VERSION}/site-packages/apertium_apy/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/apertium_apy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/${MODPY_PYCACHE}apy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/${MODPY_PYCACHE}gateway.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,7 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/apertium_apy/apy.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/gateway.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}analyze.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -66,7 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/apertium_apy/mode_search.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/systemd.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/utils/
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/utils/__init__.py
-lib/python${MODPY_VERSION}/site-packages/apertium_apy/utils/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/apertium_apy/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/utils/${MODPY_PYCACHE}translation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/utils/${MODPY_PYCACHE}wiki.${MODPY_PYC_MAGIC_TAG}pyc
