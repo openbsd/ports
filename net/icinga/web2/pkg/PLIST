@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/09/26 21:14:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/10/17 17:15:23 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -2386,6 +2386,8 @@ icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeQuer
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeendhistoryQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeeventQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimestarthistoryQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/EmptyhostgroupQuery.php
+icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/EmptyservicegroupQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventgridQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventgridhostsQuery.php
 icinga-web2/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventgridservicesQuery.php
@@ -2560,7 +2562,6 @@ icinga-web2/modules/monitoring/library/Monitoring/Web/Controller/
 icinga-web2/modules/monitoring/library/Monitoring/Web/Controller/MonitoredObjectController.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Helper/
 icinga-web2/modules/monitoring/library/Monitoring/Web/Helper/PluginOutputHookRenderer.php
-icinga-web2/modules/monitoring/library/Monitoring/Web/Helper/PluginOutputPurifier.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Hook/
 icinga-web2/modules/monitoring/library/Monitoring/Web/Hook/HostActionsHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Web/Hook/ServiceActionsHook.php
