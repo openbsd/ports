@@ -1,8 +1,8 @@
-$OpenBSD: patch-gdb_aarch64obsd-nat_c,v 1.1 2018/07/10 11:03:46 kettenis Exp $
+$OpenBSD: patch-gdb_aarch64obsd-nat_c,v 1.2 2019/10/17 17:10:26 kurt Exp $
 Index: gdb/aarch64obsd-nat.c
 --- gdb/aarch64obsd-nat.c.orig
 +++ gdb/aarch64obsd-nat.c
-@@ -0,0 +1,205 @@
+@@ -0,0 +1,206 @@
 +/* Native-dependent code for OpenBSD/arm64 (AArch64)
 +
 +   Copyright (C) 2011-2017 Free Software Foundation, Inc.
@@ -32,6 +32,7 @@ Index: gdb/aarch64obsd-nat.c
 +
 +#include "aarch64-tdep.h"
 +#include "inf-ptrace.h"
++#include "obsd-nat.h"
 +
 +/* Fill GDB's register array with the general-purpose register values
 +   from the current thread.  */
@@ -44,7 +45,7 @@ Index: gdb/aarch64obsd-nat.c
 +  int regno;
 +  int ret;
 +
-+  pid = ptid_get_pid (inferior_ptid);
++  pid = get_ptrace_pid (inferior_ptid);
 +
 +  ret = ptrace(PT_GETREGS, pid, (caddr_t)&regs, 0);
 +  if (ret < 0)
@@ -69,7 +70,7 @@ Index: gdb/aarch64obsd-nat.c
 +  int regno;
 +  int ret;
 +
-+  pid = ptid_get_pid (inferior_ptid);
++  pid = get_ptrace_pid (inferior_ptid);
 +
 +  // fetch old values as only 'valid' entries will be replaced.
 +  ret = ptrace(PT_GETREGS, pid, (caddr_t)&regs, 0);
@@ -106,7 +107,7 @@ Index: gdb/aarch64obsd-nat.c
 +  int regno;
 +  struct fpreg fpregs;
 +
-+  pid = ptid_get_pid (inferior_ptid);
++  pid = get_ptrace_pid (inferior_ptid);
 +
 +  ret = ptrace(PT_GETFPREGS, pid, (caddr_t)&fpregs, 0);
 +  if (ret < 0) {
@@ -132,7 +133,7 @@ Index: gdb/aarch64obsd-nat.c
 +  int regno;
 +  struct fpreg fpregs;
 +
-+  pid = ptid_get_pid (inferior_ptid);
++  pid = get_ptrace_pid (inferior_ptid);
 +
 +  ret = ptrace(PT_GETFPREGS, pid, (caddr_t)&fpregs, 0);
 +  if (ret < 0) {
@@ -206,5 +207,5 @@ Index: gdb/aarch64obsd-nat.c
 +  t->to_store_registers = aarch64_obsd_store_inferior_registers;
 +
 +  /* Register the target.  */
-+  add_target (t);
++  obsd_add_target (t);
 +}

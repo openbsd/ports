@@ -1,8 +1,8 @@
-$OpenBSD: patch-gdb_aarch64obsd-tdep_c,v 1.1 2018/07/10 11:03:46 kettenis Exp $
+$OpenBSD: patch-gdb_aarch64obsd-tdep_c,v 1.2 2019/10/17 17:10:26 kurt Exp $
 Index: gdb/aarch64obsd-tdep.c
 --- gdb/aarch64obsd-tdep.c.orig
 +++ gdb/aarch64obsd-tdep.c
-@@ -0,0 +1,111 @@
+@@ -0,0 +1,299 @@
 +/* Target-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2006-2017 Free Software Foundation, Inc.
@@ -23,6 +23,7 @@ Index: gdb/aarch64obsd-tdep.c
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
 +#include "defs.h"
++#include "frame-unwind.h"
 +#include "osabi.h"
 +#include "regset.h"
 +#include "trad-frame.h"
@@ -32,6 +33,189 @@ Index: gdb/aarch64obsd-tdep.c
 +#include "obsd-tdep.h"
 +#include "solib-svr4.h"
 +
++/* Signal trampolines.  */
++
++/* Since OpenBSD 3.2, the sigtramp routine is mapped at a random page
++   in virtual memory.  The randomness makes it somewhat tricky to
++   detect it, but fortunately we can rely on the fact that the start
++   of the sigtramp routine is page-aligned.  We recognize the
++   trampoline by looking for the code that invokes the sigreturn
++   system call.  The offset where we can find that code varies from
++   release to release.
++
++   By the way, the mapping mentioned above is read-only, so you cannot
++   place a breakpoint in the signal trampoline.  */
++
++/* Default page size.  */
++static const CORE_ADDR aarch64obsd_page_size = 4096;
++
++/* Offset for sigreturn(2).  */
++static const int aarch64obsd_sigreturn_offset[] = {
++  0xb4,				/* OpenBSD 6.2 */
++  0x08,				/* OpenBSD 6.1 */
++  -1
++};
++
++static int
++aarch64obsd_sigtramp_frame_sniffer (const struct frame_unwind *self,
++				    struct frame_info *this_frame,
++				    void **this_cache)
++{
++  struct gdbarch *gdbarch = get_frame_arch (this_frame);
++  enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
++  CORE_ADDR pc = get_frame_pc (this_frame);
++  CORE_ADDR start_pc = (pc & ~(aarch64obsd_page_size - 1));
++  const int *offset;
++  const char *name;
++
++  find_pc_partial_function (pc, &name, NULL, NULL);
++  if (name)
++    return 0;
++
++  for (offset = aarch64obsd_sigreturn_offset; *offset != -1; offset++)
++    {
++      gdb_byte buf[8];
++      unsigned long insn;
++
++      if (!safe_frame_unwind_memory (this_frame, start_pc + *offset,
++				     buf, sizeof buf))
++	continue;
++
++      /* Check for "mov x8, #SYS_sigreturn".  */
++      insn = extract_unsigned_integer (buf, 4, byte_order);
++      if (insn != 0xd2800ce8)
++	continue;
++
++      /* Check for "svc 0".  */
++      insn = extract_unsigned_integer (buf + 4, 4, byte_order);
++      if (insn != 0xd4000001)
++	continue;
++
++      return 1;
++    }
++
++  return 0;
++}
++
++/*
++   In 6.1 the sp points to the struct sigframe. Since 6.2 the 
++   sigtramp routine saves floating point registers on the stack
++   before the struct sigframe so that needs to be skipped to look
++   at sigframe. A sigframe looks like this:
++
++   struct sigframe {
++           int     sf_signum;
++           struct  sigcontext sf_sc;
++           siginfo_t sf_si;
++   };
++
++   struct  sigcontext {
++           int     __sc_unused;
++           int     sc_mask;
++
++           unsigned long sc_sp;
++           unsigned long sc_lr;
++           unsigned long sc_elr;
++           unsigned long sc_spsr;
++           unsigned long sc_x[30];
++
++           long    sc_cookie;
++   };
++
++*/
++
++#define AARCH64_SIGCONTEXT_REG_SIZE		8
++#define AARCH64_SIGFRAME_SIGCONTEXT_OFFSET	8
++#define AARCH64_SIGCONTEXT_SP_OFFSET		8
++#define AARCH64_SIGCONTEXT_LR_OFFSET		16
++#define AARCH64_SIGCONTEXT_PC_OFFSET		24
++#define AARCH64_SIGCONTEXT_SPSR_OFFSET		32
++#define AARCH64_SIGCONTEXT_X0_OFFSET		40
++
++static struct trad_frame_cache *
++aarch64obsd_sigtramp_frame_cache (struct frame_info *this_frame, void **this_cache)
++{
++  struct gdbarch *gdbarch = get_frame_arch (this_frame);
++  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++  enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
++  struct trad_frame_cache *cache;
++  CORE_ADDR sp, sigcontext_addr, x0_addr, func;
++  gdb_byte buf[4];
++  unsigned long insn, sigframe_offset = 0;
++  int i;
++
++  if (*this_cache)
++    return (struct trad_frame_cache *) *this_cache;
++
++  cache = trad_frame_cache_zalloc (this_frame);
++  *this_cache = cache;
++
++  func = get_frame_pc (this_frame);
++  func &= ~(aarch64obsd_page_size - 1);
++  if (!safe_frame_unwind_memory (this_frame, func, buf, sizeof buf))
++    return cache;
++
++  /* Calculate the offset where we can find `struct sigframe'.  In 6.1
++     no adjustment is needed so we look at the first instruction to see
++     if it matches 6.2+. If it is a 'sub sp, sp, #0xNNN' instruction,
++     use the amount of stack space to skip from it. */
++  insn = extract_unsigned_integer (buf, 4, byte_order);
++  if ((insn & 0xffc003ff) == 0xd10003ff)
++    sigframe_offset += ((insn & 0x003ffc00) >> 10);
++
++  sp = get_frame_register_unsigned (this_frame, AARCH64_SP_REGNUM);
++  sigcontext_addr = sp + sigframe_offset + AARCH64_SIGFRAME_SIGCONTEXT_OFFSET;
++  x0_addr = sigcontext_addr + AARCH64_SIGCONTEXT_X0_OFFSET;
++
++  trad_frame_set_reg_addr (cache, AARCH64_SP_REGNUM,
++			   sigcontext_addr + AARCH64_SIGCONTEXT_SP_OFFSET);
++  trad_frame_set_reg_addr (cache, AARCH64_LR_REGNUM,
++			   sigcontext_addr + AARCH64_SIGCONTEXT_LR_OFFSET);
++  trad_frame_set_reg_addr (cache, AARCH64_PC_REGNUM,
++			   sigcontext_addr + AARCH64_SIGCONTEXT_PC_OFFSET);
++  trad_frame_set_reg_addr (cache, AARCH64_CPSR_REGNUM,
++			   sigcontext_addr + AARCH64_SIGCONTEXT_SPSR_OFFSET);
++  for (i = 0; i < 30; i++)
++    {
++      trad_frame_set_reg_addr (cache, AARCH64_X0_REGNUM + i,
++			       x0_addr + i * AARCH64_SIGCONTEXT_REG_SIZE);
++    }
++
++  trad_frame_set_id (cache, frame_id_build (sp, func));
++
++  return cache;
++}
++
++static void
++aarch64obsd_sigtramp_frame_this_id (struct frame_info *this_frame,
++				    void **this_cache,
++				    struct frame_id *this_id)
++{
++  struct trad_frame_cache *cache =
++    aarch64obsd_sigtramp_frame_cache (this_frame, this_cache);
++
++  trad_frame_get_id (cache, this_id);
++}
++
++static struct value *
++aarch64obsd_sigtramp_frame_prev_register (struct frame_info *this_frame,
++				      void **this_cache, int regnum)
++{
++  struct trad_frame_cache *cache =
++    aarch64obsd_sigtramp_frame_cache (this_frame, this_cache);
++
++  return trad_frame_get_register (cache, this_frame, regnum);
++}
++
++static const struct frame_unwind aarch64obsd_sigtramp_frame_unwind = {
++  SIGTRAMP_FRAME,
++  default_frame_unwind_stop_reason,
++  aarch64obsd_sigtramp_frame_this_id,
++  aarch64obsd_sigtramp_frame_prev_register,
++  NULL,
++  aarch64obsd_sigtramp_frame_sniffer
++};
++
 +/* The general-purpose regset consists of 31 X registers, plus SP, PC,
 +   and SPSR and TPIDR registers.  */
 +#define AARCH64_OBSD_SIZEOF_GREGSET  (35 * X_REGISTER_SIZE)
@@ -92,10 +276,14 @@ Index: gdb/aarch64obsd-tdep.c
 +{
 +  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
 +
++  obsd_init_abi (info, gdbarch);
++
 +  /* OpenBSD/aarch64 uses SVR4-style shared libraries.  */
 +  set_solib_svr4_fetch_link_map_offsets
 +    (gdbarch, svr4_lp64_fetch_link_map_offsets);
 +  set_gdbarch_skip_solib_resolver (gdbarch, obsd_skip_solib_resolver);
++
++  frame_unwind_append_unwinder (gdbarch, &aarch64obsd_sigtramp_frame_unwind);
 +
 +  /* Enable longjmp. */
 +  tdep->jb_pc = 13;
