@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/23 06:50:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/10/17 06:31:17 bentley Exp $
 
 PKG_ARCH =	*
 
 COMMENT =	EPUB validator
 
-V =		4.2.1
+V =		4.2.2
 DISTNAME =	epubcheck-$V
 
 CATEGORIES =	textproc
