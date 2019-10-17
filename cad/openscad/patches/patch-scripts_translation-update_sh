@@ -1,0 +1,16 @@
+$OpenBSD: patch-scripts_translation-update_sh,v 1.1 2019/10/17 20:04:04 rsadowski Exp $
+
+OpenBSD does not have unlink in base
+
+Index: scripts/translation-update.sh
+--- scripts/translation-update.sh.orig
++++ scripts/translation-update.sh
+@@ -100,7 +100,7 @@ updatemo()
+ 
+   # clean the mess
+   for LANGCODE in `cat locale/LINGUAS | grep -v "#"`; do
+-   unlink ./locale/$LANGCODE/LC_MESSAGES/$LANGCODE.mo
++   rm ./locale/$LANGCODE/LC_MESSAGES/$LANGCODE.mo
+   done
+  else
+   if [ x"$(uname -s)" = x"Linux" ]; then

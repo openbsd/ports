@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/10/17 20:04:04 rsadowski Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
-V =			2015.03-2
-DISTNAME =		openscad-${V:S/-/./}
-REVISION =		9
+V =			2019.05
+DISTNAME =		openscad-${V}
 
 CATEGORIES =		cad
 
@@ -16,21 +15,23 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += CGAL GL GLEW GLU ICE SM X11 Xext Xi Xinerama Xrender
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c fontconfig freetype glib-2.0
-WANTLIB += gmp harfbuzz iconv intl m mpfr opencsg pthread qscintilla2_qt4
-WANTLIB += ${COMPILER_LIBCXX} z lib/qt4/QtGui lib/qt4/QtOpenGL
+WANTLIB += boost_system-mt boost_thread-mt c double-conversion fontconfig
+WANTLIB += freetype glib-2.0 gmp harfbuzz iconv intl m mpfr opencsg pthread
+WANTLIB += qscintilla2_qt4 ${COMPILER_LIBCXX} z lib/qt4/QtGui lib/qt4/QtOpenGL
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://files.openscad.org/
-DISTFILES =		openscad-${V}.src.tar.gz
+DISTFILES =		${DISTNAME}.src.tar.gz
 
 MODULES =		devel/qmake \
 			x11/qt4
 BUILD_DEPENDS =		devel/bison \
+			math/double-conversion \
 			devel/gettext,-tools \
 			math/eigen3
 LIB_DEPENDS =		devel/boost \
+			math/double-conversion \
 			devel/gmp \
 			devel/harfbuzz \
 			devel/mpfr \

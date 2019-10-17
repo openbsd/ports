@@ -1,0 +1,14 @@
+$OpenBSD: patch-features_boost_prf,v 1.1 2019/10/17 20:04:04 rsadowski Exp $
+
+Index: features/boost.prf
+--- features/boost.prf.orig
++++ features/boost.prf
+@@ -71,7 +71,7 @@ isEmpty(BOOST_LINK_FLAGS) {
+ 
+ isEmpty(BOOST_LINK_FLAGS) {
+   unix|macx {
+-    BOOST_LINK_FLAGS = -lboost_thread -lboost_program_options -lboost_filesystem -lboost_system -lboost_regex
++    BOOST_LINK_FLAGS = -lboost_thread-mt -lboost_program_options-mt -lboost_filesystem-mt -lboost_system-mt -lboost_regex-mt
+   }
+ }
+ 

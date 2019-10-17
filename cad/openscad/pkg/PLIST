@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/01 18:33:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/10/17 20:04:04 rsadowski Exp $
 @bin bin/openscad
 @man man/man1/openscad.1
-share/appdata/
-share/appdata/openscad.appdata.xml
+share/applications/
 share/applications/openscad.desktop
+share/metainfo/
+share/metainfo/org.openscad.OpenSCAD.appdata.xml
+share/mime/
+share/mime/packages/
 share/mime/packages/openscad.xml
 share/openscad/
 share/openscad/color-schemes/
@@ -32,6 +35,7 @@ share/openscad/examples/
 share/openscad/examples/Advanced/
 share/openscad/examples/Advanced/GEB.scad
 share/openscad/examples/Advanced/animation.scad
+share/openscad/examples/Advanced/assert.scad
 share/openscad/examples/Advanced/children.scad
 share/openscad/examples/Advanced/children_indexed.scad
 share/openscad/examples/Advanced/module_recursion.scad
@@ -51,6 +55,7 @@ share/openscad/examples/Basics/rotate_extrude.scad
 share/openscad/examples/Basics/text_on_cube.scad
 share/openscad/examples/COPYING-CC0.txt
 share/openscad/examples/Functions/
+share/openscad/examples/Functions/echo.scad
 share/openscad/examples/Functions/functions.scad
 share/openscad/examples/Functions/list_comprehensions.scad
 share/openscad/examples/Functions/polygon_areas.scad
@@ -87,15 +92,18 @@ share/openscad/examples/Old/example021.scad
 share/openscad/examples/Old/example022.scad
 share/openscad/examples/Old/example023.scad
 share/openscad/examples/Old/example024.scad
+share/openscad/examples/Parametric/
+share/openscad/examples/Parametric/candleStand.json
+share/openscad/examples/Parametric/candleStand.scad
+share/openscad/examples/Parametric/sign.json
+share/openscad/examples/Parametric/sign.scad
 share/openscad/examples/examples.json
 share/openscad/libraries/
 share/openscad/libraries/MCAD/
 share/openscad/libraries/MCAD/2Dshapes.scad
 share/openscad/libraries/MCAD/3d_triangle.scad
 share/openscad/libraries/MCAD/README.markdown
-share/openscad/libraries/MCAD/SolidPython/
 share/openscad/libraries/MCAD/TODO
-share/openscad/libraries/MCAD/ThingDoc/
 share/openscad/libraries/MCAD/__init__.py
 share/openscad/libraries/MCAD/bearing.scad
 share/openscad/libraries/MCAD/bitmap/
@@ -110,7 +118,6 @@ share/openscad/libraries/MCAD/constants.scad
 share/openscad/libraries/MCAD/curves.scad
 share/openscad/libraries/MCAD/fonts.scad
 share/openscad/libraries/MCAD/gears.scad
-share/openscad/libraries/MCAD/get_submodules.py
 share/openscad/libraries/MCAD/gridbeam.scad
 share/openscad/libraries/MCAD/hardware.scad
 share/openscad/libraries/MCAD/involute_gears.scad
@@ -154,9 +161,15 @@ share/openscad/locale/es/LC_MESSAGES/openscad.mo
 share/openscad/locale/fr/
 share/openscad/locale/fr/LC_MESSAGES/
 share/openscad/locale/fr/LC_MESSAGES/openscad.mo
+share/openscad/locale/pl/
+share/openscad/locale/pl/LC_MESSAGES/
+share/openscad/locale/pl/LC_MESSAGES/openscad.mo
 share/openscad/locale/ru/
 share/openscad/locale/ru/LC_MESSAGES/
 share/openscad/locale/ru/LC_MESSAGES/openscad.mo
+share/openscad/locale/uk/
+share/openscad/locale/uk/LC_MESSAGES/
+share/openscad/locale/uk/LC_MESSAGES/openscad.mo
 share/pixmaps/
 share/pixmaps/openscad.png
 @tag update-desktop-database
