@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/04/28 14:53:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/10/17 20:22:54 sthen Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
@@ -18,6 +18,8 @@ ${P5SITE}/SNMP/Info/CiscoStack.pm
 ${P5SITE}/SNMP/Info/CiscoStats.pm
 ${P5SITE}/SNMP/Info/CiscoStpExtensions.pm
 ${P5SITE}/SNMP/Info/CiscoVTP.pm
+${P5SITE}/SNMP/Info/DocsisCM.pm
+${P5SITE}/SNMP/Info/DocsisHE.pm
 ${P5SITE}/SNMP/Info/EDP.pm
 ${P5SITE}/SNMP/Info/Entity.pm
 ${P5SITE}/SNMP/Info/EtherLike.pm
@@ -37,9 +39,11 @@ ${P5SITE}/SNMP/Info/Layer2/
 ${P5SITE}/SNMP/Info/Layer2.pm
 ${P5SITE}/SNMP/Info/Layer2/3Com.pm
 ${P5SITE}/SNMP/Info/Layer2/Adtran.pm
+${P5SITE}/SNMP/Info/Layer2/Aerohive.pm
 ${P5SITE}/SNMP/Info/Layer2/Airespace.pm
 ${P5SITE}/SNMP/Info/Layer2/Aironet.pm
 ${P5SITE}/SNMP/Info/Layer2/Allied.pm
+${P5SITE}/SNMP/Info/Layer2/Atmedia.pm
 ${P5SITE}/SNMP/Info/Layer2/Baystack.pm
 ${P5SITE}/SNMP/Info/Layer2/C1900.pm
 ${P5SITE}/SNMP/Info/Layer2/C2900.pm
@@ -47,6 +51,7 @@ ${P5SITE}/SNMP/Info/Layer2/Catalyst.pm
 ${P5SITE}/SNMP/Info/Layer2/Centillion.pm
 ${P5SITE}/SNMP/Info/Layer2/Cisco.pm
 ${P5SITE}/SNMP/Info/Layer2/CiscoSB.pm
+${P5SITE}/SNMP/Info/Layer2/Exinda.pm
 ${P5SITE}/SNMP/Info/Layer2/HP.pm
 ${P5SITE}/SNMP/Info/Layer2/HP4000.pm
 ${P5SITE}/SNMP/Info/Layer2/HPVC.pm
@@ -55,7 +60,9 @@ ${P5SITE}/SNMP/Info/Layer2/N2270.pm
 ${P5SITE}/SNMP/Info/Layer2/NAP222x.pm
 ${P5SITE}/SNMP/Info/Layer2/NWSS2300.pm
 ${P5SITE}/SNMP/Info/Layer2/Netgear.pm
+${P5SITE}/SNMP/Info/Layer2/Nexans.pm
 ${P5SITE}/SNMP/Info/Layer2/Orinoco.pm
+${P5SITE}/SNMP/Info/Layer2/Sixnet.pm
 ${P5SITE}/SNMP/Info/Layer2/Trapeze.pm
 ${P5SITE}/SNMP/Info/Layer2/Ubiquiti.pm
 ${P5SITE}/SNMP/Info/Layer2/ZyXEL_DSLAM.pm
@@ -73,6 +80,7 @@ ${P5SITE}/SNMP/Info/Layer3/C3550.pm
 ${P5SITE}/SNMP/Info/Layer3/C4000.pm
 ${P5SITE}/SNMP/Info/Layer3/C6500.pm
 ${P5SITE}/SNMP/Info/Layer3/CheckPoint.pm
+${P5SITE}/SNMP/Info/Layer3/Ciena.pm
 ${P5SITE}/SNMP/Info/Layer3/Cisco.pm
 ${P5SITE}/SNMP/Info/Layer3/CiscoASA.pm
 ${P5SITE}/SNMP/Info/Layer3/CiscoFWSM.pm
@@ -81,29 +89,35 @@ ${P5SITE}/SNMP/Info/Layer3/Contivity.pm
 ${P5SITE}/SNMP/Info/Layer3/Cumulus.pm
 ${P5SITE}/SNMP/Info/Layer3/DLink.pm
 ${P5SITE}/SNMP/Info/Layer3/Dell.pm
+${P5SITE}/SNMP/Info/Layer3/ERX.pm
 ${P5SITE}/SNMP/Info/Layer3/Enterasys.pm
 ${P5SITE}/SNMP/Info/Layer3/Extreme.pm
 ${P5SITE}/SNMP/Info/Layer3/F5.pm
 ${P5SITE}/SNMP/Info/Layer3/Force10.pm
 ${P5SITE}/SNMP/Info/Layer3/Fortinet.pm
 ${P5SITE}/SNMP/Info/Layer3/Foundry.pm
+${P5SITE}/SNMP/Info/Layer3/Genua.pm
 ${P5SITE}/SNMP/Info/Layer3/H3C.pm
 ${P5SITE}/SNMP/Info/Layer3/HP9300.pm
 ${P5SITE}/SNMP/Info/Layer3/Huawei.pm
 ${P5SITE}/SNMP/Info/Layer3/IBMGbTor.pm
 ${P5SITE}/SNMP/Info/Layer3/Juniper.pm
 ${P5SITE}/SNMP/Info/Layer3/Lantronix.pm
+${P5SITE}/SNMP/Info/Layer3/Lenovo.pm
 ${P5SITE}/SNMP/Info/Layer3/Microsoft.pm
 ${P5SITE}/SNMP/Info/Layer3/Mikrotik.pm
 ${P5SITE}/SNMP/Info/Layer3/N1600.pm
 ${P5SITE}/SNMP/Info/Layer3/NetSNMP.pm
 ${P5SITE}/SNMP/Info/Layer3/Netscreen.pm
 ${P5SITE}/SNMP/Info/Layer3/Nexus.pm
+${P5SITE}/SNMP/Info/Layer3/OneAccess.pm
 ${P5SITE}/SNMP/Info/Layer3/PacketFront.pm
 ${P5SITE}/SNMP/Info/Layer3/PaloAlto.pm
 ${P5SITE}/SNMP/Info/Layer3/Passport.pm
 ${P5SITE}/SNMP/Info/Layer3/Pf.pm
 ${P5SITE}/SNMP/Info/Layer3/Pica8.pm
+${P5SITE}/SNMP/Info/Layer3/Redlion.pm
+${P5SITE}/SNMP/Info/Layer3/Scalance.pm
 ${P5SITE}/SNMP/Info/Layer3/SonicWALL.pm
 ${P5SITE}/SNMP/Info/Layer3/Steelhead.pm
 ${P5SITE}/SNMP/Info/Layer3/Sun.pm
@@ -114,8 +128,10 @@ ${P5SITE}/SNMP/Info/Layer3/VyOS.pm
 ${P5SITE}/SNMP/Info/Layer7/
 ${P5SITE}/SNMP/Info/Layer7.pm
 ${P5SITE}/SNMP/Info/Layer7/APC.pm
+${P5SITE}/SNMP/Info/Layer7/Arbor.pm
 ${P5SITE}/SNMP/Info/Layer7/CiscoIPS.pm
 ${P5SITE}/SNMP/Info/Layer7/Gigamon.pm
+${P5SITE}/SNMP/Info/Layer7/Liebert.pm
 ${P5SITE}/SNMP/Info/Layer7/Neoteris.pm
 ${P5SITE}/SNMP/Info/Layer7/Netscaler.pm
 ${P5SITE}/SNMP/Info/MAU.pm
@@ -141,6 +157,8 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::CiscoStats.3p
 @man man/man3p/SNMP::Info::CiscoStpExtensions.3p
 @man man/man3p/SNMP::Info::CiscoVTP.3p
+@man man/man3p/SNMP::Info::DocsisCM.3p
+@man man/man3p/SNMP::Info::DocsisHE.3p
 @man man/man3p/SNMP::Info::EDP.3p
 @man man/man3p/SNMP::Info::Entity.3p
 @man man/man3p/SNMP::Info::EtherLike.3p
@@ -158,9 +176,11 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer2.3p
 @man man/man3p/SNMP::Info::Layer2::3Com.3p
 @man man/man3p/SNMP::Info::Layer2::Adtran.3p
+@man man/man3p/SNMP::Info::Layer2::Aerohive.3p
 @man man/man3p/SNMP::Info::Layer2::Airespace.3p
 @man man/man3p/SNMP::Info::Layer2::Aironet.3p
 @man man/man3p/SNMP::Info::Layer2::Allied.3p
+@man man/man3p/SNMP::Info::Layer2::Atmedia.3p
 @man man/man3p/SNMP::Info::Layer2::Baystack.3p
 @man man/man3p/SNMP::Info::Layer2::C1900.3p
 @man man/man3p/SNMP::Info::Layer2::C2900.3p
@@ -168,6 +188,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer2::Centillion.3p
 @man man/man3p/SNMP::Info::Layer2::Cisco.3p
 @man man/man3p/SNMP::Info::Layer2::CiscoSB.3p
+@man man/man3p/SNMP::Info::Layer2::Exinda.3p
 @man man/man3p/SNMP::Info::Layer2::HP.3p
 @man man/man3p/SNMP::Info::Layer2::HP4000.3p
 @man man/man3p/SNMP::Info::Layer2::HPVC.3p
@@ -176,7 +197,9 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer2::NAP222x.3p
 @man man/man3p/SNMP::Info::Layer2::NWSS2300.3p
 @man man/man3p/SNMP::Info::Layer2::Netgear.3p
+@man man/man3p/SNMP::Info::Layer2::Nexans.3p
 @man man/man3p/SNMP::Info::Layer2::Orinoco.3p
+@man man/man3p/SNMP::Info::Layer2::Sixnet.3p
 @man man/man3p/SNMP::Info::Layer2::Trapeze.3p
 @man man/man3p/SNMP::Info::Layer2::Ubiquiti.3p
 @man man/man3p/SNMP::Info::Layer2::ZyXEL_DSLAM.3p
@@ -193,6 +216,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::C4000.3p
 @man man/man3p/SNMP::Info::Layer3::C6500.3p
 @man man/man3p/SNMP::Info::Layer3::CheckPoint.3p
+@man man/man3p/SNMP::Info::Layer3::Ciena.3p
 @man man/man3p/SNMP::Info::Layer3::Cisco.3p
 @man man/man3p/SNMP::Info::Layer3::CiscoASA.3p
 @man man/man3p/SNMP::Info::Layer3::CiscoFWSM.3p
@@ -201,29 +225,35 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Cumulus.3p
 @man man/man3p/SNMP::Info::Layer3::DLink.3p
 @man man/man3p/SNMP::Info::Layer3::Dell.3p
+@man man/man3p/SNMP::Info::Layer3::ERX.3p
 @man man/man3p/SNMP::Info::Layer3::Enterasys.3p
 @man man/man3p/SNMP::Info::Layer3::Extreme.3p
 @man man/man3p/SNMP::Info::Layer3::F5.3p
 @man man/man3p/SNMP::Info::Layer3::Force10.3p
 @man man/man3p/SNMP::Info::Layer3::Fortinet.3p
 @man man/man3p/SNMP::Info::Layer3::Foundry.3p
+@man man/man3p/SNMP::Info::Layer3::Genua.3p
 @man man/man3p/SNMP::Info::Layer3::H3C.3p
 @man man/man3p/SNMP::Info::Layer3::HP9300.3p
 @man man/man3p/SNMP::Info::Layer3::Huawei.3p
 @man man/man3p/SNMP::Info::Layer3::IBMGbTor.3p
 @man man/man3p/SNMP::Info::Layer3::Juniper.3p
 @man man/man3p/SNMP::Info::Layer3::Lantronix.3p
+@man man/man3p/SNMP::Info::Layer3::Lenovo.3p
 @man man/man3p/SNMP::Info::Layer3::Microsoft.3p
 @man man/man3p/SNMP::Info::Layer3::Mikrotik.3p
 @man man/man3p/SNMP::Info::Layer3::N1600.3p
 @man man/man3p/SNMP::Info::Layer3::NetSNMP.3p
 @man man/man3p/SNMP::Info::Layer3::Netscreen.3p
 @man man/man3p/SNMP::Info::Layer3::Nexus.3p
+@man man/man3p/SNMP::Info::Layer3::OneAccess.3p
 @man man/man3p/SNMP::Info::Layer3::PacketFront.3p
 @man man/man3p/SNMP::Info::Layer3::PaloAlto.3p
 @man man/man3p/SNMP::Info::Layer3::Passport.3p
 @man man/man3p/SNMP::Info::Layer3::Pf.3p
 @man man/man3p/SNMP::Info::Layer3::Pica8.3p
+@man man/man3p/SNMP::Info::Layer3::Redlion.3p
+@man man/man3p/SNMP::Info::Layer3::Scalance.3p
 @man man/man3p/SNMP::Info::Layer3::SonicWALL.3p
 @man man/man3p/SNMP::Info::Layer3::Steelhead.3p
 @man man/man3p/SNMP::Info::Layer3::Sun.3p
@@ -233,8 +263,10 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::VyOS.3p
 @man man/man3p/SNMP::Info::Layer7.3p
 @man man/man3p/SNMP::Info::Layer7::APC.3p
+@man man/man3p/SNMP::Info::Layer7::Arbor.3p
 @man man/man3p/SNMP::Info::Layer7::CiscoIPS.3p
 @man man/man3p/SNMP::Info::Layer7::Gigamon.3p
+@man man/man3p/SNMP::Info::Layer7::Liebert.3p
 @man man/man3p/SNMP::Info::Layer7::Neoteris.3p
 @man man/man3p/SNMP::Info::Layer7::Netscaler.3p
 @man man/man3p/SNMP::Info::MAU.3p
