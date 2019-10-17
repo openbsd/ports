@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/10/17 18:34:27 naddy Exp $
 
 COMMENT=	binary visual display editor, based on vi
 
-DISTNAME=	bvi-1.4.0
+DISTNAME=	bvi-1.4.1
 CATEGORIES=	editors
 HOMEPAGE=	http://bvi.sourceforge.net/
-REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# GPLv2+
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses
