@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_get_cc,v 1.1 2019/10/17 01:09:22 daniel Exp $
+
+Honor CFLAGS.
+
+Index: config/get_cc
+--- config/get_cc.orig
++++ config/get_cc
+@@ -89,7 +89,7 @@ if test -n "$__gnuc__"; then
+   warn="-Wall"
+   OPTFLAGS=-O3
+   ASMINLINE=yes
+-  OPTFLAGS="$OPTFLAGS $warn"
++  OPTFLAGS="$CFLAGS $warn"
+   cmd="$CC $CFLAGS $extraflag -fno-strict-aliasing -o $exe gnu.c"
+   . log_cmd
+   if test -s $exe; then

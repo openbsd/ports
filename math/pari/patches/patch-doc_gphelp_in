@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_gphelp_in,v 1.1 2019/10/17 01:09:22 daniel Exp $
+
+Fix path so gphelp will work.
+
+Index: doc/gphelp.in
+--- doc/gphelp.in.orig
++++ doc/gphelp.in
+@@ -125,7 +125,7 @@ sub get_docdir {
+     # work from TOPDIR/Oarch or TOPDIR too: may be uninstalled yet;
+     $d = $0; $d =~ s,/gphelp,,;
+     for ("$datadir", '.', '..', $d) {
+-      my $t = "$_/doc";
++      my $t = "$_/share/doc/pari";
+       if (-f "$t/translations") { $d = $t; last; }
+     }
+     $d ||= "$datadir/doc";	# Last resort

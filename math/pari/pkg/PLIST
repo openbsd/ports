@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/09/15 15:11:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/10/17 01:09:22 daniel Exp $
 bin/gp
-@bin bin/gp-2.1
+@bin bin/gp-2.11
 bin/gphelp
 bin/tex2mail
 include/pari/
 include/pari/genpari.h
+include/pari/mpinl.h
 include/pari/pari.h
 include/pari/paricast.h
 include/pari/paricfg.h
@@ -13,39 +14,44 @@ include/pari/paridecl.h
 include/pari/parierr.h
 include/pari/parigen.h
 include/pari/pariinl.h
-include/pari/pariport.h
+include/pari/parimt.h
+include/pari/parinf.h
+include/pari/pariold.h
+include/pari/paripriv.h
 include/pari/paristio.h
 include/pari/parisys.h
-include/pari/paritype.h
-lib/libpari.a
-@comment lib/libpari.a.2.1
+include/pari/paritune.h
+@comment lib/libpari.a
+lib/pari/
+lib/pari/pari.cfg
+@man man/man1/gp-2.11.1
 @man man/man1/gp.1
 @man man/man1/gphelp.1
 @man man/man1/pari.1
 @man man/man1/tex2mail.1
 share/doc/pari/
-share/doc/pari/AUTHORS
-share/doc/pari/Announce.2.1
-share/doc/pari/CHANGES
-share/doc/pari/COMPAT
-share/doc/pari/COPYING
-share/doc/pari/CVS.txt
-share/doc/pari/MACHINES
-share/doc/pari/Makefile
-share/doc/pari/NEW
-share/doc/pari/README
-share/doc/pari/TODO
+share/doc/pari/INSTALL.dvi
+share/doc/pari/PARI/
+share/doc/pari/PARI/822.pm
 share/doc/pari/appa.tex
 share/doc/pari/appb.tex
-share/doc/pari/appc.tex
+share/doc/pari/appd.tex
+share/doc/pari/develop.dvi
+share/doc/pari/develop.tex
+share/doc/pari/libpari.dvi
+share/doc/pari/parallel.dvi
 share/doc/pari/paricfg.tex
-share/doc/pari/paricfg.tex.in
 share/doc/pari/parimacro.tex
 share/doc/pari/pdfmacs.tex
+share/doc/pari/refcard-ell.dvi
+share/doc/pari/refcard-lfun.dvi
+share/doc/pari/refcard-mf.dvi
+share/doc/pari/refcard-nf.dvi
 share/doc/pari/refcard.dvi
-share/doc/pari/refcard.ps
 share/doc/pari/refcard.tex
 share/doc/pari/translations
+share/doc/pari/tutorial-mf.dvi
+share/doc/pari/tutorial-mf.tex
 share/doc/pari/tutorial.dvi
 share/doc/pari/tutorial.tex
 share/doc/pari/users.dvi
@@ -55,6 +61,9 @@ share/doc/pari/usersch2.tex
 share/doc/pari/usersch3.tex
 share/doc/pari/usersch4.tex
 share/doc/pari/usersch5.tex
+share/doc/pari/usersch6.tex
+share/doc/pari/usersch7.tex
+share/doc/pari/usersch8.tex
 share/examples/pari/
 share/examples/pari/EXPLAIN
 share/examples/pari/Inputrc
@@ -63,8 +72,8 @@ share/examples/pari/bench.gp
 share/examples/pari/cl.gp
 share/examples/pari/classno.gp
 share/examples/pari/contfrac.gp
+share/examples/pari/extgcd.c
 share/examples/pari/lucas.gp
-share/examples/pari/matexp.c
 share/examples/pari/rho.gp
 share/examples/pari/squfof.gp
 share/examples/pari/taylor.gp
@@ -75,6 +84,5 @@ share/pari/misc/color.dft
 share/pari/misc/gpalias
 share/pari/misc/gpflog
 share/pari/misc/gprc.dft
-share/pari/misc/new.dic
-share/pari/misc/pari.xpm
 share/pari/misc/xgp
+share/pari/pari.desc
