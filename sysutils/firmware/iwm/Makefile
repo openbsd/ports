@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2019/10/16 09:47:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/10/18 14:13:31 sthen Exp $
 
 FW_DRIVER=	iwm
 FW_VER=		20190923
 DISTNAME=	linux-firmware-${FW_VER}
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi
 MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
-
-V22=		22.361476.0
-DISTFILES=	linux-firmware-${FW_VER}${EXTRACT_SUFX} \
-		iwlwifi-3168-ucode-${V22}.tgz \
-		iwlwifi-8265-ucode-${V22}.tgz
 
 # use "V16" firmwares from linux-firmware
 #	ic	api
@@ -19,12 +15,9 @@ FW+=	3160	16 \
 	7260	16 \
 	7265	16 \
 	7265D	16 \
-	8000C	16
-
-# don't use newer versions of "V22" firmwares from linux-firmware,
-# stick to the old separate files for now, newer ones require DQA
-#FW+=	3168	22 \
-#	8265	22 \
+	8000C	16 \
+	3168	22 \
+	8265	22
 
 # add in new API versions to ease future development and testing,
 # not used in the kernel yet
@@ -42,10 +35,6 @@ do-install:
 .for device api in ${FW}
 	${INSTALL_DATA} ${WRKSRC}/iwlwifi-${device}-${api}.ucode \
 	    ${PREFIX}/firmware/iwm-${device}-${api}
-.endfor
-
-.for i in 3168 8265
-	${INSTALL_DATA} ${WRKDIR}/iwlwifi-$i-ucode-${V22}/iwlwifi-$i-22.ucode ${PREFIX}/firmware/iwm-$i-22
 .endfor
 
 # also supported by iwlmvm (equivalent to our iwm) on linux:

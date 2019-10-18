@@ -1,6 +1,2 @@
-SHA256 (firmware/iwlwifi-3168-ucode-22.361476.0.tgz) = vJoBzIcTlNG0F42Q5xyLjtlm0q77gNtvR4KsOwjag4c=
-SHA256 (firmware/iwlwifi-8265-ucode-22.361476.0.tgz) = uG57oD4+aCFWA2SMB0CTnZR0I3p8qpXFq8IJ8WOBzvE=
 SHA256 (firmware/linux-firmware-20190923.tar.xz) = MDDjyCcLuUs9TnBanTE26a13cya/Wfo3oZW/hlUVOLs=
-SIZE (firmware/iwlwifi-3168-ucode-22.361476.0.tgz) = 421691
-SIZE (firmware/iwlwifi-8265-ucode-22.361476.0.tgz) = 725548
 SIZE (firmware/linux-firmware-20190923.tar.xz) = 83662624
