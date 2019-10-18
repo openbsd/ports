@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/10/17 19:13:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2019/10/18 04:43:12 rsadowski Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
@@ -52,7 +52,7 @@ WANTLIB += Qt5Xml SM X11 Xext Xi boost_system-mt c exiv2 fftw3
 WANTLIB += gif gsl gslcblas jpeg lcms2 m png poppler poppler-qt5
 WANTLIB += quazip5 raw tiff z
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION:S/.1//}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz
 
 MODULES =	devel/kf5 \
