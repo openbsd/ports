@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/10/18 15:11:09 cwen Exp $
 
 COMMENT=		2D games framework for use with Lua
 
 V=			0.8.0
 DISTNAME=		love-$V-linux-src
 PKGNAME=		love-$V
-REVISION=		9
+REVISION=		10
 
-HOMEPAGE=		http://love2d.org/
+HOMEPAGE=		https://love2d.org/
 
 CATEGORIES=		games lang/lua
 
@@ -55,5 +55,8 @@ post-extract:
 		for i in `find . -type f`; \
 			do [ "$(tail -c1 $i)" == "$(printf '\n')" ] || ls -l $i; \
 		done
+# And some files have MS-DOS line endings we don't want for patches
+	cd ${WRKSRC} && perl -i -pe 's/\r$$//' \
+		./src/libraries/Box2D/Collision/Shapes/b2ChainShape.h
 
 .include <bsd.port.mk>
