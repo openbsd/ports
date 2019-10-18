@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/10/17 19:53:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/10/18 10:39:09 cwen Exp $
 
 COMMENT=	binary-decimal and decimal-binary routines for IEEE doubles
 
@@ -14,6 +14,8 @@ SHARED_LIBS +=  double-conversion         0.0 # 0.0
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
+
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
