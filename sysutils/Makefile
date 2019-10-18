@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.534 2019/10/08 07:33:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.535 2019/10/18 21:10:04 cwen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -217,6 +217,7 @@
      SUBDIR += p5-Rex
      SUBDIR += p5-Schedule-At
      SUBDIR += p5-Set-Crontab
+     SUBDIR += p5-Sys-MemInfo
      SUBDIR += p5-Sys-Syscall
      SUBDIR += p5-Sys-Virt
      SUBDIR += p5-UPS-Nut
