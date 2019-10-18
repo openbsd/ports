@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1897 2019/10/16 20:10:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.1898 2019/10/18 11:06:41 cwen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -536,6 +536,7 @@
      SUBDIR += p5-Bit-Vector-Minimal
      SUBDIR += p5-C-Scan
      SUBDIR += p5-CLASS
+     SUBDIR += p5-CLI-Framework
      SUBDIR += p5-CPAN-Meta-Check
      SUBDIR += p5-Cache-Cache
      SUBDIR += p5-Cache-FastMmap
