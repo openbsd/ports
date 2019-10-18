@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/10/18 14:15:09 cwen Exp $
 
 COMMENT =	compare JSON with Test::Deep
 
-DISTNAME =	Test-Deep-JSON-0.04
-REVISION =	0
+DISTNAME =	Test-Deep-JSON-0.05
 
 CATEGORIES =	devel
 
@@ -12,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-RUN_DEPENDS =		converters/p5-JSON \
+RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
 			devel/p5-Exporter-Lite \
 			devel/p5-Test-Deep
 
