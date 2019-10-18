@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.3 2019/05/10 12:01:55 sthen Exp $
+@comment $OpenBSD: PLIST-idle,v 1.4 2019/10/18 04:47:27 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.7,<3.8
@@ -96,6 +96,9 @@ lib/python3.7/idlelib/__pycache__/editor.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/filelist.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/filelist.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/filelist.cpython-37.pyc
+lib/python3.7/idlelib/__pycache__/format.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/__pycache__/format.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/__pycache__/format.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/grep.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/grep.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/grep.cpython-37.pyc
@@ -129,9 +132,6 @@ lib/python3.7/idlelib/__pycache__/multicall.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/outwin.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/outwin.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/outwin.cpython-37.pyc
-lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.opt-1.pyc
-lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.opt-2.pyc
-lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.pyc
@@ -159,9 +159,6 @@ lib/python3.7/idlelib/__pycache__/replace.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/rpc.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/rpc.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/rpc.cpython-37.pyc
-lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.opt-1.pyc
-lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.opt-2.pyc
-lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/run.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/run.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/run.cpython-37.pyc
@@ -180,6 +177,9 @@ lib/python3.7/idlelib/__pycache__/searchbase.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.pyc
+lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.pyc
@@ -234,6 +234,7 @@ lib/python3.7/idlelib/dynoption.py
 lib/python3.7/idlelib/editor.py
 lib/python3.7/idlelib/extend.txt
 lib/python3.7/idlelib/filelist.py
+lib/python3.7/idlelib/format.py
 lib/python3.7/idlelib/grep.py
 lib/python3.7/idlelib/help.html
 lib/python3.7/idlelib/help.py
@@ -319,6 +320,9 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_editor.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.pyc
@@ -349,9 +353,6 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_multicall.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.opt-1.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.opt-2.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.pyc
@@ -379,9 +380,6 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_replace.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.opt-1.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.opt-2.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.pyc
@@ -400,6 +398,9 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_searchbase.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.pyc
@@ -456,6 +457,7 @@ lib/python3.7/idlelib/idle_test/test_delegator.py
 lib/python3.7/idlelib/idle_test/test_editmenu.py
 lib/python3.7/idlelib/idle_test/test_editor.py
 lib/python3.7/idlelib/idle_test/test_filelist.py
+lib/python3.7/idlelib/idle_test/test_format.py
 lib/python3.7/idlelib/idle_test/test_grep.py
 lib/python3.7/idlelib/idle_test/test_help.py
 lib/python3.7/idlelib/idle_test/test_help_about.py
@@ -466,7 +468,6 @@ lib/python3.7/idlelib/idle_test/test_macosx.py
 lib/python3.7/idlelib/idle_test/test_mainmenu.py
 lib/python3.7/idlelib/idle_test/test_multicall.py
 lib/python3.7/idlelib/idle_test/test_outwin.py
-lib/python3.7/idlelib/idle_test/test_paragraph.py
 lib/python3.7/idlelib/idle_test/test_parenmatch.py
 lib/python3.7/idlelib/idle_test/test_pathbrowser.py
 lib/python3.7/idlelib/idle_test/test_percolator.py
@@ -476,13 +477,13 @@ lib/python3.7/idlelib/idle_test/test_query.py
 lib/python3.7/idlelib/idle_test/test_redirector.py
 lib/python3.7/idlelib/idle_test/test_replace.py
 lib/python3.7/idlelib/idle_test/test_rpc.py
-lib/python3.7/idlelib/idle_test/test_rstrip.py
 lib/python3.7/idlelib/idle_test/test_run.py
 lib/python3.7/idlelib/idle_test/test_runscript.py
 lib/python3.7/idlelib/idle_test/test_scrolledlist.py
 lib/python3.7/idlelib/idle_test/test_search.py
 lib/python3.7/idlelib/idle_test/test_searchbase.py
 lib/python3.7/idlelib/idle_test/test_searchengine.py
+lib/python3.7/idlelib/idle_test/test_sidebar.py
 lib/python3.7/idlelib/idle_test/test_squeezer.py
 lib/python3.7/idlelib/idle_test/test_stackviewer.py
 lib/python3.7/idlelib/idle_test/test_statusbar.py
@@ -499,7 +500,6 @@ lib/python3.7/idlelib/macosx.py
 lib/python3.7/idlelib/mainmenu.py
 lib/python3.7/idlelib/multicall.py
 lib/python3.7/idlelib/outwin.py
-lib/python3.7/idlelib/paragraph.py
 lib/python3.7/idlelib/parenmatch.py
 lib/python3.7/idlelib/pathbrowser.py
 lib/python3.7/idlelib/percolator.py
@@ -509,13 +509,13 @@ lib/python3.7/idlelib/query.py
 lib/python3.7/idlelib/redirector.py
 lib/python3.7/idlelib/replace.py
 lib/python3.7/idlelib/rpc.py
-lib/python3.7/idlelib/rstrip.py
 lib/python3.7/idlelib/run.py
 lib/python3.7/idlelib/runscript.py
 lib/python3.7/idlelib/scrolledlist.py
 lib/python3.7/idlelib/search.py
 lib/python3.7/idlelib/searchbase.py
 lib/python3.7/idlelib/searchengine.py
+lib/python3.7/idlelib/sidebar.py
 lib/python3.7/idlelib/squeezer.py
 lib/python3.7/idlelib/stackviewer.py
 lib/python3.7/idlelib/statusbar.py

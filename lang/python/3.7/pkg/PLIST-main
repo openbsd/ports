@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/07/13 06:48:16 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/10/18 04:47:27 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.7,<3.8
@@ -2189,8 +2189,8 @@ lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.opt-1.pyc
 lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.opt-2.pyc
 lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.pyc
 lib/python3.7/ensurepip/_bundled/
-lib/python3.7/ensurepip/_bundled/pip-19.0.3-py2.py3-none-any.whl
-lib/python3.7/ensurepip/_bundled/setuptools-40.8.0-py2.py3-none-any.whl
+lib/python3.7/ensurepip/_bundled/pip-19.2.3-py2.py3-none-any.whl
+lib/python3.7/ensurepip/_bundled/setuptools-41.2.0-py2.py3-none-any.whl
 lib/python3.7/ensurepip/_uninstall.py
 lib/python3.7/enum.py
 lib/python3.7/filecmp.py
@@ -2374,9 +2374,9 @@ lib/python3.7/lib-dynload/xxlimited.so
 lib/python3.7/lib-dynload/zlib.so
 lib/python3.7/lib2to3/
 lib/python3.7/lib2to3/Grammar.txt
-lib/python3.7/lib2to3/Grammar3.7.4.final.0.pickle
+lib/python3.7/lib2to3/Grammar3.7.5.final.0.pickle
 lib/python3.7/lib2to3/PatternGrammar.txt
-lib/python3.7/lib2to3/PatternGrammar3.7.4.final.0.pickle
+lib/python3.7/lib2to3/PatternGrammar3.7.5.final.0.pickle
 lib/python3.7/lib2to3/__init__.py
 lib/python3.7/lib2to3/__main__.py
 lib/python3.7/lib2to3/__pycache__/
