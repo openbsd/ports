@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/10/18 14:51:59 cwen Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		14
+REVISION=		15
 SHARED_LIBS+=		IL	1.0 # 2.0
 SHARED_LIBS+=		ILU	1.0 # 2.0
 SHARED_LIBS+=		ILUT	1.0 # 2.0
@@ -18,11 +18,12 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
 
-WANTLIB += GL GLU Half ICE Iex IexMath IlmImf IlmThread Imath
-WANTLIB += SDL SM X11 X11-xcb Xdamage Xext Xfixes Xi
-WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm c drm glapi glut iconv jasper
-WANTLIB += jpeg lcms m mng png pthread sndio ${COMPILER_LIBCXX}
-WANTLIB += tiff usbhid xcb xcb-dri2 xcb-glx z expat
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Half ICE Iex IexMath IlmImf
+WANTLIB += IlmThread Imath SDL SM X11 X11-xcb Xdamage Xext Xfixes
+WANTLIB += Xi Xmu Xrandr Xrender Xt Xxf86vm c drm expat glapi
+WANTLIB += glut iconv jasper jpeg lcms m mng png sndio tiff usbhid
+WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-sync
+WANTLIB += xcb-xfixes xshmfence z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -34,7 +35,6 @@ LIB_DEPENDS=		converters/libiconv \
 			graphics/libmng \
 			graphics/lcms \
 			graphics/openexr \
-			graphics/openjpeg \
 			graphics/tiff \
 			graphics/png
 
@@ -56,6 +56,12 @@ WRKDIST=		${WRKDIR}/${DISTNAME:L}
 
 # Too many Linuxisms in testing tools
 NO_TEST=		Yes
+
+# gcc-8's _mm_malloc() uses the AltiVec keyword __vector, so we need
+# to disable it to make it run on macppc G3 machines
+.if ${MACHINE_ARCH:Mpowerpc}
+CONFIGURE_ENV +=	ac_cv_header_mm_malloc_h=
+.endif
 
 post-extract:
 	chmod +x ${WRKSRC}/configure
