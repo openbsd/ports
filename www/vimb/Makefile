@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/10/18 20:22:49 rsadowski Exp $
 
 COMMENT =	modal webkit-based browser inspired by vim
 
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
-GH_TAGNAME =	3.3.0
+GH_TAGNAME =	3.5.0
 
 CATEGORIES =	www x11
 
@@ -25,6 +25,10 @@ USE_GMAKE =	Yes
 
 CFLAGS +=	-D_BSD_SOURCE
 MAKE_ENV =	V=1
+
+# .git/index needed to generate version.h
+post-extract:
+		mkdir -p ${WRKSRC}/.git/index
 
 FAKE_FLAGS =	PREFIX="${TRUEPREFIX}" \
 		MANPREFIX="${WRKINST}/${PREFIX}/man"
