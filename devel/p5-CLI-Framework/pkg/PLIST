@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/18 11:05:30 cwen Exp $
+${P5SITE}/CLI/
+${P5SITE}/CLI/Framework/
+${P5SITE}/CLI/Framework.pm
+${P5SITE}/CLI/Framework/Application.pm
+${P5SITE}/CLI/Framework/Command/
+${P5SITE}/CLI/Framework/Command.pm
+${P5SITE}/CLI/Framework/Command/Alias.pm
+${P5SITE}/CLI/Framework/Command/Console.pm
+${P5SITE}/CLI/Framework/Command/Dump.pm
+${P5SITE}/CLI/Framework/Command/Help.pm
+${P5SITE}/CLI/Framework/Command/List.pm
+${P5SITE}/CLI/Framework/Command/Menu.pm
+${P5SITE}/CLI/Framework/Command/Meta.pm
+${P5SITE}/CLI/Framework/Command/Tree.pm
+${P5SITE}/CLI/Framework/Exceptions.pm
+${P5SITE}/CLI/Framework/Tutorial.pod
+@man man/man3p/CLI::Framework.3p
+@man man/man3p/CLI::Framework::Application.3p
+@man man/man3p/CLI::Framework::Command.3p
+@man man/man3p/CLI::Framework::Command::Alias.3p
+@man man/man3p/CLI::Framework::Command::Console.3p
+@man man/man3p/CLI::Framework::Command::Dump.3p
+@man man/man3p/CLI::Framework::Command::Help.3p
+@man man/man3p/CLI::Framework::Command::List.3p
+@man man/man3p/CLI::Framework::Command::Menu.3p
+@man man/man3p/CLI::Framework::Command::Meta.3p
+@man man/man3p/CLI::Framework::Command::Tree.3p
+@man man/man3p/CLI::Framework::Exceptions.3p
+@man man/man3p/CLI::Framework::Tutorial.3p

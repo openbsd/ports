@@ -1,0 +1,7 @@
+CLI::Framework ("CLIF") provides a framework and conceptual pattern
+for building full-featured command line applications. It intends
+to make this process simple and consistent. It assumes the
+responsibility of implementing details that are common to all
+command-line applications, making it possible for new applications
+adhering to well-defined conventions to be built without the need
+to repeatedly write the same command-line interface code.
