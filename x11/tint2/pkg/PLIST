@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/10/18 12:50:00 rsadowski Exp $
 @pkgpath x11/tint
 @bin bin/tint2
 @bin bin/tint2conf
@@ -21,6 +21,7 @@ share/doc/tint2/tint2.md
 share/examples/tint2/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/tint2/
+share/examples/tint2/default_icon.png
 share/examples/tint2/horizontal-dark-opaque.tint2rc
 share/examples/tint2/horizontal-dark-transparent.tint2rc
 share/examples/tint2/horizontal-icon-only.tint2rc
@@ -44,8 +45,6 @@ share/locale/pl/LC_MESSAGES/tint2conf.mo
 share/locale/ru/LC_MESSAGES/tint2conf.mo
 share/locale/sr/LC_MESSAGES/tint2conf.mo
 share/mime/packages/tint2conf.xml
-share/tint2/
-share/tint2/default_icon.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

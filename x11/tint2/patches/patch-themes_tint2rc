@@ -1,15 +1,17 @@
-$OpenBSD: patch-themes_tint2rc,v 1.3 2018/09/16 17:01:37 bcallah Exp $
+$OpenBSD: patch-themes_tint2rc,v 1.4 2019/10/18 12:50:00 rsadowski Exp $
 
 Index: themes/tint2rc
 --- themes/tint2rc.orig
 +++ themes/tint2rc
-@@ -150,9 +150,7 @@ startup_notifications = 1
+@@ -150,9 +150,9 @@ startup_notifications = 1
  launcher_tooltip = 1
  launcher_item_app = tint2conf.desktop
  launcher_item_app = firefox.desktop
 -launcher_item_app = iceweasel.desktop
++launcher_item_app = firefox-esr.desktop
  launcher_item_app = chromium-browser.desktop
 -launcher_item_app = google-chrome.desktop
++launcher_item_app = iridium-browser.desktop
  
  #-------------------------------------
  # Clock
