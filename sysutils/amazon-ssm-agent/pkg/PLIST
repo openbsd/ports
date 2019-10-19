@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/01 10:22:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/10/19 10:20:15 ajacoutot Exp $
 @extraunexec rm -rf /var/db/amazon /var/log/amazon
 @rcscript ${RCDIR}/amazon_ssm_agent
 @bin bin/amazon-ssm-agent
@@ -13,4 +13,4 @@ share/examples/amazon-ssm-agent/amazon/ssm/
 share/examples/amazon-ssm-agent/amazon/ssm/amazon-ssm-agent.json.template
 @sample ${SYSCONFDIR}/amazon/ssm/amazon-ssm-agent.json
 share/examples/amazon-ssm-agent/amazon/ssm/seelog_unix.xml
-@sample ${SYSCONFDIR}/amazon/ssm/seelog.xml
+@sample ${SYSCONFDIR}/amazon/ssm/seelog_unix.xml

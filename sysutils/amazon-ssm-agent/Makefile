@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2019/09/27 14:56:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2019/10/19 10:20:15 ajacoutot Exp $
 
 # i386: pty_openbsd.go:24:10: undefined: ptmget
 ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		AWS SSM agent
 
-GH_TAGNAME=		2.3.714.0
+GH_TAGNAME=		2.3.722.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ssm-agent
 
@@ -22,11 +22,7 @@ BUILD_DEPENDS=		lang/go
 
 NO_TEST=		Yes
 
-.if ${MACHINE_ARCH} == "amd64"
 ALL_TARGET=		build-openbsd
-.elif ${MACHINE_ARCH} == "i386"
-ALL_TARGET=		build-openbsd-386
-.endif
 
 USE_GMAKE=		Yes
 MAKE_ENV=		SKIP_CHECKSTYLE=Yes GOCACHE=${WRKDIR}/go-cache
