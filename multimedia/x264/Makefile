@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/08/19 06:04:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2019/10/19 16:59:33 visa Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -41,7 +41,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--disable-lavf \
 		--disable-swscale
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "mips64" || \
+    ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS+=--disable-asm
 .endif
 
