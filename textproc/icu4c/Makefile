@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/10/16 13:42:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2019/10/19 08:44:40 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -10,8 +10,10 @@ DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
 
+REVISION-main=		0
+
 MAJ_V=			${VERSION:R}
-SO_VERSION=		16.0
+SO_VERSION=		17.0
 .for _lib in icudata icui18n icuio icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor

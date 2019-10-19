@@ -1,9 +1,9 @@
-$OpenBSD: patch-source_common_unicode_uconfig_h,v 1.2 2019/10/16 13:42:58 ajacoutot Exp $
+$OpenBSD: patch-source_common_unicode_uconfig_h,v 1.3 2019/10/19 08:44:40 ajacoutot Exp $
 
 Index: source/common/unicode/uconfig.h
 --- source/common/unicode/uconfig.h.orig
 +++ source/common/unicode/uconfig.h
-@@ -89,7 +88,7 @@
+@@ -89,7 +89,7 @@
   * @internal
   */
  #ifndef U_DISABLE_RENAMING
