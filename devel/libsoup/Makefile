@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.121 2019/09/15 13:33:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2019/10/19 09:18:09 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.66.3
+GNOME_VERSION =		2.66.4
 
 SHARED_LIBS += soup-2.4                  10.3 # 1.8.0
 SHARED_LIBS += soup-gnome-2.4            8.1  # 1.8.0
