@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/09/09 08:15:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/10/19 09:20:14 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/applications/simple-scan.desktop
@@ -144,6 +144,26 @@ share/help/de/simple-scan/rotate.page
 share/help/de/simple-scan/save.page
 share/help/de/simple-scan/scanner.page
 share/help/de/simple-scan/scanning.page
+share/help/el/
+share/help/el/simple-scan/
+share/help/el/simple-scan/adf.page
+share/help/el/simple-scan/brightness-contrast.page
+share/help/el/simple-scan/crop.page
+share/help/el/simple-scan/dpi.page
+share/help/el/simple-scan/email.page
+share/help/el/simple-scan/figures/
+share/help/el/simple-scan/figures/icon.svg
+share/help/el/simple-scan/figures/preferences.png
+share/help/el/simple-scan/figures/scan_toolbar.png
+share/help/el/simple-scan/index.page
+share/help/el/simple-scan/legal.xml
+share/help/el/simple-scan/print.page
+share/help/el/simple-scan/quality.page
+share/help/el/simple-scan/reorder.page
+share/help/el/simple-scan/rotate.page
+share/help/el/simple-scan/save.page
+share/help/el/simple-scan/scanner.page
+share/help/el/simple-scan/scanning.page
 share/help/en_GB/
 share/help/en_GB/simple-scan/
 share/help/en_GB/simple-scan/adf.page

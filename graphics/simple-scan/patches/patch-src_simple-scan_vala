@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_simple-scan_vala,v 1.8 2019/05/04 12:02:40 ajacoutot Exp $
+$OpenBSD: patch-src_simple-scan_vala,v 1.9 2019/10/19 09:20:13 ajacoutot Exp $
 
-- No gusb on OpenBSD.
+No gusb on OpenBSD.
 
 Index: src/simple-scan.vala
 --- src/simple-scan.vala.orig
