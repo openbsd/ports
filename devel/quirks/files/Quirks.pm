@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.809 2019/10/16 20:10:58 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.810 2019/10/19 07:47:21 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1319,6 +1319,8 @@ my $obsolete_reason = {
 	'p5-Device-USB' => 6,
 	'p5-Crypt-GpgME' => 0,
 	'p5-HTTP-BrowserDetect' => 6,
+# 6.7
+	'awless' => 3,
 };
 
 # reasons for obsolete packages
