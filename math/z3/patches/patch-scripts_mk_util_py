@@ -1,18 +1,9 @@
-$OpenBSD: patch-scripts_mk_util_py,v 1.3 2019/03/03 09:16:17 rsadowski Exp $
+$OpenBSD: patch-scripts_mk_util_py,v 1.4 2019/10/19 09:42:20 rsadowski Exp $
 
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
 +++ scripts/mk_util.py
-@@ -50,7 +50,7 @@ C_COMPILERS=['gcc', 'clang']
- CSC_COMPILERS=['csc', 'mcs']
- JAVAC=None
- JAR=None
--PYTHON_PACKAGE_DIR=distutils.sysconfig.get_python_lib()
-+PYTHON_PACKAGE_DIR=distutils.sysconfig.get_python_lib(prefix=getenv("LOCALBASE", None))
- BUILD_DIR='build'
- REV_BUILD_DIR='..'
- SRC_DIR='src'
-@@ -2801,7 +2801,6 @@ def mk_config():
+@@ -2538,7 +2538,6 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
              CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
@@ -20,16 +11,16 @@ Index: scripts/mk_util.py
              if GPROF:
                  CXXFLAGS     += '-fomit-frame-pointer'
              CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
-@@ -2836,7 +2835,7 @@ def mk_config():
-         elif sysname == 'OpenBSD':
-             CXXFLAGS       = '%s -D_OPENBSD_' % CXXFLAGS
-             OS_DEFINES     = '-D_OPENBSD_'
+@@ -2551,7 +2550,7 @@ def mk_config():
+         elif sysname == 'Linux':
+             CXXFLAGS       = '%s -D_LINUX_' % CXXFLAGS
+             OS_DEFINES     = '-D_LINUX_'
 -            SO_EXT         = '.so'
 +            SO_EXT         = '.so.${LIBz3_VERSION}'
              SLIBFLAGS      = '-shared'
-         elif sysname.startswith('CYGWIN'):
-             CXXFLAGS       = '%s -D_CYGWIN' % CXXFLAGS
-@@ -2852,9 +2851,9 @@ def mk_config():
+             SLIBEXTRAFLAGS = '%s -Wl,-soname,libz3.so' % SLIBEXTRAFLAGS
+         elif sysname == 'FreeBSD':
+@@ -2583,9 +2582,9 @@ def mk_config():
              LIB_EXT        = '.lib'
          else:
              raise MKException('Unsupported platform: %s' % sysname)

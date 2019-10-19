@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/03 09:16:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/10/19 09:42:20 rsadowski Exp $
 @bin bin/z3
 include/z3++.h
 include/z3.h
@@ -17,6 +17,7 @@ include/z3_version.h
 lib/cmake/
 lib/cmake/z3/
 lib/cmake/z3/Z3Config.cmake
+lib/cmake/z3/Z3ConfigVersion.cmake
 lib/cmake/z3/Z3Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/z3/Z3Targets.cmake
 @lib lib/libz3.so.${LIBz3_VERSION}
