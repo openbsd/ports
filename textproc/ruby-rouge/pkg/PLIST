@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/09/19 11:26:35 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/10/19 07:48:26 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -112,6 +112,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/markdown
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mason
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mathematica
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/matlab
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/minizinc
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/moonscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mosel
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/msgtrans
@@ -320,6 +321,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica/builtins.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab/builtins.yml
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/minizinc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/moonscript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mosel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/msgtrans.rb
