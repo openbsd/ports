@@ -1,19 +1,145 @@
-$OpenBSD: patch-vendor_github_com_shirou_gopsutil_cpu_cpu_openbsd_go,v 1.2 2019/01/13 08:18:36 ajacoutot Exp $
+$OpenBSD: patch-vendor_github_com_shirou_gopsutil_cpu_cpu_openbsd_go,v 1.3 2019/10/19 15:45:27 ajacoutot Exp $
 
-From 7276e963eb08a0f0b4bddbea38b4a13a442d4218 Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@openbsd.org>
-Date: Wed, 2 Jan 2019 17:06:46 +0100
-Subject: [PATCH] cpu: implement Mhz and Cores
-
-From 67297c879129bb84bc55717282641750a5f979f2 Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@openbsd.org>
-Date: Wed, 2 Jan 2019 17:10:02 +0100
-Subject: [PATCH] cpu: prefer cpuonline on OpenBSD
+Adapted from:
+https://raw.githubusercontent.com/shirou/gopsutil/master/cpu/cpu_openbsd.go
 
 Index: vendor/github.com/shirou/gopsutil/cpu/cpu_openbsd.go
 --- vendor/github.com/shirou/gopsutil/cpu/cpu_openbsd.go.orig
 +++ vendor/github.com/shirou/gopsutil/cpu/cpu_openbsd.go
-@@ -106,14 +106,24 @@ func Info() ([]InfoStat, error) {
+@@ -10,13 +10,14 @@ import (
+ 	"os/exec"
+ 	"strconv"
+ 	"strings"
++	"syscall"
+ 
+ 	"github.com/shirou/gopsutil/internal/common"
+ 	"golang.org/x/sys/unix"
+ )
+ 
+ // sys/sched.h
+-const (
++var (
+ 	CPUser    = 0
+ 	CPNice    = 1
+ 	CPSys     = 2
+@@ -28,6 +29,9 @@ const (
+ // sys/sysctl.h
+ const (
+ 	CTLKern     = 1  // "high kernel": proc, limits
++	CTLHw       = 6  // CTL_HW
++	SMT         = 24 // HW_SMT
++	NCpuOnline  = 25 // HW_NCPUONLINE
+ 	KernCptime  = 40 // KERN_CPTIME
+ 	KernCptime2 = 71 // KERN_CPTIME2
+ )
+@@ -35,18 +39,52 @@ const (
+ var ClocksPerSec = float64(128)
+ 
+ func init() {
+-	getconf, err := exec.LookPath("/usr/bin/getconf")
+-	if err != nil {
+-		return
+-	}
+-	out, err := invoke.Command(getconf, "CLK_TCK")
+-	// ignore errors
+-	if err == nil {
+-		i, err := strconv.ParseFloat(strings.TrimSpace(string(out)), 64)
++	func() {
++		getconf, err := exec.LookPath("getconf")
++		if err != nil {
++			return
++		}
++		out, err := invoke.Command(getconf, "CLK_TCK")
++		// ignore errors
+ 		if err == nil {
+-			ClocksPerSec = float64(i)
++			i, err := strconv.ParseFloat(strings.TrimSpace(string(out)), 64)
++			if err == nil {
++				ClocksPerSec = float64(i)
++			}
+ 		}
++	}()
++	func() {
++		v, err := unix.Sysctl("kern.osrelease") // can't reuse host.PlatformInformation because of circular import
++		if err != nil {
++			return
++		}
++		v = strings.ToLower(v)
++		version, err := strconv.ParseFloat(v, 64)
++		if err != nil {
++			return
++		}
++		if version >= 6.4 {
++			CPIntr = 4
++			CPIdle = 5
++			CPUStates = 6
++		}
++	}()
++}
++
++func smt() (bool, error) {
++	mib := []int32{CTLHw, SMT}
++	buf, _, err := common.CallSyscall(mib)
++	if err != nil {
++		return false, err
+ 	}
++
++	var ret bool
++	br := bytes.NewReader(buf)
++	if err := binary.Read(br, binary.LittleEndian, &ret); err != nil {
++		return false, err
++	}
++
++	return ret, nil
+ }
+ 
+ func Times(percpu bool) ([]TimesStat, error) {
+@@ -63,13 +101,27 @@ func TimesWithContext(ctx context.Context, percpu bool
+ 		ncpu = 1
+ 	}
+ 
++	smt, err := smt()
++	if err == syscall.EOPNOTSUPP {
++		// if hw.smt is not applicable for this platform (e.g. i386),
++		// pretend it's enabled
++		smt = true
++	} else if err != nil {
++		return nil, err
++	}
++
+ 	for i := 0; i < ncpu; i++ {
+-		var cpuTimes [CPUStates]int64
++		j := i
++		if !smt {
++			j *= 2
++		}
++
++		var cpuTimes = make([]int32, CPUStates)
+ 		var mib []int32
+ 		if percpu {
+-			mib = []int32{CTLKern, KernCptime}
++			mib = []int32{CTLKern, KernCptime2, int32(j)}
+ 		} else {
+-			mib = []int32{CTLKern, KernCptime2, int32(i)}
++			mib = []int32{CTLKern, KernCptime}
+ 		}
+ 		buf, _, err := common.CallSyscall(mib)
+ 		if err != nil {
+@@ -88,10 +140,10 @@ func TimesWithContext(ctx context.Context, percpu bool
+ 			Idle:   float64(cpuTimes[CPIdle]) / ClocksPerSec,
+ 			Irq:    float64(cpuTimes[CPIntr]) / ClocksPerSec,
+ 		}
+-		if !percpu {
+-			c.CPU = "cpu-total"
++		if percpu {
++			c.CPU = fmt.Sprintf("cpu%d", j)
+ 		} else {
+-			c.CPU = fmt.Sprintf("cpu%d", i)
++			c.CPU = "cpu-total"
+ 		}
+ 		ret = append(ret, c)
+ 	}
+@@ -106,14 +158,33 @@ func Info() ([]InfoStat, error) {
  
  func InfoWithContext(ctx context.Context) ([]InfoStat, error) {
  	var ret []InfoStat
@@ -22,18 +148,26 @@ Index: vendor/github.com/shirou/gopsutil/cpu/cpu_openbsd.go
  	c := InfoStat{}
  
 -	v, err := unix.Sysctl("hw.model")
--	if err != nil {
 +	var u32 uint32
 +	if u32, err = unix.SysctlUint32("hw.cpuspeed"); err != nil {
++		return nil, err
++	}
++	c.Mhz = float64(u32)
++
++	mib := []int32{CTLHw, NCpuOnline}
++	buf, _, err := common.CallSyscall(mib)
+ 	if err != nil {
  		return nil, err
  	}
 -	c.ModelName = v
-+	c.Mhz = float64(u32)
 +
-+	if u32, err = unix.SysctlUint32("hw.ncpuonline"); err != nil {
++	var ncpu int32
++	br := bytes.NewReader(buf)
++	err = binary.Read(br, binary.LittleEndian, &ncpu)
++	if err != nil {
 +		return nil, err
 +	}
-+	c.Cores = int32(u32)
++	c.Cores = ncpu
 +
 +	if c.ModelName, err = unix.Sysctl("hw.model"); err != nil {
 +		return nil, err
