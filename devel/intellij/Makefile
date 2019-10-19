@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/12 20:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/10/19 09:39:01 rsadowski Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2019.1.1
+V=			2019.2.3
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
-REVISION=		0
 
 HOMEPAGE=		https://www.jetbrains.com/idea/
 MAINTAINER=		Caspar Schutijser <caspar@schutijser.com>
@@ -17,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		https://download.jetbrains.com/idea/
 
 MODULES=		java
-MODJAVA_VER=		1.8+
+MODJAVA_VER=		11
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
@@ -26,7 +25,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=		${WRKDIR}/idea-IC-191.6707.61
+WRKDIST=		${WRKDIR}/idea-IC-192.6817.14
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
@@ -38,10 +37,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${IJ}
 	cd ${WRKDIST} && pax -rw . ${IJ}
 	@rm -rf ${IJ}/bin/libdbm64.so
-	@rm -rf ${IJ}/jre
-	@rm -rf ${IJ}/jre64
+	@rm -rf ${IJ}/jbr
 	@rm -rf ${IJ}/plugins/android
-	@rm -rf ${IJ}/plugins/gradle/lib/native-platform-{freebsd,linux,osx,windows}*.jar
 	@${SUBST_PROGRAM} ${FILESDIR}/idea ${PREFIX}/bin/idea
 	@ln -s ${TRUEPREFIX}/bin/idea ${PREFIX}/bin/intellij
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${PREFIX}/man/man1
