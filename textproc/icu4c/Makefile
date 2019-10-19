@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/10/19 08:44:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2019/10/19 09:28:08 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -12,6 +12,10 @@ PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
 
 REVISION-main=		0
 
+# XXX libicudata is not recognized as a SHARED_LIBS by the ports tools because
+# it's missing the '.note.openbsd.ident' section ("-nodefaultlibs -nostdlib" in
+# LDFLAGS); @lib and LIBicudata_VERSION must be added manually;
+# (see ports/infrastructure/lib/OpenBSD/FS2.pm)
 MAJ_V=			${VERSION:R}
 SO_VERSION=		17.0
 .for _lib in icudata icui18n icuio icutest icutu icuuc
