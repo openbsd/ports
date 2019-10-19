@@ -1,2 +1,0 @@
-Sys::MemInfo return the total amount of free and used physical memory
-in bytes in totalmem and freemem variables.
