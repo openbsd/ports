@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/03/19 08:10:32 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/10/19 23:23:46 bentley Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -38,7 +38,7 @@ Index: CMakeLists.txt
  		add_definitions(-D_XOPEN_SOURCE_EXTENDED -D__BSD_VISIBLE=1)
  		add_definitions(-D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64)
  	elseif(ANDROID)
-@@ -594,6 +595,7 @@ endif()
+@@ -595,6 +596,7 @@ endif()
  find_package(LibZip)
  if(LIBZIP_FOUND AND USE_SYSTEM_LIBZIP)
  	add_definitions(-DSHARED_LIBZIP)
