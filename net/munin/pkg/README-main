@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2018/09/04 12:46:17 espie Exp $
+$OpenBSD: README-main,v 1.5 2019/10/19 16:06:38 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -35,4 +35,4 @@ SNMP-based monitors are also available; to use these, install the
 p5-Net-SNMP package.
 
 For further information, see
-http://munin.readthedocs.org/
+https://munin.readthedocs.org/

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_config,v 1.6 2018/12/23 15:05:07 kirby Exp $
+$OpenBSD: patch-Makefile_config,v 1.7 2019/10/19 16:06:38 kirby Exp $
 Index: Makefile.config
 --- Makefile.config.orig
 +++ Makefile.config
@@ -61,6 +61,15 @@ Index: Makefile.config
  
  # Location of PID files and other statefiles. On the server, must be
  # writable by the user "munin".
+@@ -66,7 +69,7 @@ STATEDIR   = $(DESTDIR)/var/run/munin
+ PERL       := $(shell which perl)
+ 
+ # The python interpreter to use (used by some plugins)
+-PYTHON     := /usr/bin/env python3
++#PYTHON     := /usr/bin/env python3
+ 
+ # The ruby interpreter to use (used by some plugins)
+ RUBY       := /usr/bin/env ruby
 @@ -105,7 +108,7 @@ OSTYPE     := $(shell uname | LANG=C tr '[A-Z]' '[a-z]
  
  # How to figure out the hostname. (Only used in default configuration
