@@ -1,7 +1,17 @@
-$OpenBSD: patch-build_main_mk,v 1.2 2017/08/03 08:35:06 bentley Exp $
---- build/main.mk.orig	Sat May  6 21:02:40 2017
-+++ build/main.mk	Sat May  6 21:02:52 2017
-@@ -374,6 +374,8 @@ else
+$OpenBSD: patch-build_main_mk,v 1.3 2019/10/20 22:07:03 bentley Exp $
+Index: build/main.mk
+--- build/main.mk.orig
++++ build/main.mk
+@@ -342,7 +342,7 @@ LINK_FLAGS+=$(TARGET_FLAGS)
+ CXX?=g++
+ WINDRES?=windres
+ DEPEND_FLAGS:=
+-ifneq ($(filter %clang++,$(CXX))$(filter clang++%,$(CXX)),)
++ifneq ($(filter %clang++,$(CXX))$(filter clang++%,$(CXX))$(filter c++,$(CXX)),)
+   # Enable C++14 (supported since clang-3.5)
+   COMPILE_FLAGS+=-std=c++14
+   # Clang does support -Wunused-macros, but it triggers on SDL's headers,
+@@ -394,6 +394,8 @@ else
    else
      $(warning Unsupported compiler: $(CXX), please update Makefile)
    endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/10/20 22:07:02 bentley Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -6,9 +6,8 @@ BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc
 
 COMMENT =	MSX home computer emulator
 
-V =		0.14.0
+V =		0.15.0
 DISTNAME =	openmsx-$V
-REVISION =	1
 
 CATEGORIES =	emulators
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE =	claims GPLv2, but no copyright notices in source files
 PERMIT_DISTFILES =	claims GPLv2, but no copyright notices in source files
 
 WANTLIB += ${MODTCL_LIB}
-WANTLIB += GL GLEW SDL SDL_ttf c freetype iconv m ogg png
+WANTLIB += GL GLEW SDL SDL_ttf c freetype m ogg png
 WANTLIB += pthread ${COMPILER_LIBCXX} theoradec vorbis z
 
 MASTER_SITES =	https://github.com/openMSX/openMSX/releases/download/RELEASE_${V:S/./_/g}/
@@ -31,7 +30,6 @@ MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 
 COMPILER =	base-clang ports-gcc
 LIB_DEPENDS =	audio/libvorbis \
-		converters/libiconv \
 		devel/sdl-ttf \
 		graphics/glew \
 		graphics/png \
