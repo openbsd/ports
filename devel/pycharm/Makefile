@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/10/02 15:03:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2019/10/20 06:53:25 rsadowski Exp $
 
 COMMENT=		Python IDE based on IntelliJ IDEA
 
@@ -6,6 +6,7 @@ V=			2019.2.3
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://www.jetbrains.com/pycharm/
 
@@ -36,11 +37,9 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PC}
 	@tar -czf - -C ${WRKDIST} . | tar xzf - -C ${PC}
-	@rm -rf ${PC}/jre
-	@rm -rf ${PC}/jre64
+	@rm -rf ${PC}/jbr
 	@rm -rf ${PC}/plugins/android
 	@rm -rf ${PC}/lib/pty4j-native
-	@rm -rf ${PC}/plugins/gradle/lib/native-platform-{freebsd,linux,osx,windows}*.jar
 	@${SUBST_PROGRAM} ${FILESDIR}/pycharm ${PREFIX}/bin/pycharm
 	@chmod ${BINMODE} ${PREFIX}/bin/pycharm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
