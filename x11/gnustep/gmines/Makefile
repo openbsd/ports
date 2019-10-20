@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/10/16 13:45:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/10/20 08:03:01 ajacoutot Exp $
 
 COMMENT =	GNUstep minesweeper game
 
 DISTNAME =	GMines-0.2
-REVISION =	11
+REVISION =	12
 CATEGORIES =	games
 
 HOMEPAGE =	http://gap.nongnu.org/gmines/

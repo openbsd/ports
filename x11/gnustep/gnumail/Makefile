@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.30 2019/10/16 13:45:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2019/10/20 08:03:02 ajacoutot Exp $
 
 COMMENT=	GNUstep mail application
 
 DISTNAME =	GNUMail-1.3.0
-REVISION =	1
+REVISION =	2
 SHLIB_VERSION =	3.0
 SHARED_LIBS =	GNUMail ${SHLIB_VERSION}
 CATEGORIES=	mail
 
 HOMEPAGE=	https://savannah.nongnu.org/projects/gnustep-nonfsf/
 
-WANTLIB +=	AddressView Addresses Pantomime
+WANTLIB +=	crypto ssl AddressView Addresses Pantomime
 WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES=	https://download.savannah.nongnu.org/releases/gnustep-nonfsf/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/10/16 13:45:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/10/20 08:03:03 ajacoutot Exp $
 
 COMMENT =	tetris like puzzle game
 
-REVISION =	12
+REVISION =	13
 DISTNAME =	LapisPuzzle-1.2
 CATEGORIES =	games
 

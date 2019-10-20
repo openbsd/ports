@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/10/16 13:45:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/10/20 08:03:03 ajacoutot Exp $
 
 COMMENT =	GNUstep based trace visualization tool
 
-REVISION =	12
+REVISION =	13
 DISTNAME =	Paje-1.98
 SHARED_LIBS +=	General	0.0
 

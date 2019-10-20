@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/10/16 13:45:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/10/20 08:03:05 ajacoutot Exp $
 
 COMMENT=	CPU load monitor
 
-REVISION =	5
+REVISION =	6
 DISTNAME=	TimeMon-4.2
 CATEGORIES=	sysutils
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2019/10/16 13:45:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2019/10/20 08:03:02 ajacoutot Exp $
 
 COMMENT=	little board game
 
-REVISION =	12
+REVISION =	13
 DISTNAME=	GShisen-1.3.0
 CATEGORIES=	games
 

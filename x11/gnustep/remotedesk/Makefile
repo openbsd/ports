@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/10/16 13:45:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/10/20 08:03:04 ajacoutot Exp $
 
 COMMENT=	GNUstep rdesktop frontend
 
-REVISION =	12
+REVISION =	13
 DISTNAME=	RemoteDesk-0.1
 
 CATEGORIES=	x11

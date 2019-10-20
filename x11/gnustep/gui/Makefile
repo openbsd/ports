@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2019/10/16 13:45:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2019/10/20 08:03:02 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME =	gnustep-gui-0.27.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	devel
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB += ao aspell cups flite flite_cmu_us_kal flite_cmulex
 WANTLIB += flite_usenglish gif jpeg png sndfile sndio
-WANTLIB += ${LIBCXX} tiff c z
+WANTLIB += ${LIBCXX} tiff c icudata icui18n icuuc z
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
@@ -37,8 +37,7 @@ CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
 CONFIGURE_ARGS=	--with-x \
-		--enable-speech \
-		--disable-icu
+		--enable-speech
 
 LIBDIR =	lib/GNUstep/Libraries/gnustep-gui/Versions/${LIBgnustep-gui_VERSION}
 SUBST_VARS +=	LIBDIR

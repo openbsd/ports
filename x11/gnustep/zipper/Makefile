@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/10/16 13:45:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/10/20 08:03:05 ajacoutot Exp $
 
 COMMENT =	tool for inspecting compressed archvies
 
-REVISION =	9
+REVISION =	10
 DISTNAME =	Zipper-1.5
 
 HOMEPAGE =	http://gap.nongnu.org/zipper/

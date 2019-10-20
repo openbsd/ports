@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2019/10/16 13:45:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2019/10/20 08:03:00 ajacoutot Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.26.0
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	gnustep-base 10.2
 CATEGORIES=	devel
@@ -13,8 +13,8 @@ SUBST_VARS=	LIBDIR
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += avahi-client avahi-common c ffi gmp gnutls iberty iconv
-WANTLIB += m objc2 pthread lzma xml2 xslt z
+WANTLIB += avahi-client avahi-common c ffi gmp gnutls iberty iconv icudata
+WANTLIB += icui18n icuuc m objc2 pthread lzma xml2 xslt z
 WANTLIB += ${COMPILER_LIBCXX}
 
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
@@ -32,14 +32,14 @@ LIB_DEPENDS +=	converters/libiconv \
 		devel/gmp \
 		textproc/libxslt \
 		security/gnutls \
+		textproc/icu4c \
 		net/avahi \
 		x11/gnustep/libobjc2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_header_execinfo_h=false
 CONFIGURE_ARGS +=	--disable-procfs \
-			--disable-procfs-psinfo \
-			--disable-icu
+			--disable-procfs-psinfo
 MAKE_FLAGS +=		libgnustep-base_INTERFACE_VERSION=${LIBgnustep-base_VERSION}
 
 .include <bsd.port.mk>
