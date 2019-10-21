@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/10/21 10:52:20 sthen Exp $
 
 COMMENT =	plugin-driven server agent for collecting metrics
 
@@ -38,11 +38,11 @@ do-build:
 
 ## convenience hackish target to bundle/vendor dependencies
 tarball: clean distclean
+	@if ! [ -x ${LOCALBASE}/bin/dep ]; then echo 'run "pkg_add dep" to use this target'; exit 1; fi
 	mkdir -p ${WRKDIR}/go/src/github.com/influxdata/
 	ftp -o ${WRKDIR}/${DISTFILES} https://github.com/influxdata/telegraf/archive/${GH_TAGNAME}/${DISTFILES}
 	tar -C ${WRKDIR}/go/src/github.com/influxdata/ -xzf ${WRKDIR}/${DISTFILES}
-	${SETENV} ${MAKE_ENV} go get github.com/golang/dep/cmd/dep
-	cd ${WRKDIR}/go/src/github.com/influxdata/${DISTNAME} && ${SETENV} ${MAKE_ENV} ${WRKDIR}/go/bin/dep ensure
+	cd ${WRKDIR}/go/src/github.com/influxdata/${DISTNAME} && ${SETENV} ${MAKE_ENV} dep ensure
 	rm -Rf ${WRKDIR}/go/{bin,pkg} ${WRKDIR}/go/src/github.com/influxdata/${DISTNAME}/vendor/github.com/influxdata/telegraf ${WRKDIR}/${DISTFILES}
 	cd ${WRKDIR}/go/src/github.com/influxdata/ && tar -czf /usr/ports/distfiles/${DISTFILES} ${DISTNAME}
 
