@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2019/09/30 13:15:39 kili Exp $
+# $OpenBSD: Makefile,v 1.167 2019/10/21 20:36:15 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -72,8 +72,7 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 .endfor
 
 # Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
-# ghc-heap, libiserv and ghci will always have the same version number
-# as ghc.
+# ghc-heap and ghci will always have the same version number as ghc.
 GHC_ITEMS = \
 	CABAL			2.4.0.1		\
 	ARRAY			0.5.3.0		\
