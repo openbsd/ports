@@ -1,0 +1,19 @@
+$OpenBSD: patch-docs_bin_testing_formatter_sh,v 1.1 2019/10/22 18:04:12 pvk Exp $
+
+Index: docs/bin/testing_formatter.sh
+--- docs/bin/testing_formatter.sh.orig
++++ docs/bin/testing_formatter.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash -eu
++#!/bin/sh
+ 
+ FILENAME=../docsite/rst/dev_guide/testing/sanity/index.rst
+ 
+@@ -21,6 +21,6 @@ $(for test in $(../../test/runner/ansible-test sanity 
+ EOF
+ 
+ # Put file into place if it has changed
+-if [ "$(sha1sum <$FILENAME)" != "$(sha1sum <$FILENAME.new)" ]; then
++if [ "$(sha1 <$FILENAME)" != "$(sha1 <$FILENAME.new)" ]; then
+     mv -f $FILENAME.new $FILENAME
+ fi

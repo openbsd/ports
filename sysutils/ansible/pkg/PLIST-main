@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2019/08/26 17:35:21 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2019/10/22 18:04:12 pvk Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -8416,6 +8416,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}shell_windows.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}skydive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}sros.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}template_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}tower.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}ucs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}url.${MODPY_PYC_MAGIC_TAG}pyc
@@ -8528,6 +8529,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/shell_com
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/shell_windows.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/skydive.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/sros.py
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/template_common.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/tower.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/ucs.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/url.py
@@ -8979,7 +8981,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/vars/reserved.py
 share/doc/ansible/
 share/doc/ansible/COPYING
 share/doc/ansible/README.rst
-share/doc/ansible/html/reference_appendices/general_precedence.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ansible/
 @sample ${SYSCONFDIR}/ansible/

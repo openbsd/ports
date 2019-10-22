@@ -1,0 +1,16 @@
+$OpenBSD: patch-docs_docsite__themes_sphinx_rtd_theme_layout_html,v 1.1 2019/10/22 18:04:12 pvk Exp $
+
+Remove script which displays banner about outdated version if the URI
+of the document doesn't contain 'latest'
+
+Index: docs/docsite/_themes/sphinx_rtd_theme/layout.html
+--- docs/docsite/_themes/sphinx_rtd_theme/layout.html.orig
++++ docs/docsite/_themes/sphinx_rtd_theme/layout.html
+@@ -195,7 +195,6 @@
+         <div class="rst-content">
+         {% endif %}
+           {% include "breadcrumbs.html" %}
+-          {% include "ansible_banner.html" %}
+           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           {%- block document %}
+            <div itemprop="articleBody">
