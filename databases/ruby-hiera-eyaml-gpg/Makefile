@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/10/22 13:54:39 sebastia Exp $
 
 COMMENT =	gpg encryptor for the hiera eyaml backend
 
-DISTNAME =	hiera-eyaml-gpg-0.7.3
+DISTNAME =	hiera-eyaml-gpg-0.7.4
 CATEGORIES =	databases
 
 HOMEPAGE =	http://github.com/sihil/hiera-eyaml-gpg

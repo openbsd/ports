@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/05 21:59:07 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/10/22 13:54:39 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -15,6 +19,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/eyaml/encryptors/
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/eyaml/encryptors/gpg/
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/eyaml/encryptors/gpg.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/eyaml/encryptors/gpg/eyaml_init.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/eyaml/encryptors/gpg/puppet_gpg.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/eyaml/encryptors/gpg/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/tools/
 ${GEM_LIB}/gems/${DISTNAME}/tools/regem.sh
