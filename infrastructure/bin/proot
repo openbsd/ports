@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.64 2018/11/16 10:20:19 espie Exp $
+# $OpenBSD: proot,v 1.65 2019/10/22 09:52:46 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -1149,8 +1149,7 @@ if ($state->{actions}{ports_subdirs}) {
 if ($state->{actions}{stragglers}) {
 	$state->verbose_shit;
 }
-if ($state->{actions}{write_mk} && 
-    exists $state->{write} || exists $state->{mkconf_tail}) {
+if ($state->{actions}{write_mk}) {
 	$state->write_mk_conf;
 }
 if ($state->{actions}{check_symlinks}) {
