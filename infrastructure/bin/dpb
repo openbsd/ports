@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.132 2019/10/22 15:31:35 espie Exp $
+# $OpenBSD: dpb,v 1.133 2019/10/22 15:33:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -102,19 +102,19 @@ my $state;
 
 my $cleanup = 
     sub {
-    	my $S = shift;
+    	my $sig = shift;
 	if ($$ == $master_pid) {
 		$> = 0;
-		DPB::Core->cleanup($S // "INT", 0);
+		DPB::Core->cleanup($sig // "INT", 0);
 	}
 	eval { $state->{external}->cleanup; };
     };
 
-for my $S (qw(INT HUP TERM QUIT)) {
-	$SIG{$S} = sub {
-	    &$cleanup($S);
-	    $SIG{$S} = 'DEFAULT';
-	    kill $S => $$;
+for my $sig (qw(INT HUP TERM QUIT)) {
+	$SIG{$sig} = sub {
+	    &$cleanup($sig);
+	    $SIG{$sig} = 'DEFAULT';
+	    kill $sig => $$;
 	};
 }
 
