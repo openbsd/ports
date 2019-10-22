@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.131 2019/09/29 12:57:51 espie Exp $
+# $OpenBSD: dpb,v 1.132 2019/10/22 15:31:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -62,7 +62,7 @@ sub show_days
 	}
 }
 
-sub show_time
+sub show_duration
 {
 	my $secs = int(shift);
 
@@ -80,7 +80,7 @@ sub report
 {
 	return DPB::Util->time2string(time)." [$$]".
 		($keep_going ? "" : " STOPPED!").
-		" running for ".show_time(time-$starttime)."\n";
+		" running for ".show_duration(time-$starttime)."\n";
 }
 
 sub affinityclass
@@ -345,7 +345,7 @@ if ($state->{scan_only}) {
 $reporter->reset;
 DPB::Core->cleanup;
 $state->{external}->cleanup;
-print "Elapsed time=", show_time(time-$starttime),"\n";
+print "Elapsed time=", show_duration(time-$starttime),"\n";
 print $state->engine->report;
 $state->engine->end_dump($state->logger->append('dump'));
 $state->engine->smart_dump($state->logger->append('summary'));
