@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.8 2019/10/22 15:44:10 espie Exp $
+# $OpenBSD: Tty.pm,v 1.9 2019/10/22 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -74,8 +74,8 @@ sub report
 		$msg .= $extra;
 		if ($msg ne $self->{msg} || $self->{continued}) {
 			if (defined $self->{record}) {
-				print {$self->{record}} "@@@", time(), "\n";
-				print {$self->{record}} $msg;
+				print {$self->{record}} "@@@", 
+				    CORE::time(), "\n", $msg;
 			}
 			$self->{continued} = 0;
 			my $method = $self->{write};

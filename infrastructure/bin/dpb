@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.135 2019/10/22 15:50:25 espie Exp $
+# $OpenBSD: dpb,v 1.136 2019/10/22 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -77,9 +77,10 @@ sub show_duration
 sub report_tty
 {
 	my ($self, $state) = @_;
-	return DPB::Util->time2string(time)." [$$]".
+	my $t = CORE::time();
+	return DPB::Util->time2string($t)." [$$]".
 		($keep_going ? "" : " STOPPED!").
-		" running for ".show_duration(time-$state->{starttime})."\n";
+		" running for ".show_duration($t-$state->{starttime})."\n";
 }
 
 sub affinityclass
@@ -238,7 +239,7 @@ sub handle_non_waiting_jobs
 			last;
 		}
 	}
-	DPB::Core->log_concurrency(time(), $state->{concurrent});
+	DPB::Core->log_concurrency(CORE::time(), $state->{concurrent});
 	DPB::Core->wake_jobs;
 	$reporter->report($force_report);
 }
@@ -342,7 +343,7 @@ if ($state->{scan_only}) {
 $reporter->reset;
 DPB::Core->cleanup;
 $state->{external}->cleanup;
-print "Elapsed time=", show_duration(time-$state->{starttime}),"\n";
+print "Elapsed time=", show_duration(CORE::time()-$state->{starttime}),"\n";
 print $state->engine->report_tty($state);
 $state->engine->end_dump($state->logger->append('dump'));
 $state->engine->smart_dump($state->logger->append('summary'));

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.80 2018/07/15 09:56:45 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.81 2019/10/22 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -155,7 +155,7 @@ sub parse_old
 sub expire_old
 {
 	my $self = shift;
-	my $ts = time();
+	my $ts = CORE::time();
 	my $distdir = $self->distdir;
 	chdir($distdir) or die "can't change to distdir: $!";
 	my $fh2 = $self->open(">", "history.new");

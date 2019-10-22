@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Limiter.pm,v 1.7 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: Limiter.pm,v 1.8 2019/10/22 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,7 +22,7 @@ use warnings;
 # this is a mixin-class.
 
 package DPB::Limiter;
-use Time::HiRes qw(time);
+use Time::HiRes;
 use DPB::Util;
 use DPB::Clock;
 
@@ -37,7 +37,7 @@ sub setup
 sub limit
 {
 	my ($self, $forced, $factor, $tag, $cond, $code) = @_;
-	$self->{ts} = time();
+	$self->{ts} = Time::HiRes::time();
 	$self->{start} = 0;	# so we can register ourselves
 	$self->{next_check} //= $self->{ts};
 	DPB::Clock->register($self);
@@ -51,9 +51,9 @@ sub limit
 
 	delete $self->{unchecked};
 	# actual computation
-	$self->{start} = time();
+	$self->{start} = Time::HiRes::time();
 	&$code;
-	$self->{end} = time();
+	$self->{end} = Time::HiRes::time();
 	# adjust values for next time
 	my $check_interval = $factor * ($self->{end} - $self->{start});
 	my $offset = $self->{ts} - $self->{next_check};

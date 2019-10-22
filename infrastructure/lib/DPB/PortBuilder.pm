@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.85 2019/05/12 14:09:11 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.86 2019/10/22 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -181,7 +181,7 @@ sub report
 	if ($job->{failed}) {
 		my $fh = $self->logger->open('>>', $job->{log});
 		print $fh "Error: job failed with $job->{failed} on ",
-		    $core->hostname, " at ", time(), "\n" if defined $fh;
+		    $core->hostname, " at ", CORE::time(), "\n" if defined $fh;
 		print $log  "!\n";
 	} else {
 		print $log  "\n";
@@ -194,7 +194,7 @@ sub report
 		    host => $host, 
 		    time => $job->totaltime, 
 		    size => $sz, 
-		    ts => CORE::time }), "\n";
+		    ts => CORE::time() }), "\n";
 	}
 }
 
@@ -207,7 +207,7 @@ sub get
 sub end_lock
 {
 	my ($self, $lock, $core, $job) = @_;
-	my $end = time();
+	my $end = CORE::time();
 	$lock->write("status", $core->{status});
 	$lock->write("todo", $job->current_task);
 	$lock->write("end", "$end (".DPB::Util->time2string($end).")");
@@ -217,7 +217,7 @@ sub end_lock
 sub build
 {
 	my ($self, $v, $core, $lock, $final_sub) = @_;
-	my $start = time();
+	my $start = CORE::time();
 	my ($log, $fh) = $self->logger->make_logs($v);
 	my $memsize = $self->{sizer}->build_in_memory($fh, $core, $v);
 	my $meminfo;
@@ -283,7 +283,6 @@ sub wipe
 sub force_junk
 {
 	my ($self, $v, $core, $final_sub) = @_;
-	my $start = time();
 	my $log = $self->logger->log_pkgpath($v);
 	my $fh = $self->logger->open('>>', $log);
 	print $fh ">>> Force junking on ", $core->hostname;
@@ -301,7 +300,7 @@ sub force_junk
 sub test
 {
 	my ($self, $v, $core, $lock, $final_sub) = @_;
-	my $start = time();
+	my $start = CORE::time();
 	my $log = $self->logger->make_test_logs($v);
 	my $memsize = $self->{sizer}->build_in_memory($core, $v);
 

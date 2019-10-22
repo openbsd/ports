@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.33 2019/10/22 15:44:10 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.34 2019/10/22 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -202,7 +202,7 @@ sub done
 sub report_tty
 {
 	my ($self, $state) = @_;
-	my $time = time;
+	my $time = CORE::time();
 	return DPB::Util->time2string($time)." [$$]\n";
 	# okay, I need to sit down and do the actual computation, sigh.
 	my $all = DPB::Core->all_sf;

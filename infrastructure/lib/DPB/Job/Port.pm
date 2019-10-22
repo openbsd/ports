@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.195 2019/08/30 17:56:55 espie Exp $
+# $OpenBSD: Port.pm,v 1.196 2019/10/22 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -82,7 +82,8 @@ sub handle_output
 {
 	my ($self, $job) = @_;
 	$self->redirect_fh($job->{logfh}, $job->{log});
-	print ">>> Running $self->{phase} in $job->{path} at ", time(), "\n";
+	print ">>> Running $self->{phase} in $job->{path} at ", 
+	    CORE::time(), "\n";
 }
 
 sub tweak_args
@@ -354,7 +355,7 @@ sub try_lock
 	if ($lock) {
 		$lock->write("path", $job->{path});
 		print {$job->{logfh}} "(Junk lock obtained for ",
-		    $core->hostname, " at ", time(), ")\n";
+		    $core->hostname, " at ", CORE::time(), ")\n";
 		$job->{locked} = 1;
 	}
 }
@@ -366,7 +367,7 @@ sub junk_unlock
 	if ($core->job->{locked}) {
 		$core->job->{builder}->locker->unlock($core);
 		print {$core->job->{logfh}} "(Junk lock released for ", 
-		    $core->hostname, " at ", time(), ")\n";
+		    $core->hostname, " at ", CORE::time(), ")\n";
 		delete $core->job->{locked};
 		$core->job->wake_others($core);
 	}
@@ -403,19 +404,20 @@ sub run
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	$SIG{IO} = sub { print {$job->{logfh}} "Received IO\n"; };
-	my $date = time;
+	my $start = CORE::time();
 	use POSIX;
 
 	while (1) {
 		$self->try_lock($core);
+		my $now = CORE::time();
 		if ($job->{locked}) {
 			print {$job->{builder}{lockperf}} 
-			    time(), ":", $core->hostname, 
-			    ": $self->{phase}: ", time() - $date, " seconds\n";
+			    $now, ":", $core->hostname, 
+			    ": $self->{phase}: ", $now - $start, " seconds\n";
 			exit(0);
 		}
 		print {$job->{logfh}} "(Junk lock failure for ",
-		    $core->hostname, " at ", time(), ")\n";
+		    $core->hostname, " at ", $now, ")\n";
 		pause;
 	}
 }
@@ -779,7 +781,7 @@ sub finalize
 			    pkgpath => $job->{path},
 			    pkname => $job->{v}->fullpkgname,
 			    size => $sz,
-			    ts => CORE::time });
+			    ts => CORE::time() });
 			print {$job->{builder}{logsize}} $info, "\n";
 			# XXX the rolling log might be shared with other dpb
 			# so it can be rewritten and sorted
@@ -939,7 +941,7 @@ sub close
 package DPB::Job::BasePort;
 our @ISA = qw(DPB::Job::Watched);
 
-use Time::HiRes qw(time);
+use Time::HiRes;
 
 sub killinfo
 {
