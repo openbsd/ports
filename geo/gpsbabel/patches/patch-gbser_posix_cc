@@ -1,5 +1,8 @@
---- gbser_posix.cc.orig	Thu May  2 17:26:47 2019
-+++ gbser_posix.cc	Sat Aug 24 19:55:42 2019
+$OpenBSD: patch-gbser_posix_cc,v 1.2 2019/10/22 06:07:22 kirby Exp $
+
+Index: gbser_posix.cc
+--- gbser_posix.cc.orig
++++ gbser_posix.cc
 @@ -142,7 +142,7 @@ void* gbser_init(const char* port_name)
    if (0 == strcmp(port_name, "-")) {
      h->fd = 0;

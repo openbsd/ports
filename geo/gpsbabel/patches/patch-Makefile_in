@@ -1,5 +1,8 @@
---- Makefile.in.orig	Thu May  2 17:26:47 2019
-+++ Makefile.in	Mon Sep  2 22:09:45 2019
+$OpenBSD: patch-Makefile_in,v 1.8 2019/10/22 06:07:22 kirby Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -236,7 +236,6 @@ dep:
  $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
  	mkdir -p $(WEB)/htmldoc-$(DOCVERSION)

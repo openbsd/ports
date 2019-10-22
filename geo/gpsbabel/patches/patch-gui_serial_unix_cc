@@ -1,5 +1,8 @@
---- gui/serial_unix.cc.orig	Thu May  2 17:26:47 2019
-+++ gui/serial_unix.cc	Sat Aug 24 19:55:42 2019
+$OpenBSD: patch-gui_serial_unix_cc,v 1.2 2019/10/22 06:07:22 kirby Exp $
+
+Index: gui/serial_unix.cc
+--- gui/serial_unix.cc.orig
++++ gui/serial_unix.cc
 @@ -84,12 +84,12 @@ static QStringList dynamicDevices()
  
  
