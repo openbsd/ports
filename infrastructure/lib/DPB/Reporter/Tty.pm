@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.7 2019/05/08 09:10:54 espie Exp $
+# $OpenBSD: Tty.pm,v 1.8 2019/10/22 15:44:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -41,7 +41,7 @@ sub set_sig_handlers
 
 sub filter
 {
-	'report';
+	'report_tty';
 }
 
 sub make_singleton
@@ -66,7 +66,10 @@ sub report
 	    sub {
 		my $msg = "";
 		for my $prod (@{$self->{producers}}) {
-			$msg.= $prod->report;
+			my $r = $prod->report_tty($self->{state});
+			if (defined $r) {
+				$msg.= $r;
+			}
 		}
 		$msg .= $extra;
 		if ($msg ne $self->{msg} || $self->{continued}) {

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.133 2019/10/22 15:33:22 espie Exp $
+# $OpenBSD: dpb,v 1.134 2019/10/22 15:44:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -76,8 +76,9 @@ sub show_duration
 	return show_days($days).sprintf("%02d:%02d:%02d", $hours, $mn, $secs);
 }
 
-sub report
+sub report_tty
 {
+	my ($self, $state) = @_;
 	return DPB::Util->time2string(time)." [$$]".
 		($keep_going ? "" : " STOPPED!").
 		" running for ".show_duration(time-$starttime)."\n";
@@ -346,6 +347,6 @@ $reporter->reset;
 DPB::Core->cleanup;
 $state->{external}->cleanup;
 print "Elapsed time=", show_duration(time-$starttime),"\n";
-print $state->engine->report;
+print $state->engine->report_tty($state);
 $state->engine->end_dump($state->logger->append('dump'));
 $state->engine->smart_dump($state->logger->append('summary'));

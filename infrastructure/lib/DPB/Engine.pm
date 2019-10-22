@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.131 2019/10/15 14:41:22 espie Exp $
+# $OpenBSD: Engine.pm,v 1.132 2019/10/22 15:44:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -174,9 +174,9 @@ sub may_add
 	}
 }
 
-sub report
+sub report_tty
 {
-	my $self = shift;
+	my ($self, $state) = @_;
 	my $q = $self->{buildable}->count;
 	my $t = $self->{tobuild}->count;
 	return join(" ",
@@ -193,9 +193,9 @@ sub stats
 	$self->{stats}->log($self->{ts}, $self->statline);
 }
 
-sub important
+sub report_notty
 {
-	my $self = shift;
+	my ($self, $state) = @_;
 	$self->{lasterrors} //= 0;
 	if (@{$self->{errors}} != $self->{lasterrors}) {
 		$self->{lasterrors} = @{$self->{errors}};

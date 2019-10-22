@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.99 2019/09/28 12:22:12 espie Exp $
+# $OpenBSD: Core.pm,v 1.100 2019/10/22 15:44:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -495,13 +495,13 @@ sub is_local
 	return $self->host->is_localhost;
 }
 
-my @extra_report = ();
-my @extra_important = ();
+my @extra_report_tty = ();
+my @extra_report_notty = ();
 sub register_report
 {
-	my ($self, $code, $important) = @_;
-	push (@extra_report, $code);
-	push (@extra_important, $important);
+	my ($self, $code, $c2) = @_;
+	push (@extra_report_tty, $code);
+	push (@extra_report_notty, $c2);
 }
 
 sub repository
@@ -595,19 +595,21 @@ sub one_core
     	return $s;
 }
 
-sub report
+sub report_tty
 {
+	my ($self, $state) = @_;
 	my $current = Time::HiRes::time();
 
 	my $s = join("\n", map {one_core($_, $current)} sort {$a->{started} <=> $b->{started}} values %$running). "\n";
-	for my $a (@extra_report) {
+	for my $a (@extra_report_tty) {
 		$s .= &$a;
 	}
 	return $s;
 }
 
-sub important
+sub report_notty
 {
+	my ($self, $state) = @_;
 	my $current = Time::HiRes::time();
 	my $s = '';
 	for my $j (values %$running) {
@@ -616,7 +618,7 @@ sub important
 		}
 	}
 
-	for my $a (@extra_important) {
+	for my $a (@extra_report_notty) {
 		$s .= &$a;
 	}
 	return $s;

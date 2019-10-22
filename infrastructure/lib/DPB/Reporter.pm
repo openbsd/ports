@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.30 2019/05/08 09:10:54 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.31 2019/10/22 15:44:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -144,7 +144,7 @@ sub add_producers
 
 sub filter
 {
-	'important';
+	'report_notty';
 }
 sub timeout
 {
@@ -156,9 +156,9 @@ sub report
 {
 	my $self = shift;
 	for my $prod (@{$self->{producers}}) {
-		my $important = $prod->important;
-		if ($important) {
-			print $important;
+		my $r = $prod->report_notty($self->{state});
+		if (defined $r) {
+			print $r;
 		}
 	}
 }
