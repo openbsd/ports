@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/10/22 14:27:47 sebastia Exp $
 
 COMMENT =		Ruby language binding for gpgme
 
-DISTNAME =		gpgme-2.0.18
+DISTNAME =		gpgme-2.0.19
 CATEGORIES =		security
 
 HOMEPAGE =		http://github.com/ueno/ruby-gpgme
@@ -13,11 +13,11 @@ PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 
-WANTLIB +=		assuan gpg-error gpgme
+WANTLIB +=		c m assuan gpg-error gpgme
 
 LIB_DEPENDS +=		security/gpgme
 
-CONFIGURE_STYLE =	ruby gem ext
+CONFIGURE_STYLE =	ruby gem
 CONFIGURE_ARGS +=	--use-system-libraries
 
 .include <bsd.port.mk>
