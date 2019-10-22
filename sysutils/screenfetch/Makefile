@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/10/22 20:10:22 cwen Exp $
 
 COMMENT =	display system information in the terminal for screenshots
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
 
 GH_ACCOUNT =	KittyKatt
 GH_PROJECT =	screenFetch
-GH_TAGNAME =	v3.8.0
+GH_TAGNAME =	v3.9.0
 
 CATEGORIES =	sysutils misc
 
-MAINTAINER =	Charlene Wendling <julianaito@posteo.jp>
+MAINTAINER =	Charlene Wendling <cwen@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

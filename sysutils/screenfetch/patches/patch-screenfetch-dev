@@ -1,37 +1,31 @@
-$OpenBSD: patch-screenfetch-dev,v 1.2 2018/08/28 20:05:18 bcallah Exp $
-Fix "awk: cannot open /proc/fb"
-From upstream dc72b5932e86ba9c4e36110408690abeb2004070
-Fix "unary operator expected" when no GPU is detected
-From upstream 8346a75068323692243805fa702d02ec7538f3b9
-Fix RAM output
-From upstream 77613487a23fd5a12b70945cf8075c2773553643
+$OpenBSD: patch-screenfetch-dev,v 1.3 2019/10/22 20:10:23 cwen Exp $
+
+Improve kernel version and architecture reporting and fix disk total usage
+From https://github.com/KittyKatt/screenFetch/pull/648
+
 Index: screenfetch-dev
 --- screenfetch-dev.orig
 +++ screenfetch-dev
-@@ -1332,13 +1332,15 @@ detectgpu () {
- # Detect Intel GPU  #works in dash
- # Run it only on Intel Processors if GPU is unknown
- DetectIntelGPU() {
--	gpu=$(awk '{print $2}' /proc/fb)
-+	if [ -r /proc/fb ]; then
-+		gpu=$(awk '{print $2}' /proc/fb)
-+	fi
- 
- 	case $gpu in
- 		*intel*) gpu=intel ;;
- 	esac
- 
--        if [ $gpu = intel ]; then
-+	if [ "$gpu" = "intel" ]; then
- 		#Detect CPU
- 		local CPU=$(uname -p | awk '{print $3}')
- 		CPU=${CPU#*'-'}; #Detect CPU number
-@@ -1421,7 +1423,7 @@ detectmem () {
- 		usedmem=$(($used_mem / 1024^2 ))
- 	elif [ "$distro" == "OpenBSD" ]; then
- 		totalmem=$(($(sysctl -n hw.physmem) / 1024 / 1024))
--		usedmem=$(($(vmstat | awk '!/[a-z]/{print $4}') / 1024))
-+		usedmem=$(vmstat | awk '!/[a-z]/{gsub("M",""); print $3}')
- 	elif [ "$distro" == "NetBSD" ]; then
- 		phys_mem=$(awk '/MemTotal/ { print $2 }' /proc/meminfo)
- 		totalmem=$((${phys_mem} / 1024))
+@@ -1271,7 +1271,7 @@ detecthost () {
+ # Kernel Version Detection - Begin
+ detectkernel () {
+ 	if [[ "$distro" == "OpenBSD" ]]; then
+-		kernel=$(sysctl kern.version|awk -F'[ =:]' 'NR==1{print $3" "$4" "$5}')
++		kernel=$(uname -a | cut -f 3- -d ' ')
+ 	else
+ 		# compatibility for older versions of OS X:
+ 		kernel=$(uname -m && uname -sr)
+@@ -1702,8 +1702,12 @@ DetectIntelGPU() {
+ detectdisk () {
+ 	diskusage="Unknown"
+ 	if type -p df >/dev/null 2>&1; then
+-		if [[ "${distro}" =~ (Free|Net|Open|DragonFly)BSD ]]; then
++		if [[ "${distro}" =~ (Free|Net|DragonFly)BSD ]]; then
+ 			totaldisk=$(df -h -c 2>/dev/null | tail -1)
++		elif [[ "${distro}" == "OpenBSD" ]]; then
++			totaldisk=$(df -Pk 2> /dev/null | awk '
++				/^\// {total+=$2; used+=$3; avail+=$4}
++				END{printf("total %.1fG %.1fG %.1fG %d%%\n", total/1048576, used/1048576, avail/1048576, used*100/total)}')
+ 		elif [[ "${distro}" == "Mac OS X" ]]; then
+ 			totaldisk=$(df -H / 2>/dev/null | tail -1)
+ 		else
