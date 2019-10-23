@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.52 2019/08/24 08:44:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/10/23 14:59:32 sthen Exp $
 
 COMMENT =		Python API for dealing with timezones
 
-MODPY_EGG_VERSION =	2019.2
+MODPY_EGG_VERSION =	2019.3
 DISTNAME =		pytz-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^py/py-/}
 CATEGORIES =		devel
 
 HOMEPAGE =		https://pythonhosted.org/pytz/
+
+MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
