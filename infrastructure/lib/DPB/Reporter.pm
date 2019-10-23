@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.32 2019/10/23 13:38:13 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.33 2019/10/23 14:34:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,8 +39,6 @@ use DPB::Clock;
 # and $reporter->myprint() to display persistent messages
 
 package DPB::Reporter;
-
-my $singleton;
 
 sub ttyclass() 	
 {
@@ -144,7 +142,6 @@ sub create
 	    state => $state,
 	    continued => 0}, $class;
 	$state->{reporter} = $self;
-	$singleton = $self;
 	return $self;
 }
 
@@ -179,11 +176,7 @@ sub report
 sub myprint
 {
 	my $self = shift;
-	if (!ref $self) {
-		$singleton->myprint(@_);
-	} else {
-		print @_;
-	}
+	print @_;
 }
 
 1;

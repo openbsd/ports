@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.10 2017/11/24 14:26:20 espie Exp $
+# $OpenBSD: Signature.pm,v 1.11 2019/10/23 14:34:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -136,8 +136,8 @@ sub process
 package DPB::Signature;
 sub new
 {
-	my ($class) = @_;
-	bless {}, $class;
+	my ($class, $state) = @_;
+	return bless { reporter => $state->{reporter}}, $class;
 }
 
 sub library_dirs
@@ -148,12 +148,11 @@ sub library_dirs
 
 sub add_tasks
 {
-	my ($class, $job) = @_;
-	$job->{signature} = $class->new;
-	for my $base ($job->{signature}->library_dirs) {
-		$job->add_tasks(
-		    DPB::Signature::Task->new($job->{signature}, $base));
+	my ($self, $job) = @_;
+	for my $base ($self->library_dirs) {
+		$job->add_tasks(DPB::Signature::Task->new($self, $base));
 	}
+	return $self;
 }
 
 sub compare
@@ -165,7 +164,8 @@ sub compare
 		    $s1->{host}, $s2->{host});
 	}
 	if ($r) {
-		DPB::Reporter->myprint("Error between $s1->{host} and $s2->{host}: $r");
+		$s1->{reporter}->myprint(
+		    "Error between $s1->{host} and $s2->{host}: $r");
 	}
 	return $r;
 }

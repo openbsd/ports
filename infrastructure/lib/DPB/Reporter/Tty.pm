@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.11 2019/10/23 13:40:55 espie Exp $
+# $OpenBSD: Tty.pm,v 1.12 2019/10/23 14:34:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,6 @@ use DPB::MiniCurses;
 package DPB::Reporter::Tty;
 our @ISA = qw(DPB::MiniCurses DPB::Reporter DPB::Limiter);
 
-my $extra = '';
 sub handle_window
 {
 	my $self = shift;
@@ -51,6 +50,7 @@ sub create
 	my ($class, $state) = @_;
 	my $self = $class->SUPER::create($state);
 	$self->{record} = $state->{log_user}->open('>>', $state->{record});
+	$self->{extra} = '';	# for myprint
 	$self->create_terminal;
 	$self->set_sig_handlers;
 	# no cursor, to avoid flickering
@@ -74,7 +74,7 @@ sub report
 				$msg.= $r;
 			}
 		}
-		$msg .= $extra;
+		$msg .= $self->{extra};
 		if ($msg ne $self->{msg} || $self->{continued}) {
 			# The "record" output is used by dpb-replay, 
 			# so it's just each new display prefixed with 
@@ -93,7 +93,7 @@ sub myprint
 	my $self = shift;
 	for my $string (@_) {
 		$string =~ s/^\t/       /gm; # XXX dirty hack for warn
-		$extra .= $string;
+		$self->{extra} .= $string;
 	}
 }
 
