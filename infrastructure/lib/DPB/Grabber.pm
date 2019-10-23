@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.37 2016/05/22 11:41:56 nigel Exp $
+# $OpenBSD: Grabber.pm,v 1.38 2019/10/23 16:23:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,6 @@ sub new
 		engine => $state->engine,
 		builder => $state->builder,
 		state => $state,
-		keep_going => 1,
 		errors => 0,
 		endcode => $endcode
 	    }, $class;
@@ -77,7 +76,7 @@ sub finish
 		}
 	}
 	$self->{engine}->flush;
-	$self->{keepgoing} = &{$self->{endcode}};
+	&{$self->{endcode}};
 }
 
 sub ports
@@ -141,7 +140,7 @@ sub complete_subdirs
 {
 	my ($self, $core, $skip) = @_;
 	# more passes if necessary
-	while ($self->{keep_going}) {
+	while (1) {
 		my $subdirlist = {};
 		for my $v (DPB::PkgPath->seen) {
 			if (defined $v->{info}) {
