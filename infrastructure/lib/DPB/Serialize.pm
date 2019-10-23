@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Serialize.pm,v 1.3 2019/09/28 12:20:35 espie Exp $
+# $OpenBSD: Serialize.pm,v 1.4 2019/10/23 10:05:28 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -43,7 +43,7 @@ sub read
 			} else {
 				$k = shift @list or return;
 			}
-			if ($class->numbers->{$k} && $v !~ m/^\d+(\.\d+)?$/) {
+			if ($class->numbers->{$k} && $v !~ m/^\d+(?:\.\d+)?$/) {
 				return;
 			}
 			$r->{$k} = $v;
@@ -61,6 +61,7 @@ sub write
 {
 	my ($class, $r) = @_;
 
+	$r->{ts} //= DPB::Util->current_ts;
 	my @r = ();
 	if ($r->{pkgname}) {
 		push(@r, "$r->{pkgpath}($r->{pkgname})");
