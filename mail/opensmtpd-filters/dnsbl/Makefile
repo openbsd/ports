@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/20 12:42:56 martijn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/10/23 07:59:10 martijn Exp $
 
 COMMENT=	dnsbl integration to the OpenSMTPD daemon
 
-V=		0.1
+V=		0.2
 FILTER_NAME =	dnsbl
 DISTNAME =	filter-dnsbl-${V}
 
