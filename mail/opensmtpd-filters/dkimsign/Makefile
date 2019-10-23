@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/10/01 13:39:49 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2019/10/23 08:01:19 martijn Exp $
 
 COMMENT=	dkim signer integration to the OpenSMTPD daemon
 
-V=		0.1
+V=		0.2
 FILTER_NAME =	dkimsign
 DISTNAME =	filter-dkimsign-${V}
-REVISION =	1
 
 CATEGORIES=	mail
 HOMEPAGE=	http://imperialat.at/dev/filter-dkimsign
