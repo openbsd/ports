@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.399 2019/10/13 17:15:13 landry Exp $
+# $OpenBSD: Makefile,v 1.400 2019/10/23 19:38:07 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	69.0.3
+MOZILLA_VERSION =	70.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	84.0
+SO_VERSION =	85.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -48,7 +48,7 @@ BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.9.0
+BUILD_DEPENDS +=	devel/cbindgen>=0.9.1
 .if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
 # 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
