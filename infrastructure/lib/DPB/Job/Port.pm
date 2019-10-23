@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.196 2019/10/22 16:02:08 espie Exp $
+# $OpenBSD: Port.pm,v 1.197 2019/10/23 10:09:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -83,7 +83,7 @@ sub handle_output
 	my ($self, $job) = @_;
 	$self->redirect_fh($job->{logfh}, $job->{log});
 	print ">>> Running $self->{phase} in $job->{path} at ", 
-	    CORE::time(), "\n";
+	    DPB::Util->current_ts, "\n";
 }
 
 sub tweak_args
@@ -355,7 +355,7 @@ sub try_lock
 	if ($lock) {
 		$lock->write("path", $job->{path});
 		print {$job->{logfh}} "(Junk lock obtained for ",
-		    $core->hostname, " at ", CORE::time(), ")\n";
+		    $core->hostname, " at ", DPB::Util->current_ts, ")\n";
 		$job->{locked} = 1;
 	}
 }
@@ -367,7 +367,7 @@ sub junk_unlock
 	if ($core->job->{locked}) {
 		$core->job->{builder}->locker->unlock($core);
 		print {$core->job->{logfh}} "(Junk lock released for ", 
-		    $core->hostname, " at ", CORE::time(), ")\n";
+		    $core->hostname, " at ", DPB::Util->current_ts, ")\n";
 		delete $core->job->{locked};
 		$core->job->wake_others($core);
 	}
@@ -404,12 +404,12 @@ sub run
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	$SIG{IO} = sub { print {$job->{logfh}} "Received IO\n"; };
-	my $start = CORE::time();
+	my $start = Time::HiRes::time();
 	use POSIX;
 
 	while (1) {
 		$self->try_lock($core);
-		my $now = CORE::time();
+		my $now = Time::HiRes::time();
 		if ($job->{locked}) {
 			print {$job->{builder}{lockperf}} 
 			    $now, ":", $core->hostname, 
@@ -780,8 +780,7 @@ sub finalize
 			my $info = DPB::Serialize::Size->write({
 			    pkgpath => $job->{path},
 			    pkname => $job->{v}->fullpkgname,
-			    size => $sz,
-			    ts => CORE::time() });
+			    size => $sz });
 			print {$job->{builder}{logsize}} $info, "\n";
 			# XXX the rolling log might be shared with other dpb
 			# so it can be rewritten and sorted
@@ -960,6 +959,7 @@ sub new
 	my $e = $job->{endcode};
 
 	$job->{endcode} = sub {
+	    print {$job->{logfh}} ">>> Ended at ", DPB::Util->current_ts, "\n";
 	    close($job->{logfh});
 	    &$e;
 	};
@@ -1096,13 +1096,13 @@ sub totaltime
 		$t += $plus->elapsed;
     	}
 	$t *= $self->{parallel} if $self->{parallel};
-	return sprintf("%.2f", $t);
+	return DPB::Util->ts2string($t);
 }
 
 sub timings
 {
 	my $self = shift;
-	return join('/', "max_stuck=".$self->{watched}{max}, map {sprintf("%s=%.2f", $_->{phase}, $_->elapsed)} @{$self->{done}});
+	return join('/', "max_stuck=".DPB::Util->ts2string($self->{watched}{max}), map {sprintf("%s=%.2f", $_->{phase}, $_->elapsed)} @{$self->{done}});
 }
 
 sub equates
