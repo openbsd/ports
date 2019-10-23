@@ -1,0 +1,30 @@
+--- coregrind/m_syswrap/syswrap-openbsd.c.orig
++++ coregrind/m_syswrap/syswrap-openbsd.c
+@@ -575,6 +579,17 @@
+ // XXXTBD
+ }
+ 
++PRE(sys_unveil)
++{
++   PRINT("sys_unveil ( %#lx(%s), %#lx(%s) )",
++         ARG1,(char *)ARG1,ARG2,(char*)ARG2);
++   PRE_REG_READ2(long, "unveil", const char *, path, const char *, permissions);
++   if (ARG1 != (UWord)NULL)
++     PRE_MEM_RASCIIZ( "unveil(path)", ARG1 );
++   if (ARG2 != (UWord)NULL)
++     PRE_MEM_RASCIIZ( "unveil(permissions)", ARG2 );
++}
++
+ PRE(sys_getsockname)
+ {
+    PRINT("sys_getsockname ( %ld, %#lx, %#lx )",ARG1,ARG2,ARG3);
+@@ -4079,7 +4093,7 @@
+   BSDX_(__NR_sigsuspend,	sys_sigsuspend),	// 111
+   BSDX_(__NR_sendsyslog,	sys_sendsyslog),	// 112
+   // obsol orecvmsg					// 113
+-  // obsol osendmsg					// 114
++  BSDX_(__NR_unveil,		sys_unveil),		// 114
+   // obsol vtrace					// 115
+ 
+   BSDX_(__NR_getsockopt,	sys_getsockopt),	// 118
+Only in pobj/valgrind-3.10.1/valgrind-3.10.1/coregrind/m_syswrap: syswrap-openbsd.c.orig

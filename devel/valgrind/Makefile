@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/10/02 17:19:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2019/10/23 02:35:05 asou Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 
 V =			3.10.1
 PV =			20160331
-REVISION =		13
+REVISION =		14
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 

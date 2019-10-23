@@ -1,0 +1,10 @@
+--- coregrind/m_syswrap/priv_syswrap-openbsd.h.orig
++++ coregrind/m_syswrap/priv_syswrap-openbsd.h
+@@ -144,6 +144,7 @@
+ DECL_TEMPLATE(openbsd, sys_pledge);
+ DECL_TEMPLATE(openbsd, sys_ppoll);
+ DECL_TEMPLATE(openbsd, sys_pselect);
++DECL_TEMPLATE(openbsd, sys_unveil);
+ DECL_TEMPLATE(openbsd, sys_sigsuspend);
+ DECL_TEMPLATE(openbsd, sys_gettimeofday);
+ DECL_TEMPLATE(openbsd, sys_getrusage);

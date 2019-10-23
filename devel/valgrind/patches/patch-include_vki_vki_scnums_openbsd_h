@@ -1,0 +1,10 @@
+--- include/vki/vki-scnums-openbsd.h.orig
++++ include/vki/vki-scnums-openbsd.h
+@@ -146,6 +146,7 @@
+ #define	__NR_pselect		110
+ #define	__NR_sigsuspend		111
+ #define	__NR_sendsyslog		112
++#define	__NR_unveil		114
+ #define	__NR_getsockopt		118
+ #define	__NR_thrkill		119
+ #define	__NR_readv		120
