@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/10/23 10:22:45 sthen Exp $
 
-COMMENT=		transforming bitmaps into vector graphics
+COMMENT=	transform bitmaps into vector graphics
 
-DISTNAME=		potrace-1.15
+DISTNAME=	potrace-1.16
 SHARED_LIBS +=  potrace              0.1      # 0.3
-CATEGORIES=		graphics
+CATEGORIES=	graphics
 
-HOMEPAGE=		http://potrace.sourceforge.net
+HOMEPAGE=	http://potrace.sourceforge.net
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE=	Yes
+
+WANTLIB += c m z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=potrace/}
 
-WANTLIB=		c m z
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS +=	--with-libpotrace
+CONFIGURE_ARGS+=	--with-libpotrace
 
 TEST_DEPENDS=	print/ghostscript/gnu
 
