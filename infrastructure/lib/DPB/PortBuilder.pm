@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.86 2019/10/22 16:02:08 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.87 2019/10/23 10:07:24 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -193,8 +193,7 @@ sub report
 		    pkgpath => $pkgpath, 
 		    host => $host, 
 		    time => $job->totaltime, 
-		    size => $sz, 
-		    ts => CORE::time() }), "\n";
+		    size => $sz}), "\n";
 	}
 }
 
@@ -242,7 +241,6 @@ sub build
 	    lock => $lock,
 	    memsize => $memsize,
 	    endcode => sub {
-	    	close($fh); 
 		$self->end_lock($lock, $core, $job); 
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
@@ -272,7 +270,6 @@ sub wipe
 	$job = DPB::Job::Port::Wipe->new(
 	    log => $log, logfh => $fh, v => $v, builder => $self, core => $core,
 	    endcode => sub {
-		close($fh); 
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
 	});
@@ -290,7 +287,6 @@ sub force_junk
 	$job = DPB::Job::Port->new_junk_only(
 	    log => $log, logfh => $fh, v => $v, builder => $self, core => $core,
 	    endcode => sub {
-		close($fh);
 		&$final_sub($job->{failed});
 		$core->mark_ready;
 	});
@@ -324,7 +320,6 @@ sub test
 	    lock => $lock, 
 	    memsize => $memsize, 
 	    endcode => sub {
-	    	close($fh); 
 		$self->end_lock($lock, $core, $job); 
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
@@ -344,7 +339,6 @@ sub install
 	my $job = DPB::Job::Port::Install->new(
 	    log => $log, logfh => $fh, v => $v, builder => $self, core => $core,
 	    endcode => sub {
-	    	close($fh);
 	    	$core->mark_ready; 
 	});
 	$core->start_job($job, $v);
