@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.132 2019/10/22 15:44:10 espie Exp $
+# $OpenBSD: Engine.pm,v 1.133 2019/10/23 10:06:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -106,12 +106,12 @@ sub recheck_errors
 	$self->{nfslist}->recheck($self);
 }
 
-sub log_no_ts
+sub log_same_ts
 {
 	my ($self, $kind, $v, $extra) = @_;
 	$extra //= '';
 	my $fh = $self->{log};
-	my $ts = int($self->{ts});
+	my $ts = DPB::Util->ts2string($self->{ts});
 	print $fh "$$\@$ts: $kind";
 	if (defined $v) {
 		print $fh ": ", $v->logname, $extra;
@@ -123,7 +123,7 @@ sub log
 {
 	my $self = shift;
 	$self->{ts} = Time::HiRes::time();
-	$self->log_no_ts(@_);
+	$self->log_same_ts(@_);
 }
 
 sub flush
@@ -262,7 +262,7 @@ sub should_ignore
 {
 	my ($self, $v, $kind) = @_;
 	if (my $d = $self->missing_dep($v, $kind)) {
-		$self->log_no_ts('!', $v, " because of ".$d->fullpkgpath);
+		$self->log_same_ts('!', $v, " because of ".$d->fullpkgpath);
 		$self->stub_out($v);
 		return 1;
 	} else {
@@ -336,7 +336,7 @@ sub adjust_built
 			# okay, thanks to equiv, some other path was marked
 			# as stub, and obviously we lost our deps
 			if ($v->{info}->is_stub) {
-				$self->log_no_ts('!', $v, 
+				$self->log_same_ts('!', $v, 
 				    " equivalent to an ignored path");
 				# just drop it, it's already ignored as
 				# an equivalent path
@@ -346,7 +346,7 @@ sub adjust_built
 			if ($v->{wantinstall}) {
 				$self->{buildable}->will_install($v);
 			}
-			$self->log_no_ts('I', $v,' # '.$v->fullpkgname);
+			$self->log_same_ts('I', $v,' # '.$v->fullpkgname);
 			$changes++;
 		} elsif ($self->should_ignore($v, 'RDEPENDS')) {
 			delete $self->{built}{$v};
@@ -375,7 +375,7 @@ sub adjust_depends2
 		# okay, thanks to equiv, some other path was marked
 		# as stub, and obviously we lost our deps
 		if ($v->{info}->is_stub) {
-			$self->log_no_ts('!', $v, 
+			$self->log_same_ts('!', $v, 
 			    " equivalent to an ignored path");
 			# just drop it, it's already ignored as
 			# an equivalent path
@@ -399,7 +399,7 @@ sub adjust_depends2
 				$self->{buildable}->remove($v);
 			} else {
 				$self->{buildable}->add($v);
-				$self->log_no_ts('Q', $v);
+				$self->log_same_ts('Q', $v);
 			}
 		} 
 	}
@@ -770,8 +770,8 @@ sub log
 	return if $line eq $self->{statline};
 
 	$self->{statline} = $line;
-	print {$self->{fh}} join(' ', $$, int($ts), 
-	    int($ts-$self->{lost_time}), $line), "\n";
+	print {$self->{fh}} join(' ', $$, DPB::Util->ts2string($ts), 
+	    DPB::Util->ts2string($ts-$self->{lost_time}), $line), "\n";
 }
 
 sub stopped_clock
