@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.81 2019/10/22 16:02:08 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.82 2019/10/23 10:04:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -139,7 +139,7 @@ sub parse_old
 	my ($self, $fh, $fh2) = @_;
 	while (<$fh>) {
 		if (my ($ts, $file, $sha) =
-		    m/^(\d+)\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
+		    m/^(\d+(?:\.\d+)?)\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
 			$file = DPB::Distfile->normalize($file);
 			if (!$self->{known_sha}{$sha}{$file}) {
 				$self->mark_sha($sha, $file);
