@@ -1,5 +1,7 @@
-$OpenBSD: patch-cmake_xapian-config_cmake_in,v 1.2 2017/12/01 14:33:40 jca Exp $
+$OpenBSD: patch-cmake_xapian-config_cmake_in,v 1.3 2019/10/23 12:13:35 sthen Exp $
+
 Allow Xapian library to be found by CMake-based ports.
+
 Index: cmake/xapian-config.cmake.in
 --- cmake/xapian-config.cmake.in.orig
 +++ cmake/xapian-config.cmake.in

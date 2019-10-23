@@ -1,4 +1,5 @@
-$OpenBSD: patch-omega_conf,v 1.2 2017/11/13 23:36:05 jeremy Exp $
+$OpenBSD: patch-omega_conf,v 1.3 2019/10/23 12:13:35 sthen Exp $
+
 Index: omega.conf
 --- omega.conf.orig
 +++ omega.conf

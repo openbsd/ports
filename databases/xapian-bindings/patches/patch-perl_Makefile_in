@@ -1,8 +1,9 @@
-$OpenBSD: patch-perl_Makefile_in,v 1.2 2017/11/13 23:36:05 jeremy Exp $
+$OpenBSD: patch-perl_Makefile_in,v 1.3 2019/10/23 12:13:34 sthen Exp $
+
 Index: perl/Makefile.in
 --- perl/Makefile.in.orig
 +++ perl/Makefile.in
-@@ -1480,7 +1480,7 @@ clean-local:
+@@ -1482,7 +1482,7 @@ clean-local:
  
  auto/Xapian/Xapian$(PERL_SO): Xapian.la
  	@$(MKDIR_P) auto/Xapian

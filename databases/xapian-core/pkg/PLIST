@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/11/13 23:36:05 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/10/23 12:13:35 sthen Exp $
 @bin bin/copydatabase
 @bin bin/quest
 @bin bin/simpleexpand
@@ -9,6 +9,7 @@
 bin/xapian-config
 @bin bin/xapian-delve
 @bin bin/xapian-metadata
+@bin bin/xapian-pos
 @bin bin/xapian-progsrv
 @bin bin/xapian-replicate
 @bin bin/xapian-replicate-server
@@ -66,6 +67,7 @@ lib/pkgconfig/xapian-core.pc
 @man man/man1/xapian-config.1
 @man man/man1/xapian-delve.1
 @man man/man1/xapian-metadata.1
+@man man/man1/xapian-pos.1
 @man man/man1/xapian-progsrv.1
 @man man/man1/xapian-replicate-server.1
 @man man/man1/xapian-replicate.1
@@ -107,6 +109,9 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1DPHWeight.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DPHWeight__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1Database-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Database.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseClosedError-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseClosedError.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseClosedError__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseCorruptError-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseCorruptError.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseCorruptError__inherit__graph.png
@@ -122,6 +127,9 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseLockError__inherit__gra
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseModifiedError-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseModifiedError.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseModifiedError__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseNotFoundError-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseNotFoundError.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseNotFoundError__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseOpeningError-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseOpeningError.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DatabaseOpeningError__inherit__graph.png
@@ -456,6 +464,7 @@ share/doc/xapian-core/apidoc/html/namespaceXapian_1_1Remote.html
 share/doc/xapian-core/apidoc/html/namespaceXapian_1_1Unicode.html
 share/doc/xapian-core/apidoc/html/namespacemembers.html
 share/doc/xapian-core/apidoc/html/namespacemembers_enum.html
+share/doc/xapian-core/apidoc/html/namespacemembers_eval.html
 share/doc/xapian-core/apidoc/html/namespacemembers_func.html
 share/doc/xapian-core/apidoc/html/namespacemembers_type.html
 share/doc/xapian-core/apidoc/html/namespacemembers_vars.html
@@ -526,6 +535,7 @@ share/xapian-core/stopwords/finnish.list
 share/xapian-core/stopwords/french.list
 share/xapian-core/stopwords/german.list
 share/xapian-core/stopwords/hungarian.list
+share/xapian-core/stopwords/indonesian.list
 share/xapian-core/stopwords/italian.list
 share/xapian-core/stopwords/norwegian.list
 share/xapian-core/stopwords/portuguese.list

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ruby,v 1.4 2019/08/31 18:28:08 jeremy Exp $
+@comment $OpenBSD: PLIST-ruby,v 1.5 2019/10/23 12:13:34 sthen Exp $
 @comment ${MODRUBY_SITEARCHDIR}/_xapian.a
 ${MODRUBY_SITEARCHDIR}/_xapian.so
 ${MODRUBY_SITEDIR}/xapian.rb
@@ -26,6 +26,7 @@ share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/Xapian/MultiValueKeyMaker.
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/Xapian/MultiValueKeyMaker/KeySpec.html
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/Xapian/Posting.html
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/Xapian/Query.html
+share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/Xapian/QueryParser.html
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/Xapian/Term.html
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/Xapian/Value.html
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/Xapian/ValueCountMatchSpy.html

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:44:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/10/23 12:13:34 sthen Exp $
 
 COMMENT=	search engine library
 
-V=		1.4.5
+V=		1.4.13
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
-REVISION=	2
 
-SHARED_LIBS +=  xapian	4.0	# .28.2
+SHARED_LIBS +=  xapian               5.0      # 39.1
 
 CATEGORIES=	databases textproc
 
