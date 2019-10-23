@@ -1,4 +1,4 @@
-$OpenBSD: patch-nspr_pr_include_md__openbsd_h,v 1.2 2017/05/03 07:10:37 sthen Exp $
+$OpenBSD: patch-nspr_pr_include_md__openbsd_h,v 1.3 2019/10/23 19:28:36 landry Exp $
 
 Index: nspr/pr/include/md/_openbsd.h
 --- nspr/pr/include/md/_openbsd.h.orig
@@ -17,9 +17,9 @@ Index: nspr/pr/include/md/_openbsd.h
 +#define _PR_SI_ARCHITECTURE "mips64"
  #endif
  
- #define PR_DLL_SUFFIX		".so"
+ #define PR_DLL_SUFFIX       ".so"
 @@ -33,7 +39,11 @@
- #define _MD_DEFAULT_STACK_SIZE	65536L
+ #define _MD_DEFAULT_STACK_SIZE  65536L
  #define _MD_MMAP_FLAGS          MAP_PRIVATE
  
 +#if defined(__hppa__)
