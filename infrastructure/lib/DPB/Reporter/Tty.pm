@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.10 2019/10/23 13:38:13 espie Exp $
+# $OpenBSD: Tty.pm,v 1.11 2019/10/23 13:40:55 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -76,10 +76,10 @@ sub report
 		}
 		$msg .= $extra;
 		if ($msg ne $self->{msg} || $self->{continued}) {
-			if (defined $self->{record}) {
-				print {$self->{record}} "@@@", 
-				    CORE::time(), "\n", $msg;
-			}
+			# The "record" output is used by dpb-replay, 
+			# so it's just each new display prefixed with 
+			# a timestamp
+			print {$self->{record}} "@@@", CORE::time(), "\n", $msg;
 			$self->{continued} = 0;
 			my $method = $self->{write};
 			$self->$method($msg);
