@@ -1,64 +1,46 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/10/23 05:06:11 bket Exp $
 
 COMMENT =		GTK+2 IRC Client
-DISTNAME =		hexchat-2.12.3
+DISTNAME =		hexchat-2.14.2
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		8
 
-HOMEPAGE =		http://hexchat.github.io/
+HOMEPAGE =		https://hexchat.github.io/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto dbus-1 dbus-glib-1
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl ${MODLUA_WANTLIB} m
-WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1
-WANTLIB += png proxy pthread ${MODPY_WANTLIB} ssl ${COMPILER_LIBCXX} util
-WANTLIB += xcb xcb-render xcb-shm z fribidi
+WANTLIB += X11 c crypto dbus-glib-1 gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += intl luajit-5.1 notify pango-1.0 perl proxy ssl
+WANTLIB += ${MODPY_WANTLIB}
 
-COMPILER =		base-clang ports-gcc base-gcc
+# libproxy requires libestdc++
+COMPILER = 		base-clang ports-gcc
 
-MASTER_SITES =		http://dl.hexchat.net/hexchat/
+MASTER_SITES =		https://dl.hexchat.net/hexchat/
 
-MODULES =		textproc/intltool \
-			lang/lua \
-			lang/python
+MODULES =		devel/meson \
+			lang/python \
+			textproc/intltool
 
-MODLUA_VERSION =	5.3
+MODPY_BUILDDEP =	No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/iso-codes
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libnotify \
+			lang/luajit \
 			net/libproxy \
-			x11/gtk+2 \
 			x11/dbus-glib \
-			${MODPY_LIB_DEPENDS} \
-			${MODLUA_LIB_DEPENDS}
-
-MODPY_BUILDDEP =	No
+			x11/gtk+2 \
+			${MODPY_LIB_DEPENDS}
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/iso-codes \
 			x11/gtk+3,-guic
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-ipv6 \
-			--enable-dbus \
-			--disable-sysinfo \
-			--disable-libcanberra
-CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
-			LDFLAGS=-L${LOCALBASE}/lib \
-			OBJC="${CC}" \
-			LUA=${MODLUA_FLAVOR}
-
-LIBTOOL_FLAGS =		--tag=disable-static
-
-USE_GMAKE =		Yes
-
-NO_TEST =		Yes
+CONFIGURE_ARGS += 	-Dwith-libcanberra=false \
+			-Dwith-sysinfo=false
 
 .include <bsd.port.mk>

@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/10/23 05:06:11 bket Exp $
 @bin bin/hexchat
 include/hexchat-plugin.h
 lib/hexchat/
 lib/hexchat/plugins/
 @comment lib/hexchat/plugins/checksum.la
 lib/hexchat/plugins/checksum.so
-@comment lib/hexchat/plugins/doat.la
-lib/hexchat/plugins/doat.so
 @comment lib/hexchat/plugins/fishlim.la
 lib/hexchat/plugins/fishlim.so
 @comment lib/hexchat/plugins/lua.la
@@ -17,9 +15,7 @@ lib/hexchat/plugins/perl.so
 lib/hexchat/plugins/python.so
 lib/pkgconfig/hexchat-plugin.pc
 @man man/man1/hexchat.1
-share/appdata/
-share/appdata/hexchat.appdata.xml
-share/applications/hexchat.desktop
+share/applications/io.github.Hexchat.desktop
 share/dbus-1/services/org.hexchat.service.service
 share/icons/hicolor/48x48/apps/hexchat.png
 share/icons/hicolor/scalable/apps/hexchat.svg
@@ -46,6 +42,8 @@ share/locale/hi/LC_MESSAGES/hexchat.mo
 share/locale/hu/LC_MESSAGES/hexchat.mo
 share/locale/id/LC_MESSAGES/hexchat.mo
 share/locale/it/LC_MESSAGES/hexchat.mo
+share/locale/ja_JP/
+share/locale/ja_JP/LC_MESSAGES/
 share/locale/ja_JP/LC_MESSAGES/hexchat.mo
 share/locale/kn/LC_MESSAGES/hexchat.mo
 share/locale/ko/LC_MESSAGES/hexchat.mo
@@ -76,5 +74,7 @@ share/locale/vi/LC_MESSAGES/hexchat.mo
 share/locale/wa/LC_MESSAGES/hexchat.mo
 share/locale/zh_CN/LC_MESSAGES/hexchat.mo
 share/locale/zh_TW/LC_MESSAGES/hexchat.mo
+share/metainfo/
+share/metainfo/io.github.Hexchat.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

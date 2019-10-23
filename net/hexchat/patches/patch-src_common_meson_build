@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_common_meson_build,v 1.1 2019/10/23 05:06:11 bket Exp $
+
+Ensure that generated headers are built before anything else, from:
+https://github.com/hexchat/hexchat/commit/92014628d1cc06334a9ca8c91a7184d50f5ab9a0
+
+Index: src/common/meson.build
+--- src/common/meson.build.orig
++++ src/common/meson.build
+@@ -109,6 +109,7 @@ hexchat_common = static_library('hexchatcommon',
+ )
+ 
+ hexchat_common_dep = declare_dependency(
++  sources: [textevents] + marshal,
+   link_with: hexchat_common,
+   include_directories: common_includes,
+   compile_args: common_cflags,
