@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.31 2019/10/22 15:44:10 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.32 2019/10/23 13:38:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,7 +22,24 @@ use OpenBSD::Error;
 use DPB::Util;
 use DPB::Clock;
 
+# The reporter class is used to agregate information from 
+# various modules and display it.
+
+# basically, 
+# $reporter = DPB::Reporter->new($state)->add_producers(producers...);
+# - depending on state, either use the basic class, or the tty specific class
+# - producers will be called as 
+# 	$producer->report_notty($state)
+# or
+#	$producer->report_tty($state)
+# (if the method exist, a producer might NOT be concerned and weeded out)
+# - if a producer has nothing to say, it can return undef
+#
+# This yields mostly $reporter->report (which will display stuff properly)
+# and $reporter->myprint() to display persistent messages
+
 package DPB::Reporter;
+
 my $singleton;
 
 sub ttyclass() 	
@@ -101,8 +118,8 @@ sub filter_add
 
 sub new
 {
-	my $class = shift;
-	my $state = shift;
+	my ($class, $state) = @_;
+
 	my $dotty;
 	if ($state->opt('x')) {
 		$dotty = 0;
@@ -115,24 +132,20 @@ sub new
 	if ($dotty) {
 		$class = $class->ttyclass;
 	}
-	$class->make_singleton($state)->add_producers(@_);
+	return $class->create($state);
 }
 
-sub make_singleton
+sub create
 {
 	my ($class, $state) = @_;
-	return if defined $singleton;
-	$singleton = bless {msg => '',
+	my $self = bless {msg => '',
 	    producers => [],
 	    timeout => $state->{display_timeout} // 10,
 	    state => $state,
 	    continued => 0}, $class;
-	$state->{reporter} = $singleton;
-    	if ($state->{record}) {
-		$singleton->{record} =
-		    $state->{log_user}->open('>>', $state->{record});
-	}
-	return $singleton;
+	$state->{reporter} = $self;
+	$singleton = $self;
+	return $self;
 }
 
 sub add_producers

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.9 2019/10/22 16:02:08 espie Exp $
+# $OpenBSD: Tty.pm,v 1.10 2019/10/23 13:38:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,8 @@ use strict;
 use warnings;
 
 use DPB::MiniCurses;
+
+# subclass of Reporter that's specifically used to report on a tty
 
 package DPB::Reporter::Tty;
 our @ISA = qw(DPB::MiniCurses DPB::Reporter DPB::Limiter);
@@ -44,10 +46,11 @@ sub filter
 	'report_tty';
 }
 
-sub make_singleton
+sub create
 {
 	my ($class, $state) = @_;
-	my $self = $class->SUPER::make_singleton($state);
+	my $self = $class->SUPER::create($state);
+	$self->{record} = $state->{log_user}->open('>>', $state->{record});
 	$self->create_terminal;
 	$self->set_sig_handlers;
 	# no cursor, to avoid flickering
