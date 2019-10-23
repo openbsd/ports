@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/10/23 10:22:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/10/23 10:23:56 sthen Exp $
 
 COMMENT=	transform bitmaps into vector graphics
 
@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	http://potrace.sourceforge.net
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m z
