@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.28 2019/05/12 12:12:53 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.29 2019/10/24 09:49:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -261,7 +261,7 @@ sub end
 		$core->success;
 	}
 	$self->done($v);
-	$self->{engine}->flush;
+	$self->{engine}->flush_log;
 }
 
 sub dump

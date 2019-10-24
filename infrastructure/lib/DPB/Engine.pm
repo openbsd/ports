@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.133 2019/10/23 10:06:19 espie Exp $
+# $OpenBSD: Engine.pm,v 1.134 2019/10/24 09:49:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -126,7 +126,7 @@ sub log
 	$self->log_same_ts(@_);
 }
 
-sub flush
+sub flush_log
 {
 	my $self = shift;
 	$self->{log}->flush;
@@ -434,7 +434,7 @@ sub check_buildable
 		$self->log('+');
 		1 while $self->adjust_built;
 		$self->adjust_tobuild;
-		$self->flush;
+		$self->flush_log;
 	    });
 	$self->stats;
 	return $r;
@@ -553,7 +553,7 @@ sub start_new_job
 {
 	my $self = shift;
 	my $r = $self->{buildable}->start;
-	$self->flush;
+	$self->flush_log;
 	return $r;
 }
 
@@ -561,7 +561,7 @@ sub start_new_fetch
 {
 	my $self = shift;
 	my $r = $self->{tofetch}->start;
-	$self->flush;
+	$self->flush_log;
 	return $r;
 }
 

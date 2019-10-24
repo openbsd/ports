@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.38 2019/10/23 16:23:25 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.39 2019/10/24 09:49:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -21,10 +21,28 @@ use warnings;
 use DPB::Vars;
 use DPB::Util;
 
+# the "grabber" is mostly the glue around the "var" code:
+# - DPB::Vars calls make dump-vars on the correct subdirlist, and 
+# parses the pipe output
+# - DPB::Grabber is responsible for figuring out the right options from state
+# and iterating until it gets what it needs
+# - DPB::Vars grabs some pipe output, one block at a time, and defers to 
+# DPB::Grabber to know what to do.
+# - periodically, DPB::Grabber lets the rest of dpb "run" (checking for
+# finished jobs and starting new ones) through eventloopcode.
+# Mostly, init as:
+#     $grabber = DPB::Grabber->new($state, \&eventloopcode);
+# prime with one or several calls to:
+#     $grabber->grab_subdirs($core, $list, $skip, $ignoreerrors);
+# finish figuring out what we missed as:
+#     $grabber->complete_subdirs($core, $skip);
+# (core is a "virtual cpu", local of otherwise, that accounts of what we
+# do, which is passed to Vars to run a pipe job)
+
 package DPB::Grabber;
 sub new
 {
-	my ($class, $state, $endcode) = @_;
+	my ($class, $state, $eventloopcode) = @_;
 
 	my $o = bless { 
 		loglist => DPB::Util->make_hot($state->logger->append("vars")),
@@ -32,7 +50,7 @@ sub new
 		builder => $state->builder,
 		state => $state,
 		errors => 0,
-		endcode => $endcode
+		eventloopcode => $eventloopcode
 	    }, $class;
 	my @values = ();
 	if ($state->{want_fetchinfo}) {
@@ -75,8 +93,8 @@ sub finish
 			}
 		}
 	}
-	$self->{engine}->flush;
-	&{$self->{endcode}};
+	$self->{engine}->flush_log;
+	&{$self->{eventloopcode}};
 }
 
 sub ports
@@ -116,6 +134,8 @@ sub grab_subdirs
 	DPB::Vars->grab_list($core, $self, $list, $skip, $ignore_errors,
 	    $self->{loglist}, $self->{dpb},
 	    sub {
+	    	# during the first step, we actually WANT to add new dirs
+		# whereas 'complete" will only record what's found
 	    	my $h = shift;
 		for my $v (values %$h) {
 			$v->{wantbuild} = 1;
@@ -124,6 +144,8 @@ sub grab_subdirs
 	});
 }
 
+# Two extra things we can do besides running dump-vars, that use the
+# exact same logic
 sub grab_signature
 {
 	my ($self, $core, $pkgpath) = @_;
@@ -136,37 +158,44 @@ sub clean_packages
 	return DPB::CleanPackages->clean($core, $self, $pkgpath);
 }
 
+sub find_new_dirs
+{
+	my $self = shift;
+	my $subdirlist = {};
+	for my $v (DPB::PkgPath->seen) {
+		if (defined $v->{info}) {
+			delete $v->{tried};
+			delete $v->{wantinfo};
+			if (defined $v->{wantbuild}) {
+				delete $v->{wantbuild};
+				$self->{engine}->new_path($v);
+			}
+			if (defined $v->{dontjunk}) {
+				$self->{builder}->dontjunk($v);
+			}
+			next;
+		}
+		next if defined $v->{category};
+		if (defined $v->{tried}) {
+			# log error the first time only!
+			$self->{engine}->add_fatal($v, "tried and didn't get it") 
+			    if !defined $v->{errored};
+			$v->{errored} = 1;
+			$self->{errors}++;
+		} elsif ($v->{wantinfo} || $v->{wantbuild}) {
+			$v->add_to_subdirlist($subdirlist);
+			$v->{tried} = 1;
+		}
+	}
+	return $subdirlist;
+}
+
 sub complete_subdirs
 {
 	my ($self, $core, $skip) = @_;
-	# more passes if necessary
 	while (1) {
-		my $subdirlist = {};
-		for my $v (DPB::PkgPath->seen) {
-			if (defined $v->{info}) {
-				delete $v->{tried};
-				delete $v->{wantinfo};
-				if (defined $v->{wantbuild}) {
-					delete $v->{wantbuild};
-					$self->{engine}->new_path($v);
-				}
-				if (defined $v->{dontjunk}) {
-					$self->{builder}->dontjunk($v);
-				}
-				next;
-			}
-			next if defined $v->{category};
-			if (defined $v->{tried}) {
-				$self->{engine}->add_fatal($v, "tried and didn't get it") 
-				    if !defined $v->{errored};
-				$v->{errored} = 1;
-				$self->{errors}++;
-			} elsif ($v->{wantinfo} || $v->{wantbuild}) {
-				$v->add_to_subdirlist($subdirlist);
-				$v->{tried} = 1;
-			}
-		}
-		$self->{engine}->flush;
+		my $subdirlist = $self->find_new_dirs;
+		$self->{engine}->flush_log;
 		last if (keys %$subdirlist) == 0;
 
 		DPB::Vars->grab_list($core, $self, $subdirlist, $skip, 0,
@@ -181,7 +210,7 @@ package DPB::FetchDummy;
 sub new
 {
 	my $class = shift;
-	bless {}, $class;
+	return bless {}, $class;
 }
 
 sub build_distinfo
