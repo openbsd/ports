@@ -1,4 +1,4 @@
-$OpenBSD: patch-package_json,v 1.4 2019/05/13 22:08:11 abieber Exp $
+$OpenBSD: patch-package_json,v 1.5 2019/10/24 13:28:56 pvk Exp $
 
 Index: package.json
 --- package.json.orig
@@ -7,8 +7,8 @@ Index: package.json
      "url": "https://github.com/elastic/kibana.git"
    },
    "engines": {
--    "node": "10.15.1"
-+    "node": ">=10.15.0 <10.16"
+-    "node": "10.15.2"
++    "node": "10.16.3"
    }
 -}
 \ No newline at end of file

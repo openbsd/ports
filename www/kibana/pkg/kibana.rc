@@ -1,13 +1,13 @@
 #!/bin/ksh
 #
-# $OpenBSD: kibana.rc,v 1.6 2019/02/26 07:59:41 pvk Exp $
+# $OpenBSD: kibana.rc,v 1.7 2019/10/24 13:28:58 pvk Exp $
 
 daemon="${TRUEPREFIX}/kibana/bin/kibana"
 daemon_user="_kibana"
 
 . /etc/rc.d/rc.subr
 
-pexp="${TRUEPREFIX}/bin/node .* ${TRUEPREFIX}/kibana/bin/../src/cli${daemon_flags:+ ${daemon_flags}}"
+pexp="${TRUEPREFIX}/bin/node ${TRUEPREFIX}/kibana/bin/../src/cli${daemon_flags:+ ${daemon_flags}}"
 rc_bg=YES
 rc_reload=NO
 

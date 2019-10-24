@@ -1,7 +1,8 @@
-$OpenBSD: patch-bin_kibana-plugin,v 1.4 2019/10/24 13:28:56 pvk Exp $
-Index: bin/kibana-plugin
---- bin/kibana-plugin.orig
-+++ bin/kibana-plugin
+$OpenBSD: patch-bin_kibana,v 1.4 2019/10/24 13:28:56 pvk Exp $
+
+Index: bin/kibana
+--- bin/kibana.orig
++++ bin/kibana
 @@ -14,7 +14,7 @@ while [ -h "$SCRIPT" ] ; do
  done
  
