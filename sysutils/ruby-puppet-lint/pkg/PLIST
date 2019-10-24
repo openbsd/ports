@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/04/26 06:59:10 sebastia Exp $
-${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.13 2019/10/24 21:10:23 sebastia Exp $
+${GEM_BIN}/puppet-lint
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -25,6 +25,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/data.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/string_slurper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/token.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/optparser.rb
@@ -94,6 +95,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_reason.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/init.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/malformed.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/mismatched_control_comment.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/two_warnings.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/unterminated_control_comment.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/url_interpolation.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/warning.pp
@@ -104,6 +106,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/configuration_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/data_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/ignore_overrides_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer/
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer/string_slurper_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer/token_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/
