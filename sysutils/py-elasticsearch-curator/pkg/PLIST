@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/02/14 07:28:27 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/10/24 13:35:05 pvk Exp $
 @conflict py-elasticsearch-curator-*
 bin/curator
 bin/curator_cli
@@ -26,13 +26,14 @@ lib/python${MODPY_VERSION}/site-packages/curator/actions.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/__init__.py
-lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}alias.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}allocation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}close.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}forcemerge.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}freeze.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}object_class.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}open_indices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}replicas.${MODPY_PYC_MAGIC_TAG}pyc
@@ -41,12 +42,14 @@ lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}show.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}shrink.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}snapshot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}unfreeze.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/alias.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/allocation.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/close.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/delete.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/forcemerge.py
+lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/freeze.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/object_class.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/open_indices.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/replicas.py
@@ -55,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/rollover.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/show.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/shrink.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/snapshot.py
+lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/unfreeze.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/utils.py
 lib/python${MODPY_VERSION}/site-packages/curator/config_utils.py
 lib/python${MODPY_VERSION}/site-packages/curator/curator_cli.py
