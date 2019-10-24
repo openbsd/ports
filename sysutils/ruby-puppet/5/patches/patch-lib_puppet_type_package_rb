@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_type_package_rb,v 1.3 2019/07/19 06:09:21 sebastia Exp $
+$OpenBSD: patch-lib_puppet_type_package_rb,v 1.4 2019/10/24 20:37:17 sebastia Exp $
 
 add new feature flavorable, and switch handling the flavor
 as a property instead of a parameter
@@ -6,7 +6,7 @@ as a property instead of a parameter
 Index: lib/puppet/type/package.rb
 --- lib/puppet/type/package.rb.orig
 +++ lib/puppet/type/package.rb
-@@ -65,6 +65,7 @@ module Puppet
+@@ -67,6 +67,7 @@ module Puppet
        provider-specific.",
        :methods => [:package_settings_insync?, :package_settings, :package_settings=]
      feature :virtual_packages, "The provider accepts virtual package names for install and uninstall."
@@ -14,7 +14,7 @@ Index: lib/puppet/type/package.rb
  
      feature :targetable, "The provider accepts a targeted package management command."
  
-@@ -478,7 +479,7 @@ module Puppet
+@@ -480,7 +481,7 @@ module Puppet
        newvalues(:true, :false)
      end
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.5 2018/11/12 07:17:36 sebastia Exp $
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.6 2019/10/24 20:37:17 sebastia Exp $
 Index: lib/puppet/defaults.rb
 --- lib/puppet/defaults.rb.orig
 +++ lib/puppet/defaults.rb
-@@ -1209,13 +1209,13 @@ EOT
+@@ -1213,13 +1213,13 @@ EOT
  
    define_settings(:master,
      :user => {
@@ -18,7 +18,7 @@ Index: lib/puppet/defaults.rb
        :desc       => "The group Puppet Server will run as. Used to ensure
        the agent side processes (agent, apply, etc) create files and
        directories readable by Puppet Server when necessary.",
-@@ -1320,7 +1320,7 @@ EOT
+@@ -1324,7 +1324,7 @@ EOT
          if Puppet::Util::Platform.windows?
            '$codedir/modules'
          else
