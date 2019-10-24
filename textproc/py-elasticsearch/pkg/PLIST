@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/02/14 07:24:46 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/10/24 13:33:35 pvk Exp $
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -40,21 +40,35 @@ lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}ccr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}data_frame.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}deprecation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}ilm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}indices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}license.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}migration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}ml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}monitoring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}rollup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}security.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}sql.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}ssl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}watcher.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/ccr.py
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/data_frame.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/graph.py
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/ilm.py
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/indices.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/license.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/migration.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/ml.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/monitoring.py
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/rollup.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/security.py
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/sql.py
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/ssl.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/watcher.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/compat.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/connection/
@@ -75,7 +89,11 @@ lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/actions.py
+lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/errors.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/helpers/test.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/serializer.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/transport.py

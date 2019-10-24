@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/06/21 06:27:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2019/10/24 13:33:35 pvk Exp $
 
 COMMENT=	Python client for Elasticsearch
 
-MODPY_EGG_VERSION=6.3.1
+MODPY_EGG_VERSION=7.0.5
 DISTNAME=	elasticsearch-${MODPY_EGG_VERSION}
 PKGNAME=	py-elasticsearch-${MODPY_EGG_VERSION}
-REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -22,7 +21,8 @@ DIST_SUBDIR=	py-elasticsearch
 MODPY_PI =	Yes
 
 MODULES=	lang/python
-RUN_DEPENDS=	www/py-urllib3${MODPY_FLAVOR}>=1.21.1
+RUN_DEPENDS=	www/py-requests${MODPY_FLAVOR}>=2.4.0,<3.0.0 \
+		www/py-urllib3${MODPY_FLAVOR}>=1.21.1
 
 MODPY_SETUPTOOLS= Yes
 
