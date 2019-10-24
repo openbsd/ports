@@ -1,4 +1,4 @@
-$OpenBSD: patch-sapi_fpm_www_conf_in,v 1.3 2019/07/27 15:16:01 sthen Exp $
+$OpenBSD: patch-sapi_fpm_www_conf_in,v 1.4 2019/10/24 16:28:17 sthen Exp $
 
 Index: sapi/fpm/www.conf.in
 --- sapi/fpm/www.conf.in.orig
@@ -26,7 +26,7 @@ Index: sapi/fpm/www.conf.in
  ; When POSIX Access Control Lists are supported you can set them using
  ; these options, value is a comma separated list of user/group names.
  ; When set, listen.owner and listen.group are ignored
-@@ -357,7 +358,7 @@ pm.max_spare_servers = 3
+@@ -365,7 +366,7 @@ pm.max_spare_servers = 3
  ;       possible. However, all PHP paths will be relative to the chroot
  ;       (error_log, sessions.save_path, ...).
  ; Default Value: not set
