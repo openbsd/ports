@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2019/10/23 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2019/10/24 11:40:05 sthen Exp $
 
 COMMENT =		C/C++ implementation of a Sass compiler
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		libsass
-GH_TAGNAME =		3.6.2
+#GH_TAGNAME =		3.6.2
+GH_COMMIT =		e820c838a1c157ad129587cc95b98cfdccc32617
+DISTNAME =		libsass-3.6.2pl20191024
 
 SHARED_LIBS +=  sass                      0.0 # 0.0
 
@@ -29,8 +31,8 @@ CONFIGURE_STYLE =	autoreconf
 
 USE_GMAKE =		Yes
 
-MAKE_ENV =		CC="cc" \
-			CXX="c++" \
+MAKE_ENV =		CC="${CC}" \
+			CXX="${CXX}" \
 			CXXFLAGS="${CXXFLAGS}" \
 			BUILD="shared"
 
