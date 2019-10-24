@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.15 2019/09/28 12:22:12 espie Exp $
+# $OpenBSD: Clock.pm,v 1.16 2019/10/24 15:05:22 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -128,6 +128,14 @@ sub check_change
 		$self->{max} = $d;
 	}
 	return $d;
+}
+
+sub adjust_by
+{
+	my ($self, $l) = @_;
+	if (defined $self->{sz}) {
+		$self->{sz} += $l;
+	}
 }
 
 sub percent_message

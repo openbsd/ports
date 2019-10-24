@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.197 2019/10/23 10:09:50 espie Exp $
+# $OpenBSD: Port.pm,v 1.198 2019/10/24 15:05:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -700,9 +700,9 @@ sub run
 		if (!$core->prop->{silentjunking}) {
 			for my $j ($core->same_host_jobs) {
 				next if $j eq $job;
-				print {$j->{logfh}} 
+				$j->silent_log(
 				    ">> JUNKING in $job->{path}:\n",
-				    ">>    $s";
+				    ">>    $s");
 
 			}
 		}
@@ -723,8 +723,8 @@ sub finalize
 		if (!$core->prop->{silentjunking}) {
 			for my $j ($core->same_host_jobs) {
 				next if $j eq $job;
-				print {$j->{logfh}} 
-				    ">> JUNKING end in $job->{path}\n";
+				$j->silent_log(
+				    ">> JUNKING end in $job->{path}\n");
 			}
 		}
 		$core->prop->{last_junk} = $job->{v};
@@ -1198,6 +1198,18 @@ sub new
 		    $core);
 	}
 	return $job;
+}
+
+sub silent_log
+{
+	my $job = shift;
+	my $msg = join(@_);
+	my $old = $job->{logfh}->autoflush(1);
+	print {$job->{logfh}} $msg;
+	$job->{logfh}->autoflush($old);
+	if (defined $job->{watched}) {
+		$job->{watched}->adjust_by(length($msg));
+	}
 }
 
 sub new_junk_only
