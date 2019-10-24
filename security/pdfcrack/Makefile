@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/10/24 08:02:31 benoit Exp $
 
 COMMENT =		password recovery tool for PDF-files
 
-DISTNAME =		pdfcrack-0.17
+DISTNAME =		pdfcrack-0.18
 CATEGORIES =		security
 
-HOMEPAGE =		http://pdfcrack.sourceforge.net/
+HOMEPAGE =		https://pdfcrack.sourceforge.net/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
