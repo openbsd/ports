@@ -1,8 +1,8 @@
-$OpenBSD: patch-certifi_core_py,v 1.5 2019/02/14 06:35:04 pvk Exp $
+$OpenBSD: patch-certifi_core_py,v 1.6 2019/10/24 13:33:04 pvk Exp $
 Index: certifi/core.py
 --- certifi/core.py.orig
 +++ certifi/core.py
-@@ -11,9 +11,7 @@ import os
+@@ -10,6 +10,4 @@ import os
  
  
  def where():
@@ -10,6 +10,3 @@ Index: certifi/core.py
 -
 -    return os.path.join(f, 'cacert.pem')
 +    return '/etc/ssl/cert.pem'
- 
- 
- if __name__ == '__main__':
