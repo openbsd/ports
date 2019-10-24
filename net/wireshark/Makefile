@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.97 2019/09/22 13:13:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2019/10/24 11:12:12 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
-V =		3.0.5
+V =		3.0.6
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
