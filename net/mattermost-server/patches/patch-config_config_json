@@ -1,0 +1,86 @@
+$OpenBSD: patch-config_config_json,v 1.1 2019/10/24 19:50:30 pvk Exp $
+
+Index: config/config.json
+--- config/config.json.orig
++++ config/config.json
+@@ -12,7 +12,7 @@
+     "TLSStrictTransportMaxAge": 63072000,
+     "TLSOverwriteCiphers": [],
+     "UseLetsEncrypt": false,
+-    "LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache",
++    "LetsEncryptCertificateCacheFile": "${LOCALSTATEDIR}/mattermost/letsencrypt.cache",
+     "Forward80To443": false,
+     "TrustedProxyIPHeader": [],
+     "ReadTimeout": 300,
+@@ -139,18 +139,18 @@
+     "QueryTimeout": 30
+   },
+   "LogSettings": {
+-    "EnableConsole": true,
++    "EnableConsole": false,
+     "ConsoleLevel": "INFO",
+     "ConsoleJson": true,
+     "EnableFile": true,
+     "FileLevel": "INFO",
+     "FileJson": true,
+-    "FileLocation": "",
++    "FileLocation": "${LOCALSTATEDIR}/log/mattermost",
+     "EnableWebhookDebugging": true,
+     "EnableDiagnostics": true
+   },
+   "NotificationLogSettings": {
+-    "EnableConsole": true,
++    "EnableConsole": false,
+     "ConsoleLevel": "INFO",
+     "ConsoleJson": true,
+     "EnableFile": true,
+@@ -171,7 +171,7 @@
+     "EnableMobileDownload": true,
+     "MaxFileSize": 52428800,
+     "DriverName": "local",
+-    "Directory": "./data/",
++    "Directory": "${LOCALSTATEDIR}/mattermost/data/",
+     "EnablePublicLink": false,
+     "PublicLinkSalt": "",
+     "InitialFont": "nunito-bold.ttf",
+@@ -199,10 +199,10 @@
+     "EnableSMTPAuth": false,
+     "SMTPUsername": "",
+     "SMTPPassword": "",
+-    "SMTPServer": "",
+-    "SMTPPort": "10025",
++    "SMTPServer": "localhost",
++    "SMTPPort": "25",
+     "ConnectionSecurity": "",
+-    "SendPushNotifications": true,
++    "SendPushNotifications": false,
+     "PushNotificationServer": "https://push-test.mattermost.com",
+     "PushNotificationContents": "generic",
+     "EnableEmailBatching": false,
+@@ -311,7 +311,7 @@
+   },
+   "ComplianceSettings": {
+     "Enable": false,
+-    "Directory": "./data/",
++    "Directory": "${LOCALSTATEDIR}/mattermost/data/",
+     "EnableDaily": false
+   },
+   "LocalizationSettings": {
+@@ -435,8 +435,8 @@
+     "EnableUploads": false,
+     "AllowInsecureDownloadUrl": false,
+     "EnableHealthCheck": true,
+-    "Directory": "./plugins",
+-    "ClientDirectory": "./client/plugins",
++    "Directory": "${LOCALSTATEDIR}/mattermost/plugins",
++    "ClientDirectory": "${LOCALSTATEDIR}/mattermost/client/plugins",
+     "Plugins": {},
+     "PluginStates": {
+       "com.mattermost.nps": {
+@@ -462,4 +462,4 @@
+     "RemoteImageProxyURL": "",
+     "RemoteImageProxyOptions": ""
+   }
+-}
+\ No newline at end of file
++}

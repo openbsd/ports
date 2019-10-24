@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/09/15 02:04:00 jsing Exp $
+# $OpenBSD: Makefile,v 1.17 2019/10/24 19:50:29 pvk Exp $
 
 COMMENT =	open source Slack-alternative
 
-V =		5.13.2
+V =		5.16.0
 GH_ACCOUNT =	mattermost
 GH_PROJECT =	mattermost-server
 GH_TAGNAME =	v${V}
-REVISION =	0
 
 MASTER_SITES0 =	https://releases.mattermost.com/${V}/
 
@@ -29,8 +28,11 @@ MODULES =	lang/go
 MODGO_LDFLAGS =	-X github.com/mattermost/mattermost-server/model.BuildNumber=${V}
 NO_TEST =	Yes
 
+post-extract:
+	cp ${WRKDIR}/mattermost/config/config.json ${WRKDIST}/config/
+
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/config/default.json ${WRKDIST}/utils/fileutils/fileutils.go \
+	${SUBST_CMD} ${WRKDIST}/config/config.json ${WRKDIST}/utils/fileutils/fileutils.go \
 		${WRKDIST}/config/file.go ${WRKDIST}/cmd/mattermost/commands/logs.go
 
 do-build:
@@ -41,7 +43,7 @@ do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/mattermost ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mattermost/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mattermost/
-	cp ${WRKSRC}/config/default.json ${PREFIX}/share/examples/mattermost/
+	cp ${WRKSRC}/config/config.json ${PREFIX}/share/examples/mattermost/
 .for _d in client fonts i18n templates
 	cp -Rp ${WRKDIR}/mattermost/${_d} ${PREFIX}/share/mattermost/
 .endfor
