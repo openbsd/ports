@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.471 2019/10/24 10:12:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.472 2019/10/24 12:51:41 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -15,9 +15,6 @@ COMMENT=		Chromium browser
 V=			77.0.3865.120
 ECV=			76.0.3809.132
 ELECTRON_V=		6.0.3
-.if ${FLAVOR:Melectron}
-REVISION=		2
-.endif
 
 DISTNAME=		chromium-${V}
 
@@ -36,6 +33,9 @@ EXTRACT_SUFX=		.tar.xz
 
 FLAVORS=		debug component electron
 FLAVOR?=
+.if ${FLAVOR:Melectron}
+REVISION=		2
+.endif
 
 # BSD-like
 PERMIT_PACKAGE =	Yes
