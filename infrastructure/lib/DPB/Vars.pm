@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.54 2019/05/12 10:28:22 espie Exp $
+# $OpenBSD: Vars.pm,v 1.55 2019/10/24 09:51:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,6 +17,10 @@
 use strict;
 use warnings;
 use DPB::Util;
+
+# DPB::Vars is responsible with talking to make: grabbing stuff off makefiles
+# by running dump-vars and other thingies, outside of the "normal" build jobs
+# in Job/Port.pm
 
 package DPB::GetThings;
 sub subdirlist
@@ -44,12 +48,18 @@ package DPB::Vars;
 our @ISA = qw(DPB::GetThings);
 
 use OpenBSD::Paths;
+
+# this is the "complex" stuff that prints out a *small* Makefile on a pipe,
+# passes it off to make, and gets the result on the other side,
+# so we bypass the normal job creation process
 sub get
 {
-	my ($class, $shell, $make, @names) = @_;
+	my ($class, $shell, $state, @names) = @_;
 	pipe(my $rh, my $wh);
 	my $pid = fork();
 	if ($pid == 0) {
+		# XXX note we do assume this will be written entirely
+		# as there are at most 10 or 12 names, this is okay
 		DPB::Job->cleanup_after_fork;
 		print $wh "print-data:\n";
 		for my $n (@names) {
@@ -66,12 +76,17 @@ EOT
 	close $wh;
 	my @list;
 	my $pid2 = open(my $output, "-|");
+	my $make = $state->make;
 	if ($pid2) {
 		close $rh;
 		@list = <$output>;
 		chomp for @list;
-		waitpid($pid2, 0);
 		waitpid($pid, 0);
+		waitpid($pid2, 0);
+		if ($? != 0) {
+			DPB::Util->die("$make errored out with ".
+			    $state->child_error." while getting vars");
+		}
 	} else {
 		DPB::Job->cleanup_after_fork;
 		close STDIN;
@@ -82,6 +97,7 @@ EOT
 	return @list;
 }
 
+# this, on the other hand, is the generic code that may run elsewhere
 sub run_pipe
 {
 	my ($class, $core, $grabber, $subdirs, $skip, $dpb) = @_;
@@ -114,6 +130,7 @@ sub grab_list
 	    $h = {};
 	};
 
+	# here's the state machine that parses dump-vars output correctly
 	my @current = ();
 	my ($o, $info);
 	my $previous = '';
@@ -148,7 +165,8 @@ sub grab_list
 			}
 			print $log $_;
 			if (defined $subdir->{parent}) {
-				print $log " (", $subdir->{parent}->fullpkgpath, ")";
+				print $log " (", 
+				    $subdir->{parent}->fullpkgpath, ")";
 			}
 			print $log "\n";
 			if (defined $category) {

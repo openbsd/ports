@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.41 2019/10/23 14:34:27 espie Exp $
+# $OpenBSD: Init.pm,v 1.42 2019/10/24 09:51:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -237,7 +237,7 @@ sub init_cores
 		$t->{extra_code} = sub {
 		    my $prop = $core->prop;
 		    ($prop->{wrkobjdir}, $prop->{portslockdir}) = 
-			DPB::Vars->get($core->shell, $state->{make}, 
+			DPB::Vars->get($core->shell, $state, 
 			"WRKOBJDIR", "LOCKDIR");
 		};
 		$job->add_tasks($t);
