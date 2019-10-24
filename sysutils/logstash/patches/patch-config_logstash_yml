@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_logstash_yml,v 1.3 2019/01/26 22:11:30 pvk Exp $
+$OpenBSD: patch-config_logstash_yml,v 1.4 2019/10/24 13:27:52 pvk Exp $
 
 Index: config/logstash.yml
 --- config/logstash.yml.orig
@@ -12,10 +12,11 @@ Index: config/logstash.yml
  #
  # ------------ Pipeline Settings --------------
  #
-@@ -206,42 +206,9 @@
+@@ -205,43 +205,9 @@
+ #   * trace
  #
  # log.level: info
- # path.logs:
+-# path.logs:
 +path.logs: ${LOCALSTATEDIR}/log/logstash
  #
  # ------------ Other Settings --------------
@@ -30,8 +31,8 @@ Index: config/logstash.yml
 -#xpack.monitoring.enabled: false
 -#xpack.monitoring.elasticsearch.username: logstash_system
 -#xpack.monitoring.elasticsearch.password: password
--#xpack.monitoring.elasticsearch.url: ["https://es1:9200", "https://es2:9200"]
--#xpack.monitoring.elasticsearch.ssl.ca: [ "/path/to/ca.crt" ]
+-#xpack.monitoring.elasticsearch.hosts: ["https://es1:9200", "https://es2:9200"]
+-#xpack.monitoring.elasticsearch.ssl.certificate_authority: [ "/path/to/ca.crt" ]
 -#xpack.monitoring.elasticsearch.ssl.truststore.path: path/to/file
 -#xpack.monitoring.elasticsearch.ssl.truststore.password: password
 -#xpack.monitoring.elasticsearch.ssl.keystore.path: /path/to/file
@@ -47,8 +48,8 @@ Index: config/logstash.yml
 -#xpack.management.pipeline.id: ["main", "apache_logs"]
 -#xpack.management.elasticsearch.username: logstash_admin_user
 -#xpack.management.elasticsearch.password: password
--#xpack.management.elasticsearch.url: ["https://es1:9200", "https://es2:9200"]
--#xpack.management.elasticsearch.ssl.ca: [ "/path/to/ca.crt" ]
+-#xpack.management.elasticsearch.hosts: ["https://es1:9200", "https://es2:9200"]
+-#xpack.management.elasticsearch.ssl.certificate_authority: [ "/path/to/ca.crt" ]
 -#xpack.management.elasticsearch.ssl.truststore.path: /path/to/file
 -#xpack.management.elasticsearch.ssl.truststore.password: password
 -#xpack.management.elasticsearch.ssl.keystore.path: /path/to/file

@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_jvm_options,v 1.1 2018/05/17 10:50:12 pvk Exp $
+$OpenBSD: patch-config_jvm_options,v 1.2 2019/10/24 13:27:52 pvk Exp $
 
 Index: config/jvm.options
 --- config/jvm.options.orig
 +++ config/jvm.options
-@@ -34,6 +34,9 @@
+@@ -33,6 +33,9 @@
  
  ## basic
  

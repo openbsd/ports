@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/10/24 13:27:52 pvk Exp $
 
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			6.6.1
+V =			7.4.1
 DISTNAME =		logstash-oss-$V
 PKGNAME =		logstash-$V
-REVISION =		1
 EPOCH =			0
 
 CATEGORIES =		sysutils
@@ -26,7 +25,7 @@ DISTFILES =		logstash-oss-$V.tar.gz \
 EXTRACT_ONLY =		logstash-oss-$V.tar.gz
 
 MODULES =		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11
 
 RUN_DEPENDS =		java/javaPathHelper \
 			lang/jruby \
@@ -69,9 +68,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/* ${PREFIX}/share/examples/logstash/
 	cp -R ${WRKSRC}/{lib,logstash-*,modules,tools,vendor} ${LOGSTASH_HOME}
 	cp ${FULLDISTDIR}/netty-tcnative-boringssl-static-2.0.12.Final.jar \
-		${LOGSTASH_HOME}vendor/bundle/jruby/2.3.0/gems/logstash-input-beats-5.1.8-java/vendor/jar-dependencies/io/netty/netty-tcnative-boringssl-static/2.0.12.Final/
+		${LOGSTASH_HOME}vendor/bundle/jruby/2.5.0/gems/logstash-input-beats-6.0.3-java/vendor/jar-dependencies/io/netty/netty-tcnative-boringssl-static/2.0.12.Final/
 	cp ${FULLDISTDIR}/netty-tcnative-boringssl-static-2.0.12.Final.jar \
-		${LOGSTASH_HOME}vendor/bundle/jruby/2.3.0/gems/logstash-input-http-3.2.4-java/vendor/jar-dependencies/io/netty/netty-tcnative-boringssl-static/2.0.12.Final/
+		${LOGSTASH_HOME}vendor/bundle/jruby/2.5.0/gems/logstash-input-http-3.3.0-java/vendor/jar-dependencies/io/netty/netty-tcnative-boringssl-static/2.0.12.Final/
 	${INSTALL_DATA} ${FILESDIR}/filebeat.yml \
 		${PREFIX}/share/examples/logstash/filebeat.yml
 	cd ${PREFIX}/logstash && \

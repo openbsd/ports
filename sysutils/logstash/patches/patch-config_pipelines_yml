@@ -1,14 +1,12 @@
-$OpenBSD: patch-config_pipelines_yml,v 1.1 2018/05/17 10:50:12 pvk Exp $
+$OpenBSD: patch-config_pipelines_yml,v 1.2 2019/10/24 13:27:52 pvk Exp $
 
 Index: config/pipelines.yml
 --- config/pipelines.yml.orig
 +++ config/pipelines.yml
-@@ -77,4 +77,6 @@
- #   If using dead_letter_queue.enable: true, the directory path where the data files will be stored.
- #   Default is path.data/dead_letter_queue
- #
--#   path.dead_letter_queue:
-\ No newline at end of file
-+#   path.dead_letter_queue:
+@@ -1,4 +1,6 @@
+ # List of pipelines to be loaded by Logstash
 +- pipeline.id: filebeat
 +  path.config: "${SYSCONFDIR}/logstash/conf.d/filebeat.yml"
+ #
+ # This document must be a list of dictionaries/hashes, where the keys/values are pipeline settings.
+ # Default values for omitted settings are read from the `logstash.yml` file.
