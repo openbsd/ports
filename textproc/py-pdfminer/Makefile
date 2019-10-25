@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/10/25 07:25:39 feinerer Exp $
 
 COMMENT =	PDF parser and analyzer
 
-MODPY_EGG_VERSION =	20140328
+MODPY_EGG_VERSION =	20191020
 DISTNAME =		pdfminer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -16,6 +16,8 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 TEST_FLAGS =		PYTHON=${MODPY_BIN}
