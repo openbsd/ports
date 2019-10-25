@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.644 2019/09/20 08:20:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.645 2019/10/25 10:17:07 edd Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -402,6 +402,7 @@
      SUBDIR += xruskb
      SUBDIR += xruskb,motif
      SUBDIR += xscope
+     SUBDIR += xscreenruler
      SUBDIR += xscreensaver
      SUBDIR += xscribble
      SUBDIR += xsel
