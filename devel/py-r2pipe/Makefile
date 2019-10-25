@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/10/25 19:18:30 jasper Exp $
 
 COMMENT =	pipe interface for radare2
 
-MODPY_EGG_VERSION =	1.4.1
+MODPY_EGG_VERSION =	1.4.2
 DISTNAME =	r2pipe-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
