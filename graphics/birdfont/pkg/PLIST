@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/07/01 18:33:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2019/10/25 19:26:49 jasper Exp $
 @bin bin/birdfont
 @bin bin/birdfont-autotrace
 @bin bin/birdfont-export
@@ -16,7 +16,7 @@ share/birdfont/bright.theme
 share/birdfont/codepages.sqlite
 share/birdfont/dark.theme
 share/birdfont/high_contrast.theme
-share/birdfont/icons.bf
+share/birdfont/icons.birdfont
 share/birdfont/key_bindings.xml
 share/birdfont/ucd.sqlite
 share/icons/hicolor/128x128/apps/birdfont.png
