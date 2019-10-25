@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.41 2018/09/04 12:46:27 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.42 2019/10/25 11:49:15 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -81,6 +81,8 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{59c81df5-4b7a-477
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/modern@themes.mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/Bogofilter.sfd
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/DSPAM.sfd
@@ -94,6 +96,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/rss.rdf
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozavutil.so.${LIBmozavutil_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libprldap60.so.${LIBprldap60_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/license.txt

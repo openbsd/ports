@@ -1,0 +1,23 @@
+$OpenBSD: patch-mozilla_security_manager_ssl_moz_build,v 1.1 2019/10/25 11:49:14 landry Exp $
+
+fix configure when using --with-system-nss
+https://bugzilla.mozilla.org/show_bug.cgi?id=1319405
+https://hg.mozilla.org/mozilla-central/rev/10a01f31d432
+
+Index: mozilla/security/manager/ssl/moz.build
+--- mozilla/security/manager/ssl/moz.build.orig
++++ mozilla/security/manager/ssl/moz.build
+@@ -184,9 +184,10 @@ for var in ('DLL_PREFIX', 'DLL_SUFFIX'):
+ 
+ DEFINES['CERT_AddTempCertToPerm'] = '__CERT_AddTempCertToPerm'
+ 
+-USE_LIBS += [
+-    'crmf',
+-]
++if not CONFIG['MOZ_SYSTEM_NSS']:
++    USE_LIBS += [
++        'crmf',
++    ]
+ 
+ include('/ipc/chromium/chromium-config.mozbuild')
+ 
