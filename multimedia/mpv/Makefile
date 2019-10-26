@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/10/26 12:03:20 kn Exp $
+# $OpenBSD: Makefile,v 1.52 2019/10/26 14:06:55 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -108,13 +108,16 @@ CFLAGS +=		-march=i586
 DO_WAF =		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} \
 				${WAF} ${MAKE_FLAGS}
 
+LMAJ =			${LIBmpv_VERSION:R}
+LMIN =			${LIBmpv_VERSION:E}
+SUBST_VARS +=		LMAJ \
+			LMIN
+
 post-patch:
 	cp ${DISTDIR}/${WAF:T} ${WAF}
+	${SUBST_CMD} ${WRKSRC}/libmpv/client.h
 
 do-configure:
-	sed -i -e "s,LMAJ,${LIBmpv_VERSION:R},g" \
-		-e "s,LMIN,${LIBmpv_VERSION:E},g" \
-			${WRKSRC}/libmpv/client.h
 	${DO_WAF} configure ${CONFIGURE_ARGS}
 
 do-build:

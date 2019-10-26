@@ -1,6 +1,6 @@
-$OpenBSD: patch-libmpv_client_h,v 1.2 2019/10/26 12:03:20 kn Exp $
+$OpenBSD: patch-libmpv_client_h,v 1.3 2019/10/26 14:06:56 kn Exp $
 
-Could not find an easy way to do this.
+Set shared library version.
 
 Index: libmpv/client.h
 --- libmpv/client.h.orig
@@ -10,7 +10,7 @@ Index: libmpv/client.h
   */
  #define MPV_MAKE_VERSION(major, minor) (((major) << 16) | (minor) | 0UL)
 -#define MPV_CLIENT_API_VERSION MPV_MAKE_VERSION(1, 106)
-+#define MPV_CLIENT_API_VERSION MPV_MAKE_VERSION(LMAJ, LMIN)
++#define MPV_CLIENT_API_VERSION MPV_MAKE_VERSION(${LMAJ}, ${LMIN})
  
  /**
   * The API user is allowed to "#define MPV_ENABLE_DEPRECATED 0" before
