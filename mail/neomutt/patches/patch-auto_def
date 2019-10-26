@@ -1,25 +1,25 @@
-$OpenBSD: patch-auto_def,v 1.5 2019/01/02 21:57:31 sthen Exp $
+$OpenBSD: patch-auto_def,v 1.6 2019/10/26 19:37:09 sthen Exp $
 
 Index: auto.def
 --- auto.def.orig
 +++ auto.def
-@@ -386,6 +386,7 @@ if {[get-define want-smime]} {
- # SASL
- if {[get-define want-sasl]} {
-   foreach sasl_lib {sasl2 sasl} {
+@@ -534,6 +534,7 @@ if {[get-define want-sasl]} {
+     define USE_SASL
+     define-feature SASL
+   } else {
 +    cc-with {-includes sys/types.h} {
-     if {[check-inc-and-lib sasl [opt-val with-sasl $prefix] \
-                            sasl/sasl.h sasl_encode64 $sasl_lib]} {
-       # RHEL6 doesn't have this function yet
-@@ -393,6 +394,7 @@ if {[get-define want-sasl]} {
-       define USE_SASL
-       break
+     foreach sasl_lib {sasl2 sasl} {
+       if {[check-inc-and-lib sasl [opt-val with-sasl $prefix] \
+                              sasl/sasl.h sasl_encode64 $sasl_lib]} {
+@@ -543,6 +544,7 @@ if {[get-define want-sasl]} {
+         break
+       }
      }
 +    }
-   }
-   if {![get-define USE_SASL]} {
-     user-error "Unable to find SASL"
-@@ -898,13 +900,6 @@ set bare_rep {
+     if {![get-define USE_SASL]} {
+       user-error "Unable to find SASL"
+     }
+@@ -1126,13 +1128,6 @@ set bare_rep {
  }
  set str_rep {
    PACKAGE_VERSION

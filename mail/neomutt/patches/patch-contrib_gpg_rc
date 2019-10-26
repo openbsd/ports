@@ -1,9 +1,9 @@
-$OpenBSD: patch-contrib_gpg_rc,v 1.1 2018/10/29 17:55:11 sthen Exp $
+$OpenBSD: patch-contrib_gpg_rc,v 1.2 2019/10/26 19:37:09 sthen Exp $
 
 Index: contrib/gpg.rc
 --- contrib/gpg.rc.orig
 +++ contrib/gpg.rc
-@@ -59,59 +59,59 @@
+@@ -59,61 +59,61 @@
  
  # decode application/pgp
  #
@@ -64,11 +64,13 @@ Index: contrib/gpg.rc
 +set pgp_verify_key_command="gpg2 --verbose --batch --fingerprint --check-sigs %r"
  
  # Read in the public key ring
+ # note: the second --with-fingerprint adds fingerprints to subkeys
  #
 -set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-keys %r"
 +set pgp_list_pubring_command="gpg2 --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-keys %r"
  
  # Read in the secret key ring
+ # note: the second --with-fingerprint adds fingerprints to subkeys
  #
 -set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-secret-keys %r"
 +set pgp_list_secring_command="gpg2 --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-secret-keys %r"
