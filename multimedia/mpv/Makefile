@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2019/10/26 14:06:55 kn Exp $
+# $OpenBSD: Makefile,v 1.53 2019/10/26 22:13:56 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.30.0
+REVISION =		0
 
 SHARED_LIBS +=		mpv		0.1 # 1.106
 
@@ -40,7 +41,6 @@ BUILD_DEPENDS =		audio/ladspa \
 LIB_DEPENDS =		audio/libcdio \
 			audio/libcdio-paranoia \
 			converters/libiconv \
-			devel/libdvdread \
 			devel/sdl2 \
 			graphics/ffmpeg>=4.1.1 \
 			graphics/jpeg \
@@ -64,7 +64,6 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--enable-libmpv-shared \
 			--enable-sndio \
 			--enable-sdl2 \
-			--enable-tv \
 			--disable-alsa \
 			--disable-caca \
 			--disable-cuda-hwaccel \
@@ -91,9 +90,6 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-videotoolbox-gl \
 			--disable-vulkan \
 			--disable-wayland
-
-# seems like a waf bug, we're not tvOS -- 7087
-CONFIGURE_ARGS +=	--disable-tvos
 
 MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
