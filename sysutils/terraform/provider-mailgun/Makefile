@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2019/10/21 14:52:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/10/26 11:55:41 ajacoutot Exp $
 
 PROVIDER=		mailgun
-GH_TAGNAME=		v0.2.0
+GH_TAGNAME=		v0.3.0
 
 .include <bsd.port.mk>

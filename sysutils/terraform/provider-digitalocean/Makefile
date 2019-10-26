@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2019/10/21 14:52:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/10/26 11:55:41 ajacoutot Exp $
 
 PROVIDER=		digitalocean
-GH_TAGNAME=		v1.9.0
+GH_TAGNAME=		v1.9.1
 
 .include <bsd.port.mk>
