@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/10/26 22:55:40 cwen Exp $
 
 COMMENT =	free multi-dimensional Tetris-like game
 DISTNAME =	galois-0.6
+REVISION =	0
 CATEGORIES =	games x11
 
-HOMEPAGE =	http://www.nongnu.org/galois/
+HOMEPAGE =	https://www.nongnu.org/galois/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
@@ -19,7 +20,7 @@ WANTLIB += sigc-2.0 xml++-2.6 xml2
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=galois/source/}
 
 # C++14
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	textproc/libxml++>=2.40.0 \
 		x11/gtk3mm
