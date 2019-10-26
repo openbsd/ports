@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/08/21 02:55:50 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/10/26 02:10:03 daniel Exp $
 %%native%%
 @bin bin/menhir
 lib/ocaml/menhirLib/
@@ -159,6 +159,13 @@ share/doc/ocaml-menhir/demos/calc/README
 share/doc/ocaml-menhir/demos/calc/calc.ml
 share/doc/ocaml-menhir/demos/calc/lexer.mll
 share/doc/ocaml-menhir/demos/calc/parser.mly
+share/doc/ocaml-menhir/demos/coq-minicalc/
+share/doc/ocaml-menhir/demos/coq-minicalc/Lexer.v
+share/doc/ocaml-menhir/demos/coq-minicalc/Makefile
+share/doc/ocaml-menhir/demos/coq-minicalc/MiniCalc.v
+share/doc/ocaml-menhir/demos/coq-minicalc/Parser.vy
+share/doc/ocaml-menhir/demos/coq-minicalc/README.md
+share/doc/ocaml-menhir/demos/coq-minicalc/_CoqProject
 share/doc/ocaml-menhir/demos/generate-printers/
 share/doc/ocaml-menhir/demos/generate-printers-dune/
 share/doc/ocaml-menhir/demos/generate-printers-dune/.gitignore
@@ -184,4 +191,3 @@ share/doc/ocaml-menhir/manual001.png
 share/doc/ocaml-menhir/manual002.png
 share/doc/ocaml-menhir/manual003.png
 share/menhir/
-share/menhir/standard.mly
