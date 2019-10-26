@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.50 2019/08/19 06:04:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2019/10/26 12:03:20 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.29.1
+GH_TAGNAME =		v0.30.0
 
-REVISION =		2
-
-SHARED_LIBS +=	mpv                       0.0 # 1.101
+SHARED_LIBS +=		mpv		0.1 # 1.106
 
 CATEGORIES =		multimedia x11
 
 HOMEPAGE =		https://mpv.io/
 
-WAF =			${WRKSRC}/waf-2.0.14
+WAF =			${WRKSRC}/waf-2.0.18
 MASTER_SITES0 =		https://waf.io/
 DISTFILES =		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX} ${WAF:T}:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
@@ -27,8 +25,8 @@ WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil bluray
 WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
 WANTLIB += fontconfig freetype fribidi gbm iconv jpeg lcms2 m
-WANTLIB += postproc pthread sndio swresample swscale v4l2
-WANTLIB += v4lconvert xcb xcb-dri2 xcb-glx z ${MODLUA_WANTLIB}
+WANTLIB += postproc pthread sndio swresample swscale xcb xcb-dri2
+WANTLIB += xcb-glx z ${MODLUA_WANTLIB}
 
 MODULES =		lang/lua \
 			lang/python
@@ -49,8 +47,7 @@ LIB_DEPENDS =		audio/libcdio \
 			graphics/lcms2 \
 			multimedia/libass \
 			multimedia/libbluray \
-			multimedia/libdvdnav \
-			multimedia/libv4l
+			multimedia/libdvdnav
 
 MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -64,12 +61,10 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--zshdir=${LOCALBASE}/share/zsh/vendor-completions \
 			--enable-cdda \
 			--enable-dvdnav \
-			--enable-dvdread \
 			--enable-libmpv-shared \
 			--enable-sndio \
 			--enable-sdl2 \
 			--enable-tv \
-			--enable-zsh-comp \
 			--disable-alsa \
 			--disable-caca \
 			--disable-cuda-hwaccel \
@@ -87,17 +82,18 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-uchardet \
 			--disable-vaapi \
 			--disable-vaapi-drm \
-			--disable-vaapi-glx \
 			--disable-vaapi-x-egl \
 			--disable-vaapi-x11 \
 			--disable-vaapi-wayland \
 			--disable-vapoursynth \
-			--disable-vapoursynth-lazy \
 			--disable-vdpau \
 			--disable-vdpau-gl-x11 \
 			--disable-videotoolbox-gl \
 			--disable-vulkan \
 			--disable-wayland
+
+# seems like a waf bug, we're not tvOS -- 7087
+CONFIGURE_ARGS +=	--disable-tvos
 
 MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
