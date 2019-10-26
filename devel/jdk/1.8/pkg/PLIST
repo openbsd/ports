@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2019/06/11 00:35:17 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/10/26 17:03:12 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=1.8v0,<1.9v0
@@ -425,8 +425,6 @@ ${JDKHOME}/jre/ASSEMBLY_EXCEPTION
 ${JDKHOME}/jre/LICENSE
 ${JDKHOME}/jre/THIRD_PARTY_README
 ${JDKHOME}/jre/bin/
-@bin ${JDKHOME}/jre/bin/clhsdb
-@bin ${JDKHOME}/jre/bin/hsdb
 @bin ${JDKHOME}/jre/bin/java
 @bin ${JDKHOME}/jre/bin/jjs
 @bin ${JDKHOME}/jre/bin/keytool
