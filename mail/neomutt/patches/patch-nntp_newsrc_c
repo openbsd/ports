@@ -1,0 +1,14 @@
+$OpenBSD: patch-nntp_newsrc_c,v 1.1 2019/10/26 21:50:19 sthen Exp $
+
+Index: nntp/newsrc.c
+--- nntp/newsrc.c.orig
++++ nntp/newsrc.c
+@@ -617,7 +617,7 @@ static int active_get_cache(struct NntpAccountData *ad
+   if (!fp)
+     return -1;
+ 
+-  if (!fgets(buf, sizeof(buf), fp) || (sscanf(buf, "%ld%4095s", &t, file) != 1) || (t == 0))
++  if (!fgets(buf, sizeof(buf), fp) || (sscanf(buf, "%lld%4095s", &t, file) != 1) || (t == 0))
+   {
+     mutt_file_fclose(&fp);
+     return -1;
