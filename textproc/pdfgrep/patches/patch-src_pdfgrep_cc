@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_pdfgrep_cc,v 1.3 2018/05/19 21:34:50 sthen Exp $
+$OpenBSD: patch-src_pdfgrep_cc,v 1.4 2019/10/26 22:37:56 sthen Exp $
 
 disable locale::global(locale("")) to avoid a segfault in the UTF-8 locale.
+
 Index: src/pdfgrep.cc
 --- src/pdfgrep.cc.orig
 +++ src/pdfgrep.cc
@@ -24,7 +25,7 @@ Index: src/pdfgrep.cc
  
  	enum re_engine_type {
  		RE_POSIX = 0,
-@@ -725,6 +731,11 @@ int main(int argc, char** argv)
+@@ -727,6 +733,11 @@ int main(int argc, char** argv)
  	bool color_tty = isatty(STDOUT_FILENO) && getenv("TERM") &&
  		strcmp(getenv("TERM"), "dumb");
  
@@ -36,7 +37,7 @@ Index: src/pdfgrep.cc
  	options.outconf.color =
  		use_colors == COLOR_ALWAYS
  		|| (use_colors == COLOR_AUTO && color_tty);
-@@ -768,6 +779,12 @@ int main(int argc, char** argv)
+@@ -770,6 +781,12 @@ int main(int argc, char** argv)
  			char *limitstr = getenv("PDFGREP_CACHE_LIMIT");
  			unsigned int limit = limitstr ? strtoul(limitstr, NULL, 10) : 200;
  			limit_cachesize(options.cache_directory.c_str(), limit);
