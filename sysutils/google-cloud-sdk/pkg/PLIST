@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.129 2019/10/19 10:09:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.130 2019/10/26 10:57:04 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -2224,6 +2224,13 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/maps.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/resource_args.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/resource_args.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/resources.yaml
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/arguments.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/arguments.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/errors.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/errors.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/lifesciences/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/lifesciences/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/lifesciences/__init__.pyc
@@ -2233,6 +2240,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/lifesciences/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/local/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/local/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/local/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/local/local.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/local/local.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/local/yaml_helper.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/local/yaml_helper.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/
@@ -2435,8 +2444,6 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/exceptions.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/flags.yaml
-google-cloud-sdk/lib/googlecloudsdk/command_lib/run/local.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/run/local.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/name_generator.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/name_generator.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/pretty_print.py
@@ -2706,6 +2713,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/web_security_scanner/resources.y
 google-cloud-sdk/lib/googlecloudsdk/core/
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/argv_utils.py
+google-cloud-sdk/lib/googlecloudsdk/core/argv_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/cache/
 google-cloud-sdk/lib/googlecloudsdk/core/cache/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/cache/__init__.pyc
@@ -8577,12 +8586,16 @@ google-cloud-sdk/lib/surface/identity/groups/
 google-cloud-sdk/lib/surface/identity/groups/__init__.py
 google-cloud-sdk/lib/surface/identity/groups/__init__.pyc
 google-cloud-sdk/lib/surface/identity/groups/create.yaml
+google-cloud-sdk/lib/surface/identity/groups/describe.yaml
 google-cloud-sdk/lib/surface/identity/groups/memberships/
 google-cloud-sdk/lib/surface/identity/groups/memberships/__init__.py
 google-cloud-sdk/lib/surface/identity/groups/memberships/__init__.pyc
+google-cloud-sdk/lib/surface/identity/groups/memberships/describe.yaml
 google-cloud-sdk/lib/surface/identity/groups/memberships/list.yaml
 google-cloud-sdk/lib/surface/identity/groups/preview.py
 google-cloud-sdk/lib/surface/identity/groups/preview.pyc
+google-cloud-sdk/lib/surface/identity/groups/search.yaml
+google-cloud-sdk/lib/surface/identity/groups/update.yaml
 google-cloud-sdk/lib/surface/info.py
 google-cloud-sdk/lib/surface/info.pyc
 google-cloud-sdk/lib/surface/init.py
