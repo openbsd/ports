@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.53 2019/07/12 20:47:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/10/26 10:54:31 ajacoutot Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=		m88k
 
 COMMENT=		cairo bindings for Python
 
-MODPY_EGG_VERSION=	1.18.1
+MODPY_EGG_VERSION=	1.18.2
 GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-cairo-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		graphics
 
