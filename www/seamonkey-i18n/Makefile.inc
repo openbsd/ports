@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.53 2019/07/12 20:51:05 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.54 2019/10/27 13:47:35 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 PKG_ARCH =	*
 
-FV =		2.49.4
+FV =		2.49.5
 V =		${FV:C/b.$//}
 NAME =		seamonkey-i18n
 
@@ -21,8 +21,8 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/ \
-		http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/
+MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpacks/linux-i686/ \
+		http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpacks/linux-i686/
 
 BUILD_DEPENDS =	archivers/unzip
 RUN_DEPENDS =	seamonkey-${FV:S/b/beta/}:www/seamonkey
