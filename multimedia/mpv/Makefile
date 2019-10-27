@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/10/26 22:13:56 kn Exp $
+# $OpenBSD: Makefile,v 1.54 2019/10/27 10:28:06 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -106,6 +106,7 @@ DO_WAF =		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} \
 
 LMAJ =			${LIBmpv_VERSION:R}
 LMIN =			${LIBmpv_VERSION:E}
+UPDATE_PLIST_ARGS +=	-i LMAJ -i LMIN
 SUBST_VARS +=		LMAJ \
 			LMIN
 
