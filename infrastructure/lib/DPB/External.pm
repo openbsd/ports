@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.22 2019/07/04 02:32:21 espie Exp $
+# $OpenBSD: External.pm,v 1.23 2019/10/27 09:21:11 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -59,6 +59,7 @@ sub server
 		# NOW we can listen
 		$o->{server}->listen;
 		$o->{select} = IO::Select->new($o->{server});
+		$state->say("Control socket: #1", $o->{path});
 		return $o;
 	} else {
 		return undef;
@@ -133,6 +134,31 @@ sub wipehost
 	}
 }
 
+sub summary
+{
+	my ($self, $fh, $name) = @_;
+	my $state = $self->{state};
+	my $f = $state->logger->append($name);
+	if (!defined $f) {
+		$fh->print("Can't append to $name: $!\n");
+		return;
+	}
+	# XXX smart_dump is destructive, so run it on a copy
+	my $pid = CORE::fork;
+	if (!defined $pid) {
+		$fh->print("Couldn't fork: $!\n");
+		return;
+	}
+	if ($pid == 0) {
+		$state->engine->smart_dump($f);
+		exit(0);
+	} else {
+		waitpid($pid, 0);
+		$fh->print("Summary written to ".
+		    $state->logger->logfile($name)."\n");
+	}
+}
+
 sub handle_command
 {
 	my ($self, $line, $fh) = @_;
@@ -173,6 +199,8 @@ sub handle_command
 		for my $p (split(/\s+/, $1)) {
 			$self->wipehost($fh, $1);
 		}
+	} elsif ($line =~ m/^summary(?:\s+(.*))?/) {
+		$self->summary($fh, $1 // 'summary');
 	} elsif ($line =~ m/^help\b/) {
 		$fh->print(
 		    "Commands:\n",
@@ -182,6 +210,7 @@ sub handle_command
 		    "\tdontclean <pkgpath>...\n",
 		    "\tstats\n",
 		    "\tstatus <fullpkgpath>...\n",
+		    "\tsummary [<logname>]\n",
 		    "\twipe <fullpkgpath>...\n",
 		    "\twipehost <hostname>...\n"
 		);
