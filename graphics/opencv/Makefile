@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/09/28 18:19:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2019/10/28 21:48:42 cwen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -83,6 +83,12 @@ LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
 .if ${ARCH:Mi386}
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 			CXXFLAGS="${CXXFLAGS} -fPIC"
+.endif
+
+# Fix "undefined reference to `__atomic_store_8'" (and more)
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB +=		atomic
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
 
 # ATM opencv requires V4L1 compat, ask them to change it,
