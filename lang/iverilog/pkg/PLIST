@@ -1,52 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/23 11:12:53 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/10/28 08:18:37 bentley Exp $
 @bin bin/iverilog
 bin/iverilog-vpi
 @bin bin/vvp
 include/iverilog/
 include/iverilog/_pli_types.h
-include/iverilog/acc_user.h
-include/iverilog/ivl_target.h
-include/iverilog/sv_vpi_user.h
-include/iverilog/veriuser.h
-include/iverilog/vpi_user.h
 lib/ivl/
-lib/ivl/blif-s.conf
-lib/ivl/blif.conf
 @bin lib/ivl/blif.tgt
 @bin lib/ivl/cadpli.vpl
 lib/ivl/include/
-lib/ivl/include/constants.vams
-lib/ivl/include/disciplines.vams
 @bin lib/ivl/ivl
 @bin lib/ivl/ivlpp
-lib/ivl/null-s.conf
-lib/ivl/null.conf
 @bin lib/ivl/null.tgt
-lib/ivl/pcb-s.conf
-lib/ivl/pcb.conf
 @bin lib/ivl/pcb.tgt
-lib/ivl/sizer-s.conf
-lib/ivl/sizer.conf
 @bin lib/ivl/sizer.tgt
-lib/ivl/stub-s.conf
-lib/ivl/stub.conf
 @bin lib/ivl/stub.tgt
-lib/ivl/system.sft
 @bin lib/ivl/system.vpi
-lib/ivl/v2005_math.sft
 @bin lib/ivl/v2005_math.vpi
-lib/ivl/v2009.sft
 @bin lib/ivl/v2009.vpi
-lib/ivl/va_math.sft
 @bin lib/ivl/va_math.vpi
-lib/ivl/vhdl-s.conf
-lib/ivl/vhdl.conf
 @bin lib/ivl/vhdl.tgt
-lib/ivl/vhdl_sys.sft
 @bin lib/ivl/vhdl_sys.vpi
 @bin lib/ivl/vhdlpp
-lib/ivl/vlog95-s.conf
-lib/ivl/vlog95.conf
 @bin lib/ivl/vlog95.tgt
 @bin lib/ivl/vpi_debug.vpi
 lib/ivl/vvp-s.conf
