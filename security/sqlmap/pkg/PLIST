@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/08/12 06:23:59 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/10/28 09:30:15 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -203,13 +203,6 @@ share/sqlmap/extra/runcmd/src/runcmd/runcmd.cpp
 share/sqlmap/extra/runcmd/src/runcmd/runcmd.vcproj
 share/sqlmap/extra/runcmd/src/runcmd/stdafx.cpp
 share/sqlmap/extra/runcmd/src/runcmd/stdafx.h
-share/sqlmap/extra/safe2bin/
-share/sqlmap/extra/safe2bin/README.txt
-share/sqlmap/extra/safe2bin/__init__.py
-${MODPY_COMMENT}share/sqlmap/extra/safe2bin/${MODPY_PYCACHE}/
-share/sqlmap/extra/safe2bin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-share/sqlmap/extra/safe2bin/${MODPY_PYCACHE}safe2bin.${MODPY_PYC_MAGIC_TAG}pyc
-share/sqlmap/extra/safe2bin/safe2bin.py
 share/sqlmap/extra/shellcodeexec/
 share/sqlmap/extra/shellcodeexec/README.txt
 share/sqlmap/extra/shellcodeexec/linux/
@@ -221,6 +214,7 @@ share/sqlmap/extra/shutils/
 ${MODPY_COMMENT}share/sqlmap/extra/shutils/${MODPY_PYCACHE}/
 share/sqlmap/extra/shutils/${MODPY_PYCACHE}duplicates.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/shutils/${MODPY_PYCACHE}newlines.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/extra/shutils/autocompletion.sh
 share/sqlmap/extra/shutils/blanks.sh
 share/sqlmap/extra/shutils/drei.sh
 share/sqlmap/extra/shutils/duplicates.py
@@ -440,6 +434,7 @@ share/sqlmap/lib/utils/${MODPY_PYCACHE}httpd.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}pivotdumptable.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}progress.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}purge.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/lib/utils/${MODPY_PYCACHE}safe2bin.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}sgmllib.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}sqlalchemy.${MODPY_PYC_MAGIC_TAG}pyc
@@ -458,6 +453,7 @@ share/sqlmap/lib/utils/httpd.py
 share/sqlmap/lib/utils/pivotdumptable.py
 share/sqlmap/lib/utils/progress.py
 share/sqlmap/lib/utils/purge.py
+share/sqlmap/lib/utils/safe2bin.py
 share/sqlmap/lib/utils/search.py
 share/sqlmap/lib/utils/sgmllib.py
 share/sqlmap/lib/utils/sqlalchemy.py
