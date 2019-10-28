@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2019/08/16 12:25:23 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2019/10/28 16:30:33 fcambus Exp $
 
 COMMENT =	ansi and ascii art to png converter
 
-V =		4.0.3
+V =		4.0.4
 DISTNAME =	ansilove-$V
 
 CATEGORIES =	graphics
