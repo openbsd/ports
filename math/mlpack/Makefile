@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/10/28 15:13:35 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/10/28 17:52:36 cwen Exp $
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
 
 V = 		3.2.1
+REVISION =	0
 
 # STB stuff
 # XXX remember to bump REV if they change
@@ -42,7 +43,7 @@ WANTLIB-main = 	${WANTLIB} armadillo \
 		boost_program_options-mt boost_serialization-mt \
 		boost_unit_test_framework-mt c
 
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 WANTLIB-python = ${WANTLIB} ${MODPY_WANTLIB} boost_serialization mlpack
 
@@ -94,6 +95,12 @@ SITEDIR = 	lib/python${MODPY_VERSION}/site-packages
 EGGDIR = 	${SITEDIR}/mlpack-$V-py${MODPY_VERSION}.egg-info
 
 SUBST_VARS += 	EGGDIR SITEDIR
+
+# Fix OOM error
+.if ${MACHINE_ARCH:Mpowerpc}
+CFLAGS =	-O1 -pipe
+CXXFLAGS =	-O1 -pipe
+.endif
 
 post-extract:
 	mkdir -p ${WRKBUILD}/deps/stb
