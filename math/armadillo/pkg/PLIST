@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/08/01 11:44:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/10/28 15:13:35 espie Exp $
 include/armadillo
 include/armadillo_bits/
 include/armadillo_bits/BaseCube_bones.hpp
@@ -7,6 +7,8 @@ include/armadillo_bits/Base_bones.hpp
 include/armadillo_bits/Base_meat.hpp
 include/armadillo_bits/Col_bones.hpp
 include/armadillo_bits/Col_meat.hpp
+include/armadillo_bits/CubeToMatOp_bones.hpp
+include/armadillo_bits/CubeToMatOp_meat.hpp
 include/armadillo_bits/Cube_bones.hpp
 include/armadillo_bits/Cube_meat.hpp
 include/armadillo_bits/GenCube_bones.hpp
@@ -187,6 +189,7 @@ include/armadillo_bits/fn_qz.hpp
 include/armadillo_bits/fn_randg.hpp
 include/armadillo_bits/fn_randi.hpp
 include/armadillo_bits/fn_randn.hpp
+include/armadillo_bits/fn_randperm.hpp
 include/armadillo_bits/fn_randu.hpp
 include/armadillo_bits/fn_range.hpp
 include/armadillo_bits/fn_rank.hpp
@@ -496,6 +499,8 @@ include/armadillo_bits/spglue_minus_bones.hpp
 include/armadillo_bits/spglue_minus_meat.hpp
 include/armadillo_bits/spglue_plus_bones.hpp
 include/armadillo_bits/spglue_plus_meat.hpp
+include/armadillo_bits/spglue_relational_bones.hpp
+include/armadillo_bits/spglue_relational_meat.hpp
 include/armadillo_bits/spglue_schur_bones.hpp
 include/armadillo_bits/spglue_schur_meat.hpp
 include/armadillo_bits/spglue_times_bones.hpp
@@ -554,6 +559,7 @@ include/armadillo_bits/translate_atlas.hpp
 include/armadillo_bits/translate_blas.hpp
 include/armadillo_bits/translate_lapack.hpp
 include/armadillo_bits/translate_superlu.hpp
+include/armadillo_bits/trimat_helper.hpp
 include/armadillo_bits/typedef_elem.hpp
 include/armadillo_bits/typedef_elem_check.hpp
 include/armadillo_bits/typedef_mat.hpp

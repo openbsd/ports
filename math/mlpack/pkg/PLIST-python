@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.4 2019/08/01 11:44:35 espie Exp $
+@comment $OpenBSD: PLIST-python,v 1.5 2019/10/28 15:13:35 espie Exp $
 @conflict mlpack-<3.0.4
 @pkgpath math/mlpack,-python${FLAVOR_EXT}
 include/mlpack/bindings/python/
@@ -74,6 +74,7 @@ ${SITEDIR}/mlpack/pca.so
 ${SITEDIR}/mlpack/perceptron.so
 ${SITEDIR}/mlpack/preprocess_binarize.so
 ${SITEDIR}/mlpack/preprocess_describe.so
+${SITEDIR}/mlpack/preprocess_scale.so
 ${SITEDIR}/mlpack/preprocess_split.so
 ${SITEDIR}/mlpack/radical.so
 ${SITEDIR}/mlpack/random_forest.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2019/08/01 11:44:35 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2019/10/28 15:13:35 espie Exp $
 @bin bin/mlpack_adaboost
 @bin bin/mlpack_approx_kfn
 @bin bin/mlpack_cf
@@ -37,6 +37,7 @@
 @bin bin/mlpack_preprocess_binarize
 @bin bin/mlpack_preprocess_describe
 @bin bin/mlpack_preprocess_imputer
+@bin bin/mlpack_preprocess_scale
 @bin bin/mlpack_preprocess_split
 @bin bin/mlpack_radical
 @bin bin/mlpack_random_forest
@@ -169,6 +170,8 @@ include/mlpack/core/data/dataset_mapper_impl.hpp
 include/mlpack/core/data/extension.hpp
 include/mlpack/core/data/format.hpp
 include/mlpack/core/data/has_serialize.hpp
+include/mlpack/core/data/image_info.hpp
+include/mlpack/core/data/image_info_impl.hpp
 include/mlpack/core/data/imputation_methods/
 include/mlpack/core/data/imputation_methods/custom_imputation.hpp
 include/mlpack/core/data/imputation_methods/listwise_deletion.hpp
@@ -180,6 +183,7 @@ include/mlpack/core/data/load.hpp
 include/mlpack/core/data/load_arff.hpp
 include/mlpack/core/data/load_arff_impl.hpp
 include/mlpack/core/data/load_csv.hpp
+include/mlpack/core/data/load_image_impl.hpp
 include/mlpack/core/data/load_impl.hpp
 include/mlpack/core/data/load_model_impl.hpp
 include/mlpack/core/data/load_vec_impl.hpp
@@ -193,6 +197,13 @@ include/mlpack/core/data/one_hot_encoding.hpp
 include/mlpack/core/data/one_hot_encoding_impl.hpp
 include/mlpack/core/data/save.hpp
 include/mlpack/core/data/save_impl.hpp
+include/mlpack/core/data/scaler_methods/
+include/mlpack/core/data/scaler_methods/max_abs_scaler.hpp
+include/mlpack/core/data/scaler_methods/mean_normalization.hpp
+include/mlpack/core/data/scaler_methods/min_max_scaler.hpp
+include/mlpack/core/data/scaler_methods/pca_whitening.hpp
+include/mlpack/core/data/scaler_methods/standard_scaler.hpp
+include/mlpack/core/data/scaler_methods/zca_whitening.hpp
 include/mlpack/core/data/serialization_template_version.hpp
 include/mlpack/core/data/split_data.hpp
 include/mlpack/core/dists/
@@ -461,6 +472,15 @@ include/mlpack/methods/ann/dists/bernoulli_distribution.hpp
 include/mlpack/methods/ann/dists/bernoulli_distribution_impl.hpp
 include/mlpack/methods/ann/ffn.hpp
 include/mlpack/methods/ann/ffn_impl.hpp
+include/mlpack/methods/ann/gan/
+include/mlpack/methods/ann/gan/gan.hpp
+include/mlpack/methods/ann/gan/gan_impl.hpp
+include/mlpack/methods/ann/gan/gan_policies.hpp
+include/mlpack/methods/ann/gan/metrics/
+include/mlpack/methods/ann/gan/metrics/inception_score.hpp
+include/mlpack/methods/ann/gan/metrics/inception_score_impl.hpp
+include/mlpack/methods/ann/gan/wgan_impl.hpp
+include/mlpack/methods/ann/gan/wgangp_impl.hpp
 include/mlpack/methods/ann/init_rules/
 include/mlpack/methods/ann/init_rules/const_init.hpp
 include/mlpack/methods/ann/init_rules/gaussian_init.hpp
@@ -516,6 +536,8 @@ include/mlpack/methods/ann/layer/gru.hpp
 include/mlpack/methods/ann/layer/gru_impl.hpp
 include/mlpack/methods/ann/layer/hard_tanh.hpp
 include/mlpack/methods/ann/layer/hard_tanh_impl.hpp
+include/mlpack/methods/ann/layer/highway.hpp
+include/mlpack/methods/ann/layer/highway_impl.hpp
 include/mlpack/methods/ann/layer/join.hpp
 include/mlpack/methods/ann/layer/join_impl.hpp
 include/mlpack/methods/ann/layer/layer.hpp
@@ -539,10 +561,14 @@ include/mlpack/methods/ann/layer/max_pooling.hpp
 include/mlpack/methods/ann/layer/max_pooling_impl.hpp
 include/mlpack/methods/ann/layer/mean_pooling.hpp
 include/mlpack/methods/ann/layer/mean_pooling_impl.hpp
+include/mlpack/methods/ann/layer/minibatch_discrimination.hpp
+include/mlpack/methods/ann/layer/minibatch_discrimination_impl.hpp
 include/mlpack/methods/ann/layer/multiply_constant.hpp
 include/mlpack/methods/ann/layer/multiply_constant_impl.hpp
 include/mlpack/methods/ann/layer/multiply_merge.hpp
 include/mlpack/methods/ann/layer/multiply_merge_impl.hpp
+include/mlpack/methods/ann/layer/padding.hpp
+include/mlpack/methods/ann/layer/padding_impl.hpp
 include/mlpack/methods/ann/layer/parametric_relu.hpp
 include/mlpack/methods/ann/layer/parametric_relu_impl.hpp
 include/mlpack/methods/ann/layer/recurrent.hpp
@@ -560,8 +586,12 @@ include/mlpack/methods/ann/layer/sequential_impl.hpp
 include/mlpack/methods/ann/layer/subview.hpp
 include/mlpack/methods/ann/layer/transposed_convolution.hpp
 include/mlpack/methods/ann/layer/transposed_convolution_impl.hpp
+include/mlpack/methods/ann/layer/virtual_batch_norm.hpp
+include/mlpack/methods/ann/layer/virtual_batch_norm_impl.hpp
 include/mlpack/methods/ann/layer/vr_class_reward.hpp
 include/mlpack/methods/ann/layer/vr_class_reward_impl.hpp
+include/mlpack/methods/ann/layer/weight_norm.hpp
+include/mlpack/methods/ann/layer/weight_norm_impl.hpp
 include/mlpack/methods/ann/loss_functions/
 include/mlpack/methods/ann/loss_functions/cross_entropy_error.hpp
 include/mlpack/methods/ann/loss_functions/cross_entropy_error_impl.hpp
@@ -584,6 +614,13 @@ include/mlpack/methods/ann/rbm/rbm.hpp
 include/mlpack/methods/ann/rbm/rbm_impl.hpp
 include/mlpack/methods/ann/rbm/rbm_policies.hpp
 include/mlpack/methods/ann/rbm/spike_slab_rbm_impl.hpp
+include/mlpack/methods/ann/regularizer/
+include/mlpack/methods/ann/regularizer/lregularizer.hpp
+include/mlpack/methods/ann/regularizer/lregularizer_impl.hpp
+include/mlpack/methods/ann/regularizer/no_regularizer.hpp
+include/mlpack/methods/ann/regularizer/orthogonal_regularizer.hpp
+include/mlpack/methods/ann/regularizer/orthogonal_regularizer_impl.hpp
+include/mlpack/methods/ann/regularizer/regularizer.hpp
 include/mlpack/methods/ann/rnn.hpp
 include/mlpack/methods/ann/rnn_impl.hpp
 include/mlpack/methods/ann/visitor/
@@ -591,6 +628,8 @@ include/mlpack/methods/ann/visitor/add_visitor.hpp
 include/mlpack/methods/ann/visitor/add_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/backward_visitor.hpp
 include/mlpack/methods/ann/visitor/backward_visitor_impl.hpp
+include/mlpack/methods/ann/visitor/bias_set_visitor.hpp
+include/mlpack/methods/ann/visitor/bias_set_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/copy_visitor.hpp
 include/mlpack/methods/ann/visitor/copy_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/delete_visitor.hpp
@@ -834,6 +873,8 @@ include/mlpack/methods/matrix_completion/matrix_completion.hpp
 include/mlpack/methods/mean_shift/
 include/mlpack/methods/mean_shift/mean_shift.hpp
 include/mlpack/methods/mean_shift/mean_shift_impl.hpp
+include/mlpack/methods/mvu/
+include/mlpack/methods/mvu/mvu.hpp
 include/mlpack/methods/naive_bayes/
 include/mlpack/methods/naive_bayes/naive_bayes_classifier.hpp
 include/mlpack/methods/naive_bayes/naive_bayes_classifier_impl.hpp
@@ -879,6 +920,9 @@ include/mlpack/methods/perceptron/learning_policies/
 include/mlpack/methods/perceptron/learning_policies/simple_weight_update.hpp
 include/mlpack/methods/perceptron/perceptron.hpp
 include/mlpack/methods/perceptron/perceptron_impl.hpp
+include/mlpack/methods/preprocess/
+include/mlpack/methods/preprocess/scaling_model.hpp
+include/mlpack/methods/preprocess/scaling_model_impl.hpp
 include/mlpack/methods/quic_svd/
 include/mlpack/methods/quic_svd/quic_svd.hpp
 include/mlpack/methods/radical/
@@ -918,7 +962,9 @@ include/mlpack/methods/reinforcement_learning/async_learning_impl.hpp
 include/mlpack/methods/reinforcement_learning/environment/
 include/mlpack/methods/reinforcement_learning/environment/acrobot.hpp
 include/mlpack/methods/reinforcement_learning/environment/cart_pole.hpp
+include/mlpack/methods/reinforcement_learning/environment/continuous_double_pole_cart.hpp
 include/mlpack/methods/reinforcement_learning/environment/continuous_mountain_car.hpp
+include/mlpack/methods/reinforcement_learning/environment/double_pole_cart.hpp
 include/mlpack/methods/reinforcement_learning/environment/mountain_car.hpp
 include/mlpack/methods/reinforcement_learning/environment/pendulum.hpp
 include/mlpack/methods/reinforcement_learning/environment/reward_clipping.hpp
@@ -928,7 +974,9 @@ include/mlpack/methods/reinforcement_learning/policy/greedy_policy.hpp
 include/mlpack/methods/reinforcement_learning/q_learning.hpp
 include/mlpack/methods/reinforcement_learning/q_learning_impl.hpp
 include/mlpack/methods/reinforcement_learning/replay/
+include/mlpack/methods/reinforcement_learning/replay/prioritized_replay.hpp
 include/mlpack/methods/reinforcement_learning/replay/random_replay.hpp
+include/mlpack/methods/reinforcement_learning/replay/sumtree.hpp
 include/mlpack/methods/reinforcement_learning/training_config.hpp
 include/mlpack/methods/reinforcement_learning/worker/
 include/mlpack/methods/reinforcement_learning/worker/n_step_q_learning_worker.hpp
@@ -969,6 +1017,8 @@ include/mlpack/tests/test_function_tools.hpp
 include/mlpack/tests/test_tools.hpp
 @lib lib/libmlpack.so.${LIBmlpack_VERSION}
 lib/pkgconfig/mlpack.pc
+@comment lib/python${MODPY_VERSION}/
+@comment ${SITEDIR}/
 @man man/man1/mlpack_adaboost.1
 @man man/man1/mlpack_approx_kfn.1
 @man man/man1/mlpack_cf.1
@@ -1007,6 +1057,7 @@ lib/pkgconfig/mlpack.pc
 @man man/man1/mlpack_preprocess_binarize.1
 @man man/man1/mlpack_preprocess_describe.1
 @man man/man1/mlpack_preprocess_imputer.1
+@man man/man1/mlpack_preprocess_scale.1
 @man man/man1/mlpack_preprocess_split.1
 @man man/man1/mlpack_radical.1
 @man man/man1/mlpack_random_forest.1

@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/08/01 11:44:35 espie Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/10/28 15:13:35 espie Exp $
 * no -O3
 * fix man directory
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -196,8 +196,8 @@ else()
+@@ -201,8 +201,8 @@ else()
    add_definitions(-DARMA_NO_DEBUG)
    add_definitions(-DNDEBUG)
    if (NOT MSVC)

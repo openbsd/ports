@@ -1,10 +1,10 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/10/21 16:13:57 espie Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/10/28 15:13:35 espie Exp $
 Not sure if blas build is okay ? it should probably have gfortran built-in
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -270,14 +270,14 @@ else()
+@@ -275,14 +275,14 @@ else()
        
        if(BLAS_FOUND)
          set(ARMA_USE_BLAS true)

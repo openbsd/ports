@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/31 13:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2019/10/28 15:13:35 espie Exp $
 
 COMMENT = 	C++ template library for function minimization
-DISTNAME = 	ensmallen-1.15.1
+DISTNAME = 	ensmallen-2.10.3
 CATEGORIES = 	math
 HOMEPAGE = 	http://www.ensmallen.org/
 MAINTAINER =	Marc Espie <espie@openbsd.org>

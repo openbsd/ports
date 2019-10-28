@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/08/01 11:44:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/10/28 15:13:35 espie Exp $
 
 COMMENT = 	C++ library for scientific computing
-DISTNAME = 	armadillo-9.600.5
-SHARED_LIBS = 	armadillo 2.0	# 9.100
+DISTNAME = 	armadillo-9.800.1
+SHARED_LIBS = 	armadillo 3.0	# 9.100
 CATEGORIES = 	math
 HOMEPAGE = 	http://arma.sourceforge.net/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
