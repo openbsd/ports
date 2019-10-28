@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/10/28 14:15:42 fcambus Exp $
 
 COMMENT =	Provide the stuff missing in List::Util
 
-DISTNAME =	List-SomeUtils-0.56
+DISTNAME =	List-SomeUtils-0.58
 
 CATEGORIES =	textproc
 
