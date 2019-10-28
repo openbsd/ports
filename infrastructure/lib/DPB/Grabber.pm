@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.39 2019/10/24 09:49:58 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.40 2019/10/28 14:24:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -60,6 +60,14 @@ sub new
 		    $state);
 	} else {
 		$o->{fetch} = DPB::FetchDummy->new;
+	}
+	if ($state->{roach}) {
+		require DPB::Roach;
+		push(@values, 'roach');
+		$o->{roach} = DPB::Roach->new($state->engine, $state->logger,
+		    $state);
+	} else {
+		$o->{roach} = DPB::RoachDummy->new;
 	}
 	if ($state->{test}) {
 		push(@values, 'test');
@@ -226,6 +234,17 @@ sub forget_cache
 {
        my $self = shift;
        $self->{cache} = {};
+}
+
+package DPB::RoachDummy;
+sub new
+{
+	my $class = shift;
+	return bless {}, $class;
+}
+
+sub build_roachinfo
+{
 }
 
 1;

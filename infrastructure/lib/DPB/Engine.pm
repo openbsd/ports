@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.134 2019/10/24 09:49:58 espie Exp $
+# $OpenBSD: Engine.pm,v 1.135 2019/10/28 14:24:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -61,6 +61,10 @@ sub new
 	if ($state->{want_fetchinfo}) {
 		require DPB::SubEngine::Fetch;
 		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
+	}
+	if ($state->{roach}) {
+		require DPB::SubEngine::Roach;
+		$o->{toroach} = DPB::SubEngine::Roach->new($o);
 	}
 	$o->{log} = $state->logger->append("engine");
 	$o->{stats} = DPB::Stats->new($state);
@@ -438,6 +442,11 @@ sub check_buildable
 	    });
 	$self->stats;
 	return $r;
+}
+sub new_roach
+{
+	my ($self, $r) = @_;
+	$self->{toroach}->new_roach($r);
 }
 
 sub new_path

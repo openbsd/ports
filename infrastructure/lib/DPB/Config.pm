@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.84 2019/10/24 09:51:26 espie Exp $
+# $OpenBSD: Config.pm,v 1.85 2019/10/28 14:24:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -93,8 +93,8 @@ sub parse_command_line
 		},
 	};
 
-	$state->SUPER_handle_options('acemqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
-    "[-acemqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
+	$state->SUPER_handle_options('acemnqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
+    "[-acemnqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
     "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
@@ -105,6 +105,7 @@ sub parse_command_line
 		}
 	}
 
+	$state->{roach} = $state->opt('n'); 	# for "new"
     	$state->{chroot} = $state->opt('B');
 	$state->{base_user} = DPB::User->from_uid($<);
 	if (!defined $state->{base_user}) {
