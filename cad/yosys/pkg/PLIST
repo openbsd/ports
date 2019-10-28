@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/01/09 04:27:10 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/10/28 08:00:17 bentley Exp $
 @bin bin/yosys
 bin/yosys-config
 @bin bin/yosys-filterlib
@@ -9,7 +9,16 @@ share/yosys/achronix/speedster22i/
 share/yosys/achronix/speedster22i/cells_map.v
 share/yosys/achronix/speedster22i/cells_sim.v
 share/yosys/adff2dff.v
+share/yosys/anlogic/
+share/yosys/anlogic/arith_map.v
+share/yosys/anlogic/cells_map.v
+share/yosys/anlogic/cells_sim.v
+share/yosys/anlogic/dram_init_16x4.vh
+share/yosys/anlogic/drams.txt
+share/yosys/anlogic/drams_map.v
+share/yosys/anlogic/eagle_bb.v
 share/yosys/cells.lib
+share/yosys/cmp2lut.v
 share/yosys/coolrunner2/
 share/yosys/coolrunner2/cells_latch.v
 share/yosys/coolrunner2/cells_sim.v
@@ -18,13 +27,31 @@ share/yosys/coolrunner2/xc2_dff.lib
 share/yosys/dff2ff.v
 share/yosys/ecp5/
 share/yosys/ecp5/arith_map.v
+share/yosys/ecp5/bram.txt
+share/yosys/ecp5/bram_conn_1.vh
+share/yosys/ecp5/bram_conn_18.vh
+share/yosys/ecp5/bram_conn_2.vh
+share/yosys/ecp5/bram_conn_4.vh
+share/yosys/ecp5/bram_conn_9.vh
+share/yosys/ecp5/bram_init_1_2_4.vh
+share/yosys/ecp5/bram_init_9_18_36.vh
+share/yosys/ecp5/brams_map.v
+share/yosys/ecp5/cells_bb.v
 share/yosys/ecp5/cells_map.v
 share/yosys/ecp5/cells_sim.v
 share/yosys/ecp5/dram.txt
 share/yosys/ecp5/drams_map.v
+share/yosys/ecp5/latches_map.v
+share/yosys/gate2lut.v
 share/yosys/gowin/
+share/yosys/gowin/arith_map.v
+share/yosys/gowin/bram.txt
+share/yosys/gowin/brams_init3.vh
+share/yosys/gowin/brams_map.v
 share/yosys/gowin/cells_map.v
 share/yosys/gowin/cells_sim.v
+share/yosys/gowin/dram.txt
+share/yosys/gowin/drams_map.v
 share/yosys/greenpak4/
 share/yosys/greenpak4/cells_blackbox.v
 share/yosys/greenpak4/cells_latch.v
@@ -100,9 +127,13 @@ share/yosys/intel/max10/cells_map.v
 share/yosys/intel/max10/cells_sim.v
 share/yosys/pmux2mux.v
 share/yosys/python3/
-share/yosys/python3/${MODPY_PYCACHE}/
+${MODPY_COMMENT}share/yosys/python3/${MODPY_PYCACHE}/
 share/yosys/python3/${MODPY_PYCACHE}smtio.${MODPY_PYC_MAGIC_TAG}pyc
 share/yosys/python3/smtio.py
+share/yosys/sf2/
+share/yosys/sf2/arith_map.v
+share/yosys/sf2/cells_map.v
+share/yosys/sf2/cells_sim.v
 share/yosys/simcells.v
 share/yosys/simlib.v
 share/yosys/techmap.v
@@ -120,4 +151,5 @@ share/yosys/xilinx/cells_sim.v
 share/yosys/xilinx/cells_xtra.v
 share/yosys/xilinx/drams.txt
 share/yosys/xilinx/drams_map.v
-share/yosys/xilinx/lut2lut.v
+share/yosys/xilinx/ff_map.v
+share/yosys/xilinx/lut_map.v
