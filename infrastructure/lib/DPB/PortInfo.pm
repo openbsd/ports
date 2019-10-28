@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.39 2019/10/28 09:47:40 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.40 2019/10/28 15:55:49 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -150,7 +150,7 @@ sub new
 			$h{$v} = 1;
 		}
 	}
-	bless \%h, $class;
+	return bless \%h, $class;
 }
 
 sub string
@@ -165,6 +165,22 @@ sub string
 		}
 	}
 	return join(',', @l);
+}
+
+package AddRoachList;
+our @ISA = (qw(AddPropertyList));
+sub new
+{
+	my ($class, $value) = @_;
+	my %h = ();
+	for my $v ($class->make_list($value)) {
+		if ($v =~ /^(.*?)\:(.*)$/) {
+			$h{$1} = $2;
+		} else {
+			$h{$v} = 1;
+		}
+	}
+	return bless \%h, $class;
 }
 
 package AddOrderedList;
@@ -316,8 +332,9 @@ my %adder = (
 				 # and shrinking
 	# DISTIGNORE should be there ?
 	# stuff for roach
+	DISTNAME => 'AddInfo',
 	HOMEPAGE => 'AddInfo',
-	PORTROACH => 'AddInfo',
+	PORTROACH => 'AddRoachList',
 	PORTROACH_COMMENT => 'AddInfo',
 	MAINTAINER => 'AddInfo',
 );

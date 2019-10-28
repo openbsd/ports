@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Roach.pm,v 1.1 2019/10/28 14:24:30 espie Exp $
+# $OpenBSD: Roach.pm,v 1.2 2019/10/28 15:55:49 espie Exp $
 #
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
@@ -54,17 +54,33 @@ sub build_roachinfo
 
 package DPB::RoachInfo;
 
+sub roachinfo
+{
+	return (qw(HOMEPAGE PORTROACH PORTROACH_COMMENT MAINTAINER));
+}
+
 sub new
 {
 	my ($class, $v) = @_;
-	my $o = bless {}, $class;
+	my $o = bless {pkgpath => $v->pkgpath}, $class;
+	for my $d ($class->roachinfo) {
+		if (defined $v->{info}{$d}) {
+			$o->{$d} = $v->{info}{$d};
+		}
+	}
+	# XXX need a copy because it will be destroyed by FETCH
+	if (defined $v->{info}{DIST}) {
+		my %h = %{$v->{info}{DIST}};
+		$o->{DIST} = \%h;
+	}
 	$class->forget_roachinfo($v);
+	return $o;
 }
 
 sub forget_roachinfo
 {
 	my ($class, $v) = @_;
-	for my $d (qw(HOMEPAGE PORTROACH PORTROACH_COMMENT MAINTAINER)) {
+	for my $d ($class->roachinfo) {
 		delete $v->{info}{$d};
 	}
 }

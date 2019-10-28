@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.40 2019/10/28 14:24:30 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.41 2019/10/28 15:55:49 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,7 +53,7 @@ sub new
 		eventloopcode => $eventloopcode
 	    }, $class;
 	my @values = ();
-	if ($state->{want_fetchinfo}) {
+	if ($state->{want_fetchinfo} || $state->{roach}) {
 		require DPB::Fetch;
 		push(@values, 'fetch');
 		$o->{fetch} = DPB::Fetch->new($state->distdir, $state->logger,
