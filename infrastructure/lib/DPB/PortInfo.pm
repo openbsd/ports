@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.38 2018/07/15 09:56:45 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.39 2019/10/28 09:47:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,13 +16,24 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
+
+# AddInfo is responsible for converting a given variable value given by
+# dump-vars into a properly nice "object"
+# Then DPB::PortInfo collates those into a complete info object
+#
+# and DPB::PkgPath::merge_depends DPB::Fetch::build_distinfo
+# are responsible for cleaning up the information further
+
 package AddInfo;
+
+# by default, we take the value and add it as the corresponding \$string
+# to the portinfo object
 
 sub add
 {
-	my ($class, $var, $o, $value, $parent) = @_;
+	my ($class, $var, $info, $value, $parent) = @_;
 	return if $value =~ m/^[\s\-]*$/;
-	$o->{$var} = $class->new($value, $o, $parent);
+	$info->{$var} = $class->new($value, $info, $parent);
 }
 
 sub new
@@ -37,6 +48,7 @@ sub string
 	return $$self;
 }
 
+# by default don't show up in quick dumps
 sub quickie
 {
 	return 0;
@@ -53,16 +65,15 @@ sub string
 	return $msg;
 }
 
-
-
 package AddYesNo;
 our @ISA = qw(AddInfo);
+# don't add 'no' values to save space
 
 sub add
 {
-	my ($class, $var, $o, $value, $parent) = @_;
+	my ($class, $var, $info, $value, $parent) = @_;
 	return if $value =~ m/^no$/i;
-	$o->{$var} = $class->new($value, $o, $parent);
+	$info->{$var} = $class->new($value, $info, $parent);
 }
 
 sub new
@@ -72,17 +83,16 @@ sub new
 	bless \$a, $class;
 }
 
-# micro-optimisation: to save space and time, we only create value if
+# ... and similarly for PERMIT_* but the other way around
 # PERMIT_DISTFILES* is != yes.
-
 package AddNegative;
 our @ISA = qw(AddInfo);
 
 sub add
 {
-	my ($class, $var, $o, $value, $parent) = @_;
+	my ($class, $var, $info, $value, $parent) = @_;
 	return if $value =~ m/^yes$/i;
-	$o->{$var} = $class->new($value, $o, $parent);
+	$info->{$var} = $class->new($value, $info, $parent);
 }
 
 sub new
@@ -92,6 +102,7 @@ sub new
 	bless \$a, $class;
 }
 
+# variables we WANT in a quick dump
 package AddInfoShow;
 our @ISA = qw(AddInfo);
 sub quickie
@@ -99,6 +110,7 @@ sub quickie
 	return 1;
 }
 
+# by default, unordered lists
 package AddList;
 our @ISA = qw(AddInfo);
 
@@ -123,6 +135,7 @@ sub string
 	return join(', ', keys %$self);
 }
 
+# specific to DPB_PROPERTIES
 package AddPropertyList;
 our @ISA = (qw(AddList));
 
@@ -148,7 +161,7 @@ sub string
 		if ($v eq '1') {
 			push(@l, $k);
 		} else {
-			push(@l, "$k->$v");
+			push(@l, $k."->".$v);
 		}
 	}
 	return join(',', @l);
@@ -172,9 +185,9 @@ package FetchManually;
 our @ISA = qw(AddOrderedList);
 sub add
 {
-	my ($class, $var, $o, $value, $parent) = @_;
+	my ($class, $var, $info, $value, $parent) = @_;
 	return if $value =~ /^\s*no\s*$/i;
-	$class->SUPER::add($var, $o, $value, $parent);
+	$class->SUPER::add($var, $info, $value, $parent);
 }
 
 sub make_list
@@ -200,7 +213,7 @@ sub extra
 
 sub new
 {
-	my ($class, $value, $self, $parent) = @_;
+	my ($class, $value, $info, $parent) = @_;
 	my $r = {};
 	for my $d ($class->make_list($value)) {
 		my $copy = $d;
@@ -208,15 +221,15 @@ sub new
 		$d =~ s/^\:+//;
 		$d =~ s/^[^\/]*\://;
 		if ($d =~ s/\:(?:patch|build|configure)$//) {
-			Extra->add($class->extra, $self, $d);
+			Extra->add($class->extra, $info, $d);
 		} else {
 			$d =~ s/\:$//;
 			if ($d =~ m/[:<>=]/) {
 				DPB::Util->die("Error: invalid *DEPENDS $copy");
 			} else {
-				my $info = DPB::PkgPath->new($d);
-				$info->{parent} //= $parent;
-				$r->{$info} = $info;
+				my $path = DPB::PkgPath->new($d);
+				$path->{parent} //= $parent;
+				$r->{$path} = $path;
 			}
 		}
 	}
@@ -246,12 +259,12 @@ our @ISA = qw(AddDepends);
 
 sub add
 {
-	my ($class, $key, $self, $value, $parent) = @_;
-	$self->{$key} //= bless {}, $class;
+	my ($class, $key, $info, $value, $parent) = @_;
+	$info->{$key} //= bless {}, $class;
 	my $path = DPB::PkgPath->new($value);
 	$path->{parent} //= $parent;
-	$self->{$key}{$path} = $path;
-	return $self;
+	$info->{$key}{$path} = $path;
+	return $info;
 }
 
 package DPB::PortInfo;
@@ -302,6 +315,11 @@ my %adder = (
 	FDEPENDS => "AddDepends",# DISTFILES too, but after DISTIGNORE, 
 				 # and shrinking
 	# DISTIGNORE should be there ?
+	# stuff for roach
+	HOMEPAGE => 'AddInfo',
+	PORTROACH => 'AddInfo',
+	PORTROACH_COMMENT => 'AddInfo',
+	MAINTAINER => 'AddInfo',
 );
 
 sub wanted
