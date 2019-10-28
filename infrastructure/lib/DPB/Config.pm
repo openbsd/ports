@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.85 2019/10/28 14:24:30 espie Exp $
+# $OpenBSD: Config.pm,v 1.86 2019/10/28 14:27:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -251,6 +251,10 @@ sub parse_command_line
 	if ($state->define_present('LISTING_EXTRA') && 
 	    !defined $state->{opt}{e}) {
 		$state->{opt}{e} = $state->{subst}->value('LISTING_EXTRA');
+	}
+	if ($state->define_present('ROACH') && 
+	    !defined $state->{opt}{n}) {
+	    	$state->{roach} = $state->{subst}->value('ROACH');
 	}
 	if ($state->define_present('LOCKDIR')) {
 		$state->{lockdir} = $state->{subst}->value('LOCKDIR');
