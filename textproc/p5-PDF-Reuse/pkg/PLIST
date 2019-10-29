@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/01/05 14:56:03 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/10/29 11:56:52 sthen Exp $
 ${P5SITE}/PDF/
 ${P5SITE}/PDF/Reuse/
 ${P5SITE}/PDF/Reuse.pm
 ${P5SITE}/PDF/Reuse/Util.pm
+${P5SITE}/PDF/Util/
+${P5SITE}/PDF/Util/graphObj_pl
+${P5SITE}/PDF/Util/reuseComponent_pl
 ${P5SITE}/auto/
 ${P5SITE}/auto/PDF/
 ${P5SITE}/auto/PDF/Reuse/
