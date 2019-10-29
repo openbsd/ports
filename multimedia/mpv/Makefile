@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/10/27 10:28:06 kn Exp $
+# $OpenBSD: Makefile,v 1.55 2019/10/29 16:00:07 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -31,6 +31,8 @@ WANTLIB += xcb-glx z ${MODLUA_WANTLIB}
 
 MODULES =		lang/lua \
 			lang/python
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
@@ -91,8 +93,9 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-vulkan \
 			--disable-wayland
 
-MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+MAKE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			RST2MAN=rst2man${MODPY_BIN_SUFFIX}
 MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
 NO_TEST =		Yes
