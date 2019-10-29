@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2019/10/16 13:47:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2019/10/29 22:50:14 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	1.9.4
-REVISION=	0
+GH_TAGNAME=	2.1
 
 CATEGORIES=	mail
 
@@ -16,8 +15,9 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # Apache License 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto event glib-2.0 gthread-2.0 icudata icui18n icuuc
-WANTLIB += intl m magic pcre pthread sqlite3 ssl z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += blas c crypto glib-2.0 icudata icui18n icuuc intl m
+WANTLIB += pcre sodium sqlite3 ssl z
 
 FLAVORS=	no_luajit
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -31,9 +31,15 @@ MODULES=	devel/cmake
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/gettext,-runtime \
 		devel/glib2 \
-		devel/libmagic \
 		devel/pcre \
+		security/libsodium \
 		textproc/icu4c
+
+# uses cblas headers; pull this in via LDEP and register an "extra" dependency
+# on cblas lib to make sure rspamd gets updated for major changes in cblas
+LIB_DEPENDS+=	math/cblas
+WANTLIB+=	cblas
+
 BUILD_DEPENDS+=	devel/ragel
 # /var/rspamd needs to exist for tests to run
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH}
@@ -49,25 +55,19 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DLOGDIR="${LOCALSTATEDIR}/log/rspamd" \
 		-DMANDIR="${PREFIX}/man" \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
-		-DRSPAMD_USER="_rspamd" \
-		-DRSPAMD_GROUP="_rspamd"
+		-DRSPAMD_USER="_rspamd"
 
 .if ${FLAVOR:Mno_luajit}
-CONFIGURE_ARGS+= -DENABLE_LUAJIT=0 \
-		-DENABLE_TORCH=0
+CONFIGURE_ARGS+= -DENABLE_LUAJIT=0
 MODULES+=	lang/lua
 MODLUA_VERSION=	5.3
 MODLUA_SA=	Yes	# avoid overwriting FULLPKGNAME
 LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
 WANTLIB+=	${MODLUA_WANTLIB}
 .else
-LIB_DEPENDS+=	lang/luajit \
-		math/lapack
-WANTLIB+=	blas lapack luajit-5.1
+LIB_DEPENDS+=	lang/luajit
+WANTLIB+=	luajit-5.1
 .endif
-
-# Make sure we pick up the base libevent, never the ports one!
-CONFIGURE_ARGS+=	-DLIBEVENT_ROOT_DIR=/usr
 
 # Make sure you have no rspamd or redis instances running and note that the
 # test suite uses the network.

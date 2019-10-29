@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.10 2019/03/13 14:46:10 sthen Exp $
+$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.11 2019/10/29 22:50:14 sthen Exp $
 Index: src/rspamadm/CMakeLists.txt
 --- src/rspamadm/CMakeLists.txt.orig
 +++ src/rspamadm/CMakeLists.txt
-@@ -26,9 +26,9 @@ ENDIF()
+@@ -23,9 +23,9 @@ ENDIF()
  ADD_EXECUTABLE(rspamadm ${RSPAMADMSRC})
  TARGET_LINK_LIBRARIES(rspamadm rspamd-server)
  
