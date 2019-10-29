@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2018/06/02 20:53:37 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2019/10/29 14:49:19 sthen Exp $
 @conflict p5-SNMP-*
 @pkgpath net/net-snmp
 @pkgpath net/net-snmp,-perl
@@ -223,6 +223,7 @@ include/net-snmp/system/openbsd.h
 include/net-snmp/system/openbsd4.h
 include/net-snmp/system/openbsd5.h
 include/net-snmp/system/openbsd6.h
+include/net-snmp/system/openbsd7.h
 include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
 include/net-snmp/system/solaris2.3.h

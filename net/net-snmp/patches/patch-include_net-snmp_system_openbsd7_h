@@ -1,0 +1,9 @@
+$OpenBSD: patch-include_net-snmp_system_openbsd7_h,v 1.1 2019/10/29 14:49:19 sthen Exp $
+
+Index: include/net-snmp/system/openbsd7.h
+--- include/net-snmp/system/openbsd7.h.orig
++++ include/net-snmp/system/openbsd7.h
+@@ -0,0 +1,3 @@
++/* openbsd7 is a superset of all since openbsd3 */
++#include "openbsd7.h"
++#define openbsd6 openbsd6
