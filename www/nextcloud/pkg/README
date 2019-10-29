@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.15 2019/08/21 13:26:01 gonzalo Exp $
+$OpenBSD: README,v 1.16 2019/10/29 07:24:03 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -110,6 +110,7 @@ server "domain.tld" {
 
 	location match "/nextcloud/oc[ms]%-provider/*" {
 		directory index index.php
+		pass
 	}
 }
 ---8<---------------------------------------------------------------------------
@@ -214,6 +215,10 @@ Finishing and validating the installation
 -----------------------------------------
 Make sure the web server can resolve its hostname (e.g. if chrooted, by creating
 ${PREFIX}/etc/hosts and/or ${PREFIX}/etc/resolv.conf).
+
+Create the file "CAN_INSTALL" to allow web-based installation:
+
+    # touch ${INSTDIR}/config/CAN_INSTALL
 
 Accessing https://<hostname>/nextcloud with a Web browser will finish the
 installation and create a new admin user.
