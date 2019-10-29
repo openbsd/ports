@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/10/16 06:47:12 claudio Exp $
+# $OpenBSD: Makefile,v 1.8 2019/10/29 12:37:54 claudio Exp $
 
 COMMENT =		systems monitoring and alerting toolkit
 
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		prometheus
-GH_TAGNAME =		v2.13.0
+GH_TAGNAME =		v2.13.1
 
 CATEGORIES =		sysutils
 
