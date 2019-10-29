@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/10/29 11:08:47 kn Exp $
 
 COMMENT=	resource manager for PC/SC
 
-V=		1.8.22
+V=		1.8.23
 DISTNAME=	pcsc-lite-${V}
-REVISION=	3
 CATEGORIES=	security
 
 SHARED_LIBS+=	pcsclite	1.0 # 1.0.0
@@ -12,7 +11,7 @@ SHARED_LIBS+=	pcscspy		0.0 # 0.0.0
 
 HOMEPAGE=	https://salsa.debian.org/debian/pcsc-lite
 
-MASTER_SITES=	https://alioth-archive.debian.org/releases/pcsclite/pcsclite/1.8.22/
+MASTER_SITES=	https://alioth-archive.debian.org/releases/pcsclite/pcsclite/${V}/
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -22,6 +21,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c pthread usb-1.0
 
 MODULES+=		lang/python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_BUILDDEP=		No
+
+MODPY_ADJ_LINES=	src/spy/pcsc-spy
 
 # thread-local storage
 COMPILER=		base-clang ports-gcc
