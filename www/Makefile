@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.927 2019/10/16 20:10:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.928 2019/10/29 10:53:18 semarie Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -614,5 +614,6 @@
      SUBDIR += wwwoffle
      SUBDIR += xapian-omega
      SUBDIR += youtube-dl
+     SUBDIR += zola
 
 .include <bsd.port.subdir.mk>
