@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.137 2019/10/23 13:38:12 espie Exp $
+# $OpenBSD: dpb,v 1.138 2019/10/30 16:16:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -197,46 +197,42 @@ my $dump = DPB::Util->make_hot($state->logger->append('dump'));
 my $debug = DPB::Util->make_hot($state->logger->append('debug'));
 $trace->set_logger($debug);
 
+# this is the usual event loop
 sub handle_non_waiting_jobs
 {
-	my $checked = 0;
 	my $force_report = 0;
-	my $reaped = DPB::Core->reap;
+	DPB::Core->reap;
 	$state->{external}->receive_commands;
 	$keep_going = !-e $state->logdir."/stop";
-	if (DPB::Core->avail > 1) {
-		$state->engine->recheck_errors;
-	}
-	if (DPB::Core->avail) {
-		$state->engine->check_buildable;
-		$checked = 1;
-	}
-
-	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
-		$force_report = 1;
-		if (!$state->engine->start_new_job) {
-			my $q = $state->engine->{tobuild}{queue};
-			print $debug "SPINNING ON MAIN\n";
-			while (my ($k, $v) = each %{$q->{o}}) {
-				print $debug $k, "=>", $v->logname, "\n";
-			}
-			last;
+	if ($keep_going) {
+		if (DPB::Core->avail > 1) {
+			$state->engine->recheck_errors;
 		}
-	}
-	while ($keep_going && DPB::Core::Fetcher->avail &&
-	    $state->engine->can_fetch) {
-	    	if (!$checked) {
+		if (DPB::Core->avail || DPB::Core::Fetcher->avail) {
 			$state->engine->check_buildable;
-			$checked = 1;
 		}
-		$force_report = 1;
-		if (!$state->engine->start_new_fetch) {
-			print $debug "SPINNING ON FETCH\n";
-			my $q = $state->engine->{tofetch}{queue};
-			while (my ($k, $v) = each %{$q->{o}}) {
-				print $debug $k, "=>", $v->logname, "\n";
+
+		while (DPB::Core->avail && $state->engine->can_build) {
+			$force_report = 1;
+			if (!$state->engine->start_new_job) {
+				my $q = $state->engine->{tobuild}{queue};
+				print $debug "SPINNING ON MAIN\n";
+				while (my ($k, $v) = each %{$q->{o}}) {
+					print $debug $k, "=>", $v->logname, "\n";
+				}
+				last;
 			}
-			last;
+		}
+		while (DPB::Core::Fetcher->avail && $state->engine->can_fetch) {
+			$force_report = 1;
+			if (!$state->engine->start_new_fetch) {
+				print $debug "SPINNING ON FETCH\n";
+				my $q = $state->engine->{tofetch}{queue};
+				while (my ($k, $v) = each %{$q->{o}}) {
+					print $debug $k, "=>", $v->logname, "\n";
+				}
+				last;
+			}
 		}
 	}
 	DPB::Core->log_concurrency(CORE::time(), $state->{concurrent});
@@ -258,17 +254,20 @@ sub main_loop
 					}
 				}
 			}
+			if ($state->{fetch_only}) {
+				if (!DPB::Core::Fetcher->running) {
+					last if !$keep_going;
+					if (!$state->engine->can_fetch) {
+						$state->engine->check_buildable;
+						if (!$state->engine->can_fetch) {
+							last;
+						}
+					}
+
+				}
+			}
 			if (DPB::Core->running) {
 				DPB::Core->reap_wait;
-			}
-			if ($state->{fetch_only}) {
-				if (!DPB::Core::Fetcher->running &&
-				    (!$keep_going || !$state->engine->can_fetch)) {
-					$state->engine->check_buildable;
-					if (!$state->engine->can_fetch) {
-						last;
-					}
-				}
 			}
 		}
 		if (!$state->opt('q') || !$state->engine->recheck_errors) {
