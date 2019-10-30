@@ -1,4 +1,4 @@
-$OpenBSD: patch-suricata_yaml_in,v 1.6 2019/10/02 17:42:24 jasper Exp $
+$OpenBSD: patch-suricata_yaml_in,v 1.7 2019/10/30 12:41:46 jasper Exp $
 
 After reload allow to write log files or use syslog.
 Switch user and group to avoid running as root.
@@ -24,15 +24,7 @@ Index: suricata.yaml.in
        #prefix: "@cee: " # prefix to prepend to each log entry
        # the following are valid when type: syslog above
        #identity: "suricata"
-@@ -253,6 +255,7 @@ outputs:
-   - unified2-alert:
-       enabled: no
-       filename: unified2.alert
-+      filemode: 664
- 
-       # File size limit.  Can be specified in kb, mb, gb.  Just a number
-       # is parsed as bytes.
-@@ -295,6 +298,7 @@ outputs:
+@@ -297,6 +299,7 @@ outputs:
    - http-log:
        enabled: no
        filename: http.log
@@ -40,7 +32,7 @@ Index: suricata.yaml.in
        append: yes
        #extended: yes     # enable this for extended logging information
        #custom: yes       # enabled the custom logging format (defined by customformat)
-@@ -305,6 +309,7 @@ outputs:
+@@ -307,6 +310,7 @@ outputs:
    - tls-log:
        enabled: no  # Log TLS connections.
        filename: tls.log # File to store TLS logs.
@@ -48,15 +40,7 @@ Index: suricata.yaml.in
        append: yes
        #extended: yes     # Log extended information like fingerprint
        #custom: yes       # enabled the custom logging format (defined by customformat)
-@@ -324,6 +329,7 @@ outputs:
-   - dns-log:
-       enabled: no
-       filename: dns.log
-+      filemode: 664
-       append: yes
-       #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
- 
-@@ -360,6 +366,7 @@ outputs:
+@@ -354,6 +358,7 @@ outputs:
    - pcap-log:
        enabled: no
        filename: log.pcap
@@ -64,7 +48,7 @@ Index: suricata.yaml.in
  
        # File size limit.  Can be specified in kb, mb, gb.  Just a number
        # is parsed as bytes.
-@@ -394,6 +401,7 @@ outputs:
+@@ -388,6 +393,7 @@ outputs:
    - alert-debug:
        enabled: no
        filename: alert-debug.log
@@ -72,7 +56,7 @@ Index: suricata.yaml.in
        append: yes
        #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
  
-@@ -409,6 +417,7 @@ outputs:
+@@ -403,6 +409,7 @@ outputs:
    - stats:
        enabled: yes
        filename: stats.log
@@ -80,23 +64,7 @@ Index: suricata.yaml.in
        append: yes       # append to file (yes) or overwrite it (no)
        totals: yes       # stats for all threads merged together
        threads: no       # per thread stats
-@@ -428,6 +437,7 @@ outputs:
-   - drop:
-       enabled: no
-       filename: drop.log
-+      filemode: 664
-       append: yes
-       #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
- 
-@@ -534,6 +544,7 @@ outputs:
-   - file-log:
-       enabled: no
-       filename: files-json.log
-+      filemode: 664
-       append: yes
-       #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
- 
-@@ -552,6 +563,7 @@ outputs:
+@@ -505,6 +512,7 @@ outputs:
        enabled: no
        type: file
        filename: tcp-data.log
@@ -104,7 +72,7 @@ Index: suricata.yaml.in
  
    # Log HTTP body data after normalization, dechunking and unzipping.
    # 2 types: file or dir. File logs into a single logfile. Dir creates
-@@ -563,6 +575,7 @@ outputs:
+@@ -516,6 +524,7 @@ outputs:
        enabled: no
        type: file
        filename: http-data.log
@@ -112,14 +80,14 @@ Index: suricata.yaml.in
  
    # Lua Output Support - execute lua script to generate alert and event
    # output.
-@@ -604,12 +617,12 @@ logging:
+@@ -557,12 +566,12 @@ logging:
        enabled: yes
        # type: json
    - file:
 -      enabled: yes
 +      enabled: no
        level: info
-       filename: @e_logdir@suricata.log
+       filename: suricata.log
        # type: json
    - syslog:
 -      enabled: no
@@ -127,7 +95,7 @@ Index: suricata.yaml.in
        facility: local5
        format: "[%i] <%d> -- "
        # type: json
-@@ -1047,9 +1060,9 @@ asn1-max-frames: 256
+@@ -978,9 +987,9 @@ asn1-max-frames: 256
  ##
  
  # Run suricata as user and group.
@@ -140,7 +108,7 @@ Index: suricata.yaml.in
  
  # Some logging module will use that name in event as identifier. The default
  # value is the hostname
-@@ -1058,7 +1071,7 @@ asn1-max-frames: 256
+@@ -989,7 +998,7 @@ asn1-max-frames: 256
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
@@ -149,15 +117,11 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1862,9 +1875,21 @@ mpipe:
- ## file configuration".
- ##
+@@ -1815,7 +1824,19 @@ napatech:
+ default-rule-path: @e_defaultruledir@
  
--@no_suricata_update_comment@default-rule-path: @e_defaultruledir@
--@no_suricata_update_comment@rule-files:
--@no_suricata_update_comment@ - suricata.rules
-+default-rule-path: @e_sysconfdir@rules
-+rule-files:
+ rule-files:
+-  - suricata.rules
 +
 +  - app-layer-events.rules
 +  - decoder-events.rules
@@ -173,4 +137,4 @@ Index: suricata.yaml.in
 +  - tls-events.rules
  
  ##
- ## Advanced rule file configuration.
+ ## Auxiliary configuration files.

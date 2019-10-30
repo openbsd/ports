@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2019/10/02 17:42:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2019/10/30 12:41:46 jasper Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-SURICATA_V =	4.1.5
-SUPDATE_V =	1.0.5
+SURICATA_V =	5.0.0
+SUPDATE_V =	1.1.0
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
@@ -25,12 +25,13 @@ WANTLIB +=	net nspr4 nss3 nssutil3 pcap pcre plc4 plds4 smime3
 WANTLIB +=	ssl3 yaml-0 z
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =	textproc/py-sphinx \
-		textproc/py-yaml \
+BUILD_DEPENDS =	textproc/py-sphinx,python3 \
+		textproc/py-yaml,python3 \
 		lang/rust
 
-RUN_DEPENDS =	textproc/py-yaml
+RUN_DEPENDS =	textproc/py-yaml,python3
 
 LIB_DEPENDS =	archivers/lz4 \
 		archivers/xz \
@@ -45,8 +46,7 @@ LIB_DEPENDS =	archivers/lz4 \
 
 COMPILER =	base-clang ports-gcc
 
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		ac_cv_path_HAVE_PDFLATEX= \
 			ac_cv_path_HAVE_GIT_CMD= \
