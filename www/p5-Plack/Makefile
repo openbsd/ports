@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/10/27 01:37:17 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2019/10/30 20:55:27 cwen Exp $
 
-COMMENT =		perl superglue for web frameworks and web servers
+COMMENT =		interface between perl web frameworks and web servers
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Plack-1.0047
+REVISION =		0
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
