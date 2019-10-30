@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/10/29 16:00:07 kn Exp $
+# $OpenBSD: Makefile,v 1.56 2019/10/30 13:13:59 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -38,7 +38,7 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		audio/ladspa \
-			textproc/py-docutils
+			textproc/py-docutils${MODPY_FLAVOR}
 
 LIB_DEPENDS =		audio/libcdio \
 			audio/libcdio-paranoia \
