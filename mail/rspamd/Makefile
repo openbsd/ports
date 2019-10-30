@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2019/10/29 22:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2019/10/30 14:08:59 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	2.1
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -34,6 +35,7 @@ LIB_DEPENDS=	databases/sqlite3 \
 		devel/pcre \
 		security/libsodium \
 		textproc/icu4c
+RUN_DEPENDS=	databases/redis
 
 # uses cblas headers; pull this in via LDEP and register an "extra" dependency
 # on cblas lib to make sure rspamd gets updated for major changes in cblas
@@ -90,8 +92,11 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/interface/README.md
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rspamd
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rspamd/{,local.d,override.d}
 	mv ${WRKINST}${SYSCONFDIR}/rspamd/* ${PREFIX}/share/examples/rspamd
 	rm ${PREFIX}/share/rspamd/www/README.md.{beforesubst,orig}
+	[ -r ${PREFIX}/share/examples/rspamd/local.d/redis.conf ] || \
+	    echo 'servers = "127.0.0.1";' > \
+	    ${PREFIX}/share/examples/rspamd/local.d/redis.conf
 
 .include <bsd.port.mk>

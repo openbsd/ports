@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.32 2019/10/29 22:50:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/10/30 14:08:59 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
+@extraunexec rm -f ${SYSCONFDIR}/rspamd/local.d/*
+@extraunexec rm -f ${SYSCONFDIR}/rspamd/override.d/*
 @rcscript ${RCDIR}/rspamd
 @sample ${SYSCONFDIR}/rspamd/
 @bin bin/rspamadm
@@ -16,6 +18,7 @@ lib/rspamd/librspamd-server.so
 @man man/man1/rspamadm.1
 @man man/man1/rspamc.1
 @man man/man8/rspamd.8
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/rspamd/
 share/examples/rspamd/actions.conf
 @sample ${SYSCONFDIR}/rspamd/actions.conf
@@ -27,6 +30,10 @@ share/examples/rspamd/composites.conf
 @sample ${SYSCONFDIR}/rspamd/composites.conf
 share/examples/rspamd/groups.conf
 @sample ${SYSCONFDIR}/rspamd/groups.conf
+share/examples/rspamd/local.d/
+@sample ${SYSCONFDIR}/rspamd/local.d/
+share/examples/rspamd/local.d/redis.conf
+@sample ${SYSCONFDIR}/rspamd/local.d/redis.conf
 share/examples/rspamd/logging.inc
 @sample ${SYSCONFDIR}/rspamd/logging.inc
 share/examples/rspamd/maps.d/
@@ -141,6 +148,8 @@ share/examples/rspamd/modules.d/whitelist.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/whitelist.conf
 share/examples/rspamd/options.inc
 @sample ${SYSCONFDIR}/rspamd/options.inc
+share/examples/rspamd/override.d/
+@sample ${SYSCONFDIR}/rspamd/override.d/
 share/examples/rspamd/rspamd.conf
 @sample ${SYSCONFDIR}/rspamd/rspamd.conf
 share/examples/rspamd/scores.d/
