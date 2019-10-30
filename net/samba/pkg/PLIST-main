@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.50 2019/10/07 12:50:14 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.51 2019/10/30 12:20:48 jca Exp $
 @conflict ldb-<1.3.6p5
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
@@ -535,6 +535,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_replay.${M
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_summary.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_summary.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_summary.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/undoguididx.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/undoguididx.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/undoguididx.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.${MODPY_PYOEXTENSION}
