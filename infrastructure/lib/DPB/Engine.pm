@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.135 2019/10/28 14:24:30 espie Exp $
+# $OpenBSD: Engine.pm,v 1.136 2019/10/30 16:11:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -766,7 +766,7 @@ sub new
 	my ($class, $state) = @_;
 	my $o = bless { 
 	    fh => DPB::Util->make_hot($state->logger->append("stats")),
-	    lost_time => 0,
+	    delta => $state->{starttime},
 	    statline => ''},
 	    	$class;
 	DPB::Clock->register($o);
@@ -780,13 +780,13 @@ sub log
 
 	$self->{statline} = $line;
 	print {$self->{fh}} join(' ', $$, DPB::Util->ts2string($ts), 
-	    DPB::Util->ts2string($ts-$self->{lost_time}), $line), "\n";
+	    DPB::Util->ts2string($ts-$self->{delta}), $line), "\n";
 }
 
 sub stopped_clock
 {
 	my ($self, $gap) = @_;
-	$self->{lost_time} += $gap;
+	$self->{delta} += $gap;
 }
 
 1;
