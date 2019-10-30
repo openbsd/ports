@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/10/19 23:23:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2019/10/30 08:27:56 bentley Exp $
 
 COMMENT =	Sony PlayStation Portable emulator
 
@@ -37,7 +37,11 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLEW GLU SDL2 avcodec avformat avutil c m snappy
 WANTLIB += swresample swscale z zip
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake \
+			lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP =		No
+
 LIB_DEPENDS =		archivers/snappy \
 			archivers/libzip \
 			devel/sdl2 \
