@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/12 20:47:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/10/30 18:11:13 sthen Exp $
 
 COMMENT=	generate and manipulate images
 
-DISTNAME =	Imager-1.009
+DISTNAME=	Imager-1.011
 CATEGORIES=	graphics
 MODULES=	cpan
-REVISION =	1
 
 # Perl
 PERMIT_PACKAGE=	Yes
@@ -18,10 +17,10 @@ LIB_DEPENDS=	devel/t1lib \
 		graphics/tiff \
 		graphics/giflib
 
-TEST_DEPENDS =	devel/p5-Inline
+TEST_DEPENDS=	devel/p5-Inline
 
-TEST_ENV =	AUTOMATED_TESTING=1
-MAKE_ENV +=	TEST_POD=Yes
+TEST_ENV=	AUTOMATED_TESTING=1
+MAKE_ENV+=	TEST_POD=Yes
 
 CONFIGURE_ARGS=	--enable JPEG,TIFF,PNG,GIF,T1,FT2 \
 		--incpath="${LOCALBASE}/include:${X11BASE}/include" \
