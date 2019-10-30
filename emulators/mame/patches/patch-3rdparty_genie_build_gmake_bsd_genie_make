@@ -1,4 +1,4 @@
-$OpenBSD: patch-3rdparty_genie_build_gmake_bsd_genie_make,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+$OpenBSD: patch-3rdparty_genie_build_gmake_bsd_genie_make,v 1.2 2019/10/30 14:31:07 fcambus Exp $
 
 Index: 3rdparty/genie/build/gmake.bsd/genie.make
 --- 3rdparty/genie/build/gmake.bsd/genie.make.orig
@@ -14,16 +14,20 @@ Index: 3rdparty/genie/build/gmake.bsd/genie.make
  AR  = ar
  
  ifndef RESCOMP
-@@ -48,9 +48,9 @@ ifeq ($(config),release)
-   INCLUDES      += -I../../src/host/lua-5.3.0/src
-   INCLUDES      +=
-   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
--  ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os
--  ALL_CXXFLAGS  += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os
--  ALL_OBJCFLAGS += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os
-+  ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra
-+  ALL_CXXFLAGS  += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra
-+  ALL_OBJCFLAGS += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra
-   ALL_RESFLAGS  += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-   ALL_LDFLAGS   += $(LDFLAGS) -L. -s -rdynamic
-   LDDEPS        +=
+@@ -49,11 +49,11 @@ ifeq ($(config),release)
+   DEFINES            += -DNDEBUG -DLUA_COMPAT_MODULE -DLUA_USE_POSIX -DLUA_USE_DLOPEN
+   INCLUDES           += -I"../../src/host/lua-5.3.0/src"
+   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
+-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os $(MPARAM)
+-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os $(MPARAM)
+-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os $(MPARAM)
+-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os $(MPARAM)
+-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os $(MPARAM)
++  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra $(MPARAM)
++  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra $(MPARAM)
++  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra $(MPARAM)
++  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra $(MPARAM)
++  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra $(MPARAM)
+   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+   ALL_LDFLAGS        += $(LDFLAGS) -L. -s -rdynamic
+   LDDEPS             +=
