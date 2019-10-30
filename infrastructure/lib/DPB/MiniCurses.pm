@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.15 2019/09/02 13:15:38 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.16 2019/10/30 16:07:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -194,6 +194,7 @@ sub mogrify
 		$line =~ s/([\/\@\w\.\-]+\-)(\s|\(|$)/$self->blink($self->bg($self->color($1, BLACK), RED)).$2/ge;
 		$line =~ s/(^Hosts:)/$self->color($1, BLUE)/ge;
 	}
+	$line =~ s/(STOPPED!)/$self->bg($self->color($1, BLACK), RED)/ge;
 	$line =~ s/(\[\d+\])/$self->color($1, GREEN)/ge;
 	$line =~ s/(\(.*?\))/$self->color($1, YELLOW)/ge;
 	$line =~ s/(\d+\%)/$self->color($1, $percent)/ge;
