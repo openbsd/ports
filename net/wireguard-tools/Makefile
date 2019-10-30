@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/09/18 10:59:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/10/30 14:03:07 jasper Exp $
 
 COMMENT =	fast and secure VPN
 
-V =		0.0.20190702
+V =		0.0.20191012
 DISTNAME =	WireGuard-$V
 PKGNAME =	wireguard-tools-$V
-REVISION =	0
 EPOCH =		0
 
 CATEGORIES =	net security
