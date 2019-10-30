@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.9 2019/10/16 00:08:35 daniel Exp $
+$OpenBSD: patch-configure,v 1.10 2019/10/30 06:08:15 daniel Exp $
 
 1) Fixup path locations for OpenBSD
 2) Backport e3f2f8 for coq 8.10.0 release
@@ -79,7 +79,7 @@ Index: configure
  coq_ver=$(${COQBIN}coqc -v 2>/dev/null | sed -n -e 's/The Coq Proof Assistant, version \([^ ]*\).*$/\1/p')
  case "$coq_ver" in
 -  8.7.0|8.7.1|8.7.2|8.8.0|8.8.1|8.8.2|8.9.0|8.9.1|8.10)
-+  8.7.0|8.7.1|8.7.2|8.8.0|8.8.1|8.8.2|8.9.0|8.9.1|8.10.0|8.10+beta?)
++  8.7.0|8.7.1|8.7.2|8.8.0|8.8.1|8.8.2|8.9.0|8.9.1|8.10.0|8.10.1)
          echo "version $coq_ver -- good!";;
    ?*)
          echo "version $coq_ver -- UNSUPPORTED"
@@ -87,7 +87,7 @@ Index: configure
              echo "Warning: this version of Coq is unsupported, proceed at your own risks."
          else
 -            echo "Error: CompCert requires one of the following Coq versions: 8.10, 8.9.1, 8.9.0, 8.8.2, 8.8.1, 8.8.0, 8.7.2, 8.7.1, 8.7.0"
-+            echo "Error: CompCert requires one of the following Coq versions: 8.10.0, 8.9.1, 8.9.0, 8.8.2, 8.8.1, 8.8.0, 8.7.2, 8.7.1, 8.7.0"
++            echo "Error: CompCert requires one of the following Coq versions: 8.10.1, 8.10.0, 8.9.1, 8.9.0, 8.8.2, 8.8.1, 8.8.0, 8.7.2, 8.7.1, 8.7.0"
              missingtools=true
          fi;;
    "")

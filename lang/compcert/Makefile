@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/10/16 00:08:35 daniel Exp $
+# $OpenBSD: Makefile,v 1.15 2019/10/30 06:08:15 daniel Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc
 
@@ -10,7 +10,7 @@ GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://compcert.inria.fr/
 
