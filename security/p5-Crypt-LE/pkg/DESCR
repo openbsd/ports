@@ -1,0 +1,8 @@
+The Crypt::LE module provides the functionality necessary to use Let's
+Encrypt API and generate free SSL certificates for your domains. It can
+also be used to generate private RSA and ECC keys or Certificate Signing
+Requests without resorting to openssl command line. Crypt::LE is shipped
+with a self-sufficient client for obtaining SSL certificates, le.pl.
+
+Both ACME v1 and ACME v2 protocols and wildcard certificate issuance are
+supported.

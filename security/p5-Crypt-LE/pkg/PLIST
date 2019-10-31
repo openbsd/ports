@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 06:18:07 bentley Exp $
+bin/le.pl
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/LE/
+${P5SITE}/Crypt/LE.pm
+${P5SITE}/Crypt/LE/Challenge/
+${P5SITE}/Crypt/LE/Challenge/Simple.pm
+${P5SITE}/Crypt/LE/Complete/
+${P5SITE}/Crypt/LE/Complete/Simple.pm
+@man man/man3p/Crypt::LE.3p
+@man man/man3p/Crypt::LE::Challenge::Simple.3p
+@man man/man3p/Crypt::LE::Complete::Simple.3p
