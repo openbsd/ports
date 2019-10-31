@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/10/28 17:52:36 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/10/31 10:29:55 espie Exp $
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
@@ -84,8 +84,8 @@ CONFIGURE_ARGS += 	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
 			-DDOWNLOAD_ENSMALLEN=OFF \
 			-DCMAKE_INSTALL_MANDIR=${PREFIX}/man/man1
 
-# for now, there is process explosion with the current version of cmake
-# USE_NINJA =	No
+# naddy reported a burp
+USE_NINJA =	No
 
 # XXX note that some of the tests WILL fail. You've got to love probabilistic
 # software...
