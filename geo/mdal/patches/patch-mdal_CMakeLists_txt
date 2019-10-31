@@ -1,11 +1,11 @@
-$OpenBSD: patch-mdal_CMakeLists_txt,v 1.1.1.1 2019/03/14 18:33:08 landry Exp $
+$OpenBSD: patch-mdal_CMakeLists_txt,v 1.2 2019/10/31 14:45:22 landry Exp $
 
 version the .so
 
 Index: mdal/CMakeLists.txt
 --- mdal/CMakeLists.txt.orig
 +++ mdal/CMakeLists.txt
-@@ -89,6 +89,11 @@ TARGET_INCLUDE_DIRECTORIES(mdal
+@@ -113,6 +113,11 @@ TARGET_INCLUDE_DIRECTORIES(mdal
    $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
  )
  
