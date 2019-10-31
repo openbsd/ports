@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 03:15:42 afresh1 Exp $
+${P5ARCH}/USB/
+${P5ARCH}/USB/LibUSB/
+${P5ARCH}/USB/LibUSB.pm
+${P5ARCH}/USB/LibUSB/Device/
+${P5ARCH}/USB/LibUSB/Device.pm
+${P5ARCH}/USB/LibUSB/Device/Handle.pm
+${P5ARCH}/USB/LibUSB/XS.pm
+${P5ARCH}/auto/USB/
+${P5ARCH}/auto/USB/LibUSB/
+${P5ARCH}/auto/USB/LibUSB/LibUSB.so
+${P5ARCH}/auto/USB/LibUSB/XS/
+${P5ARCH}/auto/USB/LibUSB/XS/autosplit.ix
+@man man/man3p/USB::LibUSB.3p
+@man man/man3p/USB::LibUSB::XS.3p

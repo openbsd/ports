@@ -1,0 +1,3 @@
+This module provides a Perl interface to the libusb-1.0 API. It provides
+access to most basic libusb functionality including read-out of device
+descriptors and synchronous device I/O.
