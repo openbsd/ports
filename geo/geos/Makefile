@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/10/31 19:48:21 landry Exp $
 
 BROKEN-hppa =	undefined reference to 'std::auto_ptr<geos::geom::Envelope>::~auto_ptr()'
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.7.1
+DISTNAME=	geos-3.8.0
 CATEGORIES=	geo
 
-SHARED_LIBS=	geos	12.0 \
-		geos_c	4.3
+SHARED_LIBS=	geos	13.0 \
+		geos_c	4.4
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
@@ -24,11 +24,5 @@ USE_GMAKE=	Yes
 COMPILER =	base-clang ports-gcc
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-pic
-
-# Strip UTF-8 BOM, base gcc fails with:
-# CGAlgorithms.cpp:1: error: stray '\357' in program
-#post-extract:
-#	find ${WRKSRC} -type f '(' -name '*.c*' -o -name '*.h' ')' \
-#	    -exec perl -pi -e 's/^\xef\xbb\xbf//;' {} +
 
 .include <bsd.port.mk>
