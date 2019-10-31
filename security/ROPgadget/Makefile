@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/17 05:25:52 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2019/10/31 07:50:22 jasper Exp $
 
 COMMENT =	Gadgets finder and auto-roper
 
-MODPY_EGG_VERSION =	5.8
+MODPY_EGG_VERSION =	5.9
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 GH_PROJECT =	ROPGadget
 GH_ACCOUNT =	JonathanSalwan
