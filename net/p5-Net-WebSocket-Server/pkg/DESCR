@@ -1,0 +1,4 @@
+Net::WebSocket::Server implements the details of a WebSocket server and
+invokes the provided callbacks whenever something interesting happens.
+Individual connections to the server are represented as
+Net::WebSocket::Server::Connection objects.

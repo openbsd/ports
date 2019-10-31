@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 06:15:30 bentley Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/WebSocket/
+${P5SITE}/Net/WebSocket/Server/
+${P5SITE}/Net/WebSocket/Server.pm
+${P5SITE}/Net/WebSocket/Server/Connection.pm
+@man man/man3p/Net::WebSocket::Server.3p
+@man man/man3p/Net::WebSocket::Server::Connection.3p
