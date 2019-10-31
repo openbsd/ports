@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_providers_mdal_CMakeLists_txt,v 1.2 2019/04/29 11:06:31 landry Exp $
+$OpenBSD: patch-src_providers_mdal_CMakeLists_txt,v 1.3 2019/10/31 10:45:04 landry Exp $
 
 Index: src/providers/mdal/CMakeLists.txt
 --- src/providers/mdal/CMakeLists.txt.orig
 +++ src/providers/mdal/CMakeLists.txt
-@@ -18,7 +18,6 @@ ENDIF ()
+@@ -19,7 +19,6 @@ ENDIF ()
  
  SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/external/mdal/cmake ${CMAKE_MODULE_PATH})
  FIND_PACKAGE(HDF5)

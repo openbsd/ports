@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_server_CMakeLists_txt,v 1.12 2019/07/24 08:51:05 landry Exp $
+$OpenBSD: patch-src_server_CMakeLists_txt,v 1.13 2019/10/31 10:45:04 landry Exp $
 
 install qgis_server additional files to share/qgis
 
 Index: src/server/CMakeLists.txt
 --- src/server/CMakeLists.txt.orig
 +++ src/server/CMakeLists.txt
-@@ -194,5 +194,5 @@ INSTALL(TARGETS
+@@ -209,5 +209,5 @@ INSTALL(TARGETS
  INSTALL(FILES
    admin.sld
    wms_metadata.xml
