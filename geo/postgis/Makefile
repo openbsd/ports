@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2019/08/16 14:09:17 landry Exp $
+# $OpenBSD: Makefile,v 1.57 2019/10/31 19:49:15 landry Exp $
 
-V =	2.5.3
+V =	3.0.0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
 
-SHARED_LIBS +=	lwgeom 0.0 lwgeom-2.5 0.0 # 4.0
+SHARED_LIBS +=	lwgeom 0.0 lwgeom-3.0 0.0 # 4.0
 
 HOMEPAGE=	http://www.postgis.net/
 
@@ -14,7 +14,7 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto curl expat freexl gdal geos geos_c geotiff gif iconv intl
+WANTLIB += c charset crypto curl expat freexl gdal geos geos_c geotiff gif iconv intl
 WANTLIB += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png pq>=5.3 protobuf-c zstd
 WANTLIB += proj pthread qhull spatialite sqlite3 ssl ${COMPILER_LIBCXX} tiff webp xml2 z
 
@@ -26,6 +26,7 @@ MODULES =	databases/postgresql
 
 LIB_DEPENDS=	databases/sqlite3 \
 		geo/gdal \
+		devel/proj \
 		devel/gettext,-runtime \
 		devel/protobuf-c \
 		devel/json-c
