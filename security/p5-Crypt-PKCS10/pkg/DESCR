@@ -1,0 +1,6 @@
+Crypt::PKCS10 parses PKCS #10 requests and provides accessor methods to
+extract the requested data. First, the request will be parsed using the
+included ASN.1 definition. Common object identifiers will be translated to
+their corresponding names. Additionally, accessor methods allow to extract
+single data fields. Bit Strings like signatures will be printed in their
+hexadecimal representation.

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 06:19:07 bentley Exp $
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/PKCS10.pm
+@man man/man3p/Crypt::PKCS10.3p
