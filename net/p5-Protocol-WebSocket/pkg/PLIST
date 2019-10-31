@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 06:16:56 bentley Exp $
+${P5SITE}/Protocol/
+${P5SITE}/Protocol/WebSocket/
+${P5SITE}/Protocol/WebSocket.pm
+${P5SITE}/Protocol/WebSocket/Client.pm
+${P5SITE}/Protocol/WebSocket/Cookie/
+${P5SITE}/Protocol/WebSocket/Cookie.pm
+${P5SITE}/Protocol/WebSocket/Cookie/Request.pm
+${P5SITE}/Protocol/WebSocket/Cookie/Response.pm
+${P5SITE}/Protocol/WebSocket/Frame.pm
+${P5SITE}/Protocol/WebSocket/Handshake/
+${P5SITE}/Protocol/WebSocket/Handshake.pm
+${P5SITE}/Protocol/WebSocket/Handshake/Client.pm
+${P5SITE}/Protocol/WebSocket/Handshake/Server.pm
+${P5SITE}/Protocol/WebSocket/Message.pm
+${P5SITE}/Protocol/WebSocket/Request.pm
+${P5SITE}/Protocol/WebSocket/Response.pm
+${P5SITE}/Protocol/WebSocket/Stateful.pm
+${P5SITE}/Protocol/WebSocket/URL.pm
+@man man/man3p/Protocol::WebSocket.3p
+@man man/man3p/Protocol::WebSocket::Client.3p
+@man man/man3p/Protocol::WebSocket::Cookie.3p
+@man man/man3p/Protocol::WebSocket::Cookie::Request.3p
+@man man/man3p/Protocol::WebSocket::Cookie::Response.3p
+@man man/man3p/Protocol::WebSocket::Frame.3p
+@man man/man3p/Protocol::WebSocket::Handshake.3p
+@man man/man3p/Protocol::WebSocket::Handshake::Client.3p
+@man man/man3p/Protocol::WebSocket::Handshake::Server.3p
+@man man/man3p/Protocol::WebSocket::Message.3p
+@man man/man3p/Protocol::WebSocket::Request.3p
+@man man/man3p/Protocol::WebSocket::Response.3p
+@man man/man3p/Protocol::WebSocket::Stateful.3p
+@man man/man3p/Protocol::WebSocket::URL.3p
