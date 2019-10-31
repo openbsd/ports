@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/10/23 19:30:25 landry Exp $
+# $OpenBSD: Makefile,v 1.112 2019/10/31 19:54:26 kn Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
@@ -25,8 +25,7 @@ LIB_DEPENDS=		databases/sqlite3 \
 			devel/nspr>=${NSPR_VERSION}
 WANTLIB += c pthread z nspr4 plc4 plds4 sqlite3>=22
 
-MAKE_ENV=		BUILD_OPT=1 \
-			LOCALBASE="${LOCALBASE}" \
+MAKE_ENV=		LOCALBASE="${LOCALBASE}" \
 			NSS_SEED_ONLY_DEV_URANDOM=1 \
 			NSS_ENABLE_ECC=1 \
 			NSS_ENABLE_TLS_1_3=1 \
@@ -36,6 +35,10 @@ MAKE_ENV=		BUILD_OPT=1 \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			NSPR_INCLUDE_DIR="${LOCALBASE}/include/nspr" \
 			NSPR_LIB_DIR="${LOCALBASE}/lib"
+
+.if !defined(DEBUG)
+MAKE_ENV+=		BUILD_OPT=1
+.endif
 
 USE_GMAKE=		Yes
 
