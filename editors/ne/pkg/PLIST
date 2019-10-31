@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/06/20 01:39:24 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/10/31 16:12:08 bcallah Exp $
 @bin bin/ne
 @man man/man1/ne.1
 share/doc/ne/
@@ -17,6 +17,7 @@ share/ne/syntax/4gl.jsf
 share/ne/syntax/ada.jsf
 share/ne/syntax/ant.jsf
 share/ne/syntax/asm.jsf
+share/ne/syntax/asterisk.jsf
 share/ne/syntax/awk.jsf
 share/ne/syntax/batch.jsf
 share/ne/syntax/c.jsf
