@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1144 2019/10/06 20:34:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.1145 2019/10/31 06:21:33 bentley Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -438,6 +438,7 @@
      SUBDIR += p5-Net-Twitter-Lite
      SUBDIR += p5-Net-UPnP
      SUBDIR += p5-Net-Wake
+     SUBDIR += p5-Net-WebSocket-Server
      SUBDIR += p5-Net-Whois
      SUBDIR += p5-Net-Whois-RIPE
      SUBDIR += p5-Net-Whois-Raw
@@ -466,6 +467,7 @@
      SUBDIR += p5-POE-Filter-DNS-TCP
      SUBDIR += p5-POE-Filter-IRCD
      SUBDIR += p5-PlRPC
+     SUBDIR += p5-Protocol-WebSocket
      SUBDIR += p5-RPC-XML
      SUBDIR += p5-Regexp-Common-net-CIDR
      SUBDIR += p5-SNMP-BridgeQuery
