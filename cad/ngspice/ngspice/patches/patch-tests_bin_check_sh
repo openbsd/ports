@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_bin_check_sh,v 1.1.1.1 2019/10/31 06:01:00 bentley Exp $
+
+Index: tests/bin/check.sh
+--- tests/bin/check.sh.orig
++++ tests/bin/check.sh
+@@ -40,8 +40,8 @@ case $HOST_TYPE in
+       rm -f $testname.test_tmp $testname.out_tmp
+       ;;
+     SunOS*|OpenBSD*)
+-      $SPICE --batch $testdir/$testname.cir >$testname.test &&\
+-      sed -e '/^$/d' $testname.test | egrep -v "$FILTER" > $testname.test_tmp &&\
++      $SPICE --batch $testdir/$testname.cir >$testname.test
++      sed -e '/^$/d' $testname.test | egrep -v "$FILTER" > $testname.test_tmp
+       sed -e '/^$/d' $testdir/$testname.out | egrep -v "$FILTER" > $testname.out_tmp
+       if diff -b -w $testname.out_tmp $testname.test_tmp; then
+           rm $testname.test $testname.test_tmp $testname.out_tmp
