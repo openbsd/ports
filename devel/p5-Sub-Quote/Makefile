@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/10/31 03:11:05 afresh1 Exp $
 
 COMMENT =	efficient generation of subroutines via string eval
 
-DISTNAME =	Sub-Quote-2.005000
+DISTNAME =	Sub-Quote-2.006006
 
 CATEGORIES =	devel
 
