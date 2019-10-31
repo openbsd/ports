@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.400 2019/10/23 19:38:07 landry Exp $
+# $OpenBSD: Makefile,v 1.401 2019/10/31 22:52:20 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	70.0
+MOZILLA_VERSION =	70.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -86,12 +86,8 @@ post-install:
 		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
+	${SUBST_DATA} ${WRKSRC}/taskcluster/docker/firefox-snap/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
-	# install icon for desktop file
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default128.png \
-		${PREFIX}/share/pixmaps/firefox.png
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
