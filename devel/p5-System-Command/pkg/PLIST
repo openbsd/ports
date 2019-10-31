@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/20 18:04:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/10/31 14:40:33 cwen Exp $
 ${P5SITE}/System/
+${P5SITE}/System/Command/
 ${P5SITE}/System/Command.pm
+${P5SITE}/System/Command/Reaper.pm
 @man man/man3p/System::Command.3p
+@man man/man3p/System::Command::Reaper.3p
