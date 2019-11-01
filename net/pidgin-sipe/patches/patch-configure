@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2019/11/01 17:33:35 ajacoutot Exp $
+
+Fix build with glib2 >= 2.62
+sipe-utils.c:304:3: error: 'GTimeVal' is deprecated: Use 'GDateTime' instead [-Werror,-Wdeprecated-declarations]
+                GTimeVal currtime;
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -12505,7 +12505,7 @@ fi
+ 
+ 
+ if test "x$enable_quality_check" = xyes; then :
+-           QUALITY_CFLAGS="$QUALITY_CFLAGS -Werror -Wall"
++           QUALITY_CFLAGS="$QUALITY_CFLAGS -Wall"
+ 
+ 	 	 for newflag in \
+ 			"-Wextra" \
