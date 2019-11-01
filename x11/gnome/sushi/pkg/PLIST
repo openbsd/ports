@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/01/04 14:14:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/11/01 19:40:26 ajacoutot Exp $
 bin/sushi
 lib/sushi/
 lib/sushi/girepository-1.0/
 lib/sushi/girepository-1.0/Sushi-1.0.typelib
 lib/sushi/libsushi-1.0.so
-@bin libexec/sushi-start
+libexec/org.gnome.NautilusPreviewer
 share/dbus-1/services/org.gnome.NautilusPreviewer.service
 share/locale/af/LC_MESSAGES/sushi.mo
 share/locale/an/LC_MESSAGES/sushi.mo
@@ -46,6 +46,7 @@ share/locale/kn/LC_MESSAGES/sushi.mo
 share/locale/ko/LC_MESSAGES/sushi.mo
 share/locale/lt/LC_MESSAGES/sushi.mo
 share/locale/lv/LC_MESSAGES/sushi.mo
+share/locale/mjw/LC_MESSAGES/sushi.mo
 share/locale/ml/LC_MESSAGES/sushi.mo
 share/locale/mr/LC_MESSAGES/sushi.mo
 share/locale/nb/LC_MESSAGES/sushi.mo
@@ -76,28 +77,12 @@ share/locale/vi/LC_MESSAGES/sushi.mo
 share/locale/zh_CN/LC_MESSAGES/sushi.mo
 share/locale/zh_HK/LC_MESSAGES/sushi.mo
 share/locale/zh_TW/LC_MESSAGES/sushi.mo
+share/metainfo/org.gnome.NautilusPreviewer.appdata.xml
 share/sushi/
 share/sushi/gir-1.0/
 share/sushi/gir-1.0/Sushi-1.0.gir
-share/sushi/js/
-share/sushi/js/ui/
-share/sushi/js/ui/application.js
-share/sushi/js/ui/fallbackRenderer.js
-share/sushi/js/ui/main.js
-share/sushi/js/ui/mainWindow.js
-share/sushi/js/ui/mimeHandler.js
-share/sushi/js/ui/spinnerBox.js
-share/sushi/js/ui/tweener.js
-share/sushi/js/ui/utils.js
-share/sushi/js/util/
-share/sushi/js/util/constants.js
-share/sushi/js/util/path.js
-share/sushi/js/util/totemMimeTypes.js
-share/sushi/js/viewers/
-share/sushi/js/viewers/audio.js
-share/sushi/js/viewers/evince.js
-share/sushi/js/viewers/font.js
-share/sushi/js/viewers/gst.js
-share/sushi/js/viewers/html.js
-share/sushi/js/viewers/image.js
-share/sushi/js/viewers/text.js
+share/sushi/gtksourceview-4/
+share/sushi/gtksourceview-4/styles/
+share/sushi/gtksourceview-4/styles/builder-dark.style-scheme.xml
+share/sushi/org.gnome.NautilusPreviewer.data.gresource
+share/sushi/org.gnome.NautilusPreviewer.src.gresource

@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_libsushi_meson_build,v 1.1 2019/11/01 19:40:26 ajacoutot Exp $
+
+From 5cf246dadab096344b52dfba5034d6edbe7c567c Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw@src.gnome.org>
+Date: Sat, 28 Sep 2019 16:16:10 +0800
+Subject: [PATCH] build: fix build when wayland is disabled
+
+Index: src/libsushi/meson.build
+--- src/libsushi/meson.build.orig
++++ src/libsushi/meson.build
+@@ -1,16 +1,30 @@
+ config_data = configuration_data()
+-config_data.set10('HAVE_GTK_X11', gtk_x11_dep.found())
+-config_data.set10('HAVE_GTK_WAYLAND', gtk_wayland_dep.found())
++if gtk_x11_dep.found()
++  config_data.set('HAVE_GTK_X11', 1)
++endif
++if gtk_wayland_dep.found()
++  config_data.set('HAVE_GTK_WAYLAND', 1)
++endif
+ configure_file(output: 'config.h', configuration: config_data)
+ 
+ externalwindow_sources = [
+   'externalwindow.c',
+   'externalwindow.h',
+-  'externalwindow-wayland.c',
+-  'externalwindow-wayland.h',
+-  'externalwindow-x11.c',
+-  'externalwindow-x11.h',
+ ]
++
++if gtk_x11_dep.found()
++  externalwindow_sources += [
++    'externalwindow-x11.c',
++    'externalwindow-x11.h',
++  ]
++endif
++
++if gtk_wayland_dep.found()
++  externalwindow_sources += [
++    'externalwindow-wayland.c',
++    'externalwindow-wayland.h',
++  ]
++endif
+ 
+ libsushi_deps = [
+   epoxy_dep,
