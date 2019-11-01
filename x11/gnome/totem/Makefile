@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.164 2019/07/13 09:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2019/11/01 22:10:11 ajacoutot Exp $
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.32.1
+GNOME_VERSION=		3.34.1
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -17,7 +17,7 @@ WANTLIB += clutter-gtk-1.0 cogl gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 grilo-0.3
 WANTLIB += grlpls-0.3 gstaudio-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 intl m pango-1.0 pangocairo-1.0
-WANTLIB += peas-1.0 peas-gtk-1.0 totem-plparser xml2
+WANTLIB += peas-1.0 peas-gtk-1.0 totem-plparser
 
 MODULES=		devel/dconf \
 			devel/meson \

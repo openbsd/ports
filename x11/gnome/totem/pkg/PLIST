@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2019/07/13 09:54:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/11/01 22:10:11 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -21,9 +21,6 @@ lib/totem/plugins/apple-trailers/libapple-trailers.so
 lib/totem/plugins/autoload-subtitles/
 lib/totem/plugins/autoload-subtitles/autoload-subtitles.plugin
 lib/totem/plugins/autoload-subtitles/libautoload-subtitles.so
-lib/totem/plugins/brasero-disc-recorder/
-lib/totem/plugins/brasero-disc-recorder/brasero-disc-recorder.plugin
-lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.so
 lib/totem/plugins/dbus/
 ${MODPY_COMMENT}lib/totem/plugins/dbus/${MODPY_PYCACHE}/
 lib/totem/plugins/dbus/${MODPY_PYCACHE}dbusservice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,8 +30,11 @@ lib/totem/plugins/im-status/
 lib/totem/plugins/im-status/libtotem-im-status.so
 lib/totem/plugins/im-status/totem-im-status.plugin
 lib/totem/plugins/media-player-keys/
-lib/totem/plugins/media-player-keys/libmedia_player_keys.so
+lib/totem/plugins/media-player-keys/libmedia-player-keys.so
 lib/totem/plugins/media-player-keys/media-player-keys.plugin
+lib/totem/plugins/open-directory/
+lib/totem/plugins/open-directory/libopen-directory.so
+lib/totem/plugins/open-directory/open-directory.plugin
 lib/totem/plugins/opensubtitles/
 ${MODPY_COMMENT}lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}/
 lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
@@ -964,6 +964,7 @@ share/locale/lt/LC_MESSAGES/totem.mo
 share/locale/lv/LC_MESSAGES/totem.mo
 share/locale/mai/LC_MESSAGES/totem.mo
 share/locale/mg/LC_MESSAGES/totem.mo
+share/locale/mjw/LC_MESSAGES/totem.mo
 share/locale/mk/LC_MESSAGES/totem.mo
 share/locale/ml/LC_MESSAGES/totem.mo
 share/locale/mr/LC_MESSAGES/totem.mo
