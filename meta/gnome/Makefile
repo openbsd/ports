@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2019/05/08 21:31:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.172 2019/11/01 13:03:51 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -10,6 +10,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -60,7 +61,6 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/shell-extensions \
 			x11/gnome/themes-extra \
 			x11/gnome/user-docs \
-			x11/gnome/mousetweaks \
 			x11/gnome/mutter \
 			x11/gnome/orca \
 			x11/gnome/sushi

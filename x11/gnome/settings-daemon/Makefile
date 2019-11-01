@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2019/07/07 11:20:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.184 2019/11/01 13:03:51 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		3.32.1
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -41,9 +42,6 @@ RUN_DEPENDS +=		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
-
-# plugins/mouse/gsd-mouse-manager.c
-RUN_DEPENDS +=		x11/gnome/mousetweaks
 
 # plugins/datetime/geoclue.c
 BUILD_DEPENDS +=	geo/geoclue2
