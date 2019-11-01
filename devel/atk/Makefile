@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.72 2019/07/12 20:44:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2019/11/01 19:33:31 ajacoutot Exp $
 
-COMMENT=		accessibility toolkit used by gtk+
+COMMENT=	accessibility toolkit used by gtk+
 
-GNOME_PROJECT=		atk
-GNOME_VERSION=		2.32.0
+GNOME_PROJECT=	atk
+GNOME_VERSION=	2.34.1
 
-SHARED_LIBS +=  atk-1.0              21809.3  # 0.23209.1
+SHARED_LIBS +=  atk-1.0              21809.3  # 0.23410.1
 
-CATEGORIES=		devel
+CATEGORIES=	devel
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += glib-2.0 gobject-2.0 intl
 
-MODULES=		devel/meson \
-			x11/gnome
+MODULES=	devel/meson \
+		x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection
+MODGNOME_TOOLS=	gobject-introspection
 
-LIB_DEPENDS=		devel/glib2
+LIB_DEPENDS=	devel/glib2
 
 .include <bsd.port.mk>
