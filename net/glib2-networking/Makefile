@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2019/06/15 09:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2019/11/01 19:35:39 ajacoutot Exp $
 
 COMMENT=		network-related gio modules for GLib
 
-GNOME_VERSION=		2.60.3
+GNOME_VERSION=		2.62.1
 GNOME_PROJECT=		glib-networking
 PKGNAME=		glib2-networking-${GNOME_VERSION}
 
@@ -15,8 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GLPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0 intl
-WANTLIB += proxy pthread
+WANTLIB += c gio-2.0 glib-2.0 gnutls gobject-2.0 intl proxy
 
 # c++11
 COMPILER=		base-clang ports-gcc
