@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/11/01 15:54:58 jasper Exp $
 
 COMMENT =		reverse engineers disassembler and debugger
 
-V =			3.4.1
-REVISION =		0
+V =			4.0.0
 SUBST_VARS +=		V
 
 GH_PROJECT =		radare2
 GH_TAGNAME =		${V}
 
 # In radare, all libs have the same version
-LIBV =			6.0	# 3.4.0
+LIBV =			7.0	# 4.0.0
 .for _lib in r_anal r_asm r_bin r_bp r_config r_cons r_core \
 	r_crypto r_debug r_egg r_flag r_fs r_hash r_io r_lang \
 	r_main r_magic r_parse r_reg r_search r_socket \

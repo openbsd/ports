@@ -1,6 +1,6 @@
 using Radare;
 
-public static void main(string[] args) {
+public void main(string[] args) {
 
 	uint8 buf[3] = {0x49, 0x89, 0xd9};
 
@@ -10,5 +10,5 @@ public static void main(string[] args) {
 
 	RAsm.Op op;
 	st.disassemble(out op, buf, 3);
-	print("Disassemble: '%s'\n", (string) op.buf_asm);
+	print("Disassemble: '%s'\n", (string) op.get_asm());
 }

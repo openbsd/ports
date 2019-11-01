@@ -1,4 +1,5 @@
-$OpenBSD: patch-binr_rules_mk,v 1.2 2018/11/05 21:55:41 edd Exp $
+$OpenBSD: patch-binr_rules_mk,v 1.3 2019/11/01 15:54:58 jasper Exp $
+
 don't add -pie, that's automatic on OpenBSD when needed,
 and this interferes badly with lld
 
