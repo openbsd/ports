@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.77 2019/07/12 20:47:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/11/01 15:40:11 ajacoutot Exp $
+
+BROKEN =	does not build with glib2 >= 2.62
 
 COMMENT =	SVG vector drawing application
 
