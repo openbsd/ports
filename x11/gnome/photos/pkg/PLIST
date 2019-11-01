@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2019/05/08 16:24:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/11/01 21:44:18 ajacoutot Exp $
 @bin bin/gnome-photos
 lib/gnome-photos/
 lib/gnome-photos/libgnome-photos.so
@@ -250,6 +250,7 @@ share/locale/kn/LC_MESSAGES/gnome-photos.mo
 share/locale/ko/LC_MESSAGES/gnome-photos.mo
 share/locale/lt/LC_MESSAGES/gnome-photos.mo
 share/locale/lv/LC_MESSAGES/gnome-photos.mo
+share/locale/mjw/LC_MESSAGES/gnome-photos.mo
 share/locale/ml/LC_MESSAGES/gnome-photos.mo
 share/locale/nb/LC_MESSAGES/gnome-photos.mo
 share/locale/ne/LC_MESSAGES/gnome-photos.mo
