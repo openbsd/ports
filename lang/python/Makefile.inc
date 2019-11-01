@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.130 2019/07/12 20:47:22 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.131 2019/11/01 21:43:24 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -121,7 +121,7 @@ CONFIGURE_ENV += OPT='${CFLAGS} -fPIC' CPPFLAGS='-I${LOCALBASE}/include' \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_ENV +=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_FLAGS +=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
-MAKE_FLAGS +=	LDFLAGS='-L${WRKSRC}'
+MAKE_FLAGS +=	LDFLAGS='-L${WRKSRC} -L${LOCALBASE}/lib/'
 FAKE_FLAGS +=	RANLIB=:
 
 # Python itself is clean, but some extensions e.g. py-cryptography
