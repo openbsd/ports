@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/07 11:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/01 09:21:26 ajacoutot Exp $
 
 COMMENT=		thumbnailer for EPub and MOBI books
 
 GNOME_PROJECT=		gnome-epub-thumbnailer
-GNOME_VERSION=		1.5
-REVISION=		0
+GNOME_VERSION=		1.6
 
 CATEGORIES=		graphics
 
@@ -12,7 +11,7 @@ CATEGORIES=		graphics
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += archive c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += pthread xml2 intl
+WANTLIB += xml2 intl
 
 MODULES=		x11/gnome
 
