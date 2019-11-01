@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_bin_check_sh,v 1.1.1.1 2019/10/31 06:01:00 bentley Exp $
+$OpenBSD: patch-tests_bin_check_sh,v 1.2 2019/11/01 02:17:36 bentley Exp $
 
 Index: tests/bin/check.sh
 --- tests/bin/check.sh.orig
@@ -6,7 +6,7 @@ Index: tests/bin/check.sh
 @@ -40,8 +40,8 @@ case $HOST_TYPE in
        rm -f $testname.test_tmp $testname.out_tmp
        ;;
-     SunOS*|OpenBSD*)
+     FreeBSD*|SunOS*|OpenBSD*)
 -      $SPICE --batch $testdir/$testname.cir >$testname.test &&\
 -      sed -e '/^$/d' $testname.test | egrep -v "$FILTER" > $testname.test_tmp &&\
 +      $SPICE --batch $testdir/$testname.cir >$testname.test
