@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2019/07/07 11:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2019/11/01 19:39:56 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -6,7 +6,7 @@ USE_WXNEEDED=		Yes
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
-GNOME_VERSION=		3.32.0
+GNOME_VERSION=		3.34.0
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
@@ -15,9 +15,8 @@ CATEGORIES=		textproc
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += amtk-5 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl javascriptcoregtk-4.0
-WANTLIB += m pango-1.0 pangocairo-1.0 soup-2.4 webkit2gtk-4.0
+WANTLIB += amtk-5 c gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
+WANTLIB += pango-1.0 webkit2gtk-4.0
 
 MODULES=		devel/dconf \
 			devel/meson \
