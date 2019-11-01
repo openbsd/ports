@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/05/08 20:23:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/11/01 22:03:27 ajacoutot Exp $
 bin/gnome-documents
 lib/gnome-documents/
 lib/gnome-documents/girepository-1.0/
@@ -627,6 +627,7 @@ share/locale/ko/LC_MESSAGES/gnome-documents.mo
 share/locale/ln/LC_MESSAGES/gnome-documents.mo
 share/locale/lt/LC_MESSAGES/gnome-documents.mo
 share/locale/lv/LC_MESSAGES/gnome-documents.mo
+share/locale/mjw/LC_MESSAGES/gnome-documents.mo
 share/locale/mk/LC_MESSAGES/gnome-documents.mo
 share/locale/ml/LC_MESSAGES/gnome-documents.mo
 share/locale/mr/LC_MESSAGES/gnome-documents.mo
