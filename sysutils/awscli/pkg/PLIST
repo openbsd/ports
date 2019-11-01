@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.92 2019/10/19 11:33:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.93 2019/11/01 10:04:33 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -2185,6 +2185,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/cancel-certificate-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/cancel-job-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/cancel-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/clear-default-authorizer.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-certificate-from-csr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-dynamic-thing-group.rst
@@ -2202,6 +2203,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-thing-type.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-topic-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-account-audit-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-certificate.rst
@@ -2224,9 +2226,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-v2-logging-l
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/deprecate-thing-type.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-account-audit-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-audit-task.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-default-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-event-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-index.rst
@@ -2259,6 +2263,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-active-violati
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-attached-policies.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-audit-findings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-audit-tasks.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-authorizers.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-billing-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-ca-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-certificates-by-ca.rst
@@ -2297,14 +2302,18 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/remove-thing-from-b
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/remove-thing-from-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/replace-topic-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/search-index.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/set-default-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/set-default-policy-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/set-v2-logging-level.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/set-v2-logging-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/start-on-demand-audit-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/test-authorization.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/test-invoke-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/transfer-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-account-audit-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-certificate.rst
