@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2019/08/26 12:51:05 mpi Exp $
+# $OpenBSD: Makefile,v 1.280 2019/11/01 13:06:42 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -73,7 +73,6 @@
      SUBDIR += menus
      SUBDIR += mime-data
      SUBDIR += mono-gnome
-     SUBDIR += mousetweaks
      SUBDIR += music
      SUBDIR += mutter
      SUBDIR += nautilus
