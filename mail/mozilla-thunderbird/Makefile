@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2019/10/29 10:22:25 semarie Exp $
+# $OpenBSD: Makefile,v 1.302 2019/11/01 08:38:06 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -6,8 +6,7 @@ COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-REVISION =		0
-MOZILLA_VERSION =	68.2.0
+MOZILLA_VERSION =	68.2.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -68,6 +67,8 @@ NO_TEST =	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
+# pledge strings to be defined, and no multiprocess anyway..
+CONFIGURE_ARGS +=	--disable-sandbox
 
 # SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it, e.g.
 # mailnews/build/nsMailModule.cpp pulls in mailnews/extensions/fts3/src/nsFts3Tokenizer.h
