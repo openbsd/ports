@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/05/08 15:19:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/11/01 21:31:33 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service
 share/glib-2.0/schemas/org.gnome.clocks.gschema.xml
-share/gnome-clocks/
-share/gnome-clocks/images/
-share/gnome-clocks/images/day.png
-share/gnome-clocks/images/night.png
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.clocks.search-provider.ini
@@ -309,6 +305,7 @@ share/locale/kn/LC_MESSAGES/gnome-clocks.mo
 share/locale/ko/LC_MESSAGES/gnome-clocks.mo
 share/locale/lt/LC_MESSAGES/gnome-clocks.mo
 share/locale/lv/LC_MESSAGES/gnome-clocks.mo
+share/locale/mjw/LC_MESSAGES/gnome-clocks.mo
 share/locale/ml/LC_MESSAGES/gnome-clocks.mo
 share/locale/mr/LC_MESSAGES/gnome-clocks.mo
 share/locale/nb/LC_MESSAGES/gnome-clocks.mo
