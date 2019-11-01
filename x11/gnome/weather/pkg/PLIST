@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/05/08 01:57:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/11/01 21:22:47 ajacoutot Exp $
 bin/gnome-weather
 share/applications/org.gnome.Weather.desktop
 share/dbus-1/services/org.gnome.Weather.BackgroundService.service
@@ -46,6 +46,9 @@ share/locale/kn/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ko/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/lt/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/lv/LC_MESSAGES/org.gnome.Weather.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ml/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/nb/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ne/LC_MESSAGES/org.gnome.Weather.mo
@@ -62,6 +65,7 @@ share/locale/sl/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/sr/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/sr@latin/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/sv/LC_MESSAGES/org.gnome.Weather.mo
+share/locale/ta/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/te/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/tg/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/th/LC_MESSAGES/org.gnome.Weather.mo
