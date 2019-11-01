@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.91 2019/07/12 20:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2019/11/01 15:38:04 jasper Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
 
-VERSION=		1.1.33
+VERSION=		1.1.34
 DISTNAME=		libxslt-${VERSION}
 PKGNAME-main=		libxslt-${VERSION}
 PKGNAME-python= 	py-libxslt-${VERSION}
@@ -55,8 +55,6 @@ FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxslt/
 CONFIGURE_ARGS+=	--with-python
 
 post-install:
-# empty file
-	rm ${PREFIX}/share/doc/libxslt-python-${VERSION}/TODO
 	rmdir ${PREFIX}/share/doc/libxslt-python-${VERSION}
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{la,a}
 .endif

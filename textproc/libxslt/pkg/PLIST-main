@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/06/28 14:06:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2019/11/01 15:38:04 jasper Exp $
 @pkgpath textproc/libxslt
 bin/xslt-config
 @bin bin/xsltproc
@@ -50,7 +50,6 @@ share/doc/libxslt/html/APIchunk1.html
 share/doc/libxslt/html/APIchunk10.html
 share/doc/libxslt/html/APIchunk11.html
 share/doc/libxslt/html/APIchunk12.html
-share/doc/libxslt/html/APIchunk13.html
 share/doc/libxslt/html/APIchunk2.html
 share/doc/libxslt/html/APIchunk3.html
 share/doc/libxslt/html/APIchunk4.html

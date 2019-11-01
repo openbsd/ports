@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2013/03/16 09:59:19 jasper Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST-python,v 1.3 2019/11/01 15:38:04 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/libxslt.py
 lib/python${MODPY_VERSION}/site-packages/libxsltmod.so
 share/examples/libxslt/
