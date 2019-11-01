@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gfx_main_c,v 1.1.1.1 2018/04/03 05:31:41 bentley Exp $
+$OpenBSD: patch-src_gfx_main_c,v 1.2 2019/11/01 17:38:04 bentley Exp $
 
 Index: src/gfx/main.c
 --- src/gfx/main.c.orig
@@ -12,8 +12,8 @@ Index: src/gfx/main.c
  static void print_usage(void)
  {
  	printf(
-@@ -33,6 +35,9 @@ int main(int argc, char *argv[])
- 	struct Tilemap tilemap = {0};
+@@ -34,6 +36,9 @@ int main(int argc, char *argv[])
+ 	struct Mapfile attrmap = {0};
  	char *ext;
  	const char *errmsg = "Warning: The PNG's %s setting is not the same as the setting defined on the command line.";
 +
