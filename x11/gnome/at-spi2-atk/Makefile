@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/07 11:20:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2019/11/01 19:34:16 ajacoutot Exp $
 
 COMMENT=		atk-bridge for at-spi2
 
 GNOME_PROJECT=		at-spi2-atk
-GNOME_VERSION=		2.32.0
+GNOME_VERSION=		2.34.1
 
 SHARED_LIBS +=  atk-bridge-2.0       0.1      # 0.0.0
 
@@ -19,7 +19,7 @@ MODULES=		devel/meson \
 			x11/gnome
 
 LIB_DEPENDS=		devel/atk \
-			x11/gnome/at-spi2-core>=${GNOME_VERSION}
+			x11/gnome/at-spi2-core
 
 # not needed in the package, but build fails in tests/ without this
 BUILD_DEPENDS=		textproc/libxml
