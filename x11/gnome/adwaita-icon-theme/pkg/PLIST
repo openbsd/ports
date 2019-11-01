@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/04/28 06:37:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/01 19:36:54 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 share/icons/Adwaita/
 share/icons/Adwaita/16x16/
@@ -8,6 +8,9 @@ share/icons/Adwaita/16x16/devices/audio-headset.png
 share/icons/Adwaita/16x16/devices/computer.png
 share/icons/Adwaita/16x16/devices/drive-harddisk.png
 share/icons/Adwaita/16x16/devices/drive-removable-media.png
+share/icons/Adwaita/16x16/devices/media-optical.png
+share/icons/Adwaita/16x16/devices/printer-network.png
+share/icons/Adwaita/16x16/devices/printer.png
 share/icons/Adwaita/16x16/emblems/
 share/icons/Adwaita/16x16/emblems/emblem-readonly.png
 share/icons/Adwaita/16x16/emblems/emblem-shared.png
@@ -204,7 +207,6 @@ share/icons/Adwaita/16x16/legacy/mark-location.png
 share/icons/Adwaita/16x16/legacy/media-eject.png
 share/icons/Adwaita/16x16/legacy/media-flash.png
 share/icons/Adwaita/16x16/legacy/media-floppy.png
-share/icons/Adwaita/16x16/legacy/media-optical.png
 share/icons/Adwaita/16x16/legacy/media-playback-pause.png
 share/icons/Adwaita/16x16/legacy/media-playback-start-rtl.png
 share/icons/Adwaita/16x16/legacy/media-playback-start.png
@@ -270,9 +272,7 @@ share/icons/Adwaita/16x16/legacy/preferences-system-sharing.png
 share/icons/Adwaita/16x16/legacy/preferences-system-windows.png
 share/icons/Adwaita/16x16/legacy/preferences-system.png
 share/icons/Adwaita/16x16/legacy/printer-error.png
-share/icons/Adwaita/16x16/legacy/printer-network.png
 share/icons/Adwaita/16x16/legacy/printer-printing.png
-share/icons/Adwaita/16x16/legacy/printer.png
 share/icons/Adwaita/16x16/legacy/process-stop.png
 share/icons/Adwaita/16x16/legacy/scanner.png
 share/icons/Adwaita/16x16/legacy/security-high.png
@@ -342,6 +342,7 @@ share/icons/Adwaita/16x16/mimetypes/application-x-firmware.png
 share/icons/Adwaita/16x16/mimetypes/audio-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/font-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/image-x-generic.png
+share/icons/Adwaita/16x16/mimetypes/inode-directory.png
 share/icons/Adwaita/16x16/mimetypes/package-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/text-html.png
 share/icons/Adwaita/16x16/mimetypes/text-x-generic-template.png
@@ -391,6 +392,9 @@ share/icons/Adwaita/22x22/devices/audio-headset.png
 share/icons/Adwaita/22x22/devices/computer.png
 share/icons/Adwaita/22x22/devices/drive-harddisk.png
 share/icons/Adwaita/22x22/devices/drive-removable-media.png
+share/icons/Adwaita/22x22/devices/media-optical.png
+share/icons/Adwaita/22x22/devices/printer-network.png
+share/icons/Adwaita/22x22/devices/printer.png
 share/icons/Adwaita/22x22/emblems/
 share/icons/Adwaita/22x22/emblems/emblem-readonly.png
 share/icons/Adwaita/22x22/emblems/emblem-shared.png
@@ -587,7 +591,6 @@ share/icons/Adwaita/22x22/legacy/mark-location.png
 share/icons/Adwaita/22x22/legacy/media-eject.png
 share/icons/Adwaita/22x22/legacy/media-flash.png
 share/icons/Adwaita/22x22/legacy/media-floppy.png
-share/icons/Adwaita/22x22/legacy/media-optical.png
 share/icons/Adwaita/22x22/legacy/media-playback-pause.png
 share/icons/Adwaita/22x22/legacy/media-playback-start-rtl.png
 share/icons/Adwaita/22x22/legacy/media-playback-start.png
@@ -653,9 +656,7 @@ share/icons/Adwaita/22x22/legacy/preferences-system-sharing.png
 share/icons/Adwaita/22x22/legacy/preferences-system-windows.png
 share/icons/Adwaita/22x22/legacy/preferences-system.png
 share/icons/Adwaita/22x22/legacy/printer-error.png
-share/icons/Adwaita/22x22/legacy/printer-network.png
 share/icons/Adwaita/22x22/legacy/printer-printing.png
-share/icons/Adwaita/22x22/legacy/printer.png
 share/icons/Adwaita/22x22/legacy/process-stop.png
 share/icons/Adwaita/22x22/legacy/scanner.png
 share/icons/Adwaita/22x22/legacy/security-high.png
@@ -725,6 +726,7 @@ share/icons/Adwaita/22x22/mimetypes/application-x-firmware.png
 share/icons/Adwaita/22x22/mimetypes/audio-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/font-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/image-x-generic.png
+share/icons/Adwaita/22x22/mimetypes/inode-directory.png
 share/icons/Adwaita/22x22/mimetypes/package-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/text-html.png
 share/icons/Adwaita/22x22/mimetypes/text-x-generic-template.png
@@ -774,6 +776,9 @@ share/icons/Adwaita/24x24/devices/audio-headset.png
 share/icons/Adwaita/24x24/devices/computer.png
 share/icons/Adwaita/24x24/devices/drive-harddisk.png
 share/icons/Adwaita/24x24/devices/drive-removable-media.png
+share/icons/Adwaita/24x24/devices/media-optical.png
+share/icons/Adwaita/24x24/devices/printer-network.png
+share/icons/Adwaita/24x24/devices/printer.png
 share/icons/Adwaita/24x24/emblems/
 share/icons/Adwaita/24x24/emblems/emblem-readonly.png
 share/icons/Adwaita/24x24/emblems/emblem-shared.png
@@ -959,7 +964,6 @@ share/icons/Adwaita/24x24/legacy/mail-unread.png
 share/icons/Adwaita/24x24/legacy/media-eject.png
 share/icons/Adwaita/24x24/legacy/media-flash.png
 share/icons/Adwaita/24x24/legacy/media-floppy.png
-share/icons/Adwaita/24x24/legacy/media-optical.png
 share/icons/Adwaita/24x24/legacy/media-playback-pause.png
 share/icons/Adwaita/24x24/legacy/media-playback-start-rtl.png
 share/icons/Adwaita/24x24/legacy/media-playback-start.png
@@ -1022,9 +1026,7 @@ share/icons/Adwaita/24x24/legacy/preferences-system-privacy.png
 share/icons/Adwaita/24x24/legacy/preferences-system-windows.png
 share/icons/Adwaita/24x24/legacy/preferences-system.png
 share/icons/Adwaita/24x24/legacy/printer-error.png
-share/icons/Adwaita/24x24/legacy/printer-network.png
 share/icons/Adwaita/24x24/legacy/printer-printing.png
-share/icons/Adwaita/24x24/legacy/printer.png
 share/icons/Adwaita/24x24/legacy/process-stop.png
 share/icons/Adwaita/24x24/legacy/scanner.png
 share/icons/Adwaita/24x24/legacy/security-high.png
@@ -1094,6 +1096,7 @@ share/icons/Adwaita/24x24/mimetypes/application-x-firmware.png
 share/icons/Adwaita/24x24/mimetypes/audio-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/font-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/image-x-generic.png
+share/icons/Adwaita/24x24/mimetypes/inode-directory.png
 share/icons/Adwaita/24x24/mimetypes/package-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/text-html.png
 share/icons/Adwaita/24x24/mimetypes/text-x-generic-template.png
@@ -1221,7 +1224,6 @@ share/icons/Adwaita/256x256/legacy/mail-message-new.png
 share/icons/Adwaita/256x256/legacy/mail-read.png
 share/icons/Adwaita/256x256/legacy/media-flash.png
 share/icons/Adwaita/256x256/legacy/media-floppy.png
-share/icons/Adwaita/256x256/legacy/media-optical.png
 share/icons/Adwaita/256x256/legacy/media-removable.png
 share/icons/Adwaita/256x256/legacy/multimedia-volume-control.png
 share/icons/Adwaita/256x256/legacy/network-cellular-connected.png
@@ -1251,9 +1253,7 @@ share/icons/Adwaita/256x256/legacy/preferences-system-search.png
 share/icons/Adwaita/256x256/legacy/preferences-system-sharing.png
 share/icons/Adwaita/256x256/legacy/preferences-system.png
 share/icons/Adwaita/256x256/legacy/printer-error.png
-share/icons/Adwaita/256x256/legacy/printer-network.png
 share/icons/Adwaita/256x256/legacy/printer-printing.png
-share/icons/Adwaita/256x256/legacy/printer.png
 share/icons/Adwaita/256x256/legacy/process-stop.png
 share/icons/Adwaita/256x256/legacy/scanner.png
 share/icons/Adwaita/256x256/legacy/security-high.png
@@ -1303,6 +1303,9 @@ share/icons/Adwaita/32x32/devices/audio-headset.png
 share/icons/Adwaita/32x32/devices/computer.png
 share/icons/Adwaita/32x32/devices/drive-harddisk.png
 share/icons/Adwaita/32x32/devices/drive-removable-media.png
+share/icons/Adwaita/32x32/devices/media-optical.png
+share/icons/Adwaita/32x32/devices/printer-network.png
+share/icons/Adwaita/32x32/devices/printer.png
 share/icons/Adwaita/32x32/emblems/
 share/icons/Adwaita/32x32/emblems/emblem-readonly.png
 share/icons/Adwaita/32x32/emblems/emblem-shared.png
@@ -1497,7 +1500,6 @@ share/icons/Adwaita/32x32/legacy/mark-location.png
 share/icons/Adwaita/32x32/legacy/media-eject.png
 share/icons/Adwaita/32x32/legacy/media-flash.png
 share/icons/Adwaita/32x32/legacy/media-floppy.png
-share/icons/Adwaita/32x32/legacy/media-optical.png
 share/icons/Adwaita/32x32/legacy/media-playback-pause.png
 share/icons/Adwaita/32x32/legacy/media-playback-start-rtl.png
 share/icons/Adwaita/32x32/legacy/media-playback-start.png
@@ -1562,9 +1564,7 @@ share/icons/Adwaita/32x32/legacy/preferences-system-sharing.png
 share/icons/Adwaita/32x32/legacy/preferences-system-windows.png
 share/icons/Adwaita/32x32/legacy/preferences-system.png
 share/icons/Adwaita/32x32/legacy/printer-error.png
-share/icons/Adwaita/32x32/legacy/printer-network.png
 share/icons/Adwaita/32x32/legacy/printer-printing.png
-share/icons/Adwaita/32x32/legacy/printer.png
 share/icons/Adwaita/32x32/legacy/process-stop.png
 share/icons/Adwaita/32x32/legacy/scanner.png
 share/icons/Adwaita/32x32/legacy/security-high.png
@@ -1633,6 +1633,7 @@ share/icons/Adwaita/32x32/mimetypes/application-x-firmware.png
 share/icons/Adwaita/32x32/mimetypes/audio-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/font-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/image-x-generic.png
+share/icons/Adwaita/32x32/mimetypes/inode-directory.png
 share/icons/Adwaita/32x32/mimetypes/package-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/text-html.png
 share/icons/Adwaita/32x32/mimetypes/text-x-generic-template.png
@@ -1682,6 +1683,9 @@ share/icons/Adwaita/48x48/devices/audio-headset.png
 share/icons/Adwaita/48x48/devices/computer.png
 share/icons/Adwaita/48x48/devices/drive-harddisk.png
 share/icons/Adwaita/48x48/devices/drive-removable-media.png
+share/icons/Adwaita/48x48/devices/media-optical.png
+share/icons/Adwaita/48x48/devices/printer-network.png
+share/icons/Adwaita/48x48/devices/printer.png
 share/icons/Adwaita/48x48/emblems/
 share/icons/Adwaita/48x48/emblems/emblem-readonly.png
 share/icons/Adwaita/48x48/emblems/emblem-shared.png
@@ -1877,7 +1881,6 @@ share/icons/Adwaita/48x48/legacy/mark-location.png
 share/icons/Adwaita/48x48/legacy/media-eject.png
 share/icons/Adwaita/48x48/legacy/media-flash.png
 share/icons/Adwaita/48x48/legacy/media-floppy.png
-share/icons/Adwaita/48x48/legacy/media-optical.png
 share/icons/Adwaita/48x48/legacy/media-playback-pause.png
 share/icons/Adwaita/48x48/legacy/media-playback-start-rtl.png
 share/icons/Adwaita/48x48/legacy/media-playback-start.png
@@ -1942,9 +1945,7 @@ share/icons/Adwaita/48x48/legacy/preferences-system-sharing.png
 share/icons/Adwaita/48x48/legacy/preferences-system-windows.png
 share/icons/Adwaita/48x48/legacy/preferences-system.png
 share/icons/Adwaita/48x48/legacy/printer-error.png
-share/icons/Adwaita/48x48/legacy/printer-network.png
 share/icons/Adwaita/48x48/legacy/printer-printing.png
-share/icons/Adwaita/48x48/legacy/printer.png
 share/icons/Adwaita/48x48/legacy/process-stop.png
 share/icons/Adwaita/48x48/legacy/scanner.png
 share/icons/Adwaita/48x48/legacy/security-high.png
@@ -2013,6 +2014,7 @@ share/icons/Adwaita/48x48/mimetypes/application-x-firmware.png
 share/icons/Adwaita/48x48/mimetypes/audio-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/font-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/image-x-generic.png
+share/icons/Adwaita/48x48/mimetypes/inode-directory.png
 share/icons/Adwaita/48x48/mimetypes/package-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/text-html.png
 share/icons/Adwaita/48x48/mimetypes/text-x-generic-template.png
@@ -2063,6 +2065,9 @@ share/icons/Adwaita/512x512/devices/audio-microphone.png
 share/icons/Adwaita/512x512/devices/computer.png
 share/icons/Adwaita/512x512/devices/drive-harddisk.png
 share/icons/Adwaita/512x512/devices/drive-removable-media.png
+share/icons/Adwaita/512x512/devices/media-optical.png
+share/icons/Adwaita/512x512/devices/printer-network.png
+share/icons/Adwaita/512x512/devices/printer.png
 share/icons/Adwaita/512x512/emblems/
 share/icons/Adwaita/512x512/emblems/emblem-readonly.png
 share/icons/Adwaita/512x512/emblems/emblem-shared.png
@@ -2099,6 +2104,7 @@ share/icons/Adwaita/512x512/mimetypes/application-x-executable.png
 share/icons/Adwaita/512x512/mimetypes/audio-x-generic.png
 share/icons/Adwaita/512x512/mimetypes/font-x-generic.png
 share/icons/Adwaita/512x512/mimetypes/image-x-generic.png
+share/icons/Adwaita/512x512/mimetypes/inode-directory.png
 share/icons/Adwaita/512x512/mimetypes/package-x-generic.png
 share/icons/Adwaita/512x512/mimetypes/text-html.png
 share/icons/Adwaita/512x512/mimetypes/text-x-generic-template.png
@@ -2389,6 +2395,8 @@ share/icons/Adwaita/scalable/actions/object-select-symbolic.svg
 share/icons/Adwaita/scalable/actions/open-menu-symbolic.svg
 share/icons/Adwaita/scalable/actions/process-stop-symbolic.svg
 share/icons/Adwaita/scalable/actions/send-to-symbolic.svg
+share/icons/Adwaita/scalable/actions/sidebar-hide-symbolic.svg
+share/icons/Adwaita/scalable/actions/sidebar-show-symbolic.svg
 share/icons/Adwaita/scalable/actions/star-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-log-out-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-reboot-symbolic.svg
@@ -2401,6 +2409,7 @@ share/icons/Adwaita/scalable/actions/tools-check-spelling-symbolic.svg
 share/icons/Adwaita/scalable/actions/value-decrease-symbolic.svg
 share/icons/Adwaita/scalable/actions/value-increase-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-app-grid-symbolic.svg
+share/icons/Adwaita/scalable/actions/view-conceal-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-continuous-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-dual-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-fullscreen-symbolic.svg
@@ -2415,6 +2424,7 @@ share/icons/Adwaita/scalable/actions/view-paged-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-pin-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-refresh-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-restore-symbolic.svg
+share/icons/Adwaita/scalable/actions/view-reveal-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-sort-ascending-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-sort-descending-symbolic.svg
 share/icons/Adwaita/scalable/actions/zoom-fit-best-symbolic.svg
@@ -2435,6 +2445,7 @@ share/icons/Adwaita/scalable/apps/help-faq-symbolic.svg
 share/icons/Adwaita/scalable/apps/multimedia-volume-control-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-color-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-accessibility-symbolic.svg
+share/icons/Adwaita/scalable/apps/preferences-desktop-apps-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-display-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-font-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-keyboard-shortcuts-symbolic.svg
@@ -2525,6 +2536,7 @@ share/icons/Adwaita/scalable/devices/media-zip-symbolic.svg
 share/icons/Adwaita/scalable/devices/modem-symbolic.svg
 share/icons/Adwaita/scalable/devices/multimedia-player-apple-ipod-touch-symbolic.svg
 share/icons/Adwaita/scalable/devices/multimedia-player-symbolic.svg
+share/icons/Adwaita/scalable/devices/network-cellular-symbolic.svg
 share/icons/Adwaita/scalable/devices/network-wired-symbolic.svg
 share/icons/Adwaita/scalable/devices/network-wireless-symbolic.svg
 share/icons/Adwaita/scalable/devices/pda-symbolic.svg
@@ -2579,6 +2591,19 @@ share/icons/Adwaita/scalable/emotes/face-uncertain-symbolic.svg
 share/icons/Adwaita/scalable/emotes/face-wink-symbolic.svg
 share/icons/Adwaita/scalable/emotes/face-worried-symbolic.svg
 share/icons/Adwaita/scalable/emotes/face-yawn-symbolic.svg
+share/icons/Adwaita/scalable/legacy/
+share/icons/Adwaita/scalable/legacy/battery-caution-charging-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-caution-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-empty-charging-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-empty-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-full-charged-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-full-charging-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-full-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-good-charging-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-good-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-low-charging-symbolic.svg
+share/icons/Adwaita/scalable/legacy/battery-low-symbolic.svg
+share/icons/Adwaita/scalable/mail-attachment-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/
 share/icons/Adwaita/scalable/mimetypes/application-certificate-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-rss+xml-symbolic.svg
@@ -2630,17 +2655,28 @@ share/icons/Adwaita/scalable/status/audio-volume-overamplified-symbolic.svg
 share/icons/Adwaita/scalable/status/auth-sim-locked-symbolic.svg
 share/icons/Adwaita/scalable/status/auth-sim-missing-symbolic.svg
 share/icons/Adwaita/scalable/status/avatar-default-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-caution-charging-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-caution-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-empty-charging-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-empty-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-full-charged-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-full-charging-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-full-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-good-charging-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-good-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-low-charging-symbolic.svg
-share/icons/Adwaita/scalable/status/battery-low-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-0-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-0-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-10-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-10-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-100-charged-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-100-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-20-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-20-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-30-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-30-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-40-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-40-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-50-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-50-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-60-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-60-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-70-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-70-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-80-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-80-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-90-charging-symbolic.svg
+share/icons/Adwaita/scalable/status/battery-level-90-symbolic.svg
 share/icons/Adwaita/scalable/status/battery-missing-symbolic.svg
 share/icons/Adwaita/scalable/status/bluetooth-active-symbolic.svg
 share/icons/Adwaita/scalable/status/bluetooth-disabled-symbolic.svg
@@ -2716,6 +2752,7 @@ share/icons/Adwaita/scalable/status/network-wired-no-route-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wired-offline-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-acquiring-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-connected-symbolic.svg
+share/icons/Adwaita/scalable/status/network-wireless-disabled-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-encrypted-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-hotspot-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-no-route-symbolic.svg
@@ -2730,8 +2767,8 @@ share/icons/Adwaita/scalable/status/non-starred-symbolic.svg
 share/icons/Adwaita/scalable/status/notifications-disabled-symbolic.svg
 share/icons/Adwaita/scalable/status/orientation-landscape-inverse-symbolic.svg
 share/icons/Adwaita/scalable/status/orientation-landscape-symbolic.svg
-share/icons/Adwaita/scalable/status/orientation-portrait-inverse-symbolic.svg
-share/icons/Adwaita/scalable/status/orientation-portrait-symbolic.svg
+share/icons/Adwaita/scalable/status/orientation-portrait-left-symbolic.svg
+share/icons/Adwaita/scalable/status/orientation-portrait-right-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-error-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-printing-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-warning-symbolic.svg
@@ -2750,6 +2787,7 @@ share/icons/Adwaita/scalable/status/system-lock-screen-symbolic.svg
 share/icons/Adwaita/scalable/status/task-due-symbolic.svg
 share/icons/Adwaita/scalable/status/task-past-due-symbolic.svg
 share/icons/Adwaita/scalable/status/thunderbolt-acquiring-symbolic.svg
+share/icons/Adwaita/scalable/status/touch-disabled-symbolic.svg
 share/icons/Adwaita/scalable/status/touchpad-disabled-symbolic.svg
 share/icons/Adwaita/scalable/status/user-available-symbolic.svg
 share/icons/Adwaita/scalable/status/user-away-symbolic.svg
@@ -2773,6 +2811,7 @@ share/icons/Adwaita/scalable/status/weather-showers-scattered-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-showers-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-snow-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-storm-symbolic.svg
+share/icons/Adwaita/scalable/status/weather-tornado-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-windy-symbolic.svg
 share/icons/Adwaita/scalable/ui/
 share/icons/Adwaita/scalable/ui/checkbox-checked-symbolic.svg
@@ -2795,6 +2834,7 @@ share/icons/Adwaita/scalable/ui/selection-end-symbolic-rtl.svg
 share/icons/Adwaita/scalable/ui/selection-end-symbolic.svg
 share/icons/Adwaita/scalable/ui/selection-start-symbolic-rtl.svg
 share/icons/Adwaita/scalable/ui/selection-start-symbolic.svg
+share/icons/Adwaita/scalable/ui/tab-new-symbolic.svg
 share/icons/Adwaita/scalable/ui/window-close-symbolic.svg
 share/icons/Adwaita/scalable/ui/window-maximize-symbolic.svg
 share/icons/Adwaita/scalable/ui/window-minimize-symbolic.svg
