@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/07 11:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2019/11/01 19:38:25 ajacoutot Exp $
 
 COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
-GNOME_VERSION=		3.28.1
-
-REVISION=		1
+GNOME_VERSION=		3.34.0
 
 SHARED_LIBS +=  gck-1                2.0      # 0.0
 SHARED_LIBS +=  gcr-base-3           3.0      # 1.0
@@ -23,10 +21,14 @@ WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
+			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info vala
+
+MODPY_RUNDEP=		No
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=		x11/gtk+3 \
 			security/libgcrypt \
@@ -41,13 +43,5 @@ RUN_DEPENDS=		gnupg->=2:security/gnupg2
 
 # Need xsltproc in order to build with gobject introspection
 BUILD_DEPENDS +=	textproc/libxslt
-
-# regression tests call 'env python'
-MODULES +=		lang/python
-TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
-MODPY_RUNDEP=		No
-MODPY_BUILDDEP=		No
-pre-test:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
