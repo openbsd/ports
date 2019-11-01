@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2018/07/06 06:04:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.44 2019/11/01 19:38:41 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon
@@ -76,6 +76,9 @@ share/locale/lt/LC_MESSAGES/gnome-keyring.mo
 share/locale/lv/LC_MESSAGES/gnome-keyring.mo
 share/locale/mai/LC_MESSAGES/gnome-keyring.mo
 share/locale/mg/LC_MESSAGES/gnome-keyring.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/gnome-keyring.mo
 share/locale/mk/LC_MESSAGES/gnome-keyring.mo
 share/locale/ml/LC_MESSAGES/gnome-keyring.mo
 share/locale/mn/LC_MESSAGES/gnome-keyring.mo
@@ -113,4 +116,5 @@ share/locale/xh/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
+share/p11-kit/modules/gnome-keyring.module
 @tag glib-compile-schemas
