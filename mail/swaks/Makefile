@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/22 22:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2019/11/01 15:53:54 jasper Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
-DISTNAME=	swaks-20181104.0
+DISTNAME=	swaks-20190914.0
 
 CATEGORIES=	mail
 
