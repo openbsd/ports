@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.8 2019/07/19 10:08:12 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.9 2019/11/01 19:33:14 ajacoutot Exp $
 
 XXX base gcc
 Reordering needed to prefer long long because base-gcc doesn't recognize
@@ -15,7 +15,7 @@ Subject: [PATCH] fix atomic detection on older gcc versions
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -1118,18 +1118,6 @@ endif
+@@ -1169,18 +1169,6 @@ endif
  # works.
  if long_long_size == long_size
    if cc.compiles('''#if defined(_AIX) && !defined(__GNUC__)
@@ -34,7 +34,7 @@ Index: meson.build
                        #pragma options langlvl=stdc99
                        #endif
                        #pragma GCC diagnostic error "-Wincompatible-pointer-types"
-@@ -1141,6 +1129,18 @@ if long_long_size == long_size
+@@ -1192,6 +1180,18 @@ if long_long_size == long_size
                          return 1;
                        }''', name : 'int64_t is long long')
      int64_t_typedef = 'long long'
@@ -53,7 +53,7 @@ Index: meson.build
    endif
  endif
  
-@@ -1275,13 +1275,6 @@ if sizet_size == short_size
+@@ -1327,13 +1327,6 @@ if sizet_size == short_size
    glibconfig_conf.set_quoted('gsize_format', 'hu')
    glibconfig_conf.set_quoted('gssize_format', 'hi')
    glibconfig_conf.set('glib_msize_type', 'SHRT')
@@ -67,7 +67,7 @@ Index: meson.build
  elif sizet_size == long_size
    glibconfig_conf.set('glib_size_type_define', 'long')
    glibconfig_conf.set_quoted('gsize_modifier', 'l')
-@@ -1289,6 +1282,13 @@ elif sizet_size == long_size
+@@ -1341,6 +1334,13 @@ elif sizet_size == long_size
    glibconfig_conf.set_quoted('gsize_format', 'lu')
    glibconfig_conf.set_quoted('gssize_format', 'li')
    glibconfig_conf.set('glib_msize_type', 'LONG')
@@ -81,15 +81,3 @@ Index: meson.build
  elif sizet_size == long_long_size
    glibconfig_conf.set('glib_size_type_define', 'long long')
    glibconfig_conf.set_quoted('gsize_modifier', int64_m)
-@@ -1579,9 +1579,8 @@ atomicdefine = '''
- # We know that we can always use real ("lock free") atomic operations with MSVC
- if cc.get_id() == 'msvc' or cc.links(atomictest, name : 'atomic ops')
-   have_atomic_lock_free = true
--  if (host_system == 'android' or host_system == 'linux') and not cc.compiles(atomicdefine, name : 'atomic ops define')
--    # When building for armv5 on Linux, gcc provides
--    # __sync_bool_compare_and_swap but doesn't define
-+  if cc.get_id() == 'gcc' and not cc.compiles(atomicdefine, name : 'atomic ops define')
-+    # Old gcc release may provide __sync_bool_compare_and_swap but don't define
-     # __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4
-     glib_conf.set('__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4', true)
-   endif

@@ -1,11 +1,11 @@
-$OpenBSD: patch-gio_glib-compile-schemas_c,v 1.11 2019/01/01 11:32:15 ajacoutot Exp $
+$OpenBSD: patch-gio_glib-compile-schemas_c,v 1.12 2019/11/01 19:33:14 ajacoutot Exp $
 
 XXX do not warn about bad dconf paths
 
 Index: gio/glib-compile-schemas.c
 --- gio/glib-compile-schemas.c.orig
 +++ gio/glib-compile-schemas.c
-@@ -1233,6 +1233,7 @@ parse_state_start_schema (ParseState  *state,
+@@ -1232,6 +1232,7 @@ parse_state_start_schema (ParseState  *state,
        return;
      }
  
@@ -13,7 +13,7 @@ Index: gio/glib-compile-schemas.c
    if (path && (g_str_has_prefix (path, "/apps/") ||
                 g_str_has_prefix (path, "/desktop/") ||
                 g_str_has_prefix (path, "/system/")))
-@@ -1245,6 +1246,7 @@ parse_state_start_schema (ParseState  *state,
+@@ -1244,6 +1245,7 @@ parse_state_start_schema (ParseState  *state,
        g_printerr ("%s\n", message);
        g_free (message);
      }
@@ -21,7 +21,7 @@ Index: gio/glib-compile-schemas.c
  
    state->schema_state = schema_state_new (path, gettext_domain,
                                            extends, extends_name, list_of);
-@@ -2165,6 +2167,11 @@ main (int argc, char **argv)
+@@ -2198,6 +2200,11 @@ main (int argc, char **argv)
  #ifdef HAVE_BIND_TEXTDOMAIN_CODESET
    bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
  #endif

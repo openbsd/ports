@@ -1,4 +1,6 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.18 2019/02/10 14:42:38 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.19 2019/11/01 19:33:14 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=653555
 
 Index: gio/gunixmount.c
 --- gio/gunixmount.c.orig
