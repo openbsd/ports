@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/04/28 09:13:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/11/01 19:37:45 ajacoutot Exp $
 @bin bin/dazzle-list-counters
 include/libdazzle-1.0/
 include/libdazzle-1.0/actions/
@@ -105,6 +105,7 @@ include/libdazzle-1.0/statemachine/
 include/libdazzle-1.0/statemachine/dzl-state-machine-buildable.h
 include/libdazzle-1.0/statemachine/dzl-state-machine.h
 include/libdazzle-1.0/suggestions/
+include/libdazzle-1.0/suggestions/dzl-suggestion-button.h
 include/libdazzle-1.0/suggestions/dzl-suggestion-entry-buffer.h
 include/libdazzle-1.0/suggestions/dzl-suggestion-entry.h
 include/libdazzle-1.0/suggestions/dzl-suggestion-popover.h
