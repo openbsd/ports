@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2019/04/28 06:37:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2019/11/01 19:36:40 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -39,6 +39,11 @@ include/giomm-${V}/giomm/dbusmenumodel.h
 include/giomm-${V}/giomm/dbusmessage.h
 include/giomm-${V}/giomm/dbusmethodinvocation.h
 include/giomm-${V}/giomm/dbusobject.h
+include/giomm-${V}/giomm/dbusobjectmanager.h
+include/giomm-${V}/giomm/dbusobjectmanagerclient.h
+include/giomm-${V}/giomm/dbusobjectmanagerserver.h
+include/giomm-${V}/giomm/dbusobjectproxy.h
+include/giomm-${V}/giomm/dbusobjectskeleton.h
 include/giomm-${V}/giomm/dbusownname.h
 include/giomm-${V}/giomm/dbusproxy.h
 include/giomm-${V}/giomm/dbusserver.h
@@ -125,6 +130,11 @@ include/giomm-${V}/giomm/private/dbusmenumodel_p.h
 include/giomm-${V}/giomm/private/dbusmessage_p.h
 include/giomm-${V}/giomm/private/dbusmethodinvocation_p.h
 include/giomm-${V}/giomm/private/dbusobject_p.h
+include/giomm-${V}/giomm/private/dbusobjectmanager_p.h
+include/giomm-${V}/giomm/private/dbusobjectmanagerclient_p.h
+include/giomm-${V}/giomm/private/dbusobjectmanagerserver_p.h
+include/giomm-${V}/giomm/private/dbusobjectproxy_p.h
+include/giomm-${V}/giomm/private/dbusobjectskeleton_p.h
 include/giomm-${V}/giomm/private/dbusownname_p.h
 include/giomm-${V}/giomm/private/dbusproxy_p.h
 include/giomm-${V}/giomm/private/dbusserver_p.h
@@ -559,6 +569,21 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1NodeInfo-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1NodeInfo.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Object-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Object.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManager-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManager.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManagerClient-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManagerClient.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManagerClient__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManagerServer-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManagerServer.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManagerServer__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectManager__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectProxy-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectProxy.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectProxy__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectSkeleton-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectSkeleton.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1ObjectSkeleton__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Object__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1PropertyInfo-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1PropertyInfo.html
@@ -1693,6 +1718,7 @@ share/doc/glibmm-${V}/reference/html/since_2_54.html
 share/doc/glibmm-${V}/reference/html/since_2_56.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
 share/doc/glibmm-${V}/reference/html/since_2_60.html
+share/doc/glibmm-${V}/reference/html/since_2_62.html
 share/doc/glibmm-${V}/reference/html/since_2_8.html
 share/doc/glibmm-${V}/reference/html/splitbar.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
