@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2019/07/07 11:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2019/11/01 22:31:00 ajacoutot Exp $
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=590059
 #RUN_DEPENDS +=		misc/hwdata
@@ -7,18 +7,17 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		3.32.2
+GNOME_VERSION=		3.34.1
 
-SHARED_LIBS +=  gnome-desktop-3      2.2      # 17.0.6
+SHARED_LIBS +=  gnome-desktop-3      2.2      # 18.0.3
 
 CATEGORIES=		x11
 
 # LGPLv2/GFDLv1.1/GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl m pango-1.0
-WANTLIB += pangocairo-1.0
+WANTLIB += X11 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-3 intl m
 
 MODULES=		devel/meson \
 			x11/gnome

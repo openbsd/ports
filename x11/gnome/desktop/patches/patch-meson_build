@@ -1,11 +1,11 @@
-$OpenBSD: patch-meson_build,v 1.1 2019/05/08 01:31:29 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.2 2019/11/01 22:31:00 ajacoutot Exp $
 
 XXX fix+push upstream
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -30,7 +30,7 @@ prefix = get_option('prefix')
+@@ -33,7 +33,7 @@ prefix = get_option('prefix')
  datadir = join_paths(prefix, get_option('datadir'))
  libexecdir = join_paths(prefix, get_option('libexecdir'))
  
