@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.810 2019/10/19 07:47:21 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.811 2019/11/01 13:08:37 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1321,6 +1321,7 @@ my $obsolete_reason = {
 	'p5-HTTP-BrowserDetect' => 6,
 # 6.7
 	'awless' => 3,
+	'mousetweaks' => 3,
 };
 
 # reasons for obsolete packages
