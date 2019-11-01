@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/04/30 17:42:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/11/01 19:25:31 jasper Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
 include/gjs-1.0/gjs/
 include/gjs-1.0/gjs/context.h
 include/gjs-1.0/gjs/coverage.h
+include/gjs-1.0/gjs/error-types.h
 include/gjs-1.0/gjs/gjs.h
 include/gjs-1.0/gjs/macros.h
 include/gjs-1.0/gjs/mem.h
 include/gjs-1.0/gjs/profiler.h
-include/gjs-1.0/util/
-include/gjs-1.0/util/error.h
 lib/gjs/
 lib/gjs/girepository-1.0/
 lib/gjs/girepository-1.0/GjsPrivate-1.0.typelib
@@ -29,3 +28,5 @@ share/gjs-1.0/lsan/
 share/gjs-1.0/lsan/lsan.supp
 share/gjs-1.0/valgrind/
 share/gjs-1.0/valgrind/gjs.supp
+share/glib-2.0/schemas/org.gnome.GjsTest.gschema.xml
+@tag glib-compile-schemas
