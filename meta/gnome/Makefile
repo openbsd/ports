@@ -1,26 +1,19 @@
-# $OpenBSD: Makefile,v 1.172 2019/11/01 13:03:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2019/11/01 22:31:22 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
 # sync with gnome-desktop GNOME_VERSION
-V=			3.32.2
+V=			3.34.1
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
-REVISION-extras=	0
-
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MULTI_PACKAGES=		-main -extras
-
-# remove when we don't use gtk+2 apps in GNOME
-# Gtk-Message: Failed to load module "canberra-gtk-module"
-RUN_DEPENDS-main +=	audio/libcanberra,-gtk
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
 # add gtk+{2,3}-cups so that gtkprint() can see native CUPS printers;
@@ -103,12 +96,12 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			mail/evolution \
 			net/gupnp/igd \
 			x11/gnome/bijiben \
+			x11/gnome/books \
 			x11/gnome/builder \
 			x11/gnome/dconf-editor \
 			x11/gnome/devel-docs \
 			x11/gnome/devhelp \
 			x11/gnome/dictionary \
-			x11/gnome/books \
 			x11/gnome/documents \
 			x11/gnome/todo \
 			x11/gnome/tweaks
