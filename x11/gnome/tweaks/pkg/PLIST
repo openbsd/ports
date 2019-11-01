@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/05/08 01:19:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/11/01 11:36:11 ajacoutot Exp $
 @conflict gnome-tweak-tool-*
 @pkgpath x11/gnome/tweak-tool
 bin/gnome-tweaks
 lib/python${MODPY_VERSION}/site-packages/gtweak/
 lib/python${MODPY_VERSION}/site-packages/gtweak/__init__.py
-lib/python${MODPY_VERSION}/site-packages/gtweak/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gtweak/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gtweak/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/${MODPY_PYCACHE}defs.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
@@ -25,7 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/gtksettings.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweakmodel.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/__init__.py
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_appearance.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_desktop.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
@@ -98,6 +98,7 @@ share/locale/ko/LC_MESSAGES/gnome-tweaks.mo
 share/locale/ky/LC_MESSAGES/gnome-tweaks.mo
 share/locale/lt/LC_MESSAGES/gnome-tweaks.mo
 share/locale/lv/LC_MESSAGES/gnome-tweaks.mo
+share/locale/mjw/LC_MESSAGES/gnome-tweaks.mo
 share/locale/ml/LC_MESSAGES/gnome-tweaks.mo
 share/locale/my/LC_MESSAGES/gnome-tweaks.mo
 share/locale/nb/LC_MESSAGES/gnome-tweaks.mo
