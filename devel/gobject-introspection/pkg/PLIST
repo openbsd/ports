@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2019/04/30 17:43:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/11/01 19:24:03 jasper Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
 @bin bin/g-ir-generate
@@ -36,6 +36,7 @@ lib/girepository-1.0/GLib-2.0.typelib
 lib/girepository-1.0/GModule-2.0.typelib
 lib/girepository-1.0/GObject-2.0.typelib
 lib/girepository-1.0/Gio-2.0.typelib
+lib/girepository-1.0/Vulkan-1.0.typelib
 lib/girepository-1.0/cairo-1.0.typelib
 lib/girepository-1.0/fontconfig-2.0.typelib
 lib/girepository-1.0/freetype2-2.0.typelib
@@ -162,6 +163,7 @@ share/gir-1.0/GLib-2.0.gir
 share/gir-1.0/GModule-2.0.gir
 share/gir-1.0/GObject-2.0.gir
 share/gir-1.0/Gio-2.0.gir
+share/gir-1.0/Vulkan-1.0.gir
 share/gir-1.0/cairo-1.0.gir
 share/gir-1.0/fontconfig-2.0.gir
 share/gir-1.0/freetype2-2.0.gir
