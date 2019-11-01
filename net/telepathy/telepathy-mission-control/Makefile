@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2019/10/02 17:59:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2019/11/01 20:18:29 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
-DISTNAME=		telepathy-mission-control-5.16.4
-REVISION=		2
+DISTNAME=		telepathy-mission-control-5.16.5
 
 SHARED_LIBS +=  mission-control-plugins 3.0      # 5.1
 
@@ -18,10 +17,10 @@ MODULES=		devel/dconf \
 			lang/python
 
 MODPY_RUNDEP=		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.18.0
-
 
 # both are dependant
 CONFIGURE_ARGS+=	--disable-upower \
