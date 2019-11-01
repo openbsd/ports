@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/01 15:45:29 ajacoutot Exp $
 
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11 devel
 SHARED_LIBS +=  dbusmenu-glib             0.0 # 4.12
 SHARED_LIBS +=  dbusmenu-gtk3             0.0 # 4.12
@@ -13,9 +13,21 @@ HOMEPAGE =	https://launchpad.net/libdbusmenu/
 # LGPLv2
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl json-glib-1.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread xcb xcb-render xcb-shm z
+
 MASTER_SITES =	https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/
 
 CONFIGURE_STYLE = gnu
+
+# doesn't build with glib2 >= 2.62
+CONFIGURE_ARGS =	--disable-dumper
+
 USE_GMAKE= yes
 
 MODULES =	textproc/intltool
@@ -27,17 +39,8 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 		lang/vala
 
 LIB_DEPENDS =	x11/gtk+3 \
-		x11/gtk+2 \
 		devel/json-glib
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += gtk-x11-2.0 harfbuzz iconv intl json-glib-1.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += xcb xcb-render xcb-shm z
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/08 16:35:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/01 15:45:29 ajacoutot Exp $
 include/libdbusmenu-glib-0.4/
 include/libdbusmenu-glib-0.4/libdbusmenu-glib/
 include/libdbusmenu-glib-0.4/libdbusmenu-glib/client.h
@@ -32,7 +32,6 @@ lib/pkgconfig/dbusmenu-glib-0.4.pc
 lib/pkgconfig/dbusmenu-gtk3-0.4.pc
 lib/pkgconfig/dbusmenu-jsonloader-0.4.pc
 libexec/dbusmenu-bench
-@bin libexec/dbusmenu-dumper
 @bin libexec/dbusmenu-testapp
 share/doc/libdbusmenu/
 share/doc/libdbusmenu/README.dbusmenu-bench
