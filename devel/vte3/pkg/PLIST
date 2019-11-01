@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2019/05/08 01:08:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.38 2019/11/01 20:19:16 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}
@@ -15,44 +15,9 @@ include/vte-${API_V}/vte/vteterminal.h
 include/vte-${API_V}/vte/vtetypebuiltins.h
 include/vte-${API_V}/vte/vteversion.h
 lib/girepository-1.0/Vte-${API_V}.typelib
-lib/libvte-${API_V}.a
-lib/libvte-${API_V}.la
 @lib lib/libvte-${API_V}.so.${LIBvte-${API_V}_VERSION}
 lib/pkgconfig/vte-${API_V}.pc
 share/gir-1.0/Vte-${API_V}.gir
-share/gtk-doc/html/vte-${API_V}/
-share/gtk-doc/html/vte-${API_V}/VteRegex.html
-share/gtk-doc/html/vte-${API_V}/VteTerminal.html
-share/gtk-doc/html/vte-${API_V}/annotation-glossary.html
-share/gtk-doc/html/vte-${API_V}/api-index-0-40.html
-share/gtk-doc/html/vte-${API_V}/api-index-0-44.html
-share/gtk-doc/html/vte-${API_V}/api-index-0-46.html
-share/gtk-doc/html/vte-${API_V}/api-index-0-48.html
-share/gtk-doc/html/vte-${API_V}/api-index-0-50.html
-share/gtk-doc/html/vte-${API_V}/api-index-0-52.html
-share/gtk-doc/html/vte-${API_V}/api-index-0-54.html
-share/gtk-doc/html/vte-${API_V}/api-index-0-56.html
-share/gtk-doc/html/vte-${API_V}/api-index-deprecated.html
-share/gtk-doc/html/vte-${API_V}/api-index-full.html
-share/gtk-doc/html/vte-${API_V}/ch01.html
-share/gtk-doc/html/vte-${API_V}/ch02.html
-share/gtk-doc/html/vte-${API_V}/ch03.html
-share/gtk-doc/html/vte-${API_V}/ch04.html
-share/gtk-doc/html/vte-${API_V}/home.png
-share/gtk-doc/html/vte-${API_V}/index.html
-share/gtk-doc/html/vte-${API_V}/left-insensitive.png
-share/gtk-doc/html/vte-${API_V}/left.png
-share/gtk-doc/html/vte-${API_V}/licence.html
-share/gtk-doc/html/vte-${API_V}/object-hierarchy.html
-share/gtk-doc/html/vte-${API_V}/pt01.html
-share/gtk-doc/html/vte-${API_V}/right-insensitive.png
-share/gtk-doc/html/vte-${API_V}/right.png
-share/gtk-doc/html/vte-${API_V}/style.css
-share/gtk-doc/html/vte-${API_V}/up-insensitive.png
-share/gtk-doc/html/vte-${API_V}/up.png
-share/gtk-doc/html/vte-${API_V}/vte-${API_V}.devhelp2
-share/gtk-doc/html/vte-${API_V}/vte-Version-Information.html
-share/gtk-doc/html/vte-${API_V}/vte-Vte-PTY.html
 share/locale/am/LC_MESSAGES/vte-${API_V}.mo
 share/locale/an/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ang/LC_MESSAGES/vte-${API_V}.mo
@@ -108,6 +73,9 @@ share/locale/lt/LC_MESSAGES/vte-${API_V}.mo
 share/locale/lv/LC_MESSAGES/vte-${API_V}.mo
 share/locale/mai/LC_MESSAGES/vte-${API_V}.mo
 share/locale/mi/LC_MESSAGES/vte-${API_V}.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/vte-${API_V}.mo
 share/locale/mk/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ml/LC_MESSAGES/vte-${API_V}.mo
 share/locale/mn/LC_MESSAGES/vte-${API_V}.mo
@@ -148,4 +116,5 @@ share/locale/xh/LC_MESSAGES/vte-${API_V}.mo
 share/locale/zh_CN/LC_MESSAGES/vte-${API_V}.mo
 share/locale/zh_HK/LC_MESSAGES/vte-${API_V}.mo
 share/locale/zh_TW/LC_MESSAGES/vte-${API_V}.mo
+share/vala/vapi/vte-${API_V}.deps
 share/vala/vapi/vte-${API_V}.vapi
