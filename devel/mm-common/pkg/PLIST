@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/02/25 03:43:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/11/01 09:02:51 ajacoutot Exp $
+bin/mm-common-get
 bin/mm-common-prepare
+@man man/man1/mm-common-get.1
 @man man/man1/mm-common-prepare.1
 share/aclocal/
 share/aclocal/mm-ax_cxx_compile_stdcxx.m4
@@ -12,13 +14,17 @@ share/aclocal/mm-pkg.m4
 share/aclocal/mm-warnings.m4
 share/doc/mm-common/
 share/doc/mm-common/README
-share/doc/mm-common/skeletonmm.tar.gz
+share/doc/mm-common/skeletonmm.tar.xz
 share/mm-common/
 share/mm-common/build/
 share/mm-common/build/compile-binding.am
+share/mm-common/build/dist-build-scripts.py
 share/mm-common/build/dist-changelog.am
+share/mm-common/build/dist-changelog.py
 share/mm-common/build/doc-reference.am
+share/mm-common/build/doc-reference.py
 share/mm-common/build/generate-binding.am
+share/mm-common/build/generate-binding.py
 share/mm-common/doctags/
 share/mm-common/doctags/libstdc++.tag
 share/mm-common/doctool/
