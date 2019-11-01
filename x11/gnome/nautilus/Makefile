@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.193 2019/08/07 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2019/11/01 22:39:57 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.32.3
+GNOME_VERSION=		3.34.1
 
 SHARED_LIBS += nautilus-extension        3.0 # 1.5.0
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
-WANTLIB += gobject-2.0 gstpbutils-1.0 gstreamer-1.0 gtk-3 intl
-WANTLIB += m pango-1.0 pangocairo-1.0 tracker-sparql-2.0
+WANTLIB += gnome-desktop-3 gobject-2.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gtk-3 intl m pango-1.0 pangocairo-1.0 tracker-sparql-2.0
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
@@ -32,6 +32,7 @@ RUN_DEPENDS=		x11/gnome/gvfs \
 LIB_DEPENDS=		graphics/libgexiv2 \
 			multimedia/gstreamer1/plugins-base \
 			x11/gnome/autoar \
+			x11/gnome/desktop \
 			x11/gnome/tracker
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
