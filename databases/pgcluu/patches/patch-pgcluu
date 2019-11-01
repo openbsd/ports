@@ -1,11 +1,11 @@
-$OpenBSD: patch-pgcluu,v 1.6 2018/09/07 20:19:48 danj Exp $
+$OpenBSD: patch-pgcluu,v 1.7 2019/11/01 20:11:57 jasper Exp $
 
 - Set $sysinfo{"KERNEL"} and $sysinfo{"CPU"} (minus cache) values
 
 Index: pgcluu
 --- pgcluu.orig
 +++ pgcluu
-@@ -9979,13 +9979,13 @@ sub read_sysinfo_file
+@@ -10985,13 +10985,13 @@ sub read_sysinfo_file
  			next;
  		}
  		if ($section eq 'CPU') {
@@ -26,8 +26,8 @@ Index: pgcluu
  			} else {
  				$sysinfo{$section}{$key} = $val;
  			}
-@@ -9993,8 +9993,8 @@ sub read_sysinfo_file
- 		if ($section eq 'KERNEL') {
+@@ -10999,8 +10999,8 @@ sub read_sysinfo_file
+ 		elsif ($section eq 'KERNEL') {
  			my @kinf = split(/\s+/, $l);
  			$sysinfo{$section}{'hostname'} = $kinf[1];
 -			$sysinfo{$section}{'kernel'} = "$kinf[0] $kinf[2] $kinf[3] $kinf[4]";
@@ -35,5 +35,5 @@ Index: pgcluu
 +			$sysinfo{$section}{'kernel'} = "$kinf[2] $kinf[3]";
 +			$sysinfo{$section}{'arch'} = "$kinf[-1]";
  		}
- 		if ($section eq 'UPTIME') {
+ 		elsif ($section eq 'UPTIME') {
  			$sysinfo{$section}{'all'} = $l;

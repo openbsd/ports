@@ -1,12 +1,12 @@
-$OpenBSD: patch-pgcluu_collectd,v 1.6 2018/09/07 20:19:48 danj Exp $
+$OpenBSD: patch-pgcluu_collectd,v 1.7 2019/11/01 20:11:57 jasper Exp $
 
 - Set $sysinfo{"RELEASE"}, $sysinfo{"CPU"} (minus cache)
 
 Index: pgcluu_collectd
 --- pgcluu_collectd.orig
 +++ pgcluu_collectd
-@@ -1523,9 +1523,9 @@ sub grab_os_information
- {
+@@ -1678,9 +1678,9 @@ sub grab_os_information
+ 	my $out_dir = shift();
  
  	# Look at CPU informations
 -	my $cmd = 'cat /proc/cpuinfo 2>/dev/null';
@@ -17,7 +17,7 @@ Index: pgcluu_collectd
  	# Look at kernel informations
  	$cmd = 'uname -a  2>/dev/null';
  	$cmd = $sshcmd . ' "' . $cmd . "\"" if ($sshcmd);
-@@ -1551,8 +1551,7 @@ sub grab_os_information
+@@ -1717,8 +1717,7 @@ sub grab_os_information
  	$cmd = $sshcmd . ' "' . $cmd . "\"" if ($sshcmd);
  	my @pciinfo = `$cmd`;
  	# Release informations

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/11/01 20:11:57 jasper Exp $
 @rcscript ${RCDIR}/pgcluu_collectd
 bin/pgcluu
 bin/pgcluu_collectd
-@man man/man1/pgcluu.1
+@man man/man1/pgcluu.1p
 share/doc/pkg-readmes/${PKGSTEM}
