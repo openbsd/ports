@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.6 2016/03/12 17:22:07 naddy Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST-python,v 1.7 2019/11/01 15:37:46 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/drv_libxml2.py
 lib/python${MODPY_VERSION}/site-packages/drv_libxml2.pyc
 lib/python${MODPY_VERSION}/site-packages/libxml2.py

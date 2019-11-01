@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2018/06/29 09:58:57 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2019/11/01 15:37:46 jasper Exp $
 @pkgpath textproc/libxml
 @define-tag libxml2/rebuild at-end %D/share/libxml2/rebuild
 @tag libxml2/rebuild
@@ -136,7 +136,6 @@ share/doc/libxml2/html/html/libxml-xmlwriter.html
 share/doc/libxml2/html/html/libxml-xpath.html
 share/doc/libxml2/html/html/libxml-xpathInternals.html
 share/doc/libxml2/html/html/libxml-xpointer.html
-share/doc/libxml2/html/html/libxml-xzlib.html
 share/doc/libxml2/html/html/right.png
 share/doc/libxml2/html/html/up.png
 share/doc/libxml2/html/index.html

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2018/11/09 15:25:33 naddy Exp $
+$OpenBSD: patch-Makefile_in,v 1.11 2019/11/01 15:37:45 jasper Exp $
 
 DEPS: Fix parallel build.  gmake recognizes libxml2.la and ./libxml2.la
 as equivalent, ours does not.
@@ -6,7 +6,7 @@ as equivalent, ours does not.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -721,7 +721,7 @@ libxml2_la_SOURCES = SAX.c entities.c encoding.c error
+@@ -754,7 +754,7 @@ libxml2_la_SOURCES = SAX.c entities.c encoding.c error
  		xmlwriter.c legacy.c chvalid.c pattern.c xmlsave.c \
  		xmlmodule.c schematron.c xzlib.c
  
@@ -15,7 +15,7 @@ Index: Makefile.in
  LDADDS = $(STATIC_BINARIES) $(top_builddir)/libxml2.la $(THREAD_LIBS) $(Z_LIBS) $(LZMA_LIBS) $(ICONV_LIBS) $(M_LIBS) $(WIN32_EXTRA_LIBADD)
  man_MANS = xml2-config.1 libxml.3
  m4datadir = $(datadir)/aclocal
-@@ -848,7 +848,7 @@ cmake_DATA = libxml2-config.cmake
+@@ -880,7 +880,7 @@ cmake_DATA = libxml2-config.cmake
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -24,7 +24,7 @@ Index: Makefile.in
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
  
  #
-@@ -1911,7 +1911,7 @@ runtests: runtest$(EXEEXT) testrecurse$(EXEEXT) testap
+@@ -2089,7 +2089,7 @@ runtests: runtest$(EXEEXT) testrecurse$(EXEEXT) testap
            testchar$(EXEEXT) testdict$(EXEEXT) runxmlconf$(EXEEXT)
  	[ -d test   ] || $(LN_S) $(srcdir)/test   .
  	[ -d result ] || $(LN_S) $(srcdir)/result .
@@ -33,7 +33,7 @@ Index: Makefile.in
  	    $(CHECKER) ./testrecurse$(EXEEXT) && \
  	    ASAN_OPTIONS="$$ASAN_OPTIONS:detect_leaks=0" $(CHECKER) ./testapi$(EXEEXT) && \
  	    $(CHECKER) ./testchar$(EXEEXT) && \
-@@ -2438,6 +2438,7 @@ SVGtests : xmllint$(EXEEXT)
+@@ -2616,6 +2616,7 @@ SVGtests : xmllint$(EXEEXT)
  	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
  	  else \
  	      echo Testing $$name ; \
