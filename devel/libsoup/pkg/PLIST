@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/01/01 11:39:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2019/11/01 19:37:08 ajacoutot Exp $
 @conflict libsoup-gnome-*
 @pkgpath devel/libsoup,-main
 @pkgpath devel/libsoup,-gnome
@@ -23,6 +23,9 @@ include/libsoup-${API_VERSION}/libsoup/soup-date.h
 include/libsoup-${API_VERSION}/libsoup/soup-enum-types.h
 include/libsoup-${API_VERSION}/libsoup/soup-form.h
 include/libsoup-${API_VERSION}/libsoup/soup-headers.h
+include/libsoup-${API_VERSION}/libsoup/soup-hsts-enforcer-db.h
+include/libsoup-${API_VERSION}/libsoup/soup-hsts-enforcer.h
+include/libsoup-${API_VERSION}/libsoup/soup-hsts-policy.h
 include/libsoup-${API_VERSION}/libsoup/soup-logger.h
 include/libsoup-${API_VERSION}/libsoup/soup-message-body.h
 include/libsoup-${API_VERSION}/libsoup/soup-message-headers.h
@@ -54,6 +57,9 @@ include/libsoup-${API_VERSION}/libsoup/soup-uri.h
 include/libsoup-${API_VERSION}/libsoup/soup-value-utils.h
 include/libsoup-${API_VERSION}/libsoup/soup-version.h
 include/libsoup-${API_VERSION}/libsoup/soup-websocket-connection.h
+include/libsoup-${API_VERSION}/libsoup/soup-websocket-extension-deflate.h
+include/libsoup-${API_VERSION}/libsoup/soup-websocket-extension-manager.h
+include/libsoup-${API_VERSION}/libsoup/soup-websocket-extension.h
 include/libsoup-${API_VERSION}/libsoup/soup-websocket.h
 include/libsoup-${API_VERSION}/libsoup/soup-xmlrpc-old.h
 include/libsoup-${API_VERSION}/libsoup/soup-xmlrpc.h
@@ -89,6 +95,7 @@ share/locale/es/LC_MESSAGES/libsoup.mo
 share/locale/et/LC_MESSAGES/libsoup.mo
 share/locale/eu/LC_MESSAGES/libsoup.mo
 share/locale/fa/LC_MESSAGES/libsoup.mo
+share/locale/fi/LC_MESSAGES/libsoup.mo
 share/locale/fr/LC_MESSAGES/libsoup.mo
 share/locale/fur/LC_MESSAGES/libsoup.mo
 share/locale/gd/LC_MESSAGES/libsoup.mo
