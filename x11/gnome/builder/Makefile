@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.96 2019/07/18 15:51:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2019/11/01 19:25:28 jasper Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.32.4
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -15,7 +16,7 @@ WANTLIB += enchant-2 fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += git2-glib-1.0 gladeui-2 glib-2.0 gobject-2.0 gspell-1
 WANTLIB += gtk-3 gtksourceview-4 intl json-glib-1.0 jsonrpc-glib-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
-WANTLIB += template_glib-1.0 vala-0.44 vte-2.91 webkit2gtk-4.0
+WANTLIB += template_glib-1.0 vala-0.46 vte-2.91 webkit2gtk-4.0
 WANTLIB += xml2
 
 MODULES=		devel/dconf \
