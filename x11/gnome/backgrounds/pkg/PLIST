@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/04/28 09:23:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/11/01 10:28:38 ajacoutot Exp $
 share/backgrounds/
 share/backgrounds/gnome/
+share/backgrounds/gnome/Acrylic.jpg
 share/backgrounds/gnome/ColdWarm.jpg
 share/backgrounds/gnome/Dark_Ivy.jpg
+share/backgrounds/gnome/Endless-shapes.jpg
 share/backgrounds/gnome/Fabric.jpg
-share/backgrounds/gnome/Flowerbed.jpg
 share/backgrounds/gnome/Icescape.jpg
-share/backgrounds/gnome/RainDrops.jpg
+share/backgrounds/gnome/LightWaves.png
 share/backgrounds/gnome/Road.jpg
-share/backgrounds/gnome/Sandstone.jpg
 share/backgrounds/gnome/SeaSunset.jpg
+share/backgrounds/gnome/Stripes.jpg
+share/backgrounds/gnome/Symbolics-1.jpg
+share/backgrounds/gnome/Symbolics-2.jpg
 share/backgrounds/gnome/Wood.jpg
 share/backgrounds/gnome/adwaita-day.jpg
 share/backgrounds/gnome/adwaita-morning.jpg
 share/backgrounds/gnome/adwaita-night.jpg
 share/backgrounds/gnome/adwaita-timed.xml
-share/backgrounds/gnome/endless-shapes.jpg
-share/backgrounds/gnome/symbolics-1.jpg
-share/backgrounds/gnome/symbolics-2.jpg
 share/gnome-background-properties/
 share/gnome-background-properties/adwaita.xml
 share/gnome-background-properties/gnome-backgrounds.xml
@@ -187,6 +187,9 @@ share/locale/mai/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/mg/
 share/locale/mg/LC_MESSAGES/
 share/locale/mg/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gnome-backgrounds.mo
