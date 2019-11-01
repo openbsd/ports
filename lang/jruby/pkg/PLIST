@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2019/08/15 14:39:23 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.46 2019/11/01 19:29:31 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -257,10 +257,10 @@ jruby/lib/ruby/gems/1.8/gems/rake-12.3.2/lib/rake/trace_output.rb
 jruby/lib/ruby/gems/1.8/gems/rake-12.3.2/lib/rake/version.rb
 jruby/lib/ruby/gems/1.8/gems/rake-12.3.2/lib/rake/win32.rb
 jruby/lib/ruby/gems/1.8/gems/rake-12.3.2/rake.gemspec
-jruby/lib/ruby/gems/1.8/gems/rdoc-6.0.1/
-jruby/lib/ruby/gems/1.8/gems/rdoc-6.0.1/exe/
-jruby/lib/ruby/gems/1.8/gems/rdoc-6.0.1/exe/rdoc
-jruby/lib/ruby/gems/1.8/gems/rdoc-6.0.1/exe/ri
+jruby/lib/ruby/gems/1.8/gems/rdoc-6.1.2/
+jruby/lib/ruby/gems/1.8/gems/rdoc-6.1.2/exe/
+jruby/lib/ruby/gems/1.8/gems/rdoc-6.1.2/exe/rdoc
+jruby/lib/ruby/gems/1.8/gems/rdoc-6.1.2/exe/ri
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.8/
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.8/COPYING
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.8/GPL
@@ -416,7 +416,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.3.7-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-2.2.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/psych-3.1.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-ant-1.0.4.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.0.1.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.1.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/scanf-1.0.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/webrick-1.4.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/did_you_mean-1.2.0.gemspec
@@ -982,7 +982,6 @@ jruby/lib/ruby/stdlib/rdoc/generator/template/darkfish/images/zoom.png
 jruby/lib/ruby/stdlib/rdoc/generator/template/darkfish/index.rhtml
 jruby/lib/ruby/stdlib/rdoc/generator/template/darkfish/js/
 jruby/lib/ruby/stdlib/rdoc/generator/template/darkfish/js/darkfish.js
-jruby/lib/ruby/stdlib/rdoc/generator/template/darkfish/js/jquery.js
 jruby/lib/ruby/stdlib/rdoc/generator/template/darkfish/js/search.js
 jruby/lib/ruby/stdlib/rdoc/generator/template/darkfish/page.rhtml
 jruby/lib/ruby/stdlib/rdoc/generator/template/darkfish/servlet_not_found.rhtml
@@ -1020,15 +1019,14 @@ jruby/lib/ruby/stdlib/rdoc/markup/hard_break.rb
 jruby/lib/ruby/stdlib/rdoc/markup/heading.rb
 jruby/lib/ruby/stdlib/rdoc/markup/include.rb
 jruby/lib/ruby/stdlib/rdoc/markup/indented_paragraph.rb
-jruby/lib/ruby/stdlib/rdoc/markup/inline.rb
 jruby/lib/ruby/stdlib/rdoc/markup/list.rb
 jruby/lib/ruby/stdlib/rdoc/markup/list_item.rb
 jruby/lib/ruby/stdlib/rdoc/markup/paragraph.rb
 jruby/lib/ruby/stdlib/rdoc/markup/parser.rb
 jruby/lib/ruby/stdlib/rdoc/markup/pre_process.rb
 jruby/lib/ruby/stdlib/rdoc/markup/raw.rb
+jruby/lib/ruby/stdlib/rdoc/markup/regexp_handling.rb
 jruby/lib/ruby/stdlib/rdoc/markup/rule.rb
-jruby/lib/ruby/stdlib/rdoc/markup/special.rb
 jruby/lib/ruby/stdlib/rdoc/markup/text_formatter_test_case.rb
 jruby/lib/ruby/stdlib/rdoc/markup/to_ansi.rb
 jruby/lib/ruby/stdlib/rdoc/markup/to_bs.rb
@@ -1086,11 +1084,11 @@ jruby/lib/ruby/stdlib/rdoc/stats/quiet.rb
 jruby/lib/ruby/stdlib/rdoc/stats/verbose.rb
 jruby/lib/ruby/stdlib/rdoc/store.rb
 jruby/lib/ruby/stdlib/rdoc/task.rb
-jruby/lib/ruby/stdlib/rdoc/test_case.rb
 jruby/lib/ruby/stdlib/rdoc/text.rb
 jruby/lib/ruby/stdlib/rdoc/token_stream.rb
 jruby/lib/ruby/stdlib/rdoc/tom_doc.rb
 jruby/lib/ruby/stdlib/rdoc/top_level.rb
+jruby/lib/ruby/stdlib/rdoc/version.rb
 jruby/lib/ruby/stdlib/readline/
 jruby/lib/ruby/stdlib/readline.jar
 jruby/lib/ruby/stdlib/readline.rb
