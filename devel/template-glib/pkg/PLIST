@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/04/28 06:28:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/11/01 19:37:28 ajacoutot Exp $
 include/template-glib-1.0/
 include/template-glib-1.0/tmpl-debug.h
 include/template-glib-1.0/tmpl-enums.h
@@ -20,6 +20,7 @@ share/locale/cs/LC_MESSAGES/template-glib.mo
 share/locale/da/LC_MESSAGES/template-glib.mo
 share/locale/de/LC_MESSAGES/template-glib.mo
 share/locale/el/LC_MESSAGES/template-glib.mo
+share/locale/en_GB/LC_MESSAGES/template-glib.mo
 share/locale/es/LC_MESSAGES/template-glib.mo
 share/locale/fur/LC_MESSAGES/template-glib.mo
 share/locale/hu/LC_MESSAGES/template-glib.mo
