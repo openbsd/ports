@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2019/04/03 05:23:40 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2019/11/01 17:40:08 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=2.7,<2.8
@@ -713,6 +713,7 @@ lib/python2.7/distutils/tests/Setup.sample
 lib/python2.7/distutils/tests/__init__.py
 lib/python2.7/distutils/tests/__init__.pyc
 lib/python2.7/distutils/tests/__init__.pyo
+lib/python2.7/distutils/tests/includetest.rst
 lib/python2.7/distutils/tests/setuptools_build_ext.py
 lib/python2.7/distutils/tests/setuptools_build_ext.pyc
 lib/python2.7/distutils/tests/setuptools_build_ext.pyo
@@ -1376,8 +1377,8 @@ lib/python2.7/ensurepip/__main__.py
 lib/python2.7/ensurepip/__main__.pyc
 lib/python2.7/ensurepip/__main__.pyo
 lib/python2.7/ensurepip/_bundled/
-lib/python2.7/ensurepip/_bundled/pip-18.1-py2.py3-none-any.whl
-lib/python2.7/ensurepip/_bundled/setuptools-40.6.2-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/pip-19.2.3-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/setuptools-41.2.0-py2.py3-none-any.whl
 lib/python2.7/ensurepip/_uninstall.py
 lib/python2.7/ensurepip/_uninstall.pyc
 lib/python2.7/ensurepip/_uninstall.pyo
@@ -1551,7 +1552,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.16-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.17-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1614,9 +1615,9 @@ lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.16.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.17.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.16.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.17.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo
