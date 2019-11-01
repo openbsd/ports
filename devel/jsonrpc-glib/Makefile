@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/01 10:20:47 ajacoutot Exp $
 
 COMMENT=		JSON-RPC library for GLib
 
 GNOME_PROJECT=		jsonrpc-glib
-GNOME_VERSION=		3.32.0
+GNOME_VERSION=		3.34.0
 
 SHARED_LIBS += jsonrpc-glib-1.0          0.1 # 1.3200.0
 
@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl json-glib-1.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 json-glib-1.0
 
 # -std=gnu11
 COMPILER=		base-clang ports-gcc ports-clang
