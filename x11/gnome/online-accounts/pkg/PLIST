@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2019/10/16 19:47:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.37 2019/11/01 19:42:26 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -32,6 +32,7 @@ share/dbus-1/services/org.gnome.OnlineAccounts.service
 share/gir-1.0/Goa-1.0.gir
 share/glib-2.0/schemas/org.gnome.online-accounts.gschema.xml
 share/icons/hicolor/scalable/apps/goa-account-facebook.svg
+share/icons/hicolor/scalable/apps/goa-account-fedora.svg
 share/icons/hicolor/scalable/apps/goa-account-flickr.svg
 share/icons/hicolor/scalable/apps/goa-account-foursquare.svg
 share/icons/hicolor/scalable/apps/goa-account-google.svg
@@ -90,6 +91,9 @@ share/locale/kn/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ko/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/lt/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/lv/LC_MESSAGES/gnome-online-accounts.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/mk/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ml/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/mr/LC_MESSAGES/gnome-online-accounts.mo
