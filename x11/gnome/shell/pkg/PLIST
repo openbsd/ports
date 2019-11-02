@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/11/02 15:04:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.34 2019/11/02 15:32:28 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -22,6 +22,7 @@ lib/gnome-shell/libst-1.0.so
 @bin libexec/gnome-shell-hotplug-sniffer
 libexec/gnome-shell-overrides-migration.sh
 @bin libexec/gnome-shell-perf-helper
+@man man/man1/gnome-extensions.1
 @man man/man1/gnome-shell.1
 share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop

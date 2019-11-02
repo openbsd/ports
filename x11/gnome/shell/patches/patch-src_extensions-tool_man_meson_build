@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_extensions-tool_man_meson_build,v 1.1 2019/11/02 15:32:28 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-shell/issues/1854
+
+Index: src/extensions-tool/man/meson.build
+--- src/extensions-tool/man/meson.build.orig
++++ src/extensions-tool/man/meson.build
+@@ -1,7 +1,7 @@
+ custom_target('gnome-extensions.1',
+-  input: ['gnome-extensions.txt', 'stylesheet.xsl'],
++  input: 'gnome-extensions.txt',
+   output: 'gnome-extensions.1',
+-  command: [a2x, '-D', '@OUTDIR@', '--xsl-file', '@INPUT1@', '-f', 'manpage', '@INPUT0@'],
++  command: [a2x, '-D', '@OUTDIR@', '-f', 'manpage', '@INPUT0@'],
+   install_dir: mandir + '/man1',
+   install: true
+ )
