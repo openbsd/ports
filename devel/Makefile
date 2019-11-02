@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1899 2019/10/31 03:15:59 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1900 2019/11/02 11:50:19 giovanni Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -845,6 +845,7 @@
      SUBDIR += p5-List-Cycle
      SUBDIR += p5-List-MoreUtils
      SUBDIR += p5-List-MoreUtils-XS
+     SUBDIR += p5-Locale-Codes
      SUBDIR += p5-Locale-Hebrew
      SUBDIR += p5-Locale-Maketext-Fuzzy
      SUBDIR += p5-Locale-Maketext-Gettext
