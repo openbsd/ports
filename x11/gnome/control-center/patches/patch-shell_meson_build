@@ -1,17 +1,27 @@
-$OpenBSD: patch-shell_meson_build,v 1.3 2019/05/08 15:45:47 ajacoutot Exp $
+$OpenBSD: patch-shell_meson_build,v 1.4 2019/11/02 13:51:04 ajacoutot Exp $
+
+No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 
 Find libkrb5.so
 
 Index: shell/meson.build
 --- shell/meson.build.orig
 +++ shell/meson.build
-@@ -126,7 +126,8 @@ executable(
+@@ -108,7 +108,6 @@ libshell_dep = declare_dependency(
+ shell_sources = common_sources + files('main.c')
+ 
+ shell_deps = common_deps + [
+-  libdevice_dep,
+   liblanguage_dep,
+   libwidgets_dep,
+   x11_dep,
+@@ -130,7 +129,8 @@ executable(
           dependencies : shell_deps,
                 c_args : cflags,
              link_with : panels_libs,
 -              install : true
 +              install : true,
-+              install_rpath : '${LOCALBASE}/heimdal/lib'
++        install_rpath : '${LOCALBASE}/heimdal/lib'
  )
  
  

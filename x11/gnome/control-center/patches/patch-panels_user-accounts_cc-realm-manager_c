@@ -1,4 +1,6 @@
-$OpenBSD: patch-panels_user-accounts_cc-realm-manager_c,v 1.1 2019/05/08 15:45:47 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_cc-realm-manager_c,v 1.2 2019/11/02 13:51:04 ajacoutot Exp $
+
+Fix for Heimdal (versus MIT).
 
 Index: panels/user-accounts/cc-realm-manager.c
 --- panels/user-accounts/cc-realm-manager.c.orig

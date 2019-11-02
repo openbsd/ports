@@ -1,0 +1,27 @@
+$OpenBSD: patch-panels_common_meson_build,v 1.1 2019/11/02 13:51:04 ajacoutot Exp $
+
+No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
+
+Index: panels/common/meson.build
+--- panels/common/meson.build.orig
++++ panels/common/meson.build
+@@ -75,18 +75,16 @@ liblanguage_dep = declare_dependency(
+ )
+ 
+ gsd_headers = [
+-  'gsd-device-manager.h',
+   'gsd-input-helper.h'
+ ]
+ 
+ gsd_sources = [
+-  'gsd-device-manager.c',
+   'gsd-input-helper.c'
+ ]
+ 
+ sources = common_sources + files(gsd_sources)
+ 
+-deps = common_deps + [ gudev_dep ]
++deps = common_deps
+ 
+ libdevice = static_library(
+   'device',

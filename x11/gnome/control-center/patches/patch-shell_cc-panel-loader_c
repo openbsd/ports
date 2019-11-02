@@ -1,4 +1,6 @@
-$OpenBSD: patch-shell_cc-panel-loader_c,v 1.5 2019/05/08 15:45:47 ajacoutot Exp $
+$OpenBSD: patch-shell_cc-panel-loader_c,v 1.6 2019/11/02 13:51:04 ajacoutot Exp $
+
+No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 
 http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
 https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
@@ -8,7 +10,17 @@ https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
 Index: shell/cc-panel-loader.c
 --- shell/cc-panel-loader.c.orig
 +++ shell/cc-panel-loader.c
-@@ -55,7 +55,9 @@ extern GType cc_printers_panel_get_type (void);
+@@ -43,7 +43,9 @@ extern GType cc_info_overview_panel_get_type (void);
+ extern GType cc_info_default_apps_panel_get_type (void);
+ extern GType cc_info_removable_media_panel_get_type (void);
+ extern GType cc_keyboard_panel_get_type (void);
++#ifdef NOTYET
+ extern GType cc_mouse_panel_get_type (void);
++#endif
+ #ifdef BUILD_NETWORK
+ extern GType cc_network_panel_get_type (void);
+ extern GType cc_wifi_panel_get_type (void);
+@@ -55,7 +57,9 @@ extern GType cc_printers_panel_get_type (void);
  extern GType cc_privacy_panel_get_type (void);
  extern GType cc_region_panel_get_type (void);
  extern GType cc_search_panel_get_type (void);
@@ -18,7 +30,17 @@ Index: shell/cc-panel-loader.c
  extern GType cc_sound_panel_get_type (void);
  #ifdef BUILD_THUNDERBOLT
  extern GType cc_bolt_panel_get_type (void);
-@@ -108,7 +110,9 @@ static CcPanelLoaderVtable default_panels[] =
+@@ -96,7 +100,9 @@ static CcPanelLoaderVtable default_panels[] =
+   PANEL_TYPE("default-apps",     cc_info_default_apps_panel_get_type,    NULL),
+   PANEL_TYPE("removable-media",  cc_info_removable_media_panel_get_type, NULL),
+   PANEL_TYPE("keyboard",         cc_keyboard_panel_get_type,             NULL),
++#ifdef NOTYET
+   PANEL_TYPE("mouse",            cc_mouse_panel_get_type,                NULL),
++#endif
+ #ifdef BUILD_NETWORK
+   PANEL_TYPE("network",          cc_network_panel_get_type,              NULL),
+   PANEL_TYPE("wifi",             cc_wifi_panel_get_type,                 cc_wifi_panel_static_init_func),
+@@ -108,7 +114,9 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("privacy",          cc_privacy_panel_get_type,              NULL),
    PANEL_TYPE("region",           cc_region_panel_get_type,               NULL),
    PANEL_TYPE("search",           cc_search_panel_get_type,               NULL),

@@ -1,0 +1,15 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/11/02 13:51:04 ajacoutot Exp $
+
+No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -129,7 +129,6 @@ polkit_gobject_dep = dependency('polkit-gobject-1', ve
+ pulse_dep = dependency('libpulse', version: pulse_req_version)
+ pulse_mainloop_dep = dependency('libpulse-mainloop-glib', version: pulse_req_version)
+ upower_glib_dep = dependency('upower-glib', version: '>= 0.99.8')
+-gudev_dep = dependency('gudev-1.0')
+ x11_dep = dependency('x11')
+ xi_dep = dependency('xi', version: '>= 1.2')
+ 

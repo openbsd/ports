@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/05/08 15:45:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/02 13:51:04 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -17,7 +17,6 @@ share/applications/gnome-default-apps-panel.desktop
 share/applications/gnome-display-panel.desktop
 share/applications/gnome-info-overview-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
-share/applications/gnome-mouse-panel.desktop
 share/applications/gnome-notifications-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
 share/applications/gnome-power-panel.desktop
@@ -186,6 +185,7 @@ share/locale/lv/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/mai/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/mai/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/mg/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/mjw/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/mk/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-control-center-2.0-timezones.mo

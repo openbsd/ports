@@ -1,11 +1,13 @@
-$OpenBSD: patch-panels_user-accounts_user-utils_c,v 1.1 2019/05/08 15:45:47 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_user-utils_c,v 1.2 2019/11/02 13:51:04 ajacoutot Exp $
 
 No utmpx on OpenBSD
+
+ld: error: undefined symbol: WEXITSTATUS
 
 Index: panels/user-accounts/user-utils.c
 --- panels/user-accounts/user-utils.c.orig
 +++ panels/user-accounts/user-utils.c
-@@ -25,7 +25,7 @@
+@@ -25,9 +25,11 @@
  #include <sys/types.h>
  #include <limits.h>
  #include <unistd.h>
@@ -13,8 +15,12 @@ Index: panels/user-accounts/user-utils.c
 +#include <utmp.h>
  #include <pwd.h>
  
++#include <sys/wait.h> /* WEXITSTATUS */
++
  #include <gio/gio.h>
-@@ -343,7 +343,7 @@ clear_entry_validation_error (GtkEntry *entry)
+ #include <gio/gunixoutputstream.h>
+ #include <glib/gi18n.h>
+@@ -343,7 +345,7 @@ clear_entry_validation_error (GtkEntry *entry)
  gsize
  get_username_max_length (void)
  {
