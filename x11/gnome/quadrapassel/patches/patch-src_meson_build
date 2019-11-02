@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_meson_build,v 1.1 2019/05/08 15:04:36 jasper Exp $
+$OpenBSD: patch-src_meson_build,v 1.2 2019/11/02 14:16:28 jasper Exp $
 
 Drop libmanette dependency which requires libevdev/libinput
 
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -24,7 +24,6 @@ executable(meson.project_name(),
-         clutter_dependency,
-         clutter_gtk_dependency,
+@@ -23,7 +23,6 @@ executable(meson.project_name(),
+         cogl_dependency,
+         gsound_dependency,
          gtk_dependency,
 -        manette_dependency,
          pango_depepdency,

@@ -1,21 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/07 11:20:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/02 14:16:28 jasper Exp $
 
 COMMENT =		fit falling blocks together
 
 GNOME_PROJECT =		quadrapassel
-GNOME_VERSION =		3.32.0
+GNOME_VERSION =		3.34.1
 
 CATEGORIES =		games
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += EGL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr atk-1.0
-WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 clutter-1.0
-WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path drm gbm gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pthread
+WANTLIB += c cairo clutter-1.0 clutter-gtk-1.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gsound gtk-3 intl m pango-1.0 pangocairo-1.0
 
 MODULES =		devel/dconf \
 			devel/meson \
@@ -23,8 +19,9 @@ MODULES =		devel/dconf \
 
 MODGNOME_TOOLS =	vala desktop-file-utils gtk-update-icon-cache yelp
 
-LIB_DEPENDS =		audio/libcanberra,-gtk3 \
+LIB_DEPENDS =		audio/gsound \
 			graphics/clutter/clutter-gtk
 
 MODGNOME_LDFLAGS +=    -L${X11BASE}/lib
+
 .include <bsd.port.mk>
