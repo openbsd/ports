@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/05/08 18:52:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2019/11/02 11:10:28 jasper Exp $
 @conflict evince-djvu-*
 @conflict evince-dvi-*
 @conflict nautilus-evince-*
@@ -3103,6 +3103,7 @@ share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/lv/LC_MESSAGES/evince.mo
 share/locale/mai/LC_MESSAGES/evince.mo
 share/locale/mg/LC_MESSAGES/evince.mo
+share/locale/mjw/LC_MESSAGES/evince.mo
 share/locale/mk/LC_MESSAGES/evince.mo
 share/locale/ml/LC_MESSAGES/evince.mo
 share/locale/mn/LC_MESSAGES/evince.mo
