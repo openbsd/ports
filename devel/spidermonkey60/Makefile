@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/09/26 13:00:21 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/02 16:14:24 jasper Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -16,12 +16,11 @@ COMMENT =		C/C++ Mozilla's JavaScript engine implementation #'
 MOZILLA_VERSION =	60
 SUBST_VARS =		MOZILLA_VERSION
 
-V =			${MOZILLA_VERSION}.8.0
+V =			${MOZILLA_VERSION}.9.0
 DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
-PKGNAME =		spidermonkey-${MOZILLA_VERSION}.8.0
+PKGNAME =		spidermonkey-${V}
 PKGSPEC =		spidermonkey->=60.0v1,<68.0v1
-REVISION =		0
 EPOCH =			1
 
 SHARED_LIBS =		mozjs-60 0.0
