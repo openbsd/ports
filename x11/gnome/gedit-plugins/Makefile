@@ -1,25 +1,20 @@
-# $OpenBSD: Makefile,v 1.105 2019/07/07 11:20:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2019/11/02 12:41:22 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.32.2
+GNOME_VERSION=		3.34.0
 
 CATEGORIES=		editors
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
-WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 gtksourceview-4 harfbuzz
-WANTLIB += iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-4
+WANTLIB += intl peas-1.0 peas-gtk-1.0
 
 MODULES=		devel/dconf \
+			devel/meson \
 			lang/python \
 			x11/gnome
 
@@ -46,11 +41,9 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gedit>=3.14.0 \
 			x11/gnome/gucharmap
 
-MODGNOME_TOOLS +=	yelp
+CONFIGURE_ARGS =	-Dplugin_zeitgeist=false
 
-CONFIGURE_STYLE=	gnu
-
-post-install:
-	rm ${PREFIX}/lib/gedit/plugins/*.{a,la}
+# vala needed by findinfile plugin
+MODGNOME_TOOLS +=	vala yelp
 
 .include <bsd.port.mk>
