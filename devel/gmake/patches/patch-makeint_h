@@ -1,0 +1,16 @@
+$OpenBSD: patch-makeint_h,v 1.3 2019/11/02 00:33:29 jca Exp $
+
+Remove too broad #ifdef so that we also use modern code on arm.
+
+Index: makeint.h
+--- makeint.h.orig
++++ makeint.h
+@@ -114,7 +114,7 @@ extern int errno;
+ #endif
+ 
+ /* Some systems define _POSIX_VERSION but are not really POSIX.1.  */
+-#if (defined (butterfly) || defined (__arm) || (defined (__mips) && defined (_SYSTYPE_SVR3)) || (defined (sequent) && defined (i386)))
++#if (defined (butterfly) || (defined (__mips) && defined (_SYSTYPE_SVR3)) || (defined (sequent) && defined (i386)))
+ # undef POSIX
+ #endif
+ 
