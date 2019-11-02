@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.169 2019/07/07 11:20:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.170 2019/11/02 15:03:26 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.32.2
-REVISION=	0
+GNOME_VERSION=	3.34.2
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -18,6 +17,9 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz hogweed iconv idn2 intl
 WANTLIB += m nautilus-extension nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread tasn1
 WANTLIB += unistring uuid vte-2.91 xcb xcb-render xcb-shm z
+WANTLIB += ${COMPILER_LIBCXX}
+
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES=	devel/dconf \
 		x11/gnome
@@ -32,7 +34,7 @@ LIB_DEPENDS=	devel/vte3>=0.52.2 \
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache vala yelp
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE =	gnu
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}

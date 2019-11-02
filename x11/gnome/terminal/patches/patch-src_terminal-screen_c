@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_terminal-screen_c,v 1.15 2019/01/06 12:18:29 jasper Exp $
+$OpenBSD: patch-src_terminal-screen_c,v 1.16 2019/11/02 15:03:27 jasper Exp $
 
 Revert the following commits which break spawning the shell:
 
@@ -24,7 +24,7 @@ Index: src/terminal-screen.c
  typedef struct {
    int *fd_list;
    int fd_list_len;
-@@ -1328,50 +1326,8 @@ terminal_screen_child_setup (FDSetupData *data)
+@@ -1335,50 +1333,8 @@ terminal_screen_child_setup (FDSetupData *data)
    }
  }
  
@@ -75,7 +75,7 @@ Index: src/terminal-screen.c
  static gboolean
  terminal_screen_do_exec (TerminalScreen *screen,
                           FDSetupData    *data /* adopting */,
-@@ -1382,11 +1338,13 @@ terminal_screen_do_exec (TerminalScreen *screen,
+@@ -1389,11 +1345,13 @@ terminal_screen_do_exec (TerminalScreen *screen,
    GSettings *profile;
    char **env, **argv;
    char *shell = NULL;
@@ -90,7 +90,7 @@ Index: src/terminal-screen.c
  
    if (priv->child_pid != -1) {
      g_set_error_literal (error, G_DBUS_ERROR, G_DBUS_ERROR_FAILED,
-@@ -1411,27 +1369,53 @@ terminal_screen_do_exec (TerminalScreen *screen,
+@@ -1418,27 +1376,53 @@ terminal_screen_do_exec (TerminalScreen *screen,
    env = get_child_environment (screen, working_dir, &shell);
  
    argv = NULL;
@@ -159,7 +159,7 @@ Index: src/terminal-screen.c
  }
  
  static gboolean
-@@ -2040,9 +2024,6 @@ terminal_screen_has_foreground_process (TerminalScreen
+@@ -2047,9 +2031,6 @@ terminal_screen_has_foreground_process (TerminalScreen
    gsize i;
    gsize len;
    int fgpid;
