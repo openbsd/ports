@@ -1,13 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/05/26 08:40:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/11/02 10:01:26 jasper Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
 @bin bin/gnome-calculator
+include/gcalc-1/
+include/gcalc-1/gcalc/
+include/gcalc-1/gcalc/gcalc.h
+lib/girepository-1.0/GCalc-1.typelib
+lib/libgcalc-1.so
+@bin lib/libgcalc-1.so.0
+lib/libgcalc-1.so.0.0.0
+lib/pkgconfig/gcalc-1.pc
 @bin libexec/gnome-calculator-search-provider
 @man man/man1/gcalccmd.1
 @man man/man1/gnome-calculator.1
 share/applications/org.gnome.Calculator.desktop
 share/dbus-1/services/org.gnome.Calculator.SearchProvider.service
+share/gir-1.0/GCalc-1.gir
 share/glib-2.0/schemas/org.gnome.calculator.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
@@ -937,6 +946,7 @@ share/help/zh_TW/gnome-calculator/scientific.page
 share/help/zh_TW/gnome-calculator/superscript.page
 share/help/zh_TW/gnome-calculator/trigonometry.page
 share/help/zh_TW/gnome-calculator/variables.page
+share/icons/hicolor/scalable/apps/org.gnome.Calculator.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Calculator.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Calculator-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-calculator.mo
@@ -992,6 +1002,9 @@ share/locale/lt/LC_MESSAGES/gnome-calculator.mo
 share/locale/lv/LC_MESSAGES/gnome-calculator.mo
 share/locale/mai/LC_MESSAGES/gnome-calculator.mo
 share/locale/mg/LC_MESSAGES/gnome-calculator.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/gnome-calculator.mo
 share/locale/mk/LC_MESSAGES/gnome-calculator.mo
 share/locale/ml/LC_MESSAGES/gnome-calculator.mo
 share/locale/mn/LC_MESSAGES/gnome-calculator.mo
@@ -1035,3 +1048,5 @@ share/metainfo/org.gnome.Calculator.appdata.xml
 @tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/vala/vapi/gcalc-1.deps
+share/vala/vapi/gcalc-1.vapi
