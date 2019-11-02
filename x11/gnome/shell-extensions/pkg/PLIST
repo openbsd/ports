@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2019/05/08 16:17:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2019/11/02 15:04:23 jasper Exp $
 share/glib-2.0/schemas/00_org.gnome.shell.extensions.classic.gschema.override
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
@@ -20,6 +20,10 @@ share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.co
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/stylesheet.css
+share/gnome-shell/extensions/horizontal-workspaces@gnome-shell-extensions.gcampax.github.com/
+share/gnome-shell/extensions/horizontal-workspaces@gnome-shell-extensions.gcampax.github.com/extension.js
+share/gnome-shell/extensions/horizontal-workspaces@gnome-shell-extensions.gcampax.github.com/metadata.json
+share/gnome-shell/extensions/horizontal-workspaces@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -47,6 +51,8 @@ share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.c
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/prefs.js
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/stylesheet.css
+share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/windowPicker.js
+share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/workspaceIndicator.js
 share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -107,6 +113,7 @@ share/locale/kn/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ko/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/lt/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/lv/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/mjw/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ml/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/mr/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ms/LC_MESSAGES/gnome-shell-extensions.mo
