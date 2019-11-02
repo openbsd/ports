@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2019/05/08 16:25:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/11/02 15:03:54 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -91,10 +91,10 @@ include/mutter${API_SUFFIX}/clutter/clutter/clutter-shader-effect.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-shader-types.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-snap-constraint.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-stage-manager.h
+include/mutter${API_SUFFIX}/clutter/clutter/clutter-stage-view.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-stage.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-swipe-action.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-tap-action.h
-include/mutter${API_SUFFIX}/clutter/clutter/clutter-test-utils.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-text-buffer.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-text.h
 include/mutter${API_SUFFIX}/clutter/clutter/clutter-texture.h
@@ -121,7 +121,6 @@ include/mutter${API_SUFFIX}/clutter/clutter/deprecated/clutter-cairo-texture.h
 include/mutter${API_SUFFIX}/clutter/clutter/deprecated/clutter-container.h
 include/mutter${API_SUFFIX}/clutter/clutter/deprecated/clutter-group.h
 include/mutter${API_SUFFIX}/clutter/clutter/deprecated/clutter-keysyms.h
-include/mutter${API_SUFFIX}/clutter/clutter/deprecated/clutter-main.h
 include/mutter${API_SUFFIX}/clutter/clutter/deprecated/clutter-rectangle.h
 include/mutter${API_SUFFIX}/clutter/clutter/deprecated/clutter-stage-manager.h
 include/mutter${API_SUFFIX}/clutter/clutter/deprecated/clutter-stage.h
@@ -133,11 +132,6 @@ include/mutter${API_SUFFIX}/clutter/clutter/x11/
 include/mutter${API_SUFFIX}/clutter/clutter/x11/clutter-x11.h
 include/mutter${API_SUFFIX}/cogl/
 include/mutter${API_SUFFIX}/cogl/cogl/
-include/mutter${API_SUFFIX}/cogl/cogl-gles2/
-include/mutter${API_SUFFIX}/cogl/cogl-gles2/GLES2/
-include/mutter${API_SUFFIX}/cogl/cogl-gles2/GLES2/gl2.h
-include/mutter${API_SUFFIX}/cogl/cogl-gles2/GLES2/gl2ext.h
-include/mutter${API_SUFFIX}/cogl/cogl-gles2/GLES2/gl2platform.h
 include/mutter${API_SUFFIX}/cogl/cogl-pango/
 include/mutter${API_SUFFIX}/cogl/cogl-pango/cogl-pango.h
 include/mutter${API_SUFFIX}/cogl/cogl-path/
@@ -158,13 +152,10 @@ include/mutter${API_SUFFIX}/cogl/cogl/cogl-depth-state.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-display.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-egl-defines.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-egl.h
-include/mutter${API_SUFFIX}/cogl/cogl/cogl-error.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-euler.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-fence.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-frame-info.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-framebuffer.h
-include/mutter${API_SUFFIX}/cogl/cogl/cogl-gles2-types.h
-include/mutter${API_SUFFIX}/cogl/cogl/cogl-gles2.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-glib-source.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-glx.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-gtype-private.h
@@ -184,6 +175,7 @@ include/mutter${API_SUFFIX}/cogl/cogl/cogl-pipeline-layer-state.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-pipeline-state.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-pipeline.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-pixel-buffer.h
+include/mutter${API_SUFFIX}/cogl/cogl/cogl-pixel-format.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-poll.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-primitive-texture.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-primitive.h
@@ -196,9 +188,7 @@ include/mutter${API_SUFFIX}/cogl/cogl/cogl-swap-chain.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-texture-2d-gl.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-texture-2d-sliced.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-texture-2d.h
-include/mutter${API_SUFFIX}/cogl/cogl/cogl-texture-3d.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-texture-pixmap-x11.h
-include/mutter${API_SUFFIX}/cogl/cogl/cogl-texture-rectangle.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-texture.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-types.h
 include/mutter${API_SUFFIX}/cogl/cogl/cogl-vector.h
@@ -247,6 +237,9 @@ include/mutter${API_SUFFIX}/meta/meta-launch-context.h
 include/mutter${API_SUFFIX}/meta/meta-monitor-manager.h
 include/mutter${API_SUFFIX}/meta/meta-plugin.h
 include/mutter${API_SUFFIX}/meta/meta-remote-access-controller.h
+include/mutter${API_SUFFIX}/meta/meta-selection-source-memory.h
+include/mutter${API_SUFFIX}/meta/meta-selection-source.h
+include/mutter${API_SUFFIX}/meta/meta-selection.h
 include/mutter${API_SUFFIX}/meta/meta-settings.h
 include/mutter${API_SUFFIX}/meta/meta-shadow-factory.h
 include/mutter${API_SUFFIX}/meta/meta-shaped-texture.h
@@ -282,7 +275,6 @@ lib/mutter${API_SUFFIX}/Meta${API_SUFFIX}.gir
 lib/mutter${API_SUFFIX}/Meta${API_SUFFIX}.typelib
 @lib lib/mutter${API_SUFFIX}/libmutter-clutter${API_SUFFIX}.so.${LIBmutter-clutter${API_SUFFIX}_VERSION}
 @lib lib/mutter${API_SUFFIX}/libmutter-cogl${API_SUFFIX}.so.${LIBmutter-cogl${API_SUFFIX}_VERSION}
-@lib lib/mutter${API_SUFFIX}/libmutter-cogl-gles2${API_SUFFIX}.so.${LIBmutter-cogl-gles2${API_SUFFIX}_VERSION}
 @lib lib/mutter${API_SUFFIX}/libmutter-cogl-pango${API_SUFFIX}.so.${LIBmutter-cogl-pango${API_SUFFIX}_VERSION}
 @lib lib/mutter${API_SUFFIX}/libmutter-cogl-path${API_SUFFIX}.so.${LIBmutter-cogl-path${API_SUFFIX}_VERSION}
 lib/mutter${API_SUFFIX}/plugins/
@@ -291,17 +283,8 @@ lib/pkgconfig/libmutter${API_SUFFIX}.pc
 lib/pkgconfig/mutter-clutter${API_SUFFIX}.pc
 lib/pkgconfig/mutter-clutter-x11${API_SUFFIX}.pc
 lib/pkgconfig/mutter-cogl${API_SUFFIX}.pc
-lib/pkgconfig/mutter-cogl-gles2${API_SUFFIX}.pc
 lib/pkgconfig/mutter-cogl-pango${API_SUFFIX}.pc
 lib/pkgconfig/mutter-cogl-path${API_SUFFIX}.pc
-libexec/installed-tests/
-libexec/installed-tests/mutter${API_SUFFIX}/
-libexec/installed-tests/mutter${API_SUFFIX}/cogl/
-libexec/installed-tests/mutter${API_SUFFIX}/cogl/conform/
-libexec/installed-tests/mutter${API_SUFFIX}/cogl/conform/config.env
-libexec/installed-tests/mutter${API_SUFFIX}/cogl/conform/run-tests.sh
-@bin libexec/installed-tests/mutter${API_SUFFIX}/cogl/conform/test-conformance
-libexec/installed-tests/mutter${API_SUFFIX}/cogl/conform/unit-tests
 @bin libexec/mutter-restart-helper
 @man man/man1/mutter.1
 share/GConf/gsettings/mutter-schemas.convert
@@ -313,9 +296,6 @@ share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/50-mutter-navigation.xml
 share/gnome-control-center/keybindings/50-mutter-system.xml
 share/gnome-control-center/keybindings/50-mutter-windows.xml
-share/installed-tests/
-share/installed-tests/mutter${API_SUFFIX}/
-share/installed-tests/mutter${API_SUFFIX}/mutter-cogl.test
 share/locale/am/LC_MESSAGES/mutter.mo
 share/locale/ar/LC_MESSAGES/mutter.mo
 share/locale/as/LC_MESSAGES/mutter.mo

@@ -1,30 +1,32 @@
-# $OpenBSD: Makefile,v 1.96 2019/07/07 11:20:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2019/11/02 15:03:54 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.32.2
+GNOME_VERSION=		3.34.1
 
-API_SUFFIX=		-4
-SUBST_VARS=		API_SUFFIX
+# XXX: Override libmutter_api_version because of SUBST_VARS.
+API_V =			5
+API_SUFFIX=		-${API_V}
+SUBST_VARS=		API_V API_SUFFIX
 
-SHARED_LIBS += mutter-cogl-4             0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-gles2-4       0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-path-4        0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-pango-4       0.0 # 0.0.0
-SHARED_LIBS += mutter-clutter-4          0.0 # 0.0.0
-SHARED_LIBS += mutter-4                  0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-5             0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-gles2-5       0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-path-5        0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-pango-5       0.0 # 0.0.0
+SHARED_LIBS += mutter-clutter-5          0.0 # 0.0.0
+SHARED_LIBS += mutter-5                  0.0 # 0.0.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0
-WANTLIB += c cairo cairo-gobject canberra fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
-WANTLIB += gobject-2.0 gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread startup-notification-1 xcb xcb-randr
-WANTLIB += xcb-res xkbcommon xkbcommon-x11 xkbfile z
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xtst atk-1.0 c cairo
+WANTLIB += cairo-gobject canberra fontconfig fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
+WANTLIB += gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 startup-notification-1 xcb xcb-randr xcb-res
+WANTLIB += xkbcommon xkbcommon-x11 xkbfile
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -55,11 +57,15 @@ CONFIGURE_ARGS +=	-Dopengl_libname=libGL.so \
 			-Dwayland=false \
 			-Dlibwacom=false \
 			-Dnative_backend=false \
-			-Dtests=false
+			-Dtests=false \
+			-Dprofiler=false
 # requires unported pipewire
 CONFIGURE_ARGS +=	-Dremote_desktop=false
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/meson.build
 
 # XXX
 # Generate this file upfront as it may not be created in time
