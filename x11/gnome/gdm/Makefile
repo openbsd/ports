@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.280 2019/11/02 15:34:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.281 2019/11/02 16:34:15 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
@@ -57,7 +57,9 @@ MODGNOME_TOOLS=		gobject-introspection yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
 
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--disable-systemd-journal \
@@ -80,23 +82,10 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-xauth-dir=/var/run/gdm \
 			--with-initial-vt=05
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
 pre-configure:
-	sed -i -e 's,root:root,root:wheel,g' \
-		-e 's,root:gdm,root:676,g' \
-		-e 's,gdm:gdm,676:676,g' ${WRKSRC}/data/Makefile.am
 	sed -i -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,/bin/bash,/bin/ksh,g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
-	cd ${WRKSRC} && env -i \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
