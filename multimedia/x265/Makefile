@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.43 2019/09/28 09:34:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2019/11/02 18:35:02 ajacoutot Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
-VER=		3.2
+VER=		3.2.1
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/
 
-SHARED_LIBS=	x265	19.0
+SHARED_LIBS=	x265	20.0
 
 HOMEPAGE=	http://x265.org/
 
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIST}/source
 
 MODULES=	devel/cmake
 
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 .if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm
