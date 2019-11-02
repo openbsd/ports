@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.97 2019/11/01 19:25:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.98 2019/11/02 14:27:40 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.32.4
-REVISION=		0
+GNOME_VERSION=		3.34.1
 
 CATEGORIES=		devel
 
@@ -13,11 +12,10 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject clang dazzle-1.0 devhelp-3
 WANTLIB += enchant-2 fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += git2-glib-1.0 gladeui-2 glib-2.0 gobject-2.0 gspell-1
-WANTLIB += gtk-3 gtksourceview-4 intl json-glib-1.0 jsonrpc-glib-1.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
-WANTLIB += template_glib-1.0 vala-0.46 vte-2.91 webkit2gtk-4.0
-WANTLIB += xml2
+WANTLIB += gladeui-2 glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
+WANTLIB += intl json-glib-1.0 jsonrpc-glib-1.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre peas-1.0 template_glib-1.0 vala-0.46
+WANTLIB += vte-2.91 webkit2gtk-4.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -51,7 +49,6 @@ RUN_DEPENDS +=		sysutils/ggrep
 
 LIB_DEPENDS=		devel/glade \
 			devel/jsonrpc-glib \
-			devel/libgit2/libgit2-glib \
 			devel/libpeas \
 			devel/llvm \
 			devel/template-glib \
@@ -72,6 +69,10 @@ CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 			-Dplugin_flatpak=false \
 			-Dplugin_sysprof=false \
 			-Dchannel=other
+
+# XXX prctl(2) or procctl(2)
+# error: #error "Please submit a patch to support parent-death signal on your OS"
+CONFIGURE_ARGS +=	-Dplugin_git=false
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 

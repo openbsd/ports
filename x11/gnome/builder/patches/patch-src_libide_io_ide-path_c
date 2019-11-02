@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_libide_io_ide-path_c,v 1.1 2019/05/09 00:11:20 ajacoutot Exp $
+$OpenBSD: patch-src_libide_io_ide-path_c,v 1.2 2019/11/02 14:27:40 ajacoutot Exp $
+
+wordexp(3) vomit
 
 Index: src/libide/io/ide-path.c
 --- src/libide/io/ide-path.c.orig
@@ -13,9 +15,9 @@ Index: src/libide/io/ide-path.c
 +#include <glob.h>
 +#endif
  
- #include "ide-path.h"
+ #include <libide-threading.h>
  
-@@ -40,6 +44,7 @@
+@@ -42,6 +46,7 @@
   *
   * Since: 3.32
   */
@@ -23,7 +25,7 @@ Index: src/libide/io/ide-path.c
  gchar *
  ide_path_expand (const gchar *path)
  {
-@@ -64,6 +69,33 @@ ide_path_expand (const gchar *path)
+@@ -66,6 +71,33 @@ ide_path_expand (const gchar *path)
  
    return ret;
  }
