@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2019/05/06 18:12:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.55 2019/11/02 09:35:48 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -331,6 +331,7 @@ include/evolution/e-util/e-url-entry.h
 include/evolution/e-util/e-util-enums.h
 include/evolution/e-util/e-util-enumtypes.h
 include/evolution/e-util/e-util.h
+include/evolution/e-util/e-web-extension-container.h
 include/evolution/e-util/e-web-view-preview.h
 include/evolution/e-util/e-web-view.h
 include/evolution/e-util/e-webdav-browser.h
@@ -461,6 +462,8 @@ include/evolution/mail/e-mail-enums.h
 include/evolution/mail/e-mail-enumtypes.h
 include/evolution/mail/e-mail-folder-create-dialog.h
 include/evolution/mail/e-mail-folder-pane.h
+include/evolution/mail/e-mail-folder-sort-order-dialog.h
+include/evolution/mail/e-mail-folder-tweaks.h
 include/evolution/mail/e-mail-free-form-exp.h
 include/evolution/mail/e-mail-junk-options.h
 include/evolution/mail/e-mail-label-action.h
@@ -616,7 +619,6 @@ lib/evolution/plugins/org-gnome-save-calendar.eplug
 lib/evolution/plugins/org-gnome-templates.eplug
 lib/evolution/web-extensions/
 lib/evolution/web-extensions/libewebextension.so
-lib/evolution/web-extensions/module-itip-formatter-webextension.so
 lib/evolution/web-extensions/webkit-editor/
 lib/evolution/web-extensions/webkit-editor/module-webkit-editor-webextension.so
 lib/pkgconfig/evolution-calendar-3.0.pc
@@ -946,9 +948,7 @@ share/evolution/images/confidential-stamp.jpg
 share/evolution/images/draft-paper.png
 share/evolution/images/draft-stamp.jpg
 share/evolution/images/midnight-stars.jpg
-share/evolution/images/minus.png
 share/evolution/images/paper.png
-share/evolution/images/plus.png
 share/evolution/images/rect.png
 share/evolution/images/ribbon.jpg
 share/evolution/images/texture.png
@@ -977,6 +977,7 @@ share/evolution/ui/evolution-mail-reader.ui
 share/evolution/ui/evolution-mail.ui
 share/evolution/ui/evolution-memos.ui
 share/evolution/ui/evolution-shell.ui
+share/evolution/ui/evolution-shortcuts.ui
 share/evolution/ui/evolution-tasks.ui
 share/evolution/ui/filter.ui
 share/evolution/ui/fullname.ui
@@ -1260,7 +1261,6 @@ share/help/C/evolution/tasks-using-several-tasklists.page
 share/help/C/evolution/tasks-webdav.page
 share/help/C/evolution/using-categories.page
 share/help/C/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/C/evolution/xinclude-mail-account-identity.xml
 share/help/C/evolution/xinclude-searching.xml
 share/help/ca/evolution/
 share/help/ca/evolution/backup-restore.page
@@ -1489,7 +1489,6 @@ share/help/ca/evolution/tasks-using-several-tasklists.page
 share/help/ca/evolution/tasks-webdav.page
 share/help/ca/evolution/using-categories.page
 share/help/ca/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/ca/evolution/xinclude-mail-account-identity.xml
 share/help/ca/evolution/xinclude-searching.xml
 share/help/cs/evolution/
 share/help/cs/evolution/backup-restore.page
@@ -1718,7 +1717,6 @@ share/help/cs/evolution/tasks-using-several-tasklists.page
 share/help/cs/evolution/tasks-webdav.page
 share/help/cs/evolution/using-categories.page
 share/help/cs/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/cs/evolution/xinclude-mail-account-identity.xml
 share/help/cs/evolution/xinclude-searching.xml
 share/help/de/evolution/
 share/help/de/evolution/backup-restore.page
@@ -1947,7 +1945,6 @@ share/help/de/evolution/tasks-using-several-tasklists.page
 share/help/de/evolution/tasks-webdav.page
 share/help/de/evolution/using-categories.page
 share/help/de/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/de/evolution/xinclude-mail-account-identity.xml
 share/help/de/evolution/xinclude-searching.xml
 share/help/el/evolution/
 share/help/el/evolution/backup-restore.page
@@ -2176,7 +2173,6 @@ share/help/el/evolution/tasks-using-several-tasklists.page
 share/help/el/evolution/tasks-webdav.page
 share/help/el/evolution/using-categories.page
 share/help/el/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/el/evolution/xinclude-mail-account-identity.xml
 share/help/el/evolution/xinclude-searching.xml
 share/help/en_GB/
 share/help/en_GB/evolution/
@@ -2406,7 +2402,6 @@ share/help/en_GB/evolution/tasks-using-several-tasklists.page
 share/help/en_GB/evolution/tasks-webdav.page
 share/help/en_GB/evolution/using-categories.page
 share/help/en_GB/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/en_GB/evolution/xinclude-mail-account-identity.xml
 share/help/en_GB/evolution/xinclude-searching.xml
 share/help/es/evolution/
 share/help/es/evolution/backup-restore.page
@@ -2635,7 +2630,6 @@ share/help/es/evolution/tasks-using-several-tasklists.page
 share/help/es/evolution/tasks-webdav.page
 share/help/es/evolution/using-categories.page
 share/help/es/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/es/evolution/xinclude-mail-account-identity.xml
 share/help/es/evolution/xinclude-searching.xml
 share/help/eu/evolution/
 share/help/eu/evolution/backup-restore.page
@@ -2864,7 +2858,6 @@ share/help/eu/evolution/tasks-using-several-tasklists.page
 share/help/eu/evolution/tasks-webdav.page
 share/help/eu/evolution/using-categories.page
 share/help/eu/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/eu/evolution/xinclude-mail-account-identity.xml
 share/help/eu/evolution/xinclude-searching.xml
 share/help/fr/evolution/
 share/help/fr/evolution/backup-restore.page
@@ -3093,7 +3086,6 @@ share/help/fr/evolution/tasks-using-several-tasklists.page
 share/help/fr/evolution/tasks-webdav.page
 share/help/fr/evolution/using-categories.page
 share/help/fr/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/fr/evolution/xinclude-mail-account-identity.xml
 share/help/fr/evolution/xinclude-searching.xml
 share/help/gl/evolution/
 share/help/gl/evolution/backup-restore.page
@@ -3322,7 +3314,6 @@ share/help/gl/evolution/tasks-using-several-tasklists.page
 share/help/gl/evolution/tasks-webdav.page
 share/help/gl/evolution/using-categories.page
 share/help/gl/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/gl/evolution/xinclude-mail-account-identity.xml
 share/help/gl/evolution/xinclude-searching.xml
 share/help/hu/evolution/
 share/help/hu/evolution/backup-restore.page
@@ -3551,7 +3542,6 @@ share/help/hu/evolution/tasks-using-several-tasklists.page
 share/help/hu/evolution/tasks-webdav.page
 share/help/hu/evolution/using-categories.page
 share/help/hu/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/hu/evolution/xinclude-mail-account-identity.xml
 share/help/hu/evolution/xinclude-searching.xml
 share/help/mk/
 share/help/mk/evolution/
@@ -3781,7 +3771,6 @@ share/help/mk/evolution/tasks-using-several-tasklists.page
 share/help/mk/evolution/tasks-webdav.page
 share/help/mk/evolution/using-categories.page
 share/help/mk/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/mk/evolution/xinclude-mail-account-identity.xml
 share/help/mk/evolution/xinclude-searching.xml
 share/help/oc/evolution/
 share/help/oc/evolution/backup-restore.page
@@ -4010,7 +3999,6 @@ share/help/oc/evolution/tasks-using-several-tasklists.page
 share/help/oc/evolution/tasks-webdav.page
 share/help/oc/evolution/using-categories.page
 share/help/oc/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/oc/evolution/xinclude-mail-account-identity.xml
 share/help/oc/evolution/xinclude-searching.xml
 share/help/ru/
 share/help/ru/evolution/
@@ -4240,7 +4228,6 @@ share/help/ru/evolution/tasks-using-several-tasklists.page
 share/help/ru/evolution/tasks-webdav.page
 share/help/ru/evolution/using-categories.page
 share/help/ru/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/ru/evolution/xinclude-mail-account-identity.xml
 share/help/ru/evolution/xinclude-searching.xml
 share/help/sl/evolution/
 share/help/sl/evolution/backup-restore.page
@@ -4469,7 +4456,6 @@ share/help/sl/evolution/tasks-using-several-tasklists.page
 share/help/sl/evolution/tasks-webdav.page
 share/help/sl/evolution/using-categories.page
 share/help/sl/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/sl/evolution/xinclude-mail-account-identity.xml
 share/help/sl/evolution/xinclude-searching.xml
 share/help/sv/evolution/
 share/help/sv/evolution/backup-restore.page
@@ -4698,7 +4684,6 @@ share/help/sv/evolution/tasks-using-several-tasklists.page
 share/help/sv/evolution/tasks-webdav.page
 share/help/sv/evolution/using-categories.page
 share/help/sv/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/sv/evolution/xinclude-mail-account-identity.xml
 share/help/sv/evolution/xinclude-searching.xml
 share/help/te/
 share/help/te/evolution/
@@ -4928,7 +4913,6 @@ share/help/te/evolution/tasks-using-several-tasklists.page
 share/help/te/evolution/tasks-webdav.page
 share/help/te/evolution/using-categories.page
 share/help/te/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/te/evolution/xinclude-mail-account-identity.xml
 share/help/te/evolution/xinclude-searching.xml
 share/help/zh_CN/evolution/
 share/help/zh_CN/evolution/backup-restore.page
@@ -5157,29 +5141,23 @@ share/help/zh_CN/evolution/tasks-using-several-tasklists.page
 share/help/zh_CN/evolution/tasks-webdav.page
 share/help/zh_CN/evolution/using-categories.page
 share/help/zh_CN/evolution/xinclude-filter-vfolder-conditions.xml
-share/help/zh_CN/evolution/xinclude-mail-account-identity.xml
 share/help/zh_CN/evolution/xinclude-searching.xml
 share/icons/hicolor/16x16/apps/evolution-mail.png
 share/icons/hicolor/16x16/apps/evolution-memos.png
 share/icons/hicolor/16x16/apps/evolution-tasks.png
-share/icons/hicolor/16x16/apps/evolution.png
 share/icons/hicolor/22x22/apps/evolution-mail.png
 share/icons/hicolor/22x22/apps/evolution-memos.png
 share/icons/hicolor/22x22/apps/evolution-tasks.png
-share/icons/hicolor/22x22/apps/evolution.png
 share/icons/hicolor/24x24/apps/evolution-mail.png
 share/icons/hicolor/24x24/apps/evolution-memos.png
 share/icons/hicolor/24x24/apps/evolution-tasks.png
-share/icons/hicolor/24x24/apps/evolution.png
-share/icons/hicolor/256x256/apps/evolution.png
 share/icons/hicolor/32x32/apps/evolution-mail.png
 share/icons/hicolor/32x32/apps/evolution-memos.png
 share/icons/hicolor/32x32/apps/evolution-tasks.png
-share/icons/hicolor/32x32/apps/evolution.png
 share/icons/hicolor/48x48/apps/evolution-mail.png
 share/icons/hicolor/48x48/apps/evolution-memos.png
 share/icons/hicolor/48x48/apps/evolution-tasks.png
-share/icons/hicolor/48x48/apps/evolution.png
+share/icons/hicolor/scalable/apps/evolution.svg
 share/icons/hicolor/symbolic/apps/evolution-symbolic.svg
 share/locale/af/LC_MESSAGES/evolution.mo
 share/locale/am/LC_MESSAGES/evolution.mo
