@@ -1,9 +1,9 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.8 2019/05/09 14:53:28 jasper Exp $
+$OpenBSD: patch-js_misc_loginManager_js,v 1.9 2019/11/02 15:04:09 jasper Exp $
 
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
 +++ js/misc/loginManager.js
-@@ -13,6 +13,12 @@ const SystemdLoginManager = Gio.DBusProxy.makeProxyWra
+@@ -14,6 +14,12 @@ const SystemdLoginManager = Gio.DBusProxy.makeProxyWra
  const SystemdLoginSession = Gio.DBusProxy.makeProxyWrapper(SystemdLoginSessionIface);
  const SystemdLoginUser = Gio.DBusProxy.makeProxyWrapper(SystemdLoginUserIface);
  
@@ -16,16 +16,16 @@ Index: js/misc/loginManager.js
  function haveSystemd() {
      return GLib.access("/run/systemd/seats", 0) >= 0;
  }
-@@ -42,7 +48,7 @@ function canLock() {
+@@ -43,7 +49,7 @@ function canLock() {
                                                 -1, null);
  
          let version = result.deep_unpack()[0].deep_unpack();
 -        return haveSystemd() && versionCompare('3.5.91', version);
 +        return versionCompare('3.5.91', version);
-     } catch(e) {
+     } catch (e) {
          return false;
      }
-@@ -60,7 +66,7 @@ function getLoginManager() {
+@@ -83,7 +89,7 @@ function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -34,7 +34,7 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -175,6 +181,82 @@ var LoginManagerSystemd = class {
+@@ -198,6 +204,82 @@ var LoginManagerSystemd = class {
      }
  };
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
@@ -116,4 +116,4 @@ Index: js/misc/loginManager.js
 +Signals.addSignalMethods(LoginManagerConsoleKit.prototype);
  
  var LoginManagerDummy = class {
-     getCurrentSessionProxy(callback) {
+     getCurrentSessionProxy(_callback) {

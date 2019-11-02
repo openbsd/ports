@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.32 2019/05/23 08:48:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/11/02 15:04:09 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
 @pkgpath sysutils/notification-daemon
 @pkgpath x11/gnome/panel
 @pkgpath x11/gnome/screensaver
+@bin bin/gnome-extensions
 @bin bin/gnome-shell
 @bin bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
@@ -96,6 +97,7 @@ share/locale/ku/LC_MESSAGES/gnome-shell.mo
 share/locale/ky/LC_MESSAGES/gnome-shell.mo
 share/locale/lt/LC_MESSAGES/gnome-shell.mo
 share/locale/lv/LC_MESSAGES/gnome-shell.mo
+share/locale/mjw/LC_MESSAGES/gnome-shell.mo
 share/locale/mk/LC_MESSAGES/gnome-shell.mo
 share/locale/ml/LC_MESSAGES/gnome-shell.mo
 share/locale/mr/LC_MESSAGES/gnome-shell.mo

@@ -1,26 +1,24 @@
-# $OpenBSD: Makefile,v 1.177 2019/07/07 11:20:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.178 2019/11/02 15:04:09 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.32.2
+GNOME_VERSION=		3.34.1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += EGL GL X11 Xfixes Xi atk-1.0 atk-bridge-2.0 c cairo
-WANTLIB += cairo-gobject croco-0.6 ecal-1.2 edataserver-1.2 gck-1
-WANTLIB += gcr-base-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += gjs glib-2.0 gmodule-2.0 gobject-2.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gtk-3 ical intl json-glib-1.0 m mutter-4 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 polkit-agent-1 polkit-gobject-1 pthread
-WANTLIB += pulse pulse-mainloop-glib secret-1 soup-2.4 startup-notification-1
-WANTLIB += xml2
-WANTLIB += lib/mutter-4/mutter-clutter-4
-WANTLIB += lib/mutter-4/mutter-cogl-4
-WANTLIB += lib/mutter-4/mutter-cogl-pango-4
+WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo croco-0.6
+WANTLIB += ecal-2.0 edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 gjs glib-2.0 gobject-2.0 gstbase-1.0
+WANTLIB += gstreamer-1.0 gtk-3 ical-glib intl json-glib-1.0 m
+WANTLIB += mutter-5 pango-1.0 pangocairo-1.0 polkit-agent-1 polkit-gobject-1
+WANTLIB += pulse pulse-mainloop-glib
+WANTLIB += lib/mutter-5/mutter-clutter-5
+WANTLIB += lib/mutter-5/mutter-cogl-5
+WANTLIB += lib/mutter-5/mutter-cogl-pango-5
 
 MODULES=		devel/dconf \
 			devel/meson \
