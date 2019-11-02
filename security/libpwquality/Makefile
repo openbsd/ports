@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/09/27 16:02:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/11/02 14:18:41 ajacoutot Exp $
 
 COMMENT =		library to generate, and check strengh of passwords
 
-V =			1.4.1
+V =			1.4.2
 SUBST_VARS =		V
 GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
@@ -41,6 +41,6 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS =		secureconfdir=${PREFIX}/share/examples/libpwquality/
 
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+AUTOMAKE_VERSION =	1.16
 
 .include <bsd.port.mk>
