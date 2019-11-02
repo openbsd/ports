@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.164 2019/08/03 18:52:23 jca Exp $
+# $OpenBSD: Makefile,v 1.165 2019/11/02 12:40:26 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.32.2
-REVISION=		0
+GNOME_VERSION=		3.34.0
 
 CATEGORIES=		editors
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 atk-1.0 c cairo cairo-gobject enchant-2 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gspell-1 gtk-3 gtksourceview-4 intl m pango-1.0 pangocairo-1.0
-WANTLIB += peas-1.0 peas-gtk-1.0 pthread xml2
+WANTLIB += X11 atk-1.0 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
+WANTLIB += intl m pango-1.0 peas-1.0 peas-gtk-1.0 xml2
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
@@ -35,12 +33,14 @@ LIB_DEPENDS=		devel/libpeas \
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
-			x11/gnome/gvfs #--enable-gvfs-metadata
+			x11/gnome/gvfs # -Denable-gvfs-metadata=true
 
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+CONFIGURE_ARGS =	-Denable-gvfs-metadata=yes
 
 MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp

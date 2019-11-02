@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2019/05/08 13:05:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.60 2019/11/02 12:40:26 jasper Exp $
 @bin bin/gedit
 include/gedit-3.14/
 include/gedit-3.14/gedit/
@@ -82,8 +82,6 @@ lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
 lib/pkgconfig/gedit.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.py
-libexec/gedit/
-libexec/gedit/gedit-bugreport.sh
 @man man/man1/gedit.1
 share/applications/org.gnome.gedit.desktop
 share/dbus-1/services/org.gnome.gedit.service
@@ -142,6 +140,7 @@ share/glib-2.0/schemas/org.gnome.gedit.plugins.externaltools.gschema.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.filebrowser.enums.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.filebrowser.gschema.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
+share/glib-2.0/schemas/org.gnome.gedit.plugins.spell.gschema.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.time.enums.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.time.gschema.xml
 share/help/
