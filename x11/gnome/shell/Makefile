@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2019/11/02 15:04:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.179 2019/11/02 15:11:44 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -33,6 +33,7 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection
 
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas \
+			textproc/asciidoc \
 			www/sassc
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
