@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.184 2019/11/01 13:03:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2019/11/02 10:28:49 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		3.32.1
-REVISION=		0
+GNOME_VERSION=		3.34.1
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xext Xi atk-1.0 c cairo cairo-gobject canberra
-WANTLIB += canberra-gtk3 colord colordprivate cups fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 geoclue-2 geocode-glib
+WANTLIB += X11 Xext Xi c canberra canberra-gtk3 colord colordprivate
+WANTLIB += cups fontconfig gdk-3 gdk_pixbuf-2.0 geoclue-2 geocode-glib
 WANTLIB += gio-2.0 glib-2.0 gnome-desktop-3 gobject-2.0 gtk-3
-WANTLIB += gweather-3 intl lcms2 m notify nspr4 nss3 nssutil3
-WANTLIB += pango-1.0 pangocairo-1.0 plc4 plds4 polkit-gobject-1
-WANTLIB += pulse pulse-mainloop-glib upower-glib z
+WANTLIB += gweather-3 intl lcms2 m notify nspr4 nss3 polkit-gobject-1
+WANTLIB += pulse pulse-mainloop-glib upower-glib
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -61,7 +58,9 @@ CONFIGURE_ARGS= 	-Dalsa=false \
 			-Dgudev=false \
 			-Dnetwork_manager=false \
 			-Drfkill=false \
-			-Dwayland=false
+			-Dsystemd=false \
+			-Dwayland=false \
+			-Dwwan=false
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-settings-daemon

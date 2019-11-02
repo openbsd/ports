@@ -1,19 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.52 2019/05/08 12:04:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.53 2019/11/02 10:28:49 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gsd-enums.h
 lib/gnome-settings-daemon-3.0/libgsd.so
 lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-a11y-settings
-@bin libexec/gsd-clipboard
 @bin libexec/gsd-color
 @bin libexec/gsd-datetime
 @bin libexec/gsd-dummy
 @bin libexec/gsd-housekeeping
 @bin libexec/gsd-keyboard
-@bin libexec/gsd-locate-pointer
 @bin libexec/gsd-media-keys
-@bin libexec/gsd-mouse
 @bin libexec/gsd-power
 @bin libexec/gsd-print-notifications
 @bin libexec/gsd-printer
@@ -30,8 +27,6 @@ share/examples/gnome-settings-daemon/xdg/
 share/examples/gnome-settings-daemon/xdg/autostart/
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.A11ySettings.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.A11ySettings.desktop
-share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Clipboard.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Clipboard.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Color.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Color.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Datetime.desktop
@@ -42,8 +37,6 @@ share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Keyb
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Keyboard.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.MediaKeys.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.MediaKeys.desktop
-share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Mouse.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Mouse.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Power.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Power.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.PrintNotifications.desktop
