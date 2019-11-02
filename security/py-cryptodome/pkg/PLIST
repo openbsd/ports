@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/08/26 17:39:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/11/02 20:35:15 jasper Exp $
 ${MODPY_COMMENT}@conflict ${MODPY_PY_PREFIX}crypto-*
 ${MODPY_COMMENT}@pkgpath security/py-crypto,python3
 !%%python3%%
@@ -29,6 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/PKCS1_v1_5.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/Salsa20.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/Salsa20.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_ARC4.so
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_EKSBlowfish.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_EKSBlowfish.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_Salsa20.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/__init__.pyi
@@ -45,6 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}DES3.${MO
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}PKCS1_OAEP.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}PKCS1_v1_5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}Salsa20.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_EKSBlowfish.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_cbc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_ccm.${MODPY_PYC_MAGIC_TAG}pyc
@@ -91,6 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_ctr.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_des.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_des3.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_ecb.so
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_eksblowfish.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_ocb.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_ofb.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/
@@ -247,7 +251,10 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}ECC.${
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}ElGamal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}RSA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_openssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ec_ws.so
+lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_openssh.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_openssh.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/__init__.pyi
@@ -557,8 +564,13 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_ecparams.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_aes128.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_aes192.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_aes256.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_aes256_gcm.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_des3.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_openssh.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_openssh_old.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_openssh_pwd.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_openssh_pwd_old.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_p8.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_p8_clear.der
@@ -575,8 +587,13 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_enc_aes128.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_enc_aes192.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_enc_aes256.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_enc_aes256_gcm.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_enc_des3.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_openssh.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_openssh_old.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_openssh_pwd.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_openssh_pwd_old.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_p8.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p384_private_p8_clear.der
@@ -593,8 +610,13 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_enc_aes128.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_enc_aes192.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_enc_aes256.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_enc_aes256_gcm.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_enc_des3.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_openssh.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_openssh_old.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_openssh_pwd.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_openssh_pwd_old.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_p8.pem
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p521_private_p8_clear.der
@@ -615,6 +637,15 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/point-at-infinity.org-P256.txt
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/point-at-infinity.org-P384.txt
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/point-at-infinity.org-P521.txt
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/gen_rsa_2048.sh
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/openssl_version.txt
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/rsa2048_private.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/rsa2048_private_openssh.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/rsa2048_private_openssh_old.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/rsa2048_private_openssh_pwd.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/rsa2048_private_openssh_pwd_old.pem
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_vectors/RSA/rsa2048_public_openssh.txt
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/${MODPY_PYCACHE}/
