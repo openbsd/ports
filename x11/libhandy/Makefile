@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/02 11:12:35 jasper Exp $
 
 COMMENT =		library to help in developing UIs for mobile devices
 
-DISTNAME =		libhandy-0.0.9.1
+V =			0.0.11
+DISTNAME =		libhandy-v$V
+PKGNAME =		libhandy-$V
 CATEGORIES =		x11
 
-SHARED_LIBS += handy-0.0                 0.0 # 0
+SHARED_LIBS += handy-0.0                 1.0 # 0
 
-MASTER_SITES =		https://distfiles.nl/
+MASTER_SITES =		https://source.puri.sm/Librem5/libhandy/-/archive/v$V/
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -16,9 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/meson
 
-WANTLIB += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 intl
-WANTLIB += m pango-1.0 pangocairo-1.0 pthread
+WANTLIB += atk-1.0 cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-3 intl m pango-1.0
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/gobject-introspection \
