@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/02 19:41:51 jasper Exp $
 
 COMMENT =	desktop Twitch.tv client
 CATEGORIES =	multimedia games x11
@@ -6,7 +6,7 @@ CATEGORIES =	multimedia games x11
 GH_ACCOUNT =	vinszent
 GH_PROJECT =	gnome-twitch
 GH_TAGNAME =	v0.4.2
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://gnome-twitch.vinszent.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -16,8 +16,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 c gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gstreamer-1.0 gtk-3 intl json-glib-1.0 peas-1.0 peas-gtk-1.0
-WANTLIB += atk-1.0 cairo cairo-gobject girepository-1.0 gmodule-2.0
-WANTLIB += javascriptcoregtk-4.0 m pango-1.0 pangocairo-1.0 pthread
 WANTLIB += soup-2.4 webkit2gtk-4.0
 
 # C11
