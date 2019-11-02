@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/05/08 15:50:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/11/02 11:40:02 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -45,18 +45,26 @@ share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-continue-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-left-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-right-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-0-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-135-lht-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-135-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-180-lht-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-180-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-225-lht-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-225-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-270-lht-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-270-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-315-lht-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-315-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-45-lht-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-45-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-90-lht-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-90-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpright-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/mark-location.png
 share/gnome-maps/maps-service.json
 share/gnome-maps/org.gnome.Maps
 share/gnome-maps/org.gnome.Maps.data.gresource
@@ -100,6 +108,7 @@ share/locale/kn/LC_MESSAGES/gnome-maps.mo
 share/locale/ko/LC_MESSAGES/gnome-maps.mo
 share/locale/lt/LC_MESSAGES/gnome-maps.mo
 share/locale/lv/LC_MESSAGES/gnome-maps.mo
+share/locale/mjw/LC_MESSAGES/gnome-maps.mo
 share/locale/ml/LC_MESSAGES/gnome-maps.mo
 share/locale/nb/LC_MESSAGES/gnome-maps.mo
 share/locale/ne/LC_MESSAGES/gnome-maps.mo

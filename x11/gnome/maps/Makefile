@@ -1,21 +1,17 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/07 11:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2019/11/02 11:40:02 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.32.2.1
+GNOME_VERSION=		3.34.1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += EGL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr atk-1.0
-WANTLIB += cairo cairo-gobject champlain-0.12 clutter-1.0 cogl
-WANTLIB += cogl-pango cogl-path drm folks gbm gdk-3 gdk_pixbuf-2.0
-WANTLIB += gee-0.8 geocode-glib gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += intl json-glib-1.0 pango-1.0 pangocairo-1.0 pthread
-WANTLIB += rest-0.7 soup-2.4 xml2
+WANTLIB += champlain-0.12 folks gee-0.8 geocode-glib gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 rest-0.7 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
