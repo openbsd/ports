@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/02 11:42:00 giovanni Exp $
+${P5SITE}/Locale/
+${P5SITE}/Locale/Codes/
+${P5SITE}/Locale/Codes.pm
+${P5SITE}/Locale/Codes.pod
+${P5SITE}/Locale/Codes/Changes.pod
+${P5SITE}/Locale/Codes/Constants.pm
+${P5SITE}/Locale/Codes/Country.pm
+${P5SITE}/Locale/Codes/Country.pod
+${P5SITE}/Locale/Codes/Country_Codes.pm
+${P5SITE}/Locale/Codes/Country_Retired.pm
+${P5SITE}/Locale/Codes/Currency.pm
+${P5SITE}/Locale/Codes/Currency.pod
+${P5SITE}/Locale/Codes/Currency_Codes.pm
+${P5SITE}/Locale/Codes/Currency_Retired.pm
+${P5SITE}/Locale/Codes/LangExt.pm
+${P5SITE}/Locale/Codes/LangExt.pod
+${P5SITE}/Locale/Codes/LangExt_Codes.pm
+${P5SITE}/Locale/Codes/LangExt_Retired.pm
+${P5SITE}/Locale/Codes/LangFam.pm
+${P5SITE}/Locale/Codes/LangFam.pod
+${P5SITE}/Locale/Codes/LangFam_Codes.pm
+${P5SITE}/Locale/Codes/LangFam_Retired.pm
+${P5SITE}/Locale/Codes/LangVar.pm
+${P5SITE}/Locale/Codes/LangVar.pod
+${P5SITE}/Locale/Codes/LangVar_Codes.pm
+${P5SITE}/Locale/Codes/LangVar_Retired.pm
+${P5SITE}/Locale/Codes/Language.pm
+${P5SITE}/Locale/Codes/Language.pod
+${P5SITE}/Locale/Codes/Language_Codes.pm
+${P5SITE}/Locale/Codes/Language_Retired.pm
+${P5SITE}/Locale/Codes/Script.pm
+${P5SITE}/Locale/Codes/Script.pod
+${P5SITE}/Locale/Codes/Script_Codes.pm
+${P5SITE}/Locale/Codes/Script_Retired.pm
+${P5SITE}/Locale/Codes/Types.pod
+${P5SITE}/Locale/Country.pm
+${P5SITE}/Locale/Country.pod
+${P5SITE}/Locale/Currency.pm
+${P5SITE}/Locale/Currency.pod
+${P5SITE}/Locale/Language.pm
+${P5SITE}/Locale/Language.pod
+${P5SITE}/Locale/Script.pm
+${P5SITE}/Locale/Script.pod
+@man man/man3p/Locale::Codes.3p
+@man man/man3p/Locale::Codes::Changes.3p
+@man man/man3p/Locale::Codes::Country.3p
+@man man/man3p/Locale::Codes::Currency.3p
+@man man/man3p/Locale::Codes::LangExt.3p
+@man man/man3p/Locale::Codes::LangFam.3p
+@man man/man3p/Locale::Codes::LangVar.3p
+@man man/man3p/Locale::Codes::Language.3p
+@man man/man3p/Locale::Codes::Script.3p
+@man man/man3p/Locale::Codes::Types.3p
+@man man/man3p/Locale::Country.3p
+@man man/man3p/Locale::Currency.3p
+@man man/man3p/Locale::Language.3p
+@man man/man3p/Locale::Script.3p

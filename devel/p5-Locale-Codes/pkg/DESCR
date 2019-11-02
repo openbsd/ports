@@ -1,0 +1,5 @@
+Locale-Codes is a distribution containing a set of modules designed to
+work with sets of codes which uniquely identify something. For example,
+there are codes associated with different countries, different
+currencies, different languages, etc. These sets of codes are typically
+maintained in some standard.
