@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.112 2019/05/02 07:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2019/11/02 11:04:35 jasper Exp $
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.12.1
+GNOME_VERSION=		0.13.1
 
 # see BACKEND_DIR in config.h
-API_V=			44
+API_V=			45
 
-SHARED_LIBS +=  folks                5.6      # 25.19.1
-SHARED_LIBS +=  folks-dummy          0.0      # 25.19.1
-SHARED_LIBS +=  folks-telepathy      5.3      # 25.19.1
-SHARED_LIBS +=  folks-eds            1.3      # 25.19.1
+SHARED_LIBS +=  folks                5.6      # 25.20.0
+SHARED_LIBS +=  folks-dummy          0.0      # 25.20.0
+SHARED_LIBS +=  folks-telepathy      5.3      # 25.20.0
+SHARED_LIBS +=  folks-eds            1.3      # 25.20.0
 
 SUBST_VARS=		API_V
 
 HOMEPAGE=		https://wiki.gnome.org/Projects/Folks
 
-WANTLIB += c ebackend-1.2 ebook-1.2 ebook-contacts-1.2 edata-book-1.2
-WANTLIB += edataserver-1.2 gee-0.8 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 intl readline secret-1 soup-2.4 telepathy-glib
-WANTLIB += xml2 ${COMPILER_LIBCXX}
+WANTLIB += c ebook-1.2 ebook-contacts-1.2 edataserver-1.2 gee-0.8
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl readline
+WANTLIB += telepathy-glib xml2 ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
