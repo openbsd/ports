@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/11/02 12:01:13 ajacoutot Exp $
 
 COMMENT=		GTK+ frontend to CUPS
 
-DISTNAME=		gtklp-1.3.3
+DISTNAME=		gtklp-1.3.4
 EXTRACT_SUFX=		.src.tar.gz
-REVISION=		1
 
 CATEGORIES=		print sysutils x11
 
@@ -36,7 +35,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	autoreconf
 
-AUTOMAKE_VERSION=	1.15
+AUTOMAKE_VERSION=	1.16
 AUTOCONF_VERSION=	2.69
 BUILD_DEPENDS +=	devel/gettext,-tools
 
