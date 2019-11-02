@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.811 2019/11/01 13:08:37 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.812 2019/11/02 17:12:50 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1322,6 +1322,8 @@ my $obsolete_reason = {
 # 6.7
 	'awless' => 3,
 	'mousetweaks' => 3,
+	'py-ioflo' => 6,
+	'py3-ioflo' => 6,
 };
 
 # reasons for obsolete packages
