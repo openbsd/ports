@@ -1,15 +1,15 @@
-$OpenBSD: patch-plugins_eds_gtd-eds-autoptr_h,v 1.1 2019/05/06 18:13:26 ajacoutot Exp $
+$OpenBSD: patch-plugins_eds_gtd-eds-autoptr_h,v 1.2 2019/11/02 10:04:20 ajacoutot Exp $
 
-From 6cdabc4dd0c6c804a093b94c269461ce376fed4f Mon Sep 17 00:00:00 2001
-From: Emmanuele Bassi <ebassi@gnome.org>
-Date: Mon, 21 Jan 2019 10:47:09 +0000
-Subject: [PATCH] Drop the autoptr definition for ESource
+Fix for evolution-data-server >= 3.34 (From upstream via Arch Linux).
 
 Index: plugins/eds/gtd-eds-autoptr.h
 --- plugins/eds/gtd-eds-autoptr.h.orig
 +++ plugins/eds/gtd-eds-autoptr.h
-@@ -25,4 +25,3 @@
+@@ -23,6 +23,5 @@
+ #include <libecal/libecal.h>
+ 
  G_DEFINE_AUTOPTR_CLEANUP_FUNC (ECalComponent, g_object_unref);
- G_DEFINE_AUTOPTR_CLEANUP_FUNC (ECalComponentId, e_cal_component_free_id);
+-G_DEFINE_AUTOPTR_CLEANUP_FUNC (ECalComponentId, e_cal_component_free_id);
++G_DEFINE_AUTOPTR_CLEANUP_FUNC (ECalComponentId, e_cal_component_id_free);
  G_DEFINE_AUTOPTR_CLEANUP_FUNC (ECalClient, g_object_unref);
 -G_DEFINE_AUTOPTR_CLEANUP_FUNC (ESource, g_object_unref);
