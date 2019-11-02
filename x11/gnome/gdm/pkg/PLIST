@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.94 2019/05/08 21:32:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.95 2019/11/02 15:34:08 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -203,9 +203,6 @@ share/help/zh_CN/
 share/help/zh_CN/gdm/
 share/help/zh_CN/gdm/index.docbook
 share/help/zh_CN/gdm/legal.xml
-share/icons/hicolor/16x16/apps/gdm-xnest.png
-share/icons/hicolor/32x32/apps/gdm-setup.png
-share/icons/hicolor/32x32/apps/gdm-xnest.png
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/an/LC_MESSAGES/gdm.mo
@@ -269,6 +266,9 @@ share/locale/lv/LC_MESSAGES/gdm.mo
 share/locale/mai/LC_MESSAGES/gdm.mo
 share/locale/mg/LC_MESSAGES/gdm.mo
 share/locale/mi/LC_MESSAGES/gdm.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/gdm.mo
 share/locale/mk/LC_MESSAGES/gdm.mo
 share/locale/ml/LC_MESSAGES/gdm.mo
 share/locale/mn/LC_MESSAGES/gdm.mo
@@ -314,12 +314,6 @@ share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
 share/pixmaps/
-share/pixmaps/gdm-foot-logo.png
-share/pixmaps/gdm-setup.png
-share/pixmaps/gdm-xnest.png
-share/pixmaps/gdm.png
-share/pixmaps/nobody.png
-share/pixmaps/nohost.png
 share/pixmaps/puflogh1000X248.gif
 @mode 0755
 @sample /var/log/gdm/
@@ -328,5 +322,4 @@ share/pixmaps/puflogh1000X248.gif
 @sample /var/cache/gdm/
 @group
 @mode
-@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas

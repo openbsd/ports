@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.9 2019/01/18 05:51:51 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.10 2019/11/02 15:34:07 ajacoutot Exp $
 
 XXX fix+push upstream
 
@@ -26,7 +26,7 @@ Index: daemon/gdm-launch-environment.c
  #define GDM_SESSION_MODE "gdm"
  #define INITIAL_SETUP_SESSION_MODE "initial-setup"
  #define GNOME_SESSION_SESSIONS_PATH DATADIR "/gnome-session/sessions"
-@@ -214,6 +214,9 @@ build_launch_environment (GdmLaunchEnvironment *launch
+@@ -212,6 +212,9 @@ build_launch_environment (GdmLaunchEnvironment *launch
                  char *seat_id;
  
                  seat_id = launch_environment->priv->x11_display_seat_id;
@@ -36,7 +36,7 @@ Index: daemon/gdm-launch-environment.c
  
                  g_hash_table_insert (hash, g_strdup ("GDM_SEAT_ID"), g_strdup (seat_id));
          }
-@@ -239,6 +242,8 @@ on_session_setup_complete (GdmSession        *session,
+@@ -237,6 +240,8 @@ on_session_setup_complete (GdmSession        *session,
                  gdm_session_set_environment_variable (launch_environment->priv->session, key, value);
          }
          g_hash_table_destroy (hash);

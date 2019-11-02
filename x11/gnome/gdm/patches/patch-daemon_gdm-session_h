@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session_h,v 1.5 2019/05/08 21:32:35 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session_h,v 1.6 2019/11/02 15:34:07 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From a9cacb929470eb82582396984c61d5b611bfeb1a Mon Sep 17 00:00:00 2001
@@ -9,7 +9,7 @@ Subject: session: drop session-type property
 Index: daemon/gdm-session.h
 --- daemon/gdm-session.h.orig
 +++ daemon/gdm-session.h
-@@ -121,6 +121,8 @@ void              gdm_session_answer_query            
+@@ -122,6 +122,8 @@ void              gdm_session_answer_query            
                                                             const char *text);
  void              gdm_session_select_program              (GdmSession *session,
                                                             const char *command_line);

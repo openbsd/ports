@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session-record_c,v 1.10 2018/08/15 13:49:01 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-record_c,v 1.11 2019/11/02 15:34:07 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=722482
 
@@ -32,7 +32,7 @@ Index: daemon/gdm-session-record.c
  #if !defined(GDM_NEW_SESSION_RECORDS_FILE)
  #    if defined(WTMPX_FILE)
  #        define GDM_NEW_SESSION_RECORDS_FILE WTMPX_FILE
-@@ -170,6 +183,84 @@ record_set_line (UTMP       *u,
+@@ -168,6 +181,84 @@ record_set_line (UTMP       *u,
          g_debug ("using ut_line %.*s", (int) sizeof (u->ut_line), u->ut_line);
  }
  
@@ -117,7 +117,7 @@ Index: daemon/gdm-session-record.c
  void
  gdm_session_record_login (GPid                  session_pid,
                            const char           *user_name,
-@@ -216,8 +307,9 @@ gdm_session_record_login (GPid                  sessio
+@@ -214,8 +305,9 @@ gdm_session_record_login (GPid                  sessio
          setutxent();
          pututxline (&session_record);
          endutxent();
@@ -129,7 +129,7 @@ Index: daemon/gdm-session-record.c
  #endif
  }
  
-@@ -261,8 +353,8 @@ gdm_session_record_logout (GPid                  sessi
+@@ -259,8 +351,8 @@ gdm_session_record_logout (GPid                  sessi
          setutxent();
          pututxline (&session_record);
          endutxent();

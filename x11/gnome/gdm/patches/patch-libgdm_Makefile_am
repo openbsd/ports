@@ -1,0 +1,19 @@
+$OpenBSD: patch-libgdm_Makefile_am,v 1.1 2019/11/02 15:34:07 ajacoutot Exp $
+
+REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
+From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
+From: Iain Lane <iain@orangesquash.org.uk>
+Date: Fri, 5 Jan 2018 11:53:34 +0000
+Subject: [PATCH] manager: Find user's current graphical session, not session of caller
+
+Index: libgdm/Makefile.am
+--- libgdm/Makefile.am.orig
++++ libgdm/Makefile.am
+@@ -66,7 +66,6 @@ libgdm_la_LDFLAGS =                                   
+         $(END_OF_LIST)
+ 
+ libgdm_la_LIBADD =                                                     \
+-        $(top_builddir)/common/libgdmcommon.la                         \
+         $(LIBGDM_LIBS)                                                 \
+         $(SYSTEMD_LIBS)                                                \
+         $(END_OF_LIST)

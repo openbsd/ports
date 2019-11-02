@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.279 2019/07/07 11:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.280 2019/11/02 15:34:07 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.32.0
-REVISION=		0
+GNOME_VERSION=		3.34.1
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -54,7 +53,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			security/openpam \
 			sysutils/accountsservice
 
-MODGNOME_TOOLS += gobject-introspection gtk-update-icon-cache yelp
+MODGNOME_TOOLS=		gobject-introspection yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
@@ -62,6 +61,7 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--disable-systemd-journal \
+			--disable-user-display-server \
 			--without-systemd \
 			--without-plymouth \
 			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \
@@ -99,6 +99,7 @@ pre-configure:
 		autoreconf -fi
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/puflogh1000X248.gif \
 		${PREFIX}/share/pixmaps/
 	rm -r ${WRKINST}/var/run/gdm ${WRKINST}/rules.d
