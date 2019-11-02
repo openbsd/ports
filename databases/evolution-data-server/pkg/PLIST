@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2019/05/06 18:12:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.56 2019/11/02 09:35:07 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -157,8 +157,9 @@ include/evolution-data-server/libebackend/libebackend.h
 include/evolution-data-server/libebook/
 include/evolution-data-server/libebook-contacts/
 include/evolution-data-server/libebook-contacts/e-address-western.h
+include/evolution-data-server/libebook-contacts/e-book-contacts-enums.h
 include/evolution-data-server/libebook-contacts/e-book-contacts-enumtypes.h
-include/evolution-data-server/libebook-contacts/e-book-contacts-types.h
+include/evolution-data-server/libebook-contacts/e-book-contacts-utils.h
 include/evolution-data-server/libebook-contacts/e-book-query.h
 include/evolution-data-server/libebook-contacts/e-contact.h
 include/evolution-data-server/libebook-contacts/e-name-western.h
@@ -180,15 +181,27 @@ include/evolution-data-server/libecal/
 include/evolution-data-server/libecal/e-cal-check-timezones.h
 include/evolution-data-server/libecal/e-cal-client-view.h
 include/evolution-data-server/libecal/e-cal-client.h
+include/evolution-data-server/libecal/e-cal-component-alarm-instance.h
+include/evolution-data-server/libecal/e-cal-component-alarm-repeat.h
+include/evolution-data-server/libecal/e-cal-component-alarm-trigger.h
+include/evolution-data-server/libecal/e-cal-component-alarm.h
+include/evolution-data-server/libecal/e-cal-component-alarms.h
+include/evolution-data-server/libecal/e-cal-component-attendee.h
+include/evolution-data-server/libecal/e-cal-component-datetime.h
+include/evolution-data-server/libecal/e-cal-component-id.h
+include/evolution-data-server/libecal/e-cal-component-organizer.h
+include/evolution-data-server/libecal/e-cal-component-parameter-bag.h
+include/evolution-data-server/libecal/e-cal-component-period.h
+include/evolution-data-server/libecal/e-cal-component-property-bag.h
+include/evolution-data-server/libecal/e-cal-component-range.h
+include/evolution-data-server/libecal/e-cal-component-text.h
 include/evolution-data-server/libecal/e-cal-component.h
+include/evolution-data-server/libecal/e-cal-enums.h
 include/evolution-data-server/libecal/e-cal-enumtypes.h
 include/evolution-data-server/libecal/e-cal-recur.h
 include/evolution-data-server/libecal/e-cal-system-timezone.h
 include/evolution-data-server/libecal/e-cal-time-util.h
-include/evolution-data-server/libecal/e-cal-types.h
 include/evolution-data-server/libecal/e-cal-util.h
-include/evolution-data-server/libecal/e-cal-view.h
-include/evolution-data-server/libecal/e-cal.h
 include/evolution-data-server/libecal/e-reminder-watcher.h
 include/evolution-data-server/libecal/e-timezone-cache.h
 include/evolution-data-server/libecal/libecal.h
@@ -199,6 +212,7 @@ include/evolution-data-server/libedata-book/e-book-backend-factory.h
 include/evolution-data-server/libedata-book/e-book-backend-sexp.h
 include/evolution-data-server/libedata-book/e-book-backend-sqlitedb.h
 include/evolution-data-server/libedata-book/e-book-backend-summary.h
+include/evolution-data-server/libedata-book/e-book-backend-sync.h
 include/evolution-data-server/libedata-book/e-book-backend.h
 include/evolution-data-server/libedata-book/e-book-cache.h
 include/evolution-data-server/libedata-book/e-book-meta-backend.h
@@ -214,11 +228,9 @@ include/evolution-data-server/libedata-book/e-subprocess-book-factory.h
 include/evolution-data-server/libedata-book/e-system-locale-watcher.h
 include/evolution-data-server/libedata-book/libedata-book.h
 include/evolution-data-server/libedata-cal/
-include/evolution-data-server/libedata-cal/e-cal-backend-cache.h
 include/evolution-data-server/libedata-cal/e-cal-backend-factory.h
 include/evolution-data-server/libedata-cal/e-cal-backend-intervaltree.h
 include/evolution-data-server/libedata-cal/e-cal-backend-sexp.h
-include/evolution-data-server/libedata-cal/e-cal-backend-store.h
 include/evolution-data-server/libedata-cal/e-cal-backend-sync.h
 include/evolution-data-server/libedata-cal/e-cal-backend-util.h
 include/evolution-data-server/libedata-cal/e-cal-backend.h
@@ -365,17 +377,21 @@ lib/evolution-data-server/registry-modules/module-trust-prompt.so
 lib/evolution-data-server/registry-modules/module-webdav-backend.so
 lib/evolution-data-server/registry-modules/module-yahoo-backend.so
 lib/girepository-1.0/Camel-1.2.typelib
+lib/girepository-1.0/EBackend-1.2.typelib
 lib/girepository-1.0/EBook-1.2.typelib
 lib/girepository-1.0/EBookContacts-1.2.typelib
+lib/girepository-1.0/ECal-2.0.typelib
+lib/girepository-1.0/EDataBook-1.2.typelib
+lib/girepository-1.0/EDataCal-2.0.typelib
 lib/girepository-1.0/EDataServer-1.2.typelib
 lib/girepository-1.0/EDataServerUI-1.2.typelib
 @lib lib/libcamel-1.2.so.${LIBcamel-1.2_VERSION}
 @lib lib/libebackend-1.2.so.${LIBebackend-1.2_VERSION}
 @lib lib/libebook-1.2.so.${LIBebook-1.2_VERSION}
 @lib lib/libebook-contacts-1.2.so.${LIBebook-contacts-1.2_VERSION}
-@lib lib/libecal-1.2.so.${LIBecal-1.2_VERSION}
+@lib lib/libecal-2.0.so.${LIBecal-2.0_VERSION}
 @lib lib/libedata-book-1.2.so.${LIBedata-book-1.2_VERSION}
-@lib lib/libedata-cal-1.2.so.${LIBedata-cal-1.2_VERSION}
+@lib lib/libedata-cal-2.0.so.${LIBedata-cal-2.0_VERSION}
 @lib lib/libedataserver-1.2.so.${LIBedataserver-1.2_VERSION}
 @lib lib/libedataserverui-1.2.so.${LIBedataserverui-1.2_VERSION}
 lib/pkgconfig/camel-1.2.pc
@@ -383,9 +399,9 @@ lib/pkgconfig/evolution-data-server-1.2.pc
 lib/pkgconfig/libebackend-1.2.pc
 lib/pkgconfig/libebook-1.2.pc
 lib/pkgconfig/libebook-contacts-1.2.pc
-lib/pkgconfig/libecal-1.2.pc
+lib/pkgconfig/libecal-2.0.pc
 lib/pkgconfig/libedata-book-1.2.pc
-lib/pkgconfig/libedata-cal-1.2.pc
+lib/pkgconfig/libedata-cal-2.0.pc
 lib/pkgconfig/libedataserver-1.2.pc
 lib/pkgconfig/libedataserverui-1.2.pc
 lib/systemd/user/evolution-addressbook-factory.service
@@ -422,8 +438,12 @@ share/examples/evolution-data-server/autostart/
 share/examples/evolution-data-server/autostart/org.gnome.Evolution-alarm-notify.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 share/gir-1.0/Camel-1.2.gir
+share/gir-1.0/EBackend-1.2.gir
 share/gir-1.0/EBook-1.2.gir
 share/gir-1.0/EBookContacts-1.2.gir
+share/gir-1.0/ECal-2.0.gir
+share/gir-1.0/EDataBook-1.2.gir
+share/gir-1.0/EDataCal-2.0.gir
 share/gir-1.0/EDataServer-1.2.gir
 share/gir-1.0/EDataServerUI-1.2.gir
 share/glib-2.0/schemas/org.gnome.Evolution.DefaultSources.gschema.xml
@@ -542,10 +562,18 @@ share/pixmaps/evolution-data-server/category_suppliers_16.png
 share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 share/vala/vapi/camel-1.2.deps
 share/vala/vapi/camel-1.2.vapi
+share/vala/vapi/libebackend-1.2.deps
+share/vala/vapi/libebackend-1.2.vapi
 share/vala/vapi/libebook-1.2.deps
 share/vala/vapi/libebook-1.2.vapi
 share/vala/vapi/libebook-contacts-1.2.deps
 share/vala/vapi/libebook-contacts-1.2.vapi
+share/vala/vapi/libecal-2.0.deps
+share/vala/vapi/libecal-2.0.vapi
+share/vala/vapi/libedata-book-1.2.deps
+share/vala/vapi/libedata-book-1.2.vapi
+share/vala/vapi/libedata-cal-2.0.deps
+share/vala/vapi/libedata-cal-2.0.vapi
 share/vala/vapi/libedataserver-1.2.deps
 share/vala/vapi/libedataserver-1.2.vapi
 share/vala/vapi/libedataserverui-1.2.deps
