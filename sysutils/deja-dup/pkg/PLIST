@@ -1,16 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/04/30 11:08:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2019/11/02 09:38:54 ajacoutot Exp $
 @bin bin/deja-dup
 lib/deja-dup/
 lib/deja-dup/libdeja.so
 lib/deja-dup/libwidgets.so
-lib/nautilus/
-lib/nautilus/extensions-3.0/
 lib/nautilus/extensions-3.0/libdeja-dup.so
 libexec/deja-dup/
 @bin libexec/deja-dup/deja-dup-monitor
 libexec/deja-dup/duplicity
 @man man/man1/deja-dup.1
-share/GConf/gsettings/deja-dup.convert
 share/applications/org.gnome.DejaDup.desktop
 share/dbus-1/services/org.gnome.DejaDup.service
 share/examples/deja-dup/
@@ -19,8 +16,6 @@ share/examples/deja-dup/xdg/autostart/
 share/examples/deja-dup/xdg/autostart/org.gnome.DejaDup.Monitor.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.DejaDup.Monitor.desktop
 share/glib-2.0/schemas/org.gnome.DejaDup.gschema.xml
-share/help/
-share/help/C/
 share/help/C/deja-dup/
 share/help/C/deja-dup/backup-auto.page
 share/help/C/deja-dup/backup-first.page
@@ -34,7 +29,6 @@ share/help/C/deja-dup/restore-lost.page
 share/help/C/deja-dup/restore-revert.page
 share/help/C/deja-dup/restore-worst-case.page
 share/help/C/deja-dup/support.page
-share/help/ar/
 share/help/ar/deja-dup/
 share/help/ar/deja-dup/backup-auto.page
 share/help/ar/deja-dup/backup-first.page
@@ -76,7 +70,6 @@ share/help/bs/deja-dup/restore-lost.page
 share/help/bs/deja-dup/restore-revert.page
 share/help/bs/deja-dup/restore-worst-case.page
 share/help/bs/deja-dup/support.page
-share/help/ca/
 share/help/ca/deja-dup/
 share/help/ca/deja-dup/backup-auto.page
 share/help/ca/deja-dup/backup-first.page
@@ -90,7 +83,6 @@ share/help/ca/deja-dup/restore-lost.page
 share/help/ca/deja-dup/restore-revert.page
 share/help/ca/deja-dup/restore-worst-case.page
 share/help/ca/deja-dup/support.page
-share/help/cs/
 share/help/cs/deja-dup/
 share/help/cs/deja-dup/backup-auto.page
 share/help/cs/deja-dup/backup-first.page
@@ -118,7 +110,6 @@ share/help/da/deja-dup/restore-lost.page
 share/help/da/deja-dup/restore-revert.page
 share/help/da/deja-dup/restore-worst-case.page
 share/help/da/deja-dup/support.page
-share/help/de/
 share/help/de/deja-dup/
 share/help/de/deja-dup/backup-auto.page
 share/help/de/deja-dup/backup-first.page
@@ -132,7 +123,6 @@ share/help/de/deja-dup/restore-lost.page
 share/help/de/deja-dup/restore-revert.page
 share/help/de/deja-dup/restore-worst-case.page
 share/help/de/deja-dup/support.page
-share/help/el/
 share/help/el/deja-dup/
 share/help/el/deja-dup/backup-auto.page
 share/help/el/deja-dup/backup-first.page
@@ -188,7 +178,6 @@ share/help/eo/deja-dup/restore-lost.page
 share/help/eo/deja-dup/restore-revert.page
 share/help/eo/deja-dup/restore-worst-case.page
 share/help/eo/deja-dup/support.page
-share/help/es/
 share/help/es/deja-dup/
 share/help/es/deja-dup/backup-auto.page
 share/help/es/deja-dup/backup-first.page
@@ -202,7 +191,6 @@ share/help/es/deja-dup/restore-lost.page
 share/help/es/deja-dup/restore-revert.page
 share/help/es/deja-dup/restore-worst-case.page
 share/help/es/deja-dup/support.page
-share/help/eu/
 share/help/eu/deja-dup/
 share/help/eu/deja-dup/backup-auto.page
 share/help/eu/deja-dup/backup-first.page
@@ -216,7 +204,6 @@ share/help/eu/deja-dup/restore-lost.page
 share/help/eu/deja-dup/restore-revert.page
 share/help/eu/deja-dup/restore-worst-case.page
 share/help/eu/deja-dup/support.page
-share/help/fi/
 share/help/fi/deja-dup/
 share/help/fi/deja-dup/backup-auto.page
 share/help/fi/deja-dup/backup-first.page
@@ -230,7 +217,6 @@ share/help/fi/deja-dup/restore-lost.page
 share/help/fi/deja-dup/restore-revert.page
 share/help/fi/deja-dup/restore-worst-case.page
 share/help/fi/deja-dup/support.page
-share/help/fr/
 share/help/fr/deja-dup/
 share/help/fr/deja-dup/backup-auto.page
 share/help/fr/deja-dup/backup-first.page
@@ -244,7 +230,6 @@ share/help/fr/deja-dup/restore-lost.page
 share/help/fr/deja-dup/restore-revert.page
 share/help/fr/deja-dup/restore-worst-case.page
 share/help/fr/deja-dup/support.page
-share/help/gl/
 share/help/gl/deja-dup/
 share/help/gl/deja-dup/backup-auto.page
 share/help/gl/deja-dup/backup-first.page
@@ -286,7 +271,6 @@ share/help/hr/deja-dup/restore-lost.page
 share/help/hr/deja-dup/restore-revert.page
 share/help/hr/deja-dup/restore-worst-case.page
 share/help/hr/deja-dup/support.page
-share/help/hu/
 share/help/hu/deja-dup/
 share/help/hu/deja-dup/backup-auto.page
 share/help/hu/deja-dup/backup-first.page
@@ -342,7 +326,6 @@ share/help/ja/deja-dup/restore-lost.page
 share/help/ja/deja-dup/restore-revert.page
 share/help/ja/deja-dup/restore-worst-case.page
 share/help/ja/deja-dup/support.page
-share/help/ko/
 share/help/ko/deja-dup/
 share/help/ko/deja-dup/backup-auto.page
 share/help/ko/deja-dup/backup-first.page
@@ -426,7 +409,6 @@ share/help/nl/deja-dup/restore-lost.page
 share/help/nl/deja-dup/restore-revert.page
 share/help/nl/deja-dup/restore-worst-case.page
 share/help/nl/deja-dup/support.page
-share/help/oc/
 share/help/oc/deja-dup/
 share/help/oc/deja-dup/backup-auto.page
 share/help/oc/deja-dup/backup-first.page
@@ -440,7 +422,6 @@ share/help/oc/deja-dup/restore-lost.page
 share/help/oc/deja-dup/restore-revert.page
 share/help/oc/deja-dup/restore-worst-case.page
 share/help/oc/deja-dup/support.page
-share/help/pa/
 share/help/pa/deja-dup/
 share/help/pa/deja-dup/backup-auto.page
 share/help/pa/deja-dup/backup-first.page
@@ -482,7 +463,6 @@ share/help/ps/deja-dup/restore-lost.page
 share/help/ps/deja-dup/restore-revert.page
 share/help/ps/deja-dup/restore-worst-case.page
 share/help/ps/deja-dup/support.page
-share/help/pt_BR/
 share/help/pt_BR/deja-dup/
 share/help/pt_BR/deja-dup/backup-auto.page
 share/help/pt_BR/deja-dup/backup-first.page
@@ -524,7 +504,6 @@ share/help/sk/deja-dup/restore-lost.page
 share/help/sk/deja-dup/restore-revert.page
 share/help/sk/deja-dup/restore-worst-case.page
 share/help/sk/deja-dup/support.page
-share/help/sl/
 share/help/sl/deja-dup/
 share/help/sl/deja-dup/backup-auto.page
 share/help/sl/deja-dup/backup-first.page
@@ -538,7 +517,6 @@ share/help/sl/deja-dup/restore-lost.page
 share/help/sl/deja-dup/restore-revert.page
 share/help/sl/deja-dup/restore-worst-case.page
 share/help/sl/deja-dup/support.page
-share/help/sr/
 share/help/sr/deja-dup/
 share/help/sr/deja-dup/backup-auto.page
 share/help/sr/deja-dup/backup-first.page
@@ -552,20 +530,6 @@ share/help/sr/deja-dup/restore-lost.page
 share/help/sr/deja-dup/restore-revert.page
 share/help/sr/deja-dup/restore-worst-case.page
 share/help/sr/deja-dup/support.page
-share/help/sv/
-share/help/sv/deja-dup/
-share/help/sv/deja-dup/backup-auto.page
-share/help/sv/deja-dup/backup-first.page
-share/help/sv/deja-dup/contribute.page
-share/help/sv/deja-dup/credits.page
-share/help/sv/deja-dup/index.page
-share/help/sv/deja-dup/license.page
-share/help/sv/deja-dup/prefs.page
-share/help/sv/deja-dup/restore-full.page
-share/help/sv/deja-dup/restore-lost.page
-share/help/sv/deja-dup/restore-revert.page
-share/help/sv/deja-dup/restore-worst-case.page
-share/help/sv/deja-dup/support.page
 share/help/th/
 share/help/th/deja-dup/
 share/help/th/deja-dup/backup-auto.page
@@ -594,7 +558,6 @@ share/help/tr/deja-dup/restore-lost.page
 share/help/tr/deja-dup/restore-revert.page
 share/help/tr/deja-dup/restore-worst-case.page
 share/help/tr/deja-dup/support.page
-share/help/vi/
 share/help/vi/deja-dup/
 share/help/vi/deja-dup/backup-auto.page
 share/help/vi/deja-dup/backup-first.page
@@ -608,7 +571,6 @@ share/help/vi/deja-dup/restore-lost.page
 share/help/vi/deja-dup/restore-revert.page
 share/help/vi/deja-dup/restore-worst-case.page
 share/help/vi/deja-dup/support.page
-share/help/zh_CN/
 share/help/zh_CN/deja-dup/
 share/help/zh_CN/deja-dup/backup-auto.page
 share/help/zh_CN/deja-dup/backup-first.page
@@ -638,14 +600,13 @@ share/help/zh_TW/deja-dup/restore-worst-case.page
 share/help/zh_TW/deja-dup/support.page
 share/icons/hicolor/scalable/apps/org.gnome.DejaDup.svg
 share/icons/hicolor/symbolic/apps/org.gnome.DejaDup-symbolic.svg
+share/locale/af/LC_MESSAGES/deja-dup.mo
 share/locale/ar/LC_MESSAGES/deja-dup.mo
 share/locale/ast/LC_MESSAGES/deja-dup.mo
 share/locale/az/LC_MESSAGES/deja-dup.mo
 share/locale/be/LC_MESSAGES/deja-dup.mo
 share/locale/bg/LC_MESSAGES/deja-dup.mo
 share/locale/bn/LC_MESSAGES/deja-dup.mo
-share/locale/bo/
-share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/deja-dup.mo
 share/locale/bs/LC_MESSAGES/deja-dup.mo
 share/locale/ca/LC_MESSAGES/deja-dup.mo
@@ -719,6 +680,9 @@ share/locale/sl/LC_MESSAGES/deja-dup.mo
 share/locale/sq/LC_MESSAGES/deja-dup.mo
 share/locale/sr/LC_MESSAGES/deja-dup.mo
 share/locale/sv/LC_MESSAGES/deja-dup.mo
+share/locale/szl/
+share/locale/szl/LC_MESSAGES/
+share/locale/szl/LC_MESSAGES/deja-dup.mo
 share/locale/ta/LC_MESSAGES/deja-dup.mo
 share/locale/te/LC_MESSAGES/deja-dup.mo
 share/locale/tg/LC_MESSAGES/deja-dup.mo
