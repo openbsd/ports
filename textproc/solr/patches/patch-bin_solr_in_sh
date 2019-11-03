@@ -1,9 +1,9 @@
-$OpenBSD: patch-bin_solr_in_sh,v 1.3 2019/05/15 08:18:34 sthen Exp $
+$OpenBSD: patch-bin_solr_in_sh,v 1.4 2019/11/03 19:09:46 sthen Exp $
 
 Index: bin/solr.in.sh
 --- bin/solr.in.sh.orig
 +++ bin/solr.in.sh
-@@ -94,13 +94,16 @@ ENABLE_REMOTE_JMX_OPTS="true"
+@@ -94,13 +94,16 @@
  #SOLR_OPTS="$SOLR_OPTS -Dsolr.autoCommit.maxTime=60000"
  #SOLR_OPTS="$SOLR_OPTS -Dsolr.clustering.enabled=true"
  
@@ -22,7 +22,7 @@ Index: bin/solr.in.sh
  
  # Path to a directory that Solr will use as root for data folders for each core.
  # If not set, defaults to <instance_dir>/data. Overridable per core through 'dataDir' core property
-@@ -109,14 +112,14 @@ ENABLE_REMOTE_JMX_OPTS="true"
+@@ -109,14 +112,14 @@
  # Solr provides a default Log4J configuration xml file in server/resources
  # however, you may want to customize the log settings and file appender location
  # so you can point the script to use a different log4j2.xml file
