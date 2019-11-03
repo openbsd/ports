@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/23 19:59:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/03 11:43:17 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
-V =		3.4.0
+V =		3.4.1
 DISTNAME =	polybar-$V
-REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	https://polybar.github.io/
@@ -13,7 +12,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
-WANTLIB += c cairo curl fontconfig freetype intl jsoncpp m mpdclient
+WANTLIB += c cairo curl fontconfig freetype intl m mpdclient
 WANTLIB += pulse xcb xcb-composite xcb-cursor xcb-ewmh xcb-icccm
 WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z
 
@@ -26,17 +25,18 @@ COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake \
 		lang/python
 
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		textproc/py-sphinx
+		textproc/py-sphinx${MODPY_FLAVOR}
 
 LIB_DEPENDS =	audio/libmpdclient \
 		audio/pulseaudio \
-		devel/jsoncpp \
 		devel/libinotify \
 		graphics/cairo \
 		net/curl
 
-RUN_DEPENDS =	x11/py-xcbgen \
+RUN_DEPENDS =	x11/py-xcbgen${MODPY_FLAVOR} \
 		fonts/siji \
 		fonts/unifont
 
