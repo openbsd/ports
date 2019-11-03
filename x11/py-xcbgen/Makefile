@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/03 11:42:11 jasper Exp $
+
 COMMENT =	X C Binding - protocol binding generator
 
 # please keep in sync with the version in proto/xcb-proto in Xenocara
 VERSION=	1.13
 DISTNAME =	xcb-proto-${VERSION}
 PKGNAME =	py-xcbgen-${VERSION}
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -20,6 +22,9 @@ MASTER_SITES =		https://xcb.freedesktop.org/dist/
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		lang/python
+
+FLAVORS =		python3
+FLAVOR ?=
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
