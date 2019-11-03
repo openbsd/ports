@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.136 2019/10/30 16:11:25 espie Exp $
+# $OpenBSD: Engine.pm,v 1.137 2019/11/03 10:17:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -58,14 +58,8 @@ sub new
 	    ignored => DPB::ListQueue->new}, $class;
 	$o->{buildable} = $class->build_subengine_class($state)->new($o, 
 	    $state->builder);
-	if ($state->{want_fetchinfo}) {
-		require DPB::SubEngine::Fetch;
-		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
-	}
-	if ($state->{roach}) {
-		require DPB::SubEngine::Roach;
-		$o->{toroach} = DPB::SubEngine::Roach->new($o);
-	}
+	$o->{tofetch} = $class->fetch_subengine_class($state)->new($o);
+	$o->{toroach} = $class->roach_subengine_class($state)->new($o);
 	$o->{log} = $state->logger->append("engine");
 	$o->{stats} = DPB::Stats->new($state);
 	return $o;
@@ -75,10 +69,32 @@ sub build_subengine_class
 {
 	my ($class, $state) = @_;
 	if ($state->{fetch_only}) {
-		return "DPB::SubEngine::NoBuild";
+		return "DPB::SubEngine::Dummy";
 	} else {
 		require DPB::SubEngine::Build;
 		return "DPB::SubEngine::Build";
+	}
+}
+
+sub fetch_subengine_class
+{
+	my ($class, $state) = @_;
+	if ($state->{want_fetchinfo}) {
+		require DPB::SubEngine::Fetch;
+		return "DPB::SubEngine::Fetch";
+	} else {
+		return "DPB::SubEngine::Dummy";
+	}
+}
+
+sub roach_subengine_class
+{
+	my ($class, $state) = @_;
+	if ($state->{roach}) {
+		require DPB::SubEngine::Roach;
+		return "DPB::SubEngine::Roach";
+	} else {
+		return "DPB::SubEngine::Dummy";
 	}
 }
 
@@ -574,6 +590,11 @@ sub start_new_fetch
 	return $r;
 }
 
+sub start_new_roach
+{
+	return;
+}
+
 sub can_build
 {
 	my $self = shift;
@@ -585,6 +606,12 @@ sub can_fetch
 {
 	my $self = shift;
 	return $self->{tofetch}->non_empty;
+}
+
+sub can_roach
+{
+	my $self = shift;
+	return $self->{toroach}->non_empty;
 }
 
 sub dump_category

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.29 2019/10/24 09:49:58 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.30 2019/11/03 10:17:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -308,8 +308,8 @@ sub preempt_core
 	return 0;
 }
 
-# for fetch-only, the engine is *very* abreviated
-package DPB::SubEngine::NoBuild;
+# for parts of dpb that won't run
+package DPB::SubEngine::Dummy;
 our @ISA = qw(DPB::SubEngine::BuildBase);
 sub non_empty
 {
