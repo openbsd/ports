@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/10/31 10:29:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/11/03 14:16:44 ajacoutot Exp $
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
 
 V = 		3.2.1
-REVISION =	0
+REVISION-main =		1
+REVISION-python =	0
 
 # STB stuff
 # XXX remember to bump REV if they change

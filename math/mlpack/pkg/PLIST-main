@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/10/28 15:13:35 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/11/03 14:16:44 ajacoutot Exp $
 @bin bin/mlpack_adaboost
 @bin bin/mlpack_approx_kfn
 @bin bin/mlpack_cf
@@ -1017,8 +1017,6 @@ include/mlpack/tests/test_function_tools.hpp
 include/mlpack/tests/test_tools.hpp
 @lib lib/libmlpack.so.${LIBmlpack_VERSION}
 lib/pkgconfig/mlpack.pc
-@comment lib/python${MODPY_VERSION}/
-@comment ${SITEDIR}/
 @man man/man1/mlpack_adaboost.1
 @man man/man1/mlpack_approx_kfn.1
 @man man/man1/mlpack_cf.1
