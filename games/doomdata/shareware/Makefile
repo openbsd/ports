@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/03 12:21:55 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/03 12:36:04 kn Exp $
 
 COMMENT =		DOOM I Shareware data files
 
@@ -8,7 +8,8 @@ REVISION =		1
 EXTRACT_SUFX =		.zip
 CATEGORIES =		games
 
-DISTFILES = 		doom_v18.zip doom19s.zip:0
+
+DISTFILES =		doom_v18${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}:0
 
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 
@@ -28,16 +29,13 @@ do-build:
 	    unzip DOOMS_19.ZIP
 	cd ${WRKBUILD} && cat DOOM18S.[12] > DOOM18S.ZIP && \
 	    unzip DOOM18S.ZIP LICENSE.DOC VENDOR.DOC && \
-	    tr -d '\r' < LICENSE.DOC > LICENSE && \
-	    tr -d '\r' < VENDOR.DOC > VENDOR
+	    sed -i s/$$(echo '\r')//g LICENSE.DOC VENDOR.DOC
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doom/
 	${INSTALL_DATA} ${WRKBUILD}/DOOM1.WAD ${PREFIX}/share/doom/doom1.wad
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/doomdata/
-	${INSTALL_DATA} ${WRKBUILD}/LICENSE \
-	    ${PREFIX}/share/doc/doomdata/LICENSE.DOC
-	${INSTALL_DATA} ${WRKBUILD}/VENDOR \
-	    ${PREFIX}/share/doc/doomdata/VENDOR.DOC
+	${INSTALL_DATA} ${WRKBUILD}/LICENSE.DOC ${WRKBUILD}/VENDOR.DOC \
+	    ${PREFIX}/share/doc/doomdata
 
 .include <bsd.port.mk>
