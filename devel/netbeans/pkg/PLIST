@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/08/02 15:17:32 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/11/03 13:54:40 giovanni Exp $
 bin/netbeans
 netbeans/
 netbeans/CREDITS.html
@@ -185,9 +185,19 @@ netbeans/enterprise/docs/webservices-tools-javadoc.jar
 netbeans/enterprise/modules/
 netbeans/enterprise/modules/ext/
 netbeans/enterprise/modules/ext/aws-sdk/
-netbeans/enterprise/modules/ext/aws-sdk/aws-java-sdk-1.2.1.jar
-netbeans/enterprise/modules/ext/aws-sdk/httpclient-4.1.1.jar
-netbeans/enterprise/modules/ext/aws-sdk/httpcore-4.1.jar
+netbeans/enterprise/modules/ext/aws-sdk/aws-java-sdk-core-1.11.569.jar
+netbeans/enterprise/modules/ext/aws-sdk/aws-java-sdk-elasticbeanstalk-1.11.569.jar
+netbeans/enterprise/modules/ext/aws-sdk/aws-java-sdk-kms-1.11.569.jar
+netbeans/enterprise/modules/ext/aws-sdk/aws-java-sdk-s3-1.11.569.jar
+netbeans/enterprise/modules/ext/aws-sdk/httpclient-4.5.5.jar
+netbeans/enterprise/modules/ext/aws-sdk/httpcore-4.4.9.jar
+netbeans/enterprise/modules/ext/aws-sdk/ion-java-1.0.2.jar
+netbeans/enterprise/modules/ext/aws-sdk/jackson-annotations-2.6.0.jar
+netbeans/enterprise/modules/ext/aws-sdk/jackson-core-2.6.7.jar
+netbeans/enterprise/modules/ext/aws-sdk/jackson-databind-2.6.7.2.jar
+netbeans/enterprise/modules/ext/aws-sdk/jackson-dataformat-cbor-2.6.7.jar
+netbeans/enterprise/modules/ext/aws-sdk/jmespath-java-1.11.569.jar
+netbeans/enterprise/modules/ext/aws-sdk/joda-time-2.8.1.jar
 netbeans/enterprise/modules/ext/build-ws.xml
 netbeans/enterprise/modules/ext/commons-fileupload-1.3.jar
 netbeans/enterprise/modules/ext/el-impl.jar
@@ -574,6 +584,7 @@ netbeans/ergonomics/config/Modules/org-netbeans-modules-java-j2seplatform.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-j2seprofiles.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-j2seproject.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-kit.xml
+netbeans/ergonomics/config/Modules/org-netbeans-modules-java-lsp-server.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-module-graph.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-navigation.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-openjdk-project.xml
@@ -626,7 +637,6 @@ netbeans/ergonomics/config/Modules/org-netbeans-modules-maven-refactoring.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-maven-repository.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-maven.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-nashorn-execution.xml
-netbeans/ergonomics/config/Modules/org-netbeans-modules-openjfx-samples.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-options-java.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-payara-common.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-payara-jakartaee.xml
@@ -1940,6 +1950,7 @@ netbeans/java/config/Modules/org-netbeans-modules-ant-browsetask.xml
 netbeans/java/config/Modules/org-netbeans-modules-ant-debugger.xml
 netbeans/java/config/Modules/org-netbeans-modules-ant-freeform.xml
 netbeans/java/config/Modules/org-netbeans-modules-ant-grammar.xml
+netbeans/java/config/Modules/org-netbeans-modules-ant-hints.xml
 netbeans/java/config/Modules/org-netbeans-modules-ant-kit.xml
 netbeans/java/config/Modules/org-netbeans-modules-beans.xml
 netbeans/java/config/Modules/org-netbeans-modules-classfile.xml
@@ -1999,6 +2010,7 @@ netbeans/java/config/Modules/org-netbeans-modules-java-j2seprofiles.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-j2seproject.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-kit.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-lexer.xml
+netbeans/java/config/Modules/org-netbeans-modules-java-lsp-server.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-metrics.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-module-graph.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-navigation.xml
@@ -2222,7 +2234,12 @@ netbeans/java/modules/ext/maven/rootpackage/default-report.xml
 netbeans/java/modules/ext/nb-custom-jshell-probe.jar
 netbeans/java/modules/ext/nb-mod-jshell-probe.jar
 netbeans/java/modules/ext/org-netbeans-modules-java-j2seembedded-probe.jar
-netbeans/java/modules/ext/org-netbeans-modules-java-j2seplatform-probe.jar
+netbeans/java/modules/ext/org.eclipse.lsp4j-0.5.0.jar
+netbeans/java/modules/ext/org.eclipse.lsp4j.generator-0.5.0.jar
+netbeans/java/modules/ext/org.eclipse.lsp4j.jsonrpc-0.5.0.jar
+netbeans/java/modules/ext/org.eclipse.xtend.lib-2.14.0.jar
+netbeans/java/modules/ext/org.eclipse.xtend.lib.macro-2.14.0.jar
+netbeans/java/modules/ext/org.eclipse.xtext.xbase.lib-2.14.0.jar
 netbeans/java/modules/ext/spring-3.0/
 netbeans/java/modules/ext/spring-3.0/license.txt
 netbeans/java/modules/ext/spring-3.0/spring-aop-3.2.7.RELEASE.jar
@@ -2286,6 +2303,7 @@ netbeans/java/modules/org-netbeans-modules-ant-browsetask.jar
 netbeans/java/modules/org-netbeans-modules-ant-debugger.jar
 netbeans/java/modules/org-netbeans-modules-ant-freeform.jar
 netbeans/java/modules/org-netbeans-modules-ant-grammar.jar
+netbeans/java/modules/org-netbeans-modules-ant-hints.jar
 netbeans/java/modules/org-netbeans-modules-ant-kit.jar
 netbeans/java/modules/org-netbeans-modules-beans.jar
 netbeans/java/modules/org-netbeans-modules-classfile.jar
@@ -2345,6 +2363,7 @@ netbeans/java/modules/org-netbeans-modules-java-j2seprofiles.jar
 netbeans/java/modules/org-netbeans-modules-java-j2seproject.jar
 netbeans/java/modules/org-netbeans-modules-java-kit.jar
 netbeans/java/modules/org-netbeans-modules-java-lexer.jar
+netbeans/java/modules/org-netbeans-modules-java-lsp-server.jar
 netbeans/java/modules/org-netbeans-modules-java-metrics.jar
 netbeans/java/modules/org-netbeans-modules-java-module-graph.jar
 netbeans/java/modules/org-netbeans-modules-java-navigation.jar
@@ -2421,6 +2440,7 @@ netbeans/java/modules/org-netbeans-spi-java-hints.jar
 netbeans/java/patterns/
 netbeans/java/patterns/project-marker-jdk
 netbeans/java/scripts/
+netbeans/java/scripts/J2SEPlatformProbe.java
 netbeans/java/scripts/build-generic.xml
 netbeans/java/scripts/build-langtools-consol.xml
 netbeans/java/scripts/build-langtools.xml
@@ -2449,6 +2469,7 @@ netbeans/java/update_tracking/org-netbeans-modules-ant-browsetask.xml
 netbeans/java/update_tracking/org-netbeans-modules-ant-debugger.xml
 netbeans/java/update_tracking/org-netbeans-modules-ant-freeform.xml
 netbeans/java/update_tracking/org-netbeans-modules-ant-grammar.xml
+netbeans/java/update_tracking/org-netbeans-modules-ant-hints.xml
 netbeans/java/update_tracking/org-netbeans-modules-ant-kit.xml
 netbeans/java/update_tracking/org-netbeans-modules-beans.xml
 netbeans/java/update_tracking/org-netbeans-modules-classfile.xml
@@ -2508,6 +2529,7 @@ netbeans/java/update_tracking/org-netbeans-modules-java-j2seprofiles.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-j2seproject.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-kit.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-lexer.xml
+netbeans/java/update_tracking/org-netbeans-modules-java-lsp-server.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-metrics.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-module-graph.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-navigation.xml
@@ -2591,7 +2613,6 @@ netbeans/javafx/config/Modules/org-netbeans-modules-javafx2-platform.xml
 netbeans/javafx/config/Modules/org-netbeans-modules-javafx2-project.xml
 netbeans/javafx/config/Modules/org-netbeans-modules-javafx2-samples.xml
 netbeans/javafx/config/Modules/org-netbeans-modules-javafx2-scenebuilder.xml
-netbeans/javafx/config/Modules/org-netbeans-modules-openjfx-samples.xml
 netbeans/javafx/modules/
 netbeans/javafx/modules/org-netbeans-modules-javafx2-editor.jar
 netbeans/javafx/modules/org-netbeans-modules-javafx2-kit.jar
@@ -2599,7 +2620,6 @@ netbeans/javafx/modules/org-netbeans-modules-javafx2-platform.jar
 netbeans/javafx/modules/org-netbeans-modules-javafx2-project.jar
 netbeans/javafx/modules/org-netbeans-modules-javafx2-samples.jar
 netbeans/javafx/modules/org-netbeans-modules-javafx2-scenebuilder.jar
-netbeans/javafx/modules/org-netbeans-modules-openjfx-samples.jar
 netbeans/javafx/update_tracking/
 netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-editor.xml
 netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-kit.xml
@@ -2607,7 +2627,6 @@ netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-platform.xml
 netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-project.xml
 netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-samples.xml
 netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-scenebuilder.xml
-netbeans/javafx/update_tracking/org-netbeans-modules-openjfx-samples.xml
 netbeans/licenses/
 netbeans/licenses/ANTLR-2
 netbeans/licenses/Apache-1.1
@@ -2651,6 +2670,7 @@ netbeans/licenses/EPL-v10-eclipselink
 netbeans/licenses/EPL-v10-with-commons
 netbeans/licenses/EPL-v10-with-osgi
 netbeans/licenses/EPL-v20
+netbeans/licenses/Gradle
 netbeans/licenses/HTML5DOC
 netbeans/licenses/JavaCUP
 netbeans/licenses/MIT
@@ -2663,6 +2683,7 @@ netbeans/licenses/MIT-jvyamlb
 netbeans/licenses/MIT-nocopyright
 netbeans/licenses/MIT-phpstan
 netbeans/licenses/MIT-validator
+netbeans/licenses/MIT-vscode-ext
 netbeans/licenses/MIT-winp
 netbeans/licenses/MPL-1.0
 netbeans/licenses/Maven-CDDL-1.0
@@ -3021,8 +3042,8 @@ netbeans/platform/lib/org-openide-util.jar
 netbeans/platform/modules/
 netbeans/platform/modules/ext/
 netbeans/platform/modules/ext/hamcrest-core-1.3.jar
-netbeans/platform/modules/ext/jna-4.4.0.jar
-netbeans/platform/modules/ext/jna-platform-4.4.0.jar
+netbeans/platform/modules/ext/jna-5.4.0.jar
+netbeans/platform/modules/ext/jna-platform-5.4.0.jar
 netbeans/platform/modules/ext/junit-4.12.jar
 netbeans/platform/modules/ext/junit-jupiter-api-5.3.1.jar
 netbeans/platform/modules/ext/junit-jupiter-engine-5.3.1.jar
@@ -3034,7 +3055,7 @@ netbeans/platform/modules/ext/osgi.core-7.0.0.jar
 netbeans/platform/modules/ext/testng-6.8.1-dist.jar
 netbeans/platform/modules/ext/updater.jar
 netbeans/platform/modules/lib/
-netbeans/platform/modules/lib/libjnidispatch-440.jnilib
+netbeans/platform/modules/lib/libjnidispatch-nb.jnilib
 netbeans/platform/modules/net-java-html-boot-fx.jar
 netbeans/platform/modules/net-java-html-boot-script.jar
 netbeans/platform/modules/net-java-html-boot.jar
@@ -3312,6 +3333,7 @@ netbeans/webcommon/mocha/netbeans-reporter.js
 netbeans/webcommon/modules/
 netbeans/webcommon/modules/ext/
 netbeans/webcommon/modules/ext/dd-plist.jar
+netbeans/webcommon/modules/ext/graal-js-parser-e20fe15.jar
 netbeans/webcommon/modules/ext/icu4j-62.1.jar
 netbeans/webcommon/modules/ext/js-19.0.0.jar
 netbeans/webcommon/modules/ext/libs.jstestdriver-ext.jar
