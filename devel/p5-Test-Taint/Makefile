@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/11/03 01:38:01 afresh1 Exp $
 
 COMMENT=	tools to test taintedness
 
 MODULES=	cpan
-DISTNAME=	Test-Taint-1.06
+DISTNAME=	Test-Taint-1.08
 CATEGORIES=	devel
-REVISION=	1
 
 # Artistic
 PERMIT_PACKAGE=	Yes
