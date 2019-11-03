@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.205 2019/11/03 11:50:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.206 2019/11/03 15:27:44 jca Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
 V =		2.23.0
-REVISION =	1
+REVISION =	2
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -49,8 +49,7 @@ WANTLIB-main =		c charset crypto curl expat iconv intl nghttp2 pthread \
 RUN_DEPENDS-main =	devel/cvsps \
 			devel/p5-Error
 LIB_DEPENDS-main =	devel/gettext,-runtime \
-			net/curl \
-			www/nghttp2
+			net/curl
 
 RUN_DEPENDS-svn =	${BASE_PKGPATH} \
 			devel/subversion,-perl \
