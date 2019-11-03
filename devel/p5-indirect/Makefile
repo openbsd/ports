@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/11/03 01:40:53 afresh1 Exp $
 
 COMMENT=	lexically warn about using the indirect method call syntax
 
 MODULES=	cpan
-DISTNAME=	indirect-0.37
+DISTNAME=	indirect-0.39
 CATEGORIES=	devel
-REVISION=	1
 
 CPAN_AUTHOR=	VPIT
 
