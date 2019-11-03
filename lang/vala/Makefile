@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2019/11/01 19:24:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.127 2019/11/03 19:11:08 jasper Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
@@ -25,7 +25,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 iconv intl pcre pthread
 
 WANTLIB-valadoc += ${WANTLIB}
-WANTLIB-valadoc += cdt cgraph expat gvc ltdl m pathplan vala-0.44 xdot
+WANTLIB-valadoc += cdt cgraph expat gvc ltdl m pathplan vala-0.46 xdot
 WANTLIB-valadoc += z
 
 MODULES=		x11/gnome
