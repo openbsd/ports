@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/11/03 14:07:44 jasper Exp $
 
 COMMENT=		text reader and catalog browser for Project Gutenberg
 
 DISTNAME=		gutenpy-0.3.0
-REVISION =		8
+REVISION =		9
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://gutenpy.sourceforge.net/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

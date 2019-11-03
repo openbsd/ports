@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/11/03 14:07:43 jasper Exp $
 
 COMMENT=	defines RGB values for common color names
 
 DISTNAME=	Graphics-ColorNames-2.11
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE=	Yes

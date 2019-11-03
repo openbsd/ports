@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/11/03 14:07:44 jasper Exp $
 
 COMMENT=	perl module for accessing NNTP articles
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	News-Article-1.27
-REVISION=	1
+REVISION=	2
 CATEGORIES=	news
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic/GPL
 PERMIT_PACKAGE=	Yes

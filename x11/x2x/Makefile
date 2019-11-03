@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/11/03 14:07:47 jasper Exp $
 
 COMMENT=	one keyboard/mouse to multiple X displays
 
 DISTNAME=	x2x-1.27
-REVISION=	5
+REVISION=	6
 CATEGORIES=    	x11
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/03 14:07:45 jasper Exp $
 
 COMMENT =		controller for fleet, the distributed init system
 
 GH_PROJECT =		fleet
 GH_ACCOUNT =		coreos
 GH_TAGNAME =		v1.0.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE =	Yes

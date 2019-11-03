@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/11/03 14:07:45 jasper Exp $
 
 COMMENT=	perl module to build DOM Level 1 structures
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	XML-DOM-1.46
+REVISION=	0
 CATEGORIES=	textproc
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE=	Yes

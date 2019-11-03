@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/03 14:07:41 jasper Exp $
 
 COMMENT=		assembler/disassembler/simulator for MSP430 MCUs
 
 V=			2011-10-30
 DISTNAME=		naken430asm-$V
 PKGNAME=		naken430asm-${V:S/-//g}
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.mikekohn.net/micro/naken430asm_msp430_assembler.php
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

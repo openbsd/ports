@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/11/03 14:07:44 jasper Exp $
 
 COMMENT=	perl module for IPv4/IPv6 address parsing
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Net-IP-1.26
+REVISION=	0
 CATEGORIES=	net
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE=	Yes

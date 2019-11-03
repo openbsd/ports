@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/11/03 14:07:41 jasper Exp $
 
 COMMENT=	validate method/function parameters
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-Container-0.13
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE=	Yes

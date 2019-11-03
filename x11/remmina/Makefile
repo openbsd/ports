@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:51:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/03 14:07:46 jasper Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
+# XXX: Before updating, ensure freerdp works:
+# cf. http://openbsd-archive.7691.n7.nabble.com/x11-freerdp-update-to-2-0-0-rc4-tp360502p360567.html
 GH_TAGNAME=		v1.2.30
 GH_PROJECT=		Remmina
 GH_ACCOUNT=		FreeRDP
 PKGNAME=		remmina-${GH_TAGNAME:S/v//}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		x11 net
 
 HOMEPAGE=		https://www.remmina.org/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

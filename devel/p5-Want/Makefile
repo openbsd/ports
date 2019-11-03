@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/11/03 14:07:43 jasper Exp $
 
 COMMENT=	generalisation of wantarray
 
 MODULES=	cpan
 DISTNAME=	Want-0.29
 CATEGORIES=	devel
-REVISION=	0
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+REVISION=	1
 
 # perl
 PERMIT_PACKAGE=	Yes

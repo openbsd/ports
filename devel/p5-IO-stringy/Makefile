@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/11/03 14:07:42 jasper Exp $
 
 COMMENT=		in-core objects like strings and arrays for I/O
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		IO-stringy-2.111
+REVISION=		0
 CATEGORIES=		devel
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE=	Yes
