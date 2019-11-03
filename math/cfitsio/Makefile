@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/03 14:12:35 sthen Exp $
 
 COMMENT=	library for handling FITS data
 CATEGORIES=	math graphics devel
@@ -8,6 +8,7 @@ HOMEPAGE=	https://heasarc.gsfc.nasa.gov/fitsio/fitsio.html
 DISTNAME=	cfitsio3450
 
 PKGNAME=	cfitsio-3.450
+REVISION=	0
 
 SHARED_LIBS +=  cfitsio                   1.0 # 0.0
 
@@ -29,8 +30,7 @@ MAKE_FLAGS=	SHLIB_SUFFIX=${SHLIB_SUFFIX}
 MODULES+=	fortran
 MODFORTRAN_COMPILER=	gfortran
 
-LIB_DEPENDS+=	net/curl \
-		www/nghttp2
+LIB_DEPENDS+=	net/curl
 
 DOCDIR=${PREFIX}/share/doc/cfitsio
 
