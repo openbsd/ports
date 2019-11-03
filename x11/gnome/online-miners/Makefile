@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2019/11/01 19:40:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2019/11/03 13:48:08 ajacoutot Exp $
 
 COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
 GNOME_VERSION=		3.34.0
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
@@ -16,6 +17,7 @@ WANTLIB += intl json-glib-1.0 kvm lzma m nghttp2 nspr4 nss3 nssutil3
 WANTLIB += oauth p11-kit pcre plc4 plds4 psl rest-0.7 smime3 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 tracker-miner-2.0 tracker-sparql-2.0
 WANTLIB += unistring uuid xml2 z zapojit-0.0
+WANTLIB += lib/tracker-2.0/tracker-data
 
 MODULES=		devel/dconf \
 			x11/gnome
