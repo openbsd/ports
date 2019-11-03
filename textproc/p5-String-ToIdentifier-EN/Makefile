@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/03 01:44:46 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/03 01:45:26 afresh1 Exp $
 
 COMMENT =	convert strings to english program identifiers
 DISTNAME =	String-ToIdentifier-EN-0.12
 CATEGORIES =	textproc
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # perl_5
 PERMIT_PACKAGE =	Yes
