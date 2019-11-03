@@ -1,0 +1,38 @@
+$OpenBSD: patch-builtin_gc_c,v 1.1 2019/11/03 15:25:22 jca Exp $
+
+HW_PHYSMEM asks for an int, not an int64_t.
+Use HW_PHYSMEM64 to handle ram size > 2GB.
+
+Index: builtin/gc.c
+--- builtin/gc.c.orig
++++ builtin/gc.c
+@@ -244,7 +244,7 @@ static uint64_t total_ram(void)
+ 
+ 	if (!sysinfo(&si))
+ 		return si.totalram;
+-#elif defined(HAVE_BSD_SYSCTL) && (defined(HW_MEMSIZE) || defined(HW_PHYSMEM))
++#elif defined(HAVE_BSD_SYSCTL) && (defined(HW_MEMSIZE) || defined(HW_PHYSMEM64))
+ 	int64_t physical_memory;
+ 	int mib[2];
+ 	size_t length;
+@@ -253,9 +253,19 @@ static uint64_t total_ram(void)
+ # if defined(HW_MEMSIZE)
+ 	mib[1] = HW_MEMSIZE;
+ # else
+-	mib[1] = HW_PHYSMEM;
++	mib[1] = HW_PHYSMEM64;
+ # endif
+ 	length = sizeof(int64_t);
++	if (!sysctl(mib, 2, &physical_memory, &length, NULL, 0))
++		return physical_memory;
++#elif defined(HAVE_BSD_SYSCTL) && defined(HW_PHYSMEM))
++	int physical_memory;
++	int mib[2];
++	size_t length;
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_PHYSMEM;
++	length = sizeof(int);
+ 	if (!sysctl(mib, 2, &physical_memory, &length, NULL, 0))
+ 		return physical_memory;
+ #elif defined(GIT_WINDOWS_NATIVE)
