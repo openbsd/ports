@@ -1,0 +1,26 @@
+$OpenBSD: patch-arch_bsd_xs,v 1.1 2019/11/03 15:20:42 jca Exp $
+
+Fix totalmem computation, see
+https://rt.cpan.org/Public/Bug/Display.html?id=130740
+
+Index: arch/bsd.xs
+--- arch/bsd.xs.orig
++++ arch/bsd.xs
+@@ -22,13 +22,14 @@ double
+ totalmem()
+ 	PROTOTYPE: DISABLE
+ 	CODE:
+-		unsigned long long ret = 0;
+-		size_t len = sizeof (ret);
+-#ifdef NETBSD
++#ifdef HW_PHYSMEM64
++		long long ret = 0;
+ 		static int mib[2] = { CTL_HW, HW_PHYSMEM64 };
+ #else
++		int ret = 0;
+ 		static int mib[2] = { CTL_HW, HW_PHYSMEM };
+ #endif
++		size_t len = sizeof (ret);
+ 
+ 		if (sysctl (mib, 2, &ret, &len, NULL, 0) != -1) {
+       			RETVAL = (double) (ret);

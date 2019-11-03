@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2019/10/19 11:00:17 ajacoutot Exp $
+$OpenBSD: patch-Makefile_PL,v 1.2 2019/11/03 15:20:42 jca Exp $
 
 Fix totalmem computation, see
 https://rt.cpan.org/Public/Bug/Display.html?id=130740
@@ -6,15 +6,17 @@ https://rt.cpan.org/Public/Bug/Display.html?id=130740
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -38,9 +38,9 @@ for ($^O) {
+@@ -38,12 +38,7 @@ for ($^O) {
      }
    } elsif (/bsd/) {
      copy ('arch/bsd.xs', 'MemInfo.xs');
 -    if (/netbsd/) {
-+    if (/netbsd/ or /openbsd/) {
-       $define = '-DNETBSD';
+-      $define = '-DNETBSD';
 -      print "Sys::MemInfo for NetBSD\n";
-+      print "Sys::MemInfo for NetBSD and OpenBSD\n";
-     } else {
-       print "Sys::MemInfo for *BSD\n";
-     }
+-    } else {
+-      print "Sys::MemInfo for *BSD\n";
+-    }
++    print "Sys::MemInfo for *BSD\n";
+   } elsif (/hpux/) {
+     copy ('arch/hpux.xs', 'MemInfo.xs');
+     $define ='-D_XOPEN_SOURCE_EXTENDED';
