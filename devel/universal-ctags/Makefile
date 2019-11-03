@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/11/03 16:18:01 rsadowski Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
 GH_ACCOUNT =	universal-ctags
 GH_PROJECT =	ctags
-GH_COMMIT =	d0807887cc12014501a6692412763c5ea03ae60d
+GH_COMMIT =	efce8b1f56edcdbff094299356f4e26d8dfe9cfd
 # commit date YYYYMMDD
-DISTNAME =	universal-ctags-0.20180928
+DISTNAME =	universal-ctags-0.20191025
 
 CATEGORIES =	devel
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://ctags.io/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-WANTLIB += c xml2 yaml
+WANTLIB += c xml2 yaml-0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -46,7 +46,7 @@ LIB_DEPENDS +=		textproc/libxml \
 TEST_DEPENDS =		textproc/gdiff \
 			sysutils/coreutils
 
-FLAVORS=		iconv
+FLAVORS=		iconv aspell
 FLAVOR?=
 
 .if ${FLAVOR:Miconv}
@@ -55,6 +55,17 @@ LIB_DEPENDS+=		converters/libiconv
 WANTLIB+=		iconv
 .else
 CONFIGURE_ARGS+=	--disable-iconv
+.endif
+
+.if ${FLAVOR:Maspell}
+CONFIGURE_ARGS+=	--enable-aspell
+LIB_DEPENDS+=		textproc/aspell/core
+# textproc/aspell does not install a aspell.pc file
+CONFIGURE_ENV +=	ASPELL_LIBS="-L${LOCALBASE}/lib -laspell" \
+			ASPELL_CFLAGS="-I${LOCALBASE}/include"
+WANTLIB+=		aspell
+.else
+CONFIGURE_ARGS+=	--disable-aspell
 .endif
 
 pre-test:

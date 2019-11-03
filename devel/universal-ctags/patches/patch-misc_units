@@ -1,0 +1,33 @@
+$OpenBSD: patch-misc_units,v 1.1 2019/11/03 16:18:01 rsadowski Exp $
+
+- fix syntax error: `"$file"' missing expression operator
+- disable git in tests
+
+Index: misc/units
+--- misc/units.orig
++++ misc/units
+@@ -769,15 +769,9 @@ failure_in_globing ()
+     local file=$1
+     local pat='~$|\*'
+     # use [[ if it is available in the shell implementation.
+-    if type '[[' > /dev/null 2>&1; then
+-	if [[ "$file" =~ $pat ]]; then
+-	    return 0
+-	fi
+-    else
+ 	if echo "$file" | grep -q '~$\|\*'; then
+ 	    return 0
+ 	fi
+-    fi
+     return 1
+ }
+ 
+@@ -2004,7 +1998,7 @@ failed_git_marker ()
+     local f=$1
+     local l
+ 
+-    if type "git" > /dev/null 2>&1; then
++    if false && type "git" > /dev/null 2>&1; then
+ 	l=$(git ls-files -- "$f")
+ 	if [ -z "$l" ]; then
+ 	    echo '<G>'
