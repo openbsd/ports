@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2019/11/02 15:32:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.181 2019/11/03 18:59:28 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.34.1
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -16,7 +16,7 @@ WANTLIB += ecal-2.0 edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 gjs glib-2.0 gobject-2.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gtk-3 ical-glib intl json-glib-1.0 m
 WANTLIB += mutter-5 pango-1.0 pangocairo-1.0 polkit-agent-1 polkit-gobject-1
-WANTLIB += pulse pulse-mainloop-glib
+WANTLIB += pulse pulse-mainloop-glib gnome-autoar-0
 WANTLIB += lib/mutter-5/mutter-clutter-5
 WANTLIB += lib/mutter-5/mutter-cogl-5
 WANTLIB += lib/mutter-5/mutter-cogl-pango-5
@@ -43,6 +43,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			multimedia/gstreamer1/core \
 			sysutils/polkit \
 			www/libcroco \
+			x11/gnome/autoar \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
 			x11/gnome/mutter>=3.32.0
