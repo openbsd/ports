@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/03 05:18:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/03 19:55:01 rsadowski Exp $
 
 COMMENT =	Hex Editor
-VERSION =	0.26.1
+VERSION =	0.26.2
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 
