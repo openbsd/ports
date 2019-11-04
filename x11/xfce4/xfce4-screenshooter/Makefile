@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2019/08/15 06:59:58 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2019/11/04 08:36:38 landry Exp $
 
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
-XFCE_VERSION=	1.9.5
+XFCE_VERSION=	1.9.7
 XFCE_GOODIE=	xfce4-screenshooter
 
 PORTROACH=	limitw:1,even
