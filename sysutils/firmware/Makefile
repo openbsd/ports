@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/11 05:02:53 jsg Exp $
+# $OpenBSD: Makefile,v 1.15 2019/11/04 15:24:17 visa Exp $
 
 # XXX
 #
@@ -26,6 +26,7 @@
      SUBDIR += iwm
      SUBDIR += iwn
      SUBDIR += malo
+     SUBDIR += ogx
      SUBDIR += otus
      SUBDIR += pgt
      SUBDIR += radeondrm
