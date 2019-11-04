@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/04 15:15:36 visa Exp $
+firmware/
+firmware/ogx-license
+firmware/ogx-pki-cluster
