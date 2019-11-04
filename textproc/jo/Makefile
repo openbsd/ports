@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/04 09:17:19 fcambus Exp $
 
 COMMENT =	JSON output from a shell
 
-V =		1.2
+V =		1.3
 DISTNAME =	jo-$V
 
 CATEGORIES =	textproc
