@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:51:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/11/04 10:30:20 sthen Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
@@ -8,6 +8,11 @@ DISTNAME =		freerdp-2.0.0-rc1
 PKGNAME =		freerdp-2.0.0rc1
 REVISION =		4
 CATEGORIES =		x11 net
+
+# XXX This version has known security issues.
+
+# XXX Can't be updated without either timer_create() and friends or
+#     an alternative timer implementation (as was done for OSX)
 
 SHARED_LIBS +=  freerdp-client2           0.0 # 2.0
 SHARED_LIBS +=  freerdp2                  0.0 # 2.0
