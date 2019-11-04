@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/05 12:54:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/11/04 15:01:28 sthen Exp $
 
 COMMENT =	cross-platform interactive fiction player
 
 GH_ACCOUNT =	garglk
 GH_PROJECT =	garglk
-GH_COMMIT =	d03391563fa75942fbf8f8deeeacf3a8be9fc3b0
-DISTNAME =	gargoyle-2018.10.06
+GH_TAGNAME =	2019.1
 EPOCH =		0
 
 CATEGORIES =	games x11
