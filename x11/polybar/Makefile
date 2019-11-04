@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/03 11:43:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/04 19:14:00 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
 V =		3.4.1
@@ -49,7 +49,9 @@ NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/polybar
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lib/i3ipcpp/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/cmake/02-opts.cmake \
+		${WRKSRC}/doc/CMakeLists.txt \
+		${WRKSRC}/lib/i3ipcpp/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/polybar

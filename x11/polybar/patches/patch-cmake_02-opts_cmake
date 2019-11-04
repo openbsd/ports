@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_02-opts_cmake,v 1.1 2019/11/04 19:14:00 jasper Exp $
+
+Index: cmake/02-opts.cmake
+--- cmake/02-opts.cmake.orig
++++ cmake/02-opts.cmake
+@@ -1,7 +1,7 @@
+ #
+ # Build options
+ #
+-checklib(BUILD_DOC "binary" sphinx-build)
++checklib(BUILD_DOC "binary" sphinx-build${MODPY_BIN_SUFFIX})
+ 
+ checklib(ENABLE_ALSA "pkg-config" alsa)
+ checklib(ENABLE_CURL "pkg-config" libcurl)

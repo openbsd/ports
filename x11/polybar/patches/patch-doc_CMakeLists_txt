@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2019/11/04 19:14:00 jasper Exp $
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+ project(polybar-doc NONE)
+ 
+ find_program(SPHINX_EXECUTABLE
+-  NAMES sphinx-build
++  NAMES sphinx-build${MODPY_BIN_SUFFIX}
+   DOC "Sphinx Documentation Builder")
+ 
+ if(NOT SPHINX_EXECUTABLE)
