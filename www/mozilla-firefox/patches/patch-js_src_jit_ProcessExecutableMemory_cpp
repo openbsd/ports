@@ -1,7 +1,9 @@
-$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.5 2019/10/29 14:46:01 kurt Exp $
+$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.6 2019/11/05 09:34:35 landry Exp $
 
 Don't ComputeRandomAllocationAddress on OpenBSD
 https://bugzilla.mozilla.org/show_bug.cgi?id=1586912
+https://phabricator.services.mozilla.com/D51299
+https://hg.mozilla.org/mozilla-central/rev/747fc2e159ba remove in 72
 
 Index: js/src/jit/ProcessExecutableMemory.cpp
 --- js/src/jit/ProcessExecutableMemory.cpp.orig
