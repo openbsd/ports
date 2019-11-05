@@ -1,0 +1,43 @@
+$OpenBSD: patch-libco_x86_c,v 1.1 2019/11/05 09:27:29 bentley Exp $
+
+Index: libco/x86.c
+--- libco/x86.c.orig
++++ libco/x86.c
+@@ -3,6 +3,8 @@
+ #include "settings.h"
+ 
+ #include <assert.h>
++#include <err.h>
++#include <stdint.h>
+ #include <stdlib.h>
+ 
+ #ifdef __cplusplus
+@@ -76,6 +78,7 @@ cothread_t co_active() {
+ 
+ cothread_t co_create(unsigned int size, void (*entrypoint)(void)) {
+   cothread_t handle;
++  long pagesize, newsize;
+   if(!co_swap) {
+     co_init();
+     co_swap = (void (fastcall*)(cothread_t, cothread_t))co_swap_function;
+@@ -84,7 +87,19 @@ cothread_t co_create(unsigned int size, void (*entrypo
+   size += 256;  /* allocate additional space for storage */
+   size &= ~15;  /* align stack to 16-byte boundary */
+ 
+-  if(handle = (cothread_t)malloc(size)) {
++  pagesize = sysconf(_SC_PAGESIZE);
++  if(pagesize == -1)
++    err(1, "sysconf failed");
++  newsize = size / pagesize * pagesize + !!(size % pagesize) * pagesize;
++  handle = (cothread_t)malloc(newsize);
++  if(handle == NULL)
++    err(1, "malloc failed");
++  if((uintptr_t)handle % pagesize)
++    err(1, "misaligned allocation");
++  handle = (cothread_t)mmap(handle, newsize, PROT_READ|PROT_WRITE, MAP_FIXED|MAP_STACK|MAP_PRIVATE|MAP_ANON, -1, 0);
++  if(handle == MAP_FAILED)
++    err(1, "mmap failed");
++  else {
+     long *p = (long*)((char*)handle + size);  /* seek to top of stack */
+     *--p = (long)crash;                       /* crash if entrypoint returns */
+     *--p = (long)entrypoint;                  /* start of function */
