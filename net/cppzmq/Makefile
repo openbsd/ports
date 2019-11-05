@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/01 11:44:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/05 21:04:46 jasper Exp $
 
 COMMENT =		C++ bindings for ZeroMQ
 
 GH_ACCOUNT =		zeromq
 GH_PROJECT =		cppzmq
-GH_TAGNAME =		v4.4.1
+GH_TAGNAME =		v4.5.0
 
 CATEGORIES =		net
 
@@ -20,5 +20,7 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		net/zeromq
 
 CONFIGURE_ARGS +=	-DCPPZMQ_BUILD_TESTS:Bool=No
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
