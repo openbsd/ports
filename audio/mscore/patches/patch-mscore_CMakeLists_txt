@@ -1,8 +1,8 @@
-$OpenBSD: patch-mscore_CMakeLists_txt,v 1.14 2019/06/27 16:01:52 bcallah Exp $
+$OpenBSD: patch-mscore_CMakeLists_txt,v 1.15 2019/11/05 16:23:11 bcallah Exp $
 Index: mscore/CMakeLists.txt
 --- mscore/CMakeLists.txt.orig
 +++ mscore/CMakeLists.txt
-@@ -769,7 +769,7 @@ else (MINGW)
+@@ -806,7 +806,7 @@ else (MINGW)
        if (APPLE)
          target_link_libraries(mscore ${OsxFrameworks})
        else (APPLE)
@@ -11,7 +11,7 @@ Index: mscore/CMakeLists.txt
        endif (APPLE)
  
        # 'gold' does not use indirect shared libraries for symbol resolution, Linux only
-@@ -777,7 +777,7 @@ else (MINGW)
+@@ -814,7 +814,7 @@ else (MINGW)
           if(USE_JACK)
              target_link_libraries(mscore ${CMAKE_DL_LIBS})
           endif(USE_JACK)

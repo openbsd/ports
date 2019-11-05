@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.10 2019/07/14 23:18:10 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.11 2019/11/05 16:23:11 bcallah Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -223,7 +223,7 @@ endif (${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
+@@ -227,7 +227,7 @@ endif (${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
  
  if (NOT MSVC)
     set(CMAKE_CXX_FLAGS_DEBUG   "-g")
@@ -11,7 +11,7 @@ Index: CMakeLists.txt
  endif (NOT MSVC)
  
  if (APPLE)
-@@ -399,13 +399,13 @@ endif (BUILD_ALSA)
+@@ -403,13 +403,13 @@ endif (BUILD_ALSA)
  ## MIDI
  ##
  
@@ -28,7 +28,7 @@ Index: CMakeLists.txt
  
  ##
  ## PulseAudio
-@@ -413,8 +413,8 @@ endif (APPLE OR MINGW OR MSVC)
+@@ -417,8 +417,8 @@ endif (APPLE OR MINGW OR MSVC)
  
  if (BUILD_PULSEAUDIO)
        if (PULSEAUDIO_FOUND)
@@ -39,7 +39,7 @@ Index: CMakeLists.txt
        else (PULSEAUDIO_FOUND)
              message(SEND_ERROR "Error: PulseAudio support requested (BUILD_PULSEAUDIO=${BUILD_PULSEAUDIO}), but PulseAudio was not found.")
        endif (PULSEAUDIO_FOUND)
-@@ -692,7 +692,7 @@ if (NOT MINGW AND NOT MSVC AND NOT APPLE)
+@@ -696,7 +696,7 @@ if (NOT MINGW AND NOT MSVC AND NOT APPLE)
              )
      endif (GZIP_EXECUTABLE AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
      # Install man pages in either compressed or uncompressed form
@@ -48,7 +48,7 @@ Index: CMakeLists.txt
      # Create symlink alias for man pages so `man musescore` = `man mscore`
      find_program( LN_EXECUTABLE ln DOC "A tool for creating symbolic link aliases (optional)." )
      if (LN_EXECUTABLE)
-@@ -703,7 +703,7 @@ if (NOT MINGW AND NOT MSVC AND NOT APPLE)
+@@ -707,7 +707,7 @@ if (NOT MINGW AND NOT MSVC AND NOT APPLE)
              COMMAND ${LN_EXECUTABLE} -sf "${MAN_FULL_NAME}" "${MAN_FULL_ALIAS}"
              COMMAND echo 'Symlink alias: ${MAN_FULL_ALIAS} -> ${MAN_FULL_NAME}'
              )
@@ -57,7 +57,7 @@ Index: CMakeLists.txt
       else (LN_EXECUTABLE)
           message(STATUS "'ln' not found (it is optional). No symlink aliases will be created.")
       endif (LN_EXECUTABLE)
-@@ -729,10 +729,13 @@ precompiled_header(QT_INCLUDES all ${BUILD_PCH})
+@@ -733,10 +733,13 @@ precompiled_header(QT_INCLUDES all ${BUILD_PCH})
  
  # MSVC does not require these targets, as all.h is not copied and the
  #   PCH generation is done per-project
@@ -73,7 +73,7 @@ Index: CMakeLists.txt
  
  ##
  ## Add subdirs
-@@ -860,13 +863,13 @@ include(Packaging)
+@@ -864,13 +867,13 @@ include(Packaging)
  
  ## lupdate is used to generate the translation text files based off of the source code
  
@@ -91,7 +91,7 @@ Index: CMakeLists.txt
     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
     )
  
-@@ -885,11 +888,11 @@ file(GLOB QT_TS_FILES
+@@ -889,11 +892,11 @@ file(GLOB QT_TS_FILES
     "share/locale/qt*.ts"
  )
  
