@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/05 20:42:34 cwen Exp $
 
 COMMENT =	Unicorn CPU emulator engine
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =	unicorn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -32,6 +32,14 @@ BUILD_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_2}
 USE_GMAKE =		Yes
 
 MAKE_ENV +=		V=1
+
+# our ld.bfd has no '-Bsymbolic-functions' option support
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlld}
+MAKE_ENV +=		LD_IS_LLD=1
+.else
+MAKE_ENV +=		LD_IS_LLD=0
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/Makefile
