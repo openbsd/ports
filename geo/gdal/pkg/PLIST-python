@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.16 2019/05/12 08:07:33 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.17 2019/11/05 12:07:42 landry Exp $
 bin/epsg_tr${MODPY_BIN_SUFFIX}.py
 bin/esri2wkt${MODPY_BIN_SUFFIX}.py
 bin/gcps2vec${MODPY_BIN_SUFFIX}.py
@@ -34,8 +34,6 @@ lib/python${MODPY_VERSION}/site-packages/gdal.py
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}gdal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gdalconst.py
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}gdalconst.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gdalnumeric.py
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}gdalnumeric.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ogr.py
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ogr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/
@@ -43,7 +41,6 @@ lib/python${MODPY_VERSION}/site-packages/osgeo/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/_gdal.so
-lib/python${MODPY_VERSION}/site-packages/osgeo/_gdal_array.so
 lib/python${MODPY_VERSION}/site-packages/osgeo/_gdalconst.so
 lib/python${MODPY_VERSION}/site-packages/osgeo/_gnm.so
 lib/python${MODPY_VERSION}/site-packages/osgeo/_ogr.so
