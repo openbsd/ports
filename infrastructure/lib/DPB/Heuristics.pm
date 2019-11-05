@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.34 2019/10/22 16:02:08 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.35 2019/11/05 18:29:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,7 @@ our %weight;
 sub new
 {
 	my ($class, $state) = @_;
-	bless {state => $state}, $class;
+	return bless {state => $state}, $class;
 }
 
 sub random
@@ -125,8 +125,7 @@ sub compare
 {
 	my ($self, $a, $b) = @_;
 	# XXX if we don't know, we prefer paths "later in the game"
-	# so if you abort dpb and restart it, it will start doing
-	# things earlier.
+	# so if you abort dpb and restart it, it will have stuff to do
 	return $self->measure($a) <=> $self->measure($b) || 
 	    $a->pkgpath cmp $b->pkgpath;
 }
@@ -301,7 +300,7 @@ package DPB::Heuristics::Bin;
 sub new
 {
 	my ($class, $h) = @_;
-	bless {o => {}, weight => 0, h => $h}, $class;
+	return bless {o => {}, weight => 0, h => $h}, $class;
 }
 
 sub add
