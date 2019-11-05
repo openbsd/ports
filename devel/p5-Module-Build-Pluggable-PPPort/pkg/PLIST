@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/05 05:52:41 sthen Exp $
+${P5SITE}/Module/Build/Pluggable/PPPort.pm
+@man man/man3p/Module::Build::Pluggable::PPPort.3p
