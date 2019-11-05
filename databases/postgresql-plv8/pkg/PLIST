@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/07/01 11:38:35 sthen Exp $
-lib/postgresql/plv8.so
-share/postgresql/extension/plcoffee--1.4.2.sql
-share/postgresql/extension/plcoffee.control
-share/postgresql/extension/plls--1.4.2.sql
-share/postgresql/extension/plls.control
-share/postgresql/extension/plv8--1.4.2.sql
-share/postgresql/extension/plv8.control
