@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_keys_drivers_YubiKeyStub_cpp,v 1.1 2019/11/05 09:15:33 rsadowski Exp $
+
+Fix building without features
+https://github.com/keepassxreboot/keepassxc/commit/d13e79dac484d09887861930bb2cebd4ef39022e?diff
+
+Index: src/keys/drivers/YubiKeyStub.cpp
+--- src/keys/drivers/YubiKeyStub.cpp.orig
++++ src/keys/drivers/YubiKeyStub.cpp
+@@ -75,3 +75,10 @@ YubiKey::ChallengeResult YubiKey::challenge(int slot, 
+ 
+     return ERROR;
+ }
++
++bool YubiKey::checkSlotIsBlocking(int slot, QString& errorMessage)
++{
++    Q_UNUSED(slot);
++    Q_UNUSED(errorMessage);
++    return false;
++}

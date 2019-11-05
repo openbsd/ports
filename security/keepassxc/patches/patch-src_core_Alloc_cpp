@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_core_Alloc_cpp,v 1.1 2019/06/04 18:42:08 rsadowski Exp $
+$OpenBSD: patch-src_core_Alloc_cpp,v 1.2 2019/11/05 09:15:33 rsadowski Exp $
 
 Index: src/core/Alloc.cpp
 --- src/core/Alloc.cpp.orig
 +++ src/core/Alloc.cpp
-@@ -20,8 +20,10 @@
- #include <sodium.h>
- #ifdef Q_OS_MACOS
+@@ -23,8 +23,10 @@
  #include <malloc/malloc.h>
+ #elif defined(Q_OS_FREEBSD)
+ #include <malloc_np.h>
 -#else
 +#elif defined(HAVE_MALLOC_H)
  #include <malloc.h>
@@ -15,7 +15,7 @@ Index: src/core/Alloc.cpp
  #endif
  
  #if defined(NDEBUG) && !defined(__cpp_sized_deallocation)
-@@ -61,7 +63,7 @@ void operator delete(void* ptr) noexcept
+@@ -64,7 +66,7 @@ void operator delete(void* ptr) noexcept
      ::operator delete(ptr, _msize(ptr));
  #elif defined(Q_OS_MACOS)
      ::operator delete(ptr, malloc_size(ptr));

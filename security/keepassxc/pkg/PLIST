@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/04/21 11:29:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/11/05 09:15:33 rsadowski Exp $
 @bin bin/keepassxc
 @bin bin/keepassxc-cli
 %%browser%%
 lib/keepassxc/
 lib/keepassxc/libkeepassx-autotype-xcb.so
 @man man/man1/keepassxc-cli.1
+@man man/man1/keepassxc.1
 share/applications/org.keepassxc.KeePassXC.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
@@ -45,6 +46,10 @@ share/icons/hicolor/scalable/apps/keepassxc-unlocked.svg
 share/icons/hicolor/scalable/apps/keepassxc.svg
 share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 share/keepassxc/
+share/keepassxc/docs/
+share/keepassxc/docs/KeePassXC_GettingStarted.pdf
+share/keepassxc/docs/KeePassXC_UserGuide.pdf
+share/keepassxc/docs/man/
 share/keepassxc/icons/
 share/keepassxc/icons/application/
 share/keepassxc/icons/application/128x128/
@@ -62,9 +67,9 @@ share/keepassxc/icons/application/16x16/actions/application-exit.png
 share/keepassxc/icons/application/16x16/actions/auto-type.png
 share/keepassxc/icons/application/16x16/actions/configure.png
 share/keepassxc/icons/application/16x16/actions/database-change-key.png
+share/keepassxc/icons/application/16x16/actions/database-lock.png
 share/keepassxc/icons/application/16x16/actions/document-close.png
 share/keepassxc/icons/application/16x16/actions/document-edit.png
-share/keepassxc/icons/application/16x16/actions/document-encrypt.png
 share/keepassxc/icons/application/16x16/actions/document-new.png
 share/keepassxc/icons/application/16x16/actions/document-open.png
 share/keepassxc/icons/application/16x16/actions/document-save-as.png
@@ -104,9 +109,9 @@ share/keepassxc/icons/application/22x22/actions/
 share/keepassxc/icons/application/22x22/actions/auto-type.png
 share/keepassxc/icons/application/22x22/actions/chronometer.png
 share/keepassxc/icons/application/22x22/actions/database-change-key.png
+share/keepassxc/icons/application/22x22/actions/database-lock.png
 share/keepassxc/icons/application/22x22/actions/dialog-close.png
 share/keepassxc/icons/application/22x22/actions/dialog-ok.png
-share/keepassxc/icons/application/22x22/actions/document-encrypt.png
 share/keepassxc/icons/application/22x22/actions/document-new.png
 share/keepassxc/icons/application/22x22/actions/document-open.png
 share/keepassxc/icons/application/22x22/actions/document-save.png
@@ -151,11 +156,11 @@ share/keepassxc/icons/application/32x32/actions/auto-type.png
 share/keepassxc/icons/application/32x32/actions/chronometer.png
 share/keepassxc/icons/application/32x32/actions/configure.png
 share/keepassxc/icons/application/32x32/actions/database-change-key.png
+share/keepassxc/icons/application/32x32/actions/database-lock.png
 share/keepassxc/icons/application/32x32/actions/dialog-close.png
 share/keepassxc/icons/application/32x32/actions/dialog-ok.png
 share/keepassxc/icons/application/32x32/actions/document-close.png
 share/keepassxc/icons/application/32x32/actions/document-edit.png
-share/keepassxc/icons/application/32x32/actions/document-encrypt.png
 share/keepassxc/icons/application/32x32/actions/document-new.png
 share/keepassxc/icons/application/32x32/actions/document-open.png
 share/keepassxc/icons/application/32x32/actions/document-properties.png
@@ -176,6 +181,7 @@ share/keepassxc/icons/application/32x32/actions/password-generate.png
 share/keepassxc/icons/application/32x32/actions/password-generator.png
 share/keepassxc/icons/application/32x32/actions/password-show-off.png
 share/keepassxc/icons/application/32x32/actions/password-show-on.png
+share/keepassxc/icons/application/32x32/actions/statistics.png
 share/keepassxc/icons/application/32x32/actions/system-help.png
 share/keepassxc/icons/application/32x32/actions/system-search.png
 share/keepassxc/icons/application/32x32/actions/url-copy.png
@@ -211,6 +217,7 @@ share/keepassxc/icons/application/64x64/mimetypes/
 share/keepassxc/icons/application/64x64/mimetypes/application-x-keepassxc.png
 share/keepassxc/icons/application/scalable/
 share/keepassxc/icons/application/scalable/apps/
+share/keepassxc/icons/application/scalable/apps/freedesktop.svg
 share/keepassxc/icons/application/scalable/apps/keepassxc-dark.svg
 share/keepassxc/icons/application/scalable/apps/keepassxc-locked.svg
 share/keepassxc/icons/application/scalable/apps/keepassxc-unlocked.svg

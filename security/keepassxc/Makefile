@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/11/05 09:15:33 rsadowski Exp $
 
 COMMENT =	management tool for password and sensitive data
 
-V =		2.4.3
+V =		2.5.0
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
@@ -16,7 +16,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras X11 Xi Xtst
-WANTLIB += argon2 c gcrypt gpg-error m qrencode sodium z
+WANTLIB += argon2 c gcrypt gpg-error m qrencode readline sodium
+WANTLIB += z
 
 MASTER_SITES =	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
 EXTRACT_SUFX =	-src.tar.xz
@@ -38,7 +39,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" \
 		-DWITH_GUI_TESTS=ON \
 		-DWITH_XC_AUTOTYPE=ON \
-		-DWITH_XC_SSHAGENT=ON
+		-DWITH_XC_SSHAGENT=ON \
+		-DWITH_XC_FDOSECRETS=ON
 
 TEST_IS_INTERACTIVE =	X11
 

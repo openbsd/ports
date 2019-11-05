@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/06/04 18:42:08 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/11/05 09:15:33 rsadowski Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -415,6 +415,14 @@ if(UNIX)
+@@ -438,6 +438,14 @@ if(UNIX)
      int main() { prctl(PR_SET_DUMPABLE, 0); return 0; }"
              HAVE_PR_SET_DUMPABLE)
  
