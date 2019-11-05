@@ -1,4 +1,2 @@
-SHA256 (unicorn-5.5.0.gem) = 75MIqhPrc378UQ9YL/VdlIWuF7jCwpu/G9kG6MFhyW0=
-SHA256 (unicorn_rails-5.5.0.patch) = L7FBYaJ9g7POx+wZ7knV8RDhYugyv6UaLqJTa6hrX2M=
-SIZE (unicorn-5.5.0.gem) = 220160
-SIZE (unicorn_rails-5.5.0.patch) = 1359
+SHA256 (unicorn-5.5.1.gem) = WPgQe9NNWjHjo4Kk0FDibSbJaM2xCo1aGm5z2SRCHBs=
+SIZE (unicorn-5.5.1.gem) = 220160
