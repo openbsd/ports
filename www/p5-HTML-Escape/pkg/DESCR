@@ -1,0 +1,2 @@
+This module provides a function which escapes HTML special characters.
+It performs a similar function to PHP's htmlspecialchars.

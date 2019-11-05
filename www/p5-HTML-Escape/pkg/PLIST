@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/05 05:57:05 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/HTML/
+${P5ARCH}/HTML/Escape/
+${P5ARCH}/HTML/Escape.pm
+${P5ARCH}/HTML/Escape/PurePerl.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/HTML/
+${P5ARCH}/auto/HTML/Escape/
+${P5ARCH}/auto/HTML/Escape/Escape.bs
+${P5ARCH}/auto/HTML/Escape/Escape.so
+@man man/man3p/HTML::Escape.3p
