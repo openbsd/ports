@@ -1,0 +1,11 @@
+yq takes YAML input, converts it to JSON, and filters it through jq(1).
+
+No output conversion is done by default.  Command line arguments are forwarded.
+yq exits 1 on YAML parsing errors, otherwise jq's exit code is forwarded.
+
+YAML tags in the input are ignored (any nested data is treated as untagged).
+Key order is preserved.
+
+xq behaves like yq but takes XML input.  Multiple XML documents can be passed
+in separate files/streams.  Entity expansion and DTD resolution is disabled to
+avoid XML parsing vulnerabilities.
