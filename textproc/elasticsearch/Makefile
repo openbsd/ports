@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2019/10/24 13:27:17 pvk Exp $
+# $OpenBSD: Makefile,v 1.66 2019/11/05 15:33:22 pvk Exp $
 
 COMMENT =		distributed RESTful search and analytics
 
-V =			7.4.1
+V =			7.4.2
 DISTNAME =		elasticsearch-oss-$V-darwin-x86_64
 PKGNAME =		elasticsearch-$V
 CATEGORIES =		textproc
