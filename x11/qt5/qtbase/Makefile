@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/10/18 13:14:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/11/05 10:18:53 rsadowski Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -15,13 +15,6 @@ PKGNAME-global =	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
-
-REVISION-global =	0
-REVISION-main =		7
-REVISION-mysql =	1
-REVISION-psql =		0
-REVISION-sqlite2 =	0
-REVISION-tds =		0
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
@@ -218,12 +211,13 @@ MAKE_ENV +=		${MODQMAKE_ENV}
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		audio/sox
-#			kde4-minimal-*|kdebase-*:meta/kde4,-minimal
 
 post-extract:
 	mkdir -p ${WRKDIST}/mkspecs/openbsd-clang
-	cp ${FILESDIR}/clang-qmake.conf ${WRKDIST}/mkspecs/openbsd-clang/qmake.conf
-	cp ${WRKDIST}/mkspecs/openbsd-g++/qplatformdefs.h ${WRKDIST}/mkspecs/openbsd-clang/
+	cp ${FILESDIR}/clang-qmake.conf \
+		${WRKDIST}/mkspecs/openbsd-clang/qmake.conf
+	cp ${WRKDIST}/mkspecs/openbsd-g++/qplatformdefs.h \
+		${WRKDIST}/mkspecs/openbsd-clang/
 
 pre-configure:
 	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`; \

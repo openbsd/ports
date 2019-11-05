@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/05 10:18:53 rsadowski Exp $
 
 QT5NAME =		QtImageFormats
 COMMENT =		support for additional image formats in Qt5
-REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui jasper m mng tiff
 WANTLIB += webp webpdemux

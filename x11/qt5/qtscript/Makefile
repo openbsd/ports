@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/24 20:56:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/11/05 10:18:54 rsadowski Exp $
 
 QT5NAME =		QtScript
 COMMENT-main =		ECMAScript language for Qt5
-REVISION-main =		1
 
 MULTI_PACKAGES =	-main -examples
 

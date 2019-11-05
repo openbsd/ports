@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.6 2018/11/01 22:00:25 rsadowski Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.7 2019/11/05 10:18:53 rsadowski Exp $
 Unbreak build with LibreSSL.
 See also https://github.com/libressl-portable/openbsd/issues/33
 Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
@@ -31,7 +31,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  #define RESOLVEFUNC(func) \
      if (!(_q_##func = _q_PTR_##func(libs.first->resolve(#func)))     \
          && !(_q_##func = _q_PTR_##func(libs.second->resolve(#func)))) \
-@@ -790,7 +794,7 @@ bool q_resolveOpenSslSymbols()
+@@ -820,7 +824,7 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(EC_GROUP_get_degree)
  #endif
      RESOLVEFUNC(BN_num_bits)
@@ -40,7 +40,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(BN_is_word)
  #endif
      RESOLVEFUNC(BN_mod_word)
-@@ -982,6 +986,8 @@ bool q_resolveOpenSslSymbols()
+@@ -1012,6 +1016,8 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(X509_check_issued)
      RESOLVEFUNC(X509_get_issuer_name)
      RESOLVEFUNC(X509_get_subject_name)
@@ -49,7 +49,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(X509_verify_cert)
      RESOLVEFUNC(d2i_X509)
      RESOLVEFUNC(i2d_X509)
-@@ -1028,12 +1034,13 @@ bool q_resolveOpenSslSymbols()
+@@ -1058,12 +1064,13 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(d2i_PKCS12_bio)
      RESOLVEFUNC(PKCS12_free)
  

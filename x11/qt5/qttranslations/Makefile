@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/05 10:18:54 rsadowski Exp $
 
 QT5NAME =	QtTranslations
 COMMENT =	unofficial Qt5 translations
-REVISION =	0
 
 PKG_ARCH =	*
 WANTLIB- =

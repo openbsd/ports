@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/05 10:18:53 rsadowski Exp $
 
 QT5NAME =	QtConnectivity
 COMMENT-main =	Bluetooth and NFC support for Qt5
-REVISION-main =	0
 
 SHARED_LIBS =	Qt5Bluetooth		2.2
 SHARED_LIBS +=	Qt5Nfc			2.2
