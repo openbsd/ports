@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/11/01 19:36:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/11/05 22:26:53 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 share/icons/Adwaita/
 share/icons/Adwaita/16x16/
@@ -2459,6 +2459,7 @@ share/icons/Adwaita/scalable/apps/preferences-system-devices-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-network-proxy-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-network-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-notifications-symbolic.svg
+share/icons/Adwaita/scalable/apps/preferences-system-parental-controls-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-privacy-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-search-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-system-sharing-symbolic.svg
@@ -2603,7 +2604,6 @@ share/icons/Adwaita/scalable/legacy/battery-good-charging-symbolic.svg
 share/icons/Adwaita/scalable/legacy/battery-good-symbolic.svg
 share/icons/Adwaita/scalable/legacy/battery-low-charging-symbolic.svg
 share/icons/Adwaita/scalable/legacy/battery-low-symbolic.svg
-share/icons/Adwaita/scalable/mail-attachment-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/
 share/icons/Adwaita/scalable/mimetypes/application-certificate-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-rss+xml-symbolic.svg
@@ -2722,6 +2722,7 @@ share/icons/Adwaita/scalable/status/microphone-sensitivity-high-symbolic.svg
 share/icons/Adwaita/scalable/status/microphone-sensitivity-low-symbolic.svg
 share/icons/Adwaita/scalable/status/microphone-sensitivity-medium-symbolic.svg
 share/icons/Adwaita/scalable/status/microphone-sensitivity-muted-symbolic.svg
+share/icons/Adwaita/scalable/status/network-cellular-2g-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-3g-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-4g-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-acquiring-symbolic.svg
