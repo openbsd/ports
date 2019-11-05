@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.97 2019/04/29 00:35:58 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.98 2019/11/05 08:03:15 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=	ruby24 ruby25 ruby26
+FLAVORS=	ruby25 ruby26
 .      if !${CONFIGURE_STYLE:L:Mext}
 FLAVORS+=	jruby
 .      endif
@@ -52,11 +52,10 @@ FLAVOR =		ruby26
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby24 ruby25 ruby26 jruby
+.    for i in ruby25 ruby26 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
-.        if ${FLAVOR:N$i:Mruby24} || \ 
-            ${FLAVOR:N$i:Mruby25} || \ 
+.        if ${FLAVOR:N$i:Mruby25} || \ 
             ${FLAVOR:N$i:Mruby26} || \ 
 	    ${FLAVOR:N$i:Mjruby}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
