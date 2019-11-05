@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.928 2019/10/29 10:53:18 semarie Exp $
+# $OpenBSD: Makefile,v 1.929 2019/11/05 05:58:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -214,6 +214,7 @@
      SUBDIR += p5-HTML-Clean
      SUBDIR += p5-HTML-Copy
      SUBDIR += p5-HTML-Display
+     SUBDIR += p5-HTML-Escape
      SUBDIR += p5-HTML-FillInForm
      SUBDIR += p5-HTML-Form
      SUBDIR += p5-HTML-FormFu
