@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/10/24 13:28:56 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/11/05 15:35:31 pvk Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/kibana/{data,plugins}/*
@@ -630,6 +630,7 @@ kibana/built_assets/.cache/ui_bundles/babel/52d080016e974e0485fdd6987fd8e5ba.jso
 kibana/built_assets/.cache/ui_bundles/babel/52d374bd843ec75c0789478a03d7e1f6.json
 kibana/built_assets/.cache/ui_bundles/babel/52e867709886cea46f4e8b8bdb0ae16b.json
 kibana/built_assets/.cache/ui_bundles/babel/52f95670248fff093ce767ed18b93a0f.json
+kibana/built_assets/.cache/ui_bundles/babel/53320a137299a6748620c8e2ccb977fe.json
 kibana/built_assets/.cache/ui_bundles/babel/53425ac712b7bda41ab84aa32f551d99.json
 kibana/built_assets/.cache/ui_bundles/babel/535bd160f1bbd66d6e3077e57f183d6d.json
 kibana/built_assets/.cache/ui_bundles/babel/5372f22aa25a4758814e9d76c4279a35.json
@@ -47754,6 +47755,7 @@ kibana/src/core/utils/integration_tests/__fixtures__/
 kibana/src/core/utils/integration_tests/__fixtures__/frozen_object_mutation/
 kibana/src/core/utils/integration_tests/__fixtures__/frozen_object_mutation/index.js
 kibana/src/core/utils/map_to_object.js
+kibana/src/core/utils/merge.js
 kibana/src/core/utils/pick.js
 kibana/src/core/utils/url.js
 kibana/src/docs/
