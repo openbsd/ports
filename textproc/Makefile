@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.607 2019/09/30 13:07:09 kili Exp $
+# $OpenBSD: Makefile,v 1.608 2019/11/05 18:01:51 kn Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -566,6 +566,7 @@
      SUBDIR += xpdf
      SUBDIR += xxdiff
      SUBDIR += yould
+     SUBDIR += yq
      SUBDIR += zathura
      SUBDIR += zoem
 
