@@ -1,7 +1,0 @@
-Kajongg is the ancient Chinese board game for 4 players. Kajongg can be
-used in two different ways: Scoring a manual game where you play as
-always and use Kajongg for the computation of scores and
-for bookkeeping. Or you can use Kajongg to play against any combination
-of other human players or computer players.
-
-If you are looking for Mah Jongg solitaire, use the kmahjongg package.

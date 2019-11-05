@@ -1,8 +1,0 @@
-KSquares is modeled after the well known pen and paper based game
-of Dots and Boxes. The idea behind KSquares is to construct squares
-by interconnecting the dots on the grid. Up to four players can
-play this game together, taking turns. The trick is regardless of
-who has constructed most of the square, it is the player who completes
-the square that gets the point for it. To win the game round player
-has to collect the most points by covering the most area with the
-squares of player's own color.

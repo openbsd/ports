@@ -1,9 +1,0 @@
-KJumpingCube is a simple tactical game. You can play it against the
-computer or a friend - or you can set up a game between two computer
-players and just watch.
-
-The playing area is a box of cubes containing points. When the game
-starts each cube has one point, no owner and a neutral color. If
-you click on a neutral cube it becomes yours, changes to your color
-and increases by one point. Your objective is to capture all the
-cubes, but now it is your opponent's turn.
