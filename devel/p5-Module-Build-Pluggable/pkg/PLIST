@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/05 05:51:25 sthen Exp $
+${P5SITE}/Module/Build/Pluggable/
+${P5SITE}/Module/Build/Pluggable.pm
+${P5SITE}/Module/Build/Pluggable/Base.pm
+${P5SITE}/Module/Build/Pluggable/GithubMeta.pm
+${P5SITE}/Module/Build/Pluggable/Repository.pm
+${P5SITE}/Module/Build/Pluggable/Util.pm
+${P5SITE}/Test/Module/
+${P5SITE}/Test/Module/Build/
+${P5SITE}/Test/Module/Build/Pluggable.pm
+@man man/man3p/Module::Build::Pluggable.3p
+@man man/man3p/Module::Build::Pluggable::Base.3p
+@man man/man3p/Module::Build::Pluggable::GithubMeta.3p
+@man man/man3p/Module::Build::Pluggable::Repository.3p
+@man man/man3p/Test::Module::Build::Pluggable.3p
