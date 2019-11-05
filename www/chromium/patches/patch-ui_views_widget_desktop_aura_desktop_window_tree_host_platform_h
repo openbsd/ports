@@ -1,11 +1,11 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_h,v 1.1 2019/04/27 12:12:05 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_h,v 1.2 2019/11/05 22:30:28 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h
-@@ -119,7 +119,7 @@ class VIEWS_EXPORT DesktopWindowTreeHostPlatform
+@@ -146,7 +146,7 @@ class VIEWS_EXPORT DesktopWindowTreeHostPlatform
  
-   bool is_active_ = false;
+   base::string16 window_title_;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

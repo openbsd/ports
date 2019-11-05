@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.6 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.7 2019/11/05 22:30:27 robert Exp $
 
 Index: components/feature_engagement/public/event_constants.cc
 --- components/feature_engagement/public/event_constants.cc.orig
@@ -20,7 +20,7 @@ Index: components/feature_engagement/public/event_constants.cc
  const char kReopenTabConditionsMet[] = "reopen_tab_conditions_met";
  const char kTabReopened[] = "tab_reopened";
  
-@@ -37,7 +37,7 @@ const char kIncognitoWindowSessionTimeMet[] =
+@@ -40,7 +40,7 @@ const char kIncognitoWindowSessionTimeMet[] =
      "incognito_window_session_time_met";
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||

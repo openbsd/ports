@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.16 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.17 2019/11/05 22:30:27 robert Exp $
 
 Index: components/policy/tools/generate_policy_source.py
 --- components/policy/tools/generate_policy_source.py.orig
@@ -11,7 +11,7 @@ Index: components/policy/tools/generate_policy_source.py
            'chrome.mac',
            'chrome.fuchsia',
            'chrome.*',
-@@ -112,7 +113,7 @@ class PolicyDetails:
+@@ -114,7 +115,7 @@ class PolicyDetails:
        if platform.startswith('chrome.'):
          platform_sub = platform[7:]
          if platform_sub == '*':

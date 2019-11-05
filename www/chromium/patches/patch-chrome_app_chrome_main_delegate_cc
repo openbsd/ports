@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.54 2019/09/23 07:18:03 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.55 2019/11/05 22:30:26 robert Exp $
 
 Index: chrome/app/chrome_main_delegate.cc
 --- chrome/app/chrome_main_delegate.cc.orig
 +++ chrome/app/chrome_main_delegate.cc
-@@ -100,7 +100,7 @@
+@@ -99,7 +99,7 @@
  #include "chrome/app/shutdown_signal_handlers_posix.h"
  #endif
  
@@ -57,7 +57,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -648,7 +648,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -654,7 +654,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
      *exit_code = 0;
      return true;  // Got a --version switch; exit with a success error code.
    }
@@ -66,7 +66,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -672,7 +672,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -678,7 +678,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
  #if defined(OS_CHROMEOS)
    chromeos::RegisterPathProvider();
  #endif
@@ -75,7 +75,7 @@ Index: chrome/app/chrome_main_delegate.cc
    nacl::RegisterPathProvider();
  #endif
  
-@@ -994,7 +994,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -996,7 +996,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    InitializePDF();
  #endif
  
@@ -84,7 +84,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != service_manager::switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -1019,7 +1019,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1021,7 +1021,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  void ChromeMainDelegate::SandboxInitialized(const std::string& process_type) {
    // Note: If you are adding a new process type below, be sure to adjust the
    // AdjustLinuxOOMScore function too.

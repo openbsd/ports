@@ -1,9 +1,17 @@
-$OpenBSD: patch-base_base_paths_posix_cc,v 1.5 2019/08/24 11:22:17 robert Exp $
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.6 2019/11/05 22:30:26 robert Exp $
 
 Index: base/base_paths_posix.cc
 --- base/base_paths_posix.cc.orig
 +++ base/base_paths_posix.cc
-@@ -24,9 +24,13 @@
+@@ -15,6 +15,7 @@
+ #include <ostream>
+ #include <string>
+ 
++#include "base/command_line.h"
+ #include "base/environment.h"
+ #include "base/files/file_path.h"
+ #include "base/files/file_util.h"
+@@ -24,9 +25,13 @@
  #include "base/process/process_metrics.h"
  #include "build/build_config.h"
  
@@ -18,7 +26,7 @@ Index: base/base_paths_posix.cc
  #elif defined(OS_SOLARIS) || defined(OS_AIX)
  #include <stdlib.h>
  #endif
-@@ -67,13 +71,65 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -67,13 +72,65 @@ bool PathProviderPosix(int key, FilePath* result) {
        *result = FilePath(bin_dir);
        return true;
  #elif defined(OS_OPENBSD) || defined(OS_AIX)

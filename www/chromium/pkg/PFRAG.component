@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.component,v 1.5 2019/10/06 11:03:15 robert Exp $
+@comment $OpenBSD: PFRAG.component,v 1.6 2019/11/05 22:30:28 robert Exp $
 chrome/libaccessibility.so
 chrome/libandroid_mojo_bindings_shared.so
 chrome/libanimation.so
@@ -48,6 +48,7 @@ chrome/libcontent_public_common_mojo_bindings_shared.so
 chrome/libcontent_service_cpp.so
 chrome/libcontent_service_mojom.so
 chrome/libcontent_service_mojom_shared.so
+chrome/libcontent_settings_features.so
 chrome/libcrcrypto.so
 chrome/libdbus.so
 chrome/libdevice_base.so
@@ -59,6 +60,7 @@ chrome/libdevice_vr_mojo_bindings.so
 chrome/libdevice_vr_mojo_bindings_blink.so
 chrome/libdevice_vr_mojo_bindings_shared.so
 chrome/libdevice_vr_test_mojo_bindings.so
+chrome/libdevice_vr_test_mojo_bindings_blink.so
 chrome/libdevice_vr_test_mojo_bindings_shared.so
 chrome/libdevices.so
 chrome/libdiscardable_memory_client.so
@@ -120,10 +122,12 @@ chrome/libkeyed_service_core.so
 chrome/liblearning_common.so
 chrome/liblearning_impl.so
 chrome/libleveldatabase.so
+chrome/libleveldb_proto.so
 chrome/libmanager.so
 chrome/libmedia.so
 chrome/libmedia_blink.so
 chrome/libmedia_gpu.so
+chrome/libmedia_learning_mojo_impl.so
 chrome/libmedia_message_center.so
 chrome/libmedia_mojo_services.so
 chrome/libmedia_session_base_cpp.so
@@ -181,7 +185,6 @@ chrome/libproxy_config.so
 chrome/libpublic.so
 chrome/librange.so
 chrome/libraster.so
-chrome/libresource_coordinator_cpp_features.so
 chrome/libresource_coordinator_public_mojom.so
 chrome/libresource_coordinator_public_mojom_blink.so
 chrome/libresource_coordinator_public_mojom_shared.so

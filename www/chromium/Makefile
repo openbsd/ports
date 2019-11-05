@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.472 2019/10/24 12:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.473 2019/11/05 22:30:26 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			77.0.3865.120
+V=			78.0.3904.87
 ECV=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
@@ -98,7 +98,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	devel/harfbuzz \
 		devel/libexecinfo \
 		security/nss \
-		sysutils/e2fsprogs \
 		textproc/libxslt \
 		x11/gtk+3 \
 		print/cups,-libs \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_base_switches_h,v 1.1 2019/09/23 07:18:03 robert Exp $
+$OpenBSD: patch-base_base_switches_h,v 1.2 2019/11/05 22:30:26 robert Exp $
 
 Index: base/base_switches.h
 --- base/base_switches.h.orig
 +++ base/base_switches.h
-@@ -50,7 +50,7 @@ extern const char kEnableReachedCodeProfiler[];
+@@ -51,7 +51,7 @@ extern const char kEnableReachedCodeProfiler[];
  extern const char kOrderfileMemoryOptimization[];
  #endif
  

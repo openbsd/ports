@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_audio_audio_thread_impl_cc,v 1.3 2019/05/24 19:09:15 robert Exp $
+$OpenBSD: patch-media_audio_audio_thread_impl_cc,v 1.4 2019/11/05 22:30:27 robert Exp $
 
 Index: media/audio/audio_thread_impl.cc
 --- media/audio/audio_thread_impl.cc.orig
 +++ media/audio/audio_thread_impl.cc
-@@ -33,7 +33,7 @@ AudioThreadImpl::AudioThreadImpl()
+@@ -34,7 +34,7 @@ AudioThreadImpl::AudioThreadImpl()
  #endif
    worker_task_runner_ = thread_.task_runner();
  

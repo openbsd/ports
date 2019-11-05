@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.24 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.25 2019/11/05 22:30:27 robert Exp $
 
 Index: components/autofill/core/browser/autofill_experiments.cc
 --- components/autofill/core/browser/autofill_experiments.cc.orig
 +++ components/autofill/core/browser/autofill_experiments.cc
-@@ -248,7 +248,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
+@@ -234,7 +234,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
  }
  
  bool OfferStoreUnmaskedCards(bool is_off_the_record) {

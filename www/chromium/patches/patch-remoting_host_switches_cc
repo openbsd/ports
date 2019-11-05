@@ -1,0 +1,17 @@
+$OpenBSD: patch-remoting_host_switches_cc,v 1.1 2019/11/05 22:30:28 robert Exp $
+
+Index: remoting/host/switches.cc
+--- remoting/host/switches.cc.orig
++++ remoting/host/switches.cc
+@@ -21,9 +21,9 @@ const char kProcessTypeHost[] = "host";
+ const char kProcessTypeRdpDesktopSession[] = "rdp_desktop_session";
+ const char kProcessTypeEvaluateCapability[] = "evaluate_capability";
+ const char kProcessTypeFileChooser[] = "file_chooser";
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ const char kProcessTypeXSessionChooser[] = "xsession_chooser";
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ 
+ const char kEvaluateCapabilitySwitchName[] = "evaluate-type";
+ 

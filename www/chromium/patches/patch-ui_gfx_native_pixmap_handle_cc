@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.4 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.5 2019/11/05 22:30:28 robert Exp $
 
 Index: ui/gfx/native_pixmap_handle.cc
 --- ui/gfx/native_pixmap_handle.cc.orig
@@ -48,3 +48,12 @@ Index: ui/gfx/native_pixmap_handle.cc
      DCHECK(plane.fd.is_valid());
      base::ScopedFD fd_dup(HANDLE_EINTR(dup(plane.fd.get())));
      if (!fd_dup.is_valid()) {
+@@ -96,7 +96,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
+ #endif
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   clone.modifier = handle.modifier;
+ #endif
+ 

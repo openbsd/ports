@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_mojo_services_gpu_mojo_media_client_cc,v 1.4 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-media_mojo_services_gpu_mojo_media_client_cc,v 1.5 2019/11/05 22:30:27 robert Exp $
 
 Index: media/mojo/services/gpu_mojo_media_client.cc
 --- media/mojo/services/gpu_mojo_media_client.cc.orig
@@ -12,7 +12,7 @@ Index: media/mojo/services/gpu_mojo_media_client.cc
  gpu::CommandBufferStub* GetCommandBufferStub(
      scoped_refptr<base::SingleThreadTaskRunner> gpu_task_runner,
      base::WeakPtr<MediaGpuChannelManager> media_gpu_channel_manager,
-@@ -250,7 +250,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
+@@ -245,7 +245,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
                                  command_buffer_id->route_id));
        }
  

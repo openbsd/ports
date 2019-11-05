@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_base_switches_cc,v 1.1 2019/09/23 07:18:03 robert Exp $
+$OpenBSD: patch-base_base_switches_cc,v 1.2 2019/11/05 22:30:26 robert Exp $
 
 Index: base/base_switches.cc
 --- base/base_switches.cc.orig
 +++ base/base_switches.cc
-@@ -135,7 +135,7 @@ const char kEnableCrashReporterForTesting[] =
+@@ -138,7 +138,7 @@ const char kEnableCrashReporterForTesting[] =
  const char kEnableReachedCodeProfiler[] = "enable-reached-code-profiler";
  #endif
  

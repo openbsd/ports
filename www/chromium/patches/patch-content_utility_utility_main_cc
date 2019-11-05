@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.13 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.14 2019/11/05 22:30:27 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -34,6 +34,10 @@
+@@ -35,6 +35,10 @@
  #include "base/message_loop/message_pump_mac.h"
  #endif
  
@@ -14,7 +14,7 @@ Index: content/utility/utility_main.cc
  #if defined(OS_WIN)
  #include "base/rand_util.h"
  #include "sandbox/win/src/sandbox.h"
-@@ -70,12 +74,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -71,12 +75,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -29,7 +29,7 @@ Index: content/utility/utility_main.cc
    if (parameters.zygote_child ||
        sandbox_type == service_manager::SANDBOX_TYPE_NETWORK ||
  #if defined(OS_CHROMEOS)
-@@ -96,6 +101,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -97,6 +102,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          service_manager::SandboxLinux::Options());
    }

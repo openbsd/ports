@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.21 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.22 2019/11/05 22:30:27 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
@@ -12,7 +12,7 @@ Index: gpu/ipc/service/gpu_init.cc
  bool CanAccessNvidiaDeviceFile() {
    bool res = true;
    base::ScopedBlockingCall scoped_blocking_call(FROM_HERE,
-@@ -152,7 +152,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -165,7 +165,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    // crash during feature collection.
    gpu::SetKeysForCrashLogging(gpu_info_);
  
@@ -21,7 +21,7 @@ Index: gpu/ipc/service/gpu_init.cc
    if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
        gpu_info_.gpu.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -228,7 +228,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -246,7 +246,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    sandbox_helper_->PreSandboxStartup();
  
    bool attempted_startsandbox = false;
@@ -30,7 +30,7 @@ Index: gpu/ipc/service/gpu_init.cc
    // On Chrome OS ARM Mali, GPU driver userspace creates threads when
    // initializing a GL context, so start the sandbox early.
    // TODO(zmo): Need to collect OS version before this.
-@@ -357,7 +357,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -377,7 +377,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
  
    InitializePlatformOverlaySettings(&gpu_info_);
  
@@ -39,7 +39,7 @@ Index: gpu/ipc/service/gpu_init.cc
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -552,7 +552,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -569,7 +569,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_);
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Display_cpp,v 1.10 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Display_cpp,v 1.11 2019/11/05 22:30:28 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/Display.cpp.orig
 +++ third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
-@@ -688,7 +688,7 @@ bool Display::isValidWindow(EGLNativeWindowType window
+@@ -690,7 +690,7 @@ bool Display::isValidWindow(EGLNativeWindowType window
  			return status != 0;
  		}
  		return false;
@@ -12,7 +12,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
  		return false;  // Non X11 linux is headless only
  	#elif defined(__APPLE__)
  		return sw::OSX::IsValidWindow(window);
-@@ -866,7 +866,7 @@ sw::Format Display::getDisplayFormat() const
+@@ -868,7 +868,7 @@ sw::Format Display::getDisplayFormat() const
  		{
  			return sw::FORMAT_X8R8G8B8;
  		}

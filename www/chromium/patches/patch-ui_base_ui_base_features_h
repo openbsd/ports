@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_ui_base_features_h,v 1.6 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_h,v 1.7 2019/11/05 22:30:28 robert Exp $
 
 Index: ui/base/ui_base_features.h
 --- ui/base/ui_base_features.h.orig
 +++ ui/base/ui_base_features.h
-@@ -59,7 +59,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+@@ -61,10 +61,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
  extern const base::Feature kEnableAutomaticUiAdjustmentsForTouch;
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  
@@ -11,4 +11,8 @@ Index: ui/base/ui_base_features.h
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  extern const base::Feature kDirectManipulationStylus;
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
+-#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ // Used to enable the new controls UI.
+ COMPONENT_EXPORT(UI_BASE_FEATURES)

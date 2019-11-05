@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.58 2019/09/23 07:18:03 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.59 2019/11/05 22:30:26 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -427,7 +427,7 @@
- #include "components/crash/content/app/breakpad_linux.h"
+@@ -403,7 +403,7 @@
+ #include "components/user_manager/user.h"
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
 -#elif defined(OS_LINUX)
@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -478,7 +478,7 @@
+@@ -458,7 +458,7 @@
  #include "chrome/grit/chrome_unscaled_resources.h"
  #endif  //  !defined(OS_ANDROID)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_navigation_throttle.h"
  #endif
-@@ -505,7 +505,7 @@
+@@ -485,7 +485,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -30,7 +30,16 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #if defined(USE_X11)
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux_x11.h"
  #else
-@@ -1228,7 +1228,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -798,7 +798,7 @@ bool IsAutoplayAllowedByPolicy(content::WebContents* c
+ int GetCrashSignalFD(const base::CommandLine& command_line) {
+   return crashpad::CrashHandlerHost::Get()->GetDeathSignalSocket();
+ }
+-#elif defined(OS_POSIX) && !defined(OS_MACOSX)
++#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+ breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
+     const std::string& process_type) {
+   base::FilePath dumps_path;
+@@ -1200,7 +1200,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
  #elif defined(OS_CHROMEOS)
    main_parts = std::make_unique<chromeos::ChromeBrowserMainPartsChromeos>(
        parameters, startup_data_);
@@ -39,7 +48,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts =
        std::make_unique<ChromeBrowserMainPartsLinux>(parameters, startup_data_);
  #elif defined(OS_ANDROID)
-@@ -1254,7 +1254,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1226,7 +1226,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
      // Construct additional browser parts. Stages are called in the order in
      // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -48,7 +57,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #if defined(USE_X11)
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinuxX11());
  #else
-@@ -2062,6 +2062,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2032,6 +2032,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
  #elif defined(OS_POSIX)
  #if defined(OS_ANDROID)
    bool enable_crash_reporter = true;
@@ -57,16 +66,16 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #else
    bool enable_crash_reporter = breakpad::IsCrashReporterEnabled();
  #endif
-@@ -2294,7 +2296,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
-       process_type,
-       command_line);
+@@ -2267,7 +2269,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+   StackSamplingConfiguration::Get()->AppendCommandLineSwitchForChildProcess(
+       process_type, command_line);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // Processes may only query perf_event_open with the BPF sandbox disabled.
    if (browser_command_line.HasSwitch(switches::kEnableThreadInstructionCount) &&
        command_line->HasSwitch(service_manager::switches::kNoSandbox)) {
-@@ -3636,7 +3638,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3575,7 +3577,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -75,7 +84,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -4290,7 +4292,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4244,7 +4246,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
              handle));
    }
  

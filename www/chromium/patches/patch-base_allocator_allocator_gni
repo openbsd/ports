@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_config_allocator_gni,v 1.9 2019/04/26 09:38:19 robert Exp $
+$OpenBSD: patch-base_allocator_allocator_gni,v 1.1 2019/11/05 22:30:26 robert Exp $
 
-Index: build/config/allocator.gni
---- build/config/allocator.gni.orig
-+++ build/config/allocator.gni
+Index: base/allocator/allocator.gni
+--- base/allocator/allocator.gni.orig
++++ base/allocator/allocator.gni
 @@ -6,7 +6,7 @@ import("//build/config/sanitizers/sanitizers.gni")
  
  # Temporarily disable tcmalloc on arm64 linux to get rid of compilation errors.

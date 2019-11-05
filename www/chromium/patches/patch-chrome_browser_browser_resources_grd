@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.53 2019/09/23 07:18:03 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.54 2019/11/05 22:30:26 robert Exp $
 
 Index: chrome/browser/browser_resources.grd
 --- chrome/browser/browser_resources.grd.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/browser_resources.grd
          <include name="IDR_BROWSER_SWITCH_APP_HTML" file="resources\browser_switch\app.html" compress="gzip" allowexternalscript="true" type="BINDATA" />
          <include name="IDR_BROWSER_SWITCH_APP_JS" file="resources\browser_switch\app.js" compress="gzip" type="BINDATA" />
          <include name="IDR_BROWSER_SWITCH_PROXY_HTML" file="resources\browser_switch\browser_switch_proxy.html" compress="gzip" allowexternalscript="true" type="BINDATA" />
-@@ -633,7 +633,7 @@
+@@ -561,7 +561,7 @@
          <include name="IDR_IME_WINDOW_CLOSE_H" file="resources\input_ime\ime_window_close_hover.png" type="BINDATA" />
        </if>
        <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />

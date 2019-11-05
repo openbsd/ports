@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_settings_appearance_handler_cc,v 1.5 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_settings_appearance_handler_cc,v 1.6 2019/11/05 22:30:27 robert Exp $
 
 Index: chrome/browser/ui/webui/settings/appearance_handler.cc
 --- chrome/browser/ui/webui/settings/appearance_handler.cc.orig
 +++ chrome/browser/ui/webui/settings/appearance_handler.cc
-@@ -31,7 +31,7 @@ void AppearanceHandler::RegisterMessages() {
+@@ -27,7 +27,7 @@ void AppearanceHandler::RegisterMessages() {
        "useDefaultTheme",
        base::BindRepeating(&AppearanceHandler::HandleUseDefaultTheme,
                            base::Unretained(this)));
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/settings/appearance_handler.cc
    web_ui()->RegisterMessageCallback(
        "useSystemTheme",
        base::BindRepeating(&AppearanceHandler::HandleUseSystemTheme,
-@@ -59,7 +59,7 @@ void AppearanceHandler::HandleUseDefaultTheme(const ba
+@@ -39,7 +39,7 @@ void AppearanceHandler::HandleUseDefaultTheme(const ba
    ThemeServiceFactory::GetForProfile(profile_)->UseDefaultTheme();
  }
  

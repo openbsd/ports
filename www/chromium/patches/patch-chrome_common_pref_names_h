@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.54 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.55 2019/11/05 22:30:27 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
-@@ -322,7 +322,7 @@ extern const char kHistoryMenuPromoShown[];
+@@ -326,7 +326,7 @@ extern const char kHistoryMenuPromoShown[];
  extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
@@ -12,7 +12,7 @@ Index: chrome/common/pref_names.h
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -352,7 +352,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -357,7 +357,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -21,7 +21,7 @@ Index: chrome/common/pref_names.h
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -507,7 +507,7 @@ extern const char kAppWindowPlacement[];
+@@ -511,7 +511,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];
@@ -30,7 +30,7 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -704,7 +704,7 @@ extern const char kGSSAPILibraryName[];
+@@ -708,7 +708,7 @@ extern const char kGSSAPILibraryName[];
  extern const char kAuthAndroidNegotiateAccountType[];
  extern const char kAllowCrossOriginAuthPrompt[];
  

@@ -1,19 +1,19 @@
-$OpenBSD: patch-services_audio_audio_sandbox_hook_linux_cc,v 1.2 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-services_audio_audio_sandbox_hook_linux_cc,v 1.3 2019/11/05 22:30:28 robert Exp $
 
 Index: services/audio/audio_sandbox_hook_linux.cc
 --- services/audio/audio_sandbox_hook_linux.cc.orig
 +++ services/audio/audio_sandbox_hook_linux.cc
-@@ -102,6 +102,9 @@ std::vector<BrokerFilePermission> GetAudioFilePermissi
+@@ -157,6 +157,9 @@ std::vector<BrokerFilePermission> GetAudioFilePermissi
  }
  
  void LoadAudioLibraries() {
 +#if defined(OS_BSD)
 +  NOTIMPLEMENTED();
 +#else
-   const std::string kLibraries[]{"libasound.so.2", "libpulse.so.0",
-                                  "libnss_files.so.2"};
-   for (const auto& library_name : kLibraries) {
-@@ -111,6 +114,7 @@ void LoadAudioLibraries() {
+   const std::string libraries[]{"libasound.so.2", "libpulse.so.0",
+                                 "libnss_files.so.2"};
+   for (const auto& library_name : libraries) {
+@@ -166,6 +169,7 @@ void LoadAudioLibraries() {
                     << " with error: " << dlerror();
      }
    }

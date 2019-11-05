@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.7 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.8 2019/11/05 22:30:28 robert Exp $
 
 Index: ui/gfx/ipc/gfx_param_traits_macros.h
 --- ui/gfx/ipc/gfx_param_traits_macros.h.orig
@@ -36,3 +36,12 @@ Index: ui/gfx/ipc/gfx_param_traits_macros.h
    IPC_STRUCT_TRAITS_MEMBER(fd)
  #elif defined(OS_FUCHSIA)
    IPC_STRUCT_TRAITS_MEMBER(vmo)
+@@ -80,7 +80,7 @@ IPC_STRUCT_TRAITS_END()
+ 
+ IPC_STRUCT_TRAITS_BEGIN(gfx::NativePixmapHandle)
+   IPC_STRUCT_TRAITS_MEMBER(planes)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   IPC_STRUCT_TRAITS_MEMBER(modifier)
+ #endif
+ #if defined(OS_FUCHSIA)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.11 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.12 2019/11/05 22:30:27 robert Exp $
 
 Index: gpu/ipc/common/gpu_memory_buffer_support.cc
 --- gpu/ipc/common/gpu_memory_buffer_support.cc.orig
@@ -39,7 +39,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
    return gfx::NATIVE_PIXMAP;
  #elif defined(OS_WIN)
    return gfx::DXGI_SHARED_HANDLE;
-@@ -111,7 +111,7 @@ bool GpuMemoryBufferSupport::IsNativeGpuMemoryBufferCo
+@@ -110,7 +110,7 @@ bool GpuMemoryBufferSupport::IsNativeGpuMemoryBufferCo
  #elif defined(USE_OZONE)
    return ui::OzonePlatform::EnsureInstance()->IsNativePixmapConfigSupported(
        format, usage);
@@ -48,7 +48,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
    return false;  // TODO(julian.isorce): Add linux support.
  #elif defined(OS_WIN)
    switch (usage) {
-@@ -167,7 +167,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
+@@ -166,7 +166,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
        return GpuMemoryBufferImplIOSurface::CreateFromHandle(
            std::move(handle), size, format, usage, std::move(callback));
  #endif

@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_browser_ppapi_plugin_process_host_cc,v 1.13 2019/11/05 22:30:27 robert Exp $
+
+Index: content/browser/ppapi_plugin_process_host.cc
+--- content/browser/ppapi_plugin_process_host.cc.orig
++++ content/browser/ppapi_plugin_process_host.cc
+@@ -50,7 +50,7 @@
+ #include "ui/gfx/font_render_params.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
+ #include "content/browser/font_service.h"  // nogncheck
+ #endif
+@@ -496,7 +496,7 @@ void PpapiPluginProcessHost::OnProcessCrashed(int exit
+ 
+ void PpapiPluginProcessHost::BindHostReceiver(
+     mojo::GenericPendingReceiver receiver) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (auto font_receiver = receiver.As<font_service::mojom::FontService>())
+     ConnectToFontService(std::move(font_receiver));
+ #endif

@@ -1,9 +1,18 @@
-$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.7 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.8 2019/11/05 22:30:27 robert Exp $
 
 Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
 --- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -329,7 +329,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -181,7 +181,7 @@
+ #include "chrome/browser/safe_browsing/advanced_protection_status_manager_factory.h"
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #include "chrome/browser/sync/sync_clipboard_service_factory.h"
+ #endif
+ 
+@@ -335,7 +335,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !defined(OS_ANDROID)
    MediaGalleriesPreferencesFactory::GetInstance();
  #endif
@@ -12,3 +21,12 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
+@@ -398,7 +398,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+   SpellcheckServiceFactory::GetInstance();
+ #endif
+   suggestions::SuggestionsServiceFactory::GetInstance();
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   SyncClipboardServiceFactory::GetInstance();
+ #endif
+   TabRestoreServiceFactory::GetInstance();

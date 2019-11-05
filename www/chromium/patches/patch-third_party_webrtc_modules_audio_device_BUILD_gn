@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.20 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.21 2019/11/05 22:30:28 robert Exp $
 Index: third_party/webrtc/modules/audio_device/BUILD.gn
 --- third_party/webrtc/modules/audio_device/BUILD.gn.orig
 +++ third_party/webrtc/modules/audio_device/BUILD.gn
-@@ -264,7 +264,7 @@ rtc_source_set("audio_device_impl") {
+@@ -265,7 +265,7 @@ rtc_source_set("audio_device_impl") {
      if (rtc_use_dummy_audio_file_devices) {
        defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
      } else {

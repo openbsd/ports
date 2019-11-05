@@ -1,9 +1,9 @@
-$OpenBSD: patch-ipc_ipc_message_utils_h,v 1.13 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-ipc_ipc_message_utils_h,v 1.14 2019/11/05 22:30:27 robert Exp $
 
 Index: ipc/ipc_message_utils.h
 --- ipc/ipc_message_utils.h.orig
 +++ ipc/ipc_message_utils.h
-@@ -205,7 +205,7 @@ struct ParamTraits<unsigned int> {
+@@ -210,7 +210,7 @@ struct ParamTraits<unsigned int> {
  //   3) Android 64 bit and Fuchsia also have int64_t typedef'd to long.
  // Since we want to support Android 32<>64 bit IPC, as long as we don't have
  // these traits for 32 bit ARM then that'll catch any errors.

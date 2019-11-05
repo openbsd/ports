@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_libgtkui_print_dialog_gtk_cc,v 1.6 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_libgtkui_print_dialog_gtk_cc,v 1.7 2019/11/05 22:30:27 robert Exp $
 Index: chrome/browser/ui/libgtkui/print_dialog_gtk.cc
 --- chrome/browser/ui/libgtkui/print_dialog_gtk.cc.orig
 +++ chrome/browser/ui/libgtkui/print_dialog_gtk.cc
-@@ -333,6 +333,7 @@ void PrintDialogGtk::ShowDialog(
+@@ -336,6 +336,7 @@ void PrintDialogGtk::ShowDialog(
    // Since we only generate PDF, only show printers that support PDF.
    // TODO(thestig) Add more capabilities to support?
    GtkPrintCapabilities cap = static_cast<GtkPrintCapabilities>(

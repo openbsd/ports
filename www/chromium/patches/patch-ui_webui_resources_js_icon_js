@@ -1,7 +1,8 @@
-$OpenBSD: patch-ui_webui_resources_js_icon_js,v 1.2 2016/12/10 15:35:25 robert Exp $
---- ui/webui/resources/js/icon.js.orig.port	Sat Dec  3 14:27:07 2016
-+++ ui/webui/resources/js/icon.js	Sat Dec  3 14:27:14 2016
-@@ -14,7 +14,7 @@ cr.define('cr.icon', function() {
+$OpenBSD: patch-ui_webui_resources_js_icon_js,v 1.3 2019/11/05 22:30:28 robert Exp $
+Index: ui/webui/resources/js/icon.js
+--- ui/webui/resources/js/icon.js.orig
++++ ui/webui/resources/js/icon.js
+@@ -16,7 +16,7 @@ cr.define('cr.icon', function() {
        // supports SCALE_FACTOR_100P on all non-iOS platforms.
        supportedScaleFactors.push(1);
      }

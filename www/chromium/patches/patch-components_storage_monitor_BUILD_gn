@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_storage_monitor_BUILD_gn,v 1.5 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-components_storage_monitor_BUILD_gn,v 1.6 2019/11/05 22:30:27 robert Exp $
 
 Index: components/storage_monitor/BUILD.gn
 --- components/storage_monitor/BUILD.gn.orig
 +++ components/storage_monitor/BUILD.gn
-@@ -79,6 +79,13 @@ static_library("storage_monitor") {
+@@ -81,6 +81,13 @@ static_library("storage_monitor") {
      }
    }
  

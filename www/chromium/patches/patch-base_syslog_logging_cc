@@ -1,18 +1,18 @@
-$OpenBSD: patch-base_syslog_logging_cc,v 1.1 2019/09/23 07:18:03 robert Exp $
+$OpenBSD: patch-base_syslog_logging_cc,v 1.2 2019/11/05 22:30:26 robert Exp $
 
 Index: base/syslog_logging.cc
 --- base/syslog_logging.cc.orig
 +++ base/syslog_logging.cc
-@@ -11,7 +11,7 @@
- #include "base/callback_helpers.h"
+@@ -14,7 +14,7 @@
  #include "base/debug/stack_trace.h"
+ #include "base/strings/string_util.h"
  #include "base/win/win_util.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
  // <syslog.h> defines LOG_INFO, LOG_WARNING macros that could conflict with
  // base::LOG_INFO, base::LOG_WARNING.
  #include <syslog.h>
-@@ -110,7 +110,7 @@ EventLogMessage::~EventLogMessage() {
+@@ -113,7 +113,7 @@ EventLogMessage::~EventLogMessage() {
  
    if (user_sid != nullptr)
      ::LocalFree(user_sid);

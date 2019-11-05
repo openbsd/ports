@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.14 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.15 2019/11/05 22:30:26 robert Exp $
 
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
@@ -15,7 +15,7 @@ Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -230,7 +232,9 @@ void RecordStartupMetrics() {
+@@ -229,7 +231,9 @@ void RecordStartupMetrics() {
                          base::TimeTicks::IsHighResolution());
  #endif  // defined(OS_WIN)
  

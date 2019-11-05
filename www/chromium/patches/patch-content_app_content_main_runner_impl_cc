@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.10 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.11 2019/11/05 22:30:27 robert Exp $
 
 Index: content/app/content_main_runner_impl.cc
 --- content/app/content_main_runner_impl.cc.orig
 +++ content/app/content_main_runner_impl.cc
-@@ -101,17 +101,17 @@
+@@ -102,17 +102,17 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -24,7 +24,16 @@ Index: content/app/content_main_runner_impl.cc
  #include "base/native_library.h"
  #include "base/rand_util.h"
  #include "services/service_manager/zygote/common/common_sandbox_support_linux.h"
-@@ -164,6 +164,13 @@
+@@ -133,7 +133,7 @@
+ #include "content/public/common/content_client.h"
+ #endif
+ 
+-#endif  // OS_LINUX
++#endif  // OS_LINUX || OS_BSD
+ 
+ #if !defined(CHROME_MULTIPLE_DLL_BROWSER)
+ #include "content/child/field_trial.h"
+@@ -165,6 +165,13 @@
  #include "services/service_manager/zygote/host/zygote_host_impl_linux.h"
  #endif
  
@@ -36,9 +45,9 @@ Index: content/app/content_main_runner_impl.cc
 +#endif
 +
  #if defined(OS_ANDROID)
- #include "base/android/build_info.h"
  #include "content/browser/android/browser_startup_controller.h"
-@@ -324,7 +331,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+ #endif
+@@ -318,7 +325,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
@@ -47,7 +56,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -363,7 +370,7 @@ void PreloadLibraryCdms() {
+@@ -357,7 +364,7 @@ void PreloadLibraryCdms() {
  }
  #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
@@ -56,7 +65,7 @@ Index: content/app/content_main_runner_impl.cc
  void PreSandboxInit() {
  #if defined(ARCH_CPU_ARM_FAMILY)
    // On ARM, BoringSSL requires access to /proc/cpuinfo to determine processor
-@@ -371,9 +378,12 @@ void PreSandboxInit() {
+@@ -365,9 +372,12 @@ void PreSandboxInit() {
    CRYPTO_library_init();
  #endif
  
@@ -69,7 +78,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -385,6 +395,11 @@ void PreSandboxInit() {
+@@ -379,6 +389,11 @@ void PreSandboxInit() {
  #endif
    InitializeWebRtcModule();
  
@@ -81,7 +90,16 @@ Index: content/app/content_main_runner_impl.cc
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -644,7 +659,7 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -415,7 +430,7 @@ void PreSandboxInit() {
+ }
+ #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
+ 
+-#endif  // OS_LINUX
++#endif  // OS_LINUX || OS_BSD
+ 
+ #if !defined(CHROME_MULTIPLE_DLL_CHILD)
+ void InitializeBrowserClientProcessImpl() {
+@@ -647,7 +662,7 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
                     base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
@@ -90,7 +108,7 @@ Index: content/app/content_main_runner_impl.cc
      g_fds->Set(service_manager::kCrashDumpSignal,
                 service_manager::kCrashDumpSignal +
                     base::GlobalDescriptors::kBaseDescriptor);
-@@ -818,6 +833,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -821,6 +836,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
      }
  #endif
  
@@ -107,7 +125,7 @@ Index: content/app/content_main_runner_impl.cc
      delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -862,6 +887,11 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
+@@ -865,6 +890,11 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
  #endif
  
    RegisterMainThreadFactories();

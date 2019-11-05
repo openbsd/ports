@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.8 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.9 2019/11/05 22:30:27 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -109,7 +109,7 @@
+@@ -112,7 +112,7 @@
  #include "chrome/browser/policy/browser_signin_policy_handler.h"
  #endif
  
@@ -12,9 +12,9 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -326,11 +326,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
-     prefs::kSafeBrowsingRealTimeLookupEnabled,
-     base::Value::Type::BOOLEAN
+@@ -333,11 +333,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     prefs::kSafeBrowsingSendFilesForMalwareCheck,
+     base::Value::Type::INTEGER
    },
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
@@ -26,8 +26,8 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
  #if defined(OS_POSIX)
    { key::kNtlmV2Enabled,
      prefs::kNtlmV2Enabled,
-@@ -1031,7 +1031,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
-     prefs::kUserFeedbackAllowed,
+@@ -1063,7 +1063,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     prefs::kAllowSyncXHRInPageDismissal,
      base::Value::Type::BOOLEAN },
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -35,7 +35,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    { key::kAlternativeBrowserPath,
      browser_switcher::prefs::kAlternativeBrowserPath,
-@@ -1072,7 +1072,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1125,7 +1125,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      browser_switcher::prefs::kChromeParameters,
      base::Value::Type::LIST },
  #endif

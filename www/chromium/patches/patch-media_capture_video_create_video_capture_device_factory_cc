@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_create_video_capture_device_factory_cc,v 1.2 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-media_capture_video_create_video_capture_device_factory_cc,v 1.3 2019/11/05 22:30:27 robert Exp $
 
 Index: media/capture/video/create_video_capture_device_factory.cc
 --- media/capture/video/create_video_capture_device_factory.cc.orig
@@ -11,8 +11,8 @@ Index: media/capture/video/create_video_capture_device_factory.cc
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "media/capture/video/linux/video_capture_device_factory_linux.h"
  #elif defined(OS_CHROMEOS)
- #include "media/capture/video/chromeos/public/cros_features.h"
-@@ -33,7 +33,7 @@ namespace {
+ #include "media/capture/video/chromeos/camera_app_device_bridge_impl.h"
+@@ -82,7 +82,7 @@ CreateChromeOSVideoCaptureDeviceFactory(
  std::unique_ptr<VideoCaptureDeviceFactory>
  CreatePlatformSpecificVideoCaptureDeviceFactory(
      scoped_refptr<base::SingleThreadTaskRunner> ui_task_runner) {
@@ -20,4 +20,4 @@ Index: media/capture/video/create_video_capture_device_factory.cc
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    return std::make_unique<VideoCaptureDeviceFactoryLinux>(ui_task_runner);
  #elif defined(OS_CHROMEOS)
-   // On Chrome OS we have to support two use cases:
+   return CreateChromeOSVideoCaptureDeviceFactory(ui_task_runner, {});

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_chrome_content_browser_overlay_manifest_cc,v 1.4 2019/09/23 07:18:03 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_content_browser_overlay_manifest_cc,v 1.5 2019/11/05 22:30:26 robert Exp $
 
 Index: chrome/app/chrome_content_browser_overlay_manifest.cc
 --- chrome/app/chrome_content_browser_overlay_manifest.cc.orig
 +++ chrome/app/chrome_content_browser_overlay_manifest.cc
-@@ -80,7 +80,7 @@
+@@ -70,7 +70,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/app/chrome_content_browser_overlay_manifest.cc
  #include "chrome/browser/performance_manager/webui_graph_dump.mojom.h"  // nogncheck
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #endif
-@@ -234,7 +234,7 @@ const service_manager::Manifest& GetChromeContentBrows
+@@ -206,7 +206,7 @@ const service_manager::Manifest& GetChromeContentBrows
                  app_management::mojom::PageHandlerFactory,
  #endif
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

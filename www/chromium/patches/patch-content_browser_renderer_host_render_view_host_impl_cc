@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_renderer_host_render_view_host_impl_cc,v 1.15 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_view_host_impl_cc,v 1.16 2019/11/05 22:30:27 robert Exp $
 Index: content/browser/renderer_host/render_view_host_impl.cc
 --- content/browser/renderer_host/render_view_host_impl.cc.orig
 +++ content/browser/renderer_host/render_view_host_impl.cc
-@@ -163,7 +163,7 @@ void GetPlatformSpecificPrefs(blink::mojom::RendererPr
+@@ -162,7 +162,7 @@ void GetPlatformSpecificPrefs(blink::mojom::RendererPr
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CYVSCROLL);
    prefs->arrow_bitmap_width_horizontal_scroll_bar_in_dips =
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CXHSCROLL);

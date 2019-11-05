@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.10 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.11 2019/11/05 22:30:27 robert Exp $
 
 Index: device/gamepad/gamepad_provider.cc
 --- device/gamepad/gamepad_provider.cc.orig
@@ -11,4 +11,4 @@ Index: device/gamepad/gamepad_provider.cc
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // On Linux, the data fetcher needs to watch file descriptors, so the message
    // loop needs to be a libevent loop.
-   const base::MessageLoop::Type kMessageLoopType = base::MessageLoop::TYPE_IO;
+   const base::MessagePumpType kMessageLoopType = base::MessagePumpType::IO;
