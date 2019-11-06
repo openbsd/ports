@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.19 2019/11/06 14:21:54 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.20 2019/11/06 15:12:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -41,7 +41,7 @@ my $cache = {};
 
 sub create
 {
-	my ($class, $file, $short, $site, $distinfo, $v, $repo) = @_;
+	my ($class, $file, $short, $site, $distinfo, undef, $v, $repo) = @_;
 
 	bless {
 		name => $file,
