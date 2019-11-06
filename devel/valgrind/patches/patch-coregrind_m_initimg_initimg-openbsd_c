@@ -1,4 +1,4 @@
-$OpenBSD: patch-coregrind_m_initimg_initimg-openbsd_c,v 1.1 2019/02/04 23:34:10 jca Exp $
+$OpenBSD: patch-coregrind_m_initimg_initimg-openbsd_c,v 1.2 2019/11/06 05:25:13 asou Exp $
 
 Index: coregrind/m_initimg/initimg-openbsd.c
 --- coregrind/m_initimg/initimg-openbsd.c.orig
@@ -12,3 +12,21 @@ Index: coregrind/m_initimg/initimg-openbsd.c
  /* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
  
  
+@@ -575,7 +575,7 @@
+         res = VG_(am_mmap_anon_fixed_client)(
+                  anon_start -inner_HACK,
+                  anon_size +inner_HACK,
+-	         VKI_PROT_READ|VKI_PROT_WRITE|VKI_PROT_EXEC
++	         VKI_PROT_READ|VKI_PROT_WRITE
+ 	      );
+      }
+      if ((!ok) || sr_isError(res)) {
+@@ -758,7 +758,7 @@
+    sres = VG_(am_mmap_anon_fixed_client)( 
+              anon_start, 
+              anon_size, 
+-             VKI_PROT_READ|VKI_PROT_WRITE|VKI_PROT_EXEC
++             VKI_PROT_READ|VKI_PROT_WRITE
+           );
+    vg_assert(!sr_isError(sres));
+    vg_assert(sr_Res(sres) == anon_start);

@@ -1,60 +1,95 @@
 --- coregrind/m_transtab.c.orig	Wed Nov 26 04:41:21 2014
 +++ coregrind/m_transtab.c	Mon Dec 10 17:05:02 2018
-@@ -1322,11 +1321,18 @@
-    return k32 % N_TTES_PER_SECTOR;
- }
+@@ -749,6 +749,10 @@
+    /* Get the CPU info established at startup. */
+    VexArch     arch_host = VexArch_INVALID;
+    VexArchInfo archinfo_host;
++#if defined(__OpenBSD__)
++   UInt        len;
++   SysRes      sres;
++#endif
+    VG_(bzero_inline)(&archinfo_host, sizeof(archinfo_host));
+    VG_(machine_get_VexArchInfo)( &arch_host, &archinfo_host );
+    VexEndness endness_host = archinfo_host.endness;
+@@ -789,6 +793,18 @@
+
+    TTEntry* from_tte = index_tte(from_sNo, from_tteNo);
 
 +#if defined(__OpenBSD__)
-+static void setFastCacheEntry ( Addr64 key, ULong* tcptr, UInt len )
-+#else
- static void setFastCacheEntry ( Addr64 key, ULong* tcptr )
++   /* Protect the host code areas. */
++   len = (Long)sectors[to_sNo].tc_next - (Long)host_code;
++   sres = VG_(am_do_mprotect_NO_NOTIFY)(
++      (Addr)sectors[to_sNo].tc, 8 * tc_sector_szQ, VKI_PROT_READ | VKI_PROT_WRITE
++   );
++   if (sr_isError(sres)) {
++      VG_(printf)("valgrind: m_ume.c: mprotect failed\n");
++      vg_assert(0);
++   }
 +#endif
- {
-    UInt cno = (UInt)VG_TT_FAST_HASH(key);
-    VG_(tt_fast)[cno].guest = (Addr)key;
-    VG_(tt_fast)[cno].host  = (Addr)tcptr;
-+#if defined(__OpenBSD__)
-+   VG_(tt_fast)[cno].len   = (Addr)len;
-+#endif
-    n_fast_updates++;
-    /* This shouldn't fail.  It should be assured by m_translate
-       which should reject any attempt to make translation of code
-@@ -1670,7 +1676,11 @@
-    }
++
+    /* Get VEX to do the patching itself.  We have to hand it off
+       since it is host-dependent. */
+    VexInvalRange vir
+@@ -802,6 +818,17 @@
+         );
+    VG_(invalidate_icache)( (void*)vir.start, vir.len );
 
-    /* Update the fast-cache. */
 +#if defined(__OpenBSD__)
-+   setFastCacheEntry( entry, tcptr, code_len );
-+#else
-    setFastCacheEntry( entry, tcptr );
++   /* Protect the host code areas. */
++   sres = VG_(am_do_mprotect_NO_NOTIFY)(
++      (Addr)sectors[to_sNo].tc, 8 * tc_sector_szQ, VKI_PROT_READ | VKI_PROT_EXEC
++   );
++   if (sr_isError(sres)) {
++      VG_(printf)("valgrind: m_ume.c: mprotect failed\n");
++      vg_assert(0);
++   }
++#endif
++
+    /* Now do the tricky bit -- update the ch_succs and ch_preds info
+       for the two translations involved, so we can undo the chaining
+       later, which we will have to do if the to_ block gets removed
+@@ -1530,6 +1550,9 @@
+    ULong  *tcptr, *tcptr2;
+    UChar* srcP;
+    UChar* dstP;
++#if defined(__OpenBSD__)
++   SysRes sres;
 +#endif
 
-    /* Note the eclass numbers for this translation. */
-    upd_eclasses_after_add( &sectors[y], i );
-@@ -1712,8 +1722,13 @@
-              && sectors[sno].tt[k].entry == guest_addr) {
-             /* found it */
-             if (upd_cache)
+    vg_assert(init_done);
+    vg_assert(vge->n_used >= 1 && vge->n_used <= 3);
+@@ -1629,12 +1629,34 @@
+    tcptr = sectors[y].tc_next;
+    vg_assert(tcptr >= &sectors[y].tc[0]);
+    vg_assert(tcptr <= &sectors[y].tc[tc_sector_szQ]);
++ 
 +#if defined(__OpenBSD__)
-+               setFastCacheEntry(
-+                  guest_addr, sectors[sno].tt[k].tcptr, 0 );
-+#else
-                setFastCacheEntry( 
-                   guest_addr, sectors[sno].tt[k].tcptr );
++   /* Protect the host code areas. */
++   sres = VG_(am_do_mprotect_NO_NOTIFY)(
++      (Addr)sectors[y].tc, 8 * tc_sector_szQ, VKI_PROT_READ | VKI_PROT_WRITE
++   );
++   if (sr_isError(sres)) {
++      VG_(printf)("valgrind: m_ume.c: mprotect failed\n");
++      vg_assert(0);
++   }
 +#endif
-             if (res_hcode)
-                *res_hcode = (AddrH)sectors[sno].tt[k].tcptr;
-             if (res_sNo)
-@@ -2204,7 +2219,12 @@
-    vg_assert(sizeof(Addr64) == 8);
-    /* check fast cache entries really are 2 words long */
-    vg_assert(sizeof(Addr) == sizeof(void*));
+ 
+    dstP = (UChar*)tcptr;
+    srcP = (UChar*)code;
+    VG_(memcpy)(dstP, srcP, code_len);
+    sectors[y].tc_next += reqdQ;
+    sectors[y].tt_n_inuse++;
++ 
 +#if defined(__OpenBSD__)
-+   vg_assert(sizeof(FastCacheEntry) ==
-+      (2 * sizeof(Addr) + (2 * sizeof (UInt))));
-+#else
-    vg_assert(sizeof(FastCacheEntry) == 2 * sizeof(Addr));
++   /* Protect the host code areas. */
++   sres = VG_(am_do_mprotect_NO_NOTIFY)(
++      (Addr)sectors[y].tc, 8 * tc_sector_szQ, VKI_PROT_READ | VKI_PROT_EXEC
++   );
++   if (sr_isError(sres)) {
++      VG_(printf)("valgrind: m_ume.c: mprotect failed\n");
++      vg_assert(0);
++   }
 +#endif
-    /* check fast cache entries are packed back-to-back with no spaces */
-    vg_assert(sizeof( VG_(tt_fast) ) == VG_TT_FAST_SIZE * sizeof(FastCacheEntry));
-    /* check fast cache is aligned as we requested.  Not fatal if it
+ 
+    /* more paranoia */
+    tcptr2 = sectors[y].tc_next;

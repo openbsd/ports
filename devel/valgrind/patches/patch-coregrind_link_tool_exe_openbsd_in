@@ -5,12 +5,12 @@
  system(sprintf "sed -e 's|%x|%x|g' < $ldscript > $temp", $origbase, $notebase);
  
 -my $cmd = sprintf "$cc -static -nopie -Wl,-Ttext=0x%x -Wl,-T,$temp", $textbase;
-+my $cmd = sprintf "$cc -static -nopie -Wl,--strip-all -Wl,-zwxneeded -Wl,-Ttext=0x%x -Wl,-T,$temp", $textbase;
 +# XXX The '-s' option was not specified when executing the install command.
 +# Instead '--strip-all' is now executed at link time.
 +# strip command rewrite offset and align in ELF file. Therefor, when valgrind
 +# launch memcheck-amd64-openbsd, an Abort trap occurs in the execvp() system
 +# call.
++my $cmd = sprintf "$cc -static -nopie -Wl,--strip-all -Wl,-Ttext=0x%x -Wl,-T,$temp", $textbase;
  
  # Add the rest of the parameters
  foreach my $n (2 .. $#ARGV) {

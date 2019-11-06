@@ -1,5 +1,17 @@
 --- coregrind/m_aspacemgr/aspacemgr-linux.c.orig
 +++ coregrind/m_aspacemgr/aspacemgr-linux.c
+@@ -2498,7 +2498,11 @@
+       a client request to call the outer VG_(am_get_advisory). */
+    sres = VG_(am_do_mmap_NO_NOTIFY)( 
+              advised, length, 
++#if defined(__OpenBSD__)
++             VKI_PROT_READ|VKI_PROT_WRITE,
++#else
+              VKI_PROT_READ|VKI_PROT_WRITE|VKI_PROT_EXEC, 
++#endif
+              VKI_MAP_FIXED|VKI_MAP_PRIVATE|VKI_MAP_ANONYMOUS, 
+              VM_TAG_VALGRIND, 0
+           );
 @@ -2543,6 +2543,54 @@ SysRes VG_(am_mmap_anon_float_valgrind)( SizeT length )
     return sres;
  }
@@ -30,7 +42,7 @@
 +      any resulting failure immediately. */
 +   sres = VG_(am_do_mmap_NO_NOTIFY)(
 +             advised, length,
-+             VKI_PROT_READ|VKI_PROT_WRITE|VKI_PROT_EXEC,
++             VKI_PROT_READ|VKI_PROT_WRITE,
 +             VKI_MAP_PRIVATE|VKI_MAP_ANONYMOUS|VKI_MAP_STACK,
 +             VM_TAG_VALGRIND, 0
 +          );
