@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/06 02:44:12 kirby Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities
 
-DISTNAME =		gammu-1.40.0
+DISTNAME =		gammu-1.41.0
 
 SHARED_LIBS += 		Gammu 1.0 # 8.1
 SHARED_LIBS += 		gsmsd 1.0 # 8.1
@@ -48,7 +48,7 @@ RUN_DEPENDS += 		databases/libdbi-drivers,-sqlite3
 CONFIGURE_ARGS += 	-DMYSQL_BACKEND=ON
 LIB_DEPENDS += 		databases/mariadb
 RUN_DEPENDS +=		databases/libdbi-drivers
-WANTLIB += 		mysqlclient
+WANTLIB += 		mariadb
 .endif
 
 .if ${FLAVOR:Mpgsql}

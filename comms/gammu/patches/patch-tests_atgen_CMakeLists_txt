@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_atgen_CMakeLists_txt,v 1.1 2019/02/02 15:25:29 kirby Exp $
+$OpenBSD: patch-tests_atgen_CMakeLists_txt,v 1.2 2019/11/06 02:44:12 kirby Exp $
 
 Index: tests/atgen/CMakeLists.txt
 --- tests/atgen/CMakeLists.txt.orig
 +++ tests/atgen/CMakeLists.txt
-@@ -1,6 +1,8 @@
+@@ -3,6 +3,8 @@ project(atgen-tests C)
  add_library(atgen-tests STATIC test_helper.c)
  target_link_libraries(atgen-tests libGammu)
  

@@ -1,9 +1,0 @@
-$OpenBSD: patch-utils_gammu-config,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
---- utils/gammu-config.orig	Thu May 24 22:04:53 2012
-+++ utils/gammu-config	Thu May 24 22:05:11 2012
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- # Gammu configuration generator
- # Copyright (C) 2003 - 2009 Michal Cihar <michal@cihar.com>
- # vim: expandtab sw=4 ts=4 sts=4:

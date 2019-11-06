@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2018/01/08 07:50:46 kirby Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2019/11/06 02:44:12 kirby Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -12,7 +12,7 @@ Index: CMakeLists.txt
  option (LARGE_FILES "Support for large files" ON)
  if (LARGE_FILES)
      add_definitions(-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64)
-@@ -116,7 +119,6 @@ endif (ENABLE_GETOPT)
+@@ -118,7 +121,6 @@ endif (ENABLE_GETOPT)
  check_symbol_exists (daemon "unistd.h" HAVE_DAEMON_UNISTD)
  check_symbol_exists (daemon "stdlib.h" HAVE_DAEMON_STDLIB)
  check_symbol_exists (kill "signal.h" HAVE_KILL)
@@ -20,7 +20,7 @@ Index: CMakeLists.txt
  check_symbol_exists (getpwnam "pwd.h" HAVE_GETPWNAM)
  check_symbol_exists (getgrnam "grp.h" HAVE_GETGRNAM)
  check_symbol_exists (getpwuid "pwd.h" HAVE_GETPWUID)
-@@ -180,9 +182,12 @@ endif()
+@@ -182,9 +184,12 @@ endif()
  find_package (Threads)
  
  # Packages in sources
@@ -36,7 +36,7 @@ Index: CMakeLists.txt
  macro_optional_find_package (LibDBI)
  macro_optional_find_package (Libintl)
  macro_optional_find_package (Iconv)
-@@ -471,7 +476,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
+@@ -473,7 +478,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
      MACRO_TUNE_COMPILER("-Wno-pointer-sign")
  
      MACRO_TUNE_COMPILER("-Wwrite-strings")
