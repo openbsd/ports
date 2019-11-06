@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2019/10/13 18:36:02 robert Exp $
+# $OpenBSD: Makefile,v 1.221 2019/11/06 12:21:06 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
 BV=		6.3
-VERSION=	${BV}.2.2
+VERSION=	${BV}.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -22,8 +22,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
-
-REVISION-main=	0
 
 EPOCH=		0
 
@@ -435,7 +433,7 @@ post-install:
 	${CC} -shared -o ${WRKBUILD}/stub.o ${WRKSRC}/stub.c
 .  for i in jvmaccess jvmfwk
 	${INSTALL_PROGRAM} ${WRKBUILD}/stub.o \
-		${PREFIX}/lib/libreoffice/ure/lib/lib${i}lo.so
+		${PREFIX}/lib/libreoffice/program/lib${i}lo.so
 .  endfor
 .endif
 

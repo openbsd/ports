@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.18 2016/03/01 21:39:58 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.19 2019/11/06 12:21:06 robert Exp $
 lib/libreoffice/program/JREProperties.class
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
@@ -39,6 +39,7 @@ lib/libreoffice/program/classes/unoil.jar
 lib/libreoffice/program/classes/unoloader.jar
 lib/libreoffice/program/classes/xmerge.jar
 @bin lib/libreoffice/program/javaldx
+lib/libreoffice/program/jvmfwk3rc
 lib/libreoffice/program/javavendors.xml
 lib/libreoffice/program/libhsqldb.so
 lib/libreoffice/program/libjava_uno.so
@@ -49,6 +50,9 @@ lib/libreoffice/program/libjpipe.so
 lib/libreoffice/program/libjuh.so
 lib/libreoffice/program/libjuhx.so
 lib/libreoffice/program/libofficebean.so
+lib/libreoffice/program/librptlo.so
+lib/libreoffice/program/librptuilo.so
+lib/libreoffice/program/librptxmllo.so
 lib/libreoffice/program/services/scriptproviderforbeanshell.rdb
 lib/libreoffice/program/services/scriptproviderforjavascript.rdb
 lib/libreoffice/share/Scripts/beanshell/

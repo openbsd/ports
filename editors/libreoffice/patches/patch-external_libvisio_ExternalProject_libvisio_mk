@@ -1,11 +1,11 @@
-$OpenBSD: patch-external_libvisio_ExternalProject_libvisio_mk,v 1.4 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-external_libvisio_ExternalProject_libvisio_mk,v 1.5 2019/11/06 12:21:06 robert Exp $
 
 Index: external/libvisio/ExternalProject_libvisio.mk
 --- external/libvisio/ExternalProject_libvisio.mk.orig
 +++ external/libvisio/ExternalProject_libvisio.mk
-@@ -36,7 +36,7 @@ $(call gb_ExternalProject_get_state_target,libvisio,bu
- 			--disable-werror \
+@@ -37,7 +37,7 @@ $(call gb_ExternalProject_get_state_target,libvisio,bu
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
+ 			$(if $(gb_FULLDEPS),,--disable-dependency-tracking) \
  			CXXFLAGS="$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))" \
 -			CPPFLAGS="$(CPPFLAGS) $(BOOST_CPPFLAGS)" \
 +			CPPFLAGS="$(CPPFLAGS) -fPIC $(BOOST_CPPFLAGS)" \

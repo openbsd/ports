@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.55 2019/09/20 13:34:55 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.56 2019/11/06 12:21:06 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -61,7 +61,6 @@ lib/libreoffice/program/gengal
 @bin lib/libreoffice/program/gengal.bin
 lib/libreoffice/program/intro-highres.png
 lib/libreoffice/program/intro.png
-lib/libreoffice/program/jvmfwk3rc
 lib/libreoffice/program/libOGLTranslo.so
 lib/libreoffice/program/libPresentationMinimizerlo.so
 lib/libreoffice/program/libPresenterScreenlo.so
@@ -179,9 +178,6 @@ lib/libreoffice/program/libpyuno.so
 lib/libreoffice/program/libreflectionlo.so
 lib/libreoffice/program/libreglo.so
 @bin lib/libreoffice/program/librevenge-0.0-lo.so.0
-lib/libreoffice/program/librptlo.so
-lib/libreoffice/program/librptuilo.so
-lib/libreoffice/program/librptxmllo.so
 lib/libreoffice/program/libsal_textenclo.so
 lib/libreoffice/program/libscdlo.so
 lib/libreoffice/program/libscfiltlo.so
@@ -695,6 +691,7 @@ lib/libreoffice/share/config/images_colibre_svg.zip
 lib/libreoffice/share/config/images_elementary.zip
 lib/libreoffice/share/config/images_elementary_svg.zip
 lib/libreoffice/share/config/images_karasa_jaga.zip
+lib/libreoffice/share/config/images_karasa_jaga_svg.zip
 lib/libreoffice/share/config/images_sifr.zip
 lib/libreoffice/share/config/images_sifr_dark.zip
 lib/libreoffice/share/config/images_sifr_svg.zip

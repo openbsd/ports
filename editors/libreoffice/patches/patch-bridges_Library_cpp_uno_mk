@@ -1,11 +1,11 @@
-$OpenBSD: patch-bridges_Library_cpp_uno_mk,v 1.3 2018/09/11 18:51:00 robert Exp $
+$OpenBSD: patch-bridges_Library_cpp_uno_mk,v 1.4 2019/11/06 12:21:06 robert Exp $
 
 re-enable depcrecated unexpected functions
 
 Index: bridges/Library_cpp_uno.mk
 --- bridges/Library_cpp_uno.mk.orig
 +++ bridges/Library_cpp_uno.mk
-@@ -186,6 +186,10 @@ $(eval $(call gb_Library_set_include,$(gb_CPPU_ENV)_un
+@@ -193,6 +193,10 @@ $(eval $(call gb_Library_set_include,$(gb_CPPU_ENV)_un
  	$$(INCLUDE) \
  ))
  

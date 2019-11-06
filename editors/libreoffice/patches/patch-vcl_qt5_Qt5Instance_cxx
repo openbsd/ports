@@ -1,9 +1,9 @@
-$OpenBSD: patch-vcl_qt5_Qt5Instance_cxx,v 1.1 2019/09/20 13:34:54 robert Exp $
+$OpenBSD: patch-vcl_qt5_Qt5Instance_cxx,v 1.2 2019/11/06 12:21:06 robert Exp $
 
 Index: vcl/qt5/Qt5Instance.cxx
 --- vcl/qt5/Qt5Instance.cxx.orig
 +++ vcl/qt5/Qt5Instance.cxx
-@@ -413,7 +413,7 @@ Qt5Instance::createPicker(css::uno::Reference<css::uno
+@@ -417,7 +417,7 @@ Qt5Instance::createPicker(css::uno::Reference<css::uno
      {
          SolarMutexGuard g;
          Qt5FilePicker* pPicker;
