@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.17 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.18 2019/11/06 14:06:47 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -58,8 +58,16 @@ sub complete
 	my $sz = $distinfo->{size}{$file};
 	my $sha = $distinfo->{sha}{$file};
 	my $error = 0;
-	if (!defined $sz || !defined $sha) {
-		$v->break("Incomplete info for $file");
+	if (!defined $sz && !defined $sha) {
+		$v->break("Missing info for $file");
+		return;
+	}
+	if (!defined $sz) {
+		$v->break("Missing size for $file");
+		return;
+	}
+	if (!defined $sha) {
+		$v->break("Missing sha for $file");
 		return;
 	}
 	if (defined $self->{sz}) {
