@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2019/06/22 22:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2019/11/06 12:46:00 jca Exp $
 
 COMMENT=	fast POSIX-compliant awk
 
-DISTNAME=	mawk-1.3.4-20171017
-PKGNAME=	mawk-1.3.4.20171017
+DISTNAME=	mawk-1.3.4-20190203
+PKGNAME=	mawk-1.3.4.20190203
 CATEGORIES=	lang
 MASTER_SITES=	http://invisible-mirror.net/archives/mawk/ \
 		ftp://ftp.invisible-island.net/mawk/
