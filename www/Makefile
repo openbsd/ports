@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.929 2019/11/05 05:58:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.930 2019/11/06 16:01:41 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -408,7 +408,6 @@
      SUBDIR += py-bleach
      SUBDIR += py-bleach,python3
      SUBDIR += py-bokeh
-     SUBDIR += py-bokeh,python3
      SUBDIR += py-bottle
      SUBDIR += py-bottle,python3
      SUBDIR += py-cheroot
