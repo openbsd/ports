@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.35 2019/11/05 18:29:26 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.36 2019/11/06 16:36:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,23 +22,12 @@ use warnings;
 # consequences
 package DPB::Heuristics;
 
-# for now, we don't create a separate object, we assume everything here is
-# "global"
+# XXX the beginning of that class uses globals and defines a way to:
+# - compute weights for paths (sum of all intrinsic weights of the
+# dependency tree)
 
 my (%bad_weight, %needed_by);
 our %weight;
-
-sub new
-{
-	my ($class, $state) = @_;
-	return bless {state => $state}, $class;
-}
-
-sub random
-{
-	my $self = shift;
-	bless $self, "DPB::Heuristics::random";
-}
 
 # we set the "unknown" weight as max if we parsed a file.
 my $default = 1;
@@ -61,6 +50,8 @@ sub intrinsic_weight
 	$weight{$v} // $default;
 }
 
+# hook for PkgPath, we don't need to record weights for all fullpkgpaths,
+# as equivalences will define weights for them all
 sub equates
 {
 	my ($class, $h) = @_;
@@ -86,20 +77,23 @@ sub set_weight
 	}
 }
 
-my $cache;
+my $cache;	#  store precomputed full weight
 
 sub mark_depend
 {
 	my ($self, $d, $v) = @_;
 	if (!defined $needed_by{$d}{$v}) {
 		$needed_by{$d}{$v} = $v;
-		$cache = {};
+		$cache = {};# cache gets invalidated each time we see a new
+			    # depend
 	}
 }
 
-sub compute_measure
+sub compute_full_weight
 {
 	my ($self, $v) = @_;
+
+	# compute the transitive closure of dependencies
 	my $dependencies = {$v => $v};
 	my @todo = values %{$needed_by{$v}};
 	while (my $k = pop (@todo)) {
@@ -107,7 +101,7 @@ sub compute_measure
 		$dependencies->{$k} = $k;
 		push(@todo, values %{$needed_by{$k}});
 	}
-
+	# ... and sum the weights
 	my $sum = 0;
 	for my $k (values %$dependencies) {
 		$sum += $self->intrinsic_weight($k);
@@ -115,21 +109,14 @@ sub compute_measure
 	return $sum;
 }
 
-sub measure
+sub full_weight
 {
 	my ($self, $v) = @_;
-	$cache->{$v} //= $self->compute_measure($v);
+	$cache->{$v} //= $self->compute_full_weight($v);
 }
 
-sub compare
-{
-	my ($self, $a, $b) = @_;
-	# XXX if we don't know, we prefer paths "later in the game"
-	# so if you abort dpb and restart it, it will have stuff to do
-	return $self->measure($a) <=> $self->measure($b) || 
-	    $a->pkgpath cmp $b->pkgpath;
-}
-
+# this is used before reading build information
+# hosts may have distinct speed factors, we want to normalize values
 my $sf_per_host = {};
 my $max_sf;
 
@@ -163,6 +150,37 @@ sub compare_weights
 	return $self->intrinsic_weight($a) <=> $self->intrinsic_weight($b);
 }
 
+
+# this is the actual factory object. It mostly refers to a way to sort
+# (compare method), and it will be used to instantiate queues thru new_queue
+# it comes with an actual comparison functions (weights are global for paths)
+# everything else is a queue... changing the heuristics object gives you
+# more sophisticated queues (separated speed factor bins) or specialized
+# algorithms (squiggles or fetch heuristics)
+sub new
+{
+	my ($class, $state) = @_;
+	return bless {state => $state}, $class;
+}
+
+sub random
+{
+	my $self = shift;
+	# perl allows you to re-bless an object as a different class
+	return bless $self, "DPB::Heuristics::random";
+}
+
+sub compare
+{
+	my ($self, $a, $b) = @_;
+	# XXX if we don't know, we prefer paths "later in the game"
+	# so if you abort dpb and restart it, it will have stuff to do
+	# this also means that equivalent paths will actually show
+	# a preference, so that we build the larger name
+	return $self->full_weight($a) <=> $self->full_weight($b) || 
+	    $a->fullpkgpath cmp $b->fullpkgpath;
+}
+
 sub new_queue
 {
 	my $self = shift;
@@ -174,47 +192,12 @@ sub new_queue
 	}
 }
 
-# this specific stuff keeps track of the time we need to do stuff
-my $todo = {};
-my $total = 0;
-
-sub todo
-{
-	my ($self, $path) = @_;
-	my $p = $path->pkgpath_and_flavors;
-	if (!defined $todo->{$p}) {
-		$todo->{$p} = 1;
-		$total += $self->intrinsic_weight($p);
-	}
-}
-
-sub done
-{
-	my ($self, $path) = @_;
-	my $p = $path->pkgpath_and_flavors;
-	if (defined $todo->{$p}) {
-		delete $todo->{$p};
-		$total -= $self->intrinsic_weight($p);
-	}
-}
-
-sub report_tty
-{
-	my ($self, $state) = @_;
-	my $time = CORE::time();
-	return DPB::Util->time2string($time)." [$$]\n";
-	# okay, I need to sit down and do the actual computation, sigh.
-	my $all = DPB::Core->all_sf;
-	my $sum_sf = 0;
-	for my $sf (@$all) {
-		$sum_sf += $sf;
-	}
-
-	return scalar(keys %$todo)." ".$total*$max_sf." $sum_sf\n".DPB::Util->time2string($time)." -> ".
-		DPB::Util->time2string($time+$total*$max_sf*$max_sf/$sum_sf)." [$$]\n";
-}
+# so the actual queue will be obtained as
+# $q = $someheuristics->sorted 
+# then grabbing objects thru $q->next repeatedly
 
 package DPB::Heuristics::SimpleSorter;
+# the simplest queue: just use sorted_values, and pop
 sub new
 {
 	my ($class, $o) = @_;
@@ -257,12 +240,14 @@ sub next
 		push(@{$self->{l2}}, $v);
 		# XXX but when the diff grows too much, give up!
 		# 200 is completely arbitrary
-		last if DPB::Heuristics->measure($v) >
-		    200 * DPB::Heuristics->measure($self->{l2}[0]);
+		last if DPB::Heuristics->full_weight($v) >
+		    200 * DPB::Heuristics->full_weight($self->{l2}[0]);
 	}
 	return shift @{$self->{l2}};
 }
 
+# and this is the complex one where there might be several bins thx to
+# differing speed factors
 package DPB::Heuristics::Sorter;
 sub new
 {
@@ -296,6 +281,7 @@ sub next
 	}
 }
 
+# and here's how you handle individual bins
 package DPB::Heuristics::Bin;
 sub new
 {
@@ -345,6 +331,7 @@ sub sorted_values
 	return [sort {$self->{h}->compare($a, $b)} values %{$self->{o}}];
 }
 
+# so, the "simple" case is just a simple bin with no other bins.
 package DPB::Heuristics::Queue;
 our @ISA = qw(DPB::Heuristics::Bin);
 
@@ -363,6 +350,8 @@ sub find_sorter
 	return DPB::Heuristics::SimpleSorter->new($self);
 }
 
+# the random object just sets its own arbitrary weights, and uses the
+# normal queue handling for everything else
 package DPB::Heuristics::random;
 our @ISA = qw(DPB::Heuristics);
 my %any;

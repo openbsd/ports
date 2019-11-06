@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: FetchQueue.pm,v 1.2 2013/10/06 13:33:37 espie Exp $
+# $OpenBSD: FetchQueue.pm,v 1.3 2019/11/06 16:36:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,22 +23,22 @@ our @ISA = qw(DPB::Heuristics::Queue);
 sub new
 {
 	my ($class, $h) = @_;
-	$class->SUPER::new($h)->set_h1;
+	return $class->SUPER::new($h)->set_h1;
 }
 
 sub set_h1
 {
-	bless shift, "DPB::Heuristics::FetchQueue1";
+	return bless shift, "DPB::Heuristics::FetchQueue1";
 }
 
 sub set_h2
 {
-	bless shift, "DPB::Heuristics::FetchQueue2";
+	return bless shift, "DPB::Heuristics::FetchQueue2";
 }
 
 sub set_fetchonly
 {
-	bless shift, "DPB::Heuristics::FetchOnlyQueue";
+	return bless shift, "DPB::Heuristics::FetchOnlyQueue";
 }
 
 sub sorted
@@ -85,7 +85,7 @@ sub sorted_values
 	}
 	my $h = $self->{h};
 	return [sort
-	    {$h->measure($a->{path}) <=> $h->measure($b->{path})}
+	    {$h->full_weight($a->{path}) <=> $h->full_weight($b->{path})}
 	    @l];
 }
 
