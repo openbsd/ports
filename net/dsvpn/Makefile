@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/06 15:01:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/06 15:13:52 sthen Exp $
 
 COMMENT=	small and simple TCP VPN with modern crypto
 
@@ -13,6 +13,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # ISC
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB += c
 
 NO_TEST=	Yes
