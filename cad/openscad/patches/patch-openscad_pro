@@ -1,8 +1,9 @@
-$OpenBSD: patch-openscad_pro,v 1.2 2019/10/17 20:04:04 rsadowski Exp $
+$OpenBSD: patch-openscad_pro,v 1.3 2019/11/06 13:21:51 rsadowski Exp $
 
 - remove unsupported compiler flag (that is NOT ignored)
 - don't use bundled Liberation fonts, use RDEP on fonts/liberation-fonts instead
 - fix manpage installation dir
+- disable hidapi support, it doesn't compile
 
 Index: openscad.pro
 --- openscad.pro.orig
@@ -15,6 +16,15 @@ Index: openscad.pro
  
    # Disable attributes warnings on MSYS/MXE due to gcc bug spamming the logs: Issue #2771
    win* | CONFIG(mingw-cross-env)|CONFIG(mingw-cross-env-shared) {
+@@ -192,7 +191,7 @@ CONFIG += lib3mf
+ CONFIG += gettext
+ CONFIG += libxml2
+ CONFIG += libzip
+-CONFIG += hidapi
++#CONFIG += hidapi
+ CONFIG += spnav
+ CONFIG += double-conversion
+ 
 @@ -716,10 +715,6 @@ libraries.path = "$$PREFIX/share/$${FULLNAME}/librarie
  libraries.files = libraries/*
  INSTALLS += libraries
