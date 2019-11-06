@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2019/08/10 20:21:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2019/11/06 16:01:18 ajacoutot Exp $
 
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	1.3.4
+MODPY_EGG_VERSION=	1.4.0
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
 
@@ -19,9 +19,7 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
-
-FLAVORS=		python3
-FLAVOR ?=
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
@@ -32,13 +30,6 @@ RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}
 
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-futures
-.endif
-
 NO_TEST=		Yes
-
-post-install:
-	mv ${PREFIX}/bin/bokeh ${PREFIX}/bin/bokeh${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
