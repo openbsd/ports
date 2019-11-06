@@ -1,0 +1,6 @@
+ngx_http_geoip2_module - creates variables with values from the maxmind
+geoip2 databases based on the client IP (default) or from a specific
+variable (supports both IPv4 and IPv6).
+
+The module now supports nginx streams and can be used in the same way
+the http module can be used.

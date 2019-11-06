@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-geoip2,v 1.1 2019/11/06 13:05:49 sthen Exp $
+ngx_http_geoip2_module.so
+ngx_stream_geoip2_module.so
