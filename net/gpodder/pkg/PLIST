@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/07/06 20:12:46 kn Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/11/06 12:04:52 sthen Exp $
 bin/gpo
 bin/gpodder
 bin/gpodder-migrate2tres
@@ -34,8 +34,6 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}extensions.${MO
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}extensions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}feedcore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}feedcore.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}feedservice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}feedservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}jsonconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}jsonconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,6 +50,8 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}player.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}player.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}services.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,6 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/download.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/escapist_videos.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/extensions.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/feedcore.py
-lib/python${MODPY_VERSION}/site-packages/gpodder/feedservice.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/${MODPY_PYCACHE}/
@@ -186,6 +185,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/${MODPY_PYCACHE}soundcl
 lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/${MODPY_PYCACHE}soundcloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/soundcloud.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/query.py
+lib/python${MODPY_VERSION}/site-packages/gpodder/registry.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/schema.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/services.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/sync.py
@@ -239,6 +239,7 @@ share/gpodder/extensions/${MODPY_PYCACHE}ubuntu_appindicator.${MODPY_PYC_MAGIC_T
 share/gpodder/extensions/${MODPY_PYCACHE}ubuntu_unity.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}update_feeds_on_startup.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}video_converter.${MODPY_PYC_MAGIC_TAG}pyc
+share/gpodder/extensions/${MODPY_PYCACHE}youtube-dl.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/audio_converter.py
 share/gpodder/extensions/command_on_download.py
 share/gpodder/extensions/concatenate_videos.py
@@ -262,6 +263,7 @@ share/gpodder/extensions/ubuntu_appindicator.py
 share/gpodder/extensions/ubuntu_unity.py
 share/gpodder/extensions/update_feeds_on_startup.py
 share/gpodder/extensions/video_converter.py
+share/gpodder/extensions/youtube-dl.py
 share/gpodder/images/
 share/gpodder/images/directory-examples.png
 share/gpodder/images/directory-gpodder.png
