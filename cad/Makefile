@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/08/14 12:13:36 feinerer Exp $
+# $OpenBSD: Makefile,v 1.36 2019/11/06 17:23:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -16,6 +16,7 @@
      SUBDIR += necpp
      SUBDIR += netgen
      SUBDIR += ngspice
+     SUBDIR += oce
      SUBDIR += openscad
      SUBDIR += opensta
      SUBDIR += pcb
