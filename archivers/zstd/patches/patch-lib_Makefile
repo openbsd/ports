@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile,v 1.6 2019/07/20 07:54:25 bket Exp $
+$OpenBSD: patch-lib_Makefile,v 1.7 2019/11/06 10:19:15 bket Exp $
 
 Index: lib/Makefile
 --- lib/Makefile.orig
@@ -34,7 +34,7 @@ Index: lib/Makefile
  	@echo creating versioned links
  	@ln -sf $@ libzstd.$(SHARED_EXT_MAJOR)
  	@ln -sf $@ libzstd.$(SHARED_EXT)
-@@ -265,8 +265,6 @@ install-shared: libzstd
+@@ -263,8 +263,6 @@ install-shared: libzstd
  	@echo Installing shared library
  	@$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)/
  	@$(INSTALL_PROGRAM) $(LIBZSTD) $(DESTDIR)$(LIBDIR)
