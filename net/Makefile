@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1145 2019/10/31 06:21:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.1146 2019/11/06 14:48:04 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -544,7 +544,6 @@
      SUBDIR += pure-ftpd,virtual_chroot
      SUBDIR += purple-rocketchat
      SUBDIR += putty
-     SUBDIR += py-GeoIP
      SUBDIR += py-IOSXR
      SUBDIR += py-IOSXR,python3
      SUBDIR += py-IP
