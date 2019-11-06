@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.122 2019/10/26 13:39:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.123 2019/11/06 16:49:21 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -296,6 +296,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/codepipeline/2015-07-09/e
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codepipeline/2015-07-09/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codepipeline/2015-07-09/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-notifications/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-notifications/2019-10-15/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-notifications/2019-10-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-notifications/2019-10-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/2017-04-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/2017-04-19/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/2017-04-19/service-2.json
