@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.17 2018/04/23 20:06:01 stsp Exp $
+$OpenBSD: patch-Makefile_in,v 1.18 2019/11/06 15:04:23 stsp Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -84,11 +84,11 @@ swig_pl_libdir = @libdir@
+@@ -89,11 +89,11 @@ swig_pl_libdir = @libdir@
  swig_rb_libdir = @libdir@
  
  ### these possibly need further discussion
@@ -17,7 +17,7 @@ Index: Makefile.in
  
  # where to install pkg-config files
  pkgconfig_dir = $(datadir)/pkgconfig
-@@ -146,13 +146,13 @@ GOOGLEMOCK_LIB_INCLUDES = -I@GOOGLEMOCK_SRCDIR@/google
+@@ -150,13 +150,13 @@ BOOST_TEST_LDFLAGS = @BOOST_LDFLAGS@ @BOOST_UNIT_TEST_
  SWIG = @SWIG@
  SWIG_PY_INCLUDES = @SWIG_PY_INCLUDES@ -I$(SWIG_SRC_DIR)/python/libsvn_swig_py
  SWIG_PY_COMPILE = @SWIG_PY_COMPILE@
