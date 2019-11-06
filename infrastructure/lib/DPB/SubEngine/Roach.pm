@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Roach.pm,v 1.1 2019/10/28 14:24:31 espie Exp $
+# $OpenBSD: Roach.pm,v 1.2 2019/11/06 09:53:47 espie Exp $
 #
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
@@ -18,16 +18,32 @@
 use strict;
 use warnings;
 
-# placeholder for now
+use DPB::SubEngine::Fetch;
+use DPB::Heuristics;
+
 package DPB::SubEngine::Roach;
-our @ISA = qw(DPB::SubEngine);
+our @ISA = qw(DPB::SubEngine::Fetch); # so we get the same cores for free
+
 
 sub new_queue
 {
-	return [];
+	my ($class, $engine) = @_;
+	return DPB::Heuristics::DumbQueue->new;
 }
 
-sub new_roach
+sub add
 {
+	my ($self, $r) = @_;
+	$self->{queue}->add($r);
 }
+
+package DPB::Heuristics::DumbQueue;
+our @ISA = qw(DPB::Heuristics::Queue);
+
+sub sorted_values
+{
+	my $self = shift;
+	return [values %{$self->{o}}];
+}
+
 1;

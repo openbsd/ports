@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.137 2019/11/03 10:17:54 espie Exp $
+# $OpenBSD: Engine.pm,v 1.138 2019/11/06 09:53:47 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -160,7 +160,7 @@ sub flush_log
 sub fetchcount
 {
 	my ($self, $q)= @_;
-	return () unless defined $self->{tofetch};
+	return () if $self->{tofetch}->is_dummy;
 	if ($self->{state}{fetch_only}) {
 		$self->{tofetch}{queue}->set_fetchonly;
 	} elsif ($q < 30) {
@@ -462,7 +462,7 @@ sub check_buildable
 sub new_roach
 {
 	my ($self, $r) = @_;
-	$self->{toroach}->new_roach($r);
+	$self->{toroach}->add($r);
 }
 
 sub new_path
@@ -592,7 +592,10 @@ sub start_new_fetch
 
 sub start_new_roach
 {
-	return;
+	my $self = shift;
+	my $r = $self->{toroach}->start;
+	$self->flush_log;
+	return $r;
 }
 
 sub can_build

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Roach.pm,v 1.2 2019/10/28 15:55:49 espie Exp $
+# $OpenBSD: Roach.pm,v 1.3 2019/11/06 09:53:47 espie Exp $
 #
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
@@ -69,6 +69,7 @@ sub new
 		}
 	}
 	# XXX need a copy because it will be destroyed by FETCH
+	# TODO figure out whether I need to sort DIST somehow
 	if (defined $v->{info}{DIST}) {
 		my %h = %{$v->{info}{DIST}};
 		$o->{DIST} = \%h;

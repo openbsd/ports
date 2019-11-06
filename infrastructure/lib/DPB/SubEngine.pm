@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.30 2019/11/03 10:17:54 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.31 2019/11/06 09:53:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -274,6 +274,11 @@ sub remove_stub
 {
 }
 
+sub is_dummy
+{
+	return 0;
+}
+
 package DPB::SubEngine::BuildBase;
 our @ISA = qw(DPB::SubEngine);
 
@@ -331,4 +336,8 @@ sub start_wipe
 	return 0;
 }
 
+sub is_dummy
+{
+	return 1;
+}
 1;
