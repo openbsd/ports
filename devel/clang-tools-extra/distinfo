@@ -1,0 +1,6 @@
+SHA256 (cfe-8.0.1.src.tar.xz) = cO/9afeoqySfZrCmirqLCK9Sqiq3EN+4oPuhAmhbFkY=
+SHA256 (clang-tools-extra-8.0.1.src.tar.xz) = GHF5thfk8Hu2BcwhXaBSfmSZC0p91cvMRSoWtk4Cw+E=
+SHA256 (llvm-8.0.1.src.tar.xz) = RHh6bQL3FA8UXiJQ1WyfhJM04R+a43mCdRDtcvErdec=
+SIZE (cfe-8.0.1.src.tar.xz) = 12810056
+SIZE (clang-tools-extra-8.0.1.src.tar.xz) = 1994068
+SIZE (llvm-8.0.1.src.tar.xz) = 30477608

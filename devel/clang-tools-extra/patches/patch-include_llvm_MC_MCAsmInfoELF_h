@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_llvm_MC_MCAsmInfoELF_h,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+
+Do not use nonexec stack segment header hints.
+
+Index: include/llvm/MC/MCAsmInfoELF.h
+--- include/llvm/MC/MCAsmInfoELF.h.orig
++++ include/llvm/MC/MCAsmInfoELF.h
+@@ -21,7 +21,7 @@ class MCAsmInfoELF : public MCAsmInfo {
+ protected:
+   /// Targets which have non-executable stacks by default can set this to false
+   /// to disable the special section which requests a non-executable stack.
+-  bool UsesNonexecutableStackSection = true;
++  bool UsesNonexecutableStackSection = false;
+ 
+   MCAsmInfoELF();
+ };

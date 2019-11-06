@@ -1,0 +1,43 @@
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+- Add ret protctor options as no-ops.
+- Improve the X86FixupGadgets pass
+- Alias the command line parameter -p to -pg.
+- implement -msave-args in clang/llvm, like the sun did for gcc
+
+Index: tools/clang/include/clang/Driver/Options.td
+--- tools/clang/include/clang/Driver/Options.td.orig
++++ tools/clang/include/clang/Driver/Options.td
+@@ -1665,6 +1665,14 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
+ def enable_trivial_var_init_zero : Joined<["-"], "enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang">,
+   Flags<[CC1Option]>,
+   HelpText<"Trivial automatic variable initialization to zero is only here for benchmarks, it'll eventually be removed, and I'm OK with that because I'm only using it to benchmark">;
++def fno_ret_protector : Flag<["-"], "fno-ret-protector">, Group<f_Group>,
++  HelpText<"Disable return protector">;
++def fret_protector : Flag<["-"], "fret-protector">, Group<f_Group>,
++  HelpText<"Enable return protector">;
++def fno_fixup_gadgets : Flag<["-"], "fno-fixup-gadgets">, Group<f_Group>,
++  HelpText<"Disable FixupGadgets pass (x86 only)">;
++def ffixup_gadgets : Flag<["-"], "ffixup-gadgets">, Group<f_Group>,
++  HelpText<"Replace ROP friendly instructions with safe alternatives (x86 only)">;
+ def fstandalone_debug : Flag<["-"], "fstandalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
+   HelpText<"Emit full debug info for all types used by the program">;
+ def fno_standalone_debug : Flag<["-"], "fno-standalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
+@@ -2500,7 +2508,7 @@ def pthreads : Flag<["-"], "pthreads">;
+ def pthread : Flag<["-"], "pthread">, Flags<[CC1Option]>,
+   HelpText<"Support POSIX threads in generated code">;
+ def no_pthread : Flag<["-"], "no-pthread">, Flags<[CC1Option]>;
+-def p : Flag<["-"], "p">;
++def p : Flag<["-"], "p">, Alias<pg>;
+ def pie : Flag<["-"], "pie">;
+ def read__only__relocs : Separate<["-"], "read_only_relocs">;
+ def remap : Flag<["-"], "remap">;
+@@ -2949,6 +2957,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
+ def mno_shstk : Flag<["-"], "mno-shstk">, Group<m_x86_Features_Group>;
+ def mretpoline_external_thunk : Flag<["-"], "mretpoline-external-thunk">, Group<m_x86_Features_Group>;
+ def mno_retpoline_external_thunk : Flag<["-"], "mno-retpoline-external-thunk">, Group<m_x86_Features_Group>;
++def msave_args : Flag<["-"], "msave-args">, Group<m_x86_Features_Group>;
++def mno_save_args : Flag<["-"], "mno-save-args">, Group<m_x86_Features_Group>;
+ 
+ // These are legacy user-facing driver-level option spellings. They are always
+ // aliases for options that are spelled using the more common Unix / GNU flag

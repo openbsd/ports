@@ -1,0 +1,45 @@
+$OpenBSD: patch-lib_Target_X86_X86RegisterInfo_td,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+- The compiler is generally free to allocate general purpose registers in
+  whatever order it chooses. Reasons for choosing one register before another
+  usually include compiled instruction size (avoidance of REX prefixes, etc.)
+  or usage conventions, but somehow haven't included security implications in
+  the compiled bytecode. Some bytecode is more useful in polymorphic ROP
+  sequences than others, so it seems prudent to try to avoid that bytecode
+  when possible.
+
+  This patch moves EBX/RBX towards the end of the allocation preference for 32
+  and 64 bit general purpose registers. Some instructions using RBX/EBX/BX/BL
+  as a destination register end up with a ModR/M byte of C3 or CB, which is often
+  useful in ROP gadgets. Because these gadgets often occur in the middle of
+  functions, they exhibit somewhat higher diversity than some other C3/CB
+  terminated gadgets. This change removes about 3% of total gadgets from the
+  kernel, but about 6% of unique gadgets.
+
+  There are other possible changes in this direction. BX/BL are obvious next
+  targets for avoidance, and MM3/XMM3 may also be useful to try to avoid if
+  possible.
+
+Index: lib/Target/X86/X86RegisterInfo.td
+--- lib/Target/X86/X86RegisterInfo.td.orig
++++ lib/Target/X86/X86RegisterInfo.td
+@@ -405,8 +405,8 @@ def GRH16 : RegisterClass<"X86", [i16], 16,
+                                R15WH)>;
+ 
+ def GR32 : RegisterClass<"X86", [i32], 32,
+-                         (add EAX, ECX, EDX, ESI, EDI, EBX, EBP, ESP,
+-                              R8D, R9D, R10D, R11D, R14D, R15D, R12D, R13D)>;
++                         (add EAX, ECX, EDX, ESI, EDI,
++                              R8D, R9D, R10D, R11D, R14D, R15D, R12D, R13D, EBX, EBP, ESP)>;
+ 
+ // GR64 - 64-bit GPRs. This oddly includes RIP, which isn't accurate, since
+ // RIP isn't really a register and it can't be used anywhere except in an
+@@ -415,7 +415,7 @@ def GR32 : RegisterClass<"X86", [i32], 32,
+ // tests because of the inclusion of RIP in this register class.
+ def GR64 : RegisterClass<"X86", [i64], 64,
+                          (add RAX, RCX, RDX, RSI, RDI, R8, R9, R10, R11,
+-                              RBX, R14, R15, R12, R13, RBP, RSP, RIP)>;
++                              R14, R15, R12, R13, RBX, RBP, RSP, RIP)>;
+ 
+ // Segment registers for use by MOV instructions (and others) that have a
+ //   segment register as one operand.  Always contain a 16-bit segment

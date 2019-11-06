@@ -1,0 +1,24 @@
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_X86_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+implement -msave-args in clang/llvm, like the sun did for gcc 
+
+Index: tools/clang/lib/Basic/Targets/X86.cpp
+--- tools/clang/lib/Basic/Targets/X86.cpp.orig
++++ tools/clang/lib/Basic/Targets/X86.cpp
+@@ -817,6 +817,8 @@ bool X86TargetInfo::handleTargetFeatures(std::vector<s
+       HasPTWRITE = true;
+     } else if (Feature == "+invpcid") {
+       HasINVPCID = true;
++    } else if (Feature == "+save-args") {
++      HasSaveArgs = true;
+     }
+ 
+     X86SSEEnum Level = llvm::StringSwitch<X86SSEEnum>(Feature)
+@@ -1398,6 +1400,7 @@ bool X86TargetInfo::hasFeature(StringRef Feature) cons
+       .Case("movdiri", HasMOVDIRI)
+       .Case("movdir64b", HasMOVDIR64B)
+       .Case("mpx", HasMPX)
++      .Case("save-args", HasSaveArgs)
+       .Case("mwaitx", HasMWAITX)
+       .Case("pclmul", HasPCLMUL)
+       .Case("pconfig", HasPCONFIG)

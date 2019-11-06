@@ -1,0 +1,33 @@
+$OpenBSD: patch-tools_clang_lib_CodeGen_CGCall_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+Add RETGUARD to clang for amd64. This security mechanism uses per-function
+random cookies to protect access to function return instructions, with the
+effect that the integrity of the return address is protected, and function
+return instructions are harder to use in ROP gadgets.
+
+On function entry the return address is combined with a per-function random
+cookie and stored in the stack frame. The integrity of this value is verified
+before function return, and if this check fails, the program aborts. In this way
+RETGUARD is an improved stack protector, since the cookies are per-function. The
+verification routine is constructed such that the binary space immediately
+before each ret instruction is padded with int03 instructions, which makes these
+return instructions difficult to use in ROP gadgets. In the kernel, this has the
+effect of removing approximately 50% of total ROP gadgets, and 15% of unique
+ROP gadgets compared to the 6.3 release kernel. Function epilogues are
+essentially gadget free, leaving only the polymorphic gadgets that result from
+jumping into the instruction stream partway through other instructions. Work to
+remove these gadgets will continue through other mechanisms.
+
+Index: tools/clang/lib/CodeGen/CGCall.cpp
+--- tools/clang/lib/CodeGen/CGCall.cpp.orig
++++ tools/clang/lib/CodeGen/CGCall.cpp
+@@ -1958,6 +1958,9 @@ void CodeGenModule::ConstructAttributeList(
+     FuncAttrs.addAttribute("disable-tail-calls",
+                            llvm::toStringRef(DisableTailCalls));
+     GetCPUAndFeaturesAttributes(CalleeInfo.getCalleeDecl(), FuncAttrs);
++
++    if (CodeGenOpts.ReturnProtector)
++      FuncAttrs.addAttribute("ret-protector");
+   }
+ 
+   ClangToLLVMArgMapping IRFunctionArgs(getContext(), FI);

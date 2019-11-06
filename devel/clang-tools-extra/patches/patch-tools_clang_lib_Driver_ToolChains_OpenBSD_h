@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
+--- tools/clang/lib/Driver/ToolChains/OpenBSD.h.orig
++++ tools/clang/lib/Driver/ToolChains/OpenBSD.h
+@@ -69,6 +69,11 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+   void AddCXXStdlibLibArgs(const llvm::opt::ArgList &Args,
+                            llvm::opt::ArgStringList &CmdArgs) const override;
+ 
++  CXXStdlibType GetCXXStdlibType(const llvm::opt::ArgList &Args) const override;
++  void AddClangCXXStdlibIncludeArgs(
++      const llvm::opt::ArgList &DriverArgs,
++      llvm::opt::ArgStringList &CC1Args) const override;
++
+   unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const override {
+     return 2;
+   }

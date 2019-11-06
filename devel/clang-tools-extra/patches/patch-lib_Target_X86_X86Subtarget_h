@@ -1,0 +1,35 @@
+$OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+- implement -msave-args in clang/llvm, like the sun did for gcc
+- Turn on -mretpoline by default in clang on amd64.
+
+Index: lib/Target/X86/X86Subtarget.h
+--- lib/Target/X86/X86Subtarget.h.orig
++++ lib/Target/X86/X86Subtarget.h
+@@ -411,6 +411,9 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+   /// entry to the function and which must be maintained by every function.
+   unsigned stackAlignment = 4;
+ 
++  /// Whether function prologues should save register arguments on the stack.
++  bool SaveArgs = false;
++
+   /// Max. memset / memcpy size that is turned into rep/movs, rep/stos ops.
+   ///
+   // FIXME: this is a known good value for Yonah. How about others?
+@@ -492,6 +495,8 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+     return &getInstrInfo()->getRegisterInfo();
+   }
+ 
++  bool getSaveArgs() const { return SaveArgs; }
++
+   /// Returns the minimum alignment known to hold of the
+   /// stack frame on entry to the function and which must be maintained by every
+   /// function for this subtarget.
+@@ -722,6 +727,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+ 
+   bool isTargetDarwin() const { return TargetTriple.isOSDarwin(); }
+   bool isTargetFreeBSD() const { return TargetTriple.isOSFreeBSD(); }
++  bool isTargetOpenBSD() const { return TargetTriple.isOSOpenBSD(); }
+   bool isTargetDragonFly() const { return TargetTriple.isOSDragonFly(); }
+   bool isTargetSolaris() const { return TargetTriple.isOSSolaris(); }
+   bool isTargetPS4() const { return TargetTriple.isPS4CPU(); }

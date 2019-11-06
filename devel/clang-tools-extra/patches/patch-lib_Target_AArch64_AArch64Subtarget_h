@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Target_AArch64_AArch64Subtarget_h,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+
+Disable the Load Stack Guard for OpenBSD on AArch64.  We don't use it
+on any other platform and it causes a segfault in combination with our
+IR Stack Guard.
+
+Index: lib/Target/AArch64/AArch64Subtarget.h
+--- lib/Target/AArch64/AArch64Subtarget.h.orig
++++ lib/Target/AArch64/AArch64Subtarget.h
+@@ -371,6 +371,7 @@ class AArch64Subtarget final : public AArch64GenSubtar
+   bool isTargetDarwin() const { return TargetTriple.isOSDarwin(); }
+   bool isTargetIOS() const { return TargetTriple.isiOS(); }
+   bool isTargetLinux() const { return TargetTriple.isOSLinux(); }
++  bool isTargetOpenBSD() const { return TargetTriple.isOSOpenBSD(); }
+   bool isTargetWindows() const { return TargetTriple.isOSWindows(); }
+   bool isTargetAndroid() const { return TargetTriple.isAndroid(); }
+   bool isTargetFuchsia() const { return TargetTriple.isOSFuchsia(); }

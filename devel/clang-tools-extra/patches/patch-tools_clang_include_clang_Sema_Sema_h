@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_clang_include_clang_Sema_Sema_h,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+Teach Clang about syslog format attribute
+
+Index: tools/clang/include/clang/Sema/Sema.h
+--- tools/clang/include/clang/Sema/Sema.h.orig
++++ tools/clang/include/clang/Sema/Sema.h
+@@ -10561,6 +10561,7 @@ class Sema { (public)
+     FST_FreeBSDKPrintf,
+     FST_OSTrace,
+     FST_OSLog,
++    FST_Syslog,
+     FST_Unknown
+   };
+   static FormatStringType GetFormatStringType(const FormatAttr *Format);

@@ -1,0 +1,32 @@
+$OpenBSD: patch-tools_clang_include_clang_Driver_CC1Options_td,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+Add RETGUARD to clang for amd64. This security mechanism uses per-function
+random cookies to protect access to function return instructions, with the
+effect that the integrity of the return address is protected, and function
+return instructions are harder to use in ROP gadgets.
+
+On function entry the return address is combined with a per-function random
+cookie and stored in the stack frame. The integrity of this value is verified
+before function return, and if this check fails, the program aborts. In this way
+RETGUARD is an improved stack protector, since the cookies are per-function. The
+verification routine is constructed such that the binary space immediately
+before each ret instruction is padded with int03 instructions, which makes these
+return instructions difficult to use in ROP gadgets. In the kernel, this has the
+effect of removing approximately 50% of total ROP gadgets, and 15% of unique
+ROP gadgets compared to the 6.3 release kernel. Function epilogues are
+essentially gadget free, leaving only the polymorphic gadgets that result from
+jumping into the instruction stream partway through other instructions. Work to
+remove these gadgets will continue through other mechanisms.
+
+Index: tools/clang/include/clang/Driver/CC1Options.td
+--- tools/clang/include/clang/Driver/CC1Options.td.orig
++++ tools/clang/include/clang/Driver/CC1Options.td
+@@ -699,6 +699,8 @@ def stack_protector : Separate<["-"], "stack-protector
+   HelpText<"Enable stack protectors">;
+ def stack_protector_buffer_size : Separate<["-"], "stack-protector-buffer-size">,
+   HelpText<"Lower bound for a buffer to be considered for stack protection">;
++def ret_protector : Flag<["-"], "ret-protector">,
++  HelpText<"Enable Return Protectors">;
+ def fvisibility : Separate<["-"], "fvisibility">,
+   HelpText<"Default type and symbol visibility">;
+ def ftype_visibility : Separate<["-"], "ftype-visibility">,

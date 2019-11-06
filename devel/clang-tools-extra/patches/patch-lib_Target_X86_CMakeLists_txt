@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_Target_X86_CMakeLists_txt,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+
+- Add a clang pass that identifies potential ROP gadgets and replaces ROP
+  friendly instructions with safe alternatives. This initial commit fixes
+  3 instruction forms that will lower to include a c3 (return) byte.
+  Additional problematic instructions can be fixed incrementally using
+  this framework.
+- Refactor retguard to make adding additional arches easier.
+
+Index: lib/Target/X86/CMakeLists.txt
+--- lib/Target/X86/CMakeLists.txt.orig
++++ lib/Target/X86/CMakeLists.txt
+@@ -34,6 +34,7 @@ set(sources
+   X86ExpandPseudo.cpp
+   X86FastISel.cpp
+   X86FixupBWInsts.cpp
++  X86FixupGadgets.cpp
+   X86FixupLEAs.cpp
+   X86AvoidStoreForwardingBlocks.cpp
+   X86FixupSetCC.cpp
+@@ -59,6 +60,7 @@ set(sources
+   X86RegisterBankInfo.cpp
+   X86RegisterInfo.cpp
+   X86RetpolineThunks.cpp
++  X86ReturnProtectorLowering.cpp
+   X86SelectionDAGInfo.cpp
+   X86ShuffleDecodeConstantPool.cpp
+   X86SpeculativeLoadHardening.cpp

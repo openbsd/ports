@@ -1,0 +1,33 @@
+$OpenBSD: patch-tools_clang_include_clang_Basic_CodeGenOptions_def,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+Add RETGUARD to clang for amd64. This security mechanism uses per-function
+random cookies to protect access to function return instructions, with the
+effect that the integrity of the return address is protected, and function
+return instructions are harder to use in ROP gadgets.
+
+On function entry the return address is combined with a per-function random
+cookie and stored in the stack frame. The integrity of this value is verified
+before function return, and if this check fails, the program aborts. In this way
+RETGUARD is an improved stack protector, since the cookies are per-function. The
+verification routine is constructed such that the binary space immediately
+before each ret instruction is padded with int03 instructions, which makes these
+return instructions difficult to use in ROP gadgets. In the kernel, this has the
+effect of removing approximately 50% of total ROP gadgets, and 15% of unique
+ROP gadgets compared to the 6.3 release kernel. Function epilogues are
+essentially gadget free, leaving only the polymorphic gadgets that result from
+jumping into the instruction stream partway through other instructions. Work to
+remove these gadgets will continue through other mechanisms.
+
+Index: tools/clang/include/clang/Basic/CodeGenOptions.def
+--- tools/clang/include/clang/Basic/CodeGenOptions.def.orig
++++ tools/clang/include/clang/Basic/CodeGenOptions.def
+@@ -286,6 +286,9 @@ VALUE_CODEGENOPT(NumRegisterParameters, 32, 0)
+ /// The lower bound for a buffer to be considered for stack protection.
+ VALUE_CODEGENOPT(SSPBufferSize, 32, 0)
+ 
++/// Whether to use return protectors
++CODEGENOPT(ReturnProtector, 1, 0)
++
+ /// The kind of generated debug info.
+ ENUM_CODEGENOPT(DebugInfo, codegenoptions::DebugInfoKind, 3, codegenoptions::NoDebugInfo)
+ 

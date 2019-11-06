@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+- Use a 64-bit register when required
+
+Index: lib/Target/Sparc/SparcISelLowering.cpp
+--- lib/Target/Sparc/SparcISelLowering.cpp.orig
++++ lib/Target/Sparc/SparcISelLowering.cpp
+@@ -3258,6 +3258,8 @@ SparcTargetLowering::getRegForInlineAsmConstraint(cons
+     case 'r':
+       if (VT == MVT::v2i32)
+         return std::make_pair(0U, &SP::IntPairRegClass);
++      else if (VT == MVT::i64 && Subtarget->is64Bit())
++	return std::make_pair(0U, &SP::I64RegsRegClass);
+       else
+         return std::make_pair(0U, &SP::IntRegsRegClass);
+     case 'f':

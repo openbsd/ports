@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_Target_Mips_MipsTargetStreamer_h,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+- Implement .cplocal directive. Needed when building libcrypto.
+
+Index: lib/Target/Mips/MipsTargetStreamer.h
+--- lib/Target/Mips/MipsTargetStreamer.h.orig
++++ lib/Target/Mips/MipsTargetStreamer.h
+@@ -185,6 +185,10 @@ class MipsTargetStreamer : public MCTargetStreamer { (
+     return *ABI;
+   }
+ 
++  void setGPReg(unsigned GPReg) {
++    this->GPReg = GPReg;
++  }
++
+ protected:
+   llvm::Optional<MipsABIInfo> ABI;
+   MipsABIFlagsSection ABIFlagsSection;
+@@ -199,6 +203,7 @@ class MipsTargetStreamer : public MCTargetStreamer { (
+ 
+   bool FrameInfoSet;
+   int FrameOffset;
++  unsigned GPReg;
+   unsigned FrameReg;
+   unsigned ReturnReg;
+ 

@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+
+make clang include a FILE symbol for .(s|S) files
+
+This is mostly needed by syspatch at the moment to be
+to be able to re-link in the same order as the original
+libraries were linked with by relying on the readelf(1)
+and without this .(s|S) assembly files were not getting
+a file directive.
+
+Index: lib/MC/MCParser/AsmParser.cpp
+--- lib/MC/MCParser/AsmParser.cpp.orig
++++ lib/MC/MCParser/AsmParser.cpp
+@@ -878,6 +878,10 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
+     (void)InsertResult;
+   }
+ 
++  StringRef Filename = getContext().getMainFileName();
++  if (!Filename.empty() && (Filename.compare(StringRef("-")) != 0))
++    Out.EmitFileDirective(Filename);
++
+   // While we have input, parse each statement.
+   while (Lexer.isNot(AsmToken::Eof)) {
+     ParseStatementInfo Info(&AsmStrRewrites);

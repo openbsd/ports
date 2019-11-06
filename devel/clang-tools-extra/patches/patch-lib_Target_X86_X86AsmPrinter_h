@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Target_X86_X86AsmPrinter_h,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+Use int3 trap padding between functions instead of trapsleds with a leading jump.
+
+Index: lib/Target/X86/X86AsmPrinter.h
+--- lib/Target/X86/X86AsmPrinter.h.orig
++++ lib/Target/X86/X86AsmPrinter.h
+@@ -118,6 +118,8 @@ class LLVM_LIBRARY_VISIBILITY X86AsmPrinter : public A
+ 
+   void EmitInstruction(const MachineInstr *MI) override;
+ 
++  void EmitTrapToAlignment(unsigned NumBits) const override;
++
+   void EmitBasicBlockEnd(const MachineBasicBlock &MBB) override {
+     AsmPrinter::EmitBasicBlockEnd(MBB);
+     SMShadowTracker.emitShadowPadding(*OutStreamer, getSubtargetInfo());

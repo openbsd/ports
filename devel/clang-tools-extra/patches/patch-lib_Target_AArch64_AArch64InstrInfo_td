@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_Target_AArch64_AArch64InstrInfo_td,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+
+Add retguard for arm64.
+
+Index: lib/Target/AArch64/AArch64InstrInfo.td
+--- lib/Target/AArch64/AArch64InstrInfo.td.orig
++++ lib/Target/AArch64/AArch64InstrInfo.td
+@@ -491,6 +491,12 @@ def ADDlowTLS
+ 
+ } // isReMaterializable, isCodeGenOnly
+ 
++//===----------------------------------------------------------------------===//
++// Pseudo instruction used by retguard
++let isCodeGenOnly = 1, hasNoSchedulingInfo = 1 in {
++    def RETGUARD_JMP_TRAP: Pseudo<(outs), (ins GPR64:$reg), []>;
++}
++
+ def : Pat<(AArch64LOADgot tglobaltlsaddr:$addr),
+           (LOADgot tglobaltlsaddr:$addr)>;
+ 

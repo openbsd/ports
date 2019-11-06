@@ -1,0 +1,87 @@
+$OpenBSD: patch-lib_CodeGen_ReturnProtectorPass_cpp,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+
+- Add RETGUARD to clang for amd64. This security mechanism uses per-function
+  random cookies to protect access to function return instructions, with the
+  effect that the integrity of the return address is protected, and function
+  return instructions are harder to use in ROP gadgets.
+
+  On function entry the return address is combined with a per-function random
+  cookie and stored in the stack frame. The integrity of this value is verified
+  before function return, and if this check fails, the program aborts. In this way
+  RETGUARD is an improved stack protector, since the cookies are per-function. The
+  verification routine is constructed such that the binary space immediately
+  before each ret instruction is padded with int03 instructions, which makes these
+  return instructions difficult to use in ROP gadgets. In the kernel, this has the
+  effect of removing approximately 50% of total ROP gadgets, and 15% of unique
+  ROP gadgets compared to the 6.3 release kernel. Function epilogues are
+  essentially gadget free, leaving only the polymorphic gadgets that result from
+  jumping into the instruction stream partway through other instructions. Work to
+  remove these gadgets will continue through other mechanisms.
+- Put the new retguard symbols in their own section,
+  '.openbsd.randomdata.retguard', to make them easier to work with in the
+  kernel hibernate code.
+
+Index: lib/CodeGen/ReturnProtectorPass.cpp
+--- lib/CodeGen/ReturnProtectorPass.cpp.orig
++++ lib/CodeGen/ReturnProtectorPass.cpp
+@@ -0,0 +1,60 @@
++//===- ReturnProtectorPass.cpp - Set up rteurn protectors -----------------===//
++//
++//                     The LLVM Compiler Infrastructure
++//
++// This file is distributed under the University of Illinois Open Source
++// License. See LICENSE.TXT for details.
++//
++//===----------------------------------------------------------------------===//
++//
++// This pass sets up functions for return protectors.
++//
++//===----------------------------------------------------------------------===//
++
++#include "llvm/CodeGen/Passes.h"
++#include "llvm/ADT/Statistic.h"
++#include "llvm/IR/Function.h"
++#include "llvm/IR/Module.h"
++#include "llvm/Pass.h"
++#include "llvm/Support/raw_ostream.h"
++using namespace llvm;
++
++#define DEBUG_TYPE "return-protector"
++
++STATISTIC(NumSymbols, "Counts number of cookie symbols added");
++
++namespace {
++  struct ReturnProtector : public FunctionPass {
++    static char ID;
++    ReturnProtector() : FunctionPass(ID) {}
++
++    bool runOnFunction(Function &F) override {
++      if (F.hasFnAttribute("ret-protector")) {
++        // Create a symbol for the cookie
++        Module *M = F.getParent();
++        std::hash<std::string> hasher;
++        std::string cookiename = "__retguard_" + std::to_string(hasher((M->getName() + F.getName()).str()) % 4000);
++        Type *cookietype = Type::getInt8PtrTy(M->getContext());
++        GlobalVariable *cookie = dyn_cast_or_null<GlobalVariable>(
++            M->getOrInsertGlobal(cookiename, cookietype));
++        cookie->setInitializer(Constant::getNullValue(cookietype));
++        cookie->setLinkage(GlobalVariable::WeakAnyLinkage);
++        cookie->setVisibility(GlobalValue::HiddenVisibility);
++        cookie->setSection(".openbsd.randomdata.retguard");
++        cookie->setExternallyInitialized(true);
++        F.addFnAttr("ret-protector-cookie", cookiename);
++        NumSymbols++;
++      }
++      return false;
++    }
++
++    void getAnalysisUsage(AnalysisUsage &AU) const override {
++      AU.setPreservesCFG();
++    }
++  };
++}
++
++char ReturnProtector::ID = 0;
++INITIALIZE_PASS(ReturnProtector, "return-protector", "Return Protector Pass",
++                false, false)
++FunctionPass *llvm::createReturnProtectorPass() { return new ReturnProtector(); }

@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+@bin bin/clang-apply-replacements
+@bin bin/clang-change-namespace
+@bin bin/clang-include-fixer
+@bin bin/clang-query
+@bin bin/clang-reorder-fields
+@bin bin/clang-tidy
+@bin bin/clangd
+@bin bin/find-all-symbols
+@bin bin/modularize
+lib/libclangApplyReplacements.a
+lib/libclangChangeNamespace.a
+lib/libclangDaemon.a
+lib/libclangDoc.a
+lib/libclangIncludeFixer.a
+lib/libclangIncludeFixerPlugin.a
+lib/libclangMove.a
+lib/libclangQuery.a
+lib/libclangReorderFields.a
+lib/libclangTidy.a
+lib/libclangTidyAbseilModule.a
+lib/libclangTidyAndroidModule.a
+lib/libclangTidyBoostModule.a
+lib/libclangTidyBugproneModule.a
+lib/libclangTidyCERTModule.a
+lib/libclangTidyCppCoreGuidelinesModule.a
+lib/libclangTidyFuchsiaModule.a
+lib/libclangTidyGoogleModule.a
+lib/libclangTidyHICPPModule.a
+lib/libclangTidyLLVMModule.a
+lib/libclangTidyMPIModule.a
+lib/libclangTidyMiscModule.a
+lib/libclangTidyModernizeModule.a
+lib/libclangTidyObjCModule.a
+lib/libclangTidyPerformanceModule.a
+lib/libclangTidyPlugin.a
+lib/libclangTidyPortabilityModule.a
+lib/libclangTidyReadabilityModule.a
+lib/libclangTidyUtils.a
+lib/libclangTidyZirconModule.a
+lib/libfindAllSymbols.a
+share/clang/clang-include-fixer.el
+share/clang/clang-include-fixer.py
+share/clang/clang-include-fixer.pyc
+share/clang/clang-tidy-diff.py
+share/clang/clang-tidy-diff.pyc
+share/clang/run-clang-tidy.py
+share/clang/run-clang-tidy.pyc
+share/clang/run-find-all-symbols.py
+share/clang/run-find-all-symbols.pyc

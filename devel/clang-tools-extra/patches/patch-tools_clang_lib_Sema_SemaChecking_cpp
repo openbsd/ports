@@ -1,0 +1,92 @@
+$OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+- Teach Clang about syslog format attribute
+- Enable the kprintf format attribute
+- The %b printf extension in the kernel is not fixed to a int type. On sparc64
+  there are various %llb formats. Adjust the code to handle the length
+  specifiers and type check like it is used by the regular case.
+
+Index: tools/clang/lib/Sema/SemaChecking.cpp
+--- tools/clang/lib/Sema/SemaChecking.cpp.orig
++++ tools/clang/lib/Sema/SemaChecking.cpp
+@@ -6608,7 +6608,7 @@ checkFormatStringExpr(Sema &S, const Expr *E, ArrayRef
+ Sema::FormatStringType Sema::GetFormatStringType(const FormatAttr *Format) {
+   return llvm::StringSwitch<FormatStringType>(Format->getType()->getName())
+       .Case("scanf", FST_Scanf)
+-      .Cases("printf", "printf0", FST_Printf)
++      .Cases("printf", "printf0", "syslog", FST_Printf)
+       .Cases("NSString", "CFString", FST_NSString)
+       .Case("strftime", FST_Strftime)
+       .Case("strfmon", FST_Strfmon)
+@@ -6705,6 +6705,7 @@ bool Sema::CheckFormatArguments(ArrayRef<const Expr *>
+     case FST_Kprintf:
+     case FST_FreeBSDKPrintf:
+     case FST_Printf:
++    case FST_Syslog:
+       Diag(FormatLoc, diag::note_format_security_fixit)
+         << FixItHint::CreateInsertion(FormatLoc, "\"%s\", ");
+       break;
+@@ -7530,19 +7531,33 @@ CheckPrintfHandler::HandlePrintfSpecifier(const analyz
+     // Claim the second argument.
+     CoveredArgs.set(argIndex + 1);
+ 
+-    // Type check the first argument (int for %b, pointer for %D)
+     const Expr *Ex = getDataArg(argIndex);
+-    const analyze_printf::ArgType &AT =
+-      (CS.getKind() == ConversionSpecifier::FreeBSDbArg) ?
+-        ArgType(S.Context.IntTy) : ArgType::CPointerTy;
+-    if (AT.isValid() && !AT.matchesType(S.Context, Ex->getType()))
+-      EmitFormatDiagnostic(
++    if (CS.getKind() == ConversionSpecifier::FreeBSDDArg) {
++      // Type check the first argument (pointer for %D)
++      const analyze_printf::ArgType &AT = ArgType::CPointerTy;
++      if (AT.isValid() && !AT.matchesType(S.Context, Ex->getType()))
++        EmitFormatDiagnostic(
+           S.PDiag(diag::warn_format_conversion_argument_type_mismatch)
+-              << AT.getRepresentativeTypeName(S.Context) << Ex->getType()
+-              << false << Ex->getSourceRange(),
+-          Ex->getBeginLoc(), /*IsStringLocation*/ false,
++          << AT.getRepresentativeTypeName(S.Context) << Ex->getType()
++          << false << Ex->getSourceRange(),
++          Ex->getBeginLoc(), /*IsStringLocation*/false,
+           getSpecifierRange(startSpecifier, specifierLen));
++    } else {
++      // Check the length modifier for %b
++      if (!FS.hasValidLengthModifier(S.getASTContext().getTargetInfo()))
++        HandleInvalidLengthModifier(FS, CS, startSpecifier, specifierLen,
++                                    diag::warn_format_nonsensical_length);
++      else if (!FS.hasStandardLengthModifier())
++        HandleNonStandardLengthModifier(FS, startSpecifier, specifierLen);
++      else if (!FS.hasStandardLengthConversionCombination())
++        HandleInvalidLengthModifier(FS, CS, startSpecifier, specifierLen,
++                                    diag::warn_format_non_standard_conversion_spec);
+ 
++      // Type check the first argument of %b
++      if (!checkFormatExpr(FS, startSpecifier, specifierLen, Ex))
++        return false;
++    }
++
+     // Type check the second argument (char * for both %b and %D)
+     Ex = getDataArg(argIndex + 1);
+     const analyze_printf::ArgType &AT2 = ArgType::CStrTy;
+@@ -8277,8 +8292,9 @@ static void CheckFormatString(Sema &S, const FormatStr
+   }
+ 
+   if (Type == Sema::FST_Printf || Type == Sema::FST_NSString ||
+-      Type == Sema::FST_FreeBSDKPrintf || Type == Sema::FST_OSLog ||
+-      Type == Sema::FST_OSTrace) {
++      Type == Sema::FST_Kprintf || Type == Sema::FST_FreeBSDKPrintf ||
++      Type == Sema::FST_OSLog || Type == Sema::FST_OSTrace ||
++      Type == Sema::FST_Syslog) {
+     CheckPrintfHandler H(
+         S, FExpr, OrigFormatExpr, Type, firstDataArg, numDataArgs,
+         (Type == Sema::FST_NSString || Type == Sema::FST_OSTrace), Str,
+@@ -8288,7 +8304,7 @@ static void CheckFormatString(Sema &S, const FormatStr
+     if (!analyze_format_string::ParsePrintfString(H, Str, Str + StrLen,
+                                                   S.getLangOpts(),
+                                                   S.Context.getTargetInfo(),
+-                                            Type == Sema::FST_FreeBSDKPrintf))
++                Type == Sema::FST_Kprintf || Type == Sema::FST_FreeBSDKPrintf))
+       H.DoneProcessing();
+   } else if (Type == Sema::FST_Scanf) {
+     CheckScanfHandler H(S, FExpr, OrigFormatExpr, Type, firstDataArg,

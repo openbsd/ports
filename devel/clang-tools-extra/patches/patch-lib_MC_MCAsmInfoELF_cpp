@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_MC_MCAsmInfoELF_cpp,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+
+Do not use ident.
+
+Index: lib/MC/MCAsmInfoELF.cpp
+--- lib/MC/MCAsmInfoELF.cpp.orig
++++ lib/MC/MCAsmInfoELF.cpp
+@@ -28,7 +28,7 @@ MCSection *MCAsmInfoELF::getNonexecutableStackSection(
+ }
+ 
+ MCAsmInfoELF::MCAsmInfoELF() {
+-  HasIdentDirective = true;
++  HasIdentDirective = false;
+   WeakRefDirective = "\t.weak\t";
+   PrivateGlobalPrefix = ".L";
+   PrivateLabelPrefix = ".L";

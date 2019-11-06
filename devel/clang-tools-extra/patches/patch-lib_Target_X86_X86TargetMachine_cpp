@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_Target_X86_X86TargetMachine_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+Add a clang pass that identifies potential ROP gadgets and replaces ROP
+friendly instructions with safe alternatives. This initial commit fixes
+3 instruction forms that will lower to include a c3 (return) byte.
+Additional problematic instructions can be fixed incrementally using
+this framework.
+
+Index: lib/Target/X86/X86TargetMachine.cpp
+--- lib/Target/X86/X86TargetMachine.cpp.orig
++++ lib/Target/X86/X86TargetMachine.cpp
+@@ -505,6 +505,7 @@ void X86PassConfig::addPreEmitPass() {
+   }
+   addPass(createX86DiscriminateMemOpsPass());
+   addPass(createX86InsertPrefetchPass());
++  addPass(createX86FixupGadgetsPass());
+ }
+ 
+ void X86PassConfig::addPreEmitPass2() {

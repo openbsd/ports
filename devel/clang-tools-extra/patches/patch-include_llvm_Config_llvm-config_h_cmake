@@ -1,0 +1,28 @@
+$OpenBSD: patch-include_llvm_Config_llvm-config_h_cmake,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+
+When bsd.lib.mk builds shared libraries it builds with -DPIC which
+causes problems in the following files which use PIC as a variable name.
+Undefine PIC in llvm-config.h to minimise the diff to upstream LLVM.
+
+Index: include/llvm/Config/llvm-config.h.cmake
+--- include/llvm/Config/llvm-config.h.cmake.orig
++++ include/llvm/Config/llvm-config.h.cmake
+@@ -14,6 +14,18 @@
+ #ifndef LLVM_CONFIG_H
+ #define LLVM_CONFIG_H
+ 
++/*
++ * When bsd.lib.mk builds shared libraries it builds with -DPIC which 
++ * causes problems in the following files which use PIC as a variable name.
++ * undefine PIC here to minimise the diff to upstream LLVM
++ *
++ * include/llvm/MC/MCObjectFileInfo.h
++ * lib/MC/MCObjectFileInfo.cpp
++ * lib/Transforms/Scalar/LICM.cpp
++ * lib/Transforms/Utils/PredicateInfo.cpp
++ */
++#undef PIC
++
+ /* Define if LLVM_ENABLE_DUMP is enabled */
+ #cmakedefine LLVM_ENABLE_DUMP
+ 

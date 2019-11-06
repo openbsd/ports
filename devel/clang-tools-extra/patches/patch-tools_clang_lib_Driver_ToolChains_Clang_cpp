@@ -1,0 +1,124 @@
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+- Make LLVM create strict aligned code for OpenBSD/arm64.
+- Disable -fstrict-aliasing per default on OpenBSD.
+- Enable -fwrapv by default
+- Add ret protctor options as no-ops.
+- Add RETGUARD to clang for amd64. This security mechanism uses per-function
+  random cookies to protect access to function return instructions, with the
+  effect that the integrity of the return address is protected, and function
+  return instructions are harder to use in ROP gadgets.
+
+  On function entry the return address is combined with a per-function random
+  cookie and stored in the stack frame. The integrity of this value is verified
+  before function return, and if this check fails, the program aborts. In this way
+  RETGUARD is an improved stack protector, since the cookies are per-function. The
+  verification routine is constructed such that the binary space immediately
+  before each ret instruction is padded with int03 instructions, which makes these
+  return instructions difficult to use in ROP gadgets. In the kernel, this has the
+  effect of removing approximately 50% of total ROP gadgets, and 15% of unique
+  ROP gadgets compared to the 6.3 release kernel. Function epilogues are
+  essentially gadget free, leaving only the polymorphic gadgets that result from
+  jumping into the instruction stream partway through other instructions. Work to
+  remove these gadgets will continue through other mechanisms.
+- Add retguard for arm64.
+- Improve the X86FixupGadgets pass
+- On OpenBSD disable the malloc/calloc/realloc/free/str*dup builtins, since
+  they can perform strange transforms and optimizations.  Some of those could
+  gain a slight advantage, but would avoid the variety of important runtime
+  checks our malloc(3) code does.  In essence, the transforms performed are
+  considered "anti-mitigation".
+
+Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
+--- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
++++ tools/clang/lib/Driver/ToolChains/Clang.cpp
+@@ -3899,9 +3899,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+       OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
+   // We turn strict aliasing off by default if we're in CL mode, since MSVC
+   // doesn't do any TBAA.
+-  bool TBAAOnByDefault = !D.IsCLMode();
++  bool StrictAliasingDefault = !D.IsCLMode();
++  // We also turn off strict aliasing on OpenBSD.
++  if (getToolChain().getTriple().isOSOpenBSD())
++    StrictAliasingDefault = false;
+   if (!Args.hasFlag(options::OPT_fstrict_aliasing, StrictAliasingAliasOption,
+-                    options::OPT_fno_strict_aliasing, TBAAOnByDefault))
++                    options::OPT_fno_strict_aliasing, StrictAliasingDefault))
+     CmdArgs.push_back("-relaxed-aliasing");
+   if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
+                     options::OPT_fno_struct_path_tbaa))
+@@ -4527,7 +4530,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+                                       options::OPT_fno_strict_overflow)) {
+     if (A->getOption().matches(options::OPT_fno_strict_overflow))
+       CmdArgs.push_back("-fwrapv");
+-  }
++  } else if (getToolChain().getTriple().isOSOpenBSD())
++    CmdArgs.push_back("-fwrapv");
+ 
+   if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
+                                options::OPT_fno_reroll_loops))
+@@ -4544,9 +4548,44 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+                    false))
+     CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
+ 
+-  RenderSSPOptions(TC, Args, CmdArgs, KernelOrKext);
+   RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
+ 
++  // -ret-protector
++  unsigned RetProtector = 1;
++  if (Arg *A = Args.getLastArg(options::OPT_fno_ret_protector,
++        options::OPT_fret_protector)) {
++    if (A->getOption().matches(options::OPT_fno_ret_protector))
++      RetProtector = 0;
++    else if (A->getOption().matches(options::OPT_fret_protector))
++      RetProtector = 1;
++  }
++  if (RetProtector &&
++      ((getToolChain().getArch() == llvm::Triple::x86_64) ||
++       (getToolChain().getArch() == llvm::Triple::aarch64)) &&
++      !Args.hasArg(options::OPT_fno_stack_protector) &&
++      !Args.hasArg(options::OPT_pg)) {
++    CmdArgs.push_back(Args.MakeArgString("-D_RET_PROTECTOR"));
++    CmdArgs.push_back(Args.MakeArgString("-ret-protector"));
++    // Consume the stack protector arguments to prevent warning
++    Args.getLastArg(options::OPT_fstack_protector_all,
++        options::OPT_fstack_protector_strong,
++        options::OPT_fstack_protector,
++        options::OPT__param); // ssp-buffer-size
++  } else {
++    // If we're not using retguard, then do the usual stack protector
++    RenderSSPOptions(getToolChain(), Args, CmdArgs, KernelOrKext);
++  }
++
++  // -fixup-gadgets
++  if (Arg *A = Args.getLastArg(options::OPT_fno_fixup_gadgets,
++                               options::OPT_ffixup_gadgets)) {
++    CmdArgs.push_back(Args.MakeArgString(Twine("-mllvm")));
++    if (A->getOption().matches(options::OPT_fno_fixup_gadgets))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-fixup-gadgets=false")));
++    else if (A->getOption().matches(options::OPT_ffixup_gadgets))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-fixup-gadgets=true")));
++  }
++
+   // Translate -mstackrealign
+   if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
+                    false))
+@@ -5029,6 +5068,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+                                      options::OPT_fno_rewrite_imports, false);
+   if (RewriteImports)
+     CmdArgs.push_back("-frewrite-imports");
++
++  // Disable some builtins on OpenBSD because they are just not
++  // right...
++  if (getToolChain().getTriple().isOSOpenBSD()) {
++    CmdArgs.push_back("-fno-builtin-malloc");
++    CmdArgs.push_back("-fno-builtin-calloc");
++    CmdArgs.push_back("-fno-builtin-realloc");
++    CmdArgs.push_back("-fno-builtin-valloc");
++    CmdArgs.push_back("-fno-builtin-free");
++    CmdArgs.push_back("-fno-builtin-strdup");
++    CmdArgs.push_back("-fno-builtin-strndup");
++  }
+ 
+   // Enable rewrite includes if the user's asked for it or if we're generating
+   // diagnostics.

@@ -1,0 +1,123 @@
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+
+Add support for building against libestdc++ from ports-gcc.
+Use more *_p.a libraries from base when profiling is requested.
+
+Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
+--- tools/clang/lib/Driver/ToolChains/OpenBSD.cpp.orig
++++ tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
+@@ -12,6 +12,8 @@
+ #include "Arch/Sparc.h"
+ #include "CommonArgs.h"
+ #include "clang/Driver/Compilation.h"
++#include "clang/Driver/Driver.h"
++#include "clang/Driver/DriverDiagnostic.h"
+ #include "clang/Driver/Options.h"
+ #include "clang/Driver/SanitizerArgs.h"
+ #include "llvm/Option/ArgList.h"
+@@ -198,7 +200,13 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+     }
+     // FIXME: For some reason GCC passes -lgcc before adding
+     // the default system libraries. Just mimic this for now.
+-    CmdArgs.push_back("-lcompiler_rt");
++    if (ToolChain.GetCXXStdlibType(Args) == ToolChain::CST_Libcxx)
++      CmdArgs.push_back("-lcompiler_rt");
++    else {
++      CmdArgs.push_back("-L${LOCALBASE}/lib/gcc/${GCC_CONFIG}/${GCC_VER}");
++      CmdArgs.push_back("-L${LOCALBASE}/lib"); // XXX nasty
++      CmdArgs.push_back("-lgcc");
++    }
+ 
+     if (Args.hasArg(options::OPT_pthread)) {
+       if (!Args.hasArg(options::OPT_shared) && Args.hasArg(options::OPT_pg))
+@@ -214,7 +222,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+         CmdArgs.push_back("-lc");
+     }
+ 
+-    CmdArgs.push_back("-lcompiler_rt");
++    if (ToolChain.GetCXXStdlibType(Args) == ToolChain::CST_Libcxx)
++      CmdArgs.push_back("-lcompiler_rt");
++    else
++      CmdArgs.push_back("-lgcc");
+   }
+ 
+   if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
+@@ -255,16 +266,70 @@ OpenBSD::OpenBSD(const Driver &D, const llvm::Triple &
+   getFilePaths().push_back(getDriver().SysRoot + "/usr/lib");
+ }
+ 
+-void OpenBSD::AddCXXStdlibLibArgs(const ArgList &Args,
+-                                  ArgStringList &CmdArgs) const {
+-  bool Profiling = Args.hasArg(options::OPT_pg);
+-
+-  CmdArgs.push_back(Profiling ? "-lc++_p" : "-lc++");
+-  CmdArgs.push_back(Profiling ? "-lc++abi_p" : "-lc++abi");
+-}
+-
+ Tool *OpenBSD::buildAssembler() const {
+   return new tools::openbsd::Assembler(*this);
+ }
+ 
+ Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }
++
++ToolChain::CXXStdlibType OpenBSD::GetCXXStdlibType(const ArgList &Args) const {
++  if (Arg *A = Args.getLastArg(options::OPT_stdlib_EQ)) {
++    StringRef Value = A->getValue();
++    if (Value == "libstdc++")
++      return ToolChain::CST_Libstdcxx;
++    if (Value == "libc++")
++      return ToolChain::CST_Libcxx;
++
++    getDriver().Diag(clang::diag::err_drv_invalid_stdlib_name)
++        << A->getAsString(Args);
++  }
++  switch (getTriple().getArch()) {
++  case llvm::Triple::arm:
++  case llvm::Triple::aarch64:
++  case llvm::Triple::x86:
++  case llvm::Triple::x86_64:
++    return ToolChain::CST_Libcxx;
++    break;
++  default:
++    return ToolChain::CST_Libstdcxx;
++    break;
++  }
++}
++
++void OpenBSD::AddClangCXXStdlibIncludeArgs(const ArgList &DriverArgs,
++                                          ArgStringList &CC1Args) const {
++  if (DriverArgs.hasArg(options::OPT_nostdlibinc) ||
++      DriverArgs.hasArg(options::OPT_nostdincxx))
++    return;
++
++  switch (GetCXXStdlibType(DriverArgs)) {
++  case ToolChain::CST_Libcxx:
++    addSystemInclude(DriverArgs, CC1Args,
++                     getDriver().SysRoot + "/usr/include/c++/v1");
++    break;
++  case ToolChain::CST_Libstdcxx:
++    addSystemInclude(DriverArgs, CC1Args,
++                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}");
++    addSystemInclude(DriverArgs, CC1Args,
++                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/${GCC_CONFIG}");
++    addSystemInclude(DriverArgs, CC1Args,
++                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/backward");
++    break;
++  }
++}
++
++void OpenBSD::AddCXXStdlibLibArgs(const ArgList &Args,
++                                 ArgStringList &CmdArgs) const {
++  bool Profiling = Args.hasArg(options::OPT_pg);
++
++  switch (GetCXXStdlibType(Args)) {
++  case ToolChain::CST_Libcxx:
++    CmdArgs.push_back(Profiling ? "-lc++_p" : "-lc++");
++    CmdArgs.push_back(Profiling ? "-lc++abi_p" : "-lc++abi");
++    CmdArgs.push_back(Profiling ? "-lpthread_p" : "-lpthread");
++    break;
++  case ToolChain::CST_Libstdcxx:
++    CmdArgs.push_back("-lestdc++");
++    break;
++  }
++}
