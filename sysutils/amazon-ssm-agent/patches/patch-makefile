@@ -1,9 +1,9 @@
-$OpenBSD: patch-makefile,v 1.15 2019/10/19 10:20:15 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.16 2019/11/06 15:21:39 ajacoutot Exp $
 
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -47,7 +47,7 @@ checkstyle::
+@@ -41,7 +41,7 @@ checkstyle::
  coverage:: build-linux
  	$(BGO_SPACE)/Tools/src/coverage.sh github.com/aws/amazon-ssm-agent/agent/...
  
@@ -12,7 +12,7 @@ Index: makefile
  
  prepack:: cpy-plugins prepack-linux prepack-linux-arm64 prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -66,6 +66,8 @@ build-tests: build-tests-linux build-tests-windows
+@@ -60,6 +60,8 @@ build-tests: build-tests-linux build-tests-windows
  dev-build-linux: clean quick-integtest checkstyle pre-release build-linux build-tests-linux
  .PHONY: dev-build-freebsd
  dev-build-freebsd: clean quick-integtest checkstyle pre-release build-freebsd
@@ -21,7 +21,7 @@ Index: makefile
  .PHONY: dev-build-windows
  dev-build-windows: clean quick-integtest checkstyle pre-release build-windows build-tests-windows
  .PHONY: dev-build-linux-386
-@@ -167,6 +169,21 @@ build-freebsd: checkstyle copy-src pre-build
+@@ -158,6 +160,21 @@ build-freebsd: checkstyle copy-src pre-build
  	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-session-logger -v \
  					$(BGO_SPACE)/agent/session/logging/main.go
  	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-session-worker -v \
