@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.131 2019/11/01 09:56:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.132 2019/11/06 15:35:24 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -173,6 +173,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/bigtable/clusters.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/bigtable/clusters.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/bigtable/instances.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/bigtable/instances.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/bigtable/operations.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/bigtable/operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/bigtable/util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/bigtable/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/billing/
@@ -2237,6 +2239,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/arguments.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/arguments.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/operations.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/operations.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/utils.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/lifesciences/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/lifesciences/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/lifesciences/__init__.pyc
@@ -2617,6 +2621,11 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/tasks/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/anthos/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/anthos/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/anthos/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/anthos/binary_operations.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/anthos/binary_operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/apis/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/apis/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/apis/__init__.pyc
@@ -4783,7 +4792,17 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1alpha/secre
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1alpha/secretmanager_v1alpha_client.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1alpha/secretmanager_v1alpha_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1alpha/secretmanager_v1alpha_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/secretmanager_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/secretmanager_v1beta1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/secretmanager_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager/v1beta1/secretmanager_v1beta1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager_v1alpha.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/secretmanager_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/securitycenter/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/securitycenter/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/securitycenter/__init__.pyc
@@ -5441,6 +5460,8 @@ google-cloud-sdk/lib/surface/active_directory/operations/list.yaml
 google-cloud-sdk/lib/surface/ai_platform/
 google-cloud-sdk/lib/surface/ai_platform/__init__.py
 google-cloud-sdk/lib/surface/ai_platform/__init__.pyc
+google-cloud-sdk/lib/surface/ai_platform/explain.py
+google-cloud-sdk/lib/surface/ai_platform/explain.pyc
 google-cloud-sdk/lib/surface/ai_platform/jobs/
 google-cloud-sdk/lib/surface/ai_platform/jobs/__init__.py
 google-cloud-sdk/lib/surface/ai_platform/jobs/__init__.pyc
@@ -5909,6 +5930,11 @@ google-cloud-sdk/lib/surface/builds/cancel.pyc
 google-cloud-sdk/lib/surface/builds/deploy/
 google-cloud-sdk/lib/surface/builds/deploy/__init__.py
 google-cloud-sdk/lib/surface/builds/deploy/__init__.pyc
+google-cloud-sdk/lib/surface/builds/deploy/configure/
+google-cloud-sdk/lib/surface/builds/deploy/configure/__init__.py
+google-cloud-sdk/lib/surface/builds/deploy/configure/__init__.pyc
+google-cloud-sdk/lib/surface/builds/deploy/configure/gke.py
+google-cloud-sdk/lib/surface/builds/deploy/configure/gke.pyc
 google-cloud-sdk/lib/surface/builds/deploy/gke.py
 google-cloud-sdk/lib/surface/builds/deploy/gke.pyc
 google-cloud-sdk/lib/surface/builds/describe.py
@@ -6566,6 +6592,11 @@ google-cloud-sdk/lib/surface/compute/instances/update_access_config.py
 google-cloud-sdk/lib/surface/compute/instances/update_access_config.pyc
 google-cloud-sdk/lib/surface/compute/instances/update_container.py
 google-cloud-sdk/lib/surface/compute/instances/update_container.pyc
+google-cloud-sdk/lib/surface/compute/instances/vulnerabilities/
+google-cloud-sdk/lib/surface/compute/instances/vulnerabilities/__init__.py
+google-cloud-sdk/lib/surface/compute/instances/vulnerabilities/__init__.pyc
+google-cloud-sdk/lib/surface/compute/instances/vulnerabilities/list.py
+google-cloud-sdk/lib/surface/compute/instances/vulnerabilities/list.pyc
 google-cloud-sdk/lib/surface/compute/interconnects/
 google-cloud-sdk/lib/surface/compute/interconnects/__init__.py
 google-cloud-sdk/lib/surface/compute/interconnects/__init__.pyc
@@ -8963,8 +8994,15 @@ google-cloud-sdk/lib/surface/labelmanager/keys/__init__.py
 google-cloud-sdk/lib/surface/labelmanager/keys/__init__.pyc
 google-cloud-sdk/lib/surface/labelmanager/keys/create.py
 google-cloud-sdk/lib/surface/labelmanager/keys/create.pyc
+google-cloud-sdk/lib/surface/labelmanager/keys/describe.py
+google-cloud-sdk/lib/surface/labelmanager/keys/describe.pyc
 google-cloud-sdk/lib/surface/labelmanager/keys/list.py
 google-cloud-sdk/lib/surface/labelmanager/keys/list.pyc
+google-cloud-sdk/lib/surface/labelmanager/operations/
+google-cloud-sdk/lib/surface/labelmanager/operations/__init__.py
+google-cloud-sdk/lib/surface/labelmanager/operations/__init__.pyc
+google-cloud-sdk/lib/surface/labelmanager/operations/describe.py
+google-cloud-sdk/lib/surface/labelmanager/operations/describe.pyc
 google-cloud-sdk/lib/surface/lifesciences/
 google-cloud-sdk/lib/surface/lifesciences/__init__.py
 google-cloud-sdk/lib/surface/lifesciences/__init__.pyc
