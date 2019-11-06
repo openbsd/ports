@@ -1,4 +1,4 @@
-$OpenBSD: patch-MANUAL,v 1.1 2017/07/10 20:10:36 sthen Exp $
+$OpenBSD: patch-MANUAL,v 1.2 2019/11/06 12:45:45 naddy Exp $
 
 Index: MANUAL
 --- MANUAL.orig
@@ -20,7 +20,7 @@ Index: MANUAL
  
  Remove any networking config from /etc/ that conflicts with nsh, such
  as /etc/hostname.*, /etc/mygate, and daemons from /etc/rc.conf.local that
-@@ -145,11 +143,14 @@ their configuration file through NSH.)
+@@ -145,12 +143,15 @@ their configuration file through NSH.)
  
  Add nsh's start command to the top of /etc/rc.local:
  
@@ -31,9 +31,53 @@ Index: MANUAL
  
 -nsh -vi /etc/nshrc | tee /var/run/nsh.out
 +/usr/local/bin/nsh -vi /etc/nshrc
-+
+ 
 +In case you miss it during boot, system console output is also logged in the
 +kernel message buffer and can be seen with "dmesg -s".
- 
++
  You are done.  When NSH starts from /etc/rc.local, it will automatically load up
  the network configuration into the kernel.  At this point, you are free to
+ view and manipulate the configuration from nsh.
+@@ -843,7 +844,6 @@ nsh(p)/ip ?
+   ipip                Allow IP-in-IP Encapsulation
+   gre                 Allow Generic Route Encapsulation
+   wccp                Allow Web Cache Control Protocol
+-  mobileip            Allow Mobile IP Encapsulation
+   etherip             Allow Ether-IP Encapsulation
+   ipcomp              Allow IP Compression
+   esp                 Allow Encapsulated Security Payload
+@@ -901,14 +901,6 @@ nsh(p)/ip wccp
+ Allow GRE-based Web Cache Control Protocol packets to manage caching device.
+ Must be used to enable WCCP on gre interfaces.
+ 
+-[no] ip mobileip
+-----------------
+-
+-nsh(p)/ip mobileip
+-
+-Allow GRE-based MobileIP encapsulation.  Must be used to enable MobileIP
+-operation on gre interfaces.
+-
+ [no] ip etherip
+ ---------------
+ 
+@@ -1456,16 +1448,11 @@ There are several special interfaces.  
+ 
+ gre
+ ---
+-The gre interface allows for tunnel construction using the Cisco GRE or
+-Mobile-IP (RFC 2004) encapsulation protocols.  You can use the tunnel 
+-command under interface mode to create a tunnel.
++The gre interface allows for tunnel construction using the Cisco GRE
++encapsulation protocol.  You can use the tunnel command under interface
++mode to create a tunnel.
+ 
+ nsh(interface-gre0)/tunnel 1.2.3.4 5.5.5.5
+-
+-Two link flags exist for gre.  Link flag 0, set by default, enables GRE mode.
+-The lack of link flag 0 enables MobileIP mode.  
+-
+-nsh(interface-gre0)/no link 0
+ 
+ enc (IPsec Loopback)
+ ---

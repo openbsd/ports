@@ -1,0 +1,13 @@
+$OpenBSD: patch-commands_c,v 1.6 2019/11/06 12:45:45 naddy Exp $
+
+Index: commands.c
+--- commands.c.orig
++++ commands.c
+@@ -253,7 +253,6 @@ Menu iptab[] = {
+ 	{ "ipip",	"Allow IP-in-IP Encapsulation", CMPL0 0, 0, 0, 0, ipsysctl },
+ 	{ "gre",	"Allow Generic Route Encapsulation", CMPL0 0, 0, 0, 0, ipsysctl },
+ 	{ "wccp",	"Allow Web Cache Control Protocol", CMPL0 0, 0, 0, 0, ipsysctl },
+-	{ "mobileip",	"Allow Mobile IP Encapsulation", CMPL0 0, 0, 0, 0, ipsysctl },
+ 	{ "etherip",	"Allow Ether-IP Encapsulation",	CMPL0 0, 0, 0, 0, ipsysctl },
+ 	{ "ipcomp",	"Allow IP Compression",		CMPL0 0, 0, 0, 0, ipsysctl },	
+ 	{ "esp",	"Allow Encapsulated Security Payload", CMPL0 0, 0, 0, 0, ipsysctl },

@@ -1,0 +1,13 @@
+$OpenBSD: patch-sysctl_c,v 1.7 2019/11/06 12:45:45 naddy Exp $
+
+Index: sysctl.c
+--- sysctl.c.orig
++++ sysctl.c
+@@ -100,7 +100,6 @@ struct ipsysctl ipsysctls[] = {
+ { "ipip",		{ CTL_NET, PF_INET, IPPROTO_IPIP, IPIPCTL_ALLOW, MIB_STOP, 0 },		0, 1	},
+ { "gre",		{ CTL_NET, PF_INET, IPPROTO_GRE, GRECTL_ALLOW, MIB_STOP, 0 },		0, 1	},
+ { "wccp",		{ CTL_NET, PF_INET, IPPROTO_GRE, GRECTL_WCCP, MIB_STOP, 0 },		0, 1	},
+-{ "mobileip",		{ CTL_NET, PF_INET, IPPROTO_MOBILE, MOBILEIPCTL_ALLOW, MIB_STOP, 0 },	0, 1	},
+ { "etherip",		{ CTL_NET, PF_INET, IPPROTO_ETHERIP,ETHERIPCTL_ALLOW, MIB_STOP, 0 },	0, 1	},
+ { "ipcomp",		{ CTL_NET, PF_INET, IPPROTO_IPCOMP, IPCOMPCTL_ENABLE, MIB_STOP, 0 },	0, 1	},
+ { "esp",		{ CTL_NET, PF_INET, IPPROTO_ESP, ESPCTL_ENABLE, MIB_STOP, 0 },		0, 0	},
