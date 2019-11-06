@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.41 2019/10/28 15:55:49 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.42 2019/11/06 14:47:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -186,7 +186,7 @@ sub find_new_dirs
 		next if defined $v->{category};
 		if (defined $v->{tried}) {
 			# log error the first time only!
-			$self->{engine}->add_fatal($v, "tried and didn't get it") 
+			$self->{engine}->add_fatal($v, ["tried and didn't get it"]) 
 			    if !defined $v->{errored};
 			$v->{errored} = 1;
 			$self->{errors}++;

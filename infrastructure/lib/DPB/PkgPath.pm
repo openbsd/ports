@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.56 2019/11/06 14:01:37 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.57 2019/11/06 14:47:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -345,12 +345,7 @@ sub break
 {
 
 	my ($self, $why) = @_;
-	# breakage MUST fit as a singled line for engine.log
-	if (defined $self->{broken}) {
-		$self->{broken} .= " $why";
-	} else {
-		$self->{broken} = $why;
-	}
+	push @{$self->{broken}}, $why;
 }
 
 1;
