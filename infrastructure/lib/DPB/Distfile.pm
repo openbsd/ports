@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.18 2019/11/06 14:06:47 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.19 2019/11/06 14:21:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -54,29 +54,29 @@ sub create
 # complete object with sha/size info, error out if not same info
 sub complete
 {
-	my ($self, $file, $short, $site, $distinfo, $v, $repo) = @_;
+	my ($self, $file, $short, $site, $distinfo, $fname, $v, $repo) = @_;
 	my $sz = $distinfo->{size}{$file};
 	my $sha = $distinfo->{sha}{$file};
 	my $error = 0;
 	if (!defined $sz && !defined $sha) {
-		$v->break("Missing info for $file");
+		$v->break("Missing info for $file in $fname");
 		return;
 	}
 	if (!defined $sz) {
-		$v->break("Missing size for $file");
+		$v->break("Missing size for $file in $fname");
 		return;
 	}
 	if (!defined $sha) {
-		$v->break("Missing sha for $file");
+		$v->break("Missing sha for $file in $fname");
 		return;
 	}
 	if (defined $self->{sz}) {
 		if ($self->{sz} != $sz) {
-			$v->break("Inconsistent info for $file: $self->{sz} vs $sz(".$v->fullpkgpath." vs ".$self->{path}->fullpkgpath.")");
+			$v->break("Inconsistent info for $file in $fname: $self->{sz} vs $sz(".$v->fullpkgpath." vs ".$self->{path}->fullpkgpath.")");
 			$error = 1;
 		}
 		if (!$self->{sha}->equals($sha)) {
-			$v->break("Inconsistent info for $file ". 
+			$v->break("Inconsistent info for $file  in $fname". 
 			    $self->{sha}->stringize. " vs ". $sha->stringize.
 			    "(".$v->fullpkgpath." vs ".
 			    $self->{path}->fullpkgpath.")");

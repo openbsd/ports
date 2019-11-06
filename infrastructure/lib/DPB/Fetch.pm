@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.82 2019/10/23 10:04:39 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.83 2019/11/06 14:21:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -267,9 +267,9 @@ sub build_distinfo
 		$checksum_file = $checksum_file->string;
 		# collapse identical checksum files together
 		$checksum_file =~ s,/[^/]+/\.\./,/,g;
+		my $fname = $self->{state}->anchor($checksum_file);
 		$self->{cache}{$checksum_file} //=
-		    $self->read_checksums(
-			$self->{state}->anchor($checksum_file));
+		    $self->read_checksums($fname);
 		my $checksums = $self->{cache}{$checksum_file};
 
 		my $files = {};
@@ -287,7 +287,7 @@ sub build_distinfo
 			}
 			return DPB::Distfile->new($arg, $url, $dir,
 			    $info->{$site},
-			    $checksums, $v, $self);
+			    $checksums, $fname, $v, $self);
 		};
 
 		for my $d ((keys %{$info->{DISTFILES}}), (keys %{$info->{PATCHFILES}})) {
