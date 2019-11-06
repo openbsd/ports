@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.8 2018/08/18 21:05:48 pvk Exp $
+$OpenBSD: patch-configure,v 1.9 2019/11/06 10:27:36 pvk Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5495,7 +5495,7 @@ fi
+@@ -5500,7 +5500,7 @@ fi
  # ping seems to take one of two formats for count (N)
  # BSD: ping -c N host
  # SVR: ping host N

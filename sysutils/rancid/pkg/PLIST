@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/05/18 00:20:59 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/11/06 10:27:36 pvk Exp $
 @conflict par-*
 @newgroup _rancid:613
 @newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
@@ -20,7 +20,6 @@ bin/cssrancid
 bin/dllogin
 bin/elogin
 bin/erancid
-bin/f10rancid
 bin/f5rancid
 bin/flogin
 bin/fnlogin
@@ -55,7 +54,6 @@ bin/rivlogin
 bin/rivrancid
 bin/rrancid
 bin/rtftpcopy
-bin/srancid
 bin/tlogin
 bin/trancid
 bin/ulogin
@@ -72,6 +70,8 @@ lib/rancid/arcos.pm
 lib/rancid/bigip.pm
 lib/rancid/ciscowlc.pm
 lib/rancid/dell.pm
+lib/rancid/dnos10.pm
+lib/rancid/dnos9.pm
 lib/rancid/edgemax.pm
 lib/rancid/edgerouter.pm
 lib/rancid/exos.pm
@@ -89,13 +89,13 @@ lib/rancid/nxos.pm
 lib/rancid/panos.pm
 lib/rancid/rancid.pm
 lib/rancid/rbt.pm
+lib/rancid/smc.pm
 lib/rancid/sros.pm
 lib/rancid/vrp.pm
 lib/rancid/wavesvros.pm
 @man man/man1/agmrancid.1
 @man man/man1/alogin.1
 @man man/man1/anlogin.1
-@man man/man1/anrancid.1
 @man man/man1/arancid.1
 @comment man/man1/arrancid.1
 @man man/man1/avologin.1
@@ -110,7 +110,6 @@ lib/rancid/wavesvros.pm
 @man man/man1/dllogin.1
 @man man/man1/elogin.1
 @man man/man1/erancid.1
-@man man/man1/f10rancid.1
 @man man/man1/f5rancid.1
 @man man/man1/flogin.1
 @man man/man1/fnlogin.1
@@ -142,7 +141,6 @@ lib/rancid/wavesvros.pm
 @man man/man1/rivlogin.1
 @man man/man1/rivrancid.1
 @man man/man1/rrancid.1
-@man man/man1/srancid.1
 @man man/man1/tlogin.1
 @man man/man1/trancid.1
 @man man/man1/ulogin.1

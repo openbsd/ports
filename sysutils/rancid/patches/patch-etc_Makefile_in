@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.6 2018/08/18 21:05:48 pvk Exp $
+$OpenBSD: patch-etc_Makefile_in,v 1.7 2019/11/06 10:27:36 pvk Exp $
 Index: etc/Makefile.in
 --- etc/Makefile.in.orig
 +++ etc/Makefile.in
@@ -11,7 +11,7 @@ Index: etc/Makefile.in
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -538,30 +538,10 @@ uninstall-am: uninstall-pkgdataDATA uninstall-sysconfD
+@@ -542,30 +542,10 @@ uninstall-am: uninstall-pkgdataDATA uninstall-sysconfD
  
  
  install-data-local: all

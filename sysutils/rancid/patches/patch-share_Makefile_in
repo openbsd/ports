@@ -1,4 +1,4 @@
-$OpenBSD: patch-share_Makefile_in,v 1.2 2018/08/18 21:05:48 pvk Exp $
+$OpenBSD: patch-share_Makefile_in,v 1.3 2019/11/06 10:27:36 pvk Exp $
 Index: share/Makefile.in
 --- share/Makefile.in.orig
 +++ share/Makefile.in
@@ -11,7 +11,7 @@ Index: share/Makefile.in
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -277,8 +277,7 @@ top_srcdir = @top_srcdir@
+@@ -279,8 +279,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign
  pkgdata_SCRIPTS = rancid-cvspurge rtrfilter downreport
  dist_pkgdata_SCRIPTS = getipacctg

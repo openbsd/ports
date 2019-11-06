@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2018/08/18 21:05:48 pvk Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2019/11/06 10:27:36 pvk Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
@@ -11,7 +11,7 @@ Index: Makefile.in
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -352,7 +352,7 @@ top_build_prefix = @top_build_prefix@
+@@ -354,7 +354,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
