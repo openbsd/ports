@@ -1,0 +1,16 @@
+DSVPN is a Dead Simple VPN, designed to address the most common use case
+for using a VPN: client -> untrusted network -> vpn server -> the Internet
+
+* Runs on TCP. Works pretty much everywhere, including on public WiFi
+  where only TCP/443 is open or reliable.
+* Uses only modern cryptography, with formally verified implementations.
+* Low and constant memory footprint.
+* Small (~25 KB), with an equally small and readable code base.
+  No external dependencies.
+* No configuration file. No post-configuration. Run a single-line command
+  on the server, a similar one on the client and you're done. No firewall
+  and routing rules to manually mess with.
+* Works with Linux, MacOS and OpenBSD, as well as DragonFly BSD, FreeBSD
+  and NetBSD in client and point-to-point modes.
+* Doesn't leak between reconnects if the network doesn't change.
+  Blocks IPv6 on the client to prevent IPv6 leaks.

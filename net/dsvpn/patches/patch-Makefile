@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2019/11/06 15:01:18 sthen Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -5,7 +5,6 @@ all: dsvpn
+ 
+ dsvpn: Makefile src/vpn.c src/charm.c src/os.c include/charm.h include/vpn.h include/os.h
+ 	$(CC) $(CFLAGS) -Iinclude -o $@ src/vpn.c src/charm.c src/os.c
+-	strip $@
+ 
+ install: dsvpn
+ 	install -m 0755 dsvpn $(PREFIX)/sbin
