@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:45:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/11/06 15:55:57 sthen Exp $
 
 COMMENT =	Python 2 and 3 compatibility library
-MODPY_EGG_VERSION =	1.12.0
+MODPY_EGG_VERSION =	1.13.0
 DISTNAME =	six-${MODPY_EGG_VERSION}
 PKGNAME =	py-six-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
 HOMEPAGE =	http://pythonhosted.org/six/
 
