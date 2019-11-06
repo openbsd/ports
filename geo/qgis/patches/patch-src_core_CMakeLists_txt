@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_core_CMakeLists_txt,v 1.22 2019/10/31 10:45:04 landry Exp $
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.23 2019/11/06 07:02:03 landry Exp $
 
 takes many hours with the default (225)
+
+https://bugreports.qt.io/browse/QTBUG-57672
+https://bugs.llvm.org/show_bug.cgi?id=42515
 
 Index: src/core/CMakeLists.txt
 --- src/core/CMakeLists.txt.orig
