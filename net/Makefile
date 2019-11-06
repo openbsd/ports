@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1146 2019/11/06 14:48:04 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1147 2019/11/06 15:01:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -81,6 +81,7 @@
      SUBDIR += doc
      SUBDIR += doh
      SUBDIR += dsocks
+     SUBDIR += dsvpn
      SUBDIR += dxpc
      SUBDIR += echoping
      SUBDIR += ejabberd
