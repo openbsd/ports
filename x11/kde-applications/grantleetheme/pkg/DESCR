@@ -1,0 +1,3 @@
+GrantleeTheme library provides a class for loading theme packages containing
+set of templates. The library provides a KDE-specific Grantlee plugins that
+introduce new tags into the Grantlee theme syntax.
