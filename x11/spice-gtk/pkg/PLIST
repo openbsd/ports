@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/23 14:45:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/11/07 10:09:09 ajacoutot Exp $
 @bin bin/spicy
 @bin bin/spicy-screenshot
 @bin bin/spicy-stats
@@ -13,6 +13,7 @@ include/spice-client-glib-2.0/channel-record.h
 include/spice-client-glib-2.0/channel-smartcard.h
 include/spice-client-glib-2.0/channel-usbredir.h
 include/spice-client-glib-2.0/channel-webdav.h
+include/spice-client-glib-2.0/qmp-port.h
 include/spice-client-glib-2.0/smartcard-manager.h
 include/spice-client-glib-2.0/spice-audio.h
 include/spice-client-glib-2.0/spice-channel.h
@@ -80,13 +81,16 @@ share/gtk-doc/html/spice-gtk/left.png
 share/gtk-doc/html/spice-gtk/object-tree.html
 share/gtk-doc/html/spice-gtk/right-insensitive.png
 share/gtk-doc/html/spice-gtk/right.png
+share/gtk-doc/html/spice-gtk/spice-gtk-SpiceQmpPort.html
 share/gtk-doc/html/spice-gtk/spice-gtk-SpiceURI.html
 share/gtk-doc/html/spice-gtk/spice-gtk-Utilities.html
-share/gtk-doc/html/spice-gtk/spice-gtk-Version-Information.html
+share/gtk-doc/html/spice-gtk/spice-gtk-spice-version.html
 share/gtk-doc/html/spice-gtk/spice-gtk.devhelp2
 share/gtk-doc/html/spice-gtk/style.css
 share/gtk-doc/html/spice-gtk/up-insensitive.png
 share/gtk-doc/html/spice-gtk/up.png
+share/locale/cs/LC_MESSAGES/spice-gtk.mo
+share/locale/de/LC_MESSAGES/spice-gtk.mo
 share/locale/fr/LC_MESSAGES/spice-gtk.mo
 share/locale/it/LC_MESSAGES/spice-gtk.mo
 share/vala/vapi/spice-client-glib-2.0.deps
