@@ -1,4 +1,4 @@
-$OpenBSD: patch-docs_bin_testing_formatter_sh,v 1.1 2019/10/22 18:04:12 pvk Exp $
+$OpenBSD: patch-docs_bin_testing_formatter_sh,v 1.2 2019/11/07 13:33:20 pvk Exp $
 
 Index: docs/bin/testing_formatter.sh
 --- docs/bin/testing_formatter.sh.orig
@@ -9,7 +9,7 @@ Index: docs/bin/testing_formatter.sh
  
  FILENAME=../docsite/rst/dev_guide/testing/sanity/index.rst
  
-@@ -21,6 +21,6 @@ $(for test in $(../../test/runner/ansible-test sanity 
+@@ -21,6 +21,6 @@ $(for test in $(../../bin/ansible-test sanity --list-t
  EOF
  
  # Put file into place if it has changed

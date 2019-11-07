@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.111 2019/10/22 18:04:12 pvk Exp $
+# $OpenBSD: Makefile,v 1.112 2019/11/07 13:33:20 pvk Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
 
-MODPY_EGG_VERSION =	2.8.6
+MODPY_EGG_VERSION =	2.9.0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
@@ -12,7 +12,7 @@ CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.ansible.com/
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 MULTI_PACKAGES =	-main -html
 
@@ -25,7 +25,8 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
+BUILD_DEPENDS =		devel/py-straight.plugin${MODPY_FLAVOR} \
+			textproc/py-sphinx${MODPY_FLAVOR} \
 			textproc/py-sphinx-notfound-page${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}
 RUN_DEPENDS =		net/py-netaddr${MODPY_FLAVOR} \

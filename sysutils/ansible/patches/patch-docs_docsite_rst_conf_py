@@ -1,20 +1,23 @@
-$OpenBSD: patch-docs_docsite_rst_conf_py,v 1.1 2019/10/22 18:04:12 pvk Exp $
+$OpenBSD: patch-docs_docsite_rst_conf_py,v 1.2 2019/11/07 13:33:20 pvk Exp $
 
 Do not set URL prefixes in html docs
 
 Index: docs/docsite/rst/conf.py
 --- docs/docsite/rst/conf.py.orig
 +++ docs/docsite/rst/conf.py
-@@ -148,7 +148,7 @@ html_context = {
+@@ -143,9 +143,9 @@ html_context = {
+     'github_version': 'devel/docs/docsite/rst/',
+     'github_module_version': 'devel/lib/ansible/modules/',
      'current_version': version,
-     'latest_version': '2.8',
+-    'latest_version': '2.8',
++    'latest_version': '2.9',
      # list specifically out of order to make latest work
--    'available_versions': ('latest', '2.7', '2.6', 'devel')
-+    'available_versions': ('latest', '2.8')
+-    'available_versions': ('latest', '2.7', '2.6', 'devel'),
++    'available_versions': ('latest', '2.9'),
+     'css_files': ('_static/ansible.css',  # overrides to the standard theme
+                   ),
  }
- 
- # The style sheet to use for HTML and HTML Help pages. A file of that name
-@@ -220,12 +220,12 @@ htmlhelp_basename = 'Poseidodoc'
+@@ -219,12 +219,12 @@ htmlhelp_basename = 'Poseidodoc'
  # the extension builds 404.rst into a location-agnostic 404 page
  #
  # default is `en` - using this for the sub-site:
