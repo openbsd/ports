@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 20:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/11/07 21:50:52 fcambus Exp $
 
 COMMENT=	web server log file analysis program
 
@@ -6,31 +6,28 @@ RB_V=		30
 V=		2.23-08-RB${RB_V}
 DISTNAME=	webalizer-${V}-src
 PKGNAME=	webalizer-${V:S/-/./g:S/RB//}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	www
 
-HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
+HOMEPAGE=	https://www.patrickfrei.ch/webalizer/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/rb${RB_V}/
+MASTER_SITES=	https://www.patrickfrei.ch/webalizer/rb${RB_V}/
 
-WANTLIB=	GeoIP c db gd m png pthread z
+WANTLIB +=	c db gd m png z
 
 LIB_DEPENDS=	databases/db/v4 \
-		graphics/gd \
-		net/GeoIP
+		graphics/gd
 
 WRKDIST=	${WRKDIR}/webalizer-${V}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-dns \
-		--enable-geoip \
 		--with-db=${LOCALBASE}/include/db4 \
 		--with-dblib=${LOCALBASE}/lib/db4 \
 		--with-gd=${LOCALBASE}/include \
-		--with-geodb=/var/db/GeoDB
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes
