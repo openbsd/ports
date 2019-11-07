@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.932 2019/11/07 21:52:56 kmos Exp $
+# $OpenBSD: Makefile,v 1.933 2019/11/07 21:56:19 kmos Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -475,6 +475,8 @@
      SUBDIR += py-requests-oauthlib,python3
      SUBDIR += py-requests-toolbelt
      SUBDIR += py-requests-toolbelt,python3
+     SUBDIR += py-responses
+     SUBDIR += py-responses,python3
      SUBDIR += py-routes
      SUBDIR += py-selenium
      SUBDIR += py-selenium,python3
