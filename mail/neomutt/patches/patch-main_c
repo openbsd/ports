@@ -1,6 +1,13 @@
-$OpenBSD: patch-main_c,v 1.16 2019/11/03 00:23:10 sthen Exp $
+$OpenBSD: patch-main_c,v 1.17 2019/11/07 09:38:55 sthen Exp $
 
 Pledge
+
+Last chunk,
+
+From e48d4aa26f076825b477d286e9053a2e3baaefea Mon Sep 17 00:00:00 2001
+From: Richard Russon <rich@flatcap.org>
+Date: Tue, 5 Nov 2019 22:35:26 +0000
+Subject: [PATCH] fix crash sending message from command line
 
 Index: main.c
 --- main.c.orig
@@ -36,3 +43,13 @@ Index: main.c
    /* collapse remaining argv */
    while (optind < argc)
      argv[nargc++] = argv[optind++];
+@@ -844,7 +868,8 @@ int main(int argc, char *argv[], char *envp[])
+   notify_observer_add(Config->notify, NT_CONFIG, 0, mutt_log_observer, 0);
+   notify_observer_add(Config->notify, NT_CONFIG, 0, mutt_menu_config_observer, 0);
+   notify_observer_add(Config->notify, NT_CONFIG, 0, mutt_reply_observer, 0);
+-  notify_observer_add(Colors->notify, NT_COLOR, 0, mutt_menu_color_observer, 0);
++  if (Colors)
++     notify_observer_add(Colors->notify, NT_COLOR, 0, mutt_menu_color_observer, 0);
+ 
+   if (sendflags & SEND_POSTPONED)
+   {
