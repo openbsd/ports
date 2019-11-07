@@ -1,0 +1,20 @@
+$OpenBSD: patch-gio_gdesktopappinfo_c,v 1.1 2019/11/07 14:26:22 landry Exp $
+
+From bffe058550fc31ad372858ac805ca6f7cf7c2aab Mon Sep 17 00:00:00 2001
+From: Philip Withnall <withnall@endlessm.com>
+Date: Fri, 11 Oct 2019 21:33:47 +0100
+Subject: [PATCH] gdesktopappinfo: Allocate DesktopFileDir structs dynamically
+
+Index: gio/gdesktopappinfo.c
+--- gio/gdesktopappinfo.c.orig
++++ gio/gdesktopappinfo.c
+@@ -1487,7 +1487,8 @@ desktop_file_dirs_lock (void)
+ 
+   /* If the XDG dirs configuration has changed (expected only during tests),
+    * clear and reload the state. */
+-  if (g_strcmp0 (desktop_file_dirs_config_dir, user_config_dir) != 0)
++  if (desktop_file_dirs_config_dir != NULL &&
++      g_strcmp0 (desktop_file_dirs_config_dir, user_config_dir) != 0)
+     {
+       g_debug ("%s: Resetting desktop app info dirs from %s to %s",
+                G_STRFUNC, desktop_file_dirs_config_dir, user_config_dir);
