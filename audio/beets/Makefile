@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/04 20:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/11/07 21:58:27 kmos Exp $
 
 COMMENT=	CLI tools to manage music collections
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
 MODPY_PI=	Yes
+MODPY_PYTEST=	Yes
 
 MODPY_VERSION= ${MODPY_DEFAULT_VERSION_3}
 
@@ -39,8 +40,10 @@ post-install:
 
 # also wants responses, rarfile: currently fetches from pypi at test time
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	audio/py-mpd2${MODPY_FLAVOR} \
+TEST_DEPENDS=	archivers/py-rarfile${MODPY_FLAVOR} \
+		audio/py-mpd2${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
-		www/py-flask${MODPY_FLAVOR}
+		www/py-flask${MODPY_FLAVOR} \
+		www/py-responses${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
