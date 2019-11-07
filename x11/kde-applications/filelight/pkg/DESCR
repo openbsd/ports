@@ -1,0 +1,10 @@
+Filelight is an application to visualize the disk usage on your computer.
+
+Features:
+
+ - Scan local, remote or removable disks
+ - Configurable color schemes
+ - File system navigation by mouse clicks
+ - Information about files and directories on hovering
+ - Files and directories can be copied or removed directly from the context menu
+ - Integration into Konqueror and Krusader
