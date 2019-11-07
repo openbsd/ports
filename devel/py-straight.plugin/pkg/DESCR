@@ -1,0 +1,3 @@
+Straight Plugin provides a type of plugin you can create from almost any
+existing Python modules, and an easy way for outside developers to add
+functionality and customization to your projects with their own plugins.

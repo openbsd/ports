@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:56:14 pvk Exp $
+lib/python${MODPY_VERSION}/site-packages/straight/
+lib/python${MODPY_VERSION}/site-packages/straight.plugin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/straight.plugin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/straight.plugin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/straight.plugin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/straight.plugin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/straight.plugin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/straight.plugin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/straight/plugin/
+lib/python${MODPY_VERSION}/site-packages/straight/plugin/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}loaders.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/straight/plugin/loaders.py
+lib/python${MODPY_VERSION}/site-packages/straight/plugin/manager.py
