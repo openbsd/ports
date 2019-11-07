@@ -1,0 +1,27 @@
+$OpenBSD: patch-test_compliancetest_py,v 1.1 2019/11/07 14:39:29 kmos Exp $
+
+Making it work with py-test. Remove references to removed saved_class.
+
+Index: test/compliancetest.py
+--- test/compliancetest.py.orig
++++ test/compliancetest.py
+@@ -6,9 +6,6 @@ import lockfile
+ 
+ 
+ class ComplianceTest(object):
+-    def __init__(self):
+-        self.saved_class = lockfile.LockFile
+-
+     def _testfile(self):
+         """Return platform-appropriate file.  Helper for tests."""
+         import tempfile
+@@ -29,7 +26,8 @@ class ComplianceTest(object):
+             else:
+                 raise SystemError("unrecognized file: %s" % tf)
+         finally:
+-            lockfile.LockFile = self.saved_class
++             pass
++
+ 
+     def _test_acquire_helper(self, tbool):
+         # As simple as it gets.

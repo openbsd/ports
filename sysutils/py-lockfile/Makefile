@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/11/07 14:39:29 kmos Exp $
 
 COMMENT=		platform-independent file locking for Python
 
@@ -21,12 +21,12 @@ RUN_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST=		Yes
 
 FLAVORS=		python3
 FLAVOR ?=
 
-TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+TEST_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
 
 pre-test:
 	sed -i "s,^sphinx.*,sphinx," ${WRKSRC}/test-requirements.txt
