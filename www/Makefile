@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.930 2019/11/06 16:01:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.931 2019/11/07 21:12:01 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -358,9 +358,6 @@
      SUBDIR += pecl-chroot,php71
      SUBDIR += pecl-chroot,php72
      SUBDIR += pecl-chroot,php73
-     SUBDIR += pecl-geoip,php71
-     SUBDIR += pecl-geoip,php72
-     SUBDIR += pecl-geoip,php73
      SUBDIR += pecl-memcached,php71
      SUBDIR += pecl-memcached,php72
      SUBDIR += pecl-memcached,php73

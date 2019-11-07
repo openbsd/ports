@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/12/11 12:33:26 sthen Exp $
-@conflict pecl-geoip-*
-${MODPECL_DEFAULTV}@pkgpath www/pecl-geoip
-${MODPECL_DEFAULTV}@pkgpath www/pecl-geoip,php56
-${MODPECL_DEFAULTV}@pkgpath www/pecl-geoip,php70
-@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
-lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
-share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
-@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
