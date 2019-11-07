@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.86 2019/10/28 14:27:15 espie Exp $
+# $OpenBSD: Config.pm,v 1.87 2019/11/07 16:36:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -93,8 +93,8 @@ sub parse_command_line
 		},
 	};
 
-	$state->SUPER_handle_options('acemnqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
-    "[-acemnqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
+	$state->SUPER_handle_options('acemNqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
+    "[-acemNqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
     "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
@@ -105,7 +105,7 @@ sub parse_command_line
 		}
 	}
 
-	$state->{roach} = $state->opt('n'); 	# for "new"
+	$state->{roach} = $state->opt('N'); 	# for "new"
     	$state->{chroot} = $state->opt('B');
 	$state->{base_user} = DPB::User->from_uid($<);
 	if (!defined $state->{base_user}) {
@@ -253,7 +253,7 @@ sub parse_command_line
 		$state->{opt}{e} = $state->{subst}->value('LISTING_EXTRA');
 	}
 	if ($state->define_present('ROACH') && 
-	    !defined $state->{opt}{n}) {
+	    !defined $state->{opt}{N}) {
 	    	$state->{roach} = $state->{subst}->value('ROACH');
 	}
 	if ($state->define_present('LOCKDIR')) {
