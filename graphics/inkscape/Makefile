@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/11/01 15:40:11 ajacoutot Exp $
-
-BROKEN =	does not build with glib2 >= 2.62
+# $OpenBSD: Makefile,v 1.79 2019/11/07 15:32:55 ajacoutot Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -33,7 +31,7 @@ WANTLIB += xslt z
 MASTER_SITES =	https://media.inkscape.org/dl/resources/file/
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES=	textproc/intltool \
+MODULES =	textproc/intltool \
 		lang/python \
 		lang/ruby
 
@@ -94,6 +92,7 @@ RM_MANS =	man/el man/fr man/ja man/man1/inkscape.*.1 \
 		man/sk man/zh_TW  man/de
 
 SUBST_VARS +=	RUBY MODRUBY_REV
+
 pre-configure:
 	find ${WRKDIST} -name i18n.py \
 		-exec sed -i 's,python,${MODPY_BIN},' {} +;
