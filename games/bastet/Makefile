@@ -1,18 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:14 sthen Exp $
-
-# Block.s: Assembler messages:
-# Block.s:73: Error: junk `(%rip)' after expression
-ONLY_FOR_ARCHS = ${LLVM_ARCHS}
-# /usr/local/lib/gcc/sparc64-unknown-openbsd6.0/4.9.4/libgcc.a(unwind-dw2-fde-dip.o): In function `__gthread_mutex_lock':
-# ./gthr-default.h:748: undefined reference to `pthread_mutex_lock'
-BROKEN-sparc64 = undefined reference to pthread_mutex_lock
+# $OpenBSD: Makefile,v 1.16 2019/11/07 21:39:31 cwen Exp $
 
 COMMENT =	bastard tetris
 
 GH_ACCOUNT =	fph
 GH_PROJECT =	bastet
 GH_TAGNAME =	0.43.2
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	games
 
@@ -23,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	boost_program_options c curses m ${COMPILER_LIBCXX}
 
-COMPILER =	base-clang ports-clang
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	devel/boost
 
