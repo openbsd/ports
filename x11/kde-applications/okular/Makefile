@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/07 16:58:27 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://okular.kde.org/
 
@@ -31,10 +31,12 @@ MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
 BUILD_DEPENDS +=net/libvncserver \
-		print/libspectre
+		print/libspectre \
+		textproc/discount
 
 RUN_DEPENDS +=	misc/shared-mime-info \
 		net/libvncserver \
+		textproc/discount
 
 LIB_DEPENDS +=	devel/chmlib \
 		devel/kf5/kactivities \
