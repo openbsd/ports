@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.40 2019/10/28 15:55:49 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.41 2019/11/07 16:12:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -314,8 +314,8 @@ my %adder = (
 	MASTER_SITES8 => 'AddOrderedList',
 	MASTER_SITES9 => 'AddOrderedList',
 	MULTI_PACKAGES => 'AddList',
-	PERMIT_DISTFILES_FTP => 'AddNegative',
-	PERMIT_DISTFILES_CDROM => 'AddNegative',
+	PERMIT_DISTFILES => 'AddNegative',
+	PERMIT_PACKAGE => 'AddNegative',
 # not yet used, provision for regression tests
 	TEST_DEPENDS => "AddTestDepends",
 	NO_TEST => "AddNegative",

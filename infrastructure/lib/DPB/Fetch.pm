@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.83 2019/11/06 14:21:54 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.84 2019/11/07 16:12:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,9 +39,6 @@ sub new
 	    fetch_only => $state->{fetch_only}}, $class;
 	if (defined $state->{subst}->value('FTP_ONLY')) {
 		$o->{ftp_only} = 1;
-	}
-	if (defined $state->{subst}->value('CDROM_ONLY')) {
-		$o->{cdrom_only} = 1;
 	}
 	my $fh = $o->open('<', "$distdir/distinfo");
 	if (defined $fh) {
@@ -309,13 +306,7 @@ sub build_distinfo
 		}
 		bless $files, "AddDepends";
 		$info->{DIST} = $files;
-		if ($self->{cdrom_only} && 
-		    defined $info->{PERMIT_PACKAGE_CDROM}) {
-			$info->{DISTIGNORE} = 1;
-			$info->{IGNORE} //= AddIgnore->new(
-				"Distfile not allowed for cdrom");
-		} elsif ($self->{ftp_only} &&
-		    defined $info->{PERMIT_PACKAGE_FTP}) {
+		if ($self->{ftp_only} && defined $info->{PERMIT_DISTFILES}) {
 			$info->{DISTIGNORE} = 1;
 			$info->{IGNORE} //= AddIgnore->new(
 			    "Distfile not allowed for ftp");
