@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/06 17:23:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/07 13:58:14 sthen Exp $
 
 COMMENT =	C++ 3d modeling library
+DPB_PROPERTIES = parallel
 
 GH_ACCOUNT =	tpaviot
 GH_PROJECT =	oce
