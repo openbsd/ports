@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.131 2019/11/01 21:43:24 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.132 2019/11/07 16:14:09 kmos Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -43,11 +43,15 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 .if ${VERSION} == "2.7"
-LIB_SUFX =	
 MULTI_PACKAGES =	-main -tests -tools -gdbm -idle -tkinter -bsddb
 .else
-LIB_SUFX =		m
 MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
+.endif
+
+.if ${VERSION} == "3.7"
+LIB_SUFX =		m
+.else
+LIB_SUFX =	
 .endif
 
 # Python 2.7 lists BSD db 4.6.x as unstable on most architectures (see

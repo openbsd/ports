@@ -1,0 +1,33 @@
+$OpenBSD: patch-setup_py,v 1.1 2019/11/07 16:14:09 kmos Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -957,6 +957,8 @@ class PyBuildExt(build_ext):
+                                                      'termcap'):
+                 readline_libs.append('termcap')
+             self.add(Extension('readline', ['readline.c'],
++			       extra_compile_args=['-nostdinc'],
++			       include_dirs=['/usr/include'],
+                                library_dirs=['/usr/lib/termcap'],
+                                extra_link_args=readline_extra_link_args,
+                                libraries=readline_libs))
+@@ -1675,7 +1677,7 @@ class PyBuildExt(build_ext):
+         # Build the _uuid module if possible
+         uuid_incs = find_file("uuid.h", self.inc_dirs, ["/usr/include/uuid"])
+         if uuid_incs is not None:
+-            if self.compiler.find_library_file(self.lib_dirs, 'uuid'):
++            if self.compiler.find_library_file(self.lib_dirs, 'uuid') and not HOST_PLATFORM.startswith('openbsd'):
+                 uuid_libs = ['uuid']
+             else:
+                 uuid_libs = []
+@@ -1858,8 +1860,7 @@ class PyBuildExt(build_ext):
+         # The versions with dots are used on Unix, and the versions without
+         # dots on Windows, for detection by cygwin.
+         tcllib = tklib = tcl_includes = tk_includes = None
+-        for version in ['8.6', '86', '8.5', '85', '8.4', '84', '8.3', '83',
+-                        '8.2', '82', '8.1', '81', '8.0', '80']:
++        for version in ['85']:
+             tklib = self.compiler.find_library_file(self.lib_dirs,
+                                                         'tk' + version)
+             tcllib = self.compiler.find_library_file(self.lib_dirs,

@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure_ac,v 1.1 2019/11/07 16:14:09 kmos Exp $
+
+#1: Set ports library version
+#2: Don't pick up an installed linux/e2fsprogs libuuid.so
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -119,7 +119,7 @@ VERSION=PYTHON_VERSION
+ 
+ # Version number of Python's own shared library file.
+ AC_SUBST(SOVERSION)
+-SOVERSION=1.0
++SOVERSION=${LIBpython3.8_VERSION}
+ 
+ # The later defininition of _XOPEN_SOURCE disables certain features
+ # on Linux, so we need _GNU_SOURCE to re-enable them (makedev, tm_zone).
+@@ -2775,18 +2775,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
+ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
+ 
+ # checks for uuid.h location
+-AC_CHECK_HEADERS([uuid/uuid.h uuid.h])
+-
+-AC_MSG_CHECKING(for uuid_generate_time_safe)
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <uuid/uuid.h>]], [[
+-#ifndef uuid_generate_time_safe
+-void *x = uuid_generate_time_safe
+-#endif
+-]])],
+-  [AC_DEFINE(HAVE_UUID_GENERATE_TIME_SAFE, 1, Define if uuid_generate_time_safe() exists.)
+-   AC_MSG_RESULT(yes)],
+-  [AC_MSG_RESULT(no)]
+-)
++AC_CHECK_HEADERS([uuid.h])
+ 
+ # AIX provides support for RFC4122 (uuid) in libc.a starting with AIX 6.1 (anno 2007)
+ # FreeBSD and OpenBSD provides support as well
