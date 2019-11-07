@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/07 11:02:40 kmos Exp $
 
 COMMENT =	economic historical real-time strategy game
 
@@ -20,6 +20,10 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python \
 			textproc/intltool
 MODPY_ADJ_FILES =	unknown-horizons
+MODPY_PYTEST =		Yes
+
+PORTHOME =		${WRKDIR}
+
 BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			games/fifengine
@@ -28,8 +32,5 @@ TEST_DEPENDS =		devel/py-greenlet \
 			devel/py-nose \
 			textproc/py-polib \
 			textproc/py-yaml
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} run_tests.py
 
 .include <bsd.port.mk>
