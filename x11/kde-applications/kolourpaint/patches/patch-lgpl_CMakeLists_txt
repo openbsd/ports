@@ -1,0 +1,14 @@
+$OpenBSD: patch-lgpl_CMakeLists_txt,v 1.1.1.1 2019/11/07 10:09:56 rsadowski Exp $
+
+Index: lgpl/CMakeLists.txt
+--- lgpl/CMakeLists.txt.orig
++++ lgpl/CMakeLists.txt
+@@ -27,7 +27,7 @@ target_link_libraries(kolourpaint_lgpl
+ 
+ set_target_properties(kolourpaint_lgpl
+     PROPERTIES
+-        VERSION ${kolourpaint_lgpl_version}
++        VERSION ${LIBkolourpaint_lgpl_VERSION}
+         DEFINE_SYMBOL MAKE_KOLOURPAINT4_LGPL_LIB
+ )
+ 
