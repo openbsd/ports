@@ -1,0 +1,6 @@
+Sweeper helps to clean unwanted traces the user leaves on a KDE system.
+
+Features
+ - It can remove web-related traces: cookies, history, cache
+ - It can remove the image thumbnails cache
+ - It can also clean the applications and documents history
