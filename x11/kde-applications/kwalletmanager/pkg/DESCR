@@ -1,0 +1,9 @@
+KWalletManager is an optional tool which can greatly assist your work-flow
+while maintaining security.
+
+ - Wallets are encrypted against your chosen passphrase
+ - Wallets are, by default, closed. Your passphrase is required to open a
+   wallet
+ - Wallets can be configured to close when unused
+ - You control which applications may use the wallet - everything else will
+   have to ask you for a password.
