@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/11/07 10:52:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.69 2019/11/07 14:13:21 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -33,7 +33,7 @@ REVISION-edu = 8
 REVISION-multimedia = 1
 REVISION-network = 0
 REVISION-extras = 10
-REVISION-main =		29
+REVISION-main =		30
 REVISION-admin =	1
 REVISION-graphics =	4
 
@@ -155,7 +155,6 @@ RUN_DEPENDS-main = \
 	${MODKDE4_DEP_DIR}/artwork		\
 	${MODKDE4_DEP_DIR}/base-artwork		\
 	${MODKDE4_DEP_DIR}/kgpg			\
-	${MODKDE4_DEP_DIR}/kwalletmanager	\
 	${MODKDE4_DEP_DIR}/pim			\
 	${MODKDE4_DEP_DIR}/wallpapers		\
 	${MODKDE4_DEP_DIR}/workspace
