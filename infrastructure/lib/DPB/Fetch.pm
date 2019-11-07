@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.84 2019/11/07 16:12:35 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.85 2019/11/07 16:34:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,19 +27,17 @@ our @ISA = (qw(DPB::UserProxy));
 
 sub new
 {
-	my ($class, $distdir, $logger, $state) = @_;
+	my ($class, $distdir, $logger, $state, $ftp_only) = @_;
 	my $o = bless {distdir => $distdir, sha => {}, reverse => {},
 	    logger => $logger,
 	    known_sha => {}, known_files => {},
 	    known_short => {},
 	    user => $state->{fetch_user},
 	    state => $state,
+	    ftp_only => $ftp_only,
 	    cache => {},
 	    build_user => $state->{build_user},
 	    fetch_only => $state->{fetch_only}}, $class;
-	if (defined $state->{subst}->value('FTP_ONLY')) {
-		$o->{ftp_only} = 1;
-	}
 	my $fh = $o->open('<', "$distdir/distinfo");
 	if (defined $fh) {
 		print "Reading distinfo...";

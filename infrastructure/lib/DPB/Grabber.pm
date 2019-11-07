@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.42 2019/11/06 14:47:25 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.43 2019/11/07 16:34:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -52,12 +52,15 @@ sub new
 		errors => 0,
 		eventloopcode => $eventloopcode
 	    }, $class;
+	if (defined $state->{subst}->value('FTP_ONLY')) {
+		$o->{ftp_only} = 1;
+	}
 	my @values = ();
 	if ($state->{want_fetchinfo} || $state->{roach}) {
 		require DPB::Fetch;
 		push(@values, 'fetch');
 		$o->{fetch} = DPB::Fetch->new($state->distdir, $state->logger,
-		    $state);
+		    $state, $o->{ftp_only});
 	} else {
 		$o->{fetch} = DPB::FetchDummy->new;
 	}
