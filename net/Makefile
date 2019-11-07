@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1147 2019/11/06 15:01:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.1148 2019/11/07 10:16:26 naddy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -54,7 +54,6 @@
      SUBDIR += crawl
      SUBDIR += ctrace
      SUBDIR += curl
-     SUBDIR += cvsync
      SUBDIR += czmq
      SUBDIR += daq
      SUBDIR += darkstat

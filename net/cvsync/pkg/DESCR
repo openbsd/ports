@@ -1,2 +1,0 @@
-A CVS repository syncer (client and server), written in portable C.
-It is similar to cvsup, but not compatible with it.

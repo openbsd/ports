@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.815 2019/11/06 14:52:06 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.816 2019/11/07 10:16:26 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1326,6 +1326,7 @@ my $obsolete_reason = {
 	'py3-ioflo' => 6,
 	'postgresql-plv8' => 5,
 	'py-GeoIP' => 6,
+	'cvsync' => 3,
 };
 
 # reasons for obsolete packages
