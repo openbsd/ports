@@ -290,6 +290,7 @@ ends-with?
 ensure
 ensure-reduced
 enumeration-seq
+err->msg
 error-handler
 error-mode
 escape
@@ -663,6 +664,7 @@ repl-requires
 replace
 replace-first
 replicate
+report-error
 require
 requiring-resolve
 reset!
