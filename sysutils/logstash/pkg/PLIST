@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/10/24 13:27:52 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/11/07 13:26:10 pvk Exp $
 @pkgpath sysutils/logstash/logstash
 @newgroup _logstash:752
 @newuser _logstash:752:_logstash:daemon:Logstash Account:/nonexistent:/sbin/nologin
@@ -1040,6 +1040,8 @@ logstash/tools/ingest-converter/build/libs/
 logstash/tools/ingest-converter/build/libs/ingest-converter.jar
 logstash/vendor/
 logstash/vendor/bundle/
+@owner _logstash
+@group _logstash
 logstash/vendor/bundle/jruby/
 @comment logstash/vendor/bundle/jruby/1.9/gems/ruby-maven-libs-3.3.9/maven-home/bin/mvn.cmd
 @comment logstash/vendor/bundle/jruby/1.9/gems/ruby-maven-libs-3.3.9/maven-home/bin/mvnDebug.cmd
@@ -9135,7 +9137,6 @@ logstash/vendor/bundle/jruby/2.5.0/gems/logstash-output-elasticsearch-10.1.0-jav
 logstash/vendor/bundle/jruby/2.5.0/gems/logstash-output-elasticsearch-10.1.0-java/lib/logstash/outputs/elasticsearch/
 @mode 0750
 @owner root
-@group _logstash
 @sample ${SYSCONFDIR}/logstash/
 @sample ${SYSCONFDIR}/logstash/conf.d/
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/
@@ -14244,6 +14245,8 @@ logstash/vendor/bundle/jruby/2.5.0/specifications/tzinfo-data-1.2019.3.gemspec
 logstash/vendor/bundle/jruby/2.5.0/specifications/unf-0.1.4-java.gemspec
 logstash/vendor/bundle/jruby/2.5.0/specifications/webhdfs-0.8.0.gemspec
 logstash/vendor/bundle/jruby/2.5.0/specifications/xml-simple-1.1.5.gemspec
+@owner
+@group
 logstash/vendor/jruby/
 logstash/vendor/jruby/BSDL
 logstash/vendor/jruby/COPYING
@@ -15603,8 +15606,6 @@ logstash/vendor/jruby/tool/nailgun/ng.exe
 logstash/vendor/jruby/tool/nailgun/src/
 logstash/vendor/jruby/tool/nailgun/src/c/
 logstash/vendor/jruby/tool/nailgun/src/c/ng.c
-@owner
-@group
 share/doc/logstash/
 share/doc/logstash/CONTRIBUTORS
 share/doc/logstash/LICENSE.txt
