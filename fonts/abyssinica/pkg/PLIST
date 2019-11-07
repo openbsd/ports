@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/10 07:16:53 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/07 11:04:44 sthen Exp $
 share/doc/abyssinica/
-share/doc/abyssinica/FONTLOG.txt
-share/doc/abyssinica/OFL-FAQ.txt
 share/doc/abyssinica/OFL.txt
 share/doc/abyssinica/README.txt
 share/fonts/
 @fontdir share/fonts/abyssinica/
-share/fonts/abyssinica/AbyssinicaSIL-R.ttf
+share/fonts/abyssinica/AbyssinicaSIL-Regular.ttf
+share/fonts/abyssinica/AbyssinicaSIL-Regular.woff

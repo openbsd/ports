@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/11/07 11:04:44 sthen Exp $
 
 COMMENT =		Ethiopic Unicode script
 
 TYPEFACE =		abyssinica
-V =			1.500
+V =			2.000
 DISTNAME =		AbyssinicaSIL-$V
 CATEGORIES =		fonts
-REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/abyssinica/
 
@@ -26,6 +25,7 @@ DOCDIR =		${PREFIX}/share/doc/abyssinica
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/{README.txt,OFL.txt} ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/web/AbyssinicaSIL-Regular.woff ${FONTDIR}
 
 .include <bsd.port.mk>
