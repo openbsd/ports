@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/05 15:44:13 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/07 17:40:36 fcambus Exp $
 
 COMMENT =		BitTorrent client with Qt interface
-REVISION =		1
+REVISION =		2
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Xml boost_system
 WANTLIB += boost_system-mt c m torrent-rasterbar z
@@ -11,8 +11,7 @@ LIB_DEPENDS +=		net/libtorrent-rasterbar \
 			devel/boost \
 			x11/qt5/qtsvg
 
-RUN_DEPENDS +=		net/GeoIP \
-			lang/python/2.7 \
+RUN_DEPENDS +=		lang/python/2.7 \
 			x11/gtk+3,-guic \
 			devel/desktop-file-utils
 
