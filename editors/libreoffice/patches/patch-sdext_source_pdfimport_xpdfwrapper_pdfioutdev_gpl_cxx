@@ -1,0 +1,71 @@
+$OpenBSD: patch-sdext_source_pdfimport_xpdfwrapper_pdfioutdev_gpl_cxx,v 1.6 2019/11/07 18:44:39 kili Exp $
+
+Fix build with poppler-8.82.0.
+
+https://gerrit.libreoffice.org/plugins/gitiles/core/+/2eadd46ab81058087af95bdfc1fea28fcdb65998%5E%21
+
+Index: sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx.orig
++++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+@@ -863,11 +863,20 @@ void PDFOutDev::eoClip(GfxState *state)
+     local offset of character (zero for horizontal writing mode). not
+     taken into account for output pos updates. Used for vertical writing.
+  */
++
++#if POPPLER_CHECK_VERSION(0, 82, 0)
+ void PDFOutDev::drawChar(GfxState *state, double x, double y,
+                          double dx, double dy,
+                          double originX, double originY,
++                         CharCode, int /*nBytes*/, const Unicode *u, int uLen)
++{
++#else
++void PDFOutDev::drawChar(GfxState *state, double x, double y,
++                         double dx, double dy,
++                         double originX, double originY,
+                          CharCode, int /*nBytes*/, Unicode *u, int uLen)
+ {
++#endif
+     assert(state);
+ 
+     if( u == nullptr )
+@@ -979,11 +988,19 @@ void PDFOutDev::drawImageMask(GfxState* pState, Object
+     writeBinaryBuffer(aBuf);
+ }
+ 
++#if POPPLER_CHECK_VERSION(0, 82, 0)
+ void PDFOutDev::drawImage(GfxState*, Object*, Stream* str,
+                           int width, int height, GfxImageColorMap* colorMap,
+                           poppler_bool /*interpolate*/,
++                          const int* maskColors, poppler_bool /*inlineImg*/ )
++{
++#else
++void PDFOutDev::drawImage(GfxState*, Object*, Stream* str,
++                          int width, int height, GfxImageColorMap* colorMap,
++                          poppler_bool /*interpolate*/,
+                           int* maskColors, poppler_bool /*inlineImg*/ )
+ {
++#endif
+     if (m_bSkipImages)
+         return;
+     OutputBuffer aBuf; initBuf(aBuf);
+@@ -1004,12 +1021,20 @@ void PDFOutDev::drawImage(GfxState*, Object*, Stream* 
+         {
+             GfxRGB aMinRGB;
+             colorMap->getColorSpace()->getRGB(
++#if POPPLER_CHECK_VERSION(0, 82, 0)
++                reinterpret_cast<const GfxColor*>(maskColors),
++#else
+                 reinterpret_cast<GfxColor*>(maskColors),
++#endif
+                 &aMinRGB );
+ 
+             GfxRGB aMaxRGB;
+             colorMap->getColorSpace()->getRGB(
++#if POPPLER_CHECK_VERSION(0, 82, 0)
++                reinterpret_cast<const GfxColor*>(maskColors)+gfxColorMaxComps,
++#else
+                 reinterpret_cast<GfxColor*>(maskColors)+gfxColorMaxComps,
++#endif
+                 &aMaxRGB );
+ 
+             aMaskBuf.push_back( colToByte(aMinRGB.r) );
