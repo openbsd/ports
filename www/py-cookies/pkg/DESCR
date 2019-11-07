@@ -1,0 +1,23 @@
+cookies.py is a Python module for working with HTTP cookies: parsing
+and rendering 'Cookie:' request headers and 'Set-Cookie:' response
+headers, and exposing a convenient API for creating and modifying
+cookies. It can be used as a replacement of Python's Cookie.py (aka
+http.cookies).
+
+Features
+
+Rendering according to the excellent new RFC 6265 (rather than using
+a unique ad hoc format inconsistently relating to unrealistic, very
+old RFCs which everyone ignored). Uses URL encoding to represent
+non-ASCII by default, like many other languages' libraries
+
+Liberal parsing, incorporating many complaints about Cookie.py
+barfing on common cookie formats which can be reliably parsed (e.g.
+search 'cookie' on the Python issue tracker)
+
+Well-documented code, with chapter and verse from RFCs (rather than
+arbitrary, undocumented decisions and huge tables of magic values,
+as you see in Cookie.py).
+
+Test coverage at 100%, with a much more comprehensive test suite
+than Cookie.py
