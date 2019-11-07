@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/07 10:33:52 robert Exp $
 
 COMMENT=		read and convert TNEF files
 
 SHARED_LIBS +=  ytnef                     0.0 # 0.0
 
 DISTNAME=		libytnef-1.9.3
+REVISION=		0
 
 GH_ACCOUNT=		Yeraze
 GH_PROJECT=		ytnef
