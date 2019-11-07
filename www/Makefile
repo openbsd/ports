@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.931 2019/11/07 21:12:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.932 2019/11/07 21:52:56 kmos Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -409,6 +409,8 @@
      SUBDIR += py-bottle,python3
      SUBDIR += py-cheroot
      SUBDIR += py-cheroot,python3
+     SUBDIR += py-cookies
+     SUBDIR += py-cookies,python3
      SUBDIR += py-django
      SUBDIR += py-feedgenerator
      SUBDIR += py-feedgenerator,python3
