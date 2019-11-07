@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.31 2019/11/06 09:53:47 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.32 2019/11/07 16:02:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -253,6 +253,7 @@ sub end
 		}
 	} else {
 		if ($self->is_done_or_enqueue($v)) {
+			$self->{engine}->log_as_built($v);
 			$self->{engine}{locker}->unlock($v);
 		} else {
 			push(@{$self->{engine}{nfslist}}, $v);

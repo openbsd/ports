@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: ErrorList.pm,v 1.6 2019/10/15 14:41:22 espie Exp $
+# $OpenBSD: ErrorList.pm,v 1.7 2019/11/07 16:02:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -140,6 +140,7 @@ sub unlock_early
 			delete $h->{$k};
 		} elsif ($sub->{builder}->end_check($w)) {
 			$sub->mark_as_done($w);
+			$engine->log_as_built($w);
 			delete $h->{$k};
 		} else {
 			$okay = 0;

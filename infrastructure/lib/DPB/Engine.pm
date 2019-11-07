@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.139 2019/11/06 14:47:25 espie Exp $
+# $OpenBSD: Engine.pm,v 1.140 2019/11/07 16:02:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -147,6 +147,13 @@ sub log
 	my $self = shift;
 	$self->{ts} = Time::HiRes::time();
 	$self->log_same_ts(@_);
+}
+
+sub log_as_built
+{
+	my ($self, $v) = @_;
+	my $fh = $self->{logger}->append("built-packages");
+	print $fh $v->fullpkgname, ".tgz\n";
 }
 
 sub flush_log
