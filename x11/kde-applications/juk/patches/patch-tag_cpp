@@ -1,0 +1,14 @@
+$OpenBSD: patch-tag_cpp,v 1.1.1.1 2019/11/07 09:59:49 rsadowski Exp $
+
+Index: tag.cpp
+--- tag.cpp.orig
++++ tag.cpp
+@@ -21,7 +21,7 @@
+ 
+ #include <QFile>
+ 
+-#include <taglib/tag.h>
++#include <tag.h>
+ #include <tfile.h>
+ #include <audioproperties.h>
+ #include <id3v2framefactory.h>

@@ -1,0 +1,19 @@
+JuK is an audio jukebox application, supporting collections of MP3, Ogg Vorbis,
+and FLAC audio files. It allows you to edit the "tags" of your audio files, and
+manage your collection and playlists. It's main focus, in fact, is on music
+management.
+
+Features:
+ - Collection list and multiple user defined playlists.
+ - Ability to scan directories to automatically import playlists and music
+   files on start up.
+ - Dynamic Search Playlists that are automatically updated as fields in the
+   collection change.
+ - A Tree View mode where playlists are automatically generated for sets of
+   albums, artists and genres.
+ - Playlist history to indicate which files have been played and when
+   Inline search for filtering the list of visible items.
+ - The ability to guess tag information based on the track's file name.
+ - File renamer that can rename files based on the tag content.
+ - Tag reading and editing support for many formats including ID3v1, ID3v2 and
+   Ogg Vorbis.
