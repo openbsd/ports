@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/08/18 14:40:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.68 2019/11/07 10:52:51 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -26,16 +26,16 @@ PKGSPEC-network =	kdenetwork-${MODKDE4_SPEC}
 PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
-REVISION-minimal =	10
-REVISION-games = 3
+REVISION-minimal =	11
+REVISION-games = 4
 REVISION-sdk = 4
-REVISION-edu = 7
-REVISION-multimedia = 0
+REVISION-edu = 8
+REVISION-multimedia = 1
 REVISION-network = 0
 REVISION-extras = 10
-REVISION-main =		28
+REVISION-main =		29
 REVISION-admin =	1
-REVISION-graphics =	3
+REVISION-graphics =	4
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -77,34 +77,25 @@ KDE4-bindings = \
 	${MODKDE4_DEP_DIR}/kimono
 
 KDE4-edu = \
-	${MODKDE4_DEP_DIR}/kturtle	\
-	${MODKDE4_DEP_DIR}/kwordquiz	\
 	${MODKDE4_DEP_DIR}/libkdeedu	\
 	${MODKDE4_DEP_DIR}/pairs	\
-	${MODKDE4_DEP_DIR}/parley	\
-	${MODKDE4_DEP_DIR}/rocs
+	${MODKDE4_DEP_DIR}/parley
 
 KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/graphics-mobipocket	\
 	${MODKDE4_DEP_DIR}/graphics-strigi-analyzer \
 	${MODKDE4_DEP_DIR}/graphics-thumbnailers \
-	${MODKDE4_DEP_DIR}/kamera		\
-	${MODKDE4_DEP_DIR}/kcolorchooser	\
 	${MODKDE4_DEP_DIR}/kgamma		\
-	${MODKDE4_DEP_DIR}/kolourpaint		\
-	${MODKDE4_DEP_DIR}/kruler		\
 	${MODKDE4_DEP_DIR}/ksnapshot		\
 	${MODKDE4_DEP_DIR}/libkexiv2		\
 	${MODKDE4_DEP_DIR}/svgpart
 
 RUN_DEPENDS-games = \
-	${MODKDE4_DEP_DIR}/kpat		\
-	${MODKDE4_DEP_DIR}/picmi
+	${MODKDE4_DEP_DIR}/kpat
 
 KDE4-multimedia = \
 	${MODKDE4_DEP_DIR}/audiocd-kio	\
 	${MODKDE4_DEP_DIR}/ffmpegthumbs	\
-	${MODKDE4_DEP_DIR}/juk		\
 	${MODKDE4_DEP_DIR}/kmix		\
 	${MODKDE4_DEP_DIR}/kscd		\
 	${MODKDE4_DEP_DIR}/mplayerthumbs
@@ -135,21 +126,18 @@ RUN_DEPENDS-toys = \
 	${MODKDE4_DEP_DIR}/ktux
 
 KDE4-utils = \
-	${MODKDE4_DEP_DIR}/filelight		\
 	${MODKDE4_DEP_DIR}/kdf			\
 	${MODKDE4_DEP_DIR}/kfloppy		\
 	${MODKDE4_DEP_DIR}/kremotecontrol	\
 	${MODKDE4_DEP_DIR}/ktimer		\
 	${MODKDE4_DEP_DIR}/nepomuk-widgets	\
 	${MODKDE4_DEP_DIR}/print-manager	\
-	${MODKDE4_DEP_DIR}/superkaramba		\
-	${MODKDE4_DEP_DIR}/sweeper
+	${MODKDE4_DEP_DIR}/superkaramba
 
 RUN_DEPENDS-minimal = \
 	${KDE4-accessibility}			\
 	${MODKDE4_DEP_DIR}/baseapps		\
 	${MODKDE4_DEP_DIR}/kgpg			\
-	${MODKDE4_DEP_DIR}/kwalletmanager	\
 	${MODKDE4_DEP_DIR}/workspace
 
 RUN_DEPENDS-main = \

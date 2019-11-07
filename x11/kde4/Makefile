@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/08/18 14:40:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.74 2019/11/07 10:52:51 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -119,7 +119,7 @@ SUBDIR += kaccessible
 
 # former kdeutils
 #SUBDIR += ark			x11/kde-applications
-SUBDIR += filelight
+#SUBDIR += filelight		x11/kde-applications
 #SUBDIR += kcalc		x11/kde-applications
 SUBDIR += kcharselect
 SUBDIR += kdf
@@ -127,10 +127,10 @@ SUBDIR += kfloppy
 SUBDIR += kgpg
 SUBDIR += kremotecontrol
 SUBDIR += ktimer
-SUBDIR += kwalletmanager
+#SUBDIR += kwalletmanager	x11/kde-applications
 SUBDIR += print-manager
 SUBDIR += superkaramba
-SUBDIR += sweeper
+#SUBDIR += sweeper		x11/kde-applications
 
 # former kdeedu
 #SUBDIR += artikulate		x11/kde-applications
@@ -149,13 +149,13 @@ SUBDIR += sweeper
 #SUBDIR += kmplot		x11/kde-applications
 #SUBDIR += kstars		astro/kstars
 #SUBDIR += ktouch		x11/kde-applications
-SUBDIR += kturtle
-SUBDIR += kwordquiz
+#SUBDIR += kturtle		x11/kde-applications
+#SUBDIR += kwordquiz		x11/kde-applications
 SUBDIR += libkdeedu
 #SUBDIR += marble		x11/kde-applications
 SUBDIR += pairs
 SUBDIR += parley
-SUBDIR += rocs
+#SUBDIR += rocs			x11/kde-applications
 #SUBDIR += step			x11/kde-applications
 
 # former kdegames
@@ -199,18 +199,18 @@ SUBDIR += kpat
 #SUBDIR += kubrick		x11/kde-applications
 #SUBDIR += lskat		x11/kde-applications
 #SUBDIR += palapeli		x11/kde-applications
-SUBDIR += picmi
+#SUBDIR += picmi		x11/kde-applications
 
 # former kdegraphics
 SUBDIR += graphics-mobipocket
 SUBDIR += graphics-strigi-analyzer
 SUBDIR += graphics-thumbnailers
 #SUBDIR += gwenview		x11/kde-applications
-SUBDIR += kamera
-SUBDIR += kcolorchooser
+#SUBDIR += kamera		x11/kde-applications
+#SUBDIR += kcolorchooser	x11/kde-applications
 SUBDIR += kgamma
-SUBDIR += kolourpaint
-SUBDIR += kruler
+#SUBDIR += kolourpaint		x11/kde-applications
+#SUBDIR += kruler		x11/kde-applications
 #SUBDIR += ksaneplugin		libksane is gone
 SUBDIR += ksnapshot
 #SUBDIR += libkdcraw		x11/kde-application
@@ -224,7 +224,7 @@ SUBDIR += svgpart
 SUBDIR += audiocd-kio
 #SUBDIR += dragon		x11/kde-applications
 SUBDIR += ffmpegthumbs
-SUBDIR += juk
+#SUBDIR += juk			x11/kde-applications
 SUBDIR += kmix
 SUBDIR += kscd
 SUBDIR += libkcddb
