@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/11/07 14:41:04 kmos Exp $
 
 COMMENT =	library for mozilla services metrics logging
 
@@ -17,6 +17,8 @@ MODPY_PI =	Yes
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	metlog
 TEST_DEPENDS =	net/py-zmq \
 		devel/py-mock \
 		devel/py-docopt
