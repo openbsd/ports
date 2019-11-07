@@ -1,0 +1,9 @@
+rarfile is a Python module for RAR archive reading. The interface
+is made as zipfile like as possible.
+
+Supports both RAR3 and RAR5 format archives, multi volume archives,
+Unicode filenames, password-protected archives, archive and file
+comments, and archive parsing and non-compressed files handled with
+pure Python code, Compressed files are extracted by executing either
+unrar from RARLAB or bsdtar from libarchive.  Works with both Python
+2.7 and 3.x.
