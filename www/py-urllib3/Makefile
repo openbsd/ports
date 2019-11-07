@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/06/21 06:24:44 sebastia Exp $
+# $OpenBSD: Makefile,v 1.16 2019/11/07 15:05:14 kmos Exp $
 
 COMMENT=	HTTP library for Python
 
@@ -18,17 +18,14 @@ MODPY_PI =	Yes
 
 MODULES=	lang/python
 
-MODPY_SETUPTOOLS= Yes
+MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST=		Yes
 
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} test
 
 .include <bsd.port.mk>
