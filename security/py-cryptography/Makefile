@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2019/06/03 16:06:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/11/07 17:23:10 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	2.6.1
+MODPY_EGG_VERSION=	2.8
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel
-REVISION=	0
 
 HOMEPAGE=	https://cryptography.io/
 
@@ -39,8 +38,10 @@ RUN_DEPENDS+=	devel/py-enum34 \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+MODPY_PYTEST=	Yes
 # XXX needs *loads* of RAM
-TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
+		devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-pretend${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
