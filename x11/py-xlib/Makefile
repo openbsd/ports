@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/08/27 11:29:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/11/08 10:58:46 kmos Exp $
 
 COMMENT =	 	X11 library for Python
 
@@ -20,6 +20,7 @@ RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
