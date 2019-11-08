@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/20 21:52:47 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/08 23:04:06 kmos Exp $
 
 COMMENT =		makes working with XML feel like orking with JSON
 
@@ -16,15 +16,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && \
-		${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} tests/*.py
 
 .include <bsd.port.mk>
