@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.303 2019/11/07 14:23:16 landry Exp $
+# $OpenBSD: Makefile,v 1.304 2019/11/08 16:22:07 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -84,22 +84,7 @@ CONFIGURE_ARGS +=	--enable-calendar
 
 ALL_TARGET =	default
 
-GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
-# guid for gdata-provider comes from em:id in install.rdf
-GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} #\
-#	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
-
-EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/extensions/
-
-post-patch:
-	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/third_party/rust/cssparser/.cargo-checksum.json
-	
 post-install:
-.for xpi guid in ${GUIDS}
-	cp ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi ${EXTDIR}/${guid}.xpi
-.endfor
-
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
 		${PREFIX}/lib/${MOZILLA_PROJECT}/defaults/pref/all-openbsd.js
