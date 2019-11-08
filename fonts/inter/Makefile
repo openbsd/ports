@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/08 21:43:22 fcambus Exp $
 
 COMMENT =	typeface carefully crafted & designed for computer screens
 
-V =		3.7
+V =		3.11
 DISTNAME =	Inter-$V
 PKGNAME =	inter-$V
 
@@ -25,8 +25,8 @@ WRKDIST =	${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/inter
-	${INSTALL_DATA} ${WRKSRC}/"Inter (OTF)"/*.otf \
-		${WRKSRC}/"Inter (TTF hinted)"/*.ttf \
+	${INSTALL_DATA} ${WRKSRC}/Inter/*.otf \
+		${WRKSRC}/"Inter (Hinted, for Windows)"/*.ttf \
 		${PREFIX}/share/fonts/inter
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/inter
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${PREFIX}/share/doc/inter
