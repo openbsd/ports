@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/06/05 11:21:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/11/08 10:15:13 sthen Exp $
 bin/khard
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/khard/
 lib/python${MODPY_VERSION}/site-packages/khard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/khard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -16,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}__main__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}address_book.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}carddav_object.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}khard.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,11 +27,17 @@ lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}version.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/khard/actions.py
 lib/python${MODPY_VERSION}/site-packages/khard/address_book.py
 lib/python${MODPY_VERSION}/site-packages/khard/carddav_object.py
+lib/python${MODPY_VERSION}/site-packages/khard/cli.py
 lib/python${MODPY_VERSION}/site-packages/khard/config.py
+lib/python${MODPY_VERSION}/site-packages/khard/data/
+lib/python${MODPY_VERSION}/site-packages/khard/data/config.spec
+lib/python${MODPY_VERSION}/site-packages/khard/data/template.yaml
 lib/python${MODPY_VERSION}/site-packages/khard/helpers.py
 lib/python${MODPY_VERSION}/site-packages/khard/khard.py
 lib/python${MODPY_VERSION}/site-packages/khard/object_type.py
 lib/python${MODPY_VERSION}/site-packages/khard/version.py
+@man man/man1/khard.1
+@man man/man5/khard.conf.5
 share/examples/khard/
 share/examples/khard/khard.conf.example
 share/zsh/
