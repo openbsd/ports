@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/04 11:07:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2019/11/08 23:43:59 ajacoutot Exp $
 
 COMMENT=		libgit2 bindings in Python
 
@@ -6,7 +6,7 @@ DISTNAME=		pygit2-${MODPY_EGG_VERSION}
 PKGNAME=		${MODPY_PY_PREFIX}git2-${MODPY_EGG_VERSION}
 
 MODULES=		lang/python
-MODPY_EGG_VERSION=	0.28.1
+MODPY_EGG_VERSION=	0.28.2
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
