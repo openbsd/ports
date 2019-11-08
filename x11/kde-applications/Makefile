@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/11/07 10:52:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.50 2019/11/08 13:44:27 rsadowski Exp $
 
      SUBDIR =
 
@@ -41,7 +41,6 @@
      SUBDIR += kturtle
      SUBDIR += kwordquiz
      SUBDIR += marble
-     #SUBDIR += kwrite
      SUBDIR += minuet
      #SUBDIR += parley
      SUBDIR += rocs
