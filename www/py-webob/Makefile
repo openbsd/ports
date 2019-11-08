@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/11/08 23:37:32 kmos Exp $
 
 COMMENT =	wsgi request and response object
 
 MODPY_EGG_VERSION = 1.7.2
 DISTNAME =	WebOb-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 
-HOMEPAGE =	http://webob.org/
+HOMEPAGE =	https://webob.org/
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -18,16 +18,12 @@ MODULES =	lang/python
 
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
-TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
-		www/py-webtest
+TEST_DEPENDS =	www/py-webtest${MODPY_FLAVOR}
 
 FLAVORS=	python3
 FLAVOR?=
-
-.if ${FLAVOR:Mpython3}
-NO_TEST=	Yes
-.endif
 
 DOCS =		differences.txt do-it-yourself.txt index.txt whatsnew-*.txt \
 		reference.txt
@@ -46,8 +42,5 @@ post-install:
 	    ${PREFIX}/share/doc/${PYPKGNAME}
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${EXAMPLES} \
 	    ${PREFIX}/share/examples/${PYPKGNAME}
-
-do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests lib tests
 
 .include <bsd.port.mk>
