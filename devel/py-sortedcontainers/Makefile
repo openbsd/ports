@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/08 17:14:24 kmos Exp $
 
 COMMENT =	Python Sorted Container Types
 
@@ -20,11 +20,10 @@ MODPY_PI =	Yes
 FLAVORS =	python3
 FLAVOR ?=
 
-MODPY_SETUPTOOLS = Yes
+MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
-TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && nosetests${MODPY_BIN_SUFFIX}
+# PyPI tarball doesn't currently include tests
+# https://github.com/grantjenks/python-sortedcontainers/pull/130
 
 .include <bsd.port.mk>
