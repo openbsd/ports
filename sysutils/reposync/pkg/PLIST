@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/11/08 13:57:10 sthen Exp $
-@ask-update reposync-<0.5 If using rsync://username@host syntax, change to reposync -l username rsync://host
+@comment $OpenBSD: PLIST,v 1.3 2019/11/08 14:03:43 sthen Exp $
 bin/reposync
 @man man/man1/reposync.1
