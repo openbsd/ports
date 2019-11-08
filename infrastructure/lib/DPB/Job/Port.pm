@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.199 2019/11/08 13:42:17 espie Exp $
+# $OpenBSD: Port.pm,v 1.200 2019/11/08 17:47:01 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -56,9 +56,9 @@ sub want_percent { 1 }
 sub finalize
 {
 	my ($self, $core) = @_;
-	my $r = $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 	$core->job->finished_task($self);
-	return $r;
+	return $core->{status} == 0;
 }
 
 # note that tasks are using the "flyweight" pattern: they're
@@ -150,14 +150,14 @@ our @ISA = qw(DPB::Task::BasePort);
 sub finalize
 {
 	my ($self, $core) = @_;
-	my $r = $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 	if ($core->prop->{syslog}) {
 		my $fullpkgpath = $core->job->{path};
 		my $t = $self->{phase};
 		Sys::Syslog::syslog('info', "end $fullpkgpath($t)");
 	}
-	if ($r) {
-		return $r;
+	if ($core->{status} == 0) {
+		return 1;
 	}
 	$core->job->{failed} = $core->{status};
 	if ($core->prop->{always_clean}) {
@@ -173,7 +173,7 @@ sub finalize
 	if ($core->job->{v}{info}->has_property('tag')) {
 		$core->job->{lock}->write("cleaned");
 	}
-	return $r;
+	return 0;
 }
 
 # return swallowed cores at the end of fake: package is inherently sequential
@@ -188,7 +188,7 @@ sub finalize
 	my ($self, $core) = @_;
 	$core->unswallow;
 	delete $core->job->{nojunk};
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 }
 
 
@@ -203,7 +203,7 @@ sub finalize
 	if ($job->{noconfigurejunk}) {
 		delete $core->job->{nojunk};
 	}
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Port::Extract;
@@ -219,7 +219,7 @@ sub finalize
 	if (!$job->{noconfigurejunk}) {
 		$job->{lock}->write("nojunk");
 	}
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Port::Signature;
@@ -238,9 +238,9 @@ sub run
 sub finalize
 {
 	my ($self, $core) = @_;
-	my $r = $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 	my $job = $core->job;
-	if ($r) {
+	if ($core->{status} == 0) {
 		my $v = $job->{v};
 		my $builder = $job->{builder};
 		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath}, 
@@ -310,11 +310,10 @@ sub run
 sub finalize
 {
 	my ($self, $core) = @_;
-	my $r = $self->SUPER::finalize($core);
-	if ($r) {
+	$self->SUPER::finalize($core);
+	if ($core->{status} == 0) {
 		delete $core->job->{v}{info}{DIST};
 	}
-	return $r;
 }
 
 
@@ -381,11 +380,10 @@ sub finalize
 	my $task = $job->{tasks}[0];
 	# XXX if we didn't lock at the entrance, we locked here.
 	$job->{locked} = 1;
-	my $r = $self->SUPER::finalize($core);
-	if ($r == 0 || !defined $task || !$task->is_serialized) {
+	if ($core->{status} != 0 || !defined $task || !$task->is_serialized) {
 		$self->junk_unlock($core);
 	}
-	return $r;
+	$self->SUPER::finalize($core);
 }
 
 
@@ -429,7 +427,7 @@ sub finalize
 	my ($self, $core) = @_;
 	$core->job->{locked} = 1;
 	delete $core->job->{wakemeup};
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Port::Depends;
@@ -531,7 +529,8 @@ sub finalize
 	my ($self, $core) = @_;
 	$core->{status} = 0;
 
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
+	return 1;
 }
 
 package DPB::Task::Port::PrepareResults;
@@ -580,7 +579,7 @@ sub finalize
 	} else {
 		$core->{status} = 1;
 	}
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Port::Uninstall;
@@ -734,7 +733,8 @@ sub finalize
 		$core->prop->{depends_count} = 0;
 	}
 	$core->{status} = 0;
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
+	return 1;
 }
 
 # there's nothing to run here, just where we get committed to affinity
@@ -829,7 +829,8 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	$core->{status} = 0;
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
+	return 1;
 }
 
 
@@ -848,7 +849,7 @@ sub finalize
 	if (defined $job->{watched}) {
 		$job->{watched}->reset_offset;
 	}
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Port::Clean;
@@ -871,8 +872,8 @@ sub setup
 sub finalize
 {
 	my ($self, $core) = @_;
-	$core->{status} = 0;
-	return $self->SUPER::finalize($core);
+	$self->SUPER::finalize($core);
+	return 1;
 }
 
 package DPB::Task::Test;
@@ -886,9 +887,9 @@ our @ISA = qw(DPB::Task::BasePort);
 sub finalize
 {
 	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
 	# we always make as though we succeeded
-	$core->{status} = 0;
-	return $self->SUPER::finalize($core);
+	return 1;
 }
 
 package DPB::Task::PrepareTestResults;
@@ -1083,7 +1084,7 @@ sub finalize
 	if ($self->{stuck}) {
 		print {$self->{logfh}} $self->{stuck}, "\n";
 	}
-	return $self->SUPER::finalize(@_);
+	$self->SUPER::finalize(@_);
 }
 
 sub totaltime

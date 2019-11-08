@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.43 2019/11/08 13:42:17 espie Exp $
+# $OpenBSD: Init.pm,v 1.44 2019/11/08 17:47:01 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,7 +39,8 @@ sub finalize
 			$core->prop->{jobs} = $line;
 		}
 	}
-	return $self->SUPER::finalize($core);
+	close($fh);
+	return $core->{status} == 0;
 }
 
 package DPB::Task::WhoAmI;
@@ -62,7 +63,8 @@ sub finalize
 		} 
 		&{$self->{extra_code}};
 	}
-	return $self->SUPER::finalize($core);
+	close($fh);
+	return $core->{status} == 0;
 }
 
 package DPB::Job::Init;
