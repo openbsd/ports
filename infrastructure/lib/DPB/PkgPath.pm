@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.58 2019/11/07 16:34:57 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.59 2019/11/08 13:06:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -352,4 +352,9 @@ sub break
 	push @{$self->{broken}}, $why;
 }
 
+sub log_as_built
+{
+	my ($v, $engine) = @_;
+	$engine->log_as_built($v);
+}
 1;
