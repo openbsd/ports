@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/08 22:00:56 kmos Exp $
 
 COMMENT=		enumerate IP addresses on the local network adapters
 
@@ -16,8 +16,8 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
-
-TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	ifaddr
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -25,8 +25,5 @@ FLAVOR ?=
 .if ! ${FLAVOR:Mpython3}
 RUN_DEPENDS +=		net/py-ipaddress
 .endif
-
-do-test:
-	cd ${WRKSRC} && nosetests${MODPY_BIN_SUFFIX} ifaddr/test_ifaddr.py
 
 .include <bsd.port.mk>
