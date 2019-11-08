@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/08 22:02:19 kmos Exp $
 
 # python3 flavour not needed for this port; the ipaddress module
 # is available in core python 3.3+
@@ -18,10 +18,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC}; nosetests${MODPY_BIN_SUFFIX}
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>
