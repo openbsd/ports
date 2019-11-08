@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.34 2019/11/08 21:37:35 ajacoutot Exp $
+
+PORTROACH =	skipv:release-${VER:S/./-/}
 
 COMMENT =	e-donkey client
 
