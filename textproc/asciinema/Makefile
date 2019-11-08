@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/15 11:12:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/11/08 22:44:27 kmos Exp $
 
 COMMENT=		terminal session recorder
 
@@ -20,10 +20,6 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-
-TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && nosetests${MODPY_BIN_SUFFIX}
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>
