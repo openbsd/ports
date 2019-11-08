@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/08 17:16:36 kmos Exp $
 
 COMMENT =		early-algorithm context-free grammar parser
 
@@ -17,17 +17,15 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	test
 
 RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
 
 post-install:
 	mv ${PREFIX}/bin/spark-parser-coverage{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} test/*.py
 
 .include <bsd.port.mk>
