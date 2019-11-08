@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/11/08 23:00:10 ajacoutot Exp $
 
 COMMENT=	perl interface to the cairo library
 
 MODULES=	cpan
-DISTNAME=	Cairo-1.106
+DISTNAME=	Cairo-1.107
 CATEGORIES=	graphics devel
 CPAN_AUTHOR=	XAOC
-REVISION=	0
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
