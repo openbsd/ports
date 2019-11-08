@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/07/12 20:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2019/11/08 21:51:59 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -7,18 +7,15 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.6.0
+VERSION =		5.7.0
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
-REVISION-java =		1
-REVISION-main =		0
-REVISION-python =	0
 
-SHARED_LIBS +=  link-grammar         7.0      # 11.0
-SHARED_LIBS +=  link-grammar-java    5.0      # 11.0
+SHARED_LIBS +=  link-grammar         8.0      # 12.0
+SHARED_LIBS +=  link-grammar-java    6.0      # 12.0
 
 CATEGORIES =		textproc
 
