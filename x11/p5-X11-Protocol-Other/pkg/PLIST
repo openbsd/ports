@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/17 12:53:31 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/11/08 21:39:56 ajacoutot Exp $
 ${P5SITE}/Encode/
 ${P5SITE}/Encode/X11.pm
 ${P5SITE}/X11/AtomConstants.pm
@@ -40,15 +40,15 @@ ${P5SITE}/X11/Protocol/XSetRoot.pm
 @man man/man3p/X11::Protocol::Other.3p
 @man man/man3p/X11::Protocol::WM.3p
 @man man/man3p/X11::Protocol::XSetRoot.3p
-share/examples/p5-X11-Protocol-Other-30/
-share/examples/p5-X11-Protocol-Other-30/cursor-font-anim.pl
-share/examples/p5-X11-Protocol-Other-30/damage-duplicate.pl
-share/examples/p5-X11-Protocol-Other-30/dbe-info.pl
-share/examples/p5-X11-Protocol-Other-30/dbe-swap.pl
-share/examples/p5-X11-Protocol-Other-30/mit-screen-saver-external.pl
-share/examples/p5-X11-Protocol-Other-30/view-root.pl
-share/examples/p5-X11-Protocol-Other-30/xfixes-cursor-image.pl
-share/examples/p5-X11-Protocol-Other-30/xfixes-selection.pl
-share/examples/p5-X11-Protocol-Other-30/xinerama-info.pl
-share/examples/p5-X11-Protocol-Other-30/xresource-pairwise.pl
-share/examples/p5-X11-Protocol-Other-30/xresource-print.pl
+share/examples/p5-X11-Protocol-Other-31/
+share/examples/p5-X11-Protocol-Other-31/cursor-font-anim.pl
+share/examples/p5-X11-Protocol-Other-31/damage-duplicate.pl
+share/examples/p5-X11-Protocol-Other-31/dbe-info.pl
+share/examples/p5-X11-Protocol-Other-31/dbe-swap.pl
+share/examples/p5-X11-Protocol-Other-31/mit-screen-saver-external.pl
+share/examples/p5-X11-Protocol-Other-31/view-root.pl
+share/examples/p5-X11-Protocol-Other-31/xfixes-cursor-image.pl
+share/examples/p5-X11-Protocol-Other-31/xfixes-selection.pl
+share/examples/p5-X11-Protocol-Other-31/xinerama-info.pl
+share/examples/p5-X11-Protocol-Other-31/xresource-pairwise.pl
+share/examples/p5-X11-Protocol-Other-31/xresource-print.pl
