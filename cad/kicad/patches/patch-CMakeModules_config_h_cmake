@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeModules_config_h_cmake,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: CMakeModules/config.h.cmake
+--- CMakeModules/config.h.cmake.orig
++++ CMakeModules/config.h.cmake
+@@ -36,7 +36,7 @@
+ #cmakedefine HAVE_ISO646_H
+ 
+ #if defined( HAVE_ISO646_H )
+-#include <iso646.h>
++#include <ciso646>
+ #endif
+ 
+ #if !defined( HAVE_STRCASECMP )

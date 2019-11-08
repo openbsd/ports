@@ -1,0 +1,34 @@
+$OpenBSD: patch-include_tool_coroutine_h,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: include/tool/coroutine.h
+--- include/tool/coroutine.h.orig
++++ include/tool/coroutine.h
+@@ -33,6 +33,7 @@
+ 
+ #include <system/libcontext.h>
+ #include <memory>
++#include <sys/mman.h>
+ 
+ /**
+  *  Class COROUNTINE.
+@@ -145,6 +146,8 @@ class COROUTINE (public)
+ 
+     ~COROUTINE()
+     {
++        if (m_stack)
++            munmap(m_stack.release(), c_defaultStackSize);
+     }
+ 
+ public:
+@@ -296,7 +299,10 @@ class COROUTINE (public)
+ 
+         // fixme: Clean up stack stuff. Add a guard
+         size_t stackSize = c_defaultStackSize;
+-        m_stack.reset( new char[stackSize] );
++	void *p = mmap(NULL, stackSize, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON | MAP_STACK, -1, 0);
++	if (p == MAP_FAILED)
++            throw std::bad_alloc();
++        m_stack.reset( static_cast<char *>(p) );
+ 
+         // align to 16 bytes
+         void* sp = (void*)((((ptrdiff_t) m_stack.get()) + stackSize - 0xf) & (~0x0f));

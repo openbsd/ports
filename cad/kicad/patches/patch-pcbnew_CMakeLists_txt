@@ -1,12 +1,14 @@
-$OpenBSD: patch-pcbnew_CMakeLists_txt,v 1.1 2013/06/19 16:16:22 espie Exp $
---- pcbnew/CMakeLists.txt.orig	Wed Jun 19 17:03:43 2013
-+++ pcbnew/CMakeLists.txt	Wed Jun 19 17:03:52 2013
-@@ -201,7 +201,7 @@ endif(APPLE)
- # Create a C++ compilable string initializer containing html text into a *.h file:
- add_custom_command(
-     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/dialog_freeroute_exchange_help_html.h
--    COMMAND $(CMAKE_COMMAND)
-+    COMMAND ${CMAKE_COMMAND}
-         -DinputFile=${CMAKE_CURRENT_SOURCE_DIR}/dialog_freeroute_exchange_help.html
-         -DoutputFile=${CMAKE_CURRENT_SOURCE_DIR}/dialog_freeroute_exchange_help_html.h
-         -P ${CMAKE_MODULE_PATH}/Html2C.cmake
+$OpenBSD: patch-pcbnew_CMakeLists_txt,v 1.2 2019/11/08 14:43:53 sthen Exp $
+
+Index: pcbnew/CMakeLists.txt
+--- pcbnew/CMakeLists.txt.orig
++++ pcbnew/CMakeLists.txt
+@@ -516,7 +516,7 @@ if( BUILD_GITHUB_PLUGIN )
+ endif()
+ 
+ if( UNIX AND NOT APPLE )
+-    list( APPEND PCBNEW_EXTRA_LIBS rt )
++    list( APPEND PCBNEW_EXTRA_LIBS )
+ endif()
+ 
+ 

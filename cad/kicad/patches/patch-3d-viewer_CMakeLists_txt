@@ -1,0 +1,18 @@
+$OpenBSD: patch-3d-viewer_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: 3d-viewer/CMakeLists.txt
+--- 3d-viewer/CMakeLists.txt.orig
++++ 3d-viewer/CMakeLists.txt
+@@ -106,9 +106,11 @@ add_library(3d-viewer STATIC ${3D-VIEWER_SRCS})
+ add_dependencies( 3d-viewer pcbcommon )
+ 
+ target_link_libraries( 3d-viewer
++                       stdc++
++                       c
+                        gal
+                        polygon
+-                       ${Boost_}
++		       ${Boost_LIBRARIES}
+                        ${wxWidgets_LIBRARIES}
+                        ${OPENGL_LIBRARIES}
+                        kicad_3dsg )

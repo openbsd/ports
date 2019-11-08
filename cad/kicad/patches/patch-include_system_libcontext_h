@@ -1,0 +1,19 @@
+$OpenBSD: patch-include_system_libcontext_h,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: include/system/libcontext.h
+--- include/system/libcontext.h.orig
++++ include/system/libcontext.h
+@@ -22,11 +22,11 @@
+ #include <stddef.h>
+ 
+ 
+-#if defined(__GNUC__) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__GNUC__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+     #define LIBCONTEXT_COMPILER_gcc
+ 
+-    #if defined(__linux__) || defined(__FreeBSD__)
++    #if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     #if defined(__x86_64__) || defined(__amd64__)
+         #define LIBCONTEXT_PLATFORM_linux_x86_64
+         #define LIBCONTEXT_CALL_CONVENTION

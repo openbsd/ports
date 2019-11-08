@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_kiway_h,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: include/kiway.h
+--- include/kiway.h.orig
++++ include/kiway.h
+@@ -116,7 +116,7 @@ as such!  As such, it is OK to use UTF8 characters:
+ #define KIFACE_INSTANCE_NAME_AND_VERSION   "KIFACE_1"
+ 
+ #ifndef SWIG
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  #define LIB_ENV_VAR    wxT( "LD_LIBRARY_PATH" )
+ #elif defined(__WXMAC__)
+  #define LIB_ENV_VAR    wxT( "DYLD_LIBRARY_PATH" )

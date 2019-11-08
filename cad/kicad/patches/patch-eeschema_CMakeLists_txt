@@ -1,0 +1,32 @@
+$OpenBSD: patch-eeschema_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: eeschema/CMakeLists.txt
+--- eeschema/CMakeLists.txt.orig
++++ eeschema/CMakeLists.txt
+@@ -332,6 +332,8 @@ target_link_libraries( eeschema
+     common
+     gal
+     legacy_gal
++    stdc++
++    c
+     ${wxWidgets_LIBRARIES}
+     )
+ 
+@@ -353,6 +355,8 @@ target_link_libraries( eeschema_kiface
+     common
+     gal
+     legacy_gal
++    stdc++
++    c
+     ${wxWidgets_LIBRARIES}
+     ${GDI_PLUS_LIBRARIES}
+     )
+@@ -362,6 +366,8 @@ target_include_directories( eeschema_kiface PUBLIC
+ 
+ if( KICAD_SPICE )
+     target_link_libraries( eeschema_kiface
++        stdc++
++        c
+         ${NGSPICE_LIBRARY}
+         )
+ endif()

@@ -1,0 +1,16 @@
+$OpenBSD: patch-new_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: new/CMakeLists.txt
+--- new/CMakeLists.txt.orig
++++ new/CMakeLists.txt
+@@ -60,8 +60,8 @@ if( 1 )
+ 
+     if(CMAKE_COMPILER_IS_GNUCXX)
+         # Set default flags for Release build.
+-        set(CMAKE_C_FLAGS_RELEASE "-Wall -O2 -DNDEBUG ")
+-        set(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -DNDEBUG")
++        set(CMAKE_C_FLAGS_RELEASE "-Wall -DNDEBUG ")
++        set(CMAKE_CXX_FLAGS_RELEASE "-Wall -DNDEBUG")
+         set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-s -static-libgcc")
+ 
+         # Set default flags for Debug build.

@@ -1,40 +1,29 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/11/04 14:58:39 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/11/08 14:43:53 sthen Exp $
 
-Don't use "-isystem /usr/..." but regular "-I/usr/..."
-Prevents "error: template with C linkage" errors.
-
-http://www.mail-archive.com/cmake@cmake.org/msg13226.html
-
---- CMakeLists.txt.orig	Thu Apr 22 19:48:48 2010
-+++ CMakeLists.txt	Tue Nov  4 15:48:30 2014
-@@ -6,6 +6,8 @@ else(WIN32)
-     cmake_minimum_required(VERSION 2.6.0 FATAL_ERROR)
- endif(WIN32)
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -434,12 +434,12 @@ if( false )
+     set( KIFACE_SUFFIX  ${CMAKE_SHARED_MODULE_SUFFIX} )
+ else()
+     # Temporary situation until we can dovetail the python DSO into the kiface DSO.
+-    set( KIFACE_SUFFIX  ".kiface" )
++    set( KIFACE_SUFFIX  ".a" )
+ endif()
  
-+SET(wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
-+
- # Path to local CMake modules.
- set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
- 
-@@ -30,8 +32,8 @@ option(USE_WX_GRAPHICS_CONTEXT
- 
- if(CMAKE_COMPILER_IS_GNUCXX)
-     # Set default flags for Release build.
--    set(CMAKE_C_FLAGS_RELEASE "-Wall -O2 -DNDEBUG")
--    set(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -DNDEBUG")
-+    set(CMAKE_C_FLAGS_RELEASE "-Wall -DNDEBUG")
-+    set(CMAKE_CXX_FLAGS_RELEASE "-Wall -DNDEBUG")
-     set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-s")
- 
-     # Set default flags for Debug build.
-@@ -163,7 +165,9 @@ endif(EXISTS ${CMAKE_SOURCE_DIR}/include/config.h)
+ # KIFACE_PREFIX is a basename prefix used for top level program modules which
+ # implement the KIFACE.
+-set( KIFACE_PREFIX  "_" )
++set( KIFACE_PREFIX  "lib" )
+ #message( STATUS "KIFACE_SUFFIX:${KIFACE_SUFFIX}  KIFACE_PREFIX:${KIFACE_PREFIX}" )
  
  
- # Include paths.
--include_directories(${CMAKE_SOURCE_DIR}/include
-+include_directories(${X11BASE}/include/
-+		    ${LOCALBASE}/include/
-+		    ${CMAKE_SOURCE_DIR}/include
-                     ${CMAKE_SOURCE_DIR}/share
-                     ${CMAKE_BINARY_DIR})
+@@ -607,7 +607,7 @@ find_package( Pixman 0.30 REQUIRED )
  
+ #
+ # Find Boost headers, required.
+-find_package( Boost 1.54.0 REQUIRED )
++find_package( Boost 1.54.0 REQUIRED COMPONENTS context system )
+ 
+ # Include MinGW resource compiler.
+ include( MinGWResourceCompiler )

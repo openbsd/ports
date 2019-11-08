@@ -1,0 +1,14 @@
+$OpenBSD: patch-kicad_kicad_cpp,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: kicad/kicad.cpp
+--- kicad/kicad.cpp.orig
++++ kicad/kicad.cpp
+@@ -252,7 +252,7 @@ struct APP_KICAD : public wxApp
+     {
+         program.OnPgmExit();
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+         /* Avoid wxLog crashing when used in destructors. */
+         wxLog::EnableLogging( false );
+ #endif

@@ -1,0 +1,17 @@
+$OpenBSD: patch-3d-viewer_3d_cache_sg_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: 3d-viewer/3d_cache/sg/CMakeLists.txt
+--- 3d-viewer/3d_cache/sg/CMakeLists.txt.orig
++++ 3d-viewer/3d_cache/sg/CMakeLists.txt
+@@ -93,7 +93,10 @@ unset( S3DSG_VERSION_FILE CACHE )
+ # Define a flag to expose the appropriate EXPORT macro at build time
+ target_compile_definitions( kicad_3dsg PRIVATE -DCOMPILE_SGLIB )
+ 
+-target_link_libraries( kicad_3dsg ${wxWidgets_LIBRARIES} )
++target_link_libraries( kicad_3dsg
++                       stdc++
++		       c
++                       ${wxWidgets_LIBRARIES} )
+ 
+ install( TARGETS
+     kicad_3dsg

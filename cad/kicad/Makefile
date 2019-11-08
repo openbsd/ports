@@ -1,90 +1,84 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/08 14:43:53 sthen Exp $
 
-BROKEN=		/usr/local/include/wx-3.0/wx/strvararg.h:354:71: error: no member named 'value' in 'wxFormatStringSpecifierNonPodType<false>'
+# XXX internal dependency problem
+# In file included from /pobj/ports/kicad-5.1.4/kicad-5.1.4/pcbnew/netlist.cpp:41:
+# /pobj/ports/kicad-5.1.4/kicad-5.1.4/pcbnew/./netlist_reader.h:39:10: fatal error: 'netlist_lexer.h' file not found
+USE_NINJA = no
 
-COMMENT-main=	schematic and PCB editing software
-COMMENT-docs=	documentation for the kicad library of components
+V =			5.1.4
+COMMENT =		schematic and PCB editing software
+DISTNAME =		kicad-${V}
+EPOCH =			0
 
-V=		2010-05-05
-S=		BZR2356-stable
-DISTNAME=	kicad-sources-${V}-${S}
-PKGNAME=	kicad-${V:S/-//g}
-PKGNAME-main=	kicad-${V:S/-//g}
-PKGNAME-docs=	kicad-docs-${V:S/-//g}
+SHARED_LIBS +=		kicad_3dsg                0.0 # 2.0
 
-REVISION-main=	12
-REVISION-docs=	3
+CATEGORIES =		cad
 
-CATEGORIES=	cad
+HOMEPAGE =		http://www.kicad-pcb.org
 
-HOMEPAGE=	http://www.kicad-pcb.org/
+#GPLv3
+PERMIT_PACKAGE =	Yes
 
-# LGPLv2.1
-PERMIT_PACKAGE=	Yes
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU ICE PTKernel SM TKBO
+WANTLIB += TKBRep TKBin TKBinL TKBinXCAF TKBool TKCAF TKCDF TKFillet
+WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKIGES TKLCAF
+WANTLIB += TKMath TKMesh TKOffset TKPCAF TKPLCAF TKPShape TKPrim
+WANTLIB += TKSTEP TKSTEP209 TKSTEPAttr TKSTEPBase TKService TKShHealing
+WANTLIB += TKTopAlgo TKV3d TKXCAF TKXDEIGES TKXDESTEP TKXSBase
+WANTLIB += TKernel X11 Xext boost_atomic-mt boost_chrono-mt boost_context-mt
+WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt
+WANTLIB += c cairo crypto curl freetype m ngspice pixman-1 ssl
+WANTLIB += wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
+WANTLIB += wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0
+WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_stc-3.0
 
-MASTER_SITES=	http://iut-tice.ujf-grenoble.fr/cao/sources/old_versions/
-MASTER_SITES0=	http://distfiles.nl/
+MASTER_SITES =		https://launchpad.net/kicad/5.0/${V}/+download/
 
-DOCDIST=	doc_components-${V}-${S}.tgz
-DISTFILES=	${DISTNAME}.zip ${DOCDIST}:0
-EXTRACT_ONLY=	${DISTNAME}.zip
-DIST_SUBDIR=	kicad
+EXTRACT_SUFX =		.tar.xz
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
-MULTI_PACKAGES=	-main -docs
+MODULES =		devel/cmake \
+			lang/python
 
-MODULES=	devel/cmake
+BUILD_DEPENDS =		devel/doxygen \
+			devel/re2c \
+			devel/swig \
+			graphics/freeglut \
+			graphics/glm \
+			misc/shared-mime-info
 
-BUILD_DEPENDS=	devel/gettext,-tools
-
-# kicad includes some boost headers, but somehow
-# randomly fails if boost is present then junked
-BUILD_DEPENDS+=	devel/boost
-
-RUN_DEPENDS-main=	cad/kicad-library \
+RUN_DEPENDS =		cad/kicad-share/footprints \
+			cad/kicad-share/i18n \
+			cad/kicad-share/packages3D \
+			cad/kicad-share/symbols \
+			cad/kicad-share/templates \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS=	x11/wxWidgets
+LIB_DEPENDS =		cad/ngspice/libngspice \
+			cad/oce \
+			devel/boost \
+			devel/boost,-md \
+			graphics/cairo \
+			graphics/glew \
+			net/curl \
+			x11/wxWidgets
 
-WANTLIB-main += GL GLU c m pthread ${COMPILER_LIBCXX}
-WANTLIB-main += wx_base wx_base_net wx_gtk2_adv wx_gtk2_aui
-WANTLIB-main += wx_gtk2_core wx_gtk2_gl wx_gtk2_html z
-WANTLIB-docs=
-RUN_DEPENDS-docs=
-LIB_DEPENDS-docs=
-PKG_ARCH-docs=	*
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
+			-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wx-config \
+			-DwxWidgets_LIBRARIES="${LOCALBASE}/lib" \
+			-DwxWidgets_INCLUDE_DIRS="${LOCALBASE}/include/wx-3.0" \
+			-DOCE_DIR="${LOCALBASE}/include/oce" \
+			-DKICAD_SCRIPTING=OFF
 
-WRKDIST=	${WRKDIR}/kicad-sources-${V}-${S:S/-stable//}
-
-MAKE_FLAGS=	CC=${CXX} CXX=${CXX} LD=${CXX} \
-		CXXFLAGS="${CXXFLAGS}" X11BASE=${X11BASE}
-
-LANGS=		ca cs de es fi fr hu it ko nl pl pt ru sl sv zh_CN
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/common/gestfich.cpp
-
-post-build:
-.for l in ${LANGS}
-	cd ${WRKSRC}/internat/$l && rm -f *.mo && \
-		msgfmt -o kicad.mo kicad.po
-.endfor
+NO_TEST =		Yes
 
 post-install:
-.for l in ${LANGS}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$l/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/internat/$l/kicad.mo \
-		${PREFIX}/share/locale/$l/LC_MESSAGES
-.endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kicad/library
-	cd ${PREFIX}/share/doc/kicad/library && \
-		tar -xzf ${FULLDISTDIR}/${DOCDIST}
-	cd ${PREFIX}/share/doc/kicad/library/doc && \
-		mv analog_mux\&switches analog_mux_and_switches
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/kicad \
-		${PREFIX}/share/doc/kicad
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/kicad/demos/python_scripts_examples/
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/kicad/plugins/
 
 .include <bsd.port.mk>

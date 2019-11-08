@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: common/CMakeLists.txt
+--- common/CMakeLists.txt.orig
++++ common/CMakeLists.txt
+@@ -597,7 +597,7 @@ add_dependencies( common page_layout_lexer_source_file
+ # This one gets made only when testing.
+ # to build it, first enable #define STAND_ALONE at top of dsnlexer.cpp
+ add_executable( dsntest EXCLUDE_FROM_ALL dsnlexer.cpp )
+-target_link_libraries( dsntest common ${wxWidgets_LIBRARIES} rt )
++target_link_libraries( dsntest common ${wxWidgets_LIBRARIES} )
+ 
+ target_link_libraries( pcbcommon PUBLIC bitmaps )
+ 

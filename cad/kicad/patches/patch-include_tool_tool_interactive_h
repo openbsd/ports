@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_tool_tool_interactive_h,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: include/tool/tool_interactive.h
+--- include/tool/tool_interactive.h.orig
++++ include/tool/tool_interactive.h
+@@ -27,6 +27,7 @@
+ #define __TOOL_INTERACTIVE_H
+ 
+ #include <string>
++#include <functional>
+ 
+ #include <tool/tool_event.h>
+ #include <tool/tool_base.h>

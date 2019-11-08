@@ -1,0 +1,22 @@
+$OpenBSD: patch-utils_kicad2step_kicad2step_cpp,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: utils/kicad2step/kicad2step.cpp
+--- utils/kicad2step/kicad2step.cpp.orig
++++ utils/kicad2step/kicad2step.cpp
+@@ -305,11 +305,11 @@ int KICAD2MCAD::OnRun()
+             if( !res )
+                 return -1;
+         }
+-        catch( const Standard_Failure& e )
+-        {
+-            e.Print( std::cerr );
+-            return -1;
+-        }
++        /* catch( const Standard_Failure& e ) */
++        /* { */
++        /*     e.Print( std::cerr ); */
++        /*     return -1; */
++        /* } */
+         catch( ... )
+         {
+             std::cerr << "** (no exception information)\n";

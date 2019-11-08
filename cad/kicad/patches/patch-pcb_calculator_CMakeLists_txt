@@ -1,0 +1,23 @@
+$OpenBSD: patch-pcb_calculator_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: pcb_calculator/CMakeLists.txt
+--- pcb_calculator/CMakeLists.txt.orig
++++ pcb_calculator/CMakeLists.txt
+@@ -67,6 +67,8 @@ target_link_libraries( pcb_calculator
+     # There's way too much crap coming in from common yet.
+     common
+     gal
++    stdc++
++    c
+     ${wxWidgets_LIBRARIES}
+     )
+ 
+@@ -87,6 +89,8 @@ set_target_properties( pcb_calculator_kiface PROPERTIE
+     )
+ target_link_libraries( pcb_calculator_kiface
+     common
++    stdc++
++    c
+     ${wxWidgets_LIBRARIES}
+     )
+ set_source_files_properties( pcb_calculator.cpp PROPERTIES

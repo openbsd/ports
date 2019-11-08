@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_tool_tool_manager_cpp,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: common/tool/tool_manager.cpp
+--- common/tool/tool_manager.cpp.orig
++++ common/tool/tool_manager.cpp
+@@ -27,6 +27,7 @@
+ #include <map>
+ #include <stack>
+ #include <algorithm>
++#include <functional>
+ 
+ #include <core/optional.h>
+ 

@@ -1,0 +1,23 @@
+$OpenBSD: patch-gerbview_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+
+Index: gerbview/CMakeLists.txt
+--- gerbview/CMakeLists.txt.orig
++++ gerbview/CMakeLists.txt
+@@ -120,6 +120,8 @@ target_link_libraries( gerbview
+     common
+     gal
+     legacy_wx
++    stdc++
++    c
+     ${wxWidgets_LIBRARIES}
+     )
+ 
+@@ -150,6 +152,8 @@ target_link_libraries( gerbview_kiface
+     common
+     gal
+     legacy_wx
++    stdc++
++    c
+     ${wxWidgets_LIBRARIES}
+     ${GDI_PLUS_LIBRARIES}
+     )
