@@ -1,0 +1,23 @@
+$OpenBSD: patch-terminado_tests_basic_test_py,v 1.1 2019/11/08 23:31:46 kmos Exp $
+
+Eliminate need for bash
+
+Index: terminado/tests/basic_test.py
+--- terminado/tests/basic_test.py.orig
++++ terminado/tests/basic_test.py
+@@ -124,12 +124,12 @@ class TermTestCase(tornado.testing.AsyncHTTPTestCase):
+         raise tornado.gen.Return(pids)
+ 
+     def get_app(self):
+-        self.named_tm = NamedTermManager(shell_command=['bash'], 
++        self.named_tm = NamedTermManager(shell_command=['ksh'], 
+                                             max_terminals=MAX_TERMS,
+                                             ioloop=self.io_loop)
+-        self.single_tm = SingleTermManager(shell_command=['bash'], 
++        self.single_tm = SingleTermManager(shell_command=['ksh'], 
+                                             ioloop=self.io_loop)
+-        self.unique_tm = UniqueTermManager(shell_command=['bash'], 
++        self.unique_tm = UniqueTermManager(shell_command=['ksh'], 
+                                             max_terminals=MAX_TERMS,
+                                             ioloop=self.io_loop)
+         
