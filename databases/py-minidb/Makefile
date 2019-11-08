@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/08 14:48:10 kmos Exp $
 
 COMMENT =		simple SQLite3 store for Python objects
 
@@ -16,12 +16,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-
-TEST_DEPENDS =		devel/py-nose,python3
+MODPY_PYTEST =		Yes
 
 MODPY_VERSION = 	${MODPY_DEFAULT_VERSION_3}
-
-do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests-3
 
 .include <bsd.port.mk>
