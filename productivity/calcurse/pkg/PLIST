@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/04/28 14:26:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/11/08 15:45:20 fcambus Exp $
 @bin bin/calcurse
 bin/calcurse-caldav
 bin/calcurse-upgrade
+bin/calcurse-vdir
 @man man/man1/calcurse.1
 share/doc/calcurse/
 share/doc/calcurse/add.txt
