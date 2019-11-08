@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2019/10/03 07:58:02 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/11/08 14:17:48 sthen Exp $
 
 PKG_ARCH ?=		*
 
 V ?=			5.1.4
-DISTNAME ?=		kicad-${KICAD_PROJECT}-$V
+DISTNAME ?=		kicad-${KICAD_PROJECT:C/^kicad-//}-$V
 
 CATEGORIES ?=		cad
 
