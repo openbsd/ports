@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/08 22:50:06 kmos Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS=		python3
 FLAVOR?=
@@ -25,8 +26,5 @@ TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR} \
 
 post-install:
 	mv ${PREFIX}/bin/markdown_py{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC}/tests && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
