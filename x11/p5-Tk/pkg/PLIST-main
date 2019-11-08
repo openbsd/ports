@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/02/22 15:27:44 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2019/11/08 21:39:34 ajacoutot Exp $
 @pkgpath x11/p5-Tk
 bin/gedi
 bin/ptked
@@ -226,6 +226,7 @@ ${P5ARCH}/Tk/folder.xbm
 ${P5ARCH}/Tk/folder.xpm
 ${P5ARCH}/Tk/form.pod
 ${P5ARCH}/Tk/getOpenFile.pod
+${P5ARCH}/Tk/getSaveFile.pod
 ${P5ARCH}/Tk/grab.pod
 ${P5ARCH}/Tk/grid.pod
 ${P5ARCH}/Tk/icon.gif
@@ -666,6 +667,7 @@ ${P5ARCH}/auto/Tk/updateWidgets.al
 @man man/man3p/Tk::focus.3p
 @man man/man3p/Tk::form.3p
 @man man/man3p/Tk::getOpenFile.3p
+@man man/man3p/Tk::getSaveFile.3p
 @man man/man3p/Tk::grab.3p
 @man man/man3p/Tk::grid.3p
 @man man/man3p/Tk::mega.3p
