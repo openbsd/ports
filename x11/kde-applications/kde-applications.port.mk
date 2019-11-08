@@ -1,4 +1,4 @@
-# $OpenBSD: kde-applications.port.mk,v 1.3 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: kde-applications.port.mk,v 1.4 2019/11/08 13:38:38 rsadowski Exp $
 
 # Module for KDE applications related ports, divided into 16 categories:
 # - accessibility
@@ -20,7 +20,7 @@
 
 MODULES :=		devel/kf5 ${MODULES}
 VERSION ?=		18.12.0
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
+MASTER_SITES ?=		${MASTER_SITE_KDE:=Attic/applications/${VERSION}/src/}
 
 # Set to 'yes' if there are .desktop files under share/applications/.
 .if defined(MODKDE5_DESKTOP_FILE) && ${MODKDE5_DESKTOP_FILE:L} == "yes"
