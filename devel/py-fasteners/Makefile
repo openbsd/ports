@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/22 13:00:01 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/08 14:53:28 kmos Exp $
 
 COMMENT =		python package that provides useful locks
 
@@ -17,6 +17,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	fasteners
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -25,16 +27,11 @@ FLAVOR ?=
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-pbr${MODPY_FLAVOR} \
-			devel/py-nose${MODPY_FLAVOR} \
 			devel/py-testtools${MODPY_FLAVOR}
 
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS  +=		devel/py-monotonic
 TEST_DEPENDS +=		devel/py-futures
 .endif
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	    ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
