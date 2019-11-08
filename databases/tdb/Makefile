@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2019/10/07 13:35:48 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2019/11/08 19:44:31 jca Exp $
 
 COMMENT=	trivial database library
 
 # Keep in sync with the version bundled in net/samba
 DISTNAME=	tdb-1.3.16
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	tdb	4.3
 
@@ -17,7 +17,7 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c m pthread util ${MODPY_WANTLIB}
+WANTLIB += c intl m pthread util ${MODPY_WANTLIB}
 
 MASTER_SITES=	https://filedump.se.rit.edu/pub/distfiles/ \
 		https://download.samba.org/pub/tdb/
