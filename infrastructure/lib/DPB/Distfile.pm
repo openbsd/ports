@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.20 2019/11/06 15:12:46 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.21 2019/11/08 10:08:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -161,6 +161,11 @@ sub lockname
 sub simple_lockname
 {
 	&lockname;
+}
+
+sub fullpkgname
+{
+	return undef;
 }
 
 # should be used for rebuild_info and logging only
