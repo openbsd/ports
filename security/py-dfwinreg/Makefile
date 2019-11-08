@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/08 09:02:55 kmos Exp $
 
 COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 
 MODPY_EGG_VERSION = 20180712
 DISTNAME =	dfwinreg-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -20,8 +21,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-construct \
-			security/py-dfdatetime \
+			devel/py-dtfabric \
 			devel/py-six \
+			security/py-dfdatetime \
 			sysutils/libregf
 TEST_DEPENDS =		devel/py-test \
 			devel/py-mock
