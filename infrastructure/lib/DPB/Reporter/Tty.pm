@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.12 2019/10/23 14:34:27 espie Exp $
+# $OpenBSD: Tty.pm,v 1.13 2019/11/08 10:26:09 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -49,7 +49,8 @@ sub create
 {
 	my ($class, $state) = @_;
 	my $self = $class->SUPER::create($state);
-	$self->{record} = $state->{log_user}->open('>>', $state->{record});
+	$self->{record} = $state->{log_user}->open('>>', $state->{record})
+	    if defined $state->{record};
 	$self->{extra} = '';	# for myprint
 	$self->create_terminal;
 	$self->set_sig_handlers;
@@ -79,7 +80,8 @@ sub report
 			# The "record" output is used by dpb-replay, 
 			# so it's just each new display prefixed with 
 			# a timestamp
-			print {$self->{record}} "@@@", CORE::time(), "\n", $msg;
+			print {$self->{record}} "@@@", CORE::time(), "\n", $msg
+			    if defined $self->{record};
 			$self->{continued} = 0;
 			my $method = $self->{write};
 			$self->$method($msg);
