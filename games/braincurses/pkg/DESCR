@@ -1,2 +1,3 @@
 BrainCurses is a clone of the Mastermind game implemented with curses(3).
-It requires a color terminal.
+It requires a color terminal.  The game works the best with a dark
+background and white foreground.
