@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2019/11/02 14:27:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2019/11/08 07:47:29 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.34.1
+REVISION=		0
 
 CATEGORIES=		devel
 
