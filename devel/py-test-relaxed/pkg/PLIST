@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/08 23:18:09 kmos Exp $
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}classes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}fixtures.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}raises.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}reporter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/${MODPY_PYCACHE}trap.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/_version.py
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/classes.py
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/fixtures.py
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/plugin.py
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/raises.py
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/reporter.py
+lib/python${MODPY_VERSION}/site-packages/pytest_relaxed/trap.py
