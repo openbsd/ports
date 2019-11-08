@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/06/23 16:15:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/11/08 15:48:27 fcambus Exp $
 @newgroup _gdnsd:743
 @newuser _gdnsd:743:_gdnsd:daemon:gdns user:/var/empty:/sbin/nologin
 @extraunexec rm -f ${SYSCONFDIR}/gdnsd/* ${SYSCONFDIR}/gdnsd/zones/*
+@sample ${SYSCONFDIR}/gdnsd/
+@sample ${SYSCONFDIR}/gdnsd/zones/
+@rcscript ${RCDIR}/gdnsd
 @bin bin/gdnsd_geoip_test
 include/gdnsd/
 include/gdnsd/alloc.h
@@ -63,6 +66,3 @@ share/doc/gdnsd/NEWS
 share/doc/gdnsd/README.md
 share/doc/gdnsd/gdnsd_manual.txt
 @sample ${VARBASE}/gdnsd/
-@sample ${SYSCONFDIR}/gdnsd/
-@sample ${SYSCONFDIR}/gdnsd/zones/
-@rcscript ${RCDIR}/gdnsd
