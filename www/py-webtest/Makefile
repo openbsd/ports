@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/08 23:40:06 kmos Exp $
 
 COMMENT =		helper to test wsgi applications
 
@@ -18,6 +18,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -29,10 +30,6 @@ RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 
 # also needs WSGIProxy2, PasteDeploy and pyquery
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-nose${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} lib tests
+			devel/py-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
