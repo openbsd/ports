@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_fribidi-bidi_c,v 1.1 2019/11/08 22:39:25 sthen Exp $
+
+From 034c6e9a1d296286305f4cfd1e0072b879f52568 Mon Sep 17 00:00:00 2001
+From: Dov Grobgeld <dov.grobgeld@gmail.com>
+Date: Thu, 24 Oct 2019 09:37:29 +0300
+Subject: [PATCH] Truncate isolate_level to FRIBIDI_BIDI_MAX_EXPLICIT_LEVEL
+
+Index: lib/fribidi-bidi.c
+--- lib/fribidi-bidi.c.orig
++++ lib/fribidi-bidi.c
+@@ -747,7 +747,9 @@ fribidi_get_par_embedding_levels_ex (
+             }
+ 
+ 	  RL_LEVEL (pp) = level;
+-          RL_ISOLATE_LEVEL (pp) = isolate_level++;
++          RL_ISOLATE_LEVEL (pp) = isolate_level;
++          if (isolate_level < FRIBIDI_BIDI_MAX_EXPLICIT_LEVEL-1)
++	      isolate_level++;
+           base_level_per_iso_level[isolate_level] = new_level;
+ 
+ 	  if (!FRIBIDI_IS_NEUTRAL (override))
