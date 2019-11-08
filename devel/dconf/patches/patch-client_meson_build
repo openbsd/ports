@@ -1,0 +1,19 @@
+$OpenBSD: patch-client_meson_build,v 1.1 2019/11/08 07:47:12 ajacoutot Exp $
+
+From cc32667c5d7d9ff95e65cc21f59905d8f9218394 Mon Sep 17 00:00:00 2001
+From: Diego Escalante Urrelo <diegoe@gnome.org>
+Date: Thu, 31 Oct 2019 05:51:22 -0500
+Subject: [PATCH] build: Update use of link_whole for meson-0.52
+
+Index: client/meson.build
+--- client/meson.build.orig
++++ client/meson.build
+@@ -28,7 +28,7 @@ libdconf_client = static_library(
+ 
+ libdconf_client_dep = declare_dependency(
+   dependencies: gio_dep,
+-  link_whole: libdconf_client,
++  link_with: libdconf_client,
+ )
+ 
+ libdconf = shared_library(
