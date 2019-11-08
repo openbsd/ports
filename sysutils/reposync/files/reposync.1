@@ -1,4 +1,4 @@
-.\"	$OpenBSD: reposync.1,v 1.1.1.1 2019/10/07 10:20:09 sthen Exp $
+.\"	$OpenBSD: reposync.1,v 1.2 2019/11/08 13:57:10 sthen Exp $
 .\"
 .\" Copyright (c) 2019 Stuart Henderson <sthen@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 7 2019 $
+.Dd $Mdocdate: November 8 2019 $
 .Dt REPOSYNC 1
 .Os
 .Sh NAME
@@ -22,6 +22,8 @@
 .Nd update OpenBSD source repository
 .Sh SYNOPSIS
 .Nm
+.Op Fl f
+.Op Fl l Ar username
 .Ar rsync://upstream/path
 .Op Ar destination
 .Sh DESCRIPTION
@@ -42,6 +44,15 @@ The directory
 .Pa /var/db/reposync
 must exist and be writable by the user running
 .Nm .
+.Pp
+The options are as follows.
+.Bl -tag -width Ds
+.It Fl l
+.Xr ssh 1
+port forwarding is used with the specified username.
+.It Fl F
+Force updating, even if ChangeLog has not been updated.
+.El
 .Sh EXAMPLES
 .Dl $ reposync rsync://anoncvs.example.org/cvs /home/cvs
 .Pp
@@ -50,7 +61,7 @@ Fetch files using the cleartext rsync protocol from
 to update the local directory
 .Pa /home/cvs .
 .Pp
-.Dl $ reposync rsync://anoncvs@anoncvs.example.org/cvs
+.Dl $ reposync -l anoncvs rsync://anoncvs.example.org/cvs
 .Pp
 Connect via
 .Xr ssh 1
