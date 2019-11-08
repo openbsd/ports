@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/11/01 19:25:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2019/11/08 14:28:48 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -35,11 +35,16 @@ MODPY_BUILDDEP= 	No
 LIB_DEPENDS=		devel/gobject-introspection \
 			devel/spidermonkey60
 
-TEST_DEPENDS=		sysutils/e2fsprogs #uuidgen(1)
+
+# --with-dbus-tests
+BUILD_DEPENDS +=	x11/dbus
+
+# uuidgen(1)
+TEST_DEPENDS=
 
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS +=	--disable-profiler
+CONFIGURE_ARGS=		--disable-profiler
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gjs/
