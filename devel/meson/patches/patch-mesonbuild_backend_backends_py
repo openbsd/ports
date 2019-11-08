@@ -1,0 +1,20 @@
+$OpenBSD: patch-mesonbuild_backend_backends_py,v 1.5 2019/11/08 07:46:31 ajacoutot Exp $
+
+From 212a05b87ed34f921dfd07142305389dbfa9bb7d Mon Sep 17 00:00:00 2001
+From: Xavier Claessens <xavier.claessens@collabora.com>
+Date: Fri, 11 Oct 2019 11:01:22 -0400
+Subject: [PATCH] Remove duplicated object files in static libraries
+
+Index: mesonbuild/backend/backends.py
+--- mesonbuild/backend/backends.py.orig
++++ mesonbuild/backend/backends.py
+@@ -281,7 +281,8 @@ class Backend:
+                                os.path.join('dummyprefixdir', fromdir))
+ 
+     def flatten_object_list(self, target, proj_dir_to_build_root=''):
+-        return self._flatten_object_list(target, target.get_objects(), proj_dir_to_build_root)
++        obj_list = self._flatten_object_list(target, target.get_objects(), proj_dir_to_build_root)
++        return list(dict.fromkeys(obj_list))
+ 
+     def _flatten_object_list(self, target, objects, proj_dir_to_build_root):
+         obj_list = []
