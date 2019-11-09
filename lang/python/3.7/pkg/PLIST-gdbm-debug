@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gdbm-debug,v 1.1 2019/11/09 17:28:58 pirofti Exp $
+lib/python3.7/lib-dynload/.debug/_gdbm.so.dbg
