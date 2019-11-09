@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_haproxy_1,v 1.6 2019/08/13 00:34:03 danj Exp $
+$OpenBSD: patch-doc_haproxy_1,v 1.7 2019/11/09 15:52:53 danj Exp $
 Index: doc/haproxy.1
 --- doc/haproxy.1.orig
 +++ doc/haproxy.1
-@@ -212,8 +212,7 @@ This signal is intercepted and ignored on systems with
+@@ -217,8 +217,7 @@ This signal is intercepted and ignored on systems with
  
  .SH SEE ALSO
  
