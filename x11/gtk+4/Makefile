@@ -1,13 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/08/17 10:47:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2019/11/09 17:27:40 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
 # XXX -Dman-pages=true yet no man page is built
 # XXX add support for libcloudproviders? (-Denable-cloudproviders=true)
-
-# Everything is a Freaking GLib/GTK+ problem
-CFLAGS +=		-g
-INSTALL_STRIP=		# empty
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+4 CUPS print backend
@@ -24,8 +20,11 @@ PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
-REVISION-main=		3
-REVISION-cups=		0
+REVISION-main=		4
+REVISION-cups=		1
+REVISION-cloudprint=	0
+REVISION-guic=		0
+REVISION-media=		0
 
 CATEGORIES=		x11 devel
 

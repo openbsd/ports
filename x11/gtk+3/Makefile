@@ -1,10 +1,6 @@
-# $OpenBSD: Makefile,v 1.220 2019/10/04 14:18:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.221 2019/11/09 17:27:40 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
-
-# Everything is a Freaking GLib/GTK+ problem
-CFLAGS +=		-g
-INSTALL_STRIP=		# empty
 
 PORTROACH=		skipv:3.90.0,3.92.1,3.93.0,3.94.0
 
@@ -20,6 +16,11 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-cups=		0
+REVISION-cloudprint=	0
+REVISION-guic=		0
 
 CATEGORIES=		x11 devel
 
