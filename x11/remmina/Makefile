@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.38 2019/11/07 10:09:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2019/11/09 11:02:27 ajacoutot Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
-# XXX: Before updating, ensure freerdp works:
+# XXX development moves to GitLab: https://gitlab.com/Remmina/Remmina;
+# XXX before updating, ensure freerdp works:
 # cf. http://openbsd-archive.7691.n7.nabble.com/x11-freerdp-update-to-2-0-0-rc4-tp360502p360567.html
 GH_TAGNAME=		v1.2.30
 GH_PROJECT=		Remmina
 GH_ACCOUNT=		FreeRDP
 PKGNAME=		remmina-${GH_TAGNAME:S/v//}
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		x11 net
 
 HOMEPAGE=		https://www.remmina.org/
 
 # GPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ICE SM X11 Xext atk-1.0 avahi-client avahi-common avahi-ui-gtk3
-WANTLIB += c cairo freerdp2 freerdp-client2 gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 intl pango-1.0 pthread ssh
-WANTLIB += telepathy-glib vncclient vte-2.91 xkbfile
-WANTLIB += winpr2 soup-2.4 json-glib-1.0 crypto dbus-1 dbus-glib-1 ssl
-WANTLIB += cairo-gobject pangocairo-1.0 secret-1 spice-client-glib-2.0
-WANTLIB += spice-client-gtk-3.0
+WANTLIB += c cairo cairo-gobject crypto freerdp-client2 freerdp2
+WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 gtk-3 intl json-glib-1.0 pango-1.0
+WANTLIB += pangocairo-1.0 pthread secret-1 soup-2.4 spice-client-glib-2.0
+WANTLIB += spice-client-gtk-3.0 ssh ssl vncclient vte-2.91 winpr2
+WANTLIB += xkbfile
 
 MODULES=		devel/cmake
 
@@ -36,24 +36,20 @@ LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/vte3 \
 			net/avahi,,-gtk3 \
 			net/libvncserver \
-			security/libssh>=0.8.4 \
+			security/libssh \
 			x11/freerdp \
 			x11/spice-gtk \
-			x11/gnome/libsecret \
-			net/telepathy/telepathy-glib
+			x11/gnome/libsecret
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS=		-DWITH_SSE2=ON
-.else
-CONFIGURE_ARGS=		-DWITH_SSE2=OFF
-.endif
-
 # Appindicator is only used by Ubuntu's Unity.
-CONFIGURE_ARGS+=	-DWITH_APPINDICATOR=OFF \
+CONFIGURE_ARGS +=	-DWITH_APPINDICATOR=OFF \
 			-DCMAKE_C_FLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}"
+
+# telepathy support is removed in newer releases
+CONFIGURE_ARGS +=	-DWITH_TELEPATHY=OFF
 
 .include <bsd.port.mk>

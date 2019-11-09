@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/07/01 18:33:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/11/09 11:02:27 ajacoutot Exp $
 @conflict remmina-plugins-*
 @conflict remmina-plugins-telepathy-*
 @pkgpath x11/remmina,-rdp
@@ -19,13 +19,11 @@ lib/remmina/plugins/remmina-plugin-nx.so
 lib/remmina/plugins/remmina-plugin-rdp.so
 lib/remmina/plugins/remmina-plugin-secret.so
 lib/remmina/plugins/remmina-plugin-spice.so
-lib/remmina/plugins/remmina-plugin-telepathy.so
 lib/remmina/plugins/remmina-plugin-vnc.so
 lib/remmina/plugins/remmina-plugin-xdmcp.so
 @man man/man1/remmina.1
 share/applications/org.remmina.Remmina.desktop
 share/applications/remmina-file.desktop
-share/dbus-1/services/org.freedesktop.Telepathy.Client.Remmina.service
 share/icons/hicolor/128x128/apps/org.remmina.Remmina.png
 share/icons/hicolor/16x16/actions/remmina-dynres.png
 share/icons/hicolor/16x16/actions/remmina-fit-window.png
@@ -342,9 +340,6 @@ share/remmina/ui/remmina_preferences.glade
 share/remmina/ui/remmina_snap_info_dialog.glade
 share/remmina/ui/remmina_spinner.glade
 share/remmina/ui/remmina_string_list.glade
-share/telepathy/
-share/telepathy/clients/
-share/telepathy/clients/Remmina.client
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag update-mime-database
