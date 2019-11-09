@@ -1,4 +1,4 @@
-$OpenBSD: patch-enforcer_utils_1_4-2_0_db_convert_README_md,v 1.1 2019/01/25 08:32:02 pvk Exp $
+$OpenBSD: patch-enforcer_utils_1_4-2_0_db_convert_README_md,v 1.2 2019/11/09 10:17:45 pvk Exp $
 
 Index: enforcer/utils/1.4-2.0_db_convert/README.md
 --- enforcer/utils/1.4-2.0_db_convert/README.md.orig
@@ -14,7 +14,7 @@ Index: enforcer/utils/1.4-2.0_db_convert/README.md
   * Also prevent any nameserver from receiving updates from OpenDNSSEC until
     you are sure the migration was successful.
   * It is discouraged to perform the migration during a rollover. The migration
-@@ -31,27 +31,32 @@ Conversion Sqlite
+@@ -31,39 +31,44 @@ Conversion Sqlite
  
  There are 2 relevant files for the conversion:
  
@@ -44,9 +44,9 @@ Index: enforcer/utils/1.4-2.0_db_convert/README.md
 - * mysql_convert.sql - Contains SQL statements, called by convert_mysql
 + * ${PREFIX}/sbin/ods-migrate-mysql - Conversion script
 + * ${PREFIX}/share/opendnssec/migration/migrate-mysql.sql -
-+	Contains SQL statements, called by convert_mysql
++	Contains SQL statements, called by ods-migrate-mysql
  
--call the script like so: `./convert_sqlite -i INPUT -o OUTPUT -h HOST -u USER
+-call the script like so: `./convert_mysql -i INPUT -o OUTPUT -h HOST -u USER
 --p PASSWORD`. Where INPUT is the name of the existing database on HOST. And
 +Call the script like so:
 +`${PREFIX}/sbin/ods-migrate-mysql -i INPUT -o OUTPUT -h HOST -u USER -p PASSWORD`.
@@ -54,14 +54,15 @@ Index: enforcer/utils/1.4-2.0_db_convert/README.md
  OUTPUT is a non-existing database on the same host where the new database
  should go. On success, replace old database with the new database file or
 -adjust _conf.xml_ accordingly.
+-  
 +adjust _${SYSCONFDIR}/opendnssec/conf.xml_ accordingly.
-   
++
  Post Conversion
  ---------------
-@@ -59,11 +64,11 @@ Post Conversion
+ 
  ODS 2.0 stores the keytags in the database, 1.4 unfortunately does not.
  Therefore an additional tool is provided which calculates the keytags and
- stores them in the database. Make sure that at this point conf.xml points to
+ stores them in the database. Make sure that at this point _conf.xml_ points to
 -the new database. Then run `ods-migrate`.
 +the new database. Then run `${PREFIX}/sbin/ods-migrate`.
  
@@ -69,7 +70,7 @@ Index: enforcer/utils/1.4-2.0_db_convert/README.md
 -run because the file `/var/opendnssec/enforcer/zones.xml` does not exist
 -yet.  In ODS 1.4 `/etc/opendnssec/zonelist.xml` is always on par with the
 +run because the file `${LOCALSTATEDIR}/opendnssec/enforcer/zones.xml` does not exist
-+yet.  In ODS 1.4 `${SYSCONFDIR}/opendnssec/zonelist.xml` is always on par with the
++yet. In ODS 1.4 `${SYSCONFDIR}/opendnssec/zonelist.xml` is always on par with the
  database contents (this is no longer true for 2.0) so it is safe to copy this
  file over to the missing file.
  
