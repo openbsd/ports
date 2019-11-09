@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1148 2019/11/07 10:16:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.1149 2019/11/09 10:36:07 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -47,7 +47,6 @@
      SUBDIR += cjc
      SUBDIR += clic
      SUBDIR += climm
-     SUBDIR += clive
      SUBDIR += cnupm
      SUBDIR += coccinella
      SUBDIR += cppzmq

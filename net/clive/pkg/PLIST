@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:39 espie Exp $
-bin/clive
-@man man/man1/clive.1
-share/clive/
-share/clive/cliverc-example.conf
