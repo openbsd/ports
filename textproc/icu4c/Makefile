@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/11/08 15:48:27 ajacoutot Exp $
-
-PORTROACH=		skipv:release-${VERSION:S/./-/}
+# $OpenBSD: Makefile,v 1.77 2019/11/09 12:19:15 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 

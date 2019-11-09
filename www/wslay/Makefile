@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/08 21:37:35 ajacoutot Exp $
-
-PORTROACH =	skipv:release-${V}
+# $OpenBSD: Makefile,v 1.4 2019/11/09 12:19:15 ajacoutot Exp $
 
 COMMENT =	websocket library
 

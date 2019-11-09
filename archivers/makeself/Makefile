@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/11/08 21:37:35 ajacoutot Exp $
-
-PORTROACH=		skipv:release-${V}
+# $OpenBSD: Makefile,v 1.19 2019/11/09 12:19:15 ajacoutot Exp $
 
 COMMENT=		script generating a self-extractible .tgz from a directory
 

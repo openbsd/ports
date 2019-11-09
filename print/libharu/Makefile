@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/11/08 21:37:35 ajacoutot Exp $
-
-PORTROACH =	skipv:RELEASE_${VERSION}
+# $OpenBSD: Makefile,v 1.9 2019/11/09 12:19:15 ajacoutot Exp $
 
 COMMENT =	PDF creation library
 
