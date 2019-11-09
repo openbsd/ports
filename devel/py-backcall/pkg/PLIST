@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/09 16:46:21 kn Exp $
+lib/python${MODPY_VERSION}/site-packages/backcall/
+lib/python${MODPY_VERSION}/site-packages/backcall-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/backcall/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/backcall/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/backcall/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/backcall/${MODPY_PYCACHE}_signatures.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/backcall/${MODPY_PYCACHE}backcall.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/backcall/_signatures.py
+lib/python${MODPY_VERSION}/site-packages/backcall/backcall.py
