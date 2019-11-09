@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2019/07/16 21:29:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2019/11/09 10:32:26 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-1.3.5
-REVISION=		9
+REVISION=		10
+
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=	virt-qemu                 0.4 # 1003.0
@@ -13,8 +14,7 @@ SHARED_LIBS +=	virt-admin                0.0 # 1003.0
 
 HOMEPAGE=		https://libvirt.org/
 
-MASTER_SITES=		${HOMEPAGE}/sources/ \
-			${HOMEPAGE}/sources/stable_updates/
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
@@ -22,6 +22,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =  avahi-client avahi-common c crypto curl dbus-1 ffi gmp gnutls
 WANTLIB += hogweed iconv idn2 intl lzma m ncurses nettle nghttp2 p11-kit
 WANTLIB += pthread readline ssh2 ssl tasn1 unistring util xml2 z
+
+MASTER_SITES=		https://libvirt.org/sources/ \
+			https://libvirt.org/sources/stable_updates/
 
 MODULES=		lang/python
 

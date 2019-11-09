@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/11/09 10:32:26 ajacoutot Exp $
 
 COMMENT =		libvirt virtualization API python bindings
 
 MODPY_EGG_VERSION =	1.3.5
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://libvirt.org/python.html
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
