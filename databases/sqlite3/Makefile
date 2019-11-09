@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.104 2019/07/16 18:39:34 landry Exp $
+# $OpenBSD: Makefile,v 1.105 2019/11/09 10:09:04 landry Exp $
 
 COMMENT=	embedded SQL implementation
 
-DISTNAME =	sqlite-autoconf-3290000
-PKGNAME=	sqlite3-3.29.0
+DISTNAME =	sqlite-autoconf-3300100
+PKGNAME=	sqlite3-3.30.1
 
 # XXX needs bumps every time :-
-SHARED_LIBS +=  sqlite3                   37.7 # 8.6
+SHARED_LIBS +=  sqlite3                   37.8 # 8.6
 # sqlite suggests that users might like to assert() that library and header
 # versions match, so bumps are needed even if function signatures don't change.
 # ... at the current time the only one noticed is a < check (in subversion)
