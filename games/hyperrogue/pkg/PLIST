@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/15 23:33:43 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/11/09 16:38:54 bcallah Exp $
 @bin bin/hyperrogue
 share/doc/hyperrogue/
 share/doc/hyperrogue/README.md
@@ -6,6 +6,10 @@ share/hyperrogue/
 share/hyperrogue/DejaVuSans-Bold.ttf
 share/hyperrogue/hyperrogue-music.txt
 share/hyperrogue/music/
+share/hyperrogue/music/hr-savino-caribbean.ogg
+share/hyperrogue/music/hr-savino-ivory.ogg
+share/hyperrogue/music/hr-savino-ocean.ogg
+share/hyperrogue/music/hr-savino-palace.ogg
 share/hyperrogue/music/hr3-caves.ogg
 share/hyperrogue/music/hr3-crossroads.ogg
 share/hyperrogue/music/hr3-desert.ogg

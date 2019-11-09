@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2018/09/01 23:15:34 bcallah Exp $
+$OpenBSD: patch-Makefile_am,v 1.2 2019/11/09 16:38:54 bcallah Exp $
 
 Remove hardcoded optimizations.
 
@@ -16,10 +16,10 @@ Index: Makefile.am
  # docdir
 @@ -18,7 +18,7 @@ dist_sounds_DATA = sounds/*
  
- noinst_PROGRAMS = langen
+ noinst_PROGRAMS = langen makeh
  langen_SOURCES = langen.cpp 
 -langen_CXXFLAGS = -O0 -std=c++11 ${AM_CXXFLAGS}
 +langen_CXXFLAGS = -std=c++11 ${AM_CXXFLAGS}
- BUILT_SOURCES = language-data.cpp
+ makeh_SOURCES = makeh.cpp
+ BUILT_SOURCES = language-data.cpp autohdr.h
  
- language-data.cpp: langen
