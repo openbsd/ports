@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/09/07 23:32:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/11/09 10:50:12 naddy Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
@@ -20,26 +20,12 @@ REVISION = 4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-amd64 = 95.1
-ADASTRAP_LIBM-amd64 = 10.1
 ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
-ADASTRAP_LIBC-arm = 88.0
-ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
-ADASTRAP_LIBC-hppa = 95.0
-ADASTRAP_LIBM-hppa = 10.1
 ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
-ADASTRAP_LIBC-i386 = 95.1
-ADASTRAP_LIBM-i386 = 10.1
 ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
-ADASTRAP_LIBC-mips64 = 95.1
-ADASTRAP_LIBM-mips64 = 10.1
 ADASTRAP-mips64 = adastrap-mips64-$V-0.tar.xz
-ADASTRAP_LIBC-powerpc = 95.1
-ADASTRAP_LIBM-powerpc = 10.1
 ADASTRAP-powerpc = adastrap-powerpc-$V-1.tar.xz
-ADASTRAP_LIBC-sparc64 = 93.0
-ADASTRAP_LIBM-sparc64 = 10.1
 ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
@@ -258,33 +244,19 @@ ADA_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-ada}.tgz
 GCC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-main}.tgz
 GXX_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-c++}.tgz
 
-adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
-.if !defined(ADASTRAP_LIBC-${MACHINE_ARCH}) || \
-	!defined(ADASTRAP_LIBM-${MACHINE_ARCH})
-	@echo 1>&2 "Error: you must specify libc and libm to bundle"
-	@exit 1
-.else
-	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
-	cp /usr/lib/libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} \
-		${WRKDIR}/prepare/bootstrap/system-libs
-	cp /usr/lib/libm.so.${ADASTRAP_LIBM-${MACHINE_ARCH}} \
-		${WRKDIR}/prepare/bootstrap/system-libs
-	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
-	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
-	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GXX_PACKAGE}
-	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man,share}
-	rm -rf ${WRKDIR}/prepare/bootstrap/lib/gcc/*-unknown-openbsd*/$V/include-fixed
-	if ! ldd ${WRKDIR}/prepare/bootstrap/bin/egcc | \
-		fgrep libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} >/dev/null; then \
-		echo 1>&2 "Error: adastrap egcc linked against unbundled libc"; \
-		exit 1; \
-	fi
-	if ! ldd ${WRKDIR}/prepare/bootstrap/bin/egcc | \
-		fgrep libm.so.${ADASTRAP_LIBM-${MACHINE_ARCH}} >/dev/null; then \
-		echo 1>&2 "Error: adastrap egcc linked against unbundled libm"; \
-		exit 1; \
-	fi
-	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
-		xz > ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}}
-.endif
+.PHONY: adastrap
 
+adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
+	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
+	cd ${WRKDIR}/prepare/bootstrap && tar xzf ${ADA_PACKAGE}
+	cd ${WRKDIR}/prepare/bootstrap && tar xzf ${GCC_PACKAGE}
+	cd ${WRKDIR}/prepare/bootstrap && tar xzf ${GXX_PACKAGE}
+	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man,share}
+	rm -rf ${WRKDIR}/prepare/bootstrap/lib/gcc/*-openbsd*/$V/include-fixed
+	for f in \
+	    `ldd ${WRKDIR}/prepare/bootstrap/libexec/gcc/*-openbsd*/$V/cc1 | \
+	    awk '$$3 == "rlib" { print $$7 }'`; do \
+		cp $$f ${WRKDIR}/prepare/bootstrap/system-libs/; \
+	done
+	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
+		xz -T0 > ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}}
