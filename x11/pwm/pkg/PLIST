@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/08/02 15:32:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/11/09 17:40:42 bket Exp $
 @conflict ion-2.*
-bin/pwm
+@bin bin/pwm
 @man man/man1/pwm.1
 share/doc/pwm/
 share/doc/pwm/LICENSE

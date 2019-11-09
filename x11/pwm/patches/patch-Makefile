@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.4 2006/07/30 16:45:48 naddy Exp $
---- Makefile.orig	Tue May 16 23:50:33 2006
-+++ Makefile	Sun Jul 16 00:22:20 2006
-@@ -1,69 +1,33 @@
+$OpenBSD: patch-Makefile,v 1.5 2019/11/09 17:40:42 bket Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,70 +1,34 @@
 -##
 -## PWM Makefile
 -##
@@ -17,6 +18,7 @@ $OpenBSD: patch-Makefile,v 1.4 2006/07/30 16:45:48 naddy Exp $
 -DEFINES += -DETCDIR=\"$(ETCDIR)\"
 -CFLAGS += $(XOPEN_SOURCE)
 -TO_REALCLEAN += pwm.1x
+-TO_CLEAN += $(OBJS)
 -
  OBJS=	main.o draw.o font.o frame.o event.o clientwin.o thing.o \
  	property.o pointer.o key.o moveres.o cursor.o function.o \
@@ -26,30 +28,27 @@ $OpenBSD: patch-Makefile,v 1.4 2006/07/30 16:45:48 naddy Exp $
  
 -TARGETS=pwm
 +CFLAGS	+= -DPREFIX=\"${PREFIX}\" -DETCDIR=\"${SYSCONFDIR}\" -Ilibtu/include -I${X11BASE}/include
-+  
+ 
+-######################################
 +LDFLAGS	+= ${WARN} -Llibtu -ltu -lm -lX11 -L${X11BASE}/lib
-+  
+ 
+-include rules.mk
 +all: main
-+  
+ 
+-######################################
 +main:   ${OBJS}
 +	${CC} ${OBJS} ${LDFLAGS} -o pwm
 +	sed -e 's#/usr/local/etc#${SYSCONFDIR}#g' -e 's#PREFIX#${PREFIX}/share#g' pwm.1x.in > pwm.1x
  
--######################################
+-pwm: $(OBJS) pwm.1x
+-	$(CC) $(OBJS) $(LDFLAGS) -o $@
 +$(OBJS): libtu
  
--include rules.mk
+-pwm.1x: pwm.1x.in
+-	sed 's#PREFIX#$(PREFIX)#g' pwm.1x.in > pwm.1x
 +libtu::
 +	(cd ${.CURDIR}/libtu && ${MAKE})
  
--######################################
--
--pwm: $(OBJS) pwm.1x
--	$(CC) $(OBJS) $(LDFLAGS) -o $@
--
--pwm.1x: pwm.1x.in
--	sed 's#PREFIX#$(PREFIX)#g' pwm.1x.in > pwm.1x
--
 -_install:
 -	$(INSTALLDIR) $(BINDIR)
 -	$(INSTALL) -m $(BIN_MODE) pwm $(BINDIR)
@@ -84,7 +83,7 @@ $OpenBSD: patch-Makefile,v 1.4 2006/07/30 16:45:48 naddy Exp $
 -		echo "Installing sample configuration file $(ETCDIR)/pwm/pwm.conf"; \
 -		$(INSTALL) -m $(DATA_MODE) etc/pwm/sample.conf $(ETCDIR)/pwm/pwm.conf; \
 -	fi
--
+ 
 -
 -# Disclaimer: I don't have either Gnome or KDE.
 -
