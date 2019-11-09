@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.818 2019/11/07 21:13:41 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.819 2019/11/09 10:39:40 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1329,6 +1329,7 @@ my $obsolete_reason = {
 	'cvsync' => 3,
 	'py-bokeh' => 14,
 	'pecl-geoip' => 6,
+	'clive' => 5,
 };
 
 # reasons for obsolete packages
