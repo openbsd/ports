@@ -1,0 +1,23 @@
+$OpenBSD: patch-types_h,v 1.1.1.1 2019/11/09 15:35:26 fcambus Exp $
+
+Index: types.h
+--- types.h.orig
++++ types.h
+@@ -40,7 +40,7 @@ typedef HANDLE pthread_t;
+ #include <semaphore.h>
+ #endif
+ 
+-#ifdef _POSIX_ASYNCHRONOUS_IO
++#if _POSIX_ASYNCHRONOUS_IO == 1
+ #if defined(__APPLE__)
+ #include <sys/aio.h>
+ #else
+@@ -330,7 +330,7 @@ typedef struct NetPortSet_s
+ 
+ typedef struct 
+     {
+-#ifdef _POSIX_ASYNCHRONOUS_IO
++#if _POSIX_ASYNCHRONOUS_IO == 1
+     struct aiocb iocb;
+ #endif
+     off_t       pos;

@@ -1,0 +1,22 @@
+$OpenBSD: patch-wxversion_py,v 1.1.1.1 2019/11/09 15:35:26 fcambus Exp $
+
+Index: wxversion.py
+--- wxversion.py.orig
++++ wxversion.py
+@@ -39,15 +39,7 @@ if sys.platform[:3] == "win":
+ else:
+     wxversion = shellstr ("wx-config", "--version")
+ 
+-svnversion = shellstr ("svn", "info", "PtermApp.cpp")
+-if svnversion:
+-    m = re.search (r"Revision: (\d+)", svnversion)
+-    if m:
+-        svnversion = m.group (1)
+-        if shellstr ("svn", "status", "pterm_wx.cpp"):
+-            svnversion += "+"
+-    else:
+-        svnversion = ""
++svnversion = ""
+ now = time.strftime ("%d %B %Y").lstrip ("0")
+ 
+ new = """#define WXVERSION "%s"

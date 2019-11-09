@@ -1,0 +1,16 @@
+$OpenBSD: patch-FrameCanvas_cpp,v 1.1.1.1 2019/11/09 15:35:26 fcambus Exp $
+
+Index: FrameCanvas.cpp
+--- FrameCanvas.cpp.orig
++++ FrameCanvas.cpp
+@@ -7365,8 +7365,8 @@ int PtermFrame::check_pcZ80(void)
+         trace ("R.EXEC");
+         Mz80Waiter(RESIDENTMSEC);
+         m_giveupz80 = true;
+-        //SaveRestoreColors (save, micro);
+-        //SaveRestoreColors (restore, host);
++        SaveRestoreColors (save, micro);
++        SaveRestoreColors (restore, host);
+         return 1;
+         
+     case R_GJOB:
