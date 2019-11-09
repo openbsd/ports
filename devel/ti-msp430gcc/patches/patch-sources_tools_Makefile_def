@@ -1,11 +1,12 @@
-$OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper Exp $
+$OpenBSD: patch-sources_tools_Makefile_def,v 1.2 2019/11/09 15:13:34 naddy Exp $
 
 - remove bundled libraries
 - remove gdb/sim support for gdb sprays files all around leading to conflicts
 
---- sources/tools/Makefile.def.orig	Mon Apr  7 12:31:57 2014
-+++ sources/tools/Makefile.def	Mon Apr 27 20:18:45 2015
-@@ -36,9 +36,7 @@ host_modules= { module= opcodes; bootstrap=true; };
+Index: sources/tools/Makefile.def
+--- sources/tools/Makefile.def.orig
++++ sources/tools/Makefile.def
+@@ -36,30 +36,13 @@ host_modules= { module= opcodes; bootstrap=true; };
  host_modules= { module= binutils; bootstrap=true; };
  host_modules= { module= bison; no_check_cross= true; };
  host_modules= { module= cgen; };
@@ -15,7 +16,28 @@ $OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper 
  host_modules= { module= fixincludes;
  		missing= TAGS; };
  host_modules= { module= flex; no_check_cross= true; };
-@@ -74,10 +72,6 @@ host_modules= { module= libelf; lib_path=.libs; bootst
+ host_modules= { module= gas; bootstrap=true; };
+ host_modules= { module= gcc; bootstrap=true; 
+ 		extra_make_flags="$(EXTRA_GCC_FLAGS)"; };
+-host_modules= { module= gmp; lib_path=.libs; bootstrap=true;
+-		extra_configure_flags='--disable-shared';
+-		no_install= true;
+-		// none-*-* disables asm optimizations, bootstrap-testing
+-		// the compiler more thoroughly.
+-	        host="none-${host_vendor}-${host_os}";
+-		// gmp's configure will complain if given anything
+-		// different from host for target.
+-	        target="none-${host_vendor}-${host_os}"; };
+-host_modules= { module= mpfr; lib_path=.libs; bootstrap=true;
+-		extra_configure_flags='--disable-shared @extra_mpfr_configure_flags@';
+-		no_install= true; };
+-host_modules= { module= mpc; lib_path=.libs; bootstrap=true;
+-		extra_configure_flags='--disable-shared @extra_mpc_gmp_configure_flags@ @extra_mpc_mpfr_configure_flags@';
+-		no_install= true; };
+ host_modules= { module= isl; lib_path=.libs; bootstrap=true;
+ 		extra_configure_flags='--disable-shared @extra_isl_gmp_configure_flags@';
+ 		extra_make_flags='V=1';
+@@ -74,10 +57,6 @@ host_modules= { module= libelf; lib_path=.libs; bootst
  		no_install= true; };
  host_modules= { module= gold; bootstrap=true; };
  host_modules= { module= gprof; };
@@ -26,7 +48,7 @@ $OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper 
  host_modules= { module= ld; bootstrap=true; };
  host_modules= { module= libbacktrace; bootstrap=true; };
  host_modules= { module= libcpp; bootstrap=true; };
-@@ -94,15 +88,9 @@ host_modules= { module= libiconv;
+@@ -94,15 +73,9 @@ host_modules= { module= libiconv;
  		missing= install-html;
  		missing= install-info; };
  host_modules= { module= m4; };
@@ -42,7 +64,7 @@ $OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper 
  host_modules= { module= libtermcap; no_check=true; 
                  missing=mostlyclean;
                  missing=clean;
-@@ -217,7 +205,6 @@ flags_to_pass = { flag= BISON ; };
+@@ -217,7 +190,6 @@ flags_to_pass = { flag= BISON ; };
  flags_to_pass = { flag= CC_FOR_BUILD ; };
  flags_to_pass = { flag= CFLAGS_FOR_BUILD ; };
  flags_to_pass = { flag= CXX_FOR_BUILD ; };
@@ -50,23 +72,26 @@ $OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper 
  flags_to_pass = { flag= FLEX ; };
  flags_to_pass = { flag= INSTALL ; };
  flags_to_pass = { flag= INSTALL_DATA ; };
-@@ -293,7 +280,6 @@ dependencies = { module=all-build-m4; on=all-build-tex
+@@ -293,8 +265,6 @@ dependencies = { module=all-build-m4; on=all-build-tex
  dependencies = { module=all-build-fixincludes; on=all-build-libiberty; };
  
  // Host modules specific to gcc.
 -dependencies = { module=configure-gcc; on=configure-intl; };
- dependencies = { module=configure-gcc; on=all-gmp; };
+-dependencies = { module=configure-gcc; on=all-gmp; };
  dependencies = { module=configure-gcc; on=all-lto-plugin; };
  dependencies = { module=configure-gcc; on=all-binutils; };
-@@ -302,7 +288,6 @@ dependencies = { module=configure-gcc; on=all-ld; };
+ dependencies = { module=configure-gcc; on=all-gas; };
+@@ -302,9 +272,6 @@ dependencies = { module=configure-gcc; on=all-ld; };
  dependencies = { module=configure-gcc; on=all-gold; };
  dependencies = { module=configure-gcc; on=all-libelf; };
  dependencies = { module=all-gcc; on=all-libiberty; hard=true; };
 -dependencies = { module=all-gcc; on=all-intl; };
- dependencies = { module=all-gcc; on=all-mpfr; };
- dependencies = { module=all-gcc; on=all-mpc; };
+-dependencies = { module=all-gcc; on=all-mpfr; };
+-dependencies = { module=all-gcc; on=all-mpc; };
  dependencies = { module=all-gcc; on=all-cloog; };
-@@ -328,9 +313,7 @@ dependencies = { module=install-strip-gcc ; on=install
+ dependencies = { module=all-gcc; on=all-build-texinfo; };
+ dependencies = { module=all-gcc; on=all-build-bison; };
+@@ -328,9 +295,7 @@ dependencies = { module=install-strip-gcc ; on=install
  dependencies = { module=install-strip-gcc ; on=install-strip-lto-plugin; };
  
  dependencies = { module=configure-libcpp; on=configure-libiberty; hard=true; };
@@ -76,9 +101,15 @@ $OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper 
  
  dependencies = { module=all-fixincludes; on=all-libiberty; };
  
-@@ -347,46 +330,20 @@ dependencies = { module=configure-isl; on=all-gmp; };
+@@ -341,52 +306,22 @@ dependencies = { module=all-lto-plugin; on=all-libiber
+ 
+ dependencies = { module=all-utils; on=all-libiberty; };
+ 
+-dependencies = { module=configure-mpfr; on=all-gmp; };
+-dependencies = { module=configure-mpc; on=all-mpfr; };
+-dependencies = { module=configure-isl; on=all-gmp; };
  dependencies = { module=configure-cloog; on=all-isl; };
- dependencies = { module=configure-cloog; on=all-gmp; };
+-dependencies = { module=configure-cloog; on=all-gmp; };
  
 -// Host modules specific to gdb.
 -dependencies = { module=configure-gdb; on=all-intl; };
@@ -123,7 +154,7 @@ $OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper 
  dependencies = { module=all-binutils; on=all-gas; };
  
  // We put install-opcodes before install-binutils because the installed
-@@ -399,93 +356,41 @@ dependencies = { module=install-strip-binutils; on=ins
+@@ -399,93 +334,41 @@ dependencies = { module=install-strip-binutils; on=ins
  dependencies = { module=install-opcodes; on=install-bfd; };
  dependencies = { module=install-strip-opcodes; on=install-strip-bfd; };
  
@@ -217,7 +248,7 @@ $OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper 
  dependencies = { module=all-m4; on=all-build-texinfo; };
  
  // Target modules.  These can also have dependencies on the language
-@@ -502,8 +407,6 @@ lang_env_dependencies = { module=libgcc; no_gcc=true; 
+@@ -502,8 +385,6 @@ lang_env_dependencies = { module=libgcc; no_gcc=true; 
  lang_env_dependencies = { module=libiberty; no_c=true; };
  
  dependencies = { module=configure-target-boehm-gc; on=all-target-libstdc++-v3; };
