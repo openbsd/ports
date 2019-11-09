@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/02/26 15:29:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2019/11/09 15:36:59 fcambus Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -39,6 +39,7 @@
      SUBDIR += p5-SendPage
      SUBDIR += picocom
      SUBDIR += pilot-link
+     SUBDIR += pterm
      SUBDIR += py-gammu
      SUBDIR += qodem
      SUBDIR += qpage
