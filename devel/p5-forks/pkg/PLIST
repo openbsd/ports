@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/12 22:25:45 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/09 17:17:24 kn Exp $
 ${P5ARCH}/auto/forks/
 ${P5ARCH}/auto/forks/forks.so
 ${P5ARCH}/forks/
@@ -11,7 +11,9 @@ ${P5ARCH}/forks/shared/attributes.pm
 ${P5ARCH}/forks/shared/global_filter.pm
 ${P5ARCH}/forks/signals.pm
 ${P5ARCH}/threads/
+${P5ARCH}/threads.pm
 ${P5ARCH}/threads/shared/
+${P5ARCH}/threads/shared.pm
 ${P5ARCH}/threads/shared/array.pm
 ${P5ARCH}/threads/shared/handle.pm
 ${P5ARCH}/threads/shared/hash.pm
