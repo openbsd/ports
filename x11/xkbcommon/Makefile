@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/10/23 08:18:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2019/11/09 07:02:24 cwen Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
@@ -30,6 +30,12 @@ CONFIGURE_ARGS +=	-Denable-docs=false \
 TEST_DEPENDS =		devel/bison \
 			shells/bash
 TEST_IS_INTERACTIVE=	x11
+
+# Fix undefined references errors
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib"
+.endif
 
 # XXX: This test still fails
 pre-test:
