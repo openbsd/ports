@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1905 2019/11/08 23:18:51 kmos Exp $
+# $OpenBSD: Makefile,v 1.1906 2019/11/09 16:47:28 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1314,6 +1314,8 @@
      SUBDIR += py-automat,python3
      SUBDIR += py-babel
      SUBDIR += py-babel,python3
+     SUBDIR += py-backcall
+     SUBDIR += py-backcall,python3
      SUBDIR += py-backports
      SUBDIR += py-backports-abc
      SUBDIR += py-backports-functools-lru-cache
