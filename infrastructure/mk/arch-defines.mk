@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.68 2019/09/15 02:00:34 jsing Exp $
+# $OpenBSD: arch-defines.mk,v 1.69 2019/11/09 15:08:09 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -40,16 +40,22 @@ GCC49_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
 # arches where there is a C++11 compiler, either clang in base or ports-gcc
 CXX11_ARCHS = ${CLANG_ARCHS} ${GCC49_ARCHS}
+DEBUGINFO_ARCHS = amd64
 
 .for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 GCC49 MONO LLVM \
                      CXX11 OCAML_NATIVE OCAML_NATIVE_DYNLINK GO \
-                     LLD RUST
+                     LLD RUST DEBUGINFO
 .  for A B in ${MACHINE_ARCH} ${ARCH}
 .    if !empty(${PROP}_ARCHS:M$A) || !empty(${PROP}_ARCHS:M$B)
 PROPERTIES += ${PROP:L}
 .    endif
 .  endfor
 .endfor
+
+.if !${PROPERTIES:Mdebuginfo}
+DEBUG_PACKAGES =
+DEBUG_FILES =
+.endif
 
 .if ${PROPERTIES:Mclang}
 LIBCXX = c++ c++abi pthread

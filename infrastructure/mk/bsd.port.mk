@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1482 2019/11/07 16:15:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1483 2019/11/09 15:08:09 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -937,12 +937,18 @@ _TMP_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/tmp/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 
+DEBUG_PACKAGES ?=
+DEBUG_FILES ?=
+DEBUG_CONFIGURE_ARGS ?=
+
 .for _S in ${MULTI_PACKAGES}
 _PKGFILE${_S} = ${FULLPKGNAME${_S}}.tgz
+_DBG_PKGFILE${_S} = debug-${_PKGFILE${_S}}
 .  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
 .  else
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
+_DBG_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_DBG_PKGFILE${_S}}
 .  endif
 _CACHE_PACKAGE_COOKIES += ${_CACHE_REPO}${_PKGFILE${_S}}
 .endfor
@@ -960,7 +966,23 @@ _PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_PKGFILE${_S}} ${MACHINE_ARCH}/all/${_PK
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIES${_S}}
 _PACKAGE_COOKIE += ${_PACKAGE_COOKIE${_S}}
 PKGFILE${_S} = ${_PKG_REPO}${_PKGFILE${_S}}
+.  if ${DEBUG_PACKAGES:M${_S}}
+_PACKAGE_COOKIES += ${_DBG_PACKAGE_COOKIE${_S}}
+.    if ${PERMIT_PACKAGE${_S}:L} == "yes"
+_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/ftp/${_DBG_PKGFILE${_S}}
+_PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_DBG_PKGFILE${_S}} ${MACHINE_ARCH}/all/${_DBG_PKGFILE${_S}}
+.    endif
+.  endif
+
 .endfor
+
+.if !empty(DEBUG_PACKAGES) || !empty(DEBUG_FILES)
+INSTALL_STRIP =
+DEBUG_FLAGS = -g
+CONFIGURE_ARGS += ${DEBUG_CONFIGURE_ARGS}
+.else
+DEBUG_FLAGS =
+.endif
 
 .if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
 FULLPKGPATH ?= ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
@@ -1071,9 +1093,9 @@ PKG_ARGS${_S} += ${_PKG_ARGS_VERSION}
 .  endif
 
 PKG_ARGS${_S} += ${_substvars${_S}:N-DTRUEPREFIX=*}
-PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE=${PERMIT_PACKAGE${_S}:Q}
+PKG_ARGS${_S} += -p ${PREFIX${_S}}
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
 SUBST_CMD${_S} += -i -B ${WRKDIR}
@@ -1139,16 +1161,47 @@ DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 
 
 .for _S in ${MULTI_PACKAGES}
-# Fill out package command, and package dependencies
+PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
+
+_create_pkg${_S} = \
+	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} && \
+	${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
+		$$deps ${PKG_ARGS${_S}} $$tmp && \
+	${_check_lib_depends} $$tmp && \
+	${_register_plist${_S}} $$tmp && \
+	${_checksum_package}
+
+_move_tmp_pkg${_S} = ${_PBUILD} mv ${_TMP_REPO}${_PKGFILE${_S}} ${_PACKAGE_COOKIE${_S}}
+_tmp_pkg${_S} = ${_TMP_REPO}${_PKGFILE${_S}}
+
+.  if ${DEBUG_PACKAGES:M${_S}}
+_DBG_PKG_ARGS${_S} := ${PKG_ARGS${_S}}
+_DBG_PKG_ARGS${_S} += -P${FULLPKGPATH${_S}}:${FULLPKGNAME${_S}}:${FULLPKGNAME${_S}}
+_DBG_PKG_ARGS${_S} += -DCOMMENT="debug info for ${FULLPKGNAME${_S}}"
+_DBG_PKG_ARGS${_S} += -d"-debug info for ${FULLPKGNAME${_S}}"
+_DBG_PKG_ARGS${_S} += -DFULLPKGPATH=debug/${FULLPKGPATH${_S}}
+_DBG_PKG_ARGS${_S} += -f ${PLIST${_S}}-debug
+_create_pkg${_S} += && \
+	tmp=${_TMP_REPO}${_DBG_PKGFILE${_S}} pkgname=${_DBG_PKGFILE${_S}} && \
+	${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
+		$$deps ${_DBG_PKG_ARGS${_S}} $$tmp && \
+	${_check_lib_depends} $$tmp && \
+	${_register_plist${_S}} $$tmp && \
+	${_checksum_package}
+_move_tmp_pkg${_S} += && ${_PBUILD} mv ${_TMP_REPO}${_DBG_PKGFILE${_S}} ${_DBG_PACKAGE_COOKIE${_S}}
+_tmp_pkg${_S} += ${_TMP_REPO}${_DBG_PKGFILE${_S}}
+.  endif
+
+# Finish filling out package command, and package dependencies
 PKG_ARGS${_S} += -DCOMMENT=${_COMMENT${_S}:Q} -d ${DESCR${_S}}
-PKG_ARGS${_S} += -f ${PLIST${_S}} -p ${PREFIX${_S}}
+PKG_ARGS${_S} += -f ${PLIST${_S}} 
+PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 .  if defined(MESSAGE${_S}) && !empty(MESSAGE${_S})
 PKG_ARGS${_S} += -M ${MESSAGE${_S}}
 .  endif
 .  if defined(UNMESSAGE${_S}) && !empty(UNMESSAGE${_S})
 PKG_ARGS${_S} += -U ${UNMESSAGE${_S}}
 .  endif
-PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
 .  if !defined(_COMMENT${_S})
 ERRORS += "Fatal: Missing comment for ${_S:S/^-$/main package/}."
 .  endif
@@ -2020,19 +2073,13 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${_MAKE} _internal-generate-readmes
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
-	@cd ${.CURDIR} && \
-	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} permit=${PERMIT_PACKAGE${_S}:L:Q} && \
+	@cd ${.CURDIR} && permit=${PERMIT_PACKAGE${_S}:L:Q} && \
 	if deps=$$(SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
-			${MAKE} print-package-args) && \
-		${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
-			$$deps ${PKG_ARGS${_S}} $$tmp && \
-		${_check_lib_depends} $$tmp && \
-		${_register_plist${_S}} $$tmp && \
-		${_checksum_package} && \
-		${_PBUILD} mv $$tmp ${_PACKAGE_COOKIE${_S}}; then \
+			${MAKE} print-package-args) && ${_create_pkg${_S}}; then \
+			${_move_tmp_pkg${_S}}; \
 		 	exit 0; \
 	else \
-		${_PBUILD} rm -f $$tmp; \
+		${_PBUILD} rm -f ${_tmp_pkg${_S}}; \
 	    exit 1; \
 	fi
 # End of PACKAGE.
@@ -2876,9 +2923,32 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${_SUDOMAKESYS} post-install ${FAKE_SETUP}
 .endif
 	@${_SUDOMAKESYS} _post-install-modules ${FAKE_SETUP}
+.if !empty(DEBUG_FILES)
+	@${_SUDOMAKESYS} _copy_debug_info ${FAKE_SETUP}
+.endif
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_PBUILD} ${_MAKE_COOKIE} $@
 
+_copy_debug_info:
+.for P in ${DEBUG_FILES:N*.a}
+	@dbgpath=${PREFIX}/${P:H}/.debug; \
+	dbginfo=$${dbgpath}/${P:T}.dbg; \
+	p=${PREFIX}/$P; \
+	${INSTALL_DATA_DIR} $${dbgpath}; \
+	echo "> move debug info from $$p into $${dbginfo}"; \
+	objcopy --only-keep-debug $$p $${dbginfo}; \
+	objcopy --strip-debug $$p; \
+	objcopy --add-gnu-debuglink=$${dbginfo} $$p
+.endfor
+.for P in ${DEBUG_FILES:M*.a}
+	@dbgpath=${PREFIX}/${P:H}/.debug; \
+	dbginfo=$${dbgpath}/${P:T}; \
+	p=${PREFIX}/$P; \
+	${INSTALL_DATA_DIR} $${dbgpath}; \
+	echo "> copy debug info from $$p into $${dbginfo}"; \
+	cp $$p $${dbginfo}; \
+	strip $$p
+.endfor
 # XXX this is a separate step that is "always on" and doesn't generate
 # cookies
 _internal-generate-readmes: ${_FAKE_COOKIE}
@@ -3111,7 +3181,7 @@ _internal-clean:
 	${_PFETCH} rm -f ${_CACHE_PACKAGE_COOKIES}
 	rm -f ${_UPDATE_COOKIES} 
 .elif ${_clean:Mpackage}
-	${_PBUILD} rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}}
+	${_PBUILD} rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}} ${_DBG_PACKAGE_COOKIE${SUBPACKAGE}}
 	rm -f ${_UPDATE_COOKIE${SUBPACKAGE}}
 .endif
 .if ${_clean:Mbulk}
@@ -3120,7 +3190,7 @@ _internal-clean:
 .if ${_clean:Mplist}
 .  if !empty(_PLIST_DB)
 .    for _p in ${PKGNAMES}
-	${_PBUILD} rm -f ${_PLIST_DB}/${_p}
+	${_PBUILD} rm -f ${_PLIST_DB}/{debug-,}${_p}
 .    endfor
 .  endif
 .endif
@@ -3535,7 +3605,8 @@ _all_phony = ${_recursive_depends_targets} \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
 	_recurse-show-run-depends show-run-depends \
 	_post-extract-finalize _post-patch-finalize _pre-fake-modules \
-	_gen-finalize _post-install-modules fix-permissions
+	_gen-finalize _post-install-modules fix-permissions \
+	_copy_debug_info
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
