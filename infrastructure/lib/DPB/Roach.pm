@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Roach.pm,v 1.3 2019/11/06 09:53:47 espie Exp $
+# $OpenBSD: Roach.pm,v 1.4 2019/11/09 17:06:37 espie Exp $
 #
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
@@ -37,18 +37,16 @@ sub factoryclass
 	return "DPB::RoachInfo";
 }
 
-sub build_roachinfo
+sub build1info
 {
-	my ($self, $h) = @_;
+	my ($self, $v) = @_;
 	my $f = $self->factoryclass;
-	for my $v (values %$h) {
-		if (exists $self->{paths}{$v->pkgpath}) {
-			$f->forget_roachinfo($v);
-		} else {
-			my $r = $f->new($v);
-			$self->{paths}{$v->pkgpath} = $r;
-			$self->{engine}->new_roach($r);
-		}
+	if (exists $self->{paths}{$v->pkgpath}) {
+		$f->forget_roachinfo($v);
+	} else {
+		my $r = $f->new($v);
+		$self->{paths}{$v->pkgpath} = $r;
+		$self->{engine}->new_roach($r);
 	}
 }
 
@@ -69,7 +67,7 @@ sub new
 		}
 	}
 	# XXX need a copy because it will be destroyed by FETCH
-	# TODO figure out whether I need to sort DIST somehow
+	# TODO we can actually single out the first distfile!
 	if (defined $v->{info}{DIST}) {
 		my %h = %{$v->{info}{DIST}};
 		$o->{DIST} = \%h;

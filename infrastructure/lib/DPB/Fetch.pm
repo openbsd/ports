@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.85 2019/11/07 16:34:57 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.86 2019/11/09 17:06:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -243,72 +243,80 @@ sub read_checksums
 	return $r;
 }
 
-sub build_distinfo
+sub build1info
 {
-	my ($self, $h, $mirror) = @_;
-	for my $v (values %$h) {
-		my $info = $v->{info};
-		next unless defined $info->{DISTFILES} ||
-		    defined $info->{PATCHFILES} ||
-		    defined $info->{SUPDISTFILES};
+	my ($self, $v, $mirror, $roach) = @_;
+	my $info = $v->{info};
+	return unless defined $info->{DISTFILES} ||
+	    defined $info->{PATCHFILES} ||
+	    defined $info->{SUPDISTFILES};
 
-		my $dir = $info->{DIST_SUBDIR};
-		my $checksum_file = $info->{CHECKSUM_FILE};
+	my $dir = $info->{DIST_SUBDIR};
+	my $checksum_file = $info->{CHECKSUM_FILE};
 
-		if (!defined $checksum_file) {
-			$v->break("No checksum file");
-			next;
+	if (!defined $checksum_file) {
+		$v->break("No checksum file");
+		next;
+	}
+	$checksum_file = $checksum_file->string;
+	# collapse identical checksum files together
+	$checksum_file =~ s,/[^/]+/\.\./,/,g;
+	my $fname = $self->{state}->anchor($checksum_file);
+	$self->{cache}{$checksum_file} //=
+	    $self->read_checksums($fname);
+	my $checksums = $self->{cache}{$checksum_file};
+
+	my $files = {};
+	my $build = sub {
+		my $arg = shift;
+		my $site = 'MASTER_SITES';
+		my $url;
+		if ($arg =~ m/^(.*)\:(\d)$/) {
+			$arg = $1;
+			$site.= $2;
 		}
-		$checksum_file = $checksum_file->string;
-		# collapse identical checksum files together
-		$checksum_file =~ s,/[^/]+/\.\./,/,g;
-		my $fname = $self->{state}->anchor($checksum_file);
-		$self->{cache}{$checksum_file} //=
-		    $self->read_checksums($fname);
-		my $checksums = $self->{cache}{$checksum_file};
+		if ($arg =~ m/^(.*)\{(.*)\}(.*)$/) {
+			$arg = $1 . $3;
+			$url = $2 . $3;
+		}
+		return DPB::Distfile->new($arg, $url, $dir,
+		    $info->{$site},
+		    $checksums, $fname, $v, $self);
+	};
 
-		my $files = {};
-		my $build = sub {
-			my $arg = shift;
-			my $site = 'MASTER_SITES';
-			my $url;
-			if ($arg =~ m/^(.*)\:(\d)$/) {
-				$arg = $1;
-				$site.= $2;
-			}
-			if ($arg =~ m/^(.*)\{(.*)\}(.*)$/) {
-				$arg = $1 . $3;
-				$url = $2 . $3;
-			}
-			return DPB::Distfile->new($arg, $url, $dir,
-			    $info->{$site},
-			    $checksums, $fname, $v, $self);
-		};
-
-		for my $d ((keys %{$info->{DISTFILES}}), (keys %{$info->{PATCHFILES}})) {
+	for my $d (@{$info->{DISTFILES}}, (keys %{$info->{PATCHFILES}})) {
+		my $file = &$build($d);
+		$files->{$file} = $file if defined $file;
+	}
+	if ($mirror) {
+		for my $d (keys %{$info->{SUPDISTFILES}}) {
 			my $file = &$build($d);
 			$files->{$file} = $file if defined $file;
 		}
-		if ($mirror) {
-			for my $d (keys %{$info->{SUPDISTFILES}}) {
-				my $file = &$build($d);
-				$files->{$file} = $file if defined $file;
-			}
-		}
-		for my $k (qw(DIST_SUBDIR CHECKSUM_FILE DISTFILES
-		    PATCHFILES SUPDISTFILES MASTER_SITES MASTER_SITES0
-		    MASTER_SITES1 MASTER_SITES2 MASTER_SITES3
-		    MASTER_SITES4 MASTER_SITES5 MASTER_SITES6
-		    MASTER_SITES7 MASTER_SITES8 MASTER_SITES9)) {
-		    	delete $info->{$k};
-		}
-		bless $files, "AddDepends";
-		$info->{DIST} = $files;
-		if ($self->{ftp_only} && defined $info->{PERMIT_DISTFILES}) {
-			$info->{DISTIGNORE} = 1;
-			$info->{IGNORE} //= AddIgnore->new(
-			    "Distfile not allowed for ftp");
-		}
+	}
+
+	$roach->build1info($v);
+	for my $k (qw(DIST_SUBDIR CHECKSUM_FILE DISTFILES
+	    PATCHFILES SUPDISTFILES MASTER_SITES MASTER_SITES0
+	    MASTER_SITES1 MASTER_SITES2 MASTER_SITES3
+	    MASTER_SITES4 MASTER_SITES5 MASTER_SITES6
+	    MASTER_SITES7 MASTER_SITES8 MASTER_SITES9)) {
+		delete $info->{$k};
+	}
+	bless $files, "AddDepends";
+	$info->{DIST} = $files;
+	if ($self->{ftp_only} && defined $info->{PERMIT_DISTFILES}) {
+		$info->{DISTIGNORE} = 1;
+		$info->{IGNORE} //= AddIgnore->new(
+		    "Distfile not allowed for ftp");
+	}
+}
+
+sub build_distinfo
+{
+	my ($self, $h, $mirror, $roach) = @_;
+	for my $v (values %$h) {
+		$self->build1info($v, $mirror, $roach);
 	}
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.43 2019/11/07 16:34:57 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.44 2019/11/09 17:06:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -246,7 +246,7 @@ sub new
 	return bless {}, $class;
 }
 
-sub build_roachinfo
+sub build1info
 {
 }
 

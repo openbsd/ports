@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.58 2019/11/07 16:34:57 espie Exp $
+# $OpenBSD: Vars.pm,v 1.59 2019/11/09 17:06:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -124,8 +124,8 @@ sub grab_list
 	my $reset = sub {
 	    $h = DPB::PkgPath->handle_equivalences($grabber->{state}, 
 	    	$h, $subdirs);
-	    $grabber->{fetch}->build_distinfo($h, $grabber->{state}{mirror});
-	    $grabber->{roach}->build_roachinfo($h);
+	    $grabber->{fetch}->build_distinfo($h, $grabber->{state}{mirror},
+	    	$grabber->{roach});
 	    DPB::PkgPath->merge_depends($h, $grabber->{ftp_only});
 	    &$code($h);
 	    $h = {};
