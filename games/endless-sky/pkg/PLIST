@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/29 20:30:54 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/11/09 16:19:08 bcallah Exp $
 @bin bin/endless-sky
 @man man/man6/endless-sky.6
 share/appdata/
@@ -19,6 +19,7 @@ share/endless-sky/data/conversations.txt
 share/endless-sky/data/deep jobs.txt
 share/endless-sky/data/deep missions.txt
 share/endless-sky/data/deprecated outfits.txt
+share/endless-sky/data/dialog phrases.txt
 share/endless-sky/data/dirt belt jobs.txt
 share/endless-sky/data/drak missions.txt
 share/endless-sky/data/drak.txt
@@ -2830,6 +2831,7 @@ share/endless-sky/images/thumbnail/arach freighter.png
 share/endless-sky/images/thumbnail/arach hulk.png
 share/endless-sky/images/thumbnail/arach spindle.png
 share/endless-sky/images/thumbnail/arach transport.png
+share/endless-sky/images/thumbnail/archon.png
 share/endless-sky/images/thumbnail/argosy.png
 share/endless-sky/images/thumbnail/arrow.png
 share/endless-sky/images/thumbnail/autumn leaf.png
@@ -2895,10 +2897,30 @@ share/endless-sky/images/thumbnail/kimek briar.png
 share/endless-sky/images/thumbnail/kimek spire.png
 share/endless-sky/images/thumbnail/kimek thistle.png
 share/endless-sky/images/thumbnail/kimek thorn.png
+share/endless-sky/images/thumbnail/lampyrid.png
 share/endless-sky/images/thumbnail/lance.png
 share/endless-sky/images/thumbnail/leviathan.png
 share/endless-sky/images/thumbnail/manta.png
+share/endless-sky/images/thumbnail/marrowe.png
+share/endless-sky/images/thumbnail/marrows.png
+share/endless-sky/images/thumbnail/marroww.png
+share/endless-sky/images/thumbnail/mboundere.png
+share/endless-sky/images/thumbnail/mbounders.png
+share/endless-sky/images/thumbnail/mbounderw.png
 share/endless-sky/images/thumbnail/met par tek 53.png
+share/endless-sky/images/thumbnail/mfalcone.png
+share/endless-sky/images/thumbnail/mfalcons.png
+share/endless-sky/images/thumbnail/mfalconw.png
+share/endless-sky/images/thumbnail/mfirebirde.png
+share/endless-sky/images/thumbnail/mfirebirds.png
+share/endless-sky/images/thumbnail/mfirebirdw.png
+share/endless-sky/images/thumbnail/mfury.png
+share/endless-sky/images/thumbnail/mleviathane.png
+share/endless-sky/images/thumbnail/mleviathans.png
+share/endless-sky/images/thumbnail/mleviathanw.png
+share/endless-sky/images/thumbnail/mmantae.png
+share/endless-sky/images/thumbnail/mmantas.png
+share/endless-sky/images/thumbnail/mmantaw.png
 share/endless-sky/images/thumbnail/model 128.png
 share/endless-sky/images/thumbnail/model 16.png
 share/endless-sky/images/thumbnail/model 256.png
@@ -2907,6 +2929,15 @@ share/endless-sky/images/thumbnail/model 512.png
 share/endless-sky/images/thumbnail/model 64.png
 share/endless-sky/images/thumbnail/model 8.png
 share/endless-sky/images/thumbnail/modified argosy.png
+share/endless-sky/images/thumbnail/mquicksilvere.png
+share/endless-sky/images/thumbnail/mquicksilvers.png
+share/endless-sky/images/thumbnail/mquicksilverw.png
+share/endless-sky/images/thumbnail/mravene.png
+share/endless-sky/images/thumbnail/mravens.png
+share/endless-sky/images/thumbnail/mravenw.png
+share/endless-sky/images/thumbnail/msplintere.png
+share/endless-sky/images/thumbnail/msplinters.png
+share/endless-sky/images/thumbnail/msplinterw.png
 share/endless-sky/images/thumbnail/mule.png
 share/endless-sky/images/thumbnail/nest.png
 share/endless-sky/images/thumbnail/osprey.png
@@ -2928,6 +2959,7 @@ share/endless-sky/images/thumbnail/saryd visitor.png
 share/endless-sky/images/thumbnail/scout.png
 share/endless-sky/images/thumbnail/shuttle.png
 share/endless-sky/images/thumbnail/skein.png
+share/endless-sky/images/thumbnail/skylark.png
 share/endless-sky/images/thumbnail/sparrow.png
 share/endless-sky/images/thumbnail/splinter.png
 share/endless-sky/images/thumbnail/star barge.png
@@ -2941,9 +2973,12 @@ share/endless-sky/images/thumbnail/tek far 71 lek.png
 share/endless-sky/images/thumbnail/tek far 78 osk.png
 share/endless-sky/images/thumbnail/tempest.png
 share/endless-sky/images/thumbnail/vanguard.png
+share/endless-sky/images/thumbnail/wardragon.png
 share/endless-sky/images/thumbnail/wasp.png
 share/endless-sky/images/thumbnail/winter gale.png
-share/endless-sky/images/thumbnail/world-ship.png
+share/endless-sky/images/thumbnail/world-ship a.png
+share/endless-sky/images/thumbnail/world-ship b.png
+share/endless-sky/images/thumbnail/world-ship c.png
 share/endless-sky/images/ui/
 share/endless-sky/images/ui/ammo selected.png
 share/endless-sky/images/ui/ammo unselected.png
