@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/05 18:01:02 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/09 17:41:10 kn Exp $
 bin/xq
 bin/yq
 lib/python${MODPY_VERSION}/site-packages/yq/
@@ -12,5 +12,13 @@ lib/python${MODPY_VERSION}/site-packages/yq-${MODPY_EGG_VERSION}-py${MODPY_VERSI
 lib/python${MODPY_VERSION}/site-packages/yq/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}dumper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yq/compat.py
+lib/python${MODPY_VERSION}/site-packages/yq/dumper.py
+lib/python${MODPY_VERSION}/site-packages/yq/loader.py
+lib/python${MODPY_VERSION}/site-packages/yq/parser.py
 lib/python${MODPY_VERSION}/site-packages/yq/version.py
