@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/06/24 13:49:57 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/09 19:05:37 bcallah Exp $
 bin/drawpile
-@bin bin/drawpile-2.1.11
+@bin bin/drawpile-2.1.13
 @bin bin/drawpile-srv
 @man man/man1/drawpile-srv.1
 share/applications/net.drawpile.drawpile.desktop
@@ -19,6 +19,7 @@ share/drawpile/drawpile/i18n/
 share/drawpile/drawpile/i18n/drawpile_cs.qm
 share/drawpile/drawpile/i18n/drawpile_de.qm
 share/drawpile/drawpile/i18n/drawpile_fi.qm
+share/drawpile/drawpile/i18n/drawpile_it.qm
 share/drawpile/drawpile/i18n/drawpile_ja.qm
 share/drawpile/drawpile/i18n/drawpile_ru.qm
 share/drawpile/drawpile/i18n/drawpile_uk.qm
@@ -61,7 +62,6 @@ share/drawpile/drawpile/theme/dark/draw-freehand.svg
 share/drawpile/drawpile/theme/dark/draw-line.svg
 share/drawpile/drawpile/theme/dark/draw-rectangle.svg
 share/drawpile/drawpile/theme/dark/draw-text.svg
-share/drawpile/drawpile/theme/dark/draw-watercolor.svg
 share/drawpile/drawpile/theme/dark/drawpile_chat.svg
 share/drawpile/drawpile/theme/dark/drawpile_incremental_mode.svg
 share/drawpile/drawpile/theme/dark/drawpile_pixelround.svg
@@ -140,7 +140,6 @@ share/drawpile/drawpile/theme/light/draw-freehand.svg
 share/drawpile/drawpile/theme/light/draw-line.svg
 share/drawpile/drawpile/theme/light/draw-rectangle.svg
 share/drawpile/drawpile/theme/light/draw-text.svg
-share/drawpile/drawpile/theme/light/draw-watercolor.svg
 share/drawpile/drawpile/theme/light/drawpile_chat.svg
 share/drawpile/drawpile/theme/light/drawpile_incremental_mode.svg
 share/drawpile/drawpile/theme/light/drawpile_pixelround.svg
