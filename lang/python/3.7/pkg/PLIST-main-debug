@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-main-debug,v 1.1 2019/11/09 17:28:58 pirofti Exp $
-bin/.debug/python3.7.dbg
-lib/.debug/libpython3.7m.so.${LIBpython3.7m_VERSION}.dbg

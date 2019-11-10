@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/11/10 11:53:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/11/10 18:34:06 ajacoutot Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -10,18 +10,15 @@ PATCHLEVEL =		.5
 SHARED_LIBS =		python3.7m 0.0
 VERSION_SPEC =		>=3.7,<3.8
 
-REVISION-main =		0
-REVISION-gdbm =		0
+REVISION-main =		1
+REVISION-gdbm =		1
 
 CONFIGURE_ARGS +=	--with-ensurepip=no
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
 
 CONFIGURE_STYLE = autoconf
 
-DEBUG_PACKAGES =	-main -gdbm
-DEBUG_FILES =		bin/python${VERSION} \
-			lib/libpython${VERSION}m.so.${LIBpython3.7m_VERSION} \
-			lib/python${VERSION}/lib-dynload/_gdbm.so
+DEBUG_PACKAGES =	-main -gdbm -tkinter
 
 PORTROACH =             limit:^3\.7
 
