@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.488 2019/11/10 12:44:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.489 2019/11/10 15:33:35 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -104,7 +104,6 @@
      SUBDIR += hugin
      SUBDIR += icoutils
      SUBDIR += iec16022
-     SUBDIR += ilmbase
      SUBDIR += img2pdf
      SUBDIR += imlib2
      SUBDIR += imv
@@ -179,7 +178,6 @@
      SUBDIR += opencsg
      SUBDIR += opencv
      SUBDIR += openexr
-     SUBDIR += openexr-viewers
      SUBDIR += openimageio
      SUBDIR += openjp2
      SUBDIR += openjpeg
