@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2019/09/20 16:03:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/11/10 15:02:21 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -246,7 +246,6 @@ share/locale/gl/LC_MESSAGES/tellico.mo
 share/locale/hu/LC_MESSAGES/tellico.mo
 share/locale/ia/LC_MESSAGES/tellico.mo
 share/locale/it/LC_MESSAGES/tellico.mo
-share/locale/ja/LC_MESSAGES/tellico.mo
 share/locale/kk/LC_MESSAGES/tellico.mo
 share/locale/ko/LC_MESSAGES/tellico.mo
 share/locale/lt/LC_MESSAGES/tellico.mo
@@ -333,6 +332,7 @@ share/tellico/pics/game.png
 share/tellico/pics/gcstar.png
 share/tellico/pics/goodreads.png
 share/tellico/pics/griffith.png
+share/tellico/pics/librarything.png
 share/tellico/pics/nocover_album.png
 share/tellico/pics/nocover_bibtex.png
 share/tellico/pics/nocover_boardgame.png
