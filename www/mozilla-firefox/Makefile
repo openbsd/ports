@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.402 2019/11/10 13:52:45 landry Exp $
+# $OpenBSD: Makefile,v 1.403 2019/11/10 20:26:56 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -9,7 +9,7 @@ MOZILLA_VERSION =	70.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =	0
+REVISION =	1
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
@@ -69,17 +69,9 @@ CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 SUBST_VARS +=	LOCALBASE X11BASE
 
-DEBUG_PACKAGES =         -
+DEBUG_PACKAGES =	-
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols=-ggdb1 \
 			--disable-install-strip
-DEBUG_FILES =	lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT} \
-		lib/${MOZILLA_PROJECT}/plugin-container \
-		lib/${MOZILLA_PROJECT}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION} \
-		lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION} \
-		lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION} \
-		lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION} \
-		lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION} \
-		lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
 
 show-commit:
 	@curl -s https://releases.mozilla.org/pub/mozilla.org/firefox/releases/${MOZILLA_VERSION}/SOURCE| awk -F / '/^https:\/\/hg/ {print $$7 }'

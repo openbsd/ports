@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST-debug,v 1.1 2019/11/10 13:52:45 landry Exp $
-lib/${MOZILLA_PROJECT}/.debug/${MOZILLA_PROJECT}.dbg
-lib/${MOZILLA_PROJECT}/.debug/plugin-container.dbg
-lib/${MOZILLA_PROJECT}/gtk2/.debug/libmozgtk.so.${LIBmozgtk_VERSION}.dbg
-lib/${MOZILLA_PROJECT}/.debug/liblgpllibs.so.${LIBlgpllibs_VERSION}.dbg
-lib/${MOZILLA_PROJECT}/.debug/libmozavcodec.so.${LIBmozavcodec_VERSION}.dbg
-lib/${MOZILLA_PROJECT}/.debug/libmozavutil.so.${LIBmozavutil_VERSION}.dbg
-lib/${MOZILLA_PROJECT}/.debug/libmozgtk.so.${LIBmozgtk_VERSION}.dbg
-lib/${MOZILLA_PROJECT}/.debug/libxul.so.${LIBxul_VERSION}.dbg
