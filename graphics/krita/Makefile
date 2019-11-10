@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2019/11/10 15:27:11 ajacoutot Exp $
-
-BROKEN =	needs a WANTLIB sync
+# $OpenBSD: Makefile,v 1.36 2019/11/10 18:15:08 ajacoutot Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
 VERSION =	4.2.7.1
 DISTNAME =	krita-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kritabasicflakes          2.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
@@ -44,6 +43,15 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} Half-2_4 ICE Iex-2_4 IlmImf-2_4
+WANTLIB += IlmThread-2_4 Imath-2_4 KF5Archive KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n
+WANTLIB += KF5ItemViews KF5WidgetsAddons KF5WindowSystem OpenColorIO
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi
+WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas jpeg
+WANTLIB += lcms2 m png poppler poppler-qt5 quazip5 raw tiff z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz
