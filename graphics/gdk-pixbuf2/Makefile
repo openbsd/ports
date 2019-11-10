@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2019/11/10 17:26:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2019/11/10 21:44:07 ajacoutot Exp $
 
 COMMENT=		graphic library for GTK+
 
@@ -24,7 +24,7 @@ WANTLIB += jpeg m png tiff
 MODULES=		devel/meson \
 			x11/gnome
 
-DEBUG_PACKAGES=		-
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/jasper \

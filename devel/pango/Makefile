@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2019/11/10 17:26:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2019/11/10 21:44:06 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
@@ -29,7 +29,7 @@ MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection
 
-DEBUG_PACKAGES=		-
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/fribidi \

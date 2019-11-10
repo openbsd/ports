@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2019/11/10 17:26:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2019/11/10 21:44:07 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -39,9 +39,9 @@ WANTLIB-icu += ${WANTLIB} harfbuzz icudata icuuc
 
 MASTER_SITES=		https://www.freedesktop.org/software/harfbuzz/release/
 
-DEBUG_PACKAGES=		-main -icu
-
 MULTI_PACKAGES=		-main -icu
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 USE_GMAKE=		Yes
 

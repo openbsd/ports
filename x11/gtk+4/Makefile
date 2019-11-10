@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/11/10 17:26:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/11/10 21:44:07 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -54,7 +54,7 @@ MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 
-DEBUG_PACKAGES=		-main -cups -cloudprint -guic -media
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 BUILD_DEPENDS=		www/sassc
 

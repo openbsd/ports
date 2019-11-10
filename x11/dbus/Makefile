@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2019/11/10 19:12:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2019/11/10 21:44:07 ajacoutot Exp $
 
 # XXX merge on next major update
 # https://gitlab.freedesktop.org/dbus/dbus/merge_requests/124/diffs
@@ -38,7 +38,7 @@ WANTLIB-suid +=	${WANTLIB} dbus-1
 
 MULTI_PACKAGES=		-main -suid
 
-DEBUG_PACKAGES=		-main -suid
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 MASTER_SITES=		https://dbus.freedesktop.org/releases/dbus/
 

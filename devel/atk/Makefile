@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/11/10 17:26:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2019/11/10 21:44:06 ajacoutot Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
@@ -23,7 +23,7 @@ MODULES=	devel/meson \
 
 MODGNOME_TOOLS=	gobject-introspection
 
-DEBUG_PACKAGES=	-
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 LIB_DEPENDS=	devel/glib2
 

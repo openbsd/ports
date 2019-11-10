@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2019/11/10 17:26:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.224 2019/11/10 21:44:07 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -43,7 +43,7 @@ MULTI_PACKAGES=		-main -cups -cloudprint -guic
 MODULES=		devel/dconf \
 			x11/gnome
 
-DEBUG_PACKAGES=		-main -cups -cloudprint -guic
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pango \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.321 2019/11/10 19:01:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.322 2019/11/10 21:44:07 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -36,7 +36,7 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		docbook
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-DEBUG_PACKAGES=		-
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # meson: have_bash, needed to install bash-completion snippets
 BUILD_DEPENDS +=	shells/bash

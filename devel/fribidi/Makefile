@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/11/10 17:26:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2019/11/10 21:44:06 ajacoutot Exp $
 
 COMMENT=		library implementing the Unicode Bidirectional Algorithm
 
@@ -22,7 +22,7 @@ WANTLIB += c
 
 MODULES=		devel/meson
 
-DEBUG_PACKAGES=		-
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 USE_GMAKE=		Yes
 
