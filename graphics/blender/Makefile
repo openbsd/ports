@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.94 2019/07/12 20:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2019/11/10 15:32:56 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.79
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	graphics
 
@@ -16,12 +16,14 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath OpenColorIO
-WANTLIB += OpenImageIO X11 Xi Xrender Xxf86vm avcodec avdevice avformat
-WANTLIB += avutil boost_date_time-mt boost_filesystem-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c freetype jpeg m openal
-WANTLIB += openjpeg png pthread ${MODPY_WANTLIB} swscale tiff tinyxml
-WANTLIB += util yaml-cpp z boost_atomic-mt boost_chrono-mt ${COMPILER_LIBCXX}
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Half-2_4 Iex-2_4 IlmImf-2_4
+WANTLIB += IlmThread-2_4 Imath-2_4 OpenColorIO OpenImageIO X11
+WANTLIB += Xi Xrender Xxf86vm avcodec avdevice avformat avutil
+WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_regex-mt boost_system-mt
+WANTLIB += boost_thread-mt c freetype jpeg m openal openjpeg png
+WANTLIB += swscale tiff tinyxml util yaml-cpp z
 
 MASTER_SITES =	https://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/

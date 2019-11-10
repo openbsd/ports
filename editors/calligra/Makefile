@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/10 15:32:56 ajacoutot Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.1.0
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	7
+REVISION =	8
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
@@ -51,21 +51,21 @@ SHARED_LIBS +=  kdeinit5_calligrawords    0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_karbon           0.0 # 0.0
 SHARED_LIBS +=  gemini                    0.0 # 16.0
 
-WANTLIB += ${COMPILER_LIBCXX} Half ICE Iex IlmImf IlmThread Imath
-WANTLIB += KChart KF5Activities KF5Archive KF5Auth KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JS
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KDELibs4Support KF5KHtml
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Parts KF5Service KF5Solid KF5SonnetCore
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5UnitConversion KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext c fontconfig freetype
-WANTLIB += gsl gslcblas iconv lcms2 m phonon4qt5experimental poppler
-WANTLIB += poppler-qt5 qca-qt5 z
+WANTLIB += ${COMPILER_LIBCXX} Half-2_4 ICE Iex-2_4 IlmImf-2_4
+WANTLIB += IlmThread-2_4 Imath-2_4 KChart KF5Activities KF5Archive
+WANTLIB += KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
+WANTLIB += KF5JS KF5JobWidgets KF5KCMUtils KF5KDELibs4Support
+WANTLIB += KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
+WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5UnitConversion
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
+WANTLIB += fontconfig freetype gsl gslcblas iconv lcms2 m phonon4qt5experimental
+WANTLIB += poppler poppler-qt5 qca-qt5 z
 
 BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \

@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/10 15:32:55 ajacoutot Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
-REVISION =	0
+REVISION =	1
 
 
 SHARED_LIBS +=  kioarchive                0.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            0.0 # 18.08
 
-WANTLIB += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
-WANTLIB += KF5Activities KF5Archive KF5Auth KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5DBusAddons KF5DNSSD KF5GuiAddons KF5I18n
-WANTLIB += KF5IconThemes KF5ItemViews KF5JS KF5JobWidgets KF5KHtml
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Parts
-WANTLIB += KF5Pty KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml m
-WANTLIB += mtp phonon4qt5experimental smbclient ssh tag util
+WANTLIB += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
+WANTLIB += Imath-2_4 KF5Activities KF5Archive KF5Auth KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DBusAddons KF5DNSSD
+WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JS
+WANTLIB += KF5JobWidgets KF5KHtml KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOWidgets KF5Parts KF5Pty KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml m mtp phonon4qt5experimental smbclient ssh tag
+WANTLIB += util
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes

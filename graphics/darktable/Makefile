@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2019/10/22 11:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2019/11/10 15:32:56 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= i386 amd64 aarch64
 
@@ -8,6 +8,7 @@ V=		2.6.3
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	graphics x11
 
@@ -19,13 +20,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
-WANTLIB += GraphicsMagick ICE Iex IlmImf IlmThread X11 Xext Xrandr
-WANTLIB += atk-1.0 c cairo cairo-gobject colord colord-gtk colordprivate
-WANTLIB += cups curl exiv2 flickcurl gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port
-WANTLIB += gtk-3 intl jpeg json-glib-1.0 lcms2 lensfun m openjp2
-WANTLIB += osmgpsmap-1.0 pango-1.0 pangocairo-1.0 png pugixml
-WANTLIB += rsvg-2 secret-1 soup-2.4 sqlite3 tiff webp xml2 z
+WANTLIB += GraphicsMagick Iex-2_4 IlmImf-2_4 X11 Xrandr c cairo
+WANTLIB += colord colord-gtk colordprivate cups curl exiv2 flickcurl
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gphoto2 gphoto2_port gtk-3 intl jpeg json-glib-1.0
+WANTLIB += lcms2 lensfun m openjp2 osmgpsmap-1.0 pango-1.0 pangocairo-1.0
+WANTLIB += png pugixml rsvg-2 secret-1 soup-2.4 sqlite3 tiff webp
+WANTLIB += xml2 z
 
 MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
 

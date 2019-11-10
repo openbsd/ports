@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/07/12 20:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/11/10 15:32:55 ajacoutot Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -17,8 +17,8 @@ CATEGORIES=		graphics devel
 PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
 
-REVISION-main=		2
-REVISION-plugins=	3
+REVISION-main=		3
+REVISION-plugins=	4
 
 SHARED_LIBS +=  gegl-0.2             0.0      # 201.1
 SHARED_LIBS +=  gegl-sc-0.2          0.0      # unknown
@@ -44,13 +44,14 @@ WANTLIB-main += X11 Xext Xrender babl-0.1 c cairo croco-0.6 expat fontconfig
 WANTLIB-main += freetype fribidi gdk_pixbuf-2.0 graphite2 harfbuzz
 WANTLIB-main += jasper jpeg lzma pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png pthread rsvg-2 xcb xcb-render xcb-shm
-WANTLIB-main += xml2
+WANTLIB-main += xml2 cairo-gobject
 
 WANTLIB-plugins += ${WANTLIB}
-WANTLIB-plugins += ${COMPILER_LIBCXX} Half Iex IexMath IlmImf IlmThread
-WANTLIB-plugins += Imath avcodec avformat avutil babl-0.1 bz2 crypto gegl-0.2
-WANTLIB-plugins += gsm mp3lame ogg opus speex ssl swresample vorbis vorbisenc
-WANTLIB-plugins += vpx x264 x265 xvidcore dav1d lzma theoradec theoraenc xml2
+WANTLIB-plugins += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IexMath-2_4 IlmImf-2_4
+WANTLIB-plugins += IlmThread-2_4 Imath-2_4 aom avcodec avformat avutil
+WANTLIB-plugins += babl-0.1 bz2 crypto dav1d gegl-0.2 gsm lzma mp3lame
+WANTLIB-plugins += ogg opus speex ssl swresample theoradec theoraenc vorbis
+WANTLIB-plugins += vorbisenc vpx x264 x265 xml2 xvidcore
 
 MODULES=		textproc/intltool
 
@@ -62,7 +63,6 @@ LIB_DEPENDS-main= 	x11/gnome/librsvg \
 			graphics/babl
 
 LIB_DEPENDS-plugins= 	${BUILD_PKGPATH},-main \
-			graphics/ilmbase \
 			graphics/openexr \
 			graphics/ffmpeg
 

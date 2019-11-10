@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2019/08/21 06:22:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.92 2019/11/10 15:32:55 ajacoutot Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -12,7 +12,7 @@ PKGNAME-langlist =	kde4-langlist-$V
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs-${MODKDE4_SPEC}
-REVISION-main =		17
+REVISION-main =		18
 REVISION-en_US =	0
 REVISION-langlist =	0
 
@@ -74,12 +74,12 @@ WANTLIB-en_US =
 WANTLIB-langlist =
 WANTLIB-main += ${WANTLIB} c intl m pthread util z
 WANTLIB-main += ${COMPILER_LIBCXX}
-WANTLIB-main += Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp
-WANTLIB-main += Xext Xfixes Xft Xpm Xrender Xss Xtst
+WANTLIB-main += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xrender
+WANTLIB-main += Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4 Imath-2_4
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB-main += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB-main += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
-WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml Xss Xtst
 WANTLIB-main += aspell attica bz2 dbusmenu-qt enchant exslt fam
 WANTLIB-main += gif lib/inotify/inotify jasper jpeg lzma
 WANTLIB-main += png polkit-qt-core-1 qca soprano sopranoclient

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/05 16:57:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/10 15:32:55 ajacoutot Exp $
 
 CATEGORIES =		graphics devel
 COMMENT=		library for computer vision real-time processin
@@ -9,7 +9,7 @@ GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
 
 PKGNAME =		opencv2-${V}
-REVISION =		1
+REVISION =		2
 
 .for i in opencv_calib3d opencv_contrib opencv_core opencv_features2d \
   opencv_flann opencv_gpu opencv_highgui opencv_imgproc opencv_legacy \
@@ -26,14 +26,15 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # http://docs.opencv.org/modules/nonfree/doc/nonfree.html
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 avcodec avformat avresample
-WANTLIB += avutil c cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 intl jasper jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 png swscale tiff z
+WANTLIB += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
+WANTLIB += Imath-2_4 X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 avcodec avformat
+WANTLIB += avresample avutil c cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gstriff-1.0 gstvideo-1.0 gthread-2.0 gtk-x11-2.0 intl
+WANTLIB += jasper jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += png swscale tiff z
 
 COMPILER =		base-clang ports-gcc
 
@@ -42,7 +43,6 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		math/eigen3
 
 LIB_DEPENDS =		graphics/ffmpeg \
-			graphics/ilmbase \
 			graphics/jpeg \
 			graphics/openexr \
 			graphics/png \

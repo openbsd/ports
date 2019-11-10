@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2019/10/18 14:51:59 cwen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/11/10 15:32:55 ajacoutot Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		15
+REVISION=		16
 SHARED_LIBS+=		IL	1.0 # 2.0
 SHARED_LIBS+=		ILU	1.0 # 2.0
 SHARED_LIBS+=		ILUT	1.0 # 2.0
@@ -18,20 +18,19 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU Half ICE Iex IexMath IlmImf
-WANTLIB += IlmThread Imath SDL SM X11 X11-xcb Xdamage Xext Xfixes
-WANTLIB += Xi Xmu Xrandr Xrender Xt Xxf86vm c drm expat glapi
-WANTLIB += glut iconv jasper jpeg lcms m mng png sndio tiff usbhid
-WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-sync
-WANTLIB += xcb-xfixes xshmfence z
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Half-2_4 ICE Iex-2_4 IexMath-2_4
+WANTLIB += IlmImf-2_4 IlmThread-2_4 Imath-2_4 SDL SM X11 X11-xcb
+WANTLIB += Xdamage Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm
+WANTLIB += c drm expat glapi glut iconv jasper jpeg lcms m mng
+WANTLIB += png sndio tiff usbhid xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		converters/libiconv \
 			devel/sdl \
 			graphics/freeglut \
-			graphics/ilmbase \
-			graphics/jasper>=2.0.14 \
+			graphics/jasper \
 			graphics/libmng \
 			graphics/lcms \
 			graphics/openexr \

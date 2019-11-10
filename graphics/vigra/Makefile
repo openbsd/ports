@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 21:15:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/10 15:32:55 ajacoutot Exp $
 
 COMMENT =		image processing and analysis library
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 V = 			1-11-1
 DISTNAME =		vigra-${V:S/-/./g}-src
 PKGNAME =		vigra-${V:S/-/./g}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
@@ -21,9 +21,10 @@ MASTER_SITES = https://github.com/ukoethe/vigra/releases/download/Version-${V}/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += Half Iex IlmImf IlmThread Imath boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt
-WANTLIB += fftw3 jpeg m png pthread tiff z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
+WANTLIB += Imath-2_4 boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_system-mt boost_thread-mt fftw3 jpeg m png tiff
+WANTLIB += z
 
 COMPILER =		base-clang ports-gcc
 

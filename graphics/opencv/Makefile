@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/10/28 21:48:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/11/10 15:32:55 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -15,7 +15,7 @@ GH_TAGNAME =	${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
 
-REVISION-main =		0
+REVISION-main =		1
 REVISION-java =		0
 
 HOMEPAGE =		https://www.opencv.org/
@@ -32,13 +32,13 @@ DISTFILES =		opencv-{opencv/archive/}${V}${EXTRACT_SUFX}
 SHARED_LIBS += $i 5.0
 .endfor
 
-WANTLIB-main += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
-WANTLIB-main += atk-1.0 avcodec avformat avresample avutil c cairo
-WANTLIB-main += cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB-main += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gthread-2.0
-WANTLIB-main += gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0 png
-WANTLIB-main += swscale tiff webp z
+WANTLIB-main += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
+WANTLIB-main += Imath-2_4 atk-1.0 avcodec avformat avresample avutil
+WANTLIB-main += c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB-main += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
+WANTLIB-main += gthread-2.0 gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0
+WANTLIB-main += png swscale tiff webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
@@ -69,7 +69,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			multimedia/gstreamer1/plugins-base \
 			x11/gtk+3 \
 			graphics/ffmpeg \
-			graphics/ilmbase \
 			graphics/jpeg \
 			graphics/libwebp \
 			graphics/openexr \

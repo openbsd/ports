@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/10 15:32:56 ajacoutot Exp $
 
 COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz
 GH_TAGNAME =	v0.4.0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://c42f.github.io/displaz/
 
@@ -13,17 +13,16 @@ CATEGORIES =	graphics
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW Iex-2_4 Imath-2_4 Qt5Core
+WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets c m
+
 MODULES =	devel/cmake x11/qt5
 LIB_DEPENDS =	graphics/glew>=2.0 \
-		graphics/ilmbase
+		graphics/openexr
 
 # links with static liblas.a
 BUILD_DEPENDS =	textproc/py-docutils \
 		converters/lastools
-
-WANTLIB += GL GLEW Iex Imath Qt5Core Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB += Qt5Widgets c m pthread
-WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ARGS =	-DDISPLAZ_EMBED_GLEW=false \
 			-DLASLIB_LIBRARY=${LOCALBASE}/lib/liblas.a \

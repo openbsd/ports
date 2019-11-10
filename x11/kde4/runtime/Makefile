@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/07/01 18:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2019/11/10 15:32:55 ajacoutot Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -6,7 +6,7 @@ DISTNAME =		kde-runtime-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-locale =	kde4-locale-${MODKDE4_VERSION}
 PKG_ARCH-locale =	*
-REVISION-main =		15
+REVISION-main =		16
 REVISION-locale =	2
 
 DPB_PROPERTIES =	parallel
@@ -22,7 +22,8 @@ SHARED_LIBS +=	kdeinit4_kwalletd 	51.0
 
 WANTLIB-main =  ${WANTLIB} c m pthread util
 WANTLIB-main += ${COMPILER_LIBCXX}
-WANTLIB-main += Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
+WANTLIB-main += Half-2_4 ICE Iex-2_4 IlmImf-2_4 IlmThread-2_4 Imath-2_4
+WANTLIB-main += SM X11 Xcursor Xext
 WANTLIB-main += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB-main += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml
