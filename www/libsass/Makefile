@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2019/10/25 18:19:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/10 17:04:10 jeremy Exp $
+
+# www/ruby-sassc contains an embedded version of libsass, please
+# update it if there are security patches to libsass
 
 COMMENT =		C/C++ implementation of a Sass compiler
 
