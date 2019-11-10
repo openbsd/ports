@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/11/07 14:13:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.70 2019/11/10 14:20:14 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -33,9 +33,9 @@ REVISION-edu = 8
 REVISION-multimedia = 1
 REVISION-network = 0
 REVISION-extras = 10
-REVISION-main =		30
+REVISION-main =		31
 REVISION-admin =	1
-REVISION-graphics =	4
+REVISION-graphics =	5
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -86,7 +86,6 @@ KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/graphics-strigi-analyzer \
 	${MODKDE4_DEP_DIR}/graphics-thumbnailers \
 	${MODKDE4_DEP_DIR}/kgamma		\
-	${MODKDE4_DEP_DIR}/ksnapshot		\
 	${MODKDE4_DEP_DIR}/libkexiv2		\
 	${MODKDE4_DEP_DIR}/svgpart
 
