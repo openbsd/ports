@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-main-debug,v 1.1 2019/11/10 16:48:44 ajacoutot Exp $
-bin/.debug/hb-ot-shape-closure.dbg
-bin/.debug/hb-shape.dbg
-bin/.debug/hb-subset.dbg
-bin/.debug/hb-view.dbg
-lib/.debug/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION}.dbg
-lib/.debug/libharfbuzz-subset.so.${LIBharfbuzz-subset_VERSION}.dbg
-lib/.debug/libharfbuzz.so.${LIBharfbuzz_VERSION}.dbg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2019/05/09 13:42:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2019/11/10 17:26:23 ajacoutot Exp $
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-demo
 @bin bin/gtk4-demo-application
@@ -397,8 +397,8 @@ lib/gtk-4.0/
 lib/gtk-4.0/4.0.0/
 lib/gtk-4.0/4.0.0/media/
 lib/gtk-4.0/4.0.0/printbackends/
-lib/gtk-4.0/4.0.0/printbackends/libprintbackend-file.so
-lib/gtk-4.0/4.0.0/printbackends/libprintbackend-lpr.so
+@so lib/gtk-4.0/4.0.0/printbackends/libprintbackend-file.so
+@so lib/gtk-4.0/4.0.0/printbackends/libprintbackend-lpr.so
 @lib lib/libgtk-4.so.${LIBgtk-4_VERSION}
 lib/pkgconfig/gtk4-unix-print.pc
 lib/pkgconfig/gtk4-x11.pc

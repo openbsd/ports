@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/11/10 15:43:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/10 17:26:23 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -20,11 +20,11 @@ PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
-REVISION-main=		5
-REVISION-cups=		2
-REVISION-cloudprint=	1
-REVISION-guic=		1
-REVISION-media=		1
+REVISION-main=		6
+REVISION-cups=		3
+REVISION-cloudprint=	2
+REVISION-guic=		2
+REVISION-media=		2
 
 CATEGORIES=		x11 devel
 
@@ -53,6 +53,8 @@ MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
+
+DEBUG_PACKAGES=		-main -cups -cloudprint -guic -media
 
 BUILD_DEPENDS=		www/sassc
 
@@ -135,21 +137,6 @@ WANTLIB-cups +=	colord
 .else
 CONFIGURE_ARGS +=	-Denable-colord=false
 .endif
-
-DEBUG_PACKAGES=		-main -cups -cloudprint -guic -media
-DEBUG_FILES=		bin/gtk4-update-icon-cache \
-			bin/gtk4-builder-tool \
-			bin/gtk4-demo \
-			bin/gtk4-demo-application \
-			bin/gtk4-encode-symbolic-svg \
-			bin/gtk4-icon-browser \
-			bin/gtk4-launch \
-			bin/gtk4-query-settings \
-			bin/gtk4-widget-factory \
-			lib/libgtk-4.so.${LIBgtk-4_VERSION} \
-			lib/gtk-4.0/4.0.0/media/libmedia-gstreamer.so \
-			lib/gtk-4.0/4.0.0/printbackends/libprintbackend-cloudprint.so \
-			lib/gtk-4.0/4.0.0/printbackends/libprintbackend-cups.so
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/modules/printbackends/meson.build

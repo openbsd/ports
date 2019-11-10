@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2019/11/10 16:27:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2019/11/10 17:26:22 ajacoutot Exp $
 
 COMMENT=		library implementing the Unicode Bidirectional Algorithm
 
 V=			1.0.7
-REVISION=		1
+REVISION=		2
 
 GH_PROJECT=		fribidi
 GH_ACCOUNT=		fribidi
@@ -22,16 +22,14 @@ WANTLIB += c
 
 MODULES=		devel/meson
 
+DEBUG_PACKAGES=		-
+
 USE_GMAKE=		Yes
 
 # needs c2man
 CONFIGURE_ARGS=		-Ddocs=false
 
 TEST_DEPENDS=		${BASE_PKGPATH}=${V}
-
-DEBUG_PACKAGES=		-
-DEBUG_FILES=		bin/fribidi \
-			lib/libfribidi.so.${LIBfribidi_VERSION}
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/fribidi-config ${PREFIX}/bin

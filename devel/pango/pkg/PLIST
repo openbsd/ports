@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2018/07/30 18:41:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2019/11/10 17:26:22 ajacoutot Exp $
 @bin bin/pango-list
 @bin bin/pango-view
 include/pango-1.0/
@@ -41,16 +41,16 @@ lib/girepository-1.0/Pango-1.0.typelib
 lib/girepository-1.0/PangoCairo-1.0.typelib
 lib/girepository-1.0/PangoFT2-1.0.typelib
 lib/girepository-1.0/PangoXft-1.0.typelib
-lib/libpango-1.0.a
+@static-lib lib/libpango-1.0.a
 lib/libpango-1.0.la
 @lib lib/libpango-1.0.so.${LIBpango-1.0_VERSION}
-lib/libpangocairo-1.0.a
+@static-lib lib/libpangocairo-1.0.a
 lib/libpangocairo-1.0.la
 @lib lib/libpangocairo-1.0.so.${LIBpangocairo-1.0_VERSION}
-lib/libpangoft2-1.0.a
+@static-lib lib/libpangoft2-1.0.a
 lib/libpangoft2-1.0.la
 @lib lib/libpangoft2-1.0.so.${LIBpangoft2-1.0_VERSION}
-lib/libpangoxft-1.0.a
+@static-lib lib/libpangoxft-1.0.a
 lib/libpangoxft-1.0.la
 @lib lib/libpangoxft-1.0.so.${LIBpangoxft-1.0_VERSION}
 lib/pkgconfig/pango.pc

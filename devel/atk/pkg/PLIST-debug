@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-debug,v 1.1 2019/11/10 16:05:54 ajacoutot Exp $
-lib/.debug/libatk-1.0.so.${LIBatk-1.0_VERSION}.dbg

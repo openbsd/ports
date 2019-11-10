@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.319 2019/11/10 13:33:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.320 2019/11/10 17:26:22 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.62.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		devel
 
@@ -36,6 +36,8 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		docbook
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
+DEBUG_PACKAGES=		-
+
 # meson: have_bash, needed to install bash-completion snippets
 BUILD_DEPENDS +=	shells/bash
 
@@ -54,24 +56,6 @@ CONFIGURE_ARGS=		-Dselinux=disabled \
 			-Dxattr=false \
 			-Dlibmount=false \
 			-Dman=true
-
-DEBUG_PACKAGES=		-
-DEBUG_FILES=		bin/gapplication \
-			bin/gdbus \
-			bin/gio \
-			bin/gio-launch-desktop \
-			bin/gio-querymodules \
-			bin/glib-compile-resources \
-			bin/glib-compile-schemas \
-			bin/gobject-query \
-			bin/gresource \
-			bin/gsettings \
-			bin/gtester \
-			lib/libgio-2.0.so.${LIBgio-2.0_VERSION} \
-			lib/libglib-2.0.so.${LIBglib-2.0_VERSION} \
-			lib/libgmodule-2.0.so.${LIBgmodule-2.0_VERSION} \
-			lib/libgobject-2.0.so.${LIBgobject-2.0_VERSION} \
-			lib/libgthread-2.0.so.${LIBgthread-2.0_VERSION}
 
 pre-configure:
 	sed -i -e "s,/usr/local,${LOCALBASE},g;" \

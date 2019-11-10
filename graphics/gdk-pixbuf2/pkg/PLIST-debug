@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-debug,v 1.1 2019/11/10 16:10:12 ajacoutot Exp $
-bin/.debug/gdk-pixbuf-csource.dbg
-bin/.debug/gdk-pixbuf-pixdata.dbg
-bin/.debug/gdk-pixbuf-query-loaders.dbg
-bin/.debug/gdk-pixbuf-thumbnailer.dbg
-lib/.debug/libgdk_pixbuf-2.0.so.${LIBgdk_pixbuf-2.0_VERSION}.dbg
-lib/.debug/libgdk_pixbuf_xlib-2.0.so.${LIBgdk_pixbuf_xlib-2.0_VERSION}.dbg

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-icu-debug,v 1.1 2019/11/10 16:48:44 ajacoutot Exp $
-lib/.debug/libharfbuzz-icu.so.1.2.dbg

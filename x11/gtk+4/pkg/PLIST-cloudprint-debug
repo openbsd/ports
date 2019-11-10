@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-cloudprint-debug,v 1.1 2019/11/10 15:43:26 ajacoutot Exp $
-lib/gtk-4.0/4.0.0/printbackends/.debug/libprintbackend-cloudprint.so.dbg

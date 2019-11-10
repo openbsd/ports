@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2019/11/10 16:10:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2019/11/10 17:26:22 ajacoutot Exp $
 
 COMMENT=		graphic library for GTK+
 
 GNOME_PROJECT=		gdk-pixbuf
 GNOME_VERSION=		2.40.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -24,6 +24,8 @@ WANTLIB += jpeg m png tiff
 MODULES=		devel/meson \
 			x11/gnome
 
+DEBUG_PACKAGES=		-
+
 LIB_DEPENDS=		devel/glib2 \
 			graphics/jasper \
 			graphics/png \
@@ -40,13 +42,5 @@ CONFIGURE_ARGS=		-Dinstalled_tests=false \
 			-Djasper=true
 
 TEST_DEPENDS=		${BASE_PKGPATH}=${GNOME_VERSION}
-
-DEBUG_PACKAGES=		-
-DEBUG_FILES=		bin/gdk-pixbuf-csource \
-			bin/gdk-pixbuf-pixdata \
-			bin/gdk-pixbuf-query-loaders \
-			bin/gdk-pixbuf-thumbnailer \
-			lib/libgdk_pixbuf-2.0.so.${LIBgdk_pixbuf-2.0_VERSION} \
-			lib/libgdk_pixbuf_xlib-2.0.so.${LIBgdk_pixbuf_xlib-2.0_VERSION}
 
 .include <bsd.port.mk>

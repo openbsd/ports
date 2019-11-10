@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-guic-debug,v 1.1 2019/11/10 15:43:26 ajacoutot Exp $
-bin/.debug/gtk4-update-icon-cache.dbg

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-media,v 1.1 2018/06/27 11:28:17 ajacoutot Exp $
-lib/gtk-4.0/4.0.0/media/libmedia-gstreamer.so
+@comment $OpenBSD: PLIST-media,v 1.2 2019/11/10 17:26:23 ajacoutot Exp $
+@so lib/gtk-4.0/4.0.0/media/libmedia-gstreamer.so

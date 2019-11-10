@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2019/11/10 16:48:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2019/11/10 17:26:23 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -12,8 +12,8 @@ EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-REVISION-main=		0
-REVISION-icu=		0
+REVISION-main=		1
+REVISION-icu=		1
 
 SHARED_LIBS +=  harfbuzz             15.1     # 20600.4
 SHARED_LIBS +=  harfbuzz-icu         1.2      # 20600.4
@@ -39,6 +39,8 @@ WANTLIB-icu += ${WANTLIB} harfbuzz icudata icuuc
 
 MASTER_SITES=		https://www.freedesktop.org/software/harfbuzz/release/
 
+DEBUG_PACKAGES=		-main -icu
+
 MULTI_PACKAGES=		-main -icu
 
 USE_GMAKE=		Yes
@@ -60,16 +62,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-introspection \
 			--with-graphite2 \
 			--with-gobject
-
-DEBUG_PACKAGES=		-main -icu
-DEBUG_FILES=		bin/hb-ot-shape-closure \
-			bin/hb-shape \
-			bin/hb-subset \
-			bin/hb-view \
-			lib/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION} \
-			lib/libharfbuzz-icu.so.${LIBharfbuzz-icu_VERSION} \
-			lib/libharfbuzz-subset.so.${LIBharfbuzz-subset_VERSION} \
-			lib/libharfbuzz.so.${LIBharfbuzz_VERSION}
 
 pre-configure:
 	sed -i 's,for suffix in so,for suffix in so.${LIBharfbuzz_VERSION},' \
