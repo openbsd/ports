@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.1 2019/11/10 16:44:55 espie Exp $
+# $OpenBSD: build-debug-info,v 1.2 2019/11/10 18:27:51 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -144,6 +144,7 @@ our @ISA = qw(OpenBSD::AddCreateDelete::State);
 sub handle_options
 {
 	my $state = shift;
+	# TODO I need to pass WRKINST around to discriminate for hardlinks!
 	$state->SUPER::handle_options('vqFO:P:', 
 	    '[-Fmnqvx]',
 	    '[-O output]',
