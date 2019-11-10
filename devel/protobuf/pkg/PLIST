@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/07/31 20:58:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/11/10 13:29:38 tb Exp $
 @bin bin/protoc
 include/google/
 include/google/protobuf/
@@ -62,6 +62,7 @@ include/google/protobuf/inlined_string_field.h
 include/google/protobuf/io/
 include/google/protobuf/io/coded_stream.h
 include/google/protobuf/io/gzip_stream.h
+include/google/protobuf/io/io_win32.h
 include/google/protobuf/io/printer.h
 include/google/protobuf/io/strtod.h
 include/google/protobuf/io/tokenizer.h
