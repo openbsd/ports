@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/09/28 09:42:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/10 18:24:17 kmos Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -48,8 +48,6 @@ RUN_DEPENDS=	devel/doxygen
 CONFIGURE_ARGS=	-Dbuild_wizard=ON \
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
-
-NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/doxywizard ${PREFIX}/bin
