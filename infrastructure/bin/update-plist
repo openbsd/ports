@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.177 2019/11/10 16:46:44 espie Exp $
+# $OpenBSD: update-plist,v 1.178 2019/11/10 18:26:39 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -669,6 +669,11 @@ sub check_specific
 {
 }
 
+# this is specific to DEBUG_PACKAGES: if there are new/changed annotated
+# files, we'll need to rerun make clean=fake/fake
+sub notice_new_file
+{
+}
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
@@ -1223,6 +1228,14 @@ sub check_suffix
 	return $error;
 }
 
+package OpenBSD::PackingElement::FileWithDebugInfo;
+
+sub notice_new_file
+{
+	my ($o, $m) = @_;
+	$m->{warn_changed} = 1;
+}
+
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
 sub new
@@ -1497,11 +1510,12 @@ sub add_missing_cvstags
 
 sub copy_from_old
 {
-	my ($e, $o, $unexec) = @_;
+	my ($self, $e, $o, $unexec) = @_;
 
 	my $s = $e->{comesfrom};
 	if ($o->element_class ne ref($e) && $e->rebless_okay) {
 		$e->rebless($o->element_class);
+		$e->notice_new_file($self);
 	}
 
 	# mark it for later (see add_delayed_objects)
@@ -1527,7 +1541,7 @@ sub copy_existing
 		# this will be re-added to multiple paths if there are
 		# multiple matching plists
 		for my $e (@{$self->{exact}{$path}}) {
-			copy_from_old($e, $o, $self->{comes_after}{$path});
+			$self->copy_from_old($e, $o, $self->{comes_after}{$path});
 		}
 		return 1;
 	} else {
@@ -1583,6 +1597,7 @@ sub walk_up_directory
 				last;
 			}
 			my $a = $c->add($s->nlist, $p2);
+			$a->notice_new_file($self);
 			# and match the file
 			$a->{file} = $s->{file};
 			# unsubst is used as a hint in reversesubst, so we
@@ -1772,6 +1787,10 @@ sub report_issues
 	$self->report_per_list("oldorigfiles", 
 	    "Warning: possible problematic entries in #1:");
 	$self->report_per_list("oldcomments", "Warning: #1 still contains:");
+	if ($self->{warn_changed}) {
+		print "WARNING: Some new/changed files with debug information\n";
+		print "You should run make clean=fake; make fake again\n";
+	}
 }
 
 sub write_new_files
