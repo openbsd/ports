@@ -1,38 +1,32 @@
-$OpenBSD: patch-Makefile,v 1.4 2019/04/02 09:01:14 fcambus Exp $
+$OpenBSD: patch-Makefile,v 1.5 2019/11/10 17:00:15 fcambus Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -21,7 +21,7 @@ GIT_HASH:=$(shell git describe --abbrev=4 --dirty --al
- DEFINES+=-DGIT_HASH=\"$(GIT_HASH)\"
- endif
+@@ -16,7 +16,7 @@ CXX_FOR_BUILD?=$(CXX)
+ # compiler and linker flags
+ DEFINES=-DLOCALEDIR=\"$(localedir)\"
  
 -WARNFLAGS=-Werror -Wall -Wextra -Wunreachable-code
 +WARNFLAGS=-Wall -Wextra -Wunreachable-code
  INCLUDES=-Iinclude -Istfl -Ifilter -I. -Irss
  BARE_CXXFLAGS=-std=c++11 -O2 -ggdb $(INCLUDES)
  LDFLAGS+=-L.
-@@ -51,7 +51,7 @@ FILTERLIB_OUTPUT=libfilter.a
+@@ -46,7 +46,7 @@ FILTERLIB_OUTPUT=libfilter.a
  NEWSBOAT=newsboat
  NEWSBOAT_SOURCES:=$(shell cat mk/newsboat.deps)
  NEWSBOAT_OBJS:=$(patsubst %.cpp,%.o,$(NEWSBOAT_SOURCES))
--NEWSBOAT_LIBS=-lboat -lfilter -lpthread -lrsspp
-+NEWSBOAT_LIBS=-lboat -lfilter -lpthread -lrsspp -lcurses
+-NEWSBOAT_LIBS=-lboat -lnewsboat -lfilter -lpthread -lrsspp -ldl
++NEWSBOAT_LIBS=-lboat -lnewsboat -lfilter -lpthread -lrsspp -lcurses
  
  RSSPPLIB_SOURCES=$(sort $(wildcard rss/*.cpp))
  RSSPPLIB_OBJS=$(patsubst rss/%.cpp,rss/%.o,$(RSSPPLIB_SOURCES))
-@@ -76,12 +76,12 @@ LDFLAGS+=-L./target/release
- endif
- CARGO_FLAGS+=--release
- endif
--LDFLAGS+=-lnewsboat -lpthread -ldl
-+LDFLAGS+=-lnewsboat -lpthread
- 
+@@ -75,7 +75,7 @@ endif
  PODBOAT=podboat
  PODBOAT_SOURCES:=$(shell cat mk/podboat.deps)
  PODBOAT_OBJS:=$(patsubst %.cpp,%.o,$(PODBOAT_SOURCES))
--PODBOAT_LIBS=-lboat -lpthread
-+PODBOAT_LIBS=-lboat -lpthread -lcurses
+-PODBOAT_LIBS=-lboat -lnewsboat -lpthread -ldl
++PODBOAT_LIBS=-lboat -lnewsboat -lpthread -lcurses
  
  ifeq (, $(filter Linux GNU GNU/%, $(shell uname -s)))
  NEWSBOAT_LIBS+=-liconv -lintl

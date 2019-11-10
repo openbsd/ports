@@ -1,12 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/12/27 15:07:07 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/11/10 17:00:16 fcambus Exp $
 @bin bin/newsboat
 @bin bin/podboat
 @man man/man1/newsboat.1
 @man man/man1/podboat.1
 share/doc/newsboat/
+share/doc/newsboat/CHANGELOG.md
+share/doc/newsboat/contrib/
+share/doc/newsboat/contrib/bookmark-evernote.sh
+share/doc/newsboat/contrib/bookmark-pinboard.sh
+share/doc/newsboat/contrib/colorschemes/
+share/doc/newsboat/contrib/colorschemes/commander
+share/doc/newsboat/contrib/colorschemes/cyanism
+share/doc/newsboat/contrib/colorschemes/greenscreen
+share/doc/newsboat/contrib/colorschemes/inkpot
+share/doc/newsboat/contrib/colorschemes/kinda-maia
+share/doc/newsboat/contrib/colorschemes/light
+share/doc/newsboat/contrib/colorschemes/nord
+share/doc/newsboat/contrib/colorschemes/plain
+share/doc/newsboat/contrib/colorschemes/psychedelic
+share/doc/newsboat/contrib/colorschemes/schleichfahrt
+share/doc/newsboat/contrib/colorschemes/simple
+share/doc/newsboat/contrib/colorschemes/solarized-dark
+share/doc/newsboat/contrib/colorschemes/solarized-light
+share/doc/newsboat/contrib/feedgrabber.rb
+share/doc/newsboat/contrib/getpocket.com/
+share/doc/newsboat/contrib/getpocket.com/after_authentication.md
+share/doc/newsboat/contrib/getpocket.com/create-pocket-user-token.sh
+share/doc/newsboat/contrib/getpocket.com/readme.md
+share/doc/newsboat/contrib/getpocket.com/send-to-pocket.sh
+share/doc/newsboat/contrib/heise.rb
+share/doc/newsboat/contrib/pinboard.pl
+share/doc/newsboat/contrib/slashdot.rb
 share/doc/newsboat/docbook-xsl.css
 share/doc/newsboat/examples/
 share/doc/newsboat/examples/config
+share/doc/newsboat/examples/example-bookmark-plugin.sh
 share/doc/newsboat/faq.html
 share/doc/newsboat/newsboat.html
 share/locale/ca/LC_MESSAGES/newsboat.mo

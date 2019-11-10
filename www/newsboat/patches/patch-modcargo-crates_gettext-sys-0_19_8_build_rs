@@ -1,0 +1,15 @@
+$OpenBSD: patch-modcargo-crates_gettext-sys-0_19_8_build_rs,v 1.1 2019/11/10 17:00:15 fcambus Exp $
+
+Use system gettext, and not the vendored version from the crate.
+
+Index: modcargo-crates/gettext-sys-0.19.8/build.rs
+--- modcargo-crates/gettext-sys-0.19.8/build.rs.orig
++++ modcargo-crates/gettext-sys-0.19.8/build.rs
+@@ -79,6 +79,7 @@ fn main() {
+             return;
+         }
+         // else can't use system gettext on this target
++        return;
+     }
+ 
+     if target.contains("apple-darwin") {
