@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/29 14:05:19 edd Exp $
+# $OpenBSD: Makefile,v 1.28 2019/11/10 12:06:38 edd Exp $
 
 COMMENT =	open decentralized synchronization utility
 
-V =		1.1.4
+V =		1.3.0
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -25,18 +25,23 @@ SUBST_VARS +=		VARBASE
 MODULES =		lang/go
 MODGO_TYPE =		bin
 
-do-build:
-	cd ${WRKSRC} && ${MODGO_CMD} run build.go \
-		-version v${V} -no-upgrade
+# Syncthing contains a lot of stuff that end users wouldn't be interested in,
+# so we package only these binaries.
+ST_CMDS =	syncthing stdiscosrv strelaysrv stcli
 
-# A couple of test failures caused by a bug in the test suite (but not in
-# Syncthing itself):
-# https://github.com/syncthing/syncthing/issues/5796#issuecomment-502473144
+do-build:
+.for cmd in ${ST_CMDS}
+	cd ${WRKSRC} && ${MODGO_CMD} run build.go -version v${V} \
+		-no-upgrade install ${cmd}
+.endfor
+
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
+.for cmd in ${ST_CMDS}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${cmd} ${PREFIX}/bin/
+.endfor
 .for sec in 1 5 7
 	${INSTALL_MAN} ${WRKSRC}/man/*.${sec} ${PREFIX}/man/man${sec}/
 .endfor
