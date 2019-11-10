@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1486 2019/11/10 16:48:19 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1487 2019/11/10 17:36:20 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2959,15 +2959,19 @@ _copy_debug_info:
 	@cd ${PREFIX} && cat ${_WRKDEBUG}/debug-info| \
 		while read dbgpath p dbginfo; do \
 		${INSTALL_DATA_DIR} $${dbgpath}; \
-		echo "> copy debug info from $$p into $${dbginfo}"; \
-		case $$p in *.a) \
-			cp $$p $${dbginfo}; \
-			strip $$p;; \
-		*) \
-			objcopy --only-keep-debug $$p $${dbginfo}; \
-			objcopy --strip-debug $$p; \
-			objcopy --add-gnu-debuglink=$${dbginfo} $$p; \
-		esac; done
+		if test -f $$p; then \
+			echo "> copy debug info from $$p into $${dbginfo}"; \
+			case $$p in *.a) \
+				cp $$p $${dbginfo}; \
+				strip $$p;; \
+			*) \
+				objcopy --only-keep-debug $$p $${dbginfo}; \
+				objcopy --strip-debug $$p; \
+				objcopy --add-gnu-debuglink=$${dbginfo} $$p;; \
+			esac; \
+		else \
+				echo "> WARNING FILE $$p does not exist"; \
+		fi; done
 .else
 .  for P in ${DEBUG_FILES:N*.a}
 	@cd ${PREFIX}; dbgpath=${P:H}/.debug; \
