@@ -1,4 +1,6 @@
-$OpenBSD: patch-cle_loader_py,v 1.2 2019/11/10 09:29:32 kn Exp $
+$OpenBSD: patch-cle_loader_py,v 1.3 2019/11/10 10:01:56 kn Exp $
+
+Set library search path.
 
 Index: cle/loader.py
 --- cle/loader.py.orig

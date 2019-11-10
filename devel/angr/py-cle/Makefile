@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/10 10:01:56 kn Exp $
 
 COMMENT =		CLE loads binaries and their associated libraries
+REVISION =		0
 
 ANGR_PYTHON_MODULE =	cle
 
@@ -11,7 +12,7 @@ RUN_DEPENDS =		devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
 			devel/py-sortedcontainers${MODPY_FLAVOR} \
 			security/py-pefile${MODPY_FLAVOR}
 
-DOCDIR =		${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}
+DOCDIR =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}${ANGR_PYTHON_MODULE}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/
