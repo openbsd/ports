@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/17 14:49:20 danj Exp $
+# $OpenBSD: Makefile,v 1.16 2019/11/10 18:14:23 kmos Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -15,7 +15,6 @@ MASTER_SITES =	https://distfiles.nl/
 
 MODULES =	lang/python
 RUN_DEPENDS =	x11/py-gtk2
-
-NO_TEST =	Yes
+MODPY_PYTEST =	Yes
 
 .include <bsd.port.mk>
