@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2019/11/10 18:34:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2019/11/10 21:06:47 ajacoutot Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.7,<3.8
@@ -12,8 +12,7 @@ bin/python3
 bin/python3-config
 @bin bin/python3.7
 bin/python3.7-config
-@comment @bin markers on hard links break DEBUG_PACKAGES
-bin/python3.7m
+@bin bin/python3.7m
 bin/python3.7m-config
 @comment bin/pyvenv
 bin/pyvenv-3.7
@@ -835,10 +834,6 @@ lib/python3.7/config-3.7m/
 lib/python3.7/config-3.7m/Makefile
 lib/python3.7/config-3.7m/Setup
 lib/python3.7/config-3.7m/Setup.local
-lib/python3.7/config-3.7m/__pycache__/
-lib/python3.7/config-3.7m/__pycache__/python-config.cpython-37.opt-1.pyc
-lib/python3.7/config-3.7m/__pycache__/python-config.cpython-37.opt-2.pyc
-lib/python3.7/config-3.7m/__pycache__/python-config.cpython-37.pyc
 lib/python3.7/config-3.7m/config.c
 lib/python3.7/config-3.7m/config.c.in
 lib/python3.7/config-3.7m/install-sh
