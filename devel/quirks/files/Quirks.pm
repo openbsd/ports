@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.820 2019/11/10 11:51:04 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.821 2019/11/10 12:45:23 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1331,6 +1331,7 @@ my $obsolete_reason = {
 	'pecl-geoip' => 6,
 	'clive' => 5,
 	'aws-shell' => 6,
+	'aqsis' => 5,
 };
 
 # reasons for obsolete packages
