@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/09/20 16:03:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2019/11/10 13:23:43 rsadowski Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
@@ -25,21 +25,21 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c cdio exempi exslt
 WANTLIB += iconv iso9660 m poppler poppler-qt5 tag xml2 xslt yaz
 
-MASTER_SITES =		http://tellico-project.org/files/
-EXTRACT_SUFX =		.tar.xz
+MASTER_SITES =	http://tellico-project.org/files/
+EXTRACT_SUFX =	.tar.xz
 
-MODULES +=		devel/kf5 \
-			lang/python
+MODULES +=	devel/kf5 \
+		lang/python
 
-BUILD_DEPENDS +=devel/gettext,-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools
 
-RUN_DEPENDS +=	devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		devel/kf5/kdoctools \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS +=	audio/libcdio \
+LIB_DEPENDS =	audio/libcdio \
 		audio/taglib \
 		devel/kf5/attica \
 		devel/kf5/karchive \
