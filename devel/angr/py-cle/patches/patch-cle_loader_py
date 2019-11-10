@@ -1,9 +1,9 @@
-$OpenBSD: patch-cle_loader_py,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+$OpenBSD: patch-cle_loader_py,v 1.2 2019/11/10 09:29:32 kn Exp $
 
 Index: cle/loader.py
 --- cle/loader.py.orig
 +++ cle/loader.py
-@@ -894,6 +894,9 @@ class Loader:
+@@ -895,6 +895,9 @@ class Loader:
                  dirs.extend(self.main_object.extra_load_path)
                  if sys.platform.startswith('linux'):
                      dirs.extend(self.main_object.arch.library_search_path())

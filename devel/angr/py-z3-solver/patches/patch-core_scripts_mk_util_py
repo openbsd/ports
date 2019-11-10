@@ -1,31 +1,16 @@
-$OpenBSD: patch-core_scripts_mk_util_py,v 1.2 2019/08/02 12:59:51 sthen Exp $
+$OpenBSD: patch-core_scripts_mk_util_py,v 1.3 2019/11/10 09:29:32 kn Exp $
 
 Remove hardcoded optimizations.
 
 Index: core/scripts/mk_util.py
 --- core/scripts/mk_util.py.orig
 +++ core/scripts/mk_util.py
-@@ -2422,9 +2422,9 @@ def mk_config():
+@@ -2538,7 +2538,7 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
+             CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
+-            CXXFLAGS     = '%s -O3' % CXXFLAGS
++            CXXFLAGS     = '%s' % CXXFLAGS
              if GPROF:
--                CXXFLAGS     = '%s -O3 -D _EXTERNAL_RELEASE' % CXXFLAGS
-+                CXXFLAGS     = '%s -D _EXTERNAL_RELEASE' % CXXFLAGS
-             else:
--                CXXFLAGS     = '%s -O3 -D _EXTERNAL_RELEASE -fomit-frame-pointer' % CXXFLAGS
-+                CXXFLAGS     = '%s -D _EXTERNAL_RELEASE -fomit-frame-pointer' % CXXFLAGS
-         if is_CXX_clangpp():
-             CXXFLAGS   = '%s -Wno-unknown-pragmas -Wno-overloaded-virtual -Wno-unused-value' % CXXFLAGS
-         sysname, _, _, _, machine = os.uname()
-@@ -2457,9 +2457,9 @@ def mk_config():
-             SLIBFLAGS   = '-shared'
-         else:
-             raise MKException('Unsupported platform: %s' % sysname)
-+        if sysname[:6] != 'CYGWIN':
-+            CXXFLAGS     = '%s -fPIC' % CXXFLAGS
-         if is64():
--            if sysname[:6] != 'CYGWIN':
--                CXXFLAGS     = '%s -fPIC' % CXXFLAGS
-             CPPFLAGS     = '%s -D_AMD64_' % CPPFLAGS
-             if sysname == 'Linux':
-                 CPPFLAGS = '%s -D_USE_THREAD_LOCAL' % CPPFLAGS
+                 CXXFLAGS     += '-fomit-frame-pointer'
+             CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS

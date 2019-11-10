@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/10 09:29:32 kn Exp $
 @conflict z3-*
 @bin bin/z3
 lib/python${MODPY_VERSION}/site-packages/z3/
@@ -15,16 +15,33 @@ lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3rcf.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/z3/include/
-lib/python${MODPY_VERSION}/site-packages/z3/include/c++/
-lib/python${MODPY_VERSION}/site-packages/z3/include/c++/z3++.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_ast_map.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_ast_vector.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_context.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_datalog.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_goal.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_log_macros.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_model.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_polynomial.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_solver.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_stats.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_tactic.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/api_util.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3++.h
 lib/python${MODPY_VERSION}/site-packages/z3/include/z3.h
 lib/python${MODPY_VERSION}/site-packages/z3/include/z3_algebraic.h
 lib/python${MODPY_VERSION}/site-packages/z3/include/z3_api.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_ast_containers.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_fixedpoint.h
 lib/python${MODPY_VERSION}/site-packages/z3/include/z3_fpa.h
-lib/python${MODPY_VERSION}/site-packages/z3/include/z3_interp.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_logger.h
 lib/python${MODPY_VERSION}/site-packages/z3/include/z3_macros.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_optimization.h
 lib/python${MODPY_VERSION}/site-packages/z3/include/z3_polynomial.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_private.h
 lib/python${MODPY_VERSION}/site-packages/z3/include/z3_rcf.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_replayer.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_spacer.h
 lib/python${MODPY_VERSION}/site-packages/z3/include/z3_v1.h
 lib/python${MODPY_VERSION}/site-packages/z3/lib/
 lib/python${MODPY_VERSION}/site-packages/z3/lib/libz3.so

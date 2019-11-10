@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/09/30 08:24:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/10 09:29:32 kn Exp $
 
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_EGG_VERSION =	8.19.7.25
+MODPY_EGG_VERSION =	8.19.10.30
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

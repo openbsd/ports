@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2019/09/30 08:24:44 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/11/10 09:29:32 kn Exp $
 
 # vex is amd64-only; sync with security/angrop
 ONLY_FOR_ARCHS =	amd64
@@ -21,7 +21,7 @@ MODPY_PI ?=		Yes
 MODPY_SETUPTOOLS ?=	Yes
 MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
 
-MODPY_EGG_VERSION ?=	8.19.7.25
+MODPY_EGG_VERSION ?=	8.19.10.30
 DISTNAME ?=		${ANGR_PYTHON_MODULE}-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 .endif
