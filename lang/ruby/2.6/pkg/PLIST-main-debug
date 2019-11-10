@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-main-debug,v 1.1 2019/11/10 13:50:00 jeremy Exp $
+@option no-default-conflict
+@conflict debug-ruby->=2.6,<2.7
+bin/.debug/ruby26.dbg
+lib/.debug/libruby26.so.${LIBruby26_VERSION}.dbg

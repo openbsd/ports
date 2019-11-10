@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2019/07/12 04:13:15 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2019/11/10 13:50:00 jeremy Exp $
 
 COMMENT-main ?=		object oriented script language with threads
 COMMENT-gdbm ?=		gdbm interface for ruby
@@ -59,6 +59,10 @@ LIB_DEPENDS-gdbm +=	databases/gdbm \
 			devel/gmp \
 			lang/ruby/${REV},-main>=${VERSION},<${NEXTVER}
 RUN_DEPENDS-gdbm ?=
+
+DEBUG_PACKAGES ?=	-main
+DEBUG_FILES ?=		bin/ruby${BINREV} \
+			lib/libruby${BINREV}.so.${LIBruby${BINREV}_VERSION}
 
 ALL_TARGET =		V=1 main
 INSTALL_TARGET =	V=1 install-nodoc
