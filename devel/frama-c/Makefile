@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/11/10 14:23:45 pirofti Exp $
-
-BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
+# $OpenBSD: Makefile,v 1.23 2019/11/10 14:38:23 sthen Exp $
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
