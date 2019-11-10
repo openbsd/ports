@@ -1,26 +1,8 @@
-$OpenBSD: patch-lib_common_powi_CMakeLists_txt,v 1.4 2019/08/12 15:41:55 bcallah Exp $
+$OpenBSD: patch-lib_common_powi_CMakeLists_txt,v 1.5 2019/11/10 16:50:32 bcallah Exp $
 
 Index: lib/common/powi/CMakeLists.txt
 --- lib/common/powi/CMakeLists.txt.orig
 +++ lib/common/powi/CMakeLists.txt
-@@ -20,7 +20,7 @@ get_property(FLAGS GLOBAL PROPERTY "FLAGS_L1")
- 
- # Set source files, compiler flags and definitions
- if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64")
--  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+  if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Linux")
-     # Set source files
-     set(CORE2_SRCS fxpowi.c pxpowi.c)
-     set_property(SOURCE ${CORE2_SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS "-march=core2 ")
-@@ -32,7 +32,7 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64")
-       ${CORE2_SRCS}
-       ${SANDYBRIDGE_SRCS}
-       ${KNL_SRCS})
--elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin|Windows")
-+elseif(${LIBPGMATH_SYSTEM_NAME} MATCHES "Darwin|Windows")
-     # Set source files
-     set(CORE2_SRCS fxpowi.c pxpowi.c)
-     set_property(SOURCE ${CORE2_SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS "-msse2 ")
 @@ -50,7 +50,7 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "ppc64le"
    set_property(SOURCE ${SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=power8 ")
  elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64")

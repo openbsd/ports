@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_x86_64_libm_inlines_amd_h,v 1.1 2019/11/10 16:50:32 bcallah Exp $
+
+Index: lib/x86_64/libm_inlines_amd.h
+--- lib/x86_64/libm_inlines_amd.h.orig
++++ lib/x86_64/libm_inlines_amd.h
+@@ -283,7 +283,7 @@ raise_fpsw_flags(int flags)
+ {
+ #if defined(DONOTDEFINE_WINDOWS)
+   _mm_setcsr(_mm_getcsr() | flags);
+-#elif defined(linux)
++#elif defined(TARGET_LINUX_X8664)
+   unsigned int cw;
+   /* Get the current floating-point control/status word */
+   asm volatile("STMXCSR %0" : "=m"(cw));

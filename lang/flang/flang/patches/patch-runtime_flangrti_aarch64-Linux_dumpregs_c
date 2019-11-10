@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_flangrti_aarch64-Linux_dumpregs_c,v 1.1 2018/06/27 00:09:26 bcallah Exp $
+$OpenBSD: patch-runtime_flangrti_aarch64-Linux_dumpregs_c,v 1.2 2019/11/10 16:50:32 bcallah Exp $
 
 No ucontext on OpenBSD.
 
@@ -11,11 +11,11 @@ Index: runtime/flangrti/aarch64-Linux/dumpregs.c
  
 +#ifndef __OpenBSD__
  #include <sys/ucontext.h>
+ #include <stddef.h>
+ #include <stdioInterf.h>
+@@ -29,6 +30,21 @@ typedef struct {
+ } xregs_t;
  
- void
-@@ -29,3 +30,18 @@ getRegs(ucontext_t *u)
-   return (gregset_t *)0;
- } 
  
 +#else
 +
@@ -32,3 +32,6 @@ Index: runtime/flangrti/aarch64-Linux/dumpregs.c
 +} 
 +
 +#endif
+ /*
+  * The way the structure below is organized, the X registers are all
+  * sequential with no gaps - the structure is probably overkill - but

@@ -1,17 +1,8 @@
-$OpenBSD: patch-lib_common_log_fma3_CMakeLists_txt,v 1.4 2019/08/12 15:41:55 bcallah Exp $
+$OpenBSD: patch-lib_common_log_fma3_CMakeLists_txt,v 1.5 2019/11/10 16:50:32 bcallah Exp $
 
 Index: lib/common/log/fma3/CMakeLists.txt
 --- lib/common/log/fma3/CMakeLists.txt.orig
 +++ lib/common/log/fma3/CMakeLists.txt
-@@ -22,7 +22,7 @@ set(SRCS)
- 
- # Set source files, compiler flags and definitions
- if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64")
--  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|Darwin|Windows")
-+  if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Linux|Darwin|Windows")
-     set(SRCS
-       fdlog1.cpp
-       fdlog2.cpp
 @@ -78,6 +78,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
      ${LONG_SRCS})
    set_property(SOURCE ${INT_SRCS} APPEND PROPERTY COMPILE_DEFINITIONS VINT=)

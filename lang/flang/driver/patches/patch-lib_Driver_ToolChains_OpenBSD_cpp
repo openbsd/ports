@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Driver_ToolChains_OpenBSD_cpp,v 1.7 2019/08/05 18:31:02 bcallah Exp $
+$OpenBSD: patch-lib_Driver_ToolChains_OpenBSD_cpp,v 1.8 2019/11/10 16:50:31 bcallah Exp $
 
 Index: lib/Driver/ToolChains/OpenBSD.cpp
 --- lib/Driver/ToolChains/OpenBSD.cpp.orig
@@ -12,7 +12,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
  #include "clang/Driver/Options.h"
  #include "clang/Driver/SanitizerArgs.h"
  #include "llvm/Option/ArgList.h"
-@@ -198,8 +200,22 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -198,8 +200,23 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
      }
      // FIXME: For some reason GCC passes -lgcc before adding
      // the default system libraries. Just mimic this for now.
@@ -29,6 +29,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
 +    CmdArgs.push_back(Args.MakeArgString("-L/usr/lib"));
 +
 +    if (!Args.hasArg(options::OPT_noFlangLibs)) {
++      CmdArgs.push_back("-lm");
 +      CmdArgs.push_back("-lpgmath");
 +      CmdArgs.push_back("-lflang");
 +    }
@@ -36,7 +37,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
      if (Args.hasArg(options::OPT_pthread)) {
        if (!Args.hasArg(options::OPT_shared) && Args.hasArg(options::OPT_pg))
          CmdArgs.push_back("-lpthread_p");
-@@ -214,7 +230,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -214,7 +231,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
          CmdArgs.push_back("-lc");
      }
  
@@ -48,7 +49,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
    }
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
-@@ -255,16 +274,70 @@ OpenBSD::OpenBSD(const Driver &D, const llvm::Triple &
+@@ -255,16 +275,70 @@ OpenBSD::OpenBSD(const Driver &D, const llvm::Triple &
    getFilePaths().push_back(getDriver().SysRoot + "/usr/lib");
  }
  
