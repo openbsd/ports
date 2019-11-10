@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1483 2019/11/09 15:08:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1484 2019/11/10 11:10:37 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -978,10 +978,8 @@ _PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_DBG_PKGFILE${_S}} ${MACHINE_ARCH}/all/$
 
 .if !empty(DEBUG_PACKAGES) || !empty(DEBUG_FILES)
 INSTALL_STRIP =
-DEBUG_FLAGS = -g
+DEBUG ?= -g
 CONFIGURE_ARGS += ${DEBUG_CONFIGURE_ARGS}
-.else
-DEBUG_FLAGS =
 .endif
 
 .if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
