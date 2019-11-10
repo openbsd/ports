@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.89 2019/09/25 22:10:51 jca Exp $
+# $OpenBSD: Makefile,v 1.90 2019/11/10 17:21:32 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		26.3
+REVISION=		0
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -106,6 +107,16 @@ WANTLIB += png rsvg-2 tiff xcb
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif
 .endif
+
+DEBUG_PACKAGES = -
+DEBUG_FILES =	bin/ctags \
+		bin/ebrowse \
+		bin/emacs-${VERSION} \
+		bin/emacsclient \
+		bin/etags \
+		libexec/emacs/${VERSION}/${GCCARCH}/hexl \
+		libexec/emacs/${VERSION}/${GCCARCH}/movemail \
+		libexec/emacs/${VERSION}/${GCCARCH}/profile \
 
 post-install:
 	chmod -t ${PREFIX}/bin/emacs-${VERSION}

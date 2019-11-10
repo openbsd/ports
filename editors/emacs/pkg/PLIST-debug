@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-debug,v 1.1 2019/11/10 17:21:32 jca Exp $
+@bin bin/.debug/ctags.dbg
+@bin bin/.debug/ebrowse.dbg
+@bin bin/.debug/emacs-${VERSION}.dbg
+@bin bin/.debug/emacsclient.dbg
+@bin bin/.debug/etags.dbg
+libexec/emacs/${VERSION}/${GCCARCH}/.debug/
+@bin libexec/emacs/${VERSION}/${GCCARCH}/.debug/hexl.dbg
+@bin libexec/emacs/${VERSION}/${GCCARCH}/.debug/movemail.dbg
+@bin libexec/emacs/${VERSION}/${GCCARCH}/.debug/profile.dbg
