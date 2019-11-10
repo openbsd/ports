@@ -1,0 +1,240 @@
+#! /usr/bin/perl
+# $OpenBSD: build-debug-info,v 1.1 2019/11/10 16:44:55 espie Exp $
+# Copyright (c) 2019 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+
+use OpenBSD::PkgCreate;
+
+# PlistReader is "just" a specialized version of PkgCreate algorithm
+# that does mimic what PkgCreate reader does with a few specialized methods
+package PlistReader;
+our @ISA = qw(OpenBSD::PkgCreate);
+sub new
+{
+	my $class = shift;
+	bless { olist => OpenBSD::PackingList->new }, $class;
+}
+
+sub olist
+{
+	my $self = shift;
+	return $self->{olist};
+}
+
+
+# specialized state
+package PlistReader::State;
+our @ISA = qw(OpenBSD::PkgCreate::State);
+
+# mostly make sure we don't care about problems, that our subst records stuff
+# and that we have a progressmeter
+sub init
+{
+	my ($self, $realstate) = @_;
+	$self->{subst} = OpenBSD::Subst->new($realstate);
+	$self->{progressmeter} = $realstate->{progressmeter};
+	$self->{bad} = 0;
+	$self->{repo} = $realstate->{repo};
+	$self->{quiet} = $realstate->{quiet};
+	$self->{cache_dir} = $realstate->{cache_dir};
+}
+
+# if we're in quiet mode, get rid of status messages
+sub set_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::set_status(@_);
+}
+
+sub end_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::end_status(@_);
+}
+
+# Most of the heavy lifting is done by visitor methods, as always
+
+package OpenBSD::PackingElement;
+sub write_debug_info
+{
+}
+
+package OpenBSD::PackingElement::CVSTag;
+sub write_debug_info
+{
+	my ($self, $fh) = @_;
+	$self->write($fh);
+}
+
+package OpenBSD::PackingElement::FileWithDebugInfo;
+use File::Basename;
+sub write_debug_info
+{
+	my ($self, $fh, $stash, $list) = @_;
+	my $s = $self->stringize;
+	my $dbg = $self->mogrify($s);
+	my $dir = $dbg;
+	$dir =~ s/(\/\.debug\/)[^\/]+/$1/;
+	if (!exists $stash->{$dir}) {
+		print $fh $dir, "\n";
+		$stash->{$dir} = 1;
+	}
+	$self->write_dbg($fh, $dbg);
+	push(@$list, [$dir, $s, $dbg]);
+}
+
+sub write_dbg
+{
+	my ($self, $fh, $dbg) = @_;
+	print $fh "\@", $self->keyword, " ",  $dbg, "\n";
+}
+
+sub mogrify
+{
+	my ($self, $s) = @_;
+	$s =~ s,([^\/]+)$,.debug/$1.dbg,;
+	return $s;
+}
+
+package OpenBSD::PackingElement::Lib;
+sub write_dbg
+{
+	my ($self, $fh, $dbg) = @_;
+	print $fh $dbg, "\n";
+}
+
+package OpenBSD::PackingElement::StaticLib;
+sub mogrify
+{
+	my ($self, $s) = @_;
+	$s =~ s,([^\/]+.a)$,.debug/$1,;
+	return $s;
+}
+package OpenBSD::PackingElement::NoDefaultConflict;
+sub write_debug_info
+{
+	&OpenBSD::PackingElement::CVSTag::write_debug_info;
+}
+
+package OpenBSD::PackingElement::Conflict;
+sub write_debug_info
+{
+	&OpenBSD::PackingElement::CVSTag::write_debug_info;
+}
+
+# This is the BuildDebugInfo main code proper
+package BuildDebugInfo::State;
+our @ISA = qw(OpenBSD::AddCreateDelete::State);
+sub handle_options
+{
+	my $state = shift;
+	$state->SUPER::handle_options('vqFO:P:', 
+	    '[-Fmnqvx]',
+	    '[-O output]',
+	    '-P pkgdir',
+	    '-- pkg_create_args ...');
+    	$state->{pkgdir} = $state->opt('P');
+	$state->{output} = $state->opt('O');
+	if (!defined $state->{pkgdir}) {
+		$state->fatal("-P pkgdir is mandatory");
+	}
+	if (!defined $state->{output}) {
+		$state->{output} = $state->{pkgdir}."/debug-info";
+	}
+	$state->{verbose} = $state->opt('v');
+	$state->{quiet} = $state->opt('q');
+}
+
+sub openfile
+{
+	my ($self, $name) = @_;
+	open my $fh, ">", $name or 
+	    $self->fatal("Can't write to #1: #2", $name, $!);
+	$self->say("Writing #1", $name) unless $self->{quiet};
+	return $fh;
+}
+
+package BuildDebugInfo;
+use File::Basename;
+use File::Compare;
+
+sub new
+{
+	my $class = shift;
+	bless {
+	    state => BuildDebugInfo::State->new,
+	}, $class;
+}
+
+sub process_next_subpackage
+{
+	my $self = shift;
+	my $r = PlistReader->new;
+
+	my $s = PlistReader::State->new('build-debug-info', $self->{state});
+	$r->{state} = $s;
+	$s->handle_options;
+	$s->{opt}{q} = 1;
+	$r->{base_plists} = $s->{contents};
+	my $pkg = shift @ARGV;
+
+	$r->read_all_fragments($s, $r->olist);
+	push(@{$self->{lists}}, $r);
+}
+
+sub parse_args
+{
+	my $self = shift;
+	# this handles update-plist options proper, finished with --
+	$self->{state}->handle_options;
+	if (@ARGV == 0) {
+		$self->{state}->usage;
+	}
+	# we read all plists using the exact same code as pkg_create
+	# e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
+	# options1 pkgname1 options2 pkgname2 ...
+	while (@ARGV > 0) {
+		$self->process_next_subpackage;
+	}
+
+}
+
+my $exitcode = 0;
+my $self = BuildDebugInfo->new;
+my $state = $self->{state};
+$self->parse_args;
+use File::Basename;
+my $stash = {};
+my $list = [];
+for my $l (@{$self->{lists}}) {
+	my $name = pop @{$l->{base_plists}};
+	$name = $state->{pkgdir}."/".(basename $name);
+	my $fh = $state->openfile($name);
+	$l->olist->write_debug_info($fh, $stash, $list);
+	close $fh;
+}
+
+my $name = $state->{output};
+my $out = $state->openfile($state->{output});
+for my $e (@$list) {
+	print $out join(' ', @$e), "\n";
+}
+
+
+exit($exitcode);
