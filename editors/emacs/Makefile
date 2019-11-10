@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2019/11/10 17:58:19 jca Exp $
+# $OpenBSD: Makefile,v 1.93 2019/11/10 21:50:23 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
@@ -20,7 +20,7 @@ WANTLIB=		c m curses pthread gnutls xml2 z
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
 
-DEBUG_PACKAGES = -
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 FLAVORS=		athena gtk2 gtk3 no_x11
 FLAVOR?=		gtk3
