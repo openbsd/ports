@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.489 2019/11/10 15:33:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.490 2019/11/10 15:52:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -243,6 +243,7 @@
      SUBDIR += py-cycler
      SUBDIR += py-cycler,python3
      SUBDIR += py-dot
+     SUBDIR += py-dot,python3
      SUBDIR += py-pygal
      SUBDIR += py-pygal,python3
      SUBDIR += py-gd

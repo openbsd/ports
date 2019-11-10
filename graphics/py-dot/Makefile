@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/11/10 15:52:42 sthen Exp $
 
 COMMENT=	Python interface to Graphviz's Dot#'
 
-MODPY_EGG_VERSION= 1.0.28
-REVISION=	2
+MODPY_EGG_VERSION= 1.4.1
 DISTNAME=	pydot-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
@@ -13,14 +12,23 @@ HOMEPAGE=	https://github.com/erocarrera/pydot
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pydot/}
+FLAVORS=	python3
+FLAVOR?=
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	devel/py-parsing
-RUN_DEPENDS=	devel/py-parsing \
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+BUILD_DEPENDS=	devel/py-parsing${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-parsing${MODPY_FLAVOR} \
 		math/graphviz
 
-NO_TEST=	Yes
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-hypothesis${MODPY_FLAVOR} \
+		textproc/py-chardet${MODPY_FLAVOR}
+
+do-test:
+	cd ${WRKSRC}/test; ${MODPY_BIN} pydot_unittest.py
 
 .include <bsd.port.mk>
