@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-cups-debug,v 1.1 2019/11/10 13:43:19 ajacoutot Exp $
+bin/.debug/gtk-demo.dbg
+bin/.debug/gtk-query-immodules-2.0.dbg
+lib/.debug/libgailutil.so.${LIBgailutil_VERSION}.dbg
+lib/.debug/libgdk-x11-2.0.so.${LIBgdk-x11-2.0_VERSION}.dbg
+lib/.debug/libgtk-x11-2.0.so.${LIBgtk-x11-2.0_VERSION}.dbg

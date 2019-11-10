@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-main-debug,v 1.1 2019/11/10 13:43:19 ajacoutot Exp $
+lib/gtk-2.0/2.10.0/printbackends/.debug/libprintbackend-cups.so.dbg

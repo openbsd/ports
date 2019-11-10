@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2019/11/09 17:27:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.231 2019/11/10 13:43:18 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+2 CUPS print backend
@@ -9,8 +9,8 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
-REVISION-main=		6
-REVISION-cups=		2
+REVISION-main=		7
+REVISION-cups=		3
 
 CATEGORIES=		x11 devel
 
@@ -74,6 +74,14 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-xinput=xfree
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gtk+2
+
+DEBUG_PACKAGES=		-main -cups
+DEBUG_FILES=		bin/gtk-demo \
+			bin/gtk-query-immodules-2.0 \
+			lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so \
+			lib/libgailutil.so.${LIBgailutil_VERSION} \
+			lib/libgdk-x11-2.0.so.${LIBgdk-x11-2.0_VERSION} \
+			lib/libgtk-x11-2.0.so.${LIBgtk-x11-2.0_VERSION}
 
 post-install:
 # sync "gtk-icon-theme-name" with x11/gnome/themes-standard/files/gtkrc
