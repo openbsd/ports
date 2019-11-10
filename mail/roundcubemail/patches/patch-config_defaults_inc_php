@@ -1,16 +1,8 @@
-$OpenBSD: patch-config_defaults_inc_php,v 1.10 2017/06/30 13:26:22 sthen Exp $
---- config/defaults.inc.php.orig	Wed Apr 26 19:52:25 2017
-+++ config/defaults.inc.php	Wed Apr 26 22:18:17 2017
-@@ -25,7 +25,7 @@ $config = array();
- // For examples see http://pear.php.net/manual/en/package.database.mdb2.intro-dsn.php
- // NOTE: for SQLite use absolute path (Linux): 'sqlite:////full/path/to/sqlite.db?mode=0646'
- //       or (Windows): 'sqlite:///C:/full/path/to/sqlite.db'
--$config['db_dsnw'] = 'mysql://roundcube:@localhost/roundcubemail';
-+$config['db_dsnw'] = 'sqlite:///roundcubemail/db/sqlite.db?mode=0660';
- 
- // Database DSN for read-only operations (if empty write database will be used)
- // useful for database replication
-@@ -737,7 +737,7 @@ $config['spellcheck_dictionary'] = false;
+$OpenBSD: patch-config_defaults_inc_php,v 1.11 2019/11/10 12:02:45 sthen Exp $
+Index: config/defaults.inc.php
+--- config/defaults.inc.php.orig
++++ config/defaults.inc.php
+@@ -794,7 +794,7 @@ $config['spellcheck_dictionary'] = false;
  // Since Google shut down their public spell checking service, the default settings
  // connect to http://spell.roundcube.net which is a hosted service provided by Roundcube.
  // You can connect to any other googie-compliant service by setting 'spellcheck_uri' accordingly.
