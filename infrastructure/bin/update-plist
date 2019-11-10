@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.176 2019/09/11 09:05:53 espie Exp $
+# $OpenBSD: update-plist,v 1.177 2019/11/10 16:46:44 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1452,6 +1452,34 @@ sub scan_fake_dir
 	    $self->{state}{logfile}, $self->{state});
 }
 
+sub zap_debug_files
+{
+	my $self = shift;
+	$self->{state}->say("Removing .debug artefacts");
+	my $keep = {};	# hash of directories to keep
+	for my $path (keys %{$self->{objects}}) {
+		next unless $path =~ m,(.*)\/\.debug\/,;
+		my $dir = $1;
+		if ($path =~ m,\/([^\/]+)\.dbg$, or
+		    $path =~ m,\/([^\/]+\.a)$,) {
+			    my $p2 = "$dir/$1";
+			    my $o = $self->{objects}{$p2};
+			    if (defined $o && $o->can_have_debug) {
+				    delete $self->{objects}{$path};
+				    next;
+			    }
+		}
+		$keep->{$dir} = 1;
+	}
+	for my $path (keys %{$self->{objects}}) {
+		next unless $path =~ m,(.*)\/\.debug$,;
+		next if $keep->{path};
+		if ($self->{objects}{$path}->is_dir) {
+			delete $self->{objects}{$path};
+		}
+	}
+}
+
 sub add_missing_cvstags
 {
 	my ($list, $base) = @_;
@@ -1831,6 +1859,7 @@ my $self = UpdatePlist->new;
 $self->parse_args;
 $self->known_objects;
 $self->scan_fake_dir;
+$self->zap_debug_files;
 $self->handle_annotations;
 $self->copy_objects;
 $self->add_missing_tags;

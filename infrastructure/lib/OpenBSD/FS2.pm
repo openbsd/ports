@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.31 2019/09/11 09:05:53 espie Exp $
+# $OpenBSD: FS2.pm,v 1.32 2019/11/10 16:46:44 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -71,6 +71,7 @@ sub classes
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
 		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
+		OpenBSD::FS::File::StaticLibrary
 		OpenBSD::FS::File::Binary OpenBSD::FS::File::Font
 		OpenBSD::FS::File));
 }
@@ -99,6 +100,23 @@ sub tweak_other_paths
 {
 }
 
+sub can_have_debug
+{
+	return 0;
+}
+
+sub is_dir
+{
+	return 0;
+}
+
+package OpenBSD::FS::File::WithDebugInfo;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub can_have_debug
+{
+	return 1;
+}
 package OpenBSD::FS::File::Directory;
 our @ISA = qw(OpenBSD::FS::File);
 sub recognize
@@ -110,6 +128,11 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Dir';
+}
+
+sub is_dir
+{
+	return 1;
 }
 
 package OpenBSD::FS::File::ManDirectory;
@@ -267,7 +290,7 @@ sub tweak_other_paths
 }
 
 package OpenBSD::FS::File::Binary;
-our @ISA = qw(OpenBSD::FS::File);
+our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
 
 sub element_class
 {
@@ -425,7 +448,7 @@ sub tweak_other_paths
 }
 
 package OpenBSD::FS::File::Library;
-our @ISA = qw(OpenBSD::FS::File);
+our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
 
 sub recognize
 {
@@ -452,7 +475,12 @@ sub element_class
 }
 
 package OpenBSD::FS::File::Plugin;
-our @ISA = qw(OpenBSD::FS::File);
+our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
+
+sub element_class
+{
+	return 'OpenBSD::PackingElement::SharedObject';
+}
 
 sub recognize
 {
@@ -464,6 +492,28 @@ sub recognize
 	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
 	    $data->{objdump} !~ m/ .interp /) {
 	    	return 1;
+	} else {
+		return 0;
+	}
+}
+
+package OpenBSD::FS::File::StaticLibrary;
+our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
+
+sub element_class
+{
+	return 'OpenBSD::PackingElement::StaticLib';
+}
+
+sub recognize
+{
+	my ($class, $filename, $fs, $data) = @_;
+
+	return 0 unless $filename =~ m/\/lib[^\/]+\.a$/;
+	$filename = $fs->resolve_link($filename);
+	my $check = `/usr/bin/ar t \Q$filename\E >/dev/null 2>/dev/null`;
+	if ($? == 0) {
+		return 1;
 	} else {
 		return 0;
 	}
