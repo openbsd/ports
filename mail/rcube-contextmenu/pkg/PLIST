@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/06/30 13:26:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/11/10 12:03:27 sthen Exp $
 roundcubemail/plugins/contextmenu/
 roundcubemail/plugins/contextmenu/CHANGELOG
 roundcubemail/plugins/contextmenu/MANUAL.md
@@ -30,16 +30,31 @@ roundcubemail/plugins/contextmenu/localization/ru_RU.inc
 roundcubemail/plugins/contextmenu/localization/sv_SE.inc
 roundcubemail/plugins/contextmenu/localization/tr_TR.inc
 roundcubemail/plugins/contextmenu/localization/uk_UA.inc
+roundcubemail/plugins/contextmenu/localization/zh_CN.inc
 roundcubemail/plugins/contextmenu/localization/zh_TW.inc
 roundcubemail/plugins/contextmenu/skins/
 roundcubemail/plugins/contextmenu/skins/classic/
 roundcubemail/plugins/contextmenu/skins/classic/contextmenu.css
 roundcubemail/plugins/contextmenu/skins/classic/functions.js
 roundcubemail/plugins/contextmenu/skins/classic/images/
+roundcubemail/plugins/contextmenu/skins/classic/images/contactactions.png
 roundcubemail/plugins/contextmenu/skins/classic/images/contexticons.png
 roundcubemail/plugins/contextmenu/skins/classic/images/messageactions.png
+roundcubemail/plugins/contextmenu/skins/classic/includes/
+roundcubemail/plugins/contextmenu/skins/classic/includes/mail.html
+roundcubemail/plugins/contextmenu/skins/classic/includes/settings.html
+roundcubemail/plugins/contextmenu/skins/elastic/
+roundcubemail/plugins/contextmenu/skins/elastic/contextmenu.less
+roundcubemail/plugins/contextmenu/skins/elastic/contextmenu.min.css
+roundcubemail/plugins/contextmenu/skins/elastic/functions.js
+roundcubemail/plugins/contextmenu/skins/elastic/includes/
+roundcubemail/plugins/contextmenu/skins/elastic/includes/mail.html
+roundcubemail/plugins/contextmenu/skins/elastic/includes/settings.html
 roundcubemail/plugins/contextmenu/skins/larry/
 roundcubemail/plugins/contextmenu/skins/larry/contextmenu.css
 roundcubemail/plugins/contextmenu/skins/larry/functions.js
 roundcubemail/plugins/contextmenu/skins/larry/images/
 roundcubemail/plugins/contextmenu/skins/larry/images/contexticons.png
+roundcubemail/plugins/contextmenu/skins/larry/includes/
+roundcubemail/plugins/contextmenu/skins/larry/includes/mail.html
+roundcubemail/plugins/contextmenu/skins/larry/includes/settings.html
