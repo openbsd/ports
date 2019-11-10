@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.124 2019/08/01 07:05:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2019/11/10 16:23:10 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
 GNOME_VERSION=		1.42.4
 GNOME_PROJECT=		pango
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  pango-1.0            3800.2   # 4200.4
 SHARED_LIBS +=  pangoft2-1.0         3800.1   # 4200.4
@@ -35,5 +35,13 @@ LIB_DEPENDS=		devel/glib2 \
 
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
+
+DEBUG_PACKAGES=		-
+DEBUG_FILES=		bin/pango-list \
+			bin/pango-view \
+			lib/libpango-1.0.so.${LIBpango-1.0_VERSION} \
+			lib/libpangocairo-1.0.so.${LIBpangocairo-1.0_VERSION} \
+			lib/libpangoft2-1.0.so.${LIBpangoft2-1.0_VERSION} \
+			lib/libpangoxft-1.0.so.${LIBpangoxft-1.0_VERSION}
 
 .include <bsd.port.mk>

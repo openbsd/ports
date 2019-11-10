@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-debug,v 1.1 2019/11/10 16:23:10 ajacoutot Exp $
+bin/.debug/pango-list.dbg
+bin/.debug/pango-view.dbg
+lib/.debug/libpango-1.0.so.${LIBpango-1.0_VERSION}.dbg
+lib/.debug/libpangocairo-1.0.so.${LIBpangocairo-1.0_VERSION}.dbg
+lib/.debug/libpangoft2-1.0.so.${LIBpangoft2-1.0_VERSION}.dbg
+lib/.debug/libpangoxft-1.0.so.${LIBpangoxft-1.0_VERSION}.dbg
