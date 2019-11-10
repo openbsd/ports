@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/10 16:25:41 kmos Exp $
 
 COMMENT =		spreadsheet-like audio file tagger
 
@@ -27,6 +27,7 @@ RUN_DEPENDS =		audio/py-mutagen>=1.14 \
 			devel/py-parsing>=1.5.1 \
 			x11/py-qt4>=4.5
 
+# Author didn't write tests
 NO_TEST =		Yes
 
 post-install:
