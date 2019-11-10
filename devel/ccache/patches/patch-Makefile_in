@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2019/04/24 21:04:47 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2019/11/10 18:38:47 sthen Exp $
 
-remove $< gmake'ism - this port needs to have no dependencies (for USE_CCACHE)
+remove gmake-isms - this port needs to have no dependencies (for USE_CCACHE)
 
 get rid of warning spam during build,
 :  $(if $(quiet),@echo "...")' expands to ''
@@ -30,15 +30,17 @@ Index: Makefile.in
  @disable_man@	$(Q)$(installcmd) -d $(DESTDIR)$(mandir)/man1
  @disable_man@	$(Q)-$(installcmd) -m 644 ccache.1 $(DESTDIR)$(mandir)/man1/
  
-@@ -126,7 +122,6 @@ install: ccache$(EXEEXT) @disable_man@ccache.1
+@@ -126,9 +122,6 @@ install: ccache$(EXEEXT) @disable_man@ccache.1
  clean:
  	rm -rf $(files_to_clean)
  
+-$(non_3pp_objs) $(test_objs): CFLAGS += @more_warnings@
+-
 -src/snprintf.o: CFLAGS += @no_implicit_fallthrough_warning@
  $(zlib_objs): CPPFLAGS += -include config.h
  $(zlib_objs): CFLAGS += @no_implicit_fallthrough_warning@
  
-@@ -175,7 +170,6 @@ installcheck: ccache$(EXEEXT) unittest/run$(EXEEXT)
+@@ -177,7 +170,6 @@ installcheck: ccache$(EXEEXT) unittest/run$(EXEEXT)
  	CCACHE=$(bindir)/ccache CC='$(CC)' $(BASH) $(srcdir)/test/run
  
  .c.o:

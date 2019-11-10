@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.7 2019/04/24 21:04:47 sthen Exp $
+$OpenBSD: patch-configure,v 1.8 2019/11/10 18:38:47 sthen Exp $
 
 avoid nested functions in configure test (gcc extension)
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4762,10 +4762,11 @@ else
+@@ -4760,10 +4760,11 @@ else
      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <stdlib.h>
