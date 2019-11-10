@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.822 2019/11/10 15:36:50 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.823 2019/11/10 21:47:59 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1334,6 +1334,7 @@ my $obsolete_reason = {
 	'clive' => 5,
 	'aws-shell' => 6,
 	'aqsis' => 5,
+	'py-algorithm-munkres' => 14,
 };
 
 # reasons for obsolete packages
