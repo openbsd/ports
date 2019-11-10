@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/17 20:16:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/11/10 10:23:02 naddy Exp $
 @bin bin/gcpio
 @info info/cpio.info
 @comment lib/charset.alias
@@ -19,6 +19,7 @@ share/locale/ja/LC_MESSAGES/cpio.mo
 share/locale/ko/LC_MESSAGES/cpio.mo
 share/locale/nl/LC_MESSAGES/cpio.mo
 share/locale/pl/LC_MESSAGES/cpio.mo
+share/locale/pt/LC_MESSAGES/cpio.mo
 share/locale/pt_BR/LC_MESSAGES/cpio.mo
 share/locale/ro/LC_MESSAGES/cpio.mo
 share/locale/ru/LC_MESSAGES/cpio.mo
