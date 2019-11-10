@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST-tools,v 1.4 2015/09/22 18:36:58 pascal Exp $
+@comment $OpenBSD: PLIST-tools,v 1.5 2019/11/10 15:31:09 ajacoutot Exp $
 @conflict OpenEXR-<=1.2.2p0
+@conflict openexr-viewers-*
+@pkgpath graphics/openexr-viewers
+@bin bin/exr2aces
+@bin bin/exrdisplay
 @bin bin/exrenvmap
 @bin bin/exrheader
 @bin bin/exrmakepreview

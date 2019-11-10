@@ -1,0 +1,19 @@
+$OpenBSD: patch-IlmBase_config_LibraryDefine_cmake,v 1.1 2019/11/10 15:31:08 ajacoutot Exp $
+
+From 4e54bde78f65c0fef8a9f794aaacea07813fba09 Mon Sep 17 00:00:00 2001
+From: Antonio Rojas <arojas@archlinux.org>
+Date: Sat, 19 Oct 2019 09:58:10 +0200
+Subject: [PATCH] Take DESTDIR into account when creating library symlinks
+
+Index: IlmBase/config/LibraryDefine.cmake
+--- IlmBase/config/LibraryDefine.cmake.orig
++++ IlmBase/config/LibraryDefine.cmake
+@@ -100,7 +100,7 @@ function(ILMBASE_DEFINE_LIBRARY libname)
+   if(BUILD_SHARED_LIBS AND (NOT "${ILMBASE_LIB_SUFFIX}" STREQUAL ""))
+     set(verlibname ${CMAKE_SHARED_LIBRARY_PREFIX}${libname}${ILMBASE_LIB_SUFFIX}${CMAKE_SHARED_LIBRARY_SUFFIX})
+     set(baselibname ${CMAKE_SHARED_LIBRARY_PREFIX}${libname}${CMAKE_SHARED_LIBRARY_SUFFIX})
+-    install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E chdir ${CMAKE_INSTALL_FULL_LIBDIR} ${CMAKE_COMMAND} -E create_symlink ${verlibname} ${baselibname})")
++    install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E chdir \$ENV\{DESTDIR\}${CMAKE_INSTALL_FULL_LIBDIR} ${CMAKE_COMMAND} -E create_symlink ${verlibname} ${baselibname})")
+     install(CODE "message(\"-- Creating symlink in ${CMAKE_INSTALL_FULL_LIBDIR} ${baselibname} -> ${verlibname}\")")
+     set(verlibname)
+     set(baselibname)

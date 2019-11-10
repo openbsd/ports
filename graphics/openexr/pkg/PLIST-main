@@ -1,5 +1,61 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/08/18 20:43:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2019/11/10 15:31:08 ajacoutot Exp $
+@conflict ilmbase-*
 @pkgpath graphics/openexr
+@pkgpath graphics/ilmbase
+include/OpenEXR/
+include/OpenEXR/Iex.h
+include/OpenEXR/IexBaseExc.h
+include/OpenEXR/IexErrnoExc.h
+include/OpenEXR/IexExport.h
+include/OpenEXR/IexForward.h
+include/OpenEXR/IexMacros.h
+include/OpenEXR/IexMathExc.h
+include/OpenEXR/IexMathFloatExc.h
+include/OpenEXR/IexMathFpu.h
+include/OpenEXR/IexMathIeeeExc.h
+include/OpenEXR/IexNamespace.h
+include/OpenEXR/IexThrowErrnoExc.h
+include/OpenEXR/IlmBaseConfig.h
+include/OpenEXR/IlmThread.h
+include/OpenEXR/IlmThreadExport.h
+include/OpenEXR/IlmThreadForward.h
+include/OpenEXR/IlmThreadMutex.h
+include/OpenEXR/IlmThreadNamespace.h
+include/OpenEXR/IlmThreadPool.h
+include/OpenEXR/IlmThreadSemaphore.h
+include/OpenEXR/ImathBox.h
+include/OpenEXR/ImathBoxAlgo.h
+include/OpenEXR/ImathColor.h
+include/OpenEXR/ImathColorAlgo.h
+include/OpenEXR/ImathEuler.h
+include/OpenEXR/ImathExc.h
+include/OpenEXR/ImathExport.h
+include/OpenEXR/ImathForward.h
+include/OpenEXR/ImathFrame.h
+include/OpenEXR/ImathFrustum.h
+include/OpenEXR/ImathFrustumTest.h
+include/OpenEXR/ImathFun.h
+include/OpenEXR/ImathGL.h
+include/OpenEXR/ImathGLU.h
+include/OpenEXR/ImathHalfLimits.h
+include/OpenEXR/ImathInt64.h
+include/OpenEXR/ImathInterval.h
+include/OpenEXR/ImathLimits.h
+include/OpenEXR/ImathLine.h
+include/OpenEXR/ImathLineAlgo.h
+include/OpenEXR/ImathMath.h
+include/OpenEXR/ImathMatrix.h
+include/OpenEXR/ImathMatrixAlgo.h
+include/OpenEXR/ImathNamespace.h
+include/OpenEXR/ImathPlane.h
+include/OpenEXR/ImathPlatform.h
+include/OpenEXR/ImathQuat.h
+include/OpenEXR/ImathRandom.h
+include/OpenEXR/ImathRoots.h
+include/OpenEXR/ImathShear.h
+include/OpenEXR/ImathSphere.h
+include/OpenEXR/ImathVec.h
+include/OpenEXR/ImathVecAlgo.h
 include/OpenEXR/ImfAcesFile.h
 include/OpenEXR/ImfArray.h
 include/OpenEXR/ImfAttribute.h
@@ -16,6 +72,10 @@ include/OpenEXR/ImfCompressionAttribute.h
 include/OpenEXR/ImfConvert.h
 include/OpenEXR/ImfDeepCompositing.h
 include/OpenEXR/ImfDeepFrameBuffer.h
+include/OpenEXR/ImfDeepImage.h
+include/OpenEXR/ImfDeepImageChannel.h
+include/OpenEXR/ImfDeepImageIO.h
+include/OpenEXR/ImfDeepImageLevel.h
 include/OpenEXR/ImfDeepImageState.h
 include/OpenEXR/ImfDeepImageStateAttribute.h
 include/OpenEXR/ImfDeepScanLineInputFile.h
@@ -30,7 +90,12 @@ include/OpenEXR/ImfDoubleAttribute.h
 include/OpenEXR/ImfEnvmap.h
 include/OpenEXR/ImfEnvmapAttribute.h
 include/OpenEXR/ImfExport.h
+include/OpenEXR/ImfFlatImage.h
+include/OpenEXR/ImfFlatImageChannel.h
+include/OpenEXR/ImfFlatImageIO.h
+include/OpenEXR/ImfFlatImageLevel.h
 include/OpenEXR/ImfFloatAttribute.h
+include/OpenEXR/ImfFloatVectorAttribute.h
 include/OpenEXR/ImfForward.h
 include/OpenEXR/ImfFrameBuffer.h
 include/OpenEXR/ImfFramesPerSecond.h
@@ -39,6 +104,12 @@ include/OpenEXR/ImfGenericOutputFile.h
 include/OpenEXR/ImfHeader.h
 include/OpenEXR/ImfHuf.h
 include/OpenEXR/ImfIO.h
+include/OpenEXR/ImfImage.h
+include/OpenEXR/ImfImageChannel.h
+include/OpenEXR/ImfImageChannelRenaming.h
+include/OpenEXR/ImfImageDataWindow.h
+include/OpenEXR/ImfImageIO.h
+include/OpenEXR/ImfImageLevel.h
 include/OpenEXR/ImfInputFile.h
 include/OpenEXR/ImfInputPart.h
 include/OpenEXR/ImfInt64.h
@@ -68,6 +139,7 @@ include/OpenEXR/ImfRationalAttribute.h
 include/OpenEXR/ImfRgba.h
 include/OpenEXR/ImfRgbaFile.h
 include/OpenEXR/ImfRgbaYca.h
+include/OpenEXR/ImfSampleCountChannel.h
 include/OpenEXR/ImfStandardAttributes.h
 include/OpenEXR/ImfStdIO.h
 include/OpenEXR/ImfStringAttribute.h
@@ -83,17 +155,82 @@ include/OpenEXR/ImfTiledOutputPart.h
 include/OpenEXR/ImfTiledRgbaFile.h
 include/OpenEXR/ImfTimeCode.h
 include/OpenEXR/ImfTimeCodeAttribute.h
+include/OpenEXR/ImfUtilExport.h
 include/OpenEXR/ImfVecAttribute.h
 include/OpenEXR/ImfVersion.h
 include/OpenEXR/ImfWav.h
 include/OpenEXR/ImfXdr.h
 include/OpenEXR/OpenEXRConfig.h
-lib/libIlmImf.a
-lib/libIlmImf.la
-@lib lib/libIlmImf.so.${LIBIlmImf_VERSION}
-lib/libIlmImfUtil.a
-lib/libIlmImfUtil.la
-@lib lib/libIlmImfUtil.so.${LIBIlmImfUtil_VERSION}
+include/OpenEXR/PyIex.h
+include/OpenEXR/PyIexExport.h
+include/OpenEXR/PyIexTypeTranslator.h
+include/OpenEXR/PyImath.h
+include/OpenEXR/PyImathAutovectorize.h
+include/OpenEXR/PyImathBasicTypes.h
+include/OpenEXR/PyImathBox.h
+include/OpenEXR/PyImathBoxArrayImpl.h
+include/OpenEXR/PyImathColor.h
+include/OpenEXR/PyImathColor3ArrayImpl.h
+include/OpenEXR/PyImathColor4Array2DImpl.h
+include/OpenEXR/PyImathColor4ArrayImpl.h
+include/OpenEXR/PyImathDecorators.h
+include/OpenEXR/PyImathEuler.h
+include/OpenEXR/PyImathExport.h
+include/OpenEXR/PyImathFixedArray.h
+include/OpenEXR/PyImathFixedArray2D.h
+include/OpenEXR/PyImathFixedMatrix.h
+include/OpenEXR/PyImathFixedVArray.h
+include/OpenEXR/PyImathFrustum.h
+include/OpenEXR/PyImathFun.h
+include/OpenEXR/PyImathLine.h
+include/OpenEXR/PyImathM44Array.h
+include/OpenEXR/PyImathMathExc.h
+include/OpenEXR/PyImathMatrix.h
+include/OpenEXR/PyImathOperators.h
+include/OpenEXR/PyImathPlane.h
+include/OpenEXR/PyImathQuat.h
+include/OpenEXR/PyImathRandom.h
+include/OpenEXR/PyImathShear.h
+include/OpenEXR/PyImathStringArray.h
+include/OpenEXR/PyImathStringArrayRegister.h
+include/OpenEXR/PyImathStringTable.h
+include/OpenEXR/PyImathTask.h
+include/OpenEXR/PyImathUtil.h
+include/OpenEXR/PyImathVec.h
+include/OpenEXR/PyImathVec2Impl.h
+include/OpenEXR/PyImathVec3ArrayImpl.h
+include/OpenEXR/PyImathVec3Impl.h
+include/OpenEXR/PyImathVec4ArrayImpl.h
+include/OpenEXR/PyImathVec4Impl.h
+include/OpenEXR/PyImathVecOperators.h
+include/OpenEXR/half.h
+include/OpenEXR/halfExport.h
+include/OpenEXR/halfFunction.h
+include/OpenEXR/halfLimits.h
+lib/cmake/
+lib/cmake/IlmBase/
+lib/cmake/IlmBase/IlmBaseConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/IlmBase/IlmBaseConfig.cmake
+lib/cmake/IlmBase/IlmBaseConfigVersion.cmake
+lib/cmake/OpenEXR/
+lib/cmake/OpenEXR/OpenEXRConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/OpenEXR/OpenEXRConfig.cmake
+lib/cmake/OpenEXR/OpenEXRConfigVersion.cmake
+@lib lib/libHalf-2_4.so.${LIBHalf-2_4_VERSION}
+lib/libHalf.so
+@lib lib/libIex-2_4.so.${LIBIex-2_4_VERSION}
+lib/libIex.so
+@lib lib/libIexMath-2_4.so.${LIBIexMath-2_4_VERSION}
+lib/libIexMath.so
+@lib lib/libIlmImf-2_4.so.${LIBIlmImf-2_4_VERSION}
+lib/libIlmImf.so
+@lib lib/libIlmImfUtil-2_4.so.${LIBIlmImfUtil-2_4_VERSION}
+lib/libIlmImfUtil.so
+@lib lib/libIlmThread-2_4.so.${LIBIlmThread-2_4_VERSION}
+lib/libIlmThread.so
+@lib lib/libImath-2_4.so.${LIBImath-2_4_VERSION}
+lib/libImath.so
+@lib lib/libPyIex_Python3_7-2_4.so.${LIBPyIex_Python3_7-2_4_VERSION}
+@lib lib/libPyImath_Python3_7-2_4.so.${LIBPyImath_Python3_7-2_4_VERSION}
+lib/pkgconfig/IlmBase.pc
 lib/pkgconfig/OpenEXR.pc
-share/aclocal/
-share/aclocal/openexr.m4
