@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_js,v 1.2 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_js,v 1.3 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/resources/settings/appearance_page/appearance_page.js
 --- chrome/browser/resources/settings/appearance_page/appearance_page.js.orig
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.js
-@@ -120,7 +120,7 @@ Polymer({
+@@ -130,7 +130,7 @@ Polymer({
      'defaultFontSizeChanged_(prefs.webkit.webprefs.default_font_size.value)',
      'themeChanged_(prefs.extensions.theme.id.value, useSystemTheme_)',
  
@@ -12,8 +12,8 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.js
      // NOTE: this pref only exists on Linux.
      'useSystemThemePrefChanged_(prefs.extensions.theme.use_system.value)',
      // </if>
-@@ -223,7 +223,7 @@ Polymer({
-     this.browserProxy_.useDefaultTheme();
+@@ -238,7 +238,7 @@ Polymer({
+     this.appearanceBrowserProxy_.useDefaultTheme();
    },
  
 -  // <if expr="is_linux and not chromeos">
@@ -21,7 +21,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.js
    /**
     * @param {boolean} useSystemTheme
     * @private
-@@ -292,10 +292,10 @@ Polymer({
+@@ -315,10 +315,10 @@ Polymer({
      }
  
      let i18nId;

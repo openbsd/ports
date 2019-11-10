@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.9 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.10 2019/11/10 13:37:55 robert Exp $
 
 Index: third_party/angle/BUILD.gn
 --- third_party/angle/BUILD.gn.orig
 +++ third_party/angle/BUILD.gn
-@@ -276,6 +276,7 @@ angle_static_library("angle_gpu_info_util") {
+@@ -353,6 +353,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
          "Xext",
@@ -11,8 +11,8 @@ Index: third_party/angle/BUILD.gn
        ]
      }
    }
-@@ -842,10 +843,6 @@ foreach(is_shared_library,
-     libs = []
+@@ -1076,10 +1077,6 @@ foreach(is_shared_library,
+ 
      if (is_linux) {
        sources += util_linux_sources
 -      libs += [

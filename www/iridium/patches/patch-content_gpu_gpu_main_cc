@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.21 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.22 2019/11/10 13:37:53 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
-@@ -78,7 +78,7 @@
+@@ -82,7 +82,7 @@
  #include "ui/gfx/x/x11_switches.h"    // nogncheck
  #endif
  
@@ -30,7 +30,7 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -365,17 +365,19 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -383,17 +383,19 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -51,7 +51,7 @@ Index: content/gpu/gpu_main.cc
  
    // SandboxLinux::InitializeSandbox() must always be called
    // with only one thread.
-@@ -392,11 +394,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -410,11 +412,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
            *base::CommandLine::ForCurrentProcess()),
        base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
  

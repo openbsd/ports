@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_base_switches_h,v 1.1 2019/11/10 13:37:49 robert Exp $
+
+Index: base/base_switches.h
+--- base/base_switches.h.orig
++++ base/base_switches.h
+@@ -51,7 +51,7 @@ extern const char kEnableReachedCodeProfiler[];
+ extern const char kOrderfileMemoryOptimization[];
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ extern const char kEnableThreadInstructionCount[];
+ #endif
+ 

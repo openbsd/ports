@@ -1,0 +1,31 @@
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.1 2019/11/10 13:37:58 robert Exp $
+
+Index: weblayer/browser/content_browser_client_impl.cc
+--- weblayer/browser/content_browser_client_impl.cc.orig
++++ weblayer/browser/content_browser_client_impl.cc
+@@ -24,7 +24,7 @@
+ #include "weblayer/browser/android_descriptors.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ #include "content/public/common/content_descriptors.h"
+ #endif
+ 
+@@ -79,7 +79,7 @@ blink::UserAgentMetadata ContentBrowserClientImpl::Get
+   return metadata;
+ }
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ void ContentBrowserClientImpl::GetAdditionalMappedFilesForChildProcess(
+     const base::CommandLine& command_line,
+     int child_process_id,
+@@ -91,6 +91,6 @@ void ContentBrowserClientImpl::GetAdditionalMappedFile
+       base::GlobalDescriptors::GetInstance()->GetRegion(kPakDescriptor));
+ #endif
+ }
+-#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
++#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ 
+ }  // namespace weblayer

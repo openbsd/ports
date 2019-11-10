@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.21 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.22 2019/11/10 13:37:52 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
 +++ content/browser/browser_main_loop.cc
-@@ -250,6 +250,13 @@
+@@ -244,6 +244,13 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
  #endif
  
@@ -17,7 +17,7 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -585,6 +592,11 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -573,6 +580,11 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());

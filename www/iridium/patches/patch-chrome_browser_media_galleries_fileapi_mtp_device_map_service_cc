@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_media_galleries_fileapi_mtp_device_map_service_cc,v 1.8 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_media_galleries_fileapi_mtp_device_map_service_cc,v 1.9 2019/11/10 13:37:50 robert Exp $
 Index: chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc
 --- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig
 +++ chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc
-@@ -38,10 +38,12 @@ void MTPDeviceMapService::RegisterMTPFileSystem(
+@@ -39,10 +39,12 @@ void MTPDeviceMapService::RegisterMTPFileSystem(
      // Note that this initializes the delegate asynchronously, but since
      // the delegate will only be used from the IO thread, it is guaranteed
      // to be created before use of it expects it to be there.

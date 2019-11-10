@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_host_details_cc,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-remoting_host_host_details_cc,v 1.5 2019/11/10 13:37:54 robert Exp $
 
 Index: remoting/host/host_details.cc
 --- remoting/host/host_details.cc.orig
 +++ remoting/host/host_details.cc
-@@ -24,7 +24,7 @@ std::string GetHostOperatingSystemName() {
+@@ -22,7 +22,7 @@ std::string GetHostOperatingSystemName() {
    return "Mac";
  #elif defined(OS_CHROMEOS)
    return "ChromeOS";

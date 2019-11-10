@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_capture_video_video_capture_buffer_pool_impl_cc,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-media_capture_video_video_capture_buffer_pool_impl_cc,v 1.4 2019/11/10 13:37:54 robert Exp $
 
 Index: media/capture/video/video_capture_buffer_pool_impl.cc
 --- media/capture/video/video_capture_buffer_pool_impl.cc.orig
 +++ media/capture/video/video_capture_buffer_pool_impl.cc
-@@ -58,7 +58,7 @@ VideoCaptureBufferPoolImpl::CreateSharedMemoryViaRawFi
+@@ -57,7 +57,7 @@ VideoCaptureBufferPoolImpl::CreateSharedMemoryViaRawFi
      int buffer_id) {
  // This requires platforms where base::SharedMemoryHandle is backed by a
  // file descriptor.

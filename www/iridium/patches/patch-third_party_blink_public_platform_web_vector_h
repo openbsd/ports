@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_public_platform_web_vector_h,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_blink_public_platform_web_vector_h,v 1.3 2019/11/10 13:37:55 robert Exp $
 
 Index: third_party/blink/public/platform/web_vector.h
 --- third_party/blink/public/platform/web_vector.h.orig

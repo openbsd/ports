@@ -1,0 +1,14 @@
+$OpenBSD: patch-services_device_usb_BUILD_gn,v 1.1 2019/11/10 13:37:55 robert Exp $
+
+Index: services/device/usb/BUILD.gn
+--- services/device/usb/BUILD.gn.orig
++++ services/device/usb/BUILD.gn
+@@ -110,7 +110,7 @@ static_library("usb") {
+     ]
+   }
+ 
+-  if (is_android || is_chromeos || is_linux) {
++  if (is_android || is_chromeos || is_linux && !is_openbsd) {
+     sources += [
+       "usb_device_handle_usbfs.cc",
+       "usb_device_handle_usbfs.h",

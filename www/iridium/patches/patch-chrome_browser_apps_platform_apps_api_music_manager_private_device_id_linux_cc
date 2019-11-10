@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_apps_platform_apps_api_music_manager_private_device_id_linux_cc,v 1.2 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_apps_platform_apps_api_music_manager_private_device_id_linux_cc,v 1.3 2019/11/10 13:37:50 robert Exp $
 
 Index: chrome/browser/apps/platform_apps/api/music_manager_private/device_id_linux.cc
 --- chrome/browser/apps/platform_apps/api/music_manager_private/device_id_linux.cc.orig
@@ -19,7 +19,7 @@ Index: chrome/browser/apps/platform_apps/api/music_manager_private/device_id_lin
  #include <ifaddrs.h>
  #include <net/if.h>
  #include <stddef.h>
-@@ -105,11 +114,33 @@ class MacAddressProcessor {
+@@ -106,11 +115,33 @@ class MacAddressProcessor {
                          const char* const prefixes[],
                          size_t prefixes_count) {
      const int MAC_LENGTH = 6;
@@ -54,7 +54,7 @@ Index: chrome/browser/apps/platform_apps/api/music_manager_private/device_id_lin
      int sd = socket(AF_INET, SOCK_DGRAM, 0);
      int result = ioctl(sd, SIOCGIFHWADDR, &ifinfo);
      close(sd);
-@@ -119,11 +150,17 @@ class MacAddressProcessor {
+@@ -120,11 +151,17 @@ class MacAddressProcessor {
  
      const char* mac_address =
          static_cast<const char*>(ifinfo.ifr_hwaddr.sa_data);

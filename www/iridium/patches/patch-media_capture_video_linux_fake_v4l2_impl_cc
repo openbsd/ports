@@ -1,0 +1,14 @@
+$OpenBSD: patch-media_capture_video_linux_fake_v4l2_impl_cc,v 1.1 2019/11/10 13:37:54 robert Exp $
+
+Index: media/capture/video/linux/fake_v4l2_impl.cc
+--- media/capture/video/linux/fake_v4l2_impl.cc.orig
++++ media/capture/video/linux/fake_v4l2_impl.cc
+@@ -364,7 +364,7 @@ int FakeV4L2Impl::close(int fd) {
+   return kSuccessReturnValue;
+ }
+ 
+-int FakeV4L2Impl::ioctl(int fd, int request, void* argp) {
++int FakeV4L2Impl::ioctl(int fd, unsigned long request, void* argp) {
+   auto device_iter = opened_devices_.find(fd);
+   if (device_iter == opened_devices_.end())
+     return EBADF;

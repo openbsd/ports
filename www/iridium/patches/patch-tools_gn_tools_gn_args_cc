@@ -1,18 +1,18 @@
-$OpenBSD: patch-tools_gn_tools_gn_args_cc,v 1.2 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-tools_gn_tools_gn_args_cc,v 1.3 2019/11/10 13:37:57 robert Exp $
 
 Index: tools/gn/tools/gn/args.cc
 --- tools/gn/tools/gn/args.cc.orig
 +++ tools/gn/tools/gn/args.cc
-@@ -298,6 +298,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+@@ -310,6 +310,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+   os = "linux";
+ #elif defined(OS_FREEBSD)
    os = "freebsd";
- #elif defined(OS_AIX)
-   os = "aix";
 +#elif defined(OS_OPENBSD)
 +  os = "openbsd";
- #else
- #error Unknown OS type.
- #endif
-@@ -322,6 +324,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+ #elif defined(OS_AIX)
+   os = "aix";
+ #elif defined(OS_OPENBSD)
+@@ -338,6 +340,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
      arch = kX86;
    else if (os_arch == "x86_64")
      arch = kX64;

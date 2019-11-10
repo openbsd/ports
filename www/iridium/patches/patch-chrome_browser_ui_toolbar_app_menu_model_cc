@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_ui_toolbar_app_menu_model_cc,v 1.11 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_toolbar_app_menu_model_cc,v 1.12 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/ui/toolbar/app_menu_model.cc
 --- chrome/browser/ui/toolbar/app_menu_model.cc.orig
 +++ chrome/browser/ui/toolbar/app_menu_model.cc
-@@ -671,7 +671,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
+@@ -685,7 +685,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
        return app_menu_icon_controller_->GetTypeAndSeverity().type ==
               AppMenuIconController::IconType::UPGRADE_NOTIFICATION;
      }
 -#if !defined(OS_LINUX) || defined(USE_AURA)
-+#if (!defined(OS_BSD) && !defined(OS_LINUX)) || defined(USE_AURA)
-     case IDC_BOOKMARK_PAGE:
-       return !chrome::ShouldRemoveBookmarkThisPageUI(browser_->profile());
++#if (!defined(OS_LINUX) && !defined(OS_BSD)) || defined(USE_AURA)
+     case IDC_BOOKMARK_THIS_TAB:
+       return !chrome::ShouldRemoveBookmarkThisTabUI(browser_->profile());
      case IDC_BOOKMARK_ALL_TABS:

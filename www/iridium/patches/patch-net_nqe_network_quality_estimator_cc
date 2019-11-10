@@ -1,0 +1,14 @@
+$OpenBSD: patch-net_nqe_network_quality_estimator_cc,v 1.1 2019/11/10 13:37:54 robert Exp $
+
+Index: net/nqe/network_quality_estimator.cc
+--- net/nqe/network_quality_estimator.cc.orig
++++ net/nqe/network_quality_estimator.cc
+@@ -101,7 +101,7 @@ nqe::internal::NetworkID DoGetCurrentNetworkID() {
+       case NetworkChangeNotifier::ConnectionType::CONNECTION_ETHERNET:
+         break;
+       case NetworkChangeNotifier::ConnectionType::CONNECTION_WIFI:
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+         network_id.id = GetWifiSSID();
+ #endif
+         break;

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_pepper_pepper_file_io_host_cc,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_pepper_pepper_file_io_host_cc,v 1.4 2019/11/10 13:37:53 robert Exp $
 
 Index: content/browser/renderer_host/pepper/pepper_file_io_host.cc
 --- content/browser/renderer_host/pepper/pepper_file_io_host.cc.orig
 +++ content/browser/renderer_host/pepper/pepper_file_io_host.cc
-@@ -432,7 +432,7 @@ void PepperFileIOHost::OnLocalFileOpened(
+@@ -433,7 +433,7 @@ void PepperFileIOHost::OnLocalFileOpened(
      ppapi::host::ReplyMessageContext reply_context,
      const base::FilePath& path,
      base::File::Error error_code) {
@@ -12,7 +12,7 @@ Index: content/browser/renderer_host/pepper/pepper_file_io_host.cc
    // Quarantining a file before its contents are available is only supported on
    // Windows and Linux.
    if (!FileOpenForWrite(open_flags_) || error_code != base::File::FILE_OK) {
-@@ -452,7 +452,7 @@ void PepperFileIOHost::OnLocalFileOpened(
+@@ -453,7 +453,7 @@ void PepperFileIOHost::OnLocalFileOpened(
  #endif
  }
  

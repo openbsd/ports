@@ -1,23 +1,14 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.11 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.12 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -37,7 +37,7 @@
- #include "components/user_manager/user_manager.h"
- #endif
+@@ -46,7 +46,7 @@
+ namespace {
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
- #include "chrome/browser/ui/views/frame/browser_command_handler_linux.h"
- #endif
- 
-@@ -104,7 +104,7 @@ void BrowserFrame::InitBrowserFrame() {
-     non_client_view()->set_context_menu_controller(this);
-   }
- 
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   browser_command_handler_.reset(new BrowserCommandHandlerLinux(browser_view_));
- #endif
- }
+ bool IsUsingGtkTheme(Profile* profile) {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
+ #else
+   return false;

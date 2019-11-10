@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_previews_core_previews_features_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-components_previews_core_previews_features_cc,v 1.3 2019/11/10 13:37:52 robert Exp $
 
 Index: components/previews/core/previews_features.cc
 --- components/previews/core/previews_features.cc.orig

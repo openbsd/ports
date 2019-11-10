@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_disk_cache_blockfile_disk_format_h,v 1.8 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-net_disk_cache_blockfile_disk_format_h,v 1.9 2019/11/10 13:37:54 robert Exp $
 --- net/disk_cache/blockfile/disk_format.h.orig.port	Wed Feb 24 00:02:01 2016
 +++ net/disk_cache/blockfile/disk_format.h	Thu Mar  3 09:43:26 2016
 @@ -149,7 +149,9 @@ struct RankingsNode {

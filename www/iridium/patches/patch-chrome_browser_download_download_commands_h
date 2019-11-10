@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.9 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.10 2019/11/10 13:37:50 robert Exp $
 
 Index: chrome/browser/download/download_commands.h
 --- chrome/browser/download/download_commands.h.orig
 +++ chrome/browser/download/download_commands.h
-@@ -42,7 +42,7 @@ class DownloadCommands {
+@@ -45,7 +45,7 @@ class DownloadCommands {
    bool IsCommandVisible(Command command) const;
    void ExecuteCommand(Command command);
  
@@ -11,4 +11,4 @@ Index: chrome/browser/download/download_commands.h
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    bool IsDownloadPdf() const;
    bool CanOpenPdfInSystemViewer() const;
- #endif
+   Browser* GetBrowser() const;

@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_strutil_h,v 1.8 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_strutil_h,v 1.9 2019/11/10 13:37:56 robert Exp $
 Index: third_party/protobuf/src/google/protobuf/stubs/strutil.h
 --- third_party/protobuf/src/google/protobuf/stubs/strutil.h.orig
 +++ third_party/protobuf/src/google/protobuf/stubs/strutil.h
-@@ -373,13 +373,13 @@ inline uint32 strtou32(const char *nptr, char **endptr
+@@ -374,13 +374,13 @@ inline uint32 strtou32(const char *nptr, char **endptr
  inline int64 strto64(const char *nptr, char **endptr, int base) {
    GOOGLE_COMPILE_ASSERT(sizeof(int64) == sizeof(long long),
                          sizeof_int64_is_not_sizeof_long_long);

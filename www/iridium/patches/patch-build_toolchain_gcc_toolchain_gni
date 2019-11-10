@@ -1,10 +1,10 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.11 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.12 2019/11/10 13:37:50 robert Exp $
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni
-@@ -47,6 +47,11 @@ analyzer_wrapper =
-     rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
-                 root_build_dir) + " --mode=clang"
+@@ -36,6 +36,11 @@ if (is_linux && target_os == "android") {
+   enable_resource_whitelist_generation = false
+ }
  
 +declare_args() {
 +  extra_cppflags = ""
@@ -14,7 +14,7 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -610,12 +615,12 @@ template("clang_toolchain") {
+@@ -589,12 +594,12 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {

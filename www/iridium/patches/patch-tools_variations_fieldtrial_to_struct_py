@@ -1,13 +1,13 @@
-$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.6 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.7 2019/11/10 13:37:57 robert Exp $
 
 Index: tools/variations/fieldtrial_to_struct.py
 --- tools/variations/fieldtrial_to_struct.py.orig
 +++ tools/variations/fieldtrial_to_struct.py
-@@ -30,6 +30,7 @@ _platforms = [
+@@ -39,6 +39,7 @@ _platforms = [
    'linux',
    'mac',
    'windows',
 +  'openbsd',
  ]
  
- # Convert a platform argument to the matching Platform enum value in
+ _form_factors = [

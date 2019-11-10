@@ -1,0 +1,14 @@
+$OpenBSD: patch-extensions_shell_common_switches_h,v 1.1 2019/11/10 13:37:53 robert Exp $
+
+Index: extensions/shell/common/switches.h
+--- extensions/shell/common/switches.h.orig
++++ extensions/shell/common/switches.h
+@@ -17,7 +17,7 @@ extern const char kAppShellAllowRoaming[];
+ extern const char kAppShellHostWindowSize[];
+ extern const char kAppShellPreferredNetwork[];
+ #endif
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ extern const char kCrashDumpsDir[];
+ extern const char kEnableReporting[];
+ #endif

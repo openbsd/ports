@@ -1,7 +1,12 @@
-# $OpenBSD: unveil.main,v 1.5 2019/03/13 17:24:30 robert Exp $
+# $OpenBSD: unveil.main,v 1.6 2019/11/10 13:37:49 robert Exp $
 
-# needed for iridum
+# needed for video(4)
+/dev/video rw
+
+# needed for iridium
 /etc/chromium r
+
+# needed for iridium
 /etc/iridium r
 
 # needed for fontconfig
@@ -13,7 +18,7 @@
 # needed for IPC communication, X.Org, etc.
 /tmp rwc
 
-# needed for printing with lpr(1) 
+# needed for printing with lpr(1)
 /usr/bin/lpr rx
 
 # needed for xdg tools

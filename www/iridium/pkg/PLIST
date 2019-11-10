@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/04/17 11:48:55 robert Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/11/10 13:37:58 robert Exp $
 bin/iridium
 iridium/chrome_100_percent.pak
 iridium/chrome_200_percent.pak
@@ -131,11 +131,11 @@ iridium/resources/inspector/Images/accelerometer-left.png
 iridium/resources/inspector/Images/accelerometer-right.png
 iridium/resources/inspector/Images/accelerometer-top.png
 iridium/resources/inspector/Images/audits_logo.svg
-iridium/resources/inspector/Images/breakpoint.png
-iridium/resources/inspector/Images/breakpointConditional.png
-iridium/resources/inspector/Images/breakpointConditional_2x.png
-iridium/resources/inspector/Images/breakpoint_2x.png
+iridium/resources/inspector/Images/breakpoint.svg
+iridium/resources/inspector/Images/breakpointConditional.svg
+iridium/resources/inspector/Images/checkboxCheckmark.svg
 iridium/resources/inspector/Images/checker.png
+iridium/resources/inspector/Images/chevrons.svg
 iridium/resources/inspector/Images/chromeDisabledSelect.png
 iridium/resources/inspector/Images/chromeDisabledSelect_2x.png
 iridium/resources/inspector/Images/chromeLeft.png
@@ -143,14 +143,11 @@ iridium/resources/inspector/Images/chromeMiddle.png
 iridium/resources/inspector/Images/chromeRight.png
 iridium/resources/inspector/Images/chromeSelect.png
 iridium/resources/inspector/Images/chromeSelect_2x.png
-iridium/resources/inspector/Images/errorWave.png
-iridium/resources/inspector/Images/errorWave_2x.png
+iridium/resources/inspector/Images/errorWave.svg
 iridium/resources/inspector/Images/ic_info_black_18dp.svg
 iridium/resources/inspector/Images/ic_warning_black_18dp.svg
-iridium/resources/inspector/Images/largeIcons.png
-iridium/resources/inspector/Images/largeIcons_2x.png
-iridium/resources/inspector/Images/mediumIcons.png
-iridium/resources/inspector/Images/mediumIcons_2x.png
+iridium/resources/inspector/Images/largeIcons.svg
+iridium/resources/inspector/Images/mediumIcons.svg
 iridium/resources/inspector/Images/navigationControls.png
 iridium/resources/inspector/Images/navigationControls_2x.png
 iridium/resources/inspector/Images/nodeIcon.png
@@ -174,16 +171,13 @@ iridium/resources/inspector/Images/resourcePlainIconSmall.png
 iridium/resources/inspector/Images/resourcesTimeGraphIcon.png
 iridium/resources/inspector/Images/searchNext.png
 iridium/resources/inspector/Images/searchPrev.png
-iridium/resources/inspector/Images/securityIcons.png
-iridium/resources/inspector/Images/securityIcons_2x.png
-iridium/resources/inspector/Images/smallIcons.png
-iridium/resources/inspector/Images/smallIcons_2x.png
+iridium/resources/inspector/Images/securityIcons.svg
+iridium/resources/inspector/Images/smallIcons.svg
 iridium/resources/inspector/Images/speech.png
 iridium/resources/inspector/Images/toolbarResizerVertical.png
 iridium/resources/inspector/Images/touchCursor.png
 iridium/resources/inspector/Images/touchCursor_2x.png
-iridium/resources/inspector/Images/treeoutlineTriangles.png
-iridium/resources/inspector/Images/treeoutlineTriangles_2x.png
+iridium/resources/inspector/Images/treeoutlineTriangles.svg
 iridium/resources/inspector/Images/whatsnew.png
 iridium/resources/inspector/InspectorBackendCommands.js
 iridium/resources/inspector/SupportedCSSProperties.js
@@ -197,13 +191,15 @@ iridium/resources/inspector/animation/
 iridium/resources/inspector/animation/animation_module.js
 iridium/resources/inspector/application_test_runner/
 iridium/resources/inspector/application_test_runner/application_test_runner_module.js
-iridium/resources/inspector/audits2/
-iridium/resources/inspector/audits2/audits2_module.js
-iridium/resources/inspector/audits2_test_runner/
-iridium/resources/inspector/audits2_test_runner/audits2_test_runner_module.js
-iridium/resources/inspector/audits2_worker/
-iridium/resources/inspector/audits2_worker.js
-iridium/resources/inspector/audits2_worker/audits2_worker_module.js
+iridium/resources/inspector/audits/
+iridium/resources/inspector/audits/audits_module.js
+iridium/resources/inspector/audits_test_runner/
+iridium/resources/inspector/audits_test_runner/audits_test_runner_module.js
+iridium/resources/inspector/audits_worker/
+iridium/resources/inspector/audits_worker.js
+iridium/resources/inspector/audits_worker/audits_worker_module.js
+iridium/resources/inspector/axe_core_test_runner/
+iridium/resources/inspector/axe_core_test_runner/axe_core_test_runner_module.js
 iridium/resources/inspector/bindings_test_runner/
 iridium/resources/inspector/bindings_test_runner/bindings_test_runner_module.js
 iridium/resources/inspector/browser_debugger/
@@ -377,6 +373,8 @@ iridium/resources/inspector/timeline_model/
 iridium/resources/inspector/timeline_model/timeline_model_module.js
 iridium/resources/inspector/toolbox.html
 iridium/resources/inspector/toolbox.js
+iridium/resources/inspector/web_audio/
+iridium/resources/inspector/web_audio/web_audio_module.js
 iridium/resources/inspector/worker_app.html
 iridium/resources/inspector/worker_app.js
 iridium/resources/inspector/workspace_diff/
@@ -384,13 +382,16 @@ iridium/resources/inspector/workspace_diff/workspace_diff_module.js
 iridium/snapshot_blob.bin
 %%swiftshader%%
 iridium/v8_context_snapshot.bin
-iridium/views_mus_resources.pak
 @man man/man1/iridium.1
 share/applications/iridium-browser.desktop
 share/examples/iridium/
 @sample ${SYSCONFDIR}/iridium/
 share/examples/iridium/pledge.main
 @sample ${SYSCONFDIR}/iridium/pledge.main
+share/examples/iridium/pledge.utility_audio
+@sample ${SYSCONFDIR}/iridium/pledge.utility_audio
+share/examples/iridium/pledge.utility_network
+@sample ${SYSCONFDIR}/iridium/pledge.utility_network
 share/examples/iridium/unveil.gpu
 @sample ${SYSCONFDIR}/iridium/unveil.gpu
 share/examples/iridium/unveil.main
@@ -401,8 +402,14 @@ share/examples/iridium/unveil.renderer
 @sample ${SYSCONFDIR}/iridium/unveil.renderer
 share/examples/iridium/unveil.utility
 @sample ${SYSCONFDIR}/iridium/unveil.utility
+share/examples/iridium/unveil.utility_audio
+@sample ${SYSCONFDIR}/iridium/unveil.utility_audio
+share/examples/iridium/unveil.utility_network
+@sample ${SYSCONFDIR}/iridium/unveil.utility_network
 share/icons/hicolor/128x128/apps/iridium.png
-share/icons/hicolor/22x22/apps/iridium.png
+share/icons/hicolor/22_monox22_mono/
+share/icons/hicolor/22_monox22_mono/apps/
+share/icons/hicolor/22_monox22_mono/apps/iridium.png
 share/icons/hicolor/24x24/apps/iridium.png
 share/icons/hicolor/256x256/apps/iridium.png
 share/icons/hicolor/48x48/apps/iridium.png

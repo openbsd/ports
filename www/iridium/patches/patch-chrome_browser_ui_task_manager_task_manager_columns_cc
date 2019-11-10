@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.6 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.7 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/ui/task_manager/task_manager_columns.cc
 --- chrome/browser/ui/task_manager/task_manager_columns.cc.orig

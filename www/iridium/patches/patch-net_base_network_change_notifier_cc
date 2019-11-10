@@ -1,12 +1,29 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.14 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.15 2019/11/10 13:37:54 robert Exp $
+
 Index: net/base/network_change_notifier.cc
 --- net/base/network_change_notifier.cc.orig
 +++ net/base/network_change_notifier.cc
-@@ -221,7 +221,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
+@@ -35,7 +35,7 @@
+ #include "net/base/network_change_notifier_linux.h"
+ #elif defined(OS_MACOSX)
+ #include "net/base/network_change_notifier_mac.h"
+-#elif defined(OS_CHROMEOS)
++#elif defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "net/base/network_change_notifier_posix.h"
  #elif defined(OS_FUCHSIA)
-   return new NetworkChangeNotifierFuchsia(0 /* required_features */);
- #else
--  NOTIMPLEMENTED();
+ #include "net/base/network_change_notifier_fuchsia.h"
+@@ -224,9 +224,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+   // Android builds MUST use their own class factory.
+   CHECK(false);
    return NULL;
- #endif
- }
+-#elif defined(OS_CHROMEOS)
++#elif defined(OS_CHROMEOS) || defined(OS_BSD)
++#if !defined(OS_BSD)
+   return std::make_unique<NetworkChangeNotifierPosix>(CONNECTION_NONE,
+                                                       SUBTYPE_NONE);
++#else
++  return NULL;
++#endif
+ #elif defined(OS_LINUX)
+   return std::make_unique<NetworkChangeNotifierLinux>(
+       std::unordered_set<std::string>());

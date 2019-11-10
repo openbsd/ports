@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.5 2019/11/10 13:37:52 robert Exp $
 
 Index: components/crash/core/common/BUILD.gn
 --- components/crash/core/common/BUILD.gn.orig
 +++ components/crash/core/common/BUILD.gn
-@@ -6,7 +6,7 @@ import("//build/buildflag_header.gni")
+@@ -7,7 +7,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
  
  declare_args() {
    # If set to true, this will stub out and disable the entire crash key system.
@@ -12,21 +12,12 @@ Index: components/crash/core/common/BUILD.gn
  }
  
  group("common") {
-@@ -88,8 +88,6 @@ target(crash_key_target_type, "crash_key") {
-         "crash_key_internal.h",
-       ]
-     }
--
--    deps += [ "//third_party/breakpad:client" ]
-   }
- }
- 
-@@ -144,7 +142,7 @@ source_set("unit_tests") {
+@@ -153,7 +153,7 @@ source_set("unit_tests") {
      sources += [ "objc_zombie_unittest.mm" ]
    }
  
--  if (!is_mac && !is_win && !is_fuchsia && !is_android) {
-+  if (!is_mac && !is_win && !is_fuchsia && !is_android && !is_openbsd) {
+-  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android) {
++  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android && !is_openbsd) {
      include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
      sources += [ "crash_key_breakpad_unittest.cc" ]
    }

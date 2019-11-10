@@ -1,14 +1,14 @@
-$OpenBSD: patch-content_shell_BUILD_gn,v 1.1 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_shell_BUILD_gn,v 1.2 2019/11/10 13:37:53 robert Exp $
 
 Index: content/shell/BUILD.gn
 --- content/shell/BUILD.gn.orig
 +++ content/shell/BUILD.gn
-@@ -942,7 +942,7 @@ group("content_shell_crash_test") {
+@@ -962,7 +962,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }
--  if (is_posix && !is_android) {
-+  if (is_posix && !is_android && !is_openbsd) {
+-  if (is_posix) {
++  if (is_posix && !is_openbsd) {
      data_deps += [
-       "//third_party/breakpad:dump_syms($host_toolchain)",
-       "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
+       "//third_party/breakpad:dump_syms",
+       "//third_party/breakpad:minidump_stackwalk",

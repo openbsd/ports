@@ -1,18 +1,18 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.8 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.9 2019/11/10 13:37:53 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
 +++ gpu/ipc/service/gpu_init.cc
-@@ -87,7 +87,7 @@ void InitializeDirectCompositionOverlaySupport(GPUInfo
+@@ -109,7 +109,7 @@ void InitializePlatformOverlaySettings(GPUInfo* gpu_in
+ #endif
  }
- #endif  // defined(OS_WIN)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(IS_CHROMECAST)
 +#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(IS_CHROMECAST) && !defined(OS_BSD)
  bool CanAccessNvidiaDeviceFile() {
    bool res = true;
-   base::ScopedBlockingCall scoped_blocking_call(base::BlockingType::WILL_BLOCK);
-@@ -129,7 +129,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+   base::ScopedBlockingCall scoped_blocking_call(FROM_HERE,
+@@ -165,7 +165,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    // crash during feature collection.
    gpu::SetKeysForCrashLogging(gpu_info_);
  
@@ -21,7 +21,7 @@ Index: gpu/ipc/service/gpu_init.cc
    if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
        gpu_info_.gpu.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -199,7 +199,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -246,7 +246,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    sandbox_helper_->PreSandboxStartup();
  
    bool attempted_startsandbox = false;
@@ -30,3 +30,21 @@ Index: gpu/ipc/service/gpu_init.cc
    // On Chrome OS ARM Mali, GPU driver userspace creates threads when
    // initializing a GL context, so start the sandbox early.
    // TODO(zmo): Need to collect OS version before this.
+@@ -377,7 +377,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+ 
+   InitializePlatformOverlaySettings(&gpu_info_);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Driver may create a compatibility profile context when collect graphics
+   // information on Linux platform. Try to collect graphics information
+   // based on core profile context after disabling platform extensions.
+@@ -569,7 +569,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+ 
+   InitializePlatformOverlaySettings(&gpu_info_);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Driver may create a compatibility profile context when collect graphics
+   // information on Linux platform. Try to collect graphics information
+   // based on core profile context after disabling platform extensions.

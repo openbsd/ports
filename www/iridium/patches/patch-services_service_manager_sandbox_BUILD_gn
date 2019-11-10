@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.6 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.7 2019/11/10 13:37:55 robert Exp $
 
 Index: services/service_manager/sandbox/BUILD.gn
 --- services/service_manager/sandbox/BUILD.gn.orig

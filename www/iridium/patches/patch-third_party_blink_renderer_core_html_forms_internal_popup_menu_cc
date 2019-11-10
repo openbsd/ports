@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_core_html_forms_internal_popup_menu_cc,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_html_forms_internal_popup_menu_cc,v 1.4 2019/11/10 13:37:55 robert Exp $
 
 Index: third_party/blink/renderer/core/html/forms/internal_popup_menu.cc
 --- third_party/blink/renderer/core/html/forms/internal_popup_menu.cc.orig
 +++ third_party/blink/renderer/core/html/forms/internal_popup_menu.cc
-@@ -127,7 +127,7 @@ class InternalPopupMenu::ItemIterationContext {
+@@ -121,7 +121,7 @@ class InternalPopupMenu::ItemIterationContext {
          is_in_group_(false),
          buffer_(buffer) {
      DCHECK(buffer_);

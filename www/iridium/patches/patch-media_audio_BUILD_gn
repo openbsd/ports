@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_audio_BUILD_gn,v 1.10 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-media_audio_BUILD_gn,v 1.11 2019/11/10 13:37:53 robert Exp $
 
 Index: media/audio/BUILD.gn
 --- media/audio/BUILD.gn.orig
 +++ media/audio/BUILD.gn
-@@ -242,8 +242,19 @@ source_set("audio") {
+@@ -234,8 +234,19 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  

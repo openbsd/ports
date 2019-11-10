@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.3 2019/11/10 13:37:55 robert Exp $
 
 Index: services/device/hid/BUILD.gn
 --- services/device/hid/BUILD.gn.orig

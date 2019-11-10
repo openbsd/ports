@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_h,v 1.5 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_h,v 1.6 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/task_manager/sampling/task_group_sampler.h
 --- chrome/browser/task_manager/sampling/task_group_sampler.h.orig
@@ -30,7 +30,7 @@ Index: chrome/browser/task_manager/sampling/task_group_sampler.h
    int RefreshOpenFdCount();
  #endif  // defined(OS_LINUX) || defined(OS_MACOSX)
    bool RefreshProcessPriority();
-@@ -80,7 +80,7 @@ class TaskGroupSampler : public base::RefCountedThread
+@@ -84,7 +84,7 @@ class TaskGroupSampler : public base::RefCountedThread
    const OnCpuRefreshCallback on_cpu_refresh_callback_;
    const OnSwappedMemRefreshCallback on_swapped_mem_refresh_callback_;
    const OnIdleWakeupsCallback on_idle_wakeups_callback_;

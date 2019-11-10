@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_test_chromedriver_chrome_chrome_finder_cc,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-chrome_test_chromedriver_chrome_chrome_finder_cc,v 1.5 2019/11/10 13:37:52 robert Exp $
 
 Index: chrome/test/chromedriver/chrome/chrome_finder.cc
 --- chrome/test/chromedriver/chrome/chrome_finder.cc.orig

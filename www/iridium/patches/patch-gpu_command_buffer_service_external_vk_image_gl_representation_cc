@@ -1,0 +1,14 @@
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_gl_representation_cc,v 1.1 2019/11/10 13:37:53 robert Exp $
+
+Index: gpu/command_buffer/service/external_vk_image_gl_representation.cc
+--- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig
++++ gpu/command_buffer/service/external_vk_image_gl_representation.cc
+@@ -183,7 +183,7 @@ GLuint ExternalVkImageGlRepresentation::ImportVkSemaph
+ #if defined(OS_FUCHSIA)
+   NOTIMPLEMENTED_LOG_ONCE();
+   return 0;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   if (handle.vk_handle_type() !=
+       VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD_BIT) {
+     DLOG(ERROR) << "Importing semaphore handle of unexpected type:"

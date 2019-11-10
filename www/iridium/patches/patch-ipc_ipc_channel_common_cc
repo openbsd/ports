@@ -1,4 +1,4 @@
-$OpenBSD: patch-ipc_ipc_channel_common_cc,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-ipc_ipc_channel_common_cc,v 1.4 2019/11/10 13:37:53 robert Exp $
 
 Index: ipc/ipc_channel_common.cc
 --- ipc/ipc_channel_common.cc.orig

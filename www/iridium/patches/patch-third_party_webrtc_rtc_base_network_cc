@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_network_cc,v 1.6 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_network_cc,v 1.7 2019/11/10 13:37:57 robert Exp $
 
 Index: third_party/webrtc/rtc_base/network.cc
 --- third_party/webrtc/rtc_base/network.cc.orig
@@ -12,7 +12,7 @@ Index: third_party/webrtc/rtc_base/network.cc
  #include <linux/if.h>
  #include <linux/route.h>
  #elif !defined(__native_client__)
-@@ -762,7 +762,7 @@ bool BasicNetworkManager::CreateNetworks(bool include_
+@@ -765,7 +765,7 @@ bool BasicNetworkManager::CreateNetworks(bool include_
  }
  #endif  // WEBRTC_WIN
  
@@ -21,7 +21,7 @@ Index: third_party/webrtc/rtc_base/network.cc
  bool IsDefaultRoute(const std::string& network_name) {
    FILE* f = fopen("/proc/net/route", "r");
    if (!f) {
-@@ -805,7 +805,7 @@ bool BasicNetworkManager::IsIgnoredNetwork(const Netwo
+@@ -808,7 +808,7 @@ bool BasicNetworkManager::IsIgnoredNetwork(const Netwo
        strncmp(network.name().c_str(), "vboxnet", 7) == 0) {
      return true;
    }

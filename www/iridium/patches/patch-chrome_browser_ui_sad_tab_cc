@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_sad_tab_cc,v 1.2 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_sad_tab_cc,v 1.3 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/ui/sad_tab.cc
 --- chrome/browser/ui/sad_tab.cc.orig
 +++ chrome/browser/ui/sad_tab.cc
-@@ -180,7 +180,7 @@ std::vector<int> SadTab::GetSubMessages() {
+@@ -181,7 +181,7 @@ std::vector<int> SadTab::GetSubMessages() {
        // Only show incognito suggestion if not already in Incognito mode.
        if (!web_contents_->GetBrowserContext()->IsOffTheRecord())
          message_ids.insert(message_ids.begin(), IDS_SAD_TAB_RELOAD_INCOGNITO);

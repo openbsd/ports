@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.6 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.7 2019/11/10 13:37:58 robert Exp $
 
 Index: v8/src/base/platform/platform-openbsd.cc
 --- v8/src/base/platform/platform-openbsd.cc.orig

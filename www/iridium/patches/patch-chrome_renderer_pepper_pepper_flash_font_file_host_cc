@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_cc,v 1.2 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_cc,v 1.3 2019/11/10 13:37:52 robert Exp $
 
 Index: chrome/renderer/pepper/pepper_flash_font_file_host.cc
 --- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig

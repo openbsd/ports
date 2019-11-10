@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.7 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.8 2019/11/10 13:37:57 robert Exp $
 
 Index: third_party/sqlite/BUILD.gn
 --- third_party/sqlite/BUILD.gn.orig
 +++ third_party/sqlite/BUILD.gn
-@@ -251,7 +251,7 @@ config("sqlite_warnings") {
+@@ -262,7 +262,7 @@ config("sqlite_warnings") {
        ]
      }
    }

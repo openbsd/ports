@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_node_node_py,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_node_node_py,v 1.5 2019/11/10 13:37:56 robert Exp $
 --- third_party/node/node.py.orig.port	Thu Apr 27 20:18:34 2017
 +++ third_party/node/node.py	Thu Apr 27 20:19:19 2017
 @@ -13,6 +13,7 @@ def GetBinaryPath():

@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_zygote_host_zygote_host_impl_linux_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-services_service_manager_zygote_host_zygote_host_impl_linux_cc,v 1.3 2019/11/10 13:37:55 robert Exp $
 
 Index: services/service_manager/zygote/host/zygote_host_impl_linux.cc
 --- services/service_manager/zygote/host/zygote_host_impl_linux.cc.orig

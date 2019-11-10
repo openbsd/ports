@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_h,v 1.6 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_h,v 1.7 2019/11/10 13:37:58 robert Exp $
 Index: ui/gl/sync_control_vsync_provider.h
 --- ui/gl/sync_control_vsync_provider.h.orig
 +++ ui/gl/sync_control_vsync_provider.h

@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_features_gni,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-sandbox_features_gni,v 1.5 2019/11/10 13:37:55 robert Exp $
 
 Index: sandbox/features.gni
 --- sandbox/features.gni.orig

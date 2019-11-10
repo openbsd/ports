@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_app_v8_snapshot_overlay_manifest_cc,v 1.1 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_public_app_v8_snapshot_overlay_manifest_cc,v 1.2 2019/11/10 13:37:53 robert Exp $
 
 Index: content/public/app/v8_snapshot_overlay_manifest.cc
 --- content/public/app/v8_snapshot_overlay_manifest.cc.orig

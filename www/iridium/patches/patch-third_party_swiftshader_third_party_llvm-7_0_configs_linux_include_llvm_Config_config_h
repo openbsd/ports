@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_third_party_llvm-7_0_configs_linux_include_llvm_Config_config_h,v 1.1 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_third_party_llvm-7_0_configs_linux_include_llvm_Config_config_h,v 1.2 2019/11/10 13:37:57 robert Exp $
 
 Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h
 --- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig
@@ -9,7 +9,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  #ifndef CONFIG_H
  #define CONFIG_H
  
-@@ -5,13 +7,13 @@
+@@ -5,28 +7,31 @@
  #include "llvm/Config/llvm-config.h"
  
  /* Bug report URL. */
@@ -24,9 +24,12 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
 -/* #undef ENABLE_CRASH_OVERRIDES */
 +#define ENABLE_CRASH_OVERRIDES 1
  
++/* Define to 1 to enable crash memory dumps, and to 0 otherwise. */
++#define LLVM_ENABLE_CRASH_DUMPS 0
++
  /* Define to 1 if you have the `backtrace' function. */
  /* #undef HAVE_BACKTRACE */
-@@ -19,14 +21,14 @@
+ 
  /* #undef BACKTRACE_HEADER */
  
  /* Define to 1 if you have the <CrashReporterClient.h> header file. */
@@ -43,7 +46,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define to 1 if you have the declaration of `FE_ALL_EXCEPT', and to 0 if you
     don't. */
-@@ -50,7 +52,7 @@
+@@ -50,7 +55,7 @@
  #define HAVE_DLOPEN 1
  
  /* Define if dladdr() is available on this platform. */
@@ -52,7 +55,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define to 1 if you have the <errno.h> header file. */
  #define HAVE_ERRNO_H 1
-@@ -89,7 +91,7 @@
+@@ -89,7 +94,7 @@
  #define HAVE_ISATTY 1
  
  /* Define to 1 if you have the `edit' library (-ledit). */
@@ -61,7 +64,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define to 1 if you have the `pfm' library (-lpfm). */
  /* #undef HAVE_LIBPFM */
-@@ -107,13 +109,13 @@
+@@ -107,13 +112,13 @@
  /* #undef HAVE_PTHREAD_SETNAME_NP */
  
  /* Define to 1 if you have the `z' library (-lz). */
@@ -78,7 +81,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define to 1 if you have the <mach/mach.h> header file. */
  /* #undef HAVE_MACH_MACH_H */
-@@ -121,8 +123,8 @@
+@@ -121,8 +126,8 @@
  /* Define to 1 if you have the `mallctl' function. */
  /* #undef HAVE_MALLCTL */
  
@@ -89,7 +92,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define to 1 if you have the <malloc.h> header file. */
  #define HAVE_MALLOC_H 1
-@@ -134,10 +136,10 @@
+@@ -134,10 +139,10 @@
  /* #undef HAVE_MALLOC_ZONE_STATISTICS */
  
  /* Define to 1 if you have the `posix_fallocate' function. */
@@ -102,7 +105,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define to 1 if you have the `pread' function. */
  #define HAVE_PREAD 1
-@@ -164,10 +166,10 @@
+@@ -164,10 +169,10 @@
  #define HAVE_SETENV 1
  
  /* Define to 1 if you have the `sched_getaffinity' function. */
@@ -115,7 +118,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define to 1 if you have the `setrlimit' function. */
  #define HAVE_SETRLIMIT 1
-@@ -185,7 +187,7 @@
+@@ -185,7 +190,7 @@
  #define HAVE_STRERROR_R 1
  
  /* Define to 1 if you have the `sysconf' function. */
@@ -124,16 +127,23 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define to 1 if you have the <sys/ioctl.h> header file. */
  #define HAVE_SYS_IOCTL_H 1
-@@ -206,7 +208,7 @@
+@@ -205,8 +210,14 @@
+ /* Define to 1 if you have the <sys/time.h> header file. */
  #define HAVE_SYS_TIME_H 1
  
++/* Define to 1 if stat struct has st_mtimespec member .*/
++/* #undef HAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC */
++
++/* Define to 1 if stat struct has st_mtim member. */
++#define HAVE_STRUCT_STAT_ST_MTIM_TV_NSEC 1
++
  /* Define to 1 if you have the <sys/types.h> header file. */
 -#define HAVE_SYS_TYPES_H 1
 +/* #undef HAVE_SYS_TYPES_H */
  
  /* Define if the setupterm() function is supported this platform. */
  /* #undef HAVE_TERMINFO */
-@@ -215,16 +217,16 @@
+@@ -215,16 +226,16 @@
  /* #undef HAVE_LIBXAR */
  
  /* Define to 1 if you have the <termios.h> header file. */
@@ -153,7 +163,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Have host's _alloca */
  /* #undef HAVE__ALLOCA */
-@@ -291,24 +293,10 @@
+@@ -291,26 +302,10 @@
  
  /* Target triple LLVM will generate code for by default */
  /* Doesn't use `cmakedefine` because it is allowed to be empty. */
@@ -169,6 +179,8 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
 -#define LLVM_DEFAULT_TARGET_TRIPLE "mipsel-linux-gnu"
 -#elif defined(__mips64)
 -#define LLVM_DEFAULT_TARGET_TRIPLE "mips64el-linux-gnuabi64"
+-#elif defined(__powerpc64__)
+-#define LLVM_DEFAULT_TARGET_TRIPLE "powerpc64le-unknown-linux-gnu"
 -#else
 -#error "unknown architecture"
 -#endif
@@ -180,7 +192,7 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  
  /* Define if overriding target triple is enabled */
  /* #undef LLVM_TARGET_TRIPLE_ENV */
-@@ -326,16 +314,16 @@
+@@ -328,16 +323,16 @@
  #define LTDL_SHLIB_EXT ".so"
  
  /* Define to the address where bug reports for this package should be sent. */
@@ -191,12 +203,12 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
  #define PACKAGE_NAME "LLVM"
  
  /* Define to the full name and version of this package. */
--#define PACKAGE_STRING "LLVM 7.0.0"
-+#define PACKAGE_STRING "LLVM 7.0.1"
+-#define PACKAGE_STRING "LLVM 7.0.1"
++#define PACKAGE_STRING "LLVM 8.0.1"
  
  /* Define to the version of this package. */
--#define PACKAGE_VERSION "7.0.0"
-+#define PACKAGE_VERSION "7.0.1"
+-#define PACKAGE_VERSION "7.0.1"
++#define PACKAGE_VERSION "8.0.1"
  
  /* Define to the vendor of this package. */
  /* #undef PACKAGE_VENDOR */

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.16 2019/05/27 16:11:17 robert Exp $
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.17 2019/11/10 13:37:49 robert Exp $
 
 Index: base/debug/stack_trace_posix.cc
 --- base/debug/stack_trace_posix.cc.orig
@@ -12,7 +12,7 @@ Index: base/debug/stack_trace_posix.cc
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -653,6 +653,9 @@ class SandboxSymbolizeHelper {
+@@ -657,6 +657,9 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -22,7 +22,7 @@ Index: base/debug/stack_trace_posix.cc
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -670,6 +673,7 @@ class SandboxSymbolizeHelper {
+@@ -674,6 +677,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;
@@ -30,7 +30,7 @@ Index: base/debug/stack_trace_posix.cc
    }
  
    // Opens all object files and caches their file descriptors.
-@@ -812,7 +816,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
+@@ -834,7 +838,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
    // NOTE: This code MUST be async-signal safe (it's used by in-process
    // stack dumping signal handler). NO malloc or stdio is allowed here.
  

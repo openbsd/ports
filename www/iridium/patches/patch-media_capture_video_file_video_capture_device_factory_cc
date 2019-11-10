@@ -1,7 +1,8 @@
-$OpenBSD: patch-media_capture_video_file_video_capture_device_factory_cc,v 1.7 2019/04/17 11:48:54 robert Exp $
---- media/capture/video/file_video_capture_device_factory.cc.orig.port	Fri Dec  2 00:02:14 2016
-+++ media/capture/video/file_video_capture_device_factory.cc	Fri Dec  2 17:44:55 2016
-@@ -53,7 +53,7 @@ void FileVideoCaptureDeviceFactory::GetDeviceDescripto
+$OpenBSD: patch-media_capture_video_file_video_capture_device_factory_cc,v 1.8 2019/11/10 13:37:54 robert Exp $
+Index: media/capture/video/file_video_capture_device_factory.cc
+--- media/capture/video/file_video_capture_device_factory.cc.orig
++++ media/capture/video/file_video_capture_device_factory.cc
+@@ -54,7 +54,7 @@ void FileVideoCaptureDeviceFactory::GetDeviceDescripto
  #elif defined(OS_MACOSX)
        command_line_file_path.value(), kFileVideoCaptureDeviceName,
        VideoCaptureApi::MACOSX_AVFOUNDATION

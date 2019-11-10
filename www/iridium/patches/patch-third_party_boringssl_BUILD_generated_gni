@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_boringssl_BUILD_generated_gni,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_boringssl_BUILD_generated_gni,v 1.5 2019/11/10 13:37:56 robert Exp $
 
 Index: third_party/boringssl/BUILD.generated.gni
 --- third_party/boringssl/BUILD.generated.gni.orig
 +++ third_party/boringssl/BUILD.generated.gni
-@@ -165,6 +165,7 @@ crypto_sources = [
+@@ -170,6 +170,7 @@ crypto_sources = [
    "src/crypto/rand_extra/deterministic.c",
    "src/crypto/rand_extra/forkunsafe.c",
    "src/crypto/rand_extra/fuchsia.c",

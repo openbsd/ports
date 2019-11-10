@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.19 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.20 2019/11/10 13:37:51 robert Exp $
 Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 --- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
-@@ -49,7 +49,7 @@
+@@ -47,7 +47,7 @@
  #include "ui/views/window/vector_icons/vector_icons.h"
  #include "ui/views/window/window_shape.h"
  
@@ -11,12 +11,21 @@ Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -356,7 +356,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
- void OpaqueBrowserFrameView::OnMenuButtonClicked(views::MenuButton* source,
+@@ -352,7 +352,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
+ void OpaqueBrowserFrameView::OnMenuButtonClicked(views::Button* source,
                                                   const gfx::Point& point,
                                                   const ui::Event* event) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
                                  views::MenuRunner::HAS_MNEMONICS);
-   menu_runner.RunMenuAt(browser_view()->GetWidget(), window_icon_,
+   menu_runner.RunMenuAt(
+@@ -478,7 +478,7 @@ bool OpaqueBrowserFrameView::EverHasVisibleBackgroundT
+ 
+ OpaqueBrowserFrameView::FrameButtonStyle
+ OpaqueBrowserFrameView::GetFrameButtonStyle() const {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   return FrameButtonStyle::kMdButton;
+ #else
+   return FrameButtonStyle::kImageButton;

@@ -1,0 +1,23 @@
+$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.3 2019/11/10 13:37:52 robert Exp $
+
+Index: components/feature_engagement/public/feature_list.cc
+--- components/feature_engagement/public/feature_list.cc.orig
++++ components/feature_engagement/public/feature_list.cc
+@@ -58,7 +58,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHBadgedTranslateManualTriggerFeature,
+ #endif  // defined(OS_IOS)
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     &kIPHFocusModeFeature,
+     &kIPHGlobalMediaControlsFeature,
+     &kIPHReopenTabFeature,
+@@ -68,7 +68,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHNewTabFeature,
+ #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
+-        // defined(OS_CHROMEOS)
++        // defined(OS_CHROMEOS) || defined(OS_BSD)
+ };
+ }  // namespace
+ 

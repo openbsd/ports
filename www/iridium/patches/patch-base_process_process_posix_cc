@@ -1,23 +1,59 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.15 2019/05/27 16:11:17 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.16 2019/11/10 13:37:49 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
 +++ base/process/process_posix.cc
-@@ -264,7 +264,7 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
-   return Process(handle);
+@@ -380,7 +380,53 @@ bool Process::SetProcessBackgrounded(bool value) {
+ 
+ int Process::GetPriority() const {
+   DCHECK(IsValid());
++// avoid pledge(2) violation
++#if defined(OS_BSD)
++  return 0;
++#else
+   return getpriority(PRIO_PROCESS, process_);
++#endif
++}
++
++Time Process::CreationTime() const {
++#if !defined(OS_BSD)
++  int64_t start_ticks = is_current()
++                            ? internal::ReadProcSelfStatsAndGetFieldAsInt64(
++                                  internal::VM_STARTTIME)
++                            : internal::ReadProcStatsAndGetFieldAsInt64(
++                                  Pid(), internal::VM_STARTTIME);
++  if (!start_ticks)
++    return Time();
++  TimeDelta start_offset = internal::ClockTicksToTimeDelta(start_ticks);
++  Time boot_time = internal::GetBootTime();
++  if (boot_time.is_null())
++    return Time();
++  return Time(boot_time + start_offset);
++#else
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(),
++               sizeof(struct kinfo_proc), 0 };
++  struct kinfo_proc *info = nullptr;
++  size_t info_size;
++  Time ct = Time();
++
++  if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
++    goto out;
++
++  mib[5] = (info_size / sizeof(struct kinfo_proc));
++  if ((info = reinterpret_cast<kinfo_proc*>(malloc(info_size))) == NULL)
++    goto out;
++
++  if (sysctl(mib, base::size(mib), info, &info_size, NULL, 0) < 0)
++    goto out;
++
++  ct = Time::FromTimeT(info->p_ustart_sec);
++
++out:
++  if (info)
++    free(info);
++
++  return ct;
++#endif
  }
  
--#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
-+#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX) && !defined(OS_BSD)
- // static
- bool Process::CanBackgroundProcesses() {
-   return false;
-@@ -359,7 +359,7 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
- 
- void Process::Exited(int exit_code) const {}
- 
--#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
-+#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX) && !defined(OS_BSD)
- bool Process::IsProcessBackgrounded() const {
-   // See SetProcessBackgrounded().
-   DCHECK(IsValid());
+ }  // namespace base

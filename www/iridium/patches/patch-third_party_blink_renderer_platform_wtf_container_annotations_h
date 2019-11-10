@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_wtf_container_annotations_h,v 1.1 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_wtf_container_annotations_h,v 1.2 2019/11/10 13:37:56 robert Exp $
 
 Index: third_party/blink/renderer/platform/wtf/container_annotations.h
 --- third_party/blink/renderer/platform/wtf/container_annotations.h.orig

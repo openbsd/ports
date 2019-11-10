@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_shell_app_shell_main_delegate_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-extensions_shell_app_shell_main_delegate_cc,v 1.3 2019/11/10 13:37:53 robert Exp $
 
 Index: extensions/shell/app/shell_main_delegate.cc
 --- extensions/shell/app/shell_main_delegate.cc.orig

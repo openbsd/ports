@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ssl_ssl_error_controller_client_cc,v 1.3 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ssl_ssl_error_controller_client_cc,v 1.4 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/ssl/ssl_error_controller_client.cc
 --- chrome/browser/ssl/ssl_error_controller_client.cc.orig
 +++ chrome/browser/ssl/ssl_error_controller_client.cc
-@@ -78,7 +78,7 @@ void LaunchDateAndTimeSettingsImpl() {
+@@ -79,7 +79,7 @@ void LaunchDateAndTimeSettingsImpl() {
  #if defined(OS_ANDROID)
    chrome::android::OpenDateAndTimeSettings();
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ssl/ssl_error_controller_client.cc
    struct ClockCommand {
      const char* const pathname;
      const char* const argument;
-@@ -219,7 +219,7 @@ void SSLErrorControllerClient::Proceed() {
+@@ -205,7 +205,7 @@ void SSLErrorControllerClient::Proceed() {
  
  bool SSLErrorControllerClient::CanLaunchDateAndTimeSettings() {
  #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_MACOSX) || \

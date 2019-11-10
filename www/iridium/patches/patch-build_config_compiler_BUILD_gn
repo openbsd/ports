@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.14 2019/05/27 16:11:17 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.15 2019/11/10 13:37:50 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -53,7 +53,7 @@ declare_args() {
+@@ -57,7 +57,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,34 +12,27 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -275,7 +275,7 @@ config("compiler") {
+@@ -288,7 +288,7 @@ config("compiler") {
+ 
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
-         !(is_android && use_order_profiling) && !is_mac && !is_ios &&
--        current_os != "aix") {
-+        current_os != "aix" && !is_openbsd) {
+-        !is_mac && !is_ios && current_os != "aix") {
++        !is_mac && !is_ios && current_os != "aix" && !is_openbsd) {
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
-       # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
-       # crbug.com/485542
-@@ -339,7 +339,7 @@ config("compiler") {
-       }
+       ldflags += [ "-Wl,--fatal-warnings" ]
      }
- 
--    if (is_official_build || force_local_build_id) {
-+    if ((is_official_build || force_local_build_id) && !is_openbsd) {
-       # Explicitly pass --build-id to ld. Compilers used to always pass this
-       # implicitly but don't any more (in particular clang when built without
-       # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -387,18 +387,13 @@ config("compiler") {
+@@ -373,6 +373,7 @@ config("compiler") {
      }
  
      ldflags += [
 +      "-Wl,-z,wxneeded",
        "-Wl,-z,noexecstack",
-       "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
--
+@@ -381,13 +382,8 @@ config("compiler") {
+       ldflags += [ "-Wl,-z,now" ]
+     }
+ 
 -    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
 -    # the executable they are loaded into, so they are unresolved at link-time.
 -    if (!using_sanitizer) {
@@ -52,16 +45,25 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -502,7 +497,7 @@ config("compiler") {
+@@ -483,7 +479,7 @@ config("compiler") {
      }
    }
  
 -  if (is_clang && !is_nacl && !use_xcode_clang) {
 +  if (is_clang && !is_nacl && !use_xcode_clang && !is_openbsd) {
-     cflags += [
-       # TODO(hans): Remove this once Clang generates better optimized debug info
-       # by default. https://crbug.com/765793
-@@ -809,7 +804,7 @@ config("compiler_cpu_abi") {
+     cflags += [ "-fcrash-diagnostics-dir=" +
+                 rebase_path("//tools/clang/crashreports", root_build_dir) ]
+ 
+@@ -739,7 +735,7 @@ config("compiler_cpu_abi") {
+         ]
+       }
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_nacl) {
++      if (is_clang && !is_android && !is_nacl && !is_openbsd) {
+         cflags += [ "--target=arm-linux-gnueabihf" ]
+         ldflags += [ "--target=arm-linux-gnueabihf" ]
+       }
+@@ -753,7 +749,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -70,7 +72,40 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1694,7 +1689,7 @@ config("thin_archive") {
+@@ -1104,7 +1100,7 @@ config("compiler_deterministic") {
+       "-Xclang",
+       ".",
+     ]
+-    if (!is_win) {
++    if (!is_win && !is_openbsd) {
+       # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
+       asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
+     }
+@@ -1500,23 +1496,6 @@ config("default_warnings") {
+           # Ignore warnings about MSVC optimization pragmas.
+           # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
+           "-Wno-ignored-pragma-optimize",
+-
+-          # TODO(https://crbug.com/989932): Evaluate and possibly enable.
+-          "-Wno-implicit-int-float-conversion",
+-
+-          # TODO(https://crbug.com/995200): Clean up and enable.
+-          "-Wno-xor-used-as-pow",
+-
+-          # TODO(https://crbug.com/999871): Decide if we want to clean up the
+-          # codebase or just disable this.  Doesn't seem super useful, but
+-          # also fires in only 4 files.
+-          "-Wno-c99-designator",
+-
+-          # This is a side effect of -Wc99-designator; easier to clean up.
+-          "-Wno-reorder-init-list",
+-
+-          # TODO(https://crbug.com/999886): Clean up, enable.
+-          "-Wno-final-dtor-non-final-class",
+         ]
+         cflags_c += [
+           # TODO(https://crbug.com/995993): Clean up and enable.
+@@ -1722,7 +1701,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -79,7 +114,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2163,21 +2158,21 @@ config("afdo_optimize_size") {
+@@ -2174,21 +2153,6 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -98,30 +133,15 @@ Index: build/config/compiler/BUILD.gn
 -      auto_profile_path,
 -    ]
 -  }
-+#  if (is_clang) {
-+#    if (_clang_sample_profile != "") {
-+#      rebased_clang_sample_profile =
-+#          rebase_path(_clang_sample_profile, root_build_dir)
-+#      cflags = [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
-+#      inputs = [
-+#        _clang_sample_profile,
-+#      ]
-+#    }
-+#  } else if (auto_profile_path != "" && is_a_target_toolchain) {
-+#    cflags = [ "-fauto-profile=${auto_profile_path}" ]
-+#    inputs = [
-+#      auto_profile_path,
-+#    ]
-+#  }
  }
  
  # Symbols ----------------------------------------------------------------------
-@@ -2278,7 +2273,7 @@ config("symbols") {
-       # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
-       # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
-       if (!is_nacl || is_clang) {
--        cflags += [ "-g2" ]
-+        cflags += [ "-g0" ]
-       }
+@@ -2292,7 +2256,7 @@ config("symbols") {
+     # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
+     # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
+     if (!is_nacl || is_clang) {
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
      }
+ 
      if (use_debug_fission && !is_nacl && !is_android) {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.3 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.4 2019/11/10 13:37:57 robert Exp $
 
 Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
 --- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig
@@ -13,9 +13,9 @@ Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
  #include <stddef.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
-@@ -18,11 +20,7 @@
- #include "base/trace_event/trace_event.h"
+@@ -24,11 +26,7 @@
  #include "build/build_config.h"
+ #include "ui/gfx/switches.h"
  
 -#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 11, 0)
 -#include <linux/dma-buf.h>

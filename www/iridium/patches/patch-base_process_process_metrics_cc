@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_cc,v 1.3 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_cc,v 1.4 2019/11/10 13:37:49 robert Exp $
 
 Index: base/process/process_metrics.cc
 --- base/process/process_metrics.cc.orig
@@ -15,7 +15,7 @@ Index: base/process/process_metrics.cc
 @@ -75,7 +75,7 @@ std::unique_ptr<Value> SystemMetrics::ToValue() const 
    std::unique_ptr<DictionaryValue> res(new DictionaryValue());
  
-   res->SetInteger("committed_memory", static_cast<int>(committed_memory_));
+   res->SetIntKey("committed_memory", static_cast<int>(committed_memory_));
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    std::unique_ptr<DictionaryValue> meminfo = memory_info_.ToValue();

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.13 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.14 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/ui/views/accelerator_table.cc
 --- chrome/browser/ui/views/accelerator_table.cc.orig
 +++ chrome/browser/ui/views/accelerator_table.cc
-@@ -50,7 +50,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -51,7 +51,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
      {ui::VKEY_9, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_LAST_TAB},
      {ui::VKEY_NUMPAD9, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_LAST_TAB},
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/accelerator_table.cc
      {ui::VKEY_9, ui::EF_ALT_DOWN, IDC_SELECT_LAST_TAB},
      {ui::VKEY_NUMPAD9, ui::EF_ALT_DOWN, IDC_SELECT_LAST_TAB},
      {ui::VKEY_NEXT, ui::EF_CONTROL_DOWN | ui::EF_SHIFT_DOWN, IDC_MOVE_TAB_NEXT},
-@@ -80,7 +80,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -81,7 +81,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_NUMPAD7, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_6},
      {ui::VKEY_8, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_7},
      {ui::VKEY_NUMPAD8, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_7},
@@ -21,8 +21,8 @@ Index: chrome/browser/ui/views/accelerator_table.cc
      {ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1},
-@@ -122,7 +122,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
-     {ui::VKEY_F11, ui::EF_NONE, IDC_FULLSCREEN},
+@@ -125,7 +125,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+      IDC_SHOW_AVATAR_MENU},
  
    // Platform-specific key maps.
 -#if defined(OS_LINUX)

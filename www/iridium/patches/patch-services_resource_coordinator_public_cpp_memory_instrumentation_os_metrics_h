@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.6 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.7 2019/11/10 13:37:55 robert Exp $
 
 Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
 --- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
-@@ -26,7 +26,7 @@ class COMPONENT_EXPORT(
+@@ -28,7 +28,7 @@ class COMPONENT_EXPORT(
                                      mojom::RawOSMemDump*);
    static std::vector<mojom::VmRegionPtr> GetProcessMemoryMaps(base::ProcessId);
  
@@ -12,3 +12,12 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
    static void SetProcSmapsForTesting(FILE*);
  #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
  
+@@ -44,7 +44,7 @@ class COMPONENT_EXPORT(
+   static std::vector<mojom::VmRegionPtr> GetProcessModules(base::ProcessId);
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   // Provides information on the dump state of resident pages.
+   enum class MappedAndResidentPagesDumpState {
+     // Access to /proc/<pid>/pagemap can be denied for android devices running

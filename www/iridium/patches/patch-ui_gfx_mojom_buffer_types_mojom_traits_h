@@ -1,0 +1,32 @@
+$OpenBSD: patch-ui_gfx_mojom_buffer_types_mojom_traits_h,v 1.1 2019/11/10 13:37:57 robert Exp $
+
+Index: ui/gfx/mojom/buffer_types_mojom_traits.h
+--- ui/gfx/mojom/buffer_types_mojom_traits.h.orig
++++ ui/gfx/mojom/buffer_types_mojom_traits.h
+@@ -191,7 +191,7 @@ struct StructTraits<gfx::mojom::GpuMemoryBufferIdDataV
+   }
+ };
+ 
+-#if defined(OS_LINUX) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+ template <>
+ struct StructTraits<gfx::mojom::NativePixmapPlaneDataView,
+                     gfx::NativePixmapPlane> {
+@@ -217,7 +217,7 @@ struct StructTraits<gfx::mojom::NativePixmapHandleData
+     return pixmap_handle.planes;
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   static uint64_t modifier(const gfx::NativePixmapHandle& pixmap_handle) {
+     return pixmap_handle.modifier;
+   }
+@@ -241,7 +241,7 @@ struct StructTraits<gfx::mojom::NativePixmapHandleData
+   static bool Read(gfx::mojom::NativePixmapHandleDataView data,
+                    gfx::NativePixmapHandle* out);
+ };
+-#endif  // defined(OS_LINUX) || defined(USE_OZONE)
++#endif  // defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+ 
+ template <>
+ struct StructTraits<gfx::mojom::GpuMemoryBufferHandleDataView,

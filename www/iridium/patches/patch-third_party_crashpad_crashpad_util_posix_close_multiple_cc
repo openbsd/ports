@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_close_multiple_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_close_multiple_cc,v 1.3 2019/11/10 13:37:56 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/posix/close_multiple.cc
 --- third_party/crashpad/crashpad/util/posix/close_multiple.cc.orig

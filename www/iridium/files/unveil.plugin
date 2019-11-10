@@ -1,2 +1,2 @@
-# $OpenBSD: unveil.plugin,v 1.1 2018/08/11 16:22:42 robert Exp $
+# $OpenBSD: unveil.plugin,v 1.2 2019/11/10 13:37:49 robert Exp $
 /dev/null r

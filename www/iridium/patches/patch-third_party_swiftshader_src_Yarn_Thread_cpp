@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_swiftshader_src_Yarn_Thread_cpp,v 1.1 2019/11/10 13:37:57 robert Exp $
+
+Index: third_party/swiftshader/src/Yarn/Thread.cpp
+--- third_party/swiftshader/src/Yarn/Thread.cpp.orig
++++ third_party/swiftshader/src/Yarn/Thread.cpp
+@@ -88,7 +88,7 @@ void Thread::setName(const char* fmt, ...)
+ 
+ #if defined(__APPLE__)
+     pthread_setname_np(name);
+-#elif !defined(__Fuchsia__)
++#elif !defined(__Fuchsia__) && !defined(__OpenBSD__)
+     pthread_setname_np(pthread_self(), name);
+ #endif
+ 

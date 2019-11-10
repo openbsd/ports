@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.8 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.9 2019/11/10 13:37:50 robert Exp $
 
 Index: base/trace_event/malloc_dump_provider.cc
 --- base/trace_event/malloc_dump_provider.cc.orig

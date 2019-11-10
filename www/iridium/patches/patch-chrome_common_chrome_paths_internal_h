@@ -1,6 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_paths_internal_h,v 1.7 2019/04/17 11:48:53 robert Exp $
---- chrome/common/chrome_paths_internal.h.orig.port	Wed Apr 19 21:06:30 2017
-+++ chrome/common/chrome_paths_internal.h	Thu Apr 27 19:56:00 2017
+$OpenBSD: patch-chrome_common_chrome_paths_internal_h,v 1.8 2019/11/10 13:37:52 robert Exp $
+Index: chrome/common/chrome_paths_internal.h
+--- chrome/common/chrome_paths_internal.h.orig
++++ chrome/common/chrome_paths_internal.h
 @@ -45,7 +45,7 @@ void GetUserCacheDirectory(const base::FilePath& profi
  // Get the path to the user's documents directory.
  bool GetUserDocumentsDirectory(base::FilePath* result);

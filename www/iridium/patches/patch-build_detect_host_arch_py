@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_detect_host_arch_py,v 1.2 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-build_detect_host_arch_py,v 1.3 2019/11/10 13:37:50 robert Exp $
 
 Index: build/detect_host_arch.py
 --- build/detect_host_arch.py.orig
 +++ build/detect_host_arch.py
-@@ -19,6 +19,8 @@ def HostArch():
+@@ -21,6 +21,8 @@ def HostArch():
      host_arch = 'ia32'
    elif host_arch in ['x86_64', 'amd64']:
      host_arch = 'x64'

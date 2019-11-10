@@ -1,17 +1,17 @@
-$OpenBSD: patch-extensions_common_feature_switch_cc,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-extensions_common_feature_switch_cc,v 1.4 2019/11/10 13:37:53 robert Exp $
 
 Index: extensions/common/feature_switch.cc
 --- extensions/common/feature_switch.cc.orig
 +++ extensions/common/feature_switch.cc
-@@ -44,11 +44,7 @@ class CommonSwitches {
+@@ -42,11 +42,7 @@ class CommonSwitches {
                           FeatureSwitch::DEFAULT_ENABLED),
          load_media_router_component_extension(
              kLoadMediaRouterComponentExtensionFlag,
--#if defined(GOOGLE_CHROME_BUILD)
+-#if BUILDFLAG(GOOGLE_CHROME_BRANDING)
              FeatureSwitch::DEFAULT_ENABLED)
 -#else
 -            FeatureSwitch::DEFAULT_DISABLED)
--#endif  // defined(GOOGLE_CHROME_BUILD)
+-#endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
    {
    }
  

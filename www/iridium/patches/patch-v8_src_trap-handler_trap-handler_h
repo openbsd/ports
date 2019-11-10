@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_trap-handler_trap-handler_h,v 1.1 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-v8_src_trap-handler_trap-handler_h,v 1.2 2019/11/10 13:37:58 robert Exp $
 
 Index: v8/src/trap-handler/trap-handler.h
 --- v8/src/trap-handler/trap-handler.h.orig

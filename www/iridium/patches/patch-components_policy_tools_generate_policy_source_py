@@ -1,23 +1,22 @@
-$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.12 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.13 2019/11/10 13:37:52 robert Exp $
 
 Index: components/policy/tools/generate_policy_source.py
 --- components/policy/tools/generate_policy_source.py.orig
 +++ components/policy/tools/generate_policy_source.py
-@@ -84,7 +84,7 @@ class PolicyDetails:
-         raise RuntimeError(
-             'is_device_only is only allowed for Chrome OS: "%s"' % p)
-       if platform not in [
--          'chrome_frame', 'chrome_os', 'android', 'webview_android',
-+          'chrome_frame', 'chrome_os', 'android', 'webview_android', 'chrome.openbsd',
-           'chrome.win', 'chrome.linux', 'chrome.mac', 'chrome.fuchsia',
-           'chrome.*'
-       ]:
-@@ -105,7 +105,7 @@ class PolicyDetails:
+@@ -90,6 +90,7 @@ class PolicyDetails:
+           'webview_android',
+           'chrome.win',
+           'chrome.linux',
++          'chrome.openbsd',
+           'chrome.mac',
+           'chrome.fuchsia',
+           'chrome.*',
+@@ -114,7 +115,7 @@ class PolicyDetails:
        if platform.startswith('chrome.'):
          platform_sub = platform[7:]
          if platform_sub == '*':
 -          self.platforms.extend(['win', 'mac', 'linux', 'fuchsia'])
 +          self.platforms.extend(['win', 'mac', 'linux', 'fuchsia', 'openbsd'])
+         elif platform_sub == 'win7':
+           self.platforms.append('win')
          else:
-           self.platforms.append(platform_sub)
-       else:

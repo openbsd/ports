@@ -1,0 +1,23 @@
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.3 2019/11/10 13:37:52 robert Exp $
+
+Index: components/feature_engagement/public/feature_constants.cc
+--- components/feature_engagement/public/feature_constants.cc.orig
++++ components/feature_engagement/public/feature_constants.cc
+@@ -15,7 +15,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
+                                      base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ const base::Feature kIPHFocusModeFeature{"IPH_FocusMode",
+                                          base::FEATURE_DISABLED_BY_DEFAULT};
+ const base::Feature kIPHGlobalMediaControlsFeature{
+@@ -32,7 +32,7 @@ const base::Feature kIPHNewTabFeature{"IPH_NewTab",
+                                       base::FEATURE_DISABLED_BY_DEFAULT};
+ #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
+-        // defined(OS_CHROMEOS)
++        // defined(OS_CHROMEOS) || defined(OS_BSD)
+ 
+ #if defined(OS_ANDROID)
+ const base::Feature kIPHDataSaverDetailFeature{

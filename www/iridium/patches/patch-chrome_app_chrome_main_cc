@@ -1,21 +1,21 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.13 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.14 2019/11/10 13:37:50 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
 +++ chrome/app/chrome_main.cc
-@@ -50,6 +50,10 @@ int ChromeMain(int argc, const char** argv);
+@@ -52,6 +52,10 @@ int ChromeMain(int argc, const char** argv);
  #if !defined(CHROME_MULTIPLE_DLL_CHILD)
  static void trace_url_request(const std::string &caller, const GURL &url)
  {
-+        base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+        if (!command_line->HasSwitch(switches::kTrk))
-+                return;
++	base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++	if (!command_line->HasSwitch(switches::kTrk))
++		return;
 +
  	iridium::log_url_request(caller, url);
  	if (url.scheme() != url::kTraceScheme)
  		/* Do not show infobar for non-trk URLs */
-@@ -110,7 +114,7 @@ int ChromeMain(int argc, const char** argv) {
- #endif
+@@ -118,7 +122,7 @@ int ChromeMain(int argc, const char** argv) {
+   MainThreadStackSamplingProfiler scoped_sampling_profiler;
  
    // Chrome-specific process modes.
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)

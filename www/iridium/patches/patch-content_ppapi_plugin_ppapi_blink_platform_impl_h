@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.7 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.8 2019/11/10 13:37:53 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
 --- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig
@@ -12,8 +12,8 @@ Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -42,11 +42,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
-                          bool sync_dir) override;
+@@ -36,11 +36,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+   blink::WebThemeEngine* ThemeEngine() override;
  
   private:
 -#if defined(OS_LINUX) || defined(OS_MACOSX)

@@ -1,0 +1,21 @@
+# $OpenBSD: unveil.utility_network,v 1.1 2019/11/10 13:37:49 robert Exp $
+
+# needed for iridium
+/etc/chromium r
+
+# needed for iridium
+/etc/iridium r
+
+# needed for dbus
+/etc/machine-id r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+# misc. files and libraries
+/usr/local/lib r
+
+~/.pki rwc
+
+~/.cache/iridium rwc
+~/.config/iridium rwc

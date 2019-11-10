@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.7 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.8 2019/11/10 13:37:54 robert Exp $
 Index: media/capture/video/linux/v4l2_capture_delegate.cc
 --- media/capture/video/linux/v4l2_capture_delegate.cc.orig
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
@@ -26,3 +26,21 @@ Index: media/capture/video/linux/v4l2_capture_delegate.cc
  
  // TODO(aleksandar.stojiljkovic): Wrap this with kernel version check once the
  // format is introduced to kernel.
+@@ -637,7 +639,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
+ 
+ V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
+ 
+-bool V4L2CaptureDelegate::RunIoctl(int request, void* argp) {
++bool V4L2CaptureDelegate::RunIoctl(unsigned int request, void* argp) {
+   int num_retries = 0;
+   for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
+        ++num_retries) {
+@@ -647,7 +649,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+   return num_retries != kMaxIOCtrlRetries;
+ }
+ 
+-int V4L2CaptureDelegate::DoIoctl(int request, void* argp) {
++int V4L2CaptureDelegate::DoIoctl(unsigned int request, void* argp) {
+   return HANDLE_EINTR(v4l2_->ioctl(device_fd_.get(), request, argp));
+ }
+ 

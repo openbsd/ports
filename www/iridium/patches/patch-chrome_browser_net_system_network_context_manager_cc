@@ -1,20 +1,47 @@
-$OpenBSD: patch-chrome_browser_net_system_network_context_manager_cc,v 1.3 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_net_system_network_context_manager_cc,v 1.4 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/net/system_network_context_manager.cc
 --- chrome/browser/net/system_network_context_manager.cc.orig
 +++ chrome/browser/net/system_network_context_manager.cc
-@@ -69,7 +69,7 @@
+@@ -78,7 +78,7 @@
  #include "chrome/browser/chromeos/policy/browser_policy_connector_chromeos.h"
  #endif  // defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "chrome/common/chrome_paths_internal.h"
- #include "chrome/common/chrome_switches.h"
  #include "chrome/grit/chromium_strings.h"
-@@ -519,7 +519,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
-   content::GetNetworkService()->ConfigureStubHostResolver(
-       stub_resolver_enabled, std::move(dns_over_https_servers));
+ #include "ui/base/l10n/l10n_util.h"
+@@ -206,7 +206,7 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
+   auth_dynamic_params->enable_negotiate_port =
+       local_state->GetBoolean(prefs::kEnableAuthNegotiatePort);
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   auth_dynamic_params->delegate_by_kdc_policy =
+       local_state->GetBoolean(prefs::kAuthNegotiateDelegateByKdcPolicy);
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
+@@ -457,7 +457,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+   pref_change_registrar_.Add(prefs::kEnableAuthNegotiatePort,
+                              auth_pref_callback);
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
+                              auth_pref_callback);
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
+@@ -509,7 +509,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+   registry->RegisterStringPref(prefs::kAuthServerWhitelist, std::string());
+   registry->RegisterStringPref(prefs::kAuthNegotiateDelegateWhitelist,
+                                std::string());
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
+                                 false);
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
+@@ -620,7 +620,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+       insecure_stub_resolver_enabled, secure_dns_mode,
+       std::move(dns_over_https_servers));
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_ui_ui_features_h,v 1.1 2019/11/10 13:37:51 robert Exp $
+
+Index: chrome/browser/ui/ui_features.h
+--- chrome/browser/ui/ui_features.h.orig
++++ chrome/browser/ui/ui_features.h
+@@ -46,7 +46,7 @@ extern const base::Feature kWebFooterExperiment;
+ 
+ extern const base::Feature kWebUITabStrip;
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ extern const base::Feature kEnableDbusAndX11StatusIcons;
+ #endif
+ 

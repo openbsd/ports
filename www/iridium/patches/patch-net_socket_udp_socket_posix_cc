@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.8 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.9 2019/11/10 13:37:54 robert Exp $
 
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig
 +++ net/socket/udp_socket_posix.cc
-@@ -68,7 +68,7 @@ const int kActivityMonitorMinimumSamplesForThroughputE
+@@ -69,7 +69,7 @@ const int kActivityMonitorMinimumSamplesForThroughputE
  const base::TimeDelta kActivityMonitorMsThreshold =
      base::TimeDelta::FromMilliseconds(100);
  
@@ -39,7 +39,7 @@ Index: net/socket/udp_socket_posix.cc
    rv = setsockopt(socket_, SOL_SOCKET, SO_REUSEPORT, &value, sizeof(value));
    if (rv != 0)
      return MapSystemError(errno);
-@@ -937,7 +940,7 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -935,7 +938,7 @@ int UDPSocketPosix::SetMulticastOptions() {
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -48,7 +48,7 @@ Index: net/socket/udp_socket_posix.cc
          ip_mreq mreq = {};
          int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                              &mreq.imr_interface.s_addr);
-@@ -949,7 +952,12 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -947,7 +950,12 @@ int UDPSocketPosix::SetMulticastOptions() {
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
  #endif  //  !defined(OS_MACOSX)
          int rv = setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF,
@@ -61,7 +61,7 @@ Index: net/socket/udp_socket_posix.cc
          if (rv)
            return MapSystemError(errno);
          break;
-@@ -1011,7 +1019,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
+@@ -1009,7 +1017,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  
@@ -70,7 +70,7 @@ Index: net/socket/udp_socket_posix.cc
        ip_mreq mreq = {};
        int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                            &mreq.imr_interface.s_addr);
-@@ -1059,9 +1067,17 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
+@@ -1057,9 +1065,17 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
      case IPAddress::kIPv4AddressSize: {
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;

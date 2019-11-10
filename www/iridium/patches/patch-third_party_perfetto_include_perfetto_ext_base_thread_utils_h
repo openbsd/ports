@@ -1,0 +1,17 @@
+$OpenBSD: patch-third_party_perfetto_include_perfetto_ext_base_thread_utils_h,v 1.1 2019/11/10 13:37:56 robert Exp $
+
+Index: third_party/perfetto/include/perfetto/ext/base/thread_utils.h
+--- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig
++++ third_party/perfetto/include/perfetto/ext/base/thread_utils.h
+@@ -42,6 +42,11 @@ using PlatformThreadID = pid_t;
+ inline PlatformThreadID GetThreadId() {
+   return gettid();
+ }
++#elif PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
++using PlatformThreadID = pid_t;
++inline PlatformThreadID GetThreadId() {
++  return reinterpret_cast<int64_t>(pthread_self());
++}
+ #elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX)
+ using PlatformThreadID = pid_t;
+ inline PlatformThreadID GetThreadId() {

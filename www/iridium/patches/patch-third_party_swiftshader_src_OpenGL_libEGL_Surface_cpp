@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Surface_cpp,v 1.5 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Surface_cpp,v 1.6 2019/11/10 13:37:57 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp.orig
 +++ third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp
-@@ -352,7 +352,7 @@ bool WindowSurface::checkForResize()
+@@ -362,7 +362,7 @@ bool WindowSurface::checkForResize()
  
  		int windowWidth = windowAttributes.width;
  		int windowHeight = windowAttributes.height;

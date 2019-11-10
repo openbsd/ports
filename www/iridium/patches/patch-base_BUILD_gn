@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.12 2019/05/27 16:11:17 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.13 2019/11/10 13:37:49 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -1185,11 +1185,16 @@ jumbo_component("base") {
+@@ -1266,11 +1266,16 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -21,7 +21,7 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1211,7 +1216,7 @@ jumbo_component("base") {
+@@ -1292,7 +1297,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -30,7 +30,7 @@ Index: base/BUILD.gn
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1751,6 +1756,28 @@ jumbo_component("base") {
+@@ -1893,6 +1898,29 @@ jumbo_component("base") {
      }
    }
  
@@ -39,6 +39,7 @@ Index: base/BUILD.gn
 +      "files/file_path_watcher_linux.cc",
 +      "files/file_util_linux.cc",
 +      "process/memory_linux.cc",
++      "process/process_linux.cc",
 +      "system/sys_info_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
@@ -59,12 +60,12 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2837,6 +2864,8 @@ test("base_unittests") {
-       # data += [ "$root_out_dir/base_unittests.dSYM/" ]
+@@ -2357,6 +2385,8 @@ if (is_win || is_mac) {
+       ]
      }
    }
 +
 +  libs = [ "execinfo" ]
  }
  
- action("build_date") {
+ source_set("base_stack_sampling_profiler_test_util") {

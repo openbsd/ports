@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.4 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.5 2019/11/10 13:37:57 robert Exp $
 
 Index: ui/gfx/ipc/gfx_param_traits_macros.h
 --- ui/gfx/ipc/gfx_param_traits_macros.h.orig
@@ -16,17 +16,32 @@ Index: ui/gfx/ipc/gfx_param_traits_macros.h
    IPC_STRUCT_TRAITS_MEMBER(region)
    IPC_STRUCT_TRAITS_MEMBER(offset)
    IPC_STRUCT_TRAITS_MEMBER(stride)
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
    IPC_STRUCT_TRAITS_MEMBER(native_pixmap_handle)
  #elif defined(OS_MACOSX)
    IPC_STRUCT_TRAITS_MEMBER(mach_port)
-@@ -66,7 +66,7 @@ IPC_STRUCT_TRAITS_BEGIN(gfx::GpuMemoryBufferId)
+@@ -66,12 +66,12 @@ IPC_STRUCT_TRAITS_BEGIN(gfx::GpuMemoryBufferId)
    IPC_STRUCT_TRAITS_MEMBER(id)
  IPC_STRUCT_TRAITS_END()
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
  IPC_STRUCT_TRAITS_BEGIN(gfx::NativePixmapPlane)
    IPC_STRUCT_TRAITS_MEMBER(stride)
    IPC_STRUCT_TRAITS_MEMBER(offset)
+   IPC_STRUCT_TRAITS_MEMBER(size)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   IPC_STRUCT_TRAITS_MEMBER(fd)
+ #elif defined(OS_FUCHSIA)
+   IPC_STRUCT_TRAITS_MEMBER(vmo)
+@@ -80,7 +80,7 @@ IPC_STRUCT_TRAITS_END()
+ 
+ IPC_STRUCT_TRAITS_BEGIN(gfx::NativePixmapHandle)
+   IPC_STRUCT_TRAITS_MEMBER(planes)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   IPC_STRUCT_TRAITS_MEMBER(modifier)
+ #endif
+ #if defined(OS_FUCHSIA)

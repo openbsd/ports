@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_perfetto_include_perfetto_base_build_config_h,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_perfetto_include_perfetto_base_build_config_h,v 1.3 2019/11/10 13:37:56 robert Exp $
 
 Index: third_party/perfetto/include/perfetto/base/build_config.h
 --- third_party/perfetto/include/perfetto/base/build_config.h.orig
 +++ third_party/perfetto/include/perfetto/base/build_config.h
-@@ -28,6 +28,7 @@
+@@ -40,6 +40,7 @@
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_ANDROID() 1
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_MACOSX() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() 0
@@ -11,7 +11,7 @@ Index: third_party/perfetto/include/perfetto/base/build_config.h
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WIN() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WASM() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_FUCHSIA() 0
-@@ -35,13 +36,15 @@
+@@ -47,13 +48,15 @@
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_ANDROID() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_MACOSX() 1
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() 0
@@ -28,7 +28,7 @@ Index: third_party/perfetto/include/perfetto/base/build_config.h
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WIN() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WASM() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_FUCHSIA() 0
-@@ -49,6 +52,7 @@
+@@ -61,6 +64,7 @@
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_ANDROID() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_MACOSX() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() 0
@@ -36,7 +36,7 @@ Index: third_party/perfetto/include/perfetto/base/build_config.h
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WIN() 1
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WASM() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_FUCHSIA() 0
-@@ -56,6 +60,7 @@
+@@ -68,6 +72,7 @@
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_ANDROID() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_MACOSX() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() 0
@@ -44,7 +44,7 @@ Index: third_party/perfetto/include/perfetto/base/build_config.h
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WIN() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WASM() 1
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_FUCHSIA() 0
-@@ -63,6 +68,7 @@
+@@ -75,6 +80,7 @@
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_ANDROID() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_MACOSX() 0
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() 0

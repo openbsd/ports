@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_proxy_resolution_proxy_config_service_linux_cc,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-net_proxy_resolution_proxy_config_service_linux_cc,v 1.5 2019/11/10 13:37:54 robert Exp $
 
 Index: net/proxy_resolution/proxy_config_service_linux.cc
 --- net/proxy_resolution/proxy_config_service_linux.cc.orig

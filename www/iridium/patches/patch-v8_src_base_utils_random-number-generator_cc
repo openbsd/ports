@@ -1,14 +1,14 @@
-$OpenBSD: patch-v8_src_base_utils_random-number-generator_cc,v 1.2 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-v8_src_base_utils_random-number-generator_cc,v 1.3 2019/11/10 13:37:58 robert Exp $
 
 Index: v8/src/base/utils/random-number-generator.cc
 --- v8/src/base/utils/random-number-generator.cc.orig
 +++ v8/src/base/utils/random-number-generator.cc
-@@ -51,6 +51,8 @@ RandomNumberGenerator::RandomNumberGenerator() {
+@@ -51,7 +51,7 @@ RandomNumberGenerator::RandomNumberGenerator() {
    result = rand_s(&second_half);
    DCHECK_EQ(0, result);
    SetSeed((static_cast<int64_t>(first_half) << 32) + second_half);
-+#elif V8_OS_OPENBSD
-+  SetSeed(arc4random());
- #else
-   // Gather entropy from /dev/urandom if available.
-   FILE* fp = fopen("/dev/urandom", "rb");
+-#elif V8_OS_MACOSX
++#elif defined(V8_OS_MACOSX) || defined(V8_OS_OPENBSD)
+   // Despite its prefix suggests it is not RC4 algorithm anymore.
+   // It always succeeds while having decent performance and
+   // no file descriptor involved.

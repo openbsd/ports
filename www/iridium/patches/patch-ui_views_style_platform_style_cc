@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.8 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.9 2019/11/10 13:37:58 robert Exp $
 Index: ui/views/style/platform_style.cc
 --- ui/views/style/platform_style.cc.orig
 +++ ui/views/style/platform_style.cc
-@@ -18,7 +18,7 @@
+@@ -17,7 +17,7 @@
  
  #if defined(OS_CHROMEOS)
  #include "ui/views/controls/scrollbar/overlay_scroll_bar.h"

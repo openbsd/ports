@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_skia_src_ports_SkOSFile_stdio_cpp,v 1.8 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_skia_src_ports_SkOSFile_stdio_cpp,v 1.9 2019/11/10 13:37:56 robert Exp $
 Index: third_party/skia/src/ports/SkOSFile_stdio.cpp
 --- third_party/skia/src/ports/SkOSFile_stdio.cpp.orig
 +++ third_party/skia/src/ports/SkOSFile_stdio.cpp

@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_toolchain_gcc_solink_wrapper_py,v 1.5 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_solink_wrapper_py,v 1.6 2019/11/10 13:37:50 robert Exp $
 --- build/toolchain/gcc_solink_wrapper.py.orig.port	Fri Dec  2 17:57:17 2016
 +++ build/toolchain/gcc_solink_wrapper.py	Fri Dec  2 17:57:28 2016
 @@ -33,7 +33,7 @@ def CollectDynSym(args):

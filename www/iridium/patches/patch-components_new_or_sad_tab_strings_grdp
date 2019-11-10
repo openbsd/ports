@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_new_or_sad_tab_strings_grdp,v 1.6 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-components_new_or_sad_tab_strings_grdp,v 1.7 2019/11/10 13:37:52 robert Exp $
 
 Index: components/new_or_sad_tab_strings.grdp
 --- components/new_or_sad_tab_strings.grdp.orig
@@ -12,7 +12,7 @@ Index: components/new_or_sad_tab_strings.grdp
          <message name="IDS_SAD_TAB_RELOAD_INCOGNITO" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to open the web page in Chrome's Incognito mode.">
            Open page in a new Incognito window (Ctrl-Shift-N)
          </message>
-@@ -69,7 +69,7 @@
+@@ -66,7 +66,7 @@
            Close other tabs or apps
          </message>
        </if>
@@ -21,7 +21,7 @@ Index: components/new_or_sad_tab_strings.grdp
          <message name="IDS_SAD_TAB_RELOAD_CLOSE_TABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other Chrome tabs or programs running on their computer.">
            Close other tabs or programs
          </message>
-@@ -79,7 +79,7 @@
+@@ -76,7 +76,7 @@
            Close other apps
          </message>
        </if>
@@ -30,7 +30,7 @@ Index: components/new_or_sad_tab_strings.grdp
          <message name="IDS_SAD_TAB_RELOAD_CLOSE_NOTABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other programs running on their computer (Linux).">
            Close other programs
          </message>
-@@ -94,7 +94,7 @@
+@@ -91,7 +91,7 @@
            Restart Chromium
          </message>
        </if>

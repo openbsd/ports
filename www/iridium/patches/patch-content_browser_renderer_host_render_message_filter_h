@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.6 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.7 2019/11/10 13:37:53 robert Exp $
 Index: content/browser/renderer_host/render_message_filter.h
 --- content/browser/renderer_host/render_message_filter.h.orig
 +++ content/browser/renderer_host/render_message_filter.h
-@@ -87,14 +87,14 @@ class CONTENT_EXPORT RenderMessageFilter
+@@ -86,14 +86,14 @@ class CONTENT_EXPORT RenderMessageFilter
                                mojom::WidgetPtr widget,
                                CreateFullscreenWidgetCallback callback) override;
    void HasGpuProcess(HasGpuProcessCallback callback) override;

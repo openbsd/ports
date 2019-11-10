@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_input_ime_input_ime_api_h,v 1.8 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_input_ime_input_ime_api_h,v 1.9 2019/11/10 13:37:50 robert Exp $
 Index: chrome/browser/extensions/api/input_ime/input_ime_api.h
 --- chrome/browser/extensions/api/input_ime/input_ime_api.h.orig
 +++ chrome/browser/extensions/api/input_ime/input_ime_api.h

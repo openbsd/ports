@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_autofill_core_browser_personal_data_manager_cc,v 1.1 2019/11/10 13:37:52 robert Exp $
+
+Index: components/autofill/core/browser/personal_data_manager.cc
+--- components/autofill/core/browser/personal_data_manager.cc.orig
++++ components/autofill/core/browser/personal_data_manager.cc
+@@ -1925,7 +1925,7 @@ bool PersonalDataManager::IsServerCard(const CreditCar
+ 
+ bool PersonalDataManager::ShouldShowCardsFromAccountOption() const {
+ // The feature is only for Linux, Windows and Mac.
+-#if (!defined(OS_LINUX) && !defined(OS_WIN) && !defined(OS_MACOSX)) || \
++#if (!defined(OS_LINUX) && !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_BSD)) || \
+     defined(OS_CHROMEOS)
+   return false;
+ #endif  // (!defined(OS_LINUX) && !defined(OS_WIN) && !defined(OS_MACOSX)) ||

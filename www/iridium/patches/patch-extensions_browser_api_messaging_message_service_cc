@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_browser_api_messaging_message_service_cc,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-extensions_browser_api_messaging_message_service_cc,v 1.5 2019/11/10 13:37:53 robert Exp $
 
 Index: extensions/browser/api/messaging/message_service.cc
 --- extensions/browser/api/messaging/message_service.cc.orig
 +++ extensions/browser/api/messaging/message_service.cc
-@@ -58,7 +58,7 @@ namespace {
+@@ -61,7 +61,7 @@ namespace {
  
  const char kReceivingEndDoesntExistError[] =
      "Could not establish connection. Receiving end does not exist.";
@@ -12,12 +12,12 @@ Index: extensions/browser/api/messaging/message_service.cc
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -318,7 +318,7 @@ void MessageService::OpenChannelToNativeApp(
-   if (!source)
+@@ -382,7 +382,7 @@ void MessageService::OpenChannelToNativeApp(
+   if (!opener_port->IsValidPort())
      return;
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
-   content::WebContents* web_contents =
-       content::WebContents::FromRenderFrameHost(source);
-   ExtensionWebContentsObserver* extension_web_contents_observer =
+   bool has_permission = extension->permissions_data()->HasAPIPermission(
+       APIPermission::kNativeMessaging);
+   if (!has_permission) {

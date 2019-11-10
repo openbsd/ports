@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_angle_src_gpu_info_util_SystemInfo_linux_cpp,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_angle_src_gpu_info_util_SystemInfo_linux_cpp,v 1.4 2019/11/10 13:37:55 robert Exp $
 
 Index: third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
 --- third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig

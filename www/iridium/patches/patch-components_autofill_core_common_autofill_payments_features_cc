@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.1 2019/11/10 13:37:52 robert Exp $
+
+Index: components/autofill/core/common/autofill_payments_features.cc
+--- components/autofill/core/common/autofill_payments_features.cc.orig
++++ components/autofill/core/common/autofill_payments_features.cc
+@@ -158,7 +158,7 @@ const base::Feature kAutofillUpstreamEditableExpiratio
+ };
+ 
+ bool ShouldShowImprovedUserConsentForCreditCardSave() {
+-#if defined(OS_WIN) || defined(OS_MACOSX) || \
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+   // The new user consent UI is fully launched on MacOS, Windows and Linux.
+   return true;

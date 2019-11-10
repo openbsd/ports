@@ -1,0 +1,17 @@
+$OpenBSD: patch-components_sync_device_info_local_device_info_util_linux_cc,v 1.1 2019/11/10 13:37:52 robert Exp $
+
+Index: components/sync_device_info/local_device_info_util_linux.cc
+--- components/sync_device_info/local_device_info_util_linux.cc.orig
++++ components/sync_device_info/local_device_info_util_linux.cc
+@@ -31,8 +31,9 @@ std::string GetSessionNameInternal() {
+   }
+   return "Chromebook";
+ #else
+-  char hostname[HOST_NAME_MAX];
+-  if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
++  int len = sysconf(_SC_HOST_NAME_MAX);
++  char hostname[len];
++  if (gethostname(hostname, len) == 0)  // Success.
+     return hostname;
+   return base::GetLinuxDistro();
+ #endif

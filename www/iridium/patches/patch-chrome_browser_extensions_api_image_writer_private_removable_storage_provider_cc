@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_removable_storage_provider_cc,v 1.3 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_removable_storage_provider_cc,v 1.4 2019/11/10 13:37:50 robert Exp $
 
 Index: chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc
 --- chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig
 +++ chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc
-@@ -20,6 +20,7 @@ static base::LazyInstance<scoped_refptr<StorageDeviceL
+@@ -21,6 +21,7 @@ static base::LazyInstance<scoped_refptr<StorageDeviceL
  
  void RemovableStorageProvider::GetAllDevices(DeviceListReadyCallback callback) {
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
@@ -11,7 +11,7 @@ Index: chrome/browser/extensions/api/image_writer_private/removable_storage_prov
    if (g_test_device_list.Get().get() != nullptr) {
      base::ThreadTaskRunnerHandle::Get()->PostTask(
          FROM_HERE,
-@@ -33,6 +34,9 @@ void RemovableStorageProvider::GetAllDevices(DeviceLis
+@@ -34,6 +35,9 @@ void RemovableStorageProvider::GetAllDevices(DeviceLis
         base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN},
        base::BindOnce(&RemovableStorageProvider::PopulateDeviceList),
        std::move(callback));

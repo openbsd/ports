@@ -1,0 +1,14 @@
+$OpenBSD: patch-device_gamepad_hid_writer_linux_cc,v 1.1 2019/11/10 13:37:53 robert Exp $
+
+Index: device/gamepad/hid_writer_linux.cc
+--- device/gamepad/hid_writer_linux.cc.orig
++++ device/gamepad/hid_writer_linux.cc
+@@ -2,6 +2,8 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
++#include <unistd.h>
++
+ #include "device/gamepad/hid_writer_linux.h"
+ 
+ #include "base/posix/eintr_wrapper.h"

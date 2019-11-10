@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.6 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.7 2019/11/10 13:37:57 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig
@@ -21,7 +21,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
  			"EGL_KHR_platform_gbm "
  #endif
  #if defined(USE_X11)
-@@ -1248,7 +1248,7 @@ EGLDisplay GetPlatformDisplay(EGLenum platform, void *
+@@ -1243,7 +1243,7 @@ EGLDisplay GetPlatformDisplay(EGLenum platform, void *
  {
  	TRACE("(EGLenum platform = 0x%X, void *native_display = %p, const EGLAttrib *attrib_list = %p)", platform, native_display, attrib_list);
  

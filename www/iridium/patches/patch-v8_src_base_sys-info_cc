@@ -1,0 +1,14 @@
+$OpenBSD: patch-v8_src_base_sys-info_cc,v 1.1 2019/11/10 13:37:58 robert Exp $
+
+Index: v8/src/base/sys-info.cc
+--- v8/src/base/sys-info.cc.orig
++++ v8/src/base/sys-info.cc
+@@ -32,7 +32,7 @@ namespace base {
+ // static
+ int SysInfo::NumberOfProcessors() {
+ #if V8_OS_OPENBSD
+-  int mib[2] = {CTL_HW, HW_NCPU};
++  int mib[2] = {CTL_HW, HW_NCPUONLINE};
+   int ncpu = 0;
+   size_t len = sizeof(ncpu);
+   if (sysctl(mib, arraysize(mib), &ncpu, &len, nullptr, 0) != 0) {

@@ -1,7 +1,7 @@
 Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,323 @@
+@@ -0,0 +1,346 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -64,12 +64,15 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +#include "ui/gfx/x/x11_types.h"
 +#include "ui/gfx/x/x11.h"
 +
-+#define MAXTOKENS        3
-+#define _UNVEIL_MAIN     "/etc/iridium/unveil.main";
-+#define _UNVEIL_RENDERER "/etc/iridium/unveil.renderer";
-+#define _UNVEIL_GPU      "/etc/iridium/unveil.gpu";
-+#define _UNVEIL_PLUGIN   "/etc/iridium/unveil.plugin";
-+#define _UNVEIL_UTILITY  "/etc/iridium/unveil.utility";
++#define MAXTOKENS	3
++
++#define _UNVEIL_MAIN		"/etc/iridium/unveil.main";
++#define _UNVEIL_RENDERER	"/etc/iridium/unveil.renderer";
++#define _UNVEIL_GPU		"/etc/iridium/unveil.gpu";
++#define _UNVEIL_PLUGIN		"/etc/iridium/unveil.plugin";
++#define _UNVEIL_UTILITY		"/etc/iridium/unveil.utility";
++#define _UNVEIL_UTILITY_NETWORK	"/etc/iridium/unveil.utility_network";
++#define _UNVEIL_UTILITY_AUDIO	"/etc/iridium/unveil.utility_audio";
 +
 +namespace service_manager {
 +
@@ -92,7 +95,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  return instance;
 +}
 +
-+void SandboxLinux::PreinitializeSandbox() {
++void SandboxLinux::PreinitializeSandbox(SandboxType sandbox_type) {
 +  CHECK(!pre_initialized_);
 +#if BUILDFLAG(USING_SANITIZER)
 +  // Sanitizers need to open some resources before the sandbox is enabled.
@@ -127,7 +130,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +    base::PathService::Get(base::DIR_CACHE, &cache_directory);
 +    base::PathService::Get(base::DIR_HOME, &local_directory);   
 +
-+    cache_directory = cache_directory.AppendASCII("iridium");
++    cache_directory = cache_directory.AppendASCII("chromium");
 +    local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
 +
 +    if (!base::CreateDirectory(cache_directory)) {
@@ -140,12 +143,42 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  }
 +
 +  if (!command_line->HasSwitch(switches::kDisableUnveil))
-+    SetUnveil(process_type);
++    SetUnveil(process_type, sandbox_type);
 +
 +  pre_initialized_ = true;
 +}
 +
-+bool SandboxLinux::SetUnveil(const std::string process_type) {
++bool SandboxLinux::SetPledge(const char *pstring, const char *ppath) {
++  FILE *fp;
++  char *s = NULL;
++  size_t len = 0;
++  ssize_t read;
++
++  if (pstring != NULL) {
++    if (pledge(pstring, NULL) == -1)
++      goto err;
++  } else if (ppath != NULL) {
++    fp = fopen(ppath, "r");
++    if (fp != NULL) {
++      while ((read = getline(&s, &len, fp)) != -1 ) {
++        if (s[strlen(s)-1] == '\n')
++          s[strlen(s)-1] = '\0';
++        if (pledge(s, NULL) == -1)
++  	  goto err;
++      }
++      fclose(fp);
++    } else {
++      LOG(ERROR) << "fopen() failed, errno: " << errno;
++      return false;
++    }
++  }
++  return true;
++err:
++  LOG(ERROR) << "pledge() failed, errno: " << errno;
++  return false;
++}
++
++bool SandboxLinux::SetUnveil(const std::string process_type, SandboxType sandbox_type) {
 +  FILE *fp;
 +  char *s = NULL, *cp = NULL, *home = NULL, **ap, *tokens[MAXTOKENS];
 +  char path[PATH_MAX];
@@ -161,7 +194,13 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  } else if (process_type == switches::kPpapiPluginProcess) {
 +    ufile = _UNVEIL_PLUGIN;
 +  } else if (process_type == switches::kUtilityProcess) {
-+    ufile = _UNVEIL_UTILITY;
++    if (sandbox_type == service_manager::SANDBOX_TYPE_NETWORK) {
++      ufile = _UNVEIL_UTILITY_NETWORK;
++    } else if (sandbox_type == service_manager::SANDBOX_TYPE_AUDIO) {
++      ufile = _UNVEIL_UTILITY_AUDIO;
++    } else {
++      ufile = _UNVEIL_UTILITY;
++    }
 +  }
 +
 +  fp = fopen(ufile, "r");
@@ -233,11 +272,14 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  const std::string process_type =
 +      command_line->GetSwitchValueASCII(switches::kProcessType);
 +
++  if (command_line->HasSwitch(service_manager::switches::kNoSandbox))
++    return true;
++
 +  VLOG(1) << "SandboxLinux::InitializeSandbox: " << process_type;
 +
 +  // Only one thread is running, pre-initialize if not already done.
 +  if (!pre_initialized_)
-+    PreinitializeSandbox();
++    PreinitializeSandbox(sandbox_type);
 +
 +  // Attempt to limit the future size of the address space of the process.
 +  int error = 0;
@@ -252,48 +294,29 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  if (process_type.empty()) {
 +    // XXX use a file for listing pledges of the main process for now
 +    // XXX not having the file is not a fatal error
-+    FILE *fp;
-+    char *s = NULL;
-+    size_t len = 0;
-+    ssize_t read;
-+    fp = fopen("/etc/iridium/pledge.main", "r");
-+    if (fp != NULL) {
-+      while ((read = getline(&s, &len, fp)) != -1 ) {
-+        if (s[strlen(s)-1] == '\n')
-+          s[strlen(s)-1] = '\0';
-+        if (pledge(s, NULL) == -1) {
-+          LOG(ERROR) << "pledge() failed, errno:" << errno;
-+          _exit(1);
-+        }
-+      }
-+      fclose(fp);
-+    }
-+
++    SetPledge(NULL, "/etc/iridium/pledge.main");
 +  } else if (process_type == switches::kRendererProcess) {
 +    // prot_exec needed by v8
 +    // flock needed by sqlite3 locking
-+    if (pledge("stdio rpath flock prot_exec recvfd sendfd ps", NULL) == -1)
-+      goto err;
++    SetPledge("stdio rpath flock prot_exec recvfd sendfd ps", NULL);
 +  } else if (process_type == switches::kGpuProcess) {
-+    if (pledge("stdio drm prot_exec recvfd sendfd tmppath", NULL) == -1)
-+      goto err;
++    SetPledge("stdio drm prot_exec recvfd sendfd tmppath", NULL);
 +  } else if (process_type == switches::kPpapiPluginProcess) {
 +    // prot_exec needed by v8
-+    if (pledge("stdio prot_exec recvfd sendfd", NULL) == -1)
-+      goto err;
++    SetPledge("stdio prot_exec recvfd sendfd", NULL);
 +  } else if (process_type == switches::kUtilityProcess) {
-+    if (pledge("stdio rpath cpath wpath fattr sendfd recvfd", NULL) == -1)
-+      goto err;
++    if (sandbox_type == service_manager::SANDBOX_TYPE_AUDIO)
++      SetPledge(NULL, "/etc/iridium/pledge.utility_audio");
++    else if (sandbox_type == service_manager::SANDBOX_TYPE_NETWORK)
++      SetPledge(NULL, "/etc/iridium/pledge.utility_network");
++    else
++      SetPledge("stdio rpath cpath wpath fattr sendfd recvfd prot_exec", NULL);
 +  } else {
 +    LOG(ERROR) << "non-pledge()'d process: " << process_type;
 +    return false;
 +  }
 +
 +  return true;
-+
-+err:
-+  LOG(ERROR) << "pledge() failed, errno: " << errno;
-+  return false;
 +}
 +
 +bool SandboxLinux::LimitAddressSpace(int* error) {

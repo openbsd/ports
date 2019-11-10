@@ -1,1 +1,1 @@
-rpath wpath cpath stdio tmppath dns inet flock unix proc prot_exec tty sendfd recvfd exec mcast ps drm fattr route getpw vminfo
+rpath wpath cpath stdio tmppath dns inet flock unix proc prot_exec tty sendfd recvfd exec mcast ps drm fattr route getpw vminfo video

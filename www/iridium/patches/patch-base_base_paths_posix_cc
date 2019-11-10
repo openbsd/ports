@@ -1,9 +1,17 @@
-$OpenBSD: patch-base_base_paths_posix_cc,v 1.12 2019/05/27 16:11:17 robert Exp $
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.13 2019/11/10 13:37:49 robert Exp $
 
 Index: base/base_paths_posix.cc
 --- base/base_paths_posix.cc.orig
 +++ base/base_paths_posix.cc
-@@ -24,9 +24,12 @@
+@@ -15,6 +15,7 @@
+ #include <ostream>
+ #include <string>
+ 
++#include "base/command_line.h"
+ #include "base/environment.h"
+ #include "base/files/file_path.h"
+ #include "base/files/file_util.h"
+@@ -24,9 +25,13 @@
  #include "base/process/process_metrics.h"
  #include "build/build_config.h"
  
@@ -13,70 +21,70 @@ Index: base/base_paths_posix.cc
  #include <sys/sysctl.h>
 +#if defined(OS_OPENBSD)
 +#include <kvm.h>
++#define MAXTOKENS 2
 +#endif
  #elif defined(OS_SOLARIS) || defined(OS_AIX)
  #include <stdlib.h>
  #endif
-@@ -67,13 +70,67 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -67,13 +72,65 @@ bool PathProviderPosix(int key, FilePath* result) {
        *result = FilePath(bin_dir);
        return true;
  #elif defined(OS_OPENBSD) || defined(OS_AIX)
 -      // There is currently no way to get the executable path on OpenBSD
-       char* cpath;
+-      char* cpath;
 -      if ((cpath = getenv("CHROME_EXE_PATH")) != NULL)
 -        *result = FilePath(cpath);
 -      else
 -        *result = FilePath("/usr/local/chrome/chrome");
 -      return true;
++      char *cpath;
 +#if !defined(OS_AIX)
 +      struct kinfo_file *files;
 +      kvm_t *kd = NULL;
 +      char errbuf[_POSIX2_LINE_MAX];
-+      char **retvalargs = nullptr;
 +      static char retval[PATH_MAX];
 +      int cnt;
-+      size_t len;
 +      struct stat sb;
 +      pid_t cpid = getpid();
 +      bool ret = false;
-+      const int mib[] = { CTL_KERN, KERN_PROC_ARGS, cpid, KERN_PROC_ARGV };
 +
-+      if (sysctl(mib, 4, NULL, &len, NULL, 0) != -1) {
-+        if ((retvalargs = (char **)malloc(len)) == NULL)
-+          goto out;
++      const base::CommandLine* command_line =
++          base::CommandLine::ForCurrentProcess();
 +
-+        if (sysctl(mib, 4, retvalargs, &len, NULL, 0) < 0)
-+          goto out;
++      VLOG(1) << "PathProviderPosix argv: " << command_line->argv()[0];
 +
-+        if (realpath(retvalargs[0], retval) == NULL)
-+          goto out;
++      if (realpath(command_line->argv()[0].c_str(), retval) == NULL)
++        goto out;
 +
-+        if (stat(retval, &sb) < 0)
-+          goto out;
-+ 
-+        if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf)) == NULL)
-+          goto out;
++      if (stat(command_line->argv()[0].c_str(), &sb) < 0)
++        goto out;
 +
-+        if ((files = kvm_getfiles(kd, KERN_FILE_BYPID, cpid,
-+                                  sizeof(struct kinfo_file), &cnt)) == NULL)
-+          goto out;
++      if (!command_line->HasSwitch("no-sandbox")) {
++        ret = true;
++        *result = FilePath(retval);
++        VLOG(1) << "PathProviderPosix (sandbox) result: " << retval;
++        goto out;
++      }
 +
-+        for (int i = 0; i < cnt; i++) {
-+          if (files[i].fd_fd == KERN_FILE_TEXT &&
-+              files[i].va_fsid == static_cast<uint32_t>(sb.st_dev) &&
-+              files[i].va_fileid == sb.st_ino) {
-+            ret = true;
-+            LOG(ERROR) << retval;
-+            *result = FilePath(retval);
-+          }
-+ }
++      if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf)) == NULL)
++        goto out;
++
++      if ((files = kvm_getfiles(kd, KERN_FILE_BYPID, cpid,
++                                sizeof(struct kinfo_file), &cnt)) == NULL)
++        goto out;
++
++      for (int i = 0; i < cnt; i++) {
++        if (files[i].fd_fd == KERN_FILE_TEXT &&
++            files[i].va_fsid == static_cast<uint32_t>(sb.st_dev) &&
++            files[i].va_fileid == sb.st_ino) {
++          ret = true;
++          *result = FilePath(retval);
++          VLOG(1) << "PathProviderPosix result: " << retval;
++        }
 +      }
 +out:
-+      if (retvalargs)
-+        free(retvalargs);
 +      if (kd)
 +        kvm_close(kd);
-+      LOG(ERROR) << ret; 
 +      if (!ret) {
 +#endif
 +        if ((cpath = getenv("IRIDIUM_EXE_PATH")) != NULL)

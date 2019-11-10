@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.5 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.6 2019/11/10 13:37:54 robert Exp $
 
 Index: net/base/address_tracker_linux.cc
 --- net/base/address_tracker_linux.cc.orig
@@ -102,12 +102,12 @@ Index: net/base/address_tracker_linux.cc
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -153,93 +67,8 @@ AddressTrackerLinux::~AddressTrackerLinux() {
- }
+@@ -147,92 +61,9 @@ AddressTrackerLinux::AddressTrackerLinux(
+ AddressTrackerLinux::~AddressTrackerLinux() = default;
  
  void AddressTrackerLinux::Init() {
--  netlink_fd_ = socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE);
--  if (netlink_fd_ < 0) {
+-  netlink_fd_.reset(socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE));
+-  if (!netlink_fd_.is_valid()) {
 -    PLOG(ERROR) << "Could not create NETLINK socket";
 -    AbortAndForceOnline();
 -    return;
@@ -124,8 +124,8 @@ Index: net/base/address_tracker_linux.cc
 -    // http://crbug.com/113993
 -    addr.nl_groups =
 -        RTMGRP_IPV4_IFADDR | RTMGRP_IPV6_IFADDR | RTMGRP_NOTIFY | RTMGRP_LINK;
--    rv = bind(
--        netlink_fd_, reinterpret_cast<struct sockaddr*>(&addr), sizeof(addr));
+-    rv = bind(netlink_fd_.get(), reinterpret_cast<struct sockaddr*>(&addr),
+-              sizeof(addr));
 -    if (rv < 0) {
 -      PLOG(ERROR) << "Could not bind NETLINK socket";
 -      AbortAndForceOnline();
@@ -148,9 +148,9 @@ Index: net/base/address_tracker_linux.cc
 -  request.header.nlmsg_pid = getpid();
 -  request.msg.rtgen_family = AF_UNSPEC;
 -
--  rv = HANDLE_EINTR(sendto(netlink_fd_, &request, request.header.nlmsg_len,
--                           0, reinterpret_cast<struct sockaddr*>(&peer),
--                           sizeof(peer)));
+-  rv = HANDLE_EINTR(
+-      sendto(netlink_fd_.get(), &request, request.header.nlmsg_len, 0,
+-             reinterpret_cast<struct sockaddr*>(&peer), sizeof(peer)));
 -  if (rv < 0) {
 -    PLOG(ERROR) << "Could not send NETLINK request";
 -    AbortAndForceOnline();
@@ -167,9 +167,9 @@ Index: net/base/address_tracker_linux.cc
 -  // Request dump of link state
 -  request.header.nlmsg_type = RTM_GETLINK;
 -
--  rv = HANDLE_EINTR(sendto(netlink_fd_, &request, request.header.nlmsg_len, 0,
--                           reinterpret_cast<struct sockaddr*>(&peer),
--                           sizeof(peer)));
+-  rv = HANDLE_EINTR(
+-      sendto(netlink_fd_.get(), &request, request.header.nlmsg_len, 0,
+-             reinterpret_cast<struct sockaddr*>(&peer), sizeof(peer)));
 -  if (rv < 0) {
 -    PLOG(ERROR) << "Could not send NETLINK request";
 -    AbortAndForceOnline();
@@ -185,20 +185,19 @@ Index: net/base/address_tracker_linux.cc
 -  }
 -
 -  if (tracking_) {
--    rv = base::MessageLoopCurrentForIO::Get()->WatchFileDescriptor(
--        netlink_fd_, true, base::MessagePumpForIO::WATCH_READ, &watcher_, this);
--    if (rv < 0) {
--      PLOG(ERROR) << "Could not watch NETLINK socket";
--      AbortAndForceOnline();
--      return;
--    }
+-    watcher_ = base::FileDescriptorWatcher::WatchReadable(
+-        netlink_fd_.get(),
+-        base::BindRepeating(&AddressTrackerLinux::OnFileCanReadWithoutBlocking,
+-                            base::Unretained(this)));
 -  }
 +  NOTIMPLEMENTED();
 +  AbortAndForceOnline();
  }
- 
+-
  void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -250,25 +79,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
+   watcher_.reset();
+   netlink_fd_.reset();
+@@ -242,25 +73,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -224,7 +223,7 @@ Index: net/base/address_tracker_linux.cc
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -326,102 +136,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+@@ -318,102 +130,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -327,8 +326,8 @@ Index: net/base/address_tracker_linux.cc
 +  NOTIMPLEMENTED();
  }
  
- void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -458,31 +173,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
+ void AddressTrackerLinux::OnFileCanReadWithoutBlocking() {
+@@ -441,31 +158,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {

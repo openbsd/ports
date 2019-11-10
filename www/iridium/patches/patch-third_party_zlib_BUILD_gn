@@ -1,27 +1,27 @@
-$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.7 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.8 2019/11/10 13:37:57 robert Exp $
 
 Index: third_party/zlib/BUILD.gn
 --- third_party/zlib/BUILD.gn.orig
 +++ third_party/zlib/BUILD.gn
-@@ -67,7 +67,7 @@ if (use_arm_neon_optimizations) {
-     #      implement the CRC32* instructions. These are optional in ARMv8.0."
-     #  - Fuchsia just added a syscall for feature detection.
-     # TODO(cavalcantii): crbug.com/810125.
--    if (!is_ios && !is_fuchsia) {
-+    if (!is_ios && !is_fuchsia && !is_openbsd) {
+@@ -72,7 +72,7 @@ if (use_arm_neon_optimizations) {
+     # Disabled for iPhone, as described in DDI0487C_a_armv8_arm:
+     #  "All implementations of the ARMv8.1 architecture are required to
+     #   implement the CRC32* instructions. These are optional in ARMv8.0."
+-    if (!is_ios) {
++    if (!is_ios && !is_openbsd) {
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {
          defines += [ "ARMV8_OS_ANDROID" ]
-@@ -80,7 +80,7 @@ if (use_arm_neon_optimizations) {
+@@ -91,7 +91,7 @@ if (use_arm_neon_optimizations) {
    source_set("zlib_arm_crc32") {
      visibility = [ ":*" ]
  
--    if (is_clang && (!is_ios && !is_fuchsia)) {
-+    if (is_clang && (!is_ios && !is_fuchsia && !is_openbsd)) {
+-    if (!is_ios) {
++    if (!is_ios && !is_openbsd) {
        include_dirs = [ "." ]
  
        if (is_android) {
-@@ -306,7 +306,7 @@ static_library("minizip") {
+@@ -336,7 +336,7 @@ static_library("minizip") {
      ]
    }
  

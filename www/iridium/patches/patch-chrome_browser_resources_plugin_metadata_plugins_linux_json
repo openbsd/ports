@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.19 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.20 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/resources/plugin_metadata/plugins_linux.json
 --- chrome/browser/resources/plugin_metadata/plugins_linux.json.orig
 +++ chrome/browser/resources/plugin_metadata/plugins_linux.json
 @@ -1,27 +1,5 @@
  {
-   "x-version": 38,
+   "x-version": 42,
 -  "adobe-flash-player": {
 -    "mime_types": [
 -      "application/futuresplash",
@@ -16,9 +16,9 @@ Index: chrome/browser/resources/plugin_metadata/plugins_linux.json
 -    ],
 -    "versions": [
 -      {
--        "version": "32.0.0.142",
+-        "version": "32.0.0.255",
 -        "status": "up_to_date",
--        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb19-06.html"
+-        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb19-46.html"
 -      }
 -    ],
 -    "lang": "en-US",

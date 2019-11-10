@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_base_switches_cc,v 1.1 2019/11/10 13:37:49 robert Exp $
+
+Index: base/base_switches.cc
+--- base/base_switches.cc.orig
++++ base/base_switches.cc
+@@ -138,7 +138,7 @@ const char kEnableCrashReporterForTesting[] =
+ const char kEnableReachedCodeProfiler[] = "enable-reached-code-profiler";
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Controls whether or not retired instruction counts are surfaced for threads
+ // in trace events on Linux.
+ //

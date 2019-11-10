@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_browser_browser_context_keyed_service_factories_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-extensions_browser_browser_context_keyed_service_factories_cc,v 1.3 2019/11/10 13:37:53 robert Exp $
 
 Index: extensions/browser/browser_context_keyed_service_factories.cc
 --- extensions/browser/browser_context_keyed_service_factories.cc.orig
 +++ extensions/browser/browser_context_keyed_service_factories.cc
-@@ -85,7 +85,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+@@ -84,7 +84,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
  #if defined(OS_CHROMEOS)
    NetworkingConfigServiceFactory::GetInstance();
  #endif

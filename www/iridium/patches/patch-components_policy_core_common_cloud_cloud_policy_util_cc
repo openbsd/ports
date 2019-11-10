@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.1 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.2 2019/11/10 13:37:52 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_util.cc
 --- components/policy/core/common/cloud/cloud_policy_util.cc.orig

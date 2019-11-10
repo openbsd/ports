@@ -1,0 +1,14 @@
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.1 2019/11/10 13:37:58 robert Exp $
+
+Index: weblayer/browser/content_browser_client_impl.h
+--- weblayer/browser/content_browser_client_impl.h.orig
++++ weblayer/browser/content_browser_client_impl.h
+@@ -33,7 +33,7 @@ class ContentBrowserClientImpl : public content::Conte
+   std::string GetUserAgent() override;
+   blink::UserAgentMetadata GetUserAgentMetadata() override;
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   void GetAdditionalMappedFilesForChildProcess(
+       const base::CommandLine& command_line,
+       int child_process_id,

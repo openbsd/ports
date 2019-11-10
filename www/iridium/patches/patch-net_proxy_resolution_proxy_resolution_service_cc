@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_proxy_resolution_proxy_resolution_service_cc,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-net_proxy_resolution_proxy_resolution_service_cc,v 1.4 2019/11/10 13:37:54 robert Exp $
 
 Index: net/proxy_resolution/proxy_resolution_service.cc
 --- net/proxy_resolution/proxy_resolution_service.cc.orig
@@ -21,7 +21,7 @@ Index: net/proxy_resolution/proxy_resolution_service.cc
  constexpr net::NetworkTrafficAnnotationTag kSystemProxyConfigTrafficAnnotation =
      net::DefineNetworkTrafficAnnotation("proxy_config_system", R"(
        semantics {
-@@ -1577,7 +1577,7 @@ ProxyResolutionService::CreateSystemProxyConfigService
+@@ -1547,7 +1547,7 @@ ProxyResolutionService::CreateSystemProxyConfigService
               << "profile_io_data.cc::CreateProxyConfigService and this should "
               << "be used only for examples.";
    return std::make_unique<UnsetProxyConfigService>();

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.12 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.13 2019/11/10 13:37:58 robert Exp $
 
 Index: ui/gl/sync_control_vsync_provider.cc
 --- ui/gl/sync_control_vsync_provider.cc.orig
@@ -30,7 +30,7 @@ Index: ui/gl/sync_control_vsync_provider.cc
    // The actual clock used for the system time returned by glXGetSyncValuesOML
    // is unspecified. In practice, the clock used is likely to be either
    // CLOCK_REALTIME or CLOCK_MONOTONIC, so we compare the returned time to the
-@@ -161,7 +161,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
+@@ -160,7 +160,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
  }
  
  bool SyncControlVSyncProvider::SupportGetVSyncParametersIfAvailable() const {

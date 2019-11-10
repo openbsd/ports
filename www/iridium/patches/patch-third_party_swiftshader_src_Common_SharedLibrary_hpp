@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_Common_SharedLibrary_hpp,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_Common_SharedLibrary_hpp,v 1.5 2019/11/10 13:37:57 robert Exp $
 
 Index: third_party/swiftshader/src/Common/SharedLibrary.hpp
 --- third_party/swiftshader/src/Common/SharedLibrary.hpp.orig

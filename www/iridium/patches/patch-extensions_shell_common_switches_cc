@@ -1,0 +1,14 @@
+$OpenBSD: patch-extensions_shell_common_switches_cc,v 1.1 2019/11/10 13:37:53 robert Exp $
+
+Index: extensions/shell/common/switches.cc
+--- extensions/shell/common/switches.cc.orig
++++ extensions/shell/common/switches.cc
+@@ -18,7 +18,7 @@ const char kAppShellHostWindowSize[] = "app-shell-host
+ const char kAppShellPreferredNetwork[] = "app-shell-preferred-network";
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // The directory breakpad should store minidumps in.
+ const char kCrashDumpsDir[] = "crash-dumps-dir";
+ 

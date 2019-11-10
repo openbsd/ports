@@ -1,9 +1,9 @@
-$OpenBSD: patch-ipc_ipc_message_utils_cc,v 1.9 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-ipc_ipc_message_utils_cc,v 1.10 2019/11/10 13:37:53 robert Exp $
 
 Index: ipc/ipc_message_utils.cc
 --- ipc/ipc_message_utils.cc.orig
 +++ ipc/ipc_message_utils.cc
-@@ -348,7 +348,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
+@@ -355,7 +355,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
    l->append(base::NumberToString(p));
  }
  

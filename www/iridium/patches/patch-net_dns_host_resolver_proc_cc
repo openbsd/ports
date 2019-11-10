@@ -1,10 +1,10 @@
-$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.9 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.10 2019/11/10 13:37:54 robert Exp $
 Index: net/dns/host_resolver_proc.cc
 --- net/dns/host_resolver_proc.cc.orig
 +++ net/dns/host_resolver_proc.cc
-@@ -15,10 +15,6 @@
- #include "net/dns/dns_reloader.h"
+@@ -16,10 +16,6 @@
  #include "net/dns/dns_util.h"
+ #include "net/dns/host_resolver.h"
  
 -#if defined(OS_OPENBSD)
 -#define AI_ADDRCONFIG 0

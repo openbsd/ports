@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_media_audio_audio_device_factory_cc,v 1.1 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_renderer_media_audio_audio_device_factory_cc,v 1.2 2019/11/10 13:37:53 robert Exp $
 
 Index: content/renderer/media/audio/audio_device_factory.cc
 --- content/renderer/media/audio/audio_device_factory.cc.orig
 +++ content/renderer/media/audio/audio_device_factory.cc
-@@ -33,7 +33,7 @@ AudioDeviceFactory* AudioDeviceFactory::factory_ = nul
+@@ -34,7 +34,7 @@ AudioDeviceFactory* AudioDeviceFactory::factory_ = nul
  
  namespace {
  

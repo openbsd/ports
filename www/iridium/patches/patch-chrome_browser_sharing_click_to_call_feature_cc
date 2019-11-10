@@ -1,0 +1,19 @@
+$OpenBSD: patch-chrome_browser_sharing_click_to_call_feature_cc,v 1.1 2019/11/10 13:37:51 robert Exp $
+
+Index: chrome/browser/sharing/click_to_call/feature.cc
+--- chrome/browser/sharing/click_to_call/feature.cc.orig
++++ chrome/browser/sharing/click_to_call/feature.cc
+@@ -10,11 +10,11 @@ const base::Feature kClickToCallReceiver{"ClickToCallR
+ #endif  // defined(OS_ANDROID)
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ const base::Feature kClickToCallContextMenuForSelectedText{
+     "ClickToCallContextMenuForSelectedText", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ const base::Feature kClickToCallUI{"ClickToCallUI",
+                                    base::FEATURE_DISABLED_BY_DEFAULT};
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
+-        // defined(OS_CHROMEOS)
++        // defined(OS_CHROMEOS) || defined(OS_BSD)

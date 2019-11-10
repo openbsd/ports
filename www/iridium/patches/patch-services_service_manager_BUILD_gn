@@ -1,0 +1,14 @@
+$OpenBSD: patch-services_service_manager_BUILD_gn,v 1.1 2019/11/10 13:37:55 robert Exp $
+
+Index: services/service_manager/BUILD.gn
+--- services/service_manager/BUILD.gn.orig
++++ services/service_manager/BUILD.gn
+@@ -67,7 +67,7 @@ source_set("service_manager") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     deps += [ "//sandbox/linux:sandbox_services" ]
+   }
+ }

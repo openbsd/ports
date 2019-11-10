@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_memory_buffer_factory_cc,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_memory_buffer_factory_cc,v 1.4 2019/11/10 13:37:53 robert Exp $
 
 Index: gpu/ipc/service/gpu_memory_buffer_factory.cc
 --- gpu/ipc/service/gpu_memory_buffer_factory.cc.orig
@@ -7,17 +7,17 @@ Index: gpu/ipc/service/gpu_memory_buffer_factory.cc
  #include "gpu/ipc/service/gpu_memory_buffer_factory_io_surface.h"
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "gpu/ipc/service/gpu_memory_buffer_factory_native_pixmap.h"
  #endif
  
-@@ -33,7 +33,7 @@ GpuMemoryBufferFactory::CreateNativeType() {
-   return base::WrapUnique(new GpuMemoryBufferFactoryIOSurface);
+@@ -34,7 +34,7 @@ GpuMemoryBufferFactory::CreateNativeType(
+   return std::make_unique<GpuMemoryBufferFactoryIOSurface>();
  #elif defined(OS_ANDROID)
-   return base::WrapUnique(new GpuMemoryBufferFactoryAndroidHardwareBuffer);
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
-   return base::WrapUnique(new GpuMemoryBufferFactoryNativePixmap);
+   return std::make_unique<GpuMemoryBufferFactoryAndroidHardwareBuffer>();
+-#elif defined(OS_LINUX) || defined(OS_FUCHSIA)
++#elif defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+   return std::make_unique<GpuMemoryBufferFactoryNativePixmap>(
+       vulkan_context_provider);
  #elif defined(OS_WIN)
-   return base::WrapUnique(new GpuMemoryBufferFactoryDXGI);

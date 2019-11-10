@@ -1,12 +1,14 @@
-$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_synchronization_lock_h,v 1.6 2019/04/17 11:48:54 robert Exp $
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h.orig.port	Thu May 26 13:07:07 2016
-+++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h	Thu May 26 13:07:14 2016
-@@ -37,7 +37,7 @@ typedef boost::mutex::scoped_lock AutoLock;
+$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_synchronization_lock_h,v 1.7 2019/11/10 13:37:56 robert Exp $
+
+Index: third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h
+--- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h.orig
++++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h
+@@ -63,7 +63,7 @@ class Lock { (private)
  // Dummy lock implementation on non-POSIX platforms. If you are running on a
  // different platform and care about thread-safety, please compile with
  // -DI18N_PHONENUMBERS_USE_BOOST.
--#if !defined(__linux__) && !defined(__APPLE__)
-+#if !defined(__linux__) && !defined(__APPLE__) && !defined(__OpenBSD__)
+-#elif !defined(__linux__) && !defined(__APPLE__)
++#elif !defined(__linux__) && !defined(__APPLE__) && !defined(__OpenBSD__)
  
  namespace i18n {
  namespace phonenumbers {

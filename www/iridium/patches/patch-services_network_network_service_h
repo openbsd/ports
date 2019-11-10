@@ -1,10 +1,10 @@
-$OpenBSD: patch-services_network_network_service_h,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-services_network_network_service_h,v 1.4 2019/11/10 13:37:55 robert Exp $
 
 Index: services/network/network_service.h
 --- services/network/network_service.h.orig
 +++ services/network/network_service.h
-@@ -186,7 +186,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
- #endif  // !BUILDFLAG(IS_CT_SUPPORTED)
+@@ -152,7 +152,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+       mojom::NetworkService::GetNetworkListCallback callback) override;
    void UpdateCRLSet(base::span<const uint8_t> crl_set) override;
    void OnCertDBChanged() override;
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

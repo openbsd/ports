@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_proc_maps_linux_cc,v 1.7 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-base_debug_proc_maps_linux_cc,v 1.8 2019/11/10 13:37:49 robert Exp $
 --- base/debug/proc_maps_linux.cc.orig.port	Thu Apr 27 22:20:52 2017
 +++ base/debug/proc_maps_linux.cc	Thu Apr 27 22:21:02 2017
 @@ -12,7 +12,7 @@

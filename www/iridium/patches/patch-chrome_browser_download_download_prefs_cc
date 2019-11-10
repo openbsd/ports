@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.15 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.16 2019/11/10 13:37:50 robert Exp $
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig
@@ -38,7 +38,7 @@ Index: chrome/browser/download/download_prefs.cc
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -252,7 +255,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+@@ -257,7 +260,7 @@ void DownloadPrefs::RegisterProfilePrefs(
                                   default_download_path);
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);
@@ -83,18 +83,18 @@ Index: chrome/browser/download/download_prefs.cc
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_.clear();
-@@ -497,7 +500,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+@@ -504,9 +507,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
    // Fall back to the default download directory for all other paths.
    return GetDefaultDownloadDirectoryForProfile();
  #endif
--  return path;
 +  // If unveil(2) is used, force the file dialog directory to something we
 +  // know is available.
 +  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+  if (!command_line->HasSwitch(service_manager::switches::kDisableUnveil))
-+    return GetDefaultDownloadDirectoryForProfile();
-+  else
-+    return path;
- }
++
+   // If the stored download directory is an absolute path, we presume it's
+   // correct; there's not really much more validation we can do here.
+-  if (path.IsAbsolute())
++  if (command_line->HasSwitch(service_manager::switches::kDisableUnveil) && path.IsAbsolute())
+     return path;
  
- bool DownloadPrefs::AutoOpenCompareFunctor::operator()(
+   // When the default download directory is *not* an absolute path, we use the

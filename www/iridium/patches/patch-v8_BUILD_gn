@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_BUILD_gn,v 1.10 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-v8_BUILD_gn,v 1.11 2019/11/10 13:37:58 robert Exp $
 
 Index: v8/BUILD.gn
 --- v8/BUILD.gn.orig
 +++ v8/BUILD.gn
-@@ -3160,7 +3160,7 @@ v8_component("v8_libbase") {
+@@ -3588,7 +3588,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -12,7 +12,7 @@ Index: v8/BUILD.gn
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -3170,6 +3170,12 @@ v8_component("v8_libbase") {
+@@ -3598,6 +3598,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

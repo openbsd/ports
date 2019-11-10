@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.11 2019/05/27 16:11:17 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.12 2019/11/10 13:37:49 robert Exp $
 
 Index: base/process/process_metrics_openbsd.cc
 --- base/process/process_metrics_openbsd.cc.orig
@@ -75,64 +75,35 @@ Index: base/process/process_metrics_openbsd.cc
  
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
-@@ -85,6 +61,149 @@ size_t GetSystemCommitCharge() {
+@@ -85,6 +61,120 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
 +}
 +
 +int ProcessMetrics::GetOpenFdCount() const {
-+  struct kinfo_proc *info;
-+  size_t length;
++  struct kinfo_file *files;
++  kvm_t *kd = NULL;
 +  int total_count = 0;
++  char errbuf[_POSIX2_LINE_MAX];
 +
-+  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
-+                sizeof(struct kinfo_proc), 0 };
-+
-+  if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0)
-+    return -1;
-+
-+  info = (struct kinfo_proc *)malloc(length);
-+
-+  mib[5] = (length / sizeof(struct kinfo_proc));
-+
-+  if (sysctl(mib, base::size(mib), info, &length, NULL, 0) < 0) {
-+    total_count = -1;
++  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf)) == NULL)
 +    goto out;
++  
++  if ((files = kvm_getfiles(kd, KERN_FILE_BYPID, process_,  
++        sizeof(struct kinfo_file), &total_count)) == NULL) {
++	  total_count = 0;
++	  goto out;
 +  }
-+  //total_count = info->p_fd->fd_openfd;
-+  total_count = info->p_fd;
++
++  kvm_close(kd);
 +
 +out:
-+  free(info);
 +  return total_count;
 +}
 +
 +int ProcessMetrics::GetOpenFdSoftLimit() const {
-+  struct kinfo_proc *info;
-+  size_t length;
-+  int total_count = 0;
-+
-+  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
-+                sizeof(struct kinfo_proc), 0 };
-+
-+  if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0)
-+    return -1;
-+
-+  info = (struct kinfo_proc *)malloc(length);
-+
-+  mib[5] = (length / sizeof(struct kinfo_proc));
-+
-+  if (sysctl(mib, base::size(mib), info, &length, NULL, 0) < 0) {
-+    total_count = -1;
-+    goto out;
-+  }
-+  //total_count = info->p_fd->fd_openfd;
-+  total_count = info->p_limit;
-+
-+out:
-+  free(info);
-+  return total_count;
++  return GetMaxFds();
 +}
 +
 +uint64_t ProcessMetrics::GetVmSwapBytes() const {

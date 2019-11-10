@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.13 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.14 2019/11/10 13:37:51 robert Exp $
 
 Index: chrome/browser/sync/chrome_sync_client.cc
 --- chrome/browser/sync/chrome_sync_client.cc.orig
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -428,7 +428,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
-   }
+@@ -389,7 +389,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+           GetSyncableServiceForType(syncer::APP_LIST), dump_stack));
  #endif  // BUILDFLAG(ENABLE_APP_LIST)
  
 -#if defined(OS_LINUX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    // Dictionary sync is enabled by default.
    if (!disabled_types.Has(syncer::DICTIONARY)) {
-     if (base::FeatureList::IsEnabled(switches::kSyncPseudoUSSDictionary)) {
+     controllers.push_back(

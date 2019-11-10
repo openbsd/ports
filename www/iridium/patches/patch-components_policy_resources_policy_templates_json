@@ -1,10 +1,10 @@
-$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.19 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.20 2019/11/10 13:37:52 robert Exp $
 
 Index: components/policy/resources/policy_templates.json
 --- components/policy/resources/policy_templates.json.orig
 +++ components/policy/resources/policy_templates.json
-@@ -956,7 +956,7 @@
-       'name': 'HomepageLocation',
+@@ -1038,7 +1038,7 @@
+       'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
 -      'supported_on': ['chrome.*:8-', 'chrome_os:11-'],
@@ -12,8 +12,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -983,7 +983,7 @@
-       'name': 'HomepageIsNewTabPage',
+@@ -1068,7 +1068,7 @@
+       'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.*:8-', 'chrome_os:11-'],
@@ -21,8 +21,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1009,7 +1009,7 @@
-       'name': 'NewTabPageLocation',
+@@ -1095,7 +1095,7 @@
+       'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
 -      'supported_on': ['chrome.*:58-', 'chrome_os:58-'],
@@ -30,8 +30,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1702,7 +1702,7 @@
-       'name': 'RemoteAccessHostMatchUsername',
+@@ -1821,7 +1821,7 @@
+       'owners': ['jamiewalch@chromium.org', 'rkjnsn@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.linux:25-', 'chrome.mac:25-', 'chrome_os:42-'],
@@ -39,8 +39,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -3192,7 +3192,7 @@
-       'name': 'GSSAPILibraryName',
+@@ -3536,7 +3536,7 @@
+       'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
 -      'supported_on': ['chrome.linux:9-'],
@@ -48,8 +48,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -3244,7 +3244,7 @@
-       'name': 'NtlmV2Enabled',
+@@ -3590,7 +3590,7 @@
+       'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.linux:63-','chrome.mac:63-','chrome_os:63-','android:63-','webview_android:63-'],
@@ -57,8 +57,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -6303,7 +6303,7 @@
-       'name': 'RequireOnlineRevocationChecksForLocalAnchors',
+@@ -6919,7 +6919,7 @@
+       'owners': ['file://src/net/cert/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome_os:30-', 'chrome.linux:30-', 'chrome.win:30-'],
@@ -66,8 +66,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -7433,7 +7433,7 @@
-       'name': 'BackgroundModeEnabled',
+@@ -8119,7 +8119,7 @@
+       'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.win:19-', 'chrome.linux:19-'],
@@ -75,8 +75,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -7948,7 +7948,7 @@
-       'name': 'FullscreenAllowed',
+@@ -8713,7 +8713,7 @@
+       'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.win:31-', 'chrome.linux:31-', 'chrome_os:31-'],

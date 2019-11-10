@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.23 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.24 2019/11/10 13:37:53 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -118,6 +118,8 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
+@@ -121,6 +121,8 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
  CONTENT_EXPORT extern const char kEnableLowResTiling[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
@@ -10,9 +10,9 @@ Index: content/public/common/content_switches.h
 +CONTENT_EXPORT extern const char kTrk[];
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
- CONTENT_EXPORT extern const char kEnablePinch[];
-@@ -270,7 +272,7 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
- CONTENT_EXPORT extern const char kDisablePanelFitting[];
+ CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
+@@ -270,7 +272,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
+ CONTENT_EXPORT extern const char kRendererWaitForJavaDebugger[];
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

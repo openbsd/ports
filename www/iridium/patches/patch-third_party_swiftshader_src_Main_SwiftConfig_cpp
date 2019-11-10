@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_src_Main_SwiftConfig_cpp,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_Main_SwiftConfig_cpp,v 1.3 2019/11/10 13:37:57 robert Exp $
 
 Index: third_party/swiftshader/src/Main/SwiftConfig.cpp
 --- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig
 +++ third_party/swiftshader/src/Main/SwiftConfig.cpp
-@@ -762,7 +762,11 @@ namespace sw
+@@ -764,7 +764,11 @@ namespace sw
  		struct stat status;
  		int lastModified = ini.getInteger("LastModified", "Time", 0);
  

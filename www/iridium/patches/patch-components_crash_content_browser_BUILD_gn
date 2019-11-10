@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.8 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.9 2019/11/10 13:37:52 robert Exp $
 
 Index: components/crash/content/browser/BUILD.gn
 --- components/crash/content/browser/BUILD.gn.orig

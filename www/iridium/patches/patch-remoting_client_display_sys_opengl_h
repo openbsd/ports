@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_client_display_sys_opengl_h,v 1.3 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-remoting_client_display_sys_opengl_h,v 1.4 2019/11/10 13:37:54 robert Exp $
 
 Index: remoting/client/display/sys_opengl.h
 --- remoting/client/display/sys_opengl.h.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_bubble_bubble_dialog_delegate_view_cc,v 1.3 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-ui_views_bubble_bubble_dialog_delegate_view_cc,v 1.4 2019/11/10 13:37:58 robert Exp $
 
 Index: ui/views/bubble/bubble_dialog_delegate_view.cc
 --- ui/views/bubble/bubble_dialog_delegate_view.cc.orig
 +++ ui/views/bubble/bubble_dialog_delegate_view.cc
-@@ -112,7 +112,7 @@ Widget* BubbleDialogDelegateView::CreateBubble(
+@@ -135,7 +135,7 @@ Widget* BubbleDialogDelegateView::CreateBubble(
    bubble_delegate->SetAnchorView(bubble_delegate->GetAnchorView());
    Widget* bubble_widget = CreateBubbleWidget(bubble_delegate);
  

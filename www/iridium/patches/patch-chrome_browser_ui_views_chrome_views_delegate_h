@@ -1,11 +1,12 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.13 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.14 2019/11/10 13:37:51 robert Exp $
+
 Index: chrome/browser/ui/views/chrome_views_delegate.h
 --- chrome/browser/ui/views/chrome_views_delegate.h.orig
 +++ chrome/browser/ui/views/chrome_views_delegate.h
 @@ -44,7 +44,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
    HICON GetSmallWindowIcon() const override;
    int GetAppbarAutohideEdges(HMONITOR monitor,
-                              const base::Closure& callback) override;
+                              base::OnceClosure callback) override;
 -#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    gfx::ImageSkia* GetDefaultWindowIcon() const override;

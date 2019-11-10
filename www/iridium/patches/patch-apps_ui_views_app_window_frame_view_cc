@@ -1,7 +1,8 @@
-$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.8 2019/04/17 11:48:53 robert Exp $
---- apps/ui/views/app_window_frame_view.cc.orig.port	Sat Aug 22 21:01:50 2015
-+++ apps/ui/views/app_window_frame_view.cc	Wed Sep  2 07:31:54 2015
-@@ -132,7 +132,7 @@ gfx::Rect AppWindowFrameView::GetBoundsForClientView()
+$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.9 2019/11/10 13:37:49 robert Exp $
+Index: apps/ui/views/app_window_frame_view.cc
+--- apps/ui/views/app_window_frame_view.cc.orig
++++ apps/ui/views/app_window_frame_view.cc
+@@ -125,7 +125,7 @@ gfx::Rect AppWindowFrameView::GetBoundsForClientView()
  gfx::Rect AppWindowFrameView::GetWindowBoundsForClientBounds(
      const gfx::Rect& client_bounds) const {
    gfx::Rect window_bounds = client_bounds;

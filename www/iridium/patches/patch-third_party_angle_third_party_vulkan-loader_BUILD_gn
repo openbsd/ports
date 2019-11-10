@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_third_party_vulkan-loader_BUILD_gn,v 1.2 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_angle_third_party_vulkan-loader_BUILD_gn,v 1.3 2019/11/10 13:37:55 robert Exp $
 
 Index: third_party/angle/third_party/vulkan-loader/BUILD.gn
 --- third_party/angle/third_party/vulkan-loader/BUILD.gn.orig
 +++ third_party/angle/third_party/vulkan-loader/BUILD.gn
-@@ -192,7 +192,7 @@ config("vulkan_loader_config") {
+@@ -171,7 +171,7 @@ config("vulkan_loader_config") {
    if (is_win) {
      cflags = [ "/wd4201" ]
    }

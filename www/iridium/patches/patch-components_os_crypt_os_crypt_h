@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_os_crypt_os_crypt_h,v 1.7 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-components_os_crypt_os_crypt_h,v 1.8 2019/11/10 13:37:52 robert Exp $
 
 Index: components/os_crypt/os_crypt.h
 --- components/os_crypt/os_crypt.h.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_cabac_h,v 1.7 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_cabac_h,v 1.8 2019/11/10 13:37:56 robert Exp $
 --- third_party/ffmpeg/libavcodec/x86/cabac.h.orig.port	Thu Nov 13 23:02:42 2014
 +++ third_party/ffmpeg/libavcodec/x86/cabac.h	Fri Nov 14 22:03:05 2014
 @@ -29,7 +29,7 @@

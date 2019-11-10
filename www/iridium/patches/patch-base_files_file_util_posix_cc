@@ -1,16 +1,12 @@
-$OpenBSD: patch-base_files_file_util_posix_cc,v 1.3 2019/04/17 11:48:53 robert Exp $
-
-- to help unveil(2) try to create the directory elements
-  by ignoring ENOENT except for the last element which we
-  actually care about
+$OpenBSD: patch-base_files_file_util_posix_cc,v 1.4 2019/11/10 13:37:49 robert Exp $
 
 Index: base/files/file_util_posix.cc
 --- base/files/file_util_posix.cc.orig
 +++ base/files/file_util_posix.cc
-@@ -705,32 +705,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
+@@ -723,32 +723,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
                                  File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
-       BlockingType::MAY_BLOCK);  // For call to mkdir().
+       FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().
 +  const FilePath kFileSystemRoot("/");
    std::vector<FilePath> subpaths;
  
@@ -48,7 +44,7 @@ Index: base/files/file_util_posix.cc
 +        int saved_errno = errno;
 +        if (error)
 +          *error = File::OSErrorToFileError(saved_errno);
-+        return false; 
++        return false;
 +      }
 +    } else if (!DirectoryExists(*i)) {
 +        if (error)

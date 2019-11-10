@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_fontconfig_include_config_h,v 1.4 2019/04/17 11:48:54 robert Exp $
+$OpenBSD: patch-third_party_fontconfig_include_config_h,v 1.5 2019/11/10 13:37:56 robert Exp $
 
 Index: third_party/fontconfig/include/config.h
 --- third_party/fontconfig/include/config.h.orig

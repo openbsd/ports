@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_platform_util_h,v 1.5 2019/04/17 11:48:53 robert Exp $
---- chrome/browser/platform_util.h.orig.port	Thu Jul 21 15:53:20 2016
-+++ chrome/browser/platform_util.h	Thu Jul 21 15:53:27 2016
-@@ -40,7 +40,7 @@ enum OpenOperationResult {
+$OpenBSD: patch-chrome_browser_platform_util_h,v 1.6 2019/11/10 13:37:51 robert Exp $
+Index: chrome/browser/platform_util.h
+--- chrome/browser/platform_util.h.orig
++++ chrome/browser/platform_util.h
+@@ -41,7 +41,7 @@ enum OpenOperationResult {
  enum OpenItemType {
    OPEN_FILE,
    OPEN_FOLDER,

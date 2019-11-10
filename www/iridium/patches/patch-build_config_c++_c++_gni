@@ -1,12 +1,12 @@
-$OpenBSD: patch-build_config_c++_c++_gni,v 1.4 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-build_config_c++_c++_gni,v 1.5 2019/11/10 13:37:50 robert Exp $
 
 Index: build/config/c++/c++.gni
 --- build/config/c++/c++.gni.orig
 +++ build/config/c++/c++.gni
-@@ -12,7 +12,7 @@ declare_args() {
-   # is not supported.
+@@ -13,7 +13,7 @@ declare_args() {
    use_custom_libcxx =
-       is_fuchsia || is_android || is_mac ||
+       is_fuchsia || is_android || is_mac || (is_ios && !use_xcode_clang) ||
+       (is_win && is_clang) ||
 -      (is_linux &&
 +      (is_linux && !is_openbsd &&
         (!is_chromeos || default_toolchain != "//build/toolchain/cros:target"))
