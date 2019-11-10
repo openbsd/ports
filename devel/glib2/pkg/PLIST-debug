@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST-debug,v 1.1 2019/11/10 11:43:59 ajacoutot Exp $
+bin/.debug/
+bin/.debug/gapplication.dbg
+bin/.debug/gdbus.dbg
+bin/.debug/gio-launch-desktop.dbg
+bin/.debug/gio-querymodules.dbg
+bin/.debug/gio.dbg
+bin/.debug/glib-compile-resources.dbg
+bin/.debug/glib-compile-schemas.dbg
+bin/.debug/gobject-query.dbg
+bin/.debug/gresource.dbg
+bin/.debug/gsettings.dbg
+bin/.debug/gtester.dbg
+lib/.debug/
+lib/.debug/libgio-2.0.so.4200.10.dbg
+lib/.debug/libglib-2.0.so.4201.3.dbg
+lib/.debug/libgmodule-2.0.so.4200.10.dbg
+lib/.debug/libgobject-2.0.so.4200.10.dbg
+lib/.debug/libgthread-2.0.so.4200.10.dbg
