@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/11/10 15:27:11 ajacoutot Exp $
-
-BROKEN =		needs a WANTLIB sync
+# $OpenBSD: Makefile,v 1.20 2019/11/10 16:48:59 ajacoutot Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -11,7 +9,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
-REVISION =		4
+REVISION =		5
 
 SUBST_VARS +=		V
 
@@ -44,6 +42,12 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # OSGPL (see LICENSE.txt)
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} GL Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
+WANTLIB += Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets SDL X11 Xrandr
+WANTLIB += avcodec avdevice avformat avresample avutil c cairo
+WANTLIB += curl freetype gdal gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 intl jasper jpeg m png poppler-glib rsvg-2
+WANTLIB += swresample swscale tiff z
 
 MODULES =		devel/cmake \
 			x11/qt5
