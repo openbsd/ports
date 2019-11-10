@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2019/11/09 17:27:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.222 2019/11/10 14:53:36 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -17,10 +17,10 @@ PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-cups=		0
-REVISION-cloudprint=	0
-REVISION-guic=		0
+REVISION-main=		1
+REVISION-cups=		1
+REVISION-cloudprint=	1
+REVISION-guic=		1
 
 CATEGORIES=		x11 devel
 
@@ -122,6 +122,23 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
 
 # configure will disable lpr in default gtk-print-backends if cups is found
 MAKE_FLAGS=		GTK_PRINT_BACKENDS="file,lpr,cups,cloudprint"
+
+DEBUG_PACKAGES=		-main -cups -cloudprint -guic
+DEBUG_FILES=		bin/gtk-update-icon-cache \
+			bin/gtk-builder-tool \
+			bin/gtk-encode-symbolic-svg \
+			bin/gtk-launch \
+			bin/gtk-query-immodules-3.0 \
+			bin/gtk-query-settings \
+			bin/gtk3-demo \
+			bin/gtk3-demo-application \
+			bin/gtk3-icon-browser \
+			bin/gtk3-widget-factory \
+			lib/gtk-3.0/3.0.0/printbackends/libprintbackend-cloudprint.so \
+			lib/gtk-3.0/3.0.0/printbackends/libprintbackend-cups.so \
+			lib/libgailutil-3.so.${LIBgailutil-3_VERSION} \
+			lib/libgdk-3.so.${LIBgdk-3_VERSION} \
+			lib/libgtk-3.so.${LIBgtk-3_VERSION}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
