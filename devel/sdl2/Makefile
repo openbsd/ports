@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/09/22 15:46:25 thfr Exp $
+# $OpenBSD: Makefile,v 1.29 2019/11/10 21:35:39 bentley Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -7,12 +7,15 @@ DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
+REVISION=	0
 
 SHARED_LIBS=	SDL2		0.7	# 0.10
 
 HOMEPAGE=	https://www.libsdl.org/
 
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # zlib
 PERMIT_PACKAGE=	Yes

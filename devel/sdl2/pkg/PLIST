@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/01/03 17:55:08 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/11/10 21:35:39 bentley Exp $
 bin/sdl2-config
 include/SDL2/
 include/SDL2/SDL.h
@@ -77,12 +77,12 @@ include/SDL2/close_code.h
 lib/cmake/
 lib/cmake/SDL2/
 lib/cmake/SDL2/sdl2-config.cmake
-lib/libSDL2.a
+@static-lib lib/libSDL2.a
 lib/libSDL2.la
 @lib lib/libSDL2.so.${LIBSDL2_VERSION}
-lib/libSDL2_test.a
+@static-lib lib/libSDL2_test.a
 lib/libSDL2_test.la
-lib/libSDL2main.a
+@static-lib lib/libSDL2main.a
 lib/libSDL2main.la
 lib/pkgconfig/sdl2.pc
 share/aclocal/sdl2.m4
