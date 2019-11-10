@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2019/11/10 17:49:30 jca Exp $
+# $OpenBSD: Makefile,v 1.92 2019/11/10 17:58:19 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
@@ -19,8 +19,6 @@ WANTLIB=		c m curses pthread gnutls xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
-
-USE_GMAKE=		Yes
 
 DEBUG_PACKAGES = -
 
@@ -53,6 +51,7 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 
 SUBST_VARS=		GCCARCH VERSION
 
+USE_GMAKE=		Yes
 LIB_DEPENDS=		security/gnutls \
 			textproc/libxml
 
