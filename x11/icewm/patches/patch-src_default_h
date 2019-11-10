@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_default_h,v 1.16 2019/08/26 19:43:45 bcallah Exp $
+$OpenBSD: patch-src_default_h,v 1.17 2019/11/10 11:08:41 fcambus Exp $
 Index: src/default.h
 --- src/default.h.orig
 +++ src/default.h
@@ -15,9 +15,9 @@ Index: src/default.h
  
  XSV(const char *, acpiIgnoreBatteries,          0)
  XSV(const char *, mailBoxPath,                  0)
--XSV(const char *, mailCommand,                  "xterm -name mutt -e mutt")
+-XSV(const char *, mailCommand,                  TERM " -name mutt -e mutt")
 -XSV(const char *, mailClassHint,                "mutt.XTerm")
-+XSV(const char *, mailCommand,                  "xterm -name mail -title MAIL -e mail")
++XSV(const char *, mailCommand,                  TERM " -name mail -title MAIL -e mail")
 +XSV(const char *, mailClassHint,                "mail.XTerm")
  XSV(const char *, newMailCommand,               0)
 -XSV(const char *, lockCommand,                  0)
@@ -26,11 +26,11 @@ Index: src/default.h
  XSV(const char *, clockClassHint,               "icewm.XClock")
  XSV(const char *, runDlgCommand,                0)
 @@ -206,7 +206,7 @@ XIV(bool, cpuCombine,                           true)
- XSV(const char *, netCommand,                   "xterm -name 'ss' -title 'Socket Statistics' -hold -e sh -c 'which ss > /dev/null && watch -t ss -putswl || netstat -c'")
+ XSV(const char *, netCommand,                   TERM " -name 'ss' -title 'Socket Statistics' -hold -e sh -c 'which ss > /dev/null && watch -t ss -putswl || netstat -c'")
  XSV(const char *, netClassHint,                 "ss.XTerm")
  #else
--XSV(const char *, netCommand,                   "xterm -name netstat -title 'Network Status' -hold -e netstat -c")
-+XSV(const char *, netCommand,                   "xterm -name netstat -title 'Network Status' -hold -e netstat -w 1")
+-XSV(const char *, netCommand,                   TERM " -name netstat -title 'Network Status' -hold -e netstat -c")
++XSV(const char *, netCommand,                   TERM " -name netstat -title 'Network Status' -hold -e netstat -w 1")
  XSV(const char *, netClassHint,                 "netstat.XTerm")
  #endif
  
