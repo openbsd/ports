@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1488 2019/11/10 17:41:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1489 2019/11/10 20:44:51 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1970,7 +1970,7 @@ _update_plist += -L ${WRKINST}/.fake_log \
 _update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
 .endfor
 
-_build_debug_info = ${_PERLSCRIPT}/build-debug-info -P ${_WRKDEBUG} --
+_build_debug_info = ${_PERLSCRIPT}/build-debug-info -P ${_WRKDEBUG} -W ${PREFIX} --
 
 .for i in ${BUILD_PACKAGES}
 .  if ${DEBUG_PACKAGES:M$i}
@@ -2958,20 +2958,23 @@ _copy_debug_info:
 	@${_build_debug_info}
 	@cd ${PREFIX} && cat ${_WRKDEBUG}/debug-info| \
 		while read dbgpath p dbginfo; do \
-		${INSTALL_DATA_DIR} $${dbgpath}; \
-		if test -f $$p; then \
-			echo "> copy debug info from $$p into $${dbginfo}"; \
-			case $$p in *.a) \
-				cp $$p $${dbginfo}; \
-				strip $$p;; \
+		case $${dbgpath} in \
+			LINK) \
+				echo "> link debug info from $$p into $${dbginfo}"; \
+				ln $$p $${dbginfo};; \
 			*) \
-				objcopy --only-keep-debug $$p $${dbginfo}; \
-				objcopy --strip-debug $$p; \
-				objcopy --add-gnu-debuglink=$${dbginfo} $$p;; \
-			esac; \
-		else \
-				echo "> WARNING FILE $$p does not exist"; \
-		fi; done
+				${INSTALL_DATA_DIR} $${dbgpath}; \
+				echo "> copy debug info from $$p into $${dbginfo}"; \
+				case $$p in \
+				*.a) \
+					cp $$p $${dbginfo}; \
+					strip $$p;; \
+				*) \
+					objcopy --only-keep-debug $$p $${dbginfo}; \
+					objcopy --strip-debug $$p; \
+					objcopy --add-gnu-debuglink=$${dbginfo} $$p;; \
+				esac;; \
+		esac; done
 .else
 .  for P in ${DEBUG_FILES:N*.a}
 	@cd ${PREFIX}; dbgpath=${P:H}/.debug; \
