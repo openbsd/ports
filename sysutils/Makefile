@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.536 2019/10/19 07:45:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.537 2019/11/10 11:49:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -13,7 +13,6 @@
      SUBDIR += arm-trusted-firmware
      SUBDIR += augeas
      SUBDIR += autossh
-     SUBDIR += aws-shell
      SUBDIR += awscli
      SUBDIR += backuppc
      SUBDIR += bacula
