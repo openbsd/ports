@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2018/09/04 12:46:27 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2019/11/10 19:12:28 ajacoutot Exp $
 @pkgpath x11/dbus
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
@@ -41,7 +41,7 @@ lib/dbus-1.0/include/
 lib/dbus-1.0/include/dbus/
 lib/dbus-1.0/include/dbus/dbus-arch-deps.h
 @comment lib/dbus-1.0/test/
-lib/libdbus-1.a
+@static-lib lib/libdbus-1.a
 lib/libdbus-1.la
 @lib lib/libdbus-1.so.${LIBdbus-1_VERSION}
 lib/pkgconfig/dbus-1.pc
