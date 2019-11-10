@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2019/11/10 15:40:24 cwen Exp $
+
+Use -std=gnu99 also for packcc. Fix the build with base-gcc, from
+https://github.com/universal-ctags/ctags/pull/2305
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -25,7 +25,8 @@ noinst_PROGRAMS += packcc
+ noinst_PROGRAMS += mini-geany
+ 
+ packcc_CPPFLAGS =
+-packcc_CFLAGS =
++packcc_CFLAGS  =
++packcc_CFLAGS += $(EXTRA_CFLAGS)
+ dist_packcc_SOURCES = $(PACKCC_SRCS)
+ 
+ if HAVE_STRNLEN
