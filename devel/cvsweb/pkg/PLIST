@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/11/10 08:23:35 schwarze Exp $
 cgi-bin/cvsweb
 conf/cvsweb/
 conf/cvsweb/cvsweb.conf.dist
-@sample ${CONFDIR}/cvsweb/cvsweb.conf
+@sample conf/cvsweb/cvsweb.conf
 htdocs/cvsweb/
 htdocs/cvsweb/icons/
 htdocs/cvsweb/icons/back.gif
@@ -11,5 +11,5 @@ htdocs/cvsweb/icons/miniback.gif
 htdocs/cvsweb/icons/minidir.gif
 htdocs/cvsweb/icons/minitext.gif
 htdocs/cvsweb/icons/text.gif
-@cwd ${LOCALBASE}/share/doc/pkg-readmes
-${PKGSTEM}
+@cwd ${LOCALBASE}
+share/doc/pkg-readmes/${PKGSTEM}

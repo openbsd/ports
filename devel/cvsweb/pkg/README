@@ -1,5 +1,5 @@
-# $OpenBSD: README,v 1.18 2019/05/02 18:58:38 naddy Exp $
-# 
+# $OpenBSD: README,v 1.19 2019/11/10 08:23:35 schwarze Exp $
+#
 # +-----------------------------------------------------------------------
 # | Running ${PKGSTEM} on OpenBSD
 # +-----------------------------------------------------------------------
@@ -80,35 +80,19 @@ rcctl start slowcgi
 
 # Editing cvsweb and cvsweb.conf
 # ------------------------------
-#
-# The cvsweb program itself and cvsweb.conf both assume httpd is not
-# running in a chroot environment, so we need to change some default paths
-# so they are relative to /var/www.
-#
-# In /var/www/cgi-bin/cvsweb:
-#
-# for ("$mydir/cvsweb.conf", '/var/www/conf/cvsweb/cvsweb.conf') {
-# for ("$mydir/cvsweb.conf", '/conf/cvsweb/cvsweb.conf') {
-# 
-# In /var/www/conf/cvsweb/cvsweb.conf:
-# 
-# Change CVSrepositories to reflect the location of the directories which
-# contain CVSROOT.  This example shows a local repository NFS mounted over
-# loopback into /var/www/cvs, since the directory must be relative to
-# /var/www, we use /cvs.
-#
-# @CVSrepositories = (
-# 	'local'   => ['Local Repository', '/home/cvs'],	      (default)
-# 	'local'   => ['Local Repository', '/cvs'],	      (chroot)
-#
-# And the same idea for $mimetypes:
-#
-# $mime_types = '/var/www/conf/mime.types';		       (default)
-# $mime_types = '/conf/mime.types';			       (chroot)
+# The cvsweb program already assumes that it is running chrooted,
+# and the location of the configuration file is hardcoded to
+# /conf/cvsweb/cvsweb.conf, so usually there is no need to edit
+# the cvsweb program itself.
+
+# By default, /var/www/conf/cvsweb/cvsweb.conf configures one
+# repository to be served: /var/www/cvs/, which should contain
+# the subdirectory CVSROOT and one or more module directories.
+# Additional repositories, each containing their own CVSROOT
+# subdirectory, can be added to the @CVSrepositories array.
 
 # Example httpd.conf(5) for cvsweb
 # --------------------------------
-#
 # server "domain.tld" {
 #      listen on * port 80
 #      #listen on egress tls port 443
