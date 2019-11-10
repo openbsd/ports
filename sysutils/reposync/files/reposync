@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: reposync,v 1.4 2019/11/08 21:58:58 sthen Exp $
+# $OpenBSD: reposync,v 1.5 2019/11/10 13:36:32 sthen Exp $
 #
 # Copyright (c) 2018, 2019 Stuart Henderson <sthen@openbsd.org>
 #
@@ -24,15 +24,17 @@ err()
 
 usage()
 {
-        echo "usage: ${0##*/} [-f] [-l username] rsync://upstream/cvs [/path/to/cvs]" >&2
+        echo "usage: ${0##*/} [-f] [-p | -l username] rsync://upstream/cvs [/path/to/cvs]" >&2
 	exit 1
 }
 
 force=false
-while getopts "fl:" c; do
+fwduser=anoncvs
+while getopts "fl:p" c; do
 	case "$c" in
 		f) force=true		;;
 		l) fwduser="$OPTARG"	;;
+		p) fwduser=""		;;
 		*) usage		;;
 	esac
 done
