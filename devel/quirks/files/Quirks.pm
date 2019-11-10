@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.821 2019/11/10 12:45:23 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.822 2019/11/10 15:36:50 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -336,6 +336,8 @@ my $stem_extensions = {
 	'bro' => 'zeek',
 	'filter-rspamd' => 'opensmtpd-filter-rspamd',
 	'filter-senderscore' => 'opensmtpd-filter-senderscore',
+	'ilmbase' => 'OpenEXR',
+	'openexr-viewers' => 'OpenEXR-tools',
 };
 
 my $obsolete_reason = {
