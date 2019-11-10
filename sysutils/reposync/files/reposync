@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: reposync,v 1.6 2019/11/10 13:37:49 sthen Exp $
+# $OpenBSD: reposync,v 1.7 2019/11/10 13:53:39 sthen Exp $
 #
 # Copyright (c) 2018, 2019 Stuart Henderson <sthen@openbsd.org>
 #
@@ -49,9 +49,9 @@ run_rsync()
 {
 	if [[ -n $fwduser ]]; then
 			# reach rsync on the server via an ssh port-forward
-			rsync -e "ssh -W localhost:rsync -l $fwduser" $*
+			rsync -e "ssh -W localhost:rsync -l $fwduser" $* 2>&1
 	else
-			rsync $*
+			rsync $* 2>&1
 	fi
 }
 
@@ -91,7 +91,12 @@ trap "rm -f $lockfile" 0 1 2 15
 # check CVSROOT directory listing to identify updates; primarily for
 # ChangeLog but val-tags may also be updated after a checkout was done
 # using a new tag. ignore "history" (lists read-only operations).
-newhash="${synchost} $(run_rsync ${synchost}/CVSROOT/ | grep -v history | sha256)"
+_t="$(run_rsync ${synchost}/CVSROOT/ | grep -v history)"
+[[ -n $fwduser ]] && case $_t in
+	"stdio forwarding failed"*|"Stdio forwarding request failed"*)
+		err "mirror does not support ssh port-forwarding" ;;
+esac
+newhash="${synchost} $(echo $_t | sha256)"
 
 if [ -r $hashfile ]; then
 	age=$((`date +%s` - `stat -t %s -f %m $hashfile`))
