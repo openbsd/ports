@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1487 2019/11/10 17:36:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1488 2019/11/10 17:41:47 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -924,7 +924,7 @@ ERRORS += "Fatal: DEBUG_PACKAGES contains an arch-independent subpackage"
 .    endif
 PKGFILES += ${_PKG_REPO}${_DBG_PKGFILE${_s}}
 PKGNAMES += debug-${FULLPKGNAME${_s}}
-PKGPATHS += debug/${FULLPKGPATH${_s}}
+#PKGPATHS += debug/${FULLPKGPATH${_s}}
 .  endif 
 .endfor
 
