@@ -1,0 +1,20 @@
+$OpenBSD: patch-ext_extconf_rb,v 1.1.1.1 2019/11/10 16:52:05 jeremy Exp $
+
+Index: ext/extconf.rb
+--- ext/extconf.rb.orig
++++ ext/extconf.rb
+@@ -20,12 +20,12 @@ if enable_config('static-stdlib', false)
+ end
+ 
+ # Set to false when building binary gems
+-if enable_config('march-tune-native', true)
++if enable_config('march-tune-native', false)
+   $CFLAGS << ' -march=native -mtune=native'
+   $CXXFLAGS << ' -march=native -mtune=native'
+ end
+ 
+-if enable_config('lto', true)
++if enable_config('lto', false)
+   $CFLAGS << ' -flto'
+   $CXXFLAGS << ' -flto'
+   $LDFLAGS << ' -flto'
