@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/11/10 11:17:48 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2019/11/10 11:32:33 landry Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -34,7 +34,7 @@ FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/upower
 USE_GMAKE =	Yes
 
 LIB_DEPENDS =	devel/glib2
-BUILD_DEPENDS =	devel/gettext \
+BUILD_DEPENDS =	devel/gettext-tools \
 		devel/gobject-introspection \
 		textproc/docbook-xsl
 
