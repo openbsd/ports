@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: reposync,v 1.5 2019/11/10 13:36:32 sthen Exp $
+# $OpenBSD: reposync,v 1.6 2019/11/10 13:37:49 sthen Exp $
 #
 # Copyright (c) 2018, 2019 Stuart Henderson <sthen@openbsd.org>
 #
@@ -18,13 +18,13 @@
 
 err()
 {
-        echo "${0##*/}: $*" >&2
+	echo "${0##*/}: $*" >&2
 	exit 1
 }
 
 usage()
 {
-        echo "usage: ${0##*/} [-f] [-p | -l username] rsync://upstream/cvs [/path/to/cvs]" >&2
+	echo "usage: ${0##*/} [-f] [-p | -l username] rsync://upstream/cvs [/path/to/cvs]" >&2
 	exit 1
 }
 
@@ -72,16 +72,16 @@ lockfile="$rundir/reposync.lock"
 cd $rundir
 
 if [ -h $lockfile ]; then
-        # read the pid from $lockfile symlink target
-        lockedpid=$(stat -f %Y $lockfile)
+	# read the pid from $lockfile symlink target
+	lockedpid=$(stat -f %Y $lockfile)
 
-        # exit if it's A) still running and B) looks like this script
-        if ps -o command -p $lockedpid | grep -q "${0##*/}"; then
+	# exit if it's A) still running and B) looks like this script
+	if ps -o command -p $lockedpid | grep -q "${0##*/}"; then
 		err "already running?"
-        fi
+	fi
 
-        # not still running, the lock must be stale (machine panicked, etc) so zap it
-        rm -f $lockfile
+	# not still running, the lock must be stale (machine panicked, etc) so zap it
+	rm -f $lockfile
 fi
 
 ln -s $$ $lockfile || err "could not lock $lockfile"
