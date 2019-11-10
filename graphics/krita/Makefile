@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2019/10/18 04:43:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2019/11/10 15:27:11 ajacoutot Exp $
+
+BROKEN =	needs a WANTLIB sync
 
 COMMENT =	advanced drawing and image manipulation
 
@@ -42,15 +44,6 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half ICE Iex IlmImf IlmThread Imath
-WANTLIB += KF5Archive KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5ItemViews
-WANTLIB += KF5WidgetsAddons KF5WindowSystem OpenColorIO Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext Xi boost_system-mt c exiv2 fftw3
-WANTLIB += gif gsl gslcblas jpeg lcms2 m png poppler poppler-qt5
-WANTLIB += quazip5 raw tiff z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz

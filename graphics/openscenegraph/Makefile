@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/29 18:17:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/10 15:27:11 ajacoutot Exp $
+
+BROKEN =		needs a WANTLIB sync
 
 PORTROACH =		limitw:1,even
 
@@ -42,12 +44,6 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # OSGPL (see LICENSE.txt)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Half Iex IlmImf IlmThread Qt5Core
-WANTLIB += Qt5Gui Qt5OpenGL Qt5Widgets SDL X11 Xrandr avcodec
-WANTLIB += avdevice avformat avresample avutil c cairo curl freetype
-WANTLIB += gdal gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 intl
-WANTLIB += jasper jpeg m png poppler-glib rsvg-2 swresample swscale
-WANTLIB += tiff z
 
 MODULES =		devel/cmake \
 			x11/qt5
