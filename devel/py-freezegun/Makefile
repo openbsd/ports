@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/04 18:57:50 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/10 21:31:28 kmos Exp $
 
 COMMENT =		let your Python tests travel through time
 
@@ -21,8 +21,7 @@ MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
-			devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
 
 FLAVORS =		python3
