@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2019/11/08 10:24:21 fcambus Exp $
+# $OpenBSD: Makefile,v 1.26 2019/11/10 17:39:53 fcambus Exp $
 
 COMMENT=		load balancer for simple TCP-based protocols
 
-DISTNAME=		pen-0.33.0
-REVISION=		0
+DISTNAME=		pen-0.34.1
 
 CATEGORIES=		net
 
