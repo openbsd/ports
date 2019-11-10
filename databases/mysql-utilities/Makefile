@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/10 16:58:16 kmos Exp $
 
 COMMENT =	MySQL management utilities
 
@@ -20,8 +20,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-# XXX Regression tests are broken
-NO_TEST =	Yes
+MODPY_PYTEST =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py
