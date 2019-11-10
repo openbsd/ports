@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.90 2019/11/10 17:21:32 jca Exp $
+# $OpenBSD: Makefile,v 1.91 2019/11/10 17:49:30 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		26.3
-REVISION=		0
+REVISION=		1
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -21,6 +21,8 @@ MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
 
 USE_GMAKE=		Yes
+
+DEBUG_PACKAGES = -
 
 FLAVORS=		athena gtk2 gtk3 no_x11
 FLAVOR?=		gtk3
@@ -107,16 +109,6 @@ WANTLIB += png rsvg-2 tiff xcb
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif
 .endif
-
-DEBUG_PACKAGES = -
-DEBUG_FILES =	bin/ctags \
-		bin/ebrowse \
-		bin/emacs-${VERSION} \
-		bin/emacsclient \
-		bin/etags \
-		libexec/emacs/${VERSION}/${GCCARCH}/hexl \
-		libexec/emacs/${VERSION}/${GCCARCH}/movemail \
-		libexec/emacs/${VERSION}/${GCCARCH}/profile \
 
 post-install:
 	chmod -t ${PREFIX}/bin/emacs-${VERSION}
