@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/11/10 14:21:44 rsadowski Exp $
+@pkgpath x11/kde4/ksnapshot
 @bin bin/spectacle
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml
