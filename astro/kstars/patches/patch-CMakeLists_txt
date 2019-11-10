@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/05/03 16:32:28 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/11/10 15:01:58 rsadowski Exp $
 
 kstars tries to pass -z nodump to the linker, which is not supported by lld7.
 
@@ -8,7 +8,7 @@ that flag, and if not does not add it.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -295,8 +295,12 @@ IF (UNIX OR APPLE OR ANDROID)
+@@ -298,8 +298,12 @@ IF (UNIX OR APPLE OR ANDROID)
      SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SEC_COMP_FLAGS}")
      SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SEC_COMP_FLAGS}")
      SET(SEC_LINK_FLAGS "")

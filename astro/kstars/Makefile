@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2019/09/13 05:47:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2019/11/10 15:01:58 rsadowski Exp $
 
 COMMENT =	planetarium simulator for KDE
 
-DISTNAME =	kstars-3.3.6
+DISTNAME =	kstars-3.3.7
 EPOCH =		0
 
 CATEGORIES =	astro education
