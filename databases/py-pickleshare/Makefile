@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/10 17:14:33 kmos Exp $
 
 COMMENT =		tiny 'shelve'-like database with concurrency support
 
@@ -18,6 +18,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -25,7 +26,5 @@ FLAVOR ?=
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS =		devel/py-pathlib${MODPY_FLAVOR}
 .endif
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
