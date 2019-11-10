@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2019/11/07 21:58:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.41 2019/11/10 21:47:00 kmos Exp $
 
 COMMENT=	CLI tools to manage music collections
 
 MODPY_EGG_VERSION= 1.4.9
 DISTNAME=	beets-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
+REVISION=	0
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -24,7 +25,7 @@ RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \
 		audio/py-musicbrainzngs${MODPY_FLAVOR} \
 		audio/py-mutagen${MODPY_FLAVOR} \
-		devel/py-algorithm-munkres${MODPY_FLAVOR} \
+		devel/py-algorithm-munkres \
 		devel/py-pathlib${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
 		devel/py-xdg${MODPY_FLAVOR} \
