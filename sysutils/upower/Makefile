@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/12 20:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/11/10 11:17:48 landry Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-DISTNAME =	upower-0.99.9
+DISTNAME =	upower-0.99.11
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib          2.1      # 3.1
-REVISION =	0
 
-HOMEPAGE =	http://upower.freedesktop.org/
-MASTER_SITES =	https://gitlab.freedesktop.org/upower/upower/uploads/2282c7c0e53fb31816b824c9d1f547e8/
+HOMEPAGE =	https://upower.freedesktop.org/
+MASTER_SITES =	https://upower.freedesktop.org/releases/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -34,10 +33,9 @@ FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/upower
 
 USE_GMAKE =	Yes
 
-MODULES =	textproc/intltool
-
 LIB_DEPENDS =	devel/glib2
-BUILD_DEPENDS =	devel/gobject-introspection \
+BUILD_DEPENDS =	devel/gettext \
+		devel/gobject-introspection \
 		textproc/docbook-xsl
 
 # /usr/local/share/dbus-1/system-services/

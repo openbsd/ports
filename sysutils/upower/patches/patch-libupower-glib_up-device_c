@@ -1,4 +1,4 @@
-$OpenBSD: patch-libupower-glib_up-device_c,v 1.4 2018/12/10 10:55:27 landry Exp $
+$OpenBSD: patch-libupower-glib_up-device_c,v 1.5 2019/11/10 11:17:49 landry Exp $
 
 Fix with base gcc:
 
@@ -7,7 +7,7 @@ Fix with base gcc:
 Index: libupower-glib/up-device.c
 --- libupower-glib/up-device.c.orig
 +++ libupower-glib/up-device.c
-@@ -281,10 +281,7 @@ up_device_to_text (UpDevice *device)
+@@ -279,10 +279,7 @@ up_device_to_text (UpDevice *device)
  	/* get a human readable time */
  	t = (time_t) up_exported_device_get_update_time (priv->proxy_device);
  	time_tm = localtime (&t);
