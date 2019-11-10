@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2019/11/01 19:33:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2019/11/10 16:05:54 ajacoutot Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
 GNOME_PROJECT=	atk
 GNOME_VERSION=	2.34.1
+REVISION=	0
 
 SHARED_LIBS +=  atk-1.0              21809.3  # 0.23410.1
 
@@ -23,5 +24,8 @@ MODULES=	devel/meson \
 MODGNOME_TOOLS=	gobject-introspection
 
 LIB_DEPENDS=	devel/glib2
+
+DEBUG_PACKAGES=	-
+DEBUG_FILES=	lib/libatk-1.0.so.${LIBatk-1.0_VERSION}
 
 .include <bsd.port.mk>
