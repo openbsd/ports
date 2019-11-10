@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.97 2019/11/05 17:53:17 jca Exp $
+# $OpenBSD: Makefile,v 1.98 2019/11/10 17:50:00 jca Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.4.8
+REVISION=	0
 
 CATEGORIES=	net security
 
@@ -25,6 +26,8 @@ CONFIGURE_STYLE= gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+
+DEBUG_PACKAGES=	-
 
 FLAVORS=	mbedtls
 FLAVOR?=

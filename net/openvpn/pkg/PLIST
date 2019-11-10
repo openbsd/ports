@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/02/21 23:32:23 jca Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/11/10 17:50:00 jca Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/openvpn
@@ -9,7 +9,7 @@ lib/openvpn/
 lib/openvpn/plugins/
 lib/openvpn/plugins/openvpn-plugin-down-root.a
 lib/openvpn/plugins/openvpn-plugin-down-root.la
-lib/openvpn/plugins/openvpn-plugin-down-root.so
+@so lib/openvpn/plugins/openvpn-plugin-down-root.so
 @man man/man8/openvpn.8
 @bin sbin/openvpn
 share/doc/openvpn/
