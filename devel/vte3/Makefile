@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2019/11/01 20:19:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2019/11/10 16:47:31 cwen Exp $
 
 COMMENT=		terminal emulation library
 
@@ -43,6 +43,14 @@ CONFIGURE_ARGS =	-Dgtk4=false
 TEST_DEPENDS=		shells/bash
 
 SUBST_VARS +=		API_V
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+# -Bsymbolic-functions is not supported by ld.bfd
+CONFIGURE_ARGS +=	-D_b_symbolic_functions=false
+# Fix X11-related undefined references errors
+MODGNOME_LDFLAGS += 	-L${X11BASE}/lib
+.endif
 
 # XXX: https://bugzilla.gnome.org/show_bug.cgi?id=675987
 post-install:

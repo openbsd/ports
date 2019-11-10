@@ -1,0 +1,35 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/11/10 16:47:31 cwen Exp $
+
+Allow building on ld.bfd archs, from upstream:
+https://gitlab.gnome.org/GNOME/vte/commit/347f7dd9b1c11244156bfb593866306c735cb06a
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -354,15 +354,21 @@ add_project_arguments(global_cxxflags, language: 'cpp'
+ # Linker flags
+ 
+ linker_flags = [
+-  '-Wl,-Bsymbolic-functions'
++  [ '-Wl,-Bsymbolic-functions', get_option('_b_symbolic_functions'),],
+ ]
+ 
+ foreach flag: linker_flags
+-  assert(cc.has_link_argument(flag), flag + ' is required but not supported')
+-  add_project_link_arguments(flag, language: 'c')
++  if cc.has_link_argument(flag[0])
++    add_project_link_arguments(flag[0], language: 'c')
++  elif flag[1]
++    assert(false, flag[0] + ' is required but not supported')
++  endif
+ 
+-  assert(cxx.has_link_argument(flag), flag + ' is required but not supported')
+-  add_project_link_arguments(flag, language: 'cpp')
++  if cxx.has_link_argument(flag[0])
++    add_project_link_arguments(flag[0], language: 'cpp')
++  elif flag[1]
++    assert(false, flag[0] + ' is required but not supported')
++  endif
+ endforeach
+ 
+ # Dependencies
