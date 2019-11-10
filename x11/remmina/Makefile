@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/11/09 11:02:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2019/11/10 15:16:49 ajacoutot Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
@@ -28,7 +28,8 @@ WANTLIB += xkbfile
 
 MODULES=		devel/cmake
 
-BUILD_DEPENDS=		devel/gettext,-tools
+BUILD_DEPENDS=		devel/gettext,-tools \
+			devel/spice-protocol
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libsoup \
