@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-speex,v 1.4 2019/01/29 23:40:02 sthen Exp $
+@comment $OpenBSD: PLIST-speex,v 1.5 2019/11/11 21:25:20 sthen Exp $
 @pkgpath telephony/asterisk,-speex,h323
-lib/asterisk/modules/codec_speex.so
-lib/asterisk/modules/format_ogg_speex.so
-lib/asterisk/modules/func_speex.so
+@so lib/asterisk/modules/codec_speex.so
+@so lib/asterisk/modules/format_ogg_speex.so
+@so lib/asterisk/modules/func_speex.so

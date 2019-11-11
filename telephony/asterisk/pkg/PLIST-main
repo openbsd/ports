@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.80 2019/07/25 22:23:39 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.81 2019/11/11 21:25:20 sthen Exp $
+@extraunexec rm -f ${SYSCONFDIR}/asterisk/*
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -238,298 +239,298 @@ include/asterisk/xmldoc.h
 include/asterisk/xmpp.h
 lib/asterisk/
 lib/asterisk/modules/
-lib/asterisk/modules/app_adsiprog.so
-lib/asterisk/modules/app_agent_pool.so
-lib/asterisk/modules/app_alarmreceiver.so
-lib/asterisk/modules/app_amd.so
-lib/asterisk/modules/app_attended_transfer.so
-lib/asterisk/modules/app_authenticate.so
-lib/asterisk/modules/app_blind_transfer.so
-lib/asterisk/modules/app_bridgeaddchan.so
-lib/asterisk/modules/app_bridgewait.so
-lib/asterisk/modules/app_cdr.so
-lib/asterisk/modules/app_celgenuserevent.so
-lib/asterisk/modules/app_chanisavail.so
-lib/asterisk/modules/app_channelredirect.so
-lib/asterisk/modules/app_chanspy.so
-lib/asterisk/modules/app_confbridge.so
-lib/asterisk/modules/app_controlplayback.so
-lib/asterisk/modules/app_db.so
-lib/asterisk/modules/app_dial.so
-lib/asterisk/modules/app_dictate.so
-lib/asterisk/modules/app_directed_pickup.so
-lib/asterisk/modules/app_directory.so
-lib/asterisk/modules/app_disa.so
-lib/asterisk/modules/app_dumpchan.so
-lib/asterisk/modules/app_echo.so
-lib/asterisk/modules/app_exec.so
-lib/asterisk/modules/app_externalivr.so
-lib/asterisk/modules/app_festival.so
-lib/asterisk/modules/app_followme.so
-lib/asterisk/modules/app_forkcdr.so
-lib/asterisk/modules/app_getcpeid.so
-lib/asterisk/modules/app_ices.so
-lib/asterisk/modules/app_image.so
-lib/asterisk/modules/app_milliwatt.so
-lib/asterisk/modules/app_minivm.so
-lib/asterisk/modules/app_mixmonitor.so
-lib/asterisk/modules/app_morsecode.so
-lib/asterisk/modules/app_mp3.so
-lib/asterisk/modules/app_nbscat.so
-lib/asterisk/modules/app_originate.so
-lib/asterisk/modules/app_page.so
-lib/asterisk/modules/app_playback.so
-lib/asterisk/modules/app_playtones.so
-lib/asterisk/modules/app_privacy.so
-lib/asterisk/modules/app_queue.so
-lib/asterisk/modules/app_read.so
-lib/asterisk/modules/app_readexten.so
-lib/asterisk/modules/app_record.so
-lib/asterisk/modules/app_sayunixtime.so
-lib/asterisk/modules/app_senddtmf.so
-lib/asterisk/modules/app_sendtext.so
-lib/asterisk/modules/app_sms.so
-lib/asterisk/modules/app_softhangup.so
-lib/asterisk/modules/app_speech_utils.so
-lib/asterisk/modules/app_stack.so
-lib/asterisk/modules/app_stasis.so
-lib/asterisk/modules/app_stream_echo.so
-lib/asterisk/modules/app_system.so
-lib/asterisk/modules/app_talkdetect.so
-lib/asterisk/modules/app_test.so
-lib/asterisk/modules/app_transfer.so
-lib/asterisk/modules/app_url.so
-lib/asterisk/modules/app_userevent.so
-lib/asterisk/modules/app_verbose.so
-lib/asterisk/modules/app_voicemail.so
-lib/asterisk/modules/app_waitforring.so
-lib/asterisk/modules/app_waitforsilence.so
-lib/asterisk/modules/app_waituntil.so
-lib/asterisk/modules/app_while.so
-lib/asterisk/modules/app_zapateller.so
-lib/asterisk/modules/bridge_builtin_features.so
-lib/asterisk/modules/bridge_builtin_interval_features.so
-lib/asterisk/modules/bridge_holding.so
-lib/asterisk/modules/bridge_native_rtp.so
-lib/asterisk/modules/bridge_simple.so
-lib/asterisk/modules/bridge_softmix.so
-lib/asterisk/modules/cdr_csv.so
-lib/asterisk/modules/cdr_custom.so
-lib/asterisk/modules/cdr_manager.so
-lib/asterisk/modules/cdr_radius.so
-lib/asterisk/modules/cdr_sqlite3_custom.so
-lib/asterisk/modules/cel_custom.so
-lib/asterisk/modules/cel_manager.so
-lib/asterisk/modules/cel_radius.so
-lib/asterisk/modules/cel_sqlite3_custom.so
-lib/asterisk/modules/chan_bridge_media.so
-lib/asterisk/modules/chan_console.so
-lib/asterisk/modules/chan_iax2.so
-lib/asterisk/modules/chan_mgcp.so
-lib/asterisk/modules/chan_motif.so
-lib/asterisk/modules/chan_pjsip.so
-lib/asterisk/modules/chan_rtp.so
-lib/asterisk/modules/chan_sip.so
-lib/asterisk/modules/chan_skinny.so
-lib/asterisk/modules/chan_unistim.so
-lib/asterisk/modules/codec_a_mu.so
-lib/asterisk/modules/codec_adpcm.so
-lib/asterisk/modules/codec_alaw.so
-lib/asterisk/modules/codec_g722.so
-lib/asterisk/modules/codec_g726.so
-lib/asterisk/modules/codec_gsm.so
-lib/asterisk/modules/codec_ilbc.so
-lib/asterisk/modules/codec_lpc10.so
-lib/asterisk/modules/codec_resample.so
-lib/asterisk/modules/codec_ulaw.so
-lib/asterisk/modules/format_g719.so
-lib/asterisk/modules/format_g723.so
-lib/asterisk/modules/format_g726.so
-lib/asterisk/modules/format_g729.so
-lib/asterisk/modules/format_gsm.so
-lib/asterisk/modules/format_h263.so
-lib/asterisk/modules/format_h264.so
-lib/asterisk/modules/format_ilbc.so
-lib/asterisk/modules/format_ogg_vorbis.so
-lib/asterisk/modules/format_pcm.so
-lib/asterisk/modules/format_siren14.so
-lib/asterisk/modules/format_siren7.so
-lib/asterisk/modules/format_sln.so
-lib/asterisk/modules/format_vox.so
-lib/asterisk/modules/format_wav.so
-lib/asterisk/modules/format_wav_gsm.so
-lib/asterisk/modules/func_aes.so
-lib/asterisk/modules/func_base64.so
-lib/asterisk/modules/func_blacklist.so
-lib/asterisk/modules/func_callcompletion.so
-lib/asterisk/modules/func_callerid.so
-lib/asterisk/modules/func_cdr.so
-lib/asterisk/modules/func_channel.so
-lib/asterisk/modules/func_config.so
-lib/asterisk/modules/func_curl.so
-lib/asterisk/modules/func_cut.so
-lib/asterisk/modules/func_db.so
-lib/asterisk/modules/func_devstate.so
-lib/asterisk/modules/func_dialgroup.so
-lib/asterisk/modules/func_dialplan.so
-lib/asterisk/modules/func_enum.so
-lib/asterisk/modules/func_env.so
-lib/asterisk/modules/func_extstate.so
-lib/asterisk/modules/func_frame_trace.so
-lib/asterisk/modules/func_global.so
-lib/asterisk/modules/func_groupcount.so
-lib/asterisk/modules/func_hangupcause.so
-lib/asterisk/modules/func_holdintercept.so
-lib/asterisk/modules/func_iconv.so
-lib/asterisk/modules/func_jitterbuffer.so
-lib/asterisk/modules/func_lock.so
-lib/asterisk/modules/func_logic.so
-lib/asterisk/modules/func_math.so
-lib/asterisk/modules/func_md5.so
-lib/asterisk/modules/func_module.so
-lib/asterisk/modules/func_periodic_hook.so
-lib/asterisk/modules/func_pitchshift.so
-lib/asterisk/modules/func_pjsip_aor.so
-lib/asterisk/modules/func_pjsip_contact.so
-lib/asterisk/modules/func_pjsip_endpoint.so
-lib/asterisk/modules/func_presencestate.so
-lib/asterisk/modules/func_rand.so
-lib/asterisk/modules/func_realtime.so
-lib/asterisk/modules/func_sha1.so
-lib/asterisk/modules/func_shell.so
-lib/asterisk/modules/func_sorcery.so
-lib/asterisk/modules/func_sprintf.so
-lib/asterisk/modules/func_srv.so
-lib/asterisk/modules/func_strings.so
-lib/asterisk/modules/func_sysinfo.so
-lib/asterisk/modules/func_talkdetect.so
-lib/asterisk/modules/func_timeout.so
-lib/asterisk/modules/func_uri.so
-lib/asterisk/modules/func_version.so
-lib/asterisk/modules/func_vmcount.so
-lib/asterisk/modules/func_volume.so
-lib/asterisk/modules/pbx_ael.so
-lib/asterisk/modules/pbx_config.so
-lib/asterisk/modules/pbx_dundi.so
-lib/asterisk/modules/pbx_loopback.so
-lib/asterisk/modules/pbx_realtime.so
-lib/asterisk/modules/pbx_spool.so
-lib/asterisk/modules/res_adsi.so
-lib/asterisk/modules/res_ael_share.so
-lib/asterisk/modules/res_agi.so
-lib/asterisk/modules/res_ari.so
-lib/asterisk/modules/res_ari_applications.so
-lib/asterisk/modules/res_ari_asterisk.so
-lib/asterisk/modules/res_ari_bridges.so
-lib/asterisk/modules/res_ari_channels.so
-lib/asterisk/modules/res_ari_device_states.so
-lib/asterisk/modules/res_ari_endpoints.so
-lib/asterisk/modules/res_ari_events.so
-lib/asterisk/modules/res_ari_model.so
-lib/asterisk/modules/res_ari_playbacks.so
-lib/asterisk/modules/res_ari_recordings.so
-lib/asterisk/modules/res_ari_sounds.so
-lib/asterisk/modules/res_clialiases.so
-lib/asterisk/modules/res_clioriginate.so
-lib/asterisk/modules/res_config_curl.so
-lib/asterisk/modules/res_config_sqlite3.so
-lib/asterisk/modules/res_convert.so
-lib/asterisk/modules/res_crypto.so
-lib/asterisk/modules/res_curl.so
-lib/asterisk/modules/res_fax.so
-lib/asterisk/modules/res_fax_spandsp.so
-lib/asterisk/modules/res_format_attr_celt.so
-lib/asterisk/modules/res_format_attr_g729.so
-lib/asterisk/modules/res_format_attr_h263.so
-lib/asterisk/modules/res_format_attr_h264.so
-lib/asterisk/modules/res_format_attr_ilbc.so
-lib/asterisk/modules/res_format_attr_opus.so
-lib/asterisk/modules/res_format_attr_silk.so
-lib/asterisk/modules/res_format_attr_siren14.so
-lib/asterisk/modules/res_format_attr_siren7.so
-lib/asterisk/modules/res_format_attr_vp8.so
-lib/asterisk/modules/res_hep.so
-lib/asterisk/modules/res_hep_pjsip.so
-lib/asterisk/modules/res_hep_rtcp.so
-lib/asterisk/modules/res_http_media_cache.so
-lib/asterisk/modules/res_http_websocket.so
-lib/asterisk/modules/res_limit.so
-lib/asterisk/modules/res_manager_devicestate.so
-lib/asterisk/modules/res_manager_presencestate.so
-lib/asterisk/modules/res_monitor.so
-lib/asterisk/modules/res_musiconhold.so
-lib/asterisk/modules/res_mutestream.so
-lib/asterisk/modules/res_mwi_devstate.so
-lib/asterisk/modules/res_parking.so
-lib/asterisk/modules/res_phoneprov.so
-lib/asterisk/modules/res_pjproject.so
-lib/asterisk/modules/res_pjsip.so
-lib/asterisk/modules/res_pjsip_acl.so
-lib/asterisk/modules/res_pjsip_authenticator_digest.so
-lib/asterisk/modules/res_pjsip_caller_id.so
-lib/asterisk/modules/res_pjsip_config_wizard.so
-lib/asterisk/modules/res_pjsip_dialog_info_body_generator.so
-lib/asterisk/modules/res_pjsip_diversion.so
-lib/asterisk/modules/res_pjsip_dlg_options.so
-lib/asterisk/modules/res_pjsip_dtmf_info.so
-lib/asterisk/modules/res_pjsip_empty_info.so
-lib/asterisk/modules/res_pjsip_endpoint_identifier_anonymous.so
-lib/asterisk/modules/res_pjsip_endpoint_identifier_ip.so
-lib/asterisk/modules/res_pjsip_endpoint_identifier_user.so
-lib/asterisk/modules/res_pjsip_exten_state.so
-lib/asterisk/modules/res_pjsip_header_funcs.so
-lib/asterisk/modules/res_pjsip_history.so
-lib/asterisk/modules/res_pjsip_logger.so
-lib/asterisk/modules/res_pjsip_messaging.so
-lib/asterisk/modules/res_pjsip_mwi.so
-lib/asterisk/modules/res_pjsip_mwi_body_generator.so
-lib/asterisk/modules/res_pjsip_nat.so
-lib/asterisk/modules/res_pjsip_notify.so
-lib/asterisk/modules/res_pjsip_one_touch_record_info.so
-lib/asterisk/modules/res_pjsip_outbound_authenticator_digest.so
-lib/asterisk/modules/res_pjsip_outbound_publish.so
-lib/asterisk/modules/res_pjsip_outbound_registration.so
-lib/asterisk/modules/res_pjsip_path.so
-lib/asterisk/modules/res_pjsip_phoneprov_provider.so
-lib/asterisk/modules/res_pjsip_pidf_body_generator.so
-lib/asterisk/modules/res_pjsip_pidf_digium_body_supplement.so
-lib/asterisk/modules/res_pjsip_pidf_eyebeam_body_supplement.so
-lib/asterisk/modules/res_pjsip_publish_asterisk.so
-lib/asterisk/modules/res_pjsip_pubsub.so
-lib/asterisk/modules/res_pjsip_refer.so
-lib/asterisk/modules/res_pjsip_registrar.so
-lib/asterisk/modules/res_pjsip_rfc3326.so
-lib/asterisk/modules/res_pjsip_sdp_rtp.so
-lib/asterisk/modules/res_pjsip_send_to_voicemail.so
-lib/asterisk/modules/res_pjsip_session.so
-lib/asterisk/modules/res_pjsip_sips_contact.so
-lib/asterisk/modules/res_pjsip_t38.so
-lib/asterisk/modules/res_pjsip_transport_websocket.so
-lib/asterisk/modules/res_pjsip_xpidf_body_generator.so
-lib/asterisk/modules/res_realtime.so
-lib/asterisk/modules/res_resolver_unbound.so
-lib/asterisk/modules/res_rtp_asterisk.so
-lib/asterisk/modules/res_rtp_multicast.so
-lib/asterisk/modules/res_security_log.so
-lib/asterisk/modules/res_smdi.so
-lib/asterisk/modules/res_sorcery_astdb.so
-lib/asterisk/modules/res_sorcery_config.so
-lib/asterisk/modules/res_sorcery_memory.so
-lib/asterisk/modules/res_sorcery_memory_cache.so
-lib/asterisk/modules/res_sorcery_realtime.so
-lib/asterisk/modules/res_speech.so
-lib/asterisk/modules/res_srtp.so
-lib/asterisk/modules/res_stasis.so
-lib/asterisk/modules/res_stasis_answer.so
-lib/asterisk/modules/res_stasis_device_state.so
-lib/asterisk/modules/res_stasis_playback.so
-lib/asterisk/modules/res_stasis_recording.so
-lib/asterisk/modules/res_stasis_snoop.so
-lib/asterisk/modules/res_statsd.so
-lib/asterisk/modules/res_stun_monitor.so
+@so lib/asterisk/modules/app_adsiprog.so
+@so lib/asterisk/modules/app_agent_pool.so
+@so lib/asterisk/modules/app_alarmreceiver.so
+@so lib/asterisk/modules/app_amd.so
+@so lib/asterisk/modules/app_attended_transfer.so
+@so lib/asterisk/modules/app_authenticate.so
+@so lib/asterisk/modules/app_blind_transfer.so
+@so lib/asterisk/modules/app_bridgeaddchan.so
+@so lib/asterisk/modules/app_bridgewait.so
+@so lib/asterisk/modules/app_cdr.so
+@so lib/asterisk/modules/app_celgenuserevent.so
+@so lib/asterisk/modules/app_chanisavail.so
+@so lib/asterisk/modules/app_channelredirect.so
+@so lib/asterisk/modules/app_chanspy.so
+@so lib/asterisk/modules/app_confbridge.so
+@so lib/asterisk/modules/app_controlplayback.so
+@so lib/asterisk/modules/app_db.so
+@so lib/asterisk/modules/app_dial.so
+@so lib/asterisk/modules/app_dictate.so
+@so lib/asterisk/modules/app_directed_pickup.so
+@so lib/asterisk/modules/app_directory.so
+@so lib/asterisk/modules/app_disa.so
+@so lib/asterisk/modules/app_dumpchan.so
+@so lib/asterisk/modules/app_echo.so
+@so lib/asterisk/modules/app_exec.so
+@so lib/asterisk/modules/app_externalivr.so
+@so lib/asterisk/modules/app_festival.so
+@so lib/asterisk/modules/app_followme.so
+@so lib/asterisk/modules/app_forkcdr.so
+@so lib/asterisk/modules/app_getcpeid.so
+@so lib/asterisk/modules/app_ices.so
+@so lib/asterisk/modules/app_image.so
+@so lib/asterisk/modules/app_milliwatt.so
+@so lib/asterisk/modules/app_minivm.so
+@so lib/asterisk/modules/app_mixmonitor.so
+@so lib/asterisk/modules/app_morsecode.so
+@so lib/asterisk/modules/app_mp3.so
+@so lib/asterisk/modules/app_nbscat.so
+@so lib/asterisk/modules/app_originate.so
+@so lib/asterisk/modules/app_page.so
+@so lib/asterisk/modules/app_playback.so
+@so lib/asterisk/modules/app_playtones.so
+@so lib/asterisk/modules/app_privacy.so
+@so lib/asterisk/modules/app_queue.so
+@so lib/asterisk/modules/app_read.so
+@so lib/asterisk/modules/app_readexten.so
+@so lib/asterisk/modules/app_record.so
+@so lib/asterisk/modules/app_sayunixtime.so
+@so lib/asterisk/modules/app_senddtmf.so
+@so lib/asterisk/modules/app_sendtext.so
+@so lib/asterisk/modules/app_sms.so
+@so lib/asterisk/modules/app_softhangup.so
+@so lib/asterisk/modules/app_speech_utils.so
+@so lib/asterisk/modules/app_stack.so
+@so lib/asterisk/modules/app_stasis.so
+@so lib/asterisk/modules/app_stream_echo.so
+@so lib/asterisk/modules/app_system.so
+@so lib/asterisk/modules/app_talkdetect.so
+@so lib/asterisk/modules/app_test.so
+@so lib/asterisk/modules/app_transfer.so
+@so lib/asterisk/modules/app_url.so
+@so lib/asterisk/modules/app_userevent.so
+@so lib/asterisk/modules/app_verbose.so
+@so lib/asterisk/modules/app_voicemail.so
+@so lib/asterisk/modules/app_waitforring.so
+@so lib/asterisk/modules/app_waitforsilence.so
+@so lib/asterisk/modules/app_waituntil.so
+@so lib/asterisk/modules/app_while.so
+@so lib/asterisk/modules/app_zapateller.so
+@so lib/asterisk/modules/bridge_builtin_features.so
+@so lib/asterisk/modules/bridge_builtin_interval_features.so
+@so lib/asterisk/modules/bridge_holding.so
+@so lib/asterisk/modules/bridge_native_rtp.so
+@so lib/asterisk/modules/bridge_simple.so
+@so lib/asterisk/modules/bridge_softmix.so
+@so lib/asterisk/modules/cdr_csv.so
+@so lib/asterisk/modules/cdr_custom.so
+@so lib/asterisk/modules/cdr_manager.so
+@so lib/asterisk/modules/cdr_radius.so
+@so lib/asterisk/modules/cdr_sqlite3_custom.so
+@so lib/asterisk/modules/cel_custom.so
+@so lib/asterisk/modules/cel_manager.so
+@so lib/asterisk/modules/cel_radius.so
+@so lib/asterisk/modules/cel_sqlite3_custom.so
+@so lib/asterisk/modules/chan_bridge_media.so
+@so lib/asterisk/modules/chan_console.so
+@so lib/asterisk/modules/chan_iax2.so
+@so lib/asterisk/modules/chan_mgcp.so
+@so lib/asterisk/modules/chan_motif.so
+@so lib/asterisk/modules/chan_pjsip.so
+@so lib/asterisk/modules/chan_rtp.so
+@so lib/asterisk/modules/chan_sip.so
+@so lib/asterisk/modules/chan_skinny.so
+@so lib/asterisk/modules/chan_unistim.so
+@so lib/asterisk/modules/codec_a_mu.so
+@so lib/asterisk/modules/codec_adpcm.so
+@so lib/asterisk/modules/codec_alaw.so
+@so lib/asterisk/modules/codec_g722.so
+@so lib/asterisk/modules/codec_g726.so
+@so lib/asterisk/modules/codec_gsm.so
+@so lib/asterisk/modules/codec_ilbc.so
+@so lib/asterisk/modules/codec_lpc10.so
+@so lib/asterisk/modules/codec_resample.so
+@so lib/asterisk/modules/codec_ulaw.so
+@so lib/asterisk/modules/format_g719.so
+@so lib/asterisk/modules/format_g723.so
+@so lib/asterisk/modules/format_g726.so
+@so lib/asterisk/modules/format_g729.so
+@so lib/asterisk/modules/format_gsm.so
+@so lib/asterisk/modules/format_h263.so
+@so lib/asterisk/modules/format_h264.so
+@so lib/asterisk/modules/format_ilbc.so
+@so lib/asterisk/modules/format_ogg_vorbis.so
+@so lib/asterisk/modules/format_pcm.so
+@so lib/asterisk/modules/format_siren14.so
+@so lib/asterisk/modules/format_siren7.so
+@so lib/asterisk/modules/format_sln.so
+@so lib/asterisk/modules/format_vox.so
+@so lib/asterisk/modules/format_wav.so
+@so lib/asterisk/modules/format_wav_gsm.so
+@so lib/asterisk/modules/func_aes.so
+@so lib/asterisk/modules/func_base64.so
+@so lib/asterisk/modules/func_blacklist.so
+@so lib/asterisk/modules/func_callcompletion.so
+@so lib/asterisk/modules/func_callerid.so
+@so lib/asterisk/modules/func_cdr.so
+@so lib/asterisk/modules/func_channel.so
+@so lib/asterisk/modules/func_config.so
+@so lib/asterisk/modules/func_curl.so
+@so lib/asterisk/modules/func_cut.so
+@so lib/asterisk/modules/func_db.so
+@so lib/asterisk/modules/func_devstate.so
+@so lib/asterisk/modules/func_dialgroup.so
+@so lib/asterisk/modules/func_dialplan.so
+@so lib/asterisk/modules/func_enum.so
+@so lib/asterisk/modules/func_env.so
+@so lib/asterisk/modules/func_extstate.so
+@so lib/asterisk/modules/func_frame_trace.so
+@so lib/asterisk/modules/func_global.so
+@so lib/asterisk/modules/func_groupcount.so
+@so lib/asterisk/modules/func_hangupcause.so
+@so lib/asterisk/modules/func_holdintercept.so
+@so lib/asterisk/modules/func_iconv.so
+@so lib/asterisk/modules/func_jitterbuffer.so
+@so lib/asterisk/modules/func_lock.so
+@so lib/asterisk/modules/func_logic.so
+@so lib/asterisk/modules/func_math.so
+@so lib/asterisk/modules/func_md5.so
+@so lib/asterisk/modules/func_module.so
+@so lib/asterisk/modules/func_periodic_hook.so
+@so lib/asterisk/modules/func_pitchshift.so
+@so lib/asterisk/modules/func_pjsip_aor.so
+@so lib/asterisk/modules/func_pjsip_contact.so
+@so lib/asterisk/modules/func_pjsip_endpoint.so
+@so lib/asterisk/modules/func_presencestate.so
+@so lib/asterisk/modules/func_rand.so
+@so lib/asterisk/modules/func_realtime.so
+@so lib/asterisk/modules/func_sha1.so
+@so lib/asterisk/modules/func_shell.so
+@so lib/asterisk/modules/func_sorcery.so
+@so lib/asterisk/modules/func_sprintf.so
+@so lib/asterisk/modules/func_srv.so
+@so lib/asterisk/modules/func_strings.so
+@so lib/asterisk/modules/func_sysinfo.so
+@so lib/asterisk/modules/func_talkdetect.so
+@so lib/asterisk/modules/func_timeout.so
+@so lib/asterisk/modules/func_uri.so
+@so lib/asterisk/modules/func_version.so
+@so lib/asterisk/modules/func_vmcount.so
+@so lib/asterisk/modules/func_volume.so
+@so lib/asterisk/modules/pbx_ael.so
+@so lib/asterisk/modules/pbx_config.so
+@so lib/asterisk/modules/pbx_dundi.so
+@so lib/asterisk/modules/pbx_loopback.so
+@so lib/asterisk/modules/pbx_realtime.so
+@so lib/asterisk/modules/pbx_spool.so
+@so lib/asterisk/modules/res_adsi.so
+@so lib/asterisk/modules/res_ael_share.so
+@so lib/asterisk/modules/res_agi.so
+@so lib/asterisk/modules/res_ari.so
+@so lib/asterisk/modules/res_ari_applications.so
+@so lib/asterisk/modules/res_ari_asterisk.so
+@so lib/asterisk/modules/res_ari_bridges.so
+@so lib/asterisk/modules/res_ari_channels.so
+@so lib/asterisk/modules/res_ari_device_states.so
+@so lib/asterisk/modules/res_ari_endpoints.so
+@so lib/asterisk/modules/res_ari_events.so
+@so lib/asterisk/modules/res_ari_model.so
+@so lib/asterisk/modules/res_ari_playbacks.so
+@so lib/asterisk/modules/res_ari_recordings.so
+@so lib/asterisk/modules/res_ari_sounds.so
+@so lib/asterisk/modules/res_clialiases.so
+@so lib/asterisk/modules/res_clioriginate.so
+@so lib/asterisk/modules/res_config_curl.so
+@so lib/asterisk/modules/res_config_sqlite3.so
+@so lib/asterisk/modules/res_convert.so
+@so lib/asterisk/modules/res_crypto.so
+@so lib/asterisk/modules/res_curl.so
+@so lib/asterisk/modules/res_fax.so
+@so lib/asterisk/modules/res_fax_spandsp.so
+@so lib/asterisk/modules/res_format_attr_celt.so
+@so lib/asterisk/modules/res_format_attr_g729.so
+@so lib/asterisk/modules/res_format_attr_h263.so
+@so lib/asterisk/modules/res_format_attr_h264.so
+@so lib/asterisk/modules/res_format_attr_ilbc.so
+@so lib/asterisk/modules/res_format_attr_opus.so
+@so lib/asterisk/modules/res_format_attr_silk.so
+@so lib/asterisk/modules/res_format_attr_siren14.so
+@so lib/asterisk/modules/res_format_attr_siren7.so
+@so lib/asterisk/modules/res_format_attr_vp8.so
+@so lib/asterisk/modules/res_hep.so
+@so lib/asterisk/modules/res_hep_pjsip.so
+@so lib/asterisk/modules/res_hep_rtcp.so
+@so lib/asterisk/modules/res_http_media_cache.so
+@so lib/asterisk/modules/res_http_websocket.so
+@so lib/asterisk/modules/res_limit.so
+@so lib/asterisk/modules/res_manager_devicestate.so
+@so lib/asterisk/modules/res_manager_presencestate.so
+@so lib/asterisk/modules/res_monitor.so
+@so lib/asterisk/modules/res_musiconhold.so
+@so lib/asterisk/modules/res_mutestream.so
+@so lib/asterisk/modules/res_mwi_devstate.so
+@so lib/asterisk/modules/res_parking.so
+@so lib/asterisk/modules/res_phoneprov.so
+@so lib/asterisk/modules/res_pjproject.so
+@so lib/asterisk/modules/res_pjsip.so
+@so lib/asterisk/modules/res_pjsip_acl.so
+@so lib/asterisk/modules/res_pjsip_authenticator_digest.so
+@so lib/asterisk/modules/res_pjsip_caller_id.so
+@so lib/asterisk/modules/res_pjsip_config_wizard.so
+@so lib/asterisk/modules/res_pjsip_dialog_info_body_generator.so
+@so lib/asterisk/modules/res_pjsip_diversion.so
+@so lib/asterisk/modules/res_pjsip_dlg_options.so
+@so lib/asterisk/modules/res_pjsip_dtmf_info.so
+@so lib/asterisk/modules/res_pjsip_empty_info.so
+@so lib/asterisk/modules/res_pjsip_endpoint_identifier_anonymous.so
+@so lib/asterisk/modules/res_pjsip_endpoint_identifier_ip.so
+@so lib/asterisk/modules/res_pjsip_endpoint_identifier_user.so
+@so lib/asterisk/modules/res_pjsip_exten_state.so
+@so lib/asterisk/modules/res_pjsip_header_funcs.so
+@so lib/asterisk/modules/res_pjsip_history.so
+@so lib/asterisk/modules/res_pjsip_logger.so
+@so lib/asterisk/modules/res_pjsip_messaging.so
+@so lib/asterisk/modules/res_pjsip_mwi.so
+@so lib/asterisk/modules/res_pjsip_mwi_body_generator.so
+@so lib/asterisk/modules/res_pjsip_nat.so
+@so lib/asterisk/modules/res_pjsip_notify.so
+@so lib/asterisk/modules/res_pjsip_one_touch_record_info.so
+@so lib/asterisk/modules/res_pjsip_outbound_authenticator_digest.so
+@so lib/asterisk/modules/res_pjsip_outbound_publish.so
+@so lib/asterisk/modules/res_pjsip_outbound_registration.so
+@so lib/asterisk/modules/res_pjsip_path.so
+@so lib/asterisk/modules/res_pjsip_phoneprov_provider.so
+@so lib/asterisk/modules/res_pjsip_pidf_body_generator.so
+@so lib/asterisk/modules/res_pjsip_pidf_digium_body_supplement.so
+@so lib/asterisk/modules/res_pjsip_pidf_eyebeam_body_supplement.so
+@so lib/asterisk/modules/res_pjsip_publish_asterisk.so
+@so lib/asterisk/modules/res_pjsip_pubsub.so
+@so lib/asterisk/modules/res_pjsip_refer.so
+@so lib/asterisk/modules/res_pjsip_registrar.so
+@so lib/asterisk/modules/res_pjsip_rfc3326.so
+@so lib/asterisk/modules/res_pjsip_sdp_rtp.so
+@so lib/asterisk/modules/res_pjsip_send_to_voicemail.so
+@so lib/asterisk/modules/res_pjsip_session.so
+@so lib/asterisk/modules/res_pjsip_sips_contact.so
+@so lib/asterisk/modules/res_pjsip_t38.so
+@so lib/asterisk/modules/res_pjsip_transport_websocket.so
+@so lib/asterisk/modules/res_pjsip_xpidf_body_generator.so
+@so lib/asterisk/modules/res_realtime.so
+@so lib/asterisk/modules/res_resolver_unbound.so
+@so lib/asterisk/modules/res_rtp_asterisk.so
+@so lib/asterisk/modules/res_rtp_multicast.so
+@so lib/asterisk/modules/res_security_log.so
+@so lib/asterisk/modules/res_smdi.so
+@so lib/asterisk/modules/res_sorcery_astdb.so
+@so lib/asterisk/modules/res_sorcery_config.so
+@so lib/asterisk/modules/res_sorcery_memory.so
+@so lib/asterisk/modules/res_sorcery_memory_cache.so
+@so lib/asterisk/modules/res_sorcery_realtime.so
+@so lib/asterisk/modules/res_speech.so
+@so lib/asterisk/modules/res_srtp.so
+@so lib/asterisk/modules/res_stasis.so
+@so lib/asterisk/modules/res_stasis_answer.so
+@so lib/asterisk/modules/res_stasis_device_state.so
+@so lib/asterisk/modules/res_stasis_playback.so
+@so lib/asterisk/modules/res_stasis_recording.so
+@so lib/asterisk/modules/res_stasis_snoop.so
+@so lib/asterisk/modules/res_statsd.so
+@so lib/asterisk/modules/res_stun_monitor.so
 @comment lib/asterisk/modules/res_timing_kqueue.so
-lib/asterisk/modules/res_timing_pthread.so
-lib/asterisk/modules/res_xmpp.so
+@so lib/asterisk/modules/res_timing_pthread.so
+@so lib/asterisk/modules/res_xmpp.so
 @comment lib/libasteriskpj.so
 @lib lib/libasteriskpj.so.${LIBasteriskpj_VERSION}
 @comment lib/libasteriskssl.so

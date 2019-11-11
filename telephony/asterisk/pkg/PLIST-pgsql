@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.3 2011/01/19 11:25:16 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.4 2019/11/11 21:25:20 sthen Exp $
 @pkgpath telephony/asterisk,-pgsql,h323
-lib/asterisk/modules/cdr_pgsql.so
-lib/asterisk/modules/cel_pgsql.so
-lib/asterisk/modules/res_config_pgsql.so
+@so lib/asterisk/modules/cdr_pgsql.so
+@so lib/asterisk/modules/cel_pgsql.so
+@so lib/asterisk/modules/res_config_pgsql.so
 share/examples/asterisk/default/cdr_pgsql.conf
 @mode 640
 @owner root

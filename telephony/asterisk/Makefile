@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.308 2019/10/16 22:50:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.309 2019/11/11 21:25:19 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 VER=		16.6.1
 PJ_V=		2.9
+REVISION=	0
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
@@ -32,6 +33,8 @@ WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
 WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread radcli
 WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # Asterisk requires either nested functions (gcc extension), or -fblocks (clang).
 # However -fblocks fails:
