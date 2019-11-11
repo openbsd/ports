@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/02/23 12:37:15 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/11/11 18:38:03 bket Exp $
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -17,8 +17,16 @@ lib/python${MODPY_VERSION}/site-packages/qtawesome/animation.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/elusiveicons-webfont-charmap.json
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/elusiveicons-webfont.ttf
-lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome-webfont-charmap.json
-lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome4.7-webfont-charmap.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome4.7-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-brands-webfont-charmap.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-brands-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-regular-webfont-charmap.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-regular-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-solid-webfont-charmap.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-solid-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/materialdesignicons-webfont-charmap.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/materialdesignicons-webfont.ttf
 lib/python${MODPY_VERSION}/site-packages/qtawesome/iconic_font.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}/
