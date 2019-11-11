@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/11/11 17:35:50 jca Exp $
 
 COMMENT=	limited problem scanner for C source files
 
 V=		1.3
+REVISION=	0
 
 PKGNAME=	pscan-$V
 DISTNAME=	pscan
