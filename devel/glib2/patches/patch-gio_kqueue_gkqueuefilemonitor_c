@@ -1,0 +1,19 @@
+$OpenBSD: patch-gio_kqueue_gkqueuefilemonitor_c,v 1.8 2019/11/11 19:01:06 ajacoutot Exp $
+
+From 1bb1bcd81485705ce0047067b27bdcffa6e1968a Mon Sep 17 00:00:00 2001
+From: Alex Samorukov <samm@net-art.cz>
+Date: Mon, 11 Nov 2019 17:59:31 +0000
+Subject: [PATCH] Add NOTE_REVOKE to the list of the monitoring events
+
+Index: gio/kqueue/gkqueuefilemonitor.c
+--- gio/kqueue/gkqueuefilemonitor.c.orig
++++ gio/kqueue/gkqueuefilemonitor.c
+@@ -107,7 +107,7 @@ G_DEFINE_TYPE_WITH_CODE (GKqueueFileMonitor, g_kqueue_
+ static inline unsigned int
+ note_all (void)
+ {
+-  unsigned int notes = NOTE_DELETE | NOTE_WRITE | NOTE_EXTEND | NOTE_ATTRIB | NOTE_RENAME;
++  unsigned int notes = NOTE_DELETE | NOTE_WRITE | NOTE_EXTEND | NOTE_ATTRIB | NOTE_RENAME | NOTE_REVOKE;
+ #ifdef NOTE_TRUNCATE
+   notes |= NOTE_TRUNCATE;
+ #endif
