@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2019/11/07 17:33:17 jca Exp $
+# $OpenBSD: Makefile,v 1.45 2019/11/11 16:11:19 jca Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.9.0
+REVISION =		0
 
 SHARED_LIBS +=	dnssec               2.0      # .7.0
 SHARED_LIBS +=	knot                 6.0      # .9.0
@@ -23,6 +24,8 @@ WANTLIB += urcu-common
 
 MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # atomics
 COMPILER =		base-clang ports-gcc

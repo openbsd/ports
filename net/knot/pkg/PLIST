@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/04/20 16:48:32 jca Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/11/11 16:11:19 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/knot
@@ -77,13 +77,13 @@ include/libzscanner/
 include/libzscanner/error.h
 include/libzscanner/scanner.h
 include/libzscanner/version.h
-lib/libdnssec.a
+@static-lib lib/libdnssec.a
 lib/libdnssec.la
 @lib lib/libdnssec.so.${LIBdnssec_VERSION}
-lib/libknot.a
+@static-lib lib/libknot.a
 lib/libknot.la
 @lib lib/libknot.so.${LIBknot_VERSION}
-lib/libzscanner.a
+@static-lib lib/libzscanner.a
 lib/libzscanner.la
 @lib lib/libzscanner.so.${LIBzscanner_VERSION}
 lib/pkgconfig/knotd.pc
