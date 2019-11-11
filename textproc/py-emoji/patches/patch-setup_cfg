@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_cfg,v 1.1 2019/11/11 00:40:45 kmos Exp $
+
+Remove unneeded py-nose
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -1,8 +1,3 @@
+-[nosetests]
+-verbosity = 3
+-cover-package = emoji
+-cover-erase = 1
+-
+ [egg_info]
+ tag_build = 
+ tag_date = 0

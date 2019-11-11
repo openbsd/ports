@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/07 09:23:53 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/11 00:40:45 kmos Exp $
 
 COMMENT =		emoji for Python
 
@@ -22,7 +22,5 @@ MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
-
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

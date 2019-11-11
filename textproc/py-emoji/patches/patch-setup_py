@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1 2019/11/11 00:40:45 kmos Exp $
+
+Remove unneeded py-nose
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -59,7 +59,6 @@ setup(
+     keywords=['emoji'],
+     extras_require={
+         'dev': [
+-            'nose',
+             'coverage',
+             'coveralls'
+         ]
