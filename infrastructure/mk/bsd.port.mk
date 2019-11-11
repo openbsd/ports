@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1492 2019/11/11 18:22:27 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1493 2019/11/11 18:52:59 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -676,6 +676,7 @@ _PREPATCH_COOKIE =		${WRKDIR}/.prepatch_done
 _GEN_COOKIE =			${WRKDIR}/.gen_done
 _BULK_COOKIE =			${BULK_COOKIES_DIR}/${FULLPKGNAME}
 _FAKE_COOKIE =			${WRKINST}/.fake_done
+_DEBUG_INFO_COOKIE =	${WRKINST}/.debug_info_done
 _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
 _UPDATE_COOKIES =
 _FUPDATE_COOKIES =
@@ -710,7 +711,7 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_GEN_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_TEST_COOKIE} \
 	${_PACKAGE_COOKIES} ${_CACHE_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
-	${_TS_COOKIE} \
+	${_TS_COOKIE} ${_DEBUG_INFO_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 	${_DEPRUN_COOKIES} ${_DEPTEST_COOKIES} ${_UPDATE_COOKIES} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
@@ -913,6 +914,10 @@ _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 DEBUG_PACKAGES ?=
 DEBUG_FILES ?=
 DEBUG_CONFIGURE_ARGS ?=
+
+.if !empty(DEBUG_PACKAGES)
+_PACKAGE_COOKIE_DEPS += ${_DEBUG_INFO_COOKIE}
+.endif
 
 STATIC_PLIST ?= Yes
 .for _s in ${MULTI_PACKAGES}
@@ -1165,7 +1170,7 @@ DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 .endif
 
 
-_EXCLUDE_DEBUG_PLISTS = ${_WRKDEBUG} ${_WRKDEBUG}/debug-info
+_EXCLUDE_DEBUG_PLISTS = ${_WRKDEBUG} ${_WRKDEBUG}/Makefile
 
 .for _S in ${MULTI_PACKAGES}
 PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
@@ -1962,6 +1967,7 @@ _update_plist = ${_cache_fragment}; \
 	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
+	-X ${_DEBUG_INFO_COOKIE}
 
 .for _d in ${_FAKE_TREE_LIST} ${_EXCLUDE_DEBUG_PLISTS}
 _update_plist += -X ${_d:Q}
@@ -2501,6 +2507,7 @@ _internal-plist _internal-update-plist: _internal-fake
 	@mkdir -p ${PKGDIR}
 	@${_MAKE} _internal-generate-readmes
 	@${_update_plist}
+	@rm -f ${_DEBUG_INFO_COOKIE}
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
@@ -2949,11 +2956,14 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${_SUDOMAKESYS} post-install ${FAKE_SETUP}
 .endif
 	@${_SUDOMAKESYS} _post-install-modules ${FAKE_SETUP}
-.if !empty(DEBUG_PACKAGES)
-	@${_SUDOMAKESYS} _copy_debug_info ${FAKE_SETUP}
-.endif
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_PBUILD} ${_MAKE_COOKIE} $@
+
+.if !empty(DEBUG_PACKAGES)
+${_DEBUG_INFO_COOKIE}: ${_FAKE_COOKIE}
+	@${_SUDOMAKESYS} _copy_debug_info ${FAKE_SETUP}
+	@${_PBUILD} ${_MAKE_COOKIE} $@
+.endif
 
 _copy_debug_info:
 .if empty(DEBUG_FILES)
