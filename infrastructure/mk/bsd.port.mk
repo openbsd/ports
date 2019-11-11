@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1493 2019/11/11 18:52:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1494 2019/11/11 18:59:36 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2507,7 +2507,7 @@ _internal-plist _internal-update-plist: _internal-fake
 	@mkdir -p ${PKGDIR}
 	@${_MAKE} _internal-generate-readmes
 	@${_update_plist}
-	@rm -f ${_DEBUG_INFO_COOKIE}
+	@${_PBUILD} rm -f ${_DEBUG_INFO_COOKIE}
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
