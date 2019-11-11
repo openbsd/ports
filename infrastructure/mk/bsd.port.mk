@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1490 2019/11/11 17:30:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1491 2019/11/11 17:40:06 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -914,20 +914,6 @@ DEBUG_PACKAGES ?=
 DEBUG_FILES ?=
 DEBUG_CONFIGURE_ARGS ?=
 
-.for _s in ${BUILD_PACKAGES}
-PKGNAMES += ${FULLPKGNAME${_s}}
-PKGFILES += ${PKGFILE${_s}}
-PKGPATHS += ${FULLPKGPATH${_s}}
-.  if ${DEBUG_PACKAGES:M${_s}}
-.    if ${PKG_ARCH${_S}} == "*"
-ERRORS += "Fatal: DEBUG_PACKAGES contains an arch-independent subpackage"
-.    endif
-PKGFILES += ${_PKG_REPO}${_DBG_PKGFILE${_s}}
-PKGNAMES += debug-${FULLPKGNAME${_s}}
-#PKGPATHS += debug/${FULLPKGPATH${_s}}
-.  endif 
-.endfor
-
 STATIC_PLIST ?= Yes
 .for _s in ${MULTI_PACKAGES}
 .  for _v in PKG_ARCH RUN_DEPENDS WANTLIB LIB_DEPENDS PREFIX CATEGORIES \
@@ -942,6 +928,17 @@ ${_v}${_s} ?= ${${_v}}
 ${_v}${_s} ?= ${${_v}}
 .    endif
 .  endfor
+.endfor
+
+.for _s in ${BUILD_PACKAGES}
+PKGNAMES += ${FULLPKGNAME${_s}}
+PKGFILES += ${PKGFILE${_s}}
+PKGPATHS += ${FULLPKGPATH${_s}}
+.  if ${DEBUG_PACKAGES:M${_s}} && ${PKG_ARCH${_s}} != "*"
+PKGFILES += ${_PKG_REPO}${_DBG_PKGFILE${_s}}
+PKGNAMES += debug-${FULLPKGNAME${_s}}
+#PKGPATHS += debug/${FULLPKGPATH${_s}}
+.  endif 
 .endfor
 
 _PACKAGE_LINKS =
@@ -976,7 +973,7 @@ _PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_PKGFILE${_S}} ${MACHINE_ARCH}/all/${_PK
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIES${_S}}
 _PACKAGE_COOKIE += ${_PACKAGE_COOKIE${_S}}
 PKGFILE${_S} = ${_PKG_REPO}${_PKGFILE${_S}}
-.  if ${DEBUG_PACKAGES:M${_S}}
+.  if ${DEBUG_PACKAGES:M${_S}} && ${PKG_ARCH${_S}} != "*"
 _PACKAGE_COOKIES += ${_DBG_PACKAGE_COOKIE${_S}}
 .    if ${PERMIT_PACKAGE${_S}:L} == "yes"
 _PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/ftp/${_DBG_PKGFILE${_S}}
@@ -1184,7 +1181,7 @@ _create_pkg${_S} = \
 _move_tmp_pkg${_S} = ${_PBUILD} mv ${_TMP_REPO}${_PKGFILE${_S}} ${_PACKAGE_COOKIE${_S}}
 _tmp_pkg${_S} = ${_TMP_REPO}${_PKGFILE${_S}}
 
-.  if ${DEBUG_PACKAGES:M${_S}}
+.  if ${DEBUG_PACKAGES:M${_S}} && ${PKG_ARCH${_S}} != "*"
 _DBG_PKG_ARGS${_S} := ${PKG_ARGS${_S}}
 _DBG_PKG_ARGS${_S} += -P${FULLPKGPATH${_S}}:${FULLPKGNAME${_S}}:${FULLPKGNAME${_S}}
 _DBG_PKG_ARGS${_S} += -DCOMMENT="debug info for ${FULLPKGNAME${_S}}"
@@ -1979,7 +1976,7 @@ _update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_AR
 _build_debug_info = ${_PERLSCRIPT}/build-debug-info -P ${_WRKDEBUG} -W ${PREFIX} --
 
 .for i in ${BUILD_PACKAGES}
-.  if ${DEBUG_PACKAGES:M$i}
+.  if ${DEBUG_PACKAGES:M$i} && ${PKG_ARCH$i} != "*"
 _build_debug_info += ${PKG_ARGS$i} ${FULLPKGNAME$i}
 .  endif
 .endfor
