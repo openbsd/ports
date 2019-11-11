@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/11 19:25:12 ajacoutot Exp $
+@bin bin/swirc
+@man man/man1/swirc.1
+@man man/man5/swirc.conf.5
+@comment share/swirc/
+@comment share/swirc/swirc-royal.png

@@ -1,0 +1,10 @@
+Swirc is a BSD licensed, console based and lightweight ICB and IRC
+client written in C/C++, whose goals are to be portable and secure.
+
+It uses pledge() in combination with unveil() if available.
+
+Features:
+ - TLS/SSL
+ - Multiple IRCv3 features such as SASL auth mechanism
+ - Themes
+ - And more...
