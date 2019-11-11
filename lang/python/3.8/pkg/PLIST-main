@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2019/11/07 16:14:09 kmos Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2019/11/11 17:47:42 ajacoutot Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.8,<3.9
@@ -874,7 +874,7 @@ lib/python3.8/config-3.8/Setup.local
 lib/python3.8/config-3.8/config.c
 lib/python3.8/config-3.8/config.c.in
 lib/python3.8/config-3.8/install-sh
-lib/python3.8/config-3.8/libpython3.8.a
+@static-lib lib/python3.8/config-3.8/libpython3.8.a
 lib/python3.8/config-3.8/makesetup
 lib/python3.8/config-3.8/python-config.py
 lib/python3.8/config-3.8/python.o
@@ -2124,77 +2124,77 @@ lib/python3.8/json/scanner.py
 lib/python3.8/json/tool.py
 lib/python3.8/keyword.py
 lib/python3.8/lib-dynload/
-lib/python3.8/lib-dynload/_asyncio.so
-lib/python3.8/lib-dynload/_bisect.so
-lib/python3.8/lib-dynload/_blake2.so
-lib/python3.8/lib-dynload/_bz2.so
-lib/python3.8/lib-dynload/_codecs_cn.so
-lib/python3.8/lib-dynload/_codecs_hk.so
-lib/python3.8/lib-dynload/_codecs_iso2022.so
-lib/python3.8/lib-dynload/_codecs_jp.so
-lib/python3.8/lib-dynload/_codecs_kr.so
-lib/python3.8/lib-dynload/_codecs_tw.so
-lib/python3.8/lib-dynload/_contextvars.so
-lib/python3.8/lib-dynload/_crypt.so
-lib/python3.8/lib-dynload/_csv.so
-lib/python3.8/lib-dynload/_ctypes.so
-lib/python3.8/lib-dynload/_ctypes_test.so
-lib/python3.8/lib-dynload/_curses.so
-lib/python3.8/lib-dynload/_curses_panel.so
-lib/python3.8/lib-dynload/_datetime.so
-lib/python3.8/lib-dynload/_dbm.so
-lib/python3.8/lib-dynload/_decimal.so
-lib/python3.8/lib-dynload/_elementtree.so
-lib/python3.8/lib-dynload/_hashlib.so
-lib/python3.8/lib-dynload/_heapq.so
-lib/python3.8/lib-dynload/_json.so
-lib/python3.8/lib-dynload/_lsprof.so
-lib/python3.8/lib-dynload/_lzma.so
-lib/python3.8/lib-dynload/_md5.so
-lib/python3.8/lib-dynload/_multibytecodec.so
-lib/python3.8/lib-dynload/_multiprocessing.so
-lib/python3.8/lib-dynload/_opcode.so
-lib/python3.8/lib-dynload/_pickle.so
-lib/python3.8/lib-dynload/_posixshmem.so
-lib/python3.8/lib-dynload/_posixsubprocess.so
-lib/python3.8/lib-dynload/_queue.so
-lib/python3.8/lib-dynload/_random.so
-lib/python3.8/lib-dynload/_sha1.so
-lib/python3.8/lib-dynload/_sha256.so
-lib/python3.8/lib-dynload/_sha3.so
-lib/python3.8/lib-dynload/_sha512.so
-lib/python3.8/lib-dynload/_socket.so
-lib/python3.8/lib-dynload/_sqlite3.so
-lib/python3.8/lib-dynload/_ssl.so
-lib/python3.8/lib-dynload/_statistics.so
-lib/python3.8/lib-dynload/_struct.so
-lib/python3.8/lib-dynload/_testbuffer.so
-lib/python3.8/lib-dynload/_testcapi.so
-lib/python3.8/lib-dynload/_testimportmultiple.so
-lib/python3.8/lib-dynload/_testinternalcapi.so
-lib/python3.8/lib-dynload/_testmultiphase.so
-lib/python3.8/lib-dynload/_uuid.so
-lib/python3.8/lib-dynload/_xxsubinterpreters.so
-lib/python3.8/lib-dynload/_xxtestfuzz.so
-lib/python3.8/lib-dynload/array.so
-lib/python3.8/lib-dynload/audioop.so
-lib/python3.8/lib-dynload/binascii.so
-lib/python3.8/lib-dynload/cmath.so
-lib/python3.8/lib-dynload/fcntl.so
-lib/python3.8/lib-dynload/grp.so
-lib/python3.8/lib-dynload/math.so
-lib/python3.8/lib-dynload/mmap.so
-lib/python3.8/lib-dynload/nis.so
-lib/python3.8/lib-dynload/parser.so
-lib/python3.8/lib-dynload/pyexpat.so
-lib/python3.8/lib-dynload/readline.so
-lib/python3.8/lib-dynload/resource.so
-lib/python3.8/lib-dynload/select.so
-lib/python3.8/lib-dynload/syslog.so
-lib/python3.8/lib-dynload/termios.so
-lib/python3.8/lib-dynload/unicodedata.so
-lib/python3.8/lib-dynload/xxlimited.so
-lib/python3.8/lib-dynload/zlib.so
+@so lib/python3.8/lib-dynload/_asyncio.so
+@so lib/python3.8/lib-dynload/_bisect.so
+@so lib/python3.8/lib-dynload/_blake2.so
+@so lib/python3.8/lib-dynload/_bz2.so
+@so lib/python3.8/lib-dynload/_codecs_cn.so
+@so lib/python3.8/lib-dynload/_codecs_hk.so
+@so lib/python3.8/lib-dynload/_codecs_iso2022.so
+@so lib/python3.8/lib-dynload/_codecs_jp.so
+@so lib/python3.8/lib-dynload/_codecs_kr.so
+@so lib/python3.8/lib-dynload/_codecs_tw.so
+@so lib/python3.8/lib-dynload/_contextvars.so
+@so lib/python3.8/lib-dynload/_crypt.so
+@so lib/python3.8/lib-dynload/_csv.so
+@so lib/python3.8/lib-dynload/_ctypes.so
+@so lib/python3.8/lib-dynload/_ctypes_test.so
+@so lib/python3.8/lib-dynload/_curses.so
+@so lib/python3.8/lib-dynload/_curses_panel.so
+@so lib/python3.8/lib-dynload/_datetime.so
+@so lib/python3.8/lib-dynload/_dbm.so
+@so lib/python3.8/lib-dynload/_decimal.so
+@so lib/python3.8/lib-dynload/_elementtree.so
+@so lib/python3.8/lib-dynload/_hashlib.so
+@so lib/python3.8/lib-dynload/_heapq.so
+@so lib/python3.8/lib-dynload/_json.so
+@so lib/python3.8/lib-dynload/_lsprof.so
+@so lib/python3.8/lib-dynload/_lzma.so
+@so lib/python3.8/lib-dynload/_md5.so
+@so lib/python3.8/lib-dynload/_multibytecodec.so
+@so lib/python3.8/lib-dynload/_multiprocessing.so
+@so lib/python3.8/lib-dynload/_opcode.so
+@so lib/python3.8/lib-dynload/_pickle.so
+@so lib/python3.8/lib-dynload/_posixshmem.so
+@so lib/python3.8/lib-dynload/_posixsubprocess.so
+@so lib/python3.8/lib-dynload/_queue.so
+@so lib/python3.8/lib-dynload/_random.so
+@so lib/python3.8/lib-dynload/_sha1.so
+@so lib/python3.8/lib-dynload/_sha256.so
+@so lib/python3.8/lib-dynload/_sha3.so
+@so lib/python3.8/lib-dynload/_sha512.so
+@so lib/python3.8/lib-dynload/_socket.so
+@so lib/python3.8/lib-dynload/_sqlite3.so
+@so lib/python3.8/lib-dynload/_ssl.so
+@so lib/python3.8/lib-dynload/_statistics.so
+@so lib/python3.8/lib-dynload/_struct.so
+@so lib/python3.8/lib-dynload/_testbuffer.so
+@so lib/python3.8/lib-dynload/_testcapi.so
+@so lib/python3.8/lib-dynload/_testimportmultiple.so
+@so lib/python3.8/lib-dynload/_testinternalcapi.so
+@so lib/python3.8/lib-dynload/_testmultiphase.so
+@so lib/python3.8/lib-dynload/_uuid.so
+@so lib/python3.8/lib-dynload/_xxsubinterpreters.so
+@so lib/python3.8/lib-dynload/_xxtestfuzz.so
+@so lib/python3.8/lib-dynload/array.so
+@so lib/python3.8/lib-dynload/audioop.so
+@so lib/python3.8/lib-dynload/binascii.so
+@so lib/python3.8/lib-dynload/cmath.so
+@so lib/python3.8/lib-dynload/fcntl.so
+@so lib/python3.8/lib-dynload/grp.so
+@so lib/python3.8/lib-dynload/math.so
+@so lib/python3.8/lib-dynload/mmap.so
+@so lib/python3.8/lib-dynload/nis.so
+@so lib/python3.8/lib-dynload/parser.so
+@so lib/python3.8/lib-dynload/pyexpat.so
+@so lib/python3.8/lib-dynload/readline.so
+@so lib/python3.8/lib-dynload/resource.so
+@so lib/python3.8/lib-dynload/select.so
+@so lib/python3.8/lib-dynload/syslog.so
+@so lib/python3.8/lib-dynload/termios.so
+@so lib/python3.8/lib-dynload/unicodedata.so
+@so lib/python3.8/lib-dynload/xxlimited.so
+@so lib/python3.8/lib-dynload/zlib.so
 lib/python3.8/lib2to3/
 lib/python3.8/lib2to3/Grammar.txt
 lib/python3.8/lib2to3/Grammar3.8.0.final.0.pickle

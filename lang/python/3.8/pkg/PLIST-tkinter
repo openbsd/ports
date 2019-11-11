@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.1 2019/11/07 16:14:09 kmos Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.2 2019/11/11 17:47:42 ajacoutot Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tkinter->=3.8,<3.9
-lib/python3.8/lib-dynload/_tkinter.so
+@so lib/python3.8/lib-dynload/_tkinter.so
 lib/python3.8/tkinter/
 lib/python3.8/tkinter/__init__.py
 lib/python3.8/tkinter/__main__.py

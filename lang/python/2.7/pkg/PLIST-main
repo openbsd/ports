@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2019/11/01 17:40:08 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2019/11/11 17:47:42 ajacoutot Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=2.7,<2.8
@@ -323,7 +323,7 @@ lib/python2.7/config/Setup.local
 lib/python2.7/config/config.c
 lib/python2.7/config/config.c.in
 lib/python2.7/config/install-sh
-lib/python2.7/config/libpython2.7.a
+@static-lib lib/python2.7/config/libpython2.7.a
 lib/python2.7/config/makesetup
 lib/python2.7/config/python.o
 lib/python2.7/contextlib.py
@@ -1553,66 +1553,66 @@ lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
 lib/python2.7/lib-dynload/Python-2.7.17-py2.7.egg-info
-lib/python2.7/lib-dynload/_bisect.so
-lib/python2.7/lib-dynload/_codecs_cn.so
-lib/python2.7/lib-dynload/_codecs_hk.so
-lib/python2.7/lib-dynload/_codecs_iso2022.so
-lib/python2.7/lib-dynload/_codecs_jp.so
-lib/python2.7/lib-dynload/_codecs_kr.so
-lib/python2.7/lib-dynload/_codecs_tw.so
-lib/python2.7/lib-dynload/_collections.so
-lib/python2.7/lib-dynload/_csv.so
-lib/python2.7/lib-dynload/_ctypes.so
-lib/python2.7/lib-dynload/_ctypes_test.so
-lib/python2.7/lib-dynload/_curses.so
-lib/python2.7/lib-dynload/_curses_panel.so
-lib/python2.7/lib-dynload/_elementtree.so
-lib/python2.7/lib-dynload/_functools.so
-lib/python2.7/lib-dynload/_hashlib.so
-lib/python2.7/lib-dynload/_heapq.so
-lib/python2.7/lib-dynload/_hotshot.so
-lib/python2.7/lib-dynload/_io.so
-lib/python2.7/lib-dynload/_json.so
-lib/python2.7/lib-dynload/_locale.so
-lib/python2.7/lib-dynload/_lsprof.so
-lib/python2.7/lib-dynload/_multibytecodec.so
-lib/python2.7/lib-dynload/_multiprocessing.so
-lib/python2.7/lib-dynload/_random.so
-lib/python2.7/lib-dynload/_socket.so
-lib/python2.7/lib-dynload/_sqlite3.so
-lib/python2.7/lib-dynload/_ssl.so
-lib/python2.7/lib-dynload/_struct.so
-lib/python2.7/lib-dynload/_testcapi.so
-lib/python2.7/lib-dynload/array.so
-lib/python2.7/lib-dynload/audioop.so
-lib/python2.7/lib-dynload/binascii.so
-lib/python2.7/lib-dynload/bsddb185.so
-lib/python2.7/lib-dynload/bz2.so
-lib/python2.7/lib-dynload/cPickle.so
-lib/python2.7/lib-dynload/cStringIO.so
-lib/python2.7/lib-dynload/cmath.so
-lib/python2.7/lib-dynload/crypt.so
-lib/python2.7/lib-dynload/datetime.so
-lib/python2.7/lib-dynload/dbm.so
-lib/python2.7/lib-dynload/fcntl.so
-lib/python2.7/lib-dynload/future_builtins.so
-lib/python2.7/lib-dynload/grp.so
-lib/python2.7/lib-dynload/itertools.so
-lib/python2.7/lib-dynload/math.so
-lib/python2.7/lib-dynload/mmap.so
-lib/python2.7/lib-dynload/nis.so
-lib/python2.7/lib-dynload/operator.so
-lib/python2.7/lib-dynload/parser.so
-lib/python2.7/lib-dynload/pyexpat.so
-lib/python2.7/lib-dynload/readline.so
-lib/python2.7/lib-dynload/resource.so
-lib/python2.7/lib-dynload/select.so
-lib/python2.7/lib-dynload/strop.so
-lib/python2.7/lib-dynload/syslog.so
-lib/python2.7/lib-dynload/termios.so
-lib/python2.7/lib-dynload/time.so
-lib/python2.7/lib-dynload/unicodedata.so
-lib/python2.7/lib-dynload/zlib.so
+@so lib/python2.7/lib-dynload/_bisect.so
+@so lib/python2.7/lib-dynload/_codecs_cn.so
+@so lib/python2.7/lib-dynload/_codecs_hk.so
+@so lib/python2.7/lib-dynload/_codecs_iso2022.so
+@so lib/python2.7/lib-dynload/_codecs_jp.so
+@so lib/python2.7/lib-dynload/_codecs_kr.so
+@so lib/python2.7/lib-dynload/_codecs_tw.so
+@so lib/python2.7/lib-dynload/_collections.so
+@so lib/python2.7/lib-dynload/_csv.so
+@so lib/python2.7/lib-dynload/_ctypes.so
+@so lib/python2.7/lib-dynload/_ctypes_test.so
+@so lib/python2.7/lib-dynload/_curses.so
+@so lib/python2.7/lib-dynload/_curses_panel.so
+@so lib/python2.7/lib-dynload/_elementtree.so
+@so lib/python2.7/lib-dynload/_functools.so
+@so lib/python2.7/lib-dynload/_hashlib.so
+@so lib/python2.7/lib-dynload/_heapq.so
+@so lib/python2.7/lib-dynload/_hotshot.so
+@so lib/python2.7/lib-dynload/_io.so
+@so lib/python2.7/lib-dynload/_json.so
+@so lib/python2.7/lib-dynload/_locale.so
+@so lib/python2.7/lib-dynload/_lsprof.so
+@so lib/python2.7/lib-dynload/_multibytecodec.so
+@so lib/python2.7/lib-dynload/_multiprocessing.so
+@so lib/python2.7/lib-dynload/_random.so
+@so lib/python2.7/lib-dynload/_socket.so
+@so lib/python2.7/lib-dynload/_sqlite3.so
+@so lib/python2.7/lib-dynload/_ssl.so
+@so lib/python2.7/lib-dynload/_struct.so
+@so lib/python2.7/lib-dynload/_testcapi.so
+@so lib/python2.7/lib-dynload/array.so
+@so lib/python2.7/lib-dynload/audioop.so
+@so lib/python2.7/lib-dynload/binascii.so
+@so lib/python2.7/lib-dynload/bsddb185.so
+@so lib/python2.7/lib-dynload/bz2.so
+@so lib/python2.7/lib-dynload/cPickle.so
+@so lib/python2.7/lib-dynload/cStringIO.so
+@so lib/python2.7/lib-dynload/cmath.so
+@so lib/python2.7/lib-dynload/crypt.so
+@so lib/python2.7/lib-dynload/datetime.so
+@so lib/python2.7/lib-dynload/dbm.so
+@so lib/python2.7/lib-dynload/fcntl.so
+@so lib/python2.7/lib-dynload/future_builtins.so
+@so lib/python2.7/lib-dynload/grp.so
+@so lib/python2.7/lib-dynload/itertools.so
+@so lib/python2.7/lib-dynload/math.so
+@so lib/python2.7/lib-dynload/mmap.so
+@so lib/python2.7/lib-dynload/nis.so
+@so lib/python2.7/lib-dynload/operator.so
+@so lib/python2.7/lib-dynload/parser.so
+@so lib/python2.7/lib-dynload/pyexpat.so
+@so lib/python2.7/lib-dynload/readline.so
+@so lib/python2.7/lib-dynload/resource.so
+@so lib/python2.7/lib-dynload/select.so
+@so lib/python2.7/lib-dynload/strop.so
+@so lib/python2.7/lib-dynload/syslog.so
+@so lib/python2.7/lib-dynload/termios.so
+@so lib/python2.7/lib-dynload/time.so
+@so lib/python2.7/lib-dynload/unicodedata.so
+@so lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
 lib/python2.7/lib2to3/Grammar2.7.17.final.0.pickle

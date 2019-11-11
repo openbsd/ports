@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.132 2019/11/07 16:14:09 kmos Exp $
+# $OpenBSD: Makefile.inc,v 1.133 2019/11/11 17:47:41 ajacoutot Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -44,8 +44,10 @@ PERMIT_PACKAGE =	Yes
 
 .if ${VERSION} == "2.7"
 MULTI_PACKAGES =	-main -tests -tools -gdbm -idle -tkinter -bsddb
+DEBUG_PACKAGES ?=	-main -gdbm -tkinter -bsddb
 .else
 MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
+DEBUG_PACKAGES ?=	-main -gdbm -tkinter
 .endif
 
 .if ${VERSION} == "3.7"
