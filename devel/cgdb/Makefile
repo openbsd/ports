@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/08/06 20:58:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/11 20:08:25 jca Exp $
 
 COMMENT=	curses GDB interface
 
@@ -19,6 +19,7 @@ MASTER_SITES=	https://cgdb.me/files/
 
 LIB_DEPENDS=	devel/readline>=6.1p2
 RUN_DEPENDS=	devel/gdb
+TEST_DEPENDS=	devel/dejagnu
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	autoconf
@@ -27,8 +28,5 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include"
 
 AUTOCONF_VERSION=	2.69
-
-# there are tests, but not working yet
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
