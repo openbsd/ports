@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.178 2019/11/10 18:26:39 espie Exp $
+# $OpenBSD: update-plist,v 1.179 2019/11/11 19:00:27 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1228,14 +1228,6 @@ sub check_suffix
 	return $error;
 }
 
-package OpenBSD::PackingElement::FileWithDebugInfo;
-
-sub notice_new_file
-{
-	my ($o, $m) = @_;
-	$m->{warn_changed} = 1;
-}
-
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
 sub new
@@ -1787,10 +1779,6 @@ sub report_issues
 	$self->report_per_list("oldorigfiles", 
 	    "Warning: possible problematic entries in #1:");
 	$self->report_per_list("oldcomments", "Warning: #1 still contains:");
-	if ($self->{warn_changed}) {
-		print "WARNING: Some new/changed files with debug information\n";
-		print "You should run make clean=fake; make fake again\n";
-	}
 }
 
 sub write_new_files
