@@ -6,6 +6,9 @@ hand.
 
 Human users are strongly advised to mostly use views on those tables.
 
+The default flavor only looks in PORTSDIR, use nonstrict to heed
+PORTSDIR_PATH fully.
+
 Database Schema:
 - _Paths (ID, FULLPKGPATH, PKGPATH, CANONICAL)
 PKGPATH points to a PATHS entry corresponding to the stripped down version of 
