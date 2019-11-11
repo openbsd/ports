@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/11 08:49:10 bentley Exp $
 
 COMMENT =		reorder separable/discontinuous multiwords
 
@@ -11,6 +11,8 @@ CATEGORIES =		textproc
 HOMEPAGE =		https://www.apertium.org/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

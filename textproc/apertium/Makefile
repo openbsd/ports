@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/11 08:49:10 bentley Exp $
 
 COMMENT =		rule-based machine translation platform
 
 V =			3.5
 VER =			3.5.2
 DISTNAME =		apertium-${VER}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  apertium3-$V              0.0 # 0.0
 SHARED_LIBS +=  apertium3                 0.0 # 0.0
 
 CATEGORIES =		textproc
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://www.apertium.org/
 

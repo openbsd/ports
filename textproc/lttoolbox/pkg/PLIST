@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/17 06:58:07 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/11/11 08:49:10 bentley Exp $
 @bin bin/lt-comp
 @bin bin/lt-expand
 @bin bin/lt-print
@@ -36,7 +36,7 @@ include/lttoolbox-${V}/lttoolbox/trans_exe.h
 include/lttoolbox-${V}/lttoolbox/transducer.h
 include/lttoolbox-${V}/lttoolbox/xml_parse_util.h
 @lib lib/liblttoolbox3-${V}.so.${LIBlttoolbox3-${V}_VERSION}
-lib/liblttoolbox3.a
+@static-lib lib/liblttoolbox3.a
 lib/liblttoolbox3.la
 @lib lib/liblttoolbox3.so.${LIBlttoolbox3_VERSION}
 lib/pkgconfig/lttoolbox.pc
