@@ -1,0 +1,20 @@
+$OpenBSD: patch-external_corert_src_System_Private_CoreLib_shared_System_Collections_Generic_ArraySortHelper_cs,v 1.1 2019/11/11 17:05:02 thfr Exp $
+
+add MONO_FORCE_COMPAT env var for backwards compatibility with some
+routines that were abandoned with the update to mono 5 upstream
+This may lead to undefined behavior and should only be used in
+well-defined cases.
+
+Index: external/corert/src/System.Private.CoreLib/shared/System/Collections/Generic/ArraySortHelper.cs
+--- external/corert/src/System.Private.CoreLib/shared/System/Collections/Generic/ArraySortHelper.cs.orig
++++ external/corert/src/System.Private.CoreLib/shared/System/Collections/Generic/ArraySortHelper.cs
+@@ -40,7 +40,8 @@ namespace System.Collections.Generic
+ 
+         internal static void ThrowOrIgnoreBadComparer(object comparer)
+         {
+-            throw new ArgumentException(SR.Format(SR.Arg_BogusIComparer, comparer));
++            if (Environment.GetEnvironmentVariable ("MONO_FORCE_COMPAT") == null)
++                throw new ArgumentException(SR.Format(SR.Arg_BogusIComparer, comparer));
+         }
+     }
+ 

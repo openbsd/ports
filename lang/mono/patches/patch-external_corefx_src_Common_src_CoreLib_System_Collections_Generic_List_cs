@@ -1,0 +1,24 @@
+$OpenBSD: patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_List_cs,v 1.1 2019/11/11 17:05:02 thfr Exp $
+
+add MONO_FORCE_COMPAT env var for backwards compatibility with some
+routines that were abandoned with the update to mono 5 upstream
+This may lead to undefined behavior and should only be used in
+well-defined cases.
+
+Index: external/corefx/src/Common/src/CoreLib/System/Collections/Generic/List.cs
+--- external/corefx/src/Common/src/CoreLib/System/Collections/Generic/List.cs.orig
++++ external/corefx/src/Common/src/CoreLib/System/Collections/Generic/List.cs
+@@ -578,8 +578,11 @@ namespace System.Collections.Generic
+                 action(_items[i]);
+             }
+ 
+-            if (version != _version)
+-                ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion();
++            if (Environment.GetEnvironmentVariable ("MONO_FORCE_COMPAT") == null)
++            {
++                if (version != _version)
++                    ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion();
++            }
+         }
+ 
+         // Returns an enumerator for this list with the given
