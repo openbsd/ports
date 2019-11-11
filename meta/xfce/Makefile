@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/08/15 07:16:48 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2019/11/11 18:02:23 landry Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
@@ -28,7 +28,6 @@ RUN_DEPENDS-main += \
 RUN_DEPENDS-main += \
 		x11/xfce4/xfwm4-themes \
 		x11/greybird
-# x11/xfce4/gtk-xfce-engine (outdated)
 # x11/xfce4/xfce4-icon-theme (outdated)
 
 # common apps

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2019/08/15 06:33:35 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2019/11/11 18:02:23 landry Exp $
 
      SUBDIR =
      SUBDIR += exo
      SUBDIR += garcon
-     SUBDIR += gtk-xfce-engine
      SUBDIR += libxfce4util
      SUBDIR += libxfce4ui
      SUBDIR += mousepad
