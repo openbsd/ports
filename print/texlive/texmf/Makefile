@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/02/10 18:14:36 jca Exp $
+# $OpenBSD: Makefile,v 1.58 2019/11/11 22:54:15 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -24,10 +24,6 @@ PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
-REVISION-main =		1
-REVISION-docs =		1
-REVISION-buildset =	0
-
 NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
@@ -43,14 +39,14 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-RUN_DEPENDS-main +=	texlive_base->=${V}p0:print/texlive/base,-main \
+RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
 			${MODRUBY_RUNDEPENDS}
-RUN_DEPENDS-docs +=	texlive_base->=${V}p0:print/texlive/base,-main \
+RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
 RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
@@ -69,9 +65,10 @@ SUBST_VARS +=		RUBY
 
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 
-# Substitute correct interpreter paths into scripts.
-# Some are done automatically by MODULES
-pre-configure:
+# Substitute correct interpreter paths into scripts and deal with linked manuals.
+# Some interpreter paths are done automatically by MODULES.
+.include "manpage_symlinks.mk"
+pre-configure: tl-manpage-symlinks
 	@# Don't use substitution from the Python port, since we need to swap in
 	@# different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
@@ -122,7 +119,8 @@ pre-configure:
 	# This file contains a lookup table of interpreter paths
 	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
-do-install:
+.include "symlinks.mk"
+do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
 	# plug in my pregenerated map and formats
@@ -163,17 +161,17 @@ post-install:
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
 # Generating PLISTs is special for TeX Live.
-# This target requires Python-2.7.
+# This target requires Python3.
 update-plist: plist
 plist: fake
-	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} ${MODPY_BIN} \
+	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} python${MODPY_DEFAULT_VERSION_3} \
 		${FILESDIR}/update_plist_hints.py \
 		${WRKDIR}/texlive.tlpdb | \
-		${MODPY_BIN} ${FILESDIR}/write_plists.py
+		${FILESDIR}/write_plists.py
 
 # regenerate adj.mk
-adj:
-	${MODPY_BIN} ${FILESDIR}/mk_adj.py ${WRKSRC}/texmf-dist \
-		${WRKSRC} > adj.mk
+adj: patch
+	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/mk_adj.py \
+		${WRKSRC}/texmf-dist ${WRKSRC} > adj.mk
 
 .include <bsd.port.mk>

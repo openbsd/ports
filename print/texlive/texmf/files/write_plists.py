@@ -1,4 +1,5 @@
-# $OpenBSD: write_plists.py,v 1.1 2018/09/11 21:32:28 edd Exp $
+#!/usr/bin/env python3
+# $OpenBSD: write_plists.py,v 1.2 2019/11/11 22:54:17 edd Exp $
 """
 Write PLISTs based on the output of update_plist_hints.py.
 
@@ -10,15 +11,15 @@ import os
 import sys
 import re
 
-YEAR = 2017
+YEAR = 2019
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 PLIST_DIR = os.path.abspath(os.path.join(THIS_DIR, "..", "pkg"))
 PLISTS = "-buildset", "-main", "-context", "-full", "-docs"
 EXISTING_DIRS = ["share", "info", "man"] + \
     ["man/man%d" % i for i in range(1, 9)] + ["man3f", "man3p"]
 
-MAN_RE = re.compile("^man/man[0-9]/.*\.[0-9]")
-INFO_RE = re.compile("^info/.*\.info")
+MAN_RE = re.compile(r'^man/man[0-9]/.*\.[0-9]')
+INFO_RE = re.compile(r'^info/.*\.info')
 
 
 TOP_MATTER = {
@@ -27,8 +28,8 @@ TOP_MATTER = {
         "@conflict teTeX_texmf-*",
         "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
-        "@conflict texlive_texmf-minimal-<%sp0" % YEAR,
-        "@conflict texlive_texmf-full-<%sp0" % YEAR,
+        "@conflict texlive_texmf-minimal-<%s" % YEAR,
+        "@conflict texlive_texmf-full-<%s" % YEAR,
         "@conflict texlive_texmf-context-<%s" % YEAR,
         "@pkgpath print/texlive/texmf-minimal",
         "@pkgpath print/teTeX/texmf",
@@ -41,7 +42,7 @@ TOP_MATTER = {
         "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
         "@conflict texlive_texmf-full-<%s" % YEAR,
-        "@conflict texlive_texmf-buildset-<%sp0" % YEAR,
+        "@conflict texlive_texmf-buildset-<%s" % YEAR,
         "@conflict texlive_texmf-context-<%s" % YEAR,
         "@pkgpath print/teTeX/texmf",
     ],
@@ -60,7 +61,7 @@ TOP_MATTER = {
         "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
         "@conflict texlive_texmf-minimal-<%s" % YEAR,
-        "@conflict texlive_texmf-buildset-<%sp0" % YEAR,
+        "@conflict texlive_texmf-buildset-<%s" % YEAR,
         "@conflict texlive_texmf-context-<%s" % YEAR,
         "@pkgpath print/texlive/texmf-full",
         "@pkgpath print/teTeX/texmf",
@@ -125,10 +126,10 @@ def main():
         dir_ents[plist].update(dir_entries(filename, EXISTING_DIRS))
         all_files[plist].add(filename)
 
-    for plist, files in all_files.iteritems():
+    for plist, files in all_files.items():
         fh = plist_map[plist]
 
-        for fl in sorted(files.union(dir_ents[plist])):
+        for fl in sorted(files | dir_ents[plist]):
             if re.match(MAN_RE, fl):
                 fh.write("@man ")
             elif re.match(INFO_RE, fl):

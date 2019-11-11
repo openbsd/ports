@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/02/13 18:14:12 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2019/11/11 22:54:13 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2017
+@conflict texlive_texmf-buildset-<2019
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
@@ -18,7 +18,6 @@ bin/afm2afm
 bin/allcm
 bin/allec
 bin/allneeded
-bin/amstex
 bin/arara
 bin/arlatex
 bin/authorindex
@@ -54,20 +53,26 @@ bin/cefspdflatex
 @bin bin/cfftot1
 bin/checkcites
 bin/checklistings
+@bin bin/chkdvifont
 @bin bin/chktex
 bin/chkweb
 bin/cjk-gs-integrate
+bin/cllualatex
+bin/cluttex
+bin/clxelatex
 bin/context
 bin/contextjit
 bin/convbkmk
 bin/convertgls2bib
-bin/cslatex
-bin/csplain
 bin/ctan-o-mat
+bin/ctanbib
 @bin bin/ctangle
 bin/ctanify
 bin/ctanupload
 @bin bin/ctie
+@bin bin/ctwill
+@bin bin/ctwill-refsort
+@bin bin/ctwill-twinx
 @bin bin/cweave
 bin/de-macro
 bin/depythontex
@@ -102,6 +107,7 @@ bin/dvipdft
 @bin bin/dvips
 bin/dvired
 @bin bin/dviselect
+@bin bin/dvispc
 @bin bin/dvisvgm
 @bin bin/dvitodvi
 bin/dvitomp
@@ -109,7 +115,6 @@ bin/dvitomp
 bin/e2pall
 bin/ebb
 bin/ebong
-bin/eplain
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
@@ -146,7 +151,6 @@ bin/htxetex
 bin/inimf
 bin/initex
 bin/installfont-tl
-bin/jadetex
 bin/jamo-normalize
 bin/jfmutil
 bin/kanji-config-updmap
@@ -160,7 +164,6 @@ bin/kpsewhere
 bin/kpsexpand
 bin/l3build
 @bin bin/lacheck
-bin/lamed
 bin/latex
 bin/latex-git-log
 bin/latex-papersize
@@ -183,10 +186,10 @@ bin/ltx2crossrefxml
 bin/ltxfileinfo
 bin/ltximg
 bin/lua2dox_filter
+bin/luajitlatex
 bin/lualatex
 bin/luaotfload-tool
 @bin bin/luatex
-@bin bin/luatex53
 bin/luatools
 bin/lwarpmk
 bin/m-tx
@@ -200,7 +203,6 @@ bin/makeglossaries-lite
 bin/match_parens
 bin/mathspic
 @bin bin/mendex
-bin/mex
 @bin bin/mf
 @bin bin/mf-nowin
 bin/mf2pt1
@@ -220,8 +222,6 @@ bin/mktexfmt
 bin/mktexmf
 bin/mktexpk
 bin/mktextfm
-bin/mllatex
-bin/mltex
 @bin bin/mmafm
 @bin bin/mmpfb
 @bin bin/mpost
@@ -256,11 +256,8 @@ bin/pdfbook
 bin/pdfbook2
 @bin bin/pdfclose
 bin/pdfcrop
-bin/pdfcslatex
-bin/pdfcsplain
 bin/pdfetex
 bin/pdfflip
-bin/pdfjadetex
 bin/pdfjam
 bin/pdfjam-pocketmod
 bin/pdfjam-slides3up
@@ -268,13 +265,12 @@ bin/pdfjam-slides6up
 bin/pdfjoin
 bin/pdflatex
 bin/pdflatexpicscale
-bin/pdfmex
 bin/pdfnup
 @bin bin/pdfopen
 bin/pdfpun
 @bin bin/pdftex
+bin/pdftex-quiet
 @bin bin/pdftosrc
-bin/pdfxmltex
 bin/pdfxup
 bin/pdvitomp
 @bin bin/pdvitype
@@ -287,7 +283,6 @@ bin/pkfix
 bin/pkfix-helper
 @bin bin/pktogf
 @bin bin/pktype
-bin/platex
 @bin bin/pltotf
 @bin bin/pmpost
 @bin bin/pmxab
@@ -307,6 +302,9 @@ bin/ptex2pdf
 bin/purifyeps
 bin/pygmentex
 bin/pythontex
+bin/r-mpost
+bin/r-pmpost
+bin/r-upmpost
 bin/repstopdf
 bin/rpdfcrop
 bin/rubibtex
@@ -350,13 +348,11 @@ bin/texlinks
 bin/texliveonfly
 bin/texloganalyser
 bin/texlua
-bin/texlua53
 bin/texluac
 bin/texmfstart
 bin/texosquery
 bin/texosquery-jre5
 bin/texosquery-jre8
-bin/texsis
 @bin bin/tftopl
 bin/thumbpdf
 @bin bin/tie
@@ -377,14 +373,12 @@ bin/updmap-sys
 bin/updmap-user
 bin/updvitomp
 @bin bin/updvitype
-bin/uplatex
 @bin bin/upmendex
 @bin bin/upmpost
 @bin bin/uppltotf
 @bin bin/uptex
 @bin bin/uptftopl
 bin/urlbst
-bin/utf8mex
 @bin bin/vftovp
 @bin bin/vlna
 bin/vpe
@@ -392,28 +386,22 @@ bin/vpl2ovp
 bin/vpl2vpl
 @bin bin/vptovf
 @bin bin/weave
+bin/webquiz
 @bin bin/wofm2opl
 @bin bin/wopl2ofm
-bin/wordcount
+@comment bin/wordcount
 @bin bin/wovf2ovp
 @bin bin/wovp2ovf
 bin/xdvi
 @bin bin/xdvi-xaw
 @bin bin/xdvipdfmx
-bin/xelatex
 @bin bin/xetex
 bin/xhlatex
-bin/xmltex
+bin/xindex
 bin/yplan
 include/ptexenc/
 include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
-include/texlua52/
-include/texlua52/lauxlib.h
-include/texlua52/lua.h
-include/texlua52/lua.hpp
-include/texlua52/luaconf.h
-include/texlua52/lualib.h
 include/texlua53/
 include/texlua53/lauxlib.h
 include/texlua53/lua.h
@@ -423,14 +411,10 @@ include/texlua53/lualib.h
 lib/libptexenc.a
 lib/libptexenc.la
 @lib lib/libptexenc.so.${LIBptexenc_VERSION}
-lib/libtexlua52.a
-lib/libtexlua52.la
-@lib lib/libtexlua52.so.${LIBtexlua52_VERSION}
 lib/libtexlua53.a
 lib/libtexlua53.la
 @lib lib/libtexlua53.so.${LIBtexlua53_VERSION}
 lib/pkgconfig/ptexenc.pc
-lib/pkgconfig/texlua52.pc
 @tag mktexlsr
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R

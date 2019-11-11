@@ -1,4 +1,4 @@
-$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.7 2019/01/20 11:17:52 edd Exp $
+$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.8 2019/11/11 22:54:20 edd Exp $
 Index: texmf-dist/web2c/texmfcnf.lua
 --- texmf-dist/web2c/texmfcnf.lua.orig
 +++ texmf-dist/web2c/texmfcnf.lua
@@ -29,7 +29,7 @@ Index: texmf-dist/web2c/texmfcnf.lua
  
 -            TEXMFSYSVAR     = "selfautoparent:texmf-var",
 +            TEXMFSYSVAR     = "${TEXMFROOT}/texmf-var",
-             TEXMFVAR        = "home:.texlive2018/texmf-var",
+             TEXMFVAR        = "home:.texlive2019/texmf-var",
  
              -- We have only one cache path but there can be more. The first writable one
 @@ -62,12 +63,12 @@ return {

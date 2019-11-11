@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python3
 """
 Prints the dependencies of a TeX document in terms of OpenBSD packing lists.
 

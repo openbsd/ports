@@ -1,10 +1,10 @@
-$OpenBSD: patch-texmf-dist_doc_man_man1_mtx-check_1,v 1.1 2019/01/20 11:17:51 edd Exp $
+$OpenBSD: patch-texmf-dist_doc_man_man1_mtx-check_1,v 1.2 2019/11/11 22:54:20 edd Exp $
 
 Index: texmf-dist/doc/man/man1/mtx-check.1
 --- texmf-dist/doc/man/man1/mtx-check.1.orig
 +++ texmf-dist/doc/man/man1/mtx-check.1
 @@ -1,6 +1,6 @@
- .TH "mtx-check" "1" "01-01-2018" "version 0.10" "Basic ConTeXt Syntax Checking"
+ .TH "mtx-check" "1" "01-01-2019" "version 0.10" "Basic ConTeXt Syntax Checking"
  .SH NAME
 -.B mtx-check
 +mtx-check \(en Basic ConTeXt Syntax Checking

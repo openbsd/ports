@@ -1,13 +1,14 @@
-$OpenBSD: patch-texmf-dist_scripts_bibexport_bibexport_sh,v 1.3 2017/05/21 11:57:51 edd Exp $
---- texmf-dist/scripts/bibexport/bibexport.sh.origy	Thu Mar  3 22:46:27 2016
-+++ texmf-dist/scripts/bibexport/bibexport.sh	Thu Dec 29 20:55:14 2016
+$OpenBSD: patch-texmf-dist_scripts_bibexport_bibexport_sh,v 1.4 2019/11/11 22:54:20 edd Exp $
+Index: texmf-dist/scripts/bibexport/bibexport.sh
+--- texmf-dist/scripts/bibexport/bibexport.sh.orig
++++ texmf-dist/scripts/bibexport/bibexport.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  ##
  ## This is file `bibexport.sh',
  ## generated with the docstrip utility.
-@@ -255,7 +255,7 @@ FINALFILE=${OUTPUT};
+@@ -261,7 +261,7 @@ FINALFILE=${OUTPUT};
  if [ ! "${FINALFILE}" ]; then
      FINALFILE="bibexport.bib";
  fi

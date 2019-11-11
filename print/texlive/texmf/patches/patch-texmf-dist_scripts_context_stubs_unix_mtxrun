@@ -1,8 +1,8 @@
-$OpenBSD: patch-texmf-dist_scripts_context_stubs_unix_mtxrun,v 1.6 2019/01/20 11:17:52 edd Exp $
+$OpenBSD: patch-texmf-dist_scripts_context_stubs_unix_mtxrun,v 1.7 2019/11/11 22:54:20 edd Exp $
 Index: texmf-dist/scripts/context/stubs/unix/mtxrun
 --- texmf-dist/scripts/context/stubs/unix/mtxrun.orig
 +++ texmf-dist/scripts/context/stubs/unix/mtxrun
-@@ -21679,11 +21679,11 @@ messages = messages or { } -- for the moment
+@@ -25930,11 +25930,11 @@ messages = messages or { } -- for the moment
  runners = runners  or { } -- global (might become local)
  
  runners.applications = {

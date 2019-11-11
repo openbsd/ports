@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2019/11/11 22:54:10 edd Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -7,8 +7,6 @@ COMMENT-synctex =	synctex for TeXLive typesetting distribution
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-
-REVISION-main =		3
 
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
@@ -162,7 +160,9 @@ TEX_LN =	lollipop
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 
-post-install:
+.include "../texmf/symlinks.mk"
+
+post-install: tl-symlinks-buildset
 	rm -Rf ${WRKSRC}/inst
 
 	# Following upstream's process, we don't install any texmf
@@ -189,29 +189,6 @@ post-install:
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
 	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLConfig.pm \
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
-
-	# emulate texlinks
-	for i in ${ALEPH_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
-	done
-	for i in ${LUATEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/luatex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${MPOST_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/mpost ${PREFIX}/bin/$$i; \
-	done
-	for i in ${PDFTEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${EPTEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/eptex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${XETEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/xetex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${EUPTEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/euptex ${PREFIX}/bin/$$i; \
-	done
 
 .include <bsd.port.mk>
 

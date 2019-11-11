@@ -1,4 +1,4 @@
-$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.7 2019/01/20 11:17:52 edd Exp $
+$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.8 2019/11/11 22:54:20 edd Exp $
 Index: texmf-dist/web2c/texmf.cnf
 --- texmf-dist/web2c/texmf.cnf.orig
 +++ texmf-dist/web2c/texmf.cnf
@@ -35,12 +35,12 @@ Index: texmf-dist/web2c/texmf.cnf
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -465,7 +472,7 @@ LUAINPUTS.dvilualatex = .;$TEXMF/scripts/{$progname,$e
- LUAINPUTS = .;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,}//
+@@ -479,7 +486,7 @@ LUAINPUTS.dvilualatex = $TEXMFDOTDIR;$TEXMF/scripts/{$
+ LUAINPUTS = $TEXMFDOTDIR;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,}//
  
  % Lua needs to look for binary lua libraries distributed with packages.
--CLUAINPUTS = .;$SELFAUTOLOC/lib/{$progname,$engine,}/lua//
-+CLUAINPUTS = .;$OBSD_PREFIX/lib/{$progname,$engine,}/lua//
+-CLUAINPUTS = $TEXMFDOTDIR;$SELFAUTOLOC/lib/{$progname,$engine,}/lua//
++CLUAINPUTS = $TEXMFDOTDIR;$OBSD_PREFIX/lib/{$progname,$engine,}/lua//
  
  % Architecture independent executables.
  TEXMFSCRIPTS = $TEXMF/scripts/{$progname,$engine,}//

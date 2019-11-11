@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2019/07/13 10:59:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2019/11/11 22:54:07 edd Exp $
 
 CATEGORIES ?=	print
 HOMEPAGE ?=	http://tug.org/texlive/
@@ -9,8 +9,8 @@ PERMIT_PACKAGE ?=	Yes
 
 EXTRACT_SUFX ?=		.tar.xz
 
-V ?=		2018
-DIST_V ?=	${V}0414
+V ?=		2019
+DIST_V ?=	${V}0410
 
 # Note: The TUG FTP server is frequently overloaded and doesn't work with
 # ftp(1)'s keepalive implementation.
