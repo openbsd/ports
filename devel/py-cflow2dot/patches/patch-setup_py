@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/11/11 19:36:31 pirofti Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -25,7 +25,7 @@ def run_setup():
+         author_email='jfilippidis@gmail.com',
+         url='https://github.com/johnyf/pycflow2dot',
+         install_requires=[
+-            'networkx == 1.10',
++            'networkx >= 1.10',
+             'pydot >= 1.2.3'],
+         entry_points={
+             'console_scripts': ['cflow2dot = pycflow2dot:main']},
