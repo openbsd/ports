@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.4 2019/11/11 18:22:27 espie Exp $
+# $OpenBSD: build-debug-info,v 1.5 2019/11/11 18:33:05 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -136,7 +136,8 @@ sub write_dbg_rule
 {	my ($self, $out, $s, $dbg) = @_;
 	print $out "\t\@objcopy --only-keep-debug $s \$\@\n";
 	print $out "\t\@objcopy --strip-debug $s\n";
-	print $out "\t\@objcopy --add-gnu-debuglink=\$\@ $s\n\n";
+	print $out "\t\@objcopy --add-gnu-debuglink=\$\@ $s\n";
+	print $out "\t\@touch \$\@\n\n";
 }
 
 sub write_dbg
@@ -172,6 +173,7 @@ sub write_dbg_rule
 	my ($self, $out, $s, $dbg) = @_;
 	print $out "\t\@cp $s \$\@\n";
 	print $out "\t\@strip $s\n";
+	print $out "\t\@touch \$\@\n\n";
 }
 
 package OpenBSD::PackingElement::NoDefaultConflict;
