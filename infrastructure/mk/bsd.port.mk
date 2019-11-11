@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1489 2019/11/10 20:44:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1490 2019/11/11 17:30:13 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1201,7 +1201,7 @@ _create_pkg${_S} += && \
 	${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
 		$$deps ${_DBG_PKG_ARGS${_S}} $$tmp && \
 	${_check_lib_depends} $$tmp && \
-	${_register_plist${_S}} $$tmp && \
+	${_dbg_register_plist${_S}} $$tmp && \
 	${_checksum_package}
 _move_tmp_pkg${_S} += && ${_PBUILD} mv ${_TMP_REPO}${_DBG_PKGFILE${_S}} ${_DBG_PACKAGE_COOKIE${_S}}
 _tmp_pkg${_S} += ${_TMP_REPO}${_DBG_PKGFILE${_S}}
@@ -1889,8 +1889,14 @@ _CHECK_LIB_DEPENDS += -F pthread
 .for _s in ${MULTI_PACKAGES}
 .  if ${STATIC_PLIST${_s}:L} == "no"
 _register_plist${_s} = :
+_dbg_register_plist${_s} = :
 .  else
 _register_plist${_s} = ${_register_plist}
+.    if empty(DEBUG_FILES)
+_dbg_register_plist${_s} = : 
+.    else
+_dbg_register_plist${_s} = ${_register_plist}
+.    endif
 .  endif
 .endfor
 
