@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2019/02/26 22:10:54 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2019/11/11 02:01:07 bentley Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386 powerpc arm arm64
 VERSION ?= 		2.5.9
@@ -8,6 +8,8 @@ HOMEPAGE ?=		https://mupen64plus.org/
 CATEGORIES ?=		emulators games
 MASTER_SITES ?=		https://github.com/mupen64plus/mupen64plus-${MUPEN64PLUS_MOD}/releases/download/${VERSION}/
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
+
+DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE ?=	none
 USE_GMAKE ?=		Yes

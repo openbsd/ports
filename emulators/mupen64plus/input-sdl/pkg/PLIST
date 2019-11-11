@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/11/11 02:01:07 bentley Exp $
 lib/mupen64plus/
-lib/mupen64plus/mupen64plus-input-sdl.so
+@so lib/mupen64plus/mupen64plus-input-sdl.so
 share/doc/pkg-readmes/${PKGSTEM}
 share/mupen64plus/
 share/mupen64plus/InputAutoCfg.ini

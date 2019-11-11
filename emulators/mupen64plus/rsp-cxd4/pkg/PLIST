@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/26 22:07:51 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/11 02:01:07 bentley Exp $
 lib/mupen64plus/
-lib/mupen64plus/mupen64plus-rsp-cxd4.so
+@so lib/mupen64plus/mupen64plus-rsp-cxd4.so
