@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1149 2019/11/09 10:36:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1150 2019/11/11 19:25:38 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -707,6 +707,7 @@
      SUBDIR += ssvnc
      SUBDIR += strongswan
      SUBDIR += supybot
+     SUBDIR += swirc
      SUBDIR += syncthing
      SUBDIR += synergy
      SUBDIR += tacacs+
