@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/11/11 11:13:13 fcambus Exp $
 
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
 BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
@@ -7,13 +7,12 @@ COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 
 GH_ACCOUNT =		visualboyadvance-m
 GH_PROJECT =		${GH_ACCOUNT}
-GH_TAGNAME =		v2.1.1
-REVISION =		1
+GH_TAGNAME =		v2.1.4
 PKGNAME =		vbam-${GH_TAGNAME:S/v//}
 
 CATEGORIES =		emulators
 
-HOMEPAGE =		http://www.vba-m.com
+HOMEPAGE =		https://www.vba-m.com
 
 # GPLv2+ (see doc/License.txt)
 PERMIT_PACKAGE =		Yes

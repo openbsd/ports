@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gba_GBALink_cpp,v 1.1 2018/04/24 12:04:35 jasper Exp $
+$OpenBSD: patch-src_gba_GBALink_cpp,v 1.2 2019/11/11 11:13:13 fcambus Exp $
 
 Index: src/gba/GBALink.cpp
 --- src/gba/GBALink.cpp.orig
@@ -6,9 +6,9 @@ Index: src/gba/GBALink.cpp
 @@ -4,7 +4,7 @@
  #include <string.h>
  
- // malloc.h does not seem to exist on Mac OS 10.7
--#ifdef __APPLE__
-+#if defined(__APPLE__) || defined(__OpenBSD__)
+ // malloc.h does not seem to exist on Mac OS 10.7 and is an error on FreeBSD
+-#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
  #include <stdlib.h>
  #else
  #include <malloc.h>
