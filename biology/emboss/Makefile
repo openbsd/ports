@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/11/11 17:35:10 jca Exp $
 
 PORTROACH=	ignore:1
 
 COMMENT=	European Molecular Biology Open Software Suite
 
 DISTNAME=	EMBOSS-6.0.1
-REVISION=	4
+REVISION=	5
 SHARED_LIBS +=  eplplot                 0.0   # .5.7
 SHARED_LIBS +=  ajax                    1.0   # .6.0
 SHARED_LIBS +=  ajaxg                   1.0   # .6.0
@@ -24,7 +24,8 @@ WANTLIB += X11 c m xcb
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --without-java \
-		--without-pngdriver
+		--without-pngdriver \
+		--bindir="${PREFIX}/libexec/emboss"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
