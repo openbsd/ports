@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/09/25 08:48:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/11 02:41:05 bentley Exp $
 
 COMMENT =		makefiles for building NetSurf
 
 NETSURF_PROJECT =	buildsystem
-NETSURF_VERSION =	1.7
+NETSURF_VERSION =	1.8
 DISTNAME =		${NETSURF_PROJECT}-${NETSURF_VERSION}
 PKGNAME =		netsurf-${NETSURF_PROJECT}-${NETSURF_VERSION}
 
