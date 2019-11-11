@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/11 08:14:18 bentley Exp $
 
 COMMENT =		convert POD data to mdoc input
 
@@ -10,6 +10,8 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://mandoc.bsd.lv/pod2mdoc/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # ISC
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/11 08:14:18 bentley Exp $
 
 COMMENT =		convert Texinfo data to mdoc input
 
@@ -10,6 +10,8 @@ CATEGORIES =		textproc
 HOMEPAGE =		https://mandoc.bsd.lv/texi2mdoc/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # ISC
 PERMIT_PACKAGE =	Yes
