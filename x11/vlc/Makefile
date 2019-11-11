@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2019/11/08 21:55:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.230 2019/11/11 19:10:45 ajacoutot Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -10,7 +10,7 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS=	vlc	3.0 \
 		vlccore	3.0
@@ -196,6 +196,7 @@ post-install:
 	@find ${PREFIX}/lib/vlc -name '*.la' -delete
 
 .include <bsd.port.mk>
+
 .if ${CHOSEN_COMPILER} == "base-clang"
-CXXFLAGS += -std=c++11 -DXXX_CLANG_WORKAROUND=1
+CXXFLAGS+= -DXXX_CLANG_WORKAROUND=1
 .endif

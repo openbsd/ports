@@ -1,21 +1,18 @@
-$OpenBSD: patch-include_vlc_atomic_h,v 1.2 2017/05/23 14:16:41 espie Exp $
-Use std::atomic, libc++ will bring them in anyway
+$OpenBSD: patch-include_vlc_atomic_h,v 1.3 2019/11/11 19:10:46 ajacoutot Exp $
+
+Use std::atomic, libc++ will bring them in anyway.
 
 Index: include/vlc_atomic.h
 --- include/vlc_atomic.h.orig
 +++ include/vlc_atomic.h
-@@ -26,11 +26,24 @@
+@@ -26,7 +26,15 @@
   * Atomic operations do not require locking, but they are not very powerful.
   */
  
 -# if !defined (__cplusplus) && (__STDC_VERSION__ >= 201112L) \
 +# if defined(__cplusplus) && __cplusplus >= 201103L
 +#  include <atomic>
-+#  include <cstdint>
-+
-+// XXX work around gcc 4.9.4 bug
-+typedef std::atomic<std::uint_least32_t> vlc_atomic_float;
-+//using std::atomic_uint_least32_t;
++using std::atomic_uint_least32_t;
 +using std::atomic_init;
 +using std::atomic_load;
 +using std::atomic_store;
@@ -25,25 +22,3 @@ Index: include/vlc_atomic.h
    && !defined (__STDC_NO_ATOMICS__)
  
  /*** Native C11 atomics ***/
- #  include <stdatomic.h>
-+typedef atomic_uint_least32_t vlc_atomic_float;
- 
- # else
- 
-@@ -109,6 +122,8 @@ typedef         ptrdiff_t atomic_ptrdiff_t;
- typedef          intmax_t atomic_intmax_t;
- typedef         uintmax_t atomic_uintmax_t;
- 
-+typedef atomic_uint_least32_t vlc_atomic_float;
-+
- # if defined (__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4) || (defined (__clang__) && (defined (__x86_64__) || defined (__i386__)))
- 
- /*** Intel/GCC atomics ***/
-@@ -402,7 +417,6 @@ typedef         uintmax_t atomic_uintmax_t;
- # endif
- # endif
- 
--typedef atomic_uint_least32_t vlc_atomic_float;
- 
- static inline void vlc_atomic_init_float(vlc_atomic_float *var, float f)
- {
