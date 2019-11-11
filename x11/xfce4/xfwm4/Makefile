@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2019/08/15 06:53:38 landry Exp $
+# $OpenBSD: Makefile,v 1.60 2019/11/11 20:49:29 landry Exp $
 
 COMMENT=	Xfce4 window manager
 
 XFCE_PROJECT=	xfwm4
 XFCE_VERSION=	4.14.0
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

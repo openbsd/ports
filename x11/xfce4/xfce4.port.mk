@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.29 2019/08/27 06:55:06 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.30 2019/11/11 20:49:28 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -68,6 +68,7 @@ MODXFCE_PURGE_LA ?=	lib/thunarx-2
 .elif defined(XFCE_PROJECT)
 HOMEPAGE?=	https://www.xfce.org/projects/${XFCE_PROJECT}
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MASTER_SITES?=	https://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
 MASTER_SITES_GIT?=	https://git.xfce.org/xfce/${XFCE_PROJECT:L}/snapshot/
 DISTNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
