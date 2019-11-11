@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.5 2019/11/11 18:33:05 espie Exp $
+# $OpenBSD: build-debug-info,v 1.6 2019/11/11 18:54:24 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -98,7 +98,7 @@ sub write_debug_info
 	$self->write_dbg($fh, $dbg);
 	my $path = $state->{wrkinst}."/".$s;
 	if (-l $path) {
-		$state->errsay("WARNING: #1 is now a symlink", $path);
+		$state->fatal("Error: #1 is now a symlink", $path);
 	}
 	if (-f $path) {
 		my $k = join('/', (stat $path)[0,1]);
@@ -113,7 +113,7 @@ sub write_debug_info
 			$state->{linkstash}{$k} = $dbg;
 		}
 	} else {
-		$state->errsay("WARNING: #1 does not exist", $path);
+		$state->fatal("Error: #1 does not exist", $path);
 	}
 }
 
