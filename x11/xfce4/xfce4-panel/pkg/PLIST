@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2019/08/15 06:44:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/11/11 21:13:05 landry Exp $
 @conflict xfce4-datetime-<0.6.2
 @conflict xfce4-iconbox-*
 @conflict xfce4-showdesktop-*
@@ -46,17 +46,17 @@ lib/pkgconfig/libxfce4panel-2.0.pc
 lib/xfce4/panel/
 @bin lib/xfce4/panel/migrate
 lib/xfce4/panel/plugins/
-lib/xfce4/panel/plugins/libactions.so
-lib/xfce4/panel/plugins/libapplicationsmenu.so
-lib/xfce4/panel/plugins/libclock.so
-lib/xfce4/panel/plugins/libdirectorymenu.so
-lib/xfce4/panel/plugins/liblauncher.so
-lib/xfce4/panel/plugins/libpager.so
-lib/xfce4/panel/plugins/libseparator.so
-lib/xfce4/panel/plugins/libshowdesktop.so
-lib/xfce4/panel/plugins/libsystray.so
-lib/xfce4/panel/plugins/libtasklist.so
-lib/xfce4/panel/plugins/libwindowmenu.so
+@so lib/xfce4/panel/plugins/libactions.so
+@so lib/xfce4/panel/plugins/libapplicationsmenu.so
+@so lib/xfce4/panel/plugins/libclock.so
+@so lib/xfce4/panel/plugins/libdirectorymenu.so
+@so lib/xfce4/panel/plugins/liblauncher.so
+@so lib/xfce4/panel/plugins/libpager.so
+@so lib/xfce4/panel/plugins/libseparator.so
+@so lib/xfce4/panel/plugins/libshowdesktop.so
+@so lib/xfce4/panel/plugins/libsystray.so
+@so lib/xfce4/panel/plugins/libtasklist.so
+@so lib/xfce4/panel/plugins/libwindowmenu.so
 @bin lib/xfce4/panel/wrapper-1.0
 @bin lib/xfce4/panel/wrapper-2.0
 share/applications/panel-desktop-handler.desktop

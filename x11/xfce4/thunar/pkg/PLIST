@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2019/11/11 20:46:00 landry Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/11/11 21:13:05 landry Exp $
 @conflict xffm-*
 bin/Thunar
 @bin bin/thunar
@@ -28,11 +28,11 @@ lib/libthunarx-3.la
 lib/pkgconfig/thunarx-3.pc
 lib/systemd/user/thunar.service
 lib/thunarx-3/
-lib/thunarx-3/thunar-apr.so
-lib/thunarx-3/thunar-sbr.so
-lib/thunarx-3/thunar-uca.so
-lib/thunarx-3/thunar-wallpaper-plugin.so
-lib/xfce4/panel/plugins/libthunar-tpa.so
+@so lib/thunarx-3/thunar-apr.so
+@so lib/thunarx-3/thunar-sbr.so
+@so lib/thunarx-3/thunar-uca.so
+@so lib/thunarx-3/thunar-wallpaper-plugin.so
+@so lib/xfce4/panel/plugins/libthunar-tpa.so
 @man man/man1/Thunar.1
 share/Thunar/
 share/Thunar/sendto/
