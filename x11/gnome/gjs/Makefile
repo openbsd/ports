@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/11/08 14:28:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2019/11/11 20:18:04 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.58.1
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  5.0      # 0.0
 
@@ -24,6 +25,8 @@ WANTLIB += plc4 plds4 png readline xcb xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
 			x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # sync with devel/spidermonkey60 and SHARED_LIBS consumers:
 # x11/gnome/documents x11/gnome/shell x11/gnome/sushi
