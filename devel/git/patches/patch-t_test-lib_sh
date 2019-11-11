@@ -1,12 +1,12 @@
-$OpenBSD: patch-t_test-lib_sh,v 1.31 2019/06/26 15:07:57 kn Exp $
+$OpenBSD: patch-t_test-lib_sh,v 1.32 2019/11/11 10:12:33 kn Exp $
 
 Force usage of GNU tar in the test suite: 't5004-archive-corner-cases.sh'
 wants it badly.
 
 Index: t/test-lib.sh
---- t/test-lib.sh.pat.orig
+--- t/test-lib.sh.orig
 +++ t/test-lib.sh
-@@ -308,6 +308,11 @@ then
+@@ -310,6 +310,11 @@ then
  	exit $stress_exit
  fi
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-builtin_gc_c,v 1.1 2019/11/03 15:25:22 jca Exp $
+$OpenBSD: patch-builtin_gc_c,v 1.2 2019/11/11 10:12:33 kn Exp $
 
 HW_PHYSMEM asks for an int, not an int64_t.
 Use HW_PHYSMEM64 to handle ram size > 2GB.
@@ -6,7 +6,7 @@ Use HW_PHYSMEM64 to handle ram size > 2GB.
 Index: builtin/gc.c
 --- builtin/gc.c.orig
 +++ builtin/gc.c
-@@ -244,7 +244,7 @@ static uint64_t total_ram(void)
+@@ -243,7 +243,7 @@ static uint64_t total_ram(void)
  
  	if (!sysinfo(&si))
  		return si.totalram;
@@ -15,7 +15,7 @@ Index: builtin/gc.c
  	int64_t physical_memory;
  	int mib[2];
  	size_t length;
-@@ -253,9 +253,19 @@ static uint64_t total_ram(void)
+@@ -252,9 +252,19 @@ static uint64_t total_ram(void)
  # if defined(HW_MEMSIZE)
  	mib[1] = HW_MEMSIZE;
  # else

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.206 2019/11/03 15:27:44 jca Exp $
+# $OpenBSD: Makefile,v 1.207 2019/11/11 10:12:32 kn Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.23.0
-REVISION =	2
+V =		2.24.0
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
