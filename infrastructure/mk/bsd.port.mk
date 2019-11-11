@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1491 2019/11/11 17:40:06 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1492 2019/11/11 18:22:27 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2959,25 +2959,9 @@ _copy_debug_info:
 .if empty(DEBUG_FILES)
 	@mkdir -p ${_WRKDEBUG}
 	@${_build_debug_info}
-	@cd ${PREFIX} && cat ${_WRKDEBUG}/debug-info| \
-		while read dbgpath p dbginfo; do \
-		case $${dbgpath} in \
-			LINK) \
-				echo "> link debug info from $$p into $${dbginfo}"; \
-				ln $$p $${dbginfo};; \
-			*) \
-				${INSTALL_DATA_DIR} $${dbgpath}; \
-				echo "> copy debug info from $$p into $${dbginfo}"; \
-				case $$p in \
-				*.a) \
-					cp $$p $${dbginfo}; \
-					strip $$p;; \
-				*) \
-					objcopy --only-keep-debug $$p $${dbginfo}; \
-					objcopy --strip-debug $$p; \
-					objcopy --add-gnu-debuglink=$${dbginfo} $$p;; \
-				esac;; \
-		esac; done
+	@cd ${PREFIX} && \
+		exec ${MAKE} -f ${_WRKDEBUG}/Makefile \
+			INSTALL_DATA_DIR='${INSTALL_DATA_DIR}' all
 .else
 .  for P in ${DEBUG_FILES:N*.a}
 	@cd ${PREFIX}; dbgpath=${P:H}/.debug; \
