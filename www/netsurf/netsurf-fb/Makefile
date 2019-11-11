@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/08/11 15:16:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2019/11/11 03:21:56 bentley Exp $
 
 COMMENT =		lightweight web browser, with SDL interface
 
 NETSURF_PROJECT =	netsurf-fb
 NETSURF_VERSION =	3.9
 DISTNAME =		netsurf-${NETSURF_VERSION}-src
+REVISION =		0
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2019/07/12 20:50:48 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2019/11/11 03:21:55 bentley Exp $
 
 CATEGORIES +=	www
 
@@ -10,6 +10,8 @@ DISTNAME ?=	${NETSURF_PROJECT}-${NETSURF_VERSION}-src
 MAINTAINER ?=	Anthony J. Bentley <anthony@anjbe.name>
 HOMEPAGE ?=	https://www.netsurf-browser.org/projects/${NETSURF_PROJECT}/
 MASTER_SITES ?=	https://download.netsurf-browser.org/libs/releases/
+
+DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
 
 WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
 
