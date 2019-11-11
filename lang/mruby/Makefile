@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/11 11:42:36 fcambus Exp $
 
 COMMENT =		lightweight, embeddable implementation of ruby
 
-VERSION =		2.0.0
-DISTNAME =		mruby-${VERSION}
-REVISION =		1
+GH_ACCOUNT =		mruby
+GH_PROJECT =		mruby
+GH_TAGNAME =		2.0.1
+
 CATEGORIES =		lang
-HOMEPAGE =		https://github.com/mruby/mruby
+HOMEPAGE =		https://mruby.org/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses m readline
-
-MASTER_SITES =		https://github.com/mruby/mruby/archive/
-DISTFILES =		${DISTNAME}-${VERSION}.tar.gz{${VERSION}.tar.gz}
 
 MODULES =		lang/ruby
 BUILD_DEPENDS =		devel/bison \

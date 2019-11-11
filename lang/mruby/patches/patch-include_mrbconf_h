@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_mrbconf_h,v 1.1 2018/12/20 18:41:45 jeremy Exp $
+$OpenBSD: patch-include_mrbconf_h,v 1.2 2019/11/11 11:42:36 fcambus Exp $
 
 Index: include/mrbconf.h
 --- include/mrbconf.h.orig
@@ -11,14 +11,3 @@ Index: include/mrbconf.h
  #include <limits.h>
  #include <stdint.h>
  
-@@ -62,7 +63,9 @@
- //#define MRB_NAN_BOXING
- 
- /* define on big endian machines; used by MRB_NAN_BOXING */
--//#define MRB_ENDIAN_BIG
-+#if (BYTE_ORDER == BIG_ENDIAN)
-+#define MRB_ENDIAN_BIG
-+#endif
- 
- /* represent mrb_value as a word (natural unit of data for the processor) */
- //#define MRB_WORD_BOXING
