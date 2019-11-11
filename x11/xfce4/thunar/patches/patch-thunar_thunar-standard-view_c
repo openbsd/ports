@@ -1,0 +1,17 @@
+$OpenBSD: patch-thunar_thunar-standard-view_c,v 1.1 2019/11/11 20:46:00 landry Exp $
+
+https://bugzilla.xfce.org/show_bug.cgi?id=16138
+
+Index: thunar/thunar-standard-view.c
+--- thunar/thunar-standard-view.c.orig
++++ thunar/thunar-standard-view.c
+@@ -714,7 +714,9 @@ G_GNUC_END_IGNORE_DEPRECATIONS
+ 
+   /* setup the name renderer */
+   standard_view->name_renderer = g_object_new (GTK_TYPE_CELL_RENDERER_TEXT,
++#if PANGO_VERSION_CHECK (1, 44, 0)
+                                                "attributes", thunar_pango_attr_disable_hyphens (),
++#endif
+                                                "alignment", PANGO_ALIGN_CENTER,
+                                                "xalign", 0.5,
+                                                FALSE);

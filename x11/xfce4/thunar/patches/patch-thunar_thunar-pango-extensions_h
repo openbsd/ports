@@ -1,0 +1,17 @@
+$OpenBSD: patch-thunar_thunar-pango-extensions_h,v 1.1 2019/11/11 20:46:00 landry Exp $
+ 
+https://bugzilla.xfce.org/show_bug.cgi?id=16138
+
+Index: thunar/thunar-pango-extensions.h
+--- thunar/thunar-pango-extensions.h.orig
++++ thunar/thunar-pango-extensions.h
+@@ -31,7 +31,9 @@ PangoAttrList *thunar_pango_attr_disable_hyphens      
+ PangoAttrList *thunar_pango_attr_list_italic            (void) G_GNUC_CONST;
+ PangoAttrList *thunar_pango_attr_list_small_italic      (void) G_GNUC_CONST;
+ PangoAttrList *thunar_pango_attr_list_small             (void) G_GNUC_CONST;
++#if PANGO_VERSION_CHECK (1, 44, 0)
+ PangoAttrList *thunar_pango_attr_list_underline_single  (void) G_GNUC_CONST;
++#endif
+ 
+ G_END_DECLS;
+ 

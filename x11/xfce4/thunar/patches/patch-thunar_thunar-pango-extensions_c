@@ -1,0 +1,28 @@
+$OpenBSD: patch-thunar_thunar-pango-extensions_c,v 1.1 2019/11/11 20:46:00 landry Exp $
+
+https://bugzilla.xfce.org/show_bug.cgi?id=16138
+
+Index: thunar/thunar-pango-extensions.c
+--- thunar/thunar-pango-extensions.c.orig
++++ thunar/thunar-pango-extensions.c
+@@ -128,18 +128,18 @@ thunar_pango_attr_list_bold (void)
+  * Return value: a #PangoAttrList for not inserting hyphens at intra-word line
+  *               breaks.
+  **/
++#if PANGO_VERSION_CHECK (1, 44, 0)
+ PangoAttrList*
+ thunar_pango_attr_disable_hyphens (void)
+ {
+   static PangoAttrList *attr_list = NULL;
+ 
+-#ifdef PANGO_VERSION_1_44
+   if (G_UNLIKELY (attr_list == NULL))
+     attr_list = thunar_pango_attr_list_wrap (pango_attr_insert_hyphens_new (FALSE), NULL);
+-#endif
+ 
+   return attr_list;
+ }
++#endif
+ 
+ 
+ 
