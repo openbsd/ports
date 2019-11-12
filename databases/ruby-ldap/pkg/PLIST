@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/11/04 21:28:51 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/11/12 06:40:03 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -30,20 +30,6 @@ ${GEM_LIB}/gems/${DISTNAME}/test/misc1.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/misc2.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/modrdn.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/moz_cert.rb
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/ldif-filter.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-addel.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-auth.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-bind.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-common.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-common.h
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-modify.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-modrdn.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-mtread.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-read.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-search.c
-${GEM_LIB}/gems/${DISTNAME}/test/openldap_tests/progs/slapd-tester.c
 ${GEM_LIB}/gems/${DISTNAME}/test/search.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/search2.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/search3.rb
