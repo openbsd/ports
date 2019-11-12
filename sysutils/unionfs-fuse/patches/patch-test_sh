@@ -1,0 +1,36 @@
+$OpenBSD: patch-test_sh,v 1.1.1.1 2019/11/12 15:15:09 bket Exp $
+
+Index: test.sh
+--- test.sh.orig
++++ test.sh
+@@ -1,6 +1,11 @@
+-#!/bin/bash
++#!/bin/sh
+ # this is a legacy version (will be removed in the future). please use test.py.
+ 
++if [ `id -u` != 0 ]; then
++	echo "\n*** NOTE: ${0##*/} requires root privileges ***\n\n"
++	exit 1
++fi
++
+ set -v
+ set -e
+ 
+@@ -11,7 +16,7 @@ echo v1 > original/play-with-me
+ echo v1 > original/delete-me
+ 
+ cleanup() {
+-    if [ -e "union" ]; then fusermount -u -q union; fi
++    if [ -e "union" ]; then umount union 2>/dev/null || true; fi
+     rm -rf union original working-copy
+ }
+ trap cleanup EXIT
+@@ -86,7 +91,7 @@ else
+ fi
+ set -e
+ 
+-fusermount -u union
++umount union
+ 
+ [ "$(cat original/file)" = "v1" ]
+ [ "$(cat original/play-with-me)" = "v1" ]

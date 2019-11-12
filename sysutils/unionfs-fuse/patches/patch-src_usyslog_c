@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_usyslog_c,v 1.1.1.1 2019/11/12 15:15:09 bket Exp $
+
+Index: src/usyslog.c
+--- src/usyslog.c.orig
++++ src/usyslog.c
+@@ -23,8 +23,6 @@
+ 
+ #if __APPLE__
+ #include <malloc/malloc.h>
+-#else
+-#include <malloc.h>
+ #endif
+ 
+ #include <pthread.h>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_unionfs_h,v 1.1.1.1 2019/11/12 15:15:09 bket Exp $
+
+Index: src/unionfs.h
+--- src/unionfs.h.orig
++++ src/unionfs.h
+@@ -7,6 +7,8 @@
+ #ifndef UNIONFS_H
+ #define UNIONFS_H
+ 
++#include <pthread.h>
++
+ #define PATHLEN_MAX 1024
+ #define HIDETAG "_HIDDEN~"
+ 

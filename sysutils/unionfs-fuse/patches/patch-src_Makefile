@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2019/11/12 15:15:09 bket Exp $
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -2,15 +2,15 @@ CFLAGS += -Wall
+ CPPFLAGS += $(shell pkg-config --cflags fuse)
+ CPPFLAGS += -DFUSE_USE_VERSION=29
+ 
+-CPPFLAGS += -DLIBC_XATTR # glibc nowadays includes xattr
++# CPPFLAGS += -DLIBC_XATTR # glibc nowadays includes xattr
+ # CPPFLAGS += -DLIBATTR_XATTR # define this to libattr xattr include
+ 
+-# CPPFLAGS += -DDISABLE_XATTR # disable xattr support
++CPPFLAGS += -DDISABLE_XATTR # disable xattr support
+ # CPPFLAGS += -DDISABLE_AT    # disable *at function support
+ 
+ LDFLAGS +=
+ 
+-LIB = $(shell pkg-config --libs fuse) -lpthread
++LIB = -lfuse -lpthread
+ 
+ HASHTABLE_OBJ = hashtable.o hashtable_itr.o
+ UNIONFS_OBJ = unionfs.o opts.o debug.o findbranch.o readdir.o \

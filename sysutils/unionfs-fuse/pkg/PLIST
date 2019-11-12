@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/12 15:15:09 bket Exp $
+@bin bin/unionfs
+@bin bin/unionfsctl
+@man man/man8/unionfs.8

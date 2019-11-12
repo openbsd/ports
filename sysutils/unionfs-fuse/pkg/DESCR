@@ -1,0 +1,7 @@
+unionfs-fuse overlays several directory into one single mount point.
+
+It first tries to access the file on the top branch and if the file does
+not exist there, it continues on lower level branches. If the user tries
+to modify a file on a lower level read-only branch the file is copied to
+a higher level read-write branch if the copy-on-write (cow) mode was
+enabled.
