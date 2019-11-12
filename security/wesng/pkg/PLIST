@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/31 00:45:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/12 20:08:35 jasper Exp $
 bin/wes
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}wes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wes.py
-lib/python${MODPY_VERSION}/site-packages/wesng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/wesng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/wesng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/wesng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/wesng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/wesng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/wesng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/wesng-0.95-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/wesng-0.95-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/wesng-0.95-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/wesng-0.95-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/wesng-0.95-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/wesng-0.95-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/wesng-0.95-py${MODPY_VERSION}.egg-info/top_level.txt
 share/wesng/
-share/wesng/CVEs.zip
 share/wesng/definitions.zip
