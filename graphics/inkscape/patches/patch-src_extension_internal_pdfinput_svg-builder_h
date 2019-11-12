@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_extension_internal_pdfinput_svg-builder_h,v 1.3 2019/11/12 22:04:55 kili Exp $
+
+Fix build against poppler-0.82.0.
+
+Index: src/extension/internal/pdfinput/svg-builder.h
+--- src/extension/internal/pdfinput/svg-builder.h.orig
++++ src/extension/internal/pdfinput/svg-builder.h
+@@ -141,7 +141,7 @@ class SvgBuilder { (public)
+     void addChar(GfxState *state, double x, double y,
+                  double dx, double dy,
+                  double originX, double originY,
+-                 CharCode code, int nBytes, Unicode *u, int uLen);
++                 CharCode code, int nBytes, const Unicode *u, int uLen);
+     void beginTextObject(GfxState *state);
+     void endTextObject(GfxState *state);
+ 
