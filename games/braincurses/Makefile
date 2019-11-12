@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/08 09:46:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/12 17:24:38 cwen Exp $
 
 COMMENT=	clone of the Mastermind game
 
@@ -15,8 +15,8 @@ WANTLIB=	c curses m ${COMPILER_LIBCXX}
 COMPILER =	base-clang ports-gcc
 
 do-build:
-	cd ${WRKBUILD} && ${CXX} ${CXXFLAGS} -std=c++11 -o braincurses \
-	    main.cpp code.cpp braincurses.cpp -lcurses
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${CXX} ${CXXFLAGS} -std=c++11 \
+	    -o braincurses main.cpp code.cpp braincurses.cpp -lcurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/braincurses ${PREFIX}/bin
