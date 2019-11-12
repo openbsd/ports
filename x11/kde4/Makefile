@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/11/10 14:20:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.76 2019/11/12 20:21:30 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -237,7 +237,7 @@ SUBDIR += mplayerthumbs
 SUBDIR += kuser
 
 # former kdenetwork
-SUBDIR += kget
+#SUBDIR += kget			# broken
 SUBDIR += kopete
 SUBDIR += kppp
 SUBDIR += krdc
