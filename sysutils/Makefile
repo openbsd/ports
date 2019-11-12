@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.538 2019/11/10 22:54:43 pvk Exp $
+# $OpenBSD: Makefile,v 1.539 2019/11/12 15:18:32 bket Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -371,6 +371,7 @@
      SUBDIR += u-boot,aarch64
      SUBDIR += uefitool
      SUBDIR += udfclient
+     SUBDIR += unionfs-fuse
      SUBDIR += upower
      SUBDIR += upobsd
      SUBDIR += upt
