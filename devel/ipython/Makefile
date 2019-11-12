@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/12 20:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/11/12 10:00:28 kmos Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	5.8.0
-REVISION =		0
+REVISION =		1
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -19,7 +19,7 @@ RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
 			devel/desktop-file-utils \
 			devel/py-pexpect${MODPY_FLAVOR} \
-			devel/py-prompt_toolkit${MODPY_FLAVOR}>=1.0.4,<2.0.0 \
+			devel/py-prompt_toolkit${MODPY_FLAVOR}>=1.0.4v0,<2.0.0v0 \
 			textproc/py-pygments${MODPY_FLAVOR}
 
 # Note that if you have pdb++ installed, tests will fail.
