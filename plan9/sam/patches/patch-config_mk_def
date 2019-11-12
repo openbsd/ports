@@ -1,0 +1,45 @@
+$OpenBSD: patch-config_mk_def,v 1.1 2019/11/12 02:45:32 jsg Exp $
+
+Index: config.mk.def
+--- config.mk.def.orig
++++ config.mk.def
+@@ -2,7 +2,6 @@
+ # copyright 2015 Rob King <jking@deadpixi.com>
+ 
+ # CC is the C compiler to use
+-CC=gcc
+ CFLAGS?=
+ CFLAGS+=-std=c99
+ 
+@@ -11,23 +10,23 @@ CFLAGS+=-std=c99
+ # environment.
+ #
+ # Mac OS X users need to add -D_DARWIN_C_SOURCE here.
+-STANDARDS=-D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=500
++STANDARDS=-D_POSIX_C_SOURCE=200809L
+ 
+ # DESTDIR is the root of the installation tree
+-DESTDIR?=/usr/local
++# DESTDIR?=/usr/local
+ 
+ # BINDIR is the directory where binaries go
+-BINDIR?=$(DESTDIR)/bin
++BINDIR?=${PREFIX}/bin
+ 
+ # MANDIR is where manual pages go
+-MANDIR?=$(DESTDIR)/share/man/
++MANDIR?=${PREFIX}/man/
+ 
+ # Add additional include and library directories
+ # BSD/Mac OS X users might need to add something like
+-# INCLUDES=-I/usr/X11R6/include -I/usr/X11R6/include/freetype2
+-# LDFLAGS=-L/usr/X11R6/lib
+-INCLUDES=-I/usr/include/freetype2
+-LDFLAGS=
++INCLUDES=-I${X11BASE}/include -I${X11BASE}/include/freetype2
++LDFLAGS=-L${X11BASE}/lib
++#INCLUDES=-I/usr/include/freetype2
++#LDFLAGS=
+ 
+ # Set this to your default remote shell.
+ RXPATH=/usr/bin/ssh

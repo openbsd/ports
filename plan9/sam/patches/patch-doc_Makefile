@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_Makefile,v 1.1 2019/11/12 02:45:32 jsg Exp $
+
+Index: doc/Makefile
+--- doc/Makefile.orig
++++ doc/Makefile
+@@ -7,10 +7,6 @@ all:
+ install: sam.1 
+ 	mkdir -p "$(MANDIR)/man1"
+ 	cp sam.1 "$(MANDIR)/man1"
+-	ln -sf "$(MANDIR)/man1/sam.1" "$(MANDIR)/man1/B.1"
+-	ln -sf "$(MANDIR)/man1/sam.1" "$(MANDIR)/man1/samterm.1"
+-	ln -sf "$(MANDIR)/man1/sam.1" "$(MANDIR)/man1/rsam.1"
+-	ln -sf "$(MANDIR)/man1/sam.1" "$(MANDIR)/man1/sam.save.1"
+ 	mkdir -p "$(MANDIR)/man5"
+ 	cp samrc.5 "$(MANDIR)/man5"
+ 

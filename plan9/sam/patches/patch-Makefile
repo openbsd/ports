@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1 2019/11/12 02:45:32 jsg Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -27,7 +27,8 @@ samtermdir:
+ 	cd samterm; $(MAKE)
+ 
+ install:
+-	@xdg-desktop-menu install --mode $(MODE) deadpixi-sam.desktop || echo "unable to install desktop entry"
++	mkdir -p ${PREFIX}/share/applications/
++	cp deadpixi-sam.desktop ${PREFIX}/share/applications/
+ 	cd libXg; $(MAKE) install
+ 	cd libframe; $(MAKE) install
+ 	cd sam; $(MAKE) install
