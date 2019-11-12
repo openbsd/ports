@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/11/10 15:31:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2019/11/12 08:14:37 ajacoutot Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -47,6 +47,8 @@ CONFIGURE_ARGS=		-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
 WANTLIB-main += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB-main += boost_python3-mt intl m util z
+
+BUILD_DEPENDS=		math/py-numpy${MODPY_FLAVOR}
 
 LIB_DEPENDS-main +=	${MODPY_LIB_DEPENDS} \
 			devel/boost
