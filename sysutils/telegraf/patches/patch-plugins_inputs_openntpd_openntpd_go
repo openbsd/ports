@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_inputs_openntpd_openntpd_go,v 1.1 2019/11/12 22:31:23 rsadowski Exp $
+
+Index: plugins/inputs/openntpd/openntpd.go
+--- plugins/inputs/openntpd/openntpd.go.orig
++++ plugins/inputs/openntpd/openntpd.go
+@@ -80,7 +80,7 @@ func openntpdRunner(cmdName string, Timeout internal.D
+ 
+ 	if UseSudo {
+ 		cmdArgs = append([]string{cmdName}, cmdArgs...)
+-		cmd = exec.Command("sudo", cmdArgs...)
++		cmd = exec.Command("doas", cmdArgs...)
+ 	}
+ 
+ 	var out bytes.Buffer

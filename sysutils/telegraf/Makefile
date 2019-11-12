@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/10/21 10:52:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/12 22:31:23 rsadowski Exp $
 
 COMMENT =	plugin-driven server agent for collecting metrics
 
@@ -6,13 +6,14 @@ BROKEN-i386 =	build fails, no error message
 
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
-GH_TAGNAME =	1.9.0
-REVISION =	0
+GH_TAGNAME =	1.12.3
 HOMEPAGE =	https://influxdata.com
 # selfhosted because we bundle go deps
-MASTER_SITES =	https://rhaalovely.net/stuff/
+MASTER_SITES =	https://sizeofvoid.org/pub/OpenBSD/distfiles/
 
 CATEGORIES =		sysutils
+
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
