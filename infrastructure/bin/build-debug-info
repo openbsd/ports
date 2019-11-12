@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.7 2019/11/12 16:41:36 espie Exp $
+# $OpenBSD: build-debug-info,v 1.8 2019/11/12 20:06:54 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -111,7 +111,7 @@ use File::Basename;
 sub write_debug_info
 {
 	my ($self, $fh, $state) = @_;
-	my $s = $self->stringize;
+	my $s = $self->name;
 	my $dbg = $self->mogrify($s);
 	my $dir = $dbg;
 	$dir =~ s/(\/\.debug\/)[^\/]+/$1/;
@@ -120,9 +120,12 @@ sub write_debug_info
 		$state->{dirstash}{$dir} = 1;
 	}
 	$self->write_dbg($fh, $dbg);
-	my $path = $state->{wrkinst}."/".$s;
+	my $path = $self->fullname;
 	if (-l $path) {
-		$state->fatal("Error: #1 is now a symlink", $path);
+		$state->errsay(
+		    "WARNING: #1 is a symlink, no debug info produced", 
+		    $path);
+		return;
 	}
 	if (-f $path) {
 		my $k = join('/', (stat $path)[0,1]);
@@ -312,6 +315,9 @@ STRIP_RULE = ${INSTALL_DATA_DIR} ${@D} && \
 
 LINK_RULE = ${INSTALL_DATA_DIR} ${@D} && \
     echo "> Link debug info from $? to $@" && ln $? $@
+
+SYMLINK_RULE = ${INSTALL_DATA_DIR} ${@D} && \
+    echo "> Link debug info from $? to $@" && ln -s $? $@
 
 all:
 .PHONY: all
