@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.408 2019/09/02 18:07:11 thfr Exp $
+# $OpenBSD: Makefile,v 1.409 2019/11/12 13:37:42 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -94,6 +94,7 @@
      SUBDIR += ezquake
      SUBDIR += f1spirit
      SUBDIR += falconseye
+     SUBDIR += fallingtime
      SUBDIR += fifechan
      SUBDIR += fifengine
      SUBDIR += fillets-ng
