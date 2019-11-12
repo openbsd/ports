@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_cxx_supportlib_FileTools_FileManip_cpp,v 1.1 2019/11/12 06:38:20 jeremy Exp $
+
+Don't crash process if there is an error removing temporary files.
+
+Index: src/cxx_supportlib/FileTools/FileManip.cpp
+--- src/cxx_supportlib/FileTools/FileManip.cpp.orig
++++ src/cxx_supportlib/FileTools/FileManip.cpp
+@@ -319,9 +319,6 @@ removeDirTree(const string &path) {
+ 		};
+ 		SubprocessInfo info;
+ 		runCommand(command, info, true, true, redirectStderrToDevNull);
+-		if (info.status != 0 && info.status != -2) {
+-			throw RuntimeException("Cannot remove directory '" + path + "'");
+-		}
+ 	}
+ }
+ 

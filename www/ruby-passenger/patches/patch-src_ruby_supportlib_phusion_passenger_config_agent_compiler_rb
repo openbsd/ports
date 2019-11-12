@@ -1,18 +1,19 @@
-$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_config_agent_compiler_rb,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_config_agent_compiler_rb,v 1.2 2019/11/12 06:38:20 jeremy Exp $
 
 Remove hiding of build steps.
 
---- src/ruby_supportlib/phusion_passenger/config/agent_compiler.rb.orig	Tue Nov  1 15:23:44 2016
-+++ src/ruby_supportlib/phusion_passenger/config/agent_compiler.rb	Tue Nov  1 15:27:21 2016
+Index: src/ruby_supportlib/phusion_passenger/config/agent_compiler.rb
+--- src/ruby_supportlib/phusion_passenger/config/agent_compiler.rb.orig
++++ src/ruby_supportlib/phusion_passenger/config/agent_compiler.rb
 @@ -131,22 +131,13 @@ module PhusionPassenger
  
        def compile_agent
          puts "<banner>Compiling #{PROGRAM_NAME} agent...</banner>"
 -        progress_bar = ProgressBar.new
          e_working_dir = Shellwords.escape(@working_dir)
-         args = "#{e_working_dir}/support-binaries/#{AGENT_EXE}" +
-           " CACHING=false" +
-           " OUTPUT_DIR=#{e_working_dir} "
+         args = "#{e_working_dir}/support-binaries/#{AGENT_EXE}" \
+           " CACHING=false" \
+           " OUTPUT_DIR=#{e_working_dir} " \
            " OPTIMIZE=#{!!@optimize}"
 -        begin
 -          progress_bar.set(0)

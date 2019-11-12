@@ -1,18 +1,16 @@
-$OpenBSD: patch-src_agent_Core_CoreMain_cpp,v 1.1 2017/11/04 15:56:29 jeremy Exp $
+$OpenBSD: patch-src_agent_Core_CoreMain_cpp,v 1.2 2019/11/12 06:38:20 jeremy Exp $
 
-Remove checking for newer versions.
+Remove security update checker and telemetry collector.
 
 Index: src/agent/Core/CoreMain.cpp
 --- src/agent/Core/CoreMain.cpp.orig
 +++ src/agent/Core/CoreMain.cpp
-@@ -788,9 +788,7 @@ initializeSecurityUpdateChecker() {
- 	TRACE_POINT();
+@@ -1349,8 +1349,6 @@ runCore() {
+ 		lowerPrivilege();
+ 		initializeCurl();
+ 		initializeNonPrivilegedWorkingObjects();
+-		initializeSecurityUpdateChecker();
+-		initializeTelemetryCollector();
+ 		initializeAdminPanelConnector();
+ 		prestartWebApps();
  
- 	VariantMap &options = *agentsOptions;
--	if (options.getBool("disable_security_update_check", false, false)) {
--		P_NOTICE("Security update check disabled.");
--	} else {
-+	if (false) {
- 		string proxy = options.get("security_update_check_proxy", false);
- 
- 		string serverIntegration = options.get("integration_mode"); // nginx / apache / standalone

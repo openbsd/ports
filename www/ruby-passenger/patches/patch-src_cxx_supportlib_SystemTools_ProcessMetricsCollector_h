@@ -1,0 +1,62 @@
+$OpenBSD: patch-src_cxx_supportlib_SystemTools_ProcessMetricsCollector_h,v 1.1 2019/11/12 06:38:20 jeremy Exp $
+
+Fix broken code. On NetBSD/OpenBSD, if ps output contained
+any process we weren't looking for (very likely), a ParseError
+would be raised.
+
+Index: src/cxx_supportlib/SystemTools/ProcessMetricsCollector.h
+--- src/cxx_supportlib/SystemTools/ProcessMetricsCollector.h.orig
++++ src/cxx_supportlib/SystemTools/ProcessMetricsCollector.h
+@@ -234,16 +234,13 @@ class ProcessMetricsCollector { (private)
+ 				pidAllowed = pids.find(metrics.pid) != pids.end();
+ 			#endif
+ 
+-			if (pidAllowed) {
+-				result[metrics.pid] = metrics;
+-
+-				start = strchr(start, '\n');
+-				if (start != NULL) {
+-					// Skip to beginning of next line.
+-					start++;
+-					if (*start == '\0') {
+-						start = NULL;
+-					}
++			result[metrics.pid] = metrics;
++			start = strchr(start, '\n');
++			if (start != NULL) {
++				// Skip to beginning of next line.
++				start++;
++				if (*start == '\0') {
++					start = NULL;
+ 				}
+ 			}
+ 		}
+@@ -293,16 +290,8 @@ class ProcessMetricsCollector { (private)
+ 		ConstIterator it;
+ 		// The list of PIDs must follow -p without a space.
+ 		// https://groups.google.com/forum/#!topic/phusion-passenger/WKXy61nJBMA
+-		string pidsArg = "-p";
++		string pidsArg = "-ax";
+ 
+-		for (it = pids.begin(); it != pids.end(); it++) {
+-			pidsArg.append(toString(*it));
+-			pidsArg.append(",");
+-		}
+-		if (pidsArg[pidsArg.size() - 1] == ',') {
+-			pidsArg.resize(pidsArg.size() - 1);
+-		}
+-
+ 		// The list of format arguments must also follow -o
+ 		// without a space.
+ 		// https://github.com/phusion/passenger/pull/94
+@@ -315,9 +304,7 @@ class ProcessMetricsCollector { (private)
+ 
+ 		const char *command[] = {
+ 			"ps", fmtArg.c_str(),
+-			#ifdef PS_SUPPORTS_MULTIPLE_PIDS
+-				pidsArg.c_str(),
+-			#endif
++			pidsArg.c_str(),
+ 			NULL
+ 		};
+ 

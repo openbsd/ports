@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_agent_Core_AdminPanelConnector_h,v 1.1 2019/11/12 06:38:20 jeremy Exp $
+
+Index: src/agent/Core/AdminPanelConnector.h
+--- src/agent/Core/AdminPanelConnector.h.orig
++++ src/agent/Core/AdminPanelConnector.h
+@@ -109,7 +109,7 @@ class AdminPanelConnector { (public)
+ 			add("instance_dir", STRING_TYPE, OPTIONAL | READ_ONLY);
+ 			add("web_server_version", STRING_TYPE, OPTIONAL | READ_ONLY);
+ 			add("web_server_module_version", STRING_TYPE, OPTIONAL | READ_ONLY);
+-			add("ruby", STRING_TYPE, OPTIONAL, "ruby");
++			add("ruby", STRING_TYPE, OPTIONAL, "${RUBY}");
+ 
+ 			addValidator(ConfigKit::validateIntegrationMode);
+ 			addValidator(ConfigKit::validateStandaloneEngine);

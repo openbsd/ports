@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_agent_Core_ApplicationPool_Options_h,v 1.1 2019/11/12 06:38:20 jeremy Exp $
+
+Index: src/agent/Core/ApplicationPool/Options.h
+--- src/agent/Core/ApplicationPool/Options.h.orig
++++ src/agent/Core/ApplicationPool/Options.h
+@@ -437,7 +437,7 @@ class Options { (public)
+ 		  defaultUser(PASSENGER_DEFAULT_USER, sizeof(PASSENGER_DEFAULT_USER) - 1),
+ 		  lveMinUid(DEFAULT_LVE_MIN_UID),
+ 		  integrationMode(DEFAULT_INTEGRATION_MODE, sizeof(DEFAULT_INTEGRATION_MODE) - 1),
+-		  ruby(DEFAULT_RUBY, sizeof(DEFAULT_RUBY) - 1),
++		  ruby("${RUBY}", sizeof("${RUBY}") - 1),
+ 		  python(DEFAULT_PYTHON, sizeof(DEFAULT_PYTHON) - 1),
+ 		  nodejs(DEFAULT_NODEJS, sizeof(DEFAULT_NODEJS) - 1),
+ 		  fileDescriptorUlimit(0),
+@@ -621,7 +621,7 @@ class Options { (public)
+ 
+ 		string interpreter;
+ 		if (entry.language == P_STATIC_STRING("ruby")) {
+-			interpreter = escapeShell(ruby);
++			interpreter = "${RUBY}";
+ 		} else if (entry.language == P_STATIC_STRING("python")) {
+ 			interpreter = escapeShell(python);
+ 		} else if (entry.language == P_STATIC_STRING("nodejs")) {

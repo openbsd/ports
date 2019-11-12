@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_agent_Core_ApplicationPool_Pool_AnalyticsCollection_cpp,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+$OpenBSD: patch-src_agent_Core_ApplicationPool_Pool_AnalyticsCollection_cpp,v 1.2 2019/11/12 06:38:20 jeremy Exp $
 
 Remove unnecessary warning, as their metrics parser apparently
 doesn't work on OpenBSD.
 
---- src/agent/Core/ApplicationPool/Pool/AnalyticsCollection.cpp.orig	Mon Jul 25 19:56:01 2016
-+++ src/agent/Core/ApplicationPool/Pool/AnalyticsCollection.cpp	Tue Nov  1 13:18:15 2016
-@@ -184,7 +184,6 @@ Pool::realCollectAnalytics() {
+Index: src/agent/Core/ApplicationPool/Pool/AnalyticsCollection.cpp
+--- src/agent/Core/ApplicationPool/Pool/AnalyticsCollection.cpp.orig
++++ src/agent/Core/ApplicationPool/Pool/AnalyticsCollection.cpp
+@@ -143,7 +143,6 @@ Pool::realCollectAnalytics() {
  		P_DEBUG("Collecting process metrics");
  		processMetrics = ProcessMetricsCollector().collect(pids);
  	} catch (const ParseException &) {
