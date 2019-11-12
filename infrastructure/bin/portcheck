@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.129 2019/08/20 11:06:06 sthen Exp $
+# $OpenBSD: portcheck,v 1.130 2019/11/12 06:01:04 bentley Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1298,7 +1298,7 @@ check_plist() {
 	if ! $readme_seen; then
 		local readme=pkg/README${subpkg}
 		if [ -e "$readme" ]; then
-			err "${portref}missing share/doc/pkg-readmes/\${FULLPKGNAME} in PLIST${subpkg}"
+			err "${portref}missing share/doc/pkg-readmes/\${PKGSTEM} in PLIST${subpkg}"
 		fi
 	fi
 }
