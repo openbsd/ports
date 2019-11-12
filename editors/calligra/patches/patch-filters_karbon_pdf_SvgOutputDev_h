@@ -1,8 +1,10 @@
-$OpenBSD: patch-filters_karbon_pdf_SvgOutputDev_h,v 1.1 2019/02/17 20:38:20 kili Exp $
+$OpenBSD: patch-filters_karbon_pdf_SvgOutputDev_h,v 1.2 2019/11/12 22:05:36 kili Exp $
 
 Fix build with poppler 0.73
 https://cgit.kde.org/calligra.git/commit/?id=a615718
 https://cgit.kde.org/calligra.git/commit/?id=ab9cb33
+
+and with poppler-0.82
 
 Index: filters/karbon/pdf/SvgOutputDev.h
 --- filters/karbon/pdf/SvgOutputDev.h.orig
@@ -23,16 +25,22 @@ Index: filters/karbon/pdf/SvgOutputDev.h
      virtual void startPage(int pageNum, GfxState *state, XRef *xref);
      virtual void endPage();
  
-@@ -63,10 +63,10 @@ class SvgOutputDev : public OutputDev (public)
+@@ -58,15 +58,15 @@ class SvgOutputDev : public OutputDev (public)
+     virtual void eoFill(GfxState *state);
+ 
+     // text
+-    virtual void drawString(GfxState * state, GooString * s);
++    virtual void drawString(GfxState * state, const GooString * s);
+ 
      // images
      virtual void drawImage(GfxState *state, Object *ref, Stream *str,
                             int width, int height, GfxImageColorMap *colorMap,
 -                           int *maskColors, GBool inlineImg);
-+                           int *maskColors, bool inlineImg);
++                           const int *maskColors, bool inlineImg);
      virtual void drawImage(GfxState *state, Object *ref, Stream *str,
                             int width, int height, GfxImageColorMap *colorMap,
 -                           GBool interpolate, int *maskColors, GBool inlineImg);
-+                           bool interpolate, int *maskColors, bool inlineImg);
++                           bool interpolate, const int *maskColors, bool inlineImg);
  
      // styles
      virtual void updateAll(GfxState *state);
