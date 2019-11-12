@@ -1,0 +1,14 @@
+$OpenBSD: patch-chipmunk_src_CMakeLists_txt,v 1.1.1.1 2019/11/12 13:37:22 bcallah Exp $
+
+Index: chipmunk/src/CMakeLists.txt
+--- chipmunk/src/CMakeLists.txt.orig
++++ chipmunk/src/CMakeLists.txt
+@@ -65,7 +65,7 @@ if(BUILD_SHARED OR INSTALL_STATIC)
+ endif(BUILD_SHARED OR INSTALL_STATIC)
+ 
+ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-    set(CMAKE_C_FLAGS_RELEASE "-O2 -g0")
++    set(CMAKE_C_FLAGS_RELEASE "")
+     add_definitions(-DNDEBUG)
+ elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+     set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")

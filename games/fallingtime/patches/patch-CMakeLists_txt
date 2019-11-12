@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/11/12 13:37:22 bcallah Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -43,7 +43,7 @@ else()
+ endif()
+ 
+ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-    set(CMAKE_C_FLAGS_RELEASE "-O2 -g0")
++    set(CMAKE_C_FLAGS_RELEASE "")
+ elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+     set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")
+ elseif(CMAKE_BUILD_TYPE STREQUAL "MinSizeRel")
+@@ -134,7 +134,7 @@ set_target_properties(falling_time PROPERTIES
+ ################
+ 
+ # Executables
+-set(INSTALL_PREFIX ".")
++set(INSTALL_PREFIX "${OPENBSD_LOCALBASE}/share/fallingtime")
+ if(WIN32)
+ 	set(EXE_EXTENSION ".exe")
+ 	set(LIB_EXTENSION ".dll")

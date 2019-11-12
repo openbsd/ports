@@ -1,0 +1,57 @@
+$OpenBSD: patch-cfgpath_h,v 1.1.1.1 2019/11/12 13:37:22 bcallah Exp $
+
+Index: cfgpath.h
+--- cfgpath.h.orig
++++ cfgpath.h
+@@ -39,7 +39,7 @@
+ #define mkdir _mkdir
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ #include <string.h>
+ #include <stdlib.h>
+ #include <sys/stat.h>
+@@ -88,7 +88,7 @@
+  */
+ static inline void get_user_config_file(char *out, unsigned int maxlen, const char *appname)
+ {
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ 	const char *out_orig = out;
+ 	char *home = getenv("XDG_CONFIG_HOME");
+ 	unsigned int config_len = 0;
+@@ -194,7 +194,7 @@ static inline void get_user_config_file(char *out, uns
+  */
+ static inline void get_user_config_folder(char *out, unsigned int maxlen, const char *appname)
+ {
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ 	const char *out_orig = out;
+ 	char *home = getenv("XDG_CONFIG_HOME");
+ 	unsigned int config_len = 0;
+@@ -311,7 +311,7 @@ static inline void get_user_config_folder(char *out, u
+  */
+ static inline void get_user_data_folder(char *out, unsigned int maxlen, const char *appname)
+ {
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ 	const char *out_orig = out;
+ 	char *home = getenv("XDG_DATA_HOME");
+ 	unsigned int config_len = 0;
+@@ -396,7 +396,7 @@ static inline void get_user_data_folder(char *out, uns
+  */
+ static inline void get_user_cache_folder(char *out, unsigned int maxlen, const char *appname)
+ {
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ 	const char *out_orig = out;
+ 	char *home = getenv("XDG_CACHE_HOME");
+ 	unsigned int config_len = 0;
+@@ -464,4 +464,4 @@ static inline void get_user_cache_folder(char *out, un
+ #endif
+ }
+ 
+-#endif /* CFGPATH_H_ */
+\ No newline at end of file
++#endif /* CFGPATH_H_ */
