@@ -1,0 +1,25 @@
+$OpenBSD: patch-build_config_rb,v 1.4 2019/11/12 09:25:28 fcambus Exp $
+
+Avoid adding "-g3 -O0" to CFLAGS.
+
+Index: build_config.rb
+--- build_config.rb.orig
++++ build_config.rb
+@@ -95,7 +95,7 @@ MRuby::Build.new('host-debug') do |conf|
+     toolchain :gcc
+   end
+ 
+-  enable_debug
++  # enable_debug
+ 
+   # include the default GEMs
+   conf.gembox 'default'
+@@ -118,7 +118,7 @@ MRuby::Build.new('test') do |conf|
+     toolchain :gcc
+   end
+ 
+-  enable_debug
++  # enable_debug
+   conf.enable_bintest
+   conf.enable_test
+ 

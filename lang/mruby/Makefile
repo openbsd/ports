@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/11/11 11:42:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.15 2019/11/12 09:25:28 fcambus Exp $
 
 COMMENT =		lightweight, embeddable implementation of ruby
 
 GH_ACCOUNT =		mruby
 GH_PROJECT =		mruby
 GH_TAGNAME =		2.0.1
+REVISION =		0
 
 CATEGORIES =		lang
 HOMEPAGE =		https://mruby.org/
