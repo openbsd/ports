@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/11/12 20:15:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.72 2019/11/12 20:18:02 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -32,7 +32,7 @@ REVISION-sdk = 4
 REVISION-edu = 8
 REVISION-multimedia = 1
 REVISION-network = 1
-REVISION-extras = 10
+REVISION-extras = 11
 REVISION-main =		32
 REVISION-admin =	1
 REVISION-graphics =	5
@@ -157,9 +157,6 @@ RUN_DEPENDS-main = \
 	${MODKDE4_DEP_DIR}/wallpapers		\
 	${MODKDE4_DEP_DIR}/workspace
 
-RUN_DEPENDS-extras = \
-	graphics/digikam-kde4,-main	\
-	graphics/digikam-kde4,-kipi	\
-	productivity/kmymoney
+RUN_DEPENDS-extras = productivity/kmymoney
 
 .include <bsd.port.mk>
