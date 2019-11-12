@@ -1,16 +1,25 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.1 2018/08/27 03:54:57 tb Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.2 2019/11/12 09:55:51 tb Exp $
 
 Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
 --- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig
 +++ src/network/ssl/qsslsocket_openssl_symbols_p.h
-@@ -410,8 +410,8 @@ DSA *q_d2i_DSAPrivateKey(DSA **a, unsigned char **pp, 
+@@ -360,6 +360,8 @@ int q_X509_get_ext_count(X509 *a);
+ void *q_X509_get_ext_d2i(X509 *a, int b, int *c, int *d);
+ X509_NAME *q_X509_get_issuer_name(X509 *a);
+ X509_NAME *q_X509_get_subject_name(X509 *a);
++ASN1_TIME *q_X509_getm_notAfter(const X509 *x);
++ASN1_TIME *q_X509_getm_notBefore(const X509 *x);
+ int q_X509_verify_cert(X509_STORE_CTX *ctx);
+ int q_X509_NAME_entry_count(X509_NAME *a);
+ X509_NAME_ENTRY *q_X509_NAME_get_entry(X509_NAME *a,int b);
+@@ -410,8 +412,8 @@ DSA *q_d2i_DSAPrivateKey(DSA **a, unsigned char **pp, 
  #define q_sk_SSL_CIPHER_value(st, i) q_SKM_sk_value(SSL_CIPHER, (st), (i))
  #define q_SSL_CTX_add_extra_chain_cert(ctx,x509) \
          q_SSL_CTX_ctrl(ctx,SSL_CTRL_EXTRA_CHAIN_CERT,0,(char *)x509)
 -#define q_X509_get_notAfter(x) X509_get_notAfter(x)
 -#define q_X509_get_notBefore(x) X509_get_notBefore(x)
-+#define q_X509_getm_notAfter(x) X509_getm_notAfter(x)
-+#define q_X509_getm_notBefore(x) X509_getm_notBefore(x)
++#define q_X509_getm_notAfter(x) q_X509_getm_notAfter(x)
++#define q_X509_getm_notBefore(x) q_X509_getm_notBefore(x)
  #define q_EVP_PKEY_assign_RSA(pkey,rsa) q_EVP_PKEY_assign((pkey),EVP_PKEY_RSA,\
  					(char *)(rsa))
  #define q_EVP_PKEY_assign_DSA(pkey,dsa) q_EVP_PKEY_assign((pkey),EVP_PKEY_DSA,\

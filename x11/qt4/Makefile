@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2019/07/12 20:51:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.159 2019/11/12 09:55:51 tb Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,7 +25,7 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		19
+REVISION-main =		20
 REVISION-mysql =	6
 REVISION-postgresql =	6
 REVISION-sqlite2 =	6
