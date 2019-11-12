@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/11/12 06:42:43 jeremy Exp $
 
 COMMENT =	fast code profiler for Ruby
 
 DISTNAME =	ruby-${PKGNAME}
-PKGNAME =	prof-0.16.2
-REVISION =	0
+PKGNAME =	prof-1.0.0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/ruby-prof/ruby-prof
