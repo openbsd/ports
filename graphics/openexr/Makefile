@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/11/12 08:14:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2019/11/12 17:46:33 ajacoutot Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -12,6 +12,9 @@ GH_TAGNAME=		v${V}
 PKGNAME-main=		OpenEXR-${V}
 PKGNAME-tools=		OpenEXR-tools-${V}
 PKGNAME-doc=		OpenEXR-doc-${V}
+
+REVISION-main=		0
+REVISION-tools=		0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -42,6 +45,8 @@ MODULES=		devel/cmake \
 			lang/python
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CONFIGURE_ARGS=		-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
