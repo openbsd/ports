@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2019/11/10 14:20:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.71 2019/11/12 20:15:16 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -31,9 +31,9 @@ REVISION-games = 4
 REVISION-sdk = 4
 REVISION-edu = 8
 REVISION-multimedia = 1
-REVISION-network = 0
+REVISION-network = 1
 REVISION-extras = 10
-REVISION-main =		31
+REVISION-main =		32
 REVISION-admin =	1
 REVISION-graphics =	5
 
@@ -102,7 +102,6 @@ KDE4-multimedia = \
 RUN_DEPENDS-network = \
 	${MODKDE4_DEP_DIR}/network-filesharing \
 	${MODKDE4_DEP_DIR}/network-strigi-analyzers \
-	${MODKDE4_DEP_DIR}/kget			\
 	${MODKDE4_DEP_DIR}/kopete		\
 	${MODKDE4_DEP_DIR}/kppp			\
 	${MODKDE4_DEP_DIR}/krdc			\
