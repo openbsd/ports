@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/08 23:41:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/12 01:09:08 bcallah Exp $
 
-V =		2.2.0
+V =		2.3.0
 COMMENT =	implementation of POSIX bc with GNU and BSD extensions
 DISTNAME =	bc-${V}
 PKGNAME =	ebc-${V}
@@ -28,6 +28,15 @@ CONFIGURE_ENV =		CC="${CC}" \
 			EXECPREFIX="e" \
 			MANDIR="${PREFIX}/man" \
 			NLSPATH="${PREFIX}/share/locale/%L/%N"
+
+# Use 64-bit math on 64-bit archs
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "alpha" || \
+    ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64" || \
+    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+CONFIGURE_ENV +=	LONG_BIT=64
+.else
+CONFIGURE_ENV +=	LONG_BIT=32
+.endif
 
 FAKE_FLAGS =	DESTDIR="${DESTDIR}"
 
