@@ -1,0 +1,99 @@
+$OpenBSD: patch-test_test_munkres_py,v 1.1 2019/11/12 10:03:14 kmos Exp $
+
+Move tests from nose to pytest
+https://github.com/bmc/munkres/pull/32
+
+Index: test/test_munkres.py
+--- test/test_munkres.py.orig
++++ test/test_munkres.py
+@@ -1,6 +1,6 @@
+ from munkres import Munkres, DISALLOWED, UnsolvableMatrix
+ import munkres
+-from nose.tools import assert_equals, raises
++import pytest
+ 
+ m = Munkres()
+ 
+@@ -16,7 +16,7 @@ def test_documented_example():
+               [10, 3, 2],
+               [8, 7, 4]]
+     cost = _get_cost(matrix)
+-    assert_equals(cost, 12)
++    assert cost == 12
+ 
+ def test_5_x_5():
+     matrix = [[12, 9, 27, 10, 23],
+@@ -25,7 +25,7 @@ def test_5_x_5():
+               [9, 28, 26, 23, 13],
+               [16, 16, 24, 6, 9]]
+     cost = _get_cost(matrix)
+-    assert_equals(cost, 51)
++    assert cost == 51
+ 
+ def test_10_x_10():
+     matrix = [[37, 34, 29, 26, 19, 8, 9, 23, 19, 29],
+@@ -39,7 +39,7 @@ def test_10_x_10():
+               [21, 25, 23, 39, 31, 37, 32, 33, 38, 1],
+               [17, 34, 40, 10, 29, 37, 40, 3, 25, 3]]
+     cost = _get_cost(matrix)
+-    assert_equals(cost, 66)
++    assert cost == 66
+ 
+ def test_20_x_20():
+     matrix = [[5, 4, 3, 9, 8, 9, 3, 5, 6, 9, 4, 10, 3, 5, 6, 6, 1, 8, 10, 2],
+@@ -63,14 +63,14 @@ def test_20_x_20():
+               [9, 6, 3, 1, 8, 5, 7, 8, 7, 2, 1, 8, 2, 8, 3, 7, 4, 8, 7, 7],
+               [8, 4, 4, 9, 7, 10, 6, 2, 1, 5, 8, 5, 1, 1, 1, 9, 1, 3, 5, 3]]
+     cost = _get_cost(matrix)
+-    assert_equals(cost, 22)
++    assert cost == 22
+ 
+ def test_disallowed():
+     matrix = [[5, 9, DISALLOWED],
+               [10, DISALLOWED, 2],
+               [8, DISALLOWED, 4]]
+     cost = _get_cost(matrix)
+-    assert_equals(cost, 19)
++    assert cost == 19
+ 
+ def test_profit():
+     profit_matrix = [[94, 66, 100, 18, 48],
+@@ -84,7 +84,7 @@ def test_profit():
+     )
+     indices = m.compute(cost_matrix)
+     profit = sum([profit_matrix[row][column] for row, column in indices])
+-    assert_equals(profit, 392)
++    assert profit == 392
+ 
+ def test_irregular():
+     matrix = [[12, 26, 17],
+@@ -94,7 +94,7 @@ def test_irregular():
+               [15, 93, 55, 80]]
+ 
+     cost = _get_cost(matrix)
+-    assert_equals(cost, 43)
++    assert cost == 43
+ 
+ def test_rectangular():
+     matrix = [[34, 26, 17, 12],
+@@ -106,13 +106,13 @@ def test_rectangular():
+     padded_matrix = m.pad_matrix(matrix, 0)
+     padded_cost = _get_cost(padded_matrix)
+     cost = _get_cost(matrix)
+-    assert_equals(padded_cost, cost)
+-    assert_equals(cost, 70)
++    assert padded_cost == cost
++    assert cost == 70
+ 
+-@raises(UnsolvableMatrix)
+ def test_unsolvable():
+-    matrix = [[5, 9, DISALLOWED],
+-              [10, DISALLOWED, 2],
+-              [DISALLOWED, DISALLOWED, DISALLOWED]]
+-    m.compute(matrix)
++    with pytest.raises(UnsolvableMatrix):
++        matrix = [[5, 9, DISALLOWED],
++                  [10, DISALLOWED, 2],
++                  [DISALLOWED, DISALLOWED, DISALLOWED]]
++        m.compute(matrix)
+ 
