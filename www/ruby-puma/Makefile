@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/12 06:48:14 jeremy Exp $
 
 COMMENT =		simple, fast, threaded webserver for rack applications
 
-DISTNAME =		puma-3.10.0
-REVISION =		0
+DISTNAME =		puma-4.3.0
 CATEGORIES =		www
 
 HOMEPAGE =		http://puma.io/
@@ -12,6 +11,9 @@ HOMEPAGE =		http://puma.io/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
+
+RUN_DEPENDS =		devel/ruby-nio4r,${MODRUBY_FLAVOR}>=2,<3
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 WANTLIB =		crypto ssl
 CONFIGURE_STYLE =	ruby gem ext
