@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/11/12 02:45:32 jsg Exp $
+# $OpenBSD: Makefile,v 1.33 2019/11/12 05:07:44 jsg Exp $
 
 COMMENT=	X11 version of Rob Pike's editor, sam
 
@@ -6,6 +6,7 @@ DISTNAME=	sam-4.3.20190427
 GH_ACCOUNT=	deadpixi
 GH_PROJECT=	sam
 GH_COMMIT=	5893679bbbab2f50ceb6ef0805e4bb63f5f51df8
+REVISION=	0
 
 CATEGORIES=	plan9
 
