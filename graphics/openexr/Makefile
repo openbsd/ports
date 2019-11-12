@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/11/12 17:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/12 20:13:30 ajacoutot Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -13,7 +13,7 @@ PKGNAME-main=		OpenEXR-${V}
 PKGNAME-tools=		OpenEXR-tools-${V}
 PKGNAME-doc=		OpenEXR-doc-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-tools=		0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
