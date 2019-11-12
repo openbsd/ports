@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1 2019/11/03 12:01:13 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/12 23:15:21 djm Exp $
 
 COMMENT =	library to support U2F/FIDO2 tokens
 
-DISTNAME =	libfido2-1.2.0pl20191101
+DISTNAME =	libfido2-1.2.0pl20191113
 
-GH_ACCOUNT =	Yubico
+GH_ACCOUNT =	mfriedl
 GH_PROJECT =	libfido2
-GH_TAGNAME =	6a628b3d3a9d62a58f94d48340ef9eeca2d672b9 # 2019-11-01
+GH_TAGNAME =	4f6739e7dc722abab87ce927c122ea40c7a00c56 # 2019-11-13
 
 SHARED_LIBS =	fido2 0.0 # 1.2.0
 
