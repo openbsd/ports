@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2019/11/06 15:25:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2019/11/12 20:20:35 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -19,6 +19,7 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
+REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     3.1 # 18.13.3
 SHARED_LIBS +=  webkit2gtk-${API}            3.1 # 37.37.2
@@ -56,6 +57,8 @@ MODRUBY_RUNDEP =	No
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	Tools/glib/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 NO_TEST =		Yes
 USE_GMAKE =		Yes

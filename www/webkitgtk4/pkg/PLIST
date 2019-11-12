@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/09/24 06:56:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/12 20:20:35 ajacoutot Exp $
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -223,7 +223,7 @@ lib/pkgconfig/webkit2gtk-${API}.pc
 lib/pkgconfig/webkit2gtk-web-extension-${API}.pc
 lib/webkit2gtk-${API}/
 lib/webkit2gtk-${API}/injected-bundle/
-lib/webkit2gtk-${API}/injected-bundle/libwebkit2gtkinjectedbundle.so
+@so lib/webkit2gtk-${API}/injected-bundle/libwebkit2gtkinjectedbundle.so
 libexec/webkit2gtk-${API}/
 @bin libexec/webkit2gtk-${API}/WebKitNetworkProcess
 @bin libexec/webkit2gtk-${API}/WebKitPluginProcess
