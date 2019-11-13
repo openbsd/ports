@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/04/15 16:58:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2019/11/13 18:23:19 jasper Exp $
 share/iso-codes/
 share/iso-codes/json/
 share/iso-codes/json/iso_15924.json
@@ -62,6 +62,7 @@ share/locale/ar/LC_MESSAGES/iso_15924.mo
 share/locale/ar/LC_MESSAGES/iso_3166-1.mo
 share/locale/ar/LC_MESSAGES/iso_3166-3.mo
 share/locale/ar/LC_MESSAGES/iso_3166.mo
+share/locale/ar/LC_MESSAGES/iso_4217.mo
 share/locale/ar/LC_MESSAGES/iso_639-2.mo
 share/locale/ar/LC_MESSAGES/iso_639-3.mo
 share/locale/ar/LC_MESSAGES/iso_639.mo
@@ -75,13 +76,19 @@ share/locale/as/LC_MESSAGES/iso_639-2.mo
 share/locale/as/LC_MESSAGES/iso_639.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/iso_15924.mo
 share/locale/ast/LC_MESSAGES/iso_3166-1.mo
+share/locale/ast/LC_MESSAGES/iso_3166-2.mo
 share/locale/ast/LC_MESSAGES/iso_3166-3.mo
 share/locale/ast/LC_MESSAGES/iso_3166.mo
+share/locale/ast/LC_MESSAGES/iso_3166_2.mo
+share/locale/ast/LC_MESSAGES/iso_4217.mo
 share/locale/ast/LC_MESSAGES/iso_639-2.mo
 share/locale/ast/LC_MESSAGES/iso_639-3.mo
+share/locale/ast/LC_MESSAGES/iso_639-5.mo
 share/locale/ast/LC_MESSAGES/iso_639.mo
 share/locale/ast/LC_MESSAGES/iso_639_3.mo
+share/locale/ast/LC_MESSAGES/iso_639_5.mo
 share/locale/ay/
 share/locale/ay/LC_MESSAGES/
 share/locale/ay/LC_MESSAGES/iso_3166-1.mo
@@ -261,8 +268,10 @@ share/locale/da/LC_MESSAGES/iso_3166_2.mo
 share/locale/da/LC_MESSAGES/iso_4217.mo
 share/locale/da/LC_MESSAGES/iso_639-2.mo
 share/locale/da/LC_MESSAGES/iso_639-3.mo
+share/locale/da/LC_MESSAGES/iso_639-5.mo
 share/locale/da/LC_MESSAGES/iso_639.mo
 share/locale/da/LC_MESSAGES/iso_639_3.mo
+share/locale/da/LC_MESSAGES/iso_639_5.mo
 share/locale/de/
 share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/iso_15924.mo
@@ -302,8 +311,10 @@ share/locale/el/LC_MESSAGES/iso_3166_2.mo
 share/locale/el/LC_MESSAGES/iso_4217.mo
 share/locale/el/LC_MESSAGES/iso_639-2.mo
 share/locale/el/LC_MESSAGES/iso_639-3.mo
+share/locale/el/LC_MESSAGES/iso_639-5.mo
 share/locale/el/LC_MESSAGES/iso_639.mo
 share/locale/el/LC_MESSAGES/iso_639_3.mo
+share/locale/el/LC_MESSAGES/iso_639_5.mo
 share/locale/en/
 share/locale/en/LC_MESSAGES/
 share/locale/en/LC_MESSAGES/iso_3166-2.mo
@@ -480,8 +491,10 @@ share/locale/he/
 share/locale/he/LC_MESSAGES/
 share/locale/he/LC_MESSAGES/iso_15924.mo
 share/locale/he/LC_MESSAGES/iso_3166-1.mo
+share/locale/he/LC_MESSAGES/iso_3166-2.mo
 share/locale/he/LC_MESSAGES/iso_3166-3.mo
 share/locale/he/LC_MESSAGES/iso_3166.mo
+share/locale/he/LC_MESSAGES/iso_3166_2.mo
 share/locale/he/LC_MESSAGES/iso_639-2.mo
 share/locale/he/LC_MESSAGES/iso_639-3.mo
 share/locale/he/LC_MESSAGES/iso_639.mo
@@ -497,14 +510,17 @@ share/locale/hi/LC_MESSAGES/iso_639.mo
 share/locale/hi/LC_MESSAGES/iso_639_3.mo
 share/locale/hr/
 share/locale/hr/LC_MESSAGES/
+share/locale/hr/LC_MESSAGES/iso_15924.mo
 share/locale/hr/LC_MESSAGES/iso_3166-1.mo
 share/locale/hr/LC_MESSAGES/iso_3166-3.mo
 share/locale/hr/LC_MESSAGES/iso_3166.mo
 share/locale/hr/LC_MESSAGES/iso_4217.mo
 share/locale/hr/LC_MESSAGES/iso_639-2.mo
 share/locale/hr/LC_MESSAGES/iso_639-3.mo
+share/locale/hr/LC_MESSAGES/iso_639-5.mo
 share/locale/hr/LC_MESSAGES/iso_639.mo
 share/locale/hr/LC_MESSAGES/iso_639_3.mo
+share/locale/hr/LC_MESSAGES/iso_639_5.mo
 share/locale/ht/
 share/locale/ht/LC_MESSAGES/
 share/locale/ht/LC_MESSAGES/iso_3166-1.mo
@@ -807,6 +823,12 @@ share/locale/nb/LC_MESSAGES/iso_639-2.mo
 share/locale/nb/LC_MESSAGES/iso_639-3.mo
 share/locale/nb/LC_MESSAGES/iso_639.mo
 share/locale/nb/LC_MESSAGES/iso_639_3.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/iso_3166-2.mo
+share/locale/nb_NO/LC_MESSAGES/iso_3166_2.mo
+share/locale/nb_NO/LC_MESSAGES/iso_639-5.mo
+share/locale/nb_NO/LC_MESSAGES/iso_639_5.mo
 share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/iso_3166-1.mo
@@ -1106,6 +1128,8 @@ share/locale/tg/
 share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/iso_3166-1.mo
 share/locale/tg/LC_MESSAGES/iso_3166.mo
+share/locale/tg/LC_MESSAGES/iso_639-2.mo
+share/locale/tg/LC_MESSAGES/iso_639.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/iso_15924.mo
