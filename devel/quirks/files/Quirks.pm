@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.825 2019/11/12 05:24:13 feinerer Exp $
+# $OpenBSD: Quirks.pm,v 1.826 2019/11/13 14:50:45 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1337,6 +1337,7 @@ my $obsolete_reason = {
 	'py-algorithm-munkres' => 14,
 	'gtk-xfce-engine' => 3,
 	'py-pdfminer' => 14,
+	'firewalk' => 0,
 };
 
 # reasons for obsolete packages
