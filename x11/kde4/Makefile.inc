@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.21 2019/07/12 20:51:14 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2019/11/13 12:43:49 rsadowski Exp $
 
 CATEGORIES ?=		x11
 MODULES +=		x11/kde4
 
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/}
+MASTER_SITES ?=		${MASTER_SITE_KDE:=Attic/${MODKDE4_VERSION}/src/}
 DIST_SUBDIR =		kde
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
