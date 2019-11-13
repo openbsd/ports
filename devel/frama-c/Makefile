@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2019/11/10 14:38:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/11/13 17:41:22 sthen Exp $
+
+BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_mul, etc
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
