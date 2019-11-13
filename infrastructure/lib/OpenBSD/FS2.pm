@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.32 2019/11/10 16:46:44 espie Exp $
+# $OpenBSD: FS2.pm,v 1.33 2019/11/13 11:38:48 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -15,6 +15,8 @@
 
 use strict;
 use warnings;
+
+use OpenBSD::BaseFS;
 
 package OpenBSD::FS::File;
 
@@ -543,6 +545,7 @@ sub tweak_other_paths
 }
 
 package OpenBSD::FS2;
+our @ISA = qw(OpenBSD::BaseFS);
 
 use OpenBSD::Mtree;
 use File::Find;
@@ -566,8 +569,9 @@ sub ignore_parents
 sub new
 {
 	my ($class, $destdir, $ignored, $state) = @_;
-	my $o = bless {destdir => $destdir, ignored => {},
-	    state => $state}, $class;
+	my $o = $class->SUPER::new($destdir, $state);
+
+	$o->{ignored} = {};
 	# this allows _FAKE_TREE_LIST to be used
 	for my $d (keys %$ignored) {
 		for my $path (glob $d) {
@@ -575,40 +579,6 @@ sub new
 		}
 	}
 	return $o;
-}
-
-sub destdir
-{
-	my $self = shift;
-	if (@_ == 0) {
-		return $self->{destdir};
-	} else {
-		return $self->{destdir}."/".shift;
-	}
-}
-
-# we are given a filename which actually lives under destdir.
-# but if it's a symlink, we WILL follow through, because the
-# link is meant relative to destdir
-sub resolve_link
-{
-	my ($self, $filename, $level) = @_;
-	$level //= 0;
-	my $solved = $self->destdir($filename);
-	if (-l $solved) {
-		my $l = readlink($solved);
-		if ($level++ > 14) {
-			print STDERR "Symlink too deep: $solved\n";
-			return $solved;
-		}
-		if ($l =~ m|^/|) {
-			return $self->resolve_link($l, $level);
-		} else {
-			return $self->resolve_link(File::Spec->catfile(dirname($filename),$l), $level);
-		}
-	} else {
-		return $solved;
-	}
 }
 
 sub mtree
@@ -627,14 +597,6 @@ sub mtree
 		$mtree->{dirname($Config{installarchlib})} = 1;
 	}
 	return $self->{mtree};
-}
-
-sub undest
-{
-	my ($self, $filename) = @_;
-	$filename =~ s/^\Q$self->{destdir}\E//;
-	$filename='/' if $filename eq '';
-	return $filename;
 }
 
 sub create
