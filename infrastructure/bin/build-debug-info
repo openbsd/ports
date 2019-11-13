@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.8 2019/11/12 20:06:54 espie Exp $
+# $OpenBSD: build-debug-info,v 1.9 2019/11/13 10:08:57 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -40,8 +40,7 @@ sub olist
 package PlistReader::State;
 our @ISA = qw(OpenBSD::PkgCreate::State);
 
-# mostly make sure we don't care about problems, that our subst records stuff
-# and that we have a progressmeter
+# mostly make sure we have a progressmeter
 sub init
 {
 	my ($self, $realstate) = @_;
@@ -270,6 +269,9 @@ sub process_next_subpackage
 
 	$r->read_all_fragments($s, $r->olist);
 	push(@{$self->{lists}}, $r);
+	if ($s->{bad} != 0) {
+		$self->{state}{exitcode} = 1;
+	}
 }
 
 sub parse_args
@@ -289,9 +291,9 @@ sub parse_args
 
 }
 
-my $exitcode = 0;
 my $self = BuildDebugInfo->new;
 my $state = $self->{state};
+$state->{exitcode} = 0;
 $self->parse_args;
 use File::Basename;
 $state->{dirstash} = {};
@@ -335,4 +337,4 @@ for my $l (@{$self->{lists}}) {
 close $state->{out};
 
 
-exit($exitcode);
+exit($state->{exitcode});

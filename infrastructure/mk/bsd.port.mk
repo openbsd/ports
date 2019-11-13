@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1495 2019/11/12 16:40:26 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1496 2019/11/13 10:08:57 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -676,7 +676,6 @@ _PREPATCH_COOKIE =		${WRKDIR}/.prepatch_done
 _GEN_COOKIE =			${WRKDIR}/.gen_done
 _BULK_COOKIE =			${BULK_COOKIES_DIR}/${FULLPKGNAME}
 _FAKE_COOKIE =			${WRKINST}/.fake_done
-_DEBUG_INFO_COOKIE =	${WRKINST}/.debug_info_done
 _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
 _UPDATE_COOKIES =
 _FUPDATE_COOKIES =
@@ -711,7 +710,7 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_GEN_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_TEST_COOKIE} \
 	${_PACKAGE_COOKIES} ${_CACHE_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
-	${_TS_COOKIE} ${_DEBUG_INFO_COOKIE} \
+	${_TS_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 	${_DEPRUN_COOKIES} ${_DEPTEST_COOKIES} ${_UPDATE_COOKIES} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
@@ -938,10 +937,6 @@ ${_v}${_s} ?= ${${_v}}
 DEBUG_PACKAGES := ${DEBUG_PACKAGES:N$i}
 .    endif
 .  endfor
-.endif
-
-.if !empty(DEBUG_PACKAGES)
-_PACKAGE_COOKIE_DEPS += ${_DEBUG_INFO_COOKIE}
 .endif
 
 .for _s in ${BUILD_PACKAGES}
@@ -1969,8 +1964,8 @@ _update_plist = ${_cache_fragment}; \
 	-i LOCALSTATEDIR -i MACHINE_ARCH \
 	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
-	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
-	-X ${_DEBUG_INFO_COOKIE}
+	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs
+	
 
 .for _d in ${_FAKE_TREE_LIST} ${_EXCLUDE_DEBUG_PLISTS}
 _update_plist += -X ${_d:Q}
@@ -2104,6 +2099,9 @@ ${_PACKAGE_COOKIE${_S}}:
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
+.  if !empty(DEBUG_PACKAGES)
+	@${_SUDOMAKESYS} _copy-debug-info ${FAKE_SETUP}
+.  endif
 	@${_MAKE} _internal-generate-readmes
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
@@ -2510,7 +2508,6 @@ _internal-plist _internal-update-plist: _internal-fake
 	@mkdir -p ${PKGDIR}
 	@${_MAKE} _internal-generate-readmes
 	@${_update_plist}
-	@${_PBUILD} rm -f ${_DEBUG_INFO_COOKIE}
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
@@ -2962,13 +2959,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_PBUILD} ${_MAKE_COOKIE} $@
 
-.if !empty(DEBUG_PACKAGES)
-${_DEBUG_INFO_COOKIE}: ${_FAKE_COOKIE}
-	@${_SUDOMAKESYS} _copy_debug_info ${FAKE_SETUP}
-	@${_PBUILD} ${_MAKE_COOKIE} $@
-.endif
-
-_copy_debug_info:
+_copy-debug-info: ${_FAKE_COOKIE}
 	@mkdir -p ${_WRKDEBUG}
 	@${_build_debug_info}
 	@cd ${PREFIX} && \
@@ -3639,7 +3630,7 @@ _all_phony = ${_recursive_depends_targets} \
 	_recurse-show-run-depends show-run-depends \
 	_post-extract-finalize _post-patch-finalize _pre-fake-modules \
 	_gen-finalize _post-install-modules fix-permissions \
-	_copy_debug_info show-debug-info
+	_copy-debug-info show-debug-info
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
