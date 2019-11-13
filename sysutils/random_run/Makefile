@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/08/05 13:51:42 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/13 10:57:51 espie Exp $
 
 COMMENT =	run command with randomized parameters
 CATEGORIES = 	sysutils
@@ -21,7 +21,8 @@ LDLIBS += 	${EXTRA_${CHOSEN_COMPILER}}
 
 WANTLIB =	${COMPILER_LIBCXX} c m
 
-MAKE_FLAGS =	OPTIMIZE="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" LDLIBS="${LDLIBS}"
+MAKE_FLAGS =	OPTIMIZE="${CXXFLAGS}" LDFLAGS="${DEBUG} ${LDFLAGS}" LDLIBS="${LDLIBS}"
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/rr ${PREFIX}/bin
