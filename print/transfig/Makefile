@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:48:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/11/13 15:24:11 fcambus Exp $
 
 COMMENT=	tools to convert Xfig's .fig files  #'
 
-VERSION=	3.2.6
+VERSION=	3.2.7b
 DISTNAME=	fig2dev-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 PKGNAME=	transfig-${VERSION}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
-HOMEPAGE=	http://xfig.org/
+HOMEPAGE=	https://xfig.org/
 
 LIB_DEPENDS=	graphics/png converters/libiconv
 RUN_DEPENDS=	print/ghostscript/gnu \
@@ -24,8 +24,6 @@ MAKE_FLAGS=	CC="${CC}"
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS = --enable-transfig
 CONFIGURE_ENV = LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
-
-MAKE_FLAGS = bitmapsdir=${LOCALBASE}/lib/X11/xfig/bitmaps
 
 FLAVORS=	a4
 FLAVOR?=

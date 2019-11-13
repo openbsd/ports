@@ -1,24 +1,14 @@
-$OpenBSD: patch-fig2dev_Makefile_in,v 1.1 2018/04/24 12:07:26 espie Exp $
+$OpenBSD: patch-fig2dev_Makefile_in,v 1.2 2019/11/13 15:24:11 fcambus Exp $
 
 Index: fig2dev/Makefile.in
 --- fig2dev/Makefile.in.orig
 +++ fig2dev/Makefile.in
-@@ -118,8 +118,7 @@ PROGRAMS = $(bin_PROGRAMS)
+@@ -125,7 +125,7 @@ PROGRAMS = $(bin_PROGRAMS)
  am_fig2dev_OBJECTS = arrow.$(OBJEXT) bound.$(OBJEXT) colors.$(OBJEXT) \
  	creationdate.$(OBJEXT) fig2dev.$(OBJEXT) free.$(OBJEXT) \
- 	iso2tex.$(OBJEXT) localmath.$(OBJEXT) psfonts.$(OBJEXT) \
--	read1_3.$(OBJEXT) read.$(OBJEXT) trans_spline.$(OBJEXT) \
--	getopt.$(OBJEXT)
-+	read1_3.$(OBJEXT) read.$(OBJEXT) trans_spline.$(OBJEXT)
+ 	iso2tex.$(OBJEXT) localmath.$(OBJEXT) read1_3.$(OBJEXT) \
+-	read.$(OBJEXT) trans_spline.$(OBJEXT) getopt.$(OBJEXT)
++	read.$(OBJEXT) trans_spline.$(OBJEXT)
  fig2dev_OBJECTS = $(am_fig2dev_OBJECTS)
  LIBOBJDIR = ../fig2dev/lib/
- fig2dev_DEPENDENCIES = $(LIBOBJS) dev/libdrivers.a
-@@ -365,7 +364,7 @@ fig2dev_SOURCES = alloc.h arrow.c bound.h bound.c colo
-     iso2tex.c localmath.h localmath.c object.h psfonts.c read1_3.c read.h \
-     read.c trans_spline.h trans_spline.c pi.h getopt.c
- 
--fig2dev_LDADD = $(LIBOBJS) dev/libdrivers.a
-+fig2dev_LDADD = $(LIBOBJS) dev/libdrivers.a -liconv
- dist_bin_SCRIPTS = fig2ps2tex pic2tpic
- all: all-recursive
- 
+ am__dirstamp = $(am__leading_dot)dirstamp

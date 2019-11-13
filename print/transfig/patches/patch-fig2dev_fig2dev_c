@@ -1,23 +1,23 @@
-$OpenBSD: patch-fig2dev_fig2dev_c,v 1.1 2018/04/24 12:07:26 espie Exp $
+$OpenBSD: patch-fig2dev_fig2dev_c,v 1.2 2019/11/13 15:24:11 fcambus Exp $
 
 Index: fig2dev/fig2dev.c
 --- fig2dev/fig2dev.c.orig
 +++ fig2dev/fig2dev.c
-@@ -42,7 +42,7 @@
- #include <fcntl.h>
- #endif
+@@ -45,7 +45,7 @@
+ #include "read.h"
  
--extern int	 fig_getopt(int nargc, char **nargv, char *ostr);
+ /* the three lines below could go into a getopt.h file */
+-extern int	 fig_getopt(int nargc, char **nargv, char *ostr); /* getopt.c */
 +#include <unistd.h>
- extern char	*optarg;
- extern int	 optind;
- static int	 parse_gridspec(char *string, float *numer, float *denom,
-@@ -208,7 +208,7 @@ get_args(int argc, char *argv[])
+ extern char	*optarg;		/* getopt.c */
+ extern int	 optind;		/* getopt.c */
+ 
+@@ -219,7 +219,7 @@ get_args(int argc, char *argv[])
  	if (argc == 1)
- 	    fprintf(stderr,Usage,prog,prog);
+ 	    fprintf(stderr, Usage, prog, prog);
  	/* sum of all arguments */
 -	while ((c = fig_getopt(argc, argv, ARGSTRING)) != EOF) {
 +	while ((c = getopt(argc, argv, ARGSTRING)) != EOF) {
  
  	  /* global (all drivers) option handling */
- 	  switch (c) {
+ 	    switch (c) {

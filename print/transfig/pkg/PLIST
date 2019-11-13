@@ -1,59 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/04/24 12:07:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/11/13 15:24:11 fcambus Exp $
 @bin bin/fig2dev
 bin/fig2ps2tex
 bin/pic2tpic
 @bin bin/transfig
-lib/X11/xfig/
-lib/X11/xfig/bitmaps/
-lib/X11/xfig/bitmaps/bricks.bmp
-lib/X11/xfig/bitmaps/circles.bmp
-lib/X11/xfig/bitmaps/crosshatch.bmp
-lib/X11/xfig/bitmaps/crosshatch30.bmp
-lib/X11/xfig/bitmaps/crosshatch45.bmp
-lib/X11/xfig/bitmaps/dash.bmp
-lib/X11/xfig/bitmaps/dashDot.bmp
-lib/X11/xfig/bitmaps/dashDotDot.bmp
-lib/X11/xfig/bitmaps/dashDotDotDot.bmp
-lib/X11/xfig/bitmaps/dot.bmp
-lib/X11/xfig/bitmaps/fishscales.bmp
-lib/X11/xfig/bitmaps/hexagons.bmp
-lib/X11/xfig/bitmaps/horiz_saw.bmp
-lib/X11/xfig/bitmaps/horizontal.bmp
-lib/X11/xfig/bitmaps/left30.bmp
-lib/X11/xfig/bitmaps/left45.bmp
-lib/X11/xfig/bitmaps/leftshingle.bmp
-lib/X11/xfig/bitmaps/octagons.bmp
-lib/X11/xfig/bitmaps/p13.bmp
-lib/X11/xfig/bitmaps/right30.bmp
-lib/X11/xfig/bitmaps/right45.bmp
-lib/X11/xfig/bitmaps/rightshingle.bmp
-lib/X11/xfig/bitmaps/small_fishscales.bmp
-lib/X11/xfig/bitmaps/sp0.bmp
-lib/X11/xfig/bitmaps/sp1.bmp
-lib/X11/xfig/bitmaps/sp10.bmp
-lib/X11/xfig/bitmaps/sp11.bmp
-lib/X11/xfig/bitmaps/sp12.bmp
-lib/X11/xfig/bitmaps/sp13.bmp
-lib/X11/xfig/bitmaps/sp14.bmp
-lib/X11/xfig/bitmaps/sp15.bmp
-lib/X11/xfig/bitmaps/sp16.bmp
-lib/X11/xfig/bitmaps/sp17.bmp
-lib/X11/xfig/bitmaps/sp18.bmp
-lib/X11/xfig/bitmaps/sp19.bmp
-lib/X11/xfig/bitmaps/sp2.bmp
-lib/X11/xfig/bitmaps/sp20.bmp
-lib/X11/xfig/bitmaps/sp3.bmp
-lib/X11/xfig/bitmaps/sp4.bmp
-lib/X11/xfig/bitmaps/sp5.bmp
-lib/X11/xfig/bitmaps/sp6.bmp
-lib/X11/xfig/bitmaps/sp7.bmp
-lib/X11/xfig/bitmaps/sp8.bmp
-lib/X11/xfig/bitmaps/sp9.bmp
-lib/X11/xfig/bitmaps/vert_bricks.bmp
-lib/X11/xfig/bitmaps/vert_leftshingle.bmp
-lib/X11/xfig/bitmaps/vert_rightshingle.bmp
-lib/X11/xfig/bitmaps/vert_saw.bmp
-lib/X11/xfig/bitmaps/vertical.bmp
 @man man/man1/fig2dev.1
 @man man/man1/fig2ps2tex.1
 @man man/man1/pic2tpic.1
@@ -76,7 +25,8 @@ share/fig2dev/i18n/ko_KR.ps
 share/fig2dev/i18n/korean.ps
 share/fig2dev/i18n/pl_PL.ps
 share/fig2dev/i18n/ro_RO.ps
+share/fig2dev/i18n/ru_RU.CP1251.ps
 share/fig2dev/i18n/ru_RU.KOI8-R.ps
 share/fig2dev/i18n/sk_SK.ps
 share/fig2dev/i18n/sl_SI.ps
-share/fig2dev/rgb.txt
+share/fig2dev/i18n/uk_UA.KOI8-U.ps
