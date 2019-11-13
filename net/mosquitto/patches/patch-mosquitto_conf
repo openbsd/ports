@@ -1,27 +1,27 @@
-$OpenBSD: patch-mosquitto_conf,v 1.5 2019/02/12 19:18:41 jasper Exp $
+$OpenBSD: patch-mosquitto_conf,v 1.6 2019/11/13 20:53:32 jasper Exp $
 Index: mosquitto.conf
 --- mosquitto.conf.orig
 +++ mosquitto.conf
-@@ -28,7 +28,7 @@
+@@ -158,7 +158,7 @@
  # This should be set to /var/run/mosquitto.pid if mosquitto is
- # being run automatically on boot with an init script and 
+ # being run automatically on boot with an init script and
  # start-stop-daemon or similar.
 -#pid_file
 +pid_file /var/run/mosquitto.pid
  
- # When run as root, drop privileges to this user and its primary 
- # group.
-@@ -36,7 +36,7 @@
+ # Set to true to queue messages with QoS 0 when a persistent client is
+ # disconnected. These messages are included in the limit imposed by
+@@ -195,7 +195,7 @@
  # If run as a non-root user, this setting has no effect.
- # Note that on Windows this has no effect and so mosquitto should 
+ # Note that on Windows this has no effect and so mosquitto should
  # be started by the user you wish it to run as.
 -#user mosquitto
 +user _mosquitto
  
- # The maximum number of QoS 1 and 2 messages currently inflight per 
- # client.
-@@ -170,7 +170,7 @@
- # given, the default listener will not be bound to a specific 
+ # =================================================================
+ # Default listener
+@@ -205,7 +205,7 @@
+ # given, the default listener will not be bound to a specific
  # address and so will be accessible to all network interfaces.
  # bind_address ip-address/host name
 -#bind_address
@@ -29,12 +29,12 @@ Index: mosquitto.conf
  
  # Port to use for the default listener.
  #port 1883
-@@ -507,7 +507,7 @@
+@@ -585,7 +585,7 @@
  # Note that if the broker is running as a Windows service it will default to
  # "log_dest none" and neither stdout nor stderr logging is available.
  # Use "log_dest none" if you wish to disable logging.
 -#log_dest stderr
 +log_dest syslog
  
- # If using syslog logging (not on Windows), messages will be logged to the
- # "daemon" facility by default. Use the log_facility option to choose which of
+ # Types of messages to log. Use multiple log_type lines for logging
+ # multiple types of messages.

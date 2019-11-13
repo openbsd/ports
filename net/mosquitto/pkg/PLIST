@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/03 14:20:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/11/13 20:53:32 jasper Exp $
 @newgroup _mosquitto:753
 @newuser _mosquitto:753:753:daemon:Mosquitto MQTT Broker:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mosquitto
 @bin bin/mosquitto_passwd
 @bin bin/mosquitto_pub
+@bin bin/mosquitto_rr
 @bin bin/mosquitto_sub
 include/mosquitto.h
 include/mosquitto_broker.h
@@ -11,10 +12,9 @@ include/mosquitto_plugin.h
 include/mosquittopp.h
 @lib lib/libmosquitto.so.${LIBmosquitto_VERSION}
 @lib lib/libmosquittopp.so.${LIBmosquittopp_VERSION}
-lib/pkgconfig/libmosquitto.pc
-lib/pkgconfig/libmosquittopp.pc
 @man man/man1/mosquitto_passwd.1
 @man man/man1/mosquitto_pub.1
+@man man/man1/mosquitto_rr.1
 @man man/man1/mosquitto_sub.1
 @man man/man3/libmosquitto.3
 @man man/man5/mosquitto.conf.5
@@ -33,3 +33,5 @@ share/examples/mosquitto/mosquitto.conf
 @group
 share/examples/mosquitto/pskfile.example
 share/examples/mosquitto/pwfile.example
+share/pkgconfig/libmosquitto.pc
+share/pkgconfig/libmosquittopp.pc

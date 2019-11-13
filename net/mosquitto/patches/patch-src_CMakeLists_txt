@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.8 2019/02/12 19:18:41 jasper Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.9 2019/11/13 20:53:32 jasper Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -129,6 +129,8 @@ endif (HAVE_GETADDRINFO_A)
+@@ -146,6 +146,8 @@ endif (HAVE_GETADDRINFO_A)
  if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
@@ -12,40 +12,3 @@ Index: src/CMakeLists.txt
      elseif(QNX)
          set(MOSQ_LIBS ${MOSQ_LIBS} m socket)
      else(APPLE)
-@@ -156,14 +158,22 @@ if (WITH_WEBSOCKETS)
- 	endif (STATIC_WEBSOCKETS)
- endif (WITH_WEBSOCKETS)
- 
-+# DCE 1.1 RPC uuid functions
-+include(CheckSymbolExists)
-+CHECK_SYMBOL_EXISTS(uuid_create uuid.h UUID_CREATE)
-+if (UUID_CREATE)
-+       add_definitions(-DWITH_UUID_CREATE)
-+endif (UUID_CREATE)
-+
- # Simple detect libuuid
--if(NOT APPLE)
-+if(NOT UUID_CREATE)
- 	FIND_PATH(UUID_HEADER uuid/uuid.h)
--	if (UUID_HEADER)
-+	FIND_LIBRARY(UUID_LIBRARY NAMES uuid)
-+	if (UUID_HEADER AND UUID_LIBRARY)
- 		add_definitions(-DWITH_UUID)
--		set (MOSQ_LIBS ${MOSQ_LIBS} uuid)
--	endif (UUID_HEADER)
--endif(NOT APPLE)
-+		set (MOSQ_LIBS ${MOSQ_LIBS} ${UUID_LIBRARY})
-+       endif()
-+endif(NOT UUID_CREATE)
- 
- add_executable(mosquitto ${MOSQ_SRCS})
- target_link_libraries(mosquitto ${MOSQ_LIBS})
-@@ -185,6 +195,6 @@ if (WITH_TLS)
- 	install(TARGETS mosquitto_passwd RUNTIME DESTINATION "${BINDIR}" LIBRARY DESTINATION "${LIBDIR}")
- endif (WITH_TLS)
- 
--if (UNIX AND NOT APPLE)
-+if (UNIX AND NOT APPLE AND NOT (CMAKE_SYSTEM_NAME MATCHES "OpenBSD"))
- 	install(CODE "EXEC_PROGRAM(/sbin/ldconfig)")
--endif (UNIX AND NOT APPLE)
-+endif (UNIX AND NOT APPLE AND NOT (CMAKE_SYSTEM_NAME MATCHES "OpenBSD"))

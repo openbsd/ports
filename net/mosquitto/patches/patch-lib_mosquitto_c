@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_mosquitto_c,v 1.3 2019/03/07 19:41:18 jasper Exp $
+$OpenBSD: patch-lib_mosquitto_c,v 1.4 2019/11/13 20:53:32 jasper Exp $
 
 Index: lib/mosquitto.c
 --- lib/mosquitto.c.orig
 +++ lib/mosquitto.c
-@@ -22,6 +22,9 @@ Contributors:
- #ifndef WIN32
+@@ -23,6 +23,9 @@ Contributors:
  #include <sys/time.h>
+ #include <strings.h>
  #endif
 +#ifdef WITH_ARC4RANDOM
 +#include <stdlib.h>
@@ -13,7 +13,7 @@ Index: lib/mosquitto.c
  
  #include "mosquitto.h"
  #include "mosquitto_internal.h"
-@@ -44,6 +47,7 @@ int mosquitto_lib_version(int *major, int *minor, int 
+@@ -46,6 +49,7 @@ int mosquitto_lib_version(int *major, int *minor, int 
  
  int mosquitto_lib_init(void)
  {
@@ -21,23 +21,11 @@ Index: lib/mosquitto.c
  #ifdef WIN32
  	srand(GetTickCount64());
  #elif _POSIX_TIMERS>0 && defined(_POSIX_MONOTONIC_CLOCK)
-@@ -62,6 +66,7 @@ int mosquitto_lib_init(void)
+@@ -63,6 +67,7 @@ int mosquitto_lib_init(void)
+ 
  	gettimeofday(&tv, NULL);
  	srand(tv.tv_sec*1000 + tv.tv_usec/1000);
- #endif
 +#endif
+ #endif
  
  	return net__init();
- }
-@@ -155,7 +160,11 @@ int mosquitto_reinitialise(struct mosquitto *mosq, con
- 		mosq->id[4] = '/';
- 
- 		for(i=5; i<23; i++){
-+#ifdef WITH_ARC4RANDOM
-+			mosq->id[i] = arc4random_uniform(73)+48;
-+#else
- 			mosq->id[i] = (rand()%73)+48;
-+#endif
- 		}
- 	}
- 	mosq->in_packet.payload = NULL;
