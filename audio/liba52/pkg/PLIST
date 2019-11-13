@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/11/13 11:00:21 espie Exp $
 @bin bin/a52dec
 @bin bin/extract_a52
 include/a52dec/
@@ -6,7 +6,7 @@ include/a52dec/a52.h
 include/a52dec/attributes.h
 include/a52dec/audio_out.h
 include/a52dec/mm_accel.h
-lib/liba52.a
+@static-lib lib/liba52.a
 lib/liba52.la
 @lib lib/liba52.so.${LIBa52_VERSION}
 lib/pkgconfig/liba52.pc
