@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/06/17 22:30:49 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/13 20:04:35 jasper Exp $
 
 COMMENT =		simple yet flexible natural sorting
 
-MODPY_EGG_VERSION =	6.0.0
+MODPY_EGG_VERSION =	6.1.0
 DISTNAME =		natsort-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		textproc devel
 
