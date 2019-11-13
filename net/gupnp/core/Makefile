@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2019/05/03 09:01:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2019/11/13 19:21:49 jasper Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
 GNOME_PROJECT=		gupnp
 GNOME_VERSION=		1.2.1
+REVISION=		0
 
 SHARED_LIBS +=  gupnp-1.2	0.0
 
@@ -15,6 +16,8 @@ MODULES=		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS += gobject-introspection vala
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS=		net/gssdp>=1.1.3
 

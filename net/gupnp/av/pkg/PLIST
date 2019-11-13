@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/10/15 12:56:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/11/13 19:21:49 jasper Exp $
 include/gupnp-av-1.0/
 include/gupnp-av-1.0/libgupnp-av/
 include/gupnp-av-1.0/libgupnp-av/gupnp-av-enums.h
@@ -23,7 +23,7 @@ include/gupnp-av-1.0/libgupnp-av/gupnp-protocol-info.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-search-criteria-parser.h
 lib/girepository-1.0/
 lib/girepository-1.0/GUPnPAV-1.0.typelib
-lib/libgupnp-av-1.0.a
+@static-lib lib/libgupnp-av-1.0.a
 lib/libgupnp-av-1.0.la
 @lib lib/libgupnp-av-1.0.so.${LIBgupnp-av-1.0_VERSION}
 lib/pkgconfig/gupnp-av-1.0.pc
