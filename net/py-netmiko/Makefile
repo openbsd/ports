@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/13 20:13:39 jasper Exp $
 
 COMMENT =		simplify Paramiko connections to network devices
 
-MODPY_EGG_VERSION =	2.3.3
+MODPY_EGG_VERSION =	2.4.2
 DISTNAME=		netmiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		net
 
@@ -27,5 +26,10 @@ RUN_DEPENDS =		devel/py-serial${MODPY_FLAVOR} \
 			security/py-scp${MODPY_FLAVOR} \
 			textproc/py-textfsm${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}
+
+.if !${FLAVOR:Mpython3}
+RUN_DEPENDS +=		devel/py-enum34 \
+			net/py-ipaddress
+.endif
 
 .include <bsd.port.mk>
