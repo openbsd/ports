@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_d_text_c,v 1.1 2018/04/24 20:56:00 naddy Exp $
+$OpenBSD: patch-src_d_text_c,v 1.2 2019/11/13 15:26:47 fcambus Exp $
 
 Index: src/d_text.c
 --- src/d_text.c.orig
 +++ src/d_text.c
-@@ -2163,7 +2163,7 @@ static void
+@@ -2166,7 +2166,7 @@ static void
  paste_preedit_proc(int x, int y)
  {
    FILE *fp;
