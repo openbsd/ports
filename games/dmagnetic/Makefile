@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/31 13:10:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/13 06:34:01 rsadowski Exp $
 
-V =		0.17
+V =		0.18
 COMMENT =	interpreter for Magnetic Scrolls games
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}
 CATEGORIES =	games
 
-HOMEPAGE =	http://www.dettus.net/dMagnetic/
+HOMEPAGE =	https://www.dettus.net/dMagnetic/
 MAINTAINER =	Thomas Dettbarn <dettus@dettus.net>
 
 # BSD
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	http://www.dettus.net/dMagnetic/
+MASTER_SITES =	https://www.dettus.net/dMagnetic/
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
