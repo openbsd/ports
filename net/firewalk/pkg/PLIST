@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/08/26 00:34:18 sthen Exp $
-@man man/man1/firewalk.1
-@bin sbin/firewalk
