@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1496 2019/11/13 10:08:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1497 2019/11/13 15:22:41 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1977,7 +1977,7 @@ _update_plist += -L ${WRKINST}/.fake_log \
 _update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
 .endfor
 
-_build_debug_info = ${_PERLSCRIPT}/build-debug-info -P ${_WRKDEBUG} -W ${PREFIX} --
+_build_debug_info = PORTSDIR=${PORTSDIR} ${_PERLSCRIPT}/build-debug-info -P ${_WRKDEBUG} --
 
 .for i in ${BUILD_PACKAGES}
 .  if ${DEBUG_PACKAGES:M$i}
