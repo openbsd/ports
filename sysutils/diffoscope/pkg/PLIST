@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/09/01 21:35:18 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/11/13 17:05:35 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -27,6 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}profiling.${
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}progress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}tempfiles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/changes.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/__init__.py
@@ -231,3 +232,4 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/json.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/utils.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/tempfiles.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/tools.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/utils.py
