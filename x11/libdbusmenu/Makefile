@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/01 15:45:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/13 11:00:52 cwen Exp $
 
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
@@ -41,6 +41,8 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 LIB_DEPENDS =	x11/gtk+3 \
 		devel/json-glib
 
+# -Werror breaks the build with gcc due to glib2 deprecation notices
+CFLAGS +=	-Wno-error
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
