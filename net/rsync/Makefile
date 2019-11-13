@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/10/07 15:28:25 jca Exp $
+# $OpenBSD: Makefile,v 1.83 2019/11/13 12:17:21 espie Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -35,6 +35,7 @@ WANTLIB +=	iconv
 .endif
 
 DOCDIR =	${PREFIX}/share/doc/rsync
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/rsyncd.conf.5 \
