@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.12 2019/11/14 08:48:44 espie Exp $
+# $OpenBSD: build-debug-info,v 1.13 2019/11/14 12:47:03 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -211,7 +211,9 @@ sub write_debug_info
 package OpenBSD::PackingElement::Conflict;
 sub write_debug_info
 {
-	&OpenBSD::PackingElement::CVSTag::write_debug_info;
+	my ($self, $fh, $o) = @_;
+	my $m = join('|', map {"debug-$_"} split(/\|/, $self->name));
+	print $fh "\@", $self->keyword, " $m\n";
 }
 
 # This is the BuildDebugInfo main code proper
