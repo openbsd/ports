@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.2 2019/11/14 16:32:15 cwen Exp $
 
 COMMENT =		libsass wrapper for ruby
 
@@ -9,6 +9,9 @@ HOMEPAGE =		https://github.com/sass/sassc-ruby
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+# C++11
+COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem ext
