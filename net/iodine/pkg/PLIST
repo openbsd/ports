@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/11/14 16:09:34 jca Exp $
 @newgroup _iodine:598
 @newuser _iodine:598:598:daemon:Iodine User:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/iodined
 @man man/man8/iodine.8
 @bin sbin/iodine
 @bin sbin/iodined
 share/doc/pkg-readmes/${PKGSTEM}
-@rcscript ${RCDIR}/iodined
