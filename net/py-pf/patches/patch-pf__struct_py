@@ -1,0 +1,15 @@
+$OpenBSD: patch-pf__struct_py,v 1.3 2019/11/14 10:04:20 jasper Exp $
+
+sync with sys/net/pfvar.h -r1.492
+
+Index: pf/_struct.py
+--- pf/_struct.py.orig
++++ pf/_struct.py
+@@ -461,6 +461,7 @@ class pfi_kif(Structure):               # From /usr/in
+                 ("pfik_states",       c_int),
+                 ("pfik_rules",        c_int),
+                 ("pfik_routes",       c_int),
++                ("pfik_srcnodes",     c_int), 
+                 ("pfik_dynaddrs",     c_void_p * 2)]  # TAILQ_HEAD(,pfi_dynaddr)
+ 
+ 

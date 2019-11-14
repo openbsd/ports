@@ -1,16 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/14 10:04:20 jasper Exp $
 
 COMMENT =		Python module for managing PF
 
-# XXX struct pfi_kif changed in sys/net/pfvar.h r1.492 after this
-# XXX release; a python conversion of this is in pf/_struct.py which
-# XXX needs syncing
-MODPY_EGG_VERSION =	0.1.9
-GH_COMMIT =		28bfaef413dc206773cb93251cb6ee9740596911
+MODPY_EGG_VERSION =	0.2.1
 GH_ACCOUNT =		dotpy
 GH_PROJECT =		py-pf
 DISTNAME =		py-pf-${MODPY_EGG_VERSION}
-REVISION =		0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -32,5 +27,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 NO_TEST =		Yes
+
+WRKDIST =		${WRKDIR}/py-pf-${DISTNAME}
 
 .include <bsd.port.mk>
