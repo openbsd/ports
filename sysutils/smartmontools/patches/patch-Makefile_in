@@ -1,7 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.13 2017/04/21 17:08:01 giovanni Exp $
---- Makefile.in.orig	Sat May  7 13:18:28 2016
-+++ Makefile.in	Wed Jun 29 23:50:43 2016
-@@ -352,8 +352,8 @@ man5dir = $(mandir)/man5
+$OpenBSD: patch-Makefile_in,v 1.14 2019/11/14 19:19:30 jasper Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -372,8 +372,8 @@ man5dir = $(mandir)/man5
  man8dir = $(mandir)/man8
  NROFF = nroff
  MANS = $(man_MANS)
@@ -12,9 +14,9 @@ $OpenBSD: patch-Makefile_in,v 1.13 2017/04/21 17:08:01 giovanni Exp $
  am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
  	$(LISP)config.h.in
  # Read a list of newline-separated strings from the standard input,
-@@ -604,16 +604,7 @@ nodist_EXTRA_smartd_SOURCES = os_solaris_ata.s
+@@ -628,16 +628,7 @@ nodist_EXTRA_smartd_SOURCES = os_solaris_ata.s
  @OS_SOLARIS_FALSE@man_MANS = smartd.conf.5 smartctl.8 smartd.8 \
- @OS_SOLARIS_FALSE@	$(am__append_23)
+ @OS_SOLARIS_FALSE@	$(am__append_24)
  docsdir = $(docdir)
 -docs_DATA = \
 -        AUTHORS \
@@ -30,7 +32,7 @@ $OpenBSD: patch-Makefile_in,v 1.13 2017/04/21 17:08:01 giovanni Exp $
  
  examplesdir = $(exampledir)
  examples_DATA = \
-@@ -625,10 +616,11 @@ examples_SCRIPTS = \
+@@ -649,10 +640,11 @@ examples_SCRIPTS = \
          examplescripts/Example3 \
          examplescripts/Example4 \
          examplescripts/Example5 \
@@ -42,5 +44,5 @@ $OpenBSD: patch-Makefile_in,v 1.13 2017/04/21 17:08:01 giovanni Exp $
 -smartdscript_SCRIPTS = smartd_warning.sh
 +smartdscript_SCRIPTS =
  EXTRA_DIST = \
+         .editorconfig \
          autogen.sh \
-         smartd.initd.in \
