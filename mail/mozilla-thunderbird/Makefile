@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2019/11/08 16:22:07 landry Exp $
+# $OpenBSD: Makefile,v 1.305 2019/11/14 19:02:50 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -11,6 +11,8 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+REVISION =		0
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
@@ -69,6 +71,9 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 # pledge strings to be defined, and no multiprocess anyway..
 CONFIGURE_ARGS +=	--disable-sandbox
+# --enable-debug does too much, this defaults to -g (which is 3 times larger than using -ggdb1)
+DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
+			--disable-install-strip
 
 # SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it, e.g.
 # mailnews/build/nsMailModule.cpp pulls in mailnews/extensions/fts3/src/nsFts3Tokenizer.h
