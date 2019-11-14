@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_providers_wms_CMakeLists_txt,v 1.3 2019/11/14 16:49:16 landry Exp $
+$OpenBSD: patch-src_providers_wms_CMakeLists_txt,v 1.4 2019/11/14 17:07:42 landry Exp $
 
 https://github.com/qgis/QGIS/pull/32824/
 
 Index: src/providers/wms/CMakeLists.txt
 --- src/providers/wms/CMakeLists.txt.orig
 +++ src/providers/wms/CMakeLists.txt
-@ -82,6 +82,7 @@ IF (WITH_GUI)
+@@ -82,6 +82,7 @@ IF (WITH_GUI)
    )
    TARGET_COMPILE_DEFINITIONS(wmsprovider_gui_a PRIVATE "-DQT_NO_FOREACH")
    ADD_DEPENDENCIES(wmsprovider_gui_a ui)
