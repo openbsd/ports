@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.11 2019/11/13 16:16:51 espie Exp $
+# $OpenBSD: build-debug-info,v 1.12 2019/11/14 08:48:44 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -126,7 +126,6 @@ sub write_debug_info
 		print $fh $dir, "\n";
 		$o->{dirstash}{$dir} = 1;
 	}
-	$self->write_dbg($fh, $dbg);
 	my $path = $self->fullname;
 	if (-l $path) {
 		$o->{state}->errsay(
@@ -135,6 +134,7 @@ sub write_debug_info
 		return;
 	}
 	if (-f $path) {
+		$self->write_dbg($fh, $dbg);
 		my $k = join('/', (stat $path)[0,1]);
 		my $out = $o->{out};
 		my $l = $o->{linkstash}{$k};
