@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2019/11/10 20:26:56 landry Exp $
+# $OpenBSD: Makefile,v 1.404 2019/11/14 16:59:21 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -9,7 +9,7 @@ MOZILLA_VERSION =	70.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =	1
+REVISION =	2
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
@@ -69,8 +69,8 @@ CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 SUBST_VARS +=	LOCALBASE X11BASE
 
-DEBUG_PACKAGES =	-
-DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols=-ggdb1 \
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 
 show-commit:
