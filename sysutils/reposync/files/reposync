@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: reposync,v 1.7 2019/11/10 13:53:39 sthen Exp $
+# $OpenBSD: reposync,v 1.8 2019/11/14 21:39:11 kn Exp $
 #
 # Copyright (c) 2018, 2019 Stuart Henderson <sthen@openbsd.org>
 #
@@ -24,41 +24,40 @@ err()
 
 usage()
 {
-	echo "usage: ${0##*/} [-f] [-p | -l username] rsync://upstream/cvs [/path/to/cvs]" >&2
+	echo "usage: ${0##*/} [-f] [-p | -l username] rsync://upstream/path [destination]" >&2
 	exit 1
 }
 
 force=false
 fwduser=anoncvs
 while getopts "fl:p" c; do
-	case "$c" in
+	case $c in
 		f) force=true		;;
-		l) fwduser="$OPTARG"	;;
-		p) fwduser=""		;;
+		l) fwduser=$OPTARG	;;
+		p) fwduser=		;;
 		*) usage		;;
 	esac
 done
 shift $((OPTIND-1))
-[ $# -gt 0 ] || usage
+(( $# > 0 )) || usage
 
-synchost="$1"
-repodir=/cvs
-[[ -n $2 ]] && repodir=$2
+synchost=$1
+repodir=${2:-/cvs}
 
 run_rsync()
 {
 	if [[ -n $fwduser ]]; then
 			# reach rsync on the server via an ssh port-forward
-			rsync -e "ssh -W localhost:rsync -l $fwduser" $* 2>&1
+			rsync -e "ssh -W localhost:rsync -l $fwduser" "$@" 2>&1
 	else
-			rsync $* 2>&1
+			rsync "$@" 2>&1
 	fi
 }
 
-rundir="/var/db/reposync"
+rundir=/var/db/reposync
 
-for i in $rundir $repodir; do
-	[ ! -d $i ] || [ ! -w $i ] &&
+for i in "$rundir" "$repodir"; do
+	[[ ! -d $i ]] || [[ ! -w $i ]] &&
 	    err "$i must exist as a writable directory"
 done
 
@@ -66,12 +65,12 @@ if [[ $(id -u) != $(stat -L -f "%u" "$repodir") ]]; then
 	err "should be run by the uid owning the repository"
 fi
 
-oldhash="invalid"
-hashfile="$rundir/reposync.hash"
-lockfile="$rundir/reposync.lock"
+oldhash=invalid
+hashfile=$rundir/reposync.hash
+lockfile=$rundir/reposync.lock
 cd $rundir
 
-if [ -h $lockfile ]; then
+if [[ -h $lockfile ]]; then
 	# read the pid from $lockfile symlink target
 	lockedpid=$(stat -f %Y $lockfile)
 
@@ -81,30 +80,30 @@ if [ -h $lockfile ]; then
 	fi
 
 	# not still running, the lock must be stale (machine panicked, etc) so zap it
-	rm -f $lockfile
+	rm -f -- $lockfile
 fi
 
 ln -s $$ $lockfile || err "could not lock $lockfile"
 
-trap "rm -f $lockfile" 0 1 2 15
+trap "rm -f -- $lockfile" 0 1 2 15
 
 # check CVSROOT directory listing to identify updates; primarily for
 # ChangeLog but val-tags may also be updated after a checkout was done
 # using a new tag. ignore "history" (lists read-only operations).
-_t="$(run_rsync ${synchost}/CVSROOT/ | grep -v history)"
+_t=$(run_rsync --exclude='history*' ${synchost}/CVSROOT/)
 [[ -n $fwduser ]] && case $_t in
 	"stdio forwarding failed"*|"Stdio forwarding request failed"*)
 		err "mirror does not support ssh port-forwarding" ;;
 esac
 newhash="${synchost} $(echo $_t | sha256)"
 
-if [ -r $hashfile ]; then
+if [[ -r $hashfile ]]; then
 	age=$((`date +%s` - `stat -t %s -f %m $hashfile`))
 	# don't entirely rely on CVSROOT files; not all tree operations
 	# result in a change there so also do a full update run at least
 	# every 6h.
-	if [ $age -lt $((6*60*60)) ]; then
-		oldhash=`cat $hashfile`
+	if ((age < 6*60*60)); then
+		oldhash=$(< $hashfile)
 	fi
 fi
 
@@ -113,7 +112,7 @@ if $force || [[ $oldhash != $newhash ]]; then
 	# the old one so sync is reattempted next run
 	if run_rsync -rlptiz --omit-dir-times --delete \
 	    --exclude='#cvs.rfl.*' --exclude='CVSROOT/history*' \
-	    ${synchost}/{CVSROOT,www,xenocara,ports,src} $repodir/; then
+	    ${synchost}/{CVSROOT,www,xenocara,ports,src} "$repodir"/; then
 		echo $newhash > $hashfile
 	else
 		err "rsync failed"
