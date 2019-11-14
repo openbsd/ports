@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2019/10/23 19:46:03 landry Exp $
+# $OpenBSD: Makefile,v 1.110 2019/11/14 19:02:24 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
@@ -7,6 +7,8 @@ MOZILLA_VERSION =	68.2.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+REVISION =		0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
@@ -65,6 +67,8 @@ CONFIGURE_ARGS +=	--enable-sandbox --enable-content-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 CONFIGURE_ARGS +=	--with-clang-path=${LOCALBASE}/bin/clang
 
+DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
+			--disable-install-strip
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/third_party/rust/cssparser/.cargo-checksum.json
