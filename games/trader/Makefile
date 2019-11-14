@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/14 15:51:59 fcambus Exp $
 
 COMMENT =	simple text-based game of interstellar trading
 
-DISTNAME =	trader-7.12
-REVISION =	0
+DISTNAME =	trader-7.13
 
 CATEGORIES =	games
 
@@ -22,6 +21,9 @@ LIB_DEPENDS =	converters/libiconv \
 		devel/gettext,-runtime
 
 CONFIGURE_STYLE = gnu
+
+# Prevent configure to error out because we have no <monetary.h>
+CONFIGURE_ENV += ac_cv_header_monetary_h=yes
 
 post-patch:
 	@cp ${FILESDIR}/strfmon* ${WRKSRC}/src

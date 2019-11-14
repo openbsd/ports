@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_system_h,v 1.1.1.1 2018/09/10 20:50:56 fcambus Exp $
+$OpenBSD: patch-src_system_h,v 1.2 2019/11/14 15:51:59 fcambus Exp $
 
 Index: src/system.h
 --- src/system.h.orig
 +++ src/system.h
-@@ -69,7 +69,7 @@
+@@ -71,7 +71,7 @@
  #include <signal.h>
  #include <sys/stat.h>
  #include <sys/time.h>

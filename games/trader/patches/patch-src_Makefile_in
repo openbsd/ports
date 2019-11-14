@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2018/09/10 20:50:56 fcambus Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2019/11/14 15:51:59 fcambus Exp $
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -173,7 +173,7 @@ am_trader_OBJECTS = trader-trader.$(OBJEXT) trader-glo
+@@ -176,7 +176,7 @@ am_trader_OBJECTS = trader-trader.$(OBJEXT) trader-glo
  	trader-game.$(OBJEXT) trader-move.$(OBJEXT) \
  	trader-exch.$(OBJEXT) trader-fileio.$(OBJEXT) \
  	trader-help.$(OBJEXT) trader-intf.$(OBJEXT) \
@@ -12,7 +12,7 @@ Index: src/Makefile.in
  trader_OBJECTS = $(am_trader_OBJECTS)
  trader_DEPENDENCIES = $(top_builddir)/lib/libgnu.a
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -1047,6 +1047,7 @@ trader_SOURCES = \
+@@ -1085,6 +1085,7 @@ trader_SOURCES = \
  	fileio.c	fileio.h	\
  	help.c		help.h		\
  	intf.c		intf.h		\
@@ -20,15 +20,7 @@ Index: src/Makefile.in
  	utils.c		utils.h		\
  			system.h
  
-@@ -1149,6 +1150,7 @@ distclean-compile:
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/trader-intf.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/trader-move.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/trader-trader.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/trader-strfmon.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/trader-utils.Po@am__quote@
- 
- .c.o:
-@@ -1276,6 +1278,13 @@ trader-intf.obj: intf.c
+@@ -1320,6 +1321,13 @@ trader-intf.obj: intf.c
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='intf.c' object='trader-intf.obj' libtool=no @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(trader_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o trader-intf.obj `if test -f 'intf.c'; then $(CYGPATH_W) 'intf.c'; else $(CYGPATH_W) '$(srcdir)/intf.c'; fi`
