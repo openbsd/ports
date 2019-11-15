@@ -1,0 +1,18 @@
+$OpenBSD: patch-setup_py,v 1.1 2019/11/15 23:01:38 kmos Exp $
+
+enum34 is a backport for Python < 3.4. Patch its requirement out.
+
+Sent upstream https://github.com/pbs/pycaption/pull/190
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -11,7 +11,7 @@ dependencies = [
+     'lxml>=3.2.3',
+     'cssutils>=0.9.10',
+     'future',
+-    'enum34',
++    'enum34;python_version<"3.4"',
+     'six>=1.9.0'
+ ]
+ 
