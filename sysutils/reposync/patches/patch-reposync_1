@@ -1,0 +1,14 @@
+$OpenBSD: patch-reposync_1,v 1.1 2019/11/15 00:17:39 sthen Exp $
+
+Index: reposync.1
+--- reposync.1.orig
++++ reposync.1
+@@ -50,7 +50,7 @@ key fingerprints is available at
+ .Lk https://www.openbsd.org/anoncvs.html .
+ .Pp
+ The directory
+-.Pa /var/db/reposync
++.Pa ${LOCALSTATEDIR}/db/reposync
+ must exist and be writable by the user running
+ .Nm .
+ .Pp

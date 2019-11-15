@@ -1,0 +1,14 @@
+$OpenBSD: patch-reposync,v 1.1 2019/11/15 00:17:39 sthen Exp $
+
+Index: reposync
+--- reposync.orig
++++ reposync
+@@ -52,7 +52,7 @@ run_rsync()
+ 	fi
+ }
+ 
+-rundir=/var/db/reposync
++rundir=${LOCALSTATEDIR}/db/reposync
+ 
+ for i in "$rundir" "$repodir"; do
+ 	[[ ! -d $i ]] || [[ ! -w $i ]] &&
