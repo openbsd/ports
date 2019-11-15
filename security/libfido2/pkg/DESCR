@@ -1,2 +1,0 @@
-libfido2 is a small library and set of tools for communicating with
-U2F/FIDO and FIDO2 tokens using the USB HID interface.
