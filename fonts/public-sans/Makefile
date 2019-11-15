@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/08 16:45:54 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/15 07:43:53 bentley Exp $
 
 COMMENT =		strong, neutral, principles-driven typeface
 
-V =			1.006
+V =			1.007
 DISTNAME =		public-sans-v$V
 PKGNAME =		public-sans-$V
 
@@ -28,7 +28,7 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/fonts/otf/*.otf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/fonts/webfonts/*.{ttf,woff*} ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/binaries/*/*.{ttf,otf,woff,woff2} \
+		${FONTDIR}
 
 .include <bsd.port.mk>
