@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/15 15:25:27 fcambus Exp $
+@bin bin/nudoku
+@man man/man6/nudoku.6
+share/locale/de/LC_MESSAGES/nudoku.mo
+share/locale/es/LC_MESSAGES/nudoku.mo
+share/locale/fr/LC_MESSAGES/nudoku.mo
+share/locale/ru/LC_MESSAGES/nudoku.mo
