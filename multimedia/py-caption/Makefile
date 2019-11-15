@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/15 23:00:54 kmos Exp $
 
 COMMENT=		closed caption converter
 
@@ -17,6 +17,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_PYTEST=		Yes
 
 RUN_DEPENDS=		devel/py-future${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
@@ -24,7 +25,9 @@ RUN_DEPENDS=		devel/py-future${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR}
 
-# XXX depends on py-enum34 (py2 only) and specific version of other py modules
+# Tests not included in current tarball
+#
+# Pull request made - https://github.com/pbs/pycaption/pull/191
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
