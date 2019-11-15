@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2019/10/31 10:45:04 landry Exp $
+@comment $OpenBSD: PLIST,v 1.55 2019/11/15 09:08:14 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -1157,42 +1157,42 @@ include/qgis/ui_qgstablewidgetuibase.h
 lib/qgis/
 @bin lib/qgis/crssync
 lib/qgis/plugins/
-lib/qgis/plugins/libarcgisfeatureserverprovider.so
-lib/qgis/plugins/libarcgismapserverprovider.so
-lib/qgis/plugins/libbasicauthmethod.so
-lib/qgis/plugins/libcoordinatecaptureplugin.so
-lib/qgis/plugins/libdb2provider.so
-lib/qgis/plugins/libdelimitedtextprovider.so
-lib/qgis/plugins/libesritokenauthmethod.so
-lib/qgis/plugins/libevis.so
-lib/qgis/plugins/libgeometrycheckerplugin.so
-lib/qgis/plugins/libgeonodeprovider.so
-lib/qgis/plugins/libgeorefplugin.so
-lib/qgis/plugins/libgpsimporterplugin.so
-lib/qgis/plugins/libgpxprovider.so
-lib/qgis/plugins/libidentcertauthmethod.so
-lib/qgis/plugins/libmdalprovider.so
-lib/qgis/plugins/libmssqlprovider.so
-lib/qgis/plugins/liboauth2authmethod.so
-lib/qgis/plugins/libofflineeditingplugin.so
-lib/qgis/plugins/libowsprovider.so
-lib/qgis/plugins/libpkcs12authmethod.so
-lib/qgis/plugins/libpkipathsauthmethod.so
-lib/qgis/plugins/libpostgresprovider.so
-lib/qgis/plugins/libspatialiteprovider.so
-lib/qgis/plugins/libtopolplugin.so
-lib/qgis/plugins/libvirtuallayerprovider.so
-lib/qgis/plugins/libwcsprovider.so
-lib/qgis/plugins/libwfsprovider.so
-lib/qgis/plugins/libwmsprovider.so
+@so lib/qgis/plugins/libarcgisfeatureserverprovider.so
+@so lib/qgis/plugins/libarcgismapserverprovider.so
+@so lib/qgis/plugins/libbasicauthmethod.so
+@so lib/qgis/plugins/libcoordinatecaptureplugin.so
+@so lib/qgis/plugins/libdb2provider.so
+@so lib/qgis/plugins/libdelimitedtextprovider.so
+@so lib/qgis/plugins/libesritokenauthmethod.so
+@so lib/qgis/plugins/libevis.so
+@so lib/qgis/plugins/libgeometrycheckerplugin.so
+@so lib/qgis/plugins/libgeonodeprovider.so
+@so lib/qgis/plugins/libgeorefplugin.so
+@so lib/qgis/plugins/libgpsimporterplugin.so
+@so lib/qgis/plugins/libgpxprovider.so
+@so lib/qgis/plugins/libidentcertauthmethod.so
+@so lib/qgis/plugins/libmdalprovider.so
+@so lib/qgis/plugins/libmssqlprovider.so
+@so lib/qgis/plugins/liboauth2authmethod.so
+@so lib/qgis/plugins/libofflineeditingplugin.so
+@so lib/qgis/plugins/libowsprovider.so
+@so lib/qgis/plugins/libpkcs12authmethod.so
+@so lib/qgis/plugins/libpkipathsauthmethod.so
+@so lib/qgis/plugins/libpostgresprovider.so
+@so lib/qgis/plugins/libspatialiteprovider.so
+@so lib/qgis/plugins/libtopolplugin.so
+@so lib/qgis/plugins/libvirtuallayerprovider.so
+@so lib/qgis/plugins/libwcsprovider.so
+@so lib/qgis/plugins/libwfsprovider.so
+@so lib/qgis/plugins/libwmsprovider.so
 lib/qgis/server/
-lib/qgis/server/libdummy.so
-lib/qgis/server/libwcs.so
-lib/qgis/server/libwfs.so
-lib/qgis/server/libwfs3.so
-lib/qgis/server/libwms.so
-lib/qgis/server/libwmts.so
-lib/qt5/plugins/sqldrivers/libqsqlspatialite.so
+@so lib/qgis/server/libdummy.so
+@so lib/qgis/server/libwcs.so
+@so lib/qgis/server/libwfs.so
+@so lib/qgis/server/libwfs3.so
+@so lib/qgis/server/libwms.so
+@so lib/qgis/server/libwmts.so
+@so lib/qt5/plugins/sqldrivers/libqsqlspatialite.so
 @man man/man1/qgis.1
 share/applications/org.qgis.qgis.desktop
 share/icons/hicolor/128x128/apps/qgis.png
@@ -2799,12 +2799,12 @@ share/qgis/python/qgis/PyQt/uic/
 share/qgis/python/qgis/PyQt/uic/__init__.py
 share/qgis/python/qgis/PyQt/uic/properties.py
 share/qgis/python/qgis/PyQt/uic/pyuic.py
-share/qgis/python/qgis/_3d.so
+@so share/qgis/python/qgis/_3d.so
 share/qgis/python/qgis/__init__.py
-share/qgis/python/qgis/_analysis.so
-share/qgis/python/qgis/_core.so
-share/qgis/python/qgis/_gui.so
-share/qgis/python/qgis/_server.so
+@so share/qgis/python/qgis/_analysis.so
+@so share/qgis/python/qgis/_core.so
+@so share/qgis/python/qgis/_gui.so
+@so share/qgis/python/qgis/_server.so
 share/qgis/python/qgis/analysis/
 share/qgis/python/qgis/analysis/__init__.py
 share/qgis/python/qgis/core/

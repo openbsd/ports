@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.113 2019/10/31 10:45:04 landry Exp $
+# $OpenBSD: Makefile,v 1.114 2019/11/15 09:08:13 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis-3.10.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
+DEBUG_PACKAGES =${BUILD_PACKAGES}
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	37.0 \
 		qgis_app	20.0 \
@@ -91,7 +93,8 @@ CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DWITH_3D=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
 
-#CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=RelWithDebInfo
+# does more than just debug pkgs
+#DEBUG_CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=RelWithDebInfo
 
 # https://issues.qgis.org/issues/17696
 #.ifdef  "${BUILD_OSG}"
