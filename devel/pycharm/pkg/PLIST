@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/10/20 06:53:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/11/15 06:05:39 rsadowski Exp $
 bin/pycharm
 @man man/man1/pycharm.1
 pycharm/
@@ -1645,6 +1645,7 @@ pycharm/lib/automaton-1.12-1.jar
 pycharm/lib/batik-anim-1.12.0-8.jar
 pycharm/lib/batik-awt-util-1.12.0-8.jar
 pycharm/lib/batik-bridge-1.12.0-8.jar
+pycharm/lib/batik-codec-1.7.jar
 pycharm/lib/batik-constants-1.12.0-8.jar
 pycharm/lib/batik-css-1.12.0-8.jar
 pycharm/lib/batik-dom-1.12.0-8.jar
