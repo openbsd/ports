@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2019/11/15 19:16:19 jasper Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -103,7 +103,7 @@ endif (DOCUMENTATION)
+ # Install config file
+ # ========================================
+ 
+-install(FILES mosquitto.conf aclfile.example pskfile.example pwfile.example DESTINATION "${CMAKE_INSTALL_SYSCONFDIR}/mosquitto")
++install(FILES mosquitto.conf aclfile.example pskfile.example pwfile.example DESTINATION "share/examples/mosquitto")
+ 
+ 
+ # ========================================
