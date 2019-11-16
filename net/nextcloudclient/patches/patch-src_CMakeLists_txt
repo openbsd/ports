@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -4,7 +4,7 @@ endif()
+ 
+ set(synclib_NAME ${APPLICATION_EXECUTABLE}sync)
+ 
+-find_package(Qt5 5.6 COMPONENTS Core Network Xml Concurrent WebEngineWidgets WebEngine REQUIRED)
++find_package(Qt5 5.6 COMPONENTS Core Network Xml Concurrent REQUIRED)
+ if (Qt5Core_VERSION VERSION_LESS 5.9.0)
+ message(STATUS "For HTTP/2 support, compile with Qt 5.9 or higher.")
+ endif()

@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_gui_wizard_owncloudsetuppage_cpp,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+
+Index: src/gui/wizard/owncloudsetuppage.cpp
+--- src/gui/wizard/owncloudsetuppage.cpp.orig
++++ src/gui/wizard/owncloudsetuppage.cpp
+@@ -158,7 +158,7 @@ void OwncloudSetupPage::slotLogin()
+ void OwncloudSetupPage::slotGotoProviderList()
+ {
+     _ocWizard->setRegistration(true);
+-    _ocWizard->setAuthType(DetermineAuthTypeJob::AuthType::WebViewFlow);
++    _ocWizard->setAuthType(DetermineAuthTypeJob::AuthType::Basic);
+     _authTypeKnown = true;
+     _checking = false;
+     emit completeChanged();
+@@ -273,12 +273,8 @@ int OwncloudSetupPage::nextId() const
+         return WizardCommon::Page_HttpCreds;
+     case DetermineAuthTypeJob::OAuth:
+         return WizardCommon::Page_OAuthCreds;
+-    case DetermineAuthTypeJob::LoginFlowV2:
+-        return WizardCommon::Page_Flow2AuthCreds;
+     case DetermineAuthTypeJob::Shibboleth:
+         return WizardCommon::Page_ShibbolethCreds;
+-    case DetermineAuthTypeJob::WebViewFlow:
+-        return WizardCommon::Page_WebView;
+     }
+     return WizardCommon::Page_HttpCreds;
+ }

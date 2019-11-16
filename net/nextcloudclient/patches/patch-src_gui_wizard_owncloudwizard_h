@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_gui_wizard_owncloudwizard_h,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+
+Index: src/gui/wizard/owncloudwizard.h
+--- src/gui/wizard/owncloudwizard.h.orig
++++ src/gui/wizard/owncloudwizard.h
+@@ -39,8 +39,6 @@ class OwncloudAdvancedSetupPage;
+ class OwncloudWizardResultPage;
+ class AbstractCredentials;
+ class AbstractCredentialsWizardPage;
+-class WebViewPage;
+-class Flow2AuthCredsPage;
+ 
+ /**
+  * @brief The OwncloudWizard class
+@@ -105,11 +103,9 @@ signals: (private)
+ #ifndef NO_SHIBBOLETH
+     OwncloudShibbolethCredsPage *_shibbolethCredsPage;
+ #endif
+-    Flow2AuthCredsPage *_flow2CredsPage;
+     OwncloudAdvancedSetupPage *_advancedSetupPage;
+     OwncloudWizardResultPage *_resultPage;
+     AbstractCredentialsWizardPage *_credentialsPage;
+-    WebViewPage *_webViewPage;
+ 
+     QStringList _setupLog;
+ 

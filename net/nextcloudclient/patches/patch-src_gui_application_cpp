@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_gui_application_cpp,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+
+Index: src/gui/application.cpp
+--- src/gui/application.cpp.orig
++++ src/gui/application.cpp
+@@ -245,13 +245,6 @@ Application::Application(int &argc, char **argv)
+     connect(&_networkConfigurationManager, &QNetworkConfigurationManager::configurationChanged,
+         this, &Application::slotSystemOnlineConfigurationChanged);
+ 
+-    // Update checks
+-    UpdaterScheduler *updaterScheduler = new UpdaterScheduler(this);
+-    connect(updaterScheduler, &UpdaterScheduler::updaterAnnouncement,
+-        _gui.data(), &ownCloudGui::slotShowTrayMessage);
+-    connect(updaterScheduler, &UpdaterScheduler::requestRestart,
+-        _folderManager.data(), &FolderMan::slotScheduleAppRestart);
+-
+     // Cleanup at Quit.
+     connect(this, &QCoreApplication::aboutToQuit, this, &Application::slotCleanup);
+ }

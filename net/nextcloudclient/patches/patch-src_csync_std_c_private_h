@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_csync_std_c_private_h,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+
+Index: src/csync/std/c_private.h
+--- src/csync/std/c_private.h.orig
++++ src/csync/std/c_private.h
+@@ -156,7 +156,7 @@ typedef char           mbchar_t;
+ #endif
+ 
+ /* FIXME: Implement TLS for OS X */
+-#if defined(__GNUC__) && !defined(__APPLE__)
++#if defined(__GNUC__) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ # define CSYNC_THREAD __thread
+ #elif defined(_MSC_VER)
+ # define CSYNC_THREAD __declspec(thread)

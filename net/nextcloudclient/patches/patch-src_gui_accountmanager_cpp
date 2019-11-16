@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_gui_accountmanager_cpp,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+
+Index: src/gui/accountmanager.cpp
+--- src/gui/accountmanager.cpp.orig
++++ src/gui/accountmanager.cpp
+@@ -253,20 +253,6 @@ AccountPtr AccountManager::loadAccountHelper(QSettings
+         acc->setUrl(urlConfig.toUrl());
+     }
+ 
+-    // Migrate to webflow
+-    if (authType == QLatin1String("http")) {
+-        authType = "webflow";
+-        settings.setValue(QLatin1String(authTypeC), authType);
+-
+-        foreach(QString key, settings.childKeys()) {
+-            if (!key.startsWith("http_"))
+-                continue;
+-            auto newkey = QString::fromLatin1("webflow_").append(key.mid(5));
+-            settings.setValue(newkey, settings.value((key)));
+-            settings.remove(key);
+-        }
+-    }
+-
+     qCInfo(lcAccountManager) << "Account for" << acc->url() << "using auth type" << authType;
+ 
+     acc->_serverVersion = settings.value(QLatin1String(serverVersionC)).toString();
