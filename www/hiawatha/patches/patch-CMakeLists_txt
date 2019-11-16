@@ -1,0 +1,33 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/11/16 10:29:32 bket Exp $
+
+Don't install Let's Encrypt script, which relies on PHP. We have acme-client(1)
+in base, and several alternatives in ports.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -192,15 +192,15 @@ endforeach()
+ 
+ install(FILES extra/index.html DESTINATION ${WEBROOT_DIR})
+ 
+-if(ENABLE_TLS AND NOT CYGWIN)
+-	configure_file(extra/letsencrypt/lefh.in lefh)
+-	install(FILES ${PROJECT_BINARY_DIR}/lefh DESTINATION ${CMAKE_INSTALL_SBINDIR}
+-		PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+-	install(DIRECTORY extra/letsencrypt/letsencrypt DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/hiawatha)
+-	configure_file(extra/letsencrypt/letsencrypt.conf.in letsencrypt.conf)
+-	install(FILES ${PROJECT_BINARY_DIR}/letsencrypt.conf DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/hiawatha/letsencrypt)
+-	install(FILES man/lefh.1 DESTINATION ${CMAKE_INSTALL_FULL_MANDIR}/man1)
+-endif()
++#if(ENABLE_TLS AND NOT CYGWIN)
++#	configure_file(extra/letsencrypt/lefh.in lefh)
++#	install(FILES ${PROJECT_BINARY_DIR}/lefh DESTINATION ${CMAKE_INSTALL_SBINDIR}
++#		PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
++#	install(DIRECTORY extra/letsencrypt/letsencrypt DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/hiawatha)
++#	configure_file(extra/letsencrypt/letsencrypt.conf.in letsencrypt.conf)
++#	install(FILES ${PROJECT_BINARY_DIR}/letsencrypt.conf DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/hiawatha/letsencrypt)
++#	install(FILES man/lefh.1 DESTINATION ${CMAKE_INSTALL_FULL_MANDIR}/man1)
++#endif()
+ 
+ # Create directories
+ install(DIRECTORY DESTINATION ${LOG_DIR})

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_serverconfig_c,v 1.12 2018/09/20 04:29:51 bket Exp $
+$OpenBSD: patch-src_serverconfig_c,v 1.13 2019/11/16 10:29:32 bket Exp $
 Index: src/serverconfig.c
 --- src/serverconfig.c.orig
 +++ src/serverconfig.c
@@ -11,7 +11,7 @@ Index: src/serverconfig.c
  #define MAX_LENGTH_CONFIGLINE  1024
  #define MAX_CACHE_SIZE         1024
  #define MAX_UPLOAD_SIZE        2047
-@@ -300,8 +300,8 @@ t_config *default_config(void) {
+@@ -298,8 +298,8 @@ t_config *default_config(void) {
  	config->tomahawk_port      = NULL;
  #endif
  
