@@ -1,0 +1,11 @@
+$OpenBSD: patch-spooler_python_Makefile_am,v 1.1 2019/11/16 20:01:20 robert Exp $
+
+Index: spooler/python/Makefile.am
+--- spooler/python/Makefile.am.orig
++++ spooler/python/Makefile.am
+@@ -7,5 +7,3 @@ kopano_spoolerdir = ${datadir}/kopano-spooler/python
+ kopano_spooler_DATA = mapiplugin.py pluginmanager.py plugintemplates.py wraplogger.py zconfig.py
+ 
+ install-data-hook:
+-	mkdir -p ${DESTDIR}/${localstatedir}/lib/kopano/dagent/plugins/
+-	mkdir -p ${DESTDIR}/${localstatedir}/lib/kopano/spooler/plugins/

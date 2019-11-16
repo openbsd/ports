@@ -1,35 +1,14 @@
-$OpenBSD: patch-common_platform_linux_cpp,v 1.5 2018/12/20 10:01:18 robert Exp $
+$OpenBSD: patch-common_platform_linux_cpp,v 1.6 2019/11/16 20:01:20 robert Exp $
 
 Index: common/platform.linux.cpp
 --- common/platform.linux.cpp.orig
 +++ common/platform.linux.cpp
-@@ -29,7 +29,7 @@
- #else
- #	include <uuid.h>
- #endif
--#if defined(__GLIBC__) || defined(OPENBSD)
-+#if defined(__GLIBC__)
- #	include <execinfo.h>
- #	define WITH_BACKTRACE 1
- #endif
-@@ -84,6 +84,12 @@ void Sleep(unsigned int msec) {
- 
- namespace KC {
- 
-+#ifdef HAVE_ARC4RANDOM_BUF
-+void rand_get(char *p, int n)
-+{
-+	arc4random_buf(p, n);
-+}
-+#else
- static void rand_fail(void)
+@@ -93,7 +93,7 @@ void rand_get(char *p, int n)
  {
- 	fprintf(stderr, "Cannot access/use /dev/urandom, this is fatal (%s)\n", strerror(errno));
-@@ -114,6 +120,7 @@ void rand_get(char *p, int n)
- 	}
- 		close(fd);
- 	}
-+#endif
- 
- void rand_init() {
- 	if (rand_init_done)
+ 	getrandom(p, n, 0);
+ }
+-#elif defined(HAVE_ARCRANDOM4_BUF)
++#elif defined(HAVE_ARC4RANDOM_BUF)
+ void rand_get(char *p, int n)
+ {
+ 	arc4random_buf(p, n);

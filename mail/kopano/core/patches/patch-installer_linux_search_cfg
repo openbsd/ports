@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_search_cfg,v 1.3 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-installer_linux_search_cfg,v 1.4 2019/11/16 20:01:20 robert Exp $
 
 Index: installer/linux/search.cfg
 --- installer/linux/search.cfg.orig
@@ -27,4 +27,4 @@ Index: installer/linux/search.cfg
 +running_path = /var/empty
  
  # Limit the number of results returned (0 = don't limit)
- # Default: 0
+ #limit_results = 1000

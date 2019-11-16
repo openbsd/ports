@@ -1,14 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.16 2019/07/22 16:10:27 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.17 2019/11/16 20:01:20 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -109,14 +109,16 @@ abs_top_builddir=`pwd`
- ZCPPFLAGS=""
- AC_CANONICAL_HOST
- AS_CASE([$host_os],
--	[openbsd], [
-+	[openbsd*], [
+@@ -112,11 +112,13 @@ AS_CASE([$host_os],
+ 	[openbsd*], [
  		BUILDOS="openbsd"
  		ZCPPFLAGS="$ZCPPFLAGS -DOPENBSD"
 +		TINFO_LIB=""
@@ -21,7 +17,7 @@ Index: configure.ac
  		LN_TFSV="ln -Tfsv"
  	],
  	[*], [
-@@ -149,6 +151,7 @@ AC_SUBST([ZPHPCXXFLAGS])
+@@ -152,6 +154,7 @@ AC_SUBST([ZPHPCXXFLAGS])
  ZCPPFLAGS="$ZCPPFLAGS \
  	-I\${top_builddir}/common/include \
  	-I\${top_srcdir}/common/include \
@@ -29,7 +25,7 @@ Index: configure.ac
  	-I\${top_srcdir}/m4lcommon/include \
  	-I\${top_srcdir}/mapi4linux/include \
  	-I\${top_srcdir}/provider/common/include \
-@@ -166,7 +169,7 @@ ZCPPFLAGS="$ZCPPFLAGS $LFS_CFLAGS"
+@@ -169,7 +172,7 @@ ZCPPFLAGS="$ZCPPFLAGS $LFS_CFLAGS"
  
  AC_MSG_CHECKING([available C++ standard])
  cxxmode=""
@@ -47,20 +43,16 @@ Index: configure.ac
  		]
  	)
  	AC_CHECK_HEADERS([ncurses.h])
-@@ -280,7 +283,12 @@ AS_IF([test "$with_php" != "no"], [
- PKG_CHECK_MODULES([libHX], [libHX >= 1.10])
+@@ -281,7 +284,7 @@ PKG_CHECK_MODULES([libHX], [libHX >= 1.10])
  PKG_CHECK_MODULES([xapian], [xapian-core])
  PKG_CHECK_MODULES([XML2], [libxml-2.0])
-+
-+db_CPPFLAGS="-I/usr/local/include/db4"
-+CPPFLAGS="$CPPFLAGS $db_CPPFLAGS"
- AC_CHECK_HEADERS([db_cxx.h], [], [AC_MSG_ERROR([Berkeley DB C++ interface required])])
-+AC_SUBST([db_CPPFLAGS])
-+CPPFLAGS="$CPPFLAGS_system"
  
- # Checks for MySQL 4.1 or better
- AC_DEFUN([MYSQL_WITH_MYSQL_CONFIG],[
-@@ -406,7 +414,7 @@ PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 1.4.0], [], [
+-dbcxx_CPPFLAGS=""
++dbcxx_CPPFLAGS="-I/usr/local/include/db4"
+ dbcxx_LIBS="-ldb_cxx"
+ CPPFLAGS="$CPPFLAGS_system $dbcxx_CPPFLAGS"
+ AC_CHECK_HEADERS([db_cxx.h], [], [AC_MSG_ERROR([Berkeley DB C++ interface required])])
+@@ -413,7 +416,7 @@ PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 1.4.0], [], [
  #
  
  AC_CHECK_HEADERS([ldap.h],
@@ -69,7 +61,7 @@ Index: configure.ac
  	  CXXFLAGS="$CXXFLAGS -pthread"
  	  AC_MSG_CHECKING([for -lldap_r without LDAP_DEPRECATED])
  	  AC_LINK_IFELSE([ AC_LANG_SOURCE([#include <ldap.h>
-@@ -461,7 +469,7 @@ iconv_t i; i = iconv_open("", "");
+@@ -468,7 +471,7 @@ iconv_t i; i = iconv_open("", "");
  	[ AC_MSG_RESULT([yes]) ],
  	[ AC_MSG_RESULT([no])
  	  AC_MSG_CHECKING([for iconv in -liconv])
@@ -78,7 +70,7 @@ Index: configure.ac
  	  AC_LINK_IFELSE([ AC_LANG_SOURCE([
  #include <stdlib.h>
  #include <iconv.h>
-@@ -480,7 +488,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
+@@ -487,7 +490,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
  ])
  LIBS="$LIBS_system"
  AC_SEARCH_LIBS([clock_gettime], [rt], [
@@ -87,7 +79,7 @@ Index: configure.ac
  ])
  LIBS="$LIBS_system"
  AC_SUBST([CRYPT_LIBS])
-@@ -593,12 +601,14 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
+@@ -600,12 +603,14 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
  )
  AC_SUBST(GZ_LIBS)
  
@@ -104,12 +96,3 @@ Index: configure.ac
  
  # check epoll support
  AC_ARG_ENABLE([epoll], AS_HELP_STRING([--disable-epoll], [disable epoll and fallback to select]), [want_epoll=${enableval}], [want_epoll=yes])
-@@ -653,6 +663,8 @@ AS_IF([test "$have_icu" = 0], [
- 	AC_MSG_ERROR([ICU is required but not found])
- ])
- ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
-+
-+AC_CHECK_FUNCS([arc4random_buf])
- 
- # done testing C++ requirements
- AC_LANG_POP

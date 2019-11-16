@@ -1,0 +1,21 @@
+$OpenBSD: patch-php-ext_main_cpp,v 1.1 2019/11/16 20:01:20 robert Exp $
+
+Index: php-ext/main.cpp
+--- php-ext/main.cpp.orig
++++ php-ext/main.cpp
+@@ -46,15 +46,6 @@
+ // we need to include this in c++ space because php.h also includes it in
+ // 'extern "C"'-space which doesn't work in win32
+ #include <cmath>
+-#if __GNUC_PREREQ(5, 0) && !__GNUC_PREREQ(6, 0)
+-/*
+- * Bug/missing feature in preliminary C++ support in GNU libstdc++-v3 5.x;
+- * there is also no macro to distinguish between GNU libstdc++ and clang libc++,
+- * so that is what you get for clang defining __GNU*.
+- */
+-using std::isfinite;
+-using std::isnan;
+-#endif
+ 
+ extern "C" {
+ 	// Remove these defines to remove warnings

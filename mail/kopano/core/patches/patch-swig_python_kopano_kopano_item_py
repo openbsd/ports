@@ -1,4 +1,4 @@
-$OpenBSD: patch-swig_python_kopano_kopano_item_py,v 1.5 2019/05/09 14:52:33 robert Exp $
+$OpenBSD: patch-swig_python_kopano_kopano_item_py,v 1.6 2019/11/16 20:01:20 robert Exp $
 
 Index: swig/python/kopano/kopano/item.py
 --- swig/python/kopano/kopano/item.py.orig
@@ -9,5 +9,5 @@ Index: swig/python/kopano/kopano/item.py
  import traceback
 +from MAPI.Defs import bin2hex
  
- try:
-     import cPickle as pickle
+ import pickle
+ 

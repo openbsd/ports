@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/09/26 21:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/11/16 20:01:20 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -6,15 +6,10 @@ USE_LLD=	Yes
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
-PKGNAME-main=	kopano-core-${V}.${BUILD}
-PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
-
-REVISION-main=	1
-REVISION-mapi=	1
+PKGNAME-main=	kopano-core-${V}
+PKGNAME-mapi=	kopano-mapi-${V}
 
 CATEGORIES=	mail www productivity
-
-EXTRACT_SUFX =	.tar.xz
 
 SHARED_LIBS +=  mapi			  3.0 # 0.0
 SHARED_LIBS +=  kcarchiver                0.0 # 0.0
@@ -24,7 +19,6 @@ SHARED_LIBS +=  kcicalmapi                0.0 # 0.0
 SHARED_LIBS +=  kcindex                   0.0 # 0.0
 SHARED_LIBS +=  kcinetmapi                0.0 # 0.0
 SHARED_LIBS +=  kcpyplug                  0.0 # 0.0
-SHARED_LIBS +=  kcrosie                   0.0 # 0.0
 SHARED_LIBS +=  kcserver                  0.0 # 0.0
 SHARED_LIBS +=  kcsoap                    0.0 # 0.0
 SHARED_LIBS +=  kcutil                    0.0 # 0.0
@@ -95,7 +89,7 @@ WANTLIB-mapi += ical icalss mapi
 WANTLIB-mapi += xml2
 WANTLIB-mapi += ${LIBCXX}
 WANTLIB-mapi += icalvcal kcfreebusy kcicalmapi kcinetmapi
-WANTLIB-mapi += kcutil kcrosie tidy
+WANTLIB-mapi += kcutil tidy
 WANTLIB-mapi += HX curl jsoncpp nghttp2
 
 LIB_DEPENDS-mapi= ${BASE_PKGPATH}>=${V}
@@ -110,8 +104,9 @@ MODPY_ADJ_FILES=tools/python-scripts/optimize-imap.py \
 		ECtools/utils/kopano-mailbox-permissions \
 		ECtools/utils/kopano-set-oof
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
 
 CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include" \
 		PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \

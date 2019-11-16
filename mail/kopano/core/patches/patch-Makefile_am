@@ -1,0 +1,49 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2019/11/16 20:01:20 robert Exp $
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -212,7 +212,7 @@ kopano_dagent_LDADD = \
+ #
+ kopano_dbadm_SOURCES = ECtools/dbadm.cpp
+ kopano_dbadm_CPPFLAGS = ${AM_CPPFLAGS}
+-kopano_dbadm_LDADD = libkcutil.la libkcserver.la ${MYSQL_LIBS}
++kopano_dbadm_LDADD = libkcutil.la libkcserver.la ${MYSQL_LIBS} ${PROG_LIBS}
+ 
+ 
+ #
+@@ -322,7 +322,7 @@ kopano_server_SOURCES = \
+ 	provider/server/ECSoapServerConnection.cpp provider/server/ECSoapServerConnection.h \
+ 	provider/server/ECThreadManager.cpp provider/server/ECThreadManager.h
+ kopano_server_LDADD = \
+-	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} \
++	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} ${PROG_LIBS} \
+ 	${clock_LIBS} ${CRYPTO_LIBS} ${icu_uc_LIBS} ${icu_i18n_LIBS} ${DL_LIBS} \
+ 	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
+ kopano_server_LDFLAGS = ${AM_LDFLAGS}
+@@ -669,6 +669,7 @@ libkcutil_la_LIBADD = \
+ if HAVE_TIDY
+ libkcutil_la_LIBADD += -ltidy
+ endif
++libkcutil_la_LIBADD += -lkvm
+ libkcutil_la_SYFLAGS = -Wl,--version-script=common/libkcutil.sym
+ libkcutil_la_LDFLAGS = ${AM_LDFLAGS} -no-undefined \
+ 	${libkcutil_la_SYFLAGS${NO_VSYM}}
+@@ -784,7 +785,7 @@ tests_readflag_LDADD = libmapi.la libkcutil.la
+ tests_rosie_SOURCES = tests/rosie.cpp
+ tests_rosie_LDADD = libkcutil.la
+ tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
+-tests_zcpmd5_LDADD = ${CRYPTO_LIBS} libkcutil.la
++tests_zcpmd5_LDADD = ${CRYPTO_LIBS} ${PROG_LIBS} libkcutil.la
+ 
+ 
+ #
+@@ -941,7 +942,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
+ 
+ .PHONY: source-moved-check
+ source-moved-check:
+-	@${top_srcdir}/pwdcheck.sh "${abs_top_builddir}"
++	@${top_srcdir}/pwdcheck.sh "${abs_top_builddir}" || true
+ 
+ .version:
+ 	echo "${PACKAGE_VERSION}" >$@

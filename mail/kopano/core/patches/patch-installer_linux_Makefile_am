@@ -1,0 +1,13 @@
+$OpenBSD: patch-installer_linux_Makefile_am,v 1.1 2019/11/16 20:01:20 robert Exp $
+
+Index: installer/linux/Makefile.am
+--- installer/linux/Makefile.am.orig
++++ installer/linux/Makefile.am
+@@ -66,7 +66,6 @@ kopano-statsd.service: kopano-statsd.service.in ${top_
+ if ENABLE_BASE
+ install-data-hook:
+ 	install -d -m 755 ${DESTDIR}/${sysconfdir}/kopano/license
+-	mkdir -p ${DESTDIR}${localstatedir}/lib/kopano/empty
+ 	mv -v ${DESTDIR}${sysconf_rotatedir}/kopano.logrotate ${DESTDIR}${sysconf_rotatedir}/kopano
+ 
+ uninstall-local:

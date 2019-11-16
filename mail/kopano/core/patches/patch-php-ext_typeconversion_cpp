@@ -1,0 +1,16 @@
+$OpenBSD: patch-php-ext_typeconversion_cpp,v 1.1 2019/11/16 20:01:20 robert Exp $
+
+Index: php-ext/typeconversion.cpp
+--- php-ext/typeconversion.cpp.orig
++++ php-ext/typeconversion.cpp
+@@ -9,10 +9,6 @@
+ #include <mapiutil.h>
+ #include <kopano/timeutil.hpp>
+ #include "php-ext/phpconfig.h"
+-#if __GNUC_PREREQ(5, 0) && !__GNUC_PREREQ(6, 0)
+-using std::isfinite;
+-using std::isnan;
+-#endif
+ 
+ extern "C" {
+ 	// Remove these defines to remove warnings

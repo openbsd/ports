@@ -1,9 +1,9 @@
-$OpenBSD: patch-installer_linux_dagent_cfg,v 1.8 2018/10/02 10:49:47 robert Exp $
+$OpenBSD: patch-installer_linux_dagent_cfg,v 1.9 2019/11/16 20:01:20 robert Exp $
 
 Index: installer/linux/dagent.cfg
 --- installer/linux/dagent.cfg.orig
 +++ installer/linux/dagent.cfg
-@@ -118,16 +118,16 @@
+@@ -110,16 +110,16 @@
  #plugin_enabled = yes
  
  # Path to the dagent plugin manager

@@ -1,17 +1,45 @@
-$OpenBSD: patch-common_ECChannel_cpp,v 1.3 2019/07/22 16:10:27 robert Exp $
+$OpenBSD: patch-common_ECChannel_cpp,v 1.4 2019/11/16 20:01:20 robert Exp $
 
 Index: common/ECChannel.cpp
 --- common/ECChannel.cpp.orig
 +++ common/ECChannel.cpp
-@@ -791,6 +791,11 @@ static int ec_listen_inet(const char *szBind, uint16_t
- 			ec_log_warn("Unable to set reuseaddr socket option: %s",
- 				strerror(errno));
+@@ -672,9 +672,11 @@ static int ec_listen_generic(const struct ec_socket &s
+ 		}
+ 	}
+ 	int y = 1;
++#ifdef LINUX
+ 	if (sk.m_ai->ai_family == PF_INET6 &&
+ 	    setsockopt(fd, SOL_IPV6, IPV6_V6ONLY, &y, sizeof(y)) < 0)
+ 		ec_log_warn("K-1556: Unable to set IPV6_V6ONLY: %s", strerror(errno));
++#endif
+ 	if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, reinterpret_cast<const char *>(&y), sizeof(y)) < 0)
+ 		ec_log_warn("K-1557: Unable to set reuseaddr socket option: %s", strerror(errno));
+ #ifdef LINUX
+@@ -889,6 +891,7 @@ static int ec_fdtable_socket_ai(const ec_socket &sk)
+ 		if (ret < 0)
+ 			continue;
+ 		char ifnam[24];
++#ifdef LINUX
+ 		arglen = sizeof(ifnam);
+ 		ret = getsockopt(fd, SOL_SOCKET, SO_BINDTODEVICE, ifnam, &arglen);
+ 		if (ret != 0)
+@@ -897,6 +900,9 @@ static int ec_fdtable_socket_ai(const ec_socket &sk)
+ 			ifnam[arglen] = '\0';
+ 		else
+ 			ifnam[sizeof(ifnam)-1] = '\0';
++#else
++		ifnam[0] = '\0';
++#endif
+ 		struct sockaddr_storage addr{};
+ 		arglen = sizeof(addr);
+ 		ret = getsockname(fd, reinterpret_cast<struct sockaddr *>(&addr), &arglen);
+@@ -917,7 +923,8 @@ static int ec_fdtable_socket_ai(const ec_socket &sk)
  
-+		if (setsockopt(fd, SOL_SOCKET, SO_REUSEPORT,
-+		    reinterpret_cast<const char *>(&opt), sizeof(opt)) < 0)
-+			ec_log_warn("Unable to set reuseport socket option: %s",
-+				strerror(errno));
-+
- 		ret = bind(fd, sock_addr->ai_addr, sock_addr->ai_addrlen);
- 		if (ret < 0 && errno == EADDRINUSE) {
- 			/*
+ ec_socket::~ec_socket()
+ {
+-	freeaddrinfo(m_ai);
++	if (m_ai)
++		freeaddrinfo(m_ai);
+ 	if (m_fd >= 0)
+ 		close(m_fd);
+ }

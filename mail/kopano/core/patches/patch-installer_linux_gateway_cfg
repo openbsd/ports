@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_gateway_cfg,v 1.4 2019/06/29 13:52:11 robert Exp $
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.5 2019/11/16 20:01:20 robert Exp $
 
 Index: installer/linux/gateway.cfg
 --- installer/linux/gateway.cfg.orig
@@ -14,5 +14,5 @@ Index: installer/linux/gateway.cfg
 -#run_as_group = kopano
 +#run_as_group = _kopano
  
- # create a pid file for stopping the service via the init.d scripts
+ # create a pid file
  #pid_file = /var/run/kopano/gateway.pid
