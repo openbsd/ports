@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1151 2019/11/13 14:49:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1152 2019/11/16 10:32:11 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -290,6 +290,7 @@
      SUBDIR += netpipes
      SUBDIR += netrate
      SUBDIR += netsed
+     SUBDIR += nextcloudclient
      SUBDIR += nfdump
      SUBDIR += nfsen
      SUBDIR += ngircd
