@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2019/09/05 21:01:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.40 2019/11/16 17:43:48 ajacoutot Exp $
 %%old%%
 %%stable%%
 @bin bin/rsvg-convert
@@ -7,9 +7,9 @@ include/librsvg-2.0/librsvg/
 include/librsvg-2.0/librsvg/librsvg-features.h
 include/librsvg-2.0/librsvg/rsvg-cairo.h
 include/librsvg-2.0/librsvg/rsvg.h
-lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
 lib/girepository-1.0/Rsvg-2.0.typelib
-lib/librsvg-2.a
+@static-lib lib/librsvg-2.a
 lib/librsvg-2.la
 @lib lib/librsvg-2.so.${LIBrsvg-2_VERSION}
 lib/pkgconfig/librsvg-2.0.pc
