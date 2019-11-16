@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2019/11/12 09:55:51 tb Exp $
+# $OpenBSD: Makefile,v 1.160 2019/11/16 10:15:00 rsadowski Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,13 +25,13 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		20
-REVISION-mysql =	6
+REVISION-main =		21
+REVISION-mysql =	7
 REVISION-postgresql =	6
 REVISION-sqlite2 =	6
 REVISION-tds =		6
 REVISION-debug =	3
-REVISION-examples =	7
+REVISION-examples =	8
 REVISION-html =		3
 
 # XXX qmake include parser is bogus
@@ -153,7 +153,7 @@ LIB_DEPENDS =
 WANTLIB =
 RUN_DEPENDS =
 
-commonWANTLIB =		c pthread GL iconv intl m ${COMPILER_LIBCXX}
+commonWANTLIB =		c pthread GL m ${COMPILER_LIBCXX}
 
 sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql ${COMPILER_LIBCXX} pthread
 
@@ -164,7 +164,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/libmng \
 			multimedia/gstreamer-0.10/plugins-base \
 			graphics/png
-WANTLIB-main =		${commonWANTLIB} jpeg mng \
+WANTLIB-main =		${commonWANTLIB} iconv intl jpeg mng \
 			lcms tiff gobject-2.0 gstvideo-0.10 \
 			gstbase-0.10 gstreamer-0.10 xml2 \
 			gobject-2.0 gmodule-2.0 gstinterfaces-0.10 \
@@ -180,8 +180,7 @@ RUN_DEPENDS-main +=	textproc/icu4c
 
 LIB_DEPENDS-mysql =	${BUILD_PKGPATH} \
 			databases/mariadb
-WANTLIB-mysql =		${sqlWANTLIB} \
-			crypto ssl z mysqlclient_r
+WANTLIB-mysql =		${sqlWANTLIB} mariadb
 
 
 LIB_DEPENDS-postgresql =${BUILD_PKGPATH} \
