@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/05 13:07:48 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/16 20:01:45 robert Exp $
 
 COMMENT=	next generation web interface for Kopano
 
-WAPP_VERSION=	3.5.8
+WAPP_VERSION=	3.5.12
+https://download.kopano.io/community/webapp:/webapp-3.5.12.2508%2B1444.950e8c4-RHEL_7-noarch.tar.gz
 
 PLUGINS_WITH_DEFCONF= \
 		contactfax-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		desktopnotifications-2.0.3.23-31.6 \
-		filepreviewer-2.2.0.26-17.7 \
+		desktopnotifications-2.0.3.40-54.1 \
+		filepreviewer-2.2.0.26-21.2 \
 		gmaps-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		intranet-0.1-40.3 \
+		intranet-1.0.1.4-45.1 \
 		pimfolder-${WAPP_VERSION}.${MINOR}-${RPMVER} \
 		titlecounter-${WAPP_VERSION}.${MINOR}-${RPMVER}
 
@@ -18,8 +19,8 @@ PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 		folderwidgets-${WAPP_VERSION}.${MINOR}-${RPMVER} \
 		quickitems-${WAPP_VERSION}.${MINOR}-${RPMVER}
 
-MINOR=		2343
-RPMVER=		1316.1
+MINOR=		2508
+RPMVER=		1444.1
 PKGNAME=	kopano-webapp-${WAPP_VERSION}.${MINOR}
 
 EXTRACT_SUFX=	# empty
@@ -31,21 +32,20 @@ EDISTFILES+=    kopano-webapp-lang-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm
 EXTRACT_ONLY=   ${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES+=	kopano-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm \
-		kopano-webapp-plugin-spell-2.0.0.19-37.6.noarch.rpm \
-		kopano-webapp-plugin-spell-de-at-2.0.0.4-32.5.noarch.rpm \
-		kopano-webapp-plugin-spell-de-ch-2.0.0.5-31.6.noarch.rpm \
-		kopano-webapp-plugin-spell-de-de-2.0.0.3-32.6.noarch.rpm \
-		kopano-webapp-plugin-spell-en-gb-2.0.0.1-31.5.noarch.rpm \
-		kopano-webapp-plugin-spell-en-us-2.0.0.1-32.5.noarch.rpm \
-		kopano-webapp-plugin-spell-es-es-2.0.0.1-31.5.noarch.rpm \
-		kopano-webapp-plugin-spell-fr-fr-2.0.0.1-32.5.noarch.rpm \
-		kopano-webapp-plugin-spell-it-1.0.0-44.5.noarch.rpm \
-		kopano-webapp-plugin-spell-nl-2.0.0.1-33.5.noarch.rpm \
-		kopano-webapp-plugin-spell-pl-pl-2.0.0.0-37.5.noarch.rpm
-
-DISTFILES+=	kopano-webapp-plugin-files-2.1.6.320-217.1.noarch.rpm \
-		kopano-webapp-plugin-filesbackend-owncloud-2.1.1.87-68.6.noarch.rpm \
-		kopano-webapp-plugin-filesbackend-smb-2.1.1.50-52.6.noarch.rpm
+		kopano-webapp-plugin-spell-2.0.1.30-51.1.noarch.rpm \
+		kopano-webapp-plugin-spell-de-at-2.0.1.4-42.1.noarch.rpm \
+		kopano-webapp-plugin-spell-de-ch-2.0.1.5-38.1.noarch.rpm \
+		kopano-webapp-plugin-spell-de-de-2.0.1.3-39.1.noarch.rpm \
+		kopano-webapp-plugin-spell-en-gb-2.0.1.1-38.1.noarch.rpm \
+		kopano-webapp-plugin-spell-en-us-2.0.1.1-39.1.noarch.rpm \
+		kopano-webapp-plugin-spell-es-es-2.0.1.1-38.1.noarch.rpm \
+		kopano-webapp-plugin-spell-fr-fr-2.0.1.1-39.1.noarch.rpm \
+		kopano-webapp-plugin-spell-it-1.0.0-49.1.noarch.rpm \
+		kopano-webapp-plugin-spell-nl-2.0.1.1-40.1.noarch.rpm \
+		kopano-webapp-plugin-spell-pl-pl-2.0.0.0-42.1.noarch.rpm
+DISTFILES+=	kopano-webapp-plugin-files-3.0.0.8-296.1.noarch.rpm \
+		kopano-webapp-plugin-filesbackend-owncloud-3.0.0.5-104.1.noarch.rpm \
+		kopano-webapp-plugin-filesbackend-smb-3.0.0.1-69.1.noarch.rpm
 
 DISTFILES+=	${EDISTFILES}
 
