@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/10/31 22:54:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/16 18:25:15 ajacoutot Exp $
 
 COMMENT=	interactive accessibility explorer
 
 GNOME_PROJECT=	accerciser
 GNOME_VERSION=	3.34.1
+REVISION=	0
 
 # BSD 3-clause
 PERMIT_PACKAGE=	Yes
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	devel/appstream-glib \
 		x11/gtk+3
 
 RUN_DEPENDS= 	devel/ipython${MODPY_FLAVOR} \
+		devel/libwnck3 \
 		devel/py-gobject3${MODPY_FLAVOR} \
 		x11/py-xlib${MODPY_FLAVOR} \
 		x11/gnome/py-atspi \
