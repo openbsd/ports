@@ -1,5 +1,6 @@
-$OpenBSD: patch-modules_demux_mp4_libmp4_h,v 1.1 2017/05/22 10:22:25 espie Exp $
-C++11 rules
+$OpenBSD: patch-modules_demux_mp4_libmp4_h,v 1.2 2019/11/16 18:28:19 ajacoutot Exp $
+
+C++11 rules.
 
 Index: modules/demux/mp4/libmp4.h
 --- modules/demux/mp4/libmp4.h.orig

@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_codec_x264_c,v 1.4 2018/09/16 06:05:00 ajacoutot Exp $
+$OpenBSD: patch-modules_codec_x264_c,v 1.5 2019/11/16 18:28:19 ajacoutot Exp $
 
-x264: drop <148 build support and fix 10bit support
+x264: drop <148 build support and fix 10bit support.
 
 Index: modules/codec/x264.c
 --- modules/codec/x264.c.orig

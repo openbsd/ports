@@ -1,5 +1,6 @@
-$OpenBSD: patch-modules_gui_qt4_dialogs_messages_hpp,v 1.1 2017/05/22 10:22:25 espie Exp $
-Use qt4 atomics there, they're portable (taken from FreeBSD)
+$OpenBSD: patch-modules_gui_qt4_dialogs_messages_hpp,v 1.2 2019/11/16 18:28:19 ajacoutot Exp $
+
+Use Qt4 atomics there, they're portable (taken from FreeBSD).
 
 Index: modules/gui/qt4/dialogs/messages.hpp
 --- modules/gui/qt4/dialogs/messages.hpp.orig

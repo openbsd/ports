@@ -1,4 +1,5 @@
-$OpenBSD: patch-include_vlc_playlist_h,v 1.1 2017/05/22 10:22:25 espie Exp $
+$OpenBSD: patch-include_vlc_playlist_h,v 1.2 2019/11/16 18:28:19 ajacoutot Exp $
+
 Keep them outside of extern C, vlc_atomic.h will use std::atomic.
 
 Index: include/vlc_playlist.h
