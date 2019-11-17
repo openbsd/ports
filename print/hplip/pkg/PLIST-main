@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2018/10/31 14:14:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2019/11/17 20:42:44 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf ${PREFIX}/share/hplip/data/firmware
@@ -23,9 +23,9 @@ bin/hp-timedate
 bin/hp-uninstall
 bin/hp-unload
 bin/hp-upgrade
-lib/python${MODPY_VERSION}/site-packages/cupsext.so
-lib/python${MODPY_VERSION}/site-packages/hpmudext.so
-lib/python${MODPY_VERSION}/site-packages/pcardext.so
+@so lib/python${MODPY_VERSION}/site-packages/cupsext.so
+@so lib/python${MODPY_VERSION}/site-packages/hpmudext.so
+@so lib/python${MODPY_VERSION}/site-packages/pcardext.so
 share/doc/hplip/
 share/doc/hplip/COPYING
 share/doc/hplip/README_LIBJPG

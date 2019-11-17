@@ -1,9 +1,9 @@
-$OpenBSD: patch-scan_py,v 1.18 2019/02/24 10:40:43 ajacoutot Exp $
+$OpenBSD: patch-scan_py,v 1.19 2019/11/17 20:42:44 ajacoutot Exp $
 
 Index: scan.py
 --- scan.py.orig
 +++ scan.py
-@@ -1954,7 +1954,7 @@ try:
+@@ -1911,7 +1911,7 @@ try:
              elif d == 'print':
                  hp_print = utils.which("hp-print", True)
                  if not hp_print:

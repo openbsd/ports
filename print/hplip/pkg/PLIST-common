@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST-common,v 1.6 2018/09/04 12:46:20 espie Exp $
+@comment $OpenBSD: PLIST-common,v 1.7 2019/11/17 20:42:44 ajacoutot Exp $
 @conflict hplip-libs-*
 @conflict hplip-<3.13.7p4
 @pkgpath print/hplip,-libs
 @newgroup _cups:541
 @extraunexec rm -rf /var/log/hp/tmp/*
 @extraunexec rm -f /var/log/hp/* 2>/dev/null || true
-lib/libhpdiscovery.a
+@static-lib lib/libhpdiscovery.a
 lib/libhpdiscovery.la
 @lib lib/libhpdiscovery.so.${LIBhpdiscovery_VERSION}
-lib/libhpip.a
+@static-lib lib/libhpip.a
 lib/libhpip.la
 @lib lib/libhpip.so.${LIBhpip_VERSION}
-lib/libhpipp.a
+@static-lib lib/libhpipp.a
 lib/libhpipp.la
 @lib lib/libhpipp.so.${LIBhpipp_VERSION}
-lib/libhpmud.a
+@static-lib lib/libhpmud.a
 lib/libhpmud.la
 @lib lib/libhpmud.so.${LIBhpmud_VERSION}
 share/cups/drv/

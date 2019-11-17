@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-hpaio,v 1.6 2017/06/06 09:15:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpaio,v 1.7 2019/11/17 20:42:44 ajacoutot Exp $
 @conflict hplip-<3.13.7p2
-lib/python${MODPY_VERSION}/site-packages/scanext.so
-lib/sane/libsane-hpaio.so
+@so lib/python${MODPY_VERSION}/site-packages/scanext.so
+@so lib/sane/libsane-hpaio.so
 share/examples/hplip/sane.d/
 share/examples/hplip/sane.d/dll.d/
 share/examples/hplip/sane.d/dll.d/hpaio

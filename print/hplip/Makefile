@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2019/07/12 20:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.171 2019/11/17 20:42:44 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.19.1
+V=			3.19.11
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -85,10 +85,8 @@ RUN_DEPENDS-common=	# empty
 ### -hpaio
 WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
-WANTLIB-hpaio += hogweed hpip hpipp hpmud jpeg netsnmp nettle p11-kit
-WANTLIB-hpaio += sane tasn1 tiff usb-1.0 z hpdiscovery
-WANTLIB-hpaio += v4l1 v4l2 v4lconvert idn2 iconv intl execinfo
-WANTLIB-hpaio += unistring
+WANTLIB-hpaio += hogweed hpip hpipp hpmud netsnmp nettle p11-kit idn2
+WANTLIB-hpaio += sane tasn1 usb-1.0 z hpdiscovery iconv intl unistring
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -156,6 +154,8 @@ CONFIGURE_ARGS=		--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
 
 # XXX scan/sane/hpaio.c:422:8: error: void function 'sane_hpaio_close' should not return a value
 CFLAGS +=		-Wno-return-type
+
+DEBUG_PACKAGES=		-main -common -hpaio -hpcups -hpijs
 
 pre-configure:
 	find ${WRKSRC} -name \*.py | \
