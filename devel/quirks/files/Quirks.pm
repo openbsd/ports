@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.827 2019/11/16 17:48:37 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.828 2019/11/17 19:31:30 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1339,6 +1339,7 @@ my $obsolete_reason = {
 	'py-pdfminer' => 14,
 	'firewalk' => 0,
 	'goffice08' => 5,
+	'terraform-provider-terraform' => 3,
 };
 
 # reasons for obsolete packages
