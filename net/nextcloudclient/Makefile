@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $ #
+# $OpenBSD: Makefile,v 1.2 2019/11/17 06:59:30 kirby Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
@@ -13,8 +13,8 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync                   0.0 # 2.6.1
-SHARED_LIBS +=  ocsync                          0.0 # 2.6.1
+SHARED_LIBS +=  nextcloudsync	0.0 # 2.6.1
+SHARED_LIBS +=  ocsync		0.0 # 2.6.1
 
 MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 
@@ -25,8 +25,8 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets Qt5Xml c crypto m qt5keychain
 WANTLIB += sqlite3 ssl z lib/inotify/inotify
 
-MODULES =	devel/cmake \
-		x11/qt5
+MODULES =		devel/cmake \
+			x11/qt5
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
