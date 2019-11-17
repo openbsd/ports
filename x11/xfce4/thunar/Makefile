@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.77 2019/11/11 20:46:00 landry Exp $
+# $OpenBSD: Makefile,v 1.78 2019/11/17 17:47:44 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
-XFCE_VERSION=	1.8.10
+XFCE_VERSION=	1.8.11
 XFCE_PROJECT=	thunar
 PORTROACH=	limitw:1,even
 
