@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/29 13:22:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/17 20:19:54 ajacoutot Exp $
 
 # MASTER_SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
 PORTROACH=		ignore
-MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/09/83/26/f90d0f70b33a9d7d77a2408364c47fba1ccbf943/
+MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/10/33/90/13c8b802beeae061b6eb08248a0417be08484a26/
 
 COMMENT=		printer driver for Epson ESC/P-R inkjets
 
-DISTNAME=		epson-inkjet-printer-escpr-1.7.3
+DISTNAME=		epson-inkjet-printer-escpr-1.7.6
 EXTRACT_SUFX=		-1lsb3.2.tar.gz
 
 SHARED_LIBS +=	escpr                     0.0 # 1.0
@@ -31,13 +31,15 @@ LIB_DEPENDS=		devel/gettext \
 CONFIGURE_STYLE=	autoreconf
 AUTORECONF=		sh ${WRKSRC}/bootstrap
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
+AUTOMAKE_VERSION=	1.16
 
 CONFIGURE_ARGS=		--with-cupsfilterdir=${LOCALBASE}/libexec/cups/filter \
 			--with-cupsppddir=${LOCALBASE}/share/ppd
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # dos line-endings in files needing patch
 post-extract:
