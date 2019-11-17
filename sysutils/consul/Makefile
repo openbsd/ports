@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2019/09/22 07:55:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/17 18:55:25 ajacoutot Exp $
 
 # XXX no i386 equivalent to mem_openbsd_amd64.go
 ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		service discovery and configuration tool
 
-GH_TAGNAME=		v1.6.1
+GH_TAGNAME=		v1.6.2
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		consul
 
@@ -16,7 +16,7 @@ HOMEPAGE=		https://www.consul.io/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2.0
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c pthread
 
