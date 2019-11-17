@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/17 19:51:12 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	rubber stamps collection for Tux Paint
 
-DISTNAME=	tuxpaint-stamps-2014-08-23
-PKGNAME=	tuxpaint-stamps-20140823
-REVISION=	0
-EXTRACT_SUFX=	.zip
-WRKDIST=	${WRKDIR}/TuxPaint
+DISTNAME=	tuxpaint-stamps-2018.09.01
+PKGNAME=	tuxpaint-stamps-20180901
 
 CATEGORIES=	games graphics
 
@@ -21,16 +18,12 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
-NO_BUILD=	Yes
 NO_TEST=	Yes
 
 RUN_DEPENDS=	games/tuxpaint
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/tuxpaint/stamps/
-	cp -R ${WRKSRC}/data/stamps/* ${PREFIX}/share/tuxpaint/stamps/
-	@find ${PREFIX}/share/tuxpaint/stamps/ -type f ! -perm 644 -exec chmod 644 {} \;
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/tuxpaint/stamps/
-	rm -r ${PREFIX}/share/tuxpaint/stamps/cartoon/tux
+INSTALL_TARGET=	install-all
+
+FAKE_FLAGS=	DATA_PREFIX=${WRKINST}${PREFIX}/share/tuxpaint/
 
 .include <bsd.port.mk>
