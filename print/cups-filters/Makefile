@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.162 2019/10/19 10:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2019/11/17 18:42:21 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.25.11
+DISTNAME=	cups-filters-1.25.12
 
 CATEGORIES=	print
 
@@ -79,6 +79,8 @@ LIB_DEPENDS +=		databases/openldap
 .else
 CONFIGURE_ARGS +=	--disable-ldap
 .endif
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:
 	sed -i -e 's,/usr/share/cups,${LOCALBASE}/share/cups,g;' \
