@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.47 2019/11/13 15:24:11 fcambus Exp $
+# $OpenBSD: Makefile,v 1.48 2019/11/17 15:21:52 fcambus Exp $
 
 COMMENT=	tools to convert Xfig's .fig files  #'
 
 VERSION=	3.2.7b
 DISTNAME=	fig2dev-${VERSION}
+REVISION=	0
 EXTRACT_SUFX =	.tar.xz
 PKGNAME=	transfig-${VERSION}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
 HOMEPAGE=	https://xfig.org/
 
+BUILD_DEPENDS=	print/ghostscript/gnu
 LIB_DEPENDS=	graphics/png converters/libiconv
 RUN_DEPENDS=	print/ghostscript/gnu \
 		graphics/netpbm>=9.19
