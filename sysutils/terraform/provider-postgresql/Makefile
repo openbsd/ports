@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/18 23:38:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/17 19:30:19 ajacoutot Exp $
 
 PROVIDER=		postgresql
-GH_TAGNAME=		v0.4.0
+GH_TAGNAME=		v1.3.0
 
 .include <bsd.port.mk>

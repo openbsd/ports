@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/14 22:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/17 19:30:19 ajacoutot Exp $
 
 PROVIDER=		profitbricks
-GH_TAGNAME=		v0.1.2
-REVISION=		0
+GH_TAGNAME=		v1.4.4
 
 .include <bsd.port.mk>

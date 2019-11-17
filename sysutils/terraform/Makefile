@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/03/04 17:06:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2019/11/17 19:30:18 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += provider-alicloud
@@ -64,7 +64,6 @@
      SUBDIR += provider-spotinst
      SUBDIR += provider-statuscake
      SUBDIR += provider-template
-     SUBDIR += provider-terraform
      SUBDIR += provider-tls
      SUBDIR += provider-triton
      SUBDIR += provider-ultradns

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/14 22:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/17 19:30:20 ajacoutot Exp $
 
 PROVIDER=		vsphere
-GH_TAGNAME=		v0.4.2
-REVISION=		0
+GH_TAGNAME=		v1.13.0
 
 .include <bsd.port.mk>
