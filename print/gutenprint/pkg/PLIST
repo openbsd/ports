@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/01/22 01:00:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/11/17 20:05:49 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 @conflict foomatic-db-gutenprint-*
 @pkgpath print/gutenprint,-foomatic
@@ -32,7 +32,10 @@ include/gutenprint/util.h
 include/gutenprint/vars.h
 include/gutenprint/weave.h
 include/gutenprint/xml.h
-lib/libgutenprint.a
+lib/gutenprint/
+lib/gutenprint/${MAJOR_V}/
+lib/gutenprint/${MAJOR_V}/config.summary
+@static-lib lib/libgutenprint.a
 lib/libgutenprint.la
 @lib lib/libgutenprint.so.${LIBgutenprint_VERSION}
 lib/pkgconfig/gutenprint.pc
@@ -63,25 +66,6 @@ share/doc/gutenprint/gutenprint-users-manual.odt
 share/doc/gutenprint/gutenprint-users-manual.pdf
 share/doc/gutenprint/gutenprint.pdf
 share/doc/gutenprint/reference-html/
-share/doc/gutenprint/reference-html/book1.html
-share/doc/gutenprint/reference-html/c1714.html
-share/doc/gutenprint/reference-html/c193.html
-share/doc/gutenprint/reference-html/c1965.html
-share/doc/gutenprint/reference-html/c199.html
-share/doc/gutenprint/reference-html/c38.html
-share/doc/gutenprint/reference-html/c463.html
-share/doc/gutenprint/reference-html/c47.html
-share/doc/gutenprint/reference-html/docbook.css
-share/doc/gutenprint/reference-html/f14.html
-share/doc/gutenprint/reference-html/gpl-terms.html
-share/doc/gutenprint/reference-html/gpl.html
-share/doc/gutenprint/reference-html/ln10.html
-share/doc/gutenprint/reference-html/x1666.html
-share/doc/gutenprint/reference-html/x1731.html
-share/doc/gutenprint/reference-html/x270.html
-share/doc/gutenprint/reference-html/x66.html
-share/doc/gutenprint/reference-html/x78.html
-share/doc/gutenprint/reference-html/x952.html
 share/examples/gutenprint/
 share/examples/gutenprint/command.types
 @sample ${SYSCONFDIR}/cups/command.types
@@ -285,6 +269,9 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_13.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_130.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_131.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_132.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_133.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_134.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_135.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_14.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_15.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_16.xml

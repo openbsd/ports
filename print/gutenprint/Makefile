@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/11/17 20:05:49 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
-V=			5.3.1
+V=			5.3.3
 DISTNAME=		gutenprint-${V}
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,8 +21,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += avahi-client avahi-common c cups cupsimage curses dbus-1
-WANTLIB += ffi gmp gnutls hogweed iconv idn2 intl m nettle p11-kit
+WANTLIB += avahi-client avahi-common c cups curses dbus-1 ffi
+WANTLIB += gmp gnutls hogweed iconv idn2 intl m nettle p11-kit
 WANTLIB += pthread readline tasn1 unistring usb-1.0 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimp-print/}
@@ -53,6 +53,8 @@ CONFIGURE_ENV+=		ac_cv_path_$i=""
 
 MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
 FAKE_FLAGS=		cups_conf_serverroot=${PREFIX}/share/examples/gutenprint
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
