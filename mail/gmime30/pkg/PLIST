@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/11/27 09:00:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/11/17 18:21:23 ajacoutot Exp $
 include/gmime-3.0/
 include/gmime-3.0/gmime/
 include/gmime-3.0/gmime/gmime-application-pkcs7-mime.h
@@ -65,7 +65,7 @@ include/gmime-3.0/gmime/gmime.h
 include/gmime-3.0/gmime/internet-address.h
 lib/girepository-1.0/
 lib/girepository-1.0/GMime-3.0.typelib
-lib/libgmime-3.0.a
+@static-lib lib/libgmime-3.0.a
 lib/libgmime-3.0.la
 @lib lib/libgmime-3.0.so.${LIBgmime-3.0_VERSION}
 lib/pkgconfig/gmime-3.0.pc
