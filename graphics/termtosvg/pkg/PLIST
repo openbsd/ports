@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/07/08 08:49:20 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/11/17 18:27:58 fcambus Exp $
 bin/termtosvg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -26,11 +26,17 @@ lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/dracula.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8_play.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8_single_loop.svg
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/powershell.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/progress_bar.svg
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/putty.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/solarized_dark.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/solarized_light.svg
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/terminal_app.svg
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/ubuntu.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/window_frame.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/window_frame_js.svg
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/window_frame_powershell.svg
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/xterm.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/main.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/term.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/tests/
