@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/04 12:46:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/11/17 09:28:23 stsp Exp $
 @bin bin/kcaldav.passwd
 include/libkcaldav.h
 lib/libkcaldav.a
@@ -7,15 +7,15 @@ lib/libkcaldav.a
 @man man/man8/kcaldav.8
 share/doc/pkg-readmes/${PKGSTEM}
 @cwd /var/www
+@mode 775
 @owner www
 @group www
-@mode 775
-@dir caldav/
+caldav/
+@mode
 @owner
 @group
-@mode
 @bin cgi-bin/kcaldav
-@bin cgi-bin/kcaldav.cgi
+cgi-bin/kcaldav.cgi
 htdocs/kcaldav/
 htdocs/kcaldav/collection.html
 htdocs/kcaldav/collection.min.js

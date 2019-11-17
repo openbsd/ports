@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/11/17 09:28:23 stsp Exp $
 
 COMMENT =		a simple, safe, and minimal CalDAV server
 
-DISTNAME =		kcaldav-0.1.9
+DISTNAME =		kcaldav-0.1.11
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kcaldav/
@@ -35,5 +35,8 @@ NO_TEST =		Yes
 
 ALL_TARGET =		all libkcaldav.a
 INSTALL_TARGET =	install installcgi
+
+post-install:
+	ln -s kcaldav ${WRKINST}${VARBASE}/www/cgi-bin/kcaldav.cgi
 
 .include <bsd.port.mk>

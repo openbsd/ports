@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.4 2018/04/08 08:29:22 stsp Exp $
+$OpenBSD: patch-Makefile,v 1.5 2019/11/17 09:28:23 stsp Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -12,5 +12,5 @@ Index: Makefile
 +#HTDOCSPREFIX	 = /var/www/vhosts/www.bsd.lv/htdocs/kcaldav
 +HTDOCSPREFIX	 = /var/www/htdocs/kcaldav
  
- # This is the relative URI of the server executable.
- CGIURI		 = /cgi-bin/kcaldav.cgi
+ # File-system directory where "installwww" installs.
+ # You probably aren't going to use that!
