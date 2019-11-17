@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_milkyplay_XModule_h,v 1.1 2019/11/17 19:01:53 fcambus Exp $
+
+Fixes for CVE-2019-14496 and CVE-2019-14497.
+
+- Stack-based buffer overflow in LoaderXM::load()
+- Heap-based buffer overflow in ModuleEditor::convertInstrument()
+
+Upstream commit ea7772a3fae0a9dd0a322e8fec441d15843703b7.
+
+Index: src/milkyplay/XModule.h
+--- src/milkyplay/XModule.h.orig
++++ src/milkyplay/XModule.h
+@@ -40,6 +40,8 @@
+ 
+ #define MP_MAXTEXT 32
+ #define MP_MAXORDERS 256
++#define MP_MAXINS 255
++#define MP_MAXINSSAMPS 96
+ 
+ struct TXMHeader 
+ {

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_milkyplay_LoaderS3M_cpp,v 1.1 2019/11/17 19:01:53 fcambus Exp $
+
+Fix for CVE-2019-14464.
+
+- Heap-based buffer overflow in XMFile::read()
+
+Upstream commit fd607a3439fcdd0992e5efded3c16fc79c804e34.
+
+Index: src/milkyplay/LoaderS3M.cpp
+--- src/milkyplay/LoaderS3M.cpp.orig
++++ src/milkyplay/LoaderS3M.cpp
+@@ -340,7 +340,11 @@ mp_sint32 LoaderS3M::load(XMFileBase& f, XModule* modu
+ 		return MP_OUT_OF_MEMORY;
+ 	
+ 	header->insnum = f.readWord(); // number of instruments
+-	header->patnum = f.readWord(); // number of patterns	
++	if (header->insnum > MP_MAXINS)
++		return MP_LOADER_FAILED;
++	header->patnum = f.readWord(); // number of patterns
++	if (header->patnum > 256)
++		return MP_LOADER_FAILED;
+ 	
+ 	mp_sint32 flags = f.readWord(); // st3 flags	
+ 
