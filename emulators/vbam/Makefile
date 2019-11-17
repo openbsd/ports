@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/11/11 11:13:13 fcambus Exp $
+# $OpenBSD: Makefile,v 1.34 2019/11/17 00:14:36 cwen Exp $
 
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
 BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
@@ -42,7 +42,7 @@ CONFIGURE_ARGS +=	-DENABLE_LTO=OFF
 # -DCMAKE_ASM_NASM_COMPILER=yasm, but then linking fails.
 CONFIGURE_ARGS +=	-DENABLE_ASM=OFF
 
-CXXFLAGS +=		-Wno-c++11-narrowing -I${X11BASE}/include
+CXXFLAGS +=		-I${X11BASE}/include
 
 NO_TEST =		Yes
 

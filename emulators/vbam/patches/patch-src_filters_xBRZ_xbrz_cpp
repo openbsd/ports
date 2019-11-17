@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_filters_xBRZ_xbrz_cpp,v 1.1 2019/11/17 00:14:36 cwen Exp $
+
+Fix "error: impossible constraint in 'asm'" on !x86
+
+Index: src/filters/xBRZ/xbrz.cpp
+--- src/filters/xBRZ/xbrz.cpp.orig
++++ src/filters/xBRZ/xbrz.cpp
+@@ -66,7 +66,7 @@ uint32_t gradientARGB(uint32_t pixFront, uint32_t pixB
+ 
+ inline double fastSqrt(double n)
+ {
+-#ifdef __GNUC__ || __clang__ || __MINGW64_VERSION_MAJOR || __MINGW32_MAJOR_VERSION
++#if defined(__x86_64__) || defined(__i386__)
+     __asm__ ("fsqrt" : "+t" (n));
+     return n;
+ #elif _MSC_VER && _M_IX86
