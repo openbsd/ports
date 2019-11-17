@@ -1,4 +1,4 @@
-$OpenBSD: patch-update-mime-database_c,v 1.8 2019/03/25 15:49:22 robert Exp $
+$OpenBSD: patch-update-mime-database_c,v 1.9 2019/11/17 19:38:02 ajacoutot Exp $
 
 - unveil: unveil the provided mime_dir
 - pledge: https://bugs.freedesktop.org/show_bug.cgi?id=104368
@@ -6,7 +6,7 @@ $OpenBSD: patch-update-mime-database_c,v 1.8 2019/03/25 15:49:22 robert Exp $
 Index: update-mime-database.c
 --- update-mime-database.c.orig
 +++ update-mime-database.c
-@@ -2164,6 +2164,11 @@ static void check_in_path_xdg_data(const char *mime_pa
+@@ -2165,6 +2165,11 @@ static void check_in_path_xdg_data(const char *mime_pa
  
  	path = g_path_get_dirname(mime_path);
  
@@ -18,7 +18,7 @@ Index: update-mime-database.c
  	if (stat(path, &path_info))
  	{
  		g_warning("Can't stat '%s' directory: %s",
-@@ -2188,12 +2193,23 @@ static void check_in_path_xdg_data(const char *mime_pa
+@@ -2189,12 +2194,23 @@ static void check_in_path_xdg_data(const char *mime_pa
  	
  	for (i = 0; i < n; i++)
  	{
@@ -42,7 +42,7 @@ Index: update-mime-database.c
  	if (i == n)
  	{
  		g_printerr(_("\nNote that '%s' is not in the search path\n"
-@@ -3682,6 +3698,16 @@ int main(int argc, char **argv)
+@@ -3685,6 +3701,16 @@ int main(int argc, char **argv)
  	LIBXML_TEST_VERSION;
  
  	mime_dir = argv[optind];

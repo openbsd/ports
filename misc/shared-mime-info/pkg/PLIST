@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.36 2018/07/30 08:34:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2019/11/17 19:38:02 ajacoutot Exp $
 @define-tag update-mime-database at-end %D/bin/update-mime-database %D/share/mime
 @tag update-mime-database
 @unexec-delete find %D/share/mime/* -maxdepth 0 -type d ! -name packages -exec rm -rf '{}' \+
 @unexec-delete find %D/share/mime/ -type f ! -name freedesktop.org.xml -exec rm -f '{}' \+
 @bin bin/update-mime-database
 @man man/man1/update-mime-database.1
+share/locale/af/LC_MESSAGES/shared-mime-info.mo
 share/locale/ar/LC_MESSAGES/shared-mime-info.mo
 share/locale/as/LC_MESSAGES/shared-mime-info.mo
 share/locale/ast/LC_MESSAGES/shared-mime-info.mo
@@ -49,6 +50,9 @@ share/locale/ka/LC_MESSAGES/shared-mime-info.mo
 share/locale/kk/LC_MESSAGES/shared-mime-info.mo
 share/locale/kn/LC_MESSAGES/shared-mime-info.mo
 share/locale/ko/LC_MESSAGES/shared-mime-info.mo
+share/locale/ky/
+share/locale/ky/LC_MESSAGES/
+share/locale/ky/LC_MESSAGES/shared-mime-info.mo
 share/locale/lt/LC_MESSAGES/shared-mime-info.mo
 share/locale/lv/LC_MESSAGES/shared-mime-info.mo
 share/locale/ml/LC_MESSAGES/shared-mime-info.mo
