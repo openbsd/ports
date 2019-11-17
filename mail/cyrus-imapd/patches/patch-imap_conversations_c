@@ -1,11 +1,11 @@
-$OpenBSD: patch-imap_conversations_c,v 1.1 2018/05/18 11:16:43 ajacoutot Exp $
+$OpenBSD: patch-imap_conversations_c,v 1.2 2019/11/17 17:54:28 ajacoutot Exp $
 
 64 bit time_t
 
 Index: imap/conversations.c
 --- imap/conversations.c.orig
 +++ imap/conversations.c
-@@ -428,7 +428,7 @@ static int _conversations_set_key(struct conversations
+@@ -429,7 +429,7 @@ static int _conversations_set_key(struct conversations
          if (i) buf_putc(&buf, ',');
          buf_printf(&buf, CONV_FMT, cid);
      }

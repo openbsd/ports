@@ -1,0 +1,16 @@
+$OpenBSD: patch-imap_tls_c,v 1.4 2019/11/17 17:54:28 ajacoutot Exp $
+
+SSL_OP_NO_TLSv1_3 is not supported with LibreSSL.
+
+Index: imap/tls.c
+--- imap/tls.c.orig
++++ imap/tls.c
+@@ -739,7 +739,7 @@ EXPORTED int     tls_init_serverengine(const char *ide
+     const char *tls_versions = config_getstring(IMAPOPT_TLS_VERSIONS);
+ 
+     if (strstr(tls_versions, "tls1_3") == NULL) {
+-#if (OPENSSL_VERSION_NUMBER >= 0x1010100fL)
++#if (OPENSSL_VERSION_NUMBER >= 0x1010100fL) && !defined(LIBRESSL_VERSION_NUMBER)
+         //syslog(LOG_DEBUG, "TLS server engine: Disabled TLSv1.3");
+         off |= SSL_OP_NO_TLSv1_3;
+ #else

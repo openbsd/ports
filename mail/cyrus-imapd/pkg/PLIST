@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2019/08/03 10:41:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/11/17 17:54:28 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -180,16 +180,16 @@ include/cyrus/tok.h
 include/cyrus/vparse.h
 include/cyrus/wildmat.h
 include/cyrus/xmalloc.h
-lib/libcyrus.a
+@static-lib lib/libcyrus.a
 lib/libcyrus.la
 @lib lib/libcyrus.so.${LIBcyrus_VERSION}
-lib/libcyrus_imap.a
+@static-lib lib/libcyrus_imap.a
 lib/libcyrus_imap.la
 @lib lib/libcyrus_imap.so.${LIBcyrus_imap_VERSION}
-lib/libcyrus_min.a
+@static-lib lib/libcyrus_min.a
 lib/libcyrus_min.la
 @lib lib/libcyrus_min.so.${LIBcyrus_min_VERSION}
-lib/libcyrus_sieve.a
+@static-lib lib/libcyrus_sieve.a
 lib/libcyrus_sieve.la
 @lib lib/libcyrus_sieve.so.${LIBcyrus_sieve_VERSION}
 lib/pkgconfig/libcyrus.pc
@@ -213,10 +213,10 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/SIEVE/managesieve.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.so
 @man man/man1/cyradm.1
 @man man/man3p/Cyrus::Annotator::Daemon.3p
 @man man/man3p/Cyrus::Annotator::Message.3p
@@ -421,6 +421,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.10.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.11.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.12.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.4.html
