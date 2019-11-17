@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.23 2019/11/02 09:38:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/11/17 20:03:45 ajacoutot Exp $
 @bin bin/deja-dup
 lib/deja-dup/
-lib/deja-dup/libdeja.so
-lib/deja-dup/libwidgets.so
-lib/nautilus/extensions-3.0/libdeja-dup.so
+@so lib/deja-dup/libdeja.so
+@so lib/deja-dup/libwidgets.so
+@so lib/nautilus/extensions-3.0/libdeja-dup.so
 libexec/deja-dup/
 @bin libexec/deja-dup/deja-dup-monitor
 libexec/deja-dup/duplicity

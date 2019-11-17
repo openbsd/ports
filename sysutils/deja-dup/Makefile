@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2019/11/02 09:38:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2019/11/17 20:03:45 ajacoutot Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 
-GNOME_VERSION=		40.2
+GNOME_VERSION=		40.4
 GNOME_PROJECT=		deja-dup
 # override gnome MODULE
 EXTRACT_SUFX=		.tar.gz
@@ -33,6 +33,8 @@ RUN_DEPENDS=		sysutils/duplicity
 
 LIB_DEPENDS=		x11/gnome/nautilus \
 			x11/gnome/online-accounts
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/deja-dup
