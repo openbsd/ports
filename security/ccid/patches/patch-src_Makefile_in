@@ -1,8 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.10 2017/06/06 14:58:58 dcoppa Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.11 2019/11/17 13:11:58 kn Exp $
+
+- avoid udev
+- fix examples directory
+
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -486,7 +486,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
+@@ -517,7 +517,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
  	towitoko/COPYING towitoko/README openct/LICENSE openct/README \
  	convert_version.pl 92_pcscd_ccid.rules
  
@@ -10,19 +14,19 @@ Index: src/Makefile.in
  DISTCLEANFILES = tokenparser.c Info.plist
  all: all-am
  
-@@ -1193,13 +1192,12 @@ install_ccid: libccid.la Info.plist
- 	$(mkinstalldirs) $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/
- 	cp Info.plist $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/
- 	cp .libs/$(CCID_LIB) $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/$(CCID_LIB)
+@@ -1299,13 +1298,12 @@ install_ccid: libccid.la Info.plist
+ 	$(mkinstalldirs) "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/"
+ 	cp Info.plist "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/"
+ 	cp .libs/$(CCID_LIB) "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/$(CCID_LIB)"
 -	$(INSTALL_UDEV_RULE_FILE)
  
  install_ccidtwin: libccidtwin.la
- 	$(mkinstalldirs) $(DESTDIR)$(ccidtwindir)
- 	cp .libs/$(CCIDTWIN_LIB) $(DESTDIR)$(ccidtwindir)/$(CCIDTWIN_LIB)
--	$(mkinstalldirs) $(DESTDIR)/$(serialconfdir) ; \
--		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > $(DESTDIR)/$(serialconfdir)/libccidtwin
-+	$(mkinstalldirs) $(DESTDIR)$(datadir)/examples/ccid ; \
-+		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > $(DESTDIR)$(datadir)/examples/ccid/libccidtwin
+ 	$(mkinstalldirs) "$(DESTDIR)$(ccidtwindir)"
+ 	cp .libs/$(CCIDTWIN_LIB) "$(DESTDIR)$(ccidtwindir)/$(CCIDTWIN_LIB)"
+-	$(mkinstalldirs) "$(DESTDIR)/$(serialconfdir)" ; \
+-		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > "$(DESTDIR)/$(serialconfdir)/libccidtwin"
++	$(mkinstalldirs) "$(DESTDIR)$(datadir)/examples/ccid" ; \
++		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > "$(DESTDIR)$(datadir)/examples/ccid/libccidtwin"
  
  # do not uninstall the serial driver by default
  # use explicitely 'make uninstall_ccidtwin'
