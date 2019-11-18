@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/11/18 12:08:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2019/11/18 12:08:53 sthen Exp $
 
 COMMENT=	free audio editor
 
@@ -74,18 +74,19 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
 			${WRKSRC}/lib-src/sbsms \
 			${WRKSRC}/lib-src/libnyquist
 
-CONFIGURE_ARGS=		--enable-unicode \
-			--enable-ladspa \
+CONFIGURE_ARGS=		--enable-ladspa \
 			--enable-nyquist \
-			--with-lib-preferences=system \
-			--with-libsndfile=system \
+			--enable-unicode \
 			--with-expat=system \
 			--with-lame=system \
-			--with-libsoxr=system \
-			--with-libvorbis=system \
-			--with-libmad=system \
+			--with-lib-preferences=system \
 			--with-libflac=system \
 			--with-libid3tag=system \
+			--with-libmad=system \
+			--with-libsndfile=system \
+			--with-libsoxr=system \
+			--with-libvamp=system \
+			--with-libvorbis=system \
 			--with-lv2=local \
 			--with-midi=yes \
 			--with-portaudio=system \
@@ -93,12 +94,11 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--with-sbsms=local \
 			--with-soundtouch=system \
 			--with-widgetextra=local \
-			--without-libtwolame \
 			--without-ffmpeg \
-			--without-redland \
 			--without-liblrdf \
+			--without-libtwolame \
 			--without-portmixer \
-			--with-libvamp=system
+			--without-redland
 
 .if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS+=	--disable-sse
