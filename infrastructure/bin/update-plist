@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.179 2019/11/11 19:00:27 espie Exp $
+# $OpenBSD: update-plist,v 1.180 2019/11/18 15:54:48 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1400,14 +1400,15 @@ sub process_next_subpackage
 	my $pkg = shift @ARGV;
 
 	$r->olist->set_pkgname($pkg);
-	$r->nlist->set_pkgname($pkg);
 	$self->{state}->say("Reading existing plist for #1", $pkg) 
 	    unless $self->{state}{quiet};
 	$r->read_all_fragments($s, $r->olist);
+	push(@{$self->{lists}}, $r);
+
+	$r->nlist->set_pkgname($pkg);
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
 	$r->add_extra_info($r->olist, $s);
-	push(@{$self->{lists}}, $r);
 }
 
 sub parse_args
