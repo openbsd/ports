@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2019/11/04 18:37:06 bket Exp $
+# $OpenBSD: Makefile,v 1.47 2019/11/18 20:59:36 sthen Exp $
 
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.0.31
+GH_TAGNAME =	2.0.33
 
 CATEGORIES =	net
 
@@ -19,7 +19,6 @@ WANTLIB =	c pthread
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
-NO_TEST =	Yes
 
 INSTDIR =	${PREFIX}/share/examples/dnscrypt-proxy
 
@@ -28,6 +27,9 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC}/dnscrypt-proxy && ${MODGO_CMD} build
+
+do-test:
+	cd ${WRKSRC}/dnscrypt-proxy && ${MODGO_CMD} test
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnscrypt-proxy/dnscrypt-proxy ${PREFIX}/bin/
