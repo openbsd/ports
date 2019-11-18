@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/18 04:41:13 kmos Exp $
 
 COMMENT =		Python module to parse ISO 8601 dates
 
@@ -21,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-do-test: fake
+do-test:
 	cd ${WRKSRC}; LC_ALL=C \
 	    PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 	    py.test${MODPY_BIN_SUFFIX} --verbose iso8601
