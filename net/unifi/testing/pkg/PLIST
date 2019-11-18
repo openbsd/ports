@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/10/16 19:57:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/11/18 21:31:11 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -224,7 +224,7 @@ share/unifi/webapps/ROOT/app-unifi/data/locales/en/eventStrings.2c9aa42b80ec0465
 share/unifi/webapps/ROOT/app-unifi/data/locales/en/ips.1a762f5f06c8bfdbd534fe4a1f957de2.json
 share/unifi/webapps/ROOT/app-unifi/data/locales/en/languages.9b303d72b8d876fb67158cf2d10eb88c.json
 share/unifi/webapps/ROOT/app-unifi/data/locales/en/search.a2ee3ded4e8d9b1d9cb00bc66b7fdb67.json
-share/unifi/webapps/ROOT/app-unifi/data/locales/en/settings.53a1938ce941d897c7fc9cf03b0affe4.json
+share/unifi/webapps/ROOT/app-unifi/data/locales/en/settings.77e8207499b01347e71e91ddbb8c77b1.json
 share/unifi/webapps/ROOT/app-unifi/data/locales/en/statistics.dad4555dc8680e63c81aaf07a2588149.json
 share/unifi/webapps/ROOT/app-unifi/data/locales/es-ES/
 share/unifi/webapps/ROOT/app-unifi/data/locales/es-ES/settings.96d0ba6473569d14e094625e5d0eb6fc.json
@@ -3862,8 +3862,8 @@ share/unifi/webapps/ROOT/app-unifi/js/base.js
 share/unifi/webapps/ROOT/app-unifi/js/base.js.br
 share/unifi/webapps/ROOT/app-unifi/js/components.js
 share/unifi/webapps/ROOT/app-unifi/js/components.js.br
-share/unifi/webapps/ROOT/app-unifi/js/dynamic.appSwitcher.ca34c9b17b7517857ab6.js
-share/unifi/webapps/ROOT/app-unifi/js/dynamic.appSwitcher.ca34c9b17b7517857ab6.js.br
+share/unifi/webapps/ROOT/app-unifi/js/dynamic.appSwitcher.af8d4a7711d36986677e.js
+share/unifi/webapps/ROOT/app-unifi/js/dynamic.appSwitcher.af8d4a7711d36986677e.js.br
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.dpi.js
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.dpi.js.br
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.insights.js
@@ -3878,34 +3878,34 @@ share/unifi/webapps/ROOT/app-unifi/js/dynamic.settings.js
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.settings.js.br
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.showdown.js
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.showdown.js.br
-share/unifi/webapps/ROOT/app-unifi/js/dynamic.ufsdn.ca34c9b17b7517857ab6.js
-share/unifi/webapps/ROOT/app-unifi/js/dynamic.ufsdn.ca34c9b17b7517857ab6.js.br
+share/unifi/webapps/ROOT/app-unifi/js/dynamic.ufsdn.af8d4a7711d36986677e.js
+share/unifi/webapps/ROOT/app-unifi/js/dynamic.ufsdn.af8d4a7711d36986677e.js.br
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.zxcvbn.js
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.zxcvbn.js.br
 share/unifi/webapps/ROOT/app-unifi/js/e652470b9572b86907b77a97f40dc915.woff
 share/unifi/webapps/ROOT/app-unifi/js/e652470b9572b86907b77a97f40dc915.woff.br
 share/unifi/webapps/ROOT/app-unifi/js/initial.js
 share/unifi/webapps/ROOT/app-unifi/js/initial.js.br
-share/unifi/webapps/ROOT/app-unifi/js/ips-map.ca34c9b17b7517857ab6.js
-share/unifi/webapps/ROOT/app-unifi/js/ips-map.ca34c9b17b7517857ab6.js.br
-share/unifi/webapps/ROOT/app-unifi/js/ips.ca34c9b17b7517857ab6.js
-share/unifi/webapps/ROOT/app-unifi/js/ips.ca34c9b17b7517857ab6.js.br
+share/unifi/webapps/ROOT/app-unifi/js/ips-map.af8d4a7711d36986677e.js
+share/unifi/webapps/ROOT/app-unifi/js/ips-map.af8d4a7711d36986677e.js.br
+share/unifi/webapps/ROOT/app-unifi/js/ips.af8d4a7711d36986677e.js
+share/unifi/webapps/ROOT/app-unifi/js/ips.af8d4a7711d36986677e.js.br
 share/unifi/webapps/ROOT/app-unifi/js/main.hotspot.js
 share/unifi/webapps/ROOT/app-unifi/js/main.hotspot.js.br
 share/unifi/webapps/ROOT/app-unifi/js/main.manage.js
 share/unifi/webapps/ROOT/app-unifi/js/main.manage.js.br
 share/unifi/webapps/ROOT/app-unifi/js/main.overview.js
 share/unifi/webapps/ROOT/app-unifi/js/main.overview.js.br
-share/unifi/webapps/ROOT/app-unifi/js/multi-step-animations.ca34c9b17b7517857ab6.js
-share/unifi/webapps/ROOT/app-unifi/js/multi-step-animations.ca34c9b17b7517857ab6.js.br
-share/unifi/webapps/ROOT/app-unifi/js/network topology.ca34c9b17b7517857ab6.js
-share/unifi/webapps/ROOT/app-unifi/js/network topology.ca34c9b17b7517857ab6.js.br
+share/unifi/webapps/ROOT/app-unifi/js/multi-step-animations.af8d4a7711d36986677e.js
+share/unifi/webapps/ROOT/app-unifi/js/multi-step-animations.af8d4a7711d36986677e.js.br
+share/unifi/webapps/ROOT/app-unifi/js/network topology.af8d4a7711d36986677e.js
+share/unifi/webapps/ROOT/app-unifi/js/network topology.af8d4a7711d36986677e.js.br
 share/unifi/webapps/ROOT/app-unifi/js/oauth.js
 share/unifi/webapps/ROOT/app-unifi/js/oauth.js.br
-share/unifi/webapps/ROOT/app-unifi/js/security.ca34c9b17b7517857ab6.js
-share/unifi/webapps/ROOT/app-unifi/js/security.ca34c9b17b7517857ab6.js.br
-share/unifi/webapps/ROOT/app-unifi/js/services.ca34c9b17b7517857ab6.js
-share/unifi/webapps/ROOT/app-unifi/js/services.ca34c9b17b7517857ab6.js.br
+share/unifi/webapps/ROOT/app-unifi/js/security.af8d4a7711d36986677e.js
+share/unifi/webapps/ROOT/app-unifi/js/security.af8d4a7711d36986677e.js.br
+share/unifi/webapps/ROOT/app-unifi/js/services.af8d4a7711d36986677e.js
+share/unifi/webapps/ROOT/app-unifi/js/services.af8d4a7711d36986677e.js.br
 share/unifi/webapps/ROOT/app-unifi/locales/
 share/unifi/webapps/ROOT/app-unifi/locales/ca/
 share/unifi/webapps/ROOT/app-unifi/locales/ca/account.json
@@ -4819,10 +4819,10 @@ share/unifi/webapps/ROOT/app-unifi/setup/static/images/hardware/index.js
 share/unifi/webapps/ROOT/app-unifi/setup/static/images/logo.svg
 share/unifi/webapps/ROOT/app-unifi/setup/static/images/logo.svg.br
 share/unifi/webapps/ROOT/app-unifi/setup/static/js/
-share/unifi/webapps/ROOT/app-unifi/setup/static/js/main.f7a14d77c00c308fec57.js
-share/unifi/webapps/ROOT/app-unifi/setup/static/js/main.f7a14d77c00c308fec57.js.br
-share/unifi/webapps/ROOT/app-unifi/setup/static/js/vendor.f7a14d77c00c308fec57.js
-share/unifi/webapps/ROOT/app-unifi/setup/static/js/vendor.f7a14d77c00c308fec57.js.br
+share/unifi/webapps/ROOT/app-unifi/setup/static/js/main.214f0826f644f2b13c78.js
+share/unifi/webapps/ROOT/app-unifi/setup/static/js/main.214f0826f644f2b13c78.js.br
+share/unifi/webapps/ROOT/app-unifi/setup/static/js/vendor.214f0826f644f2b13c78.js
+share/unifi/webapps/ROOT/app-unifi/setup/static/js/vendor.214f0826f644f2b13c78.js.br
 share/unifi/webapps/ROOT/app-unifi/setup/static/locales/
 share/unifi/webapps/ROOT/app-unifi/setup/static/locales/en/
 share/unifi/webapps/ROOT/app-unifi/setup/static/locales/en/apiMessages.json
