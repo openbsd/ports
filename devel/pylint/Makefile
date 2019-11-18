@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:45:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/11/18 04:37:33 kmos Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
@@ -22,6 +22,8 @@ MODULES=		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	pylint
 
 RUN_DEPENDS=		devel/py-astroid${MODPY_FLAVOR} \
 			devel/py-isort${MODPY_FLAVOR} \
@@ -43,12 +45,6 @@ FULLPKGPATH-gui=	devel/pylint,-gui${MODPY_FLAVOR}
 RUN_DEPENDS+=		devel/py-backports-functools-lru-cache \
 			devel/py-configparser
 .endif
-
-do-test: fake
-	cd ${WRKINST}${MODPY_SITEPKG} && env \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		PYLINTHOME=${WRKINST} \
-		${MODPY_BIN} -m logilab.common.pytest
 
 post-install:
 	rm ${WRKINST}${MODPY_SITEPKG}/pylint/test/unittest_lint.py.orig
