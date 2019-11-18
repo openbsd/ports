@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/18 03:23:00 kmos Exp $
 
 COMMENT =		backport of new features added to unittest
 
@@ -24,7 +24,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unittest2
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/unittest2
 
-do-test: fake
+do-test:
 	cd ${WRKSRC}/unittest2/test && unit2 discover
 
 .include <bsd.port.mk>
