@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.180 2019/11/18 15:54:48 espie Exp $
+# $OpenBSD: update-plist,v 1.181 2019/11/18 16:07:17 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -206,6 +206,37 @@ sub olist
 {
 	my $self = shift;
 	return $self->{olist};
+}
+
+sub process_next_subpackage
+{
+	my ($class, $o) = @_;
+
+	my $r = $class->new;
+
+	my $s = $class->stateclass->new($class->command_name, $o->{state});
+	$r->{state} = $s;
+	$s->handle_options;
+	$s->{opt}{q} = 1;
+	$r->{base_plists} = $s->{contents};
+	my $pkg = shift @ARGV;
+
+	$r->olist->set_pkgname($pkg);
+	$o->{state}->say("Reading existing plist for #1", $pkg) 
+	    unless $o->{state}{quiet};
+	$r->read_all_fragments($s, $r->olist);
+	push(@{$o->{lists}}, $r);
+	return $r;
+}
+
+sub stateclass
+{
+	return 'PlistReader::State';
+}
+
+sub command_name
+{
+	return 'update-plist';
 }
 
 sub nlist
@@ -1390,25 +1421,12 @@ sub new
 sub process_next_subpackage
 {
 	my $self = shift;
-	my $r = PlistReader->new;
+	my $r = PlistReader->process_next_subpackage($self);
 
-	my $s = PlistReader::State->new('update-plist', $self->{state});
-	$r->{state} = $s;
-	$s->handle_options;
-	$s->{opt}{q} = 1;
-	$r->{base_plists} = $s->{contents};
-	my $pkg = shift @ARGV;
-
-	$r->olist->set_pkgname($pkg);
-	$self->{state}->say("Reading existing plist for #1", $pkg) 
-	    unless $self->{state}{quiet};
-	$r->read_all_fragments($s, $r->olist);
-	push(@{$self->{lists}}, $r);
-
-	$r->nlist->set_pkgname($pkg);
+	$r->nlist->set_pkgname($r->olist->pkgname);
 	# add the cwd to new list as well!!!
-	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
-	$r->add_extra_info($r->olist, $s);
+	OpenBSD::PackingElement::Cwd->add($r->nlist, $r->{state}{prefix});
+	$r->add_extra_info($r->olist, $r->{state});
 }
 
 sub parse_args
