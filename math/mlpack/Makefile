@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/03 14:16:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/18 13:05:58 cwen Exp $
+
+BROKEN-powerpc = virtual memory exhausted, even with -O1
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
@@ -96,12 +98,6 @@ SITEDIR = 	lib/python${MODPY_VERSION}/site-packages
 EGGDIR = 	${SITEDIR}/mlpack-$V-py${MODPY_VERSION}.egg-info
 
 SUBST_VARS += 	EGGDIR SITEDIR
-
-# Fix OOM error
-.if ${MACHINE_ARCH:Mpowerpc}
-CFLAGS =	-O1 -pipe
-CXXFLAGS =	-O1 -pipe
-.endif
 
 post-extract:
 	mkdir -p ${WRKBUILD}/deps/stb
