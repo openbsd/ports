@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/07/07 14:58:04 daniel Exp $
+# $OpenBSD: Makefile,v 1.56 2019/11/18 04:10:31 kmos Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
@@ -55,7 +55,7 @@ CFLAGS +=	-D CYTHON_SMALL_CODE=
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
 
-do-test: fake
+do-test:
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
 	    'import numpy ; numpy.test()'
 
