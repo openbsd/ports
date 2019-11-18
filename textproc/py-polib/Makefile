@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/11/18 04:43:31 kmos Exp $
 
 COMMENT=	Python library to manipulate gettext files
 
@@ -30,7 +30,7 @@ SUBST_VARS +=	MODPY_MAJOR_VERSION
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/runtests.sh
 
-do-test: fake
+do-test:
 	@cd ${WRKSRC} && ${MAKE_ENV} ./runtests.sh
 
 .include <bsd.port.mk>
