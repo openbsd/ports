@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/18 04:51:28 kmos Exp $
 
 COMMENT=		stateful programmatic web browsing module
 
@@ -24,7 +24,7 @@ post-install:
 	cd ${WRKSRC}/examples && umask 022 && pax -rw . \
 		 ${PREFIX}/share/examples/py-mechanize
 
-do-test: fake
+do-test:
 	cd ${WRKSRC} && \
 		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/mechanize" ${MODPY_BIN} run_tests.py
 
