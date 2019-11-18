@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/10/03 14:36:12 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/18 19:57:45 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -8,6 +8,8 @@ CATEGORIES=		graphics
 
 MATE_PROJECT=		eom
 MATE_VERSION=		1.22.2
+
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,11 +21,10 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl jpeg
 WANTLIB += lzma m pcre pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm xcb-util xml2 z
 WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo
-WANTLIB += croco-0.6 exempi exif gdk-3
+WANTLIB += exempi exif gdk-3 fribidi
 WANTLIB += girepository-1.0 graphite2 gtk-3 harfbuzz lcms2
 WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += peas-1.0 peas-gtk-1.0 rsvg-2 startup-notification-1
-WANTLIB += fribidi
 
 MODULES=		devel/dconf \
 			x11/gnome

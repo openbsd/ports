@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.105 2019/11/07 12:15:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2019/11/18 19:57:43 ajacoutot Exp $
 
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.10.46
+REVISION=	0
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -22,7 +23,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 avahi-common
-WANTLIB += bz2 cairo cairo-gobject croco-0.6 dbus-1 epoxy expat
+WANTLIB += bz2 cairo cairo-gobject dbus-1 epoxy expat
 WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2
 WANTLIB += gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed iconv idn2

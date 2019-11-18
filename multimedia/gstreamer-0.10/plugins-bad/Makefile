@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2018/11/07 11:07:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2019/11/18 19:57:44 ajacoutot Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,7 +12,7 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		31
+REVISION-main=		32
 REVISION-mjpeg=		14
 REVISION-neon=		15
 
@@ -33,7 +33,7 @@ WANTLIB += lzma pthread z m pcre gstreamer-0.10 ffi
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += SDL SoundTouch X11 Xext Xrender
-WANTLIB-main += ass bz2 cairo cdaudio croco-0.6 crypto
+WANTLIB-main += ass bz2 cairo cdaudio cairo-gobject crypto
 WANTLIB-main += curl dca dvdnav dvdread expat fontconfig freetype
 WANTLIB-main += fribidi gdk_pixbuf-2.0 gio-2.0 gsm gstapp-0.10 gstaudio-0.10
 WANTLIB-main += gstbase-0.10 gstcontroller-0.10 gstfft-0.10 gstinterfaces-0.10

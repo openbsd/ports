@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:51:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/11/18 19:57:45 ajacoutot Exp $
 
 COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.8
 DISTNAME =	compiz-${V}
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS =	decoration	1.0
 
 # MIT, GPL and LGPL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += c cairo croco-0.6 dbus-1 dbus-glib-1 drm expat ffi fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread rsvg-2
-WANTLIB += startup-notification-1 ${COMPILER_LIBCXX} wnck-1 xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm xcb-util xml2 xslt z
+WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl lzma m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread rsvg-2 startup-notification-1 wnck-1 xcb
+WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
+WANTLIB += xcb-sync xcb-util xcb-xfixes xml2 xshmfence xslt z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

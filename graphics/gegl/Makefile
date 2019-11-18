@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2019/11/10 15:32:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2019/11/18 19:57:44 ajacoutot Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -17,7 +17,7 @@ CATEGORIES=		graphics devel
 PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
 
-REVISION-main=		3
+REVISION-main=		4
 REVISION-plugins=	4
 
 SHARED_LIBS +=  gegl-0.2             0.0      # 201.1
@@ -40,7 +40,7 @@ WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 iconv intl m pcre z
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += X11 Xext Xrender babl-0.1 c cairo croco-0.6 expat fontconfig
+WANTLIB-main += X11 Xext Xrender babl-0.1 c cairo expat fontconfig
 WANTLIB-main += freetype fribidi gdk_pixbuf-2.0 graphite2 harfbuzz
 WANTLIB-main += jasper jpeg lzma pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png pthread rsvg-2 xcb xcb-render xcb-shm

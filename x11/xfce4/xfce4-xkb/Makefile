@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2019/08/15 07:10:28 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2019/11/18 19:57:46 ajacoutot Exp $
 
 COMMENT=	Xfce4 xkb layout switcher panel plugin
 
 XFCE_VERSION=	0.8.1
 XFCE_PLUGIN=	xkb
-REVISION=	4
+REVISION=	5
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -16,7 +16,7 @@ LIB_DEPENDS =	x11/gnome/librsvg \
 
 WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += cairo cairo-gobject croco-0.6 epoxy expat
+WANTLIB += cairo cairo-gobject epoxy expat
 WANTLIB += ffi fontconfig freetype fribidi garcon-1 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl lzma m pango-1.0

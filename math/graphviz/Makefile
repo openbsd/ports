@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2019/07/12 20:47:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2019/11/18 19:57:44 ajacoutot Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.36.0
-REVISION=	13
+REVISION=	14
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
 
@@ -48,7 +48,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xpm Xrandr Xrender
-WANTLIB += Xss Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
+WANTLIB += Xss Xt atk-1.0 c cairo cairo-gobject expat ffi fontconfig
 WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += guile harfbuzz iconv intl jpeg lcms2 ltdl lzma m openjp2 pango-1.0
@@ -65,7 +65,6 @@ LIB_DEPENDS =	graphics/jpeg \
 		devel/libtool,-ltdl \
 		graphics/gd>=2.0.34 \
 		x11/gtk+2 \
-		www/libcroco \
 		x11/gnome/librsvg \
 		graphics/graphite2 \
 		devel/harfbuzz \

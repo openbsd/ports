@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2019/11/11 19:10:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.231 2019/11/18 19:57:45 ajacoutot Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -10,7 +10,8 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	9
+REVISION-main=	10
+REVISION-jack=	10
 
 SHARED_LIBS=	vlc	3.0 \
 		vlccore	3.0
@@ -22,21 +23,22 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1+ and GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-common=	c dbus-1 iconv idn intl m pthread
+WANTLIB-common=	dbus-1 iconv idn intl m pthread
 WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xpm \
 		Xrender Xrandr ass atk-1.0 avcodec avformat avutil bluray \
-		cairo cddb croco-0.6 dvbpsi dvdnav dvdread ebml expat \
+		c cairo cddb dvbpsi dvdnav dvdread ebml expat \
 		ffi fontconfig freetype fribidi gcrypt gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls \
 		gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-x11-2.0 \
 		harfbuzz hogweed idn2 jpeg lzma matroska nettle notify opus \
-		ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png postproc rsvg-2 samplerate sndio \
 		speex speexdsp swscale tag tar tasn1 tiff unistring usbhid \
 		vorbis vorbisenc webp x264 x265 xcb-composite xcb-keysyms \
 		xcb-randr xcb-render xcb-shm xcb-xfixes xcb-xv xcb xml2 z \
 		X11-xcb Xxf86vm drm gbm glapi xcb-dri2 xcb-glx \
+		cairo-gobject xcb-dri3 xcb-present xcb-sync xshmfence \
 		${WANTLIB-common}
 # v4l2 is dlopen'd
 WANTLIB-main +=	v4l2

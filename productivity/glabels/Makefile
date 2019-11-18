@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2019/11/02 10:00:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2019/11/18 19:57:45 ajacoutot Exp $
 
 COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.1
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		productivity graphics
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
 WANTLIB += brotlicommon brotlidec c cairo cairo-gobject camel-1.2
-WANTLIB += croco-0.6 crypto curl db ebackend-1.2 ebook-1.2 ebook-contacts-1.2
+WANTLIB += crypto curl db ebackend-1.2 ebook-1.2 ebook-contacts-1.2
 WANTLIB += edata-book-1.2 edataserver-1.2 epoxy expat ffi fontconfig
 WANTLIB += freetype fribidi gck-1 gcr-base-3 gcrypt gdata gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 goa-1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2019/07/12 20:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.128 2019/11/18 19:57:43 ajacoutot Exp $
 
 BROKEN=		Abort trap on startup (pango related?)
 
@@ -28,7 +28,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += avahi-common bz2 c cairo cairo-gobject croco-0.6 crypto
+WANTLIB += avahi-common bz2 c cairo cairo-gobject crypto
 WANTLIB += curl dbus-1 enchant epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
