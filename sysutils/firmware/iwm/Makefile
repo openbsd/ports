@@ -1,12 +1,22 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/18 10:57:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/18 11:36:56 sthen Exp $
 
 FW_DRIVER=	iwm
 FW_VER=		20191022
+REVISION=	0
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi
 MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
+
+# old ones for people bisecting kernels, remove after 6.7
+FW+=	3160	16 \
+	7260	16 \
+	7265	16 \
+	7265D	16 \
+	8000C	16 \
+	3168	22 \
+	8265	22
 
 FW+=	3160	17 \
 	7260	17 \
