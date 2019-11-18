@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/18 04:39:17 kmos Exp $
 
 COMMENT=		XML bomb protection for Python stdlib modules
 
@@ -17,7 +17,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-do-test: fake
+do-test:
 	@cd ${WRKSRC} && ${MAKE_ENV} && \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} \
 			./tests.py
