@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/10/30 14:08:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.34 2019/11/18 11:57:08 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
-@extraunexec rm -f ${SYSCONFDIR}/rspamd/local.d/*
-@extraunexec rm -f ${SYSCONFDIR}/rspamd/override.d/*
 @rcscript ${RCDIR}/rspamd
 @sample ${SYSCONFDIR}/rspamd/
 @bin bin/rspamadm
