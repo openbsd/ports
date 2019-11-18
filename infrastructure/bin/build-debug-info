@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.13 2019/11/14 12:47:03 espie Exp $
+# $OpenBSD: build-debug-info,v 1.14 2019/11/18 15:56:29 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -266,6 +266,9 @@ sub process_next_subpackage
 	$r->{base_plists} = $s->{contents};
 	my $pkg = shift @ARGV;
 
+	$r->olist->set_pkgname($pkg);
+	$self->{state}->say("Reading existing plist for #1", $pkg) 
+	    unless $self->{state}{quiet};
 	$r->read_all_fragments($s, $r->olist);
 	push(@{$self->{lists}}, $r);
 	if ($s->{bad} != 0) {
