@@ -1,38 +1,34 @@
-$OpenBSD: patch-builtin_gc_c,v 1.2 2019/11/11 10:12:33 kn Exp $
+$OpenBSD: patch-builtin_gc_c,v 1.3 2019/11/18 13:28:23 jca Exp $
 
-HW_PHYSMEM asks for an int, not an int64_t.
-Use HW_PHYSMEM64 to handle ram size > 2GB.
+Replace sysctl HW_PHYSMEM/MEMSIZE/whatever madness with sysconf.
 
 Index: builtin/gc.c
 --- builtin/gc.c.orig
 +++ builtin/gc.c
-@@ -243,7 +243,7 @@ static uint64_t total_ram(void)
+@@ -244,20 +244,13 @@ static uint64_t total_ram(void)
  
  	if (!sysinfo(&si))
  		return si.totalram;
 -#elif defined(HAVE_BSD_SYSCTL) && (defined(HW_MEMSIZE) || defined(HW_PHYSMEM))
-+#elif defined(HAVE_BSD_SYSCTL) && (defined(HW_MEMSIZE) || defined(HW_PHYSMEM64))
- 	int64_t physical_memory;
- 	int mib[2];
- 	size_t length;
-@@ -252,9 +252,19 @@ static uint64_t total_ram(void)
- # if defined(HW_MEMSIZE)
- 	mib[1] = HW_MEMSIZE;
- # else
+-	int64_t physical_memory;
+-	int mib[2];
+-	size_t length;
++#elif defined(_SC_PHYS_PAGES) && defined(_SC_PAGESIZE)
++	long phys_pages, pagesize;
+ 
+-	mib[0] = CTL_HW;
+-# if defined(HW_MEMSIZE)
+-	mib[1] = HW_MEMSIZE;
+-# else
 -	mib[1] = HW_PHYSMEM;
-+	mib[1] = HW_PHYSMEM64;
- # endif
- 	length = sizeof(int64_t);
-+	if (!sysctl(mib, 2, &physical_memory, &length, NULL, 0))
-+		return physical_memory;
-+#elif defined(HAVE_BSD_SYSCTL) && defined(HW_PHYSMEM))
-+	int physical_memory;
-+	int mib[2];
-+	size_t length;
-+
-+	mib[0] = CTL_HW;
-+	mib[1] = HW_PHYSMEM;
-+	length = sizeof(int);
- 	if (!sysctl(mib, 2, &physical_memory, &length, NULL, 0))
- 		return physical_memory;
+-# endif
+-	length = sizeof(int64_t);
+-	if (!sysctl(mib, 2, &physical_memory, &length, NULL, 0))
+-		return physical_memory;
++	phys_pages = sysconf(_SC_PHYS_PAGES);
++	pagesize = sysconf(_SC_PAGESIZE);
++	if (phys_pages != -1 && pagesize != -1)
++		return (uint64_t)phys_pages * (uint64_t)pagesize;
  #elif defined(GIT_WINDOWS_NATIVE)
+ 	MEMORYSTATUSEX memInfo;
+ 
