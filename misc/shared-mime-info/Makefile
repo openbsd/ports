@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/11/17 19:38:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2019/11/18 07:09:17 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
@@ -20,6 +20,8 @@ MASTER_SITES=		https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/b27eb
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		textproc/intltool
+
+BUILD_DEPENDS=		textproc/itstool
 
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
