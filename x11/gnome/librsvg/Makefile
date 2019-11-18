@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2019/11/17 20:22:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2019/11/18 19:58:14 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -15,7 +15,7 @@ MASTER_SITES1=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${OLD_VERSION:C/^(
 
 ### stable
 .if ${PROPERTIES:Mrust}
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=  rsvg-2               39.2     # 48.0
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
@@ -24,9 +24,6 @@ MAKE_ENV+=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
 			CARGO_HOME=${WRKBUILD}/cargo-home
 COMPILER=		base-clang ports-gcc
 WANTLIB += cairo-gobject
-# TMP until all consumers have regened DEPENDS/WANTLIB
-LIB_DEPENDS +=		www/libcroco
-WANTLIB += croco-0.6
 .else
 ### old
 REVISION=		5
