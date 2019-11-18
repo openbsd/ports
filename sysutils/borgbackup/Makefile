@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:49:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/11/18 04:30:32 kmos Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -43,8 +43,5 @@ post-install:
 
 pre-test:
 	${MODPY_CMD} build_ext --inplace
-
-do-test: fake
-	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
