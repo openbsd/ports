@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/11/18 03:16:45 kmos Exp $
 
 COMMENT =		GNU PIC assembler and utilities
 
@@ -29,7 +29,7 @@ USE_GMAKE =		Yes
 
 AUTOCONF_VERSION =	2.69
 
-do-test: fake
+do-test:
 	cd ${WRKSRC}/gpasm/testsuite && sh ./test all
 
 
