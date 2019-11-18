@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/07/01 11:35:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/11/18 17:40:08 sthen Exp $
 @pkgpath databases/freetds,-msdblib
 @pkgpath databases/freetds,-openssl
 @bin bin/bsqldb
@@ -21,13 +21,13 @@ include/sybdb.h
 include/syberror.h
 include/sybfront.h
 include/tds_sysdep_public.h
-lib/libct.a
+@static-lib lib/libct.a
 lib/libct.la
 @lib lib/libct.so.${LIBct_VERSION}
-lib/libsybdb.a
+@static-lib lib/libsybdb.a
 lib/libsybdb.la
 @lib lib/libsybdb.so.${LIBsybdb_VERSION}
-lib/libtdsodbc.a
+@static-lib lib/libtdsodbc.a
 lib/libtdsodbc.la
 @lib lib/libtdsodbc.so.${LIBtdsodbc_VERSION}
 @man man/man1/bsqldb.1
