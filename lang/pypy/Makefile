@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/11/19 13:50:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/11/19 21:45:45 sthen Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64
 
@@ -54,7 +54,8 @@ FLAVOR ?=
 
 DIST_SUBDIR =		pypy
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-.if !${FLAVOR:Mno_bootstrap}
+.if defined(BOOTSTRAP-${MACHINE_ARCH}) && !${FLAVOR:Mno_bootstrap}
+#   ^^ needed to avoid breakage in arches that don't have pypy
 DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
 .endif
 
