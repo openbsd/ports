@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/10 16:25:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/11/19 12:12:15 sthen Exp $
 
 COMMENT =		spreadsheet-like audio file tagger
 
+# Python 3 info: https://github.com/keithgg/puddletag/issues/300
+
 MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		puddletag-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		audio
 

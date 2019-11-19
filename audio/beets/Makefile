@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2019/11/10 21:47:00 kmos Exp $
+# $OpenBSD: Makefile,v 1.42 2019/11/19 12:12:15 sthen Exp $
 
 COMMENT=	CLI tools to manage music collections
 
 MODPY_EGG_VERSION= 1.4.9
 DISTNAME=	beets-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2019/09/30 12:53:10 kili Exp $
+# $OpenBSD: Makefile,v 1.41 2019/11/19 12:12:15 sthen Exp $
 
 COMMENT =		command line podcast aggregator
 
 DISTNAME =		hpodder-1.1.6
-REVISION =		16
+REVISION =		17
 CATEGORIES =		net
 HOMEPAGE =		https://github.com/jgoerzen/hpodder/wiki
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS =		devel/hs-ConfigFile \
 			textproc/hs-HaXml>=1.22 \
 			databases/hs-HDBC-sqlite3>=1.1.0
 RUN_DEPENDS =		net/curl>=7.15.5 \
-			audio/py-mutagen>=1.9
+			audio/py-mutagen,-tools
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/hpodder.1 ${PREFIX}/man/man1

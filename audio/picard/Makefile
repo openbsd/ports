@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2019/08/23 20:20:03 cwen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/11/19 12:12:15 sthen Exp $
 
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
 MODPY_EGG_VERSION =	2.1.3
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 

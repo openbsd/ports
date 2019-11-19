@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/03 16:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/11/19 12:12:15 sthen Exp $
 
 COMMENT=	multi-format tools and Python module for ReplayGain
+
+# rgain no longer updated by original maintainer; newer (2019/07) py3 fork
+# at https://github.com/chaudum/rgain but it seems a bit early still
 
 MODPY_EGG_VERSION= 1.3.4
 DISTNAME=	rgain-${MODPY_EGG_VERSION}
 WRKDIST=	${WRKDIR}/fk-rgain-8df1a846a12c
+REVISION=	0
 
 CATEGORIES=	audio
 
