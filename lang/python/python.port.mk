@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.117 2019/11/07 16:14:09 kmos Exp $
+# $OpenBSD: python.port.mk,v 1.118 2019/11/19 11:34:55 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -41,7 +41,7 @@ MODPY_PYCACHE =
 MODPY_PYC_MAGIC_TAG =
 MODPY_COMMENT =	"@comment "
 MODPY_ABI3SO =
-
+MODPY_PYOEXTENSION =	pyo
 .elif ${MODPY_MAJOR_VERSION} == 3
 MODPY_LIB_SUFFIX =	m
 # replace py- prefix by py3-
@@ -55,18 +55,12 @@ MODPY_MAJORMINOR =	${MODPY_VERSION:C/\.//g}
 MODPY_PYC_MAGIC_TAG =	"cpython-${MODPY_MAJORMINOR}."
 MODPY_COMMENT =
 MODPY_ABI3SO =		".abi3"
-
-.endif
-
-.if ${MODPY_VERSION} == "2.7"
-MODPY_PYOEXTENSION =	pyo
-.else
 MODPY_PYOEXTENSION ?=	opt-1.pyc
 .endif
 
 MODPY_PYTEST ?=		No
 
-MODPY_WANTLIB = 	python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
+MODPY_WANTLIB =		python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
 
 MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS =	lang/python/${MODPY_VERSION}
