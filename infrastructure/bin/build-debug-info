@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.20 2019/11/19 14:54:01 espie Exp $
+# $OpenBSD: build-debug-info,v 1.21 2019/11/19 14:55:42 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -31,6 +31,8 @@ use OpenBSD::CommonPlist;
 package PlistReader;
 our @ISA = qw(OpenBSD::BasePlistReader);
 
+# note that contrary to update-plist, we never build the "new" plist, but
+# write it on the fly (should we use nlist as well here ?)
 sub stateclass
 {
 	return 'PlistReader::State';
