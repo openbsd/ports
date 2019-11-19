@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/10 07:48:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/19 22:31:05 kili Exp $
+@conflict libvirt-python-*
 lib/python${MODPY_VERSION}/site-packages/libvirt.py
 lib/python${MODPY_VERSION}/site-packages/libvirt.pyc
 lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.py
