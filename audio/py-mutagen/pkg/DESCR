@@ -7,4 +7,5 @@ calculate the bitrate and length of MP3s. ID3 and APEv2 tags can be
 edited regardless of audio format. It can also manipulate Ogg streams
 on an individual packet/page level.
 
-This package provides command-line tools using the Mutagen module.
+The command-line tools are only provided in the Python 3 version
+(py3-mutagen).
