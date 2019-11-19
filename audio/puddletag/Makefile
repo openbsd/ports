@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/19 12:12:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/19 21:21:10 sthen Exp $
 
 COMMENT =		spreadsheet-like audio file tagger
 
@@ -6,7 +6,7 @@ COMMENT =		spreadsheet-like audio file tagger
 
 MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		puddletag-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		audio
 
