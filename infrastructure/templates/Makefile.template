@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.85 2019/09/09 19:19:05 kmos Exp $
+# $OpenBSD: Makefile.template,v 1.86 2019/11/19 12:39:04 espie Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -165,6 +165,11 @@ MASTER_SITES =		???
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 #CONFIGURE_ARGS =	???
 #CONFIGURE_ENV =	???
+
+# if debug packages are a good idea, extra configure args may be necessary
+# and DEBUG_PACKAGES will commonly be set to ${BUILD_PACKAGES}
+# DEBUG_CONFIGURE_ARGS =	???
+# DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 # for gnu stuff
 #AUTOCONF_VERSION =	??? (defaults to 2.13)
