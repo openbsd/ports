@@ -1,4 +1,4 @@
-$OpenBSD: patch-glib_gspawn_c,v 1.3 2019/11/10 19:01:49 ajacoutot Exp $
+$OpenBSD: patch-glib_gspawn_c,v 1.4 2019/11/19 21:06:48 ajacoutot Exp $
 
 From 2d37239510ed6f2e005a1bd980ff6155438995a0 Mon Sep 17 00:00:00 2001
 From: Sebastian Schwarz <seschwar@gmail.com>
@@ -32,7 +32,7 @@ Index: glib/gspawn.c
  #include <sys/syscall.h>  /* for syscall and SYS_getdents64 */
  #endif
  
-@@ -1128,7 +1128,27 @@ set_cloexec (void *data, gint fd)
+@@ -1125,7 +1125,27 @@ set_cloexec (void *data, gint fd)
    return 0;
  }
  
@@ -61,7 +61,7 @@ Index: glib/gspawn.c
  #ifdef __linux__
  struct linux_dirent64
  {
-@@ -1168,8 +1188,21 @@ filename_to_fd (const char *p)
+@@ -1165,8 +1185,21 @@ filename_to_fd (const char *p)
  #endif
  
  static int
@@ -84,7 +84,7 @@ Index: glib/gspawn.c
    gint open_max;
    gint fd;
    gint res = 0;
-@@ -1202,7 +1235,7 @@ fdwalk (int (*cb)(void *data, int fd), void *data)
+@@ -1199,7 +1232,7 @@ fdwalk (int (*cb)(void *data, int fd), void *data)
              }
          }
  
@@ -93,7 +93,7 @@ Index: glib/gspawn.c
        return res;
      }
  
-@@ -1224,18 +1257,49 @@ fdwalk (int (*cb)(void *data, int fd), void *data)
+@@ -1221,18 +1254,49 @@ fdwalk (int (*cb)(void *data, int fd), void *data)
            break;
  
    return res;
@@ -147,7 +147,7 @@ Index: glib/gspawn.c
  
    return ret;
  }
-@@ -1245,10 +1309,9 @@ sane_open (const char *path, gint mode)
+@@ -1242,10 +1306,9 @@ sane_open (const char *path, gint mode)
  {
    gint ret;
  
@@ -161,7 +161,7 @@ Index: glib/gspawn.c
  
    return ret;
  }
-@@ -1282,21 +1345,6 @@ do_exec (gint                  child_err_report_fd,
+@@ -1279,21 +1342,6 @@ do_exec (gint                  child_err_report_fd,
    if (working_directory && chdir (working_directory) < 0)
      write_err_and_exit (child_err_report_fd,
                          CHILD_CHDIR_FAILED);
@@ -183,7 +183,7 @@ Index: glib/gspawn.c
    
    /* Redirect pipes as required */
    
-@@ -1352,6 +1400,31 @@ do_exec (gint                  child_err_report_fd,
+@@ -1349,6 +1397,31 @@ do_exec (gint                  child_err_report_fd,
        gint write_null = sane_open ("/dev/null", O_WRONLY);
        sane_dup2 (write_null, 2);
        close_and_invalidate (&write_null);
