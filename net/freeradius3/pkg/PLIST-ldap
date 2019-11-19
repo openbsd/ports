@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-ldap,v 1.4 2018/01/16 13:47:46 sthen Exp $
+@comment $OpenBSD: PLIST-ldap,v 1.5 2019/11/19 12:19:39 sthen Exp $
 @option is-branch
 @conflict freeradius-ldap-*
-lib/freeradius/rlm_ldap.so
+@so lib/freeradius/rlm_ldap.so
 share/doc/freeradius/schemas/ldap/
 share/doc/freeradius/schemas/ldap/edir/
 share/doc/freeradius/schemas/ldap/edir/freeradius-clients.ldif

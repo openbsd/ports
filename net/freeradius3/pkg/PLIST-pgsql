@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.6 2019/04/18 17:27:18 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.7 2019/11/19 12:19:39 sthen Exp $
 @option is-branch
 @conflict freeradius-pgsql-*
-lib/freeradius/rlm_sql_postgresql.so
+@so lib/freeradius/rlm_sql_postgresql.so
 @mode 750
 @group _freeradius
 share/examples/freeradius/mods-config/sql/counter/postgresql/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2019/04/18 17:27:18 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2019/11/19 12:19:39 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -95,68 +95,68 @@ include/freeradius/token.h
 include/freeradius/udpfromto.h
 include/freeradius/vqp.h
 lib/freeradius/
-lib/freeradius/libfreeradius-dhcp.so
-lib/freeradius/libfreeradius-eap.so
-lib/freeradius/libfreeradius-radius.so
-lib/freeradius/libfreeradius-server.so
-lib/freeradius/proto_dhcp.so
-lib/freeradius/proto_vmps.so
-lib/freeradius/rlm_always.so
-lib/freeradius/rlm_attr_filter.so
-lib/freeradius/rlm_cache.so
-lib/freeradius/rlm_cache_rbtree.so
-lib/freeradius/rlm_chap.so
-lib/freeradius/rlm_counter.so
-lib/freeradius/rlm_cram.so
-lib/freeradius/rlm_date.so
-lib/freeradius/rlm_detail.so
-lib/freeradius/rlm_dhcp.so
-lib/freeradius/rlm_digest.so
-lib/freeradius/rlm_dynamic_clients.so
-lib/freeradius/rlm_eap.so
-lib/freeradius/rlm_eap_fast.so
-lib/freeradius/rlm_eap_gtc.so
-lib/freeradius/rlm_eap_leap.so
-lib/freeradius/rlm_eap_md5.so
-lib/freeradius/rlm_eap_mschapv2.so
-lib/freeradius/rlm_eap_peap.so
-lib/freeradius/rlm_eap_pwd.so
-lib/freeradius/rlm_eap_sim.so
-lib/freeradius/rlm_eap_tls.so
-lib/freeradius/rlm_eap_ttls.so
-lib/freeradius/rlm_exec.so
-lib/freeradius/rlm_expiration.so
-lib/freeradius/rlm_expr.so
-lib/freeradius/rlm_files.so
-lib/freeradius/rlm_ippool.so
-lib/freeradius/rlm_linelog.so
-lib/freeradius/rlm_logintime.so
-lib/freeradius/rlm_mschap.so
-lib/freeradius/rlm_otp.so
+@so lib/freeradius/libfreeradius-dhcp.so
+@so lib/freeradius/libfreeradius-eap.so
+@so lib/freeradius/libfreeradius-radius.so
+@so lib/freeradius/libfreeradius-server.so
+@so lib/freeradius/proto_dhcp.so
+@so lib/freeradius/proto_vmps.so
+@so lib/freeradius/rlm_always.so
+@so lib/freeradius/rlm_attr_filter.so
+@so lib/freeradius/rlm_cache.so
+@so lib/freeradius/rlm_cache_rbtree.so
+@so lib/freeradius/rlm_chap.so
+@so lib/freeradius/rlm_counter.so
+@so lib/freeradius/rlm_cram.so
+@so lib/freeradius/rlm_date.so
+@so lib/freeradius/rlm_detail.so
+@so lib/freeradius/rlm_dhcp.so
+@so lib/freeradius/rlm_digest.so
+@so lib/freeradius/rlm_dynamic_clients.so
+@so lib/freeradius/rlm_eap.so
+@so lib/freeradius/rlm_eap_fast.so
+@so lib/freeradius/rlm_eap_gtc.so
+@so lib/freeradius/rlm_eap_leap.so
+@so lib/freeradius/rlm_eap_md5.so
+@so lib/freeradius/rlm_eap_mschapv2.so
+@so lib/freeradius/rlm_eap_peap.so
+@so lib/freeradius/rlm_eap_pwd.so
+@so lib/freeradius/rlm_eap_sim.so
+@so lib/freeradius/rlm_eap_tls.so
+@so lib/freeradius/rlm_eap_ttls.so
+@so lib/freeradius/rlm_exec.so
+@so lib/freeradius/rlm_expiration.so
+@so lib/freeradius/rlm_expr.so
+@so lib/freeradius/rlm_files.so
+@so lib/freeradius/rlm_ippool.so
+@so lib/freeradius/rlm_linelog.so
+@so lib/freeradius/rlm_logintime.so
+@so lib/freeradius/rlm_mschap.so
+@so lib/freeradius/rlm_otp.so
 @comment lib/freeradius/rlm_pam.so
-lib/freeradius/rlm_pap.so
-lib/freeradius/rlm_passwd.so
-lib/freeradius/rlm_perl.so
-lib/freeradius/rlm_preprocess.so
-lib/freeradius/rlm_radutmp.so
-lib/freeradius/rlm_realm.so
-lib/freeradius/rlm_redis.so
-lib/freeradius/rlm_rediswho.so
-lib/freeradius/rlm_replicate.so
-lib/freeradius/rlm_rest.so
-lib/freeradius/rlm_soh.so
-lib/freeradius/rlm_sometimes.so
-lib/freeradius/rlm_sql.so
-lib/freeradius/rlm_sql_null.so
-lib/freeradius/rlm_sql_sqlite.so
-lib/freeradius/rlm_sqlcounter.so
-lib/freeradius/rlm_sqlippool.so
-lib/freeradius/rlm_test.so
-lib/freeradius/rlm_unix.so
-lib/freeradius/rlm_unpack.so
-lib/freeradius/rlm_utf8.so
-lib/freeradius/rlm_wimax.so
-lib/freeradius/rlm_yubikey.so
+@so lib/freeradius/rlm_pap.so
+@so lib/freeradius/rlm_passwd.so
+@so lib/freeradius/rlm_perl.so
+@so lib/freeradius/rlm_preprocess.so
+@so lib/freeradius/rlm_radutmp.so
+@so lib/freeradius/rlm_realm.so
+@so lib/freeradius/rlm_redis.so
+@so lib/freeradius/rlm_rediswho.so
+@so lib/freeradius/rlm_replicate.so
+@so lib/freeradius/rlm_rest.so
+@so lib/freeradius/rlm_soh.so
+@so lib/freeradius/rlm_sometimes.so
+@so lib/freeradius/rlm_sql.so
+@so lib/freeradius/rlm_sql_null.so
+@so lib/freeradius/rlm_sql_sqlite.so
+@so lib/freeradius/rlm_sqlcounter.so
+@so lib/freeradius/rlm_sqlippool.so
+@so lib/freeradius/rlm_test.so
+@so lib/freeradius/rlm_unix.so
+@so lib/freeradius/rlm_unpack.so
+@so lib/freeradius/rlm_utf8.so
+@so lib/freeradius/rlm_wimax.so
+@so lib/freeradius/rlm_yubikey.so
 @man man/man1/dhcpclient.1
 @man man/man1/rad_counter.1
 @man man/man1/radclient.1
@@ -349,9 +349,9 @@ share/examples/freeradius/certs/
 @owner _freeradius
 @group wheel
 @sample ${FREERADIUS_ETC}/certs/
+@mode
 @owner
 @group _freeradius
-@mode
 share/examples/freeradius/certs/Makefile
 @sample ${FREERADIUS_ETC}/certs/Makefile
 share/examples/freeradius/certs/README
