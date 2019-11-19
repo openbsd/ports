@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/11/19 09:17:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2019/11/19 09:30:40 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -11,7 +11,7 @@ VERSION =		1.13.3
 REVISION =		0
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
-PKGSPEC =		go-=${VERSION}
+PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
 
 CATEGORIES =		lang
 
