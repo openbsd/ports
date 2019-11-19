@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/06/18 20:30:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/11/19 13:27:44 espie Exp $
 
 COMMENT=	multi-format archive and compression library
 
@@ -7,6 +7,7 @@ DISTNAME=	libarchive-$V
 SHARED_LIBS=	archive		10.3	# 17.0
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.libarchive.org/
+REVISION =	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -33,6 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ENV+=	ac_cv_header_ext2fs_ext2_fs_h=no
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 # Note: Numerous regression tests fail due to locale issues
 

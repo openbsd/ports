@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/06/18 20:30:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/11/19 13:27:44 espie Exp $
 @bin bin/bsdcat
 @bin bin/bsdcpio
 @bin bin/bsdtar
 include/archive.h
 include/archive_entry.h
-lib/libarchive.a
+@static-lib lib/libarchive.a
 lib/libarchive.la
 @lib lib/libarchive.so.${LIBarchive_VERSION}
 lib/pkgconfig/libarchive.pc
