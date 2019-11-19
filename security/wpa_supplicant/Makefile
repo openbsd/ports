@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/12 20:49:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/11/19 14:35:59 sthen Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
 DISTNAME=	wpa_supplicant-2.8
+REVISION=	0
 CATEGORIES=	security net
 
 HOMEPAGE=	https://w1.fi/wpa_supplicant/
@@ -25,11 +26,17 @@ WRKSRC=		${WRKDIST}/wpa_supplicant
 
 EXAMPLEDIR=	${PREFIX}/share/examples/wpa_supplicant
 
+ALL_TARGET=	all eapol_test
+
 post-extract:
-	@${SUBST_CMD} -m 444 -c ${FILESDIR}/config ${WRKSRC}/.config
+	cp ${WRKSRC}/defconfig ${WRKSRC}/.config
+
+post-patch:
+	@${SUBST_CMD} ${WRKSRC}/.config
 
 post-install:
 	@#${INSTALL_PROGRAM} ${WRKBUILD}/wpa_priv ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKBUILD}/eapol_test ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/doc/docbook/*.5 ${PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKBUILD}/doc/docbook/*.8 ${PREFIX}/man/man8/
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
