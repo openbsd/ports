@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.181 2019/11/18 16:07:17 espie Exp $
+# $OpenBSD: update-plist,v 1.182 2019/11/19 14:38:56 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -44,9 +44,9 @@ BEGIN {
 	$> = $fake_uid;
 }
 use lib "$ports1/infrastructure/lib";
-use OpenBSD::PkgCreate;
 use OpenBSD::FS2;
 use OpenBSD::ReverseSubst;
+use OpenBSD::CommonPlist;
 
 package TrackedFile;
 sub new
@@ -190,7 +190,7 @@ sub write_all
 # PlistReader is "just" a specialized version of PkgCreate algorithm
 # that does mimic what PkgCreate reader does with a few specialized methods
 package PlistReader;
-our @ISA = qw(OpenBSD::PkgCreate);
+our @ISA = qw(OpenBSD::BasePlistReader);
 
 use File::Path qw(make_path);
 use File::Basename;
@@ -198,35 +198,9 @@ use File::Basename;
 sub new
 {
 	my $class = shift;
-	bless { olist => OpenBSD::PackingList->new,
-		nlist => OpenBSD::PackingList->new }, $class;
-}
-
-sub olist
-{
-	my $self = shift;
-	return $self->{olist};
-}
-
-sub process_next_subpackage
-{
-	my ($class, $o) = @_;
-
-	my $r = $class->new;
-
-	my $s = $class->stateclass->new($class->command_name, $o->{state});
-	$r->{state} = $s;
-	$s->handle_options;
-	$s->{opt}{q} = 1;
-	$r->{base_plists} = $s->{contents};
-	my $pkg = shift @ARGV;
-
-	$r->olist->set_pkgname($pkg);
-	$o->{state}->say("Reading existing plist for #1", $pkg) 
-	    unless $o->{state}{quiet};
-	$r->read_all_fragments($s, $r->olist);
-	push(@{$o->{lists}}, $r);
-	return $r;
+	my $o = $class->SUPER::new;
+	$o->{nlist} = OpenBSD::PackingList->new;
+	return $o;
 }
 
 sub stateclass
@@ -257,7 +231,6 @@ sub subst
 	my $self = shift;
 	return $self->{state}{subst};
 }
-
 
 # this is where the magic happens, with the specialized methods
 # e is the plist element

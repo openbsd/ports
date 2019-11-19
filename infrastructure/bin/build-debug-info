@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.15 2019/11/18 16:07:17 espie Exp $
+# $OpenBSD: build-debug-info,v 1.16 2019/11/19 14:38:56 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -24,45 +24,12 @@ BEGIN {
 
 use lib "$ports1/infrastructure/lib";
 use OpenBSD::BaseFS;
-
-use OpenBSD::PkgCreate;
+use OpenBSD::CommonPlist;
 
 # PlistReader is "just" a specialized version of PkgCreate algorithm
 # that does mimic what PkgCreate reader does with a few specialized methods
 package PlistReader;
-our @ISA = qw(OpenBSD::PkgCreate);
-sub new
-{
-	my $class = shift;
-	bless { olist => OpenBSD::PackingList->new }, $class;
-}
-
-sub olist
-{
-	my $self = shift;
-	return $self->{olist};
-}
-
-sub process_next_subpackage
-{
-	my ($class, $o) = @_;
-
-	my $r = $class->new;
-
-	my $s = $class->stateclass->new($class->command_name, $o->{state});
-	$r->{state} = $s;
-	$s->handle_options;
-	$s->{opt}{q} = 1;
-	$r->{base_plists} = $s->{contents};
-	my $pkg = shift @ARGV;
-
-	$r->olist->set_pkgname($pkg);
-	$o->{state}->say("Reading existing plist for #1", $pkg) 
-	    unless $o->{state}{quiet};
-	$r->read_all_fragments($s, $r->olist);
-	push(@{$o->{lists}}, $r);
-	return $r;
-}
+our @ISA = qw(OpenBSD::BasePlistReader);
 
 sub stateclass
 {
