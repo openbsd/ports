@@ -1,4 +1,4 @@
-# $OpenBSD: Utils.pm,v 1.3 2019/05/11 15:09:06 afresh1 Exp $
+# $OpenBSD: Utils.pm,v 1.4 2019/11/19 22:43:31 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -18,8 +18,6 @@ package OpenBSD::PortGen::Utils;
 
 use 5.012;
 use warnings;
-
-use DBI;
 
 use parent qw( Exporter );
 
@@ -55,33 +53,20 @@ sub module_in_ports
 
 	return unless $module and $prefix;
 
-	my $dbpath = '/usr/local/share';
-	my $dbfile;
+	my $dbfile = '/usr/local/share/sqlports';
+	die "install databases/sqlports and databases/p5-DBD-SQLite\n"
+	    unless -e $dbfile;
 
-	if ( -e "$dbpath/sqlports-compact" ) {
-		$dbfile = 'sqlports-compact';
-	} elsif ( -e "$dbpath/sqlports" ) {
-		$dbfile = 'sqlports';
-	} else {
-		die "install databases/sqlports-compact or databases/sqlports";
-	}
+	require DBI; # do this here after we've checked for $dbfile
 
-	my $dbh = DBI->connect( "dbi:SQLite:dbname=$dbpath/$dbfile", "", "" )
-	    or die "failed to connect to database: $DBI::errstr";
+	my $dbh = DBI->connect( "dbi:SQLite:dbname=$dbfile", "", "", {
+	    RaiseError => 1,
+	} ) or die "failed to connect to database: $DBI::errstr";
 
-	my $stmt;
-	$stmt =
-	    $dbfile =~ /compact/
-	    ? "SELECT FULLPKGPATH FROM Paths WHERE ID IN ( SELECT FULLPKGPATH FROM Ports WHERE DISTNAME LIKE '$module%' )"
-	    : "SELECT FULLPKGPATH FROM Ports WHERE DISTNAME LIKE '$module%'";
-
-	my $pr = $dbh->prepare($stmt);
-	$pr->execute();
-
-	my @results;
-	while ( my @pkgpaths = $pr->fetchrow_array ) {
-		push @results, $pkgpaths[0];
-	}
+	my @results = @{ $dbh->selectcol_arrayref(
+	    "SELECT FULLPKGPATH FROM Ports WHERE DISTNAME LIKE ?",
+	    {}, "$module%"
+	) };
 
 	$dbh->disconnect();
 
