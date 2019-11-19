@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2019/05/31 13:58:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/11/19 20:15:17 jasper Exp $
 @bin bin/gthumb
 include/gthumb/
 include/gthumb/cairo-scale.h
@@ -140,44 +140,44 @@ lib/gthumb/extensions/image_rotation.extension
 lib/gthumb/extensions/image_viewer.extension
 lib/gthumb/extensions/importer.extension
 lib/gthumb/extensions/jpeg_utils.extension
-lib/gthumb/extensions/lib23hq.so
-lib/gthumb/extensions/libbookmarks.so
-lib/gthumb/extensions/libcairo_io.so
-lib/gthumb/extensions/libcatalogs.so
-lib/gthumb/extensions/libchange_date.so
-lib/gthumb/extensions/libcomments.so
-lib/gthumb/extensions/libcontact_sheet.so
-lib/gthumb/extensions/libconvert_format.so
-lib/gthumb/extensions/libdesktop_background.so
-lib/gthumb/extensions/libedit_metadata.so
-lib/gthumb/extensions/libexiv2_tools.so
-lib/gthumb/extensions/libexport_tools.so
-lib/gthumb/extensions/libfacebook.so
-lib/gthumb/extensions/libfile_manager.so
-lib/gthumb/extensions/libfile_tools.so
-lib/gthumb/extensions/libfile_viewer.so
-lib/gthumb/extensions/libfind_duplicates.so
-lib/gthumb/extensions/libflicker.so
-lib/gthumb/extensions/libflicker_utils.so
-lib/gthumb/extensions/libgstreamer_tools.so
-lib/gthumb/extensions/libgstreamer_utils.so
-lib/gthumb/extensions/libimage_print.so
-lib/gthumb/extensions/libimage_rotation.so
-lib/gthumb/extensions/libimage_viewer.so
-lib/gthumb/extensions/libimporter.so
-lib/gthumb/extensions/libjpeg_utils.so
-lib/gthumb/extensions/liblist_tools.so
-lib/gthumb/extensions/liboauth.so
-lib/gthumb/extensions/libphoto_importer.so
-lib/gthumb/extensions/libpicasaweb.so
-lib/gthumb/extensions/libraw_files.so
-lib/gthumb/extensions/libred_eye_removal.so
-lib/gthumb/extensions/librename_series.so
-lib/gthumb/extensions/libresize_images.so
-lib/gthumb/extensions/libsearch.so
-lib/gthumb/extensions/libselections.so
-lib/gthumb/extensions/libslideshow.so
-lib/gthumb/extensions/libwebalbums.so
+@so lib/gthumb/extensions/lib23hq.so
+@so lib/gthumb/extensions/libbookmarks.so
+@so lib/gthumb/extensions/libcairo_io.so
+@so lib/gthumb/extensions/libcatalogs.so
+@so lib/gthumb/extensions/libchange_date.so
+@so lib/gthumb/extensions/libcomments.so
+@so lib/gthumb/extensions/libcontact_sheet.so
+@so lib/gthumb/extensions/libconvert_format.so
+@so lib/gthumb/extensions/libdesktop_background.so
+@so lib/gthumb/extensions/libedit_metadata.so
+@so lib/gthumb/extensions/libexiv2_tools.so
+@so lib/gthumb/extensions/libexport_tools.so
+@so lib/gthumb/extensions/libfacebook.so
+@so lib/gthumb/extensions/libfile_manager.so
+@so lib/gthumb/extensions/libfile_tools.so
+@so lib/gthumb/extensions/libfile_viewer.so
+@so lib/gthumb/extensions/libfind_duplicates.so
+@so lib/gthumb/extensions/libflicker.so
+@so lib/gthumb/extensions/libflicker_utils.so
+@so lib/gthumb/extensions/libgstreamer_tools.so
+@so lib/gthumb/extensions/libgstreamer_utils.so
+@so lib/gthumb/extensions/libimage_print.so
+@so lib/gthumb/extensions/libimage_rotation.so
+@so lib/gthumb/extensions/libimage_viewer.so
+@so lib/gthumb/extensions/libimporter.so
+@so lib/gthumb/extensions/libjpeg_utils.so
+@so lib/gthumb/extensions/liblist_tools.so
+@so lib/gthumb/extensions/liboauth.so
+@so lib/gthumb/extensions/libphoto_importer.so
+@so lib/gthumb/extensions/libpicasaweb.so
+@so lib/gthumb/extensions/libraw_files.so
+@so lib/gthumb/extensions/libred_eye_removal.so
+@so lib/gthumb/extensions/librename_series.so
+@so lib/gthumb/extensions/libresize_images.so
+@so lib/gthumb/extensions/libsearch.so
+@so lib/gthumb/extensions/libselections.so
+@so lib/gthumb/extensions/libslideshow.so
+@so lib/gthumb/extensions/libwebalbums.so
 lib/gthumb/extensions/list_tools.extension
 lib/gthumb/extensions/oauth.extension
 lib/gthumb/extensions/photo_importer.extension
@@ -351,6 +351,7 @@ share/gthumb/ui/crop-options.ui
 share/gthumb/ui/curve-preset-editor.ui
 share/gthumb/ui/curves-options.ui
 share/gthumb/ui/edit-comment-page.ui
+share/gthumb/ui/edit-exiv2-page.ui
 share/gthumb/ui/effects-options.ui
 share/gthumb/ui/export-to-facebook.ui
 share/gthumb/ui/export-to-flickr.ui
