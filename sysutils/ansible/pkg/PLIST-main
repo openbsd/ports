@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2019/11/07 13:33:20 pvk Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2019/11/19 12:37:33 pvk Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -11915,6 +11915,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}hashing.$
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}jsonrpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}listify.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}multiprocessing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}plugin_docs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -11935,6 +11936,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/hashing.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/helpers.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/jsonrpc.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/listify.py
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/multiprocessing.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/path.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/plugin_docs.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/py3compat.py
