@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/03 16:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/11/19 12:12:00 sthen Exp $
 
-COMMENT =	Python module to handle audio metadata
+COMMENT-main =	Python module to handle audio metadata
+COMMENT-tools =	command-line tools to handle audio metadata
 
-MODPY_EGG_VERSION = 1.42.0
+MODPY_EGG_VERSION = 1.43.0
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+FULLPKGNAME-main =	${MODPY_PY_PREFIX}${DISTNAME}
+FULLPKGPATH-main =	audio/py-mutagen,-main${MODPY_FLAVOR}
+FULLPKGNAME-tools =	${DISTNAME}
+FULLPKGPATH-tools =	audio/py-mutagen,-tools
 PORTROACH =	skipv:release-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	audio
 
@@ -21,11 +25,18 @@ PERMIT_PACKAGE =	Yes
 
 FLAVOR ?=
 FLAVORS =	python3
+MULTI_PACKAGES = -main
+.if ${FLAVOR:Mpython3}
+MULTI_PACKAGES += -tools
+.endif
 
 MODULES =	lang/python
+MODPY_SETUPTOOLS = Yes
+MODPY_ADJ_FILES = docs/id3_frames_gen.py
+MODPY_PYTEST =	Yes
+SUBST_VARS =	MODPY_FLAVOR
 
-TOOLS =		mid3cp mid3iconv mid3v2 moggsplit mutagen-inspect mutagen-pony
-MODPY_ADJ_FILES = docs/id3_frames_gen.py ${TOOLS:m%=tools/m%}
+RUN_DEPENDS-tools = ${FULLPKGPATH-main}
 
 TEST_DEPENDS =	audio/faad \
 		audio/flac \
@@ -34,19 +45,13 @@ TEST_DEPENDS =	audio/faad \
 		multimedia/oggz
 
 .if ${FLAVOR} != python3
-TEST_DEPENDS +=		audio/py-eyed3 \
-			audio/py-vorbis
-.endif
-
-MAKE_ENV =	LC_CTYPE="en_US.UTF-8"
-
-do-test:
-	${MODPY_TEST_TARGET}
+TEST_DEPENDS +=	audio/py-eyed3 \
+		audio/py-vorbis
 
 post-install:
-.for i in ${TOOLS}
-	mv ${PREFIX}/bin/$i ${PREFIX}/bin/$i${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/man/man1/$i.1 ${PREFIX}/man/man1/$i${MODPY_BIN_SUFFIX}.1
-.endfor
+	rm ${PREFIX}/bin/* ${PREFIX}/man/man1/*
+.endif
+
+#MAKE_ENV =	LC_CTYPE="en_US.UTF-8"
 
 .include <bsd.port.mk>

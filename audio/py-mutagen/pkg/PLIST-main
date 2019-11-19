@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 13:50:20 sthen Exp $
-bin/mid3cp${MODPY_BIN_SUFFIX}
-bin/mid3iconv${MODPY_BIN_SUFFIX}
-bin/mid3v2${MODPY_BIN_SUFFIX}
-bin/moggsplit${MODPY_BIN_SUFFIX}
-bin/mutagen-inspect${MODPY_BIN_SUFFIX}
-bin/mutagen-pony${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST-main,v 1.1 2019/11/19 12:12:00 sthen Exp $
+@pkgpath audio/py-mutagen${MODPY_FLAVOR}
 lib/python${MODPY_VERSION}/site-packages/mutagen/
-lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mutagen/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_tags.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_vorbis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}aac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}ac3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}aiff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}apev2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}dsf.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}oggtheora.${MOD
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}oggvorbis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}optimfrog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}smf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}tak.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}trueaudio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}wavpack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_compat.py
@@ -83,6 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/_tools/mutagen_pony.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_util.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_vorbis.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/aac.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/ac3.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/aiff.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/apev2.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/asf/
@@ -142,11 +145,6 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/oggtheora.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/oggvorbis.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/optimfrog.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/smf.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/tak.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/trueaudio.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/wavpack.py
-@man man/man1/mid3cp${MODPY_BIN_SUFFIX}.1
-@man man/man1/mid3iconv${MODPY_BIN_SUFFIX}.1
-@man man/man1/mid3v2${MODPY_BIN_SUFFIX}.1
-@man man/man1/moggsplit${MODPY_BIN_SUFFIX}.1
-@man man/man1/mutagen-inspect${MODPY_BIN_SUFFIX}.1
-@man man/man1/mutagen-pony${MODPY_BIN_SUFFIX}.1
