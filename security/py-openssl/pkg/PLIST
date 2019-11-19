@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/02/22 13:03:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/11/19 14:42:53 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.py
@@ -23,21 +23,3 @@ lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-share/examples/${MODPY_PY_PREFIX}openssl/
-share/examples/${MODPY_PY_PREFIX}openssl/README.rst
-share/examples/${MODPY_PY_PREFIX}openssl/SecureXMLRPCServer.py
-share/examples/${MODPY_PY_PREFIX}openssl/certgen.py
-share/examples/${MODPY_PY_PREFIX}openssl/mk_simple_certs.py
-share/examples/${MODPY_PY_PREFIX}openssl/proxy.py
-share/examples/${MODPY_PY_PREFIX}openssl/simple/
-share/examples/${MODPY_PY_PREFIX}openssl/simple/README
-share/examples/${MODPY_PY_PREFIX}openssl/simple/client.py
-share/examples/${MODPY_PY_PREFIX}openssl/simple/server.py
-share/examples/${MODPY_PY_PREFIX}openssl/sni/
-share/examples/${MODPY_PY_PREFIX}openssl/sni/README
-share/examples/${MODPY_PY_PREFIX}openssl/sni/another.invalid.crt
-share/examples/${MODPY_PY_PREFIX}openssl/sni/another.invalid.key
-share/examples/${MODPY_PY_PREFIX}openssl/sni/client.py
-share/examples/${MODPY_PY_PREFIX}openssl/sni/example.invalid.crt
-share/examples/${MODPY_PY_PREFIX}openssl/sni/example.invalid.key
-share/examples/${MODPY_PY_PREFIX}openssl/sni/server.py
