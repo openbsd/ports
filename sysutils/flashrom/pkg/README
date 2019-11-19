@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:22 espie Exp $
+$OpenBSD: README,v 1.3 2019/11/19 10:42:38 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -7,22 +7,32 @@ $OpenBSD: README,v 1.2 2018/09/04 12:46:22 espie Exp $
 Programming on-board devices
 ============================
 One common use of flashrom is to programme an on-board flash device
-(e.g. for updating devices on the mainboard or a PCI device attached
-to the machine you're running it on).
+(e.g. for updating devices on the mainboard or a PCI device attached to
+the machine you're running it on).
 
 This requires the ability to write directly to memory, which is
 INSECURE. Therefore, OpenBSD denies it under normal operating
 conditions.
 
-If you have decided to accept the risks of using this software,
-it is advised to reboot into *single user mode* ("boot -s"),
-mount necessary filesystems (mount -a -t nonfs), flash and
-reboot.
+If you have decided to accept the risks of using this software, it is
+advised to reboot into *single user mode* ("boot -s"), mount necessary
+filesystems (mount -a -t nonfs), flash and reboot.
 
-In single user mode, the system securelevel(8) does allow
-access to write directly to system memory, and importantly
-network services and other third-party software will usually
-not be running at the time.
+In single user mode, the system securelevel(8) does allow access to
+write directly to system memory, and importantly network services and
+other third-party software will usually not be running at the time.
 
-flashrom also supports some external programming devices via USB;
-in those cases it can be run from a normal boot.
+flashrom also supports some external programming devices via USB; in
+those cases it can be run from a normal boot.
+
+Special notes for PC Engines APU
+--------------------------------
+One common use of flashrom on OpenBSD is to update coreboot on PC Engines
+APU devices.
+
+New firmware and release notes are available at https://pcengines.github.io/
+
+In some cases extra flags are needed to bypass warnings; see this URL
+for further information:
+
+https://github.com/pcengines/apu2-documentation/blob/master/docs/firmware_flashing.md
