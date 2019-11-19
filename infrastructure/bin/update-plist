@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.182 2019/11/19 14:38:56 espie Exp $
+# $OpenBSD: update-plist,v 1.183 2019/11/19 14:41:29 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -360,7 +360,7 @@ our @ISA = qw(OpenBSD::PkgCreate::State);
 sub init
 {
 	my ($self, $realstate) = @_;
-	$self->{subst} = OpenBSD::ReverseSubst->new($realstate);
+	$self->{subst} = $self->substclass->new($realstate);
 	$self->{progressmeter} = $realstate->{progressmeter};
 	$self->{bad} = 0;
 	$self->{repo} = $realstate->{repo};
@@ -381,6 +381,11 @@ sub end_status
 	my $self = shift;
 	return if $self->{quiet};
 	$self->SUPER::end_status(@_);
+}
+
+sub substclass
+{
+	return 'OpenBSD::ReverseSubst';
 }
 
 # Most of the heavy lifting is done by visitor methods, as always
