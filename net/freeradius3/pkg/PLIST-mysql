@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.5 2019/11/19 12:19:39 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.6 2019/11/19 13:03:49 sthen Exp $
 @option is-branch
 @conflict freeradius-mysql-*
 @so lib/freeradius/rlm_sql_mysql.so
@@ -37,6 +37,8 @@ share/examples/freeradius/mods-config/sql/ippool/mysql/
 @mode 640
 share/examples/freeradius/mods-config/sql/ippool/mysql/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mysql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool/mysql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mysql/procedure.sql
 share/examples/freeradius/mods-config/sql/ippool/mysql/schema.sql
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mysql/schema.sql
 @mode 750

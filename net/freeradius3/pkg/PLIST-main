@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2019/11/19 12:19:39 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2019/11/19 13:03:49 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -465,6 +465,8 @@ share/examples/freeradius/mods-available/perl
 @sample ${FREERADIUS_ETC}/mods-available/perl
 share/examples/freeradius/mods-available/preprocess
 @sample ${FREERADIUS_ETC}/mods-available/preprocess
+@comment share/examples/freeradius/mods-available/python3
+@comment @sample ${FREERADIUS_ETC}/mods-available/python3
 share/examples/freeradius/mods-available/radutmp
 @sample ${FREERADIUS_ETC}/mods-available/radutmp
 share/examples/freeradius/mods-available/realm
@@ -570,6 +572,10 @@ share/examples/freeradius/mods-config/sql/ippool-dhcp/sqlite/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/sqlite/queries.conf
 share/examples/freeradius/mods-config/sql/ippool-dhcp/sqlite/schema.sql
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/sqlite/schema.sql
+@comment share/examples/freeradius/mods-config/sql/ippool/mongo/
+@comment @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mongo/
+@comment share/examples/freeradius/mods-config/sql/ippool/mongo/queries.conf
+@comment @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mongo/queries.conf
 share/examples/freeradius/mods-config/sql/ippool/sqlite/
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/sqlite/
 share/examples/freeradius/mods-config/sql/ippool/sqlite/queries.conf
@@ -578,6 +584,10 @@ share/examples/freeradius/mods-config/sql/ippool/sqlite/schema.sql
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/sqlite/schema.sql
 share/examples/freeradius/mods-config/sql/main/
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/
+@comment share/examples/freeradius/mods-config/sql/main/mongo/
+@comment @sample ${FREERADIUS_ETC}/mods-config/sql/main/mongo/
+@comment share/examples/freeradius/mods-config/sql/main/mongo/queries.conf
+@comment @sample ${FREERADIUS_ETC}/mods-config/sql/main/mongo/queries.conf
 share/examples/freeradius/mods-config/sql/main/sqlite/
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/
 share/examples/freeradius/mods-config/sql/main/sqlite/queries.conf
@@ -675,6 +685,8 @@ share/examples/freeradius/sites-available/check-eap-tls
 @sample ${FREERADIUS_ETC}/sites-available/check-eap-tls
 share/examples/freeradius/sites-available/coa
 @sample ${FREERADIUS_ETC}/sites-available/coa
+share/examples/freeradius/sites-available/coa-relay
+@sample ${FREERADIUS_ETC}/sites-available/coa-relay
 share/examples/freeradius/sites-available/control-socket
 @sample ${FREERADIUS_ETC}/sites-available/control-socket
 share/examples/freeradius/sites-available/copy-acct-to-home-server
@@ -794,6 +806,7 @@ share/freeradius/dictionary.erx
 share/freeradius/dictionary.extreme
 share/freeradius/dictionary.f5
 share/freeradius/dictionary.fdxtended
+share/freeradius/dictionary.force10
 share/freeradius/dictionary.fortinet
 share/freeradius/dictionary.foundry
 share/freeradius/dictionary.freedhcp
@@ -916,6 +929,7 @@ share/freeradius/dictionary.telkom
 share/freeradius/dictionary.terena
 share/freeradius/dictionary.trapeze
 share/freeradius/dictionary.travelping
+share/freeradius/dictionary.tripplite
 share/freeradius/dictionary.tropos
 share/freeradius/dictionary.ukerna
 share/freeradius/dictionary.unix

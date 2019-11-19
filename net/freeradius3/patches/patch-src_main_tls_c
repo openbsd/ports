@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_main_tls_c,v 1.7 2019/02/28 18:46:49 sthen Exp $
+$OpenBSD: patch-src_main_tls_c,v 1.8 2019/11/19 13:03:49 sthen Exp $
 
 Index: src/main/tls.c
 --- src/main/tls.c.orig
 +++ src/main/tls.c
-@@ -1579,7 +1579,8 @@ done:
+@@ -1565,7 +1565,8 @@ done:
  	return 0;
  }
  
@@ -13,7 +13,7 @@ Index: src/main/tls.c
  static SSL_SESSION *cbtls_get_session(SSL *ssl, unsigned char *data, int len, int *copy)
  #else
  static SSL_SESSION *cbtls_get_session(SSL *ssl, const unsigned char *data, int len, int *copy)
-@@ -2129,7 +2130,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -2120,7 +2121,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  	char		cn_str[1024];
  	char		buf[64];
  	X509		*client_cert;
@@ -23,7 +23,7 @@ Index: src/main/tls.c
  	const STACK_OF(X509_EXTENSION) *ext_list;
  #else
  	STACK_OF(X509_EXTENSION) *ext_list;
-@@ -2328,7 +2330,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -2319,7 +2321,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  	}
  
  	if (lookup == 0) {
@@ -33,7 +33,7 @@ Index: src/main/tls.c
  		ext_list = X509_get0_extensions(client_cert);
  #else
  		X509_CINF	*client_inf;
-@@ -3167,7 +3170,7 @@ post_ca:
+@@ -3182,7 +3185,7 @@ post_ca:
  #ifdef SSL_OP_NO_TLSv1
  	if (conf->disable_tlsv1) {
  		ctx_options |= SSL_OP_NO_TLSv1;
@@ -42,7 +42,7 @@ Index: src/main/tls.c
  		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1");
  #endif
  	}
-@@ -3177,7 +3180,7 @@ post_ca:
+@@ -3192,7 +3195,7 @@ post_ca:
  #ifdef SSL_OP_NO_TLSv1_1
  	if (conf->disable_tlsv1_1) {
  		ctx_options |= SSL_OP_NO_TLSv1_1;
@@ -51,7 +51,7 @@ Index: src/main/tls.c
  		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1_2");
  #endif
  	}
-@@ -3188,7 +3191,7 @@ post_ca:
+@@ -3203,7 +3206,7 @@ post_ca:
  
  	if (conf->disable_tlsv1_2) {
  		ctx_options |= SSL_OP_NO_TLSv1_2;
@@ -60,7 +60,7 @@ Index: src/main/tls.c
  		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1_2");
  #endif
  	}
-@@ -3379,14 +3382,14 @@ post_ca:
+@@ -3394,14 +3397,14 @@ post_ca:
  		 */
  		SSL_CTX_sess_set_cache_size(ctx, conf->session_cache_size);
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/11/19 12:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/11/19 13:03:49 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -11,10 +11,9 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.19
+V=		3.0.20
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
 
 PKGNAME-main=	freeradius-$V
 PKGNAME-freetds= freeradius-freetds-$V
@@ -46,28 +45,25 @@ CONFIGURE_ENV=	ac_cv_path_LOCATE= \
 		ac_cv_path_SNMPWALK=${LOCALBASE}/bin/snmpwalk \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/freeradius
-# Disabling modules via --without-rlm_FOO doesn't seem to work as of 3.0.10.
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/freeradius \
+		--without-rlm_pam
 # No option to disable collectd; bodged via patch-configure.
 
 TEST_TARGET=	test
 TEST_DEPENDS=	freeradius-$V:${BUILD_PKGPATH}
 TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 
+# an experimental py3 module exists, not built by default yet
 MODULES=	lang/python
 
 # thread-local storage
 COMPILER =	base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER_LANGS = c
 
 MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	no#...has its own _special_ libtool.
-
-# Not really trying to build with this, but --without-rlm_pam doesn't disable
-# it, so just list as a bdep to avoid risk of broken bulk builds.
-BUILD_DEPENDS+=	security/openpam
 
 RUN_DEPENDS-main=	#empty
 LIB_DEPENDS-main=	databases/gdbm \
@@ -85,8 +81,9 @@ WANTLIB-main += c crypto curl execinfo gdbm hiredis json-c m nghttp2
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc
 WANTLIB-main += ykclient yubikey z
 
-PSEUDO_FLAVORS= no_freetds no_iodbc no_ldap no_memcached no_mysql \
-		no_pgsql no_python
+.for i in ${MULTI_PACKAGES:N-main}
+PSEUDO_FLAVORS+= no_${i:S/-//}
+.endfor
 FLAVOR?=
 
 .include <bsd.port.arch.mk>
@@ -96,7 +93,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--without-rlm_python
 .endif
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS}
-WANTLIB-python=		${MODPY_WANTLIB} m pthread util
+WANTLIB-python=		${MODPY_WANTLIB} intl m pthread util
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 
 # rlm_ldap
@@ -107,7 +104,7 @@ CONFIGURE_ARGS+=	--with-ldap-include-dir=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-rlm_ldap
 .endif
 LIB_DEPENDS-ldap=	databases/openldap
-WANTLIB-ldap=		ldap-2.4
+WANTLIB-ldap=		ldap
 RUN_DEPENDS-ldap=	#empty
 
 # rlm_sql_freetds
@@ -147,7 +144,7 @@ CONFIGURE_ARGS+=	--with-mysql-include-dir=${LOCALBASE}/include/mysql
 CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .endif
 LIB_DEPENDS-mysql=	databases/mariadb
-WANTLIB-mysql=		crypto iconv m mariadb ssl z
+WANTLIB-mysql=		mariadb
 RUN_DEPENDS-mysql=	#empty
 
 # rlm_sql_postgresql
