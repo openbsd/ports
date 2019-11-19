@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.36 2019/10/07 16:16:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/19 13:50:24 sthen Exp $
 
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =		fast implementation of the Python language
 
@@ -10,22 +10,25 @@ COMMENT =		fast implementation of the Python language
 #   * make makesum
 #   * make plist (fix anything along the way)
 #   * make package
-#   * Set BOOTSTRAP_V back to ${V} in the port Makefile
+#   * Set BOOTSTRAP_V back to the new version in the port Makefile
 #   * make bootstrap && make makesum (which will put a new PyPy bootstrap
 #     into ${FULLDISTDIR} such that subsequent builds will use it)
 #   * make clean && make clean=packages
 #   * make package (using the new bootstrap build)
 #
 # If the old bootstrap no longer works (e.g. due to an ABI change), then
-# You can use the no_bootstrap FLAVOR to make a new bootstrap. This uses
-# CPython to build PyPy instead. Note this is slower.
+# you can use the no_bootstrap FLAVOR to make a new bootstrap. This uses
+# CPython to build PyPy instead, which is much slower and takes more RAM.
 
-V =			7.1.1
-REVISION =		0
-BOOTSTRAP_V =		${V}
+V =			7.2.0
+BOOTSTRAP_V =		7.2.0
 DISTNAME =		pypy2.7-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
+BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}.tar.xz
+# list bootstraps for all arches in SUPDISTFILES
+SUPDISTFILES +=		${BOOTSTRAP-amd64}:0
+SUPDISTFILES +=		${BOOTSTRAP-aarch64}:0
 
 CATEGORIES =		lang
 
@@ -51,17 +54,16 @@ FLAVOR ?=
 
 DIST_SUBDIR =		pypy
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-.if defined(BOOTSTRAP-${MACHINE_ARCH}) && !${FLAVOR:Mno_bootstrap}
+.if !${FLAVOR:Mno_bootstrap}
 DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
 .endif
-# if adding archs, list *all* bootstraps in SUPDISTFILES
-SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 
 MODULES +=		lang/python x11/tk
 MODPY_VERSION =		2.7
-
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
+UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX \
+			-i MODPY_PY0EXTENSION \
+			-i MODPY_VERSION \
+			-i MACHINE_ARCH
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx \
@@ -145,16 +147,13 @@ PYPY_PKG = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME}.tgz
 
 .include <bsd.port.mk>
 
-# The bootstrap-based build process uses less memory and is faster,
-# but if you need to build a new bootstrap because the existing one no
-# longer runs, use FLAVOR=no_bootstrap to do a cpython-based build.
-# Expect 6.5GB memory usage on amd64.
+# maintainer target to generate a new bootstrap.
 bootstrap: ${PYPY_PKG}
-	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
-	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${PYPY_PKG}
-	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
+	${_PBUILD} mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
+	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar zxf ${PYPY_PKG}
+	${_PBUILD} rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
 	for i in `LD_LIBRARY_PATH=${WRKDIR}/prepare/bootstrap/pypy/lib ldd ${WRKDIR}/prepare/bootstrap/bin/pypy | grep 'lib/' | grep -v 'libpypy-c' | \
 	        awk '{ print $$7 }'` ; do \
-		cp $$i ${WRKDIR}/prepare/bootstrap/system-libs; done
+		${_PBUILD} cp $$i ${WRKDIR}/prepare/bootstrap/system-libs; done
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
-	    xz > ${FULLDISTDIR}/${BOOTSTRAP-${MACHINE_ARCH}}
+	    xz | ${_PFETCH} tee ${FULLDISTDIR}/${BOOTSTRAP-${MACHINE_ARCH}} > /dev/null

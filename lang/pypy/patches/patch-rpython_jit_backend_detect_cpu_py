@@ -1,0 +1,13 @@
+$OpenBSD: patch-rpython_jit_backend_detect_cpu_py,v 1.1 2019/11/19 13:50:24 sthen Exp $
+
+Index: rpython/jit/backend/detect_cpu.py
+--- rpython/jit/backend/detect_cpu.py.orig
++++ rpython/jit/backend/detect_cpu.py
+@@ -71,6 +71,7 @@ def detect_model_from_host_platform():
+             'AMD64': MODEL_X86,    # win64
+             'armv8l': MODEL_ARM,   # 32-bit ARMv8
+             'aarch64': MODEL_ARM64,
++            'arm64': MODEL_ARM64,
+             'armv7l': MODEL_ARM,
+             'armv6l': MODEL_ARM,
+             'arm': MODEL_ARM,      # freebsd
