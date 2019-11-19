@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/15 00:17:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/19 09:50:07 sthen Exp $
 
 COMMENT=	script to update an OpenBSD CVS repository via rsync
 
-DISTNAME=	reposync-0.11
+DISTNAME=	reposync-0.12
 
 CATEGORIES=	sysutils
 PKG_ARCH=	*
@@ -17,12 +17,20 @@ MASTER_SITES=	https://spacehopper.org/mirrors/
 NO_BUILD=	Yes
 
 RUN_DEPENDS=	net/rsync
+TEST_DEPENDS=	devel/shellcheck \
+		shells/bash
+
+do-configure:
+	sed -i s,rundir=/var/db/reposync,rundir=${LOCALSTATEDIR}/db/reposync, \
+	    ${WRKSRC}/reposync{,.1}
 
 do-install:
-	${SUBST_PROGRAM} ${WRKSRC}/reposync ${PREFIX}/bin/reposync
-	${SUBST_MAN} ${WRKSRC}/reposync.1 ${PREFIX}/man/man1/reposync.1
+	cd ${WRKSRC}; ${INSTALL_SCRIPT} reposync ${PREFIX}/bin/reposync; \
+	    ${INSTALL_MAN} reposync.1 ${PREFIX}/man/man1/reposync.1
 
 do-test:
 	ksh -n ${WRKSRC}/reposync
+	bash -n ${WRKSRC}/reposync
+	shellcheck --color ${WRKSRC}/reposync
 
 .include <bsd.port.mk>
