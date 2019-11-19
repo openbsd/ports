@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.19 2019/11/19 14:51:32 espie Exp $
+# $OpenBSD: build-debug-info,v 1.20 2019/11/19 14:54:01 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -238,26 +238,10 @@ sub new
 	return $class->SUPER::new(undef, BuildDebugInfo::State->new);
 }
 
-sub parse_args
-{
-	my $self = shift;
-	# this handles update-plist options proper, finished with --
-	$self->{state}->handle_options;
-	if (@ARGV == 0) {
-		$self->{state}->usage;
-	}
-	# we read all plists using the exact same code as pkg_create
-	# e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
-	# options1 pkgname1 options2 pkgname2 ...
-	while (@ARGV > 0) {
-		PlistReader->process_next_subpackage($self);
-	}
-}
-
 my $self = BuildDebugInfo->new;
 my $state = $self->{state};
 $state->{exitcode} = 0;
-$self->parse_args;
+PlistReader->parse_args($self);
 use File::Basename;
 $self->{dirstash} = {};
 $self->{linkstash} = {};

@@ -1,4 +1,4 @@
-# $OpenBSD: CommonPlist.pm,v 1.2 2019/11/19 14:45:28 espie Exp $
+# $OpenBSD: CommonPlist.pm,v 1.3 2019/11/19 14:54:01 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -53,6 +53,22 @@ sub process_next_subpackage
 	$r->read_all_fragments($s, $r->olist);
 	push(@{$o->{lists}}, $r);
 	return $r;
+}
+
+sub parse_args
+{
+	my ($class, $o) = @_;
+	# this handles update-plist options proper, finished with --
+	$o->{state}->handle_options;
+	if (@ARGV == 0) {
+		$o->{state}->usage;
+	}
+	# we read all plists using the exact same code as pkg_create
+	# e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
+	# options1 pkgname1 options2 pkgname2 ...
+	while (@ARGV > 0) {
+		$class->process_next_subpackage($o);
+	}
 }
 
 # specialized state
