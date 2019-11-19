@@ -1,4 +1,4 @@
-# $OpenBSD: BaseFS.pm,v 1.2 2019/11/19 15:06:19 espie Exp $
+# $OpenBSD: BaseFS.pm,v 1.3 2019/11/19 16:35:20 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -28,11 +28,8 @@ sub new
 sub destdir
 {
 	my $self = shift;
-	if (@_ == 0) {
-		return $self->{destdir};
-	} else {
-		return $self->{destdir}."/".shift;
-	}
+	unshift @_, $self->{destdir};
+	return File::Spec->canonpath(File::Spec->catfile(@_));
 }
 
 # we are given a filename which actually lives under destdir.
