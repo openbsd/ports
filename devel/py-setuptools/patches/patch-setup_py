@@ -1,8 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.7 2019/04/17 22:29:10 kmos Exp $
+$OpenBSD: patch-setup_py,v 1.8 2019/11/19 20:26:56 kmos Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -58,7 +58,7 @@ package_data = dict(
+@@ -52,7 +52,7 @@ package_data = dict(
  )
  
  force_windows_specific_files = (
@@ -11,12 +11,3 @@ Index: setup.py
      not in ("", "0", "false", "no")
  )
  
-@@ -106,7 +106,7 @@ setup_params = dict(
-     packages=setuptools.find_packages(exclude=['*.tests']),
-     package_data=package_data,
-     py_modules=['easy_install'],
--    zip_safe=True,
-+    zip_safe=False,
-     entry_points={
-         "distutils.commands": [
-             "%(cmd)s = setuptools.command.%(cmd)s:%(cmd)s" % locals()
