@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.18 2019/11/19 14:45:28 espie Exp $
+# $OpenBSD: build-debug-info,v 1.19 2019/11/19 14:51:32 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -39,6 +39,16 @@ sub stateclass
 sub command_name
 {
 	return 'build-debug-info';
+}
+
+sub process_next_subpackage
+{
+	my ($class, $o) = @_;
+
+	my $r = $class->SUPER::process_next_subpackage($o);
+	if ($r->{state}{bad} != 0) {
+		$o->{state}{exitcode} = 1;
+	}
 }
 
 package PlistReader::State;
@@ -228,16 +238,6 @@ sub new
 	return $class->SUPER::new(undef, BuildDebugInfo::State->new);
 }
 
-sub process_next_subpackage
-{
-	my $self = shift;
-
-	my $r = PlistReader->process_next_subpackage($self);
-	if ($r->{state}{bad} != 0) {
-		$self->{state}{exitcode} = 1;
-	}
-}
-
 sub parse_args
 {
 	my $self = shift;
@@ -250,9 +250,8 @@ sub parse_args
 	# e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
 	# options1 pkgname1 options2 pkgname2 ...
 	while (@ARGV > 0) {
-		$self->process_next_subpackage;
+		PlistReader->process_next_subpackage($self);
 	}
-
 }
 
 my $self = BuildDebugInfo->new;
