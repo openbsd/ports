@@ -1,4 +1,5 @@
-$OpenBSD: patch-etc_clamd_conf_sample,v 1.8 2019/08/22 16:22:07 sthen Exp $
+$OpenBSD: patch-etc_clamd_conf_sample,v 1.9 2019/11/19 15:35:37 sthen Exp $
+
 Index: etc/clamd.conf.sample
 --- etc/clamd.conf.sample.orig
 +++ etc/clamd.conf.sample
@@ -20,7 +21,7 @@ Index: etc/clamd.conf.sample
  
  # Only load the official signatures published by the ClamAV project.
  # Default: no
-@@ -204,7 +204,7 @@ Example
+@@ -203,7 +203,7 @@ Example
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges

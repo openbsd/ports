@@ -1,8 +1,9 @@
-$OpenBSD: patch-clamd_Makefile_in,v 1.27 2019/03/28 14:30:01 solene Exp $
+$OpenBSD: patch-clamd_Makefile_in,v 1.28 2019/11/19 15:35:37 sthen Exp $
+
 Index: clamd/Makefile.in
 --- clamd/Makefile.in.orig
 +++ clamd/Makefile.in
-@@ -403,7 +403,9 @@ JSON_LDFLAGS = @JSON_LDFLAGS@
+@@ -409,7 +409,9 @@ JSON_LDFLAGS = @JSON_LDFLAGS@
  JSON_LIBS = @JSON_LIBS@
  LCOV = @LCOV@
  LD = @LD@

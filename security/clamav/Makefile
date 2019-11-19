@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.131 2019/10/20 10:57:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2019/11/19 15:35:37 sthen Exp $
 
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.101.4
-
-REVISION=	0
+DISTNAME=	clamav-0.102.0
 
 CATEGORIES=	security
 
-SHARED_LIBS +=	clamav               24.0     # 9.2
-SHARED_LIBS +=	clamunrar            4.0      # 9.2
+SHARED_LIBS +=	clamav               24.0     # 9.4
+SHARED_LIBS +=	clamunrar            4.0      # 9.4
 SHARED_LIBS +=	clamunrar_iface      4.0
+SHARED_LIBS +=  freshclam            0.0      # 2.0
 
-HOMEPAGE=	http://www.clamav.net/
+HOMEPAGE=	https://www.clamav.net/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -19,8 +18,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += bz2 c crypto curl curses iconv json-c ltdl lzma m milter
-WANTLIB += mspack nghttp2 pcre2-8 pthread ssl xml2 z
+WANTLIB += bz2 c charset crypto curl curses iconv json-c ltdl lzma m
+WANTLIB += milter mspack nghttp2 pcre2-8 pthread ssl xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -37,9 +36,10 @@ LIB_DEPENDS=		archivers/bzip2 \
 			textproc/libxml
 TEST_DEPENDS=		security/clamav
 
-MASTER_SITES=		http://www.clamav.net/downloads/production/
+MASTER_SITES=		https://www.clamav.net/downloads/production/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS+=	--disable-cr \
 			--enable-bigstack \
 			--enable-milter \
@@ -67,8 +67,8 @@ CONFIGURE_ARGS+= --disable-llvm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/clamav
-	cd ${WRKSRC}/docs; \
-	    cp -rp UserManual* html ${PREFIX}/share/doc/clamav/
+	cd ${WRKSRC}/docs/html; \
+	    cp -rp * ${PREFIX}/share/doc/clamav/
 	cd ${WRKSRC}/examples; \
 	    ${INSTALL_DATA} ex1.c ${PREFIX}/share/examples/clamav
 

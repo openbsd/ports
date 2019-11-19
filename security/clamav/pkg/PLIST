@@ -1,10 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.31 2019/05/29 14:17:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/11/19 15:35:37 sthen Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/db/clamav/*
 @extraunexec rm -fr /var/spool/clamav/*
 @extraunexec rm -fr /var/clamav/quarantine/*
 @extraunexec rm -fr /var/clamav/tmp/*
+@owner _clamav
+@group _clamav
+@sample /var/db/clamav/
+@sample /var/spool/clamav/
+@sample /var/clamav/
+@mode 0700
+@sample /var/clamav/quarantine/
+@sample /var/clamav/tmp/
+@mode
+@owner
+@group
 @rcscript ${RCDIR}/clamav_milter
 @rcscript ${RCDIR}/clamd
 @rcscript ${RCDIR}/freshclam
@@ -18,16 +29,21 @@ bin/clamav-config
 @bin bin/freshclam
 @bin bin/sigtool
 include/clamav-types.h
+include/clamav-version.h
 include/clamav.h
-lib/libclamav.a
+include/libfreshclam.h
+@static-lib lib/libclamav.a
 lib/libclamav.la
 @lib lib/libclamav.so.${LIBclamav_VERSION}
-lib/libclamunrar.a
+@static-lib lib/libclamunrar.a
 lib/libclamunrar.la
 @lib lib/libclamunrar.so.${LIBclamunrar_VERSION}
-lib/libclamunrar_iface.a
+@static-lib lib/libclamunrar_iface.a
 lib/libclamunrar_iface.la
 @lib lib/libclamunrar_iface.so.${LIBclamunrar_iface_VERSION}
+@static-lib lib/libfreshclam.a
+lib/libfreshclam.la
+@lib lib/libfreshclam.so.${LIBfreshclam_VERSION}
 lib/pkgconfig/libclamav.pc
 @man man/man1/clambc.1
 @man man/man1/clamconf.1
@@ -46,94 +62,45 @@ lib/pkgconfig/libclamav.pc
 @bin sbin/clamd
 share/doc/clamav/
 share/doc/clamav/UserManual/
-share/doc/clamav/UserManual.md
+share/doc/clamav/UserManual.html
 share/doc/clamav/UserManual/Installation-Unix/
-share/doc/clamav/UserManual/Installation-Unix.md
-share/doc/clamav/UserManual/Installation-Unix/Steps-Debian-Ubuntu.md
-share/doc/clamav/UserManual/Installation-Unix/Steps-Redhat-CentOS.md
-share/doc/clamav/UserManual/Installation-Unix/Steps-macOS.md
-share/doc/clamav/UserManual/Installation-Windows.md
-share/doc/clamav/UserManual/Introduction.md
-share/doc/clamav/UserManual/OnAccess.md
+share/doc/clamav/UserManual/Installation-Unix.html
+share/doc/clamav/UserManual/Installation-Unix/Steps-Debian-Ubuntu.html
+share/doc/clamav/UserManual/Installation-Unix/Steps-Redhat-CentOS.html
+share/doc/clamav/UserManual/Installation-Unix/Steps-macOS.html
+share/doc/clamav/UserManual/Installation-Windows.html
+share/doc/clamav/UserManual/Introduction.html
+share/doc/clamav/UserManual/OnAccess.html
 share/doc/clamav/UserManual/Signatures/
-share/doc/clamav/UserManual/Signatures.md
-share/doc/clamav/UserManual/Signatures/AuthenticodeRules.md
-share/doc/clamav/UserManual/Signatures/BodySignatureFormat.md
-share/doc/clamav/UserManual/Signatures/BytecodeSignatures.md
-share/doc/clamav/UserManual/Signatures/ContainerMetadata.md
-share/doc/clamav/UserManual/Signatures/DatabaseInfo.md
-share/doc/clamav/UserManual/Signatures/DynamicConfig.md
-share/doc/clamav/UserManual/Signatures/EncryptedArchives.md
-share/doc/clamav/UserManual/Signatures/ExtendedSignatures.md
-share/doc/clamav/UserManual/Signatures/FileTypeMagic.md
-share/doc/clamav/UserManual/Signatures/FileTypes.md
-share/doc/clamav/UserManual/Signatures/FunctionalityLevels.md
-share/doc/clamav/UserManual/Signatures/HashSignatures.md
-share/doc/clamav/UserManual/Signatures/LogicalSignatures.md
-share/doc/clamav/UserManual/Signatures/PhishSigs.md
-share/doc/clamav/UserManual/Signatures/Whitelists.md
-share/doc/clamav/UserManual/Signatures/YaraRules.md
+share/doc/clamav/UserManual/Signatures.html
+share/doc/clamav/UserManual/Signatures/AuthenticodeRules.html
+share/doc/clamav/UserManual/Signatures/BodySignatureFormat.html
+share/doc/clamav/UserManual/Signatures/BytecodeSignatures.html
+share/doc/clamav/UserManual/Signatures/ContainerMetadata.html
+share/doc/clamav/UserManual/Signatures/DatabaseInfo.html
+share/doc/clamav/UserManual/Signatures/DynamicConfig.html
+share/doc/clamav/UserManual/Signatures/EncryptedArchives.html
+share/doc/clamav/UserManual/Signatures/ExtendedSignatures.html
+share/doc/clamav/UserManual/Signatures/FileTypeMagic.html
+share/doc/clamav/UserManual/Signatures/FileTypes.html
+share/doc/clamav/UserManual/Signatures/FunctionalityLevels.html
+share/doc/clamav/UserManual/Signatures/HashSignatures.html
+share/doc/clamav/UserManual/Signatures/LogicalSignatures.html
+share/doc/clamav/UserManual/Signatures/PhishSigs.html
+share/doc/clamav/UserManual/Signatures/Whitelists.html
+share/doc/clamav/UserManual/Signatures/YaraRules.html
 share/doc/clamav/UserManual/Usage/
-share/doc/clamav/UserManual/Usage.md
-share/doc/clamav/UserManual/Usage/Configuration.md
-share/doc/clamav/UserManual/Usage/Scanning.md
-share/doc/clamav/UserManual/Usage/SignatureManagement.md
-share/doc/clamav/UserManual/development.md
+share/doc/clamav/UserManual/Usage.html
+share/doc/clamav/UserManual/Usage/Configuration.html
+share/doc/clamav/UserManual/Usage/Scanning.html
+share/doc/clamav/UserManual/Usage/SignatureManagement.html
+share/doc/clamav/UserManual/development.html
 share/doc/clamav/UserManual/images/
 share/doc/clamav/UserManual/images/demon.png
-share/doc/clamav/UserManual/libclamav.md
-share/doc/clamav/html/
-share/doc/clamav/html/UserManual/
-share/doc/clamav/html/UserManual.html
-share/doc/clamav/html/UserManual/Installation-Unix/
-share/doc/clamav/html/UserManual/Installation-Unix.html
-share/doc/clamav/html/UserManual/Installation-Unix/Steps-Debian-Ubuntu.html
-share/doc/clamav/html/UserManual/Installation-Unix/Steps-Redhat-CentOS.html
-share/doc/clamav/html/UserManual/Installation-Unix/Steps-macOS.html
-share/doc/clamav/html/UserManual/Installation-Windows.html
-share/doc/clamav/html/UserManual/Introduction.html
-share/doc/clamav/html/UserManual/OnAccess.html
-share/doc/clamav/html/UserManual/Signatures/
-share/doc/clamav/html/UserManual/Signatures.html
-share/doc/clamav/html/UserManual/Signatures/AuthenticodeRules.html
-share/doc/clamav/html/UserManual/Signatures/BodySignatureFormat.html
-share/doc/clamav/html/UserManual/Signatures/BytecodeSignatures.html
-share/doc/clamav/html/UserManual/Signatures/ContainerMetadata.html
-share/doc/clamav/html/UserManual/Signatures/DatabaseInfo.html
-share/doc/clamav/html/UserManual/Signatures/DynamicConfig.html
-share/doc/clamav/html/UserManual/Signatures/EncryptedArchives.html
-share/doc/clamav/html/UserManual/Signatures/ExtendedSignatures.html
-share/doc/clamav/html/UserManual/Signatures/FileTypeMagic.html
-share/doc/clamav/html/UserManual/Signatures/FileTypes.html
-share/doc/clamav/html/UserManual/Signatures/FunctionalityLevels.html
-share/doc/clamav/html/UserManual/Signatures/HashSignatures.html
-share/doc/clamav/html/UserManual/Signatures/LogicalSignatures.html
-share/doc/clamav/html/UserManual/Signatures/PhishSigs.html
-share/doc/clamav/html/UserManual/Signatures/Whitelists.html
-share/doc/clamav/html/UserManual/Signatures/YaraRules.html
-share/doc/clamav/html/UserManual/Usage/
-share/doc/clamav/html/UserManual/Usage.html
-share/doc/clamav/html/UserManual/Usage/Configuration.html
-share/doc/clamav/html/UserManual/Usage/Scanning.html
-share/doc/clamav/html/UserManual/Usage/SignatureManagement.html
-share/doc/clamav/html/UserManual/development.html
-share/doc/clamav/html/UserManual/images/
-share/doc/clamav/html/UserManual/images/demon.png
-share/doc/clamav/html/UserManual/libclamav.html
+share/doc/clamav/UserManual/libclamav.html
 share/examples/clamav/
 share/examples/clamav/clamav-milter.conf.sample
 @sample ${SYSCONFDIR}/clamav-milter.conf
-@owner _clamav
-@group _clamav
-@sample /var/db/clamav/
-@sample /var/spool/clamav/
-@sample /var/clamav/
-@mode 0700
-@sample /var/clamav/quarantine/
-@sample /var/clamav/tmp/
-@mode
-@owner
-@group
 share/examples/clamav/clamd.conf.sample
 @sample ${SYSCONFDIR}/clamd.conf
 share/examples/clamav/ex1.c

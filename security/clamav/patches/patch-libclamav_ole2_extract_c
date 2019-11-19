@@ -1,16 +1,16 @@
-$OpenBSD: patch-libclamav_ole2_extract_c,v 1.18 2019/01/07 22:49:14 sthen Exp $
+$OpenBSD: patch-libclamav_ole2_extract_c,v 1.19 2019/11/19 15:35:37 sthen Exp $
 
 allow for machine arch where char is unsigned by default (e.g. arm, powerpc)
 
 Index: libclamav/ole2_extract.c
 --- libclamav/ole2_extract.c.orig
 +++ libclamav/ole2_extract.c
-@@ -235,7 +235,7 @@ static unsigned char magic_id[] = {0xd0, 0xcf, 0x11, 0
+@@ -228,7 +228,7 @@ int ole2_list_delete(ole2_list_t *list)
+ static unsigned char magic_id[] = {0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1};
  
- 
- static char    *
+ static char *
 -get_property_name2(char *name, int size)
 +get_property_name2(signed char *name, int size)
  {
-     int             i, j;
-     char           *newname;
+     int i, j;
+     char *newname;
