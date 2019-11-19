@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.26 2019/10/06 15:37:15 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.27 2019/11/19 09:17:06 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -33,8 +33,14 @@ MODGO_TYPE ?=		bin
 MODGO_WORKSPACE ?=	${WRKDIR}/go
 MODGO_GOCACHE ?=	${WRKDIR}/go-cache
 MODGO_GOPATH ?=		${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}
-MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}" GOPATH="${MODGO_GOPATH}" GO111MODULE=off
-# ports are not allowed to fetch from the network at build time; point
+MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}" \
+			GOPATH="${MODGO_GOPATH}" \
+			GO111MODULE=off
+# We cannot assume that the maching running the built code will have SSE,
+# even though the machine building the package has SSE. As such, we need
+# to explicitly disable SSE on i386 builds.
+MAKE_ENV +=		GO386=387
+# Ports are not allowed to fetch from the network at build time; point
 # GOPROXY at an unreachable host so that failures are also visible to
 # developers who don't have PORTS_PRIVSEP and a "deny .. _pbuild" PF rule.
 MAKE_ENV +=		GOPROXY=invalid://ports.should.not.fetch.at.buildtime/
