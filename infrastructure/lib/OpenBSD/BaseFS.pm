@@ -1,4 +1,4 @@
-# $OpenBSD: BaseFS.pm,v 1.1 2019/11/13 11:38:48 espie Exp $
+# $OpenBSD: BaseFS.pm,v 1.2 2019/11/19 15:06:19 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -18,6 +18,7 @@ use strict;
 use warnings;
 
 package OpenBSD::BaseFS;
+use File::Basename;
 
 sub new
 {
