@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.17 2019/11/19 14:41:29 espie Exp $
+# $OpenBSD: build-debug-info,v 1.18 2019/11/19 14:45:28 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -41,36 +41,8 @@ sub command_name
 	return 'build-debug-info';
 }
 
-# specialized state
 package PlistReader::State;
-our @ISA = qw(OpenBSD::PkgCreate::State);
-
-# mostly make sure we have a progressmeter
-sub init
-{
-	my ($self, $realstate) = @_;
-	$self->{subst} = $self->substclass->new($realstate);
-	$self->{progressmeter} = $realstate->{progressmeter};
-	$self->{bad} = 0;
-	$self->{repo} = $realstate->{repo};
-	$self->{quiet} = $realstate->{quiet};
-	$self->{cache_dir} = $realstate->{cache_dir};
-}
-
-# if we're in quiet mode, get rid of status messages
-sub set_status
-{
-	my $self = shift;
-	return if $self->{quiet};
-	$self->SUPER::set_status(@_);
-}
-
-sub end_status
-{
-	my $self = shift;
-	return if $self->{quiet};
-	$self->SUPER::end_status(@_);
-}
+our @ISA = qw(OpenBSD::BasePlistReader::State);
 
 sub substclass
 {

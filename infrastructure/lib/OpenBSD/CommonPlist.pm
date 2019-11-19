@@ -1,4 +1,4 @@
-# $OpenBSD: CommonPlist.pm,v 1.1 2019/11/19 14:38:57 espie Exp $
+# $OpenBSD: CommonPlist.pm,v 1.2 2019/11/19 14:45:28 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -53,6 +53,36 @@ sub process_next_subpackage
 	$r->read_all_fragments($s, $r->olist);
 	push(@{$o->{lists}}, $r);
 	return $r;
+}
+
+# specialized state
+package OpenBSD::BasePlistReader::State;
+our @ISA = qw(OpenBSD::PkgCreate::State);
+# mostly make sure we have a progressmeter
+sub init
+{
+	my ($self, $realstate) = @_;
+	$self->{subst} = $self->substclass->new($realstate);
+	$self->{progressmeter} = $realstate->{progressmeter};
+	$self->{bad} = 0;
+	$self->{repo} = $realstate->{repo};
+	$self->{quiet} = $realstate->{quiet};
+	$self->{cache_dir} = $realstate->{cache_dir};
+}
+
+# if we're in quiet mode, get rid of status messages
+sub set_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::set_status(@_);
+}
+
+sub end_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::end_status(@_);
 }
 
 1;

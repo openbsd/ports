@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.183 2019/11/19 14:41:29 espie Exp $
+# $OpenBSD: update-plist,v 1.184 2019/11/19 14:45:28 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -353,36 +353,9 @@ sub figure_out_dependencies
 
 # specialized state
 package PlistReader::State;
-our @ISA = qw(OpenBSD::PkgCreate::State);
+our @ISA = qw(OpenBSD::BasePlistReader::State);
 
-# mostly make sure we don't care about problems, that our subst records stuff
-# and that we have a progressmeter
-sub init
-{
-	my ($self, $realstate) = @_;
-	$self->{subst} = $self->substclass->new($realstate);
-	$self->{progressmeter} = $realstate->{progressmeter};
-	$self->{bad} = 0;
-	$self->{repo} = $realstate->{repo};
-	$self->{quiet} = $realstate->{quiet};
-	$self->{cache_dir} = $realstate->{cache_dir};
-}
-
-# if we're in quiet mode, get rid of status messages
-sub set_status
-{
-	my $self = shift;
-	return if $self->{quiet};
-	$self->SUPER::set_status(@_);
-}
-
-sub end_status
-{
-	my $self = shift;
-	return if $self->{quiet};
-	$self->SUPER::end_status(@_);
-}
-
+# our subst will record everything
 sub substclass
 {
 	return 'OpenBSD::ReverseSubst';
