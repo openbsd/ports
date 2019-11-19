@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/06/05 12:54:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/11/19 14:49:11 sthen Exp $
 bin/gargoyle
-lib/libgarglk.so
+@so lib/libgarglk.so
 libexec/gargoyle/
 @bin libexec/gargoyle/advsys
 @bin libexec/gargoyle/agility
@@ -15,7 +15,7 @@ libexec/gargoyle/
 @bin libexec/gargoyle/hugo
 @bin libexec/gargoyle/jacl
 @bin libexec/gargoyle/level9
-libexec/gargoyle/libgarglk.so
+@so libexec/gargoyle/libgarglk.so
 @bin libexec/gargoyle/magnetic
 @bin libexec/gargoyle/nitfol
 @bin libexec/gargoyle/scare

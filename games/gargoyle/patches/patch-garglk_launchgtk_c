@@ -1,26 +1,19 @@
-$OpenBSD: patch-garglk_launchgtk_c,v 1.3 2019/06/05 12:54:03 sthen Exp $
+$OpenBSD: patch-garglk_launchgtk_c,v 1.4 2019/11/19 14:49:11 sthen Exp $
 
 Remove Linux'ism to figure out the libexec dir.
 
 Index: garglk/launchgtk.c
 --- garglk/launchgtk.c.orig
 +++ garglk/launchgtk.c
-@@ -180,6 +180,10 @@ static void winbrowsefile(char *buffer)
+@@ -185,7 +185,10 @@ static void winbrowsefile(char *buffer)
  
  void winpath(char *buffer)
  {
+-#ifdef __FreeBSD__
 +#if defined(__OpenBSD__)
 +    char exepath[MaxBuffer] = "${TRUEPREFIX}/libexec/gargoyle/";
 +    snprintf(buffer, sizeof(exepath), "%s", exepath );
-+#else
-     char exepath[MaxBuffer] = {0};
-     ssize_t exelen;
- 
-@@ -192,6 +196,7 @@ void winpath(char *buffer)
-     }
- 
-     strcpy(buffer, exepath);
-+#endif
- 
-     char *dirpos = strrchr(buffer, *DirSeparator);
-     if ( dirpos != NULL )
++#elif defined(__FreeBSD__)
+     int mib[4];
+     mib[0] = CTL_KERN;
+     mib[1] = KERN_PROC;
