@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2019/11/18 19:57:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/11/20 07:43:35 ajacoutot Exp $
 
 COMMENT=		MATE control center
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  mate-slab                 0.0 # 0.0
 SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
 MATE_VERSION=		1.22.1
-REVISION=		0
 
 CATEGORIES=		x11
 
