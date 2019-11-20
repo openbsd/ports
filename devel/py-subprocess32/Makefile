@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/11/20 01:17:06 kmos Exp $
 
 COMMENT =		backport of the subprocess library module from Python 3
 
@@ -16,5 +16,6 @@ WANTLIB =	${MODPY_WANTLIB} pthread
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>
