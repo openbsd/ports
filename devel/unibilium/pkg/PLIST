@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/19 19:44:47 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/20 13:38:44 edd Exp $
 include/unibilium.h
-lib/libunibilium.a
+@static-lib lib/libunibilium.a
 lib/libunibilium.la
 @lib lib/libunibilium.so.${LIBunibilium_VERSION}
 lib/pkgconfig/unibilium.pc
