@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/11/20 10:26:29 fcambus Exp $
 
 COMMENT =	ncurses Git repository browser
 
-V =		2.4.1
+V =		2.5.0
 DISTNAME =	tig-$V
 
 CATEGORIES =	devel
