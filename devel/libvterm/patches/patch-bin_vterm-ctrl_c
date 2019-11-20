@@ -1,16 +1,42 @@
-$OpenBSD: patch-bin_vterm-ctrl_c,v 1.1.1.1 2017/02/28 22:40:11 edd Exp $
+$OpenBSD: patch-bin_vterm-ctrl_c,v 1.2 2019/11/20 13:40:13 edd Exp $
 
 Fix signed versus unsigned comparison.
 https://bugs.launchpad.net/libvterm/+bug/1668780
 
---- bin/vterm-ctrl.c.orig	Sun Dec 18 21:03:40 2016
-+++ bin/vterm-ctrl.c	Sat Feb 25 16:29:14 2017
-@@ -81,7 +81,7 @@ static char *read_csi()
+Patch updated to apply on:
+https://github.com/neovim/libvterm/tree/nvim
+
+diff --git bin/vterm-ctrl.c bin/vterm-ctrl.c
+index ba0d61e..92a365f 100644
+--- bin/vterm-ctrl.c
++++ bin/vterm-ctrl.c
+@@ -79,9 +79,9 @@ static bool seticanon(bool icanon, bool echo)
+   return ret;
+ }
+ 
+-static void await_c1(unsigned char c1)
++static void await_c1(int c1)
  {
-   /* TODO: This really should be a more robust CSI parser
-    */
--  char c;
+-  unsigned char c;
 +  int c;
  
    /* await CSI - 8bit or 2byte 7bit form */
    bool in_esc = false;
+@@ -106,7 +106,7 @@ static char *read_csi()
+   char csi[32];
+   int i = 0;
+   for(; i < sizeof(csi)-1; i++) {
+-    char c = csi[i] = getchar();
++    int c = csi[i] = getchar();
+     if(c >= 0x40 && c <= 0x7e)
+       break;
+   }
+@@ -125,7 +125,7 @@ static char *read_dcs()
+   bool in_esc = false;
+   int i = 0;
+   for(; i < sizeof(dcs)-1; ) {
+-    char c = getchar();
++    int c = getchar();
+     if(c == 0x9c) // ST
+       break;
+     if(in_esc && c == 0x5c)

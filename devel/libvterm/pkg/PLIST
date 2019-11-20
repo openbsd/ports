@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/28 22:40:11 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/20 13:40:13 edd Exp $
 @bin bin/unterm
 @bin bin/vterm-ctrl
 @bin bin/vterm-dump
 include/vterm.h
 include/vterm_keycodes.h
-lib/libvterm.a
+@static-lib lib/libvterm.a
 lib/libvterm.la
 @lib lib/libvterm.so.${LIBvterm_VERSION}
 lib/pkgconfig/vterm.pc

@@ -1,21 +1,26 @@
-# $OpenBSD:
+# $OpenBSD: Makefile,v 1.3 2019/11/20 13:40:12 edd Exp $
 
 COMMENT =	VT220/xterm/ECMA-48 terminal emulator library
 # No releases, so use date and a git hash.
 # Note that the github repo is a mirror of a bzr repo.
-VERSION =	20170211
+VERSION =	20191009
 DISTNAME =	libvterm-${VERSION}
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	libvterm
-GH_COMMIT =	224b8dcde1c9640c29a34aa60c0f0d56ad298449
+# Note this git sha is from the nvim branch because
+# Neovim requires patches from this branch to build.
+# see https://github.com/neovim/neovim/wiki/Deps
+GH_COMMIT =	7c72294d84ce20da4c27362dbd7fa4b08cfc91da
 
-SHARED_LIBS +=  vterm                     0.0 # 0.0
+SHARED_LIBS +=  vterm                     1.0 # 0.0
 
 CATEGORIES =	devel
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WANTLIB += c
 
