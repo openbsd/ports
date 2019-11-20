@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/20 03:18:44 kmos Exp $
 
 COMMENT=		Python graph (network) package
 
@@ -15,9 +15,10 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
-MODPY_PI =		Yes
+MODPY_PI=		Yes
+MODPY_PYTEST=		Yes
 
-FLAVORS =		python3
-FLAVOR ?=
+FLAVORS=		python3
+FLAVOR?=
 
 .include <bsd.port.mk>
