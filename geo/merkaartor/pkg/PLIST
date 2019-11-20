@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/29 22:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/11/20 12:57:05 landry Exp $
 @bin bin/merkaartor
 lib/merkaartor/
 lib/merkaartor/plugins/
 lib/merkaartor/plugins/background/
-lib/merkaartor/plugins/background/libMGdalBackgroundPlugin.so
-lib/merkaartor/plugins/background/libMGeoTiffBackgroundPlugin.so
-lib/merkaartor/plugins/background/libMMsBingMapBackgroundPlugin.so
-lib/merkaartor/plugins/background/libMWalkingPapersBackgroundPlugin.so
-share/applications/merkaartor.desktop
+@so lib/merkaartor/plugins/background/libMGdalBackgroundPlugin.so
+@so lib/merkaartor/plugins/background/libMGeoTiffBackgroundPlugin.so
+@so lib/merkaartor/plugins/background/libMMsBingMapBackgroundPlugin.so
+@so lib/merkaartor/plugins/background/libMWalkingPapersBackgroundPlugin.so
+share/applications/org.merkaartor.merkaartor.desktop
 share/icons/hicolor/128x128/apps/merkaartor.png
 share/icons/hicolor/16x16/apps/merkaartor.png
 share/icons/hicolor/192x192/apps/merkaartor.png

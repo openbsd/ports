@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:46:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/11/20 12:57:05 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
-GH_TAGNAME =	0.18.3
-REVISION =	8
+GH_TAGNAME =	0.18.4
 
 CATEGORIES =	geo x11
 
@@ -35,10 +34,6 @@ WANTLIB += c gdal m proj quazip5 z ${COMPILER_LIBCXX}
 
 # C++11
 COMPILER =		base-clang ports-gcc
-
-# proj 6.0
-# https://github.com/openstreetmap/merkaartor/issues/178
-CXXFLAGS+=	-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 #generate the .qm files from the .ts files before configure runs
 pre-configure:
