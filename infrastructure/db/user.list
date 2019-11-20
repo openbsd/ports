@@ -1,13 +1,12 @@
-$OpenBSD: user.list,v 1.354 2019/10/04 20:30:27 sthen Exp $
+$OpenBSD: user.list,v 1.355 2019/11/20 15:37:52 sthen Exp $
 
-This file lists all users and groups that are created by ports or that
-users are encouraged to create after installing a port (these are marked
-'noauto'). All ports' users/groups have to start with an underscore and
-have to use a fixed uid/gid. If a user/group pair is created, they share
-the same uid/gid. If a user is member of a system group, leave the group
-entry empty. If only a group is created, leave the user entry empty.
+This file lists all users and groups that are created by ports. All
+ports' users/groups have to start with an underscore and have to use
+a fixed uid/gid. If a user/group pair is created, they share the same
+uid/gid. If a user is member of a system group, leave the group entry
+empty. If only a group is created, leave the user entry empty.
 
-id  user		group		port options
+id  user		group		port
 ----------------------------------------------------
 500 _opennap		_opennap	audio/opennap
 501 _gnats				databases/gnats
@@ -205,7 +204,7 @@ id  user		group		port options
 694 _colord		_colord		graphics/colord
 695 _deadwood		_deadwood	net/maradns-deadwood
 696 _sslh		_sslh		net/sslh
-697 _cvsyncd		_cvsyncd	net/cvsync
+#697 _cvsyncd		_cvsyncd	net/cvsync
 #698 _yule		_yule		security/samhain
 #699 _mozsync		_mozsync	www/mozilla-sync
 700 _yubiserve		_yubiserve	security/yubiserve
