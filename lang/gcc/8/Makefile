@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/11/09 10:50:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/11/20 14:19:12 visa Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
@@ -24,7 +24,7 @@ ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
-ADASTRAP-mips64 = adastrap-mips64-$V-0.tar.xz
+ADASTRAP-mips64 = adastrap-mips64-$V-1.tar.xz
 ADASTRAP-powerpc = adastrap-powerpc-$V-1.tar.xz
 ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
