@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/08/22 16:16:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/20 22:15:58 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -285,25 +285,25 @@ include/pkcs11/eddsa.h
 include/pkcs11/pkcs11.h
 include/pkcs11/pkcs11f.h
 include/pkcs11/pkcs11t.h
-lib/libbind9.a
+@static-lib lib/libbind9.a
 lib/libbind9.la
 @lib lib/libbind9.so.${LIBbind9_VERSION}
-lib/libdns.a
+@static-lib lib/libdns.a
 lib/libdns.la
 @lib lib/libdns.so.${LIBdns_VERSION}
-lib/libirs.a
+@static-lib lib/libirs.a
 lib/libirs.la
 @lib lib/libirs.so.${LIBirs_VERSION}
-lib/libisc.a
+@static-lib lib/libisc.a
 lib/libisc.la
 @lib lib/libisc.so.${LIBisc_VERSION}
-lib/libisccc.a
+@static-lib lib/libisccc.a
 lib/libisccc.la
 @lib lib/libisccc.so.${LIBisccc_VERSION}
-lib/libisccfg.a
+@static-lib lib/libisccfg.a
 lib/libisccfg.la
 @lib lib/libisccfg.so.${LIBisccfg_VERSION}
-lib/liblwres.a
+@static-lib lib/liblwres.a
 lib/liblwres.la
 @lib lib/liblwres.so.${LIBlwres_VERSION}
 lib/python${MODPY_VERSION}/
