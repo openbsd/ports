@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/20 13:44:36 edd Exp $
 
 COMMENT =	Python plugin support for Neovim
 
-MODPY_EGG_VERSION =	0.3.2
+MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		pynvim-${MODPY_EGG_VERSION}
 PKGNAME =		py-neovim-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://github.com/neovim/python-client
@@ -28,6 +27,8 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			${BASE_PKGPATH}=${MODPY_EGG_VERSION}
 
 # You may need to increase the file descriptor ulimits to run tests.
+# Some failures:
+# https://github.com/neovim/pynvim/issues/416
 do-test:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX}
 
