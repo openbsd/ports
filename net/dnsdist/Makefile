@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/11/20 19:31:11 otto Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.3.3
+DISTNAME=		dnsdist-1.4.0
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+#REVISION=		0
 
 CATEGORIES=		net
 
@@ -15,22 +15,27 @@ MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=		${MODLUA_WANTLIB} c curses edit m protobuf pthread \
+WANTLIB +=		${MODLUA_WANTLIB} c curses edit m \
+			protobuf fstrm h2o-evloop pthread \
 			z crypto ssl sodium ${COMPILER_LIBCXX}
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.69
 USE_GMAKE=		Yes
 
-CONFIGURE_ARGS+=	--disable-gnutls \
+CONFIGURE_ARGS+=	--without-gnutls \
 			--disable-hardening \
 			--with-lua=lua${MODLUA_VERSION:S/.//} \
 			--without-net-snmp \
+			--without-libcap \
+			--without-ebpf \
+			--without-lmdb \
 			--enable-dns-over-tls \
 			--enable-dnscrypt \
-			--disable-fstrm
+			--enable-dnstap \
+			--enable-dns-over-https
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \
@@ -45,7 +50,9 @@ MODLUA_VERSION=		5.3
 BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
 			security/libsodium \
-			devel/protobuf
+			devel/protobuf \
+			net/libfstrm \
+			www/h2o
 
 .if ${MACHINE_ARCH:Mi386}
 # needs 64-bit atomics
