@@ -1,0 +1,16 @@
+$OpenBSD: patch-libclamav_bytecode_vm_c,v 1.1 2019/11/20 19:00:24 sthen Exp $
+
+Index: libclamav/bytecode_vm.c
+--- libclamav/bytecode_vm.c.orig
++++ libclamav/bytecode_vm.c
+@@ -1298,8 +1298,8 @@ int cli_vm_execute(const struct cli_bc *bc, struct cli
+         gettimeofday(&tv1, NULL);
+         tv1.tv_sec -= tv0.tv_sec;
+         tv1.tv_usec -= tv0.tv_usec;
+-        cli_dbgmsg("interpreter bytecode run finished in %luus, after executing %u opcodes\n",
+-                   tv1.tv_sec * 1000000 + tv1.tv_usec, pc);
++        cli_dbgmsg("interpreter bytecode run finished in %lluus, after executing %u opcodes\n",
++                   (long long)tv1.tv_sec * 1000000 + tv1.tv_usec, pc);
+     }
+     if (stop == CL_EBYTECODE) {
+         cli_event_error_str(ctx->bc_events, "interpreter finished with error\n");

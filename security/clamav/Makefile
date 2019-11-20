@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.132 2019/11/19 15:35:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.133 2019/11/20 19:00:24 sthen Exp $
 
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.102.0
+DISTNAME=	clamav-0.102.1
 
 CATEGORIES=	security
 
@@ -38,8 +38,7 @@ TEST_DEPENDS=		security/clamav
 
 MASTER_SITES=		https://www.clamav.net/downloads/production/
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-cr \
 			--enable-bigstack \
 			--enable-milter \

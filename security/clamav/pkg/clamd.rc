@@ -1,9 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: clamd.rc,v 1.4 2019/10/20 10:57:14 ajacoutot Exp $
+# $OpenBSD: clamd.rc,v 1.5 2019/11/20 19:00:24 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/clamd"
-daemon_timeout="120"
+daemon_timeout="75"
 
 . /etc/rc.d/rc.subr
 
