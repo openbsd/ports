@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/08/23 09:13:06 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/11/21 10:37:22 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ruby-rspec.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/CODEOWNERS
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
-${GEM_LIB}/gems/${DISTNAME}/MAINTAINERS
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -80,12 +82,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/releases__module=puppetlabs-apache.
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/users/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/users/puppetlabs.headers
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/users/puppetlabs.json
-${GEM_LIB}/gems/${DISTNAME}/spec/integration/
-${GEM_LIB}/gems/${DISTNAME}/spec/integration/forge/
-${GEM_LIB}/gems/${DISTNAME}/spec/integration/forge/v3/
-${GEM_LIB}/gems/${DISTNAME}/spec/integration/forge/v3/module_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/integration/forge/v3/release_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/integration/forge/v3/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/tmp/
 ${GEM_LIB}/gems/${DISTNAME}/spec/tmp/.gitkeep
