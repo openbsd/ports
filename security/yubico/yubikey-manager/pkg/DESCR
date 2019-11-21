@@ -1,0 +1,5 @@
+The YubiKey Manager can configure FIDO2, OTP and PIV functionality on
+a YubiKey. It works with any currently supported YubiKey. You can also
+use the tool to check the type and firmware of a YubiKey. In addition,
+you can use the extended settings to specify other features, such as to
+configure 3-second long touch.
