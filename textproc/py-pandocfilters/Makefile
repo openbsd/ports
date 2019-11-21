@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/21 03:31:42 kmos Exp $
 
 COMMENT =		utilities for writing pandoc filters
 
@@ -20,6 +20,6 @@ MODPY_PI =		Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-NO_TEST =		Yes
+NO_TEST =		Upstream has no tests
 
 .include <bsd.port.mk>
