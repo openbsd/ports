@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/10/23 19:30:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/11/21 18:26:07 landry Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
@@ -109,7 +109,7 @@ include/nss/utilmodt.h
 include/nss/utilpars.h
 include/nss/utilparst.h
 include/nss/utilrename.h
-lib/libcrmf.a
+@static-lib lib/libcrmf.a
 lib/libfreebl3.chk
 @lib lib/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib lib/libnss3.so.${LIBnss3_VERSION}
