@@ -1,8 +1,8 @@
-#   $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:35 sthen Exp $
+#   $OpenBSD: Makefile,v 1.28 2019/11/21 05:30:50 afresh1 Exp $
 
 COMMENT=	modules for handling mail with perl
 
-V=		2.14
+V=		2.21
 
 MODULES=	cpan
 PKG_ARCH=	*

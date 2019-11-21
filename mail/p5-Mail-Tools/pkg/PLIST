@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/12/27 11:49:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/11/21 05:30:50 afresh1 Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/Address.pm
 ${P5SITE}/Mail/Address.pod
@@ -32,6 +32,8 @@ ${P5SITE}/Mail/Send.pm
 ${P5SITE}/Mail/Send.pod
 ${P5SITE}/Mail/Util.pm
 ${P5SITE}/Mail/Util.pod
+${P5SITE}/MailTools.pm
+${P5SITE}/MailTools.pod
 @man man/man3p/Mail::Address.3p
 @man man/man3p/Mail::Cap.3p
 @man man/man3p/Mail::Field.3p
@@ -44,6 +46,7 @@ ${P5SITE}/Mail/Util.pod
 @man man/man3p/Mail::Mailer.3p
 @man man/man3p/Mail::Send.3p
 @man man/man3p/Mail::Util.3p
+@man man/man3p/MailTools.3p
 share/examples/p5-Mail-Tools/
 share/examples/p5-Mail-Tools/README.demos
 share/examples/p5-Mail-Tools/forwd_demo
