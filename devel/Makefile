@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1911 2019/11/19 00:05:33 pamela Exp $
+# $OpenBSD: Makefile,v 1.1912 2019/11/21 04:40:43 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1097,6 +1097,7 @@
      SUBDIR += p5-Test-Compile
      SUBDIR += p5-Test-Corpus-Audio-MPD
      SUBDIR += p5-Test-Deep
+     SUBDIR += p5-Test-Deep-Fuzzy
      SUBDIR += p5-Test-Deep-JSON
      SUBDIR += p5-Test-Deep-Type
      SUBDIR += p5-Test-Differences
