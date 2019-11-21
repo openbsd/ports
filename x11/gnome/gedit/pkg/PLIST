@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.60 2019/11/02 12:40:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.61 2019/11/21 18:31:41 jasper Exp $
 @bin bin/gedit
 include/gedit-3.14/
 include/gedit-3.14/gedit/
@@ -22,7 +22,7 @@ include/gedit-3.14/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib
-lib/gedit/libgedit-3.14.so
+@so lib/gedit/libgedit-3.14.so
 lib/gedit/plugins/
 lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/externaltools/
@@ -38,13 +38,13 @@ lib/gedit/plugins/externaltools/manager.py
 lib/gedit/plugins/externaltools/outputpanel.py
 lib/gedit/plugins/externaltools/windowactivatable.py
 lib/gedit/plugins/filebrowser.plugin
-lib/gedit/plugins/libdocinfo.so
-lib/gedit/plugins/libfilebrowser.so
-lib/gedit/plugins/libmodelines.so
-lib/gedit/plugins/libquickhighlight.so
-lib/gedit/plugins/libsort.so
-lib/gedit/plugins/libspell.so
-lib/gedit/plugins/libtime.so
+@so lib/gedit/plugins/libdocinfo.so
+@so lib/gedit/plugins/libfilebrowser.so
+@so lib/gedit/plugins/libmodelines.so
+@so lib/gedit/plugins/libquickhighlight.so
+@so lib/gedit/plugins/libsort.so
+@so lib/gedit/plugins/libspell.so
+@so lib/gedit/plugins/libtime.so
 lib/gedit/plugins/modelines.plugin
 lib/gedit/plugins/pythonconsole/
 lib/gedit/plugins/pythonconsole.plugin
@@ -1648,6 +1648,7 @@ share/locale/lv/LC_MESSAGES/gedit.mo
 share/locale/mai/LC_MESSAGES/gedit.mo
 share/locale/mg/LC_MESSAGES/gedit.mo
 share/locale/mi/LC_MESSAGES/gedit.mo
+share/locale/mjw/LC_MESSAGES/gedit.mo
 share/locale/mk/LC_MESSAGES/gedit.mo
 share/locale/ml/LC_MESSAGES/gedit.mo
 share/locale/mn/LC_MESSAGES/gedit.mo
