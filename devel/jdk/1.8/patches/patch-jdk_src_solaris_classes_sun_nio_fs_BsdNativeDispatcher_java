@@ -1,0 +1,19 @@
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdNativeDispatcher_java,v 1.1 2019/11/21 17:39:08 tb Exp $
+
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241317
+
+Index: jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java
+--- jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java.orig
++++ jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java
+@@ -69,6 +69,11 @@ class BsdNativeDispatcher extends UnixNativeDispatcher
+     private static native void initIDs();
+ 
+     static {
++         AccessController.doPrivileged(new PrivilegedAction<Void>() {
++             public Void run() {
++                 System.loadLibrary("nio");
++                 return null;
++         }});
+          initIDs();
+     }
+ }
