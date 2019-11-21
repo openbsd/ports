@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/21 03:10:44 kmos Exp $
 
 COMMENT =		SPDX license list query tool
 
@@ -28,6 +28,6 @@ post-install:
 		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
 	done
 
-NO_TEST =		Yes
+NO_TEST =		No tests written by upstream
 
 .include <bsd.port.mk>
