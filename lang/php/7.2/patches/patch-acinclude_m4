@@ -1,9 +1,9 @@
-$OpenBSD: patch-acinclude_m4,v 1.4 2019/05/04 07:57:00 sthen Exp $
+$OpenBSD: patch-acinclude_m4,v 1.5 2019/11/21 23:35:57 sthen Exp $
 
 Index: acinclude.m4
 --- acinclude.m4.orig
 +++ acinclude.m4
-@@ -2346,9 +2346,9 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+@@ -2349,9 +2349,9 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
    test -z "$PHP_IMAP_SSL" && PHP_IMAP_SSL=no
  
    dnl Fallbacks for different configure options
@@ -15,7 +15,7 @@ Index: acinclude.m4
      PHP_OPENSSL_DIR=$PHP_IMAP_SSL
    fi
  
-@@ -2359,7 +2359,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+@@ -2362,7 +2362,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
  
    dnl If pkg-config is found try using it
    if test "$PHP_OPENSSL_DIR" = "yes" && test -x "$PKG_CONFIG" && $PKG_CONFIG --exists openssl; then

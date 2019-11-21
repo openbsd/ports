@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.143 2019/08/01 20:20:38 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.144 2019/11/21 23:35:57 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -387,13 +387,10 @@ CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 # zip
 COMMENT-zip=		zip functions for php
 CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
-LIB_DEPENDS-zip=	# empty
-WANTLIB-zip=		pthread z
-.if ${PV} == "7.3"
-LIB_DEPENDS-zip+=	archivers/bzip2 \
+CONFIGURE_ARGS+=	--with-libzip=${LOCALBASE}
+LIB_DEPENDS-zip=	archivers/bzip2 \
 			archivers/libzip
-WANTLIB-zip+=		bz2 crypto ssl zip
-.endif
+WANTLIB-zip=		bz2 crypto pthread ssl z zip
 
 # some variables to substitute
 SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV
@@ -491,3 +488,9 @@ post-install:
 		>${PREFIX}/share/examples/php-${PV}/php.ini-${i}
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-${PV}.1
+
+.if ${PV} == "7.3"
+.for p in phar php
+	ln -s $p-${PV} ${PREFIX}/bin/$p
+.endfor
+.endif

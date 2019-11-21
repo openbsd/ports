@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2019/06/07 20:24:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2019/11/21 23:35:57 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.3,<7.4
@@ -12,7 +12,9 @@
 @owner
 @group
 @rcscript ${RCDIR}/php${SV}_fpm
+bin/phar
 bin/phar-${PV}
+bin/php
 @bin bin/php-${PV}
 bin/php-config-${PV}
 bin/phpize-${PV}
