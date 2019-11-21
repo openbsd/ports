@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.81 2019/11/11 21:25:20 sthen Exp $
-@extraunexec rm -f ${SYSCONFDIR}/asterisk/*
+@comment $OpenBSD: PLIST-main,v 1.82 2019/11/21 23:52:49 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -16,6 +15,7 @@
 @pkgpath telephony/asterisk,-fax,h323
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
+@extraunexec rm -f ${SYSCONFDIR}/asterisk/*
 @rcscript ${RCDIR}/asterisk
 include/asterisk/
 include/asterisk.h
