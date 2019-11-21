@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.37 2019/11/10 15:32:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2019/11/21 17:49:57 cwen Exp $
 
-BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 
 COMMENT =		library for reading and writing images
@@ -10,7 +9,7 @@ GH_PROJECT = 		oiio
 V =			1.8.6
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5
@@ -60,6 +59,12 @@ CXXFLAGS +=		-pthread
 CXXFLAGS +=		-march=i686
 .endif
 WRKDIST =		${WRKDIR}/oiio-Release-$V
+
+# Fix undefined reference to __atomic_*
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+CONFIGURE_ENV += 	LDFLAGS="${LDFLAGS} -latomic"
+WANTLIB +=              atomic
+.endif
 
 post-install:
 	find ${PREFIX} -name '*.orig' -exec rm -f {} \;
