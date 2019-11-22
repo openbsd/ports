@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/16 18:25:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/22 13:49:20 ajacoutot Exp $
 
 COMMENT=	interactive accessibility explorer
 
 GNOME_PROJECT=	accerciser
-GNOME_VERSION=	3.34.1
-REVISION=	0
+GNOME_VERSION=	3.34.2
 
 # BSD 3-clause
 PERMIT_PACKAGE=	Yes
@@ -26,8 +25,8 @@ RUN_DEPENDS= 	devel/ipython${MODPY_FLAVOR} \
 		x11/gnome/py-atspi \
 		x11/gtk+3
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE=gnu
 
