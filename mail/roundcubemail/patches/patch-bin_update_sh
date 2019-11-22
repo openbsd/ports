@@ -1,13 +1,14 @@
-$OpenBSD: patch-bin_update_sh,v 1.7 2019/11/10 12:02:45 sthen Exp $
+$OpenBSD: patch-bin_update_sh,v 1.8 2019/11/22 12:38:28 sthen Exp $
+
 Index: bin/update.sh
 --- bin/update.sh.orig
 +++ bin/update.sh
-@@ -269,7 +269,7 @@ if ($RCI->configured) {
+@@ -274,7 +274,7 @@ if ($RCI->configured) {
              echo "\n    }\n\n";
          }
  
 -        echo "NOTICE: Update dependencies by running `php composer.phar update --no-dev`\n";
-+        // echo "NOTICE: Update dependencies by running `${MODPHP_BIN} composer.phar update --no-dev`\n";
++        // echo "NOTICE: Update dependencies by running `composer update --no-dev`\n";
      }
  
      // index contacts for fulltext searching

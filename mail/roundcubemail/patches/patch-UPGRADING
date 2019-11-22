@@ -1,4 +1,5 @@
-$OpenBSD: patch-UPGRADING,v 1.11 2019/11/10 12:02:45 sthen Exp $
+$OpenBSD: patch-UPGRADING,v 1.12 2019/11/22 12:38:28 sthen Exp $
+ 
 Index: UPGRADING
 --- UPGRADING.orig
 +++ UPGRADING
@@ -19,4 +20,4 @@ Index: UPGRADING
 +   - run `composer install --no-dev`.
  4c. If you use git sources or the release package without dependencies
     update javascript dependencies by executing `bin/install-jsdeps.sh` script.
- 4d. If you use git sources compile css files for the Elastic skin:
+ 4d. If you use git sources compile css files for the Elastic skin (required
