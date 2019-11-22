@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.49 2019/11/02 11:12:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.50 2019/11/22 21:11:21 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
-lib/epiphany/libephymain.so
-lib/epiphany/libephymisc.so
-lib/epiphany/libephysync.so
+@so lib/epiphany/libephymain.so
+@so lib/epiphany/libephymisc.so
+@so lib/epiphany/libephysync.so
 lib/epiphany/web-process-extensions/
-lib/epiphany/web-process-extensions/libephywebprocessextension.so
+@so lib/epiphany/web-process-extensions/libephywebprocessextension.so
 libexec/epiphany/
 @bin libexec/epiphany-search-provider
 @bin libexec/epiphany/ephy-profile-migrator
