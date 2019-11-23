@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/23 15:21:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/23 15:29:17 ajacoutot Exp $
+
+# next releases are for qt5
+PORTROACH=	ignore:1
 
 COMMENT=	PolicyKit authentication agent for Qt
 
