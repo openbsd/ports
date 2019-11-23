@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:07:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/11/23 23:36:47 kmos Exp $
 
 COMMENT =	Python interface to Discogs website
 
@@ -16,8 +16,10 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 
-MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
+MODULES =		lang/python
+MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	discogs_client
 
 FLAVORS =	python3
 FLAVOR ?=
