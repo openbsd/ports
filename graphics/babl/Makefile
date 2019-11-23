@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.51 2019/06/15 08:59:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/11/23 18:10:30 ajacoutot Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
-V=			0.1.66
+V=			0.1.72
 DISTNAME=		babl-${V}
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.xz
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
 
 CATEGORIES=		graphics devel
 
-SHARED_LIBS +=  babl-0.1             1.7      # 165.1
+SHARED_LIBS += babl-0.1                  1.7 # 0.171.1
 
 HOMEPAGE=		http://gegl.org/babl/
 
@@ -20,31 +20,24 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3/LGPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += m pthread
+WANTLIB += lcms2 m pthread
 
 MASTER_SITES=		http://download.gimp.org/pub/babl/${V:R}/
 
-USE_GMAKE=		Yes
+MODULES=		devel/meson \
+			x11/gnome
+
+MODGNOME_TOOLS=		gobject-introspection
 
 COMPILER=		base-clang ports-gcc
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		LDFLAGS="-pthread" \
-			ac_cv_path_W3M=no \
-			ac_cv_path_RSVG=no
+LIB_DEPENDS=		graphics/lcms2
 
-CONFIGURE_ARGS +=	--enable-mmx \
-			--disable-altivec
-
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS +=	--enable-sse \
-			--enable-sse2
-.else
-CONFIGURE_ARGS +=	--disable-sse \
-			--disable-sse2
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS +=	-Denable-sse=false \
+			-Denable-sse2=false
 .endif
 
-post-install:
-	rm ${PREFIX}/lib/babl-${API_VERSION}/*.{a,la}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
