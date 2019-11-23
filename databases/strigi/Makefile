@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/11/23 10:38:35 bket Exp $
 
 COMMENT =	document indexer
 DISTNAME =	strigi-0.7.8
-REVISION =	2
+REVISION =	3
 CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	https://www.vandenoever.info/software/strigi/
@@ -28,8 +28,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 MODULES =		devel/cmake \
 			x11/qt4
 
-BUILD_DEPENDS =	devel/cppunit \
-		devel/boost
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	archivers/bzip2 \
 		converters/libiconv \
