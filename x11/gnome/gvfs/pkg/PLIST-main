@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.45 2019/03/11 16:34:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.46 2019/11/23 10:03:08 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 include/gvfs-client/
 include/gvfs-client/gvfs/
 include/gvfs-client/gvfs/gvfsurimapper.h
 include/gvfs-client/gvfs/gvfsuriutils.h
-lib/gio/modules/libgioremote-volume-monitor.so
-lib/gio/modules/libgvfsdbus.so
+@so lib/gio/modules/libgioremote-volume-monitor.so
+@so lib/gio/modules/libgvfsdbus.so
 lib/gvfs/
-lib/gvfs/libgvfscommon.so
-lib/gvfs/libgvfsdaemon.so
+@so lib/gvfs/libgvfscommon.so
+@so lib/gvfs/libgvfsdaemon.so
 @bin libexec/gvfsd
 @bin libexec/gvfsd-afp
 @bin libexec/gvfsd-afp-browse
