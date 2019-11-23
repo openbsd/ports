@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/09 17:41:10 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/11/23 23:49:17 kmos Exp $
 
 COMMENT =		jq wrapper for YAML/XML documents
 
@@ -18,6 +18,8 @@ MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	test/test.py
 
 RUN_DEPENDS =		textproc/jq \
 			textproc/py-xmltodict${MODPY_FLAVOR} \
@@ -29,7 +31,7 @@ TEST_DEPENDS =		devel/flake8 \
 			textproc/py-toml${MODPY_FLAVOR}
 
 # prints multiple usages on stderr
-do-test:
-	${MODPY_BIN} ${WRKSRC}/test/test.py
+#do-test:
+#	${MODPY_BIN} ${WRKSRC}/test/test.py
 
 .include <bsd.port.mk>
