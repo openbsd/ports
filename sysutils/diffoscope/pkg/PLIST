@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/11/13 17:05:35 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/11/23 14:44:45 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -98,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xsb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}zip.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}zst.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/android.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/apk.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/ar.py
@@ -183,6 +184,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xml.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xsb.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xz.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/zip.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/zst.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/config.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/diff.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/difference.py
