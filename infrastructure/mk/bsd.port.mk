@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1501 2019/11/23 16:19:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1502 2019/11/23 16:31:20 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2058,17 +2058,19 @@ fix-permissions:
 
 .for _S in ${MULTI_PACKAGES}
 
+.  for _p in ${_pkg${_S}}
 # run under _pfetch
-${_CACHE_REPO}${_PKGFILE${_S}}:
+${_CACHE_REPO}${_p}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
-	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${PKG_ADD} -I -x -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${_PKGFILE${_S}}; then \
+	@${ECHO_MSG} -n "===>  Looking for ${@F} in \$$PKG_PATH - "
+	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${PKG_ADD} -I -x -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${@F}; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
 		${ECHO_MSG} "not found"; \
 		exit 1; \
 	fi
+.  endfor
 
 
 # The real package
@@ -2077,15 +2079,19 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} != "no" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@${_INSTALL_CACHE_REPO} ${_CACHE_REPO}
-	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
-	if cd ${.CURDIR} && ${_PFETCH} ${MAKE} $$f; then \
-		if ${_PBUILD} ln $$f $@ 2>/dev/null || ${_PBUILD} cp -p $$f $@ ; then \
-			exit 0; \
-		else \
-			exit 1; \
+	@cd ${.CURDIR}; gotit=true; for p in ${_pkg${_S}}; do \
+		if ! ${_PFETCH} ${MAKE} ${_CACHE_REPO}$$p; then \
+			gotit=false; \
+			break; \
 		fi; \
+	done; \
+	if $$gotit; then \
+		for p in ${_pkg${_S}}; do \
+			s=${_CACHE_REPO}$$p; d=${_PKG_REPO${_S}}$$p; \
+			${_PBUILD} ln $$s $$d 2>/dev/null || ${_PBUILD} cp -p $$s $$d; \
+		done; \
 	else \
-		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only _FETCH_RECURSE_HELPER=No; \
+		exec ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only _FETCH_RECURSE_HELPER=No; \
 	fi
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
