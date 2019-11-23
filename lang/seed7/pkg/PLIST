@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2019/07/31 00:08:01 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.30 2019/11/23 00:49:53 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -7,6 +7,7 @@ lib/seed7/bin/
 lib/seed7/bin/s7_comp.a
 lib/seed7/bin/s7_con.a
 lib/seed7/bin/s7_data.a
+lib/seed7/bin/s7_db.a
 lib/seed7/bin/s7_draw.a
 lib/seed7/bin/seed7_05.a
 lib/seed7/lib/
@@ -130,6 +131,7 @@ lib/seed7/lib/html.s7i
 lib/seed7/lib/html_ent.s7i
 lib/seed7/lib/http_response.s7i
 lib/seed7/lib/httpserv.s7i
+lib/seed7/lib/ico.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
 lib/seed7/lib/inflate.s7i
