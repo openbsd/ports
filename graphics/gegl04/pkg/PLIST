@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/02 09:11:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/11/23 18:10:56 ajacoutot Exp $
 include/gegl-${API_VERSION}/
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-audio-fragment.h
 include/gegl-${API_VERSION}/gegl-buffer-backend.h
-include/gegl-${API_VERSION}/gegl-buffer-cl-iterator.h
 include/gegl-${API_VERSION}/gegl-buffer-enums.h
 include/gegl-${API_VERSION}/gegl-buffer-iterator.h
 include/gegl-${API_VERSION}/gegl-buffer-matrix2.h
@@ -85,47 +84,44 @@ include/gegl-${API_VERSION}/sc/sc-context.h
 include/gegl-${API_VERSION}/sc/sc-outline.h
 include/gegl-${API_VERSION}/sc/sc-sample.h
 lib/gegl-${API_VERSION}/
-lib/gegl-${API_VERSION}/gegl-common-cxx.so
-lib/gegl-${API_VERSION}/gegl-common-gpl3.so
-lib/gegl-${API_VERSION}/gegl-common.so
-lib/gegl-${API_VERSION}/gegl-core.so
-lib/gegl-${API_VERSION}/gegl-generated.so
-lib/gegl-${API_VERSION}/gif-load.so
+@so lib/gegl-${API_VERSION}/gegl-common-cxx.so
+@so lib/gegl-${API_VERSION}/gegl-common-gpl3.so
+@so lib/gegl-${API_VERSION}/gegl-common.so
+@so lib/gegl-${API_VERSION}/gegl-core.so
+@so lib/gegl-${API_VERSION}/gegl-generated.so
+@so lib/gegl-${API_VERSION}/gif-load.so
 lib/gegl-${API_VERSION}/grey2.json
-lib/gegl-${API_VERSION}/jp2-load.so
-lib/gegl-${API_VERSION}/jpg-load.so
-lib/gegl-${API_VERSION}/jpg-save.so
-lib/gegl-${API_VERSION}/lcms-from-profile.so
-lib/gegl-${API_VERSION}/npd.so
-lib/gegl-${API_VERSION}/npy-save.so
-lib/gegl-${API_VERSION}/path.so
-lib/gegl-${API_VERSION}/pdf-load.so
-lib/gegl-${API_VERSION}/pixbuf.so
-lib/gegl-${API_VERSION}/png-load.so
-lib/gegl-${API_VERSION}/png-save.so
-lib/gegl-${API_VERSION}/ppm-load.so
-lib/gegl-${API_VERSION}/ppm-save.so
-lib/gegl-${API_VERSION}/raw-load.so
-lib/gegl-${API_VERSION}/rgbe-load.so
-lib/gegl-${API_VERSION}/rgbe-save.so
-lib/gegl-${API_VERSION}/save-pixbuf.so
-lib/gegl-${API_VERSION}/seamless-clone-compose.so
-lib/gegl-${API_VERSION}/seamless-clone.so
-lib/gegl-${API_VERSION}/svg-load.so
-lib/gegl-${API_VERSION}/text.so
-lib/gegl-${API_VERSION}/tiff-load.so
-lib/gegl-${API_VERSION}/tiff-save.so
-lib/gegl-${API_VERSION}/transformops.so
-lib/gegl-${API_VERSION}/vector-fill.so
-lib/gegl-${API_VERSION}/vector-stroke.so
-lib/gegl-${API_VERSION}/webp-load.so
-lib/gegl-${API_VERSION}/webp-save.so
+@so lib/gegl-${API_VERSION}/jp2-load.so
+@so lib/gegl-${API_VERSION}/jpg-load.so
+@so lib/gegl-${API_VERSION}/jpg-save.so
+@so lib/gegl-${API_VERSION}/lcms-from-profile.so
+@so lib/gegl-${API_VERSION}/npd.so
+@so lib/gegl-${API_VERSION}/npy-save.so
+@so lib/gegl-${API_VERSION}/path.so
+@so lib/gegl-${API_VERSION}/pixbuf-load.so
+@so lib/gegl-${API_VERSION}/pixbuf-save.so
+@so lib/gegl-${API_VERSION}/png-load.so
+@so lib/gegl-${API_VERSION}/png-save.so
+@so lib/gegl-${API_VERSION}/ppm-load.so
+@so lib/gegl-${API_VERSION}/ppm-save.so
+@so lib/gegl-${API_VERSION}/raw-load.so
+@so lib/gegl-${API_VERSION}/rgbe-load.so
+@so lib/gegl-${API_VERSION}/rgbe-save.so
+@so lib/gegl-${API_VERSION}/seamless-clone-compose.so
+@so lib/gegl-${API_VERSION}/seamless-clone.so
+@so lib/gegl-${API_VERSION}/svg-load.so
+@so lib/gegl-${API_VERSION}/text.so
+@so lib/gegl-${API_VERSION}/tiff-load.so
+@so lib/gegl-${API_VERSION}/tiff-save.so
+@so lib/gegl-${API_VERSION}/transformops.so
+@so lib/gegl-${API_VERSION}/vector-fill.so
+@so lib/gegl-${API_VERSION}/vector-stroke.so
+@so lib/gegl-${API_VERSION}/webp-load.so
+@so lib/gegl-${API_VERSION}/webp-save.so
 lib/girepository-1.0/Gegl-${API_VERSION}.typelib
-lib/libgegl-${API_VERSION}.a
-lib/libgegl-${API_VERSION}.la
 @lib lib/libgegl-${API_VERSION}.so.${LIBgegl-${API_VERSION}_VERSION}
-lib/libgegl-npd-${API_VERSION}.so
-lib/libgegl-sc-${API_VERSION}.so
+@so lib/libgegl-npd-${API_VERSION}.so
+@so lib/libgegl-sc-${API_VERSION}.so
 lib/pkgconfig/gegl-${API_VERSION}.pc
 lib/pkgconfig/gegl-sc-${API_VERSION}.pc
 share/gir-1.0/Gegl-${API_VERSION}.gir
@@ -147,6 +143,7 @@ share/locale/ko/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/lv/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/mr/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/nb/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/ne/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/oc/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/pl/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/pt/LC_MESSAGES/gegl-${API_VERSION}.mo
