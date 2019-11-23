@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/23 23:52:09 kmos Exp $
 
 COMMENT =		python bindings for Gammu
 
@@ -25,6 +25,7 @@ LIB_DEPENDS =		comms/gammu
 SEPARATE_BUILD = 	Yes
 
 MODPY_SETUPTOOLS = 	Yes
+MODPY_PYTEST =		Yes
 
 TEST_IS_INTERACTIVE =	Yes
 
