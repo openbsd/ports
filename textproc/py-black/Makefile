@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/23 19:41:01 kmos Exp $
 
 COMMENT =		python code formatter
 
@@ -20,10 +20,12 @@ MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
 			devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
 			textproc/py-toml${MODPY_FLAVOR}
+TEST_DEPENDS =		www/py-aiohttp
 
 .include <bsd.port.mk>
