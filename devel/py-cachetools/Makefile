@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/06 20:02:50 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/23 19:47:05 kmos Exp $
 
 COMMENT =		extensible memoizing collections and decorators
 
@@ -19,6 +19,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
