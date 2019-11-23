@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 15:20:19 ajacoutot Exp $
+@pkgpath x11/polkit-qt,qt5
+include/polkit-qt5-1/
+include/polkit-qt5-1/PolkitQt1/
+include/polkit-qt5-1/PolkitQt1/ActionDescription
+include/polkit-qt5-1/PolkitQt1/Agent/
+include/polkit-qt5-1/PolkitQt1/Agent/Listener
+include/polkit-qt5-1/PolkitQt1/Agent/Session
+include/polkit-qt5-1/PolkitQt1/Authority
+include/polkit-qt5-1/PolkitQt1/Details
+include/polkit-qt5-1/PolkitQt1/Gui/
+include/polkit-qt5-1/PolkitQt1/Gui/Action
+include/polkit-qt5-1/PolkitQt1/Gui/ActionButton
+include/polkit-qt5-1/PolkitQt1/Gui/ActionButtons
+include/polkit-qt5-1/PolkitQt1/Identity
+include/polkit-qt5-1/PolkitQt1/Subject
+include/polkit-qt5-1/PolkitQt1/TemporaryAuthorization
+include/polkit-qt5-1/polkitqt1-actiondescription.h
+include/polkit-qt5-1/polkitqt1-agent-listener.h
+include/polkit-qt5-1/polkitqt1-agent-session.h
+include/polkit-qt5-1/polkitqt1-authority.h
+include/polkit-qt5-1/polkitqt1-details.h
+include/polkit-qt5-1/polkitqt1-export.h
+include/polkit-qt5-1/polkitqt1-gui-action.h
+include/polkit-qt5-1/polkitqt1-gui-actionbutton.h
+include/polkit-qt5-1/polkitqt1-gui-actionbuttons.h
+include/polkit-qt5-1/polkitqt1-identity.h
+include/polkit-qt5-1/polkitqt1-subject.h
+include/polkit-qt5-1/polkitqt1-temporaryauthorization.h
+include/polkit-qt5-1/polkitqt1-version.h
+lib/cmake/PolkitQt5-1/
+lib/cmake/PolkitQt5-1/PolkitQt5-1Config.cmake
+lib/cmake/PolkitQt5-1/PolkitQt5-1ConfigVersion.cmake
+lib/cmake/PolkitQt5-1/PolkitQt5-1Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/PolkitQt5-1/PolkitQt5-1Targets.cmake
+@lib lib/libpolkit-qt5-agent-1.so.${LIBpolkit-qt5-agent-1_VERSION}
+@lib lib/libpolkit-qt5-core-1.so.${LIBpolkit-qt5-core-1_VERSION}
+@lib lib/libpolkit-qt5-gui-1.so.${LIBpolkit-qt5-gui-1_VERSION}
+lib/pkgconfig/polkit-qt5-1.pc
+lib/pkgconfig/polkit-qt5-agent-1.pc
+lib/pkgconfig/polkit-qt5-core-1.pc
+lib/pkgconfig/polkit-qt5-gui-1.pc
