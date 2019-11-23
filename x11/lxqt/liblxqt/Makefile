@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/23 15:25:30 ajacoutot Exp $
 
 COMMENT =	core utility library for all LXQt components
 
@@ -6,7 +6,7 @@ VERSION =	0.13.0
 
 NAME =		liblxqt
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  lxqt                      0.0 # 0.13
 
@@ -19,7 +19,7 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 			x11/lxqt/libqtxdg
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools \
-			x11/polkit-qt,qt5
+			x11/polkit-qt5
 
 RUN_DEPENDS +=		x11/lxqt/l10n,-main
 
