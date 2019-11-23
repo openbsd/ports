@@ -1,0 +1,3 @@
+KTimer is a little tool to execute programs after some time. It allows you to
+enter several tasks and to set a timer for each of them. The timers for each
+task can be started, stopped, changed, or looped.
