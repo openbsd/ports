@@ -1,0 +1,66 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 08:02:21 rsadowski Exp $
+@conflict kde-l10n-*
+@conflict kde-i18n-*
+@bin bin/kbackup
+share/applications/org.kde.kbackup.desktop
+share/doc/HTML/ca/kbackup/
+share/doc/HTML/ca/kbackup/index.cache.bz2
+share/doc/HTML/ca/kbackup/index.docbook
+share/doc/HTML/ca/kbackup/mainwindow.png
+share/doc/HTML/de/kbackup/
+share/doc/HTML/de/kbackup/index.cache.bz2
+share/doc/HTML/de/kbackup/index.docbook
+share/doc/HTML/en/kbackup/
+share/doc/HTML/en/kbackup/index.cache.bz2
+share/doc/HTML/en/kbackup/index.docbook
+share/doc/HTML/en/kbackup/mainwindow.png
+share/doc/HTML/nl/kbackup/
+share/doc/HTML/nl/kbackup/index.cache.bz2
+share/doc/HTML/nl/kbackup/index.docbook
+share/doc/HTML/sv/kbackup/
+share/doc/HTML/sv/kbackup/index.cache.bz2
+share/doc/HTML/sv/kbackup/index.docbook
+share/doc/HTML/uk/kbackup/
+share/doc/HTML/uk/kbackup/index.cache.bz2
+share/doc/HTML/uk/kbackup/index.docbook
+share/doc/HTML/uk/kbackup/mainwindow.png
+share/icons/hicolor/16x16/apps/kbackup.png
+share/icons/hicolor/16x16/mimetypes/text-x-kbp.png
+share/icons/hicolor/22x22/actions/kbackup_cancel.png
+share/icons/hicolor/22x22/actions/kbackup_runs.png
+share/icons/hicolor/22x22/actions/kbackup_start.png
+share/icons/hicolor/32x32/apps/kbackup.png
+share/icons/hicolor/32x32/mimetypes/text-x-kbp.png
+share/kxmlgui5/
+share/kxmlgui5/kbackup/
+share/kxmlgui5/kbackup/kbackupui.rc
+share/locale/ca/LC_MESSAGES/kbackup.mo
+share/locale/ca@valencia/LC_MESSAGES/kbackup.mo
+share/locale/cs/LC_MESSAGES/kbackup.mo
+share/locale/da/LC_MESSAGES/kbackup.mo
+share/locale/de/LC_MESSAGES/kbackup.mo
+share/locale/en_GB/LC_MESSAGES/kbackup.mo
+share/locale/es/LC_MESSAGES/kbackup.mo
+share/locale/eu/LC_MESSAGES/kbackup.mo
+share/locale/fi/LC_MESSAGES/kbackup.mo
+share/locale/fr/LC_MESSAGES/kbackup.mo
+share/locale/gl/LC_MESSAGES/kbackup.mo
+share/locale/ia/LC_MESSAGES/kbackup.mo
+share/locale/it/LC_MESSAGES/kbackup.mo
+share/locale/ja/LC_MESSAGES/kbackup.mo
+share/locale/nl/LC_MESSAGES/kbackup.mo
+share/locale/nn/LC_MESSAGES/kbackup.mo
+share/locale/pl/LC_MESSAGES/kbackup.mo
+share/locale/pt/LC_MESSAGES/kbackup.mo
+share/locale/pt_BR/LC_MESSAGES/kbackup.mo
+share/locale/ru/LC_MESSAGES/kbackup.mo
+share/locale/sk/LC_MESSAGES/kbackup.mo
+share/locale/sv/LC_MESSAGES/kbackup.mo
+share/locale/uk/LC_MESSAGES/kbackup.mo
+share/locale/zh_CN/LC_MESSAGES/kbackup.mo
+share/metainfo/
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/org.kde.kbackup.appdata.xml
+share/mime/packages/kbackup.xml
+@tag update-mime-database
