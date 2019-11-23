@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2019/11/02 09:35:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.56 2019/11/23 12:08:03 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -530,13 +530,13 @@ include/evolution/shell/e-shell-window.h
 include/evolution/shell/e-shell.h
 lib/evolution/
 lib/evolution-data-server/ui-modules/
-lib/evolution-data-server/ui-modules/module-evolution-alarm-notify.so
+@so lib/evolution-data-server/ui-modules/module-evolution-alarm-notify.so
 @lib lib/evolution/libeabutil.so.${LIBeabutil_VERSION}
-lib/evolution/libeabwidgets.so
+@so lib/evolution/libeabwidgets.so
 @lib lib/evolution/libecontacteditor.so.${LIBecontacteditor_VERSION}
 @lib lib/evolution/libecontactlisteditor.so.${LIBecontactlisteditor_VERSION}
-lib/evolution/libecontactprint.so
-lib/evolution/libedomutils.so
+@so lib/evolution/libecontactprint.so
+@so lib/evolution/libedomutils.so
 @lib lib/evolution/libemail-engine.so.${LIBemail-engine_VERSION}
 @lib lib/evolution/libessmime.so.${LIBessmime_VERSION}
 @lib lib/evolution/libevolution-addressbook-importers.so.${LIBevolution-addressbook-importers_VERSION}
@@ -551,58 +551,58 @@ lib/evolution/libedomutils.so
 @lib lib/evolution/libevolution-util.so.${LIBevolution-util_VERSION}
 @lib lib/evolution/libgnomecanvas.so.${LIBgnomecanvas_VERSION}
 lib/evolution/modules/
-lib/evolution/modules/module-accounts-window.so
-lib/evolution/modules/module-addressbook.so
-lib/evolution/modules/module-backup-restore.so
-lib/evolution/modules/module-bogofilter.so
-lib/evolution/modules/module-book-config-carddav.so
-lib/evolution/modules/module-book-config-google.so
-lib/evolution/modules/module-book-config-ldap.so
-lib/evolution/modules/module-book-config-local.so
-lib/evolution/modules/module-cal-config-caldav.so
-lib/evolution/modules/module-cal-config-contacts.so
-lib/evolution/modules/module-cal-config-google.so
-lib/evolution/modules/module-cal-config-local.so
-lib/evolution/modules/module-cal-config-weather.so
-lib/evolution/modules/module-cal-config-webcal.so
-lib/evolution/modules/module-calendar.so
-lib/evolution/modules/module-composer-autosave.so
-lib/evolution/modules/module-composer-to-meeting.so
-lib/evolution/modules/module-config-lookup.so
-lib/evolution/modules/module-contact-photos.so
-lib/evolution/modules/module-gravatar.so
-lib/evolution/modules/module-itip-formatter.so
-lib/evolution/modules/module-mail-config.so
-lib/evolution/modules/module-mail.so
-lib/evolution/modules/module-mailto-handler.so
-lib/evolution/modules/module-mdn.so
-lib/evolution/modules/module-offline-alert.so
-lib/evolution/modules/module-plugin-lib.so
-lib/evolution/modules/module-plugin-manager.so
-lib/evolution/modules/module-prefer-plain.so
-lib/evolution/modules/module-settings.so
-lib/evolution/modules/module-spamassassin.so
-lib/evolution/modules/module-startup-wizard.so
-lib/evolution/modules/module-text-highlight.so
-lib/evolution/modules/module-tnef-attachment.so
-lib/evolution/modules/module-vcard-inline.so
-lib/evolution/modules/module-webkit-editor.so
-lib/evolution/modules/module-webkit-inspector.so
+@so lib/evolution/modules/module-accounts-window.so
+@so lib/evolution/modules/module-addressbook.so
+@so lib/evolution/modules/module-backup-restore.so
+@so lib/evolution/modules/module-bogofilter.so
+@so lib/evolution/modules/module-book-config-carddav.so
+@so lib/evolution/modules/module-book-config-google.so
+@so lib/evolution/modules/module-book-config-ldap.so
+@so lib/evolution/modules/module-book-config-local.so
+@so lib/evolution/modules/module-cal-config-caldav.so
+@so lib/evolution/modules/module-cal-config-contacts.so
+@so lib/evolution/modules/module-cal-config-google.so
+@so lib/evolution/modules/module-cal-config-local.so
+@so lib/evolution/modules/module-cal-config-weather.so
+@so lib/evolution/modules/module-cal-config-webcal.so
+@so lib/evolution/modules/module-calendar.so
+@so lib/evolution/modules/module-composer-autosave.so
+@so lib/evolution/modules/module-composer-to-meeting.so
+@so lib/evolution/modules/module-config-lookup.so
+@so lib/evolution/modules/module-contact-photos.so
+@so lib/evolution/modules/module-gravatar.so
+@so lib/evolution/modules/module-itip-formatter.so
+@so lib/evolution/modules/module-mail-config.so
+@so lib/evolution/modules/module-mail.so
+@so lib/evolution/modules/module-mailto-handler.so
+@so lib/evolution/modules/module-mdn.so
+@so lib/evolution/modules/module-offline-alert.so
+@so lib/evolution/modules/module-plugin-lib.so
+@so lib/evolution/modules/module-plugin-manager.so
+@so lib/evolution/modules/module-prefer-plain.so
+@so lib/evolution/modules/module-settings.so
+@so lib/evolution/modules/module-spamassassin.so
+@so lib/evolution/modules/module-startup-wizard.so
+@so lib/evolution/modules/module-text-highlight.so
+@so lib/evolution/modules/module-tnef-attachment.so
+@so lib/evolution/modules/module-vcard-inline.so
+@so lib/evolution/modules/module-webkit-editor.so
+@so lib/evolution/modules/module-webkit-inspector.so
 lib/evolution/plugins/
-lib/evolution/plugins/liborg-gnome-dbx-import.so
-lib/evolution/plugins/liborg-gnome-email-custom-header.so
-lib/evolution/plugins/liborg-gnome-evolution-attachment-reminder.so
-lib/evolution/plugins/liborg-gnome-evolution-bbdb.so
-lib/evolution/plugins/liborg-gnome-external-editor.so
-lib/evolution/plugins/liborg-gnome-face.so
-lib/evolution/plugins/liborg-gnome-mail-notification.so
-lib/evolution/plugins/liborg-gnome-mail-to-task.so
-lib/evolution/plugins/liborg-gnome-mailing-list-actions.so
-lib/evolution/plugins/liborg-gnome-prefer-plain.so
-lib/evolution/plugins/liborg-gnome-pst-import.so
-lib/evolution/plugins/liborg-gnome-publish-calendar.so
-lib/evolution/plugins/liborg-gnome-save-calendar.so
-lib/evolution/plugins/liborg-gnome-templates.so
+@so lib/evolution/plugins/liborg-gnome-dbx-import.so
+@so lib/evolution/plugins/liborg-gnome-email-custom-header.so
+@so lib/evolution/plugins/liborg-gnome-evolution-attachment-reminder.so
+@so lib/evolution/plugins/liborg-gnome-evolution-bbdb.so
+@so lib/evolution/plugins/liborg-gnome-external-editor.so
+@so lib/evolution/plugins/liborg-gnome-face.so
+@so lib/evolution/plugins/liborg-gnome-mail-notification.so
+@so lib/evolution/plugins/liborg-gnome-mail-to-task.so
+@so lib/evolution/plugins/liborg-gnome-mailing-list-actions.so
+@so lib/evolution/plugins/liborg-gnome-prefer-plain.so
+@so lib/evolution/plugins/liborg-gnome-pst-import.so
+@so lib/evolution/plugins/liborg-gnome-publish-calendar.so
+@so lib/evolution/plugins/liborg-gnome-save-calendar.so
+@so lib/evolution/plugins/liborg-gnome-templates.so
 lib/evolution/plugins/org-gnome-dbx-import.eplug
 lib/evolution/plugins/org-gnome-email-custom-header.eplug
 lib/evolution/plugins/org-gnome-evolution-attachment-reminder.eplug
@@ -618,9 +618,9 @@ lib/evolution/plugins/org-gnome-publish-calendar.eplug
 lib/evolution/plugins/org-gnome-save-calendar.eplug
 lib/evolution/plugins/org-gnome-templates.eplug
 lib/evolution/web-extensions/
-lib/evolution/web-extensions/libewebextension.so
+@so lib/evolution/web-extensions/libewebextension.so
 lib/evolution/web-extensions/webkit-editor/
-lib/evolution/web-extensions/webkit-editor/module-webkit-editor-webextension.so
+@so lib/evolution/web-extensions/webkit-editor/module-webkit-editor-webextension.so
 lib/pkgconfig/evolution-calendar-3.0.pc
 lib/pkgconfig/evolution-mail-3.0.pc
 lib/pkgconfig/evolution-shell-3.0.pc
