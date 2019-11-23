@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/23 15:07:27 sthen Exp $
 
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
@@ -28,7 +28,7 @@ TEST_DEPENDS=		devel/py-coverage${MODPY_FLAVOR} \
 # separate to default exabgp.env to avoid getting in the way of ad-hoc
 # "foreground" configurations.
 post-extract:
-	${WRKSRC}/sbin/exabgp --fi > ${WRKSRC}/exabgp.env
+	sh ${WRKSRC}/sbin/exabgp --fi > ${WRKSRC}/exabgp.env
 	cp ${WRKSRC}/exabgp.env ${WRKSRC}/exabgp.daemon.env
 
 pre-configure:
