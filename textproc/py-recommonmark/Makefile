@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/01 10:02:50 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/23 23:46:21 kmos Exp $
 
 COMMENT =		markdown parser for docutils
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		textproc/py-commonmark${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
