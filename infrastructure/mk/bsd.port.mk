@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1497 2019/11/13 15:22:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1498 2019/11/23 15:43:20 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2093,9 +2093,15 @@ ${_PACKAGE_COOKIE${_S}}:
 .  if ${FETCH_PACKAGES:L} != "no" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@${_INSTALL_CACHE_REPO} ${_CACHE_REPO}
 	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
-	cd ${.CURDIR} && ${_PFETCH} ${MAKE} $$f && \
-		{ ${_PBUILD} ln $$f $@ 2>/dev/null || ${_PBUILD} cp -p $$f $@ ; } || \
-		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only _FETCH_RECURSE_HELPER=No
+	if cd ${.CURDIR} && ${_PFETCH} ${MAKE} $$f; then \
+		if ${_PBUILD} ln $$f $@ 2>/dev/null || ${_PBUILD} cp -p $$f $@ ; then \
+			exit 0; \
+		else \
+			exit 1; \
+		fi; \
+	else \
+		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only _FETCH_RECURSE_HELPER=No; \
+	fi
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
