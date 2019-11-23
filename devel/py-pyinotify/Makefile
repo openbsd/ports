@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/23 19:57:59 kmos Exp $
 
 COMMENT =		filesystem events monitoring
 
@@ -29,5 +29,7 @@ FLAVOR ?=
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py ${WRKSRC}/python*/pyinotify.py
+
+# No tests upstream
 
 .include <bsd.port.mk>
