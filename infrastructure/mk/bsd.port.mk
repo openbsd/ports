@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1499 2019/11/23 15:50:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1500 2019/11/23 16:00:34 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -953,6 +953,7 @@ PKGNAMES += debug-${FULLPKGNAME${_s}}
 _PACKAGE_LINKS =
 NO_ARCH ?= ${MACHINE_ARCH}/no-arch
 _PKG_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
+_PKG_REPO_NO_ARCH = ${PACKAGE_REPOSITORY}/${NO_ARCH}/
 _TMP_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/tmp/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
@@ -961,18 +962,19 @@ PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 _PKGFILE${_S} = ${FULLPKGNAME${_S}}.tgz
 _DBG_PKGFILE${_S} = debug-${_PKGFILE${_S}}
 .  if ${PKG_ARCH${_S}} == "*"
-_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
+_PKG_REPO${_S} = ${_PKG_REPO_NO_ARCH}
 .  else
-_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
-_DBG_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_DBG_PKGFILE${_S}}
+_PKG_REPO${_S} = ${_PKG_REPO}
 .  endif
+_PACKAGE_COOKIE${_S} = ${_PKG_REPO${_S}}${_PKGFILE${_S}}
+_DBG_PACKAGE_COOKIE${_S} = ${_PKG_REPO${_S}}${_DBG_PKGFILE${_S}}
 _CACHE_PACKAGE_COOKIES += ${_CACHE_REPO}${_PKGFILE${_S}}
 .endfor
 
 .for _S in ${BUILD_PACKAGES}
 .  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
 _PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${_S}} ${NO_ARCH}/${_PKGFILE${_S}}
-_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
+_PACKAGE_COOKIES${_S} += ${_PKG_REPO}/${_PKGFILE${_S}}
 .  endif
 _PACKAGE_COOKIES${_S} += ${_PACKAGE_COOKIE${_S}}
 .  if ${PERMIT_PACKAGE${_S}:L} == "yes"
