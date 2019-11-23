@@ -1,0 +1,4 @@
+KCharSelect is a tool to select special characters from all installed fonts and
+copy them into the clipboard. KCharSelect displays various information about
+the selected character. This includes not only the Unicode character name, but
+also aliases, general notes and cross references to similar characters.
