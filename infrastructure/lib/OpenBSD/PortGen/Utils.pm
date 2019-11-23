@@ -1,4 +1,4 @@
-# $OpenBSD: Utils.pm,v 1.4 2019/11/19 22:43:31 afresh1 Exp $
+# $OpenBSD: Utils.pm,v 1.5 2019/11/23 14:59:39 sthen Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -60,18 +60,17 @@ sub module_in_ports
 	require DBI; # do this here after we've checked for $dbfile
 
 	my $dbh = DBI->connect( "dbi:SQLite:dbname=$dbfile", "", "", {
+	    ReadOnly   => 1,
 	    RaiseError => 1,
 	} ) or die "failed to connect to database: $DBI::errstr";
 
 	my @results = @{ $dbh->selectcol_arrayref(
-	    "SELECT FULLPKGPATH FROM Ports WHERE DISTNAME LIKE ?",
+	    "SELECT _paths.fullpkgpath FROM _paths JOIN _paths p1 ON p1.pkgpath=_paths.id
+		JOIN _ports ON _ports.fullpkgpath=p1.id WHERE _ports.distname LIKE ?",
 	    {}, "$module%"
 	) };
 
 	$dbh->disconnect();
-
-	# don't need flavors, should find a cleaner way to do this
-	s/,\w+$// for @results;
 
 	# just returning the shortest one that's a module of the same ecosystem
 	# this should be improved
