@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/11 01:00:09 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/11/23 17:51:58 bcallah Exp $
 bin/veusz
 lib/python${MODPY_VERSION}/site-packages/veusz/
 lib/python${MODPY_VERSION}/site-packages/veusz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -221,11 +221,11 @@ lib/python${MODPY_VERSION}/site-packages/veusz/examples/vectorfield.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/veusz/helpers/_nc_cntr.so
-lib/python${MODPY_VERSION}/site-packages/veusz/helpers/qtloops.so
-lib/python${MODPY_VERSION}/site-packages/veusz/helpers/qtmml.so
-lib/python${MODPY_VERSION}/site-packages/veusz/helpers/recordpaint.so
-lib/python${MODPY_VERSION}/site-packages/veusz/helpers/threed.so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/_nc_cntr.so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/qtloops.so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/qtmml.so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/recordpaint.so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/threed.so
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_axis-broken.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_axis-function.svg
