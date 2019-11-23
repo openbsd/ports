@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/23 23:26:34 kmos Exp $
 
 COMMENT =		GitHub Flavored Markdown extension
 
@@ -20,6 +20,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
