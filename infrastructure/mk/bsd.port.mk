@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1500 2019/11/23 16:00:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1501 2019/11/23 16:19:48 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1182,16 +1182,7 @@ _EXCLUDE_DEBUG_PLISTS = ${_WRKDEBUG} ${_WRKDEBUG}/Makefile
 .for _S in ${MULTI_PACKAGES}
 PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
 
-_create_pkg${_S} = \
-	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} && \
-	${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
-		$$deps ${PKG_ARGS${_S}} $$tmp && \
-	${_check_lib_depends} $$tmp && \
-	${_register_plist${_S}} $$tmp && \
-	${_checksum_package}
-
-_move_tmp_pkg${_S} = ${_PBUILD} mv ${_TMP_REPO}${_PKGFILE${_S}} ${_PACKAGE_COOKIE${_S}}
-_tmp_pkg${_S} = ${_TMP_REPO}${_PKGFILE${_S}}
+_pkg${_S} = ${_PKGFILE${_S}}
 
 .  if ${DEBUG_PACKAGES:M${_S}}
 _DBG_PKG_ARGS${_S} := ${PKG_ARGS${_S}}
@@ -1202,15 +1193,7 @@ _DBG_PKG_ARGS${_S} += -d"-debug info for ${FULLPKGNAME${_S}}"
 _DBG_PKG_ARGS${_S} += -DFULLPKGPATH=debug/${FULLPKGPATH${_S}}
 _DBG_PKG_ARGS${_S} += -f ${_WRKDEBUG}/${PLIST${_S}:T}
 _EXCLUDE_DEBUG_PLISTS += ${_WRKDEBUG}/${PLIST${_S}:T}
-_create_pkg${_S} += && \
-	tmp=${_TMP_REPO}${_DBG_PKGFILE${_S}} pkgname=${_DBG_PKGFILE${_S}} && \
-	${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
-		$$deps ${_DBG_PKG_ARGS${_S}} $$tmp && \
-	${_check_lib_depends} $$tmp && \
-	${_dbg_register_plist${_S}} $$tmp && \
-	${_checksum_package}
-_move_tmp_pkg${_S} += && ${_PBUILD} mv ${_TMP_REPO}${_DBG_PKGFILE${_S}} ${_DBG_PACKAGE_COOKIE${_S}}
-_tmp_pkg${_S} += ${_TMP_REPO}${_DBG_PKGFILE${_S}}
+_pkg${_S} += ${_DBG_PKGFILE${_S}}
 .  endif
 
 # Finish filling out package command, and package dependencies
@@ -2113,15 +2096,21 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${_MAKE} _internal-generate-readmes
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
-	@cd ${.CURDIR} && permit=${PERMIT_PACKAGE${_S}:L:Q} && \
-	if deps=$$(SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
-			${MAKE} print-package-args) && ${_create_pkg${_S}}; then \
-			${_move_tmp_pkg${_S}}; \
-		 	exit 0; \
-	else \
-		${_PBUILD} rm -f ${_tmp_pkg${_S}}; \
-	    exit 1; \
-	fi
+	@trap "cd ${_TMP_REPO} && ${_PBUILD} rm -f ${_pkg${_S}}" 0 1 2 3 13 15; \
+	cd ${.CURDIR}; permit=${PERMIT_PACKAGE${_S}:L:Q}; \
+	deps=$$(SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
+		${MAKE} print-package-args); \
+	for p in ${_pkg${_S}}; do \
+		tmp=${_TMP_REPO}$$p pkgname=$$p; \
+		${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
+			$$deps ${PKG_ARGS${_S}} $$tmp; \
+			${_check_lib_depends} $$tmp; \
+			${_register_plist${_S}} $$tmp; \
+			${_checksum_package}; \
+	done; \
+	for p in ${_pkg${_S}}; do \
+		${_PBUILD} mv ${_TMP_REPO}$$p ${_PKG_REPO${_S}}$$p; \
+	done
 # End of PACKAGE.
 	@-rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
 .  endif
