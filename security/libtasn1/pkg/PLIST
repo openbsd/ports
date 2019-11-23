@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/09/06 22:00:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/11/23 12:13:33 ajacoutot Exp $
 @bin bin/asn1Coding
 @bin bin/asn1Decoding
 @bin bin/asn1Parser
+@bin bin/corpus2array
 include/libtasn1.h
 @info info/libtasn1.info
-lib/libtasn1.a
+@static-lib lib/libtasn1.a
 lib/libtasn1.la
 @lib lib/libtasn1.so.${LIBtasn1_VERSION}
 lib/pkgconfig/libtasn1.pc
