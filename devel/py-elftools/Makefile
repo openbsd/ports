@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/23 19:54:06 kmos Exp $
 
 COMMENT =		ELF and DWARF parser library for Python
 
@@ -20,6 +20,7 @@ FLAVOR ?=
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 EXAMPLEDIR =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}elftools
 
@@ -28,7 +29,6 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py ${EXAMPLEDIR}/
 	mv ${PREFIX}/bin/readelf.py{,${MODPY_BIN_SUFFIX}}
 
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} test/run_all_unittests.py
+TEST_ENV +=		PYTHONPATH=${WRKSRC}:${WRKSRC}/test
 
 .include <bsd.port.mk>
