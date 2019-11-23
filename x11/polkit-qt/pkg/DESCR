@@ -1,4 +1,4 @@
-${PKGSTEM}1 is a library that lets developers use the PolicyKit API
+polkit-qt4 is a library that lets developers use the PolicyKit API
 through a nice Qt-styled API. It is mainly a wrapper around QAction and
 QAbstractButton that lets you integrate those two component easily with
 PolicyKit.
