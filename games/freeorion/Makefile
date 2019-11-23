@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/01 19:17:31 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/23 22:08:42 cwen Exp $
 
 V =		0.4.8
 COMMENT =	turn-based space empire and galactic conquest computer game
@@ -47,6 +47,10 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/src-tarball
+
+.if ${MACHINE_ARCH:Mpowerpc}
+DPB_PROPERTIES =	lonesome
+.endif
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
