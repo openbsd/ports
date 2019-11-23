@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/23 19:35:16 kmos Exp $
 
 V =		0.2.2
 COMMENT =	access to parallel port from Python
@@ -20,5 +20,7 @@ FLAVOR ?=
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
+
+# No tests upstream
 
 .include <bsd.port.mk>
