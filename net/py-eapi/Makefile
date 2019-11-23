@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/23 20:28:31 kmos Exp $
 
 COMMENT =		Python client for Arista eAPI
 
@@ -20,7 +20,10 @@ FLAVOR ?=
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	test/unit
 
 RUN_DEPENDS =		net/py-netaddr${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
