@@ -1,7 +1,12 @@
-$OpenBSD: patch-src_pyodbc_h,v 1.1 2016/11/19 13:37:51 patrick Exp $
---- src/pyodbc.h.orig	Sat Nov 19 13:01:11 2016
-+++ src/pyodbc.h	Sat Nov 19 13:01:34 2016
-@@ -80,7 +80,7 @@ inline void UNUSED(...) { }
+$OpenBSD: patch-src_pyodbc_h,v 1.2 2019/11/23 14:32:28 sthen Exp $
+
+#1: alloca
+#2: pyodbc wants BYTE which is unixodbc's sqltypes.h but not iodbc's version.
+
+Index: src/pyodbc.h
+--- src/pyodbc.h.orig
++++ src/pyodbc.h
+@@ -96,7 +96,7 @@ inline void UNUSED(...) { }
  #include <stdarg.h>
  
  #if defined(__SUNPRO_CC) || defined(__SUNPRO_C) || (defined(__GNUC__) && !defined(__MINGW32__))
@@ -10,3 +15,14 @@ $OpenBSD: patch-src_pyodbc_h,v 1.1 2016/11/19 13:37:51 patrick Exp $
  #include <alloca.h>
  #endif
  #define CDECL cdecl
+@@ -147,6 +147,10 @@ inline void DebugTrace(const char* szFmt, ...) { UNUSE
+ #define pyodbc_malloc malloc
+ #define pyodbc_free free
+ // #endif
++
++#ifndef BYTE
++    typedef uint8_t BYTE;
++#endif
+ 
+ bool pyodbc_realloc(BYTE** pp, size_t newlen);
+ // A wrapper around realloc with a safer interface.  If it is successful, *pp is updated to the
