@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.555 2019/11/19 18:54:59 kn Exp $
+# $OpenBSD: Makefile,v 1.556 2019/11/23 15:10:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -335,6 +335,8 @@
      SUBDIR += py-rsa,python3
      SUBDIR += py-scp
      SUBDIR += py-scp,python3
+     SUBDIR += py-scrypt
+     SUBDIR += py-scrypt,python3
      SUBDIR += py-secretstorage
      SUBDIR += py-secretstorage,python3
      SUBDIR += py-service_identity
