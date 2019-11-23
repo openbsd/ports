@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_puny_decode_c,v 1.1 2019/11/23 21:43:21 naddy Exp $
+
+The version script already maps _idn2* to _idn2*@IDN2_0.0.0.  Do not
+create a duplicate entry with .symver that ld.bfd cannot handle.
+
+Index: lib/puny_decode.c
+--- lib/puny_decode.c.orig
++++ lib/puny_decode.c
+@@ -228,5 +228,4 @@ int punycode_decode(
+ __typeof__ (_idn2_punycode_decode_internal) _idn2_punycode_decode
+    __attribute__ ((visibility ("default"),
+                    alias ("_idn2_punycode_decode_internal")));
+-__asm__ (".symver _idn2_punycode_decode, _idn2_punycode_decode@IDN2_0.0.0");
+ #endif
