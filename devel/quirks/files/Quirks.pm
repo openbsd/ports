@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.831 2019/11/21 01:30:51 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.832 2019/11/23 15:45:41 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1343,6 +1343,7 @@ my $obsolete_reason = {
 	'terraform-provider-terraform' => 3,
 	'py-webdav' => 3,
 	'yabause' => 6,
+	'terraform-provider-softlayer' => 3,
 };
 
 # reasons for obsolete packages
