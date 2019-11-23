@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/23 07:42:57 kmos Exp $
 
 COMMENT =		matrices describing affine transformation of the plane
 
@@ -15,9 +15,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
