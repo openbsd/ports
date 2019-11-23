@@ -1,0 +1,14 @@
+$OpenBSD: patch-backends_kmix-backends_cpp,v 1.1.1.1 2019/11/23 07:49:59 rsadowski Exp $
+
+Index: backends/kmix-backends.cpp
+--- backends/kmix-backends.cpp.orig
++++ backends/kmix-backends.cpp
+@@ -40,7 +40,7 @@
+ #define OSS_MIXER
+ #endif
+ 
+-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(_UNIXWARE)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__bsdi__) || defined(_UNIXWARE)
+ #define OSS_MIXER
+ #endif
+ 
