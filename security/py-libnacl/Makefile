@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/11/23 21:08:26 kmos Exp $
 
 COMMENT=		python bindings for libsodium/tweetnacl based on ctypes
 
@@ -20,15 +20,17 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST=		Yes
 
 RUN_DEPENDS=		security/libsodium
-TEST_DEPENDS=		security/libsodium
 
 FLAVORS=		python3
 FLAVOR?=
 
-do-test:
-	cd ${WRKSRC}/tests && \
-		${MODPY_BIN} ./runtests.py
+# PyPI tarball has .pyc files it shouldn't
+# https://github.com/saltstack/libnacl/issues/112
+pre-test:
+	rm ${WRKSRC}/tests/unit/*.pyc
+	rm -rf ${WRKSRC}/tests/unit/__pycache__/
 
 .include <bsd.port.mk>
