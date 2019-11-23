@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/06 16:31:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/23 15:45:27 ajacoutot Exp $
 
 PROVIDER=		opsgenie
-GH_TAGNAME=		v0.2.4
+GH_TAGNAME=		v0.2.5
 
 .include <bsd.port.mk>

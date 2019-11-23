@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/11/17 19:30:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2019/11/23 15:45:26 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += provider-alicloud
@@ -60,7 +60,6 @@
      SUBDIR += provider-random
      SUBDIR += provider-rundeck
      SUBDIR += provider-scaleway
-     SUBDIR += provider-softlayer
      SUBDIR += provider-spotinst
      SUBDIR += provider-statuscake
      SUBDIR += provider-template
