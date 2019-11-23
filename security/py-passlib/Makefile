@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/08 09:30:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/23 14:53:06 sthen Exp $
 
 COMMENT=	Python module providing a password hashing framework
 
-MODPY_EGG_VERSION= 1.7.1
+MODPY_EGG_VERSION= 1.7.2
 DISTNAME=	passlib-${MODPY_EGG_VERSION}
 PKGNAME=	py-passlib-${MODPY_EGG_VERSION}
-REVISION=	1
 
 CATEGORIES=	security
 
@@ -26,6 +25,10 @@ FLAVORS=	python3
 FLAVOR?=
 
 RUN_DEPENDS=	security/py-bcrypt${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
+		www/apache-httpd
+
+pre-test:
+	ln -s ${LOCALBASE}/bin/htpasswd2 ${WRKDIR}/bin/htpasswd
 
 .include <bsd.port.mk>
