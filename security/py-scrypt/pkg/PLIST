@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 15:10:06 sthen Exp $
+@so lib/python${MODPY_VERSION}/site-packages/_scrypt.so
+lib/python${MODPY_VERSION}/site-packages/scrypt/
+lib/python${MODPY_VERSION}/site-packages/scrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/scrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/scrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/scrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/scrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/scrypt/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scrypt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scrypt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scrypt/${MODPY_PYCACHE}scrypt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scrypt/scrypt.py
