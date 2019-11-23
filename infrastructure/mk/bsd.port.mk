@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1498 2019/11/23 15:43:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1499 2019/11/23 15:50:14 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -960,7 +960,7 @@ PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 .for _S in ${MULTI_PACKAGES}
 _PKGFILE${_S} = ${FULLPKGNAME${_S}}.tgz
 _DBG_PKGFILE${_S} = debug-${_PKGFILE${_S}}
-.  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
+.  if ${PKG_ARCH${_S}} == "*"
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
 .  else
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
