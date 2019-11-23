@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/13 20:04:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/23 20:10:44 kmos Exp $
 
 COMMENT =		simple Python interface for Graphviz
 
@@ -18,8 +18,14 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
+
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
+			devel/py-test-mock${MODPY_FLAVOR} \
+			math/graphviz
 
 .include <bsd.port.mk>
