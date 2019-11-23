@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 07:57:03 rsadowski Exp $
+lib/qt5/plugins/gsthumbnail.so
+lib/qt5/plugins/rawthumbnail.so
+share/kservices5/gsthumbnail.desktop
+share/kservices5/rawthumbnail.desktop
