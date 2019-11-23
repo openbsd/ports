@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.194 2019/11/01 22:39:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.195 2019/11/23 10:14:55 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		3.34.2
 
 SHARED_LIBS += nautilus-extension        3.0 # 1.5.0
 
@@ -41,6 +41,8 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		-Denable-selinux=false
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # needs 'org.gnome.nautilus.preferences'
 TEST_DEPENDS=		${BASE_PKGPATH}

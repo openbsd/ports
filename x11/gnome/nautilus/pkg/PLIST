@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.65 2019/11/01 22:39:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.66 2019/11/23 10:14:55 ajacoutot Exp $
 @conflict totem-<3.32.0
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -21,9 +21,9 @@ lib/girepository-1.0/Nautilus-3.0.typelib
 @lib lib/libnautilus-extension.so.${LIBnautilus-extension_VERSION}
 lib/nautilus/
 lib/nautilus/extensions-3.0/
-lib/nautilus/extensions-3.0/libnautilus-image-properties.so
-lib/nautilus/extensions-3.0/libnautilus-sendto.so
-lib/nautilus/extensions-3.0/libtotem-properties-page.so
+@so lib/nautilus/extensions-3.0/libnautilus-image-properties.so
+@so lib/nautilus/extensions-3.0/libnautilus-sendto.so
+@so lib/nautilus/extensions-3.0/libtotem-properties-page.so
 lib/pkgconfig/libnautilus-extension.pc
 share/applications/nautilus-autorun-software.desktop
 share/applications/org.gnome.Nautilus.desktop
@@ -86,8 +86,6 @@ share/locale/hr/LC_MESSAGES/nautilus.mo
 share/locale/hu/LC_MESSAGES/nautilus.mo
 share/locale/hy/LC_MESSAGES/nautilus.mo
 share/locale/id/LC_MESSAGES/nautilus.mo
-share/locale/ig/
-share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/nautilus.mo
 share/locale/io/LC_MESSAGES/nautilus.mo
 share/locale/is/LC_MESSAGES/nautilus.mo
@@ -109,8 +107,6 @@ share/locale/lv/LC_MESSAGES/nautilus.mo
 share/locale/mai/LC_MESSAGES/nautilus.mo
 share/locale/mg/LC_MESSAGES/nautilus.mo
 share/locale/mi/LC_MESSAGES/nautilus.mo
-share/locale/mjw/
-share/locale/mjw/LC_MESSAGES/
 share/locale/mjw/LC_MESSAGES/nautilus.mo
 share/locale/mk/LC_MESSAGES/nautilus.mo
 share/locale/ml/LC_MESSAGES/nautilus.mo
@@ -161,7 +157,6 @@ share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
-share/metainfo/
 share/metainfo/org.gnome.Nautilus.appdata.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

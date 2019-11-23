@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_nautilus-view-icon-item-ui_c,v 1.1 2019/11/23 10:14:55 ajacoutot Exp $
+
+REVERT (remove when we have pango >=1.44)
+From 9738d8561ed38a87b4d72db3e49653641edd9a09 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ant=C3=B3nio=20Fernandes?= <antoniof@gnome.org>
+Date: Wed, 4 Sep 2019 21:45:05 +0000
+Subject: [PATCH] canvas-item, view-icon-item-ui: Don't hyphenate filenames
+
+Index: src/nautilus-view-icon-item-ui.c
+--- src/nautilus-view-icon-item-ui.c.orig
++++ src/nautilus-view-icon-item-ui.c
+@@ -128,7 +128,6 @@ constructed (GObject *object)
+     GtkBox *container;
+     GtkBox *item_selection_background;
+     GtkLabel *label;
+-    PangoAttrList *attr_list;
+     GtkStyleContext *style_context;
+     NautilusFile *file;
+     guint icon_size;
+@@ -150,9 +149,6 @@ constructed (GObject *object)
+ 
+     label = GTK_LABEL (gtk_label_new (nautilus_file_get_display_name (file)));
+     gtk_widget_show (GTK_WIDGET (label));
+-    attr_list = pango_attr_list_new ();
+-    pango_attr_list_insert (attr_list, pango_attr_insert_hyphens_new (FALSE));
+-    gtk_label_set_attributes (label, attr_list);
+     gtk_label_set_ellipsize (label, PANGO_ELLIPSIZE_MIDDLE);
+     gtk_label_set_line_wrap (label, TRUE);
+     gtk_label_set_line_wrap_mode (label, PANGO_WRAP_WORD_CHAR);
+@@ -182,8 +178,6 @@ constructed (GObject *object)
+                       (GCallback) on_view_item_size_changed, self);
+     g_signal_connect (self->model, "notify::file",
+                       (GCallback) on_view_item_file_changed, self);
+-
+-    pango_attr_list_unref (attr_list);
+ }
+ 
+ static void
