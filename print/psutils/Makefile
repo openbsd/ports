@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/11/23 16:21:09 ajacoutot Exp $
+
+PKG_ARCH=	*
 
 COMMENT=	utilities for manipulating PostScript documents
 
-DISTNAME=	psutils-1.23
-EXTRACT_SUFX=	.tar.xz
+V=		1.90
+DISTNAME=	psutils-${V}
 
 CATEGORIES=	print
 
@@ -14,16 +16,16 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD-like (${WRKSRC}/LICENSE)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c
+MASTER_SITES=	https://github.com/rrthomas/psutils/releases/download/v${V}/
 
-MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/psutils/psutils-1.23.tar.xz/eedd282973a58ac6bbf890316a3b02d8/
+MODULES=	perl
 
 RUN_DEPENDS=	print/libpaper
 
-USE_GMAKE=	Yes
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS=	perldir=${PREFIX}/${P5SITE}
+
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
