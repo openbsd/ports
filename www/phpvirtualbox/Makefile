@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/09/26 21:59:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/11/23 14:48:56 ajacoutot Exp $
 
 COMMENT=		web-based VirtualBox front-end
 	
-V=			5.0-5
-DISTNAME=		phpvirtualbox-${V}
-PKGNAME=		phpvirtualbox-${V:S/-/./}
-REVISION=		3
-EXTRACT_SUFX=		.zip
+GH_PROJECT=		phpvirtualbox
+GH_ACCOUNT=		phpvirtualbox
+GH_TAGNAME=		5.2-1
+PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/-/./}
 
 CATEGORIES=		www sysutils
 
@@ -16,8 +15,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
-
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=phpvirtualbox/}
 
 MODULES=		lang/php
 RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-soap

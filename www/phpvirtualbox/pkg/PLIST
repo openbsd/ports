@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/09/04 12:46:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/11/23 14:48:56 ajacoutot Exp $
 phpvirtualbox/
 phpvirtualbox/CHANGELOG.txt
 phpvirtualbox/GPLv3.txt
@@ -26,6 +26,7 @@ phpvirtualbox/endpoints/lib/auth/
 phpvirtualbox/endpoints/lib/auth/ActiveDirectory.php
 phpvirtualbox/endpoints/lib/auth/Builtin.php
 phpvirtualbox/endpoints/lib/auth/LDAP.php
+phpvirtualbox/endpoints/lib/auth/MySQL.php
 phpvirtualbox/endpoints/lib/auth/OpenMediaVault.php
 phpvirtualbox/endpoints/lib/auth/WebAuth.php
 phpvirtualbox/endpoints/lib/auth/index.html
@@ -36,8 +37,8 @@ phpvirtualbox/endpoints/lib/language.php
 phpvirtualbox/endpoints/lib/utils.php
 phpvirtualbox/endpoints/lib/vboxServiceWrappers.php
 phpvirtualbox/endpoints/lib/vboxconnector.php
-phpvirtualbox/endpoints/lib/vboxweb-5.0.wsdl
-phpvirtualbox/endpoints/lib/vboxwebService-5.0.wsdl
+phpvirtualbox/endpoints/lib/vboxweb-5.2.wsdl
+phpvirtualbox/endpoints/lib/vboxwebService-5.2.wsdl
 phpvirtualbox/endpoints/rdp.php
 phpvirtualbox/endpoints/screen.php
 phpvirtualbox/images/
@@ -232,6 +233,7 @@ phpvirtualbox/images/vbox/os_linux24.png
 phpvirtualbox/images/vbox/os_linux24_64.png
 phpvirtualbox/images/vbox/os_linux26.png
 phpvirtualbox/images/vbox/os_linux26_64.png
+phpvirtualbox/images/vbox/os_linux_64.png
 phpvirtualbox/images/vbox/os_linux_other.png
 phpvirtualbox/images/vbox/os_macosx.png
 phpvirtualbox/images/vbox/os_macosx_64.png
@@ -270,6 +272,7 @@ phpvirtualbox/images/vbox/os_win10.png
 phpvirtualbox/images/vbox/os_win10_64.png
 phpvirtualbox/images/vbox/os_win2k.png
 phpvirtualbox/images/vbox/os_win2k12_64.png
+phpvirtualbox/images/vbox/os_win2k16_64.png
 phpvirtualbox/images/vbox/os_win2k3.png
 phpvirtualbox/images/vbox/os_win2k3_64.png
 phpvirtualbox/images/vbox/os_win2k8.png
@@ -284,6 +287,7 @@ phpvirtualbox/images/vbox/os_win8_64.png
 phpvirtualbox/images/vbox/os_win95.png
 phpvirtualbox/images/vbox/os_win98.png
 phpvirtualbox/images/vbox/os_win_other.png
+phpvirtualbox/images/vbox/os_win_other_64.png
 phpvirtualbox/images/vbox/os_winme.png
 phpvirtualbox/images/vbox/os_winnt4.png
 phpvirtualbox/images/vbox/os_winvista.png
@@ -502,6 +506,7 @@ phpvirtualbox/js/jquery.tipped-2.1b.min.js
 phpvirtualbox/js/phpvirtualbox.js
 phpvirtualbox/js/utils.js
 phpvirtualbox/languages/
+phpvirtualbox/languages/cs.xml
 phpvirtualbox/languages/de.xml
 phpvirtualbox/languages/en.xml
 phpvirtualbox/languages/es.xml
@@ -515,6 +520,7 @@ phpvirtualbox/languages/pt_br.xml
 phpvirtualbox/languages/ro.xml
 phpvirtualbox/languages/ru.xml
 phpvirtualbox/languages/source/
+phpvirtualbox/languages/source/cs.dat
 phpvirtualbox/languages/source/de.dat
 phpvirtualbox/languages/source/en.dat
 phpvirtualbox/languages/source/es.dat
@@ -579,6 +585,7 @@ phpvirtualbox/panes/wizardNewHD.html
 phpvirtualbox/panes/wizardNewHDAdvanced.html
 phpvirtualbox/panes/wizardNewVM.html
 phpvirtualbox/panes/wizardNewVMAdvanced.html
+phpvirtualbox/phpvirtualbox.conf
 phpvirtualbox/rdpweb/
 phpvirtualbox/rdpweb/RDPClientUI.swf
 phpvirtualbox/rdpweb/license_3rd.txt
