@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2019/11/02 09:35:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.57 2019/11/23 12:07:38 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -339,43 +339,43 @@ include/evolution-data-server/libedataserverui/e-webdav-discover-widget.h
 include/evolution-data-server/libedataserverui/libedataserverui.h
 lib/evolution-data-server/
 lib/evolution-data-server/addressbook-backends/
-lib/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
-lib/evolution-data-server/addressbook-backends/libebookbackendfile.so
-lib/evolution-data-server/addressbook-backends/libebookbackendgoogle.so
-lib/evolution-data-server/addressbook-backends/libebookbackendldap.so
+@so lib/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
+@so lib/evolution-data-server/addressbook-backends/libebookbackendfile.so
+@so lib/evolution-data-server/addressbook-backends/libebookbackendgoogle.so
+@so lib/evolution-data-server/addressbook-backends/libebookbackendldap.so
 lib/evolution-data-server/calendar-backends/
-lib/evolution-data-server/calendar-backends/libecalbackendcaldav.so
-lib/evolution-data-server/calendar-backends/libecalbackendcontacts.so
-lib/evolution-data-server/calendar-backends/libecalbackendfile.so
-lib/evolution-data-server/calendar-backends/libecalbackendgtasks.so
-lib/evolution-data-server/calendar-backends/libecalbackendhttp.so
-lib/evolution-data-server/calendar-backends/libecalbackendweather.so
+@so lib/evolution-data-server/calendar-backends/libecalbackendcaldav.so
+@so lib/evolution-data-server/calendar-backends/libecalbackendcontacts.so
+@so lib/evolution-data-server/calendar-backends/libecalbackendfile.so
+@so lib/evolution-data-server/calendar-backends/libecalbackendgtasks.so
+@so lib/evolution-data-server/calendar-backends/libecalbackendhttp.so
+@so lib/evolution-data-server/calendar-backends/libecalbackendweather.so
 lib/evolution-data-server/camel-providers/
-lib/evolution-data-server/camel-providers/libcamelimapx.so
+@so lib/evolution-data-server/camel-providers/libcamelimapx.so
 lib/evolution-data-server/camel-providers/libcamelimapx.urls
-lib/evolution-data-server/camel-providers/libcamellocal.so
+@so lib/evolution-data-server/camel-providers/libcamellocal.so
 lib/evolution-data-server/camel-providers/libcamellocal.urls
-lib/evolution-data-server/camel-providers/libcamelnntp.so
+@so lib/evolution-data-server/camel-providers/libcamelnntp.so
 lib/evolution-data-server/camel-providers/libcamelnntp.urls
-lib/evolution-data-server/camel-providers/libcamelpop3.so
+@so lib/evolution-data-server/camel-providers/libcamelpop3.so
 lib/evolution-data-server/camel-providers/libcamelpop3.urls
-lib/evolution-data-server/camel-providers/libcamelsendmail.so
+@so lib/evolution-data-server/camel-providers/libcamelsendmail.so
 lib/evolution-data-server/camel-providers/libcamelsendmail.urls
-lib/evolution-data-server/camel-providers/libcamelsmtp.so
+@so lib/evolution-data-server/camel-providers/libcamelsmtp.so
 lib/evolution-data-server/camel-providers/libcamelsmtp.urls
 lib/evolution-data-server/credential-modules/
-lib/evolution-data-server/credential-modules/module-credentials-goa.so
-lib/evolution-data-server/libedbus-private.so
+@so lib/evolution-data-server/credential-modules/module-credentials-goa.so
+@so lib/evolution-data-server/libedbus-private.so
 lib/evolution-data-server/registry-modules/
-lib/evolution-data-server/registry-modules/module-cache-reaper.so
-lib/evolution-data-server/registry-modules/module-gnome-online-accounts.so
-lib/evolution-data-server/registry-modules/module-google-backend.so
-lib/evolution-data-server/registry-modules/module-oauth2-services.so
-lib/evolution-data-server/registry-modules/module-outlook-backend.so
-lib/evolution-data-server/registry-modules/module-secret-monitor.so
-lib/evolution-data-server/registry-modules/module-trust-prompt.so
-lib/evolution-data-server/registry-modules/module-webdav-backend.so
-lib/evolution-data-server/registry-modules/module-yahoo-backend.so
+@so lib/evolution-data-server/registry-modules/module-cache-reaper.so
+@so lib/evolution-data-server/registry-modules/module-gnome-online-accounts.so
+@so lib/evolution-data-server/registry-modules/module-google-backend.so
+@so lib/evolution-data-server/registry-modules/module-oauth2-services.so
+@so lib/evolution-data-server/registry-modules/module-outlook-backend.so
+@so lib/evolution-data-server/registry-modules/module-secret-monitor.so
+@so lib/evolution-data-server/registry-modules/module-trust-prompt.so
+@so lib/evolution-data-server/registry-modules/module-webdav-backend.so
+@so lib/evolution-data-server/registry-modules/module-yahoo-backend.so
 lib/girepository-1.0/Camel-1.2.typelib
 lib/girepository-1.0/EBackend-1.2.typelib
 lib/girepository-1.0/EBook-1.2.typelib
