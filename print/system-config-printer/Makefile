@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.53 2019/07/12 20:48:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/11/23 16:50:24 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-GH_ACCOUNT=		zdohnal
+GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		system-config-printer
-GH_TAGNAME=		1.5.11
-REVISION=		3
+GH_TAGNAME=		1.5.12
 
 CATEGORIES=		print sysutils
-
-HOMEPAGE=		http://cyberelk.net/tim/software/system-config-printer/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

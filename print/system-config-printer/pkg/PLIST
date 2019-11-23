@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/23 16:50:24 ajacoutot Exp $
 bin/install-printerdriver
 bin/scp-dbus-service
 bin/system-config-printer
@@ -6,7 +6,7 @@ bin/system-config-printer-applet
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/
 lib/python${MODPY_VERSION}/site-packages/cupshelpers-1.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}cupshelpers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,9 +37,7 @@ share/examples/system-config-printer/dbus-1/system.d/com.redhat.NewPrinterNotifi
 share/examples/system-config-printer/dbus-1/system.d/com.redhat.PrinterDriversInstaller.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/com.redhat.PrinterDriversInstaller.conf
 share/examples/system-config-printer/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/system-config-printer/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/system-config-printer/xdg/autostart/print-applet.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/print-applet.desktop
 share/locale/ar/LC_MESSAGES/system-config-printer.mo
