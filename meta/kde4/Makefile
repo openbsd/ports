@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/11/12 20:18:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.73 2019/11/23 08:23:35 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -30,12 +30,14 @@ REVISION-minimal =	11
 REVISION-games = 4
 REVISION-sdk = 4
 REVISION-edu = 8
-REVISION-multimedia = 1
-REVISION-network = 1
+REVISION-multimedia = 2
+REVISION-network = 2
 REVISION-extras = 11
-REVISION-main =		32
+REVISION-main =		33
 REVISION-admin =	1
 REVISION-graphics =	5
+REVISION-utils =	0
+REVISION-toys=		0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -95,7 +97,6 @@ RUN_DEPENDS-games = \
 KDE4-multimedia = \
 	${MODKDE4_DEP_DIR}/audiocd-kio	\
 	${MODKDE4_DEP_DIR}/ffmpegthumbs	\
-	${MODKDE4_DEP_DIR}/kmix		\
 	${MODKDE4_DEP_DIR}/kscd		\
 	${MODKDE4_DEP_DIR}/mplayerthumbs
 
@@ -103,9 +104,7 @@ RUN_DEPENDS-network = \
 	${MODKDE4_DEP_DIR}/network-filesharing \
 	${MODKDE4_DEP_DIR}/network-strigi-analyzers \
 	${MODKDE4_DEP_DIR}/kopete		\
-	${MODKDE4_DEP_DIR}/kppp			\
-	${MODKDE4_DEP_DIR}/krdc			\
-	${MODKDE4_DEP_DIR}/krfb
+	${MODKDE4_DEP_DIR}/kppp
 
 RUN_DEPENDS-sdk = \
 	${MODKDE4_DEP_DIR}/dev-scripts		\
@@ -120,14 +119,12 @@ RUN_DEPENDS-sdk = \
 
 RUN_DEPENDS-toys = \
 	${MODKDE4_DEP_DIR}/amor		\
-	${MODKDE4_DEP_DIR}/kteatime	\
 	${MODKDE4_DEP_DIR}/ktux
 
 KDE4-utils = \
 	${MODKDE4_DEP_DIR}/kdf			\
 	${MODKDE4_DEP_DIR}/kfloppy		\
 	${MODKDE4_DEP_DIR}/kremotecontrol	\
-	${MODKDE4_DEP_DIR}/ktimer		\
 	${MODKDE4_DEP_DIR}/nepomuk-widgets	\
 	${MODKDE4_DEP_DIR}/print-manager	\
 	${MODKDE4_DEP_DIR}/superkaramba

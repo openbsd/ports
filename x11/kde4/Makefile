@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/11/12 20:21:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.77 2019/11/23 08:23:35 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -121,12 +121,12 @@ SUBDIR += kaccessible
 #SUBDIR += ark			x11/kde-applications
 #SUBDIR += filelight		x11/kde-applications
 #SUBDIR += kcalc		x11/kde-applications
-SUBDIR += kcharselect
+#SUBDIR += kcharselect		x11/kde-applications
 SUBDIR += kdf
 SUBDIR += kfloppy
 SUBDIR += kgpg
 SUBDIR += kremotecontrol
-SUBDIR += ktimer
+#SUBDIR += ktimer		x11/kde-applications
 #SUBDIR += kwalletmanager	x11/kde-applications
 SUBDIR += print-manager
 SUBDIR += superkaramba
@@ -225,7 +225,7 @@ SUBDIR += audiocd-kio
 #SUBDIR += dragon		x11/kde-applications
 SUBDIR += ffmpegthumbs
 #SUBDIR += juk			x11/kde-applications
-SUBDIR += kmix
+#SUBDIR += kmix			x11/kde-applications
 SUBDIR += kscd
 SUBDIR += libkcddb
 SUBDIR += libkcompactdisc
@@ -240,8 +240,8 @@ SUBDIR += kuser
 #SUBDIR += kget			# broken
 SUBDIR += kopete
 SUBDIR += kppp
-SUBDIR += krdc
-SUBDIR += krfb
+#SUBDIR += krdc			x11/kde-applications
+#SUBDIR += krfb			x11/kde-applications
 SUBDIR += network-filesharing
 SUBDIR += network-strigi-analyzers
 #SUBDIR += zeroconf-ioslave
@@ -266,7 +266,7 @@ SUBDIR += sdk-thumbnailers
 # former kdetoys
 SUBDIR += amor
 SUBDIR += ktux
-SUBDIR += kteatime
+#SUBDIR += kteatime			x11/kde-applications
 
 # additional resources
 SUBDIR += artwork

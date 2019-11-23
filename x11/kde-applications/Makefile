@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/11/08 13:44:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.51 2019/11/23 08:23:35 rsadowski Exp $
 
      SUBDIR =
 
@@ -108,17 +108,17 @@
      #SUBDIR += k3b
      #SUBDIR += kamoso
      SUBDIR += kdenlive
-     #SUBDIR += kmix
+     SUBDIR += kmix
      #SUBDIR += kwave
 
      # internet / network
-     #SUBDIR += kdenetwork-filesharing
+     SUBDIR += kdenetwork-filesharing
      #SUBDIR += kget
      SUBDIR += kio-extras
      #SUBDIR += kmailtransport (KF5Akonadi)
      #SUBDIR += kopete
-     #SUBDIR += krdc
-     #SUBDIR += krfb
+     SUBDIR += krdc
+     SUBDIR += krfb
      SUBDIR += zeroconf-ioslave
 
      # pim
@@ -146,7 +146,7 @@
      #SUBDIR += kde-dev-scripts
      #SUBDIR += kde-dev-utils
      #SUBDIR += kdesdk-kioslaves
-     #SUBDIR += kdesdk-thumbnailers
+     SUBDIR += kdesdk-thumbnailers
      SUBDIR += kompare
      #SUBDIR += lokalize
      #SUBDIR += poxml
@@ -155,15 +155,15 @@
      # utilities
      SUBDIR += ark
      SUBDIR += filelight
-     #SUBDIR += kbackup
+     SUBDIR += kbackup
      SUBDIR += kcalc
-     #SUBDIR += kcharselect
-     #SUBDIR += kdebugsettings
+     SUBDIR += kcharselect
+     SUBDIR += kdebugsettings
      #SUBDIR += kdf
      #SUBDIR += kfloppy
      #SUBDIR += kgpg
-     #SUBDIR += kteatime
-     #SUBDIR += ktimer
+     SUBDIR += kteatime
+     SUBDIR += ktimer
      SUBDIR += kwalletmanager
      #SUBDIR += print-manager
      SUBDIR += sweeper
@@ -204,7 +204,7 @@
      #SUBDIR += kblog
      SUBDIR += kcalcore
      #SUBDIR += kcalutils
-     #SUBDIR += kcontacts
+     SUBDIR += kcontacts
      #SUBDIR += kdav
      SUBDIR += kdeedu-data
      #SUBDIR += kidentitymanagement
