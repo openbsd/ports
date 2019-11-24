@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2019/07/12 20:47:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.125 2019/11/24 17:21:24 espie Exp $
 
 COMMENT=	library for manipulating PNG images
 
@@ -22,6 +22,7 @@ WANTLIB=	c m z
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
 	cd ${PREFIX}/lib; \
