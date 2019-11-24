@@ -1,15 +1,16 @@
-$OpenBSD: patch-common_gypi,v 1.12 2019/09/27 02:07:45 abieber Exp $
+$OpenBSD: patch-common_gypi,v 1.13 2019/11/24 18:42:28 abieber Exp $
+
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -521,6 +521,10 @@
-         'ldflags': [
+@@ -497,6 +497,10 @@
            '-Wl,--export-dynamic',
          ],
-+      }],
+       }],
 +      ['OS=="openbsd"', {
-+        'cflags': [ '-I${LOCALBASE}/include' ],
-+        'libraries': [ '-L${LOCALBASE}/lib' ],
-       }]
-     ],
-   }
++        'cflags': [ '-I/usr/local/include' ],
++        'libraries': [ '-L/usr/local/lib' ],
++      }],
+       # if node is built as an executable,
+       #      the openssl mechanism for keeping itself "dload"-ed to ensure proper
+       #      atexit cleanup does not apply

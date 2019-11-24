@@ -1,17 +1,18 @@
-$OpenBSD: patch-deps_openssl_config_generate_gypi_pl,v 1.2 2019/09/27 02:07:45 abieber Exp $
+$OpenBSD: patch-deps_openssl_config_generate_gypi_pl,v 1.3 2019/11/24 18:42:28 abieber Exp $
 
 Index: deps/openssl/config/generate_gypi.pl
 --- deps/openssl/config/generate_gypi.pl.orig
 +++ deps/openssl/config/generate_gypi.pl
-@@ -21,19 +21,6 @@ unless ($asm eq "asm" or $asm eq "asm_avx2" or $asm eq
- }
+@@ -22,17 +22,17 @@ unless ($asm eq "asm" or $asm eq "asm_avx2" or $asm eq
  my $arch = $ARGV[1];
  
--# nasm version check
+ # nasm version check
 -my $nasm_banner = `nasm -v`;
 -die "Error: nasm is not installed." if (!$nasm_banner);
--
--# gas version check
++#my $nasm_banner = `nasm -v`;
++#die "Error: nasm is not installed." if (!$nasm_banner);
+ 
+ # gas version check
 -my $gas_version_min = 2.30;
 -my $gas_banner = `gcc -Wa,-v -c -o /dev/null -x assembler /dev/null 2>&1`;
 -my ($gas_version) = ($gas_banner =~/GNU assembler version ([2-9]\.[0-9]+)/);
@@ -19,11 +20,17 @@ Index: deps/openssl/config/generate_gypi.pl
 -  die "Error: gas version $gas_version is too old." .
 -    "$gas_version_min or higher is required.";
 -}
--
++#my $gas_version_min = 2.30;
++#my $gas_banner = `gcc -Wa,-v -c -o /dev/null -x assembler /dev/null 2>&1`;
++#my ($gas_version) = ($gas_banner =~/GNU assembler version ([2-9]\.[0-9]+)/);
++#if ($gas_version < $gas_version_min) {
++#  die "Error: gas version $gas_version is too old." .
++#    "$gas_version_min or higher is required.";
++#}
+ 
  my $src_dir = "../openssl";
  my $arch_dir = "../config/archs/$arch";
- my $base_dir = "$arch_dir/$asm";
-@@ -104,7 +91,7 @@ foreach my $obj (@{$unified_info{sources}->{'apps/open
+@@ -104,7 +104,7 @@ foreach my $obj (@{$unified_info{sources}->{'apps/open
  # Generate all asm files and copy into config/archs
  foreach my $src (@generated_srcs) {
    my $cmd = "cd ../openssl; CC=gcc ASM=nasm make -f $makefile $src;" .
@@ -32,7 +39,7 @@ Index: deps/openssl/config/generate_gypi.pl
    system("$cmd") == 0 or die "Error in system($cmd)";
  }
  
-@@ -173,5 +160,5 @@ close(CLGYPI);
+@@ -173,5 +173,5 @@ close(CLGYPI);
  
  # Clean Up
  my $cmd2 ="cd $src_dir; make -f $makefile clean; make -f $makefile distclean;" .

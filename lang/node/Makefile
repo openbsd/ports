@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2019/09/27 02:07:44 abieber Exp $
+# $OpenBSD: Makefile,v 1.82 2019/11/24 18:42:28 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -11,8 +11,8 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		V8 JavaScript for clients and servers
 
-NODE_VERSION =		v10.16.3
-PLEDGE_VER =		1.1.0
+NODE_VERSION =		v12.13.1
+PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
@@ -80,13 +80,13 @@ pre-configure:
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
 	${SUBST_CMD} ${WRKDIST}/lib/module.js \
 		${WRKDIST}/deps/npm/bin/node-gyp-bin/node-gyp \
-		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/configure.js \
+		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/find-python.js \
 		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js \
 		${WRKDIST}/node.gyp \
 		${WRKDIST}/common.gypi \
 		${WRKDIST}/tools/test.py
 	cd ${WRKDIST}/deps/openssl/config && \
-		${MAKE_PROGRAM} ARCHS=BSD-x86-elf
+		${MAKE_PROGRAM} ASM_ARCHS=BSD-x86-elf NO_ASM_ARCHS=
 
 post-configure:
 	sed -i 's/-ldl //' ${WRKSRC}/out/deps/openssl/openssl.target.mk

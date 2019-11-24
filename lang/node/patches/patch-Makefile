@@ -1,8 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.9 2019/09/27 02:07:45 abieber Exp $
+$OpenBSD: patch-Makefile,v 1.10 2019/11/24 18:42:28 abieber Exp $
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -138,7 +138,7 @@ config.gypi: configure configure.py
+@@ -157,7 +157,7 @@ config.gypi: configure configure.py src/node_version.h
  	fi
  
  .PHONY: install
@@ -11,24 +12,16 @@ Index: Makefile
  	$(PYTHON) tools/install.py $@ '$(DESTDIR)' '$(PREFIX)'
  
  .PHONY: uninstall
-@@ -381,6 +381,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
+@@ -401,6 +401,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
+ # Just goes to show that recursive make really is harmful...
  # TODO(bnoordhuis) Force rebuild after gyp update.
  build-addons: | $(NODE_EXE) test/addons/.buildstamp
- 
++
 +build-pledge: $(NODE_EXE)
 +	$(NODE) deps/npm/node_modules/node-gyp/bin/node-gyp rebuild \
 +		--directory="deps/npm/node_modules/node-pledge" \
 +		--nodedir="$(shell pwd)" && \
 +	$(RM) -rf deps/npm/node_modules/node-pledge/build/Release/{.deps,../Makefile,obj.target}
-+
- ADDONS_NAPI_BINDING_GYPS := \
- 	$(filter-out test/addons-napi/??_*/binding.gyp, \
- 		$(wildcard test/addons-napi/*/binding.gyp))
-@@ -522,7 +528,6 @@ test-hash-seed: all
  
- .PHONY: test-doc
- test-doc: doc-only ## Builds, lints, and verifies the docs.
--	$(MAKE) lint
- 	$(PYTHON) tools/test.py $(PARALLEL_ARGS) $(CI_DOC)
- 
- test-known-issues: all
+ JS_NATIVE_API_BINDING_GYPS := \
+ 	$(filter-out test/js-native-api/??_*/binding.gyp, \

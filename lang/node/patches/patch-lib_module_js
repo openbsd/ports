@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_module_js,v 1.11 2019/09/27 02:07:45 abieber Exp $
+$OpenBSD: patch-lib_module_js,v 1.12 2019/11/24 18:42:28 abieber Exp $
 
 Index: lib/internal/modules/cjs/loader.js
 --- lib/internal/modules/cjs/loader.js.orig
 +++ lib/internal/modules/cjs/loader.js
-@@ -863,7 +863,10 @@ Module._initPaths = function() {
+@@ -1109,7 +1109,10 @@ Module._initPaths = function() {
    } else {
      prefixDir = path.resolve(process.execPath, '..', '..');
    }
