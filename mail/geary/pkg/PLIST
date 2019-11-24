@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/09/22 18:10:44 landry Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/11/24 11:26:37 ajacoutot Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
 lib/geary/
 lib/geary/web-extensions/
-lib/geary/web-extensions/libgeary-web-process.so
+@so lib/geary/web-extensions/libgeary-web-process.so
 share/applications/geary-autostart.desktop
 share/applications/org.gnome.Geary.desktop
 share/dbus-1/services/org.gnome.Geary.service

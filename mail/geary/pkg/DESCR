@@ -1,8 +1,3 @@
-Geary is an email client built for the GNOME desktop environment. It
-allows you to read and send email with a simple, modern interface. The
-first time Geary is launched, it will prompt for your account
-information. Note that your email password is stored securely in the
-Gnome Keyring. Geary will then begin downloading messages in your
-inbox. Only the most recent messages will be downloaded. To continue
-reading email, scroll down in the message list and more email will be
-fetched.
+Geary is an email application built around conversations, for the GNOME 3
+desktop. It allows you to read, find and send email with a straightforward,
+modern interface.
