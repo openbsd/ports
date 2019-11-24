@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/11/23 18:10:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/11/24 22:35:41 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
@@ -35,7 +35,8 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		vala gobject-introspection
 
 BUILD_DEPENDS=		devel/gettext,-tools \
-			graphics/libgexiv2
+			graphics/libgexiv2 \
+			shells/bash
 
 LIB_DEPENDS=		devel/json-glib \
 			graphics/babl \
