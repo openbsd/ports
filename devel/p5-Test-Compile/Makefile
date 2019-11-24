@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/11/24 14:24:39 cwen Exp $
 
 COMMENT =		check whether Perl files compile correctly
-DISTNAME =		Test-Compile-v1.3.0
+DISTNAME =		Test-Compile-v2.3.1
 PKGNAME =		p5-${DISTNAME:S/v//g}
 CATEGORIES =		devel
 
@@ -15,8 +15,9 @@ PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-Universal-require \
 			devel/p5-Devel-CheckOS
-BUILD_DEPENDS =		${RUN_DEPENDS}
 TEST_DEPENDS =		devel/p5-Perl-Critic \
+			devel/p5-Test-Exception \
+			devel/p5-Test-HasVersion \
 			devel/p5-Test-Perl-Critic \
 			devel/p5-Test-Portability-Files \
 			devel/p5-Test-Warnings
