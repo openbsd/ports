@@ -1,0 +1,5 @@
+sqlbox is an open source C/C++ secure database access library at this
+time limited to sqlite3 databases. (postgresql is in the planning
+phase.) Instead of operating databases in-process, sqlbox uses a
+multi-process, resource-separated approach to safe-guard the database
+from the calling application.

@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/24 04:54:04 jturner Exp $
+include/sqlbox.h
+@static-lib lib/libsqlbox.a
+@man man/man3/sqlbox.3
+@man man/man3/sqlbox_alloc.3
+@man man/man3/sqlbox_close.3
+@man man/man3/sqlbox_exec.3
+@man man/man3/sqlbox_finalise.3
+@man man/man3/sqlbox_free.3
+@man man/man3/sqlbox_msg_set_dat.3
+@man man/man3/sqlbox_open.3
+@man man/man3/sqlbox_parm_int.3
+@man man/man3/sqlbox_ping.3
+@man man/man3/sqlbox_prepare_bind.3
+@man man/man3/sqlbox_rebind.3
+@man man/man3/sqlbox_role.3
+@man man/man3/sqlbox_role_hier_alloc.3
+@man man/man3/sqlbox_role_hier_child.3
+@man man/man3/sqlbox_role_hier_free.3
+@man man/man3/sqlbox_role_hier_gen.3
+@man man/man3/sqlbox_role_hier_gen_free.3
+@man man/man3/sqlbox_role_hier_sink.3
+@man man/man3/sqlbox_role_hier_start.3
+@man man/man3/sqlbox_role_hier_stmt.3
+@man man/man3/sqlbox_step.3
+@man man/man3/sqlbox_trans_commit.3
+@man man/man3/sqlbox_trans_immediate.3
