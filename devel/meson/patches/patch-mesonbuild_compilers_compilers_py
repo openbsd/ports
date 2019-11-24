@@ -1,0 +1,20 @@
+$OpenBSD: patch-mesonbuild_compilers_compilers_py,v 1.14 2019/11/24 10:12:11 ajacoutot Exp $
+
+https://github.com/mesonbuild/meson/pull/6226
+
+Index: mesonbuild/compilers/compilers.py
+--- mesonbuild/compilers/compilers.py.orig
++++ mesonbuild/compilers/compilers.py
+@@ -87,8 +87,10 @@ cflags_mapping = {'c': 'CFLAGS',
+                   'vala': 'VALAFLAGS',
+                   'rust': 'RUSTFLAGS'}
+ 
+-# execinfo is a compiler lib on BSD
+-unixy_compiler_internal_libs = ('m', 'c', 'pthread', 'dl', 'rt', 'execinfo')
++unixy_compiler_internal_libs = ('m', 'c', 'pthread', 'dl', 'rt')
++# execinfo is a compiler lib on FreeBSD and NetBSD
++if mesonlib.is_freebsd() or mesonlib.is_netbsd():
++    unixy_compiler_internal_libs += ('execinfo',)
+ 
+ # All these are only for C-linkable languages; see `clink_langs` above.
+ 
