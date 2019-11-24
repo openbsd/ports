@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/10 22:53:08 pvk Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/24 06:46:37 kmos Exp $
 
 COMMENT =		python SDK for the VMware vSphere API
 
@@ -20,6 +20,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
@@ -27,6 +28,9 @@ RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 FLAVORS =		python3
 FLAVOR ?=
 
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-testtools${MODPY_FLAVOR} \
+			devel/py-tox${MODPY_FLAVOR} \
+			www/py-vcrpy${MODPY_FLAVOR} 
 
 .include <bsd.port.mk>
