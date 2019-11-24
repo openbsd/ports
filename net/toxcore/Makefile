@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/24 23:05:10 cwen Exp $
 
 COMMENT =		Tox client library
 
 V =			0.2.3
-REVISION =		2
+REVISION =		3
 DISTNAME =		toxcore-$V
 
 GH_ACCOUNT =		TokTok
