@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/24 02:50:29 kmos Exp $
 
 COMMENT =	manipulation and analysis of planar geometric objects
 
@@ -19,8 +19,10 @@ PERMIT_PACKAGE =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-MODPY_SETUPTOOLS =	Yes
 MODULES =	lang/python
+
+MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 # cython and numpy needed to build _vectorized.so
 BUILD_DEPENDS +=${RUN_DEPENDS} \
 		math/py-numpy${MODPY_FLAVOR} \
@@ -29,14 +31,11 @@ BUILD_DEPENDS +=${RUN_DEPENDS} \
 LIB_DEPENDS =	geo/geos
 WANTLIB =	geos_c pthread ${MODPY_WANTLIB}
 
-TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
-
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/setup.py
 
-do-test:
+pre-test:
 	# gross
 	cp ${WRKSRC}/lib*/shapely/vectorized/_vectorized.so ${WRKSRC}/shapely/vectorized/
-	py.test${MODPY_BIN_SUFFIX} ${WRKSRC}/tests
 
 .include <bsd.port.mk>
