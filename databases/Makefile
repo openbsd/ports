@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.381 2019/11/05 09:13:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.382 2019/11/24 00:15:00 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -82,6 +82,7 @@
      SUBDIR += p5-DBD-mysqlPP
      SUBDIR += p5-DBI
      SUBDIR += p5-DBI-Shell
+     SUBDIR += p5-DBICx-Sugar
      SUBDIR += p5-DBICx-TestDatabase
      SUBDIR += p5-DBIx-Class
      SUBDIR += p5-DBIx-Class-Cursor-Cached
