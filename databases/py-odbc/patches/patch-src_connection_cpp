@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_connection_cpp,v 1.1 2019/11/24 13:24:30 sthen Exp $
+
+unixodbc vs iodbc
+
+Index: src/connection.cpp
+--- src/connection.cpp.orig
++++ src/connection.cpp
+@@ -639,7 +639,9 @@ static const GetInfoType aInfoTypes[] = {
+     { SQL_CONVERT_INTERVAL_YEAR_MONTH, GI_UINTEGER },
+     { SQL_CONVERT_WLONGVARCHAR, GI_UINTEGER },
+     { SQL_CONVERT_WVARCHAR, GI_UINTEGER },
++#ifdef SQL_CONVERT_GUID
+     { SQL_CONVERT_GUID, GI_UINTEGER },
++#endif
+ 
+     { SQL_ACCESSIBLE_PROCEDURES, GI_YESNO },
+     { SQL_ACCESSIBLE_TABLES, GI_YESNO },
