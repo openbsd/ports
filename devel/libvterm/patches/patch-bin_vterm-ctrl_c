@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_vterm-ctrl_c,v 1.2 2019/11/20 13:40:13 edd Exp $
+$OpenBSD: patch-bin_vterm-ctrl_c,v 1.3 2019/11/24 10:53:42 cwen Exp $
 
 Fix signed versus unsigned comparison.
 https://bugs.launchpad.net/libvterm/+bug/1668780
@@ -6,9 +6,8 @@ https://bugs.launchpad.net/libvterm/+bug/1668780
 Patch updated to apply on:
 https://github.com/neovim/libvterm/tree/nvim
 
-diff --git bin/vterm-ctrl.c bin/vterm-ctrl.c
-index ba0d61e..92a365f 100644
---- bin/vterm-ctrl.c
+Index: bin/vterm-ctrl.c
+--- bin/vterm-ctrl.c.orig
 +++ bin/vterm-ctrl.c
 @@ -79,9 +79,9 @@ static bool seticanon(bool icanon, bool echo)
    return ret;
