@@ -1,0 +1,4 @@
+Test::Modern provides the best features of Test::More, Test::Fatal,
+Test::Warnings, Test::API, Test::LongString, and Test::Deep, as well
+as ideas from Test::Requires, Test::DescribeMe, Test::Moose, and
+Test::CleanNamespaces.
