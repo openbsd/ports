@@ -1,4 +1,4 @@
-$OpenBSD: patch-PolkitQt-1Config_cmake_in,v 1.1.1.1 2019/11/23 15:20:19 ajacoutot Exp $
+$OpenBSD: patch-PolkitQt-1Config_cmake_in,v 1.2 2019/11/24 18:46:26 ajacoutot Exp $
 
 --- PolkitQt-1Config.cmake.in.orig	Thu Jul 10 10:37:25 2014
 +++ PolkitQt-1Config.cmake.in	Sat Aug 30 10:51:42 2014
@@ -9,9 +9,9 @@ $OpenBSD: patch-PolkitQt-1Config_cmake_in,v 1.1.1.1 2019/11/23 15:20:19 ajacouto
 -  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_CORE_PCNAME@.so")
 -  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_AGENT_PCNAME@.so")
 -  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_GUI_PCNAME@.so")
-+  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_CORE_PCNAME@.so.${LIBpolkit-qt-core-1_VERSION}")
-+  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_AGENT_PCNAME@.so.${LIBpolkit-qt-agent-1_VERSION}")
-+  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_GUI_PCNAME@.so.${LIBpolkit-qt-gui-1_VERSION}")
++  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_CORE_PCNAME@.so.${LIBpolkit-qt5-core-1_VERSION}")
++  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_AGENT_PCNAME@.so.${LIBpolkit-qt5-agent-1_VERSION}")
++  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_GUI_PCNAME@.so.${LIBpolkit-qt5-gui-1_VERSION}")
  endif()
  
  ########## The PolkitQt-1 libraries ##########
