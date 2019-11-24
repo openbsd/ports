@@ -1,0 +1,15 @@
+$OpenBSD: patch-vm_main_c,v 1.1.1.1 2019/11/24 02:59:19 thfr Exp $
+
+no KERN_PROC_PATHNAME on OpenBSD
+
+Index: vm/main.c
+--- vm/main.c.orig
++++ vm/main.c
+@@ -85,7 +85,6 @@ static char *executable_path() {
+         int mib[4];
+         mib[0] = CTL_KERN;
+         mib[1] = KERN_PROC;
+-        mib[2] = KERN_PROC_PATHNAME;
+         mib[3] = -1;
+ 	static char path[MAXPATHLEN];
+         size_t cb = sizeof(path);

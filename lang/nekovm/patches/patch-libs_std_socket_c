@@ -1,0 +1,14 @@
+$OpenBSD: patch-libs_std_socket_c,v 1.1.1.1 2019/11/24 02:59:19 thfr Exp $
+
+Index: libs/std/socket.c
+--- libs/std/socket.c.orig
++++ libs/std/socket.c
+@@ -371,7 +371,7 @@ static value host_resolve( value host ) {
+ 	ip = inet_addr(val_string(host));
+ 	if( ip == INADDR_NONE ) {
+ 		struct hostent *h;
+-#	if defined(NEKO_WINDOWS) || defined(NEKO_MAC) || defined(NEKO_CYGWIN)
++#	if defined(NEKO_WINDOWS) || defined(NEKO_MAC) || defined(NEKO_CYGWIN) || defined(__OpenBSD__)
+ 		h = gethostbyname(val_string(host));
+ #	else
+ 		struct hostent hbase;

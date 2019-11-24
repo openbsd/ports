@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/24 02:59:19 thfr Exp $
+@bin bin/neko
+@bin bin/nekoc
+@bin bin/nekotools
+include/neko.h
+include/neko_elf.h
+include/neko_mod.h
+include/neko_vm.h
+lib/cmake/
+lib/cmake/Neko/
+lib/cmake/Neko/NekoConfig.cmake
+lib/cmake/Neko/NekoConfigVersion.cmake
+lib/cmake/Neko/NekoTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Neko/NekoTargets.cmake
+@lib lib/libneko.so.${LIBneko_VERSION}
+lib/neko/
+lib/neko/std.ndll
+lib/neko/zlib.ndll
