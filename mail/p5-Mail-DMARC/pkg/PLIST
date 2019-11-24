@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/26 22:10:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/11/24 11:10:41 giovanni Exp $
 bin/dmarc_http_client
 bin/dmarc_httpd
 bin/dmarc_lookup
@@ -35,7 +35,12 @@ ${P5SITE}/Mail/DMARC/Report/Send/HTTP.pm
 ${P5SITE}/Mail/DMARC/Report/Send/SMTP.pm
 ${P5SITE}/Mail/DMARC/Report/Store/
 ${P5SITE}/Mail/DMARC/Report/Store.pm
+${P5SITE}/Mail/DMARC/Report/Store/SQL/
 ${P5SITE}/Mail/DMARC/Report/Store/SQL.pm
+${P5SITE}/Mail/DMARC/Report/Store/SQL/Grammars/
+${P5SITE}/Mail/DMARC/Report/Store/SQL/Grammars/MySQL.pm
+${P5SITE}/Mail/DMARC/Report/Store/SQL/Grammars/PostgreSQL.pm
+${P5SITE}/Mail/DMARC/Report/Store/SQL/Grammars/SQLite.pm
 ${P5SITE}/Mail/DMARC/Report/URI.pm
 ${P5SITE}/Mail/DMARC/Result/
 ${P5SITE}/Mail/DMARC/Result.pm
@@ -107,6 +112,7 @@ ${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/ui.multiselect.js.gz
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail-dmarc.cron
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail-dmarc.ini
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.mysql
+${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.pgsql
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.sqlite
 ${P5SITE}/auto/share/dist/Mail-DMARC/public_suffix_list
 ${P5SITE}/auto/share/dist/Mail-DMARC/rua-schema.xsd
@@ -139,6 +145,9 @@ ${P5SITE}/auto/share/dist/Mail-DMARC/rua-schema.xsd
 @man man/man3p/Mail::DMARC::Report::Send::SMTP.3p
 @man man/man3p/Mail::DMARC::Report::Store.3p
 @man man/man3p/Mail::DMARC::Report::Store::SQL.3p
+@man man/man3p/Mail::DMARC::Report::Store::SQL::Grammars::MySQL.3p
+@man man/man3p/Mail::DMARC::Report::Store::SQL::Grammars::PostgreSQL.3p
+@man man/man3p/Mail::DMARC::Report::Store::SQL::Grammars::SQLite.3p
 @man man/man3p/Mail::DMARC::Report::URI.3p
 @man man/man3p/Mail::DMARC::Result.3p
 @man man/man3p/Mail::DMARC::Result::Reason.3p
