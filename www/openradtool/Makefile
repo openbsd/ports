@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/22 17:58:41 jturner Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/24 04:56:57 jturner Exp $
 
 COMMENT =		application source generator
 
 DISTNAME =		openradtool-0.8.0
+REVISION =		0
 CATEGORIES =		www
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -19,7 +20,7 @@ WANTLIB += c expat
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		"PREFIX=${PREFIX}"
 
-RUN_DEPENDS =		databases/ksql \
+RUN_DEPENDS =		databases/sqlbox \
 			www/kcgi
 
 NO_TEST =		Yes
