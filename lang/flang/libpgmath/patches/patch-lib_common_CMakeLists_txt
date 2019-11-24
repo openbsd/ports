@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.13 2019/11/24 14:37:25 bcallah Exp $
+
+Don't compile with -mcpu=native on aarch64
+
+Index: lib/common/CMakeLists.txt
+--- lib/common/CMakeLists.txt.orig
++++ lib/common/CMakeLists.txt
+@@ -142,8 +142,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "ppc64le"
+     sincosf.c)
+ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64")
+   set_property(SOURCE dispatch.c APPEND_STRING PROPERTY COMPILE_FLAGS "-fno-builtin")
+-  set_property(SOURCE mth_xintrinsics.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=${LLVM_FLANG_CPU_TARGET} ")
+-  set_property(SOURCE mth_128defs.c mth_128defs_init.c mth_128defs_stats.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=${LLVM_FLANG_CPU_TARGET} ")
+   set_property(SOURCE mth_128defs_init.c APPEND PROPERTY COMPILE_DEFINITIONS MTH_I_INTRIN_INIT)
+   set_property(SOURCE mth_128defs_stats.c APPEND PROPERTY COMPILE_DEFINITIONS MTH_I_INTRIN_STATS)
+   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z -Wl,combreloc")

@@ -1,0 +1,84 @@
+$OpenBSD: patch-lib_common_fltfenv_c,v 1.1 2019/11/24 14:37:25 bcallah Exp $
+
+Work around glibc stuff (use standard functions for this stuff)
+
+Index: lib/common/fltfenv.c
+--- lib/common/fltfenv.c.orig
++++ lib/common/fltfenv.c
+@@ -570,7 +570,7 @@ __fenv_feupdateenv(fenv_t *env)
+  * __fenv_mask_fz() and __fenv_restore_fz().
+  */
+ 
+-#include <fpu_control.h>
++#include <fenv.h>
+ 
+ /** \brief Set (flush to zero) underflow mode
+  *
+@@ -580,14 +580,14 @@ __fenv_feupdateenv(fenv_t *env)
+ int
+ __fenv_fesetzerodenorm(int uflow)
+ {
+-  uint64_t cw;
++  fenv_t cw;
+ 
+-  _FPU_GETCW(cw);
++  fegetenv(&cw);
+   if (uflow)
+     cw |= (1ULL << 24);
+   else
+     cw &= ~(1ULL << 24);
+-  _FPU_SETCW(cw);
++  fesetenv(&cw);
+   return 0;
+ }
+ 
+@@ -598,9 +598,9 @@ __fenv_fesetzerodenorm(int uflow)
+ int
+ __fenv_fegetzerodenorm(void)
+ {
+-  uint64_t cw;
++  fenv_t cw;
+ 
+-  _FPU_GETCW(cw);
++  fegetenv(&cw);
+   return (cw & (1ULL << 24)) ? 1 : 0;
+ }
+ 
+@@ -615,16 +615,16 @@ __fenv_fegetzerodenorm(void)
+ void
+ __fenv_mask_fz(int mask, int *psv)
+ {
+-  uint64_t tmp;
++  fenv_t tmp;
+ 
+-  _FPU_GETCW(tmp);
++  fegetenv(&tmp);
+   if (psv)
+     *psv = ((tmp & (1ULL << 24)) ? 1 : 0);
+   if (mask)
+     tmp |= (1ULL << 24);
+   else
+     tmp &= ~(1ULL << 24);
+-  _FPU_SETCW(tmp);
++  fesetenv(&tmp);
+ }
+ 
+ /** \brief
+@@ -633,14 +633,14 @@ __fenv_mask_fz(int mask, int *psv)
+ void
+ __fenv_restore_fz(int sv)
+ {
+-  uint64_t tmp;
++  fenv_t tmp;
+ 
+-  _FPU_GETCW(tmp);
++  fegetenv(&tmp);
+   if (sv)
+     tmp |= (1ULL << 24);
+   else
+     tmp &= ~(1ULL << 24);
+-  _FPU_SETCW(tmp);
++  fesetenv(&tmp);
+ }
+ 
+ #else

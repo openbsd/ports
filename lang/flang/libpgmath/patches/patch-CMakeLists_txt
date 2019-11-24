@@ -1,9 +1,18 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2019/11/10 16:50:32 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2019/11/24 14:37:25 bcallah Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -112,7 +112,7 @@ set(LIBPGMATH_TOOLS_DIR ${LIBPGMATH_BASE_DIR}/tools)
+@@ -86,8 +86,6 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU" AND ${LIBPGMATH_
+ endif()
+ 
+ if(CMAKE_C_COMPILER_ID STREQUAL "GNU" AND ${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64")
+-  string(REPLACE "-O2" "-O3 -finline-functions -funroll-loops" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+-  string(REPLACE "-O2" "-O3 -finline-functions -funroll-loops" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   string(REPLACE "-std=c++11" "-std=gnu++11" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   string(REPLACE "-fno-tree-vectorize" "-ftree-vectorize" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+   string(REPLACE "-fno-tree-vectorize" "-ftree-vectorize" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+@@ -112,7 +110,7 @@ set(LIBPGMATH_TOOLS_DIR ${LIBPGMATH_BASE_DIR}/tools)
  set(LIBPGMATH_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
  set(LIBPGMATH_RUNTIME_PATH ${CMAKE_BINARY_DIR}/lib)
  set(LIBPGMATH_LIBRARY_NAME pgmath)

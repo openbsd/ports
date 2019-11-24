@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/11/10 16:50:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/24 14:37:25 bcallah Exp $
 
 # Sync version with lang/flang/flang always!
 COMMENT =	LLVM Fortran math library
@@ -12,8 +12,17 @@ GH_COMMIT =	cbadb27675c4681c8a77eef73c1fbeafee155602
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-# REQUIRES a compiler that understands AVX-512F
+# Clang on amd64; gcc on aarch64 (XXX: monitor aarch64 situation)
+.if ${MACHINE_ARCH:Mamd64}
 COMPILER =	base-clang ports-clang
+.else
+COMPILER =	ports-gcc
+
+# Attempt to prevent libestdc++ and libc++ symbol conflicts in the edge case
+# where you're on aarch64 and you are linking together both Fortran and C++
+# code into a single object.
+CONFIGURE_ARGS += -DCMAKE_SHARED_LINKER_FLAGS='-static-libstdc++ -static-libgcc'
+.endif
 
 MODULES =	devel/cmake \
 		lang/python
@@ -23,12 +32,6 @@ BUILD_DEPENDS =	devel/llvm
 
 # If you delete flang, this should go too.
 RUN_DEPENDS =	lang/flang/driver
-
-# arm64-specific routines don't build with clang
-# (known upstream) so use the generic routines for now.
-.if ${MACHINE_ARCH:Maarch64}
-CONFIGURE_ARGS +=	-DLIBPGMATH_WITH_GENERIC=On
-.endif
 
 WRKDIST =	${WRKDIR}/flang-${GH_COMMIT}/runtime/libpgmath
 
