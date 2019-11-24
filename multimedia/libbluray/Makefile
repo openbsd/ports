@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/11/24 17:59:04 bcallah Exp $
 
 COMMENT =		library supporting Blu-ray playback
 
-V =			1.0.0
+V =			1.1.2
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
-REVISION =		0
 
 HOMEPAGE =		http://www.videolan.org/developers/libbluray.html
 
@@ -28,7 +27,7 @@ BUILD_DEPENDS =		devel/bison
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 YACC =			${LOCALBASE}/bin/bison -y
-CONFIGURE_ARGS +=	--disable-bdjava \
+CONFIGURE_ARGS +=	--disable-bdjava-jar \
 			--disable-doxygen-doc \
 			--disable-optimizations
 

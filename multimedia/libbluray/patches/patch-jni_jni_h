@@ -1,0 +1,16 @@
+$OpenBSD: patch-jni_jni_h,v 1.1 2019/11/24 17:59:04 bcallah Exp $
+
+Point to a real file
+
+Index: jni/jni.h
+--- jni/jni.h.orig
++++ jni/jni.h
+@@ -43,7 +43,7 @@
+ /* jni_md.h contains the machine-dependent typedefs for jbyte, jint 
+    and jlong */ 
+ 
+-#include "jni_md.h"
++#include "netbsd/jni_md.h"
+ 
+ #ifdef __cplusplus
+ extern "C" {

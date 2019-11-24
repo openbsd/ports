@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2017/08/29 13:16:23 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2019/11/24 17:59:04 bcallah Exp $
 
 - Allow libbluray to be able to find mount points using the getfsstat() API.
 - Remove setting _POSIX_C_SOURCE as that breaks building some of the BSD headers
@@ -14,23 +14,22 @@ Index: Makefile.in
 -@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/mount.c
 +@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/mount_darwin.c
  
- @ENABLE_UDF_TRUE@am__append_4 = \
- @ENABLE_UDF_TRUE@	src/libbluray/disc/udf_fs.h \
-@@ -359,7 +359,7 @@ am__dirstamp = $(am__leading_dot)dirstamp
- @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/dirs_xdg.lo \
- @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/dl_posix.lo \
- @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/file_posix.lo \
--@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/mount.lo
-+@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/mount_darwin.lo
- @ENABLE_UDF_TRUE@am__objects_4 = src/libbluray/disc/udf_fs.lo \
- @ENABLE_UDF_TRUE@	contrib/libudfread/src/default_blockinput.lo \
- @ENABLE_UDF_TRUE@	contrib/libudfread/src/ecma167.lo \
-@@ -772,7 +772,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-bdjava --enable-u
- MOSTLYCLEANFILES = $(DX_CLEANFILES)
- @ENABLE_UDF_FALSE@POSIX_C_SOURCE = 200112L
- @ENABLE_UDF_TRUE@POSIX_C_SOURCE = 200809L
--SET_FEATURES = -D_ISOC99_SOURCE -D_POSIX_C_SOURCE=$(POSIX_C_SOURCE) -D_REENTRANT
-+SET_FEATURES = -D_ISOC99_SOURCE -D_REENTRANT
- SET_INCLUDES = -I$(top_srcdir)/src -I$(top_srcdir)/src/libbluray -I$(top_builddir)/src/libbluray $(BDJAVA_CFLAGS)
- AM_CFLAGS = -std=c99 $(SET_FEATURES) $(SET_INCLUDES) $(LIBXML2_CFLAGS) \
- 	$(FT2_CFLAGS) $(FONTCONFIG_CFLAGS) $(UDF_CFLAGS) \
+ @USING_EXAMPLES_TRUE@noinst_PROGRAMS = bdj_test$(EXEEXT) \
+ @USING_EXAMPLES_TRUE@	bdjo_dump$(EXEEXT) bdsplice$(EXEEXT) \
+@@ -327,7 +327,7 @@ am__dirstamp = $(am__leading_dot)dirstamp
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/libbluray_la-dirs_xdg.lo \
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/libbluray_la-dl_posix.lo \
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/libbluray_la-file_posix.lo \
+-@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/libbluray_la-mount.lo
++@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/libbluray_la-mount_darwin.lo
+ am_libbluray_la_OBJECTS = src/file/libbluray_la-file.lo \
+ 	src/file/libbluray_la-filesystem.lo \
+ 	src/libbluray/libbluray_la-bluray.lo \
+@@ -845,7 +845,6 @@ AM_CFLAGS = \
+ 
+ AM_CPPFLAGS = \
+ 	-D_ISOC99_SOURCE \
+-	-D_POSIX_C_SOURCE=$(POSIX_C_SOURCE) \
+ 	-D_REENTRANT \
+ 	\
+ 	-I$(top_srcdir)/src \
