@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/08 22:04:57 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/24 04:43:26 bket Exp $
 bin/ed2k-link
+bin/edonr256-hash
+bin/edonr512-hash
 bin/gost-hash
 bin/has160-hash
 bin/magnet-link
@@ -10,9 +12,11 @@ bin/tth-hash
 bin/whirlpool-hash
 include/rhash.h
 include/rhash_torrent.h
-lib/librhash.a
+@static-lib lib/librhash.a
 @lib lib/librhash.so.${LIBrhash_VERSION}
 @man man/man1/ed2k-link.1
+@man man/man1/edonr256-hash.1
+@man man/man1/edonr512-hash.1
 @man man/man1/gost-hash.1
 @man man/man1/has160-hash.1
 @man man/man1/magnet-link.1

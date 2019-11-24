@@ -1,16 +1,16 @@
-$OpenBSD: patch-librhash_byte_order_h,v 1.1 2019/04/15 19:42:05 bcallah Exp $
+$OpenBSD: patch-librhash_byte_order_h,v 1.2 2019/11/24 04:43:26 bket Exp $
 
 hppa is big endian.
 
 Index: librhash/byte_order.h
 --- librhash/byte_order.h.orig
 +++ librhash/byte_order.h
-@@ -55,7 +55,7 @@ extern "C" {
- 	defined(__POWERPC__) || defined(POWERPC) || defined(__powerpc) || \
- 	defined(__powerpc__) || defined(__powerpc64__) || defined(__ppc__) || \
- 	defined(__hpux)  || defined(_MIPSEB) || defined(mc68000) || \
--	defined(__s390__) || defined(__s390x__) || defined(sel)
-+	defined(__s390__) || defined(__s390x__) || defined(sel) || defined(__hppa__)
- # define CPU_BIG_ENDIAN
- # define IS_BIG_ENDIAN 1
- # define IS_LITTLE_ENDIAN 0
+@@ -68,7 +68,7 @@ extern "C" {
+       defined(__POWERPC__) || defined(POWERPC) || defined(__powerpc) || \
+       defined(__powerpc__) || defined(__powerpc64__) || defined(__ppc__) || \
+       defined(__hpux)  || defined(_MIPSEB) || defined(mc68000) || \
+-      defined(__s390__) || defined(__s390x__) || defined(sel)
++      defined(__s390__) || defined(__s390x__) || defined(sel) || define(__hppa__)
+ # define RHASH_BYTE_ORDER RHASH_BYTE_ORDER_BE
+ #else
+ #  error "Can't detect CPU architechture"

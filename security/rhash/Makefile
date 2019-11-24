@@ -1,43 +1,43 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/24 04:43:26 bket Exp $
 
 COMMENT =	utility and library for computing hash sums
 
-DISTNAME =	rhash-1.3.5-src
-
+DISTNAME =	rhash-1.3.8-src
 PKGNAME =	${DISTNAME:S/-src$//}
-REVISION =	0
 
 SHARED_LIBS =	rhash 0.0
 
 CATEGORIES =	security
 
-HOMEPAGE =	http://rhash.anz.ru/
+HOMEPAGE =	http://rhash.sf.net
+
+MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c
+WANTLIB =	c
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=rhash/}
 
-MAKE_FLAGS =	SONAME="librhash.so.${LIBrhash_VERSION}"
+TEST_DEPENDS =	sysutils/ggrep
 
-FAKE_FLAGS =	PREFIX=${PREFIX} \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_SHARED="${INSTALL_DATA}" \
-		MANDIR=${PREFIX}/man \
-		SONAME="librhash.so.${LIBrhash_VERSION}"
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	--enable-lib-static \
+			--extra-cflags="${CFLAGS}" \
+			--extra-ldflags="${LDFLAGS}" \
+			--mandir=${PREFIX}/man \
+			--prefix=${PREFIX} \
+			--sysconfdir=${SYSCONFDIR}
 
 WRKDIST =	${WRKDIR}/${PKGNAME:S/^rhash/RHash/}
 
-ALL_TARGET =	build-shared
-
-INSTALL_TARGET =install-shared
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/common_func.h \
-		${WRKSRC}/parse_cmdline.c
+		${WRKSRC}/configure
+
+pre-test:
+	sed -i 's,grep,ggrep,g' ${WRKSRC}/tests/test_rhash.sh
 
 do-test:
 	cd ${WRKSRC}/tests && env \
