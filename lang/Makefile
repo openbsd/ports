@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2019/09/22 10:37:07 solene Exp $
+# $OpenBSD: Makefile,v 1.239 2019/11/24 03:01:38 thfr Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -70,6 +70,7 @@
      SUBDIR += myhdl
      SUBDIR += myrddin
      SUBDIR += nbfc
+     SUBDIR += nekovm
      SUBDIR += newlisp
      SUBDIR += nim
      SUBDIR += node
