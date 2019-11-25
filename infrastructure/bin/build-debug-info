@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.23 2019/11/25 14:35:06 espie Exp $
+# $OpenBSD: build-debug-info,v 1.24 2019/11/25 14:51:15 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -177,23 +177,9 @@ sub write_dbg
 }
 
 package OpenBSD::PackingElement::StaticLib;
-sub mogrify
+sub write_debug_info
 {
-	my ($self, $s) = @_;
-	$s =~ s,([^\/]+.a)$,.debug/$1,;
-	return $s;
-}
-
-sub write_dbg_rule
-{
-	my ($self, $mk, $s, $dbg) = @_;
-	$self->write_rule($mk, $s, $dbg, "STRIP_RULE");
-}
-
-sub write_dbg
-{
-	my ($self, $fh, $dbg) = @_;
-	print $fh "\@", $self->keyword, " ",  $dbg, "\n";
+	# don't do anything
 }
 
 package OpenBSD::PackingElement::NoDefaultConflict;
@@ -269,10 +255,6 @@ OBJCOPY_RULE = ${INSTALL_DATA_DIR} ${@D} && \
     objcopy --strip-debug $? && \
     objcopy --add-gnu-debuglink=$@ $? && \
     touch $@
-
-STRIP_RULE = ${INSTALL_DATA_DIR} ${@D} && \
-    echo "> Copy debug info from $? to $@" && \
-    cp $? $@ && strip $? && touch $@
 
 LINK_RULE = ${INSTALL_DATA_DIR} ${@D} && \
     echo "> Link debug info from $? to $@" && ln $? $@
