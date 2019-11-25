@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/25 21:53:58 kmos Exp $
 
 COMMENT =		parse CSS3 Selectors and translates them to XPath 1.0
 
@@ -20,11 +20,9 @@ MODULES =		lang/python
 TEST_DEPENDS =		textproc/py-lxml${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>
