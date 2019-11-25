@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.24 2019/11/25 14:51:15 espie Exp $
+# $OpenBSD: build-debug-info,v 1.25 2019/11/25 15:35:05 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -118,7 +118,7 @@ sub write_debug_info
 		return;
 	}
 	if (-f $path) {
-		$self->write_dbg($fh, $dbg);
+		print $fh $dbg, "\n";
 		my $k = join('/', (stat $path)[0,1]);
 		my $l = $o->{linkstash}{$k};
 		if (defined $l) {
@@ -156,24 +156,11 @@ sub write_dbg_rule
 	$self->write_rule($mk, $s, $dbg, "OBJCOPY_RULE");
 }
 
-sub write_dbg
-{
-	my ($self, $fh, $dbg) = @_;
-	print $fh $dbg, "\n";
-}
-
 sub mogrify
 {
 	my ($self, $s) = @_;
 	$s =~ s,([^\/]+)$,.debug/$1.dbg,;
 	return $s;
-}
-
-package OpenBSD::PackingElement::Lib;
-sub write_dbg
-{
-	my ($self, $fh, $dbg) = @_;
-	print $fh $dbg, "\n";
 }
 
 package OpenBSD::PackingElement::StaticLib;
