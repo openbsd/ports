@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/11/25 23:25:01 kmos Exp $
 
 COMMENT =	Python library for pretty-printing tabular data
 
@@ -21,8 +21,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-
-TEST_ENV +=		LC_CTYPE=C.UTF-8
+MODPY_PYTEST =		Yes
 
 post-install:
 	chmod -R a+r ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/prettytable-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
