@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/25 23:06:54 kmos Exp $
 
 COMMENT =	parser for the Open Financial Exchange file format
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE=	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
 FLAVOR ?=
