@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.22 2019/11/19 15:49:30 espie Exp $
+# $OpenBSD: build-debug-info,v 1.23 2019/11/25 14:35:06 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -262,6 +262,9 @@ print {$self->{mk}} << 'EOPREAMBLE';
 
 OBJCOPY_RULE = ${INSTALL_DATA_DIR} ${@D} && \
     echo "> Copy debug info from $? to $@" && \
+    if readelf 2>/dev/null -wi $?|cmp -s /dev/null -; then \
+    	echo "Warning: no debug-info in $?"; \
+    fi && \
     objcopy --only-keep-debug $? $@ && \
     objcopy --strip-debug $? && \
     objcopy --add-gnu-debuglink=$@ $? && \
