@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/25 23:30:14 kmos Exp $
 
 COMMENT =		internationalized usernames and passwords
 
@@ -16,5 +16,6 @@ MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>
