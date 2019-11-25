@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/25 11:07:54 sthen Exp $
+@bin bin/ncspot

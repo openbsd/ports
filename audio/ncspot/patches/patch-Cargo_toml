@@ -1,0 +1,18 @@
+$OpenBSD: patch-Cargo_toml,v 1.1.1.1 2019/11/25 11:07:54 sthen Exp $
+
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -46,11 +46,5 @@ version = "0.13"
+ default-features = false
+ 
+ [features]
+-share_clipboard = ["clipboard"]
+-alsa_backend = ["librespot-playback/alsa-backend"]
+-pulseaudio_backend = ["librespot-playback/pulseaudio-backend"]
+-rodio_backend = ["librespot-playback/rodio-backend"]
+ portaudio_backend = ["librespot-playback/portaudio-backend"]
+-termion_backend = ["cursive/termion-backend"]
+-mpris = ["dbus"]
+-default = ["share_clipboard", "pulseaudio_backend", "mpris", "cursive/pancurses-backend"]
++default = ["portaudio_backend", "cursive/pancurses-backend"]

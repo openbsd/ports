@@ -1,0 +1,3 @@
+Cross-platform ncurses Spotify client written in Rust with
+a low resource footprint. The UI is heavily inspired by
+ncurses MPD clients, such as ncmpc.
