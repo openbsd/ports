@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_iosource_BPF_Program_cc,v 1.1 2019/11/25 07:57:43 ajacoutot Exp $
+
+Index: src/iosource/BPF_Program.cc
+--- src/iosource/BPF_Program.cc.orig
++++ src/iosource/BPF_Program.cc
+@@ -104,6 +104,7 @@ bool BPF_Program::Compile(int snaplen, int linktype, c
+ 	{
+ 	FreeCode();
+ 
++#ifndef __OpenBSD__
+ 	if ( linktype == DLT_NFLOG )
+ 		{
+ 		// No-op, NFLOG does not support BPF filters.
+@@ -114,6 +115,7 @@ bool BPF_Program::Compile(int snaplen, int linktype, c
+ 		m_matches_anything = true;
+ 		return true;
+ 		}
++#endif
+ 
+ #ifdef LIBPCAP_PCAP_COMPILE_NOPCAP_HAS_ERROR_PARAMETER
+ 	char my_error[PCAP_ERRBUF_SIZE];

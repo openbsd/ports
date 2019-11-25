@@ -1,4 +1,4 @@
-$OpenBSD: patch-aux_broker_CMakeLists_txt,v 1.1 2018/12/30 14:14:14 ajacoutot Exp $
+$OpenBSD: patch-aux_broker_CMakeLists_txt,v 1.2 2019/11/25 07:57:43 ajacoutot Exp $
 
 XXX BROKER_VERSION_MAJOR and BROKER_VERSION_MINOR are undefined
 (build ends up creating libbroker.so..)
@@ -6,7 +6,7 @@ XXX BROKER_VERSION_MAJOR and BROKER_VERSION_MINOR are undefined
 Index: aux/broker/CMakeLists.txt
 --- aux/broker/CMakeLists.txt.orig
 +++ aux/broker/CMakeLists.txt
-@@ -383,8 +383,8 @@ endif ()
+@@ -414,8 +414,8 @@ endif ()
  if (ENABLE_SHARED)
    add_library(broker SHARED ${BROKER_SRC})
    set_target_properties(broker PROPERTIES

@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.55 2019/09/07 17:48:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2019/11/25 07:57:43 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			2.6.4
-DISTNAME=		bro-${V}
-PKGNAME=		zeek-${V}
-REVISION=		0
+V=			3.0.0
+DISTNAME=		zeek-${V}
 
-SHARED_LIBS +=  broccoli                  6.0 # 5.1
-SHARED_LIBS +=  broker                    0.0 # XXX see patch-aux_broker_CMakeLists_txt
-SHARED_LIBS +=  caf_core                  0.0 # 0.16
-SHARED_LIBS +=  caf_io                    0.0 # 0.16
-SHARED_LIBS +=  caf_openssl               0.0 # 0.16
+SHARED_LIBS +=	binpac                    0.0 # 0.54
+SHARED_LIBS +=  broccoli                  7.0 # 5.1
+SHARED_LIBS +=  broker                    1.0 # XXX see patch-aux_broker_CMakeLists_txt
+SHARED_LIBS +=  caf_core                  1.0 # 0.54
+SHARED_LIBS +=  caf_io                    1.0 # 0.54
+SHARED_LIBS +=  caf_openssl               1.0 # 0.54
 
 CATEGORIES=		net security
 
@@ -25,15 +24,15 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto m maxminddb pcap pthread ssl z
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} lib/libbind/bind
 
-MASTER_SITES=		https://www.bro.org/downloads/
+MASTER_SITES=		https://www.zeek.org/downloads/
 
 MODULES=		lang/python
 
 # c++11
 COMPILER =		base-clang ports-gcc
 
-MODPY_ADJ_FILES=	aux/broctl/bin/broctl.in \
-			aux/broctl/bin/stats-to-csv \
+MODPY_ADJ_FILES=	aux/broctl/bin/stats-to-csv \
+			aux/broctl/bin/zeekctl.in \
 			aux/btest/btest \
 			aux/broctl/aux/trace-summary/trace-summary
 
@@ -52,15 +51,15 @@ RUN_DEPENDS=		net/libmaxminddb,-asn \
 # XXX the bundled sqlite seems to pick up ICU4C if present and will error out if
 # it gets junked during the build; I could not find a proper way to disable it
 # make: don't know how to make /usr/local/include/unicode/bytestream.h
-# (prerequisite of: src/CMakeFiles/bro.dir/3rdparty/sqlite3.c.o)
+# (prerequisite of: src/CMakeFiles/broker.dir/3rdparty/sqlite3.c.o)
 BUILD_DEPENDS +=	textproc/icu4c
 
-# share/broctl/scripts
+# share/zeekctl/scripts
 BUILD_DEPENDS +=	shells/bash
 RUN_DEPENDS +=		misc/findutils \
 			shells/bash
 
-# share/bro/base/utils/active-http.bro
+# share/zeek/base/utils/active-http.bro
 RUN_DEPENDS +=		net/curl
 
 CONFIGURE_STYLE=	simple
@@ -75,35 +74,28 @@ CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind \
 				-lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
-			--conf-files-dir=${SYSCONFDIR}/bro \
+			--mandir=${PREFIX}/man \
+			--conf-files-dir=${SYSCONFDIR}/zeek \
 			--localstatedir=${LOCALSTATEDIR} \
-			--spooldir=${LOCALSTATEDIR}/spool/bro \
-			--logdir=${LOCALSTATEDIR}/log/bro \
-			--python-install-dir=${PREFIX}/lib/python${MODPY_VERSION}/site-packages \
+			--spooldir=${LOCALSTATEDIR}/spool/zeek \
+			--logdir=${LOCALSTATEDIR}/log/zeek \
 			--with-python=${MODPY_BIN} \
 			--binary-package
 
-SUBST_VARS=		MODPY_SITEPKG
-
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/aux/broctl/BroControl/options.py \
-		${WRKSRC}/aux/broker/CMakeLists.txt \
+	${SUBST_CMD} ${WRKSRC}/aux/broker/CMakeLists.txt \
+		${WRKSRC}/aux/binpac/lib/CMakeLists.txt \
 		${WRKSRC}/aux/broker/3rdparty/caf/libcaf_{core,io,openssl}/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
-	mv ${WRKINST}/etc/bro ${PREFIX}/share/examples/bro
-	rm -rf ${WRKINST}/var/{log,spool}/bro
-	mv ${PREFIX}/share/bro/site/ ${PREFIX}/share/examples/bro/
-	cd ${PREFIX}/share/bro && ln -sf ${SYSCONFDIR}/bro/site
-	mv ${PREFIX}/lib/broctl/BroControl \
-		${WRKINST}/${MODPY_SITEPKG}/
-	mv ${PREFIX}/lib/broctl/plugins \
-		${WRKINST}/${MODPY_SITEPKG}/BroControl/
-	rm ${WRKINST}/${MODPY_SITEPKG}/BroControl/options.py.{beforesubst,orig}
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}/${MODPY_SITEPKG}
+	mv ${WRKINST}/etc/zeek ${PREFIX}/share/examples/zeek
+	rm -rf ${WRKINST}/var/{log,spool}/zeek
+	mv ${PREFIX}/share/zeek/site/ ${PREFIX}/share/examples/zeek/
+	cd ${PREFIX}/share/zeek && ln -sf ${SYSCONFDIR}/zeek/site
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/zeekctl
 
-# handled by exec-add / exec-delete ; symlink changes according to spooldir
-	rm ${PREFIX}/share/broctl/scripts/broctl-config.sh
+# handled by exec-add / exec-delete; symlink changes according to spooldir
+	rm ${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
 
 .include <bsd.port.mk>

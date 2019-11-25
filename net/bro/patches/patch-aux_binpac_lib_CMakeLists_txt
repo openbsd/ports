@@ -1,0 +1,16 @@
+$OpenBSD: patch-aux_binpac_lib_CMakeLists_txt,v 1.1 2019/11/25 07:57:43 ajacoutot Exp $
+
+Index: aux/binpac/lib/CMakeLists.txt
+--- aux/binpac/lib/CMakeLists.txt.orig
++++ aux/binpac/lib/CMakeLists.txt
+@@ -28,8 +28,8 @@ set(binpac_lib_SRCS
+ if ( ENABLE_SHARED )
+   add_library(binpac_lib SHARED ${binpac_lib_SRCS})
+   set_target_properties(binpac_lib PROPERTIES
+-                        SOVERSION ${BINPAC_SOVERSION}
+-                        VERSION ${BINPAC_VERSION_MAJOR}.${BINPAC_VERSION_MINOR}
++                        SOVERSION ${LIBbinpac_VERSION}
++                        VERSION ${LIBbinpac_VERSION}
+                         MACOSX_RPATH true
+                         OUTPUT_NAME binpac)
+   install(TARGETS binpac_lib DESTINATION ${CMAKE_INSTALL_LIBDIR})

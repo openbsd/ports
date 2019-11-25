@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_iosource_pcap_Source_cc,v 1.1 2019/11/25 07:57:43 ajacoutot Exp $
+
+error: use of undeclared identifier 'DLT_NFLOG'
+
+Index: src/iosource/pcap/Source.cc
+--- src/iosource/pcap/Source.cc.orig
++++ src/iosource/pcap/Source.cc
+@@ -247,6 +247,7 @@ bool PcapSource::SetFilter(int index)
+ 		return false;
+ 		}
+ 
++#ifndef __OpenBSD__
+ 	if ( LinkType() == DLT_NFLOG )
+ 		{
+ 		// No-op, NFLOG does not support BPF filters.
+@@ -256,12 +257,15 @@ bool PcapSource::SetFilter(int index)
+ 		}
+ 	else
+ 		{
++#endif
+ 		if ( pcap_setfilter(pd, code->GetProgram()) < 0 )
+ 			{
+ 			PcapError();
+ 			return false;
+ 			}
++#ifndef __OpenBSD__
+ 		}
++#endif
+ 
+ #ifndef HAVE_LINUX
+ 	// Linux doesn't clear counters when resetting filter.
