@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.186 2019/11/19 14:54:01 espie Exp $
+# $OpenBSD: update-plist,v 1.187 2019/11/25 13:57:11 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -662,11 +662,12 @@ sub check_specific
 {
 }
 
-# this is specific to DEBUG_PACKAGES: if there are new/changed annotated
-# files, we'll need to rerun make clean=fake/fake
+# placeholder if ever we need to do something when SOME specific entries
+# change
 sub notice_new_file
 {
 }
+
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
