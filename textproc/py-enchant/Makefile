@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/11/25 22:22:33 kmos Exp $
 
 COMMENT=		spellchecking library for Python
 
@@ -18,6 +18,8 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	enchant/tests.py
 
 BUILD_DEPENDS=		textproc/enchant
 RUN_DEPENDS=		textproc/enchant
