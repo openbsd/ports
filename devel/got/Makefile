@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2019/11/14 19:53:35 stsp Exp $
+# $OpenBSD: Makefile,v 1.22 2019/11/25 23:49:13 stsp Exp $
 
 COMMENT =	game of trees version control system
 
-V =		0.20
-REVISION =	0
+V =		0.21
 DISTNAME =	got-${V}
 CATEGORIES =	devel
 HOMEPAGE =	https://gameoftrees.org
