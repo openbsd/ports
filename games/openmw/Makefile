@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/11/25 10:21:25 solene Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source implementation of TES III: Morrowind
 
-V =			0.44.0
+V =			0.45.0
 DISTNAME =		openmw-$V
-REVISION =		1
 
 CATEGORIES =		games
 

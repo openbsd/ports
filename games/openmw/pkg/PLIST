@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/11/25 10:21:25 solene Exp $
 @bin bin/bsatool
 @bin bin/esmtool
 @bin bin/openmw
@@ -127,6 +127,8 @@ share/openmw/resources/shaders/lighting.glsl
 share/openmw/resources/shaders/objects_fragment.glsl
 share/openmw/resources/shaders/objects_vertex.glsl
 share/openmw/resources/shaders/parallax.glsl
+share/openmw/resources/shaders/s360_fragment.glsl
+share/openmw/resources/shaders/s360_vertex.glsl
 share/openmw/resources/shaders/terrain_fragment.glsl
 share/openmw/resources/shaders/terrain_vertex.glsl
 share/openmw/resources/shaders/water_fragment.glsl
