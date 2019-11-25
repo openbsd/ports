@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.114 2019/11/15 09:08:13 landry Exp $
+# $OpenBSD: Makefile,v 1.115 2019/11/25 14:15:52 kmos Exp $
 
 COMMENT =	desktop geographical information system
+
+DPB_PROPERTIES =	parallel
 
 DISTNAME =	qgis-3.10.0
 EXTRACT_SUFX =	.tar.bz2
