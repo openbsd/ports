@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/07/01 05:21:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/11/25 06:36:57 rsadowski Exp $
 include/catch2/
 include/catch2/catch.hpp
 include/catch2/catch_reporter_automake.hpp
+include/catch2/catch_reporter_sonarqube.hpp
 include/catch2/catch_reporter_tap.hpp
 include/catch2/catch_reporter_teamcity.hpp
 lib/cmake/
