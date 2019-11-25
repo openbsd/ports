@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/11/25 22:06:54 kmos Exp $
 
 COMMENT =	python package to parse and build CSS
 
@@ -18,12 +18,13 @@ HOMEPAGE =	http://cthedot.de/cssutils/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	lib/cssutils
 
 FLAVORS =	python3
 FLAVOR ?=
 
-# Requires older of devel/py-pbr
-NO_TEST =		Yes
+TEST_DEPENDS =	devel/py-pbr${MODPY_FLAVOR}
 
 post-install:
 	chmod 444 ${WRKINST}/${MODPY_SITEPKG}/${DISTNAME}-py${MODPY_VERSION}.egg-info/*
