@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/11/26 00:28:48 kmos Exp $
 
 COMMENT =		iCalendar library for Python
 
@@ -22,6 +22,8 @@ FLAVORS =		python3
 FLAVOR ?=
 
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests.py
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
