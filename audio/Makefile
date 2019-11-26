@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.421 2019/11/25 21:14:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.422 2019/11/26 12:17:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -137,7 +137,7 @@
      SUBDIR += nap
      SUBDIR += ncmpc
      SUBDIR += ncmpcpp
-#     SUBDIR += ncspot
+     SUBDIR += ncspot
      SUBDIR += normalize
      SUBDIR += nosefart
      SUBDIR += nspmod
