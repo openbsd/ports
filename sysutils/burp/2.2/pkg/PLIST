@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/01 09:13:08 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/26 10:17:11 sthen Exp $
 @option is-branch
 @conflict burp-*
 @newgroup _burp:794
@@ -75,5 +75,7 @@ share/examples/burp/clientconfdir/incexc/example
 @owner
 @group
 share/examples/burp/clientconfdir/testclient
-@sample ${LOCALSTATEDIR}/spool/burp/
 @sample ${SYSCONFDIR}/CA-client/
+@owner _burp
+@group _burp
+@sample ${LOCALSTATEDIR}/spool/burp/
