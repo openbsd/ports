@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.9 2019/09/14 17:34:46 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.10 2019/11/26 13:01:06 sthen Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -68,7 +68,7 @@ MODCARGO_post-patch += \
 .endfor
 
 # configure hook. Place a config file for overriding crates-io index by
-# local source directory.
+# local source directory. Enabled by use of "CONFIGURE_STYLE=cargo".
 MODCARGO_configure = \
 	mkdir -p ${WRKDIR}/.cargo; \
 	\
