@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2019/11/19 20:20:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.130 2019/11/26 08:02:04 jasper Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
@@ -53,7 +53,6 @@ FLAVOR?=		no_valadoc bootstrap
 .include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-valadoc}
-PATCH_LIST=		patch-* no_valadoc-*
 CONFIGURE_ARGS +=	--disable-valadoc
 .endif
 
