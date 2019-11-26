@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/10/22 20:10:22 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/26 21:02:17 cwen Exp $
 
 COMMENT =	display system information in the terminal for screenshots
 PKGNAME =	${DISTNAME:L}
 
 GH_ACCOUNT =	KittyKatt
 GH_PROJECT =	screenFetch
-GH_TAGNAME =	v3.9.0
+GH_TAGNAME =	v3.9.1
 
 CATEGORIES =	sysutils misc
 
