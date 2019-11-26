@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.13 2019/11/11 20:44:39 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.14 2019/11/26 11:32:17 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -48,6 +48,8 @@ sub dump_dirs
 		my $portsdir = $ENV{PORTSDIR};
 		if (defined $subdirs) {
 			$myenv{'SUBDIR'} = $self->subdirlist($subdirs);
+		} elsif (defined $ENV{SUBDIRLIST}) {
+			$myenv{'SUBDIRLIST'} = $ENV{SUBDIRLIST};
 		}
 		$myenv{'NO_IGNORE'} = 'Yes';
 		$myenv{PORTSDIR} = $portsdir;
