@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/13 08:30:05 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/26 16:11:34 kmos Exp $
 
 COMMENT =	set of python modules for machine learning and data mining
 
@@ -19,7 +19,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
-MODPY_TEST_DIR = ${WRKSRC}/lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION}
+MODPY_TEST_DIR = ${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
 MODPY_SETUPTOOLS = 	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 

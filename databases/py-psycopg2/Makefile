@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/06/23 14:32:22 danj Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/26 16:11:34 kmos Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
@@ -49,10 +49,10 @@ TEST_ENV =	PSYCOPG2_TESTDB=${PSYCOPG2_TESTDB} \
 		PSYCOPG2_TESTDB_PASSWORD=${PSYCOPG2_TESTDB_PASSWORD} \
 		PYTHON_VERSION=${MODPY_VERSION} \
 		PYTHON=python${MODPY_VERSION} \
-		PYTHONPATH=./lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION}
+		PYTHONPATH=./lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
 
 post-build:
-	cd ${WRKSRC}/doc/src && PYTHONPATH=${WRKSRC}/lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION} \
+	cd ${WRKSRC}/doc/src && PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION} \
 		${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX} -N . _build/html
 
 post-install:

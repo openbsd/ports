@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/25 21:25:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/11/26 16:11:34 kmos Exp $
 
 COMMENT=		calculate Levenshtein distance between two strings
 
@@ -22,7 +22,7 @@ MODULES=		lang/python
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	test.py
 
-TESTLIBDIR =		lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION}/
+TESTLIBDIR =		lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/
 TEST_ENV =		PYTHONPATH=${WRKSRC}/${TESTLIBDIR}
 
 .include <bsd.port.mk>

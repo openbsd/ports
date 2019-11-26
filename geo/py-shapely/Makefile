@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/11/25 20:26:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/26 16:11:34 kmos Exp $
 
 COMMENT =	manipulation and analysis of planar geometric objects
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS +=${RUN_DEPENDS} \
 LIB_DEPENDS =	geo/geos
 WANTLIB =	geos_c pthread ${MODPY_WANTLIB}
 
-TESTLIBDIR =	lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION}/shapely/
+TESTLIBDIR =	lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/shapely/
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/setup.py

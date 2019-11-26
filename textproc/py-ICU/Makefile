@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/11/26 00:54:05 kmos Exp $
+# $OpenBSD: Makefile,v 1.22 2019/11/26 16:11:34 kmos Exp $
 
 COMMENT=		Python extension wrapping the ICU C++ API
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=		textproc/icu4c
 TEST_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
 
-TESTLIBDIR=	${WRKSRC}/lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION}/
+TESTLIBDIR=	${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/
 TEST_ENV=	PYTHONPATH=${TESTLIBDIR}
 
 pre-configure:

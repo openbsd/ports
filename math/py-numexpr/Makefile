@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/25 20:12:19 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/26 16:11:34 kmos Exp $
 
 COMMENT =		fast numerical expression evaluator for NumPy
 
@@ -22,7 +22,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	${TESTLIBDIR}
 
-TESTLIBDIR =	lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION}/numexpr/
+TESTLIBDIR =	lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/numexpr/
 
 TEST_ENV =	PYTHONPATH=${WRKSRC}/${TESTLIBDIR}
 
