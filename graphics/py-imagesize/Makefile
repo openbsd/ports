@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/11/26 18:30:46 kmos Exp $
 
 COMMENT =		getting image size from png/jpeg/jpeg2000/gif file
 
@@ -17,6 +17,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
