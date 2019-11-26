@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/26 01:04:45 kmos Exp $
 
 COMMENT =		serialize and deserialize AMF data
 
@@ -19,6 +19,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
