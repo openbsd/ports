@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/11/18 21:31:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/26 13:17:54 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -1840,6 +1840,17 @@ share/unifi/webapps/ROOT/app-unifi/images/devices/uap/ULTE/standard@2x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/ULTE/standard@2x.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/ULTE/standard@4x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/ULTE/standard@4x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/grid.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/grid.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/grid@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/grid@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/standard.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/standard.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/standard@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/standard@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/standard@4x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UP1/standard@4x.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UXBSDM/
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UXBSDM/grid.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uap/UXBSDM/grid.png.br
@@ -2252,6 +2263,17 @@ share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL16P/standard@2x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL16P/standard@2x.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL16P/standard@4x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL16P/standard@4x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/grid.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/grid.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/grid@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/grid@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/standard.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/standard.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/standard@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/standard@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/standard@4x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24/standard@4x.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24P/
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24P/grid.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24P/grid.png.br
@@ -2263,6 +2285,17 @@ share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24P/standard@2x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24P/standard@2x.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24P/standard@4x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL24P/standard@4x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/grid.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/grid.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/grid@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/grid@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/standard.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/standard.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/standard@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/standard@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/standard@4x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USL48P/standard@4x.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USMINI/
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USMINI/grid.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/usw/USMINI/grid.png.br
