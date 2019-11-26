@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.39 2019/05/08 12:14:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.40 2019/11/26 08:03:01 jasper Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
 @bin bin/file-roller
-lib/nautilus/extensions-3.0/libnautilus-fileroller.so
+@so lib/nautilus/extensions-3.0/libnautilus-fileroller.so
 libexec/file-roller/
 libexec/file-roller/isoinfo.sh
 @bin libexec/file-roller/rpm2cpio
@@ -13,8 +13,6 @@ share/dbus-1/services/org.gnome.FileRoller.service
 share/file-roller/
 share/file-roller/packages.match
 share/glib-2.0/schemas/org.gnome.FileRoller.gschema.xml
-share/help/
-share/help/C/
 share/help/C/file-roller/
 share/help/C/file-roller/archive-create.page
 share/help/C/file-roller/archive-edit.page
@@ -33,7 +31,6 @@ share/help/C/file-roller/supported-formats.page
 share/help/C/file-roller/test-integrity.page
 share/help/C/file-roller/troubleshooting-archive-open.page
 share/help/C/file-roller/troubleshooting-password.page
-share/help/ca/
 share/help/ca/file-roller/
 share/help/ca/file-roller/archive-create.page
 share/help/ca/file-roller/archive-edit.page
@@ -52,7 +49,6 @@ share/help/ca/file-roller/supported-formats.page
 share/help/ca/file-roller/test-integrity.page
 share/help/ca/file-roller/troubleshooting-archive-open.page
 share/help/ca/file-roller/troubleshooting-password.page
-share/help/cs/
 share/help/cs/file-roller/
 share/help/cs/file-roller/archive-create.page
 share/help/cs/file-roller/archive-edit.page
@@ -90,7 +86,6 @@ share/help/da/file-roller/supported-formats.page
 share/help/da/file-roller/test-integrity.page
 share/help/da/file-roller/troubleshooting-archive-open.page
 share/help/da/file-roller/troubleshooting-password.page
-share/help/de/
 share/help/de/file-roller/
 share/help/de/file-roller/archive-create.page
 share/help/de/file-roller/archive-edit.page
@@ -109,7 +104,6 @@ share/help/de/file-roller/supported-formats.page
 share/help/de/file-roller/test-integrity.page
 share/help/de/file-roller/troubleshooting-archive-open.page
 share/help/de/file-roller/troubleshooting-password.page
-share/help/el/
 share/help/el/file-roller/
 share/help/el/file-roller/archive-create.page
 share/help/el/file-roller/archive-edit.page
@@ -128,7 +122,6 @@ share/help/el/file-roller/supported-formats.page
 share/help/el/file-roller/test-integrity.page
 share/help/el/file-roller/troubleshooting-archive-open.page
 share/help/el/file-roller/troubleshooting-password.page
-share/help/es/
 share/help/es/file-roller/
 share/help/es/file-roller/archive-create.page
 share/help/es/file-roller/archive-edit.page
@@ -147,7 +140,6 @@ share/help/es/file-roller/supported-formats.page
 share/help/es/file-roller/test-integrity.page
 share/help/es/file-roller/troubleshooting-archive-open.page
 share/help/es/file-roller/troubleshooting-password.page
-share/help/fi/
 share/help/fi/file-roller/
 share/help/fi/file-roller/archive-create.page
 share/help/fi/file-roller/archive-edit.page
@@ -166,7 +158,6 @@ share/help/fi/file-roller/supported-formats.page
 share/help/fi/file-roller/test-integrity.page
 share/help/fi/file-roller/troubleshooting-archive-open.page
 share/help/fi/file-roller/troubleshooting-password.page
-share/help/fr/
 share/help/fr/file-roller/
 share/help/fr/file-roller/archive-create.page
 share/help/fr/file-roller/archive-edit.page
@@ -185,7 +176,6 @@ share/help/fr/file-roller/supported-formats.page
 share/help/fr/file-roller/test-integrity.page
 share/help/fr/file-roller/troubleshooting-archive-open.page
 share/help/fr/file-roller/troubleshooting-password.page
-share/help/gl/
 share/help/gl/file-roller/
 share/help/gl/file-roller/archive-create.page
 share/help/gl/file-roller/archive-edit.page
@@ -204,7 +194,6 @@ share/help/gl/file-roller/supported-formats.page
 share/help/gl/file-roller/test-integrity.page
 share/help/gl/file-roller/troubleshooting-archive-open.page
 share/help/gl/file-roller/troubleshooting-password.page
-share/help/hu/
 share/help/hu/file-roller/
 share/help/hu/file-roller/archive-create.page
 share/help/hu/file-roller/archive-edit.page
@@ -261,7 +250,6 @@ share/help/ja/file-roller/supported-formats.page
 share/help/ja/file-roller/test-integrity.page
 share/help/ja/file-roller/troubleshooting-archive-open.page
 share/help/ja/file-roller/troubleshooting-password.page
-share/help/ko/
 share/help/ko/file-roller/
 share/help/ko/file-roller/archive-create.page
 share/help/ko/file-roller/archive-edit.page
@@ -299,7 +287,6 @@ share/help/pl/file-roller/supported-formats.page
 share/help/pl/file-roller/test-integrity.page
 share/help/pl/file-roller/troubleshooting-archive-open.page
 share/help/pl/file-roller/troubleshooting-password.page
-share/help/pt_BR/
 share/help/pt_BR/file-roller/
 share/help/pt_BR/file-roller/archive-create.page
 share/help/pt_BR/file-roller/archive-edit.page
@@ -337,7 +324,6 @@ share/help/ru/file-roller/supported-formats.page
 share/help/ru/file-roller/test-integrity.page
 share/help/ru/file-roller/troubleshooting-archive-open.page
 share/help/ru/file-roller/troubleshooting-password.page
-share/help/sl/
 share/help/sl/file-roller/
 share/help/sl/file-roller/archive-create.page
 share/help/sl/file-roller/archive-edit.page
@@ -356,7 +342,6 @@ share/help/sl/file-roller/supported-formats.page
 share/help/sl/file-roller/test-integrity.page
 share/help/sl/file-roller/troubleshooting-archive-open.page
 share/help/sl/file-roller/troubleshooting-password.page
-share/help/sv/
 share/help/sv/file-roller/
 share/help/sv/file-roller/archive-create.page
 share/help/sv/file-roller/archive-edit.page
@@ -394,7 +379,6 @@ share/help/te/file-roller/supported-formats.page
 share/help/te/file-roller/test-integrity.page
 share/help/te/file-roller/troubleshooting-archive-open.page
 share/help/te/file-roller/troubleshooting-password.page
-share/help/zh_CN/
 share/help/zh_CN/file-roller/
 share/help/zh_CN/file-roller/archive-create.page
 share/help/zh_CN/file-roller/archive-edit.page
