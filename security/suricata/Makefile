@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/10/30 12:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2019/11/26 10:44:33 jasper Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -61,6 +61,11 @@ post-patch:
 	# permit patching libc-rs to support sparc64 (could be removed with libc>=0.2.63)
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/rust/vendor/libc/.cargo-checksum.json
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure \
+		${WRKSRC}/doc/userguide/Makefile.in \
+		${WRKSRC}/suricata-update/doc/Makefile
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata/rules

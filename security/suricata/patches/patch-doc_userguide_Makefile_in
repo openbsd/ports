@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_userguide_Makefile_in,v 1.1 2019/11/26 10:44:34 jasper Exp $
+
+Fix path to sphinx-build
+
+Index: doc/userguide/Makefile.in
+--- doc/userguide/Makefile.in.orig
++++ doc/userguide/Makefile.in
+@@ -364,7 +364,7 @@ EXTRA_DIST = _static 3rd-party-integration acknowledge
+ 	what-is-suricata.rst $(am__append_1)
+ @HAVE_SPHINXBUILD_TRUE@man1_MANS = suricata.1
+ @HAVE_SURICATA_MAN_TRUE@man1_MANS = suricata.1
+-@HAVE_SPHINXBUILD_TRUE@SPHINX_BUILD = sphinx-build -q
++@HAVE_SPHINXBUILD_TRUE@SPHINX_BUILD = sphinx-build${MODPY_BIN_SUFFIX} -q
+ all: all-am
+ 
+ .SUFFIXES:

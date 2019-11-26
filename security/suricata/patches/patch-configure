@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2019/11/26 10:44:33 jasper Exp $
+
+Fix path to sphinx-build
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -26814,7 +26814,7 @@ $as_echo "#define CLS 64" >>confdefs.h
+ 
+ # sphinx for documentation
+     # Extract the first word of "sphinx-build", so it can be a program name with args.
+-set dummy sphinx-build; ac_word=$2
++set dummy sphinx-build${MODPY_BIN_SUFFIX}; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_path_HAVE_SPHINXBUILD+:} false; then :
