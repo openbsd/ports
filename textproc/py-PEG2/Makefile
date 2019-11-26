@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/26 00:56:18 kmos Exp $
 
 COMMENT =		PEG Parser-Interpreter in Python
 
@@ -14,11 +14,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	pypeg2
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>
