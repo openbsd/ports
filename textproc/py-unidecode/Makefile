@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/04 20:53:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.15 2019/11/26 00:25:31 kmos Exp $
 
 COMMENT =		US-ASCII transliterations of Unicode text
 
@@ -17,6 +17,7 @@ MODULES =		lang/python
 
 MODPY_PI = 		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
