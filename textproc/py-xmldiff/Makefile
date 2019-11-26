@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/08/13 15:37:14 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/11/26 00:34:05 kmos Exp $
 
 COMMENT=		show differences between XML files/DOM trees
 
@@ -17,6 +17,7 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
