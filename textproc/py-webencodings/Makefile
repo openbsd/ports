@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/11/26 00:32:05 kmos Exp $
 
 COMMENT =		character encoding aliases for legacy web content
 
@@ -15,13 +15,10 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	webencodings/tests.py
 
 FLAVORS =		python3
 FLAVOR ?=
-
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} -v
 
 .include <bsd.port.mk>
