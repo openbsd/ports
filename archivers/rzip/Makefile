@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/10/07 18:26:07 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2019/11/26 15:22:07 jca Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
@@ -12,8 +12,7 @@ MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://filedump.se.rit.edu/pub/distfiles/ \
-		${HOMEPAGE}ftp/rzip/ \
+MASTER_SITES=	${HOMEPAGE}ftp/rzip/ \
 		${HOMEPAGE}ftp/rzip/old-versions/
 
 LIB_DEPENDS =	archivers/bzip2
