@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1504 2019/11/24 12:54:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1505 2019/11/26 11:49:02 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2106,8 +2106,13 @@ ${_PACKAGE_COOKIE${_S}}:
 		${MAKE} print-package-args); \
 	regular=true; for pkgname in ${_pkg${_S}}; do \
 		tmp=${_TMP_REPO}$$pkgname; \
-		${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
-			$$deps ${PKG_ARGS${_S}} $$tmp; \
+		if $$regular; then \
+			${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
+				$$deps ${PKG_ARGS${_S}} $$tmp; \
+		else \
+			${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
+				$$deps ${_DBG_PKG_ARGS${_S}} $$tmp; \
+		fi; \
 			${_check_lib_depends} $$tmp; \
 			if $$regular; then \
 				${_register_plist${_S}} $$tmp; regular=false; \
