@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $OpenBSD: snmp_exporter.rc,v 1.1.1.1 2019/11/27 10:46:28 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/snmp_exporter"
+daemon_user=_snmpexporter
+daemon_flags="--config.file=${SYSCONFDIR}/snmp_exporter/snmp.yml"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+rc_bg=YES
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} < /dev/null 2>&1 | \
+		logger -p daemon.info -t snmp_exporter"
+}
+
+rc_cmd $1

@@ -1,0 +1,37 @@
+$OpenBSD: patch-generator_Makefile,v 1.1.1.1 2019/11/27 10:46:28 sthen Exp $
+
+Not actually fetching in the port; but this may be needed during port
+updates to generate a tar of common mibs, so it's useful to fix so
+it works if needed.
+
+Index: generator/Makefile
+--- generator/Makefile.orig
++++ generator/Makefile
+@@ -15,7 +15,8 @@ MIBDIR := mibs
+ 
+ APC_URL        := 'https://download.schneider-electric.com/files?p_File_Name=powernet426.mib'
+ ARISTA_URL     := https://www.arista.com/assets/data/docs/MIBS
+-CISCO_URL      := 'ftp://ftp.cisco.com/pub/mibs/v2/v2.tar.gz'
++CISCO_URL      := 'https://spacehopper.org/mirrors/cisco_v2.tar.gz'
++# ftp://ftp.cisco.com/pub/mibs/v2/v2.tar.gz can be awkward
+ KEEPALIVED_URL := 'https://raw.githubusercontent.com/acassen/keepalived/master/doc/KEEPALIVED-MIB.txt'
+ MIKROTIK_URL   := 'http://download2.mikrotik.com/Mikrotik.mib'
+ PALOALTO_URL   := 'https://www.paloaltonetworks.com/content/dam/pan/en_US/assets/zip/technical-documentation/snmp-mib-modules/PAN-MIB-MODULES-7.0.zip'
+@@ -55,7 +56,7 @@ mibs: mib-dir \
+   $(MIBDIR)/UCD-SNMP-MIB.txt
+ 
+ mib-dir:
+-	@mkdir -p -v $(MIBDIR)
++	@mkdir -p $(MIBDIR)
+ 
+ $(MIBDIR)/apc-powernet-mib:
+ 	@echo ">> Downloading apc-powernet-mib"
+@@ -76,7 +77,7 @@ $(MIBDIR)/ARISTA-SW-IP-FORWARDING-MIB:
+ $(MIBDIR)/.cisco_v2:
+ 	@echo ">> Downloading cisco_v2"
+ 	@curl -s -L $(CISCO_URL) \
+-		| tar -C $(MIBDIR) --strip-components=3 -zxv
++		| gtar -C $(MIBDIR) --strip-components=3 -zxvf -
+ 	@touch $(MIBDIR)/.cisco_v2
+ 
+ $(MIBDIR)/KEEPALIVED-MIB.txt:

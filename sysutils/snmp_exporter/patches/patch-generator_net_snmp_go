@@ -1,0 +1,21 @@
+$OpenBSD: patch-generator_net_snmp_go,v 1.1.1.1 2019/11/27 10:46:28 sthen Exp $
+
+this (which looks a bit like a comment in the source code) is used to
+initialise tclist which is a static array normally in net-snmp's object.
+
+adjust to the size used in the current version of net-snmp; net-snmp
+zeroes the whole array during init, walking past the end of
+snmp_generator's provided array, and so segfaults.
+
+Index: generator/net_snmp.go
+--- generator/net_snmp.go.orig
++++ generator/net_snmp.go
+@@ -20,7 +20,7 @@ package main
+ #include <net-snmp/mib_api.h>
+ #include <unistd.h>
+ // From parse.c
+-#define MAXTC   4096
++#define MAXTC   16384
+   struct tc {
+   int             type;
+   int             modid;

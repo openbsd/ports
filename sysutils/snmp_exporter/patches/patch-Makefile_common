@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_common,v 1.1.1.1 2019/11/27 10:46:28 sthen Exp $
+
+Index: Makefile.common
+--- Makefile.common.orig
++++ Makefile.common
+@@ -195,11 +195,7 @@ common-docker-tag-latest:
+ promu: $(PROMU)
+ 
+ $(PROMU):
+-	$(eval PROMU_TMP := $(shell mktemp -d))
+-	curl -s -L $(PROMU_URL) | tar -xvzf - -C $(PROMU_TMP)
+-	mkdir -p $(FIRST_GOPATH)/bin
+-	cp $(PROMU_TMP)/promu-$(PROMU_VERSION).$(GO_BUILD_PLATFORM)/promu $(FIRST_GOPATH)/bin/promu
+-	rm -r $(PROMU_TMP)
++	@true
+ 
+ .PHONY: proto
+ proto:
