@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2019/09/19 07:38:14 otto Exp $
+# $OpenBSD: Makefile,v 1.91 2019/11/27 05:17:35 kmos Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 powerpc
 
@@ -11,13 +11,12 @@ VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
+REVISION-main=	8
+REVISION-md=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
-
-REVISION-main=	7
-REVISION-md=	2
 
 SO_VERSION=	9.0
 BOOST_LIBS=	boost_atomic-mt \
@@ -102,7 +101,6 @@ WANTLIB-md+=	boost_system boost_thread-mt
 TOOLSET=	clang
 .else
 TOOLSET=	gcc
-CXXFLAGS+=	-std=gnu++11
 .endif
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
