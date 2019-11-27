@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.539 2019/11/12 15:18:32 bket Exp $
+# $OpenBSD: Makefile,v 1.540 2019/11/27 10:47:22 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -326,6 +326,7 @@
      SUBDIR += sleuthkit
      SUBDIR += smartmontools
      SUBDIR += smbldap-tools
+     SUBDIR += snmp_exporter
      SUBDIR += socket
      SUBDIR += socklog
      SUBDIR += sshfs-fuse
