@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/11/27 02:23:00 kmos Exp $
 
 COMMENT =		simple DNS resolver for asyncio
 
@@ -18,6 +18,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests.py
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -27,8 +29,5 @@ RUN_DEPENDS =		net/py-cares${MODPY_FLAVOR}
 RUN_DEPENDS += 		devel/py-trollius \
 			devel/py-typing
 .endif
-
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>
