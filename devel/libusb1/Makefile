@@ -1,31 +1,33 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/11/27 20:15:17 sthen Exp $
 
 COMMENT =		library for USB device access from userspace
 
-VERSION =		1.0.21
-REVISION =		1
+VERSION =		1.0.23
 DISTNAME =		libusb-${VERSION}
 PKGNAME =		libusb1-${VERSION}
+EXTRACT_SUFX =		.tar.bz2
 
-SHARED_LIBS +=		usb-1.0			1.1	# 1.0
+SHARED_LIBS +=		usb-1.0			1.2	# 2.0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.libusb.info
-
-MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 
 # LGPL 2.1
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libusb/}
-EXTRACT_SUFX =		.tar.bz2
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+FLAVORS =		debug
+FLAVOR ?=
+
+MASTER_SITES =		https://github.com/libusb/libusb/releases/download/v${VERSION}/
 
 CONFIGURE_STYLE =	gnu
 
-.ifdef DEBUG
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	--enable-debug-log \
 			--enable-examples-build
 .endif

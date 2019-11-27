@@ -1,1 +1,3 @@
 libusb is a library for USB device access from userland.
+
+Optional flavour: debug - enable verbose debug messages.
