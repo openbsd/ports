@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+$OpenBSD: patch-configure,v 1.2 2019/11/28 20:00:44 kn Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6608,7 +6608,7 @@ int main(void) { return (0); }
+@@ -6838,7 +6838,7 @@ int main(void) { return (0); }
  _ACEOF
  if ac_fn_c_try_run "$LINENO"; then :
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5

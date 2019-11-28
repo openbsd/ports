@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/08/18 08:34:02 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/28 20:00:44 kn Exp $
 
 COMMENT =		libev-based high performance TLS proxy
 
-DISTNAME =		hitch-1.5.0
+V =			1.5.2
+DISTNAME =		hitch-${V}
 
 CATEGORIES =		security
 
@@ -15,7 +16,6 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 MASTER_SITES =		https://hitch-tls.org/source/
 
-# uses pledge()
 WANTLIB =		c crypto ev ssl
 
 MODULES =		lang/python

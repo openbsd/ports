@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_configuration_c,v 1.2 2019/08/18 08:34:02 kn Exp $
+$OpenBSD: patch-src_configuration_c,v 1.3 2019/11/28 20:00:44 kn Exp $
 
 Index: src/configuration.c
 --- src/configuration.c.orig
 +++ src/configuration.c
-@@ -207,7 +207,7 @@ config_new(void)
- 	fa->pspec = strdup("default");
- 	HASH_ADD_KEYPTR(hh, r->LISTEN_ARGS, fa->pspec, strlen(fa->pspec), fa);
- 	r->LISTEN_DEFAULT = fa;
--	r->OCSP_DIR           = strdup("/var/lib/hitch/");
-+	r->OCSP_DIR           = strdup("${LOCALSTATEDIR}/hitch/");
- 	r->OCSP_VFY = 0;
- 	r->OCSP_RESP_TMO = 10.0;
- 	r->OCSP_CONN_TMO = 4.0;
+@@ -209,7 +209,7 @@ config_new(void)
+ 	r->CERT_FILES			= NULL;
+ 	r->LISTEN_ARGS			= NULL;
+ 	r->PEM_DIR			= NULL;
+-	r->OCSP_DIR			= strdup("/var/lib/hitch/");
++	r->OCSP_DIR			= strdup("${LOCALSTATEDIR}/hitch/");
+ 	AN(r->OCSP_DIR);
+ 	r->OCSP_VFY			= 0;
+ 	r->OCSP_RESP_TMO		= 10.0;
