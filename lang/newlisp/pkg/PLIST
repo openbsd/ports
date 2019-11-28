@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/11/28 12:46:25 solene Exp $
 bin/newlisp
 @bin bin/newlisp-${V}
-bin/newlisp-edit
 bin/newlispdoc
 @man man/man1/newlisp.1
 @man man/man1/newlispdoc.1
@@ -9,48 +8,11 @@ share/doc/newlisp/
 share/doc/newlisp/COPYING
 share/doc/newlisp/CREDITS
 share/doc/newlisp/CodePatterns.html
-share/doc/newlisp/guiserver/
-share/doc/newlisp/guiserver/COPYING
-share/doc/newlisp/guiserver/guiserver.lsp.html
-share/doc/newlisp/guiserver/index.html
-share/doc/newlisp/guiserver/newlispdoc.css
 share/doc/newlisp/manual_frame.html
 share/doc/newlisp/newLISPdoc.html
 share/doc/newlisp/newlisp_index.html
 share/doc/newlisp/newlisp_manual.html
-share/doc/pkg-readmes/${PKGSTEM}
 share/newlisp-${V}/
-share/newlisp-${V}/guiserver/
-share/newlisp-${V}/guiserver.jar
-share/newlisp-${V}/guiserver.lsp
-share/newlisp-${V}/guiserver/allfonts-demo.lsp
-share/newlisp-${V}/guiserver/animation-demo.lsp
-share/newlisp-${V}/guiserver/border-layout-demo.lsp
-share/newlisp-${V}/guiserver/button-demo.lsp
-share/newlisp-${V}/guiserver/clipboard-demo.lsp
-share/newlisp-${V}/guiserver/cursor-demo.lsp
-share/newlisp-${V}/guiserver/drag-demo.lsp
-share/newlisp-${V}/guiserver/font-demo.lsp
-share/newlisp-${V}/guiserver/frameless-demo.lsp
-share/newlisp-${V}/guiserver/html-demo.lsp
-share/newlisp-${V}/guiserver/image-demo.lsp
-share/newlisp-${V}/guiserver/midi-demo.lsp
-share/newlisp-${V}/guiserver/midi2-demo.lsp
-share/newlisp-${V}/guiserver/mouse-demo.lsp
-share/newlisp-${V}/guiserver/move-resize-demo.lsp
-share/newlisp-${V}/guiserver/pinballs-demo.lsp
-share/newlisp-${V}/guiserver/properties-demo.lsp
-share/newlisp-${V}/guiserver/rotation-demo.lsp
-share/newlisp-${V}/guiserver/shapes-demo.lsp
-share/newlisp-${V}/guiserver/sound-demo.lsp
-share/newlisp-${V}/guiserver/stroke-demo.lsp
-share/newlisp-${V}/guiserver/table-demo.lsp
-share/newlisp-${V}/guiserver/tabs-demo.lsp
-share/newlisp-${V}/guiserver/textfield-demo.lsp
-share/newlisp-${V}/guiserver/textrot-demo.lsp
-share/newlisp-${V}/guiserver/uppercase.lsp
-share/newlisp-${V}/guiserver/widgets-demo.lsp
-share/newlisp-${V}/guiserver/word-count.lsp
 share/newlisp-${V}/modules/
 share/newlisp-${V}/modules/canvas.lsp
 share/newlisp-${V}/modules/cgi.lsp
@@ -72,7 +34,6 @@ share/newlisp-${V}/modules/stat.lsp
 share/newlisp-${V}/modules/unix.lsp
 share/newlisp-${V}/modules/xmlrpc-client.lsp
 share/newlisp-${V}/modules/zlib.lsp
-share/newlisp-${V}/newLISP128.png
 share/newlisp-${V}/util/
 share/newlisp-${V}/util/newlisp.vim
 share/newlisp-${V}/util/syntax.cgi

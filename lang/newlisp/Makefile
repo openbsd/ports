@@ -1,12 +1,11 @@
-#       $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:20 sthen Exp $
+#       $OpenBSD: Makefile,v 1.20 2019/11/28 12:46:24 solene Exp $
 
 COMMENT=	newLISP is a LISP like, general purpose scripting language
 
-V=		10.7.1
+V=		10.7.5
 DISTNAME=	newlisp-$V
 CATEGORIES=	lang
 HOMEPAGE=	http://newlisp.org/
-REVISION=	2
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -27,8 +26,5 @@ TEST_TARGET=		check
 
 WRKBUILD=		${WRKSRC}
 SUBST_VARS=		V
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/guiserver/newlisp-edit.lsp
 
 .include <bsd.port.mk>
