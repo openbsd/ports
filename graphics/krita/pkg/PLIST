@@ -1,148 +1,145 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/09/13 16:47:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/28 21:31:07 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
-lib/kritaplugins/krita_colorspaces_extensions.so
-lib/kritaplugins/krita_filtereffects.so
-lib/kritaplugins/krita_flaketools.so
-lib/kritaplugins/krita_karbontools.so
-lib/kritaplugins/krita_raw_import.so
-lib/kritaplugins/krita_shape_artistictext.so
-lib/kritaplugins/krita_shape_image.so
-lib/kritaplugins/krita_shape_paths.so
-lib/kritaplugins/krita_shape_text.so
-lib/kritaplugins/krita_tool_basicflakes.so
-lib/kritaplugins/krita_tool_svgtext.so
-lib/kritaplugins/kritaanimationdocker.so
-lib/kritaplugins/kritaanimationrenderer.so
-lib/kritaplugins/kritaarrangedocker.so
-lib/kritaplugins/kritaartisticcolorselector.so
-lib/kritaplugins/kritaasccdl.so
-lib/kritaplugins/kritaassistanttool.so
-lib/kritaplugins/kritablurfilter.so
-lib/kritaplugins/kritabrushexport.so
-lib/kritaplugins/kritabrushimport.so
-lib/kritaplugins/kritabuginfo.so
-lib/kritaplugins/kritachanneldocker.so
-lib/kritaplugins/kritaclonesarray.so
-lib/kritaplugins/kritacolorgenerator.so
-lib/kritaplugins/kritacolorrange.so
-lib/kritaplugins/kritacolorselectorng.so
-lib/kritaplugins/kritacolorsfilters.so
-lib/kritaplugins/kritacolorsmudgepaintop.so
-lib/kritaplugins/kritacolorspaceconversion.so
-lib/kritaplugins/kritacompositiondocker.so
-lib/kritaplugins/kritaconvertheighttonormalmap.so
-lib/kritaplugins/kritaconvolutionfilters.so
-lib/kritaplugins/kritacsvexport.so
-lib/kritaplugins/kritacsvimport.so
-lib/kritaplugins/kritacurvepaintop.so
-lib/kritaplugins/kritadefaultpaintops.so
-lib/kritaplugins/kritadefaulttools.so
-lib/kritaplugins/kritadeformpaintop.so
-lib/kritaplugins/kritadigitalmixer.so
-lib/kritaplugins/kritadodgeburn.so
-lib/kritaplugins/kritaedgedetection.so
-lib/kritaplugins/kritaembossfilter.so
-lib/kritaplugins/kritaexample.so
-lib/kritaplugins/kritaexperimentpaintop.so
-lib/kritaplugins/kritaexrexport.so
-lib/kritaplugins/kritaexrimport.so
-lib/kritaplugins/kritaextensioncolorsfilters.so
-lib/kritaplugins/kritafastcolortransferfilter.so
-lib/kritaplugins/kritafilterop.so
-lib/kritaplugins/kritagamutmask.so
-lib/kritaplugins/kritagifexport.so
-lib/kritaplugins/kritagifimport.so
-lib/kritaplugins/kritagradientmap.so
-lib/kritaplugins/kritagriddocker.so
-lib/kritaplugins/kritagridpaintop.so
-lib/kritaplugins/kritahairypaintop.so
-lib/kritaplugins/kritahalftone.so
-lib/kritaplugins/kritahatchingpaintop.so
-lib/kritaplugins/kritaheightmapexport.so
-lib/kritaplugins/kritaheightmapimport.so
-lib/kritaplugins/kritahistogramdocker.so
-lib/kritaplugins/kritahistorydocker.so
-lib/kritaplugins/kritaimageenhancement.so
-lib/kritaplugins/kritaimagesize.so
-lib/kritaplugins/kritaimagesplit.so
-lib/kritaplugins/kritaindexcolors.so
-lib/kritaplugins/kritajpegexport.so
-lib/kritaplugins/kritajpegimport.so
-lib/kritaplugins/kritakraexport.so
-lib/kritaplugins/kritakraimport.so
-lib/kritaplugins/kritalayerdocker.so
-lib/kritaplugins/kritalayergroupswitcher.so
-lib/kritaplugins/kritalayersplit.so
-lib/kritaplugins/kritalcmsengine.so
-lib/kritaplugins/kritalevelfilter.so
-lib/kritaplugins/kritalogdocker.so
-lib/kritaplugins/kritalutdocker.so
-lib/kritaplugins/kritametadataeditor.so
-lib/kritaplugins/kritamodifyselection.so
-lib/kritaplugins/kritanoisefilter.so
-lib/kritaplugins/kritanormalize.so
-lib/kritaplugins/kritaoffsetimage.so
-lib/kritaplugins/kritaoilpaintfilter.so
-lib/kritaplugins/kritaoraexport.so
-lib/kritaplugins/kritaoraimport.so
-lib/kritaplugins/kritaoverviewdocker.so
-lib/kritaplugins/kritapalettedocker.so
-lib/kritaplugins/kritaparticlepaintop.so
-lib/kritaplugins/kritapatterndocker.so
-lib/kritaplugins/kritapatterngenerator.so
-lib/kritaplugins/kritapdfimport.so
-lib/kritaplugins/kritaphongbumpmap.so
-lib/kritaplugins/kritapixelizefilter.so
-lib/kritaplugins/kritapngexport.so
-lib/kritaplugins/kritapngimport.so
-lib/kritaplugins/kritaposterize.so
-lib/kritaplugins/kritapresetdocker.so
-lib/kritaplugins/kritapresethistory.so
-lib/kritaplugins/kritapsdexport.so
-lib/kritaplugins/kritapsdimport.so
-lib/kritaplugins/kritaqimageioexport.so
-lib/kritaplugins/kritaqimageioimport.so
-lib/kritaplugins/kritaqmic.so
-lib/kritaplugins/kritaqmlexport.so
-lib/kritaplugins/kritaraindropsfilter.so
-lib/kritaplugins/kritarandompickfilter.so
-lib/kritaplugins/kritaresourcemanager.so
-lib/kritaplugins/kritarotateimage.so
-lib/kritaplugins/kritaroundcornersfilter.so
-lib/kritaplugins/kritaroundmarkerpaintop.so
-lib/kritaplugins/kritaselectiontools.so
-lib/kritaplugins/kritaseparatechannels.so
-lib/kritaplugins/kritashearimage.so
-lib/kritaplugins/kritasimplexnoisegenerator.so
-lib/kritaplugins/kritasketchpaintop.so
-lib/kritaplugins/kritasmallcolorselector.so
-lib/kritaplugins/kritasmalltilesfilter.so
-lib/kritaplugins/kritaspecificcolorselector.so
-lib/kritaplugins/kritaspraypaintop.so
-lib/kritaplugins/kritaspriterexport.so
-lib/kritaplugins/kritasvgcollectiondocker.so
-lib/kritaplugins/kritasvgimport.so
-lib/kritaplugins/kritatangentnormalpaintop.so
-lib/kritaplugins/kritatasksetdocker.so
-lib/kritaplugins/kritatgaexport.so
-lib/kritaplugins/kritatgaimport.so
-lib/kritaplugins/kritathreshold.so
-lib/kritaplugins/kritatiffexport.so
-lib/kritaplugins/kritatiffimport.so
-lib/kritaplugins/kritatoolSmartPatch.so
-lib/kritaplugins/kritatoolcrop.so
-lib/kritaplugins/kritatooldyna.so
-lib/kritaplugins/kritatoollazybrush.so
-lib/kritaplugins/kritatoolpolygon.so
-lib/kritaplugins/kritatoolpolyline.so
-lib/kritaplugins/kritatooltransform.so
-lib/kritaplugins/kritatouchdocker.so
-lib/kritaplugins/kritaunsharpfilter.so
-lib/kritaplugins/kritawavefilter.so
-lib/kritaplugins/kritawaveletdecompose.so
-lib/kritaplugins/kritaxcfimport.so
+@so lib/kritaplugins/krita_colorspaces_extensions.so
+@so lib/kritaplugins/krita_filtereffects.so
+@so lib/kritaplugins/krita_flaketools.so
+@so lib/kritaplugins/krita_karbontools.so
+@so lib/kritaplugins/krita_raw_import.so
+@so lib/kritaplugins/krita_shape_artistictext.so
+@so lib/kritaplugins/krita_shape_image.so
+@so lib/kritaplugins/krita_shape_paths.so
+@so lib/kritaplugins/krita_shape_text.so
+@so lib/kritaplugins/krita_tool_svgtext.so
+@so lib/kritaplugins/kritaanimationdocker.so
+@so lib/kritaplugins/kritaanimationrenderer.so
+@so lib/kritaplugins/kritaarrangedocker.so
+@so lib/kritaplugins/kritaartisticcolorselector.so
+@so lib/kritaplugins/kritaasccdl.so
+@so lib/kritaplugins/kritaassistanttool.so
+@so lib/kritaplugins/kritablurfilter.so
+@so lib/kritaplugins/kritabrushexport.so
+@so lib/kritaplugins/kritabrushimport.so
+@so lib/kritaplugins/kritabuginfo.so
+@so lib/kritaplugins/kritachanneldocker.so
+@so lib/kritaplugins/kritaclonesarray.so
+@so lib/kritaplugins/kritacolorgenerator.so
+@so lib/kritaplugins/kritacolorrange.so
+@so lib/kritaplugins/kritacolorselectorng.so
+@so lib/kritaplugins/kritacolorsfilters.so
+@so lib/kritaplugins/kritacolorsmudgepaintop.so
+@so lib/kritaplugins/kritacolorspaceconversion.so
+@so lib/kritaplugins/kritacompositiondocker.so
+@so lib/kritaplugins/kritaconvertheighttonormalmap.so
+@so lib/kritaplugins/kritaconvolutionfilters.so
+@so lib/kritaplugins/kritacurvepaintop.so
+@so lib/kritaplugins/kritadefaultpaintops.so
+@so lib/kritaplugins/kritadefaulttools.so
+@so lib/kritaplugins/kritadeformpaintop.so
+@so lib/kritaplugins/kritadigitalmixer.so
+@so lib/kritaplugins/kritadodgeburn.so
+@so lib/kritaplugins/kritaedgedetection.so
+@so lib/kritaplugins/kritaembossfilter.so
+@so lib/kritaplugins/kritaexample.so
+@so lib/kritaplugins/kritaexperimentpaintop.so
+@so lib/kritaplugins/kritaexrexport.so
+@so lib/kritaplugins/kritaexrimport.so
+@so lib/kritaplugins/kritaextensioncolorsfilters.so
+@so lib/kritaplugins/kritafastcolortransferfilter.so
+@so lib/kritaplugins/kritafilterop.so
+@so lib/kritaplugins/kritagamutmask.so
+@so lib/kritaplugins/kritagifexport.so
+@so lib/kritaplugins/kritagifimport.so
+@so lib/kritaplugins/kritagradientmap.so
+@so lib/kritaplugins/kritagriddocker.so
+@so lib/kritaplugins/kritagridpaintop.so
+@so lib/kritaplugins/kritahairypaintop.so
+@so lib/kritaplugins/kritahalftone.so
+@so lib/kritaplugins/kritahatchingpaintop.so
+@so lib/kritaplugins/kritaheightmapexport.so
+@so lib/kritaplugins/kritaheightmapimport.so
+@so lib/kritaplugins/kritahistogramdocker.so
+@so lib/kritaplugins/kritahistorydocker.so
+@so lib/kritaplugins/kritaimageenhancement.so
+@so lib/kritaplugins/kritaimagesize.so
+@so lib/kritaplugins/kritaimagesplit.so
+@so lib/kritaplugins/kritaindexcolors.so
+@so lib/kritaplugins/kritajpegexport.so
+@so lib/kritaplugins/kritajpegimport.so
+@so lib/kritaplugins/kritakraexport.so
+@so lib/kritaplugins/kritakraimport.so
+@so lib/kritaplugins/kritalayerdocker.so
+@so lib/kritaplugins/kritalayergroupswitcher.so
+@so lib/kritaplugins/kritalayersplit.so
+@so lib/kritaplugins/kritalcmsengine.so
+@so lib/kritaplugins/kritalevelfilter.so
+@so lib/kritaplugins/kritalogdocker.so
+@so lib/kritaplugins/kritalutdocker.so
+@so lib/kritaplugins/kritametadataeditor.so
+@so lib/kritaplugins/kritamodifyselection.so
+@so lib/kritaplugins/kritanoisefilter.so
+@so lib/kritaplugins/kritanormalize.so
+@so lib/kritaplugins/kritaoffsetimage.so
+@so lib/kritaplugins/kritaoilpaintfilter.so
+@so lib/kritaplugins/kritaoraexport.so
+@so lib/kritaplugins/kritaoraimport.so
+@so lib/kritaplugins/kritaoverviewdocker.so
+@so lib/kritaplugins/kritapalettedocker.so
+@so lib/kritaplugins/kritaparticlepaintop.so
+@so lib/kritaplugins/kritapatterndocker.so
+@so lib/kritaplugins/kritapatterngenerator.so
+@so lib/kritaplugins/kritapdfimport.so
+@so lib/kritaplugins/kritaphongbumpmap.so
+@so lib/kritaplugins/kritapixelizefilter.so
+@so lib/kritaplugins/kritapngexport.so
+@so lib/kritaplugins/kritapngimport.so
+@so lib/kritaplugins/kritaposterize.so
+@so lib/kritaplugins/kritapresetdocker.so
+@so lib/kritaplugins/kritapresethistory.so
+@so lib/kritaplugins/kritapsdexport.so
+@so lib/kritaplugins/kritapsdimport.so
+@so lib/kritaplugins/kritaqimageioexport.so
+@so lib/kritaplugins/kritaqimageioimport.so
+@so lib/kritaplugins/kritaqmic.so
+@so lib/kritaplugins/kritaqmlexport.so
+@so lib/kritaplugins/kritaraindropsfilter.so
+@so lib/kritaplugins/kritarandompickfilter.so
+@so lib/kritaplugins/kritaresourcemanager.so
+@so lib/kritaplugins/kritarotateimage.so
+@so lib/kritaplugins/kritaroundcornersfilter.so
+@so lib/kritaplugins/kritaroundmarkerpaintop.so
+@so lib/kritaplugins/kritaselectiontools.so
+@so lib/kritaplugins/kritaseparatechannels.so
+@so lib/kritaplugins/kritashearimage.so
+@so lib/kritaplugins/kritasimplexnoisegenerator.so
+@so lib/kritaplugins/kritasketchpaintop.so
+@so lib/kritaplugins/kritasmallcolorselector.so
+@so lib/kritaplugins/kritasmalltilesfilter.so
+@so lib/kritaplugins/kritaspecificcolorselector.so
+@so lib/kritaplugins/kritaspraypaintop.so
+@so lib/kritaplugins/kritaspriterexport.so
+@so lib/kritaplugins/kritasvgcollectiondocker.so
+@so lib/kritaplugins/kritasvgimport.so
+@so lib/kritaplugins/kritatangentnormalpaintop.so
+@so lib/kritaplugins/kritatasksetdocker.so
+@so lib/kritaplugins/kritatgaexport.so
+@so lib/kritaplugins/kritatgaimport.so
+@so lib/kritaplugins/kritathreshold.so
+@so lib/kritaplugins/kritatiffexport.so
+@so lib/kritaplugins/kritatiffimport.so
+@so lib/kritaplugins/kritatoolSmartPatch.so
+@so lib/kritaplugins/kritatoolcrop.so
+@so lib/kritaplugins/kritatooldyna.so
+@so lib/kritaplugins/kritatoollazybrush.so
+@so lib/kritaplugins/kritatoolpolygon.so
+@so lib/kritaplugins/kritatoolpolyline.so
+@so lib/kritaplugins/kritatooltransform.so
+@so lib/kritaplugins/kritatouchdocker.so
+@so lib/kritaplugins/kritaunsharpfilter.so
+@so lib/kritaplugins/kritawavefilter.so
+@so lib/kritaplugins/kritawaveletdecompose.so
+@so lib/kritaplugins/kritaxcfimport.so
 @lib lib/libkritabasicflakes.so.${LIBkritabasicflakes_VERSION}
 @lib lib/libkritacolor.so.${LIBkritacolor_VERSION}
 @lib lib/libkritacolord.so.${LIBkritacolord_VERSION}
@@ -171,7 +168,7 @@ lib/kritaplugins/kritaxcfimport.so
 lib/qt5/qml/org/
 lib/qt5/qml/org/krita/
 lib/qt5/qml/org/krita/draganddrop/
-lib/qt5/qml/org/krita/draganddrop/libdraganddropplugin.so
+@so lib/qt5/qml/org/krita/draganddrop/libdraganddropplugin.so
 lib/qt5/qml/org/krita/draganddrop/qmldir
 lib/qt5/qml/org/krita/sketch/
 lib/qt5/qml/org/krita/sketch/components/
@@ -205,10 +202,9 @@ lib/qt5/qml/org/krita/sketch/components/TextFieldMultiline.qml
 lib/qt5/qml/org/krita/sketch/components/Tooltip.qml
 lib/qt5/qml/org/krita/sketch/components/VirtualKeyboard.qml
 lib/qt5/qml/org/krita/sketch/components/qmldir
-lib/qt5/qml/org/krita/sketch/libkritasketchplugin.so
+@so lib/qt5/qml/org/krita/sketch/libkritasketchplugin.so
 lib/qt5/qml/org/krita/sketch/qmldir
 share/applications/krita_brush.desktop
-share/applications/krita_csv.desktop
 share/applications/krita_exr.desktop
 share/applications/krita_gif.desktop
 share/applications/krita_heightmap.desktop
