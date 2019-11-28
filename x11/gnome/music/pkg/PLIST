@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/11/01 21:38:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/11/28 08:51:19 ajacoutot Exp $
 bin/gnome-music
 lib/org.gnome.Music/
 lib/org.gnome.Music/girepository-1.0/
 lib/org.gnome.Music/girepository-1.0/Gd-1.0.typelib
 lib/org.gnome.Music/girepository-1.0/Gfm-0.1.typelib
-lib/org.gnome.Music/libgd.so
-lib/org.gnome.Music/libgfm-0.1.so
+@so lib/org.gnome.Music/libgd.so
+@so lib/org.gnome.Music/libgfm-0.1.so
 lib/org.gnome.Music/pkgconfig/
 lib/org.gnome.Music/pkgconfig/gfm-0.1.pc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/
