@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/05/13 22:11:20 abieber Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/11/28 19:23:44 abieber Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -238,16 +238,16 @@ if (UNIX)
+@@ -244,16 +244,16 @@ if (UNIX)
      FILE (GLOB UnixManFile "doc/man-edbrowse-debian.1")
      set (UnixManDir "/usr/share/man/man1")
      set (UnixDocDir "/usr/share/doc/edbrowse")
@@ -24,7 +24,7 @@ Index: CMakeLists.txt
          # gzip it in place
          execute_process(COMMAND ${GZIP_EXE} -f "edbrowse.1"
              WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-@@ -257,6 +257,7 @@ if (UNIX)
+@@ -263,6 +263,7 @@ if (UNIX)
  	install(FILES ${CMAKE_BINARY_DIR}/edbrowse.1.gz DESTINATION ${UnixManDir})
      else ()
          message(WARNING "Unable to locate 'gzip'! No man page...")

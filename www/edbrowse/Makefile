@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/11/28 19:23:44 abieber Exp $
 
 COMMENT =	command-line editor and web browser
 
-DISTNAME =	edbrowse-3.7.4
+DISTNAME =	edbrowse-3.7.6
 
 CATEGORIES =	www
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://edbrowse.org/
 # GPL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curl duktape m pcre readline tidy
+WANTLIB += c curl duktape m pcre pthread readline tidy
 
 MASTER_SITES =	https://deftly.net/dist/
 
