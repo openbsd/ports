@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/11/28 14:36:32 sthen Exp $
+
+SHARED_LIBS += zopfli		0.0
+SHARED_LIBS += zopflipng	0.0
 
 COMMENT =		deflate-compatible compression format
 
 GH_ACCOUNT =		google
 GH_PROJECT =		zopfli
-GH_TAGNAME =		zopfli-1.0.2
+GH_TAGNAME =		zopfli-1.0.3
 DISTNAME =		${GH_TAGNAME}
 
 CATEGORIES =		archivers
@@ -12,15 +15,11 @@ CATEGORIES =		archivers
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m
+WANTLIB += ${COMPILER_LIBCXX} c m
 
-MAKE_FLAGS =		CC="${CC}" CXX="${CXX}" \
-			COPTFLAGS="${CFLAGS}" CXXOPTFLAGS="${CXXFLAGS}"
-
+MODULES =		devel/cmake
+COMPILER =		base-clang ports-gcc base-gcc
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=yes
 NO_TEST =		Yes
-ALL_TARGET =
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/zopfli ${PREFIX}/bin
 
 .include <bsd.port.mk>

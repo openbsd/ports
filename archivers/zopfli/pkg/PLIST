@@ -1,2 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/07 17:57:44 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/11/28 14:36:32 sthen Exp $
 @bin bin/zopfli
+@bin bin/zopflipng
+include/zopfli.h
+include/zopflipng_lib.h
+lib/cmake/
+lib/cmake/Zopfli/
+lib/cmake/Zopfli/ZopfliConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Zopfli/ZopfliConfig.cmake
+lib/cmake/Zopfli/ZopfliConfigVersion.cmake
+@lib lib/libzopfli.so.${LIBzopfli_VERSION}
+@lib lib/libzopflipng.so.${LIBzopflipng_VERSION}
