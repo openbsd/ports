@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.5 2018/09/08 03:55:10 bket Exp $
+$OpenBSD: patch-Makefile,v 1.6 2019/11/28 05:45:19 bket Exp $
 
 Avoid use of pytest --with-doctest as this causes a regression test to fail
 with "ImportError (Could not load inotify functions from libc)". Failure is
@@ -14,6 +14,6 @@ Index: Makefile
  PYTEST_FLAGS = $(QUIET) $(TEST_VERBOSE)
 -PYTEST_FLAGS += --doctest-modules
 +#PYTEST_FLAGS += --doctest-modules
- 
- TOX_FLAGS = $(VERBOSE_SHORT) --develop --skip-missing-interpreters
- 
+ uname_S := $(shell uname -s)
+ ifneq ($(uname_S),Linux)
+     PYTEST_FLAGS += --ignore=cola/inotify.py

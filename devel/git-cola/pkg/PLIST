@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/06/18 04:13:54 bket Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/11/28 05:45:19 bket Exp $
 bin/git-cola
 bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -202,8 +202,6 @@ share/git-cola/lib/cola/models/stash.py
 share/git-cola/lib/cola/models/stash.pyc
 share/git-cola/lib/cola/observable.py
 share/git-cola/lib/cola/observable.pyc
-share/git-cola/lib/cola/ordered_dict.py
-share/git-cola/lib/cola/ordered_dict.pyc
 share/git-cola/lib/cola/qtcompat.py
 share/git-cola/lib/cola/qtcompat.pyc
 share/git-cola/lib/cola/qtutils.py
