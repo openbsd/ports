@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/12 20:48:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/11/28 15:56:26 bket Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
-V=		3.41.2
+V=		3.45.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
 
 CATEGORIES=	net
 
@@ -19,8 +18,8 @@ HOMEPAGE=	https://www.filezilla-project.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
+WANTLIB += Xxf86vm atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB += dbus-1 epoxy expat ffi filezilla fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gnutls gobject-2.0 graphite2 gthread-2.0 gtk-3
@@ -37,12 +36,13 @@ COMPILER =	base-clang ports-gcc
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
 		devel/libidn \
-		net/libfilezilla \
+		net/libfilezilla>=0.18.2 \
 		security/gnutls \
 		textproc/pugixml \
 		x11/dbus \
 		x11/wxWidgets>=3.0.4
 
+# XXX regression tests depend on cppunit>=1.13.0
 BUILD_DEPENDS=	devel/cppunit \
 		devel/gettext,-tools \
 		devel/xdg-utils
@@ -50,8 +50,10 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \
 		x11/gtk+3,-guic
 
-SEPARATE_BUILD= Yes
-CONFIGURE_STYLE=gnu
+SEPARATE_BUILD=	Yes
+USE_GMAKE=	Yes
+
+CONFIGURE_STYLE=autoreconf
 CONFIGURE_ARGS+=--with-dbus \
 		--with-tinyxml=builtin \
 		--disable-manualupdatecheck
@@ -60,12 +62,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GREP=/usr/bin/grep \
 		SED=/usr/bin/sed
 
-USE_GMAKE=	Yes
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+
 WRKDIST=	${WRKDIR}/filezilla-$V
 
 FAKE_FLAGS+=	docsdir="${PREFIX}/share/examples/filezilla/"
-
-do-test:
-	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} check-TESTS
 
 .include <bsd.port.mk>
