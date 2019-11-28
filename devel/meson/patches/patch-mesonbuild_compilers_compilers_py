@@ -1,6 +1,9 @@
-$OpenBSD: patch-mesonbuild_compilers_compilers_py,v 1.14 2019/11/24 10:12:11 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_compilers_compilers_py,v 1.15 2019/11/28 19:46:58 ajacoutot Exp $
 
-https://github.com/mesonbuild/meson/pull/6226
+From 0241948d8fa37f59eb93088a26e9b7ae642cc2d0 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Mon, 25 Nov 2019 11:54:07 +0100
+Subject: [PATCH] openbsd: execinfo is not a compiler lib
 
 Index: mesonbuild/compilers/compilers.py
 --- mesonbuild/compilers/compilers.py.orig
