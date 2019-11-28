@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.1 2019/11/28 15:55:23 bket Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -42,9 +42,7 @@ if ! test "$localesonly" = "yes"; then
+ 
+ if test "X$GCC" = Xyes; then
+   AX_APPEND_FLAG(-Wall, CFLAGS)
+-  AX_APPEND_FLAG(-g, CFLAGS)
+   AX_APPEND_FLAG(-Wall, CXXFLAGS)
+-  AX_APPEND_FLAG(-g, CXXFLAGS)
+ fi
+ 
+ # Do this early: Compiler and linker flags to work around a nasty bug in Xcode.
