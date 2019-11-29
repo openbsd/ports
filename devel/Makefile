@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1915 2019/11/27 20:15:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.1916 2019/11/29 01:36:06 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -299,6 +299,7 @@
      SUBDIR += lazarus
      SUBDIR += leatherman
      SUBDIR += legit
+     SUBDIR += leiningen
      SUBDIR += libHX
      SUBDIR += libIDL
      SUBDIR += libJudy
