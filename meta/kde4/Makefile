@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/11/23 08:23:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.74 2019/11/29 13:47:56 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -26,14 +26,14 @@ PKGSPEC-network =	kdenetwork-${MODKDE4_SPEC}
 PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
-REVISION-minimal =	11
+REVISION-minimal =	12
 REVISION-games = 4
 REVISION-sdk = 4
 REVISION-edu = 8
 REVISION-multimedia = 2
 REVISION-network = 2
 REVISION-extras = 11
-REVISION-main =		33
+REVISION-main =		34
 REVISION-admin =	1
 REVISION-graphics =	5
 REVISION-utils =	0
@@ -131,7 +131,6 @@ KDE4-utils = \
 
 RUN_DEPENDS-minimal = \
 	${KDE4-accessibility}			\
-	${MODKDE4_DEP_DIR}/baseapps		\
 	${MODKDE4_DEP_DIR}/kgpg			\
 	${MODKDE4_DEP_DIR}/workspace
 
