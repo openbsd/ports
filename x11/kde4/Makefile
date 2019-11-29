@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/11/23 08:23:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.78 2019/11/29 13:53:34 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -89,7 +89,7 @@ SUBDIR += nepomuk-widgets
 SUBDIR += runtime
 SUBDIR += pim-runtime
 SUBDIR += workspace
-SUBDIR += baseapps
+#SUBDIR += baseapps		x11/kde-applications
 #SUBDIR += kate			x11/kde-applications
 #SUBDIR += konsole		x11/kde-applications
 
