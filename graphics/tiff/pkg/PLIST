@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/12/05 20:35:25 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.28 2019/11/29 16:43:02 naddy Exp $
 @bin bin/fax2ps
 @bin bin/fax2tiff
 @bin bin/pal2rgb
@@ -22,10 +22,10 @@ include/tiffconf.h
 include/tiffio.h
 include/tiffio.hxx
 include/tiffvers.h
-lib/libtiff.a
+@static-lib lib/libtiff.a
 lib/libtiff.la
 @lib lib/libtiff.so.${LIBtiff_VERSION}
-lib/libtiffxx.a
+@static-lib lib/libtiffxx.a
 lib/libtiffxx.la
 @lib lib/libtiffxx.so.${LIBtiffxx_VERSION}
 lib/pkgconfig/libtiff-4.pc
@@ -242,3 +242,4 @@ share/doc/tiff/v4.0.6.html
 share/doc/tiff/v4.0.7.html
 share/doc/tiff/v4.0.8.html
 share/doc/tiff/v4.0.9.html
+share/doc/tiff/v4.1.0.html

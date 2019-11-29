@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_tiff2ps-PS2_sh,v 1.1 2019/11/29 16:43:02 naddy Exp $
+
+Index: test/tiff2ps-PS2.sh
+--- test/tiff2ps-PS2.sh.orig
++++ test/tiff2ps-PS2.sh
+@@ -5,4 +5,4 @@
+ PSFILE=o-tiff2ps-PS2.ps
+ . ${srcdir:-.}/common.sh
+ f_test_stdout "${TIFF2PS} -a -p -2" "${IMG_MINISWHITE_1C_1B}" "${PSFILE}"
+-diff -I '%%\(CreationDate\|Title\):*' -u "${REFS}/${PSFILE}" "${PSFILE}" || exit 1
++diff -I '%%(CreationDate|Title):*' -u "${REFS}/${PSFILE}" "${PSFILE}" || exit 1

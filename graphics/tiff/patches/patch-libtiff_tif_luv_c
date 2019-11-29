@@ -1,13 +1,13 @@
-$OpenBSD: patch-libtiff_tif_luv_c,v 1.8 2017/05/26 20:50:57 naddy Exp $
+$OpenBSD: patch-libtiff_tif_luv_c,v 1.9 2019/11/29 16:43:01 naddy Exp $
 Index: libtiff/tif_luv.c
 --- libtiff/tif_luv.c.orig
 +++ libtiff/tif_luv.c
-@@ -744,7 +744,7 @@ LogLuvEncodeTile(TIFF* tif, uint8* bp, tmsize_t cc, ui
- 
- #define itrunc(x,m)	((m)==SGILOGENCODE_NODITHER ? \
- 				(int)(x) : \
--				(int)((x) + rand()*(1./RAND_MAX) - .5))
-+				(int)((x) + arc4random()*(1./UINT_MAX) - .5))
+@@ -748,7 +748,7 @@ static int itrunc(double x, int m)
+         return (int)x;
+     /* Silence CoverityScan warning about bad crypto function */
+     /* coverity[dont_call] */
+-    return (int)(x + rand()*(1./RAND_MAX) - .5);
++    return (int)(x + arc4random()*(1./UINT_MAX) - .5);
+ }
  
  #if !LOGLUV_PUBLIC
- static
