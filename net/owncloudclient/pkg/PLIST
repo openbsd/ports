@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/09/25 07:31:24 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/11/29 09:44:44 kirby Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -20,6 +20,9 @@ include/owncloudsync/mirall/syncfileitem.h
 include/owncloudsync/mirall/syncresult.h
 @lib lib/libowncloud_csync.so.${LIBowncloud_csync_VERSION}
 @lib lib/libowncloudsync.so.${LIBowncloudsync_VERSION}
+lib/ownCloud/
+lib/ownCloud/plugins/
+lib/ownCloud/plugins/owncloudsync_vfs_suffix.so
 share/applications/owncloud.desktop
 share/caja-python/
 share/caja-python/extensions/

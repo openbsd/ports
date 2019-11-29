@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:48:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/11/29 09:44:44 kirby Exp $
 
 COMMENT =		owncloud sync client
 
-DISTNAME =		owncloudclient-2.5.4.11654
+DISTNAME =		owncloudclient-2.6.0.13018
 
 SHARED_LIBS +=		owncloudsync	5.0
 SHARED_LIBS +=		owncloud_csync	0.0
@@ -25,9 +25,6 @@ MASTER_SITES =		https://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake x11/qt5
-
-# c++0x
-COMPILER = 		base-clang ports-gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
