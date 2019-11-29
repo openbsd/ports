@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/29 19:01:02 reyk Exp $
 
 COMMENT=	cloud provisioning for OpenBSD VMs
 
-V=		0.9
+V=		1.1
 DISTNAME=	cloud-agent-$V
 CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/reyk/cloud-agent/
@@ -15,5 +15,8 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${HOMEPAGE}releases/download/v${V}/
 
 WANTLIB=	c crypto expat ssl tls util
+
+# This can be removed after LibreSSL >3.0.2 is released
+MAKE_FLAGS=	USE_LIBRESSL_CMS=1
 
 .include <bsd.port.mk>

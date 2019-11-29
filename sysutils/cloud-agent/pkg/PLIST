@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/16 11:58:32 reyk Exp $
-@bin bin/cms
+@comment $OpenBSD: PLIST,v 1.2 2019/11/29 19:01:02 reyk Exp $
 @bin libexec/cloud-agent
 @man man/man8/cloud-agent.8
