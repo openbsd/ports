@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2019/08/09 21:16:13 juanfra Exp $
+# $OpenBSD: Makefile,v 1.60 2019/11/29 18:01:10 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			7.4
+V =			7.5
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -13,7 +13,9 @@ CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
-# LGPLv3
+# Racket Minimal is MIT or Apache 2, "at your option".
+# However, the interpreter uses code from external projects with
+# different licenses: https://github.com/racket/racket/blob/master/LICENSE
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
@@ -31,11 +33,14 @@ EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/sqlite3 \
-			devel/libffi>=3.0.9p2
+			devel/libffi>=3.0.9p2 \
+			devel/mpfr
 
 WANTLIB += c ffi iconv m pthread
-# Loaded using FFI
-WANTLIB += sqlite3
+# Loaded using FFI:
+# sqlite3 required by the documentation generator
+# mpfr required by the core tests
+WANTLIB += mpfr sqlite3
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
