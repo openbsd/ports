@@ -1,0 +1,45 @@
+$OpenBSD: patch-bin_lein-pkg,v 1.1.1.1 2019/11/29 01:07:49 kn Exp $
+
+- fix shebang
+- set path to standalone jar
+- set path to java executable
+- use sha1(1)
+
+Index: bin/lein-pkg
+--- bin/lein-pkg.orig
++++ bin/lein-pkg
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ # This variant of the lein script is meant for downstream packagers.
+ # It has all the cross-platform stuff stripped out as well as the
+@@ -27,7 +27,7 @@ export LEIN_HOME="${LEIN_HOME:-"$HOME/.lein"}"
+ 
+ # Support $JAVA_OPTS for backwards-compatibility.
+ JVM_OPTS=${JVM_OPTS:-"$JAVA_OPTS"}
+-JAVA_CMD=${JAVA_CMD:-"java"}
++JAVA_CMD=${JAVA_CMD:-"${JAVA_HOME}/bin/java"}
+ 
+ for f in "/etc/leinrc" "$LEIN_HOME/leinrc" ".leinrc"; do
+     if [ -e "$f" ]; then
+@@ -43,7 +43,7 @@ LEIN_JVM_OPTS="${LEIN_JVM_OPTS:-'-Xms64m -Xmx512m'}"
+ # If you're not using an uberjar you'll need to list each dependency
+ # and add them individually to the classpath/bootclasspath as well.
+ 
+-LEIN_JAR=/usr/share/java/leiningen-$LEIN_VERSION-standalone.jar
++LEIN_JAR=${LEIN_DIR}/${JAR_FILE}
+ 
+ # Do not use installed leiningen jar during self-compilation
+ if ! { [ "$1" = "compile" ] &&
+@@ -88,8 +88,8 @@ fi
+ if [ "$LEIN_FAST_TRAMPOLINE" != "" ] && [ -r project.clj ]; then
+     INPUTS="$* $(cat project.clj) $(test -f "$LEIN_HOME/profiles.clj" && cat "$LEIN_HOME/profiles.clj")"
+ 
+-    if command -v shasum >/dev/null 2>&1; then
+-        SUM="shasum"
++    if command -v sha1 >/dev/null 2>&1; then
++        SUM="sha1"
+     elif command -v sha1sum >/dev/null 2>&1; then
+         SUM="sha1sum"
+     else
