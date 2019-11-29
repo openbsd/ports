@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/11/29 11:39:32 kirby Exp $
 
 COMMENT =	FUSE NTFS driver with read/write support
 
@@ -7,9 +7,9 @@ DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
 SHARED_LIBS +=	ntfs-3g		0.2	# .88
 CATEGORIES =	sysutils
-REVISION =	0
+REVISION =	1
 
-HOMEPAGE =	https://www.tuxera.com/
+HOMEPAGE =	https://www.tuxera.com/community/open-source-ntfs-3g/
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c uuid fuse
 
-MASTER_SITES =	${HOMEPAGE}/opensource/
+MASTER_SITES =	https://tuxera.com/opensource/
 EXTRACT_SUFX =	.tgz
 
 LIB_DEPENDS =		sysutils/e2fsprogs
