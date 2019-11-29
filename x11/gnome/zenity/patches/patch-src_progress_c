@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_progress_c,v 1.12 2019/11/29 18:51:44 jasper Exp $
+
+error: 'for' loop initial declaration used outside C99 mode
+
+Index: src/progress.c
+--- src/progress.c.orig
++++ src/progress.c
+@@ -108,11 +108,12 @@ zenity_progress_update_time_remaining (ZenityProgressD
+ static float
+ stof(const char* s) {
+ 	float rez = 0, fact = 1;
++	int point_seen;
+ 	if (*s == '-') {
+ 		s++;
+ 		fact = -1;
+ 	}
+-	for (int point_seen = 0; *s; s++) {
++	for (point_seen = 0; *s; s++) {
+ 		if (*s == '.' || *s == ',') {
+ 			point_seen = 1;
+ 			continue;
