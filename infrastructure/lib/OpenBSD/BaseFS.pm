@@ -1,4 +1,4 @@
-# $OpenBSD: BaseFS.pm,v 1.3 2019/11/19 16:35:20 espie Exp $
+# $OpenBSD: BaseFS.pm,v 1.4 2019/11/30 10:20:53 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -35,6 +35,8 @@ sub destdir
 # we are given a filename which actually lives under destdir.
 # but if it's a symlink, we WILL follow through, because the
 # link is meant relative to destdir
+# in any case, we always get the name on the actual
+# filesystem, e.g., with destdir prepended
 sub resolve_link
 {
 	my ($self, $filename, $level) = @_;
