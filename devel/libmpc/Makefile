@@ -1,28 +1,26 @@
-#	$OpenBSD: Makefile,v 1.10 2019/07/12 20:44:39 sthen Exp $
+#	$OpenBSD: Makefile,v 1.11 2019/11/30 18:30:27 naddy Exp $
 
-COMMENT=	complex numbers math library
+COMMENT=	arbitrary-precision complex numbers math library
 
-V=		0.9
+V=		1.1.0
 DISTNAME=	mpc-${V}
 PKGNAME=	libmpc-${V}
-REVISION=	2
-SHARED_LIBS=	mpc	0.1	# 2.0
+SHARED_LIBS=	mpc	1.0	# 4.0
 
 CATEGORIES=	devel math
 
-HOMEPAGE=	http://www.multiprecision.org
-MASTER_SITES=	${HOMEPAGE}/mpc/download/
+HOMEPAGE=	http://www.multiprecision.org/mpc/
+MASTER_SITES=	${MASTER_SITE_GNU:=mpc/}
 
-# LGPLv2.1+
+# LGPLv3+
 PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=		devel/mpfr \
 			devel/gmp,no_cxx,bootstrap
-WANTLIB=		mpfr>=1.0 gmp>=9.0 m
+WANTLIB=		gmp m mpfr
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-mpfr=${LOCALBASE} \
 			--with-gmp=${LOCALBASE}
-
 
 .include <bsd.port.mk>
