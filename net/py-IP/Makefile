@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/11/30 23:48:26 kmos Exp $
 
 COMMENT =	Python module to handle IPv4 and IPv6 address
 
@@ -23,10 +23,8 @@ FLAVOR ?=
 
 MODPY_DISTUTILS_INSTALLARGS =	-O2
 MODPY_PYOEXTENSION =		opt-2.pyc
+MODPY_PYTEST =			Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
-
-do-test:
-	@cd ${WRKSRC}/test; ${MODPY_BIN} ./test_IPy.py
 
 .include <bsd.port.mk>
