@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/24 02:59:19 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2019/11/30 12:01:55 sthen Exp $
+
+BROKEN-i386=	segfault during build
 
 COMMENT =	Neko scripting language runtime and virtual machine
 
