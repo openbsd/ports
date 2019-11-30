@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/11/30 18:28:46 naddy Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
-DISTNAME=	mpfr-3.1.5
-PKGNAME=	${DISTNAME}.2
-REVISION=	1
-SHARED_LIBS=	mpfr		1.2	# 5.5
+DISTNAME=	mpfr-4.0.2
+PKGNAME=	${DISTNAME}.1
+SHARED_LIBS=	mpfr		2.0	# 6.2
 CATEGORIES=	devel math
 HOMEPAGE=	https://www.mpfr.org/
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}${DISTNAME}/
 DIST_SUBDIR=	${DISTNAME}
-.for i in 01 02
+.for i in 01
 PATCHFILES+=	patch$i
 .endfor
 PATCH_DIST_STRIP=-p1
@@ -32,11 +31,8 @@ CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 # bump and lang/gcc will need a new bootstrap.
 CONFIGURE_ARGS+=--disable-thread-safe
 
-# Do not install useless docs and misplaced examples.
-FAKE_FLAGS=	docdir=""
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpfr
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/mpfr
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
+	mv ${PREFIX}/share/doc/mpfr/examples ${PREFIX}/share/examples/mpfr
 
 .include <bsd.port.mk>
