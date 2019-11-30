@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure,v 1.12 2012/07/19 15:05:30 giovanni Exp $
---- configure.orig	Wed Jun  6 02:58:38 2012
-+++ configure	Mon Jul  9 15:38:11 2012
+$OpenBSD: patch-configure,v 1.13 2019/11/30 12:56:15 naddy Exp $
+Index: configure
+--- configure.orig
++++ configure
 @@ -39,7 +39,6 @@
  #
  DIR_BIN=/usr/local/bin
@@ -44,7 +45,13 @@ $OpenBSD: patch-configure,v 1.12 2012/07/19 15:05:30 giovanni Exp $
  }
  
  if [ "$SGI2FAX" = auto ]; then
-@@ -2568,7 +2567,6 @@ EOF
+@@ -2563,12 +2562,11 @@ EOF
+ 				tiff_offset_t="uint32"
+ 				tiff_bytecount_t="uint32"
+ 				;;
+-		4.[0])		tiff_runlen_t="uint32"
++		4.[01])		tiff_runlen_t="uint32"
+ 				tiff_offset_t="uint64"
  				tiff_bytecount_t="uint64"
  				echo '#define TIFFHeader	TIFFHeaderClassic'
  				echo '#define TIFF_VERSION	TIFF_VERSION_CLASSIC'
