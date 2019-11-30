@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/10 09:29:32 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2019/11/30 18:17:41 kmos Exp $
 
 COMMENT =		Python interface to libVEX and VEX IR
 
@@ -7,7 +7,7 @@ ANGR_PYTHON_MODULE =	pyvex
 USE_GMAKE =		Yes
 CFLAGS +=		-shared -fPIC -I${LOCALBASE}/include/angr-vex/
 
-MODPY_TEST =		Yes
+MODPY_PYTEST =		Yes
 
 BUILD_DEPENDS +=	devel/angr/vex \
 			devel/py-cffi${MODPY_FLAVOR} \
