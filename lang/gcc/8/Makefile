@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2019/11/30 18:16:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/11/30 18:20:53 naddy Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
 # XXX: sparc64
-ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
+ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64# powerpc
 
 # XXX workaround for "ld: error: cp-demangle.c:(.debug_info+0x30115): has
 # non-ABS relocation R_386_GOTOFF against symbol '.LC60'".
