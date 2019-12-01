@@ -1,14 +1,17 @@
-$OpenBSD: patch-configure,v 1.4 2016/01/11 10:22:05 landry Exp $
---- configure.orig	Mon Nov  2 14:19:57 2015
-+++ configure	Fri Jan  8 14:55:25 2016
-@@ -29474,8 +29474,8 @@ $as_echo "$as_me: error: cannot create directory $as_d
- #define  JOEPATH_H
+$OpenBSD: patch-configure,v 1.5 2019/12/01 22:03:11 fcambus Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -22866,9 +22866,9 @@ $as_echo X"$file" |
+ #define  JOEDOG_PATH_H
  
  #define SIEGE_HOME     "$prefix"
 -#define URL_FILE       "$sysconfdir/urls.txt"
 -#define CNF_FILE       "$sysconfdir/siegerc"
+-#define LOG_FILE       "$localstatedir/log/siege.log"
 +#define URL_FILE       "$sysconfdir/siege/urls.txt"
 +#define CNF_FILE       "$sysconfdir/siege/siegerc"
- #define LOG_FILE       "$localstatedir/siege.log"
++#define LOG_FILE       "$localstatedir/siege.log"
  #define PLATFORM       "$platform"
  
+ #endif/*JOEDOG_PATH_H*/

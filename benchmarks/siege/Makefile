@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/12/01 22:03:11 fcambus Exp $
 
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
-DISTNAME =		siege-3.1.3
+DISTNAME =		siege-4.0.4
 
 CATEGORIES =		benchmarks www
 
-HOMEPAGE =		http://www.joedog.org/index/siege-home
+HOMEPAGE =		https://www.joedog.org/index/siege-home
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto pthread ssl
+WANTLIB += c crypto pthread ssl z
 
 MASTER_SITES =		http://download.joedog.org/siege/
 
 MAKE_FLAGS =		localstatedir=${LOCALSTATEDIR}
 
-LOCALSTATEDIR=		${BASELOCALSTATEDIR}/log/siege
+LOCALSTATEDIR =		${BASELOCALSTATEDIR}/log/siege
 
 CONFIGURE_STYLE =	gnu
 
