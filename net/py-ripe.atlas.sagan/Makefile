@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/12/01 01:28:23 kmos Exp $
 
 COMMENT =		parsing library for RIPE Atlas measurement results
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests/*.py
 
 MODULES =		lang/python
 
