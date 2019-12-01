@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/01 00:44:16 kmos Exp $
 
 COMMENT =	Python IP address manipulation library
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES	=	lang/python
 MODPY_PI =	Yes
-
-do-test:
-	${MODPY_BIN} ${WRKSRC}/ipaddr_test.py
+MODPY_PYTEST =	Yes
 
 .include <bsd.port.mk>
