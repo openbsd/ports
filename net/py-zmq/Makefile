@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/12/01 04:33:28 kmos Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
@@ -24,9 +24,10 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 MODPY_PI =		Yes
 MODPY_DISTUTILS_BUILDARGS =	--zmq=${LOCALBASE}
 MAKE_ENV =			LC_CTYPE=en_US.UTF-8
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	zmq
 
 # ulimit -n 1024
-TEST_IS_INTERACTIVE =	Yes
 TEST_TARGET =		build_ext --inplace test
 TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
@@ -34,8 +35,5 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
