@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/12/01 01:25:31 kmos Exp $
 
 COMMENT =		python bindings for the RIPE Atlas API
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 MODULES =		lang/python
 
@@ -34,7 +35,8 @@ TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}
 
 .if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-funcsigs
+TEST_DEPENDS +=		devel/py-backports-ssl-match-hostname \
+			devel/py-funcsigs
 .endif
 
 .include <bsd.port.mk>
