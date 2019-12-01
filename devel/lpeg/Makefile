@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2019/11/06 09:35:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.21 2019/12/01 18:20:29 fcambus Exp $
 
 COMMENT=	parsing expression grammars library for lua
 DISTNAME=	lpeg-1.0.2
 PKGNAME=	lua-${DISTNAME}
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/
 
-HOMEPAGE=	http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html
+HOMEPAGE=	http://www.inf.puc-rio.br/~roberto/lpeg/
 
 # ISC-like
 PERMIT_PACKAGE=	Yes
