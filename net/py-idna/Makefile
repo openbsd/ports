@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/22 12:51:59 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/12/01 00:34:29 kmos Exp $
 
 COMMENT =		Python library to support the IDNA protocol
 
@@ -16,6 +16,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
