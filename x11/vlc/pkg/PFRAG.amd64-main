@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.amd64-main,v 1.7 2015/05/24 07:16:31 ajacoutot Exp $
-lib/vlc/plugins/video_chroma/libi420_rgb_mmx_plugin.so
-lib/vlc/plugins/video_chroma/libi420_rgb_sse2_plugin.so
-lib/vlc/plugins/video_chroma/libi420_yuy2_mmx_plugin.so
-lib/vlc/plugins/video_chroma/libi420_yuy2_sse2_plugin.so
-lib/vlc/plugins/video_chroma/libi422_yuy2_mmx_plugin.so
-lib/vlc/plugins/video_chroma/libi422_yuy2_sse2_plugin.so
+@comment $OpenBSD: PFRAG.amd64-main,v 1.8 2019/12/01 22:44:13 ajacoutot Exp $
+@so lib/vlc/plugins/video_chroma/libi420_rgb_mmx_plugin.so
+@so lib/vlc/plugins/video_chroma/libi420_rgb_sse2_plugin.so
+@so lib/vlc/plugins/video_chroma/libi420_yuy2_mmx_plugin.so
+@so lib/vlc/plugins/video_chroma/libi420_yuy2_sse2_plugin.so
+@so lib/vlc/plugins/video_chroma/libi422_yuy2_mmx_plugin.so
+@so lib/vlc/plugins/video_chroma/libi422_yuy2_sse2_plugin.so

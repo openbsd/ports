@@ -1,4 +1,4 @@
-$OpenBSD: patch-compat_Makefile_am,v 1.2 2019/11/16 18:28:19 ajacoutot Exp $
+$OpenBSD: patch-compat_Makefile_am,v 1.3 2019/12/01 22:44:13 ajacoutot Exp $
 
 Trying to link a static archive with non-PIC objects to
 plugins is not portable.
@@ -10,7 +10,7 @@ Index: compat/Makefile.am
 -pkglib_LTLIBRARIES = libcompat.la
 +noinst_LTLIBRARIES = libcompat.la
  libcompat_la_SOURCES = dummy.c
- libcompat_la_LIBADD = $(LTLIBOBJS)
+ libcompat_la_LIBADD = $(LTLIBOBJS) $(LIBRT) $(LIBM)
 -libcompat_la_LDFLAGS = -no-undefined -static
 +libcompat_la_LDFLAGS = -no-undefined
  

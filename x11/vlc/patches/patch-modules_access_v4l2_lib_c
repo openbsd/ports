@@ -1,11 +1,12 @@
-$OpenBSD: patch-modules_access_v4l2_lib_c,v 1.1 2016/01/23 08:09:50 ajacoutot Exp $
+$OpenBSD: patch-modules_access_v4l2_lib_c,v 1.2 2019/12/01 22:44:13 ajacoutot Exp $
 
 Linux driver doesn't exist on OpenBSD and adjust dlopen() use
 for OpenBSD.
 
---- modules/access/v4l2/lib.c.orig	Sat Jan  9 21:59:47 2016
-+++ modules/access/v4l2/lib.c	Sat Jan  9 22:00:24 2016
-@@ -50,9 +50,7 @@ static void v4l2_lib_load (void)
+Index: modules/access/v4l2/lib.c
+--- modules/access/v4l2/lib.c.orig
++++ modules/access/v4l2/lib.c
+@@ -54,9 +54,7 @@ static void v4l2_lib_load (void)
  {
      void *h;
  
@@ -14,5 +15,5 @@ for OpenBSD.
 -        h = dlopen ("libv4l2.so.0", RTLD_LAZY | RTLD_LOCAL);
 +    h = dlopen ("libv4l2.so", RTLD_LAZY | RTLD_LOCAL);
      if (h == NULL)
-         goto fallback;
+         return;
  

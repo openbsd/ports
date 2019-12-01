@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_posix_thread_c,v 1.3 2019/11/16 18:28:19 ajacoutot Exp $
+$OpenBSD: patch-src_posix_thread_c,v 1.4 2019/12/01 22:44:13 ajacoutot Exp $
 
 Make use of clock_gettime() on OpenBSD. Until we have per-process
 timers and can enable _POSIX_TIMERS in unistd.h.
@@ -6,7 +6,7 @@ timers and can enable _POSIX_TIMERS in unistd.h.
 Index: src/posix/thread.c
 --- src/posix/thread.c.orig
 +++ src/posix/thread.c
-@@ -65,7 +65,7 @@
+@@ -62,7 +62,7 @@
  # define _POSIX_MONOTONIC_CLOCK (-1)
  #endif
  
@@ -15,8 +15,8 @@ Index: src/posix/thread.c
  static unsigned vlc_clock_prec;
  
  # if (_POSIX_MONOTONIC_CLOCK > 0) && (_POSIX_CLOCK_SELECTION > 0)
-@@ -848,7 +848,7 @@ void vlc_control_cancel (int cmd, ...)
-  */
+@@ -625,7 +625,7 @@ void vlc_control_cancel (int cmd, ...)
+ 
  mtime_t mdate (void)
  {
 -#if (_POSIX_TIMERS > 0)

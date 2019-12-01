@@ -1,9 +1,10 @@
-$OpenBSD: patch-modules_access_v4l2_v4l2_h,v 1.1 2016/01/23 08:09:50 ajacoutot Exp $
+$OpenBSD: patch-modules_access_v4l2_v4l2_h,v 1.2 2019/12/01 22:44:13 ajacoutot Exp $
 
 Use OpenBSD's videoio.h header.
 
---- modules/access/v4l2/v4l2.h.orig	Sat Jan  9 21:39:10 2016
-+++ modules/access/v4l2/v4l2.h	Sat Jan  9 21:51:49 2016
+Index: modules/access/v4l2/v4l2.h
+--- modules/access/v4l2/v4l2.h.orig
++++ modules/access/v4l2/v4l2.h
 @@ -18,7 +18,12 @@
   * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
   *****************************************************************************/
@@ -16,4 +17,4 @@ Use OpenBSD's videoio.h header.
 +#endif
  
  /* libv4l2 functions */
- extern int v4l2_fd_open (int, int);
+ extern int (*v4l2_fd_open) (int, int);
