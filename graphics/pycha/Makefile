@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 21:15:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/12/01 03:27:50 kmos Exp $
 
 COMMENT = 		Python charting module
 
@@ -15,6 +15,8 @@ MODPY_PI = 		Yes
 
 MODULES = 		lang/python
 MODPY_SETUPTOOLS = 	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests/*.py
 
 RUN_DEPENDS = 		graphics/py-cairo
 
