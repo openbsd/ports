@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/12/01 14:24:17 kirby Exp $
 
 COMMENT=		lightweight Gtk+3 based image viewer
 
-DISTNAME=		geeqie-1.4
+DISTNAME=		geeqie-1.5.1
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
 EPOCH=			0
-REVISION=		1
 
 HOMEPAGE=		http://geeqie.org/
 
@@ -45,6 +44,7 @@ CONFIGURE_ARGS=		--disable-doxygen-doc \
 			--disable-lua \
 			--disable-ffmpegthumbnailer \
 			--disable-gpu-accel \
+			--disable-pdf \
 			--enable-gtk3 \
 			--with-htmldir=${PREFIX}/share/doc/geeqie \
 			--with-readmedir=${PREFIX}/share/doc/geeqie
