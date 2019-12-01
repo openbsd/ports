@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/05/12 22:15:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/12/01 20:59:12 fcambus Exp $
 bin/yle-dl
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/yledl/exitcodes.py
 lib/python${MODPY_VERSION}/site-packages/yledl/exitcodes.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/extractors.py
 lib/python${MODPY_VERSION}/site-packages/yledl/extractors.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/ffprobe.py
+lib/python${MODPY_VERSION}/site-packages/yledl/ffprobe.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/geolocation.py
 lib/python${MODPY_VERSION}/site-packages/yledl/geolocation.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/hds.py
@@ -37,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/yledl/streamfilters.py
 lib/python${MODPY_VERSION}/site-packages/yledl/streamfilters.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/streamflavor.py
 lib/python${MODPY_VERSION}/site-packages/yledl/streamflavor.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/streamprobe.py
+lib/python${MODPY_VERSION}/site-packages/yledl/streamprobe.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/subtitles.py
 lib/python${MODPY_VERSION}/site-packages/yledl/subtitles.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/timestamp.py

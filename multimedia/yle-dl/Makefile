@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2019/12/01 10:37:49 fcambus Exp $
+# $OpenBSD: Makefile,v 1.25 2019/12/01 20:59:12 fcambus Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
-GH_TAGNAME =		20190614
+GH_TAGNAME =		20191022
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 
 COMMENT =		download videos from YLE Areena
 
 CATEGORIES =		multimedia
 
-HOMEPAGE =		http://aajanki.github.io/yle-dl/
+HOMEPAGE =		https://aajanki.github.io/yle-dl/
 MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 
 # GPLv3+
