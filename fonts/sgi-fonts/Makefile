@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/12/01 14:55:22 fcambus Exp $
 
 COMMENT =	bitmap fonts from SGI
 
 DISTNAME =	sgi-fonts
 PKGNAME =	${DISTNAME}-1.0
+REVISION =	0
 
 CATEGORIES =	fonts
-
-HOMEPAGE =	http://oss.sgi.com/projects/sgi_propack/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
