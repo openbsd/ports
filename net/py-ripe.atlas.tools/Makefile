@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/12/01 02:22:12 kmos Exp $
 
 COMMENT =		official command-line client for RIPE Atlas
 
@@ -17,8 +17,12 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests/test*.py tests/*/*.py
 
 MODULES =		lang/python
+
+PORTHOME =		${WRKDIST}
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
@@ -34,8 +38,5 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}
-
-# runs into some problem with namespace
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
