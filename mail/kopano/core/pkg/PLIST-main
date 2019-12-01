@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2019/11/16 20:01:20 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2019/12/01 20:34:46 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -24,6 +24,7 @@ bin/kopano-migration-imap
 @bin bin/kopano-oof
 @bin bin/kopano-passwd
 @bin bin/kopano-stats
+@bin bin/kopano-vcfimport
 include/icalmapi/
 include/icalmapi/ICalToMAPI.h
 include/icalmapi/MAPIToICal.h
@@ -181,11 +182,11 @@ lib/mapi.d/kopano.inf
 lib/mapi.d/zcontacts.inf
 lib/pkgconfig/kopano.pc
 lib/python${MODPY_VERSION}/site-packages/MAPI/
-lib/python${MODPY_VERSION}/site-packages/MAPI-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/MAPI-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/MAPI-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/MAPI-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/MAPI-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/MAPI-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/MAPI-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/MAPI-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/MAPI-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/MAPI-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/MAPI/Defs.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Struct.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Tags.py
@@ -223,11 +224,11 @@ lib/python${MODPY_VERSION}/site-packages/_libfreebusy.so
 lib/python${MODPY_VERSION}/site-packages/icalmapi.py
 lib/python${MODPY_VERSION}/site-packages/inetmapi.py
 lib/python${MODPY_VERSION}/site-packages/kopano/
-lib/python${MODPY_VERSION}/site-packages/kopano-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kopano-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kopano-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kopano-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kopano-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -318,33 +319,33 @@ lib/python${MODPY_VERSION}/site-packages/kopano/user.py
 lib/python${MODPY_VERSION}/site-packages/kopano/utils.py
 lib/python${MODPY_VERSION}/site-packages/kopano/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_backup/
-lib/python${MODPY_VERSION}/site-packages/kopano_backup-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_backup-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_backup-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_backup-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_backup-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_backup-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kopano_backup-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kopano_backup-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_backup-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_backup-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_backup/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_backup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano_backup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_backup/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_backup/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_cli/
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_cli/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_cli/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_cli/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -353,11 +354,11 @@ lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}ve
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/pst.py
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_presence/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -368,11 +369,11 @@ lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_spreed.py
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_xmpp.py
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/
-lib/python${MODPY_VERSION}/site-packages/kopano_search-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_search-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_search-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_search-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_search-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_search/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -386,22 +387,22 @@ lib/python${MODPY_VERSION}/site-packages/kopano_search/plugin_xapian.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/xmltotext.xslt
 lib/python${MODPY_VERSION}/site-packages/kopano_spamd/
-lib/python${MODPY_VERSION}/site-packages/kopano_spamd-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_spamd-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_spamd-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_spamd-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_spamd-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_spamd/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_spamd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano_spamd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_spamd/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_spamd/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_utils/
-lib/python${MODPY_VERSION}/site-packages/kopano_utils-8.7.85-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_utils-8.7.85-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_utils-8.7.85-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_utils-8.7.85-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_utils-8.7.85-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano_utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -441,6 +442,7 @@ libexec/kopano/
 @man man/man1/kopano-oof.1
 @man man/man1/kopano-passwd.1
 @man man/man1/kopano-stats.1
+@man man/man1/kopano-vcfimport.1
 @man man/man5/kopano-admin.cfg.5
 @man man/man5/kopano-archiver.cfg.5
 @man man/man5/kopano-backup.cfg.5

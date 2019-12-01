@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/11/16 20:01:20 robert Exp $
+# $OpenBSD: Makefile,v 1.48 2019/12/01 20:34:46 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -58,6 +58,7 @@ WANTLIB-main += xcb xcb-render xcb-shm
 WANTLIB-main += cairo fribidi glib-2.0 gobject-2.0 graphite2
 WANTLIB-main += gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 png rrd
+WANTLIB-main += lber sasl2
 
 # Do not substitute MODULE_NAME
 UPDATE_PLIST_ARGS+=	-i MODULE_NAME
@@ -138,6 +139,8 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore companies_common.sh \
 		users_common.sh
+
+SUBST_VARS+=	V
 
 post-patch:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python

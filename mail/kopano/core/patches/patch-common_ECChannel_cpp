@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_ECChannel_cpp,v 1.4 2019/11/16 20:01:20 robert Exp $
+$OpenBSD: patch-common_ECChannel_cpp,v 1.5 2019/12/01 20:34:46 robert Exp $
 
 Index: common/ECChannel.cpp
 --- common/ECChannel.cpp.orig
@@ -33,13 +33,3 @@ Index: common/ECChannel.cpp
  		struct sockaddr_storage addr{};
  		arglen = sizeof(addr);
  		ret = getsockname(fd, reinterpret_cast<struct sockaddr *>(&addr), &arglen);
-@@ -917,7 +923,8 @@ static int ec_fdtable_socket_ai(const ec_socket &sk)
- 
- ec_socket::~ec_socket()
- {
--	freeaddrinfo(m_ai);
-+	if (m_ai)
-+		freeaddrinfo(m_ai);
- 	if (m_fd >= 0)
- 		close(m_fd);
- }
