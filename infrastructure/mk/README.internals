@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.15 2017/08/24 13:25:38 espie Exp $
+$OpenBSD: README.internals,v 1.16 2019/12/01 09:36:29 espie Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -125,8 +125,14 @@ than you would think.
 - () forks a subshell.  If you need to syntactally keep a list of commands
 together, "{ cmd1; cmd2; }"   is the way to do it.
 
+- prefer if/then/fi shell constructs to complicated && / || expressions.
+Especially since the shell has tricky precedence rules.
+
 - use trap to clean up at the end of a command. That's mostly used for
 caching stuff (depfile and cache), but also for the locking mechanism.
+beware of existing traps in shell fragments (_depfile_fragment, 
+_cache_fragment, _SIMPLE_LOCK).  Re-using trap will reset. The only way
+around that is to fork a subshell (see the subpackage target).
 
 - exec is often used for tail recursion: it replaces the shell with the
 executed command. BUT beware of pending traps, as you will lose them.
@@ -158,6 +164,11 @@ you have to be explicit and set them when you run a command.
 
 When things get ambiguous, This document uses $$var for a shell variable,
 ${VAR} for a variable set in make, and VAR for an environment variables.
+
+VAR != cmd  will run a command *every time* in make. Prefer
+VAR !!= cmd   which will run it only when needed.
+(the old semantics was kept because some makefiles use != for the side effect
+of always running the command and don't care about the value)
 
 pkgpath.mk
 ----------
@@ -422,11 +433,19 @@ _CHECK_DEPENDS: save all depends prior to tweaking them, just in case.
 
 
 _PERL_FIX_SHAR make visible ?
-TODO document:
+
+TODO fully document:
 	MAKE_JOBS
 	PARALLEL_BUILD
 	PARALLEL_INSTALL
 	XAUTHORITY for interactive tests
+
+MAKE_JOBS is set by dpb based on DPB_PROPERTIES=parallel
+PARALLEL_BUILD is currently used to control passing MAKE_JOBS as make -j.
+(some ports do MAKE_JOBS differently: libreoffice, jdk)
+
+Probably time to rename that and really document it.
+PARALLEL_INSTALL is unused.
 fishy: FLAVORS tests ?
 fishy: TEST_STATUS_IGNORE
 
