@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.44 2019/09/30 11:44:18 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.45 2019/12/02 23:32:29 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -20,6 +20,11 @@ MODGHC_BIN =		${LOCALBASE}/bin/ghc
 # just lang/ghc.
 .if ${PKGPATH} != "lang/ghc"
 BUILD_DEPENDS +=	lang/ghc
+
+# There seems to be a race condition in ghc-pkg (for ghc-8.6) which
+# is triggered when a port build runs ghc-pkg recache while dpb(1)
+# recycles unused hs-packages.
+DPB_PROPERTIES +=	nojunk
 
 # Set to "cabal" to get the typical Cabal targets defined. Add "haddock"
 # to generate API documentation using Haddock. Add "register" to create
