@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/02 16:14:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/12/02 13:48:29 bcallah Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -76,6 +76,13 @@ CONFIGURE_ARGS = 	--disable-debug \
 
 # /usr/bin/ld.lld: error: undefined symbol: std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(unsigned long long)
 CONFIGURE_ARGS +=	--disable-js-shell
+
+# Build failure on mips64(,el}. Related bug on Debian:
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=908486
+# error: no matching function for call to 'js::jit::LInstructionHelper<1, 1, 0>::LInstructionHelper()'
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+CONFIGURE_ARGS +=	--disable-ion
+.endif
 
 SO_VERSION =		${LIBmozjs-${MOZILLA_VERSION}_VERSION}
 SUBST_VARS +=		SO_VERSION
