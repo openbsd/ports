@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1505 2019/11/26 11:49:02 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1506 2019/12/02 10:36:51 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1183,6 +1183,7 @@ _EXCLUDE_DEBUG_PLISTS = ${_WRKDEBUG} ${_WRKDEBUG}/Makefile
 PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
 
 _pkg${_S} = ${_PKGFILE${_S}}
+_pkg_cookie${_S} = ${_PACKAGE_COOKIE${_S}}
 
 .  if ${DEBUG_PACKAGES:M${_S}}
 _DBG_PKG_ARGS${_S} := ${PKG_ARGS${_S}}
@@ -1194,6 +1195,7 @@ _DBG_PKG_ARGS${_S} += -DFULLPKGPATH=debug/${FULLPKGPATH${_S}}
 _DBG_PKG_ARGS${_S} += -f ${_WRKDEBUG}/${PLIST${_S}:T}
 _EXCLUDE_DEBUG_PLISTS += ${_WRKDEBUG}/${PLIST${_S}:T}
 _pkg${_S} += ${_DBG_PKGFILE${_S}}
+_pkg_cookie${_S} += ${_DBG_PACKAGE_COOKIE${_S}}
 .  endif
 
 # Finish filling out package command, and package dependencies
@@ -2073,8 +2075,8 @@ ${_CACHE_REPO}${_p}:
 
 # The real package
 
-${_PACKAGE_COOKIE${_S}}:
-	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
+${_pkg_cookie${_S}}:
+	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${_PKG_REPO${_S}} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} != "no" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@${_INSTALL_CACHE_REPO} ${_CACHE_REPO}
 	@cd ${.CURDIR}; gotit=true; for p in ${_pkg${_S}}; do \
