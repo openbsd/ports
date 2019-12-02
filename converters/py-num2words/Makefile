@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/15 12:13:04 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/02 21:45:27 kmos Exp $
 
 COMMENT =	convert numbers to words
 
@@ -20,5 +20,8 @@ FLAVOR ?=
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+
+TEST_DEPENDS =		devel/py-docopt${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

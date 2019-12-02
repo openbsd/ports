@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1 2019/12/02 21:45:27 kmos Exp $
+
+delegator isn't ported and we've patched out those tests
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -75,5 +75,4 @@ setup(
+     classifiers=CLASSIFIERS,
+     scripts=['bin/num2words'],
+     install_requires=["docopt>=0.6.2"],
+-    tests_require=['delegator.py'],
+ )

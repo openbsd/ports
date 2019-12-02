@@ -1,0 +1,22 @@
+$OpenBSD: patch-tests_test_cli_py,v 1.1 2019/12/02 21:45:27 kmos Exp $
+
+Delegator not imported yet, so skip these tests
+
+Index: tests/test_cli.py
+--- tests/test_cli.py.orig
++++ tests/test_cli.py
+@@ -20,11 +20,13 @@ from __future__ import unicode_literals
+ 
+ import os
+ import unittest
++import pytest
+ 
++pytest.skip("delegator not ported to OpenBSD yet", allow_module_level=True)
++
+ import delegator
+ 
+ import num2words
+-
+ 
+ class CliCaller(object):
+ 
