@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/09/24 20:54:39 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2019/12/02 11:26:13 sthen Exp $
 @newgroup _c-icap:716
 @newuser _c-icap:716:_c-icap:daemon:c-icap user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/c-icap/*
@@ -46,11 +46,11 @@ include/c_icap/txt_format.h
 include/c_icap/types_ops.h
 include/c_icap/util.h
 lib/c_icap/
-lib/c_icap/dnsbl_tables.so
-lib/c_icap/shared_cache.so
-lib/c_icap/srv_echo.so
-lib/c_icap/srv_ex206.so
-lib/c_icap/sys_logger.so
+@so lib/c_icap/dnsbl_tables.so
+@so lib/c_icap/shared_cache.so
+@so lib/c_icap/srv_echo.so
+@so lib/c_icap/srv_ex206.so
+@so lib/c_icap/sys_logger.so
 lib/libicapapi.la
 @lib lib/libicapapi.so.${LIBicapapi_VERSION}
 @man man/man8/c-icap-client.8
