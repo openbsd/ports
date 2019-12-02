@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/12/02 04:42:47 kmos Exp $
 
 COMMENT=		library to implement a Unix daemon process
 
@@ -18,6 +18,7 @@ MODPY_PI =		Yes
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
 
 TEST_DEPENDS=	devel/py-minimock \
 			sysutils/py-lockfile
