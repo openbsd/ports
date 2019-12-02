@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.122 2019/09/22 00:04:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2019/12/02 12:19:55 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.12.2
+DISTNAME=	mutt-1.13.0
 EPOCH=		3
 
 CATEGORIES=	mail
@@ -64,9 +64,12 @@ CONFIGURE_ARGS+=	--enable-debug
 ## standard flavours:
 
 .if ${FLAVOR:Mgpgme}
-CONFIGURE_ARGS+= --enable-gpgme
-LIB_DEPENDS+=	security/gpgme
-WANTLIB+=	assuan gpg-error gpgme
+CONFIGURE_ARGS+= --enable-autocrypt \
+		--enable-gpgme \
+		--with-sqlite3
+LIB_DEPENDS+=	databases/sqlite3 \
+		security/gpgme
+WANTLIB+=	assuan gpg-error gpgme sqlite3
 .endif
 
 .if ${FLAVOR:Msasl}
