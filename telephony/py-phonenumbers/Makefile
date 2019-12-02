@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/02 05:20:32 kmos Exp $
 
 COMMENT =	port of Google's libphonenumber library
 #'
@@ -19,6 +19,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests/*.py
 
 FLAVORS =	python3
 FLAVOR ?=
