@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/05 16:32:02 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/02 14:35:35 bket Exp $
 @conflict scrotwm-*
 @pkgpath x11/scrotwm
 bin/scrotwm
@@ -6,25 +6,13 @@ bin/scrotwm
 @lib lib/libswmhack.so.${LIBswmhack_VERSION}
 @man man/man1/spectrwm.1
 share/examples/spectrwm/
-@sample share/spectrwm/
 share/examples/spectrwm/baraction.sh
-@mode 0555
-@sample share/spectrwm/baraction.sh
 share/examples/spectrwm/initscreen.sh
-@sample share/spectrwm/initscreen.sh
 share/examples/spectrwm/screenshot.sh
-@sample share/spectrwm/screenshot.sh
 share/examples/spectrwm/spectrwm.conf
-@sample ${SYSCONFDIR}/spectrwm.conf
 share/examples/spectrwm/spectrwm_cz.conf
-@sample ${SYSCONFDIR}/spectrwm_cz.conf
 share/examples/spectrwm/spectrwm_es.conf
-@sample ${SYSCONFDIR}/spectrwm_es.conf
 share/examples/spectrwm/spectrwm_fr.conf
-@sample ${SYSCONFDIR}/spectrwm_fr.conf
 share/examples/spectrwm/spectrwm_fr_ch.conf
-@sample ${SYSCONFDIR}/spectrwm_fr_ch.conf
 share/examples/spectrwm/spectrwm_se.conf
-@sample ${SYSCONFDIR}/spectrwm_se.conf
 share/examples/spectrwm/spectrwm_us.conf
-@sample ${SYSCONFDIR}/spectrwm_us.conf

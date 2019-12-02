@@ -1,11 +1,9 @@
-$OpenBSD: patch-spectrwm_c,v 1.12 2019/09/26 03:08:34 bket Exp $
-
-pledge(2) support based on https://github.com/conformal/spectrwm/pull/217
+$OpenBSD: patch-spectrwm_c,v 1.13 2019/12/02 14:35:35 bket Exp $
 
 Index: spectrwm.c
 --- spectrwm.c.orig
 +++ spectrwm.c
-@@ -291,7 +291,7 @@ uint32_t		swm_debug = 0
+@@ -296,7 +296,7 @@ uint32_t		swm_debug = 0
  #define SWM_CONF_KEYMAPPING	(1)
  
  #ifndef SWM_LIB
@@ -14,53 +12,3 @@ Index: spectrwm.c
  #endif
  
  char			**start_argv;
-@@ -1354,6 +1354,9 @@ expand_tilde(const char *s)
- 	ppwd = strlen(user) == 0 ? getpwuid(getuid()) : getpwnam(user);
- 	free(user);
- 
-+	if (pledge("stdio proc exec rpath", NULL) == -1)
-+		err(1, "pledge");
-+
- 	if (ppwd == NULL)
- 		result = strdup(sc);
- 	else
-@@ -3085,6 +3088,9 @@ xft_init(struct swm_region *r)
- 		free(str);
- 	}
- 
-+	if (pledge("stdio proc exec", NULL) == -1)
-+		err(1, "pledge");
-+
- 	if (bar_font == NULL)
- 		errx(1, "unable to open a font");
- 
-@@ -12469,6 +12475,9 @@ main(int argc, char *argv[])
- 	if (setlocale(LC_CTYPE, "") == NULL || setlocale(LC_TIME, "") == NULL)
- 		warnx("no locale support");
- 
-+	if (pledge("stdio proc exec rpath getpw dns inet unix", NULL) == -1)
-+		err(1, "pledge");
-+
- 	/* handle some signals */
- 	bzero(&sact, sizeof(sact));
- 	sigemptyset(&sact.sa_mask);
-@@ -12486,6 +12495,9 @@ main(int argc, char *argv[])
- 	if ((display = XOpenDisplay(0)) == NULL)
- 		errx(1, "can not open display");
- 
-+	if (pledge("stdio proc exec rpath getpw", NULL) == -1)
-+		err(1, "pledge");
-+
- 	conn = XGetXCBConnection(display);
- 	if (xcb_connection_has_error(conn))
- 		errx(1, "can not get XCB connection");
-@@ -12673,6 +12685,9 @@ noconfig:
- 		xcb_flush(conn);
- 	}
- done:
-+	if (pledge("stdio proc", NULL) == -1)
-+		err(1, "pledge");
-+
- 	shutdown_cleanup();
- 
- 	return (0);

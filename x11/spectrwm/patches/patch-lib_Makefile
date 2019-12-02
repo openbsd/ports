@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile,v 1.1 2019/01/04 16:21:43 bket Exp $
+$OpenBSD: patch-lib_Makefile,v 1.2 2019/12/02 14:35:35 bket Exp $
 
 Index: lib/Makefile
 --- lib/Makefile.orig
@@ -11,4 +11,4 @@ Index: lib/Makefile
 +CFLAGS+= -std=c99 -Wmissing-prototypes -Wall -Wextra -Wshadow -Wno-uninitialized
  CFLAGS+= -fPIC
  CFLAGS+= -I${X11BASE}/include
- 
+ LDADD+= -L${X11BASE}/lib -lX11
