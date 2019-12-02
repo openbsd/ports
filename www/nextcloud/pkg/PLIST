@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2019/10/29 07:24:03 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/12/02 07:07:18 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -5393,6 +5393,8 @@ nextcloud/apps/accessibility/js/accessibility.js.map
 nextcloud/apps/accessibility/l10n/
 nextcloud/apps/accessibility/l10n/af.js
 nextcloud/apps/accessibility/l10n/af.json
+nextcloud/apps/accessibility/l10n/ar.js
+nextcloud/apps/accessibility/l10n/ar.json
 nextcloud/apps/accessibility/l10n/bg.js
 nextcloud/apps/accessibility/l10n/bg.json
 nextcloud/apps/accessibility/l10n/ca.js
@@ -5445,6 +5447,8 @@ nextcloud/apps/accessibility/l10n/ko.js
 nextcloud/apps/accessibility/l10n/ko.json
 nextcloud/apps/accessibility/l10n/lt_LT.js
 nextcloud/apps/accessibility/l10n/lt_LT.json
+nextcloud/apps/accessibility/l10n/lv.js
+nextcloud/apps/accessibility/l10n/lv.json
 nextcloud/apps/accessibility/l10n/mk.js
 nextcloud/apps/accessibility/l10n/mk.json
 nextcloud/apps/accessibility/l10n/nb.js
@@ -6204,6 +6208,8 @@ nextcloud/apps/dav/l10n/lt_LT.js
 nextcloud/apps/dav/l10n/lt_LT.json
 nextcloud/apps/dav/l10n/lv.js
 nextcloud/apps/dav/l10n/lv.json
+nextcloud/apps/dav/l10n/mk.js
+nextcloud/apps/dav/l10n/mk.json
 nextcloud/apps/dav/l10n/nb.js
 nextcloud/apps/dav/l10n/nb.json
 nextcloud/apps/dav/l10n/nb_NO.js
@@ -9406,6 +9412,7 @@ nextcloud/apps/files_versions/lib/Events/CreateVersionEvent.php
 nextcloud/apps/files_versions/lib/Expiration.php
 nextcloud/apps/files_versions/lib/Hooks.php
 nextcloud/apps/files_versions/lib/Sabre/
+nextcloud/apps/files_versions/lib/Sabre/Plugin.php
 nextcloud/apps/files_versions/lib/Sabre/RestoreFolder.php
 nextcloud/apps/files_versions/lib/Sabre/RootCollection.php
 nextcloud/apps/files_versions/lib/Sabre/VersionCollection.php
@@ -10078,8 +10085,6 @@ nextcloud/apps/logreader/js/Search.js
 nextcloud/apps/logreader/js/index.js
 nextcloud/apps/logreader/js/unserialize.js
 nextcloud/apps/logreader/l10n/
-nextcloud/apps/logreader/l10n/af.js
-nextcloud/apps/logreader/l10n/af.json
 nextcloud/apps/logreader/l10n/ar.js
 nextcloud/apps/logreader/l10n/ar.json
 nextcloud/apps/logreader/l10n/ast.js
@@ -10140,8 +10145,6 @@ nextcloud/apps/logreader/l10n/et_EE.js
 nextcloud/apps/logreader/l10n/et_EE.json
 nextcloud/apps/logreader/l10n/eu.js
 nextcloud/apps/logreader/l10n/eu.json
-nextcloud/apps/logreader/l10n/fa.js
-nextcloud/apps/logreader/l10n/fa.json
 nextcloud/apps/logreader/l10n/fi.js
 nextcloud/apps/logreader/l10n/fi.json
 nextcloud/apps/logreader/l10n/fr.js
@@ -10190,8 +10193,6 @@ nextcloud/apps/logreader/l10n/sr.js
 nextcloud/apps/logreader/l10n/sr.json
 nextcloud/apps/logreader/l10n/sv.js
 nextcloud/apps/logreader/l10n/sv.json
-nextcloud/apps/logreader/l10n/th.js
-nextcloud/apps/logreader/l10n/th.json
 nextcloud/apps/logreader/l10n/tr.js
 nextcloud/apps/logreader/l10n/tr.json
 nextcloud/apps/logreader/l10n/zh_CN.js
@@ -10352,6 +10353,8 @@ nextcloud/apps/nextcloud_announcements/l10n/lt_LT.js
 nextcloud/apps/nextcloud_announcements/l10n/lt_LT.json
 nextcloud/apps/nextcloud_announcements/l10n/lv.js
 nextcloud/apps/nextcloud_announcements/l10n/lv.json
+nextcloud/apps/nextcloud_announcements/l10n/mk.js
+nextcloud/apps/nextcloud_announcements/l10n/mk.json
 nextcloud/apps/nextcloud_announcements/l10n/nb.js
 nextcloud/apps/nextcloud_announcements/l10n/nb.json
 nextcloud/apps/nextcloud_announcements/l10n/nl.js
@@ -11139,6 +11142,8 @@ nextcloud/apps/recommendations/l10n/ru.js
 nextcloud/apps/recommendations/l10n/ru.json
 nextcloud/apps/recommendations/l10n/sk.js
 nextcloud/apps/recommendations/l10n/sk.json
+nextcloud/apps/recommendations/l10n/sl.js
+nextcloud/apps/recommendations/l10n/sl.json
 nextcloud/apps/recommendations/l10n/sr.js
 nextcloud/apps/recommendations/l10n/sr.json
 nextcloud/apps/recommendations/l10n/sv.js
@@ -12447,6 +12452,8 @@ nextcloud/apps/text/l10n/de_DE.js
 nextcloud/apps/text/l10n/de_DE.json
 nextcloud/apps/text/l10n/el.js
 nextcloud/apps/text/l10n/el.json
+nextcloud/apps/text/l10n/eo.js
+nextcloud/apps/text/l10n/eo.json
 nextcloud/apps/text/l10n/es.js
 nextcloud/apps/text/l10n/es.json
 nextcloud/apps/text/l10n/eu.js
@@ -12479,6 +12486,8 @@ nextcloud/apps/text/l10n/pt_BR.js
 nextcloud/apps/text/l10n/pt_BR.json
 nextcloud/apps/text/l10n/pt_PT.js
 nextcloud/apps/text/l10n/pt_PT.json
+nextcloud/apps/text/l10n/ro.js
+nextcloud/apps/text/l10n/ro.json
 nextcloud/apps/text/l10n/ru.js
 nextcloud/apps/text/l10n/ru.json
 nextcloud/apps/text/l10n/sq.js
@@ -13476,6 +13485,15 @@ nextcloud/apps/viewer/appinfo/signature.json
 nextcloud/apps/viewer/img/
 nextcloud/apps/viewer/img/app.svg
 nextcloud/apps/viewer/js/
+nextcloud/apps/viewer/js/chunks/
+nextcloud/apps/viewer/js/chunks/0-46a26cbede8ce1c05803.js
+nextcloud/apps/viewer/js/chunks/0-46a26cbede8ce1c05803.js.map
+nextcloud/apps/viewer/js/chunks/0-4781b5f3c63244a59ec5.js
+nextcloud/apps/viewer/js/chunks/0-4781b5f3c63244a59ec5.js.map
+nextcloud/apps/viewer/js/chunks/0-5cfb84d66715d0aa06b9.js
+nextcloud/apps/viewer/js/chunks/0-5cfb84d66715d0aa06b9.js.map
+nextcloud/apps/viewer/js/chunks/0-aadd90ccc9081e33d1d4.js
+nextcloud/apps/viewer/js/chunks/0-aadd90ccc9081e33d1d4.js.map
 nextcloud/apps/viewer/js/viewer.js
 nextcloud/apps/viewer/js/viewer.js.map
 nextcloud/apps/viewer/l10n/
@@ -13951,8 +13969,6 @@ nextcloud/core/doc/admin/_images/2-updates.png
 nextcloud/core/doc/admin/_images/2fa-admin-settings.png
 nextcloud/core/doc/admin/_images/2fa-app-install.png
 nextcloud/core/doc/admin/_images/add_storage.png
-nextcloud/core/doc/admin/_images/admin_filehandling-1.png
-nextcloud/core/doc/admin/_images/admin_filehandling-2.png
 nextcloud/core/doc/admin/_images/amazons3.png
 nextcloud/core/doc/admin/_images/antivirus-app.png
 nextcloud/core/doc/admin/_images/antivirus-config.png
@@ -14090,6 +14106,7 @@ nextcloud/core/doc/admin/_sources/configuration_server/activity_configuration.rs
 nextcloud/core/doc/admin/_sources/configuration_server/antivirus_configuration.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_server/automatic_configuration.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_server/background_jobs_configuration.rst.txt
+nextcloud/core/doc/admin/_sources/configuration_server/bruteforce_configuration.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_server/caching_configuration.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_server/config_sample_php_parameters.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_server/email_configuration.rst.txt
@@ -14292,6 +14309,7 @@ nextcloud/core/doc/admin/configuration_server/activity_configuration.html
 nextcloud/core/doc/admin/configuration_server/antivirus_configuration.html
 nextcloud/core/doc/admin/configuration_server/automatic_configuration.html
 nextcloud/core/doc/admin/configuration_server/background_jobs_configuration.html
+nextcloud/core/doc/admin/configuration_server/bruteforce_configuration.html
 nextcloud/core/doc/admin/configuration_server/caching_configuration.html
 nextcloud/core/doc/admin/configuration_server/config_sample_php_parameters.html
 nextcloud/core/doc/admin/configuration_server/email_configuration.html
