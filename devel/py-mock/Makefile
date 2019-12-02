@@ -1,37 +1,33 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/12/02 22:47:52 kmos Exp $
 
 COMMENT=		python mocking and patching library for testing
 
-MODPY_EGG_VERSION=	2.0.0
+MODPY_EGG_VERSION=	3.0.5
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		1
 
-HOMEPAGE=		http://www.voidspace.org.uk/python/mock/
+HOMEPAGE=		https://mock.readthedocs.io/en/latest/
+
+MAINTAINER=		Kurt Mosiejczuk <kmos@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
-BUILD_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}
-RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
-			devel/py-pbr${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR}
 
-FLAVORS =		python3
-FLAVOR ?=
+FLAVORS=		python3
+FLAVOR?=
 
-MODPY_PI =		Yes
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+
+# Tests are currently missing from tarball
+MODPY_PYTEST=		Yes
 
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-funcsigs
 .endif
-
-post-patch:
-	cd ${WRKSRC}/mock/tests && perl -i -pe 's/unittest2/unittest/g' *.py
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>
