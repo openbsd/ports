@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/12/02 11:23:17 sthen Exp $
 
 COMMENT=	SMTP support for PHP
 
-DISTNAME=	Net_SMTP-1.8.1
+DISTNAME=	Net_SMTP-1.9.0
 CATEGORIES=	net
 
 MODULES=	www/pear
