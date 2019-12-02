@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2019/11/30 11:58:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/12/02 12:20:15 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	20191129
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -48,9 +49,12 @@ FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/neomutt"
 DEBUG+=		-g
 
 .if ${FLAVOR:Mgpgme}
-CONFIGURE_ARGS+= --gpgme
-LIB_DEPENDS+=	security/gpgme
-WANTLIB+=	assuan gpg-error gpgme
+CONFIGURE_ARGS+= --autocrypt \
+		--gpgme \
+		--sqlite
+LIB_DEPENDS+=	databases/sqlite3 \
+		security/gpgme
+WANTLIB+=	assuan gpg-error gpgme sqlite3
 .endif
 
 .if ${FLAVOR:Msasl}
