@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/02 05:06:07 kmos Exp $
 
 COMMENT=	python bindings to libstatgrab
 
@@ -23,16 +23,18 @@ MODULES =	lang/python
 FLAVORS=	python3
 FLAVOR?=
 
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	test.py
+
+TESTLIBDIR =		lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
+TEST_ENV +=		PYTHONPATH=${TESTLIBDIR}
+
 LIB_DEPENDS=	sysutils/libstatgrab>=0.91
-TEST_DEPENDS=	${BUILD_PKGPATH}
 
 # distributed statgrab.c needs rebuilding with newer cython for py37
 BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
 
 post-extract:
 	rm ${WRKSRC}/statgrab.c
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} test.py
 
 .include <bsd.port.mk>
