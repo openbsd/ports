@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/11/19 09:30:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/12/02 22:20:38 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -8,7 +8,7 @@ BIN_BOOTSTRAP_VERSION = 1.13
 COMMENT =		Go programming language
 
 VERSION =		1.13.3
-REVISION =		0
+REVISION =		1
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
@@ -87,6 +87,7 @@ do-configure:
 do-build:
 	@cd ${WRKSRC} && \
 		ulimit -d $$(ulimit -H -d) && \
+		${SETENV} ${MAKE_ENV} \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		GOROOT=${WRKDIST} \
@@ -101,6 +102,7 @@ do-build:
 do-test:
 	@cd ${WRKSRC} && \
 		ulimit -d $$(ulimit -H -d) -n 256 && \
+		${SETENV} ${MAKE_ENV} \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		GOCACHE=${WRKDIST}/go-cache \
