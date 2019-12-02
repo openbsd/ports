@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/23 16:18:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/12/02 14:16:45 bket Exp $
 
 COMMENT=		python library for building powerful interactive CLI
 
-MODPY_EGG_VERSION=	2.0.10
+# !!! do not update blindly: devel/ipython requires a specific version
+PORTROACH=		ignore:1
+
+MODPY_EGG_VERSION=	1.0.15
 DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-EPOCH=			0
+EPOCH=			1
 
 CATEGORIES=		devel
 
