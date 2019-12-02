@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1916 2019/11/29 01:36:06 kn Exp $
+# $OpenBSD: Makefile,v 1.1917 2019/12/02 22:43:24 kmos Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1355,6 +1355,8 @@
      SUBDIR += py-cflow2dot
      SUBDIR += py-chai
      SUBDIR += py-chai,python3
+     SUBDIR += py-characteristic
+     SUBDIR += py-characteristic,python3
      SUBDIR += py-cheetah
      SUBDIR += py-cheetah,python3
      SUBDIR += py-click
@@ -1429,6 +1431,8 @@
      SUBDIR += py-fastimport
      SUBDIR += py-fastimport,python3
      SUBDIR += py-faulthandler
+     SUBDIR += py-fields
+     SUBDIR += py-fields,python3
      SUBDIR += py-filebytes
      SUBDIR += py-filebytes,python3
      SUBDIR += py-flaky
