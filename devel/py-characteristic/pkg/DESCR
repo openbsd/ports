@@ -1,0 +1,5 @@
+characteristic: Python attributes without boilerplate.
+
+characteristic is an MIT-licensed Python package with class decorators
+that ease the chores of implementing the most common attribute-related
+object protocols.
