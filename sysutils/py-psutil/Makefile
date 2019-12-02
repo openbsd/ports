@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/12/02 15:31:36 kmos Exp $
 
 COMMENT =		library to retrieve system information and utilisation
 
@@ -20,8 +20,10 @@ WANTLIB += kvm pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-TEST_DEPENDS =		${BUILD_PKGPATH} \
-			devel/py-mock${MODPY_FLAVOR}
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	${TESTLIBDIR}/psutil/tests
+
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -29,5 +31,8 @@ FLAVOR ?=
 .if ! ${FLAVOR:Mpython3}
 TEST_DEPENDS +=		net/py-ipaddress${MODPY_FLAVOR}
 .endif
+
+TESTLIBDIR =		lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
+TEST_ENV +=		PYTHONPATH=${TESTLIBDIR}
 
 .include <bsd.port.mk>
