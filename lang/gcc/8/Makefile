@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2019/11/30 18:20:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/12/03 21:18:26 cwen Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
 # XXX: sparc64
-ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64# powerpc
+ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
 
 # XXX workaround for "ld: error: cp-demangle.c:(.debug_info+0x30115): has
 # non-ABS relocation R_386_GOTOFF against symbol '.LC60'".
@@ -25,7 +25,7 @@ ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-$V-1.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-2.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-$V-1.tar.xz
-ADASTRAP-powerpc = adastrap-powerpc-$V-1.tar.xz
+ADASTRAP-powerpc = adastrap-powerpc-$V-2.tar.xz
 ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
