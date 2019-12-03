@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2019/11/01 22:31:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.54 2019/12/03 21:26:38 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -10,6 +10,7 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-languages.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-pnp-ids.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-config.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-rr.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-systemd.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-wall-clock.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
 lib/girepository-1.0/GnomeDesktop-3.0.typelib
