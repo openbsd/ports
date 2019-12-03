@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.305 2019/11/14 19:02:50 landry Exp $
+# $OpenBSD: Makefile,v 1.306 2019/12/03 17:04:25 landry Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64 i386 aarch64
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	68.2.2
+MOZILLA_VERSION =	68.3.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-REVISION =		0
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
@@ -88,6 +87,10 @@ WANTLIB-main += ${WANTLIB} X11-xcb Xcursor Xi intl xcb xcb-shm
 CONFIGURE_ARGS +=	--enable-calendar
 
 ALL_TARGET =	default
+
+post-patch:
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/third_party/rust/bindgen/.cargo-checksum.json
 
 post-install:
 	# install prefs
