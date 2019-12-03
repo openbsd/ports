@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/04 09:55:46 feinerer Exp $
+# $OpenBSD: Makefile,v 1.5 2019/12/03 17:14:54 feinerer Exp $
 
 COMMENT =	PDF parser and analyzer
 
-MODPY_EGG_VERSION =	20191103
+MODPY_EGG_VERSION =	20191125
 DISTNAME =		pdfminer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
