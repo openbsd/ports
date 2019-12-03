@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/01 19:28:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/12/03 13:28:19 bcallah Exp $
 
 V =		0.60pl20190731
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
 DISTNAME =	dxx-rebirth_${V:S/0.60pl//g}-src
 PKGNAME =	dxx-rebirth-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://www.dxx-rebirth.com/
@@ -24,7 +25,8 @@ MODULES =	devel/scons
 MODSCONS_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS}" \
 		LINKFLAGS="-L${LOCALBASE}/lib"
-MODSCONS_FLAGS =	ignore_unknown_variables=1 verbosebuild=1
+MODSCONS_FLAGS =	ignore_unknown_variables=1 verbosebuild=1 \
+			show_tool_version=false
 
 BUILD_DEPENDS =	devel/boost,-main
 LIB_DEPENDS =	devel/physfs \
