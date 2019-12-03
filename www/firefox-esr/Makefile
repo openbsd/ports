@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.110 2019/11/14 19:02:24 landry Exp $
+# $OpenBSD: Makefile,v 1.111 2019/12/03 17:02:20 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
-MOZILLA_VERSION =	68.2.0esr
+MOZILLA_VERSION =	68.3.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-REVISION =		0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
@@ -71,7 +70,7 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/third_party/rust/cssparser/.cargo-checksum.json
+		${WRKSRC}/third_party/rust/bindgen/.cargo-checksum.json
 
 post-install:
 	# install prefs

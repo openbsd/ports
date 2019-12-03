@@ -1,0 +1,54 @@
+$OpenBSD: patch-third_party_rust_bindgen_src_ir_derive_rs,v 1.1 2019/12/03 17:02:20 landry Exp $
+
+fix build with rust 1.39.0
+https://github.com/rust-lang/rust-bindgen/commit/9696bc1795c75b1b527e2b70d9baf3ced9e3c154.diff
+
+Index: third_party/rust/bindgen/src/ir/derive.rs
+--- third_party/rust/bindgen/src/ir/derive.rs.orig
++++ third_party/rust/bindgen/src/ir/derive.rs
+@@ -92,10 +92,10 @@ pub trait CanDeriveOrd {
+ ///
+ /// Initially we assume that we can derive trait for all types and then
+ /// update our understanding as we learn more about each type.
+-#[derive(Debug, Copy, Clone, PartialEq, Eq, Ord)]
++#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
+ pub enum CanDerive {
+-    /// No, we cannot.
+-    No,
++    /// Yes, we can derive automatically.
++    Yes,
+ 
+     /// The only thing that stops us from automatically deriving is that
+     /// array with more than maximum number of elements is used.
+@@ -103,29 +103,13 @@ pub enum CanDerive {
+     /// This means we probably can "manually" implement such trait.
+     Manually,
+ 
+-    /// Yes, we can derive automatically.
+-    Yes,
++    /// No, we cannot.
++    No,
+ }
+ 
+ impl Default for CanDerive {
+     fn default() -> CanDerive {
+         CanDerive::Yes
+-    }
+-}
+-
+-impl cmp::PartialOrd for CanDerive {
+-    fn partial_cmp(&self, rhs: &Self) -> Option<cmp::Ordering> {
+-        use self::CanDerive::*;
+-
+-        let ordering = match (*self, *rhs) {
+-            (x, y) if x == y => cmp::Ordering::Equal,
+-            (No, _) => cmp::Ordering::Greater,
+-            (_, No) => cmp::Ordering::Less,
+-            (Manually, _) => cmp::Ordering::Greater,
+-            (_, Manually) => cmp::Ordering::Less,
+-            _ => unreachable!()
+-        };
+-        Some(ordering)
+     }
+ }
+ 
