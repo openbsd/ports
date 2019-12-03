@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/07/12 20:44:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2019/12/03 16:00:24 sthen Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -12,12 +12,13 @@ DISTNAME=	gc-${VERSION}
 
 PKGNAME-atomic=	libatomic_ops-${LIBAO_VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
-REVISION=	3
+REVISION=	4
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}
 
 MULTI_PACKAGES=	-main -atomic
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 SHARED_LIBS +=	gc		4.0	# 1.3
 SHARED_LIBS +=	gccpp		0.0	# 1.3
