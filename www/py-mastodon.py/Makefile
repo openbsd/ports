@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/08/27 03:16:26 pamela Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/03 02:05:20 pamela Exp $
 
 COMMENT =		python wrapper for the Mastodon API
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
+MODPY_PYTEST =		Yes
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
@@ -32,7 +33,11 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			www/py-http_ece${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
-# missing test dependencies test-vcr and vcrpy
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
+			devel/py-test-mock${MODPY_FLAVOR} \
+			devel/py-test-runner${MODPY_FLAVOR} \
+			devel/py-test-vcr${MODPY_FLAVOR} \
+			www/py-requests-mock${MODPY_FLAVOR} \
+			www/py-vcrpy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
