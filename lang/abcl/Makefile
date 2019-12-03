@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2019/09/22 15:46:37 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2019/12/03 19:46:34 solene Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
-V =			1.5.0
+V =			1.6.0
+JUNIT_V =		4.12
 DISTNAME =		abcl-src-${V}
-REVISION =		3
 PKGNAME =		abcl-${V}
 PKG_ARCH =		*
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://common-lisp.net/project/armedbear/
+HOMEPAGE =		https://abcl.org/
 
 MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 
@@ -17,9 +17,15 @@ MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/releases/$V/
+MASTER_SITES0 =		https://github.com/junit-team/junit4/releases/download/r${JUNIT_V}/
+
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			junit-${JUNIT_V}.jar:0
+
+EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		java
-MODJAVA_VER =		1.8
+MODJAVA_VER =		1.8+
 MODJAVA_BUILD =		ant
 MODJAVA_BUILD_TARGET_NAME =	abcl.jar
 
@@ -40,7 +46,9 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/abcl_completions ${ABCL_HOME}
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant ${TEST_TARGET}
+	cp -v ${FULLDISTDIR}/junit-${JUNIT_V}.jar ${WRKDIR}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
+	-Djunit.path=${WRKDIR}/junit-${JUNIT_V}.jar ${TEST_TARGET}
 
 # maintainer target to generate completions file
 completions: install

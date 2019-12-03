@@ -653,6 +653,7 @@ jvm:%make-protected-node
 jvm:%make-synchronized-node
 jvm:%make-tagbody-node
 jvm:%make-unwind-protect-node
+jvm:%print-jvm-class-name
 jvm:%with-compilation-unit
 jvm:abcl-class-file-p
 jvm:accumulate-operand
@@ -740,6 +741,7 @@ jvm:constant-float/int-p
 jvm:constant-member-ref-p
 jvm:constant-name/type-p
 jvm:constant-p
+jvm:constant-pool-index
 jvm:constant-string-p
 jvm:constant-utf8-p
 jvm:constant-value-attribute-p
@@ -2364,6 +2366,7 @@ system:backtrace
 system:backtrace-as-list
 system:base-classname
 system:bit-array-same-dimensions-p
+system:bogus-sublist-error
 system:boot-classloader
 system:built-in-function-p
 system:cache-emf
@@ -2509,6 +2512,7 @@ system:dump-vector
 system:empty-environment-p
 system:ensure-available-symbols
 system:ensure-input-stream
+system:enumerate-resource-directories
 system:environment-add-function-definition
 system:environment-add-macro-definition
 system:environment-add-symbol-binding
@@ -2558,6 +2562,7 @@ system:find-system
 system:find-system-jar
 system:fixnum-constant-value
 system:fixnum-type-p
+system:flatten
 system:float-denormalized-p
 system:float-infinity-p
 system:float-nan-p
@@ -2631,9 +2636,11 @@ system:internal-debug
 system:invoke-debugger-report-condition
 system:istep
 system:java-long-type-p
+system:java.class.path
 system:keyword-supplied-p
 system:keywordify
 system:known-type-p
+system:lambda-list-broken-key-list-error
 system:lambda-name
 system:last-cons-of
 system:layout-class
@@ -2954,6 +2961,7 @@ system:svset
 system:swap-slots
 system:symbol-macro-p
 system:symbolicate
+system:system-artifacts-are-jars-p
 system:system-jar-p
 system:system-stream-p
 system:to-file

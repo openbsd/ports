@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/31 06:32:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/12/03 19:46:34 solene Exp $
 abcl/
 abcl/abcl-contrib.jar
 abcl/abcl.jar
@@ -476,3 +476,4 @@ abcl/src/org/armedbear/lisp/with-standard-io-syntax.lisp
 abcl/src/org/armedbear/lisp/write-sequence.lisp
 abcl/src/org/armedbear/lisp/zip.java
 bin/abcl
+share/doc/pkg-readmes/${PKGSTEM}
