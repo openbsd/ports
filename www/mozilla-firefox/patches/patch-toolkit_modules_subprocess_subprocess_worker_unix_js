@@ -1,0 +1,22 @@
+$OpenBSD: patch-toolkit_modules_subprocess_subprocess_worker_unix_js,v 1.1 2019/12/03 17:00:46 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1598511
+
+Index: toolkit/modules/subprocess/subprocess_worker_unix.js
+--- toolkit/modules/subprocess/subprocess_worker_unix.js.orig
++++ toolkit/modules/subprocess/subprocess_worker_unix.js
+@@ -396,9 +396,11 @@ class Process extends BaseProcess {
+         libc.getcwd(cwd, cwd.length);
+ 
+         if (libc.chdir(options.workdir) < 0) {
+-          throw new Error(
+-            `Unable to change working directory to ${options.workdir}`
+-          );
++          if (OS.Constants.Sys.Name != "OpenBSD") {
++            throw new Error(
++              `Unable to change working directory to ${options.workdir}`
++            );
++          }
+         }
+       }
+ 

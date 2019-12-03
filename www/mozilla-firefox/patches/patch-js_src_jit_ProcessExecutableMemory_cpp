@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.6 2019/11/05 09:34:35 landry Exp $
+$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.7 2019/12/03 17:00:46 landry Exp $
 
 Don't ComputeRandomAllocationAddress on OpenBSD
 https://bugzilla.mozilla.org/show_bug.cgi?id=1586912
@@ -8,9 +8,9 @@ https://hg.mozilla.org/mozilla-central/rev/747fc2e159ba remove in 72
 Index: js/src/jit/ProcessExecutableMemory.cpp
 --- js/src/jit/ProcessExecutableMemory.cpp.orig
 +++ js/src/jit/ProcessExecutableMemory.cpp
-@@ -318,6 +318,12 @@ static void DecommitPages(void* addr, size_t bytes) {
- }
- #else  // !XP_WIN
+@@ -322,6 +322,12 @@ static void DecommitPages(void* addr, size_t bytes) {
+ #  endif
+ 
  static void* ComputeRandomAllocationAddress() {
 +#ifdef __OpenBSD__
 +  // OpenBSD already has random mmap and the idea that all x64 cpus
@@ -21,7 +21,7 @@ Index: js/src/jit/ProcessExecutableMemory.cpp
    uint64_t rand = js::GenerateRandomSeed();
  
  #  ifdef HAVE_64BIT_BUILD
-@@ -337,6 +343,7 @@ static void* ComputeRandomAllocationAddress() {
+@@ -341,6 +347,7 @@ static void* ComputeRandomAllocationAddress() {
    // Ensure page alignment.
    uintptr_t mask = ~uintptr_t(gc::SystemPageSize() - 1);
    return (void*)uintptr_t(rand & mask);

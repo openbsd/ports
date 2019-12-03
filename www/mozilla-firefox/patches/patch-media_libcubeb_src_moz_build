@@ -1,0 +1,15 @@
+$OpenBSD: patch-media_libcubeb_src_moz_build,v 1.1 2019/12/03 17:00:46 landry Exp $
+
+https://hg.mozilla.org/integration/autoland/rev/58992c594ec7
+
+Index: media/libcubeb/src/moz.build
+--- media/libcubeb/src/moz.build.orig
++++ media/libcubeb/src/moz.build
+@@ -49,6 +49,7 @@ if CONFIG['OS_ARCH'] == 'OpenBSD':
+         'cubeb_sndio.c',
+     ]
+     DEFINES['USE_SNDIO'] = True
++    DEFINES['DISABLE_LIBSNDIO_DLOPEN'] = True
+ 
+ if CONFIG['OS_TARGET'] == 'Darwin':
+     SOURCES += [

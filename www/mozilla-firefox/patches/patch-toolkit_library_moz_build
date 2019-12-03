@@ -1,0 +1,19 @@
+$OpenBSD: patch-toolkit_library_moz_build,v 1.1 2019/12/03 17:00:46 landry Exp $
+
+https://hg.mozilla.org/integration/autoland/rev/58992c594ec7
+
+Index: toolkit/library/moz.build
+--- toolkit/library/moz.build.orig
++++ toolkit/library/moz.build
+@@ -265,6 +265,11 @@ OS_LIBS += CONFIG['ICONV_LIBS']
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('cocoa', 'uikit'):
+     OS_LIBS += CONFIG['TK_LIBS']
+ 
++if CONFIG['OS_ARCH'] == 'OpenBSD':
++    OS_LIBS += [
++        'sndio',
++    ]
++
+ if CONFIG['MOZ_ENABLE_DBUS']:
+     OS_LIBS += CONFIG['MOZ_DBUS_GLIB_LIBS']
+ 

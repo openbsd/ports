@@ -1,0 +1,18 @@
+$OpenBSD: patch-dom_ipc_moz_build,v 1.1 2019/12/03 17:00:46 landry Exp $
+
+make MOZ_APP_NAME available as a define
+https://bugzilla.mozilla.org/show_bug.cgi?id=1584839
+https://hg.mozilla.org/mozilla-central/rev/396a73e240dfcb4273ec0657df07284b172d9ca6
+
+Index: dom/ipc/moz.build
+--- dom/ipc/moz.build.orig
++++ dom/ipc/moz.build
+@@ -210,6 +210,8 @@ if CONFIG['OS_ARCH'] != 'WINNT':
+ 
+ DEFINES['BIN_SUFFIX'] = '"%s"' % CONFIG['BIN_SUFFIX']
+ 
++DEFINES['MOZ_APP_NAME'] = '"%s"' % CONFIG['MOZ_APP_NAME']
++
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'android':
+     DEFINES['MOZ_ENABLE_FREETYPE'] = True
+ 

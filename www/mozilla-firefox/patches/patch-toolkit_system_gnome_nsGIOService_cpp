@@ -1,0 +1,30 @@
+$OpenBSD: patch-toolkit_system_gnome_nsGIOService_cpp,v 1.3 2019/12/03 17:00:46 landry Exp $
+
+sandboxing prevents access to mime handlers, defer to xdg-open
+https://bugzilla.mozilla.org/show_bug.cgi?id=1580271
+https://hg.mozilla.org/mozilla-central/rev/0e0f33fd72b8334cfdde8b4dfdb3f237a60a43a7
+
+Index: toolkit/system/gnome/nsGIOService.cpp
+--- toolkit/system/gnome/nsGIOService.cpp.orig
++++ toolkit/system/gnome/nsGIOService.cpp
+@@ -497,7 +497,20 @@ nsGIOService::GetAppForMimeType(const nsACString& aMim
+     return NS_ERROR_NOT_AVAILABLE;
+   }
+ 
++#if defined(__OpenBSD__) && defined(MOZ_SANDBOX)
++  // g_app_info_get_default_for_type will fail on OpenBSD's veiled filesystem
++  // since we most likely don't have direct access to the binaries that are
++  // registered as defaults for this type.  Fake it up by just executing
++  // xdg-open via gio-launch-desktop (which we do have access to) and letting
++  // it figure out which program to execute for this MIME type
++  GAppInfo* app_info = g_app_info_create_from_commandline(
++    "/usr/local/bin/xdg-open",
++    nsPrintfCString("System default for %s", content_type).get(),
++    G_APP_INFO_CREATE_NONE, NULL);
++#else
+   GAppInfo* app_info = g_app_info_get_default_for_type(content_type, false);
++#endif
++
+   if (app_info) {
+     nsGIOMimeApp* mozApp = new nsGIOMimeApp(app_info);
+     NS_ENSURE_TRUE(mozApp, NS_ERROR_OUT_OF_MEMORY);

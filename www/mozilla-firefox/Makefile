@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.404 2019/11/14 16:59:21 landry Exp $
+# $OpenBSD: Makefile,v 1.405 2019/12/03 17:00:46 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	70.0.1
+MOZILLA_VERSION =	71.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =	2
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	85.0
+SO_VERSION =	86.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -54,6 +53,8 @@ BUILD_DEPENDS +=	devel/cbindgen>=0.9.1
 # 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
 .endif
+# unveil support relies on xdg-open
+RUN_DEPENDS +=		devel/xdg-utils
 
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm ${COMPILER_LIBCXX}
 
@@ -67,7 +68,7 @@ MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
-SUBST_VARS +=	LOCALBASE X11BASE
+SUBST_VARS +=	LOCALBASE X11BASE MOZILLA_PROJECT
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
@@ -96,5 +97,9 @@ post-install:
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
+
+.for f in unveil.content unveil.gpu unveil.main pledge.content pledge.gpu pledge.main
+	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
+.endfor
 
 .include <bsd.port.mk>

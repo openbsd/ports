@@ -1,0 +1,11 @@
+/dev/drm0 rw
+
+/usr/local/lib/firefox r
+/usr/local/lib/gdk-pixbuf-2.0 r
+/usr/X11R6/lib r
+/usr/share/locale r
+/usr/local/share r
+
+/tmp rwc
+
+~/.Xauthority r
