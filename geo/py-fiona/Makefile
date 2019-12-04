@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/12/04 13:40:53 landry Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
-BROKEN =	needs update to cope with gdal 3
 
-MODPY_EGG_VERSION =	1.8.6
+MODPY_EGG_VERSION =	1.8.11
 DISTNAME =	Fiona-${MODPY_EGG_VERSION:S/post/pl/}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	geo
 
