@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/12/04 16:31:17 sthen Exp $
+
+BROKEN = fails with node update
 
 COMMENT =	time series data visualization and graphing software
 
