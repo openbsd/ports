@@ -1,8 +1,22 @@
-$OpenBSD: patch-setup_py,v 1.7 2018/06/23 15:25:18 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.8 2019/12/04 13:26:13 kmos Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -606,6 +606,8 @@ def get_data_files():
+@@ -10,12 +10,7 @@ VERSION = "7.43.0.2"
+ 
+ import glob, os, re, sys, subprocess
+ import distutils
+-try:
+-    import wheel
+-    if wheel:
+-        from setuptools import setup
+-except ImportError:
+-    from distutils.core import setup
++from setuptools import setup
+ from distutils.extension import Extension
+ from distutils.util import split_quoted
+ from distutils.version import LooseVersion
+@@ -606,6 +601,8 @@ def get_data_files():
      data_files = []
      if sys.platform == "win32":
          datadir = os.path.join("doc", PACKAGE)

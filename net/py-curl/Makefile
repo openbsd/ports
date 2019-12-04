@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/11/08 21:57:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.47 2019/12/04 13:26:13 kmos Exp $
 
 COMMENT=	Python interface to cURL library
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	7.43.0.2
 DISTNAME=	pycurl-${MODPY_EGG_VERSION}
 PKGNAME=	py-curl-${MODPY_EGG_VERSION}
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://pycurl.sourceforge.net/
 
@@ -19,6 +19,7 @@ WANTLIB += crypto curl nghttp2 pthread ssl z
 MODULES=	lang/python
 
 MODPY_PI=	Yes
+MODPY_SETUPTOOLS =	Yes
 
 FLAVORS=	python3
 FLAVOR?=
@@ -29,9 +30,6 @@ SUBST_VARS+=	MODPY_PY_PREFIX
 
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests
-
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/setup.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
