@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/09/04 06:31:08 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2019/12/04 11:17:54 landry Exp $
 
 COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion
 GH_PROJECT =		cbindgen
-GH_TAGNAME =		v0.9.1
-REVISION =		0
+GH_TAGNAME =		v0.11.0
 
 CATEGORIES =		devel
 
@@ -68,7 +67,7 @@ MODCARGO_CRATES +=      winapi  0.3.7   # MIT/Apache-2.0
 MODCARGO_CRATES +=      winapi-i686-pc-windows-gnu      0.4.0   # MIT/Apache-2.0
 MODCARGO_CRATES +=      winapi-x86_64-pc-windows-gnu    0.4.0   # MIT/Apache-2.0
 
-WANTLIB += c c++abi m pthread
+WANTLIB += c c++abi pthread
 
 TEST_ENV =	CC=${CC} CXX=${CXX}
 
