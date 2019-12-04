@@ -1,0 +1,3 @@
+The Unicode consortium provides a file containing annotations on many
+unicode characters. This library contains a compiled version of this
+file so that programs can access this data quickly and easily.
