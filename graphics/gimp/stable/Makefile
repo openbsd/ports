@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.126 2019/11/29 12:15:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2019/12/04 11:34:55 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME =	gimp-2.10.12
+DISTNAME =	gimp-2.10.14
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -37,7 +37,7 @@ WANTLIB += lcms lcms2 lzma m mng mypaint-1.3 nettle openjp2 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib rsvg-2 tasn1 tiff unistring
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z zstd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2019/11/29 12:15:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.43 2019/12/04 11:34:55 giovanni Exp $
 bin/gimp
 @bin bin/gimp-2.10
 bin/gimp-console
@@ -315,8 +315,6 @@ lib/gimp/2.0/plug-ins/colorxhtml/colorxhtml.py
 lib/gimp/2.0/plug-ins/colorxhtml/colorxhtml.pyc
 lib/gimp/2.0/plug-ins/compose/
 @bin lib/gimp/2.0/plug-ins/compose/compose
-lib/gimp/2.0/plug-ins/contrast-normalize/
-@bin lib/gimp/2.0/plug-ins/contrast-normalize/contrast-normalize
 lib/gimp/2.0/plug-ins/contrast-retinex/
 @bin lib/gimp/2.0/plug-ins/contrast-retinex/contrast-retinex
 lib/gimp/2.0/plug-ins/crop-zealous/
@@ -333,8 +331,6 @@ lib/gimp/2.0/plug-ins/destripe/
 @bin lib/gimp/2.0/plug-ins/destripe/destripe
 lib/gimp/2.0/plug-ins/edge-dog/
 @bin lib/gimp/2.0/plug-ins/edge-dog/edge-dog
-lib/gimp/2.0/plug-ins/edge-neon/
-@bin lib/gimp/2.0/plug-ins/edge-neon/edge-neon
 lib/gimp/2.0/plug-ins/emboss/
 @bin lib/gimp/2.0/plug-ins/emboss/emboss
 lib/gimp/2.0/plug-ins/file-aa/
@@ -493,12 +489,8 @@ lib/gimp/2.0/plug-ins/metadata-editor/
 @bin lib/gimp/2.0/plug-ins/metadata-editor/metadata-editor
 lib/gimp/2.0/plug-ins/metadata-viewer/
 @bin lib/gimp/2.0/plug-ins/metadata-viewer/metadata-viewer
-lib/gimp/2.0/plug-ins/newsprint/
-@bin lib/gimp/2.0/plug-ins/newsprint/newsprint
 lib/gimp/2.0/plug-ins/nl-filter/
 @bin lib/gimp/2.0/plug-ins/nl-filter/nl-filter
-lib/gimp/2.0/plug-ins/oilify/
-@bin lib/gimp/2.0/plug-ins/oilify/oilify
 lib/gimp/2.0/plug-ins/pagecurl/
 @bin lib/gimp/2.0/plug-ins/pagecurl/pagecurl
 lib/gimp/2.0/plug-ins/palette-offset/
@@ -3700,6 +3692,7 @@ share/gtk-doc/html/libgimp/GimpProcBrowserDialog.html
 share/gtk-doc/html/libgimp/GimpProgressBar.html
 share/gtk-doc/html/libgimp/GimpSelectButton.html
 share/gtk-doc/html/libgimp/GimpZoomPreview.html
+share/gtk-doc/html/libgimp/api-index-2-10-14.html
 share/gtk-doc/html/libgimp/api-index-2-10-2.html
 share/gtk-doc/html/libgimp/api-index-2-10-4.html
 share/gtk-doc/html/libgimp/api-index-2-10-6.html
@@ -3800,6 +3793,7 @@ share/gtk-doc/html/libgimp/style.css
 share/gtk-doc/html/libgimp/up-insensitive.png
 share/gtk-doc/html/libgimp/up.png
 share/gtk-doc/html/libgimpbase/
+share/gtk-doc/html/libgimpbase/api-index-2-10-10.html
 share/gtk-doc/html/libgimpbase/api-index-2-10.html
 share/gtk-doc/html/libgimpbase/api-index-2-2.html
 share/gtk-doc/html/libgimpbase/api-index-2-4.html
@@ -3810,6 +3804,8 @@ share/gtk-doc/html/libgimpbase/home.png
 share/gtk-doc/html/libgimpbase/index.html
 share/gtk-doc/html/libgimpbase/left-insensitive.png
 share/gtk-doc/html/libgimpbase/left.png
+share/gtk-doc/html/libgimpbase/libgimpbase-GimpMetadata.html
+share/gtk-doc/html/libgimpbase/libgimpbase-GimpParasite.html
 share/gtk-doc/html/libgimpbase/libgimpbase-GimpValueArray.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpbaseenums.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpbasetypes.html
@@ -3819,9 +3815,7 @@ share/gtk-doc/html/libgimpbase/libgimpbase-gimpdatafiles.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpenv.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimplimits.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpmemsize.html
-share/gtk-doc/html/libgimpbase/libgimpbase-gimpmetadata.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpparam.html
-share/gtk-doc/html/libgimpbase/libgimpbase-gimpparasite.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpparasiteio.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimprectangle.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpsignal.html
@@ -3836,6 +3830,7 @@ share/gtk-doc/html/libgimpbase/style.css
 share/gtk-doc/html/libgimpbase/up-insensitive.png
 share/gtk-doc/html/libgimpbase/up.png
 share/gtk-doc/html/libgimpcolor/
+share/gtk-doc/html/libgimpcolor/GimpColorManaged.html
 share/gtk-doc/html/libgimpcolor/api-index-2-10.html
 share/gtk-doc/html/libgimpcolor/api-index-2-2.html
 share/gtk-doc/html/libgimpcolor/api-index-2-4.html
@@ -3851,7 +3846,6 @@ share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpAdaptiveSupersample.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpBilinear.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpCMYK.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpCairo.html
-share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpColorManaged.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpColorProfile.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpColorSpace.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpColorTransform.html
