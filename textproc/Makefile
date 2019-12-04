@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.610 2019/11/26 14:40:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.611 2019/12/04 08:35:21 fcambus Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -104,6 +104,7 @@
      SUBDIR += libnxml
      SUBDIR += libtextcat
      SUBDIR += libtranslate
+     SUBDIR += libuninameslist
      SUBDIR += libwpd
      SUBDIR += libxml
      SUBDIR += libxml++
