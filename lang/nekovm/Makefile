@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/30 12:01:55 sthen Exp $
-
-BROKEN-i386=	segfault during build
+# $OpenBSD: Makefile,v 1.3 2019/12/04 16:36:49 thfr Exp $
 
 COMMENT =	Neko scripting language runtime and virtual machine
 
 V =		2.3.0
 DISTNAME =	v${V:S/./-/g}
 PKGNAME =	nekovm-${V}
+REVISION =	0
 SHARED_LIBS =	neko	0.0	# 2.3.0
 CATEGORIES =	lang
 HOMEPAGE =	https://nekovm.org
@@ -22,7 +21,8 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/git
 LIB_DEPENDS =		devel/boehm-gc,-main
 
-CONFIGURE_ARGS =	-DRUN_LDCONFIG=OFF \
+CONFIGURE_ARGS =	-DNEKO_JIT_DISABLE=ON \
+			-DRUN_LDCONFIG=OFF \
 			-DWITH_APACHE=OFF \
 			-DWITH_MYSQL=OFF \
 			-DWITH_NEKOML=OFF \
