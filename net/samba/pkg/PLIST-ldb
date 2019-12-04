@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ldb,v 1.7 2019/10/07 12:50:14 jca Exp $
+@comment $OpenBSD: PLIST-ldb,v 1.8 2019/12/04 00:17:53 jca Exp $
 @conflict samba-<4.8.7p1
 @bin bin/ldbadd
 @bin bin/ldbdel
@@ -19,20 +19,19 @@ lib/pkgconfig/pyldb-util.pc
 lib/python${MODPY_VERSION}/site-packages/_ldb_text.py
 lib/python${MODPY_VERSION}/site-packages/_ldb_text.pyc
 lib/python${MODPY_VERSION}/site-packages/_ldb_text.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ldb.so
+@so lib/python${MODPY_VERSION}/site-packages/ldb.so
 lib/samba/ldb/
-lib/samba/ldb/asq.so
-lib/samba/ldb/ldap.so
-lib/samba/ldb/ldb.so
-lib/samba/ldb/paged_results.so
-lib/samba/ldb/paged_searches.so
-lib/samba/ldb/rdn_name.so
-lib/samba/ldb/sample.so
-lib/samba/ldb/server_sort.so
-lib/samba/ldb/skel.so
-lib/samba/ldb/tdb.so
-lib/samba/libldb-cmdline-samba4.so
-lib/samba/libldb-key-value-samba4.so
+@so lib/samba/ldb/asq.so
+@so lib/samba/ldb/ldap.so
+@so lib/samba/ldb/ldb.so
+@so lib/samba/ldb/paged_searches.so
+@so lib/samba/ldb/rdn_name.so
+@so lib/samba/ldb/sample.so
+@so lib/samba/ldb/server_sort.so
+@so lib/samba/ldb/skel.so
+@so lib/samba/ldb/tdb.so
+@so lib/samba/libldb-cmdline-samba4.so
+@so lib/samba/libldb-key-value-samba4.so
 @man man/man1/ldbadd.1
 @man man/man1/ldbdel.1
 @man man/man1/ldbedit.1
