@@ -1,0 +1,20 @@
+$OpenBSD: patch-fig2dev_read_c,v 1.1 2019/12/04 22:07:50 fcambus Exp $
+
+Fix for CVE-2019-19555.
+
+- Stack-based buffer overflow in read_textobject()
+
+Upstream commit 19db5fe6f77ebad91af4b4ef0defd61bd0bb358f.
+
+Index: fig2dev/read.c
+--- fig2dev/read.c.orig
++++ fig2dev/read.c
+@@ -1328,7 +1328,7 @@ read_textobject(FILE *fp)
+ 		If we do not find the CONTROL-A on this line then this must
+ 		be a multi-line text object and we will have to read more. */
+ 
+-	    n = sscanf(buf,"%*d%d%d%lf%d%d%d%lf%d%lf%lf%d%d%[^\1]%[\1]",
++	    n = sscanf(buf,"%*d%d%d%lf%d%d%d%lf%d%lf%lf%d%d%[^\1]%1[\1]",
+ 		&t->type, &t->font, &t->size, &t->pen,
+ 		&t->color, &t->depth, &t->angle,
+ 		&t->flags, &t->height, &t->length,

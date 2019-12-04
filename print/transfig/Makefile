@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2019/11/17 15:21:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.49 2019/12/04 22:07:50 fcambus Exp $
 
 COMMENT=	tools to convert Xfig's .fig files  #'
 
 VERSION=	3.2.7b
 DISTNAME=	fig2dev-${VERSION}
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX =	.tar.xz
 PKGNAME=	transfig-${VERSION}
 CATEGORIES=	print
