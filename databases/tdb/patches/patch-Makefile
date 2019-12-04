@@ -1,11 +1,13 @@
-$OpenBSD: patch-Makefile,v 1.1 2015/07/18 02:11:13 jca Exp $
---- Makefile.orig	Thu Jul 16 12:58:06 2015
-+++ Makefile	Thu Jul 16 12:58:16 2015
-@@ -1,6 +1,6 @@
- # simple makefile wrapper to run waf
+$OpenBSD: patch-Makefile,v 1.2 2019/12/04 00:14:45 jca Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -2,7 +2,7 @@
  
--WAF=WAF_MAKE=1 PATH=buildtools/bin:../../buildtools/bin:$$PATH waf
-+WAF=WAF_MAKE=1 PATH=buildtools/bin:../../buildtools/bin:$$PATH waf $(WAF_ARGS)
+ WAF_BIN=`PATH=buildtools/bin:../../buildtools/bin:$$PATH which waf`
+ WAF_BINARY=$(PYTHON) $(WAF_BIN)
+-WAF=PYTHONHASHSEED=1 WAF_MAKE=1 $(WAF_BINARY)
++WAF=PYTHONHASHSEED=1 WAF_MAKE=1 $(WAF_BINARY) $(WAF_ARGS)
  
  all:
  	$(WAF) build
