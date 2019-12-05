@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/12/04 13:26:13 kmos Exp $
+# $OpenBSD: Makefile,v 1.48 2019/12/05 18:08:21 sthen Exp $
 
 COMMENT=	Python interface to cURL library
 
@@ -33,8 +33,10 @@ MODPY_PYTEST_ARGS =	tests
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
-	mv ${PREFIX}/share/doc/${MODPY_PY_PREFIX}curl/examples \
+	mv ${PREFIX}/share/doc/pycurl/examples \
 		${PREFIX}/share/examples/${MODPY_PY_PREFIX}curl/
+	mv ${PREFIX}/share/doc/pycurl \
+		${PREFIX}/share/doc/${MODPY_PY_PREFIX}curl/
 
 TEST_DEPENDS=	${BUILD_PKGPATH} \
 		devel/py-flaky${MODPY_FLAVOR} \
