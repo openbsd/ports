@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2019/11/08 17:11:50 jca Exp $
+# $OpenBSD: Makefile,v 1.236 2019/12/05 15:24:58 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -18,7 +18,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	1
+REVISION-main =	2
 
 CATEGORIES =	devel
 
@@ -100,19 +100,12 @@ CXXFLAGS +=	-fno-ret-protector
 CXXFLAGS +=	-mno-retpoline
 .endif
 
-# Workaround relocation overflow
-.if ${MACHINE_ARCH} == "powerpc"
-# As a workaround for the size only build the PowerPC backend
-CONFIGURE_ARGS +=	-DLLVM_TARGETS_TO_BUILD="PowerPC"
-.elif ${MACHINE_ARCH} == "arm"
+.if ${MACHINE_ARCH} == "arm"
 CFLAGS +=		-mlong-calls
 CXXFLAGS +=		-mlong-calls
-.endif
-
-.if ${MACHINE_ARCH} == "powerpc"
-PKG_ARGS +=		-Dpowerpc=1
-.else
-PKG_ARGS +=		-Dpowerpc=0
+.elif ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,-relax"
+CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,-relax"
 .endif
 
 TEST_TARGET =		check check-clang check-clang-tools
