@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1510 2019/12/05 21:18:08 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1511 2019/12/05 22:07:36 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -459,7 +459,7 @@ _PKG_ADD += -L ${LOCALBASE}
 #
 PARALLEL_MAKE_FLAGS ?= -j${MAKE_JOBS}
 
-.if !defined(MAKE_JOBS) && ${DPB_PROPERTIES:Mparallel})
+.if !defined(MAKE_JOBS) && ${DPB_PROPERTIES:Mparallel}
 .  if defined(PARALLEL_MAKE_JOBS)
 MAKE_JOBS = ${PARALLEL_MAKE_JOBS}
 .  else
