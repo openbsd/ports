@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/02 22:41:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/05 05:46:03 kmos Exp $
 
 COMMENT =		container class boilerplate killer
 
 MODPY_EGG_VERSION =	5.0.0
 DISTNAME =		fields-${MODPY_EGG_VERSION}
 PKGNAME =		py-fields-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/ionelmc/python-fields
 
-MAINTAINER =		Kurt Mosiejczuk <kmos@opensbd.org>
+MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 
 # BSD Licensed
 PERMIT_PACKAGE =	Yes
