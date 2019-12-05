@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/10/24 21:10:23 sebastia Exp $
-${GEM_BIN}/puppet-lint
+@comment $OpenBSD: PLIST,v 1.14 2019/12/05 07:41:37 sebastia Exp $
+${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2019/11/07 07:43:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.27 2019/12/05 07:41:37 sebastia Exp $
 
 COMMENT=	ensure your Puppet manifests conform with the style guide
 
+REVISION =	0
 DISTNAME=	puppet-lint-2.4.2
 
 CATEGORIES=	sysutils
@@ -15,7 +16,5 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem
-
-GEM_FLAGS =	--no-format-executable
 
 .include <bsd.port.mk>
