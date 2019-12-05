@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/11/07 12:44:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.25 2019/12/05 17:16:28 sthen Exp $
 
 COMMENT=	client for certificate authorities using ACME protocols
 
@@ -24,7 +24,7 @@ MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 do-configure:
 	sed -i -e 's,/etc,${SYSCONFDIR},' \
 		-e 's,/var/lib,${LOCALSTATEDIR}/db,' \
-		${WRKSRC}/certbot/constants.py
+		${WRKSRC}/certbot/compat/misc.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/certbot
