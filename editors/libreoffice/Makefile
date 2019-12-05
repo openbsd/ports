@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2019/11/06 12:21:06 robert Exp $
+# $OpenBSD: Makefile,v 1.222 2019/12/05 21:18:08 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -136,7 +136,7 @@ PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=		-main -java -kde
 
-PSEUDO_FLAVORS=	parallel no_lang
+PSEUDO_FLAVORS=	no_lang
 FLAVORS=	debug no_java
 FLAVOR?=
 
@@ -354,15 +354,8 @@ CONFIGURE_ARGS+=--without-java
 .endif
 
 # XXX libreoffice has its own way to build things in parallel
-PARALLEL_BUILD = No
-.if defined(MAKE_JOBS)
-NCPU=		${MAKE_JOBS}
-.elif ${FLAVOR:Mparallel}
-NCPU!=		echo $$((`sysctl -n hw.ncpuonline` + 1))
-.else
-NCPU=		1
-.endif
-CONFIGURE_ARGS+=--with-parallelism=${NCPU}
+PARALLEL_MAKE_FLAGS =
+CONFIGURE_ARGS+=--with-parallelism=${MAKE_JOBS}
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=--enable-debug

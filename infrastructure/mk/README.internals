@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.16 2019/12/01 09:36:29 espie Exp $
+$OpenBSD: README.internals,v 1.17 2019/12/05 21:18:08 sthen Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -437,15 +437,16 @@ _PERL_FIX_SHAR make visible ?
 TODO fully document:
 	MAKE_JOBS
 	PARALLEL_BUILD
-	PARALLEL_INSTALL
 	XAUTHORITY for interactive tests
 
-MAKE_JOBS is set by dpb based on DPB_PROPERTIES=parallel
-PARALLEL_BUILD is currently used to control passing MAKE_JOBS as make -j.
-(some ports do MAKE_JOBS differently: libreoffice, jdk)
+MAKE_JOBS is set by dpb based on DPB_PROPERTIES=parallel or can be set
+by the user. When MAKE_JOBS is >1, PARALLEL_MAKE_FLAGS is added to
+MAKE_FLAGS, by default this contains -j${MAKE_JOBS} which works for
+most ports. Some ports do MAKE_JOBS differently (libreoffice, jdk),
+in those cases "make -j" is not wanted, so PARALLEL_MAKE_FLAGS
+should be explicitly cleared.
 
 Probably time to rename that and really document it.
-PARALLEL_INSTALL is unused.
 fishy: FLAVORS tests ?
 fishy: TEST_STATUS_IGNORE
 

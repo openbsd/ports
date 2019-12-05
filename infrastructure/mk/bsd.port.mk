@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1509 2019/12/02 18:59:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1510 2019/12/05 21:18:08 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -454,21 +454,23 @@ ALL_FAKE_FLAGS=	${MAKE_FLAGS:N-j[0-9]*} ${DESTDIRNAME}=${WRKINST} ${FAKE_FLAGS}
 _PKG_ADD += -L ${LOCALBASE}
 .endif
 
-# XXX this stuff is not production-ready, because there are too many bugs in
-# parallel make yet.  MAKE_JOBS>1 is known to work on a few ports and used
-# sparingly by dpb (DPB_PROPERTIES=parallel) for obvious gains.
+# XXX there are still many bugs in parallel make.
+# so MAKE_JOBS is used sparingly by dpb for obvious gains.
 #
-PARALLEL_BUILD ?= Yes
-PARALLEL_INSTALL ?= ${PARALLEL_BUILD}
+PARALLEL_MAKE_FLAGS ?= -j${MAKE_JOBS}
+
+.if !defined(MAKE_JOBS) && ${DPB_PROPERTIES:Mparallel})
+.  if defined(PARALLEL_MAKE_JOBS)
+MAKE_JOBS = ${PARALLEL_MAKE_JOBS}
+.  else
+MAKE_JOBS !!= sysctl -n hw.ncpuonline
+.  endif
+.endif
 MAKE_JOBS ?= 1
 
 .if ${MAKE_JOBS} != 1
-.  if ${PARALLEL_BUILD:L} == "yes"
-MAKE_FLAGS += -j${MAKE_JOBS}
-.  endif
-.  if ${PARALLEL_INSTALL:L} == "yes"
-ALL_FAKE_FLAGS += -j${MAKE_JOBS}
-.  endif
+MAKE_FLAGS += ${PARALLEL_MAKE_FLAGS}
+ALL_FAKE_FLAGS += ${PARALLEL_MAKE_FLAGS}
 .endif
 
 # Here comes the part that sets BUILD_PACKAGES and various IGNORE* up.

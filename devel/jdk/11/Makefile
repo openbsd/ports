@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/10/26 17:04:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.12 2019/12/05 21:18:08 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
@@ -84,7 +84,7 @@ USE_GMAKE=	Yes
 GMAKE=		${LOCALBASE}/bin/gmake
 
 # Don't call make -jN, instead pass MAKE_JOBS to --with-jobs
-PARALLEL_BUILD=	No
+PARALLEL_MAKE_FLAGS=
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+= AUTOCONF_VERSION=${AUTOCONF_VERSION} \
