@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/28 14:24:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/12/05 22:19:28 kmos Exp $
 
 COMMENT=	ACME protocol implementation
 
@@ -25,17 +25,13 @@ RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 SUBST_VARS=	MODPY_FLAVOR
 
-## XXX
-# imported module 'acme.jws_test' has this __file__ attribute:
-#   /usr/obj/ports/py-acme-0.25.1/acme-0.25.1/acme/jws_test.py
-# which is not the same as the test file we want to collect:
-#   /usr/obj/ports/py-acme-0.25.1/acme-0.25.1/lib/acme/jws_test.py
-NO_TEST=	Yes
+MODPY_PYTEST =	Yes
 
-# weird hangs in network-listening tests.
-#TEST_IS_INTERACTIVE=	Yes
-#
-#TEST_DEPENDS=	devel/py-funcsigs${MODPY_FLAVOR} \
-#		devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
+		security/py-josepy${MODPY_FLAVOR}
+
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS+=	devel/py-funcsigs
+.endif
 
 .include <bsd.port.mk>
