@@ -1,0 +1,33 @@
+$OpenBSD: patch-source3_lib_sysquotas_c,v 1.1 2019/12/05 10:01:52 jca Exp $
+
+Avoid printf("%s", NULL);
+
+Index: source3/lib/sysquotas.c
+--- source3/lib/sysquotas.c.orig
++++ source3/lib/sysquotas.c
+@@ -558,10 +558,10 @@ int sys_get_quota(const char *path, enum SMB_QUOTA_TYP
+ 			ret = sys_quota_backends[i].get_quota(mntpath, bdev, qtype, id, dp);
+ 			if (ret!=0) {
+ 				DEBUG(3,("sys_get_%s_quota() failed for mntpath[%s] bdev[%s] qtype[%d] id[%d]: %s.\n",
+-					fs,mntpath,bdev,qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid),strerror(errno)));
++					fs,mntpath,bdev?bdev:"(NULL)",qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid),strerror(errno)));
+ 			} else {
+ 				DEBUG(10,("sys_get_%s_quota() called for mntpath[%s] bdev[%s] qtype[%d] id[%d].\n",
+-					fs,mntpath,bdev,qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid)));
++					fs,mntpath,bdev?bdev:"(NULL)",qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid)));
+ 			}
+ 			ready = True;
+ 			break;	
+@@ -573,10 +573,10 @@ int sys_get_quota(const char *path, enum SMB_QUOTA_TYP
+ 		ret=sys_get_vfs_quota(mntpath, bdev, qtype, id, dp);
+ 		if (ret!=0) {
+ 			DEBUG(3,("sys_get_%s_quota() failed for mntpath[%s] bdev[%s] qtype[%d] id[%d]: %s\n",
+-				"vfs",mntpath,bdev,qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid),strerror(errno)));
++				"vfs",mntpath,bdev?bdev:"(NULL)",qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid),strerror(errno)));
+ 		} else {
+ 			DEBUG(10,("sys_get_%s_quota() called for mntpath[%s] bdev[%s] qtype[%d] id[%d].\n",
+-				"vfs",mntpath,bdev,qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid)));
++				"vfs",mntpath,bdev?bdev:"(NULL)",qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid)));
+ 		}
+ 	}
+ 
