@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.161 2019/12/06 09:43:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.162 2019/12/06 09:44:05 sthen Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 BROKEN-hppa =	libQtWebKit.so.3.0: undefined reference to __sync_sub_and_fetch_4
-BROKEN-arm =	invalid instruction, vmov.u32 r2, r3, s8, s9, realted to FELightingNEON.cpp
+BROKEN-arm =	invalid instruction, vmov.u32 r2, r3, s8, s9, related to FELightingNEON.cpp
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
