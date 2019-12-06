@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2019/10/06 15:34:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/12/06 14:22:26 sthen Exp $
 
-ONLY_FOR_ARCHS =	${GO_ARCHS}
-NOT_FOR_ARCHS =		aarch64
+# other GO_ARCHS machines use binary bootstraps
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Go programming language
 
