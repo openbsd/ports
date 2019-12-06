@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.65 2019/10/22 09:52:46 espie Exp $
+# $OpenBSD: proot,v 1.66 2019/12/06 13:40:46 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -555,8 +555,11 @@ sub library_sanity_check
 			$state->fatal_error("can't find library #1", $path);
 		}
 		if ($current->compare($lib) != 0) {
-			$state->fatal_error("locate library too old #1 vs #2",
-			    $path, $current->to_string);
+			my $l = $path =~ m/X11R6/ ?
+			    $state->srcroot(OpenBSD::Paths->xlocatedb) :
+			    $state->srcroot(OpenBSD::Paths->srclocatedb);
+			$state->fatal_error("locate database #1 contains old library #2 vs actual system #3",
+			    $l, $path, $current->to_string);
 		}
 	}
 	if ($state->{error}) {
