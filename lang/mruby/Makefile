@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/12 09:25:28 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2019/12/06 14:33:13 sthen Exp $
+
+BROKEN-arm =		SIGBUS
 
 COMMENT =		lightweight, embeddable implementation of ruby
 
