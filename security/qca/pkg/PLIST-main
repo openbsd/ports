@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2017/11/14 15:34:11 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2019/12/06 07:10:41 rsadowski Exp $
 @conflict qca-<=1.0
 @conflict qca2-<=2.0.3
 @pkgpath security/qca
@@ -32,5 +32,4 @@ lib/cmake/Qca/QcaTargets.cmake
 lib/pkgconfig/qca2.pc
 lib/qca/
 lib/qca/crypto/
-lib/qt4/mkspecs/features/crypto.prf
 @man man/man1/qcatool.1
