@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.193 2019/08/31 15:20:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.194 2019/12/06 14:35:18 sthen Exp $
+
+BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 
 COMMENT=		image processing tools
 
