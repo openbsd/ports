@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/12/18 09:39:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/12/06 10:44:20 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
@@ -25,40 +25,40 @@ include/cantor/session.h
 include/cantor/syntaxhelpobject.h
 include/cantor/textresult.h
 include/cantor/worksheetaccess.h
-lib/libcantor_config.so
-lib/libcantor_pythonbackend.so
+@so lib/libcantor_config.so
+@so lib/libcantor_pythonbackend.so
 @lib lib/libcantorlibs.so.${LIBcantorlibs_VERSION}
 lib/qt5/plugins/cantor/
 lib/qt5/plugins/cantor/assistants/
-lib/qt5/plugins/cantor/assistants/cantor_advancedplotassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_creatematrixassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_differentiateassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_eigenvaluesassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_eigenvectorsassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_importpackageassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_integrateassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_invertmatrixassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_plot2dassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_plot3dassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_qalculateplotassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_runscriptassistant.so
-lib/qt5/plugins/cantor/assistants/cantor_solveassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_advancedplotassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_creatematrixassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_differentiateassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_eigenvaluesassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_eigenvectorsassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_importpackageassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_integrateassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_invertmatrixassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_plot2dassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_plot3dassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_qalculateplotassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_runscriptassistant.so
+@so lib/qt5/plugins/cantor/assistants/cantor_solveassistant.so
 lib/qt5/plugins/cantor/backends/
-lib/qt5/plugins/cantor/backends/cantor_kalgebrabackend.so
-lib/qt5/plugins/cantor/backends/cantor_luabackend.so
-lib/qt5/plugins/cantor/backends/cantor_maximabackend.so
-lib/qt5/plugins/cantor/backends/cantor_nullbackend.so
-lib/qt5/plugins/cantor/backends/cantor_octavebackend.so
-lib/qt5/plugins/cantor/backends/cantor_python2backend.so
-lib/qt5/plugins/cantor/backends/cantor_python3backend.so
-lib/qt5/plugins/cantor/backends/cantor_qalculatebackend.so
-lib/qt5/plugins/cantor/backends/cantor_rbackend.so
-lib/qt5/plugins/cantor/backends/cantor_sagebackend.so
-lib/qt5/plugins/cantor/backends/cantor_scilabbackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_kalgebrabackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_luabackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_maximabackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_nullbackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_octavebackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_python2backend.so
+@so lib/qt5/plugins/cantor/backends/cantor_python3backend.so
+@so lib/qt5/plugins/cantor/backends/cantor_qalculatebackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_rbackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_sagebackend.so
+@so lib/qt5/plugins/cantor/backends/cantor_scilabbackend.so
 lib/qt5/plugins/cantor/panels/
-lib/qt5/plugins/cantor/panels/cantor_helppanelplugin.so
-lib/qt5/plugins/cantor/panels/cantor_variablemanagerplugin.so
-lib/qt5/plugins/libcantorpart.so
+@so lib/qt5/plugins/cantor/panels/cantor_helppanelplugin.so
+@so lib/qt5/plugins/cantor/panels/cantor_variablemanagerplugin.so
+@so lib/qt5/plugins/libcantorpart.so
 share/applications/org.kde.cantor.desktop
 share/cantor/
 share/cantor/maximabackend/
