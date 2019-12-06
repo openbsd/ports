@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/08/20 14:11:01 otto Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/06 14:23:42 sthen Exp $
+
+BROKEN-arm =	SIGBUS in mruby
 
 COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
