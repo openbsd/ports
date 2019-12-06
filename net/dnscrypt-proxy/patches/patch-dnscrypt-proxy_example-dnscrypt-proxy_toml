@@ -1,9 +1,9 @@
-$OpenBSD: patch-dnscrypt-proxy_example-dnscrypt-proxy_toml,v 1.8 2019/11/18 20:59:36 sthen Exp $
+$OpenBSD: patch-dnscrypt-proxy_example-dnscrypt-proxy_toml,v 1.9 2019/12/06 18:48:31 bket Exp $
 
 Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
 --- dnscrypt-proxy/example-dnscrypt-proxy.toml.orig
 +++ dnscrypt-proxy/example-dnscrypt-proxy.toml
-@@ -45,7 +45,7 @@ max_clients = 250
+@@ -47,7 +47,7 @@ max_clients = 250
  ## Note (2): this feature is not compatible with systemd socket activation.
  ## Note (3): when using -pidfile, the PID file directory must be writable by the new user
  
@@ -12,7 +12,7 @@ Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
  
  
  ## Require servers (from static + remote sources) to satisfy specific properties
-@@ -536,7 +536,7 @@ cache_neg_max_ttl = 600
+@@ -569,7 +569,7 @@ cache_neg_max_ttl = 600
  
    [sources.'public-resolvers']
    urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md', 'https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md']
@@ -21,7 +21,7 @@ Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
    minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
    prefix = ''
  
-@@ -544,7 +544,7 @@ cache_neg_max_ttl = 600
+@@ -577,7 +577,7 @@ cache_neg_max_ttl = 600
  
    [sources.'relays']
    urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/relays.md', 'https://download.dnscrypt.info/resolvers-list/v2/relays.md']
