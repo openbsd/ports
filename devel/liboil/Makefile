@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/12/06 14:30:39 sthen Exp $
+
+BROKEN-arm=	invalid asm
 
 COMMENT=	library of optimized inner loops
 
