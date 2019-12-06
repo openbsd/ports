@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/22 22:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2019/12/06 14:22:54 jca Exp $
 
 COMMENT =	Symas Lightning Memory-Mapped Database
 
 VERSION =	0.9.23
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	LMDB
 GH_PROJECT =	lmdb
@@ -23,6 +23,8 @@ MAINTAINER =	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 USE_GMAKE =		Yes
 
