@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.127 2019/12/04 11:34:55 giovanni Exp $
+# $OpenBSD: Makefile,v 1.128 2019/12/06 09:31:13 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.14
+REVISION =	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -44,8 +45,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MODULES=	textproc/intltool \
 		lang/python
 
-BUILD_DEPENDS=	graphics/gegl \
-		archivers/lzip/lzlib \
+BUILD_DEPENDS=	archivers/lzip/lzlib \
 		graphics/jasper \
 		x11/py-gtk2 \
 		net/glib2-networking \
@@ -80,8 +80,7 @@ LIB_DEPENDS=	graphics/gegl04>=0.4.4 \
 		graphics/openexr \
 		print/poppler
 
-RUN_DEPENDS=	graphics/gegl \
-		archivers/lzip/lzlib \
+RUN_DEPENDS=	archivers/lzip/lzlib \
 		graphics/jasper \
 		x11/py-gtk2 \
 		net/glib2-networking \

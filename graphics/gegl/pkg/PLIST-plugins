@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-plugins,v 1.6 2014/04/01 14:52:10 ajacoutot Exp $
-@conflict gegl-<0.1.8p0
-lib/gegl-${API_VERSION}/exr-load.so
-lib/gegl-${API_VERSION}/exr-save.so
-lib/gegl-${API_VERSION}/ff-load.so

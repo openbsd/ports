@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/24 22:35:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/12/06 09:31:13 sthen Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
 V=			0.4.18
+REVISION=		0
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
@@ -21,7 +22,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3/LGPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += babl-0.1 cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += babl-0.1 c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 intl jasper jpeg json-glib-1.0 lcms2 m
 WANTLIB += pango-1.0 pangocairo-1.0 png raw rsvg-2 tiff webp
 
@@ -59,9 +60,5 @@ CONFIGURE_ARGS=		-Dgraphviz=disabled \
 			-Dumfpack=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-post-install:
-# fix conflict with graphics/gegl; we currently only care about the libraries
-	rm -rf ${PREFIX}/bin/
 
 .include <bsd.port.mk>

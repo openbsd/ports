@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.491 2019/11/27 14:15:08 kmos Exp $
+# $OpenBSD: Makefile,v 1.492 2019/12/06 09:31:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -68,7 +68,6 @@
      SUBDIR += gdcm
      SUBDIR += gdk-pixbuf2
      SUBDIR += geeqie
-     SUBDIR += gegl
      SUBDIR += gegl03
      SUBDIR += gegl04
      SUBDIR += geomview
