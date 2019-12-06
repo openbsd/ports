@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_jvm_options,v 1.4 2019/10/24 13:27:17 pvk Exp $
+$OpenBSD: patch-config_jvm_options,v 1.5 2019/12/06 23:42:01 pvk Exp $
 
 Index: config/jvm.options
 --- config/jvm.options.orig
 +++ config/jvm.options
-@@ -101,7 +101,7 @@
+@@ -60,17 +60,17 @@
  -XX:HeapDumpPath=data
  
  # specify an alternative path for JVM fatal error logs
@@ -11,8 +11,7 @@ Index: config/jvm.options
 +-XX:ErrorFile=${VARBASE}/log/elasticsearch/hs_err_pid%p.log
  
  ## JDK 8 GC logging
- 
-@@ -109,13 +109,13 @@
+ 8:-XX:+PrintGCDetails
  8:-XX:+PrintGCDateStamps
  8:-XX:+PrintTenuringDistribution
  8:-XX:+PrintGCApplicationStoppedTime
@@ -24,7 +23,4 @@ Index: config/jvm.options
  
  # JDK 9+ GC logging
 -9-:-Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m
-+9-:-Xlog:gc*,gc+age=trace,safepoint:file=${VARBASE}/log/elasticsearch/gc.log:utctime,pid,tags:filecount=32,filesize=64m
- # due to internationalization enhancements in JDK 9 Elasticsearch need to set the provider to COMPAT otherwise
- # time/date parsing will break in an incompatible way for some date patterns and locals
- 9-:-Djava.locale.providers=COMPAT
++9-:-Xlog:gc*,gc+age=trace,safepoint:file=${VARBASE}/log/elasticsearch/gc:utctime,pid,tags:filecount=32,filesize=64m
