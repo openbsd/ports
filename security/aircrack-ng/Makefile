@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/10/05 22:33:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/12/06 14:29:40 sthen Exp $
 
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.5.2
-REVISION=		2
+REVISION=		3
 CATEGORIES=		security
 
 HOMEPAGE=		https://www.aircrack-ng.org/
@@ -46,11 +46,12 @@ PKG_ARGS+=              -Dx86=1
 .else
 PKG_ARGS+=              -Dx86=0
 .endif
-.if ${MACHINE_ARCH} == "arm"
-PKG_ARGS+=              -Darm=1
-.else
+# XXX PFRAG.arm files relate to NEON optimizations, disabled above.
+#.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "aarch64"
+#PKG_ARGS+=              -Darm=1
+#.else
 PKG_ARGS+=              -Darm=0
-.endif
+#.endif
 .if ${MACHINE_ARCH} == "powerpc"
 PKG_ARGS+=              -Dppc=1
 .else
