@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/12/06 17:40:23 solene Exp $
 
 BROKEN-i386 =		various always_inline functions require sse2, but would be inlined into function 'Loop' that is compiled without support for sse2
 
@@ -8,19 +8,19 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		OpenGL engine for idTech 1 games like doom,hexen,heretic...
 
-V =			4.1.2
+V =			4.2.4
 PKGNAME =		gzdoom-${V}
-DISTNAME =		gzdoom-src-g${V}
-REVISION =		0
+
+GH_ACCOUNT =		coelckers
+GH_PROJECT =		gzdoom
+GH_TAGNAME =		g4.2.4
+DISTNAME =		gzdoom-${GH_TAGNAME:S/g//}
 
 CATEGORIES=		games
 
 HOMEPAGE =		https://zdoom.org
 
 MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
-
-MASTER_SITES =		https://zdoom.org/files/gzdoom/src/
-EXTRACT_SUFX =		.zip
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -35,6 +35,7 @@ MODULES =		devel/cmake
 CONFIGURE_ARGS +=	-DNO_GTK=ON
 CONFIGURE_ARGS += 	-DDYN_OPENAL=NO -DDYN_MPG123=NO -DDYN_SNDFILE=NO
 CONFIGURE_ARGS +=	-DFLUIDSYNTHLIB1="libfluidsynth.so"
+CONFIGURE_ARGS +=	-DHAVE_STDINT_H=1
 
 LIB_DEPENDS =		audio/mpg123 \
 			audio/openal \
@@ -44,7 +45,5 @@ LIB_DEPENDS =		audio/mpg123 \
 			devel/sdl2
 
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}/gzdoom-g${V}
 
 .include <bsd.port.mk>
