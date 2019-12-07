@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.492 2019/12/06 09:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.493 2019/12/07 02:07:05 bcallah Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -14,6 +14,7 @@
      SUBDIR += aspect-crop
      SUBDIR += asymptote
      SUBDIR += autopano-sift-c
+     SUBDIR += azpainter
      SUBDIR += babl
      SUBDIR += barcode
      SUBDIR += birdfont
