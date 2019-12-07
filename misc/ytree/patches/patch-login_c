@@ -1,0 +1,16 @@
+$OpenBSD: patch-login_c,v 1.1 2019/12/07 01:58:13 bcallah Exp $
+
+Include sys/wait.h to avoid warnings.
+
+Index: login.c
+--- login.c.orig
++++ login.c
+@@ -8,7 +8,7 @@
+ 
+ 
+ #include "ytree.h"
+-/* #include <sys/wait.h> */  /* maybe wait.h is available */
++#include <sys/wait.h>  /* maybe wait.h is available */
+ 
+ 
+ 

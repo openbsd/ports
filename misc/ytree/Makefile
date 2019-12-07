@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/12/07 01:58:13 bcallah Exp $
 
 COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
-DISTNAME =	ytree-1.99
+DISTNAME =	ytree-2.00
 CATEGORIES=	misc
 
-HOMEPAGE=	http://www.han.de/~werner/ytree.html
+HOMEPAGE=	https://www.han.de/~werner/ytree.html
 
-MASTER_SITES=	http://www.han.de/~werner/
+MASTER_SITES=	https://www.han.de/~werner/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses readline
