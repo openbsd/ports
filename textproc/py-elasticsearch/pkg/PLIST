@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/10/24 13:33:35 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/12/07 00:37:00 pvk Exp $
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -45,7 +45,6 @@ lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}deprecation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}ilm.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}indices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}license.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}migration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/${MODPY_PYCACHE}ml.${MODPY_PYC_MAGIC_TAG}pyc
@@ -60,7 +59,6 @@ lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/data_frame.p
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/graph.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/ilm.py
-lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/indices.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/license.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/migration.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch/client/xpack/ml.py
