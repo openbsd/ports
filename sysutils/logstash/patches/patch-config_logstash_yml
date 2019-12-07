@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_logstash_yml,v 1.4 2019/10/24 13:27:52 pvk Exp $
+$OpenBSD: patch-config_logstash_yml,v 1.5 2019/12/07 00:06:22 pvk Exp $
 
 Index: config/logstash.yml
 --- config/logstash.yml.orig
@@ -12,7 +12,7 @@ Index: config/logstash.yml
  #
  # ------------ Pipeline Settings --------------
  #
-@@ -205,43 +205,9 @@
+@@ -205,7 +205,7 @@
  #   * trace
  #
  # log.level: info
@@ -21,8 +21,10 @@ Index: config/logstash.yml
  #
  # ------------ Other Settings --------------
  #
- # Where to find custom plugins
- # path.plugins: []
+@@ -215,37 +215,3 @@
+ # Flag to output log lines of each pipeline in its separate log file. Each log filename contains the pipeline.name
+ # Default is false
+ # pipeline.separate_logs: false
 -#
 -# ------------ X-Pack Settings (not applicable for OSS build)--------------
 -#

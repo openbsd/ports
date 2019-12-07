@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2019/11/07 13:26:10 pvk Exp $
+# $OpenBSD: Makefile,v 1.28 2019/12/07 00:06:22 pvk Exp $
 
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			7.4.2
-REVISION =		1
+V =			7.5.0
 DISTNAME =		logstash-oss-$V
 PKGNAME =		logstash-$V
 EPOCH =			0
