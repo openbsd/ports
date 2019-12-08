@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/13 20:12:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2019/12/08 20:25:02 jasper Exp $
 
 COMMENT =	self-contained cryptographic library for Python
 
-MODPY_EGG_VERSION =	3.9.3
+MODPY_EGG_VERSION =	3.9.4
 DISTNAME =	pycryptodome-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
 
