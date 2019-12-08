@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2019/11/13 20:53:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2019/12/08 20:29:03 jasper Exp $
 
 COMMENT =		opensource MQTT broker
 
-DISTNAME =		mosquitto-1.6.7
+DISTNAME =		mosquitto-1.6.8
 
 SHARED_LIBS +=  mosquitto                 1.0 # 1.5
 SHARED_LIBS +=  mosquittopp               1.0 # 1.5
@@ -14,6 +14,8 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # EPL/EDL
 PERMIT_PACKAGE =	Yes
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WANTLIB +=		c crypto m pthread ssl ${COMPILER_LIBCXX}
 
