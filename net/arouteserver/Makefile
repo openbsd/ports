@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/10/07 10:32:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/12/08 16:56:13 sthen Exp $
 
 COMMENT =	tool to automatically build BGP route server configurations
 
-MODPY_EGG_VERSION =	0.22.2
+MODPY_EGG_VERSION =	0.23.0
 DISTNAME =	arouteserver-${MODPY_EGG_VERSION}
 
 CATEGORIES =	net
@@ -23,10 +23,11 @@ RUN_DEPENDS =		net/aggregate6 \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
-#NO_TEST =		Yes # needs work
+NO_TEST =		Yes # needs work
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>
