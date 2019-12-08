@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/09/25 22:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2019/12/08 10:16:18 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -69,6 +69,8 @@ CONFIGURE_ARGS=		-Daalib=disabled \
 			-Dqt5=disabled \
 			-Dwaveform=disabled \
 			-Dv4l2-gudev=disabled
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:
 	sed -i 's,/dev/dsp,/dev/audio,g' \

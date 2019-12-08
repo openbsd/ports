@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/04/21 08:50:45 ajacoutot Exp $
-lib/gstreamer-${API}/libgstlibav.so
+@comment $OpenBSD: PLIST,v 1.6 2019/12/08 10:16:18 ajacoutot Exp $
+@so lib/gstreamer-${API}/libgstlibav.so

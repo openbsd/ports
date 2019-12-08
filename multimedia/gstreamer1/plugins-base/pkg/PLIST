@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/04/21 08:49:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/12/08 10:16:18 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.14.0
 @bin bin/gst-device-monitor-${API}
 @bin bin/gst-discoverer-${API}
@@ -214,38 +214,38 @@ lib/gstreamer-${API}/include/
 lib/gstreamer-${API}/include/gst/
 lib/gstreamer-${API}/include/gst/gl/
 lib/gstreamer-${API}/include/gst/gl/gstglconfig.h
-lib/gstreamer-${API}/libgstadder.so
-lib/gstreamer-${API}/libgstapp.so
-lib/gstreamer-${API}/libgstaudioconvert.so
-lib/gstreamer-${API}/libgstaudiomixer.so
-lib/gstreamer-${API}/libgstaudiorate.so
-lib/gstreamer-${API}/libgstaudioresample.so
-lib/gstreamer-${API}/libgstaudiotestsrc.so
-lib/gstreamer-${API}/libgstcdparanoia.so
-lib/gstreamer-${API}/libgstcompositor.so
-lib/gstreamer-${API}/libgstencoding.so
-lib/gstreamer-${API}/libgstgio.so
-lib/gstreamer-${API}/libgstogg.so
-lib/gstreamer-${API}/libgstopengl.so
-lib/gstreamer-${API}/libgstopus.so
-lib/gstreamer-${API}/libgstoverlaycomposition.so
-lib/gstreamer-${API}/libgstpango.so
-lib/gstreamer-${API}/libgstpbtypes.so
-lib/gstreamer-${API}/libgstplayback.so
-lib/gstreamer-${API}/libgstrawparse.so
-lib/gstreamer-${API}/libgstsndio.so
-lib/gstreamer-${API}/libgstsubparse.so
-lib/gstreamer-${API}/libgsttcp.so
-lib/gstreamer-${API}/libgsttheora.so
-lib/gstreamer-${API}/libgsttypefindfunctions.so
-lib/gstreamer-${API}/libgstvideoconvert.so
-lib/gstreamer-${API}/libgstvideorate.so
-lib/gstreamer-${API}/libgstvideoscale.so
-lib/gstreamer-${API}/libgstvideotestsrc.so
-lib/gstreamer-${API}/libgstvolume.so
-lib/gstreamer-${API}/libgstvorbis.so
-lib/gstreamer-${API}/libgstximagesink.so
-lib/gstreamer-${API}/libgstxvimagesink.so
+@so lib/gstreamer-${API}/libgstadder.so
+@so lib/gstreamer-${API}/libgstapp.so
+@so lib/gstreamer-${API}/libgstaudioconvert.so
+@so lib/gstreamer-${API}/libgstaudiomixer.so
+@so lib/gstreamer-${API}/libgstaudiorate.so
+@so lib/gstreamer-${API}/libgstaudioresample.so
+@so lib/gstreamer-${API}/libgstaudiotestsrc.so
+@so lib/gstreamer-${API}/libgstcdparanoia.so
+@so lib/gstreamer-${API}/libgstcompositor.so
+@so lib/gstreamer-${API}/libgstencoding.so
+@so lib/gstreamer-${API}/libgstgio.so
+@so lib/gstreamer-${API}/libgstogg.so
+@so lib/gstreamer-${API}/libgstopengl.so
+@so lib/gstreamer-${API}/libgstopus.so
+@so lib/gstreamer-${API}/libgstoverlaycomposition.so
+@so lib/gstreamer-${API}/libgstpango.so
+@so lib/gstreamer-${API}/libgstpbtypes.so
+@so lib/gstreamer-${API}/libgstplayback.so
+@so lib/gstreamer-${API}/libgstrawparse.so
+@so lib/gstreamer-${API}/libgstsndio.so
+@so lib/gstreamer-${API}/libgstsubparse.so
+@so lib/gstreamer-${API}/libgsttcp.so
+@so lib/gstreamer-${API}/libgsttheora.so
+@so lib/gstreamer-${API}/libgsttypefindfunctions.so
+@so lib/gstreamer-${API}/libgstvideoconvert.so
+@so lib/gstreamer-${API}/libgstvideorate.so
+@so lib/gstreamer-${API}/libgstvideoscale.so
+@so lib/gstreamer-${API}/libgstvideotestsrc.so
+@so lib/gstreamer-${API}/libgstvolume.so
+@so lib/gstreamer-${API}/libgstvorbis.so
+@so lib/gstreamer-${API}/libgstximagesink.so
+@so lib/gstreamer-${API}/libgstxvimagesink.so
 @lib lib/libgstallocators-${API}.so.${LIBgstallocators-${API}_VERSION}
 @lib lib/libgstapp-${API}.so.${LIBgstapp-${API}_VERSION}
 @lib lib/libgstaudio-${API}.so.${LIBgstaudio-${API}_VERSION}

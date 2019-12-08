@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.77 2019/09/25 22:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2019/12/08 10:16:18 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
-SHARED_LIBS +=  gstphotography-1.0   4.0      # 0.1601.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 4.0   # 0.1601.0
-SHARED_LIBS +=  gstcodecparsers-1.0  4.0      # 0.1601.0
-SHARED_LIBS +=  gstinsertbin-1.0     3.0      # 0.1601.0
-SHARED_LIBS +=  gsturidownloader-1.0 3.0      # 0.1601.0
-SHARED_LIBS +=  gstmpegts-1.0        3.0      # 0.1601.0
-SHARED_LIBS +=  gstplayer-1.0        1.0      # 0.1601.0
-SHARED_LIBS +=  gstadaptivedemux-1.0 2.0      # 0.1601.0
-SHARED_LIBS +=  gstbadvideo-1.0      3.0      # 0.1601.0
-SHARED_LIBS +=  gstbadaudio-1.0      1.0      # 0.1601.0
-SHARED_LIBS +=  gstisoff-1.0         1.0      # 0.1601.0
-SHARED_LIBS +=  gstwebrtc-1.0        1.0      # 0.1601.0
-SHARED_LIBS +=  gstsctp-1.0          1.0      # 0.1601.0
+SHARED_LIBS +=  gstphotography-1.0   4.0      # 0.1602.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 4.0   # 0.1602.0
+SHARED_LIBS +=  gstcodecparsers-1.0  4.0      # 0.1602.0
+SHARED_LIBS +=  gstinsertbin-1.0     3.0      # 0.1602.0
+SHARED_LIBS +=  gsturidownloader-1.0 3.0      # 0.1602.0
+SHARED_LIBS +=  gstmpegts-1.0        3.0      # 0.1602.0
+SHARED_LIBS +=  gstplayer-1.0        1.0      # 0.1602.0
+SHARED_LIBS +=  gstadaptivedemux-1.0 2.0      # 0.1602.0
+SHARED_LIBS +=  gstbadvideo-1.0      3.0      # 0.1602.0
+SHARED_LIBS +=  gstbadaudio-1.0      1.0      # 0.1602.0
+SHARED_LIBS +=  gstisoff-1.0         1.0      # 0.1602.0
+SHARED_LIBS +=  gstwebrtc-1.0        1.0      # 0.1602.0
+SHARED_LIBS +=  gstsctp-1.0          1.0      # 0.1602.0
 
 WANTLIB += ${COMPILER_LIBCXX} SoundTouch X11 ass bs2b bz2 cairo
 WANTLIB += drm gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lcms2
@@ -60,6 +60,8 @@ CONFIGURE_ARGS +=	-D${d}=disabled
 # XXX cannot set to 'openssl' because meson.build will fail because of
 # hls_crypto_dep not deing defined (if not hls_crypto_dep.found ...)
 CONFIGURE_ARGS +=	-Dhls-crypto="nettle"
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:
 	sed -i 's,/dev/dvd,/dev/rcd0c,g' \

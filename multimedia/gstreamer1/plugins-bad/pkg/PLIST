@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2019/09/25 22:48:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/12/08 10:16:18 ajacoutot Exp $
 include/gstreamer-${API}/gst/audio/audio-bad-prelude.h
 include/gstreamer-${API}/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-${API}/gst/audio/gstplanaraudioadapter.h
@@ -72,82 +72,82 @@ lib/girepository-${API}/GstInsertBin-${API}.typelib
 lib/girepository-${API}/GstMpegts-${API}.typelib
 lib/girepository-${API}/GstPlayer-${API}.typelib
 lib/girepository-${API}/GstWebRTC-${API}.typelib
-lib/gstreamer-${API}/libgstaccurip.so
-lib/gstreamer-${API}/libgstadpcmdec.so
-lib/gstreamer-${API}/libgstadpcmenc.so
-lib/gstreamer-${API}/libgstaiff.so
-lib/gstreamer-${API}/libgstasfmux.so
-lib/gstreamer-${API}/libgstassrender.so
-lib/gstreamer-${API}/libgstaudiobuffersplit.so
-lib/gstreamer-${API}/libgstaudiofxbad.so
-lib/gstreamer-${API}/libgstaudiolatency.so
-lib/gstreamer-${API}/libgstaudiomixmatrix.so
-lib/gstreamer-${API}/libgstaudiovisualizers.so
-lib/gstreamer-${API}/libgstautoconvert.so
-lib/gstreamer-${API}/libgstbayer.so
-lib/gstreamer-${API}/libgstbs2b.so
-lib/gstreamer-${API}/libgstbz2.so
-lib/gstreamer-${API}/libgstcamerabin.so
-lib/gstreamer-${API}/libgstclosedcaption.so
-lib/gstreamer-${API}/libgstcoloreffects.so
-lib/gstreamer-${API}/libgstcolormanagement.so
-lib/gstreamer-${API}/libgstdashdemux.so
-lib/gstreamer-${API}/libgstdebugutilsbad.so
-lib/gstreamer-${API}/libgstdvbsuboverlay.so
-lib/gstreamer-${API}/libgstdvdspu.so
-lib/gstreamer-${API}/libgstfaceoverlay.so
-lib/gstreamer-${API}/libgstfestival.so
-lib/gstreamer-${API}/libgstfieldanalysis.so
-lib/gstreamer-${API}/libgstfreeverb.so
-lib/gstreamer-${API}/libgstfrei0r.so
-lib/gstreamer-${API}/libgstgaudieffects.so
-lib/gstreamer-${API}/libgstgdp.so
-lib/gstreamer-${API}/libgstgeometrictransform.so
-lib/gstreamer-${API}/libgsthls.so
-lib/gstreamer-${API}/libgstid3tag.so
-lib/gstreamer-${API}/libgstinter.so
-lib/gstreamer-${API}/libgstinterlace.so
-lib/gstreamer-${API}/libgstipcpipeline.so
-lib/gstreamer-${API}/libgstivfparse.so
-lib/gstreamer-${API}/libgstivtc.so
-lib/gstreamer-${API}/libgstjp2kdecimator.so
-lib/gstreamer-${API}/libgstjpegformat.so
-lib/gstreamer-${API}/libgstkms.so
-lib/gstreamer-${API}/libgstlegacyrawparse.so
-lib/gstreamer-${API}/libgstmidi.so
-lib/gstreamer-${API}/libgstmms.so
-lib/gstreamer-${API}/libgstmpegpsdemux.so
-lib/gstreamer-${API}/libgstmpegpsmux.so
-lib/gstreamer-${API}/libgstmpegtsdemux.so
-lib/gstreamer-${API}/libgstmpegtsmux.so
-lib/gstreamer-${API}/libgstmxf.so
-lib/gstreamer-${API}/libgstnetsim.so
-lib/gstreamer-${API}/libgstopusparse.so
-lib/gstreamer-${API}/libgstpcapparse.so
-lib/gstreamer-${API}/libgstpnm.so
-lib/gstreamer-${API}/libgstproxy.so
-lib/gstreamer-${API}/libgstremovesilence.so
-lib/gstreamer-${API}/libgstrfbsrc.so
-lib/gstreamer-${API}/libgstrsvg.so
-lib/gstreamer-${API}/libgstrtponvif.so
-lib/gstreamer-${API}/libgstsdpelem.so
-lib/gstreamer-${API}/libgstsegmentclip.so
-lib/gstreamer-${API}/libgstshm.so
-lib/gstreamer-${API}/libgstsiren.so
-lib/gstreamer-${API}/libgstsmooth.so
-lib/gstreamer-${API}/libgstsmoothstreaming.so
-lib/gstreamer-${API}/libgstsoundtouch.so
-lib/gstreamer-${API}/libgstspeed.so
-lib/gstreamer-${API}/libgstsubenc.so
-lib/gstreamer-${API}/libgsttimecode.so
-lib/gstreamer-${API}/libgstttmlsubs.so
-lib/gstreamer-${API}/libgstvideofiltersbad.so
-lib/gstreamer-${API}/libgstvideoframe_audiolevel.so
-lib/gstreamer-${API}/libgstvideoparsersbad.so
-lib/gstreamer-${API}/libgstvideosignal.so
-lib/gstreamer-${API}/libgstvmnc.so
-lib/gstreamer-${API}/libgsty4mdec.so
-lib/gstreamer-${API}/libgstyadif.so
+@so lib/gstreamer-${API}/libgstaccurip.so
+@so lib/gstreamer-${API}/libgstadpcmdec.so
+@so lib/gstreamer-${API}/libgstadpcmenc.so
+@so lib/gstreamer-${API}/libgstaiff.so
+@so lib/gstreamer-${API}/libgstasfmux.so
+@so lib/gstreamer-${API}/libgstassrender.so
+@so lib/gstreamer-${API}/libgstaudiobuffersplit.so
+@so lib/gstreamer-${API}/libgstaudiofxbad.so
+@so lib/gstreamer-${API}/libgstaudiolatency.so
+@so lib/gstreamer-${API}/libgstaudiomixmatrix.so
+@so lib/gstreamer-${API}/libgstaudiovisualizers.so
+@so lib/gstreamer-${API}/libgstautoconvert.so
+@so lib/gstreamer-${API}/libgstbayer.so
+@so lib/gstreamer-${API}/libgstbs2b.so
+@so lib/gstreamer-${API}/libgstbz2.so
+@so lib/gstreamer-${API}/libgstcamerabin.so
+@so lib/gstreamer-${API}/libgstclosedcaption.so
+@so lib/gstreamer-${API}/libgstcoloreffects.so
+@so lib/gstreamer-${API}/libgstcolormanagement.so
+@so lib/gstreamer-${API}/libgstdashdemux.so
+@so lib/gstreamer-${API}/libgstdebugutilsbad.so
+@so lib/gstreamer-${API}/libgstdvbsuboverlay.so
+@so lib/gstreamer-${API}/libgstdvdspu.so
+@so lib/gstreamer-${API}/libgstfaceoverlay.so
+@so lib/gstreamer-${API}/libgstfestival.so
+@so lib/gstreamer-${API}/libgstfieldanalysis.so
+@so lib/gstreamer-${API}/libgstfreeverb.so
+@so lib/gstreamer-${API}/libgstfrei0r.so
+@so lib/gstreamer-${API}/libgstgaudieffects.so
+@so lib/gstreamer-${API}/libgstgdp.so
+@so lib/gstreamer-${API}/libgstgeometrictransform.so
+@so lib/gstreamer-${API}/libgsthls.so
+@so lib/gstreamer-${API}/libgstid3tag.so
+@so lib/gstreamer-${API}/libgstinter.so
+@so lib/gstreamer-${API}/libgstinterlace.so
+@so lib/gstreamer-${API}/libgstipcpipeline.so
+@so lib/gstreamer-${API}/libgstivfparse.so
+@so lib/gstreamer-${API}/libgstivtc.so
+@so lib/gstreamer-${API}/libgstjp2kdecimator.so
+@so lib/gstreamer-${API}/libgstjpegformat.so
+@so lib/gstreamer-${API}/libgstkms.so
+@so lib/gstreamer-${API}/libgstlegacyrawparse.so
+@so lib/gstreamer-${API}/libgstmidi.so
+@so lib/gstreamer-${API}/libgstmms.so
+@so lib/gstreamer-${API}/libgstmpegpsdemux.so
+@so lib/gstreamer-${API}/libgstmpegpsmux.so
+@so lib/gstreamer-${API}/libgstmpegtsdemux.so
+@so lib/gstreamer-${API}/libgstmpegtsmux.so
+@so lib/gstreamer-${API}/libgstmxf.so
+@so lib/gstreamer-${API}/libgstnetsim.so
+@so lib/gstreamer-${API}/libgstopusparse.so
+@so lib/gstreamer-${API}/libgstpcapparse.so
+@so lib/gstreamer-${API}/libgstpnm.so
+@so lib/gstreamer-${API}/libgstproxy.so
+@so lib/gstreamer-${API}/libgstremovesilence.so
+@so lib/gstreamer-${API}/libgstrfbsrc.so
+@so lib/gstreamer-${API}/libgstrsvg.so
+@so lib/gstreamer-${API}/libgstrtponvif.so
+@so lib/gstreamer-${API}/libgstsdpelem.so
+@so lib/gstreamer-${API}/libgstsegmentclip.so
+@so lib/gstreamer-${API}/libgstshm.so
+@so lib/gstreamer-${API}/libgstsiren.so
+@so lib/gstreamer-${API}/libgstsmooth.so
+@so lib/gstreamer-${API}/libgstsmoothstreaming.so
+@so lib/gstreamer-${API}/libgstsoundtouch.so
+@so lib/gstreamer-${API}/libgstspeed.so
+@so lib/gstreamer-${API}/libgstsubenc.so
+@so lib/gstreamer-${API}/libgsttimecode.so
+@so lib/gstreamer-${API}/libgstttmlsubs.so
+@so lib/gstreamer-${API}/libgstvideofiltersbad.so
+@so lib/gstreamer-${API}/libgstvideoframe_audiolevel.so
+@so lib/gstreamer-${API}/libgstvideoparsersbad.so
+@so lib/gstreamer-${API}/libgstvideosignal.so
+@so lib/gstreamer-${API}/libgstvmnc.so
+@so lib/gstreamer-${API}/libgsty4mdec.so
+@so lib/gstreamer-${API}/libgstyadif.so
 @lib lib/libgstadaptivedemux-${API}.so.${LIBgstadaptivedemux-${API}_VERSION}
 @lib lib/libgstbadaudio-${API}.so.${LIBgstbadaudio-${API}_VERSION}
 @lib lib/libgstbasecamerabinsrc-${API}.so.${LIBgstbasecamerabinsrc-${API}_VERSION}

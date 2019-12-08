@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/09/25 22:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2019/12/08 10:16:18 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -13,5 +13,7 @@ MASTER_SITES=		${MASTER_SITE_GST:=gst-libav/}
 
 LIB_DEPENDS=		${P}/plugins-base=${V} \
 			graphics/ffmpeg
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
