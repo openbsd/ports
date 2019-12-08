@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2019/11/06 10:19:14 bket Exp $
+# $OpenBSD: Makefile,v 1.30 2019/12/08 18:41:48 bket Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
 V =			1.4.4
+REVISION =		0
 DISTNAME =		zstd-${V}
 
 SHARED_LIBS =		zstd	3.1	# 1.4.4
@@ -42,6 +43,8 @@ LDFLAGS +=		-latomic
 FAKE_FLAGS =		PREFIX="${PREFIX}"
 
 USE_GMAKE =		Yes
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 TEST_TARGET =		check
 
