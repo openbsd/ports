@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/10/17 08:27:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/12/08 09:55:37 ajacoutot Exp $
 @bin bin/convert-dtsv0
 @bin bin/dtc
 bin/dtdiff
@@ -9,7 +9,7 @@ bin/dtdiff
 include/fdt.h
 include/libfdt.h
 include/libfdt_env.h
-lib/libfdt.a
+@static-lib lib/libfdt.a
 @lib lib/libfdt.so.${LIBfdt_VERSION}
 share/doc/dtc/
 share/doc/dtc/dt-object-internal.txt
