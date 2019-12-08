@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/10/30 14:03:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2019/12/08 20:00:06 jasper Exp $
 
 COMMENT =	fast and secure VPN
 
-V =		0.0.20191012
+V =		0.0.20191206
 DISTNAME =	WireGuard-$V
 PKGNAME =	wireguard-tools-$V
 EPOCH =		0
@@ -21,6 +21,8 @@ WANTLIB += c
 MASTER_SITES =		https://git.zx2c4.com/WireGuard/snapshot/
 
 EXTRACT_SUFX =		.tar.xz
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # Uses __builtin_bswap* on big-endian archs
 COMPILER =		base-clang ports-gcc
