@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/09/22 14:46:55 thfr Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/08 17:02:33 thfr Exp $
 
 # Don't bother on non-mono archs.
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
 
-COMMENT =	script to configure FNA games to run on OpenBSD
-DISTNAME =	fnaify-2.0
+V =		2.1
+COMMENT =	run FNA/XNA games on OpenBSD
+DISTNAME =	fnaify-${V}
 CATEGORIES =	games
 
 HOMEPAGE =	https://www.PlayOnBSD.com
@@ -13,7 +14,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+MASTER_SITES =	https://github.com/rfht/fnaify/releases/download/${V}/
 
 # it may be possible to drop audio/openal and a few others when FAudio
 # has been disseminated to all FNA games
@@ -35,9 +36,5 @@ NO_TEST =	Yes
 
 do-configure:
 	sed -i 's,\/usr/\local,${LOCALBASE},g' ${WRKSRC}/fnaify
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/fnaify ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fnaify.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

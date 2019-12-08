@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile,v 1.1 2019/12/08 17:02:33 thfr Exp $
+
+remove DESTDIR var
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -2,14 +2,14 @@ PREFIX ?= /usr/local
+ 
+ .PHONY: install
+ install:
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/fnaify/
+-	cp fnaify $(DESTDIR)$(PREFIX)/bin/
+-	cp fnaify.dllmap.config $(DESTDIR)$(PREFIX)/share/fnaify/
+-	cp fnaify.1 $(DESTDIR)$(PREFIX)/man/man1/
++	mkdir -p $(PREFIX)/share/fnaify/
++	cp fnaify $(PREFIX)/bin/
++	cp fnaify.dllmap.config $(PREFIX)/share/fnaify/
++	cp fnaify.1 $(PREFIX)/man/man1/
+ 
+ readme: fnaify.1
+ 	mandoc -mdoc -T markdown fnaify.1 > README.md
+ 
+ .PHONY: uninstall
+ uninstall:
+-	rm -f $(DESTDIR)$(PREFIX)/share/fnaify/fnaify.dllmap.config
++	rm -f $(PREFIX)/share/fnaify/fnaify.dllmap.config

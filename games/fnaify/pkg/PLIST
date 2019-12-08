@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/09/22 14:46:55 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/08 17:02:33 thfr Exp $
 bin/fnaify
 @man man/man1/fnaify.1
 share/doc/pkg-readmes/${PKGSTEM}
+share/fnaify/
+share/fnaify/fnaify.dllmap.config
