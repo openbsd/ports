@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1511 2019/12/05 22:07:36 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1512 2019/12/08 11:51:56 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -79,6 +79,7 @@ FETCH_PACKAGES ?= No
 CLEANDEPENDS ?= No
 BULK ?= Auto
 WRKDIR_LINKNAME ?=
+INSTALL_DEBUG_PACKAGES ?= No
 
 .if ${FETCH_PACKAGES:L} == "yes"
 ERRORS += "Fatal: old syntax for FETCH_PACKAGES, see ports(7)"
@@ -218,6 +219,9 @@ PKG_DELETE ?= /usr/sbin/pkg_delete
 _PKG_ADD = ${PKG_ADD} ${_PROGRESS} -I
 _PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
 _SUDO_PKG_ADD_LOCAL = TRUSTED_PKG_PATH=${_PKG_REPO} ${SUDO} ${_PKG_ADD}
+.if ${INSTALL_DEBUG_PACKAGES:L} == "yes"
+_SUDO_PKG_ADD_LOCAL += -d
+.endif
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
 
 .if defined(PKG_PATH)
