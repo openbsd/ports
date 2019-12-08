@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2019/11/06 14:54:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2019/12/08 08:17:27 ajacoutot Exp $
 
 COMMENT=		hardware identification and configuration data
 
 GH_ACCOUNT=		vcrhonek
 GH_PROJECT=		hwdata
-GH_TAGNAME=		v0.329
+GH_TAGNAME=		v0.330
 
 CATEGORIES=		misc
 
