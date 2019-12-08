@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/12/08 20:27:52 jasper Exp $
 
 COMMENT =			programming font designed with functionality in mind
 
-V =				1.7.2
+V =				1.8.0
 DISTNAME =			fantasque-sans-$V
 DISTFILES =			${DISTNAME}{FantasqueSansMono-Normal}.tar.gz
 
