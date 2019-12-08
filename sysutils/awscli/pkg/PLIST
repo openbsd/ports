@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.94 2019/11/23 14:36:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.95 2019/12/08 08:24:59 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -662,6 +662,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/associate-phone-number-with-user.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/associate-phone-numbers-with-voice-connector-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/associate-phone-numbers-with-voice-connector.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/batch-create-room-membership.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/batch-delete-phone-number.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/batch-suspend-user.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/batch-unsuspend-user.rst
@@ -670,10 +671,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/batch-update-user
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/create-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/create-bot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/create-phone-number-order.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/create-room-membership.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/create-room.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/create-voice-connector-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/create-voice-connector.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/delete-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/delete-phone-number.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/delete-room-membership.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/delete-room.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/delete-voice-connector-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/delete-voice-connector-origination.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/delete-voice-connector-streaming-configuration.rst
@@ -690,6 +695,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/get-global-settin
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/get-phone-number-order.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/get-phone-number-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/get-phone-number.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/get-room.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/get-user-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/get-user.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/get-voice-connector-group.rst
@@ -704,6 +710,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-accounts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-bots.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-phone-number-orders.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-phone-numbers.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-room-memberships.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-rooms.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-users.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-voice-connector-termination-credentials.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/list-voice-connectors.rst
@@ -723,6 +731,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-bot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-global-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-phone-number-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-phone-number.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-room-membership.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-room.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-user-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-user.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-voice-connector-group.rst
@@ -2259,6 +2269,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-keys-and-cer
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-ota-update.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-policy-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-provisioning-template-version.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-provisioning-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-role-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-scheduled-audit.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-security-profile.rst
@@ -2278,6 +2290,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-ota-update.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-policy-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-provisioning-template-version.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-provisioning-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-registration-code.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-role-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-scheduled-audit.rst
@@ -2342,6 +2356,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-outgoing-certi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-policies.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-policy-versions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-principal-things.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-provisioning-template-versions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-provisioning-templates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-role-aliases.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-scheduled-audits.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-security-profiles-for-target.rst
@@ -2386,6 +2402,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-dynamic-thin
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-event-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-indexing-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-provisioning-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-role-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-scheduled-audit.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-security-profile.rst
