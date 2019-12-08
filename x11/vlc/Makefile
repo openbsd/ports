@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2019/12/01 22:44:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.233 2019/12/08 09:54:09 ajacoutot Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -7,6 +7,7 @@ V=		3.0.8
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
+REVISION-main=	0
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -83,7 +84,7 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		graphics/libdvbpsi \
 		graphics/png \
 		multimedia/libass \
-		multimedia/libbluray>=0.8.0 \
+		multimedia/libbluray \
 		multimedia/libdvdnav \
 		multimedia/libmatroska \
 		multimedia/libv4l \
@@ -216,6 +217,9 @@ PKG_ARGS+=-Di386=1
 .else
 PKG_ARGS+=-Di386=0
 .endif
+
+post-extract:
+	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
 post-install:
 	@find ${PREFIX}/lib/vlc -name '*.la' -delete
