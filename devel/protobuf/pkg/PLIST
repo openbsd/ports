@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/11/10 13:29:38 tb Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/12/08 18:50:17 tb Exp $
 @bin bin/protoc
 include/google/
 include/google/protobuf/
@@ -130,13 +130,13 @@ include/google/protobuf/wire_format.h
 include/google/protobuf/wire_format_lite.h
 include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
-lib/libprotobuf-lite.a
+@static-lib lib/libprotobuf-lite.a
 lib/libprotobuf-lite.la
 @lib lib/libprotobuf-lite.so.${LIBprotobuf-lite_VERSION}
-lib/libprotobuf.a
+@static-lib lib/libprotobuf.a
 lib/libprotobuf.la
 @lib lib/libprotobuf.so.${LIBprotobuf_VERSION}
-lib/libprotoc.a
+@static-lib lib/libprotoc.a
 lib/libprotoc.la
 @lib lib/libprotoc.so.${LIBprotoc_VERSION}
 lib/pkgconfig/protobuf-lite.pc
