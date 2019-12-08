@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.123 2019/12/02 12:19:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.124 2019/12/08 16:59:09 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.13.0
 EPOCH=		3
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -26,8 +27,9 @@ LIB_DEPENDS=	databases/qdbm \
 		devel/libidn2
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-FLAVORS=	gpgme sasl slang
+FLAVORS=	debug gpgme sasl slang
 FLAVOR?=
 
 CONFIGURE_STYLE=  gnu
@@ -57,11 +59,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
 
-.if defined(DEBUG)
+## standard flavours:
+
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-
-## standard flavours:
 
 .if ${FLAVOR:Mgpgme}
 CONFIGURE_ARGS+= --enable-autocrypt \

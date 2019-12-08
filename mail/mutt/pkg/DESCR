@@ -10,6 +10,7 @@ Some are now integrated in the main Mutt release (including "sidebar");
 the "neomutt" package includes others (e.g. compressed folder support).
 
 Flavors:
+	debug      - build with debug logging
 	gpgme      - build with support for GPGME, simplifying use with GnuPG:
                      "set crypt_use_gpgme = yes" in muttrc, and run gpg-agent:
                      "export GPG_TTY=$(tty); eval $(gpg-agent --daemon)".
