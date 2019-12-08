@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/12/08 08:22:51 ajacoutot Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
 GH_ACCOUNT=		rsnapshot
 GH_PROJECT=		rsnapshot
-GH_TAGNAME=		1.4.2
+GH_TAGNAME=		1.4.3
 
 CATEGORIES=		net sysutils
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.rsnapshot.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
