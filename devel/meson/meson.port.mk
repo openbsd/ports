@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.43 2019/12/03 11:15:31 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.44 2019/12/08 18:41:44 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.52.1v0
 SEPARATE_BUILD ?=	Yes
@@ -21,7 +21,8 @@ CONFIGURE_ENV +=	AR="ar"
 MODMESON_CONFIGURE_ENV +=	CC="${CC}" CFLAGS="${CFLAGS}" \
 				CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-MODMESON_CONFIGURE_ARGS +=	--prefix "${PREFIX}" \
+MODMESON_CONFIGURE_ARGS +=	--buildtype=plain \
+				--prefix "${PREFIX}" \
 				--mandir="${PREFIX}/man" \
 				--sysconfdir="${SYSCONFDIR}" \
 				--localstatedir="${LOCALSTATEDIR}" \
@@ -38,15 +39,10 @@ MODMESON_CONFIGURE_ENV +=	TERM="dumb"
 MODMESON_CONFIGURE_ENV +=	LIB${solib}_VERSION=${sover}
 .endfor
 
-.if empty(DEBUG)
-MODMESON_CONFIGURE_ARGS +=	--buildtype=plain
-.else
-MODMESON_CONFIGURE_ARGS +=	--buildtype=debug
+.if empty(INSTALL_STRIP) || empty(DEBUG_PACKAGES)
+INSTALL_STRIP =		--strip
 .endif
-
-.if ! empty(INSTALL_STRIP)
-MODMESON_CONFIGURE_ARGS +=	--strip
-.endif
+MODMESON_CONFIGURE_ARGS +=	${INSTALL_STRIP}
 
 .if ${CONFIGURE_STYLE} == "meson"
 CONFIGURE_ARGS +=	${MODMESON_CONFIGURE_ARGS}
