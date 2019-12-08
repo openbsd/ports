@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2019/12/07 14:35:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/12/08 16:59:54 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	20191207
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -21,6 +22,7 @@ LIB_DEPENDS+=	devel/gettext,-runtime \
 		devel/libidn2
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 SEPARATE_BUILD=	Yes
 FLAVORS=	gpgme sasl
@@ -44,8 +46,6 @@ CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
 
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/neomutt"
-
-DEBUG+=		-g
 
 .if ${FLAVOR:Mgpgme}
 CONFIGURE_ARGS+= --autocrypt \
