@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.123 2019/11/01 19:37:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2019/12/08 09:05:07 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.68.2
+GNOME_VERSION =		2.68.3
 
 SHARED_LIBS += soup-2.4                  10.4 # 1.8.0
 SHARED_LIBS += soup-gnome-2.4            8.1  # 1.8.0
@@ -42,5 +42,7 @@ CONFIGURE_ARGS =	-Dgssapi=disabled \
 			-Dntlm=disabled \
 			-Dtests=false \
 			-Dtls_check=false
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
