@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/10/28 09:30:15 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.20 2019/12/09 07:39:20 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -267,6 +267,7 @@ share/sqlmap/lib/core/${MODPY_PYCACHE}dicts.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/lib/core/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}option.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}optiondict.${MODPY_PYC_MAGIC_TAG}pyc
@@ -298,6 +299,7 @@ share/sqlmap/lib/core/dicts.py
 share/sqlmap/lib/core/dump.py
 share/sqlmap/lib/core/enums.py
 share/sqlmap/lib/core/exception.py
+share/sqlmap/lib/core/gui.py
 share/sqlmap/lib/core/log.py
 share/sqlmap/lib/core/option.py
 share/sqlmap/lib/core/optiondict.py
