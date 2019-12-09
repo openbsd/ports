@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2019/11/07 10:09:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2019/12/09 17:22:49 ajacoutot Exp $
 
 BROKEN-hppa=	build stuck on virt-viewer-window.c
 
 COMMENT=	graphics viewer for KVM guest displays
 
 DISTNAME=	virt-viewer-8.0
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	x11
 
@@ -51,5 +51,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-update-mimedb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
