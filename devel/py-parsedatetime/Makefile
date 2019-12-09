@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/12/09 15:29:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/12/09 16:05:25 kmos Exp $
 
 COMMENT=		parse human-readable date/time text
 
@@ -19,6 +19,8 @@ FLAVOR?=
 MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests/*.py
 
 BUILD_DEPENDS=		devel/py-test-runner${MODPY_FLAVOR}
 TEST_DEPENDS=		textproc/py-ICU${MODPY_FLAVOR}
