@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/12/09 14:32:07 fcambus Exp $
 
 COMMENT=		free real-time logfile analyzer
 
 DISTNAME=		awstats-7.7
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=awstats/}
 
-RUN_DEPENDS=		net/p5-Geo-IP \
-			www/p5-libwww
+RUN_DEPENDS=		www/p5-libwww
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
@@ -26,8 +25,6 @@ PREFIX=			${VARBASE}/www
 INSTDIR=		${PREFIX}/awstats
 
 ACCESSLOG=		LogFile="${PREFIX}/logs/access.log"
-GEOIPDAT=		${LOCALBASE}/share/examples/GeoIP/GeoIP.dat
-GEOIPPLUGIN=		LoadPlugin="geoip GEOIP_STANDARD ${GEOIPDAT}"
 
 pre-configure:
 	sed -i -e "s,/usr/local/awstats,${INSTDIR},g;" \
@@ -40,7 +37,6 @@ pre-configure:
 		-e 's,^DirData=".",DirData="${INSTDIR}/data",g;' \
 		-e 's,^DirCgi="/cgi-bin",DirCgi="/awstats/cgi-bin",g;' \
 		-e 's,^DirIcons="/icon",DirIcons="/awstats/icon",g;' \
-		-e 's,^#LoadPlugin="geoip GEOIP_STANDARD /pathto/GeoIP.dat",${GEOIPPLUGIN},g;' \
 		${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf
 	rm ${WRKSRC}/tools/webmin/.gitignore
 
