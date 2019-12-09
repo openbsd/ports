@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/09 15:07:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/12/09 15:10:11 sthen Exp $
 
 COMMENT=	regular expressions library
 
 V=		6.9.4
 DISTNAME=	onig-$V
 PKGNAME=	oniguruma-$V
+REVISION=	0
 
 SHARED_LIBS +=  onig                 6.1      # 5.0
 
