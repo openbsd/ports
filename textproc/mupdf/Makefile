@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2019/09/17 09:22:51 tb Exp $
+# $OpenBSD: Makefile,v 1.93 2019/12/09 16:14:27 visa Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
@@ -70,6 +70,11 @@ MAKE_FLAGS +=	HAVE_GLUT=No
 MAKE_FLAGS +=	ENABLE_MUJS=yes
 WANTLIB +=	GL glut
 LIB_DEPENDS +=	graphics/freeglut
+.endif
+
+# ld.bfd -r -b binary does not produce correct type of object.
+.if (${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el")
+MAKE_FLAGS +=	HAVE_OBJCOPY=no
 .endif
 
 post-install:
