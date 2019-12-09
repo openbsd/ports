@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/06/11 15:32:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/12/09 17:23:23 ajacoutot Exp $
 include/libvirt-gconfig-1.0/
 include/libvirt-gconfig-1.0/libvirt-gconfig/
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-capabilities-cpu-feature.h
@@ -15,6 +15,8 @@ include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-capabilities.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-address-pci.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-address-usb.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-address.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-capabilities-os.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-capabilities.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-channel.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-pty.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-spiceport.h
@@ -115,13 +117,13 @@ include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject.h
 lib/girepository-1.0/LibvirtGConfig-1.0.typelib
 lib/girepository-1.0/LibvirtGLib-1.0.typelib
 lib/girepository-1.0/LibvirtGObject-1.0.typelib
-lib/libvirt-gconfig-1.0.a
+@static-lib lib/libvirt-gconfig-1.0.a
 lib/libvirt-gconfig-1.0.la
 @lib lib/libvirt-gconfig-1.0.so.${LIBvirt-gconfig-1.0_VERSION}
-lib/libvirt-glib-1.0.a
+@static-lib lib/libvirt-glib-1.0.a
 lib/libvirt-glib-1.0.la
 @lib lib/libvirt-glib-1.0.so.${LIBvirt-glib-1.0_VERSION}
-lib/libvirt-gobject-1.0.a
+@static-lib lib/libvirt-gobject-1.0.a
 lib/libvirt-gobject-1.0.la
 @lib lib/libvirt-gobject-1.0.so.${LIBvirt-gobject-1.0_VERSION}
 lib/pkgconfig/libvirt-gconfig-1.0.pc

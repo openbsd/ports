@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2019/11/07 13:15:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2019/12/09 17:23:23 ajacoutot Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
-DISTNAME=		libvirt-glib-2.0.0
+DISTNAME=		libvirt-glib-3.0.0
 
 CATEGORIES=		devel sysutils
 
-SHARED_LIBS +=  virt-gconfig-1.0          2.1 # 2000.0
-SHARED_LIBS +=  virt-glib-1.0             2.1 # 2000.0
-SHARED_LIBS +=  virt-gobject-1.0          2.1 # 2000.0
+SHARED_LIBS +=  virt-gconfig-1.0          2.2 # 2000.0
+SHARED_LIBS +=  virt-glib-1.0             2.2 # 2000.0
+SHARED_LIBS +=  virt-gobject-1.0          2.2 # 2000.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -35,5 +35,7 @@ LIB_DEPENDS=		sysutils/libvirt
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
