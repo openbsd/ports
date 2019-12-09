@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/12/09 20:50:35 jeremy Exp $
 
 COMMENT =		creator/parser for the NTLM authentication
 
-DISTNAME =		rubyntlm-0.3.2
+DISTNAME =		rubyntlm-0.6.2
 PKGNAME =		${DISTNAME:S/ruby//}
 
 CATEGORIES =		www security
