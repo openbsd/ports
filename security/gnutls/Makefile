@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.160 2019/09/30 16:05:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.161 2019/12/09 07:56:20 ajacoutot Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.6.10
+V=			3.6.11.1
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
 
@@ -24,8 +24,8 @@ WANTLIB += idn2 intl m nettle p11-kit ssl tasn1 unbound unistring
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://www.gnupg.org/ftp/gcrypt/gnutls/v${V:R}/ \
-			ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/
+MASTER_SITES=		https://www.gnupg.org/ftp/gcrypt/gnutls/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/ \
+			ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 
 # needed for tests
 BUILD_DEPENDS=		devel/cmocka
@@ -64,6 +64,8 @@ LDFLAGS+=		-Wl,-z,notext
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}"
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls
