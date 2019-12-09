@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2019/11/06 14:33:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.33 2019/12/09 07:02:34 rsadowski Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
-VERSION =	5.4.4
+VERSION =	5.4.5
 DISTNAME =	kdevelop-${VERSION}
 
 HOMEPAGE =	https://www.kdevelop.org/
