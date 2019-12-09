@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/09/27 10:52:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2019/12/09 14:45:16 fcambus Exp $
 
 COMMENT=	log management solution
 
@@ -6,7 +6,7 @@ V =		3.12.1
 REL =		3.12
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
-REVISION =	6
+REVISION =	7
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
@@ -15,8 +15,8 @@ HOMEPAGE =	https://syslog-ng.com/
 # GPL v2
 PERMIT_PACKAGE =		Yes
 
-WANTLIB =  GeoIP c crypto curl dbi evtlog glib-2.0 gmodule-2.0
-WANTLIB += gthread-2.0 iconv intl ivykis json-c m nghttp2 pcre pthread
+WANTLIB += c crypto curl dbi evtlog glib-2.0 gmodule-2.0 gthread-2.0
+WANTLIB += iconv intl ivykis json-c m maxminddb nghttp2 pcre pthread
 WANTLIB += ssl z
 
 MASTER_SITES =	http://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
@@ -31,7 +31,7 @@ LIB_DEPENDS =	devel/glib2 \
 		sysutils/eventlog \
 		databases/libdbi>=0.9.0 \
 		net/curl \
-		net/GeoIP
+		net/libmaxminddb
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-tcp-wrapper \
@@ -46,7 +46,8 @@ CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--disable-stomp \
 			--disable-redis \
 			--disable-riemann \
-			--enable-geoip \
+			--disable-geoip \
+			--enable-geoip2 \
 			--without-libnet \
 			--with-ivykis=system \
 			--with-libcurl=${LOCALBASE} \
@@ -54,7 +55,8 @@ CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--enable-manpages
 
 CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
-			OPENSSL_LIBS="-lssl -lcrypto" 
+			OPENSSL_LIBS="-lssl -lcrypto" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 # json-c only installs libjson-c.pc; syslog-ng checks for libjson.pc
 CONFIGURE_ENV +=	JSON_C_CFLAGS="`pkg-config json-c --cflags`" \
 			JSON_C_LIBS="`pkg-config json-c --libs`" \

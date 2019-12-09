@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.23 2017/11/10 21:58:26 steven Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/12/09 14:45:16 fcambus Exp $
+@rcscript ${RCDIR}/syslog_ng
 @bin bin/dqtool
 @bin bin/loggen
 @bin bin/pdbtool
@@ -248,7 +249,7 @@ lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libdate.so
 lib/syslog-ng/libdbparser.so
 lib/syslog-ng/libdisk-buffer.so
-lib/syslog-ng/libgeoip-plugin.so
+lib/syslog-ng/libgeoip2-plugin.so
 lib/syslog-ng/libgraphite.so
 lib/syslog-ng/libhttp.so
 lib/syslog-ng/libjson-plugin.so
@@ -338,4 +339,3 @@ share/syslog-ng/xsd/patterndb-2.xsd
 share/syslog-ng/xsd/patterndb-3.xsd
 share/syslog-ng/xsd/patterndb-4.xsd
 share/syslog-ng/xsd/patterndb-5.xsd
-@rcscript ${RCDIR}/syslog_ng
