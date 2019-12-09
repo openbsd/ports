@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2019/11/08 15:48:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.24 2019/12/09 15:34:13 sthen Exp $
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 
 V=			2.4.3
+REVISION=		0
 DISTNAME=		gdnsd-$V
 EXTRACT_SUFX=		.tar.xz
 
@@ -15,7 +16,7 @@ MAINTAINER=		Joerg Jung <jung@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c ev m pthread
+WANTLIB=		c ev m maxminddb pthread
 
 MASTER_SITES=		https://github.com/gdnsd/gdnsd/releases/download/v$V/
 
@@ -28,9 +29,10 @@ BUILD_DEPENDS=		devel/ragel
 # used for tests
 BUILD_DEPENDS+=		archivers/xz \
 			net/curl
-LIB_DEPENDS=		devel/libev
-RUN_DEPENDS=		net/GeoIP,-city \
-			net/GeoIP,-db
+LIB_DEPENDS=		devel/libev \
+			net/libmaxminddb
+RUN_DEPENDS=		net/libmaxminddb,-city \
+			net/libmaxminddb,-db
 TEST_DEPENDS=		${BUILD_DEPENDS} \
 			www/p5-libwww \
 			net/p5-Socket6 \
@@ -39,11 +41,12 @@ TEST_DEPENDS=		${BUILD_DEPENDS} \
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS+=	--with-rundir=${VARBASE}/run/ \
 			--with-rootdir=${VARBASE}/gdnsd
-CONFIGURE_ENV=		LIBEV_LIBS="-L${LOCALBASE}/lib -lev" \
-			LIBEV_CFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 
 SUBST_VARS+=		VARBASE
 
