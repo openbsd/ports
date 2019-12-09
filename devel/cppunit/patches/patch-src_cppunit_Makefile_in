@@ -1,13 +1,14 @@
-$OpenBSD: patch-src_cppunit_Makefile_in,v 1.2 2008/10/24 14:49:44 jasper Exp $
---- src/cppunit/Makefile.in.orig	Wed Feb 20 06:59:55 2008
-+++ src/cppunit/Makefile.in	Sun Oct 19 23:03:52 2008
-@@ -299,8 +299,7 @@ libcppunit_la_SOURCES = \
+$OpenBSD: patch-src_cppunit_Makefile_in,v 1.3 2019/12/09 16:10:14 bket Exp $
+Index: src/cppunit/Makefile.in
+--- src/cppunit/Makefile.in.orig
++++ src/cppunit/Makefile.in
+@@ -446,8 +446,7 @@ libcppunit_la_SOURCES = \
    Win32DynamicLibraryManager.cpp
  
  libcppunit_la_LDFLAGS = \
 - -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
-- -release $(LT_RELEASE)
+- -release $(LT_RELEASE) $(LIBADD_DL)
 + -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
+ libcppunit_la_LIBADD = $(LIBADD_DL)
  all: all-am
- 

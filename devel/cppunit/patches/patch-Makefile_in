@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2008/10/24 14:49:44 jasper Exp $
---- Makefile.in.orig	Sun Oct 19 23:43:08 2008
-+++ Makefile.in	Sun Oct 19 23:43:11 2008
-@@ -231,7 +231,7 @@ top_builddir = @top_builddir@
+$OpenBSD: patch-Makefile_in,v 1.2 2019/12/09 16:10:14 bket Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -385,7 +385,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- AUTOMAKE_OPTIONS = 1.4
- ACLOCAL_AMFLAGS = -I config
+ ACLOCAL_AMFLAGS = -I m4
 -SUBDIRS = src include examples doc
 +SUBDIRS = src include examples
- pkgconfigdatadir = $(libdir)/pkgconfig
- pkgconfigdata_DATA = cppunit.pc
- bin_SCRIPTS = cppunit-config
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = cppunit.pc
+ doc_DATA = \

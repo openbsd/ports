@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/12/09 16:10:14 bket Exp $
 @bin bin/DllPlugInTester
-bin/cppunit-config
 include/cppunit/
 include/cppunit/AdditionalMessage.h
 include/cppunit/Asserter.h
@@ -67,33 +66,27 @@ include/cppunit/plugin/PlugInParameters.h
 include/cppunit/plugin/TestPlugIn.h
 include/cppunit/plugin/TestPlugInDefaultImpl.h
 include/cppunit/portability/
-include/cppunit/portability/CppUnitDeque.h
-include/cppunit/portability/CppUnitMap.h
-include/cppunit/portability/CppUnitSet.h
-include/cppunit/portability/CppUnitStack.h
-include/cppunit/portability/CppUnitVector.h
 include/cppunit/portability/FloatingPoint.h
 include/cppunit/portability/Stream.h
 include/cppunit/tools/
 include/cppunit/tools/Algorithm.h
+include/cppunit/tools/StringHelper.h
 include/cppunit/tools/StringTools.h
 include/cppunit/tools/XmlDocument.h
 include/cppunit/tools/XmlElement.h
 include/cppunit/ui/
-include/cppunit/ui/mfc/
-include/cppunit/ui/mfc/MfcTestRunner.h
-include/cppunit/ui/mfc/TestRunner.h
-include/cppunit/ui/qt/
-include/cppunit/ui/qt/Config.h
-include/cppunit/ui/qt/QtTestRunner.h
-include/cppunit/ui/qt/TestRunner.h
 include/cppunit/ui/text/
 include/cppunit/ui/text/TestRunner.h
 include/cppunit/ui/text/TextTestRunner.h
-lib/libcppunit.a
+@static-lib lib/libcppunit.a
 lib/libcppunit.la
 @lib lib/libcppunit.so.${LIBcppunit_VERSION}
 lib/pkgconfig/cppunit.pc
-@man man/man1/cppunit-config.1
-share/aclocal/
-share/aclocal/cppunit.m4
+share/doc/cppunit/
+share/doc/cppunit/AUTHORS
+share/doc/cppunit/BUGS
+share/doc/cppunit/CodingGuideLines.txt
+share/doc/cppunit/FAQ
+share/doc/cppunit/INSTALL
+share/doc/cppunit/INSTALL-WIN32.txt
+share/doc/cppunit/INSTALL-unix

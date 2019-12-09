@@ -1,26 +1,23 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/12/09 16:10:14 bket Exp $
 
 COMMENT=	c++ unit testing framework
 
-DISTNAME=	cppunit-1.12.1
-REVISION =	4
+DISTNAME=	cppunit-1.14.0
 
-SHARED_LIBS +=	cppunit              3.0      # .1.0
+SHARED_LIBS +=	cppunit		4.0 # 1.14.0
 
 CATEGORIES=	devel
 
-# XXX dead.  Switch to newer releases at
-# https://freedesktop.org/wiki/Software/cppunit/ ?
-HOMEPAGE=	http://cppunit.sourceforge.net/
+HOMEPAGE=	https://www.freedesktop.org/wiki/Software/cppunit/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cppunit/}
+MASTER_SITES=		https://dev-www.libreoffice.org/src/
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 
