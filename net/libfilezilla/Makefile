@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/28 15:55:23 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/09 16:29:06 bket Exp $
 
 COMMENT =	support library for FileZilla
 
@@ -21,7 +21,6 @@ EXTRACT_SUFX =		.tar.bz2
 
 COMPILER =		base-clang ports-gcc
 
-# XXX regression tests depend on cppunit>=1.13.0
 BUILD_DEPENDS =		devel/cppunit \
 			devel/gettext,-tools
 LIB_DEPENDS =		converters/libiconv \
