@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.835 2019/12/02 03:38:56 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.836 2019/12/09 08:39:17 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1347,6 +1347,7 @@ my $obsolete_reason = {
 	'py-elementtidy' => 5,
 	'py-gd' => 5,
 	'py-oauth2' => 5,
+	'afm' => 6,
 };
 
 # reasons for obsolete packages
