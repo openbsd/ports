@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2019/09/04 12:27:42 martijn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/09 20:24:02 gilles Exp $
 
 COMMENT =	SenderScore integration to the OpenSMTPD daemon
 
-V =		0.1.0
+V =		0.1.1
 FILTER_NAME =	senderscore
 DISTNAME =	filter-senderscore-${V}
 
