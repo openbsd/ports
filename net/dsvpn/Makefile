@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/06 15:13:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/12/09 15:01:07 sthen Exp $
 
 COMMENT=	small and simple TCP VPN with modern crypto
 
 GH_ACCOUNT=	jedisct1
 GH_PROJECT=	dsvpn
-GH_TAGNAME=	0.1.3
+GH_TAGNAME=	0.1.4
 
 CATEGORIES=	net
 
