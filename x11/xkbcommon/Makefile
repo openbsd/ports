@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/11/09 07:02:24 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/12/10 17:51:18 jasper Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
 DISTNAME=		libxkbcommon-0.9.1
+REVISION =		0
 SHARED_LIBS +=	xkbcommon            1.5      # unknown
 SHARED_LIBS +=	xkbcommon-x11        1.2      # unknown
 CATEGORIES=		x11 inputmethods
@@ -14,6 +15,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # All licenses are derivative of the MIT/X11 license, mostly identical other
 # than no-endorsement clauses (e.g. paragraph 4 of The Open Group's license).
 PERMIT_PACKAGE=	Yes
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MASTER_SITES=		${HOMEPAGE}/download/
 EXTRACT_SUFX=		.tar.xz

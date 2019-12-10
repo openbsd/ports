@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.170 2019/11/02 15:03:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.171 2019/12/10 17:51:18 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.34.2
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -18,6 +19,8 @@ WANTLIB += m nautilus-extension nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread tasn1
 WANTLIB += unistring uuid vte-2.91 xcb xcb-render xcb-shm z
 WANTLIB += ${COMPILER_LIBCXX}
+
+DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 COMPILER =	base-clang ports-gcc base-gcc
 

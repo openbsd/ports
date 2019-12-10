@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.65 2019/11/02 15:03:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.66 2019/12/10 17:51:18 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
-lib/nautilus/extensions-3.0/libterminal-nautilus.so
+@so lib/nautilus/extensions-3.0/libterminal-nautilus.so
 @bin libexec/gnome-terminal-server
 share/applications/org.gnome.Terminal.desktop
 share/dbus-1/services/org.gnome.Terminal.service
