@@ -1,0 +1,4 @@
+KDiskFree displays the available file devices (hard drive partitions, floppy
+and CD drives, etc.) along with information on their capacity, free space, type
+and mount point. It also allows you to mount and unmount drives and view them
+in a file manager.
