@@ -1,0 +1,13 @@
+KAppTemplate is an application to start development quickly using existing
+templates providing basic repeatedly written code and a proper structure.
+
+Features:
+
+ - Templates for C++, Ruby, Python and PHP
+ - Categories
+ - Templates for different build-systems and frameworks
+ - Templates especially for KDE-development (plugins for Plasma, QtQuick,
+   KTextEditor, KRunner, Akonadi)
+ - It is easy to create new templates using space holders and a simple
+   CMake-command
+ - Integrated into KDevelop
