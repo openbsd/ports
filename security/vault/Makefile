@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2019/12/08 09:47:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2019/12/10 16:35:54 ajacoutot Exp $
 
 COMMENT=		secure secret storage
 
 GH_TAGNAME=		v1.3.0
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		vault
-REVISION=		0
+REVISION=		1
 
 ### Vault UI
 # unversioned DISTFILE
@@ -34,7 +34,7 @@ MODGO_LDFLAGS +=	-X github.com/hashicorp/vault/version.GitDescribe=${GH_TAGNAME:
 MODGO_LDFLAGS +=	-X github.com/hashicorp/vault/version.VersionPrerelease="" # empty
 
 post-extract:
-	install -m644 ${DISTDIR}/bindata_assetfs.go ${WRKDIST}/http/
+	install -m644 ${FULLDISTDIR}/bindata_assetfs.go ${WRKDIST}/http/
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vault
