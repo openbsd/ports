@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/11/29 13:47:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.75 2019/12/10 18:23:11 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -28,15 +28,15 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	12
 REVISION-games = 4
-REVISION-sdk = 4
+REVISION-sdk = 5
 REVISION-edu = 8
 REVISION-multimedia = 2
 REVISION-network = 2
 REVISION-extras = 11
-REVISION-main =		34
+REVISION-main =		35
 REVISION-admin =	1
 REVISION-graphics =	5
-REVISION-utils =	0
+REVISION-utils =	1
 REVISION-toys=		0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -107,26 +107,15 @@ RUN_DEPENDS-network = \
 	${MODKDE4_DEP_DIR}/kppp
 
 RUN_DEPENDS-sdk = \
-	${MODKDE4_DEP_DIR}/dev-scripts		\
-	${MODKDE4_DEP_DIR}/dev-utils		\
-	${MODKDE4_DEP_DIR}/kapptemplate		\
-	${MODKDE4_DEP_DIR}/kcachegrind		\
-	${MODKDE4_DEP_DIR}/lokalize		\
-	${MODKDE4_DEP_DIR}/poxml		\
-	${MODKDE4_DEP_DIR}/sdk-kioslaves	\
-	${MODKDE4_DEP_DIR}/sdk-strigi-analyzers	\
-	${MODKDE4_DEP_DIR}/sdk-thumbnailers
+	${MODKDE4_DEP_DIR}/sdk-strigi-analyzers
 
 RUN_DEPENDS-toys = \
 	${MODKDE4_DEP_DIR}/amor		\
 	${MODKDE4_DEP_DIR}/ktux
 
 KDE4-utils = \
-	${MODKDE4_DEP_DIR}/kdf			\
-	${MODKDE4_DEP_DIR}/kfloppy		\
 	${MODKDE4_DEP_DIR}/kremotecontrol	\
 	${MODKDE4_DEP_DIR}/nepomuk-widgets	\
-	${MODKDE4_DEP_DIR}/print-manager	\
 	${MODKDE4_DEP_DIR}/superkaramba
 
 RUN_DEPENDS-minimal = \

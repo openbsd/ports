@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/11/29 13:53:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.79 2019/12/10 18:23:11 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -122,13 +122,13 @@ SUBDIR += kaccessible
 #SUBDIR += filelight		x11/kde-applications
 #SUBDIR += kcalc		x11/kde-applications
 #SUBDIR += kcharselect		x11/kde-applications
-SUBDIR += kdf
-SUBDIR += kfloppy
+#SUBDIR += kdf			x11/kde-applications
+#SUBDIR += kfloppy		x11/kde-applications
 SUBDIR += kgpg
 SUBDIR += kremotecontrol
 #SUBDIR += ktimer		x11/kde-applications
 #SUBDIR += kwalletmanager	x11/kde-applications
-SUBDIR += print-manager
+#SUBDIR += print-manager	x11/kde-applications
 SUBDIR += superkaramba
 #SUBDIR += sweeper		x11/kde-applications
 
@@ -248,19 +248,19 @@ SUBDIR += network-strigi-analyzers
 
 # former kdesdk
 #SUBDIR += cervisia			x11/kde-applications
-SUBDIR += dev-scripts
-SUBDIR += dev-utils
+#SUBDIR += dev-scripts			x11/kde-applications
+#SUBDIR += dev-utils			x11/kde-applications
 #SUBDIR += dolphin-plugins		x11/kde-applications
-SUBDIR += kapptemplate
-SUBDIR += kcachegrind
+#SUBDIR += kapptemplate			x11/kde-applications
+#SUBDIR += kcachegrind			x11/kde-applications
 #SUBDIR += kompare			x11/kde-applications
 #SUBDIR += libkomparediff2		x11/kde-applications
-SUBDIR += lokalize
+#SUBDIR += lokalize			x11/kde-applications
 #SUBDIR += okteta			x11/kde-applications
-SUBDIR += poxml
-SUBDIR += sdk-kioslaves
+#SUBDIR += poxml			x11/kde-applications
+#SUBDIR += sdk-kioslaves		x11/kde-applications
 SUBDIR += sdk-strigi-analyzers
-SUBDIR += sdk-thumbnailers
+#SUBDIR += sdk-thumbnailers		x11/kde-applications
 #SUBDIR += umbrello			x11/kde-applications
 
 # former kdetoys
