@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/07/07 22:39:42 espie Exp $
-lib/gio/modules/libgiognomeproxy.so
-lib/gio/modules/libgiognutls.so
-lib/gio/modules/libgiolibproxy.so
+@comment $OpenBSD: PLIST,v 1.25 2019/12/10 17:08:34 ajacoutot Exp $
+@so lib/gio/modules/libgiognomeproxy.so
+@so lib/gio/modules/libgiognutls.so
+@so lib/gio/modules/libgiolibproxy.so
 lib/systemd/
 lib/systemd/user/
 lib/systemd/user/glib-pacrunner.service

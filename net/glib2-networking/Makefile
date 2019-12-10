@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2019/11/01 19:35:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2019/12/10 17:08:34 ajacoutot Exp $
 
 COMMENT=		network-related gio modules for GLib
 
-GNOME_VERSION=		2.62.1
+GNOME_VERSION=		2.62.2
 GNOME_PROJECT=		glib-networking
 PKGNAME=		glib2-networking-${GNOME_VERSION}
 
@@ -29,5 +29,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		devel/glib2 \
 			net/libproxy \
 			security/gnutls
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
