@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.93 2019/12/09 16:14:27 visa Exp $
+# $OpenBSD: Makefile,v 1.94 2019/12/10 12:28:14 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.16.1
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc x11
 
@@ -28,11 +28,10 @@ FLAVOR ?=
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	https://mupdf.com/downloads/archive/
 
-# https://marc.info/?l=openbsd-ports&m=156448467232400&w=2
-# possible alignment issue?
-MODULES +=	gcc4
-MODGCC4_ARCHS =	armv7
-MODGCC4_LANGS =	c
+# armv7: alignment issue https://marc.info/?l=openbsd-ports&m=156448467232400&w=2
+COMPILER =	 base-clang ports-gcc base-gcc
+COMPILER_LANGS = c
+MODGCC4_ARCHS =	 armv7
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
@@ -73,7 +72,7 @@ LIB_DEPENDS +=	graphics/freeglut
 .endif
 
 # ld.bfd -r -b binary does not produce correct type of object.
-.if (${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el")
+.if ${MACHINE_ARCH:Mmips64*}
 MAKE_FLAGS +=	HAVE_OBJCOPY=no
 .endif
 
