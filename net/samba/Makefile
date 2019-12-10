@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.282 2019/12/05 10:01:52 jca Exp $
+# $OpenBSD: Makefile,v 1.283 2019/12/10 09:56:50 jca Exp $
 
-VERSION =		4.10.10
+VERSION =		4.10.11
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -20,7 +20,8 @@ PKG_ARCH-docs =		*
 LDB_V =			1.5.6
 TEVENT_V =		0.9.39
 
-REVISION-main =		0
+REVISION-ldb =		0
+REVISION-tevent =	0
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
