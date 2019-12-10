@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2019/08/13 21:40:42 sthen Exp $
+$OpenBSD: patch-Makefile_am,v 1.2 2019/12/10 16:47:54 sthen Exp $
 
 ld.lld won't allow -shared -pie (it doesn't make sense anyway)
 
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -131,8 +131,7 @@ libcoap_include_HEADERS = \
+@@ -137,8 +137,7 @@ libcoap_include_HEADERS = \
  libcoap_@LIBCOAP_NAME_SUFFIX@_la_LDFLAGS =					\
    -version-info $(LT_LIBCOAP_CURRENT):$(LT_LIBCOAP_REVISION):$(LT_LIBCOAP_AGE)	\
    @libcoap_SYMBOLS@ \

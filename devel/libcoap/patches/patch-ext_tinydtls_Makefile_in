@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_tinydtls_Makefile_in,v 1.1.1.1 2018/06/14 21:15:26 sthen Exp $
+$OpenBSD: patch-ext_tinydtls_Makefile_in,v 1.2 2019/12/10 16:47:54 sthen Exp $
 
 Index: ext/tinydtls/Makefile.in
 --- ext/tinydtls/Makefile.in.orig
@@ -14,3 +14,21 @@ Index: ext/tinydtls/Makefile.in
  package = @PACKAGE_TARNAME@-@PACKAGE_VERSION@
  
  install := cp
+@@ -52,7 +52,7 @@ DISTDIR=$(top_builddir)/$(package)
+ FILES:=Makefile.in configure configure.ac dtls_config.h.in \
+   Makefile.tinydtls $(SOURCES) $(HEADERS)
+ LIB:=libtinydtls
+-LIBS:=$(LIB).a $(LIB).so
++LIBS:=$(LIB).a $(LIB).so.${LIBtinydtls_VERSION}
+ LDFLAGS:=@LIBS@
+ ARFLAGS:=cru
+ doc:=doc
+@@ -81,7 +81,7 @@ dirs:	$(SUBDIRS)
+ $(SUB_OBJECTS)::
+ 	$(MAKE) -C $(@D) $(@F)
+ 
+-$(LIB).so: $(OBJECTS)
++$(LIB).so.${LIBtinydtls_VERSION}: $(OBJECTS)
+ 	$(LINK.c) $(LDFLAGS) -shared $^ -o $@
+ 
+ $(LIB).a: $(OBJECTS)

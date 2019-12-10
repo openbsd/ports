@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_tiny_c,v 1.1 2019/12/10 16:47:54 sthen Exp $
+
+Index: examples/tiny.c
+--- examples/tiny.c.orig
++++ examples/tiny.c
+@@ -88,6 +88,9 @@ get_session(const char *group) {
+   memset(&hints, 0, sizeof(struct addrinfo));
+   hints.ai_family = AF_UNSPEC;    /* Allow IPv4 or IPv6 */
+   hints.ai_socktype = SOCK_DGRAM; /* Coap uses UDP */
++#ifndef AI_ALL
++#define AI_ALL 0
++#endif
+   hints.ai_flags = AI_PASSIVE | AI_NUMERICHOST | AI_NUMERICSERV | AI_ALL;
+ 
+   s = getaddrinfo(group, NULL, &hints, &result);

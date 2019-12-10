@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/08/13 21:40:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/10 16:47:54 sthen Exp $
 @bin bin/coap-client
 @bin bin/coap-rd
 @bin bin/coap-server
@@ -11,6 +11,7 @@ include/coap2/coap.h
 include/coap2/coap_debug.h
 include/coap2/coap_dtls.h
 include/coap2/coap_event.h
+include/coap2/coap_forward_decls.h
 include/coap2/coap_hashkey.h
 include/coap2/coap_io.h
 include/coap2/coap_mutex.h
@@ -37,6 +38,8 @@ include/tinydtls/crypto.h
 include/tinydtls/dtls.h
 include/tinydtls/dtls_config.h
 include/tinydtls/dtls_debug.h
+include/tinydtls/dtls_mutex.h
+include/tinydtls/dtls_prng.h
 include/tinydtls/dtls_time.h
 include/tinydtls/ecc/
 include/tinydtls/ecc/ecc.h
@@ -46,7 +49,6 @@ include/tinydtls/hmac.h
 include/tinydtls/netq.h
 include/tinydtls/numeric.h
 include/tinydtls/peer.h
-include/tinydtls/prng.h
 include/tinydtls/session.h
 include/tinydtls/sha2/
 include/tinydtls/sha2/sha2.h
@@ -54,10 +56,11 @@ include/tinydtls/state.h
 include/tinydtls/tinydtls.h
 include/tinydtls/uthash.h
 include/tinydtls/utlist.h
-lib/libcoap-2-tinydtls.a
+@static-lib lib/libcoap-2-tinydtls.a
 lib/libcoap-2-tinydtls.la
 @lib lib/libcoap-2-tinydtls.so.${LIBcoap-2-tinydtls_VERSION}
-lib/libtinydtls.a
+@static-lib lib/libtinydtls.a
+@lib lib/libtinydtls.so.${LIBtinydtls_VERSION}
 lib/pkgconfig/libcoap-2-tinydtls.pc
 @man man/man1/coap-client.1
 @man man/man1/coap-rd.1
@@ -70,6 +73,7 @@ lib/pkgconfig/libcoap-2-tinydtls.pc
 @man man/man3/coap_encryption.3
 @man man/man3/coap_endpoint_str.3
 @man man/man3/coap_handler.3
+@man man/man3/coap_io.3
 @man man/man3/coap_keepalive.3
 @man man/man3/coap_logging.3
 @man man/man3/coap_observe.3
