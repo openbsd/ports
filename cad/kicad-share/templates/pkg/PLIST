@@ -1,6 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/03 07:58:05 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/10 23:09:48 sthen Exp $
 share/kicad/
 share/kicad/template/
+share/kicad/template/A2_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
+share/kicad/template/A2_ISO5457-1999_ISO7200-2004-compact_EN.kicad_wks
+share/kicad/template/A2_ISO5457-1999_ISO7200-2004_ASMEY1435-2014_EN.kicad_wks
+share/kicad/template/A2_ISO5457-1999_ISO7200-2004_EN.kicad_wks
+share/kicad/template/A3_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
+share/kicad/template/A3_ISO5457-1999_ISO7200-2004-compact_EN.kicad_wks
+share/kicad/template/A3_ISO5457-1999_ISO7200-2004_ASMEY1435-2014_EN.kicad_wks
+share/kicad/template/A3_ISO5457-1999_ISO7200-2004_EN.kicad_wks
+share/kicad/template/A4-portrait_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
+share/kicad/template/A4-portrait_ISO5457-1999_ISO7200-2004-compact_EN.kicad_wks
+share/kicad/template/A4-portrait_ISO5457-1999_ISO7200-2004_ASMEY1435-2014_EN.kicad_wks
+share/kicad/template/A4-portrait_ISO5457-1999_ISO7200-2004_EN.kicad_wks
+share/kicad/template/A4_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
+share/kicad/template/A4_ISO5457-1999_ISO7200-2004-compact_EN.kicad_wks
+share/kicad/template/A4_ISO5457-1999_ISO7200-2004_ASMEY1435-2014_EN.kicad_wks
+share/kicad/template/A4_ISO5457-1999_ISO7200-2004_EN.kicad_wks
 share/kicad/template/Arduino_Fio/
 share/kicad/template/Arduino_Fio/Arduino_Fio-cache.lib
 share/kicad/template/Arduino_Fio/Arduino_Fio.kicad_pcb
@@ -151,7 +167,6 @@ share/kicad/template/BeagleBone-Black-Cape/meta/
 share/kicad/template/BeagleBone-Black-Cape/meta/brd.png
 share/kicad/template/BeagleBone-Black-Cape/meta/icon.png
 share/kicad/template/BeagleBone-Black-Cape/meta/info.html
-share/kicad/template/BeagleBone-Black-Cape/pwr_BeagleBone.bck
 share/kicad/template/BeagleBone-Black-Cape/pwr_BeagleBone.dcm
 share/kicad/template/BeagleBone-Black-Cape/pwr_BeagleBone.lib
 share/kicad/template/BeagleBone-Black-Cape/sym-lib-table

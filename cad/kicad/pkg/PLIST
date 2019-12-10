@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2019/11/08 14:43:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/10 23:09:48 sthen Exp $
 @pkgpath cad/kicad,-docs
 @pkgpath cad/kicad,-main
 @bin bin/bitmap2component
@@ -23,9 +23,9 @@ bin/libpl_editor.a
 lib/kicad/
 lib/kicad/plugins/
 lib/kicad/plugins/3d/
-lib/kicad/plugins/3d/libs3d_plugin_idf.so
-lib/kicad/plugins/3d/libs3d_plugin_oce.so
-lib/kicad/plugins/3d/libs3d_plugin_vrml.so
+@so lib/kicad/plugins/3d/libs3d_plugin_idf.so
+@so lib/kicad/plugins/3d/libs3d_plugin_oce.so
+@so lib/kicad/plugins/3d/libs3d_plugin_vrml.so
 @lib lib/libkicad_3dsg.so.${LIBkicad_3dsg_VERSION}
 share/appdata/
 share/appdata/kicad.appdata.xml

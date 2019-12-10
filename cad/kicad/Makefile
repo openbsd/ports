@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2019/11/08 14:43:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/12/10 23:09:48 sthen Exp $
 
 # XXX internal dependency problem
-# In file included from /pobj/ports/kicad-5.1.4/kicad-5.1.4/pcbnew/netlist.cpp:41:
-# /pobj/ports/kicad-5.1.4/kicad-5.1.4/pcbnew/./netlist_reader.h:39:10: fatal error: 'netlist_lexer.h' file not found
+# In file included from /pobj/ports/kicad-5.1.5/kicad-5.1.5/pcbnew/netlist.cpp:41:
+# /pobj/ports/kicad-5.1.5/kicad-5.1.5/pcbnew/./netlist_reader.h:39:10: fatal error: 'netlist_lexer.h' file not found
 USE_NINJA = no
 
-V =			5.1.4
+V =			5.1.5
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0

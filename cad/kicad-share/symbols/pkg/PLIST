@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/03 07:58:05 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/10 23:09:48 sthen Exp $
 @conflict kicad-library-*
 @pkgpath cad/kicad-library
 share/kicad/
@@ -257,6 +257,8 @@ share/kicad/library/MCU_Texas.dcm
 share/kicad/library/MCU_Texas.lib
 share/kicad/library/MCU_Texas_MSP430.dcm
 share/kicad/library/MCU_Texas_MSP430.lib
+share/kicad/library/MCU_Texas_SimpleLink.dcm
+share/kicad/library/MCU_Texas_SimpleLink.lib
 share/kicad/library/Mechanical.dcm
 share/kicad/library/Mechanical.lib
 share/kicad/library/Memory_Controller.dcm

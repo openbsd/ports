@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.3 2019/11/08 22:18:43 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/12/10 23:09:48 sthen Exp $
 
 PKG_ARCH ?=		*
 
-V ?=			5.1.4
+V ?=			5.1.5
 
 CATEGORIES ?=		cad
 
