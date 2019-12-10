@@ -1,6 +1,10 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2017/01/01 09:30:21 jca Exp $
---- CMakeLists.txt.orig	Sun Jul 12 13:17:46 2015
-+++ CMakeLists.txt	Wed Dec 28 08:59:20 2016
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/12/10 06:46:17 rsadowski Exp $
+
+Do not use CMAKE_THREAD_LIBS_INIT as linker flag
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
 @@ -5,7 +5,6 @@ project(libobjc)
  enable_language(ASM)
  
@@ -9,7 +13,31 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2017/01/01 09:30:21 jca Exp $
  set(CMAKE_C_FLAGS "-std=gnu99 ${CMAKE_C_FLAGS}")
  
  set(libobjc_VERSION 4.6)
-@@ -285,6 +284,11 @@ if (APPLE)
+@@ -237,12 +236,8 @@ endif (ENABLE_OBJCXX)
+ 
+ # Currently, we actually need pthreads, but we should use the platform's native
+ # threading implementation (we do for everything except thread-local storage)
+-set(CMAKE_THREAD_PREFER_PTHREAD)
+-include(FindThreads)
+-set(objc_LINK_FLAGS "${objc_LINK_FLAGS} ${CMAKE_THREAD_LIBS_INIT}")
++find_package(Threads REQUIRED)
+ 
+-
+-
+ add_library(objc SHARED ${libobjc_C_SRCS} ${libobjc_ASM_SRCS} ${libobjc_OBJC_SRCS} ${libobjc_CXX_SRCS})
+ 
+ set_target_properties(objc PROPERTIES
+@@ -265,6 +260,9 @@ if (BUILD_STATIC_LIBOBJC)
+ endif ()
+ 
+ 
++if (CMAKE_THREAD_LIBS_INIT)
++	target_link_libraries(objc ${CMAKE_THREAD_LIBS_INIT})
++endif ()
+ 
+ # Explicitly link the C++ runtime and libgc if we are compiling with gc support.
+ target_link_libraries(objc ${CXX_RUNTIME})
+@@ -285,6 +283,11 @@ if (APPLE)
  	set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -Wl,-undefined,dynamic_lookup")
  	set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -Wl,-undefined,dynamic_lookup")
  endif ()
