@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/11/23 13:03:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2019/12/10 18:30:54 rsadowski Exp $
 
      SUBDIR =
 
@@ -141,14 +141,14 @@
 
      # kdesdk
      SUBDIR += cervisia
-     #SUBDIR += kapptemplate
-     #SUBDIR += kcachegrind
-     #SUBDIR += kde-dev-scripts
-     #SUBDIR += kde-dev-utils
-     #SUBDIR += kdesdk-kioslaves
+     SUBDIR += kapptemplate
+     SUBDIR += kcachegrind
+     SUBDIR += kde-dev-scripts
+     SUBDIR += kde-dev-utils
+     SUBDIR += kdesdk-kioslaves
      SUBDIR += kompare
-     #SUBDIR += lokalize
-     #SUBDIR += poxml
+     SUBDIR += lokalize
+     SUBDIR += poxml
      SUBDIR += umbrello
 
      # utilities
@@ -158,13 +158,13 @@
      SUBDIR += kcalc
      SUBDIR += kcharselect
      SUBDIR += kdebugsettings
-     #SUBDIR += kdf
-     #SUBDIR += kfloppy
+     SUBDIR += kdf
+     SUBDIR += kfloppy
      #SUBDIR += kgpg
      SUBDIR += kteatime
      SUBDIR += ktimer
      SUBDIR += kwalletmanager
-     #SUBDIR += print-manager
+     SUBDIR += print-manager
      SUBDIR += sweeper
 
      # webdev
