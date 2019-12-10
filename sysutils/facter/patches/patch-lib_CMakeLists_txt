@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.25 2019/09/18 00:36:21 sebastia Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.26 2019/12/10 07:28:17 sebastia Exp $
 
 - Override library version
 
 Index: lib/CMakeLists.txt
 --- lib/CMakeLists.txt.orig
 +++ lib/CMakeLists.txt
-@@ -334,7 +334,7 @@ add_library(libfactersrc OBJECT ${LIBFACTER_COMMON_SOU
+@@ -345,7 +345,7 @@ add_library(libfactersrc OBJECT ${LIBFACTER_COMMON_SOU
  set_target_properties(libfactersrc PROPERTIES POSITION_INDEPENDENT_CODE true)
  add_library(libfacter $<TARGET_OBJECTS:libfactersrc>)
  if (BUILD_SHARED_LIBS)
