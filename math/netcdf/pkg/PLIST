@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/05/16 11:39:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/12/10 17:27:20 feinerer Exp $
 bin/nc-config
 @bin bin/nccopy
 @bin bin/ncdump
@@ -6,10 +6,11 @@ bin/nc-config
 @bin bin/ncgen3
 include/netcdf.h
 include/netcdf_aux.h
+include/netcdf_dispatch.h
 include/netcdf_filter.h
 include/netcdf_mem.h
 include/netcdf_meta.h
-lib/libnetcdf.a
+@static-lib lib/libnetcdf.a
 lib/libnetcdf.la
 lib/libnetcdf.settings
 @lib lib/libnetcdf.so.${LIBnetcdf_VERSION}

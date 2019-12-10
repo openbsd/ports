@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:43 sthen Exp $
-
-# let's give it a chance?
-#BROKEN-powerpc=	fails to build
-#BROKEN-hppa =	fails to configure
+# $OpenBSD: Makefile,v 1.37 2019/12/10 17:27:20 feinerer Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
 
-V=		4.7.0
+V=		4.7.3
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
