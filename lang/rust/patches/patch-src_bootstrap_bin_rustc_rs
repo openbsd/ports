@@ -1,18 +1,19 @@
-$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.12 2019/09/29 08:23:17 semarie Exp $
+$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.13 2019/12/10 07:32:42 semarie Exp $
 try to reduce memory usage on aarch64:
  - reduce memory use by retaining fewer names within compilation artifacts
 Index: src/bootstrap/bin/rustc.rs
 --- src/bootstrap/bin/rustc.rs.orig
 +++ src/bootstrap/bin/rustc.rs
-@@ -222,6 +222,11 @@ fn main() {
-             cmd.arg("-C").arg(format!("codegen-units={}", s));
-         }
+@@ -113,6 +113,12 @@ fn main() {
+             Err(..) => "n",
+         };
  
-+        if target.contains("aarch64-unknown-openbsd")
++        if target.unwrap().contains("aarch64-unknown-openbsd")
 +            && crate_name == Some("rustc") {
++
 +            cmd.arg("-Z").arg("fewer-names");
 +        }
 +
-         // Emit save-analysis info.
-         if env::var("RUSTC_SAVE_ANALYSIS") == Ok("api".to_string()) {
-             cmd.arg("-Zsave-analysis");
+         // The compiler builtins are pretty sensitive to symbols referenced in
+         // libcore and such, so we never compile them with debug assertions.
+         //

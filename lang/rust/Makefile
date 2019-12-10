@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2019/09/29 08:23:17 semarie Exp $
+# $OpenBSD: Makefile,v 1.103 2019/12/10 07:32:42 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,17 +13,17 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.38.0
-CARGO_V =		0.39.0
+V =			1.39.0
+CARGO_V =		0.40.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.4
+RUSTFMT_V =		1.4.8
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.38.0-20190926
-BV-amd64 =		1.38.0-20190924
-BV-i386 =		1.38.0-20190924
-BV-sparc64 =		1.37.0-20190813
+BV-aarch64 =		1.39.0-20191124
+BV-amd64 =		1.39.0-20191122
+BV-i386 =		1.39.0-20191123
+BV-sparc64 =		1.39.0-20191207
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -138,7 +138,7 @@ SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/vendor/*/.cargo-checksum.json
-	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/testsuite/support/paths.rs
+	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/crates/cargo-test-support/src/paths.rs
 
 # - check datasize limit before configuring (and building)
 pre-configure:

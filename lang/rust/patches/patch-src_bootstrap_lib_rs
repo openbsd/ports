@@ -1,19 +1,10 @@
-$OpenBSD: patch-src_bootstrap_lib_rs,v 1.24 2019/09/29 08:23:17 semarie Exp $
+$OpenBSD: patch-src_bootstrap_lib_rs,v 1.25 2019/12/10 07:32:42 semarie Exp $
 let us compilation choice to be honored.
 https://github.com/rust-lang/rust/issues/39900
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs
-@@ -104,7 +104,7 @@
- //! also check out the `src/bootstrap/README.md` file for more information.
- 
- // NO-RUSTC-WRAPPER
--#![deny(warnings, rust_2018_idioms, unused_lifetimes)]
-+#![deny(rust_2018_idioms, unused_lifetimes)]
- 
- #![feature(core_intrinsics)]
- #![feature(drain_filter)]
-@@ -768,7 +768,6 @@ impl Build {
+@@ -757,7 +757,6 @@ impl Build {
          // cc-rs because the build scripts will determine that for themselves.
          let mut base = self.cc[&target].args().iter()
                             .map(|s| s.to_string_lossy().into_owned())
