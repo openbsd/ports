@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.44 2019/12/08 18:41:44 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.45 2019/12/10 16:45:24 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.52.1v0
 SEPARATE_BUILD ?=	Yes
@@ -39,10 +39,10 @@ MODMESON_CONFIGURE_ENV +=	TERM="dumb"
 MODMESON_CONFIGURE_ENV +=	LIB${solib}_VERSION=${sover}
 .endfor
 
-.if empty(INSTALL_STRIP) || empty(DEBUG_PACKAGES)
-INSTALL_STRIP =		--strip
+_MODMESON_STRIP = --strip
+.if !empty(INSTALL_STRIP)
+MODMESON_CONFIGURE_ARGS += ${_MODMESON_STRIP${DEBUG_PACKAGES}}
 .endif
-MODMESON_CONFIGURE_ARGS +=	${INSTALL_STRIP}
 
 .if ${CONFIGURE_STYLE} == "meson"
 CONFIGURE_ARGS +=	${MODMESON_CONFIGURE_ARGS}
