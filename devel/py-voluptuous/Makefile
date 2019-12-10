@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/21 07:43:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/10 22:10:34 sebastia Exp $
 
 COMMENT =		data validation library
 
-MODPY_EGG_VERSION =	0.11.5
+MODPY_EGG_VERSION =	0.11.7
 DISTNAME =		voluptuous-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
