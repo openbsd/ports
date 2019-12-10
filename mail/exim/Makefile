@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.126 2019/09/29 18:08:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2019/12/10 23:21:37 sthen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.92.3
+VERSION =		4.93
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -39,6 +39,7 @@ PSEUDO_FLAVORS =	no_eximon
 FLAVORS =		mysql postgresql sqlite3 ldap sasl
 FLAVOR ?=
 MULTI_PACKAGES =	-main -eximon
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 
@@ -90,7 +91,7 @@ EXIM_MAKECAT +=		"CONFIGURE_FILE=${SYSCONFDIR}/exim/configure\n"
 EXIM_MAKECAT +=		"LOOKUP_INCLUDE=${EXIM_LOOKUP_INCLUDE}\n"
 EXIM_MAKECAT +=		"LOOKUP_LIBS=${EXIM_LOOKUP_LIBS}\n"
 EXIM_MAKECAT +=		"EXTRALIBS_EXIM=${EXIM_EXTRA_LIBS}\n"
-EXIM_MAKECAT +=		"CFLAGS=${CFLAGS} ${EXIM_CFLAGS}\n"
+EXIM_MAKECAT +=		"CFLAGS+=${CFLAGS} ${EXIM_CFLAGS}\n"
 EXIM_MAKECAT +=		"INCLUDE=-I${LOCALBASE}/include\n"
 
 NO_TEST =		Yes

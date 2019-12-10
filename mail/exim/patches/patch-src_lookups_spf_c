@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lookups_spf_c,v 1.1 2019/03/28 12:48:09 sthen Exp $
+$OpenBSD: patch-src_lookups_spf_c,v 1.2 2019/12/10 23:21:37 sthen Exp $
 
 Index: src/lookups/spf.c
 --- src/lookups/spf.c.orig
@@ -7,8 +7,8 @@ Index: src/lookups/spf.c
  #else
  
  #include "lf_functions.h"
--#ifndef HAVE_NS_TYPE
--#define HAVE_NS_TYPE
+-#if !defined(HAVE_NS_TYPE) && defined(NS_INADDRSZ)
+-# define HAVE_NS_TYPE
 -#endif
  #include <spf2/spf.h>
  #include <spf2/spf_dns_resolv.h>
