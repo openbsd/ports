@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.936 2019/11/20 20:11:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.937 2019/12/11 15:59:27 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -355,27 +355,20 @@
      SUBDIR += pear-HTML-Template-IT
      SUBDIR += pear-HTTP-WebDAV-Server
      SUBDIR += pear-SOAP
-     SUBDIR += pecl-chroot,php71
      SUBDIR += pecl-chroot,php72
      SUBDIR += pecl-chroot,php73
-     SUBDIR += pecl-memcached,php71
      SUBDIR += pecl-memcached,php72
      SUBDIR += pecl-memcached,php73
-     SUBDIR += pecl-pecl_http,php71
      SUBDIR += pecl-pecl_http,php72
      SUBDIR += pecl-pecl_http,php73
      SUBDIR += pecl-pledge,php72		# 7.2+-only
      SUBDIR += pecl-pledge,php73
-     SUBDIR += pecl-proctitle,php71
      SUBDIR += pecl-proctitle,php72
      SUBDIR += pecl-proctitle,php73
-     SUBDIR += pecl-propro,php71
      SUBDIR += pecl-propro,php72
      SUBDIR += pecl-propro,php73
-     SUBDIR += pecl-raphf,php71
      SUBDIR += pecl-raphf,php72
      SUBDIR += pecl-raphf,php73
-     SUBDIR += pecl-ssh2,php71
      SUBDIR += pecl-ssh2,php72
      SUBDIR += pecl-ssh2,php73
      SUBDIR += pelican
