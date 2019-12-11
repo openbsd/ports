@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.144 2019/11/21 23:35:57 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.145 2019/12/11 16:08:29 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -109,9 +109,6 @@ PHP_EXTENSIONS+=	-bz2 -curl -dba -gd -gmp -intl -imap -ldap \
 			-mysqli -odbc -pcntl -pdo_mysql -pdo_odbc -pdo_pgsql \
 			-pdo_sqlite -pgsql -pspell -shmop -soap -snmp \
 			-sqlite3 -pdo_dblib -tidy -xmlrpc -xsl -zip
-.if ${PV} == "7.1"
-PHP_EXTENSIONS+=	-mcrypt
-.endif
 
 SAPI+=			-main -apache -cgi -dbg
 MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
@@ -151,16 +148,13 @@ COMMENT-dbg=		interactive php debugger
 CONFIGURE_ARGS+=	--enable-phpdbg
 
 .for i in ${SAPI}
-WANTLIB$i +=		c crypto curses iconv intl lzma m onig
-WANTLIB$i +=		pthread readline ssl xml2 z
+WANTLIB$i +=		argon2 c crypto curses iconv intl lzma m onig
+WANTLIB$i +=		pthread readline sodium ssl xml2 z
 LIB_DEPENDS$i +=	devel/gettext,-runtime \
+			security/argon2 \
+			security/libsodium \
 			textproc/libxml \
 			textproc/oniguruma
-.if ${PV} != "7.1"
-WANTLIB$i +=		argon2 sodium
-LIB_DEPENDS$i +=	security/argon2 \
-			security/libsodium
-.endif
 .endfor
 
 #
@@ -419,9 +413,7 @@ pre-configure:
 .for i in ${MULTI_PACKAGES:N-main:S/-//g}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 PKGNAME-${i}=		php-${i}-${V}
-.if ${V:M7.1*}
-PKGSPEC-${i}=		php-${i}->=7.1,<7.2
-.elif ${V:M7.2*}
+.if ${V:M7.2*}
 PKGSPEC-${i}=		php-${i}->=7.2,<7.3
 .elif ${V:M7.3*}
 PKGSPEC-${i}=		php-${i}->=7.3,<7.4

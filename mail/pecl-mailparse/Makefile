@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/07 20:17:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/12/11 16:08:29 sthen Exp $
 
 COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
 DISTNAME =	mailparse-3.0.3
+REVISION=	0
 CATEGORIES =	mail
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>

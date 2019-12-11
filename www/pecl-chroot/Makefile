@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/12/11 16:08:29 sthen Exp $
 
 COMMENT=	PHP support for chroot(2)
 
 DISTNAME=	pecl-chroot-1.0
-REVISION=	13
+REVISION=	14
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
