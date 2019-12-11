@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/10 18:04:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/11 13:09:24 rsadowski Exp $
 
 COMMENT =	KDE storage device statistics
 DISTNAME =	kdf-${VERSION}
 CATEGORIES =	x11 sysutils
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/system/org.kde.kdf
 
@@ -21,6 +22,9 @@ MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS =	devel/kf5/kcmutils
+RUN_DEPENDS =	devel/kf5/kcmutils
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
