@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/09/28 23:08:34 pamela Exp $
+# $OpenBSD: Makefile,v 1.65 2019/12/11 12:43:28 sthen Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -18,6 +18,7 @@
      SUBDIR += chivo
      SUBDIR += clearsans
      SUBDIR += comic-neue
+     SUBDIR += crimson
      SUBDIR += dai-banna
      SUBDIR += dina-fonts
      SUBDIR += doulos
