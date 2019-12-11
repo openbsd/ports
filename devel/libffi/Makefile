@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/12 20:44:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/12/11 21:05:44 jasper Exp $
 
 COMMENT=		Foreign Function Interface
 
 DISTNAME=		libffi-3.2.1
-REVISION=		5
+REVISION=		6
 SHARED_LIBS +=  ffi                  1.2      # .6.4
 CATEGORIES=		devel
 
@@ -21,6 +21,8 @@ WANTLIB += c++abi
 
 MASTER_SITES=		https://sourceware.org/pub/libffi/ \
 			ftp://sourceware.org/pub/libffi/
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 TEST_DEPENDS=		devel/dejagnu
 
