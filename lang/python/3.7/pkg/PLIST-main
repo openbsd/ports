@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2019/11/10 21:06:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2019/12/11 19:55:40 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.7,<3.8
 @conflict python->=3,<3.6.8p2
 @pkgpath lang/python3.5,-main
+@pkgpath lang/python3.6,-main
 @comment bin/2to3
 bin/2to3-3.7
 bin/pydoc3

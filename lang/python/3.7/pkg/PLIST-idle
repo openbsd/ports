@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-idle,v 1.4 2019/10/18 04:47:27 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.5 2019/12/11 19:55:40 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.7,<3.8
 @conflict python->=3.6,<3.6.8p0
 @conflict python-idle->=3.6,<3.6.8p2
 @pkgpath lang/python3.5,-idle
+@pkgpath lang/python3.6,-idle
 bin/idle3
 bin/idle3.7
 lib/python3.7/idlelib/
