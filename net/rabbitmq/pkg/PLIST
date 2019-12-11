@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/05/30 16:24:33 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/12/11 14:28:36 zhuk Exp $
 @newgroup ${RABBITUSER}:646
 @newuser ${RABBITUSER}:646:${RABBITUSER}:daemon:RabbitMQ account:/var/rabbitmq:/sbin/nologin
 @rcscript ${RCDIR}/rabbitmq
@@ -191,6 +191,10 @@ lib/rabbitmq/sbin/rabbitmq-env
 lib/rabbitmq/sbin/rabbitmq-plugins
 lib/rabbitmq/sbin/rabbitmq-server
 lib/rabbitmq/sbin/rabbitmqctl
+@man man/man1/rabbitmq-plugins.1
+@man man/man1/rabbitmq-server.1
+@man man/man1/rabbitmqctl.1
+@man man/man5/rabbitmq-env.conf.5
 sbin/rabbitmq-defaults
 sbin/rabbitmq-env
 sbin/rabbitmq-plugins

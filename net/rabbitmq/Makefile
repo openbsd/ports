@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2019/06/24 21:32:07 sebastia Exp $
+# $OpenBSD: Makefile,v 1.34 2019/12/11 14:28:36 zhuk Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.6.15
-REVISION =	0
+REVISION =	1
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
@@ -47,6 +47,8 @@ NO_TEST =	Yes
 
 FAKE_FLAGS =	DESTDIR=''
 
+ALL_TARGET =	all manpages
+
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/deps/rabbit/scripts/rabbitmqctl \
 		${WRKSRC}/deps/rabbit/scripts/rabbitmq-defaults
@@ -65,5 +67,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rabbitmq
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/rabbitmq.conf \
 		${PREFIX}/share/examples/rabbitmq/rabbitmq-env.conf
+	${INSTALL_DATA} ${WRKBUILD}/deps/rabbit/docs/*.1 \
+		${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKBUILD}/deps/rabbit/docs/*.5 \
+		${PREFIX}/man/man5/
 
 .include <bsd.port.mk>
