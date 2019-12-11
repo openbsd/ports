@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/10/19 07:48:26 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/12/11 10:46:37 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -118,6 +118,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mosel
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/msgtrans
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mxml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nasm
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nesasm
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nginx
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nim
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nix
@@ -155,6 +156,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/scss
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sed
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/shell
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sieve
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/slice
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/slim
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/smalltalk
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/smarty
@@ -170,6 +172,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/terraform
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/tex
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/toml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/tsx
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ttcn3
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/tulip
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/turtle
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/twig
@@ -327,6 +330,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mosel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/msgtrans.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mxml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nasm.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nesasm.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nginx.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nim.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nix.rb
@@ -370,6 +374,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/scss.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sed.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/shell.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sieve.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/slice.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/slim.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/smalltalk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/smarty.rb
@@ -387,6 +392,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/terraform.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/tex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/toml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/tsx.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ttcn3.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/tulip.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/turtle.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/twig.rb
