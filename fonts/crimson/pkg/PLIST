@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/11 12:42:01 sthen Exp $
+share/fonts/
+@fontdir share/fonts/crimson/
+share/fonts/crimson/Crimson-Bold.otf
+share/fonts/crimson/Crimson-BoldItalic.otf
+share/fonts/crimson/Crimson-Italic.otf
+share/fonts/crimson/Crimson-Roman.otf
+share/fonts/crimson/Crimson-Semibold.otf
+share/fonts/crimson/Crimson-SemiboldItalic.otf
