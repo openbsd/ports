@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/27 10:46:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/11 15:51:00 sthen Exp $
 
 COMMENT =		Prometheus exporter for SNMP metrics
 
-V =			0.15.0
+V =			0.16.1
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		snmp_exporter
 GH_TAGNAME =		v$V

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/27 10:46:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/11 15:51:00 sthen Exp $
 @newgroup _snmpexporter:845
 @newuser _snmpexporter:845:_snmpexporter:daemon:prometheus snmp_exporter:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/snmp_exporter
@@ -1309,7 +1309,10 @@ share/examples/snmp_exporter/mibs/HDSL2-SHDSL-LINE-MIB.my
 share/examples/snmp_exporter/mibs/HOST-RESOURCES-MIB.my
 share/examples/snmp_exporter/mibs/HOST-RESOURCES-TYPES.my
 share/examples/snmp_exporter/mibs/IANA-ADDRESS-FAMILY-NUMBERS-MIB.my
+share/examples/snmp_exporter/mibs/IANA-CHARSET-MIB.txt
+share/examples/snmp_exporter/mibs/IANA-IFTYPE-MIB.txt
 share/examples/snmp_exporter/mibs/IANA-MAU-MIB.my
+share/examples/snmp_exporter/mibs/IANA-PRINTER-MIB.txt
 share/examples/snmp_exporter/mibs/IANA-RTPROTO-MIB.my
 share/examples/snmp_exporter/mibs/IANAPowerStateSet-MIB.my
 share/examples/snmp_exporter/mibs/IANATn3270eTC-MIB.my
@@ -1339,12 +1342,14 @@ share/examples/snmp_exporter/mibs/IPMROUTE-STD-MIB.my
 share/examples/snmp_exporter/mibs/IPV6-FLOW-LABEL-MIB.my
 share/examples/snmp_exporter/mibs/IPV6-MIB.my
 share/examples/snmp_exporter/mibs/IPV6-MLD-MIB.my
+share/examples/snmp_exporter/mibs/IPV6-TC
 share/examples/snmp_exporter/mibs/IPV6-TC.my
 share/examples/snmp_exporter/mibs/ISDN-MIB.my
 share/examples/snmp_exporter/mibs/ISIS-CAPABILTY-MIB.my
 share/examples/snmp_exporter/mibs/ISIS-MIB.my
 share/examples/snmp_exporter/mibs/ITU-ALARM-TC-MIB.my
 share/examples/snmp_exporter/mibs/Job-Monitoring-MIB.my
+share/examples/snmp_exporter/mibs/KEEPALIVED-MIB
 share/examples/snmp_exporter/mibs/KEEPALIVED-MIB.txt
 share/examples/snmp_exporter/mibs/LAN-EMULATION-CLIENT-MIB.my
 share/examples/snmp_exporter/mibs/LANGTAG-TC-MIB.my
@@ -1363,6 +1368,7 @@ share/examples/snmp_exporter/mibs/LLDP-MIB.my
 share/examples/snmp_exporter/mibs/MAU-MIB.my
 share/examples/snmp_exporter/mibs/MEF-SOAM-PM-MIB.my
 share/examples/snmp_exporter/mibs/MEF-SOAM-TC-MIB.my
+share/examples/snmp_exporter/mibs/MIKROTIK-MIB
 share/examples/snmp_exporter/mibs/MIP-MIB.my
 share/examples/snmp_exporter/mibs/MPLS-L3VPN-STD-MIB.my
 share/examples/snmp_exporter/mibs/MPLS-LDP-CAPABILITY.my
@@ -1381,6 +1387,8 @@ share/examples/snmp_exporter/mibs/MPLS-VPN-MIB.my
 share/examples/snmp_exporter/mibs/MPOA-MIB.my
 share/examples/snmp_exporter/mibs/MSDP-MIB.my
 share/examples/snmp_exporter/mibs/NAT-MIB.my
+share/examples/snmp_exporter/mibs/NET-SNMP-MIB
+share/examples/snmp_exporter/mibs/NET-SNMP-TC
 share/examples/snmp_exporter/mibs/NETRANGER.my
 share/examples/snmp_exporter/mibs/NHRP-MIB.my
 share/examples/snmp_exporter/mibs/NOTIFICATION-LOG-MIB.my
@@ -1412,9 +1420,13 @@ share/examples/snmp_exporter/mibs/PCUBE-ENGAGE-MIB.my
 share/examples/snmp_exporter/mibs/PCUBE-PRODUCTS.my
 share/examples/snmp_exporter/mibs/PCUBE-SE-MIB.my
 share/examples/snmp_exporter/mibs/PCUBE-SMI.my
+share/examples/snmp_exporter/mibs/PICO-IPSEC-FLOW-MONITOR-MIB.txt
+share/examples/snmp_exporter/mibs/PICO-SMI-ID-MIB.txt
+share/examples/snmp_exporter/mibs/PICO-SMI-MIB.txt
 share/examples/snmp_exporter/mibs/PIM-MIB.my
 share/examples/snmp_exporter/mibs/PNNI-MIB.my
 share/examples/snmp_exporter/mibs/POWER-ETHERNET-MIB.my
+share/examples/snmp_exporter/mibs/PRINTER-MIB-V2.txt
 share/examples/snmp_exporter/mibs/PTOPO-MIB.my
 share/examples/snmp_exporter/mibs/PerfHist-TC-MIB.my
 share/examples/snmp_exporter/mibs/Printer-MIB.my
@@ -1439,6 +1451,7 @@ share/examples/snmp_exporter/mibs/SMON-MIB.my
 share/examples/snmp_exporter/mibs/SNA-NAU-MIB.my
 share/examples/snmp_exporter/mibs/SNA-SDLC-MIB.my
 share/examples/snmp_exporter/mibs/SNMP-COMMUNITY-MIB.my
+share/examples/snmp_exporter/mibs/SNMP-FRAMEWORK-MIB
 share/examples/snmp_exporter/mibs/SNMP-FRAMEWORK-MIB.my
 share/examples/snmp_exporter/mibs/SNMP-MPD-MIB.my
 share/examples/snmp_exporter/mibs/SNMP-NOTIFICATION-MIB.my
