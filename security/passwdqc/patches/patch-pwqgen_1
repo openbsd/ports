@@ -1,7 +1,9 @@
-$OpenBSD: patch-pwqgen_1,v 1.3 2012/03/08 12:13:01 ajacoutot Exp $
---- pwqgen.1.orig	Sat Mar 13 16:29:15 2010
-+++ pwqgen.1	Tue Mar  6 15:27:28 2012
-@@ -69,8 +69,7 @@ randomness, and in any case when it fails to generate 
+$OpenBSD: patch-pwqgen_1,v 1.4 2019/12/11 15:02:48 sthen Exp $
+
+Index: pwqgen.1
+--- pwqgen.1.orig
++++ pwqgen.1
+@@ -74,8 +74,7 @@ option).
  .Sh SEE ALSO
  .Xr pwqcheck 1 ,
  .Xr urandom 4 ,
@@ -9,5 +11,5 @@ $OpenBSD: patch-pwqgen_1,v 1.3 2012/03/08 12:13:01 ajacoutot Exp $
 -.Xr pam_passwdqc 8 .
 +.Xr passwdqc.conf 5 .
  .Pp
- http://www.openwall.com/passwdqc/
+ https://www.openwall.com/passwdqc/
  .Sh AUTHORS
