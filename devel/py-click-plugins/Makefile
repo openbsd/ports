@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/12/11 04:11:21 kmos Exp $
 
 COMMENT =		register CLI commands via setuptools entry-points
 
@@ -20,6 +20,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
