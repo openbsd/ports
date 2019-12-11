@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/21 23:38:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/11 03:48:00 kmos Exp $
 
 COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 
@@ -13,6 +13,7 @@ MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 WANTLIB += ykpers-1 # dlopen()'d
 
