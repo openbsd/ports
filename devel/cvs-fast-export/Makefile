@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/08/31 15:26:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/12/11 15:02:53 sthen Exp $
 
 COMMENT=	export an RCS or CVS history as a fast-import stream
 
-DISTNAME=	cvs-fast-export-1.48
+DISTNAME=	cvs-fast-export-1.49
 
 CATEGORIES=	devel
 
@@ -22,7 +22,7 @@ TAR=		gtar
 USE_GMAKE=	Yes
 MODULES=	lang/python
 CONFIGURE_STYLE= x	# bad python.port.mk
-MAKE_FLAGS=	CFLAGS="${CFLAGS}"
+MAKE_FLAGS=	CFLAGS="${CFLAGS}" mandir=${WRKINST}${PREFIX}/man
 BUILD_DEPENDS+=	devel/bison \
 		textproc/asciidoc
 
