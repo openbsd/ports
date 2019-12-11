@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:22 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/11 07:19:55 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/${MODPY_PYCACHE}location.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/${MODPY_PYCACHE}order_point.${MODPY_PYC_MAGIC_TAG}pyc
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/stock.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/stock.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/${MODPY_PYCACHE}test_stock_supply.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/scenario_stock_internal_supply.rst

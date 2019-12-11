@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:19 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/11 07:19:54 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/${MODPY_PYCACHE}journal.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/state
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/statement.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/tests/${MODPY_PYCACHE}test_account_statement.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/tests/scenario_account_statement.rst

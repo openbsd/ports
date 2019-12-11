@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:21 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/11 07:19:54 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/${MODPY_PYCACHE}party.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/${MODPY_PYCACHE}purchase.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/purcha
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/purchase_request.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/tests/${MODPY_PYCACHE}test_purchase_request.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_request/tests/scenario_purchase_request.rst

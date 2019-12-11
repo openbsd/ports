@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:20 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/11 07:19:53 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/${MODPY_PYCACHE}reporting_tax.${MODPY_PYC_MAGIC_TAG}pyc
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/111.tx
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/115.txt
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/303.txt
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/${MODPY_PYCACHE}test_account_es.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_es/tests/scenario_reporting.rst
