@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.10 2019/11/26 13:01:06 sthen Exp $
+# $OpenBSD: cargo.port.mk,v 1.11 2019/12/11 12:35:06 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -8,6 +8,9 @@ MODCARGO_CRATES ?=
 
 # List of features to build (space separated list).
 MODCARGO_FEATURES ?=
+
+# Force using only MODCARGO_FEATURES if Yes
+MODCARGO_NO_DEFAULT_FEATURES ?=	No
 
 # List of crates to update (no version).
 # Used to override a dependency with newer version.
@@ -143,8 +146,15 @@ MODCARGO_TEST_ARGS ?=
 
 # Manage crate features.
 .if !empty(MODCARGO_FEATURES)
-MODCARGO_BUILD_ARGS +=	--features='${MODCARGO_FEATURES}'
-MODCARGO_TEST_ARGS +=	--features='${MODCARGO_FEATURES}'
+MODCARGO_BUILD_ARGS +=		--features='${MODCARGO_FEATURES}'
+MODCARGO_INSTALL_ARGS +=	--features='${MODCARGO_FEATURES}'
+MODCARGO_TEST_ARGS +=		--features='${MODCARGO_FEATURES}'
+.endif
+
+.if ${MODCARGO_NO_DEFAULT_FEATURES:L} == "yes"
+MODCARGO_BUILD_ARGS +=		--no-default-features
+MODCARGO_INSTALL_ARGS +=	--no-default-features
+MODCARGO_TEST_ARGS +=		--no-default-features
 .endif
 
 # Helper for updating a crate.
@@ -162,6 +172,7 @@ MODCARGO_TEST ?=	Yes
 MODCARGO_BUILD_TARGET = \
 	${MODCARGO_CARGO_RUN} build \
 		--manifest-path ${MODCARGO_CARGOTOML} \
+		--offline \
 		--release \
 		--verbose \
 		${MODCARGO_BUILD_ARGS} ;
@@ -175,6 +186,7 @@ do-build:
 MODCARGO_INSTALL_TARGET = \
 	${MODCARGO_CARGO_RUN} install \
 		--root="${PREFIX}" \
+		--offline \
 		--verbose \
 		${MODCARGO_INSTALL_ARGS} ; \
 	rm -- "${PREFIX}/.crates.toml" ;
@@ -188,6 +200,7 @@ do-install:
 MODCARGO_TEST_TARGET = \
 	${MODCARGO_CARGO_RUN} test \
 		--manifest-path ${MODCARGO_CARGOTOML} \
+		--offline \
 		--release \
 		--verbose \
 		${MODCARGO_TEST_ARGS} ;
