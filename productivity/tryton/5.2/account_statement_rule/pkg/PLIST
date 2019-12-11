@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:54 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/11 07:20:52 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/account.py
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/locale/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/tests/${MODPY_PYCACHE}test_account_statement_rule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement_rule/tests/scenario_account_statement_rule.rst
