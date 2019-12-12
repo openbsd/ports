@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/10/04 20:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/12/12 22:29:35 sthen Exp $
 
 COMMENT=	validating DNS resolver library
 
-DISTNAME=	unbound-1.9.4
+DISTNAME=	unbound-1.9.6
 PKGNAME=	lib${DISTNAME}
 
 SHARED_LIBS +=  unbound              4.1      # 9.3
@@ -22,6 +22,7 @@ MASTER_SITES=	https://www.unbound.net/downloads/
 
 SEPARATE_BUILD=	 Yes
 CONFIGURE_STYLE= gnu
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # in sync with src/usr.sbin/unbound, apart from --enable-allsymbols
 CONFIGURE_ARGS+= \
