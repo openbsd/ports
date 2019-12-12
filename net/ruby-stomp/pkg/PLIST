@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/01/02 12:53:27 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/12/12 07:40:35 sebastia Exp $
 ${GEM_BIN}/catstomp${GEM_BIN_SUFFIX}
 ${GEM_BIN}/stompcat${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -29,6 +29,9 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/artemis/cliwaiter_reliable_hb.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/client_conndisc.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/client_putget.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/conn_conndisc.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/conn_get.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/conn_put.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/conn_put_pace.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/conn_putget.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/contrib.sh
 ${GEM_LIB}/gems/${DISTNAME}/examples/contributors.rb
