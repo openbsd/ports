@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/11 00:37:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.23 2019/12/12 14:41:51 sthen Exp $
 
 COMMENT=	pdf swiss army knife
 
-V=		v3.0.3
+V=		v3.0.8
 DISTNAME=	pdftk-$V
 PKGNAME=	${DISTNAME:S/-v/-/}
-REVISION=	0
 EXTRACT_ONLY=	pdftk-$V.tar.gz \
 		commons-lang3-3.8.1-bin.tar.gz
 
@@ -31,6 +30,9 @@ MODJAVA_BUILD=	ant
 MODJAVA_BUILD_TARGET_NAME= jar
 
 RUN_DEPENDS+=	java/javaPathHelper
+
+# there are some tests, but it's not clear how to run them
+NO_TEST=	Yes
 
 post-extract:
 	mkdir ${WRKSRC}/lib
