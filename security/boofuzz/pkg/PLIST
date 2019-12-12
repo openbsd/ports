@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/06/02 11:42:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/12 16:16:52 jasper Exp $
 bin/boo
 lib/python${MODPY_VERSION}/site-packages/boofuzz/
 lib/python${MODPY_VERSION}/site-packages/boofuzz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -98,6 +98,8 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/bit_field.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/bit_field.pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/byte.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/byte.pyc
+lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/bytes.py
+lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/bytes.pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/delim.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/delim.pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/dword.py
@@ -149,6 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/web/app.pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/static/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/static/css/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/static/css/boofuzz.css
+lib/python${MODPY_VERSION}/site-packages/boofuzz/web/static/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/static/js/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/static/js/index.js
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/templates/

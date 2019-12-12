@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/12/12 16:16:51 jasper Exp $
 
 COMMENT =	extensible network protocol fuzzer
 
-MODPY_EGG_VERSION =	0.1.5
+MODPY_EGG_VERSION =	0.1.6
 DISTNAME =	boofuzz-${MODPY_EGG_VERSION}
 
 CATEGORIES =	security
@@ -29,6 +29,8 @@ RUN_DEPENDS = 		databases/py-ldap3 \
 			www/py-flask \
 			www/py-tornado
 
+# XXX: Stick with python2 until py-impacket has been updated
+#      to a version > 0.9.15
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

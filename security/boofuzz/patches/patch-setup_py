@@ -1,18 +1,22 @@
-$OpenBSD: patch-setup_py,v 1.2 2019/06/02 11:42:21 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.3 2019/12/12 16:16:52 jasper Exp $
 
 Relax overly strict dependencies
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -33,8 +33,8 @@ setup(
-         packages=find_packages(exclude=['unit_tests', 'requests', 'examples', 'utils', 'web', 'new_examples']),
-         package_data={'boofuzz': ['web/templates/*', 'web/static/css/*', 'web/static/js/*']},
-         install_requires=[
--            'future', 'pyserial', 'pydot', 'tornado~=4.0', 'six', 'backports.shutil_get_terminal_size',
--            'Flask~=1.0', 'impacket', 'colorama', 'attrs', 'click', 'psutil', 'ldap3==2.5.1'],
-+            'future', 'pyserial', 'pydot', 'tornado', 'six', 'backports.shutil_get_terminal_size',
-+            'Flask', 'impacket', 'colorama', 'attrs', 'click', 'psutil', 'ldap3'],
-         extras_require={
-             # This list is duplicated in tox.ini. Make sure to change both!
-             'dev': ['tox',
+@@ -60,12 +60,12 @@ setup(
+         "Flask",
+         "future",
+         "impacket",
+-        "ldap3==2.5.1",
++        "ldap3",
+         "psutil",
+         "pyserial",
+         "pydot",
+         "six",
+-        "tornado~=5.0",
++        "tornado",
+     ],
+     extras_require=extra_requirements,
+     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
