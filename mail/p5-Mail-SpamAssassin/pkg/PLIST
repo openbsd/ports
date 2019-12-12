@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2018/09/18 06:42:57 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.38 2019/12/12 16:10:34 giovanni Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
@@ -94,6 +94,7 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/HeaderEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/ImageInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEHeader.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/OLEVBMacro.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/PDFInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/PhishTag.pm
@@ -184,11 +185,13 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::DCC.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DKIM.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DNSEval.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::FreeMail.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::FromNameSpoof.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::HashBL.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Hashcash.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEEval.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEHeader.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::OLEVBMacro.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::PDFInfo.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::PhishTag.3p
@@ -246,6 +249,7 @@ share/doc/SpamAssassin/sql/bayes_mysql.sql
 share/doc/SpamAssassin/sql/bayes_pg.sql
 share/doc/SpamAssassin/sql/txrep_mysql.sql
 share/doc/SpamAssassin/sql/txrep_pg.sql
+share/doc/SpamAssassin/sql/txrep_sqlite.sql
 share/doc/SpamAssassin/sql/userpref_mysql.sql
 share/doc/SpamAssassin/sql/userpref_pg.sql
 share/doc/pkg-readmes/${PKGSTEM}
@@ -270,6 +274,8 @@ share/examples/SpamAssassin/v341.pre
 @sample ${CONFDIR}/v341.pre
 share/examples/SpamAssassin/v342.pre
 @sample ${CONFDIR}/v342.pre
+share/examples/SpamAssassin/v343.pre
+@sample ${CONFDIR}/v343.pre
 share/spamassassin/
 share/spamassassin/10_default_prefs.cf
 share/spamassassin/10_hasbase.cf
@@ -302,7 +308,7 @@ share/spamassassin/25_antivirus.cf
 share/spamassassin/25_asn.cf
 share/spamassassin/25_dcc.cf
 share/spamassassin/25_dkim.cf
-share/spamassassin/25_hashcash.cf
+share/spamassassin/25_dnswl.cf
 share/spamassassin/25_pyzor.cf
 share/spamassassin/25_razor2.cf
 share/spamassassin/25_replace.cf
