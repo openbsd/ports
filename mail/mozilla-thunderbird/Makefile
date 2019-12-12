@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.306 2019/12/03 17:04:25 landry Exp $
+# $OpenBSD: Makefile,v 1.307 2019/12/12 14:16:36 kurt Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -59,8 +59,10 @@ BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen
-# 67 requires nasm for bundled libav1d
+.if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
+# 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
+.endif
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 
@@ -73,6 +75,7 @@ CONFIGURE_ARGS +=	--disable-sandbox
 # --enable-debug does too much, this defaults to -g (which is 3 times larger than using -ggdb1)
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
+MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 
 # SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it, e.g.
 # mailnews/build/nsMailModule.cpp pulls in mailnews/extensions/fts3/src/nsFts3Tokenizer.h

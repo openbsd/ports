@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/12/03 17:02:20 landry Exp $
+# $OpenBSD: Makefile,v 1.112 2019/12/12 14:16:36 kurt Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -47,8 +47,10 @@ BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen>=0.9.0
-# 67 requires nasm for bundled libav1d
+.if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
+# 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
+.endif
 
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm ${COMPILER_LIBCXX}
 
@@ -57,6 +59,7 @@ NO_TEST =	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
+MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=firefox-esr
