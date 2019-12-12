@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.115 2019/11/25 14:15:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.116 2019/12/12 10:54:49 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.10.0
+DISTNAME =	qgis-3.10.1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	0
 
-SHARED_LIBS =	qgis_core	37.0 \
-		qgis_app	20.0 \
-		qgis_gui	27.0 \
+SHARED_LIBS =	qgis_core	38.0 \
+		qgis_app	21.0 \
+		qgis_gui	28.0 \
 		qgis_analysis	14.0 \
-		qgis_server	11.2 \
+		qgis_server	11.3 \
 		qgispython	6.0 \
 		qgis_3d		5.1 \
 		qgis_native	0.3

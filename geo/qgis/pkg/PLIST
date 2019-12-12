@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2019/11/15 09:08:14 landry Exp $
+@comment $OpenBSD: PLIST,v 1.56 2019/12/12 10:54:49 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -823,6 +823,7 @@ include/qgis/qgsprojectstorageregistry.h
 include/qgis/qgsprojectstylealgorithms.h
 include/qgis/qgsprojecttranslator.h
 include/qgis/qgsprojectversion.h
+include/qgis/qgsprojectviewsettings.h
 include/qgis/qgsprojutils.h
 include/qgis/qgsproperty.h
 include/qgis/qgsproperty_p.h
@@ -1367,6 +1368,7 @@ share/qgis/doc/nohelp.html
 share/qgis/doc/style.css
 share/qgis/i18n/
 share/qgis/i18n/qgis_ar.qm
+share/qgis/i18n/qgis_bg.qm
 share/qgis/i18n/qgis_bs.qm
 share/qgis/i18n/qgis_ca.qm
 share/qgis/i18n/qgis_cs.qm
@@ -1377,7 +1379,6 @@ share/qgis/i18n/qgis_es.qm
 share/qgis/i18n/qgis_et.qm
 share/qgis/i18n/qgis_eu.qm
 share/qgis/i18n/qgis_fi.qm
-share/qgis/i18n/qgis_fr.qm
 share/qgis/i18n/qgis_gl.qm
 share/qgis/i18n/qgis_hi.qm
 share/qgis/i18n/qgis_hu.qm
@@ -1393,16 +1394,13 @@ share/qgis/i18n/qgis_nb.qm
 share/qgis/i18n/qgis_nl.qm
 share/qgis/i18n/qgis_pl.qm
 share/qgis/i18n/qgis_pt_BR.qm
-share/qgis/i18n/qgis_pt_PT.qm
 share/qgis/i18n/qgis_ro.qm
 share/qgis/i18n/qgis_ru.qm
 share/qgis/i18n/qgis_sl.qm
-share/qgis/i18n/qgis_sv.qm
 share/qgis/i18n/qgis_tr.qm
 share/qgis/i18n/qgis_uk.qm
 share/qgis/i18n/qgis_vi.qm
 share/qgis/i18n/qgis_zh-Hans.qm
-share/qgis/i18n/qgis_zh-Hant.qm
 share/qgis/images/
 share/qgis/images/icons/
 share/qgis/images/icons/qbrowser-icon.png
@@ -1620,6 +1618,7 @@ share/qgis/python/plugins/processing/algs/gdal/polygonize.py
 share/qgis/python/plugins/processing/algs/gdal/proximity.py
 share/qgis/python/plugins/processing/algs/gdal/rasterize.py
 share/qgis/python/plugins/processing/algs/gdal/rasterize_over.py
+share/qgis/python/plugins/processing/algs/gdal/rasterize_over_fixed_value.py
 share/qgis/python/plugins/processing/algs/gdal/rearrange_bands.py
 share/qgis/python/plugins/processing/algs/gdal/retile.py
 share/qgis/python/plugins/processing/algs/gdal/rgb2pct.py
