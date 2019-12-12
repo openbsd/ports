@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/12/09 14:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/12/12 16:34:19 sthen Exp $
 
 COMMENT=	script to update an OpenBSD CVS repository via rsync
 
-DISTNAME=	reposync-0.16
+DISTNAME=	reposync-20191212
 
 CATEGORIES=	sysutils devel
 PKG_ARCH=	*
@@ -25,8 +25,10 @@ do-configure:
 	    ${WRKSRC}/reposync{,.1}
 
 do-install:
-	cd ${WRKSRC}; ${INSTALL_SCRIPT} reposync ${PREFIX}/bin/reposync; \
-	    ${INSTALL_MAN} reposync.1 ${PREFIX}/man/man1/reposync.1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/reposync/
+	${INSTALL_SCRIPT} ${WRKSRC}/reposync ${PREFIX}/bin/reposync
+	${INSTALL_MAN} ${WRKSRC}/reposync.1 ${PREFIX}/man/man1/reposync.1
+	${INSTALL_DATA} ${WRKSRC}/ssh_known_hosts ${PREFIX}/share/examples/reposync/
 
 do-test:
 	ksh -n ${WRKSRC}/reposync
