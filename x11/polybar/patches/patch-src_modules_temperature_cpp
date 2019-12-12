@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modules_temperature_cpp,v 1.1 2019/09/20 08:54:33 jasper Exp $
+$OpenBSD: patch-src_modules_temperature_cpp,v 1.2 2019/12/12 17:09:47 jasper Exp $
 
 Index: src/modules/temperature.cpp
 --- src/modules/temperature.cpp.orig
 +++ src/modules/temperature.cpp
-@@ -8,8 +8,21 @@
+@@ -8,6 +8,17 @@
  
  #include "modules/meta/base.inl"
  
@@ -20,20 +20,12 @@ Index: src/modules/temperature.cpp
 +
  POLYBAR_NS
  
-+using std::snprintf;
-+
  namespace modules {
-   template class module<temperature_module>;
- 
-@@ -22,6 +35,7 @@ namespace modules {
-     m_interval = m_conf.get<decltype(m_interval)>(name(), "interval", 1s);
-     m_units = m_conf.get(name(), "units", m_units);
- 
-+#ifndef __OpenBSD__
-     if (m_path.empty()) {
+@@ -26,9 +37,11 @@ namespace modules {
        m_path = string_util::replace(PATH_TEMPERATURE_INFO, "%zone%", to_string(m_zone));
      }
-@@ -29,6 +43,7 @@ namespace modules {
+ 
++#ifndef __OpenBSD__
      if (!file_util::exists(m_path)) {
        throw module_error("The file '" + m_path + "' does not exist");
      }
@@ -41,7 +33,7 @@ Index: src/modules/temperature.cpp
  
      m_formatter->add(DEFAULT_FORMAT, TAG_LABEL, {TAG_LABEL, TAG_RAMP});
      m_formatter->add(FORMAT_WARN, TAG_LABEL_WARN, {TAG_LABEL_WARN, TAG_RAMP});
-@@ -51,8 +66,52 @@ namespace modules {
+@@ -51,8 +64,54 @@ namespace modules {
    }
  
    bool temperature_module::update() {
@@ -53,13 +45,18 @@ Index: src/modules/temperature.cpp
 +    struct sensordev sensordev;
 +    struct sensor sensor;
 +    size_t sdlen, slen;
-+    int dev, numt, mib[5] = {CTL_HW, HW_SENSORS, 0, 0, 0};
++    char device[16];
++    int dev, mib[5] = {CTL_HW, HW_SENSORS, 0, 0, 0};
 +
 +    sdlen = sizeof(sensordev);
 +    slen = sizeof(sensor);
 +
-+    char thermal_zone[8];
-+    std::snprintf(thermal_zone, sizeof(thermal_zone), "acpitz%d", m_zone);
++    /*
++     * Construct a sensors MIB by using hwmon-path and thermal-zone such
++     * that hwmon-path represents the device (e.g. acpitz0 or ksmn0) and thermal-zone
++     * the Nth temperature sensor (e.g. temp0).
++     */
++    strlcpy(device, m_path.c_str(), sizeof(device));
 +
 +    for (dev = 0;; dev++) {
 +        mib[2] = dev;
@@ -71,16 +68,13 @@ Index: src/modules/temperature.cpp
 +            return false;
 +        }
 +
-+	if (strncmp(sensordev.xname, thermal_zone, strlen(thermal_zone)) == 0) {
++	if (strncmp(sensordev.xname, device, strlen(device)) == 0) {
 +            mib[3] = SENSOR_TEMP;
-+            /* Limit to temp0, but should retrieve from a full path... */
-+            for (numt = 0; numt < 1 /*sensordev.maxnumt[SENSOR_TEMP]*/; numt++) {
-+                mib[4] = numt;
-+                if (sysctl(mib, 5, &sensor, &slen, NULL, 0) == -1) {
-+                    if (errno != ENOENT) {
-+                        m_log.warn("sysctl failed");
-+                        continue;
-+                    }
++            mib[4] = m_zone;
++            if (sysctl(mib, 5, &sensor, &slen, NULL, 0) == -1) {
++                if (errno != ENOENT) {
++                    m_log.warn("sysctl failed");
++                    continue;
 +                }
 +            }
 +        }
