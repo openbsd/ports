@@ -1,14 +1,23 @@
-$OpenBSD: patch-docs_examples_facette_yaml,v 1.1 2018/04/25 16:09:56 landry Exp $
+$OpenBSD: patch-docs_examples_facette_yaml,v 1.2 2019/12/13 02:44:10 abieber Exp $
 
 Index: docs/examples/facette.yaml
 --- docs/examples/facette.yaml.orig
 +++ docs/examples/facette.yaml
-@@ -17,7 +17,7 @@ backend:
+@@ -51,7 +51,7 @@ storage:
  
    ### SQLite
    driver: sqlite
--  path: /var/lib/facette/data.db
+-  path: var/data.db
 +  path: ${VARBASE}/facette/data.db
  
    ### PostgreSQL
    #driver: pgsql
+@@ -71,7 +71,7 @@ storage:
+ 
+ cache:
+   # Cache directory path
+-  path: var/cache
++  path: ${VARBASE}/facette/cache
+ 
+ defaults:
+   # Default time range
