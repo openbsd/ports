@@ -1,9 +1,9 @@
-$OpenBSD: patch-cups_Makefile,v 1.19 2019/08/25 09:59:18 ajacoutot Exp $
+$OpenBSD: patch-cups_Makefile,v 1.20 2019/12/13 22:30:45 ajacoutot Exp $
 
 Index: cups/Makefile
 --- cups/Makefile.orig
 +++ cups/Makefile
-@@ -363,11 +363,9 @@ uninstall:
+@@ -365,11 +365,9 @@ uninstall:
  # libcups.so.2
  #
  
@@ -16,7 +16,7 @@ Index: cups/Makefile
  
  
  #
-@@ -429,11 +427,9 @@ libcups2.def: $(LIBOBJS) $(IMAGEOBJS) Makefile
+@@ -431,11 +429,9 @@ libcups2.def: $(LIBOBJS) $(IMAGEOBJS) Makefile
  # libcupsimage.so.2
  #
  
