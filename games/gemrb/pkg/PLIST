@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/07/31 07:55:32 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/12/13 08:24:27 kirby Exp $
 bin/extend2da.py
 @bin bin/gemrb
 lib/gemrb/
@@ -55,7 +55,7 @@ share/doc/gemrb/AUTHORS
 share/doc/gemrb/COPYING
 share/doc/gemrb/INSTALL
 share/doc/gemrb/NEWS
-share/doc/gemrb/README
+share/doc/gemrb/README.md
 share/doc/gemrb/en/
 share/doc/gemrb/en/CheatKeys.txt
 share/doc/gemrb/en/CodingStyle.txt
@@ -78,7 +78,7 @@ share/doc/gemrb/en/GUIScript/doc_template.txt
 share/doc/gemrb/en/GUIScript/index.txt
 share/doc/gemrb/en/GUIScript/reserved_functions.txt
 share/doc/gemrb/en/GUIScript/start.txt
-share/doc/gemrb/en/Release.txt
+share/doc/gemrb/en/Release.md
 share/doc/gemrb/en/Tables/
 share/doc/gemrb/en/Tables/HPBARB.txt
 share/doc/gemrb/en/Tables/ability.txt
@@ -175,6 +175,8 @@ share/gemrb/GUIScripts/GUILOAD.py
 share/gemrb/GUIScripts/GUILOAD.pyc
 share/gemrb/GUIScripts/GUIMA.py
 share/gemrb/GUIScripts/GUIMA.pyc
+share/gemrb/GUIScripts/GUIMACommon.py
+share/gemrb/GUIScripts/GUIMACommon.pyc
 share/gemrb/GUIScripts/GUIMG.py
 share/gemrb/GUIScripts/GUIMG.pyc
 share/gemrb/GUIScripts/GUIMOVIE.py
@@ -583,8 +585,10 @@ share/gemrb/override/bg1/efftext.2da
 share/gemrb/override/bg1/minorglb.vvc
 share/gemrb/override/bg2/
 share/gemrb/override/bg2/clearair.2da
+share/gemrb/override/bg2/cut17d.bcs
 share/gemrb/override/bg2/efftext.2da
 share/gemrb/override/bg2/minorglb.vvc
+share/gemrb/override/bg2/ogmagi01.bcs
 share/gemrb/override/bg2/spells.2da
 share/gemrb/override/how/
 share/gemrb/override/how/baldur.bcs
@@ -625,7 +629,6 @@ share/gemrb/unhardcoded/bg1/arrowfli.pro
 share/gemrb/unhardcoded/bg1/arrowflm.pro
 share/gemrb/unhardcoded/bg1/arrowhvy.pro
 share/gemrb/unhardcoded/bg1/avatars.2da
-share/gemrb/unhardcoded/bg1/avprefc.2da
 share/gemrb/unhardcoded/bg1/avprefr.2da
 share/gemrb/unhardcoded/bg1/axe.pro
 share/gemrb/unhardcoded/bg1/axeex.pro
@@ -780,7 +783,6 @@ share/gemrb/unhardcoded/bg2/area_reverbs.2da
 share/gemrb/unhardcoded/bg2/areapro.2da
 share/gemrb/unhardcoded/bg2/at2xlvl.spl
 share/gemrb/unhardcoded/bg2/avatars.2da
-share/gemrb/unhardcoded/bg2/avprefc.2da
 share/gemrb/unhardcoded/bg2/avprefr.2da
 share/gemrb/unhardcoded/bg2/bloodclr.2da
 share/gemrb/unhardcoded/bg2/cgtable.2da
@@ -913,7 +915,6 @@ share/gemrb/unhardcoded/how/asumm1x.pro
 share/gemrb/unhardcoded/how/asumm2h.pro
 share/gemrb/unhardcoded/how/asumm3h.pro
 share/gemrb/unhardcoded/how/avatars.2da
-share/gemrb/unhardcoded/how/avprefc.2da
 share/gemrb/unhardcoded/how/avprefr.2da
 share/gemrb/unhardcoded/how/axe.pro
 share/gemrb/unhardcoded/how/axeex.pro
@@ -1247,7 +1248,6 @@ share/gemrb/unhardcoded/how/wvdeath.pro
 share/gemrb/unhardcoded/how/wvhith.pro
 share/gemrb/unhardcoded/how/wwolf.pro
 share/gemrb/unhardcoded/how/zlaura.pro
-share/gemrb/unhardcoded/how/zzweaps.2da
 share/gemrb/unhardcoded/iwd/
 share/gemrb/unhardcoded/iwd/ability.2da
 share/gemrb/unhardcoded/iwd/abjurap.pro
@@ -1290,7 +1290,6 @@ share/gemrb/unhardcoded/iwd/asumm1x.pro
 share/gemrb/unhardcoded/iwd/asumm2h.pro
 share/gemrb/unhardcoded/iwd/asumm3h.pro
 share/gemrb/unhardcoded/iwd/avatars.2da
-share/gemrb/unhardcoded/iwd/avprefc.2da
 share/gemrb/unhardcoded/iwd/avprefr.2da
 share/gemrb/unhardcoded/iwd/axe.pro
 share/gemrb/unhardcoded/iwd/axeex.pro
@@ -1620,7 +1619,6 @@ share/gemrb/unhardcoded/iwd/wvdeath.pro
 share/gemrb/unhardcoded/iwd/wvhith.pro
 share/gemrb/unhardcoded/iwd/wwolf.pro
 share/gemrb/unhardcoded/iwd/zlaura.pro
-share/gemrb/unhardcoded/iwd/zzweaps.2da
 share/gemrb/unhardcoded/iwd2/
 share/gemrb/unhardcoded/iwd2/24895.spl
 share/gemrb/unhardcoded/iwd2/24896.spl
@@ -1864,6 +1862,7 @@ share/gemrb/unhardcoded/iwd2/gaze.pro
 share/gemrb/unhardcoded/iwd2/geloopx.pro
 share/gemrb/unhardcoded/iwd2/gemprjtl.ids
 share/gemrb/unhardcoded/iwd2/gemrb.ini
+share/gemrb/unhardcoded/iwd2/gemtrig.ids
 share/gemrb/unhardcoded/iwd2/gender.2da
 share/gemrb/unhardcoded/iwd2/golcloud.pro
 share/gemrb/unhardcoded/iwd2/grease.pro
@@ -2381,6 +2380,7 @@ share/gemrb/unhardcoded/pst/strings.2da
 share/gemrb/unhardcoded/pst/tlaugh.pro
 share/gemrb/unhardcoded/pst/trapglyp.pro
 share/gemrb/unhardcoded/pst/trapskul.pro
+share/gemrb/unhardcoded/pst/vcremap.2da
 share/gemrb/unhardcoded/pst/vtouch.pro
 share/gemrb/unhardcoded/pst/weapprof.2da
 share/gemrb/unhardcoded/pst/web.pro
@@ -2388,6 +2388,7 @@ share/gemrb/unhardcoded/pst/wmmos2b.mos
 share/gemrb/unhardcoded/shared/
 share/gemrb/unhardcoded/shared/REVERB.2DA
 share/gemrb/unhardcoded/shared/avatar_shadows.2da
+share/gemrb/unhardcoded/shared/avprefc.2da
 share/gemrb/unhardcoded/shared/avprefg.2da
 share/gemrb/unhardcoded/shared/avprefix.2da
 share/gemrb/unhardcoded/shared/axeflm.pro
@@ -2415,6 +2416,7 @@ share/gemrb/unhardcoded/shared/japanese.ini
 share/gemrb/unhardcoded/shared/keymap.2da
 share/gemrb/unhardcoded/shared/korean.ini
 share/gemrb/unhardcoded/shared/modal.2da
+share/gemrb/unhardcoded/shared/numwslot.2da
 share/gemrb/unhardcoded/shared/panic.spl
 share/gemrb/unhardcoded/shared/polystat.2da
 share/gemrb/unhardcoded/shared/redholy.pro
@@ -2464,6 +2466,7 @@ share/gemrb/unhardcoded/shared/spsmold.pro
 share/gemrb/unhardcoded/shared/spsmpuff.pro
 share/gemrb/unhardcoded/shared/storespl.2da
 share/gemrb/unhardcoded/shared/turn.spl
+share/gemrb/unhardcoded/shared/zzweaps.2da
 share/icons/hicolor/scalable/apps/gemrb.svg
 share/pixmaps/
 share/pixmaps/gemrb.png
