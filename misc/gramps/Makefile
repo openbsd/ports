@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.51 2019/07/12 20:47:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2019/12/13 06:50:55 bentley Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
-MODPY_EGG_VERSION=	4.2.8
+MODPY_EGG_VERSION =	5.1.1
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		3
 
 CATEGORIES=		misc x11
 
 HOMEPAGE=		https://gramps-project.org/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gramps/}
