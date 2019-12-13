@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2019/12/06 09:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/12/13 15:05:03 kmos Exp $
+
+BROKEN-sparc64=		ERROR: Problem encountered: Unknown host architecture
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
