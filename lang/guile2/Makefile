@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/16 21:29:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/12/14 15:45:01 cwen Exp $
 
 # When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
 # proper guile2 includes directory
-
-BROKEN-powerpc=		Segmentation fault (core dumped)
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 # '
@@ -51,6 +49,10 @@ CONFIGURE_ARGS=		--program-suffix=${V}
 # Needed because otherwise regress tests won't build:
 # warning: format '%ji' expects type 'intmax_t', but argument 4 has type 'scm_t_intmax'
 CONFIGURE_ARGS +=	--disable-error-on-warning
+
+# powerpc: Prevent "Segmentation fault (core dumped)" during build.
+post-patch:
+	mv ${WRKSRC}/prebuilt/32-bit-big-endian{,-broken}
 
 post-install:
 	install -d ${PREFIX}/share/guile/site/${V}/
