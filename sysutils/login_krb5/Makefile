@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/12/14 17:56:39 ajacoutot Exp $
 
 COMMENT=		authentication provider for KerberosV
 
 GIT_PROJECT=		login_krb5
-GIT_COMMIT=		d9ef2cf
+GIT_COMMIT=		da478b6
 DISTNAME=		${GIT_COMMIT}
-PKGNAME=		${GIT_PROJECT}-6.5.1
+PKGNAME=		${GIT_PROJECT}-6.6
 
 DIST_SUBDIR=		${GIT_PROJECT}
 WRKDIST=		${WRKDIR}/${GIT_PROJECT}-${GIT_COMMIT}
@@ -17,7 +17,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 HOMEPAGE=		http://repo.or.cz/login_krb5.git
 
 # ISC
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 # uses pledge()
 WANTLIB += c
