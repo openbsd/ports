@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.71 2019/11/09 14:06:33 fcambus Exp $
+# $OpenBSD: Makefile,v 1.72 2019/12/14 13:08:27 jca Exp $
+
+# unconditionally uses machine/apmvar.h and related structures/defines
+ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 V=		1.6.2
 COMMENT=	small and fast window manager
