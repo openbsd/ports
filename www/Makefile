@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.937 2019/12/11 15:59:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.938 2019/12/14 22:27:03 kmos Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -453,6 +453,8 @@
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
      SUBDIR += py-pylons
+     SUBDIR += py-query
+     SUBDIR += py-query,python3
      SUBDIR += py-quixote
      SUBDIR += py-recaptcha-client
      SUBDIR += py-repoze-lru
