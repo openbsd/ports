@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.164 2019/12/08 08:36:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2019/12/14 16:26:05 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.25.13
+DISTNAME=	cups-filters-1.26.0
 
 CATEGORIES=	print
 
@@ -22,9 +22,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common avahi-glib
 WANTLIB += c cups dbus-1 expat ffi fontconfig freetype gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 hogweed
-WANTLIB += iconv idn2 intl jpeg lcms2 m nettle openjp2 p11-kit
+WANTLIB += iconv idn2 intl jpeg lcms2 lzma m nettle openjp2 p11-kit
 WANTLIB += pcre png poppler poppler-cpp qpdf tasn1 tiff unistring
-WANTLIB += z
+WANTLIB += z zstd
 
 MASTER_SITES=	https://www.openprinting.org/download/cups-filters/
 
