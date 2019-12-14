@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/19 16:40:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/14 16:58:18 ajacoutot Exp $
 
 PROVIDER=		google
-GH_TAGNAME=		v2.20.0
+GH_TAGNAME=		v2.20.1
 
 .include <bsd.port.mk>

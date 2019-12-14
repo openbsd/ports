@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/08 09:32:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/14 16:58:18 ajacoutot Exp $
 
 PROVIDER=		ignition
-GH_TAGNAME=		v1.2.0
+GH_TAGNAME=		v1.2.1
 
 .include <bsd.port.mk>

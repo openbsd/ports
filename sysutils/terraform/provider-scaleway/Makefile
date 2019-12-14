@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/17 19:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/14 16:58:18 ajacoutot Exp $
 
 PROVIDER=		scaleway
-GH_TAGNAME=		v1.12.0
+GH_TAGNAME=		v1.13.0
 
 .include <bsd.port.mk>
