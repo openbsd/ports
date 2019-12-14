@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1512 2019/12/08 11:51:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1513 2019/12/14 10:58:54 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -939,6 +939,8 @@ ${_v}${_s} ?= ${${_v}}
 # from it (so DEBUG_PACKAGES=${BUILD_PACKAGES} works)
 .if !empty(DEBUG_PACKAGES)
 .  for i in ${DEBUG_PACKAGES}
+# XXX note that this test also checks that DEBUG_PACKAGES entries
+# are valid subpackages, as PKG_ARCH$i will error out otherwise
 .    if ${PKG_ARCH$i} == "*"
 DEBUG_PACKAGES := ${DEBUG_PACKAGES:N$i}
 .    endif
