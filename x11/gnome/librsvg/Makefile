@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2019/11/18 19:58:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.161 2019/12/14 12:58:07 jca Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -26,7 +26,7 @@ COMPILER=		base-clang ports-gcc
 WANTLIB += cairo-gobject
 .else
 ### old
-REVISION=		5
+REVISION=		6
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
