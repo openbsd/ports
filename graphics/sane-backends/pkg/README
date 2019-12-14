@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.16 2018/11/18 15:52:18 ajacoutot Exp $
+$OpenBSD: README,v 1.17 2019/12/14 13:02:28 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,8 +8,8 @@ First read ${TRUEPREFIX}/share/doc/sane-backends/PROBLEMS.
 
 USB
 ===
-Since USB scanning will be handled by libusb, you need to allow the
-_saned user access to the corresponding USB endpoint. To do so, find
+Since USB scanning will be handled by libusb, you need to allow
+the user access to the corresponding USB endpoint. To do so, find
 where your scanner is attached to using:
     $ usbdevs -v
 then change the ownerships accordingly.
@@ -22,20 +22,14 @@ addr 05: 03f0:4812 HP, Officejet 7500 E910
          driver: umass0                                                         
          driver: ugen1                                                          
                                                                                 
-# chgrp _saned /dev/ugen1.* /dev/usb0
-
-The reason we are changing the group and not the user is that it will
-allow for multi-function devices to work for both printing and scanning
-(e.g. by being owned by _cups:_saned).
+# chown <username> /dev/ugen1.* /dev/usb0
 
 To preserve your changes after a system update, use rc.local(8).
-e.g. for a multi-function printer/scanner add the following lines:
-chown _cups:_saned /dev/ugen1.* /dev/usb0
-
 Alternatively, hotplugd(8) attach/detach scripts can automate this.
 
-You can then grant users direct access to the scanner by adding them to
-the _saned group.
+You can grant multiple users direct access to the scanner by adding them to the
+_saned group and allowing access to its ugen(4) device.
+e.g. chgrp _saned /dev/ugen1.* && chmod 660 /dev/ugen1.*
 
 SCSI
 ====

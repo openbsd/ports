@@ -1,11 +1,11 @@
-$OpenBSD: README,v 1.1 2018/11/18 16:02:07 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2019/12/14 13:02:29 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Since USB reading of your camera will be handled by libusb, you need to 
-allow the user access to the corresponding USB endpoint. To do so, find
+Since USB reading of your camera will be handled by libusb, you need to allow
+the user access to the corresponding USB endpoint. To do so, find
 where your camera is attached to by using:
     $ usbdevs -v
 then change the ownership accordingly.
@@ -20,9 +20,5 @@ addr 03: 04e8:6860 SAMSUNG, SAMSUNG_Android
 
 # chown <username> /dev/ugen0.* /dev/usb0
 
-The reason we are changing the user and not the group is that only 
-<username> can access it. 
-
 To preserve your changes after a system update, use rc.local(8).
-
 Alternatively, hotplugd(8) attach/detach scripts can automate this.
