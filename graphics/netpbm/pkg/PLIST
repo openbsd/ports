@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/08/25 20:29:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/12/14 22:03:16 naddy Exp $
 @bin bin/411toppm
 bin/anytopnm
 @bin bin/asciitopgm
@@ -397,7 +397,7 @@ include/netpbm/ppmdraw.h
 include/netpbm/ppmfloyd.h
 include/netpbm/runlength.h
 include/netpbm/shhopt.h
-lib/libnetpbm.a
+@static-lib lib/libnetpbm.a
 @lib lib/libnetpbm.so.${LIBnetpbm_VERSION}
 share/netpbm/
 share/netpbm/palmcolor8.map
