@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.127 2019/12/08 08:24:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.128 2019/12/14 16:59:25 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -378,6 +378,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/detective/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/detective/2018-10-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/detective/2018-10-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/detective/2018-10-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/2015-06-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/2015-06-23/examples-1.json
