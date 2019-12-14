@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/14 22:21:55 kmos Exp $
+lib/python${MODPY_VERSION}/site-packages/pyquery/
+lib/python${MODPY_VERSION}/site-packages/pyquery-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyquery-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyquery-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyquery-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyquery-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pyquery-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/pyquery-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pyquery-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyquery/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyquery/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyquery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyquery/${MODPY_PYCACHE}cssselectpatch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyquery/${MODPY_PYCACHE}openers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyquery/${MODPY_PYCACHE}pyquery.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyquery/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyquery/cssselectpatch.py
+lib/python${MODPY_VERSION}/site-packages/pyquery/openers.py
+lib/python${MODPY_VERSION}/site-packages/pyquery/pyquery.py
+lib/python${MODPY_VERSION}/site-packages/pyquery/text.py
