@@ -1,0 +1,17 @@
+$OpenBSD: patch-setup_py,v 1.1 2019/12/14 13:28:38 jasper Exp $
+
+drop upper limit on python-dateutil, related to:
+https://github.com/boto/botocore/issues/1872
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -40,7 +40,7 @@ if sys.version_info[:2] == (2, 6):
+     requires.append('simplejson==3.3.0')
+     requires.append('python-dateutil>=2.1,<2.7.0')
+ else:
+-    requires.append('python-dateutil>=2.1,<2.8.1')
++    requires.append('python-dateutil>=2.1')
+ 
+ if sys.version_info[:2] == (2, 6):
+     requires.append('urllib3>=1.20,<1.24')
