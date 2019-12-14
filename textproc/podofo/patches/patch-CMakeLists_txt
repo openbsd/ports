@@ -1,12 +1,20 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2017/02/07 15:10:10 sthen Exp $
---- CMakeLists.txt.orig	Wed Feb  1 21:23:03 2017
-+++ CMakeLists.txt	Tue Feb  7 14:51:41 2017
-@@ -298,7 +298,7 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2019/12/14 20:17:14 bket Exp $
+
+Do not force c++98 standard for GNUCXX compiler. Adapted from
+https://sourceforge.net/p/podofo/code/1826.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -296,9 +296,9 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
+         SET(PODOFO_USE_VISIBILITY ${PODOFO_HAVE_GCC4})
+     ENDIF(NOT DEFINED PODOFO_USE_VISIBILITY)
  
-     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++98")
+-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++98")
++    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
  
 -    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Woverloaded-virtual -Wswitch-enum -Wcast-qual -Wwrite-strings -Wredundant-decls -Wreorder")
-+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Woverloaded-virtual -Wswitch-enum -Wcast-qual -Wwrite-strings -Wreorder")
++    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Woverloaded-virtual -Wswitch-enum -Wcast-qual -Wwrite-strings -Wreorder -Wno-deprecated-declarations")
  
      #
      # Note that we do not need debug definitions here. Set

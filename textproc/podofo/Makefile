@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/08/07 18:11:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2019/12/14 20:17:14 bket Exp $
 
 COMMENT=	library and tools to modify and parse PDF documents
 
 DISTNAME=	podofo-0.9.5
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	podofo                    2.0 # 0.9
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/02/07 15:10:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/12/14 20:17:15 bket Exp $
 @bin bin/podofobox
 @bin bin/podofocolor
 @bin bin/podofocountpages
@@ -127,7 +127,7 @@ include/podofo/doc/PdfTilingPattern.h
 include/podofo/doc/PdfXObject.h
 include/podofo/podofo-base.h
 include/podofo/podofo.h
-lib/libpodofo.a
+@static-lib lib/libpodofo.a
 @lib lib/libpodofo.so.${LIBpodofo_VERSION}
 lib/pkgconfig/libpodofo-0.pc
 @man man/man1/podofobox.1
