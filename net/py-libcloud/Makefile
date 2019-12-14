@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/12/14 16:50:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2019/12/14 22:12:52 kmos Exp $
 
 COMMENT=		unified interface for interacting with cloud services
 
@@ -20,6 +20,7 @@ MASTER_SITES=		${MASTER_SITE_APACHE:=libcloud/}
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS=		python3
 FLAVOR ?=
@@ -31,13 +32,15 @@ RUN_DEPENDS=		sysutils/py-lockfile${MODPY_FLAVOR}
 TEST_DEPENDS=		devel/flake8 \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-test-runner${MODPY_FLAVOR} \
+			security/py-openssl${MODPY_FLAVOR} \
 			sysutils/py-lockfile${MODPY_FLAVOR} \
 			www/py-requests-mock${MODPY_FLAVOR}
 
 # python2
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname
-TEST_DEPENDS +=		devel/py-backports-ssl-match-hostname
+TEST_DEPENDS +=		devel/py-backports-ssl-match-hostname \
+			devel/py-enum34
 .endif
 
 post-install:
