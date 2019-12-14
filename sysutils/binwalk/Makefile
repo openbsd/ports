@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/12/14 14:21:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/12/14 21:44:08 kmos Exp $
 
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
@@ -17,6 +17,9 @@ PERMIT_PACKAGE =Yes
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	testing/tests
+
 # There are a bunch of utilities which aren't ported yet but which would
 # benefit the binwalk user:
 # sasquatch for non-standard SquashFS images
@@ -26,7 +29,8 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =	devel/capstone/python${MODPY_FLAVOR} \
 		security/py-cryptodome${MODPY_FLAVOR}
 
-NO_TEST =	Yes
+TEST_ENV =	PYTHONPATH=${WRKSRC}/lib
+PORTHOME =	${WRKDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/binwalk
