@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_iosource_BPF_Program_cc,v 1.1 2019/11/25 07:57:43 ajacoutot Exp $
+$OpenBSD: patch-src_iosource_BPF_Program_cc,v 1.2 2019/12/14 16:32:30 ajacoutot Exp $
+
+error: use of undeclared identifier 'DLT_NFLOG'
 
 Index: src/iosource/BPF_Program.cc
 --- src/iosource/BPF_Program.cc.orig

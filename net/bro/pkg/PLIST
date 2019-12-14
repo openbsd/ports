@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/11/25 07:57:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/12/14 16:32:30 ajacoutot Exp $
 @conflict bro-*
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/zeek
 @rcscript ${RCDIR}/zeek
@@ -552,12 +552,18 @@ include/caf/uri.hpp
 include/caf/uri_builder.hpp
 include/caf/variant.hpp
 include/caf/weak_intrusive_ptr.hpp
-include/paraglob.h
+include/paraglob/
+include/paraglob/exceptions.h
+include/paraglob/node.h
+include/paraglob/paraglob.h
+include/paraglob/serializer.h
 include/zeek/
 include/zeek/3rdparty/
-include/zeek/3rdparty/fifo_map.hpp
 include/zeek/3rdparty/json.hpp
 include/zeek/3rdparty/sqlite3.h
+include/zeek/3rdparty/tsl-ordered-map/
+include/zeek/3rdparty/tsl-ordered-map/ordered_hash.h
+include/zeek/3rdparty/tsl-ordered-map/ordered_map.h
 include/zeek/Anon.h
 include/zeek/Attr.h
 include/zeek/Base64.h

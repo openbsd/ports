@@ -1,4 +1,4 @@
-$OpenBSD: patch-aux_broker_3rdparty_caf_libcaf_core_CMakeLists_txt,v 1.2 2019/11/25 07:57:43 ajacoutot Exp $
+$OpenBSD: patch-aux_broker_3rdparty_caf_libcaf_core_CMakeLists_txt,v 1.3 2019/12/14 16:32:30 ajacoutot Exp $
 
 Index: aux/broker/3rdparty/caf/libcaf_core/CMakeLists.txt
 --- aux/broker/3rdparty/caf/libcaf_core/CMakeLists.txt.orig
@@ -8,7 +8,7 @@ Index: aux/broker/3rdparty/caf/libcaf_core/CMakeLists.txt
    set_target_properties(libcaf_core_shared
      PROPERTIES
 -    SOVERSION ${CAF_VERSION}
--    VERSION ${CAF_VERSION}
+-    VERSION ${CAF_LIB_VERSION}
 +    SOVERSION ${LIBcaf_core_VERSION}
 +    VERSION ${LIBcaf_core_VERSION}
      OUTPUT_NAME caf_core

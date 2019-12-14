@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_caf_libcaf_core_caf_config_hpp,v 1.1 2019/12/14 16:32:30 ajacoutot Exp $
+
+Index: src/3rdparty/caf/libcaf_core/caf/config.hpp
+--- src/3rdparty/caf/libcaf_core/caf/config.hpp.orig
++++ src/3rdparty/caf/libcaf_core/caf/config.hpp
+@@ -207,7 +207,7 @@
+ #  if LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,16)
+ #    define CAF_POLL_IMPL
+ #  endif
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  define CAF_BSD
+ #elif defined(__OpenBSD__)
+ #  define CAF_BSD

@@ -1,4 +1,4 @@
-$OpenBSD: patch-aux_broker_3rdparty_caf_libcaf_core_caf_config_hpp,v 1.1 2018/12/30 14:14:14 ajacoutot Exp $
+$OpenBSD: patch-aux_broker_3rdparty_caf_libcaf_core_caf_config_hpp,v 1.2 2019/12/14 16:32:30 ajacoutot Exp $
 
 Index: aux/broker/3rdparty/caf/libcaf_core/caf/config.hpp
 --- aux/broker/3rdparty/caf/libcaf_core/caf/config.hpp.orig
@@ -10,5 +10,5 @@ Index: aux/broker/3rdparty/caf/libcaf_core/caf/config.hpp
 -#elif defined(__FreeBSD__)
 +#elif defined(__FreeBSD__) || defined(__OpenBSD__)
  #  define CAF_BSD
- #elif defined(__CYGWIN__)
- #  define CAF_CYGWIN
+ #elif defined(__OpenBSD__)
+ #  define CAF_BSD
