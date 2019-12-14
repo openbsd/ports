@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2019/11/23 12:07:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.257 2019/12/14 18:39:09 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -23,7 +23,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 c cairo cairo-gobject
 WANTLIB += canberra canberra-gtk3 db gck-1 gcr-base-3 gcr-ui-3
@@ -34,7 +34,7 @@ WANTLIB += json-glib-1.0 lber ldap m nspr4 nss3 nssutil3 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 plc4 plds4 secret-1 smime3
 WANTLIB += soup-2.4 sqlite3 ssl3 webkit2gtk-4.0 xml2 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		devel/cmake \
 			devel/dconf \
@@ -69,6 +69,8 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 pre-configure:
 	sed -i 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
 		${WRKSRC}/src/camel/providers/imapx/camel-imapx-settings.c
+# don't pick up db_load from databases/db/v3
+	ln -sf ${LOCALBASE}/bin/db4_load ${WRKDIR}/bin/db_load
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
