@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.12 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.13 2019/12/15 13:55:34 robert Exp $
 
 Index: content/browser/gpu/gpu_process_host.cc
 --- content/browser/gpu/gpu_process_host.cc.orig
@@ -11,3 +11,11 @@ Index: content/browser/gpu/gpu_process_host.cc
      switches::kEnableDeJelly,
      switches::kDeJellyScreenWidth,
      switches::kEnableVizDevTools,
+@@ -257,6 +258,7 @@ static const char* const kSwitchNames[] = {
+ #endif
+ #if defined(USE_X11)
+     switches::kX11Display,
++    switches::kNoXshm,
+ #endif
+     switches::kGpuBlacklistTestGroup,
+     switches::kGpuDriverBugListTestGroup,
