@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.17 2019/07/15 13:35:35 kmos Exp $
+# $OpenBSD: PyPI.pm,v 1.18 2019/12/15 00:18:05 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -54,11 +54,20 @@ sub name_new_port
 {
 	my ( $self, $di ) = @_;
 
-	my $name = ref $di ? $di->{info}{name} : $di;
-	$name =~ s/^python-/py-/;
+	my $module = ref $di ? $di->{info}{name} : $di;
+	$module =~ s/^python-/py-/;
 
-	$name = $self->SUPER::name_new_port($name);
-	$name = "pypi/$name" unless $name =~ m{/};
+	my $name = $self->SUPER::name_new_port($module);
+
+	# Try for a py3 only version if we didn't find something ported
+	unless ( $name =~ m{/} ) {
+		if ( my $p = module_in_ports( $name, 'py3-' ) ) {
+			$name = $p;
+		}
+		else {
+			$name = "pypi/$name"
+		}
+	}
 
 	return $name;
 }
@@ -171,7 +180,8 @@ sub get_deps
 
 		next if @plat and join( " ", @plat ) !~ /OpenBSD/i;
 
-		my $port = module_in_ports( $name, 'py-' );
+		my $port = module_in_ports( $name, 'py-' )
+		    || module_in_ports( $name, 'py3-' );
 		my $dep_dir;
 
 		if ($port) {

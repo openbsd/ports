@@ -1,4 +1,4 @@
-# $OpenBSD: Utils.pm,v 1.5 2019/11/23 14:59:39 sthen Exp $
+# $OpenBSD: Utils.pm,v 1.6 2019/12/15 00:18:04 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -18,6 +18,7 @@ package OpenBSD::PortGen::Utils;
 
 use 5.012;
 use warnings;
+use feature qw( state );
 
 use parent qw( Exporter );
 
@@ -47,12 +48,8 @@ sub ports_dir { $ENV{PORTSDIR} || '/usr/ports' }
 
 sub base_dir { ports_dir() . '/mystuff' }
 
-sub module_in_ports
+sub _module_sth
 {
-	my ( $module, $prefix ) = @_;
-
-	return unless $module and $prefix;
-
 	my $dbfile = '/usr/local/share/sqlports';
 	die "install databases/sqlports and databases/p5-DBD-SQLite\n"
 	    unless -e $dbfile;
@@ -64,22 +61,34 @@ sub module_in_ports
 	    RaiseError => 1,
 	} ) or die "failed to connect to database: $DBI::errstr";
 
-	my @results = @{ $dbh->selectcol_arrayref(
-	    "SELECT _paths.fullpkgpath FROM _paths JOIN _paths p1 ON p1.pkgpath=_paths.id
-		JOIN _ports ON _ports.fullpkgpath=p1.id WHERE _ports.distname LIKE ?",
-	    {}, "$module%"
-	) };
+	return $dbh->prepare(q{
+	    SELECT _Paths.FullPkgPath FROM _Paths
+	      JOIN _Ports ON _Paths.PkgPath = _Ports.FullPkgPath
+	     WHERE PKGSTEM = ?
+	       AND _Paths.Id = _Paths.PkgPath
+	     ORDER BY LENGTH(_Paths.FullPkgPath)
+	});
+}
 
-	$dbh->disconnect();
+sub module_in_ports
+{
+	my ( $module, $prefix ) = @_;
+	return unless $module and $prefix;
 
-	# just returning the shortest one that's a module of the same ecosystem
-	# this should be improved
-	@results = sort { length $a <=> length $b } @results;
+	state $sth = _module_sth();
+	END { undef $sth }; # Bus error if destroyed during global destruction
 
-	# this works well enough in practice, but can't rely on it
-	# see devel/perltidy
-	for (@results) {
-		return $_ if /\/$prefix/;
+	my @stems = ( $prefix . $module );
+
+	# We commonly convert the port to lowercase
+	push @stems, $prefix . lc($module) if $module =~ /\p{Upper}/;
+
+	foreach my $stem (@stems) {
+		$sth->execute($stem);
+		my ($path, @extra) = map {@$_} @{ $sth->fetchall_arrayref };
+		warn "Found paths other than $path: @extra\n"
+		    if @extra;
+		return $path if $path;
 	}
 
 	# Many ports, in particular python ports, start with $prefix,
