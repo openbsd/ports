@@ -1,18 +1,32 @@
-$OpenBSD: patch-ui_base_x_x11_shm_image_pool_base_cc,v 1.1 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-ui_base_x_x11_shm_image_pool_base_cc,v 1.2 2019/12/15 13:36:30 robert Exp $
 
 Index: ui/base/x/x11_shm_image_pool_base.cc
 --- ui/base/x/x11_shm_image_pool_base.cc.orig
 +++ ui/base/x/x11_shm_image_pool_base.cc
-@@ -40,7 +40,7 @@ constexpr float kShmResizeShrinkThreshold =
+@@ -13,6 +13,7 @@
+ #include "base/bind.h"
+ #include "base/callback.h"
+ #include "base/location.h"
++#include "base/system/sys_info.h"
+ #include "base/threading/thread_task_runner_handle.h"
+ #include "build/build_config.h"
+ #include "ui/events/platform/platform_event_dispatcher.h"
+@@ -39,10 +40,14 @@ constexpr float kShmResizeShrinkThreshold =
+     1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {
++#if defined(OS_BSD)
++  return base::SysInfo::MaxSharedMemorySize();
++#else
    struct shminfo info;
--  if (shmctl(0, IPC_INFO, reinterpret_cast<struct shmid_ds*>(&info)) == -1)
-+  if (shmctl(0, IPC_STAT, reinterpret_cast<struct shmid_ds*>(&info)) == -1)
+   if (shmctl(0, IPC_INFO, reinterpret_cast<struct shmid_ds*>(&info)) == -1)
      return 0;
    return info.shmmax;
++#endif
  }
-@@ -139,7 +139,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+ 
+ std::size_t MaxShmSegmentSize() {
+@@ -139,7 +144,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
          shmctl(state.shminfo_.shmid, IPC_RMID, 0);
          return false;
        }
@@ -21,7 +35,7 @@ Index: ui/base/x/x11_shm_image_pool_base.cc
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -149,7 +149,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+@@ -149,7 +154,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
        if (!XShmAttach(display_, &state.shminfo_))
          return false;
        state.shmem_attached_to_server_ = true;
