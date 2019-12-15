@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/12/14 17:47:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/15 13:52:41 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
@@ -29,7 +29,7 @@ MASTER_SITES=	https://distfiles.bsdfrog.org/
 # cd ${HOME}/go/src/github.com/gruntwork-io/
 # git clone https://github.com/gruntwork-io/terragrunt.git
 # cd terragrunt && git checkout ${GH_TAGNAME}
-# ${LOCALBASE}/bin/dep ensure -vendor-only
+# dep ensure -vendor-only
 # rm -rf .git/
 # cd .. && mv terragrunt terragrunt-${GH_TAGNAME#v*}
 # tar czf terragrunt-${GH_TAGNAME#v*}.tar.gz terragrunt-${GH_TAGNAME#v*}
