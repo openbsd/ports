@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/18 23:33:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2019/12/15 18:03:30 bcallah Exp $
 
 # Avoid future EPOCH bumps.
 COMMENT =	open source reimplementation of Jedi Academy game
-DISTNAME =	openjk-0.0.0.20190622
+DISTNAME =	openjk-0.0.0.20191129
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	JACoders
 GH_PROJECT =	OpenJK
-GH_COMMIT =	e8b5c135eccb05ddae67e00ff944001f373fddd4
+GH_COMMIT =	eed60925ad1b0d513d3747264f3bf98615fa4b2a
 
 HOMEPAGE =	https://openjk.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

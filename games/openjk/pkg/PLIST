@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/15 18:03:30 bcallah Exp $
 bin/jamp
 bin/jasp
 bin/openjkded
 share/JediAcademy/
 share/JediAcademy/OpenJK/
-share/JediAcademy/OpenJK/cgame.so
-share/JediAcademy/OpenJK/jagame.so
-share/JediAcademy/OpenJK/jampgame.so
-share/JediAcademy/OpenJK/ui.so
+@so share/JediAcademy/OpenJK/cgame.so
+@so share/JediAcademy/OpenJK/jagame.so
+@so share/JediAcademy/OpenJK/jampgame.so
+@so share/JediAcademy/OpenJK/ui.so
 share/JediAcademy/base/
-share/JediAcademy/base/cgame.so
-share/JediAcademy/base/jampgame.so
-share/JediAcademy/base/ui.so
+@so share/JediAcademy/base/cgame.so
+@so share/JediAcademy/base/jampgame.so
+@so share/JediAcademy/base/ui.so
 @bin share/JediAcademy/openjk
 @bin share/JediAcademy/openjk_sp
 @bin share/JediAcademy/openjkded
-share/JediAcademy/rd-vanilla.so
-share/JediAcademy/rdsp-vanilla.so
+@so share/JediAcademy/rd-vanilla.so
+@so share/JediAcademy/rdsp-vanilla.so
 share/doc/pkg-readmes/${PKGSTEM}
