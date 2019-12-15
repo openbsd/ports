@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.75 2019/10/14 20:41:44 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.76 2019/12/15 23:57:22 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -47,7 +47,6 @@ include/dovecot/auth-master-connection.h
 include/dovecot/auth-master.h
 include/dovecot/auth-penalty.h
 include/dovecot/auth-policy.h
-include/dovecot/auth-postfix-connection.h
 include/dovecot/auth-request-handler.h
 include/dovecot/auth-request-stats.h
 include/dovecot/auth-request-var-expand.h
@@ -62,7 +61,6 @@ include/dovecot/backtrace-string.h
 include/dovecot/base32.h
 include/dovecot/base64.h
 include/dovecot/bits.h
-include/dovecot/bloomfilter.h
 include/dovecot/bsearch-insert-pos.h
 include/dovecot/buffer.h
 include/dovecot/byteorder.h
@@ -451,7 +449,6 @@ include/dovecot/mmap-util.h
 include/dovecot/module-context.h
 include/dovecot/module-dir.h
 include/dovecot/mountpoint.h
-include/dovecot/murmurhash3.h
 include/dovecot/mycrypt.h
 include/dovecot/net.h
 include/dovecot/nfs-workarounds.h
@@ -609,52 +606,52 @@ include/dovecot/wildcard-match.h
 include/dovecot/write-full.h
 lib/dovecot/
 lib/dovecot/auth/
-lib/dovecot/auth/lib20_auth_var_expand_crypt.so
-lib/dovecot/auth/libauthdb_imap.so
-lib/dovecot/auth/libdriver_sqlite.so
+@so lib/dovecot/auth/lib20_auth_var_expand_crypt.so
+@so lib/dovecot/auth/libauthdb_imap.so
+@so lib/dovecot/auth/libdriver_sqlite.so
 lib/dovecot/dict/
-lib/dovecot/dict/libdriver_sqlite.so
+@so lib/dovecot/dict/libdriver_sqlite.so
 lib/dovecot/doveadm/
-lib/dovecot/doveadm/lib10_doveadm_acl_plugin.so
-lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
-lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
-lib/dovecot/doveadm/lib20_doveadm_fts_plugin.so
-lib/dovecot/doveadm/libdoveadm_mail_crypt_plugin.so
+@so lib/dovecot/doveadm/lib10_doveadm_acl_plugin.so
+@so lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
+@so lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
+@so lib/dovecot/doveadm/lib20_doveadm_fts_plugin.so
+@so lib/dovecot/doveadm/libdoveadm_mail_crypt_plugin.so
 lib/dovecot/dovecot-config
-lib/dovecot/lib01_acl_plugin.so
-lib/dovecot/lib02_imap_acl_plugin.so
-lib/dovecot/lib02_lazy_expunge_plugin.so
-lib/dovecot/lib05_mail_crypt_acl_plugin.so
-lib/dovecot/lib05_pop3_migration_plugin.so
-lib/dovecot/lib05_snarf_plugin.so
-lib/dovecot/lib10_last_login_plugin.so
-lib/dovecot/lib10_mail_crypt_plugin.so
-lib/dovecot/lib10_mail_filter_plugin.so
-lib/dovecot/lib10_quota_plugin.so
-lib/dovecot/lib11_imap_quota_plugin.so
-lib/dovecot/lib11_trash_plugin.so
-lib/dovecot/lib15_notify_plugin.so
-lib/dovecot/lib20_autocreate_plugin.so
-lib/dovecot/lib20_charset_alias_plugin.so
-lib/dovecot/lib20_expire_plugin.so
-lib/dovecot/lib20_fts_plugin.so
-lib/dovecot/lib20_listescape_plugin.so
-lib/dovecot/lib20_mail_log_plugin.so
-lib/dovecot/lib20_mailbox_alias_plugin.so
-lib/dovecot/lib20_notify_status_plugin.so
-lib/dovecot/lib20_push_notification_plugin.so
-lib/dovecot/lib20_quota_clone_plugin.so
-lib/dovecot/lib20_replication_plugin.so
-lib/dovecot/lib20_var_expand_crypt.so
-lib/dovecot/lib20_virtual_plugin.so
-lib/dovecot/lib20_zlib_plugin.so
-lib/dovecot/lib21_fts_solr_plugin.so
-lib/dovecot/lib21_fts_squat_plugin.so
-lib/dovecot/lib30_imap_zlib_plugin.so
-lib/dovecot/lib90_old_stats_plugin.so
-lib/dovecot/lib95_imap_old_stats_plugin.so
-lib/dovecot/lib99_welcome_plugin.so
-lib/dovecot/libdcrypt_openssl.so
+@so lib/dovecot/lib01_acl_plugin.so
+@so lib/dovecot/lib02_imap_acl_plugin.so
+@so lib/dovecot/lib02_lazy_expunge_plugin.so
+@so lib/dovecot/lib05_mail_crypt_acl_plugin.so
+@so lib/dovecot/lib05_pop3_migration_plugin.so
+@so lib/dovecot/lib05_snarf_plugin.so
+@so lib/dovecot/lib10_last_login_plugin.so
+@so lib/dovecot/lib10_mail_crypt_plugin.so
+@so lib/dovecot/lib10_mail_filter_plugin.so
+@so lib/dovecot/lib10_quota_plugin.so
+@so lib/dovecot/lib11_imap_quota_plugin.so
+@so lib/dovecot/lib11_trash_plugin.so
+@so lib/dovecot/lib15_notify_plugin.so
+@so lib/dovecot/lib20_autocreate_plugin.so
+@so lib/dovecot/lib20_charset_alias_plugin.so
+@so lib/dovecot/lib20_expire_plugin.so
+@so lib/dovecot/lib20_fts_plugin.so
+@so lib/dovecot/lib20_listescape_plugin.so
+@so lib/dovecot/lib20_mail_log_plugin.so
+@so lib/dovecot/lib20_mailbox_alias_plugin.so
+@so lib/dovecot/lib20_notify_status_plugin.so
+@so lib/dovecot/lib20_push_notification_plugin.so
+@so lib/dovecot/lib20_quota_clone_plugin.so
+@so lib/dovecot/lib20_replication_plugin.so
+@so lib/dovecot/lib20_var_expand_crypt.so
+@so lib/dovecot/lib20_virtual_plugin.so
+@so lib/dovecot/lib20_zlib_plugin.so
+@so lib/dovecot/lib21_fts_solr_plugin.so
+@so lib/dovecot/lib21_fts_squat_plugin.so
+@so lib/dovecot/lib30_imap_zlib_plugin.so
+@so lib/dovecot/lib90_old_stats_plugin.so
+@so lib/dovecot/lib95_imap_old_stats_plugin.so
+@so lib/dovecot/lib99_welcome_plugin.so
+@so lib/dovecot/libdcrypt_openssl.so
 @lib lib/dovecot/libdovecot-compression.so.${LIBdovecot-compression_VERSION}
 @lib lib/dovecot/libdovecot-dsync.so.${LIBdovecot-dsync_VERSION}
 @lib lib/dovecot/libdovecot-fts.so.${LIBdovecot-fts_VERSION}
@@ -663,14 +660,14 @@ lib/dovecot/libdcrypt_openssl.so
 @lib lib/dovecot/libdovecot-sql.so.${LIBdovecot-sql_VERSION}
 @lib lib/dovecot/libdovecot-storage.so.${LIBdovecot-storage_VERSION}
 @lib lib/dovecot/libdovecot.so.${LIBdovecot_VERSION}
-lib/dovecot/libdriver_sqlite.so
-lib/dovecot/libfs_compress.so
-lib/dovecot/libfs_crypt.so
-lib/dovecot/libfs_mail_crypt.so
-lib/dovecot/libssl_iostream_openssl.so
+@so lib/dovecot/libdriver_sqlite.so
+@so lib/dovecot/libfs_compress.so
+@so lib/dovecot/libfs_crypt.so
+@so lib/dovecot/libfs_mail_crypt.so
+@so lib/dovecot/libssl_iostream_openssl.so
 lib/dovecot/old-stats/
-lib/dovecot/old-stats/libold_stats_mail.so
-lib/dovecot/old-stats/libstats_auth.so
+@so lib/dovecot/old-stats/libold_stats_mail.so
+@so lib/dovecot/old-stats/libstats_auth.so
 libexec/dovecot/
 @bin libexec/dovecot/aggregator
 @bin libexec/dovecot/anvil
