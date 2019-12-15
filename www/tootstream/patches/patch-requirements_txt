@@ -1,0 +1,14 @@
+$OpenBSD: patch-requirements_txt,v 1.1 2019/12/15 17:09:52 kmos Exp $
+
+Fix for other 1.4.x releases
+
+Index: requirements.txt
+--- requirements.txt.orig
++++ requirements.txt
+@@ -1,5 +1,5 @@
+ click>=6.7
+-Mastodon.py==1.4.5
++Mastodon.py>=1.4.5
+ colored>=1.3.93
+ humanize>=0.5.1
+ emoji>=0.4.5
