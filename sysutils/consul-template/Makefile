@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/10 19:56:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/12/15 13:53:42 ajacoutot Exp $
 
 COMMENT=	template rendering and notifications with Consul
 
@@ -30,7 +30,7 @@ TEST_DEPENDS=	sysutils/consul
 # cd ${HOME}/go/src/github.com/hashicorp/
 # git clone https://github.com/hashicorp/consul-template.git
 # cd consul-template && git checkout ${GH_TAGNAME}
-# ${LOCALBASE}/bin/dep init
+# dep init
 # rm -rf .git/
 # cd .. && mv consul-template consul-template-${GH_TAGNAME#v*}
 # tar czf consul-template-${GH_TAGNAME#v*}.tar.gz consul-template-${GH_TAGNAME#v*}
