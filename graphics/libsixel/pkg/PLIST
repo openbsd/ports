@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/16 15:58:31 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/15 13:39:45 fcambus Exp $
 @bin bin/img2sixel
 bin/libsixel-config
 @bin bin/sixel2png
 include/sixel.h
-lib/libsixel.a
+@static-lib lib/libsixel.a
 lib/libsixel.la
 @lib lib/libsixel.so.${LIBsixel_VERSION}
 lib/pkgconfig/libsixel.pc

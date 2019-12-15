@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/15 13:39:45 fcambus Exp $
 
 COMMENT =	encoder/decoder implementation for DEC SIXEL graphics
 
-V =		1.8.2
+V =		1.8.3
 DISTNAME =	libsixel-$V
 
 SHARED_LIBS +=	sixel	1.0	# 1.6
@@ -30,5 +30,7 @@ CONFIGURE_ARGS += --disable-python \
 
 # Requires Python
 NO_TEST =	Yes
+
+WRKDIST =	${WRKDIR}/sixel-$V
 
 .include <bsd.port.mk>
