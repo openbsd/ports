@@ -1,12 +1,16 @@
-$OpenBSD: patch-makefile,v 1.4 2013/03/08 07:54:31 benoit Exp $
---- makefile.orig	Wed Jan 30 18:02:56 2013
-+++ makefile	Tue Mar  5 15:01:56 2013
-@@ -3,7 +3,7 @@
+$OpenBSD: patch-makefile,v 1.5 2019/12/15 17:00:12 benoit Exp $
+--- makefile.orig	Sun Dec 15 17:42:24 2019
++++ makefile	Sun Dec 15 17:44:29 2019
+@@ -3,9 +3,9 @@
  #--------------------------------
  OBJ=.
  SRC=.
--CFLAGS:= $(CFLAGS) -O3 -Wall
-+CFLAGS:= $(CFLAGS) -Wall
+-CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+-CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
+-LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
++CPPFLAGS:=$(CPPFLAGS)
++CFLAGS:=$(CFLAGS) -Wall
++LDFLAGS:=$(LDFLAGS)
  
  all: jhead
  
