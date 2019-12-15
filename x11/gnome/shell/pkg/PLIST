@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2019/11/02 15:32:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/12/15 18:56:58 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -14,10 +14,10 @@ lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
-lib/gnome-shell/libgnome-shell-menu.so
-lib/gnome-shell/libgnome-shell.so
-lib/gnome-shell/libgvc.so
-lib/gnome-shell/libst-1.0.so
+@so lib/gnome-shell/libgnome-shell-menu.so
+@so lib/gnome-shell/libgnome-shell.so
+@so lib/gnome-shell/libgvc.so
+@so lib/gnome-shell/libst-1.0.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
 libexec/gnome-shell-overrides-migration.sh
