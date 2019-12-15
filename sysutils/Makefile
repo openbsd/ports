@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.542 2019/12/14 22:27:03 kmos Exp $
+# $OpenBSD: Makefile,v 1.543 2019/12/15 13:51:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -76,6 +76,7 @@
      SUBDIR += e2fsprogs
      SUBDIR += ec2-api-tools
      SUBDIR += entr
+     SUBDIR += envconsul
      SUBDIR += eventlog
      SUBDIR += exfat-fuse
      SUBDIR += exa
