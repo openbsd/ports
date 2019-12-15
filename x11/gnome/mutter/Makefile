@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.98 2019/11/11 19:51:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2019/12/15 18:57:07 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.34.1
-REVISION=		0
+GNOME_VERSION=		3.34.2
 
 # XXX: Override libmutter_api_version because of SUBST_VARS.
 API_V =			5
@@ -32,6 +31,8 @@ WANTLIB += xkbcommon xkbcommon-x11 xkbfile
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
 
