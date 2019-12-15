@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/12/14 17:56:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2019/12/15 16:12:47 ajacoutot Exp $
 
 COMMENT=		authentication provider for KerberosV
 
@@ -30,5 +30,7 @@ NO_TEST=		Yes
 
 FAKE_FLAGS=		BINDIR=${PREFIX}/libexec/auth \
 			MANDIR=${PREFIX}/man/man
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
