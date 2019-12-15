@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.18 2019/06/12 19:25:53 kmos Exp $
+# $OpenBSD: Port.pm,v 1.19 2019/12/15 00:15:30 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -21,6 +21,8 @@ use 5.012;
 use warnings;
 
 use Cwd;
+use Fcntl qw( :mode );
+use File::Find qw();
 use File::Path qw( make_path );
 use JSON::PP;
 use Text::Wrap;
@@ -220,6 +222,37 @@ sub set_test_deps
 	my ( $self, $test_deps ) = @_;
 
 	$self->{TEST_DEPENDS} = $test_deps;
+}
+
+sub set_fix_extract_permissions
+{
+	my ($self, $value) = @_;
+
+	return $self->{FIX_EXTRACT_PERMISSIONS} = $value
+	    if @_ == 2;
+
+	my $perm_file = S_IRUSR | S_IRGRP | S_IROTH;
+	my $perm_dir  = S_IXUSR | S_IXGRP | S_IXOTH | $perm_file;
+
+	# Assume a cached stat on whatever mode we are checking
+	my $perm_ok = sub {
+		my $mode = ( stat _ )[2];
+		return S_ISDIR($mode)
+		    ? ($mode & $perm_dir ) == $perm_dir
+		    : ($mode & $perm_file) == $perm_file;
+	};
+
+	my $wrksrc = $self->make_show('WRKSRC');
+
+	# Look through WRKSRC for files that don't have
+	# the necessary permissions.
+	my $needs_fix;
+	File::Find::find({ no_chdir => 1, wanted => sub {
+		$needs_fix = $File::Find::prune = 1
+		    if $needs_fix or not $perm_ok->();
+	} }, $wrksrc );
+
+	return $self->{FIX_EXTRACT_PERMISSIONS} = $needs_fix ? 'Yes' : undef;
 }
 
 sub set_other
@@ -535,7 +568,14 @@ sub make_port
 
 	$self->make_makesum();
 	$self->make_checksum();
+	$self->make_clean();
 	$self->make_extract();
+
+	if ( $self->set_fix_extract_permissions() ) {
+		$self->write_makefile();
+		$self->make_clean();
+		$self->make_extract();
+	}
 
 	my $wrksrc = $self->make_show('WRKSRC');
 
