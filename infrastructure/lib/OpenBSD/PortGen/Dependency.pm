@@ -1,4 +1,4 @@
-# $OpenBSD: Dependency.pm,v 1.2 2019/05/12 20:23:33 afresh1 Exp $
+# $OpenBSD: Dependency.pm,v 1.3 2019/12/15 00:57:49 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -107,10 +107,6 @@ sub format
 		@{ $fmt{'test'} } = '${BUILD_DEPENDS}';
 	} elsif ( $self->_arr_equal( $fmt{'test'}, $fmt{'run'} ) ) {
 		@{ $fmt{'test'} } = '${RUN_DEPENDS}';
-	}
-
-	for my $type ( keys %fmt ) {
-		$fmt{$type} = ( join " \\\n\t\t\t", @{ $fmt{$type} } ) || undef;
 	}
 
 	return \%fmt;
