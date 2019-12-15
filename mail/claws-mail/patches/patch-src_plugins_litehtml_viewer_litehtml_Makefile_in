@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugins_litehtml_viewer_litehtml_Makefile_in,v 1.1 2019/12/15 18:36:18 danj Exp $
+
+Index: src/plugins/litehtml_viewer/litehtml/Makefile.in
+--- src/plugins/litehtml_viewer/litehtml/Makefile.in.orig
++++ src/plugins/litehtml_viewer/litehtml/Makefile.in
+@@ -154,7 +154,7 @@ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+ am__v_at_1 = 
+-DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
++DEFAULT_INCLUDES = -iquote.@am__isrc@ -iquote$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__maybe_remake_depfiles = depfiles
+ am__depfiles_remade = ./$(DEPDIR)/liblitehtml_la-background.Plo \
