@@ -1,0 +1,11 @@
+Envconsul provides a convenient way to launch a subprocess with environment
+variables populated from HashiCorp Consul and Vault. The tool is inspired by
+envdir and envchain, but works on many major operating systems with no runtime
+requirements. It is also available via a Docker container for scheduled
+environments.
+
+Envconsul supports 12-factor applications which get their configuration via the
+environment. Environment variables are dynamically populated from Consul or
+Vault, but the application is unaware; applications just read environment
+variables. This enables extreme flexibility and portability for applications
+across systems.
