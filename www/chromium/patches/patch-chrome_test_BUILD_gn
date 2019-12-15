@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_test_BUILD_gn,v 1.10 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-chrome_test_BUILD_gn,v 1.11 2019/12/15 12:03:46 robert Exp $
 
 Index: chrome/test/BUILD.gn
 --- chrome/test/BUILD.gn.orig
 +++ chrome/test/BUILD.gn
-@@ -5797,7 +5797,7 @@ test("chrome_app_unittests") {
+@@ -5869,7 +5869,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
      "//components/tracing",
    ]

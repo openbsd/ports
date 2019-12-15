@@ -1,23 +1,14 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.4 2019/11/05 22:30:28 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.5 2019/12/15 12:03:47 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -137,7 +137,7 @@ void DesktopWindowTreeHostPlatform::OnNativeWidgetCrea
-                                            Widget::InitParams::TYPE_WINDOW &&
-                                        !params.remove_standard_frame);
+@@ -732,7 +732,7 @@ void DesktopWindowTreeHostPlatform::AddAdditionalInitP
+ // DesktopWindowTreeHost:
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   // Setup a non_client_window_event_filter, which handles resize/move, double
-   // click and other events.
-   DCHECK(!non_client_window_event_filter_);
-@@ -668,7 +668,7 @@ void DesktopWindowTreeHostPlatform::Relayout() {
- }
- 
- void DesktopWindowTreeHostPlatform::RemoveNonClientEventFilter() {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   if (!non_client_window_event_filter_)
-     return;
- 
+ // Linux subclasses this host and adds some Linux specific bits.
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+ // static
+ DesktopWindowTreeHost* DesktopWindowTreeHost::Create(
+     internal::NativeWidgetDelegate* native_widget_delegate,

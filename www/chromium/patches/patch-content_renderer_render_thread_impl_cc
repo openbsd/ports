@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.39 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.40 2019/12/15 12:03:46 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
@@ -12,7 +12,7 @@ Index: content/renderer/render_thread_impl.cc
  #include <malloc.h>
  #endif
  
-@@ -901,7 +901,7 @@ void RenderThreadImpl::Init() {
+@@ -921,7 +921,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -21,7 +21,7 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -930,7 +930,7 @@ void RenderThreadImpl::Init() {
+@@ -951,7 +951,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_shared_memory_manager_.get());
  
@@ -30,7 +30,7 @@ Index: content/renderer/render_thread_impl.cc
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1309,7 +1309,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1327,7 +1327,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
  #else
        cmd_line->HasSwitch(switches::kEnableGpuMemoryBufferVideoFrames);

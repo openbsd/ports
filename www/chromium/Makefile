@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.476 2019/11/20 18:26:30 robert Exp $
+# $OpenBSD: Makefile,v 1.477 2019/12/15 12:03:46 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			78.0.3904.106
+V=			79.0.3945.79
 ECV=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
@@ -76,6 +76,7 @@ WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
 WANTLIB += harfbuzz 
 WANTLIB += ffi png
+WANTLIB += iconv lzma
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \

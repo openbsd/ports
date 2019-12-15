@@ -1,9 +1,9 @@
-$OpenBSD: patch-ipc_ipc_channel_h,v 1.6 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-ipc_ipc_channel_h,v 1.7 2019/12/15 12:03:47 robert Exp $
 
 Index: ipc/ipc_channel.h
 --- ipc/ipc_channel.h.orig
 +++ ipc/ipc_channel.h
-@@ -256,7 +256,7 @@ class COMPONENT_EXPORT(IPC) Channel : public Sender {
+@@ -280,7 +280,7 @@ class COMPONENT_EXPORT(IPC) Channel : public Sender {
    static std::string GenerateUniqueRandomChannelID();
  #endif
  

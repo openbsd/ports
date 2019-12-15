@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.10 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.11 2019/12/15 12:03:47 robert Exp $
 
 Index: net/base/address_tracker_linux.cc
 --- net/base/address_tracker_linux.cc.orig
@@ -102,7 +102,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -147,92 +61,9 @@ AddressTrackerLinux::AddressTrackerLinux(
+@@ -147,90 +61,8 @@ AddressTrackerLinux::AddressTrackerLinux(
  AddressTrackerLinux::~AddressTrackerLinux() = default;
  
  void AddressTrackerLinux::Init() {
@@ -193,11 +193,9 @@ Index: net/base/address_tracker_linux.cc
 +  NOTIMPLEMENTED();
 +  AbortAndForceOnline();
  }
--
+ 
  void AddressTrackerLinux::AbortAndForceOnline() {
-   watcher_.reset();
-   netlink_fd_.reset();
-@@ -242,25 +73,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
+@@ -242,25 +74,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -223,14 +221,14 @@ Index: net/base/address_tracker_linux.cc
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -318,102 +130,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+@@ -318,102 +131,7 @@ void AddressTrackerLinux::HandleMessage(const char* bu
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
 -  DCHECK(buffer);
--  for (struct nlmsghdr* header = reinterpret_cast<struct nlmsghdr*>(buffer);
--       NLMSG_OK(header, length);
--       header = NLMSG_NEXT(header, length)) {
+-  for (const struct nlmsghdr* header =
+-           reinterpret_cast<const struct nlmsghdr*>(buffer);
+-       NLMSG_OK(header, length); header = NLMSG_NEXT(header, length)) {
 -    switch (header->nlmsg_type) {
 -      case NLMSG_DONE:
 -        return;
@@ -327,7 +325,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking() {
-@@ -441,31 +158,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
+@@ -441,31 +159,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {

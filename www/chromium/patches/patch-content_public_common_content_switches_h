@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.40 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.41 2019/12/15 12:03:46 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -121,6 +121,7 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
+@@ -120,6 +120,7 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
  CONTENT_EXPORT extern const char kEnableLowResTiling[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
@@ -10,7 +10,7 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
  CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
-@@ -270,7 +271,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
+@@ -269,7 +270,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
  CONTENT_EXPORT extern const char kRendererWaitForJavaDebugger[];
  #endif
  

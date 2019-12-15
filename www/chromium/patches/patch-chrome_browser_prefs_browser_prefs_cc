@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.10 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.11 2019/12/15 12:03:46 robert Exp $
 
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -950,7 +950,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -977,7 +977,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
    safe_browsing::PostCleanupSettingsResetter::RegisterProfilePrefs(registry);
  #endif
  

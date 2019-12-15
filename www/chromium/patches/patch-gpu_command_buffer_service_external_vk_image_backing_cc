@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.4 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.5 2019/12/15 12:03:46 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_backing.cc
 --- gpu/command_buffer/service/external_vk_image_backing.cc.orig
 +++ gpu/command_buffer/service/external_vk_image_backing.cc
-@@ -23,7 +23,7 @@
+@@ -26,7 +26,7 @@
  #include "ui/gl/buildflags.h"
  #include "ui/gl/gl_context.h"
  
@@ -12,7 +12,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -31,7 +31,7 @@
+@@ -34,7 +34,7 @@
  #include "gpu/vulkan/fuchsia/vulkan_fuchsia_ext.h"
  #endif
  
@@ -21,7 +21,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #define GL_HANDLE_TYPE_OPAQUE_FD_EXT 0x9586
  #endif
  
-@@ -504,7 +504,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
+@@ -527,7 +527,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
  ExternalVkImageBacking::ProduceDawn(SharedImageManager* manager,
                                      MemoryTypeTracker* tracker,
                                      DawnDevice dawnDevice) {
@@ -30,7 +30,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
    if (!dawn_format_) {
      DLOG(ERROR) << "Format not supported for Dawn";
      return nullptr;
-@@ -544,7 +544,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
+@@ -567,7 +567,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
  #if defined(OS_FUCHSIA)
    NOTIMPLEMENTED_LOG_ONCE();
    return nullptr;
@@ -39,7 +39,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
    GrVkImageInfo image_info;
    bool result = backend_texture_.getVkImageInfo(&image_info);
    DCHECK(result);
-@@ -604,7 +604,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
+@@ -635,7 +635,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
    }
    return std::make_unique<ExternalVkImageGlRepresentation>(
        manager, this, tracker, texture_, texture_->service_id());
@@ -48,7 +48,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #error Unsupported OS
  #endif
  }
-@@ -630,7 +630,7 @@ ExternalVkImageBacking::ProduceSkia(
+@@ -661,7 +661,7 @@ ExternalVkImageBacking::ProduceSkia(
                                                               tracker);
  }
  

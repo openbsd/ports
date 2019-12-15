@@ -1,9 +1,9 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.36 2019/11/05 22:30:28 robert Exp $
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.37 2019/12/15 12:03:47 robert Exp $
 
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -53,7 +53,7 @@
+@@ -52,7 +52,7 @@
  #include "ui/gfx/geometry/rect.h"
  #include "v8/include/v8.h"
  
@@ -12,7 +12,7 @@ Index: pdf/pdfium/pdfium_engine.cc
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -378,7 +378,7 @@ bool InitializeSDK(bool enable_v8) {
+@@ -377,7 +377,7 @@ void InitializeSDK(bool enable_v8) {
    config.m_v8EmbedderSlot = gin::kEmbedderPDFium;
    FPDF_InitLibraryWithConfig(&config);
  
@@ -21,7 +21,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    InitializeLinuxFontMapper();
  #endif
  
-@@ -414,7 +414,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
+@@ -411,7 +411,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -30,7 +30,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    // PreviewModeClient does not know its pp::Instance.
    SetLastInstance(client_->GetPluginInstance());
  #endif
-@@ -870,7 +870,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
+@@ -867,7 +867,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
  
    KillFormFocus();
  
@@ -39,7 +39,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -2696,7 +2696,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2798,7 +2798,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK(image_data);
  
    last_progressive_start_time_ = base::Time::Now();
@@ -48,7 +48,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3190,7 +3190,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3292,7 +3292,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

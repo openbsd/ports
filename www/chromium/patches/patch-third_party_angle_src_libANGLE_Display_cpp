@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.10 2019/11/05 22:30:28 robert Exp $
+$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.11 2019/12/15 12:03:47 robert Exp $
 
 Index: third_party/angle/src/libANGLE/Display.cpp
 --- third_party/angle/src/libANGLE/Display.cpp.orig
 +++ third_party/angle/src/libANGLE/Display.cpp
-@@ -68,7 +68,7 @@
+@@ -70,7 +70,7 @@
  #if defined(ANGLE_ENABLE_VULKAN)
  #    if defined(ANGLE_PLATFORM_WINDOWS)
  #        include "libANGLE/renderer/vulkan/win32/DisplayVkWin32.h"
@@ -12,7 +12,7 @@ Index: third_party/angle/src/libANGLE/Display.cpp
  #        include "libANGLE/renderer/vulkan/xcb/DisplayVkXcb.h"
  #    elif defined(ANGLE_PLATFORM_ANDROID)
  #        include "libANGLE/renderer/vulkan/android/DisplayVkAndroid.h"
-@@ -268,7 +268,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
+@@ -282,7 +282,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
  #if defined(ANGLE_ENABLE_VULKAN)
  #    if defined(ANGLE_PLATFORM_WINDOWS)
              impl = new rx::DisplayVkWin32(state);

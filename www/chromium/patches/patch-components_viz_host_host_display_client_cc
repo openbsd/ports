@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_viz_host_host_display_client_cc,v 1.1 2019/12/15 12:03:46 robert Exp $
+
+Index: components/viz/host/host_display_client.cc
+--- components/viz/host/host_display_client.cc.orig
++++ components/viz/host/host_display_client.cc
+@@ -59,7 +59,7 @@ void HostDisplayClient::CreateLayeredWindowUpdater(
+ }
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ void HostDisplayClient::DidCompleteSwapWithNewSize(const gfx::Size& size) {
+   NOTIMPLEMENTED();
+ }

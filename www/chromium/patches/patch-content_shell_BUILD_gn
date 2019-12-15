@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_shell_BUILD_gn,v 1.7 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-content_shell_BUILD_gn,v 1.8 2019/12/15 12:03:46 robert Exp $
 
 Index: content/shell/BUILD.gn
 --- content/shell/BUILD.gn.orig
 +++ content/shell/BUILD.gn
-@@ -962,7 +962,7 @@ group("content_shell_crash_test") {
+@@ -971,7 +971,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

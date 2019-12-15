@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.9 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.10 2019/12/15 12:03:46 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -333,11 +333,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -352,11 +352,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kSafeBrowsingSendFilesForMalwareCheck,
      base::Value::Type::INTEGER
    },
@@ -26,8 +26,8 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
  #if defined(OS_POSIX)
    { key::kNtlmV2Enabled,
      prefs::kNtlmV2Enabled,
-@@ -1063,7 +1063,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
-     prefs::kAllowSyncXHRInPageDismissal,
+@@ -1140,7 +1140,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     prefs::kExternalProtocolDialogShowAlwaysOpenCheckbox,
      base::Value::Type::BOOLEAN },
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -35,7 +35,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    { key::kAlternativeBrowserPath,
      browser_switcher::prefs::kAlternativeBrowserPath,
-@@ -1125,7 +1125,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1205,7 +1205,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      browser_switcher::prefs::kChromeParameters,
      base::Value::Type::LIST },
  #endif
