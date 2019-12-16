@@ -1,24 +1,79 @@
-$OpenBSD: patch-tmac_an-old_tmac,v 1.7 2018/12/24 10:42:00 schwarze Exp $
+$OpenBSD: patch-tmac_an-old_tmac,v 1.8 2019/12/16 07:09:49 schwarze Exp $
+Repair .AT and .UC macros (also submitted upstream).
 Set default operating system name (local change).
 Tweak page headers (local change).
 Index: tmac/an-old.tmac
 --- tmac/an-old.tmac.orig
 +++ tmac/an-old.tmac
-@@ -151,14 +151,14 @@
- .    ds an-section "\\$2\"
- .    ds an-extra1 "\\$3\"
- .    ie (\\n[.$] > 3)    .ds an-extra2 "\\$4\"
--.    el                  .ds an-extra2 \"Sun Release 4.0
-+.    el                  .ds an-extra2 OpenBSD
+@@ -146,29 +146,6 @@
+ .    DEVTAG-EO-TL
+ .  \}
  .
- .    ie (\\n[.$] > 4)    .ds an-extra3 "\\$5\"
- .    el \{ .ie '\\$2'1'  .ds an-extra3 General Commands Manual
- .    el \{ .ie '\\$2'2'  .ds an-extra3 System Calls Manual
- .    el \{ .ie '\\$2'3'  .ds an-extra3 Library Functions Manual
+-.  de an-init \" This approach gets multiple man pages right.
+-.    ds an-title "\\$1\"
+-.    ds an-section "\\$2\"
+-.    ds an-extra1 "\\$3\"
+-.    ie (\\n[.$] > 3)    .ds an-extra2 "\\$4\"
+-.    el                  .ds an-extra2 \"Sun Release 4.0
+-.
+-.    ie (\\n[.$] > 4)    .ds an-extra3 "\\$5\"
+-.    el \{ .ie '\\$2'1'  .ds an-extra3 General Commands Manual
+-.    el \{ .ie '\\$2'2'  .ds an-extra3 System Calls Manual
+-.    el \{ .ie '\\$2'3'  .ds an-extra3 Library Functions Manual
 -.    el \{ .ie '\\$2'3p' .ds an-extra3 Perl Programmers Reference Guide
 -.    el \{ .ie '\\$2'4'  .ds an-extra3 Kernel Interfaces Manual
+-.    el \{ .ie '\\$2'5'  .ds an-extra3 File Formats Manual
+-.    el \{ .ie '\\$2'6'  .ds an-extra3 Games Manual
+-.    el \{ .ie '\\$2'7'  .ds an-extra3 Miscellaneous Information Manual
+-.    el \{ .ie '\\$2'8'  .ds an-extra3 System Manager's Manual
+-.    el \{ .ie '\\$2'9'  .ds an-extra3 Kernel Developer's Manual
+-.    el                  .ds an-extra3
+-.    \}\}\}\}\}\}\}\}\}\}
+-.    ds an-init
+-\\..
+-.
+ .  DT
+ .
+ .  nr PS    10z \" default point size
+@@ -214,6 +191,22 @@
+ .  nr an-break-flag 0
+ .  nr an-div? 0
+ .
++.  ds an-title "\\$1\"
++.  ds an-section "\\$2\"
++.    ie (\\n[.$] > 4)    .ds an-extra3 "\\$5\"
++.    el \{ .ie '\\$2'1'  .ds an-extra3 General Commands Manual
++.    el \{ .ie '\\$2'2'  .ds an-extra3 System Calls Manual
++.    el \{ .ie '\\$2'3'  .ds an-extra3 Library Functions Manual
 +.    el \{ .ie '\\$2'3p' .ds an-extra3 Perl Library Manual
 +.    el \{ .ie '\\$2'4'  .ds an-extra3 Device Drivers Manual
- .    el \{ .ie '\\$2'5'  .ds an-extra3 File Formats Manual
- .    el \{ .ie '\\$2'6'  .ds an-extra3 Games Manual
- .    el \{ .ie '\\$2'7'  .ds an-extra3 Miscellaneous Information Manual
++.    el \{ .ie '\\$2'5'  .ds an-extra3 File Formats Manual
++.    el \{ .ie '\\$2'6'  .ds an-extra3 Games Manual
++.    el \{ .ie '\\$2'7'  .ds an-extra3 Miscellaneous Information Manual
++.    el \{ .ie '\\$2'8'  .ds an-extra3 System Manager's Manual
++.    el \{ .ie '\\$2'9'  .ds an-extra3 Kernel Developer's Manual
++.    el                  .ds an-extra3
++.    \}\}\}\}\}\}\}\}\}\}
++.
+ .  ie \\n[cR] \
+ .    an-header
+ .  el \{\
+@@ -226,6 +219,10 @@
+ .      el        .bp 1
+ .    \}
+ .  \}
++.
++.  ds an-extra1 "\\$3\"
++.  ie (\\n[.$] > 3)    .ds an-extra2 "\\$4\"
++.  el                  .ds an-extra2 OpenBSD
+ ..
+ .
+ .\" BSD compatibility macros: .AT and .UC
+@@ -276,7 +273,6 @@
+ ..
+ .
+ .de1 an-header
+-.  an-init
+ .  if \\n[cR] \{\
+ .    ie \\n[an-first] \
+ .      nr an-first 0
