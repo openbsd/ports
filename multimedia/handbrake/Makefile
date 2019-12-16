@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2019/08/08 11:00:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/12/16 15:52:08 ajacoutot Exp $
+
+BROKEN =	needs an update to work with pango >=1.44
 
 V = 		1.2.2
 COMMENT =	open source video transcoder
