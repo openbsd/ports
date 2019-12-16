@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2019/12/14 18:39:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.258 2019/12/16 19:46:52 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -6,6 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.34.2
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -62,7 +63,7 @@ CONFIGURE_ARGS=		-DWITH_KRB5=OFF \
 			-DWITH_LIBDB_CFLAGS="-I${LOCALBASE}/include/db4" \
 			-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
-			-DCMAKE_C_FLAGS="-I${LOCALBASE}/include"
+			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
