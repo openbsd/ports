@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2019/10/26 09:31:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/12/16 15:50:08 ajacoutot Exp $
+
+BROKEN=			does not build with pango >=1.44
 
 COMMENT=		pangox compatibility library
 
