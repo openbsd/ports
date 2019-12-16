@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.386 2019/12/11 15:59:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.387 2019/12/16 22:03:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -55,6 +55,7 @@
      SUBDIR += fetchmail
      SUBDIR += geary
      SUBDIR += getmail
+     SUBDIR += gmail-oauth2
      SUBDIR += gmime
      SUBDIR += gmime30
      SUBDIR += grepmail
