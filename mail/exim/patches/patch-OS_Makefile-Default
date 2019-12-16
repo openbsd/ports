@@ -1,6 +1,8 @@
-$OpenBSD: patch-OS_Makefile-Default,v 1.8 2013/08/24 09:22:26 sthen Exp $
---- OS/Makefile-Default.orig	Thu Oct 25 04:37:38 2012
-+++ OS/Makefile-Default	Thu Aug 22 18:09:11 2013
+$OpenBSD: patch-OS_Makefile-Default,v 1.9 2019/12/16 14:40:55 sthen Exp $
+
+Index: OS/Makefile-Default
+--- OS/Makefile-Default.orig
++++ OS/Makefile-Default
 @@ -71,7 +71,7 @@ PERL_COMMAND=/usr/bin/perl
  
  # CC contains the name of the C compiler to be used.

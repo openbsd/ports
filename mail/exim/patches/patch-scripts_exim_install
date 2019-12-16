@@ -1,6 +1,8 @@
-$OpenBSD: patch-scripts_exim_install,v 1.12 2016/12/25 21:13:35 sthen Exp $
---- scripts/exim_install.orig	Sun Dec 18 14:02:28 2016
-+++ scripts/exim_install	Sun Dec 25 14:42:25 2016
+$OpenBSD: patch-scripts_exim_install,v 1.13 2019/12/16 14:40:55 sthen Exp $
+
+Index: scripts/exim_install
+--- scripts/exim_install.orig
++++ scripts/exim_install
 @@ -216,7 +216,7 @@ while [ $# -gt 0 ]; do
  
    # The exim binary is handled specially
