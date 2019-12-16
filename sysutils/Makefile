@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.543 2019/12/15 13:51:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.544 2019/12/16 15:36:37 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -331,6 +331,7 @@
      SUBDIR += snmp_exporter
      SUBDIR += socket
      SUBDIR += socklog
+     SUBDIR += squashfs-tools
      SUBDIR += sshfs-fuse
      SUBDIR += sshpass
      SUBDIR += sslmate
