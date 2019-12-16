@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/28 17:02:13 tb Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/12/16 17:15:49 tb Exp $
 share/wycheproof/
 share/wycheproof/testvectors/
 share/wycheproof/testvectors/aead_aes_siv_cmac_test.json
@@ -87,6 +87,15 @@ share/wycheproof/testvectors/hkdf_sha1_test.json
 share/wycheproof/testvectors/hkdf_sha256_test.json
 share/wycheproof/testvectors/hkdf_sha384_test.json
 share/wycheproof/testvectors/hkdf_sha512_test.json
+share/wycheproof/testvectors/hmac_sha1_test.json
+share/wycheproof/testvectors/hmac_sha224_test.json
+share/wycheproof/testvectors/hmac_sha256_test.json
+share/wycheproof/testvectors/hmac_sha384_test.json
+share/wycheproof/testvectors/hmac_sha3_224_test.json
+share/wycheproof/testvectors/hmac_sha3_256_test.json
+share/wycheproof/testvectors/hmac_sha3_384_test.json
+share/wycheproof/testvectors/hmac_sha3_512_test.json
+share/wycheproof/testvectors/hmac_sha512_test.json
 share/wycheproof/testvectors/kw_test.json
 share/wycheproof/testvectors/kwp_test.json
 share/wycheproof/testvectors/primality_test.json
