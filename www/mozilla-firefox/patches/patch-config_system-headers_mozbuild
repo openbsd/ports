@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_system-headers_mozbuild,v 1.1 2019/11/14 16:59:21 landry Exp $
+$OpenBSD: patch-config_system-headers_mozbuild,v 1.2 2019/12/16 09:17:22 landry Exp $
 
 https://hg.mozilla.org/mozilla-central/rev/d3885b9d42d3
 
@@ -13,7 +13,7 @@ Index: config/system-headers.mozbuild
      'sys/bitypes.h',
      'sys/byteorder.h',
      'syscall.h',
-@@ -1340,6 +1339,11 @@ if CONFIG['MOZ_WAYLAND']:
+@@ -1341,6 +1340,11 @@ if CONFIG['MOZ_WAYLAND']:
          'wayland-client.h',
          'wayland-egl.h',
          'wayland-util.h',
