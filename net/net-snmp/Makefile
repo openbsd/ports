@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.108 2019/11/24 16:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2019/12/16 12:25:22 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.8
-REVISION-main=	4
+REVISION-main=	5
 REVISION-tkmib=	0
 
 DISTNAME=	net-snmp-$V
@@ -17,6 +17,7 @@ FULLPKGPATH-tkmib= net/net-snmp,-tkmib
 FULLPKGNAME-tkmib= net-snmp-tkmib-${V:S/.rc/rc/}
 
 # N.B. p5 module picks up installed libs in /usr/local
+# please check sysutils/snmp_exporter "make test" if updating
 SHARED_LIBS += netsnmp		15.2
 SHARED_LIBS += netsnmpagent	15.1
 SHARED_LIBS += netsnmphelpers	15.1

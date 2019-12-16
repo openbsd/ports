@@ -19,8 +19,8 @@ time, snmptable collates information from SNMP tables (e.g. ifTable),
 and there are single-purpose tools like snmpstatus, snmpdf, snmpps,
 snmptop, snmpnetstat.
 
-- snmptransate converts between numerical and textual forms of MIB OIDs,
-and displays MIB content and structure>
+- snmptranslate converts between numerical and textual forms of MIB OIDs,
+and displays MIB content and structure.
 
 Flavor:
 	readonly - removes all SET support from the code.
