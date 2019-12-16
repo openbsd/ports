@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/16 13:36:25 kmos Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}httphandler.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}torrent.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/client.py
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/constants.py
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/error.py
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/httphandler.py
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/session.py
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/torrent.py
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc/utils.py
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc_ng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc_ng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc_ng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc_ng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc_ng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/transmissionrpc_ng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
