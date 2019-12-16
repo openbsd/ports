@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.127 2019/12/10 23:21:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.128 2019/12/16 14:40:39 sthen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.93
+VERSION =		4.93.0.3
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -23,9 +23,11 @@ WANTLIB-main =		${cWANTLIB} crypto iconv perl pcre spf2 ssl
 WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre
 
 MASTER_SITES =		https://ftp.exim.org/pub/exim/exim4/ \
+			https://ftp.exim.org/pub/exim/exim4/fixes/ \
 			https://ftp.exim.org/pub/exim/exim4/old/ \
 			ftp://ftp.exim.org/pub/exim/exim4/ \
-			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/
+			ftp://ftp.exim.org/pub/exim/exim4/fixes \
+			ftp://ftp.exim.org/pub/exim/exim4/old
 
 LIB_DEPENDS-main =	converters/libiconv \
 			devel/pcre \
