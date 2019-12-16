@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libicalss_icalbdbsetimpl_h,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
+$OpenBSD: patch-src_libicalss_icalbdbsetimpl_h,v 1.2 2019/12/16 20:42:57 ajacoutot Exp $
 
-don't pick up /usr/include/db.h;
+don't pick up /usr/include/db.h
 
 Index: src/libicalss/icalbdbsetimpl.h
 --- src/libicalss/icalbdbsetimpl.h.orig

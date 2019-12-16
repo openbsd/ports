@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_test_regression-storage_c,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
+$OpenBSD: patch-src_test_regression-storage_c,v 1.2 2019/12/16 20:42:57 ajacoutot Exp $
 
-don't pick up /usr/include/db.h;
+don't pick up /usr/include/db.h
 
 Index: src/test/regression-storage.c
 --- src/test/regression-storage.c.orig
 +++ src/test/regression-storage.c
-@@ -59,7 +59,7 @@ struct calendar
+@@ -58,7 +58,7 @@ struct calendar
  int vcalendar_init(struct calendar **cal, const char *vcalendar, const char *title);
  
  #if defined(HAVE_BDB)

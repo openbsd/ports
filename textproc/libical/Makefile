@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2019/09/15 14:27:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2019/12/16 20:42:57 ajacoutot Exp $
 
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
 
-V=			3.0.6
+V=			3.0.7
 DISTNAME=		libical-${V}
 
 PKGNAME-main=		${PKGNAME}
@@ -52,6 +52,8 @@ CONFIGURE_ARGS=		-DENABLE_GTK_DOC=false \
 			-DGOBJECT_INTROSPECTION=true \
 			-DICAL_GLIB_VAPI=true \
 			-DICAL_BUILD_DOCS=false
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CFLAGS +=		-I${LOCALBASE}/include
 
