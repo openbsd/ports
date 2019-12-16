@@ -1,0 +1,18 @@
+$OpenBSD: patch-squashfs-tools_unsquashfs_h,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+
+https://github.com/plougher/squashfs-tools/pull/69
+
+Index: squashfs-tools/unsquashfs.h
+--- squashfs-tools/unsquashfs.h.orig
++++ squashfs-tools/unsquashfs.h
+@@ -46,6 +46,10 @@
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+ 
++#ifndef FNM_EXTMATCH /* glibc extension */
++	#define FNM_EXTMATCH 0
++#endif
++
+ #ifndef linux
+ #define __BYTE_ORDER BYTE_ORDER
+ #define __BIG_ENDIAN BIG_ENDIAN

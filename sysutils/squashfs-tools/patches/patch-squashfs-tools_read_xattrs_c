@@ -1,0 +1,22 @@
+$OpenBSD: patch-squashfs-tools_read_xattrs_c,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+
+https://github.com/plougher/squashfs-tools/pull/69
+
+Index: squashfs-tools/read_xattrs.c
+--- squashfs-tools/read_xattrs.c.orig
++++ squashfs-tools/read_xattrs.c
+@@ -39,12 +39,12 @@
+ #include <endian.h>
+ #endif
+ 
++#include <stdlib.h>
++
+ #include "squashfs_fs.h"
+ #include "squashfs_swap.h"
+ #include "xattr.h"
+ #include "error.h"
+-
+-#include <stdlib.h>
+ 
+ extern int read_fs_bytes(int, long long, int, void *);
+ extern int read_block(int, long long, long long *, int, void *);

@@ -1,0 +1,70 @@
+$OpenBSD: patch-squashfs-tools_xattr_c,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+
+- https://github.com/plougher/squashfs-tools/pull/69
+- disable xattr.h dependant code on OpenBSD
+
+Index: squashfs-tools/xattr.c
+--- squashfs-tools/xattr.c.orig
++++ squashfs-tools/xattr.c
+@@ -22,6 +22,14 @@
+  * xattr.c
+  */
+ 
++#ifndef linux
++#define __BYTE_ORDER BYTE_ORDER
++#define __BIG_ENDIAN BIG_ENDIAN
++#define __LITTLE_ENDIAN LITTLE_ENDIAN
++#else
++#include <endian.h>
++#endif
++
+ #define TRUE 1
+ #define FALSE 0
+ 
+@@ -34,8 +42,17 @@
+ #include <dirent.h>
+ #include <string.h>
+ #include <stdlib.h>
++#ifndef __OpenBSD__
+ #include <sys/xattr.h>
++#endif
+ 
++#ifdef XATTR_NOFOLLOW /* Apple's xattrs */
++	#define llistxattr(path_, buf_, sz_) \
++		listxattr(path_, buf_, sz_, XATTR_NOFOLLOW)
++	#define lgetxattr(path_, name_, val_, sz_) \
++		getxattr(path_, name_, val_, sz_, 0, XATTR_NOFOLLOW)
++#endif
++
+ #include "squashfs_fs.h"
+ #include "squashfs_swap.h"
+ #include "mksquashfs.h"
+@@ -90,6 +107,7 @@ extern struct xattr_list *get_xattr(int, unsigned int 
+ extern struct prefix prefix_table[];
+ 
+ 
++#ifndef __OpenBSD__
+ static int get_prefix(struct xattr_list *xattr, char *name)
+ {
+ 	int i;
+@@ -109,10 +127,12 @@ static int get_prefix(struct xattr_list *xattr, char *
+ 
+ 	return prefix_table[i].type;
+ }
++#endif
+ 
+ 	
+ static int read_xattrs_from_system(char *filename, struct xattr_list **xattrs)
+ {
++#ifndef __OpenBSD__
+ 	ssize_t size, vsize;
+ 	char *xattr_names, *p;
+ 	int i;
+@@ -224,6 +244,7 @@ failed:
+ 	}
+ 	free(xattr_list);
+ 	free(xattr_names);
++#endif
+ 	return 0;
+ }
+ 

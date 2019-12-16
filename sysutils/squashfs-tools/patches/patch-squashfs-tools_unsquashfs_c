@@ -1,0 +1,29 @@
+$OpenBSD: patch-squashfs-tools_unsquashfs_c,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+
+https://github.com/plougher/squashfs-tools/pull/69
+with the lutimes(3) changes removed 
+
+Index: squashfs-tools/unsquashfs.c
+--- squashfs-tools/unsquashfs.c.orig
++++ squashfs-tools/unsquashfs.c
+@@ -32,8 +32,12 @@
+ #include "stdarg.h"
+ #include "fnmatch_compat.h"
+ 
++#ifndef linux
++#include <sys/sysctl.h>
++#else
+ #include <sys/sysinfo.h>
+ #include <sys/sysmacros.h>
++#endif
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
+@@ -2235,6 +2239,7 @@ void initialise_threads(int fragment_buffer_size, int 
+ 	sigemptyset(&sigmask);
+ 	sigaddset(&sigmask, SIGQUIT);
+ 	sigaddset(&sigmask, SIGHUP);
++	sigaddset(&sigmask, SIGALRM);
+ 	if(pthread_sigmask(SIG_BLOCK, &sigmask, NULL) != 0)
+ 		EXIT_UNSQUASH("Failed to set signal mask in initialise_threads"
+ 			"\n");

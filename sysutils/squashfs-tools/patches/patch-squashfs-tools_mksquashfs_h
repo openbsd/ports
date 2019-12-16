@@ -1,0 +1,15 @@
+$OpenBSD: patch-squashfs-tools_mksquashfs_h,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+
+https://github.com/plougher/squashfs-tools/pull/69
+
+Index: squashfs-tools/mksquashfs.h
+--- squashfs-tools/mksquashfs.h.orig
++++ squashfs-tools/mksquashfs.h
+@@ -24,6 +24,7 @@
+  * mksquashfs.h
+  *
+  */
++#include <pthread.h>
+ 
+ struct dir_info {
+ 	char			*pathname;

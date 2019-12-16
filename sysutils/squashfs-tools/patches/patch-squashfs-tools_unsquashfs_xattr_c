@@ -1,0 +1,51 @@
+$OpenBSD: patch-squashfs-tools_unsquashfs_xattr_c,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+
+- https://github.com/plougher/squashfs-tools/pull/69
+- always ignore xattrs on OpenBSD as we cannot write them to disk
+
+Index: squashfs-tools/unsquashfs_xattr.c
+--- squashfs-tools/unsquashfs_xattr.c.orig
++++ squashfs-tools/unsquashfs_xattr.c
+@@ -25,8 +25,15 @@
+ #include "unsquashfs.h"
+ #include "xattr.h"
+ 
++#ifndef __OpenBSD__
+ #include <sys/xattr.h>
++#endif
+ 
++#ifdef XATTR_NOFOLLOW /* Apple's xattrs */
++	#define lsetxattr(path_, name_, val_, sz_, flags_) \
++		setxattr(path_, name_, val_, sz_, 0, flags_ | XATTR_NOFOLLOW)
++#endif
++
+ #define NOSPACE_MAX 10
+ 
+ extern int root_process;
+@@ -40,7 +47,11 @@ int write_xattr(char *pathname, unsigned int xattr)
+ 	struct xattr_list *xattr_list;
+ 	int i;
+ 	static int nonsuper_error = FALSE;
++#ifdef __OpenBSD__
++	static int ignore_xattrs = TRUE;
++#else
+ 	static int ignore_xattrs = FALSE;
++#endif
+ 	static int nospace_error = 0;
+ 	int failed;
+ 
+@@ -48,6 +59,7 @@ int write_xattr(char *pathname, unsigned int xattr)
+ 			sBlk.s.xattr_id_table_start == SQUASHFS_INVALID_BLK)
+ 		return TRUE;
+ 
++#ifndef __OpenBSD__
+ 	xattr_list = get_xattr(xattr, &count, &failed);
+ 	if(failed)
+ 		EXIT_UNSQUASH_STRICT("write_xattr: Failed to read one or more xattrs for %s\n", pathname);
+@@ -140,5 +152,6 @@ int write_xattr(char *pathname, unsigned int xattr)
+ 
+ 	free_xattr(xattr_list, count);
+ 
++#endif
+ 	return !failed;
+ }

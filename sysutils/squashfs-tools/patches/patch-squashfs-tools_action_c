@@ -1,0 +1,32 @@
+$OpenBSD: patch-squashfs-tools_action_c,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+
+https://github.com/plougher/squashfs-tools/pull/69
+
+Index: squashfs-tools/action.c
+--- squashfs-tools/action.c.orig
++++ squashfs-tools/action.c
+@@ -38,6 +38,10 @@
+ #include <limits.h>
+ #include <errno.h>
+ 
++#ifndef FNM_EXTMATCH /* glibc extension */
++	#define FNM_EXTMATCH 0
++#endif
++
+ #include "squashfs_fs.h"
+ #include "mksquashfs.h"
+ #include "action.h"
+@@ -2284,9 +2288,12 @@ static char *get_start(char *s, int n)
+ 
+ static int subpathname_fn(struct atom *atom, struct action_data *action_data)
+ {
+-	return fnmatch(atom->argv[0], get_start(strdupa(action_data->subpath),
++	char *path = strdup(action_data->subpath);
++	int is_match = fnmatch(atom->argv[0], get_start(path,
+ 		count_components(atom->argv[0])),
+ 		FNM_PATHNAME|FNM_PERIOD|FNM_EXTMATCH) == 0;
++	free(path);
++	return is_match;
+ }
+ 
+ /*
