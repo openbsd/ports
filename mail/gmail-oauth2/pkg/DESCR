@@ -1,0 +1,5 @@
+oauth2.py is a script that can be used as a standalone utility for
+generating and authorizing OAuth tokens, and for generating OAuth2
+authentication strings from OAuth tokens.
+
+This can be used with mutt to allow oauth2 logins to Gmail.

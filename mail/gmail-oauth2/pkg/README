@@ -1,0 +1,36 @@
+$OpenBSD: README,v 1.1.1.1 2019/12/16 22:03:26 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Gmail supports use of RFC 7628 ("OAUTHBEARER") to avoid using
+password-based authentication with some mail clients. This package
+provides a tool that can perform this authentication.
+
+To use it, you will need to register an application and client ID through the
+Google APIs Console, https://console.developers.google.com/apis/credentials
+See https://github.com/google/gmail-oauth2-tools/wiki/OAuth2DotPyRunThrough
+for more information.
+
+Quick setup guide for Mutt
+--------------------------
+First, you'll need to register as above and fetch your client id and
+secret. Then use them with oauth2.py to generate a token:
+
+oauth2.py --generate_oauth2_token --client_id=[...] --client_secret=[...]
+
+This will display a URL to open. Do this, grant permission, and copy
+the code you are given. Paste it into oauth2.py, and you will be given
+a "refresh token". Copy this.
+
+Then configure mutt using your client id, secret, and the refresh
+token:
+
+set imap_authenticators="oauthbearer"
+set imap_user="<email_address>"
+set imap_oauth_refresh_command="oauth2.py --user=USER --client_id=CLIENTID.apps.googleusercontent.com --client_secret=CLIENT_SECRET --refresh_token=REFRESH_TOKEN"
+
+set smtp_authenticators="oauthbearer"
+set smtp_url="smtps://USER@gmail.com@smtp.gmail.com:465"
+set smtp_oauth_refresh_command="oauth2.py --user=USER --client_id=CLIENTID.apps.googleusercontent.com --client_secret=CLIENT_SECRET --refresh_token=REFRESH_TOKEN"
