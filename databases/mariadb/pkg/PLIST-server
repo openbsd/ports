@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.28 2019/09/15 12:37:01 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.29 2019/12/16 13:35:57 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -407,44 +407,44 @@ include/mysql/server/sslopt-longopts.h
 include/mysql/server/sslopt-vars.h
 include/mysql/server/typelib.h
 lib/mysql/plugin/
-lib/mysql/plugin/adt_null.so
-lib/mysql/plugin/auth_0x0100.so
-lib/mysql/plugin/auth_ed25519.so
-lib/mysql/plugin/auth_socket.so
-lib/mysql/plugin/auth_test_plugin.so
-lib/mysql/plugin/caching_sha2_password.so
-lib/mysql/plugin/client_ed25519.so
+@so lib/mysql/plugin/adt_null.so
+@so lib/mysql/plugin/auth_0x0100.so
+@so lib/mysql/plugin/auth_ed25519.so
+@so lib/mysql/plugin/auth_socket.so
+@so lib/mysql/plugin/auth_test_plugin.so
+@so lib/mysql/plugin/caching_sha2_password.so
+@so lib/mysql/plugin/client_ed25519.so
 lib/mysql/plugin/daemon_example.ini
-lib/mysql/plugin/debug_key_management.so
-lib/mysql/plugin/dialog.so
-lib/mysql/plugin/dialog_examples.so
-lib/mysql/plugin/example_key_management.so
-lib/mysql/plugin/file_key_management.so
-lib/mysql/plugin/ha_archive.so
-lib/mysql/plugin/ha_blackhole.so
-lib/mysql/plugin/ha_connect.so
-lib/mysql/plugin/ha_example.so
-lib/mysql/plugin/ha_federated.so
-lib/mysql/plugin/ha_federatedx.so
-lib/mysql/plugin/ha_sphinx.so
-lib/mysql/plugin/ha_spider.so
-lib/mysql/plugin/ha_test_sql_discovery.so
-lib/mysql/plugin/handlersocket.so
-lib/mysql/plugin/libdaemon_example.so
-lib/mysql/plugin/locales.so
-lib/mysql/plugin/metadata_lock_info.so
-lib/mysql/plugin/mypluglib.so
-lib/mysql/plugin/mysql_clear_password.so
-lib/mysql/plugin/qa_auth_client.so
-lib/mysql/plugin/qa_auth_interface.so
-lib/mysql/plugin/qa_auth_server.so
-lib/mysql/plugin/query_cache_info.so
-lib/mysql/plugin/query_response_time.so
-lib/mysql/plugin/server_audit.so
-lib/mysql/plugin/sha256_password.so
-lib/mysql/plugin/simple_password_check.so
-lib/mysql/plugin/sql_errlog.so
-lib/mysql/plugin/wsrep_info.so
+@so lib/mysql/plugin/debug_key_management.so
+@so lib/mysql/plugin/dialog.so
+@so lib/mysql/plugin/dialog_examples.so
+@so lib/mysql/plugin/example_key_management.so
+@so lib/mysql/plugin/file_key_management.so
+@so lib/mysql/plugin/ha_archive.so
+@so lib/mysql/plugin/ha_blackhole.so
+@so lib/mysql/plugin/ha_connect.so
+@so lib/mysql/plugin/ha_example.so
+@so lib/mysql/plugin/ha_federated.so
+@so lib/mysql/plugin/ha_federatedx.so
+@so lib/mysql/plugin/ha_sphinx.so
+@so lib/mysql/plugin/ha_spider.so
+@so lib/mysql/plugin/ha_test_sql_discovery.so
+@so lib/mysql/plugin/handlersocket.so
+@so lib/mysql/plugin/libdaemon_example.so
+@so lib/mysql/plugin/locales.so
+@so lib/mysql/plugin/metadata_lock_info.so
+@so lib/mysql/plugin/mypluglib.so
+@so lib/mysql/plugin/mysql_clear_password.so
+@so lib/mysql/plugin/qa_auth_client.so
+@so lib/mysql/plugin/qa_auth_interface.so
+@so lib/mysql/plugin/qa_auth_server.so
+@so lib/mysql/plugin/query_cache_info.so
+@so lib/mysql/plugin/query_response_time.so
+@so lib/mysql/plugin/server_audit.so
+@so lib/mysql/plugin/sha256_password.so
+@so lib/mysql/plugin/simple_password_check.so
+@so lib/mysql/plugin/sql_errlog.so
+@so lib/mysql/plugin/wsrep_info.so
 @bin libexec/mysqld
 @man man/man1/aria_chk.1
 @man man/man1/aria_dump_log.1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2019/08/05 19:48:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2019/12/16 13:35:57 sthen Exp $
 @conflict mysql-client-*
 @conflict mysql-server-*
 @pkgpath databases/mysql,-main
@@ -45,10 +45,10 @@ include/mysql/mysqld_error.h
 @lib lib/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 lib/mysql/
 @lib lib/mysql/libmariadb.so.${LIBmariadb_VERSION}
-lib/mysql/libmariadbclient.a
+@static-lib lib/mysql/libmariadbclient.a
 @lib lib/mysql/libmysqlclient.so.${LIBmysqlclient_VERSION}
 @lib lib/mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
-lib/mysql/libmysqlservices.a
+@static-lib lib/mysql/libmysqlservices.a
 lib/pkgconfig/libmariadb.pc
 @man man/man1/galera_new_cluster.1
 @man man/man1/galera_recovery.1
