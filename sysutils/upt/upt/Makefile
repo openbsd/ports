@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/23 14:52:53 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/16 18:35:10 kmos Exp $
 
 COMMENT =		package software from any package manager to any OS
 
@@ -7,8 +7,9 @@ DISTNAME =		upt-${MODPY_EGG_VERSION}
 
 HOMEPAGE =		https://framagit.org/upt/upt
 
-RUN_DEPENDS =		textproc/py-spdx-lookup${MODPY_FLAVOR}
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	upt/
 
-TEST_DEPENDS =		textproc/py-spdx-lookup${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-spdx-lookup${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
