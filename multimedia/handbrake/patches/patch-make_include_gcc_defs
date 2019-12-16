@@ -1,4 +1,4 @@
-$OpenBSD: patch-make_include_gcc_defs,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+$OpenBSD: patch-make_include_gcc_defs,v 1.2 2019/12/16 17:23:58 bcallah Exp $
 
 Remove hardcoded optimization flags.
 Proper -I and -L dirs.
@@ -13,9 +13,9 @@ Index: make/include/gcc.defs
 -GCC.args.O.none    = -O0
 -GCC.args.O.size    = -Os
 -GCC.args.O.speed   = -O3
-+GCC.args.O.none    =
-+GCC.args.O.size    =
-+GCC.args.O.speed   =
++GCC.args.O.none    = 
++GCC.args.O.size    = 
++GCC.args.O.speed   = 
  GCC.args.D         = -D$(1)
 -GCC.args.I         = -I$(1)
 +GCC.args.I         = -I$(1) -I$(LOCALBASE)/include -I$(X11BASE)/include -I$(LOCALBASE)/include/libavcodec

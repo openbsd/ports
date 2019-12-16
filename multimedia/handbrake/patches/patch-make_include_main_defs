@@ -1,4 +1,4 @@
-$OpenBSD: patch-make_include_main_defs,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+$OpenBSD: patch-make_include_main_defs,v 1.2 2019/12/16 17:23:58 bcallah Exp $
 
 Rip out all the optional dependencies.
 We'll let the ports tree handle it.
@@ -6,17 +6,17 @@ We'll let the ports tree handle it.
 Index: make/include/main.defs
 --- make/include/main.defs.orig
 +++ make/include/main.defs
-@@ -7,97 +7,6 @@ include $(SRC/)make/include/tool.defs
+@@ -7,87 +7,6 @@ include $(SRC/)make/include/tool.defs
  
  ###############################################################################
  
--ifneq (,$(filter $(BUILD.system),cygwin mingw))
+-ifneq (,$(filter $(HOST.system),cygwin mingw))
 -ifneq ($(HAS.bz2),1)
 -    MODULES += contrib/bzip2
 -endif
 -endif
 -
--ifneq (,$(filter $(BUILD.system),darwin cygwin mingw))
+-ifneq (,$(filter $(HOST.system),darwin cygwin mingw))
 -    MODULES += contrib/freetype
 -    MODULES += contrib/fribidi
 -    MODULES += contrib/harfbuzz
@@ -27,15 +27,13 @@ Index: make/include/main.defs
 -    MODULES += contrib/libopus
 -    MODULES += contrib/libspeex
 -    MODULES += contrib/libtheora
--    MODULES += contrib/libsamplerate
 -    MODULES += contrib/lame
 -    MODULES += contrib/x264
 -    MODULES += contrib/jansson
+-    MODULES += contrib/libvpx
 -endif
 -
 -ifeq (1,$(FEATURE.flatpak))
--    MODULES += contrib/libopus
--    MODULES += contrib/lame
 -    MODULES += contrib/jansson
 -    MODULES += contrib/x264
 -endif
@@ -51,19 +49,11 @@ Index: make/include/main.defs
 -    MODULES += contrib/x265_12bit
 -endif
 -
+-MODULES += contrib/libdav1d
 -MODULES += contrib/ffmpeg
--MODULES += contrib/libvpx
 -MODULES += contrib/libdvdread
 -MODULES += contrib/libdvdnav
 -MODULES += contrib/libbluray
--
--ifneq (,$(filter $(BUILD.system),mingw))
--ifneq ($(HAS.pthread),1)
--ifneq ($(HAS.pthreadGC2),1)
--    MODULES += contrib/pthreadw32
--endif
--endif
--endif
 -
 -ifeq (1,$(FEATURE.qsv))
 -    MODULES += contrib/libmfx
@@ -77,11 +67,11 @@ Index: make/include/main.defs
 -    MODULES += contrib/nvenc
 -endif
 -
--ifneq (,$(filter $(BUILD.system),darwin))
+-ifneq (,$(filter $(HOST.system),darwin))
 -    MODULES += contrib/xz
 -endif
 -
--ifneq (,$(filter $(BUILD.system),cygwin mingw))
+-ifneq (,$(filter $(HOST.system),cygwin mingw))
 -ifneq ($(HAS.iconv),1)
 -    MODULES += contrib/libiconv
 -endif
@@ -96,7 +86,7 @@ Index: make/include/main.defs
 -endif
 -endif
 -
--ifneq (,$(filter $(BUILD.system),solaris))
+-ifneq (,$(filter $(HOST.system),solaris))
 -    MODULES += contrib/libiconv
 -endif
 -
@@ -104,10 +94,10 @@ Index: make/include/main.defs
  ## these must come after contrib since some contrib modules are optional
  MODULES += libhb
  
-@@ -127,6 +36,11 @@ endif
+@@ -122,6 +41,11 @@ endif
  
- ifeq (1-kfreebsd,$(FEATURE.gtk)-$(BUILD.system))
-     ## build gtk when gtk+kfreebsd
+ ifeq (1-gnu,$(FEATURE.gtk)-$(HOST.system))
+     ## build gtk when gtk+gnu
 +    MODULES += gtk
 +endif
 +

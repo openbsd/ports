@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/12/16 15:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/12/16 17:23:58 bcallah Exp $
 
-BROKEN =	needs an update to work with pango >=1.44
-
-V = 		1.2.2
+V = 		1.3.0
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -17,7 +14,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender ass atk-1.0 atk-bridge-2.0
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender aom ass atk-1.0 atk-bridge-2.0
 WANTLIB += avcodec avfilter avformat avresample avutil bluray
 WANTLIB += bz2 c cairo cairo-gobject crypto dav1d dvdnav dvdread
 WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
@@ -26,9 +23,9 @@ WANTLIB += gsm gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl jansson lzma m mp3lame ogg opus orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png postproc samplerate speex ssl swresample swscale
-WANTLIB += theoradec theoraenc vorbis vorbisenc vpx x264 x265
-WANTLIB += xcb xcb-render xcb-shm xml2 xvidcore z
+WANTLIB += png postproc speex ssl swresample swscale theoradec
+WANTLIB += theoraenc vorbis vorbisenc vpx x264 x265 xcb xcb-render
+WANTLIB += xcb-shm xml2 xvidcore z
 
 MASTER_SITES =	https://download.handbrake.fr/releases/${V}/
 
@@ -46,6 +43,7 @@ BUILD_DEPENDS =	devel/autoconf/${AUTOCONF_VERSION} \
 LIB_DEPENDS =	devel/jansson \
 		devel/orc \
 		graphics/ffmpeg \
+		multimedia/aom \
 		multimedia/libbluray \
 		multimedia/gstreamer1/plugins-base \
 		multimedia/libdvdnav \

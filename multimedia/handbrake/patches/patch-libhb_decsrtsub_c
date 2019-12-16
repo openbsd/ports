@@ -1,4 +1,4 @@
-$OpenBSD: patch-libhb_decsrtsub_c,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+$OpenBSD: patch-libhb_decsrtsub_c,v 1.2 2019/12/16 17:23:58 bcallah Exp $
 
 iconv* => libiconv* for use with our libiconv
 
@@ -14,7 +14,7 @@ Index: libhb/decsrtsub.c
          if (q != pv->utf8_buf + pv->utf8_end)
          {
              conversion = 1;
-@@ -661,7 +661,7 @@ static int decsrtInit( hb_work_object_t * w, hb_job_t 
+@@ -672,7 +672,7 @@ static int decsrtInit( hb_work_object_t * w, hb_job_t 
          pv->start_time = AV_NOPTS_VALUE;
      }
  
@@ -23,7 +23,7 @@ Index: libhb/decsrtsub.c
      if( pv->iconv_context == (iconv_t) -1 )
      {
          hb_error("Could not open the iconv library with those file formats\n");
-@@ -692,7 +692,7 @@ fail:
+@@ -703,7 +703,7 @@ fail:
      {
          if (pv->iconv_context != (iconv_t) -1)
          {
@@ -32,7 +32,7 @@ Index: libhb/decsrtsub.c
          }
          if (pv->file != NULL)
          {
-@@ -743,7 +743,7 @@ static void decsrtClose( hb_work_object_t * w )
+@@ -754,7 +754,7 @@ static void decsrtClose( hb_work_object_t * w )
      if (pv != NULL)
      {
          fclose( pv->file );
