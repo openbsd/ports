@@ -1,0 +1,43 @@
+$OpenBSD: patch-SConstruct,v 1.5 2019/12/16 15:10:43 bcallah Exp $
+
+Remove all the -Werror= flags.
+
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -1948,7 +1948,7 @@ help:assume compiler supports __attribute__((unused))
+ 		self._check_macro(context,macro_name=macro_name,macro_value=macro_value,test="""
+ __attribute_unused
+ static void a(){}
+-""", msg='for function __attribute__((unused))', successflags={'CXXFLAGS' : [get_Werror_string(context.env['CXXFLAGS']) + 'unused']})
++""", msg='for function __attribute__((unused))', successflags={'CXXFLAGS' : ''})
+ 	@_custom_test
+ 	def check_attribute_warn_unused_result(self,context):
+ 		"""
+@@ -2453,7 +2453,7 @@ $ x86_64-pc-linux-gnu-g++-5.4.0 -x c++ -S -Wformat -o 
+ 	@_custom_test
+ 	def check_compiler_useless_cast(self,context):
+ 		Compile = self.Compile
+-		flags = {'CXXFLAGS' : [get_Werror_string(context.env['CXXFLAGS']) + 'useless-cast']}
++		flags = {'CXXFLAGS' : ''}
+ 		if Compile(context, text='''
+ /*
+  * SDL on Raspbian provokes a warning from -Wuseless-cast
+@@ -4234,17 +4234,6 @@ class DXXCommon(LazyObjectConstructor):
+ 		env.Prepend(CXXFLAGS = [
+ 			'-ftabstop=4',
+ 			'-Wall',
+-			Werror + 'extra',
+-			Werror + 'format=2',
+-			Werror + 'missing-braces',
+-			Werror + 'missing-include-dirs',
+-			Werror + 'uninitialized',
+-			Werror + 'undef',
+-			Werror + 'pointer-arith',
+-			Werror + 'cast-qual',
+-			Werror + 'missing-declarations',
+-			Werror + 'redundant-decls',
+-			Werror + 'vla',
+ 		])
+ 		env.Append(
+ 			CXXFLAGS = ['-funsigned-char'],
