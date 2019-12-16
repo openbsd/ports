@@ -1,0 +1,25 @@
+$OpenBSD: patch-gtk_gtk-2_10_defs,v 1.1 2019/12/16 15:50:42 ajacoutot Exp $
+
+From eca72baa5616fbe4dbebea43c7e5940847dc5ab8 Mon Sep 17 00:00:00 2001
+From: "Owen W. Taylor" <otaylor@fishsoup.net>
+Date: Tue, 27 Sep 2011 00:17:52 -0400
+Subject: [PATCH] Fix leaks of Pango objects
+
+Index: gtk/gtk-2.10.defs
+--- gtk/gtk-2.10.defs.orig
++++ gtk/gtk-2.10.defs
+@@ -1388,12 +1388,14 @@
+ (define-method create_pango_context
+   (of-object "GtkPrintContext")
+   (c-name "gtk_print_context_create_pango_context")
++  (caller-owns-return #t)
+   (return-type "PangoContext*")
+ )
+ 
+ (define-method create_pango_layout
+   (of-object "GtkPrintContext")
+   (c-name "gtk_print_context_create_pango_layout")
++  (caller-owns-return #t)
+   (return-type "PangoLayout*")
+ )
+ 

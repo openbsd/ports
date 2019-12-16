@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/07/12 20:51:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2019/12/16 15:50:42 ajacoutot Exp $
 
 BROKEN-alpha=	.got subsegment exceeds 64K
 
@@ -7,7 +7,7 @@ COMMENT=	GTK+2 Python bindings
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.24.0
 PKGNAME=	py-gtk2-${VERSION}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	x11
 
@@ -16,13 +16,13 @@ HOMEPAGE=	http://www.pygtk.org/
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
 EXTRACT_SUFX=		.tar.bz2
 

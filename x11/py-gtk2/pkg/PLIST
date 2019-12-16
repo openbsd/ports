@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/04/01 13:21:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/12/16 15:50:42 ajacoutot Exp $
 bin/pygtk-codegen-2.0
 bin/pygtk-demo
 include/pygtk-2.0/pygtk/
@@ -107,12 +107,12 @@ lib/pygtk/2.0/demos/ui_manager.pyo
 lib/pygtk/2.0/pygtk-demo.py
 lib/pygtk/2.0/pygtk-demo.pyc
 lib/pygtk/2.0/pygtk-demo.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/atk.so
+@so lib/python${MODPY_VERSION}/site-packages/gtk-2.0/atk.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_gtk.so
+@so lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_gtk.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_lazyutils.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_lazyutils.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_lazyutils.pyo
@@ -122,13 +122,13 @@ lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/compat.pyo
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/deprecation.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/deprecation.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/glade.so
+@so lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/glade.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkunixprint.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pango.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pangocairo.so
+@so lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkunixprint.so
+@so lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pango.so
+@so lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pangocairo.so
 share/gtk-doc/html/pygtk/
 share/gtk-doc/html/pygtk/atk-class-reference.html
 share/gtk-doc/html/pygtk/atk-constants.html

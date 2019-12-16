@@ -1,0 +1,30 @@
+$OpenBSD: patch-pangocairo_override,v 1.1 2019/12/16 15:50:42 ajacoutot Exp $
+
+From eca72baa5616fbe4dbebea43c7e5940847dc5ab8 Mon Sep 17 00:00:00 2001
+From: "Owen W. Taylor" <otaylor@fishsoup.net>
+Date: Tue, 27 Sep 2011 00:17:52 -0400
+Subject: [PATCH] Fix leaks of Pango objects
+
+Index: pangocairo.override
+--- pangocairo.override.orig
++++ pangocairo.override
+@@ -118,11 +118,16 @@ _wrap_pango_cairo_update_context(PyGObject *self, PyOb
+ static PyObject *
+ _wrap_pango_cairo_create_layout(PyGObject *self)
+ {
+-    PangoLayout *ret;
++    PangoLayout *layout;
++    PyObject *ret;
+ 
+-    ret = pango_cairo_create_layout(PycairoContext_GET(self));
++    layout = pango_cairo_create_layout(PycairoContext_GET(self));
+     /* pygobject_new handles NULL checking */
+-    return pygobject_new((GObject *)ret);
++    ret = pygobject_new((GObject *)layout);
++    if (layout)
++	g_object_unref(layout);
++
++    return ret;
+ }
+ 
+ static PyObject *
