@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1513 2019/12/14 10:58:54 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1514 2019/12/16 09:18:27 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -916,6 +916,10 @@ XAUTHORITY ?= ${HOME}/.Xauthority
 
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 
+# XXX temporary approximation before bsd.port.arch.mk builds it,
+# but this allows DEBUG_PACKAGES = ${BUILD_PACKAGES} to be tested for
+# inside modules, in case we didn't explicitly .include <bsd.port.arch.mk>
+BUILD_PACKAGES ?= ${MULTI_PACKAGES}
 DEBUG_PACKAGES ?=
 DEBUG_CONFIGURE_ARGS ?=
 
