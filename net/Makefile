@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1154 2019/12/12 09:38:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1155 2019/12/16 13:37:47 kmos Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -630,6 +630,7 @@
      SUBDIR += py-stem,python3
      SUBDIR += py-tld
      SUBDIR += py-tld,python3
+     SUBDIR += py-transmissionrpc-ng
      SUBDIR += py-twitter
      SUBDIR += py-websocket-client
      SUBDIR += py-websocket-client,python3
