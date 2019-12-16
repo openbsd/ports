@@ -1,0 +1,14 @@
+$OpenBSD: patch-utils_meson_build,v 1.1 2019/12/16 15:49:04 ajacoutot Exp $
+
+Index: utils/meson.build
+--- utils/meson.build.orig
++++ utils/meson.build
+@@ -56,7 +56,7 @@ if help2man.found() and not meson.is_cross_build()
+                   help2man, help2man_opts, '--output=@OUTPUT@', pango_view
+                 ],
+                 install: true,
+-                install_dir: join_paths(pango_datadir, 'man/man1'))
++                install_dir: join_paths(pango_prefix, 'man/man1'))
+ endif
+ 
+ if cairo_dep.found()
