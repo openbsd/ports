@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/10/30 12:41:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/12/16 15:33:27 jasper Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
@@ -28,7 +28,7 @@ include/htp/htp_version.h
 include/htp/lzma/
 include/htp/lzma/7zTypes.h
 include/htp/lzma/LzmaDec.h
-lib/libhtp.a
+@static-lib lib/libhtp.a
 lib/libhtp.la
 @lib lib/libhtp.so.${LIBhtp_VERSION}
 lib/pkgconfig/htp.pc
