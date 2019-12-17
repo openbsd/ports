@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.410 2019/11/15 15:25:57 fcambus Exp $
+# $OpenBSD: Makefile,v 1.411 2019/12/17 16:17:23 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -127,6 +127,7 @@
      SUBDIR += gcompris
      SUBDIR += gemdropx
      SUBDIR += gemrb
+     SUBDIR += gigalomania
      SUBDIR += glsfcave
      SUBDIR += glutton
      SUBDIR += gnome-mastermind
