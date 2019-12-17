@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/09/23 16:09:25 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/17 14:22:30 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=11v0,<12v0
@@ -596,43 +596,43 @@ jdk-11/lib/jfr/
 jdk-11/lib/jfr/default.jfc
 jdk-11/lib/jfr/profile.jfc
 jdk-11/lib/jli/
-jdk-11/lib/jli/libjli.so
+@so jdk-11/lib/jli/libjli.so
 jdk-11/lib/jrt-fs.jar
 @bin jdk-11/lib/jspawnhelper
 jdk-11/lib/jvm.cfg
-jdk-11/lib/libattach.so
-jdk-11/lib/libawt.so
-jdk-11/lib/libawt_headless.so
-jdk-11/lib/libawt_xawt.so
-jdk-11/lib/libdt_socket.so
-jdk-11/lib/libextnet.so
-jdk-11/lib/libfontmanager.so
-jdk-11/lib/libinstrument.so
-jdk-11/lib/libj2gss.so
-jdk-11/lib/libj2pcsc.so
-jdk-11/lib/libj2pkcs11.so
-jdk-11/lib/libjaas.so
-jdk-11/lib/libjava.so
-jdk-11/lib/libjavajpeg.so
-jdk-11/lib/libjawt.so
-jdk-11/lib/libjdwp.so
-jdk-11/lib/libjimage.so
-jdk-11/lib/libjsig.so
-jdk-11/lib/libjsound.so
-jdk-11/lib/liblcms.so
-jdk-11/lib/libmanagement.so
-jdk-11/lib/libmanagement_agent.so
-jdk-11/lib/libmanagement_ext.so
-jdk-11/lib/libmlib_image.so
-jdk-11/lib/libnet.so
-jdk-11/lib/libnio.so
-jdk-11/lib/libprefs.so
-jdk-11/lib/librmi.so
-jdk-11/lib/libsplashscreen.so
-jdk-11/lib/libsunec.so
-jdk-11/lib/libunpack.so
-jdk-11/lib/libverify.so
-jdk-11/lib/libzip.so
+@so jdk-11/lib/libattach.so
+@so jdk-11/lib/libawt.so
+@so jdk-11/lib/libawt_headless.so
+@so jdk-11/lib/libawt_xawt.so
+@so jdk-11/lib/libdt_socket.so
+@so jdk-11/lib/libextnet.so
+@so jdk-11/lib/libfontmanager.so
+@so jdk-11/lib/libinstrument.so
+@so jdk-11/lib/libj2gss.so
+@so jdk-11/lib/libj2pcsc.so
+@so jdk-11/lib/libj2pkcs11.so
+@so jdk-11/lib/libjaas.so
+@so jdk-11/lib/libjava.so
+@so jdk-11/lib/libjavajpeg.so
+@so jdk-11/lib/libjawt.so
+@so jdk-11/lib/libjdwp.so
+@so jdk-11/lib/libjimage.so
+@so jdk-11/lib/libjsig.so
+@so jdk-11/lib/libjsound.so
+@so jdk-11/lib/liblcms.so
+@so jdk-11/lib/libmanagement.so
+@so jdk-11/lib/libmanagement_agent.so
+@so jdk-11/lib/libmanagement_ext.so
+@so jdk-11/lib/libmlib_image.so
+@so jdk-11/lib/libnet.so
+@so jdk-11/lib/libnio.so
+@so jdk-11/lib/libprefs.so
+@so jdk-11/lib/librmi.so
+@so jdk-11/lib/libsplashscreen.so
+@so jdk-11/lib/libsunec.so
+@so jdk-11/lib/libunpack.so
+@so jdk-11/lib/libverify.so
+@so jdk-11/lib/libzip.so
 jdk-11/lib/modules
 jdk-11/lib/psfont.properties.ja
 jdk-11/lib/psfontj2d.properties
@@ -643,8 +643,8 @@ jdk-11/lib/security/default.policy
 jdk-11/lib/security/public_suffix_list.dat
 jdk-11/lib/server/
 jdk-11/lib/server/Xusage.txt
-jdk-11/lib/server/libjsig.so
-jdk-11/lib/server/libjvm.so
+@so jdk-11/lib/server/libjsig.so
+@so jdk-11/lib/server/libjvm.so
 jdk-11/lib/src.zip
 jdk-11/lib/tzdb.dat
 @mandir jdk-11/man/
