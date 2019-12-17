@@ -1,11 +1,11 @@
-$OpenBSD: patch-PSUtils_pm,v 1.1 2019/11/23 16:21:09 ajacoutot Exp $
+$OpenBSD: patch-PSUtils_pm,v 1.2 2019/12/17 08:17:15 ajacoutot Exp $
 
 https://bugzilla.redhat.com/show_bug.cgi?id=1072371
 
 Index: PSUtils.pm
 --- PSUtils.pm.orig
 +++ PSUtils.pm
-@@ -39,8 +39,8 @@ sub singledimen {
+@@ -42,8 +42,8 @@ sub singledimen {
  # Get the size of the given paper, or the default paper if no argument given.
  sub paper_size {
    my ($paper_name) = @_;
@@ -14,5 +14,5 @@ Index: PSUtils.pm
 +  chomp($paper_name = `paperconf`) unless defined($paper_name);
 +  my $dimensions = `paperconf -s $paper_name 2>/dev/null` or return;
    $dimensions =~ /^([\d.]+) ([\d.]+)/;
-   return round($1), round($2); # round dimensions to nearest point
+   return int($1 + 0.5), int($2 + 0.5); # round dimensions to nearest point
  }

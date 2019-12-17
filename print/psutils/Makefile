@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2019/11/23 16:21:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2019/12/17 08:17:15 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	utilities for manipulating PostScript documents
 
-V=		1.90
+V=		1.91
 DISTNAME=	psutils-${V}
 
 CATEGORIES=	print
@@ -23,8 +23,6 @@ MODULES=	perl
 RUN_DEPENDS=	print/libpaper
 
 CONFIGURE_STYLE=gnu
-
-FAKE_FLAGS=	perldir=${PREFIX}/${P5SITE}
 
 NO_TEST=	Yes
 
