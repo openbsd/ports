@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/16 22:03:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/17 13:15:04 sthen Exp $
 
 COMMENT=	tool for authenticating to Gmail with OAuth2
 
@@ -7,6 +7,7 @@ GH_PROJECT=	gmail-oauth2-tools
 GH_COMMIT=	e3229155a4037267ce40f1a3a681f53221aa4d8d
 
 DISTNAME=	gmail-oauth2-0.20190529
+REVISION=	0
 
 CATEGORIES=	security mail
 

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2019/12/16 22:03:26 sthen Exp $
+$OpenBSD: README,v 1.2 2019/12/17 13:15:04 sthen Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -29,8 +29,8 @@ token:
 
 set imap_authenticators="oauthbearer"
 set imap_user="<email_address>"
-set imap_oauth_refresh_command="oauth2.py --user=USER --client_id=CLIENTID.apps.googleusercontent.com --client_secret=CLIENT_SECRET --refresh_token=REFRESH_TOKEN"
+set imap_oauth_refresh_command="oauth2.py --quiet --user=USER --client_id=CLIENTID.apps.googleusercontent.com --client_secret=CLIENT_SECRET --refresh_token=REFRESH_TOKEN"
 
 set smtp_authenticators="oauthbearer"
 set smtp_url="smtps://USER@gmail.com@smtp.gmail.com:465"
-set smtp_oauth_refresh_command="oauth2.py --user=USER --client_id=CLIENTID.apps.googleusercontent.com --client_secret=CLIENT_SECRET --refresh_token=REFRESH_TOKEN"
+set smtp_oauth_refresh_command="oauth2.py --quiet --user=USER --client_id=CLIENTID.apps.googleusercontent.com --client_secret=CLIENT_SECRET --refresh_token=REFRESH_TOKEN"
