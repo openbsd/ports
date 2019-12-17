@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/17 21:55:08 jcs Exp $
+share/arduino/libraries/Adafruit_RA8875/
+share/arduino/libraries/Adafruit_RA8875/.github/
+share/arduino/libraries/Adafruit_RA8875/.github/ISSUE_TEMPLATE.md
+share/arduino/libraries/Adafruit_RA8875/.github/PULL_REQUEST_TEMPLATE.md
+share/arduino/libraries/Adafruit_RA8875/.travis.yml
+share/arduino/libraries/Adafruit_RA8875/Adafruit_RA8875.cpp
+share/arduino/libraries/Adafruit_RA8875/Adafruit_RA8875.h
+share/arduino/libraries/Adafruit_RA8875/README.md
+share/arduino/libraries/Adafruit_RA8875/assets/
+share/arduino/libraries/Adafruit_RA8875/assets/image.jpg
+share/arduino/libraries/Adafruit_RA8875/examples/
+share/arduino/libraries/Adafruit_RA8875/examples/buildtest/
+share/arduino/libraries/Adafruit_RA8875/examples/buildtest/buildtest.ino
+share/arduino/libraries/Adafruit_RA8875/examples/parrot.bmp
+share/arduino/libraries/Adafruit_RA8875/examples/ra8875_bitmap/
+share/arduino/libraries/Adafruit_RA8875/examples/ra8875_bitmap/ra8875_bitmap.ino
+share/arduino/libraries/Adafruit_RA8875/examples/ra8875_bitmap_fast/
+share/arduino/libraries/Adafruit_RA8875/examples/ra8875_bitmap_fast/ra8875_bitmap_fast.ino
+share/arduino/libraries/Adafruit_RA8875/examples/scroll/
+share/arduino/libraries/Adafruit_RA8875/examples/scroll/scroll.ino
+share/arduino/libraries/Adafruit_RA8875/examples/textmode/
+share/arduino/libraries/Adafruit_RA8875/examples/textmode/textmode.ino
+share/arduino/libraries/Adafruit_RA8875/examples/ts_calibration/
+share/arduino/libraries/Adafruit_RA8875/examples/ts_calibration/ts_calibration.ino
+share/arduino/libraries/Adafruit_RA8875/library.properties
