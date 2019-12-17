@@ -1,12 +1,24 @@
-$OpenBSD: patch-bin_dig_host_c,v 1.9 2019/08/22 16:16:46 sthen Exp $
+$OpenBSD: patch-bin_dig_host_c,v 1.10 2019/12/17 14:18:43 sthen Exp $
 
 Index: bin/dig/host.c
 --- bin/dig/host.c.orig
 +++ bin/dig/host.c
-@@ -901,6 +901,11 @@ main(int argc, char **argv) {
+@@ -17,6 +17,7 @@
+ #include <stdbool.h>
+ #include <stdlib.h>
+ #include <limits.h>
++#include <unistd.h>
+ 
+ #ifdef HAVE_LOCALE_H
+ #include <locale.h>
+@@ -901,6 +902,15 @@ main(int argc, char **argv) {
  	dighost_trying = trying;
  	dighost_shutdown = host_shutdown;
  
++	/*	
++	 * unix: needed for startup check, isc_net_probeunix. can probably be
++	 *       hardcoded instead? (unix sockets used in controlconf).
++	 */
 +	if (pledge("stdio rpath inet unix dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
@@ -15,17 +27,20 @@ Index: bin/dig/host.c
  	debug("main()");
  	progname = argv[0];
  	pre_parse_args(argc, argv);
-@@ -909,6 +914,13 @@ main(int argc, char **argv) {
- 	setup_libs();
- 	setup_system(ipv4only, ipv6only);
- 	parse_args(false, argc, argv);
+@@ -913,6 +923,16 @@ main(int argc, char **argv) {
+ 		setup_file_key();
+ 	else if (keysecret[0] != 0)
+ 		setup_text_key();
 +
-+	/* inet for network connections, dns for resolv.conf, rpath for charset conversion */
-+	if (pledge("stdio rpath inet dns", NULL) == -1) {
++	/*
++	 * dns:   resolv.conf, also allows port 53 sockets
++	 * inet:  needed if we query on port != 53
++	*/
++	if (pledge("stdio inet dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
 +	}
 +
- 	if (keyfile[0] != 0)
- 		setup_file_key();
- 	else if (keysecret[0] != 0)
+ 	result = isc_app_onrun(mctx, global_task, onrun_callback, NULL);
+ 	check_result(result, "isc_app_onrun");
+ 	isc_app_run();

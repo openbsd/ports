@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2019/12/17 00:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2019/12/17 14:18:43 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -7,7 +7,7 @@ COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 # bug fixes only).  The next ESV will be 9.16.
 V=		9.11.13
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -97,5 +97,8 @@ post-test:
 post-install:
 	cd ${FILESDIR}; ${INSTALL_DATA} localhost loopback loopback6.arpa \
 	    named.conf root.hint ${PREFIX}/share/examples/bind9/
+.for i in dig nslookup host
+	ln -fs $i ${PREFIX}/bin/e$i; ln -fs $i.1 ${PREFIX}/man/man1/e$i.1
+.endfor
 
 .include <bsd.port.mk>

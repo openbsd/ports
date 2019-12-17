@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/11/20 22:15:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/12/17 14:18:43 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -9,6 +9,9 @@
 bin/bind9-config
 @bin bin/delv
 @bin bin/dig
+bin/edig
+bin/ehost
+bin/enslookup
 @bin bin/host
 bin/isc-config.sh
 @bin bin/mdig
@@ -342,6 +345,9 @@ lib/python${MODPY_VERSION}/site-packages/isc/utils.pyc
 @man man/man1/bind9-config.1
 @man man/man1/delv.1
 @man man/man1/dig.1
+@man man/man1/edig.1
+@man man/man1/ehost.1
+@man man/man1/enslookup.1
 @man man/man1/host.1
 @man man/man1/isc-config.sh.1
 @man man/man1/mdig.1

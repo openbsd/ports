@@ -1,14 +1,24 @@
-$OpenBSD: patch-bin_dig_dig_c,v 1.12 2019/12/17 00:46:15 sthen Exp $
+$OpenBSD: patch-bin_dig_dig_c,v 1.13 2019/12/17 14:18:43 sthen Exp $
 
 Index: bin/dig/dig.c
 --- bin/dig/dig.c.orig
 +++ bin/dig/dig.c
-@@ -2251,6 +2251,13 @@ void dig_setup(int argc, char **argv)
+@@ -18,6 +18,7 @@
+ #include <stdlib.h>
+ #include <time.h>
+ #include <ctype.h>
++#include <unistd.h>
+ 
+ #include <isc/app.h>
+ #include <isc/netaddr.h>
+@@ -2251,6 +2252,15 @@ void dig_setup(int argc, char **argv)
  	ISC_LIST_INIT(server_list);
  	ISC_LIST_INIT(search_list);
  
-+	/* unix needed for startup check, isc_net_probeunix, used in
-+	   bin/named/controlconf.c, can probably be hardcoded instead? */
++	/*	
++	 * unix: needed for startup check, isc_net_probeunix. can probably be
++	 *       hardcoded instead? (unix sockets used in controlconf).
++	 */
 +	if (pledge("stdio rpath inet unix dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
@@ -17,14 +27,15 @@ Index: bin/dig/dig.c
  	debug("dig_setup()");
  
  	/* setup dighost callbacks */
-@@ -2282,6 +2289,15 @@ void dig_query_setup(bool is_batchfile, bool config_on
+@@ -2282,6 +2292,16 @@ void dig_query_setup(bool is_batchfile, bool config_on
  		setup_file_key();
  	else if (keysecret[0] != 0)
  		setup_text_key();
 +
-+	/* inet because we might want to query port != 53. dns for resolv.conf.
-+	   used to have rpath for IDN charset conversion here but that seems
-+	   to not be needed any more? */
++	/*
++	 * dns:   resolv.conf, also allows port 53 sockets
++	 * inet:  needed if we query on port != 53
++	 */
 +	if (pledge("stdio inet dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);

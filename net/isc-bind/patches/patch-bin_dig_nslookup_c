@@ -1,12 +1,16 @@
-$OpenBSD: patch-bin_dig_nslookup_c,v 1.10 2019/08/22 16:16:46 sthen Exp $
+$OpenBSD: patch-bin_dig_nslookup_c,v 1.11 2019/12/17 14:18:43 sthen Exp $
 
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
 +++ bin/dig/nslookup.c
-@@ -1024,8 +1024,19 @@ main(int argc, char **argv) {
+@@ -1024,6 +1024,15 @@ main(int argc, char **argv) {
  	result = isc_app_start();
  	check_result(result, "isc_app_start");
  
++	/*	
++	 * unix: needed for startup check, isc_net_probeunix. can probably be
++	 *       hardcoded instead? (unix sockets used in controlconf).
++	 */
 +	if (pledge("stdio rpath inet unix dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
@@ -14,12 +18,20 @@ Index: bin/dig/nslookup.c
 +
  	setup_libs();
  	progname = argv[0];
-+
-+	/* inet for network connections, dns for resolv.conf, rpath for charset conversion */
-+	if (pledge("stdio rpath inet dns", NULL) == -1) {
+ 
+@@ -1033,6 +1042,15 @@ main(int argc, char **argv) {
+ 		setup_file_key();
+ 	else if (keysecret[0] != 0)
+ 		setup_text_key();
++	/*
++	 * dns:   resolv.conf, also allows port 53 sockets
++	 * inet:  needed if we query on port != 53
++	 */
++	if (pledge("stdio inet dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
 +	}
- 
- 	setup_system(false, false);
- 	parse_args(argc, argv);
++
+ 	if (domainopt[0] != '\0')
+ 		set_search_domain(domainopt);
+ 	if (in_use)
