@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2019/11/20 22:15:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2019/12/17 00:46:15 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -7,6 +7,7 @@ COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 # bug fixes only).  The next ESV will be 9.16.
 V=		9.11.13
 EPOCH=		0
+REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
