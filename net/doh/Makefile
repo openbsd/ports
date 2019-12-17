@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2019/09/14 23:41:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/12/17 21:51:24 sthen Exp $
 
 COMMENT=	simple DoH (dns-over-https) client
 
 GH_ACCOUNT=	curl
 GH_PROJECT=	doh
-GH_COMMIT=	541073829865a72963d80e0efbb13382a3447621
+GH_COMMIT=	acc9ab52d068e388570d4076f926eb024c2e2479
 
-DISTNAME=	doh-0.20190913
-REVISION=	0
+DISTNAME=	doh-0.20191105
 
 CATEGORIES=	net
 
