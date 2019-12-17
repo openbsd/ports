@@ -1,0 +1,14 @@
+$OpenBSD: patch-stdafx_h,v 1.1.1.1 2019/12/17 16:17:06 bcallah Exp $
+
+Fix include line.
+
+Index: stdafx.h
+--- stdafx.h.orig
++++ stdafx.h
+@@ -20,5 +20,5 @@
+ #elif defined(__MORPHOS__)
+ #include <SDL/SDL.h>
+ #else
+-#include <sdl.h>
++#include <SDL.h>
+ #endif

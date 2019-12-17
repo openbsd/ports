@@ -1,0 +1,18 @@
+$OpenBSD: patch-gigalomania_desktop,v 1.1.1.1 2019/12/17 16:17:06 bcallah Exp $
+
+Correct paths.
+
+Index: gigalomania.desktop
+--- gigalomania.desktop.orig
++++ gigalomania.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Name=Gigalomania
+ Comment=2D RTS Game
+-Exec=/opt/gigalomania/gigalomania
+-Path=/opt/gigalomania/
++Exec=${TRUEPREFIX}/bin/gigalomania
++Path=${TRUEPREFIX}/share/gigalomania
+ Terminal=false
+ Type=Application
+ Icon=gigalomania64
