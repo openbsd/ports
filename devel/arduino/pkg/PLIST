@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/11/08 01:00:59 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/12/17 02:21:53 jcs Exp $
 share/arduino/
 share/arduino/boards.txt
 share/arduino/bootloaders/
@@ -41,11 +41,13 @@ share/arduino/bootloaders/caterina-LilyPadUSB/Descriptors.c
 share/arduino/bootloaders/caterina-LilyPadUSB/Descriptors.h
 share/arduino/bootloaders/caterina-LilyPadUSB/Makefile
 share/arduino/bootloaders/caterina-LilyPadUSB/Readme.txt
+share/arduino/bootloaders/caterina/Caterina-Atmega32u4.hex
+share/arduino/bootloaders/caterina/Caterina-BluefruitMicro8.hex
 share/arduino/bootloaders/caterina/Caterina-Circuitplay32u4.hex
 share/arduino/bootloaders/caterina/Caterina-Esplora.hex
 share/arduino/bootloaders/caterina/Caterina-Esplora.txt
-share/arduino/bootloaders/caterina/Caterina-Genuino-Micro.hex
-share/arduino/bootloaders/caterina/Caterina-Genuino-Micro.txt
+share/arduino/bootloaders/caterina/Caterina-Feather32u4.hex
+share/arduino/bootloaders/caterina/Caterina-Flora8.hex
 share/arduino/bootloaders/caterina/Caterina-Industrial101.hex
 share/arduino/bootloaders/caterina/Caterina-Leonardo.hex
 share/arduino/bootloaders/caterina/Caterina-Leonardo.txt
@@ -252,14 +254,14 @@ share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/
-share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_sdio_v2.7.0.a
-share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_spi_v2.7.0.a
-share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_wl_sta_intwpa_v2.7.0.a
+@static-lib share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_sdio_v2.7.0.a
+@static-lib share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_spi_v2.7.0.a
+@static-lib share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_wl_sta_intwpa_v2.7.0.a
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/
-share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_sdio_v2.7.0.a
-share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_spi_v2.7.0.a
-share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_wl_sta_intwpa_v2.7.0.a
+@static-lib share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_sdio_v2.7.0.a
+@static-lib share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_spi_v2.7.0.a
+@static-lib share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_wl_sta_intwpa_v2.7.0.a
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/revision.txt
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_api.h
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_fw.h
@@ -420,7 +422,7 @@ share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWL
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_interrupts.h
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_io.h
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_usart.h
-share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a
+@static-lib share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/
 share/arduino/firmwares/wifishield/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512/
@@ -555,7 +557,7 @@ share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/N
 share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_interrupts.h
 share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_io.h
 share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_usart.h
-share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a
+@static-lib share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a
 share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/
 share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/
 share/arduino/firmwares/wifishield/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512/
@@ -641,11 +643,20 @@ share/arduino/libraries/SoftwareSerial/src/
 share/arduino/libraries/SoftwareSerial/src/SoftwareSerial.cpp
 share/arduino/libraries/SoftwareSerial/src/SoftwareSerial.h
 share/arduino/libraries/Wire/
+share/arduino/libraries/Wire/README.md
+share/arduino/libraries/Wire/TinyWireM.cpp
+share/arduino/libraries/Wire/TinyWireM.h
+share/arduino/libraries/Wire/USI_TWI_Master.cpp
+share/arduino/libraries/Wire/USI_TWI_Master.h
+share/arduino/libraries/Wire/Wire.cpp
+share/arduino/libraries/Wire/Wire.h
 share/arduino/libraries/Wire/examples/
 share/arduino/libraries/Wire/examples/SFRRanger_reader/
 share/arduino/libraries/Wire/examples/SFRRanger_reader/SFRRanger_reader.ino
 share/arduino/libraries/Wire/examples/digital_potentiometer/
 share/arduino/libraries/Wire/examples/digital_potentiometer/digital_potentiometer.ino
+share/arduino/libraries/Wire/examples/i2c_scanner/
+share/arduino/libraries/Wire/examples/i2c_scanner/i2c_scanner.ino
 share/arduino/libraries/Wire/examples/master_reader/
 share/arduino/libraries/Wire/examples/master_reader/master_reader.ino
 share/arduino/libraries/Wire/examples/master_writer/
@@ -662,17 +673,30 @@ share/arduino/libraries/Wire/src/Wire.h
 share/arduino/libraries/Wire/src/utility/
 share/arduino/libraries/Wire/src/utility/twi.c
 share/arduino/libraries/Wire/src/utility/twi.h
+share/arduino/libraries/Wire/utility/
+share/arduino/libraries/Wire/utility/twi.c
+share/arduino/libraries/Wire/utility/twi.h
 share/arduino/platform.txt
 share/arduino/programmers.txt
 share/arduino/variants/
+share/arduino/variants/adafruit32u4/
+share/arduino/variants/adafruit32u4/pins_arduino.h
+share/arduino/variants/bluefruitmicro/
+share/arduino/variants/bluefruitmicro/pins_arduino.h
 share/arduino/variants/circuitplay32u4/
 share/arduino/variants/circuitplay32u4/pins_arduino.h
 share/arduino/variants/eightanaloginputs/
 share/arduino/variants/eightanaloginputs/pins_arduino.h
 share/arduino/variants/ethernet/
 share/arduino/variants/ethernet/pins_arduino.h
+share/arduino/variants/feather32u4/
+share/arduino/variants/feather32u4/pins_arduino.h
+share/arduino/variants/flora/
+share/arduino/variants/flora/pins_arduino.h
 share/arduino/variants/gemma/
 share/arduino/variants/gemma/pins_arduino.h
+share/arduino/variants/itsybitsy32u4/
+share/arduino/variants/itsybitsy32u4/pins_arduino.h
 share/arduino/variants/leonardo/
 share/arduino/variants/leonardo/pins_arduino.h
 share/arduino/variants/mega/
@@ -685,6 +709,8 @@ share/arduino/variants/robot_motor/
 share/arduino/variants/robot_motor/pins_arduino.h
 share/arduino/variants/standard/
 share/arduino/variants/standard/pins_arduino.h
+share/arduino/variants/tiny8/
+share/arduino/variants/tiny8/pins_arduino.h
 share/arduino/variants/yun/
 share/arduino/variants/yun/pins_arduino.h
 share/doc/arduino/
@@ -913,7 +939,6 @@ share/examples/arduino/07.Display/barGraph/layout.png
 share/examples/arduino/07.Display/barGraph/schematic.png
 share/examples/arduino/08.Strings/
 share/examples/arduino/08.Strings/CharacterAnalysis/
-@comment share/examples/arduino/08.Strings/CharacterAnalysis/.CharacterAnalysis.ino.swp
 share/examples/arduino/08.Strings/CharacterAnalysis/CharacterAnalysis.ino
 share/examples/arduino/08.Strings/StringAdditionOperator/
 share/examples/arduino/08.Strings/StringAdditionOperator/StringAdditionOperator.ino
@@ -942,7 +967,6 @@ share/examples/arduino/08.Strings/StringLengthTrim/
 share/examples/arduino/08.Strings/StringLengthTrim/StringLengthTrim.ino
 share/examples/arduino/08.Strings/StringLengthTrim/StringLengthTrim.txt
 share/examples/arduino/08.Strings/StringReplace/
-@comment share/examples/arduino/08.Strings/StringReplace/.swp
 share/examples/arduino/08.Strings/StringReplace/StringReplace.ino
 share/examples/arduino/08.Strings/StringReplace/StringReplace.txt
 share/examples/arduino/08.Strings/StringStartsWithEndsWith/
