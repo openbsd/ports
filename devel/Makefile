@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1917 2019/12/02 22:43:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.1918 2019/12/17 21:02:03 bket Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1653,6 +1653,8 @@
      SUBDIR += py-symboltype
      SUBDIR += py-tabulate
      SUBDIR += py-tabulate,python3
+     SUBDIR += py-tempora
+     SUBDIR += py-tempora,python3
      SUBDIR += py-test
      SUBDIR += py-test,python3
      SUBDIR += py-test-benchmark
