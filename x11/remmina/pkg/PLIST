@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/11/09 11:02:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/12/17 09:26:26 ajacoutot Exp $
 @conflict remmina-plugins-*
 @conflict remmina-plugins-telepathy-*
 @pkgpath x11/remmina,-rdp
@@ -14,13 +14,13 @@ include/remmina/types.h
 lib/pkgconfig/remmina.pc
 lib/remmina/
 lib/remmina/plugins/
-lib/remmina/plugins/remmina-plugin-exec.so
-lib/remmina/plugins/remmina-plugin-nx.so
-lib/remmina/plugins/remmina-plugin-rdp.so
-lib/remmina/plugins/remmina-plugin-secret.so
-lib/remmina/plugins/remmina-plugin-spice.so
-lib/remmina/plugins/remmina-plugin-vnc.so
-lib/remmina/plugins/remmina-plugin-xdmcp.so
+@so lib/remmina/plugins/remmina-plugin-exec.so
+@so lib/remmina/plugins/remmina-plugin-nx.so
+@so lib/remmina/plugins/remmina-plugin-rdp.so
+@so lib/remmina/plugins/remmina-plugin-secret.so
+@so lib/remmina/plugins/remmina-plugin-spice.so
+@so lib/remmina/plugins/remmina-plugin-vnc.so
+@so lib/remmina/plugins/remmina-plugin-xdmcp.so
 @man man/man1/remmina.1
 share/applications/org.remmina.Remmina.desktop
 share/applications/remmina-file.desktop
