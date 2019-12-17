@@ -1,34 +1,44 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/12/17 21:25:25 bket Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
-MODPY_EGG_VERSION=	3.2.2
+MODPY_EGG_VERSION=	17.4.2
 DISTNAME=		CherryPy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		www
-REVISION=		0
 
-HOMEPAGE=	http://www.cherrypy.org/
+HOMEPAGE=	https://www.cherrypy.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://download.cherrypy.org/cherrypy/${MODPY_EGG_VERSION}/
+MODULES=		lang/python
+MODPY_PI=		Yes
+MODPY_PYTEST=		Yes
+MODPY_SETUPTOOLS=	Yes
+# XXX ignore tests from test_wsgi_unix_socket.py as it prevents other tests from
+# running.
+MODPY_PYTEST_ARGS=	cherrypy/ --ignore cherrypy/test/test_wsgi_unix_socket.py
 
-MODULES=	lang/python
+BUILD_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-contextlib2${MODPY_FLAVOR} \
+		devel/py-more-itertools${MODPY_FLAVOR} \
+		devel/py-six${MODPY_FLAVOR}>=1.11.0 \
+		devel/py-zc-lockfile${MODPY_FLAVOR} \
+		net/py-portend${MODPY_FLAVOR}>=2.1.1 \
+		www/py-cheroot${MODPY_FLAVOR}>=6.2.4
+TEST_DEPENDS=	devel/py-path.py${MODPY_FLAVOR} \
+		devel/py-test-cov${MODPY_FLAVOR} \
+		www/py-requests-toolbelt${MODPY_FLAVOR}
 
-TEST_DEPENDS =	devel/py-nose \
-			www/py-routes
+FLAVORS=	python3
+FLAVOR?=
 
-MODPY_SETUPTOOLS =	Yes
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS=	devel/py-mock
+.endif
 
-# test_antistampede requires higher file descriptor limit
-# test_cache_control requires higher SECONDS variable
-# test_states requires signal handling fixed
-TEST_IS_INTERACTIVE =Yes
-
-do-test:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests -s -v \
-		lib/cherrypy/test
+post-install:
+	mv ${PREFIX}/bin/cherryd ${PREFIX}/bin/cherryd${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
