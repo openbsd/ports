@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2019/10/14 09:18:00 jsg Exp $
+# $OpenBSD: Makefile,v 1.84 2019/12/17 15:26:10 visa Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		2.1.0
@@ -30,6 +30,10 @@ LIB_DEPENDS=	audio/libmad \
 		graphics/png \
 		graphics/jpeg \
 		multimedia/libtheora
+
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+CXXFLAGS+=	-mxgot
+.endif
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+= --disable-alsa \
