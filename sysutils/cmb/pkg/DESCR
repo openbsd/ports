@@ -1,0 +1,7 @@
+cmb is a combinatorics library/utility.
+
+It is both a novel algorithm and the fastest implementation we have for
+complex combinatorics. It is faster than python's itertools, faster than
+numpy, faster than Perl, faster than Perl XS, faster than comb in R.
+
+It is a port of cmb(1)/cmb(3) from FreeBSD.

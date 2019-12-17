@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/17 03:36:07 bcallah Exp $
+@bin bin/cmb
+include/cmb.h
+@static-lib lib/libcmb.a
+@lib lib/libcmb.so.${LIBcmb_VERSION}
+@static-lib lib/libcmb_p.a
+@man man/man1/cmb.1
+@man man/man3/cmb.3
