@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/05/11 20:18:18 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/12/18 00:36:46 bcallah Exp $
 bin/awk
 @bin bin/gawk
 @bin bin/gawk-${V}
@@ -7,18 +7,18 @@ include/gawkapi.h
 @info info/gawkinet.info
 @info info/gawkworkflow.info
 lib/gawk/
-lib/gawk/filefuncs.so
-lib/gawk/fnmatch.so
-lib/gawk/fork.so
-lib/gawk/inplace.so
-lib/gawk/intdiv.so
-lib/gawk/ordchr.so
-lib/gawk/readdir.so
-lib/gawk/readfile.so
-lib/gawk/revoutput.so
-lib/gawk/revtwoway.so
-lib/gawk/rwarray.so
-lib/gawk/time.so
+@so lib/gawk/filefuncs.so
+@so lib/gawk/fnmatch.so
+@so lib/gawk/fork.so
+@so lib/gawk/inplace.so
+@so lib/gawk/intdiv.so
+@so lib/gawk/ordchr.so
+@so lib/gawk/readdir.so
+@so lib/gawk/readfile.so
+@so lib/gawk/revoutput.so
+@so lib/gawk/revtwoway.so
+@so lib/gawk/rwarray.so
+@so lib/gawk/time.so
 libexec/awk/
 @bin libexec/awk/grcat
 @bin libexec/awk/pwcat
@@ -78,6 +78,7 @@ share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gawk.mo
 share/locale/nl/LC_MESSAGES/gawk.mo
 share/locale/pl/LC_MESSAGES/gawk.mo
+share/locale/pt/LC_MESSAGES/gawk.mo
 share/locale/pt_BR/LC_MESSAGES/gawk.mo
 share/locale/sv/LC_MESSAGES/gawk.mo
 share/locale/vi/LC_MESSAGES/gawk.mo
