@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2019/12/01 20:34:46 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2019/12/18 20:25:16 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -121,14 +121,14 @@ include/mapi4linux/mapitags.h
 include/mapi4linux/mapiutil.h
 include/mapi4linux/mapix.h
 lib/kopano/
-lib/kopano/libkcclient.a
-lib/kopano/libkcclient.so
-lib/kopano/libkccontacts.a
-lib/kopano/libkccontacts.so
-lib/kopano/libkcserver-db.a
-lib/kopano/libkcserver-db.so
-lib/kopano/libkcserver-ldap.a
-lib/kopano/libkcserver-ldap.so
+@static-lib lib/kopano/libkcclient.a
+@so lib/kopano/libkcclient.so
+@static-lib lib/kopano/libkccontacts.a
+@so lib/kopano/libkccontacts.so
+@static-lib lib/kopano/libkcserver-db.a
+@so lib/kopano/libkcserver-db.so
+@static-lib lib/kopano/libkcserver-ldap.a
+@so lib/kopano/libkcserver-ldap.so
 lib/kopano/userscripts/
 @sample ${SYSCONFDIR}/kopano/userscripts/
 lib/kopano/userscripts/createcompany
@@ -151,31 +151,31 @@ lib/kopano/userscripts/deletegroup.d/
 lib/kopano/userscripts/deleteuser
 lib/kopano/userscripts/deleteuser.d/
 @sample ${SYSCONFDIR}/kopano/userscripts/deleteuser.d/
-lib/libkcarchiver.a
+@static-lib lib/libkcarchiver.a
 @lib lib/libkcarchiver.so.${LIBkcarchiver_VERSION}
-lib/libkcfreebusy.a
+@static-lib lib/libkcfreebusy.a
 @lib lib/libkcfreebusy.so.${LIBkcfreebusy_VERSION}
-lib/libkcicalmapi.a
+@static-lib lib/libkcicalmapi.a
 @lib lib/libkcicalmapi.so.${LIBkcicalmapi_VERSION}
-lib/libkcindex.a
+@static-lib lib/libkcindex.a
 @lib lib/libkcindex.so.${LIBkcindex_VERSION}
-lib/libkcinetmapi.a
+@static-lib lib/libkcinetmapi.a
 @lib lib/libkcinetmapi.so.${LIBkcinetmapi_VERSION}
-lib/libkcpyconv-${MODPY_VERSION}.so
-lib/libkcpyconv.a
-lib/libkcpyconv.so
-lib/libkcpydirector-${MODPY_VERSION}.so
-lib/libkcpydirector.a
-lib/libkcpydirector.so
-lib/libkcpyplug.a
+@so lib/libkcpyconv-${MODPY_VERSION}.so
+@static-lib lib/libkcpyconv.a
+@so lib/libkcpyconv.so
+@so lib/libkcpydirector-${MODPY_VERSION}.so
+@static-lib lib/libkcpydirector.a
+@so lib/libkcpydirector.so
+@static-lib lib/libkcpyplug.a
 @lib lib/libkcpyplug.so.${LIBkcpyplug_VERSION}
-lib/libkcserver.a
+@static-lib lib/libkcserver.a
 @lib lib/libkcserver.so.${LIBkcserver_VERSION}
-lib/libkcsoap.a
+@static-lib lib/libkcsoap.a
 @lib lib/libkcsoap.so.${LIBkcsoap_VERSION}
-lib/libkcutil.a
+@static-lib lib/libkcutil.a
 @lib lib/libkcutil.so.${LIBkcutil_VERSION}
-lib/libmapi.a
+@static-lib lib/libmapi.a
 @lib lib/libmapi.so.${LIBmapi_VERSION}
 lib/mapi.d/
 lib/mapi.d/kopano.inf
@@ -210,17 +210,17 @@ lib/python${MODPY_VERSION}/site-packages/MAPI/${MODPY_PYCACHE}version.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/MAPI/version.py
 lib/python${MODPY_VERSION}/site-packages/MAPICore.py
 lib/python${MODPY_VERSION}/site-packages/_MAPICore.a
-lib/python${MODPY_VERSION}/site-packages/_MAPICore.so
+@so lib/python${MODPY_VERSION}/site-packages/_MAPICore.so
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}MAPICore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}icalmapi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}inetmapi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libfreebusy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_icalmapi.a
-lib/python${MODPY_VERSION}/site-packages/_icalmapi.so
+@so lib/python${MODPY_VERSION}/site-packages/_icalmapi.so
 lib/python${MODPY_VERSION}/site-packages/_inetmapi.a
-lib/python${MODPY_VERSION}/site-packages/_inetmapi.so
+@so lib/python${MODPY_VERSION}/site-packages/_inetmapi.so
 lib/python${MODPY_VERSION}/site-packages/_libfreebusy.a
-lib/python${MODPY_VERSION}/site-packages/_libfreebusy.so
+@so lib/python${MODPY_VERSION}/site-packages/_libfreebusy.so
 lib/python${MODPY_VERSION}/site-packages/icalmapi.py
 lib/python${MODPY_VERSION}/site-packages/inetmapi.py
 lib/python${MODPY_VERSION}/site-packages/kopano/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/12/01 20:34:46 robert Exp $
+# $OpenBSD: Makefile,v 1.49 2019/12/18 20:25:16 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -55,9 +55,9 @@ WANTLIB-main += icalvcal ldap_r HX jsoncpp
 WANTLIB-main += db_cxx uuid xapian
 WANTLIB-main += X11 Xext Xrender expat fontconfig freetype pixman-1
 WANTLIB-main += xcb xcb-render xcb-shm
-WANTLIB-main += cairo fribidi glib-2.0 gobject-2.0 graphite2
-WANTLIB-main += gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-main += pangoft2-1.0 png rrd
+WANTLIB-main += cairo glib-2.0 gobject-2.0 graphite2
+WANTLIB-main += harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB-main += png rrd
 WANTLIB-main += lber sasl2
 
 # Do not substitute MODULE_NAME
