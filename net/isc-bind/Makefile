@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.102 2019/12/17 18:03:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2019/12/18 15:05:43 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # 9.11 is an ESV.  After 9.11 the format changes: odd numbers are devel,
 # even numbers are stable (and for stable branches, point releases are
 # bug fixes only).  The next ESV will be 9.16.
-V=		9.11.13
+V=		9.14.8
 EPOCH=		0
-REVISION=	2
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
 # in shared_libs.log but not installed: isc-nosymtbl, t_api
-SHARED_LIBS +=  isc                  4.3
-SHARED_LIBS +=  isccc                2.0
-SHARED_LIBS +=  dns                  8.1
-SHARED_LIBS +=  isccfg               3.0
-SHARED_LIBS +=  bind9                0.1
-SHARED_LIBS +=  lwres                0.1
-SHARED_LIBS +=  irs                  2.0
+SHARED_LIBS +=  isc                  5.0
+SHARED_LIBS +=  isccc                3.0
+SHARED_LIBS +=  dns                  9.0
+SHARED_LIBS +=  isccfg               4.0
+SHARED_LIBS +=  bind9                1.0
+SHARED_LIBS +=  irs                  3.0
+SHARED_LIBS +=	ns                   0.0
 
 CATEGORIES=	net
 
@@ -45,6 +44,7 @@ LIB_DEPENDS=	converters/libiconv \
 		textproc/libxml
 
 SEPARATE_BUILD=	Yes
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-full-report \
 		--enable-filter-aaaa \

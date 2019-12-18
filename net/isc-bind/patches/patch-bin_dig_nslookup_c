@@ -1,9 +1,9 @@
-$OpenBSD: patch-bin_dig_nslookup_c,v 1.11 2019/12/17 14:18:43 sthen Exp $
+$OpenBSD: patch-bin_dig_nslookup_c,v 1.12 2019/12/18 15:05:43 sthen Exp $
 
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
 +++ bin/dig/nslookup.c
-@@ -1024,6 +1024,15 @@ main(int argc, char **argv) {
+@@ -1003,6 +1003,15 @@ main(int argc, char **argv) {
  	result = isc_app_start();
  	check_result(result, "isc_app_start");
  
@@ -19,7 +19,7 @@ Index: bin/dig/nslookup.c
  	setup_libs();
  	progname = argv[0];
  
-@@ -1033,6 +1042,15 @@ main(int argc, char **argv) {
+@@ -1012,6 +1021,15 @@ main(int argc, char **argv) {
  		setup_file_key();
  	else if (keysecret[0] != 0)
  		setup_text_key();

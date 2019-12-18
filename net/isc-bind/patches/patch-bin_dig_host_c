@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_dig_host_c,v 1.10 2019/12/17 14:18:43 sthen Exp $
+$OpenBSD: patch-bin_dig_host_c,v 1.11 2019/12/18 15:05:43 sthen Exp $
 
 Index: bin/dig/host.c
 --- bin/dig/host.c.orig
@@ -11,7 +11,7 @@ Index: bin/dig/host.c
  
  #ifdef HAVE_LOCALE_H
  #include <locale.h>
-@@ -901,6 +902,15 @@ main(int argc, char **argv) {
+@@ -874,6 +875,15 @@ main(int argc, char **argv) {
  	dighost_trying = trying;
  	dighost_shutdown = host_shutdown;
  
@@ -27,7 +27,7 @@ Index: bin/dig/host.c
  	debug("main()");
  	progname = argv[0];
  	pre_parse_args(argc, argv);
-@@ -913,6 +923,16 @@ main(int argc, char **argv) {
+@@ -886,6 +896,16 @@ main(int argc, char **argv) {
  		setup_file_key();
  	else if (keysecret[0] != 0)
  		setup_text_key();
