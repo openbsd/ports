@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.480 2019/12/16 08:03:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.481 2019/12/18 09:01:35 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			79.0.3945.79
+V=			79.0.3945.88
 ECV=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
@@ -35,8 +35,6 @@ FLAVORS=		debug component electron
 FLAVOR?=
 .if ${FLAVOR:Melectron}
 REVISION=		3
-.else
-REVISION=		1
 .endif
 
 # BSD-like
