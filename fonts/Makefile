@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/12/11 12:43:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2019/12/18 08:08:13 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -78,6 +78,7 @@
      SUBDIR += siji
      SUBDIR += spleen
      SUBDIR += spranq-ecofont-ttf
+     SUBDIR += stixfonts
      SUBDIR += sunscreen
      SUBDIR += symbola-ttf
      SUBDIR += tagmukay
