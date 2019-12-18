@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/03 06:32:05 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/18 06:50:30 bentley Exp $
 include/libsigrokdecode/
 include/libsigrokdecode/libsigrokdecode.h
 include/libsigrokdecode/version.h
-lib/libsigrokdecode.a
+@static-lib lib/libsigrokdecode.a
 lib/libsigrokdecode.la
 @lib lib/libsigrokdecode.so.${LIBsigrokdecode_VERSION}
 lib/pkgconfig/libsigrokdecode.pc
@@ -24,6 +24,10 @@ share/libsigrokdecode/decoders/adns5020/pd.py
 share/libsigrokdecode/decoders/am230x/
 share/libsigrokdecode/decoders/am230x/__init__.py
 share/libsigrokdecode/decoders/am230x/pd.py
+share/libsigrokdecode/decoders/amulet_ascii/
+share/libsigrokdecode/decoders/amulet_ascii/__init__.py
+share/libsigrokdecode/decoders/amulet_ascii/lists.py
+share/libsigrokdecode/decoders/amulet_ascii/pd.py
 share/libsigrokdecode/decoders/arm_etmv3/
 share/libsigrokdecode/decoders/arm_etmv3/__init__.py
 share/libsigrokdecode/decoders/arm_etmv3/pd.py
@@ -49,6 +53,10 @@ share/libsigrokdecode/decoders/avr_pdi/pd.py
 share/libsigrokdecode/decoders/can/
 share/libsigrokdecode/decoders/can/__init__.py
 share/libsigrokdecode/decoders/can/pd.py
+share/libsigrokdecode/decoders/cc1101/
+share/libsigrokdecode/decoders/cc1101/__init__.py
+share/libsigrokdecode/decoders/cc1101/lists.py
+share/libsigrokdecode/decoders/cc1101/pd.py
 share/libsigrokdecode/decoders/cec/
 share/libsigrokdecode/decoders/cec/__init__.py
 share/libsigrokdecode/decoders/cec/pd.py
@@ -83,6 +91,9 @@ share/libsigrokdecode/decoders/dmx512/pd.py
 share/libsigrokdecode/decoders/ds1307/
 share/libsigrokdecode/decoders/ds1307/__init__.py
 share/libsigrokdecode/decoders/ds1307/pd.py
+share/libsigrokdecode/decoders/ds2408/
+share/libsigrokdecode/decoders/ds2408/__init__.py
+share/libsigrokdecode/decoders/ds2408/pd.py
 share/libsigrokdecode/decoders/ds243x/
 share/libsigrokdecode/decoders/ds243x/__init__.py
 share/libsigrokdecode/decoders/ds243x/pd.py
@@ -108,6 +119,13 @@ share/libsigrokdecode/decoders/em4100/pd.py
 share/libsigrokdecode/decoders/em4305/
 share/libsigrokdecode/decoders/em4305/__init__.py
 share/libsigrokdecode/decoders/em4305/pd.py
+share/libsigrokdecode/decoders/enc28j60/
+share/libsigrokdecode/decoders/enc28j60/__init__.py
+share/libsigrokdecode/decoders/enc28j60/lists.py
+share/libsigrokdecode/decoders/enc28j60/pd.py
+share/libsigrokdecode/decoders/flexray/
+share/libsigrokdecode/decoders/flexray/__init__.py
+share/libsigrokdecode/decoders/flexray/pd.py
 share/libsigrokdecode/decoders/gpib/
 share/libsigrokdecode/decoders/gpib/__init__.py
 share/libsigrokdecode/decoders/gpib/pd.py
@@ -117,6 +135,9 @@ share/libsigrokdecode/decoders/graycode/pd.py
 share/libsigrokdecode/decoders/guess_bitrate/
 share/libsigrokdecode/decoders/guess_bitrate/__init__.py
 share/libsigrokdecode/decoders/guess_bitrate/pd.py
+share/libsigrokdecode/decoders/hdcp/
+share/libsigrokdecode/decoders/hdcp/__init__.py
+share/libsigrokdecode/decoders/hdcp/pd.py
 share/libsigrokdecode/decoders/i2c/
 share/libsigrokdecode/decoders/i2c/__init__.py
 share/libsigrokdecode/decoders/i2c/pd.py
@@ -132,6 +153,9 @@ share/libsigrokdecode/decoders/i2s/pd.py
 share/libsigrokdecode/decoders/iec/
 share/libsigrokdecode/decoders/iec/__init__.py
 share/libsigrokdecode/decoders/iec/pd.py
+share/libsigrokdecode/decoders/ieee488/
+share/libsigrokdecode/decoders/ieee488/__init__.py
+share/libsigrokdecode/decoders/ieee488/pd.py
 share/libsigrokdecode/decoders/ir_nec/
 share/libsigrokdecode/decoders/ir_nec/__init__.py
 share/libsigrokdecode/decoders/ir_nec/lists.py
@@ -140,6 +164,9 @@ share/libsigrokdecode/decoders/ir_rc5/
 share/libsigrokdecode/decoders/ir_rc5/__init__.py
 share/libsigrokdecode/decoders/ir_rc5/lists.py
 share/libsigrokdecode/decoders/ir_rc5/pd.py
+share/libsigrokdecode/decoders/ir_rc6/
+share/libsigrokdecode/decoders/ir_rc6/__init__.py
+share/libsigrokdecode/decoders/ir_rc6/pd.py
 share/libsigrokdecode/decoders/jitter/
 share/libsigrokdecode/decoders/jitter/__init__.py
 share/libsigrokdecode/decoders/jitter/pd.py
@@ -152,6 +179,9 @@ share/libsigrokdecode/decoders/jtag_ejtag/pd.py
 share/libsigrokdecode/decoders/jtag_stm32/
 share/libsigrokdecode/decoders/jtag_stm32/__init__.py
 share/libsigrokdecode/decoders/jtag_stm32/pd.py
+share/libsigrokdecode/decoders/lin/
+share/libsigrokdecode/decoders/lin/__init__.py
+share/libsigrokdecode/decoders/lin/pd.py
 share/libsigrokdecode/decoders/lm75/
 share/libsigrokdecode/decoders/lm75/__init__.py
 share/libsigrokdecode/decoders/lm75/pd.py
@@ -196,6 +226,9 @@ share/libsigrokdecode/decoders/mrf24j40/pd.py
 share/libsigrokdecode/decoders/mxc6225xu/
 share/libsigrokdecode/decoders/mxc6225xu/__init__.py
 share/libsigrokdecode/decoders/mxc6225xu/pd.py
+share/libsigrokdecode/decoders/nes_gamepad/
+share/libsigrokdecode/decoders/nes_gamepad/__init__.py
+share/libsigrokdecode/decoders/nes_gamepad/pd.py
 share/libsigrokdecode/decoders/nrf24l01/
 share/libsigrokdecode/decoders/nrf24l01/__init__.py
 share/libsigrokdecode/decoders/nrf24l01/pd.py
@@ -224,6 +257,9 @@ share/libsigrokdecode/decoders/pan1321/pd.py
 share/libsigrokdecode/decoders/parallel/
 share/libsigrokdecode/decoders/parallel/__init__.py
 share/libsigrokdecode/decoders/parallel/pd.py
+share/libsigrokdecode/decoders/pca9571/
+share/libsigrokdecode/decoders/pca9571/__init__.py
+share/libsigrokdecode/decoders/pca9571/pd.py
 share/libsigrokdecode/decoders/ps2/
 share/libsigrokdecode/decoders/ps2/__init__.py
 share/libsigrokdecode/decoders/ps2/pd.py
@@ -257,6 +293,12 @@ share/libsigrokdecode/decoders/sdcard_sd/pd.py
 share/libsigrokdecode/decoders/sdcard_spi/
 share/libsigrokdecode/decoders/sdcard_spi/__init__.py
 share/libsigrokdecode/decoders/sdcard_spi/pd.py
+share/libsigrokdecode/decoders/seven_segment/
+share/libsigrokdecode/decoders/seven_segment/__init__.py
+share/libsigrokdecode/decoders/seven_segment/pd.py
+share/libsigrokdecode/decoders/signature/
+share/libsigrokdecode/decoders/signature/__init__.py
+share/libsigrokdecode/decoders/signature/pd.py
 share/libsigrokdecode/decoders/spdif/
 share/libsigrokdecode/decoders/spdif/__init__.py
 share/libsigrokdecode/decoders/spdif/pd.py
@@ -288,6 +330,9 @@ share/libsigrokdecode/decoders/t55xx/pd.py
 share/libsigrokdecode/decoders/tca6408a/
 share/libsigrokdecode/decoders/tca6408a/__init__.py
 share/libsigrokdecode/decoders/tca6408a/pd.py
+share/libsigrokdecode/decoders/tdm_audio/
+share/libsigrokdecode/decoders/tdm_audio/__init__.py
+share/libsigrokdecode/decoders/tdm_audio/pd.py
 share/libsigrokdecode/decoders/timing/
 share/libsigrokdecode/decoders/timing/__init__.py
 share/libsigrokdecode/decoders/timing/pd.py
@@ -312,6 +357,9 @@ share/libsigrokdecode/decoders/usb_signalling/pd.py
 share/libsigrokdecode/decoders/wiegand/
 share/libsigrokdecode/decoders/wiegand/__init__.py
 share/libsigrokdecode/decoders/wiegand/pd.py
+share/libsigrokdecode/decoders/x2444m/
+share/libsigrokdecode/decoders/x2444m/__init__.py
+share/libsigrokdecode/decoders/x2444m/pd.py
 share/libsigrokdecode/decoders/xfp/
 share/libsigrokdecode/decoders/xfp/__init__.py
 share/libsigrokdecode/decoders/xfp/pd.py
