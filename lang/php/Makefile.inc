@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile.inc,v 1.145 2019/12/11 16:08:29 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.146 2019/12/18 20:22:05 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
 
-PKGNAME-main?=		php-${V}
+PKGNAME-main?=		php-${PHP_VERSION}
 PKGSTEM=		php-${PV}
 PKGSTEM-main=		php-${PV}
 
-DISTFILES+=		php-${V}.tar.bz2
+DISTNAME?=		php-${PHP_VERSION}
+EXTRACT_SUFX?=		.tar.xz
 
-DISTNAME?=		php-${V}
 CATEGORIES=		lang www
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
@@ -124,6 +124,8 @@ PSEUDO_FLAVORS+=	no_apache
 .if ${MACHINE_ARCH:Maarch64}
 BUILD_PACKAGES:=	${BUILD_PACKAGES:N-apache}
 .endif
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # sapi
 CONFIGURE_ARGS+=	--enable-cli \
@@ -389,9 +391,10 @@ WANTLIB-zip=		bz2 crypto pthread ssl z zip
 # some variables to substitute
 SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV
 UPDATE_PLIST_ARGS+= -i MV
-PHP_VERSION=	${V}
+PV=		${PHP_VERSION:R}
 MV=		${PV:R}
 SV=		${PV:S/.//}
+DEFAULT_PHP?=	No
 
 .for i in TRUEPREFIX MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
 PHPXS_SUBST+= -e 's,${i},${${i}},'
@@ -412,13 +415,9 @@ pre-configure:
 
 .for i in ${MULTI_PACKAGES:N-main:S/-//g}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
-PKGNAME-${i}=		php-${i}-${V}
-.if ${V:M7.2*}
-PKGSPEC-${i}=		php-${i}->=7.2,<7.3
-.elif ${V:M7.3*}
-PKGSPEC-${i}=		php-${i}->=7.3,<7.4
-.endif
-RUN_DEPENDS-${i}+=	php-${V}:lang/php/${PV}
+PKGNAME-${i}=		php-${i}-${PHP_VERSION}
+PKGSPEC-${i}=		php-${i}-${PHP_PKGSPEC}
+RUN_DEPENDS-${i}+=	php-${PHP_VERSION}:lang/php/${PV}
 .endfor
 
 DESCR-main=		${.CURDIR}/../files/DESCR-main
@@ -432,7 +431,7 @@ post-install:
 	${SUBST_DATA} ${.CURDIR}/../files/README-main \
 		${PREFIX}/share/doc/pkg-readmes/${PKGSTEM-main}
 .if ${BUILD_PACKAGES:M-apache}
-	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${PV:C/\.[0-9]$//}.so \
+	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${MV}.so \
 		${PREFIX}/${APACHE_MODULE_SUBDIR}/
 .endif
 	${INSTALL_DATA_DIR} ${WRKINST}/${CHROOT_DIR}/conf/php-${PV}.sample
@@ -481,7 +480,7 @@ post-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-${PV}.1
 
-.if ${PV} == "7.3"
+.if ${DEFAULT_PHP:L} == yes
 .for p in phar php
 	ln -s $p-${PV} ${PREFIX}/bin/$p
 .endfor

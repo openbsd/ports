@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.40 2019/11/21 23:35:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/12/18 20:22:05 sthen Exp $
 
 PORTROACH=	limit:^7\.2
-PV=		7.2
-V=		${PV}.25
+PHP_VERSION=	7.2.26
+PHP_PKGSPEC=	>=7.2,<7.3
 
 .include <bsd.port.mk>

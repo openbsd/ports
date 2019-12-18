@@ -1,4 +1,4 @@
-# $OpenBSD: pecl.port.mk,v 1.15 2019/12/11 16:08:29 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.16 2019/12/18 20:22:05 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
@@ -10,11 +10,10 @@ FLAVOR ?= php73
 # applied for packages built against the "ports default" version of PHP,
 # this allows updates from old removed versions without additional per-
 # flavour PFRAG files.
-.if ${FLAVOR} == php72
-MODPHP_VERSION = 7.2
-MODPECL_DEFAULTV = "@comment "
-.elif ${FLAVOR} == php73
-MODPHP_VERSION = 7.3
+MODPECL_DEFAULTV ?= "@comment "
+MODPHP_VERSION = ${FLAVOR:C/php([0-9])([0-9])/\1.\2/}
+
+.if ${FLAVOR} == php73
 MODPECL_DEFAULTV = ""
 .endif
 
