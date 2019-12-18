@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/18 07:42:27 bentley Exp $
 
 COMMENT =	Parallax Static Timing Analyzer
 
 # use version number from git log
 DISTNAME =	opensta-2.0.12.20190329
+REVISION =	0
+
 CATEGORIES =	cad
 
 GH_ACCOUNT =	abk-openroad
@@ -22,6 +24,8 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake \
 		lang/tcl
+
+MODTCL_VERSION =	8.6
 
 LIB_DEPENDS =	${MODTCL_LIB_DEPENDS} \
 		devel/cudd
