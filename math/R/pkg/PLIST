@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2019/04/29 08:52:48 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.43 2019/12/18 13:05:48 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -114,7 +114,7 @@ lib/R/library/KernSmooth/html/
 lib/R/library/KernSmooth/html/00Index.html
 lib/R/library/KernSmooth/html/R.css
 lib/R/library/KernSmooth/libs/
-lib/R/library/KernSmooth/libs/KernSmooth.so
+@so lib/R/library/KernSmooth/libs/KernSmooth.so
 lib/R/library/KernSmooth/po/
 lib/R/library/KernSmooth/po/de/
 lib/R/library/KernSmooth/po/de/LC_MESSAGES/
@@ -163,7 +163,7 @@ lib/R/library/MASS/html/
 lib/R/library/MASS/html/00Index.html
 lib/R/library/MASS/html/R.css
 lib/R/library/MASS/libs/
-lib/R/library/MASS/libs/MASS.so
+@so lib/R/library/MASS/libs/MASS.so
 lib/R/library/MASS/po/
 lib/R/library/MASS/po/de/
 lib/R/library/MASS/po/de/LC_MESSAGES/
@@ -273,7 +273,7 @@ lib/R/library/Matrix/include/Matrix.h
 lib/R/library/Matrix/include/Matrix_stubs.c
 lib/R/library/Matrix/include/cholmod.h
 lib/R/library/Matrix/libs/
-lib/R/library/Matrix/libs/Matrix.so
+@so lib/R/library/Matrix/libs/Matrix.so
 lib/R/library/Matrix/po/
 lib/R/library/Matrix/po/de/
 lib/R/library/Matrix/po/de/LC_MESSAGES/
@@ -404,7 +404,7 @@ lib/R/library/class/html/
 lib/R/library/class/html/00Index.html
 lib/R/library/class/html/R.css
 lib/R/library/class/libs/
-lib/R/library/class/libs/class.so
+@so lib/R/library/class/libs/class.so
 lib/R/library/class/po/
 lib/R/library/class/po/de/
 lib/R/library/class/po/de/LC_MESSAGES/
@@ -453,7 +453,7 @@ lib/R/library/cluster/html/
 lib/R/library/cluster/html/00Index.html
 lib/R/library/cluster/html/R.css
 lib/R/library/cluster/libs/
-lib/R/library/cluster/libs/cluster.so
+@so lib/R/library/cluster/libs/cluster.so
 lib/R/library/cluster/po/
 lib/R/library/cluster/po/de/
 lib/R/library/cluster/po/de/LC_MESSAGES/
@@ -580,7 +580,7 @@ lib/R/library/foreign/html/
 lib/R/library/foreign/html/00Index.html
 lib/R/library/foreign/html/R.css
 lib/R/library/foreign/libs/
-lib/R/library/foreign/libs/foreign.so
+@so lib/R/library/foreign/libs/foreign.so
 lib/R/library/foreign/po/
 lib/R/library/foreign/po/de/
 lib/R/library/foreign/po/de/LC_MESSAGES/
@@ -743,8 +743,8 @@ lib/R/library/grDevices/icc/
 lib/R/library/grDevices/icc/srgb
 lib/R/library/grDevices/icc/srgb.flate
 lib/R/library/grDevices/libs/
-lib/R/library/grDevices/libs/cairo.so
-lib/R/library/grDevices/libs/grDevices.so
+@so lib/R/library/grDevices/libs/cairo.so
+@so lib/R/library/grDevices/libs/grDevices.so
 lib/R/library/graphics/
 lib/R/library/graphics/DESCRIPTION
 lib/R/library/graphics/INDEX
@@ -786,7 +786,7 @@ lib/R/library/graphics/html/
 lib/R/library/graphics/html/00Index.html
 lib/R/library/graphics/html/R.css
 lib/R/library/graphics/libs/
-lib/R/library/graphics/libs/graphics.so
+@so lib/R/library/graphics/libs/graphics.so
 lib/R/library/grid/
 lib/R/library/grid/DESCRIPTION
 lib/R/library/grid/INDEX
@@ -856,7 +856,7 @@ lib/R/library/grid/html/
 lib/R/library/grid/html/00Index.html
 lib/R/library/grid/html/R.css
 lib/R/library/grid/libs/
-lib/R/library/grid/libs/grid.so
+@so lib/R/library/grid/libs/grid.so
 lib/R/library/lattice/
 lib/R/library/lattice/CITATION
 lib/R/library/lattice/DESCRIPTION
@@ -895,7 +895,7 @@ lib/R/library/lattice/html/
 lib/R/library/lattice/html/00Index.html
 lib/R/library/lattice/html/R.css
 lib/R/library/lattice/libs/
-lib/R/library/lattice/libs/lattice.so
+@so lib/R/library/lattice/libs/lattice.so
 lib/R/library/lattice/po/
 lib/R/library/lattice/po/de/
 lib/R/library/lattice/po/de/LC_MESSAGES/
@@ -937,7 +937,7 @@ lib/R/library/methods/html/
 lib/R/library/methods/html/00Index.html
 lib/R/library/methods/html/R.css
 lib/R/library/methods/libs/
-lib/R/library/methods/libs/methods.so
+@so lib/R/library/methods/libs/methods.so
 lib/R/library/mgcv/
 lib/R/library/mgcv/CITATION
 lib/R/library/mgcv/DESCRIPTION
@@ -968,7 +968,7 @@ lib/R/library/mgcv/html/
 lib/R/library/mgcv/html/00Index.html
 lib/R/library/mgcv/html/R.css
 lib/R/library/mgcv/libs/
-lib/R/library/mgcv/libs/mgcv.so
+@so lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/mgcv/po/
 lib/R/library/mgcv/po/de/
 lib/R/library/mgcv/po/de/LC_MESSAGES/
@@ -1022,7 +1022,7 @@ lib/R/library/nlme/html/
 lib/R/library/nlme/html/00Index.html
 lib/R/library/nlme/html/R.css
 lib/R/library/nlme/libs/
-lib/R/library/nlme/libs/nlme.so
+@so lib/R/library/nlme/libs/nlme.so
 lib/R/library/nlme/mlbook/
 lib/R/library/nlme/mlbook/README
 lib/R/library/nlme/mlbook/ch04.R
@@ -1085,7 +1085,7 @@ lib/R/library/nnet/html/
 lib/R/library/nnet/html/00Index.html
 lib/R/library/nnet/html/R.css
 lib/R/library/nnet/libs/
-lib/R/library/nnet/libs/nnet.so
+@so lib/R/library/nnet/libs/nnet.so
 lib/R/library/nnet/po/
 lib/R/library/nnet/po/de/
 lib/R/library/nnet/po/de/LC_MESSAGES/
@@ -1133,7 +1133,7 @@ lib/R/library/parallel/html/
 lib/R/library/parallel/html/00Index.html
 lib/R/library/parallel/html/R.css
 lib/R/library/parallel/libs/
-lib/R/library/parallel/libs/parallel.so
+@so lib/R/library/parallel/libs/parallel.so
 lib/R/library/rpart/
 lib/R/library/rpart/DESCRIPTION
 lib/R/library/rpart/INDEX
@@ -1176,7 +1176,7 @@ lib/R/library/rpart/html/
 lib/R/library/rpart/html/00Index.html
 lib/R/library/rpart/html/R.css
 lib/R/library/rpart/libs/
-lib/R/library/rpart/libs/rpart.so
+@so lib/R/library/rpart/libs/rpart.so
 lib/R/library/rpart/po/
 lib/R/library/rpart/po/de/
 lib/R/library/rpart/po/de/LC_MESSAGES/
@@ -1230,7 +1230,7 @@ lib/R/library/spatial/html/
 lib/R/library/spatial/html/00Index.html
 lib/R/library/spatial/html/R.css
 lib/R/library/spatial/libs/
-lib/R/library/spatial/libs/spatial.so
+@so lib/R/library/spatial/libs/spatial.so
 lib/R/library/spatial/po/
 lib/R/library/spatial/po/de/
 lib/R/library/spatial/po/de/LC_MESSAGES/
@@ -1297,7 +1297,7 @@ lib/R/library/splines/html/
 lib/R/library/splines/html/00Index.html
 lib/R/library/splines/html/R.css
 lib/R/library/splines/libs/
-lib/R/library/splines/libs/splines.so
+@so lib/R/library/splines/libs/splines.so
 lib/R/library/stats/
 lib/R/library/stats/COPYRIGHTS.modreg
 lib/R/library/stats/DESCRIPTION
@@ -1331,7 +1331,7 @@ lib/R/library/stats/html/
 lib/R/library/stats/html/00Index.html
 lib/R/library/stats/html/R.css
 lib/R/library/stats/libs/
-lib/R/library/stats/libs/stats.so
+@so lib/R/library/stats/libs/stats.so
 lib/R/library/stats4/
 lib/R/library/stats4/DESCRIPTION
 lib/R/library/stats4/INDEX
@@ -1384,6 +1384,9 @@ lib/R/library/survival/doc/
 lib/R/library/survival/doc/adjcurve.R
 lib/R/library/survival/doc/adjcurve.Rnw
 lib/R/library/survival/doc/adjcurve.pdf
+lib/R/library/survival/doc/approximate.R
+lib/R/library/survival/doc/approximate.Rnw
+lib/R/library/survival/doc/approximate.pdf
 lib/R/library/survival/doc/compete.R
 lib/R/library/survival/doc/compete.Rnw
 lib/R/library/survival/doc/compete.pdf
@@ -1391,9 +1394,10 @@ lib/R/library/survival/doc/concordance.R
 lib/R/library/survival/doc/concordance.Rnw
 lib/R/library/survival/doc/concordance.pdf
 lib/R/library/survival/doc/index.html
-lib/R/library/survival/doc/multi.R
 lib/R/library/survival/doc/multi.Rnw
 lib/R/library/survival/doc/multi.pdf
+lib/R/library/survival/doc/other.Rnw
+lib/R/library/survival/doc/other.pdf
 lib/R/library/survival/doc/population.R
 lib/R/library/survival/doc/population.Rnw
 lib/R/library/survival/doc/population.pdf
@@ -1403,9 +1407,6 @@ lib/R/library/survival/doc/splines.pdf
 lib/R/library/survival/doc/survival.R
 lib/R/library/survival/doc/survival.Rnw
 lib/R/library/survival/doc/survival.pdf
-lib/R/library/survival/doc/tests.R
-lib/R/library/survival/doc/tests.Rnw
-lib/R/library/survival/doc/tests.pdf
 lib/R/library/survival/doc/tiedtimes.R
 lib/R/library/survival/doc/tiedtimes.Rnw
 lib/R/library/survival/doc/tiedtimes.pdf
@@ -1427,7 +1428,7 @@ lib/R/library/survival/html/
 lib/R/library/survival/html/00Index.html
 lib/R/library/survival/html/R.css
 lib/R/library/survival/libs/
-lib/R/library/survival/libs/survival.so
+@so lib/R/library/survival/libs/survival.so
 lib/R/library/tcltk/
 lib/R/library/tcltk/DESCRIPTION
 lib/R/library/tcltk/INDEX
@@ -1472,7 +1473,7 @@ lib/R/library/tcltk/html/
 lib/R/library/tcltk/html/00Index.html
 lib/R/library/tcltk/html/R.css
 lib/R/library/tcltk/libs/
-lib/R/library/tcltk/libs/tcltk.so
+@so lib/R/library/tcltk/libs/tcltk.so
 lib/R/library/tools/
 lib/R/library/tools/DESCRIPTION
 lib/R/library/tools/INDEX
@@ -1500,7 +1501,7 @@ lib/R/library/tools/html/
 lib/R/library/tools/html/00Index.html
 lib/R/library/tools/html/R.css
 lib/R/library/tools/libs/
-lib/R/library/tools/libs/tools.so
+@so lib/R/library/tools/libs/tools.so
 lib/R/library/translations/
 lib/R/library/translations/DESCRIPTION
 lib/R/library/translations/da/
@@ -1855,15 +1856,15 @@ lib/R/library/utils/html/00Index.html
 lib/R/library/utils/html/R.css
 lib/R/library/utils/iconvlist
 lib/R/library/utils/libs/
-lib/R/library/utils/libs/utils.so
+@so lib/R/library/utils/libs/utils.so
 lib/R/library/utils/misc/
 lib/R/library/utils/misc/exDIF.csv
 lib/R/library/utils/misc/exDIF.dif
 lib/R/modules/
-lib/R/modules/R_X11.so
-lib/R/modules/R_de.so
-lib/R/modules/internet.so
-lib/R/modules/lapack.so
+@so lib/R/modules/R_X11.so
+@so lib/R/modules/R_de.so
+@so lib/R/modules/internet.so
+@so lib/R/modules/lapack.so
 lib/R/share/
 lib/R/share/R/
 lib/R/share/R/REMOVE.R

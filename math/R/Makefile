@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.112 2019/07/05 19:27:30 feinerer Exp $
+# $OpenBSD: Makefile,v 1.113 2019/12/18 13:05:48 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.6.1
+DISTNAME=	R-3.6.2
 
-SO_VERSION=	35.1
+SO_VERSION=	36.0
 .for _lib in R Rblas Rlapack
 SHARED_LIBS +=	${_lib} ${SO_VERSION}
 .endfor
@@ -16,7 +16,7 @@ MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB} ${MODFORTRAN_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo crypto curl
 WANTLIB += glib-2.0 gobject-2.0 iconv icui18n icuuc intl jpeg lzma m
 WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre pcre2-8 png readline ssl tiff z
