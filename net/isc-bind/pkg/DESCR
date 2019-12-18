@@ -5,4 +5,3 @@ suitable for use in high-volume and high-reliability applications.
 
 Flavours:
 	geoip - include support for geolocation using GeoIP2 (libmaxminddb)
-	no_ssl - build BIND without crypto support

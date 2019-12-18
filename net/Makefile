@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1156 2019/12/17 21:07:20 bket Exp $
+# $OpenBSD: Makefile,v 1.1157 2019/12/18 19:38:17 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -173,7 +173,6 @@
      SUBDIR += irssi-xmpp
      SUBDIR += isc-bind
      SUBDIR += isc-bind,geoip
-     SUBDIR += isc-bind,no_ssl
      SUBDIR += isc-dhcp
      SUBDIR += jabberd,mysql
      SUBDIR += jabberd,mysql,ldap

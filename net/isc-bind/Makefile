@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.103 2019/12/18 15:05:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2019/12/18 19:38:17 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # 9.11 is an ESV.  After 9.11 the format changes: odd numbers are devel,
 # even numbers are stable (and for stable branches, point releases are
 # bug fixes only).  The next ESV will be 9.16.
-V=		9.14.8
+V=		9.14.9
 EPOCH=		0
 
 DISTNAME=	bind-$V
@@ -29,7 +29,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv idn2 json-c lzma m pthread unistring xml2 z
+WANTLIB += c crypto iconv idn2 json-c lzma m pthread unistring xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
@@ -58,6 +58,9 @@ CONFIGURE_ARGS=	--enable-full-report \
 
 CONFIGURE_ENV=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 .include <bsd.port.arch.mk>
 
 # we don't link with libgcc, use the c++abi unwinder instead
@@ -68,20 +71,12 @@ WANTLIB +=	c++abi
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 
-FLAVORS=	geoip no_ssl
+FLAVORS=	geoip
 FLAVOR?=
 .if ${FLAVOR:Mgeoip}
 CONFIGURE_ARGS+= --with-geoip2
 LIB_DEPENDS+=	net/libmaxminddb
 WANTLIB+=	maxminddb
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
-.endif
-
-.if ${FLAVOR:Mno_ssl}
-CONFIGURE_ARGS+= --without-openssl
-.else
-WANTLIB+=	crypto
 .endif
 
 # not strictly speaking interactive, but it configures temporary addresses on
