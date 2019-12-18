@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/15 11:52:23 cwen Exp $
-%%aesni%%
+@comment $OpenBSD: PLIST,v 1.3 2019/12/18 15:09:16 sthen Exp $
 @bin bin/pki
 lib/ipsec/
 @lib lib/ipsec/libcharon.so.${LIBcharon_VERSION}
@@ -9,56 +8,57 @@ lib/ipsec/
 @lib lib/ipsec/libtls.so.${LIBtls_VERSION}
 @lib lib/ipsec/libvici.so.${LIBvici_VERSION}
 lib/ipsec/plugins/
-lib/ipsec/plugins/libstrongswan-aes.so
-lib/ipsec/plugins/libstrongswan-attr.so
-lib/ipsec/plugins/libstrongswan-botan.so
-lib/ipsec/plugins/libstrongswan-chapoly.so
-lib/ipsec/plugins/libstrongswan-cmac.so
-lib/ipsec/plugins/libstrongswan-constraints.so
-lib/ipsec/plugins/libstrongswan-counters.so
-lib/ipsec/plugins/libstrongswan-curve25519.so
-lib/ipsec/plugins/libstrongswan-des.so
-lib/ipsec/plugins/libstrongswan-dnskey.so
-lib/ipsec/plugins/libstrongswan-eap-gtc.so
-lib/ipsec/plugins/libstrongswan-eap-identity.so
-lib/ipsec/plugins/libstrongswan-eap-mschapv2.so
-lib/ipsec/plugins/libstrongswan-eap-peap.so
-lib/ipsec/plugins/libstrongswan-eap-radius.so
-lib/ipsec/plugins/libstrongswan-eap-tls.so
-lib/ipsec/plugins/libstrongswan-eap-ttls.so
-lib/ipsec/plugins/libstrongswan-fips-prf.so
-lib/ipsec/plugins/libstrongswan-gcm.so
-lib/ipsec/plugins/libstrongswan-gmp.so
-lib/ipsec/plugins/libstrongswan-hmac.so
-lib/ipsec/plugins/libstrongswan-kernel-libipsec.so
-lib/ipsec/plugins/libstrongswan-kernel-pfroute.so
-lib/ipsec/plugins/libstrongswan-md4.so
-lib/ipsec/plugins/libstrongswan-md5.so
-lib/ipsec/plugins/libstrongswan-mgf1.so
-lib/ipsec/plugins/libstrongswan-nonce.so
-lib/ipsec/plugins/libstrongswan-pem.so
-lib/ipsec/plugins/libstrongswan-pgp.so
-lib/ipsec/plugins/libstrongswan-pkcs1.so
-lib/ipsec/plugins/libstrongswan-pkcs11.so
-lib/ipsec/plugins/libstrongswan-pkcs12.so
-lib/ipsec/plugins/libstrongswan-pkcs7.so
-lib/ipsec/plugins/libstrongswan-pkcs8.so
-lib/ipsec/plugins/libstrongswan-pubkey.so
-lib/ipsec/plugins/libstrongswan-random.so
-lib/ipsec/plugins/libstrongswan-rc2.so
-lib/ipsec/plugins/libstrongswan-resolve.so
-lib/ipsec/plugins/libstrongswan-revocation.so
-lib/ipsec/plugins/libstrongswan-sha1.so
-lib/ipsec/plugins/libstrongswan-sha2.so
-lib/ipsec/plugins/libstrongswan-socket-default.so
-lib/ipsec/plugins/libstrongswan-sshkey.so
-lib/ipsec/plugins/libstrongswan-stroke.so
-lib/ipsec/plugins/libstrongswan-updown.so
-lib/ipsec/plugins/libstrongswan-vici.so
-lib/ipsec/plugins/libstrongswan-x509.so
-lib/ipsec/plugins/libstrongswan-xauth-eap.so
-lib/ipsec/plugins/libstrongswan-xauth-generic.so
-lib/ipsec/plugins/libstrongswan-xcbc.so
+@so lib/ipsec/plugins/libstrongswan-aes.so
+@so lib/ipsec/plugins/libstrongswan-attr.so
+@so lib/ipsec/plugins/libstrongswan-botan.so
+@so lib/ipsec/plugins/libstrongswan-chapoly.so
+@so lib/ipsec/plugins/libstrongswan-cmac.so
+@so lib/ipsec/plugins/libstrongswan-constraints.so
+@so lib/ipsec/plugins/libstrongswan-counters.so
+@so lib/ipsec/plugins/libstrongswan-curve25519.so
+@so lib/ipsec/plugins/libstrongswan-des.so
+@so lib/ipsec/plugins/libstrongswan-dnskey.so
+@so lib/ipsec/plugins/libstrongswan-drbg.so
+@so lib/ipsec/plugins/libstrongswan-eap-gtc.so
+@so lib/ipsec/plugins/libstrongswan-eap-identity.so
+@so lib/ipsec/plugins/libstrongswan-eap-mschapv2.so
+@so lib/ipsec/plugins/libstrongswan-eap-peap.so
+@so lib/ipsec/plugins/libstrongswan-eap-radius.so
+@so lib/ipsec/plugins/libstrongswan-eap-tls.so
+@so lib/ipsec/plugins/libstrongswan-eap-ttls.so
+@so lib/ipsec/plugins/libstrongswan-fips-prf.so
+@so lib/ipsec/plugins/libstrongswan-gcm.so
+@so lib/ipsec/plugins/libstrongswan-gmp.so
+@so lib/ipsec/plugins/libstrongswan-hmac.so
+@so lib/ipsec/plugins/libstrongswan-kernel-libipsec.so
+@so lib/ipsec/plugins/libstrongswan-kernel-pfroute.so
+@so lib/ipsec/plugins/libstrongswan-md4.so
+@so lib/ipsec/plugins/libstrongswan-md5.so
+@so lib/ipsec/plugins/libstrongswan-mgf1.so
+@so lib/ipsec/plugins/libstrongswan-nonce.so
+@so lib/ipsec/plugins/libstrongswan-pem.so
+@so lib/ipsec/plugins/libstrongswan-pgp.so
+@so lib/ipsec/plugins/libstrongswan-pkcs1.so
+@so lib/ipsec/plugins/libstrongswan-pkcs11.so
+@so lib/ipsec/plugins/libstrongswan-pkcs12.so
+@so lib/ipsec/plugins/libstrongswan-pkcs7.so
+@so lib/ipsec/plugins/libstrongswan-pkcs8.so
+@so lib/ipsec/plugins/libstrongswan-pubkey.so
+@so lib/ipsec/plugins/libstrongswan-random.so
+@so lib/ipsec/plugins/libstrongswan-rc2.so
+@so lib/ipsec/plugins/libstrongswan-resolve.so
+@so lib/ipsec/plugins/libstrongswan-revocation.so
+@so lib/ipsec/plugins/libstrongswan-sha1.so
+@so lib/ipsec/plugins/libstrongswan-sha2.so
+@so lib/ipsec/plugins/libstrongswan-socket-default.so
+@so lib/ipsec/plugins/libstrongswan-sshkey.so
+@so lib/ipsec/plugins/libstrongswan-stroke.so
+@so lib/ipsec/plugins/libstrongswan-updown.so
+@so lib/ipsec/plugins/libstrongswan-vici.so
+@so lib/ipsec/plugins/libstrongswan-x509.so
+@so lib/ipsec/plugins/libstrongswan-xauth-eap.so
+@so lib/ipsec/plugins/libstrongswan-xauth-generic.so
+@so lib/ipsec/plugins/libstrongswan-xcbc.so
 libexec/ipsec/
 @bin libexec/ipsec/_copyright
 libexec/ipsec/_updown
@@ -145,6 +145,7 @@ share/examples/strongswan/strongswan.d/charon/des.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/des.conf
 share/examples/strongswan/strongswan.d/charon/dnskey.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/dnskey.conf
+share/examples/strongswan/strongswan.d/charon/drbg.conf
 share/examples/strongswan/strongswan.d/charon/eap-gtc.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/eap-gtc.conf
 share/examples/strongswan/strongswan.d/charon/eap-identity.conf
@@ -265,6 +266,7 @@ share/examples/strongswan/swanctl/x509crl/
 @sample ${SYSCONFDIR}/swanctl/x509crl/
 share/examples/strongswan/swanctl/x509ocsp/
 @sample ${SYSCONFDIR}/swanctl/x509ocsp/
+%%aesni%%
 share/strongswan/
 share/strongswan/templates/
 share/strongswan/templates/config/
@@ -279,6 +281,7 @@ share/strongswan/templates/config/plugins/counters.conf
 share/strongswan/templates/config/plugins/curve25519.conf
 share/strongswan/templates/config/plugins/des.conf
 share/strongswan/templates/config/plugins/dnskey.conf
+share/strongswan/templates/config/plugins/drbg.conf
 share/strongswan/templates/config/plugins/eap-gtc.conf
 share/strongswan/templates/config/plugins/eap-identity.conf
 share/strongswan/templates/config/plugins/eap-mschapv2.conf

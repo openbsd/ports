@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.aesni,v 1.1 2019/05/15 11:52:23 cwen Exp $
-lib/ipsec/plugins/libstrongswan-aesni.so
+@comment $OpenBSD: PFRAG.aesni,v 1.2 2019/12/18 15:09:16 sthen Exp $
+@so lib/ipsec/plugins/libstrongswan-aesni.so
 share/examples/strongswan/strongswan.d/charon/aesni.conf
 share/strongswan/templates/config/plugins/aesni.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/aesni.conf
