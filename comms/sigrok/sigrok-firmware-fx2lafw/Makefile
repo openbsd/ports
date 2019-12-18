@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/18 06:56:25 bentley Exp $
 
 COMMENT =		firmware for FX2 logic analyzers
 
 SIGROK_PROJECT =	sigrok-firmware-fx2lafw-bin
-SIGROK_VERSION =	0.1.6
+SIGROK_VERSION =	0.1.7
 
 PKGNAME =		sigrok-firmware-fx2lafw-${SIGROK_VERSION}
 MASTER_SITES =		https://sigrok.org/download/binary/sigrok-firmware-fx2lafw/

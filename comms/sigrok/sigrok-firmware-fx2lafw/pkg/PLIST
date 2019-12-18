@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/18 06:56:25 bentley Exp $
 share/sigrok-firmware/
 share/sigrok-firmware/fx2lafw-braintechnology-usb-lps.fw
 share/sigrok-firmware/fx2lafw-cwav-usbeeax.fw
@@ -12,3 +12,4 @@ share/sigrok-firmware/fx2lafw-sainsmart-dds120.fw
 share/sigrok-firmware/fx2lafw-saleae-logic.fw
 share/sigrok-firmware/fx2lafw-sigrok-fx2-16ch.fw
 share/sigrok-firmware/fx2lafw-sigrok-fx2-8ch.fw
+share/sigrok-firmware/fx2lafw-yixingdianzi-mdso.fw
