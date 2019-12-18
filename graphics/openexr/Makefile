@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/11/12 20:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2019/12/18 13:16:15 visa Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -47,6 +47,10 @@ MODULES=		devel/cmake \
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+CXXFLAGS +=		-mxgot
+.endif
 
 CONFIGURE_ARGS=		-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
