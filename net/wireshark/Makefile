@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.99 2019/12/05 17:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2019/12/19 15:48:56 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
-V =		3.0.7
+V =		3.2.0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -50,11 +50,12 @@ MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
-WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB} bcg729 cares gnutls
-WANTLIB-text += lz4 maxminddb nghttp2 smi snappy spandsp ssh xml2
+WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
+WANTLIB-text += bcg729 brotlidec cares gnutls lz4 maxminddb nghttp2
+WANTLIB-text += smi snappy spandsp speexdsp ssh xml2 zstd
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += wireshark wiretap wscodecs wsutil
+WANTLIB-main += speexdsp wireshark wiretap wsutil
 WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 
 MASTER_SITES =		https://www.wireshark.org/download/src/all-versions/
@@ -76,8 +77,10 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 RUN_DEPENDS-text =	# empty
 
 LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
+			archivers/brotli \
 			archivers/lz4 \
 			archivers/snappy \
+			audio/speexdsp \
 			devel/glib2 \
 			net/libcares \
 			net/libmaxminddb  \

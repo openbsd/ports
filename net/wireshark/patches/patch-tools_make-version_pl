@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_make-version_pl,v 1.1 2019/03/09 18:04:28 sthen Exp $
+$OpenBSD: patch-tools_make-version_pl,v 1.2 2019/12/19 15:48:56 sthen Exp $
 
 avoid ugly "Git Rev Unknown from Unknown"
 
 Index: tools/make-version.pl
 --- tools/make-version.pl.orig
 +++ tools/make-version.pl
-@@ -57,7 +57,7 @@ my $script_dir = dirname(__FILE__);
+@@ -63,7 +63,7 @@ my $script_dir = dirname(__FILE__);
  my $src_dir = "$script_dir/..";
  my $verbose = 0;
  my $devnull = File::Spec->devnull();

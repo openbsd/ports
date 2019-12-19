@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.10 2019/09/22 13:13:48 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.11 2019/12/19 15:48:56 sthen Exp $
 
 Avoid the broken libwsutil.so that gets generated with -pie -shared
 (probably following tools/clang/lib/Driver/Tools.cpp r1.13 "push back
@@ -7,15 +7,12 @@ Avoid the broken libwsutil.so that gets generated with -pie -shared
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -924,11 +924,6 @@ if(NOT CMAKE_C_COMPILER_ID MATCHES "MSVC" AND NOT OSS_
- 	if(CMAKE_VERSION VERSION_GREATER "3.13.999")
- 		include(CheckPIESupported)
- 		check_pie_supported()
--	else()
--		check_c_linker_flag(-pie LINK_pie_VALID)
--		if(LINK_pie_VALID)
--			set(CMAKE_EXE_LINKER_FLAGS "-pie ${CMAKE_EXE_LINKER_FLAGS}")
--		endif()
- 	endif()
- endif()
+@@ -935,7 +935,7 @@ endif()
  
+ include(CheckCLinkerFlag)
+ 
+-if(NOT CMAKE_C_COMPILER_ID MATCHES "MSVC" AND NOT OSS_FUZZ)
++if(NOT CMAKE_C_COMPILER_ID MATCHES "MSVC" AND NOT OSS_FUZZ AND NOT CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
+ 	#
+ 	# The -pie linker option produces a position-independent executable.
+ 	# Some Linux distributions have this enabled by default in the compiler,
