@@ -1,0 +1,36 @@
+$OpenBSD: patch-tests_test_common_h,v 1.1.1.1 2019/12/19 07:00:24 feinerer Exp $
+
+Our aligned_alloc(3) is C11, but more strict than on other platforms. Many tests
+here fail with EINVAL if 'size' is not a multiple of 'alignment' _and_
+alignment is not a power of 2. To better identify these cases, extend the error
+message.
+
+Index: tests/test_common.h
+--- tests/test_common.h.orig
++++ tests/test_common.h
+@@ -14,6 +14,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <errno.h>
+ #include <string.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -62,7 +63,7 @@ static void* blosc_test_malloc(const size_t alignment,
+   void *block = NULL;
+   int32_t res = 0;
+ 
+-#if defined(_ISOC11_SOURCE) || (defined(__FreeBSD__) && __STDC_VERSION__ >= 201112L)
++#if defined(_ISOC11_SOURCE) || __STDC_VERSION__ >= 201112L
+   /* C11 aligned allocation. 'size' must be a multiple of the alignment. */
+   block = aligned_alloc(alignment, size);
+ #elif defined(_WIN32)
+@@ -79,7 +80,7 @@ static void* blosc_test_malloc(const size_t alignment,
+ #endif
+ 
+   if (block == NULL || res != 0) {
+-    fprintf(stderr, "Error allocating memory!");
++    fprintf(stderr, "Error allocating memory: errno=%d, err_msg=\"%s\"\n", errno, strerror(errno));
+     return NULL;
+   }
+ 
