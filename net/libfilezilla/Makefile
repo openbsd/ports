@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/09 16:29:06 bket Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/19 11:42:51 cwen Exp $
 
 COMMENT =	support library for FileZilla
 
@@ -37,5 +37,11 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
+
+# undefined reference to `__atomic_store_8'
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB += atomic
+LDFLAGS += -latomic
+.endif
 
 .include <bsd.port.mk>
