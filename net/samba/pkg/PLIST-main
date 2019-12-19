@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.52 2019/12/04 00:17:53 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.53 2019/12/19 02:57:28 jca Exp $
 @conflict ldb-<1.3.6p5
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
@@ -11,7 +11,6 @@
 @sample ${SYSCONFDIR}/samba/
 @bin bin/cifsdd
 @bin bin/dbwrap_tool
-@bin bin/dumpmscat
 bin/findsmb
 @bin bin/gentest
 @bin bin/locktest
@@ -118,14 +117,16 @@ include/samba-4.0/util/blocking.h
 include/samba-4.0/util/byteorder.h
 include/samba-4.0/util/data_blob.h
 include/samba-4.0/util/debug.h
-include/samba-4.0/util/discard.h
 include/samba-4.0/util/fault.h
 include/samba-4.0/util/genrand.h
 include/samba-4.0/util/idtree.h
 include/samba-4.0/util/idtree_random.h
+include/samba-4.0/util/memory.h
+include/samba-4.0/util/safe_string.h
 include/samba-4.0/util/signal.h
 include/samba-4.0/util/string_wrappers.h
 include/samba-4.0/util/substitute.h
+include/samba-4.0/util/talloc_stack.h
 include/samba-4.0/util/tevent_ntstatus.h
 include/samba-4.0/util/tevent_unix.h
 include/samba-4.0/util/tevent_werror.h
@@ -217,20 +218,15 @@ lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/__init__.${MODPY_PYOEXTENS
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/nbt.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/netlogon.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/ntlmssp.so
-@so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/preg.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/samr.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/security.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/server_id.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/smb_acl.so
-@so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/spoolss.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/srvsvc.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/svcctl.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/unixinfo.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/winbind.so
-@so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/windows_event_ids.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/winreg.so
-@so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/winspool.so
-@so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/witness.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/wkssvc.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/xattr.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dckeytab.so
@@ -265,28 +261,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/forest_update.${MODPY_PYOEXTENSIO
 lib/python${MODPY_VERSION}/site-packages/samba/getopt.py
 lib/python${MODPY_VERSION}/site-packages/samba/getopt.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/getopt.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/gp_ext_loader.py
-lib/python${MODPY_VERSION}/site-packages/samba/gp_ext_loader.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/gp_ext_loader.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/__init__.py
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/__init__.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_aas.py
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_aas.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_aas.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_csv.py
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_csv.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_csv.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_inf.py
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_inf.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_inf.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_ini.py
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_ini.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_ini.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_pol.py
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_pol.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/gp_parse/gp_pol.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/gp_sec_ext.py
 lib/python${MODPY_VERSION}/site-packages/samba/gp_sec_ext.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/gp_sec_ext.${MODPY_PYOEXTENSION}
@@ -325,9 +299,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/kcc/kcc_utils.${MODPY_PYOEXTENSIO
 lib/python${MODPY_VERSION}/site-packages/samba/kcc/ldif_import_export.py
 lib/python${MODPY_VERSION}/site-packages/samba/kcc/ldif_import_export.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/kcc/ldif_import_export.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/logger.py
-lib/python${MODPY_VERSION}/site-packages/samba/logger.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/logger.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/mdb_util.py
 lib/python${MODPY_VERSION}/site-packages/samba/mdb_util.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/mdb_util.${MODPY_PYOEXTENSION}
@@ -549,18 +520,12 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/check_output.${MOD
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/ndrdump.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/ndrdump.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/ndrdump.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/netads_json.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/netads_json.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/netads_json.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/samba_dnsupdate.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/samba_dnsupdate.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/samba_dnsupdate.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol_process.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol_process.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol_process.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_learner.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_learner.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_learner.${MODPY_PYOEXTENSION}
@@ -576,9 +541,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/undoguididx.${MODP
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/complex_expressions.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/complex_expressions.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/complex_expressions.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/core.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/core.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/core.${MODPY_PYOEXTENSION}
@@ -625,9 +587,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/sam.${MODPY_PYOEXTEN
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/srvsvc.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/srvsvc.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/srvsvc.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/string_tests.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/string_tests.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/string_tests.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/string.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/string.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/string.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/testrpc.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/testrpc.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/testrpc.${MODPY_PYOEXTENSION}
@@ -647,9 +609,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/
-lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/dns_hub.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/dns_hub.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/dns_hub.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/server.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/server.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/server.${MODPY_PYOEXTENSION}
@@ -668,9 +627,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/docs.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/domain_backup.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/domain_backup.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/domain_backup.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/domain_backup_offline.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/domain_backup_offline.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/domain_backup_offline.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb.${MODPY_PYOEXTENSION}
@@ -742,9 +698,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5_credentials.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ldap_referrals.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ldap_referrals.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ldap_referrals.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb_samba_internal.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb_samba_internal.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb_samba_internal.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/loadparm.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/loadparm.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/loadparm.${MODPY_PYOEXTENSION}
@@ -775,24 +731,12 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls.${MODPY_PYOEXTENSION
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls_backup.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls_backup.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls_backup.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth_base.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth_base.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth_base.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth_krb5.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth_krb5.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth_krb5.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmdisabled.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmdisabled.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmdisabled.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_chauthtok.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_chauthtok.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_chauthtok.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_warn_pwd_expire.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_warn_pwd_expire.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_warn_pwd_expire.${MODPY_PYOEXTENSION}
@@ -826,12 +770,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/policy.${MODPY_PYOEXTENSION
 lib/python${MODPY_VERSION}/site-packages/samba/tests/posixacl.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/posixacl.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/posixacl.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/prefork_restart.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/prefork_restart.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/prefork_restart.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/process_limits.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/process_limits.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/process_limits.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/provision.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/provision.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/provision.${MODPY_PYOEXTENSION}
@@ -968,6 +906,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/subunitrun.${MODPY_PYOEXTEN
 lib/python${MODPY_VERSION}/site-packages/samba/tests/tdb_util.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/tdb_util.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/tdb_util.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/unicodenames.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/unicodenames.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/unicodenames.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/upgrade.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/upgrade.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/upgrade.${MODPY_PYOEXTENSION}
@@ -1000,9 +941,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/upgrade.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/upgradehelpers.py
 lib/python${MODPY_VERSION}/site-packages/samba/upgradehelpers.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/upgradehelpers.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/uptodateness.py
-lib/python${MODPY_VERSION}/site-packages/samba/uptodateness.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/uptodateness.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/web_server/
 lib/python${MODPY_VERSION}/site-packages/samba/web_server/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/web_server/__init__.pyc
@@ -1019,7 +957,6 @@ lib/samba/bind9/
 @so lib/samba/bind9/dlz_bind9.so
 @so lib/samba/bind9/dlz_bind9_10.so
 @so lib/samba/bind9/dlz_bind9_11.so
-@so lib/samba/bind9/dlz_bind9_12.so
 @so lib/samba/bind9/dlz_bind9_9.so
 lib/samba/gensec/
 @so lib/samba/gensec/krb5.so
@@ -1057,7 +994,6 @@ lib/samba/krb5/
 @so lib/samba/ldb/objectclass_attrs.so
 @so lib/samba/ldb/objectguid.so
 @so lib/samba/ldb/operational.so
-@so lib/samba/ldb/paged_results.so
 @so lib/samba/ldb/partition.so
 @so lib/samba/ldb/password_hash.so
 @so lib/samba/ldb/ranged_results.so
@@ -1102,7 +1038,6 @@ lib/samba/krb5/
 @so lib/samba/libcli-smb-common-samba4.so
 @so lib/samba/libcli-spoolss-samba4.so
 @so lib/samba/libcliauth-samba4.so
-@so lib/samba/libclidns-samba4.so
 @so lib/samba/libcluster-samba4.so
 @so lib/samba/libcmdline-contexts-samba4.so
 @so lib/samba/libcmdline-credentials-samba4.so
@@ -1136,15 +1071,12 @@ lib/samba/krb5/
 @lib lib/samba/libkdc-samba4.so.${LIBkdc-samba4_VERSION}
 @lib lib/samba/libkrb5-samba4.so.${LIBkrb5-samba4_VERSION}
 @so lib/samba/libkrb5samba-samba4.so
-@so lib/samba/libldb-tdb-err-map-samba4.so
-@so lib/samba/libldb-tdb-int-samba4.so
 @so lib/samba/libldbsamba-samba4.so
 @so lib/samba/liblibcli-lsa3-samba4.so
 @so lib/samba/liblibcli-netlogon3-samba4.so
 @so lib/samba/liblibsmb-samba4.so
 @so lib/samba/libmessages-dgm-samba4.so
 @so lib/samba/libmessages-util-samba4.so
-@so lib/samba/libmscat-samba4.so
 @so lib/samba/libmsghdr-samba4.so
 @so lib/samba/libmsrpc3-samba4.so
 @so lib/samba/libndr-samba-samba4.so
@@ -1369,20 +1301,29 @@ libexec/samba/
 @man man/man8/vfs_aio_fork.8
 @man man/man8/vfs_aio_pthread.8
 @man man/man8/vfs_audit.8
+@man man/man8/vfs_btrfs.8
+@man man/man8/vfs_cacheprime.8
 @man man/man8/vfs_cap.8
 @man man/man8/vfs_catia.8
+@man man/man8/vfs_ceph.8
 @man man/man8/vfs_commit.8
 @man man/man8/vfs_crossrename.8
 @man man/man8/vfs_default_quota.8
 @man man/man8/vfs_dirsort.8
 @man man/man8/vfs_extd_audit.8
 @man man/man8/vfs_fake_perms.8
+@man man/man8/vfs_fileid.8
 @man man/man8/vfs_fruit.8
 @man man/man8/vfs_full_audit.8
+@man man/man8/vfs_glusterfs.8
+@man man/man8/vfs_glusterfs_fuse.8
+@man man/man8/vfs_gpfs.8
 @man man/man8/vfs_linux_xfs_sgid.8
 @man man/man8/vfs_media_harmony.8
 @man man/man8/vfs_netatalk.8
+@man man/man8/vfs_nfs4acl_xattr.8
 @man man/man8/vfs_offline.8
+@man man/man8/vfs_prealloc.8
 @man man/man8/vfs_preopen.8
 @man man/man8/vfs_readahead.8
 @man man/man8/vfs_readonly.8
@@ -1395,6 +1336,7 @@ libexec/samba/
 @man man/man8/vfs_streams_xattr.8
 @man man/man8/vfs_syncops.8
 @man man/man8/vfs_time_audit.8
+@man man/man8/vfs_tsmsm.8
 @man man/man8/vfs_unityed_media.8
 @man man/man8/vfs_virusfilter.8
 @man man/man8/vfs_worm.8
@@ -1416,13 +1358,6 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/examples/samba/
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/smb.conf
-share/examples/samba/winexe/
-share/examples/samba/winexe/README
-share/examples/samba/winexe/winexe.c
-share/examples/samba/winexe/winexesvc.c
-share/examples/samba/winexe/winexesvc.h
-share/examples/samba/winexe/wscript
-share/examples/samba/winexe/wscript_build
 @comment share/perl5/
 share/samba/
 share/samba/setup/

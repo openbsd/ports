@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.283 2019/12/10 09:56:50 jca Exp $
+# $OpenBSD: Makefile,v 1.284 2019/12/19 02:57:28 jca Exp $
 
-VERSION =		4.10.11
+VERSION =		4.9.17
 DISTNAME =		samba-${VERSION}
+EPOCH =			0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
@@ -17,18 +18,15 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			1.5.6
-TEVENT_V =		0.9.39
-
-REVISION-ldb =		0
-REVISION-tevent =	0
+LDB_V =			1.4.8
+TEVENT_V =		0.9.37
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
 			dcerpc			0.0 \
-			dcerpc-binding		1.2 \
+			dcerpc-binding		2.0 \
 			dcerpc-samr		0.0 \
-			dcerpc-server		6.0 \
+			dcerpc-server		7.0 \
 			gssapi-samba4		0.0 \
 			hcrypto-samba4		0.0 \
 			hdb-samba4		0.0 \
@@ -37,8 +35,8 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			hx509-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.1 \
-			ldb			0.10 \
-			ndr			0.4 \
+			ldb			1.0 \
+			ndr			1.0 \
 			ndr-krb5pac		0.1 \
 			ndr-nbt			0.1 \
 			ndr-standard		3.0 \
@@ -47,20 +45,20 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			roken-samba4		0.0 \
 			samba-credentials	0.2 \
 			samba-errors		1.0 \
-			samba-hostconfig	5.0 \
+			samba-hostconfig	6.0 \
 			samba-passdb		2.1 \
 			samba-policy		0.0 \
 			samba-util		5.0 \
 			samdb			0.2 \
-			smbclient		4.4 \
-			smbconf			7.0 \
+			smbclient		5.0 \
+			smbconf			8.0 \
 			smbldap			0.1 \
 			tevent			0.5 \
 			tevent-util		1.1 \
-			wbclient		3.3 \
+			wbclient		4.0 \
 			wind-samba4		0.0 \
-			replace			10.0 \
-			util-setid		10.0
+			replace			11.0 \
+			util-setid		11.0
 
 CATEGORIES =		net sysutils security
 
@@ -80,17 +78,17 @@ UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@}
 WANTLIB-common =	c pthread
 
 WANTLIB-main =		${WANTLIB-common} ${MODPY_WANTLIB}
-WANTLIB-main +=		crypto curses m util z
+WANTLIB-main +=		z
 WANTLIB-main +=		avahi-client avahi-common cups dbus-1 execinfo fam
-WANTLIB-main +=		iconv intl jansson lber ldap pam popt gcrypt gnutls ldb
-WANTLIB-main +=		pyldb-util pytalloc-util readline tasn1 tdb talloc tevent
+WANTLIB-main +=		iconv intl jansson lber ldap pam popt gnutls
+WANTLIB-main +=		ldb pyldb-util pytalloc-util readline tdb talloc tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
 WANTLIB-ldb =		${WANTLIB-common} ${MODPY_WANTLIB}
-WANTLIB-ldb +=		intl lber ldap popt m replace talloc tdb tevent util
+WANTLIB-ldb +=		lber ldap popt talloc tdb tevent
 
 WANTLIB-tevent =	${WANTLIB-common} ${MODPY_WANTLIB}
-WANTLIB-tevent +=	intl m replace talloc util
+WANTLIB-tevent +=	talloc
 
 WANTLIB-util =		${WANTLIB-common}
 
@@ -127,19 +125,16 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			net/avahi \
 			print/cups,-libs \
 			security/gnutls \
-			security/libgcrypt \
 			security/openpam \
 			sysutils/gamin
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
-			${BUILD_PKGPATH},-util>=${VERSION} \
 			devel/popt \
 			databases/openldap \
 			databases/tdb>=1.3.18 \
 			devel/libtalloc>=2.1.16
 
-LIB_DEPENDS-tevent =	devel/libtalloc>=2.1.16 \
-			${BUILD_PKGPATH},-util>=${VERSION}
+LIB_DEPENDS-tevent =	devel/libtalloc>=2.1.16
 
 LIB_DEPENDS-docs =
 

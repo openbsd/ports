@@ -1,4 +1,4 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_install_py,v 1.4 2019/12/04 00:17:53 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_samba_install_py,v 1.5 2019/12/19 02:57:28 jca Exp $
 Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
 BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
 Index: buildtools/wafsamba/samba_install.py
@@ -23,7 +23,7 @@ Index: buildtools/wafsamba/samba_install.py
                  # only generate the dev link for non-bundled libs
                  dev_link     = bld.make_libname(target_name)
          elif getattr(self, 'soname', ''):
-@@ -172,7 +176,7 @@ def apply_vscript(self):
+@@ -171,7 +175,7 @@ def apply_vscript(self):
      '''add version-script arguments to library build'''
  
      if self.env.HAVE_LD_VERSION_SCRIPT and getattr(self, 'version_script', ''):
