@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.185 2019/11/02 10:28:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2019/12/19 14:41:44 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		3.34.2
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -61,6 +61,8 @@ CONFIGURE_ARGS= 	-Dalsa=false \
 			-Dsystemd=false \
 			-Dwayland=false \
 			-Dwwan=false
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-settings-daemon
