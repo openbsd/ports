@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.11 2019/11/05 18:21:59 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.12 2019/12/19 17:42:13 ajacoutot Exp $
 
 XXX base gcc
 Reordering needed to prefer long long because base-gcc doesn't recognize
@@ -13,7 +13,7 @@ Subject: [PATCH] build: Check size_t compatibility with various other types
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -1169,18 +1169,6 @@ endif
+@@ -1163,18 +1163,6 @@ endif
  # works.
  if long_long_size == long_size
    if cc.compiles('''#if defined(_AIX) && !defined(__GNUC__)
@@ -32,7 +32,7 @@ Index: meson.build
                        #pragma options langlvl=stdc99
                        #endif
                        #pragma GCC diagnostic error "-Wincompatible-pointer-types"
-@@ -1192,6 +1180,18 @@ if long_long_size == long_size
+@@ -1186,6 +1174,18 @@ if long_long_size == long_size
                          return 1;
                        }''', name : 'int64_t is long long')
      int64_t_typedef = 'long long'
@@ -51,7 +51,7 @@ Index: meson.build
    endif
  endif
  
-@@ -1320,28 +1320,86 @@ else
+@@ -1314,28 +1314,86 @@ else
    glibconfig_conf.set('g_searchpath_separator', ':')
  endif
  
