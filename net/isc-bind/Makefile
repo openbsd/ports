@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2019/12/18 19:38:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2019/12/19 15:42:00 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -43,7 +43,8 @@ LIB_DEPENDS=	converters/libiconv \
 		devel/libidn2 \
 		textproc/libxml
 
-SEPARATE_BUILD=	Yes
+# /usr/obj/ports/isc-bind-9.14.9/bind-9.14.9/lib/dns/gen.c:29:10: fatal error: 'isc/platform.h' file not found
+# SEPARATE_BUILD=	Yes
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-full-report \
