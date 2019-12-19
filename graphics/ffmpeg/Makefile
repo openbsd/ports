@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2019/11/07 10:13:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.197 2019/12/19 11:52:32 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -125,6 +125,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		--extra-ldsoflags="${LDLIBFLAGS}" \
 		--mandir=${PREFIX}/man \
+		--objcc="/usr/bin/false" \
 		--optflags="${OPTFLAGS}"
 
 CONFIGURE_ENV+=	TERM=${TERM} \
