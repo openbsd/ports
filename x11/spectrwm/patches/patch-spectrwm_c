@@ -1,4 +1,4 @@
-$OpenBSD: patch-spectrwm_c,v 1.13 2019/12/02 14:35:35 bket Exp $
+$OpenBSD: patch-spectrwm_c,v 1.14 2019/12/19 17:34:10 bket Exp $
 
 Index: spectrwm.c
 --- spectrwm.c.orig
@@ -8,7 +8,7 @@ Index: spectrwm.c
  
  #ifndef SWM_LIB
 -#define SWM_LIB			"/usr/local/lib/libswmhack.so"
-+#define SWM_LIB			"${PREFIX}/lib/libswmhack.so"
++#define SWM_LIB			"${PREFIX}/lib/libswmhack.so.${LIBswmhack_VERSION}"
  #endif
  
  char			**start_argv;
