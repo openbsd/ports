@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.96 2019/12/11 15:59:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2019/12/19 07:03:55 feinerer Exp $
 
      SUBDIR =
      SUBDIR += arc
+     SUBDIR += blosc
      SUBDIR += brotli
      SUBDIR += bzip2
      SUBDIR += cabextract
