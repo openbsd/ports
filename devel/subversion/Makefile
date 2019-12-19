@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2019/11/06 15:04:23 stsp Exp $
+# $OpenBSD: Makefile,v 1.177 2019/12/19 19:43:14 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -8,6 +8,7 @@ COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.13.0
+REVISION-main=		0
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
@@ -142,7 +143,8 @@ CONFIGURE_ARGS+=--with-sasl=${LOCALBASE} \
 		--without-jikes \
 		--without-jdk \
 		--without-libmagic \
-		--with-utf8proc=internal
+		--with-utf8proc=internal \
+		--enable-plaintext-password-storage
 
 # Maintainer mode shows files and line numbers for every error raised
 # by Subversion. It is useful for debugging problems with Subversion
