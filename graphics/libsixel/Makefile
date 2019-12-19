@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/15 13:39:45 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/19 08:01:29 fcambus Exp $
 
 COMMENT =	encoder/decoder implementation for DEC SIXEL graphics
 
-V =		1.8.3
+V =		1.8.4
 DISTNAME =	libsixel-$V
 
 SHARED_LIBS +=	sixel	1.0	# 1.6
