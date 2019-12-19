@@ -1,30 +1,31 @@
-# $OpenBSD: Makefile,v 1.194 2019/12/06 14:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.195 2019/12/19 15:39:10 sthen Exp $
 
 BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 
 COMMENT=		image processing tools
 
 VER=			6.9.10
-DASHVER=		62
+DASHVER=		79
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-PORTROACH=		site:https://www.imagemagick.org/download/ limit:6.*
+PORTROACH=		site:https://imagemagick.org/download/ limit:6.*
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=	MagickCore-6.Q16     6.6      # 6.0
+SHARED_LIBS +=	MagickCore-6.Q16     6.7      # 6.0
 SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 6.0
 SHARED_LIBS +=	Magick++-6.Q16       5.2      # 8.0
 
 CATEGORIES=		graphics
 
-HOMEPAGE=		https://www.imagemagick.org/
+HOMEPAGE=		https://imagemagick.org/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-MASTER_SITES=		https://www.imagemagick.org/download/releases/ \
+MASTER_SITES=		https://imagemagick.org/download/releases/ \
+			https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/ \
 			ftp://sunsite.icm.edu.pl/packages/ImageMagick/
 
-# http://www.imagemagick.org/script/license.php
+# https://imagemagick.org/script/license.php
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt bz2
@@ -81,8 +82,5 @@ FAKE_FLAGS=		CONFIGURE_PATH=${PREFIX}/share/examples/ImageMagick
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} $$(find . -name '*.pc.in')
-
-post-install:
-	rm ${PREFIX}/share/doc/ImageMagick/www/api/*php
 
 .include <bsd.port.mk>
