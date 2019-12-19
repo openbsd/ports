@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.118 2019/11/19 11:34:55 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.119 2019/12/19 02:42:46 kmos Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -43,7 +43,12 @@ MODPY_COMMENT =	"@comment "
 MODPY_ABI3SO =
 MODPY_PYOEXTENSION =	pyo
 .elif ${MODPY_MAJOR_VERSION} == 3
+.  if ${MODPY_VERSION} == "3.7"
 MODPY_LIB_SUFFIX =	m
+.  else
+# 3.8 (and presumably later) discards the m suffix on the library
+MODPY_LIB_SUFFIX =
+.  endif
 # replace py- prefix by py3-
 FULLPKGNAME ?=	${PKGNAME:S/^py-/py3-/}${FLAVOR_EXT:S/-python3//}
 MODPY_FLAVOR =	,python3
