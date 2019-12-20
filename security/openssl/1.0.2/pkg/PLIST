@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/03 14:56:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/12/20 17:11:58 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict openssl-<1.1.0
@@ -83,21 +83,21 @@ include/eopenssl/openssl/x509_vfy.h
 include/eopenssl/openssl/x509v3.h
 lib/eopenssl/
 lib/eopenssl/engines/
-lib/eopenssl/engines/lib4758cca.so
-lib/eopenssl/engines/libaep.so
-lib/eopenssl/engines/libatalla.so
-lib/eopenssl/engines/libcapi.so
-lib/eopenssl/engines/libchil.so
-lib/eopenssl/engines/libcswift.so
-lib/eopenssl/engines/libgmp.so
-lib/eopenssl/engines/libgost.so
-lib/eopenssl/engines/libnuron.so
-lib/eopenssl/engines/libpadlock.so
-lib/eopenssl/engines/libsureware.so
-lib/eopenssl/engines/libubsec.so
-lib/eopenssl/libcrypto.a
+@so lib/eopenssl/engines/lib4758cca.so
+@so lib/eopenssl/engines/libaep.so
+@so lib/eopenssl/engines/libatalla.so
+@so lib/eopenssl/engines/libcapi.so
+@so lib/eopenssl/engines/libchil.so
+@so lib/eopenssl/engines/libcswift.so
+@so lib/eopenssl/engines/libgmp.so
+@so lib/eopenssl/engines/libgost.so
+@so lib/eopenssl/engines/libnuron.so
+@so lib/eopenssl/engines/libpadlock.so
+@so lib/eopenssl/engines/libsureware.so
+@so lib/eopenssl/engines/libubsec.so
+@static-lib lib/eopenssl/libcrypto.a
 @lib lib/eopenssl/libcrypto.so.${LIBcrypto_VERSION}
-lib/eopenssl/libssl.a
+@static-lib lib/eopenssl/libssl.a
 @lib lib/eopenssl/libssl.so.${LIBssl_VERSION}
 @mandir lib/eopenssl/man/
 lib/eopenssl/man/man1/
