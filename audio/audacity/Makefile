@@ -1,33 +1,37 @@
-# $OpenBSD: Makefile,v 1.73 2019/11/18 12:08:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2019/12/20 13:19:12 sthen Exp $
 
 COMMENT=	free audio editor
 
-V=		2.3.2
-DISTNAME=	Audacity-${V}
-PKGNAME=	audacity-${V}
-REVISION=	0
+# fosshub has proper tarballs, but they are on time-expired URLs
+# so can't be fetched automatically
+GH_ACCOUNT=	audacity
+GH_PROJECT=	audacity
+GH_TAGNAME=	Audacity-2.3.2
+DISTNAME=	${GH_TAGNAME:L}
+REVISION=	1
 CATEGORIES=	audio
-
-MASTER_SITES=	https://github.com/audacity/audacity/archive/
 
 HOMEPAGE=	https://www.audacityteam.org/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ ICE SDL2 SM SoundTouch
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xxf86vm atk-1.0 atk-bridge-2.0 c cairo
-WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv id3tag intl
-WANTLIB += jpeg m mad mspack notify ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png portaudio portmidi vamp-hostsdk
-WANTLIB += samplerate sndfile sndio soxr tiff usbhid vorbis vorbisenc
-WANTLIB += vorbisfile wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += FLAC FLAC++ ICE SDL2 SM SoundTouch X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
+WANTLIB += Xxf86vm aom atk-1.0 atk-bridge-2.0 avcodec avformat
+WANTLIB += avutil bz2 c cairo cairo-gobject crypto dav1d epoxy
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gsm gthread-2.0 gtk-3 harfbuzz iconv id3tag intl jpeg
+WANTLIB += lzma m mad mspack notify ogg opus pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png portaudio portmidi samplerate
+WANTLIB += sndfile sndio soxr speex ssl swresample theoradec theoraenc
+WANTLIB += tiff usbhid vamp-hostsdk vorbis vorbisenc vorbisfile
+WANTLIB += vpx wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
-WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 x264 x265 xcb xcb-render
+WANTLIB += xcb-shm xml2 xvidcore z zstd
 # dlopened
 WANTLIB += mp3lame
 
@@ -51,7 +55,8 @@ LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		audio/portaudio-svn>=1406p1 \
 		audio/portmidi \
 		audio/soundtouch \
-		audio/vamp-plugin-sdk
+		audio/vamp-plugin-sdk \
+		graphics/ffmpeg
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
@@ -74,10 +79,12 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
 			${WRKSRC}/lib-src/sbsms \
 			${WRKSRC}/lib-src/libnyquist
 
-CONFIGURE_ARGS=		--enable-ladspa \
+CONFIGURE_ARGS=		--disable-dynamic-loading \
+			--enable-ladspa \
 			--enable-nyquist \
 			--enable-unicode \
 			--with-expat=system \
+			--with-ffmpeg=system \
 			--with-lame=system \
 			--with-lib-preferences=system \
 			--with-libflac=system \
@@ -94,7 +101,6 @@ CONFIGURE_ARGS=		--enable-ladspa \
 			--with-sbsms=local \
 			--with-soundtouch=system \
 			--with-widgetextra=local \
-			--without-ffmpeg \
 			--without-liblrdf \
 			--without-libtwolame \
 			--without-portmixer \
@@ -103,8 +109,6 @@ CONFIGURE_ARGS=		--enable-ladspa \
 .if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS+=	--disable-sse
 .endif
-
-WRKDIST=		${WRKDIR}/audacity-${DISTNAME}
 
 NO_TEST=	Yes
 
