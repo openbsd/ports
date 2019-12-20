@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/19 14:21:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/20 13:19:46 ajacoutot Exp $
 
 COMMENT=	Alliance for Open Media AV1 video codec
 
-# 05b3304 from git
-DISTNAME=	aom-1.0.0.20190901
+# 314d19f from git
+DISTNAME=	aom-1.0.0.20191218
 CATEGORIES=	multimedia
 MASTER_SITES=	https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	aom	0.0
+SHARED_LIBS=	aom	1.0
 
 HOMEPAGE=	https://aomedia.org/
 
