@@ -1,0 +1,30 @@
+@comment $OpenBSD: PFRAG.mysql,v 1.1 2019/12/20 17:16:37 sthen Exp $
+include/kea/dhcpsrv/mysql_host_data_source.h
+include/kea/dhcpsrv/mysql_lease_mgr.h
+include/kea/mysql/
+include/kea/mysql/mysql_binding.h
+include/kea/mysql/mysql_connection.h
+include/kea/mysql/mysql_constants.h
+lib/kea/hooks/libdhcp_mysql_cb.la
+@so lib/kea/hooks/libdhcp_mysql_cb.so
+lib/libkea-mysql.la
+@lib lib/libkea-mysql.so.${LIBkea-mysql_VERSION}
+share/doc/kea/examples/kea4/mysql-reservations.json
+share/doc/kea/examples/kea6/mysql-reservations.json
+share/kea/scripts/mysql/
+share/kea/scripts/mysql/dhcpdb_create.mysql
+share/kea/scripts/mysql/dhcpdb_drop.mysql
+share/kea/scripts/mysql/upgrade_1.0_to_2.0.sh
+share/kea/scripts/mysql/upgrade_2.0_to_3.0.sh
+share/kea/scripts/mysql/upgrade_3.0_to_4.0.sh
+share/kea/scripts/mysql/upgrade_4.0_to_4.1.sh
+share/kea/scripts/mysql/upgrade_4.1_to_5.0.sh
+share/kea/scripts/mysql/upgrade_5.0_to_5.1.sh
+share/kea/scripts/mysql/upgrade_5.1_to_5.2.sh
+share/kea/scripts/mysql/upgrade_5.2_to_6.0.sh
+share/kea/scripts/mysql/upgrade_6.0_to_7.0.sh
+share/kea/scripts/mysql/upgrade_7.0_to_8.0.sh
+share/kea/scripts/mysql/upgrade_8.0_to_8.1.sh
+share/kea/scripts/mysql/upgrade_8.1_to_8.2.sh
+share/kea/scripts/mysql/upgrade_8.2_to_9.0.sh
+share/kea/scripts/mysql/wipe_data.sh

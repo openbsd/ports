@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/09/26 13:23:37 sthen Exp $
-@extraunexec rm -Rf ${LOCALSTATEDIR}/kea/*
+@comment $OpenBSD: PLIST,v 1.6 2019/12/20 17:16:37 sthen Exp $
 @newgroup _kea:763
 @newuser _kea:763:_kea:daemon:Kea user:/nonexistent:/sbin/nologin
+@sample ${LOCALSTATEDIR}/lib/
 @mode 0750
 @group _kea
 @sample ${SYSCONFDIR}/kea/
-@sample ${LOCALSTATEDIR}/kea/
+@mode 0770
+@sample ${LOCALSTATEDIR}/lib/kea/
 @mode
 @group
 @rcscript ${RCDIR}/kea
@@ -403,21 +404,22 @@ include/kea/util/state_model.h
 include/kea/util/stopwatch.h
 include/kea/util/stopwatch_impl.h
 include/kea/util/strutil.h
-include/kea/util/threads/
-include/kea/util/threads/sync.h
-include/kea/util/threads/thread.h
-include/kea/util/threads/watched_thread.h
 include/kea/util/time_utilities.h
 include/kea/util/versioned_csv_file.h
 include/kea/util/watch_socket.h
+include/kea/util/watched_thread.h
 lib/kea/
 lib/kea/hooks/
+lib/kea/hooks/libdhcp_bootp.la
+@so lib/kea/hooks/libdhcp_bootp.so
+lib/kea/hooks/libdhcp_flex_option.la
+@so lib/kea/hooks/libdhcp_flex_option.so
 lib/kea/hooks/libdhcp_ha.la
-lib/kea/hooks/libdhcp_ha.so
+@so lib/kea/hooks/libdhcp_ha.so
 lib/kea/hooks/libdhcp_lease_cmds.la
-lib/kea/hooks/libdhcp_lease_cmds.so
+@so lib/kea/hooks/libdhcp_lease_cmds.so
 lib/kea/hooks/libdhcp_stat_cmds.la
-lib/kea/hooks/libdhcp_stat_cmds.so
+@so lib/kea/hooks/libdhcp_stat_cmds.so
 lib/libkea-asiodns.la
 @lib lib/libkea-asiodns.so.${LIBkea-asiodns_VERSION}
 lib/libkea-asiolink.la
@@ -452,12 +454,20 @@ lib/libkea-process.la
 @lib lib/libkea-process.so.${LIBkea-process_VERSION}
 lib/libkea-stats.la
 @lib lib/libkea-stats.so.${LIBkea-stats_VERSION}
-lib/libkea-threads.la
-@lib lib/libkea-threads.so.${LIBkea-threads_VERSION}
 lib/libkea-util-io.la
 @lib lib/libkea-util-io.so.${LIBkea-util-io_VERSION}
 lib/libkea-util.la
 @lib lib/libkea-util.so.${LIBkea-util_VERSION}
+@man man/man8/kea-admin.8
+@man man/man8/kea-ctrl-agent.8
+@man man/man8/kea-dhcp-ddns.8
+@man man/man8/kea-dhcp4.8
+@man man/man8/kea-dhcp6.8
+@man man/man8/kea-lfc.8
+@man man/man8/kea-netconf.8
+@man man/man8/kea-shell.8
+@man man/man8/keactrl.8
+@man man/man8/perfdhcp.8
 sbin/kea-admin
 @bin sbin/kea-ctrl-agent
 @bin sbin/kea-dhcp-ddns
@@ -503,8 +513,6 @@ share/doc/kea/examples/kea4/hooks-radius.json
 share/doc/kea/examples/kea4/hooks.json
 share/doc/kea/examples/kea4/leases-expiration.json
 share/doc/kea/examples/kea4/multiple-options.json
-share/doc/kea/examples/kea4/mysql-reservations.json
-share/doc/kea/examples/kea4/pgsql-reservations.json
 share/doc/kea/examples/kea4/reservations.json
 share/doc/kea/examples/kea4/several-subnets.json
 share/doc/kea/examples/kea4/shared-network.json
@@ -528,8 +536,6 @@ share/doc/kea/examples/kea6/hooks.json
 share/doc/kea/examples/kea6/iPXE.json
 share/doc/kea/examples/kea6/leases-expiration.json
 share/doc/kea/examples/kea6/multiple-options.json
-share/doc/kea/examples/kea6/mysql-reservations.json
-share/doc/kea/examples/kea6/pgsql-reservations.json
 share/doc/kea/examples/kea6/reservations.json
 share/doc/kea/examples/kea6/several-subnets.json
 share/doc/kea/examples/kea6/shared-network.json
@@ -563,38 +569,5 @@ share/examples/kea/keactrl.conf
 share/kea/
 share/kea/scripts/
 share/kea/scripts/admin-utils.sh
-share/kea/scripts/cql/
-share/kea/scripts/cql/dhcpdb_create.cql
-share/kea/scripts/cql/dhcpdb_drop.cql
-share/kea/scripts/cql/upgrade_1.0_to_2.0.sh
-share/kea/scripts/cql/upgrade_2.0_to_3.0.sh
-share/kea/scripts/cql/upgrade_3.0_to_4.0.sh
-share/kea/scripts/cql/wipe_data.sh
-share/kea/scripts/mysql/
-share/kea/scripts/mysql/dhcpdb_create.mysql
-share/kea/scripts/mysql/dhcpdb_drop.mysql
-share/kea/scripts/mysql/upgrade_1.0_to_2.0.sh
-share/kea/scripts/mysql/upgrade_2.0_to_3.0.sh
-share/kea/scripts/mysql/upgrade_3.0_to_4.0.sh
-share/kea/scripts/mysql/upgrade_4.0_to_4.1.sh
-share/kea/scripts/mysql/upgrade_4.1_to_5.0.sh
-share/kea/scripts/mysql/upgrade_5.0_to_5.1.sh
-share/kea/scripts/mysql/upgrade_5.1_to_5.2.sh
-share/kea/scripts/mysql/upgrade_5.2_to_6.0.sh
-share/kea/scripts/mysql/upgrade_6.0_to_7.0.sh
-share/kea/scripts/mysql/upgrade_7.0_to_8.0.sh
-share/kea/scripts/mysql/upgrade_8.0_to_8.1.sh
-share/kea/scripts/mysql/upgrade_8.1_to_8.2.sh
-share/kea/scripts/mysql/wipe_data.sh
-share/kea/scripts/pgsql/
-share/kea/scripts/pgsql/dhcpdb_create.pgsql
-share/kea/scripts/pgsql/dhcpdb_drop.pgsql
-share/kea/scripts/pgsql/upgrade_1.0_to_2.0.sh
-share/kea/scripts/pgsql/upgrade_2.0_to_3.0.sh
-share/kea/scripts/pgsql/upgrade_3.0_to_3.1.sh
-share/kea/scripts/pgsql/upgrade_3.1_to_3.2.sh
-share/kea/scripts/pgsql/upgrade_3.2_to_3.3.sh
-share/kea/scripts/pgsql/upgrade_3.3_to_4.0.sh
-share/kea/scripts/pgsql/upgrade_4.0_to_5.0.sh
-share/kea/scripts/pgsql/upgrade_5.0_to_5.1.sh
-share/kea/scripts/pgsql/wipe_data.sh
+%%mysql%%
+%%postgresql%%
