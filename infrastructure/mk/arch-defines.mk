@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.69 2019/11/09 15:08:09 espie Exp $
+# $OpenBSD: arch-defines.mk,v 1.70 2019/12/20 20:00:30 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -65,15 +65,20 @@ LIBCXX = stdc++ pthread
 LIBECXX = estdc++>=17 pthread
 .endif
 
-.if ${PROPERTIES:Mlld}
+.if ${PROPERTIES:Mlld} || defined(USE_LLD) && ${USE_LLD:L} == yes
 # see llvm/tools/lld/ELF/Driver.cpp
-.  for A in aarch64.aarch64elf amd64.elf_amd64 arm.armelf i386.elf_i386 \
-            mips64.elf64btsmip mips64el.elf64ltsmip powerpc.elf32ppc \
-            sparc64.elf64_sparc
-.    if ${MACHINE_ARCH} == ${A:R}
-LLD_EMUL = -m${A:E}
-.    endif
-.  endfor
+_LLD_EMUL_aarch64 = aarch64elf
+_LLD_EMUL_amd64 = elf_amd64
+_LLD_EMUL_arm = armelf
+_LLD_EMUL_i386 = elf_i386
+_LLD_EMUL_mips64 = elf64btsmip
+_LLD_EMUL_mips64el = elf64ltsmip
+_LLD_EMUL_powerpc = elf32ppc
+_LLD_EMUL_sparc64 = elf64_sparc
+.endif
+
+.if defined(_LLD_EMUL_${MACHINE_ARCH})
+LLD_EMUL = -m${_LLD_EMUL_${MACHINE_ARCH}}
 .else
 LLD_EMUL =
 .endif
