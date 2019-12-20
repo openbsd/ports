@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_build_h,v 1.1 2019/12/20 15:51:26 kurt Exp $
+
+Use a deque for the ready_ queue so that build order is not randomized
+by using a set of pointers.
+
+Index: src/build.h
+--- src/build.h.orig
++++ src/build.h
+@@ -103,7 +103,7 @@ struct Plan { (private)
+   /// we want for the edge.
+   map<Edge*, Want> want_;
+ 
+-  set<Edge*> ready_;
++  deque<Edge*> ready_;
+ 
+   /// Total number of edges that have commands (not phony).
+   int command_edges_;

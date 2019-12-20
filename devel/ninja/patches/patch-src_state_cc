@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_state_cc,v 1.1 2019/12/20 15:51:26 kurt Exp $
+
+Use a deque for the ready_ queue so that build order is not randomized
+by using a set of pointers.
+
+Index: src/state.cc
+--- src/state.cc.orig
++++ src/state.cc
+@@ -38,13 +38,13 @@ void Pool::DelayEdge(Edge* edge) {
+   delayed_.insert(edge);
+ }
+ 
+-void Pool::RetrieveReadyEdges(set<Edge*>* ready_queue) {
++void Pool::RetrieveReadyEdges(deque<Edge*>* ready_queue) {
+   DelayedEdges::iterator it = delayed_.begin();
+   while (it != delayed_.end()) {
+     Edge* edge = *it;
+     if (current_use_ + edge->weight() > depth_)
+       break;
+-    ready_queue->insert(edge);
++    ready_queue->push_back(edge);
+     EdgeScheduled(*edge);
+     ++it;
+   }
