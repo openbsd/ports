@@ -1,7 +1,16 @@
-$OpenBSD: patch-bind_Makefile_in,v 1.3 2018/03/06 08:37:39 sthen Exp $
+$OpenBSD: patch-bind_Makefile_in,v 1.4 2019/12/20 21:06:17 sthen Exp $
 Index: bind/Makefile.in
 --- bind/Makefile.in.orig
 +++ bind/Makefile.in
+@@ -24,7 +24,7 @@ exec_prefix = @exec_prefix@
+ bindconfig = --without-openssl --without-libxml2 --without-libjson \
+ 	--without-gssapi --disable-threads --without-lmdb \
+ 	--includedir=@includedir@ --libdir=@libdir@ \
+-	@BINDLT@ @BINDIOMUX@ @BINDCONFIG@ --enable-full-report
++	@BINDLT@ @BINDIOMUX@ @BINDCONFIG@ --enable-full-report --disable-backtrace
+ 
+ @BIND_ATF_FALSE@cleandirs = ./lib ./include
+ @BIND_ATF_TRUE@cleandirs = ./lib ./include ./atf
 @@ -56,7 +56,7 @@ bind1:
  		echo Configuring BIND libraries for DHCP. ;             \
  		rm -rf ${cleandirs} ${cleanfiles} ;                     \
