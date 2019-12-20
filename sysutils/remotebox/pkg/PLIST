@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/11/23 14:43:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/12/20 13:34:08 ajacoutot Exp $
 bin/remotebox
 share/applications/remotebox.desktop
 share/doc/remotebox/
@@ -17,7 +17,9 @@ share/remotebox/icons/attachment_remove_16px.png
 share/remotebox/icons/cd_16px.png
 share/remotebox/icons/cd_add_32px.png
 share/remotebox/icons/cd_copy_32px.png
+share/remotebox/icons/cd_create_32px.png
 share/remotebox/icons/cd_modify_32px.png
+share/remotebox/icons/cd_move_32px.png
 share/remotebox/icons/cd_release_32px.png
 share/remotebox/icons/cd_remove_32px.png
 share/remotebox/icons/chipset_16px.png
@@ -44,7 +46,10 @@ share/remotebox/icons/fd_16px.png
 share/remotebox/icons/fd_add_16px.png
 share/remotebox/icons/fd_add_32px.png
 share/remotebox/icons/fd_copy_32px.png
+share/remotebox/icons/fd_create_16px.png
+share/remotebox/icons/fd_create_32px.png
 share/remotebox/icons/fd_modify_32px.png
+share/remotebox/icons/fd_move_32px.png
 share/remotebox/icons/fd_release_32px.png
 share/remotebox/icons/fd_remove_32px.png
 share/remotebox/icons/floppy_16px.png
@@ -67,7 +72,9 @@ share/remotebox/icons/hd_16px.png
 share/remotebox/icons/hd_24px.png
 share/remotebox/icons/hd_add_32px.png
 share/remotebox/icons/hd_copy_32px.png
+share/remotebox/icons/hd_create_32px.png
 share/remotebox/icons/hd_modify_32px.png
+share/remotebox/icons/hd_move_32px.png
 share/remotebox/icons/hd_release_32px.png
 share/remotebox/icons/hd_remove_32px.png
 share/remotebox/icons/help_16px.png
@@ -164,6 +171,7 @@ share/remotebox/icons/os/Windows2008.png
 share/remotebox/icons/os/Windows2008_64.png
 share/remotebox/icons/os/Windows2012_64.png
 share/remotebox/icons/os/Windows2016_64.png
+share/remotebox/icons/os/Windows2019_64.png
 share/remotebox/icons/os/Windows31.png
 share/remotebox/icons/os/Windows7.png
 share/remotebox/icons/os/Windows7_64.png
@@ -257,6 +265,8 @@ share/remotebox/icons/usb_movedown_16px.png
 share/remotebox/icons/usb_moveup_16px.png
 share/remotebox/icons/usb_new_16px.png
 share/remotebox/icons/usb_remove_16px.png
+share/remotebox/icons/virtio_scsi_16px.png
+share/remotebox/icons/virtio_scsi_add_16px.png
 share/remotebox/icons/vm_add_16px.png
 share/remotebox/icons/vm_clone_16px.png
 share/remotebox/icons/vm_clone_32px.png
@@ -282,6 +292,8 @@ share/remotebox/icons/vm_start_32px.png
 share/remotebox/icons/vrdp_16px.png
 share/remotebox/icons/vrdp_24px.png
 share/remotebox/icons/vrdp_32px.png
+share/remotebox/old_vboxService.pm
+share/remotebox/old_vboxserializers.pl
 share/remotebox/rbox_edit.pl
 share/remotebox/rbox_edit_audio.pl
 share/remotebox/rbox_edit_disp_capture.pl
