@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/12/20 17:19:35 sthen Exp $
 
 COMMENT=		logging API for C++
 
-DISTNAME =		log4cplus-1.2.0
+# XXX tried updating to 2.0.4 but net/kea doesn't exit properly
+# TODO: try 1.2.2
+DISTNAME=		log4cplus-1.2.0
 EXTRACT_SUFX=		.tar.bz2
-REVISION =		1
+REVISION=		1
 
 SHARED_LIBS +=  log4cplus             2.0 # 0.0
 
