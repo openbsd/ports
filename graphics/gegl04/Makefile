@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/12/13 15:05:03 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2019/12/21 01:47:12 jca Exp $
 
 BROKEN-sparc64=		ERROR: Problem encountered: Unknown host architecture
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
 V=			0.4.18
-REVISION=		0
+REVISION=		1
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
