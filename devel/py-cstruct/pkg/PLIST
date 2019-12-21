@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/21 14:15:27 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/cstruct/
+lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/cstruct/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cstruct/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cstruct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cstruct/examples/
+lib/python${MODPY_VERSION}/site-packages/cstruct/examples/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cstruct/examples/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cstruct/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cstruct/examples/${MODPY_PYCACHE}fdisk.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cstruct/examples/${MODPY_PYCACHE}who.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cstruct/examples/fdisk.py
+lib/python${MODPY_VERSION}/site-packages/cstruct/examples/who.py
+lib/python${MODPY_VERSION}/site-packages/cstruct/tests/
+lib/python${MODPY_VERSION}/site-packages/cstruct/tests/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cstruct/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cstruct/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cstruct/tests/${MODPY_PYCACHE}test_cstruct.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cstruct/tests/test_cstruct.py
