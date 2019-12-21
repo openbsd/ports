@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/12/14 21:44:08 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2019/12/21 14:18:30 jasper Exp $
 
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
 MODPY_EGG_VERSION = 2.2.0
+REVISION =	0
 GH_ACCOUNT =	ReFirmLabs
 GH_PROJECT =	binwalk
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
@@ -23,11 +24,11 @@ MODPY_PYTEST_ARGS =	testing/tests
 # There are a bunch of utilities which aren't ported yet but which would
 # benefit the binwalk user:
 # sasquatch for non-standard SquashFS images
-# jefferson (+ py-cstruct) for JFFS2
 # ubi_reader (+ py-lzo) for UBIFS
 # yaffshiv for YAFFS
 RUN_DEPENDS =	devel/capstone/python${MODPY_FLAVOR} \
-		security/py-cryptodome${MODPY_FLAVOR}
+		security/py-cryptodome${MODPY_FLAVOR} \
+		sysutils/jefferson
 
 TEST_ENV =	PYTHONPATH=${WRKSRC}/lib
 PORTHOME =	${WRKDIR}
