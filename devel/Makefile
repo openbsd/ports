@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1919 2019/12/17 21:56:42 jcs Exp $
+# $OpenBSD: Makefile,v 1.1920 2019/12/21 14:17:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1398,6 +1398,8 @@
      SUBDIR += py-coveralls,python3
      SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
+     SUBDIR += py-cstruct
+     SUBDIR += py-cstruct,python3
      SUBDIR += py-curtsies
      SUBDIR += py-curtsies,python3
      SUBDIR += py-dateutil
