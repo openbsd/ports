@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/11/26 13:17:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/12/21 11:50:31 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -224,7 +224,7 @@ share/unifi/webapps/ROOT/app-unifi/data/locales/en/eventStrings.2c9aa42b80ec0465
 share/unifi/webapps/ROOT/app-unifi/data/locales/en/ips.1a762f5f06c8bfdbd534fe4a1f957de2.json
 share/unifi/webapps/ROOT/app-unifi/data/locales/en/languages.9b303d72b8d876fb67158cf2d10eb88c.json
 share/unifi/webapps/ROOT/app-unifi/data/locales/en/search.a2ee3ded4e8d9b1d9cb00bc66b7fdb67.json
-share/unifi/webapps/ROOT/app-unifi/data/locales/en/settings.77e8207499b01347e71e91ddbb8c77b1.json
+share/unifi/webapps/ROOT/app-unifi/data/locales/en/settings.f83261a2ba519f461d6eeaf301a64357.json
 share/unifi/webapps/ROOT/app-unifi/data/locales/en/statistics.dad4555dc8680e63c81aaf07a2588149.json
 share/unifi/webapps/ROOT/app-unifi/data/locales/es-ES/
 share/unifi/webapps/ROOT/app-unifi/data/locales/es-ES/settings.96d0ba6473569d14e094625e5d0eb6fc.json
@@ -283,8 +283,6 @@ share/unifi/webapps/ROOT/app-unifi/fonts/fontawesome-webfont.woff.br
 share/unifi/webapps/ROOT/app-unifi/fonts/fontawesome-webfont.woff2
 share/unifi/webapps/ROOT/app-unifi/images/
 share/unifi/webapps/ROOT/app-unifi/images/005061a12212476b40148b18e89739fd.svg
-share/unifi/webapps/ROOT/app-unifi/images/00e49cf1684d6650e2b4536444ebc6eb.svg
-share/unifi/webapps/ROOT/app-unifi/images/00e49cf1684d6650e2b4536444ebc6eb.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/01225bebffa3b3d92a5f0c9d553a3c9e.svg
 share/unifi/webapps/ROOT/app-unifi/images/01225bebffa3b3d92a5f0c9d553a3c9e.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/01b40f18ecddca75f50f6a3471b2af25.svg
@@ -329,8 +327,6 @@ share/unifi/webapps/ROOT/app-unifi/images/14167f77f128b0f57a6263843017fc0f.svg
 share/unifi/webapps/ROOT/app-unifi/images/148de921897066d0f2146606bb7d97ee.svg
 share/unifi/webapps/ROOT/app-unifi/images/15f35a0fadfa6ad337bb2d122087db62.png
 share/unifi/webapps/ROOT/app-unifi/images/15f35a0fadfa6ad337bb2d122087db62.png.br
-share/unifi/webapps/ROOT/app-unifi/images/17266fe8603d73e58b59d52a0d2a324c.png
-share/unifi/webapps/ROOT/app-unifi/images/17266fe8603d73e58b59d52a0d2a324c.png.br
 share/unifi/webapps/ROOT/app-unifi/images/175a61d9f7540ab6d862966fe40cfd60.svg
 share/unifi/webapps/ROOT/app-unifi/images/175a61d9f7540ab6d862966fe40cfd60.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/17909e3784b7d4ef90efeae63ef194b4.svg
@@ -457,8 +453,6 @@ share/unifi/webapps/ROOT/app-unifi/images/5c33b1e789de1ff9e75e660e485f7b20.svg
 share/unifi/webapps/ROOT/app-unifi/images/5c33b1e789de1ff9e75e660e485f7b20.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/5c33e55d155844898cddc1b33b3fb7eb.svg
 share/unifi/webapps/ROOT/app-unifi/images/5c33e55d155844898cddc1b33b3fb7eb.svg.br
-share/unifi/webapps/ROOT/app-unifi/images/5e8c1978dffd8d07a4417ff7ebc531b4.png
-share/unifi/webapps/ROOT/app-unifi/images/5e8c1978dffd8d07a4417ff7ebc531b4.png.br
 share/unifi/webapps/ROOT/app-unifi/images/6088c9ceb092913b54d7235ee2e56f2c.svg
 share/unifi/webapps/ROOT/app-unifi/images/60fbc221d84de9fb44f0d70882a393fc.svg
 share/unifi/webapps/ROOT/app-unifi/images/61674b9fd1c02414abde982aa277e9a0.svg
@@ -472,6 +466,8 @@ share/unifi/webapps/ROOT/app-unifi/images/657c35106c007ffe09c3623bce446a0d.png
 share/unifi/webapps/ROOT/app-unifi/images/657c35106c007ffe09c3623bce446a0d.png.br
 share/unifi/webapps/ROOT/app-unifi/images/667c7a422ea1e92f971848ef8bb347ce.svg
 share/unifi/webapps/ROOT/app-unifi/images/667c7a422ea1e92f971848ef8bb347ce.svg.br
+share/unifi/webapps/ROOT/app-unifi/images/669993ab7f466920dd5be22e8af75b27.svg
+share/unifi/webapps/ROOT/app-unifi/images/669993ab7f466920dd5be22e8af75b27.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/67001d2a8840b34f8407526c30a399d5.svg
 share/unifi/webapps/ROOT/app-unifi/images/67f5922d788548be9d4900bebf2b5e63.svg
 share/unifi/webapps/ROOT/app-unifi/images/67f96b2f0df34ce53d7651ade04d1e0b.svg
@@ -494,8 +490,6 @@ share/unifi/webapps/ROOT/app-unifi/images/70a290afe3dffa54924e7ddffd767687.svg
 share/unifi/webapps/ROOT/app-unifi/images/70a290afe3dffa54924e7ddffd767687.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/71010dff44cc2c8dfb46906c7add051f.svg
 share/unifi/webapps/ROOT/app-unifi/images/71010dff44cc2c8dfb46906c7add051f.svg.br
-share/unifi/webapps/ROOT/app-unifi/images/71b791144ff34ce29351132a756a10c8.svg
-share/unifi/webapps/ROOT/app-unifi/images/71b791144ff34ce29351132a756a10c8.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/7332c94cc6d893097dd3ff6d962a9520.svg
 share/unifi/webapps/ROOT/app-unifi/images/7332c94cc6d893097dd3ff6d962a9520.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/73751467467171c36dd477eb9bad97e8.svg
@@ -512,6 +506,8 @@ share/unifi/webapps/ROOT/app-unifi/images/78f71b12b16a563242931f8f2c73125f.svg.b
 share/unifi/webapps/ROOT/app-unifi/images/79354e72ad0559ef82e28d0f2e88033f.svg
 share/unifi/webapps/ROOT/app-unifi/images/7942bccbe6f775c88769deca528b85ab.svg
 share/unifi/webapps/ROOT/app-unifi/images/7942bccbe6f775c88769deca528b85ab.svg.br
+share/unifi/webapps/ROOT/app-unifi/images/7948905b77ddc778f10fa69176bccb63.svg
+share/unifi/webapps/ROOT/app-unifi/images/7948905b77ddc778f10fa69176bccb63.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/79b02850081e27b3ba209e6ae60ad50f.svg
 share/unifi/webapps/ROOT/app-unifi/images/79b02850081e27b3ba209e6ae60ad50f.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/79fcf270400edca30d7790872057d26c.svg
@@ -531,12 +527,8 @@ share/unifi/webapps/ROOT/app-unifi/images/8096e4aa56b12c0d56d10b1ba8e17f10.svg
 share/unifi/webapps/ROOT/app-unifi/images/8096e4aa56b12c0d56d10b1ba8e17f10.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/80c35c4c3177156ff0e1caf84da15d9e.svg
 share/unifi/webapps/ROOT/app-unifi/images/80c35c4c3177156ff0e1caf84da15d9e.svg.br
-share/unifi/webapps/ROOT/app-unifi/images/81d9e5e13526d27ce2bf766e5d5b6779.svg
-share/unifi/webapps/ROOT/app-unifi/images/81d9e5e13526d27ce2bf766e5d5b6779.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/82cb457affa8dbc92d613c757ff9ddf0.svg
 share/unifi/webapps/ROOT/app-unifi/images/82cb457affa8dbc92d613c757ff9ddf0.svg.br
-share/unifi/webapps/ROOT/app-unifi/images/8557fd79d988961068f9241334f74bb1.png
-share/unifi/webapps/ROOT/app-unifi/images/8557fd79d988961068f9241334f74bb1.png.br
 share/unifi/webapps/ROOT/app-unifi/images/8742b3d61adec7352b6e56cb8c8b7856.svg
 share/unifi/webapps/ROOT/app-unifi/images/8742b3d61adec7352b6e56cb8c8b7856.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/896330b72092b57179e09d43f831211b.svg
@@ -544,8 +536,6 @@ share/unifi/webapps/ROOT/app-unifi/images/896960882c109433fd89c09486cfc0f1.png
 share/unifi/webapps/ROOT/app-unifi/images/896960882c109433fd89c09486cfc0f1.png.br
 share/unifi/webapps/ROOT/app-unifi/images/89a384a0709264d3f4b9b8d37f627189.svg
 share/unifi/webapps/ROOT/app-unifi/images/89a384a0709264d3f4b9b8d37f627189.svg.br
-share/unifi/webapps/ROOT/app-unifi/images/8a27c679cae87f0ea27bfe3e7e059620.png
-share/unifi/webapps/ROOT/app-unifi/images/8a27c679cae87f0ea27bfe3e7e059620.png.br
 share/unifi/webapps/ROOT/app-unifi/images/8b293d984cea7db72e62598083dc759d.svg
 share/unifi/webapps/ROOT/app-unifi/images/8d15de04f5f6e8e89cab4e5eb237f607.svg
 share/unifi/webapps/ROOT/app-unifi/images/8e525621c88b974fb4ce23ad5eaf26ef.svg
@@ -570,6 +560,8 @@ share/unifi/webapps/ROOT/app-unifi/images/96cf4c4f16a30890687d4b101369e497.svg
 share/unifi/webapps/ROOT/app-unifi/images/96cf4c4f16a30890687d4b101369e497.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/9853139b446ddf94d5f1dde4fc2d397f.svg
 share/unifi/webapps/ROOT/app-unifi/images/9853139b446ddf94d5f1dde4fc2d397f.svg.br
+share/unifi/webapps/ROOT/app-unifi/images/986d1515d7fa73b30e44411b6335db0c.svg
+share/unifi/webapps/ROOT/app-unifi/images/986d1515d7fa73b30e44411b6335db0c.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/98f67a6ff36afda7a5ec44ec59eb5033.svg
 share/unifi/webapps/ROOT/app-unifi/images/98f67a6ff36afda7a5ec44ec59eb5033.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/992459a3d0f22849b493a540e1564bb0.svg
@@ -586,16 +578,12 @@ share/unifi/webapps/ROOT/app-unifi/images/9b9bee13c67ab85cd468d1c5fe38ad3e.svg.b
 share/unifi/webapps/ROOT/app-unifi/images/9c26f60a63bf575c6b7be3eec11e3043.svg
 share/unifi/webapps/ROOT/app-unifi/images/9e40c74ae0f4cc1c48321772ac1d4981.svg
 share/unifi/webapps/ROOT/app-unifi/images/9e40c74ae0f4cc1c48321772ac1d4981.svg.br
-share/unifi/webapps/ROOT/app-unifi/images/9e9b075d8f93a1fc27c66f6f134b4ab8.svg
-share/unifi/webapps/ROOT/app-unifi/images/9e9b075d8f93a1fc27c66f6f134b4ab8.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/9fd1fcbfedb5ace0e6e61a88b3fc3402.svg
 share/unifi/webapps/ROOT/app-unifi/images/a0923ddc3c8abed20bfdfbd559c8d7b0.svg
 share/unifi/webapps/ROOT/app-unifi/images/a0b173aaef73a37242b23ee59ac0609a.svg
 share/unifi/webapps/ROOT/app-unifi/images/a0b173aaef73a37242b23ee59ac0609a.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/a12f3b495c5217f9f5826b62a557f18b.svg
 share/unifi/webapps/ROOT/app-unifi/images/a12f3b495c5217f9f5826b62a557f18b.svg.br
-share/unifi/webapps/ROOT/app-unifi/images/a20d6233a1e3ff151c0db7e4d52ed5d4.png
-share/unifi/webapps/ROOT/app-unifi/images/a20d6233a1e3ff151c0db7e4d52ed5d4.png.br
 share/unifi/webapps/ROOT/app-unifi/images/a21f533de8561217cb8c0792d82a0bcc.svg
 share/unifi/webapps/ROOT/app-unifi/images/a21f533de8561217cb8c0792d82a0bcc.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/a3c31876aadbd5083efc027fe44f3004.svg
@@ -610,8 +598,6 @@ share/unifi/webapps/ROOT/app-unifi/images/aa6f2a40fea9a33e788546e0d0536e02.svg
 share/unifi/webapps/ROOT/app-unifi/images/aa6f2a40fea9a33e788546e0d0536e02.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/acfa822b42353a0e163384d46298a1b1.svg
 share/unifi/webapps/ROOT/app-unifi/images/acfa822b42353a0e163384d46298a1b1.svg.br
-share/unifi/webapps/ROOT/app-unifi/images/ad3aec71054d4781fee73177b0055cb7.png
-share/unifi/webapps/ROOT/app-unifi/images/ad3aec71054d4781fee73177b0055cb7.png.br
 share/unifi/webapps/ROOT/app-unifi/images/ae438f5a0664546bd81c71a56a0275be.svg
 share/unifi/webapps/ROOT/app-unifi/images/ae547dbec390990657f9d8acd33fbea4.svg
 share/unifi/webapps/ROOT/app-unifi/images/ae65659236a7e348402799477237e6fa.svg
@@ -700,8 +686,6 @@ share/unifi/webapps/ROOT/app-unifi/images/caedb9129bf6bd63ff4081a0ba91e113.svg
 share/unifi/webapps/ROOT/app-unifi/images/cc1b41b0e9485796cebb98fb04a7c10e.svg
 share/unifi/webapps/ROOT/app-unifi/images/cc1b41b0e9485796cebb98fb04a7c10e.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/cd346cdc7caa416803025986e843a600.svg
-share/unifi/webapps/ROOT/app-unifi/images/cda331778707d64bfc071d3d222d2a9b.png
-share/unifi/webapps/ROOT/app-unifi/images/cda331778707d64bfc071d3d222d2a9b.png.br
 share/unifi/webapps/ROOT/app-unifi/images/ce1431089b9cba8ed19a763287a27bac.svg
 share/unifi/webapps/ROOT/app-unifi/images/ce1431089b9cba8ed19a763287a27bac.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/ce4ed3c73e2b43b2d260648ea09c04af.png
@@ -974,6 +958,8 @@ share/unifi/webapps/ROOT/app-unifi/images/d5390a0cb1e74972fee66b17765915d4.svg
 share/unifi/webapps/ROOT/app-unifi/images/d5390a0cb1e74972fee66b17765915d4.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/d78bd31e5a11723db4d4ca9a01075817.svg
 share/unifi/webapps/ROOT/app-unifi/images/d78bd31e5a11723db4d4ca9a01075817.svg.br
+share/unifi/webapps/ROOT/app-unifi/images/d8d26f31cf5246e46e22104d7b59d02b.svg
+share/unifi/webapps/ROOT/app-unifi/images/d8d26f31cf5246e46e22104d7b59d02b.svg.br
 share/unifi/webapps/ROOT/app-unifi/images/d939dcac611747f6857eb4b92cb14c8e.svg
 share/unifi/webapps/ROOT/app-unifi/images/dashboard/
 share/unifi/webapps/ROOT/app-unifi/images/dashboard/bar-chart-negative.png
@@ -1949,23 +1935,23 @@ share/unifi/webapps/ROOT/app-unifi/images/devices/uas/UCKP/standard@4x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/uas/UCKP/standard@4x.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/grid.png
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/grid.png.br
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/grid@2x.png
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/grid@2x.png.br
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/side.png
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/side.png.br
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/standard.png
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/standard.png.br
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/standard@2x.png
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/standard@2x.png.br
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/standard@4x.png
-share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-LINK/standard@4x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/grid.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/grid.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/grid@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/grid@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/standard.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/standard.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/standard@2x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/standard@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/standard@4x.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB-SINGLE/standard@4x.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/grid.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/grid.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/grid@2x.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/grid@2x.png.br
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/side.png
+share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/side.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/standard.png
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/standard.png.br
 share/unifi/webapps/ROOT/app-unifi/images/devices/ubb/UBB/standard@2x.png
@@ -3895,8 +3881,8 @@ share/unifi/webapps/ROOT/app-unifi/js/base.js
 share/unifi/webapps/ROOT/app-unifi/js/base.js.br
 share/unifi/webapps/ROOT/app-unifi/js/components.js
 share/unifi/webapps/ROOT/app-unifi/js/components.js.br
-share/unifi/webapps/ROOT/app-unifi/js/dynamic.appSwitcher.af8d4a7711d36986677e.js
-share/unifi/webapps/ROOT/app-unifi/js/dynamic.appSwitcher.af8d4a7711d36986677e.js.br
+share/unifi/webapps/ROOT/app-unifi/js/dynamic.appSwitcher.4467e47c5f9f705cb449.js
+share/unifi/webapps/ROOT/app-unifi/js/dynamic.appSwitcher.4467e47c5f9f705cb449.js.br
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.dpi.js
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.dpi.js.br
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.insights.js
@@ -3911,34 +3897,34 @@ share/unifi/webapps/ROOT/app-unifi/js/dynamic.settings.js
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.settings.js.br
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.showdown.js
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.showdown.js.br
-share/unifi/webapps/ROOT/app-unifi/js/dynamic.ufsdn.af8d4a7711d36986677e.js
-share/unifi/webapps/ROOT/app-unifi/js/dynamic.ufsdn.af8d4a7711d36986677e.js.br
+share/unifi/webapps/ROOT/app-unifi/js/dynamic.ufsdn.4467e47c5f9f705cb449.js
+share/unifi/webapps/ROOT/app-unifi/js/dynamic.ufsdn.4467e47c5f9f705cb449.js.br
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.zxcvbn.js
 share/unifi/webapps/ROOT/app-unifi/js/dynamic.zxcvbn.js.br
 share/unifi/webapps/ROOT/app-unifi/js/e652470b9572b86907b77a97f40dc915.woff
 share/unifi/webapps/ROOT/app-unifi/js/e652470b9572b86907b77a97f40dc915.woff.br
 share/unifi/webapps/ROOT/app-unifi/js/initial.js
 share/unifi/webapps/ROOT/app-unifi/js/initial.js.br
-share/unifi/webapps/ROOT/app-unifi/js/ips-map.af8d4a7711d36986677e.js
-share/unifi/webapps/ROOT/app-unifi/js/ips-map.af8d4a7711d36986677e.js.br
-share/unifi/webapps/ROOT/app-unifi/js/ips.af8d4a7711d36986677e.js
-share/unifi/webapps/ROOT/app-unifi/js/ips.af8d4a7711d36986677e.js.br
+share/unifi/webapps/ROOT/app-unifi/js/ips-map.4467e47c5f9f705cb449.js
+share/unifi/webapps/ROOT/app-unifi/js/ips-map.4467e47c5f9f705cb449.js.br
+share/unifi/webapps/ROOT/app-unifi/js/ips.4467e47c5f9f705cb449.js
+share/unifi/webapps/ROOT/app-unifi/js/ips.4467e47c5f9f705cb449.js.br
 share/unifi/webapps/ROOT/app-unifi/js/main.hotspot.js
 share/unifi/webapps/ROOT/app-unifi/js/main.hotspot.js.br
 share/unifi/webapps/ROOT/app-unifi/js/main.manage.js
 share/unifi/webapps/ROOT/app-unifi/js/main.manage.js.br
 share/unifi/webapps/ROOT/app-unifi/js/main.overview.js
 share/unifi/webapps/ROOT/app-unifi/js/main.overview.js.br
-share/unifi/webapps/ROOT/app-unifi/js/multi-step-animations.af8d4a7711d36986677e.js
-share/unifi/webapps/ROOT/app-unifi/js/multi-step-animations.af8d4a7711d36986677e.js.br
-share/unifi/webapps/ROOT/app-unifi/js/network topology.af8d4a7711d36986677e.js
-share/unifi/webapps/ROOT/app-unifi/js/network topology.af8d4a7711d36986677e.js.br
+share/unifi/webapps/ROOT/app-unifi/js/multi-step-animations.4467e47c5f9f705cb449.js
+share/unifi/webapps/ROOT/app-unifi/js/multi-step-animations.4467e47c5f9f705cb449.js.br
+share/unifi/webapps/ROOT/app-unifi/js/network topology.4467e47c5f9f705cb449.js
+share/unifi/webapps/ROOT/app-unifi/js/network topology.4467e47c5f9f705cb449.js.br
 share/unifi/webapps/ROOT/app-unifi/js/oauth.js
 share/unifi/webapps/ROOT/app-unifi/js/oauth.js.br
-share/unifi/webapps/ROOT/app-unifi/js/security.af8d4a7711d36986677e.js
-share/unifi/webapps/ROOT/app-unifi/js/security.af8d4a7711d36986677e.js.br
-share/unifi/webapps/ROOT/app-unifi/js/services.af8d4a7711d36986677e.js
-share/unifi/webapps/ROOT/app-unifi/js/services.af8d4a7711d36986677e.js.br
+share/unifi/webapps/ROOT/app-unifi/js/security.4467e47c5f9f705cb449.js
+share/unifi/webapps/ROOT/app-unifi/js/security.4467e47c5f9f705cb449.js.br
+share/unifi/webapps/ROOT/app-unifi/js/services.4467e47c5f9f705cb449.js
+share/unifi/webapps/ROOT/app-unifi/js/services.4467e47c5f9f705cb449.js.br
 share/unifi/webapps/ROOT/app-unifi/locales/
 share/unifi/webapps/ROOT/app-unifi/locales/ca/
 share/unifi/webapps/ROOT/app-unifi/locales/ca/account.json
