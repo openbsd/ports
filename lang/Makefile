@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2019/11/24 03:01:38 thfr Exp $
+# $OpenBSD: Makefile,v 1.240 2019/12/21 14:24:24 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -89,6 +89,7 @@
      SUBDIR += processing
      SUBDIR += pypy
      SUBDIR += python
+     SUBDIR += quickjs
      SUBDIR += racket-minimal
      SUBDIR += racket-minimal,no_jit
      SUBDIR += rakudo
