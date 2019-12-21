@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/21 13:50:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/21 18:10:33 bcallah Exp $
 
 COMMENT =	graphical manual page viewer using mandoc
 CATEGORIES =	sysutils x11
 
 GH_ACCOUNT =	zigalenarcic
 GH_PROJECT =	mangl
-GH_TAGNAME =	v1.0
+GH_TAGNAME =	v1.0.2
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
