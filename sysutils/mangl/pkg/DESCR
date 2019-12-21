@@ -1,0 +1,13 @@
+Mangl is a graphical man page viewer based on the mandoc library.
+It uses OpenGL to display man pages with clickable hyperlinks and smooth
+scrolling.
+
+Features:
+* Searching of man pages
+* Hyperlinks to other man pages
+* Search within a man page
+* Browsing history
+* Colored text
+* Truetype support
+* Draggable scrollbar
+* Keyboard and mouse interaction

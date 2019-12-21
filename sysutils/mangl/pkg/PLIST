@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/21 13:50:12 bcallah Exp $
+@bin bin/mangl
