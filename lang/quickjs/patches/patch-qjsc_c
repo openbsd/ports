@@ -1,0 +1,15 @@
+$OpenBSD: patch-qjsc_c,v 1.1.1.1 2019/12/21 14:24:03 bcallah Exp $
+
+Remove -ldl
+
+Index: qjsc.c
+--- qjsc.c.orig
++++ qjsc.c
+@@ -450,7 +450,6 @@ static int output_executable(const char *out_filename,
+              lib_dir, bn_suffix, lto_suffix);
+     *arg++ = libjsname;
+     *arg++ = "-lm";
+-    *arg++ = "-ldl";
+     *arg = NULL;
+     
+     if (verbose) {

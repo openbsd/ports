@@ -1,0 +1,14 @@
+$OpenBSD: patch-quickjs-libc_c,v 1.1.1.1 2019/12/21 14:24:03 bcallah Exp $
+
+Index: quickjs-libc.c
+--- quickjs-libc.c.orig
++++ quickjs-libc.c
+@@ -45,7 +45,7 @@
+ #include <termios.h>
+ #include <sys/ioctl.h>
+ #include <sys/wait.h>
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ typedef sig_t sighandler_t;
+ #endif
+ #endif
