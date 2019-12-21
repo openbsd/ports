@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/21 14:16:53 jasper Exp $
+bin/jefferson
+lib/python${MODPY_VERSION}/site-packages/jefferson/
+lib/python${MODPY_VERSION}/site-packages/jefferson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/jefferson/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jefferson/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jefferson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jefferson/${MODPY_PYCACHE}jffs2_lzma.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jefferson/${MODPY_PYCACHE}rtime.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jefferson/jffs2_lzma.py
+lib/python${MODPY_VERSION}/site-packages/jefferson/rtime.py
