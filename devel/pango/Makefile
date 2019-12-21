@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.128 2019/12/16 15:49:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2019/12/21 14:38:47 cwen Exp $
 
 COMMENT=		library for layout and rendering of text
 
 GNOME_VERSION=		1.44.7
+REVISION=		0
 GNOME_PROJECT=		pango
 
 SHARED_LIBS += pango-1.0                 3801.0 # 0.4400.7
@@ -12,7 +13,7 @@ SHARED_LIBS += pangocairo-1.0            3801.0 # 0.4400.7
 
 CATEGORIES=		devel x11
 
-HOMEPAGE=		http://www.pango.org/
+HOMEPAGE=		https://pango.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -22,6 +23,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xft Xrender c cairo fontconfig freetype fribidi
 WANTLIB += glib-2.0 gobject-2.0 harfbuzz m
 
+COMPILER=		base-clang ports-gcc
 MODULES=		devel/meson \
 			x11/gnome
 
