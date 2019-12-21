@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2019/09/05 18:47:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2019/12/21 13:27:04 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -432,6 +432,7 @@ share/vim/${P}/ftplugin/man.vim
 share/vim/${P}/ftplugin/manconf.vim
 share/vim/${P}/ftplugin/markdown.vim
 share/vim/${P}/ftplugin/matlab.vim
+share/vim/${P}/ftplugin/meson.vim
 share/vim/${P}/ftplugin/mf.vim
 share/vim/${P}/ftplugin/mma.vim
 share/vim/${P}/ftplugin/modconf.vim
@@ -542,6 +543,7 @@ share/vim/${P}/indent/ada.vim
 share/vim/${P}/indent/ant.vim
 share/vim/${P}/indent/automake.vim
 share/vim/${P}/indent/awk.vim
+share/vim/${P}/indent/bash.vim
 share/vim/${P}/indent/bib.vim
 share/vim/${P}/indent/bst.vim
 share/vim/${P}/indent/bzl.vim
@@ -601,6 +603,7 @@ share/vim/${P}/indent/lua.vim
 share/vim/${P}/indent/mail.vim
 share/vim/${P}/indent/make.vim
 share/vim/${P}/indent/matlab.vim
+share/vim/${P}/indent/meson.vim
 share/vim/${P}/indent/mf.vim
 share/vim/${P}/indent/mma.vim
 share/vim/${P}/indent/mp.vim
@@ -743,6 +746,15 @@ share/vim/${P}/keymap/vietnamese-viqr_utf-8.vim
 share/vim/${P}/keymap/vietnamese-vni_utf-8.vim
 share/vim/${P}/lang/
 share/vim/${P}/lang/README.txt
+share/vim/${P}/lang/menu_tr.cp1254.vim
+share/vim/${P}/lang/menu_tr.iso_8859-9.vim
+share/vim/${P}/lang/menu_tr.utf-8.vim
+share/vim/${P}/lang/menu_tr_tr.cp1254.vim
+share/vim/${P}/lang/menu_tr_tr.iso_8859-9.vim
+share/vim/${P}/lang/menu_tr_tr.utf-8.vim
+share/vim/${P}/lang/tr/
+share/vim/${P}/lang/tr/LC_MESSAGES/
+share/vim/${P}/lang/tr/LC_MESSAGES/vim.mo
 share/vim/${P}/macros/
 share/vim/${P}/macros/README.txt
 share/vim/${P}/macros/editexisting.vim
@@ -923,6 +935,7 @@ share/vim/${P}/syntax/awk.vim
 share/vim/${P}/syntax/ayacc.vim
 share/vim/${P}/syntax/b.vim
 share/vim/${P}/syntax/baan.vim
+share/vim/${P}/syntax/bash.vim
 share/vim/${P}/syntax/basic.vim
 share/vim/${P}/syntax/bc.vim
 share/vim/${P}/syntax/bdf.vim
@@ -986,6 +999,7 @@ share/vim/${P}/syntax/cweb.vim
 share/vim/${P}/syntax/cynlib.vim
 share/vim/${P}/syntax/cynpp.vim
 share/vim/${P}/syntax/d.vim
+share/vim/${P}/syntax/dart.vim
 share/vim/${P}/syntax/datascript.vim
 share/vim/${P}/syntax/dcd.vim
 share/vim/${P}/syntax/dcl.vim
@@ -1184,6 +1198,7 @@ share/vim/${P}/syntax/master.vim
 share/vim/${P}/syntax/matlab.vim
 share/vim/${P}/syntax/maxima.vim
 share/vim/${P}/syntax/mel.vim
+share/vim/${P}/syntax/meson.vim
 share/vim/${P}/syntax/messages.vim
 share/vim/${P}/syntax/mf.vim
 share/vim/${P}/syntax/mgl.vim
@@ -1292,6 +1307,7 @@ share/vim/${P}/syntax/readline.vim
 share/vim/${P}/syntax/rebol.vim
 share/vim/${P}/syntax/redif.vim
 share/vim/${P}/syntax/registry.vim
+share/vim/${P}/syntax/rego.vim
 share/vim/${P}/syntax/remind.vim
 share/vim/${P}/syntax/resolv.vim
 share/vim/${P}/syntax/reva.vim
@@ -1424,6 +1440,8 @@ share/vim/${P}/syntax/tt2.vim
 share/vim/${P}/syntax/tt2html.vim
 share/vim/${P}/syntax/tt2js.vim
 share/vim/${P}/syntax/typescript.vim
+share/vim/${P}/syntax/typescriptcommon.vim
+share/vim/${P}/syntax/typescriptreact.vim
 share/vim/${P}/syntax/uc.vim
 share/vim/${P}/syntax/udevconf.vim
 share/vim/${P}/syntax/udevperm.vim

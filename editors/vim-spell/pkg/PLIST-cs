@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST-cs,v 1.3 2012/01/17 18:29:43 espie Exp $
+@comment $OpenBSD: PLIST-cs,v 1.4 2019/12/21 13:27:05 sthen Exp $
 @pkgpath editors/vim-spell,cs
+share/vim/
+share/vim/vim${P}/
+share/vim/vim${P}/spell/
 share/vim/vim${P}/spell/cs.cp1250.spl
 share/vim/vim${P}/spell/cs.iso-8859-2.spl
 share/vim/vim${P}/spell/cs.utf-8.spl

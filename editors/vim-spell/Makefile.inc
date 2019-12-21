@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.9 2019/07/12 20:46:07 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2019/12/21 13:27:04 sthen Exp $
 
 LANGS =		af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
 		sl sv sw tet tl tn uk yi zu
 
 HOMEPAGE =	https://www.vim.org/
-VERSION =	8.1
+VERSION =	8.2
 P =		${VERSION:C/[\.]//g}
 CATEGORIES =	editors
 MASTER_SITES =	http://ftp.vim.org/pub/vim/runtime/spell/ \

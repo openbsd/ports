@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.194 2019/09/20 17:21:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.195 2019/12/21 13:27:04 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		8.1.2061
+V=		8.2.0025
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -151,7 +151,7 @@ WANTLIB-lang=
 WRKSRC=		${WRKDIST}/src
 SUBST_VARS=	P
 
-.if ${P} != vim81
+.if ${P} != vim82
 ERRORS=		"Fatal: Major version was updated; sync editors/vim-spell and update this check"
 .endif
 
