@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2019/12/21 14:21:13 jasper Exp $
 
 CATEGORIES +=		net net/napalm
-
-MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 MODULES +=		lang/python
 MODPY_PI ?=		Yes

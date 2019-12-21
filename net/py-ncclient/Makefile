@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/02 11:57:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2019/12/21 14:21:13 jasper Exp $
 
 COMMENT =		Python library for NETCONF clients
 
 MODPY_EGG_VERSION =	0.6.6
+REVISION =		0
 DISTNAME =		ncclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://ncclient.readthedocs.io/en/latest/
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE =	Yes

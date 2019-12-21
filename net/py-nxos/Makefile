@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/21 14:21:13 jasper Exp $
 
 COMMENT =		library for managing Cisco NX-OS devices through NX-API
 
 MODPY_EGG_VERSION =	0.0.5
+REVISION =		0
 DISTNAME =		pynxos-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
 
 CATEGORIES =		net
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
