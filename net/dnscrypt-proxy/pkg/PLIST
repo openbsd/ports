@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/10/16 14:55:02 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/22 14:12:47 bket Exp $
 @conflict dnscrypt-proxy-plugins-*
 @pkgpath net/dnscrypt-proxy,-main
 @pkgpath net/dnscrypt-proxy,-utils
@@ -14,5 +14,6 @@ share/examples/dnscrypt-proxy/example-cloaking-rules.txt
 share/examples/dnscrypt-proxy/example-dnscrypt-proxy.toml
 @sample ${SYSCONFDIR}/dnscrypt-proxy.toml
 share/examples/dnscrypt-proxy/example-forwarding-rules.txt
+share/examples/dnscrypt-proxy/example-ip-blacklist.txt
 share/examples/dnscrypt-proxy/example-whitelist.txt
 @sample ${LOCALSTATEDIR}/dnscrypt-proxy/
