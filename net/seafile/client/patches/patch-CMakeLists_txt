@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/08/13 20:37:24 kirby Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/12/22 19:57:19 kirby Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -12,7 +12,7 @@ Index: CMakeLists.txt
      SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
  ENDIF()
  
-@@ -801,7 +801,7 @@ ENDIF()
+@@ -802,7 +802,7 @@ ENDIF()
  
  ## QtBus
  IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
