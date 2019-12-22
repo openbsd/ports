@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/10/16 20:17:28 remi Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/12/22 15:55:06 martin Exp $
 baikal/
 baikal/CHANGELOG.md
 baikal/Core/
@@ -1068,6 +1068,7 @@ baikal/vendor/sabre/event/lib/coroutine.php
 baikal/vendor/sabre/event/phpunit.xml.dist
 baikal/vendor/sabre/http/
 baikal/vendor/sabre/http/.gitignore
+baikal/vendor/sabre/http/.php_cs.dist
 baikal/vendor/sabre/http/.travis.yml
 baikal/vendor/sabre/http/CHANGELOG.md
 baikal/vendor/sabre/http/LICENSE
@@ -1105,6 +1106,7 @@ baikal/vendor/sabre/http/lib/ResponseInterface.php
 baikal/vendor/sabre/http/lib/Sapi.php
 baikal/vendor/sabre/http/lib/Version.php
 baikal/vendor/sabre/http/lib/functions.php
+baikal/vendor/sabre/http/phpstan.neon
 baikal/vendor/sabre/http/tests/
 baikal/vendor/sabre/http/tests/HTTP/
 baikal/vendor/sabre/http/tests/HTTP/Auth/
@@ -1127,6 +1129,10 @@ baikal/vendor/sabre/http/tests/bootstrap.php
 baikal/vendor/sabre/http/tests/phpcs/
 baikal/vendor/sabre/http/tests/phpcs/ruleset.xml
 baikal/vendor/sabre/http/tests/phpunit.xml
+baikal/vendor/sabre/http/tests/www/
+baikal/vendor/sabre/http/tests/www/bar.php
+baikal/vendor/sabre/http/tests/www/foo
+baikal/vendor/sabre/http/tests/www/large.php
 baikal/vendor/sabre/uri/
 baikal/vendor/sabre/uri/.gitattributes
 baikal/vendor/sabre/uri/.gitignore
