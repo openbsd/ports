@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2019/06/28 11:05:11 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2019/12/22 15:47:35 martin Exp $
 
 COMMENT =		open source MPI-3.1 implementation
 
-V =			4.0.1
+V =			4.0.2
 DISTNAME =		openmpi-$V
-REVISION =		0
 
 SHARED_LIBS +=  mca_common_dstore         0.0 # 1.0
 SHARED_LIBS +=  mca_common_monitoring     0.0 # 60.0

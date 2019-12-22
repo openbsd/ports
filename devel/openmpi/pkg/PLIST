@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/06/27 13:52:00 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/12/22 15:47:36 martin Exp $
 bin/aggregate_profile.pl
 bin/mpiCC
 bin/mpic++
@@ -143,15 +143,6 @@ lib/openmpi/mca_compress_gzip.so
 lib/openmpi/mca_crs_none.a
 lib/openmpi/mca_crs_none.la
 lib/openmpi/mca_crs_none.so
-lib/openmpi/mca_dfs_app.a
-lib/openmpi/mca_dfs_app.la
-lib/openmpi/mca_dfs_app.so
-lib/openmpi/mca_dfs_orted.a
-lib/openmpi/mca_dfs_orted.la
-lib/openmpi/mca_dfs_orted.so
-lib/openmpi/mca_dfs_test.a
-lib/openmpi/mca_dfs_test.la
-lib/openmpi/mca_dfs_test.so
 lib/openmpi/mca_errmgr_default_app.a
 lib/openmpi/mca_errmgr_default_app.la
 lib/openmpi/mca_errmgr_default_app.so
@@ -221,9 +212,6 @@ lib/openmpi/mca_iof_tool.so
 lib/openmpi/mca_mpool_hugepage.a
 lib/openmpi/mca_mpool_hugepage.la
 lib/openmpi/mca_mpool_hugepage.so
-lib/openmpi/mca_notifier_syslog.a
-lib/openmpi/mca_notifier_syslog.la
-lib/openmpi/mca_notifier_syslog.so
 lib/openmpi/mca_odls_default.a
 lib/openmpi/mca_odls_default.la
 lib/openmpi/mca_odls_default.so
@@ -288,6 +276,9 @@ lib/openmpi/mca_reachable_weighted.so
 lib/openmpi/mca_regx_fwd.a
 lib/openmpi/mca_regx_fwd.la
 lib/openmpi/mca_regx_fwd.so
+lib/openmpi/mca_regx_naive.a
+lib/openmpi/mca_regx_naive.la
+lib/openmpi/mca_regx_naive.so
 lib/openmpi/mca_regx_reverse.a
 lib/openmpi/mca_regx_reverse.la
 lib/openmpi/mca_regx_reverse.so
@@ -315,9 +306,6 @@ lib/openmpi/mca_rml_oob.so
 lib/openmpi/mca_routed_binomial.a
 lib/openmpi/mca_routed_binomial.la
 lib/openmpi/mca_routed_binomial.so
-lib/openmpi/mca_routed_debruijn.a
-lib/openmpi/mca_routed_debruijn.la
-lib/openmpi/mca_routed_debruijn.so
 lib/openmpi/mca_routed_direct.a
 lib/openmpi/mca_routed_direct.la
 lib/openmpi/mca_routed_direct.so
