@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/12/22 12:19:20 giovanni Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
@@ -6,7 +6,7 @@ COMMENT-pgsql=		postgresql based smtpd table support
 COMMENT-python=		extras with python bindings for smtpd
 COMMENT-redis=		redis based smtpd table support
 
-V=			6.4.0
+V=			6.6.0
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-mysql=		opensmtpd-extras-mysql-${V}
@@ -14,7 +14,6 @@ PKGNAME-pgsql=		opensmtpd-extras-pgsql-${V}
 PKGNAME-python=		opensmtpd-extras-python-${V}
 PKGNAME-redis=		opensmtpd-extras-redis-${V}
 EPOCH=			0
-REVISION=		0
 
 CATEGORIES=		mail
 
@@ -29,12 +28,14 @@ MULTI_PACKAGES=		-main -mysql -pgsql -python -redis
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=		c crypto event m pthread ssl sqlite3 z
-WANTLIB-mysql=		c crypto event iconv ssl m pthread mysqlclient z
+WANTLIB-mysql=		c crypto event iconv ssl m pthread mariadb z
 WANTLIB-pgsql=		c crypto event ssl pq
-WANTLIB-python=		c crypto event ssl m util pthread ${MODPY_WANTLIB}
+WANTLIB-python=		c crypto event iconv intl ssl m util pthread ${MODPY_WANTLIB}
 WANTLIB-redis=		c crypto event ssl hiredis
 
 MASTER_SITES=		${HOMEPAGE}archives/
+
+WRKSRC=			${WRKDIR}/OpenSMTPD-extras-${V}
 
 MODULES=		lang/python
 
@@ -45,7 +46,8 @@ LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS}
 LIB_DEPENDS-redis=	databases/libhiredis
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--libexecdir=${PREFIX}/libexec \
 			--sysconfdir=${SYSCONFDIR}/mail \
@@ -68,5 +70,8 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-table-socketmap \
 			--with-table-sqlite \
 			--with-table-stub
+
+post-patch:
+		cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} sh bootstrap
 
 .include <bsd.port.mk>
