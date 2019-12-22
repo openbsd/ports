@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2019/12/10 07:32:42 semarie Exp $
+# $OpenBSD: Makefile,v 1.104 2019/12/22 17:00:31 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,16 +13,16 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.39.0
-CARGO_V =		0.40.0
+V =			1.40.0
+CARGO_V =		0.41.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.8
+RUSTFMT_V =		1.4.9
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.39.0-20191124
-BV-amd64 =		1.39.0-20191122
-BV-i386 =		1.39.0-20191123
+BV-aarch64 =		1.40.0-20191221
+BV-amd64 =		1.40.0-20191217
+BV-i386 =		1.40.0-20191220
 BV-sparc64 =		1.39.0-20191207
 BV =			${BV-${MACHINE_ARCH}}
 
