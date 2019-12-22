@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/16 12:54:30 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2019/12/22 20:49:45 fcambus Exp $
 
 BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.c:2077
 
@@ -34,11 +34,12 @@ LIB_DEPENDS =	audio/adplug \
 		devel/libbinio \
 		devel/sdl2
 
-CFLAGS +=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-CFLAGS +=	-I${LOCALBASE}/include/libbinio
+CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libbinio
 CXXFLAGS +=	${CFLAGS}
 
 CONFIGURE_STYLE = gnu
+
+CONFIGURE_ENV =	LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS = --with-dir-suffix="" \
 		 --with-ncurses \
@@ -49,6 +50,13 @@ CONFIGURE_ARGS = --with-dir-suffix="" \
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes
+
+pre-configure:
+	# Prevent bundled Timidity to pick archivers/libzip's zip.h header
+	@cd ${WRKSRC}/playgmi/timidity-git/libarc && mv zip.h libarc-zip.h
+	@sed -i 's|"zip.h"|"libarc-zip.h"|' \
+		${WRKSRC}/playgmi/timidity-git/libarc/*.c \
+		${WRKSRC}/playgmi/timidity-git/timidity/*.c
 
 post-install:
 	gunzip ${PREFIX}/info/ocp.info.gz
