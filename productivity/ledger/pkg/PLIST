@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/08/13 19:22:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/12/22 16:05:42 fcambus Exp $
 @bin bin/ledger
 include/ledger/
 include/ledger/account.h
@@ -29,7 +29,6 @@ include/ledger/lookup.h
 include/ledger/mask.h
 include/ledger/op.h
 include/ledger/option.h
-include/ledger/org.h
 include/ledger/output.h
 include/ledger/parser.h
 include/ledger/pool.h
@@ -50,7 +49,6 @@ include/ledger/select.h
 include/ledger/session.h
 include/ledger/stats.h
 include/ledger/stream.h
-include/ledger/strptime.h
 include/ledger/system.hh
 include/ledger/temps.h
 include/ledger/timelog.h
@@ -61,7 +59,6 @@ include/ledger/utils.h
 include/ledger/value.h
 include/ledger/views.h
 include/ledger/xact.h
-info/ledger-mode.info
 info/ledger3.info
 @lib lib/libledger.so.${LIBledger_VERSION}
 @man man/man1/ledger.1
@@ -103,8 +100,8 @@ share/examples/ledger/non-profit-audit-reports/tests/Financial/
 share/examples/ledger/non-profit-audit-reports/tests/Financial/BankStuff/
 share/examples/ledger/non-profit-audit-reports/tests/Financial/BankStuff/bank-statement.pdf
 share/examples/ledger/non-profit-audit-reports/tests/Financial/Invoices/
-share/examples/ledger/non-profit-audit-reports/tests/Financial/Invoices/Invoice2${LIBledger_MAJOR}11${LIBledger_MAJOR}51${LIBledger_MAJOR}.pdf
-share/examples/ledger/non-profit-audit-reports/tests/Financial/Invoices/Invoice2${LIBledger_MAJOR}11${LIBledger_MAJOR}51${LIBledger_MAJOR}.txt
+share/examples/ledger/non-profit-audit-reports/tests/Financial/Invoices/Invoice20110510.pdf
+share/examples/ledger/non-profit-audit-reports/tests/Financial/Invoices/Invoice20110510.txt
 share/examples/ledger/non-profit-audit-reports/tests/Projects/
 share/examples/ledger/non-profit-audit-reports/tests/Projects/Blah/
 share/examples/ledger/non-profit-audit-reports/tests/Projects/Blah/Expenses/
@@ -117,7 +114,7 @@ share/examples/ledger/non-profit-audit-reports/tests/Projects/Foo/Expenses/hosti
 share/examples/ledger/non-profit-audit-reports/tests/Projects/Foo/Expenses/hosting/AprilHostingReceipt.pdf
 share/examples/ledger/non-profit-audit-reports/tests/Projects/Foo/Expenses/hosting/AprilHostingReceipt.txt
 share/examples/ledger/non-profit-audit-reports/tests/Projects/Foo/Invoices/
-share/examples/ledger/non-profit-audit-reports/tests/Projects/Foo/Invoices/Invoice2${LIBledger_MAJOR}1${LIBledger_MAJOR}${LIBledger_MAJOR}1${LIBledger_MAJOR}1.pdf
+share/examples/ledger/non-profit-audit-reports/tests/Projects/Foo/Invoices/Invoice20100101.pdf
 share/examples/ledger/non-profit-audit-reports/tests/Projects/Foo/earmark-record.txt
 share/examples/ledger/non-profit-audit-reports/tests/non-profit-test-data.ledger
 share/examples/ledger/non-profit-audit-reports/tests/non-profit-test-data_MANIFEST

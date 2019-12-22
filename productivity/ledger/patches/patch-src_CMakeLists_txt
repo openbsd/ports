@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2016/08/13 19:22:05 jasper Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2019/12/22 16:05:42 fcambus Exp $
 
 Enforce library versioning.
 
---- src/CMakeLists.txt.orig	Mon Jan 11 16:59:38 2016
-+++ src/CMakeLists.txt	Thu Aug 11 22:42:45 2016
-@@ -268,8 +268,8 @@ if (BUILD_LIBRARY)
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -278,8 +278,8 @@ if (BUILD_LIBRARY)
    set_target_properties(libledger PROPERTIES
      PREFIX ""
      INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}"

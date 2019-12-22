@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.27 2019/08/09 16:05:17 cwen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/12/22 16:05:42 fcambus Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
-GH_TAGNAME =		v3.1.1
+GH_TAGNAME =		v3.1.3
 GH_ACCOUNT =		ledger
 GH_PROJECT =		ledger
-REVISION =		4
 
-SHARED_LIBS +=  ledger                    0.0 # 3.0
+SHARED_LIBS +=  ledger                    1.0 # 3.0
 
 CATEGORIES =		productivity
 
-HOMEPAGE =		http://www.ledger-cli.org/
+HOMEPAGE =		https://www.ledger-cli.org/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
@@ -20,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_unit_test_framework-mt
-WANTLIB += c gmp m mpfr pthread ${COMPILER_LIBCXX}
+WANTLIB += c gmp icuuc m mpfr pthread ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake \
 			lang/python
@@ -49,7 +48,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/CMakeLists.txt
 
 post-install:
-.for i in ledger3 ledger-mode
+.for i in ledger3
 	cd ${WRKBUILD}/doc/ && \
 		cp ${WRKSRC}/doc/$i.texi . && \
 		makeinfo --force --no-split -o ${PREFIX}/info/$i.info $i.texi
