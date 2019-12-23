@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_libutil_util_c,v 1.1 2019/10/29 22:50:14 sthen Exp $
+$OpenBSD: patch-src_libutil_util_c,v 1.2 2019/12/23 13:25:48 sthen Exp $
 
 on OpenBSD we just have BLAS not OpenBLAS and this function doesn't exist.
 
 Index: src/libutil/util.c
 --- src/libutil/util.c.orig
 +++ src/libutil/util.c
-@@ -2502,7 +2502,7 @@ rspamd_config_libs (struct rspamd_external_libs_ctx *c
+@@ -2527,7 +2527,7 @@ rspamd_config_libs (struct rspamd_external_libs_ctx *c
  			ZSTD_freeCStream (ctx->out_zstream);
  			ctx->out_zstream = NULL;
  		}

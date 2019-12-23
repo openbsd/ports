@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2019/11/18 11:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2019/12/23 13:25:48 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	2.1
-REVISION=	1
+GH_TAGNAME=	2.2
 
 CATEGORIES=	mail
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += blas c crypto glib-2.0 icudata icui18n icuuc intl m
-WANTLIB += pcre sodium sqlite3 ssl z
+WANTLIB += pcre sodium sqlite3 ssl util z
 
 FLAVORS=	no_luajit
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -28,6 +27,7 @@ FLAVOR=		no_luajit
 .endif
 
 MODULES=	devel/cmake
+COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/gettext,-runtime \

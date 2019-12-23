@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2019/11/18 11:57:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/12/23 13:25:48 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
@@ -8,11 +8,11 @@
 @bin bin/rspamd
 bin/rspamd_stats
 lib/rspamd/
-lib/rspamd/librspamd-actrie.so
-lib/rspamd/librspamd-ev.so
-lib/rspamd/librspamd-kann.so
-lib/rspamd/librspamd-replxx.so
-lib/rspamd/librspamd-server.so
+@so lib/rspamd/librspamd-actrie.so
+@so lib/rspamd/librspamd-ev.so
+@so lib/rspamd/librspamd-kann.so
+@so lib/rspamd/librspamd-replxx.so
+@so lib/rspamd/librspamd-server.so
 @man man/man1/rspamadm.1
 @man man/man1/rspamc.1
 @man man/man8/rspamd.8
@@ -286,6 +286,7 @@ share/rspamd/lualib/lua_scanners/savapi.lua
 share/rspamd/lualib/lua_scanners/sophos.lua
 share/rspamd/lualib/lua_scanners/spamassassin.lua
 share/rspamd/lualib/lua_scanners/vadesecure.lua
+share/rspamd/lualib/lua_scanners/virustotal.lua
 share/rspamd/lualib/lua_selectors/
 share/rspamd/lualib/lua_selectors/extractors.lua
 share/rspamd/lualib/lua_selectors/init.lua
@@ -296,6 +297,7 @@ share/rspamd/lualib/lua_smtp.lua
 share/rspamd/lualib/lua_stat.lua
 share/rspamd/lualib/lua_tcp_sync.lua
 share/rspamd/lualib/lua_util.lua
+share/rspamd/lualib/lua_verdict.lua
 share/rspamd/lualib/lupa.lua
 share/rspamd/lualib/plugins_stats.lua
 share/rspamd/lualib/rescore_utility.lua
