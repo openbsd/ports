@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.114 2019/11/19 20:15:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2019/12/23 19:46:13 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	3.8.2
+GNOME_VERSION=	3.8.3
 
 CATEGORIES=	graphics
 
@@ -25,6 +25,8 @@ COMPILER=	base-clang ports-gcc base-gcc
 MODULES=	devel/dconf \
 		devel/meson \
 		x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
 

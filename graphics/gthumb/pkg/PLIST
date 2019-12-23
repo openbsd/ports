@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2019/11/19 20:15:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.36 2019/12/23 19:46:13 jasper Exp $
 @bin bin/gthumb
 include/gthumb/
 include/gthumb/cairo-scale.h
@@ -987,13 +987,13 @@ share/help/zh_CN/gthumb/thumbnail-pane.page
 share/help/zh_CN/gthumb/thumbnails.page
 share/help/zh_CN/gthumb/viewer.page
 share/help/zh_CN/gthumb/wallpaper.page
-share/icons/hicolor/16x16/apps/gthumb-symbolic.svg
-share/icons/hicolor/16x16/apps/gthumb.png
+share/icons/hicolor/16x16/apps/org.gnome.gThumb-symbolic.svg
+share/icons/hicolor/16x16/apps/org.gnome.gThumb.png
 share/icons/hicolor/22x22/apps/gthumb.png
-share/icons/hicolor/256x256/apps/gthumb.png
+share/icons/hicolor/256x256/apps/org.gnome.gThumb.png
 share/icons/hicolor/32x32/apps/gthumb.png
 share/icons/hicolor/48x48/apps/gthumb.png
-share/icons/hicolor/scalable/apps/gthumb.svg
+share/icons/hicolor/scalable/apps/org.gnome.gThumb.svg
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/ar/LC_MESSAGES/gthumb.mo
 share/locale/az/LC_MESSAGES/gthumb.mo
