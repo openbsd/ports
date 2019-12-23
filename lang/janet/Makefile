@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/18 19:34:56 jturner Exp $
+# $OpenBSD: Makefile,v 1.16 2019/12/23 23:42:35 jturner Exp $
 
 COMMENT =	functional and imperative programming language
 CATEGORIES =	lang
 
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
-GH_TAGNAME =	v1.5.1
+GH_TAGNAME =	v1.6.0
 
-SHARED_LIBS +=	janet		1.0 # 0.0
+SHARED_LIBS +=	janet		1.1 # 0.1
 
 HOMEPAGE =	https://www.janet-lang.org/
 MAINTAINER =	James Turner <james@calminferno.net>
@@ -15,7 +15,7 @@ MAINTAINER =	James Turner <james@calminferno.net>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m
+WANTLIB += c m pthread
 
 # Needs TLS
 COMPILER =	base-clang ports-gcc
