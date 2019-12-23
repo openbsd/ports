@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/08/06 18:13:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/12/23 16:46:36 jasper Exp $
 bin/fakebmc${MODPY_BIN_SUFFIX}
 bin/pyghmicons${MODPY_BIN_SUFFIX}
 bin/pyghmiutil${MODPY_BIN_SUFFIX}
@@ -128,8 +128,10 @@ lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}tsma.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}xcc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/main.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/tsma.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/xcc.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lookup.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/storage.py
