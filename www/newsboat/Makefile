@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/11/10 17:00:15 fcambus Exp $
+# $OpenBSD: Makefile,v 1.15 2019/12/23 13:26:34 fcambus Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.17.1
+V =		2.18
 DISTNAME =	newsboat-$V
 
 CATEGORIES =	www
@@ -110,7 +110,7 @@ MODCARGO_CRATES +=	scopeguard	0.3.3	# MIT/Apache-2.0
 MODCARGO_CRATES +=	section_testing	0.0.4	# MIT
 MODCARGO_CRATES +=	semver	0.9.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	semver-parser	0.7.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	smallvec	0.6.8	# MIT/Apache-2.0
+MODCARGO_CRATES +=	smallvec	0.6.10	# MIT/Apache-2.0
 MODCARGO_CRATES +=	syn	0.15.26	# MIT/Apache-2.0
 MODCARGO_CRATES +=	synstructure	0.10.1	# MIT
 MODCARGO_CRATES +=	tempfile	3.0.6	# MIT/Apache-2.0
@@ -123,12 +123,10 @@ MODCARGO_CRATES +=	unicode-normalization	0.1.8	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-segmentation	1.2.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-width	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-xid	0.1.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	unreachable	1.0.0	# MIT / Apache-2.0
 MODCARGO_CRATES +=	url	1.7.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	utf8-ranges	1.0.2	# Unlicense/MIT
 MODCARGO_CRATES +=	vcpkg	0.2.6	# MIT/Apache-2.0
 MODCARGO_CRATES +=	version_check	0.1.5	# MIT/Apache-2.0
-MODCARGO_CRATES +=	void	1.0.2	# MIT
 MODCARGO_CRATES +=	wait-timeout	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winapi	0.2.8	# MIT
 MODCARGO_CRATES +=	winapi	0.3.6	# MIT/Apache-2.0

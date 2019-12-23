@@ -76,7 +76,7 @@ SHA256 (cargo/scopeguard-0.3.3.tar.gz) = lCWPU2Aa8R5qSfciQi9uNCXFKwYkWlz5vAmQixd
 SHA256 (cargo/section_testing-0.0.4.tar.gz) = 7OTX2Y/at13f9cT61UpMetAiKhPIo8aFnxA3odnlPyg=
 SHA256 (cargo/semver-0.9.0.tar.gz) = HX657ywYZhkCzEflNfm8UbeKzSVNpx03XC9nINmkBAM=
 SHA256 (cargo/semver-parser-0.7.0.tar.gz) = OIod8lPsoIVQvvbHI5LP58MJFL9B31Jptoy9b/j1cKM=
-SHA256 (cargo/smallvec-0.6.8.tar.gz) = iK6gc5Zasp9u21ST+vlq1mL7GKqe6xhqO3BXlRYF7RU=
+SHA256 (cargo/smallvec-0.6.10.tar.gz) = q2BqnF4hSSC7ZsRYzXvo7wlPgT8g/nelTMfb//Ig1Lc=
 SHA256 (cargo/syn-0.15.26.tar.gz) = +S5imqHZyCeyu4KXBGwcz/xXyZuUemgNPM/x8Tajvuk=
 SHA256 (cargo/synstructure-0.10.1.tar.gz) = c2hxOb+ZKFSDyWrArdSCw3dlKL6sHZfURPbpHyA6IBU=
 SHA256 (cargo/tempfile-3.0.6.tar.gz) = N9qlWnJAxJMchFWfA7PK19GVNYQNHEoMxOmy+w3PcP8=
@@ -89,12 +89,10 @@ SHA256 (cargo/unicode-normalization-0.1.8.tar.gz) = FBM5oIuYLZQr4soG/4sHZWPL4iPR
 SHA256 (cargo/unicode-segmentation-1.2.1.tar.gz) = qmAk/BLd/RxtvBSoD6IyTUVohJhpt3n2vTfl5MAzRNE=
 SHA256 (cargo/unicode-width-0.1.5.tar.gz) = iCOGIxxF30cAsnXH/1W282mHgKZQAmOA5y2r52+kZSY=
 SHA256 (cargo/unicode-xid-0.1.0.tar.gz) = /HIwR5bQgY41fq1OAA0ZycF0qyPcEQk6yRkFTSCmp/w=
-SHA256 (cargo/unreachable-1.0.0.tar.gz) = OCgQh3/kSJkd/H8N1uOuXVgIj9DqXjUYllX4TmgU+lY=
 SHA256 (cargo/url-1.7.2.tar.gz) = 3U58DVMSZjaVGaSqTzmddIvTcEOwC94eT/H2ChILNVo=
 SHA256 (cargo/utf8-ranges-1.0.2.tar.gz) = eW9+SL74dgn3refgZJWofVzQbHhm5qXL/O/8VYokNzc=
 SHA256 (cargo/vcpkg-0.2.6.tar.gz) = 3vKW0+s7EjcbLH0Og7/hQD5Nstegu6MkoSshxO4TFD0=
 SHA256 (cargo/version_check-0.1.5.tar.gz) = kUsaZ3bEySmmAvr9i8dC4GNl1Ly+SMMPnMpYJPcNyd0=
-SHA256 (cargo/void-1.0.2.tar.gz) = agLkiF7TvA8t6Q6m3UXry7ZtrP/gNUf627DuridwiH0=
 SHA256 (cargo/wait-timeout-0.1.5.tar.gz) = ufO/dBqAFTGZPbZHi5VoIRdHH3aRb15pDdjUU5Wwk0k=
 SHA256 (cargo/winapi-0.2.8.tar.gz) = Fn3J1pSam4V/NFEnXpEcP0QlWELB96dvM8VRA6kJCHo=
 SHA256 (cargo/winapi-0.3.6.tar.gz) = ksHrM2QeJ2z6IUoFIqytV75cVrEMs0izxRF9t186xLA=
@@ -102,7 +100,7 @@ SHA256 (cargo/winapi-build-0.1.1.tar.gz) = LTFe7js0rKR5ey2msT7Ygmbm1hJWKgxGOQr4K
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/xdg-2.2.0.tar.gz) = 0IloGqEGqG+t4bASj7Xa8H1YZ6UJqwNtmZiN7IBCmlc=
-SHA256 (newsboat-2.17.1.tar.xz) = wevSSwFxcxVugXoaPdHZgoCN7DCokeH0h4BuX4YXGZc=
+SHA256 (newsboat-2.18.tar.xz) = 8jkywCJuw/aerHZo2kROcxdQSEmOFenXc0UWSLLLpLA=
 SIZE (cargo/aho-corasick-0.6.9.tar.gz) = 25979
 SIZE (cargo/argon2rs-0.2.5.tar.gz) = 353096
 SIZE (cargo/arrayvec-0.4.10.tar.gz) = 26133
@@ -181,7 +179,7 @@ SIZE (cargo/scopeguard-0.3.3.tar.gz) = 9605
 SIZE (cargo/section_testing-0.0.4.tar.gz) = 4362
 SIZE (cargo/semver-0.9.0.tar.gz) = 17344
 SIZE (cargo/semver-parser-0.7.0.tar.gz) = 10268
-SIZE (cargo/smallvec-0.6.8.tar.gz) = 21448
+SIZE (cargo/smallvec-0.6.10.tar.gz) = 22064
 SIZE (cargo/syn-0.15.26.tar.gz) = 145493
 SIZE (cargo/synstructure-0.10.1.tar.gz) = 17836
 SIZE (cargo/tempfile-3.0.6.tar.gz) = 23337
@@ -194,12 +192,10 @@ SIZE (cargo/unicode-normalization-0.1.8.tar.gz) = 71158
 SIZE (cargo/unicode-segmentation-1.2.1.tar.gz) = 68223
 SIZE (cargo/unicode-width-0.1.5.tar.gz) = 15761
 SIZE (cargo/unicode-xid-0.1.0.tar.gz) = 16000
-SIZE (cargo/unreachable-1.0.0.tar.gz) = 6355
 SIZE (cargo/url-1.7.2.tar.gz) = 68597
 SIZE (cargo/utf8-ranges-1.0.2.tar.gz) = 8510
 SIZE (cargo/vcpkg-0.2.6.tar.gz) = 9866
 SIZE (cargo/version_check-0.1.5.tar.gz) = 8173
-SIZE (cargo/void-1.0.2.tar.gz) = 2356
 SIZE (cargo/wait-timeout-0.1.5.tar.gz) = 12797
 SIZE (cargo/winapi-0.2.8.tar.gz) = 455145
 SIZE (cargo/winapi-0.3.6.tar.gz) = 1029391
@@ -207,4 +203,4 @@ SIZE (cargo/winapi-build-0.1.1.tar.gz) = 669
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/xdg-2.2.0.tar.gz) = 13387
-SIZE (newsboat-2.17.1.tar.xz) = 571412
+SIZE (newsboat-2.18.tar.xz) = 577632
