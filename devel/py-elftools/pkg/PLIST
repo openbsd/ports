@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/04/28 18:34:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/12/23 17:18:47 jasper Exp $
 bin/readelf.py${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/elftools/
 lib/python${MODPY_VERSION}/site-packages/elftools/__init__.py
@@ -58,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}dwarfinf
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}lineprogram.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}locationlists.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}namelut.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}ranges.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}structs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/abbrevtable.py
@@ -72,6 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/dwarfinfo.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/enums.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/lineprogram.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/locationlists.py
+lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/namelut.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/ranges.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/structs.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/
@@ -84,6 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}dynamic.${
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}elffile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}gnuversions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}notes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}relocation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}sections.${MODPY_PYC_MAGIC_TAG}pyc
@@ -95,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/elf/dynamic.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/elffile.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/enums.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/gnuversions.py
+lib/python${MODPY_VERSION}/site-packages/elftools/elf/hash.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/notes.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/relocation.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/sections.py
@@ -108,7 +112,8 @@ lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MOD
 share/examples/${MODPY_PY_PREFIX}elftools/
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_decode_address.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_die_tree.py
-share/examples/${MODPY_PY_PREFIX}elftools/dwarf_location_lists.py
+share/examples/${MODPY_PY_PREFIX}elftools/dwarf_location_info.py
+share/examples/${MODPY_PY_PREFIX}elftools/dwarf_pubnames_types.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_range_lists.py
 share/examples/${MODPY_PY_PREFIX}elftools/elf_low_high_api.py
 share/examples/${MODPY_PY_PREFIX}elftools/elf_notes.py

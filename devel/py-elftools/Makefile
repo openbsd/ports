@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/23 19:54:06 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/12/23 17:18:47 jasper Exp $
 
 COMMENT =		ELF and DWARF parser library for Python
 
-MODPY_EGG_VERSION =	0.25
+MODPY_EGG_VERSION =	0.26
 DISTNAME =		pyelftools-${MODPY_EGG_VERSION}
 PKGNAME =		py-elftools-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://github.com/eliben/pyelftools
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -20,6 +19,7 @@ FLAVOR ?=
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+# test.test_pubtypes.TestEmptyPubtypes is known failure to due missing files in distfile
 MODPY_PYTEST =		Yes
 
 EXAMPLEDIR =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}elftools
