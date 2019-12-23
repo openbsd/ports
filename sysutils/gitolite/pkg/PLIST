@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/12/23 19:57:27 jasper Exp $
 bin/gitolite
 libexec/gitolite/
 libexec/gitolite/VERSION
@@ -17,6 +17,7 @@ libexec/gitolite/commands/
 libexec/gitolite/commands/1plus1
 libexec/gitolite/commands/D
 libexec/gitolite/commands/access
+libexec/gitolite/commands/compile-template-data
 libexec/gitolite/commands/config
 libexec/gitolite/commands/create
 libexec/gitolite/commands/creator
