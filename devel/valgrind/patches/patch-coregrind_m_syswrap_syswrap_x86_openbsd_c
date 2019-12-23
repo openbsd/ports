@@ -1,0 +1,18 @@
+--- coregrind/m_syswrap/syswrap-x86-openbsd.c.orig
++++ coregrind/m_syswrap/syswrap-x86-openbsd.c
+@@ -525,6 +525,15 @@
+ #define PRE(name)       DEFN_PRE_TEMPLATE(openbsd, name)
+ #define POST(name)      DEFN_POST_TEMPLATE(openbsd, name)
+ 
++PRE(sys___tfork_thread)
++{
++// XXXTBD
++}
++POST(sys___tfork_thread)
++{
++// XXXTBD
++}
++
+ #if 0
+ struct thr_param {
+     void        (*start_func)(void *);  /* thread entry function. */

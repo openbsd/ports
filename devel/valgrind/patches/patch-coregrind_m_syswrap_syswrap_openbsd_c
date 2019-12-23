@@ -1,6 +1,43 @@
 --- coregrind/m_syswrap/syswrap-openbsd.c.orig
 +++ coregrind/m_syswrap/syswrap-openbsd.c
-@@ -575,6 +579,17 @@
+@@ -210,21 +210,21 @@
+       /*    : "n" (VgTs_Empty), "n" (__NR_thr_exit), "m" (tst->os_state.exitcode) */
+       /*    : "eax", "ebx" */
+       /* ); */
+-/* #elif defined(VGP_amd64_openbsd) */
+-      /* asm volatile ( */
+-         /* "movl	%1, %0\n"	/\* set tst->status = VgTs_Empty *\/ */
+-         /* "movq	%2, %%rax\n"    /\* set %rax = __NR_thr_exit *\/ */
+-         /* "movq	%3, %%rdi\n"    /\* set %rdi = tst->os_state.exitcode *\/ */
+-	 /* "pushq	%%rdi\n"	/\* fake return address *\/ */
+-         /* "syscall\n"		/\* thr_exit(tst->os_state.exitcode) *\/ */
+-	 /* "popq	%%rdi\n"	/\* fake return address *\/ */
+-         /* : "=m" (tst->status) */
+-         /* : "n" (VgTs_Empty), "n" (__NR_thr_exit), "m" (tst->os_state.exitcode) */
+-         /* : "rax", "rdi" */
+-      /* ); */
+-/* #else */
+-/* # error Unknown platform */
+-/* #endif */
++#if defined(VGP_amd64_openbsd)
++      asm volatile (
++         "movl	%1, %0\n"	/* set tst->status = VgTs_Empty */
++         "movq	%2, %%rax\n"    /* set %rax = __NR_thr_exit */
++         "movq	%3, %%rdi\n"    /* set %rdi = tst->os_state.exitcode */
++	 "pushq	%%rdi\n"	/* fake return address */
++         "syscall\n"		/* thr_exit(tst->os_state.exitcode) */
++	 "popq	%%rdi\n"	/* fake return address */
++         : "=m" (tst->status)
++         : "n" (VgTs_Empty), "n" (__NR___threxit), "m" (tst->os_state.exitcode)
++         : "rax", "rdi"
++      );
++#else
++# error Unknown platform
++#endif
+ 
+       VG_(core_panic)("Thread exit failed?\n");
+    }
+@@ -575,6 +575,17 @@
  // XXXTBD
  }
  
@@ -18,7 +55,154 @@
  PRE(sys_getsockname)
  {
     PRINT("sys_getsockname ( %ld, %#lx, %#lx )",ARG1,ARG2,ARG3);
-@@ -4079,7 +4093,7 @@
+@@ -791,15 +791,6 @@
+    SET_STATUS_Success(0);
+ }
+ 
+-PRE(sys___tfork)
+-{
+-// XXXTBD
+-}
+-POST(sys___tfork)
+-{
+-// XXXTBD
+-}
+-
+ PRE(sys_getlogin)
+ {
+    PRINT("sys_getlogin ( %#lx, %ld )",ARG1,ARG2);
+@@ -2787,17 +2778,40 @@
+ 
+ PRE(sys___thrsleep)
+ {
+-// XXXTBD
++   *flags |= SfMayBlock;
++   PRINT("__thrsleep( %#lx, %ld, %#lx, %#lx, %#lx )", ARG1,ARG2,ARG3,ARG4,ARG5);
++   PRE_REG_READ5(int, "__thrsleep",
++                 void *, id,
++                 int, clock_id,
++                 struct timespec *, abstime,
++                 void *, lock,
++                 int *, abort);
++   if (ARG3 != 0)
++      PRE_MEM_READ(" __thrsleep(abstime)", ARG3, sizeof(struct timespec));
++   if (ARG5 != 0)
++      PRE_MEM_READ(" __thrsleep(abort)", ARG5, sizeof (int));
+ }
+ 
+ PRE(sys___thrwakeup)
+ {
+-// XXXTBD
++   PRINT("__thrwakeup( %#lx, %ld, %#lx, %#lx, %#lx )", ARG1,ARG2,ARG3,ARG4,ARG5);
++   PRE_REG_READ2(int, "__thrwakeup",
++                 void *, id,
++                 int, count);
+ }
+ 
+ PRE(sys___threxit)
+ {
+-// XXXTBD
++   ThreadState* tst;
++   /* simple; just make this thread exit */
++   PRINT("__threxit( %#lx )", ARG1);
++   PRE_REG_READ1(void, "__threxit", void *, value_ptr);
++   tst = VG_(get_ThreadState)(tid);
++   /* Set the thread's status to be exiting, then claim that the
++      syscall succeeded. */
++   tst->exitreason = VgSrc_ExitThread;
++   /* tst->os_state.exitcode = ARG1; */
++   SET_STATUS_Success(0);
+ }
+ 
+ PRE(sys___thrsigdivert)
+@@ -2830,6 +2843,68 @@
+ // XXXTBD
+ }
+ 
++PRE(sys_futex)
++{
++   /*
++      arg    param                              used by ops
++
++      ARG1 - uint32_t *uaddr			all
++      ARG2 - int op
++      ARG3 - int val				WAIT,WAKE,REQUEUE
++      ARG4 - struct timespec *utime		WAIT,     REQUEUE
++      ARG5 - uint32_t *uaddr2			          REQUEUE
++    */
++   PRINT("sys_futex ( %#lx, %ld, %ld, %#lx, %#lx )", ARG1,ARG2,ARG3,ARG4,ARG5);
++   switch(ARG2 & ~VKI_FUTEX_PRIVATE_FLAG) {
++   case VKI_FUTEX_WAIT:
++      PRE_REG_READ4(long, "futex",
++                    vki_uint32_t *, uaddr, int, op, int, val,
++                    struct timespec *, utime);
++      break;
++   case VKI_FUTEX_WAKE:
++      PRE_REG_READ3(long, "futex",
++                    vki_uint32_t *, uaddr, int, op, int, val);
++      break;
++   case VKI_FUTEX_REQUEUE:
++      PRE_REG_READ5(long, "futex",
++                    vki_uint32_t *, uaddr, int, op, int, val,
++                    struct timespec *, utime, vki_uint32_t *, uaddr2);
++      break;
++   default:
++      PRE_REG_READ2(long, "futex", vki_uint32_t *, uaddr, int, op);
++      break;
++   }
++
++   *flags |= SfMayBlock;
++
++   switch(ARG2 & ~VKI_FUTEX_PRIVATE_FLAG) {
++   case VKI_FUTEX_WAIT:
++      PRE_MEM_READ( "futex(uaddr)", ARG1, sizeof(Int) );
++      if (ARG4 != 0)
++	 PRE_MEM_READ( "futex(timeout)", ARG4, sizeof(struct vki_timespec) );
++      break;
++
++   case VKI_FUTEX_WAKE:
++      /* no additional pointers */
++      break;
++
++   case VKI_FUTEX_REQUEUE:
++      PRE_MEM_READ( "futex(uaddr)", ARG1, sizeof(Int) );
++      PRE_MEM_READ( "futex(val2)", ARG4, sizeof(Int) );
++      PRE_MEM_READ( "futex(uaddr2)", ARG5, sizeof(Int) );
++      break;
++
++   default:
++      SET_STATUS_Failure( VKI_ENOSYS );   // some futex function we don't understand
++      break;
++   }
++}
++POST(sys_futex)
++{
++   vg_assert(SUCCESS);
++   POST_MEM_WRITE( ARG1, sizeof(int) );
++}
++
+ PRE(sys_utimensat)
+ {
+ // XXXTBD
+@@ -3961,7 +4036,7 @@
+   
+   GENXY(__NR_close,		sys_close),		// 6
+   BSDXY(__NR_getentropy,	sys_getentropy),	// 7
+-  BSDXY(__NR___tfork,		sys___tfork),		// 8
++  BSDX_(__NR___tfork_thread,	sys___tfork_thread),	// 8
+   GENX_(__NR_link,		sys_link),		// 9
+   GENX_(__NR_unlink,		sys_unlink),		// 10
+   
+@@ -4053,7 +4128,7 @@
+ 
+   GENX_(__NR_getpgrp,		sys_getpgrp),		// 81
+   GENX_(__NR_setpgid,		sys_setpgid),		// 82
+-  BSDX_(__NR_osendsyslog,	sys_sendsyslog),	// 83
++  BSDXY(__NR_futex,		sys_futex),		// 83
+   BSDX_(__NR_utimensat,		sys_utimensat),		// 84
+   BSDX_(__NR_futimens,		sys_futimens),		// 85
+ 
+@@ -4079,7 +4094,7 @@
    BSDX_(__NR_sigsuspend,	sys_sigsuspend),	// 111
    BSDX_(__NR_sendsyslog,	sys_sendsyslog),	// 112
    // obsol orecvmsg					// 113
@@ -27,4 +211,3 @@
    // obsol vtrace					// 115
  
    BSDX_(__NR_getsockopt,	sys_getsockopt),	// 118
-Only in pobj/valgrind-3.10.1/valgrind-3.10.1/coregrind/m_syswrap: syswrap-openbsd.c.orig

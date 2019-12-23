@@ -1,0 +1,215 @@
+--- coregrind/m_syswrap/syswrap-amd64-openbsd.c.orig
++++ coregrind/m_syswrap/syswrap-amd64-openbsd.c
+@@ -120,6 +120,212 @@
+ #define PRE(name)       DEFN_PRE_TEMPLATE(openbsd, name)
+ #define POST(name)      DEFN_POST_TEMPLATE(openbsd, name)
+ 
++extern UWord do_syscall_tfork_amd64_openbsd (
++	  Addr params,
++	  UWord psize,
++	  Addr startfunc,
++	  Addr startarg);
++asm(
++".text\n"
++".globl do_syscall_tfork_amd64_openbsd\n"
++"do_syscall_tfork_amd64_openbsd:\n"
++	/* Copy %rdx to %r8 and %rcx to %r9.  See:
++	   - lib/libc/arch/amd64/sys/tfork_thread.S */
++"	movq	%rdx, %r8\n"
++"	movq	%rcx, %r9\n"
++"	movq	$8, %rax\n"		/* syscall_no */
++"	syscall\n"
++"	jb	5f\n"			/* error */
++	/*
++	 * Check to see if we are in the parent or child
++	 */
++"	cmpl	$0, %eax\n"
++"	jz	4f\n"			/* child */
++"	jmp	5f\n"			/* parent */
++	/* the retpoline we'll use to call the child's main */
++".align	16, 0xcc\n"			/* _ALIGN_TRAPS */
++"1:\n"					/* JMP_RETPOLINE(r8) --> */
++"	call	3f\n"
++"2:	pause\n"
++"	lfence\n"
++"	jmp	2b\n"
++".align	16, 0xcc\n"			/* _ALIGN_TRAPS */
++"3:	mov	%r8,(%rsp)\n"
++"	ret\n"
++					/* JMP_RETPOLINE(r8) <-- */
++	/*
++	 * If we are in the child (new thread), then
++	 * set-up the call to the internal subroutine.	If it
++	 * returns, then call __threxit.
++	 */
++".align	16, 0xcc\n"			/* _ALIGN_TRAPS */
++"4:\n"
++"	movq	%r9, %rdi\n"
++"	call	1b\n"
++	/*
++	 * Thread exit system call
++	 */
++"	movl	$302, %eax\n"		/* 302 == SYS___threxit */
++"	xorl	%edi, %edi\n"
++"	syscall\n"
++	/*NOTREACHED*/
++"5:\n"					/* parent or error */
++"	ret\n"
++".previous\n"
++);
++
++static void setup_child ( ThreadArchState*, ThreadArchState* );
++
++void setup_child ( /*OUT*/ ThreadArchState *child,
++                   /*IN*/  ThreadArchState *parent )
++{
++   /* We inherit our parent's guest state. */
++   child->vex = parent->vex;
++   child->vex_shadow1 = parent->vex_shadow1;
++   child->vex_shadow2 = parent->vex_shadow2;
++}
++
++/*
++   When a client clones, we need to keep track of the new thread.  This means:
++   1. allocate a ThreadId+ThreadState+stack for the the thread
++
++   2. initialize the thread's new VCPU state
++
++   3. create the thread using the same args as the client requested,
++   but using the scheduler entrypoint for EIP, and a separate stack
++   for ESP.
++
++   This function was implemented with reference to the syswrap-amd64-linux.c:
++   do_clone() function.
++ */
++static SysRes do_tfork_thread ( ThreadId ptid,
++                         Addr params,
++                         ULong psize,
++                         Addr startfunc,
++                         Addr startarg)
++{
++   ThreadId     ctid = VG_(alloc_ThreadState)();
++   ThreadState* ptst = VG_(get_ThreadState)(ptid);
++   ThreadState* ctst = VG_(get_ThreadState)(ctid);
++   UWord*       stack;
++   SysRes       res;
++   Long         rax;
++   vki_sigset_t blockall, savedmask;
++   struct __vki_tfork * tfork;
++
++   VG_(sigfillset)(&blockall);
++
++   vg_assert(params != 0);
++   vg_assert(psize > 0);
++   vg_assert(startfunc != 0);
++   vg_assert(VG_(is_running_thread)(ptid));
++   vg_assert(VG_(is_valid_tid)(ctid));
++
++   stack = (UWord*)ML_(allocstack)(ctid);
++   if (stack == NULL) {
++      res = VG_(mk_SysRes_Error)( VKI_ENOMEM );
++      goto out;
++   }
++
++   /* Copy register state
++
++      Both parent and child return to the same place, and the code
++      following the __tfork_thread syscall works out which is which, so we
++      don't need to worry about it.
++
++      The parent gets the child's new tid returned from clone, but the
++      child gets 0.
++
++      If the clone call specifies a NULL tfork->tf_stack for the new thread,
++      then it actually gets a copy of the parent's rsp.
++   */
++   setup_child( &ctst->arch, &ptst->arch );
++
++   /* Make sys___tfork appear to have returned Success(0) in the
++      child. */
++   ctst->arch.vex.guest_RAX = 0;
++
++   tfork = (struct __vki_tfork *)params;
++   vg_assert(tfork->tf_stack != 0);
++   ctst->arch.vex.guest_RSP = (ULong) tfork->tf_stack;
++   tfork->tf_stack = stack;
++
++   ctst->os_state.parent = ptid;
++
++   /* inherit signal mask */
++   ctst->sig_mask = ptst->sig_mask;
++   ctst->tmp_sig_mask = ptst->sig_mask;
++
++   /* Start the child with its threadgroup being the same as the
++      parent's.  This is so that any exit_group calls that happen
++      after the child is created but before it sets its
++      os_state.threadgroup field for real (in thread_wrapper in
++      syswrap-linux.c), really kill the new thread.  a.k.a this avoids
++      a race condition in which the thread is unkillable (via
++      exit_group) because its threadgroup is not set.  The race window
++      is probably only a few hundred or a few thousand cycles long.
++      See #226116. */
++   ctst->os_state.threadgroup = ptst->os_state.threadgroup;
++
++   ML_(guess_and_register_stack) ((Addr)tfork->tf_stack, ctst);
++
++   /* Assume the clone will succeed, and tell any tool that wants to
++      know that this thread has come into existence.  If the clone
++      fails, we'll send out a ll_exit notification for it at the out:
++      label below, to clean up. */
++   vg_assert(VG_(owns_BigLock_LL)(ptid));
++   VG_TRACK ( pre_thread_ll_create, ptid, ctid );
++
++   /* start the thread with everything blocked */
++#if 1 /* for debug by asou */
++   VG_(sigdelset)(&blockall, VKI_SIGTRAP);
++#endif
++   VG_(sigprocmask)(VKI_SIG_SETMASK, &blockall, &savedmask);
++
++   /* Create the new thread */
++   rax = do_syscall_tfork_amd64_openbsd(
++            params, psize, ML_(start_thread_NORETURN), &VG_(threads)[ctid]);
++   res = VG_(mk_SysRes_amd64_openbsd)( rax, ptst->arch.vex.guest_RDX,
++				       (rax == -1) ? True : False );
++
++   VG_(sigprocmask)(VKI_SIG_SETMASK, &savedmask, NULL);
++
++  out:
++   if (sr_isError(res)) {
++      /* clone failed */
++      VG_(cleanup_thread)(&ctst->arch);
++      ctst->status = VgTs_Empty;
++      /* oops.  Better tell the tool the thread exited in a hurry :-) */
++      VG_TRACK( pre_thread_ll_exit, ctid );
++   }
++
++   return res;
++}
++
++PRE(sys___tfork_thread)
++{
++   struct __vki_tfork * tfork;
++   PRINT("sys___tfork_thread ( %#lx, %ld, %#lx, %#lx )",ARG1,ARG2,ARG3,ARG4);
++   PRE_REG_READ4(long, "__tfork_thread", struct __tfork *, params, size_t, psize,
++ 		 void (*)(void *), startfunc, void *, startarg);
++   PRE_MEM_READ( "__tfork_thread(params, psize)", ARG1, ARG2 );
++   tfork = (struct __vki_tfork *)ARG1;
++   if (tfork->tf_tid != NULL)
++      PRE_MEM_READ("__tfork_thread(params.tf_tid)", (Addr)tfork->tf_tid,
++		   sizeof (pid_t));
++   SET_STATUS_from_SysRes(
++      do_tfork_thread(tid, (Addr)ARG1, (ULong)ARG2, (Addr)ARG3, (Addr)ARG4));
++
++   if (SUCCESS) {
++      POST_MEM_WRITE((Addr)tfork->tf_tcb, sizeof (void *));
++      POST_MEM_WRITE((Addr)tfork->tf_tid, sizeof (pid_t));
++
++      /* Thread creation was successful; let the child have the chance
++         to run */
++      *flags |= SfYieldAfter;
++   }
++}
++
+ #if 0
+ PRE(sys_thr_new)
+ {

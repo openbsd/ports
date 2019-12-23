@@ -1,5 +1,23 @@
 --- include/vki/vki-scnums-openbsd.h.orig
 +++ include/vki/vki-scnums-openbsd.h
+@@ -41,7 +41,7 @@
+ #define	__NR_open		5
+ #define	__NR_close		6
+ #define	__NR_getentropy		7
+-#define	__NR___tfork		8
++#define	__NR___tfork_thread	8
+ #define	__NR_link		9
+ #define	__NR_unlink		10
+ #define	__NR_wait4		11
+@@ -116,7 +116,7 @@
+ #define	__NR_setgroups		80
+ #define	__NR_getpgrp		81
+ #define	__NR_setpgid		82
+-#define	__NR_osendsyslog	83
++#define	__NR_futex		83
+ #define __NR_utimensat		84
+ #define __NR_futimens		85
+ #define __NR_kbind		86
 @@ -146,6 +146,7 @@
  #define	__NR_pselect		110
  #define	__NR_sigsuspend		111

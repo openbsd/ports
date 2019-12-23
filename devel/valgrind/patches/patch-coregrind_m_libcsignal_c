@@ -1,0 +1,21 @@
+--- coregrind/m_libcsignal.c.orig
++++ coregrind/m_libcsignal.c
+@@ -397,6 +397,7 @@
+ Int VG_(tkill)( Int lwpid, Int signo )
+ {
+ #  if defined(__NR_tkill)
++   PRINT("sys___tfork ( %ld, %ld )",ARG1,ARG2);
+    SysRes res = VG_(mk_SysRes_Error)(VKI_ENOSYS);
+    res = VG_(do_syscall2)(__NR_tkill, lwpid, signo);
+    if (sr_isError(res) && sr_Err(res) == VKI_ENOSYS)
+@@ -415,7 +416,9 @@
+    return sr_isError(res) ? -1 : 0;
+ 
+ #  elif defined(VGO_openbsd)
+-   I_die_here;
++   SysRes res;
++   res = VG_(do_syscall3)(__NR_thrkill, lwpid, signo, NULL);
++   return sr_isError(res) ? -1 : 0;
+ 
+ #  else
+ #    error "Unsupported plat"

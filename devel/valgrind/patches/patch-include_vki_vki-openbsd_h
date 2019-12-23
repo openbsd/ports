@@ -1,5 +1,21 @@
 --- include/vki/vki-openbsd.h.orig
 +++ include/vki/vki-openbsd.h
+@@ -76,6 +76,15 @@
+ 
+ 
+ //----------------------------------------------------------------------
++// From linux-2.6.31-rc4/include/linux/futex.h
++//----------------------------------------------------------------------
++
++#define VKI_FUTEX_WAIT (1)
++#define VKI_FUTEX_WAKE (2)
++#define VKI_FUTEX_REQUEUE (3)
++#define VKI_FUTEX_PRIVATE_FLAG (128)
++
++//----------------------------------------------------------------------
+ // From sys/select.h
+ //----------------------------------------------------------------------
+ 
 @@ -1544,9 +1544,9 @@
  #define VKI_MAP_PRIVATE	0x02		/* Changes are private */
  #define VKI_MAP_FIXED	0x10		/* Interpret addr exactly */
@@ -11,3 +27,16 @@
 
  //----------------------------------------------------------------------
  // From sys/stat.h
+@@ -1650,6 +1659,12 @@
+ #define VKI_X_OK	0x01    /* test for execute or search permission */
+ #define VKI_W_OK	0x02    /* test for write permission */
+ #define VKI_R_OK	0x04    /* test for read permission */
++
++struct __vki_tfork {
++	void	*tf_tcb;
++	pid_t	*tf_tid;
++	void	*tf_stack;
++};
+ 
+ //----------------------------------------------------------------------
+ // From sys/msg.h

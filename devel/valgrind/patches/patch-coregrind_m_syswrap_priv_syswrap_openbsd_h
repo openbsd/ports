@@ -1,5 +1,14 @@
 --- coregrind/m_syswrap/priv_syswrap-openbsd.h.orig
 +++ coregrind/m_syswrap/priv_syswrap-openbsd.h
+@@ -50,7 +50,7 @@
+ DECL_TEMPLATE(openbsd, sys_open);
+ DECL_TEMPLATE(openbsd, sys_close);
+ DECL_TEMPLATE(openbsd, sys_getentropy);
+-DECL_TEMPLATE(openbsd, sys___tfork);
++DECL_TEMPLATE(openbsd, sys___tfork_thread);
+ DECL_TEMPLATE(openbsd, sys_link);
+ DECL_TEMPLATE(openbsd, sys_unlink);
+ DECL_TEMPLATE(openbsd, sys_wait4);
 @@ -144,6 +144,7 @@
  DECL_TEMPLATE(openbsd, sys_pledge);
  DECL_TEMPLATE(openbsd, sys_ppoll);

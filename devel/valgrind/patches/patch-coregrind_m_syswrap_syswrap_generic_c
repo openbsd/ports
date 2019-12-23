@@ -1,0 +1,16 @@
+--- coregrind/m_syswrap/syswrap-generic.c.orig
++++ coregrind/m_syswrap/syswrap-generic.c
+@@ -2240,7 +2240,13 @@
+    /* Otherwise we're OK (so far).  Install aspacem's choice of
+       address, and let the mmap go through.  */
+    sres = VG_(am_do_mmap_NO_NOTIFY)(advised, arg2, arg3,
++#if defined(VGO_openbsd)
++	/* Could not specified VKI_MAP_STACK and VKI_MAP_FIXED at the same
++	   time */
++                                    arg4,
++#else
+                                     arg4 | VKI_MAP_FIXED,
++#endif
+                                     arg5, arg6);
+ 
+    /* A refinement: it may be that the kernel refused aspacem's choice
