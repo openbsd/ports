@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2019/12/12 14:16:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.113 2019/12/23 09:04:11 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -52,6 +52,7 @@ BUILD_DEPENDS +=	devel/cbindgen>=0.9.0
 BUILD_DEPENDS +=	devel/nasm
 .endif
 
+# uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.405 2019/12/03 17:00:46 landry Exp $
+# $OpenBSD: Makefile,v 1.406 2019/12/23 09:04:10 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -56,6 +56,7 @@ BUILD_DEPENDS +=	devel/nasm
 # unveil support relies on xdg-open
 RUN_DEPENDS +=		devel/xdg-utils
 
+# uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
