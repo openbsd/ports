@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/26 07:58:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/12/24 15:08:09 ajacoutot Exp $
 @bin bin/vpxdec
 @bin bin/vpxenc
 include/vpx/
@@ -11,6 +11,6 @@ include/vpx/vpx_encoder.h
 include/vpx/vpx_frame_buffer.h
 include/vpx/vpx_image.h
 include/vpx/vpx_integer.h
-lib/libvpx.a
+@static-lib lib/libvpx.a
 @lib lib/libvpx.so.${LIBvpx_VERSION}
 lib/pkgconfig/vpx.pc
