@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.838 2019/12/17 14:14:30 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.839 2019/12/24 18:48:23 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1350,6 +1350,8 @@ my $obsolete_reason = {
 	'afm' => 6,
 	'p5-Geo-IP' => 6,
 	'py-semver' => 14,
+	'py-libnacl' => 3,
+	'py3-libnacl' => 3,
 };
 
 # reasons for obsolete packages
