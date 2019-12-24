@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/23 23:49:17 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2019/12/24 19:24:31 kn Exp $
 
 COMMENT =		jq wrapper for YAML/XML documents
 
-MODPY_EGG_VERSION =	2.9.2
+MODPY_EGG_VERSION =	2.10.0
 DISTNAME =		yq-${MODPY_EGG_VERSION}
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		https://yq.readthedocs.io/
+HOMEPAGE =		https://kislyuk.github.io/yq/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -21,7 +21,8 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	test/test.py
 
-RUN_DEPENDS =		textproc/jq \
+RUN_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR} \
+			textproc/jq \
 			textproc/py-xmltodict${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}
 
