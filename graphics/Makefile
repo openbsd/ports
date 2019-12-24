@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.494 2019/12/11 15:59:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.495 2019/12/24 15:12:23 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -145,6 +145,7 @@
      SUBDIR += libmypaint
      SUBDIR += libpano13
      SUBDIR += libpgf
+     SUBDIR += libplacebo
      SUBDIR += libqrencode
      SUBDIR += libraw
      SUBDIR += libsixel
