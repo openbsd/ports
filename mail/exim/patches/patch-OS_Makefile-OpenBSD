@@ -1,0 +1,14 @@
+$OpenBSD: patch-OS_Makefile-OpenBSD,v 1.6 2019/12/24 14:45:41 sthen Exp $
+
+Index: OS/Makefile-OpenBSD
+--- OS/Makefile-OpenBSD.orig
++++ OS/Makefile-OpenBSD
+@@ -5,7 +5,7 @@ CHGRP_COMMAND=/usr/sbin/chgrp
+ CHMOD_COMMAND=/bin/chmod
+ 
+ CC=cc
+-CFLAGS=-O2 -Wall -Wno-parentheses -Wno-self-assign -Wno-logical-op-parentheses
++CFLAGS=-O2 -Wall -Wno-parentheses -Wno-self-assign
+ CFLAGS += -DTAINT_CHECK_SLOW
+ 
+ LIBS=-lm
