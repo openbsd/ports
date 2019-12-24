@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/19 18:52:50 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/12/24 14:18:28 sthen Exp $
 
 COMMENT =		Python module to communicate with USB FIDO devices
 
-MODPY_EGG_VERSION =	0.7.3
+MODPY_EGG_VERSION =	0.8.1
 
 DISTNAME =		fido2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
