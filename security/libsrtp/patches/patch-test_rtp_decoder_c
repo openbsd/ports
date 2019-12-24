@@ -1,9 +1,9 @@
-$OpenBSD: patch-test_rtp_decoder_c,v 1.2 2019/02/15 22:30:23 sthen Exp $
+$OpenBSD: patch-test_rtp_decoder_c,v 1.3 2019/12/24 15:34:21 sthen Exp $
 
 Index: test/rtp_decoder.c
 --- test/rtp_decoder.c.orig
 +++ test/rtp_decoder.c
-@@ -523,7 +523,8 @@ void rtp_decoder_handle_pkt(u_char *arg,
+@@ -715,7 +715,8 @@ void rtp_decoder_handle_pkt(u_char *arg,
      dcdr->frame_nr++;
  
      if ((dcdr->start_tv.tv_sec == 0) && (dcdr->start_tv.tv_usec == 0)) {
@@ -13,14 +13,12 @@ Index: test/rtp_decoder.c
      }
  
      if (hdr->caplen < dcdr->rtp_offset) {
-@@ -554,8 +555,8 @@ void rtp_decoder_handle_pkt(u_char *arg,
-         return;
+@@ -765,7 +766,7 @@ void rtp_decoder_handle_pkt(u_char *arg,
+         dcdr->rtcp_cnt++;
      }
      timersub(&hdr->ts, &dcdr->start_tv, &delta);
 -    fprintf(stdout, "%02ld:%02ld.%06ld\n", delta.tv_sec / 60, delta.tv_sec % 60,
--            (long)delta.tv_usec);
-+    fprintf(stdout, "%02lld:%02lld.%06ld\n", (long long)delta.tv_sec / 60,
-+            (long long)delta.tv_sec % 60, (long)delta.tv_usec);
-     hexdump(&dcdr->message, octets_recvd);
++    fprintf(stdout, "%02lld:%02lld.%06ld\n", delta.tv_sec / 60, delta.tv_sec % 60,
+             (long)delta.tv_usec);
+     hexdump(&message, octets_recvd);
  }
- 

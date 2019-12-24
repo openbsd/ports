@@ -1,14 +1,14 @@
-$OpenBSD: patch-crypto_cipher_cipher_c,v 1.2 2019/02/15 22:30:23 sthen Exp $
+$OpenBSD: patch-crypto_cipher_cipher_c,v 1.3 2019/12/24 15:34:21 sthen Exp $
 
 Index: crypto/cipher/cipher.c
 --- crypto/cipher/cipher.c.orig
 +++ crypto/cipher/cipher.c
-@@ -465,7 +465,7 @@ srtp_err_status_t srtp_cipher_type_test(
+@@ -462,7 +462,7 @@ srtp_err_status_t srtp_cipher_type_test(
          uint8_t iv[MAX_KEY_LEN];
  
          /* choose a length at random (leaving room for IV and padding) */
--        length = rand() % (SELF_TEST_BUF_OCTETS - 64);
+-        length = srtp_cipher_rand_u32_for_tests() % (SELF_TEST_BUF_OCTETS - 64);
 +        length = arc4random_uniform(SELF_TEST_BUF_OCTETS - 64);
          debug_print(srtp_mod_cipher, "random plaintext length %d\n", length);
-         status = srtp_cipher_rand(buffer, length);
-         if (status) {
+         srtp_cipher_rand_for_tests(buffer, length);
+ 
