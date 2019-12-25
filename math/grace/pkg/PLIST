@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/23 19:53:36 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/12/25 15:00:12 martin Exp $
 bin/grace
 bin/gracebat
+bin/xmgrace
 grace/
 grace/auxiliary/
 grace/auxiliary/README
@@ -11,6 +12,7 @@ grace/bin/
 grace/bin/fdf2fit
 grace/bin/gracebat
 @bin grace/bin/grconvert
+@bin grace/bin/xmgrace
 grace/doc/
 grace/doc/10.1.dat
 grace/doc/10a.dat
@@ -135,13 +137,12 @@ grace/gracerc.user
 grace/include/
 grace/include/grace_np.h
 grace/lib/
-grace/lib/libgrace_np.a
+@static-lib grace/lib/libgrace_np.a
 grace/templates/
 grace/templates/Default.agr
-%%no_x11%%
-!%%no_x11%%
 include/grace_np.h
-lib/libgrace_np.a
+@static-lib lib/libgrace_np.a
 @man man/man1/grace.1
 @man man/man1/gracebat.1
 @man man/man1/grconvert.1
+@man man/man1/xmgrace.1

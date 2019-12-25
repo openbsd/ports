@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/12/25 15:00:12 martin Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-REVISION=	8
+REVISION=	9
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -22,16 +22,22 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools
 CONFIGURE_ARGS+=	--with-bundled-xbae \
 			--with-extra-incpath=${LOCALBASE}/include \
 			--with-extra-ldpath=${LOCALBASE}/lib \
+			--with-fftw \
+			--enable-netcdf \
 			--enable-grace-home=${PREFIX}/grace
 
-LIB_DEPENDS =	graphics/jpeg \
+LIB_DEPENDS =	devel/t1lib \
+		graphics/jpeg \
 		graphics/png \
-		devel/t1lib \
 		graphics/tiff \
+		math/fftw \
+		math/netcdf \
 		print/pdflib
-WANTLIB +=	jpeg>=62 png>=2 t1>=5 tiff>=35 pdf>=2
 
-FLAVORS=	no_x11 fftw netcdf
+WANTLIB +=	jpeg>=62 png>=2 pdf>=2 t1>=5 tiff>=35 fftw>=2 \
+		netcdf>=1
+
+FLAVORS=	no_x11
 FLAVOR?=
 
 .if ${FLAVOR:Mno_x11}
@@ -43,22 +49,6 @@ LIB_DEPENDS+=		x11/motif
 WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt Xm
 MAKE_ENV+=		MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 CONFIGURE_ENV=		LDFLAGS=-lm
-.endif
-
-.if ${FLAVOR:Mfftw}
-LIB_DEPENDS +=		math/fftw
-WANTLIB +=		fftw>=2
-CONFIGURE_ARGS+=	--with-fftw
-.else
-CONFIGURE_ARGS+=	--without-fftw
-.endif
-
-.if ${FLAVOR:Mnetcdf}
-LIB_DEPENDS +=		math/netcdf
-WANTLIB +=		netcdf>=1
-CONFIGURE_ARGS+=	--enable-netcdf
-.else
-CONFIGURE_ARGS+=	--disable-netcdf
 .endif
 
 GRACE_DIR=${TRUEPREFIX}/grace
