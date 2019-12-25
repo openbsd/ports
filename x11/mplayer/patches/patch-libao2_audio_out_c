@@ -1,9 +1,9 @@
-$OpenBSD: patch-libao2_audio_out_c,v 1.7 2019/03/30 17:17:54 ajacoutot Exp $
+$OpenBSD: patch-libao2_audio_out_c,v 1.8 2019/12/25 15:52:25 ajacoutot Exp $
 
 Index: libao2/audio_out.c
 --- libao2/audio_out.c.orig
 +++ libao2/audio_out.c
-@@ -55,6 +55,7 @@ extern const ao_functions_t audio_out_v4l2;
+@@ -54,6 +54,7 @@ extern const ao_functions_t audio_out_v4l2;
  extern const ao_functions_t audio_out_mpegpes;
  extern const ao_functions_t audio_out_pcm;
  extern const ao_functions_t audio_out_pss;
@@ -11,7 +11,7 @@ Index: libao2/audio_out.c
  
  const ao_functions_t* const audio_out_drivers[] =
  {
-@@ -124,6 +125,7 @@ const ao_functions_t* const audio_out_drivers[] =
+@@ -120,6 +121,7 @@ const ao_functions_t* const audio_out_drivers[] =
          &audio_out_null,
  // should not be auto-selected:
          &audio_out_pcm,
