@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_demuxers_demux_ts_c,v 1.7 2019/12/25 15:50:45 ajacoutot Exp $
+
+Index: src/demuxers/demux_ts.c
+--- src/demuxers/demux_ts.c.orig
++++ src/demuxers/demux_ts.c
+@@ -3238,7 +3238,6 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
+   this->bpts               = 0;
+   this->last_pts[0]        = 0;
+   this->last_pts[1]        = 0;
+-  this->newpts_fifo        = NULL;
+ #  if TS_PACKET_READER == 2
+   this->buf_pos            = 0;
+   this->buf_size           = 0;

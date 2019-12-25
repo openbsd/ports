@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_xine-utils_memcpy_c,v 1.5 2018/07/01 21:10:48 sthen Exp $
+$OpenBSD: patch-src_xine-utils_memcpy_c,v 1.6 2019/12/25 15:50:45 ajacoutot Exp $
 
 Make use of clock_gettime().
 
 Index: src/xine-utils/memcpy.c
 --- src/xine-utils/memcpy.c.orig
 +++ src/xine-utils/memcpy.c
-@@ -597,7 +597,7 @@ static const struct {
+@@ -592,7 +592,7 @@ static const struct {
  
  static uint64_t memcpy_timing[sizeof(memcpy_method)/sizeof(memcpy_method[0])] = { 0, };
  

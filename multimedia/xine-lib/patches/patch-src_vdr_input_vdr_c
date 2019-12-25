@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_vdr_input_vdr_c,v 1.1 2019/12/25 15:50:45 ajacoutot Exp $
+
+Fix pointer alignment.
+
+Index: src/vdr/input_vdr.c
+--- src/vdr/input_vdr.c.orig
++++ src/vdr/input_vdr.c
+@@ -1319,7 +1319,7 @@ break;
+       READ_DATA_OR_FAIL(video_size, lprintf("got VIDEO SIZE\n"));
+ 
+       {
+-        int format;
++        int format, width, height, ratio;
+ 
+         result_video_size_t result_video_size;
+         result_video_size.header.func = data->header.func;
+@@ -1331,15 +1331,18 @@ break;
+         result_video_size.height = -1;
+         result_video_size.ratio  = 0;
+ 
+-        xine_get_current_frame_s(this->stream, &result_video_size.width, &result_video_size.height, &result_video_size.ratio, &format, NULL, NULL);
++        xine_get_current_frame_s(this->stream, &width, &height, &ratio, &format, NULL, NULL);
++        result_video_size.width = width;
++        result_video_size.height = height;
++        result_video_size.ratio = ratio;
+ 
+-        if (result_video_size.ratio == XINE_VO_ASPECT_SQUARE)
++        if (ratio == XINE_VO_ASPECT_SQUARE)
+           result_video_size.ratio = 10000;
+-        else if (result_video_size.ratio == XINE_VO_ASPECT_4_3)
++        else if (ratio == XINE_VO_ASPECT_4_3)
+           result_video_size.ratio = 13333;
+-        else if (result_video_size.ratio == XINE_VO_ASPECT_ANAMORPHIC)
++        else if (ratio == XINE_VO_ASPECT_ANAMORPHIC)
+           result_video_size.ratio = 17778;
+-        else if (result_video_size.ratio == XINE_VO_ASPECT_DVB)
++        else if (ratio == XINE_VO_ASPECT_DVB)
+           result_video_size.ratio = 21100;
+ 
+         if (0 != this->frame_size.x

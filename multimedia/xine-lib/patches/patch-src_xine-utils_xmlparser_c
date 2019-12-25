@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xine-utils_xmlparser_c,v 1.1 2019/12/25 15:50:45 ajacoutot Exp $
+
+Avoid NULL string argument for printf().
+
+Index: src/xine-utils/xmlparser.c
+--- src/xine-utils/xmlparser.c.orig
++++ src/xine-utils/xmlparser.c
+@@ -145,7 +145,7 @@ static void xml_parser_free_props(xml_property_t *curr
+ }
+ 
+ static void xml_parser_free_tree_rec(xml_node_t *current_node, int free_next) {
+-  lprintf("xml_parser_free_tree_rec: %s\n", current_node ? current_node->name : NULL);
++  lprintf("xml_parser_free_tree_rec: %s\n", current_node ? current_node->name : "(null)");
+ 
+   if (current_node) {
+     /* properties */

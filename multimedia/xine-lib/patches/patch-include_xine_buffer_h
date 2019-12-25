@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_xine_buffer_h,v 1.3 2019/12/25 15:50:45 ajacoutot Exp $
+
+Include pthread.h (BSD fix).
+
+Index: include/xine/buffer.h
+--- include/xine/buffer.h.orig
++++ include/xine/buffer.h
+@@ -37,6 +37,7 @@ extern "C" {
+ 
+ #include <string.h>    /* memcmp */
+ #include <sys/types.h> /* pthread_* */
++#include <pthread.h>
+ 
+ #include <xine/os_types.h>
+ #include <xine/attributes.h>

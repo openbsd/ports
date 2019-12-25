@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_input_input_cdda_c,v 1.9 2019/12/25 15:50:45 ajacoutot Exp $
+
+cdda: fix BSD.
+
+Index: src/input/input_cdda.c
+--- src/input/input_cdda.c.orig
++++ src/input/input_cdda.c
+@@ -782,7 +782,7 @@ static cdrom_toc_t *read_cdrom_toc (int fd) {
+ 
+   /* allocate space for the toc entries */
+   toc = calloc (1, sizeof (cdrom_toc_t) + total_tracks * sizeof (cdrom_toc_entry_t));
+-  if (!toc->toc_entries) {
++  if (!toc) {
+     perror("calloc");
+     return NULL;
+   }
+@@ -874,7 +874,7 @@ static cdrom_toc_t *read_cdrom_toc (int fd) {
+   toc->toc_entries[i].track_mode = (tocentry.data->control & 0x04) ? 1 : 0;
+   toc->toc_entries[i].first_frame_minute = tocentry.data->addr.msf.minute;
+   toc->toc_entries[i].first_frame_second = tocentry.data->addr.msf.second;
+-  toc->toc_entries[i]..first_frame_frame = tocentry.data->addr.msf.frame;
++  toc->toc_entries[i].first_frame_frame = tocentry.data->addr.msf.frame;
+   toc->toc_entries[i].first_frame =
+     (tocentry.data->addr.msf.minute * CD_SECONDS_PER_MINUTE * CD_FRAMES_PER_SECOND) +
+     (tocentry.data->addr.msf.second * CD_FRAMES_PER_SECOND) +

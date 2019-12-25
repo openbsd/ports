@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_input_input_http_c,v 1.10 2019/12/25 15:50:45 ajacoutot Exp $
+
+network: fix BSD.
+
+Index: src/input/input_http.c
+--- src/input/input_http.c.orig
++++ src/input/input_http.c
+@@ -30,6 +30,9 @@
+ #ifdef HAVE_NETDB_H
+ #include <netdb.h>
+ #endif
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
++#endif
+ #include <ctype.h>
+ #include <errno.h>
+ #include <zlib.h>

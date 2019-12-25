@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.21 2018/02/10 15:29:24 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.22 2019/12/25 15:50:45 ajacoutot Exp $
+
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -871,9 +871,7 @@ AC_ARG_ENABLE([optimizations],
+@@ -891,9 +891,7 @@ AC_ARG_ENABLE([optimizations],
                [AS_HELP_STRING([--disable-optimizations], [Don't try to guess what optimization to enable])],
                [], [test x"$enable_debug" != x"no" && enable_optimizations="no"])
  AM_CONDITIONAL([DISABLE_OPTIMIZATIONS], [test x"$enable_optimizations" = x"no"])
@@ -13,16 +14,16 @@ Index: configure.ac
      dnl For multi-pass compilation: never when cross-compiling
      if test x"$cross_compiling" != x"yes"; then
          if test x"$GCC" = x"yes"; then
-@@ -894,7 +892,7 @@ AC_SUBST(O0_CFLAGS)
+@@ -914,7 +912,7 @@ AC_SUBST(O0_CFLAGS)
  AC_SUBST(PASS1_CFLAGS)
  AC_SUBST(PASS2_CFLAGS)
  
 -test x"$DEFAULT_OCFLAGS" = x"" && DEFAULT_OCFLAGS="O3_CFLAGS"
 +test x"$DEFAULT_OCFLAGS" = x"" && DEFAULT_OCFLAGS=""
  
- dnl -ffast-math fails in broken build environments due to missing stuff like _foo_pow_finite ().
- dnl We dont want to kill that feature generally either because stuff like faad will benefit a
-@@ -1125,9 +1123,9 @@ t q
+ 
+ dnl xineutils.h:dlist_*
+@@ -1297,9 +1295,9 @@ t q
  b
  :q
  q"

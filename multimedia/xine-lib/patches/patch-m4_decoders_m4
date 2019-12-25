@@ -1,8 +1,11 @@
-$OpenBSD: patch-m4_decoders_m4,v 1.5 2018/02/10 15:29:24 ajacoutot Exp $
+$OpenBSD: patch-m4_decoders_m4,v 1.6 2019/12/25 15:50:45 ajacoutot Exp $
+
+- Fix some --with[out]-*.
+
 Index: m4/decoders.m4
 --- m4/decoders.m4.orig
 +++ m4/decoders.m4
-@@ -377,7 +377,7 @@ AC_DEFUN([XINE_DECODER_PLUGINS], [
+@@ -461,7 +461,7 @@ a52_init ();
  			 [AC_CHECK_HEADERS([mpc/mpcdec.h], [have_external_libmpcdec=yes], [have_external_libmpcdec=no])],
  			 [AC_CHECK_LIB([mpcdec], [mpc_decoder_decode],
  				       [AC_CHECK_HEADERS([mpcdec/mpcdec.h], [have_external_libmpcdec=yes], [have_external_libmpcdec=no])],
@@ -11,3 +14,175 @@ Index: m4/decoders.m4
              if test x"$have_external_libmpcdec" != x"yes"; then
                  AC_MSG_RESULT([*** no usable version of libmpcdec found, using internal copy ***])
              else
+@@ -538,48 +538,42 @@ a52_init ();
+ 
+ 
+     dnl Ogg/Speex (optional; enabled by default; external)
+-    AC_ARG_WITH([speex],
+-                [AS_HELP_STRING([--with-speex], [Enable Speex audio decoder support (default: enabled)])],
+-                [test x"$withval" != x"no" && with_speex="yes"])
++    AC_ARG_WITH([speex], [AS_HELP_STRING([--with-speex], [Enable Speex audio decoder support (default: enabled)])],
++        [], [with_speex="try"])
+     if test x"$with_speex" != x"no"; then
+-        PKG_CHECK_MODULES([SPEEX], [ogg speex], [have_speex=yes], [have_speex=no])
+-        if test x"$with_speex" = x"yes" && test x"$have_speex" != x"yes"; then
++        PKG_CHECK_MODULES([SPEEX], [ogg speex], [with_speex=yes], [test x"$with_speex" = x"yes" && with_speex=fail])
++        if test x"$with_speex" = x"fail" ; then
+             AC_MSG_ERROR([Speex support requested, but libspeex and/or libogg not found])
+-        elif test x"$have_speex" = x"yes"; then
+-            AC_DEFINE([HAVE_SPEEX], 1, [Define this if you have speex])
+         fi
+     fi
+-    AM_CONDITIONAL([ENABLE_SPEEX], [test x"$have_speex" = x"yes"])
++    test x"$with_speex" = x"yes" && AC_DEFINE([HAVE_SPEEX], 1, [Define this if you have speex])
++    AM_CONDITIONAL([ENABLE_SPEEX], [test x"$with_speex" = x"yes"])
+ 
+ 
+     dnl Ogg/Theora (optional; enabled by default; external)
+-    AC_ARG_WITH([theora],
+-                [AS_HELP_STRING([--with-theora], [Enable Theora video decoder support (default: enabled)])],
+-                [test x"$withval" != x"no" && with_theora="yes"])
++    AC_ARG_WITH([theora], [AS_HELP_STRING([--with-theora], [Enable Theora video decoder support (default: enabled)])],
++        [], [with_theora="try"])
+     if test x"$with_theora" != x"no"; then
+-        PKG_CHECK_MODULES([THEORA], [ogg theora], [have_theora=yes], [have_theora=no])
+-        if test x"$with_theora" = x"yes" && test x"$have_theora" = x"no"; then
++        PKG_CHECK_MODULES([THEORA], [ogg theora], [with_theora=yes], [test x"$with_theora" = x"yes" && with_theora=fail])
++        if test x"$with_theora" = x"fail" ; then
+             AC_MSG_ERROR([Theora support requested, but libtheora and/or libogg not found])
+-        elif test x"$have_theora" = x"yes"; then
+-            AC_DEFINE([HAVE_THEORA], 1, [Define this if you have theora])
+         fi
+     fi
+-    AM_CONDITIONAL([ENABLE_THEORA], [test x"$have_theora" = x"yes"])
++    test x"$with_theora" = x"yes" && AC_DEFINE([HAVE_THEORA], 1, [Define this if you have theora])
++    AM_CONDITIONAL([ENABLE_THEORA], [test x"$with_theora" = x"yes"])
+ 
+ 
+     dnl Ogg/Vorbis (optional; enabled by default; external)
+-    AC_ARG_WITH([vorbis],
+-                [AS_HELP_STRING([--with-vorbis], [Enable Vorbis audio decoder support (default: enabled)])],
+-                [test x"$withval" != x"no" && with_vorbis="yes"])
+-    if test x"$with_vorbis" != x"no"; then
+-        PKG_CHECK_MODULES([VORBIS], [ogg vorbis], [have_vorbis=yes], [have_vorbis=no])
+-        if test x"$with_vorbis" = x"yes" && test x"$have_vorbis" = "xno"; then
++    AC_ARG_WITH([vorbis], [AS_HELP_STRING([--with-vorbis], [Enable Vorbis audio decoder support (default: enabled)])],
++        [], [with_vorbis="try"])
++    if test x"$with_vorbis" != x"no" ; then
++        PKG_CHECK_MODULES([VORBIS], [ogg vorbis], [with_vorbis=yes], [test x"$with_vorbis" = x"yes" && with_vorbis=fail])
++        if test x"$with_vorbis" = x"fail" ; then
+             AC_MSG_ERROR([Vorbis support requested, but libvorbis and/or libogg not found])
+-        elif test x"$have_vorbis" = x"yes"; then
+-            AC_DEFINE([HAVE_VORBIS], 1, [Define this if you have vorbis])
+         fi
+     fi
+-    AM_CONDITIONAL([ENABLE_VORBIS], [test x"$have_vorbis" = x"yes"])
++    test x"$with_vorbis" = x"yes" && AC_DEFINE([HAVE_VORBIS], 1, [Define this if you have vorbis])
++    AM_CONDITIONAL([ENABLE_VORBIS], [test x"$with_vorbis" = x"yes"])
+ 
+ 
+     dnl real (optional; enabled by default)
+@@ -640,18 +634,16 @@ a52_init ();
+     AC_SUBST(w32_path)
+     AM_CONDITIONAL([ENABLE_W32DLL], [test x"$have_w32dll" = x"yes"])
+ 
+-
+     dnl wavpack (optional; disabled by default)
+-    AC_ARG_WITH([wavpack],
+-                [AS_HELP_STRING([--with-wavpack], [Enable Wavpack decoder (requires libwavpack)])],
+-                [test x"$withval" != x"no" && with_wavpack="yes"], [with_wavpack="no"])
+-    if test x"$with_wavpack" != x"no"; then
+-        PKG_CHECK_MODULES([WAVPACK], [wavpack], [have_wavpack=yes], [have_wavpack=no])
+-        if test x"$with_wavpack" = x"yes" && test x"$have_wavpack" != x"yes"; then
++    AC_ARG_WITH([wavpack], [AS_HELP_STRING([--with-wavpack], [Enable Wavpack decoder (requires libwavpack)])],
++        [], [with_wavpack="no"])
++    if test x"$with_wavpack" = x"yes"; then
++        PKG_CHECK_MODULES([WAVPACK], [wavpack], [], [with_wavpack=fail])
++        if test x"$with_wavpack" = x"fail" ; then
+             AC_MSG_ERROR([Wavpack decoder support requested, but libwavpack not found])
+         fi
+     fi
+-    AM_CONDITIONAL([ENABLE_WAVPACK], [test x"$have_wavpack" = x"yes"])
++    AM_CONDITIONAL([ENABLE_WAVPACK], [test x"$with_wavpack" = x"yes"])
+ 
+     dnl libvpx decoder plugin
+     AC_ARG_ENABLE([vpx],
+@@ -669,50 +661,48 @@ a52_init ();
+     AM_CONDITIONAL([ENABLE_VPX], [test x"$have_vpx" = x"yes"])
+ 
+     dnl libOpenHevc decoder plugin
+-    AC_ARG_WITH([openhevc],
+-                [AS_HELP_STRING([--with-openhevc], [Enable libOpenHevc HEVC decoder support (default: enabled)])],
+-                [test x"$enableval" != x"no" && enable_openhevc="yes"])
+-    if test x"$enable_openhevc" != x"no"; then
+-
+-        AC_CHECK_LIB([LibOpenHevcWrapper], [libOpenHevcInit], [have_openhevc=yes], [have_openhevc=no])
+-        if test x"$enable_openhevc" = x"yes" && test x"$have_openhevc" != x"yes"; then
+-            AC_MSG_ERROR([Cannot find LibOpenHevcWrapper])
++    AC_ARG_WITH([openhevc], [AS_HELP_STRING([--with-openhevc], [Enable libOpenHevc HEVC decoder support (default: enabled)])],
++        [], [with_openhevc="try"])
++    if test x"$with_openhevc" != x"no"; then
++        AC_CHECK_LIB([LibOpenHevcWrapper], [libOpenHevcInit], [], [test x"$with_openhevc" = x"yes" && with_openhevc=fail])
++        if test x"$with_openhevc" = x"fail" ; then
++            AC_MSG_ERROR([openhevc support requested, but LibOpenHevcWrapper not found])
+         else
+-            AC_CHECK_HEADERS([openHevcWrapper.h], [have_openhevc=yes], [have_openhevc=no])
+-            if test x"$enable_openhevc" = x"yes" && test x"$have_openhevc" != x"yes"; then
+-                AC_MSG_ERROR([Cannot find openHevcWrapper.h])
++            AC_CHECK_HEADERS([openHevcWrapper.h], [with_openhevc=yes], [test x"$with_openhevc" = x"yes" && with_openhevc=fail])
++            if test x"$with_openhevc" = x"fail" ; then
++                AC_MSG_ERROR([openhevc support requested, but openHevcWrapper.h not found])
+             fi
+-            OPENHEVC_CFLAGS=''
+-            OPENHEVC_LIBS='-lLibOpenHevcWrapper'
+-            AC_SUBST(OPENHEVC_CFLAGS)
+-            AC_SUBST(OPENHEVC_LIBS)
+         fi
+     fi
+-    AM_CONDITIONAL([ENABLE_OPENHEVC], [test x"$have_openhevc" = x"yes"])
++    if test x"$with_openhevc" = x"yes" ; then
++        OPENHEVC_CFLAGS=''
++        OPENHEVC_LIBS='-lLibOpenHevcWrapper'
++        AC_SUBST(OPENHEVC_CFLAGS)
++        AC_SUBST(OPENHEVC_LIBS)
++    fi
++    AM_CONDITIONAL([ENABLE_OPENHEVC], [test x"$with_openhevc" = x"yes"])
+ 
+     dnl libaom AV1 decoder plugin
+-    AC_ARG_WITH([libaom],
+-                [AS_HELP_STRING([--with-libaom], [Enable libaom AV1 decoder support (default: enabled)])],
+-                [test x"$enableval" != x"no" && enable_libaom="yes"])
+-    if test x"$enable_libaom" != x"no"; then
+-        PKG_CHECK_MODULES([AOM], [aom >= 1.0] , [have_libaom=yes], [have_libaom=no])
+-        if test x"$enable_libaom" = x"yes" && test x"$have_libaom" != x"yes"; then
++    AC_ARG_WITH([libaom], [AS_HELP_STRING([--with-libaom], [Enable libaom AV1 decoder support (default: enabled)])],
++        [], [with_libaom="try"])
++    if test x"$with_libaom" != x"no"; then
++        PKG_CHECK_MODULES([AOM], [aom >= 1.0] , [with_libaom=yes], [test x"$with_libaom" = x"yes" && with_libaom=fail])
++        if test x"$with_libaom" = x"fail" ; then
+             AC_MSG_ERROR([libaom AV1 support requested, but libaom not found])
+         fi
+     fi
+-    AM_CONDITIONAL([ENABLE_LIBAOM], [test x"$have_libaom" = x"yes"])
++    AM_CONDITIONAL([ENABLE_LIBAOM], [test x"$with_libaom" = x"yes"])
+ 
+     dnl dav1d AV1 decoder plugin
+-    AC_ARG_WITH([dav1d],
+-                [AS_HELP_STRING([--with-dav1d], [Enable dav1d AV1 decoder support (default: enabled)])],
+-                [test x"$enableval" != x"no" && enable_dav1d="yes"])
+-    if test x"$enable_dav1d" != x"no"; then
+-        PKG_CHECK_MODULES([DAV1D], [dav1d >= 0.3.1] , [have_dav1d=yes], [have_dav1d=no])
+-        if test x"$enable_dav1d" = x"yes" && test x"$have_dav1d" != x"yes"; then
++    AC_ARG_WITH([dav1d], [AS_HELP_STRING([--with-dav1d], [Enable dav1d AV1 decoder support (default: enabled)])],
++        [], [with_dav1d=try])
++    if test x"$with_dav1d" != x"no"; then
++        PKG_CHECK_MODULES([DAV1D], [dav1d >= 0.3.1] , [with_dav1d=yes], [test x"$with_dav1d" = x"yes" && with_dav1d=fail])
++        if test x"$with_dav1d" = x"fail" ; then
+             AC_MSG_ERROR([dav1d AV1 support requested, but dav1d not found])
+         fi
+     fi
+-    AM_CONDITIONAL([ENABLE_DAV1D], [test x"$have_dav1d" = x"yes"])
++    AM_CONDITIONAL([ENABLE_DAV1D], [test x"$with_dav1d" = x"yes"])
+ 
+     dnl Broadcom MMAL (Multi Media Abstraction Layer) decoder plugin for RPi
+     AC_ARG_ENABLE([mmal],

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_xine-engine_load_plugins_c,v 1.1 2019/12/25 15:50:45 ajacoutot Exp $
+
+Simplify.
+
+Index: src/xine-engine/load_plugins.c
+--- src/xine-engine/load_plugins.c.orig
++++ src/xine-engine/load_plugins.c
+@@ -71,7 +71,9 @@
+ 
+ #include "xine_private.h"
+ 
++#ifdef XINE_MAKE_BUILTINS
+ #include "builtins.h"
++#endif
+ 
+ #if 0
+ 

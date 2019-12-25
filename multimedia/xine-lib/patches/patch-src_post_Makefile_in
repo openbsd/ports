@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_post_Makefile_in,v 1.1 2019/12/25 15:50:45 ajacoutot Exp $
+
+Index: src/post/Makefile.in
+--- src/post/Makefile.in.orig
++++ src/post/Makefile.in
+@@ -889,7 +889,7 @@ libdeinterlaceplugins_O1_la_SOURCES = \
+ 	$(debug_sources)
+ 
+ libdeinterlaceplugins_O1_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(top_srcdir)/src/post/deinterlace
+-libdeinterlaceplugins_O1_la_CFLAGS = $(O1_CFLAGS) $(VISIBILITY_FLAG)
++libdeinterlaceplugins_O1_la_CFLAGS = $(DEFAULT_OCFLAGS) $(VISIBILITY_FLAG)
+ libdeinterlaceplugins_O1_la_LDFLAGS = 
+ libdeinterlaceplugins_la_SOURCES = \
+ 	deinterlace/plugins/double.c \
+@@ -934,7 +934,7 @@ xineplug_post_tvtime_la_LDFLAGS = $(AM_LDFLAGS) $(IMPU
+ @ENABLE_POSTPROC_TRUE@pp_module_cflags = $(FFMPEG_CFLAGS) $(POSTPROC_CFLAGS)
+ @ARCH_X86_TRUE@PLANAR_X86_LIB = libpost_planar_x86.la
+ @ARCH_X86_TRUE@libpost_planar_x86_la_SOURCES = planar/x86/noise.c planar/x86/noise.h
+-@ARCH_X86_TRUE@libpost_planar_x86_la_CFLAGS = $(O1_CFLAGS) -fomit-frame-pointer $(VISIBILITY_FLAG)
++@ARCH_X86_TRUE@libpost_planar_x86_la_CFLAGS = $(DEFAULT_OCFLAGS) -fomit-frame-pointer $(VISIBILITY_FLAG)
+ @ARCH_X86_TRUE@libpost_planar_x86_la_LDFLAGS = 
+ 
+ #
