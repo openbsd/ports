@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2019/10/17 19:55:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.170 2019/12/25 15:01:08 martin Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -36,6 +36,7 @@
      SUBDIR += gnuplot
      SUBDIR += gnuplot,no_x11
      SUBDIR += grace
+     SUBDIR += grace,no_x11
      SUBDIR += graphviz
      SUBDIR += grpn
      SUBDIR += gunits
