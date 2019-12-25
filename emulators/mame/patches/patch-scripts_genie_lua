@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_genie_lua,v 1.12 2019/11/28 20:29:59 fcambus Exp $
+$OpenBSD: patch-scripts_genie_lua,v 1.13 2019/12/25 15:17:33 fcambus Exp $
 
 - Set OPT_FLAGS even when OPTIMIZE is unset, to allow passing CXXFLAGS
 - Remove broken GCC version detection
@@ -31,7 +31,7 @@ Index: scripts/genie.lua
  	if _OPTIONS["LTO"]=="1" then
  		buildoptions {
  -- windows native mingw GCC 5.2 fails with -flto=x with x > 1. bug unfixed as of this commit
-@@ -1071,54 +1073,6 @@ end
+@@ -1071,53 +1073,6 @@ end
  
  
  
@@ -46,7 +46,6 @@ Index: scripts/genie.lua
 -				"-Wno-tautological-compare",
 -				"-Wno-unused-value",
 -				"-Wno-constant-logical-operand",
--				"-Wno-missing-braces", -- clang is not as permissive as GCC about std::array initialization
 -				"-fdiagnostics-show-note-include-stack",
 -			}
 -			if (version >= 30500) then
@@ -63,8 +62,8 @@ Index: scripts/genie.lua
 -				}
 -			end
 -		else
--			if (version < 50000) then
--				print("GCC version 5.0 or later needed")
+-			if (version < 70000) then
+-				print("GCC version 7.0 or later needed")
 -				os.exit(-1)
 -			end
 -				buildoptions {
