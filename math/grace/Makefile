@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2019/12/25 15:00:12 martin Exp $
+# $OpenBSD: Makefile,v 1.47 2019/12/26 12:05:00 jca Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-REVISION=	9
+REVISION=	10
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -57,6 +57,7 @@ post-install:
 .if ${FLAVOR:Mno_x11}
 	ln -sf ${GRACE_DIR}/bin/grace ${PREFIX}/bin/grace
 	ln -sf ${GRACE_DIR}/bin/grace ${PREFIX}/bin/gracebat
+	rm -f ${PREFIX}/grace/doc/xmgrace.1
 .else
 	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/grace
 	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/gracebat
