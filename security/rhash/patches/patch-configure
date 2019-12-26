@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2019/11/24 04:43:26 bket Exp $
+$OpenBSD: patch-configure,v 1.2 2019/12/26 04:02:11 bket Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -540,7 +540,7 @@ OPTFLAGS=$(join_params $BUILD_DEBUG $OPTLEVEL $OPTFLAG
+@@ -598,7 +598,7 @@ log_finish
  # detect proper shared library name
  SHARED_PREFIX="lib"
  STATIC_PREFIX="lib"

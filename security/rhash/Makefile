@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/24 04:43:26 bket Exp $
+# $OpenBSD: Makefile,v 1.7 2019/12/26 04:02:11 bket Exp $
 
 COMMENT =	utility and library for computing hash sums
 
-DISTNAME =	rhash-1.3.8-src
+DISTNAME =	rhash-1.3.9-src
 PKGNAME =	${DISTNAME:S/-src$//}
 
 SHARED_LIBS =	rhash 0.0
@@ -13,7 +13,7 @@ HOMEPAGE =	http://rhash.sf.net
 
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
-# MIT
+# BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
@@ -29,6 +29,8 @@ CONFIGURE_ARGS =	--enable-lib-static \
 			--mandir=${PREFIX}/man \
 			--prefix=${PREFIX} \
 			--sysconfdir=${SYSCONFDIR}
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WRKDIST =	${WRKDIR}/${PKGNAME:S/^rhash/RHash/}
 
