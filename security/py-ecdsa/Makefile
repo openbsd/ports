@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:15:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/12/26 17:28:33 kmos Exp $
 
 COMMENT =		Python implementation of ECDSA cryptography
 
-MODPY_EGG_VERSION = 	0.13.2
+MODPY_EGG_VERSION = 	0.14.1
 DISTNAME = 		ecdsa-${MODPY_EGG_VERSION}
 PKGNAME = 		py-${DISTNAME}
 CATEGORIES = 		security
@@ -18,8 +18,12 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	src/ecdsa
 
 FLAVORS =		python3
 FLAVOR ?=
+
+TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
