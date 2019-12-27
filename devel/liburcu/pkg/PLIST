@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/11/27 12:04:36 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/12/27 22:08:55 jca Exp $
 include/urcu/
 include/urcu-bp.h
 include/urcu-call-rcu.h
@@ -51,25 +51,25 @@ include/urcu/urcu_ref.h
 include/urcu/wfcqueue.h
 include/urcu/wfqueue.h
 include/urcu/wfstack.h
-lib/liburcu-bp.a
+@static-lib lib/liburcu-bp.a
 lib/liburcu-bp.la
 @lib lib/liburcu-bp.so.${LIBurcu-bp_VERSION}
-lib/liburcu-cds.a
+@static-lib lib/liburcu-cds.a
 lib/liburcu-cds.la
 @lib lib/liburcu-cds.so.${LIBurcu-cds_VERSION}
-lib/liburcu-common.a
+@static-lib lib/liburcu-common.a
 lib/liburcu-common.la
 @lib lib/liburcu-common.so.${LIBurcu-common_VERSION}
-lib/liburcu-mb.a
+@static-lib lib/liburcu-mb.a
 lib/liburcu-mb.la
 @lib lib/liburcu-mb.so.${LIBurcu-mb_VERSION}
-lib/liburcu-qsbr.a
+@static-lib lib/liburcu-qsbr.a
 lib/liburcu-qsbr.la
 @lib lib/liburcu-qsbr.so.${LIBurcu-qsbr_VERSION}
-lib/liburcu-signal.a
+@static-lib lib/liburcu-signal.a
 lib/liburcu-signal.la
 @lib lib/liburcu-signal.so.${LIBurcu-signal_VERSION}
-lib/liburcu.a
+@static-lib lib/liburcu.a
 lib/liburcu.la
 @lib lib/liburcu.so.${LIBurcu_VERSION}
 lib/pkgconfig/liburcu-bp.pc
