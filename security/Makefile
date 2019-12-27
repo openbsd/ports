@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.558 2019/12/24 18:46:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.559 2019/12/27 05:21:15 kmos Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -338,6 +338,8 @@
      SUBDIR += py-secretstorage,python3
      SUBDIR += py-service_identity
      SUBDIR += py-service_identity,python3
+     SUBDIR += py-trustme
+     SUBDIR += py-trustme,python3
      SUBDIR += py-vivisect
      SUBDIR += py-viv_utils
      SUBDIR += py-yaswfp
