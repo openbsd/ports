@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/13 06:34:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/27 22:16:53 sthen Exp $
 
-V =		0.18
 COMMENT =	interpreter for Magnetic Scrolls games
+
+V =		0.19
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}
+EXTRACT_SUFX =	.tar.bz2
+
 CATEGORIES =	games
 
 HOMEPAGE =	https://www.dettus.net/dMagnetic/
