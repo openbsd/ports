@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2019/12/15 18:57:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2019/12/27 17:20:34 sthen Exp $
 
 COMMENT=		window and compositing manager
 
@@ -68,12 +68,5 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/meson.build
-
-# XXX
-# Generate this file upfront as it may not be created in time
-# due to ninja's randomization
-pre-build:
-	exec ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v cogl/cogl-path/cogl-path-enum-types.h
 
 .include <bsd.port.mk>

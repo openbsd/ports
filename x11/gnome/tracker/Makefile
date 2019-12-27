@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2019/10/19 09:53:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.249 2019/12/27 17:20:34 sthen Exp $
 
 PORTROACH=		skipv:2.2.99.0
 
@@ -42,13 +42,6 @@ CONFIGURE_ARGS=		-Dnetwork_manager=disabled
 
 # needs libstemmer
 CONFIGURE_ARGS +=	-Dstemmer=disabled
-
-# XXX generate this file upfront as it may not be created in time due to ninja's
-# randomization
-pre-build:
-	exec ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v \
-		src/libtracker-sparql/tracker-generated-no-checks.h \
-		src/libtracker-sparql/tracker-generated.h
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/meta-tracker

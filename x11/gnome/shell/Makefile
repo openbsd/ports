@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2019/12/15 18:56:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.183 2019/12/27 17:20:34 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -100,13 +100,6 @@ PORTHOME=		${WRKDIR}
 
 post-extract:
 	cp ${FILESDIR}/*.xml ${WRKSRC}/data/dbus-interfaces/
-
-# XXX: https://bugzilla.gnome.org/show_bug.cgi?id=789937
-# Generate this file upfront as it may not be created in time
-# due to ninja's randomization.
-pre-build:
-	exec ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v src/st/st-scroll-view-fade-generated.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-shell

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/07 11:20:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2019/12/27 17:20:34 sthen Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -34,12 +34,5 @@ RUN_DEPENDS =		archivers/gtar
 MODGNOME_TOOLS =	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache shared-mime-info vala \
 			yelp
-
-# XXX: https://bugzilla.gnome.org/show_bug.cgi?id=790064
-# Generate this file upfront as it may not be created in time
-# due to ninja's randomization.
-pre-build:
-	exec ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v src/no-ingredients.inc
 
 .include <bsd.port.mk>

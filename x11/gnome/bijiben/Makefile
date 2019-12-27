@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/11/02 12:14:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2019/12/27 17:20:34 sthen Exp $
 
 COMMENT=		simple note editor
 
@@ -27,12 +27,5 @@ RUN_DEPENDS +=		devel/xdg-utils
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
-
-# XXX
-# Generate this file upfront as it may not be created in time
-# due to ninja's randomization.
-pre-build:
-	exec ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v src/libbiji/biji-marshalers.h
 
 .include <bsd.port.mk>
