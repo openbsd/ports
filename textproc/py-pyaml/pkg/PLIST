@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/27 05:13:29 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/27 17:10:44 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pyaml/
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,11 +7,13 @@ lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyaml/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pyaml/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pyaml/__main__.py
-lib/python${MODPY_VERSION}/site-packages/pyaml/__main__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyaml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyaml/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyaml/tests/
 lib/python${MODPY_VERSION}/site-packages/pyaml/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pyaml/tests/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyaml/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyaml/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyaml/tests/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyaml/tests/dump.py
-lib/python${MODPY_VERSION}/site-packages/pyaml/tests/dump.pyc
