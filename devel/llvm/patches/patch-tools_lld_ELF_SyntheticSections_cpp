@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.13 2019/09/08 10:40:39 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.14 2019/12/27 00:15:46 jca Exp $
 
 - When merging sections into the output, lld tries to adjust the alignment of
   the section to be at least as large as the entry size of the section.
@@ -6,11 +6,29 @@ $OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.13 2019/09/08 10:40:39 j
   entry size isn't a power of two.  This happens when building some of the
   java support code in ports gcc.  Fix this by sticking to the original
   alignment if the entry size isn't a power of two.
+- Sort relative relocations (and relocations against the same symbol) by offset
+  to optimize the cache and UVM faulting behavior
 
 Index: tools/lld/ELF/SyntheticSections.cpp
 --- tools/lld/ELF/SyntheticSections.cpp.orig
 +++ tools/lld/ELF/SyntheticSections.cpp
-@@ -3001,7 +3001,9 @@ void elf::mergeSections() {
+@@ -1547,7 +1547,14 @@ static bool compRelocations(const DynamicReloc &A, con
+   bool BIsRel = B.Type == Target->RelativeRel;
+   if (AIsRel != BIsRel)
+     return AIsRel;
+-  return A.getSymIndex() < B.getSymIndex();
++
++  if (!AIsRel) {
++    auto AIndex = A.getSymIndex();
++    auto BIndex = B.getSymIndex();
++    if (AIndex != BIndex)
++      return AIndex < BIndex;
++  }
++  return A.getOffset() < B.getOffset();
+ }
+ 
+ template <class ELFT> void RelocationSection<ELFT>::writeTo(uint8_t *Buf) {
+@@ -3001,7 +3008,9 @@ void elf::mergeSections() {
      }
  
      StringRef OutsecName = getOutputSectionName(MS);
