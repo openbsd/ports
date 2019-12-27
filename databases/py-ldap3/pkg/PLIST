@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:49:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/27 20:39:36 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/ldap3/
 lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -185,10 +185,12 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}ad2012R2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}ds389.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}edir888.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}edir914.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}slapd24.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/ad2012R2.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/ds389.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/edir888.py
+lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/edir914.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/slapd24.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/__init__.py
