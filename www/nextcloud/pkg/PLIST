@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/12/02 07:07:18 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.34 2019/12/27 11:55:24 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -9483,8 +9483,6 @@ nextcloud/apps/firstrunwizard/l10n/az.json
 nextcloud/apps/firstrunwizard/l10n/bg.js
 nextcloud/apps/firstrunwizard/l10n/bg.json
 nextcloud/apps/firstrunwizard/l10n/bn_IN.php
-nextcloud/apps/firstrunwizard/l10n/bs.js
-nextcloud/apps/firstrunwizard/l10n/bs.json
 nextcloud/apps/firstrunwizard/l10n/ca.js
 nextcloud/apps/firstrunwizard/l10n/ca.json
 nextcloud/apps/firstrunwizard/l10n/cs.js
@@ -9573,8 +9571,6 @@ nextcloud/apps/firstrunwizard/l10n/km.php
 nextcloud/apps/firstrunwizard/l10n/ko.js
 nextcloud/apps/firstrunwizard/l10n/ko.json
 nextcloud/apps/firstrunwizard/l10n/ku_IQ.php
-nextcloud/apps/firstrunwizard/l10n/lb.js
-nextcloud/apps/firstrunwizard/l10n/lb.json
 nextcloud/apps/firstrunwizard/l10n/lt_LT.js
 nextcloud/apps/firstrunwizard/l10n/lt_LT.json
 nextcloud/apps/firstrunwizard/l10n/lv.js
@@ -10704,6 +10700,8 @@ nextcloud/apps/oauth2/l10n/ru.js
 nextcloud/apps/oauth2/l10n/ru.json
 nextcloud/apps/oauth2/l10n/sk.js
 nextcloud/apps/oauth2/l10n/sk.json
+nextcloud/apps/oauth2/l10n/sl.js
+nextcloud/apps/oauth2/l10n/sl.json
 nextcloud/apps/oauth2/l10n/sq.js
 nextcloud/apps/oauth2/l10n/sq.json
 nextcloud/apps/oauth2/l10n/sr.js
@@ -11016,6 +11014,10 @@ nextcloud/apps/privacy/l10n/pt_BR.js
 nextcloud/apps/privacy/l10n/pt_BR.json
 nextcloud/apps/privacy/l10n/ru.js
 nextcloud/apps/privacy/l10n/ru.json
+nextcloud/apps/privacy/l10n/sk.js
+nextcloud/apps/privacy/l10n/sk.json
+nextcloud/apps/privacy/l10n/sl.js
+nextcloud/apps/privacy/l10n/sl.json
 nextcloud/apps/privacy/l10n/sr.js
 nextcloud/apps/privacy/l10n/sr.json
 nextcloud/apps/privacy/l10n/sv.js
@@ -11024,6 +11026,8 @@ nextcloud/apps/privacy/l10n/tr.js
 nextcloud/apps/privacy/l10n/tr.json
 nextcloud/apps/privacy/l10n/zh_CN.js
 nextcloud/apps/privacy/l10n/zh_CN.json
+nextcloud/apps/privacy/l10n/zh_TW.js
+nextcloud/apps/privacy/l10n/zh_TW.json
 nextcloud/apps/privacy/lib/
 nextcloud/apps/privacy/lib/Controller/
 nextcloud/apps/privacy/lib/Controller/AdminController.php
@@ -11102,6 +11106,8 @@ nextcloud/apps/recommendations/l10n/el.js
 nextcloud/apps/recommendations/l10n/el.json
 nextcloud/apps/recommendations/l10n/es.js
 nextcloud/apps/recommendations/l10n/es.json
+nextcloud/apps/recommendations/l10n/eu.js
+nextcloud/apps/recommendations/l10n/eu.json
 nextcloud/apps/recommendations/l10n/fi.js
 nextcloud/apps/recommendations/l10n/fi.json
 nextcloud/apps/recommendations/l10n/fr.js
@@ -12446,6 +12452,8 @@ nextcloud/apps/text/l10n/ca.js
 nextcloud/apps/text/l10n/ca.json
 nextcloud/apps/text/l10n/cs.js
 nextcloud/apps/text/l10n/cs.json
+nextcloud/apps/text/l10n/da.js
+nextcloud/apps/text/l10n/da.json
 nextcloud/apps/text/l10n/de.js
 nextcloud/apps/text/l10n/de.json
 nextcloud/apps/text/l10n/de_DE.js
@@ -12456,6 +12464,8 @@ nextcloud/apps/text/l10n/eo.js
 nextcloud/apps/text/l10n/eo.json
 nextcloud/apps/text/l10n/es.js
 nextcloud/apps/text/l10n/es.json
+nextcloud/apps/text/l10n/es_MX.js
+nextcloud/apps/text/l10n/es_MX.json
 nextcloud/apps/text/l10n/eu.js
 nextcloud/apps/text/l10n/eu.json
 nextcloud/apps/text/l10n/fa.js
@@ -12490,6 +12500,8 @@ nextcloud/apps/text/l10n/ro.js
 nextcloud/apps/text/l10n/ro.json
 nextcloud/apps/text/l10n/ru.js
 nextcloud/apps/text/l10n/ru.json
+nextcloud/apps/text/l10n/sk.js
+nextcloud/apps/text/l10n/sk.json
 nextcloud/apps/text/l10n/sq.js
 nextcloud/apps/text/l10n/sq.json
 nextcloud/apps/text/l10n/sr.js
@@ -12637,6 +12649,8 @@ nextcloud/apps/theming/l10n/lt_LT.js
 nextcloud/apps/theming/l10n/lt_LT.json
 nextcloud/apps/theming/l10n/lv.js
 nextcloud/apps/theming/l10n/lv.json
+nextcloud/apps/theming/l10n/mk.js
+nextcloud/apps/theming/l10n/mk.json
 nextcloud/apps/theming/l10n/mn.js
 nextcloud/apps/theming/l10n/mn.json
 nextcloud/apps/theming/l10n/nb.js
@@ -13659,6 +13673,8 @@ nextcloud/apps/workflowengine/l10n/es_UY.js
 nextcloud/apps/workflowengine/l10n/es_UY.json
 nextcloud/apps/workflowengine/l10n/et_EE.js
 nextcloud/apps/workflowengine/l10n/et_EE.json
+nextcloud/apps/workflowengine/l10n/eu.js
+nextcloud/apps/workflowengine/l10n/eu.json
 nextcloud/apps/workflowengine/l10n/fa.js
 nextcloud/apps/workflowengine/l10n/fa.json
 nextcloud/apps/workflowengine/l10n/fi.js
@@ -14080,6 +14096,7 @@ nextcloud/core/doc/admin/_sources/configuration_files/
 nextcloud/core/doc/admin/_sources/configuration_files/big_file_upload_configuration.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_files/default_files_configuration.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_files/encryption_configuration.rst.txt
+nextcloud/core/doc/admin/_sources/configuration_files/encryption_details.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_files/external_storage/
 nextcloud/core/doc/admin/_sources/configuration_files/external_storage/amazons3.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_files/external_storage/auth_mechanisms.rst.txt
@@ -14283,6 +14300,7 @@ nextcloud/core/doc/admin/configuration_files/
 nextcloud/core/doc/admin/configuration_files/big_file_upload_configuration.html
 nextcloud/core/doc/admin/configuration_files/default_files_configuration.html
 nextcloud/core/doc/admin/configuration_files/encryption_configuration.html
+nextcloud/core/doc/admin/configuration_files/encryption_details.html
 nextcloud/core/doc/admin/configuration_files/external_storage/
 nextcloud/core/doc/admin/configuration_files/external_storage/amazons3.html
 nextcloud/core/doc/admin/configuration_files/external_storage/auth_mechanisms.html
@@ -15022,8 +15040,6 @@ nextcloud/core/l10n/hr.js
 nextcloud/core/l10n/hr.json
 nextcloud/core/l10n/hu.js
 nextcloud/core/l10n/hu.json
-nextcloud/core/l10n/id.js
-nextcloud/core/l10n/id.json
 nextcloud/core/l10n/is.js
 nextcloud/core/l10n/is.json
 nextcloud/core/l10n/it.js
@@ -15449,6 +15465,7 @@ nextcloud/lib/private/Authentication/Exceptions/InvalidTokenException.php
 nextcloud/lib/private/Authentication/Exceptions/LoginRequiredException.php
 nextcloud/lib/private/Authentication/Exceptions/PasswordLoginForbiddenException.php
 nextcloud/lib/private/Authentication/Exceptions/PasswordlessTokenException.php
+nextcloud/lib/private/Authentication/Exceptions/TokenPasswordExpiredException.php
 nextcloud/lib/private/Authentication/Exceptions/TwoFactorAuthRequiredException.php
 nextcloud/lib/private/Authentication/Exceptions/UserAlreadyLoggedInException.php
 nextcloud/lib/private/Authentication/Exceptions/WipeTokenException.php
