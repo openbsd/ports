@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/12/01 09:24:23 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/12/27 22:35:42 jca Exp $
 @conflict gmt-*
 @bin bin/psl
 include/libpsl.h
-lib/libpsl.a
+@static-lib lib/libpsl.a
 lib/libpsl.la
 @lib lib/libpsl.so.${LIBpsl_VERSION}
 lib/pkgconfig/libpsl.pc

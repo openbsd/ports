@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/22 22:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/12/27 22:35:42 jca Exp $
 
 COMMENT =		forward mail received via UUCP to the local MTA
 
 DISTNAME =		rmail-1.0
+REVISION =		0
 
 CATEGORIES =		mail
 
@@ -14,6 +15,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
 MASTER_SITES =		http://wxcvbn.org/~jca/distfiles/
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MAKE_FLAGS =		BINDIR="${PREFIX}/bin" \
 			MANDIR="${PREFIX}/man/man"

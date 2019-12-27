@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/06/22 22:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2019/12/27 22:35:42 jca Exp $
 
 COMMENT =		public suffix list library
 
 DISTNAME =		libpsl-0.20.2
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		psl	1.2	# 8.1
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c iconv idn2 intl unistring
 
 MASTER_SITES =		${HOMEPAGE}/releases/download/${DISTNAME}/
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODULES =		lang/python
 

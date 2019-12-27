@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/22 22:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2019/12/27 22:35:41 jca Exp $
 
 COMMENT=	keep X clipboard and cutbuffer in sync
 
 V=		0.10.0
 DISTNAME=	autocutsel-$V
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 
@@ -19,6 +19,8 @@ WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 WANTLIB += xcb
 
 MASTER_SITES=	https://github.com/sigmike/autocutsel/releases/download/$V/
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	 CPPFLAGS="-I${X11BASE}/include"
