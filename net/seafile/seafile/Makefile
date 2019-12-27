@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/12/22 19:57:19 kirby Exp $
+# $OpenBSD: Makefile,v 1.25 2019/12/27 21:10:43 kirby Exp $
 
 COMMENT =		seafile daemon
 
@@ -8,6 +8,7 @@ GH_COMMIT =		a4e56b6588a432fe02c731e60124153ddc861bf7
 # upstream keep on sliding tags to pull in new commits
 # this commit is from the "v7.0.1" tag
 DISTNAME =		seafile-daemon-7.0.3pl20191221
+REVISION =		0
 
 SHARED_LIBS =		seafile 4.0
 
