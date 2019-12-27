@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/09/02 11:53:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/12/27 17:25:48 ajacoutot Exp $
 @bin bin/sol
 lib/aisleriot/
 lib/aisleriot/guile/
@@ -271,6 +271,8 @@ share/help/ca/aisleriot/elevator.xml
 share/help/ca/aisleriot/eliminator.xml
 share/help/ca/aisleriot/escalator.xml
 share/help/ca/aisleriot/figures/
+share/help/ca/aisleriot/figures/camelot-goal.png
+share/help/ca/aisleriot/figures/clock-rules.png
 share/help/ca/aisleriot/first_law.xml
 share/help/ca/aisleriot/fortress.xml
 share/help/ca/aisleriot/fortunes.xml
@@ -367,6 +369,8 @@ share/help/cs/aisleriot/elevator.xml
 share/help/cs/aisleriot/eliminator.xml
 share/help/cs/aisleriot/escalator.xml
 share/help/cs/aisleriot/figures/
+share/help/cs/aisleriot/figures/camelot-goal.png
+share/help/cs/aisleriot/figures/clock-rules.png
 share/help/cs/aisleriot/first_law.xml
 share/help/cs/aisleriot/fortress.xml
 share/help/cs/aisleriot/fortunes.xml
@@ -463,6 +467,8 @@ share/help/de/aisleriot/elevator.xml
 share/help/de/aisleriot/eliminator.xml
 share/help/de/aisleriot/escalator.xml
 share/help/de/aisleriot/figures/
+share/help/de/aisleriot/figures/camelot-goal.png
+share/help/de/aisleriot/figures/clock-rules.png
 share/help/de/aisleriot/first_law.xml
 share/help/de/aisleriot/fortress.xml
 share/help/de/aisleriot/fortunes.xml
@@ -559,6 +565,8 @@ share/help/el/aisleriot/elevator.xml
 share/help/el/aisleriot/eliminator.xml
 share/help/el/aisleriot/escalator.xml
 share/help/el/aisleriot/figures/
+share/help/el/aisleriot/figures/camelot-goal.png
+share/help/el/aisleriot/figures/clock-rules.png
 share/help/el/aisleriot/first_law.xml
 share/help/el/aisleriot/fortress.xml
 share/help/el/aisleriot/fortunes.xml
@@ -655,6 +663,8 @@ share/help/en_GB/aisleriot/elevator.xml
 share/help/en_GB/aisleriot/eliminator.xml
 share/help/en_GB/aisleriot/escalator.xml
 share/help/en_GB/aisleriot/figures/
+share/help/en_GB/aisleriot/figures/camelot-goal.png
+share/help/en_GB/aisleriot/figures/clock-rules.png
 share/help/en_GB/aisleriot/first_law.xml
 share/help/en_GB/aisleriot/fortress.xml
 share/help/en_GB/aisleriot/fortunes.xml
@@ -751,6 +761,8 @@ share/help/es/aisleriot/elevator.xml
 share/help/es/aisleriot/eliminator.xml
 share/help/es/aisleriot/escalator.xml
 share/help/es/aisleriot/figures/
+share/help/es/aisleriot/figures/camelot-goal.png
+share/help/es/aisleriot/figures/clock-rules.png
 share/help/es/aisleriot/first_law.xml
 share/help/es/aisleriot/fortress.xml
 share/help/es/aisleriot/fortunes.xml
@@ -847,6 +859,8 @@ share/help/eu/aisleriot/elevator.xml
 share/help/eu/aisleriot/eliminator.xml
 share/help/eu/aisleriot/escalator.xml
 share/help/eu/aisleriot/figures/
+share/help/eu/aisleriot/figures/camelot-goal.png
+share/help/eu/aisleriot/figures/clock-rules.png
 share/help/eu/aisleriot/first_law.xml
 share/help/eu/aisleriot/fortress.xml
 share/help/eu/aisleriot/fortunes.xml
@@ -943,6 +957,8 @@ share/help/fr/aisleriot/elevator.xml
 share/help/fr/aisleriot/eliminator.xml
 share/help/fr/aisleriot/escalator.xml
 share/help/fr/aisleriot/figures/
+share/help/fr/aisleriot/figures/camelot-goal.png
+share/help/fr/aisleriot/figures/clock-rules.png
 share/help/fr/aisleriot/first_law.xml
 share/help/fr/aisleriot/fortress.xml
 share/help/fr/aisleriot/fortunes.xml
@@ -1039,6 +1055,8 @@ share/help/gl/aisleriot/elevator.xml
 share/help/gl/aisleriot/eliminator.xml
 share/help/gl/aisleriot/escalator.xml
 share/help/gl/aisleriot/figures/
+share/help/gl/aisleriot/figures/camelot-goal.png
+share/help/gl/aisleriot/figures/clock-rules.png
 share/help/gl/aisleriot/first_law.xml
 share/help/gl/aisleriot/fortress.xml
 share/help/gl/aisleriot/fortunes.xml
@@ -1135,6 +1153,8 @@ share/help/hu/aisleriot/elevator.xml
 share/help/hu/aisleriot/eliminator.xml
 share/help/hu/aisleriot/escalator.xml
 share/help/hu/aisleriot/figures/
+share/help/hu/aisleriot/figures/camelot-goal.png
+share/help/hu/aisleriot/figures/clock-rules.png
 share/help/hu/aisleriot/first_law.xml
 share/help/hu/aisleriot/fortress.xml
 share/help/hu/aisleriot/fortunes.xml
@@ -1231,6 +1251,8 @@ share/help/oc/aisleriot/elevator.xml
 share/help/oc/aisleriot/eliminator.xml
 share/help/oc/aisleriot/escalator.xml
 share/help/oc/aisleriot/figures/
+share/help/oc/aisleriot/figures/camelot-goal.png
+share/help/oc/aisleriot/figures/clock-rules.png
 share/help/oc/aisleriot/first_law.xml
 share/help/oc/aisleriot/fortress.xml
 share/help/oc/aisleriot/fortunes.xml
@@ -1327,6 +1349,8 @@ share/help/pt_BR/aisleriot/elevator.xml
 share/help/pt_BR/aisleriot/eliminator.xml
 share/help/pt_BR/aisleriot/escalator.xml
 share/help/pt_BR/aisleriot/figures/
+share/help/pt_BR/aisleriot/figures/camelot-goal.png
+share/help/pt_BR/aisleriot/figures/clock-rules.png
 share/help/pt_BR/aisleriot/first_law.xml
 share/help/pt_BR/aisleriot/fortress.xml
 share/help/pt_BR/aisleriot/fortunes.xml
@@ -1423,6 +1447,8 @@ share/help/ru/aisleriot/elevator.xml
 share/help/ru/aisleriot/eliminator.xml
 share/help/ru/aisleriot/escalator.xml
 share/help/ru/aisleriot/figures/
+share/help/ru/aisleriot/figures/camelot-goal.png
+share/help/ru/aisleriot/figures/clock-rules.png
 share/help/ru/aisleriot/first_law.xml
 share/help/ru/aisleriot/fortress.xml
 share/help/ru/aisleriot/fortunes.xml
@@ -1519,6 +1545,8 @@ share/help/sl/aisleriot/elevator.xml
 share/help/sl/aisleriot/eliminator.xml
 share/help/sl/aisleriot/escalator.xml
 share/help/sl/aisleriot/figures/
+share/help/sl/aisleriot/figures/camelot-goal.png
+share/help/sl/aisleriot/figures/clock-rules.png
 share/help/sl/aisleriot/first_law.xml
 share/help/sl/aisleriot/fortress.xml
 share/help/sl/aisleriot/fortunes.xml
@@ -1615,6 +1643,8 @@ share/help/sr/aisleriot/elevator.xml
 share/help/sr/aisleriot/eliminator.xml
 share/help/sr/aisleriot/escalator.xml
 share/help/sr/aisleriot/figures/
+share/help/sr/aisleriot/figures/camelot-goal.png
+share/help/sr/aisleriot/figures/clock-rules.png
 share/help/sr/aisleriot/first_law.xml
 share/help/sr/aisleriot/fortress.xml
 share/help/sr/aisleriot/fortunes.xml
@@ -1711,6 +1741,8 @@ share/help/sr@latin/aisleriot/elevator.xml
 share/help/sr@latin/aisleriot/eliminator.xml
 share/help/sr@latin/aisleriot/escalator.xml
 share/help/sr@latin/aisleriot/figures/
+share/help/sr@latin/aisleriot/figures/camelot-goal.png
+share/help/sr@latin/aisleriot/figures/clock-rules.png
 share/help/sr@latin/aisleriot/first_law.xml
 share/help/sr@latin/aisleriot/fortress.xml
 share/help/sr@latin/aisleriot/fortunes.xml
@@ -1807,6 +1839,8 @@ share/help/sv/aisleriot/elevator.xml
 share/help/sv/aisleriot/eliminator.xml
 share/help/sv/aisleriot/escalator.xml
 share/help/sv/aisleriot/figures/
+share/help/sv/aisleriot/figures/camelot-goal.png
+share/help/sv/aisleriot/figures/clock-rules.png
 share/help/sv/aisleriot/first_law.xml
 share/help/sv/aisleriot/fortress.xml
 share/help/sv/aisleriot/fortunes.xml
@@ -1903,6 +1937,8 @@ share/help/zh_CN/aisleriot/elevator.xml
 share/help/zh_CN/aisleriot/eliminator.xml
 share/help/zh_CN/aisleriot/escalator.xml
 share/help/zh_CN/aisleriot/figures/
+share/help/zh_CN/aisleriot/figures/camelot-goal.png
+share/help/zh_CN/aisleriot/figures/clock-rules.png
 share/help/zh_CN/aisleriot/first_law.xml
 share/help/zh_CN/aisleriot/fortress.xml
 share/help/zh_CN/aisleriot/fortunes.xml
@@ -2070,11 +2106,7 @@ share/locale/xh/LC_MESSAGES/aisleriot.mo
 share/locale/zh_CN/LC_MESSAGES/aisleriot.mo
 share/locale/zh_HK/LC_MESSAGES/aisleriot.mo
 share/locale/zh_TW/LC_MESSAGES/aisleriot.mo
-share/metainfo/sol.appdata.xml
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/aisleriot.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
+share/metainfo/sol.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas

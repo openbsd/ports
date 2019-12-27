@@ -1,0 +1,11 @@
+$OpenBSD: patch-cards_meson_svgz_sh,v 1.1 2019/12/27 17:25:48 ajacoutot Exp $
+
+Index: cards/meson_svgz.sh
+--- cards/meson_svgz.sh.orig
++++ cards/meson_svgz.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/bash
++#!/usr/bin/env bash
+ # Copyright © 2019 Christian Persch
+ #
+ # This programme is free software; you can redistribute it and/or modify it
