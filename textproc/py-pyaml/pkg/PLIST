@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/27 05:13:29 kmos Exp $
+lib/python${MODPY_VERSION}/site-packages/pyaml/
+lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyaml/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyaml/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyaml/__main__.py
+lib/python${MODPY_VERSION}/site-packages/pyaml/__main__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyaml/tests/
+lib/python${MODPY_VERSION}/site-packages/pyaml/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyaml/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyaml/tests/dump.py
+lib/python${MODPY_VERSION}/site-packages/pyaml/tests/dump.pyc
