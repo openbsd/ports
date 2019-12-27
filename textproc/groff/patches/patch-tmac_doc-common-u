@@ -1,8 +1,9 @@
-$OpenBSD: patch-tmac_doc-common-u,v 1.1 2018/12/24 10:42:00 schwarze Exp $
+$OpenBSD: patch-tmac_doc-common-u,v 1.2 2019/12/27 00:48:04 schwarze Exp $
 
 chunks 1-3: Tweak page headers (local change).
 chunk 4: Default value for the .Os macro (local change).
-chunk 5: Do not use an ugly double dash in the NAME line (local change).
+chunk 5: Accept any number of arguments for .Dd (also submitted upstream).
+chunk 6: Do not use an ugly double dash in the NAME line (local change).
 
 Index: tmac/doc-common-u
 --- tmac/doc-common-u.orig
@@ -63,7 +64,49 @@ Index: tmac/doc-common-u
  .
  .
  .\" NS doc-operating-system global string
-@@ -976,7 +965,7 @@
+@@ -778,39 +767,12 @@
+ .\" NS   doc-date-string
+ .\" NS   doc-command-name
+ .\" NS
+-.\" NS local variables:
+-.\" NS   doc-date-XXX
+-.\" NS
+ .\" NS width register 'Dd' set above
+ .
+-.ds doc-date-1  January
+-.ds doc-date-2  February
+-.ds doc-date-3  March
+-.ds doc-date-4  April
+-.ds doc-date-5  May
+-.ds doc-date-6  June
+-.ds doc-date-7  July
+-.ds doc-date-8  August
+-.ds doc-date-9  September
+-.ds doc-date-10 October
+-.ds doc-date-11 November
+-.ds doc-date-12 December
+-.
+ .de Dd
+ .  ds doc-command-name
+-.
+-.  ie \n[.$] \{\
+-.    ie "\$1"$Mdocdate:" \
+-.      ds doc-date-string \$2\~\$3, \$4
+-.    el \{ .ie (\n[.$] == 3) \
+-.      ds doc-date-string \$1\~\$2 \$3
+-.    el \{\
+-.      ds doc-date-string "\*[doc-date-\n[mo]]
+-.      as doc-date-string \~\n[dy], \n[year]
+-.    \}\}
+-.  \}
+-.  el \
+-.    ds doc-date-string Epoch
++.  ie "\$1"$Mdocdate: December 27 2019 $2\~\$3, \$4
++.  el                   .ds doc-date-string \$*
+ ..
+ .
+ .
+@@ -976,7 +938,7 @@
  .\" NS width register 'Nd' set above
  .
  .de Nd
