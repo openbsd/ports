@@ -1,9 +1,9 @@
-$OpenBSD: patch-res_res_pjsip_registrar_c,v 1.6 2019/05/31 10:36:27 sthen Exp $
+$OpenBSD: patch-res_res_pjsip_registrar_c,v 1.7 2019/12/27 13:27:50 sthen Exp $
 
 Index: res/res_pjsip_registrar.c
 --- res/res_pjsip_registrar.c.orig
 +++ res/res_pjsip_registrar.c
-@@ -1260,7 +1260,7 @@ static void *check_expiration_thread(void *data)
+@@ -1273,7 +1273,7 @@ static void *check_expiration_thread(void *data)
  	while (check_interval) {
  		sleep(check_interval);
  

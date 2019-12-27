@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.82 2019/11/21 23:52:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.83 2019/12/27 13:27:50 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -15,7 +15,6 @@
 @pkgpath telephony/asterisk,-fax,h323
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
-@extraunexec rm -f ${SYSCONFDIR}/asterisk/*
 @rcscript ${RCDIR}/asterisk
 include/asterisk/
 include/asterisk.h
@@ -181,6 +180,7 @@ include/asterisk/security_events.h
 include/asterisk/security_events_defs.h
 include/asterisk/select.h
 include/asterisk/sem.h
+include/asterisk/serializer.h
 include/asterisk/sha1.h
 include/asterisk/silk.h
 include/asterisk/sip_api.h
@@ -633,6 +633,7 @@ share/examples/asterisk/basic-pbx/modules.conf
 share/examples/asterisk/basic-pbx/musiconhold.conf
 share/examples/asterisk/basic-pbx/pjsip.conf
 share/examples/asterisk/basic-pbx/pjsip_notify.conf
+share/examples/asterisk/basic-pbx/queues.conf
 share/examples/asterisk/basic-pbx/voicemail.conf
 share/examples/asterisk/default/
 share/examples/asterisk/default/acl.conf

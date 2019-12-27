@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.310 2019/11/21 23:52:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.311 2019/12/27 13:27:50 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.6.2
+VER=		16.7.0
 PJ_V=		2.9
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
