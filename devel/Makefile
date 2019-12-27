@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1921 2019/12/27 05:10:19 kmos Exp $
+# $OpenBSD: Makefile,v 1.1922 2019/12/27 05:17:38 kmos Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1681,6 +1681,8 @@
      SUBDIR += py-test-runner,python3
      SUBDIR += py-test-subtesthack
      SUBDIR += py-test-subtesthack,python3
+     SUBDIR += py-test-timeout
+     SUBDIR += py-test-timeout,python3
      SUBDIR += py-test-vcr
      SUBDIR += py-test-vcr,python3
      SUBDIR += py-test-xdist
