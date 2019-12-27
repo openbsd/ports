@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2019/12/06 14:23:36 jca Exp $
+# $OpenBSD: Makefile,v 1.47 2019/12/27 22:07:10 jca Exp $
 
 COMMENT =		authoritative DNS server
 
-DISTNAME =		knot-2.9.1
+DISTNAME =		knot-2.9.2
 
 SHARED_LIBS +=	dnssec               2.0      # .7.0
 SHARED_LIBS +=	knot                 6.0      # .9.0
