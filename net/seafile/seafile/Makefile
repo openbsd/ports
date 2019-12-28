@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/12/27 21:10:43 kirby Exp $
+# $OpenBSD: Makefile,v 1.26 2019/12/28 10:54:28 kirby Exp $
 
 COMMENT =		seafile daemon
 
@@ -31,8 +31,6 @@ LIB_DEPENDS =		devel/libinotify \
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ARGS +=	--disable-fuse \
-			--disable-server
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify"
 
