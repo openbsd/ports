@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/02/14 12:36:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/12/28 15:13:26 sthen Exp $
 bin/eyeD3
 lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/eyed3/
 lib/python${MODPY_VERSION}/site-packages/eyed3/__about__.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/__init__.py
-lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/eyed3/compat.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/core.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/id3/
 lib/python${MODPY_VERSION}/site-packages/eyed3/id3/__init__.py
-lib/python${MODPY_VERSION}/site-packages/eyed3/id3/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eyed3/id3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/eyed3/id3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/id3/${MODPY_PYCACHE}apple.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/id3/${MODPY_PYCACHE}frames.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,13 +34,13 @@ lib/python${MODPY_VERSION}/site-packages/eyed3/id3/tag.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/main.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/
 lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/__init__.py
-lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/${MODPY_PYCACHE}headers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/headers.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/__init__.py
-lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}_display_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}art.${MODPY_PYC_MAGIC_TAG}pyc
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/stats.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/xep_118.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/utils/
 lib/python${MODPY_VERSION}/site-packages/eyed3/utils/__init__.py
-lib/python${MODPY_VERSION}/site-packages/eyed3/utils/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eyed3/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/eyed3/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/utils/${MODPY_PYCACHE}art.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/utils/${MODPY_PYCACHE}binfuncs.${MODPY_PYC_MAGIC_TAG}pyc

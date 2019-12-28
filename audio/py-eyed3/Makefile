@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/12/28 15:13:25 sthen Exp $
 
 COMMENT=		module and program for processing ID3 tags
 
-MODPY_EGG_VERSION=	0.8.10
+MODPY_EGG_VERSION=	0.8.12
 DISTNAME=		eyeD3-${MODPY_EGG_VERSION}
 CATEGORIES=		audio
-REVISION=		0
 
 HOMEPAGE=		http://eyed3.nicfit.net/
 
@@ -23,6 +22,9 @@ MODPY_SETUPTOOLS=	Yes
 
 FAKE_FLAGS=		docdir=${WRKINST}${PREFIX}/share/doc/py-eyed3
 
+MODPY_PYTEST=		Yes
+
+# needs factory_boy
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
