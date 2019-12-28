@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.4 2019/12/11 19:55:40 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.5 2019/12/28 18:35:39 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.7,<3.8
@@ -67,6 +67,9 @@ lib/python3.7/test/__pycache__/dataclass_module_2.cpython-37.pyc
 lib/python3.7/test/__pycache__/dataclass_module_2_str.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/dataclass_module_2_str.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/dataclass_module_2_str.cpython-37.pyc
+lib/python3.7/test/__pycache__/dataclass_textanno.cpython-37.opt-1.pyc
+lib/python3.7/test/__pycache__/dataclass_textanno.cpython-37.opt-2.pyc
+lib/python3.7/test/__pycache__/dataclass_textanno.cpython-37.pyc
 lib/python3.7/test/__pycache__/datetimetester.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/datetimetester.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/datetimetester.cpython-37.pyc
@@ -1538,6 +1541,7 @@ lib/python3.7/test/dataclass_module_1.py
 lib/python3.7/test/dataclass_module_1_str.py
 lib/python3.7/test/dataclass_module_2.py
 lib/python3.7/test/dataclass_module_2_str.py
+lib/python3.7/test/dataclass_textanno.py
 lib/python3.7/test/datetimetester.py
 lib/python3.7/test/decimaltestdata/
 lib/python3.7/test/decimaltestdata/abs.decTest
