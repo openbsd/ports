@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/10 09:29:32 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2019/12/28 14:10:21 jasper Exp $
 
 COMMENT =	multi-architecture binary analysis toolkit
 
 ANGR_PYTHON_MODULE =	angr
+REVISION =	0
 
 HOMEPAGE =	https://angr.io/
 
@@ -27,7 +28,7 @@ RUN_DEPENDS =	${BUILD_DEPENDS} \
 		devel/angr/py-claripy>=${MODPY_EGG_VERSION} \
 		devel/angr/py-cle>=${MODPY_EGG_VERSION} \
 		devel/capstone/python${MODPY_FLAVOR} \
-		devel/py-cachetools${MODPY_FLAVOR} \
+		devel/py-cachetools \
 		devel/py-cooldict${MODPY_FLAVOR} \
 		devel/py-cparser${MODPY_FLAVOR} \
 		devel/py-mulpyplexer${MODPY_FLAVOR} \
