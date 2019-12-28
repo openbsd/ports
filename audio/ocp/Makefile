@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2019/12/22 20:49:45 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2019/12/28 13:13:12 sthen Exp $
 
 BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.c:2077
+BROKEN-i386 =	mixasm.c:94: this directive must appear between .cfi_startproc and .cfi_endproc directives
 
 COMMENT =	UNIX port of Open Cubic Player
 
