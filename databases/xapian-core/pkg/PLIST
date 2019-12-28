@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/10/23 12:13:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/12/28 18:00:11 sthen Exp $
 @bin bin/copydatabase
 @bin bin/quest
 @bin bin/simpleexpand
@@ -56,7 +56,7 @@ lib/cmake/
 lib/cmake/xapian/
 lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
-lib/libxapian.a
+@static-lib lib/libxapian.a
 lib/libxapian.la
 @lib lib/libxapian.so.${LIBxapian_VERSION}
 lib/pkgconfig/xapian-core.pc

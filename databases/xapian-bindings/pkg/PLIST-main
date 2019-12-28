@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/11/13 23:36:05 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2019/12/28 18:00:11 sthen Exp $
 libdata/perl5/site_perl/Xapian/
 libdata/perl5/site_perl/Xapian.pm
 libdata/perl5/site_perl/Xapian/AssertionError.pm
@@ -51,7 +51,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Xapian/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Xapian/Xapian.a
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Xapian/Xapian.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Xapian/Xapian.so
 share/doc/xapian-bindings/
 share/doc/xapian-bindings/perl/
 share/doc/xapian-bindings/perl/examples/
