@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2019/12/25 15:48:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2019/12/28 18:37:32 ajacoutot Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.30.0
-REVISION =		1
+GH_TAGNAME =		v0.31.0
 
 SHARED_LIBS +=		mpv		0.1 # 1.106
 
