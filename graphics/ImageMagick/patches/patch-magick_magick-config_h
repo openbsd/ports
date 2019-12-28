@@ -1,0 +1,19 @@
+$OpenBSD: patch-magick_magick-config_h,v 1.1 2019/12/28 14:39:48 sthen Exp $
+
+From 4e13897e9a9c3edf52c84b45217e26f5244f9986 Mon Sep 17 00:00:00 2001
+From: Cristy <mikayla-grace@urban-warrior.org>
+Date: Thu, 26 Dec 2019 12:14:48 -0500
+Subject: [PATCH] https://github.com/ImageMagick/ImageMagick6/issues/67
+
+Index: magick/magick-config.h
+--- magick/magick-config.h.orig
++++ magick/magick-config.h
+@@ -162,7 +162,7 @@ extern "C" {
+ #  define __has_builtin(x) 0
+ #endif
+ 
+-#if __STDC_VERSION__ > 201112L
++#if defined(__STDC_VERSION__) && __STDC_VERSION__ > 201112L && !defined(__MINGW32__)
+ # define MAGICKCORE_HAVE_STDC_ALIGNED_ALLOC 1
+ #endif
+ 

@@ -1,0 +1,28 @@
+$OpenBSD: patch-magick_memory__h,v 1.1 2019/12/28 14:39:48 sthen Exp $
+
+From 4e13897e9a9c3edf52c84b45217e26f5244f9986 Mon Sep 17 00:00:00 2001
+From: Cristy <mikayla-grace@urban-warrior.org>
+Date: Thu, 26 Dec 2019 12:14:48 -0500
+Subject: [PATCH] https://github.com/ImageMagick/ImageMagick6/issues/67
+
+Index: magick/memory_.h
+--- magick/memory_.h.orig
++++ magick/memory_.h
+@@ -68,7 +68,7 @@ extern MagickExport void
+   SetMagickMemoryMethods(AcquireMemoryHandler,ResizeMemoryHandler,
+     DestroyMemoryHandler);
+ 
+-inline MagickExport MagickBooleanType HeapOverflowSanityCheck(
++static inline MagickBooleanType HeapOverflowSanityCheck(
+   const size_t count,const size_t quantum)
+ {
+   if ((count == 0) || (quantum == 0))
+@@ -81,7 +81,7 @@ inline MagickExport MagickBooleanType HeapOverflowSani
+   return(MagickFalse);
+ }
+ 
+-inline MagickExport MagickBooleanType HeapOverflowSanityCheckGetSize(
++static inline MagickBooleanType HeapOverflowSanityCheckGetSize(
+   const size_t count,const size_t quantum,size_t *const extent)
+ {
+   size_t
