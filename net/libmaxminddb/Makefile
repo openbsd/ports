@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/12/25 11:29:31 fcambus Exp $
+# $OpenBSD: Makefile,v 1.53 2019/12/28 09:23:28 fcambus Exp $
 
 COMMENT-main =	library for MaxMind GeoIP2/GeoLite2 IP geolocation databases
 COMMENT-db =	GeoIP2 GeoLite2 database: IPv4/v6 address to country
@@ -48,29 +48,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libmaxminddb
 	${INSTALL_DATA} ${WRKDIR}/data/* ${PREFIX}/share/examples/libmaxminddb
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/libmaxminddb
-
-# maintainer convenience target
-geolite2:
-	set -x; \
-	distfile=geolite2-data-`date +%Y%m%d`.tar.xz; \
-	tmp=`mktemp -d`; \
-	mkdir $$tmp/data; \
-	cd $$tmp/data; \
-	echo "This file contains an unmodified dated snapshot of GeoLite2 data from MaxMind," > README; \
-	echo "see https://www.maxmind.com and https://dev.maxmind.com/geoip/geoip2/geolite2/." >> README; \
-	echo "Distributed under Creative Commons Attribution-ShareAlike 4.0 International License." >> README; \
-	echo "Created at `date -z UTC` and intended for OS packaging purposes." >> README; \
-	ftp https://geolite.maxmind.com/download/geoip/database/GeoLite2-{Country,City,ASN}.tar.gz{,.md5}; \
-	for file in GeoLite2-Country GeoLite2-City GeoLite2-ASN; do \
-		if [ "`md5 -q $$file.tar.gz`" != "`cat $$file.tar.gz.md5`" ]; then \
-			echo "ERROR: $$file.tar.gz is corrupt"; \
-			exit; \
-		fi; \
-		tar xfz $$file.tar.gz; \
-	done; \
-	mv */*mmdb .; \
-	cd ..; \
-	tar cf - data/README data/*.mmdb | xz -T 0 > $$distfile; \
-	echo "Distfile created in: $$tmp";
 
 .include <bsd.port.mk>
