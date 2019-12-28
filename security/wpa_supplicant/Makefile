@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2019/11/19 14:35:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/12/28 17:45:52 sthen Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
 DISTNAME=	wpa_supplicant-2.8
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security net
 
 HOMEPAGE=	https://w1.fi/wpa_supplicant/
