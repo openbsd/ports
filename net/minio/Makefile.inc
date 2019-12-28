@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 20:48:32 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2019/12/28 14:35:35 jasper Exp $
 
 GH_ACCOUNT ?=	minio
 
 CATEGORIES =	net sysutils
 
 HOMEPAGE =	https://minio.io
-
-MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # APACHEv2
 PERMIT_PACKAGE =	Yes
