@@ -1,0 +1,13 @@
+$OpenBSD: patch-libdca_libdca_pc_in,v 1.1 2019/12/28 10:25:15 ajacoutot Exp $
+
+Fix include directory path in libdca.pc.in.
+
+Index: libdca/libdca.pc.in
+--- libdca/libdca.pc.in.orig
++++ libdca/libdca.pc.in
+@@ -8,4 +8,4 @@ Description: A decoding library for DTS Coherent Acous
+ Version: @VERSION@
+ Libs: -L${libdir} -ldca
+ Libs.private: @LIBDCA_LIBS@
+-Cflags: -I${includedir}/@PACKAGE@
++Cflags: -I${includedir}
