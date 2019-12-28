@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_gui_wizard_owncloudwizard_cpp,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+$OpenBSD: patch-src_gui_wizard_owncloudwizard_cpp,v 1.2 2019/12/28 13:48:04 kirby Exp $
 
 Index: src/gui/wizard/owncloudwizard.cpp
 --- src/gui/wizard/owncloudwizard.cpp.orig
 +++ src/gui/wizard/owncloudwizard.cpp
-@@ -26,8 +26,6 @@
+@@ -27,8 +27,6 @@
  #endif
  #include "wizard/owncloudadvancedsetuppage.h"
  #include "wizard/owncloudwizardresultpage.h"
@@ -12,7 +12,7 @@ Index: src/gui/wizard/owncloudwizard.cpp
  
  #include "QProgressIndicator.h"
  
-@@ -46,14 +44,12 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
+@@ -47,14 +45,12 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
      , _setupPage(new OwncloudSetupPage(this))
      , _httpCredsPage(new OwncloudHttpCredsPage(this))
      , _browserCredsPage(new OwncloudOAuthCredsPage)
@@ -27,7 +27,7 @@ Index: src/gui/wizard/owncloudwizard.cpp
      , _setupLog()
      , _registration(false)
  {
-@@ -61,13 +57,11 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
+@@ -62,13 +58,11 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
      setPage(WizardCommon::Page_ServerSetup, _setupPage);
      setPage(WizardCommon::Page_HttpCreds, _httpCredsPage);
      setPage(WizardCommon::Page_OAuthCreds, _browserCredsPage);
@@ -41,7 +41,7 @@ Index: src/gui/wizard/owncloudwizard.cpp
  
      connect(this, &QDialog::finished, this, &OwncloudWizard::basicSetupFinished);
  
-@@ -79,11 +73,9 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
+@@ -80,11 +74,9 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
      connect(_setupPage, &OwncloudSetupPage::determineAuthType, this, &OwncloudWizard::determineAuthType);
      connect(_httpCredsPage, &OwncloudHttpCredsPage::connectToOCUrl, this, &OwncloudWizard::connectToOCUrl);
      connect(_browserCredsPage, &OwncloudOAuthCredsPage::connectToOCUrl, this, &OwncloudWizard::connectToOCUrl);
@@ -53,7 +53,20 @@ Index: src/gui/wizard/owncloudwizard.cpp
      connect(_advancedSetupPage, &OwncloudAdvancedSetupPage::createLocalAndRemoteFolders,
          this, &OwncloudWizard::createLocalAndRemoteFolders);
      connect(this, &QWizard::customButtonClicked, this, &OwncloudWizard::skipFolderConfiguration);
-@@ -168,20 +160,12 @@ void OwncloudWizard::successfulStep()
+@@ -106,12 +98,8 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
+     // Connect styleChanged events to our widgets, so they can adapt (Dark-/Light-Mode switching)
+     connect(this, &OwncloudWizard::styleChanged, _setupPage, &OwncloudSetupPage::slotStyleChanged);
+     connect(this, &OwncloudWizard::styleChanged, _advancedSetupPage, &OwncloudAdvancedSetupPage::slotStyleChanged);
+-    connect(this, &OwncloudWizard::styleChanged, _flow2CredsPage, &Flow2AuthCredsPage::slotStyleChanged);
+ 
+     customizeStyle();
+-
+-    // allow Flow2 page to poll on window activation
+-    connect(this, &OwncloudWizard::onActivate, _flow2CredsPage, &Flow2AuthCredsPage::slotPollNow);
+ }
+ 
+ void OwncloudWizard::setAccount(AccountPtr account)
+@@ -180,20 +168,12 @@ void OwncloudWizard::successfulStep()
          _browserCredsPage->setConnected();
          break;
  
@@ -74,7 +87,7 @@ Index: src/gui/wizard/owncloudwizard.cpp
      case WizardCommon::Page_AdvancedSetup:
          _advancedSetupPage->directoriesCreated();
          break;
-@@ -205,10 +189,6 @@ void OwncloudWizard::setAuthType(DetermineAuthTypeJob:
+@@ -217,10 +197,6 @@ void OwncloudWizard::setAuthType(DetermineAuthTypeJob:
  #endif
          if (type == DetermineAuthTypeJob::OAuth) {
          _credentialsPage = _browserCredsPage;
@@ -85,7 +98,7 @@ Index: src/gui/wizard/owncloudwizard.cpp
      } else { // try Basic auth even for "Unknown"
          _credentialsPage = _httpCredsPage;
      }
-@@ -233,7 +213,7 @@ void OwncloudWizard::slotCurrentPageChanged(int id)
+@@ -245,7 +221,7 @@ void OwncloudWizard::slotCurrentPageChanged(int id)
      }
  
      setOption(QWizard::HaveCustomButton1, id == WizardCommon::Page_AdvancedSetup);

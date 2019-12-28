@@ -1,25 +1,29 @@
-$OpenBSD: patch-src_gui_CMakeLists_txt,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+$OpenBSD: patch-src_gui_CMakeLists_txt,v 1.2 2019/12/28 13:48:04 kirby Exp $
 
 Index: src/gui/CMakeLists.txt
 --- src/gui/CMakeLists.txt.orig
 +++ src/gui/CMakeLists.txt
-@@ -39,11 +39,8 @@ set(client_UI_SRCS
+@@ -35,14 +35,12 @@ set(client_UI_SRCS
+     addcertificatedialog.ui
+     proxyauthdialog.ui
+     mnemonicdialog.ui
+-    wizard/flow2authwidget.ui
+     wizard/owncloudadvancedsetuppage.ui
      wizard/owncloudconnectionmethoddialog.ui
      wizard/owncloudhttpcredspage.ui
      wizard/owncloudoauthcredspage.ui
--    wizard/flow2authcredspage.ui
--    wizard/flow2authwidget.ui
      wizard/owncloudsetupnocredspage.ui
      wizard/owncloudwizardresultpage.ui
 -    wizard/webview.ui
  )
  
  set(client_SRCS
-@@ -108,23 +105,16 @@ set(client_SRCS
+@@ -108,24 +106,17 @@ set(client_SRCS
      creds/credentialsfactory.cpp
      creds/httpcredentialsgui.cpp
      creds/oauth.cpp
 -    creds/flow2auth.cpp
+     creds/keychainchunk.cpp
 -    creds/webflowcredentials.cpp
 -    creds/webflowcredentialsdialog.cpp
      wizard/postfixlineedit.cpp
@@ -39,7 +43,7 @@ Index: src/gui/CMakeLists.txt
      wizard/slideshow.cpp
  )
  
-@@ -310,7 +300,7 @@ else()
+@@ -298,7 +289,7 @@ else()
  endif()
  
  add_library(updater STATIC ${updater_SRCS})

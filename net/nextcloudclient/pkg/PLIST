@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/28 13:48:04 kirby Exp $
 @bin bin/nextcloud
 @bin bin/nextcloudcmd
 include/nextcloudsync/
@@ -68,6 +68,7 @@ share/nextcloud/i18n/client_id.qm
 share/nextcloud/i18n/client_is.qm
 share/nextcloud/i18n/client_it.qm
 share/nextcloud/i18n/client_ja.qm
+share/nextcloud/i18n/client_ko.qm
 share/nextcloud/i18n/client_lt_LT.qm
 share/nextcloud/i18n/client_lv.qm
 share/nextcloud/i18n/client_nb_NO.qm

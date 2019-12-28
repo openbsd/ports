@@ -1,9 +1,27 @@
-$OpenBSD: patch-src_libsync_networkjobs_cpp,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+$OpenBSD: patch-src_libsync_networkjobs_cpp,v 1.2 2019/12/28 13:48:04 kirby Exp $
 
 Index: src/libsync/networkjobs.cpp
 --- src/libsync/networkjobs.cpp.orig
 +++ src/libsync/networkjobs.cpp
-@@ -922,12 +922,12 @@ void DetermineAuthTypeJob::checkBothDone()
+@@ -921,7 +921,7 @@ void DetermineAuthTypeJob::start()
+     });
+     connect(oldFlowRequired, &JsonApiJob::jsonReceived, this, [this](const QJsonDocument &json, int statusCode) {
+         if (statusCode == 200) {
+-            _resultOldFlow = LoginFlowV2;
++            _resultOldFlow = Basic;
+ 
+             auto data = json.object().value("ocs").toObject().value("data").toObject().value("capabilities").toObject();
+             auto gs = data.value("globalscale");
+@@ -929,7 +929,7 @@ void DetermineAuthTypeJob::start()
+                 auto flow = gs.toObject().value("desktoplogin");
+                 if (flow != QJsonValue::Undefined) {
+                     if (flow.toInt() == 1) {
+-                        _resultOldFlow = WebViewFlow;
++                        _resultOldFlow = Basic;
+                     }
+                 }
+             }
+@@ -955,17 +955,12 @@ void DetermineAuthTypeJob::checkAllDone()
  
      // WebViewFlow > OAuth > Shib > Basic
      if (_account->serverVersionInt() >= Account::makeServerVersion(12, 0, 0)) {
@@ -14,6 +32,11 @@ Index: src/libsync/networkjobs.cpp
      // LoginFlowV2 > WebViewFlow > OAuth > Shib > Basic
      if (_account->serverVersionInt() >= Account::makeServerVersion(16, 0, 0)) {
 -        result = LoginFlowV2;
+-    }
+-
+-    // If we determined that we need the webview flow (GS for example) then we switch to that
+-    if (_resultOldFlow == WebViewFlow) {
+-        result = WebViewFlow;
 +        result = Basic;
      }
  

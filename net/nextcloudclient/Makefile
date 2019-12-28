@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/17 06:59:30 kirby Exp $ #
+# $OpenBSD: Makefile,v 1.3 2019/12/28 13:48:04 kirby Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		2.6.1
+V =		2.6.2
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud

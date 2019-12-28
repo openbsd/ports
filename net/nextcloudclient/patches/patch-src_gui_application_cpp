@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_application_cpp,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+$OpenBSD: patch-src_gui_application_cpp,v 1.2 2019/12/28 13:48:04 kirby Exp $
 
 Index: src/gui/application.cpp
 --- src/gui/application.cpp.orig
@@ -16,4 +16,4 @@ Index: src/gui/application.cpp
 -
      // Cleanup at Quit.
      connect(this, &QCoreApplication::aboutToQuit, this, &Application::slotCleanup);
- }
+ 
