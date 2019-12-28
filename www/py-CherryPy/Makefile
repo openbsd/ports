@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/12/17 21:25:25 bket Exp $
+# $OpenBSD: Makefile,v 1.26 2019/12/28 00:39:31 kmos Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
@@ -35,7 +35,7 @@ FLAVORS=	python3
 FLAVOR?=
 
 .if !${FLAVOR:Mpython3}
-TEST_DEPENDS=	devel/py-mock
+TEST_DEPENDS+=	devel/py-mock
 .endif
 
 post-install:
