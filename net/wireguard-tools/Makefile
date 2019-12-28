@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/12/14 14:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/12/28 13:57:44 jasper Exp $
 
 COMMENT =	fast and secure VPN
 
-V =		0.0.20191212
-DISTNAME =	WireGuard-$V
-PKGNAME =	wireguard-tools-$V
+DISTNAME =	wireguard-tools-1.0.20191226
 EPOCH =		0
 
 CATEGORIES =	net security
@@ -18,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		https://git.zx2c4.com/WireGuard/snapshot/
+MASTER_SITES =		https://git.zx2c4.com/wireguard-tools/snapshot/
 
 EXTRACT_SUFX =		.tar.xz
 
@@ -37,7 +35,7 @@ USE_GMAKE =		Yes
 
 NO_TEST =		Yes
 
-WRKSRC =		${WRKDIST}/src/tools
+WRKSRC =		${WRKDIST}/src
 
 ALL_TARGET =		wg
 
