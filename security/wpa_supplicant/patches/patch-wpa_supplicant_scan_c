@@ -1,0 +1,23 @@
+$OpenBSD: patch-wpa_supplicant_scan_c,v 1.1 2019/12/28 17:50:11 sthen Exp $
+
+ap_scan is not supported on OpenBSD.
+
+Index: wpa_supplicant/scan.c
+--- wpa_supplicant/scan.c.orig
++++ wpa_supplicant/scan.c
+@@ -869,6 +869,15 @@ static void wpa_supplicant_scan(void *eloop_ctx, void 
+ 		wpas_notify_ap_scan_changed(wpa_s);
+ 	}
+ 
++#ifdef __OpenBSD__
++	if (wpa_s->conf->ap_scan != 0) {
++		wpa_dbg(wpa_s, MSG_DEBUG, "Using OpenBSD - "
++			"overriding ap_scan configuration");
++		wpa_s->conf->ap_scan = 0;
++		wpas_notify_ap_scan_changed(wpa_s);
++	}
++#endif
++
+ 	if (wpa_s->conf->ap_scan == 0) {
+ 		wpa_supplicant_gen_assoc_event(wpa_s);
+ 		return;
