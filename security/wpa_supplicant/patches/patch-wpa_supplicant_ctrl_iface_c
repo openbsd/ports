@@ -1,0 +1,13 @@
+$OpenBSD: patch-wpa_supplicant_ctrl_iface_c,v 1.1 2019/12/28 18:58:36 sthen Exp $
+
+Index: wpa_supplicant/ctrl_iface.c
+--- wpa_supplicant/ctrl_iface.c.orig
++++ wpa_supplicant/ctrl_iface.c
+@@ -11,7 +11,6 @@
+ #include <netinet/ip.h>
+ #endif /* CONFIG_TESTING_OPTIONS */
+ 
+-#include <net/ethernet.h>
+ #include "utils/common.h"
+ #include "utils/eloop.h"
+ #include "utils/uuid.h"
