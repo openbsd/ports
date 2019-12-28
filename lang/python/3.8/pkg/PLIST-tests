@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1 2019/11/07 16:14:09 kmos Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2019/12/28 18:34:39 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.8,<3.9
@@ -323,6 +323,9 @@ lib/python3.8/test/__pycache__/dataclass_module_2.cpython-38.pyc
 lib/python3.8/test/__pycache__/dataclass_module_2_str.cpython-38.opt-1.pyc
 lib/python3.8/test/__pycache__/dataclass_module_2_str.cpython-38.opt-2.pyc
 lib/python3.8/test/__pycache__/dataclass_module_2_str.cpython-38.pyc
+lib/python3.8/test/__pycache__/dataclass_textanno.cpython-38.opt-1.pyc
+lib/python3.8/test/__pycache__/dataclass_textanno.cpython-38.opt-2.pyc
+lib/python3.8/test/__pycache__/dataclass_textanno.cpython-38.pyc
 lib/python3.8/test/__pycache__/datetimetester.cpython-38.opt-1.pyc
 lib/python3.8/test/__pycache__/datetimetester.cpython-38.opt-2.pyc
 lib/python3.8/test/__pycache__/datetimetester.cpython-38.pyc
@@ -1816,6 +1819,7 @@ lib/python3.8/test/dataclass_module_1.py
 lib/python3.8/test/dataclass_module_1_str.py
 lib/python3.8/test/dataclass_module_2.py
 lib/python3.8/test/dataclass_module_2_str.py
+lib/python3.8/test/dataclass_textanno.py
 lib/python3.8/test/datetimetester.py
 lib/python3.8/test/decimaltestdata/
 lib/python3.8/test/decimaltestdata/abs.decTest
