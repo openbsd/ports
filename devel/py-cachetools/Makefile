@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/12/28 14:09:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/12/28 18:12:32 jasper Exp $
 
 COMMENT =		extensible memoizing collections and decorators
 
 MODPY_EGG_VERSION =	4.0.0
 DISTNAME =		cachetools-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -20,6 +21,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}cachetools/
