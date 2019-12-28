@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2019/07/18 16:01:05 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2019/12/28 15:59:30 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -27,9 +27,9 @@ share/doc/icinga2/NEWS
 share/doc/icinga2/README.md
 share/doc/icinga2/markdown/
 share/doc/icinga2/markdown/01-about.md
-share/doc/icinga2/markdown/02-getting-started.md
+share/doc/icinga2/markdown/02-installation.md
 share/doc/icinga2/markdown/03-monitoring-basics.md
-share/doc/icinga2/markdown/04-configuring-icinga-2.md
+share/doc/icinga2/markdown/04-configuration.md
 share/doc/icinga2/markdown/05-service-monitoring.md
 share/doc/icinga2/markdown/06-distributed-monitoring.md
 share/doc/icinga2/markdown/07-agent-based-monitoring.md
@@ -53,6 +53,8 @@ share/doc/icinga2/markdown/24-appendix.md
 share/doc/icinga2/markdown/images/
 share/doc/icinga2/markdown/images/addons/
 share/doc/icinga2/markdown/images/addons/dashing_icinga2.png
+share/doc/icinga2/markdown/images/addons/icinga_certificate_monitoring.png
+share/doc/icinga2/markdown/images/addons/icinga_reporting.png
 share/doc/icinga2/markdown/images/addons/icingaweb2_businessprocess.png
 share/doc/icinga2/markdown/images/addons/icingaweb2_grafana.png
 share/doc/icinga2/markdown/images/addons/icingaweb2_graphite.png
@@ -61,20 +63,30 @@ share/doc/icinga2/markdown/images/advanced-topics/
 share/doc/icinga2/markdown/images/advanced-topics/flapping-state-graph.png
 share/doc/icinga2/markdown/images/advanced-topics/icinga2_external_checks_freshness_icingaweb2.png
 share/doc/icinga2/markdown/images/advanced-topics/icingaweb2_downtime_handled.png
+share/doc/icinga2/markdown/images/api/
+share/doc/icinga2/markdown/images/api/icinga2_api_powershell_ise.png
+share/doc/icinga2/markdown/images/configuration/
+share/doc/icinga2/markdown/images/configuration/icinga_web_local_server.png
+share/doc/icinga2/markdown/images/development/
+share/doc/icinga2/markdown/images/development/windows_boost_build_dev_cmd.png
+share/doc/icinga2/markdown/images/development/windows_builds_gitlab_pipeline.png
+share/doc/icinga2/markdown/images/development/windows_powershell_posh_git.png
+share/doc/icinga2/markdown/images/development/windows_visual_studio_installer_01.png
+share/doc/icinga2/markdown/images/development/windows_visual_studio_installer_02.png
+share/doc/icinga2/markdown/images/development/windows_visual_studio_installer_03.png
+share/doc/icinga2/markdown/images/development/windows_visual_studio_tabs_c++.png
 share/doc/icinga2/markdown/images/distributed-monitoring/
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_endpoints.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_roles.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_scenarios_ha_master_clients.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_scenarios_master_clients.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_scenarios_master_satellite_client.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_top_down_command_endpoint.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_top_down_config_sync.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_agent_checks_command_endpoint.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_endpoints.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_roles.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_satellite_config_sync.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_scenario_ha_masters_with_agents.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_scenarios_master_satellites_agents.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_scenarios_master_with_agents.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_zones.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_windows_client_disk_icingaweb2.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_windows_nscp.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_windows_nscp_api_drivesize_icingaweb2.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_windows_nscp_counter_icingaweb2.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_zones.png
-share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_cmd_admin_net_start_stop.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_running_service.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_01.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_02.png
@@ -96,11 +108,11 @@ share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_w
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_no_ticket.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_with_ticket.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_examine_config.png
-share/doc/icinga2/markdown/images/getting-started/
-share/doc/icinga2/markdown/images/getting-started/mariadb-centos7.png
-share/doc/icinga2/markdown/images/getting-started/nano-syntax.png
-share/doc/icinga2/markdown/images/getting-started/postgr-import-ido.png
-share/doc/icinga2/markdown/images/getting-started/vim-syntax.png
+share/doc/icinga2/markdown/images/installation/
+share/doc/icinga2/markdown/images/installation/mariadb-centos7.png
+share/doc/icinga2/markdown/images/installation/nano-syntax.png
+share/doc/icinga2/markdown/images/installation/postgr-import-ido.png
+share/doc/icinga2/markdown/images/installation/vim-syntax.png
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/icinga2/
 share/examples/icinga2/bash_completion.d/

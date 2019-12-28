@@ -1,10 +1,12 @@
-$OpenBSD: patch-etc_icinga2_conf_d_hosts_conf,v 1.1 2014/11/22 00:13:03 sthen Exp $
---- etc/icinga2/conf.d/hosts.conf.orig	Fri Nov 21 21:30:11 2014
-+++ etc/icinga2/conf.d/hosts.conf	Fri Nov 21 21:31:13 2014
+$OpenBSD: patch-etc_icinga2_conf_d_hosts_conf,v 1.2 2019/12/28 15:59:30 sthen Exp $
+
+Index: etc/icinga2/conf.d/hosts.conf
+--- etc/icinga2/conf.d/hosts.conf.orig
++++ etc/icinga2/conf.d/hosts.conf
 @@ -24,7 +24,7 @@ object Host NodeName {
    address6 = "::1"
  
-   /* Set custom attribute `os` for hostgroup assignment in `groups.conf`. */
+   /* Set custom variable `os` for hostgroup assignment in `groups.conf`. */
 -  vars.os = "Linux"
 +  vars.os = "OpenBSD"
  

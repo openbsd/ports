@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2019/07/18 16:01:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2019/12/28 15:59:30 sthen Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -6,7 +6,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.10.5
+V =		2.11.2
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -14,7 +14,6 @@ GH_TAGNAME =	v$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
-REVISION-main =	0
 
 SHARED_LIBS +=	base                      0.0 # 2.6
 SHARED_LIBS +=	checker                   0.0 # 2.6
@@ -42,9 +41,10 @@ HOMEPAGE =	https://icinga.com/products/icinga-2/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_program_options-mt boost_regex-mt
+WANTLIB += boost_context-mt boost_coroutine-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c crypto curses edit
-WANTLIB += m ssl yajl
+WANTLIB += m ssl
 
 MODULES =		devel/cmake
 
@@ -55,12 +55,12 @@ BUILD_DEPENDS =		devel/bison
 MULTI_PACKAGES =	-main -mysql -pgsql
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			devel/boost \
-			devel/libyajl
+			devel/boost,-md
 RUN_DEPENDS-main =	net/monitoring-plugins
-RUN_DEPENDS =           ${BASE_PKGPATH},-main=$Vv${EPOCH} # default for subpackages
 
-WANTLIB-mysql +=	${COMPILER_LIBCXX} m mysqlclient
+RUN_DEPENDS =		${BASE_PKGPATH},-main=${FULLPKGNAME-main:S/icinga2-//}
+
+WANTLIB-mysql +=	${COMPILER_LIBCXX} m mariadb
 LIB_DEPENDS-mysql =	${LIB_DEPENDS} \
 			databases/mariadb
 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_base_library_cpp,v 1.1 2018/08/02 00:33:09 sthen Exp $
+$OpenBSD: patch-lib_base_library_cpp,v 1.2 2019/12/28 15:59:30 sthen Exp $
 
 Index: lib/base/library.cpp
 --- lib/base/library.cpp.orig
 +++ lib/base/library.cpp
-@@ -37,6 +37,8 @@ Library::Library(const String& name)
+@@ -20,6 +20,8 @@ Library::Library(const String& name)
  	path = name + ".dll";
  #elif defined(__APPLE__)
  	path = "lib" + name + "." + Application::GetAppSpecVersion() + ".dylib";

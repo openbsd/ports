@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.9 2018/08/02 00:33:09 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.10 2019/12/28 15:59:30 sthen Exp $
 @conflict icinga2-<2.2.4v0
 @lib lib/icinga2/libmysql_shim.so.${LIBmysql_shim_VERSION}
 share/examples/icinga2/features-available/ido-mysql.conf
@@ -9,6 +9,7 @@ share/icinga2-ido-mysql/schema/mysql.sql
 share/icinga2-ido-mysql/schema/upgrade/
 share/icinga2-ido-mysql/schema/upgrade/2.0.2.sql
 share/icinga2-ido-mysql/schema/upgrade/2.1.0.sql
+share/icinga2-ido-mysql/schema/upgrade/2.11.0.sql
 share/icinga2-ido-mysql/schema/upgrade/2.2.0.sql
 share/icinga2-ido-mysql/schema/upgrade/2.3.0.sql
 share/icinga2-ido-mysql/schema/upgrade/2.4.0.sql
