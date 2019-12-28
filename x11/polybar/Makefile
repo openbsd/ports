@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/12/12 17:09:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2019/12/28 15:00:13 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
-V =		3.4.1
+V =		3.4.2
 DISTNAME =	polybar-$V
-REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	https://polybar.github.io/
@@ -26,6 +25,7 @@ COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake \
 		lang/python
 
+DEBUG_PACKAGES =${BUILD_PACKAGES}
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
