@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/12/31 08:35:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/12/28 10:35:48 ajacoutot Exp $
 bin/nagstamon
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Config.py
@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/Helpers.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Objects.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/${MODPY_PYCACHE}dialog_about.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/${MODPY_PYCACHE}dialog_acknowledge.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Icinga.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/IcingaWeb2.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Livestatus.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Monitos3.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Monitos4x.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Multisite.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Nagios.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Opsview.py
@@ -42,13 +43,14 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Thruk.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Zabbix.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Zenoss.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Centreon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Generic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Icinga.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}IcingaWeb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Livestatus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Monitos3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Monitos4x.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Multisite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Nagios.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Opsview.${MODPY_PYC_MAGIC_TAG}pyc
@@ -61,7 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}op5Monitor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/op5Monitor.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/${MODPY_PYCACHE}Config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/${MODPY_PYCACHE}Helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/${MODPY_PYCACHE}Objects.${MODPY_PYC_MAGIC_TAG}pyc
@@ -100,7 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/Xatom.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/Xcursorfont.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/Xutil.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/${MODPY_PYCACHE}X.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/${MODPY_PYCACHE}XK.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/${MODPY_PYCACHE}Xatom.${MODPY_PYC_MAGIC_TAG}pyc
@@ -116,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/display.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/error.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/${MODPY_PYCACHE}composite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/${MODPY_PYCACHE}randr.${MODPY_PYC_MAGIC_TAG}pyc
@@ -132,7 +134,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/xinerama.
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/ext/xtest.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/protocol/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/protocol/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/protocol/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/protocol/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/protocol/${MODPY_PYCACHE}event.${MODPY_PYC_MAGIC_TAG}pyc
@@ -147,7 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/protocol/stru
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/rdb.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/support/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/support/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/support/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/support/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/support/${MODPY_PYCACHE}connect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/support/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}pyc
@@ -161,7 +163,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/threaded.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xauth.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/${MODPY_PYCACHE}colormap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/${MODPY_PYCACHE}cursor.${MODPY_PYC_MAGIC_TAG}pyc
@@ -176,7 +178,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/fonta
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/icccm.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/Xlib/xobject/resource.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}ewmh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}sensu_api.${MODPY_PYC_MAGIC_TAG}pyc
