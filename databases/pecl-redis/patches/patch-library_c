@@ -1,9 +1,9 @@
-$OpenBSD: patch-library_c,v 1.1 2019/07/03 14:38:55 sthen Exp $
+$OpenBSD: patch-library_c,v 1.2 2019/12/28 17:32:29 sthen Exp $
 
 Index: library.c
 --- library.c.orig
 +++ library.c
-@@ -1842,7 +1842,7 @@ PHP_REDIS_API int redis_sock_connect(RedisSock *redis_
+@@ -1859,7 +1859,7 @@ PHP_REDIS_API int redis_sock_connect(RedisSock *redis_
              }
  
              gettimeofday(&tv, NULL);
