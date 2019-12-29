@@ -1,17 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/07 23:27:34 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/29 16:30:34 bcallah Exp $
 @bin bin/feathernotes
 share/applications/feathernotes.desktop
 share/feathernotes/
 share/feathernotes/translations/
+share/feathernotes/translations/feathernotes_cs.qm
 share/feathernotes/translations/feathernotes_cy.qm
 share/feathernotes/translations/feathernotes_de.qm
 share/feathernotes/translations/feathernotes_eo.qm
 share/feathernotes/translations/feathernotes_es.qm
+share/feathernotes/translations/feathernotes_fr.qm
+share/feathernotes/translations/feathernotes_he.qm
+share/feathernotes/translations/feathernotes_id.qm
+share/feathernotes/translations/feathernotes_ja.qm
 share/feathernotes/translations/feathernotes_lt.qm
+share/feathernotes/translations/feathernotes_nb_NO.qm
 share/feathernotes/translations/feathernotes_nl.qm
 share/feathernotes/translations/feathernotes_pl.qm
 share/feathernotes/translations/feathernotes_pt_BR.qm
+share/feathernotes/translations/feathernotes_pt_PT.qm
 share/feathernotes/translations/feathernotes_ru.qm
+share/feathernotes/translations/feathernotes_sk_SK.qm
+share/feathernotes/translations/feathernotes_zh_HANT.qm
 share/icons/hicolor/scalable/apps/feathernotes.svg
 share/icons/hicolor/scalable/mimetypes/text-feathernotes-fnx.svg
 share/mime/packages/feathernotes.xml
