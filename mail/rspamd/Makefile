@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2019/12/23 13:25:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2019/12/29 20:54:53 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	2.2
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -28,6 +29,7 @@ FLAVOR=		no_luajit
 
 MODULES=	devel/cmake
 COMPILER=	base-clang ports-gcc
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/gettext,-runtime \
