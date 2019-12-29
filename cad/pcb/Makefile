@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/12/29 23:56:58 ajacoutot Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-4.1.3
 CATEGORIES=	cad
+REVISION=	0
 EPOCH=		0
 
 HOMEPAGE=	http://pcb.geda-project.org/
@@ -10,12 +11,12 @@ HOMEPAGE=	http://pcb.geda-project.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo dbus-1
-WANTLIB += fontconfig freetype gd gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gdkglext-x11-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 gtkglext-x11-1.0 iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pangox-1.0 pthread z
+WANTLIB += GL GLU X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 fontconfig
+WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 gtkglext-x11-1.0
+WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcb/}
 

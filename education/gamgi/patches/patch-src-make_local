@@ -1,6 +1,7 @@
-$OpenBSD: patch-src-make_local,v 1.6 2011/09/28 16:45:17 jasper Exp $
---- src/make_local.orig	Sun Jun 19 22:16:55 2011
-+++ src/make_local	Wed Sep 28 17:35:29 2011
+$OpenBSD: patch-src-make_local,v 1.7 2019/12/29 23:56:58 ajacoutot Exp $
+Index: src/make_local
+--- src/make_local.orig
++++ src/make_local
 @@ -70,29 +70,29 @@ PATH_GTKGL_L =-L/usr/lib
  
  #================================= OpenBSD =====================================
@@ -36,7 +37,7 @@ $OpenBSD: patch-src-make_local,v 1.6 2011/09/28 16:45:17 jasper Exp $
 +PATH_PANGO_H = -I${LOCALBASE}/include/pango-1.0
 +PATH_ATK_H = -I${LOCALBASE}/include/atk-1.0
 +PATH_GTK_H =  -I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/lib/gtk-2.0/include \
-+       -I/usr/include/gdk-pixbuf-2.0/
++       -I${LOCALBASE}/include/gdk-pixbuf-2.0/ -I${LOCALBASE}/include/harfbuzz
 +PATH_MESA_H = -I${X11BASE}/include/GL
 +PATH_GTKGL_H = -I${LOCALBASE}/include/gtkglext-1.0 \
 +      -I${LOCALBASE}/lib/gtkglext-1.0/include/

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/12/29 23:56:59 ajacoutot Exp $
+
+BROKEN =		does not build with pango >=1.44
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -6,7 +8,7 @@ COMMENT-editor = 	UFO:AI map editor
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
 PKGNAME-editor = 	uforadiant-${V}
-REVISION-editor =       4
+REVISION-editor =       5
 REVISION-main =		4
 
 EXTRACT_SUFX =		.tar.bz2
@@ -27,7 +29,7 @@ WANTLIB-editor += gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
 WANTLIB-editor += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-editor += gtk-x11-2.0 gtkglext-x11-1.0 gtksourceview-2.0
 WANTLIB-editor += openal pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-editor += pangox-1.0 vorbisfile xml2 ${cWANTLIB}
+WANTLIB-editor += vorbisfile xml2 ${cWANTLIB}
 
 COMPILER =		base-clang ports-gcc
 
