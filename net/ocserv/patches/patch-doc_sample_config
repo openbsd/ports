@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_sample_config,v 1.21 2019/10/18 05:07:05 bket Exp $
+$OpenBSD: patch-doc_sample_config,v 1.22 2019/12/29 07:28:22 bket Exp $
 
 no seccomp, gssapi
 
@@ -87,7 +87,7 @@ Index: doc/sample.config
  
  # Cookie timeout (in seconds)
  # Once a client is authenticated he's provided a cookie with
-@@ -424,7 +401,7 @@ rekey-method = ssl
+@@ -425,7 +402,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overridden in the command line.
@@ -96,7 +96,7 @@ Index: doc/sample.config
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -539,6 +516,11 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -540,6 +517,11 @@ no-route = 192.168.5.0/255.255.255.0
  # any other routes. In case of defaultroute, the no-routes are restricted.
  # All the routes applied by ocserv can be reverted using /etc/ocserv/ocserv-fw
  # --removeall. This option can be set globally or in the per-user configuration.
@@ -108,7 +108,7 @@ Index: doc/sample.config
  #restrict-user-to-routes = true
  
  # This option implies restrict-user-to-routes set to true. If set, the
-@@ -611,23 +593,6 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -612,23 +594,6 @@ no-route = 192.168.5.0/255.255.255.0
  # and '%{G}', if present will be replaced by the username and group name.
  #proxy-url = http://example.com/
  #proxy-url = http://example.com/%{U}/
