@@ -1,43 +1,49 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/12/29 23:56:17 ajacoutot Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
-DISTNAME=	gtkglext-1.2.0
-REVISION=	16
+DISTNAME=	gtkglext-1.2.0.20191219
 
 CATEGORIES=	x11 graphics devel
 
-SHARED_LIBS +=  gdkglext-x11-1.0     0.0      # 0.0
-SHARED_LIBS +=  gtkglext-x11-1.0     0.0      # 0.0
-
-HOMEPAGE=	http://projects.gnome.org/gtkglext/
+SHARED_LIBS +=  gdkglext-x11-1.0     0.0      # 200.0
+SHARED_LIBS +=  gtkglext-x11-1.0     0.0      # 200.0
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2,  LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkglext/}
+WANTLIB += GL GLU X11 X11-xcb Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo
+WANTLIB += drm expat ffi fontconfig freetype fribidi gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
+WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z
 
-WANTLIB += GL GLU ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm
-WANTLIB += atk-1.0 cairo drm expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangox-1.0 pcre pixman-1 png pthread xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm z
+# https://gitlab.gnome.org/Archive/gtkglext/merge_requests/1
+GIT_COMMIT=	ad95fbab68398f81d7a5c895276903b0695887e2
+DISTFILES=	gtkglext-${GIT_COMMIT}${EXTRACT_SUFX}
+WRKDIST=	${WRKDIR}/gtkglext-${GIT_COMMIT}
+MASTER_SITES=	https://gitlab.gnome.org/Archive/gtkglext/-/archive/${GIT_COMMIT}/
 
-LIB_DEPENDS=	x11/gtk+2 \
-		devel/pangox-compat
+BUILD_DEPENDS=	devel/gobject-introspection \
+		textproc/gtk-doc
+
+LIB_DEPENDS=	x11/gtk+2
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtkglext
-	${INSTALL_DATA} ${WRKSRC}/examples/*.{c,h,lwo,rgb} \
-		${PREFIX}/share/examples/gtkglext
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+
+post-patch:
+	cd ${WRKSRC} && gtkdocize
 
 .include <bsd.port.mk>
