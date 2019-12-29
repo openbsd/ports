@@ -1,16 +1,16 @@
-$OpenBSD: patch-rijndael_cpp,v 1.5 2019/03/09 22:57:53 naddy Exp $
+$OpenBSD: patch-rijndael_cpp,v 1.6 2019/12/29 11:52:10 naddy Exp $
 Index: rijndael.cpp
 --- rijndael.cpp.orig
 +++ rijndael.cpp
-@@ -11,6 +11,8 @@
- #include <wmmintrin.h>
- #endif
+@@ -7,6 +7,8 @@
+  ***************************************************************************/
+ #include "rar.hpp"
  
 +#ifndef OPENSSL_AES
 +
- static byte S[256],S5[256],rcon[30];
- static byte T1[256][4],T2[256][4],T3[256][4],T4[256][4];
- static byte T5[256][4],T6[256][4],T7[256][4],T8[256][4];
+ #ifdef USE_SSE
+ #include <wmmintrin.h>
+ #endif
 @@ -56,6 +58,7 @@ inline void Copy128(byte *dest,const byte *src)
  #endif
  }
@@ -55,7 +55,7 @@ Index: rijndael.cpp
  #ifdef USE_SSE
    // Check SSE here instead of constructor, so if object is a part of some
    // structure memset'ed before use, this variable is not lost.
-@@ -114,6 +138,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
+@@ -120,6 +144,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
  
    if(!Encrypt)
      keyEncToDec();
@@ -63,7 +63,7 @@ Index: rijndael.cpp
  }
  
  void Rijndael::blockEncrypt(const byte *input,size_t inputLen,byte *outBuffer)
-@@ -121,6 +146,11 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
+@@ -127,6 +152,11 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
    if (inputLen <= 0)
      return;
  
@@ -75,7 +75,7 @@ Index: rijndael.cpp
    size_t numBlocks = inputLen/16;
  #ifdef USE_SSE
    if (AES_NI)
-@@ -179,6 +209,7 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
+@@ -185,9 +215,11 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
      input += 16;
    }
    Copy128(m_initVector,prevBlock);
@@ -83,7 +83,19 @@ Index: rijndael.cpp
  }
  
  
-@@ -220,6 +251,11 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
++#ifndef OPENSSL_AES
+ #ifdef USE_SSE
+ void Rijndael::blockEncryptSSE(const byte *input,size_t numBlocks,byte *outBuffer)
+ {
+@@ -219,6 +251,7 @@ void Rijndael::blockEncryptSSE(const byte *input,size_
+   _mm_storeu_si128((__m128i*)m_initVector,v);
+ }
+ #endif
++#endif // OPENSSL_AES
+ 
+   
+ void Rijndael::blockDecrypt(const byte *input, size_t inputLen, byte *outBuffer)
+@@ -226,6 +259,11 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
    if (inputLen <= 0)
      return;
  
@@ -95,7 +107,7 @@ Index: rijndael.cpp
    size_t numBlocks=inputLen/16;
  #ifdef USE_SSE
    if (AES_NI)
-@@ -282,6 +318,7 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
+@@ -288,9 +326,11 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
    }
  
    memcpy(m_initVector,iv,16);
@@ -103,15 +115,22 @@ Index: rijndael.cpp
  }
  
  
-@@ -318,6 +355,7 @@ void Rijndael::blockDecryptSSE(const byte *input, size
++#ifndef OPENSSL_AES
+ #ifdef USE_SSE
+ void Rijndael::blockDecryptSSE(const byte *input, size_t numBlocks, byte *outBuffer)
+ {
+@@ -322,8 +362,10 @@ void Rijndael::blockDecryptSSE(const byte *input, size
+   _mm_storeu_si128((__m128i*)m_initVector,initVector);
+ }
  #endif
++#endif // OPENSSL_AES
  
  
 +#ifndef OPENSSL_AES
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  // ALGORITHM
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -458,6 +496,7 @@ void Rijndael::GenerateTables()
+@@ -464,6 +506,7 @@ void Rijndael::GenerateTables()
    }
  }
  
