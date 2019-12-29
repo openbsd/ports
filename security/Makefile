@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.559 2019/12/27 05:21:15 kmos Exp $
+# $OpenBSD: Makefile,v 1.560 2019/12/29 20:09:52 abieber Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
      SUBDIR += ROPgadget
      SUBDIR += acme-client
      SUBDIR += aescrypt
+     SUBDIR += age
      SUBDIR += aide
      SUBDIR += aircrack-ng
      SUBDIR += amap
