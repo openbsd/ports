@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.128 2019/12/06 09:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.129 2019/12/29 23:29:13 cwen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.14
-REVISION =	0
+REVISION =	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -17,7 +17,7 @@ MASTER_SITES=	https://download.gimp.org/pub/${DIR}/ \
 		https://www.mirrorservice.org/sites/ftp.gimp.org/pub/${DIR}/ \
 		http://mirrors.go-parts.com/gimp/${DIR}/
 
-HOMEPAGE=	http://www.gimp.org/
+HOMEPAGE=	https://www.gimp.org/
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -41,6 +41,9 @@ WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 xcb xcb-render
 WANTLIB += xcb-shm xml2 z zstd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
+# C++14
+COMPILER=	base-clang ports-gcc
 
 MODULES=	textproc/intltool \
 		lang/python
