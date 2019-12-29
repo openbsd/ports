@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2019/12/16 14:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.129 2019/12/29 23:01:54 cwen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
@@ -84,6 +84,11 @@ EXIM_MAKECAT +=		"AUTH_CYRUS_SASL=yes\n"
 EXIM_EXTRA_LIBS +=	-L${LOCALBASE}/lib -lsasl2
 LIB_DEPENDS-main +=	security/cyrus-sasl2
 WANTLIB-main +=		sasl2
+.endif
+
+# Needed to build with base-gcc
+.if !${PROPERTIES:Mclang}
+CFLAGS +=		-std=gnu99
 .endif
 
 EXIM_EXTRA_LIBS +=	-L${LOCALBASE}/lib -liconv
