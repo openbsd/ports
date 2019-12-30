@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2019/12/28 14:36:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/12/30 05:37:08 bket Exp $
 
 COMMENT =	rsync for cloud storage
 
-V =		1.48.0
+V =		1.50.2
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://rclone.org/
+
+MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE = Yes
@@ -21,7 +22,7 @@ MASTER_SITES =  https://github.com/ncw/rclone/releases/download/v${V}/
 MODULES =	lang/go
 MODGO_TYPE =	bin
 
-ALL_TARGET =	github.com/ncw/rclone
+ALL_TARGET =	github.com/rclone/rclone
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/rclone ${PREFIX}/bin/
