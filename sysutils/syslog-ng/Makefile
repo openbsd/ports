@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/12/09 14:45:16 fcambus Exp $
+# $OpenBSD: Makefile,v 1.68 2019/12/30 22:45:11 sthen Exp $
 
 COMMENT=	log management solution
 
@@ -24,6 +24,9 @@ MASTER_SITES =	http://github.com/balabit/syslog-ng/releases/download/${DISTNAME}
 SHARED_LIBS =	syslog-ng		5.0 \
 		syslog-ng-${REL}	5.0
 
+# needs a newer compiler due to libmaxminddb header
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 LIB_DEPENDS =	devel/glib2 \
 		devel/json-c \
