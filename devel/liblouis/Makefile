@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2019/09/29 07:58:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2019/12/30 14:57:24 jasper Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
-V=		3.11.0
+V=		3.12.0
 DISTNAME=	liblouis-${V}
 
 SHARED_LIBS +=  louis                8.0      # 19.0
@@ -19,6 +19,8 @@ WANTLIB += c
 MASTER_SITES=	https://github.com/liblouis/liblouis/releases/download/v${V}/
 
 MODULES=	lang/python
+
+DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 

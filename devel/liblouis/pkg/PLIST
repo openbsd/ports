@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/09/29 07:58:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/12/30 14:57:24 jasper Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
-@bin bin/lou_compare
 @bin bin/lou_debug
 bin/lou_maketable
 bin/lou_maketable.d/
@@ -22,7 +21,7 @@ bin/lou_maketable.d/wrap_patgen.sh
 @bin bin/lou_translate
 include/liblouis/
 include/liblouis/liblouis.h
-lib/liblouis.a
+@static-lib lib/liblouis.a
 lib/liblouis.la
 @lib lib/liblouis.so.${LIBlouis_VERSION}
 lib/pkgconfig/liblouis.pc
@@ -91,6 +90,7 @@ share/liblouis/tables/cy-cy-g1.utb
 share/liblouis/tables/cy-cy-g2.ctb
 share/liblouis/tables/cy.tbl
 share/liblouis/tables/da-dk-6miscChars.cti
+share/liblouis/tables/da-dk-8miscChars.cti
 share/liblouis/tables/da-dk-g08.ctb
 share/liblouis/tables/da-dk-g16-lit.ctb
 share/liblouis/tables/da-dk-g16.ctb
@@ -297,6 +297,7 @@ share/liblouis/tables/nl-BE-g0.utb
 share/liblouis/tables/nl-BE.dis
 share/liblouis/tables/nl-NL-g0.utb
 share/liblouis/tables/nl-chardefs.uti
+share/liblouis/tables/nl-comp8.utb
 share/liblouis/tables/nl-g0.uti
 share/liblouis/tables/nl.tbl
 share/liblouis/tables/nl_BE.tbl
