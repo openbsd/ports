@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2019/12/16 13:35:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/12/30 20:26:51 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.3.21
+VERSION=	10.4.11
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -34,7 +34,7 @@ WANTLIB-tests=	${WANTLIB} pcre pcreposix
 
 MULTI_PACKAGES=	-main -server -tests
 
-# C++, atomic ops
+# C++11, atomic ops
 COMPILER=	base-clang ports-gcc
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
@@ -46,7 +46,7 @@ BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			converters/libiconv
-RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.3v1,<10.4v1 \
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.4v1,<10.5v1 \
 			databases/p5-DBD-mysql
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/bzip2 \
@@ -56,7 +56,7 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/xz \
 			converters/libiconv \
 			devel/pcre
-RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.3v1,<10.4v1
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.4v1,<10.5v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			converters/libiconv \
 			devel/pcre

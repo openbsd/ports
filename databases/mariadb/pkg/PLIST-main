@@ -1,7 +1,21 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2019/12/16 13:35:57 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2019/12/30 20:26:51 sthen Exp $
 @conflict mysql-client-*
 @conflict mysql-server-*
 @pkgpath databases/mysql,-main
+bin/mariadb
+bin/mariadb-access
+bin/mariadb-admin
+bin/mariadb-binlog
+bin/mariadb-check
+bin/mariadb-convert-table-format
+bin/mariadb-dump
+bin/mariadb-find-rows
+bin/mariadb-hotcopy
+bin/mariadb-import
+bin/mariadb-plugin
+bin/mariadb-setpermission
+bin/mariadb-show
+bin/mariadb-slap
 @bin bin/mariadb_config
 bin/msql2mysql
 @bin bin/mysql
@@ -53,7 +67,23 @@ lib/pkgconfig/libmariadb.pc
 @man man/man1/galera_new_cluster.1
 @man man/man1/galera_recovery.1
 @man man/man1/mariabackup.1
+@man man/man1/mariadb-access.1
+@man man/man1/mariadb-admin.1
+@man man/man1/mariadb-binlog.1
+@man man/man1/mariadb-check.1
+@man man/man1/mariadb-convert-table-format.1
+@man man/man1/mariadb-dump.1
+@man man/man1/mariadb-embedded.1
+@man man/man1/mariadb-find-rows.1
+@man man/man1/mariadb-hotcopy.1
+@man man/man1/mariadb-import.1
+@man man/man1/mariadb-ldb.1
+@man man/man1/mariadb-plugin.1
 @man man/man1/mariadb-service-convert.1
+@man man/man1/mariadb-setpermission.1
+@man man/man1/mariadb-show.1
+@man man/man1/mariadb-slap.1
+@man man/man1/mariadb.1
 @man man/man1/mbstream.1
 @man man/man1/msql2mysql.1
 @man man/man1/my_safe_process.1

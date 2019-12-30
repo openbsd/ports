@@ -1,11 +1,11 @@
-$OpenBSD: patch-man_mysqladmin_1,v 1.1 2019/05/12 21:56:55 jca Exp $
+$OpenBSD: patch-man_mysqladmin_1,v 1.2 2019/12/30 20:26:51 sthen Exp $
 
 Default value for connect timeout is rejected by the kernel.
 
 Index: man/mysqladmin.1
 --- man/mysqladmin.1.orig
 +++ man/mysqladmin.1
-@@ -1457,8 +1457,7 @@ You can also set the following variables by using
+@@ -1489,8 +1489,7 @@ You can also set the following variables by using
  .\" timeout: connect_timeout variable
  connect_timeout
  .sp

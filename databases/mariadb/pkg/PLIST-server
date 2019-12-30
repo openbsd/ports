@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.29 2019/12/16 13:35:57 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.30 2019/12/30 20:26:51 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -13,6 +13,17 @@
 @bin bin/aria_read_log
 @bin bin/innochecksum
 @bin bin/mariabackup
+bin/mariadb-backup
+bin/mariadb-dumpslow
+bin/mariadb-fix-extensions
+bin/mariadb-install-db
+bin/mariadb-secure-installation
+bin/mariadb-tzinfo-to-sql
+bin/mariadb-upgrade
+bin/mariadb-waitpid
+bin/mariadbd-multi
+bin/mariadbd-safe
+bin/mariadbd-safe-helper
 @bin bin/mbstream
 @bin bin/my_print_defaults
 @bin bin/myisam_ftdump
@@ -102,6 +113,7 @@ include/mysql/server/mysql/service_base64.h
 include/mysql/server/mysql/service_debug_sync.h
 include/mysql/server/mysql/service_encryption.h
 include/mysql/server/mysql/service_encryption_scheme.h
+include/mysql/server/mysql/service_json.h
 include/mysql/server/mysql/service_kill_statement.h
 include/mysql/server/mysql/service_logger.h
 include/mysql/server/mysql/service_md5.h
@@ -129,12 +141,13 @@ include/mysql/server/mysqld_ername.h
 include/mysql/server/mysqld_error.h
 include/mysql/server/pack.h
 include/mysql/server/private/
+include/mysql/server/private/aria_backup.h
 include/mysql/server/private/atomic/
 include/mysql/server/private/atomic/gcc_builtins.h
-include/mysql/server/private/atomic/gcc_sync.h
 include/mysql/server/private/atomic/generic-msvc.h
 include/mysql/server/private/atomic/solaris.h
 include/mysql/server/private/authors.h
+include/mysql/server/private/backup.h
 include/mysql/server/private/bounded_queue.h
 include/mysql/server/private/client_settings.h
 include/mysql/server/private/compat56.h
@@ -144,6 +157,7 @@ include/mysql/server/private/create_options.h
 include/mysql/server/private/custom_conf.h
 include/mysql/server/private/datadict.h
 include/mysql/server/private/debug_sync.h
+include/mysql/server/private/derived_handler.h
 include/mysql/server/private/derror.h
 include/mysql/server/private/des_key_file.h
 include/mysql/server/private/discover.h
@@ -165,6 +179,7 @@ include/mysql/server/private/group_by_handler.h
 include/mysql/server/private/gstream.h
 include/mysql/server/private/ha_partition.h
 include/mysql/server/private/ha_sequence.h
+include/mysql/server/private/handle_connections_win.h
 include/mysql/server/private/handler.h
 include/mysql/server/private/hash.h
 include/mysql/server/private/hash_filo.h
@@ -213,6 +228,7 @@ include/mysql/server/private/my_bitmap.h
 include/mysql/server/private/my_check_opt.h
 include/mysql/server/private/my_compare.h
 include/mysql/server/private/my_context.h
+include/mysql/server/private/my_counter.h
 include/mysql/server/private/my_cpu.h
 include/mysql/server/private/my_crypt.h
 include/mysql/server/private/my_decimal.h
@@ -242,6 +258,8 @@ include/mysql/server/private/mysys_err.h
 include/mysql/server/private/nt_servc.h
 include/mysql/server/private/opt_range.h
 include/mysql/server/private/opt_subselect.h
+include/mysql/server/private/opt_trace.h
+include/mysql/server/private/opt_trace_context.h
 include/mysql/server/private/parse_file.h
 include/mysql/server/private/partition_element.h
 include/mysql/server/private/partition_info.h
@@ -256,6 +274,7 @@ include/mysql/server/private/records.h
 include/mysql/server/private/repl_failsafe.h
 include/mysql/server/private/replication.h
 include/mysql/server/private/rijndael.h
+include/mysql/server/private/rowid_filter.h
 include/mysql/server/private/rpl_constants.h
 include/mysql/server/private/rpl_filter.h
 include/mysql/server/private/rpl_gtid.h
@@ -269,6 +288,7 @@ include/mysql/server/private/rpl_rli.h
 include/mysql/server/private/rpl_tblmap.h
 include/mysql/server/private/rpl_utility.h
 include/mysql/server/private/scheduler.h
+include/mysql/server/private/select_handler.h
 include/mysql/server/private/semisync.h
 include/mysql/server/private/semisync_master.h
 include/mysql/server/private/semisync_master_ack_receiver.h
@@ -357,6 +377,7 @@ include/mysql/server/private/sql_truncate.h
 include/mysql/server/private/sql_tvc.h
 include/mysql/server/private/sql_type.h
 include/mysql/server/private/sql_type_int.h
+include/mysql/server/private/sql_type_json.h
 include/mysql/server/private/sql_type_real.h
 include/mysql/server/private/sql_udf.h
 include/mysql/server/private/sql_union.h
@@ -392,14 +413,26 @@ include/mysql/server/private/wqueue.h
 include/mysql/server/private/wsrep.h
 include/mysql/server/private/wsrep_applier.h
 include/mysql/server/private/wsrep_binlog.h
+include/mysql/server/private/wsrep_client_service.h
+include/mysql/server/private/wsrep_client_state.h
+include/mysql/server/private/wsrep_condition_variable.h
+include/mysql/server/private/wsrep_high_priority_service.h
+include/mysql/server/private/wsrep_mutex.h
 include/mysql/server/private/wsrep_mysqld.h
 include/mysql/server/private/wsrep_mysqld_c.h
 include/mysql/server/private/wsrep_priv.h
+include/mysql/server/private/wsrep_schema.h
+include/mysql/server/private/wsrep_server_service.h
+include/mysql/server/private/wsrep_server_state.h
 include/mysql/server/private/wsrep_sst.h
+include/mysql/server/private/wsrep_storage_service.h
 include/mysql/server/private/wsrep_thd.h
+include/mysql/server/private/wsrep_trans_observer.h
+include/mysql/server/private/wsrep_types.h
 include/mysql/server/private/wsrep_utils.h
 include/mysql/server/private/wsrep_var.h
 include/mysql/server/private/wsrep_xid.h
+include/mysql/server/private/xa.h
 include/mysql/server/sql_common.h
 include/mysql/server/sql_state.h
 include/mysql/server/sslopt-case.h
@@ -410,7 +443,6 @@ lib/mysql/plugin/
 @so lib/mysql/plugin/adt_null.so
 @so lib/mysql/plugin/auth_0x0100.so
 @so lib/mysql/plugin/auth_ed25519.so
-@so lib/mysql/plugin/auth_socket.so
 @so lib/mysql/plugin/auth_test_plugin.so
 @so lib/mysql/plugin/caching_sha2_password.so
 @so lib/mysql/plugin/client_ed25519.so
@@ -445,6 +477,7 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/simple_password_check.so
 @so lib/mysql/plugin/sql_errlog.so
 @so lib/mysql/plugin/wsrep_info.so
+libexec/mariadbd
 @bin libexec/mysqld
 @man man/man1/aria_chk.1
 @man man/man1/aria_dump_log.1
@@ -452,6 +485,17 @@ lib/mysql/plugin/daemon_example.ini
 @man man/man1/aria_pack.1
 @man man/man1/aria_read_log.1
 @man man/man1/innochecksum.1
+@man man/man1/mariadb-backup.1
+@man man/man1/mariadb-dumpslow.1
+@man man/man1/mariadb-fix-extensions.1
+@man man/man1/mariadb-install-db.1
+@man man/man1/mariadb-secure-installation.1
+@man man/man1/mariadb-tzinfo-to-sql.1
+@man man/man1/mariadb-upgrade.1
+@man man/man1/mariadb-waitpid.1
+@man man/man1/mariadbd-multi.1
+@man man/man1/mariadbd-safe-helper.1
+@man man/man1/mariadbd-safe.1
 @man man/man1/my_print_defaults.1
 @man man/man1/myisam_ftdump.1
 @man man/man1/myisamchk.1
@@ -473,6 +517,7 @@ lib/mysql/plugin/daemon_example.ini
 @man man/man1/replace.1
 @man man/man1/resolve_stack_dump.1
 @man man/man1/resolveip.1
+@man man/man8/mariadbd.8
 @man man/man8/mysqld.8
 share/doc/mysql/
 share/doc/mysql/COPYING

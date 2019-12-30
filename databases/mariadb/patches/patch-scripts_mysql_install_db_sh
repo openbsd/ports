@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.16 2019/08/05 19:48:49 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.17 2019/12/30 20:26:51 sthen Exp $
 
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
@@ -22,7 +22,41 @@ Index: scripts/mysql_install_db.sh
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ; silent_startup="" ;;
        --rpm) in_rpm=1 ;;
-@@ -458,11 +461,11 @@ do
+@@ -329,7 +332,6 @@ then
+   srcpkgdatadir="$srcdir/scripts"
+   buildpkgdatadir="$builddir/scripts"
+   plugindir="$builddir/plugin/auth_socket"
+-  pamtooldir="$builddir/plugin/auth_pam"
+ elif test -n "$basedir"
+ then
+   bindir="$basedir/bin" # only used in the help text
+@@ -358,8 +360,7 @@ then
+     cannot_find_file fill_help_tables.sql @pkgdata_locations@
+     exit 1
+   fi
+-  plugindir=`find_in_dirs --dir auth_pam.so $basedir/lib*/plugin $basedir/lib*/mysql/plugin $basedir/lib/*/mariadb19/plugin`
+-  pamtooldir=$plugindir
++  plugindir=`find_in_dirs --dir auth_ed25519.so $basedir/lib*/plugin $basedir/lib*/mysql/plugin $basedir/lib/*/mariadb19/plugin`
+ # relative from where the script was run for a relocatable install
+ elif test -n "$dirname0" -a -x "$rel_mysqld" -a ! "$rel_mysqld" -ef "@sbindir@/mysqld"
+ then
+@@ -370,7 +371,6 @@ then
+   srcpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
+   buildpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
+   plugindir="$basedir/@INSTALL_PLUGINDIR@"
+-  pamtooldir=$plugindir
+ else
+   basedir="@prefix@"
+   bindir="@bindir@"
+@@ -379,7 +379,6 @@ else
+   srcpkgdatadir="@pkgdatadir@"
+   buildpkgdatadir="@pkgdatadir@"
+   plugindir="@pkgplugindir@"
+-  pamtooldir="@pkgplugindir@"
+ fi
+ 
+ # Set up paths to SQL scripts required for bootstrap
+@@ -468,11 +467,11 @@ do
    fi
    if test -n "$user"
    then
@@ -37,7 +71,33 @@ Index: scripts/mysql_install_db.sh
        exit 1
      fi
    fi
-@@ -564,10 +567,6 @@ fi
+@@ -480,25 +479,6 @@ done
+ 
+ if test -n "$user"
+ then
+-  chown $user "$pamtooldir/auth_pam_tool_dir" && \
+-  chmod 0700 "$pamtooldir/auth_pam_tool_dir"
+-  if test $? -ne 0
+-  then
+-      echo "Cannot change ownership of the '$pamtooldir/auth_pam_tool_dir' directory"
+-      echo " to the '$user' user. Check that you have the necessary permissions and try again."
+-      exit 1
+-  fi
+-  if test -z "$srcdir"
+-  then
+-    chown 0 "$pamtooldir/auth_pam_tool_dir/auth_pam_tool" && \
+-    chmod 04755 "$pamtooldir/auth_pam_tool_dir/auth_pam_tool"
+-    if test $? -ne 0
+-    then
+-        echo "Couldn't set an owner to '$pamtooldir/auth_pam_tool_dir/auth_pam_tool'."
+-        echo " It must be root, the PAM authentication plugin doesn't work otherwise.."
+-        echo
+-    fi
+-  fi
+   args="$args --user=$user"
+ fi
+ 
+@@ -603,10 +583,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -48,7 +108,7 @@ Index: scripts/mysql_install_db.sh
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -594,10 +593,7 @@ then
+@@ -643,10 +619,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"
