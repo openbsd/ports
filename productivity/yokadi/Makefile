@@ -1,32 +1,28 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/12/30 12:17:16 sthen Exp $
 
 COMMENT =	command-line oriented todo list system
 
 CATEGORIES =	productivity
 
-MODPY_EGG_VERSION = 0.10
-DISTNAME =	yokadi-${MODPY_EGG_VERSION}.0
-REVISION =	2
+MODPY_EGG_VERSION = 1.2.0
+DISTNAME =	yokadi-${MODPY_EGG_VERSION}
 
+HOMEPAGE =	https://yokadi.github.io/
 MASTER_SITES =	${HOMEPAGE}/download/
-HOMEPAGE =	http://yokadi.github.com/
-EXTRACT_SUFX =	.tar.bz2
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WRKDIST =	${WRKDIR}/yokadi-${MODPY_EGG_VERSION}
 MODULES =	lang/python
-NO_TEST =	Yes
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_PYTEST =	Yes
+MODPY_PYTEST_ARGS = lib/yokadi/tests/tests.py
 
-RUN_DEPENDS =	devel/py-dateutil \
-		databases/py-sqlobject
+RUN_DEPENDS =	devel/py-dateutil${MODPY_FLAVOR} \
+		databases/py-sqlalchemy${MODPY_FLAVOR}
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/update/{dump.py,update{.py,1to2,2to3,3to4}} \
-		${WRKSRC}/src/bin/yokadi{,d}
-
-pre-fake:
-	rm -f ${WRKSRC}/update/*.{orig,bak}
+# optional dep
+TEST_DEPENDS =	${RUN_DEPENDS} \
+		devel/py-icalendar${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

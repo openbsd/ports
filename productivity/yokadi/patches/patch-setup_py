@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1 2019/12/30 12:17:16 sthen Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -37,7 +37,7 @@ data_files.append(["share/yokadi",
+ data_files.append(["share/yokadi/doc", createFileList("doc", "*.md")])
+ 
+ # Man
+-data_files.append(["share/man/man1", createFileList("man", "*.1")])
++data_files.append(["man/man1", createFileList("man", "*.1")])
+ 
+ # Editor scripts
+ data_files.append(["share/yokadi/editors/vim/ftdetect", ["editors/vim/ftdetect/yokadimedit.vim"]])
