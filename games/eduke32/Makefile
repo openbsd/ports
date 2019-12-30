@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/12/30 08:32:46 jsg Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
-RDATE =		20171105
-RTAG =		6496
+RDATE =		20191222
+RTAG =		8494
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
-REVISION =	3
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
 
-HOMEPAGE =	http://www.eduke32.com/
+HOMEPAGE =	https://www.eduke32.com/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
@@ -20,14 +19,14 @@ PERMIT_DISTFILES =  "BUILD engine license is not compatible with GPLv2."
 BUILD_DEPENDS = archivers/unzip \
 		graphics/gdk-pixbuf2
 
-WANTLIB += c m ogg pthread vorbis vorbisfile vpx lz4
-WANTLIB += SDL2 SDL2_mixer FLAC execinfo ${COMPILER_LIBCXX}
+WANTLIB += c m ogg pthread vorbis vorbisfile vpx lz4 xmp
+WANTLIB += SDL2 FLAC execinfo ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =	archivers/lz4 \
+		audio/libxmp \
 		audio/libvorbis \
 		audio/flac \
 		devel/sdl2 \
-		devel/sdl2-mixer \
 		devel/libexecinfo \
 		multimedia/libvpx
 
@@ -37,7 +36,7 @@ WANTLIB +=	gtk-x11-2.0
 
 RUN_DEPENDS =	games/duke3ddata
 
-MASTER_SITES =	http://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
+MASTER_SITES =	https://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
 
 COMPILER =	base-clang ports-gcc
 
@@ -47,7 +46,6 @@ MAKE_FLAGS +=	PRETTY_OUTPUT=0 \
 		CXX="${CXX}" \
 		STRIP=true \
 		PACKAGE_REPOSITORY=1 \
-		HAVE_XMP=0 \
 		NOASM=1
 MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes

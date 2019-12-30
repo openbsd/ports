@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/12/30 08:32:46 jsg Exp $
 @bin bin/eduke32
 @bin bin/mapster32
 share/doc/eduke32/
 share/doc/eduke32/buildlic.txt
 share/doc/eduke32/gpl-2.0.txt
 share/doc/pkg-readmes/${PKGSTEM}
+share/duke3d/
 share/duke3d/SEHELP.HLP
 share/duke3d/STHELP.HLP
 share/duke3d/m32help.hlp

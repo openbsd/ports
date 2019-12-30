@@ -1,9 +1,12 @@
-Shareware Duke Nukem 3D data has been installed to: 
+$OpenBSD: README,v 1.2 2019/12/30 08:32:46 jsg Exp $
+
+Shareware Duke Nukem 3D data has been installed to:
   ${PREFIX}/share/duke3d/
 
-You may also copy your registered version data files (or any other
-Duke Nukem 3D retail copies, such as the Atomic Edition) to a local
-directory such as ~/duke3d/, and run eduke32 from within that directory:
+You may also copy your registered version data files, or any other
+Duke Nukem 3D retail copies (such as the Atomic Edition) or Ion Fury game
+files to a local directory such as ~/duke3d/, and run eduke32 from within
+that directory:
 
   % cd ~/duke3d/ && eduke32
 
@@ -20,5 +23,5 @@ ${PREFIX}/share/examples/eduke32/
 
 Licenses are found under ${PREFIX}/share/doc/eduke32/
 
-http://wiki.eduke32.com/ contains a large resource of information on
+https://wiki.eduke32.com contains a large resource of information on
 how to make full use of the eduke32 engine and mapster32 editor.

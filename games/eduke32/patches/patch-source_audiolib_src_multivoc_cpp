@@ -1,0 +1,17 @@
+$OpenBSD: patch-source_audiolib_src_multivoc_cpp,v 1.1 2019/12/30 08:32:46 jsg Exp $
+
+use packaged libxmp instead of bundled libxmp-lite, works around
+build issue when libxmp package is installed
+
+Index: source/audiolib/src/multivoc.cpp
+--- source/audiolib/src/multivoc.cpp.orig
++++ source/audiolib/src/multivoc.cpp
+@@ -45,7 +45,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ 
+ #ifdef HAVE_XMP
+ # define BUILDING_STATIC
+-# include "libxmp-lite/xmp.h"
++# include <xmp.h>
+ 
+ int MV_XMPInterpolation = XMP_INTERP_SPLINE;
+ #endif

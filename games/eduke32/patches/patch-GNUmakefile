@@ -1,31 +1,57 @@
-$OpenBSD: patch-GNUmakefile,v 1.2 2018/07/17 07:56:44 espie Exp $
+$OpenBSD: patch-GNUmakefile,v 1.3 2019/12/30 08:32:46 jsg Exp $
 
 Index: GNUmakefile
 --- GNUmakefile.orig
 +++ GNUmakefile
-@@ -161,7 +161,6 @@ engine_objs := \
-     textfont.cpp \
-     smalltextfont.cpp \
+@@ -240,7 +240,6 @@ engine_objs := \
+     hightile.cpp \
+     klzw.cpp \
      kplib.cpp \
 -    lz4.c \
-     osd.cpp \
-     pragmas.cpp \
-     scriptfile.cpp \
-@@ -581,7 +580,7 @@ ifeq ($(SUBPLATFORM),LINUX)
+     md4.cpp \
+     mhk.cpp \
+     miniz.c \
+@@ -403,8 +402,8 @@ ifeq ($(RENDERTYPE),SDL)
+ endif
+ 
+ ifneq (0,$(HAVE_XMP))
+-    audiolib_cflags += -I$(libxmplite_inc)
+-    audiolib_deps += libxmplite
++    audiolib_cflags += `$(PKG_CONFIG) --cflags libxmp`
++    audiolib_deps += 
+ endif
+ 
+ 
+@@ -684,7 +683,7 @@ ifeq ($(SUBPLATFORM),LINUX)
  endif
  
  ifeq ($(PLATFORM),BSD)
 -    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo
-+    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo -llz4
++    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo -llz4 -lxmp
  endif
  
  ifeq ($(PLATFORM),DARWIN)
-@@ -755,7 +754,7 @@ endif
+@@ -851,13 +850,14 @@ endif
  
  #### Final setup
  
--COMPILERFLAGS += -I$(engine_inc) -I$(mact_inc) -I$(audiolib_inc) -I$(enet_inc)
-+COMPILERFLAGS := -I$(engine_inc) -I$(mact_inc) -I$(audiolib_inc) -I$(enet_inc) $(COMPILERFLAGS)
+-COMPILERFLAGS += \
++COMPILERFLAGS := \
+     -I$(engine_inc) \
+     -I$(mact_inc) \
+     -I$(audiolib_inc) \
+     -I$(glad_inc) \
+     -I$(voidwrap_inc) \
+     -MP -MMD \
++    $(COMPILERFLAGS)
  
- 
- ##### Recipes
+ ifneq (0,$(USE_PHYSFS))
+     COMPILERFLAGS += -I$(physfs_inc) -DUSE_PHYSFS
+@@ -875,7 +875,6 @@ libraries := \
+     audiolib \
+     engine \
+     glad \
+-    libxmplite \
+     lpeg \
+     mact \
+     voidwrap \
