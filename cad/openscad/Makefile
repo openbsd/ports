@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2019/11/07 09:07:13 bentley Exp $
+# $OpenBSD: Makefile,v 1.33 2019/12/30 22:04:13 sthen Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2019.05
 DISTNAME =		openscad-${V}
+EXTRACT_SUFX =		.src.tar.gz
 REVISION =		0
 
 CATEGORIES =		cad
@@ -25,7 +26,6 @@ WANTLIB += opencsg qscintilla2_qt4 xml2 z
 COMPILER =		base-clang ports-gcc
 
 MASTER_SITES =		https://files.openscad.org/
-DISTFILES =		${DISTNAME}.src.tar.gz
 
 MODULES =		devel/qmake \
 			x11/qt4
@@ -55,8 +55,6 @@ MODQMAKE_ARGS =		VERSION=${V}
 SEPARATE_BUILD =	No
 
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}/openscad-$V
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/bison ${WRKDIR}/bin/yacc
