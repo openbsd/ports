@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.841 2019/12/28 08:06:17 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.842 2019/12/30 14:12:35 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1354,6 +1354,7 @@ my $obsolete_reason = {
 	'py3-libnacl' => 3,
 	'py3-typing' => 5,
 	'p5-Net-IRC' => 3,
+	'pangox-compat' => 0,
 };
 
 # reasons for obsolete packages
