@@ -1,4 +1,4 @@
-$OpenBSD: patch-themes_Makefile_in,v 1.3 2011/11/15 19:32:49 jasper Exp $
+$OpenBSD: patch-themes_Makefile_in,v 1.4 2019/12/30 14:10:52 ajacoutot Exp $
 
 BSD tar cannot handle the StyleTar.tar.gz file:
 tar: Cannot identify format. Searching...
@@ -6,9 +6,21 @@ tar: Cpio file name length 20804 is out of range
 tar: Invalid header, starting valid header search.
 tar: Cpio file name length 59038 is out of range
 
---- themes/Makefile.in.orig	Sat Sep 10 00:33:58 2011
-+++ themes/Makefile.in	Tue Nov 15 20:13:32 2011
-@@ -55,7 +55,7 @@ install : all installdirs
+Index: themes/Makefile.in
+--- themes/Makefile.in.orig
++++ themes/Makefile.in
+@@ -39,9 +39,7 @@ THEMES := StyleTab absolute-e Crux microGUI mxflat Elb
+ 
+ all :
+ 	for d in $(THEMES); do \
+-		( tar --help|grep -q sort= && rbopts=--sort=name ; \
+-	          tar --help|grep -q 'GNU tar' && rbopts="$$rbopts --format=gnu --mtime @1" ; \
+-		  cd $(srcdir) && LC_ALL=C tar $$rbopts -c $$d/* | gzip -n9 > $$d.tar.gz ) ; \
++		( cd $(srcdir) && LC_ALL=C tar -f - -c $$d/* | gzip -n9 > $$d.tar.gz ) ; \
+ 	done
+ 
+ install : all installdirs
+@@ -51,7 +49,7 @@ install : all installdirs
  	done
  	@# Don't use tar for StyleTab. It's not compression, but tar
  	@# itself slows in librep.
