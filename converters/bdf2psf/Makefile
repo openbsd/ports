@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/19 14:05:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2019/12/30 12:10:10 fcambus Exp $
 
 COMMENT =	convert a BDF font to PSF format for the Linux console
 
 V =		1.194
 DISTNAME =	console-setup_${V}
+REVISION =	0
 PKGNAME =	bdf2psf-${V}
 EXTRACT_SUFX =	.tar.xz
 
@@ -28,7 +29,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Fonts/bdf2psf ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/bdf2psf.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bdf2psf
-	${INSTALL_DATA} ${WRKSRC}/Fonts/standard.equivalents \
+	${INSTALL_DATA} ${WRKSRC}/Fonts/*.{equivalents,set} \
 		${PREFIX}/share/bdf2psf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bdf2psf/fontsets
 	${INSTALL_DATA} ${WRKSRC}/Fonts/fontsets/* \

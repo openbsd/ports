@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/05 13:03:48 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/30 12:10:10 fcambus Exp $
 bin/bdf2psf
 @man man/man1/bdf2psf.1
 share/bdf2psf/
+share/bdf2psf/arabic.equivalents
+share/bdf2psf/ascii.set
 share/bdf2psf/fontsets/
 share/bdf2psf/fontsets/Arabic.512
 share/bdf2psf/fontsets/Armenian.256
@@ -22,4 +24,7 @@ share/bdf2psf/fontsets/Uni1.512
 share/bdf2psf/fontsets/Uni2.512
 share/bdf2psf/fontsets/Uni3.512
 share/bdf2psf/fontsets/Vietnamese.512
+share/bdf2psf/freebsd.set
+share/bdf2psf/linux.set
 share/bdf2psf/standard.equivalents
+share/bdf2psf/useful.set
