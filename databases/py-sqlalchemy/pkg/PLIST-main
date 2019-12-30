@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/06/23 22:29:48 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2019/12/30 13:02:26 sthen Exp $
 @pkgpath databases/py-sqlalchemy${MODPY_FLAVOR}
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/${MODPY_PYCACHE}exc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/${MODPY_PYCACHE}schema.${MOD
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/${MODPY_PYCACHE}mxodbc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/${MODPY_PYCACHE}pyodbc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,20 +29,20 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/${MODPY_PYCACHE}z
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/mxodbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/pyodbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/zxJDBC.py
-lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cprocessors.so
-lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cresultproxy.so
-lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cutils.so
+@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cprocessors.so
+@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cresultproxy.so
+@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cutils.so
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/databases/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/databases/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/databases/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/databases/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/databases/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/${MODPY_PYCACHE}fdb.${MODPY_PYC_MAGIC_TAG}pyc
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/fdb.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/firebird/kinterbasdb.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/${MODPY_PYCACHE}adodbapi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/pyodbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mssql/zxjdbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}cymysql.${MODPY_PYC_MAGIC_TAG}pyc
@@ -102,7 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/types.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/zxjdbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}cx_oracle.${MODPY_PYC_MAGIC_TAG}pyc
@@ -112,7 +112,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/cx_oracle.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/zxjdbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -142,7 +142,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/ranges.p
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/zxjdbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/${MODPY_PYCACHE}pysqlcipher.${MODPY_PYC_MAGIC_TAG}pyc
@@ -152,7 +152,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/pysqlcipher.
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sqlite/pysqlite.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/${MODPY_PYCACHE}mxodbc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -164,7 +164,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/pyodbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/sybase/pysybase.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/${MODPY_PYCACHE}default.${MODPY_PYC_MAGIC_TAG}pyc
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/url.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/engine/util.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/event/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/event/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/event/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/event/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/event/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/event/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/event/${MODPY_PYCACHE}attr.${MODPY_PYC_MAGIC_TAG}pyc
@@ -202,7 +202,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/events.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/exc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/${MODPY_PYCACHE}associationproxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/${MODPY_PYCACHE}automap.${MODPY_PYC_MAGIC_TAG}pyc
@@ -221,7 +221,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/baked.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/compiler.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -241,7 +241,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/log.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/${MODPY_PYCACHE}attributes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -304,7 +304,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/processors.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/schema.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/${MODPY_PYCACHE}annotation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -344,7 +344,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/util.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/visitors.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}assertions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}assertsql.${MODPY_PYC_MAGIC_TAG}pyc
@@ -374,7 +374,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/mock.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/pickleable.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/plugin/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/plugin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/plugin/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/plugin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/plugin/${MODPY_PYCACHE}bootstrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/plugin/${MODPY_PYCACHE}noseplugin.${MODPY_PYC_MAGIC_TAG}pyc
@@ -392,8 +392,9 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/runner.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/schema.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}test_cte.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}test_ddl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}test_dialect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}test_insert.${MODPY_PYC_MAGIC_TAG}pyc
@@ -403,6 +404,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}test_sequence.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}test_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/${MODPY_PYCACHE}test_update_delete.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/test_cte.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/test_ddl.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/test_dialect.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/suite/test_insert.py
@@ -417,7 +419,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/warnings.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/types.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}_collections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.1 2018/06/23 21:39:45 landry Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2019/12/30 13:02:26 sthen Exp $
 @conflict py-sqlalchemy-<1.2.8p0
 @conflict py3-sqlalchemy-<1.2.8p0
 share/doc/py-sqlalchemy/
@@ -69,6 +69,8 @@ share/doc/py-sqlalchemy/_modules/examples/versioned_history/test_versioning.html
 share/doc/py-sqlalchemy/_modules/examples/versioned_rows/
 share/doc/py-sqlalchemy/_modules/examples/versioned_rows/versioned_map.html
 share/doc/py-sqlalchemy/_modules/examples/versioned_rows/versioned_rows.html
+share/doc/py-sqlalchemy/_modules/examples/versioned_rows/versioned_rows_w_versionid.html
+share/doc/py-sqlalchemy/_modules/examples/versioned_rows/versioned_update_old_row.html
 share/doc/py-sqlalchemy/_modules/examples/vertical/
 share/doc/py-sqlalchemy/_modules/examples/vertical/dictlike-polymorphic.html
 share/doc/py-sqlalchemy/_modules/examples/vertical/dictlike.html
@@ -76,19 +78,16 @@ share/doc/py-sqlalchemy/_modules/index.html
 share/doc/py-sqlalchemy/_static/
 share/doc/py-sqlalchemy/_static/basic.css
 share/doc/py-sqlalchemy/_static/changelog.css
-share/doc/py-sqlalchemy/_static/comment-bright.png
-share/doc/py-sqlalchemy/_static/comment-close.png
-share/doc/py-sqlalchemy/_static/comment.png
 share/doc/py-sqlalchemy/_static/detectmobile.js
 share/doc/py-sqlalchemy/_static/docs.css
 share/doc/py-sqlalchemy/_static/doctools.js
 share/doc/py-sqlalchemy/_static/documentation_options.js
-share/doc/py-sqlalchemy/_static/down-pressed.png
-share/doc/py-sqlalchemy/_static/down.png
+share/doc/py-sqlalchemy/_static/dragons.png
 share/doc/py-sqlalchemy/_static/file.png
 share/doc/py-sqlalchemy/_static/init.js
 share/doc/py-sqlalchemy/_static/jquery-3.2.1.js
 share/doc/py-sqlalchemy/_static/jquery.js
+share/doc/py-sqlalchemy/_static/language_data.js
 share/doc/py-sqlalchemy/_static/minus.png
 share/doc/py-sqlalchemy/_static/plus.png
 share/doc/py-sqlalchemy/_static/pygments.css
@@ -96,9 +95,6 @@ share/doc/py-sqlalchemy/_static/searchtools.js
 share/doc/py-sqlalchemy/_static/sphinx_paramlinks.css
 share/doc/py-sqlalchemy/_static/underscore-1.3.1.js
 share/doc/py-sqlalchemy/_static/underscore.js
-share/doc/py-sqlalchemy/_static/up-pressed.png
-share/doc/py-sqlalchemy/_static/up.png
-share/doc/py-sqlalchemy/_static/websupport.js
 share/doc/py-sqlalchemy/build/
 share/doc/py-sqlalchemy/build/Makefile
 share/doc/py-sqlalchemy/build/changelog/
@@ -487,6 +483,8 @@ share/examples/py-sqlalchemy/versioned_rows/
 share/examples/py-sqlalchemy/versioned_rows/__init__.py
 share/examples/py-sqlalchemy/versioned_rows/versioned_map.py
 share/examples/py-sqlalchemy/versioned_rows/versioned_rows.py
+share/examples/py-sqlalchemy/versioned_rows/versioned_rows_w_versionid.py
+share/examples/py-sqlalchemy/versioned_rows/versioned_update_old_row.py
 share/examples/py-sqlalchemy/vertical/
 share/examples/py-sqlalchemy/vertical/__init__.py
 share/examples/py-sqlalchemy/vertical/dictlike-polymorphic.py

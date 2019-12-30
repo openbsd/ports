@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:44:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/12/30 13:02:26 sthen Exp $
 
 COMMENT-main =		database toolkit for Python
 COMMENT-docs =		documentation and examples for sqlalchemy
 
-MODPY_EGG_VERSION =	1.2.8
+MODPY_EGG_VERSION =	1.2.19
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 FULLPKGNAME-main =	${MODPY_PY_PREFIX}sqlalchemy-${MODPY_EGG_VERSION}
 FULLPKGPATH-main =	databases/py-sqlalchemy${MODPY_FLAVOR},-main
 FULLPKGNAME-docs =	py-sqlalchemy-docs-${MODPY_EGG_VERSION}
 FULLPKGPATH-docs =	databases/py-sqlalchemy,-docs
-REVISION-main =		4
-REVISION-docs =		2
 
 CATEGORIES =		databases
 
-HOMEPAGE =		http://www.sqlalchemy.org/
+HOMEPAGE =		https://www.sqlalchemy.org/
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -35,6 +33,7 @@ FLAVORS =		python3
 FLAVOR ?=
 
 MAKE_ENV +=		PYTHONPATH=.
+MODPY_PYTEST =		Yes
 
 # Other DB connectors would work, too.
 TEST_DEPENDS =		devel/py-test-xdist${MODPY_FLAVOR} \
