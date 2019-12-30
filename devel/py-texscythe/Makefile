@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/12/30 13:00:36 sthen Exp $
 
 COMMENT =		TeX Live texmf subsetter tool and Python library.
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS +=		databases/py-sqlalchemy
-TEST_DEPENDS =		devel/py-test
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 # pre-build database for last two texlive versions.
@@ -28,9 +28,6 @@ BUILD_DEPENDS +=	${RUN_DEPENDS}
 post-build:
 	cd ${WRKBUILD} && ./texscyther -t texlive2017.tlpdb.gz --initdb
 	cd ${WRKBUILD} && ./texscyther -t texlive2016.tlpdb.gz --initdb
-
-do-test:
-	@${MODPY_TEST_TARGET} --pytest-args="--runslow"
 
 EXAMPLES =		${PREFIX}/share/examples/py-texscythe/
 post-install:
