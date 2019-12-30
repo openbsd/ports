@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2019/12/11 15:59:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.385 2019/12/30 13:04:17 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -158,6 +158,7 @@
      SUBDIR += py-bsddb3,python3
      SUBDIR += py-carbon
      SUBDIR += py-flask-sqlalchemy
+     SUBDIR += py-flask-sqlalchemy,python3
      SUBDIR += py-influxdb
      SUBDIR += py-influxdb,python3
      SUBDIR += py-ldap

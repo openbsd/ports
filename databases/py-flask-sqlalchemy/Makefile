@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:59 sthen Exp $
-
-REVISION=4
+# $OpenBSD: Makefile,v 1.10 2019/12/30 13:04:17 sthen Exp $
 
 COMMENT =	sqlalchemy support for flask
 
-MODPY_EGG_VERSION = 1.0
+MODPY_EGG_VERSION = 2.4.1
 DISTNAME =	Flask-SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
 CATEGORIES =	databases www
 
-HOMEPAGE =	https://github.com/mitsuhiko/flask-sqlalchemy/
+HOMEPAGE =	https://flask-sqlalchemy.palletsprojects.com/
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -19,23 +17,15 @@ MODPY_PI =	Yes
 
 MODULES =	lang/python
 
+FLAVORS =	python3
+FLAVOR ?=
+
 MODPY_SETUPTOOLS = Yes
+MODPY_PYTEST =	Yes
+USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	databases/py-sqlalchemy \
-		textproc/py-sphinx \
-		www/py-flask
-RUN_DEPENDS =	databases/py-sqlalchemy \
-		www/py-flask
-
-MAKE_ENV =	PYTHONPATH="${WRKSRC}"
-
-post-build:
-	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
-
-post-install:
-	${INSTALL_DATA_DIR} \
-	    ${PREFIX}/share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy
-	cd ${WRKSRC}/docs/_build/html && \
-	    pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy
+RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR} \
+		www/py-flask${MODPY_FLAVOR}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
