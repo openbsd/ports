@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/11/01 15:54:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/12/30 13:20:19 jasper Exp $
 bin/r2
 @bin bin/r2agent
 bin/r2p
@@ -84,6 +84,7 @@ include/libr/r_util/r_file.h
 include/libr/r_util/r_graph.h
 include/libr/r_util/r_hex.h
 include/libr/r_util/r_idpool.h
+include/libr/r_util/r_intervaltree.h
 include/libr/r_util/r_itv.h
 include/libr/r_util/r_log.h
 include/libr/r_util/r_mem.h
@@ -93,6 +94,7 @@ include/libr/r_util/r_panels.h
 include/libr/r_util/r_pkcs7.h
 include/libr/r_util/r_pool.h
 include/libr/r_util/r_print.h
+include/libr/r_util/r_protobuf.h
 include/libr/r_util/r_punycode.h
 include/libr/r_util/r_queue.h
 include/libr/r_util/r_range.h
@@ -186,7 +188,7 @@ include/libr/sflib/linux-x86-64/sfsysnr.h
 @lib lib/libr_parse.so.${LIBr_parse_VERSION}
 @lib lib/libr_reg.so.${LIBr_reg_VERSION}
 @lib lib/libr_search.so.${LIBr_search_VERSION}
-lib/libr_shlr.a
+@static-lib lib/libr_shlr.a
 @lib lib/libr_socket.so.${LIBr_socket_VERSION}
 @lib lib/libr_syscall.so.${LIBr_syscall_VERSION}
 @lib lib/libr_util.so.${LIBr_util_VERSION}

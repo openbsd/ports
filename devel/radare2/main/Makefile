@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/01 15:54:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2019/12/30 13:20:18 jasper Exp $
 
-COMMENT =		reverse engineers disassembler and debugger
+COMMENT =		libre and portable reverse engineering framework
 
-V =			4.0.0
+V =			4.1.1
 SUBST_VARS +=		V
 
 GH_PROJECT =		radare2
 GH_TAGNAME =		${V}
+# upstream tarball with dependencies clone in shlr/
+MASTER_SITES =		https://distfiles.nl/
 
 # In radare, all libs have the same version
 LIBV =			7.0	# 4.0.0
@@ -19,6 +21,8 @@ SHARED_LIBS+=		${_lib} ${LIBV}
 
 # uses pledge()
 WANTLIB =		c capstone crypto kvm m pthread ssl util uv z zip
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS =		archivers/libzip \
 			devel/capstone/main>=3.0.4p0 \

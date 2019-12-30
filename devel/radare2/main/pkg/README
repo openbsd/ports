@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/11/05 21:55:41 edd Exp $
+$OpenBSD: README,v 1.5 2019/12/30 13:20:19 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -17,18 +17,3 @@ Bindings
 
 For now, we have only enabled the Vala bindings (as the radare2-bindings
 package). Further languages may be enabled in the future.
-
-Known Issues
-============
-
-Arches
-------
-
-Some arches have been disabled. Eg. powerpc:
-
-02:03 <sthen_p> needs more work on powerpc ;)
-02:03 <sthen_p> $ r2 /bin/ls
-02:03 <sthen_p> Cannot use 'unknown' anal plugin.
-02:03 <sthen_p> asm.arch: cannot find (unknown)
-02:03 <sthen_p> Cannot use 'unknown' anal plugin.
-02:03 <sthen_p> r_syscall_setup: Unknown os/arch 'openbsd'/'unknown'

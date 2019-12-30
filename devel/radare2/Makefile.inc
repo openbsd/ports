@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2019/07/13 10:59:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2019/12/30 13:20:18 jasper Exp $
 
 # Arches suggested by upstream, unsure which work on OpenBSD for sure.
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS ?=	amd64 i386
 #ONLY_FOR_ARCHS ?=	arm mips64 mips64el powerpc sparc64
 
 CATEGORIES ?=		devel
-HOMEPAGE ?=		http://www.radare.org/r/
+HOMEPAGE ?=		https://www.radare.org/r/
 MAINTAINER ?=		Edd Barrett <edd@openbsd.org>
 
 # LGPLv3
