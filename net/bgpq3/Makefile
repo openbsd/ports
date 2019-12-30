@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/15 11:05:09 job Exp $
+# $OpenBSD: Makefile,v 1.9 2019/12/30 11:15:19 sthen Exp $
 
-COMMENT =		bgp filtering automation for Cisco and Juniper routers
+COMMENT =		generate access/prefix lists for BGP config
 
 GH_ACCOUNT =		snar
 GH_PROJECT =		bgpq3
 GH_TAGNAME =		v0.1.35
 
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
-HOMEPAGE =		https://github.com/snar/bgpq3
-
 # BSD
 PERMIT_PACKAGE =	Yes
+
 WANTLIB += c
 
 CONFIGURE_STYLE =	gnu
