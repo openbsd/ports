@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.12 2019/07/13 10:59:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2019/12/30 14:58:29 jasper Exp $
 
 CATEGORIES+=		devel
 
-HOMEPAGE=		http://libgit2.github.com/
+HOMEPAGE=		https://libgit2.org/
 
 # GPLv2 with linking exemption.
 PERMIT_PACKAGE?=	Yes

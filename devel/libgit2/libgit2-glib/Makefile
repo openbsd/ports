@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/04 11:07:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2019/12/30 14:58:29 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
 V=			0.28.0.1
 DISTNAME=		libgit2-glib-$V
+REVISION =		0
 
 SHARED_LIBS +=	git2-glib-1.0        5.1      # 0.0
 
@@ -14,6 +15,8 @@ EXTRACT_SUFX=		.tar.xz
 MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
