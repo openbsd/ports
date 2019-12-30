@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2019/12/27 00:48:04 schwarze Exp $
+# $OpenBSD: Makefile,v 1.48 2019/12/30 12:34:55 schwarze Exp $
 
 COMMENT =		GNU troff typesetter
 VERSION =		1.22.4
 SUBST_VARS =		VERSION
 DISTNAME =		groff-${VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 DPB_PROPERTIES =	parallel

@@ -1,4 +1,4 @@
-$OpenBSD: patch-tmac_doc-common-u,v 1.2 2019/12/27 00:48:04 schwarze Exp $
+$OpenBSD: patch-tmac_doc-common-u,v 1.3 2019/12/30 12:34:55 schwarze Exp $
 
 chunks 1-3: Tweak page headers (local change).
 chunk 4: Default value for the .Os macro (local change).
@@ -64,7 +64,7 @@ Index: tmac/doc-common-u
  .
  .
  .\" NS doc-operating-system global string
-@@ -778,39 +767,12 @@
+@@ -778,39 +767,14 @@
  .\" NS   doc-date-string
  .\" NS   doc-command-name
  .\" NS
@@ -99,14 +99,15 @@ Index: tmac/doc-common-u
 -.      as doc-date-string \~\n[dy], \n[year]
 -.    \}\}
 -.  \}
--.  el \
++.  ie "\$1"$Mdocdate:" \
++.    ds doc-date-string \$2\~\$3, \$4
+ .  el \
 -.    ds doc-date-string Epoch
-+.  ie "\$1"$Mdocdate: December 27 2019 $2\~\$3, \$4
-+.  el                   .ds doc-date-string \$*
++.    ds doc-date-string \$*
  ..
  .
  .
-@@ -976,7 +938,7 @@
+@@ -976,7 +940,7 @@
  .\" NS width register 'Nd' set above
  .
  .de Nd
