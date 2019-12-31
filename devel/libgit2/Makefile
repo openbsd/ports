@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/30 08:44:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/12/31 15:32:03 jasper Exp $
 
     SUBDIR =
     SUBDIR += libgit2
     SUBDIR += libgit2-glib
     SUBDIR += py-git2
-    SUBDIR += py-git2,python3
 
 .include <bsd.port.subdir.mk>
