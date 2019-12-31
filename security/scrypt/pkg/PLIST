@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/25 22:48:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/12/31 07:26:59 bket Exp $
 @bin bin/scrypt
+include/scrypt-kdf.h
+@static-lib lib/libscrypt-kdf.a
+lib/libscrypt-kdf.la
+@lib lib/libscrypt-kdf.so.${LIBscrypt-kdf_VERSION}
 @man man/man1/scrypt.1

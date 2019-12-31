@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/12/31 07:26:59 bket Exp $
 
 COMMENT =	command-line encryption using scrypt key derivation function
 
-DISTNAME =	scrypt-1.2.1
+DISTNAME =	scrypt-1.3.0
+
+SHARED_LIBS +=	scrypt-kdf                0.0 # 1.0
 
 CATEGORIES =	security
 
-HOMEPAGE =	http://www.tarsnap.com/scrypt/
+HOMEPAGE =	https://www.tarsnap.com/scrypt/
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -17,7 +19,10 @@ MASTER_SITES =	${HOMEPAGE}
 EXTRACT_SUFX =	.tgz
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--enable-libscrypt-kdf
 
-NO_TEST =		Yes
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+TEST_TARGET =	test
 
 .include <bsd.port.mk>

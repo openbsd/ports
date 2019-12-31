@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_test_scrypt_sh,v 1.1 2019/12/31 07:26:59 bket Exp $
+
+Index: tests/test_scrypt.sh
+--- tests/test_scrypt.sh.orig
++++ tests/test_scrypt.sh
+@@ -14,7 +14,7 @@ out_valgrind="${bindir}/tests-valgrind"
+ password="hunter2"
+ 
+ # Find system scrypt, and ensure it supports -P.
+-system_scrypt=$( find_system scrypt enc -P )
++system_scrypt=$( find_system ${scriptdir}/../scrypt enc -P )
+ 
+ 
+ ### Run tests using project-specific constants
