@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/12/31 13:04:49 rpointel Exp $
 
 COMMENT =	linter for YAML files
 
-MODPY_EGG_VERSION = 1.16.0
+MODPY_EGG_VERSION = 1.20.0
 DISTNAME =	yamllint-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =	Yes
 
 RUN_DEPENDS =	devel/py-pathspec${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR}
