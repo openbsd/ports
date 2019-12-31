@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2019/10/28 15:02:49 millert Exp $
+# $OpenBSD: Makefile,v 1.37 2019/12/31 21:54:25 millert Exp $
 
 COMMENT=	execute a command as another user
 
-DISTNAME=	sudo-1.8.29
+DISTNAME=	sudo-1.8.30
 CATEGORIES=	security
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
