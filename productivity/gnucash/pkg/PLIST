@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2019/09/16 06:02:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2019/12/31 14:34:33 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -228,30 +228,30 @@ include/gnucash/tree-view-utils.h
 include/gnucash/window-main-summarybar.h
 include/gnucash/window-report.h
 lib/gnucash/
-lib/gnucash/libgncmod-app-utils.so
-lib/gnucash/libgncmod-aqbanking.so
-lib/gnucash/libgncmod-backend-dbi.so
-lib/gnucash/libgncmod-backend-xml.so
-lib/gnucash/libgncmod-bi-import.so
-lib/gnucash/libgncmod-csv-export.so
-lib/gnucash/libgncmod-csv-import.so
-lib/gnucash/libgncmod-customer-import.so
-lib/gnucash/libgncmod-engine.so
-lib/gnucash/libgncmod-generic-import.so
-lib/gnucash/libgncmod-gnome-search.so
-lib/gnucash/libgncmod-gnome-utils.so
-lib/gnucash/libgncmod-html.so
-lib/gnucash/libgncmod-ledger-core.so
-lib/gnucash/libgncmod-locale-reports-us.so
-lib/gnucash/libgncmod-log-replay.so
-lib/gnucash/libgncmod-ofx.so
-lib/gnucash/libgncmod-qif-import.so
-lib/gnucash/libgncmod-register-core.so
-lib/gnucash/libgncmod-register-gnome.so
-lib/gnucash/libgncmod-report-gnome.so
-lib/gnucash/libgncmod-report-system.so
-lib/gnucash/libgncmod-stylesheets.so
-lib/gnucash/libgncmod-tax-us.so
+@so lib/gnucash/libgncmod-app-utils.so
+@so lib/gnucash/libgncmod-aqbanking.so
+@so lib/gnucash/libgncmod-backend-dbi.so
+@so lib/gnucash/libgncmod-backend-xml.so
+@so lib/gnucash/libgncmod-bi-import.so
+@so lib/gnucash/libgncmod-csv-export.so
+@so lib/gnucash/libgncmod-csv-import.so
+@so lib/gnucash/libgncmod-customer-import.so
+@so lib/gnucash/libgncmod-engine.so
+@so lib/gnucash/libgncmod-generic-import.so
+@so lib/gnucash/libgncmod-gnome-search.so
+@so lib/gnucash/libgncmod-gnome-utils.so
+@so lib/gnucash/libgncmod-html.so
+@so lib/gnucash/libgncmod-ledger-core.so
+@so lib/gnucash/libgncmod-locale-reports-us.so
+@so lib/gnucash/libgncmod-log-replay.so
+@so lib/gnucash/libgncmod-ofx.so
+@so lib/gnucash/libgncmod-qif-import.so
+@so lib/gnucash/libgncmod-register-core.so
+@so lib/gnucash/libgncmod-register-gnome.so
+@so lib/gnucash/libgncmod-report-gnome.so
+@so lib/gnucash/libgncmod-report-system.so
+@so lib/gnucash/libgncmod-stylesheets.so
+@so lib/gnucash/libgncmod-tax-us.so
 lib/gnucash/scm/
 lib/gnucash/scm/ccache/
 lib/gnucash/scm/ccache/2.2/
@@ -307,6 +307,8 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/job-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/locale-specific/
 lib/gnucash/scm/ccache/2.2/gnucash/report/locale-specific/de_DE.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/locale-specific/us.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/new-aging.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/new-owner-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/owner-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/payables.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/receipt.go
@@ -348,13 +350,11 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/portfolio.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/price-scatter.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/reconcile-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/register.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/sx-summary.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/test-cash-flow.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/transaction.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/trial-balance.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-easy.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-fancy.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-css.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-footer.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-head-or-tail.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-plain.go
@@ -426,7 +426,7 @@ lib/gnucash/scm/ccache/2.2/txf.go
 @lib lib/libgnc-core-utils.so.${LIBgnc-core-utils_VERSION}
 @lib lib/libgnc-gnome.so.${LIBgnc-gnome_VERSION}
 @lib lib/libgnc-module.so.${LIBgnc-module_VERSION}
-lib/libgwengui-gtk3.so
+@so lib/libgwengui-gtk3.so
 @man man/man1/gnc-fq-dump.1
 @man man/man1/gnc-fq-helper.1
 @man man/man1/gnucash.1
@@ -544,6 +544,7 @@ share/gnome/help/gnucash-guide/C/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/C/ch_reports.xml
 share/gnome/help/gnucash-guide/C/ch_txns.xml
 share/gnome/help/gnucash-guide/C/fdl-appendix.xml
+share/gnome/help/gnucash-guide/C/figures/
 share/gnome/help/gnucash-guide/C/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/C/gnc-glossary.xml
 share/gnome/help/gnucash-guide/C/gnucash-guide.xml
@@ -576,10 +577,12 @@ share/gnome/help/gnucash-guide/de/ch_oview.xml
 share/gnome/help/gnucash-guide/de/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/de/ch_txns.xml
 share/gnome/help/gnucash-guide/de/fdl-appendix.xml
+share/gnome/help/gnucash-guide/de/figures/
 share/gnome/help/gnucash-guide/de/glossary.xml
 share/gnome/help/gnucash-guide/de/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/de/gnucash-guide.xml
 share/gnome/help/gnucash-guide/it/
+share/gnome/help/gnucash-guide/it/figures/
 share/gnome/help/gnucash-guide/it/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/it/gnucash-guide.xml
 share/gnome/help/gnucash-guide/ja/
@@ -605,6 +608,7 @@ share/gnome/help/gnucash-guide/ja/ch_oview.xml
 share/gnome/help/gnucash-guide/ja/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/ja/ch_txns.xml
 share/gnome/help/gnucash-guide/ja/fdl-appendix.xml
+share/gnome/help/gnucash-guide/ja/figures/
 share/gnome/help/gnucash-guide/ja/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/ja/gnucash-guide.xml
 share/gnome/help/gnucash-guide/ja/legal.xml
@@ -634,6 +638,7 @@ share/gnome/help/gnucash-guide/pt/ch_oview.xml
 share/gnome/help/gnucash-guide/pt/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/pt/ch_txns.xml
 share/gnome/help/gnucash-guide/pt/fdl-appendix.xml
+share/gnome/help/gnucash-guide/pt/figures/
 share/gnome/help/gnucash-guide/pt/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/pt/gnucash-guide.xml
 share/gnome/help/gnucash-guide/pt/legal.xml
@@ -661,6 +666,7 @@ share/gnome/help/gnucash-guide/ru/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/ru/ch_reports.xml
 share/gnome/help/gnucash-guide/ru/ch_txns.xml
 share/gnome/help/gnucash-guide/ru/fdl-appendix.xml
+share/gnome/help/gnucash-guide/ru/figures/
 share/gnome/help/gnucash-guide/ru/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/ru/gnc-glossary.xml
 share/gnome/help/gnucash-guide/ru/gnucash-guide.xml
@@ -683,6 +689,7 @@ share/gnome/help/gnucash-help/C/Help_fdl-appendix.xml
 share/gnome/help/gnucash-help/C/Help_legal.xml
 share/gnome/help/gnucash-help/C/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/C/Help_txf-categories.xml
+share/gnome/help/gnucash-help/C/figures/
 share/gnome/help/gnucash-help/C/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/C/gnucash-help.xml
 share/gnome/help/gnucash-help/de/
@@ -694,9 +701,11 @@ share/gnome/help/gnucash-help/de/Help_fdl-appendix.xml
 share/gnome/help/gnucash-help/de/Help_legal.xml
 share/gnome/help/gnucash-help/de/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/de/Help_txf-categories.xml
+share/gnome/help/gnucash-help/de/figures/
 share/gnome/help/gnucash-help/de/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/de/gnucash-help.xml
 share/gnome/help/gnucash-help/it/
+share/gnome/help/gnucash-help/it/figures/
 share/gnome/help/gnucash-help/it/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/it/gnucash-help.xml
 share/gnome/help/gnucash-help/pt/
@@ -716,6 +725,7 @@ share/gnome/help/gnucash-help/pt/Help_fdl-appendix.xml
 share/gnome/help/gnucash-help/pt/Help_legal.xml
 share/gnome/help/gnucash-help/pt/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/pt/Help_txf-categories.xml
+share/gnome/help/gnucash-help/pt/figures/
 share/gnome/help/gnucash-help/pt/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/pt/gnucash-help.xml
 share/gnucash/
@@ -1404,6 +1414,8 @@ share/gnucash/scm/gnucash/report/job-report.scm
 share/gnucash/scm/gnucash/report/locale-specific/
 share/gnucash/scm/gnucash/report/locale-specific/de_DE.scm
 share/gnucash/scm/gnucash/report/locale-specific/us.scm
+share/gnucash/scm/gnucash/report/new-aging.scm
+share/gnucash/scm/gnucash/report/new-owner-report.scm
 share/gnucash/scm/gnucash/report/owner-report.scm
 share/gnucash/scm/gnucash/report/payables.scm
 share/gnucash/scm/gnucash/report/receipt.css
@@ -1447,13 +1459,11 @@ share/gnucash/scm/gnucash/report/standard-reports/portfolio.scm
 share/gnucash/scm/gnucash/report/standard-reports/price-scatter.scm
 share/gnucash/scm/gnucash/report/standard-reports/reconcile-report.scm
 share/gnucash/scm/gnucash/report/standard-reports/register.scm
-share/gnucash/scm/gnucash/report/standard-reports/sx-summary.scm
 share/gnucash/scm/gnucash/report/standard-reports/test/
 share/gnucash/scm/gnucash/report/standard-reports/test/test-cash-flow.scm
 share/gnucash/scm/gnucash/report/standard-reports/transaction.scm
 share/gnucash/scm/gnucash/report/standard-reports/trial-balance.scm
-share/gnucash/scm/gnucash/report/stylesheet-easy.scm
-share/gnucash/scm/gnucash/report/stylesheet-fancy.scm
+share/gnucash/scm/gnucash/report/stylesheet-css.scm
 share/gnucash/scm/gnucash/report/stylesheet-footer.scm
 share/gnucash/scm/gnucash/report/stylesheet-head-or-tail.scm
 share/gnucash/scm/gnucash/report/stylesheet-plain.scm
