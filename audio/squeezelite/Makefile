@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/13 15:58:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/12/31 23:38:25 sthen Exp $
 
 COMMENT=	lightweight headless squeezebox player
 
-V=		1.9.2.1145
+V=		1.9.2.1205
 GH_ACCOUNT=	ralph-irving
 GH_PROJECT=	squeezelite
-GH_COMMIT=	6cef0f33c888932efbdf3f5cd43ca9d6c2159937
+GH_COMMIT=	1cff80e5330501b1f587a474f06db08fd53d9521
 DISTNAME=	squeezelite-$V
-REVISION=	0
 
 CATEGORIES=	audio
 
@@ -17,7 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC avcodec avformat avutil c crypto faad m mad mpg123
-WANTLIB += portaudio pthread soxr ssl vorbisfile
+WANTLIB += ogg portaudio pthread soxr ssl vorbis vorbisfile
 
 LIB_DEPENDS=	audio/faad \
 		audio/flac \
@@ -30,7 +29,7 @@ LIB_DEPENDS=	audio/faad \
 
 MAKE_FLAGS=	CFLAGS="-Wall -fPIC ${CFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		OPTS="-DLINKALL -DFFMPEG -DRESAMPLE -DPORTAUDIO -DUSE_SSL"
+		OPTS="-DLINKALL -DFFMPEG -DRESAMPLE -DPORTAUDIO -DUSE_SSL -DNO_SSLSYM"
 MAKE_ENV=	LDADD="-L${LOCALBASE}/lib -lpthread -lm -lportaudio -lcrypto -lssl"
 
 USE_GMAKE=	Yes
