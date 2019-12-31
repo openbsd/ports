@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.196 2019/12/28 14:39:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.197 2019/12/31 23:44:10 sthen Exp $
 
 BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 
 COMMENT=		image processing tools
 
 VER=			6.9.10
-DASHVER=		80
+DASHVER=		82
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://imagemagick.org/download/ limit:6.*
@@ -31,12 +31,13 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt bz2
 WANTLIB += c djvulibre expat fftw3 fontconfig freetype iconv jasper
 WANTLIB += jbig jpeg lcms2 lzma m openjp2 perl png raw_r tiff webp
-WANTLIB += webpmux xcb xml2 z
+WANTLIB += webpdemux webpmux xcb xml2 z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz \
+			archivers/zstd \
 			converters/libiconv \
 			graphics/djvulibre \
 			graphics/jbigkit \
@@ -71,7 +72,6 @@ CONFIGURE_ARGS+=	--without-gcc-arch \
 			--without-raqm \
 			--without-rsvg \
 			--without-wmf \
-			--without-zstd \
 			--disable-openmp
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
