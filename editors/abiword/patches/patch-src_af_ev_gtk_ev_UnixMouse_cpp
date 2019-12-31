@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_af_ev_gtk_ev_UnixMouse_cpp,v 1.1 2019/12/31 14:27:04 ajacoutot Exp $
+
+ev_UnixMouse.cpp:282:8: error: call to 'abs' is ambiguous
+                        if (abs(delta_y) > abs(delta_x)) {
+                            ^~~
+/usr/include/stdlib.h:98:6: note: candidate function
+int      abs(int);
+         ^
+/usr/include/c++/v1/stdlib.h:111:44: note: candidate function
+inline _LIBCPP_INLINE_VISIBILITY long      abs(     long __x) _NOEXCEPT {return  labs(__x);}
+                                           ^
+/usr/include/c++/v1/stdlib.h:113:44: note: candidate function
+inline _LIBCPP_INLINE_VISIBILITY long long abs(long long __x) _NOEXCEPT {return llabs(__x);}
+                                           ^
+ev_UnixMouse.cpp:282:23: error: call to 'abs' is ambiguous
+                        if (abs(delta_y) > abs(delta_x)) {
+                                           ^~~
+/usr/include/stdlib.h:98:6: note: candidate function
+int      abs(int);
+         ^
+/usr/include/c++/v1/stdlib.h:111:44: note: candidate function
+inline _LIBCPP_INLINE_VISIBILITY long      abs(     long __x) _NOEXCEPT {return  labs(__x);}
+                                           ^
+/usr/include/c++/v1/stdlib.h:113:44: note: candidate function
+inline _LIBCPP_INLINE_VISIBILITY long long abs(long long __x) _NOEXCEPT {return llabs(__x);}
+                                           ^
+2 errors generated.
+
+Index: src/af/ev/gtk/ev_UnixMouse.cpp
+--- src/af/ev/gtk/ev_UnixMouse.cpp.orig
++++ src/af/ev/gtk/ev_UnixMouse.cpp
+@@ -279,7 +279,7 @@ void EV_UnixMouse::mouseScroll(AV_View* pView, GdkEven
+ 		gdouble delta_x, delta_y;
+ 		delta_x = delta_y = 0.0;
+ 		if (gdk_event_get_scroll_deltas((GdkEvent*)e, &delta_x, &delta_y)) {
+-			if (abs(delta_y) > abs(delta_x)) {
++			if (abs((long long)delta_y) > abs((long long)delta_x)) {
+ 				// vertical
+ 				dir = (delta_y > 0.0 ? GDK_SCROLL_DOWN : GDK_SCROLL_UP);
+ 			} else {

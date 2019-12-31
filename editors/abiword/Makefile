@@ -1,20 +1,11 @@
-# $OpenBSD: Makefile,v 1.128 2019/11/18 19:57:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2019/12/31 14:27:04 ajacoutot Exp $
 
 BROKEN=		Abort trap on startup (pango related?)
-
-# XXX error: 'nullptr' was not declared in this scope
-CXXFLAGS +=	-std=c++11
-# XXX error: xap_Dialog.cpp:270:24: error: cast from 'std::nullptr_t' to 'char' loses precision
-CXXFLAGS +=	-fpermissive
-
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
-# git commit 75dd142f (https://gitlab.gnome.org/World/AbiWord)
-MASTER_SITES=	https://distfiles.bsdfrog.org/
-
-VERSION=	3.0.2.1
+VERSION=	3.0.4
 DISTNAME=	abiword-${VERSION}
 
 CATEGORIES=	editors
@@ -26,21 +17,20 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += avahi-common bz2 c cairo cairo-gobject crypto
-WANTLIB += curl dbus-1 enchant epoxy expat ffi fontconfig freetype
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += avahi-common bz2 c cairo cairo-gobject crypto curl
+WANTLIB += dbus-1 enchant epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl jpeg ltdl lzma m mpfr nettle nghttp2
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread raptor2 rasqal rdf
-WANTLIB += rsvg-2 spectre ssl ${LIBCXX} tasn1 unistring uuid wmf-0.2
-WANTLIB += wmflite-0.2 wv-1.2 xcb xcb-render xcb-shm xml2 xslt
-WANTLIB += yajl z
+WANTLIB += pixman-1 png raptor2 rasqal rdf rsvg-2 spectre ssl
+WANTLIB += tasn1 unistring uuid wmf-0.2 wmflite-0.2 wv-1.2 xcb
+WANTLIB += xcb-render xcb-shm xml2 xslt yajl z zstd
 
-#MASTER_SITES=	http://www.abisource.com/downloads/abiword/${VERSION}/source/
+MASTER_SITES=	http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
 MODULES=	lang/python
 
@@ -73,7 +63,7 @@ RUN_DEPENDS +=	devel/xdg-utils
 
 PLUGINS=	goffice opendocument openwriter openxml pdf
 
-CONFIGURE_STYLE= autoreconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-introspection \
 		--enable-plugins="${PLUGINS}" \
 		--enable-clipart \
@@ -91,13 +81,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_VALGRIND=
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
-AUTORECONF=		./autogen.sh
-BUILD_DEPENDS +=	devel/autoconf-archive
-
 post-install:
-	rm ${PREFIX}/lib/libabiword-3.1*.{a,la}
-	rm ${PREFIX}/lib/abiword-3.1/plugins/*.{a,la}
+	rm ${PREFIX}/lib/libabiword-${VERSION:R}*.{a,la}
+	rm ${PREFIX}/lib/abiword-${VERSION:R}/plugins/*.{a,la}
 
 .include <bsd.port.mk>

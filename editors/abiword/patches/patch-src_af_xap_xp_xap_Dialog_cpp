@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_af_xap_xp_xap_Dialog_cpp,v 1.2 2019/05/14 05:07:23 ajacoutot Exp $
+$OpenBSD: patch-src_af_xap_xp_xap_Dialog_cpp,v 1.3 2019/12/31 14:27:04 ajacoutot Exp $
 
 Fix build with clang.
 
 Index: src/af/xap/xp/xap_Dialog.cpp
 --- src/af/xap/xp/xap_Dialog.cpp.orig
 +++ src/af/xap/xp/xap_Dialog.cpp
-@@ -263,7 +263,7 @@ XAP_Dialog_Modeless::BuildWindowName(char * pWindowNam
+@@ -267,7 +267,7 @@ XAP_Dialog_Modeless::BuildWindowName(char * pWindowNam
  // This function constructs and returns the window name of a modeless dialog by
  // concatenating the active frame with the dialog name
  
