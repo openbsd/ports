@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/12/31 23:17:25 sthen Exp $
 
 COMMENT =		parser/generator of iCalendar files
 
-MODPY_EGG_VERSION =	4.0.3
+MODPY_EGG_VERSION =	4.0.4
 DISTNAME =		icalendar-${MODPY_EGG_VERSION}
 PKGNAME =		py-icalendar-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -20,12 +19,13 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	src/icalendar/tests
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+			devel/py-hypothesis${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
