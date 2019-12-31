@@ -1,0 +1,22 @@
+$OpenBSD: patch-cmake_ConfigureChecks_cmake,v 1.1.1.1 2019/12/31 11:35:55 ajacoutot Exp $
+
+Fix netinet/tcp.h header check to include prerequisite headers.
+
+Index: cmake/ConfigureChecks.cmake
+--- cmake/ConfigureChecks.cmake.orig
++++ cmake/ConfigureChecks.cmake
+@@ -1,4 +1,5 @@
+ include(CheckIncludeFile)
++include(CheckIncludeFiles)
+ check_include_file("arpa/inet.h" HAVE_ARPA_INET_H)
+ check_include_file("dlfcn.h" HAVE_DLFCN_H)
+ check_include_file("gssapi/gssapi.h" HAVE_GSSAPI_GSSAPI_H)
+@@ -6,7 +7,7 @@ check_include_file("inttypes.h" HAVE_INTTYPES_H)
+ check_include_file("memory.h" HAVE_MEMORY_H)
+ check_include_file("netdb.h" HAVE_NETDB_H)
+ check_include_file("netinet/in.h" HAVE_NETINET_IN_H)
+-check_include_file("netinet/tcp.h" HAVE_NETINET_TCP_H)
++check_include_files("sys/types.h;netinet/tcp.h" HAVE_NETINET_TCP_H)
+ check_include_file("net/if.h" HAVE_NET_IF_H)
+ check_include_file("poll.h" HAVE_POLL_H)
+ check_include_file("stdint.h" HAVE_STDINT_H)

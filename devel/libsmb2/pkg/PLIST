@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/31 11:35:55 ajacoutot Exp $
+include/smb2/
+include/smb2/libsmb2-dcerpc-srvsvc.h
+include/smb2/libsmb2-dcerpc.h
+include/smb2/libsmb2-raw.h
+include/smb2/libsmb2.h
+include/smb2/smb2-errors.h
+include/smb2/smb2.h
+lib/cmake/
+lib/cmake/libsmb2/
+lib/cmake/libsmb2/FindSMB2.cmake
+lib/cmake/libsmb2/libsmb2-config-version.cmake
+@lib lib/libsmb2.so.${LIBsmb2_VERSION}
+lib/pkgconfig/libsmb2.pc
