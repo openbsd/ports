@@ -1,2 +1,4 @@
-Fdupes is a program for identifying or deleting duplicate
-files residing within specified directories.
+fdupes identifies duplicate files residing within specified directories.
+It can be used to either just provide a report, or actually delete the
+duplicate files, either automatically or interactively (via a line-based
+or curses interface).

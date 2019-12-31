@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/20 06:23:15 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/12/31 21:02:05 sthen Exp $
 @bin bin/fdupes
 @man man/man1/fdupes.1
-share/doc/fdupes/
-share/doc/fdupes/README
+@man man/man7/fdupes-help.7

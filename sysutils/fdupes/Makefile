@@ -1,29 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/12/31 21:02:05 sthen Exp $
 
-COMMENT=	identify or delete duplicates
+COMMENT=	identify or delete duplicate files
 
-V=		1.51
+V=		2.0.0
 DISTNAME=	fdupes-$V
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://netdial.caribe.net/~adrian2/fdupes.html
-MASTER_SITES=	https://github.com/adrianlopezroche/fdupes/archive/
-WRKDIST=	${WRKDIR}/fdupes-fdupes-$V
+HOMEPAGE=	https://github.com/adrianlopezroche/fdupes
+MASTER_SITES=	https://github.com/adrianlopezroche/fdupes/releases/download/$V/
 
-# BSD
+# MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c
+WANTLIB += c curses pcre2-32
 
-NO_TEST=	Yes
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-ALL_TARGET=
-MAKE_FLAGS=	COMPILER_OPTIONS="-Wall ${CFLAGS}" CC="${CC}"
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fdupes ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/fdupes.1 ${PREFIX}/man/man1/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fdupes
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/fdupes/
+LIB_DEPENDS=	devel/pcre2
 
 .include <bsd.port.mk>
