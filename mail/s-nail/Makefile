@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2019/12/31 22:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/12/31 22:51:41 sthen Exp $
 
 COMMENT=		SysV mail/BSD Mail/POSIX mailx: send and receive mail
 
 DISTNAME=		s-nail-14.9.16
+REVISION=		0
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
 
@@ -46,7 +47,7 @@ FAKE_FLAGS+=		OPT_DEBUG=yes
 
 MAKE_ENV=		VERBOSE=Yes
 
-LIB_DEPENDS=		converters/libiconv
+LIB_DEPENDS+=		converters/libiconv
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nail
