@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmake_Toolset_cmake,v 1.1 2019/12/31 23:37:32 sthen Exp $
+
+Fails on ports-gcc arches: see CMakeError.log
+
+egcc: error: unrecognized command line option '-fuse-ld=lld'; did you mean '-fuse-ld=bfd'?
+
+Index: cmake/Toolset.cmake
+--- cmake/Toolset.cmake.orig
++++ cmake/Toolset.cmake
+@@ -41,7 +41,7 @@ if(NOT LINKER_NAME)
+     endif()
+ endif()
+ 
+-if(LINKER_NAME)
++if(0 AND LINKER_NAME)
+     set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=${LINKER_NAME}")
+     set (CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -fuse-ld=${LINKER_NAME}")
+ 
