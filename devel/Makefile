@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1924 2019/12/30 14:11:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1925 2019/12/31 11:36:42 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -372,6 +372,7 @@
      SUBDIR += libsigc++30
      SUBDIR += libsigsegv
      SUBDIR += libslang
+     SUBDIR += libsmb2
      SUBDIR += libsoup
      SUBDIR += libspectrum
      SUBDIR += libtalloc
