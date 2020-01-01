@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2019/08/22 07:17:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2020/01/01 18:56:32 bcallah Exp $
 
 COMMENT =	text editor inspired by Norton Commander
-DISTNAME =	le-1.16.6
+DISTNAME =	le-1.16.7
 CATEGORIES =	editors
 
 HOMEPAGE =	http://lav.yar.ru/programs.html
