@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/10/01 07:08:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/01/01 14:24:59 sthen Exp $
 @bin bin/cjpeg
 @bin bin/djpeg
 @bin bin/jpegtran
@@ -8,7 +8,7 @@ include/jconfig.h
 include/jerror.h
 include/jmorecfg.h
 include/jpeglib.h
-lib/libjpeg.a
+@static-lib lib/libjpeg.a
 @lib lib/libjpeg.so.${LIBjpeg_VERSION}
 lib/pkgconfig/libjpeg.pc
 @man man/man1/cjpeg.1

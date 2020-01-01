@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2019/11/24 17:21:24 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2020/01/01 14:24:59 sthen Exp $
 
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
-V=		2.0.3
-DISTNAME=	jpeg-turbo-${V}
+V=		2.0.4
+DISTNAME=	libjpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
 EPOCH=		0
 
@@ -18,7 +18,6 @@ HOMEPAGE=	https://libjpeg-turbo.org/
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libjpeg-turbo/}
-DISTFILES=	libjpeg-turbo-${V}.tar.gz
 
 WANTLIB=	c
 
@@ -28,11 +27,9 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/yasm
 .endif
 
-CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-		-DWITH_TURBOJPEG=False
-DEBUG_PACKAGES = ${BUILD_PACKAGES}
-
-WRKDIST=	${WRKDIR}/lib${DISTNAME}
+CONFIGURE_ARGS+= -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+		 -DWITH_TURBOJPEG=False
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jpeg
