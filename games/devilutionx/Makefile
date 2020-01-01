@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/09 22:35:19 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/01 18:52:50 bcallah Exp $
 
 COMMENT =	open source engine recreation for Diablo 1 game
-DISTNAME =	devilutionx-0.5.0
+PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
-GH_COMMIT =	2afc5862a0762bdf1a2005249d5e34245815c595
+GH_TAGNAME =	1.0.0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -34,6 +34,10 @@ USE_GMAKE =	Yes
 USE_NINJA =	No
 
 NO_TEST =	Yes
+
+# Remove DOS line endings from patched files
+post-extract:
+	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' CMakeLists.txt
 
 # No install target
 do-install:
