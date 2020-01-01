@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.197 2019/12/19 11:52:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.198 2020/01/01 10:56:02 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		4.2.1
+V=		4.2.2
 DISTNAME=	ffmpeg-${V}
-REVISION=	2
 EPOCH=		0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -28,7 +27,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
-WANTLIB+=	freetype fribidi gsm iconv lzma m mp3lame ogg opus
+WANTLIB+=	freetype fribidi gsm iconv lzma m mp3lame opus
 WANTLIB+=	pthread sndio speex ssl theoradec theoraenc v4l2
 WANTLIB+=	vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm
 WANTLIB+=	xcb-xfixes xml2 xvidcore z

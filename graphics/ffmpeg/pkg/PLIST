@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2019/08/17 08:23:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2020/01/01 10:56:02 ajacoutot Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -129,23 +129,23 @@ include/libswresample/version.h
 include/libswscale/
 include/libswscale/swscale.h
 include/libswscale/version.h
-lib/libavcodec.a
+@static-lib lib/libavcodec.a
 @lib lib/libavcodec.so.${LIBavcodec_VERSION}
-lib/libavdevice.a
+@static-lib lib/libavdevice.a
 @lib lib/libavdevice.so.${LIBavdevice_VERSION}
-lib/libavfilter.a
+@static-lib lib/libavfilter.a
 @lib lib/libavfilter.so.${LIBavfilter_VERSION}
-lib/libavformat.a
+@static-lib lib/libavformat.a
 @lib lib/libavformat.so.${LIBavformat_VERSION}
-lib/libavresample.a
+@static-lib lib/libavresample.a
 @lib lib/libavresample.so.${LIBavresample_VERSION}
-lib/libavutil.a
+@static-lib lib/libavutil.a
 @lib lib/libavutil.so.${LIBavutil_VERSION}
-lib/libpostproc.a
+@static-lib lib/libpostproc.a
 @lib lib/libpostproc.so.${LIBpostproc_VERSION}
-lib/libswresample.a
+@static-lib lib/libswresample.a
 @lib lib/libswresample.so.${LIBswresample_VERSION}
-lib/libswscale.a
+@static-lib lib/libswscale.a
 @lib lib/libswscale.so.${LIBswscale_VERSION}
 lib/pkgconfig/libavcodec.pc
 lib/pkgconfig/libavdevice.pc
