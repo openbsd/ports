@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/19 14:42:01 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/01 22:02:03 bluhm Exp $
 ${P5SITE}/Test2/
 ${P5SITE}/Test2/AsyncSubtest/
 ${P5SITE}/Test2/AsyncSubtest.pm
@@ -38,15 +38,17 @@ ${P5SITE}/Test2/Compare/Set.pm
 ${P5SITE}/Test2/Compare/String.pm
 ${P5SITE}/Test2/Compare/Undef.pm
 ${P5SITE}/Test2/Compare/Wildcard.pm
-${P5SITE}/Test2/Event/
-${P5SITE}/Test2/Event/Times.pm
 ${P5SITE}/Test2/Manual/
 ${P5SITE}/Test2/Manual.pm
 ${P5SITE}/Test2/Manual/Anatomy/
 ${P5SITE}/Test2/Manual/Anatomy.pm
+${P5SITE}/Test2/Manual/Anatomy/API.pm
 ${P5SITE}/Test2/Manual/Anatomy/Context.pm
 ${P5SITE}/Test2/Manual/Anatomy/EndToEnd.pm
 ${P5SITE}/Test2/Manual/Anatomy/Event.pm
+${P5SITE}/Test2/Manual/Anatomy/Hubs.pm
+${P5SITE}/Test2/Manual/Anatomy/IPC.pm
+${P5SITE}/Test2/Manual/Anatomy/Utilities.pm
 ${P5SITE}/Test2/Manual/Concurrency.pm
 ${P5SITE}/Test2/Manual/Contributing.pm
 ${P5SITE}/Test2/Manual/Testing/
@@ -58,8 +60,15 @@ ${P5SITE}/Test2/Manual/Testing/Todo.pm
 ${P5SITE}/Test2/Manual/Tooling/
 ${P5SITE}/Test2/Manual/Tooling.pm
 ${P5SITE}/Test2/Manual/Tooling/FirstTool.pm
+${P5SITE}/Test2/Manual/Tooling/Formatter.pm
 ${P5SITE}/Test2/Manual/Tooling/Nesting.pm
+${P5SITE}/Test2/Manual/Tooling/Plugin/
+${P5SITE}/Test2/Manual/Tooling/Plugin/TestExit.pm
+${P5SITE}/Test2/Manual/Tooling/Plugin/TestingDone.pm
+${P5SITE}/Test2/Manual/Tooling/Plugin/ToolCompletes.pm
+${P5SITE}/Test2/Manual/Tooling/Plugin/ToolStarts.pm
 ${P5SITE}/Test2/Manual/Tooling/Subtest.pm
+${P5SITE}/Test2/Manual/Tooling/TestBuilder.pm
 ${P5SITE}/Test2/Manual/Tooling/Testing.pm
 ${P5SITE}/Test2/Mock.pm
 ${P5SITE}/Test2/Plugin/
@@ -158,9 +167,13 @@ ${P5SITE}/Test2/Workflow/Task/Group.pm
 @man man/man3p/Test2::Compare::Wildcard.3p
 @man man/man3p/Test2::Manual.3p
 @man man/man3p/Test2::Manual::Anatomy.3p
+@man man/man3p/Test2::Manual::Anatomy::API.3p
 @man man/man3p/Test2::Manual::Anatomy::Context.3p
 @man man/man3p/Test2::Manual::Anatomy::EndToEnd.3p
 @man man/man3p/Test2::Manual::Anatomy::Event.3p
+@man man/man3p/Test2::Manual::Anatomy::Hubs.3p
+@man man/man3p/Test2::Manual::Anatomy::IPC.3p
+@man man/man3p/Test2::Manual::Anatomy::Utilities.3p
 @man man/man3p/Test2::Manual::Concurrency.3p
 @man man/man3p/Test2::Manual::Contributing.3p
 @man man/man3p/Test2::Manual::Testing.3p
@@ -170,8 +183,14 @@ ${P5SITE}/Test2/Workflow/Task/Group.pm
 @man man/man3p/Test2::Manual::Testing::Todo.3p
 @man man/man3p/Test2::Manual::Tooling.3p
 @man man/man3p/Test2::Manual::Tooling::FirstTool.3p
+@man man/man3p/Test2::Manual::Tooling::Formatter.3p
 @man man/man3p/Test2::Manual::Tooling::Nesting.3p
+@man man/man3p/Test2::Manual::Tooling::Plugin::TestExit.3p
+@man man/man3p/Test2::Manual::Tooling::Plugin::TestingDone.3p
+@man man/man3p/Test2::Manual::Tooling::Plugin::ToolCompletes.3p
+@man man/man3p/Test2::Manual::Tooling::Plugin::ToolStarts.3p
 @man man/man3p/Test2::Manual::Tooling::Subtest.3p
+@man man/man3p/Test2::Manual::Tooling::TestBuilder.3p
 @man man/man3p/Test2::Manual::Tooling::Testing.3p
 @man man/man3p/Test2::Mock.3p
 @man man/man3p/Test2::Plugin.3p
