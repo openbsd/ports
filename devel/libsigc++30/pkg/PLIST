@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/07 15:51:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/01 18:54:26 ajacoutot Exp $
 include/sigc++-3.0/
 include/sigc++-3.0/sigc++/
 include/sigc++-3.0/sigc++/adaptors/
@@ -44,7 +44,7 @@ include/sigc++-3.0/sigc++/tuple-utils/tuple_transform_each.h
 include/sigc++-3.0/sigc++/type_traits.h
 include/sigc++-3.0/sigc++/visit_each.h
 include/sigc++-3.0/sigc++/weak_raw_ptr.h
-lib/libsigc-3.0.a
+@static-lib lib/libsigc-3.0.a
 lib/libsigc-3.0.la
 @lib lib/libsigc-3.0.so.${LIBsigc-3.0_VERSION}
 lib/pkgconfig/sigc++-3.0.pc
@@ -59,8 +59,6 @@ share/doc/libsigc++-3.0/
 share/doc/libsigc++-3.0/reference/
 share/doc/libsigc++-3.0/reference/html/
 share/doc/libsigc++-3.0/reference/html/annotated.html
-share/doc/libsigc++-3.0/reference/html/arrowdown.png
-share/doc/libsigc++-3.0/reference/html/arrowright.png
 share/doc/libsigc++-3.0/reference/html/bc_s.png
 share/doc/libsigc++-3.0/reference/html/bdwn.png
 share/doc/libsigc++-3.0/reference/html/classes.html
@@ -108,7 +106,6 @@ share/doc/libsigc++-3.0/reference/html/doc.png
 share/doc/libsigc++-3.0/reference/html/doxygen-extra.css
 share/doc/libsigc++-3.0/reference/html/doxygen.css
 share/doc/libsigc++-3.0/reference/html/doxygen.png
-share/doc/libsigc++-3.0/reference/html/dynsections.js
 share/doc/libsigc++-3.0/reference/html/folderclosed.png
 share/doc/libsigc++-3.0/reference/html/folderopen.png
 share/doc/libsigc++-3.0/reference/html/functions.html
@@ -165,6 +162,8 @@ share/doc/libsigc++-3.0/reference/html/inherit_graph_8.png
 share/doc/libsigc++-3.0/reference/html/inherit_graph_9.png
 share/doc/libsigc++-3.0/reference/html/inherits.html
 share/doc/libsigc++-3.0/reference/html/jquery.js
+share/doc/libsigc++-3.0/reference/html/menu.js
+share/doc/libsigc++-3.0/reference/html/menudata.js
 share/doc/libsigc++-3.0/reference/html/modules.html
 share/doc/libsigc++-3.0/reference/html/namespacemembers.html
 share/doc/libsigc++-3.0/reference/html/namespacemembers_func.html
