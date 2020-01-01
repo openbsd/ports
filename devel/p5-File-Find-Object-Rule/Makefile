@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/01/01 19:18:39 bluhm Exp $
 
 COMMENT =	alternative interface to File::Find::Object
 
-DISTNAME =	File-Find-Object-Rule-0.0310
+DISTNAME =	File-Find-Object-Rule-0.0311
 
 CATEGORIES =	devel
 
