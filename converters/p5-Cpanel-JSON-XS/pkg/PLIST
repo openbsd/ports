@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/03 18:58:05 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/01/01 19:13:58 bluhm Exp $
 bin/cpanel_json_xs
 ${P5ARCH}/
 ${P5ARCH}/Cpanel/
@@ -11,7 +11,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Cpanel/
 ${P5ARCH}/auto/Cpanel/JSON/
 ${P5ARCH}/auto/Cpanel/JSON/XS/
-${P5ARCH}/auto/Cpanel/JSON/XS/XS.so
+@so ${P5ARCH}/auto/Cpanel/JSON/XS/XS.so
 @man man/man1/cpanel_json_xs.1
 @man man/man3p/Cpanel::JSON::XS.3p
 @man man/man3p/Cpanel::JSON::XS::Boolean.3p
