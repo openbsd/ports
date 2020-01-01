@@ -1,0 +1,14 @@
+$OpenBSD: patch-Common_mak,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+
+Index: Common.mak
+--- Common.mak.orig
++++ Common.mak
+@@ -714,7 +714,7 @@ ifeq (0,$(RELEASE))
+     F_NO_STACK_PROTECTOR :=
+ else
+     ifeq (0,$(CLANG))
+-        COMMONFLAGS += -funswitch-loops
++        #COMMONFLAGS += -funswitch-loops
+     endif
+ 
+     ifeq (0,$(FORCEDEBUG))

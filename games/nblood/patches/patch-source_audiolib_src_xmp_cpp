@@ -1,0 +1,17 @@
+$OpenBSD: patch-source_audiolib_src_xmp_cpp,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+
+use packaged libxmp instead of bundled libxmp-lite, works around
+build issue when libxmp package is installed
+
+Index: source/audiolib/src/xmp.cpp
+--- source/audiolib/src/xmp.cpp.orig
++++ source/audiolib/src/xmp.cpp
+@@ -9,7 +9,7 @@
+ #include "pragmas.h"
+ 
+ #define BUILDING_STATIC
+-#include "libxmp-lite/xmp.h"
++#include <xmp.h>
+ 
+ typedef struct {
+     void * ptr;

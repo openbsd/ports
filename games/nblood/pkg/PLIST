@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+@bin bin/nblood
+@bin bin/pcexhumed
+@bin bin/rednukem
+share/doc/nblood/
+share/doc/nblood/AUTHORS.md
+share/doc/nblood/README.md
+share/doc/nblood/buildlic.txt
+share/doc/nblood/gpl-2.0.txt
+share/examples/nblood/
+share/examples/nblood/_clipshape0.map
+share/examples/nblood/a.m32
+share/examples/nblood/aspect.map
+share/examples/nblood/dump_used_assets.m32
+share/examples/nblood/m32script_ex.map
+share/examples/nblood/r_usenewshading.map
+share/examples/nblood/ror.map
+share/examples/nblood/splitscr.con
+share/examples/nblood/spriteclip.txt
+share/examples/nblood/startpos.m32
+share/examples/nblood/test_tileoffsets.map
+share/examples/nblood/tests.m32
+share/examples/nblood/trueror1.map
+share/examples/nblood/weapons.sample.con
+share/nblood/
+share/rednukem/

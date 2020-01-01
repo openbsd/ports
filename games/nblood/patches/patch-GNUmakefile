@@ -1,0 +1,58 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+
+Index: GNUmakefile
+--- GNUmakefile.orig
++++ GNUmakefile
+@@ -260,7 +260,6 @@ engine_objs := \
+     hightile.cpp \
+     klzw.cpp \
+     kplib.cpp \
+-    lz4.c \
+     md4.cpp \
+     mhk.cpp \
+     miniz.c \
+@@ -423,8 +422,8 @@ ifeq ($(RENDERTYPE),SDL)
+ endif
+ 
+ ifneq (0,$(HAVE_XMP))
+-    audiolib_cflags += -I$(libxmplite_inc)
+-    audiolib_deps += libxmplite
++    audiolib_cflags += `$(PKG_CONFIG) --cflags libxmp`
++    audiolib_deps += 
+ endif
+ 
+ 
+@@ -704,7 +703,7 @@ ifeq ($(SUBPLATFORM),LINUX)
+ endif
+ 
+ ifeq ($(PLATFORM),BSD)
+-    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo
++    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo -llz4 -lxmp
+ endif
+ 
+ ifeq ($(PLATFORM),DARWIN)
+@@ -1232,7 +1231,7 @@ endif
+ 
+ #### Final setup
+ 
+-COMPILERFLAGS += \
++COMPILERFLAGS := \
+     -I$(engine_inc) \
+     -I$(mact_inc) \
+     -I$(audiolib_inc) \
+@@ -1240,6 +1239,7 @@ COMPILERFLAGS += \
+     -I$(voidwrap_inc) \
+     -I$(libsmackerdec_inc) \
+     -MP -MMD \
++    $(COMPILERFLAGS)
+ 
+ ifneq (0,$(USE_PHYSFS))
+     COMPILERFLAGS += -I$(physfs_inc) -DUSE_PHYSFS
+@@ -1260,7 +1260,6 @@ libraries := \
+     audiolib \
+     engine \
+     glad \
+-    libxmplite \
+     lpeg \
+     mact \
+     voidwrap \

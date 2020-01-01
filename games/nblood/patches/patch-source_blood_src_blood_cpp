@@ -1,0 +1,41 @@
+$OpenBSD: patch-source_blood_src_blood_cpp,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+
+store log file in ~/.config/nblood/
+
+Index: source/blood/src/blood.cpp
+--- source/blood/src/blood.cpp.orig
++++ source/blood/src/blood.cpp
+@@ -1536,6 +1536,9 @@ static int32_t check_filename_casing(void)
+ int app_main(int argc, char const * const * argv)
+ {
+     char buffer[BMAX_PATH];
++    char logpath[BMAX_PATH];
++    char *homedir;
++    int r;
+     margc = argc;
+     margv = argv;
+ #ifdef _WIN32
+@@ -1562,7 +1565,22 @@ int app_main(int argc, char const * const * argv)
+ #endif
+ #endif
+ 
+-    OSD_SetLogFile(APPBASENAME ".log");
++    homedir = Bgethomedir();
++    if (!g_useCwd && homedir != NULL)
++    {
++        Bsnprintf(logpath, sizeof(logpath), "%s/.config/%s", homedir, APPBASENAME);
++        r = Bmkdir(logpath, S_IRWXU);
++        if (r == 0 || (r == -1 && errno == EEXIST))
++        {
++            Bsnprintf(logpath, sizeof(logpath), "%s/.config/%s/%s.log", homedir, APPBASENAME, APPBASENAME);
++            OSD_SetLogFile(logpath);
++        }
++        else
++            OSD_SetLogFile(APPBASENAME ".log");
++    }
++    else
++        OSD_SetLogFile(APPBASENAME ".log");
++    Bfree(homedir);
+ 
+     OSD_SetFunctions(NULL,
+                      NULL,

@@ -1,0 +1,51 @@
+$OpenBSD: patch-source_rr_src_game_cpp,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+
+store log file in ~/.config/rednukem/
+
+Index: source/rr/src/game.cpp
+--- source/rr/src/game.cpp.orig
++++ source/rr/src/game.cpp
+@@ -7785,6 +7785,9 @@ EDUKE32_STATIC_ASSERT(sizeof(DukePlayer_t)%4 == 0);
+ 
+ int app_main(int argc, char const * const * argv)
+ {
++    char logpath[BMAX_PATH];
++    char *homedir;
++    int r;
+ #ifndef NETCODE_DISABLE
+     if (enet_initialize() != 0)
+         initprintf("An error occurred while initializing ENet.\n");
+@@ -7815,21 +7818,22 @@ int app_main(int argc, char const * const * argv)
+ 
+     G_ExtPreInit(argc, argv);
+ 
+-#ifdef __APPLE__
+-    if (!g_useCwd)
++    homedir = Bgethomedir();
++    if (!g_useCwd && homedir != NULL)
+     {
+-        char cwd[BMAX_PATH];
+-        char *homedir = Bgethomedir();
+-        if (homedir)
+-            Bsnprintf(cwd, sizeof(cwd), "%s/Library/Logs/" APPBASENAME ".log", homedir);
++        Bsnprintf(logpath, sizeof(logpath), "%s/.config/%s", homedir, APPBASENAME);
++        r = Bmkdir(logpath, S_IRWXU);
++        if (r == 0 || (r == -1 && errno == EEXIST))
++        {
++            Bsnprintf(logpath, sizeof(logpath), "%s/.config/%s/%s.log", homedir, APPBASENAME, APPBASENAME);
++            OSD_SetLogFile(logpath);
++        }
+         else
+-            Bstrcpy(cwd, APPBASENAME ".log");
+-        OSD_SetLogFile(cwd);
+-        Bfree(homedir);
++            OSD_SetLogFile(APPBASENAME ".log");
+     }
+     else
+-#endif
+-    OSD_SetLogFile(APPBASENAME ".log");
++        OSD_SetLogFile(APPBASENAME ".log");
++    Bfree(homedir);
+ 
+     OSD_SetFunctions(GAME_drawosdchar,
+                      GAME_drawosdstr,
