@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2019/12/17 16:17:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.412 2020/01/01 02:29:25 jsg Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -194,6 +194,7 @@
      SUBDIR += mvdsv
      SUBDIR += mysticmine
      SUBDIR += naev
+     SUBDIR += nblood
      SUBDIR += nethack
      SUBDIR += netris
      SUBDIR += neverball
