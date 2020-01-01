@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/01 23:52:51 bluhm Exp $
 
 COMMENT =	convert POD to Markdown
 
-DISTNAME =	Pod-Markdown-3.101
+DISTNAME =	Pod-Markdown-3.200
 
 CATEGORIES =	textproc
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# Perl 5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-TEST_DEPENDS =		devel/p5-Test-Differences \
-			www/p5-HTML-Parser
+RUN_DEPENDS =		www/p5-HTML-Parser \
+			www/p5-URI
+TEST_DEPENDS =		devel/p5-Test-Differences
 
 PKG_ARCH =		*
 
