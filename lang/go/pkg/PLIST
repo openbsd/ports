@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2019/10/24 16:22:07 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/01/01 13:03:39 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -1005,6 +1005,7 @@ go/pkg${GOCFG}/internal/goversion.a
 go/pkg${GOCFG}/internal/lazyregexp.a
 go/pkg${GOCFG}/internal/lazytemplate.a
 go/pkg${GOCFG}/internal/nettrace.a
+go/pkg${GOCFG}/internal/obscuretestdata.a
 go/pkg${GOCFG}/internal/oserror.a
 go/pkg${GOCFG}/internal/poll.a
 go/pkg${GOCFG}/internal/race.a
@@ -1237,7 +1238,7 @@ go/src/archive/zip/struct.go
 go/src/archive/zip/testdata/
 go/src/archive/zip/testdata/crc32-not-streamed.zip
 go/src/archive/zip/testdata/dd.zip
-go/src/archive/zip/testdata/go-no-datadesc-sig.zip
+go/src/archive/zip/testdata/go-no-datadesc-sig.zip.base64
 go/src/archive/zip/testdata/go-with-datadesc-sig.zip
 go/src/archive/zip/testdata/gophercolor16x16.png
 go/src/archive/zip/testdata/readme.notzip
@@ -2476,6 +2477,7 @@ go/src/cmd/go/testdata/script/mod_init_path.txt
 go/src/cmd/go/testdata/script/mod_install_versioned.txt
 go/src/cmd/go/testdata/script/mod_internal.txt
 go/src/cmd/go/testdata/script/mod_invalid_version.txt
+go/src/cmd/go/testdata/script/mod_issue35317.txt
 go/src/cmd/go/testdata/script/mod_list.txt
 go/src/cmd/go/testdata/script/mod_list_bad_import.txt
 go/src/cmd/go/testdata/script/mod_list_compiled_concurrent.txt
@@ -2948,10 +2950,10 @@ go/src/cmd/internal/buildid/buildid_test.go
 go/src/cmd/internal/buildid/note.go
 go/src/cmd/internal/buildid/rewrite.go
 go/src/cmd/internal/buildid/testdata/
-go/src/cmd/internal/buildid/testdata/a.elf
-go/src/cmd/internal/buildid/testdata/a.macho
-go/src/cmd/internal/buildid/testdata/a.pe
-go/src/cmd/internal/buildid/testdata/p.a
+go/src/cmd/internal/buildid/testdata/a.elf.base64
+go/src/cmd/internal/buildid/testdata/a.macho.base64
+go/src/cmd/internal/buildid/testdata/a.pe.base64
+go/src/cmd/internal/buildid/testdata/p.a.base64
 go/src/cmd/internal/dwarf/
 go/src/cmd/internal/dwarf/dwarf.go
 go/src/cmd/internal/dwarf/dwarf_defs.go
@@ -3932,7 +3934,7 @@ go/src/compress/gzip/gzip.go
 go/src/compress/gzip/gzip_test.go
 go/src/compress/gzip/issue14937_test.go
 go/src/compress/gzip/testdata/
-go/src/compress/gzip/testdata/issue6550.gz
+go/src/compress/gzip/testdata/issue6550.gz.base64
 go/src/compress/lzw/
 go/src/compress/lzw/reader.go
 go/src/compress/lzw/reader_test.go
@@ -4445,14 +4447,14 @@ go/src/debug/macho/macho.go
 go/src/debug/macho/reloctype.go
 go/src/debug/macho/reloctype_string.go
 go/src/debug/macho/testdata/
-go/src/debug/macho/testdata/clang-386-darwin-exec-with-rpath
-go/src/debug/macho/testdata/clang-386-darwin.obj
-go/src/debug/macho/testdata/clang-amd64-darwin-exec-with-rpath
-go/src/debug/macho/testdata/clang-amd64-darwin.obj
-go/src/debug/macho/testdata/fat-gcc-386-amd64-darwin-exec
-go/src/debug/macho/testdata/gcc-386-darwin-exec
-go/src/debug/macho/testdata/gcc-amd64-darwin-exec
-go/src/debug/macho/testdata/gcc-amd64-darwin-exec-debug
+go/src/debug/macho/testdata/clang-386-darwin-exec-with-rpath.base64
+go/src/debug/macho/testdata/clang-386-darwin.obj.base64
+go/src/debug/macho/testdata/clang-amd64-darwin-exec-with-rpath.base64
+go/src/debug/macho/testdata/clang-amd64-darwin.obj.base64
+go/src/debug/macho/testdata/fat-gcc-386-amd64-darwin-exec.base64
+go/src/debug/macho/testdata/gcc-386-darwin-exec.base64
+go/src/debug/macho/testdata/gcc-amd64-darwin-exec-debug.base64
+go/src/debug/macho/testdata/gcc-amd64-darwin-exec.base64
 go/src/debug/macho/testdata/hello.c
 go/src/debug/pe/
 go/src/debug/pe/file.go
@@ -5337,6 +5339,8 @@ go/src/internal/lazytemplate/
 go/src/internal/lazytemplate/lazytemplate.go
 go/src/internal/nettrace/
 go/src/internal/nettrace/nettrace.go
+go/src/internal/obscuretestdata/
+go/src/internal/obscuretestdata/obscuretestdata.go
 go/src/internal/oserror/
 go/src/internal/oserror/errors.go
 go/src/internal/poll/
