@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.61 2019/08/17 17:20:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2020/01/01 10:54:26 ajacoutot Exp $
 
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.33
+DISTNAME=	GraphicsMagick-1.3.34
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
@@ -20,7 +20,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext bz2 c
 WANTLIB += freetype iconv jasper jbig jpeg lcms2 ltdl lzma m png
-WANTLIB += tiff webp webpmux wmflite-0.2 xcb xml2 z
+WANTLIB += tiff webp webpmux wmflite-0.2 xcb xml2 z zstd
 
 WANTLIB += perl # uses perl ABI
 
@@ -28,6 +28,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/xz \
+			archivers/zstd \
 			converters/libiconv \
 			devel/libtool,-ltdl \
 			graphics/jasper \
@@ -52,7 +53,6 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-quantum-depth=16 \
 			--without-dps \
 			--without-trio \
-			--without-zstd \
 			--disable-ltdl-install \
 			--disable-openmp
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \

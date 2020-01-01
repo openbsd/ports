@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/06/16 09:03:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/01/01 10:54:26 ajacoutot Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -100,207 +100,207 @@ lib/GraphicsMagick/config/type.mgk
 lib/GraphicsMagick/modules-Q16/
 lib/GraphicsMagick/modules-Q16/coders/
 lib/GraphicsMagick/modules-Q16/coders/art.la
-lib/GraphicsMagick/modules-Q16/coders/art.so
+@so lib/GraphicsMagick/modules-Q16/coders/art.so
 lib/GraphicsMagick/modules-Q16/coders/avs.la
-lib/GraphicsMagick/modules-Q16/coders/avs.so
+@so lib/GraphicsMagick/modules-Q16/coders/avs.so
 lib/GraphicsMagick/modules-Q16/coders/bmp.la
-lib/GraphicsMagick/modules-Q16/coders/bmp.so
+@so lib/GraphicsMagick/modules-Q16/coders/bmp.so
 lib/GraphicsMagick/modules-Q16/coders/braille.la
-lib/GraphicsMagick/modules-Q16/coders/braille.so
+@so lib/GraphicsMagick/modules-Q16/coders/braille.so
 lib/GraphicsMagick/modules-Q16/coders/cals.la
-lib/GraphicsMagick/modules-Q16/coders/cals.so
+@so lib/GraphicsMagick/modules-Q16/coders/cals.so
 lib/GraphicsMagick/modules-Q16/coders/caption.la
-lib/GraphicsMagick/modules-Q16/coders/caption.so
+@so lib/GraphicsMagick/modules-Q16/coders/caption.so
 lib/GraphicsMagick/modules-Q16/coders/cineon.la
-lib/GraphicsMagick/modules-Q16/coders/cineon.so
+@so lib/GraphicsMagick/modules-Q16/coders/cineon.so
 lib/GraphicsMagick/modules-Q16/coders/cmyk.la
-lib/GraphicsMagick/modules-Q16/coders/cmyk.so
+@so lib/GraphicsMagick/modules-Q16/coders/cmyk.so
 lib/GraphicsMagick/modules-Q16/coders/cut.la
-lib/GraphicsMagick/modules-Q16/coders/cut.so
+@so lib/GraphicsMagick/modules-Q16/coders/cut.so
 lib/GraphicsMagick/modules-Q16/coders/dcm.la
-lib/GraphicsMagick/modules-Q16/coders/dcm.so
+@so lib/GraphicsMagick/modules-Q16/coders/dcm.so
 lib/GraphicsMagick/modules-Q16/coders/dcraw.la
-lib/GraphicsMagick/modules-Q16/coders/dcraw.so
+@so lib/GraphicsMagick/modules-Q16/coders/dcraw.so
 lib/GraphicsMagick/modules-Q16/coders/dib.la
-lib/GraphicsMagick/modules-Q16/coders/dib.so
+@so lib/GraphicsMagick/modules-Q16/coders/dib.so
 lib/GraphicsMagick/modules-Q16/coders/dpx.la
-lib/GraphicsMagick/modules-Q16/coders/dpx.so
+@so lib/GraphicsMagick/modules-Q16/coders/dpx.so
 lib/GraphicsMagick/modules-Q16/coders/ept.la
-lib/GraphicsMagick/modules-Q16/coders/ept.so
+@so lib/GraphicsMagick/modules-Q16/coders/ept.so
 lib/GraphicsMagick/modules-Q16/coders/fax.la
-lib/GraphicsMagick/modules-Q16/coders/fax.so
+@so lib/GraphicsMagick/modules-Q16/coders/fax.so
 lib/GraphicsMagick/modules-Q16/coders/fits.la
-lib/GraphicsMagick/modules-Q16/coders/fits.so
+@so lib/GraphicsMagick/modules-Q16/coders/fits.so
 lib/GraphicsMagick/modules-Q16/coders/gif.la
-lib/GraphicsMagick/modules-Q16/coders/gif.so
+@so lib/GraphicsMagick/modules-Q16/coders/gif.so
 lib/GraphicsMagick/modules-Q16/coders/gradient.la
-lib/GraphicsMagick/modules-Q16/coders/gradient.so
+@so lib/GraphicsMagick/modules-Q16/coders/gradient.so
 lib/GraphicsMagick/modules-Q16/coders/gray.la
-lib/GraphicsMagick/modules-Q16/coders/gray.so
+@so lib/GraphicsMagick/modules-Q16/coders/gray.so
 lib/GraphicsMagick/modules-Q16/coders/histogram.la
-lib/GraphicsMagick/modules-Q16/coders/histogram.so
+@so lib/GraphicsMagick/modules-Q16/coders/histogram.so
 lib/GraphicsMagick/modules-Q16/coders/hrz.la
-lib/GraphicsMagick/modules-Q16/coders/hrz.so
+@so lib/GraphicsMagick/modules-Q16/coders/hrz.so
 lib/GraphicsMagick/modules-Q16/coders/html.la
-lib/GraphicsMagick/modules-Q16/coders/html.so
+@so lib/GraphicsMagick/modules-Q16/coders/html.so
 lib/GraphicsMagick/modules-Q16/coders/icon.la
-lib/GraphicsMagick/modules-Q16/coders/icon.so
+@so lib/GraphicsMagick/modules-Q16/coders/icon.so
 lib/GraphicsMagick/modules-Q16/coders/identity.la
-lib/GraphicsMagick/modules-Q16/coders/identity.so
+@so lib/GraphicsMagick/modules-Q16/coders/identity.so
 lib/GraphicsMagick/modules-Q16/coders/info.la
-lib/GraphicsMagick/modules-Q16/coders/info.so
+@so lib/GraphicsMagick/modules-Q16/coders/info.so
 lib/GraphicsMagick/modules-Q16/coders/jbig.la
-lib/GraphicsMagick/modules-Q16/coders/jbig.so
+@so lib/GraphicsMagick/modules-Q16/coders/jbig.so
 lib/GraphicsMagick/modules-Q16/coders/jnx.la
-lib/GraphicsMagick/modules-Q16/coders/jnx.so
+@so lib/GraphicsMagick/modules-Q16/coders/jnx.so
 lib/GraphicsMagick/modules-Q16/coders/jp2.la
-lib/GraphicsMagick/modules-Q16/coders/jp2.so
+@so lib/GraphicsMagick/modules-Q16/coders/jp2.so
 lib/GraphicsMagick/modules-Q16/coders/jpeg.la
-lib/GraphicsMagick/modules-Q16/coders/jpeg.so
+@so lib/GraphicsMagick/modules-Q16/coders/jpeg.so
 lib/GraphicsMagick/modules-Q16/coders/label.la
-lib/GraphicsMagick/modules-Q16/coders/label.so
+@so lib/GraphicsMagick/modules-Q16/coders/label.so
 lib/GraphicsMagick/modules-Q16/coders/locale.la
-lib/GraphicsMagick/modules-Q16/coders/locale.so
+@so lib/GraphicsMagick/modules-Q16/coders/locale.so
 lib/GraphicsMagick/modules-Q16/coders/logo.la
-lib/GraphicsMagick/modules-Q16/coders/logo.so
+@so lib/GraphicsMagick/modules-Q16/coders/logo.so
 lib/GraphicsMagick/modules-Q16/coders/mac.la
-lib/GraphicsMagick/modules-Q16/coders/mac.so
+@so lib/GraphicsMagick/modules-Q16/coders/mac.so
 lib/GraphicsMagick/modules-Q16/coders/map.la
-lib/GraphicsMagick/modules-Q16/coders/map.so
+@so lib/GraphicsMagick/modules-Q16/coders/map.so
 lib/GraphicsMagick/modules-Q16/coders/mat.la
-lib/GraphicsMagick/modules-Q16/coders/mat.so
+@so lib/GraphicsMagick/modules-Q16/coders/mat.so
 lib/GraphicsMagick/modules-Q16/coders/matte.la
-lib/GraphicsMagick/modules-Q16/coders/matte.so
+@so lib/GraphicsMagick/modules-Q16/coders/matte.so
 lib/GraphicsMagick/modules-Q16/coders/meta.la
-lib/GraphicsMagick/modules-Q16/coders/meta.so
+@so lib/GraphicsMagick/modules-Q16/coders/meta.so
 lib/GraphicsMagick/modules-Q16/coders/miff.la
-lib/GraphicsMagick/modules-Q16/coders/miff.so
+@so lib/GraphicsMagick/modules-Q16/coders/miff.so
 lib/GraphicsMagick/modules-Q16/coders/mono.la
-lib/GraphicsMagick/modules-Q16/coders/mono.so
+@so lib/GraphicsMagick/modules-Q16/coders/mono.so
 lib/GraphicsMagick/modules-Q16/coders/mpc.la
-lib/GraphicsMagick/modules-Q16/coders/mpc.so
+@so lib/GraphicsMagick/modules-Q16/coders/mpc.so
 lib/GraphicsMagick/modules-Q16/coders/mpeg.la
-lib/GraphicsMagick/modules-Q16/coders/mpeg.so
+@so lib/GraphicsMagick/modules-Q16/coders/mpeg.so
 lib/GraphicsMagick/modules-Q16/coders/mpr.la
-lib/GraphicsMagick/modules-Q16/coders/mpr.so
+@so lib/GraphicsMagick/modules-Q16/coders/mpr.so
 lib/GraphicsMagick/modules-Q16/coders/msl.la
-lib/GraphicsMagick/modules-Q16/coders/msl.so
+@so lib/GraphicsMagick/modules-Q16/coders/msl.so
 lib/GraphicsMagick/modules-Q16/coders/mtv.la
-lib/GraphicsMagick/modules-Q16/coders/mtv.so
+@so lib/GraphicsMagick/modules-Q16/coders/mtv.so
 lib/GraphicsMagick/modules-Q16/coders/mvg.la
-lib/GraphicsMagick/modules-Q16/coders/mvg.so
+@so lib/GraphicsMagick/modules-Q16/coders/mvg.so
 lib/GraphicsMagick/modules-Q16/coders/null.la
-lib/GraphicsMagick/modules-Q16/coders/null.so
+@so lib/GraphicsMagick/modules-Q16/coders/null.so
 lib/GraphicsMagick/modules-Q16/coders/otb.la
-lib/GraphicsMagick/modules-Q16/coders/otb.so
+@so lib/GraphicsMagick/modules-Q16/coders/otb.so
 lib/GraphicsMagick/modules-Q16/coders/palm.la
-lib/GraphicsMagick/modules-Q16/coders/palm.so
+@so lib/GraphicsMagick/modules-Q16/coders/palm.so
 lib/GraphicsMagick/modules-Q16/coders/pcd.la
-lib/GraphicsMagick/modules-Q16/coders/pcd.so
+@so lib/GraphicsMagick/modules-Q16/coders/pcd.so
 lib/GraphicsMagick/modules-Q16/coders/pcl.la
-lib/GraphicsMagick/modules-Q16/coders/pcl.so
+@so lib/GraphicsMagick/modules-Q16/coders/pcl.so
 lib/GraphicsMagick/modules-Q16/coders/pcx.la
-lib/GraphicsMagick/modules-Q16/coders/pcx.so
+@so lib/GraphicsMagick/modules-Q16/coders/pcx.so
 lib/GraphicsMagick/modules-Q16/coders/pdb.la
-lib/GraphicsMagick/modules-Q16/coders/pdb.so
+@so lib/GraphicsMagick/modules-Q16/coders/pdb.so
 lib/GraphicsMagick/modules-Q16/coders/pdf.la
-lib/GraphicsMagick/modules-Q16/coders/pdf.so
+@so lib/GraphicsMagick/modules-Q16/coders/pdf.so
 lib/GraphicsMagick/modules-Q16/coders/pict.la
-lib/GraphicsMagick/modules-Q16/coders/pict.so
+@so lib/GraphicsMagick/modules-Q16/coders/pict.so
 lib/GraphicsMagick/modules-Q16/coders/pix.la
-lib/GraphicsMagick/modules-Q16/coders/pix.so
+@so lib/GraphicsMagick/modules-Q16/coders/pix.so
 lib/GraphicsMagick/modules-Q16/coders/plasma.la
-lib/GraphicsMagick/modules-Q16/coders/plasma.so
+@so lib/GraphicsMagick/modules-Q16/coders/plasma.so
 lib/GraphicsMagick/modules-Q16/coders/png.la
-lib/GraphicsMagick/modules-Q16/coders/png.so
+@so lib/GraphicsMagick/modules-Q16/coders/png.so
 lib/GraphicsMagick/modules-Q16/coders/pnm.la
-lib/GraphicsMagick/modules-Q16/coders/pnm.so
+@so lib/GraphicsMagick/modules-Q16/coders/pnm.so
 lib/GraphicsMagick/modules-Q16/coders/preview.la
-lib/GraphicsMagick/modules-Q16/coders/preview.so
+@so lib/GraphicsMagick/modules-Q16/coders/preview.so
 lib/GraphicsMagick/modules-Q16/coders/ps.la
-lib/GraphicsMagick/modules-Q16/coders/ps.so
+@so lib/GraphicsMagick/modules-Q16/coders/ps.so
 lib/GraphicsMagick/modules-Q16/coders/ps2.la
-lib/GraphicsMagick/modules-Q16/coders/ps2.so
+@so lib/GraphicsMagick/modules-Q16/coders/ps2.so
 lib/GraphicsMagick/modules-Q16/coders/ps3.la
-lib/GraphicsMagick/modules-Q16/coders/ps3.so
+@so lib/GraphicsMagick/modules-Q16/coders/ps3.so
 lib/GraphicsMagick/modules-Q16/coders/pwp.la
-lib/GraphicsMagick/modules-Q16/coders/pwp.so
+@so lib/GraphicsMagick/modules-Q16/coders/pwp.so
 lib/GraphicsMagick/modules-Q16/coders/rgb.la
-lib/GraphicsMagick/modules-Q16/coders/rgb.so
+@so lib/GraphicsMagick/modules-Q16/coders/rgb.so
 lib/GraphicsMagick/modules-Q16/coders/rla.la
-lib/GraphicsMagick/modules-Q16/coders/rla.so
+@so lib/GraphicsMagick/modules-Q16/coders/rla.so
 lib/GraphicsMagick/modules-Q16/coders/rle.la
-lib/GraphicsMagick/modules-Q16/coders/rle.so
+@so lib/GraphicsMagick/modules-Q16/coders/rle.so
 lib/GraphicsMagick/modules-Q16/coders/sct.la
-lib/GraphicsMagick/modules-Q16/coders/sct.so
+@so lib/GraphicsMagick/modules-Q16/coders/sct.so
 lib/GraphicsMagick/modules-Q16/coders/sfw.la
-lib/GraphicsMagick/modules-Q16/coders/sfw.so
+@so lib/GraphicsMagick/modules-Q16/coders/sfw.so
 lib/GraphicsMagick/modules-Q16/coders/sgi.la
-lib/GraphicsMagick/modules-Q16/coders/sgi.so
+@so lib/GraphicsMagick/modules-Q16/coders/sgi.so
 lib/GraphicsMagick/modules-Q16/coders/stegano.la
-lib/GraphicsMagick/modules-Q16/coders/stegano.so
+@so lib/GraphicsMagick/modules-Q16/coders/stegano.so
 lib/GraphicsMagick/modules-Q16/coders/sun.la
-lib/GraphicsMagick/modules-Q16/coders/sun.so
+@so lib/GraphicsMagick/modules-Q16/coders/sun.so
 lib/GraphicsMagick/modules-Q16/coders/svg.la
-lib/GraphicsMagick/modules-Q16/coders/svg.so
+@so lib/GraphicsMagick/modules-Q16/coders/svg.so
 lib/GraphicsMagick/modules-Q16/coders/tga.la
-lib/GraphicsMagick/modules-Q16/coders/tga.so
+@so lib/GraphicsMagick/modules-Q16/coders/tga.so
 lib/GraphicsMagick/modules-Q16/coders/tiff.la
-lib/GraphicsMagick/modules-Q16/coders/tiff.so
+@so lib/GraphicsMagick/modules-Q16/coders/tiff.so
 lib/GraphicsMagick/modules-Q16/coders/tile.la
-lib/GraphicsMagick/modules-Q16/coders/tile.so
+@so lib/GraphicsMagick/modules-Q16/coders/tile.so
 lib/GraphicsMagick/modules-Q16/coders/tim.la
-lib/GraphicsMagick/modules-Q16/coders/tim.so
+@so lib/GraphicsMagick/modules-Q16/coders/tim.so
 lib/GraphicsMagick/modules-Q16/coders/topol.la
-lib/GraphicsMagick/modules-Q16/coders/topol.so
+@so lib/GraphicsMagick/modules-Q16/coders/topol.so
 lib/GraphicsMagick/modules-Q16/coders/ttf.la
-lib/GraphicsMagick/modules-Q16/coders/ttf.so
+@so lib/GraphicsMagick/modules-Q16/coders/ttf.so
 lib/GraphicsMagick/modules-Q16/coders/txt.la
-lib/GraphicsMagick/modules-Q16/coders/txt.so
+@so lib/GraphicsMagick/modules-Q16/coders/txt.so
 lib/GraphicsMagick/modules-Q16/coders/uil.la
-lib/GraphicsMagick/modules-Q16/coders/uil.so
+@so lib/GraphicsMagick/modules-Q16/coders/uil.so
 lib/GraphicsMagick/modules-Q16/coders/url.la
-lib/GraphicsMagick/modules-Q16/coders/url.so
+@so lib/GraphicsMagick/modules-Q16/coders/url.so
 lib/GraphicsMagick/modules-Q16/coders/uyvy.la
-lib/GraphicsMagick/modules-Q16/coders/uyvy.so
+@so lib/GraphicsMagick/modules-Q16/coders/uyvy.so
 lib/GraphicsMagick/modules-Q16/coders/vicar.la
-lib/GraphicsMagick/modules-Q16/coders/vicar.so
+@so lib/GraphicsMagick/modules-Q16/coders/vicar.so
 lib/GraphicsMagick/modules-Q16/coders/vid.la
-lib/GraphicsMagick/modules-Q16/coders/vid.so
+@so lib/GraphicsMagick/modules-Q16/coders/vid.so
 lib/GraphicsMagick/modules-Q16/coders/viff.la
-lib/GraphicsMagick/modules-Q16/coders/viff.so
+@so lib/GraphicsMagick/modules-Q16/coders/viff.so
 lib/GraphicsMagick/modules-Q16/coders/wbmp.la
-lib/GraphicsMagick/modules-Q16/coders/wbmp.so
+@so lib/GraphicsMagick/modules-Q16/coders/wbmp.so
 lib/GraphicsMagick/modules-Q16/coders/webp.la
-lib/GraphicsMagick/modules-Q16/coders/webp.so
+@so lib/GraphicsMagick/modules-Q16/coders/webp.so
 lib/GraphicsMagick/modules-Q16/coders/wmf.la
-lib/GraphicsMagick/modules-Q16/coders/wmf.so
+@so lib/GraphicsMagick/modules-Q16/coders/wmf.so
 lib/GraphicsMagick/modules-Q16/coders/wpg.la
-lib/GraphicsMagick/modules-Q16/coders/wpg.so
+@so lib/GraphicsMagick/modules-Q16/coders/wpg.so
 lib/GraphicsMagick/modules-Q16/coders/x.la
-lib/GraphicsMagick/modules-Q16/coders/x.so
+@so lib/GraphicsMagick/modules-Q16/coders/x.so
 lib/GraphicsMagick/modules-Q16/coders/xbm.la
-lib/GraphicsMagick/modules-Q16/coders/xbm.so
+@so lib/GraphicsMagick/modules-Q16/coders/xbm.so
 lib/GraphicsMagick/modules-Q16/coders/xc.la
-lib/GraphicsMagick/modules-Q16/coders/xc.so
+@so lib/GraphicsMagick/modules-Q16/coders/xc.so
 lib/GraphicsMagick/modules-Q16/coders/xcf.la
-lib/GraphicsMagick/modules-Q16/coders/xcf.so
+@so lib/GraphicsMagick/modules-Q16/coders/xcf.so
 lib/GraphicsMagick/modules-Q16/coders/xpm.la
-lib/GraphicsMagick/modules-Q16/coders/xpm.so
+@so lib/GraphicsMagick/modules-Q16/coders/xpm.so
 lib/GraphicsMagick/modules-Q16/coders/xwd.la
-lib/GraphicsMagick/modules-Q16/coders/xwd.so
+@so lib/GraphicsMagick/modules-Q16/coders/xwd.so
 lib/GraphicsMagick/modules-Q16/coders/yuv.la
-lib/GraphicsMagick/modules-Q16/coders/yuv.so
+@so lib/GraphicsMagick/modules-Q16/coders/yuv.so
 lib/GraphicsMagick/modules-Q16/filters/
 lib/GraphicsMagick/modules-Q16/filters/analyze.la
-lib/GraphicsMagick/modules-Q16/filters/analyze.so
-lib/libGraphicsMagick++.a
+@so lib/GraphicsMagick/modules-Q16/filters/analyze.so
+@static-lib lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.la
 @lib lib/libGraphicsMagick++.so.${LIBGraphicsMagick++_VERSION}
-lib/libGraphicsMagick.a
+@static-lib lib/libGraphicsMagick.a
 lib/libGraphicsMagick.la
 @lib lib/libGraphicsMagick.so.${LIBGraphicsMagick_VERSION}
-lib/libGraphicsMagickWand.a
+@static-lib lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.la
 @lib lib/libGraphicsMagickWand.so.${LIBGraphicsMagickWand_VERSION}
 lib/pkgconfig/GraphicsMagick++.pc
@@ -312,7 +312,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Graphics/Magick.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/Magick.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/Magick.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/autosplit.ix
 @man man/man1/GraphicsMagick++-config.1
 @man man/man1/GraphicsMagick-config.1
