@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2019/12/19 17:34:10 bket Exp $
+# $OpenBSD: Makefile,v 1.33 2020/01/01 19:48:03 bket Exp $
 
 COMMENT=		small tiling window manager
 
 V=			3.3.0
+REVISION=		0
 GH_ACCOUNT=		conformal
 GH_PROJECT=		spectrwm
 GH_TAGNAME=		SPECTRWM_${V:S/./_/g}
@@ -28,6 +29,8 @@ MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 		MANDIR="${TRUEPREFIX}/man/man" \
 		SHLIB_MAJOR=${LIBswmhack_VERSION:R} \
 		SHLIB_MINOR=${LIBswmhack_VERSION:E}
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 NO_TEST=	Yes
 
