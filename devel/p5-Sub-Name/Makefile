@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/01/01 21:39:58 bluhm Exp $
 
 COMMENT =		(re)name a sub
 
-DISTNAME =		Sub-Name-0.21
+DISTNAME =		Sub-Name-0.26
 
 CATEGORIES =		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl
+WANTLIB =		c perl
 
 MODULES =		cpan
 TEST_DEPENDS =		devel/p5-Devel-CheckBin
