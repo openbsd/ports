@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/17 20:19:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/02 19:27:13 ajacoutot Exp $
 
 # MASTER_SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
 PORTROACH=		ignore
-MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/10/33/90/13c8b802beeae061b6eb08248a0417be08484a26/
+MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/10/49/18/f3016be6120a7271a6d9cb64872f817bce1920b8/
 
 COMMENT=		printer driver for Epson ESC/P-R inkjets
 
-DISTNAME=		epson-inkjet-printer-escpr-1.7.6
+DISTNAME=		epson-inkjet-printer-escpr-1.7.7
 EXTRACT_SUFX=		-1lsb3.2.tar.gz
 
 SHARED_LIBS +=	escpr                     0.0 # 1.0
@@ -19,7 +19,7 @@ HOMEPAGE=		http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += avahi-client avahi-common c cups cupsimage dbus-1 ffi
 WANTLIB += gmp gnutls hogweed iconv idn2 intl m nettle p11-kit
