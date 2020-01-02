@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/02 12:30:53 bluhm Exp $
 
-COMMENT =	a simple http server class
+COMMENT =	simple http server class
 
-DISTNAME =	HTTP-Daemon-6.01
+DISTNAME =	HTTP-Daemon-6.06
+
 CATEGORIES =	www
-CPAN_AUTHOR =	GAAS
 
-MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
+MODULES =		cpan
+RUN_DEPENDS =		www/p5-HTTP-Date>=6 \
+			www/p5-HTTP-Message>=6 \
+			www/p5-LWP-MediaTypes>=6
+TEST_DEPENDS =		devel/p5-Test-Needs \
+			www/p5-libwww \
+			www/p5-URI
 
-RUN_DEPENDS =	www/p5-HTTP-Date>=6.0 \
-		www/p5-HTTP-Message>=6.0 \
-		www/p5-LWP-MediaTypes>=6.0
+CONFIGURE_STYLE =	modbuild tiny
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
