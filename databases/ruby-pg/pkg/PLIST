@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/10/29 14:44:44 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/01/02 23:07:29 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -29,7 +29,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_decoder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_encoder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/tuple.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/type_map_by_column.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/pg_ext.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/pg_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/data/
 ${GEM_LIB}/gems/${DISTNAME}/spec/data/expected_trace.out
