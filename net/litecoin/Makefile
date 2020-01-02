@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/07 16:25:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2020/01/02 14:27:46 kmos Exp $
+
+BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
 COMMENT =		P2P payment system
 
