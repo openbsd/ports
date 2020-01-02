@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_screen_init_cxx,v 1.1 2019/01/02 21:30:48 landry Exp $
+$OpenBSD: patch-src_screen_init_cxx,v 1.2 2020/01/02 09:38:09 bket Exp $
 
 Index: src/screen_init.cxx
 --- src/screen_init.cxx.orig
 +++ src/screen_init.cxx
-@@ -54,8 +54,8 @@ ScreenManager::ScreenManager(boost::asio::io_service &
+@@ -50,8 +50,8 @@ ScreenManager::ScreenManager(boost::asio::io_service &
  #ifdef ENABLE_COLORS
  	if (options.enable_colors) {
  		/* set background attributes */

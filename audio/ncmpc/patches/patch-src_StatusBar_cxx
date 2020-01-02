@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_StatusBar_cxx,v 1.1 2019/01/02 21:30:48 landry Exp $
+$OpenBSD: patch-src_StatusBar_cxx,v 1.2 2020/01/02 09:38:09 bket Exp $
 
 Index: src/StatusBar.cxx
 --- src/StatusBar.cxx.orig
 +++ src/StatusBar.cxx
-@@ -44,7 +44,7 @@ StatusBar::StatusBar(boost::asio::io_service &io_servi
+@@ -43,7 +43,7 @@ StatusBar::StatusBar(boost::asio::io_service &io_servi
  
  #ifdef ENABLE_COLORS
  	if (options.enable_colors)

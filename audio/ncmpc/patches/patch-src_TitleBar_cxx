@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_TitleBar_cxx,v 1.1 2019/01/02 21:30:48 landry Exp $
+$OpenBSD: patch-src_TitleBar_cxx,v 1.2 2020/01/02 09:38:09 bket Exp $
 
 Index: src/TitleBar.cxx
 --- src/TitleBar.cxx.orig
 +++ src/TitleBar.cxx
-@@ -38,7 +38,7 @@ TitleBar::TitleBar(Point p, unsigned width)
+@@ -38,7 +38,7 @@ TitleBar::TitleBar(Point p, unsigned width) noexcept
  
  #ifdef ENABLE_COLORS
  	if (options.enable_colors)

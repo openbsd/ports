@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ProgressBar_cxx,v 1.1 2019/01/02 21:30:48 landry Exp $
+$OpenBSD: patch-src_ProgressBar_cxx,v 1.2 2020/01/02 09:38:09 bket Exp $
 
 Index: src/ProgressBar.cxx
 --- src/ProgressBar.cxx.orig
 +++ src/ProgressBar.cxx
-@@ -29,7 +29,7 @@ ProgressBar::ProgressBar(Point p, unsigned _width)
+@@ -30,7 +30,7 @@ ProgressBar::ProgressBar(Point p, unsigned _width) noe
  	leaveok(window.w, true);
  #ifdef ENABLE_COLORS
  	if (options.enable_colors)
