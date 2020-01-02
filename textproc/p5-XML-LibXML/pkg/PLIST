@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/09/04 12:46:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/01/02 19:05:02 bluhm Exp $
 @conflict p5-XML-LibXML-Common-*
 @pkgpath textproc/p5-LibXML-Common
 ${P5ARCH}/
@@ -51,7 +51,7 @@ ${P5ARCH}/XML/LibXML/XPathExpression.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/XML/
 ${P5ARCH}/auto/XML/LibXML/
-${P5ARCH}/auto/XML/LibXML/LibXML.so
+@so ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML.3p
 @man man/man3p/XML::LibXML::Attr.3p
 @man man/man3p/XML::LibXML::AttributeHash.3p

@@ -1,15 +1,35 @@
-$OpenBSD: patch-Makefile_PL,v 1.6 2017/10/29 21:09:49 bluhm Exp $
+$OpenBSD: patch-Makefile_PL,v 1.7 2020/01/02 19:05:02 bluhm Exp $
+
+Alien::Build has been designed to build dependencies on the fly
+when installing from CPAN.  That does not make sense for our ports
+tree.  Remove Alien::Libxml2 references, instead link against the
+library from our libxml-2 package.
+
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -496,8 +496,8 @@ sub MY::install {
-      $script .= <<"INSTALL";
+@@ -17,12 +17,10 @@ use warnings;
  
- install_sax_driver :
--\t-\@\$(PERL) -I\$(INSTALLSITELIB) -I\$(INSTALLSITEARCH) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX::Parser))->save_parsers()"
--\t-\@\$(PERL) -I\$(INSTALLSITELIB) -I\$(INSTALLSITEARCH) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX))->save_parsers()"
-+#\t-\@\$(PERL) -I\$(INSTALLSITELIB) -I\$(INSTALLSITEARCH) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX::Parser))->save_parsers()"
-+#\t-\@\$(PERL) -I\$(INSTALLSITELIB) -I\$(INSTALLSITEARCH) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX))->save_parsers()"
+ require 5.008001;
  
- INSTALL
-    } else {
+-use Alien::Libxml2;
+ use ExtUtils::MakeMaker;
+ use Config;
+ 
+ my %ConfigReqs = (
+-  "Alien::Libxml2" => 0,
+   "Config" => 0,
+   "ExtUtils::MakeMaker" => 0,
+ );
+@@ -68,8 +66,9 @@ my %prereqs = (
+ my %xsbuild = (
+   DEFINE  => '-DHAVE_UTF8',
+   OBJECT  => '$(O_FILES)',
+-  CCFLAGS => Alien::Libxml2->cflags . " $Config{ccflags}",
+-  LIBS    => [ Alien::Libxml2->libs ],
++  CCFLAGS => $Config{ccflags} .
++	' -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2',
++  LIBS    => '-L${LOCALBASE}/lib -lxml2',
+ );
+ 
+ my %WriteMakefileArgs = (
