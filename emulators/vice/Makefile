@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/01/02 08:59:22 fcambus Exp $
 
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-3.3
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		emulators
 
 HOMEPAGE =		http://vice-emu.sourceforge.net/
-
-MAINTAINER =		Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
