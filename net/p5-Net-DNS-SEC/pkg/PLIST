@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/09/02 16:10:03 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/01/02 00:24:41 bluhm Exp $
 @conflict p5-Net-DNS-<1.01
 ${P5ARCH}/
 ${P5ARCH}/Net/
@@ -17,7 +17,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/DNS/
 ${P5ARCH}/auto/Net/DNS/SEC/
-${P5ARCH}/auto/Net/DNS/SEC/SEC.so
+@so ${P5ARCH}/auto/Net/DNS/SEC/SEC.so
 @man man/man3p/Net::DNS::SEC.3p
 @man man/man3p/Net::DNS::SEC::DSA.3p
 @man man/man3p/Net::DNS::SEC::ECCGOST.3p
