@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2017/05/06 17:38:49 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.32 2020/01/02 00:35:49 bluhm Exp $
 @conflict p5-Net-DNS-SEC-<1.01
 ${P5SITE}/Net/
 ${P5SITE}/Net/DNS/
@@ -25,7 +25,6 @@ ${P5SITE}/Net/DNS/RR/CERT.pm
 ${P5SITE}/Net/DNS/RR/CNAME.pm
 ${P5SITE}/Net/DNS/RR/CSYNC.pm
 ${P5SITE}/Net/DNS/RR/DHCID.pm
-${P5SITE}/Net/DNS/RR/DLV.pm
 ${P5SITE}/Net/DNS/RR/DNAME.pm
 ${P5SITE}/Net/DNS/RR/DNSKEY.pm
 ${P5SITE}/Net/DNS/RR/DS.pm
@@ -73,6 +72,7 @@ ${P5SITE}/Net/DNS/RR/TSIG.pm
 ${P5SITE}/Net/DNS/RR/TXT.pm
 ${P5SITE}/Net/DNS/RR/URI.pm
 ${P5SITE}/Net/DNS/RR/X25.pm
+${P5SITE}/Net/DNS/RR/ZONEMD.pm
 ${P5SITE}/Net/DNS/Resolver/
 ${P5SITE}/Net/DNS/Resolver.pm
 ${P5SITE}/Net/DNS/Resolver/Base.pm
@@ -108,7 +108,6 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::RR::CNAME.3p
 @man man/man3p/Net::DNS::RR::CSYNC.3p
 @man man/man3p/Net::DNS::RR::DHCID.3p
-@man man/man3p/Net::DNS::RR::DLV.3p
 @man man/man3p/Net::DNS::RR::DNAME.3p
 @man man/man3p/Net::DNS::RR::DNSKEY.3p
 @man man/man3p/Net::DNS::RR::DS.3p
@@ -156,6 +155,7 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::RR::TXT.3p
 @man man/man3p/Net::DNS::RR::URI.3p
 @man man/man3p/Net::DNS::RR::X25.3p
+@man man/man3p/Net::DNS::RR::ZONEMD.3p
 @man man/man3p/Net::DNS::Resolver.3p
 @man man/man3p/Net::DNS::Resolver::Base.3p
 @man man/man3p/Net::DNS::Resolver::MSWin32.3p
@@ -173,8 +173,6 @@ share/examples/p5-Net-DNS/README
 share/examples/p5-Net-DNS/axfr
 share/examples/p5-Net-DNS/check_soa
 share/examples/p5-Net-DNS/check_zone
-share/examples/p5-Net-DNS/example_recurse.pl
 share/examples/p5-Net-DNS/mresolv
 share/examples/p5-Net-DNS/mx
 share/examples/p5-Net-DNS/perldig
-share/examples/p5-Net-DNS/trace_dns.pl
