@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.125 2019/10/17 11:19:21 landry Exp $
+# $OpenBSD: Makefile,v 1.126 2020/01/02 09:37:43 bket Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.21.16
+VER =			0.21.18
 DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		FLAC audiofile avcodec avformat avutil \
 			bz2 c cdio cdio_cdda cdio_paranoia curl \
-			expat faad iconv icui18n icuuc \
+			expat faad icui18n icuuc \
 			id3tag iso9660 m mikmod mp3lame mpcdec \
 			mpdclient ogg opus pcre pthread samplerate \
 			shout sndfile sndio sqlite3 \
