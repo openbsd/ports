@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/02 12:37:32 bluhm Exp $
 
 COMMENT =	interactive shell for WWW::Mechanize
 
-DISTNAME =	WWW-Mechanize-Shell-0.57
+DISTNAME =	WWW-Mechanize-Shell-0.58
 
 CATEGORIES =	www
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
 RUN_DEPENDS =		devel/p5-File-Modified \
 			devel/p5-Hook-LexWrap>=0.20 \
 			devel/p5-Term-Shell>=0.02 \
@@ -31,6 +30,8 @@ TEST_DEPENDS =		devel/p5-File-Slurp \
 			www/p5-CGI \
 			www/p5-HTML-TableExtract \
 			www/p5-HTTP-Daemon \
-			www/p5-Test-HTTP-LocalServer>=0.63
+			www/p5-Test-HTTP-LocalServer>=0.68
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
