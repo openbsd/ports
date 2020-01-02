@@ -1,0 +1,16 @@
+$OpenBSD: patch-Applications_Cxx_gdcminfo_cxx,v 1.4 2020/01/02 20:32:24 kili Exp $
+
+Fix build with poppler-0.83.0.
+
+Index: Applications/Cxx/gdcminfo.cxx
+--- Applications/Cxx/gdcminfo.cxx.orig
++++ Applications/Cxx/gdcminfo.cxx
+@@ -513,7 +513,7 @@ static int ProcessOneFile( std::string const & filenam
+ #ifdef LIBPOPPLER_GLOBALPARAMS_CSTOR_HAS_PARAM
+     globalParams = new GlobalParams(0);
+ #else
+-    globalParams = new GlobalParams();
++    globalParams = std::make_unique<GlobalParams>();
+ #endif
+     uMap = globalParams->getTextEncoding();
+ 
