@@ -1,12 +1,29 @@
-$OpenBSD: patch-sdext_source_pdfimport_xpdfwrapper_pdfioutdev_gpl_cxx,v 1.6 2019/11/07 18:44:39 kili Exp $
+$OpenBSD: patch-sdext_source_pdfimport_xpdfwrapper_pdfioutdev_gpl_cxx,v 1.7 2020/01/02 20:31:11 kili Exp $
 
 Fix build with poppler-8.82.0.
 
 https://gerrit.libreoffice.org/plugins/gitiles/core/+/2eadd46ab81058087af95bdfc1fea28fcdb65998%5E%21
 
+And with poppler-0.83.0.
+
 Index: sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
 --- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx.orig
 +++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+@@ -491,12 +491,12 @@ void PDFOutDev::writeFontFile( GfxFont* gfxFont ) cons
+     gfree(pBuf);
+ }
+ 
+-void PDFOutDev::printPath( GfxPath* pPath )
++void PDFOutDev::printPath( const GfxPath* pPath )
+ {
+     int nSubPaths = pPath ? pPath->getNumSubpaths() : 0;
+     for( int i=0; i<nSubPaths; i++ )
+     {
+-        GfxSubpath* pSub  = pPath->getSubpath( i );
++        const GfxSubpath* pSub  = pPath->getSubpath( i );
+         const int nPoints = pSub->getNumPoints();
+ 
+         printf( " subpath %d", pSub->isClosed() );
 @@ -863,11 +863,20 @@ void PDFOutDev::eoClip(GfxState *state)
      local offset of character (zero for horizontal writing mode). not
      taken into account for output pos updates. Used for vertical writing.
