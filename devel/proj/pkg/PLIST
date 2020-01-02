@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/09/05 15:47:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/01/02 14:53:48 landry Exp $
 @bin bin/cct
 @bin bin/cs2cs
 @bin bin/geod
@@ -23,9 +23,8 @@ include/proj/util.hpp
 include/proj_api.h
 include/proj_constants.h
 include/proj_experimental.h
-include/proj_json_streaming_writer.hpp
 include/proj_symbol_rename.h
-lib/libproj.a
+@static-lib lib/libproj.a
 lib/libproj.la
 @lib lib/libproj.so.${LIBproj_VERSION}
 lib/pkgconfig/proj.pc
