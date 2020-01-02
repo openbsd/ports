@@ -1,4 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.5 2018/10/02 10:32:01 kn Exp $
+$OpenBSD: patch-setup_py,v 1.6 2020/01/02 13:13:22 kn Exp $
+
+Fix MANPATH and examples.
 
 Index: setup.py
 --- setup.py.orig

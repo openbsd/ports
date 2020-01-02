@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:15:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/01/02 13:13:22 kn Exp $
 
 COMMENT =	minimalistic console file manager
 
-MODPY_EGG_VERSION =	1.9.2
+MODPY_EGG_VERSION =	1.9.3
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils misc
 
@@ -26,11 +25,12 @@ RUN_DEPENDS =	archivers/libarchive \
 		devel/desktop-file-utils \
 		shells/bash \
 		textproc/py-chardet${MODPY_FLAVOR}
-# XXX: ranger/gui/widgets/console.py test depends on devel/py-astroid>=1.5.0:
-#   AttributeError: 'TreeRebuilder3k' object has no attribute 'visit_joinedstr'
+# XXX: tests fail with "RuntimeError: generator raised StopIteration", probably
+# needs devel/py-astroid>=1.5.0 but we have 1.4.9p2
 TEST_DEPENDS =	devel/flake8 \
 		devel/pylint${MODPY_FLAVOR}<2.0.0 \
-		devel/py-test${MODPY_FLAVOR}
+		devel/py-test${MODPY_FLAVOR} \
+		devel/shellcheck
 
 TEST_ENV =	HOME=${WRKDIR} \
 		PYTHON=${MODPY_BIN} \

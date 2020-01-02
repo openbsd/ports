@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/10/02 10:32:01 kn Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/01/02 13:13:22 kn Exp $
 bin/ranger
 bin/rifle
 lib/python${MODPY_VERSION}/site-packages/ranger/
 lib/python${MODPY_VERSION}/site-packages/ranger/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/api/
 lib/python${MODPY_VERSION}/site-packages/ranger/api/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/api/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/api/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/api/commands.py
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/${MODPY_PYCACHE}default.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/${MODPY_PYCACHE}jungle.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,7 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/snow.py
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/solarized.py
 lib/python${MODPY_VERSION}/site-packages/ranger/config/
 lib/python${MODPY_VERSION}/site-packages/ranger/config/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/config/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/config/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/config/${MODPY_PYCACHE}commands_sample.${MODPY_PYC_MAGIC_TAG}pyc
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/config/rc.conf
 lib/python${MODPY_VERSION}/site-packages/ranger/config/rifle.conf
 lib/python${MODPY_VERSION}/site-packages/ranger/container/
 lib/python${MODPY_VERSION}/site-packages/ranger/container/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/container/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/container/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/container/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/container/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/container/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}pyc
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/container/settings.py
 lib/python${MODPY_VERSION}/site-packages/ranger/container/tags.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/
 lib/python${MODPY_VERSION}/site-packages/ranger/core/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}filter_stack.${MODPY_PYC_MAGIC_TAG}pyc
@@ -80,13 +80,14 @@ lib/python${MODPY_VERSION}/site-packages/ranger/data/mime.types
 lib/python${MODPY_VERSION}/site-packages/ranger/data/scope.sh
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}accumulator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}cached_function.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}curses_interrupt_handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}direction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}get_executables.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}human_readable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}img_display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}iter_tools.${MODPY_PYC_MAGIC_TAG}pyc
@@ -99,6 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}openstruct.$
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}popen_forked.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}relative_symlink.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}rifle.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}safe_path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}shell_escape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}shutil_generatorized.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
@@ -109,6 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/ext/cached_function.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/curses_interrupt_handler.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/direction.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/get_executables.py
+lib/python${MODPY_VERSION}/site-packages/ranger/ext/hash.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/human_readable.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/img_display.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/iter_tools.py
@@ -121,13 +124,14 @@ lib/python${MODPY_VERSION}/site-packages/ranger/ext/openstruct.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/popen_forked.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/relative_symlink.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/rifle.py
+lib/python${MODPY_VERSION}/site-packages/ranger/ext/safe_path.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/shell_escape.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/shutil_generatorized.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/signals.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/spawn.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/${MODPY_PYCACHE}bzr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
@@ -142,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/vcs.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/widestring.py
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/gui/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/${MODPY_PYCACHE}ansi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/${MODPY_PYCACHE}bar.${MODPY_PYC_MAGIC_TAG}pyc
@@ -164,7 +168,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/gui/mouse_event.py
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/ui.py
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/${MODPY_PYCACHE}browsercolumn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
@@ -187,7 +191,6 @@ lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/view_multipane.py
 lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 @man man/man1/ranger.1
 @man man/man1/rifle.1
-share/applications/
 share/applications/ranger.desktop
 share/doc/ranger/
 share/doc/ranger/CHANGELOG.md
@@ -210,8 +213,7 @@ share/doc/ranger/tools/print_colors.py
 share/doc/ranger/tools/print_keys.py
 share/examples/ranger/
 share/examples/ranger/README
-share/examples/ranger/bash_automatic_cd.sh
-share/examples/ranger/bash_subshell_notice.sh
+share/examples/ranger/fish_automatic_cd.fish
 share/examples/ranger/plugin_avfs.py
 share/examples/ranger/plugin_chmod_keybindings.py
 share/examples/ranger/plugin_fasd_add.py
@@ -226,5 +228,7 @@ share/examples/ranger/plugin_pmount_dynamic.py
 share/examples/ranger/rc_emacs.conf
 share/examples/ranger/rifle_different_file_opener.conf
 share/examples/ranger/rifle_sxiv.sh
+share/examples/ranger/shell_automatic_cd.sh
+share/examples/ranger/shell_subshell_notice.sh
 share/examples/ranger/vim_file_chooser.vim
 @tag update-desktop-database
