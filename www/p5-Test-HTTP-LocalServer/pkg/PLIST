@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/02 19:31:37 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/02 12:34:59 bluhm Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/HTTP/
 ${P5SITE}/Test/HTTP/LocalServer.pm
 ${P5SITE}/Test/HTTP/cookie-server
-${P5SITE}/Test/HTTP/gen-bzipbomb.pl
-${P5SITE}/Test/HTTP/gen-gzipbomb.pl
+${P5SITE}/Test/HTTP/gzip-streamed.psgi
 ${P5SITE}/Test/HTTP/log-server
 @man man/man3p/Test::HTTP::LocalServer.3p

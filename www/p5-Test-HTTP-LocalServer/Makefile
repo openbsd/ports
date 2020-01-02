@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/02 12:34:59 bluhm Exp $
 
 COMMENT =	spawn a local HTTP server for testing
 
-DISTNAME =	Test-HTTP-LocalServer-0.63
+DISTNAME =	Test-HTTP-LocalServer-0.69
 
 CATEGORIES =	www
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		www/p5-CGI \
-			www/p5-HTTP-Daemon \
+			www/p5-HTTP-Daemon>=6.05 \
 			www/p5-HTTP-Message \
 			www/p5-HTTP-Request-AsCGI \
-			www/p5-URI \
-			www/p5-libwww
+			www/p5-URI
 
 PKG_ARCH =		*
 
