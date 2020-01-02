@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2019/12/29 07:28:22 bket Exp $
+# $OpenBSD: Makefile,v 1.40 2020/01/02 12:21:47 bket Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
 DISTNAME=	ocserv-0.12.6
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -40,6 +41,7 @@ CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--without-docker-tests \
 			--without-geoip \
 			--without-http-parser \
+			--without-maxmind \
 			--without-nuttcp-tests \
 			--without-pcl-lib
 
