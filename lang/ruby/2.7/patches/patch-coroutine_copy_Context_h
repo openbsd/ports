@@ -1,0 +1,13 @@
+$OpenBSD: patch-coroutine_copy_Context_h,v 1.1.1.1 2020/01/02 21:19:57 jeremy Exp $
+
+Index: coroutine/copy/Context.h
+--- coroutine/copy/Context.h.orig
++++ coroutine/copy/Context.h
+@@ -12,7 +12,6 @@
+ #include <setjmp.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <alloca.h>
+ 
+ #define COROUTINE __attribute__((noreturn)) void
+ 
