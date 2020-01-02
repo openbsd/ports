@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2019/11/10 15:32:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2020/01/02 20:30:04 kili Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.1.0
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	8
+REVISION =	9
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
@@ -18,6 +18,9 @@ DPB_PROPERTIES =	parallel
 
 MODULES =	devel/kf5 \
 		multimedia/phonon
+
+# c++-14
+COMPILER =			base-clang ports-gcc
 
 SHARED_LIBS =   RtfReader                 50.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0

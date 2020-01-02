@@ -1,10 +1,10 @@
-$OpenBSD: patch-filters_karbon_pdf_SvgOutputDev_h,v 1.2 2019/11/12 22:05:36 kili Exp $
+$OpenBSD: patch-filters_karbon_pdf_SvgOutputDev_h,v 1.3 2020/01/02 20:30:04 kili Exp $
 
 Fix build with poppler 0.73
 https://cgit.kde.org/calligra.git/commit/?id=a615718
 https://cgit.kde.org/calligra.git/commit/?id=ab9cb33
 
-and with poppler-0.82
+And with poppler-0.83
 
 Index: filters/karbon/pdf/SvgOutputDev.h
 --- filters/karbon/pdf/SvgOutputDev.h.orig
@@ -44,9 +44,12 @@ Index: filters/karbon/pdf/SvgOutputDev.h
  
      // styles
      virtual void updateAll(GfxState *state);
-@@ -84,7 +84,7 @@ class SvgOutputDev : public OutputDev (public)
+@@ -82,9 +82,9 @@ class SvgOutputDev : public OutputDev (public)
+     /// Dumps content to svg file
+     void dumpContent();
  private:
-     QString convertPath(GfxPath *path);
+-    QString convertPath(GfxPath *path);
++    QString convertPath(const GfxPath *path);
      QString convertMatrix(const QMatrix &matrix);
 -    QString convertMatrix(double * matrix);
 +    QString convertMatrix(const double * matrix);
