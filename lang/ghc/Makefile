@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2019/10/21 20:36:15 kili Exp $
+# $OpenBSD: Makefile,v 1.168 2020/01/03 21:55:57 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -196,7 +196,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20190113
+BOOTSTRAP_DATE =	20200103
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
@@ -210,6 +210,17 @@ bootstrap: patch
 		echo Please install automake-1.4.; \
 		false; \
 	fi
+
+	$(_PBUILD) $(MAKE) _bootstrap_prepare
+
+	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
+
+	${MAKE} build ALL_TARGET="all binary-dist" \
+		AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.4
+
+	$(_PBUILD) $(MAKE) _bootstrap_finish
+
+_bootstrap_prepare:
 	echo HSCOLOUR_SRCS=NO > ${WRKSRC}/mk/build.mk
 	echo GhcLibHcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
 	echo GhcStage1HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
@@ -226,14 +237,11 @@ bootstrap: patch
 	echo BUILD_SPHINX_PDF=NO >> ${WRKSRC}/mk/build.mk
 	echo GhcWithSMP=NO >> ${WRKSRC}/mk/build.mk
 	echo LD_OPTS=-optl-static -optl-s >> ${WRKSRC}/mk/build.mk
+	echo DYNAMIC_GHC_PROGRAMS=No >> ${WRKSRC}/mk/build.mk
 
 	echo ${BOOTSTRAP_DATE} > ${WRKSRC}/VERSION_DATE
 
-	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
-
-	${MAKE} build ALL_TARGET="all binary-dist" \
-		AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.4
-
+_bootstrap_finish:
 	mkdir -p ${WRKBUILD}/ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
 	ldd ${WRKBUILD}/ghc/stage2/build/tmp/ghc-stage2 | \
 	awk '$$NF ~ /^\/usr\/(local\/)?lib\// { print $$NF }' | \
