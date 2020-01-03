@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.109 2019/12/16 12:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2020/01/03 22:34:35 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.8
-REVISION-main=	5
-REVISION-tkmib=	0
+V=		5.8.1.pre1
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
-PKGNAME-main=	net-snmp-${V:S/.rc/rc/}
-PKGNAME-tkmib=	net-snmp-tkmib-${V:S/.rc/rc/}
+PKGNAME-main=	net-snmp-${V:S/.pre/pre/}
+PKGNAME-tkmib=	net-snmp-tkmib-${V:S/.pre/pre/}
 
 # tkmib isn't flavoured
 FULLPKGPATH-tkmib= net/net-snmp,-tkmib
-FULLPKGNAME-tkmib= net-snmp-tkmib-${V:S/.rc/rc/}
+FULLPKGNAME-tkmib= net-snmp-tkmib-${V:S/.pre/pre/}
 
+### XXX 5.8.1pre1 SHARED_LIBS not synced
 # N.B. p5 module picks up installed libs in /usr/local
 # please check sysutils/snmp_exporter "make test" if updating
-SHARED_LIBS += netsnmp		15.2
-SHARED_LIBS += netsnmpagent	15.1
+SHARED_LIBS += netsnmp		16.0
+SHARED_LIBS += netsnmpagent	16.0
 SHARED_LIBS += netsnmphelpers	15.1
-SHARED_LIBS += netsnmpmibs	16.0
+SHARED_LIBS += netsnmpmibs	17.0
 SHARED_LIBS += netsnmptrapd	15.1
 
 CATEGORIES=	net perl5
@@ -34,12 +33,12 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-main=	c crypto kvm m perl
+WANTLIB-main=	c crypto curses kvm m perl
 
 FLAVORS=	readonly
 FLAVOR?=
 
-DEBUG_PACKAGES=	-main
+DEBUG_PACKAGES=		-main
 
 RUN_DEPENDS-tkmib=	net/net-snmp \
 			x11/p5-Tk
@@ -52,7 +51,6 @@ NET_SNMP_MIB_LIST=	mibII/mta_sendmail
 DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 # - base OpenBSD mibs (/usr/share/snmp/mibs), SNMPD-CONF pulls in the rest
 OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
-
 
 CONFIGURE_STYLE=  gnu
 CONFIGURE_ARGS=   --enable-ipv6 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2019/10/29 14:49:19 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2020/01/03 22:34:35 sthen Exp $
 @conflict p5-SNMP-*
 @pkgpath net/net-snmp
 @pkgpath net/net-snmp,-perl
@@ -30,11 +30,11 @@ bin/snmpconf
 @bin bin/snmpgetnext
 bin/snmpinform
 @bin bin/snmpnetstat
-@comment @bin bin/snmpps
+@bin bin/snmpps
 @bin bin/snmpstatus
 @bin bin/snmptable
 @bin bin/snmptest
-@comment bin/snmptop
+bin/snmptop
 @bin bin/snmptranslate
 @bin bin/snmptrap
 @bin bin/snmpwalk
@@ -131,6 +131,7 @@ include/net-snmp/library/snmp-tc.h
 include/net-snmp/library/snmp.h
 include/net-snmp/library/snmpAliasDomain.h
 include/net-snmp/library/snmpCallbackDomain.h
+include/net-snmp/library/snmpIPBaseDomain.h
 include/net-snmp/library/snmpIPv4BaseDomain.h
 include/net-snmp/library/snmpIPv6BaseDomain.h
 include/net-snmp/library/snmpSocketBaseDomain.h
@@ -201,6 +202,8 @@ include/net-snmp/system/freebsd.h
 include/net-snmp/system/freebsd10.h
 include/net-snmp/system/freebsd11.h
 include/net-snmp/system/freebsd12.h
+include/net-snmp/system/freebsd13.h
+include/net-snmp/system/freebsd14.h
 include/net-snmp/system/freebsd2.h
 include/net-snmp/system/freebsd3.h
 include/net-snmp/system/freebsd4.h
@@ -212,7 +215,6 @@ include/net-snmp/system/freebsd9.h
 include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h
-include/net-snmp/system/kfreebsd.h
 include/net-snmp/system/linux.h
 include/net-snmp/system/mingw32.h
 include/net-snmp/system/mingw32msvc.h
@@ -253,6 +255,8 @@ lib/libnetsnmpmibs.la
 lib/libnetsnmptrapd.a
 lib/libnetsnmptrapd.la
 @lib lib/libnetsnmptrapd.so.${LIBnetsnmptrapd_VERSION}
+lib/pkgconfig/netsnmp-agent.pc
+lib/pkgconfig/netsnmp.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/MakefileSubs.pm
