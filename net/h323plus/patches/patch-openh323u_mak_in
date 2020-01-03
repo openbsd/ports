@@ -1,10 +1,11 @@
-$OpenBSD: patch-openh323u_mak_in,v 1.5 2014/04/25 14:13:40 ajacoutot Exp $
+$OpenBSD: patch-openh323u_mak_in,v 1.6 2020/01/03 09:01:55 ajacoutot Exp $
 
 Do not append the platform_type and suffix to the library name.
 
---- openh323u.mak.in.orig	Thu Dec 12 23:52:13 2013
-+++ openh323u.mak.in	Fri Apr 25 11:09:22 2014
-@@ -132,7 +132,11 @@ OH323_SUFFIX = $(OBJ_SUFFIX)
+Index: openh323u.mak.in
+--- openh323u.mak.in.orig
++++ openh323u.mak.in
+@@ -133,7 +133,11 @@ OH323_SUFFIX = $(OBJ_SUFFIX)
  endif # OH323_SUFFIX
  endif # HAS_PTLIB_LIB_MAK
  
