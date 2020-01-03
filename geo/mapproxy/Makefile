@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2019/09/05 15:01:17 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2020/01/03 17:58:34 landry Exp $
 
 COMMENT =	GIS WMTS/TMS tile caching server
 
 MODPY_EGG_VERSION =	1.12.0
 DISTNAME =		MapProxy-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	geo www
 
@@ -17,19 +18,20 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 MODULES =	lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	mapproxy/test/system/fixture/cgi.py
 
 # libproj is dlopen'ed by proj.py - otherwise fallbacks to py-proj
 RUN_DEPENDS =	devel/proj \
-		textproc/py-yaml \
-		textproc/py-lxml \
-		graphics/py-Pillow>2.4.0
+		textproc/py-yaml${MODPY_FLAVOR} \
+		textproc/py-lxml${MODPY_FLAVOR} \
+		graphics/py-Pillow${MODPY_FLAVOR}
 
-TEST_DEPENDS =	devel/py-nose \
-		geo/py-shapely \
-		geo/gdal,-python \
-		www/py-requests \
-		www/py-webtest
+TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
+		geo/py-shapely${MODPY_FLAVOR} \
+		geo/gdal,-python${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR} \
+		www/py-webtest${MODPY_FLAVOR}
 # some tests need mocker from https://labix.org/mocker
 
 pre-test:
