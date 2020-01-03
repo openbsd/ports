@@ -1,0 +1,23 @@
+$OpenBSD: patch-lemonbar_c,v 1.1.1.1 2020/01/03 17:15:00 abieber Exp $
+
+Index: lemonbar.c
+--- lemonbar.c.orig
++++ lemonbar.c
+@@ -1,5 +1,4 @@
+ // vim:sw=4:ts=4:et:
+-#define _POSIX_C_SOURCE 200809L
+ #include <stdbool.h>
+ #include <stddef.h>
+ #include <stdio.h>
+@@ -1538,6 +1537,11 @@ main (int argc, char **argv)
+     // Prevent fgets to block
+     fcntl(STDIN_FILENO, F_SETFL, O_NONBLOCK);
+ 	
++    if (pledge("stdio", NULL) == -1) {
++        fprintf(stderr, "pledge: %s\n", strerror(errno));
++        return EXIT_FAILURE;
++    }
++
+     for (;;) {
+         bool redraw = false;
+ 

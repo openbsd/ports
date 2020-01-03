@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/01/03 17:15:00 abieber Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -7,7 +7,7 @@ ifneq "$(GIT_DESC)" ""
+ endif
+ 
+ CC	?= gcc
+-CFLAGS += -Wall -std=c99 -Os -DVERSION="\"$(VERSION)\"" -I/usr/include/freetype2
++CFLAGS += -Wall -std=c99 -DVERSION="\"$(VERSION)\"" -I${X11BASE}/include/freetype2
+ LDFLAGS += -lxcb -lxcb-xinerama -lxcb-randr -lX11 -lX11-xcb -lXft -lfreetype -lz -lfontconfig
+ CFDEBUG = -g3 -pedantic -Wall -Wunused-parameter -Wlong-long \
+           -Wsign-conversion -Wconversion -Wimplicit-function-declaration
+@@ -22,7 +22,7 @@ BINDIR=${PREFIX}/bin
+ all: ${EXEC}
+ 
+ doc: README.pod
+-	pod2man --section=1 --center="lemonbar Manual" --name "lemonbar" --release="lemonbar $(VERSION)" README.pod > lemonbar.1
++	pod2man --section=1 --center="lemonbar-xft Manual" --name "lemonbar-xft" --release="lemonbar-xft $(VERSION)" README.pod > lemonbar.1
+ 
+ .c.o:
+ 	${CC} ${CFLAGS} -o $@ -c $<
