@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/03 16:06:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/01/03 11:26:14 sthen Exp $
 
 COMMENT=	SSL port scanner
 
@@ -33,6 +33,7 @@ MAKE_FLAGS=	BINDIR=${TRUEPREFIX}/bin \
 SUBST_VARS=	SUFFIX
 
 .if ${FLAVOR:Mopenssl}
+BROKEN-sparc64=	runs openssl tests during build; fails SIGILL in BN_mod_sqrt
 BUILD_DEPENDS=	security/openssl/1.0.2:patch
 SUFFIX=		-openssl
 FULLPKGNAME=	sslscan-openssl-$V
@@ -40,7 +41,7 @@ ALL_TARGET=	static
 #openssl/libcrypto.a sslscan
 #MAKE_FLAGS+=	STATIC_BUILD=TRUE
 CFLAGS+=	-nostdinc -I${WRKSRC}/openssl/include -I/usr/include
-WANTLIB +=	z
+WANTLIB+=	z
 
 post-extract:
 	ln -s ${WRKDIR}/security/openssl/1.0.2/openssl-* ${WRKSRC}/openssl
