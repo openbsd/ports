@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2019/12/25 15:48:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.235 2020/01/03 08:45:09 ajacoutot Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -7,7 +7,7 @@ V=		3.0.8
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	1
+REVISION-main=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -30,7 +30,7 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
 		Xxf86vm aom archive ass atk-1.0 atk-bridge-2.0 avcodec \
 		avformat avutil b2 bluray bz2 c cairo cairo-gobject cddb \
-		charset crypto dav1d double-conversion drm dsm dvbpsi dvdnav \
+		charset crypto dav1d double-conversion drm dvbpsi dvdnav \
 		dvdread ebml epoxy execinfo expat ffi fontconfig freetype \
 		fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi \
 		glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error \
@@ -38,9 +38,9 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		icui18n icuuc idn2 jpeg lcms2 lz4 lzma matroska mp3lame \
 		nettle nfs notify ogg opus p11-kit pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pcre2-16 pixman-1 placebo png postproc \
-		rsvg-2 samplerate sndio speex speexdsp ssl swresample swscale \
-		tag tar tasn1 theoradec theoraenc tiff unistring usbhid \
-		vorbis vorbisenc vpx webp x264 x265 xcb xcb-composite \
+		rsvg-2 samplerate smb2 sndio speex speexdsp ssl swresample \
+		swscale tag tar tasn1 theoradec theoraenc tiff unistring \
+		usbhid vorbis vorbisenc vpx webp x264 x265 xcb xcb-composite \
 		xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr \
 		xcb-render xcb-shm xcb-sync xcb-xfixes xcb-xv xml2 \
 		xshmfence xvidcore z zstd ${WANTLIB-common}
@@ -75,9 +75,9 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		devel/harfbuzz \
 		devel/libdvdread \
 		devel/libidn \
-		devel/libdsm \
 		devel/libnfs \
 		devel/libnotify \
+		devel/libsmb2 \
 		devel/sdl \
 		devel/sdl-image \
 		graphics/ffmpeg \
@@ -129,6 +129,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-dc1394 \
 		--disable-dca \
 		--disable-decklink \
+		--disable-dsm \
 		--disable-dv1394 \
 		--disable-faad \
 		--disable-flac \
@@ -148,6 +149,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-mfx \
 		--disable-microdns \
 		--disable-mmal \
+		--disable-mpg123 \
 		--disable-mod \
 		--disable-mpc \
 		--disable-mtp \
@@ -177,6 +179,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-vsxu \
 		--disable-zvbi \
 		--enable-realrtsp \
+		--enable-smb2 \
 		--without-contrib \
 		--with-kde-solid=${LOCALBASE}/share/apps/solid/actions
 
