@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/01/03 16:29:25 espie Exp $
 
 COMMENT=	open-source JPEG 2000 codec library
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	-DOPENJPEG_INSTALL_MAN_DIR=man \
 
 LIB_DEPENDS=	graphics/lcms2 \
 		graphics/png
+DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
 post-install:
 	cd ${WRKSRC}/doc/man; \

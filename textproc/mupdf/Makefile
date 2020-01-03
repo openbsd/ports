@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2019/12/10 12:28:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2020/01/03 16:29:25 espie Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
@@ -53,6 +53,7 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		build=release verbose=yes
 
 FAKE_FLAGS =	prefix=${PREFIX} mandir=${PREFIX}/man
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
 	cd ${WRKSRC}; sed -i 's,/usr/X11R6/include,${X11BASE}/include,g' Makerules Makethird
