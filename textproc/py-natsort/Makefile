@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/14 06:55:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2020/01/03 22:21:04 sthen Exp $
 
 COMMENT =		simple yet flexible natural sorting
 
@@ -26,6 +26,7 @@ FLAVOR ?=
 RUN_DEPENDS =		textproc/py-ICU${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
+			devel/py-pathlib${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR}
 
 post-install:
