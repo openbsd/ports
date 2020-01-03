@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/01/03 11:53:44 fcambus Exp $
 
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
-V =		4.1.0
+V =		4.2.0
 DISTNAME =	atari800-${V}-src
 PKGNAME =	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL c curses m pthread readline z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=atari800/}
+MASTER_SITES =	https://github.com/atari800/atari800/releases/download/ATARI800_${V:S/./_/g}/
 
 LIB_DEPENDS =	devel/sdl
 
@@ -29,7 +29,8 @@ CONFIGURE_STYLE = gnu
 # Prevent ossaudio from being linked even when SDL audio is used
 CONFIGURE_ENV += ac_cv_lib_ossaudio__oss_ioctl=no
 
-CONFIGURE_ARGS = --with-sound=sdl
+CONFIGURE_ARGS = --disable-rserial \
+		 --with-sound=sdl
 
 USE_GMAKE =	Yes
 
