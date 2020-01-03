@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/09/07 16:01:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/01/03 08:58:55 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -415,6 +415,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/drivers/softlayer
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/providers.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/pricing.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/py.typed
 lib/python${MODPY_VERSION}/site-packages/libcloud/security.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/__init__.py
