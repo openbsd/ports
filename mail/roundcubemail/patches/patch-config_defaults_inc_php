@@ -1,10 +1,14 @@
-$OpenBSD: patch-config_defaults_inc_php,v 1.12 2019/11/22 12:38:28 sthen Exp $
+$OpenBSD: patch-config_defaults_inc_php,v 1.13 2020/01/03 11:29:59 sthen Exp $
 
 Index: config/defaults.inc.php
 --- config/defaults.inc.php.orig
 +++ config/defaults.inc.php
-@@ -794,7 +794,7 @@ $config['spellcheck_dictionary'] = false;
- // Since Google shut down their public spell checking service, the default settings
+@@ -792,10 +792,10 @@ $config['spellcheck_dictionary'] = false;
+ // - 'pspell'  - requires the PHP Pspell module and aspell installed
+ // - 'enchant' - requires the PHP Enchant module
+ // - 'atd'     - install your own After the Deadline server or check with the people at http://www.afterthedeadline.com before using their API
+-// Since Google shut down their public spell checking service, the default settings
++// Since Google shut down their public spell checking service, the default settings for 'googie'
  // connect to http://spell.roundcube.net which is a hosted service provided by Roundcube.
  // You can connect to any other googie-compliant service by setting 'spellcheck_uri' accordingly.
 -$config['spellcheck_engine'] = 'googie';

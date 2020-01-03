@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.63 2019/11/10 12:02:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.64 2020/01/03 11:29:59 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -549,6 +549,8 @@ roundcubemail/plugins/emoticons/localization/zh_CN.inc
 roundcubemail/plugins/emoticons/localization/zh_TW.inc
 roundcubemail/plugins/enigma/
 roundcubemail/plugins/enigma/README
+roundcubemail/plugins/enigma/bin/
+roundcubemail/plugins/enigma/bin/import_keys.sh
 roundcubemail/plugins/enigma/composer.json
 roundcubemail/plugins/enigma/config.inc.php.dist
 @sample roundcubemail/plugins/enigma/config.inc.php
@@ -827,6 +829,7 @@ roundcubemail/plugins/hide_blockquote/localization/en_CA.inc
 roundcubemail/plugins/hide_blockquote/localization/en_GB.inc
 roundcubemail/plugins/hide_blockquote/localization/en_US.inc
 roundcubemail/plugins/hide_blockquote/localization/eo.inc
+roundcubemail/plugins/hide_blockquote/localization/es.inc
 roundcubemail/plugins/hide_blockquote/localization/es_419.inc
 roundcubemail/plugins/hide_blockquote/localization/es_AR.inc
 roundcubemail/plugins/hide_blockquote/localization/es_ES.inc
@@ -1220,7 +1223,9 @@ roundcubemail/plugins/markasjunk/localization/de_DE.inc
 roundcubemail/plugins/markasjunk/localization/el_GR.inc
 roundcubemail/plugins/markasjunk/localization/en_GB.inc
 roundcubemail/plugins/markasjunk/localization/en_US.inc
+roundcubemail/plugins/markasjunk/localization/et_EE.inc
 roundcubemail/plugins/markasjunk/localization/eu_ES.inc
+roundcubemail/plugins/markasjunk/localization/fi_FI.inc
 roundcubemail/plugins/markasjunk/localization/fr_FR.inc
 roundcubemail/plugins/markasjunk/localization/ga_IE.inc
 roundcubemail/plugins/markasjunk/localization/he_IL.inc
@@ -1277,6 +1282,7 @@ roundcubemail/plugins/new_user_dialog/localization/en_CA.inc
 roundcubemail/plugins/new_user_dialog/localization/en_GB.inc
 roundcubemail/plugins/new_user_dialog/localization/en_US.inc
 roundcubemail/plugins/new_user_dialog/localization/eo.inc
+roundcubemail/plugins/new_user_dialog/localization/es.inc
 roundcubemail/plugins/new_user_dialog/localization/es_419.inc
 roundcubemail/plugins/new_user_dialog/localization/es_AR.inc
 roundcubemail/plugins/new_user_dialog/localization/es_ES.inc
@@ -1577,6 +1583,7 @@ roundcubemail/plugins/subscriptions_option/localization/en_CA.inc
 roundcubemail/plugins/subscriptions_option/localization/en_GB.inc
 roundcubemail/plugins/subscriptions_option/localization/en_US.inc
 roundcubemail/plugins/subscriptions_option/localization/eo.inc
+roundcubemail/plugins/subscriptions_option/localization/es.inc
 roundcubemail/plugins/subscriptions_option/localization/es_419.inc
 roundcubemail/plugins/subscriptions_option/localization/es_AR.inc
 roundcubemail/plugins/subscriptions_option/localization/es_ES.inc
