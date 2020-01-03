@@ -1,0 +1,8 @@
+Enchant is the PHP binding for the Enchant library. Enchant steps in
+to provide uniformity and conformity on top of all spelling libraries,
+and implement certain features that may be lacking in any individual
+provider library.
+
+Note that this requires loading shared library modules at runtime and
+is not compatible with a default chroot configuration unless files are
+copied in to the chroot jail.

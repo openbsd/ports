@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-enchant,v 1.1 2020/01/03 15:06:27 sthen Exp $
+@so lib/php-${PV}/modules/enchant.so
+share/examples/php-${PV}/enchant.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/enchant.ini
