@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/10/06 20:12:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/03 11:20:20 sthen Exp $
 
 COMMENT =		RPKI "relying party" software
+
+BROKEN-sparc64 = "error: failed to run custom build command for `ring v0.14.6`"
 
 GH_ACCOUNT =		NLnetLabs
 GH_PROJECT =		routinator
