@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.647 2019/11/23 15:22:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.648 2020/01/03 17:23:20 abieber Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -153,6 +153,7 @@
      SUBDIR += lablgtk2
      SUBDIR += lablgtk3
      SUBDIR += lemonbar
+     SUBDIR += lemonbar-xft
      SUBDIR += libdbus-c++
      SUBDIR += libdbusmenu
      SUBDIR += libdnd
