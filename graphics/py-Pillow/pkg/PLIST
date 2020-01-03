@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/07/04 14:46:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/01/03 14:42:18 sthen Exp $
 @conflict py-Imaging-*
 @pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
@@ -189,16 +189,16 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_util.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_binary.py
-lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
-lib/python${MODPY_VERSION}/site-packages/PIL/_imagingcms.so
-lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
-lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.so
-lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmorph.so
-lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so
+@so lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
+@so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingcms.so
+@so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
+@so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.so
+@so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmorph.so
+@so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_tkinter_finder.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_util.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_version.py
-lib/python${MODPY_VERSION}/site-packages/PIL/_webp.so
+@so lib/python${MODPY_VERSION}/site-packages/PIL/_webp.so
 lib/python${MODPY_VERSION}/site-packages/PIL/features.py
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
