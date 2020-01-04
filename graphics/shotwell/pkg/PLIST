@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2018/09/17 15:54:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2020/01/04 11:09:54 ajacoutot Exp $
 @bin bin/shotwell
 @lib lib/libshotwell-authenticator.so.${LIBshotwell-authenticator_VERSION}
 @lib lib/libshotwell-plugin-common.so.${LIBshotwell-plugin-common_VERSION}
@@ -6,9 +6,9 @@
 lib/shotwell/
 lib/shotwell/plugins/
 lib/shotwell/plugins/builtin/
-lib/shotwell/plugins/builtin/libshotwell-publishing-extras.so
-lib/shotwell/plugins/builtin/libshotwell-publishing.so
-lib/shotwell/plugins/builtin/libshotwell-transitions.so
+@so lib/shotwell/plugins/builtin/libshotwell-publishing-extras.so
+@so lib/shotwell/plugins/builtin/libshotwell-publishing.so
+@so lib/shotwell/plugins/builtin/libshotwell-transitions.so
 libexec/shotwell/
 libexec/shotwell/shotwell-settings-migrator
 @bin libexec/shotwell/shotwell-video-thumbnailer
