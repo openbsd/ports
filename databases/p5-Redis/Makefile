@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/01/04 10:36:32 benoit Exp $
 
 COMMENT =	perl binding for Redis database
 
-DISTNAME =	Redis-1.991
+DISTNAME =	Redis-1.995
 CATEGORIES =	databases
 
 EPOCH =		0
@@ -14,6 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*
+
+CONFIGURE_STYLE =	modbuild tiny
 
 RUN_DEPENDS =		devel/p5-Try-Tiny \
 			net/p5-IO-Socket-Timeout
