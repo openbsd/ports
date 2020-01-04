@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.58 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.59 2020/01/04 14:49:15 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
@@ -66,7 +66,7 @@ Index: chrome/browser/about_flags.cc
  
  const FeatureEntry::FeatureParam kMarkHttpAsDangerous[] = {
      {security_state::features::kMarkHttpAsFeatureParameterName,
-@@ -1907,13 +1907,13 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1913,13 +1913,13 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kCloudPrintXpsDescription, kOsWin,
       SINGLE_VALUE_TYPE(switches::kEnableCloudPrintXps)},
  #endif  // OS_WIN
@@ -82,7 +82,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-webgl-draft-extensions",
       flag_descriptions::kWebglDraftExtensionsName,
       flag_descriptions::kWebglDraftExtensionsDescription, kOsAll,
-@@ -1966,13 +1966,13 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1972,13 +1972,13 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // OS_ANDROID
  
  #if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || \
@@ -98,7 +98,7 @@ Index: chrome/browser/about_flags.cc
  
  #if BUILDFLAG(ENABLE_NATIVE_NOTIFICATIONS) && !defined(OS_CHROMEOS)
      {"enable-native-notifications",
-@@ -2038,7 +2038,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2044,7 +2044,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kCrostiniBackupDescription, kOsCrOS,
       FEATURE_VALUE_TYPE(chromeos::features::kCrostiniBackup)},
  #endif  // OS_CHROMEOS
@@ -107,7 +107,7 @@ Index: chrome/browser/about_flags.cc
      {"terminal-system-app", flag_descriptions::kTerminalSystemAppName,
       flag_descriptions::kTerminalSystemAppDescription, kOsCrOS | kOsLinux,
       FEATURE_VALUE_TYPE(features::kTerminalSystemApp)},
-@@ -2047,7 +2047,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2053,7 +2053,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kDynamicTcmallocDescription, kOsCrOS | kOsLinux,
       FEATURE_VALUE_TYPE(performance_manager::features::kDynamicTcmallocTuning)},
  #endif  // BUILDFLAG(USE_TCMALLOC)
@@ -116,7 +116,7 @@ Index: chrome/browser/about_flags.cc
  #if defined(OS_ANDROID)
      {"enable-credit-card-assist", flag_descriptions::kCreditCardAssistName,
       flag_descriptions::kCreditCardAssistDescription, kOsAndroid,
-@@ -2125,7 +2125,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2131,7 +2131,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableLitePageServerPreviewsDescription, kOsAndroid,
       FEATURE_VALUE_TYPE(previews::features::kLitePageServerPreviews)},
  #endif  // OS_ANDROID
@@ -125,7 +125,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
       flag_descriptions::kEnableSaveDataDescription, kOsCrOS,
       SINGLE_VALUE_TYPE(
-@@ -2804,7 +2804,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2810,7 +2810,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kOmniboxLocalEntitySuggestionsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(omnibox::kOmniboxLocalEntitySuggestions)},
  
@@ -134,7 +134,7 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -2844,7 +2844,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2850,7 +2850,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kOmniboxAutocompleteTitlesName,
       flag_descriptions::kOmniboxAutocompleteTitlesDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(omnibox::kAutocompleteTitles)},
@@ -143,7 +143,7 @@ Index: chrome/browser/about_flags.cc
  
      {"enable-speculative-service-worker-start-on-query-input",
       flag_descriptions::kSpeculativeServiceWorkerStartOnQueryInputName,
-@@ -3078,13 +3078,13 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3084,13 +3084,13 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kClickToOpenPDFDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
@@ -159,7 +159,7 @@ Index: chrome/browser/about_flags.cc
  
  #if !defined(OS_ANDROID)
      {"chrome-colors", flag_descriptions::kChromeColorsName,
-@@ -3884,13 +3884,13 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3890,13 +3890,13 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -175,7 +175,7 @@ Index: chrome/browser/about_flags.cc
  
      {"enable-audio-focus-enforcement",
       flag_descriptions::kEnableAudioFocusEnforcementName,
-@@ -4263,7 +4263,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4269,7 +4269,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kAudioWorkletRealtimeThreadDescription, kOsAll,
       FEATURE_VALUE_TYPE(blink::features::kAudioWorkletRealtimeThread)},
  
@@ -184,7 +184,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-autofill-save-credit-card-uses-improved-messaging",
       flag_descriptions::kEnableAutofillSaveCreditCardUsesImprovedMessagingName,
       flag_descriptions::
-@@ -4273,7 +4273,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4279,7 +4279,7 @@ const FeatureEntry kFeatureEntries[] = {
           autofill::features::kAutofillSaveCreditCardUsesImprovedMessaging,
           kAutofillSaveCreditCardUsesImprovedMessagingVariations,
           "AutofillSaveCreditCardUsesImprovedMessaging")},
@@ -193,7 +193,7 @@ Index: chrome/browser/about_flags.cc
  
  #if defined(OS_CHROMEOS)
      {"release-notes", flag_descriptions::kReleaseNotesName,
-@@ -4361,12 +4361,12 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4367,12 +4367,12 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableSyncUSSNigoriDescription, kOsAll,
       FEATURE_VALUE_TYPE(switches::kSyncUSSNigori)},
  
@@ -208,7 +208,7 @@ Index: chrome/browser/about_flags.cc
  
  #if BUILDFLAG(ENABLE_SPELLCHECK) && defined(OS_WIN)
      {"win-use-native-spellchecker",
-@@ -4379,12 +4379,12 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4385,12 +4385,12 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kSafetyTipDescription, kOsAll,
       FEATURE_VALUE_TYPE(security_state::features::kSafetyTipUI)},
  
@@ -223,7 +223,7 @@ Index: chrome/browser/about_flags.cc
  
  #if defined(OS_CHROMEOS)
      {"crostini-webui-installer", flag_descriptions::kCrostiniWebUIInstallerName,
-@@ -4520,12 +4520,12 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4526,12 +4526,12 @@ const FeatureEntry kFeatureEntries[] = {
           chrome::android::kDarkenWebsitesCheckboxInThemesSetting)},
  #endif  // defined(OS_ANDROID)
  
@@ -238,7 +238,7 @@ Index: chrome/browser/about_flags.cc
  
      {"password-leak-detection", flag_descriptions::kPasswordLeakDetectionName,
       flag_descriptions::kPasswordLeakDetectionDescription, kOsAll,
-@@ -4599,11 +4599,11 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4605,11 +4605,11 @@ const FeatureEntry kFeatureEntries[] = {
           content_settings::kImprovedCookieControlsForThirdPartyCookieBlocking)},
  #endif  // !defined(OS_ANDROID)
  

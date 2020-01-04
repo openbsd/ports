@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.24 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.25 2020/01/04 14:49:15 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
@@ -15,7 +15,7 @@ Index: chrome/browser/flag_descriptions.h
  
  // This file declares strings used in chrome://flags. These messages are not
  // translated, because instead of end-users they target Chromium developers and
-@@ -2230,7 +2230,7 @@ extern const char kZeroStateFilesDescription[];
+@@ -2233,7 +2233,7 @@ extern const char kZeroStateFilesDescription[];
  
  #endif  // #if defined(OS_CHROMEOS)
  
@@ -24,7 +24,7 @@ Index: chrome/browser/flag_descriptions.h
  extern const char kTerminalSystemAppName[];
  extern const char kTerminalSystemAppDescription[];
  
-@@ -2239,7 +2239,7 @@ extern const char kDynamicTcmallocName[];
+@@ -2242,7 +2242,7 @@ extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
  #endif  // BUILDFLAG(USE_TCMALLOC)
  
@@ -33,7 +33,7 @@ Index: chrome/browser/flag_descriptions.h
  
  // All views-based platforms --------------------------------------------------
  
-@@ -2258,12 +2258,12 @@ extern const char kReopenTabInProductHelpDescription[]
+@@ -2261,12 +2261,12 @@ extern const char kReopenTabInProductHelpDescription[]
  
  // Random platform combinations -----------------------------------------------
  
@@ -48,7 +48,7 @@ Index: chrome/browser/flag_descriptions.h
  
  #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
-@@ -2275,7 +2275,7 @@ extern const char kClickToCallUIDescription[];
+@@ -2278,7 +2278,7 @@ extern const char kClickToCallUIDescription[];
  
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
@@ -57,7 +57,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kDirectManipulationStylusName[];
  extern const char kDirectManipulationStylusDescription[];
-@@ -2289,7 +2289,7 @@ extern const char kProfileMenuRevampDescription[];
+@@ -2292,7 +2292,7 @@ extern const char kProfileMenuRevampDescription[];
  extern const char kSyncClipboardServiceName[];
  extern const char kSyncClipboardServiceDescription[];
  

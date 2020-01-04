@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_compositor_compositor_cc,v 1.1 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_cc,v 1.2 2020/01/04 14:49:15 robert Exp $
 
 Index: ui/compositor/compositor.cc
 --- ui/compositor/compositor.cc.orig
 +++ ui/compositor/compositor.cc
-@@ -672,7 +672,7 @@ void Compositor::OnFrameTokenChanged(uint32_t frame_to
+@@ -681,7 +681,7 @@ void Compositor::OnFrameTokenChanged(uint32_t frame_to
    NOTREACHED();
  }
  

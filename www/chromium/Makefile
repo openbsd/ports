@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.481 2019/12/18 09:01:35 robert Exp $
+# $OpenBSD: Makefile,v 1.482 2020/01/04 14:49:15 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -35,6 +35,8 @@ FLAVORS=		debug component electron
 FLAVOR?=
 .if ${FLAVOR:Melectron}
 REVISION=		3
+.else
+REVISION=		0
 .endif
 
 # BSD-like

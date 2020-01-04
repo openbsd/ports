@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.24 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.25 2020/01/04 14:49:15 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -3738,7 +3738,7 @@ const char kZeroStateFilesDescription[] =
+@@ -3744,7 +3744,7 @@ const char kZeroStateFilesDescription[] =
  
  #endif  // defined(OS_CHROMEOS)
  
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kTerminalSystemAppName[] = "Terminal System App";
  const char kTerminalSystemAppDescription[] =
      "Enables the Terminal System App at chrome://terminal which is used for "
-@@ -3751,7 +3751,7 @@ const char kDynamicTcmallocDescription[] =
+@@ -3757,7 +3757,7 @@ const char kDynamicTcmallocDescription[] =
      "utilization.";
  #endif  // BUILDFLAG(USE_TCMALLOC)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  // All views-based platforms --------------------------------------------------
  
-@@ -3776,13 +3776,13 @@ const char kReopenTabInProductHelpDescription[] =
+@@ -3782,13 +3782,13 @@ const char kReopenTabInProductHelpDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -37,7 +37,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
-@@ -3800,7 +3800,7 @@ const char kClickToCallUIDescription[] =
+@@ -3806,7 +3806,7 @@ const char kClickToCallUIDescription[] =
  
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
@@ -46,7 +46,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
  const char kDirectManipulationStylusDescription[] =
-@@ -3819,7 +3819,7 @@ const char kSyncClipboardServiceName[] = "Sync Clipboa
+@@ -3825,7 +3825,7 @@ const char kSyncClipboardServiceName[] = "Sync Clipboa
  const char kSyncClipboardServiceDescription[] =
      "Enables clipboard syncing via Chrome Sync.";
  
