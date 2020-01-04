@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.188 2019/11/22 21:11:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.189 2020/01/04 17:51:11 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.34.2
+GNOME_VERSION=	3.34.3.1
 
 CATEGORIES=	www
 
@@ -37,6 +37,8 @@ RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
 MODULES=	devel/dconf \
 		devel/meson \
 		x11/gnome
+
+DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
