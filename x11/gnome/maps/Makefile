@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2019/11/23 10:11:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2020/01/04 12:30:41 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.34.2
+GNOME_VERSION=		3.34.3
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
@@ -26,6 +26,7 @@ LIB_DEPENDS=		geo/geocode-glib \
 
 BUILD_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gjs
+
 RUN_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gjs
 
