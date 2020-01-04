@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/04 02:53:04 bcallah Exp $
 
 COMMENT =	simple console gopher client
 DISTNAME =	sacc-v1.00
 PKGNAME =	${DISTNAME:S/-v/-/}
+REVISION =	0
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	net
 
@@ -23,5 +24,6 @@ NO_TEST =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sacc ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/sacc.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
