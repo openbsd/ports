@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_makefile,v 1.23 2019/06/03 10:56:12 benoit Exp $
---- src/makefile.orig	Tue May 28 20:47:06 2019
-+++ src/makefile	Mon Jun  3 14:44:46 2019
+$OpenBSD: patch-src_makefile,v 1.24 2020/01/04 13:52:08 benoit Exp $
+--- src/makefile.orig	Mon Nov 11 17:57:10 2019
++++ src/makefile	Sat Jan  4 13:31:42 2020
 @@ -13,13 +13,13 @@
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
@@ -12,12 +12,12 @@ $OpenBSD: patch-src_makefile,v 1.23 2019/06/03 10:56:12 benoit Exp $
  QMAKE=qmake
  
  # Added -std=c++11 because of auto_ptr to unique_ptr transition
--CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=c++11
-+#CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=c++11
- #CFLAGS:=-ggdb -O0 ${CFLAGS} -std=c++11
+-CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=c++11 -D_FILE_OFFSET_BITS=64
++#CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=c++11 -D_FILE_OFFSET_BITS=64
  
- CFLAGS_DILU=-fno-strict-aliasing
-@@ -42,8 +42,8 @@
+ #CFLAGS:= -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection
+ 
+@@ -45,8 +45,8 @@
  LUA_PKG_NAME=lua
  endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_makefile,v 1.23 2019/06/03 10:56:12 benoit Exp $
  
  # luajit lib
  # LUA_LIBS=$(shell pkg-config --libs luajit)
-@@ -54,13 +54,13 @@
+@@ -57,13 +57,13 @@
  DILU_DIR=${CORE_DIR}Diluculum/
  
  ifndef HL_CONFIG_DIR

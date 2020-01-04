@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2019/06/03 10:56:12 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.41 2020/01/04 13:52:08 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -33,6 +33,7 @@ share/highlight/langDefs/autohotkey.lang
 share/highlight/langDefs/autoit.lang
 share/highlight/langDefs/avenue.lang
 share/highlight/langDefs/awk.lang
+share/highlight/langDefs/ballerina.lang
 share/highlight/langDefs/bat.lang
 share/highlight/langDefs/bbcode.lang
 share/highlight/langDefs/bcpl.lang
@@ -84,6 +85,7 @@ share/highlight/langDefs/express.lang
 share/highlight/langDefs/fame.lang
 share/highlight/langDefs/fasm.lang
 share/highlight/langDefs/felix.lang
+share/highlight/langDefs/fish.lang
 share/highlight/langDefs/fortran77.lang
 share/highlight/langDefs/fortran90.lang
 share/highlight/langDefs/frink.lang
@@ -133,9 +135,9 @@ share/highlight/langDefs/lua.lang
 share/highlight/langDefs/luban.lang
 share/highlight/langDefs/make.lang
 share/highlight/langDefs/maple.lang
+share/highlight/langDefs/markdown.lang
 share/highlight/langDefs/matlab.lang
 share/highlight/langDefs/maya.lang
-share/highlight/langDefs/md.lang
 share/highlight/langDefs/mercury.lang
 share/highlight/langDefs/meson.lang
 share/highlight/langDefs/miranda.lang

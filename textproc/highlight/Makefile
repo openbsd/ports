@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2019/07/12 20:49:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2020/01/04 13:52:08 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.52
+DISTNAME =		highlight-3.54
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -25,6 +25,8 @@ MODLUA_VERSION =	5.3
 
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS}
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # c++11
 COMPILER =		base-clang ports-gcc
