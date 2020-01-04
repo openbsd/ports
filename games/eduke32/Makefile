@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/12/30 08:32:46 jsg Exp $
+# $OpenBSD: Makefile,v 1.24 2020/01/04 05:44:39 jsg Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20191222
 RTAG =		8494
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
+REVISION =	0
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
 
