@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/04 02:49:08 bcallah Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -7,7 +7,7 @@ CATEGORIES =	shells
 
 GH_ACCOUNT =	elves
 GH_PROJECT =	elvish
-GH_TAGNAME =	0.12
+GH_TAGNAME =	v0.13
 
 HOMEPAGE =	https://elv.sh/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
