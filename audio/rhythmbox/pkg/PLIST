@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2019/01/06 10:45:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.57 2020/01/05 13:23:18 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -93,14 +93,11 @@ lib/girepository-1.0/MPID-3.0.typelib
 lib/girepository-1.0/RB-3.0.typelib
 lib/librhythmbox-core.la
 @lib lib/librhythmbox-core.so.${LIBrhythmbox-core_VERSION}
-lib/mozilla/
-lib/mozilla/plugins/
-lib/mozilla/plugins/librhythmbox-itms-detection-plugin.so
 lib/pkgconfig/rhythmbox.pc
 lib/rhythmbox/
 lib/rhythmbox/plugins/
 lib/rhythmbox/plugins/artsearch/
-lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}artsearch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}artsearch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}embedded.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -125,10 +122,10 @@ lib/rhythmbox/plugins/artsearch/oldcache.py
 lib/rhythmbox/plugins/artsearch/songinfo.py
 lib/rhythmbox/plugins/audiocd/
 lib/rhythmbox/plugins/audiocd/audiocd.plugin
-lib/rhythmbox/plugins/audiocd/libaudiocd.so
+@so lib/rhythmbox/plugins/audiocd/libaudiocd.so
 lib/rhythmbox/plugins/audioscrobbler/
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
-lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
+@so lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
 lib/rhythmbox/plugins/context/
 lib/rhythmbox/plugins/context/AlbumTab.py
 lib/rhythmbox/plugins/context/ArtistTab.py
@@ -136,7 +133,7 @@ lib/rhythmbox/plugins/context/ContextView.py
 lib/rhythmbox/plugins/context/LastFM.py
 lib/rhythmbox/plugins/context/LinksTab.py
 lib/rhythmbox/plugins/context/LyricsTab.py
-lib/rhythmbox/plugins/context/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/context/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/context/${MODPY_PYCACHE}AlbumTab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/context/${MODPY_PYCACHE}AlbumTab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/context/${MODPY_PYCACHE}ArtistTab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -154,22 +151,37 @@ lib/rhythmbox/plugins/context/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/context/context.py
 lib/rhythmbox/plugins/dbus-media-server/
 lib/rhythmbox/plugins/dbus-media-server/dbus-media-server.plugin
-lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.so
+@so lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.so
 lib/rhythmbox/plugins/generic-player/
 lib/rhythmbox/plugins/generic-player/generic-player.plugin
-lib/rhythmbox/plugins/generic-player/libgeneric-player.so
+@so lib/rhythmbox/plugins/generic-player/libgeneric-player.so
 lib/rhythmbox/plugins/grilo/
 lib/rhythmbox/plugins/grilo/grilo.plugin
-lib/rhythmbox/plugins/grilo/libgrilo.so
+@so lib/rhythmbox/plugins/grilo/libgrilo.so
 lib/rhythmbox/plugins/im-status/
-lib/rhythmbox/plugins/im-status/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/im-status/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/im-status/${MODPY_PYCACHE}im-status.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/im-status/${MODPY_PYCACHE}im-status.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/im-status/im-status.plugin
 lib/rhythmbox/plugins/im-status/im-status.py
 lib/rhythmbox/plugins/iradio/
 lib/rhythmbox/plugins/iradio/iradio.plugin
-lib/rhythmbox/plugins/iradio/libiradio.so
+@so lib/rhythmbox/plugins/iradio/libiradio.so
+lib/rhythmbox/plugins/listenbrainz/
+${MODPY_COMMENT}lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}/
+lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}listenbrainz.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}listenbrainz.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}queue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}queue.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/rhythmbox/plugins/listenbrainz/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/listenbrainz/client.py
+lib/rhythmbox/plugins/listenbrainz/listenbrainz.plugin
+lib/rhythmbox/plugins/listenbrainz/listenbrainz.py
+lib/rhythmbox/plugins/listenbrainz/queue.py
+lib/rhythmbox/plugins/listenbrainz/settings.py
 lib/rhythmbox/plugins/lyrics/
 lib/rhythmbox/plugins/lyrics/AstrawebParser.py
 lib/rhythmbox/plugins/lyrics/DarkLyricsParser.py
@@ -181,7 +193,7 @@ lib/rhythmbox/plugins/lyrics/LyricsParse.py
 lib/rhythmbox/plugins/lyrics/LyricsSites.py
 lib/rhythmbox/plugins/lyrics/TerraParser.py
 lib/rhythmbox/plugins/lyrics/WinampcnParser.py
-lib/rhythmbox/plugins/lyrics/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/lyrics/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/lyrics/${MODPY_PYCACHE}AstrawebParser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/lyrics/${MODPY_PYCACHE}AstrawebParser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/lyrics/${MODPY_PYCACHE}DarkLyricsParser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -211,7 +223,7 @@ lib/rhythmbox/plugins/magnatune/DownloadAlbumHandler.py
 lib/rhythmbox/plugins/magnatune/MagnatuneAccount.py
 lib/rhythmbox/plugins/magnatune/MagnatuneSource.py
 lib/rhythmbox/plugins/magnatune/TrackListHandler.py
-lib/rhythmbox/plugins/magnatune/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/magnatune/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/magnatune/${MODPY_PYCACHE}DownloadAlbumHandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/magnatune/${MODPY_PYCACHE}DownloadAlbumHandler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/magnatune/${MODPY_PYCACHE}MagnatuneAccount.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -225,19 +237,19 @@ lib/rhythmbox/plugins/magnatune/${MODPY_PYCACHE}magnatune.${MODPY_PYC_MAGIC_TAG}
 lib/rhythmbox/plugins/magnatune/magnatune.plugin
 lib/rhythmbox/plugins/magnatune/magnatune.py
 lib/rhythmbox/plugins/mmkeys/
-lib/rhythmbox/plugins/mmkeys/libmmkeys.so
+@so lib/rhythmbox/plugins/mmkeys/libmmkeys.so
 lib/rhythmbox/plugins/mmkeys/mmkeys.plugin
 lib/rhythmbox/plugins/mpris/
-lib/rhythmbox/plugins/mpris/libmpris.so
+@so lib/rhythmbox/plugins/mpris/libmpris.so
 lib/rhythmbox/plugins/mpris/mpris.plugin
 lib/rhythmbox/plugins/notification/
-lib/rhythmbox/plugins/notification/libnotification.so
+@so lib/rhythmbox/plugins/notification/libnotification.so
 lib/rhythmbox/plugins/notification/notification.plugin
 lib/rhythmbox/plugins/power-manager/
-lib/rhythmbox/plugins/power-manager/libpower-manager.so
+@so lib/rhythmbox/plugins/power-manager/libpower-manager.so
 lib/rhythmbox/plugins/power-manager/power-manager.plugin
 lib/rhythmbox/plugins/python-console/
-lib/rhythmbox/plugins/python-console/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/python-console/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/python-console/${MODPY_PYCACHE}pythonconsole.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/python-console/${MODPY_PYCACHE}pythonconsole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/python-console/pythonconsole.plugin
@@ -246,7 +258,7 @@ lib/rhythmbox/plugins/rb/
 lib/rhythmbox/plugins/rb/Coroutine.py
 lib/rhythmbox/plugins/rb/Loader.py
 lib/rhythmbox/plugins/rb/URLCache.py
-lib/rhythmbox/plugins/rb/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/rb/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/rb/${MODPY_PYCACHE}Coroutine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/rb/${MODPY_PYCACHE}Coroutine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/rb/${MODPY_PYCACHE}Loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -264,25 +276,19 @@ lib/rhythmbox/plugins/rb/rb.py
 lib/rhythmbox/plugins/rb/rbconfig.py
 lib/rhythmbox/plugins/rb/stringmatch.py
 lib/rhythmbox/plugins/rbzeitgeist/
-lib/rhythmbox/plugins/rbzeitgeist/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/rbzeitgeist/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/rbzeitgeist/${MODPY_PYCACHE}rbzeitgeist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/rbzeitgeist/${MODPY_PYCACHE}rbzeitgeist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.plugin
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.py
-lib/rhythmbox/plugins/sendto/
-lib/rhythmbox/plugins/sendto/${MODPY_PYCACHE}/
-lib/rhythmbox/plugins/sendto/${MODPY_PYCACHE}sendto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/rhythmbox/plugins/sendto/${MODPY_PYCACHE}sendto.${MODPY_PYC_MAGIC_TAG}pyc
-lib/rhythmbox/plugins/sendto/sendto.plugin
-lib/rhythmbox/plugins/sendto/sendto.py
 lib/rhythmbox/plugins/soundcloud/
-lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}soundcloud.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}soundcloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/soundcloud/soundcloud.plugin
 lib/rhythmbox/plugins/soundcloud/soundcloud.py
 lib/rhythmbox/plugins/webremote/
-lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}/
 lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}siphash.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}siphash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}webremote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -293,15 +299,15 @@ lib/rhythmbox/plugins/webremote/webremote.py
 lib/rhythmbox/sample-plugins/
 lib/rhythmbox/sample-plugins/sample/
 lib/rhythmbox/sample-plugins/sample-python/
-lib/rhythmbox/sample-plugins/sample-python/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/rhythmbox/sample-plugins/sample-python/${MODPY_PYCACHE}/
 lib/rhythmbox/sample-plugins/sample-python/${MODPY_PYCACHE}sample-python.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/sample-plugins/sample-python/${MODPY_PYCACHE}sample-python.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/sample-plugins/sample-python/sample-python.plugin
 lib/rhythmbox/sample-plugins/sample-python/sample-python.py
 lib/rhythmbox/sample-plugins/sample-vala/
-lib/rhythmbox/sample-plugins/sample-vala/libsample-vala.so
+@so lib/rhythmbox/sample-plugins/sample-vala/libsample-vala.so
 lib/rhythmbox/sample-plugins/sample-vala/sample-vala.plugin
-lib/rhythmbox/sample-plugins/sample/libsample.so
+@so lib/rhythmbox/sample-plugins/sample/libsample.so
 lib/rhythmbox/sample-plugins/sample/sample.plugin
 @bin libexec/rhythmbox-metadata
 @man man/man1/rhythmbox-client.1
@@ -661,13 +667,8 @@ share/help/zh_CN/rhythmbox/figures/rb-volume-changer.png
 share/help/zh_CN/rhythmbox/figures/rb-window.png
 share/help/zh_CN/rhythmbox/index.docbook
 share/help/zh_CN/rhythmbox/legal.xml
-share/icons/hicolor/16x16/apps/rhythmbox.png
-share/icons/hicolor/22x22/apps/rhythmbox.png
-share/icons/hicolor/24x24/apps/rhythmbox.png
-share/icons/hicolor/256x256/apps/rhythmbox.png
-share/icons/hicolor/32x32/apps/rhythmbox.png
-share/icons/hicolor/48x48/apps/rhythmbox.png
-share/icons/hicolor/scalable/apps/rhythmbox-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Rhythmbox-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Rhythmbox.svg
 share/locale/af/LC_MESSAGES/rhythmbox.mo
 share/locale/am/LC_MESSAGES/rhythmbox.mo
 share/locale/ar/LC_MESSAGES/rhythmbox.mo
@@ -714,6 +715,7 @@ share/locale/kn/LC_MESSAGES/rhythmbox.mo
 share/locale/ko/LC_MESSAGES/rhythmbox.mo
 share/locale/lt/LC_MESSAGES/rhythmbox.mo
 share/locale/lv/LC_MESSAGES/rhythmbox.mo
+share/locale/mjw/LC_MESSAGES/rhythmbox.mo
 share/locale/mk/LC_MESSAGES/rhythmbox.mo
 share/locale/ml/LC_MESSAGES/rhythmbox.mo
 share/locale/mn/LC_MESSAGES/rhythmbox.mo
@@ -774,6 +776,8 @@ share/rhythmbox/plugins/context/tmpl/links-tmpl.html
 share/rhythmbox/plugins/context/tmpl/loading.html
 share/rhythmbox/plugins/context/tmpl/lyrics-tmpl.html
 share/rhythmbox/plugins/context/tmpl/main.css
+share/rhythmbox/plugins/listenbrainz/
+share/rhythmbox/plugins/listenbrainz/settings.ui
 share/rhythmbox/plugins/lyrics/
 share/rhythmbox/plugins/lyrics/lyrics-prefs.ui
 share/rhythmbox/plugins/magnatune/

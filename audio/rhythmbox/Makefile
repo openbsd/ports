@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.175 2019/07/12 20:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.176 2020/01/05 13:23:18 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		3.4.3
-REVISION=		2
+GNOME_VERSION=		3.4.4
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -16,17 +15,18 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2 with exception clause
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender archive atk-1.0 atk-bridge-2.0 bz2 c cairo
-WANTLIB += cairo-gobject crypto epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
-WANTLIB += grilo-0.3 gstaudio-1.0 gstbase-1.0 gstcontroller-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv idn2 intl json-glib-1.0 lz4
-WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png psl pthread soup-2.4
-WANTLIB += sqlite3 tdb totem-plparser unistring xcb xcb-render xcb-shm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender archive atk-1.0 atk-bridge-2.0 b2 brotlicommon
+WANTLIB += brotlidec bz2 c cairo cairo-gobject charset crypto
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 grilo-0.3
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstcontroller-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 harfbuzz
+WANTLIB += iconv idn2 intl json-glib-1.0 lz4 lzma m notify orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
+WANTLIB += peas-gtk-1.0 pixman-1 png psl pthread soup-2.4 sqlite3
+WANTLIB += tdb totem-plparser unistring xcb xcb-render xcb-shm
 WANTLIB += xml2 z zstd
 
 MODULES=		devel/dconf \
@@ -89,7 +89,6 @@ TEST_IS_INTERACTIVE=	x11
 post-install:
 	rm ${PREFIX}/lib/rhythmbox/{,sample-}plugins/*/*.la
 	rm ${PREFIX}/lib/rhythmbox/sample-plugins/*/*.a
-	rm ${PREFIX}/lib/mozilla/plugins/*.{a,la}
 	# XXX hangs: check at next rhythmbox update
 	rm -rf ${PREFIX}/{lib,share}/rhythmbox/plugins/replaygain
 
