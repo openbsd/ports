@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1160 2020/01/05 21:59:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.1161 2020/01/05 23:51:03 job Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -22,6 +22,7 @@
      SUBDIR += axel
      SUBDIR += balance
      SUBDIR += bgpq3
+     SUBDIR += bgpq4
      SUBDIR += bindgraph
      SUBDIR += bing
      SUBDIR += bird
