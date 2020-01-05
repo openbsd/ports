@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2019/11/28 08:51:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/01/05 11:54:33 ajacoutot Exp $
 bin/gnome-music
 lib/org.gnome.Music/
 lib/org.gnome.Music/girepository-1.0/
@@ -400,6 +400,7 @@ share/locale/lt/LC_MESSAGES/org.gnome.Music.mo
 share/locale/lv/LC_MESSAGES/org.gnome.Music.mo
 share/locale/mjw/LC_MESSAGES/org.gnome.Music.mo
 share/locale/ml/LC_MESSAGES/org.gnome.Music.mo
+share/locale/ms/LC_MESSAGES/org.gnome.Music.mo
 share/locale/nb/LC_MESSAGES/org.gnome.Music.mo
 share/locale/ne/LC_MESSAGES/org.gnome.Music.mo
 share/locale/nl/LC_MESSAGES/org.gnome.Music.mo
