@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1159 2019/12/28 08:05:04 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1160 2020/01/05 21:59:47 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -265,6 +265,7 @@
      SUBDIR += mosquitto
      SUBDIR += mrtg
      SUBDIR += msdl
+     SUBDIR += msoak
      SUBDIR += mtr
      SUBDIR += mtr,gtk
      SUBDIR += mudix
