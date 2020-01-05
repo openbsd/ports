@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2020/01/03 21:25:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2020/01/05 13:25:34 sthen Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
@@ -26,9 +26,9 @@ WANTLIB=		c iconv intl m curses pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-clang ports-gcc base-gcc
 
-# use ports-clang + ld.lld on mips64 to avoid ld.bfd ICE:
+# use clang + ld.lld on mips64 to avoid ld.bfd ICE:
 # /usr/bin/ld: BFD 2.17 internal error, aborting at /usr/src/gnu/usr.bin/binutils-2.17/bfd/elfxx-mips.c line 4797 in mips_elf_create_dynamic_relocation
-MODCLANG_ARCHS =	mips64 mips64el
+MODCLANG_ARCHS =	mips64el
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 USE_LLD =	Yes
 .endif
