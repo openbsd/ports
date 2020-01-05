@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/02/01 22:06:14 tim Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/01/05 18:35:35 juanfra Exp $
 @bin bin/wavpack
 @bin bin/wvgain
 @bin bin/wvtag
 @bin bin/wvunpack
 include/wavpack/
 include/wavpack/wavpack.h
-lib/libwavpack.a
+@static-lib lib/libwavpack.a
 lib/libwavpack.la
 @lib lib/libwavpack.so.${LIBwavpack_VERSION}
 lib/pkgconfig/wavpack.pc

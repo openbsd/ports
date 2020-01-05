@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/01/05 18:35:34 juanfra Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
-DISTNAME =		wavpack-5.1.0
-REVISION =		2
+DISTNAME =		wavpack-5.2.0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://www.wavpack.com/
 
-SHARED_LIBS +=		wavpack		0.2	# 3.0
+MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
+
+SHARED_LIBS +=		wavpack		0.3	# 3.1
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c iconv m
+WANTLIB =		c crypto iconv m
 
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
@@ -21,18 +22,14 @@ EXTRACT_SUFX =		.tar.bz2
 LIB_DEPENDS =		converters/libiconv
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ARGS =	--enable-tests
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--enable-legacy \
+			--enable-libcrypto \
+			--enable-tests
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 DOCDIR =		${PREFIX}/share/doc/wavpack
-
-AUTOMAKE_VERSION =	1.14
-AUTOCONF_VERSION =	2.69
-
-pre-configure:
-	sed -i 's,#include "md5.h",#include <md5.h>,' ${WRKSRC}/cli/*.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
