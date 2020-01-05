@@ -1,0 +1,4 @@
+The bgpq4 utility can be used to generate prefix-lists and other types
+of filters for bgpd, BIRD, Cisco, Nokia SR-OS, Juniper Junos, and
+other BGP implementations. The bgpq4 utility retrieves its input from
+IRRd servers. This utility is a fork of bgpq3.
