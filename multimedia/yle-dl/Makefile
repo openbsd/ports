@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/12/01 20:59:12 fcambus Exp $
+# $OpenBSD: Makefile,v 1.26 2020/01/05 23:22:48 kmos Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
@@ -30,9 +30,11 @@ RUN_DEPENDS =		devel/py-attrs \
 			net/wget \
 			textproc/py-lxml \
 			converters/py-mini-amf
+TEST_DEPENDS =		devel/py-test-runner
 
 MODPY_SETUPTOOLS =	Yes
 MODPHP_BUILDDEP =	No
+MODPY_PYTEST =		Yes
 
 pre-configure:
 	@sed -i -e "s,'php','${MODPHP_BIN}',g" ${WRKSRC}/yledl/io.py
