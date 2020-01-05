@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2019/11/02 12:12:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.57 2020/01/05 20:03:32 jasper Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -28,12 +28,12 @@ include/eog-3.0/eog/eog-window.h
 lib/eog/
 lib/eog/girepository-1.0/
 lib/eog/girepository-1.0/Eog-3.0.typelib
-lib/eog/libeog.so
+@so lib/eog/libeog.so
 lib/eog/plugins/
 lib/eog/plugins/fullscreen.plugin
-lib/eog/plugins/libfullscreen.so
-lib/eog/plugins/libreload.so
-lib/eog/plugins/libstatusbar-date.so
+@so lib/eog/plugins/libfullscreen.so
+@so lib/eog/plugins/libreload.so
+@so lib/eog/plugins/libstatusbar-date.so
 lib/eog/plugins/reload.plugin
 lib/eog/plugins/statusbar-date.plugin
 lib/pkgconfig/eog.pc

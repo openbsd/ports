@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.154 2019/11/02 12:12:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.155 2020/01/05 20:03:31 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		3.34.2
 
 CATEGORIES=		graphics
 
@@ -18,6 +18,8 @@ WANTLIB += z
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
