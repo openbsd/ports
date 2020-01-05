@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/01/05 10:23:15 benoit Exp $
 @bin bin/barrage
 share/applications/barrage.desktop
 share/barrage/
@@ -29,8 +29,6 @@ share/barrage/sounds/gunfire.wav
 share/barrage/sounds/highlight.wav
 share/doc/barrage/
 share/doc/barrage/README
-share/icons/hicolor/16x16/apps/barrage.png
-share/icons/hicolor/32x32/apps/barrage.png
-share/icons/hicolor/48x48/apps/barrage.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/icons/barrage48.png

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/01/05 10:23:15 benoit Exp $
 
 COMMENT=	kill and destroy as many targets as possible in 3 minutes
 
-DISTNAME =	barrage-1.0.4
+DISTNAME =	barrage-1.0.5
 CATEGORIES=	games
-REVISION =	3
 
 HOMEPAGE=	http://lgames.sourceforge.net/?project=Barrage
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL c m pthread SDL_mixer
@@ -21,7 +20,11 @@ LIB_DEPENDS=	devel/sdl-mixer
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE = gnu
+
+CONFIGURE_ENV += LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/barrage
