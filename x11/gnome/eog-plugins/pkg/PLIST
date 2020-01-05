@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2019/09/15 13:43:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/01/05 20:03:32 jasper Exp $
 lib/eog/plugins/${MODPY_PYCACHE}/
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -15,13 +15,13 @@ lib/eog/plugins/fit-to-width.plugin
 lib/eog/plugins/fullscreenbg.plugin
 lib/eog/plugins/fullscreenbg.py
 lib/eog/plugins/hide-titlebar.plugin
-lib/eog/plugins/libexif-display.so
-lib/eog/plugins/libfit-to-width.so
-lib/eog/plugins/libhide-titlebar.so
-lib/eog/plugins/liblight-theme.so
-lib/eog/plugins/libmap.so
-lib/eog/plugins/libpostasa.so
-lib/eog/plugins/libsend-by-mail.so
+@so lib/eog/plugins/libexif-display.so
+@so lib/eog/plugins/libfit-to-width.so
+@so lib/eog/plugins/libhide-titlebar.so
+@so lib/eog/plugins/liblight-theme.so
+@so lib/eog/plugins/libmap.so
+@so lib/eog/plugins/libpostasa.so
+@so lib/eog/plugins/libsend-by-mail.so
 lib/eog/plugins/light-theme.plugin
 lib/eog/plugins/map.plugin
 lib/eog/plugins/maximize-windows.plugin

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.84 2019/11/18 19:57:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2020/01/05 20:03:32 jasper Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		3.26.4
-REVISION=		0
+GNOME_VERSION=		3.26.5
 
 CATEGORIES=		graphics
 
@@ -33,6 +32,8 @@ WANTLIB += z brotlicommon brotlidec
 MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS=    	devel/libgdata \
 			devel/libpeas \
