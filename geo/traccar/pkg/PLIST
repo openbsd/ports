@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/22 09:44:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/01/06 20:57:31 sthen Exp $
 @newgroup _traccar:824
 @newuser _traccar:824:_traccar:daemon:Traccar user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/traccar
@@ -18,7 +18,13 @@ share/traccar/conf/
 share/traccar/conf/default.xml
 share/traccar/conf/traccar.xml
 @sample ${SYSCONFDIR}/traccar/
+@mode 640
+@owner root
+@group _traccar
 @sample ${SYSCONFDIR}/traccar/traccar.xml
+@mode
+@owner
+@group
 share/traccar/lib/
 share/traccar/lib/HikariCP-3.3.1.jar
 share/traccar/lib/activation-1.1.1.jar
