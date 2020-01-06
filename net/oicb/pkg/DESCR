@@ -1,0 +1,3 @@
+oicb is a minimalistic replacement for icb(1) command-line client.  oicb lacks
+many (insecure) features, but offers one big advantage: screen is not blocked
+while you're typing.
