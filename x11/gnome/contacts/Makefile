@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2019/11/02 11:50:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2020/01/06 16:32:00 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.34
+GNOME_VERSION=		3.34.1
 
 CATEGORIES=		productivity
 
@@ -22,6 +22,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES=		devel/meson \
 			x11/gnome \
 			devel/dconf
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS=		net/telepathy/folks \
 			x11/gnome/desktop \
