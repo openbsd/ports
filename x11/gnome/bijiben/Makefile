@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2019/12/27 17:20:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2020/01/06 16:32:25 jasper Exp $
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		3.34.2
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -17,6 +17,8 @@ WANTLIB += xml2
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS=		databases/evolution-data-server \
 			x11/gnome/online-accounts \

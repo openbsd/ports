@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/05/08 14:09:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/01/06 16:32:25 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/applications/org.gnome.Notes.desktop
@@ -305,6 +305,7 @@ share/locale/ko/LC_MESSAGES/bijiben.mo
 share/locale/lt/LC_MESSAGES/bijiben.mo
 share/locale/lv/LC_MESSAGES/bijiben.mo
 share/locale/ml/LC_MESSAGES/bijiben.mo
+share/locale/ms/LC_MESSAGES/bijiben.mo
 share/locale/nb/LC_MESSAGES/bijiben.mo
 share/locale/ne/LC_MESSAGES/bijiben.mo
 share/locale/nl/LC_MESSAGES/bijiben.mo
