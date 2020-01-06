@@ -1,7 +1,16 @@
-$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.5 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.6 2020/01/06 16:05:06 robert Exp $
 Index: third_party/libusb/BUILD.gn
 --- third_party/libusb/BUILD.gn.orig
 +++ third_party/libusb/BUILD.gn
+@@ -3,7 +3,7 @@
+ # found in the LICENSE file.
+ 
+ # libusb is only used by //services/device/usb on Windows and macOS.
+-assert(is_win || is_mac)
++assert(is_win || is_mac || is_openbsd)
+ 
+ import("//build/config/features.gni")
+ 
 @@ -115,7 +115,7 @@ static_library("libusb") {
      ]
    }
