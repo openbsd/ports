@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1161 2020/01/05 23:51:03 job Exp $
+# $OpenBSD: Makefile,v 1.1162 2020/01/06 21:35:39 zhuk Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -314,6 +314,7 @@
      SUBDIR += obfs4proxy
      SUBDIR += ocserv
      SUBDIR += oggfwd
+     SUBDIR += oicb
      SUBDIR += oidentd
      SUBDIR += oinkmaster
      SUBDIR += olsrd
