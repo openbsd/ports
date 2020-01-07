@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2019/11/11 20:49:28 landry Exp $
+# $OpenBSD: Makefile,v 1.67 2020/01/07 08:22:27 landry Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
-XFCE_VERSION=	0.8.8
+XFCE_VERSION=	0.8.9.1
 XFCE_GOODIE=	xfce4-terminal
-REVISION=	1
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # GPLv2
@@ -26,6 +25,6 @@ WANTLIB=	X11 X11-xcb atk-1.0 c gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 gobject-2.0 pango-1.0 xfce4util ffi graphite2 \
 		harfbuzz startup-notification-1 xfce4ui-2 unistring \
 		atk-bridge-2.0 cairo-gobject epoxy gdk-3 \
-		gmp gnutls gtk-3 hogweed idn2 nettle p11-kit tasn1 vte-2.91 xfconf-0
+		gmp gnutls gtk-3 hogweed idn2 nettle p11-kit tasn1 vte-2.91 xfconf-0 ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
