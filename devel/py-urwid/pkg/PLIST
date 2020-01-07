@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/01/06 12:55:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/01/07 12:09:00 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/urwid/
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,7 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/urwid/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}_async_kw_event_loop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}canvas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}command_map.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,7 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}lcd_display.${MOD
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}listbox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}main_loop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}monitored_list.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}numedit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}old_str_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}raw_display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
@@ -38,7 +36,6 @@ lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}vterm.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}web_display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}wimp.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/urwid/_async_kw_event_loop.py
 lib/python${MODPY_VERSION}/site-packages/urwid/canvas.py
 lib/python${MODPY_VERSION}/site-packages/urwid/command_map.py
 lib/python${MODPY_VERSION}/site-packages/urwid/compat.py
@@ -54,7 +51,6 @@ lib/python${MODPY_VERSION}/site-packages/urwid/lcd_display.py
 lib/python${MODPY_VERSION}/site-packages/urwid/listbox.py
 lib/python${MODPY_VERSION}/site-packages/urwid/main_loop.py
 lib/python${MODPY_VERSION}/site-packages/urwid/monitored_list.py
-lib/python${MODPY_VERSION}/site-packages/urwid/numedit.py
 lib/python${MODPY_VERSION}/site-packages/urwid/old_str_util.py
 lib/python${MODPY_VERSION}/site-packages/urwid/raw_display.py
 lib/python${MODPY_VERSION}/site-packages/urwid/signals.py
@@ -68,7 +64,6 @@ lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}test_canvas
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}test_container.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}test_decoration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}test_doctests.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}test_escapes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}test_event_loops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}test_graphics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}test_listbox.${MODPY_PYC_MAGIC_TAG}pyc
@@ -82,7 +77,6 @@ lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_canvas.py
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_container.py
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_decoration.py
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_doctests.py
-lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_escapes.py
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_event_loops.py
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_graphics.py
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_listbox.py
