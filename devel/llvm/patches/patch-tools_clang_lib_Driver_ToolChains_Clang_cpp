@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.10 2019/09/08 10:40:39 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.11 2020/01/07 22:59:43 jca Exp $
 
 - Make LLVM create strict aligned code for OpenBSD/arm64.
 - Disable -fstrict-aliasing per default on OpenBSD.
@@ -22,6 +22,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.10 2019/09/08 10
   jumping into the instruction stream partway through other instructions. Work to
   remove these gadgets will continue through other mechanisms.
 - Add retguard for arm64.
+- Add retguard for octeon/mips64.
 - Improve the X86FixupGadgets pass
 - On OpenBSD disable the malloc/calloc/realloc/free/str*dup builtins, since
   they can perform strange transforms and optimizations.  Some of those could
@@ -57,7 +58,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -4544,9 +4548,44 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4544,9 +4548,46 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                     false))
      CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
  
@@ -75,6 +76,8 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 +  }
 +  if (RetProtector &&
 +      ((getToolChain().getArch() == llvm::Triple::x86_64) ||
++       (getToolChain().getArch() == llvm::Triple::mips64) ||
++       (getToolChain().getArch() == llvm::Triple::mips64el) ||
 +       (getToolChain().getArch() == llvm::Triple::aarch64)) &&
 +      !Args.hasArg(options::OPT_fno_stack_protector) &&
 +      !Args.hasArg(options::OPT_pg)) {
@@ -103,7 +106,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    // Translate -mstackrealign
    if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
                     false))
-@@ -5029,6 +5068,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5029,6 +5070,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");
