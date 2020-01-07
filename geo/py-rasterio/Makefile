@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/07 08:27:50 martin Exp $
 
 COMMENT =	geospatial raster data API and CLI
 
-MODPY_EGG_VERSION =	1.0.22
+MODPY_EGG_VERSION =	1.1.2
 DISTNAME =	rasterio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	geo
 
 HOMEPAGE =	https://rasterio.readthedocs.io/en/latest/
+
+MAINTAINER = 	Martin Reindl <martin@catai.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -45,7 +47,8 @@ RUN_DEPENDS +=	devel/py-enum34
 NO_TEST =	Yes
 TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
 		devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-hypothesis${MODPY_FLAVOR}
+		devel/py-hypothesis${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/bin/rio{,${MODPY_BIN_SUFFIX}}
