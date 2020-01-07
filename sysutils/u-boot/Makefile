@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.61 2019/10/08 11:33:55 jsg Exp $
+#	$OpenBSD: Makefile,v 1.62 2020/01/07 07:07:08 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,7 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2019.10
+VERSION=	2020.01
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	devel/bison \
 		textproc/gsed
 
 MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 MODPY_ADJ_FILES=\
@@ -38,7 +39,7 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 .if "${FLAVOR}" == "aarch64"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
 		devel/py-elftools \
-		sysutils/arm-trusted-firmware
+		sysutils/arm-trusted-firmware>=2.2v0
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 RK3328_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3328-bl31.elf"
 RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
@@ -141,6 +142,7 @@ FILES=\
 	u-boot.bin \
 	u-boot-sunxi-with-spl.bin \
 	u-boot.imx \
+	u-boot-dtb.imx \
 	u-boot-spl.kwb \
 	u-boot-with-spl.bin \
 	u-boot.itb \
