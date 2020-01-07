@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/05 10:18:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/01/07 20:22:07 zhuk Exp $
 
 # qmlplugindump
 USE_WXNEEDED =		Yes
@@ -7,6 +7,8 @@ QT5NAME =		QtDeclarative
 COMMENT-main =		Qt5 Quick and QML components
 COMMENT-xmllistmodel =	plugin for creating QML models from XML
 PKGNAME-xmllistmodel =	qt5-declarative-xmllistmodel-${VERSION}
+REVISION-main =		0
+REVISION-xmllistmodel =	0
 
 MULTI_PACKAGES =	-main -examples -xmllistmodel
 DPB_PROPERTIES =	parallel

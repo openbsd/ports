@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2018/01/25 15:02:25 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2020/01/07 20:22:07 zhuk Exp $
 @conflict qt5-<5.6
 bin/moc-qt5
 bin/qmake-qt5
@@ -3288,35 +3288,35 @@ lib/qt5/pkgconfig/Qt5Widgets.pc
 lib/qt5/pkgconfig/Qt5Xml.pc
 lib/qt5/plugins/
 lib/qt5/plugins/bearer/
-lib/qt5/plugins/bearer/libqgenericbearer.so
+@so lib/qt5/plugins/bearer/libqgenericbearer.so
 lib/qt5/plugins/egldeviceintegrations/
-lib/qt5/plugins/egldeviceintegrations/libqeglfs-emu-integration.so
-lib/qt5/plugins/egldeviceintegrations/libqeglfs-kms-egldevice-integration.so
-lib/qt5/plugins/egldeviceintegrations/libqeglfs-kms-integration.so
-lib/qt5/plugins/egldeviceintegrations/libqeglfs-x11-integration.so
+@so lib/qt5/plugins/egldeviceintegrations/libqeglfs-emu-integration.so
+@so lib/qt5/plugins/egldeviceintegrations/libqeglfs-kms-egldevice-integration.so
+@so lib/qt5/plugins/egldeviceintegrations/libqeglfs-kms-integration.so
+@so lib/qt5/plugins/egldeviceintegrations/libqeglfs-x11-integration.so
 lib/qt5/plugins/generic/
-lib/qt5/plugins/generic/libqtuiotouchplugin.so
+@so lib/qt5/plugins/generic/libqtuiotouchplugin.so
 lib/qt5/plugins/imageformats/
-lib/qt5/plugins/imageformats/libqgif.so
-lib/qt5/plugins/imageformats/libqico.so
-lib/qt5/plugins/imageformats/libqjpeg.so
+@so lib/qt5/plugins/imageformats/libqgif.so
+@so lib/qt5/plugins/imageformats/libqico.so
+@so lib/qt5/plugins/imageformats/libqjpeg.so
 lib/qt5/plugins/platforminputcontexts/
-lib/qt5/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
-lib/qt5/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so
+@so lib/qt5/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
+@so lib/qt5/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so
 lib/qt5/plugins/platforms/
-lib/qt5/plugins/platforms/libqeglfs.so
-lib/qt5/plugins/platforms/libqminimal.so
-lib/qt5/plugins/platforms/libqminimalegl.so
-lib/qt5/plugins/platforms/libqoffscreen.so
-lib/qt5/plugins/platforms/libqvnc.so
-lib/qt5/plugins/platforms/libqxcb.so
+@so lib/qt5/plugins/platforms/libqeglfs.so
+@so lib/qt5/plugins/platforms/libqminimal.so
+@so lib/qt5/plugins/platforms/libqminimalegl.so
+@so lib/qt5/plugins/platforms/libqoffscreen.so
+@so lib/qt5/plugins/platforms/libqvnc.so
+@so lib/qt5/plugins/platforms/libqxcb.so
 lib/qt5/plugins/platformthemes/
-lib/qt5/plugins/platformthemes/libqgtk3.so
+@so lib/qt5/plugins/platformthemes/libqgtk3.so
 lib/qt5/plugins/printsupport/
-lib/qt5/plugins/printsupport/libcupsprintersupport.so
+@so lib/qt5/plugins/printsupport/libcupsprintersupport.so
 lib/qt5/plugins/sqldrivers/
-lib/qt5/plugins/sqldrivers/libqsqlite.so
-lib/qt5/plugins/sqldrivers/libqsqlodbc.so
+@so lib/qt5/plugins/sqldrivers/libqsqlite.so
+@so lib/qt5/plugins/sqldrivers/libqsqlodbc.so
 lib/qt5/plugins/xcbglintegrations/
-lib/qt5/plugins/xcbglintegrations/libqxcb-egl-integration.so
-lib/qt5/plugins/xcbglintegrations/libqxcb-glx-integration.so
+@so lib/qt5/plugins/xcbglintegrations/libqxcb-egl-integration.so
+@so lib/qt5/plugins/xcbglintegrations/libqxcb-glx-integration.so

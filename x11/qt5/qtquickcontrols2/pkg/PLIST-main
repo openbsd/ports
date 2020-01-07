@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/03/08 12:57:11 cwen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2020/01/07 20:22:08 zhuk Exp $
 include/X11/qt5/QtQuickControls2/
 include/X11/qt5/QtQuickControls2/${VERSION}/
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/
@@ -142,11 +142,11 @@ lib/qt5/qml/Qt/labs/calendar/MonthGrid.qml
 ${MODQT5_COMMENT}lib/qt5/qml/Qt/labs/calendar/MonthGrid.qmlc
 lib/qt5/qml/Qt/labs/calendar/WeekNumberColumn.qml
 ${MODQT5_COMMENT}lib/qt5/qml/Qt/labs/calendar/WeekNumberColumn.qmlc
-lib/qt5/qml/Qt/labs/calendar/libqtlabscalendarplugin.so
+@so lib/qt5/qml/Qt/labs/calendar/libqtlabscalendarplugin.so
 lib/qt5/qml/Qt/labs/calendar/plugins.qmltypes
 lib/qt5/qml/Qt/labs/calendar/qmldir
 lib/qt5/qml/Qt/labs/platform/
-lib/qt5/qml/Qt/labs/platform/libqtlabsplatformplugin.so
+@so lib/qt5/qml/Qt/labs/platform/libqtlabsplatformplugin.so
 lib/qt5/qml/Qt/labs/platform/plugins.qmltypes
 lib/qt5/qml/Qt/labs/platform/qmldir
 lib/qt5/qml/QtQuick/Controls.2/
@@ -297,7 +297,7 @@ lib/qt5/qml/QtQuick/Controls.2/Material/ToolTip.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls.2/Material/ToolTip.qmlc
 lib/qt5/qml/QtQuick/Controls.2/Material/Tumbler.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls.2/Material/Tumbler.qmlc
-lib/qt5/qml/QtQuick/Controls.2/Material/libqtquickcontrols2materialstyleplugin.so
+@so lib/qt5/qml/QtQuick/Controls.2/Material/libqtquickcontrols2materialstyleplugin.so
 lib/qt5/qml/QtQuick/Controls.2/Material/plugins.qmltypes
 lib/qt5/qml/QtQuick/Controls.2/Material/qmldir
 lib/qt5/qml/QtQuick/Controls.2/Menu.qml
@@ -461,7 +461,7 @@ lib/qt5/qml/QtQuick/Controls.2/Universal/ToolTip.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls.2/Universal/ToolTip.qmlc
 lib/qt5/qml/QtQuick/Controls.2/Universal/Tumbler.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls.2/Universal/Tumbler.qmlc
-lib/qt5/qml/QtQuick/Controls.2/Universal/libqtquickcontrols2universalstyleplugin.so
+@so lib/qt5/qml/QtQuick/Controls.2/Universal/libqtquickcontrols2universalstyleplugin.so
 lib/qt5/qml/QtQuick/Controls.2/Universal/plugins.qmltypes
 lib/qt5/qml/QtQuick/Controls.2/Universal/qmldir
 lib/qt5/qml/QtQuick/Controls.2/designer/
@@ -669,10 +669,10 @@ lib/qt5/qml/QtQuick/Controls.2/designer/images/tumbler-icon16.png
 lib/qt5/qml/QtQuick/Controls.2/designer/images/tumbler-icon16@2x.png
 lib/qt5/qml/QtQuick/Controls.2/designer/images/tumbler-icon@2x.png
 lib/qt5/qml/QtQuick/Controls.2/designer/qtquickcontrols2.metainfo
-lib/qt5/qml/QtQuick/Controls.2/libqtquickcontrols2plugin.so
+@so lib/qt5/qml/QtQuick/Controls.2/libqtquickcontrols2plugin.so
 lib/qt5/qml/QtQuick/Controls.2/plugins.qmltypes
 lib/qt5/qml/QtQuick/Controls.2/qmldir
 lib/qt5/qml/QtQuick/Templates.2/
-lib/qt5/qml/QtQuick/Templates.2/libqtquicktemplates2plugin.so
+@so lib/qt5/qml/QtQuick/Templates.2/libqtquicktemplates2plugin.so
 lib/qt5/qml/QtQuick/Templates.2/plugins.qmltypes
 lib/qt5/qml/QtQuick/Templates.2/qmldir

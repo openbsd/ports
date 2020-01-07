@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/11/05 10:18:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/01/07 20:22:08 zhuk Exp $
 
 QT5NAME =		QtSensors
 COMMENT-main =		Qt5 hardware sensors support
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 

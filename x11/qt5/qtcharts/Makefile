@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/11/05 10:18:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/07 20:22:07 zhuk Exp $
 
 QT5NAME =		QtCharts
 COMMENT-main =		Qt5 components for drawing 2D charts
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 

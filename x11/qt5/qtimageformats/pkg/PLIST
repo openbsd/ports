@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2017/07/29 00:07:14 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/07 20:22:07 zhuk Exp $
 @conflict qt5-<5.6
 @pkgpath x11/qt5/qtimageformats,-main
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake
@@ -8,10 +8,10 @@ lib/qt5/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake
-lib/qt5/plugins/imageformats/libqicns.so
-lib/qt5/plugins/imageformats/libqjp2.so
-lib/qt5/plugins/imageformats/libqmng.so
-lib/qt5/plugins/imageformats/libqtga.so
-lib/qt5/plugins/imageformats/libqtiff.so
-lib/qt5/plugins/imageformats/libqwbmp.so
-lib/qt5/plugins/imageformats/libqwebp.so
+@so lib/qt5/plugins/imageformats/libqicns.so
+@so lib/qt5/plugins/imageformats/libqjp2.so
+@so lib/qt5/plugins/imageformats/libqmng.so
+@so lib/qt5/plugins/imageformats/libqtga.so
+@so lib/qt5/plugins/imageformats/libqtiff.so
+@so lib/qt5/plugins/imageformats/libqwbmp.so
+@so lib/qt5/plugins/imageformats/libqwebp.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/01/07 20:22:08 zhuk Exp $
 include/X11/qt5/QtWebChannel/
 include/X11/qt5/QtWebChannel/${VERSION}/
 include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/
@@ -31,6 +31,6 @@ lib/qt5/mkspecs/modules/qt_lib_webchannel.pri
 lib/qt5/mkspecs/modules/qt_lib_webchannel_private.pri
 lib/qt5/pkgconfig/Qt5WebChannel.pc
 lib/qt5/qml/QtWebChannel/
-lib/qt5/qml/QtWebChannel/libdeclarative_webchannel.so
+@so lib/qt5/qml/QtWebChannel/libdeclarative_webchannel.so
 lib/qt5/qml/QtWebChannel/plugins.qmltypes
 lib/qt5/qml/QtWebChannel/qmldir

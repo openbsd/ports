@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2019/11/05 10:18:53 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2020/01/07 20:22:06 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -41,6 +41,8 @@ PERMIT_PACKAGE ?=	Yes
 MASTER_SITES ?=		https://download.qt.io/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/
 DIST_SUBDIR ?=		qt
 EXTRACT_SUFX ?=		.tar.xz
+
+DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE ?=	qmake
 .if ${CONFIGURE_STYLE:Mqmake}

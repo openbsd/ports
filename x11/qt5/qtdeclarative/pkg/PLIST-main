@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:07 zhuk Exp $
 @conflict qt5-<5.6
 bin/qml-qt5
 include/X11/qt5/QtPacketProtocol/
@@ -717,66 +717,66 @@ lib/qt5/pkgconfig/Qt5Quick.pc
 lib/qt5/pkgconfig/Qt5QuickTest.pc
 lib/qt5/pkgconfig/Qt5QuickWidgets.pc
 lib/qt5/plugins/qmltooling/
-lib/qt5/plugins/qmltooling/libqmldbg_debugger.so
-lib/qt5/plugins/qmltooling/libqmldbg_inspector.so
-lib/qt5/plugins/qmltooling/libqmldbg_local.so
-lib/qt5/plugins/qmltooling/libqmldbg_messages.so
-lib/qt5/plugins/qmltooling/libqmldbg_native.so
-lib/qt5/plugins/qmltooling/libqmldbg_nativedebugger.so
-lib/qt5/plugins/qmltooling/libqmldbg_profiler.so
-lib/qt5/plugins/qmltooling/libqmldbg_quickprofiler.so
-lib/qt5/plugins/qmltooling/libqmldbg_server.so
-lib/qt5/plugins/qmltooling/libqmldbg_tcp.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_debugger.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_inspector.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_local.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_messages.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_native.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_nativedebugger.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_profiler.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_quickprofiler.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_server.so
+@so lib/qt5/plugins/qmltooling/libqmldbg_tcp.so
 lib/qt5/qml/
 lib/qt5/qml/Qt/
 lib/qt5/qml/Qt/labs/
 lib/qt5/qml/Qt/labs/folderlistmodel/
-lib/qt5/qml/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so
+@so lib/qt5/qml/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so
 lib/qt5/qml/Qt/labs/folderlistmodel/plugins.qmltypes
 lib/qt5/qml/Qt/labs/folderlistmodel/qmldir
 lib/qt5/qml/Qt/labs/settings/
-lib/qt5/qml/Qt/labs/settings/libqmlsettingsplugin.so
+@so lib/qt5/qml/Qt/labs/settings/libqmlsettingsplugin.so
 lib/qt5/qml/Qt/labs/settings/plugins.qmltypes
 lib/qt5/qml/Qt/labs/settings/qmldir
 lib/qt5/qml/Qt/labs/sharedimage/
-lib/qt5/qml/Qt/labs/sharedimage/libsharedimageplugin.so
+@so lib/qt5/qml/Qt/labs/sharedimage/libsharedimageplugin.so
 lib/qt5/qml/Qt/labs/sharedimage/qmldir
 lib/qt5/qml/QtQml/
 lib/qt5/qml/QtQml/Models.2/
-lib/qt5/qml/QtQml/Models.2/libmodelsplugin.so
+@so lib/qt5/qml/QtQml/Models.2/libmodelsplugin.so
 lib/qt5/qml/QtQml/Models.2/plugins.qmltypes
 lib/qt5/qml/QtQml/Models.2/qmldir
 lib/qt5/qml/QtQml/StateMachine/
-lib/qt5/qml/QtQml/StateMachine/libqtqmlstatemachine.so
+@so lib/qt5/qml/QtQml/StateMachine/libqtqmlstatemachine.so
 lib/qt5/qml/QtQml/StateMachine/plugins.qmltypes
 lib/qt5/qml/QtQml/StateMachine/qmldir
 lib/qt5/qml/QtQml/plugins.qmltypes
 lib/qt5/qml/QtQml/qmldir
 lib/qt5/qml/QtQuick/
 lib/qt5/qml/QtQuick.2/
-lib/qt5/qml/QtQuick.2/libqtquick2plugin.so
+@so lib/qt5/qml/QtQuick.2/libqtquick2plugin.so
 lib/qt5/qml/QtQuick.2/plugins.qmltypes
 lib/qt5/qml/QtQuick.2/qmldir
 lib/qt5/qml/QtQuick/Layouts/
-lib/qt5/qml/QtQuick/Layouts/libqquicklayoutsplugin.so
+@so lib/qt5/qml/QtQuick/Layouts/libqquicklayoutsplugin.so
 lib/qt5/qml/QtQuick/Layouts/plugins.qmltypes
 lib/qt5/qml/QtQuick/Layouts/qmldir
 lib/qt5/qml/QtQuick/LocalStorage/
-lib/qt5/qml/QtQuick/LocalStorage/libqmllocalstorageplugin.so
+@so lib/qt5/qml/QtQuick/LocalStorage/libqmllocalstorageplugin.so
 lib/qt5/qml/QtQuick/LocalStorage/plugins.qmltypes
 lib/qt5/qml/QtQuick/LocalStorage/qmldir
 lib/qt5/qml/QtQuick/Particles.2/
-lib/qt5/qml/QtQuick/Particles.2/libparticlesplugin.so
+@so lib/qt5/qml/QtQuick/Particles.2/libparticlesplugin.so
 lib/qt5/qml/QtQuick/Particles.2/plugins.qmltypes
 lib/qt5/qml/QtQuick/Particles.2/qmldir
 lib/qt5/qml/QtQuick/Window.2/
-lib/qt5/qml/QtQuick/Window.2/libwindowplugin.so
+@so lib/qt5/qml/QtQuick/Window.2/libwindowplugin.so
 lib/qt5/qml/QtQuick/Window.2/plugins.qmltypes
 lib/qt5/qml/QtQuick/Window.2/qmldir
 lib/qt5/qml/QtTest/
 lib/qt5/qml/QtTest/SignalSpy.qml
 lib/qt5/qml/QtTest/TestCase.qml
-lib/qt5/qml/QtTest/libqmltestplugin.so
+@so lib/qt5/qml/QtTest/libqmltestplugin.so
 lib/qt5/qml/QtTest/plugins.qmltypes
 lib/qt5/qml/QtTest/qmldir
 lib/qt5/qml/QtTest/testlogger.js

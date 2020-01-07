@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2018/05/25 18:20:02 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/01/07 20:22:07 zhuk Exp $
 @conflict qt5-<5.6
 include/X11/qt5/Qt3DAnimation/
 include/X11/qt5/Qt3DAnimation/${VERSION}/
@@ -1220,44 +1220,44 @@ lib/qt5/pkgconfig/Qt53DQuickRender.pc
 lib/qt5/pkgconfig/Qt53DQuickScene2D.pc
 lib/qt5/pkgconfig/Qt53DRender.pc
 lib/qt5/plugins/geometryloaders/
-lib/qt5/plugins/geometryloaders/libdefaultgeometryloader.so
-lib/qt5/plugins/geometryloaders/libgltfgeometryloader.so
+@so lib/qt5/plugins/geometryloaders/libdefaultgeometryloader.so
+@so lib/qt5/plugins/geometryloaders/libgltfgeometryloader.so
 lib/qt5/plugins/renderplugins/
-lib/qt5/plugins/renderplugins/libscene2d.so
+@so lib/qt5/plugins/renderplugins/libscene2d.so
 lib/qt5/plugins/sceneparsers/
-lib/qt5/plugins/sceneparsers/libassimpsceneimport.so
-lib/qt5/plugins/sceneparsers/libgltfsceneexport.so
-lib/qt5/plugins/sceneparsers/libgltfsceneimport.so
+@so lib/qt5/plugins/sceneparsers/libassimpsceneimport.so
+@so lib/qt5/plugins/sceneparsers/libgltfsceneexport.so
+@so lib/qt5/plugins/sceneparsers/libgltfsceneimport.so
 lib/qt5/qml/Qt3D/
 lib/qt5/qml/Qt3D/Animation/
-lib/qt5/qml/Qt3D/Animation/libquick3danimationplugin.so
+@so lib/qt5/qml/Qt3D/Animation/libquick3danimationplugin.so
 lib/qt5/qml/Qt3D/Animation/plugins.qmltypes
 lib/qt5/qml/Qt3D/Animation/qmldir
 lib/qt5/qml/Qt3D/Core/
-lib/qt5/qml/Qt3D/Core/libquick3dcoreplugin.so
+@so lib/qt5/qml/Qt3D/Core/libquick3dcoreplugin.so
 lib/qt5/qml/Qt3D/Core/plugins.qmltypes
 lib/qt5/qml/Qt3D/Core/qmldir
 lib/qt5/qml/Qt3D/Extras/
-lib/qt5/qml/Qt3D/Extras/libquick3dextrasplugin.so
+@so lib/qt5/qml/Qt3D/Extras/libquick3dextrasplugin.so
 lib/qt5/qml/Qt3D/Extras/plugins.qmltypes
 lib/qt5/qml/Qt3D/Extras/qmldir
 lib/qt5/qml/Qt3D/Input/
-lib/qt5/qml/Qt3D/Input/libquick3dinputplugin.so
+@so lib/qt5/qml/Qt3D/Input/libquick3dinputplugin.so
 lib/qt5/qml/Qt3D/Input/plugins.qmltypes
 lib/qt5/qml/Qt3D/Input/qmldir
 lib/qt5/qml/Qt3D/Logic/
-lib/qt5/qml/Qt3D/Logic/libquick3dlogicplugin.so
+@so lib/qt5/qml/Qt3D/Logic/libquick3dlogicplugin.so
 lib/qt5/qml/Qt3D/Logic/plugins.qmltypes
 lib/qt5/qml/Qt3D/Logic/qmldir
 lib/qt5/qml/Qt3D/Render/
-lib/qt5/qml/Qt3D/Render/libquick3drenderplugin.so
+@so lib/qt5/qml/Qt3D/Render/libquick3drenderplugin.so
 lib/qt5/qml/Qt3D/Render/plugins.qmltypes
 lib/qt5/qml/Qt3D/Render/qmldir
 lib/qt5/qml/QtQuick/Scene2D/
-lib/qt5/qml/QtQuick/Scene2D/libqtquickscene2dplugin.so
+@so lib/qt5/qml/QtQuick/Scene2D/libqtquickscene2dplugin.so
 lib/qt5/qml/QtQuick/Scene2D/plugins.qmltypes
 lib/qt5/qml/QtQuick/Scene2D/qmldir
 lib/qt5/qml/QtQuick/Scene3D/
-lib/qt5/qml/QtQuick/Scene3D/libqtquickscene3dplugin.so
+@so lib/qt5/qml/QtQuick/Scene3D/libqtquickscene3dplugin.so
 lib/qt5/qml/QtQuick/Scene3D/plugins.qmltypes
 lib/qt5/qml/QtQuick/Scene3D/qmldir

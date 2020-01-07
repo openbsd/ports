@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:09 zhuk Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtWebSockets/
 include/X11/qt5/QtWebSockets/${VERSION}/
@@ -43,6 +43,6 @@ lib/qt5/pkgconfig/Qt5WebSockets.pc
 lib/qt5/qml/Qt/WebSockets/
 lib/qt5/qml/Qt/WebSockets/qmldir
 lib/qt5/qml/QtWebSockets/
-lib/qt5/qml/QtWebSockets/libdeclarative_qmlwebsockets.so
+@so lib/qt5/qml/QtWebSockets/libdeclarative_qmlwebsockets.so
 lib/qt5/qml/QtWebSockets/plugins.qmltypes
 lib/qt5/qml/QtWebSockets/qmldir
