@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 20:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2020/01/07 13:25:43 benoit Exp $
 
 COMMENT =	ARP level ping utility
 
-DISTNAME =	arping-2.19
-REVISION =	0
+DISTNAME =	arping-2.20
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.habets.pp.se/synscan/programs.php?prog=ARPing
@@ -24,6 +23,8 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \
 		`libnet-config-1.1 --defines`" \
 		LIBS="-L${LOCALBASE}/lib/libnet-1.1 -lnet"
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/arping
