@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/10/19 09:29:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2020/01/07 21:17:26 ajacoutot Exp $
 
 COMMENT=		cabinet file library and tool
 
 GNOME_PROJECT=		gcab
-GNOME_VERSION=		1.3
+GNOME_VERSION=		1.4
 
-SHARED_LIBS +=	gcab-1.0                  1.0 # 0.0.0
+SHARED_LIBS += gcab-1.0                  1.1 # 0.1.0
 
 CATEGORIES=		archivers devel
 
