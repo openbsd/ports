@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/12/03 11:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2020/01/07 20:45:17 zhuk Exp $
 
 COMMENT=		next-generation build system
 
@@ -7,6 +7,7 @@ GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
 GH_TAGNAME=		0.52.1
 EPOCH=			0
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -71,5 +72,9 @@ do-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	cd ${WRKSRC} && PATH=${PORTPATH} LC_CTYPE="en_US.UTF-8" \
 		./run_tests.py --failfast
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/meson/tools
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/*.py ${PREFIX}/share/meson/tools
 
 .include <bsd.port.mk>

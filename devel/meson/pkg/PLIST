@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/11/08 07:46:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/01/07 20:45:17 zhuk Exp $
 bin/meson
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -278,6 +278,12 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/${MODPY_PYCACHE}wraptoo
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/wrap.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/wraptool.py
 @man man/man1/meson.1
+share/meson/
+share/meson/tools/
+share/meson/tools/ac_converter.py
+share/meson/tools/boost_names.py
+share/meson/tools/cmake2meson.py
+share/meson/tools/dircondenser.py
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/com.mesonbuild.install.policy
