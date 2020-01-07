@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.83 2019/12/03 17:00:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.84 2020/01/07 17:44:45 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -35,6 +35,7 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.content
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.gpu
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.main
 lib/${MOZILLA_PROJECT}/browser/features/
+lib/${MOZILLA_PROJECT}/browser/features/doh-rollout@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/screenshots@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/webcompat-reporter@mozilla.org.xpi

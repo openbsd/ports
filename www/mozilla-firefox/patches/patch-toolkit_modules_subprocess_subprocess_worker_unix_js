@@ -1,11 +1,12 @@
-$OpenBSD: patch-toolkit_modules_subprocess_subprocess_worker_unix_js,v 1.1 2019/12/03 17:00:46 landry Exp $
+$OpenBSD: patch-toolkit_modules_subprocess_subprocess_worker_unix_js,v 1.2 2020/01/07 17:44:45 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1598511
+https://hg.mozilla.org/integration/autoland/rev/6b1e007558d2 remove in 73
 
 Index: toolkit/modules/subprocess/subprocess_worker_unix.js
 --- toolkit/modules/subprocess/subprocess_worker_unix.js.orig
 +++ toolkit/modules/subprocess/subprocess_worker_unix.js
-@@ -396,9 +396,11 @@ class Process extends BaseProcess {
+@@ -398,9 +398,11 @@ class Process extends BaseProcess {
          libc.getcwd(cwd, cwd.length);
  
          if (libc.chdir(options.workdir) < 0) {

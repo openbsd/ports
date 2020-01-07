@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.406 2019/12/23 09:04:10 landry Exp $
+# $OpenBSD: Makefile,v 1.407 2020/01/07 17:44:45 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	71.0
+MOZILLA_VERSION =	72.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	86.0
+SO_VERSION =	87.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -74,6 +74,10 @@ SUBST_VARS +=	LOCALBASE X11BASE MOZILLA_PROJECT
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
+
+post-patch:
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/third_party/rust/slice-deque/.cargo-checksum.json
 
 show-commit:
 	@curl -s https://releases.mozilla.org/pub/mozilla.org/firefox/releases/${MOZILLA_VERSION}/SOURCE| awk -F / '/^https:\/\/hg/ {print $$7 }'
