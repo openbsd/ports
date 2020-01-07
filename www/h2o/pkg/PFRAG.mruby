@@ -1,0 +1,13 @@
+@comment $OpenBSD: PFRAG.mruby,v 1.1 2020/01/07 10:18:30 sthen Exp $
+@lib lib/libonigmo.so.${LIBonigmo_VERSION}
+share/examples/h2o/h2o_mruby/
+share/examples/h2o/h2o_mruby/h2o.conf
+share/examples/h2o/h2o_mruby/hello.rb
+share/h2o/mruby/
+share/h2o/mruby/acl.rb
+share/h2o/mruby/bootstrap.rb
+share/h2o/mruby/dos_detector.rb
+share/h2o/mruby/htpasswd.rb
+share/h2o/mruby/lru_cache.rb
+share/h2o/mruby/preloads.rb
+share/h2o/mruby/trie_addr.rb

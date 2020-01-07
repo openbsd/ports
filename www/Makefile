@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.939 2019/12/17 21:26:14 bket Exp $
+# $OpenBSD: Makefile,v 1.940 2020/01/07 10:18:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -52,6 +52,7 @@
      SUBDIR += goaccess,tokyocabinet
      SUBDIR += gumbo
      SUBDIR += h2o
+     SUBDIR += h2o,mruby
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
      SUBDIR += haserl,no_lua,static

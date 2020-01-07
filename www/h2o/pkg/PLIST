@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/26 12:38:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/07 10:18:30 sthen Exp $
 @rcscript ${RCDIR}/h2o
 @bin bin/h2o
 include/h2o/
@@ -38,7 +38,6 @@ include/h2o/version.h
 include/h2o/websocket.h
 @lib lib/libh2o-evloop.so.${LIBh2o-evloop_VERSION}
 @lib lib/libh2o.so.${LIBh2o_VERSION}
-@lib lib/libonigmo.so.${LIBonigmo_VERSION}
 lib/pkgconfig/libh2o-evloop.pc
 lib/pkgconfig/libh2o.pc
 share/doc/h2o/
@@ -98,9 +97,6 @@ share/examples/h2o/h2o/alternate.key
 share/examples/h2o/h2o/h2o.conf
 share/examples/h2o/h2o/server.crt
 share/examples/h2o/h2o/server.key
-share/examples/h2o/h2o_mruby/
-share/examples/h2o/h2o_mruby/h2o.conf
-share/examples/h2o/h2o_mruby/hello.rb
 share/examples/h2o/libh2o/
 share/examples/h2o/libh2o/http1client.c
 share/examples/h2o/libh2o/latency-optimization.c
@@ -108,19 +104,12 @@ share/examples/h2o/libh2o/simple.c
 share/examples/h2o/libh2o/socket-client.c
 share/examples/h2o/libh2o/websocket.c
 share/h2o/
+%%mruby%%
 share/h2o/annotate-backtrace-symbols
 share/h2o/ca-bundle.crt
 share/h2o/fastcgi-cgi
 share/h2o/fetch-ocsp-response
 share/h2o/kill-on-close
-share/h2o/mruby/
-share/h2o/mruby/acl.rb
-share/h2o/mruby/bootstrap.rb
-share/h2o/mruby/dos_detector.rb
-share/h2o/mruby/htpasswd.rb
-share/h2o/mruby/lru_cache.rb
-share/h2o/mruby/preloads.rb
-share/h2o/mruby/trie_addr.rb
 share/h2o/setuidgid
 share/h2o/start_server
 share/h2o/status/

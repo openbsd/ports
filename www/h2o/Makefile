@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/06 14:23:42 sthen Exp $
-
-BROKEN-arm =	SIGBUS in mruby
+# $OpenBSD: Makefile,v 1.7 2020/01/07 10:18:30 sthen Exp $
 
 COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
@@ -13,7 +11,7 @@ CATEGORIES =	www
 GH_ACCOUNT =	h2o
 GH_PROJECT =	h2o
 GH_TAGNAME =	v2.2.6
-REVISION = 	0
+REVISION =	1
 
 HOMEPAGE =	https://h2o.examp1e.net/
 MAINTAINER =	Otto Moerbeek <otto@drijf.net>
@@ -26,29 +24,41 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto m ssl uv z
 # uses TLS
 COMPILER =		base-clang ports-gcc
 
-MODULES =		devel/cmake \
-			lang/ruby
+FLAVORS =		mruby
+FLAVOR ?=
 
-# ninja: error: 'mruby/host/lib/libmruby.a', needed by 'h2o',
-# missing and no known rule to make it
-USE_NINJA =		No
+.if ${FLAVOR:Mmruby}
+BROKEN-arm =		SIGBUS in mruby build
+.endif
+
+MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/bison
-
 LIB_DEPENDS =		devel/libuv
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR}/h2o \
 			-DWITH_BUNDLED_SSL=OFF \
-			-DWITH_MRUBY=ON \
 			-DWITH_PICOTLS=OFF
+
+.if ${FLAVOR:Mmruby}
+MODULES +=		lang/ruby
+MODRUBY_RUNDEP =	No
+CONFIGURE_ARGS +=	-DWITH_MRUBY=ON
+
+# internal dep problem; "ninja: error: 'mruby/host/lib/libmruby.a',
+# needed by 'h2o', missing and no known rule to make it"
+USE_NINJA =		No
 
 pre-configure:
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
+.endif
 
 post-install:
-	cd ${WRKBUILD}/mruby/host/mrbgems/mruby-onig-regexp; ${INSTALL_DATA} \
-	    onigmo-*/.libs/libonigmo.so.${LIBonigmo_VERSION} ${PREFIX}/lib/
+.if ${FLAVOR:Mmruby}
+	cd ${WRKBUILD}/mruby/host/mrbgems/mruby-onig-regexp; \
+	    ${INSTALL_DATA} onigmo-*/.libs/libonigmo.so.${LIBonigmo_VERSION} ${PREFIX}/lib/
+.endif
 	cd ${WRKSRC}/doc; pax -rw [a-z]* ${PREFIX}/share/doc/h2o/
 	mv ${PREFIX}/share/doc/h2o/examples ${PREFIX}/share/examples/h2o
 	${INSTALL_DATA} ${FILESDIR}/h2o.conf ${PREFIX}/share/examples/h2o/
