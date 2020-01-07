@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2019/10/07 09:35:11 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2020/01/07 08:56:14 landry Exp $
 
 COMMENT =	versatile file searching tool
 
 XFCE_GOODIE =	catfish
-XFCE_VERSION =	1.4.10
+XFCE_VERSION =	1.4.12
 MODPY_EGG_VERSION =	${XFCE_VERSION}
 CATEGORIES =	textproc
 
@@ -32,5 +32,8 @@ BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS} \
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

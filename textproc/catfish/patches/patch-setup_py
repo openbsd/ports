@@ -1,10 +1,21 @@
-$OpenBSD: patch-setup_py,v 1.2 2019/01/27 12:50:25 landry Exp $
+$OpenBSD: patch-setup_py,v 1.3 2020/01/07 08:56:14 landry Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -209,7 +209,7 @@ DistUtilsExtra.auto.setup(
+@@ -22,8 +22,8 @@ import shutil
+ import sys
+ import subprocess
+ 
+-from catfish_lib.catfishconfig import __version__, __url__
+-
++__version__ = '${MODPY_EGG_VERSION}'
++__url__ = 'bar'
+ try:
+     import DistUtilsExtra.auto
+ except ImportError:
+@@ -224,7 +224,7 @@ DistUtilsExtra.auto.setup(
                       'needs by using several command line options.',
-     url='https://docs.xfce.org/apps/catfish/start',
+     url=__url__,
      data_files=[
 -        ('share/man/man1', ['catfish.1']),
 +        ('man/man1', ['catfish.1']),
