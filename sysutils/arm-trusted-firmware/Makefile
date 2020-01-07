@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.12 2019/09/27 15:43:29 kurt Exp $
+#	$OpenBSD: Makefile,v 1.13 2020/01/07 07:01:56 jsg Exp $
 
 PKG_ARCH=		*
 
@@ -6,10 +6,9 @@ COMMENT=	ARM Trusted Firmware
 
 GH_ACCOUNT=	ARM-software
 GH_PROJECT=	arm-trusted-firmware
-GH_TAGNAME=	v2.1
+GH_TAGNAME=	v2.2
 
 EPOCH=		0
-REVISION=	0
 
 CATEGORIES=	sysutils
 
