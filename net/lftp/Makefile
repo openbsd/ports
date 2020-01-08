@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.126 2019/07/12 20:48:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2020/01/08 07:50:30 jasper Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.8.4
+DISTNAME=	lftp-4.9.0
 CATEGORIES=	net
-REVISION=	2
 
 HOMEPAGE=	https://lftp.tech/
 
@@ -17,6 +16,8 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto curses ereadline expat
 WANTLIB += iconv idn2 intl m ssl unistring util z
 
 COMPILER =		base-clang ports-gcc base-gcc
+
+DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 # lftp needs add_history_time()
 LIB_DEPENDS=	devel/libidn2 \

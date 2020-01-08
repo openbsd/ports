@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.17 2018/08/13 14:36:41 rsadowski Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.18 2020/01/08 07:50:30 jasper Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -250,7 +250,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(p
+@@ -251,7 +251,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(p
  	"$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
  	"$(DESTDIR)$(pkgdatadir)"
  LTLIBRARIES = $(lib_LTLIBRARIES) $(pkgverlib_LTLIBRARIES)
