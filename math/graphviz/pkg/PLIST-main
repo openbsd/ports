@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2016/07/01 14:25:17 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2020/01/08 09:44:55 edd Exp $
 @bin bin/acyclic
 @bin bin/bcomps
 @bin bin/ccomps
@@ -10,6 +10,7 @@ bin/circo
 bin/dot2gxl
 @bin bin/dot_builtins
 bin/dotty
+@bin bin/edgepaint
 bin/fdp
 @bin bin/gc
 @bin bin/gml2gv
@@ -69,94 +70,50 @@ include/graphviz/xdot.h
 lib/graphviz/
 lib/graphviz/config6
 lib/graphviz/guile/
-lib/graphviz/guile/libgv_guile.a
-lib/graphviz/guile/libgv_guile.la
-lib/graphviz/guile/libgv_guile.so
-lib/graphviz/libgvplugin_core.a
-lib/graphviz/libgvplugin_core.la
+@so lib/graphviz/guile/libgv_guile.so
 @lib lib/graphviz/libgvplugin_core.so.${LIBgvplugin_core_VERSION}
-lib/graphviz/libgvplugin_dot_layout.a
-lib/graphviz/libgvplugin_dot_layout.la
 @lib lib/graphviz/libgvplugin_dot_layout.so.${LIBgvplugin_dot_layout_VERSION}
-lib/graphviz/libgvplugin_gd.a
-lib/graphviz/libgvplugin_gd.la
 @lib lib/graphviz/libgvplugin_gd.so.${LIBgvplugin_gd_VERSION}
-lib/graphviz/libgvplugin_gdk.a
-lib/graphviz/libgvplugin_gdk.la
 @lib lib/graphviz/libgvplugin_gdk.so.${LIBgvplugin_gdk_VERSION}
-lib/graphviz/libgvplugin_gtk.a
-lib/graphviz/libgvplugin_gtk.la
 @lib lib/graphviz/libgvplugin_gtk.so.${LIBgvplugin_gtk_VERSION}
-lib/graphviz/libgvplugin_neato_layout.a
-lib/graphviz/libgvplugin_neato_layout.la
 @lib lib/graphviz/libgvplugin_neato_layout.so.${LIBgvplugin_neato_layout_VERSION}
-lib/graphviz/libgvplugin_pango.a
-lib/graphviz/libgvplugin_pango.la
 @lib lib/graphviz/libgvplugin_pango.so.${LIBgvplugin_pango_VERSION}
-lib/graphviz/libgvplugin_poppler.a
-lib/graphviz/libgvplugin_poppler.la
 @lib lib/graphviz/libgvplugin_poppler.so.${LIBgvplugin_poppler_VERSION}
-lib/graphviz/libgvplugin_rsvg.a
-lib/graphviz/libgvplugin_rsvg.la
 @lib lib/graphviz/libgvplugin_rsvg.so.${LIBgvplugin_rsvg_VERSION}
-lib/graphviz/libgvplugin_xlib.a
-lib/graphviz/libgvplugin_xlib.la
+@lib lib/graphviz/libgvplugin_visio.so.${LIBgvplugin_visio_VERSION}
+@lib lib/graphviz/libgvplugin_webp.so.${LIBgvplugin_webp_VERSION}
 @lib lib/graphviz/libgvplugin_xlib.so.${LIBgvplugin_xlib_VERSION}
 lib/graphviz/perl/
 lib/graphviz/perl/gv.pm
-lib/graphviz/perl/gv.so
-lib/graphviz/perl/libgv_perl.a
-lib/graphviz/perl/libgv_perl.la
-lib/graphviz/perl/libgv_perl.so
-lib/libcdt.a
-lib/libcdt.la
+@so lib/graphviz/perl/gv.so
+@so lib/graphviz/perl/libgv_perl.so
 @lib lib/libcdt.so.${LIBcdt_VERSION}
-lib/libcgraph.a
-lib/libcgraph.la
 @lib lib/libcgraph.so.${LIBcgraph_VERSION}
-lib/libgvc.a
-lib/libgvc.la
 @lib lib/libgvc.so.${LIBgvc_VERSION}
-lib/libgvpr.a
-lib/libgvpr.la
 @lib lib/libgvpr.so.${LIBgvpr_VERSION}
-lib/libpathplan.a
-lib/libpathplan.la
+@lib lib/liblab_gamut.so.${LIBlab_gamut_VERSION}
 @lib lib/libpathplan.so.${LIBpathplan_VERSION}
-lib/libxdot.a
-lib/libxdot.la
 @lib lib/libxdot.so.${LIBxdot_VERSION}
 lib/pkgconfig/libcdt.pc
 lib/pkgconfig/libcgraph.pc
 lib/pkgconfig/libgvc.pc
 lib/pkgconfig/libgvpr.pc
+lib/pkgconfig/liblab_gamut.pc
 lib/pkgconfig/libpathplan.pc
 lib/pkgconfig/libxdot.pc
+lib/tcl/
 lib/tcl/graphviz/
-lib/tcl/graphviz/libgdtclft.a
-lib/tcl/graphviz/libgdtclft.la
 @lib lib/tcl/graphviz/libgdtclft.so.${LIBgdtclft_VERSION}
-lib/tcl/graphviz/libgv_tcl.a
-lib/tcl/graphviz/libgv_tcl.la
-lib/tcl/graphviz/libgv_tcl.so
-lib/tcl/graphviz/libtcldot.a
-lib/tcl/graphviz/libtcldot.la
+@so lib/tcl/graphviz/libgv_tcl.so
 @lib lib/tcl/graphviz/libtcldot.so.${LIBtcldot_VERSION}
-lib/tcl/graphviz/libtcldot_builtin.a
-lib/tcl/graphviz/libtcldot_builtin.la
 @lib lib/tcl/graphviz/libtcldot_builtin.so.${LIBtcldot_builtin_VERSION}
-lib/tcl/graphviz/libtclplan.a
-lib/tcl/graphviz/libtclplan.la
 @lib lib/tcl/graphviz/libtclplan.so.${LIBtclplan_VERSION}
-lib/tcl/graphviz/libtkspline.a
-lib/tcl/graphviz/libtkspline.la
-@lib lib/tcl/graphviz/libtkspline.so.${LIBtkspline_VERSION}
 lib/tcl/graphviz/pkgIndex.tcl
-lib/tcl${MODTK_VERSION}/
-lib/tcl${MODTK_VERSION}/graphviz
+lib/tcl${MODTCL_VERSION}/
+lib/tcl${MODTCL_VERSION}/graphviz
 ${P5ARCH}/
 ${P5ARCH}/gv.pm
-${P5ARCH}/gv.so
+@so ${P5ARCH}/gv.so
 @man man/man1/acyclic.1
 @man man/man1/bcomps.1
 @man man/man1/ccomps.1
@@ -165,7 +122,9 @@ ${P5ARCH}/gv.so
 @man man/man1/diffimg.1
 @man man/man1/dijkstra.1
 @man man/man1/dot.1
+@man man/man1/dot2gxl.1
 @man man/man1/dotty.1
+@man man/man1/edgepaint.1
 @man man/man1/fdp.1
 @man man/man1/gc.1
 @man man/man1/gml2gv.1
@@ -178,9 +137,11 @@ ${P5ARCH}/gv.so
 @man man/man1/gvmap.sh.1
 @man man/man1/gvpack.1
 @man man/man1/gvpr.1
+@man man/man1/gxl2dot.1
 @man man/man1/gxl2gv.1
 @man man/man1/lefty.1
 @man man/man1/lneato.1
+@man man/man1/mingle.1
 @man man/man1/mm2gv.1
 @man man/man1/neato.1
 @man man/man1/nop.1
@@ -199,13 +160,14 @@ ${P5ARCH}/gv.so
 man/man3/gdtclft.3tcl
 man/man3/gv.3guile
 man/man3/gv.3perl
+man/man3/gv.3python
 man/man3/gv.3tcl
 @man man/man3/gvc.3
 @man man/man3/gvpr.3
+@man man/man3/lab_gamut.3
 @man man/man3/pack.3
 @man man/man3/pathplan.3
 man/man3/tcldot.3tcl
-man/man3/tkspline.3tk
 @man man/man3/xdot.3
 @man man/man7/graphviz.7
 share/doc/graphviz/
@@ -300,6 +262,7 @@ share/doc/graphviz/html/colors.html
 share/doc/graphviz/html/command.html
 share/doc/graphviz/html/component.gif
 share/doc/graphviz/html/constraint.gif
+share/doc/graphviz/html/cylinder.gif
 share/doc/graphviz/html/diamond.gif
 share/doc/graphviz/html/doublecircle.gif
 share/doc/graphviz/html/doubleoctagon.gif
@@ -335,6 +298,7 @@ share/doc/graphviz/html/html3.gv
 share/doc/graphviz/html/html4.gif
 share/doc/graphviz/html/html4.gv
 share/doc/graphviz/html/index.html
+share/doc/graphviz/html/internal_todo.html
 share/doc/graphviz/html/invhouse.gif
 share/doc/graphviz/html/invtrapezium.gif
 share/doc/graphviz/html/invtriangle.gif
@@ -365,6 +329,7 @@ share/doc/graphviz/html/output.html
 share/doc/graphviz/html/oval.gif
 share/doc/graphviz/html/parallelogram.gif
 share/doc/graphviz/html/pentagon.gif
+share/doc/graphviz/html/plain.gif
 share/doc/graphviz/html/plaintext.gif
 share/doc/graphviz/html/plugins.png
 share/doc/graphviz/html/point.gif
@@ -407,9 +372,11 @@ share/doc/graphviz/pdf/cluster.1.pdf
 share/doc/graphviz/pdf/diffimg.1.pdf
 share/doc/graphviz/pdf/dijkstra.1.pdf
 share/doc/graphviz/pdf/dot.1.pdf
+share/doc/graphviz/pdf/dot2gxl.1.pdf
 share/doc/graphviz/pdf/dotguide.pdf
 share/doc/graphviz/pdf/dotty.1.pdf
 share/doc/graphviz/pdf/dottyguide.pdf
+share/doc/graphviz/pdf/edgepaint.1.pdf
 share/doc/graphviz/pdf/expr.3.pdf
 share/doc/graphviz/pdf/fdp.1.pdf
 share/doc/graphviz/pdf/gc.1.pdf
@@ -418,6 +385,7 @@ share/doc/graphviz/pdf/gml2gv.1.pdf
 share/doc/graphviz/pdf/graphml2gv.1.pdf
 share/doc/graphviz/pdf/gv.3guile.pdf
 share/doc/graphviz/pdf/gv.3perl.pdf
+share/doc/graphviz/pdf/gv.3python.pdf
 share/doc/graphviz/pdf/gv.3tcl.pdf
 share/doc/graphviz/pdf/gv2gml.1.pdf
 share/doc/graphviz/pdf/gv2gxl.1.pdf
@@ -429,11 +397,14 @@ share/doc/graphviz/pdf/gvmap.sh.1.pdf
 share/doc/graphviz/pdf/gvpack.1.pdf
 share/doc/graphviz/pdf/gvpr.1.pdf
 share/doc/graphviz/pdf/gvpr.3.pdf
+share/doc/graphviz/pdf/gxl2dot.1.pdf
 share/doc/graphviz/pdf/gxl2gv.1.pdf
+share/doc/graphviz/pdf/lab_gamut.3.pdf
 share/doc/graphviz/pdf/lefty.1.pdf
 share/doc/graphviz/pdf/leftyguide.pdf
 share/doc/graphviz/pdf/libguide.pdf
 share/doc/graphviz/pdf/lneato.1.pdf
+share/doc/graphviz/pdf/mingle.1.pdf
 share/doc/graphviz/pdf/mm2gv.1.pdf
 share/doc/graphviz/pdf/neato.1.pdf
 share/doc/graphviz/pdf/neatoguide.pdf
@@ -447,7 +418,6 @@ share/doc/graphviz/pdf/sccmap.1.pdf
 share/doc/graphviz/pdf/sfdp.1.pdf
 share/doc/graphviz/pdf/smyrna.pdf
 share/doc/graphviz/pdf/tcldot.3tcl.pdf
-share/doc/graphviz/pdf/tkspline.3tk.pdf
 share/doc/graphviz/pdf/tred.1.pdf
 share/doc/graphviz/pdf/twopi.1.pdf
 share/doc/graphviz/pdf/unflatten.1.pdf
@@ -477,8 +447,6 @@ share/examples/graphviz/demo/pathplan_data/paths.dat
 share/examples/graphviz/demo/pathplan_data/rotor.dat
 share/examples/graphviz/demo/pathplan_data/u.dat
 share/examples/graphviz/demo/pathplan_data/unknown.dat
-share/examples/graphviz/demo/spline.tcl
-share/examples/graphviz/demo/spline.tcl.README
 share/examples/graphviz/graphs/
 share/examples/graphviz/graphs/directed/
 share/examples/graphviz/graphs/directed/KW91.gv
@@ -566,13 +534,17 @@ share/graphviz/doc/html/schema/arguments.xml
 share/graphviz/doc/html/schema/attributes.xml
 share/graphviz/doc/html/schema/attributes.xslt
 share/graphviz/gvpr/
+share/graphviz/gvpr/addedges
 share/graphviz/gvpr/addranks
 share/graphviz/gvpr/addrings
 share/graphviz/gvpr/anon
 share/graphviz/gvpr/attr
 share/graphviz/gvpr/bb
 share/graphviz/gvpr/bbox
+share/graphviz/gvpr/binduce
+share/graphviz/gvpr/bipart
 share/graphviz/gvpr/chkclusters
+share/graphviz/gvpr/chkedges
 share/graphviz/gvpr/cliptree
 share/graphviz/gvpr/col
 share/graphviz/gvpr/collapse
@@ -588,6 +560,7 @@ share/graphviz/gvpr/dijkstra
 share/graphviz/gvpr/flatten
 share/graphviz/gvpr/get-layers-list
 share/graphviz/gvpr/group
+share/graphviz/gvpr/histogram
 share/graphviz/gvpr/indent
 share/graphviz/gvpr/knbhd
 share/graphviz/gvpr/maxdeg
