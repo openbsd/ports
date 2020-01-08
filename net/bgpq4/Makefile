@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2020/01/05 23:49:13 job Exp $
+# $OpenBSD: Makefile,v 1.2 2020/01/08 21:03:18 cwen Exp $
 
 COMMENT =	generate access/prefix lists for BGP config (fork of bgpq3)
 
@@ -14,6 +14,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+# C11
+COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
