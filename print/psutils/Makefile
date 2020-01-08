@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2020/01/05 11:15:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2020/01/08 11:08:36 pvk Exp $
 
 PKG_ARCH=	*
 
@@ -21,6 +21,8 @@ MASTER_SITES=	https://github.com/rrthomas/psutils/releases/download/v${V}/
 MODULES=	perl
 
 RUN_DEPENDS=	print/libpaper
+
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 
