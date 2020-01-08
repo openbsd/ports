@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.79 2019/12/27 21:53:55 jca Exp $
+# $OpenBSD: Makefile,v 1.80 2020/01/08 00:36:39 sthen Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
-DISTNAME=	pure-ftpd-1.0.47
+DISTNAME=	pure-ftpd-1.0.49
 CATEGORIES=	net
 MASTER_SITES=	https://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -10,7 +10,7 @@ MASTER_SITES=	https://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
 		ftp://ftp.nl.pureftpd.org/pub/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE:=pureftpd/}
-REVISION=	2
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	https://www.pureftpd.org/project/pure-ftpd/
 
@@ -19,17 +19,15 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c crypto iconv sodium ssl
+WANTLIB=	c crypto sodium ssl
 
-LIB_DEPENDS=	converters/libiconv \
-		security/libsodium
+LIB_DEPENDS=	security/libsodium
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-pie \
 		 --with-everything \
 		 --with-paranoidmsg \
-		 --with-rfc2640 \
 		 --with-tls
 
 FLAVORS=	ldap mysql postgresql virtual_chroot
