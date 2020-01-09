@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.65 2019/07/12 20:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2020/01/09 08:22:38 fcambus Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.5.12
-REVISION=	14
+REVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
-HOMEPAGE=	http://dopewars.sourceforge.net/
+HOMEPAGE=	https://dopewars.sourceforge.io/
 
 # GPL
 PERMIT_PACKAGE=	Yes
