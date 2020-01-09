@@ -1,0 +1,23 @@
+$OpenBSD: README-main,v 1.1 2020/01/09 21:17:01 solene Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Starting MATE from xenodm
+=========================
+In order to start MATE as your desktop environment when logging in
+xenodm, your ~/.xsession file should end with 
+
+    exec ${LOCALBASE}/bin/ck-launch-session ${LOCALBASE}/bin/mate-session
+
+Power management support
+========================
+MATE environment needs a system-wide D-Bus daemon ("messagebus")
+to be running in order to work properly.
+
+To enable "messagebus" at boot:
+# rcctl enable messagebus
+
+And to start it if not already running:
+# rcctl start messagebus

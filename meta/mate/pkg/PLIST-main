@@ -1,1 +1,2 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2018/12/10 15:31:33 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/01/09 21:17:01 solene Exp $
+share/doc/pkg-readmes/${PKGSTEM}
