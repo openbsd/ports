@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.4 2019/09/27 08:11:10 rsadowski Exp $
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.5 2020/01/09 04:42:00 rsadowski Exp $
 
 - only manual pages
 - remove doxywizard.1, see devel/doxygen-gui
@@ -7,20 +7,37 @@ $OpenBSD: patch-doc_CMakeLists_txt,v 1.4 2019/09/27 08:11:10 rsadowski Exp $
 Index: doc/CMakeLists.txt
 --- doc/CMakeLists.txt.orig
 +++ doc/CMakeLists.txt
-@@ -165,12 +165,7 @@ add_custom_target(doxygen_pdf
-         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/latex
+@@ -85,8 +85,6 @@ set(DOC_FILES
+         maintainers.txt
+         translator.py
+         smile.png
+-        doxygen_logo.gif
+-        doxygen_logo_low.gif
+ )
+ 
+ if (build_doc_chm)
+@@ -126,9 +124,6 @@ endforeach()
+ configure_file(${CMAKE_SOURCE_DIR}/doc/manual.sty         ${PROJECT_BINARY_DIR}/doc/manual.sty)
+ configure_file(${CMAKE_SOURCE_DIR}/doc/doxygen_manual.tex ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex)
+ configure_file(${CMAKE_SOURCE_DIR}/doc/doxygen.1          ${PROJECT_BINARY_DIR}/man/doxygen.1)
+-configure_file(${CMAKE_SOURCE_DIR}/doc/doxywizard.1       ${PROJECT_BINARY_DIR}/man/doxywizard.1)
+-configure_file(${CMAKE_SOURCE_DIR}/doc/doxysearch.1       ${PROJECT_BINARY_DIR}/man/doxysearch.1)
+-configure_file(${CMAKE_SOURCE_DIR}/doc/doxyindexer.1      ${PROJECT_BINARY_DIR}/man/doxyindexer.1)
+ 
+ # doc/language.doc (see tag Doxyfile:INPUT)
+ add_custom_command(
+@@ -172,10 +167,6 @@ add_custom_target(doxygen_pdf
  )
  add_custom_target(docs
--    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/doc/doxygen_logo.gif      ${PROJECT_BINARY_HTML_DIR}
--    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/doc/doxygen_logo_low.gif  ${PROJECT_BINARY_HTML_DIR}
          DEPENDS ${PROJECT_BINARY_DIR}/man/doxygen.1
 -                ${PROJECT_BINARY_DIR}/man/doxywizard.1
 -                ${PROJECT_BINARY_DIR}/man/doxysearch.1
 -                ${PROJECT_BINARY_DIR}/man/doxyindexer.1
-                 doxygen_pdf
+-                doxygen_pdf
          VERBATIM
          )
-@@ -178,18 +173,5 @@ add_custom_target(docs
+ 
+@@ -206,25 +197,12 @@ endif ()
  ################################################################################
  install(FILES
          "${PROJECT_BINARY_DIR}/man/doxygen.1"
@@ -28,14 +45,21 @@ Index: doc/CMakeLists.txt
 -        "${PROJECT_BINARY_DIR}/man/doxysearch.1"
 -        "${PROJECT_BINARY_DIR}/man/doxyindexer.1"
          DESTINATION ${CMAKE_INSTALL_MANDIR}/man1
--)
--
+ )
+ 
 -install(FILES
 -        "${PROJECT_BINARY_DIR}/latex/doxygen_manual.pdf"
 -        DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
 -)
 -
+ if (build_doc_chm)
+ install(FILES
+         "${PROJECT_BINARY_DIR}/chm/doxygen_manual.chm"
+         DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
+ )
+ endif ()
+-
 -install(DIRECTORY
 -        "${PROJECT_BINARY_DIR}/html"
 -        DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
- )
+-)
