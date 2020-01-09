@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2019/11/14 15:51:59 fcambus Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2020/01/09 08:24:53 fcambus Exp $
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
@@ -12,7 +12,7 @@ Index: src/Makefile.in
  trader_OBJECTS = $(am_trader_OBJECTS)
  trader_DEPENDENCIES = $(top_builddir)/lib/libgnu.a
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -1085,6 +1085,7 @@ trader_SOURCES = \
+@@ -1109,6 +1109,7 @@ trader_SOURCES = \
  	fileio.c	fileio.h	\
  	help.c		help.h		\
  	intf.c		intf.h		\
@@ -20,7 +20,7 @@ Index: src/Makefile.in
  	utils.c		utils.h		\
  			system.h
  
-@@ -1320,6 +1321,13 @@ trader-intf.obj: intf.c
+@@ -1344,6 +1345,13 @@ trader-intf.obj: intf.c
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='intf.c' object='trader-intf.obj' libtool=no @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(trader_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o trader-intf.obj `if test -f 'intf.c'; then $(CYGPATH_W) 'intf.c'; else $(CYGPATH_W) '$(srcdir)/intf.c'; fi`

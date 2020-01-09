@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/10 20:50:56 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/09 08:24:53 fcambus Exp $
 @bin bin/trader
 @man man/man6/trader.6
 share/locale/da/LC_MESSAGES/trader.mo
@@ -22,6 +22,7 @@ share/locale/fr/LC_MESSAGES/trader.mo
 share/locale/hr/LC_MESSAGES/trader.mo
 share/locale/hu/LC_MESSAGES/trader.mo
 share/locale/nb/LC_MESSAGES/trader.mo
+share/locale/pt_BR/LC_MESSAGES/trader.mo
 share/locale/ru/LC_MESSAGES/trader.mo
 share/locale/sr/LC_MESSAGES/trader.mo
 share/locale/sv/LC_MESSAGES/trader.mo
