@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/11/10 15:01:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/01/09 04:39:35 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kstars
 @bin bin/kstars
-lib/libhtmesh.a
+@static-lib lib/libhtmesh.a
 share/applications/org.kde.kstars.desktop
 share/config.kcfg/
 share/config.kcfg/kstars.kcfg
@@ -604,6 +604,8 @@ share/doc/HTML/it/kstars/devicemanager.png
 share/doc/HTML/it/kstars/dumpmode.docbook
 share/doc/HTML/it/kstars/ecliptic.docbook
 share/doc/HTML/it/kstars/ekos-logs.docbook
+share/doc/HTML/it/kstars/ekos-setup.docbook
+share/doc/HTML/it/kstars/ekos-tutorials.docbook
 share/doc/HTML/it/kstars/ellipticalgalaxies.docbook
 share/doc/HTML/it/kstars/epoch.docbook
 share/doc/HTML/it/kstars/equinox.docbook
