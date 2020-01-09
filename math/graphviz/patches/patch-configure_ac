@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/01/09 23:31:25 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -693,11 +693,12 @@ else
+     if test `$SWIG -help 2>&1 | $EGREP -c '\-guile *- Generate'` = 0; then
+       use_guile="No (swig does not support -guile option)"
+     else
+-      AC_CHECK_PROGS(GUILE,guile2 guile1.8 guile)
++      AC_CHECK_PROGS(GUILE,guile1.8 guile)
+       if test "x$GUILE" = "x"; then
+         use_guile="No (guile not available)"
+       else
+         [GUILE_VERSION=`$GUILE --version | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
++        [GUILE_VERSION=`$GUILE --version | sed -n '1 s/^Guile \([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\)$/\1/ p'`]
+         GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
+         GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
+         if test 0$GUILE_VERSION_MAJOR -lt 2; then

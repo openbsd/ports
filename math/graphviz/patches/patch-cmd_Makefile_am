@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmd_Makefile_am,v 1.1 2020/01/09 23:31:25 sthen Exp $
+
+hardcodes -lstdc++
+
+Index: cmd/Makefile.am
+--- cmd/Makefile.am.orig
++++ cmd/Makefile.am
+@@ -2,3 +2,3 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-SUBDIRS = dot tools gvpr lefty lneato dotty smyrna gvmap gvedit mingle edgepaint
++SUBDIRS = dot tools gvpr lefty lneato dotty smyrna gvmap gvedit mingle

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2020/01/08 09:44:55 edd Exp $
+# $OpenBSD: Makefile,v 1.78 2020/01/09 23:31:24 sthen Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -42,7 +42,7 @@ SHARED_LIBS += lab_gamut		0.0 # 1.0
 
 HOMEPAGE=	http://www.graphviz.org/
 
-MAINTAINER =	Edd Barrett <edd@openbsd.org>
+MAINTAINER=	Edd Barrett <edd@openbsd.org>
 
 # Eclipse Public License v1.0
 PERMIT_PACKAGE=	Yes
@@ -60,11 +60,11 @@ WANTLIB += tiff webp xcb xcb-render xcb-shm xml2 z zstd fribidi
 # "extra" - tcldot is built against Tcl headers
 WANTLIB += ${MODTCL_WANTLIB}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 MODULES=	lang/tcl \
 		perl
-LIB_DEPENDS =	graphics/jpeg \
+LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
 		graphics/gd>=2.0.34 \
@@ -76,11 +76,16 @@ LIB_DEPENDS =	graphics/jpeg \
 		lang/guile \
 		${MODTCL_LIB_DEPENDS}
 BUILD_DEPENDS=	devel/swig
-TEST_DEPENDS =	${FULLPKGNAME}:math/graphviz
+TEST_DEPENDS=	${FULLPKGNAME}:math/graphviz
 
-USE_GMAKE =	Yes
-USE_GROFF =	Yes
-CONFIGURE_STYLE=gnu
+USE_GMAKE=	Yes
+USE_GROFF=	Yes
+CONFIGURE_STYLE= autoreconf
+# don't recurse into libltdl dir, there is some strange issue with
+# libltdl/configure being readonly
+AUTORECONF=	autoreconf --force --install --no-recursive
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.16
 
 LIBTOOL_FLAGS +=	--tag=disable-static
 
@@ -113,6 +118,9 @@ CONFIGURE_ARGS=	--enable-tcl=yes \
 		--with-gdlibdir=${LOCALBASE}/lib \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
+
+# hardcodes -lstdc++
+CONFIGURE_ARGS+= --without-ipsepcola
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
@@ -158,9 +166,9 @@ post-install:
 # We never want to install .la files.
 	find ${PREFIX}/lib/ -name '*.la' -delete
 
-TEST_DEPENDS =	shells/ksh93 \
+TEST_DEPENDS=	shells/ksh93 \
 		${FULLPKGNAME}:${FULLPKGPATH}
-TEST_TARGET =	check
+TEST_TARGET=	check
 
 pre-test:
 	sed -i s,#!/bin/ksh,#!/${LOCALBASE}/bin/ksh93, ${WRKSRC}/rtest/rtest.sh

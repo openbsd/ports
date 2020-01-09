@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2020/01/08 09:44:55 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2020/01/09 23:31:25 sthen Exp $
 @bin bin/acyclic
 @bin bin/bcomps
 @bin bin/ccomps
@@ -10,7 +10,6 @@ bin/circo
 bin/dot2gxl
 @bin bin/dot_builtins
 bin/dotty
-@bin bin/edgepaint
 bin/fdp
 @bin bin/gc
 @bin bin/gml2gv
@@ -101,7 +100,6 @@ lib/pkgconfig/libgvpr.pc
 lib/pkgconfig/liblab_gamut.pc
 lib/pkgconfig/libpathplan.pc
 lib/pkgconfig/libxdot.pc
-lib/tcl/
 lib/tcl/graphviz/
 @lib lib/tcl/graphviz/libgdtclft.so.${LIBgdtclft_VERSION}
 @so lib/tcl/graphviz/libgv_tcl.so
@@ -124,7 +122,6 @@ ${P5ARCH}/gv.pm
 @man man/man1/dot.1
 @man man/man1/dot2gxl.1
 @man man/man1/dotty.1
-@man man/man1/edgepaint.1
 @man man/man1/fdp.1
 @man man/man1/gc.1
 @man man/man1/gml2gv.1
@@ -376,7 +373,6 @@ share/doc/graphviz/pdf/dot2gxl.1.pdf
 share/doc/graphviz/pdf/dotguide.pdf
 share/doc/graphviz/pdf/dotty.1.pdf
 share/doc/graphviz/pdf/dottyguide.pdf
-share/doc/graphviz/pdf/edgepaint.1.pdf
 share/doc/graphviz/pdf/expr.3.pdf
 share/doc/graphviz/pdf/fdp.1.pdf
 share/doc/graphviz/pdf/gc.1.pdf
