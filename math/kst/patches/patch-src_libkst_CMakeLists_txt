@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_libkst_CMakeLists_txt,v 1.1 2020/01/09 17:20:47 cwen Exp $
+
+ports-gcc: we don't need -lrt, from https://github.com/Kst-plot/kst/pull/18
+
+Index: src/libkst/CMakeLists.txt
+--- src/libkst/CMakeLists.txt.orig
++++ src/libkst/CMakeLists.txt
+@@ -7,7 +7,7 @@ kst_files_ignore(stdinsource timezones)
+ if(WIN32 OR APPLE OR QNX OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+ 	kst_files_ignore(sysinfo psversion)
+ else()
+-    if(NOT kst_clang)
++    if(NOT kst_clang AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lrt")
+     endif()
+ endif()

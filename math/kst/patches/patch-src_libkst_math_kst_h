@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_libkst_math_kst_h,v 1.1 2020/01/09 17:20:47 cwen Exp $
+
+ports-gcc: fix out of scope errors, from
+https://github.com/Kst-plot/kst/pull/18
+
+Index: src/libkst/math_kst.h
+--- src/libkst/math_kst.h.orig
++++ src/libkst/math_kst.h
+@@ -31,6 +31,11 @@ inline double pow(float a, double b) { return pow((dou
+ inline double pow(int a, qreal b) { return pow((double)a, (double)b); }
+ #endif
+ 
++#if defined(__OpenBSD__) && !defined(__clang__)
++#include <cmath>
++using namespace std;
++#endif
++
+ namespace Kst {
+ /*
+ ** For systems without NAN, this is a NAN in IEEE double format.
