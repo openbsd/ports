@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.129 2019/12/29 23:01:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.130 2020/01/09 20:43:15 sthen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.93.0.3
+VERSION =		4.93.0.4
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -26,8 +26,8 @@ MASTER_SITES =		https://ftp.exim.org/pub/exim/exim4/ \
 			https://ftp.exim.org/pub/exim/exim4/fixes/ \
 			https://ftp.exim.org/pub/exim/exim4/old/ \
 			ftp://ftp.exim.org/pub/exim/exim4/ \
-			ftp://ftp.exim.org/pub/exim/exim4/fixes \
-			ftp://ftp.exim.org/pub/exim/exim4/old
+			ftp://ftp.exim.org/pub/exim/exim4/fixes/ \
+			ftp://ftp.exim.org/pub/exim/exim4/old/
 
 LIB_DEPENDS-main =	converters/libiconv \
 			devel/pcre \
