@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/09 14:13:04 benoit Exp $
 
-COMMENT=	send mail with attachments through SMTP
+COMMENT =	send mail with attachments through SMTP
 
-MODULES=	cpan
-PKG_ARCH=	*
+MODULES =	cpan
+PKG_ARCH =	*
 
-DISTNAME =	Mail-Sender-0.900003
-CATEGORIES=	mail
-
+DISTNAME =	Mail-Sender-0.903
+CATEGORIES =	mail
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
+EPOCH =		0
 
 # perl
 PERMIT_PACKAGE=	Yes
