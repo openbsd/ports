@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2019/09/06 18:49:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.49 2020/01/09 04:34:26 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
 VERSION =	5.1.2
 DISTNAME =	ktorrent-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  ktcore                    1.0 # 0.0
 
@@ -41,7 +42,11 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 LIB_DEPENDS =		audio/taglib \
 			devel/kf5/karchive \
+			devel/kf5/kauth \
+			devel/kf5/kbookmarks \
 			devel/kf5/kcmutils \
+			devel/kf5/kcodecs \
+			devel/kf5/kcompletion \
 			devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kcrash \
@@ -51,17 +56,22 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf5/ki18n \
 			devel/kf5/kiconthemes \
 			devel/kf5/kio \
+			devel/kf5/kitemviews \
+			devel/kf5/kjobwidgets \
 			devel/kf5/knotifications \
 			devel/kf5/knotifyconfig \
 			devel/kf5/kparts \
 			devel/kf5/kplotting \
 			devel/kf5/kross \
 			devel/kf5/kservice \
+			devel/kf5/ktextwidgets \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kwindowsystem \
 			devel/kf5/kxmlgui \
 			devel/kf5/solid \
+			devel/kf5/sonnet \
 			net/libktorrent \
+			x11/qt5/qtscript \
 			x11/qt5/qtwebkit
 
 .include <bsd.port.mk>

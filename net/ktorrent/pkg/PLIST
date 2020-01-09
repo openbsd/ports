@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/09/05 16:26:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/01/09 04:34:26 rsadowski Exp $
 @conflict ktorrent-kde4-*
 @pkgpath net/ktorrent-kde4
 @bin bin/ktmagnetdownloader
@@ -6,19 +6,19 @@
 @bin bin/ktupnptest
 @lib lib/libktcore.so.${LIBktcore_VERSION}
 lib/qt5/plugins/ktorrent/
-lib/qt5/plugins/ktorrent/ktorrent_bwscheduler.so
-lib/qt5/plugins/ktorrent/ktorrent_downloadorder.so
-lib/qt5/plugins/ktorrent/ktorrent_infowidget.so
-lib/qt5/plugins/ktorrent/ktorrent_ipfilter.so
-lib/qt5/plugins/ktorrent/ktorrent_logviewer.so
-lib/qt5/plugins/ktorrent/ktorrent_magnetgenerator.so
-lib/qt5/plugins/ktorrent/ktorrent_mediaplayer.so
-lib/qt5/plugins/ktorrent/ktorrent_scanfolder.so
-lib/qt5/plugins/ktorrent/ktorrent_scripting.so
-lib/qt5/plugins/ktorrent/ktorrent_search.so
-lib/qt5/plugins/ktorrent/ktorrent_stats.so
-lib/qt5/plugins/ktorrent/ktorrent_upnp.so
-lib/qt5/plugins/ktorrent/ktorrent_zeroconf.so
+@so lib/qt5/plugins/ktorrent/ktorrent_bwscheduler.so
+@so lib/qt5/plugins/ktorrent/ktorrent_downloadorder.so
+@so lib/qt5/plugins/ktorrent/ktorrent_infowidget.so
+@so lib/qt5/plugins/ktorrent/ktorrent_ipfilter.so
+@so lib/qt5/plugins/ktorrent/ktorrent_logviewer.so
+@so lib/qt5/plugins/ktorrent/ktorrent_magnetgenerator.so
+@so lib/qt5/plugins/ktorrent/ktorrent_mediaplayer.so
+@so lib/qt5/plugins/ktorrent/ktorrent_scanfolder.so
+@so lib/qt5/plugins/ktorrent/ktorrent_scripting.so
+@so lib/qt5/plugins/ktorrent/ktorrent_search.so
+@so lib/qt5/plugins/ktorrent/ktorrent_stats.so
+@so lib/qt5/plugins/ktorrent/ktorrent_upnp.so
+@so lib/qt5/plugins/ktorrent/ktorrent_zeroconf.so
 share/applications/org.kde.ktorrent.desktop
 share/doc/HTML/ca/ktorrent/
 share/doc/HTML/ca/ktorrent/index.cache.bz2
