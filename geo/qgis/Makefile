@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.116 2019/12/12 10:54:49 landry Exp $
+# $OpenBSD: Makefile,v 1.117 2020/01/09 10:34:18 cwen Exp $
+
+BROKEN-powerpc =	does not build: "operand out of range"
 
 COMMENT =	desktop geographical information system
 
