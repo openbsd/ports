@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_libkst_math_kst_h,v 1.1 2020/01/09 17:20:47 cwen Exp $
+$OpenBSD: patch-src_libkst_math_kst_h,v 1.2 2020/01/10 23:10:38 cwen Exp $
 
 ports-gcc: fix out of scope errors, from
 https://github.com/Kst-plot/kst/pull/18
@@ -6,13 +6,15 @@ https://github.com/Kst-plot/kst/pull/18
 Index: src/libkst/math_kst.h
 --- src/libkst/math_kst.h.orig
 +++ src/libkst/math_kst.h
-@@ -31,6 +31,11 @@ inline double pow(float a, double b) { return pow((dou
+@@ -31,6 +31,13 @@ inline double pow(float a, double b) { return pow((dou
  inline double pow(int a, qreal b) { return pow((double)a, (double)b); }
  #endif
  
 +#if defined(__OpenBSD__) && !defined(__clang__)
 +#include <cmath>
-+using namespace std;
++using std::isnan;
++using std::isinf;
++using std::isfinite;
 +#endif
 +
  namespace Kst {
