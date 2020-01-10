@@ -1,19 +1,23 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2018/11/08 04:23:43 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/01/10 15:03:23 bcallah Exp $
 
+Remove -O3
 Remove -Werror
 Link with -lcurses to appease lld
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -5,8 +5,8 @@ DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/bcal
+@@ -4,10 +4,10 @@ MANDIR = $(DESTDIR)$(PREFIX)/share/man/man1
+ DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/bcal
  STRIP ?= strip
  
- CFLAGS ?= -O3
--CFLAGS += -Wall -Wextra -Wno-unused-parameter -Werror
--LDLIBS = -lreadline
-+CFLAGS += -Wall -Wextra -Wno-unused-parameter
-+LDLIBS = -lreadline -lcurses
+-CFLAGS_OPTIMIZATION ?= -O3
+-CFLAGS_WARNINGS     ?= -Wall -Wextra -Wno-unused-parameter -Werror
++CFLAGS_OPTIMIZATION ?=
++CFLAGS_WARNINGS     ?= -Wall -Wextra -Wno-unused-parameter
  
- SRC = $(wildcard src/*.c)
- INCLUDE = -Iinc
+-LDLIBS_READLINE ?= -lreadline
++LDLIBS_READLINE ?= -lreadline -lcurses
+ 
+ CFLAGS += $(CFLAGS_OPTIMIZATION) $(CFLAGS_WARNINGS)
+ LDLIBS += $(LDLIBS_READLINE)

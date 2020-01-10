@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/10 15:03:23 bcallah Exp $
 
 # Upstream says 64-bit only.
 # https://github.com/jarun/bcal/issues/4
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
-V =		2.1
+V =		2.2
 COMMENT =	storage and general-purpose calculator (Byte CALculator)
 DISTNAME =	bcal-v${V}
 PKGNAME =	bcal-${V}
@@ -19,6 +19,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c curses readline
 
 MASTER_SITES =	https://github.com/jarun/bcal/releases/download/v${V}/
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # Test script is a Python 3 script.
 # It is not worth invoking the python MODULE for this.
