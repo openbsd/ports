@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2019/12/31 23:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.198 2020/01/10 14:07:06 jca Exp $
 
 BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 
@@ -6,6 +6,7 @@ COMMENT=		image processing tools
 
 VER=			6.9.10
 DASHVER=		82
+REVISION=		0
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://imagemagick.org/download/ limit:6.*
@@ -42,7 +43,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/djvulibre \
 			graphics/jbigkit \
 			graphics/lcms2 \
-			graphics/libraw \
+			graphics/libraw>=0.19.5p0 \
 			graphics/libwebp \
 			graphics/openjp2 \
 			graphics/png \
