@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2020/01/03 21:03:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2020/01/10 13:39:26 sthen Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -22,6 +22,7 @@ DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
 REVISION=	1
+REVISION-rtmp=	2
 VERSION-rtmp=	1.2.1
 
 PKGNAME-main=		${DISTNAME}
@@ -83,6 +84,7 @@ WANTLIB-stream=
 WANTLIB-image_filter=	gd
 WANTLIB-geoip=		GeoIP
 WANTLIB-geoip2=		maxminddb
+WANTLIB-rtmp=
 WANTLIB-xslt=		exslt xml2 xslt
 WANTLIB-naxsi=
 WANTLIB-ldap_auth=	ldap
@@ -99,8 +101,7 @@ LIB_DEPENDS-geoip=	net/GeoIP
 LIB_DEPENDS-geoip2=	net/libmaxminddb
 LIB_DEPENDS-ldap_auth=	databases/openldap
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
-LIB_DEPENDS-rtmp=	textproc/libxml \
-			textproc/libxslt
+LIB_DEPENDS-rtmp=
 
 MODLUA_RUNDEP=		No
 RUN_DEPENDS=		www/nginx,-main=${VERSION}

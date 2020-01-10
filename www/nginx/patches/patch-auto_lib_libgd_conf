@@ -1,0 +1,17 @@
+$OpenBSD: patch-auto_lib_libgd_conf,v 1.1 2020/01/10 13:39:26 sthen Exp $
+
+Index: auto/lib/libgd/conf
+--- auto/lib/libgd/conf.orig
++++ auto/lib/libgd/conf
+@@ -22,9 +22,9 @@ if [ $ngx_found = no ]; then
+     ngx_feature_path="/usr/local/include"
+ 
+     if [ $NGX_RPATH = YES ]; then
+-        ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -lgd"
++        ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -L/usr/X11R6/lib -lgd"
+     else
+-        ngx_feature_libs="-L/usr/local/lib -lgd"
++        ngx_feature_libs="-L/usr/local/lib -L/usr/X11R6/lib -lgd"
+     fi
+ 
+     . auto/feature
