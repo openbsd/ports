@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/08 22:02:19 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2020/01/10 00:24:22 sthen Exp $
 
 # python3 flavour not needed for this port; the ipaddress module
 # is available in core python 3.3+
-COMMENT =		Python 3.3's ipaddress for Python 2.6 and 2.7#'
+COMMENT =		backport of Python 3.3's ipaddress for old Python
 
-MODPY_EGG_VERSION =	1.0.18
+MODPY_EGG_VERSION =	1.0.23
 DISTNAME =		ipaddress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
