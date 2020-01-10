@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2019/09/05 16:20:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2020/01/10 11:19:33 jca Exp $
 
 COMMENT =		library for reading RAW files
 
 DISTNAME =		LibRaw-0.19.5
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 CATEGORIES =		graphics
 
 SHARED_LIBS +=  raw                  4.0      # 15.0
