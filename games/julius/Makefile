@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/10/01 17:58:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2020/01/10 14:44:53 bcallah Exp $
 
-V =		1.1.0
+V =		1.2.0
 COMMENT =	open source re-implementation of Caesar III game engine
 DISTNAME =	julius-${V}
-REVISION =	0
 EXTRACT_SUFX =	-source.tar.gz
 CATEGORIES =	games x11
 
@@ -20,6 +19,9 @@ MASTER_SITES =	https://github.com/bvschaik/julius/releases/download/v${V}/
 MODULES =	devel/cmake
 
 LIB_DEPENDS =	devel/sdl2-mixer
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
 # Talk to upstream about this?
 pre-configure:
