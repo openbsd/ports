@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2019/12/25 15:01:08 martin Exp $
+# $OpenBSD: Makefile,v 1.171 2020/01/10 13:30:41 martin Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -145,6 +145,7 @@
      SUBDIR += py-statistics
      SUBDIR += py-sympy
      SUBDIR += py-sympy,python3
+     SUBDIR += py-tables
      SUBDIR += qhull
      SUBDIR += qrupdate
      SUBDIR += sc
