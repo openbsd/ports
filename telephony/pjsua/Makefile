@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2020/01/10 13:37:46 sthen Exp $
 
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 
-V=		2.8
+V=		2.9
 DISTNAME=	pjproject-$V
 PKGNAME-main=	pjsip-$V
 PKGNAME-pjsua=	pjsua-$V
-REVISION-pjsua=	0
 EXTRACT_SUFX=	.tar.bz2
 
 LIBVER=		0.0
@@ -45,7 +44,7 @@ WANTLIB-pjsua += pjsip-ua pjsua pthread resample
 
 WANTLIB-main = ${WANTLIB} ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MULTI_PACKAGES=	-main -pjsua
 
@@ -65,6 +64,7 @@ CONFIGURE_STYLE= autoconf no-autoheader
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--enable-shared \
 		--disable-libwebrtc \
+		--disable-openh264 \
 		--disable-oss \
 		--disable-video \
 		--with-external-gsm \
@@ -72,7 +72,8 @@ CONFIGURE_ARGS=	--enable-shared \
 		--with-external-speex \
 		--with-external-srtp
 CFLAGS+=	-DNDEBUG -DPJ_HAS_IPV6=1 -I${LOCALBASE}/include
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+CONFIGURE_ENV=	LD="${CXX}" \
+		CFLAGS="${CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=	ac_cv_header_uuid_uuid_h=no \
 		ac_cv_lib_uuid_uuid_generate=no

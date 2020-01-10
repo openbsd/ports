@@ -1,0 +1,15 @@
+$OpenBSD: patch-pjsip_build_Makefile,v 1.1 2020/01/10 13:37:47 sthen Exp $
+
+Index: pjsip/build/Makefile
+--- pjsip/build/Makefile.orig
++++ pjsip/build/Makefile
+@@ -152,8 +152,7 @@ export PJSUA2_LIB_LDFLAGS += $(PJSUA_LIB_LDLIB) \
+ 			     $(PJNATH_LDLIB) \
+ 			     $(PJLIB_UTIL_LDLIB) \
+ 			     $(PJLIB_LDLIB) \
+-			     $(_LDFLAGS) \
+-			     -lstdc++
++			     $(_LDFLAGS)
+ 
+ 
+ ###############################################################################

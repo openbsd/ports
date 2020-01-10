@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2019/02/15 22:31:09 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/01/10 13:37:47 sthen Exp $
 include/pj/
 include/pj++/
 include/pj++/file.hpp
@@ -225,6 +225,7 @@ include/pjmedia/transport_udp.h
 include/pjmedia/types.h
 include/pjmedia/vid_codec.h
 include/pjmedia/vid_codec_util.h
+include/pjmedia/vid_conf.h
 include/pjmedia/vid_port.h
 include/pjmedia/vid_stream.h
 include/pjmedia/vid_tee.h
