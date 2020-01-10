@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2020/01/09 18:12:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/10 08:16:17 zhuk Exp $
 COMMENT =	minimalistic command-line ICB client
-VERSION =	1.1.2
+VERSION =	1.1.3
 DISTNAME =	oicb-${VERSION}
 CATEGORIES =	net
 MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
