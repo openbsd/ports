@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.547 2019/12/21 14:17:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.548 2020/01/10 17:37:35 jeremy Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -298,18 +298,22 @@
      SUBDIR += rtty
      SUBDIR += ruby-augeas,ruby25
      SUBDIR += ruby-augeas,ruby26
+     SUBDIR += ruby-augeas,ruby27
      SUBDIR += ruby-capistrano
      SUBDIR += ruby-directory_watcher
      SUBDIR += ruby-libvirt,ruby25
      SUBDIR += ruby-libvirt,ruby26
+     SUBDIR += ruby-libvirt,ruby27
      SUBDIR += ruby-posix-spawn,ruby25
      SUBDIR += ruby-posix-spawn,ruby26
+     SUBDIR += ruby-posix-spawn,ruby27
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-syntax
      SUBDIR += ruby-r10k
      SUBDIR += ruby-shadow,ruby25
      SUBDIR += ruby-shadow,ruby26
+     SUBDIR += ruby-shadow,ruby27
      SUBDIR += ruby-tzinfo
      SUBDIR += ruby-vlad
      SUBDIR += rundeck
