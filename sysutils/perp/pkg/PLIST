@@ -1,0 +1,87 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/11 16:52:27 sthen Exp $
+@man man/man5/perpetrate.5
+@man man/man8/perp-setup.8
+@man man/man8/perp_intro.8
+@man man/man8/perpboot.8
+@man man/man8/perpctl.8
+@man man/man8/perpd.8
+@man man/man8/perpetrate.8
+@man man/man8/perphup.8
+@man man/man8/perpls.8
+@man man/man8/perpok.8
+@man man/man8/perpstat.8
+@man man/man8/runargs.8
+@man man/man8/runargv0.8
+@man man/man8/runchoom.8
+@man man/man8/rundetach.8
+@man man/man8/rundeux.8
+@man man/man8/runenv.8
+@man man/man8/runfile.8
+@man man/man8/runlimit.8
+@man man/man8/runlock.8
+@man man/man8/runpause.8
+@man man/man8/runsession.8
+@man man/man8/runtool.8
+@man man/man8/runtools_intro.8
+@man man/man8/runtrap.8
+@man man/man8/runuid.8
+@man man/man8/sissylog.8
+@man man/man8/tinylog.8
+sbin/perp-setup
+@bin sbin/perpboot
+@bin sbin/perpctl
+@bin sbin/perpd
+@bin sbin/perphup
+@bin sbin/perpls
+@bin sbin/perpok
+@bin sbin/perpstat
+@bin sbin/runargs
+@bin sbin/runargv0
+@bin sbin/runchoom
+@bin sbin/rundetach
+@bin sbin/rundeux
+@bin sbin/runenv
+@bin sbin/runfile
+@bin sbin/runlimit
+@bin sbin/runlock
+@bin sbin/runpause
+@bin sbin/runsession
+@bin sbin/runtool
+@bin sbin/runtrap
+@bin sbin/runuid
+@bin sbin/sissylog
+@bin sbin/tinylog
+sbin/tinylog_run
+share/examples/perp/
+share/examples/perp/README
+share/examples/perp/apgd/
+share/examples/perp/apgd/README
+share/examples/perp/apgd/rc.log
+share/examples/perp/apgd/rc.main
+share/examples/perp/dnscache/
+share/examples/perp/dnscache/README
+share/examples/perp/dnscache/dnscache.env
+share/examples/perp/dnscache/rc.log
+share/examples/perp/dnscache/rc.main
+share/examples/perp/dnscache/root/
+share/examples/perp/dnscache/root/ip/
+share/examples/perp/dnscache/root/ip/127.0.0.1
+share/examples/perp/dnscache/root/servers/
+share/examples/perp/dnscache/root/servers/@
+share/examples/perp/hellod/
+share/examples/perp/hellod/README
+share/examples/perp/hellod/rc.log
+share/examples/perp/hellod/rc.main
+share/examples/perp/mathopd/
+share/examples/perp/mathopd/README
+share/examples/perp/mathopd/index.html
+share/examples/perp/mathopd/mathopd.conf
+share/examples/perp/mathopd/mathopd.conf.bak
+share/examples/perp/mathopd/rc.log
+share/examples/perp/mathopd/rc.main
+share/examples/perp/sshd/
+share/examples/perp/sshd/README
+share/examples/perp/sshd/rc.log
+share/examples/perp/sshd/rc.main
+share/examples/perp/sshd/rc.main_tcpserver
+share/examples/perp/tinylog.conf
