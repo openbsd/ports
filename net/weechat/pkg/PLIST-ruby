@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-ruby,v 1.1.1.1 2012/06/26 15:06:42 sthen Exp $
-lib/weechat/plugins/ruby.so
+@comment $OpenBSD: PLIST-ruby,v 1.2 2020/01/11 07:26:00 rsadowski Exp $
+@so lib/weechat/plugins/ruby.so

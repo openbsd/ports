@@ -1,10 +1,11 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.7 2017/03/23 01:46:23 danj Exp $
---- doc/CMakeLists.txt.orig	Sun Jan 15 01:41:25 2017
-+++ doc/CMakeLists.txt	Sun Mar 12 20:36:40 2017
-@@ -26,15 +26,15 @@ if(ENABLE_MAN OR ENABLE_DOC)
- 
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.8 2020/01/11 07:26:00 rsadowski Exp $
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -22,15 +22,15 @@ if(ENABLE_MAN OR ENABLE_DOC)
+   find_package(Asciidoctor)
+   if(ASCIIDOCTOR_FOUND)
      set(ASCIIDOCTOR_ARGS -a experimental -a icons=font -a revnumber="${VERSION}" -a sectanchors -a source-highlighter=prettify)
- 
 -    add_subdirectory(cs)
 -    add_subdirectory(de)
 -    add_subdirectory(en)
@@ -22,7 +23,7 @@ $OpenBSD: patch-doc_CMakeLists_txt,v 1.7 2017/03/23 01:46:23 danj Exp $
 +#    add_subdirectory(it)
 +#    add_subdirectory(ja)
 +#    add_subdirectory(pl)
-+#    #add_subdirectory(ru)
- 
++#    add_subdirectory(ru)
+   else()
+     message(SEND_ERROR "Asciidoctor not found")
    endif()
- 

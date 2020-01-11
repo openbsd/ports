@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/09/22 19:34:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.45 2020/01/11 07:26:00 rsadowski Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		2.6
+V=		2.7
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -46,15 +46,20 @@ MODPY_RUNDEP=	No
 MODRUBY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gettext,-tools \
-		devel/cpputest
+		devel/cpputest \
+		sysutils/flock
+
+RUN_DEPENDS=	sysutils/flock
 
 LIB_DEPENDS=	devel/gettext,-runtime \
-		security/libgcrypt \
-		security/gnutls \
 		net/curl \
+		security/gnutls \
+		security/libgcrypt \
 		textproc/aspell/core
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+TEST_DEPENDS=	devel/cpputest
+
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS-lua=	net/weechat,-main ${MODLUA_RUN_DEPENDS}
@@ -68,22 +73,22 @@ RUN_DEPENDS-ruby=	net/weechat,-main ${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-tcl=	${MODTCL_LIB_DEPENDS}
 RUN_DEPENDS-tcl=	net/weechat,-main ${MODTCL_RUN_DEPENDS}
 
-TEST_DEPENDS +=	devel/cpputest
+CONFIGURE_ARGS=		-DENABLE_SPELL=ON \
+			-DENABLE_RUBY=ON \
+			-DENABLE_LUA=ON \
+			-DENABLE_TCL=ON \
+			-DENABLE_PYTHON=ON \
+			-DENABLE_TESTS=ON
 
-CONFIGURE_ARGS+=-DENABLE_SPELL=ON \
-		-DENABLE_GUILE=OFF \
-		-DENABLE_RUBY=ON \
-		-DENABLE_LUA=ON \
-		-DENABLE_TCL=ON \
-		-DENABLE_PHP=OFF \
-		-DENABLE_PYTHON=ON \
-		-DENABLE_JAVASCRIPT=OFF \
-		-DHAVE_BACKTRACE=OFF \
-		-DENABLE_TESTS=ON \
-		-DCA_FILE=/etc/ssl/cert.pem \
-		-DTCL_TCLSH=${MODTCL_BIN} \
-		-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
-		-DMODTCL_LIB=${MODTCL_LIB}
+CONFIGURE_ARGS+=	-DENABLE_GUILE=OFF \
+			-DENABLE_PHP=OFF \
+			-DENABLE_JAVASCRIPT=OFF \
+			-DHAVE_BACKTRACE=OFF
+
+CONFIGURE_ARGS+=	-DCA_FILE=/etc/ssl/cert.pem \
+			-DTCL_TCLSH=${MODTCL_BIN} \
+			-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
+			-DMODTCL_LIB=${MODTCL_LIB}
 
 pre-configure:
 	rm -f ${WRKSRC}/cmake/{FindLua,FindRuby,FindTCL}.cmake

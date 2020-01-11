@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2019/07/12 04:42:35 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2020/01/11 07:26:00 rsadowski Exp $
 @bin bin/weechat
 bin/weechat-curses
 @bin bin/weechat-headless
@@ -7,20 +7,20 @@ include/weechat/weechat-plugin.h
 lib/pkgconfig/weechat.pc
 lib/weechat/
 lib/weechat/plugins/
-lib/weechat/plugins/alias.so
-lib/weechat/plugins/buflist.so
-lib/weechat/plugins/charset.so
-lib/weechat/plugins/exec.so
-lib/weechat/plugins/fifo.so
-lib/weechat/plugins/fset.so
-lib/weechat/plugins/irc.so
-lib/weechat/plugins/logger.so
-lib/weechat/plugins/perl.so
-lib/weechat/plugins/relay.so
-lib/weechat/plugins/script.so
-lib/weechat/plugins/spell.so
-lib/weechat/plugins/trigger.so
-lib/weechat/plugins/xfer.so
+@so lib/weechat/plugins/alias.so
+@so lib/weechat/plugins/buflist.so
+@so lib/weechat/plugins/charset.so
+@so lib/weechat/plugins/exec.so
+@so lib/weechat/plugins/fifo.so
+@so lib/weechat/plugins/fset.so
+@so lib/weechat/plugins/irc.so
+@so lib/weechat/plugins/logger.so
+@so lib/weechat/plugins/perl.so
+@so lib/weechat/plugins/relay.so
+@so lib/weechat/plugins/script.so
+@so lib/weechat/plugins/spell.so
+@so lib/weechat/plugins/trigger.so
+@so lib/weechat/plugins/xfer.so
 share/doc/weechat/
 share/doc/weechat/weechat_dev.en.adoc
 share/doc/weechat/weechat_faq.en.adoc
@@ -30,11 +30,6 @@ share/doc/weechat/weechat_relay_protocol.en.adoc
 share/doc/weechat/weechat_scripting.en.adoc
 share/doc/weechat/weechat_tester.en.adoc
 share/doc/weechat/weechat_user.en.adoc
-@comment share/icons/
-@comment share/icons/hicolor/
-@comment share/icons/hicolor/32x32/
-@comment share/icons/hicolor/32x32/apps/
-@comment share/icons/hicolor/32x32/apps/weechat.png
 share/locale/cs/LC_MESSAGES/weechat.mo
 share/locale/de/LC_MESSAGES/weechat.mo
 share/locale/es/LC_MESSAGES/weechat.mo
