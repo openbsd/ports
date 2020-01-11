@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/27 19:31:07 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/11 18:35:11 bcallah Exp $
 include/microhttpd.h
 @info info/libmicrohttpd-tutorial.info
 @info info/libmicrohttpd.info
 info/libmicrohttpd_performance_data.png
-lib/libmicrohttpd.a
+@static-lib lib/libmicrohttpd.a
 lib/libmicrohttpd.la
 @lib lib/libmicrohttpd.so.${LIBmicrohttpd_VERSION}
 lib/pkgconfig/libmicrohttpd.pc
