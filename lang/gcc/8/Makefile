@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/12/03 21:18:26 cwen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/01/11 12:49:46 cwen Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
@@ -15,6 +15,7 @@ USE_LLD = No
 
 DPB_PROPERTIES = parallel
 
+# XXX sync bsd.port.mk(5) when the version changes
 V = 8.3.0
 REVISION = 4
 FULL_VERSION = $V
