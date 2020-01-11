@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.548 2020/01/10 17:37:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.549 2020/01/11 16:52:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -229,6 +229,7 @@
      SUBDIR += packer
      SUBDIR += parallel
      SUBDIR += pciutils
+     SUBDIR += perp
      SUBDIR += pftop
      SUBDIR += pick
      SUBDIR += pkg_mgr
