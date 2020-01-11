@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/04/02 19:47:43 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/01/11 18:28:35 bcallah Exp $
 @conflict fileutils-*
 @conflict sh-utils-*
 @conflict textutils-*
@@ -116,7 +116,7 @@
 @info info/coreutils.info
 @comment lib/charset.alias
 libexec/coreutils/
-libexec/coreutils/libstdbuf.so
+@so libexec/coreutils/libstdbuf.so
 @man man/man1/gb2sum.1
 @man man/man1/gbase32.1
 @man man/man1/gbase64.1
