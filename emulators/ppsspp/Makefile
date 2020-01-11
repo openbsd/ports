@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2019/10/30 08:27:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/11 21:53:01 cwen Exp $
+
+# See https://github.com/hrydgard/ppsspp/issues/8823
+NOT_FOR_ARCHS =	${BE_ARCHS}
 
 COMMENT =	Sony PlayStation Portable emulator
 
