@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2019/12/22 17:00:31 semarie Exp $
+# $OpenBSD: Makefile,v 1.105 2020/01/11 05:45:09 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -23,7 +23,7 @@ DISTNAME =		rustc-${V}-src
 BV-aarch64 =		1.40.0-20191221
 BV-amd64 =		1.40.0-20191217
 BV-i386 =		1.40.0-20191220
-BV-sparc64 =		1.39.0-20191207
+BV-sparc64 =		1.40.0-20200110
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
