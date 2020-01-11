@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_cmGlobalGenerator_cxx,v 1.11 2019/09/20 14:37:25 rsadowski Exp $
+$OpenBSD: patch-Source_cmGlobalGenerator_cxx,v 1.12 2020/01/11 08:01:09 rsadowski Exp $
 
 Index: Source/cmGlobalGenerator.cxx
 --- Source/cmGlobalGenerator.cxx.orig
 +++ Source/cmGlobalGenerator.cxx
-@@ -2432,6 +2432,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
+@@ -2454,6 +2454,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
    cmCustomCommandLine singleLine;
    singleLine.push_back(cmSystemTools::GetCTestCommand());
    singleLine.push_back("--force-new-ctest-process");

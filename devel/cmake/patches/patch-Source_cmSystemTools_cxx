@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.13 2019/08/21 05:47:40 rsadowski Exp $
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.14 2020/01/11 08:01:09 rsadowski Exp $
 
 Get rid of cmLocaleRAII.
 
@@ -29,7 +29,7 @@ the invalid use of the interface.
 Index: Source/cmSystemTools.cxx
 --- Source/cmSystemTools.cxx.orig
 +++ Source/cmSystemTools.cxx
-@@ -1764,8 +1764,6 @@ bool extract_tar(const std::string& outFileName,
+@@ -1505,8 +1505,6 @@ bool extract_tar(const std::string& outFileName,
                   const std::vector<std::string>& files, bool verbose,
                   bool extract)
  {

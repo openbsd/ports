@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.24 2019/08/21 05:47:40 rsadowski Exp $
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.25 2020/01/11 08:01:09 rsadowski Exp $
 Index: Modules/FindJNI.cmake
 --- Modules/FindJNI.cmake.orig
 +++ Modules/FindJNI.cmake
@@ -102,7 +102,7 @@ Index: Modules/FindJNI.cmake
 +
  if (WIN32)
    set (_JNI_HINTS)
-   execute_process(COMMAND REG QUERY HKLM\\SOFTWARE\\JavaSoft\\JDK /f "." /k
+   execute_process(COMMAND REG QUERY HKLM\\SOFTWARE\\JavaSoft\\JDK
 @@ -209,10 +267,10 @@ set(_JNI_JAVA_DIRECTORIES_BASE
    /usr/lib/jvm/java-7-openjdk-{libarch}     # Ubuntu 15.10
    /usr/lib/jvm/java-6-openjdk-{libarch}     # Ubuntu 15.10

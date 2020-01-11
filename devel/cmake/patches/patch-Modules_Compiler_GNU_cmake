@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.13 2019/08/21 05:47:40 rsadowski Exp $
+$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.14 2020/01/11 08:01:09 rsadowski Exp $
 Index: Modules/Compiler/GNU.cmake
 --- Modules/Compiler/GNU.cmake.orig
 +++ Modules/Compiler/GNU.cmake
-@@ -49,9 +49,9 @@ macro(__compiler_gnu lang)
+@@ -54,9 +54,9 @@ macro(__compiler_gnu lang)
    # Initial configuration flags.
    string(APPEND CMAKE_${lang}_FLAGS_INIT " ")
    string(APPEND CMAKE_${lang}_FLAGS_DEBUG_INIT " -g")

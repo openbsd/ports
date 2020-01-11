@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmMessenger_cxx,v 1.2 2019/08/21 05:47:40 rsadowski Exp $
+$OpenBSD: patch-Source_cmMessenger_cxx,v 1.3 2020/01/11 08:01:09 rsadowski Exp $
 Index: Source/cmMessenger.cxx
 --- Source/cmMessenger.cxx.orig
 +++ Source/cmMessenger.cxx
@@ -11,12 +11,12 @@ Index: Source/cmMessenger.cxx
    } else if (t == MessageType::LOG) {
      msg << "CMake Debug Log";
    } else if (t == MessageType::DEPRECATION_ERROR) {
-@@ -106,19 +106,6 @@ void displayMessage(MessageType t, std::ostringstream&
+@@ -105,19 +105,6 @@ void displayMessage(MessageType t, std::ostringstream&
  
    // Add a terminating blank line.
    msg << "\n";
 -
--#if defined(CMAKE_BUILD_WITH_CMAKE)
+-#if !defined(CMAKE_BOOTSTRAP)
 -  // Add a C++ stack trace to internal errors.
 -  if (t == MessageType::INTERNAL_ERROR) {
 -    std::string stack = cmsys::SystemInformation::GetProgramStack(0, 0);
