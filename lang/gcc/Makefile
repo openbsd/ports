@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/27 21:26:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2020/01/12 11:37:28 cwen Exp $
+
+# XXX sync bsd.port.mk(5) when ports-gcc major version changes
 
      SUBDIR =
      SUBDIR += 8
