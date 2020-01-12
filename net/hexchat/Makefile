@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2019/10/23 05:06:11 bket Exp $
+# $OpenBSD: Makefile,v 1.28 2020/01/12 06:59:31 bket Exp $
 
 COMMENT =		GTK+2 IRC Client
-DISTNAME =		hexchat-2.14.2
+DISTNAME =		hexchat-2.14.3
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
 

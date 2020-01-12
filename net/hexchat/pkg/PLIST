@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/10/23 05:06:11 bket Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/01/12 06:59:31 bket Exp $
 @bin bin/hexchat
 include/hexchat-plugin.h
 lib/hexchat/
 lib/hexchat/plugins/
 @comment lib/hexchat/plugins/checksum.la
-lib/hexchat/plugins/checksum.so
+@so lib/hexchat/plugins/checksum.so
 @comment lib/hexchat/plugins/fishlim.la
-lib/hexchat/plugins/fishlim.so
+@so lib/hexchat/plugins/fishlim.so
 @comment lib/hexchat/plugins/lua.la
-lib/hexchat/plugins/lua.so
+@so lib/hexchat/plugins/lua.so
 @comment lib/hexchat/plugins/perl.la
-lib/hexchat/plugins/perl.so
+@so lib/hexchat/plugins/perl.so
 @comment lib/hexchat/plugins/python.la
-lib/hexchat/plugins/python.so
+@so lib/hexchat/plugins/python.so
 lib/pkgconfig/hexchat-plugin.pc
 @man man/man1/hexchat.1
 share/applications/io.github.Hexchat.desktop
