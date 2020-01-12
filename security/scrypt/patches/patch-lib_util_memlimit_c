@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_util_memlimit_c,v 1.1 2020/01/12 17:25:37 bket Exp $
+
+Do not ignore RLIMIT_DATA on OpenBSD. Revert
+https://github.com/Tarsnap/scrypt/commit/2b478e7ce590a6564d89417ddad4f3dd4bbdcaf6
+
+Index: lib/util/memlimit.c
+--- lib/util/memlimit.c.orig
++++ lib/util/memlimit.c
+@@ -167,14 +167,12 @@ memlimit_rlimit(size_t * memlimit)
+ 		memrlimit = (uint64_t)rl.rlim_cur;
+ #endif
+ 
+-#ifndef HAVE_MMAP
+-	/* ... RLIMIT_DATA (if we're not using mmap)... */
++	/* ... RLIMIT_DATA... */
+ 	if (getrlimit(RLIMIT_DATA, &rl))
+ 		return (1);
+ 	if ((rl.rlim_cur != RLIM_INFINITY) &&
+ 	    ((uint64_t)rl.rlim_cur < memrlimit))
+ 		memrlimit = (uint64_t)rl.rlim_cur;
+-#endif
+ 
+ 	/* ... and RLIMIT_RSS. */
+ #ifdef RLIMIT_RSS
