@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1926 2020/01/10 17:37:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1927 2020/01/12 18:11:43 mglocker Exp $
 
      SUBDIR =
+     SUBDIR += 64tass
      SUBDIR += ElectricFence
      SUBDIR += ORBit2
      SUBDIR += acpica
