@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/09/04 09:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/01/13 14:25:51 sthen Exp $
 
 COMMENT =	command-line HTTP client
 
-MODPY_EGG_VERSION =	1.0.3
+MODPY_EGG_VERSION =	2.0.0
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	jkbrzt
 GH_PROJECT =	httpie
@@ -19,12 +19,12 @@ PERMIT_PACKAGE = Yes
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_PYTEST =	Yes
 
 RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}
-TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
-		devel/py-test-httpbin${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-test-httpbin${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
 PORTHOME =	${WRKSRC}
 
