@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/07 18:29:00 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/13 17:53:32 bket Exp $
 bin/nlay
 @bin bin/nnn
+@man man/man1/nlay.1
 @man man/man1/nnn.1
 share/bash-completion/
 share/bash-completion/completions/
