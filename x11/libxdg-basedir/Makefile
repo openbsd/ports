@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/01/13 08:20:51 bentley Exp $
 
 COMMENT =	implementation of the XDG Base Directory specification
 
 DISTNAME =	libxdg-basedir-1.2.0
 SHARED_LIBS +=  xdg-basedir	2.0	# .3.0
 CATEGORIES =	x11 devel
-REVISION =	1
+REVISION =	2
 
 # MIT
 PERMIT_PACKAGE =	Yes
