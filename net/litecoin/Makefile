@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/01/02 14:27:46 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/13 19:55:52 rsadowski Exp $
 
 BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
@@ -7,7 +7,7 @@ COMMENT =		P2P payment system
 GH_ACCOUNT =		litecoin-project
 GH_PROJECT =		litecoin
 GH_TAGNAME =		v0.17.1
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  bitcoinconsensus          1.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
@@ -52,12 +52,8 @@ CXXFLAGS +=		-std=c++11
 
 MAKE_FLAGS =		CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
-FLAVORS =		no_x11 debug
+FLAVORS =		no_x11
 FLAVOR ?=
-
-.if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS +=	--enable-debug
-.endif
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	--without-gui

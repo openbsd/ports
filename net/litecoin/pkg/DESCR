@@ -11,3 +11,7 @@ the same time, on the same hardware used to mine bitcoins. With the rise of
 specialized ASICs for Bitcoin, Litecoin continues to satisfy these goals. It is
 unlikely for ASIC mining to be developed for Litecoin until the currency is
 widely used.
+
+Available flavors:
+
+  no_x11: Built daemon and CLI tools only, no Qt5 GUI tools

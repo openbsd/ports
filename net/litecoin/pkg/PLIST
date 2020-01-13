@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/13 19:55:52 rsadowski Exp $
 @conflict bitcoin-*
 @newgroup _litecoind:832
 @newuser _litecoind:832:832:daemon:Litecoin Account:/var/empty:/sbin/nologin
@@ -20,13 +20,13 @@ include/bitcoinconsensus.h
 include/secp256k1.h
 include/secp256k1_recovery.h
 include/univalue.h
-lib/libbitcoinconsensus.a
+@static-lib lib/libbitcoinconsensus.a
 lib/libbitcoinconsensus.la
 @lib lib/libbitcoinconsensus.so.${LIBbitcoinconsensus_VERSION}
-lib/libsecp256k1.a
+@static-lib lib/libsecp256k1.a
 lib/libsecp256k1.la
 @lib lib/libsecp256k1.so.${LIBsecp256k1_VERSION}
-lib/libunivalue.a
+@static-lib lib/libunivalue.a
 lib/libunivalue.la
 @lib lib/libunivalue.so.${LIBunivalue_VERSION}
 lib/pkgconfig/libbitcoinconsensus.pc
