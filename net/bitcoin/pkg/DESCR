@@ -4,3 +4,7 @@ technology to operate with no central authority: managing transactions
 and issuing money are carried out collectively by the network.
 Bitcoin is also the name of the open source software which enables
 the use of this currency.
+
+Available flavors:
+
+  no_x11: Built daemon and CLI tools only, no Qt5 GUI tools
