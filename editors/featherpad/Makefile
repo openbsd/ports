@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/28 16:13:41 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2020/01/13 19:31:41 bcallah Exp $
 
 COMMENT =	lightweight Qt5 plain-text editor
 PKGNAME =	featherpad-${GH_TAGNAME:S/^V//}
@@ -6,7 +6,7 @@ CATEGORIES =	editors x11
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherPad
-GH_TAGNAME =	V0.12.0
+GH_TAGNAME =	V0.12.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
