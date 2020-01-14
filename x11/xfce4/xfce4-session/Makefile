@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2019/11/11 20:49:28 landry Exp $
+# $OpenBSD: Makefile,v 1.81 2020/01/14 06:51:07 landry Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
-XFCE_VERSION=	4.14.0
-REVISION=	0
+XFCE_VERSION=	4.14.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
