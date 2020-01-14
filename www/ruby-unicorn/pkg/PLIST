@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/03/08 16:25:11 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/01/14 16:50:13 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -16,9 +16,8 @@ ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/DESIGN
 ${GEM_LIB}/gems/${DISTNAME}/Documentation/
 ${GEM_LIB}/gems/${DISTNAME}/Documentation/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/Documentation/GNUmakefile
-${GEM_LIB}/gems/${DISTNAME}/Documentation/unicorn.1.txt
-${GEM_LIB}/gems/${DISTNAME}/Documentation/unicorn_rails.1.txt
+${GEM_LIB}/gems/${DISTNAME}/Documentation/unicorn.1
+${GEM_LIB}/gems/${DISTNAME}/Documentation/unicorn_rails.1
 ${GEM_LIB}/gems/${DISTNAME}/FAQ
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-FILE
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-GEN
@@ -77,7 +76,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/tmpio.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/worker.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/unicorn_http.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn_http.so
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/t/
 ${GEM_LIB}/gems/${DISTNAME}/t/.gitignore
@@ -144,7 +143,10 @@ ${GEM_LIB}/gems/${DISTNAME}/test/aggregate.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/README
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/dd.ru
+${GEM_LIB}/gems/${DISTNAME}/test/benchmark/ddstream.ru
+${GEM_LIB}/gems/${DISTNAME}/test/benchmark/readinput.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/stack.ru
+${GEM_LIB}/gems/${DISTNAME}/test/benchmark/uconnect.perl
 ${GEM_LIB}/gems/${DISTNAME}/test/exec/
 ${GEM_LIB}/gems/${DISTNAME}/test/exec/README
 ${GEM_LIB}/gems/${DISTNAME}/test/exec/test_exec.rb
