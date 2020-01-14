@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2019/05/12 08:07:33 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2020/01/14 14:05:22 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -92,7 +92,7 @@ include/ogrsf_frmts.h
 include/rawdataset.h
 include/vrtdataset.h
 lib/gdalplugins/
-lib/libgdal.a
+@static-lib lib/libgdal.a
 lib/libgdal.la
 @lib lib/libgdal.so.${LIBgdal_VERSION}
 lib/pkgconfig/gdal.pc

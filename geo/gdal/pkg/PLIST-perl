@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-perl,v 1.7 2016/05/15 12:18:26 landry Exp $
+@comment $OpenBSD: PLIST-perl,v 1.8 2020/01/14 14:05:22 landry Exp $
 ${P5ARCH}/
 ${P5ARCH}/Geo/
 ${P5ARCH}/Geo/GDAL/
@@ -11,12 +11,12 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Geo/
 ${P5ARCH}/auto/Geo/GDAL/
 ${P5ARCH}/auto/Geo/GDAL/Const/
-${P5ARCH}/auto/Geo/GDAL/Const/Const.so
-${P5ARCH}/auto/Geo/GDAL/GDAL.so
+@so ${P5ARCH}/auto/Geo/GDAL/Const/Const.so
+@so ${P5ARCH}/auto/Geo/GDAL/GDAL.so
 ${P5ARCH}/auto/Geo/GNM/
-${P5ARCH}/auto/Geo/GNM/GNM.so
+@so ${P5ARCH}/auto/Geo/GNM/GNM.so
 ${P5ARCH}/auto/Geo/OGR/
-${P5ARCH}/auto/Geo/OGR/OGR.so
+@so ${P5ARCH}/auto/Geo/OGR/OGR.so
 ${P5ARCH}/auto/Geo/OSR/
-${P5ARCH}/auto/Geo/OSR/OSR.so
+@so ${P5ARCH}/auto/Geo/OSR/OSR.so
 @man man/man3p/Geo::GDAL.3p
