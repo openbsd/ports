@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/09/11 16:30:12 ratchov Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/01/14 22:20:30 sthen Exp $
 bin/squeak
 lib/squeak/${FULLV}/
-@bin lib/squeak/${FULLV}/B3DAcceleratorPlugin
-@bin lib/squeak/${FULLV}/PseudoTTYPlugin
-@bin lib/squeak/${FULLV}/Squeak3D
-@bin lib/squeak/${FULLV}/UnixOSProcessPlugin
-@bin lib/squeak/${FULLV}/XDisplayControlPlugin
-lib/squeak/${FULLV}/npsqueak.so
+@so lib/squeak/${FULLV}/B3DAcceleratorPlugin.so
+@so lib/squeak/${FULLV}/PseudoTTYPlugin.so
+@so lib/squeak/${FULLV}/Squeak3D.so
+@so lib/squeak/${FULLV}/UnixOSProcessPlugin.so
+@so lib/squeak/${FULLV}/XDisplayControlPlugin.so
+@so lib/squeak/${FULLV}/npsqueak.so
 @bin lib/squeak/${FULLV}/squeak
-@bin lib/squeak/${FULLV}/vm-display-X11
-@bin lib/squeak/${FULLV}/vm-display-null
-@bin lib/squeak/${FULLV}/vm-sound-null
+@so lib/squeak/${FULLV}/vm-display-X11.so
+@so lib/squeak/${FULLV}/vm-display-null.so
+@so lib/squeak/${FULLV}/vm-sound-null.so
+@so lib/squeak/${FULLV}/vm-sound-sndio.so
 lib/squeak/npsqueakregister
 lib/squeak/npsqueakrun
 @man man/man1/inisqueak.1

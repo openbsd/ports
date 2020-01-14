@@ -1,6 +1,7 @@
-$OpenBSD: patch-platforms_unix_npsqueak_Makefile,v 1.1 2008/07/23 11:17:22 espie Exp $
---- platforms/unix/npsqueak/Makefile.orig	Sat Oct 13 05:03:33 2007
-+++ platforms/unix/npsqueak/Makefile	Wed Jul 23 13:07:25 2008
+$OpenBSD: patch-platforms_unix_npsqueak_Makefile,v 1.2 2020/01/14 22:20:29 sthen Exp $
+Index: platforms/unix/npsqueak/Makefile
+--- platforms/unix/npsqueak/Makefile.orig
++++ platforms/unix/npsqueak/Makefile
 @@ -8,7 +8,7 @@ INC	= -I./include -I/usr/X11R6/include
  CC	= gcc
  CFLAGS	= $(INC) -O2 -fPIC -Wall
@@ -10,3 +11,12 @@ $OpenBSD: patch-platforms_unix_npsqueak_Makefile,v 1.1 2008/07/23 11:17:22 espie
  
  # usually overridden from top level makefile
  VM_VERSION=  3.9-12
+@@ -26,7 +26,7 @@ all: npsqueak.so npsqueakrun
+ 
+ npsqueak.so : npsqueak.la 
+ 	-@rm -f $@ 
+-	ln .libs/npsqueak $@ 
++	ln .libs/npsqueak.so $@ 
+ 
+ npsqueak.la : npsqueak.lo npunix.lo 
+ 	../libtool --mode=link $(LD) $(LDFLAGS) npsqueak.lo npunix.lo -avoid-version -module -rpath $(plgdir) -o $@

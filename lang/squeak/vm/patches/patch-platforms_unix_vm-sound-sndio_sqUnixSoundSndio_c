@@ -1,0 +1,637 @@
+$OpenBSD: patch-platforms_unix_vm-sound-sndio_sqUnixSoundSndio_c,v 1.1 2020/01/14 22:20:29 sthen Exp $
+
+Index: platforms/unix/vm-sound-sndio/sqUnixSoundSndio.c
+--- platforms/unix/vm-sound-sndio/sqUnixSoundSndio.c.orig
++++ platforms/unix/vm-sound-sndio/sqUnixSoundSndio.c
+@@ -0,0 +1,631 @@
++/* vim: set et sw=4 ts=4:
++ * Copyright (c) 2019 Mark Hesselink <mhesseli@sbcglobal.net>
++ *
++ * Permission to use, copy, modify, and/or distribute this software for any
++ * purpose with or without fee is hereby granted, provided that the above
++ * copyright notice and this permission notice appear in all copies.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
++ * SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
++ * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
++ * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++ *
++ * Squeak VM sound module for OpenBSD sndio sound system.
++ */
++
++/* Squeak VM uses the following C++-like pseudo-code to play audio:
++ *
++ *  void PlayLoop(Semaphore &playerSemaphore, Condition &readyForData,
++ *                Buffer &buffer, int stereoFlag)
++ *  {
++ *      const int bytesPerFrame = stereoFlag ? 4 : 2;
++ *      const int startingAt = 0;
++ *      int frameCount;
++ *      int framesPlayed;
++ *
++ *      for (;;)
++ *      {
++ *          while (
++ *              (frameCount = primSoundAvailableBytes() / bytesPerFrame) < 100)
++ *          {
++ *              readyForData.Wait();
++ *          }
++ *          framecount = MIN(framecount, buffer.StereoSampleCount());
++ *          playerSemaphore.Acquire();
++ *          buffer.Refill();
++ *          framesPlayed = primSoundPlaySamples(framecount, buffer.Data(),
++ *                                              startingAt);
++ *          playerSemaphore.Release();
++ *      }
++ *  }
++ *
++ *
++ * And the following C++-like pseudo-code to record audio:
++ *
++ *  void RecordLoop(Sound &sound, Condition &dataAvailable, Buffer &buffer,
++ *                  int stereoFlag)
++ *  {
++ *      int sampleCount;
++ *      int samplesRecorded = 0;
++ *      int startingAt = 0;
++ *
++ *      sampleCount = stereoFlag ? buffer.StereoSampleCount() :
++ *                    buffer.MonoSampleCount();
++ *      for (;;)
++ *      {
++ *          if (samplesRecorded == 0)
++ *          {
++ *              dataAvailable.Wait();
++ *          }
++ *          samplesRecorded = primRecordSamplesInto(buffer.Data(), startingAt);
++ *          startingAt += samplesRecorded;
++ *          if (startingAt > sampleCount)
++ *          {
++ *              sound.Add(buffer);
++ *              buffer.Reset();
++ *              startingAt = 0;
++ *          }
++ *      }
++ *  }
++ *
++ * Running of the play or record loop is preceded by a primStart() and
++ * primStartRecording() function call, respectively, to provide the sound
++ * driver the required information to configure the sound device.
++ *
++ * All Squeak objects, such as the `readyForData' and `dataAvailable' condition
++ * variables or the buffer data arrays, are passed to the sound driver in the
++ * form of an object-oriented pointer (OOP). This OOP must be converted into a
++ * C pointer if the sound driver is to access the object directly.
++ */
++
++#include "sq.h"
++#include "sqaio.h"
++
++#include <sys/socket.h>
++#include <assert.h>
++#include <err.h>
++#include <errno.h>
++#include <poll.h>
++#include <math.h>
++#include <sndio.h>
++#include <stdio.h>
++#include <time.h>
++
++/*****************************************************************************
++ * Constants, Macros & Types
++ *****************************************************************************/
++
++/* Number of playback buffer entries. Each entry can fit a single application
++ * buffer rounded up to the nearest block boundary worth of audio frames. */
++#define NUM_PBUF 8
++/* Number of recording buffer entries. Each entry can fit a single application
++ * buffer rounded up to the nearest block boundary worth of audio frames. */
++#define NUM_RBUF 8
++/* Minimum number of blocks that the sndio(7) sound device file handle must be
++ * able to accept before the sndio(7) sound driver is woken up. */
++#define NUM_SBLK 4
++
++#define SQUEAK_MAX_CHANNELS 2
++#define SQUEAK_SAMPLE_SIZE 2 /* bytes */
++#define SQUEAK_FRAME_SIZE (SQUEAK_MAX_CHANNELS * SQUEAK_SAMPLE_SIZE)
++
++#define DPRINTF(format, ...)                                                \
++    do {                                                                    \
++        if (verbose) {                                                      \
++            struct timespec t;                                              \
++            int rv = clock_gettime(CLOCK_MONOTONIC, &t);                    \
++            fprintf(stderr, "%.6f:%s:%d:%s: " format "\n",                  \
++                    rv == 0 ? ((double)t.tv_sec + (t.tv_nsec / 1e9)) : 0.0, \
++                    __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__);       \
++        }                                                                   \
++    } while (0)
++
++#define MIN(a, b) (((a) < (b)) ? (a) : (b))
++
++struct sndio_play {
++    char *devname;
++    struct sio_hdl *hdl;
++    struct sio_par params;
++    int fd;
++    double volume;
++
++    char *buf;
++    size_t entrysz;
++    size_t head;
++    size_t tail;
++    size_t offset[NUM_PBUF];
++    size_t size[NUM_PBUF];
++
++    sqInt ready;
++    int pending;
++};
++
++struct sndio_rec {
++    char *devname;
++    struct sio_hdl *hdl;
++    struct sio_par params;
++    int fd;
++
++    char *buf;
++    size_t entrysz;
++    size_t head;
++    size_t hoffset;
++    size_t hsize;
++    size_t tail;
++    size_t toffset;
++    size_t tsize;
++
++    sqInt available;
++    int pending;
++};
++
++/*****************************************************************************
++ * Local Variables
++ *****************************************************************************/
++
++static struct sndio_play pc = {
++    .devname = SIO_DEVANY, .hdl = NULL, .buf = NULL};
++
++static struct sndio_rec rc = {.devname = SIO_DEVANY, .hdl = NULL, .buf = NULL};
++
++static int verbose = 0;
++
++/*****************************************************************************
++ * Local Function Prototypes
++ *****************************************************************************/
++
++static sqInt sound_Stop(void);
++
++static sqInt sound_StopRecording(void);
++
++/*****************************************************************************
++ * Local Functions
++ *****************************************************************************/
++
++static int init_aio(struct sio_hdl *hdl, aioHandler aio_cb, int flags)
++{
++    struct pollfd pfd;
++
++    if ((sio_nfds(hdl) != 1) || !sio_pollfd(hdl, &pfd, 0)) {
++        return -1;
++    }
++    /* It is assumed from this point onward that the number of file descriptors
++     * used by the sndio(7) audio playback handle remains fixed at 1. */
++    aioEnable(pfd.fd, 0, AIO_EXT);
++    aioHandle(pfd.fd, aio_cb, flags);
++
++    return pfd.fd;
++}
++
++static int init_handle(struct sio_hdl **hdl, const char *devname,
++                       unsigned int mode, struct sio_par *params,
++                       sqInt frameCount, sqInt samplesPerSec, sqInt stereoFlag)
++{
++    if ((*hdl = sio_open(devname, mode, 1)) == NULL) {
++        return 0;
++    }
++
++    sio_initpar(params);
++    /* Squeak VM always uses signed 16-bit native endian samples. */
++    params->bits = 8 * SQUEAK_SAMPLE_SIZE;
++    params->bps = stereoFlag || (mode == SIO_REC) ? SIO_BPS(params->bits)
++                                                  : SQUEAK_FRAME_SIZE;
++    params->sig = 1;
++    params->le = SIO_LE_NATIVE;
++    params->msb = 0;
++    params->rate = samplesPerSec;
++    params->appbufsz = frameCount;
++    params->pchan = params->rchan = stereoFlag ? 2 : 1;
++    params->xrun = SIO_IGNORE;
++    if (!sio_setpar(*hdl, params) || !sio_getpar(*hdl, params)) {
++        return 0;
++    }
++
++    return 1;
++}
++
++static void play_cb(int fd, void *user_data, int flags)
++{
++    struct pollfd pfd;
++    size_t nwritten = 0;
++    int nfds;
++    char *buffer;
++
++    if (pc.hdl == NULL) {
++        return;
++    }
++
++    /* Let the sndio(7) sound driver process messages sent by the sndiod(8)
++     * audio server. This is a prerequisite for the sndio(7) sound driver to
++     * operate in non-blocking mode.
++     *
++     * Note: Since the pollfd data structure is filled in based on the current
++     * messaging state between the sndio(7) sound driver and the sndiod(8)
++     * audio server, it must be filled in prior to every poll(2) system call.
++     */
++    if (!sio_pollfd(pc.hdl, &pfd, POLLOUT)) {
++        goto ABORT;
++    }
++    if ((nfds = poll(&pfd, 1, 0)) <= 0) {
++        if ((nfds == 0) || (errno == EINTR)) {
++            goto EXIT;
++        }
++        goto ABORT;
++    }
++    if ((sio_revents(pc.hdl, &pfd) & POLLOUT) == 0) {
++        /* Prevent Squeak VM from busy-waiting on asynchronous I/O as much as
++         * possible when new audio frames can be written to the sndio(7) sound
++         * driver's file descriptor, but the sndiod(8) audio server is not yet
++         * ready to receive these new audio frames. */
++        DPRINTF("sndiod(8) audio server not ready");
++        goto EXIT;
++    }
++
++    if (pc.tail != pc.head) {
++        buffer = &pc.buf[pc.tail * pc.entrysz + pc.offset[pc.tail]];
++        nwritten = sio_write(pc.hdl, buffer, pc.size[pc.tail]);
++        if ((nwritten == 0) && sio_eof(pc.hdl)) {
++            goto ABORT;
++        }
++        pc.offset[pc.tail] += nwritten;
++        pc.size[pc.tail] -= nwritten;
++        if (pc.size[pc.tail] == 0) {
++            pc.tail = (pc.tail + 1) % NUM_PBUF;
++            if (!pc.pending) {
++                /* Signal Squeak VM that the sndio(7) sound driver can accept
++                 * more audio frames. */
++                signalSemaphoreWithIndex(pc.ready);
++                pc.pending = 1;
++            }
++        }
++    }
++    DPRINTF("phead=%zu ptail=%zu[offset=%zu,size=%zu] nwritten=%zu", pc.head,
++            pc.tail, pc.offset[pc.tail], pc.size[pc.tail], nwritten);
++
++EXIT:
++    aioHandle(fd, play_cb, flags);
++    return;
++
++ABORT:
++    /* REVISIT: Should a warning to the console be issued here? */
++    ;
++}
++
++static void record_cb(int fd, void *user_data, int flags)
++{
++    struct pollfd pfd;
++    size_t nread = 0;
++    int nfds;
++    char *buffer;
++
++    if (rc.hdl == NULL) {
++        return;
++    }
++
++    /* Let the sndio(7) sound driver process messages sent by the sndiod(8)
++     * audio server. This is a prerequisite for the sndio(7) sound driver to
++     * operate in non-blocking mode.
++     *
++     * Note: Since the pollfd data structure is filled in based on the current
++     * messaging state between the sndio(7) sound driver and the sndiod(8)
++     * audio server, it must be filled in prior to every poll(2) system call.
++     */
++    if (!sio_pollfd(rc.hdl, &pfd, POLLIN)) {
++        goto ABORT;
++    }
++    if ((nfds = poll(&pfd, 1, 0)) <= 0) {
++        if ((nfds == 0) || (errno == EINTR)) {
++            goto EXIT;
++        }
++        goto ABORT;
++    }
++    if ((sio_revents(rc.hdl, &pfd) & POLLIN) == 0) {
++        /* Prevent Squeak VM from busy-waiting on asynchronous I/O as much as
++         * possible when new audio samples can be read from the sndio(7) sound
++         * driver's file descriptor, but the sndiod(8) audio server is not yet
++         * ready to send these new audio samples. */
++        DPRINTF("sndiod(8) audio server not ready");
++        goto EXIT;
++    }
++
++    if (((rc.head >= rc.tail) && (((rc.tail + NUM_RBUF) - rc.head) > 1)) ||
++        ((rc.head < rc.tail) && ((rc.tail - rc.head) > 1))) {
++        buffer = &rc.buf[rc.head * rc.entrysz + rc.hoffset];
++        nread = sio_read(rc.hdl, buffer, rc.hsize);
++        if ((nread == 0) && sio_eof(rc.hdl)) {
++            goto ABORT;
++        }
++        rc.hoffset += nread;
++        rc.hsize -= nread;
++        if (rc.hsize == 0) {
++            rc.head = (rc.head + 1) % NUM_RBUF;
++            rc.hoffset = 0;
++            rc.hsize = rc.entrysz;
++            if (!rc.pending) {
++                /* Signal Squeak VM that new audio samples are available. */
++                signalSemaphoreWithIndex(rc.available);
++                rc.pending = 1;
++            }
++        }
++    }
++    DPRINTF("rhead=%zu[offset=%zu,size=%zu] rtail=%zu", rc.head, rc.hoffset,
++            rc.hsize, rc.tail);
++
++EXIT:
++    aioHandle(fd, record_cb, flags);
++    return;
++
++ABORT:
++    /* REVISIT: Should a warning to the console be issued here? */
++    ;
++}
++
++static void volume_cb(void *user_data, unsigned int volume)
++{
++    pc.volume = ((double)volume) / ((double)SIO_MAXVOL);
++    DPRINTF("volume=%u pvolume=%.6f", volume, pc.volume);
++}
++
++static sqInt sound_AvailableSpace(void)
++{
++    sqInt space = 0;
++
++    pc.pending = 0;
++    if (((pc.head >= pc.tail) && (((pc.tail + NUM_PBUF) - pc.head) > 1)) ||
++        ((pc.head < pc.tail) && ((pc.tail - pc.head) > 1))) {
++        space = pc.entrysz;
++    }
++    DPRINTF("space=%d phead=%zu ptail=%zu", space, pc.head, pc.tail);
++    return space;
++}
++
++static double sound_GetRecordingSampleRate(void)
++{
++    /* REVISIT: How best to determine the sound device's recording
++     * capabilities? */
++    const unsigned int rrate = 44100;
++    DPRINTF("rrate=%u", rrate);
++    return (double)rrate;
++}
++
++static sqInt sound_InsertSamplesFromLeadTime(sqInt frameCount, sqInt dataIndex,
++                                             sqInt samplesOfLeadTime)
++{
++    DPRINTF("frameCount=%d samplesOfLeadTime=%d", frameCount,
++            samplesOfLeadTime);
++    return frameCount;
++}
++
++static sqInt sound_PlaySamplesFromAtLength(sqInt frameCount, sqInt dataIndex,
++                                           sqInt startingAt)
++{
++    char *data;
++
++    data = pointerForOop(dataIndex) + startingAt * SQUEAK_FRAME_SIZE;
++    pc.offset[pc.head] = 0;
++    pc.size[pc.head] = frameCount * pc.params.bps * pc.params.pchan;
++    (void)memcpy(&pc.buf[pc.head * pc.entrysz], data, pc.size[pc.head]);
++    pc.head = (pc.head + 1) % NUM_PBUF;
++    DPRINTF("frameCount=%d startingAt=%d phead=%zu ptail=%zu", frameCount,
++            startingAt, pc.head, pc.tail);
++    return frameCount;
++}
++
++static sqInt sound_PlaySilence(void) { return 0; }
++
++static sqInt sound_RecordSamplesIntoAtLength(sqInt dataIndex, sqInt startingAt,
++                                             sqInt bufferSizeInBytes)
++{
++    sqInt sampleCount = 0;
++    size_t nbytes;
++    char *buffer;
++    char *data;
++
++    DPRINTF("startingAt=%d bufferSizeInBytes=%d", startingAt,
++            bufferSizeInBytes);
++    rc.pending = 0;
++    if (rc.tail != rc.head) {
++        data = pointerForOop(dataIndex) + startingAt * SQUEAK_SAMPLE_SIZE;
++        buffer = &rc.buf[rc.tail * rc.entrysz + rc.toffset];
++        nbytes =
++            MIN(bufferSizeInBytes - startingAt * SQUEAK_SAMPLE_SIZE, rc.tsize);
++        assert((nbytes % SQUEAK_SAMPLE_SIZE) == 0);
++        sampleCount = nbytes / SQUEAK_SAMPLE_SIZE;
++        (void)memcpy(data, buffer, nbytes);
++        rc.toffset += nbytes;
++        rc.tsize -= nbytes;
++        if (rc.tsize == 0) {
++            rc.tail = (rc.tail + 1) % NUM_RBUF;
++            rc.toffset = 0;
++            rc.tsize = rc.entrysz;
++        }
++    }
++    return sampleCount;
++}
++
++static void sound_SetVolume(double left, double right)
++{
++    unsigned int volume;
++
++    DPRINTF("left=%.6f right=%.6f", left, right);
++    volume = (unsigned int)round(MIN(left, right) * SIO_MAXVOL);
++    /* REVISIT: How to inform the user that the requested volume change did not
++     * take effect? */
++    (void)sio_setvol(pc.hdl, volume);
++}
++
++static sqInt sound_SetRecordLevel(sqInt level)
++{
++    DPRINTF("level=%d", level);
++    return 1;
++}
++
++static sqInt sound_Start(sqInt frameCount, sqInt samplesPerSec,
++                         sqInt stereoFlag, sqInt readyForDataIndex)
++{
++    socklen_t watlen = sizeof(int);
++    int watval;
++
++    DPRINTF("frameCount=%d samplesPerSec=%d stereoFlag=%d", frameCount,
++            samplesPerSec, stereoFlag);
++
++    if (pc.hdl != NULL) {
++        /* It is safe to ignore the sound_Stop() return value as the function
++         * can't fail. */
++        (void)sound_Stop();
++    }
++
++    if (!init_handle(&pc.hdl, pc.devname, SIO_PLAY, &pc.params, frameCount,
++                     samplesPerSec, stereoFlag)) {
++        goto ABORT;
++    }
++
++    pc.entrysz = pc.params.appbufsz + pc.params.round - 1;
++    pc.entrysz -= pc.entrysz % pc.params.round;
++    pc.entrysz *= pc.params.bps * pc.params.pchan;
++    if ((pc.buf = reallocarray(pc.buf, NUM_PBUF, pc.entrysz)) == NULL) {
++        goto ABORT;
++    }
++    pc.head = pc.tail = 0;
++    pc.ready = readyForDataIndex;
++
++    if (!sio_onvol(pc.hdl, volume_cb, NULL)) {
++        goto ABORT;
++    }
++    if (!sio_start(pc.hdl)) {
++        goto ABORT;
++    }
++
++    if ((pc.fd = init_aio(pc.hdl, play_cb, AIO_W)) == -1) {
++        goto ABORT;
++    }
++
++    /* REVISIT: Is it safe to assume that the sndio(7) sound driver always
++     * communicates with the sound device via the sndiod(8) audio server? */
++    watval = NUM_SBLK * pc.params.round * pc.params.bps * pc.params.pchan;
++    if (setsockopt(pc.fd, SOL_SOCKET, SO_SNDLOWAT, &watval, watlen) != 0) {
++        goto ABORT;
++    }
++
++    return 1;
++
++ABORT:
++    (void)sound_Stop();
++    return 0;
++}
++
++static sqInt sound_StartRecording(sqInt samplesPerSec, sqInt stereoFlag,
++                                  sqInt dataAvailableIndex)
++{
++    const sqInt frameCount = samplesPerSec / 4;
++
++    DPRINTF("samplesPerSec=%d stereoFlag=%d", samplesPerSec, stereoFlag);
++
++    if (rc.hdl != NULL) {
++        /* It is safe to ignore the sound_StopRecording() return value as the
++         * function can't fail. */
++        (void)sound_StopRecording();
++    }
++
++    if (!init_handle(&rc.hdl, rc.devname, SIO_REC, &rc.params, frameCount,
++                     samplesPerSec, stereoFlag)) {
++        goto ABORT;
++    }
++
++    rc.available = dataAvailableIndex;
++    rc.entrysz = rc.params.appbufsz + rc.params.round - 1;
++    rc.entrysz -= rc.entrysz % rc.params.round;
++    rc.entrysz *= rc.params.bps * rc.params.pchan;
++    if ((rc.buf = reallocarray(rc.buf, NUM_RBUF, rc.entrysz)) == NULL) {
++        goto ABORT;
++    }
++    rc.head = rc.tail = 0;
++    rc.hoffset = rc.toffset = 0;
++    rc.hsize = rc.tsize = rc.entrysz;
++
++    if (!sio_start(rc.hdl)) {
++        goto ABORT;
++    }
++
++    if ((rc.fd = init_aio(rc.hdl, record_cb, AIO_R)) == -1) {
++        goto ABORT;
++    }
++
++    return 1;
++
++ABORT:
++    (void)sound_StopRecording();
++    return 0;
++}
++
++static sqInt sound_Stop(void)
++{
++    DPRINTF("stopping playback");
++    if (pc.hdl != NULL) {
++        aioDisable(pc.fd);
++        sio_close(pc.hdl);
++        pc.hdl = NULL;
++        free(pc.buf);
++        pc.buf = NULL;
++    }
++    return 1;
++}
++
++static sqInt sound_StopRecording(void)
++{
++    DPRINTF("stopping recording");
++    if (rc.hdl != NULL) {
++        aioDisable(rc.fd);
++        sio_close(rc.hdl);
++        rc.hdl = NULL;
++        free(rc.buf);
++        rc.buf = NULL;
++    }
++    return 1;
++}
++
++static void sound_Volume(double *left, double *right)
++{
++    *left = *right = pc.volume;
++    DPRINTF("left=%.6f right=%.6f", *left, *right);
++}
++
++#include "SqSound.h"
++
++SqSoundDefine(sndio);
++
++#include "SqModule.h"
++
++static void *sound_makeInterface(void) { return &sound_sndio_itf; }
++
++static int sound_parseArgument(int argc, char **argv) { return 0; }
++
++static void sound_parseEnvironment(void)
++{
++    const char *errstr;
++    char *strval;
++
++    if ((strval = getenv("SQUEAK_SNDIO_INPUT")) != NULL) {
++        rc.devname = strval;
++    }
++    if ((strval = getenv("SQUEAK_SNDIO_OUTPUT")) != NULL) {
++        pc.devname = strval;
++    }
++    if ((strval = getenv("SQUEAK_SNDIO_LOG_LEVEL")) != NULL) {
++        verbose = strtonum(strval, 0, 1, &errstr) != 0;
++        if (errstr != NULL) {
++            warnx("log level is %s: %s", errstr, strval);
++        }
++    }
++    DPRINTF("pdevname=%s rdevname=%s verbose=%d", pc.devname, rc.devname,
++            verbose);
++}
++
++static void sound_printUsage(void) {}
++
++static void sound_printUsageNotes(void) {}
++
++SqModuleDefine(sound, sndio);

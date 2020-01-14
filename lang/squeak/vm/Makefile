@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/12/25 07:04:45 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2020/01/14 22:20:29 sthen Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -6,10 +6,15 @@ SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz
 
 PKGNAME =	squeak-vm-$V.${SRCV}
-REVISION =	9
+REVISION =	10
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
+
+WANTLIB += GL ICE SM X11 X11-xcb Xdamage Xext Xfixes Xrender Xt
+WANTLIB += Xxf86vm c drm expat glapi m pthread sndio util xcb
+WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes
+WANTLIB += xshmfence z
 
 SEPARATE_BUILD =	Yes
 
@@ -17,8 +22,11 @@ MASTER_SITES =	${SQUEAK_SITE}unix-linux/
 
 RUN_DEPENDS =		squeak-sources-${SOURCEV}:lang/squeak/sources
 
-CONFIGURE_STYLE =	gnu
-AUTOCONF_VERSION =	2.60
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+AUTORECONF =		${MAKE} configure
+
 DESTDIRNAME =		ROOT
 CONFIGURE_ENV =		LDFLAGS="-lpthread ${LDFLAGS}" RANLIB=ranlib \
 			ac_cv_socklen_t=yes
@@ -26,8 +34,6 @@ USE_GMAKE =		Yes
 USE_LIBTOOL =		No
 NO_TEST =		Yes
 
-WANTLIB =		GL X11 m c SM util Xext ICE Xrender Xt pthread \
-			xcb
 FULLV =			$V-${SRCV}
 
 # XXX gnu-interp doesn't work with pie.
@@ -41,6 +47,9 @@ MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/squeak \
 DESTDIRNAME =		ROOT
 SUBST_VARS +=		FULLV
 CFLAGS +=		-fgnu89-inline
+
+pre-patch:
+	@perl -pi -e s,\\r,\\n,g ${WRKDIST}/platforms/unix/src/vm/intplugins/SoundPlugin/*.c
 
 pre-build:
 	@perl -pi -e s,dprintf,debugprintf, ${WRKDIST}/platforms/unix/vm/*.c

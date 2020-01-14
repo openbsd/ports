@@ -1,0 +1,87 @@
+$OpenBSD: patch-platforms_unix_src_vm_intplugins_SoundPlugin_SoundPlugin_c,v 1.1 2020/01/14 22:20:29 sthen Exp $
+
+Index: platforms/unix/src/vm/intplugins/SoundPlugin/SoundPlugin.c
+--- platforms/unix/src/vm/intplugins/SoundPlugin/SoundPlugin.c.orig
++++ platforms/unix/src/vm/intplugins/SoundPlugin/SoundPlugin.c
+@@ -211,24 +211,27 @@ EXPORT(sqInt) primitiveSoundInsertSamples(void) {
+ /*	Output a buffer's worth of sound samples. */
+ 
+ EXPORT(sqInt) primitiveSoundPlaySamples(void) {
+-	sqInt framesPlayed;
++	sqInt buffer;
+ 	sqInt frameCount;
+-	usqInt *buf;
++	sqInt framesPlayed;
+ 	sqInt startIndex;
+ 	sqInt _return_value;
++	char *bufferData;
+ 
+ 	frameCount = interpreterProxy->stackIntegerValue(2);
+-	interpreterProxy->success(interpreterProxy->isWords(interpreterProxy->stackValue(1)));
+-	buf = ((unsigned *) (interpreterProxy->firstIndexableField(interpreterProxy->stackValue(1))));
++	buffer = interpreterProxy->stackValue(1);
+ 	startIndex = interpreterProxy->stackIntegerValue(0);
++	interpreterProxy->success(interpreterProxy->isWords(buffer));
+ 	if (interpreterProxy->failed()) {
+ 		return null;
+ 	}
+-	interpreterProxy->success((startIndex >= 1) && (((startIndex + frameCount) - 1) <= (interpreterProxy->slotSizeOf(((sqInt)(long)(buf) - 4)))));
+-	if (!(interpreterProxy->failed())) {
+-		framesPlayed = snd_PlaySamplesFromAtLength(frameCount, (int)buf, startIndex - 1);
+-		interpreterProxy->success(framesPlayed >= 0);
++	interpreterProxy->success((startIndex >= 1) && (((startIndex + frameCount) - 1) <= (interpreterProxy->slotSizeOf(buffer))));
++	if (interpreterProxy->failed()) {
++		return null;
+ 	}
++	bufferData = interpreterProxy->firstIndexableField(buffer);
++	framesPlayed = snd_PlaySamplesFromAtLength(frameCount, oopForPointer(bufferData), startIndex - 1);
++	interpreterProxy->success(framesPlayed >= 0);
+ 	_return_value = interpreterProxy->positive32BitIntegerFor(framesPlayed);
+ 	if (interpreterProxy->failed()) {
+ 		return null;
+@@ -261,25 +264,27 @@ EXPORT(sqInt) primitiveSoundPlaySilence(void) {
+ /*	Record a buffer's worth of 16-bit sound samples. */
+ 
+ EXPORT(sqInt) primitiveSoundRecordSamples(void) {
+-	sqInt bufSizeInBytes;
++	sqInt buffer;
++	sqInt bufferSizeInSamples;
+ 	sqInt samplesRecorded;
+-	usqInt *buf;
+-	sqInt startWordIndex;
++	sqInt startIndex;
+ 	sqInt _return_value;
++	char *bufferData;
+ 
+-	interpreterProxy->success(interpreterProxy->isWords(interpreterProxy->stackValue(1)));
+-	buf = ((unsigned *) (interpreterProxy->firstIndexableField(interpreterProxy->stackValue(1))));
+-	startWordIndex = interpreterProxy->stackIntegerValue(0);
++	buffer = interpreterProxy->stackValue(1);
++	startIndex = interpreterProxy->stackIntegerValue(0);
++	interpreterProxy->success(interpreterProxy->isWords(buffer));
+ 	if (interpreterProxy->failed()) {
+ 		return null;
+ 	}
+-	if (!(interpreterProxy->failed())) {
+-		bufSizeInBytes = (interpreterProxy->slotSizeOf(((sqInt)(long)(buf) - 4))) * 4;
+-		interpreterProxy->success((startWordIndex >= 1) && (((startWordIndex - 1) * 2) < bufSizeInBytes));
++	bufferSizeInSamples = interpreterProxy->slotSizeOf(buffer) * 2;
++	interpreterProxy->success((startIndex >= 1) && ((startIndex - 1) <= bufferSizeInSamples));
++	if (interpreterProxy->failed()) {
++		return null;
+ 	}
+-	if (!(interpreterProxy->failed())) {
+-		samplesRecorded = snd_RecordSamplesIntoAtLength((int)buf, startWordIndex - 1, bufSizeInBytes);
+-	}
++	bufferData = interpreterProxy->firstIndexableField(buffer);
++	samplesRecorded = snd_RecordSamplesIntoAtLength(oopForPointer(bufferData), startIndex - 1, bufferSizeInSamples * 2);
++	interpreterProxy->success(samplesRecorded >= 0);
+ 	_return_value = interpreterProxy->positive32BitIntegerFor(samplesRecorded);
+ 	if (interpreterProxy->failed()) {
+ 		return null;
+@@ -471,4 +476,5 @@ void* SoundPlugin_exports[][3] = {
+ 
+ 
+ #endif /* ifdef SQ_BUILTIN_PLUGIN */
++
+ 

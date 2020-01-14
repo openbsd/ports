@@ -1,0 +1,13 @@
+$OpenBSD: patch-platforms_unix_config_configure_ac,v 1.1 2020/01/14 22:20:29 sthen Exp $
+
+Index: platforms/unix/config/configure.ac
+--- platforms/unix/config/configure.ac.orig
++++ platforms/unix/config/configure.ac
+@@ -243,7 +243,6 @@ AC_FUNC_ALLOCA
+ AC_GNU_OPT
+ AC_GNU_INTERP
+ AC_MODULE_LIB_PREFIX
+-AC_64BIT_ARCH
+ 
+ CFLAGS="$CFLAGS_32 $CFLAGS"
+ 
