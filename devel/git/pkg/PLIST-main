@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.91 2019/11/11 10:12:33 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.92 2020/01/14 21:33:50 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -9,7 +9,7 @@ bin/git-cvsserver
 @bin bin/git-shell
 @bin bin/git-upload-archive
 @bin bin/git-upload-pack
-lib/libgit.a
+@static-lib lib/libgit.a
 libexec/git/
 @bin libexec/git/git
 @bin libexec/git/git-add
@@ -153,6 +153,7 @@ libexec/git/git-sh-setup
 @bin libexec/git/git-show-branch
 @bin libexec/git/git-show-index
 @bin libexec/git/git-show-ref
+@bin libexec/git/git-sparse-checkout
 @bin libexec/git/git-stage
 @bin libexec/git/git-stash
 @bin libexec/git/git-status
@@ -331,6 +332,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-show-index.1
 @man man/man1/git-show-ref.1
 @man man/man1/git-show.1
+@man man/man1/git-sparse-checkout.1
 @man man/man1/git-stage.1
 @man man/man1/git-stash.1
 @man man/man1/git-status.1
@@ -407,6 +409,7 @@ share/git-core/templates/hooks/setgitperms.perl
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/
 share/git-core/templates/info/exclude
+share/git-gui/lib/chord.tcl
 share/gitk/lib/msgs/zh_cn.msg
 share/gitweb/
 share/gitweb/README
@@ -434,6 +437,7 @@ share/locale/ru/LC_MESSAGES/git.mo
 share/locale/sv/LC_MESSAGES/git.mo
 share/locale/vi/LC_MESSAGES/git.mo
 share/locale/zh_CN/LC_MESSAGES/git.mo
+share/locale/zh_TW/LC_MESSAGES/git.mo
 share/perl5/
 share/perl5/FromCPAN/
 share/perl5/FromCPAN/Error.pm
