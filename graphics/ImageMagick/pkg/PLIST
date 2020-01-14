@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2019/12/19 15:39:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.60 2020/01/14 11:41:11 sthen Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 @sample ${SYSCONFDIR}/ImageMagick/
@@ -131,6 +131,7 @@ include/ImageMagick/magick/type.h
 include/ImageMagick/magick/utility.h
 include/ImageMagick/magick/version.h
 include/ImageMagick/magick/vision.h
+include/ImageMagick/magick/visual-effects.h
 include/ImageMagick/magick/widget.h
 include/ImageMagick/magick/xml-tree.h
 include/ImageMagick/magick/xwindow.h
