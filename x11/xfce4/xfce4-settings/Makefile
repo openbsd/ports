@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2019/11/11 20:49:28 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2020/01/14 06:50:42 landry Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
-XFCE_VERSION=	4.14.1
-REVISION=	0
+XFCE_VERSION=	4.14.2
 
 PORTROACH=	limitw:1,even
 
