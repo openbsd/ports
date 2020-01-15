@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2020/01/14 14:05:22 landry Exp $
+# $OpenBSD: Makefile,v 1.82 2020/01/15 18:39:05 martin Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -8,6 +8,7 @@ V =		3.0.3
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
+REVISION = 	0
 
 FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
@@ -16,7 +17,7 @@ FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
 
-SHARED_LIBS =	gdal 38.0 #26.3
+SHARED_LIBS =	gdal 38.0 #26.4
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -46,6 +47,8 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			graphics/tiff \
 			net/curl \
 			math/qhull \
+			math/hdf5 \
+			math/netcdf \
 			databases/postgresql \
 			geo/geos \
 			geo/spatialite/libspatialite \
@@ -60,10 +63,11 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			devel/proj>=6.0 \
 			devel/geotiff>=1.5.0
 
-WANTLIB-main =		c charset crypto curl expat freexl geos geos_c geotiff gif \
-			iconv jasper jpeg json-c lzma m nghttp2 openjp2 \
-			pcre png pq proj pthread qhull spatialite sqlite3 \
-			ssl tiff xml2 webp z zstd ${COMPILER_LIBCXX}
+WANTLIB-main =		c charset crypto curl expat freexl geos geos_c geotiff \
+			gif hdf5 hdf5_hl iconv jasper jpeg json-c lzma m \
+			netcdf nghttp2 openjp2 pcre png pq proj pthread qhull \
+			spatialite sqlite3 ssl tiff xml2 webp z zstd \
+			${COMPILER_LIBCXX}
 
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
 			math/py-numpy${MODPY_FLAVOR}
@@ -74,8 +78,8 @@ WANTLIB-python =	${MODPY_WANTLIB} gdal m pthread ${COMPILER_LIBCXX}
 RUN_DEPENDS-perl =
 LIB_DEPENDS-perl =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-perl =		perl gdal # uses perl ABI
-WANTLIB-perl += c crypto curl expat freexl geos_c geotiff gif iconv
-WANTLIB-perl += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png
+WANTLIB-perl += c crypto curl expat freexl geos_c geotiff gif hdf5 iconv
+WANTLIB-perl += jasper jpeg json-c lzma m netcdf nghttp2 openjp2 pcre png
 WANTLIB-perl += pq proj pthread qhull spatialite sqlite3 ssl tiff xml2 webp z zstd
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
@@ -96,10 +100,8 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 INSTALL_TARGET =	install install-man
 
-CONFIGURE_ARGS =--without-hdf5 \
-		--without-cfitsio \
+CONFIGURE_ARGS =--without-cfitsio \
 		--without-cryptopp \
-		--without-netcdf \
 		--without-xerces \
 		--without-mysql \
 		--without-odbc \
@@ -123,7 +125,9 @@ CONFIGURE_ARGS =--without-hdf5 \
 		--with-jpeg=${LOCALBASE} \
 		--with-zstd=${LOCALBASE} \
 		--with-libjson-c=${LOCALBASE} \
-		--with-jasper=${LOCALBASE}
+		--with-jasper=${LOCALBASE} \
+		--with-hdf5=${LOCALBASE} \
+		--with-netcdf=${LOCALBASE}
 
 post-extract:
 	ln -sf ${WRKDIR}/gdalautotest-${V} ${WRKSRC}/autotest
