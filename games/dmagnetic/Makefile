@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/01/15 21:11:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/01/15 21:13:54 sthen Exp $
 
 V =		0.20
 COMMENT =	interpreter for Magnetic Scrolls games
@@ -19,8 +19,6 @@ MASTER_SITES =	https://www.dettus.net/dMagnetic/
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
-NO_TEST =	Yes
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${PREFIX}/bin/dMagnetic
 	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${PREFIX}/man/man1
@@ -29,5 +27,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${PREFIX}/share/dMagnetic
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${PREFIX}/share/dMagnetic
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/dMagnetic
+
+do-test:
+	cd ${WRKSRC}/testcode; echo | \
+	    ../dMagnetic -mag minitest.mag -gfx minitest.gfx || true
 
 .include <bsd.port.mk>
