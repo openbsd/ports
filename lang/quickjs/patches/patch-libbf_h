@@ -1,0 +1,16 @@
+$OpenBSD: patch-libbf_h,v 1.1 2020/01/15 14:30:50 jca Exp $
+
+Use more generic test for 64 bits platform.
+
+Index: libbf.h
+--- libbf.h.orig
++++ libbf.h
+@@ -27,7 +27,7 @@
+ #include <stddef.h>
+ #include <stdint.h>
+ 
+-#if defined(__x86_64__)
++#if defined(__LP64__)
+ #define LIMB_LOG2_BITS 6
+ #else
+ #define LIMB_LOG2_BITS 5

@@ -1,0 +1,16 @@
+$OpenBSD: patch-quickjs_h,v 1.1 2020/01/15 14:30:50 jca Exp $
+
+Use more generic test for 64 bits platform.
+
+Index: quickjs.h
+--- quickjs.h.orig
++++ quickjs.h
+@@ -53,7 +53,7 @@ typedef struct JSClass JSClass;
+ typedef uint32_t JSClassID;
+ typedef uint32_t JSAtom;
+ 
+-#if defined(__x86_64__) || defined(__aarch64__)
++#if defined(__LP64__)
+ #define JS_PTR64
+ #define JS_PTR64_DEF(a) a
+ #else

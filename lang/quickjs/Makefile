@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/01/15 14:24:23 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/15 14:30:50 jca Exp $
 
 COMMENT =	small, embeddable JavaScript engine in C
 
 V =		2019.10.27
+REVISION =	0
 DISTNAME =	quickjs-${V:S/./-/g}
 PKGNAME =	quickjs-${V}
 
