@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/20 16:15:01 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/15 14:22:28 sthen Exp $
 
 # using bundled c-ares which is patched for TTL support
 COMMENT =		python interface for c-ares
@@ -26,6 +26,7 @@ FLAVOR ?=
 
 RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} tests/tests.py
