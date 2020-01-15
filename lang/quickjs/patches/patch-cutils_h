@@ -1,0 +1,21 @@
+$OpenBSD: patch-cutils_h,v 1.1 2020/01/15 14:25:46 jca Exp $
+
+Properly detect endianness.
+
+Index: cutils.h
+--- cutils.h.orig
++++ cutils.h
+@@ -28,8 +28,11 @@
+ #include <stdlib.h>
+ #include <inttypes.h>
+ 
+-/* set if CPU is big endian */
+-#undef WORDS_BIGENDIAN
++#include <endian.h>
++
++#if BYTE_ORDER == BIG_ENDIAN
++#define WORDS_BIGENDIAN
++#endif
+ 
+ #define likely(x)       __builtin_expect(!!(x), 1)
+ #define unlikely(x)     __builtin_expect(!!(x), 0)
