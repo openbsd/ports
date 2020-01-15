@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/05/04 10:49:11 jasper Exp $
-lib/python${MODPY_VERSION}/site-packages/_cffi_backend.so
+@comment $OpenBSD: PLIST,v 1.8 2020/01/15 18:42:01 martin Exp $
+@so lib/python${MODPY_VERSION}/site-packages/_cffi_backend.so
 lib/python${MODPY_VERSION}/site-packages/cffi/
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
