@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/26 12:17:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/15 20:35:02 sthen Exp $
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -7,7 +7,7 @@ COMMENT =		ncurses Spotify client
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
 GH_TAGNAME =		v0.1.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 
