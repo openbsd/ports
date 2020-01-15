@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/01/15 14:23:28 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/15 14:24:23 jca Exp $
 
 COMMENT =	small, embeddable JavaScript engine in C
 
@@ -24,5 +24,11 @@ COMPILER =	base-clang ports-gcc
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}"
+
+# Fix "undefined reference to `__atomic_store_8'"
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB +=	atomic
+MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
+.endif
 
 .include <bsd.port.mk>
