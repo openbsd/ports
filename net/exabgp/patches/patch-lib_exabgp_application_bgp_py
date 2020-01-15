@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_exabgp_application_bgp_py,v 1.1 2019/07/11 14:14:52 sthen Exp $
+$OpenBSD: patch-lib_exabgp_application_bgp_py,v 1.2 2020/01/15 22:32:39 sthen Exp $
 
 Index: lib/exabgp/application/bgp.py
 --- lib/exabgp/application/bgp.py.orig
 +++ lib/exabgp/application/bgp.py
-@@ -144,7 +144,7 @@ def main ():
+@@ -143,7 +143,7 @@ def main ():
  
  	root = root_folder(options,['/bin/exabgp','/sbin/exabgp','/lib/exabgp/application/bgp.py','/lib/exabgp/application/control.py'])
  	prefix = '' if root == '/usr' else root

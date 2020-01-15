@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/23 15:07:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/01/15 22:32:39 sthen Exp $
 
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
-MODPY_EGG_VERSION=	4.1.2
+MODPY_EGG_VERSION=	4.2.2
 GH_ACCOUNT=		exa-networks
 GH_PROJECT=		exabgp
 GH_TAGNAME=		${MODPY_EGG_VERSION}
@@ -45,6 +45,7 @@ pre-configure:
 		find ${WRKSRC} -type f -perm -111 -exec ${MODPY_BIN_ADJ} {} +
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/exabgp/etc/
 	${INSTALL_DATA} ${FILESDIR}/exabgp.conf ${PREFIX}/share/examples/exabgp/
 	${INSTALL_DATA} ${WRKSRC}/exabgp*env ${PREFIX}/share/examples/exabgp/
 	${INSTALL_DATA} ${WRKSRC}/etc/exabgp/*.conf ${PREFIX}/share/examples/exabgp/etc/

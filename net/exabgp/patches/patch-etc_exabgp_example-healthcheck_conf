@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_exabgp_example-healthcheck_conf,v 1.1 2019/07/11 14:14:52 sthen Exp $
+$OpenBSD: patch-etc_exabgp_example-healthcheck_conf,v 1.2 2020/01/15 22:32:39 sthen Exp $
 
 Index: etc/exabgp/example-healthcheck.conf
 --- etc/exabgp/example-healthcheck.conf.orig
@@ -7,7 +7,7 @@ Index: etc/exabgp/example-healthcheck.conf
  # expected (-h flag will give you available options)
  
  process service-nginx {
--	run python -m exabgp healthcheck -s --name nginx --cmd "curl --fail --verbose --max-time 2 http://localhost" --start-ip 0;
+-	run python3 -m exabgp healthcheck -s --name nginx --cmd "curl --fail --verbose --max-time 2 http://localhost" --start-ip 0;
 +	run exabgp-healthcheck -s --name nginx --cmd "curl --fail --verbose --max-time 2 http://localhost" --start-ip 0;
  	encoder text;
  }
