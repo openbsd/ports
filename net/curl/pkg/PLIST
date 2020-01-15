@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2019/11/06 13:51:47 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.58 2020/01/15 20:12:35 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -11,7 +11,7 @@ include/curl/stdcheaders.h
 include/curl/system.h
 include/curl/typecheck-gcc.h
 include/curl/urlapi.h
-lib/libcurl.a
+@static-lib lib/libcurl.a
 lib/libcurl.la
 @lib lib/libcurl.so.${LIBcurl_VERSION}
 lib/pkgconfig/libcurl.pc
@@ -421,6 +421,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_multi_strerror.3
 @man man/man3/curl_multi_timeout.3
 @man man/man3/curl_multi_wait.3
+@man man/man3/curl_multi_wakeup.3
 @man man/man3/curl_share_cleanup.3
 @man man/man3/curl_share_init.3
 @man man/man3/curl_share_setopt.3
