@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/25 22:25:01 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/01/15 20:15:02 bcallah Exp $
 @bin bin/ebc
 bin/edc
 @man man/man1/ebc.1
@@ -32,3 +32,7 @@ share/locale/fr_CH.UTF-8/
 share/locale/fr_CH.UTF-8/ebc
 share/locale/fr_FR.UTF-8/
 share/locale/fr_FR.UTF-8/ebc
+share/locale/pt_BR.UTF-8/
+share/locale/pt_BR.UTF-8/ebc
+share/locale/pt_PT.UTF-8/
+share/locale/pt_PT.UTF-8/ebc
