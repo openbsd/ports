@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1927 2020/01/12 18:11:43 mglocker Exp $
+# $OpenBSD: Makefile,v 1.1928 2020/01/16 13:57:29 pamela Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1439,6 +1439,8 @@
      SUBDIR += py-fields,python3
      SUBDIR += py-filebytes
      SUBDIR += py-filebytes,python3
+     SUBDIR += py-fixtures
+     SUBDIR += py-fixtures,python3
      SUBDIR += py-flaky
      SUBDIR += py-flaky,python3
      SUBDIR += py-flexmock
@@ -1511,6 +1513,7 @@
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch
+     SUBDIR += py-linecache2
      SUBDIR += py-llvmlite
      SUBDIR += py-llvmlite,python3
      SUBDIR += py-logilab-common
@@ -1694,6 +1697,7 @@
      SUBDIR += py-texscythe
      SUBDIR += py-tox
      SUBDIR += py-tox,python3
+     SUBDIR += py-traceback2
      SUBDIR += py-traitlets
      SUBDIR += py-traitlets,python3
      SUBDIR += py-trollius
