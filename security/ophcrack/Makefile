@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/01/16 07:40:29 benoit Exp $
 
 COMMENT =		password cracker based on rainbow tables
 
-DISTNAME =		ophcrack-3.6.1
+DISTNAME =		ophcrack-3.8.0
 CATEGORIES =		security
 
 HOMEPAGE =		http://ophcrack.sourceforge.net/
@@ -30,21 +30,18 @@ FLAVORS =		gui
 FLAVOR ?=
 
 .if ${FLAVOR:Mgui}
-WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender fontconfig
-WANTLIB +=		freetype ${COMPILER_LIBCXX} QtGui>=8 QtCore>=7 qwt
+WANTLIB +=		${COMPILER_LIBCXX} GL Qt5Charts Qt5Core Qt5Gui Qt5Widgets
 
-MODULES +=		x11/qt4
+MODULES +=		x11/qt5
 
-LIB_DEPENDS +=		x11/qt4 \
-			x11/qwt
-CONFIGURE_ARGS +=	--enable-gui \
-			--with-libqt4=${MODQT_LIBDIR} \
-			--with-libqwt=${LOCALBASE} \
-			--enable-graph
-CONFIGURE_ENV +=	QTDIR="${MODQT4_QTDIR}" \
+LIB_DEPENDS +=		x11/qt5/qtcharts
+
+CONFIGURE_ARGS +=	--enable-gui
+
+CONFIGURE_ENV +=	QTDIR="${MODQT5_QTDIR}" \
 			CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include"
 .else
-CONFIGURE_ARGS =	--disable-gui --disable-graph
+CONFIGURE_ARGS =	--disable-gui
 .endif
 
 NO_TEST =		Yes

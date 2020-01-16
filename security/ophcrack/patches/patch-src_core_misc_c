@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_misc_c,v 1.2 2013/06/07 10:03:27 benoit Exp $
---- src/misc.c.orig	Tue Jun  4 09:42:47 2013
-+++ src/misc.c	Fri Jun  7 11:01:28 2013
+$OpenBSD: patch-src_core_misc_c,v 1.1 2020/01/16 07:40:29 benoit Exp $
+--- src/core/misc.c.orig	Thu Mar 30 12:32:00 2017
++++ src/core/misc.c	Fri Apr 28 12:51:21 2017
 @@ -33,7 +33,7 @@
  #include <string.h>
  #include <stdio.h>
