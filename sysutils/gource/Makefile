@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/01/16 09:46:58 gonzalo Exp $
 
 COMMENT =	software version control visualization tool
 
-DISTNAME =	gource-0.49
+DISTNAME =	gource-0.51
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://gource.io/
-REVISION =	1
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
