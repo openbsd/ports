@@ -1,0 +1,61 @@
+$OpenBSD: patch-fileformats_c,v 1.1 2020/01/16 14:09:20 solene Exp $
+
+Fix PNG saving. Taken from
+https://gitlab.com/GrafX2/grafX2/commit/119618ae14f28c28ed679905b8e1a90835fb1926
+
+Index: fileformats.c
+--- fileformats.c.orig
++++ fileformats.c
+@@ -6798,6 +6798,7 @@ void Save_PNG_Sub(T_IO_Context * context, FILE * file,
+   byte cycle_data[16*6]; // Storage for color-cycling data, referenced by crng_chunk
+   struct PNG_memory_buffer memory_buffer;
+ 
++  memset(&memory_buffer, 0, sizeof(memory_buffer));
+   /* initialisation */
+   if ((png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL))
+       && (info_ptr = png_create_info_struct(png_ptr)))
+@@ -6806,14 +6807,10 @@ void Save_PNG_Sub(T_IO_Context * context, FILE * file,
+     {
+       if (file != NULL)
+         png_init_io(png_ptr, file);
+-      else
+-      {
+-        // to write to memory, use png_set_write_fn() instead of calling png_init_io()
+-        memset(&memory_buffer, 0, sizeof(memory_buffer));
++      else // to write to memory, use png_set_write_fn() instead of calling png_init_io()
+         png_set_write_fn(png_ptr, &memory_buffer, PNG_memory_write, PNG_memory_flush);
+-      }
+-      
+-      /* en-tete */
++
++      /* read PNG header */
+       if (!setjmp(png_jmpbuf(png_ptr)))
+       {
+         png_set_IHDR(png_ptr, info_ptr, context->Width, context->Height,
+@@ -6822,8 +6819,7 @@ void Save_PNG_Sub(T_IO_Context * context, FILE * file,
+ 
+         png_set_PLTE(png_ptr, info_ptr, (png_colorp)context->Palette, 256);
+         {
+-          // Commentaires texte PNG
+-          // Cette partie est optionnelle
++          // text chunks in PNG (optional)
+           png_text text_ptr[2] = {
+ #ifdef PNG_iTXt_SUPPORTED
+             {-1, "Software", "Grafx2", 6, 0, NULL, NULL},
+@@ -6960,11 +6956,14 @@ void Save_PNG_Sub(T_IO_Context * context, FILE * file,
+ 
+   if (Row_pointers)
+     free(Row_pointers);
+-  if (memory_buffer.buffer)
++  if (File_error == 0 && buffer != NULL)
+   {
+     *buffer = memory_buffer.buffer;
+-    *buffer_size = memory_buffer.offset;
++    if (buffer_size != NULL)
++      *buffer_size = memory_buffer.offset;
+   }
++  else
++    free(memory_buffer.buffer);
+ }
+ 
+ 

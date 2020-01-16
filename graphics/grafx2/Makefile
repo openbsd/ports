@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/16 14:09:20 solene Exp $
 
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
 V =		2.6
+REVISION =	0
 DISTNAME =	grafX2-v${V}
 PKGNAME =	grafx2-${V}
 EXTRACT_SUFX =	.tar.bz2
