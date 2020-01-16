@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2020/01/16 20:25:43 jasper Exp $
 
 PORTROACH=		limit:^2
 
@@ -6,7 +6,7 @@ COMMENT=		C++ wrapper for the libxml XML parser library
 
 GNOME_VERSION=		2.40.1
 GNOME_PROJECT=		libxml++
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  xml++-2.6            2.0      # 2.7
 
@@ -25,6 +25,8 @@ WANTLIB += lzma m pcre pthread sigc-2.0 xml2 z
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=		x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # c++11
 COMPILER =		base-clang ports-gcc

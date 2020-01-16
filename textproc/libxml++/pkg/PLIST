@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/09/21 16:53:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/01/16 20:25:43 jasper Exp $
 include/libxml++-2.6/
 include/libxml++-2.6/libxml++/
 include/libxml++-2.6/libxml++/attribute.h
@@ -49,14 +49,12 @@ include/libxml++-2.6/libxml++/validators/validator.h
 include/libxml++-2.6/libxml++/validators/xsdvalidator.h
 include/libxml++-2.6/libxml++/xsdschema.h
 lib/libxml++-2.6/
-lib/libxml++-2.6.a
+@static-lib lib/libxml++-2.6.a
 lib/libxml++-2.6.la
 @lib lib/libxml++-2.6.so.${LIBxml++-2.6_VERSION}
 lib/libxml++-2.6/include/
 lib/libxml++-2.6/include/libxml++config.h
 lib/pkgconfig/libxml++-2.6.pc
-share/devhelp/
-share/devhelp/books/
 share/devhelp/books/libxml++-2.6/
 share/devhelp/books/libxml++-2.6/libxml++-2.6.devhelp2
 share/doc/libxml++-2.6/
