@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/16 08:03:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/01/16 09:49:32 gonzalo Exp $
 @pkgpath net/py-zeroconf
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}zeroconf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zeroconf/
 lib/python${MODPY_VERSION}/site-packages/zeroconf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/zeroconf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/zeroconf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,4 +8,9 @@ lib/python${MODPY_VERSION}/site-packages/zeroconf-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/zeroconf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/zeroconf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/zeroconf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/zeroconf.py
+lib/python${MODPY_VERSION}/site-packages/zeroconf/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zeroconf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zeroconf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zeroconf/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zeroconf/py.typed
+lib/python${MODPY_VERSION}/site-packages/zeroconf/test.py
