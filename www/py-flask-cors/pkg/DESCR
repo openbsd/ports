@@ -1,0 +1,9 @@
+A Flask extension for handling Cross Origin Resource Sharing (CORS), making
+cross-origin AJAX possible.
+
+This package has a simple philosophy, when you want to enable CORS, you wish to
+enable it for all use cases on a domain. This means no mucking around with
+different allowed headers, methods, etc. By default, submission of cookies
+across domains is disabled due to the security implications, please see the
+documentation for how to enable credential'ed requests, and please make sure
+you add some sort of CSRF protection before doing so!
