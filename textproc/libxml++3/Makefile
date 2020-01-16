@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/01/16 20:21:15 jasper Exp $
 
 COMMENT=		C++ wrapper for the libxml XML parser library
 
-GNOME_VERSION=		3.0.1
+GNOME_VERSION=		3.2.0
 GNOME_PROJECT=		libxml++
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
-REVISION=		0
 
-SHARED_LIBS +=  xml++-3.0            0.0      # 1.0
+SHARED_LIBS +=  xml++-3.0            0.1      # 1.0
 
 CATEGORIES=		textproc
 
@@ -24,6 +23,8 @@ WANTLIB += intl lzma m pcre pthread sigc-2.0 xml2 z
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=		x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # c++11
 COMPILER =		base-clang ports-gcc
