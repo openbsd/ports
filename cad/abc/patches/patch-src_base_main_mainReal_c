@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_base_main_mainReal_c,v 1.1 2020/01/16 22:32:48 sthen Exp $
+
+Index: src/base/main/mainReal.c
+--- src/base/main/mainReal.c.orig
++++ src/base/main/mainReal.c
+@@ -139,7 +139,16 @@ int Abc_RealMain( int argc, char * argv[] )
+                     maxMb * (1llu << 20), /* soft limit */      
+                     maxMb * (1llu << 20)  /* hard limit */      
+                 };                                              
++#ifndef __OpenBSD__
+                 setrlimit(RLIMIT_AS, &limit);                   
++#else
++                /*
++                 * OpenBSD doesn't support RLIMIT_AS:
++                 * choosing RLIMIT_DATA as the closest match
++                 * (see e.g.: https://github.com/OSGeo/gdal/issues/1163)
++                 */
++                setrlimit(RLIMIT_DATA, &limit);
++#endif
+ #endif
+                 break; 
+             }                                         

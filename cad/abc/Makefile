@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/16 22:32:48 sthen Exp $
 
 COMMENT =	system for sequential logic synthesis and verification
-DISTNAME =	abc-1.01.20180722
+DISTNAME =	abc-1.01.20200108
 CATEGORIES =	cad
-REVISION =	0
 
 GH_ACCOUNT =	berkeley-abc
 GH_PROJECT =	abc
-GH_COMMIT =	ae6716b064c842f45109a88e84dca71fe4cc311f
+GH_COMMIT =	144c5be8246800d5bd36dc3e177364063e8d2e40
 
 HOMEPAGE =	https://people.eecs.berkeley.edu/~alanmi/abc
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
-# MIT (abc, MiniSat, xSAT), BSD (bzlib, CUDD, satoko), zlib
+# MIT (abc, MiniSat, xSAT, glucose), BSD (bzlib, CUDD, satoko), zlib
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m readline
