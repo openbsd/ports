@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.311 2019/12/27 13:27:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.312 2020/01/16 21:24:19 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -147,9 +147,8 @@ CONFIGURE_ARGS+=	--with-jack=no \
 			--with-resample=no
 
 # Some build options (including a useful malloc debug) are available
-# via menuselect. They may be enabled by running 'make configure', cd
-# to WRKSRC, 'gmake menuselect', then 'cd -' back to the port directory
-# and 'make'.
+# via menuselect. They may be enabled by running 'make menuselect'
+# before building.
 
 FLAVOR?=
 FLAVORS=		imap
@@ -284,6 +283,9 @@ do-gen:
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    ./bootstrap.sh
+
+menuselect: configure
+	@cd ${WRKSRC}; ${_PBUILD} ${MAKE_PROGRAM} menuselect
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asterisk
