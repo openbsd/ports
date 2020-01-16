@@ -1,8 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.9 2019/12/05 18:08:21 sthen Exp $
+$OpenBSD: patch-setup_py,v 1.10 2020/01/16 18:08:47 sthen Exp $
+
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -10,12 +10,7 @@ VERSION = "7.43.0.2"
+@@ -10,12 +10,7 @@ VERSION = "7.43.0.4"
  
  import glob, os, re, sys, subprocess
  import distutils
