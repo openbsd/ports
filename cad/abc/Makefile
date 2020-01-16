@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/01/16 22:32:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/16 22:33:54 sthen Exp $
 
 COMMENT =	system for sequential logic synthesis and verification
 DISTNAME =	abc-1.01.20200108
@@ -24,6 +24,7 @@ USE_GMAKE =	Yes
 
 NO_TEST =	Yes
 
+# make is called from cmakefile, and needs to be gmake:
 pre-configure:
 	@ln -s `which ${MAKE_PROGRAM}` ${WRKDIR}/bin/make
 
