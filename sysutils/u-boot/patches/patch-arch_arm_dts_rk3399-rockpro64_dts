@@ -1,4 +1,4 @@
-$OpenBSD: patch-arch_arm_dts_rk3399-rockpro64_dts,v 1.3 2020/01/07 07:07:08 jsg Exp $
+$OpenBSD: patch-arch_arm_dts_rk3399-rockpro64_dts,v 1.4 2020/01/17 14:24:42 kurt Exp $
 
 Index: arch/arm/dts/rk3399-rockpro64.dts
 --- arch/arm/dts/rk3399-rockpro64.dts.orig
@@ -12,3 +12,55 @@ Index: arch/arm/dts/rk3399-rockpro64.dts
  	};
  
  	clkin_gmac: external-gmac-clock {
+@@ -60,6 +60,7 @@
+ 
+ 	fan: pwm-fan {
+ 		compatible = "pwm-fan";
++		cooling-levels = <0 40 80 255>;
+ 		#cooling-cells = <2>;
+ 		fan-supply = <&vcc12v_dcin>;
+ 		pwms = <&pwm1 0 50000 0>;
+@@ -750,4 +751,43 @@
+ 
+ &vopl_mmu {
+ 	status = "okay";
++};
++
++&cpu_thermal {
++	trips {
++		cpu_warm: cpu_warm {
++			temperature = <55000>;
++			hysteresis = <2000>;
++			type = "active";
++		};
++
++		cpu_med: cpu_med {
++			temperature = <60000>;
++			hysteresis = <2000>;
++			type = "active";
++		};
++
++		cpu_hot: cpu_hot {
++			temperature = <65000>;
++			hysteresis = <2000>;
++			type = "active";
++		};
++	};
++
++	cooling-maps {
++		map2 {
++			trip = <&cpu_warm>;
++			cooling-device = <&fan THERMAL_NO_LIMIT 1>;
++		};
++
++		map3 {
++			trip = <&cpu_med>;
++			cooling-device = <&fan THERMAL_NO_LIMIT 2>;
++		};
++
++		map4 {
++			trip = <&cpu_hot>;
++			cooling-device = <&fan 2 THERMAL_NO_LIMIT>;
++		};
++	};
+ };
