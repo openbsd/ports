@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/08 10:15:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/17 13:52:41 sthen Exp $
 
 COMMENT =		console CardDAV client
 
 MODPY_EGG_VERSION =	0.15.1
 DISTNAME =		khard-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity
 
@@ -42,9 +43,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/khard
 	${INSTALL_DATA} ${WRKSRC}/misc/khard/khard.conf.example \
 		${PREFIX}/share/examples/khard
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/vendor-completions
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh/{_khard,_email-khard} \
-		${PREFIX}/share/zsh/vendor-completions
+		${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc/build/man/khard.1 \
 		${PREFIX}/man/man1
