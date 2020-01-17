@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/17 14:13:51 sthen Exp $
 
 COMMENT=	privilege-separated letsencrypt client
 
 DISTNAME=	acme-client-0.1.16
+REVISION=	0
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	security security/letsencrypt

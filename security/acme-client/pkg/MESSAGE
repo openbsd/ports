@@ -1,0 +1,3 @@
+WARNING: This package only supports ACMEv1 and is not recommended
+for new installations. Use acme-client in base if you do not require
+DNS-01 challenges, or an alternative client if you do require them.
