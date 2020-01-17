@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/12/11 10:46:37 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/01/17 20:28:31 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -61,8 +61,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/erlang
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/escape
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/factor
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/fortran
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/freefem
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/fsharp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gdscript
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ghc-core
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gherkin
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/glsl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/go
@@ -123,6 +125,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nginx
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nim
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nix
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/objective_c
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/objective_cpp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ocaml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/openedge
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/opentype_feature_file
@@ -264,8 +267,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/erlang.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/escape.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/factor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/fortran.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/freefem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/fsharp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gdscript.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ghc_core.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin/keywords.rb
@@ -334,7 +339,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nesasm.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nginx.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nim.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nix.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/objective_c/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/objective_c.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/objective_c/common.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/objective_cpp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml/common.rb
