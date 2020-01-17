@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/16 17:57:04 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/01/17 13:56:37 naddy Exp $
 
 COMMENT =		OGC API server implementation
 
@@ -19,7 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 # PyPi tarball doesnt ship tests subdir.. and there's no run_tests.py on github either
 # https://github.com/geopython/pygeoapi/issues/339
 MODPY_PI =		Yes
-NO_TESTS =	Yes
+NO_TEST =	Yes
 RUN_DEPENDS =	devel/py-click${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		textproc/py-unicodecsv${MODPY_FLAVOR} \
