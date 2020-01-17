@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 09:43:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/17 13:53:54 sthen Exp $
 @bin bin/exa
 @man man/man1/exa.1
 share/bash-completion/
@@ -8,5 +8,5 @@ share/fish/
 share/fish/completions/
 share/fish/completions/exa.fish
 share/zsh/
-share/zsh/vendor-completions/
-share/zsh/vendor-completions/_exa
+share/zsh/site-functions/
+share/zsh/site-functions/_exa

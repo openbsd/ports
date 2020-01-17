@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/08/30 12:24:00 semarie Exp $
+# $OpenBSD: Makefile,v 1.8 2020/01/17 13:53:54 sthen Exp $
 
 COMMENT =		ls alternative written in Rust
 
 GH_ACCOUNT =		ogham
 GH_PROJECT =		exa
 GH_TAGNAME =		v0.9.0
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -101,8 +102,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/contrib/man/exa.1 ${PREFIX}/man/man1/exa.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
 	${INSTALL_DATA} ${WRKSRC}/contrib/completions.fish ${PREFIX}/share/fish/completions/exa.fish
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/vendor-completions/
-	${INSTALL_DATA} ${WRKSRC}/contrib/completions.zsh ${PREFIX}/share/zsh/vendor-completions/_exa
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/contrib/completions.zsh ${PREFIX}/share/zsh/site-functions/_exa
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKSRC}/contrib/completions.bash ${PREFIX}/share/bash-completion/completions/exa
 
