@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2019/12/28 18:37:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2020/01/17 13:53:22 sthen Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.31.0
+REVISION =		0
 
 SHARED_LIBS +=		mpv		0.1 # 1.106
 
@@ -60,7 +61,6 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--confdir=${LOCALBASE}/share/examples/mpv \
 			--mandir=${LOCALBASE}/man \
 			--docdir=${LOCALBASE}/share/examples/mpv \
-			--zshdir=${LOCALBASE}/share/zsh/vendor-completions \
 			--enable-cdda \
 			--enable-dvdnav \
 			--enable-libmpv-shared \
