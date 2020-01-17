@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2020/01/11 05:45:09 semarie Exp $
+# $OpenBSD: Makefile,v 1.106 2020/01/17 19:13:19 jasper Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -31,6 +31,8 @@ PKGNAME-main =		rust-${V}
 PKGNAME-gdb =		rust-gdb-${V}
 PKGNAME-clippy =	rust-clippy-${V}
 PKGNAME-rustfmt =	rust-rustfmt-${V}
+
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -gdb -clippy -rustfmt
 
