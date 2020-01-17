@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/01/15 21:13:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/17 22:19:46 sthen Exp $
 
 V =		0.20
 COMMENT =	interpreter for Magnetic Scrolls games
@@ -29,7 +29,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/dMagnetic
 
 do-test:
-	cd ${WRKSRC}/testcode; echo | \
-	    ../dMagnetic -mag minitest.mag -gfx minitest.gfx || true
+	cd ${WRKSRC}/testcode; if [ `echo Hello | ../dMagnetic \
+	    -mag minitest.mag -gfx minitest.gfx \
+	    -vmode low_ansi -vecho -vcols 300 -vrows 300 | \
+	    sha256 -b` == 6DhbUg1shZBuSXIm3PNK1/fMfRQ5RIHCuLPik+IkeQM= ]; \
+	    then echo ok; else echo expected output not seen; exit 1; fi
 
 .include <bsd.port.mk>
