@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/07 15:01:52 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/18 16:22:27 edd Exp $
 @rcscript ${RCDIR}/dinit
 @man man/man5/dinit-service.5
 @man man/man8/dinit.8
+@man man/man8/dinitcheck.8
 @man man/man8/dinitctl.8
 @bin sbin/dinit
+@bin sbin/dinitcheck
 @bin sbin/dinitctl
 share/doc/dinit/
 share/doc/dinit/COMPARISON
