@@ -1,0 +1,10 @@
+coreboot is an extended firmware platform that delivers a lightning fast and
+secure boot experience on modern computers and embedded systems. As an Open
+Source project it provides auditability and maximum control over technology.
+
+While it is not (yet) possible to build coreboot firmware on OpenBSD, this
+package contains the following utilities to work with existing images:
+
+* cbmem      CBMEM parser to read e.g. timestamps and console log
+* ectool     Dumps the RAM of a laptop's Embedded/Environmental Controller (EC)
+* ifdtool    Extract and dump Intel Firmware Descriptor information
