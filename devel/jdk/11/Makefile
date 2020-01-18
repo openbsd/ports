@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2019/12/17 14:22:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.14 2020/01/18 00:18:36 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	11.0.5
+BASE_VER=	11.0.6
 PATCH_VER=	10
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
-REVISION=	0
 EPOCH=		0
 
 DIST_SUBDIR=	jdk
@@ -120,9 +119,13 @@ CONFIGURE_ARGS+=--with-toolchain-type=clang
 CONFIGURE_ARGS+=--with-toolchain-type=gcc
 .endif
 
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/make/autoconf/build-aux
+.if ${PROPERTIES:Mdebuginfo}
+CONFIGURE_ARGS+=--with-native-debug-symbols=external
+.else
+CONFIGURE_ARGS+=--with-native-debug-symbols=none
+.endif
 
-DEBUG_CONFIGURE_ARGS=	--with-native-debug-symbols=external
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/make/autoconf/build-aux
 
 MAKE_FLAGS+=	LOG=debug
 ALL_TARGET=	images

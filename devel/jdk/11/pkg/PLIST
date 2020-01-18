@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/12/17 14:22:30 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/01/18 00:18:36 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=11v0,<12v0
@@ -16,6 +16,7 @@ jdk-11/bin/
 @bin jdk-11/bin/jdb
 @bin jdk-11/bin/jdeprscan
 @bin jdk-11/bin/jdeps
+@bin jdk-11/bin/jfr
 @bin jdk-11/bin/jimage
 @bin jdk-11/bin/jinfo
 @bin jdk-11/bin/jjs
@@ -320,7 +321,7 @@ jdk-11/legal/java.desktop/colorimaging.md
 jdk-11/legal/java.desktop/harfbuzz.md
 jdk-11/legal/java.desktop/mesa3d.md
 jdk-11/legal/java.desktop/opengl.md
-jdk-11/legal/java.desktop/xwindows.md
+jdk-11/legal/java.desktop/xwd.md
 jdk-11/legal/java.instrument/
 jdk-11/legal/java.instrument/ADDITIONAL_LICENSE_INFO
 jdk-11/legal/java.instrument/ASSEMBLY_EXCEPTION
