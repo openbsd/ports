@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/10/26 17:03:12 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/01/18 17:42:58 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=1.8v0,<1.9v0
@@ -224,51 +224,51 @@ ${JDKHOME}/demo/jvmti/
 ${JDKHOME}/demo/jvmti/compiledMethodLoad/
 ${JDKHOME}/demo/jvmti/compiledMethodLoad/README.txt
 ${JDKHOME}/demo/jvmti/compiledMethodLoad/lib/
-${JDKHOME}/demo/jvmti/compiledMethodLoad/lib/libcompiledMethodLoad.so
+@so ${JDKHOME}/demo/jvmti/compiledMethodLoad/lib/libcompiledMethodLoad.so
 ${JDKHOME}/demo/jvmti/compiledMethodLoad/src.zip
 ${JDKHOME}/demo/jvmti/gctest/
 ${JDKHOME}/demo/jvmti/gctest/README.txt
 ${JDKHOME}/demo/jvmti/gctest/lib/
-${JDKHOME}/demo/jvmti/gctest/lib/libgctest.so
+@so ${JDKHOME}/demo/jvmti/gctest/lib/libgctest.so
 ${JDKHOME}/demo/jvmti/gctest/src.zip
 ${JDKHOME}/demo/jvmti/heapTracker/
 ${JDKHOME}/demo/jvmti/heapTracker/README.txt
 ${JDKHOME}/demo/jvmti/heapTracker/heapTracker.jar
 ${JDKHOME}/demo/jvmti/heapTracker/lib/
-${JDKHOME}/demo/jvmti/heapTracker/lib/libheapTracker.so
+@so ${JDKHOME}/demo/jvmti/heapTracker/lib/libheapTracker.so
 ${JDKHOME}/demo/jvmti/heapTracker/src.zip
 ${JDKHOME}/demo/jvmti/heapViewer/
 ${JDKHOME}/demo/jvmti/heapViewer/README.txt
 ${JDKHOME}/demo/jvmti/heapViewer/lib/
-${JDKHOME}/demo/jvmti/heapViewer/lib/libheapViewer.so
+@so ${JDKHOME}/demo/jvmti/heapViewer/lib/libheapViewer.so
 ${JDKHOME}/demo/jvmti/heapViewer/src.zip
 ${JDKHOME}/demo/jvmti/hprof/
 ${JDKHOME}/demo/jvmti/hprof/README.txt
 ${JDKHOME}/demo/jvmti/hprof/lib/
-${JDKHOME}/demo/jvmti/hprof/lib/libhprof.so
+@so ${JDKHOME}/demo/jvmti/hprof/lib/libhprof.so
 ${JDKHOME}/demo/jvmti/hprof/src.zip
 ${JDKHOME}/demo/jvmti/index.html
 ${JDKHOME}/demo/jvmti/minst/
 ${JDKHOME}/demo/jvmti/minst/README.txt
 ${JDKHOME}/demo/jvmti/minst/lib/
-${JDKHOME}/demo/jvmti/minst/lib/libminst.so
+@so ${JDKHOME}/demo/jvmti/minst/lib/libminst.so
 ${JDKHOME}/demo/jvmti/minst/minst.jar
 ${JDKHOME}/demo/jvmti/minst/src.zip
 ${JDKHOME}/demo/jvmti/mtrace/
 ${JDKHOME}/demo/jvmti/mtrace/README.txt
 ${JDKHOME}/demo/jvmti/mtrace/lib/
-${JDKHOME}/demo/jvmti/mtrace/lib/libmtrace.so
+@so ${JDKHOME}/demo/jvmti/mtrace/lib/libmtrace.so
 ${JDKHOME}/demo/jvmti/mtrace/mtrace.jar
 ${JDKHOME}/demo/jvmti/mtrace/src.zip
 ${JDKHOME}/demo/jvmti/versionCheck/
 ${JDKHOME}/demo/jvmti/versionCheck/README.txt
 ${JDKHOME}/demo/jvmti/versionCheck/lib/
-${JDKHOME}/demo/jvmti/versionCheck/lib/libversionCheck.so
+@so ${JDKHOME}/demo/jvmti/versionCheck/lib/libversionCheck.so
 ${JDKHOME}/demo/jvmti/versionCheck/src.zip
 ${JDKHOME}/demo/jvmti/waiters/
 ${JDKHOME}/demo/jvmti/waiters/README.txt
 ${JDKHOME}/demo/jvmti/waiters/lib/
-${JDKHOME}/demo/jvmti/waiters/lib/libwaiters.so
+@so ${JDKHOME}/demo/jvmti/waiters/lib/libwaiters.so
 ${JDKHOME}/demo/jvmti/waiters/src.zip
 ${JDKHOME}/demo/management/
 ${JDKHOME}/demo/management/FullThreadDump/
@@ -440,45 +440,45 @@ ${JDKHOME}/jre/lib/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 @bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jexec
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/libjli.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/libjli.so
 @bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jspawnhelper
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jvm.cfg
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libattach.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt_headless.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt_xawt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdt_socket.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libfontmanager.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libhprof.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libinstrument.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2gss.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2pcsc.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2pkcs11.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjaas_unix.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava_crw_demo.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjawt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjdwp.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjpeg.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsdt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsound.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/liblcms.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmanagement.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmlib_image.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnet.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnio.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunec.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libunpack.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libattach.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt_headless.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt_xawt.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdt_socket.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libfontmanager.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libhprof.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libinstrument.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2gss.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2pcsc.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2pkcs11.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjaas_unix.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava_crw_demo.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjawt.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjdwp.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjpeg.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsdt.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsound.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/liblcms.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmanagement.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmlib_image.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnet.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnio.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunec.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libunpack.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/Xusage.txt
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
+@so ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/applet/
 ${JDKHOME}/jre/lib/calendars.properties
 ${JDKHOME}/jre/lib/charsets.jar
@@ -550,8 +550,8 @@ ${JDKHOME}/lib/
 ${JDKHOME}/lib/${MACHINE_ARCH}/
 @bin ${JDKHOME}/lib/${MACHINE_ARCH}/jexec
 ${JDKHOME}/lib/${MACHINE_ARCH}/jli/
-${JDKHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
-${JDKHOME}/lib/${MACHINE_ARCH}/libjawt.so
+@so ${JDKHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
+@so ${JDKHOME}/lib/${MACHINE_ARCH}/libjawt.so
 ${JDKHOME}/lib/ct.sym
 ${JDKHOME}/lib/dt.jar
 ${JDKHOME}/lib/ir.idl
