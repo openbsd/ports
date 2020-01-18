@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_ipe_lua_prefs_lua,v 1.4 2020/01/16 22:28:53 sthen Exp $
+$OpenBSD: patch-src_ipe_lua_prefs_lua,v 1.5 2020/01/18 21:00:14 sthen Exp $
 
 Swapped out the default on-screen keyboard for something lightweight.
 
 Index: src/ipe/lua/prefs.lua
 --- src/ipe/lua/prefs.lua.orig
 +++ src/ipe/lua/prefs.lua
-@@ -290,7 +290,7 @@ elseif config.platform == "apple" then
+@@ -294,7 +294,7 @@ elseif config.platform == "apple" then
    prefs.keyboard = "open -a KeyboardViewer -n"
  else
    -- On Linux, you could use: prefs.keyboard = "onboard &"

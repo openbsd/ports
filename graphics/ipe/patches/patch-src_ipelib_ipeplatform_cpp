@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ipelib_ipeplatform_cpp,v 1.3 2020/01/16 22:28:53 sthen Exp $
+$OpenBSD: patch-src_ipelib_ipeplatform_cpp,v 1.4 2020/01/18 21:00:14 sthen Exp $
 
 Index: src/ipelib/ipeplatform.cpp
 --- src/ipelib/ipeplatform.cpp.orig
@@ -14,7 +14,7 @@ Index: src/ipelib/ipeplatform.cpp
  #include <cstdlib>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -615,6 +619,8 @@ double Platform::toDouble(String s)
+@@ -657,6 +661,8 @@ double Platform::toDouble(String s)
      return _strtod_l(s.z(), nullptr, ipeLocale);
    else
      return strtod(s.z(), nullptr);
@@ -23,7 +23,7 @@ Index: src/ipelib/ipeplatform.cpp
  #else
    return strtod_l(s.z(), nullptr, ipeLocale);
  #endif
-@@ -633,6 +639,8 @@ int Platform::toNumber(String s, int &iValue, double &
+@@ -675,6 +681,8 @@ int Platform::toNumber(String s, int &iValue, double &
      dValue = _strtod_l(s.z(), &fin, ipeLocale);
    else
      dValue = strtod(s.z(), &fin);

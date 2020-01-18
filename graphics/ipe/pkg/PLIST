@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/04/30 06:44:29 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/01/18 21:00:14 sthen Exp $
 @bin bin/ipe
 @bin bin/ipe6upgrade
 @bin bin/ipeextract
@@ -30,6 +30,7 @@ include/ipepainter.h
 include/ipepath.h
 include/ipepdfparser.h
 include/ipepdfview.h
+include/ipepdfview_cocoa.h
 include/ipepdfview_qt.h
 include/ipepdfview_win.h
 include/ipepdfwriter.h
@@ -74,6 +75,8 @@ share/doc/ipe/bdwn.png
 share/doc/ipe/blank.png
 share/doc/ipe/class_canvas-members.html
 share/doc/ipe/class_canvas.html
+share/doc/ipe/class_pdf_view-members.html
+share/doc/ipe/class_pdf_view.html
 share/doc/ipe/classes.html
 share/doc/ipe/classipe_1_1_a85_source-members.html
 share/doc/ipe/classipe_1_1_a85_source.html
@@ -429,9 +432,10 @@ share/doc/ipe/manual_55.html
 share/doc/ipe/manual_56.html
 share/doc/ipe/manual_57.html
 share/doc/ipe/manual_58.html
+share/doc/ipe/manual_59.html
 share/doc/ipe/manual_6.html
-share/doc/ipe/manual_60.html
 share/doc/ipe/manual_61.html
+share/doc/ipe/manual_62.html
 share/doc/ipe/manual_7.html
 share/doc/ipe/manual_8.html
 share/doc/ipe/manual_9.html
@@ -642,6 +646,7 @@ share/ipe/${V}/styles/basic.isy
 share/ipe/${V}/styles/beamer.isy
 share/ipe/${V}/styles/colors.isy
 share/ipe/${V}/styles/decorations.isy
+share/ipe/${V}/styles/imperial.isy
 share/ipe/${V}/styles/note-paper.isy
 share/ipe/${V}/styles/presentation.isy
 share/ipe/${V}/styles/tikz-shapes.isy
