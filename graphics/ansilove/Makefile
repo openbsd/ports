@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2019/12/10 11:00:08 fcambus Exp $
+# $OpenBSD: Makefile,v 1.20 2020/01/18 23:19:12 fcambus Exp $
 
 COMMENT =	ansi and ascii art to png converter
 
-V =		4.0.6
+V =		4.0.7
 DISTNAME =	ansilove-$V
 
 CATEGORIES =	graphics
@@ -22,6 +22,5 @@ MASTER_SITES =	https://github.com/ansilove/ansilove/releases/download/$V/
 LIB_DEPENDS =	graphics/libansilove
 
 MODULES =	devel/cmake
-NO_TEST =	Yes
 
 .include <bsd.port.mk>
