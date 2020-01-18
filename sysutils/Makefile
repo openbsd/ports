@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.549 2020/01/11 16:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.550 2020/01/18 15:17:35 kn Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -46,6 +46,7 @@
      SUBDIR += consolekit
      SUBDIR += consul
      SUBDIR += consul-template
+     SUBDIR += coreboot-utils
      SUBDIR += coreutils
      SUBDIR += cpdup
      SUBDIR += cpuid
