@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/18 23:53:12 cwen Exp $
+
+# See https://github.com/citra-emu/citra/issues/4571
+NOT_FOR_ARCHS =	${BE_ARCHS}
 
 BROKEN-i386 =	undefined reference to `operator delete(void*, std::align_val_t)', etc.
 
