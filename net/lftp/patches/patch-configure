@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.22 2020/01/08 07:50:30 jasper Exp $
+$OpenBSD: patch-configure,v 1.23 2020/01/18 06:48:03 rsadowski Exp $
 
 Use GNU readline as our base readline lacks add_history_time().
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -54003,7 +54003,7 @@ fi
- 	    readline_include_dir="$readline_include_dir/readline"
+@@ -55194,7 +55194,7 @@ fi
  	fi
          readline_ld_flags="-L$readline_prefix/lib"
--        readline_lib_flags="-lreadline"
-+        readline_lib_flags="-lereadline"
+         if test -z "$readline_lib_flags"; then
+-            readline_lib_flags="-lreadline"
++            readline_lib_flags="-lereadline"
+         fi
          run_readline_test="yes"
      elif test "$readline_requested" = "yes"; then
-         if test -n "$readline_include_dir" -a -n "$readline_lib_flags"; then
