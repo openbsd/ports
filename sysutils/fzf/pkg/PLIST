@@ -1,5 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/12 00:10:00 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/18 11:51:13 edd Exp $
 @bin bin/fzf
 bin/fzf-tmux
 @man man/man1/fzf-tmux.1
 @man man/man1/fzf.1
+share/doc/pkg-readmes/${PKGSTEM}
+share/fish/
+share/fish/functions/
+share/fish/functions/fzf-key-bindings.fish
+share/fzf/
+share/fzf/bash/
+share/fzf/bash/completion.bash
+share/fzf/bash/key-bindings.bash
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_fzf_completion
+share/zsh/site-functions/_fzf_key_bindings

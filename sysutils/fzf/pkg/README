@@ -1,0 +1,46 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Shell Integration
+=================
+
+shells/zsh
+----------
+
+To enable all support, add this to your ~/.zshrc:
+
+```
+autoload _fzf_key_bindings _fzf_completion
+_fzf_key_bindings
+_fzf_completion
+```
+
+_fzf_key_bindings causes zsh to use fzf for things like CTRL+r and CTRL+t,
+whereas _fzf_completion makes zsh use fzf for **<tab> completion.
+
+shells/bash
+-----------
+
+To enable all support, add this to your ~/.bashrc:
+
+```
+source ${BASH_SITE}/key_bindings.bash
+source ${BASH_SITE}/completion.bash
+```
+
+These two files have the same roles as their zsh counterparts.
+
+shells/fish
+-----------
+
+Although the function used to set up fzf is auto-loaded, it can't be used in
+the shell config, so we have to source it anyway. Put the following in
+~/.config/fish/config.fish:
+
+```
+source ${FISH_SITE}/functions/fzf-key-bindings.fish
+fzf_key_bindings
+```
+
+There is no **<tab> completion support for fish.
