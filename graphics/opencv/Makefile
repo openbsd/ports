@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/11/10 15:32:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2020/01/18 09:04:59 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -7,16 +7,13 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processin
 COMMENT-java =		Java bindings for OpenCV
 
-V =		3.4.7
-GH_ACCOUNT =	opencv
-GH_PROJECT =	opencv
-GH_TAGNAME =	${V}
+V =			4.2.0
+GH_ACCOUNT =		opencv
+GH_PROJECT =		opencv
+GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-
-REVISION-main =		1
-REVISION-java =		0
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -25,11 +22,10 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 DISTFILES =		opencv-{opencv/archive/}${V}${EXTRACT_SUFX}
 
 .for i in opencv_calib3d opencv_core opencv_features2d \
-  opencv_flann opencv_highgui opencv_imgproc \
-  opencv_ml opencv_objdetect opencv_photo opencv_stitching \
-  opencv_superres opencv_video opencv_videostab opencv_imgcodecs \
-  opencv_shape opencv_videoio opencv_dnn
-SHARED_LIBS += $i 5.0
+  opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
+  opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
+  opencv_videoio opencv_dnn opencv_gapi
+SHARED_LIBS += $i 6.0
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
@@ -38,7 +34,7 @@ WANTLIB-main += c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
 WANTLIB-main += gthread-2.0 gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += png swscale tiff webp z
+WANTLIB-main += harfbuzz png swscale tiff webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
@@ -66,6 +62,7 @@ RUN_DEPENDS-main =	math/py-numpy
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			devel/harfbuzz \
 			multimedia/gstreamer1/plugins-base \
 			x11/gtk+3 \
 			graphics/ffmpeg \
@@ -92,22 +89,22 @@ CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 
 # ATM opencv requires V4L1 compat, ask them to change it,
 # then see WITH_V4L below.
-CONFIGURE_ARGS =	-DBUILD_DOCS=Off \
-			-DBUILD_EXAMPLES=Off \
-			-DBUILD_IPP_IW=Off \
-			-DBUILD_ITT=Off \
-			-DBUILD_PERF_TESTS=Off \
-			-DBUILD_TESTS=Off \
-			-DENABLE_SSE3=Off \
-			-DINSTALL_PYTHON_EXAMPLES=Off \
-			-DINSTALL_TESTS=Off \
-			-DWITH_1394=Off \
-			-DWITH_CUDA=Off \
-			-DWITH_EIGEN=Off \
-			-DWITH_IPP=Off \
-			-DWITH_OPENCL=Off \
-			-DWITH_V4L=Off \
-			-DWITH_VTK=Off
+CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
+			-DBUILD_EXAMPLES=OFF \
+			-DBUILD_IPP_IW=OFF \
+			-DBUILD_ITT=OFF \
+			-DBUILD_PERF_TESTS=OFF \
+			-DBUILD_TESTS=OFF \
+			-DENABLE_SSE3=OFF \
+			-DINSTALL_PYTHON_EXAMPLES=OFF \
+			-DINSTALL_TESTS=OFF \
+			-DWITH_1394=OFF \
+			-DWITH_CUDA=OFF \
+			-DWITH_EIGEN=OFF \
+			-DWITH_IPP=OFF \
+			-DWITH_OPENCL=OFF \
+			-DWITH_V4L=OFF \
+			-DWITH_VTK=OFF
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
@@ -115,7 +112,7 @@ MODJAVA_VER =		1.8+
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 # Safe: Java will be detected, if present, but won't be used
-CONFIGURE_ARGS +=	-DBUILD_opencv_java=Off
+CONFIGURE_ARGS +=	-DBUILD_opencv_java=OFF
 .endif
 
 CONFIG_ADJ_CMD =	perl -pi
@@ -127,8 +124,8 @@ NO_TEST =	Yes
 # Enable to run the regression tests
 #TEST_IS_INTERACTIVE =	X11
 #
-#CONFIGURE_ARGS +=	-DDBUILD_TESTS=On \
-#			-DBUILD_PERF_TESTS=On
+#CONFIGURE_ARGS +=	-DDBUILD_TESTS=ON \
+#			-DBUILD_PERF_TESTS=ON
 
 
 post-patch:
