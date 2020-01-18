@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_compiler_main_ml,v 1.1.1.1 2020/01/18 00:31:05 thfr Exp $
+
+path to hashlink version
+
+Index: src/compiler/main.ml
+--- src/compiler/main.ml.orig
++++ src/compiler/main.ml
+@@ -273,7 +273,7 @@ module Initialize = struct
+ 				"python"
+ 			| Hl ->
+ 				add_std "hl";
+-				if not (Common.raw_defined com "hl_ver") then Define.raw_define_value com.defines "hl_ver" (try Std.input_file (Common.find_file com "hl/hl_version") with Not_found -> assert false);
++				if not (Common.raw_defined com "hl_ver") then Define.raw_define_value com.defines "hl_ver" (try Std.input_file (Common.find_file com "${PREFIX}/share/haxe/std/hl/hl_version") with Not_found -> assert false);
+ 				"hl"
+ 			| Eval ->
+ 				add_std "eval";

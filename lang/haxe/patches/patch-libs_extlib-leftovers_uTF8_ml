@@ -1,0 +1,14 @@
+$OpenBSD: patch-libs_extlib-leftovers_uTF8_ml,v 1.1.1.1 2020/01/18 00:31:05 thfr Exp $
+
+Index: libs/extlib-leftovers/uTF8.ml
+--- libs/extlib-leftovers/uTF8.ml.orig
++++ libs/extlib-leftovers/uTF8.ml
+@@ -177,7 +177,7 @@ let rec iter_aux proc s i =
+ 
+ let iter proc s = iter_aux proc s 0
+ 
+-let compare s1 s2 = Pervasives.compare s1 s2
++let compare s1 s2 = Stdlib.compare s1 s2
+ 
+ exception Malformed_code
+ 
