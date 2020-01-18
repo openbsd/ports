@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/01/18 09:05:40 rsadowski Exp $
 
 COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
 GH_TAGNAME =	3.12
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
