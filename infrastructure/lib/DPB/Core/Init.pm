@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.45 2019/11/08 17:53:24 espie Exp $
+# $OpenBSD: Init.pm,v 1.46 2020/01/18 10:28:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -269,9 +269,8 @@ sub init_cores
 				$logger->redirect( 
 				    $logger->logfile("init.".$core->hostname));
 				$shell
-				    ->chdir($state->ports)
 				    ->env(SUBDIR => $subdirlist)
-				    ->exec($state->make, 'unlock');
+				    ->exec($state->make_args, 'unlock');
 			    }
 			));
 		}
