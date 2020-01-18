@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2019/12/21 14:24:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.241 2020/01/18 00:33:12 thfr Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -49,6 +49,7 @@
      SUBDIR += gravity
      SUBDIR += guile
      SUBDIR += guile2
+     SUBDIR += haxe
      SUBDIR += icon
      SUBDIR += intel2gas
      SUBDIR += iverilog
