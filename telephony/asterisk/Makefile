@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.312 2020/01/16 21:24:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.313 2020/01/19 21:35:24 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -7,6 +7,7 @@ PJ_V=		2.9
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
+REVISION-main=	0
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
@@ -34,6 +35,7 @@ WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+DPB_PROPERTIES=	parallel
 
 # Asterisk requires either nested functions (gcc extension), or -fblocks (clang).
 # However -fblocks fails:
@@ -56,9 +58,9 @@ COMPILER=		ports-gcc
 SHARED_LIBS+=		asteriskssl 0.0		# 1
 SHARED_LIBS+=		asteriskpj 0.0		# 2
 
-MULTI_PACKAGES=		-main -calendar -http_post -ldap -odbc \
+MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -odbc \
 			-pgsql -snmp -speex -tds
-PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:C/-/no_/g}
+PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:N-kqueue:C/-/no_/g}
 
 LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			audio/gsm \
@@ -209,6 +211,11 @@ CONFIGURE_ARGS+=	--with-tds=no
 .else
 CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
 .endif
+
+# kqueue
+COMMENT-kqueue=		kqueue-backed timer for Asterisk
+LIB_DEPENDS-kqueue=
+WANTLIB-kqueue=		pthread
 
 # odbc
 COMMENT-odbc=		ODBC support for Asterisk

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.83 2019/12/27 13:27:50 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.84 2020/01/19 21:35:24 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -528,7 +528,6 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_stasis_snoop.so
 @so lib/asterisk/modules/res_statsd.so
 @so lib/asterisk/modules/res_stun_monitor.so
-@comment lib/asterisk/modules/res_timing_kqueue.so
 @so lib/asterisk/modules/res_timing_pthread.so
 @so lib/asterisk/modules/res_xmpp.so
 @comment lib/libasteriskpj.so

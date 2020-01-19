@@ -1,0 +1,14 @@
+$OpenBSD: patch-main_utils_c,v 1.4 2020/01/19 21:35:24 sthen Exp $
+
+Index: main/utils.c
+--- main/utils.c.orig
++++ main/utils.c
+@@ -2336,6 +2336,8 @@ int ast_get_tid(void)
+ 	long lwpid;
+ 	thr_self(&lwpid); /* available since sys/thr.h creation 2003 */
+ 	ret = lwpid;
++#elif defined(__OpenBSD__)
++	ret = getthrid();
+ #endif
+ 	return ret;
+ }
