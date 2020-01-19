@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/01/18 09:04:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.56 2020/01/19 20:41:36 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -14,6 +14,8 @@ GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
+REVISION-java =		0
+REVISION-main =		0
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -24,7 +26,7 @@ DISTFILES =		opencv-{opencv/archive/}${V}${EXTRACT_SUFX}
 .for i in opencv_calib3d opencv_core opencv_features2d \
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
-  opencv_videoio opencv_dnn opencv_gapi
+  opencv_videoio opencv_dnn
 SHARED_LIBS += $i 6.0
 .endfor
 
@@ -95,10 +97,10 @@ CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 			-DBUILD_ITT=OFF \
 			-DBUILD_PERF_TESTS=OFF \
 			-DBUILD_TESTS=OFF \
-			-DENABLE_SSE3=OFF \
 			-DINSTALL_PYTHON_EXAMPLES=OFF \
 			-DINSTALL_TESTS=OFF \
 			-DWITH_1394=OFF \
+			-DWITH_ADE=OFF \
 			-DWITH_CUDA=OFF \
 			-DWITH_EIGEN=OFF \
 			-DWITH_IPP=OFF \

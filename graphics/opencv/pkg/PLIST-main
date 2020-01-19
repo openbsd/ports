@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2020/01/18 09:04:59 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2020/01/19 20:41:36 rsadowski Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_version
@@ -193,77 +193,6 @@ include/opencv4/opencv2/flann/sampling.h
 include/opencv4/opencv2/flann/saving.h
 include/opencv4/opencv2/flann/simplex_downhill.h
 include/opencv4/opencv2/flann/timer.h
-include/opencv4/opencv2/gapi/
-include/opencv4/opencv2/gapi.hpp
-include/opencv4/opencv2/gapi/core.hpp
-include/opencv4/opencv2/gapi/cpu/
-include/opencv4/opencv2/gapi/cpu/core.hpp
-include/opencv4/opencv2/gapi/cpu/gcpukernel.hpp
-include/opencv4/opencv2/gapi/cpu/imgproc.hpp
-include/opencv4/opencv2/gapi/fluid/
-include/opencv4/opencv2/gapi/fluid/core.hpp
-include/opencv4/opencv2/gapi/fluid/gfluidbuffer.hpp
-include/opencv4/opencv2/gapi/fluid/gfluidkernel.hpp
-include/opencv4/opencv2/gapi/fluid/imgproc.hpp
-include/opencv4/opencv2/gapi/garg.hpp
-include/opencv4/opencv2/gapi/garray.hpp
-include/opencv4/opencv2/gapi/gasync_context.hpp
-include/opencv4/opencv2/gapi/gcall.hpp
-include/opencv4/opencv2/gapi/gcommon.hpp
-include/opencv4/opencv2/gapi/gcompiled.hpp
-include/opencv4/opencv2/gapi/gcompiled_async.hpp
-include/opencv4/opencv2/gapi/gcompoundkernel.hpp
-include/opencv4/opencv2/gapi/gcomputation.hpp
-include/opencv4/opencv2/gapi/gcomputation_async.hpp
-include/opencv4/opencv2/gapi/gkernel.hpp
-include/opencv4/opencv2/gapi/gmat.hpp
-include/opencv4/opencv2/gapi/gmetaarg.hpp
-include/opencv4/opencv2/gapi/gproto.hpp
-include/opencv4/opencv2/gapi/gpu/
-include/opencv4/opencv2/gapi/gpu/core.hpp
-include/opencv4/opencv2/gapi/gpu/ggpukernel.hpp
-include/opencv4/opencv2/gapi/gpu/imgproc.hpp
-include/opencv4/opencv2/gapi/gscalar.hpp
-include/opencv4/opencv2/gapi/gstreaming.hpp
-include/opencv4/opencv2/gapi/gtransform.hpp
-include/opencv4/opencv2/gapi/gtype_traits.hpp
-include/opencv4/opencv2/gapi/gtyped.hpp
-include/opencv4/opencv2/gapi/imgproc.hpp
-include/opencv4/opencv2/gapi/infer/
-include/opencv4/opencv2/gapi/infer.hpp
-include/opencv4/opencv2/gapi/infer/ie.hpp
-include/opencv4/opencv2/gapi/ocl/
-include/opencv4/opencv2/gapi/ocl/core.hpp
-include/opencv4/opencv2/gapi/ocl/goclkernel.hpp
-include/opencv4/opencv2/gapi/ocl/imgproc.hpp
-include/opencv4/opencv2/gapi/opencv_includes.hpp
-include/opencv4/opencv2/gapi/operators.hpp
-include/opencv4/opencv2/gapi/own/
-include/opencv4/opencv2/gapi/own/assert.hpp
-include/opencv4/opencv2/gapi/own/convert.hpp
-include/opencv4/opencv2/gapi/own/cvdefs.hpp
-include/opencv4/opencv2/gapi/own/exports.hpp
-include/opencv4/opencv2/gapi/own/mat.hpp
-include/opencv4/opencv2/gapi/own/saturate.hpp
-include/opencv4/opencv2/gapi/own/scalar.hpp
-include/opencv4/opencv2/gapi/own/types.hpp
-include/opencv4/opencv2/gapi/plaidml/
-include/opencv4/opencv2/gapi/plaidml/core.hpp
-include/opencv4/opencv2/gapi/plaidml/gplaidmlkernel.hpp
-include/opencv4/opencv2/gapi/plaidml/plaidml.hpp
-include/opencv4/opencv2/gapi/render/
-include/opencv4/opencv2/gapi/render.hpp
-include/opencv4/opencv2/gapi/render/render.hpp
-include/opencv4/opencv2/gapi/streaming/
-include/opencv4/opencv2/gapi/streaming/cap.hpp
-include/opencv4/opencv2/gapi/streaming/source.hpp
-include/opencv4/opencv2/gapi/util/
-include/opencv4/opencv2/gapi/util/any.hpp
-include/opencv4/opencv2/gapi/util/compiler_hints.hpp
-include/opencv4/opencv2/gapi/util/optional.hpp
-include/opencv4/opencv2/gapi/util/throw.hpp
-include/opencv4/opencv2/gapi/util/util.hpp
-include/opencv4/opencv2/gapi/util/variant.hpp
 include/opencv4/opencv2/highgui/
 include/opencv4/opencv2/highgui.hpp
 include/opencv4/opencv2/highgui/highgui.hpp
@@ -342,7 +271,6 @@ lib/cmake/opencv4/OpenCVModules.cmake
 @lib lib/libopencv_dnn.so.${LIBopencv_dnn_VERSION}
 @lib lib/libopencv_features2d.so.${LIBopencv_features2d_VERSION}
 @lib lib/libopencv_flann.so.${LIBopencv_flann_VERSION}
-@lib lib/libopencv_gapi.so.${LIBopencv_gapi_VERSION}
 @lib lib/libopencv_highgui.so.${LIBopencv_highgui_VERSION}
 @lib lib/libopencv_imgcodecs.so.${LIBopencv_imgcodecs_VERSION}
 @lib lib/libopencv_imgproc.so.${LIBopencv_imgproc_VERSION}
@@ -368,7 +296,6 @@ lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/
 share/licenses/
 share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt
-share/licenses/opencv4/ade-LICENSE
 share/licenses/opencv4/protobuf-LICENSE
 share/licenses/opencv4/protobuf-README.md
 share/licenses/opencv4/quirc-LICENSE
