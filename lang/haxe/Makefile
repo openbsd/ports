@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/18 00:31:05 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2020/01/19 18:52:55 thfr Exp $
+
+BROKEN =	OCaml dependencies need to be built instead of bundled
 
 COMMENT =	toolkit for the Haxe programming language
 
