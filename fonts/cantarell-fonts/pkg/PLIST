@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/03/15 10:47:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/01/19 11:15:34 ajacoutot Exp $
 @pkgpath x11/cantarell-fonts
 share/fonts/
 @fontdir share/fonts/cantarell/
@@ -7,5 +7,6 @@ share/fonts/cantarell/Cantarell-ExtraBold.otf
 share/fonts/cantarell/Cantarell-Light.otf
 share/fonts/cantarell/Cantarell-Regular.otf
 share/fonts/cantarell/Cantarell-Thin.otf
+share/fonts/cantarell/Cantarell-VF.otf
 share/metainfo/
 share/metainfo/org.gnome.cantarell.metainfo.xml
