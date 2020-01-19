@@ -1,0 +1,2 @@
+me_cleaner is a Python 3 script able to modify an Intel ME firmware image with
+the final purpose of reducing its ability to interact with the system.
