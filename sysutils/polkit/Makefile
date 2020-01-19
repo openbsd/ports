@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2019/07/12 20:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2020/01/19 00:58:09 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
 DISTNAME=		polkit-0.116
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -70,7 +70,7 @@ pre-configure:
 		-e "s,/etc/polkit-1,${SYSCONFDIR}/polkit-1,g;" \
 		-e "s,/usr/bin/bash,${LOCALBASE}/bin/bash,g;" \
 		-e "s,/usr/bin/cat,/bin/cat,g;" \
-		-e "s,/usr/bin/pk-example-frobnicate,${PREFIX}/bin/pk-example,g;" \
+		-e "s,/usr/bin/pk-example-frobnicate,${PREFIX}/bin/pk-example-frobnicate,g;" \
 		-e "s,>/etc<,>${SYSCONFDIR}<,g;" \
 		-e "s,>/usr<,>${PREFIX}<,g" \
 		${WRKSRC}/docs/man/pkexec.xml \
