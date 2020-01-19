@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2019/12/28 15:59:30 sthen Exp $
-
-BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
+# $OpenBSD: Makefile,v 1.98 2020/01/19 20:37:36 cwen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
@@ -79,6 +77,12 @@ CONFIGURE_ARGS += \
 	-DICINGA2_GIT_VERSION_INFO=OFF \
 	-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios \
 	-DHAVE_LIBEXECINFO=OFF
+
+# Fix "undefined reference to `__atomic_fetch_sub_8'"
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB +=		atomic
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
+.endif
 
 post-install:
 	mv ${WRKINST}${SYSCONFDIR}/icinga2/* ${PREFIX}/share/examples/icinga2/
