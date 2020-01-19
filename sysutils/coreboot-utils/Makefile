@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/18 15:16:22 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2020/01/19 20:49:11 kn Exp $
 
 # ectool requires amd64_iopl(2)
 # intelmetool requires <amd64/pio.h>
 ONLY_FOR_ARCHS =	amd64
 
-COMMENT =		collection of utilities to work with firmware images
+COMMENT =		utilities to work on firmware images and hardware
 
 V =			4.11
 DISTNAME =		coreboot-${V}
 PKGNAME =		coreboot-utils-${V}
+REVISION =		0
 
 CATEGORIES =		sysutils devel
 
@@ -35,6 +36,7 @@ MAKE_FLAGS =		CC=${CC} \
 
 FAKE_FLAGS =		PREFIX=${PREFIX}
 
+# XXX intelmetool requires unsupported pcilib access methods
 UTILS =			cbmem \
 			ectool \
 			ifdtool
