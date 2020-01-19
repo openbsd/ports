@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.550 2020/01/18 15:17:35 kn Exp $
+# $OpenBSD: Makefile,v 1.551 2020/01/19 20:48:42 kn Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -176,6 +176,7 @@
      SUBDIR += mangl
      SUBDIR += mcollective
      SUBDIR += mcollective-plugins
+     SUBDIR += me_cleaner
      SUBDIR += memtester
      SUBDIR += mencal
      SUBDIR += menulibre
