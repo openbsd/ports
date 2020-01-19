@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.92 2020/01/14 21:33:50 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.93 2020/01/19 18:27:50 sthen Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -409,7 +409,6 @@ share/git-core/templates/hooks/setgitperms.perl
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/
 share/git-core/templates/info/exclude
-share/git-gui/lib/chord.tcl
 share/gitk/lib/msgs/zh_cn.msg
 share/gitweb/
 share/gitweb/README

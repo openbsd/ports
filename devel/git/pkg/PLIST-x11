@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-x11,v 1.15 2017/02/25 20:35:31 benoit Exp $
-@conflict git-<1.6.5.3p0
+@comment $OpenBSD: PLIST-x11,v 1.16 2020/01/19 18:27:50 sthen Exp $
+@conflict git-<2.25.0p0
 bin/gitk
 libexec/git/git-citool
 libexec/git/git-gui
@@ -21,6 +21,7 @@ share/git-gui/lib/checkout_op.tcl
 share/git-gui/lib/choose_font.tcl
 share/git-gui/lib/choose_repository.tcl
 share/git-gui/lib/choose_rev.tcl
+share/git-gui/lib/chord.tcl
 share/git-gui/lib/class.tcl
 share/git-gui/lib/commit.tcl
 share/git-gui/lib/console.tcl
