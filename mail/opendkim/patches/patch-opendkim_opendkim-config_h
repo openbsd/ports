@@ -1,0 +1,15 @@
+$OpenBSD: patch-opendkim_opendkim-config_h,v 1.1 2020/01/19 05:58:50 ajacoutot Exp $
+
+https://sourceforge.net/p/opendkim/bugs/257/
+
+Index: opendkim/opendkim-config.h
+--- opendkim/opendkim-config.h.orig
++++ opendkim/opendkim-config.h
+@@ -144,6 +144,7 @@ struct configdef dkimf_config[] =
+ 	{ "RemoveARFrom",		CONFIG_TYPE_STRING,	FALSE },
+ 	{ "RemoveOldSignatures",	CONFIG_TYPE_BOOLEAN,	FALSE },
+ #ifdef _FFR_REPLACE_RULES
++	{ "ReplaceHeaders",		CONFIG_TYPE_STRING,	FALSE },
+ 	{ "ReplaceRules",		CONFIG_TYPE_STRING,	FALSE },
+ #endif /* _FFR_REPLACE_RULES */
+ 	{ "ReportAddress",		CONFIG_TYPE_STRING,	FALSE },

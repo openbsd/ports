@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/19 05:58:50 ajacoutot Exp $
 
 COMMENT=	library and milter for DKIM (Domain Keys Identified Mail)
 
 DISTNAME=	opendkim-2.10.3
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	opendkim             0.0      # 10.3
 
@@ -24,6 +24,8 @@ TEST_FLAGS=	COV_LIBADD=-pthread
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
+
+CONFIGURE_ARGS=	--enable-replace_rules
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opendkim/
