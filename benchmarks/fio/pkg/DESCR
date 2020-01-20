@@ -1,0 +1,6 @@
+fio is a IO benchmarking tool that can simulate various user defined
+workloads. fio will spawn a number of threads or processes doing a
+particular type of IO action as specified by the user.  It takes a
+number of global parameters, each inherited by the thread unless other
+parameters given to them overriding that setting.  The typical use of
+fio is to write a job file matching the IO load one wants to simulate.

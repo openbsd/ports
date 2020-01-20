@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1 2020/01/20 23:32:01 kurt Exp $
+@bin bin/fio
+@bin bin/fio-dedupe
+@bin bin/fio-genzipf
+@bin bin/fio-verify-state
+bin/fio2gnuplot
+bin/fio_generate_plots
+bin/fio_jsonplus_clat2csv
+bin/fiologparser.py
+bin/fiologparser_hist.py
+bin/genfio
+@man man/man1/fio.1
+@man man/man1/fio2gnuplot.1
+@man man/man1/fio_generate_plots.1
+@man man/man1/fiologparser_hist.py.1
+share/fio/
+share/fio/graph2D.gpm
+share/fio/graph3D.gpm
+share/fio/math.gpm
