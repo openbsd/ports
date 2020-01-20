@@ -1,45 +1,40 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/01/20 23:32:55 abieber Exp $
 
 COMMENT=	interactive electronics designing software
 
-V=		0.9.2
-REVISION=	4
-
 GH_ACCOUNT=	fritzing
 GH_PROJECT=	fritzing-app
-GH_TAGNAME=	${V}b
+GH_TAGNAME=	0.9.2b
 
-DISTNAME=	fritzing-$Vb
+REVISION=	5
+
+DISTNAME=	fritzing-${GH_TAGNAME}
 CATEGORIES=	cad
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		fritzing-parts-${GH_TAGNAME}${EXTRACT_SUFX}:0
 
-HOMEPAGE=	http://fritzing.org/
+HOMEPAGE=	https://fritzing.org/
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
-MASTER_SITES0= https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
+MASTER_SITES0=	https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
 
 # Code: GPLv3+
 # Rest: CreativeCommons:BY-SA
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
-WANTLIB += Xinerama Xrender c fontconfig freetype m pthread ${COMPILER_LIBCXX}
-WANTLIB += z lib/qt4/QtSerialPort
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Gui
+WANTLIB += Qt5Network Qt5PrintSupport Qt5SerialPort Qt5Sql Qt5Svg
+WANTLIB += Qt5Widgets Qt5Xml c m z
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-MODULES=        devel/qmake x11/qt4
+MODULES=	devel/qmake x11/qt5
 NO_TEST=	Yes
 
-LIB_DEPENDS=	comms/qtserialport
+LIB_DEPENDS=	x11/qt5/qtserialport \
+		x11/qt5/qtsvg
 BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils
-
-# avoid picking up /src/serialport/qt4support/serialport.prf
-MODQMAKE_ARGS+=	QTSERIALPORT_PROJECT_ROOT=${WRKDIR}
 
 post-extract:
 	mv ${WRKDIR}/fritzing-parts-${GH_TAGNAME}/* ${WRKSRC}/parts
