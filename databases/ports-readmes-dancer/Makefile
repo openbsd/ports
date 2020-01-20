@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/08/20 12:32:06 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2020/01/20 13:32:26 espie Exp $
 
 COMMENT =		ports-readmes dancer web app
 PKG_ARCH = *
@@ -6,7 +6,7 @@ PKG_ARCH = *
 MAINTAINER =		Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = ports-readmes-dancer
-GH_TAGNAME = 3.3
+GH_TAGNAME = 3.4
 GH_ACCOUNT = marcespie
 CATEGORIES =		databases www
 
