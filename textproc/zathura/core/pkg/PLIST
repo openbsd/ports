@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/03/04 14:46:21 jca Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/01/20 09:01:51 landry Exp $
 @conflict zathura-<=0.0.8.5p1
 @pkgpath textproc/zathura
 @bin bin/zathura
@@ -19,6 +19,9 @@ share/bash-completion/completions/zathura
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.pwmt.zathura.xml
 share/doc/pkg-readmes/${PKGSTEM}
+share/fish/
+share/fish/completions/
+share/fish/completions/zathura.fish
 share/icons/hicolor/128x128/apps/org.pwmt.zathura.png
 share/icons/hicolor/16x16/apps/org.pwmt.zathura.png
 share/icons/hicolor/256x256/apps/org.pwmt.zathura.png
@@ -27,6 +30,7 @@ share/icons/hicolor/64x64/apps/org.pwmt.zathura.png
 share/icons/scalable/
 share/icons/scalable/apps/
 share/icons/scalable/apps/org.pwmt.zathura.svg
+share/locale/ar/LC_MESSAGES/zathura.mo
 share/locale/ca/LC_MESSAGES/zathura.mo
 share/locale/cs/LC_MESSAGES/zathura.mo
 share/locale/de/LC_MESSAGES/zathura.mo
@@ -61,8 +65,8 @@ share/locale/uk_UA/LC_MESSAGES/zathura.mo
 share/metainfo/
 share/metainfo/org.pwmt.zathura.appdata.xml
 share/zsh/
-share/zsh/vendor-completions/
-share/zsh/vendor-completions/_zathura
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag gtk-update-icon-cache %D/share/icons/scalable
 @tag update-desktop-database
+share/zsh/site-functions/
+share/zsh/site-functions/_zathura
