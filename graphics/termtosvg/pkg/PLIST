@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/11/17 18:27:58 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/01/20 18:10:23 fcambus Exp $
 bin/termtosvg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -8,8 +8,10 @@ lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/termtosvg/__init__.py
+lib/python${MODPY_VERSION}/site-packages/termtosvg/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}anim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}asciicast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
