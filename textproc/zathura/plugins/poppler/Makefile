@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/21 10:08:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/20 09:03:51 landry Exp $
 
-V =		0.2.9
+V =		0.3.0
 COMMENT =	poppler pdf plugin for zathura
-DISTNAME =	zathura-pdf-poppler-${V}
-REVISION =	1
+PROJECT =	zathura-pdf-poppler
 
-HOMEPAGE =	http://pwmt.org/projects/zathura/plugins/zathura-pdf-poppler/
 
 LIB_DEPENDS +=	print/poppler
 
-WANTLIB += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += girara-gtk3 glib-2.0 gobject-2.0 gtk-3 intl pango-1.0
-WANTLIB += pangocairo-1.0 poppler-glib
+WANTLIB += girara-gtk3 glib-2.0 gobject-2.0 poppler-glib
 
 .include <bsd.port.mk>

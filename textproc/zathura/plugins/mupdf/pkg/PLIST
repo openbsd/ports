@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/01/20 09:03:51 landry Exp $
 @conflict zathura-pdf-poppler-*
-lib/zathura/libpdf-mupdf.so
+@so lib/zathura/libpdf-mupdf.so
 share/applications/org.pwmt.zathura-pdf-mupdf.desktop
 share/metainfo/org.pwmt.zathura-pdf-mupdf.metainfo.xml
 @tag update-desktop-database

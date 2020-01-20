@@ -1,14 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/30 13:41:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/01/20 09:03:51 landry Exp $
 
-V =		0.3.4
-REVISION =	2
+V =		0.3.5
 COMMENT =	mupdf pdf plugin for zathura
-DISTNAME =	zathura-pdf-mupdf-${V}
-
-HOMEPAGE =	https://pwmt.org/projects/zathura-pdf-mupdf/
-
-MASTER_SITES =	https://pwmt.org/projects/zathura/plugins/download/ \
-		http://distfiles.gentoo.org/distfiles/
+PROJECT =	zathura-pdf-mupdf
 
 BUILD_DEPENDS = textproc/mupdf \
 		textproc/zathura/core
@@ -16,9 +10,8 @@ LIB_DEPENDS +=	graphics/jbig2dec \
 		graphics/jpeg \
 		graphics/openjp2
 
-WANTLIB += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += girara-gtk3 glib-2.0 gobject-2.0 gtk-3 intl jbig2dec
-WANTLIB += jpeg openjp2 pango-1.0 pangocairo-1.0
+WANTLIB += cairo girara-gtk3 glib-2.0 harfbuzz jbig2dec
+WANTLIB += jpeg openjp2
 
 CONFIGURE_ENV += LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib `pkg-config --libs libjpeg libopenjp2` -ljbig2dec"
 
