@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/11/12 17:03:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/01/20 06:28:12 rsadowski Exp $
 @bin bin/keepassxc
 @bin bin/keepassxc-cli
 %%browser%%
@@ -216,6 +216,9 @@ share/keepassxc/icons/application/64x64/apps/keepassxc.png
 share/keepassxc/icons/application/64x64/mimetypes/
 share/keepassxc/icons/application/64x64/mimetypes/application-x-keepassxc.png
 share/keepassxc/icons/application/scalable/
+share/keepassxc/icons/application/scalable/actions/
+share/keepassxc/icons/application/scalable/actions/object-locked.svg
+share/keepassxc/icons/application/scalable/actions/object-unlocked.svg
 share/keepassxc/icons/application/scalable/apps/
 share/keepassxc/icons/application/scalable/apps/freedesktop.svg
 share/keepassxc/icons/application/scalable/apps/keepassxc-dark.svg
