@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2018/04/25 11:25:04 fcambus Exp $
+# $OpenBSD: Makefile,v 1.29 2020/01/20 23:33:08 kurt Exp $
 
      SUBDIR =
      SUBDIR += blogbench
      SUBDIR += bonnie++
+     SUBDIR += fio
      SUBDIR += fs_mark
      SUBDIR += httperf
      SUBDIR += iozone
