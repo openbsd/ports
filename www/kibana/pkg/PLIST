@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/12/06 23:52:22 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/01/20 19:00:39 pvk Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/kibana/{data,plugins}/*
@@ -420,7 +420,6 @@ kibana/built_assets/.cache/ui_bundles/babel/300c63aa39b6cf14dbe5fafbace96a1c.jso
 kibana/built_assets/.cache/ui_bundles/babel/30213e384085e4ef7af6fb444420b468.json
 kibana/built_assets/.cache/ui_bundles/babel/305b42bd55835225ebea2d02193c87eb.json
 kibana/built_assets/.cache/ui_bundles/babel/30623ed83a50c72fc634241bb8b8f1fd.json
-kibana/built_assets/.cache/ui_bundles/babel/3066ef2943cba39c32032ae9b05679fd.json
 kibana/built_assets/.cache/ui_bundles/babel/308243601cb0a62f1ee7272af23c4b67.json
 kibana/built_assets/.cache/ui_bundles/babel/3099b8e0e64f30532a96a63fbad247bb.json
 kibana/built_assets/.cache/ui_bundles/babel/30bbd8c3383c112284cfa825714068f3.json
@@ -614,6 +613,7 @@ kibana/built_assets/.cache/ui_bundles/babel/482c898e0f10b0dd7f25c0a63bc2ba83.jso
 kibana/built_assets/.cache/ui_bundles/babel/48bb5ac97728d7c40b9a1f301ec99bf0.json
 kibana/built_assets/.cache/ui_bundles/babel/48d7551cd161827ffd9e985ada6b7df4.json
 kibana/built_assets/.cache/ui_bundles/babel/48f52a48b0fb55f4de7ed5ef305e0f64.json
+kibana/built_assets/.cache/ui_bundles/babel/493242bf76e2448ffcc43ce6e450e7fb.json
 kibana/built_assets/.cache/ui_bundles/babel/4952cfd42ded6dde9d709b660efaf4ce.json
 kibana/built_assets/.cache/ui_bundles/babel/4963faa46c3a6acc73fbec5b252aef05.json
 kibana/built_assets/.cache/ui_bundles/babel/4984f030582a31ec0c13acde2f094742.json
@@ -973,7 +973,6 @@ kibana/built_assets/.cache/ui_bundles/babel/775bfb9047e513193f3b907ff59f7998.jso
 kibana/built_assets/.cache/ui_bundles/babel/77a32c0f41b2f92cb908514b454ed683.json
 kibana/built_assets/.cache/ui_bundles/babel/77c4d3c180703e1aacf5b811254c051d.json
 kibana/built_assets/.cache/ui_bundles/babel/77e9ba9a64142d8f6c2011ff1ddb1601.json
-kibana/built_assets/.cache/ui_bundles/babel/78099ca8814faa52e7ba85e25df3e145.json
 kibana/built_assets/.cache/ui_bundles/babel/783f69fa651cebc30c24415b7e4f59c3.json
 kibana/built_assets/.cache/ui_bundles/babel/78681c08db395d55b2350292ef730190.json
 kibana/built_assets/.cache/ui_bundles/babel/7877904cb2716d6fe0d3fcd447d0daa2.json
@@ -31248,8 +31247,9 @@ kibana/node_modules/enhanced-resolve/node_modules/tapable/lib/index.js
 kibana/node_modules/enhanced-resolve/node_modules/tapable/package.json
 kibana/node_modules/enhanced-resolve/package.json
 kibana/node_modules/entities/
-kibana/node_modules/entities/maps/
-kibana/node_modules/entities/maps/entities.json
+kibana/node_modules/entities/lib/
+kibana/node_modules/entities/lib/maps/
+kibana/node_modules/entities/lib/maps/entities.json
 kibana/node_modules/entities/package.json
 kibana/node_modules/errno/
 kibana/node_modules/errno/README.md
@@ -40950,6 +40950,11 @@ kibana/node_modules/semver/package.json
 kibana/node_modules/semver/range.bnf
 kibana/node_modules/semver/semver.js
 kibana/node_modules/serialize-javascript/
+kibana/node_modules/serialize-javascript/.nyc_output/
+kibana/node_modules/serialize-javascript/.nyc_output/3b55f3fa-43d3-443e-9b6b-ac7daf5f5b9f.json
+kibana/node_modules/serialize-javascript/.nyc_output/processinfo/
+kibana/node_modules/serialize-javascript/.nyc_output/processinfo/3b55f3fa-43d3-443e-9b6b-ac7daf5f5b9f.json
+kibana/node_modules/serialize-javascript/.nyc_output/processinfo/index.json
 kibana/node_modules/serialize-javascript/LICENSE
 kibana/node_modules/serialize-javascript/README.md
 kibana/node_modules/serialize-javascript/index.js
@@ -45197,11 +45202,6 @@ kibana/node_modules/webpack/node_modules/rimraf/node_modules/glob/package.json
 kibana/node_modules/webpack/node_modules/rimraf/node_modules/glob/sync.js
 kibana/node_modules/webpack/node_modules/rimraf/package.json
 kibana/node_modules/webpack/node_modules/rimraf/rimraf.js
-kibana/node_modules/webpack/node_modules/serialize-javascript/
-kibana/node_modules/webpack/node_modules/serialize-javascript/LICENSE
-kibana/node_modules/webpack/node_modules/serialize-javascript/README.md
-kibana/node_modules/webpack/node_modules/serialize-javascript/index.js
-kibana/node_modules/webpack/node_modules/serialize-javascript/package.json
 kibana/node_modules/webpack/node_modules/ssri/
 kibana/node_modules/webpack/node_modules/ssri/LICENSE.md
 kibana/node_modules/webpack/node_modules/ssri/README.md
