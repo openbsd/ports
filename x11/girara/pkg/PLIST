@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/04/28 14:55:47 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/01/20 09:00:32 landry Exp $
 include/girara/
 include/girara/callbacks.h
 include/girara/commands.h
@@ -20,6 +20,7 @@ include/girara/types.h
 include/girara/utils.h
 @lib lib/libgirara-gtk3.so.${LIBgirara-gtk3_VERSION}
 lib/pkgconfig/girara-gtk3.pc
+share/locale/ar/LC_MESSAGES/libgirara-gtk3-3.mo
 share/locale/de/LC_MESSAGES/libgirara-gtk3-3.mo
 share/locale/el/LC_MESSAGES/libgirara-gtk3-3.mo
 share/locale/eo/LC_MESSAGES/libgirara-gtk3-3.mo
@@ -31,4 +32,5 @@ share/locale/nl/LC_MESSAGES/libgirara-gtk3-3.mo
 share/locale/pl/LC_MESSAGES/libgirara-gtk3-3.mo
 share/locale/pt_BR/LC_MESSAGES/libgirara-gtk3-3.mo
 share/locale/ru/LC_MESSAGES/libgirara-gtk3-3.mo
+share/locale/sv/LC_MESSAGES/libgirara-gtk3-3.mo
 share/locale/tr/LC_MESSAGES/libgirara-gtk3-3.mo
