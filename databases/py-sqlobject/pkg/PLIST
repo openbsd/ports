@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/12 09:32:03 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/01/21 20:38:01 sthen Exp $
 bin/sqlobject-admin${MODPY_BIN_SUFFIX}
 bin/sqlobject-convertOldURI${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -124,12 +124,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/${MO
 lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/${MODPY_PYCACHE}pgconnection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/pgconnection.py
-lib/python${MODPY_VERSION}/site-packages/sqlobject/rdbhost/
-lib/python${MODPY_VERSION}/site-packages/sqlobject/rdbhost/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/rdbhost/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/sqlobject/rdbhost/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sqlobject/rdbhost/${MODPY_PYCACHE}rdbhostconnection.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sqlobject/rdbhost/rdbhostconnection.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlbuilder.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/__init__.py
@@ -151,6 +145,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}dbtest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_ForeignKey.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_ForeignKey_cascade.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_NoneValuedResultItem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_SQLMultipleJoin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_SQLRelatedJoin.${MODPY_PYC_MAGIC_TAG}pyc
@@ -167,6 +162,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_cl
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_columns_order.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_combining_joins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_comparison.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_complex_sorting.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_constraints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_converters.${MODPY_PYC_MAGIC_TAG}pyc
@@ -227,6 +223,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_va
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_views.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/dbtest.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_ForeignKey.py
+lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_ForeignKey_cascade.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_NoneValuedResultItem.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_SQLMultipleJoin.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_SQLRelatedJoin.py
@@ -243,6 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_class_hash.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_columns_order.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_combining_joins.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_comparison.py
+lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_compat.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_complex_sorting.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_constraints.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_converters.py
