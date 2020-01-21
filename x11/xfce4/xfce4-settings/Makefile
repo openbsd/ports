@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2020/01/14 06:50:42 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2020/01/21 10:51:50 landry Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
 XFCE_VERSION=	4.14.2
-
-PORTROACH=	limitw:1,even
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

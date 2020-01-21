@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.30 2019/11/11 20:49:28 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.31 2020/01/21 10:51:50 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -74,6 +74,7 @@ MASTER_SITES_GIT?=	https://git.xfce.org/xfce/${XFCE_PROJECT:L}/snapshot/
 DISTNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_PROJECT}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
+PORTROACH+=	limitw:1,even
 .endif
 
 .if defined(XFCE_COMMIT)
