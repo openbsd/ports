@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.220 2019/11/08 09:53:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.221 2020/01/21 21:40:46 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		4.9
+V=		4.10
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
@@ -117,14 +117,14 @@ EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 .endif
 RUN_DEPENDS-ldap=   ${BASE_PKGPATH}
 LIB_DEPENDS-ldap+=  ${LIB_DEPENDS} databases/openldap
-WANTLIB-ldap +=     ${cWANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB-ldap +=     ${cWANTLIB} crypto lber ldap sasl2 ssl
 
 RUN_DEPENDS-ntlm=   net/samba ${BASE_PKGPATH}
 LIB_DEPENDS-ntlm += security/libnettle
 WANTLIB-ntlm=       ${WANTLIB} ${COMPILER_LIBCXX}
 
 .if ${MACHINE_ARCH} == "powerpc"
-WANTLIB += 		atomic
+WANTLIB +=		atomic
 # The test in configure doesn't want atomic builtins, bypass it, but
 # 'make test' uses the flag from LIBS.
 CONFIGURE_ENV +=	LIBS=-latomic \
