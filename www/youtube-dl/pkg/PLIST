@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.133 2019/12/25 22:26:37 kn Exp $
+@comment $OpenBSD: PLIST,v 1.134 2020/01/21 14:08:11 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -488,7 +488,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}or
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}orf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}outsidetv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}packtpub.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}pandatv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}pandoratv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}parliamentliveuk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}patreon.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1254,7 +1253,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ora.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/orf.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/outsidetv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/packtpub.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pandatv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pandoratv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/parliamentliveuk.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/patreon.py
