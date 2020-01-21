@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/12/04 13:40:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/01/21 10:22:24 sthen Exp $
+${MODPY_2ONLY}@conflict fio-*
 bin/fio${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/Fiona-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Fiona-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
