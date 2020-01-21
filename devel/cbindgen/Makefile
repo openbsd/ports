@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/02 17:18:13 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2020/01/21 05:27:18 semarie Exp $
 
 COMMENT =		C bindings generator from rust code
 
@@ -61,8 +61,6 @@ MODCARGO_CRATES +=      winapi-x86_64-pc-windows-gnu    0.4.0   # MIT/Apache-2.0
 WANTLIB += c c++abi pthread
 
 TEST_ENV =	CC=${CC} CXX=${CXX}
-
-MODCARGO_INSTALL_ARGS =	--path .
 
 PATCHORIG =	.ports.orig
 

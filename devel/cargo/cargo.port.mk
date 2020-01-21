@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.11 2019/12/11 12:35:06 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.12 2020/01/21 05:27:18 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -186,6 +186,7 @@ do-build:
 MODCARGO_INSTALL_TARGET = \
 	${MODCARGO_CARGO_RUN} install \
 		--root="${PREFIX}" \
+		--path . \
 		--offline \
 		--verbose \
 		${MODCARGO_INSTALL_ARGS} ; \

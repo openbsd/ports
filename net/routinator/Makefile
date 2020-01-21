@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/01/03 11:20:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/21 05:27:18 semarie Exp $
 
 COMMENT =		RPKI "relying party" software
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c c++abi m pthread
 
 MODULES =		devel/cargo
-MODCARGO_INSTALL_ARGS =	--path .
 
 CONFIGURE_STYLE =	cargo
 
