@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 12:52:20 steven Exp $
-bin/gopher
-bin/gophfilt
+@comment $OpenBSD: PLIST,v 1.2 2020/01/21 08:14:36 solene Exp $
+@bin bin/gopher
+@bin bin/gophfilt
 @man man/man1/gopher.1
 @man man/man1/gophfilt.1
 @man man/man5/gopherrc.5

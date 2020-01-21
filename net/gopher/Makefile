@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/21 08:14:36 solene Exp $
 
 COMMENT=	distributed document delivery client
 
-V=		3.0.11
+V=		3.0.17
 DISTNAME=	gopher_${V}
 PKGNAME=	gopher-${V}
-REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://quux.org/devel/gopher/Downloads/
@@ -21,7 +20,7 @@ MASTER_SITES=	${HOMEPAGE}
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	CLIENTLIB=${SYSCONFDIR}/gopher
-WRKDIST=	${WRKDIR}/gopher
+WRKDIST=	${WRKDIR}/gopher-release-${V}
 NO_TEST=	Yes
 
 pre-configure:
