@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:45:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/01/21 14:36:55 kmos Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
@@ -19,7 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	src
 
-TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION}
+TEST_ENV =		PYTHONPATH=${WRKSRC}/lib
 
 FLAVORS =		python3
 FLAVOR ?=
