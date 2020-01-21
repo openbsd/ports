@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/21 17:30:21 fcambus Exp $
 
 COMMENT =	fuzzy text selector for the terminal
 
 V =		1.0
 DISTNAME =	fzy-$V
+REVISION =	0
 
 CATEGORIES =	textproc
+
+HOMEPAGE =	https://github.com/jhawthorn/fzy
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
