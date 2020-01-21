@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/08/05 06:19:12 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.10 2020/01/21 08:02:56 gonzalo Exp $
 
-COMMENT =		federated status updater
+COMMENT =		federated status conveyance
 
-DISTNAME =		honk-0.7.7
+DISTNAME =		honk-0.8.6
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
@@ -35,5 +35,9 @@ post-install:
 		${EXAMPLESDIR}/views/
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/schema.sql \
 		${EXAMPLESDIR}/
+.for _i in 1 3 5 7 8
+	${INSTALL_MAN} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/docs/*.${_i} \
+		${PREFIX}/man/man${_i}
+.endfor
 
 .include <bsd.port.mk>

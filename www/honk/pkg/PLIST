@@ -1,16 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/07/25 02:18:25 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/01/21 08:02:56 gonzalo Exp $
 @newgroup _honk:833
 @newuser _honk:833:_honk:daemon:Honk User:${VARBASE}/honk:/sbin/nologin
 @rcscript ${RCDIR}/honk
 @bin bin/honk
+@man man/man1/hfcs.1
+@man man/man1/honk.1
+@man man/man1/intro.1
+@man man/man3/honk.3
+@man man/man3/vim.3
+@man man/man5/honk.5
+@man man/man7/activitypub.7
+@man man/man8/honk.8
 share/doc/honk/
 share/doc/honk/README
-share/doc/honk/admin.txt
+share/doc/honk/activitypub.7
+share/doc/honk/activitypub.7.html
 share/doc/honk/changelog.txt
-share/doc/honk/manual.txt
+share/doc/honk/hfcs.1
+share/doc/honk/hfcs.1.html
+share/doc/honk/honk.1
+share/doc/honk/honk.1.html
+share/doc/honk/honk.3
+share/doc/honk/honk.3.html
+share/doc/honk/honk.5
+share/doc/honk/honk.5.html
+share/doc/honk/honk.8
+share/doc/honk/honk.8.html
+share/doc/honk/intro.1
+share/doc/honk/intro.1.html
+share/doc/honk/mandoc.css
 share/doc/honk/ping.txt
-share/doc/honk/security.txt
-share/doc/honk/spec.txt
+share/doc/honk/screenshot-afterpost.jpg
+share/doc/honk/screenshot-compose.png
+share/doc/honk/screenshot-honk.png
+share/doc/honk/vim.3
+share/doc/honk/vim.3.html
 share/doc/pkg-readmes/${PKGSTEM}
 @mode 750
 @owner _honk
@@ -19,6 +43,9 @@ share/doc/pkg-readmes/${PKGSTEM}
 @sample ${VARBASE}/honk/emus/
 @sample ${VARBASE}/honk/memes/
 @sample ${VARBASE}/honk/views/
+@mode
+@owner
+@group
 share/examples/honk/
 share/examples/honk/schema.sql
 @sample ${VARBASE}/honk/schema.sql
@@ -33,19 +60,29 @@ share/examples/honk/views/funzone.html
 @sample ${VARBASE}/honk/views/funzone.html
 share/examples/honk/views/header.html
 @sample ${VARBASE}/honk/views/header.html
+share/examples/honk/views/hfcs.html
+@sample ${VARBASE}/honk/views/hfcs.html
 share/examples/honk/views/honk.html
 @sample ${VARBASE}/honk/views/honk.html
 share/examples/honk/views/honkers.html
 @sample ${VARBASE}/honk/views/honkers.html
 share/examples/honk/views/honkform.html
 @sample ${VARBASE}/honk/views/honkform.html
+share/examples/honk/views/honkfrags.html
+@sample ${VARBASE}/honk/views/honkfrags.html
 share/examples/honk/views/honkpage.html
 @sample ${VARBASE}/honk/views/honkpage.html
+share/examples/honk/views/honkpage.js
+@sample ${VARBASE}/honk/views/honkpage.js
 share/examples/honk/views/login.html
 @sample ${VARBASE}/honk/views/login.html
+share/examples/honk/views/msg.html
+@sample ${VARBASE}/honk/views/msg.html
+share/examples/honk/views/onts.html
+@sample ${VARBASE}/honk/views/onts.html
+share/examples/honk/views/pleroma.css
+@sample ${VARBASE}/honk/views/pleroma.css
 share/examples/honk/views/style.css
 @sample ${VARBASE}/honk/views/style.css
 share/examples/honk/views/xzone.html
 @sample ${VARBASE}/honk/views/xzone.html
-share/examples/honk/views/zonkers.html
-@sample ${VARBASE}/honk/views/zonkers.html
