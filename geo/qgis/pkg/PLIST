@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2019/12/12 10:54:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.57 2020/01/21 12:50:46 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -895,6 +895,7 @@ include/qgis/qgsreferencedgeometry.h
 include/qgis/qgsregularpolygon.h
 include/qgis/qgsrelation.h
 include/qgis/qgsrelationaggregatesearchwidgetwrapper.h
+include/qgis/qgsrelationcontext.h
 include/qgis/qgsrelationeditorwidget.h
 include/qgis/qgsrelationmanager.h
 include/qgis/qgsrelationreferenceconfigdlg.h
@@ -1379,6 +1380,7 @@ share/qgis/i18n/qgis_es.qm
 share/qgis/i18n/qgis_et.qm
 share/qgis/i18n/qgis_eu.qm
 share/qgis/i18n/qgis_fi.qm
+share/qgis/i18n/qgis_fr.qm
 share/qgis/i18n/qgis_gl.qm
 share/qgis/i18n/qgis_hi.qm
 share/qgis/i18n/qgis_hu.qm
@@ -1394,13 +1396,16 @@ share/qgis/i18n/qgis_nb.qm
 share/qgis/i18n/qgis_nl.qm
 share/qgis/i18n/qgis_pl.qm
 share/qgis/i18n/qgis_pt_BR.qm
+share/qgis/i18n/qgis_pt_PT.qm
 share/qgis/i18n/qgis_ro.qm
 share/qgis/i18n/qgis_ru.qm
 share/qgis/i18n/qgis_sl.qm
+share/qgis/i18n/qgis_sv.qm
 share/qgis/i18n/qgis_tr.qm
 share/qgis/i18n/qgis_uk.qm
 share/qgis/i18n/qgis_vi.qm
 share/qgis/i18n/qgis_zh-Hans.qm
+share/qgis/i18n/qgis_zh-Hant.qm
 share/qgis/images/
 share/qgis/images/icons/
 share/qgis/images/icons/qbrowser-icon.png
