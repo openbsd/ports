@@ -5,3 +5,13 @@ programmatic website development in Python easy. Several key points:
 * Utilizes a minimalist, component-based philosophy that makes it
   easy to expand on
 * Harness existing knowledge about Python
+
+***** Pylons is now in maintenance-only mode. *****
+
+The Pylons web framework has merged with repoze.bfg into Pyramid, and is
+now in maintenance-only mode. You may submit a pull request or issue,
+then respectfully request of the maintainers to accept it and make a
+release.
+
+It's highly recommended that new projects start with the new
+merged web framework, Pyramid.
