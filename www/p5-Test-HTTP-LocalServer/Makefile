@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/01/02 12:34:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/21 19:18:41 bluhm Exp $
 
 COMMENT =	spawn a local HTTP server for testing
 
-DISTNAME =	Test-HTTP-LocalServer-0.69
+DISTNAME =	Test-HTTP-LocalServer-0.71
 
 CATEGORIES =	www
 
