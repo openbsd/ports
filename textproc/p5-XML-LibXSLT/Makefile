@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2020/01/21 19:27:58 bluhm Exp $
 
 COMMENT =	interface to the GNOME libxslt library
 
-DISTNAME =	XML-LibXSLT-1.96
+DISTNAME =	XML-LibXSLT-1.99
 
 CATEGORIES =	textproc
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c exslt>=7 gcrypt gpg-error iconv intl lzma m perl \
