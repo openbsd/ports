@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2019/10/24 13:33:04 pvk Exp $
+# $OpenBSD: Makefile,v 1.22 2020/01/21 08:28:14 pvk Exp $
 
 COMMENT =		Python package to check certificates using the OpenBSD CA
 
-MODPY_EGG_VERSION =	2019.9.11
+MODPY_EGG_VERSION =	2019.11.28
 DISTNAME =		certifi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel security
