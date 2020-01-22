@@ -1,4 +1,4 @@
-$OpenBSD: patch-egg_egg-secure-memory_c,v 1.5 2019/03/28 15:52:30 robert Exp $
+$OpenBSD: patch-egg_egg-secure-memory_c,v 1.6 2020/01/22 05:47:36 ajacoutot Exp $
 
 using mlock(2) to try avoiding pushing pages to swap is not what the syscall
 was intended for and relying on this for security purproses is nonsense especially
@@ -26,13 +26,15 @@ Index: egg/egg-secure-memory.c
  			fprintf (stderr, "couldn't lock %lu bytes of memory (%s): %s\n",
  			         (unsigned long)*sz, during_tag, strerror (errno));
  			show_warning = 0;
-@@ -882,19 +882,12 @@ sec_acquire_pages (size_t *sz,
+@@ -882,6 +882,7 @@ sec_acquire_pages (size_t *sz,
  		munmap (pages, *sz);
  		return NULL;
  	}
 +#endif
  
  	DEBUG_ALLOC ("gkr-secure-memory: new block ", *sz);
+ 
+@@ -900,14 +901,6 @@ sec_acquire_pages (size_t *sz,
  
  	show_warning = 1;
  	return pages;
@@ -47,7 +49,7 @@ Index: egg/egg-secure-memory.c
  }
  
  static void
-@@ -903,18 +896,15 @@ sec_release_pages (void *pages, size_t sz)
+@@ -916,18 +909,15 @@ sec_release_pages (void *pages, size_t sz)
  	ASSERT (pages);
  	ASSERT (sz % getpagesize () == 0);
  
