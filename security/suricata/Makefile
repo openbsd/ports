@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2019/12/16 15:33:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2020/01/22 10:21:47 sthen Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 SURICATA_V =	5.0.1
 SUPDATE_V =	1.1.1
+REVISION =	0
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
@@ -72,8 +73,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.config ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/suricata.yaml ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${PREFIX}/share/examples/suricata/rules
-	rm ${PREFIX}/share/doc/suricata/{*.txt,GITGUIDE,INSTALL*}
-	${INSTALL_DATA} ${WRKSRC}/doc/{AUTHORS,NEWS,README,TODO} \
-		${PREFIX}/share/doc/suricata
+	rm -r ${PREFIX}/share/doc/suricata # nothing particularly useful in there as of 5.0.1
 
 .include <bsd.port.mk>
