@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.133 2019/11/01 19:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2020/01/22 05:46:23 ajacoutot Exp $
 
 # XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
 # would create dependency loops:                                                
 # libsecret -> gnome-keyring -> pinentry -> libsecret                           
 # libsecret -> gnome-keyring -> gcr -> gnupg2 -> pinentry -> gcr                
-# org.freedesktop.secrets                                                       
-# (XXX add "gnome-keyring-*|ksecretsservice-*" when implemented)  
 
 COMMENT=		password agent for the GNOME project
 
