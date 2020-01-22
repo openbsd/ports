@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/02/17 20:22:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/01/22 05:53:01 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/pycountry/
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/databases/iso3166-2.json
 lib/python${MODPY_VERSION}/site-packages/pycountry/databases/iso3166-3.json
 lib/python${MODPY_VERSION}/site-packages/pycountry/databases/iso4217.json
 lib/python${MODPY_VERSION}/site-packages/pycountry/databases/iso639-3.json
+lib/python${MODPY_VERSION}/site-packages/pycountry/databases/iso639-5.json
 lib/python${MODPY_VERSION}/site-packages/pycountry/db.py
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ab/
@@ -54,6 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ar/LC_MESSAGES/iso159
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ar/LC_MESSAGES/iso3166-1.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ar/LC_MESSAGES/iso3166-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ar/LC_MESSAGES/iso3166.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ar/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ar/LC_MESSAGES/iso639-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ar/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/as/
@@ -94,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/be/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/be/LC_MESSAGES/iso3166-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/be/LC_MESSAGES/iso3166.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/be/LC_MESSAGES/iso4217.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/be/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/bg/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/bg/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/bg/LC_MESSAGES/iso15924.mo
@@ -211,6 +214,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/da/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/da/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/da/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/da/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/da/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/da/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/de/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/de/LC_MESSAGES/
@@ -222,6 +226,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/de/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/de/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/de/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/de/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/de/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/de/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/dv/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/dv/LC_MESSAGES/
@@ -244,6 +249,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/el/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/el/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/el/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/el/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/el/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/el/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/en/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/en/LC_MESSAGES/
@@ -279,6 +285,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/et/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/et/LC_MESSAGES/iso3166.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/et/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/et/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/et/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/et/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/eu/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/eu/LC_MESSAGES/
@@ -326,6 +333,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/fr/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/fr/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/fr/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/fr/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/fr/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/fr/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/frp/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/frp/LC_MESSAGES/
@@ -387,6 +395,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/he/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/he/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/he/LC_MESSAGES/iso15924.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/he/LC_MESSAGES/iso3166-1.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/he/LC_MESSAGES/iso3166-2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/he/LC_MESSAGES/iso3166-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/he/LC_MESSAGES/iso3166.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/he/LC_MESSAGES/iso639-3.mo
@@ -419,6 +428,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/hu/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/hu/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/hu/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/hu/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/hu/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/hu/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/hy/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/hy/LC_MESSAGES/
@@ -441,6 +451,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/id/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/id/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/id/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/id/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/id/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/id/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/io/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/io/LC_MESSAGES/
@@ -454,6 +465,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/is/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/is/LC_MESSAGES/iso3166.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/is/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/is/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/is/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/is/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/it/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/it/LC_MESSAGES/
@@ -465,6 +477,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/it/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/it/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/it/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/it/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/it/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/it/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/iu/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/iu/LC_MESSAGES/
@@ -645,6 +658,10 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nb/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nb/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nb/LC_MESSAGES/iso639-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nb/LC_MESSAGES/iso639_3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nb_NO/
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nb_NO/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nb_NO/LC_MESSAGES/iso3166-2.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nb_NO/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ne/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ne/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ne/LC_MESSAGES/iso3166-1.mo
@@ -660,6 +677,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nl/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nl/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nl/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nl/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nl/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nl/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nn/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/nn/LC_MESSAGES/
@@ -723,6 +741,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/pl/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/pl/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/pl/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/pl/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/pl/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/pl/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ps/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ps/LC_MESSAGES/
@@ -785,6 +804,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sc/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sc/LC_MESSAGES/iso3166-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sc/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sc/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sc/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sd/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sd/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sd/LC_MESSAGES/iso3166-1.mo
@@ -838,6 +858,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr@latin/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr@latin/LC_MESSAGES/
@@ -849,6 +870,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr@latin/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr@latin/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr@latin/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr@latin/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr@latin/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sr@latin/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sv/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sv/LC_MESSAGES/
@@ -860,6 +882,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sv/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sv/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sv/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sv/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sv/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sv/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sw/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/sw/LC_MESSAGES/
@@ -956,6 +979,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/uk/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/uk/LC_MESSAGES/iso3166_2.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/uk/LC_MESSAGES/iso4217.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/uk/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/uk/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/uk/LC_MESSAGES/iso639_3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ur/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/ur/LC_MESSAGES/
@@ -1030,6 +1054,9 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_HK/LC_MESSAGES/iso
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_HK/LC_MESSAGES/iso3166-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_HK/LC_MESSAGES/iso3166.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_HK/LC_MESSAGES/iso4217.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_Hant/
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_Hant/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_Hant/LC_MESSAGES/iso639-5.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_TW/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_TW/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zh_TW/LC_MESSAGES/iso15924.mo
