@@ -1,0 +1,13 @@
+$OpenBSD: patch-keama_data_c,v 1.1 2020/01/22 16:11:55 sthen Exp $
+
+Index: keama/data.c
+--- keama/data.c.orig
++++ keama/data.c
+@@ -23,6 +23,7 @@
+ #include "data.h"
+ 
+ #include <sys/types.h>
++#include <sys/socket.h>
+ #include <arpa/inet.h>
+ #include <assert.h>
+ #include <stdlib.h>

@@ -1,18 +1,20 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/10/12 20:10:16 sthen Exp $
-@newgroup _isc-dhcp:744
-@newuser _isc-dhcp:744:_isc-dhcp:daemon:ISC DHCP user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST-main,v 1.6 2020/01/22 16:11:55 sthen Exp $
 @conflict isc-dhcp-*
 @pkgpath net/isc-dhcp
+@newgroup _isc-dhcp:744
+@newuser _isc-dhcp:744:_isc-dhcp:daemon:ISC DHCP user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/isc_dhcpd
+@rcscript ${RCDIR}/isc_dhcrelay
 @man man/man5/dhcp-eval.5
 @man man/man5/dhcp-options.5
 @man man/man5/dhcpd.conf.5
 @man man/man5/dhcpd.leases.5
 @man man/man8/dhcpd.8
 @man man/man8/dhcrelay.8
+@man man/man8/keama.8
 @bin sbin/dhcpd
 @bin sbin/dhcrelay
+@bin sbin/keama
 share/examples/isc-dhcp/
 share/examples/isc-dhcp/dhcpd.conf
 @extra /var/db/dhcpd.leases
-@rcscript ${RCDIR}/isc_dhcpd
-@rcscript ${RCDIR}/isc_dhcrelay

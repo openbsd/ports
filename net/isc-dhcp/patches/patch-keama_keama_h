@@ -1,0 +1,13 @@
+$OpenBSD: patch-keama_keama_h,v 1.1 2020/01/22 16:11:55 sthen Exp $
+
+Index: keama/keama.h
+--- keama/keama.h.orig
++++ keama/keama.h
+@@ -29,6 +29,7 @@
+ #include "dhctoken.h"
+ 
+ #include <time.h>
++#include <sys/socket.h>
+ 
+ /* Resolution of FQDNs into IPv4 addresses */
+ enum resolve { 

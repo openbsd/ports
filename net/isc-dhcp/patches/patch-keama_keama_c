@@ -1,0 +1,14 @@
+$OpenBSD: patch-keama_keama_c,v 1.1 2020/01/22 16:11:55 sthen Exp $
+
+Index: keama/keama.c
+--- keama/keama.c.orig
++++ keama/keama.c
+@@ -22,6 +22,8 @@
+  */
+ 
+ #include <sys/errno.h>
++#include <sys/socket.h>
++#include <errno.h>
+ #include <arpa/inet.h>
+ #include <assert.h>
+ #include <fcntl.h>

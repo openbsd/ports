@@ -1,11 +1,11 @@
-$OpenBSD: patch-bind_Makefile_in,v 1.4 2019/12/20 21:06:17 sthen Exp $
+$OpenBSD: patch-bind_Makefile_in,v 1.5 2020/01/22 16:11:55 sthen Exp $
 Index: bind/Makefile.in
 --- bind/Makefile.in.orig
 +++ bind/Makefile.in
 @@ -24,7 +24,7 @@ exec_prefix = @exec_prefix@
  bindconfig = --without-openssl --without-libxml2 --without-libjson \
  	--without-gssapi --disable-threads --without-lmdb \
- 	--includedir=@includedir@ --libdir=@libdir@ \
+ 	--includedir=@includedir@ --libdir=@libdir@  --without-python\
 -	@BINDLT@ @BINDIOMUX@ @BINDCONFIG@ --enable-full-report
 +	@BINDLT@ @BINDIOMUX@ @BINDCONFIG@ --enable-full-report --disable-backtrace
  
