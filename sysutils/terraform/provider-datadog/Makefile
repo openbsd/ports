@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/17 19:30:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/22 05:18:55 ajacoutot Exp $
 
 PROVIDER=		datadog
-GH_TAGNAME=		v2.5.0
+GH_TAGNAME=		v2.6.0
 
 .include <bsd.port.mk>
