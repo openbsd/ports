@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.202 2020/01/03 09:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.203 2020/01/22 05:00:59 ajacoutot Exp $
 
 COMMENT=		AWS SDK for Python
 
-MODPY_EGG_VERSION=	1.10.46
+MODPY_EGG_VERSION=	1.11.7
 DISTNAME=		boto3-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -24,7 +24,7 @@ FLAVORS=		python3
 FLAVOR ?=
 
 RUN_DEPENDS=		devel/py-jmespath${MODPY_FLAVOR} \
-			net/py-botocore${MODPY_FLAVOR}=1.13.${MODPY_EGG_VERSION:E} \
+			net/py-botocore${MODPY_FLAVOR}=1.14.${MODPY_EGG_VERSION:E} \
 			net/py-s3transfer${MODPY_FLAVOR}
 
 .if !${FLAVOR:Mpython3}
