@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2020/01/10 13:30:41 martin Exp $
+# $OpenBSD: Makefile,v 1.2 2020/01/23 21:21:08 martin Exp $
 
 COMMENT=	Python package to manage extremely large amounts of data
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	3.6.1
 DISTNAME=		tables-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
+REVISION=		0
 
 HOMEPAGE=		https://www.pytables.org/
 MAINTAINER=		Martin Reindl <martin@catai.org>
@@ -13,12 +14,12 @@ MAINTAINER=		Martin Reindl <martin@catai.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
+COMPILER=		base-clang ports-gcc
+
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 MODPY_PI=		Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODPY_PYTEST=		Yes
-MODPY_PYTEST_ARGS=	${TESTLIBDIR}
 
 WANTLIB=	pthread ${MODPY_WANTLIB} blosc bz2 hdf5 lzo2
 
@@ -38,12 +39,11 @@ LIB_DEPENDS+=	archivers/lzo2 \
 
 RUN_DEPENDS+=	math/netcdf
 
-TEST_DEPENDS=	devel/py-coveralls${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		math/py-numexpr${MODPY_FLAVOR}
+TEST_DEPENDS=	math/py-numexpr${MODPY_FLAVOR} \
+		math/hdf5
 
-TESTLIBDIR=	${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/tables/
-
-TEST_ENV=	PYTHONPATH=${WRKSRC}/${TESTLIBDIR}
+do-test: fake
+	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+		${MODPY_BIN} -c 'import tables ; tables.test()'
 
 .include <bsd.port.mk>
