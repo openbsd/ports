@@ -1,0 +1,41 @@
+$OpenBSD: patch-lib_isc_aes_c,v 1.1 2020/01/23 22:08:08 sthen Exp $
+
+Index: lib/isc/aes.c
+--- lib/isc/aes.c.orig
++++ lib/isc/aes.c
+@@ -24,7 +24,7 @@
+ #include <openssl/opensslv.h>
+ #include <openssl/evp.h>
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define EVP_CIPHER_CTX_new() &(_context), EVP_CIPHER_CTX_init(&_context)
+ #define EVP_CIPHER_CTX_free(c) RUNTIME_CHECK(EVP_CIPHER_CTX_cleanup(c) == 1)
+ #endif
+@@ -33,7 +33,7 @@ void
+ isc_aes128_crypt(const unsigned char *key, const unsigned char *in,
+ 		 unsigned char *out)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	EVP_CIPHER_CTX _context;
+ #endif
+ 	EVP_CIPHER_CTX *c;
+@@ -53,7 +53,7 @@ void
+ isc_aes192_crypt(const unsigned char *key, const unsigned char *in,
+ 		 unsigned char *out)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	EVP_CIPHER_CTX _context;
+ #endif
+ 	EVP_CIPHER_CTX *c;
+@@ -73,7 +73,7 @@ void
+ isc_aes256_crypt(const unsigned char *key, const unsigned char *in,
+ 		 unsigned char *out)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	EVP_CIPHER_CTX _context;
+ #endif
+ 	EVP_CIPHER_CTX *c;
