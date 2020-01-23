@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/01/23 18:10:55 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2020/01/23 19:06:43 robert Exp $
 
 COMMENT=		color-able replacement for tail(1)
 
@@ -8,7 +8,6 @@ GH_TAGNAME=		0.3.3
 
 CATEGORIES=		sysutils
 
-MASTER_SITES=		http://keyserver.kjsl.com/~jharris/distfiles/
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPLv2+
