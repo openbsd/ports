@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/01/20 19:00:39 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.29 2020/01/23 13:43:34 pvk Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/kibana/{data,plugins}/*
@@ -610,10 +610,10 @@ kibana/built_assets/.cache/ui_bundles/babel/478e926fc829a79e3208803af30613da.jso
 kibana/built_assets/.cache/ui_bundles/babel/47b1d4868abccee188d7231e8840dbc6.json
 kibana/built_assets/.cache/ui_bundles/babel/47e124b91577bc3ada920f10d23e71db.json
 kibana/built_assets/.cache/ui_bundles/babel/482c898e0f10b0dd7f25c0a63bc2ba83.json
+kibana/built_assets/.cache/ui_bundles/babel/4895a1bde84e539937c36b7446b9f221.json
 kibana/built_assets/.cache/ui_bundles/babel/48bb5ac97728d7c40b9a1f301ec99bf0.json
 kibana/built_assets/.cache/ui_bundles/babel/48d7551cd161827ffd9e985ada6b7df4.json
 kibana/built_assets/.cache/ui_bundles/babel/48f52a48b0fb55f4de7ed5ef305e0f64.json
-kibana/built_assets/.cache/ui_bundles/babel/493242bf76e2448ffcc43ce6e450e7fb.json
 kibana/built_assets/.cache/ui_bundles/babel/4952cfd42ded6dde9d709b660efaf4ce.json
 kibana/built_assets/.cache/ui_bundles/babel/4963faa46c3a6acc73fbec5b252aef05.json
 kibana/built_assets/.cache/ui_bundles/babel/4984f030582a31ec0c13acde2f094742.json
@@ -943,6 +943,7 @@ kibana/built_assets/.cache/ui_bundles/babel/73e33e89049be0d640a942344b40d909.jso
 kibana/built_assets/.cache/ui_bundles/babel/742ed547d6365e4bdae99fc484df8f3c.json
 kibana/built_assets/.cache/ui_bundles/babel/74413176de5e53c0a072c510a4e2994c.json
 kibana/built_assets/.cache/ui_bundles/babel/745bf0de9f0c7b3da1872aac2288c369.json
+kibana/built_assets/.cache/ui_bundles/babel/7483873a499118702a8949df6ae458f1.json
 kibana/built_assets/.cache/ui_bundles/babel/74b02bb0aacc5b01bf1f5c1daae785e0.json
 kibana/built_assets/.cache/ui_bundles/babel/74b82b7393aea66ad4368fbd0ce7d687.json
 kibana/built_assets/.cache/ui_bundles/babel/74fc3617b7659f4f208b7dcb73fd4a2e.json
@@ -1292,7 +1293,6 @@ kibana/built_assets/.cache/ui_bundles/babel/a40655b990d44315412a4222da19d5a5.jso
 kibana/built_assets/.cache/ui_bundles/babel/a40e7fe0251a2f8d74bbe79745754e1f.json
 kibana/built_assets/.cache/ui_bundles/babel/a44e879db89122a109dac68313342c99.json
 kibana/built_assets/.cache/ui_bundles/babel/a4578de61a6a20cc684cb2b9adea5e4f.json
-kibana/built_assets/.cache/ui_bundles/babel/a46e3566eb562259cd27cbb0ea2ca41f.json
 kibana/built_assets/.cache/ui_bundles/babel/a487a9022332331ace44ed8d684141a1.json
 kibana/built_assets/.cache/ui_bundles/babel/a491617a03546e19a5b457b1691730d1.json
 kibana/built_assets/.cache/ui_bundles/babel/a50deea7c02498f6bfce9cd75d7cc68d.json
@@ -24864,6 +24864,7 @@ kibana/node_modules/caniuse-lite/data/features/html-media-capture.js
 kibana/node_modules/caniuse-lite/data/features/html5semantic.js
 kibana/node_modules/caniuse-lite/data/features/http-live-streaming.js
 kibana/node_modules/caniuse-lite/data/features/http2.js
+kibana/node_modules/caniuse-lite/data/features/http3.js
 kibana/node_modules/caniuse-lite/data/features/iframe-sandbox.js
 kibana/node_modules/caniuse-lite/data/features/iframe-seamless.js
 kibana/node_modules/caniuse-lite/data/features/iframe-srcdoc.js
@@ -24897,6 +24898,7 @@ kibana/node_modules/caniuse-lite/data/features/insertadjacenthtml.js
 kibana/node_modules/caniuse-lite/data/features/internationalization-plural-rul.js
 kibana/node_modules/caniuse-lite/data/features/internationalization.js
 kibana/node_modules/caniuse-lite/data/features/intersectionobserver.js
+kibana/node_modules/caniuse-lite/data/features/intl-pluralrules.js
 kibana/node_modules/caniuse-lite/data/features/intrinsic-width.js
 kibana/node_modules/caniuse-lite/data/features/jpeg2000.js
 kibana/node_modules/caniuse-lite/data/features/jpegxr.js
@@ -24915,6 +24917,7 @@ kibana/node_modules/caniuse-lite/data/features/let.js
 kibana/node_modules/caniuse-lite/data/features/link-icon-png.js
 kibana/node_modules/caniuse-lite/data/features/link-icon-svg.js
 kibana/node_modules/caniuse-lite/data/features/link-rel-dns-prefetch.js
+kibana/node_modules/caniuse-lite/data/features/link-rel-modulepreload.js
 kibana/node_modules/caniuse-lite/data/features/link-rel-preconnect.js
 kibana/node_modules/caniuse-lite/data/features/link-rel-prefetch.js
 kibana/node_modules/caniuse-lite/data/features/link-rel-preload.js
@@ -24945,6 +24948,7 @@ kibana/node_modules/caniuse-lite/data/features/multicolumn.js
 kibana/node_modules/caniuse-lite/data/features/mutation-events.js
 kibana/node_modules/caniuse-lite/data/features/mutationobserver.js
 kibana/node_modules/caniuse-lite/data/features/namevalue-storage.js
+kibana/node_modules/caniuse-lite/data/features/native-filesystem-api.js
 kibana/node_modules/caniuse-lite/data/features/nav-timing.js
 kibana/node_modules/caniuse-lite/data/features/navigator-language.js
 kibana/node_modules/caniuse-lite/data/features/netinfo.js
@@ -25057,6 +25061,7 @@ kibana/node_modules/caniuse-lite/data/features/text-emphasis.js
 kibana/node_modules/caniuse-lite/data/features/text-overflow.js
 kibana/node_modules/caniuse-lite/data/features/text-size-adjust.js
 kibana/node_modules/caniuse-lite/data/features/text-stroke.js
+kibana/node_modules/caniuse-lite/data/features/text-underline-offset.js
 kibana/node_modules/caniuse-lite/data/features/textcontent.js
 kibana/node_modules/caniuse-lite/data/features/textencoder.js
 kibana/node_modules/caniuse-lite/data/features/tls1-1.js
@@ -25092,6 +25097,7 @@ kibana/node_modules/caniuse-lite/data/features/web-share.js
 kibana/node_modules/caniuse-lite/data/features/webauthn.js
 kibana/node_modules/caniuse-lite/data/features/webgl.js
 kibana/node_modules/caniuse-lite/data/features/webgl2.js
+kibana/node_modules/caniuse-lite/data/features/webhid.js
 kibana/node_modules/caniuse-lite/data/features/webm.js
 kibana/node_modules/caniuse-lite/data/features/webp.js
 kibana/node_modules/caniuse-lite/data/features/websockets.js
@@ -25099,6 +25105,7 @@ kibana/node_modules/caniuse-lite/data/features/webusb.js
 kibana/node_modules/caniuse-lite/data/features/webvr.js
 kibana/node_modules/caniuse-lite/data/features/webvtt.js
 kibana/node_modules/caniuse-lite/data/features/webworkers.js
+kibana/node_modules/caniuse-lite/data/features/webxr.js
 kibana/node_modules/caniuse-lite/data/features/will-change.js
 kibana/node_modules/caniuse-lite/data/features/woff.js
 kibana/node_modules/caniuse-lite/data/features/woff2.js
@@ -41650,6 +41657,11 @@ kibana/node_modules/tiny-warning/dist/
 kibana/node_modules/tiny-warning/dist/tiny-warning.cjs.js
 kibana/node_modules/tiny-warning/package.json
 kibana/node_modules/tinycolor2/
+kibana/node_modules/tinycolor2/LICENSE
+kibana/node_modules/tinycolor2/README.md
+kibana/node_modules/tinycolor2/dist/
+kibana/node_modules/tinycolor2/dist/tinycolor-min.js
+kibana/node_modules/tinycolor2/index.html
 kibana/node_modules/tinycolor2/package.json
 kibana/node_modules/tinycolor2/tinycolor.js
 kibana/node_modules/tinygradient/
@@ -46399,13 +46411,13 @@ kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/gener
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/index.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/filter_editor_utils.js
+kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/filter_label.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/filter_operators.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/fixtures/
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/fixtures/exists_filter.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/fixtures/phrase_filter.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/fixtures/phrases_filter.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/fixtures/range_filter.js
-kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/lib/get_filter_display_text.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/phrase_suggestor.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/phrase_value_input.js
 kibana/src/legacy/core_plugins/data/public/filter/filter_bar/filter_editor/phrases_values_input.js
