@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/28 07:25:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/23 00:36:56 bluhm Exp $
 
 COMMENT=	tool to measure maximum achievable bandwidth on IP networks
 
 V=		3.7
+REVISION=	0
 PKGNAME=	iperf3-${V}
 DISTNAME=	iperf-${V}
 

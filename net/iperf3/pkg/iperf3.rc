@@ -1,0 +1,12 @@
+#!/bin/ksh
+#
+# $OpenBSD: iperf3.rc,v 1.1 2020/01/23 00:36:56 bluhm Exp $
+
+daemon="${TRUEPREFIX}/bin/iperf3 -s -D"
+daemon_user="_iperf3"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
