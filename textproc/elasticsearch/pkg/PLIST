@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/01/20 18:59:41 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/01/23 13:42:12 pvk Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/elasticsearch.keystore
@@ -159,7 +159,7 @@ elasticsearch/modules/transport-netty4/transport-netty4-client-${V}.jar
 share/doc/elasticsearch/
 share/doc/elasticsearch/LICENSE.txt
 share/doc/elasticsearch/NOTICE.txt
-share/doc/elasticsearch/README.textile
+share/doc/elasticsearch/README.asciidoc
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/elasticsearch/
 @mode 0770
