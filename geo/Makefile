@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2020/01/16 17:57:43 landry Exp $
+# $OpenBSD: Makefile,v 1.70 2020/01/23 08:21:12 landry Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
@@ -14,6 +14,7 @@
      SUBDIR += gmapcatcher
      SUBDIR += gpsbabel
      SUBDIR += gpstk
+     SUBDIR += gpxsee
      SUBDIR += gpx-viewer
      SUBDIR += josm
      SUBDIR += libchamplain
