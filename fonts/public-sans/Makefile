@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/15 07:43:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/23 13:47:18 benoit Exp $
 
 COMMENT =		strong, neutral, principles-driven typeface
 
-V =			1.007
+V =			1.008
 DISTNAME =		public-sans-v$V
 PKGNAME =		public-sans-$V
 
