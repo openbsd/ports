@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2020/01/17 13:53:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2020/01/23 06:43:12 ajacoutot Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.31.0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		mpv		0.1 # 1.106
 
@@ -22,7 +22,7 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec
+WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm archive ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil bluray
 WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
 WANTLIB += fontconfig freetype fribidi gbm iconv jpeg lcms2 m
@@ -40,7 +40,8 @@ COMPILER_LANGS =	c
 BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils${MODPY_FLAVOR}
 
-LIB_DEPENDS =		audio/libcdio \
+LIB_DEPENDS =		archivers/libarchive \
+			audio/libcdio \
 			audio/libcdio-paranoia \
 			converters/libiconv \
 			devel/sdl2 \
@@ -72,7 +73,6 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-egl-drm \
 			--disable-gl-wayland \
 			--disable-jack \
-			--disable-libarchive \
 			--disable-rubberband \
 			--disable-oss-audio \
 			--disable-openal \
