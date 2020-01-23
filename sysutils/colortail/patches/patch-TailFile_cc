@@ -1,31 +1,17 @@
-$OpenBSD: patch-TailFile_cc,v 1.3 2017/04/23 22:18:32 sthen Exp $
---- TailFile.cc.orig	Thu Aug  5 00:09:38 1999
-+++ TailFile.cc	Sun Apr 23 23:04:29 2017
-@@ -17,7 +17,7 @@
-     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- */
- 
--#include <iostream.h>
-+#include <iostream>
- #include <string.h>
- #include <stdio.h>
- #include <sys/stat.h>
-@@ -25,6 +25,8 @@
- 
- #include "TailFile.h"
- 
-+using namespace std;
-+
- TailFile::TailFile()
- {
-    m_filename = NULL;
-@@ -417,6 +419,9 @@ void TailFile::follow_print(int n, int verbose, char *
+$OpenBSD: patch-TailFile_cc,v 1.4 2020/01/23 18:10:55 robert Exp $
+
+Index: TailFile.cc
+--- TailFile.cc.orig
++++ TailFile.cc
+@@ -352,7 +352,10 @@ void TailFile::follow_print(int n, int verbose, char *
        int ch = fgetc(m_file);
  
        // add the character to the string
+-      m_follow_buffer->put(ch);
 +      if (ch == EOF)
-+          clearerr(m_file);     // required by POSIX and ANSI
++            clearerr(m_file);     // required by POSIX and ANSI
 +      else
-       m_follow_buffer->put(ch);
++            m_follow_buffer->put(ch);
        
        // check if return
+       if (ch == '\n')
