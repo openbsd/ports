@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_openssl_c,v 1.13 2020/01/23 00:32:40 tb Exp $
+
+Index: src/openssl.c
+--- src/openssl.c.orig
++++ src/openssl.c
+@@ -446,8 +446,12 @@ static void openssl_read_callback(void *arg)
+ 
+   do
+     ret = SSL_read (conn, buf, bufsize);
+-  while (ret == -1 && SSL_get_error (conn, ret) == SSL_ERROR_SYSCALL
+-         && errno == EINTR);
++  while ((ret == -1
++         && SSL_get_error (conn, ret) == SSL_ERROR_SYSCALL
++         && errno == EINTR) ||
++          (ret < 0
++           && (SSL_get_error (conn, ret) == SSL_ERROR_WANT_READ
++	     || SSL_get_error (conn, ret) == SSL_ERROR_WANT_WRITE)));
+   args->retval = ret;
+ }
+ 
+@@ -474,9 +478,12 @@ openssl_write (int fd _GL_UNUSED, char *buf, int bufsi
+   SSL *conn = ctx->conn;
+   do
+     ret = SSL_write (conn, buf, bufsize);
+-  while (ret == -1
++  while ((ret == -1
+          && SSL_get_error (conn, ret) == SSL_ERROR_SYSCALL
+-         && errno == EINTR);
++         && errno == EINTR) ||
++          (ret < 0
++           && (SSL_get_error (conn, ret) == SSL_ERROR_WANT_READ
++	     || SSL_get_error (conn, ret) == SSL_ERROR_WANT_WRITE)));
+   return ret;
+ }
+ 
+@@ -591,7 +598,11 @@ static void
+ ssl_connect_with_timeout_callback(void *arg)
+ {
+   struct scwt_context *ctx = (struct scwt_context *)arg;
+-  ctx->result = SSL_connect(ctx->ssl);
++  do {
++	  ctx->result = SSL_connect(ctx->ssl);
++  } while (ctx->result < 0
++           && (SSL_get_error (ctx->ssl, ctx->result) == SSL_ERROR_WANT_READ
++	       || SSL_get_error (ctx->ssl, ctx->result) == SSL_ERROR_WANT_WRITE));
+ }
+ 
+ static const char *

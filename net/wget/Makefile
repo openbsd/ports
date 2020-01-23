@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.83 2019/07/12 20:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2020/01/23 00:32:39 tb Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
 DISTNAME =	wget-1.20.3
 CATEGORIES =	net
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
 MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
