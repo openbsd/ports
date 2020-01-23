@@ -1,4 +1,4 @@
-$OpenBSD: patch-filebeat_filebeat_yml,v 1.5 2019/10/24 14:37:09 pvk Exp $
+$OpenBSD: patch-filebeat_filebeat_yml,v 1.6 2020/01/23 13:52:17 pvk Exp $
 
 add_host_metadata processor not yet implemented for OpenBSD
 
@@ -21,5 +21,5 @@ Index: filebeat/filebeat.yml
 -  - add_host_metadata: ~
 +#  - add_host_metadata: ~
    - add_cloud_metadata: ~
- 
- #================================ Logging =====================================
+   - add_docker_metadata: ~
+   - add_kubernetes_metadata: ~
