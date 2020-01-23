@@ -1,0 +1,10 @@
+GPXSee is a GPS log file viewer and analyzer that supports all common GPS log
+file formats.
+* User-definable online maps (OpenStreetMap/Google tiles, WMTS, WMS, TMS,..)
+* Offline maps (OziExplorer maps, TrekBuddy maps/atlases, Garmin IMG & JNX
+  maps, TwoNav RMaps, GeoTIFF images, MBTiles)
+* Elevation, speed, heart rate, cadence, power, temperature and gear
+  ratio/shifts graphs
+* Support for POI files
+* Print/export to PDF
+* Multiple tracks in one view

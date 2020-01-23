@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/23 08:20:43 landry Exp $
+@bin bin/gpxsee
+share/applications/gpxsee.desktop
+share/gpxsee/
+share/gpxsee/csv/
+share/gpxsee/csv/ellipsoids.csv
+share/gpxsee/csv/gcs.csv
+share/gpxsee/csv/pcs.csv
+share/gpxsee/maps/
+share/gpxsee/maps/4UMaps.xml
+share/gpxsee/maps/Antarctica.xml
+share/gpxsee/maps/OpenStreetMap.xml
+share/gpxsee/maps/OpenTopoMap.xml
+share/gpxsee/maps/USGS-imagery.xml
+share/gpxsee/maps/USGS-topo.xml
+share/mime/packages/gpxsee.xml
+share/pixmaps/
+share/pixmaps/gpxsee.png
+@tag update-mime-database
+@tag update-desktop-database
