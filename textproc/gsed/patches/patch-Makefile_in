@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2020/01/23 00:36:27 bcallah Exp $
+
+Don't try to regen info file; our makeinfo is too old.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -3575,7 +3575,7 @@ check-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) check-TESTS
+ check: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) check-recursive
+-all-am: Makefile $(INFO_DEPS) $(PROGRAMS) $(LIBRARIES) $(MANS) $(DATA) \
++all-am: Makefile $(PROGRAMS) $(LIBRARIES) $(MANS) $(DATA) \
+ 		$(HEADERS) config.h
+ installdirs: installdirs-recursive
+ installdirs-am:
+@@ -3805,7 +3805,7 @@ install-html-am: $(HTMLS)
+ 	done; }
+ install-info: install-info-recursive
+ 
+-install-info-am: $(INFO_DEPS)
++install-info-am:
+ 	@$(NORMAL_INSTALL)
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+ 	list='$(INFO_DEPS)'; test -n "$(infodir)" || list=; \
