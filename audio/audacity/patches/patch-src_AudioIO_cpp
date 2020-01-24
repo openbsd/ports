@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_AudioIO_cpp,v 1.10 2019/09/26 13:54:54 sthen Exp $
+$OpenBSD: patch-src_AudioIO_cpp,v 1.11 2020/01/24 05:20:37 bket Exp $
 
 - CLOCK_MONOTONIC_RAW is not portable
 - PaUtil_GetTime is a private interface, not reachable when using system portaudio
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_AudioIO_cpp,v 1.10 2019/09/26 13:54:54 sthen Exp $
 Index: src/AudioIO.cpp
 --- src/AudioIO.cpp.orig
 +++ src/AudioIO.cpp
-@@ -802,18 +802,15 @@ static double streamStartTime = 0; // bias system time
+@@ -797,18 +797,15 @@ static double streamStartTime = 0; // bias system time
  static double SystemTime(bool usingAlsa)
  {
  #ifdef __WXGTK__
@@ -27,12 +27,12 @@ Index: src/AudioIO.cpp
  }
  #endif
  
-@@ -4738,7 +4735,7 @@ void AudioIoCallback::ComputeMidiTimings(
+@@ -3606,7 +3603,7 @@ void AudioIoCallback::ComputeMidiTimings(
     }
  
     /* GSW: Save timeInfo in case MidiPlayback needs it */
 -   mAudioCallbackClockTime = PaUtil_GetTime();
-+   mAudioCallbackClockTime = SystemTime(gAudioIO->mUsingAlsa);
++   mAudioCallbackClockTime = SystemTime(mUsingAlsa);
  
     /* for Linux, estimate a smooth audio time as a slowly-changing
        offset from system time */

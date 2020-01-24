@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/09/26 13:54:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/01/24 05:20:37 bket Exp $
 @bin bin/audacity
 @man man/man1/audacity.1
 share/appdata/
@@ -88,7 +88,6 @@ share/audacity/plug-ins/sample-data-export.ny
 share/audacity/plug-ins/sample-data-import.ny
 share/audacity/plug-ins/tremolo.ny
 share/audacity/plug-ins/vocalrediso.ny
-share/audacity/plug-ins/vocalremover.ny
 share/audacity/plug-ins/vocoder.ny
 share/doc/audacity/
 share/doc/audacity/LICENSE.txt
