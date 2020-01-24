@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2019/07/14 00:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2020/01/24 16:01:19 giovanni Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.4
-PATCHLEVEL=	3
+PATCHLEVEL=	4
 CATEGORIES=	news
-REVISION=	0
 
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		http://ftp.cuhk.edu.hk/pub/packages/news/tin/v${MAJORVERSION}/ \
@@ -28,7 +27,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c>=58.2 iconv icuuc intl curses pcre
 
 CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.13
+AUTOCONF_VERSION=	2.69
 
 # --with-x does not affect the build, but let's be safe.
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \

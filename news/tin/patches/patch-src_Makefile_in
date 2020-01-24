@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.8 2018/01/19 07:39:54 giovanni Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.9 2020/01/24 16:01:19 giovanni Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -79,6 +79,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ $(INTL_LIBS)
+@@ -81,6 +81,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ $(INTL_LIBS)
  # Where do you want the binary & manual page installed?
  DESTDIR	= @DESTDIR@
  INS_BINARY_DIR	= @bindir@
@@ -10,7 +10,7 @@ Index: src/Makefile.in
  INS_MANUAL_DIR	= @mandir@/man
  INS_SYSDEF_DIR	= @TIN_DEFAULTS_DIR@
  INS_MANUAL_EXT	= 1
-@@ -330,6 +331,7 @@ help :
+@@ -332,6 +333,7 @@ help :
  $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) \
  $(DESTDIR)$(INS_MANUAL_DIR)5 \
  $(DESTDIR)$(INS_BINARY_DIR) \
@@ -18,7 +18,7 @@ Index: src/Makefile.in
  $(DESTDIR)$(INS_SYSDEF_DIR) :
  	mkdir -p $@
  
-@@ -338,11 +340,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MAN
+@@ -340,11 +342,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MAN
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/$(PROJECT).$(INS_MANUAL_EXT)
  	@( $(CD) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) && $(RM) -f r$(PROJECT).$(INS_MANUAL_EXT) && $(LN) $(PROJECT).$(INS_MANUAL_EXT) r$(PROJECT).$(INS_MANUAL_EXT) )
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.5 $(DESTDIR)$(INS_MANUAL_DIR)5/$(PROJECT).5
@@ -30,7 +30,7 @@ Index: src/Makefile.in
  
  uninstall_manpage :
  	@$(ECHO) "Uninstalling $(PROJECT) manual page in $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) ..."
-@@ -380,13 +377,13 @@ uninstall_sysdefs :
+@@ -382,13 +379,13 @@ uninstall_sysdefs :
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/tin.defaults
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/mime.types
  
