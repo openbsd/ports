@@ -1,0 +1,85 @@
+$OpenBSD: patch-ui_base_x_x11_software_bitmap_presenter_cc,v 1.1 2020/01/24 15:35:16 robert Exp $
+
+https://chromium.googlesource.com/chromium/src.git/+/37078f9468a5a3ca90a29bcf2bd714824ae90a3f
+https://chromium.googlesource.com/chromium/src/+/cc007f73137623795e01102fe6175a39e4d18b81
+
+Index: ui/base/x/x11_software_bitmap_presenter.cc
+--- ui/base/x/x11_software_bitmap_presenter.cc.orig
++++ ui/base/x/x11_software_bitmap_presenter.cc
+@@ -117,7 +117,6 @@ bool X11SoftwareBitmapPresenter::CompositeBitmap(XDisp
+ 
+   XPutImage(display, widget, gc, bg.get(), x, y, x, y, width, height);
+ 
+-  XFlush(display);
+   return true;
+ }
+ 
+@@ -125,7 +124,7 @@ X11SoftwareBitmapPresenter::X11SoftwareBitmapPresenter
+     gfx::AcceleratedWidget widget,
+     base::TaskRunner* host_task_runner,
+     base::TaskRunner* event_task_runner)
+-    : widget_(widget), display_(gfx::GetXDisplay()), gc_(nullptr) {
++    : widget_(widget), display_(gfx::GetXDisplay()), gc_(nullptr), event_task_runner_(event_task_runner) {
+   DCHECK_NE(widget_, gfx::kNullAcceleratedWidget);
+   gc_ = XCreateGC(display_, widget_, 0, nullptr);
+   memset(&attributes_, 0, sizeof(attributes_));
+@@ -150,6 +149,29 @@ X11SoftwareBitmapPresenter::X11SoftwareBitmapPresenter
+   ui::GetIntProperty(widget_, "CHROMIUM_COMPOSITE_WINDOW", &composite_);
+ }
+ 
++void X11SoftwareBitmapPresenter::FlushAfterPutImage() {
++  // Ensure the new window content appears immediately. On a TYPE_UI thread we
++  // can rely on the message loop to flush for us so XFlush() isn't necessary.
++  // However, this code can run on a different thread and would have to wait for
++  // the TYPE_UI thread to no longer be idle before a flush happens.
++  XFlush(display_);
++
++  // Work around a race condition caused by XFlush above.  Explanation: XFlush()
++  // flushes all requests and *also* reads events.  It's unclear why it does
++  // this, but there's no alternative Xlib function that flushes the requests
++  // and *doesn't* read any events, so this workaround is necessary. In
++  // |event_task_runner_|'s message loop, poll() is called on the underlying
++  // XDisplay's fd to dispatch toplevel events.  When the fd is readable, poll()
++  // exits and we (via Xlib) check for new events by read()ing from the fd.  But
++  // if the event dispatcher is currently dispatching an event, then our call to
++  // XFlush() may read events into the event queue which will make the fd
++  // blocking since there's no more data to read, so poll() won't wake up until
++  // a new event comes, which may take a long time.  Forcing the event loop to
++  // wake up with a dummy event fixes the race condition.
++  if (event_task_runner_)
++    event_task_runner_->PostTask(FROM_HERE, base::BindOnce([] {}));
++}
++
+ X11SoftwareBitmapPresenter::~X11SoftwareBitmapPresenter() {
+   if (gc_)
+     XFreeGC(display_, gc_);
+@@ -198,7 +220,7 @@ void X11SoftwareBitmapPresenter::EndPaint(sk_sp<SkSurf
+                      rect.x(), rect.y(), rect.x(), rect.y(), rect.width(),
+                      rect.height(), x11::True)) {
+       needs_swap_ = true;
+-      XFlush(display_);
++      FlushAfterPutImage();
+       return;
+     }
+     skia_pixmap = shm_pool_->CurrentBitmap().pixmap();
+@@ -211,6 +233,7 @@ void X11SoftwareBitmapPresenter::EndPaint(sk_sp<SkSurf
+       CompositeBitmap(display_, widget_, rect.x(), rect.y(), rect.width(),
+                       rect.height(), attributes_.depth, gc_,
+                       skia_pixmap.addr())) {
++    FlushAfterPutImage();
+     return;
+   }
+ 
+@@ -274,11 +297,7 @@ void X11SoftwareBitmapPresenter::EndPaint(sk_sp<SkSurf
+                       rect.x(), rect.y(), rect.width(), rect.height());
+   }
+ 
+-  // Ensure the new window content appears immediately. On a TYPE_UI thread we
+-  // can rely on the message loop to flush for us so XFlush() isn't necessary.
+-  // However, this code can run on a different thread and would have to wait for
+-  // the TYPE_UI thread to no longer be idle before a flush happens.
+-  XFlush(display_);
++  FlushAfterPutImage();
+ }
+ 
+ void X11SoftwareBitmapPresenter::OnSwapBuffers(
