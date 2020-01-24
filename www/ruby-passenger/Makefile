@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2020/01/24 02:15:17 kmos Exp $
+# $OpenBSD: Makefile,v 1.66 2020/01/24 13:25:03 sthen Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
@@ -8,7 +8,7 @@ PASS_VERSION =		6.0.4
 NGINX_VERSION =		1.16.1
 DISTNAME =		passenger-${PASS_VERSION}
 
-ONLY_FOR_ARCHES =	aarch64 amd64 arm i386
+ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
 CATEGORIES =	www
 DISTFILES =	${DISTNAME}.gem \
