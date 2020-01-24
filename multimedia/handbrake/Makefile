@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/12/16 17:23:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/24 12:31:44 espie Exp $
 
 V = 		1.3.0
 COMMENT =	open source video transcoder
@@ -67,7 +67,8 @@ CONFIGURE_ARGS =	--disable-gtk-update-checks \
 USE_GMAKE =	Yes
 ALL_TARGET =	build
 MAKE_ENV =	AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
-		AUTOMAKE_VERSION="${AUTOMAKE_VERSION}"
+		AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" \
+		MKDIR_P='/bin/mkdir -p'
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libxml2 -D_NO_UPDATE_CHECK" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib -lx265 -liconv"
