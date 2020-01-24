@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/01/24 08:18:53 benoit Exp $
 
 COMMENT =		client for the sslmate.com online certificate service
 
-DISTNAME =		sslmate-1.7.0
+DISTNAME =		sslmate-1.7.1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://sslmate.com/
