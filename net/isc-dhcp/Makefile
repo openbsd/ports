@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/01/22 16:11:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2020/01/24 10:55:44 sthen Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
@@ -24,9 +24,12 @@ HOMEPAGE=	https://www.isc.org/dhcp/
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c
+WANTLIB += c
 
 MULTI_PACKAGES=		-main -omapi -client
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
