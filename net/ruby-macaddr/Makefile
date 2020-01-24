@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/24 19:53:56 jeremy Exp $
 
 COMMENT=		cross platform mac address determiniation
 
-DISTNAME=		macaddr-1.7.1
+DISTNAME=		macaddr-1.7.2
 CATEGORIES=		net
 
-HOMEPAGE=		https://github.com/ahoward/macaddr
+HOMEPAGE=		https://github.com/ahoward/macaddr/
 
 # ruby
 PERMIT_PACKAGE=	Yes

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/18 20:20:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/24 19:53:56 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
