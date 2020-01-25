@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2019/10/05 11:35:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2020/01/25 06:26:38 ajacoutot Exp $
 
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
 GH_PROJECT=		p11-kit
 GH_ACCOUNT=		p11-glue
-GH_TAGNAME=		0.23.18.1
+GH_TAGNAME=		0.23.19
 
 CATEGORIES=		security
 
@@ -32,6 +32,8 @@ CONFIGURE_ARGS=		--with-module-path=${PREFIX}/lib/pkcs11 \
 
 # no translation yet
 #CONFIGURE_ARGS +=	--disable-nls
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
 
