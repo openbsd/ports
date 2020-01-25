@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.616 2020/01/10 17:37:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.617 2020/01/25 16:55:32 schwarze Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -532,6 +532,7 @@
      SUBDIR += ruby-yard
      SUBDIR += rxp
      SUBDIR += sablotron
+     SUBDIR += scdoc
      SUBDIR += sim
      SUBDIR += solr
      SUBDIR += source-highlight
