@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2019/10/26 10:54:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2020/01/25 05:41:38 ajacoutot Exp $
+
+# XXX version 1.19.0 and up do not support python2 anymore
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=		m88k
