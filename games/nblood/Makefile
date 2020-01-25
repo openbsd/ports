@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+# $OpenBSD: Makefile,v 1.2 2020/01/25 22:53:42 cwen Exp $
 
 COMMENT =	reverse-engineered ports of Build games
 
@@ -43,6 +43,12 @@ MAKE_FLAGS +=	PRETTY_OUTPUT=0 \
 MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes
 NO_TEST =	Yes
+
+# Fix "undefined reference to `__atomic_load_8'"
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB +=	atomic
+MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
+.endif
 
 .include <bsd.port.arch.mk>
 
