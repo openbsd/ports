@@ -1,22 +1,20 @@
-$OpenBSD: patch-util_cacheinfo_c,v 1.4 2019/06/13 21:11:11 sthen Exp $
+$OpenBSD: patch-util_cacheinfo_c,v 1.5 2020/01/25 17:40:29 ajacoutot Exp $
 
 Set OpenBSD/powerpc cache sizes.
 
 Index: util/cacheinfo.c
 --- util/cacheinfo.c.orig
 +++ util/cacheinfo.c
-@@ -84,6 +84,14 @@ static void sys_cache_info(int *isize, int *dsize)
+@@ -87,6 +87,12 @@ static void sys_cache_info(int *isize, int *dsize)
+         *isize = *dsize = size;
      }
  }
- 
 +#elif defined (__OpenBSD__)
-+
 +static void sys_cache_info(int *isize, int *dsize)
 +{
 +    *isize = 32;
 +    *dsize = 32;
 +}
-+
  #else
  /* POSIX */
  

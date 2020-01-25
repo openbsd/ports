@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.190 2019/08/18 06:56:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.191 2020/01/25 17:40:29 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-4.1.0
+DISTNAME=	qemu-4.2.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -18,18 +18,21 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL2 X11 atk-1.0 bz2 c cairo cairo-gobject capstone curl \
 		curses epoxy fdt>=4.1 gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 \
-		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-3 iconv intl \
-		iscsi jpeg lzo2 m nettle nfs pango-1.0 pangocairo-1.0 \
-		pcre2-8 pixman-1 png sndio ssh usb-1.0 util vte-2.91 \
-		xkbcommon xml2 z ${COMPILER_LIBCXX}
+		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-3 harfbuzz \
+		iconv intl iscsi jpeg lzo2 m nettle nfs pango-1.0 \
+		pangocairo-1.0 pixman-1 png sndio ssh usb-1.0 util \
+		vte-2.91 xkbcommon xml2 z ${COMPILER_LIBCXX}
 
 # Using TLS emulation layer
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
 
+MODPY_RUNDEP=	No
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
+
 BUILD_DEPENDS=	devel/gettext,-tools \
-		textproc/py-sphinx
+		textproc/py-sphinx${MODPY_FLAVOR}
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
 		converters/libiconv \
@@ -51,8 +54,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 		textproc/libxml \
 		x11/gtk+3 \
 		x11/xkbcommon
-
-MODPY_RUNDEP=	No
 
 MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
