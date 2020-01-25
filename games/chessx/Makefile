@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/25 22:57:56 bcallah Exp $
 
 COMMENT =		free chess database and analyzer
 DISTNAME =		chessx-1.4.6
 CATEGORIES =		games
 HOMEPAGE =		http://chessx.sourceforge.net/
-REVISION =		3
+REVISION =		4
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -18,7 +18,7 @@ EXTRACT_SUFX =		.tgz
 
 MODULES =		x11/qt5 devel/qmake
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		archivers/quazip,qt5 \
+LIB_DEPENDS =		archivers/quazip \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg
 

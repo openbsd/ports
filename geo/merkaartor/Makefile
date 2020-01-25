@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.40 2019/11/20 12:57:05 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2020/01/25 22:57:56 bcallah Exp $
 
 COMMENT =	OpenStreetMap editor
+REVISION =	0
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
@@ -23,7 +24,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/proj \
 		x11/qt5/qtwebkit \
 		x11/qt5/qtsvg \
-		archivers/quazip,qt5 \
+		archivers/quazip \
 		geo/gdal
 
 MODQMAKE_ARGS = SYSTEM_QUAZIP=1 SYSTEM_QUAZIP_LDFLAGS=-lquazip5

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2020/01/18 09:05:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2020/01/25 22:57:56 bcallah Exp $
 
 COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
 GH_TAGNAME =	3.12
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
@@ -28,7 +28,7 @@ MODULES =		devel/cmake \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/qt5/qtimageformats
 
-LIB_DEPENDS =		archivers/quazip,qt5 \
+LIB_DEPENDS =		archivers/quazip \
 			graphics/exiv2 \
 			graphics/lcms2 \
 			graphics/libraw \
