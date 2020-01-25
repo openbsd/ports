@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2019/12/14 16:32:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2020/01/25 11:57:02 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 V=			3.0.1
 DISTNAME=		zeek-${V}
+REVISION=		0
 
 SHARED_LIBS +=	binpac                    0.0 # 0.54
 SHARED_LIBS +=  broccoli                  7.0 # 5.1
@@ -97,5 +98,8 @@ post-install:
 
 # handled by exec-add / exec-delete; symlink changes according to spooldir
 	rm ${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
+
+# XXX InstallSymlink does not do the right think for that particular file
+	ln -sf ${TRUEPREFIX}/bin/zeek-wrapper ${PREFIX}/bin/bro
 
 .include <bsd.port.mk>
