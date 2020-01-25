@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/25 07:25:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2020/01/25 08:39:17 ajacoutot Exp $
 
 COMMENT=	template rendering and notifications with Consul
 
 GH_TAGNAME=	v0.24.1
 GH_ACCOUNT=	hashicorp
 GH_PROJECT=	consul-template
+REVISION=	0
 
 CATEGORIES=	sysutils net
 
@@ -22,13 +23,13 @@ TEST_DEPENDS=	sysutils/consul
 
 MASTER_SITES=	https://distfiles.bsdfrog.org/
 
-# creating a new distfile (needs devel/git, sysutils/dep)
+# creating a new distfile (needs devel/git)
 # =======================
 # mkdir -p ${HOME}/go/src/github.com/hashicorp/
 # cd ${HOME}/go/src/github.com/hashicorp/
 # git clone https://github.com/hashicorp/consul-template.git
 # cd consul-template && git checkout ${GH_TAGNAME}
-# dep init
+# go mod vendor
 # rm -rf .git/
 # cd .. && mv consul-template consul-template-${GH_TAGNAME#v*}
 # tar czf consul-template-${GH_TAGNAME#v*}.tar.gz consul-template-${GH_TAGNAME#v*}

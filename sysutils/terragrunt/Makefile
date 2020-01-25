@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/01/25 07:32:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/25 08:39:17 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 GH_TAGNAME=	v0.21.11
 GH_ACCOUNT=	gruntwork-io
 GH_PROJECT=	terragrunt
+REVISION=	0
 
 CATEGORIES=	sysutils net
 
@@ -23,13 +24,14 @@ RUN_DEPENDS=	sysutils/terraform/terraform
 
 MASTER_SITES=	https://distfiles.bsdfrog.org/
 
-# creating a new distfile (needs devel/git, sysutils/dep)
+# creating a new distfile (needs devel/git)
 # =======================
 # mkdir -p ${HOME}/go/src/github.com/gruntwork-io/
 # cd ${HOME}/go/src/github.com/gruntwork-io/
 # git clone https://github.com/gruntwork-io/terragrunt.git
 # cd terragrunt && git checkout ${GH_TAGNAME}
-# dep ensure -vendor-only
+# go mod init
+# go mod vendor
 # rm -rf .git/
 # cd .. && mv terragrunt terragrunt-${GH_TAGNAME#v*}
 # tar czf terragrunt-${GH_TAGNAME#v*}.tar.gz terragrunt-${GH_TAGNAME#v*}
