@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/11/23 14:44:45 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/01/25 02:02:06 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -15,11 +15,11 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}changes.${MO
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}difference.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}environ.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}exc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}excludes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}external_tools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}feeders.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}locale.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}pyc
@@ -188,11 +188,11 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/zst.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/config.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/diff.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/difference.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/environ.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/exc.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/excludes.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/external_tools.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/feeders.py
-lib/python${MODPY_VERSION}/site-packages/diffoscope/locale.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/logging.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/main.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/path.py
