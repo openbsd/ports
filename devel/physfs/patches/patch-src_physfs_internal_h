@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_physfs_internal_h,v 1.1 2020/01/25 14:43:41 cwen Exp $
+
+Fix endianness detection on powerpc (and maybe more BE_ARCHS)
+
+Index: src/physfs_internal.h
+--- src/physfs_internal.h.orig
++++ src/physfs_internal.h
+@@ -221,6 +221,10 @@ extern void SZIP_global_init(void);
+ #include <endian.h>
+ #define PHYSFS_BYTEORDER  __BYTE_ORDER
+ #else /* __linux__ */
++#ifdef __OpenBSD__
++#include <endian.h>
++#define PHYSFS_BYTEORDER BYTE_ORDER
++#else /* __OpenBSD__ */
+ #if defined(__hppa__) || \
+     defined(__m68k__) || defined(mc68000) || defined(_M_M68K) || \
+     (defined(__MIPS__) && defined(__MISPEB__)) || \
+@@ -230,6 +234,7 @@ extern void SZIP_global_init(void);
+ #else
+ #define PHYSFS_BYTEORDER   PHYSFS_LIL_ENDIAN
+ #endif
++#endif /* __OpenBSD__ */
+ #endif /* __linux__ */
+ 
+ 

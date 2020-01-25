@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/08/04 20:52:47 thfr Exp $
+# $OpenBSD: Makefile,v 1.17 2020/01/25 14:43:41 cwen Exp $
 
 COMMENT=	library to provide abstract access to various archives
 
 DISTNAME=	physfs-3.0.2
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}downloads/
 EXTRACT_SUFX=	.tar.bz2
