@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.496 2020/01/10 17:37:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.497 2020/01/25 06:09:03 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -39,7 +39,6 @@
      SUBDIR += dia
      SUBDIR += dibuja
      SUBDIR += digikam
-     SUBDIR += digikam-kde4
      SUBDIR += displaz
      SUBDIR += djview4
      SUBDIR += djvulibre
