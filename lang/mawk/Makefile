@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2019/12/27 22:35:42 jca Exp $
+# $OpenBSD: Makefile,v 1.39 2020/01/25 19:31:34 jca Exp $
 
 COMMENT=	fast POSIX-compliant awk
 
-DISTNAME=	mawk-1.3.4-20190203
-PKGNAME=	mawk-1.3.4.20190203
-REVISION=	0
+DISTNAME=	mawk-1.3.4-20200120
+PKGNAME=	mawk-1.3.4.20200120
 
 CATEGORIES=	lang
 
