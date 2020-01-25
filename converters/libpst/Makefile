@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.57 2019/07/12 20:43:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2020/01/25 05:54:20 ajacoutot Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
-DISTNAME=		libpst-0.6.72
+DISTNAME=		libpst-0.6.74
 
-SHARED_LIBS +=  pst                  3.0      # 5.14
+SHARED_LIBS +=  pst                  3.0      # 5.16
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python=		py-${DISTNAME}
-REVISION-main=		1
-REVISION-python=	1
 
 CATEGORIES=		converters mail
 
@@ -23,11 +21,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-cWANTLIB += m pthread ${COMPILER_LIBCXX}
+cWANTLIB += m pthread z ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${cWANTLIB} iconv intl 
 WANTLIB-main += bz2 c expat ffi fontconfig freetype gd gio-2.0
-WANTLIB-main += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 jpeg pcre png
+WANTLIB-main += glib-2.0 gobject-2.0 gsf-1 jpeg pcre png zstd
 WANTLIB-main += tiff webp xml2 z m pthread ${COMPILER_LIBCXX} lzma
 
 WANTLIB-python += ${cWANTLIB} iconv
@@ -65,6 +63,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${MODPY_INCDIR}" \
 .if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "hppa"
 CFLAGS+=	-O0
 .endif
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 FAKE_FLAGS+=		htmldir="${PREFIX}/share/doc/libpst/" \
 			htmldeveldir="${PREFIX}/share/doc/libpst/devel/"

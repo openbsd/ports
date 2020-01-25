@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/08/04 14:14:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/01/25 05:54:20 ajacoutot Exp $
 @pkgpath converters/libpst
 @bin bin/lspst
 @bin bin/nick2ldif
@@ -13,7 +13,7 @@ include/libpst-4/libpst/libstrfunc.h
 include/libpst-4/libpst/lzfu.h
 include/libpst-4/libpst/timeconv.h
 include/libpst-4/libpst/vbuf.h
-lib/libpst.a
+@static-lib lib/libpst.a
 lib/libpst.la
 @lib lib/libpst.so.${LIBpst_VERSION}
 lib/pkgconfig/libpst.pc
@@ -39,9 +39,9 @@ share/doc/libpst/devel/common_8h__incl.map
 share/doc/libpst/devel/common_8h__incl.md5
 share/doc/libpst/devel/common_8h__incl.png
 share/doc/libpst/devel/common_8h_source.html
-share/doc/libpst/devel/dir_b70fe5ddb0cf22452a64074199c6435e.html
-share/doc/libpst/devel/dir_b70fe5ddb0cf22452a64074199c6435e_dep.map
-share/doc/libpst/devel/dir_b70fe5ddb0cf22452a64074199c6435e_dep.png
+share/doc/libpst/devel/dir_f987d3ce08d87b975b3f299383bcc9e0.html
+share/doc/libpst/devel/dir_f987d3ce08d87b975b3f299383bcc9e0_dep.map
+share/doc/libpst/devel/dir_f987d3ce08d87b975b3f299383bcc9e0_dep.png
 share/doc/libpst/devel/dirs.html
 share/doc/libpst/devel/doxygen.css
 share/doc/libpst/devel/doxygen.png
