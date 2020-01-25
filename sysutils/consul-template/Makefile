@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2019/12/15 13:53:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2020/01/25 07:25:40 ajacoutot Exp $
 
 COMMENT=	template rendering and notifications with Consul
 
-# XXX cannot update
-# https://github.com/hashicorp/consul-template/issues/1307
-GH_TAGNAME=	v0.20.1
+GH_TAGNAME=	v0.24.1
 GH_ACCOUNT=	hashicorp
 GH_PROJECT=	consul-template
 
@@ -22,7 +20,7 @@ WANTLIB += c pthread
 MODULES=	lang/go
 TEST_DEPENDS=	sysutils/consul
 
-#MASTER_SITES=	https://distfiles.bsdfrog.org/
+MASTER_SITES=	https://distfiles.bsdfrog.org/
 
 # creating a new distfile (needs devel/git, sysutils/dep)
 # =======================
@@ -37,7 +35,9 @@ TEST_DEPENDS=	sysutils/consul
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/consul-template
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${FILESDIR}/default.conf \
+	cp -R ${WRKSRC}/examples/* ${FILESDIR}/default.conf \
+		${PREFIX}/share/examples/consul-template
+	chown -R ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/examples/consul-template
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/01/25 07:25:40 ajacoutot Exp $
 @newgroup _consul-template:781
 @newuser _consul-template:781:_consul-template:daemon:Consul Template user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/consul_template
@@ -13,8 +13,14 @@ share/examples/consul-template/default.conf
 @sample ${SYSCONFDIR}/consul-template.d/default.conf
 @owner
 @group
+share/examples/consul-template/haproxy-connect-proxy/
+share/examples/consul-template/haproxy-connect-proxy.md
+share/examples/consul-template/haproxy-connect-proxy/run-haproxy-connect-proxy
 share/examples/consul-template/haproxy.md
 share/examples/consul-template/join.md
+share/examples/consul-template/nginx-connect-proxy/
+share/examples/consul-template/nginx-connect-proxy.md
+share/examples/consul-template/nginx-connect-proxy/run-nginx-connect-proxy
 share/examples/consul-template/nginx.md
 share/examples/consul-template/services.md
 share/examples/consul-template/varnish.md
