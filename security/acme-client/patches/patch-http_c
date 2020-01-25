@@ -1,0 +1,24 @@
+$OpenBSD: patch-http_c,v 1.1 2020/01/25 12:22:22 sthen Exp $
+
+src/usr.sbin/acme-client/http.c r1.29
+
+Remove the tls_close warnx in acme-client. Currently it very often reports
+a spurious "acme-client: tls_close: EOF without close notify" warning which
+is plain confusing - it is a warning only, doesn't block anything, but when
+people have some other failure (network problems, bad acme-challenge
+path in webserver, etc) they often see this message and think that it's
+relevant.
+
+Index: http.c
+--- http.c.orig
++++ http.c
+@@ -369,9 +369,6 @@ http_disconnect(struct http *http)
+ 		do {
+ 			rc = tls_close(http->ctx);
+ 		} while (TLS_WANT_POLLIN == rc || TLS_WANT_POLLOUT == rc);
+-		if (rc < 0)
+-			warnx("%s: tls_close: %s",
+-				http->src.ip, tls_error(http->ctx));
+ 		if (-1 == close(http->fd))
+ 			warn("%s: close", http->src.ip);
+ #endif
