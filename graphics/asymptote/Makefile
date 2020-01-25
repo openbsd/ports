@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2020/01/25 14:29:49 cwen Exp $
 
 NOT_FOR_ARCHS=		${CLANG_ARCHS} # hangs during build, while running
 # ../asy -dir ../base -config "" -render=0 -f pdf -noprc cube.asy
@@ -28,8 +28,9 @@ WANTLIB += readline sigsegv ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS=		print/texlive/base \
-			print/texinfo
+BUILD_DEPENDS=		print/texinfo \
+			print/texlive/base \
+			print/texlive/texmf,-main
 RUN_DEPENDS=		graphics/py-Pillow \
 			print/texlive/texmf,-full \
 			${MODPY_TKINTER_DEPENDS}
