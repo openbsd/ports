@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/12/14 16:58:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/25 06:57:45 ajacoutot Exp $
 
 PROVIDER=		exoscale
-GH_TAGNAME=		v0.15.0
+GH_TAGNAME=		v0.16.0
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2019/12/14 16:58:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/25 06:57:45 ajacoutot Exp $
 
 PROVIDER=		packet
-GH_TAGNAME=		v2.7.3
+GH_TAGNAME=		v2.7.4
 
 .include <bsd.port.mk>
