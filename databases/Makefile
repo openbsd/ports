@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.386 2020/01/10 17:37:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.387 2020/01/25 05:32:11 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -202,7 +202,6 @@
      SUBDIR += py-sybase
      SUBDIR += py-whisper
      SUBDIR += qdbm
-     SUBDIR += qt3-sqlite3-plugin
      SUBDIR += redis
      SUBDIR += repmgr
      SUBDIR += riak
