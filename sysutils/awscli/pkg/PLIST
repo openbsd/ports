@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.98 2020/01/22 05:01:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.99 2020/01/25 07:12:40 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -424,6 +424,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/remove-tags-from-ce
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/request-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/resend-validation-email.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/update-certificate-options.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/create-network-profile.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/delete-network-profile.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/get-network-profile.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/search-network-profiles.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/update-network-profile.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-api-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-authorizer.rst
@@ -2203,6 +2209,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/get-resource
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/get-service-role-for-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/get-subscription-definition-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/get-subscription-definition.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/list-bulk-deployment-detailed-reports.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/list-bulk-deployments.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/list-connector-definition-versions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/list-connector-definitions.rst
@@ -2451,6 +2458,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/clear-default-autho
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-certificate-from-csr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-domain-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-dynamic-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-keys-and-certificate.rst
@@ -2473,6 +2481,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-authorizer.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-domain-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-dynamic-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-job-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-job.rst
@@ -2502,6 +2511,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-billing-gr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-default-authorizer.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-domain-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-event-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-index.rst
@@ -2544,6 +2554,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-billing-groups
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-ca-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-certificates-by-ca.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-certificates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-domain-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-indices.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-job-executions-for-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-job-executions-for-thing.rst
@@ -2597,6 +2608,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-authorizer.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-domain-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-dynamic-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-event-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-indexing-configuration.rst
