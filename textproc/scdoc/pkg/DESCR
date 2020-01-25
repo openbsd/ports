@@ -1,0 +1,2 @@
+The scdoc(1) program reads scdoc(5) text files and converts them
+to man(7) pages.  It is written in C99.

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/25 16:44:51 schwarze Exp $
+@bin bin/scdoc
+lib/pkgconfig/scdoc.pc
+@man man/man1/scdoc.1
+@man man/man5/scdoc.5
