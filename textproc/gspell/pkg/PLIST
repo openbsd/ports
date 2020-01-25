@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/09/07 12:18:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/01/25 11:29:06 ajacoutot Exp $
 @bin bin/gspell-app1
 include/gspell-1/
 include/gspell-1/gspell/
@@ -18,7 +18,7 @@ include/gspell-1/gspell/gspell-text-view.h
 include/gspell-1/gspell/gspell-version.h
 include/gspell-1/gspell/gspell.h
 lib/girepository-1.0/Gspell-1.typelib
-lib/libgspell-1.a
+@static-lib lib/libgspell-1.a
 lib/libgspell-1.la
 @lib lib/libgspell-1.so.${LIBgspell-1_VERSION}
 lib/pkgconfig/gspell-1.pc
@@ -40,6 +40,9 @@ share/gtk-doc/html/gspell-1.0/GtkEntry-support.html
 share/gtk-doc/html/gspell-1.0/GtkTextView-support.html
 share/gtk-doc/html/gspell-1.0/annexes.html
 share/gtk-doc/html/gspell-1.0/annotation-glossary.html
+share/gtk-doc/html/gspell-1.0/api-index-1-2.html
+share/gtk-doc/html/gspell-1.0/api-index-1-4.html
+share/gtk-doc/html/gspell-1.0/api-index-1-6.html
 share/gtk-doc/html/gspell-1.0/api-index-full.html
 share/gtk-doc/html/gspell-1.0/api-reference.html
 share/gtk-doc/html/gspell-1.0/core-classes.html
@@ -87,6 +90,7 @@ share/locale/mjw/
 share/locale/mjw/LC_MESSAGES/
 share/locale/mjw/LC_MESSAGES/gspell-1.mo
 share/locale/ml/LC_MESSAGES/gspell-1.mo
+share/locale/ms/LC_MESSAGES/gspell-1.mo
 share/locale/nb/LC_MESSAGES/gspell-1.mo
 share/locale/ne/LC_MESSAGES/gspell-1.mo
 share/locale/nl/LC_MESSAGES/gspell-1.mo
