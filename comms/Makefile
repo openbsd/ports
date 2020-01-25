@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/11/09 15:36:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.78 2020/01/25 05:05:18 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -43,7 +43,6 @@
      SUBDIR += py-gammu
      SUBDIR += qodem
      SUBDIR += qpage
-     SUBDIR += qtserialport
      SUBDIR += rtl-sdr
      SUBDIR += scmxx
      SUBDIR += seyon
