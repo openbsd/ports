@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2019/06/26 09:46:43 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2020/01/25 21:24:51 solene Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -52,7 +52,7 @@ pre-extract:
 .if ${FETCH_PACKAGES:L} != yes
 	@if ! [ -r ${LOCALBASE}/bin/mongo ]; then echo; \
 	    echo "*** To avoid long jdk/mongodb builds, it is recommended that you"; sleep .7; \
-	    echo "*** use 'make FETCH_PACKAGES=Yes install' to fetch binary packages"; sleep .7; \
+	    echo "*** use 'make FETCH_PACKAGES= install' to fetch binary packages"; sleep .7; \
 	    echo "*** for the dependencies."; echo; sleep 5; \
 	fi
 .endif
