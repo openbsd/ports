@@ -1,0 +1,18 @@
+$OpenBSD: patch-ETL__pen_h,v 1.1 2020/01/26 22:38:05 cwen Exp $
+
+Unbreak consumers on !clang archs, from:
+https://github.com/synfig/synfig/commit/cb05b072fe6fffb4433140c631f422bdbc036722
+
+Index: ETL/_pen.h
+--- ETL/_pen.h.orig
++++ ETL/_pen.h
+@@ -136,7 +136,8 @@ class generic_pen (public)
+ 		typedef int value_type;
+ 		value_type x,y;
+ 		difference_type(value_type x, value_type y):x(x),y(y) { }
+-		value_type &operator[](int i)const { return i?y:x; }
++		const value_type &operator[](int i) const { return i?y:x; }
++		value_type &operator[](int i) { return i?y:x; }
+ 	};
+ 
+ protected:
