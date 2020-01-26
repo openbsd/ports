@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/05/02 05:13:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/01/26 07:39:56 rsadowski Exp $
 @bin bin/lancelot
 include/kde4/KDE/Lancelot/
 include/kde4/KDE/Lancelot/ActionListModel
@@ -102,25 +102,25 @@ include/kde4/lancelot/widgets/ScrollBar.h
 include/kde4/lancelot/widgets/ScrollPane.h
 include/kde4/lancelot/widgets/TabBar.h
 include/kde4/lancelot/widgets/Widget.h
-lib/kde4/kcm_krunner_audioplayercontrol.so
-lib/kde4/kcm_krunner_charrunner.so
-lib/kde4/kcm_krunner_dictionary.so
-lib/kde4/kcm_krunner_spellcheck.so
-lib/kde4/kcm_plasma_runner_events.so
-lib/kde4/krunner_audioplayercontrol.so
-lib/kde4/krunner_browserhistory.so
-lib/kde4/krunner_charrunner.so
-lib/kde4/krunner_contacts.so
-lib/kde4/krunner_converter.so
-lib/kde4/krunner_dictionary.so
-lib/kde4/krunner_katesessions.so
-lib/kde4/krunner_konquerorsessions.so
-lib/kde4/krunner_konsolesessions.so
-lib/kde4/krunner_kopete.so
-lib/kde4/krunner_mediawiki.so
-lib/kde4/krunner_spellcheckrunner.so
-lib/kde4/krunner_translator.so
-lib/kde4/krunner_youtube.so
+@so lib/kde4/kcm_krunner_audioplayercontrol.so
+@so lib/kde4/kcm_krunner_charrunner.so
+@so lib/kde4/kcm_krunner_dictionary.so
+@so lib/kde4/kcm_krunner_spellcheck.so
+@so lib/kde4/kcm_plasma_runner_events.so
+@so lib/kde4/krunner_audioplayercontrol.so
+@so lib/kde4/krunner_browserhistory.so
+@so lib/kde4/krunner_charrunner.so
+@so lib/kde4/krunner_contacts.so
+@so lib/kde4/krunner_converter.so
+@so lib/kde4/krunner_dictionary.so
+@so lib/kde4/krunner_katesessions.so
+@so lib/kde4/krunner_konquerorsessions.so
+@so lib/kde4/krunner_konsolesessions.so
+@so lib/kde4/krunner_kopete.so
+@so lib/kde4/krunner_mediawiki.so
+@so lib/kde4/krunner_spellcheckrunner.so
+@so lib/kde4/krunner_translator.so
+@so lib/kde4/krunner_youtube.so
 @lib ${KDE4LIB}/liblancelot-datamodels.so.${LIBlancelot-datamodels_VERSION}
 @lib ${KDE4LIB}/liblancelot.so.${LIBlancelot_VERSION}
 @lib ${KDE4LIB}/libplasma_groupingcontainment.so.${LIBplasma_groupingcontainment_VERSION}
@@ -128,81 +128,80 @@ lib/kde4/krunner_youtube.so
 @lib ${KDE4LIB}/libplasmapotdprovidercore.so.${LIBplasmapotdprovidercore_VERSION}
 @lib ${KDE4LIB}/libplasmaweather.so.${LIBplasmaweather_VERSION}
 @lib ${KDE4LIB}/librtm.so.${LIBrtm_VERSION}
-lib/kde4/plasma-applet_systemloadviewer.so
-lib/kde4/plasma_applet_bball.so
-lib/kde4/plasma_applet_binaryclock.so
-lib/kde4/plasma_applet_blackboard.so
-lib/kde4/plasma_applet_bookmarks.so
-lib/kde4/plasma_applet_bubblemon.so
-lib/kde4/plasma_applet_charselect.so
-lib/kde4/plasma_applet_comic.so
-lib/kde4/plasma_applet_dict.so
-lib/kde4/plasma_applet_eyes.so
-lib/kde4/plasma_applet_fifteenPuzzle.so
-lib/kde4/plasma_applet_fileWatcher.so
-lib/kde4/plasma_applet_frame.so
-lib/kde4/plasma_applet_fuzzy_clock.so
-lib/kde4/plasma_applet_icontasks.so
-lib/kde4/plasma_applet_incomingmsg.so
-lib/kde4/plasma_applet_kdeobservatory.so
-lib/kde4/plasma_applet_kimpanel.so
-lib/kde4/plasma_applet_knowledgebase.so
-lib/kde4/plasma_applet_kolourpicker.so
-lib/kde4/plasma_applet_lancelot_launcher.so
-lib/kde4/plasma_applet_lancelot_part.so
-lib/kde4/plasma_applet_leavenote.so
-lib/kde4/plasma_applet_life.so
-lib/kde4/plasma_applet_luna.so
-lib/kde4/plasma_applet_magnifique.so
-lib/kde4/plasma_applet_mediaplayer.so
-lib/kde4/plasma_applet_microblog.so
-lib/kde4/plasma_applet_news.so
-lib/kde4/plasma_applet_notes.so
-lib/kde4/plasma_applet_opendesktop.so
-lib/kde4/plasma_applet_opendesktop_activities.so
-lib/kde4/plasma_applet_paste.so
-lib/kde4/plasma_applet_pastebin.so
-lib/kde4/plasma_applet_plasmaboard.so
-lib/kde4/plasma_applet_previewer.so
-lib/kde4/plasma_applet_qalculate.so
-lib/kde4/plasma_applet_rssnow.so
-lib/kde4/plasma_applet_rtm.so
-lib/kde4/plasma_applet_showdashboard.so
-lib/kde4/plasma_applet_showdesktop.so
-lib/kde4/plasma_applet_spellcheck.so
-lib/kde4/plasma_applet_timer.so
-lib/kde4/plasma_applet_unitconverter.so
-lib/kde4/plasma_applet_weather.so
-lib/kde4/plasma_applet_weatherstation.so
-lib/kde4/plasma_applet_webslice.so
-lib/kde4/plasma_comic_krossprovider.so
-lib/kde4/plasma_containment_griddesktop.so
-lib/kde4/plasma_containment_groupingdesktop.so
-lib/kde4/plasma_containment_groupingpanel.so
-lib/kde4/plasma_engine_comic.so
-lib/kde4/plasma_engine_kdeobservatory.so
-lib/kde4/plasma_engine_kimpanel.so
-lib/kde4/plasma_engine_konqprofiles.so
-lib/kde4/plasma_engine_konsoleprofiles.so
-lib/kde4/plasma_engine_microblog.so
-lib/kde4/plasma_engine_ocs.so
-lib/kde4/plasma_engine_potd.so
-lib/kde4/plasma_engine_rtm.so
-lib/kde4/plasma_packagestructure_comic.so
-lib/kde4/plasma_potd_apodprovider.so
-lib/kde4/plasma_potd_epodprovider.so
-lib/kde4/plasma_potd_flickrprovider.so
-lib/kde4/plasma_potd_natgeoprovider.so
-lib/kde4/plasma_potd_oseiprovider.so
-lib/kde4/plasma_potd_wcpotdprovider.so
-lib/kde4/plasma_runner_datetime.so
-lib/kde4/plasma_runner_events.so
-lib/kde4/plasma_wallpaper_mandelbrot.so
-lib/kde4/plasma_wallpaper_pattern.so
-lib/kde4/plasma_wallpaper_potd.so
-lib/kde4/plasma_wallpaper_qml.so
-lib/kde4/plasma_wallpaper_virus.so
-lib/kde4/plasma_wallpaper_weather.so
+@so lib/kde4/plasma-applet_systemloadviewer.so
+@so lib/kde4/plasma_applet_bball.so
+@so lib/kde4/plasma_applet_binaryclock.so
+@so lib/kde4/plasma_applet_blackboard.so
+@so lib/kde4/plasma_applet_bookmarks.so
+@so lib/kde4/plasma_applet_bubblemon.so
+@so lib/kde4/plasma_applet_charselect.so
+@so lib/kde4/plasma_applet_comic.so
+@so lib/kde4/plasma_applet_dict.so
+@so lib/kde4/plasma_applet_eyes.so
+@so lib/kde4/plasma_applet_fifteenPuzzle.so
+@so lib/kde4/plasma_applet_fileWatcher.so
+@so lib/kde4/plasma_applet_frame.so
+@so lib/kde4/plasma_applet_fuzzy_clock.so
+@so lib/kde4/plasma_applet_icontasks.so
+@so lib/kde4/plasma_applet_incomingmsg.so
+@so lib/kde4/plasma_applet_kdeobservatory.so
+@so lib/kde4/plasma_applet_kimpanel.so
+@so lib/kde4/plasma_applet_knowledgebase.so
+@so lib/kde4/plasma_applet_kolourpicker.so
+@so lib/kde4/plasma_applet_lancelot_launcher.so
+@so lib/kde4/plasma_applet_lancelot_part.so
+@so lib/kde4/plasma_applet_leavenote.so
+@so lib/kde4/plasma_applet_life.so
+@so lib/kde4/plasma_applet_luna.so
+@so lib/kde4/plasma_applet_magnifique.so
+@so lib/kde4/plasma_applet_mediaplayer.so
+@so lib/kde4/plasma_applet_microblog.so
+@so lib/kde4/plasma_applet_news.so
+@so lib/kde4/plasma_applet_notes.so
+@so lib/kde4/plasma_applet_opendesktop.so
+@so lib/kde4/plasma_applet_opendesktop_activities.so
+@so lib/kde4/plasma_applet_paste.so
+@so lib/kde4/plasma_applet_pastebin.so
+@so lib/kde4/plasma_applet_plasmaboard.so
+@so lib/kde4/plasma_applet_previewer.so
+@so lib/kde4/plasma_applet_qalculate.so
+@so lib/kde4/plasma_applet_rssnow.so
+@so lib/kde4/plasma_applet_rtm.so
+@so lib/kde4/plasma_applet_showdashboard.so
+@so lib/kde4/plasma_applet_showdesktop.so
+@so lib/kde4/plasma_applet_spellcheck.so
+@so lib/kde4/plasma_applet_timer.so
+@so lib/kde4/plasma_applet_unitconverter.so
+@so lib/kde4/plasma_applet_weather.so
+@so lib/kde4/plasma_applet_weatherstation.so
+@so lib/kde4/plasma_applet_webslice.so
+@so lib/kde4/plasma_comic_krossprovider.so
+@so lib/kde4/plasma_containment_griddesktop.so
+@so lib/kde4/plasma_containment_groupingdesktop.so
+@so lib/kde4/plasma_containment_groupingpanel.so
+@so lib/kde4/plasma_engine_comic.so
+@so lib/kde4/plasma_engine_kdeobservatory.so
+@so lib/kde4/plasma_engine_kimpanel.so
+@so lib/kde4/plasma_engine_konqprofiles.so
+@so lib/kde4/plasma_engine_konsoleprofiles.so
+@so lib/kde4/plasma_engine_microblog.so
+@so lib/kde4/plasma_engine_ocs.so
+@so lib/kde4/plasma_engine_potd.so
+@so lib/kde4/plasma_engine_rtm.so
+@so lib/kde4/plasma_packagestructure_comic.so
+@so lib/kde4/plasma_potd_apodprovider.so
+@so lib/kde4/plasma_potd_epodprovider.so
+@so lib/kde4/plasma_potd_flickrprovider.so
+@so lib/kde4/plasma_potd_natgeoprovider.so
+@so lib/kde4/plasma_potd_oseiprovider.so
+@so lib/kde4/plasma_potd_wcpotdprovider.so
+@so lib/kde4/plasma_runner_datetime.so
+@so lib/kde4/plasma_runner_events.so
+@so lib/kde4/plasma_wallpaper_pattern.so
+@so lib/kde4/plasma_wallpaper_potd.so
+@so lib/kde4/plasma_wallpaper_qml.so
+@so lib/kde4/plasma_wallpaper_virus.so
+@so lib/kde4/plasma_wallpaper_weather.so
 @lib lib/liblancelot-datamodels.so.${LIBlancelot-datamodels_VERSION}
 @lib lib/liblancelot.so.${LIBlancelot_VERSION}
 @lib lib/libplasma_groupingcontainment.so.${LIBplasma_groupingcontainment_VERSION}
@@ -670,7 +669,6 @@ share/kde4/services/plasma-runner-translator.desktop
 share/kde4/services/plasma-runner-wikipedia.desktop
 share/kde4/services/plasma-runner-wikitravel.desktop
 share/kde4/services/plasma-runner-youtube.desktop
-share/kde4/services/plasma-wallpaper-mandelbrot.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
 share/kde4/services/plasma-wallpaper-potd.desktop
 share/kde4/services/plasma-wallpaper-qml.desktop

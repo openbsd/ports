@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/02 05:13:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2020/01/26 07:39:56 rsadowski Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
-REVISION =	10
+REVISION =	11
 
 SHARED_LIBS =	lancelot-datamodels		51.1 # 1.7
 SHARED_LIBS +=	lancelot			51.1 # 1.9
@@ -41,8 +41,6 @@ MODULES =	multimedia/phonon
 
 MODKDE4_USE =	pim workspace
 
-BUILD_DEPENDS =	math/eigen2
-
 RUN_DEPENDS =	misc/shared-mime-info \
 		x11/gtk+3,-guic
 
@@ -57,5 +55,7 @@ LIB_DEPENDS =	devel/qjson \
 		x11/dbusmenu-qt \
 		qwt-*-!qt5:x11/qwt \
 		${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
+
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Eigen2=ON
 
 .include <bsd.port.mk>
