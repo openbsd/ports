@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/07 11:20:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2020/01/26 17:38:20 ajacoutot Exp $
 
 COMMENT=		OCR and DAR program
 
 GNOME_PROJECT=		ocrfeeder
-GNOME_VERSION=		0.8.1
-REVISION=		3
+GNOME_VERSION=		0.8.2
 
 CATEGORIES=		graphics textproc
 
@@ -14,40 +13,38 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python \
 			x11/gnome
 
-MODPY_ADJ_FILES=	bin/ocrfeeder.in \
-			bin/ocrfeeder-cli.in
+MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS=		devel/py-gobject3 \
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			graphics/goocanvas2 \
-			graphics/py-sane \
-			print/py-reportlab \
-			textproc/py-enchant \
+			graphics/py-sane${MODPY_FLAVOR} \
+			print/py-reportlab${MODPY_FLAVOR} \
+			textproc/py-enchant${MODPY_FLAVOR} \
+			textproc/py-odfpy \
 			x11/gtk+3
 
 RUN_DEPENDS=		devel/iso-codes \
-			devel/py-gobject3 \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			graphics/goocanvas2 \
-			graphics/py-sane \
-			print/py-reportlab \
+			graphics/py-sane${MODPY_FLAVOR} \
+			print/py-reportlab${MODPY_FLAVOR} \
 			print/unpaper \
 			textproc/gtkspell3 \
-			textproc/py-enchant \
-			textproc/py-lxml \
+			textproc/py-enchant${MODPY_FLAVOR} \
+			textproc/py-lxml${MODPY_FLAVOR} \
+			textproc/py-odfpy \
 			x11/gtk+3
 
 # OCR engine
 RUN_DEPENDS +=		ocrad-*|tesseract-*|gocr-*:graphics/ocrad
 
-MODGNOME_TOOLS= 	desktop-file-utils yelp
-
 CONFIGURE_STYLE=	gnu
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/ocrfeeder/util/constants.py.in
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	ln -s ../ocrfeeder/icons/ocrfeeder.svg \
-		${PREFIX}/share/pixmaps/ocrfeeder.svg
+# XXX missing in tarball
+	cp ${FILESDIR}/org.gnome.OCRFeeder.appdata.xml.in.in \
+		${WRKSRC}/resources/org.gnome.OCRFeeder.appdata.xml.in
 
 .include <bsd.port.mk>
