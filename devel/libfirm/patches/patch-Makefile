@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1 2018/06/15 01:04:54 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/01/26 22:11:18 naddy Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -21,3 +21,15 @@ Index: Makefile
  
  $(builddir)/%.o: %.c $(IR_SPEC_GENERATED_INCLUDES)
  	@echo CC $@
+@@ -196,8 +196,10 @@ REVISION ?= $(shell git --git-dir $(top_srcdir)/.git d
+ # Update revision.h if necessary
+ REVISIONH = $(gendir)/firm_revision.h
+ libfirm_INCLUDEDIRS += $(gendir)
++# gmake 4.2.1 > 4.3 backward-incompatibility
++H = \#
+ UNUSED2 := $(shell \
+-	REV="\#define libfirm_VERSION_REVISION \"$(REVISION)\""; \
++	REV="$(H)define libfirm_VERSION_REVISION \"$(REVISION)\""; \
+ 	echo "$$REV" | cmp -s - "$(REVISIONH)" 2> /dev/null || echo "$$REV" > "$(REVISIONH)" \
+ )
+ 
