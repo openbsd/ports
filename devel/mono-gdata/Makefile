@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=	.NET library for the Google Data API
 
@@ -13,7 +13,7 @@ CATEGORIES=	devel
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 MODULES=	lang/mono
 MODMONO_GMCS_COMPAT=	Yes

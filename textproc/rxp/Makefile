@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:50:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT=	validating namespace-aware XML parser
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.cogsci.ed.ac.uk/~richard/rxp.html
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c 
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 NO_TEST=	Yes
 

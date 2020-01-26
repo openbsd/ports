@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/10/02 18:37:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=	convert Intel assembly language (nasm) to AT&T syntax (gas)
 
@@ -7,7 +7,7 @@ DISTNAME=	intel2gas-${VERSION}
 REVISION =	3
 CATEGORIES=	lang
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 # GPL
 PERMIT_PACKAGE=	Yes

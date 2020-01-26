@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT=		monospace font designed for coders
 
@@ -10,7 +10,7 @@ CATEGORIES=		fonts x11
 
 HOMEPAGE=		http://www.levien.com/type/myfonts/inconsolata.html
 
-MASTER_SITES=		https://distfiles.nl/
+MASTER_SITES=		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX=		.otf
 EXTRACT_ONLY=
 

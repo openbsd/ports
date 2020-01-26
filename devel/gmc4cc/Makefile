@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/09/30 12:51:25 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=	C compiler for GMC-4
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB +=	c charset ffi gmp iconv m pthread
 
 MASTER_SITES=	${HOMEPAGE}/files/
-MASTER_SITES0=	http://distfiles.nl/
+MASTER_SITES0=	http://distfiles.sigtrap.nl/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gmc4cc-samples-0.1${EXTRACT_SUFX}:0

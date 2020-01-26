@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/01/26 11:14:29 jasper Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=	ofa	0.0
 # GPL
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX} fftw3
 

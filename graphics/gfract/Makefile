@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
@@ -23,7 +23,7 @@ WANTLIB += ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES0= 		http://distfiles.nl/
+MASTER_SITES0= 		http://distfiles.sigtrap.nl/
 
 MODULES=		lang/python
 

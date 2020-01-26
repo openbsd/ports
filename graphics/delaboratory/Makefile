@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
@@ -15,7 +15,7 @@ WANTLIB += wx_gtk3u_xrc-3.0 xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 LIB_DEPENDS =	converters/libiconv \
 		textproc/libxml \

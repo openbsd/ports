@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/14 00:39:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT =		test operating environment software robustness
 
@@ -12,7 +12,7 @@ CATEGORIES =		sysutils
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://distfiles.nl/
+MASTER_SITES =		https://distfiles.sigtrap.nl/
 NO_TEST =		Yes
 WANTLIB =		c
 

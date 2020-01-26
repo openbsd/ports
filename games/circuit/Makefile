@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT =	finish-the-cycle logic puzzle
 CATEGORIES =	games
@@ -7,7 +7,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME =	circuit-0.1.4
 REVISION =	10
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 # BSD
 PERMIT_PACKAGE =	Yes

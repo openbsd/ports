@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT=	STM32 bootloader to upload and download firmware
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 MODULES=	lang/python
 

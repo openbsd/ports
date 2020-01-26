@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=	MessagePack implementation and bindings for Lua
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/antirez/lua-cmsgpack
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 MODULES=	lang/lua
 

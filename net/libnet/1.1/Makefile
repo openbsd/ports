@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/02/08 19:07:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2020/01/26 11:14:33 jasper Exp $
 
 REV=		1.1
 VERSION=	${REV}.2.1
@@ -8,7 +8,7 @@ SHARED_LIBS=	net	11.0
 PKGSPEC=	libnet->=1.1v0,<1.2v0
 
 WRKDIST=	${WRKDIR}/libnet
-MASTER_SITES=	https://distfiles.nl/ \
+MASTER_SITES=	https://distfiles.sigtrap.nl/ \
 		http://packetfactory.openwall.net/libnet/dist/
 
 AUTOCONF_VERSION=	2.57

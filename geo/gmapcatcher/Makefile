@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 21:02:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT=	offline maps viewer
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://github.com/heldersepu/GMapCatcher
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 MODULES=	lang/python
 

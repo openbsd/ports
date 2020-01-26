@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/14 00:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT =		menu-based Usenet newsreader
 DISTNAME =		nn-6.7.3
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c curses
 
 MASTER_SITES =		ftp://ftp.nndev.org/pub/nn-6.7/ \
-                        https://distfiles.nl/
+                        https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =		.tar.Z
 
 USE_GROFF =		Yes

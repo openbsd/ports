@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
@@ -14,7 +14,7 @@ MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE =		Yes
 
 # Upstream keeps re-rolling the distfile without bumping the version
-MASTER_SITES =		https://distfiles.nl/ \
+MASTER_SITES =		https://distfiles.sigtrap.nl/ \
 			http://www.fontsquirrel.com/fonts/download/ProFontWindows/
 EXTRACT_SUFX =		.zip
 

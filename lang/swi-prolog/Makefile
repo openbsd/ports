@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/08/10 19:41:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.83 2020/01/26 11:14:32 jasper Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-powerpc =	pl-modul.c:1497: internal compiler error: in extract_insn, at recog.c:2077
@@ -26,7 +26,7 @@ WANTLIB += db edit execinfo fontconfig freetype gmp iodbc jpeg m
 WANTLIB += ossp-uuid pcre pthread readline ssl z
 
 MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
-			https://distfiles.nl/
+			https://distfiles.sigtrap.nl/
 
 
 # The reccommended way to build is using build.templ. We mimick this as best

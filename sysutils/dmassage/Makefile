@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT=		dmesg parser
 DISTNAME=		dmassage-0.6
@@ -8,7 +8,7 @@ CATEGORIES=		sysutils
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.nl/
+MASTER_SITES=		https://distfiles.sigtrap.nl/
 
 NO_TEST=		Yes
 NO_BUILD=		Yes

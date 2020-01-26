@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:05:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:29 jasper Exp $
 
 COMMENT=	lua binding of zlib
 DISTNAME=	luazlib-20100731
 REVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 HOMEPAGE=	https://github.com/brimworks/lua-zlib/
 

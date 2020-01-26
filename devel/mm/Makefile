@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=	shared memory lib for apps with pre-forked process model
 
@@ -6,7 +6,7 @@ DISTNAME=	mm-1.4.2
 SHARED_LIBS +=	mm                   13.22    # 14.22
 
 CATEGORIES=	devel
-MASTER_SITES=	https://distfiles.nl/ \
+MASTER_SITES=	https://distfiles.sigtrap.nl/ \
 		ftp://ftp.ossp.org/pkg/lib/mm/
 
 HOMEPAGE=	http://www.ossp.org/pkg/lib/mm/

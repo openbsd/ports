@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/01/26 11:14:32 jasper Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -29,7 +29,7 @@ WANTLIB-ipadic =
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz

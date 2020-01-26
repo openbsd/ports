@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/01/26 11:14:34 jasper Exp $
 
 COMMENT=	Unico GTK+3 engine
 
@@ -22,7 +22,7 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread xcb xcb-render xcb-shm z
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 LIB_DEPENDS=	x11/gtk+3
 

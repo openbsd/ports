@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/01/26 11:14:34 jasper Exp $
 
 COMMENT=		Clearlooks based GTK+ 2.x engine
 
@@ -21,7 +21,7 @@ WANTLIB += png pthread xcb xcb-render xcb-shm z
 THEMES_DISTNAME=rezlooks-themes-0.1
 
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
-MASTER_SITES0=	http://distfiles.nl/
+MASTER_SITES0=	http://distfiles.sigtrap.nl/
 DIST_SUBDIR=	rezlooks
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${THEMES_DISTNAME}${EXTRACT_SUFX}:0

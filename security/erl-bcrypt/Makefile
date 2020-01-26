@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT=	Erlang wrapper for OpenBSD's blowfish #' emacs, relax.
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/opscode/bcrypt
 # ISC/BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 WANTLIB=	c pthread
 

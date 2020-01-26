@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/10 18:14:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.17 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -11,7 +11,7 @@ REVISION =		4
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 MODULES =	lang/python
 RUN_DEPENDS =	x11/py-gtk2

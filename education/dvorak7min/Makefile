@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT=	typing tutor for dvorak keyboards
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 MAKE_FLAGS=	CC="${CC}" PROF="${CFLAGS}"
 

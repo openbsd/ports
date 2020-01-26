@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=	point-to-point bandwidth measurement tool
 
 DISTNAME=	bing-1.0.5
 REVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=		convert pf(4) logs to XML
 
@@ -17,7 +17,7 @@ WANTLIB= 		c expat m pcap ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		${HOMEPAGE}/releases/ \
-			https://distfiles.nl/
+			https://distfiles.sigtrap.nl/
 
 MAKE_FLAGS=		WITH_EXPAT=1 \
 			EXPAT_INCLUDEDIR="${X11BASE}/include" \

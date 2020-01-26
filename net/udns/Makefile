@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT=		stub DNS resolver library
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		http://www.corpit.ru/mjt/udns.html
 MASTER_SITES=		http://www.corpit.ru/mjt/udns/ \
-			https://distfiles.nl/
+			https://distfiles.sigtrap.nl/
 
 WANTLIB += c
 

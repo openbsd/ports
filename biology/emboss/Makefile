@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/11 17:35:10 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2020/01/26 11:14:30 jasper Exp $
 
 PORTROACH=	ignore:1
 
@@ -18,7 +18,7 @@ HOMEPAGE=	 http://emboss.open-bio.org/
 # GPL v2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 WANTLIB += X11 c m xcb
 

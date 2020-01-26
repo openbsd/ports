@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		https://distfiles.nl/
+MASTER_SITES=		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX=		.src.tar.bz2
 
 USE_GMAKE=		Yes

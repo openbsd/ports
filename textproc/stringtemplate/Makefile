@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT=	Java template engine for generating source code, etc
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.stringtemplate.org/
 PERMIT_PACKAGE=	Yes
 
 # upstream keeps re-rolling the distfile
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	#

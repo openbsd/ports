@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/12 20:47:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT =	intelligent input bus framework
 
@@ -26,7 +26,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm z
 
 # XXX: Remove when upgrading to newer tag
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 MODULES =	devel/dconf \
 		devel/gconf2 \

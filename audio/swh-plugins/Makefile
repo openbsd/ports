@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/01/26 11:14:29 jasper Exp $
 
 COMMENT =		LADSPA plugins from Steve Harris
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		fftw3f m pthread
 
 MASTER_SITES =		${HOMEPAGE}/releases/0.4.15/ \
-			https://distfiles.nl/
+			https://distfiles.sigtrap.nl/
 
 BUILD_DEPENDS =		audio/ladspa
 LIB_DEPENDS =		math/fftw3,float

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:43:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/01/26 11:14:29 jasper Exp $
 
 COMMENT=		wm-dockapp; space weather monitor
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		https://distfiles.nl/
+MASTER_SITES=		https://distfiles.sigtrap.nl/
 
 MAKE_ENV=		CC="${CC}"
 

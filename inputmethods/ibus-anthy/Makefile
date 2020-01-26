@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT =	japanese input engine for ibus
 
@@ -20,7 +20,7 @@ WANTLIB =  anthy anthydic ffi glib-2.0 gobject-2.0 iconv intl m pcre
 WANTLIB += pthread
 
 # XXX: Remove when upgrading to newer tag
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 MODULES =	lang/python \
 		textproc/intltool

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT =		unit test framework for Bourne based shell scripts
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://github.com/kward/shunit2
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://distfiles.nl/
+MASTER_SITES =		https://distfiles.sigtrap.nl/
 
 EXTRACT_SUFX =		.tgz
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/10/23 08:01:19 martijn Exp $
+# $OpenBSD: Makefile,v 1.5 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=	dkim signer integration to the OpenSMTPD daemon
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://imperialat.at/dev/filter-dkimsign
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 INSTALL_TARGET=	bindir install
 
 LIB_DEPENDS=	mail/opensmtpd-filters/libopensmtpd

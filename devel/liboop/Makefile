@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=		low-level event loop management library
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://liboop.ofb.net/
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.nl/
+MASTER_SITES=		https://distfiles.sigtrap.nl/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--without-adns \

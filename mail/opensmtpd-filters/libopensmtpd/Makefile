@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/12/06 12:57:40 martijn Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=	library for writing opensmtpd filters
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://imperialat.at/dev/libopensmtpd
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 INSTALL_TARGET=	includes install
 
 # ISC

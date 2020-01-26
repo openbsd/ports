@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/12/30 13:20:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT =		libre and portable reverse engineering framework
 
@@ -8,7 +8,7 @@ SUBST_VARS +=		V
 GH_PROJECT =		radare2
 GH_TAGNAME =		${V}
 # upstream tarball with dependencies clone in shlr/
-MASTER_SITES =		https://distfiles.nl/
+MASTER_SITES =		https://distfiles.sigtrap.nl/
 
 # In radare, all libs have the same version
 LIBV =			7.0	# 4.0.0

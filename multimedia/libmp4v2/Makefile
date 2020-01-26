@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/14 00:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -18,7 +18,7 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://distfiles.nl/
+MASTER_SITES =		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/help2man

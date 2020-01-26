@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT =	Tcl bindings for Curl
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  crypto curl iconv intl nghttp2 ssl z
 
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 MODULES =	lang/tcl
 LIB_DEPENDS =	devel/gettext,-runtime \
 		net/curl

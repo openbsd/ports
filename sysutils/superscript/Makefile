@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT=	extended script command
 
 DISTNAME=	superscript-0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 
 WANTLIB=	c util

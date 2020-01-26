@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.28 2019/07/13 10:59:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.29 2020/01/26 11:14:30 jasper Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -38,10 +38,10 @@ PERMIT_PACKAGE?=   Yes
 
 MASTER_SITES?=		${MASTER_SITE_SOURCEFORGE:=mspgcc/}
 
-# The patches on http://distfiles.nl/mspgcc/ are taken from
+# The patches on http://distfiles.sigtrap.nl/mspgcc/ are taken from
 # git://mspgcc.git.sourceforge.net/gitroot/mspgcc/
 # or from the official release tarballs.
-MASTER_SITES0=		http://distfiles.nl/mspgcc/
+MASTER_SITES0=		http://distfiles.sigtrap.nl/mspgcc/
 
 # These are the patches intended for the LTS releases.
 MASTER_SITES1= ${MASTER_SITE_SOURCEFORGE:=mspgcc/Patches/LTS/${LTS_V}/}

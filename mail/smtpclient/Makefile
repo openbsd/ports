@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=		simple SMTP client
 
@@ -9,7 +9,7 @@ CATEGORIES=		mail
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		https://distfiles.nl/
+MASTER_SITES=		https://distfiles.sigtrap.nl/
 
 CONFIGURE_STYLE=	gnu dest
 

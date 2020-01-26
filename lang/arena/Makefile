@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/03 14:07:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=	lightweight scripting language with C-like syntax
 
@@ -10,7 +10,7 @@ CATEGORIES=	lang
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 CONFIGURE_STYLE=gnu
 

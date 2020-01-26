@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/14 00:39:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=	reciprocating engine for X11
 PKGNAME=	xengine-1.0.1
 REVISION=	5
 CATEGORIES=	benchmarks x11
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/ \
-		https://distfiles.nl/xengine/
+		https://distfiles.sigtrap.nl/xengine/
 DISTFILES=	part01.z patch1.z
 
 PERMIT_PACKAGE=	Yes

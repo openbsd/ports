@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/01/26 11:14:29 jasper Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
 CATEGORIES =	audio
 HOMEPAGE =	http://moc.daper.net/
 MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/ \
-		https://distfiles.nl/
+		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =	.tar.bz2
 REVISION =	7
 

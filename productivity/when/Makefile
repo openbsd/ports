@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT=		simple but effective personal calendar
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.lightandmatter.com/when/when.html
 # perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.nl/
+MASTER_SITES=		https://distfiles.sigtrap.nl/
 
 NO_BUILD=		Yes
 PKG_ARCH=		*

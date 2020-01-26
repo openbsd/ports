@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=	library and tools for creating SVF and XSVF JTAG players
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses ftdi pthread readline usb
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 
 LIB_DEPENDS=	devel/libftdi

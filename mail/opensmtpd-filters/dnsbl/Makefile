@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/10/23 07:59:10 martijn Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=	dnsbl integration to the OpenSMTPD daemon
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://imperialat.at/dev/filter-dnsbl
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 INSTALL_TARGET=	bindir install
 
 LIB_DEPENDS=	mail/opensmtpd-filters/libopensmtpd

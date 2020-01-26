@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT=	MPEG video player library with sound support
 
 DISTNAME=	smpeg-0.4.4
 REVISION=	17
 CATEGORIES=	devel graphics
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 SHARED_LIBS=	smpeg	2.0
 

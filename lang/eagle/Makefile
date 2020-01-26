@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=eagle/} \
 		https://download.eagle.to/releases/${V}.${P}/ \
-		https://distfiles.nl/
+		https://distfiles.sigtrap.nl/
 
 DISTFILES =	EagleBinaryMonoOnUnix${V}.${P}.rar
 EXTRACT_CASES =	*.rar) ${LOCALBASE}/bin/unrar x -idq ${DISTDIR}/$$archive;;

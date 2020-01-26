@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT =	tool for programming Wouxun transcievers
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =	c m ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://distfiles.nl/
+MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

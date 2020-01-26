@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:46:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://basilisk.cebix.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.nl/
+MASTER_SITES=		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi

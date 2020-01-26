@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/11/10 15:32:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2020/01/26 11:14:31 jasper Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
@@ -20,7 +20,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 xml2 z
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://releases.navi.cx/fyre/ \
-			https://distfiles.nl/
+			https://distfiles.sigtrap.nl/
 
 LIB_DEPENDS=		devel/libglade2 \
 			graphics/openexr

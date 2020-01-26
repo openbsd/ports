@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/01/26 11:14:29 jasper Exp $
 
 COMMENT=	tools for handling audio-file cue sheets and toc files
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c
 
 # XXX: When updating, MASTER_SITES= ${HOMEPAGE}/install/
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes

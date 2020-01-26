@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/01/26 11:14:32 jasper Exp $
 
 COMMENT=	generate index pages for displaying images
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.lysator.liu.se/~unicorn/hacks/indexpage/
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 RUN_DEPENDS=	graphics/p5-Image-Size \
 		graphics/ImageMagick

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/01/26 11:14:33 jasper Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m Xbae Xm
 
-MASTER_SITES=	https://distfiles.nl/
+MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 LIB_DEPENDS=	x11/xbae \
 		x11/motif

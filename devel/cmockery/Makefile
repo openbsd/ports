@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT =		library to simplify writing unit tests for C applications
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://distfiles.nl/
+MASTER_SITES =		https://distfiles.sigtrap.nl/
 
 CONFIGURE_STYLE =	gnu
 

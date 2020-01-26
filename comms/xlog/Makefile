@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/01/26 11:14:30 jasper Exp $
 
 COMMENT=		logbook program for amateur radio operators
 
@@ -18,7 +18,7 @@ WANTLIB += gtk-x11-2.0 hamlib intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 z
 
 MASTER_SITES=		http://download.savannah.nongnu.org/releases/xlog/ \
-			https://distfiles.nl/
+			https://distfiles.sigtrap.nl/
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info
