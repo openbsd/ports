@@ -1,30 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/05/22 11:31:17 ajacoutot Exp $
-include/mygpo-qt/
-include/mygpo-qt/AddRemoveResult.h
-include/mygpo-qt/ApiRequest.h
-include/mygpo-qt/Config.h
-include/mygpo-qt/Device.h
-include/mygpo-qt/DeviceList.h
-include/mygpo-qt/DeviceSyncResult.h
-include/mygpo-qt/DeviceUpdates.h
-include/mygpo-qt/Episode.h
-include/mygpo-qt/EpisodeAction.h
-include/mygpo-qt/EpisodeActionList.h
-include/mygpo-qt/EpisodeList.h
-include/mygpo-qt/Podcast.h
-include/mygpo-qt/PodcastList.h
-include/mygpo-qt/Settings.h
-include/mygpo-qt/Tag.h
-include/mygpo-qt/TagList.h
-include/mygpo-qt/mygpo_export.h
+@comment $OpenBSD: PLIST,v 1.4 2020/01/26 17:36:50 rsadowski Exp $
+include/mygpo-qt5/
+include/mygpo-qt5/AddRemoveResult.h
+include/mygpo-qt5/ApiRequest.h
+include/mygpo-qt5/Config.h
+include/mygpo-qt5/Device.h
+include/mygpo-qt5/DeviceList.h
+include/mygpo-qt5/DeviceSyncResult.h
+include/mygpo-qt5/DeviceUpdates.h
+include/mygpo-qt5/Episode.h
+include/mygpo-qt5/EpisodeAction.h
+include/mygpo-qt5/EpisodeActionList.h
+include/mygpo-qt5/EpisodeList.h
+include/mygpo-qt5/Podcast.h
+include/mygpo-qt5/PodcastList.h
+include/mygpo-qt5/Settings.h
+include/mygpo-qt5/Tag.h
+include/mygpo-qt5/TagList.h
+include/mygpo-qt5/mygpo_export.h
 lib/cmake/
-lib/cmake/mygpo-qt/
-lib/cmake/mygpo-qt/Mygpo-qtConfig.cmake
-lib/cmake/mygpo-qt/Mygpo-qtConfigVersion.cmake
-lib/cmake/mygpo-qt/Mygpo-qtTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/mygpo-qt/Mygpo-qtTargets.cmake
-@lib lib/libmygpo-qt.so.${LIBmygpo-qt_VERSION}
-lib/pkgconfig/libmygpo-qt.pc
+lib/cmake/mygpo-qt5/
+lib/cmake/mygpo-qt5/Mygpo-qt5Config.cmake
+lib/cmake/mygpo-qt5/Mygpo-qt5ConfigVersion.cmake
+lib/cmake/mygpo-qt5/Mygpo-qt5Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/mygpo-qt5/Mygpo-qt5Targets.cmake
+@lib lib/libmygpo-qt5.so.${LIBmygpo-qt5_VERSION}
+lib/pkgconfig/libmygpo-qt5.pc
 share/examples/mygpo-qt/
 share/examples/mygpo-qt/Makefile
 share/examples/mygpo-qt/src/
