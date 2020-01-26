@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/10 03:48:32 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/01/26 19:14:14 bket Exp $
+@conflict py-seaborn-*
+@pkgpath graphics/py-seaborn,python3
 lib/python${MODPY_VERSION}/site-packages/seaborn/
 lib/python${MODPY_VERSION}/site-packages/seaborn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/seaborn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,24 +12,20 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}algorithms.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}apionly.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}axisgrid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}categorical.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}cm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}distributions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}linearmodels.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}matrix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}miscplot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}palettes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}rcmod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}regression.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}relational.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}timeseries.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/algorithms.py
-lib/python${MODPY_VERSION}/site-packages/seaborn/apionly.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/axisgrid.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/categorical.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/cm.py
@@ -46,10 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/external/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}husl.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/external/husl.py
-lib/python${MODPY_VERSION}/site-packages/seaborn/external/six.py
-lib/python${MODPY_VERSION}/site-packages/seaborn/linearmodels.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/matrix.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/miscplot.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/palettes.py
@@ -82,6 +77,5 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/tests/test_rcmod.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/tests/test_regression.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/tests/test_relational.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/tests/test_utils.py
-lib/python${MODPY_VERSION}/site-packages/seaborn/timeseries.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/utils.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/widgets.py
