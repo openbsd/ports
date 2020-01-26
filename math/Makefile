@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2020/01/10 13:30:41 martin Exp $
+# $OpenBSD: Makefile,v 1.172 2020/01/26 07:41:09 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -18,8 +18,6 @@
      SUBDIR += double-conversion
      SUBDIR += ebc
      SUBDIR += ecm
-     SUBDIR += eigen
-     SUBDIR += eigen2
      SUBDIR += eigen3
      SUBDIR += ensmallen
      SUBDIR += fann

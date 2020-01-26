@@ -1,9 +1,0 @@
-$OpenBSD: patch-test_runtest_sh,v 1.1.1.1 2010/07/12 04:51:37 espie Exp $
---- test/runtest.sh.orig	Mon Jun 28 11:45:25 2010
-+++ test/runtest.sh	Mon Jun 28 11:45:30 2010
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#! /bin/sh
- 
- black='\E[30m'
- red='\E[31m'
