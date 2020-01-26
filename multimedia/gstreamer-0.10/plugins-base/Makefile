@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2018/07/11 13:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2020/01/26 22:10:06 naddy Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -48,10 +48,22 @@ LIB_DEPENDS=		${P}/core \
 # needed for the gio plugin
 RUN_DEPENDS +=		x11/gnome/gvfs
 
+# needed for autopoint
+BUILD_DEPENDS +=	devel/gettext,-tools
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.11
+AUTORECONF =		./autogen.sh --nocheck
+CONFIGURE_STYLE =	autoreconf
+
 # XXX libvisual needs to be ported
 CONFIGURE_ARGS=		--disable-libvisual \
 			--disable-gnome_vfs \
 			--disable-ivorbis
+
+# disable git for autogen.sh
+post-patch:
+	ln -s /usr/bin/true ${WRKDIR}/bin/git
 
 pre-configure:
 	perl -pi -e 's,/dev/cdrom1,/dev/rcd1c,g' \

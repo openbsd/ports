@@ -1,0 +1,17 @@
+$OpenBSD: patch-common_gst-glib-gen_mak,v 1.1 2020/01/26 22:10:06 naddy Exp $
+
+gmake 4.2.1 > 4.3 backward-incompatibility
+
+Index: common/gst-glib-gen.mak
+--- common/gst-glib-gen.mak.orig
++++ common/gst-glib-gen.mak
+@@ -6,7 +6,8 @@
+ #glib_gen_prefix=gst_color_balance
+ #glib_gen_basename=colorbalance
+ 
+-enum_headers=$(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++H = \#
++enum_headers=$(foreach h,$(glib_enum_headers),\n$(H)include \"$(h)\")
+ 
+ # these are all the rules generating the relevant files
+ $(glib_gen_basename)-marshal.h: $(glib_gen_basename)-marshal.list
