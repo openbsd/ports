@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1 2018/06/15 01:04:54 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/01/26 23:39:09 bcallah Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -21,3 +21,15 @@ Index: Makefile
  CFLAGS_profile  = -pg -O3 -fno-inline
  CFLAGS_coverage = --coverage -O0
  CFLAGS += $(CFLAGS_$(variant))
+@@ -91,8 +91,10 @@ REVISION ?= $(shell git --git-dir $(top_srcdir)/.git d
+ SELFCHECK_FLAGS ?= -Wall -Wno-shadow -Werror
+ 
+ # Update revision.h if necessary
++# gmake 4.2.1 > 4.3 backward-incompatibility
++H = \#
+ UNUSED := $(shell \
+-	REV="\#define cparser_REVISION \"$(REVISION)\""; \
++	REV="$(H)define cparser_REVISION \"$(REVISION)\""; \
+ 	echo "$$REV" | cmp -s - $(REVISIONH) 2> /dev/null || echo "$$REV" > $(REVISIONH) \
+ )
+ # determine if we can use "cparser-beta" as quickcheck
