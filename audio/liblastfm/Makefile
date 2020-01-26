@@ -1,35 +1,32 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/17 14:49:20 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2020/01/26 17:36:57 rsadowski Exp $
 
 COMMENT =	Qt-based C++ library for the Last.fm webservices
-V =		1.0.9
+V =		1.1.0
 DISTNAME =	$V
 PKGNAME =	liblastfm-$V
 CATEGORIES =	audio devel net
-REVISION =	3
 
 HOMEPAGE =	https://github.com/lastfm/liblastfm
-SHARED_LIBS =	lastfm			1.0
-SHARED_LIBS +=	lastfm_fingerprint	1.0
+
+SHARED_LIBS =  lastfm5                  0.0
+SHARED_LIBS += lastfm_fingerprint5      0.0
 
 # GPLv3
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE = Yes
+
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Sql
+WANTLIB += Qt5Xml c fftw3f m samplerate
 
 # archives are stable but naming scheme sucks, thus DIST_SUBDIR
-MASTER_SITES =	${HOMEPAGE}/archive/
+MASTER_SITES =	https://github.com/lastfm/liblastfm/archive/
 DIST_SUBDIR =	liblastfm
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
-WANTLIB =  lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtXml
-WANTLIB += fftw3f c m pthread samplerate ${COMPILER_LIBCXX}
-
-COMPILER =		base-clang ports-gcc base-gcc
+MODULES =	devel/cmake \
+		x11/qt5
 
 LIB_DEPENDS =	audio/libsamplerate \
 		math/fftw3,float
-
-MODULES =	devel/cmake x11/qt4
-
-CONFIGURE_ARGS =	-DBUILD_WITH_QT4=On
 
 # network access
 TEST_IS_INTERACTIVE =	Yes

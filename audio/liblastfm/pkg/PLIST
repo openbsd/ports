@@ -1,34 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/10/06 22:05:04 zhuk Exp $
-include/lastfm/
-include/lastfm/AbstractType.h
-include/lastfm/Album.h
-include/lastfm/Artist.h
-include/lastfm/Audioscrobbler.h
-include/lastfm/Auth.h
-include/lastfm/Chart.h
-include/lastfm/Fingerprint.h
-include/lastfm/FingerprintId.h
-include/lastfm/FingerprintableSource.h
-include/lastfm/InternetConnectionMonitor.h
-include/lastfm/Library.h
-include/lastfm/Mbid.h
-include/lastfm/NetworkAccessManager.h
-include/lastfm/NetworkConnectionMonitor.h
-include/lastfm/Playlist.h
-include/lastfm/RadioStation.h
-include/lastfm/RadioTuner.h
-include/lastfm/ScrobbleCache.h
-include/lastfm/ScrobblePoint.h
-include/lastfm/Tag.h
-include/lastfm/Tasteometer.h
-include/lastfm/Track.h
-include/lastfm/Url.h
-include/lastfm/UrlBuilder.h
-include/lastfm/User.h
-include/lastfm/XmlQuery.h
-include/lastfm/Xspf.h
-include/lastfm/global.h
-include/lastfm/misc.h
-include/lastfm/ws.h
-@lib lib/liblastfm.so.${LIBlastfm_VERSION}
-@lib lib/liblastfm_fingerprint.so.${LIBlastfm_fingerprint_VERSION}
+@comment $OpenBSD: PLIST,v 1.3 2020/01/26 17:36:57 rsadowski Exp $
+include/lastfm5/
+include/lastfm5/AbstractType.h
+include/lastfm5/Album.h
+include/lastfm5/Artist.h
+include/lastfm5/Audioscrobbler.h
+include/lastfm5/Auth.h
+include/lastfm5/Chart.h
+include/lastfm5/Fingerprint.h
+include/lastfm5/FingerprintId.h
+include/lastfm5/FingerprintableSource.h
+include/lastfm5/InternetConnectionMonitor.h
+include/lastfm5/Library.h
+include/lastfm5/Mbid.h
+include/lastfm5/NetworkAccessManager.h
+include/lastfm5/NetworkConnectionMonitor.h
+include/lastfm5/Playlist.h
+include/lastfm5/RadioStation.h
+include/lastfm5/RadioTuner.h
+include/lastfm5/ScrobbleCache.h
+include/lastfm5/ScrobblePoint.h
+include/lastfm5/Tag.h
+include/lastfm5/Tasteometer.h
+include/lastfm5/Track.h
+include/lastfm5/Url.h
+include/lastfm5/UrlBuilder.h
+include/lastfm5/User.h
+include/lastfm5/XmlQuery.h
+include/lastfm5/Xspf.h
+include/lastfm5/global.h
+include/lastfm5/misc.h
+include/lastfm5/ws.h
+@lib lib/liblastfm5.so.${LIBlastfm5_VERSION}
+@lib lib/liblastfm_fingerprint5.so.${LIBlastfm_fingerprint5_VERSION}
