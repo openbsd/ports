@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/26 20:35:30 afresh1 Exp $
 
 COMMENT =		simple and dumb file system watcher
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Filesys-Notify-Simple-0.12
+DISTNAME =		Filesys-Notify-Simple-0.14
 CATEGORIES =		sysutils
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
@@ -12,5 +12,7 @@ BUILD_DEPENDS =		devel/p5-Test-SharedFork
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+MAKE_ENV =		TEST_POD=yes AUTHOR_TESTING=yes
 
 .include <bsd.port.mk>

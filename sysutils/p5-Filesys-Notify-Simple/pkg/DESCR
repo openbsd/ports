@@ -6,8 +6,8 @@ fallback to the full directory scan if they're not available.
 There are some limitations in this module. If you don't like it, use
 File::ChangeNotify.
 
-    * There is no file name based filter. Do it in your own code.  
-    * You can not get types of events (created, updated, deleted).  
+    * There is no file name based filter. Do it in your own code.
+    * You can not get types of events (created, updated, deleted).
     * Currently wait method blocks.
 
 In return, this module doesn't depend on any non-core modules. Platform
