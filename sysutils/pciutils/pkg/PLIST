@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/04/11 08:25:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/01/26 07:31:53 jsg Exp $
 include/pci/
 include/pci/config.h
 include/pci/header.h
 include/pci/pci.h
 include/pci/types.h
-lib/libpci.a
+@static-lib lib/libpci.a
 lib/pkgconfig/libpci.pc
+@man man/man5/pci.ids.5
 @man man/man8/lspci.8
 @man man/man8/setpci.8
 @man man/man8/update-pciids.8

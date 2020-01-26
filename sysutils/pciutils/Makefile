@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/01/26 07:31:53 jsg Exp $
 
 NOT_FOR_ARCHS =		m88k
 
 COMMENT =		PCI bus configuration register access tools
 
-DISTNAME =		pciutils-3.6.2
+DISTNAME =		pciutils-3.6.3
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://mj.ucw.cz/sw/pciutils/

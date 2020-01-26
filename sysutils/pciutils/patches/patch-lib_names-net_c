@@ -1,7 +1,8 @@
-$OpenBSD: patch-lib_names-net_c,v 1.4 2015/04/11 08:25:10 ajacoutot Exp $
---- lib/names-net.c.orig	Sat Nov  1 16:17:15 2014
-+++ lib/names-net.c	Fri Apr 10 13:02:09 2015
-@@ -196,7 +196,7 @@ char
+$OpenBSD: patch-lib_names-net_c,v 1.5 2020/01/26 07:31:53 jsg Exp $
+Index: lib/names-net.c
+--- lib/names-net.c.orig
++++ lib/names-net.c
+@@ -204,7 +204,7 @@ char
        resolver_inited = 1;
        res_init();
      }
@@ -10,7 +11,7 @@ $OpenBSD: patch-lib_names-net_c,v 1.4 2015/04/11 08:25:10 ajacoutot Exp $
    if (res < 0)
      {
        a->debug("\tfailed, h_errno=%d\n", h_errno);
-@@ -210,7 +210,7 @@ char
+@@ -218,7 +218,7 @@ char
    dns_init_section(&ds, DNS_SEC_ANSWER);
    while (dns_parse_rr(&ds) > 0)
      {
