@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/17 14:46:33 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2020/01/26 07:30:15 rsadowski Exp $
 
 PKG_ARCH =	*
 COMMENT =	lightweight C++ template library for linear algebra
@@ -9,7 +9,7 @@ VERSION =	3.2.2
 DISTNAME =	${VERSION}
 PKGNAME =	eigen3-${VERSION}
 WRKDIST =	${WRKDIR}/eigen-eigen-1306d75b4a21
-REVISION =	4
+REVISION =	5
 
 # Mostly MPLv2, also LGPLv2.1, LGPLv2.1+ and BSDL
 PERMIT_PACKAGE =	Yes
@@ -30,7 +30,7 @@ BUILD_DEPENDS =		devel/sparsehash \
 RUN_DEPENDS =		devel/sparsehash \
 			math/suitesparse
 
-MODULES =		devel/cmake x11/qt4
+MODULES =		devel/cmake
 
 # Needs Fortran support
 USE_NINJA =		No
@@ -42,7 +42,8 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Adolc=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Pastix=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SPQR=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Scotch=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_SuperLU=Yes
+			-DCMAKE_DISABLE_FIND_PACKAGE_SuperLU=Yes \
+			-DEIGEN_TEST_NOQT=ON
 
 .if ${FLAVOR:Mtest}
 CONFIGURE_ARGS +=	-DEIGEN_FAILTEST=Yes
