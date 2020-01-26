@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/26 12:48:36 ajacoutot Exp $
 
 COMMENT=	client-side library to implement the iSCSI protocol
 
-DISTNAME=	libiscsi-1.18.0
+GH_ACCOUNT=	sahlberg
+GH_PROJECT=	libiscsi
+GH_TAGNAME=	1.19.0
 CATEGORIES=	devel net
-MASTER_SITES=	https://sites.google.com/site/libiscsitarballs/libiscsitarballs/
 
-SHARED_LIBS=	iscsi	1.0
+SHARED_LIBS=	iscsi	2.0
 
 HOMEPAGE=	https://github.com/sahlberg/libiscsi
 
@@ -17,6 +18,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+
+CONFIGURE_STYLE= autoreconf
 
 .include <bsd.port.mk>
