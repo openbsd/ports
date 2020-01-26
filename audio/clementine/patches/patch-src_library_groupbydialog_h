@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_library_groupbydialog_h,v 1.1 2017/05/24 08:07:32 espie Exp $
+$OpenBSD: patch-src_library_groupbydialog_h,v 1.2 2020/01/26 17:37:07 rsadowski Exp $
 
 Index: src/library/groupbydialog.h
 --- src/library/groupbydialog.h.orig
@@ -9,5 +9,5 @@ Index: src/library/groupbydialog.h
  #include <memory>
 +#include <functional>
  
- using std::placeholders::_1;
- using std::placeholders::_2;
+ #include "librarymodel.h"
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/01/26 17:37:08 rsadowski Exp $
 @bin bin/clementine
 @bin bin/clementine-tagreader
 share/applications/clementine.desktop
@@ -575,13 +575,15 @@ share/clementine/projectm-presets/nil - Vortex of Vortices.milk
 share/clementine/projectm-presets/project.tga
 share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat - Before_It_Eats_Your_Brain_Mix_v2.milk
 share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat 5362.milk
-share/icons/hicolor/64x64/apps/application-x-clementine.png
-share/icons/hicolor/scalable/apps/application-x-clementine.svg
-share/kde4/
-share/kde4/services/
-share/kde4/services/clementine-feed.protocol
-share/kde4/services/clementine-itms.protocol
-share/kde4/services/clementine-itpc.protocol
-share/kde4/services/clementine-zune.protocol
+share/icons/hicolor/128x128/apps/clementine.png
+share/icons/hicolor/64x64/apps/clementine.png
+share/icons/hicolor/scalable/apps/clementine.svg
+share/kservices5/
+share/kservices5/clementine-feed.protocol
+share/kservices5/clementine-itms.protocol
+share/kservices5/clementine-itpc.protocol
+share/kservices5/clementine-zune.protocol
+share/metainfo/
+share/metainfo/clementine.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

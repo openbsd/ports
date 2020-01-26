@@ -1,63 +1,29 @@
-$OpenBSD: patch-src_core_utilities_cpp,v 1.4 2014/10/01 20:52:48 dcoppa Exp $
+$OpenBSD: patch-src_core_utilities_cpp,v 1.5 2020/01/26 17:37:07 rsadowski Exp $
 1. Add support for OpenBSD sensors framework when checking if this PC
    is a laptop.
-2. Make Clementine use system SHA-2 implementation.
---- src/core/utilities.cpp.orig	Wed Apr 23 12:16:44 2014
-+++ src/core/utilities.cpp	Wed Oct  1 22:17:52 2014
-@@ -67,6 +67,14 @@
- #  include <QProcess>
+Index: src/core/utilities.cpp
+--- src/core/utilities.cpp.orig
++++ src/core/utilities.cpp
+@@ -66,6 +66,14 @@
+ #ifdef Q_OS_DARWIN
+ #include <sys/resource.h>
  #endif
- 
 +#ifdef Q_OS_OPENBSD
-+#  include <sys/param.h>
-+#  include <sys/sensors.h>
-+#  include <sys/sysctl.h>
-+#  include <errno.h>
-+#  include <string.h>
++#include <unistd.h>
++#include <errno.h>
++#include <sys/time.h>
++#include <sys/sensors.h>
++#include <sys/types.h>
++#include <sys/sysctl.h>
 +#endif
-+
- namespace Utilities {
  
- static QString tr(const char* str) {
-@@ -437,16 +445,26 @@ QByteArray HmacSha1(const QByteArray& key, const QByte
-   return Hmac(key, data, Sha1_Algo);
- }
- 
-+#if !HAVE_SHA2_UNDERSCORED
-+namespace clementine_sha2 {
-+typedef ::SHA2_CTX SHA256_CTX;
-+void SHA256_Init(SHA256_CTX *ctx) { SHA256Init(ctx); }
-+void SHA256_Update(SHA256_CTX *ctx, const u_int8_t *data, size_t len) { SHA256Update(ctx, data, len); }
-+void SHA256_Final(u_int8_t digest[SHA256_DIGEST_LENGTH], SHA256_CTX *ctx) { SHA256Final(digest, ctx); }
-+}
-+#endif   // !HAVE_SHA2_UNDERSCORED
-+
-+using namespace clementine_sha2;
-+
- QByteArray Sha256(const QByteArray& data) {
--  clementine_sha2::SHA256_CTX context;
--  clementine_sha2::SHA256_Init(&context);
--  clementine_sha2::SHA256_Update(
-+  SHA256_CTX context;
-+  SHA256_Init(&context);
-+  SHA256_Update(
-       &context, reinterpret_cast<const quint8*>(data.constData()),
-       data.length());
- 
--  QByteArray ret(clementine_sha2::SHA256_DIGEST_LENGTH, '\0');
--  clementine_sha2::SHA256_Final(
--      reinterpret_cast<quint8*>(ret.data()), &context);
-+  QByteArray ret(SHA256_DIGEST_LENGTH, '\0');
-+  SHA256_Final(reinterpret_cast<quint8*>(ret.data()), &context);
- 
-   return ret;
- }
-@@ -595,6 +613,23 @@ bool IsLaptop() {
-     if (CFDictionaryContainsKey(description, CFSTR(kIOPSBatteryHealthKey))) {
-       return true;
+ #ifdef Q_OS_DARWIN
+ #include "core/mac_startup.h"
+@@ -690,9 +698,25 @@ bool IsLaptop() {
      }
-+  }
-+  return false;
+   }
+   return false;
+-#else
 +#elif defined(Q_OS_OPENBSD)
 +  struct sensordev snsrdev;
 +  size_t sdlen = sizeof(snsrdev);
@@ -73,6 +39,10 @@ $OpenBSD: patch-src_core_utilities_cpp,v 1.4 2014/10/01 20:52:48 dcoppa Exp $
 +    }
 +    if (::memcmp("acpibat", snsrdev.xname, 7) == 0)
 +      return true;
-   }
++  }
    return false;
- #else
+ #endif
++  return false;
+ }
+ 
+ QString SystemLanguageName() {

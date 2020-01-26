@@ -1,7 +1,8 @@
-$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.4 2013/12/12 11:13:39 zhuk Exp $
+$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.5 2020/01/26 17:37:07 rsadowski Exp $
 Use shiny CMake FindBacktrace module.
---- ext/libclementine-common/core/logging.cpp.orig	Sun Oct 13 04:27:04 2013
-+++ ext/libclementine-common/core/logging.cpp	Sun Oct 20 05:28:07 2013
+Index: ext/libclementine-common/core/logging.cpp
+--- ext/libclementine-common/core/logging.cpp.orig
++++ ext/libclementine-common/core/logging.cpp
 @@ -18,12 +18,11 @@
  // it is used by the Spotify blob which links against libspotify and is not GPL
  // compatible.
@@ -15,18 +16,18 @@ Use shiny CMake FindBacktrace module.
 -#include <execinfo.h>
 -#endif
  
- #include <QCoreApplication>
- #include <QDateTime>
-@@ -230,7 +229,7 @@ QString DemangleSymbol(const QString& symbol) {
+ #include <iostream>
+ 
+@@ -254,7 +253,7 @@ QString DemangleSymbol(const QString& symbol) {
  }
  
  void DumpStackTrace() {
 -#ifdef Q_OS_UNIX
 +#if Backtrace_FOUND
    void* callstack[128];
-   int callstack_size = backtrace(reinterpret_cast<void**>(&callstack), sizeof(callstack));
-   char** symbols = backtrace_symbols(reinterpret_cast<void**>(&callstack), callstack_size);
-@@ -240,7 +239,7 @@ void DumpStackTrace() {
+   int callstack_size =
+       backtrace(reinterpret_cast<void**>(&callstack), sizeof(callstack));
+@@ -267,7 +266,7 @@ void DumpStackTrace() {
    }
    free(symbols);
  #else
