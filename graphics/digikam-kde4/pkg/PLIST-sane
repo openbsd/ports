@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-sane,v 1.2 2019/05/02 16:40:42 rsadowski Exp $
-@pkgpath x11/kde4/libksane
-@lib lib/libksane.so.${LIBksane_VERSION}
-share/icons/hicolor/16x16/actions/black-white.png
-share/icons/hicolor/16x16/actions/color.png
-share/icons/hicolor/16x16/actions/gray-scale.png
-@tag gtk-update-icon-cache %D/share/icons/hicolor
