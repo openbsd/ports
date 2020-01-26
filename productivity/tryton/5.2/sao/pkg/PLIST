@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/07/02 10:21:27 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/01/26 14:21:54 semarie Exp $
 @option is-branch
 share/doc/tryton-sao-${TRYTON_VERSION}/
 share/doc/tryton-sao-${TRYTON_VERSION}/CHANGELOG
 share/doc/tryton-sao-${TRYTON_VERSION}/COPYRIGHT
 share/doc/tryton-sao-${TRYTON_VERSION}/LICENSE
-share/doc/tryton-sao-${TRYTON_VERSION}/README.rst
+share/doc/tryton-sao-${TRYTON_VERSION}/README.md
 share/examples/tryton-sao-${TRYTON_VERSION}/
 share/examples/tryton-sao-${TRYTON_VERSION}/custom.css
 @sample share/tryton-sao-${TRYTON_VERSION}/custom.css
@@ -45,7 +45,6 @@ share/tryton-sao-${TRYTON_VERSION}/bower_components/bootstrap/dist/js/bootstrap.
 share/tryton-sao-${TRYTON_VERSION}/bower_components/bootstrap/dist/js/bootstrap.min.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/bootstrap/dist/js/npm.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/c3/
-share/tryton-sao-${TRYTON_VERSION}/bower_components/c3/bower.json
 share/tryton-sao-${TRYTON_VERSION}/bower_components/c3/c3.css
 share/tryton-sao-${TRYTON_VERSION}/bower_components/c3/c3.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/c3/c3.min.css
@@ -74,6 +73,7 @@ share/tryton-sao-${TRYTON_VERSION}/bower_components/eonasdan-bootstrap-datetimep
 share/tryton-sao-${TRYTON_VERSION}/bower_components/fullcalendar/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/fullcalendar/dist/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/fullcalendar/dist/fullcalendar.css
+share/tryton-sao-${TRYTON_VERSION}/bower_components/fullcalendar/dist/fullcalendar.d.ts
 share/tryton-sao-${TRYTON_VERSION}/bower_components/fullcalendar/dist/fullcalendar.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/fullcalendar/dist/fullcalendar.min.css
 share/tryton-sao-${TRYTON_VERSION}/bower_components/fullcalendar/dist/fullcalendar.min.js
@@ -162,9 +162,13 @@ share/tryton-sao-${TRYTON_VERSION}/bower_components/gettext.js/dist/gettext.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/gettext.js/dist/gettext.min.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/
+share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/core.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.min.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.min.map
+share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.slim.js
+share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.slim.min.js
+share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.slim.min.map
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/locales.js
@@ -201,6 +205,16 @@ share/tryton-sao-${TRYTON_VERSION}/bower_components/mousetrap/plugins/record/tes
 share/tryton-sao-${TRYTON_VERSION}/bower_components/papaparse/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/papaparse/papaparse.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/papaparse/papaparse.min.js
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/browserstack-current-1.json
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/browserstack-current-2.json
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/browserstack-legacy-1.json
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/browserstack-legacy-2.json
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/release.js
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/run-browserstack.sh
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/tasks/
+share/tryton-sao-${TRYTON_VERSION}/bower_components/qunit/build/tasks/test-on-node.js
 share/tryton-sao-${TRYTON_VERSION}/dist/
 share/tryton-sao-${TRYTON_VERSION}/dist/tryton-sao.css
 share/tryton-sao-${TRYTON_VERSION}/dist/tryton-sao.js
