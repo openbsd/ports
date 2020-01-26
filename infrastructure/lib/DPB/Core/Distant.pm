@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.25 2019/10/07 04:52:15 espie Exp $
+# $OpenBSD: Distant.pm,v 1.26 2020/01/26 13:02:32 sthen Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -134,6 +134,7 @@ sub run
 		'-o', "ForwardX11=no",
 		'-o', "ForwardAgent=no",
 		'-o', "GatewayPorts=no",
+		'-o', "BatchMode=yes",
 		'-N', '-M', $host) or
 	    exit(1);
 }
