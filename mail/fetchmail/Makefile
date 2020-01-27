@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.152 2019/07/12 20:47:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.153 2020/01/27 13:48:45 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
-DISTNAME=	fetchmail-6.3.26
+DISTNAME=	fetchmail-6.4.1
+EXTRACT_SUFX=	.tar.xz
+
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fetchmail/}
-REVISION=	3
 
-HOMEPAGE=	http://www.fetchmail.info/
+HOMEPAGE=	https://www.fetchmail.info/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -21,17 +22,15 @@ SUBST_VARS+=		MODPY_LIBDIR
 BUILD_DEPENDS=		devel/bison
 LIB_DEPENDS=		devel/gettext,-runtime
 
+CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.68
 CFLAGS=			-I${LOCALBASE}/include
+PORTHOME=		${WRKDIR}
 CONFIGURE_ENV=		PYTHON=: YACC="bison -y"
 CONFIGURE_ARGS=		--with-ssl \
 			--enable-NTLM
 
 USE_GROFF=		Yes# uses www.tmac for .URL tags
-
-EXTRACT_SUFX=		.tar.xz
 
 DOCS=			FAQ NOTES FEATURES README COPYING fetchmail-FAQ.html \
 			fetchmail-features.html design-notes.html todo.html
