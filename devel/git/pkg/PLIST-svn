@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST-svn,v 1.5 2018/06/14 17:43:48 kn Exp $
+@comment $OpenBSD: PLIST-svn,v 1.6 2020/01/27 23:49:12 abieber Exp $
+${P5SITE}/Git/SVN/
+${P5SITE}/Git/SVN.pm
+${P5SITE}/Git/SVN/Editor.pm
+${P5SITE}/Git/SVN/Fetcher.pm
+${P5SITE}/Git/SVN/GlobSpec.pm
+${P5SITE}/Git/SVN/Log.pm
+${P5SITE}/Git/SVN/Memoize/
+${P5SITE}/Git/SVN/Memoize/YAML.pm
+${P5SITE}/Git/SVN/Migration.pm
+${P5SITE}/Git/SVN/Prompt.pm
+${P5SITE}/Git/SVN/Ra.pm
+${P5SITE}/Git/SVN/Utils.pm
 libexec/git/git-svn
 @man man/man1/git-svn.1
-share/perl5/Git/SVN/
-share/perl5/Git/SVN.pm
-share/perl5/Git/SVN/Editor.pm
-share/perl5/Git/SVN/Fetcher.pm
-share/perl5/Git/SVN/GlobSpec.pm
-share/perl5/Git/SVN/Log.pm
-share/perl5/Git/SVN/Memoize/
-share/perl5/Git/SVN/Memoize/YAML.pm
-share/perl5/Git/SVN/Migration.pm
-share/perl5/Git/SVN/Prompt.pm
-share/perl5/Git/SVN/Ra.pm
-share/perl5/Git/SVN/Utils.pm

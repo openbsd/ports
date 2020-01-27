@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2020/01/19 18:27:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.212 2020/01/27 23:49:12 abieber Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
@@ -10,7 +10,7 @@ PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://git-scm.com/
 
@@ -27,6 +27,7 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 MASTER_SITES =		https://www.kernel.org/pub/software/scm/git/
 
 MODULES =		lang/python \
+			perl \
 			x11/tk
 
 MODTK_VERSION =		8.6
@@ -49,7 +50,8 @@ WANTLIB-main =		c charset crypto curl expat iconv intl nghttp2 pthread \
 			ssl z
 
 RUN_DEPENDS-main =	devel/cvsps \
-			devel/p5-Error
+			devel/p5-Error \
+			mail/p5-Mail-Tools
 LIB_DEPENDS-main =	devel/gettext,-runtime \
 			net/curl
 
@@ -71,6 +73,8 @@ UPDATE_PLIST_ARGS += -i MODPY_VERSION
 
 MAKE_FLAGS =		V=1 \
 			gitexecdir=${TRUEPREFIX}/libexec/git \
+			perllibdir=${TRUEPREFIX}/${P5SITE} \
+			NO_PERL_CPAN_FALLBACKS=1 \
 			TCLTK_PATH=${MODTK_BIN} \
 			TCL_PATH=${MODTCL_BIN}
 MAKE_ENV =		TEST_TAR=${LOCALBASE}/bin/gtar
@@ -94,7 +98,7 @@ TEST_DEPENDS =		archivers/gtar \
 			devel/cvsps \
 			devel/subversion,-perl
 
-# ${WRKSRC}/t/t4256/1/mailinfo.c.orig 
+# ${WRKSRC}/t/t4256/1/mailinfo.c.orig
 PATCHORIG =		.pat.orig
 
 post-extract:

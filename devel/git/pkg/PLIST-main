@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.93 2020/01/19 18:27:50 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.94 2020/01/27 23:49:12 abieber Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -10,6 +10,16 @@ bin/git-cvsserver
 @bin bin/git-upload-archive
 @bin bin/git-upload-pack
 @static-lib lib/libgit.a
+${P5SITE}/Git/
+${P5SITE}/Git.pm
+${P5SITE}/Git/I18N.pm
+${P5SITE}/Git/IndexInfo.pm
+${P5SITE}/Git/LoadCPAN/
+${P5SITE}/Git/LoadCPAN.pm
+${P5SITE}/Git/LoadCPAN/Error.pm
+${P5SITE}/Git/LoadCPAN/Mail/
+${P5SITE}/Git/LoadCPAN/Mail/Address.pm
+${P5SITE}/Git/Packet.pm
 libexec/git/
 @bin libexec/git/git
 @bin libexec/git/git-add
@@ -437,18 +447,3 @@ share/locale/sv/LC_MESSAGES/git.mo
 share/locale/vi/LC_MESSAGES/git.mo
 share/locale/zh_CN/LC_MESSAGES/git.mo
 share/locale/zh_TW/LC_MESSAGES/git.mo
-share/perl5/
-share/perl5/FromCPAN/
-share/perl5/FromCPAN/Error.pm
-share/perl5/FromCPAN/Mail/
-share/perl5/FromCPAN/Mail/Address.pm
-share/perl5/Git/
-share/perl5/Git.pm
-share/perl5/Git/I18N.pm
-share/perl5/Git/IndexInfo.pm
-share/perl5/Git/LoadCPAN/
-share/perl5/Git/LoadCPAN.pm
-share/perl5/Git/LoadCPAN/Error.pm
-share/perl5/Git/LoadCPAN/Mail/
-share/perl5/Git/LoadCPAN/Mail/Address.pm
-share/perl5/Git/Packet.pm
