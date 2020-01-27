@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/06/19 05:19:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/01/27 07:10:01 rsadowski Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -46,11 +46,6 @@ share/homebank/help/help.css
 share/homebank/help/images/
 share/homebank/help/images/1.png
 share/homebank/help/images/10.png
-share/homebank/help/images/11.png
-share/homebank/help/images/12.png
-share/homebank/help/images/13.png
-share/homebank/help/images/14.png
-share/homebank/help/images/15.png
 share/homebank/help/images/2.png
 share/homebank/help/images/3.png
 share/homebank/help/images/4.png
@@ -72,8 +67,10 @@ share/homebank/help/images/d-info.png
 share/homebank/help/images/d-warn.png
 share/homebank/help/images/dlg-account1.png
 share/homebank/help/images/dlg-account2.png
+share/homebank/help/images/dlg-account3.png
 share/homebank/help/images/dlg-assign1.png
 share/homebank/help/images/dlg-budget1.png
+share/homebank/help/images/dlg-budget2.png
 share/homebank/help/images/dlg-category1.png
 share/homebank/help/images/dlg-currencies1.png
 share/homebank/help/images/dlg-currencies2.png
@@ -84,6 +81,8 @@ share/homebank/help/images/dlg-filter4.png
 share/homebank/help/images/dlg-filter5.png
 share/homebank/help/images/dlg-filter6.png
 share/homebank/help/images/dlg-payee.png
+share/homebank/help/images/dlg-payee1.png
+share/homebank/help/images/dlg-payee2.png
 share/homebank/help/images/dlg-prefs1.png
 share/homebank/help/images/dlg-prefs2.png
 share/homebank/help/images/dlg-prefs3.png
@@ -107,10 +106,12 @@ share/homebank/help/images/hb-ope-auto.png
 share/homebank/help/images/hb-ope-budget.png
 share/homebank/help/images/hb-ope-cleared.png
 share/homebank/help/images/hb-ope-edit.png
+share/homebank/help/images/hb-ope-forced.png
 share/homebank/help/images/hb-ope-new.png
 share/homebank/help/images/hb-ope-reconciled.png
 share/homebank/help/images/hb-ope-remind.png
 share/homebank/help/images/hb-ope-similar.png
+share/homebank/help/images/hb-ope-void.png
 share/homebank/help/images/key_c.png
 share/homebank/help/images/key_ctrl.png
 share/homebank/help/images/key_n.png
@@ -130,6 +131,7 @@ share/homebank/help/images/pm-transfer.png
 share/homebank/help/images/tip-accorder.png
 share/homebank/help/images/tip-listsearch.png
 share/homebank/help/images/use-assignment1.png
+share/homebank/help/images/use-assignment2b.png
 share/homebank/help/images/use-budget1.png
 share/homebank/help/images/use-budget2.png
 share/homebank/help/images/use-budget3.png
@@ -139,6 +141,7 @@ share/homebank/help/images/use-import3b.png
 share/homebank/help/images/use-import4.png
 share/homebank/help/images/use-scheduled1.png
 share/homebank/help/images/use-scheduled2.png
+share/homebank/help/images/use-scheduled3.png
 share/homebank/help/images/use-vehiclecost1.png
 share/homebank/help/images/use-vehiclecost2.png
 share/homebank/help/images/use-vehiclecost3.png
@@ -157,15 +160,13 @@ share/homebank/help/images/win-trendtime2.png
 share/homebank/help/index.html
 share/homebank/help/menu-account.html
 share/homebank/help/menu-main.html
-share/homebank/help/misc-balance.html
 share/homebank/help/misc-csvformat.html
-share/homebank/help/misc-euro.html
-share/homebank/help/misc-reconcile.html
 share/homebank/help/use-auto_addition.html
 share/homebank/help/use-auto_assign.html
 share/homebank/help/use-budget.html
 share/homebank/help/use-import.html
 share/homebank/help/use-lend-refund.html
+share/homebank/help/use-reconcile.html
 share/homebank/help/use-tipsandtricks.html
 share/homebank/help/use-vehiclecost.html
 share/homebank/help/win-account.html
@@ -188,10 +189,12 @@ share/homebank/icons/hicolor/16x16/status/hb-ope-auto.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-budget.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-cleared.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-edit.png
+share/homebank/icons/hicolor/16x16/status/hb-ope-forced.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-new.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-reconciled.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-remind.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-similar.png
+share/homebank/icons/hicolor/16x16/status/hb-ope-void.png
 share/homebank/icons/hicolor/16x16/status/pm-cash.png
 share/homebank/icons/hicolor/16x16/status/pm-ccard.png
 share/homebank/icons/hicolor/16x16/status/pm-check.png
@@ -217,11 +220,15 @@ share/homebank/icons/hicolor/24x24/actions/hb-document-new.png
 share/homebank/icons/hicolor/24x24/actions/hb-document-open.png
 share/homebank/icons/hicolor/24x24/actions/hb-document-save-as.png
 share/homebank/icons/hicolor/24x24/actions/hb-document-save.png
+share/homebank/icons/hicolor/24x24/actions/hb-donate.png
 share/homebank/icons/hicolor/24x24/actions/hb-file-export.png
 share/homebank/icons/hicolor/24x24/actions/hb-file-import.png
 share/homebank/icons/hicolor/24x24/actions/hb-file-invalid.png
 share/homebank/icons/hicolor/24x24/actions/hb-file-valid.png
 share/homebank/icons/hicolor/24x24/actions/hb-filter.png
+share/homebank/icons/hicolor/24x24/actions/hb-go-down.png
+share/homebank/icons/hicolor/24x24/actions/hb-go-up.png
+share/homebank/icons/hicolor/24x24/actions/hb-help.png
 share/homebank/icons/hicolor/24x24/actions/hb-legend.png
 share/homebank/icons/hicolor/24x24/actions/hb-ope-add.png
 share/homebank/icons/hicolor/24x24/actions/hb-ope-cleared.png
@@ -263,6 +270,7 @@ share/homebank/icons/hicolor/scalable/actions/
 share/homebank/icons/hicolor/scalable/actions/edit-split-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-collapse-all-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-expand-all-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/list-merge-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/toggle-sign-symbolic.svg
 share/homebank/images/
 share/homebank/images/splash.png

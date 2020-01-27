@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.41 2019/08/18 19:47:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.42 2020/01/27 07:10:01 rsadowski Exp $
 
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.2.7
+DISTNAME =	homebank-5.3
 
 CATEGORIES =	productivity x11
 
 HOMEPAGE =	http://homebank.free.fr
 
-MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org> \
+		Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

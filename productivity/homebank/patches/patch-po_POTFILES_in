@@ -1,12 +1,12 @@
-$OpenBSD: patch-po_POTFILES_in,v 1.7 2019/06/19 05:19:33 rsadowski Exp $
+$OpenBSD: patch-po_POTFILES_in,v 1.8 2020/01/27 07:10:01 rsadowski Exp $
 Index: po/POTFILES.in
 --- po/POTFILES.in.orig
 +++ po/POTFILES.in
-@@ -36,6 +36,7 @@ src/ui-assist-import.c
- src/ui-budget.c
+@@ -37,6 +37,7 @@ src/ui-budget.c
+ src/ui-budget-tabview.c
  src/ui-category.c
  src/ui-currency.c
 +src/da_encoding.c
  src/ui-dialogs.c
  src/ui-filter.c
- src/ui-hbfile.c
+ src/ui-group.c
