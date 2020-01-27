@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/11/23 12:31:55 ajacoutot Exp $
-bin/fix-qdf
+@comment $OpenBSD: PLIST,v 1.14 2020/01/27 16:29:11 ajacoutot Exp $
+@bin bin/fix-qdf
 @bin bin/qpdf
 @bin bin/zlib-flate
 include/qpdf/
