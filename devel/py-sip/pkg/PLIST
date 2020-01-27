@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/07/03 09:42:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/01/27 10:31:00 rsadowski Exp $
 @bin bin/sip${MODPY_BIN_SUFFIX}
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/sip.h
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/INST
 lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sip.pyi
-lib/python${MODPY_VERSION}/site-packages/sip.so
+@so lib/python${MODPY_VERSION}/site-packages/sip.so
 lib/python${MODPY_VERSION}/site-packages/sipconfig.py
 lib/python${MODPY_VERSION}/site-packages/sipdistutils.py
 share/doc/${MODPY_PY_PREFIX}sip/
