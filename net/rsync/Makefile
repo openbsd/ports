@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/11/26 15:22:07 jca Exp $
+# $OpenBSD: Makefile,v 1.85 2020/01/27 20:27:10 espie Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -10,6 +10,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 FLAVORS =	iconv
 FLAVOR ?=
+REVISION =	0
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
