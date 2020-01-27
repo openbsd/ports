@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.847 2020/01/26 19:23:40 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.848 2020/01/27 04:57:19 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1361,6 +1361,7 @@ my $obsolete_reason = {
 	'eigen' => 5,
 	'eigen2' => 5,
 	'py-seaborn' => 14,
+	'qt-gstreamer' => 5,
 };
 
 # reasons for obsolete packages
