@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/23 19:00:14 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2020/01/28 06:19:36 jsg Exp $
 
 COMMENT =	port of Quake 1 using Vulkan instead of OpenGL
 
-V =		1.02.1
+V =		1.04.1
 PKGNAME =	vkquake-${V}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
