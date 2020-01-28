@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/01/21 09:22:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/28 20:45:01 kurt Exp $
 
 COMMENT=	flexible I/O tester
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	axboe
 GH_PROJECT=	fio
 GH_TAGNAME=	fio-3.17
 PKGNAME=	${GH_TAGNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	benchmarks
 
