@@ -1,0 +1,60 @@
+$OpenBSD: README,v 1.1 2020/01/28 13:50:08 martin Exp $
+
++-----------------------------------------------------------------------
+| Customizing ${PKGSTEM} execution on OpenBSD
++-----------------------------------------------------------------------
+
+The OpenMPI runtime is controlled by numerous values specified
+on the command line or with environment variables. See mpirun(1) and
+ompi_info(1).  Example**:
+
+    $ export PMIX_MCA_gds=hash
+    $ mpirun -np 2 -H localhost:2 \
+             -mca btl tcp,self \
+             -mca mpi_yield_when_idle 1 -- \
+            ./mpitest
+
+These values (at least) are useful:
+
+   OMPI_MCA_btl=self,tcp,vader
+      Avoid "vader" when launching many processes per node
+      and you have an NFS swap file.  Or use local backing store.
+      (BTL is byte transfer layer.  "vader" is shared memory
+      communication module.)
+
+   OMPI_MCA_mpi_yield_when_idle=1
+      Set to 1 may improve throughput when launching many
+      processes per node.
+
+   PMIX_MCA_gds=hash
+      This is the one gds (general data service) that works on OpenBSD.
+
+**Example code taken from:
+https://hpcc.usc.edu/support/documentation/examples-of-mpi-programs/
+
+Compile with:
+
+	$ mpicc -o mpitest mpitest.c
+
+/* Adapted from mpihello.f by drs */
+
+#include <mpi.h>
+#include <stdio.h>
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+	int rank;
+	char hostname[256];
+
+	MPI_Init(&argc, &argv);
+	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+	gethostname(hostname, 255);
+
+	printf("Hello world!  I am process number: %d on host %s\n",
+		rank, hostname);
+
+	MPI_Finalize();
+
+	return 0;
+}
