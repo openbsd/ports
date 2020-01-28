@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/01/28 20:32:50 naddy Exp $
 
+BROKEN =		syscalls from main program
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source compiler for Pascal/Object Pascal
