@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/01/28 09:21:24 stsp Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
 V=		2.0
 DISTNAME=	fdm-$V
 CATEGORIES=	mail
+REVISION=	0
 
 MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
 
@@ -15,6 +16,7 @@ WANTLIB= c crypto pcre ssl z tdb>=3.0
 
 MASTER_SITES=	https://github.com/nicm/fdm/releases/download/$V/
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 LIB_DEPENDS +=	databases/tdb>=1.2.7 \
 		devel/pcre
 
