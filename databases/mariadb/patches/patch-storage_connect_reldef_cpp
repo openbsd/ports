@@ -1,9 +1,9 @@
-$OpenBSD: patch-storage_connect_reldef_cpp,v 1.13 2019/12/16 13:35:57 sthen Exp $
+$OpenBSD: patch-storage_connect_reldef_cpp,v 1.14 2020/01/29 02:16:43 sthen Exp $
 
 Index: storage/connect/reldef.cpp
 --- storage/connect/reldef.cpp.orig
 +++ storage/connect/reldef.cpp
-@@ -666,6 +666,10 @@ PTABDEF OEMDEF::GetXdef(PGLOBAL g)
+@@ -664,6 +664,10 @@ PTABDEF OEMDEF::GetXdef(PGLOBAL g)
  #else   // !__WIN__
    const char *error = NULL;
  

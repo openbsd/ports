@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.43 2019/12/30 20:26:51 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.44 2020/01/29 02:16:44 sthen Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-tests
 bin/mariadb-client-test
@@ -2817,8 +2817,6 @@ share/mysql-test/main/union_crash-714.result
 share/mysql-test/main/union_crash-714.test
 share/mysql-test/main/unique.result
 share/mysql-test/main/unique.test
-share/mysql-test/main/uniques_crash-7912.result
-share/mysql-test/main/uniques_crash-7912.test
 share/mysql-test/main/unsafe_binlog_innodb-master.opt
 share/mysql-test/main/unsafe_binlog_innodb.result
 share/mysql-test/main/unsafe_binlog_innodb.test
@@ -6412,7 +6410,6 @@ share/mysql-test/suite/funcs_1/r/innodb_trig_frkey.result
 share/mysql-test/suite/funcs_1/r/innodb_views.result
 share/mysql-test/suite/funcs_1/r/is_basics_mixed.result
 share/mysql-test/suite/funcs_1/r/is_character_sets.result
-share/mysql-test/suite/funcs_1/r/is_check_constraint.result
 share/mysql-test/suite/funcs_1/r/is_check_constraints.result
 share/mysql-test/suite/funcs_1/r/is_cml_innodb.result
 share/mysql-test/suite/funcs_1/r/is_cml_memory.result
@@ -6546,7 +6543,6 @@ share/mysql-test/suite/funcs_1/t/innodb_trig_frkey.test
 share/mysql-test/suite/funcs_1/t/innodb_views.test
 share/mysql-test/suite/funcs_1/t/is_basics_mixed.test
 share/mysql-test/suite/funcs_1/t/is_character_sets.test
-share/mysql-test/suite/funcs_1/t/is_check_constraint.test
 share/mysql-test/suite/funcs_1/t/is_check_constraints.test
 share/mysql-test/suite/funcs_1/t/is_cml_innodb.test
 share/mysql-test/suite/funcs_1/t/is_cml_memory.test
@@ -14530,7 +14526,6 @@ share/mysql-test/suite/wsrep/r/wsrep-recover.result
 share/mysql-test/suite/wsrep/r/wsrep_rpl.result
 share/mysql-test/suite/wsrep/suite.pm
 share/mysql-test/suite/wsrep/t/
-share/mysql-test/suite/wsrep/t/alter_table_innodb.opt
 share/mysql-test/suite/wsrep/t/alter_table_innodb.test
 share/mysql-test/suite/wsrep/t/binlog_format.cnf
 share/mysql-test/suite/wsrep/t/binlog_format.test
@@ -14545,7 +14540,6 @@ share/mysql-test/suite/wsrep/t/mdev_7798.test
 share/mysql-test/suite/wsrep/t/mysql_tzinfo_to_sql_symlink.test
 share/mysql-test/suite/wsrep/t/mysql_tzinfo_to_sql_symlink_skip.test
 share/mysql-test/suite/wsrep/t/plugin.test
-share/mysql-test/suite/wsrep/t/pool_of_threads.cnf
 share/mysql-test/suite/wsrep/t/pool_of_threads.opt
 share/mysql-test/suite/wsrep/t/pool_of_threads.test
 share/mysql-test/suite/wsrep/t/trans.test
@@ -14561,3 +14555,53 @@ share/mysql-test/suite/wsrep/t/wsrep_rpl.cnf
 share/mysql-test/suite/wsrep/t/wsrep_rpl.test
 share/mysql-test/unstable-tests
 share/mysql-test/valgrind.supp
+share/mysql-test/main/insert_debug-master.opt
+share/mysql-test/main/insert_debug.result
+share/mysql-test/main/insert_debug.test
+share/mysql-test/main/ssl_system_ca,bad.result
+share/mysql-test/main/ssl_system_ca.combinations
+share/mysql-test/main/ssl_system_ca.result
+share/mysql-test/main/ssl_system_ca.test
+share/mysql-test/plugin/connect/connect/t/ini_grant.result
+share/mysql-test/suite/binlog/r/binlog_invalid_read_in_rotate.result
+share/mysql-test/suite/binlog/r/binlog_show_binlog_event_random_pos.result
+share/mysql-test/suite/binlog/t/binlog_invalid_read_in_rotate.combinations
+share/mysql-test/suite/binlog/t/binlog_invalid_read_in_rotate.test
+share/mysql-test/suite/binlog/t/binlog_show_binlog_event_random_pos.combinations
+share/mysql-test/suite/binlog/t/binlog_show_binlog_event_random_pos.test
+share/mysql-test/suite/compat/oracle/r/sp-goto-debug.result
+share/mysql-test/suite/compat/oracle/t/sp-goto-debug.test
+share/mysql-test/suite/galera/r/MDEV-20793.result
+share/mysql-test/suite/galera/r/galera_partition.result
+share/mysql-test/suite/galera/r/galera_set_position_after_cert_failure.result
+share/mysql-test/suite/galera/r/galera_set_position_after_dummy_writeset.result
+share/mysql-test/suite/galera/t/MDEV-20793.test
+share/mysql-test/suite/galera/t/galera_partition.cnf
+share/mysql-test/suite/galera/t/galera_partition.test
+share/mysql-test/suite/galera/t/galera_set_position_after_cert_failure.test
+share/mysql-test/suite/galera/t/galera_set_position_after_dummy_writeset.test
+share/mysql-test/suite/innodb/r/innodb_bug30113362.result
+share/mysql-test/suite/innodb/r/innodb_wl6326.result
+share/mysql-test/suite/innodb/r/innodb_wl6326_big.result
+share/mysql-test/suite/innodb/t/innodb_bug30113362.opt
+share/mysql-test/suite/innodb/t/innodb_bug30113362.test
+share/mysql-test/suite/innodb/t/innodb_wl6326.opt
+share/mysql-test/suite/innodb/t/innodb_wl6326.test
+share/mysql-test/suite/innodb/t/innodb_wl6326_big.test
+share/mysql-test/suite/maria/aria_pack_mdev14183.result
+share/mysql-test/suite/maria/aria_pack_mdev14183.test
+share/mysql-test/suite/mariabackup/innodb_redo_log_overwrite.opt
+share/mysql-test/suite/mariabackup/innodb_redo_log_overwrite.result
+share/mysql-test/suite/mariabackup/innodb_redo_log_overwrite.test
+share/mysql-test/suite/rpl/r/rpl_binlog_rollback_cleanup.result
+share/mysql-test/suite/rpl/r/rpl_slave_shutdown_mdev20821.result
+share/mysql-test/suite/rpl/t/rpl_binlog_rollback_cleanup.test
+share/mysql-test/suite/rpl/t/rpl_slave_shutdown_mdev20821.cnf
+share/mysql-test/suite/rpl/t/rpl_slave_shutdown_mdev20821.test
+share/mysql-test/suite/wsrep/t/alter_table_innodb.cnf
+share/mysql-test/suite/wsrep/t/binlog_format.opt
+share/mysql-test/suite/wsrep/t/mysql_tzinfo_to_sql_symlink.opt
+share/mysql-test/suite/wsrep/t/mysql_tzinfo_to_sql_symlink_skip.opt
+share/mysql-test/suite/wsrep/t/plugin.opt
+share/mysql-test/suite/wsrep/t/trans.opt
+share/mysql-test/suite/wsrep/t/variables.opt

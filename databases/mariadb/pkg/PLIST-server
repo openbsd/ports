@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.30 2019/12/30 20:26:51 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.31 2020/01/29 02:16:44 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -187,6 +187,7 @@ include/mysql/server/private/heap.h
 include/mysql/server/private/hostname.h
 include/mysql/server/private/init.h
 include/mysql/server/private/innodb_priv.h
+include/mysql/server/private/intrusive_list.h
 include/mysql/server/private/item.h
 include/mysql/server/private/item_cmpfunc.h
 include/mysql/server/private/item_create.h
