@@ -1,34 +1,24 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/01/29 04:51:17 rsadowski Exp $
 
-COMMENT =	qt git repository viewer
+COMMENT =	Qt git repository viewer
 
-# XXX also change MASTER_SITES when updating
-DISTNAME =	qgit-2.5
-REVISION =	1
+GH_ACCOUNT =	tibirna
+GH_PROJECT =	qgit
+GH_TAGNAME =	qgit-2.9
+DISTNAME =	${GH_TAGNAME}
 
 CATEGORIES =	devel x11
-
-HOMEPAGE =	http://libre.tibirna.org/projects/qgit
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB += freetype m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets c m
 
-COMPILER =		base-clang ports-gcc base-gcc
+MODULES =	devel/cmake \
+		x11/qt5
 
-MASTER_SITES =	http://libre.tibirna.org/attachments/download/9/
-
-MODULES =	devel/qmake x11/qt4
-
-RUN_DEPENDS =	devel/git
-
-WRKSRC =	${WRKDIR}/redivivus
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qgit ${PREFIX}/bin/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qgit/
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qgit/
+RUN_DEPENDS =	devel/git \
+		devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
 .include <bsd.port.mk>
