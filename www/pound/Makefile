@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/01/29 17:20:39 bket Exp $
 
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
 DISTNAME =		Pound-2.8a
+REVISION =		0
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://www.apsis.ch/pound/
+HOMEPAGE =		https://www.apsis.ch/pound.html
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto m pcreposix pthread ssl
 
-MASTER_SITES =		${HOMEPAGE}
+MASTER_SITES =		https://www.apsis.ch/pound/
 EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		devel/pcre
