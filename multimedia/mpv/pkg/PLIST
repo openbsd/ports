@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/01/17 13:53:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/01/29 06:52:21 ajacoutot Exp $
 @bin bin/mpv
 include/mpv/
 include/mpv/client.h
@@ -11,6 +11,7 @@ include/mpv/stream_cb.h
 lib/pkgconfig/mpv.pc
 @man man/man1/mpv.1
 share/applications/mpv.desktop
+share/bash-completion/completions/mpv
 share/examples/mpv/
 share/examples/mpv/encoding-profiles.conf
 share/examples/mpv/input.conf

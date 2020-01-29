@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.60 2020/01/23 06:43:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2020/01/29 06:52:21 ajacoutot Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.31.0
-REVISION =		1
+GH_TAGNAME =		v0.32.0
 
-SHARED_LIBS +=		mpv		0.1 # 1.106
+SHARED_LIBS +=		mpv		0.1 # 1.107
 
 CATEGORIES =		multimedia x11
 
 HOMEPAGE =		https://mpv.io/
 
-WAF =			${WRKSRC}/waf-2.0.18
+WAF =			${WRKSRC}/waf-2.0.19
 MASTER_SITES0 =		https://waf.io/
 DISTFILES =		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX} ${WAF:T}:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}

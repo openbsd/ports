@@ -1,11 +1,11 @@
-$OpenBSD: patch-libmpv_client_h,v 1.4 2019/12/28 18:37:32 ajacoutot Exp $
+$OpenBSD: patch-libmpv_client_h,v 1.5 2020/01/29 06:52:21 ajacoutot Exp $
 
 Set shared library version.
 
 Index: libmpv/client.h
 --- libmpv/client.h.orig
 +++ libmpv/client.h
-@@ -227,7 +227,7 @@ extern "C" {
+@@ -229,7 +229,7 @@ extern "C" {
   * relational operators (<, >, <=, >=).
   */
  #define MPV_MAKE_VERSION(major, minor) (((major) << 16) | (minor) | 0UL)
