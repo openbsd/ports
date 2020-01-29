@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/26 12:48:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2020/01/29 11:17:29 cwen Exp $
 
 COMMENT=	client-side library to implement the iSCSI protocol
 
 GH_ACCOUNT=	sahlberg
 GH_PROJECT=	libiscsi
 GH_TAGNAME=	1.19.0
+REVISION=	0
 CATEGORIES=	devel net
 
 SHARED_LIBS=	iscsi	2.0
@@ -21,6 +22,8 @@ WANTLIB=	c
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 
-CONFIGURE_STYLE= autoreconf
+CONFIGURE_STYLE= 	autoreconf
+
+CONFIGURE_ARGS+=	--disable-werror
 
 .include <bsd.port.mk>

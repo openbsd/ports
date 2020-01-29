@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_login_c,v 1.1 2020/01/29 11:17:30 cwen Exp $
+
+From f2d750260afbb2535d1bd92438e80a80ddb58801 Mon Sep 17 00:00:00 2001
+From: Paul Carlisle <paul.carlisle@purestorage.com>
+Date: Mon, 27 Jan 2020 16:56:59 -0800
+Subject: [PATCH] Fix data segment length comparison to unsigned long
+
+In login.c, data segment parameters in the text segment are converted to
+signed longs.  Changing from strtol -> strtoul fixes compiler errors on
+certain platforms that warn against comparing a signed long with
+uint32_t using MIN.
+
+Index: lib/login.c
+--- lib/login.c.orig
++++ lib/login.c
+@@ -1242,11 +1242,11 @@ iscsi_process_login_reply(struct iscsi_context *iscsi,
+ 
+         /* iSER specific keys */
+         if (!strncmp(ptr, "InitiatorRecvDataSegmentLength=", 31)) {
+-			iscsi->initiator_max_recv_data_segment_length = MIN(strtol(ptr + 31, NULL, 10),
++			iscsi->initiator_max_recv_data_segment_length = MIN(strtoul(ptr + 31, NULL, 10),
+                                                              iscsi->initiator_max_recv_data_segment_length);
+         }
+         if (!strncmp(ptr, "TargetRecvDataSegmentLength=", 28)) {
+-			iscsi->target_max_recv_data_segment_length = MIN(strtol(ptr + 28, NULL, 10),
++			iscsi->target_max_recv_data_segment_length = MIN(strtoul(ptr + 28, NULL, 10),
+                                                              iscsi->target_max_recv_data_segment_length);
+         }
+ 
