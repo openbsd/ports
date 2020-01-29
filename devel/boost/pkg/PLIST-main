@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2019/01/03 07:29:58 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2020/01/29 22:39:09 kmos Exp $
 @pkgpath devel/boost
 @bin bin/b2
 @bin bin/bjam
@@ -14036,129 +14036,133 @@ include/boost/xpressive/xpressive_dynamic.hpp
 include/boost/xpressive/xpressive_fwd.hpp
 include/boost/xpressive/xpressive_static.hpp
 include/boost/xpressive/xpressive_typeof.hpp
-lib/libboost_atomic-mt.a
+@static-lib lib/libboost_atomic-mt.a
 @lib lib/libboost_atomic-mt.so.${LIBboost_atomic-mt_VERSION}
-lib/libboost_chrono-mt.a
+@static-lib lib/libboost_chrono-mt.a
 @lib lib/libboost_chrono-mt.so.${LIBboost_chrono-mt_VERSION}
-lib/libboost_chrono.a
+@static-lib lib/libboost_chrono.a
 @lib lib/libboost_chrono.so.${LIBboost_chrono_VERSION}
-lib/libboost_container-mt.a
+@static-lib lib/libboost_container-mt.a
 @lib lib/libboost_container-mt.so.${LIBboost_container-mt_VERSION}
-lib/libboost_container.a
+@static-lib lib/libboost_container.a
 @lib lib/libboost_container.so.${LIBboost_container_VERSION}
-lib/libboost_date_time-mt.a
+@static-lib lib/libboost_date_time-mt.a
 @lib lib/libboost_date_time-mt.so.${LIBboost_date_time-mt_VERSION}
-lib/libboost_date_time.a
+@static-lib lib/libboost_date_time.a
 @lib lib/libboost_date_time.so.${LIBboost_date_time_VERSION}
-lib/libboost_exception-mt.a
-lib/libboost_exception.a
-lib/libboost_filesystem-mt.a
+@static-lib lib/libboost_exception-mt.a
+@static-lib lib/libboost_exception.a
+@static-lib lib/libboost_filesystem-mt.a
 @lib lib/libboost_filesystem-mt.so.${LIBboost_filesystem-mt_VERSION}
-lib/libboost_filesystem.a
+@static-lib lib/libboost_filesystem.a
 @lib lib/libboost_filesystem.so.${LIBboost_filesystem_VERSION}
-lib/libboost_graph-mt.a
+@static-lib lib/libboost_graph-mt.a
 @lib lib/libboost_graph-mt.so.${LIBboost_graph-mt_VERSION}
-lib/libboost_graph.a
+@static-lib lib/libboost_graph.a
 @lib lib/libboost_graph.so.${LIBboost_graph_VERSION}
-lib/libboost_iostreams-mt.a
+@static-lib lib/libboost_iostreams-mt.a
 @lib lib/libboost_iostreams-mt.so.${LIBboost_iostreams-mt_VERSION}
-lib/libboost_iostreams.a
+@static-lib lib/libboost_iostreams.a
 @lib lib/libboost_iostreams.so.${LIBboost_iostreams_VERSION}
-lib/libboost_locale-mt.a
+@static-lib lib/libboost_locale-mt.a
 @lib lib/libboost_locale-mt.so.${LIBboost_locale-mt_VERSION}
-lib/libboost_log-mt.a
+@static-lib lib/libboost_log-mt.a
 @lib lib/libboost_log-mt.so.${LIBboost_log-mt_VERSION}
-lib/libboost_log.a
+@static-lib lib/libboost_log.a
 @lib lib/libboost_log.so.${LIBboost_log_VERSION}
-lib/libboost_log_setup-mt.a
+@static-lib lib/libboost_log_setup-mt.a
 @lib lib/libboost_log_setup-mt.so.${LIBboost_log_setup-mt_VERSION}
-lib/libboost_log_setup.a
+@static-lib lib/libboost_log_setup.a
 @lib lib/libboost_log_setup.so.${LIBboost_log_setup_VERSION}
-lib/libboost_math_c99-mt.a
+@static-lib lib/libboost_math_c99-mt.a
 @lib lib/libboost_math_c99-mt.so.${LIBboost_math_c99-mt_VERSION}
-lib/libboost_math_c99.a
+@static-lib lib/libboost_math_c99.a
 @lib lib/libboost_math_c99.so.${LIBboost_math_c99_VERSION}
-lib/libboost_math_c99f-mt.a
+@static-lib lib/libboost_math_c99f-mt.a
 @lib lib/libboost_math_c99f-mt.so.${LIBboost_math_c99f-mt_VERSION}
-lib/libboost_math_c99f.a
+@static-lib lib/libboost_math_c99f.a
 @lib lib/libboost_math_c99f.so.${LIBboost_math_c99f_VERSION}
-lib/libboost_math_c99l-mt.a
+@static-lib lib/libboost_math_c99l-mt.a
 @lib lib/libboost_math_c99l-mt.so.${LIBboost_math_c99l-mt_VERSION}
-lib/libboost_math_c99l.a
+@static-lib lib/libboost_math_c99l.a
 @lib lib/libboost_math_c99l.so.${LIBboost_math_c99l_VERSION}
-lib/libboost_math_tr1-mt.a
+@static-lib lib/libboost_math_tr1-mt.a
 @lib lib/libboost_math_tr1-mt.so.${LIBboost_math_tr1-mt_VERSION}
-lib/libboost_math_tr1.a
+@static-lib lib/libboost_math_tr1.a
 @lib lib/libboost_math_tr1.so.${LIBboost_math_tr1_VERSION}
-lib/libboost_math_tr1f-mt.a
+@static-lib lib/libboost_math_tr1f-mt.a
 @lib lib/libboost_math_tr1f-mt.so.${LIBboost_math_tr1f-mt_VERSION}
-lib/libboost_math_tr1f.a
+@static-lib lib/libboost_math_tr1f.a
 @lib lib/libboost_math_tr1f.so.${LIBboost_math_tr1f_VERSION}
-lib/libboost_math_tr1l-mt.a
+@static-lib lib/libboost_math_tr1l-mt.a
 @lib lib/libboost_math_tr1l-mt.so.${LIBboost_math_tr1l-mt_VERSION}
-lib/libboost_math_tr1l.a
+@static-lib lib/libboost_math_tr1l.a
 @lib lib/libboost_math_tr1l.so.${LIBboost_math_tr1l_VERSION}
-lib/libboost_num${MODPY_PY_PREFIX}mt.a
-@lib lib/libboost_num${MODPY_PY_PREFIX}mt.so.${LIBboost_numpy-mt_VERSION}
-lib/libboost_numpy.a
+@static-lib lib/libboost_num${MODPY_PY_PREFIX}mt.a
+@lib lib/libboost_num${MODPY_PY_PREFIX}mt.so.${LIBboost_num${MODPY_PY_PREFIX}mt_VERSION}
+@static-lib lib/libboost_numpy.a
 @lib lib/libboost_numpy.so.${LIBboost_numpy_VERSION}
-lib/libboost_prg_exec_monitor-mt.a
+@static-lib lib/libboost_numpy3-mt.a
+@lib lib/libboost_numpy3-mt.so.${LIBboost_numpy3-mt_VERSION}
+@static-lib lib/libboost_numpy3.a
+@lib lib/libboost_numpy3.so.${LIBboost_numpy3_VERSION}
+@static-lib lib/libboost_prg_exec_monitor-mt.a
 @lib lib/libboost_prg_exec_monitor-mt.so.${LIBboost_prg_exec_monitor-mt_VERSION}
-lib/libboost_prg_exec_monitor.a
+@static-lib lib/libboost_prg_exec_monitor.a
 @lib lib/libboost_prg_exec_monitor.so.${LIBboost_prg_exec_monitor_VERSION}
-lib/libboost_program_options-mt.a
+@static-lib lib/libboost_program_options-mt.a
 @lib lib/libboost_program_options-mt.so.${LIBboost_program_options-mt_VERSION}
-lib/libboost_program_options.a
+@static-lib lib/libboost_program_options.a
 @lib lib/libboost_program_options.so.${LIBboost_program_options_VERSION}
-lib/libboost_python-mt.a
+@static-lib lib/libboost_python-mt.a
 @lib lib/libboost_python-mt.so.${LIBboost_python-mt_VERSION}
-lib/libboost_python.a
+@static-lib lib/libboost_python.a
 @lib lib/libboost_python.so.${LIBboost_python_VERSION}
-lib/libboost_python3-mt.a
+@static-lib lib/libboost_python3-mt.a
 @lib lib/libboost_python3-mt.so.${LIBboost_python3-mt_VERSION}
-lib/libboost_python3.a
+@static-lib lib/libboost_python3.a
 @lib lib/libboost_python3.so.${LIBboost_python3_VERSION}
-lib/libboost_random-mt.a
+@static-lib lib/libboost_random-mt.a
 @lib lib/libboost_random-mt.so.${LIBboost_random-mt_VERSION}
-lib/libboost_random.a
+@static-lib lib/libboost_random.a
 @lib lib/libboost_random.so.${LIBboost_random_VERSION}
-lib/libboost_regex-mt.a
+@static-lib lib/libboost_regex-mt.a
 @lib lib/libboost_regex-mt.so.${LIBboost_regex-mt_VERSION}
-lib/libboost_regex.a
+@static-lib lib/libboost_regex.a
 @lib lib/libboost_regex.so.${LIBboost_regex_VERSION}
-lib/libboost_serialization-mt.a
+@static-lib lib/libboost_serialization-mt.a
 @lib lib/libboost_serialization-mt.so.${LIBboost_serialization-mt_VERSION}
-lib/libboost_serialization.a
+@static-lib lib/libboost_serialization.a
 @lib lib/libboost_serialization.so.${LIBboost_serialization_VERSION}
-lib/libboost_signals-mt.a
+@static-lib lib/libboost_signals-mt.a
 @lib lib/libboost_signals-mt.so.${LIBboost_signals-mt_VERSION}
-lib/libboost_signals.a
+@static-lib lib/libboost_signals.a
 @lib lib/libboost_signals.so.${LIBboost_signals_VERSION}
-lib/libboost_system-mt.a
+@static-lib lib/libboost_system-mt.a
 @lib lib/libboost_system-mt.so.${LIBboost_system-mt_VERSION}
-lib/libboost_system.a
+@static-lib lib/libboost_system.a
 @lib lib/libboost_system.so.${LIBboost_system_VERSION}
-lib/libboost_test_exec_monitor-mt.a
-lib/libboost_test_exec_monitor.a
-lib/libboost_thread-mt.a
+@static-lib lib/libboost_test_exec_monitor-mt.a
+@static-lib lib/libboost_test_exec_monitor.a
+@static-lib lib/libboost_thread-mt.a
 @lib lib/libboost_thread-mt.so.${LIBboost_thread-mt_VERSION}
-lib/libboost_timer-mt.a
+@static-lib lib/libboost_timer-mt.a
 @lib lib/libboost_timer-mt.so.${LIBboost_timer-mt_VERSION}
-lib/libboost_timer.a
+@static-lib lib/libboost_timer.a
 @lib lib/libboost_timer.so.${LIBboost_timer_VERSION}
-lib/libboost_type_erasure-mt.a
+@static-lib lib/libboost_type_erasure-mt.a
 @lib lib/libboost_type_erasure-mt.so.${LIBboost_type_erasure-mt_VERSION}
-lib/libboost_type_erasure.a
+@static-lib lib/libboost_type_erasure.a
 @lib lib/libboost_type_erasure.so.${LIBboost_type_erasure_VERSION}
-lib/libboost_unit_test_framework-mt.a
+@static-lib lib/libboost_unit_test_framework-mt.a
 @lib lib/libboost_unit_test_framework-mt.so.${LIBboost_unit_test_framework-mt_VERSION}
-lib/libboost_unit_test_framework.a
+@static-lib lib/libboost_unit_test_framework.a
 @lib lib/libboost_unit_test_framework.so.${LIBboost_unit_test_framework_VERSION}
-lib/libboost_wave-mt.a
+@static-lib lib/libboost_wave-mt.a
 @lib lib/libboost_wave-mt.so.${LIBboost_wave-mt_VERSION}
-lib/libboost_wserialization-mt.a
+@static-lib lib/libboost_wserialization-mt.a
 @lib lib/libboost_wserialization-mt.so.${LIBboost_wserialization-mt_VERSION}
-lib/libboost_wserialization.a
+@static-lib lib/libboost_wserialization.a
 @lib lib/libboost_wserialization.so.${LIBboost_wserialization_VERSION}
 share/boost-build/
 share/boost-build/__init__.py
