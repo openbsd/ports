@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.561 2020/01/10 17:37:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.562 2020/01/29 04:54:58 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -108,7 +108,6 @@
      SUBDIR += klaxon
      SUBDIR += knockpy
      SUBDIR += kpcli
-     SUBDIR += kqoauth
      SUBDIR += lastpass-cli
      SUBDIR += letsencrypt
      SUBDIR += libassuan
