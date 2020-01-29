@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.137 2020/01/25 07:14:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.138 2020/01/29 10:00:49 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -4746,6 +4746,19 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/networkmanagement/v1beta1/n
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/networkmanagement/v1beta1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/networkmanagement/v1beta1/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/networkmanagement_v1beta1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/notebooks_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/notebooks_v1beta1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/notebooks_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/notebooks_v1beta1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks/v1beta1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/notebooks_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/orgpolicy/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/orgpolicy/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/orgpolicy/__init__.pyc
@@ -6751,6 +6764,8 @@ google-cloud-sdk/lib/surface/compute/instance_groups/managed/delete_instances.py
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/delete_instances.pyc
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/describe.py
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/describe.pyc
+google-cloud-sdk/lib/surface/compute/instance_groups/managed/describe_instance.py
+google-cloud-sdk/lib/surface/compute/instance_groups/managed/describe_instance.pyc
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/export_autoscaling.py
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/export_autoscaling.pyc
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/get_named_ports.py
@@ -8851,6 +8866,7 @@ google-cloud-sdk/lib/surface/game/servers/deployments/create.yaml
 google-cloud-sdk/lib/surface/game/servers/deployments/delete.yaml
 google-cloud-sdk/lib/surface/game/servers/deployments/describe.yaml
 google-cloud-sdk/lib/surface/game/servers/deployments/describe_rollout.yaml
+google-cloud-sdk/lib/surface/game/servers/deployments/fetch_state.yaml
 google-cloud-sdk/lib/surface/game/servers/deployments/list.yaml
 google-cloud-sdk/lib/surface/game/servers/deployments/update.yaml
 google-cloud-sdk/lib/surface/game/servers/deployments/update_rollout.yaml
@@ -9297,6 +9313,8 @@ google-cloud-sdk/lib/surface/kms/keys/versions/list.py
 google-cloud-sdk/lib/surface/kms/keys/versions/list.pyc
 google-cloud-sdk/lib/surface/kms/keys/versions/restore.py
 google-cloud-sdk/lib/surface/kms/keys/versions/restore.pyc
+google-cloud-sdk/lib/surface/kms/keys/versions/update.py
+google-cloud-sdk/lib/surface/kms/keys/versions/update.pyc
 google-cloud-sdk/lib/surface/kms/locations/
 google-cloud-sdk/lib/surface/kms/locations/__init__.py
 google-cloud-sdk/lib/surface/kms/locations/__init__.pyc
@@ -11882,6 +11900,16 @@ google-cloud-sdk/lib/third_party/google_auth_httplib2/
 google-cloud-sdk/lib/third_party/google_auth_httplib2/LICENSE
 google-cloud-sdk/lib/third_party/google_auth_httplib2/__init__.py
 google-cloud-sdk/lib/third_party/google_auth_httplib2/__init__.pyc
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/LICENSE
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/__init__.py
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/__init__.pyc
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/flow.py
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/flow.pyc
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/helpers.py
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/helpers.pyc
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/interactive.py
+google-cloud-sdk/lib/third_party/google_auth_oauthlib/interactive.pyc
 google-cloud-sdk/lib/third_party/grpc/
 google-cloud-sdk/lib/third_party/grpc/LICENSE
 google-cloud-sdk/lib/third_party/grpc/__init__.py
