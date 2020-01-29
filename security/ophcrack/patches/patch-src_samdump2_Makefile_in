@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_samdump2_Makefile_in,v 1.1 2020/01/29 11:02:06 cwen Exp $
+
+Fix "error: config.h: No such file or directory" on BE_ARCHS
+
+Index: src/samdump2/Makefile.in
+--- src/samdump2/Makefile.in.orig
++++ src/samdump2/Makefile.in
+@@ -17,7 +17,7 @@
+ 
+ include ../common.mk
+ 
+-CFLAGS += -I../core
++CFLAGS += -I../core -I../..
+ 
+ all: libsamdump2.a
+ 
