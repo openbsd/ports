@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/12/25 15:17:33 fcambus Exp $
+# $OpenBSD: Makefile,v 1.35 2020/01/29 20:29:21 naddy Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -84,8 +84,15 @@ post-extract:
 		xargs sed -i 's|"png.h"|"localpng.h"|'
 	@perl -pi -e 's/\r//g' ${WRKSRC}/makefile ${WRKSRC}/scripts/genie.lua \
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd/genie.make \
+		${WRKSRC}/3rdparty/genie/src/actions/make/make_cpp.lua \
 		${WRKSRC}/3rdparty/asio/include/asio/detail/config.hpp \
 		${WRKSRC}/docs/man/* ${WRKSRC}/keymaps/*
+
+# Bootstrap genie, regenerate host/scripts.c from patched *.lua files
+pre-build:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} -f ${MAKE_FILE} 3rdparty/genie/bin/bsd/genie
+	cd ${WRKBUILD}/3rdparty/genie && bin/bsd/genie embed
 
 do-install:
 .if ${MACHINE_ARCH} == "amd64"
