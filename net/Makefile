@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1164 2020/01/13 19:56:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1165 2020/01/29 04:57:24 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -647,7 +647,6 @@
      SUBDIR += py-zsi
      SUBDIR += qbittorrent
      SUBDIR += qsyncthingtray
-     SUBDIR += qsynergy
      SUBDIR += quagga
      SUBDIR += queryperf
      SUBDIR += queso
