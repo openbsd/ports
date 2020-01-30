@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.187 2019/11/25 13:57:11 espie Exp $
+# $OpenBSD: update-plist,v 1.188 2020/01/30 19:51:56 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -20,7 +20,8 @@ use warnings;
 my $ports1;
 my ($ports_uid, $ports_gid, $fake_uid, $fake_gid);
 BEGIN {
-	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+	my $ports = $ENV{PORTSDIR};
+	$ports1 = $ports || '/usr/ports';
 	# if we're root
 	return if $< != 0;
 	# switch id right away
@@ -28,9 +29,9 @@ BEGIN {
 	my $tree = $ENV{PORTS_TREE_OWNER};
 	# XXX we can only end there if we're very naughty and building
 	# everything as root, but not behind PORTS_PRIVSEP
-	if (!defined $fake && !defined $tree) {
+	if (!defined $fake || !defined $tree || !defined $ports) {
 		print STDERR "DON'T BUILD PORTS AS ROOT!!!!!\n";
-		print STDERR "(or make sure you pass env variables PORTS_TREE_OWNER and FAKE_TREE_OWNER thru doas to root)\n";
+		print STDERR "(or make sure you pass env variables PORTS_TREE_OWNER, FAKE_TREE_OWNER and PORTSDIR thru doas to root)\n";
 		return;
 	}
 	die "FAKE_TREE_OWNER not defined" unless defined $fake;
