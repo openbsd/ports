@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/06/24 13:32:41 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/01/30 22:27:17 bcallah Exp $
 @bin bin/worker
 man/fr/
 man/fr/man1/
@@ -105,6 +105,7 @@ share/worker/scripts/displaywrapper_worker
 share/worker/scripts/find_file_by_chksum.py
 share/worker/scripts/git_modified_files.sh
 share/worker/scripts/git_untracked_files.sh
+share/worker/scripts/terminal_wrapper.sh
 share/worker/scripts/xeditor
 share/worker/scripts/xliwrapper_worker
 @tag update-desktop-database
