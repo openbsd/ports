@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.9 2019/11/09 07:09:09 cwen Exp $
+$OpenBSD: patch-configure_ac,v 1.10 2020/01/30 07:15:08 kn Exp $
 
 Fix version string
 
@@ -9,7 +9,7 @@ Remove -Werror so it builds with gcc
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -341,29 +341,9 @@ elif test "${xslstylesheetsdir}" != "no"; then
+@@ -363,29 +363,9 @@ elif test "${xslstylesheetsdir}" != "no"; then
  fi
  AC_MSG_RESULT([${xslstylesheetsdir}])
  
@@ -19,7 +19,7 @@ Index: configure.ac
 -	GIT_CHECKOUT="yes"
 -fi
 -AC_MSG_RESULT([${GIT_CHECKOUT}])
-+OPENSC_SCM_REVISION="OpenSC-0.19.0, rev: f1691fc9, commit-time: 2018-09-13 13:47:21 2018 +0200"
++OPENSC_SCM_REVISION="OpenSC-0.20.0, rev: 45e29056, commit-time: 2019-12-29 13:42:06 2019 +0100"
 +OPENSC_VERSION_REVISION="0"
  
 -if test "${GIT_CHECKOUT}" = "yes"; then
@@ -41,7 +41,7 @@ Index: configure.ac
  dnl C Compiler features
  AC_C_INLINE
  
-@@ -414,11 +394,6 @@ AC_CHECK_LIB(
+@@ -436,11 +416,6 @@ AC_CHECK_LIB(
  )
  
  if test "${WIN32}" = "no"; then
@@ -53,19 +53,11 @@ Index: configure.ac
  	dnl Special check for pthread support.
  	AX_PTHREAD(
  		[AC_DEFINE(
-@@ -1036,14 +1011,13 @@ AM_CONDITIONAL([ENABLE_SM], [test "${enable_sm}" = "ye
- AM_CONDITIONAL([ENABLE_DNIE_UI], [test "${enable_dnie_ui}" = "yes"])
+@@ -1061,7 +1036,6 @@ AM_CONDITIONAL([ENABLE_DNIE_UI], [test "${enable_dnie_
  AM_CONDITIONAL([ENABLE_NPATOOL], [test "${ENABLE_NPATOOL}" = "yes"])
- AM_CONDITIONAL([ENABLE_TESTS], [test "${enable_tests}" = "yes"])
+ AM_CONDITIONAL([ENABLE_AUTOSTART], [test "${enable_autostart}" = "yes"])
+ AM_CONDITIONAL([ENABLE_CMOCKA], [test "${enable_cmocka}" = "yes"])
 -AM_CONDITIONAL([GIT_CHECKOUT], [test "${GIT_CHECKOUT}" = "yes"])
- 
- if test "${enable_pedantic}" = "yes"; then
- 	enable_strict="yes";
- 	CFLAGS="${CFLAGS} -pedantic"
- fi
- if test "${enable_strict}" = "yes"; then
--	CFLAGS="${CFLAGS} -Wall -Wextra -Wno-unused-parameter -Werror"
-+	CFLAGS="${CFLAGS} -Wall -Wextra -Wno-unused-parameter"
- fi
- 
- AC_CONFIG_FILES([
+ AM_CONDITIONAL([ENABLE_FUZZING], [test "${enable_fuzzing}" = "yes"])
+ AM_CONDITIONAL([ENABLE_SHARED], [test "${enable_shared}" = "yes"])
+ AS_IF([test "${enable_shared}" = "yes"], [AC_DEFINE([ENABLE_SHARED], [1], [Enable shared libraries])])

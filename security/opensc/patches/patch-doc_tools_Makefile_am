@@ -1,11 +1,11 @@
-$OpenBSD: patch-doc_tools_Makefile_am,v 1.2 2018/09/29 11:19:16 kn Exp $
+$OpenBSD: patch-doc_tools_Makefile_am,v 1.3 2020/01/30 07:15:08 kn Exp $
 
 Do not install bash-completion scripts
 
 Index: doc/tools/Makefile.am
 --- doc/tools/Makefile.am.orig
 +++ doc/tools/Makefile.am
-@@ -14,8 +14,6 @@ if ENABLE_MAN
+@@ -11,8 +11,6 @@ if ENABLE_MAN
  man1_MANS = $(patsubst $(srcdir)/%.xml, %, $(wildcard $(srcdir)/*.1.xml))
  endif
  
@@ -14,7 +14,7 @@ Index: doc/tools/Makefile.am
  tools.html: $(srcdir)/tools.xml $(wildcard $(srcdir)/*.1.xml)
  	$(XSLTPROC) --nonet --path "$(srcdir)/..:$(xslstylesheetsdir)/html" --xinclude -o $@ html.xsl $<
  
-@@ -43,4 +41,4 @@ tools.html: $(srcdir)/tools.xml $(wildcard $(srcdir)/*
+@@ -40,4 +38,4 @@ tools.html: $(srcdir)/tools.xml $(wildcard $(srcdir)/*
  		> $@
  
  clean-local:

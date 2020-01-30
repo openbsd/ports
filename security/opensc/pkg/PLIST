@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/09/29 11:19:16 kn Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/01/30 07:15:08 kn Exp $
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/dnie-tool
 @bin bin/egk-tool
 @bin bin/eidenv
 @bin bin/gids-tool
+@bin bin/goid-tool
 @bin bin/iasecc-tool
 @bin bin/netkey-tool
 @bin bin/npa-tool
@@ -14,22 +15,23 @@
 @bin bin/opensc-notify
 @bin bin/opensc-tool
 @bin bin/piv-tool
+@bin bin/pkcs11-register
 @bin bin/pkcs11-tool
 @bin bin/pkcs15-crypt
 @bin bin/pkcs15-init
 @bin bin/pkcs15-tool
 @bin bin/sc-hsm-tool
 @bin bin/westcos-tool
-lib/libopensc.a
+@static-lib lib/libopensc.a
 lib/libopensc.la
 @lib lib/libopensc.so.${LIBopensc_VERSION}
-lib/libsmm-local.a
+@static-lib lib/libsmm-local.a
 lib/libsmm-local.la
 @lib lib/libsmm-local.so.${LIBsmm-local_VERSION}
 lib/pkcs11/
-lib/pkcs11/onepin-opensc-pkcs11.so
-lib/pkcs11/opensc-pkcs11.so
-lib/pkcs11/pkcs11-spy.so
+@so lib/pkcs11/onepin-opensc-pkcs11.so
+@so lib/pkcs11/opensc-pkcs11.so
+@so lib/pkcs11/pkcs11-spy.so
 lib/pkgconfig/libopensc.pc
 @man man/man1/cardos-tool.1
 @man man/man1/cryptoflex-tool.1
@@ -63,6 +65,9 @@ share/examples/opensc/opensc.conf
 @mode 644
 @sample ${SYSCONFDIR}/opensc.conf
 @mode
+share/examples/opensc/xdg/
+share/examples/opensc/xdg/autostart/
+share/examples/opensc/xdg/autostart/pkcs11-register.desktop
 share/opensc/
 share/opensc/asepcos.profile
 share/opensc/authentic.profile
@@ -91,6 +96,7 @@ share/opensc/openpgp.profile
 share/opensc/pkcs15.profile
 share/opensc/rutoken.profile
 share/opensc/rutoken_ecp.profile
+share/opensc/rutoken_lite.profile
 share/opensc/sc-hsm.profile
 share/opensc/setcos.profile
 share/opensc/starcos.profile

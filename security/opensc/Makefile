@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.53 2019/11/09 07:09:09 cwen Exp $
+# $OpenBSD: Makefile,v 1.54 2020/01/30 07:15:08 kn Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
-V=		0.19.0
-REVISION=	3
+V=		0.20.0
 DISTNAME=	opensc-${V}
 SUBST_VARS +=	V
 
-SHARED_LIBS +=	opensc 7.0	# 5.0
-SHARED_LIBS +=	smm-local 3.0	# 5.0
+SHARED_LIBS +=	opensc 7.1	# 6.0
+SHARED_LIBS +=	smm-local 3.1	# 6.0
 
 CATEGORIES=	security
 
