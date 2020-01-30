@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/01/30 03:45:45 afresh1 Exp $
 
 COMMENT =		lightweight yet powerful web application framework
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Dancer2-0.166001
+DISTNAME =		Dancer2-0.300000
 CATEGORIES =		www
-REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06 \
-			${RUN_DEPENDS}
+BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06
 
 RUN_DEPENDS = 		devel/p5-App-Cmd \
 			devel/p5-Class-Load \
 			devel/p5-Config-Any \
 			security/p5-Digest-SHA1 \
+			devel/p5-File-Share \
 			www/p5-HTTP-Body \
 			www/p5-HTTP-Cookies \
 			www/p5-HTTP-Date \
@@ -25,30 +24,30 @@ RUN_DEPENDS = 		devel/p5-App-Cmd \
 			devel/p5-Hash-Merge-Simple \
 			devel/p5-Import-Into \
 			converters/p5-JSON \
+			converters/p5-JSON-XS \
 			mail/p5-MIME-Types \
 			devel/p5-Moo>=2.000000 \
 			devel/p5-MooX-Types-MooseLike \
-			www/p5-Plack>=1.0035 \
+			www/p5-Plack>=1.0040 \
 			www/p5-Plack-Middleware-FixMissingBodyInRedirect \
 			www/p5-Plack-Middleware-RemoveRedundantBody \
+			devel/p5-Ref-Util \
 			devel/p5-Return-MultiLevel \
 			devel/p5-Safe-Isa \
+			devel/p5-Scope-Upper \
 			textproc/p5-Template \
 			textproc/p5-Template-Tiny \
-			devel/p5-YAML \
-			converters/p5-JSON-XS \
-			devel/p5-Class-Load-XS \
-			devel/p5-Scope-Upper
+			devel/p5-Type-Tiny \
+			devel/p5-YAML
 
 TEST_DEPENDS =		devel/p5-AnyEvent \
-			sysutils/p5-Capture-Tiny \
-			www/p5-HTTP-Body \
-			www/p5-HTTP-Cookies \
-			www/p5-HTTP-Message \
-			www/p5-Plack>=1.0035 \
+			devel/p5-Test-EOL \
 			devel/p5-Test-Fatal \
 			devel/p5-Test-Memory-Cycle>=1.04 \
 			devel/p5-Test-MockTime \
-			devel/p5-YAML
+			devel/p5-Test-NoTabs \
+			devel/p5-Test-Perl-Critic
+
+MAKE_ENV +=		TEST_POD=yes AUTHOR_TESTING=Yes
 
 .include <bsd.port.mk>
