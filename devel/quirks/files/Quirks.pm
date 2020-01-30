@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.849 2020/01/29 05:02:22 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.850 2020/01/30 21:19:42 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1364,6 +1364,7 @@ my $obsolete_reason = {
 	'qt-gstreamer' => 5,
 	'qsynergy' => 3,
 	'kqoauth' => 5,
+	'py-natsort' => 14,
 };
 
 # reasons for obsolete packages
