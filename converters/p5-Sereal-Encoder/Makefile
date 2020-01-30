@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/01/30 08:56:16 fcambus Exp $
 
 COMMENT =	fast, compact, powerful binary serialization
 
-DISTNAME =	Sereal-Encoder-4.007
+DISTNAME =	Sereal-Encoder-4.008
 
 CATEGORIES =	converters
 
