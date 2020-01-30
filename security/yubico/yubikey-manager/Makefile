@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/12/11 03:48:00 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/30 14:24:19 sthen Exp $
 
 COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 
-MODPY_EGG_VERSION =	3.1.0
+MODPY_EGG_VERSION =	3.1.1
 
 DISTNAME =	yubikey-manager-${MODPY_EGG_VERSION}
 YK_PROJECT =	yubikey-manager
