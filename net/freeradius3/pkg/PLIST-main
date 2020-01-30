@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2019/11/19 13:03:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2020/01/30 22:37:59 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @newgroup _freeradius:559
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
-@extraunexec rm -rf ${FREERADIUS_ETC}/*
-@extraunexec rm -rf /var/log/radius/*
 @rcscript ${RCDIR}/freeradius
 @bin bin/dhcpclient
 @bin bin/map_unit
