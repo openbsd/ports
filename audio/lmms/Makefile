@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/01/30 14:13:47 sthen Exp $
 
 COMMENT =		music studio with tracking, sampling and MIDI
 
 # rolled from git; requires submodules
 # git clone --recurse-submodules -b v1.2.0 https://github.com/lmms/lmms
 DISTNAME =		lmms-1.2.0
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		audio
@@ -24,6 +25,7 @@ WANTLIB += vorbisfile
 COMPILER =		base-clang ports-gcc
 
 MODULES =		x11/qt5 devel/cmake
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS =		shells/bash
 
