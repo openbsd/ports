@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/11/13 20:13:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/01/30 13:08:26 jasper Exp $
 bin/natsort${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/natsort/
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -25,13 +25,9 @@ lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}fake_fastnumbers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}fastnumbers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}locale.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}pathlib.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}py23.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/fake_fastnumbers.py
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/fastnumbers.py
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/locale.py
-lib/python${MODPY_VERSION}/site-packages/natsort/compat/pathlib.py
-lib/python${MODPY_VERSION}/site-packages/natsort/compat/py23.py
 lib/python${MODPY_VERSION}/site-packages/natsort/natsort.py
 lib/python${MODPY_VERSION}/site-packages/natsort/ns_enum.py
 lib/python${MODPY_VERSION}/site-packages/natsort/unicode_numbers.py

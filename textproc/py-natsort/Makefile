@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2020/01/03 22:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/01/30 13:08:26 jasper Exp $
 
 COMMENT =		simple yet flexible natural sorting
 
-MODPY_EGG_VERSION =	6.2.0
+MODPY_EGG_VERSION =	7.0.1
 DISTNAME =		natsort-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,9 +18,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-
-FLAVORS =		python3
-FLAVOR ?=
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # could also make use of 'fastnumbers'
 RUN_DEPENDS =		textproc/py-ICU${MODPY_FLAVOR}
