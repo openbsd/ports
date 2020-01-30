@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/12/20 17:16:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/01/30 21:24:41 sthen Exp $
 @newgroup _kea:763
 @newuser _kea:763:_kea:daemon:Kea user:/nonexistent:/sbin/nologin
-@sample ${LOCALSTATEDIR}/lib/
 @mode 0750
 @group _kea
 @sample ${SYSCONFDIR}/kea/
-@mode 0770
-@sample ${LOCALSTATEDIR}/lib/kea/
 @mode
 @group
 @rcscript ${RCDIR}/kea
@@ -571,3 +568,7 @@ share/kea/scripts/
 share/kea/scripts/admin-utils.sh
 %%mysql%%
 %%postgresql%%
+@sample ${LOCALSTATEDIR}/lib/
+@mode 0770
+@group _kea
+@sample ${LOCALSTATEDIR}/lib/kea/
