@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/03 16:06:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/01/30 23:19:33 sthen Exp $
 
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
-V=		2.1.2
+V=		2.2.1
 DISTNAME=	xca-$V
 PORTROACH=	skipv:RELEASE.$V
 CATEGORIES=	security x11
-REVISION=	0
 
 HOMEPAGE=	https://hohnstaedt.de/xca/
 
@@ -15,7 +14,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Sql Qt5Widgets c crypto ltdl m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Sql Qt5Widgets
+WANTLIB += c crypto ltdl m
 
 MASTER_SITES=	https://github.com/chris2511/xca/releases/download/RELEASE.$V/
 
@@ -24,7 +24,6 @@ MODULES=	x11/qt5
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
-# yuk, but it does the trick.
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -std=c++11" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"

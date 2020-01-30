@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.6 2020/01/30 23:19:33 sthen Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4103,7 +4103,7 @@ fi
+ # Finally collect the compiler flags
+ #####################################
+ CXXFLAGS="${CXXFLAGS} ${OPENSSL_CFLAGS} ${QT_CFLAGS}"
+-LIBS="${LIBS} ${OPENSSL_LIBS} ${QT_LIBS} -lstdc++"
++LIBS="${LIBS} ${OPENSSL_LIBS} ${QT_LIBS}"
+ 
+ # Just give it a try .....
+ ##########################
