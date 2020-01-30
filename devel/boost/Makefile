@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2020/01/29 22:39:09 kmos Exp $
+# $OpenBSD: Makefile,v 1.93 2020/01/30 01:42:34 kmos Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 powerpc
 
@@ -11,7 +11,7 @@ VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
-REVISION-main=	9
+REVISION-main=	10
 REVISION-md=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
