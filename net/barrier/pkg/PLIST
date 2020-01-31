@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/31 23:32:54 abieber Exp $
+@bin bin/barrier-gui
+@bin bin/barrierc
+@bin bin/barriers
+@man man/man1/barrierc.1
+@man man/man1/barriers.1
+share/examples/barrier/
+share/examples/barrier/barrier.conf.example
+share/examples/barrier/barrier.conf.example-advanced
+share/examples/barrier/barrier.conf.example-basic
