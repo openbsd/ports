@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.170 2019/07/25 22:07:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.171 2020/01/31 21:15:27 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.48
+DISTNAME =		openldap-2.4.49
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -44,6 +44,7 @@ EXTRACT_SUFX =		.tgz
 SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.65
 CONFIGURE_STYLE =	autoconf
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 FLAVOR ?=
 FLAVORS =		aci gssapi
