@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/06/27 05:05:49 bket Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/01/31 04:14:43 bket Exp $
 @conflict polarssl-*
 include/mbedtls/
 include/mbedtls/aes.h
@@ -79,11 +79,11 @@ include/mbedtls/x509_crl.h
 include/mbedtls/x509_crt.h
 include/mbedtls/x509_csr.h
 include/mbedtls/xtea.h
-lib/libmbedcrypto.a
+@static-lib lib/libmbedcrypto.a
 @lib lib/libmbedcrypto.so.${LIBmbedcrypto_VERSION}
-lib/libmbedtls.a
+@static-lib lib/libmbedtls.a
 @lib lib/libmbedtls.so.${LIBmbedtls_VERSION}
-lib/libmbedx509.a
+@static-lib lib/libmbedx509.a
 @lib lib/libmbedx509.so.${LIBmbedx509_VERSION}
 share/doc/mbedtls/
 share/doc/mbedtls/ChangeLog
