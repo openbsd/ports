@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1166 2020/01/31 18:48:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1167 2020/01/31 23:34:42 abieber Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -21,6 +21,7 @@
      SUBDIR += avahi,
      SUBDIR += axel
      SUBDIR += balance
+     SUBDIR += barrier
      SUBDIR += bgpq3
      SUBDIR += bgpq4
      SUBDIR += bindgraph
