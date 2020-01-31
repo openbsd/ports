@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.67 2019/12/29 10:35:23 espie Exp $
+# $OpenBSD: proot,v 1.68 2020/01/31 12:18:14 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -118,6 +118,12 @@ sub add_preserved
 {
 	my ($state, $item) = @_;
 	$state->{dontrm}{$item} = 1;
+	# XXX chicken&egg issue: add_chroot_preserved requires
+	# the chroot to be set, but we might mix preserve/chroot
+	# options, so set_chroot will fix up things after the fact,
+	# based on dontrm keys
+	# the exists test prevents early preserve options to fail
+	# miserably.
 	if (exists $state->{chroot_dont}) {
 		$state->add_chroot_preserved($item);
 	}
