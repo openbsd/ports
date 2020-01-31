@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.850 2020/01/30 21:19:42 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.851 2020/01/31 04:18:03 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1534,7 +1534,7 @@ my $cve = {
 	'net/znc' => 'znc-<1.7.3',
 	'print/cups,-main' => 'cups-<1.7.4',
 	'security/clamav' => 'clamav-<0.100.2',
-	'security/polarssl' => 'mbedtls-<2.14.1',
+	'security/polarssl' => 'mbedtls-<2.16.4',
 	'shells/bash' => 'bash-<4.3.27',
 	'sysutils/ansible,-main' => 'ansible-<2.7.1',
 	'sysutils/mcollective' => 'mcollective-<2.5.3',
