@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/31 17:47:07 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2020/01/31 18:58:43 cwen Exp $
 
 COMMENT =		tty-based CardDav search tool
 
@@ -24,7 +24,7 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			textproc/libxml \
 			security/gpgme
 
-RUN_DEPEBDS =		security/gnupg2
+RUN_DEPENDS =		security/gnupg2
 
 CONFIGURE_STYLE =	gnu
 
