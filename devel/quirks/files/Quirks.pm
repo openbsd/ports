@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.853 2020/01/31 18:32:28 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.854 2020/01/31 18:38:32 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1476,7 +1476,7 @@ my $cve = {
 	'archivers/libmspack' => 'libmspack-<0.8alpha',
 	'archivers/p5-Archive-Zip' => 'p5-Archive-Zip-<1.64',
 	'audio/flac' => 'flac-<1.3.0p1',
-	'databases/mariadb,-main' => 'mariadb-client-<10.3.15',
+	'databases/mariadb,-main' => 'mariadb-client-<10.3.22',
 	'databases/mariadb,-server' => 'mariadb-server-<10.3.15',
 	'databases/postgresql,-main' => 'postgresql-client-<10.6',
 	'databases/postgresql,-server' => 'postgresql-server-<10.6',
@@ -1504,7 +1504,7 @@ my $cve = {
 	'lang/ruby/2.6,-main' => 'ruby->2.6,<2.6.2',
 	'mail/dovecot,-main' => 'dovecot-<2.3.6',
 	'mail/exim' => 'exim-<4.83',
-	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.2',
+	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.4',
 	'mail/roundcubemail' => 'roundcubemail-<1.3.8',
 	'math/hdf5' => 'hdf5-<1.8.21',
 	'multimedia/libquicktime' => 'libquicktime-<1.2.4p13',
@@ -1522,7 +1522,8 @@ my $cve = {
 	'net/powerdns,-main' => 'powerdns-<4.1.5',
 	'net/powerdns,-mysql' => 'powerdns-mysql-<4.1.5',
 	'net/powerdns,-pgsql' => 'powerdns-pgsql-<4.1.5',
-	'net/samba,-main' => 'samba-<4.8.4',
+	'net/rsync' => 'rsync-<3.1.3p0',
+	'net/samba,-main' => 'samba-<4.8.18',
 	'net/tinc' => 'tinc-<1.0.35v0',
 	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
 	'net/transmission,-main' => 'transmission-<2.84',
@@ -1536,6 +1537,7 @@ my $cve = {
 	'security/clamav' => 'clamav-<0.100.2',
 	'security/opensc' => 'opensc-<0.20.0',
 	'security/polarssl' => 'mbedtls-<2.16.4',
+	'security/sudo' => 'sudo-<1.8.31',
 	'shells/bash' => 'bash-<4.3.27',
 	'sysutils/ansible,-main' => 'ansible-<2.7.1',
 	'sysutils/mcollective' => 'mcollective-<2.5.3',
