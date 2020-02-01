@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/04 05:44:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.25 2020/02/01 13:19:23 cwen Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20191222
@@ -58,6 +58,12 @@ WRKDIST =	${WRKDIR}/eduke32_${RDATE}-${RTAG}
 
 .if !${PROPERTIES:Mlld}
 MAKE_FLAGS +=	LTO=0
+.endif
+
+# Fix "undefined reference to `__atomic_load_8'"
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB +=	atomic
+MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
 
 post-extract:
