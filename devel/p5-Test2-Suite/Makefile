@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/01/01 22:02:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/01 20:48:34 bluhm Exp $
 
 COMMENT =	set of tools built upon the Test2 framework
 
-DISTNAME =	Test2-Suite-0.000127
+DISTNAME =	Test2-Suite-0.000129
 
 CATEGORIES =	devel
 
