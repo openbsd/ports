@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2019/11/18 19:57:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2020/02/01 15:04:26 naddy Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -80,6 +80,14 @@ LIB_DEPENDS-neon=	${LIB_DEPENDS} \
 
 LIB_DEPENDS-mjpeg=	${LIB_DEPENDS} \
 			multimedia/mjpegtools
+
+# needed for autopoint
+BUILD_DEPENDS +=	devel/gettext,-tools
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.11
+AUTORECONF=		./autogen.sh --nocheck
+CONFIGURE_STYLE =	autoreconf
 
 CONFIGURE_ARGS=		--disable-acm \
 			--disable-celt \

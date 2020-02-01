@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.113 2020/02/01 15:04:26 naddy Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -97,26 +97,16 @@ CONFIGURE_ARGS=		--with-aalib-prefix=${LOCALBASE} \
 			--disable-jack \
 			--enable-goom
 
-### SNDIO ###
-CONFIGURE_STYLE +=	gnu
-AUTOMAKE_VERSION=	1.10
-BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
-BUILD_DEPENDS +=	devel/libtool		# needs libtoolize
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.11
+AUTORECONF =		./autogen.sh --nocheck
 BUILD_DEPENDS +=	devel/gettext,-tools	# autopoint
 
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio
 
-# autopoint(1) uses HOME, make sure it exists
 pre-configure:
-	cd ${WRKSRC} && HOME=${WRKDIST} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOMAKE=automake-${AUTOMAKE_VERSION} \
-		NOCONFIGURE="true" \
-		${CONFIGURE_ENV} ./autogen.sh ${CONFIGURE_ARGS}
-### END SNDIO ###
 	perl -pi -e 's,/dev/dsp,/dev/audio,g' \
 		${WRKSRC}/docs/plugins/gst-plugins-good-plugins.args \
 		${WRKSRC}/docs/plugins/html/gst-plugins-good-plugins-osssink.html \
