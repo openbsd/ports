@@ -1,0 +1,18 @@
+$OpenBSD: patch-parser_c,v 1.20 2020/02/01 20:35:32 bluhm Exp $
+
+https://gitlab.gnome.org/GNOME/libxml2/commit/0e1a49c89076
+CVE-2020-7595
+
+Index: parser.c
+--- parser.c.orig
++++ parser.c
+@@ -2646,7 +2646,8 @@ xmlStringLenDecodeEntities(xmlParserCtxtPtr ctxt, cons
+     else
+         c = 0;
+     while ((c != 0) && (c != end) && /* non input consuming loop */
+-	   (c != end2) && (c != end3)) {
++           (c != end2) && (c != end3) &&
++           (ctxt->instate != XML_PARSER_EOF)) {
+ 
+ 	if (c == 0) break;
+         if ((c == '&') && (str[1] == '#')) {

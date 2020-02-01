@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-python,v 1.7 2019/11/01 15:37:46 jasper Exp $
+@comment $OpenBSD: PLIST-python,v 1.8 2020/02/01 20:35:32 bluhm Exp $
 lib/python${MODPY_VERSION}/site-packages/drv_libxml2.py
 lib/python${MODPY_VERSION}/site-packages/drv_libxml2.pyc
 lib/python${MODPY_VERSION}/site-packages/libxml2.py
 lib/python${MODPY_VERSION}/site-packages/libxml2.pyc
-lib/python${MODPY_VERSION}/site-packages/libxml2mod.a
+@static-lib lib/python${MODPY_VERSION}/site-packages/libxml2mod.a
 lib/python${MODPY_VERSION}/site-packages/libxml2mod.la
-lib/python${MODPY_VERSION}/site-packages/libxml2mod.so
+@so lib/python${MODPY_VERSION}/site-packages/libxml2mod.so
 share/examples/libxml2/
 share/examples/libxml2/attribs.py
 share/examples/libxml2/build.py

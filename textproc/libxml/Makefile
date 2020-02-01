@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.179 2019/11/01 15:37:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.180 2020/02/01 20:35:31 bluhm Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
 VERSION=		2.9.10
+REVISION=		0
 DISTNAME=		libxml2-${VERSION}
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py-libxml-${VERSION}
@@ -48,7 +49,7 @@ LIB_DEPENDS-python=	textproc/libxml,-main=${VERSION} \
 			${MODPY_LIB_DEPENDS} \
 			converters/libiconv
 WANTLIB-python=		${WANTLIB} ${MODPY_WANTLIB} \
-			pthread util xml2>=11
+			intl pthread util xml2>=11
 FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/libxml2
 CONFIGURE_ARGS+=	--with-python
 .else
