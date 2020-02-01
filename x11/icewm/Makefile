@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.72 2019/12/14 13:08:27 jca Exp $
+# $OpenBSD: Makefile,v 1.73 2020/02/01 19:48:19 bket Exp $
 
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		1.6.2
+V=		1.6.4
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
 
-HOMEPAGE=	https://www.ice-wm.org/
+HOMEPAGE=	https://ice-wm.org/
 
 # LGPLv2 only
 PERMIT_PACKAGE=	Yes

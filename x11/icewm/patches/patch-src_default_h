@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_default_h,v 1.17 2019/11/10 11:08:41 fcambus Exp $
+$OpenBSD: patch-src_default_h,v 1.18 2020/02/01 19:48:20 bket Exp $
 Index: src/default.h
 --- src/default.h.orig
 +++ src/default.h
@@ -25,7 +25,7 @@ Index: src/default.h
  XSV(const char *, clockCommand,                 "xclock -name icewm -title Clock")
  XSV(const char *, clockClassHint,               "icewm.XClock")
  XSV(const char *, runDlgCommand,                0)
-@@ -206,7 +206,7 @@ XIV(bool, cpuCombine,                           true)
+@@ -205,7 +205,7 @@ XIV(bool, cpuCombine,                           true)
  XSV(const char *, netCommand,                   TERM " -name 'ss' -title 'Socket Statistics' -hold -e sh -c 'which ss > /dev/null && watch -t ss -putswl || netstat -c'")
  XSV(const char *, netClassHint,                 "ss.XTerm")
  #else
