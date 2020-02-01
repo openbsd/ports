@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/11/17 09:28:23 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/02/01 20:44:16 jung Exp $
 @bin bin/kcaldav.passwd
 include/libkcaldav.h
-lib/libkcaldav.a
+@static-lib lib/libkcaldav.a
 @man man/man1/kcaldav.passwd.1
 @man man/man3/libkcaldav.3
 @man man/man8/kcaldav.8

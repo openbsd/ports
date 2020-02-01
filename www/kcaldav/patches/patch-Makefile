@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.5 2019/11/17 09:28:23 stsp Exp $
+$OpenBSD: patch-Makefile,v 1.6 2020/02/01 20:44:16 jung Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -14,3 +14,12 @@ Index: Makefile
  
  # File-system directory where "installwww" installs.
  # You probably aren't going to use that!
+@@ -150,7 +150,7 @@ VERSION		 = 0.1.11
+ CFLAGS		+= -DCALDIR=\"$(CALDIR)\"
+ CFLAGS		+= -DHTDOCS=\"$(HTDOCS)\"
+ CFLAGS		+= -DVERSION=\"$(VERSION)\"
+-CFLAGS		+= -DLOGFILE=\"$(LOGFILE)\"
++#CFLAGS		+= -DLOGFILE=\"$(LOGFILE)\"
+ BHTMLS		 = collection.html \
+ 		   home.html
+ DOTFLAGS	 = -h "BGCOLOR=\"red\"" \
