@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2020/01/25 18:31:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.52 2020/02/01 19:25:13 cwen Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
 V =		3.4.1
+REVISION =	0
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}
 PKGNAME =	musescore-${V}
@@ -50,7 +51,8 @@ CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_PCH=OFF \
 		-DBUILD_WEBENGINE=OFF \
 		-DUSE_SYSTEM_FREETYPE=ON \
-		-DBUILD_CRASH_REPORTER=OFF
+		-DBUILD_CRASH_REPORTER=OFF \
+		-DBUILD_TELEMETRY_MODULE=OFF
 
 NO_TEST =	Yes
 MAJ_MIN =	${V:C/^([0-9]+\.[0-9]+).*/\1/}
