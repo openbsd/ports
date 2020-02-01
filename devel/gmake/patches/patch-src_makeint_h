@@ -1,11 +1,9 @@
-$OpenBSD: patch-makeint_h,v 1.3 2019/11/02 00:33:29 jca Exp $
+$OpenBSD: patch-src_makeint_h,v 1.1 2020/02/01 15:29:25 naddy Exp $
 
-Remove too broad #ifdef so that we also use modern code on arm.
-
-Index: makeint.h
---- makeint.h.orig
-+++ makeint.h
-@@ -114,7 +114,7 @@ extern int errno;
+Index: src/makeint.h
+--- src/makeint.h.orig
++++ src/makeint.h
+@@ -115,7 +115,7 @@ extern int errno;
  #endif
  
  /* Some systems define _POSIX_VERSION but are not really POSIX.1.  */

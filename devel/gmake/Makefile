@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.63 2019/09/13 16:59:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.64 2020/02/01 15:29:24 naddy Exp $
 
 COMMENT=	GNU make
 
-DISTNAME=	make-4.2.1
+DISTNAME=	make-4.3
 PKGNAME=	g${DISTNAME}
-REVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=make/}
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.lz
 
 HOMEPAGE=	https://www.gnu.org/software/make/
 
@@ -18,14 +17,19 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g" --without-guile
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/build-aux
 
-pre-test:
-	find ${WRKSRC}/tests/scripts -name \*.orig -delete
+TEST_ENV=	SHELL=$$SHELL
+
+# Known test failures:
+# output-sync can fail due to a race condition in the test itself
+# https://lists.gnu.org/archive/html/bug-make/2020-01/msg00075.html
 
 .include <bsd.port.mk>

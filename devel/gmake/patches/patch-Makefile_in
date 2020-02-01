@@ -1,12 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2016/06/25 19:47:11 naddy Exp $
---- Makefile.in.orig	Sat Jun 11 01:03:22 2016
-+++ Makefile.in	Fri Jun 24 18:19:09 2016
-@@ -481,7 +481,7 @@ EXTRA_make_SOURCES = vmsjobs.c remote-stub.c remote-cs
- noinst_HEADERS = commands.h dep.h filedef.h job.h makeint.h rule.h variable.h \
- 		debug.h getopt.h gettext.h hash.h output.h os.h
+$OpenBSD: patch-Makefile_in,v 1.5 2020/02/01 15:29:25 naddy Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -1039,7 +1039,7 @@ make_SOURCES = $(make_SRCS) $(am__append_1) $(am__appe
+ 	$(am__append_4) $(am__append_5)
+ EXTRA_make_SOURCES = $(amiga_SRCS) $(vms_SRCS)
+ make_LDADD = $(LIBOBJS) $(GUILE_LIBS) lib/libgnu.a $(GETLOADAVG_LIBS) \
+-		@LIBINTL@
++		@LTLIBINTL@
  
--make_LDADD = @LIBOBJS@ @ALLOCA@ $(GLOBLIB) @GETLOADAVG_LIBS@ @LIBINTL@ \
-+make_LDADD = @LIBOBJS@ @ALLOCA@ $(GLOBLIB) @GETLOADAVG_LIBS@ @LTLIBINTL@ \
- 	$(GUILE_LIBS) $(am__append_1)
- man_MANS = make.1
- AM_CPPFLAGS = $(GLOBINC) $(am__append_2)
+ AM_CPPFLAGS = -Isrc -I$(top_srcdir)/src -Ilib -I$(top_srcdir)/lib \
+ 	-DLIBDIR=\"$(libdir)\" -DINCLUDEDIR=\"$(includedir)\" \
