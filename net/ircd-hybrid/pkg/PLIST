@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/06/01 09:47:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/02/02 15:33:23 ajacoutot Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -19,166 +19,166 @@ lib/ircd-hybrid/
 lib/ircd-hybrid/modules/
 lib/ircd-hybrid/modules/autoload/
 lib/ircd-hybrid/modules/autoload/m_accept.la
-lib/ircd-hybrid/modules/autoload/m_accept.so
+@so lib/ircd-hybrid/modules/autoload/m_accept.so
 lib/ircd-hybrid/modules/autoload/m_admin.la
-lib/ircd-hybrid/modules/autoload/m_admin.so
+@so lib/ircd-hybrid/modules/autoload/m_admin.so
 lib/ircd-hybrid/modules/autoload/m_away.la
-lib/ircd-hybrid/modules/autoload/m_away.so
+@so lib/ircd-hybrid/modules/autoload/m_away.so
 lib/ircd-hybrid/modules/autoload/m_cap.la
-lib/ircd-hybrid/modules/autoload/m_cap.so
+@so lib/ircd-hybrid/modules/autoload/m_cap.so
 lib/ircd-hybrid/modules/autoload/m_capab.la
-lib/ircd-hybrid/modules/autoload/m_capab.so
+@so lib/ircd-hybrid/modules/autoload/m_capab.so
 lib/ircd-hybrid/modules/autoload/m_certfp.la
-lib/ircd-hybrid/modules/autoload/m_certfp.so
+@so lib/ircd-hybrid/modules/autoload/m_certfp.so
 lib/ircd-hybrid/modules/autoload/m_close.la
-lib/ircd-hybrid/modules/autoload/m_close.so
+@so lib/ircd-hybrid/modules/autoload/m_close.so
 lib/ircd-hybrid/modules/autoload/m_connect.la
-lib/ircd-hybrid/modules/autoload/m_connect.so
+@so lib/ircd-hybrid/modules/autoload/m_connect.so
 lib/ircd-hybrid/modules/autoload/m_dline.la
-lib/ircd-hybrid/modules/autoload/m_dline.so
+@so lib/ircd-hybrid/modules/autoload/m_dline.so
 lib/ircd-hybrid/modules/autoload/m_encap.la
-lib/ircd-hybrid/modules/autoload/m_encap.so
+@so lib/ircd-hybrid/modules/autoload/m_encap.so
 lib/ircd-hybrid/modules/autoload/m_eob.la
-lib/ircd-hybrid/modules/autoload/m_eob.so
+@so lib/ircd-hybrid/modules/autoload/m_eob.so
 lib/ircd-hybrid/modules/autoload/m_etrace.la
-lib/ircd-hybrid/modules/autoload/m_etrace.so
+@so lib/ircd-hybrid/modules/autoload/m_etrace.so
 lib/ircd-hybrid/modules/autoload/m_globops.la
-lib/ircd-hybrid/modules/autoload/m_globops.so
+@so lib/ircd-hybrid/modules/autoload/m_globops.so
 lib/ircd-hybrid/modules/autoload/m_hash.la
-lib/ircd-hybrid/modules/autoload/m_hash.so
+@so lib/ircd-hybrid/modules/autoload/m_hash.so
 lib/ircd-hybrid/modules/autoload/m_help.la
-lib/ircd-hybrid/modules/autoload/m_help.so
+@so lib/ircd-hybrid/modules/autoload/m_help.so
 lib/ircd-hybrid/modules/autoload/m_info.la
-lib/ircd-hybrid/modules/autoload/m_info.so
+@so lib/ircd-hybrid/modules/autoload/m_info.so
 lib/ircd-hybrid/modules/autoload/m_invite.la
-lib/ircd-hybrid/modules/autoload/m_invite.so
+@so lib/ircd-hybrid/modules/autoload/m_invite.so
 lib/ircd-hybrid/modules/autoload/m_ison.la
-lib/ircd-hybrid/modules/autoload/m_ison.so
+@so lib/ircd-hybrid/modules/autoload/m_ison.so
 lib/ircd-hybrid/modules/autoload/m_kline.la
-lib/ircd-hybrid/modules/autoload/m_kline.so
+@so lib/ircd-hybrid/modules/autoload/m_kline.so
 lib/ircd-hybrid/modules/autoload/m_knock.la
-lib/ircd-hybrid/modules/autoload/m_knock.so
+@so lib/ircd-hybrid/modules/autoload/m_knock.so
 lib/ircd-hybrid/modules/autoload/m_links.la
-lib/ircd-hybrid/modules/autoload/m_links.so
+@so lib/ircd-hybrid/modules/autoload/m_links.so
 lib/ircd-hybrid/modules/autoload/m_list.la
-lib/ircd-hybrid/modules/autoload/m_list.so
+@so lib/ircd-hybrid/modules/autoload/m_list.so
 lib/ircd-hybrid/modules/autoload/m_locops.la
-lib/ircd-hybrid/modules/autoload/m_locops.so
+@so lib/ircd-hybrid/modules/autoload/m_locops.so
 lib/ircd-hybrid/modules/autoload/m_lusers.la
-lib/ircd-hybrid/modules/autoload/m_lusers.so
+@so lib/ircd-hybrid/modules/autoload/m_lusers.so
 lib/ircd-hybrid/modules/autoload/m_map.la
-lib/ircd-hybrid/modules/autoload/m_map.so
+@so lib/ircd-hybrid/modules/autoload/m_map.so
 lib/ircd-hybrid/modules/autoload/m_module.la
-lib/ircd-hybrid/modules/autoload/m_module.so
+@so lib/ircd-hybrid/modules/autoload/m_module.so
 lib/ircd-hybrid/modules/autoload/m_motd.la
-lib/ircd-hybrid/modules/autoload/m_motd.so
+@so lib/ircd-hybrid/modules/autoload/m_motd.so
 lib/ircd-hybrid/modules/autoload/m_names.la
-lib/ircd-hybrid/modules/autoload/m_names.so
+@so lib/ircd-hybrid/modules/autoload/m_names.so
 lib/ircd-hybrid/modules/autoload/m_oper.la
-lib/ircd-hybrid/modules/autoload/m_oper.so
+@so lib/ircd-hybrid/modules/autoload/m_oper.so
 lib/ircd-hybrid/modules/autoload/m_pass.la
-lib/ircd-hybrid/modules/autoload/m_pass.so
+@so lib/ircd-hybrid/modules/autoload/m_pass.so
 lib/ircd-hybrid/modules/autoload/m_ping.la
-lib/ircd-hybrid/modules/autoload/m_ping.so
+@so lib/ircd-hybrid/modules/autoload/m_ping.so
 lib/ircd-hybrid/modules/autoload/m_pong.la
-lib/ircd-hybrid/modules/autoload/m_pong.so
+@so lib/ircd-hybrid/modules/autoload/m_pong.so
 lib/ircd-hybrid/modules/autoload/m_post.la
-lib/ircd-hybrid/modules/autoload/m_post.so
+@so lib/ircd-hybrid/modules/autoload/m_post.so
 lib/ircd-hybrid/modules/autoload/m_rehash.la
-lib/ircd-hybrid/modules/autoload/m_rehash.so
+@so lib/ircd-hybrid/modules/autoload/m_rehash.so
 lib/ircd-hybrid/modules/autoload/m_restart.la
-lib/ircd-hybrid/modules/autoload/m_restart.so
+@so lib/ircd-hybrid/modules/autoload/m_restart.so
 lib/ircd-hybrid/modules/autoload/m_resv.la
-lib/ircd-hybrid/modules/autoload/m_resv.so
+@so lib/ircd-hybrid/modules/autoload/m_resv.so
 lib/ircd-hybrid/modules/autoload/m_set.la
-lib/ircd-hybrid/modules/autoload/m_set.so
+@so lib/ircd-hybrid/modules/autoload/m_set.so
 lib/ircd-hybrid/modules/autoload/m_stats.la
-lib/ircd-hybrid/modules/autoload/m_stats.so
+@so lib/ircd-hybrid/modules/autoload/m_stats.so
 lib/ircd-hybrid/modules/autoload/m_svinfo.la
-lib/ircd-hybrid/modules/autoload/m_svinfo.so
+@so lib/ircd-hybrid/modules/autoload/m_svinfo.so
 lib/ircd-hybrid/modules/autoload/m_svshost.la
-lib/ircd-hybrid/modules/autoload/m_svshost.so
+@so lib/ircd-hybrid/modules/autoload/m_svshost.so
 lib/ircd-hybrid/modules/autoload/m_svsjoin.la
-lib/ircd-hybrid/modules/autoload/m_svsjoin.so
+@so lib/ircd-hybrid/modules/autoload/m_svsjoin.so
 lib/ircd-hybrid/modules/autoload/m_svskill.la
-lib/ircd-hybrid/modules/autoload/m_svskill.so
+@so lib/ircd-hybrid/modules/autoload/m_svskill.so
 lib/ircd-hybrid/modules/autoload/m_svsmode.la
-lib/ircd-hybrid/modules/autoload/m_svsmode.so
+@so lib/ircd-hybrid/modules/autoload/m_svsmode.so
 lib/ircd-hybrid/modules/autoload/m_svsnick.la
-lib/ircd-hybrid/modules/autoload/m_svsnick.so
+@so lib/ircd-hybrid/modules/autoload/m_svsnick.so
 lib/ircd-hybrid/modules/autoload/m_svspart.la
-lib/ircd-hybrid/modules/autoload/m_svspart.so
+@so lib/ircd-hybrid/modules/autoload/m_svspart.so
 lib/ircd-hybrid/modules/autoload/m_svstag.la
-lib/ircd-hybrid/modules/autoload/m_svstag.so
+@so lib/ircd-hybrid/modules/autoload/m_svstag.so
 lib/ircd-hybrid/modules/autoload/m_tburst.la
-lib/ircd-hybrid/modules/autoload/m_tburst.so
+@so lib/ircd-hybrid/modules/autoload/m_tburst.so
 lib/ircd-hybrid/modules/autoload/m_time.la
-lib/ircd-hybrid/modules/autoload/m_time.so
+@so lib/ircd-hybrid/modules/autoload/m_time.so
 lib/ircd-hybrid/modules/autoload/m_topic.la
-lib/ircd-hybrid/modules/autoload/m_topic.so
+@so lib/ircd-hybrid/modules/autoload/m_topic.so
 lib/ircd-hybrid/modules/autoload/m_trace.la
-lib/ircd-hybrid/modules/autoload/m_trace.so
+@so lib/ircd-hybrid/modules/autoload/m_trace.so
 lib/ircd-hybrid/modules/autoload/m_undline.la
-lib/ircd-hybrid/modules/autoload/m_undline.so
+@so lib/ircd-hybrid/modules/autoload/m_undline.so
 lib/ircd-hybrid/modules/autoload/m_unkline.la
-lib/ircd-hybrid/modules/autoload/m_unkline.so
+@so lib/ircd-hybrid/modules/autoload/m_unkline.so
 lib/ircd-hybrid/modules/autoload/m_unresv.la
-lib/ircd-hybrid/modules/autoload/m_unresv.so
+@so lib/ircd-hybrid/modules/autoload/m_unresv.so
 lib/ircd-hybrid/modules/autoload/m_unxline.la
-lib/ircd-hybrid/modules/autoload/m_unxline.so
+@so lib/ircd-hybrid/modules/autoload/m_unxline.so
 lib/ircd-hybrid/modules/autoload/m_user.la
-lib/ircd-hybrid/modules/autoload/m_user.so
+@so lib/ircd-hybrid/modules/autoload/m_user.so
 lib/ircd-hybrid/modules/autoload/m_userhost.la
-lib/ircd-hybrid/modules/autoload/m_userhost.so
+@so lib/ircd-hybrid/modules/autoload/m_userhost.so
 lib/ircd-hybrid/modules/autoload/m_version.la
-lib/ircd-hybrid/modules/autoload/m_version.so
+@so lib/ircd-hybrid/modules/autoload/m_version.so
 lib/ircd-hybrid/modules/autoload/m_wallops.la
-lib/ircd-hybrid/modules/autoload/m_wallops.so
+@so lib/ircd-hybrid/modules/autoload/m_wallops.so
 lib/ircd-hybrid/modules/autoload/m_watch.la
-lib/ircd-hybrid/modules/autoload/m_watch.so
+@so lib/ircd-hybrid/modules/autoload/m_watch.so
 lib/ircd-hybrid/modules/autoload/m_webirc.la
-lib/ircd-hybrid/modules/autoload/m_webirc.so
+@so lib/ircd-hybrid/modules/autoload/m_webirc.so
 lib/ircd-hybrid/modules/autoload/m_who.la
-lib/ircd-hybrid/modules/autoload/m_who.so
+@so lib/ircd-hybrid/modules/autoload/m_who.so
 lib/ircd-hybrid/modules/autoload/m_whois.la
-lib/ircd-hybrid/modules/autoload/m_whois.so
+@so lib/ircd-hybrid/modules/autoload/m_whois.so
 lib/ircd-hybrid/modules/autoload/m_whowas.la
-lib/ircd-hybrid/modules/autoload/m_whowas.so
+@so lib/ircd-hybrid/modules/autoload/m_whowas.so
 lib/ircd-hybrid/modules/autoload/m_xline.la
-lib/ircd-hybrid/modules/autoload/m_xline.so
+@so lib/ircd-hybrid/modules/autoload/m_xline.so
 lib/ircd-hybrid/modules/extra/
 lib/ircd-hybrid/modules/extra/m_opme.la
-lib/ircd-hybrid/modules/extra/m_opme.so
+@so lib/ircd-hybrid/modules/extra/m_opme.so
 lib/ircd-hybrid/modules/m_bmask.la
-lib/ircd-hybrid/modules/m_bmask.so
+@so lib/ircd-hybrid/modules/m_bmask.so
 lib/ircd-hybrid/modules/m_die.la
-lib/ircd-hybrid/modules/m_die.so
+@so lib/ircd-hybrid/modules/m_die.so
 lib/ircd-hybrid/modules/m_error.la
-lib/ircd-hybrid/modules/m_error.so
+@so lib/ircd-hybrid/modules/m_error.so
 lib/ircd-hybrid/modules/m_join.la
-lib/ircd-hybrid/modules/m_join.so
+@so lib/ircd-hybrid/modules/m_join.so
 lib/ircd-hybrid/modules/m_kick.la
-lib/ircd-hybrid/modules/m_kick.so
+@so lib/ircd-hybrid/modules/m_kick.so
 lib/ircd-hybrid/modules/m_kill.la
-lib/ircd-hybrid/modules/m_kill.so
+@so lib/ircd-hybrid/modules/m_kill.so
 lib/ircd-hybrid/modules/m_message.la
-lib/ircd-hybrid/modules/m_message.so
+@so lib/ircd-hybrid/modules/m_message.so
 lib/ircd-hybrid/modules/m_mode.la
-lib/ircd-hybrid/modules/m_mode.so
+@so lib/ircd-hybrid/modules/m_mode.so
 lib/ircd-hybrid/modules/m_nick.la
-lib/ircd-hybrid/modules/m_nick.so
+@so lib/ircd-hybrid/modules/m_nick.so
 lib/ircd-hybrid/modules/m_part.la
-lib/ircd-hybrid/modules/m_part.so
+@so lib/ircd-hybrid/modules/m_part.so
 lib/ircd-hybrid/modules/m_quit.la
-lib/ircd-hybrid/modules/m_quit.so
+@so lib/ircd-hybrid/modules/m_quit.so
 lib/ircd-hybrid/modules/m_server.la
-lib/ircd-hybrid/modules/m_server.so
+@so lib/ircd-hybrid/modules/m_server.so
 lib/ircd-hybrid/modules/m_sjoin.la
-lib/ircd-hybrid/modules/m_sjoin.so
+@so lib/ircd-hybrid/modules/m_sjoin.so
 lib/ircd-hybrid/modules/m_squit.la
-lib/ircd-hybrid/modules/m_squit.so
+@so lib/ircd-hybrid/modules/m_squit.so
 lib/ircd-hybrid/modules/m_tmode.la
-lib/ircd-hybrid/modules/m_tmode.so
+@so lib/ircd-hybrid/modules/m_tmode.so
 @man man/man8/ircd.8
 share/examples/ircd-hybrid/
 @mode 700

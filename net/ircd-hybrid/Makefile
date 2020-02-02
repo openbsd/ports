@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:48:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2020/02/02 15:33:23 ajacoutot Exp $
 
 COMMENT =	Internet Relay Chat server
 
-DISTNAME =	ircd-hybrid-8.2.26
+DISTNAME =	ircd-hybrid-8.2.28
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
@@ -23,7 +23,7 @@ SUBST_VARS +=	CONFDIR LOGDIR
 
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = --disable-gnutls
+CONFIGURE_ARGS = --with-tls=openssl
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

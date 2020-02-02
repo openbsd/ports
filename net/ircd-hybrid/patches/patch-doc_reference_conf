@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_reference_conf,v 1.16 2019/06/01 09:47:19 ajacoutot Exp $
+$OpenBSD: patch-doc_reference_conf,v 1.17 2020/02/02 15:33:23 ajacoutot Exp $
 
 Index: doc/reference.conf
 --- doc/reference.conf.orig
 +++ doc/reference.conf
-@@ -109,7 +109,7 @@ serverinfo {
+@@ -101,20 +101,20 @@ serverinfo {
  	 *    chown <ircd-user>.<ircd.group> rsa.key
  	 *    chmod 0600 rsa.key
  	 */
@@ -11,26 +11,23 @@ Index: doc/reference.conf
 +#	rsa_private_key_file = "${CONFDIR}/rsa.key";
  
  	/*
- 	 * ssl_certificate_file: the path to the file containing our
-@@ -126,7 +126,7 @@ serverinfo {
- 	 * GnuTLS:
- 	 *    certtool --generate-self-signed --load-privkey rsa.key --outfile cert.pem
+ 	 * tls_certificate_file: the path to the file containing our
+ 	 * TLS certificate for encrypted client connection.
  	 */
--#	ssl_certificate_file = "etc/cert.pem";
-+#	ssl_certificate_file = "${CONFDIR}/cert.pem";
+-#	tls_certificate_file = "etc/cert.pem";
++#	tls_certificate_file = "${CONFDIR}/cert.pem";
  
  	/*
- 	 * ssl_dh_param_file: the path to the PEM encoded Diffie-Hellman
-@@ -141,7 +141,7 @@ serverinfo {
- 	 * GnuTLS:
- 	 *    certtool --generate-dh-params --sec-param=medium --outfile dhparam.pem
+ 	 * tls_dh_param_file: the path to the PEM encoded Diffie-Hellman
+ 	 * parameter file. DH parameters are required when using
+ 	 * ciphers with EDH (ephemeral Diffie-Hellman) key exchange.
  	 */
--#	ssl_dh_param_file = "etc/dhparam.pem";
-+#	ssl_dh_param_file = "${CONFDIR}/dhparam.pem";
+-#	tls_dh_param_file = "etc/dhparam.pem";
++#	tls_dh_param_file = "${CONFDIR}/dhparam.pem";
  
  	/*
- 	 * ssl_dh_elliptic_curve: defines the curve to use for the
-@@ -318,7 +318,7 @@ motd {
+ 	 * tls_supported_groups: defines the curve to use for the
+@@ -294,7 +294,7 @@ motd {
  	/*
  	 * file: path to the motd file.
  	 */
@@ -39,7 +36,7 @@ Index: doc/reference.conf
  };
  
  /*
-@@ -1007,7 +1007,7 @@ serverhide {
+@@ -982,7 +982,7 @@ serverhide {
  	/*
  	 * flatten_links_file: path to the flatten links cache file.
  	 */
@@ -48,7 +45,7 @@ Index: doc/reference.conf
  
  	/*
  	 * hidden: hide this server from a /links output on servers that
-@@ -1326,9 +1326,9 @@ modules {
+@@ -1301,9 +1301,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
@@ -61,7 +58,7 @@ Index: doc/reference.conf
  
  	/* module: the name of a module to load on startup/rehash. */
  #	module = "some_module.la";
-@@ -1343,49 +1343,49 @@ log {
+@@ -1318,49 +1318,49 @@ log {
  
  	file {
  		type = oper;
