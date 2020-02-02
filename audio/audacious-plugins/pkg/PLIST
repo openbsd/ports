@@ -1,73 +1,71 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/09/08 13:33:07 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/02/02 16:06:13 bket Exp $
 @pkgpath audio/audacious-plugins,-main
 lib/audacious/
 lib/audacious/Container/
-lib/audacious/Container/asx.so
-lib/audacious/Container/asx3.so
-lib/audacious/Container/audpl.so
-lib/audacious/Container/cue.so
-lib/audacious/Container/m3u.so
-lib/audacious/Container/pls.so
-lib/audacious/Container/xspf.so
+@so lib/audacious/Container/asx.so
+@so lib/audacious/Container/asx3.so
+@so lib/audacious/Container/audpl.so
+@so lib/audacious/Container/cue.so
+@so lib/audacious/Container/m3u.so
+@so lib/audacious/Container/pls.so
+@so lib/audacious/Container/xspf.so
 lib/audacious/Effect/
-lib/audacious/Effect/compressor.so
-lib/audacious/Effect/crossfade.so
-lib/audacious/Effect/crystalizer.so
-lib/audacious/Effect/echo.so
-lib/audacious/Effect/ladspa.so
-lib/audacious/Effect/mixer.so
-lib/audacious/Effect/resample.so
-lib/audacious/Effect/silence-removal.so
-lib/audacious/Effect/sox-resampler.so
-lib/audacious/Effect/speed-pitch.so
-lib/audacious/Effect/stereo.so
-lib/audacious/Effect/voice_removal.so
+@so lib/audacious/Effect/compressor.so
+@so lib/audacious/Effect/crossfade.so
+@so lib/audacious/Effect/crystalizer.so
+@so lib/audacious/Effect/echo.so
+@so lib/audacious/Effect/ladspa.so
+@so lib/audacious/Effect/mixer.so
+@so lib/audacious/Effect/resample.so
+@so lib/audacious/Effect/silence-removal.so
+@so lib/audacious/Effect/sox-resampler.so
+@so lib/audacious/Effect/speed-pitch.so
+@so lib/audacious/Effect/stereo.so
+@so lib/audacious/Effect/voice_removal.so
 lib/audacious/General/
-lib/audacious/General/alarm.so
-lib/audacious/General/albumart.so
-lib/audacious/General/aosd.so
-lib/audacious/General/cd-menu-items.so
-lib/audacious/General/delete-files.so
-lib/audacious/General/gnomeshortcuts.so
-lib/audacious/General/gtkui.so
-lib/audacious/General/hotkey.so
-lib/audacious/General/lyricwiki.so
-lib/audacious/General/mpris2.so
-lib/audacious/General/notify.so
-lib/audacious/General/playlist-manager.so
-lib/audacious/General/scrobbler.so
-lib/audacious/General/search-tool.so
-lib/audacious/General/skins.so
-lib/audacious/General/song_change.so
-lib/audacious/General/statusicon.so
+@so lib/audacious/General/alarm.so
+@so lib/audacious/General/albumart.so
+@so lib/audacious/General/aosd.so
+@so lib/audacious/General/cd-menu-items.so
+@so lib/audacious/General/delete-files.so
+@so lib/audacious/General/gtkui.so
+@so lib/audacious/General/hotkey.so
+@so lib/audacious/General/lyricwiki.so
+@so lib/audacious/General/mpris2.so
+@so lib/audacious/General/notify.so
+@so lib/audacious/General/playlist-manager.so
+@so lib/audacious/General/scrobbler.so
+@so lib/audacious/General/search-tool.so
+@so lib/audacious/General/skins.so
+@so lib/audacious/General/song_change.so
+@so lib/audacious/General/statusicon.so
 lib/audacious/Input/
-lib/audacious/Input/aac-raw.so
-lib/audacious/Input/adplug.so
-lib/audacious/Input/cdaudio-ng.so
-lib/audacious/Input/console.so
-lib/audacious/Input/ffaudio.so
-lib/audacious/Input/flacng.so
-lib/audacious/Input/madplug.so
-lib/audacious/Input/metronom.so
-lib/audacious/Input/modplug.so
-lib/audacious/Input/psf2.so
-lib/audacious/Input/sndfile.so
-lib/audacious/Input/tonegen.so
-lib/audacious/Input/vorbis.so
-lib/audacious/Input/vtx.so
-lib/audacious/Input/wavpack.so
-lib/audacious/Input/xsf.so
+@so lib/audacious/Input/aac-raw.so
+@so lib/audacious/Input/cdaudio-ng.so
+@so lib/audacious/Input/console.so
+@so lib/audacious/Input/ffaudio.so
+@so lib/audacious/Input/flacng.so
+@so lib/audacious/Input/madplug.so
+@so lib/audacious/Input/metronom.so
+@so lib/audacious/Input/modplug.so
+@so lib/audacious/Input/psf2.so
+@so lib/audacious/Input/sndfile.so
+@so lib/audacious/Input/tonegen.so
+@so lib/audacious/Input/vorbis.so
+@so lib/audacious/Input/vtx.so
+@so lib/audacious/Input/wavpack.so
+@so lib/audacious/Input/xsf.so
 lib/audacious/Output/
-lib/audacious/Output/filewriter.so
-lib/audacious/Output/sndio-ng.so
+@so lib/audacious/Output/filewriter.so
+@so lib/audacious/Output/sndio-ng.so
 lib/audacious/Transport/
-lib/audacious/Transport/gio.so
-lib/audacious/Transport/mms.so
-lib/audacious/Transport/neon.so
+@so lib/audacious/Transport/gio.so
+@so lib/audacious/Transport/mms.so
+@so lib/audacious/Transport/neon.so
 lib/audacious/Visualization/
-lib/audacious/Visualization/blur_scope.so
-lib/audacious/Visualization/cairo-spectrum.so
-lib/audacious/Visualization/gl-spectrum.so
+@so lib/audacious/Visualization/blur_scope.so
+@so lib/audacious/Visualization/cairo-spectrum.so
+@so lib/audacious/Visualization/gl-spectrum.so
 share/audacious/Skins/
 share/audacious/Skins/Classic/
 share/audacious/Skins/Classic/balance.png

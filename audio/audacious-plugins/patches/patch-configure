@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.9 2017/09/08 13:33:07 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.10 2020/02/02 16:06:13 bket Exp $
 
 Set AUDACIOUS_{CFLAGS,LIBS} only after the end of all plugin checks.
 This fixes some of the autoconf checks as the LIBS variable is being
@@ -7,7 +7,7 @@ polluted very early on, breaking most of the checks using AC_CHECK_LIB.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9675,8 +9675,6 @@ $as_echo "yes" >&6; }
+@@ -9702,8 +9702,6 @@ $as_echo "yes" >&6; }
  
  fi
  
@@ -16,7 +16,7 @@ Index: configure
  
  
  if test $HAVE_DARWIN = yes ; then
-@@ -14657,6 +14655,8 @@ as_fn_error ()
+@@ -14701,6 +14699,8 @@ as_fn_error ()
    as_fn_exit $as_status
  } # as_fn_error
  

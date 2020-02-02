@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2019/07/12 20:43:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2020/02/02 16:06:13 bket Exp $
 
 COMMENT =		input and output plugins for Audacious
 
-V =			3.9
+V =			3.10.1
 DISTNAME =		audacious-plugins-$V
-REVISION =		3
 
 CATEGORIES =		audio multimedia
 
@@ -15,15 +14,15 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 audgui
-WANTLIB += audtag avcodec avformat avutil c cairo cddb cdio cdio_cdda
-WANTLIB += cue curl dbus-1 dbus-glib-1 faad fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 iconv intl m mms modplug mp3lame
-WANTLIB += mpg123 neon notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += samplerate sndfile sndio soxr vorbis vorbisenc vorbisfile
-WANTLIB += wavpack xml2 z
+WANTLIB += audtag avcodec avformat avutil cairo cddb cdio cdio_cdda
+WANTLIB += cue curl faad fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz iconv intl m mms modplug mp3lame mpg123 neon
+WANTLIB += notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 samplerate
+WANTLIB += sndfile sndio soxr vorbis vorbisenc vorbisfile wavpack
+WANTLIB += xml2 z
 
-MASTER_SITES =		http://distfiles.audacious-media-player.org/
+MASTER_SITES =		https://distfiles.audacious-media-player.org/
 
 EXTRACT_SUFX =		.tar.bz2
 
