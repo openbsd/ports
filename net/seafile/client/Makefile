@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2020/01/19 12:02:52 kirby Exp $
+# $OpenBSD: Makefile,v 1.33 2020/02/02 11:28:22 kirby Exp $
 
 COMMENT =		seafile client
 
@@ -6,8 +6,8 @@ GH_ACCOUNT =		haiwen
 GH_PROJECT =		seafile-client
 # upstream keep on sliding tags to pull in new commits
 # this commit is from the "v7.0.1" tag
-GH_COMMIT =		6f6e3a3bf9f2dca8c9f79c2d37ef867e4d9cec72
-DISTNAME =		seafile-client-7.0.4pl20191224
+GH_COMMIT =		02a90e7c75b16e5c173b63c0717a4a4309ba7636
+DISTNAME =		seafile-client-7.0.5pl20200119
 
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets c
 WANTLIB += crypto event_core event_extra gio-2.0 glib-2.0 gobject-2.0
