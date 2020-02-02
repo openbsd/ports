@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2020/01/27 07:16:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2020/02/02 15:22:42 cwen Exp $
 
 COMMENT =	personal accounting application
 
 DISTNAME =	homebank-5.3.1
+REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -37,5 +38,8 @@ NO_TEST =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
+
+# Initial declaration in for loops requires C99 with base-gcc
+CFLAGS +=	-std=gnu99
 
 .include <bsd.port.mk>
