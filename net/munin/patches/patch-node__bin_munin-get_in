@@ -1,0 +1,41 @@
+$OpenBSD: patch-node__bin_munin-get_in,v 1.1 2020/02/02 11:16:53 kirby Exp $
+
+Index: node/_bin/munin-get.in
+--- node/_bin/munin-get.in.orig
++++ node/_bin/munin-get.in
+@@ -367,7 +367,7 @@ update_plugin_metadata() {
+         cd "$REPOSITORY_CACHE_BASE_DIR/$repo_name"
+         change_time=$(git log -1 --format=%at "$relative_plugin_filename")
+ 	description=$(perldoc -o nroff -T -F "$relative_plugin_filename" | sed '/^\.Vb [12]/d' | grep -A 1 '^.SH "NAME"$' | tail -1 | sed 's/^\(\\& *\)\?[^ ]* \\- \+//' | sed 's/\\//g')
+-        summary=$(printf '%s/%-30s %s %s\n' "$repo_name" "$plugin_name" "$(date +%Y-%m-%d --date="@$change_time")" "$description")
++        summary=$(printf '%s/%-30s %s %s\n' "$repo_name" "$plugin_name" "$(gdate +%Y-%m-%d --date="@$change_time")" "$description")
+         write_safely_to_file "$metadata_filename" \
+             jo -p -- "timestamp=$change_time" -s "description=$description" -s "summary=$summary" -s "filename=$relative_plugin_filename"
+         # update the entry in the summary cache file
+@@ -435,7 +435,7 @@ list_repository_plugin_files() {
+     plugins_dir=$(get_repository_config_value "$repo_name" "plugins_dir")
+     [ -z "$plugins_dir" ] && plugins_dir="."
+     cd "$REPOSITORY_CACHE_BASE_DIR/$repo_name"
+-    find "$plugins_dir" -type f -executable | sed 's#^\./##' | sort
++    gfind "$plugins_dir" -type f -executable | sed 's#^\./##' | sort
+ }
+ 
+ 
+@@ -508,7 +508,7 @@ case "$ACTION" in
+         check_dependencies
+         get_repository_names | while read -r repo_name; do
+             plugins_dir=$(get_repository_config_value "$repo_name" "plugins_dir")
+-            find "$REPOSITORY_CACHE_BASE_DIR/$repo_name/$plugins_dir" -type f -executable -print0 \
++            gfind "$REPOSITORY_CACHE_BASE_DIR/$repo_name/$plugins_dir" -type f -executable -print0 \
+                 | xargs --null -r grep --files-with-matches "$regex" \
+                 | xargs -r basename --multiple | sed "s#^#$repo_name #"
+         done | sort | while read -r repo_name plugin_name; do
+@@ -528,7 +528,7 @@ case "$ACTION" in
+         check_dependencies
+         get_repository_names | while read -r repo_name; do
+             [ -d "$PLUGINS_INSTALL_DIR/$repo_name" ] || continue
+-            find "$PLUGINS_INSTALL_DIR/$repo_name" -type f -executable -print0 \
++            gfind "$PLUGINS_INSTALL_DIR/$repo_name" -type f -executable -print0 \
+                 | xargs -r -0 -n 100 basename --multiple \
+                 | sed "s#^#$repo_name/#"
+         done

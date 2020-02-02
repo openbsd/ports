@@ -1,8 +1,9 @@
-$OpenBSD: patch-node_sbin_munin-run,v 1.2 2012/10/12 09:46:46 kirby Exp $
---- node/sbin/munin-run.orig	Fri Aug 31 19:22:50 2012
-+++ node/sbin/munin-run	Sun Sep 30 23:02:45 2012
-@@ -52,6 +52,9 @@ sub main
-         $ENV{$key} =~ /^(.*)$/;
+$OpenBSD: patch-node_sbin_munin-run,v 1.3 2020/02/02 11:16:53 kirby Exp $
+Index: node/sbin/munin-run
+--- node/sbin/munin-run.orig
++++ node/sbin/munin-run
+@@ -115,6 +115,9 @@ sub main
+         $ENV{$key} =~ /^(.*)$/s;
          $ENV{$key} = $1;
      }
 +    # plugins run in taint mode because the uid is changed, so the path

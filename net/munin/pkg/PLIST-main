@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2019/03/05 15:33:45 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2020/02/02 11:16:54 kirby Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -10,6 +10,7 @@
 @rcscript ${RCDIR}/munin_asyncd
 @rcscript ${RCDIR}/munin_node
 bin/munin-check
+@comment bin/munin-get
 bin/munindoc
 libdata/perl5/site_perl/Munin/
 libdata/perl5/site_perl/Munin/Common/
@@ -263,6 +264,7 @@ libexec/munin/plugins/users
 libexec/munin/plugins/varnish_
 libexec/munin/plugins/vmstat
 libexec/munin/plugins/zimbra_
+@man man/man1/munin-get.1
 @man man/man1/munin-node-configure.1
 @man man/man1/munin-node.1
 @man man/man1/munin-run.1

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.15 2019/03/05 15:33:45 kirby Exp $
+$OpenBSD: patch-Makefile,v 1.16 2020/02/02 11:16:53 kirby Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
@@ -32,7 +32,7 @@ Index: Makefile
  
  	for p in master/www/*.tmpl ;  do \
  		$(INSTALL) -m 0644 "$$p" $(CONFDIR)/templates/ ; \
-@@ -161,10 +160,10 @@ install-plugins-prime: install-plugins build $(PLUGINS
+@@ -158,10 +157,10 @@ install-plugins-prime: install-plugins build $(PLUGINS
  	mkdir -p $(CONFDIR)/plugins
  	mkdir -p $(CONFDIR)/plugin-conf.d
  	mkdir -p $(LIBDIR)/plugins
@@ -46,7 +46,7 @@ Index: Makefile
  	$(CHMOD) 0755 $(CONFDIR)/plugin-conf.d
  
  	@# Process the OS specific plugins at the end. Otherwise they would be overridden by the
-@@ -534,7 +533,7 @@ install-%: %/Build
+@@ -535,7 +534,7 @@ install-%: %/Build
  		--install_path script=$(BINDIR) \
  		--install_path sbin=$(SBINDIR) \
  		--install_path bindoc=$(MANDIR)/man1 \
