@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.161 2019/12/14 12:58:07 jca Exp $
+# $OpenBSD: Makefile,v 1.162 2020/02/02 16:31:01 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.47.1
+STABLE_VERSION=		2.47.3
 OLD_VERSION=		2.40.20
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
@@ -15,8 +15,7 @@ MASTER_SITES1=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${OLD_VERSION:C/^(
 
 ### stable
 .if ${PROPERTIES:Mrust}
-REVISION=		1
-SHARED_LIBS +=  rsvg-2               39.2     # 48.0
+SHARED_LIBS +=  rsvg-2               39.2     # 49.0
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
 PKG_ARGS=		-Dold=0 -Dstable=1
@@ -31,7 +30,7 @@ SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
 PKG_ARGS=		-Dold=1 -Dstable=0
-WANTLIB += croco-0.6 ffi gmodule-2.0 pcre
+WANTLIB += croco-0.6 ffi gmodule-2.0 gthread-2.0 pcre
 LIB_DEPENDS +=		www/libcroco
 .endif
 
@@ -42,7 +41,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xext Xrender c cairo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz iconv
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm xml2 z
 
