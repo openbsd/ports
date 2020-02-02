@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.87 2019/11/02 09:36:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2020/02/02 15:28:01 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
-GNOME_VERSION=		0.3.95
-REVISION=		28
+GNOME_VERSION=		0.3.96
 
 CATEGORIES=		mail
 
@@ -56,8 +55,6 @@ WANTLIB += lib/evolution/gnomecanvas
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://gnome.eu.org/
-
 MODULES=		devel/dconf \
 			x11/gnome
 
@@ -65,10 +62,10 @@ LIB_DEPENDS=		mail/evolution
 
 MODGNOME_TOOLS=		desktop-file-utils
 
-AUTOCONF_VERSION=	2.69
-
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		ac_cv_path_GPP="${CXX}"
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	rm ${PREFIX}/lib/evolution/{plugins,modules}/*.{a,la}

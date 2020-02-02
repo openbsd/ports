@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/01/02 13:07:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/02/02 15:28:01 ajacoutot Exp $
 @pkgpath mail/evolution-plugin-rss
 @bin bin/evolution-import-rss
-lib/evolution/modules/evolution-module-rss.so
-lib/evolution/plugins/liborg-gnome-evolution-rss.so
+lib/evolution-data-server/registry-modules/module-eds-rss.a
+lib/evolution-data-server/registry-modules/module-eds-rss.la
+@so lib/evolution-data-server/registry-modules/module-eds-rss.so
+@so lib/evolution/modules/evolution-module-rss.so
+@so lib/evolution/plugins/liborg-gnome-evolution-rss.so
 lib/evolution/plugins/org-gnome-evolution-rss.eplug
 lib/evolution/plugins/org-gnome-evolution-rss.xml
 share/GConf/gsettings/evolution-rss.convert
@@ -38,6 +41,7 @@ share/locale/gl/LC_MESSAGES/evolution-rss.mo
 share/locale/gu/LC_MESSAGES/evolution-rss.mo
 share/locale/hi/LC_MESSAGES/evolution-rss.mo
 share/locale/hu/LC_MESSAGES/evolution-rss.mo
+share/locale/id/LC_MESSAGES/evolution-rss.mo
 share/locale/it/LC_MESSAGES/evolution-rss.mo
 share/locale/kn/LC_MESSAGES/evolution-rss.mo
 share/locale/lt/LC_MESSAGES/evolution-rss.mo
@@ -45,6 +49,8 @@ share/locale/lv/LC_MESSAGES/evolution-rss.mo
 share/locale/ml/LC_MESSAGES/evolution-rss.mo
 share/locale/mr/LC_MESSAGES/evolution-rss.mo
 share/locale/nb/LC_MESSAGES/evolution-rss.mo
+share/locale/nl/LC_MESSAGES/evolution-rss.mo
+share/locale/oc/LC_MESSAGES/evolution-rss.mo
 share/locale/or/LC_MESSAGES/evolution-rss.mo
 share/locale/pa/LC_MESSAGES/evolution-rss.mo
 share/locale/pl/LC_MESSAGES/evolution-rss.mo
@@ -60,6 +66,7 @@ share/locale/sv/LC_MESSAGES/evolution-rss.mo
 share/locale/ta/LC_MESSAGES/evolution-rss.mo
 share/locale/te/LC_MESSAGES/evolution-rss.mo
 share/locale/th/LC_MESSAGES/evolution-rss.mo
+share/locale/tr/LC_MESSAGES/evolution-rss.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-rss.mo
 share/metainfo/evolution-rss.metainfo.xml
 @tag glib-compile-schemas
