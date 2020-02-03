@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/01/30 08:54:51 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/03 12:44:41 fcambus Exp $
 
 COMMENT =	fast, compact, powerful binary deserialization
 
-DISTNAME =	Sereal-Decoder-4.008
+DISTNAME =	Sereal-Decoder-4.009
 
 CATEGORIES =	converters
 
