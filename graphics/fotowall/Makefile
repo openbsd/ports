@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/02/03 19:42:53 awolk Exp $
 
 COMMENT =	Pictures collage & creativity tool
 
-DISTNAME =	Fotowall-0.9
+V =		1.0
+DISTNAME =	Fotowall-${V}
 PKGNAME =	${DISTNAME:L}
-REVISION =	3
 
 CATEGORIES =	graphics
 
@@ -14,18 +14,25 @@ MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL ICE QtGui QtNetwork QtOpenGL QtSvg QtXml SM X11
-WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype m pthread
+WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m pthread
 WANTLIB += ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+MODULES =	devel/qmake x11/qt5
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=fotowall/}
+LIB_DEPENDS =	x11/qt5/qtsvg
 
-EXTRACT_SUFX =		.tar.bz2
+RUN_DEPENDS =	devel/desktop-file-utils
 
-MODULES =		devel/qmake x11/qt4
-RUN_DEPENDS =		devel/desktop-file-utils
+MASTER_SITES =	https://github.com/enricoros/fotowall/releases/download/v${V}/
+
+EXTRACT_SUFX =		-RETRO.tar.bz2
+# avoid WRKDIST = ${WRKDIR}
+EXTRACT_CASES= *.tar.bz2) \
+        bzip2 -dc ${FULLDISTDIR}/$$archive| ${TAR} xf - -C ${WRKDIST};;
+
+pre-extract:
+	@mkdir ${WRKDIST}
 
 pre-configure:
 	@sed -i 's,/usr/,${TRUEPREFIX}/,' ${WRKSRC}/fotowall.pro

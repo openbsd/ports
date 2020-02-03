@@ -1,0 +1,16 @@
+$OpenBSD: patch-Shared_PropertyEditors_h,v 1.1 2020/02/03 19:42:54 awolk Exp $
+
+We patch out qstrcpy from x11/qt5* so use strlcpy
+
+Index: Shared/PropertyEditors.h
+--- Shared/PropertyEditors.h.orig
++++ Shared/PropertyEditors.h
+@@ -99,7 +99,7 @@ class PE_Combo : public PE_TypeControl<QComboBox>
+         if (nameLength < 255) { \
+             char signalName[256]; \
+             signalName[0] = '0' + QSIGNAL_CODE; \
+-            qstrcpy(signalName + 1, notifySignal.methodSignature()); \
++            strlcpy(signalName + 1, notifySignal.methodSignature(), sizeof(signalName) - 1); \
+             connect(m_target.data(), signalName, this, SLOT(slotName)); \
+         } \
+     }
