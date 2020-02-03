@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/09/04 15:47:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/02/03 12:07:19 benoit Exp $
 bin/pymet
-lib/python${MODPY_VERSION}/site-packages/pymetar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pymetar.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymetar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pymetar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pymetar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pymetar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pymetar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pymetar.py
-lib/python${MODPY_VERSION}/site-packages/pymetar.pyc
 @man man/man1/pymetar.1
-share/doc/${MODPY_PY_PREFIX}metar/
-share/doc/${MODPY_PY_PREFIX}metar/COPYING
-share/doc/${MODPY_PY_PREFIX}metar/README
-share/doc/${MODPY_PY_PREFIX}metar/THANKS
-share/doc/${MODPY_PY_PREFIX}metar/librarydoc.txt
+share/doc/py-metar/
+share/doc/py-metar/COPYING
+share/doc/py-metar/README.md
+share/doc/py-metar/THANKS

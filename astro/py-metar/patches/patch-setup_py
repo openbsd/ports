@@ -1,15 +1,19 @@
-$OpenBSD: patch-setup_py,v 1.8 2015/04/21 07:29:30 benoit Exp $
---- setup.py.orig	Mon Apr 20 10:17:26 2015
-+++ setup.py	Tue Apr 21 09:10:31 2015
-@@ -25,8 +25,8 @@
-       url="http://www.schwarzvogel.de/software-pymetar.shtml",
-       packages=[""],
-       py_modules=["pymetar"],
--      scripts=["bin/pymetar"],
--      data_files=[("share/doc/pymetar-%s" % pymetar.__version__,
-+      scripts=["bin/pymet"],
-+      data_files=[("share/doc/py-metar",
-                    ['README', 'COPYING', 'THANKS', 'librarydoc.txt']),
--                  ("share/man/man1", ['pymetar.1'])]
-+                  ("man/man1", ['pymetar.1'])]
-       )
+$OpenBSD: patch-setup_py,v 1.9 2020/02/03 12:07:19 benoit Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -30,10 +30,10 @@ setuptools.setup(
+     url="http://www.schwarzvogel.de/software-pymetar.shtml",
+     packages=setuptools.find_packages(),
+     py_modules=["pymetar"],
+-    scripts=["bin/pymetar"],
+-    data_files=[("share/doc/pymetar-%s" % pymetar.__version__,
++    scripts=["bin/pymet"],
++    data_files=[("share/doc/py-metar",
+                  ['README.md', 'COPYING', 'THANKS']),
+-                ("share/man/man1", ['pymetar.1'])],
++                ("man/man1", ['pymetar.1'])],
+     classifiers=(
+     "Programming Language :: Python :: 3",
+     "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)", 

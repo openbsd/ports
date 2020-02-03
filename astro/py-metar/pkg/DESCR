@@ -3,7 +3,7 @@ reports from the NOAA (http://www.noaa.gov) and allow access to the
 included weather information.
 
 To find a station ID, visit http://www.nws.noaa.gov/tg/siteloc.shtml
-For instance, "Belgium/Bruxelles National" has the EBBR ID so a common 
+For instance, "Belgium/Bruxelles National" has the EBBR ID so a common
 usage of pymet2 would be:
 
   $ pymet EBBR
