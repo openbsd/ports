@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2018/08/28 15:09:08 bcallah Exp $
+$OpenBSD: patch-configure_in,v 1.2 2020/02/03 22:21:57 sthen Exp $
 
 Index: configure.in
 --- configure.in.orig
 +++ configure.in
-@@ -847,7 +847,13 @@ if test $usingTcl ; then
-       CFLAGS="${CFLAGS} -l/usr/X11R6/include"
+@@ -861,7 +861,13 @@ if test $usingTcl ; then
+       CFLAGS="${CFLAGS} -L/usr/X11R6/include"
        ;;
  
 -    *-netbsd*|*-openbsd*)
@@ -18,7 +18,7 @@ Index: configure.in
        # Not available on all versions:  check for include file.
        AC_CHECK_HEADER(dlfcn.h, test_ok=yes, test_ok=no)
        if test "$test_ok" = yes; then
-@@ -871,7 +877,13 @@ if test $usingTcl ; then
+@@ -885,7 +891,13 @@ if test $usingTcl ; then
      esac
    fi
    if test "$with_gnu_ld" = "yes" ; then

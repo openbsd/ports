@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/03 22:21:57 sthen Exp $
 
 COMMENT =	multi-level, over-the-cell maze router for VLSI design
-DISTNAME =	qrouter-1.4.50
+DISTNAME =	qrouter-1.4.74
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	cad
 
 HOMEPAGE =	http://opencircuitdesign.com/qrouter/
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
@@ -22,8 +22,9 @@ LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-AUTOCONF_VERSION =	2.60
-CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
+AUTOCONF_VERSION =	2.69
+CONFIGURE_ARGS +=	--with-distdir=${PREFIX} \
+			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR}
 
 # Not C99
