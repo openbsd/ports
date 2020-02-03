@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/03 10:29:08 cwen Exp $
 
 COMMENT=		simulation of water waves on the X Window desktop
 
-DISTNAME=		xdesktopwaves-1.3
-REVISION=		5
+DISTNAME=		xdesktopwaves-1.4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://xdesktopwaves.sourceforge.net/
