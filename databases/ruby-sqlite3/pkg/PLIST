@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/03/28 04:33:31 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/02/03 19:03:27 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -23,7 +23,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/database.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/pragmas.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/resultset.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/sqlite3_native.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/sqlite3_native.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/statement.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/translator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/value.rb
