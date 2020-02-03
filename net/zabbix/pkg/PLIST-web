@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.37 2019/10/14 14:11:36 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.38 2020/02/03 19:13:41 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -556,7 +556,7 @@ zabbix/include/classes/parsers/CUserMacroParser.php
 zabbix/include/classes/parsers/CValidationRule.php
 zabbix/include/classes/parsers/results/
 zabbix/include/classes/parsers/results/CParserResult.php
-zabbix/include/classes/parsers/results/CTriggerExpressionParserResult.php
+zabbix/include/classes/parsers/results/CTriggerExprParserResult.php
 zabbix/include/classes/regexp/
 zabbix/include/classes/regexp/CGlobalRegexp.php
 zabbix/include/classes/routing/
@@ -750,7 +750,7 @@ zabbix/include/views/administration.general.other.edit.php
 zabbix/include/views/administration.general.regularexpressions.edit.php
 zabbix/include/views/administration.general.regularexpressions.list.php
 zabbix/include/views/administration.general.trigger.options.edit.php
-zabbix/include/views/administration.general.triggerSeverity.edit.php
+zabbix/include/views/administration.general.trigseverity.edit.php
 zabbix/include/views/administration.general.valuemapping.edit.php
 zabbix/include/views/administration.general.valuemapping.list.php
 zabbix/include/views/administration.general.workingtime.edit.php
@@ -813,7 +813,7 @@ zabbix/include/views/js/administration.general.housekeeper.edit.js.php
 zabbix/include/views/js/administration.general.iconmap.js.php
 zabbix/include/views/js/administration.general.macros.edit.js.php
 zabbix/include/views/js/administration.general.trigger.options.js.php
-zabbix/include/views/js/administration.general.triggerSeverity.js.php
+zabbix/include/views/js/administration.general.trigseverity.js.php
 zabbix/include/views/js/administration.general.valuemapping.edit.js.php
 zabbix/include/views/js/administration.users.edit.js.php
 zabbix/include/views/js/common.filter.trigger.js.php
@@ -888,11 +888,12 @@ zabbix/js/class.curl.js
 zabbix/js/class.cverticalaccordion.js
 zabbix/js/class.cviewswitcher.js
 zabbix/js/class.localstorage.js
-zabbix/js/class.mapWidget.js
+zabbix/js/class.mapwidget.js
 zabbix/js/class.notification.js
 zabbix/js/class.notification.collection.js
 zabbix/js/class.notifications.js
 zabbix/js/class.notifications.audio.js
+zabbix/js/class.overlaycollection.js
 zabbix/js/class.pmaster.js
 zabbix/js/class.promise.js
 zabbix/js/class.rpc.js
