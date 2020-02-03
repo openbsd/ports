@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/11 21:49:09 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/03 20:28:57 bluhm Exp $
 
 COMMENT =	object oriented File::Find replacement
 
 # Most versions start with v, some do not and confuse portroach, skip those.
 PORTROACH =	skipv:0.0.1,0.0.2,0.3.0
 
-DISTNAME =	File-Find-Object-0.3.4
+DISTNAME =	File-Find-Object-0.3.5
 
 CATEGORIES =	devel
-
-CPAN_AUTHOR =		SHLOMIF
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
