@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2019/06/03 16:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2020/02/03 20:40:38 sthen Exp $
 
 COMMENT=	Sybase database driver for the DBI module
 
 DISTNAME=	DBD-Sybase-1.16
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE=	Yes

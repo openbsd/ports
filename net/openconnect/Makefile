@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.53 2019/09/12 14:16:18 bket Exp $
+# $OpenBSD: Makefile,v 1.54 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-8.05
+REVISION=	0
 
 SHARED_LIBS +=  openconnect               4.4 # 5.5
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.infradead.org/openconnect/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1 only
 PERMIT_PACKAGE=	Yes

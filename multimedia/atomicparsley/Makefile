@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	read and set MPEG-4/3GPP metadata tags
 
 V=		0.9.6
 DISTNAME=	atomicparsley-$V
-REVISION=	3
+REVISION=	4
 DISTFILES=	${DISTNAME}{$V}.tar.bz2
 WRKDIST=	${WRKDIR}/wez-atomicparsley-da2f6e4fc120
 
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/wez/atomicparsley/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2 "or its successor"
 PERMIT_PACKAGE=	Yes

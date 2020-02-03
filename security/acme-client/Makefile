@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2020/01/25 12:22:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	privilege-separated letsencrypt client
 
 DISTNAME=	acme-client-0.1.16
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	security security/letsencrypt
 
 HOMEPAGE =	https://kristaps.bsd.lv/acme-client/
 MASTER_SITES=	${HOMEPAGE}snapshots/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE=	Yes

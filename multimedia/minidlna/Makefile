@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
@@ -9,11 +9,9 @@ V=		1.2.1
 DISTNAME=	minidlna-${V}-glebius
 PKGNAME=	minidlna-${V}
 
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	multimedia
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 HOMEPAGE=	http://sourceforge.net/projects/minidlna/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -10,14 +10,12 @@ PKGNAME =		ssvnc-$V
 EPOCH =			0
 FULLPKGNAME-gui =	ssvnc-$V
 FULLPKGNAME-main =	ssvnc-viewer-$V
-REVISION-gui =		3
-REVISION-main =		1
+REVISION-gui =		4
+REVISION-main =		2
 
 CATEGORIES =		net x11
 
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/ssvnc.html
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	toolset for internet routing registries
 
 V=		5.0.1
-REVISION=	4
+REVISION=	5
 DISTNAME=	irrtoolset-$V
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://irrtoolset.isc.org/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

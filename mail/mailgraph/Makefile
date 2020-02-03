@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	RRDtool frontend for Postfix statistics
 
 DISTNAME=	mailgraph-1.14
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net mail
 
 MASTER_SITES=	${HOMEPAGE}/pub/ \
 		${HOMEPAGE}/pub/old/
 
 HOMEPAGE=	http://mailgraph.schweikert.ch
-
-MAINTAINER=     Stuart Henderson <sthen@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE=	Yes

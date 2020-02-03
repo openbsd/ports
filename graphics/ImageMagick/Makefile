@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2020/01/14 11:41:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.200 2020/02/03 20:40:38 sthen Exp $
 
 BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 
@@ -10,6 +10,7 @@ DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://imagemagick.org/download/ limit:6.*
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=	MagickCore-6.Q16     7.0      # 6.0
 SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 6.0
@@ -18,8 +19,6 @@ SHARED_LIBS +=	Magick++-6.Q16       5.2      # 8.0
 CATEGORIES=		graphics
 
 HOMEPAGE=		https://imagemagick.org/
-
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 MASTER_SITES=		https://imagemagick.org/download/releases/ \
 			https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/ \

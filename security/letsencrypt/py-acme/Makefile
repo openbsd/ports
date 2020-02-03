@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/12/05 22:19:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.21 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
@@ -6,6 +6,7 @@ HOMEPAGE=	https://certbot.eff.org/
 
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
+REVISION=	0
 
 FLAVORS=	python3
 FLAVOR?=

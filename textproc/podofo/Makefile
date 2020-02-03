@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2019/12/14 20:17:14 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/03 20:40:41 sthen Exp $
 
 COMMENT=	library and tools to modify and parse PDF documents
 
 DISTNAME=	podofo-0.9.5
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	podofo                    2.0 # 0.9
 
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://podofo.sourceforge.net/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+ (tools) LGPLv2+ (lib)
 PERMIT_PACKAGE=	Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT =		SNMP statistics monitoring system
 
 DISTNAME =		rtg-0.7.4
-REVISION =		13
+REVISION =		14
 CATEGORIES =		net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rtg/}
 
 HOMEPAGE =		http://rtg.sourceforge.net/
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

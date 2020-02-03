@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=		browser for a large lexical database of English
 
 DISTNAME=		WordNet-3.0
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} wn3.1.dict.tar.gz:0
 PKGNAME=		wordnet-3.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		misc
 
 HOMEPAGE=		http://wordnet.princeton.edu/
-
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

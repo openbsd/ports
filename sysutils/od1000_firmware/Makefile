@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/03 20:40:41 sthen Exp $
 
 COMMENT=	firmware and flash tool for SOFTIRON OverDrive 1000
 
 DISTNAME=	overdrive_1000_firmware-1.02-2017-01-19
 PKGNAME=	od1000_firmware-1.02.20170119
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://support.softiron.com/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # tools: BSD
 # UEFI firmware (Tianocore EDK2, Linaro OpenPlatformPkg): BSD

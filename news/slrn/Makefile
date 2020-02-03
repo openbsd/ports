@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.60 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	SLang-based newsreader
 
 DISTNAME=	slrn-1.0.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	news
 
 HOMEPAGE=	http://slrn.sourceforge.net/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

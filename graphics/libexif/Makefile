@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2019/06/03 16:06:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/02/03 20:40:38 sthen Exp $
 
 COMMENT=	extract digital camera info tags from JPEG images
 
 DISTNAME=	libexif-0.6.21
 SHARED_LIBS=	exif	13.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://libexif.sourceforge.net/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=   Yes

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	monitors the status of mirrors
 
 DISTNAME=	mirmon-2.11
+REVISION=	0
 
 CATEGORIES=	net
 HOMEPAGE=	http://people.cs.uu.nl/henkp/mirmon/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # free license, see LICENSE
 PERMIT_PACKAGE=	Yes

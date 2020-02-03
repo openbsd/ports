@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	milter for rspamd (also supports clamav, rate-limiting, etc)
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rmilter
 GH_TAGNAME=	1.10.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	mail
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

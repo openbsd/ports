@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/26 09:54:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT =	PHP bindings for the libmcrypt library
 
 DISTNAME =	mcrypt-1.0.3
 DIST_SUBDIR =	pecl
+REVISION =	0
 
 CATEGORIES =	security
-
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # PHP
 PERMIT_PACKAGE =	Yes

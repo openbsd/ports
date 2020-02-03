@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/19 21:21:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/03 20:40:38 sthen Exp $
 
 COMMENT=	multi-format tools and Python module for ReplayGain
 
@@ -8,13 +8,11 @@ COMMENT=	multi-format tools and Python module for ReplayGain
 MODPY_EGG_VERSION= 1.3.4
 DISTNAME=	rgain-${MODPY_EGG_VERSION}
 WRKDIST=	${WRKDIR}/fk-rgain-8df1a846a12c
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio
 
 HOMEPAGE=	https://bitbucket.org/fk/rgain
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

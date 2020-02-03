@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/03 16:06:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
 DISTNAME=	pcsc-tools-1.4.27
+REVISION=	0
 
 CATEGORIES=	security sysutils
 
 HOMEPAGE=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2020/02/03 20:40:41 sthen Exp $
 
 COMMENT-main=	UPS monitoring program supporting many brands
 COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
@@ -12,10 +12,10 @@ PKGNAME-cgi=	${DISTNAME:S/-/-cgi-/}
 PKGNAME-snmp=	${DISTNAME:S/-/-snmp-/}
 PKGNAME-xml=	${DISTNAME:S/-/-xml-/}
 
-REVISION-main=	6
-REVISION-snmp=	2
-REVISION-xml=	3
-REVISION-cgi=	3
+REVISION-main=	7
+REVISION-snmp=	3
+REVISION-xml=	4
+REVISION-cgi=	4
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
@@ -23,8 +23,6 @@ SHARED_LIBS +=	nutscan              2.0      # .1.0
 
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.networkupstools.org/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+, some scripts (not packaged) are GPLv3+
 PERMIT_PACKAGE=	Yes

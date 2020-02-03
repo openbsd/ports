@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2019/11/10 15:32:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2020/02/03 20:40:38 sthen Exp $
 
 ONLY_FOR_ARCHS= i386 amd64 aarch64
 
@@ -8,13 +8,11 @@ V=		2.6.3
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://www.darktable.org/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

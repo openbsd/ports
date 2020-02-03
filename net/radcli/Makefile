@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	simple RADIUS client library
 
@@ -6,12 +6,11 @@ SHARED_LIBS +=	radcli               0.3      # 6.0
 
 V=		1.2.11
 DISTNAME=	radcli-$V
+REVISION=	0
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://radcli.github.io/radcli/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # recent code BSD, some old MERIT/Livingston
 PERMIT_PACKAGE=	Yes

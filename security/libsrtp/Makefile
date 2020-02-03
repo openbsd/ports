@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/12/24 15:34:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/03 20:40:40 sthen Exp $
 
 SHARED_LIBS +=  srtp2                     1.0 # 0.0
 
@@ -7,10 +7,9 @@ COMMENT=	secure RTP library
 GH_ACCOUNT=	cisco
 GH_PROJECT=	libsrtp
 GH_TAGNAME=	v2.3.0
+REVISION=	0
 
 CATEGORIES=	security telephony
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

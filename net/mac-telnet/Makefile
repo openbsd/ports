@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	client for MikroTik's "L2 telnet" protocol#'
 
@@ -6,13 +6,11 @@ GH_ACCOUNT=	haakonnessjoen
 GH_PROJECT=	MAC-Telnet
 GH_TAGNAME=	v0.4.4
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://lunatic.no/2010/10/routeros-mac-telnet-application-for-linux-users/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

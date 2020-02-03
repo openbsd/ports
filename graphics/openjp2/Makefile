@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/01/03 16:29:25 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2020/02/03 20:40:38 sthen Exp $
 
 COMMENT=	open-source JPEG 2000 codec library
 
@@ -6,14 +6,13 @@ GH_ACCOUNT=	uclouvain
 GH_PROJECT=	openjpeg
 GH_TAGNAME=	v2.3.1
 DISTNAME=	openjp2-${GH_TAGNAME:S/v//}
+REVISION=	0
 
 SHARED_LIBS +=	openjp2                   3.1
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.openjpeg.org/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

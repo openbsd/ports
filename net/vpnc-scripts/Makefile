@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	connect scripts for use with vpnc and openconnect
 
 PKGNAME=	vpnc-scripts-20140401
 DISTNAME=	a78b3ddfc56ab457104c88e94dca72d8738f4fad
-REVISION=	0
+REVISION=	1
 
 DISTFILES=	${PKGNAME}{${DISTNAME}}${EXTRACT_SUFX}
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.infradead.org/openconnect/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

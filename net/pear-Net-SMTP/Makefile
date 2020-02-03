@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2019/12/02 11:23:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	SMTP support for PHP
 
 DISTNAME=	Net_SMTP-1.9.0
 CATEGORIES=	net
+REVISION=	0
 
 MODULES=	www/pear
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # PHP License
 PERMIT_PACKAGE=	Yes

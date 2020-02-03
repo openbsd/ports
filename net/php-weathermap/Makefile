@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2019/09/26 21:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	graphical network traffic map
 
 DISTNAME=	php-weathermap-0.97c
 EXTRACT_SUFX=	.zip
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	net www
 
 HOMEPAGE=	http://www.network-weathermap.com/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

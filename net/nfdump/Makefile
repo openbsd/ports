@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/08/21 07:16:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
@@ -11,12 +11,12 @@ DISTFILES =		nfdump-$V-reroll.tar.gz
 RDVISION =		0
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
+REVISION-main =		0
+REVISION-nfprofile =	0
 
 SHARED_LIBS +=	nfdump                    0.0 # 0.0
 
 CATEGORIES =		net
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

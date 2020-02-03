@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2019/06/03 16:06:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/03 20:40:41 sthen Exp $
 
 COMMENT=	light-weight, simple and fast XML parser for C++
 
 V=		1.9
 DISTNAME=	pugixml-$V
+REVISION=	0
 
 SHARED_LIBS +=	pugixml                   1.0 # 1.9
 
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	https://pugixml.org/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

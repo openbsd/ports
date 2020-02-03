@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2019/08/31 14:01:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	transparent and scalable SSL/TLS interception
 
 DISTNAME=	sslsplit-0.5.5
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 CATEGORIES=	security
 
 HOMEPAGE=	https://www.roe.ch/SSLsplit
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # SSLsplit: BSD, khash.h (header-based library): MIT
 PERMIT_PACKAGE=	Yes

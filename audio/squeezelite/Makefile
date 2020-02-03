@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/31 23:38:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/02/03 20:40:38 sthen Exp $
 
 COMMENT=	lightweight headless squeezebox player
 
@@ -7,10 +7,9 @@ GH_ACCOUNT=	ralph-irving
 GH_PROJECT=	squeezelite
 GH_COMMIT=	1cff80e5330501b1f587a474f06db08fd53d9521
 DISTNAME=	squeezelite-$V
+REVISION=	0
 
 CATEGORIES=	audio
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

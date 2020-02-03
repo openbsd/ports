@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/03 16:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/02/03 20:40:38 sthen Exp $
 
 COMMENT-main =	Wireless Networking in the Developing World, English edition
 COMMENT-es =	Wireless Networking in the Developing World, Spanish edition
@@ -16,7 +16,7 @@ PKGNAME-pt =	wndw-pt-1.0
 PKGNAME-id =	wndw-id-2.0
 PKGNAME-my =	wndw-my-3.0
 
-REVISION=	0
+REVISION=	1
 
 DISTNAME =	wndw
 
@@ -26,8 +26,6 @@ CATEGORIES =	books net
 PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =-main -es -fr -ar -pt -id -my
-
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # High resolution print-ready PDFs are also available at the homepage
 # e.g. http://wndw.net/pdf/wndw3-en/wndw3-print.pdf (English edition).

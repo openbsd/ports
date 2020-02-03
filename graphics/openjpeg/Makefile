@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/06/03 16:06:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/02/03 20:40:38 sthen Exp $
 
 COMMENT=	open-source JPEG 2000 codec library
 
@@ -7,14 +7,13 @@ PORTROACH =	limit:^1
 DISTNAME=	openjpeg-version.$V
 PKGNAME=	openjpeg-$V
 DISTFILES=	${DISTNAME}{version.$V}.tar.gz
+REVISION=	0
 
 SHARED_LIBS +=	openjpeg             5.0      # 6.2
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.openjpeg.org/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

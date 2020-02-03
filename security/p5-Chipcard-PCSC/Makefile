@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/03 20:40:40 sthen Exp $
 
 COMMENT=	perl interface to PC/SC smartcards
 
@@ -6,11 +6,9 @@ V=		1.4.14
 DISTNAME=	pcsc-perl-$V
 PKGNAME=	p5-Chipcard-PCSC-$V
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

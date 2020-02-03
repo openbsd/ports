@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2019/12/09 16:05:25 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2020/02/03 20:40:38 sthen Exp $
 
 COMMENT=		parse human-readable date/time text
 
 MODPY_EGG_VERSION =	2.5
 DISTNAME=		parsedatetime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
-
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes

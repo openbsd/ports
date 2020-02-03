@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/08/21 15:23:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2020/02/03 20:40:39 sthen Exp $
 
 COMMENT=	network diagnostic tool, similar to ping and traceroute
 
@@ -6,10 +6,9 @@ GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
 GH_TAGNAME=	v0.93
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	net
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 HOMEPAGE=	https://www.bitwizard.nl/mtr/
 
