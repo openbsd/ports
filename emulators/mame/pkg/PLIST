@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/08/25 06:44:18 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/03 22:00:01 fcambus Exp $
 @conflict sdlmame-*
 @conflict sdlmame-tools-*
 @conflict sdlmess-*
@@ -57,6 +57,20 @@ share/mame/artwork/bgfx/chains/crt-geom/slot_3_7x6_rgb.png
 share/mame/artwork/bgfx/chains/hq2x.png
 share/mame/artwork/bgfx/chains/hq3x.png
 share/mame/artwork/bgfx/chains/hq4x.png
+share/mame/artwork/chess/
+share/mame/artwork/chess/README.md
+share/mame/artwork/chess/bb.png
+share/mame/artwork/chess/bk.png
+share/mame/artwork/chess/bn.png
+share/mame/artwork/chess/bp.png
+share/mame/artwork/chess/bq.png
+share/mame/artwork/chess/br.png
+share/mame/artwork/chess/wb.png
+share/mame/artwork/chess/wk.png
+share/mame/artwork/chess/wn.png
+share/mame/artwork/chess/wp.png
+share/mame/artwork/chess/wq.png
+share/mame/artwork/chess/wr.png
 share/mame/artwork/dir.txt
 share/mame/artwork/monochrome-chessboard.png
 share/mame/artwork/monochrome-matrix.png

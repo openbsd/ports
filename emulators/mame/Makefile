@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/01/29 20:29:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2020/02/03 22:00:01 fcambus Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -7,17 +7,17 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		217
-DISTNAME =	mame0${V}s
-PKGNAME =	mame-0.${V}
+V =		218
+GH_ACCOUNT =	mamedev
+GH_PROJECT =	mame
+GH_TAGNAME =	mame0${V}
+DISTNAME =	mame-0.${V}
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://mamedev.org/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
-
-PATCHORIG =	.orig.port
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -27,10 +27,6 @@ WANTLIB += Xinerama c expat fontconfig freetype jpeg lua5.3 m
 WANTLIB += sqlite3 util z
 
 COMPILER =	base-clang ports-gcc base-gcc
-
-MASTER_SITES =	https://github.com/mamedev/mame/releases/download/mame0${V}/
-
-EXTRACT_SUFX =	.zip
 
 MODULES =	lang/lua \
 		lang/python
@@ -73,7 +69,6 @@ MAKE_FILE =	makefile
 NO_TEST =	Yes
 
 post-extract:
-	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 	@mv ${WRKSRC}/3rdparty/genie/build/gmake.freebsd \
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd
 	@sed -i 's,"lua","lua${MODLUA_VERSION}",g' ${WRKSRC}/scripts/extlib.lua
