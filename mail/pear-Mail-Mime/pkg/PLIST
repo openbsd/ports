@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/11/07 16:32:27 sthen Exp $
-@group daemon
+@comment $OpenBSD: PLIST,v 1.16 2020/02/03 20:36:05 sthen Exp $
 lib/
 lib/php/
 pear/doc/
@@ -13,6 +12,7 @@ pear/lib/Mail/mimePart.php
 pear/tests/Mail_Mime/
 pear/tests/Mail_Mime/tests/
 pear/tests/Mail_Mime/tests/class-filename.phpt
+pear/tests/Mail_Mime/tests/content_transfer_encoding.phpt
 pear/tests/Mail_Mime/tests/encoding_case.phpt
 pear/tests/Mail_Mime/tests/headers_with_mbstring.phpt
 pear/tests/Mail_Mime/tests/headers_without_mbstring.phpt
@@ -44,6 +44,7 @@ pear/tests/Mail_Mime/tests/test_Bug_20226.phpt
 pear/tests/Mail_Mime/tests/test_Bug_20273.phpt
 pear/tests/Mail_Mime/tests/test_Bug_20563.phpt
 pear/tests/Mail_Mime/tests/test_Bug_20564.phpt
+pear/tests/Mail_Mime/tests/test_Bug_21027.phpt
 pear/tests/Mail_Mime/tests/test_Bug_21098.phpt
 pear/tests/Mail_Mime/tests/test_Bug_21205.phpt
 pear/tests/Mail_Mime/tests/test_Bug_21206.phpt
