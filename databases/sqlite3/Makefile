@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.105 2019/11/09 10:09:04 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2020/02/03 05:35:06 rsadowski Exp $
 
 COMMENT=	embedded SQL implementation
 
 DISTNAME =	sqlite-autoconf-3300100
 PKGNAME=	sqlite3-3.30.1
+REVISION=	0
 
 # XXX needs bumps every time :-
-SHARED_LIBS +=  sqlite3                   37.8 # 8.6
+SHARED_LIBS +=  sqlite3                   37.9 # 8.6
 # sqlite suggests that users might like to assert() that library and header
 # versions match, so bumps are needed even if function signatures don't change.
 # ... at the current time the only one noticed is a < check (in subversion)
@@ -34,9 +35,9 @@ CONFIGURE_ARGS +=	--enable-fts5
 # for mozilla
 CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_FTS3 \
-		-DSQLITE_ENABLE_DBSTAT_VTAB
+		-DSQLITE_ENABLE_DBSTAT_VTAB \
+		-DSQLITE_ENABLE_COLUMN_METADATA=1
 
-# update p5-DBD-SQLite's Makefile.PL if enabling -DSQLITE_ENABLE_COLUMN_METADATA
 BUILD_DEPENDS =	converters/sqlite2mdoc
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/man/man3
