@@ -1,25 +1,32 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/03 21:48:19 bluhm Exp $
 
 COMMENT =	manipulate file metadata
 
-MODULES =	cpan
-PKG_ARCH =	*
 DISTNAME =	File-Attributes-0.04
-REVISION =	4
+REVISION =	5
+
 CATEGORIES =	devel
 
+MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
+
 # Perl
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	devel/p5-Best \
-		devel/p5-Module-Pluggable \
-		devel/p5-YAML
+MODULES =		cpan
+RUN_DEPENDS =		devel/p5-Best>=0.06 \
+			devel/p5-Module-Pluggable \
+			devel/p5-YAML \
+			devel/p5-YAML-Syck
+TEST_DEPENDS =		devel/p5-Directory-Scratch>=0.05 \
+			devel/p5-Test-Pod>=1.14 \
+			devel/p5-Test-Pod-Coverage>=1.04
 
-# p5-Directory-Scratch should be TEST_DEPENDS but Module::Install screws up
-BUILD_DEPENDS =	${RUN_DEPENDS} \
-		devel/p5-Directory-Scratch \
-		devel/p5-YAML-Syck
+CONFIGURE_STYLE =	modinst
 
-MAKE_ENV +=	TEST_POD=1
+PKG_ARCH =		*
+
+# modinst uses devel/p5-Module-Install, ensure we do not use inc
+post-extract:
+	rm -rf -- ${WRKDIST}/inc
 
 .include <bsd.port.mk>

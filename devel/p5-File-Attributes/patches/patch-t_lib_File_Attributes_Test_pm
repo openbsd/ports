@@ -1,0 +1,16 @@
+$OpenBSD: patch-t_lib_File_Attributes_Test_pm,v 1.1 2020/02/03 21:48:19 bluhm Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=56221
+
+Index: t/lib/File/Attributes/Test.pm
+--- t/lib/File/Attributes/Test.pm.orig
++++ t/lib/File/Attributes/Test.pm
+@@ -6,7 +6,7 @@
+ package File::Attributes::Test;
+ use base 'File::Attributes::Base';
+ our $VERSION = 
+-  'foo-o-matic';
++  '42';
+ 
+ my %attributes;
+ my $IGNORE = qr/NONONO/;
