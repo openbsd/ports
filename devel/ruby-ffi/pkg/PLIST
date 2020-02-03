@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/11/12 06:41:35 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/02/03 19:04:05 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.gitmodules
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
@@ -12,7 +13,6 @@ ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.SPECS
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/ffi.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/
@@ -104,6 +104,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-cygwin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-cygwin/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-darwin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-darwin/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-dragonflybsd/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-dragonflybsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-freebsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-freebsd12/
@@ -133,7 +135,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/types.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/union.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/variadic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/version.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/ffi_c.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/ffi_c.so
 ${GEM_LIB}/gems/${DISTNAME}/samples/
 ${GEM_LIB}/gems/${DISTNAME}/samples/getlogin.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/getpid.rb
