@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/03 22:42:36 fcambus Exp $
 
 COMMENT =	safe templates engine for Lua
 
@@ -8,11 +8,9 @@ PKGNAME =	lua-cosmo-${V}
 GH_ACCOUNT =	mascarenhas
 GH_PROJECT =	cosmo
 GH_TAGNAME =	v${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

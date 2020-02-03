@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/03 22:42:36 fcambus Exp $
 
 COMMENT =	Lua library for MaxMind GeoIP2/GeoLite2 databases
 
 V =		0.2
 PKGNAME =	lua-mmdb-${V}
+REVISION =	0
 
 GH_ACCOUNT =	daurnimator
 GH_PROJECT =	mmdblua
 GH_TAGNAME =	v${V}
 
 CATEGORIES =	net
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

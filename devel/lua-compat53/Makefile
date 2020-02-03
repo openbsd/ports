@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/03 22:42:36 fcambus Exp $
 
 COMMENT =	compatibility module providing Lua 5.3 style APIs
 
 V =		0.7
 DISTNAME =	lua-compat53-${V}
+REVISION =	0
 
 GH_ACCOUNT =	keplerproject
 GH_PROJECT =	lua-compat-5.3
 GH_TAGNAME =	v${V}
 
 CATEGORIES =	devel
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

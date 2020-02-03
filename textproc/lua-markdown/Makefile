@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/03 22:42:36 fcambus Exp $
 
 COMMENT =	Markdown markup system implementation in pure Lua
 
 V =		0.33
 PKGNAME =	lua-markdown-${V}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	mpeterv
 GH_PROJECT =	markdown
 GH_TAGNAME =	${V}
 
 CATEGORIES =	textproc
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

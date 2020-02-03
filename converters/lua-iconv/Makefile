@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/03 22:42:36 fcambus Exp $
 
 COMMENT =	Lua bindings for the iconv library
 
 V =		7
 DISTNAME =	lua-iconv-${V}
+REVISION =	0
 
 GH_ACCOUNT =	ittner
 GH_PROJECT =	lua-iconv
 GH_TAGNAME =	lua-iconv-${V}
 
 CATEGORIES =	converters
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/03 22:42:36 fcambus Exp $
 
 COMMENT =	Lua library for time and date manipulation
 
 V =		0.4-1
 PKGNAME =	lua-tz-${V:S/-/./}
+REVISION =	0
 
 GH_ACCOUNT =	daurnimator
 GH_PROJECT =	luatz
 GH_TAGNAME =	v${V}
 
 CATEGORIES =	devel
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
