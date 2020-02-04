@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/30 02:55:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.51 2020/02/04 12:18:27 benoit Exp $
 
 COMMENT=	performance test of sequential file I/O
 
-V =		3.487
+V =		3.489
 DISTNAME=	iozone${V:S/./_/}
 PKGNAME=	iozone-$V
 CATEGORIES=	benchmarks
@@ -24,6 +24,8 @@ MAKE_FILE=	makefile
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" CC="${CC}"
 
 WRKSRC=		${WRKDIST}/src/current
+
+DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
