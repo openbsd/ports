@@ -1,57 +1,47 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/02/04 06:09:02 rsadowski Exp $
 
 BROKEN-mips64 =		ICE on Interval_nt.h:98
 
 COMMENT =		Computational Geometry Algorithms Library
 
-# when updating this port, don't just change the version number here.
-# MASTER_SITES needs to be adapted for every new tarball.
-# See https://gforge.inria.fr/frs/?group_id=52 for files index.
-DISTNAME =		CGAL-4.6.3
-MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/35139/
+DISTNAME =		CGAL-4.14.2
 PKGNAME =		${DISTNAME:L}
-REVISION =		5
 EPOCH =			0
 
-SHARED_LIBS =		CGAL		1.0 \
-			CGAL_Core	1.0 \
-			CGAL_ImageIO	1.0 \
-			CGAL_Qt4	1.0
+SHARED_LIBS +=  CGAL                    2.0 # 13.0.3
+SHARED_LIBS +=  CGAL_Core               2.0 # 14.0.3
+SHARED_LIBS +=  CGAL_ImageIO            2.0 # 14.0.0
+SHARED_LIBS +=  CGAL_Qt5                2.0 # 14.0.0
 
 CATEGORIES =		math
 
-HOMEPAGE =		http://www.cgal.org/
+HOMEPAGE =		https://www.cgal.org/
 
-# mix of LGPLv2.1 and QPL; see http://www.cgal.org/license.html
+# mix of LGPLv2.1 and QPL; see https://www.cgal.org/license.html
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU boost_system-mt boost_thread-mt gmp m mpfr pthread
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += ${COMPILER_LIBCXX} z lib/qt4/QtGui lib/qt4/QtOpenGL lib/qt4/QtSvg
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5OpenGL Qt5Svg
+WANTLIB += Qt5Widgets Qt5Xml gmp m mpfr z
 
-COMPILER =		base-clang ports-gcc base-gcc
-
+MASTER_SITES =		https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.14.2/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake \
-			x11/qt4
-BIULD_DEPENDS =		math/eigen3
-LIB_DEPENDS =		devel/boost \
-			devel/gmp \
-			devel/mpfr
+			x11/qt5
+
+BUILD_DEPENDS =		math/eigen3 \
+			devel/boost
+
+LIB_DEPENDS =		devel/gmp \
+			devel/mpfr \
+			x11/qt5/qtsvg
 
 CXXFLAGS +=		-I${X11BASE}/include
 
 CONFIGURE_ARGS +=	-DCGAL_INSTALL_MAN_DIR="man/man1" \
 			-DCGAL_INSTALL_DOC_DIR="share/doc/cgal"
-CONFIGURE_ENV =		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib"
 
 NO_TEST =		Yes
-
-post-extract:
-	rm ${WRKSRC}/cmake/modules/FindBLAS.cmake \
-	   ${WRKSRC}/cmake/modules/FindLAPACK.cmake \
-	   ${WRKSRC}/cmake/modules/FindOpenGL.cmake \
-	   ${WRKSRC}/scripts/cgal_make_macosx_app
 
 .include <bsd.port.mk>

@@ -1,11 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/12/07 07:51:26 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2020/02/04 06:09:02 rsadowski Exp $
 
-add workaround from https://bugs.kde.org/show_bug.cgi?id=304111
+- add workaround from https://bugs.kde.org/show_bug.cgi?id=304111
+- Disable some dependencies
 
---- CMakeLists.txt.orig	Sat Sep  5 21:00:16 2015
-+++ CMakeLists.txt	Sun Dec  6 14:16:32 2015
-@@ -357,6 +357,8 @@ set( CGAL_MODULES_DIR     ${CGAL_INSTALLATION_PACKAGE_
- include(${CGAL_MODULES_DIR}/CGAL_Macros.cmake)
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -391,6 +391,8 @@ include(${CGAL_MODULES_DIR}/CGAL_Macros.cmake)
+ include(${CGAL_MODULES_DIR}/CGAL_enable_end_of_configuration_hook.cmake)
  cgal_setup_module_path()
  
 +add_definitions ( -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED )
@@ -13,3 +15,19 @@ add workaround from https://bugs.kde.org/show_bug.cgi?id=304111
  message( STATUS "CGAL_REFERENCE_CACHE_DIR=${CGAL_REFERENCE_CACHE_DIR}" )
  
  if ( RUNNING_CGAL_AUTO_TEST )
+@@ -1073,15 +1075,9 @@ if ( CGAL_BRANCH_BUILD )
+ 
+     message( "== Setting header checking ==" )
+     find_package(GMP REQUIRED)
+-    find_package(Doxygen REQUIRED)
+     find_package(Eigen3 REQUIRED)
+     find_package(Qt5 COMPONENTS Core Widgets Xml OpenGL Gui REQUIRED)
+     find_package(VTK COMPONENTS vtkImagingGeneral  vtkIOImage NO_MODULE)
+-    find_package(IPE)
+-    find_package(RS3)
+-    find_package(LEDA)
+-    find_package(OpenMesh)
+-    find_package(OpenCV QUIET)
+ 
+     set(compile_options "\
+ ${CMAKE_CXX_FLAGS} -DCGAL_EIGEN3_ENABLED -DCGAL_PROFILE \
