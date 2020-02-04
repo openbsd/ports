@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2019/10/04 20:50:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/02/04 08:11:27 cwen Exp $
 
 COMMENT =	run arbitrary commands when files change
 
-DISTNAME =	entr-4.3
+DISTNAME =	entr-4.4
 
 CATEGORIES =	sysutils
 
-HOMEPAGE =	http://entrproject.org/
+HOMEPAGE =	https://eradman.com/entrproject/
 
 # ISC
 PERMIT_PACKAGE = Yes
 
 WANTLIB += c
 
-MASTER_SITES =	http://entrproject.org/code/
+MASTER_SITES =	${HOMEPAGE}code/
 
 MAKE_FILE =	Makefile.bsd
 MAKE_FLAGS =	CC="${CC}" \
