@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2020/01/30 17:11:08 jsing Exp $
+# $OpenBSD: Makefile,v 1.82 2020/02/04 17:22:42 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -8,6 +8,7 @@ BIN_BOOTSTRAP_VERSION = 1.13
 COMMENT =		Go programming language
 
 VERSION =		1.13.7
+REVISION =		0
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
@@ -106,6 +107,7 @@ do-test:
 		CXX="${CXX}" \
 		GOCACHE=${WRKDIST}/go-cache \
 		GOPATH=${WRKDIR} \
+		GO_TEST_TIMEOUT_SCALE=3 \
 		HOME=${WRKDIR} \
 		PATH=${WRKDIST}/bin:${PATH} \
 		    /bin/ksh -c "exec 3>&-; exec 4>&-; ./run.bash"
