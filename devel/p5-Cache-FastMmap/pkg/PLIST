@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/08/31 13:27:27 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/02/04 09:50:59 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Cache/
 ${P5ARCH}/Cache/FastMmap.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Cache/
 ${P5ARCH}/auto/Cache/FastMmap/
-${P5ARCH}/auto/Cache/FastMmap/FastMmap.so
+@so ${P5ARCH}/auto/Cache/FastMmap/FastMmap.so
 @man man/man3p/Cache::FastMmap.3p
