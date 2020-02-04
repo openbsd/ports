@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_viklayer_c,v 1.1 2020/02/04 11:53:28 landry Exp $
+
+fix copypasto ?
+
+Index: src/viklayer.c
+--- src/viklayer.c.orig
++++ src/viklayer.c
+@@ -36,7 +36,7 @@ extern VikLayerInterface vik_dem_layer_interface;
+ #ifdef HAVE_LIBMAPNIK
+ extern VikLayerInterface vik_mapnik_layer_interface;
+ #endif
+-#ifdef HAVE_LIBMAPNIK
++#ifdef HAVE_LIBGEOCLUE_2
+ extern VikLayerInterface vik_geoclue_layer_interface;
+ #endif
+ 

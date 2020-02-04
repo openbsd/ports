@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/24 06:51:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.42 2020/02/04 11:53:28 landry Exp $
 
 COMMENT =	GPS track manager
 
-DISTNAME =	viking-1.7
+DISTNAME =	viking-1.8
 
 CATEGORIES =	geo x11
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 bz2 c cairo crypto curl expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 geoclue-2 gexiv2 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gps gthread-2.0 gtk-x11-2.0 iconv intl m
+WANTLIB += glib-2.0 gobject-2.0 gps gthread-2.0 gtk-x11-2.0 intl m
 WANTLIB += magic nettle nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread sqlite3 ssl z ${COMPILER_LIBCXX}
+WANTLIB += pthread sqlite3 ssl z harfbuzz
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=viking/}
 EXTRACT_SUFX = .tar.bz2
@@ -39,7 +39,6 @@ CONFIGURE_ARGS +=	--disable-mapnik \
 			--disable-zip
 LIB_DEPENDS =	archivers/bzip2 \
 		databases/sqlite3 \
-		devel/libidn \
 		devel/libmagic \
 		geo/geoclue2 \
 		graphics/libgexiv2 \
