@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/04 06:09:04 rsadowski Exp $
 
 COMMENT =		constructive solid geometry rendering library
 
-V =			1.3.2
+V =			1.4.2
 DISTNAME =		OpenCSG-${V}
 PKGNAME =		opencsg-${V}
-REVISION =		1
 
-SHARED_LIBS =		opencsg		0.0
+SHARED_LIBS =		opencsg		1.0
 
 CATEGORIES =		graphics
 
@@ -16,17 +15,18 @@ HOMEPAGE =		http://www.opencsg.org/
 # GPLv2 with CGAL exception
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		GL GLEW lib/qt4/QtGui m ${COMPILER_LIBCXX} pthread
-WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW m
 
-COMPILER =		base-clang ports-gcc base-gcc
+MASTER_SITES =		http://www.opencsg.org/
 
-MODULES =		devel/qmake x11/qt4
+MODULES =		devel/qmake \
+			x11/qt5
+
+MODQT_DEPS =		No
+
 SEPARATE_BUILD =	No
 
 LIB_DEPENDS =		graphics/glew
-
-MASTER_SITES =		http://www.opencsg.org/
 
 WRKSRC =		${WRKDIST}/src
 
