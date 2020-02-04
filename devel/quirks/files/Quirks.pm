@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.855 2020/01/31 18:52:53 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.856 2020/02/04 06:22:52 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1367,6 +1367,7 @@ my $obsolete_reason = {
 	'py-natsort' => 14,
 	'valknut' => 3,
 	'dclib' => 3,
+	'luma' => 3,
 };
 
 # reasons for obsolete packages
