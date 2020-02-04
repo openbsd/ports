@@ -1,0 +1,125 @@
+$OpenBSD: patch-c_stuff_fb_c_stuff_xs,v 1.1 2020/02/04 22:54:09 cwen Exp $
+
+Fix build with clang: it errors when functions are inside other
+functions.  Rename sqr(int) to prevent conflict with sqr(float).
+
+Index: c_stuff/fb_c_stuff.xs
+--- c_stuff/fb_c_stuff.xs.orig
++++ c_stuff/fb_c_stuff.xs
+@@ -94,17 +94,17 @@ int rand_(double val) { return 1+(int) (val*rand()/(RA
+ 
+ /* -------------- Double Store ------------------ */
+ 
++static void copy_line(int l, SDL_Surface * s, SDL_Surface * img) {
++	memcpy(s->pixels + l*img->pitch, img->pixels + l*img->pitch, img->pitch);
++}
++static void copy_column(int c, SDL_Surface * s, SDL_Surface * img) {
++	int bpp = img->format->BytesPerPixel;
++	for (y=0; y<YRES; y++)
++		memcpy(s->pixels + y*img->pitch + c*bpp, img->pixels + y*img->pitch + c*bpp, bpp);
++}
++
+ void store_effect(SDL_Surface * s, SDL_Surface * img)
+ {
+-	void copy_line(int l) {
+-		memcpy(s->pixels + l*img->pitch, img->pixels + l*img->pitch, img->pitch);
+-	}
+-	void copy_column(int c) {
+-		int bpp = img->format->BytesPerPixel;
+-		for (y=0; y<YRES; y++)
+-			memcpy(s->pixels + y*img->pitch + c*bpp, img->pixels + y*img->pitch + c*bpp, bpp);
+-	}
+-
+ 	int step = 0;
+ 	int store_thickness = 15;
+ 
+@@ -116,8 +116,8 @@ void store_effect(SDL_Surface * s, SDL_Surface * img)
+ 			for (i=0; i<=YRES/2/store_thickness; i++) {
+ 				int v = step - i;
+ 				if (v >= 0 && v < store_thickness) {
+-					copy_line(i*store_thickness + v);
+-					copy_line(YRES - 1 - (i*store_thickness + v));
++					copy_line(i*store_thickness + v, s, img);
++					copy_line(YRES - 1 - (i*store_thickness + v), s, img);
+ 				}
+ 			}
+ 			step++;
+@@ -133,8 +133,8 @@ void store_effect(SDL_Surface * s, SDL_Surface * img)
+ 			for (i=0; i<=XRES/2/store_thickness; i++) {
+ 				int v = step - i;
+ 				if (v >= 0 && v < store_thickness) {
+-					copy_column(i*store_thickness + v);
+-					copy_column(XRES - 1 - (i*store_thickness + v));
++					copy_column(i*store_thickness + v, s, img);
++					copy_column(XRES - 1 - (i*store_thickness + v), s, img);
+ 				}
+ 			}
+ 			step++;
+@@ -176,21 +176,22 @@ void bars_effect(SDL_Surface * s, SDL_Surface * img)
+ 
+ /* -------------- Squares ------------------ */
+ 
++static const int squares_size = 32;
++
++static int fillrect(int i, int j, SDL_Surface * s, SDL_Surface * img, int bpp) {
++	int c, v;
++	if (i >= XRES/squares_size || j >= YRES/squares_size)
++		return 0;
++	v = i*squares_size*bpp + j*squares_size*img->pitch;
++	for (c=0; c<squares_size; c++)
++		memcpy(s->pixels + v + c*img->pitch, img->pixels + v + c*img->pitch, squares_size*bpp);
++	return 1;
++}
++
+ void squares_effect(SDL_Surface * s, SDL_Surface * img)
+ {
+ 	int bpp = img->format->BytesPerPixel;
+-	const int squares_size = 32;
+ 
+-	int fillrect(int i, int j) {
+-		int c, v;
+-		if (i >= XRES/squares_size || j >= YRES/squares_size)
+-			return 0;
+-		v = i*squares_size*bpp + j*squares_size*img->pitch;
+-		for (c=0; c<squares_size; c++)
+-			memcpy(s->pixels + v + c*img->pitch, img->pixels + v + c*img->pitch, squares_size*bpp);
+-		return 1;
+-	}
+-
+ 	int still_moving = 1;
+ 
+ 	for (i=0; still_moving; i++) {
+@@ -200,7 +201,7 @@ void squares_effect(SDL_Surface * s, SDL_Surface * img
+ 
+ 		still_moving = 0;
+ 		for (j=i; j>=0; j--) {
+-			if (fillrect(j, k))
++			if (fillrect(j, k, s, img, bpp))
+ 				still_moving = 1;
+ 			k++;
+ 		}
+@@ -212,20 +213,20 @@ void squares_effect(SDL_Surface * s, SDL_Surface * img
+ 
+ /* -------------- Circle ------------------ */
+ 
++static int sqi(int v) { return v*v; }
++
+ int * circle_steps;
+ const int circle_max_steps = 40;
+ void circle_init(void)
+ {
+-	int sqr(int v) { return v*v; }
+-
+ 	circle_steps = malloc(XRES * YRES * sizeof(int));
+ 	if (!circle_steps)
+ 		fb__out_of_memory();
+ 
+ 	for (y=0; y<YRES; y++)
+ 		for (x=0; x<XRES; x++) {
+-			int max = sqrt(sqr(XRES/2) + sqr(YRES/2));
+-			int value = sqrt(sqr(x-XRES/2) + sqr(y-YRES/2));
++			int max = sqrt(sqi(XRES/2) + sqi(YRES/2));
++			int value = sqrt(sqi(x-XRES/2) + sqi(y-YRES/2));
+ 			circle_steps[x+y*XRES] = (max-value)*circle_max_steps/max;
+ 		}
+ }

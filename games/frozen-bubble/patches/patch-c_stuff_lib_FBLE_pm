@@ -1,0 +1,34 @@
+$OpenBSD: patch-c_stuff_lib_FBLE_pm,v 1.1 2020/02/04 22:54:09 cwen Exp $
+
+Perl 5.30+ prohibits using my() in false conditionals
+
+Index: c_stuff/lib/FBLE.pm
+--- c_stuff/lib/FBLE.pm.orig
++++ c_stuff/lib/FBLE.pm
+@@ -31,6 +31,8 @@
+ 
+ package FBLE;
+ 
++use feature qw(state);
++
+ use POSIX(qw(floor ceil));
+ use SDL;
+ use SDL::App;
+@@ -1405,7 +1407,7 @@ sub display_levelset_screenshot {
+                    $rect{middle}->y + $rect{middle}->height/2 - $rect{screenshot}->height/8 - 3 + $widgetMove);
+ 
+ 
+-    my %shrinks if 0;
++    state %shrinks;
+     my $current_nb = $start_level || 1;
+     if (!exists $shrinks{$name}{$current_nb}) {
+         my $surf = SDL::Surface->new(-name => "$FPATH/gfx/menu/please_wait.png");
+@@ -1417,7 +1419,7 @@ sub display_levelset_screenshot {
+         $app->update($rect{middle});
+ 
+         #- sorta "read ahead": will compute next 10 levels screenshots as well
+-        my $s_save if 0;
++        state $s_save;
+         if (!$s_save) {
+             $s_save = SDL::Surface->new(-name => "$FPATH/gfx/level_editor.png");
+         }

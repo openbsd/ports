@@ -1,0 +1,52 @@
+$OpenBSD: patch-frozen-bubble,v 1.1 2020/02/04 22:54:09 cwen Exp $
+
+Perl 5.30+ prohibits using my() in false conditionals
+
+Index: frozen-bubble
+--- frozen-bubble.orig
++++ frozen-bubble
+@@ -47,6 +47,8 @@ use vars qw($TARGET_ANIM_SPEED $BUBBLE_SIZE $ROW_SIZE 
+             $lev_number $playermalus $mptrainingdiff $loaded_levelset $direct_levelset $chainreaction %chains %img_mini $frame $sock $gameserver $mynick
+             $continuegamewhenplayersleave $singleplayertargetting $mylatitude $mylongitude %autokick $replayparam $autorecord $comment $saveframes $saveframesbase $saveframescounter);
+ 
++use feature qw(state);
++
+ use Getopt::Long;
+ use Data::Dumper;
+ use Locale::gettext;
+@@ -269,7 +271,7 @@ sub play_music($) {
+     $app->delay(400);
+     $app->delay(10) while $mixer->playing_music;  #- mikmod will segfault if we try to load a music while old one is still fading out
+     my %musics = (intro => '/snd/introzik.ogg', main1p => '/snd/frozen-mainzik-1p.ogg', main2p => '/snd/frozen-mainzik-2p.xm');
+-    my $mus if 0;                                 #- I need to keep a reference on the music or it will be collected at the end of this function, thus I manually collect previous music
++    state $mus;                                 #- I need to keep a reference on the music or it will be collected at the end of this function, thus I manually collect previous music
+     if (@playlist) {
+ 	my $tryanother = sub {
+ 	    my $elem = chomp_(shift @playlist);
+@@ -3488,7 +3490,7 @@ sub choose_1p_game_mode() {
+         };
+ 
+         my $img = $imgbin{'1p_panel'};
+-        my $save if 0;
++        state $save;
+         my $drect = SDL::Rect->new(-width => $img->width, -height => $img->height,
+                                    -x => $MENUPOS{xpos_panel}, '-y' => $MENUPOS{ypos_panel});
+         if ($save) {
+@@ -5573,7 +5575,7 @@ sub menu {
+ 			 'highscores' => { pos => 8, type => 'run',
+ 					   run => sub { $menu_display_highscores->() } },
+ 		       );
+-    my $current_pos if 0; $current_pos ||= 1;
++    state $current_pos; $current_pos ||= 1;
+     my @menu_invalids;
+     $invalidate_all = sub { push @menu_invalids, $menu_entries{$_}->{pos} foreach keys %menu_entries };
+ 
+@@ -5724,7 +5726,7 @@ sub menu {
+ 	}
+ 
+ 	if ($graphics_level > 1) {
+-	    my $banner_pos if 0;
++	    state $banner_pos;
+ 	    $banner_pos ||= 670;
+ 	    foreach my $b (keys %banners) {
+ 		my $xpos = $banners{$b} - $banner_pos;
