@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2019/12/30 22:04:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/02/04 06:09:13 rsadowski Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2019.05
 DISTNAME =		openscad-${V}
-EXTRACT_SUFX =		.src.tar.gz
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		cad
 
@@ -15,32 +14,33 @@ HOMEPAGE =		https://www.openscad.org/
 # GPLv2+ with CGAL exception
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} CGAL GL GLEW GLU ICE lib/qt4/QtGui lib/qt4/QtMultimedia
-WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL SM X11 Xext Xi Xinerama Xrender
-WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c double-conversion
+WANTLIB += ${COMPILER_LIBCXX} CGAL GL GLEW GLU Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets X11 boost_filesystem-mt boost_program_options-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c double-conversion
 WANTLIB += fontconfig freetype glib-2.0 gmp harfbuzz intl m mpfr
-WANTLIB += opencsg qscintilla2_qt4 xml2 z
-
-# C++11
-COMPILER =		base-clang ports-gcc
+WANTLIB += opencsg qscintilla2_qt5 xml2 z
 
 MASTER_SITES =		https://files.openscad.org/
+EXTRACT_SUFX =		.src.tar.gz
 
 MODULES =		devel/qmake \
-			x11/qt4
+			x11/qt5
+
 BUILD_DEPENDS =		devel/bison \
 			devel/gettext,-tools \
 			math/eigen3
+
 LIB_DEPENDS =		devel/boost \
-			math/double-conversion \
 			devel/gmp \
 			devel/harfbuzz \
 			devel/mpfr \
-			editors/qscintilla \
+			editors/qscintilla,qt5 \
 			graphics/glew \
 			graphics/opencsg \
-			math/cgal
+			math/cgal \
+			math/double-conversion \
+			x11/qt5/qtmultimedia
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			fonts/liberation-fonts

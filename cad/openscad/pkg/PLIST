@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/10/17 20:04:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/02/04 06:09:13 rsadowski Exp $
 @bin bin/openscad
 @man man/man1/openscad.1
-share/applications/
 share/applications/openscad.desktop
 share/metainfo/
 share/metainfo/org.openscad.OpenSCAD.appdata.xml
