@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.856 2020/02/04 06:22:52 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.857 2020/02/04 06:29:37 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1368,6 +1368,7 @@ my $obsolete_reason = {
 	'valknut' => 3,
 	'dclib' => 3,
 	'luma' => 3,
+	'qhacc' => 15,
 };
 
 # reasons for obsolete packages
@@ -1387,6 +1388,7 @@ my @msg = (
 	"replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve", #12
 	"has a dependency on obsolete software", #13
 	"python2 port superseded by python3 version", #14
+	"no longer maintained upstream, suggest homebank, gnucash, kmymoney", #15
 );
 
 # ->is_base_system($handle, $state):
