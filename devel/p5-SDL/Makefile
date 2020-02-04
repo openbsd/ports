@@ -1,23 +1,19 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/17 14:49:21 danj Exp $
-
-BROKEN-amd64 =		perl -e 'use SDL' segfaults
-BROKEN-i386 =		dependent ports (frozen-bubble, vacuum) fail: loadable library and perl binaries are mismatched (got handshake key 0x2b, needed 0xXXXXXX)
+# $OpenBSD: Makefile,v 1.20 2020/02/04 22:50:04 gkoehler Exp $
 
 COMMENT =		Simple DirectMedia Layer for Perl
-HOMEPAGE =		http://sdlperl.org/
 
 MODULES =		cpan
 VER =			2.1.3
 DISTNAME =		SDL_Perl-${VER}
 PKGNAME =		p5-SDL-${VER}
-REVISION =		7
+REVISION =		8
 CATEGORIES =		devel graphics
 CPAN_AUTHOR =		DGOEHRIG
 
 # GPLv2
 PERMIT_PACKAGE =		Yes
 
-WANTLIB +=		GL GLU SDL jpeg perl png pthread
+WANTLIB +=		GL GLU SDL c jpeg perl png pthread
 
 RUN_DEPENDS =		devel/p5-YAML
 BUILD_DEPENDS =		${RUN_DEPENDS}

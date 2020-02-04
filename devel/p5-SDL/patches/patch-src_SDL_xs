@@ -1,6 +1,12 @@
-$OpenBSD: patch-src_SDL_xs,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
---- src/SDL.xs.orig	Wed Oct  5 02:25:49 2005
-+++ src/SDL.xs	Thu May 28 14:54:55 2009
+$OpenBSD: patch-src_SDL_xs,v 1.2 2020/02/04 22:50:04 gkoehler Exp $
+
+Add missing arguments to boot_SDL(); this fixes a crash or failure in
+Perl_xs_handshake() on some arches.  This patch does pass the CV of
+the wrong function, but the handshake accepts it.
+
+Index: src/SDL.xs
+--- src/SDL.xs.orig
++++ src/SDL.xs
 @@ -69,7 +69,7 @@ static int sdl_perl_use_smpeg_audio = 0;
  #define HAVE_TLS_CONTEXT
  #endif
@@ -10,6 +16,22 @@ $OpenBSD: patch-src_SDL_xs,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
  
  Uint32 
  sdl_perl_timer_callback ( Uint32 interval, void* param )
+@@ -189,13 +189,13 @@ sdl_perl_atexit (void)
+ #endif
+ }
+ 
+-void boot_SDL();
++void boot_SDL(pTHX_ CV *);
+ void boot_SDL__OpenGL();
+ 
+ XS(boot_SDL_perl)
+ {
+ 	GET_TLS_CONTEXT
+-	boot_SDL();
++	boot_SDL(aTHX_ cv);
+ }
+ 
+ MODULE = SDL_perl	PACKAGE = SDL
 @@ -3911,7 +3911,7 @@ GFXFilledpieColor ( dst, x, y, rad, start, end, color 
      Sint16 end;
      Uint32 color;

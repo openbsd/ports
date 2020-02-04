@@ -1,7 +1,8 @@
-$OpenBSD: patch-Build_PL,v 1.2 2013/11/03 07:52:02 ajacoutot Exp $
---- Build.PL.orig	Wed Oct  5 02:25:49 2005
-+++ Build.PL	Mon May 25 14:22:30 2009
-@@ -35,7 +36,7 @@ my %subsystems =
+$OpenBSD: patch-Build_PL,v 1.3 2020/02/04 22:50:04 gkoehler Exp $
+Index: Build.PL
+--- Build.PL.orig
++++ Build.PL
+@@ -35,7 +35,7 @@ my %subsystems =
  	SDL => {
  		file      => {
  			from  => 'src/SDL.xs',
@@ -10,7 +11,7 @@ $OpenBSD: patch-Build_PL,v 1.2 2013/11/03 07:52:02 ajacoutot Exp $
  		},
  		libraries => [qw( SDL SDL_image SDL_mixer SDL_net SDL_ttf SDL_gfx
  		                  png jpeg smpeg )],
-@@ -43,14 +44,14 @@ my %subsystems =
+@@ -43,14 +43,14 @@ my %subsystems =
  	OpenGL => {
  		file      => {
  			from => 'src/OpenGL.xs',
@@ -27,7 +28,7 @@ $OpenBSD: patch-Build_PL,v 1.2 2013/11/03 07:52:02 ajacoutot Exp $
  		},
  		libraries => [qw( SDL SDL_image )],
  	},	
-@@ -123,6 +124,7 @@ my %xs = map { $subsystems{$_}{file}{from} => $subsyst
+@@ -123,6 +123,7 @@ my %xs = map { $subsystems{$_}{file}{from} => $subsyst
  	     keys %subsystems;
  
  my $build   = SDL::Build->new(
