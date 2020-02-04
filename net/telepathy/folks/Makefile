@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.113 2019/11/02 11:04:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.114 2020/02/04 09:47:34 jasper Exp $
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.13.1
+GNOME_VERSION=		0.13.2
 
 # see BACKEND_DIR in config.h
 API_V=			45
@@ -28,6 +28,9 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	tests/tools/manager-file.py
 
 LIB_DEPENDS=		databases/evolution-data-server \
