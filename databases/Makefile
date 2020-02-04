@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.387 2020/01/25 05:32:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.388 2020/02/04 06:20:53 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -31,7 +31,6 @@
      SUBDIR += luadbi
      SUBDIR += lualdap
      SUBDIR += luasqlite3
-     SUBDIR += luma
      SUBDIR += mariadb
      SUBDIR += mdbtools
      SUBDIR += mongodb
