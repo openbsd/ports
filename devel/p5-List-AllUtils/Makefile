@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:28 fcambus Exp $
 
 COMMENT =	combines List::Util, List::SomeUtils and List::UtilsBy
 
 DISTNAME =	List-AllUtils-0.15
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes

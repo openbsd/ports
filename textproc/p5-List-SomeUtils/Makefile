@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/10/28 14:15:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/04 21:17:30 fcambus Exp $
 
 COMMENT =	Provide the stuff missing in List::Util
 
 DISTNAME =	List-SomeUtils-0.58
+REVISION =	0
 
 CATEGORIES =	textproc
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

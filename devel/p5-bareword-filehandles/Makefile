@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/04 21:17:28 fcambus Exp $
 
 COMMENT =	disables bareword filehandles
 
 DISTNAME =	bareword-filehandles-0.007
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

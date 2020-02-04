@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:29 fcambus Exp $
 
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
 COMMENT =	manipulate 128 bits integers in Perl
 
 DISTNAME =	Math-Int128-0.22
+REVISION =	0
 
 CATEGORIES =	math
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/04 21:17:30 fcambus Exp $
 
 COMMENT =	XS implementation for List::SomeUtils
 
 DISTNAME =	List-SomeUtils-XS-0.58
+REVISION =	0
 
 CATEGORIES =	textproc
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes

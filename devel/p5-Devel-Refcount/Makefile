@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:28 fcambus Exp $
 
 COMMENT =	obtain the REFCNT value of a referent
 
 DISTNAME =	Devel-Refcount-0.10
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

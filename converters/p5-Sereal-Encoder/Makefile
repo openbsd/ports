@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/03 12:46:44 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/04 21:17:28 fcambus Exp $
 
 COMMENT =	fast, compact, powerful binary serialization
 
 DISTNAME =	Sereal-Encoder-4.009
+REVISION =	0
 
 CATEGORIES =	converters
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl, BSD, LGPLv2.1
 PERMIT_PACKAGE =	Yes

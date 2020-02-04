@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:29 fcambus Exp $
 
 COMMENT =	simplify testing of external commands
 
 DISTNAME =	Test-Command-Simple-0.05
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

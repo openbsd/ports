@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:29 fcambus Exp $
 
 COMMENT =	provides a bits_is() subroutine for testing binary data
 
 DISTNAME =	Test-Bits-0.02
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes

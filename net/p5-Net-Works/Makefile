@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:30 fcambus Exp $
 
 COMMENT =	sane APIs for IP addresses and networks
 
 DISTNAME =	Net-Works-0.22
+REVISION =	0
 
 CATEGORIES =	net
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

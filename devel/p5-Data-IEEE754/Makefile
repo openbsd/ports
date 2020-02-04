@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:28 fcambus Exp $
 
 COMMENT =	pack and unpack big-endian IEEE754 floats and doubles
 
 DISTNAME =	Data-IEEE754-0.02
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes
