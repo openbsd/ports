@@ -1,39 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:18 ajacoutot Exp $
-@bin bin/dadd
-@bin bin/dconv
-@bin bin/ddiff
-@bin bin/dgrep
-@bin bin/dround
-@bin bin/dseq
-@bin bin/dtest
+@comment $OpenBSD: PLIST,v 1.3 2020/02/04 20:40:58 bcallah Exp $
+bin/dadd
+@bin bin/dateadd
+@bin bin/dateconv
+@bin bin/datediff
+@bin bin/dategrep
+@bin bin/dateround
+@bin bin/dateseq
+@bin bin/datesort
+@bin bin/datetest
+@bin bin/datezone
+bin/dconv
+bin/ddiff
+bin/dgrep
+bin/dround
+bin/dseq
+bin/dsort
+bin/dtest
+bin/dzone
 @bin bin/strptime
-include/dateutils/
-include/dateutils/boops.h
-include/dateutils/date-core-strpf.h
-include/dateutils/date-core.h
-include/dateutils/dt-core-strpf.h
-include/dateutils/dt-core-tz-glue.h
-include/dateutils/dt-core.h
-include/dateutils/generics.h
-include/dateutils/leaps.h
-include/dateutils/leapseconds.def
-include/dateutils/nifty.h
-include/dateutils/strops.h
-include/dateutils/time-core-strpf.h
-include/dateutils/time-core.h
-include/dateutils/token.h
-include/dateutils/tzraw.h
 @info info/dateutils.info
-lib/libdut.a
-lib/pkgconfig/libdut.pc
 @man man/man1/dadd.1
+@man man/man1/dateadd.1
+@man man/man1/dateconv.1
+@man man/man1/datediff.1
+@man man/man1/dategrep.1
+@man man/man1/dateround.1
+@man man/man1/dateseq.1
+@man man/man1/datesort.1
+@man man/man1/datetest.1
 @man man/man1/dateutils.1
+@man man/man1/datezone.1
 @man man/man1/dconv.1
 @man man/man1/ddiff.1
 @man man/man1/dgrep.1
 @man man/man1/dround.1
 @man man/man1/dseq.1
+@man man/man1/dsort.1
 @man man/man1/dtest.1
+@man man/man1/dzone.1
 @man man/man1/strptime.1
+share/dateutils/
+share/dateutils/iata.tzmcc
+share/dateutils/icao.tzmcc
+share/dateutils/locale
+share/dateutils/mic.tzmcc
 share/doc/dateutils/
+share/doc/dateutils/LICENSE
 share/doc/dateutils/README.md

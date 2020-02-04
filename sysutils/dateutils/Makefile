@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/11 20:58:49 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/04 20:40:58 bcallah Exp $
 
 COMMENT =		tools to fiddle with dates and times
 
-DISTNAME =		dateutils-0.2.7
-REVISION =		1
+DISTNAME =		dateutils-0.4.7
 
 CATEGORIES =		sysutils
 
