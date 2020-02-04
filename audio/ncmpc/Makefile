@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2020/01/02 09:38:09 bket Exp $
+# $OpenBSD: Makefile,v 1.50 2020/02/04 18:25:00 bket Exp $
 
 COMMENT=		curses based frontend for mpd
 
-VER=			0.36
+VER=			0.37
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
@@ -19,6 +19,7 @@ MASTER_SITES=		https://www.musicpd.org/download/ncmpc/${VER:R}/
 
 EXTRACT_SUFX=		.tar.xz
 
+# c++17
 COMPILER =		base-clang ports-gcc
 
 MODULES=		devel/meson
