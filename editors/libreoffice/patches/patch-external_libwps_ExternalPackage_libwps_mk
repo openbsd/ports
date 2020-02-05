@@ -1,12 +1,13 @@
-$OpenBSD: patch-external_libwps_ExternalPackage_libwps_mk,v 1.4 2016/03/01 21:39:58 robert Exp $
---- external/libwps/ExternalPackage_libwps.mk.orig.port	Wed Feb 10 20:43:13 2016
-+++ external/libwps/ExternalPackage_libwps.mk	Wed Feb 10 20:43:16 2016
+$OpenBSD: patch-external_libwps_ExternalPackage_libwps_mk,v 1.5 2020/02/05 19:58:10 robert Exp $
+Index: external/libwps/ExternalPackage_libwps.mk
+--- external/libwps/ExternalPackage_libwps.mk.orig
++++ external/libwps/ExternalPackage_libwps.mk
 @@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libwps,$(LIB
  else ifeq ($(OS),WNT)
  $(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.4.dll,src/lib/.libs/libwps-0.4.dll))
  else ifeq ($(DISABLE_DYNLOADING),)
 -$(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.4-lo.so.4,src/lib/.libs/libwps-0.4-lo.so.4.0.$(WPS_VERSION_MICRO)))
-+$(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.4-lo.so.4,src/lib/.libs/libwps-0.4-lo.so.4.$(WPS_VERSION_MICRO)))
++$(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.4-lo.so.4.$(WPS_VERSION_MICRO),src/lib/.libs/libwps-0.4-lo.so.4.$(WPS_VERSION_MICRO)))
  endif
  
  # vim: set noet sw=4 ts=4:

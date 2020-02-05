@@ -1,12 +1,13 @@
-$OpenBSD: patch-external_libodfgen_ExternalPackage_libodfgen_mk,v 1.4 2016/03/01 21:39:58 robert Exp $
---- external/libodfgen/ExternalPackage_libodfgen.mk.orig.port	Wed Feb 10 20:11:19 2016
-+++ external/libodfgen/ExternalPackage_libodfgen.mk	Wed Feb 10 20:11:23 2016
+$OpenBSD: patch-external_libodfgen_ExternalPackage_libodfgen_mk,v 1.5 2020/02/05 19:58:10 robert Exp $
+Index: external/libodfgen/ExternalPackage_libodfgen.mk
+--- external/libodfgen/ExternalPackage_libodfgen.mk.orig
++++ external/libodfgen/ExternalPackage_libodfgen.mk
 @@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libodfgen,$(
  else ifeq ($(OS),WNT)
  $(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1.dll,src/.libs/libodfgen-0.1.dll))
  else ifeq ($(DISABLE_DYNLOADING),)
 -$(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1-lo.so.1,src/.libs/libodfgen-0.1-lo.so.1.0.$(ODFGEN_VERSION_MICRO)))
-+$(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1-lo.so.1,src/.libs/libodfgen-0.1-lo.so.1.$(ODFGEN_VERSION_MICRO)))
++$(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1-lo.so.1.$(ODFGEN_VERSION_MICRO),src/.libs/libodfgen-0.1-lo.so.1.$(ODFGEN_VERSION_MICRO)))
  endif
  
  # vim: set noet sw=4 ts=4:

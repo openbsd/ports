@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-sl,v 1.16 2018/02/05 17:15:05 robert Exp $
+@comment $OpenBSD: PLIST-i18n-sl,v 1.17 2020/02/05 19:58:10 robert Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/sl/
@@ -17,6 +17,7 @@ lib/libreoffice/program/resource/sl/LC_MESSAGES/for.mo
 lib/libreoffice/program/resource/sl/LC_MESSAGES/fps.mo
 lib/libreoffice/program/resource/sl/LC_MESSAGES/frm.mo
 lib/libreoffice/program/resource/sl/LC_MESSAGES/fwk.mo
+lib/libreoffice/program/resource/sl/LC_MESSAGES/oox.mo
 lib/libreoffice/program/resource/sl/LC_MESSAGES/pcr.mo
 lib/libreoffice/program/resource/sl/LC_MESSAGES/rpt.mo
 lib/libreoffice/program/resource/sl/LC_MESSAGES/sb.mo
@@ -52,6 +53,8 @@ lib/libreoffice/share/extensions/dict-sl/README_th_sl_SI.txt
 lib/libreoffice/share/extensions/dict-sl/description.xml
 lib/libreoffice/share/extensions/dict-sl/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-sl/hyph_sl_SI.dic
+lib/libreoffice/share/extensions/dict-sl/icon.png
+lib/libreoffice/share/extensions/dict-sl/package-description.txt
 lib/libreoffice/share/extensions/dict-sl/sl_SI.aff
 lib/libreoffice/share/extensions/dict-sl/sl_SI.dic
 lib/libreoffice/share/extensions/dict-sl/th_sl_SI_v2.dat

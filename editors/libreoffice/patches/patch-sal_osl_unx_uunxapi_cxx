@@ -1,9 +1,9 @@
-$OpenBSD: patch-sal_osl_unx_uunxapi_cxx,v 1.1 2019/02/09 15:23:07 robert Exp $
+$OpenBSD: patch-sal_osl_unx_uunxapi_cxx,v 1.2 2020/02/05 19:58:10 robert Exp $
 
 Index: sal/osl/unx/uunxapi.cxx
 --- sal/osl/unx/uunxapi.cxx.orig
 +++ sal/osl/unx/uunxapi.cxx
-@@ -599,8 +599,10 @@ std::string UnixErrnoString(int nErrno)
+@@ -631,8 +631,10 @@ std::string UnixErrnoString(int nErrno)
  #endif
          case EPROTO:
              return "EPROTO";

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ca,v 1.17 2019/09/20 13:34:54 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ca,v 1.18 2020/02/05 19:58:10 robert Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/ca/
@@ -17,6 +17,7 @@ lib/libreoffice/program/resource/ca/LC_MESSAGES/for.mo
 lib/libreoffice/program/resource/ca/LC_MESSAGES/fps.mo
 lib/libreoffice/program/resource/ca/LC_MESSAGES/frm.mo
 lib/libreoffice/program/resource/ca/LC_MESSAGES/fwk.mo
+lib/libreoffice/program/resource/ca/LC_MESSAGES/oox.mo
 lib/libreoffice/program/resource/ca/LC_MESSAGES/pcr.mo
 lib/libreoffice/program/resource/ca/LC_MESSAGES/rpt.mo
 lib/libreoffice/program/resource/ca/LC_MESSAGES/sb.mo
@@ -51,6 +52,8 @@ lib/libreoffice/share/extensions/dict-ca/ca.dic
 lib/libreoffice/share/extensions/dict-ca/description.xml
 lib/libreoffice/share/extensions/dict-ca/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-ca/hyph_ca.dic
+lib/libreoffice/share/extensions/dict-ca/images/
+lib/libreoffice/share/extensions/dict-ca/images/SC-logo.png
 lib/libreoffice/share/extensions/dict-ca/th_ca_ES_v3.dat
 lib/libreoffice/share/extensions/dict-ca/th_ca_ES_v3.idx
 lib/libreoffice/share/extensions/dict-en/dialog/en_ca.properties

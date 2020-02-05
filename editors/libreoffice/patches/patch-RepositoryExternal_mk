@@ -1,27 +1,24 @@
-$OpenBSD: patch-RepositoryExternal_mk,v 1.9 2019/09/20 13:34:54 robert Exp $
-XXX
+$OpenBSD: patch-RepositoryExternal_mk,v 1.10 2020/02/05 19:58:10 robert Exp $
 
 Index: RepositoryExternal.mk
 --- RepositoryExternal.mk.orig
 +++ RepositoryExternal.mk
-@@ -648,6 +648,7 @@ endef
+@@ -586,6 +586,7 @@ endef
+ gb_ExternalProject__use_boost_system :=
  
  define gb_LinkTarget__use_boost_headers
- $(call gb_LinkTarget_use_unpacked,$(1),boost)
 +$(call gb_LinkTarget_add_defs,$(1),-I$(call gb_UnpackedTarball_get_dir,boost))
  $(call gb_LinkTarget_set_include,$(1),\
- 	$(BOOST_CPPFLAGS) \
  	$$(INCLUDE) \
-@@ -3617,7 +3618,11 @@ gb_LinkTarget__use_libgpg-error :=
+ 	$(BOOST_CPPFLAGS) \
+@@ -3595,6 +3596,10 @@ gb_LinkTarget__use_libgpg-error :=
  endif # ENABLE_GPGMEPP
  
  define gb_LinkTarget__use_dconf
--$(call gb_LinkTarget_add_defs,$(1),$(DCONF_CFLAGS))
-+#$(call gb_LinkTarget_add_defs,$(1),$(DCONF_CFLAGS))
 +$(call gb_LinkTarget_set_include,$(1),\
 +	$$(INCLUDE) \
 +	$(DCONF_CFLAGS) \
 +)
- $(call gb_LinkTarget_add_libs,$(1),$(DCONF_LIBS))
- endef
- 
+ $(call gb_LinkTarget_set_include,$(1),\
+ 		$$(INCLUDE) \
+ 		$(DCONF_CFLAGS) \

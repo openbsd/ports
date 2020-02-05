@@ -1,4 +1,4 @@
-$OpenBSD: patch-external_libfreehand_icu651_patch,v 1.1 2019/10/13 18:36:02 robert Exp $
+$OpenBSD: patch-external_libfreehand_icu651_patch,v 1.2 2020/02/05 19:58:10 robert Exp $
 
 Index: external/libfreehand/icu651.patch
 --- external/libfreehand/icu651.patch.orig

@@ -1,0 +1,25 @@
+$OpenBSD: patch-vcl_Executable_visualbackendtest_mk,v 1.1 2020/02/05 19:58:10 robert Exp $
+
+Index: vcl/Executable_visualbackendtest.mk
+--- vcl/Executable_visualbackendtest.mk.orig
++++ vcl/Executable_visualbackendtest.mk
+@@ -41,12 +41,17 @@ $(eval $(call gb_Executable_use_static_libraries,visua
+     vclmain \
+ ))
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Executable_add_libs,visualbackendtest,\
+ 	-lm \
++	-lX11 \
++))
++
++ifeq ($(OS),LINUX)
++$(eval $(call gb_Executable_add_libs,visualbackendtest,\
+ 	-ldl \
+-    -lX11 \
+ ))
++endif
+ 
+ $(eval $(call gb_Executable_use_static_libraries,visualbackendtest,\
+ 	glxtest \

@@ -1,57 +1,17 @@
-$OpenBSD: patch-sdext_source_pdfimport_xpdfwrapper_pdfioutdev_gpl_hxx,v 1.7 2020/01/02 20:31:11 kili Exp $
-
-Fix build with poppler-8.82.0.
-
-https://gerrit.libreoffice.org/plugins/gitiles/core/+/2eadd46ab81058087af95bdfc1fea28fcdb65998%5E%21
-
-And with poppler-0.83.0.
+$OpenBSD: patch-sdext_source_pdfimport_xpdfwrapper_pdfioutdev_gpl_hxx,v 1.8 2020/02/05 19:58:10 robert Exp $
 
 Index: sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
 --- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx.orig
 +++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
-@@ -149,7 +149,7 @@ namespace pdfi
+@@ -149,7 +149,11 @@ namespace pdfi
  
          int  parseFont( long long nNewId, GfxFont* pFont, GfxState* state ) const;
          void writeFontFile( GfxFont* gfxFont ) const;
--        static void printPath( GfxPath* pPath );
++#if POPPLER_CHECK_VERSION(0, 82, 0)
 +        static void printPath( const GfxPath* pPath );
++#else
+         static void printPath( GfxPath* pPath );
++#endif
  
      public:
          explicit PDFOutDev( PDFDoc* pDoc );
-@@ -232,10 +232,17 @@ namespace pdfi
-         virtual void eoClip(GfxState *state) override;
- 
-         //----- text drawing
-+#if POPPLER_CHECK_VERSION(0, 82, 0)
-         virtual void drawChar(GfxState *state, double x, double y,
-                               double dx, double dy,
-                               double originX, double originY,
-+                              CharCode code, int nBytes, const Unicode *u, int uLen) override;
-+#else
-+        virtual void drawChar(GfxState *state, double x, double y,
-+                              double dx, double dy,
-+                              double originX, double originY,
-                               CharCode code, int nBytes, Unicode *u, int uLen) override;
-+#endif
- #if POPPLER_CHECK_VERSION(0, 64, 0)
-         virtual void drawString(GfxState *state, const GooString *s) override;
- #else
-@@ -248,10 +255,17 @@ namespace pdfi
-                                    int width, int height, poppler_bool invert,
-                                    poppler_bool interpolate,
-                                    poppler_bool inlineImg) override;
-+#if POPPLER_CHECK_VERSION(0, 82, 0)
-         virtual void drawImage(GfxState *state, Object *ref, Stream *str,
-                                int width, int height, GfxImageColorMap *colorMap,
-                                poppler_bool interpolate,
--                               int* maskColors, poppler_bool inlineImg) override;
-+                               const int* maskColors, poppler_bool inlineImg) override;
-+#else
-+        virtual void drawImage(GfxState *state, Object *ref, Stream *str,
-+                       int width, int height, GfxImageColorMap *colorMap,
-+                       poppler_bool interpolate,
-+                       int* maskColors, poppler_bool inlineImg) override;
-+#endif
-         virtual void drawMaskedImage(GfxState *state, Object *ref, Stream *str,
-                                      int width, int height,
-                                      GfxImageColorMap *colorMap,

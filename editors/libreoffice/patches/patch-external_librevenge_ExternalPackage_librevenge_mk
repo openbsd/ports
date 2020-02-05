@@ -1,12 +1,13 @@
-$OpenBSD: patch-external_librevenge_ExternalPackage_librevenge_mk,v 1.4 2016/03/01 21:39:58 robert Exp $
---- external/librevenge/ExternalPackage_librevenge.mk.orig.port	Wed Feb 10 18:57:56 2016
-+++ external/librevenge/ExternalPackage_librevenge.mk	Wed Feb 10 18:58:19 2016
+$OpenBSD: patch-external_librevenge_ExternalPackage_librevenge_mk,v 1.5 2020/02/05 19:58:10 robert Exp $
+Index: external/librevenge/ExternalPackage_librevenge.mk
+--- external/librevenge/ExternalPackage_librevenge.mk.orig
++++ external/librevenge/ExternalPackage_librevenge.mk
 @@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,librevenge,$
  else ifeq ($(OS),WNT)
  $(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0.dll,src/lib/.libs/librevenge-0.0.dll))
  else ifeq ($(DISABLE_DYNLOADING),)
 -$(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0-lo.so.0,src/lib/.libs/librevenge-0.0-lo.so.0.0.$(REVENGE_VERSION_MICRO)))
-+$(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0-lo.so.0,src/lib/.libs/librevenge-0.0-lo.so.0.$(REVENGE_VERSION_MICRO)))
++$(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0-lo.so.0.$(REVENGE_VERSION_MICRO),src/lib/.libs/librevenge-0.0-lo.so.0.$(REVENGE_VERSION_MICRO)))
  endif
  
  # vim: set noet sw=4 ts=4:

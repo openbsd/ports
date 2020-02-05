@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kde,v 1.11 2019/09/20 13:34:55 robert Exp $
-lib/libreoffice/program/libkde5be1lo.so
-lib/libreoffice/program/libvclplug_kde5lo.so
-lib/libreoffice/program/libvclplug_qt5lo.so
+@comment $OpenBSD: PLIST-kde,v 1.12 2020/02/05 19:58:10 robert Exp $
+@so lib/libreoffice/program/libkf5be1lo.so
+@so lib/libreoffice/program/libvclplug_kf5lo.so
+@so lib/libreoffice/program/libvclplug_qt5lo.so

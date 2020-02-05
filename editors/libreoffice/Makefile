@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2020/01/02 20:31:11 kili Exp $
+# $OpenBSD: Makefile,v 1.224 2020/02/05 19:58:09 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -8,12 +8,25 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-SHARED_LIBS +=  orcus-0.14                0.0 # 0.0
-SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
+SHARED_LIBS +=  etonyek-0.1-lo            1.9 # 1.9
+SHARED_LIBS +=  langtag-lo                5.1 # 5.1
+SHARED_LIBS +=  mwaw-0.3-lo               3.15 # 3.15
+SHARED_LIBS +=  odfgen-0.1-lo             1.6 # 1.6
+SHARED_LIBS +=  orcus-0.15                0.0 # 0.0
+SHARED_LIBS +=  orcus-parser-0.15         0.0 # 0.0
+SHARED_LIBS +=  revenge-0.0-lo            0.4 # 0.4
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
+SHARED_LIBS +=  uno_cppu                  3.0 # 3.0
+SHARED_LIBS +=  uno_cppuhelpergcc3        3.0 # 3.0
+SHARED_LIBS +=  uno_purpenvhelpergcc3     3.0 # 3.0
+SHARED_LIBS +=  uno_sal                   3.0 # 3.0
+SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
+SHARED_LIBS +=  wpd-0.10-lo               10.3 # 10.3
+SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
+SHARED_LIBS +=  wps-0.4-lo                4.10 # 4.10
 
-BV=		6.3
-VERSION=	${BV}.3.2
+BV=		6.4
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -22,8 +35,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
-
-REVISION=	0
 
 EPOCH=		0
 
@@ -96,7 +107,7 @@ DISTFILES += e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0
 DISTFILES += edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0
 DISTFILES += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0
 DISTFILES += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0
-DISTFILES += language-subtag-registry-2019-04-03.tar.bz2:0
+DISTFILES += language-subtag-registry-2019-09-16.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.5.tar.xz:0
 DISTFILES += libcdr-0.1.3.tar.bz2:0
@@ -111,7 +122,7 @@ DISTFILES += liblangtag-0.6.2.tar.bz2:0
 DISTFILES += libmspub-0.1.4.tar.xz:0
 DISTFILES += libmwaw-0.3.15.tar.xz:0
 DISTFILES += libodfgen-0.1.6.tar.bz2:0
-DISTFILES += liborcus-0.14.1.tar.gz:0
+DISTFILES += liborcus-0.15.3.tar.gz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += culmus-0.131.tar.gz:0
@@ -125,12 +136,13 @@ DISTFILES += libwpg-0.3.3.tar.xz:0
 DISTFILES += libwps-0.4.10.tar.xz:0
 DISTFILES += libwps-0.4.8.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
-DISTFILES += mdds-1.4.3.tar.bz2:0
-DISTFILES += pdfium-3794.tar.bz2:0
+DISTFILES += mdds-1.5.0.tar.bz2:0
+DISTFILES += pdfium-3963.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
 DISTFILES += ReemKufi-0.7.zip:0
 DISTFILES += Scheherazade-2.100.zip:0
 DISTFILES += Amiri-0.111.zip:0
+DISTFILES += QR-Code-generator-1.4.0.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -193,8 +205,7 @@ MODULES+=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 
-LIB_DEPENDS-main=x11/gtk+2 \
-		databases/openldap \
+LIB_DEPENDS-main=databases/openldap \
 		databases/mariadb \
 		databases/postgresql \
 		devel/boost \
@@ -213,14 +224,14 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/redland \
 		textproc/hunspell
 
-WANTLIB-main=	${COMPILER_LIBCXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14
+WANTLIB-main=	${COMPILER_LIBCXX}
 WANTLIB-main+=	xslt>=3 curl>=7 neon>=24 pq>=2 icuuc>=0 icui18n rdf>=0
-WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage
-WANTLIB-main+=	Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB-main+=	ICE SM X11
+WANTLIB-main+=	Xext Xrandr Xrender atk-1.0 c cairo
 WANTLIB-main+=	crypto expat fontconfig freetype gio-2.0 glib-2.0
-WANTLIB-main+=	gobject-2.0 gthread-2.0 iconv intl util
+WANTLIB-main+=	gobject-2.0 iconv intl util
 WANTLIB-main+=	jpeg m pthread ssl xml2 z gdk_pixbuf-2.0 poppler
-WANTLIB-main+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 hunspell-1.6
+WANTLIB-main+=	pango-1.0 pangocairo-1.0 hunspell-1.6
 WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main+=	cups exslt lcms2 raptor2 harfbuzz harfbuzz-icu
 WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 ssl3
@@ -248,7 +259,7 @@ LIB_DEPENDS-kde=	devel/kf5/kcoreaddons \
 			devel/kf5/kio \
 			${MODQT_LIB_DEPENDS} \
 			${MODGCC4_CPPLIBDEP}
-WANTLIB-kde+=		icuuc ${COMPILER_LIBCXX} m pthread xcb
+WANTLIB-kde+=		icuuc ${COMPILER_LIBCXX} m pthread xcb xcb-icccm
 WANTLIB-kde+=		cairo graphite2 epoxy harfbuzz harfbuzz-icu
 WANTLIB-kde+=		KF5ConfigCore KF5CoreAddons KF5I18n KF5KIOCore
 WANTLIB-kde+=		KF5KIOFileWidgets KF5KIOWidgets KF5WindowSystem
@@ -299,7 +310,8 @@ CONFIGURE_ARGS+=\
 		--disable-libnumbertext \
 		--enable-mergelibs \
 		--enable-gio \
-		--enable-kde5 \
+		--enable-kf5 \
+		--enable-qt5 \
 		--enable-release-build \
 		--enable-cairo-canvas \
 		--with-compat-oowrappers \

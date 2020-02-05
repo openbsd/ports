@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-es,v 1.17 2018/02/05 17:15:05 robert Exp $
+@comment $OpenBSD: PLIST-i18n-es,v 1.18 2020/02/05 19:58:10 robert Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/es/
@@ -17,6 +17,7 @@ lib/libreoffice/program/resource/es/LC_MESSAGES/for.mo
 lib/libreoffice/program/resource/es/LC_MESSAGES/fps.mo
 lib/libreoffice/program/resource/es/LC_MESSAGES/frm.mo
 lib/libreoffice/program/resource/es/LC_MESSAGES/fwk.mo
+lib/libreoffice/program/resource/es/LC_MESSAGES/oox.mo
 lib/libreoffice/program/resource/es/LC_MESSAGES/pcr.mo
 lib/libreoffice/program/resource/es/LC_MESSAGES/rpt.mo
 lib/libreoffice/program/resource/es/LC_MESSAGES/sb.mo
@@ -50,6 +51,20 @@ lib/libreoffice/share/extensions/dict-an/an_ES.dic
 lib/libreoffice/share/extensions/dict-an/description.xml
 lib/libreoffice/share/extensions/dict-an/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-en/dialog/en_es.properties
+lib/libreoffice/share/extensions/dict-es/
+lib/libreoffice/share/extensions/dict-es/META-INF/
+lib/libreoffice/share/extensions/dict-es/META-INF/manifest.xml
+lib/libreoffice/share/extensions/dict-es/README_es_ANY.txt
+lib/libreoffice/share/extensions/dict-es/README_hyph_es_ANY.txt
+lib/libreoffice/share/extensions/dict-es/README_th_es_ANY.txt
+lib/libreoffice/share/extensions/dict-es/description.xml
+lib/libreoffice/share/extensions/dict-es/dictionaries.xcu
+lib/libreoffice/share/extensions/dict-es/es_ANY.aff
+lib/libreoffice/share/extensions/dict-es/es_ANY.dic
+lib/libreoffice/share/extensions/dict-es/hyph_es_ANY.dic
+lib/libreoffice/share/extensions/dict-es/package-description.txt
+lib/libreoffice/share/extensions/dict-es/th_es_ANY_v2.dat
+lib/libreoffice/share/extensions/dict-es/th_es_ANY_v2.idx
 lib/libreoffice/share/extensions/dict-gl/
 lib/libreoffice/share/extensions/dict-gl/COPYING_th_gl
 lib/libreoffice/share/extensions/dict-gl/Changelog.txt
