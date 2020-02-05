@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/02 17:02:36 edd Exp $
-bin/pybot${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.2 2020/02/05 20:43:13 sthen Exp $
 bin/rebot${MODPY_BIN_SUFFIX}
 bin/robot${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/robot/
@@ -60,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/robot/htmldata/libdoc/
 lib/python${MODPY_VERSION}/site-packages/robot/htmldata/libdoc/libdoc.css
 lib/python${MODPY_VERSION}/site-packages/robot/htmldata/libdoc/libdoc.html
 lib/python${MODPY_VERSION}/site-packages/robot/htmldata/libdoc/print.css
+lib/python${MODPY_VERSION}/site-packages/robot/htmldata/libdoc/pygments.css
 lib/python${MODPY_VERSION}/site-packages/robot/htmldata/normaltemplate.py
 lib/python${MODPY_VERSION}/site-packages/robot/htmldata/rebot/
 lib/python${MODPY_VERSION}/site-packages/robot/htmldata/rebot/common.css
@@ -87,6 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}consoleviewer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}htmlwriter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}java9builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}javabuilder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}pyc
@@ -97,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/${MODPY_PYCACHE}xmlwrit
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/builder.py
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/consoleviewer.py
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/htmlwriter.py
+lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/java9builder.py
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/javabuilder.py
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/model.py
 lib/python${MODPY_VERSION}/site-packages/robot/libdocpkg/output.py
@@ -237,6 +239,7 @@ lib/python${MODPY_VERSION}/site-packages/robot/parsing/${MODPY_PYCACHE}model.${M
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/${MODPY_PYCACHE}populators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/${MODPY_PYCACHE}restreader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/${MODPY_PYCACHE}restsupport.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/robot/parsing/${MODPY_PYCACHE}robotreader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/${MODPY_PYCACHE}tablepopulators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/${MODPY_PYCACHE}tsvreader.${MODPY_PYC_MAGIC_TAG}pyc
@@ -248,6 +251,7 @@ lib/python${MODPY_VERSION}/site-packages/robot/parsing/model.py
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/populators.py
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/restreader.py
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/restsupport.py
+lib/python${MODPY_VERSION}/site-packages/robot/parsing/robotreader.py
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/settings.py
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/tablepopulators.py
 lib/python${MODPY_VERSION}/site-packages/robot/parsing/tsvreader.py
@@ -336,6 +340,7 @@ lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}argumentconverter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}argumentmapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}argumentparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}argumentresolver.${MODPY_PYC_MAGIC_TAG}pyc
@@ -343,6 +348,9 @@ lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}argumentvalidator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}embedded.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}javaargumentcoercer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}typeconverters.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/${MODPY_PYCACHE}typevalidator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/argumentconverter.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/argumentmapper.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/argumentparser.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/argumentresolver.py
@@ -350,6 +358,8 @@ lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/argumentspec.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/argumentvalidator.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/embedded.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/javaargumentcoercer.py
+lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/typeconverters.py
+lib/python${MODPY_VERSION}/site-packages/robot/running/arguments/typevalidator.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/builder.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/context.py
 lib/python${MODPY_VERSION}/site-packages/robot/running/defaults.py
@@ -374,6 +384,8 @@ lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/
 lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/${MODPY_PYCACHE}ironpython.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/${MODPY_PYCACHE}jython.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/${MODPY_PYCACHE}posix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/running/timeouts/ironpython.py
@@ -410,7 +422,6 @@ lib/python${MODPY_VERSION}/site-packages/robot/utils/${MODPY_PYCACHE}markupwrite
 lib/python${MODPY_VERSION}/site-packages/robot/utils/${MODPY_PYCACHE}match.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/utils/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/utils/${MODPY_PYCACHE}normalizing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/robot/utils/${MODPY_PYCACHE}ordereddict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/utils/${MODPY_PYCACHE}platform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/utils/${MODPY_PYCACHE}recommendations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/robot/utils/${MODPY_PYCACHE}robotenv.${MODPY_PYC_MAGIC_TAG}pyc
@@ -447,7 +458,6 @@ lib/python${MODPY_VERSION}/site-packages/robot/utils/markupwriters.py
 lib/python${MODPY_VERSION}/site-packages/robot/utils/match.py
 lib/python${MODPY_VERSION}/site-packages/robot/utils/misc.py
 lib/python${MODPY_VERSION}/site-packages/robot/utils/normalizing.py
-lib/python${MODPY_VERSION}/site-packages/robot/utils/ordereddict.py
 lib/python${MODPY_VERSION}/site-packages/robot/utils/platform.py
 lib/python${MODPY_VERSION}/site-packages/robot/utils/recommendations.py
 lib/python${MODPY_VERSION}/site-packages/robot/utils/robotenv.py
@@ -510,4 +520,9 @@ lib/python${MODPY_VERSION}/site-packages/robot/writer/formatters.py
 lib/python${MODPY_VERSION}/site-packages/robot/writer/htmlformatter.py
 lib/python${MODPY_VERSION}/site-packages/robot/writer/htmltemplate.py
 lib/python${MODPY_VERSION}/site-packages/robot/writer/rowsplitter.py
-lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
