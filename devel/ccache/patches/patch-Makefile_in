@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2019/11/10 18:38:47 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2020/02/05 00:12:44 sthen Exp $
 
 remove gmake-isms - this port needs to have no dependencies (for USE_CCACHE)
 
@@ -9,7 +9,7 @@ get rid of warning spam during build,
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -106,19 +106,15 @@ files_to_distclean = Makefile config.h config.log conf
+@@ -105,19 +105,15 @@ files_to_distclean = Makefile config.h config.log conf
  all: ccache$(EXEEXT)
  
  ccache$(EXEEXT): $(ccache_objs) $(extra_libs)
@@ -30,7 +30,7 @@ Index: Makefile.in
  @disable_man@	$(Q)$(installcmd) -d $(DESTDIR)$(mandir)/man1
  @disable_man@	$(Q)-$(installcmd) -m 644 ccache.1 $(DESTDIR)$(mandir)/man1/
  
-@@ -126,9 +122,6 @@ install: ccache$(EXEEXT) @disable_man@ccache.1
+@@ -125,9 +121,6 @@ install: ccache$(EXEEXT) @disable_man@ccache.1
  clean:
  	rm -rf $(files_to_clean)
  
@@ -40,7 +40,7 @@ Index: Makefile.in
  $(zlib_objs): CPPFLAGS += -include config.h
  $(zlib_objs): CFLAGS += @no_implicit_fallthrough_warning@
  
-@@ -177,7 +170,6 @@ installcheck: ccache$(EXEEXT) unittest/run$(EXEEXT)
+@@ -176,7 +169,6 @@ installcheck: ccache$(EXEEXT) unittest/run$(EXEEXT)
  	CCACHE=$(bindir)/ccache CC='$(CC)' $(BASH) $(srcdir)/test/run
  
  .c.o:
