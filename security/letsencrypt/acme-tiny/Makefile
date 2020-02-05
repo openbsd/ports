@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/02/05 19:43:09 sthen Exp $
 
 COMMENT=	small 3rd-party letsencrypt client
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	diafygi
 GH_PROJECT=	acme-tiny
 GH_TAGNAME=	4.0.4
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/diafygi/acme-tiny
 
