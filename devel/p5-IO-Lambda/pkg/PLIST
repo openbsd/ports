@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 22:40:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/05 14:25:35 benoit Exp $
 ${P5SITE}/IO/Lambda/
 ${P5SITE}/IO/Lambda.pm
 ${P5SITE}/IO/Lambda/Backtrace.pm
-${P5SITE}/IO/Lambda/Compat.pm
 ${P5SITE}/IO/Lambda/DBI.pm
 ${P5SITE}/IO/Lambda/DNS.pm
 ${P5SITE}/IO/Lambda/Flock.pm
@@ -12,9 +11,12 @@ ${P5SITE}/IO/Lambda/HTTP.pm
 ${P5SITE}/IO/Lambda/HTTP/Authen/
 ${P5SITE}/IO/Lambda/HTTP/Authen/NTLM.pm
 ${P5SITE}/IO/Lambda/HTTP/Authen/Negotiate.pm
+${P5SITE}/IO/Lambda/HTTP/Client.pm
 ${P5SITE}/IO/Lambda/HTTP/HTTPS.pm
+${P5SITE}/IO/Lambda/HTTP/Server.pm
 ${P5SITE}/IO/Lambda/Loop/
 ${P5SITE}/IO/Lambda/Loop/AnyEvent.pm
+${P5SITE}/IO/Lambda/Loop/Glib.pm
 ${P5SITE}/IO/Lambda/Loop/POE.pm
 ${P5SITE}/IO/Lambda/Loop/Prima.pm
 ${P5SITE}/IO/Lambda/Loop/Select.pm
@@ -28,15 +30,17 @@ ${P5SITE}/IO/Lambda/Thread.pm
 ${P5SITE}/IO/Lambda/Throttle.pm
 @man man/man3p/IO::Lambda.3p
 @man man/man3p/IO::Lambda::Backtrace.3p
-@man man/man3p/IO::Lambda::Compat.3p
 @man man/man3p/IO::Lambda::DBI.3p
 @man man/man3p/IO::Lambda::DNS.3p
 @man man/man3p/IO::Lambda::Flock.3p
 @man man/man3p/IO::Lambda::Fork.3p
 @man man/man3p/IO::Lambda::HTTP.3p
 @man man/man3p/IO::Lambda::HTTP::Authen::NTLM.3p
+@man man/man3p/IO::Lambda::HTTP::Client.3p
 @man man/man3p/IO::Lambda::HTTP::HTTPS.3p
+@man man/man3p/IO::Lambda::HTTP::Server.3p
 @man man/man3p/IO::Lambda::Loop::AnyEvent.3p
+@man man/man3p/IO::Lambda::Loop::Glib.3p
 @man man/man3p/IO::Lambda::Loop::POE.3p
 @man man/man3p/IO::Lambda::Loop::Prima.3p
 @man man/man3p/IO::Lambda::Loop::Select.3p
@@ -63,6 +67,7 @@ share/examples/p5-IO-Lambda/bench/tcp-raw.pl
 share/examples/p5-IO-Lambda/dbi.pl
 share/examples/p5-IO-Lambda/dns.pl
 share/examples/p5-IO-Lambda/fork.pl
+share/examples/p5-IO-Lambda/gtk.pl
 share/examples/p5-IO-Lambda/http-redirect.pl
 share/examples/p5-IO-Lambda/loop.pl
 share/examples/p5-IO-Lambda/parallel.pl
