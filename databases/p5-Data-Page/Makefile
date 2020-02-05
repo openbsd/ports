@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/05 08:41:28 benoit Exp $
 
 COMMENT =	pager utility
 
-DISTNAME =	Data-Page-2.02
+DISTNAME =	Data-Page-2.03
 CATEGORIES =	databases
 MODULES =	cpan
 PKG_ARCH =	*
-
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
