@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/12/14 13:33:16 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/02/05 09:59:18 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/autobox/
-${P5ARCH}/auto/autobox/autobox.so
+@so ${P5ARCH}/auto/autobox/autobox.so
 ${P5ARCH}/autobox/
 ${P5ARCH}/autobox.pm
 ${P5ARCH}/autobox.pod
