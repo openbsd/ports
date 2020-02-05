@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/02/05 20:55:29 fcambus Exp $
 
 COMMENT =	C macros to add, find and delete items from a hash
 
 GH_ACCOUNT =	troydhanson
 GH_PROJECT =	uthash
 GH_TAGNAME =	v2.1.0
+REVISION =	0
 
 CATEGORIES =	devel
+
+HOMEPAGE =	https://troydhanson.github.io/uthash/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
