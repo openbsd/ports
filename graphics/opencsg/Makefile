@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2020/02/04 06:09:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/02/05 19:22:26 rsadowski Exp $
 
 COMMENT =		constructive solid geometry rendering library
 
 V =			1.4.2
 DISTNAME =		OpenCSG-${V}
 PKGNAME =		opencsg-${V}
+REVISION =		0
 
 SHARED_LIBS =		opencsg		1.0
 
@@ -21,8 +22,6 @@ MASTER_SITES =		http://www.opencsg.org/
 
 MODULES =		devel/qmake \
 			x11/qt5
-
-MODQT_DEPS =		No
 
 SEPARATE_BUILD =	No
 
