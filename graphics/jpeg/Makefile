@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.66 2020/01/01 14:24:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2020/02/05 17:31:09 thfr Exp $
 
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
 V=		2.0.4
 DISTNAME=	libjpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
+REVISION=	0
 EPOCH=		0
 
 SHARED_LIBS+=	jpeg		70.0	# 64.0
+SHARED_LIBS+=	turbojpeg	0.0	# 2.0.4
 
 CATEGORIES=	graphics
 DPB_PROPERTIES=	parallel
@@ -19,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libjpeg-turbo/}
 
-WANTLIB=	c
+WANTLIB=	c m
 
 MODULES=	devel/cmake
 
@@ -27,8 +29,7 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/yasm
 .endif
 
-CONFIGURE_ARGS+= -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-		 -DWITH_TURBOJPEG=False
+CONFIGURE_ARGS+= -DCMAKE_INSTALL_PREFIX="${PREFIX}"
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 post-install:
@@ -37,7 +38,5 @@ post-install:
 	    ${PREFIX}/share/doc/jpeg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jpeg
 	${INSTALL_DATA} ${WRKSRC}/example.txt ${PREFIX}/share/examples/jpeg
-	# the turbojpeg wrapper library is disabled
-	rm ${PREFIX}/lib/pkgconfig/libturbojpeg.pc
 
 .include <bsd.port.mk>

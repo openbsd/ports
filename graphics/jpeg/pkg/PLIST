@@ -1,16 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/01/01 14:24:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/02/05 17:31:09 thfr Exp $
 @bin bin/cjpeg
 @bin bin/djpeg
 @bin bin/jpegtran
 @bin bin/rdjpgcom
+@bin bin/tjbench
 @bin bin/wrjpgcom
 include/jconfig.h
 include/jerror.h
 include/jmorecfg.h
 include/jpeglib.h
+include/turbojpeg.h
 @static-lib lib/libjpeg.a
 @lib lib/libjpeg.so.${LIBjpeg_VERSION}
+@static-lib lib/libturbojpeg.a
+@lib lib/libturbojpeg.so.${LIBturbojpeg_VERSION}
 lib/pkgconfig/libjpeg.pc
+lib/pkgconfig/libturbojpeg.pc
 @man man/man1/cjpeg.1
 @man man/man1/djpeg.1
 @man man/man1/jpegtran.1
