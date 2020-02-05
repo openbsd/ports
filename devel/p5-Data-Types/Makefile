@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/02/05 11:39:19 benoit Exp $
 
 COMMENT=		validate and convert data types
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		Data-Types-0.16
+DISTNAME =		Data-Types-0.17
 CATEGORIES=		devel
 
 # perl
