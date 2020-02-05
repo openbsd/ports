@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_debug_c,v 1.1 2020/02/05 21:22:17 kn Exp $
+
+Disable colors by default.
+
+Index: src/debug.c
+--- src/debug.c.orig
++++ src/debug.c
+@@ -76,6 +76,7 @@ static void log_init(void)
+ 	if (e)
+ 		LogLevel = atoi(e);
+ 
++#if 0
+ 	/* log to stderr and stderr is a tty? */
+ 	if (isatty(fileno(stderr)))
+ 	{
+@@ -99,6 +100,7 @@ static void log_init(void)
+ 			}
+ 		}
+ 	}
++#endif
+ } /* log_init */
+ 
+ void log_msg(const int priority, const char *fmt, ...)

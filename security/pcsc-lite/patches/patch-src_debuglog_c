@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_debuglog_c,v 1.1 2020/02/05 21:22:17 kn Exp $
+
+Disable colors by default.
+
+Index: src/debuglog.c
+--- src/debuglog.c.orig
++++ src/debuglog.c
+@@ -255,6 +255,9 @@ void DebugLogSetLogType(const int dbgtype)
+ 			LogMsgType = DEBUGLOG_STDOUT_DEBUG;
+ 	}
+ 
++	if (DEBUGLOG_STDOUT_COLOR_DEBUG == LogMsgType)
++		LogDoColor = 1;
++#if 0
+ 	/* log to stdout and stdout is a tty? */
+ 	if ((DEBUGLOG_STDOUT_DEBUG == LogMsgType && isatty(fileno(stdout)))
+ 		|| (DEBUGLOG_STDOUT_COLOR_DEBUG == LogMsgType))
+@@ -279,6 +282,7 @@ void DebugLogSetLogType(const int dbgtype)
+ 			}
+ 		}
+ 	}
++#endif
+ }
+ 
+ void DebugLogSetLevel(const int level)
