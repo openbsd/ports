@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/02/05 12:28:23 benoit Exp $
 
 COMMENT=	universal I/O to everything
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	IO-All-0.86
+DISTNAME =	IO-All-0.87
 CATEGORIES=	devel
 
 # perl
