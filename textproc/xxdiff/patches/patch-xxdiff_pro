@@ -1,7 +1,8 @@
-$OpenBSD: patch-xxdiff_pro,v 1.4 2016/08/26 22:00:58 jca Exp $
---- xxdiff.pro.orig	Mon May 16 00:55:57 2016
-+++ xxdiff.pro	Fri Aug 26 23:41:55 2016
-@@ -214,7 +214,6 @@ HEADERS = \
+$OpenBSD: patch-xxdiff_pro,v 1.5 2020/02/05 13:23:02 bket Exp $
+Index: xxdiff.pro
+--- xxdiff.pro.orig
++++ xxdiff.pro
+@@ -227,7 +227,6 @@ HEADERS = \
  	util.h \
  	markers.h \
  	borderLabel.h \
@@ -9,7 +10,7 @@ $OpenBSD: patch-xxdiff_pro,v 1.4 2016/08/26 22:00:58 jca Exp $
  	diffutils.h \
  	diffutils_hack.h \
  	doc.html \
-@@ -253,8 +252,6 @@ SOURCES = \
+@@ -266,8 +265,6 @@ SOURCES = \
  	resParser.cpp \
  	markers.cpp \
  	borderLabel.cpp \

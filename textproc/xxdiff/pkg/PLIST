@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/08/26 22:00:58 jca Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/02/05 13:23:02 bket Exp $
 bin/svn-foreign
 bin/termdiff
 bin/xx-cond-replace
@@ -94,5 +94,5 @@ lib/python${MODPY_VERSION}/site-packages/xxdiff/utils.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/xformloop.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/xformloop.pyc
-lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-4.0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-5.0b1-py${MODPY_VERSION}.egg-info
 @man man/man1/xxdiff.1

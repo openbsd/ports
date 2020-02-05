@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 21:02:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2020/02/05 13:23:02 bket Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
-DISTNAME=	xxdiff-4.0.1
+PKGNAME=	xxdiff-4.0.1.20170623
+DISTNAME=	5e5f885dfc43559549a81c59e9e8c9525306356a
+
 CATEGORIES=	textproc x11
-REVISION=	1
 
 HOMEPAGE=	http://furius.ca/xxdiff/
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB += freetype m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	https://bitbucket.org/blais/xxdiff/get/
 
 MODULES=	devel/qmake \
 		lang/python \
-		x11/qt4
+		x11/qt5
+
 BUILD_DEPENDS=	devel/bison
+
+MAKE_FLAGS=	MAKEDIR=${WRKDIST}
 
 SEPARATE_BUILD=	No
 
@@ -30,12 +30,12 @@ MODPY_ADJ_FILES= ../bin/termdiff
 
 NO_TEST=	Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/src
+WRKDIST=	${WRKDIR}/blais-xxdiff-${DISTNAME:C/([0-9a-f]{12}).*/\1/}/src
 
 post-extract:
-	@rm ${WRKSRC}/getopt.h
-	@rm ${WRKSRC}/getopt.c
-	@rm ${WRKSRC}/getopt1.c
+	@rm ${WRKDIST}/getopt.h
+	@rm ${WRKDIST}/getopt.c
+	@rm ${WRKDIST}/getopt1.c
 
 post-configure:
 	cat ${WRKSRC}/Makefile.extra >>${WRKBUILD}/Makefile
