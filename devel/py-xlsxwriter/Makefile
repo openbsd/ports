@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/09/16 05:33:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.23 2020/02/05 09:32:39 rpointel Exp $
 
 COMMENT =	Python module for creating Excel XLSX files
 
-MODPY_EGG_VERSION = 1.2.1
+MODPY_EGG_VERSION = 1.2.7
 DISTNAME =	XlsxWriter-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
