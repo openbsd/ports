@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/09 08:24:53 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/05 21:01:06 fcambus Exp $
 
 COMMENT =	simple text-based game of interstellar trading
 
 DISTNAME =	trader-7.14
+REVISION =	0
 
 CATEGORIES =	games
 
-HOMEPAGE =	https://www.zap.org.au/software/trader/
+HOMEPAGE =	https://www.zap.org.au/projects/trader/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
