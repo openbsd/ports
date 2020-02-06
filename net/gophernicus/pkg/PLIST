@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/04 12:46:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/02/06 18:06:10 edd Exp $
 @newgroup _gophernicus:704
 @newuser _gophernicus:704:704:daemon:Gophernicus Gopher Server:/nonexistent:/sbin/nologin
 @bin libexec/in.gophernicus
 share/doc/gophernicus/
-share/doc/gophernicus/ChangeLog
-share/doc/gophernicus/INSTALL
+share/doc/gophernicus/INSTALL.md
 share/doc/gophernicus/LICENSE
 share/doc/gophernicus/README
 share/doc/gophernicus/README.Gophermap
