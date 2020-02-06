@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2019/11/28 05:45:19 bket Exp $
+# $OpenBSD: Makefile,v 1.33 2020/02/06 16:18:10 bket Exp $
 
 COMMENT =	python powered git gui
 
 MODPY_EGG_VERSION=	3.6
-DISTNAME =	${GH_PROJECT}-${MODPY_EGG_VERSION}
+REVISION =		0
+DISTNAME =		${GH_PROJECT}-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	git-cola
 GH_PROJECT =	git-cola
@@ -16,26 +17,27 @@ HOMEPAGE =	https://git-cola.github.io/
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PYTEST =	Yes
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/git \
 		devel/git,-x11 \
 		textproc/xxdiff \
-		x11/py-qt4 \
-		x11/py-qtpy
+		x11/py-qt5${MODPY_FLAVOR} \
+		x11/py-qtpy${MODPY_FLAVOR}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/git \
 		devel/git,-x11 \
 		textproc/xxdiff \
-		x11/py-qt4 \
-		x11/py-qtpy
+		x11/py-qt5${MODPY_FLAVOR} \
+		x11/py-qtpy${MODPY_FLAVOR}
 
-TEST_DEPENDS =	devel/py-mock
+TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR}
 
 USE_GMAKE =	Yes
 
