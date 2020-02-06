@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/06 00:40:22 jeremy Exp $
 
 COMMENT =	point cloud storage extension for PostgreSQL
 
@@ -8,9 +8,10 @@ GH_ACCOUNT =	pgpointcloud
 
 CATEGORIES =	geo databases
 
-REVISION =		0
+REVISION =		1
 MASTER_SITES0 =		https://github.com/pgpointcloud/pointcloud/commit/
-PATCHFILES =		pgpointcloud-patch1.patch{3e64c68dd4e0b9b9fdf0a74492ab49023161f6f1.diff}:0
+PATCHFILES =		pgpointcloud-patch1.patch{3e64c68dd4e0b9b9fdf0a74492ab49023161f6f1.diff}:0 \
+			pgpointcloud-patch2.patch{fa6faa4ec4ba28b61a9f6d160624257420ce7555.diff}:0
 PATCH_DIST_STRIP =	-p1
 
 # BSD
