@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/06 00:36:58 jeremy Exp $
 
 COMMENT =		R procedural language for PostgreSQL
 
-VERSION =		8.3.0.18
-DISTNAME =		REL8_3_0_18
+VERSION =		8.4
+DISTNAME =		REL8_4
 PKGNAME =		postgresql-plr-${VERSION}
 
 CATEGORIES =		databases
