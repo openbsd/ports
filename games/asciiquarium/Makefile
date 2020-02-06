@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/06 09:36:31 fcambus Exp $
 
 COMMENT =	aquarium animation in ASCII art
 
 DISTNAME =	asciiquarium_1.1
 PKGNAME = 	${DISTNAME:S/_/-/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://www.robobunny.com/projects/asciiquarium/html/
+HOMEPAGE =	https://www.robobunny.com/projects/asciiquarium/html/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	http://www.robobunny.com/projects/asciiquarium/
+MASTER_SITES =	https://www.robobunny.com/projects/asciiquarium/
 
 RUN_DEPENDS =	misc/p5-Term-Animation
 
