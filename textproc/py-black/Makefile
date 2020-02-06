@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/23 19:41:01 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/06 20:36:03 danj Exp $
 
 COMMENT =		python code formatter
 
 MODPY_EGG_VERSION =	19.3b0
 DISTNAME =		black-${MODPY_EGG_VERSION}
 PKGNAME =		py-black-${MODPY_EGG_VERSION:S/b/beta/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc devel
-
-MAINTAINER =		Daniel Jakots <obsd@chown.me>
 
 HOMEPAGE =		https://github.com/ambv/black
 
