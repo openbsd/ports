@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/02/06 00:40:06 jeremy Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
 # XXX outdated; http://pgfoundry.org/frs/download.php/3622/skytools-3.2.tar.gz
 MODPY_EGG_VERSION=	3.1.1
 DISTNAME=		skytools-${MODPY_EGG_VERSION}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	databases
 
@@ -22,9 +22,9 @@ MASTER_SITES=	https://github.com/downloads/markokr/skytools/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	databases/postgresql,-server>11 \
-		databases/postgresql,-main>11
-LIB_DEPENDS=	databases/postgresql,-main
+BUILD_DEPENDS=	databases/postgresql,-server>=12 \
+		databases/postgresql,-main>=12
+LIB_DEPENDS=	databases/postgresql,-main>=12
 RUN_DEPENDS=    databases/py-psycopg2
 
 NO_TEST=	Yes
