@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.387 2019/12/16 22:03:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.388 2020/02/06 11:30:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -33,6 +33,7 @@
      SUBDIR += dkimproxy
      SUBDIR += dma
      SUBDIR += dovecot
+     SUBDIR += dovecot-fts-xapian
      SUBDIR += dovecot-pigeonhole
      SUBDIR += dspam
      SUBDIR += dspam,clamav
