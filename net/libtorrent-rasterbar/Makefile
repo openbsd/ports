@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/06 20:00:16 rsadowski Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
-MODPY_EGG_VERSION =	1.1.13
+MODPY_EGG_VERSION =	1.2.3
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
 
-SHARED_LIBS +=  	torrent-rasterbar 1.0	# 9.0.0
+SHARED_LIBS +=  	torrent-rasterbar 2.0	# 10.0.0
 
 CATEGORIES =		net devel
 
@@ -14,13 +14,13 @@ HOMEPAGE =		https://libtorrent.org/
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += boost_chrono-mt boost_python boost_random-mt boost_system-mt
-WANTLIB += crypto m ssl
+WANTLIB += boost_python3 boost_system-mt crypto m ssl
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 
 MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/libtorrent-${MODPY_EGG_VERSION:S/./_/g}/
 
 MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/libtool
 
@@ -32,12 +32,15 @@ COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-python-binding \
+			--enable-tests \
 			--with-boost-system=boost_system-mt \
+			--with-boost-python=boost_python3 \
 			--with-libiconv
 CONFIGURE_ENV +=	CPPFLAGS="-Wno-deprecated-declarations \
 				  -Wno-macro-redefined \
 				  -pthread" \
-			PYTHON_CXXFLAGS="${PYTHON_CXXFLAGS} -std=gnu++14"
+			PYTHON_CXXFLAGS="${PYTHON_CXXFLAGS} -std=gnu++14" \
+			PYTHON=${MODPY_DEFAULT_VERSION_3}
 MAKE_ENV =		CC="${CC}" CXX="${CXX}"
 CXXFLAGS +=		-std=gnu++14
 
@@ -47,5 +50,8 @@ CONFIGURE_ARGS +=	--enable-debug
 
 pre-configure:
 	sed -i 's,-Os,,g' ${WRKSRC}/configure
+
+pre-test:
+	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
