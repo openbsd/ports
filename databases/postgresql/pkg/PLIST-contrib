@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-contrib,v 1.20 2019/02/19 05:09:18 jeremy Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.21 2020/02/06 00:36:12 jeremy Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql
@@ -9,51 +9,50 @@
 @bin bin/pg_test_timing
 @bin bin/pgbench
 @bin bin/vacuumlo
-lib/postgresql/_int.so
-lib/postgresql/adminpack.so
-lib/postgresql/amcheck.so
-lib/postgresql/auth_delay.so
-lib/postgresql/auto_explain.so
-lib/postgresql/autoinc.so
-lib/postgresql/bloom.so
-lib/postgresql/btree_gin.so
-lib/postgresql/btree_gist.so
-lib/postgresql/citext.so
-lib/postgresql/cube.so
-lib/postgresql/dblink.so
-lib/postgresql/earthdistance.so
-lib/postgresql/file_fdw.so
-lib/postgresql/fuzzystrmatch.so
-lib/postgresql/hstore.so
-lib/postgresql/hstore_plperl.so
-lib/postgresql/insert_username.so
-lib/postgresql/isn.so
-lib/postgresql/lo.so
-lib/postgresql/ltree.so
-lib/postgresql/moddatetime.so
-lib/postgresql/pageinspect.so
-lib/postgresql/passwordcheck.so
-lib/postgresql/pg_buffercache.so
-lib/postgresql/pg_freespacemap.so
-lib/postgresql/pg_prewarm.so
-lib/postgresql/pg_stat_statements.so
-lib/postgresql/pg_trgm.so
-lib/postgresql/pg_visibility.so
-lib/postgresql/pgcrypto.so
-lib/postgresql/pgrowlocks.so
-lib/postgresql/pgstattuple.so
-lib/postgresql/pgxml.so
-lib/postgresql/postgres_fdw.so
-lib/postgresql/refint.so
-lib/postgresql/seg.so
-lib/postgresql/sslinfo.so
-lib/postgresql/tablefunc.so
-lib/postgresql/tcn.so
-lib/postgresql/timetravel.so
-lib/postgresql/tsm_system_rows.so
-lib/postgresql/tsm_system_time.so
-lib/postgresql/unaccent.so
-lib/postgresql/uuid-ossp.so
+@so lib/postgresql/_int.so
+@so lib/postgresql/adminpack.so
+@so lib/postgresql/amcheck.so
+@so lib/postgresql/auth_delay.so
+@so lib/postgresql/auto_explain.so
+@so lib/postgresql/autoinc.so
+@so lib/postgresql/bloom.so
+@so lib/postgresql/btree_gin.so
+@so lib/postgresql/btree_gist.so
+@so lib/postgresql/citext.so
+@so lib/postgresql/cube.so
+@so lib/postgresql/dblink.so
+@so lib/postgresql/earthdistance.so
+@so lib/postgresql/file_fdw.so
+@so lib/postgresql/fuzzystrmatch.so
+@so lib/postgresql/hstore.so
+@so lib/postgresql/hstore_plperl.so
+@so lib/postgresql/insert_username.so
+@so lib/postgresql/isn.so
+@so lib/postgresql/lo.so
+@so lib/postgresql/ltree.so
+@so lib/postgresql/moddatetime.so
+@so lib/postgresql/pageinspect.so
+@so lib/postgresql/passwordcheck.so
+@so lib/postgresql/pg_buffercache.so
+@so lib/postgresql/pg_freespacemap.so
+@so lib/postgresql/pg_prewarm.so
+@so lib/postgresql/pg_stat_statements.so
+@so lib/postgresql/pg_trgm.so
+@so lib/postgresql/pg_visibility.so
+@so lib/postgresql/pgcrypto.so
+@so lib/postgresql/pgrowlocks.so
+@so lib/postgresql/pgstattuple.so
+@so lib/postgresql/pgxml.so
+@so lib/postgresql/postgres_fdw.so
+@so lib/postgresql/refint.so
+@so lib/postgresql/seg.so
+@so lib/postgresql/sslinfo.so
+@so lib/postgresql/tablefunc.so
+@so lib/postgresql/tcn.so
+@so lib/postgresql/tsm_system_rows.so
+@so lib/postgresql/tsm_system_time.so
+@so lib/postgresql/unaccent.so
+@so lib/postgresql/uuid-ossp.so
 @man man/man1/oid2name.1
 @man man/man1/pg_archivecleanup.1
 @man man/man1/pg_standby.1
@@ -252,9 +251,6 @@ share/postgresql/extension/tablefunc--unpackaged--1.0.sql
 share/postgresql/extension/tablefunc.control
 share/postgresql/extension/tcn--1.0.sql
 share/postgresql/extension/tcn.control
-share/postgresql/extension/timetravel--1.0.sql
-share/postgresql/extension/timetravel--unpackaged--1.0.sql
-share/postgresql/extension/timetravel.control
 share/postgresql/extension/tsm_system_rows--1.0.sql
 share/postgresql/extension/tsm_system_rows.control
 share/postgresql/extension/tsm_system_time--1.0.sql

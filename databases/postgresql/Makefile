@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2019/11/15 13:19:10 pea Exp $
+# $OpenBSD: Makefile,v 1.258 2020/02/06 00:36:12 jeremy Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -7,8 +7,8 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	11.6
-PREV_MAJOR=	10
+VERSION=	12.1
+PREV_MAJOR=	11
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -19,10 +19,10 @@ PKGNAME-pg_upgrade=postgresql-pg_upgrade-${VERSION}
 
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		7.9 \
-		ecpg_compat	4.9 \
-		pgtypes		4.8 \
-		pq		6.10
+SHARED_LIBS=	ecpg		7.10 \
+		ecpg_compat	4.10 \
+		pgtypes		4.9 \
+		pq		6.11
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -95,8 +95,10 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 ALL_TARGET=	world
 INSTALL_TARGET=	install-world
 
-LIB_DEPENDS-main= textproc/libxml
-WANTLIB-main =	${WANTLIB} xml2
+LIB_DEPENDS-main=	archivers/xz \
+			converters/libiconv \
+			textproc/libxml
+WANTLIB-main =	${WANTLIB} iconv lzma xml2
 
 
 LIB_DEPENDS-server= databases/postgresql=${VERSION} \
@@ -162,5 +164,7 @@ post-install:
 	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/postgresql
 	perl -i -pe ${INSTALL_REPLACE} \
 		${PREFIX}/lib/postgresql/pgxs/src/Makefile.global
+	${INSTALL_DATA} ${WRKSRC}/src/backend/utils/errcodes.txt \
+		${PREFIX}/share/postgresql
 
 .include <bsd.port.mk>

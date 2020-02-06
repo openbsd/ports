@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2019/02/19 05:09:18 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2020/02/06 00:36:12 jeremy Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -55,22 +55,24 @@ include/postgresql/sqlca.h
 include/postgresql/sqlda-compat.h
 include/postgresql/sqlda-native.h
 include/postgresql/sqlda.h
-lib/libecpg.a
+@static-lib lib/libecpg.a
 @comment lib/libecpg.so
 @comment lib/libecpg.so.7
 @lib lib/libecpg.so.${LIBecpg_VERSION}
-lib/libecpg_compat.a
+@static-lib lib/libecpg_compat.a
 @comment lib/libecpg_compat.so
 @comment lib/libecpg_compat.so.4
 @lib lib/libecpg_compat.so.${LIBecpg_compat_VERSION}
-lib/libpgcommon.a
-lib/libpgfeutils.a
-lib/libpgport.a
-lib/libpgtypes.a
+@static-lib lib/libpgcommon.a
+@static-lib lib/libpgcommon_shlib.a
+@static-lib lib/libpgfeutils.a
+@static-lib lib/libpgport.a
+@static-lib lib/libpgport_shlib.a
+@static-lib lib/libpgtypes.a
 @comment lib/libpgtypes.so
 @comment lib/libpgtypes.so.4
 @lib lib/libpgtypes.so.${LIBpgtypes_VERSION}
-lib/libpq.a
+@static-lib lib/libpq.a
 @comment lib/libpq.so
 @comment lib/libpq.so.6
 @lib lib/libpq.so.${LIBpq_VERSION}
@@ -108,6 +110,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man1/reindexdb.1
 @man man/man1/vacuumdb.1
 @man man/man3/SPI_commit.3
+@man man/man3/SPI_commit_and_chain.3
 @man man/man3/SPI_connect.3
 @man man/man3/SPI_connect_ext.3
 @man man/man3/SPI_copytuple.3
@@ -152,6 +155,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man3/SPI_result_code_string.3
 @man man/man3/SPI_returntuple.3
 @man man/man3/SPI_rollback.3
+@man man/man3/SPI_rollback_and_chain.3
 @man man/man3/SPI_saveplan.3
 @man man/man3/SPI_scroll_cursor_fetch.3
 @man man/man3/SPI_scroll_cursor_move.3
@@ -361,11 +365,10 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/VALUES.7
 @man man/man7/WITH.7
 share/postgresql/
-share/postgresql/conversion_create.sql
+share/postgresql/errcodes.txt
 share/postgresql/information_schema.sql
 share/postgresql/postgres.description
 share/postgresql/psqlrc.sample
-share/postgresql/recovery.conf.sample
 share/postgresql/snowball_create.sql
 share/postgresql/sql_features.txt
 share/postgresql/system_views.sql

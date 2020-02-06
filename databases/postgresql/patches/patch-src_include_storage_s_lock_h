@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_include_storage_s_lock_h,v 1.5 2018/02/18 17:37:13 sthen Exp $
+$OpenBSD: patch-src_include_storage_s_lock_h,v 1.6 2020/02/06 00:36:12 jeremy Exp $
 Index: src/include/storage/s_lock.h
 --- src/include/storage/s_lock.h.orig
 +++ src/include/storage/s_lock.h
-@@ -717,6 +717,29 @@ typedef unsigned char slock_t;
+@@ -734,6 +734,29 @@ typedef unsigned char slock_t;
  	do { __asm__ __volatile__("" : : : "memory");  *(lock) = 0; } while (0)
  #endif
  
