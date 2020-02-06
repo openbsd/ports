@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/06 09:28:37 benoit Exp $
 
 COMMENT =	calculate business hours in a time period
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Business-Hours-0.12
+DISTNAME =	Business-Hours-0.13
 CATEGORIES =	math
 
 # perl
