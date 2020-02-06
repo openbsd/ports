@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/06 00:39:50 jeremy Exp $
 
 COMMENT =	database connectivity and creation framework
 
 VERSION =	3.2.0
 DISTNAME =	kdb-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KDb3                      1.1 # 3.0
 

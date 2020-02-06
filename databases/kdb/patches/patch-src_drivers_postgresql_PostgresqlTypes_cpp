@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_drivers_postgresql_PostgresqlTypes_cpp,v 1.1 2020/02/06 00:39:50 jeremy Exp $
+
+Fix build with PostgreSQL 12, from upstream commit
+40cdaea4d7824cc1b0d26e6ad2dcb61fa2077911.
+
+Index: src/drivers/postgresql/PostgresqlTypes.cpp
+--- src/drivers/postgresql/PostgresqlTypes.cpp.orig
++++ src/drivers/postgresql/PostgresqlTypes.cpp
+@@ -36,6 +36,7 @@
+ #endif
+ #include <libpq-fe.h>
+ #include <catalog/pg_type.h> // needed for BOOLOID, etc.
++#include <pg_config.h> // needed for PG_VERSION_NUM
+ 
+ #ifdef _MSC_VER
+ #pragma warning( pop )
+@@ -70,8 +71,10 @@ void PostgresqlDriver::initPgsqlToKDbMap()
+     //! @todo POLYGONOID geometric polygon '(pt1,...)'
+     m_pgsqlToKDbTypes.insert(FLOAT4OID, KDbField::Double);
+     m_pgsqlToKDbTypes.insert(FLOAT8OID, KDbField::Double);
++#if PG_VERSION_NUM < 120000
+     m_pgsqlToKDbTypes.insert(ABSTIMEOID, KDbField::Date);
+     m_pgsqlToKDbTypes.insert(RELTIMEOID, KDbField::Date);
++#endif
+     //! @todo TINTERVALOID (abstime,abstime), time interval
+     //! @todo CIRCLEOID geometric circle '(center,radius)'
+     //! @todo CASHOID monetary amounts, $d,ddd.cc
