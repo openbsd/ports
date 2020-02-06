@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:46 sthen Exp $
-
-BROKEN-powerpc = bottleneck/src/move.c:568: internal compiler error: in extract_insn, at recog.c:2077
+# $OpenBSD: Makefile,v 1.9 2020/02/06 12:26:54 martin Exp $
 
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_EGG_VERSION =	1.2.1
+MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		Bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		1
+
+MAINTAINER =		Martin Reindl <martin@catai.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODPY_WANTLIB} pthread
+WANTLIB +=		${MODPY_WANTLIB} pthread
+
+# ICE with base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
@@ -27,8 +28,12 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-# one test fail:
-# numpy 1.9.2 - median() don't check if array contains any nan's
+MODPY_PYTEST =	Yes
+TEST_DEPENDS =	devel/py-pluggy${MODPY_FLAVOR} \
+		devel/py-nose${MODPY_FLAVOR} \
+		devel/py-test${MODPY_FLAVOR}
+
+# on python2 with base-clang, test_memory_leak fails
 pre-test:
 	@${MODPY_CMD} build_ext --inplace
 
