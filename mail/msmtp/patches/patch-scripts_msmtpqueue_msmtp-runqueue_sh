@@ -1,8 +1,10 @@
-$OpenBSD: patch-scripts_msmtpqueue_msmtp-runqueue_sh,v 1.1 2008/10/19 20:35:01 jasper Exp $
---- scripts/msmtpqueue/msmtp-runqueue.sh.orig	Mon Jul 28 00:21:43 2008
-+++ scripts/msmtpqueue/msmtp-runqueue.sh	Tue Oct 14 14:18:56 2008
+$OpenBSD: patch-scripts_msmtpqueue_msmtp-runqueue_sh,v 1.2 2020/02/06 11:26:10 sthen Exp $
+
+Index: scripts/msmtpqueue/msmtp-runqueue.sh
+--- scripts/msmtpqueue/msmtp-runqueue.sh.orig
++++ scripts/msmtpqueue/msmtp-runqueue.sh
 @@ -1,4 +1,4 @@
--#!/usr/bin/env bash
+-#!/usr/bin/env sh
 +#!/bin/sh
  
  QUEUEDIR="$HOME/.msmtpqueue"

@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 20:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2020/02/06 11:26:10 sthen Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
-DISTNAME =		msmtp-1.6.6
+DISTNAME =		msmtp-1.8.7
 CATEGORIES =		mail
-REVISION =		1
 
 HOMEPAGE =		https://marlam.de/msmtp/
+
+MAINTAINER =		Xiyue Deng <manphiz@gmail.com>
 
 # GPLv3
 PERMIT_PACKAGE =		Yes
 
-WANTLIB =  c crypto iconv idn intl ssl
+WANTLIB =  c iconv idn2 intl gnutls
 
 MASTER_SITES =		https://marlam.de/msmtp/releases/
 EXTRACT_SUFX =		.tar.xz
 
-LIB_DEPENDS =		devel/libidn
+LIB_DEPENDS =		devel/libidn2 \
+			security/gnutls
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-libgsasl=no \
 			--with-libidn=yes \
-			--with-tls=openssl \
+			--with-tls=gnutls \
 			--without-libsecret
 
 post-install:
