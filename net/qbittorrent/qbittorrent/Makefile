@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/07 17:40:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/06 20:00:18 rsadowski Exp $
 
 COMMENT =		BitTorrent client with Qt interface
-REVISION =		2
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Xml boost_system
-WANTLIB += boost_system-mt c m torrent-rasterbar z
+WANTLIB += boost_system-mt c crypto m ssl torrent-rasterbar z
 WANTLIB += GL Qt5DBus Qt5Gui Qt5Svg Qt5Widgets
 
 LIB_DEPENDS +=		net/libtorrent-rasterbar \
@@ -14,6 +13,11 @@ LIB_DEPENDS +=		net/libtorrent-rasterbar \
 RUN_DEPENDS +=		lang/python/2.7 \
 			x11/gtk+3,-guic \
 			devel/desktop-file-utils
+
+# remove include directives which cause incorrect gmake behavior
+pre-build:
+	@cd ${WRKBUILD}/src && \
+		sed -ie "/^\-include/d" Makefile
 
 pre-install:
 	${SUBST_CMD} ${WRKSRC}/conf.pri

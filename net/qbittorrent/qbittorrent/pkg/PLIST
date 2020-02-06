@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/28 13:25:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/06 20:00:18 rsadowski Exp $
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
 @bin bin/qbittorrent
 @man man/man1/qbittorrent.1
-share/appdata/
-share/appdata/qbittorrent.appdata.xml
-share/applications/qbittorrent.desktop
+share/applications/org.qbittorrent.qBittorrent.desktop
 share/icons/hicolor/128x128/apps/qbittorrent.png
 share/icons/hicolor/128x128/status/qbittorrent-tray.png
 share/icons/hicolor/16x16/apps/qbittorrent.png
@@ -29,7 +29,7 @@ share/icons/hicolor/96x96/status/qbittorrent-tray.png
 share/icons/hicolor/scalable/status/qbittorrent-tray-dark.svg
 share/icons/hicolor/scalable/status/qbittorrent-tray-light.svg
 share/icons/hicolor/scalable/status/qbittorrent-tray.svg
+share/metainfo/
+share/metainfo/org.qbittorrent.qBittorrent.appdata.xml
 share/pixmaps/
 share/pixmaps/qbittorrent.png
-@tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag update-desktop-database
