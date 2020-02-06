@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:47:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2020/02/06 08:10:00 benoit Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
-DISTNAME =	ntl-9.11.0
-REVISION =	3
-SHARED_LIBS =	ntl	9.2	# 0.0
+DISTNAME =	ntl-11.4.3
+SHARED_LIBS =	ntl	10.0	# 0.0
 CATEGORIES =	math
 
-HOMEPAGE =	http://www.shoup.net/ntl/
+HOMEPAGE =	https://www.shoup.net/ntl/
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
@@ -39,7 +38,8 @@ do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/include/NTL
 	@cd ${WRKSRC}/include/NTL; ${INSTALL_DATA} *.h ${PREFIX}/include/NTL
 	@cd ${WRKBUILD}; ${INSTALL_DATA} .libs/libntl.a  ${PREFIX}/lib/libntl.a
-	@cd ${WRKBUILD}; ${INSTALL_DATA} .libs/libntl.so.${LIBntl_VERSION} ${PREFIX}/lib/libntl.so.${LIBntl_VERSION}
+	@cd ${WRKBUILD}; ${INSTALL_DATA} .libs/libntl.so.${LIBntl_VERSION} \
+		${PREFIX}/lib/libntl.so.${LIBntl_VERSION}
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/NTL
 	@cd ${WRKSRC}/doc; ${INSTALL_DATA} * ${PREFIX}/share/doc/NTL
 

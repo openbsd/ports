@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/06/07 13:35:28 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/02/06 08:10:00 benoit Exp $
 include/NTL/
+include/NTL/ALL_FEATURES.h
 include/NTL/BasicThreadPool.h
+include/NTL/ConfigLog.h
 include/NTL/FFT.h
+include/NTL/FFT_impl.h
 include/NTL/FacVec.h
 include/NTL/GF2.h
 include/NTL/GF2E.h
@@ -10,35 +13,45 @@ include/NTL/GF2EXFactoring.h
 include/NTL/GF2X.h
 include/NTL/GF2XFactoring.h
 include/NTL/GF2XVec.h
+include/NTL/HAVE_ALIGNED_ARRAY.h
 include/NTL/HAVE_AVX.h
+include/NTL/HAVE_AVX2.h
+include/NTL/HAVE_AVX512F.h
 include/NTL/HAVE_BUILTIN_CLZL.h
+include/NTL/HAVE_CHRONO_TIME.h
+include/NTL/HAVE_COPY_TRAITS1.h
+include/NTL/HAVE_COPY_TRAITS2.h
 include/NTL/HAVE_FMA.h
 include/NTL/HAVE_LL_TYPE.h
+include/NTL/HAVE_MACOS_TIME.h
+include/NTL/HAVE_PCLMUL.h
+include/NTL/HAVE_POSIX_TIME.h
+include/NTL/HAVE_SSSE3.h
 include/NTL/HNF.h
 include/NTL/LLL.h
 include/NTL/Lazy.h
 include/NTL/LazyTable.h
+include/NTL/MatPrime.h
+include/NTL/PD.h
+include/NTL/PackageInfo.h
+include/NTL/REPORT_ALL_FEATURES.h
 include/NTL/RR.h
-include/NTL/SPMM_ASM.h
 include/NTL/SmartPtr.h
 include/NTL/WordVector.h
 include/NTL/ZZ.h
 include/NTL/ZZVec.h
 include/NTL/ZZX.h
 include/NTL/ZZXFactoring.h
+include/NTL/ZZ_limbs.h
 include/NTL/ZZ_p.h
 include/NTL/ZZ_pE.h
 include/NTL/ZZ_pEX.h
 include/NTL/ZZ_pEXFactoring.h
 include/NTL/ZZ_pX.h
 include/NTL/ZZ_pXFactoring.h
-include/NTL/c_lip.h
 include/NTL/config.h
-include/NTL/config_log.h
 include/NTL/ctools.h
-include/NTL/def_config.h
 include/NTL/fileio.h
-include/NTL/g_lip.h
 include/NTL/gmp_aux.h
 include/NTL/lip.h
 include/NTL/lzz_p.h
@@ -69,6 +82,7 @@ include/NTL/pair_ZZ_pEX_long.h
 include/NTL/pair_ZZ_pX_long.h
 include/NTL/pair_lzz_pEX_long.h
 include/NTL/pair_lzz_pX_long.h
+include/NTL/pd_FFT.h
 include/NTL/quad_float.h
 include/NTL/sp_arith.h
 include/NTL/thread.h
@@ -100,9 +114,8 @@ include/NTL/vec_vec_ulong.h
 include/NTL/vec_xdouble.h
 include/NTL/vector.h
 include/NTL/version.h
-include/NTL/wizard_log.h
 include/NTL/xdouble.h
-lib/libntl.a
+@static-lib lib/libntl.a
 @lib lib/libntl.so.${LIBntl_VERSION}
 share/doc/NTL/
 share/doc/NTL/BasicThreadPool.cpp.html
@@ -133,6 +146,7 @@ share/doc/NTL/RR.cpp.html
 share/doc/NTL/RR.txt
 share/doc/NTL/SmartPtr.cpp.html
 share/doc/NTL/SmartPtr.txt
+share/doc/NTL/TFT-time.jpg
 share/doc/NTL/ZZ.cpp.html
 share/doc/NTL/ZZ.txt
 share/doc/NTL/ZZVec.cpp.html
@@ -141,6 +155,8 @@ share/doc/NTL/ZZX.cpp.html
 share/doc/NTL/ZZX.txt
 share/doc/NTL/ZZXFactoring.cpp.html
 share/doc/NTL/ZZXFactoring.txt
+share/doc/NTL/ZZ_limbs.cpp.html
+share/doc/NTL/ZZ_limbs.txt
 share/doc/NTL/ZZ_p.cpp.html
 share/doc/NTL/ZZ_p.txt
 share/doc/NTL/ZZ_pE.cpp.html
@@ -160,6 +176,7 @@ share/doc/NTL/config.txt
 share/doc/NTL/conversions.txt
 share/doc/NTL/copying.txt
 share/doc/NTL/flags.txt
+share/doc/NTL/flintrat.jpg
 share/doc/NTL/lzz_p.cpp.html
 share/doc/NTL/lzz_p.txt
 share/doc/NTL/lzz_pE.cpp.html
@@ -248,3 +265,4 @@ share/doc/NTL/version.cpp.html
 share/doc/NTL/version.txt
 share/doc/NTL/xdouble.cpp.html
 share/doc/NTL/xdouble.txt
+share/doc/NTL/zmulrat.jpg
