@@ -1,6 +1,6 @@
-$OpenBSD: patch-plat_rockchip_common_params_setup_c,v 1.1 2020/01/07 07:01:56 jsg Exp $
+$OpenBSD: patch-plat_rockchip_common_params_setup_c,v 1.2 2020/02/06 07:05:51 jsg Exp $
 
-https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/2512
+https://github.com/ARM-software/arm-trusted-firmware/commit/d52331d01e0efae36e837af90887a8aed33ff604.patch
 
 Index: plat/rockchip/common/params_setup.c
 --- plat/rockchip/common/params_setup.c.orig

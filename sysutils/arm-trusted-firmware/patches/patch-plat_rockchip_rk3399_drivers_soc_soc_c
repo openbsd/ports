@@ -1,6 +1,6 @@
-$OpenBSD: patch-plat_rockchip_rk3399_drivers_soc_soc_c,v 1.1 2020/01/07 07:01:56 jsg Exp $
+$OpenBSD: patch-plat_rockchip_rk3399_drivers_soc_soc_c,v 1.2 2020/02/06 07:05:51 jsg Exp $
 
-https://github.com/armbian/build/raw/master/patch/atf/atf-rk3399/switch-power-domains-on-before-reset.patch
+https://github.com/ARM-software/arm-trusted-firmware/commit/b4899041e5f0b8e8b388c6511b5233516b8785ec.patch
 
 Index: plat/rockchip/rk3399/drivers/soc/soc.c
 --- plat/rockchip/rk3399/drivers/soc/soc.c.orig
