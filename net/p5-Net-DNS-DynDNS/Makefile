@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/06 10:40:59 benoit Exp $
 
 COMMENT =	update dyndns.org with correct ip address
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Net-DNS-DynDNS-0.9993
+DISTNAME =	Net-DNS-DynDNS-0.9994
 CATEGORIES =	net
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	www/p5-libwww
+RUN_DEPENDS =	www/p5-libwww \
+		www/p5-LWP-Protocol-https
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 MODCPAN_EXAMPLES =	Yes
