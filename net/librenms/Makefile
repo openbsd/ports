@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.95 2019/09/26 22:01:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2020/02/06 22:42:29 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.53.1
+GH_TAGNAME =	1.60
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 
@@ -60,19 +60,16 @@ R +=	s,/usr/local,${LOCALBASE},g
 post-extract:
 	mv ${WRKDIR}/vendor ${WRKSRC}/
 	perl -pi \
-	    -e "s,'/usr/bin/snmp,'/usr/local/bin/snmp,;" \
-	    -e "s,'/bin/ping,'/sbin/ping,;" \
-	    -e "s,'/usr/bin/(mtr|nmap|ipmitool|virsh|dot|sfdp)','/usr/local/bin/\1',;" \
-	    -e "s,'/usr/lib/nagios/plugins,'/usr/local/libexec/nagios/plugins,;" \
-	    ${WRKSRC}/includes/defaults.inc.php
+	    -e 's,"/usr/bin/snmp,"/usr/local/bin/snmp,;' \
+	    -e 's,"/bin/ping,"/sbin/ping,;' \
+	    -e 's,"/usr/bin/(mtr|nmap|nfdump|ipmitool|virsh|dot|sfdp),"/usr/local/bin/\1,;' \
+	    -e 's,"/usr/lib/nagios/plugins,"/usr/local/libexec/nagios/plugins,;' \
+	    ${WRKSRC}/misc/config_definitions.json
 	find ${WRKSRC} -type f -print0 | xargs -r0 perl -pi -e '$R'
 	sed -i \
 	    -e 's, librenms *, _librenms ,' \
 	    -e 's,/var/www/librenms/cronic,-n,' \
 	    ${WRKSRC}/librenms.nonroot.cron
-
-do-configure:
-	${SUBST_CMD} ${WRKSRC}/.env.example ${WRKSRC}/poller-service.py
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
@@ -84,12 +81,6 @@ do-install:
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 	rm -rf ${INSTDIR}/tests ${INSTDIR}/vendor/*/*/.git
-# XXX workaround pkg_add limitation ("exotest" in regress/usr.sbin/pkg_add)
-	${INSTALL_DATA_DIR} ${INSTDIR}/lib/jQuery-Mapael/js/
-	mv ${INSTDIR}/html/js/mapael-maps ${INSTDIR}/lib/
-	mv ${INSTDIR}/html/js/maps ${INSTDIR}/lib/jQuery-Mapael/js/
-	ln -s ../../lib/mapael-maps/ ${INSTDIR}/html/js/mapael-maps
-	ln -s ../../lib/jQuery-Mapael/js/maps/ ${INSTDIR}/html/js/maps
 
 # maintainer convenience target
 dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
@@ -99,7 +90,6 @@ dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
 	tar xzf ${FULLDISTDIR}/${DISTNAME}.tar.gz; \
 	cd librenms-${GH_TAGNAME}; \
 	sed -i 's,whereis -b ,whereis ,' LibreNMS/Config.php; \
-	sed -i 's,php artisan ,${MODPHP_BIN} artisan ,' composer.json; \
 	[ -r .env ] || cp .env.example .env; \
 	composer install --no-dev; \
 	tar cf - vendor | xz -T 0 > $$f; \

@@ -1,104 +1,14 @@
-$OpenBSD: patch-daily_sh,v 1.26 2019/07/02 16:57:58 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.27 2020/02/06 22:42:29 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -23,14 +23,14 @@
- # define DAILY_SCRIPT as the full path to this script and LIBRENMS_DIR as the directory this script is in
- DAILY_SCRIPT=$(readlink -f "$0")
- LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
--COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper.php --no-interaction"
-+COMPOSER="%PHP% ${LIBRENMS_DIR}/scripts/composer_wrapper.php --no-interaction"
- 
- # set log_file, using librenms 'log_dir' config setting, if set
- # otherwise we default to <LibreNMS Install Directory>/logs
--LOG_DIR=$(php -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['log_dir']) ? \$config['log_dir'] : '${LIBRENMS_DIR}/logs';")
-+LOG_DIR=$(%PHP% -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['log_dir']) ? \$config['log_dir'] : '${LIBRENMS_DIR}/logs';")
- 
- # get the librenms user
--LIBRENMS_USER=$(php -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['user']) ? \$config['user'] : 'root';")
-+LIBRENMS_USER=$(%PHP% -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['user']) ? \$config['user'] : 'root';")
- LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
- 
- #######################################
-@@ -71,7 +71,7 @@ status_run() {
-     else
-         printf " \033[0;31mFAIL\033[0m\n";
-         if [[ "${arg_option}" == "update" ]]; then
--            php "${LIBRENMS_DIR}/daily.php" -f notify -o "${tmp}"
-+            %PHP% "${LIBRENMS_DIR}/daily.php" -f notify -o "${tmp}"
-         fi
-         if [[ ! -z "${tmp}" ]]; then
-             # print output in case of failure
-@@ -96,7 +96,7 @@ call_daily_php() {
-     local args=( "$@" );
- 
-     for arg in "${args[@]}"; do
--        php "${LIBRENMS_DIR}/daily.php" -f "${arg}";
-+        %PHP% "${LIBRENMS_DIR}/daily.php" -f "${arg}";
-     done
- }
- 
-@@ -116,7 +116,7 @@ set_notifiable_result() {
-     local arg_type=$1;
-     local arg_result=$2;
- 
--    php "${LIBRENMS_DIR}/daily.php" -f handle_notifiable -t ${arg_type} -r ${arg_result};
-+    %PHP% "${LIBRENMS_DIR}/daily.php" -f handle_notifiable -t ${arg_type} -r ${arg_result};
- }
- 
- #######################################
-@@ -125,25 +125,8 @@ set_notifiable_result() {
+@@ -125,7 +125,7 @@ set_notifiable_result() {
  #   Exit-Code: 0 >= min ver, 1 < min ver
  #######################################
  check_php_ver() {
 -    local branch=$(git rev-parse --abbrev-ref HEAD)
--    local ver_56=$(php -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
--    local ver_71=$(php -r "echo (int)version_compare(PHP_VERSION, '7.1.3', '<');")
--    if [[ "$branch" == "php53" ]] && [[ "$ver_56" == "0" ]]; then
--        status_run "Supported PHP version, switched back to master branch." 'git checkout master'
--        branch="master"
--    elif [[ "$branch" == "php56" ]] && [[ "$ver_71" == "0" ]]; then
--        status_run "Supported PHP version, switched back to master branch." 'git checkout master'
--        branch="master"
--    elif [[ "$branch" != "php53" ]] && [[ "$ver_56" == "1" ]]; then
--        status_run "Unsupported PHP version, switched to php53 branch." 'git checkout php53'
--        branch="php53"
--    elif [[ "$branch" != "php56" ]] && [[ "$ver_71" == "1" ]]; then
--        status_run "Unsupported PHP version, switched to php56 branch." 'git checkout php56'
--        branch="php56"
--    fi
-+    set_notifiable_result phpver master
- 
--    set_notifiable_result phpver ${branch}
--
-     return ${ver_res};
- }
- 
-@@ -185,7 +168,7 @@ main () {
-     fi
- 
-     if [[ -z "$arg" ]]; then
--        up=$(php daily.php -f update >&2; echo $?)
-+        up=$(%PHP% daily.php -f update >&2; echo $?)
-         if [[ "$up" == "0" ]]; then
-             ${DAILY_SCRIPT} no-code-update
-             set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
-@@ -230,7 +213,7 @@ main () {
-             no-code-update)
-                 # Updates of the code are disabled, just check for schema updates
-                 # and clean up the db.
--                status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
-+                status_run 'Updating SQL-Schema' '%PHP% includes/sql-schema/update.php'
-                 status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
-             ;;
-             post-pull)
-@@ -252,7 +235,7 @@ main () {
-                 fi
- 
-                 # List all tasks to do after pull in the order of execution
--                status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
-+                status_run 'Updating SQL-Schema' '%PHP% includes/sql-schema/update.php'
-                 status_run 'Updating submodules' "$DAILY_SCRIPT submodules"
-                 status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
-                 status_run 'Fetching notifications' "$DAILY_SCRIPT notifications"
++    local branch=master
+     local ver_56=$(php -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
+     local ver_71=$(php -r "echo (int)version_compare(PHP_VERSION, '7.1.3', '<');")
+     if [[ "$branch" == "php53" ]] && [[ "$ver_56" == "0" ]]; then

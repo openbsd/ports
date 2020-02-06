@@ -1,0 +1,14 @@
+$OpenBSD: patch-misc_config_definitions_json,v 1.1 2020/02/06 22:42:29 sthen Exp $
+
+Index: misc/config_definitions.json
+--- misc/config_definitions.json.orig
++++ misc/config_definitions.json
+@@ -3471,7 +3471,7 @@
+         },
+         "nfsen_rrds": {
+             "default": [
+-                "/var/nfsen/profiles-stat/live"
++                "/var/db/nfsen/profiles-stat/live"
+             ],
+             "group": "external",
+             "section": "nfsen",

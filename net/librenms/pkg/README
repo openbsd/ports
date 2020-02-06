@@ -1,9 +1,19 @@
-$OpenBSD: README,v 1.12 2019/03/17 22:44:22 sthen Exp $
+$OpenBSD: README,v 1.13 2020/02/06 22:42:29 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
+Standard upgrades
+=================
+Run daily.sh manually (doas -u _librenms /var/www/librenms/daily.sh)
+after upgrading to process database schema changes.
+
+See below if upgrading from 1.39 or earlier.
+
+
+Introduction
+============
 LibreNMS is primarily PHP-based, however it relies on running a number of
 other programs during normal operation. As such it is not suitable for
 running in the typical chroot jail used by default on OpenBSD (a chrooted
@@ -12,7 +22,7 @@ FastCGI, and PHP itself is not chrooted).
 
 System loads during SNMP polling and graph generation can be heavy;
 if monitoring more than a handful of systems beyond initial testing and
-evaluation it is probably best to run on a dedicated system.
+evaluation it is recommended to run on a dedicated system.
 
 Database configuration
 ======================
@@ -110,18 +120,31 @@ Initial LibreNMS configuration
 ==============================
 After creating the database user account and configuring the web server,
 it is time to install the database schema and make an initial configuration
-of LibreNMS. This can either be done from the CLI, or by using the web-based
+of LibreNMS.
+
+Set database access details in the .env file:
+
+# cd /var/www/librenms
+# $EDITOR .env
+
+and generate an APP_KEY:
+
+# chown _librenms .env
+# doas -u _librenms php artisan key:generate
+# chown root .env
+
+The next steps can either be done from the CLI, or by using the web-based
 installer which carries out additional checks. Choose *one* of the following:
 
 Option 1: CLI
 -------------
 cd ${INSTDIR}
 $EDITOR config.php   # set database username/password etc.
-su -s ${MODPHP_BIN} www ./build-base.php
-su -s ${MODPHP_BIN} www ./adduser.php <name> <pass> 10	# 10=admin priv
-su -s ${MODPHP_BIN} www ./addhost.php localhost public v2c
-su -s ${MODPHP_BIN} www ./discovery.php -h all
-su -s ${MODPHP_BIN} www ./poller.php -h all
+doas -u _librenms ./build-base.php
+doas -u _librenms ./adduser.php <name> <pass> 10	# 10=admin priv
+doas -u _librenms ./addhost.php localhost public v2c
+doas -u _librenms ./discovery.php -h all
+doas -u _librenms ./poller.php -h all
 
 Option 2: Web-based
 -------------------
@@ -129,9 +152,8 @@ In order to use the web-based installer, you must first remove the default
 configuration file:
 
 rm ${INSTDIR}/config.php
-chown www ${INSTDIR}	# allow the installer to write config.php
-xdg-open http://localhost/install.php
-chown root ${INSTDIR}	# protect again
+
+Then open /install.php in a web browser (e.g. http://localhost/install.php).
 
 Periodic tasks
 ==============
@@ -170,14 +192,6 @@ configuration initially, but it's not functional in this packaged
 environment. Until this is done you will see a page with a red block
 with white "Whoops, looks like something went wrong" text.
 
-Generate an APP_KEY:
-
-# cd /var/www/librenms
-# doas -u _librenms ${MODPHP_BIN} artisan key:generate
-
-Copy this to the clipboard, then edit ${INSTDIR}/.env and fill in the
-relevant details.
-
 Make sure that you have the required PHP modules enabled via symlinks in
 ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample as described in "Webserver
 configuration" above. In particular, pdo_mysql is now required.
@@ -185,9 +199,13 @@ configuration" above. In particular, pdo_mysql is now required.
 It may also be necessary to raise max_connections in ${SYSCONFDIR}/my.cnf;
 see https://community.librenms.org/t/new-requirements-for-1-40/4057
 
-The alerting system is now using Laravel templates requiring that old
-alert templates are updated. If you do not do this, alert messages
-will show keywords (like %title, %severity) instead of the actual values.
-A built-in converter is available which works well in most cases - go to
-Alert Templates in the Alerts menu and edit each template in turn; click
-"convert" and "update".
+Set database access details in the .env file:
+
+# cd /var/www/librenms
+# $EDITOR .env
+
+and generate an APP_KEY:
+
+# chown _librenms .env
+# doas -u _librenms ./artisan key:generate
+# chown root .env
