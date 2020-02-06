@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.97 2019/07/12 20:47:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2020/02/06 11:17:13 sthen Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-MODPY_EGG_VERSION=	5.7
+MODPY_EGG_VERSION=	5.14
 DISTNAME=	getmail-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
-REVISION=	0
 
 HOMEPAGE=	http://pyropus.ca/software/getmail/
+
+MAINTAINER=	Martin Ziemer <horrad@horrad.de>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
