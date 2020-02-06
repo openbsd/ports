@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.551 2020/01/19 20:48:42 kn Exp $
+# $OpenBSD: Makefile,v 1.552 2020/02/06 14:10:53 kmos Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -342,6 +342,7 @@
      SUBDIR += socket
      SUBDIR += socklog
      SUBDIR += squashfs-tools
+     SUBDIR += ssh-copy-id
      SUBDIR += sshfs-fuse
      SUBDIR += sshpass
      SUBDIR += sslmate
