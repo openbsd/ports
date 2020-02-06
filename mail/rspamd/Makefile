@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2019/12/29 21:35:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2020/02/06 16:18:54 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	2.2
-REVISION=	1
+GH_TAGNAME=	2.3
 
 CATEGORIES=	mail
 
@@ -27,9 +26,13 @@ FLAVOR?=
 FLAVOR=		no_luajit
 .endif
 
-MODULES=	devel/cmake
+MODULES=	devel/cmake \
+		lang/python
 COMPILER=	base-clang ports-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+MODPY_BUILDDEP=	No
+MODPY_RUNDEP=	No
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/gettext,-runtime \
@@ -48,9 +51,8 @@ BUILD_DEPENDS+=	devel/ragel
 # /var/rspamd needs to exist for tests to run
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH}
 TEST_DEPENDS+=	databases/redis \
-		devel/py-robotframework \
-		sysutils/py-psutil \
-		textproc/py-demjson
+		devel/py-robotframework${MODPY_FLAVOR} \
+		sysutils/py-psutil${MODPY_FLAVOR}
 
 CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DCMAKE_C_OPT_FLAGS="${CFLAGS}" \
@@ -76,13 +78,18 @@ WANTLIB+=	luajit-5.1
 # Make sure you have no rspamd or redis instances running and note that the
 # test suite uses the network.
 #
-# In the event of failing tests, look at log.html in ${WRKSRC}
+# In the event of failing tests, look at output.xml in ${WRKSRC}. If tests
+# completed then text/html reports can be generated from this using "rebot",
+# however it will not work if tests are interrupted (known/expected
+# limitation of the tool).
+#
+# At least as of 2.2/2.3 we do currently see a hang in tests.
 do-test:
 	cd ${WRKSRC} && \
 		env RSPAMADM=${WRKBUILD}/src/rspamadm/rspamadm \
 		RSPAMC=${WRKBUILD}/src/client/rspamc \
-		RSPAMD=/usr/local/bin/rspamd \
-		${LOCALBASE}/bin/robot \
+		RSPAMD=${TRUEPREFIX}/bin/rspamd \
+		${LOCALBASE}/bin/robot${MODPY_BIN_SUFFIX} \
 		test/functional/cases
 
 # no trailing crlf

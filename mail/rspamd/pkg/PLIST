@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2019/12/23 13:25:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.36 2020/02/06 16:18:54 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
@@ -152,6 +152,8 @@ share/examples/rspamd/rspamd.conf
 @sample ${SYSCONFDIR}/rspamd/rspamd.conf
 share/examples/rspamd/scores.d/
 @sample ${SYSCONFDIR}/rspamd/scores.d/
+share/examples/rspamd/scores.d/content_group.conf
+@sample ${SYSCONFDIR}/rspamd/scores.d/content_group.conf
 share/examples/rspamd/scores.d/fuzzy_group.conf
 @sample ${SYSCONFDIR}/rspamd/scores.d/fuzzy_group.conf
 share/examples/rspamd/scores.d/headers_group.conf
@@ -251,6 +253,10 @@ share/rspamd/lualib/lua_auth_results.lua
 share/rspamd/lualib/lua_bayes_learn.lua
 share/rspamd/lualib/lua_cfg_transform.lua
 share/rspamd/lualib/lua_clickhouse.lua
+share/rspamd/lualib/lua_content/
+share/rspamd/lualib/lua_content/ical.lua
+share/rspamd/lualib/lua_content/init.lua
+share/rspamd/lualib/lua_content/pdf.lua
 share/rspamd/lualib/lua_dkim_tools.lua
 share/rspamd/lualib/lua_ffi/
 share/rspamd/lualib/lua_ffi/common.lua
@@ -258,7 +264,6 @@ share/rspamd/lualib/lua_ffi/dkim.lua
 share/rspamd/lualib/lua_ffi/init.lua
 share/rspamd/lualib/lua_ffi/spf.lua
 share/rspamd/lualib/lua_fuzzy.lua
-share/rspamd/lualib/lua_ical.lua
 share/rspamd/lualib/lua_lexer.lua
 share/rspamd/lualib/lua_magic/
 share/rspamd/lualib/lua_magic/heuristics.lua
@@ -271,6 +276,7 @@ share/rspamd/lualib/lua_meta.lua
 share/rspamd/lualib/lua_mime.lua
 share/rspamd/lualib/lua_redis.lua
 share/rspamd/lualib/lua_scanners/
+share/rspamd/lualib/lua_scanners/avast.lua
 share/rspamd/lualib/lua_scanners/clamav.lua
 share/rspamd/lualib/lua_scanners/common.lua
 share/rspamd/lualib/lua_scanners/dcc.lua
@@ -360,11 +366,13 @@ share/rspamd/plugins/rspamd_update.lua
 share/rspamd/plugins/settings.lua
 share/rspamd/plugins/spamassassin.lua
 share/rspamd/plugins/spamtrap.lua
+share/rspamd/plugins/spf.lua
 share/rspamd/plugins/trie.lua
 share/rspamd/plugins/url_redirector.lua
 share/rspamd/plugins/whitelist.lua
 share/rspamd/rules/
 share/rspamd/rules/bitcoin.lua
+share/rspamd/rules/content.lua
 share/rspamd/rules/forwarding.lua
 share/rspamd/rules/headers_checks.lua
 share/rspamd/rules/html.lua
@@ -380,12 +388,15 @@ share/rspamd/rules/rspamd.lua
 share/rspamd/rules/subject_checks.lua
 share/rspamd/www/
 share/rspamd/www/README.md
+share/rspamd/www/browserconfig.xml
 share/rspamd/www/css/
 share/rspamd/www/css/bootstrap.min.css
 share/rspamd/www/css/d3evolution.css
 share/rspamd/www/css/footable.bootstrap.min.css
 share/rspamd/www/css/nprogress.css
 share/rspamd/www/css/rspamd.css
+share/rspamd/www/favicon-16x16.png
+share/rspamd/www/favicon-32x32.png
 share/rspamd/www/favicon.ico
 share/rspamd/www/fonts/
 share/rspamd/www/fonts/glyphicons-halflings-regular.ttf
@@ -411,15 +422,14 @@ share/rspamd/www/js/lib/d3.min.js
 share/rspamd/www/js/lib/d3evolution.min.js
 share/rspamd/www/js/lib/d3pie.min.js
 share/rspamd/www/js/lib/footable.min.js
-share/rspamd/www/js/lib/humanize.min.js
 share/rspamd/www/js/lib/jquery-3.4.1.min.js
 share/rspamd/www/js/lib/jquery.stickytabs.min.js
 share/rspamd/www/js/lib/nprogress.min.js
 share/rspamd/www/js/lib/require.min.js
 share/rspamd/www/js/lib/visibility.min.js
 share/rspamd/www/js/main.js
-share/rspamd/www/plugins.txt
-share/rspamd/www/react-index.html
+share/rspamd/www/mstile-150x150.png
+share/rspamd/www/safari-pinned-tab.svg
 @sample ${LOCALSTATEDIR}/log/rspamd/
 @owner _rspamd
 @group _rspamd
