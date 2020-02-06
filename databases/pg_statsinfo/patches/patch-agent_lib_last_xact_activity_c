@@ -1,0 +1,16 @@
+$OpenBSD: patch-agent_lib_last_xact_activity_c,v 1.5 2020/02/06 00:39:37 jeremy Exp $
+
+Work with PostgreSQL 12.
+
+Index: agent/lib/last_xact_activity.c
+--- agent/lib/last_xact_activity.c.orig
++++ agent/lib/last_xact_activity.c
+@@ -527,7 +527,7 @@ statsinfo_last_xact_activity(PG_FUNCTION_ARGS)
+ 
+ 		oldcontext = MemoryContextSwitchTo(funcctx->multi_call_memory_ctx);
+ 
+-		tupdesc = CreateTemplateTupleDesc(LAST_XACT_ACTIVITY_COLS, false);
++		tupdesc = CreateTemplateTupleDesc(LAST_XACT_ACTIVITY_COLS);
+ 		TupleDescInitEntry(tupdesc, (AttrNumber) 1, "pid",
+ 						   INT4OID, -1, 0);
+ 		TupleDescInitEntry(tupdesc, (AttrNumber) 2, "xid",
