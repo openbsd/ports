@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/02/06 13:18:48 benoit Exp $
 
 COMMENT=		automatic text wrapping and reformatting
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Text-Autoformat-1.74
+DISTNAME=		Text-Autoformat-1.75
 CATEGORIES=		textproc
 
 EPOCH=			0
-REVISION=		0
 
 # Artistic
 PERMIT_PACKAGE=	Yes
