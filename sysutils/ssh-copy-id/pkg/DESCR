@@ -1,0 +1,11 @@
+ssh-copy-id is a script that uses ssh(1) to log into a remote machine
+(presumably using a login password, so password authentication
+should be enabled).
+
+It assembles a list of one or more fingerprints and tries to log
+in with each key, to see if any of them are already installed.  It
+then assembles a list of those keys that failed to log in, and using
+ssh, enables logins with those keys on the remote server. By default
+it adds the keys by appending them to the remote user's
+~/.ssh/authorized_keys (creating the file, and directory, if
+necessary).
