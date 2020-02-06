@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/02/06 09:54:40 benoit Exp $
 
 COMMENT =	module to obtain historical financial quotes from exchanges
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Finance-QuoteHist-1.24
+DISTNAME =	Finance-QuoteHist-1.28
 CATEGORIES =	misc
 
 # GPL/Artistic License
