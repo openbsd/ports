@@ -1,0 +1,32 @@
+$OpenBSD: README,v 1.1.1.1 2020/02/06 11:30:32 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running dovecot-fts-xapian on OpenBSD
++-----------------------------------------------------------------------
+
+To use fts_xapian with Dovecot, ensure fts and fts_xapian plugins are
+loaded. Adding them to mail_plugins in 10-mail.conf should suffice for
+most users:
+
+    mail_plugins = (...) fts fts_xapian (...)
+
+The default_vsz_limit will usually need to be increased in 10-master.conf:
+
+    default_vsz_limit = 2GB
+
+Then configure the plugin's settings in 90-plugin.conf:
+
+    plugin {
+      fts = xapian
+      fts_xapian = partial=2 full=20 verbose=0
+
+      fts_autoindex = yes
+      fts_enforced = yes
+
+      fts_autoindex_exclude = \Trash
+    }
+
+New mail will be indexed incrementally. Use doveadm-index(1) to index
+existing mail, e.g.:
+
+    doveadm index -A -q '*'

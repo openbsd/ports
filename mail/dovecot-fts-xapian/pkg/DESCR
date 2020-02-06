@@ -1,0 +1,7 @@
+fts-xapian is a full-text search plugin for Dovecot. It utilises the Xapian
+search engine library to index email automatically, and allow rapid body and
+header server-side search over IMAP.
+
+The authors intend this plugin to provide the functionality provided by the
+now-deprecated fts_squat plugin, and provide a simpler way to configure FTS for
+Dovecot without needing heavy external dependencies such as Solr.
