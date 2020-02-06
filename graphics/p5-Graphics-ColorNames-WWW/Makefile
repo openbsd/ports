@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/06 09:20:26 benoit Exp $
 
 COMMENT=	WWW color names and equivalent RGB values
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Graphics-ColorNames-WWW-1.13
+DISTNAME =	Graphics-ColorNames-WWW-1.14
 CATEGORIES=	graphics www
 
 # Perl
 PERMIT_PACKAGE=	Yes
 
-RUN_DEPENDS=	graphics/p5-Graphics-ColorNames
+RUN_DEPENDS =	graphics/p5-Graphics-ColorNames
+TEST_DEPENDS =	devel/p5-Test-NoWarnings
 
 .include <bsd.port.mk>
