@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/01/18 11:24:01 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/02/06 10:37:26 fcambus Exp $
 @bin bin/grafx2
 share/applications/grafx2.desktop
 share/grafx2/
 share/grafx2/fonts/
-share/grafx2/fonts/5pxtinyfont.png
 share/grafx2/fonts/8pxfont.png
-share/grafx2/fonts/GrafX2_Black.gif
-share/grafx2/fonts/GrafX2_Dark.gif
 share/grafx2/fonts/PF_Arma_5__.png
 share/grafx2/fonts/PF_Easta_7_.png
 share/grafx2/fonts/PF_Easta_7__.png
@@ -21,8 +18,8 @@ share/grafx2/fonts/PF_Tempesta_7__.png
 share/grafx2/fonts/PF_Tempesta_7___.png
 share/grafx2/fonts/PF_Westa_7_.png
 share/grafx2/fonts/PF_Westa_7__.png
-share/grafx2/fonts/colorfont.pcx
 share/grafx2/gfx2.gif
+share/grafx2/gfx2.png
 share/grafx2/gfx2def.ini
 share/grafx2/scripts/
 share/grafx2/scripts/libs/
@@ -108,7 +105,9 @@ share/grafx2/skins/skin_DPaint.png
 share/grafx2/skins/skin_classic.png
 share/grafx2/skins/skin_modern.png
 share/grafx2/skins/skin_scenish.png
+share/grafx2/skins/unicode_0390-03C9.png
 share/grafx2/skins/unicode_0410-044F.png
+share/grafx2/skins/unicode_3040-309F.png
 share/icons/hicolor/scalable/apps/grafx2.svg
 share/metainfo/
 share/metainfo/grafx2.appdata.xml

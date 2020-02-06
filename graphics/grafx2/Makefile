@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/01/16 14:09:20 solene Exp $
+# $OpenBSD: Makefile,v 1.10 2020/02/06 10:37:26 fcambus Exp $
 
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
-V =		2.6
-REVISION =	0
-DISTNAME =	grafX2-v${V}
+V =		2.7
+DISTNAME =	grafx2-${V}.2945-src
 PKGNAME =	grafx2-${V}
-EXTRACT_SUFX =	.tar.bz2
+EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	graphics
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL2 SDL2_image X11 c iconv m png tiff z ${MODLUA_WANTLIB}
 
-MASTER_SITES =	https://pulkomandy.tk/projects/GrafX2/downloads/
+MASTER_SITES =	https://gitlab.com/GrafX2/grafX2/-/jobs/422881812/artifacts/raw/
 
 MODULES =	lang/lua
 MODLUA_VERSION = 5.3
@@ -30,23 +29,23 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/sdl2 \
 		devel/sdl2-image
 
-WRKDIST =	${WRKDIR}/grafX2-v${V}/src
+WRKDIST =	${WRKDIR}/grafx2/src
 
 USE_GMAKE =	Yes
 
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -D_BSD_SOURCE" \
-		PREFIX="${PREFIX}" API=sdl2 NOTTF=1 NORECOIL=1
+CFLAGS +=	-D_BSD_SOURCE
+
+MAKE_FLAGS =	CC="${CC}" PREFIX="${PREFIX}" API=sdl2 NOTTF=1 NORECOIL=1
 
 NO_TEST =	Yes
 
 pre-configure:
-	rm ${WRKSRC}/Makefile.dep
-	@sed -i 's|Extract_path(program_dir, argv0);|strcpy(program_dir,"${PREFIX}/bin/");|' \
-	${WRKSRC}/setup.c
+	${SUBST_CMD} ${WRKSRC}/main.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	mv ${PREFIX}/share/icons/hicolor/scalable/apps/grafx2.xpm ${PREFIX}/share/pixmaps/
+	mv ${PREFIX}/share/icons/hicolor/scalable/apps/grafx2.xpm \
+		${PREFIX}/share/pixmaps/
 	mv ${PREFIX}/bin/grafx2-sdl2 ${PREFIX}/bin/grafx2
 	rm ${PREFIX}/share/grafx2/fonts/Tuffy.ttf
 

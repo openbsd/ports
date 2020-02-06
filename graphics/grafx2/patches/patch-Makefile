@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.1 2019/01/18 11:24:01 fcambus Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/02/06 10:37:26 fcambus Exp $
 
 Fix version.c not found error.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -50,7 +50,7 @@ ifeq (true,$(shell git rev-parse --is-inside-work-tree
+@@ -53,7 +53,7 @@ ifeq (true,$(shell git rev-parse --is-inside-work-tree
    endif
  else
    # outside git repository : get version stored in version.c
