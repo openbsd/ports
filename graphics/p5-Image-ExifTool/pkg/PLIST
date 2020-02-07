@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/07/04 06:38:00 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.34 2020/02/07 05:50:21 rpointel Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -164,6 +164,7 @@ ${P5SITE}/Image/ExifTool/PSP.pm
 ${P5SITE}/Image/ExifTool/Palm.pm
 ${P5SITE}/Image/ExifTool/Panasonic.pm
 ${P5SITE}/Image/ExifTool/PanasonicRaw.pm
+${P5SITE}/Image/ExifTool/Parrot.pm
 ${P5SITE}/Image/ExifTool/Pentax.pm
 ${P5SITE}/Image/ExifTool/PhaseOne.pm
 ${P5SITE}/Image/ExifTool/PhotoCD.pm
@@ -197,6 +198,7 @@ ${P5SITE}/Image/ExifTool/Stim.pm
 ${P5SITE}/Image/ExifTool/TagInfoXML.pm
 ${P5SITE}/Image/ExifTool/TagLookup.pm
 ${P5SITE}/Image/ExifTool/TagNames.pod
+${P5SITE}/Image/ExifTool/Text.pm
 ${P5SITE}/Image/ExifTool/Theora.pm
 ${P5SITE}/Image/ExifTool/Torrent.pm
 ${P5SITE}/Image/ExifTool/Unknown.pm
@@ -345,6 +347,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Palm.3p
 @man man/man3p/Image::ExifTool::Panasonic.3p
 @man man/man3p/Image::ExifTool::PanasonicRaw.3p
+@man man/man3p/Image::ExifTool::Parrot.3p
 @man man/man3p/Image::ExifTool::Pentax.3p
 @man man/man3p/Image::ExifTool::PhaseOne.3p
 @man man/man3p/Image::ExifTool::PhotoCD.3p
@@ -377,6 +380,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::TagInfoXML.3p
 @man man/man3p/Image::ExifTool::TagLookup.3p
 @man man/man3p/Image::ExifTool::TagNames.3p
+@man man/man3p/Image::ExifTool::Text.3p
 @man man/man3p/Image::ExifTool::Theora.3p
 @man man/man3p/Image::ExifTool::Torrent.3p
 @man man/man3p/Image::ExifTool::Unknown.3p
