@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/07 22:16:20 bket Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
 PKGNAME =	py-kde-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 MODULES =	lang/python
 
@@ -30,7 +30,7 @@ WANTLIB += ${MODPY_WANTLIB} soprano sopranoclient sopranoserver
 MODKDE4_USE =	pim libs
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
-		devel/py-sip>=4.14.1 \
+		devel/py-sip>=4.14.1v0 \
 		misc/shared-desktop-ontologies \
 		x11/py-qt4>=4.9.5
 

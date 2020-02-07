@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/28 13:05:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/02/07 22:16:20 bket Exp $
 
 COMMENT	=	python Qt5 bindings
 
 V=		5.9
 DISTNAME=	PyQt5_gpl-${V}
 PKGNAME=	py-qt5-${V}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	x11 devel
 
@@ -29,7 +29,7 @@ FLAVORS =	python3
 FLAVOR ?=
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.19.1 \
+RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.19.1v0 \
 		x11/dbus-python${MODPY_FLAVOR}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtconnectivity \

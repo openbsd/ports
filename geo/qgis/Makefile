@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2020/02/07 07:13:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.120 2020/02/07 22:16:20 bket Exp $
 
 BROKEN-powerpc =	does not build: "operand out of range"
 
@@ -10,7 +10,7 @@ DISTNAME =	qgis-3.10.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	qgis_core	39.0 \
 		qgis_app	22.0 \
@@ -39,7 +39,7 @@ COMPILER =	base-clang ports-gcc
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
-		devel/py-sip${MODPY_FLAVOR}>=4.19.4 \
+		devel/py-sip${MODPY_FLAVOR}>=4.19.4v0 \
 		geo/gdal,-python${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
 		editors/py-qscintilla,qt5 \
