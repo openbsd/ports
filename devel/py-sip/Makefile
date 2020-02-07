@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2020/02/06 16:20:10 bket Exp $
+# $OpenBSD: Makefile,v 1.47 2020/02/07 20:53:14 sthen Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
-# XXX Be particularly careful when testing updates.
-#     API breaks often.
+# XXX  py-sip updates FREQUENTLY break other ports
+# XXX  BE ESPECIALLY CAREFUL WHEN TESTING UPDATES!
 
 MODPY_EGG_VERSION =	4.19.21
 DISTNAME=	sip-${MODPY_EGG_VERSION}
