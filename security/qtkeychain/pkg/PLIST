@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/05/06 06:45:43 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/02/07 07:13:40 rsadowski Exp $
+@pkgpath security/qtkeychain,qt5
+@conflict qtkeychain-qt5-*
 include/${LIBNAME_L}/
 include/${LIBNAME_L}/keychain.h
 include/${LIBNAME_L}/qkeychain_export.h
