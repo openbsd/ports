@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/05/20 20:02:27 kn Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/02/07 21:39:42 kn Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @rcscript ${RCDIR}/varnishd
@@ -97,20 +97,20 @@ include/varnish/vut.h
 include/varnish/vut_options.h
 include/varnish/waiter/
 include/varnish/waiter/waiter.h
-lib/libvarnishapi.a
+@static-lib lib/libvarnishapi.a
 lib/libvarnishapi.la
 @lib lib/libvarnishapi.so.${LIBvarnishapi_VERSION}
 lib/pkgconfig/varnishapi.pc
 lib/varnish/
 lib/varnish/vmods/
-lib/varnish/vmods/libvmod_blob.so
-lib/varnish/vmods/libvmod_debug.so
-lib/varnish/vmods/libvmod_directors.so
-lib/varnish/vmods/libvmod_proxy.so
-lib/varnish/vmods/libvmod_purge.so
-lib/varnish/vmods/libvmod_std.so
-lib/varnish/vmods/libvmod_unix.so
-lib/varnish/vmods/libvmod_vtc.so
+@so lib/varnish/vmods/libvmod_blob.so
+@so lib/varnish/vmods/libvmod_debug.so
+@so lib/varnish/vmods/libvmod_directors.so
+@so lib/varnish/vmods/libvmod_proxy.so
+@so lib/varnish/vmods/libvmod_purge.so
+@so lib/varnish/vmods/libvmod_std.so
+@so lib/varnish/vmods/libvmod_unix.so
+@so lib/varnish/vmods/libvmod_vtc.so
 @man man/man1/varnishadm.1
 @man man/man1/varnishd.1
 @man man/man1/varnishhist.1
