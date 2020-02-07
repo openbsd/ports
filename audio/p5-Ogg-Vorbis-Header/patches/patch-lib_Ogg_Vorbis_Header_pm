@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Ogg_Vorbis_Header_pm,v 1.1 2020/02/07 12:06:32 benoit Exp $
+--- lib/Ogg/Vorbis/Header.pm.orig	Fri Feb  7 12:43:38 2020
++++ lib/Ogg/Vorbis/Header.pm	Fri Feb  7 12:44:10 2020
+@@ -7,7 +7,7 @@
+ our $VERSION = '0.10';
+ 
+ use Inline C => 'DATA',
+-  LIBS => '-logg -lvorbis -lvorbisfile',
++  LIBS => '-L%%LOCALBASE%%/lib -logg -lvorbis -lvorbisfile',
+   INC => '-I/inc',
+   AUTO_INCLUDE => '#include "inc/vcedit.h"',
+   AUTO_INCLUDE => '#include "inc/vcedit.c"',
