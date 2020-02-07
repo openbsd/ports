@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/07 11:42:08 feinerer Exp $
 
-COMMENT =		simple disk I/0 latency measuring tool
+COMMENT =		simple disk I/O latency measuring tool
 
-VERSION =		1.0
+VERSION =		1.2
 
 CATEGORIES =		sysutils
 
