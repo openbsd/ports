@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2019/11/29 09:44:44 kirby Exp $
+# $OpenBSD: Makefile,v 1.44 2020/02/07 07:13:53 rsadowski Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		owncloudclient-2.6.0.13018
+REVISION =		0
 
 SHARED_LIBS +=		owncloudsync	5.0
 SHARED_LIBS +=		owncloud_csync	0.0
@@ -30,7 +31,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
-			security/qtkeychain,qt5 \
+			security/qtkeychain \
 			x11/qt5/qtwebkit
 
 CONFIGURE_ARGS +=	-Wno-dev \

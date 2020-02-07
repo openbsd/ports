@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/02/07 07:13:53 rsadowski Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.7
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS =		trojita_plugins	2.0 # 2.0
 
@@ -30,7 +30,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/qt5/qtsvg
 
 LIB_DEPENDS =		mail/mimetic \
-			security/qtkeychain,qt5 \
+			security/qtkeychain \
 			security/gpgme,,-qt \
 			x11/qt5/qtwebkit
 

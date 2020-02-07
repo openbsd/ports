@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/09 04:39:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2020/02/07 07:13:53 rsadowski Exp $
 
 COMMENT =	planetarium simulator for KDE
 
 DISTNAME =	kstars-3.3.9
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	astro education
 
@@ -56,7 +57,7 @@ LIB_DEPENDS +=		astro/wcslib \
 			devel/kf5/kxmlgui \
 			graphics/libraw \
 			math/cfitsio>=3.450 \
-			security/qtkeychain,qt5 \
+			security/qtkeychain \
 			x11/qt5/qtdatavis3d \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtsvg \

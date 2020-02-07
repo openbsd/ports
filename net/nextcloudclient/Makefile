@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/12/28 13:48:04 kirby Exp $ #
+# $OpenBSD: Makefile,v 1.4 2020/02/07 07:13:53 rsadowski Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
 V =		2.6.2
 DISTNAME =	nextcloudclient-${V}
+REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -38,7 +39,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
-			security/qtkeychain,qt5
+			security/qtkeychain
 
 CONFIGURE_ARGS =	-DBUILD_SHELL_INTEGRATION_NAUTILUS=OFF \
 			-DBUILD_SHELL_INTEGRATION_DOLPHIN=OFF \

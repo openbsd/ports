@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2020/01/21 12:50:46 landry Exp $
+# $OpenBSD: Makefile,v 1.119 2020/02/07 07:13:53 rsadowski Exp $
 
 BROKEN-powerpc =	does not build: "operand out of range"
 
@@ -10,6 +10,7 @@ DISTNAME =	qgis-3.10.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	39.0 \
 		qgis_app	22.0 \
@@ -63,7 +64,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		databases/sqlite3 \
 		devel/proj \
 		editors/qscintilla,qt5 \
-		security/qtkeychain,qt5 \
+		security/qtkeychain \
 		security/qca-qt5 \
 		www/fcgi \
 		x11/qt5/qtwebkit \
