@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.563 2020/02/07 09:35:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.564 2020/02/07 16:57:26 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -22,6 +22,7 @@
      SUBDIR += burpsuite
      SUBDIR += ccid
      SUBDIR += ccrypt
+     SUBDIR += cfssl
      SUBDIR += cgichk
      SUBDIR += chntpw
      SUBDIR += chrootuid
