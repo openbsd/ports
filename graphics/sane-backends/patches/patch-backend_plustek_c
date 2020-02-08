@@ -1,0 +1,25 @@
+$OpenBSD: patch-backend_plustek_c,v 1.1 2020/02/08 13:35:52 ajacoutot Exp $
+
+64bit time_t
+
+Index: backend/plustek.c
+--- backend/plustek.c.orig
++++ backend/plustek.c
+@@ -318,7 +318,7 @@ drvclose( Plustek_Device *dev )
+ 		DBG( _DBG_INFO, "drvclose()\n" );
+ 
+ 		if( 0 != tsecs ) {
+-			DBG( _DBG_INFO, "TIME END 1: %lus\n", time(NULL)-tsecs);
++			DBG( _DBG_INFO, "TIME END 1: %llds\n", time(NULL)-tsecs);
+ 		}
+ 
+ 		/* don't check the return values, simply do it */
+@@ -619,7 +619,7 @@ do_cancel( Plustek_Scanner *scanner, SANE_Bool closepi
+ 	drvclose( scanner->hw );
+ 
+ 	if( tsecs != 0 ) {
+-		DBG( _DBG_INFO, "TIME END 2: %lus\n", time(NULL)-tsecs);
++		DBG( _DBG_INFO, "TIME END 2: %llds\n", time(NULL)-tsecs);
+ 		tsecs = 0;
+ 	}
+ 

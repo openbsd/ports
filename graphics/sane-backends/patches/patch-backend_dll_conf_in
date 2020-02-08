@@ -1,18 +1,18 @@
-$OpenBSD: patch-backend_dll_conf_in,v 1.11 2019/08/03 12:56:09 ajacoutot Exp $
+$OpenBSD: patch-backend_dll_conf_in,v 1.12 2020/02/08 13:35:52 ajacoutot Exp $
 
 Index: backend/dll.conf.in
 --- backend/dll.conf.in.orig
 +++ backend/dll.conf.in
-@@ -39,7 +39,7 @@ genesys
- gt68xx
- hp
- hp3900
+@@ -45,7 +45,7 @@ hp4200
+ hp5400
+ hp5590
+ hpljm1005
 -hpsj5s
 +#hpsj5s
- hp3500
- hp4200
- hp5400
-@@ -71,7 +71,7 @@ pixma
+ hs2p
+ ibm
+ kodak
+@@ -74,7 +74,7 @@ pixma
  plustek
  #plustek_pp
  #pnm

@@ -1,0 +1,17 @@
+$OpenBSD: patch-backend_genesys_low_cpp,v 1.1 2020/02/08 13:35:52 ajacoutot Exp $
+
+errno.h header is required now that errno is a per-thread variable.
+"undefined symbol 'errno'" at runtime with dlopen()'d modules.
+
+Index: backend/genesys/low.cpp
+--- backend/genesys/low.cpp.orig
++++ backend/genesys/low.cpp
+@@ -44,6 +44,8 @@
+ 
+ #define DEBUG_DECLARE_ONLY
+ 
++#include <errno.h>
++
+ #include "low.h"
+ #include "assert.h"
+ #include "test_settings.h"

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2019/12/14 13:02:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2020/02/08 13:35:52 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
-DISTNAME=		sane-backends-1.0.28
-REVISION=		0
+DISTNAME=		sane-backends-1.0.29
 
 SHARED_LIBS +=  sane                 2.1      # unknown
 
@@ -18,10 +17,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c execinfo jpeg m png tiff usb-1.0
-WANTLIB += v4l1 v4l2 v4lconvert z
+WANTLIB += ${COMPILER_LIBCXX} c execinfo iconv jpeg lzma m png
+WANTLIB += tiff usb-1.0 v4l1 v4l2 v4lconvert xml2 z zstd
 
-MASTER_SITES=		https://gitlab.com/sane-project/backends/uploads/9e718daff347826f4cfe21126c8d5091/
+MASTER_SITES=		https://gitlab.com/sane-project/backends/uploads/54f858b20a364fc35d820df935a86478/
 
 COMPILER=		base-clang ports-gcc
 
@@ -30,7 +29,8 @@ BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		devel/libusb1 \
 			graphics/png \
 			graphics/tiff \
-			multimedia/libv4l
+			multimedia/libv4l \
+			textproc/libxml
 
 FLAVORS=		snmp
 FLAVOR?=
@@ -40,15 +40,18 @@ USE_GMAKE=		Yes
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/spool
 
 CONFIGURE_STYLE=	gnu
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_path_LATEX= \
+			ac_cv_path_PDFLATEX=
+
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/libexec \
-			--with-docdir=${PREFIX}/share/doc/sane-backends \
+			--docdir=${PREFIX}/share/doc/sane-backends \
 			--without-api-spec \
 			--without-gphoto2 \
 			--with-group=553 \
-			--enable-pthread \
-			--disable-latex
+			--enable-pthread
 
 # XXX doesn't work
 #CONFIGURE_ARGS +=	--enable-avahi
@@ -63,6 +66,8 @@ CONFIGURE_ARGS +=	--without-snmp
 
 # missing check in configure for config.h.in
 CFLAGS +=		-DHAVE_SYS_SOCKET_H
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 FAKE_FLAGS=		configdir=${PREFIX}/share/examples/sane-backends/sane.d
 
