@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xkbcomp_parser_y,v 1.1 2020/02/08 13:48:17 jasper Exp $
+
+../libxkbcommon-0.10.0/src/xkbcomp/parser.y:737:83: warning: format specifies type 'long' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+
+Index: src/xkbcomp/parser.y
+--- src/xkbcomp/parser.y.orig
++++ src/xkbcomp/parser.y
+@@ -734,7 +734,7 @@ KeySym          :       IDENT
+                 |       Integer
+                         {
+                             if ($1 < 0) {
+-                                parser_warn(param, "unrecognized keysym \"%ld\"", $1);
++                                parser_warn(param, "unrecognized keysym \"%lld\"", $1);
+                                 $$ = XKB_KEY_NoSymbol;
+                             }
+                             else if ($1 < 10) {      /* XKB_KEY_0 .. XKB_KEY_9 */
