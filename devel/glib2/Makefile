@@ -1,10 +1,17 @@
-# $OpenBSD: Makefile,v 1.325 2019/12/19 17:42:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.326 2020/02/08 11:45:03 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.62.4
 PKGNAME=		${DISTNAME:S/glib/glib2/}
+
+REVISION=		0
+
+# CVE-2020-6750
+MASTER_SITES0=		https://src.fedoraproject.org/rpms/glib2/raw/f31/f/
+PATCH_DIST_STRIP=	-p1
+PATCHFILES=		CVE-2020-6750.patch:0
 
 CATEGORIES=		devel
 
