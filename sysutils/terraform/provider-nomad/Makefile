@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/10/21 14:52:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/08 11:15:23 ajacoutot Exp $
 
 PROVIDER=		nomad
-GH_TAGNAME=		v1.4.2
+GH_TAGNAME=		v1.4.3
 
 .include <bsd.port.mk>
