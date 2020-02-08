@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.12 2020/01/21 05:27:18 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.13 2020/02/08 14:06:49 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -226,7 +226,7 @@ _modcargo-metadata:
 
 # modcargo-gen-crates will output crates list from Cargo.lock file.
 modcargo-gen-crates: extract
-	@awk '/"checksum / { print "MODCARGO_CRATES +=	" $$2 "	" $$3 }' \
+	@awk '/^name = / { n=$$3; gsub("\"", "", n); } /^version = / { v=$$3; gsub("\"", "", v); print "MODCARGO_CRATES +=	" n "	" v; }' \
 		<${MODCARGO_CARGOTOML:toml=lock}
 
 # modcargo-gen-crates-licenses will try to grab license information from downloaded crates.
