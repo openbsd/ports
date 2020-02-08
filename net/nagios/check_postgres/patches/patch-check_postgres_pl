@@ -1,8 +1,9 @@
-$OpenBSD: patch-check_postgres_pl,v 1.5 2018/11/29 23:16:35 sthen Exp $
+$OpenBSD: patch-check_postgres_pl,v 1.6 2020/02/08 12:39:59 sthen Exp $
+
 Index: check_postgres.pl
 --- check_postgres.pl.orig
 +++ check_postgres.pl
-@@ -1411,12 +1411,9 @@ if (! $opt{'no-check_postgresrc'}) {
+@@ -1601,12 +1601,9 @@ if (! $opt{'no-check_postgresrc'}) {
      elsif (exists $ENV{HOME} and -e "$ENV{HOME}/.check_postgresrc") {
          $rcfile = "$ENV{HOME}/.check_postgresrc";
      }
@@ -17,7 +18,7 @@ Index: check_postgres.pl
  }
  ## We need a temporary hash so that multi-value options can be overridden on the command line
  my %tempopt;
-@@ -2621,7 +2618,7 @@ sub build_symlinks {
+@@ -2814,7 +2811,7 @@ sub build_symlinks {
              next;
          }
  
