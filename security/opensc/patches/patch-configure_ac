@@ -1,10 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.10 2020/01/30 07:15:08 kn Exp $
+$OpenBSD: patch-configure_ac,v 1.11 2020/02/08 10:36:01 cwen Exp $
 
 Fix version string
 
 libdl is not required on OpenBSD
 
-Remove -Werror so it builds with gcc
+Put port supplied CFLAGS on top priority so it builds with gcc by
+supplying `-Wno-error' (upstreamed, can be removed for opensc > 0.20.0)
 
 Index: configure.ac
 --- configure.ac.orig
@@ -61,3 +62,13 @@ Index: configure.ac
  AM_CONDITIONAL([ENABLE_FUZZING], [test "${enable_fuzzing}" = "yes"])
  AM_CONDITIONAL([ENABLE_SHARED], [test "${enable_shared}" = "yes"])
  AS_IF([test "${enable_shared}" = "yes"], [AC_DEFINE([ENABLE_SHARED], [1], [Enable shared libraries])])
+@@ -1071,7 +1045,8 @@ if test "${enable_pedantic}" = "yes"; then
+ 	CFLAGS="${CFLAGS} -pedantic"
+ fi
+ if test "${enable_strict}" = "yes"; then
+-	CFLAGS="${CFLAGS} -Wall -Wextra -Wno-unused-parameter -Werror"
++	# XXX This can be removed with opensc > 0.20.0 (upstreamed)
++	CFLAGS="-Wall -Wextra -Wno-unused-parameter -Werror ${CFLAGS}"
+ fi
+ 
+ AC_CONFIG_FILES([

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2020/01/30 07:15:08 kn Exp $
+# $OpenBSD: Makefile,v 1.55 2020/02/08 10:36:01 cwen Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
 V=		0.20.0
+REVISION =	0
 DISTNAME=	opensc-${V}
 SUBST_VARS +=	V
 
@@ -43,6 +44,9 @@ FAKE_FLAGS=	mandir="${PREFIX}/man/" \
 
 AUTOCONF_VERSION = 2.69
 AUTOMAKE_VERSION = 1.15
+
+# Allow building with base-gcc
+CFLAGS +=	-Wno-error
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
