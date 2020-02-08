@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/11/26 08:04:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/02/08 11:38:26 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -191,6 +191,7 @@ share/osinfo/os/centos.org/centos-6.8.xml
 share/osinfo/os/centos.org/centos-6.9.xml
 share/osinfo/os/centos.org/centos-7.0.xml
 share/osinfo/os/centos.org/centos-8.xml
+share/osinfo/os/centos.org/centos-stream-8.xml
 share/osinfo/os/cirros-cloud.net/
 share/osinfo/os/cirros-cloud.net/cirros-0.3.0.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.1.xml
@@ -751,6 +752,7 @@ share/osinfo/os/suse.com/sled-12.1.xml
 share/osinfo/os/suse.com/sled-12.2.xml
 share/osinfo/os/suse.com/sled-12.3.xml
 share/osinfo/os/suse.com/sled-12.4.xml
+share/osinfo/os/suse.com/sled-12.5.xml
 share/osinfo/os/suse.com/sled-12.xml
 share/osinfo/os/suse.com/sled-9.xml
 share/osinfo/os/suse.com/sles-10.1.xml
@@ -768,12 +770,15 @@ share/osinfo/os/suse.com/sles-12.1.xml
 share/osinfo/os/suse.com/sles-12.2.xml
 share/osinfo/os/suse.com/sles-12.3.xml
 share/osinfo/os/suse.com/sles-12.4.xml
+share/osinfo/os/suse.com/sles-12.5.xml
 share/osinfo/os/suse.com/sles-12.xml
 share/osinfo/os/suse.com/sles-9.xml
 share/osinfo/os/system76.com/
 share/osinfo/os/system76.com/popos-17.10.xml
 share/osinfo/os/system76.com/popos-18.04.xml
 share/osinfo/os/system76.com/popos-18.10.xml
+share/osinfo/os/system76.com/popos-19.04.xml
+share/osinfo/os/system76.com/popos-19.10.xml
 share/osinfo/os/ubuntu.com/
 share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
