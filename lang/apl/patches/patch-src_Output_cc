@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Output_cc,v 1.1 2020/02/08 15:31:55 bcallah Exp $
+
+Fix for startup segfault.
+http://svn.savannah.gnu.org/viewvc/apl?view=revision&revision=1180
+
+Index: src/Output.cc
+--- src/Output.cc.orig
++++ src/Output.cc
+@@ -89,8 +89,6 @@ int Output::color_UERR_background = 8;
+ /// a filebuf for CERR
+ ErrOut CERR_filebuf;
+ 
+-bool ErrOut::used = false;
+-
+ DiffOut DOUT_filebuf(false);
+ DiffOut UERR_filebuf(true);
+ 

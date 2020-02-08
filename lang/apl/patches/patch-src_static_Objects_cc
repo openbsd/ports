@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_static_Objects_cc,v 1.1 2020/02/08 15:31:55 bcallah Exp $
+
+Fix for startup segfault.
+http://svn.savannah.gnu.org/viewvc/apl?view=revision&revision=1180
+
+Index: src/static_Objects.cc
+--- src/static_Objects.cc.orig
++++ src/static_Objects.cc
+@@ -22,6 +22,7 @@
+ #include <iostream>
+ 
+ #include "Common.hh"
++#include "DiffOut.hh"
+ #include "DynamicObject.hh"
+ #include "Logging.hh"
+ #include "Macro.hh"
+@@ -53,6 +54,9 @@ static_Objects::~static_Objects()
+ #define INFO(m, l) DO_INFO(#m, l)
+ #define DO_INFO(m, l)   extern static_Objects info_ ## l; \
+                         static_Objects info_ ## l  (LOC, m);
++
++INFO(ErrOut::used, __LINE__)
++bool ErrOut::used = false;
+ 
+ // prerequisites for Workspace::the_workspace...
+ 

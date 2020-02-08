@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_Workspace_cc,v 1.1 2020/02/08 15:31:55 bcallah Exp $
+
+Fix for startup segfault.
+http://svn.savannah.gnu.org/viewvc/apl?view=revision&revision=1180
+
+Index: src/Workspace.cc
+--- src/Workspace.cc.orig
++++ src/Workspace.cc
+@@ -61,6 +61,13 @@ Workspace::Workspace()
+    distinguished_names.add_function(q, ID_ ## x, x::fun); }
+ 
+ #include "SystemVariable.def"
++
++   // (re-) instantiate âŽ•CR, âŽ•EC, and âŽ•ES needed by macros...
++   // This is (in theory) not needed, but may be for some compilers
++   //
++   new (&Quad_CR::_fun)   Quad_CR;   Quad_CR::fun = &Quad_CR ::_fun;
++   new (&Quad_EC::_fun)   Quad_EC;   Quad_EC::fun = &Quad_EC ::_fun;
++   new (&Quad_ES::_fun)   Quad_ES;   Quad_ES::fun = &Quad_ES ::_fun;
+ }
+ //-----------------------------------------------------------------------------
+ void

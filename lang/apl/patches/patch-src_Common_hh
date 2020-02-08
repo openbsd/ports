@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Common_hh,v 1.1 2020/02/08 15:31:55 bcallah Exp $
+
+Index: src/Common.hh
+--- src/Common.hh.orig
++++ src/Common.hh
+@@ -23,6 +23,7 @@
+ 
+ #include "../config.h"   // for xxx_WANTED and other macros from ./configure
+ 
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <sys/un.h>
+ #include <sys/stat.h>
+@@ -41,6 +42,7 @@ enum { MAX_RANK = MAX_RANK_WANTED };
+ #include <stdint.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <sys/resource.h>
+ #include <sys/time.h>
+ 

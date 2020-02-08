@@ -1,7 +1,8 @@
-$OpenBSD: patch-gnu-apl_d_preferences_in,v 1.1.1.1 2017/09/11 23:44:11 bcallah Exp $
---- gnu-apl.d/preferences.in.orig	Fri Mar 17 15:46:54 2017
-+++ gnu-apl.d/preferences.in	Fri Jul 21 12:27:36 2017
-@@ -61,9 +61,9 @@
+$OpenBSD: patch-gnu-apl_d_preferences_in,v 1.2 2020/02/08 15:31:55 bcallah Exp $
+Index: gnu-apl.d/preferences.in
+--- gnu-apl.d/preferences.in.orig
++++ gnu-apl.d/preferences.in
+@@ -65,9 +65,9 @@
  # requires that certain environment variables (e.g. TERM) are set properly
  # and that your terminfo database contains the terminal you use.
  #
@@ -13,7 +14,7 @@ $OpenBSD: patch-gnu-apl_d_preferences_in,v 1.1.1.1 2017/09/11 23:44:11 bcallah E
  #
  # If you want to disable coloring initially, but switch to curses if the
  # command ]COLOR (or the equivalent but now obsolete command ]XTERM)
-@@ -236,8 +236,8 @@
+@@ -241,8 +241,8 @@
  #
  # The corresponding command line options are --SV and --noSV
  #
@@ -24,7 +25,7 @@ $OpenBSD: patch-gnu-apl_d_preferences_in,v 1.1.1.1 2017/09/11 23:44:11 bcallah E
  
  
  ###############################################################################
-@@ -350,7 +350,7 @@ BACKUP_BEFORE_SAVE  yes
+@@ -356,7 +356,7 @@ BACKUP_BEFORE_SAVE  yes
  # a (small) positive number below. Note thsat the interpreter will always
  # exit if a large number of ^Ds (or EOFs) are read within a short while.
  #

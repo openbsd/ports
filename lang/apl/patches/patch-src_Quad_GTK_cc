@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_Quad_GTK_cc,v 1.1 2020/02/08 15:31:55 bcallah Exp $
+
+Index: src/Quad_GTK.cc
+--- src/Quad_GTK.cc.orig
++++ src/Quad_GTK.cc
+@@ -387,7 +387,7 @@ pollfd fds[count];
+    loop(w, count)
+        {
+          fds[w].fd = open_windows[w].fd;
+-         fds[w].events = POLLIN | POLLRDHUP;
++         fds[w].events = POLLIN | POLLHUP;
+          fds[w].revents = 0;
+        }
+ 
+@@ -414,7 +414,7 @@ again:
+ 
+ pollfd pfd;
+    pfd.fd = fd;
+-   pfd.events = POLLIN | POLLRDHUP;
++   pfd.events = POLLIN | POLLHUP;
+    pfd.revents = 0;
+ 
+ const int ready = poll(&pfd, 1, 0);
