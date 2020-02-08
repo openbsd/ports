@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/12/02 16:10:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/02/08 12:52:17 sthen Exp $
 @newgroup _lldpd:720
 @newuser _lldpd:720:_lldpd:daemon:lldpd user:/nonexistent:/sbin/nologin
 %%snmp%%
 @rcscript ${RCDIR}/lldpd
 include/lldp-const.h
 include/lldpctl.h
-lib/liblldpctl.a
+@static-lib lib/liblldpctl.a
 lib/liblldpctl.la
 @lib lib/liblldpctl.so.${LIBlldpctl_VERSION}
 lib/pkgconfig/lldpctl.pc
