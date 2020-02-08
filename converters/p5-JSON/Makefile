@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/17 14:49:20 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2020/02/08 21:49:55 cwen Exp $
 
 COMMENT= 	parse and convert to JSON (JavaScript Object Notation)
 
-DISTNAME=	JSON-2.94
+DISTNAME=	JSON-4.02
 CATEGORIES=	converters
-MODULES=	cpan
-PKG_ARCH=	*
-REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
+
+MODULES=	cpan
 
 RUN_DEPENDS=	www/p5-libwww
 TEST_DEPENDS=	converters/p5-JSON-XS
 
 MAKE_ENV=	TEST_POD=Yes
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
