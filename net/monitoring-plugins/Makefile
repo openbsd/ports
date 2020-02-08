@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/02/08 10:53:08 florian Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -24,6 +24,7 @@ PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
 CATEGORIES=	net
+REVISION-main=	0
 REVISION-dbi=	4
 REVISION-fping=	5
 REVISION-game=	4
@@ -69,8 +70,8 @@ CONFIGURE_ARGS+= --with-fping-command="${LOCALBASE}/sbin/fping -4" \
 		--with-snmpgetnext-command=${LOCALBASE}/bin/snmpgetnext \
 		--with-qstat-command=${LOCALBASE}/bin/qstat
 # listed here to make it easier to move BIND to ports
-CONFIGURE_ARGS+= --with-dig-command=/usr/sbin/dig \
-		--with-nslookup-command=/usr/sbin/nslookup
+CONFIGURE_ARGS+= --with-dig-command=/usr/bin/dig \
+		--with-nslookup-command=/usr/bin/nslookup
 
 CFLAGS+=	-DLDAP_DEPRECATED
 
