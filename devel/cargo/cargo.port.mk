@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.13 2020/02/08 14:06:49 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.14 2020/02/08 18:56:20 sthen Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -233,5 +233,6 @@ modcargo-gen-crates: extract
 modcargo-gen-crates-licenses: configure
 .for _cratename _cratever in ${MODCARGO_CRATES}
 	@echo -n "MODCARGO_CRATES +=	${_cratename}	${_cratever}	# "
-	@sed -ne 's/^license.*= *"\([^"]*\)".*/\1/p' "${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/Cargo.toml"
+	@sed -ne '/^license.*=/{;s/^license.*= *"\([^"]*\)".*/\1/p;q;};$$s/^.*$$/XXX missing license/p' \
+		${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/Cargo.toml
 .endfor
