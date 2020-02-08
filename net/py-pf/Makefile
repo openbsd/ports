@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/14 10:04:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/08 12:17:31 sthen Exp $
 
 COMMENT =		Python module for managing PF
 
 MODPY_EGG_VERSION =	0.2.1
 GH_ACCOUNT =		dotpy
 GH_PROJECT =		py-pf
-DISTNAME =		py-pf-${MODPY_EGG_VERSION}
+GH_TAGNAME =		${MODPY_EGG_VERSION}
+REVISION =		0
+
+# remove with next update; tarball was regenerated at github
+DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -27,7 +31,5 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}/py-pf-${DISTNAME}
 
 .include <bsd.port.mk>

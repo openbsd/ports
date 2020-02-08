@@ -1,0 +1,12 @@
+$OpenBSD: patch-pf_tests_test_filter_py,v 1.1 2020/02/08 12:17:31 sthen Exp $
+
+Index: pf/tests/test_filter.py
+--- pf/tests/test_filter.py.orig
++++ pf/tests/test_filter.py
+@@ -311,5 +311,5 @@ class TestPacketFilter(unittest.TestCase):
+         self.pf.load_ruleset(ruleset)
+         self.pf.clear_states()
+         with open(os.devnull, "w") as n:
+-            subprocess.call(["/usr/sbin/nslookup", "google.com"],
++            subprocess.call(["/usr/bin/nslookup", "google.com"],
+                             stdout=n, stderr=n)
