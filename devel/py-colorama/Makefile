@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/28 09:56:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2020/02/08 12:12:46 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
-PORTROACH=		skipv:0.4.2,0.4.3
 
 COMMENT=		print colored terminal text from Python apps
 
-MODPY_EGG_VERSION=	0.4.1
+MODPY_EGG_VERSION=	0.4.3
 DISTNAME=		colorama-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
