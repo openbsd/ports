@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/08 15:35:55 abieber Exp $
 
 COMMENT =		friendly interactive shell
 
 V =			3.0.2
 DISTNAME =		fish-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		shells
 
@@ -37,6 +37,7 @@ LIB_DEPENDS =		devel/pcre2 \
 
 RUN_DEPENDS =		misc/gnugetopt
 
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/deroff.py \
 			share/tools/web_config/webconfig.py
