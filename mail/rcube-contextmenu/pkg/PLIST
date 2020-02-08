@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/11/10 12:03:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/02/08 12:36:28 sthen Exp $
 roundcubemail/plugins/contextmenu/
 roundcubemail/plugins/contextmenu/CHANGELOG
 roundcubemail/plugins/contextmenu/MANUAL.md
@@ -7,6 +7,7 @@ roundcubemail/plugins/contextmenu/composer.json
 roundcubemail/plugins/contextmenu/contextmenu.js
 roundcubemail/plugins/contextmenu/contextmenu.php
 roundcubemail/plugins/contextmenu/localization/
+roundcubemail/plugins/contextmenu/localization/bg_BG.inc
 roundcubemail/plugins/contextmenu/localization/ca_ES.inc
 roundcubemail/plugins/contextmenu/localization/cs_CZ.inc
 roundcubemail/plugins/contextmenu/localization/da_DK.inc
@@ -27,6 +28,7 @@ roundcubemail/plugins/contextmenu/localization/pt_BR.inc
 roundcubemail/plugins/contextmenu/localization/pt_PT.inc
 roundcubemail/plugins/contextmenu/localization/ro_RO.inc
 roundcubemail/plugins/contextmenu/localization/ru_RU.inc
+roundcubemail/plugins/contextmenu/localization/sk_SK.inc
 roundcubemail/plugins/contextmenu/localization/sv_SE.inc
 roundcubemail/plugins/contextmenu/localization/tr_TR.inc
 roundcubemail/plugins/contextmenu/localization/uk_UA.inc
