@@ -1,4 +1,4 @@
-$OpenBSD: patch-qrouter_h,v 1.2 2020/02/03 22:21:57 sthen Exp $
+$OpenBSD: patch-qrouter_h,v 1.3 2020/02/08 10:26:32 cwen Exp $
 
 Index: qrouter.h
 --- qrouter.h.orig
@@ -12,3 +12,12 @@ Index: qrouter.h
  typedef int (*__compar_fn_t)(const void*, const void*);
  #endif
  
+@@ -530,6 +530,8 @@ NET    getnettoroute(int order);
+ int    route_net_ripup(NET net, u_char graphdebug, u_char onlybreak);
+ 
+ #ifdef TCL_QROUTER
++/* XXX needed for va_list with GCC */
++#include <stdarg.h>
+ void   tcl_printf(FILE *, const char *, ...);
+ void   tcl_stdflush(FILE *);
+ void   tcl_vprintf(FILE *, const char *, va_list);
