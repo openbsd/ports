@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.161 2019/12/09 07:56:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2020/02/08 12:06:58 ajacoutot Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.6.11.1
+V=			3.6.12
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gnutls               46.3     # 56.0
+SHARED_LIBS +=  gnutls               46.4     # 56.2
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-dane          0.0      # 4.1
 
