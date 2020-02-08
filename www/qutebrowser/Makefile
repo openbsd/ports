@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2019/09/01 10:58:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2020/02/08 13:10:01 jasper Exp $
 
 BROKEN =		update requires QT5 webengine (not ported)
 COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	0.11.1
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://www.qutebrowser.org/
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 CATEGORIES =		www
 
