@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/08 04:35:56 bcallah Exp $
 
-V =		10
 COMMENT =	open source chess engine
-DISTNAME =	stockfish-${V}-src
-PKGNAME =	stockfish-${V}
-EXTRACT_SUFX =	.zip
+PKGNAME =	stockfish-${GH_TAGNAME:S/^sf_//}
 CATEGORIES =	games
+
+GH_ACCOUNT =	official-stockfish
+GH_PROJECT =	Stockfish
+GH_TAGNAME =	sf_11
 
 HOMEPAGE =	https://stockfishchess.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,8 +15,6 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
-
-MASTER_SITES =	https://stockfish.s3.amazonaws.com/
 
 # C++11
 COMPILER =	base-clang ports-gcc
@@ -31,6 +30,7 @@ MAKE_ENV =	ARCH=x86-32
 .elif ${MACHINE_ARCH:Marm}
 MAKE_ENV =	ARCH=armv7
 .elif ${MACHINE_ARCH:Mpowerpc}
+WANTLIB += atomic
 MAKE_ENV =	ARCH=ppc-32
 MAKE_FLAGS =	EXTRALDFLAGS="-L${LOCALBASE}/lib -latomic"
 .elif ${MACHINE_ARCH:Maarch64} || ${MACHINE_ARCH:Malpha} || \
@@ -43,7 +43,7 @@ MAKE_ENV =	ARCH=general-32
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/src
+WRKSRC =	${WRKDIST}/src
 
 pre-configure:
 	sed -i 's,-O3,${CXXFLAGS},g' ${WRKSRC}/Makefile
