@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/02/08 21:46:08 cwen Exp $
 
 COMMENT =	JSON serialising/deserialising, done correctly and fast
 
-MODULES =	cpan
-DISTNAME =	JSON-XS-3.04
+DISTNAME =	JSON-XS-4.02
 EPOCH =		1
 CATEGORIES =	converters
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl
+WANTLIB +=	c perl
 
-BUILD_DEPENDS=	devel/p5-Canary-Stability
-RUN_DEPENDS=	converters/p5-Types-Serialiser \
+MODULES =	cpan
+
+BUILD_DEPENDS =	devel/p5-Canary-Stability
+RUN_DEPENDS =	converters/p5-Types-Serialiser \
 		devel/p5-common-sense
 
 .include <bsd.port.mk>

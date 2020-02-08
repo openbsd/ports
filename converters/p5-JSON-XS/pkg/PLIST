@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/08 14:20:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/02/08 21:46:08 cwen Exp $
 bin/json_xs
 ${P5ARCH}/JSON/
 ${P5ARCH}/JSON/XS/
@@ -7,7 +7,7 @@ ${P5ARCH}/JSON/XS/Boolean.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/JSON/
 ${P5ARCH}/auto/JSON/XS/
-${P5ARCH}/auto/JSON/XS/XS.so
+@so ${P5ARCH}/auto/JSON/XS/XS.so
 @man man/man1/json_xs.1
 @man man/man3p/JSON::XS.3p
 @man man/man3p/JSON::XS::Boolean.3p
