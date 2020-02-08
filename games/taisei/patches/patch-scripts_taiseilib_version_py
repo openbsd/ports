@@ -1,0 +1,15 @@
+$OpenBSD: patch-scripts_taiseilib_version_py,v 1.1 2020/02/08 11:04:15 cwen Exp $
+
+Index: scripts/taiseilib/version.py
+--- scripts/taiseilib/version.py.orig
++++ scripts/taiseilib/version.py
+@@ -62,6 +62,9 @@ def get(*, rootdir=None, fallback=None, args=common.de
+         rootdir = pathlib.Path(__file__).parent
+ 
+     try:
++        # XXX do not call git, use port-provided fallback instead
++        raise subprocess.SubprocessError("git external calls disabled")
++
+         version_str = subprocess.check_output(
+             shlex.split('git describe --dirty --match v[0-9]*[!asz]'),
+             cwd=str(rootdir),
