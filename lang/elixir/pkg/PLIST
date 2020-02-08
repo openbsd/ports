@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/07/07 19:00:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/02/08 13:14:45 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -118,6 +118,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Inspect.HashDict.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.HashSet.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.Integer.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.List.beam
+lib/elixir/lib/elixir/ebin/Elixir.Inspect.Macro.Env.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.Map.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.MapSet.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.NaiveDateTime.beam
@@ -157,7 +158,14 @@ lib/elixir/lib/elixir/ebin/Elixir.Macro.beam
 lib/elixir/lib/elixir/ebin/Elixir.Map.beam
 lib/elixir/lib/elixir/ebin/Elixir.MapSet.beam
 lib/elixir/lib/elixir/ebin/Elixir.MatchError.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Checker.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.LocalsTracker.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.ParallelChecker.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Expr.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Helpers.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Infer.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Pattern.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Types.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.beam
 lib/elixir/lib/elixir/ebin/Elixir.NaiveDateTime.beam
 lib/elixir/lib/elixir/ebin/Elixir.Node.beam
@@ -326,9 +334,10 @@ lib/elixir/lib/logger/ebin/Elixir.Logger.App.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.BackendSupervisor.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Backends.Console.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Config.beam
-lib/elixir/lib/logger/ebin/Elixir.Logger.ErlangHandler.beam
-lib/elixir/lib/logger/ebin/Elixir.Logger.ErrorHandler.beam
+lib/elixir/lib/logger/ebin/Elixir.Logger.Counter.beam
+lib/elixir/lib/logger/ebin/Elixir.Logger.Filter.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Formatter.beam
+lib/elixir/lib/logger/ebin/Elixir.Logger.Handler.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Translator.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Utils.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Watcher.beam
@@ -389,7 +398,6 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Elixir.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Erlang.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Leex.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Protocols.beam
-lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Xref.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Yecc.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Clean.beam
