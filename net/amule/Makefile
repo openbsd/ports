@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/07/12 20:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2020/02/08 16:30:09 fcambus Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.2
 DISTNAME =	aMule-$V
-REVISION =	17
+REVISION =	18
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -38,8 +38,7 @@ commonLIB_DEPENDS =	x11/wxWidgets>=3.0.4
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 			converters/libiconv \
 			devel/cryptopp>=5.6.0 \
-			graphics/gd \
-			net/GeoIP
+			graphics/gd
 
 LIB_DEPENDS-daemon =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 			devel/cryptopp>=5.6.0
@@ -50,10 +49,10 @@ LIB_DEPENDS-web =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 
-commonWANTLIB =		c m pthread ${COMPILER_LIBCXX} \
+commonWANTLIB =		c iberty m pthread ${COMPILER_LIBCXX} \
 			z wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
-			GeoIP X11 cryptopp fontconfig tiff webp \
+			X11 cryptopp fontconfig tiff webp \
 			freetype gd iconv jpeg png wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
 
 WANTLIB-daemon =	${WANTLIB} ${commonWANTLIB} \
@@ -78,7 +77,6 @@ CONFIGURE_ARGS =	--disable-optimize \
 			--enable-amule-gui \
 			--enable-amulecmd \
 			--enable-cas \
-			--enable-geoip \
 			--enable-webserver \
 			--enable-wxcas \
 			--with-denoise-level=0 \
