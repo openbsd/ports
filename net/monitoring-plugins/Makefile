@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/02/08 10:53:08 florian Exp $
+# $OpenBSD: Makefile,v 1.26 2020/02/08 16:35:25 florian Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -24,12 +24,11 @@ PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
 CATEGORIES=	net
-REVISION-main=	0
 REVISION-dbi=	4
 REVISION-fping=	5
 REVISION-game=	4
 REVISION-ldap=	4
-REVISION-main=	8
+REVISION-main=	9
 REVISION-mysql=	4
 REVISION-pgsql=	4
 REVISION-radius=5
