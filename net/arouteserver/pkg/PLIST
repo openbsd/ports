@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/06 20:33:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/08 12:35:20 sthen Exp $
 bin/arouteserver
 lib/python${MODPY_VERSION}/site-packages/arouteserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/arouteserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -94,6 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}irrdb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}pdb_as_set.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}pdb_max_prefix.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}pdb_never_via_route_servers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}registrobr_db_dump.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}rpki_roas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}rtt.${MODPY_PYC_MAGIC_TAG}pyc
@@ -103,6 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/irr_db_du
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/irrdb.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/pdb_as_set.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/pdb_max_prefix.py
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/pdb_never_via_route_servers.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/registrobr_db_dump.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/rpki_roas.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/rtt.py
