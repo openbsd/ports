@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/08/21 13:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/02/08 15:11:19 sthen Exp $
 
 # built but not actually installed at present; patches are needed for the
 # build so it seems easier to keep the SHARED_LIBS infrastructure here.
@@ -8,9 +8,8 @@ COMMENT=	network traffic probe with web ui and deep packet inspection
 
 GH_ACCOUNT=	ntop
 GH_PROJECT=	ntopng
-GH_TAGNAME=	3.8
-REVISION=	0
-NDPI_V=		2.6
+GH_TAGNAME=	3.8.1
+NDPI_V=		3.0
 DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
 
 CATEGORIES=	net
@@ -23,7 +22,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c crypto curl hiredis json-c m maxminddb mysqlclient
+WANTLIB += c crypto curl hiredis json-c m mariadb maxminddb
 WANTLIB += pcap radcli rrd sodium sqlite3 ssl z zmq zstd
 
 COMPILER =	base-clang ports-gcc
@@ -51,13 +50,14 @@ FAKE_FLAGS=	INSTALL_DIR=${WRKINST}${PREFIX} \
 		MAN_DIR=${WRKINST}${PREFIX}/man
 
 USE_GMAKE=	Yes
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= autoreconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_lib_ldap_ldap_initialize=no
 
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
+AUTOMAKE_VERSION=	1.16
 AUTORECONF=		sh -c "./autogen.sh; cd nDPI; ./autogen.sh"
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/nDPI

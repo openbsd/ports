@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_LuaEngine_cpp,v 1.2 2019/01/07 18:37:22 sthen Exp $
+$OpenBSD: patch-src_LuaEngine_cpp,v 1.3 2020/02/08 15:11:19 sthen Exp $
 
 Index: src/LuaEngine.cpp
 --- src/LuaEngine.cpp.orig
 +++ src/LuaEngine.cpp
-@@ -2445,7 +2445,7 @@ static int ntop_append_influx_db(lua_State* vm) {
-   buflen = concat_table_fields(vm, 3, data + sizeof(data) - buflen, buflen);
+@@ -2488,7 +2488,7 @@ static int ntop_append_influx_db(lua_State* vm) {
+   buflen = influx_concat_table_fields(vm, 3, data + sizeof(data) - buflen, buflen); // tags
    buflen -= snprintf(data + sizeof(data) - buflen, buflen, " ");
-   buflen = concat_table_fields(vm, 4, data + sizeof(data) - buflen, buflen);
+   buflen = influx_concat_table_fields(vm, 4, data + sizeof(data) - buflen, buflen); // metrics
 -  buflen -= snprintf(data + sizeof(data) - buflen, buflen, " %lu000000000\n", tstamp);
-+  buflen -= snprintf(data + sizeof(data) - buflen, buflen, " %llu000000000\n", (long long)tstamp);
++  buflen -= snprintf(data + sizeof(data) - buflen, buflen, " %llu000000000\n", (long long) tstamp);
  
    if(ntop_interface && ntop_interface->getTSExporter()) {
      ntop_interface->getTSExporter()->exportData(data);
-@@ -3642,16 +3642,20 @@ static int ntop_interface_live_capture(lua_State* vm) 
+@@ -3685,16 +3685,20 @@ static int ntop_interface_live_capture(lua_State* vm) 
    c->live_capture.bpfFilterSet = false;
    
    if(bpf && (bpf[0] != '\0')) {
@@ -33,7 +33,7 @@ Index: src/LuaEngine.cpp
    }
  
    if(ntop_interface->registerLiveCapture(c, &capture_id)) {
-@@ -6103,7 +6107,7 @@ static int ntop_generate_csrf_value(lua_State* vm) {
+@@ -6147,7 +6151,7 @@ static int ntop_generate_csrf_value(lua_State* vm) {
  
  #ifdef __OpenBSD__
    snprintf(random_a, sizeof(random_a), "%d", arc4random());

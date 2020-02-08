@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_NetworkInterface_cpp,v 1.4 2019/01/07 18:37:22 sthen Exp $
+$OpenBSD: patch-src_NetworkInterface_cpp,v 1.5 2020/02/08 15:11:19 sthen Exp $
 
 Index: src/NetworkInterface.cpp
 --- src/NetworkInterface.cpp.orig
 +++ src/NetworkInterface.cpp
-@@ -1507,7 +1507,9 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+@@ -1517,7 +1517,9 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
  	       rawsize, 1, 24 /* 8 Preamble + 4 CRC + 12 IFG */);
        return(pass_verdict);
      }
@@ -14,7 +14,7 @@ Index: src/NetworkInterface.cpp
      if(l4_packet_len >= sizeof(struct sctphdr)) {
        /* SCTP */
        sctph = (struct sctphdr *)l4;
-@@ -1522,7 +1524,9 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+@@ -1532,7 +1534,9 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
  	       rawsize, 1, 24 /* 8 Preamble + 4 CRC + 12 IFG */);
        return(pass_verdict);
      }

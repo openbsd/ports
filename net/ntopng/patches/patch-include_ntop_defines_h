@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_ntop_defines_h,v 1.5 2019/01/07 18:37:22 sthen Exp $
+$OpenBSD: patch-include_ntop_defines_h,v 1.6 2020/02/08 15:11:19 sthen Exp $
 
 Index: include/ntop_defines.h
 --- include/ntop_defines.h.orig
 +++ include/ntop_defines.h
-@@ -176,7 +176,7 @@
+@@ -178,7 +178,7 @@
  #define MAX_NUM_QUEUED_ADDRS    500 /* Maximum number of queued address for resolution */
  #define MAX_NUM_QUEUED_CONTACTS 25000
  #define NTOP_COPYRIGHT          "(C) 1998-18 ntop.org"
@@ -12,7 +12,7 @@ Index: include/ntop_defines.h
  #define DOMAIN_CATEGORY         "ntopng.domain.category"
  #define DOMAIN_TO_CATEGORIZE    "ntopng.domain.tocategorize"
  #define DOMAIN_WHITELIST_CAT    "ntopng.domain.whitelist"
-@@ -416,7 +416,7 @@
+@@ -418,7 +418,7 @@
  #define NTOPNG_NDPI_OS_PROTO_ID      (NDPI_LAST_IMPLEMENTED_PROTOCOL+NDPI_MAX_NUM_CUSTOM_PROTOCOLS-2)
  #define CONST_DEFAULT_HOME_NET       "192.168.1.0/24"
  #define CONST_OLD_DEFAULT_DATA_DIR   "/var/tmp/ntopng"
@@ -21,7 +21,7 @@ Index: include/ntop_defines.h
  #define CONST_DEFAULT_MAX_UI_STRLEN  24
  #define CONST_DEFAULT_IS_AUTOLOGOUT_ENABLED               1
  #define CONST_DEFAULT_IS_IDLE_LOCAL_HOSTS_CACHE_ENABLED   1
-@@ -445,7 +445,7 @@
+@@ -447,7 +447,7 @@
  #define CONST_NTOP_STARTUP_EPOCH     "@NTOP_STARTUP_EPOCH@"
  #define CONST_NTOP_PRODUCT_NAME      "@NTOP_PRODUCT_NAME@"
  #define CONST_OLD_DEFAULT_NTOP_USER  "nobody"
