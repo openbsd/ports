@@ -1,9 +1,9 @@
-$OpenBSD: patch-Cargo_toml,v 1.1.1.1 2019/11/25 11:07:54 sthen Exp $
+$OpenBSD: patch-Cargo_toml,v 1.2 2020/02/08 22:29:45 bket Exp $
 
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -46,11 +46,5 @@ version = "0.13"
+@@ -48,11 +48,5 @@ version = "0.14"
  default-features = false
  
  [features]
