@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.620 2020/01/30 21:18:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.621 2020/02/09 23:46:10 bluhm Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -330,6 +330,7 @@
      SUBDIR += p5-XML-XPathEngine
      SUBDIR += p5-XML-XSLT
      SUBDIR += p5-XML-XSPF
+     SUBDIR += p5-XString
      SUBDIR += p5-ack
      SUBDIR += p5-sdf
      SUBDIR += p5-tkispell
