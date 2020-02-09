@@ -1,0 +1,2 @@
+ogvt is a standalone tool for verifying gnupg signatures. It only requires a
+signature, a pubkey and the signed file.
