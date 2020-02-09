@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1930 2020/02/09 22:30:18 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1931 2020/02/09 23:38:24 bluhm Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1182,6 +1182,7 @@
      SUBDIR += p5-Test-utf8
      SUBDIR += p5-Test2-Plugin-NoWarnings
      SUBDIR += p5-Test2-Suite
+     SUBDIR += p5-Test2-Tools-Explain
      SUBDIR += p5-Text-FixEOL
      SUBDIR += p5-Text-vFile-asData
      SUBDIR += p5-Throwable
