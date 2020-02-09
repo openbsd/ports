@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/09 01:45:05 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/09 18:01:05 abieber Exp $
 
 COMMENT =		simple tool for verifying gpg signatures
-VERSION =		v1.0.0
+VERSION =		v1.0.1
 DISTNAME =		ogvt-${VERSION}
-SIGFILES =		${DISTNAME}${EXTRACT_SUFX}.asc
 PKGNAME =		${DISTNAME:S/-v/-/g}
 
 CATEGORIES =		security
@@ -16,14 +15,19 @@ MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://deftly.net/dist/
-DISTFILES =		ogvt-{archive/}${VERSION}${EXTRACT_SUFX}
 
 # uses pledge()
 WANTLIB += c pthread
 
 MODULES =	lang/go
-MODGO_TYPE =	bin
 
 ALL_TARGET =	git.sr.ht/~qbit/ogvt
+
+do-install:
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/${MODGO_BINDIR} && \
+		${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/* \
+			 ${PREFIX}/${MODGO_BINDIR};
+	${INSTALL_MAN} ${WRKSRC}/ogvt.1 ${PREFIX}/man/man1/
+
 
 .include <bsd.port.mk>
