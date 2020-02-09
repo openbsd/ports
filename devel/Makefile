@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1929 2020/01/25 05:26:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1930 2020/02/09 22:30:18 bluhm Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -907,6 +907,7 @@
      SUBDIR += p5-MooX-Types-MooseLike
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Aliases
+     SUBDIR += p5-MooseX-Attribute-Chained
      SUBDIR += p5-MooseX-AttributeHelpers
      SUBDIR += p5-MooseX-Clone
      SUBDIR += p5-MooseX-ConfigFromFile
