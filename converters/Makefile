@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.102 2019/08/14 18:26:59 kmos Exp $
+# $OpenBSD: Makefile,v 1.103 2020/02/09 16:58:37 fcambus Exp $
 
     SUBDIR =
     SUBDIR += base64
     SUBDIR += bdf2psf
+    SUBDIR += bdf2sfd
     SUBDIR += btoa
     SUBDIR += convmv
     SUBDIR += d1489
