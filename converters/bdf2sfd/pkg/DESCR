@@ -1,0 +1,4 @@
+bdf2sfd is a BDF to SFD converter, allowing to vectorize bitmap fonts.
+
+It works by converting each pixel of a glyph to a polygon, which produces
+large and unoptimized SFD files that should be post-processed using FontForge.
