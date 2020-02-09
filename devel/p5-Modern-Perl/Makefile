@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/09 22:58:49 bluhm Exp $
 
-COMMENT =		enable all of the features of Modern Perl with one import
+COMMENT =	enable all of the features of Modern Perl with one import
 
-MODULES =		cpan
-PKG_ARCH =		*
-CPAN_AUTHOR =		CHROMATIC
-DISTNAME =		Modern-Perl-1.20181021
-CATEGORIES =		devel
-REVISION =		0
+CPAN_AUTHOR =	CHROMATIC
+DISTNAME =	Modern-Perl-1.20200201
+
+CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p5-Modern-Perl

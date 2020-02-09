@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/03 10:06:23 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/09 22:58:49 bluhm Exp $
 ${P5SITE}/Modern/
 ${P5SITE}/Modern/Perl.pm
+${P5SITE}/odern/
+${P5SITE}/odern/Perl.pm
 @man man/man3p/Modern::Perl.3p
+@man man/man3p/odern::Perl.3p
 share/doc/p5-Modern-Perl/
 share/doc/p5-Modern-Perl/Changes
 share/doc/p5-Modern-Perl/LICENSE
