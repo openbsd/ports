@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2020/01/03 21:55:57 kili Exp $
+# $OpenBSD: Makefile,v 1.169 2020/02/09 19:15:25 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,6 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
+REVISION =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -31,7 +32,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 # binaries, with BSD, GPLv2 and Perl artistic license.
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += c charset curses ffi gmp iconv m pthread util
+WANTLIB += c curses ffi gmp iconv m pthread util
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
@@ -42,13 +43,13 @@ BUILD_DEPENDS =		archivers/bzip2 \
 			textproc/py-sphinx
 RUN_DEPENDS =
 
-# The bootstrapping compiler needs gcc4, but the new ghc can be built
-# with clang. So we just BUILD_DEPEND on gcc instead of using the gcc4
+# The bootstrapping compiler needs gcc, but the new ghc can be built
+# with clang. So we just BUILD_DEPEND on gcc instead of using the gcc
 # MODULE, because the latter would also add some wrapper scripts
 BUILD_DEPENDS +=	lang/gcc/8>=8,<9
 
 # We can't use the wrapper script, because it then gets hardcoded into
-# the packaged ghc. So we explicitely use -Wl,-z,wxneeded (see
+# the packaged ghc. So we explicitly use -Wl,-z,wxneeded (see
 # CONFIGURE_ENV below)
 USE_WXNEEDED =		special
 
@@ -183,17 +184,19 @@ post-patch:
 		echo 'LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \' && \
 		printf 'exec ${WRKDIR}/bootstrap/bin/%s "$$@"\n' "$$f"; \
 	done
+	cp ${WRKSRC}/mk/build.mk{.sample,}
+	echo libraries/base_CONFIGURE_OPTS+=--configure-option=--with-libcharset=no >> ${WRKSRC}/mk/build.mk
 
 do-test:
 	ulimit -c 0 && \
 	cd ${WRKSRC}/testsuite/tests && \
-	exec ${SETENV} ${MAKE_ENV} HS_ENCODING=utf-8 \
+	exec ${SETENV} ${MAKE_ENV} LC_CTYPE=en_US.UTF-8 \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		PYTHON="${MODPY_BIN}"
 
 
 
-# It doesn't matter wether this is the actual date of the bootstrapper
+# It doesn't matter whether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
 BOOTSTRAP_DATE =	20200103
