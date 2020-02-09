@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/09 22:28:11 bluhm Exp $
+${P5SITE}/Moose/
+${P5SITE}/Moose/Meta/
+${P5SITE}/Moose/Meta/Attribute/
+${P5SITE}/Moose/Meta/Attribute/Custom/
+${P5SITE}/Moose/Meta/Attribute/Custom/Trait/
+${P5SITE}/Moose/Meta/Attribute/Custom/Trait/Chained.pm
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/Attribute/
+${P5SITE}/MooseX/Attribute/Chained.pm
+${P5SITE}/MooseX/Attribute/ChainedClone.pm
+${P5SITE}/MooseX/ChainedAccessors/
+${P5SITE}/MooseX/ChainedAccessors.pm
+${P5SITE}/MooseX/ChainedAccessors/Accessor.pm
+${P5SITE}/MooseX/Traits/
+${P5SITE}/MooseX/Traits/Attribute/
+${P5SITE}/MooseX/Traits/Attribute/Chained.pm
+@man man/man3p/Moose::Meta::Attribute::Custom::Trait::Chained.3p
+@man man/man3p/MooseX::Attribute::Chained.3p
+@man man/man3p/MooseX::Attribute::ChainedClone.3p
+@man man/man3p/MooseX::ChainedAccessors.3p
+@man man/man3p/MooseX::ChainedAccessors::Accessor.3p
+@man man/man3p/MooseX::Traits::Attribute::Chained.3p
