@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2019/08/07 07:37:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2020/02/09 20:38:53 ajacoutot Exp $
 
 COMMENT=		GObject based collection library
 
 GNOME_PROJECT=		libgee
-GNOME_VERSION=		0.20.2
+GNOME_VERSION=		0.20.3
 
 SHARED_LIBS +=  gee-0.8              3.1      # 8.1
 
@@ -25,5 +25,7 @@ MODGNOME_TOOLS=		gobject-introspection vala
 LIB_DEPENDS=		devel/glib2
 
 CONFIGURE_STYLE=	gnu
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

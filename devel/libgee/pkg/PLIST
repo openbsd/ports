@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/06 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/02/09 20:38:53 ajacoutot Exp $
 include/gee-0.8/
 include/gee-0.8/gee.h
 lib/girepository-1.0/
 lib/girepository-1.0/Gee-0.8.typelib
-lib/libgee-0.8.a
+@static-lib lib/libgee-0.8.a
 lib/libgee-0.8.la
 @lib lib/libgee-0.8.so.${LIBgee-0.8_VERSION}
 lib/pkgconfig/gee-0.8.pc
