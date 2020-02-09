@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.564 2020/02/07 16:57:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.565 2020/02/09 01:45:56 abieber Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -151,6 +151,7 @@
      SUBDIR += nipper
      SUBDIR += nss
      SUBDIR += oath-toolkit
+     SUBDIR += ogvt
      SUBDIR += oledump
      SUBDIR += oletools
      SUBDIR += onesixtyone
