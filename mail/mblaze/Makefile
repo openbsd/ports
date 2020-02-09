@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/09 21:55:04 solene Exp $
 
 COMMENT =	set of Maildir utilities
 
-GH_ACCOUNT =	leahneukirchen
-GH_PROJECT =	mblaze
-GH_TAGNAME =	v0.5.1
+DISTNAME =	mblaze-0.6
 CATEGORIES =	mail
-REVISION =	0
+
+HOMEPAGE =	https://git.vuxu.org/mblaze/
+
+MAINTAINER =	Lucas <lucas@sexy.is>
 
 # Public domain
 PERMIT_PACKAGE =	Yes
+
+MASTER_SITES =	https://git.vuxu.org/mblaze/snapshot/
 
 WANTLIB =	c iconv pthread
 LIB_DEPENDS =	converters/libiconv
