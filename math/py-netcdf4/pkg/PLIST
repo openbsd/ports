@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/09 18:45:25 martin Exp $
+bin/nc3tonc4
+bin/nc4tonc3
+bin/ncinfo
+lib/python${MODPY_VERSION}/site-packages/netCDF4/
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/netCDF4/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netCDF4/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netCDF4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netCDF4/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/netCDF4/_netCDF4.so
+lib/python${MODPY_VERSION}/site-packages/netCDF4/utils.py
