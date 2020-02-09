@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.27 2019/04/11 15:18:39 sthen Exp $
+$OpenBSD: README-server,v 1.28 2020/02/09 09:38:45 florian Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -107,7 +107,8 @@ This will work for any upgrade from any major version of PostgreSQL
 to the current version.
 
 1) Backup all your data:
-# su _postgresql -c "pg_dumpall -U postgres > /var/postgresql/full.sqldump"
+# su _postgresql -c "cd /var/postgresql && \
+    pg_dumpall -U postgres > /var/postgresql/full.sqldump"
 
 2) Shutdown the server:
 # rcctl stop postgresql
@@ -120,8 +121,8 @@ to the current version.
 
 5) Create a new data directory:
 # su _postgresql -c "mkdir /var/postgresql/data"
-# su _postgresql -c \
-    "initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W"
+# su _postgresql -c "cd /var/postgresql && \
+    initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W"
 
 6) Restore your old pg_hba.conf and (if used) SSL certificates
 # su _postgresql -c \
@@ -136,7 +137,8 @@ Examine your old file for local changes and apply them to the new version.
 # rcctl start postgresql
 
 8) Restore your data:
-# su _postgresql -c "psql -U postgres < /var/postgresql/full.sqldump"
+# su _postgresql -c "cd /var/postgresql && \
+    psql -U postgres < /var/postgresql/full.sqldump"
 
 Option 2: pg_upgrade
 --------------------
@@ -155,7 +157,7 @@ faster than a dump and reload, especially for large databases.
 # mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
 4) Create a new data directory:
-# su _postgresql -c "mkdir /var/postgresql/data; \
+# su _postgresql -c "mkdir /var/postgresql/data && cd /var/postgresql && \
     initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W"
 
 (The database environment defaults to UTF-8 if your terminal is already
