@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST-valadoc,v 1.7 2019/11/01 19:24:37 jasper Exp $
+@comment $OpenBSD: PLIST-valadoc,v 1.8 2020/02/10 18:18:47 jasper Exp $
 bin/valadoc
 @bin bin/valadoc-${API_V}
 include/valadoc-${API_V}/
 include/valadoc-${API_V}/valadoc.h
-lib/libvaladoc-${API_V}.a
+@static-lib lib/libvaladoc-${API_V}.a
 lib/libvaladoc-${API_V}.la
 @lib lib/libvaladoc-${API_V}.so.${LIBvaladoc-${API_V}_VERSION}
+lib/pkgconfig/valadoc-${API_V}.pc
 lib/valadoc-${API_V}/
 lib/valadoc-${API_V}/doclets/
 lib/valadoc-${API_V}/doclets/devhelp/
-lib/valadoc-${API_V}/doclets/devhelp/libdoclet.so
+@so lib/valadoc-${API_V}/doclets/devhelp/libdoclet.so
 lib/valadoc-${API_V}/doclets/gtkdoc/
-lib/valadoc-${API_V}/doclets/gtkdoc/libdoclet.so
+@so lib/valadoc-${API_V}/doclets/gtkdoc/libdoclet.so
 lib/valadoc-${API_V}/doclets/html/
-lib/valadoc-${API_V}/doclets/html/libdoclet.so
-lib/pkgconfig/valadoc-${API_V}.pc
+@so lib/valadoc-${API_V}/doclets/html/libdoclet.so
 @man man/man1/valadoc-${API_V}.1
 @man man/man1/valadoc.1
 share/vala/vapi/valadoc-${API_V}.deps

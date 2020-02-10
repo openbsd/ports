@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2019/11/01 19:24:37 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2020/02/10 18:18:47 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -11,7 +11,7 @@ bin/vapigen
 include/vala-${API_V}/
 include/vala-${API_V}/vala.h
 include/vala-${API_V}/valagee.h
-lib/libvala-${API_V}.a
+@static-lib lib/libvala-${API_V}.a
 lib/libvala-${API_V}.la
 @lib lib/libvala-${API_V}.so.${LIBvala-${API_V}_VERSION}
 lib/pkgconfig/libvala-${API_V}.pc
@@ -19,7 +19,7 @@ lib/pkgconfig/vapigen-${API_V}.pc
 lib/pkgconfig/vapigen.pc
 lib/vala-${API_V}/
 @bin lib/vala-${API_V}/gen-introspect-${API_V}
-lib/vala-${API_V}/libvalaccodegen.so
+@so lib/vala-${API_V}/libvalaccodegen.so
 @man man/man1/vala-gen-introspect-${API_V}.1
 @man man/man1/vala-gen-introspect.1
 @man man/man1/valac-${API_V}.1
