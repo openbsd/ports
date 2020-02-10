@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/06 09:04:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2020/02/10 20:24:24 kmos Exp $
 
 COMMENT =	record terminal sessions as SVG animations
 
@@ -19,7 +19,9 @@ MODULES =	lang/python
 
 MODPY_PI =	Yes
 MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
-MODPY_SETUPTOOLS = Yes
+MODPY_SETUPTOOLS = 	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	termtosvg/tests
 
 RUN_DEPENDS =	devel/py-pyte${MODPY_FLAVOR} \
 		devel/py-wcwidth${MODPY_FLAVOR} \
