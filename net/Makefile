@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1167 2020/01/31 23:34:42 abieber Exp $
+# $OpenBSD: Makefile,v 1.1168 2020/02/10 22:44:20 solene Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -34,6 +34,7 @@
      SUBDIR += bitlbee,otr
      SUBDIR += bitlbee,otr,libpurple
      SUBDIR += bitlbee-facebook
+     SUBDIR += bitlbee-mastodon
      SUBDIR += blaeu
      SUBDIR += bnc
      SUBDIR += bro
