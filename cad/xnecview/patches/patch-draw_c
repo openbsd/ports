@@ -1,7 +1,8 @@
-$OpenBSD: patch-draw_c,v 1.1 2013/12/06 15:22:40 jca Exp $
---- draw.c.orig	Fri Dec  6 16:21:50 2013
-+++ draw.c	Fri Dec  6 16:21:52 2013
-@@ -616,8 +616,6 @@ void draw_gain_phi(int j,Radpattern *rp)
+$OpenBSD: patch-draw_c,v 1.2 2020/02/10 10:47:24 benoit Exp $
+Index: draw.c
+--- draw.c.orig
++++ draw.c
+@@ -615,8 +615,6 @@ void draw_gain_phi(int j,Radpattern *rp)
  #define R270 (1.5*M_PI)
  #define R360 (2*M_PI)
  

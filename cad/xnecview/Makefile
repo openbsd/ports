@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/02/10 10:47:23 benoit Exp $
 
 COMMENT=	NEC2 antenna simulator visualizer
 
-DISTNAME=	xnecview-1.36
-REVISION=	1
+DISTNAME =	xnecview-1.37
 EXTRACT_SUFX=	.tgz
 
-MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/xnecview/
+MASTER_SITES=	https://www.pa3fwm.nl/software/xnecview/
 
 CATEGORIES=	cad hamradio
 
-HOMEPAGE=	http://www.cs.utwente.nl/~ptdeboer/ham/xnecview/
+HOMEPAGE=	https://www.pa3fwm.nl/software/xnecview/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -24,6 +23,8 @@ LIB_DEPENDS =		x11/gtk+2
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" LD="${LD}" myCFLAGS="${CFLAGS}"
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xnecview ${PREFIX}/bin/
