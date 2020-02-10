@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/10 16:37:22 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =	visual database applications creator
 
 VERSION =	3.2.0
 DISTNAME =	kexi-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kexicore3.2               0.0 # 3.2
 SHARED_LIBS +=  kexidatatable3.2          0.0 # 3.2
@@ -39,7 +40,7 @@ WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5XmlGui
 WANTLIB += KPropertyCore3 KPropertyWidgets3 KReport3 Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Test
 WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c glib-2.0
-WANTLIB += iconv m mysqlclient
+WANTLIB += iconv m mariadb
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kexi/src/}
 EXTRACT_SUFX =	.tar.xz
