@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/03/19 20:12:10 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/02/10 08:17:42 sebastia Exp $
 @bin bin/qsynth
 man/fr/
 man/fr/man1/
@@ -12,6 +12,7 @@ share/qsynth/
 share/qsynth/translations/
 share/qsynth/translations/qsynth_cs.qm
 share/qsynth/translations/qsynth_de.qm
+share/qsynth/translations/qsynth_es.qm
 share/qsynth/translations/qsynth_fr.qm
 share/qsynth/translations/qsynth_ru.qm
 share/qsynth/translations/qsynth_sr.qm
