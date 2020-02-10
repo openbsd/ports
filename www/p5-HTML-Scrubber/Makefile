@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/02/10 09:12:48 cwen Exp $
 
 COMMENT=	HTML cleaning module
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	HTML-Scrubber-0.09
+DISTNAME=	HTML-Scrubber-0.19
 CATEGORIES=	www
-REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	www/p5-HTML-Parser
+RUN_DEPENDS=	www/p5-HTML-Parser>=3.47
+
+TEST_DEPENDS=	devel/p5-Test-Differences \
+		devel/p5-Test-Memory-Cycle
 
 .include <bsd.port.mk>
