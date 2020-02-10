@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1931 2020/02/09 23:38:24 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1932 2020/02/10 02:15:41 bluhm Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1072,6 +1072,8 @@
      SUBDIR += p5-TAP-Harness-Archive
      SUBDIR += p5-TAP-Harness-JUnit
      SUBDIR += p5-TAP-Harness-Multiple
+     SUBDIR += p5-TOML
+     SUBDIR += p5-TOML-Parser
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
      SUBDIR += p5-Tcl
