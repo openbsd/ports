@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_powerpc_ffi_powerpc_h,v 1.1 2020/02/10 19:14:07 jasper Exp $
+
+Fix for:
+../src/powerpc/ffi_powerpc.h:105: error: expected declaration
+specifiers or '...' before 'float128'
+From:
+https://github.com/libffi/libffi/pull/532/commits/2138adb2a5b6a0bc2fe3518e0645eacc89b6f392
+
+Index: src/powerpc/ffi_powerpc.h
+--- src/powerpc/ffi_powerpc.h.orig
++++ src/powerpc/ffi_powerpc.h
+@@ -62,7 +62,7 @@ typedef _Float128 float128;
+ #elif defined(__FLOAT128__)
+ typedef __float128 float128;
+ #else
+-typedef __int128 float128;
++typedef char float128[16] __attribute__((aligned(16)));
+ #endif
+ 
+ void FFI_HIDDEN ffi_closure_SYSV (void);
