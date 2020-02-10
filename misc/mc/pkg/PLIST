@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2019/06/25 07:35:59 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/02/10 19:34:33 bket Exp $
 @pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
@@ -221,6 +221,7 @@ share/mc/hints/mc.hint.hr
 share/mc/hints/mc.hint.hu
 share/mc/hints/mc.hint.ia
 share/mc/hints/mc.hint.id
+share/mc/hints/mc.hint.ie
 share/mc/hints/mc.hint.it
 share/mc/hints/mc.hint.it_IT
 share/mc/hints/mc.hint.ja
@@ -228,6 +229,9 @@ share/mc/hints/mc.hint.ka
 share/mc/hints/mc.hint.kk
 share/mc/hints/mc.hint.ko
 share/mc/hints/mc.hint.lt
+share/mc/hints/mc.hint.lv
+share/mc/hints/mc.hint.mn
+share/mc/hints/mc.hint.nb
 share/mc/hints/mc.hint.nl
 share/mc/hints/mc.hint.pl
 share/mc/hints/mc.hint.pt
@@ -240,12 +244,16 @@ share/mc/hints/mc.hint.sr
 share/mc/hints/mc.hint.sv
 share/mc/hints/mc.hint.sv_SE
 share/mc/hints/mc.hint.szl
+share/mc/hints/mc.hint.ta
 share/mc/hints/mc.hint.te
 share/mc/hints/mc.hint.tr
 share/mc/hints/mc.hint.uk
 share/mc/hints/mc.hint.uz
+share/mc/hints/mc.hint.vi
+share/mc/hints/mc.hint.wa
 share/mc/hints/mc.hint.zh
 share/mc/hints/mc.hint.zh_CN
+share/mc/hints/mc.hint.zh_TW
 share/mc/mc.charsets
 share/mc/mc.lib
 share/mc/skins/
@@ -258,6 +266,7 @@ share/mc/skins/featured.ini
 share/mc/skins/gotar.ini
 share/mc/skins/gray-green-purple256.ini
 share/mc/skins/gray-orange-blue256.ini
+share/mc/skins/julia256.ini
 share/mc/skins/mc46.ini
 share/mc/skins/modarcon16-defbg.ini
 share/mc/skins/modarcon16.ini
@@ -364,6 +373,7 @@ share/mc/syntax/unknown.syntax
 share/mc/syntax/verilog.syntax
 share/mc/syntax/vhdl.syntax
 share/mc/syntax/xml.syntax
+share/mc/syntax/yabasic.syntax
 share/mc/syntax/yaml.syntax
 share/mc/syntax/yum-repo.syntax
 share/mc/syntax/yxx.syntax
