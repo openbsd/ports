@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/08 13:48:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2020/02/10 19:21:49 jasper Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
 DISTNAME=		libxkbcommon-0.10.0
 SHARED_LIBS +=	xkbcommon            1.5      # unknown
 SHARED_LIBS +=	xkbcommon-x11        1.2      # unknown
+REVISION =		0
 CATEGORIES=		x11 inputmethods
 
 HOMEPAGE=		https://xkbcommon.org/
@@ -27,7 +28,9 @@ WANTLIB += xcb xcb-xkb
 BUILD_DEPENDS =		devel/bison
 
 CONFIGURE_ARGS +=	-Denable-docs=false \
-			-Denable-wayland=false
+			-Denable-wayland=false \
+			-Dx-locale-root=${X11BASE}/share/X11/locale \
+			-Dxkb-config-root=${X11BASE}/share/X11/xkb/
 
 TEST_DEPENDS =		devel/bison \
 			shells/bash
