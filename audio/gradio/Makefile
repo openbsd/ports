@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/02/10 10:20:29 benoit Exp $
 
 COMMENT =	internet radio browser and player
-GH_TAGNAME =	v7.2
+GH_TAGNAME =	v7.3
 GH_ACCOUNT =	haecker-felix
 GH_PROJECT =	Gradio
 DISTNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/^v//}

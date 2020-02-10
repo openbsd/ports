@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/07/06 06:04:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/02/10 10:20:29 benoit Exp $
 @bin bin/gradio
-share/appdata/
-share/appdata/de.haeckerfelix.gradio.appdata.xml
 share/applications/de.haeckerfelix.gradio.desktop
 share/dbus-1/services/de.haeckerfelix.gradio.service
 share/glib-2.0/schemas/de.haeckerfelix.gradio.gschema.xml
@@ -35,3 +33,5 @@ share/locale/tr/LC_MESSAGES/gradio.mo
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag glib-compile-schemas
+share/metainfo/
+share/metainfo/de.haeckerfelix.gradio.appdata.xml
