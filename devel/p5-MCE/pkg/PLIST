@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/07/26 15:02:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/10 00:32:06 bluhm Exp $
 ${P5SITE}/MCE/
 ${P5SITE}/MCE.pm
 ${P5SITE}/MCE.pod
@@ -45,6 +45,14 @@ ${P5SITE}/MCE/Util.pm
 @man man/man3p/MCE::Channel::Threads.3p
 @man man/man3p/MCE::Child.3p
 @man man/man3p/MCE::Core.3p
+@man man/man3p/MCE::Core::Input::Generator.3p
+@man man/man3p/MCE::Core::Input::Handle.3p
+@man man/man3p/MCE::Core::Input::Iterator.3p
+@man man/man3p/MCE::Core::Input::Request.3p
+@man man/man3p/MCE::Core::Input::Sequence.3p
+@man man/man3p/MCE::Core::Manager.3p
+@man man/man3p/MCE::Core::Validation.3p
+@man man/man3p/MCE::Core::Worker.3p
 @man man/man3p/MCE::Examples.3p
 @man man/man3p/MCE::Flow.3p
 @man man/man3p/MCE::Grep.3p
