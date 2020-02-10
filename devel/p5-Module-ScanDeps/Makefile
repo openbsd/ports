@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/02/10 01:41:19 bluhm Exp $
 
-COMMENT=	recursively scan Perl code for dependencies
+COMMENT =	recursively scan Perl code for dependencies
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Module-ScanDeps-1.24
-CATEGORIES=	devel
-REVISION=	0
+DISTNAME =	Module-ScanDeps-1.27
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-MAKE_ENV=	TEST_POD=Yes
+# Perl
+PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS +=	devel/p5-Test-Requires \
-		devel/p5-prefork
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Test-Requires \
+			devel/p5-prefork
+
+MAKE_ENV =		TEST_POD=Yes
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
