@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2019/10/02 17:34:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/10 05:56:59 rsadowski Exp $
 
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.7.1
+DISTNAME =	profanity-0.8.1
 CATEGORIES =	net
 
 HOMEPAGE =	https://profanity-im.github.io/
@@ -41,7 +41,8 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS +=	--with-xscreensaver=no \
-			--enable-icons=no \
+			--enable-icons-and-clipboard=no \
+			--enable-notifications=no \
 			--enable-plugins=yes \
 			--enable-omemo=yes \
 			--enable-otr=yes

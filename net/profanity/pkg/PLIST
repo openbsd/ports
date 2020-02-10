@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/03 19:40:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/02/10 05:56:59 rsadowski Exp $
 @bin bin/profanity
 @man man/man1/profanity.1
 share/examples/profanity/
@@ -16,6 +16,7 @@ share/profanity/themes/boothj5_laptop
 share/profanity/themes/boothj5_slack
 share/profanity/themes/complex
 share/profanity/themes/forest
+share/profanity/themes/gruvbox
 share/profanity/themes/hacker
 share/profanity/themes/headache
 share/profanity/themes/joker
@@ -25,5 +26,7 @@ share/profanity/themes/original
 share/profanity/themes/original_bright
 share/profanity/themes/shade
 share/profanity/themes/simple
+share/profanity/themes/solarized-dark
+share/profanity/themes/solarized-light
 share/profanity/themes/spawn
 share/profanity/themes/whiteness
