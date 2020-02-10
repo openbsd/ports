@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_arm_ffi_c,v 1.8 2018/01/22 06:28:00 bcallah Exp $
+$OpenBSD: patch-src_arm_ffi_c,v 1.9 2020/02/10 18:06:34 jasper Exp $
 
 https://svnweb.freebsd.org/ports/head/devel/libffi/files/patch-src__arm__ffi.c?revision=337118&view=markup
 
 Index: src/arm/ffi.c
 --- src/arm/ffi.c.orig
 +++ src/arm/ffi.c
-@@ -33,6 +33,11 @@
- 
- #include <stdlib.h>
+@@ -55,6 +55,11 @@ extern unsigned int ffi_arm_trampoline[3] FFI_HIDDEN;
+ #endif
+ #endif
  
 +#ifdef __arm__
 +#include <machine/sysarch.h>
@@ -15,11 +15,11 @@ Index: src/arm/ffi.c
 +#endif
 +
  /* Forward declares. */
- static int vfp_type_p (ffi_type *);
+ static int vfp_type_p (const ffi_type *);
  static void layout_vfp_args (ffi_cif *);
-@@ -750,6 +755,16 @@ ffi_closure_free (void *ptr)
- }
- 
+@@ -591,6 +596,16 @@ ffi_prep_closure_loc (ffi_closure * closure,
+   config[0] = closure;
+   config[1] = closure_func;
  #else
 +
 +#ifdef __arm__
@@ -32,5 +32,5 @@ Index: src/arm/ffi.c
 +	} while (0);
 +#endif
  
- #define FFI_INIT_TRAMPOLINE(TRAMP,FUN,CTX)				\
- ({ unsigned char *__tramp = (unsigned char*)(TRAMP);			\
+ #ifndef _M_ARM
+   memcpy(closure->tramp, ffi_arm_trampoline, 8);

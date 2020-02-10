@@ -1,30 +1,20 @@
-$OpenBSD: patch-configure,v 1.10 2018/11/02 18:27:17 naddy Exp $
+$OpenBSD: patch-configure,v 1.11 2020/02/10 18:06:34 jasper Exp $
 
-- Check for HAVE_AS_X86_PCREL on i386 too
 - Link with libc++abi on arm (to access unwind symbols)
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -18365,7 +18365,7 @@ $as_echo "#define HAVE_AS_REGISTER_PSEUDO_OP 1" >>conf
-     fi
- fi
- 
--if test x$TARGET = xX86 || test x$TARGET = xX86_WIN32 || test x$TARGET = xX86_64; then
-+if test x$TARGET = xX86 || test x$TARGET = xX86_FREEBSD || test x$TARGET = xX86_WIN32 || test x$TARGET = xX86_64; then
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking assembler supports pc related relocs" >&5
- $as_echo_n "checking assembler supports pc related relocs... " >&6; }
- if ${libffi_cv_as_x86_pcrel+:} false; then :
-@@ -18521,6 +18521,12 @@ if test "x$sys_symbol_underscore" = xyes; then
- $as_echo "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
+@@ -18475,6 +18475,12 @@ $as_echo "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
  
  fi
-+
+ 
 +case "$target" in
 +    arm-*-openbsd*)
 +      LDFLAGS="-lc++abi $LDFLAGS"
 +    ;;
 +esac
- 
++
  FFI_EXEC_TRAMPOLINE_TABLE=0
  case "$target" in
+      *arm*-apple-* | aarch64-apple-*)

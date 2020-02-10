@@ -1,15 +1,16 @@
-$OpenBSD: patch-testsuite_lib_libffi_exp,v 1.1 2015/09/29 07:45:33 jasper Exp $
+$OpenBSD: patch-testsuite_lib_libffi_exp,v 1.2 2020/02/10 18:06:34 jasper Exp $
 
 cc1: error: unrecognized command line option "-Wno-psabi"
 
---- testsuite/lib/libffi.exp.orig	Tue Sep 22 19:56:34 2015
-+++ testsuite/lib/libffi.exp	Tue Sep 22 19:56:44 2015
-@@ -280,7 +280,7 @@ proc libffi-dg-runtest { testcases default-extra-flags
- proc run-many-tests { testcases extra_flags } {
-     global using_gcc
-     if { [string match $using_gcc "yes"] } {
+Index: testsuite/lib/libffi.exp
+--- testsuite/lib/libffi.exp.orig
++++ testsuite/lib/libffi.exp
+@@ -488,7 +488,7 @@ proc run-many-tests { testcases extra_flags } {
+         }
+       }
+       "gnu" {
 -        set common "-W -Wall -Wno-psabi"
 +        set common "-W -Wall"
-         set optimizations { "-O0" "-O2" "-O3" "-Os" "-O2 -fomit-frame-pointer" }
-     } else {
-         # Assume we are using the vendor compiler.
+         if [info exists env(LIBFFI_TEST_OPTIMIZATION)] {
+ 	  set optimizations [ list $env(LIBFFI_TEST_OPTIMIZATION) ]
+         } else { 
