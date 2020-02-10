@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/02/10 15:07:00 benoit Exp $
 
 COMMENT =	Carp for clan of modules
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Carp-Clan-6.06
+DISTNAME =	Carp-Clan-6.08
 CATEGORIES =	devel
 
 # Perl
