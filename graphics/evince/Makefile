@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.173 2019/11/26 08:26:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.174 2020/02/10 18:19:45 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.34.2
+REVISION =		0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -34,6 +35,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			x11/gnome
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info

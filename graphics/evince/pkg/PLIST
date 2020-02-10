@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2019/11/02 11:10:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/02/10 18:19:45 jasper Exp $
 @conflict evince-djvu-*
 @conflict evince-dvi-*
 @conflict nautilus-evince-*
@@ -64,16 +64,16 @@ include/evince/${MAJ_V}/libview/ev-view.h
 lib/evince/
 lib/evince/4/
 lib/evince/4/backends/
-lib/evince/4/backends/libpdfdocument.so
-lib/evince/4/backends/libtiffdocument.so
+@so lib/evince/4/backends/libpdfdocument.so
+@so lib/evince/4/backends/libtiffdocument.so
 lib/evince/4/backends/pdfdocument.evince-backend
 lib/evince/4/backends/tiffdocument.evince-backend
 lib/girepository-1.0/EvinceDocument-${MAJ_V}.typelib
 lib/girepository-1.0/EvinceView-${MAJ_V}.typelib
-lib/libevdocument3.a
+@static-lib lib/libevdocument3.a
 lib/libevdocument3.la
 @lib lib/libevdocument3.so.${LIBevdocument3_VERSION}
-lib/libevview3.a
+@static-lib lib/libevview3.a
 lib/libevview3.la
 @lib lib/libevview3.so.${LIBevview3_VERSION}
 lib/pkgconfig/evince-document-${MAJ_V}.pc
