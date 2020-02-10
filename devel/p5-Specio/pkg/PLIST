@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/25 23:07:47 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/10 00:18:23 bluhm Exp $
 ${P5SITE}/Specio/
 ${P5SITE}/Specio.pm
 ${P5SITE}/Specio/Coercion.pm
@@ -44,6 +44,7 @@ ${P5SITE}/Specio/Role/
 ${P5SITE}/Specio/Role/Inlinable.pm
 ${P5SITE}/Specio/Subs.pm
 ${P5SITE}/Specio/TypeChecks.pm
+${P5SITE}/Test/
 ${P5SITE}/Test/Specio.pm
 @man man/man3p/Specio.3p
 @man man/man3p/Specio::Coercion.3p
