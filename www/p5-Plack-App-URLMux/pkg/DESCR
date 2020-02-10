@@ -1,0 +1,6 @@
+Plack::App::URLMux is a PSGI application that can dispatch multiple
+applications based on URL path and host names (a.k.a "virtual hosting")
+and takes care of rewriting SCRIPT_NAME and PATH_INFO. This module is
+based on Plack::App::URLMap module but optimizied to handle a lot of
+urls and has additional rules for parameterized URL and add additional
+parameteres provided to application at mapping URL.
