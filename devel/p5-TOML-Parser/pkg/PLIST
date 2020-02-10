@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/10 02:06:17 bluhm Exp $
+${P5SITE}/TOML/
+${P5SITE}/TOML/Parser/
+${P5SITE}/TOML/Parser.pm
+${P5SITE}/TOML/Parser/Tokenizer/
+${P5SITE}/TOML/Parser/Tokenizer.pm
+${P5SITE}/TOML/Parser/Tokenizer/Strict.pm
+${P5SITE}/TOML/Parser/Util.pm
+@man man/man3p/TOML::Parser.3p
+@man man/man3p/TOML::Parser::Tokenizer.3p
+@man man/man3p/TOML::Parser::Tokenizer::Strict.3p
+@man man/man3p/TOML::Parser::Util.3p
