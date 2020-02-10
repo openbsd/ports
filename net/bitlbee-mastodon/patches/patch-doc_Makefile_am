@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_Makefile_am,v 1.1.1.1 2020/02/10 22:42:09 solene Exp $
+
+Index: doc/Makefile.am
+--- doc/Makefile.am.orig
++++ doc/Makefile.am
+@@ -31,7 +31,8 @@ install-data-local:
+ 
+ HELP.md: mastodon-help.txt Makefile
+ 	sed \
+-	-e '1i# Bitlbee Mastodon\nThis document was generated from the help text for the plugin.\n' \
++	-e '1i\
++	# Bitlbee Mastodon\nThis document was generated from the help text for the plugin.\n' \
+ 	-e '1d' \
+ 	-e 's/^%$$//g' \
+ 	-e 's/^\?mastodon /## /g' \

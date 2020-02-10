@@ -1,0 +1,5 @@
+This Bitlbee plugin allows you to communicate with Mastodon instances, using
+your favourite IRC client. Mastodon is a decentralized, free and open-source
+microblogging network that implements the ActivityPub protocol.
+
+You'll need an account on a Mastodon instance to use this plugin.
