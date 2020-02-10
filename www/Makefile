@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.942 2020/01/16 17:54:14 landry Exp $
+# $OpenBSD: Makefile,v 1.943 2020/02/10 01:29:05 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -301,6 +301,7 @@
      SUBDIR += p5-PHP-Session
      SUBDIR += p5-PSGI
      SUBDIR += p5-Plack
+     SUBDIR += p5-Plack-App-URLMux
      SUBDIR += p5-Plack-Middleware-FixMissingBodyInRedirect
      SUBDIR += p5-Plack-Middleware-RemoveRedundantBody
      SUBDIR += p5-Plack-Middleware-ReverseProxy
