@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/24 18:46:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/10 20:52:15 rsadowski Exp $
 
 COMMENT=	PolicyKit authentication agent for Qt
 
@@ -30,8 +30,6 @@ MASTER_SITES=	${MASTER_SITE_KDE:=stable/polkit-qt-1/}
 
 MODULES=	devel/cmake \
 		x11/qt5
-
-BUILD_DEPENDS=	devel/automoc
 
 LIB_DEPENDS=	sysutils/polkit
 
