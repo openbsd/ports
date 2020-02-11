@@ -1,0 +1,17 @@
+$OpenBSD: patch-arch_posix_CMakeLists_txt,v 1.1.1.1 2020/02/11 10:35:25 bluhm Exp $
+
+This was needed for OpenBSD 5.8 with gcc version 4.8.4
+https://open62541.org/doc/1.0/building.html?highlight=openbsd#building-on-openbsd
+
+Index: arch/posix/CMakeLists.txt
+--- arch/posix/CMakeLists.txt.orig
++++ arch/posix/CMakeLists.txt
+@@ -10,7 +10,7 @@ if (${_index} GREATER -1 OR "${UA_ARCHITECTURE}" STREQ
+ 
+ 
+     if("${UA_ARCHITECTURE}" STREQUAL "posix")
+-        if(NOT CYGWIN AND NOT QNXNTO AND (NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD"))
++        if(NOT CYGWIN AND NOT QNXNTO)
+             ua_architecture_add_definitions(-Wshadow -Wconversion -fvisibility=hidden -fPIC)
+         endif()
+ 

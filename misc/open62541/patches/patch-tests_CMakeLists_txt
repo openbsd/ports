@@ -1,0 +1,25 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1.1.1 2020/02/11 10:35:25 bluhm Exp $
+
+There is no libsubunit port for OpenBSD.
+Includes for libcheck were not found.
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ # Load CMake Packages
+ find_package(Check REQUIRED)
+ set(LIBS ${CHECK_LIBRARIES} ${open62541_LIBRARIES})
+-if(NOT WIN32 AND NOT APPLE)
++if(NOT WIN32 AND NOT APPLE AND NOT (CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD"))
+   list(APPEND LIBS subunit)
+ endif()
+ 
+@@ -12,6 +12,7 @@ if(NOT MSVC AND UA_ENABLE_UNIT_TESTS_MEMCHECK)
+ endif()
+ 
+ if(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
++    include_directories(/usr/local/include)
+     link_directories(/usr/local/lib)
+     add_definitions(-Wno-gnu-zero-variadic-macro-arguments)
+ endif()

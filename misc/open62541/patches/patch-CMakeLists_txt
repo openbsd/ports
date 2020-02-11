@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/02/11 10:35:25 bluhm Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -1236,7 +1236,7 @@ if (UA_PACK_DEBIAN)    
+         "examples/nodeset"
+         "examples/pubsub")
+ 
+-    set(open62541_install_examples_dir share/open62541/examples)
++    set(open62541_install_examples_dir share/examples/open62541)
+     install(DIRECTORY ${UA_install_examples_dirs} COMPONENT examples DESTINATION ${open62541_install_examples_dir} USE_SOURCE_PERMISSIONS)
+ endif()
+ 
