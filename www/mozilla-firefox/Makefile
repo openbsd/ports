@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.410 2020/02/11 16:55:35 landry Exp $
+# $OpenBSD: Makefile,v 1.411 2020/02/11 18:24:46 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -40,7 +40,7 @@ MOZILLA_USE_BUNDLED_CAIRO = Yes
 MOZILLA_USE_BUNDLED_HUNSPELL = Yes
 
 # firefox >= 53 needs rust
-BUILD_DEPENDS +=	lang/rust>=1.34
+BUILD_DEPENDS +=	lang/rust>=1.39
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
 # 61 requires both versions of python
