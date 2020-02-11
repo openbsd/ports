@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/04 15:24:17 visa Exp $
+# $OpenBSD: Makefile,v 1.16 2020/02/11 16:17:23 stsp Exp $
 
 # XXX
 #
@@ -25,6 +25,7 @@
      SUBDIR += iwi
      SUBDIR += iwm
      SUBDIR += iwn
+     SUBDIR += iwx
      SUBDIR += malo
      SUBDIR += ogx
      SUBDIR += otus
