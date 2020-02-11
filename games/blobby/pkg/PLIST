@@ -1,15 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/27 07:12:45 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/11 22:32:16 cwen Exp $
 @bin bin/blobby
 @bin bin/blobby-server
 share/blobby/
+share/blobby/Icon.bmp
+share/blobby/api.lua
 share/blobby/backgrounds.zip
+share/blobby/bot_api.lua
 share/blobby/config.xml
 share/blobby/gfx.zip
 share/blobby/inputconfig.xml
 share/blobby/lang_de.xml
 share/blobby/lang_en.xml
 share/blobby/lang_fr.xml
-share/blobby/rules.lua
+share/blobby/lang_it.xml
+share/blobby/rules.zip
+share/blobby/rules_api.lua
 share/blobby/scripts.zip
 share/blobby/server.xml
 share/blobby/sounds.zip

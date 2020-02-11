@@ -1,31 +1,30 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/02/11 22:32:16 cwen Exp $
 
 COMMENT =		volleyball game with online play
 
-V =			1.0rc3
-DISTNAME =		blobby2-linux-${V}
-PKGNAME =		blobby-${V}
-REVISION =		2
+GH_ACCOUNT =		danielknobe
+GH_PROJECT =		blobbyvolley2
+GH_COMMIT =		5a03dd0a47800b590097f7a5dd3cb3dcda1ccd91
+
+DISTNAME =		blobby-1.0.20200209
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://blobby.sourceforge.net/
+HOMEPAGE =		http://blobbyvolley.de/
 
 # GPLv2+
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		GL GLU ICE SDL SM X11 Xext c m physfs pthread ${COMPILER_LIBCXX}
+WANTLIB +=		${COMPILER_LIBCXX} GL GLU SDL2 c m physfs
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=blobby/}
+# C++11
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/boost \
-			archivers/zip
-LIB_DEPENDS =		devel/sdl \
+BUILD_DEPENDS =		devel/boost
+LIB_DEPENDS =		devel/sdl2 \
 			devel/physfs
 
-WRKDIST =		${WRKDIR}/blobby-${V}
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
