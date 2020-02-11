@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2020/02/06 22:42:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.62 2020/02/11 18:59:09 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -682,7 +682,7 @@ librenms/bootstrap/cache/
 @mode
 @owner
 @group
-librenms/bootstrap/cache/.gitignore
+@comment librenms/bootstrap/cache/.gitignore
 librenms/build-base.php
 librenms/build.sql
 @mode 775
@@ -692,7 +692,7 @@ librenms/cache/
 @mode
 @owner
 @group
-librenms/cache/.gitignore
+@comment librenms/cache/.gitignore
 librenms/check-services.php
 librenms/composer.json
 librenms/composer.lock
