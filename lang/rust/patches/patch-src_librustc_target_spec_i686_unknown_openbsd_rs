@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_librustc_target_spec_i686_unknown_openbsd_rs,v 1.4 2019/04/17 06:55:59 semarie Exp $
+$OpenBSD: patch-src_librustc_target_spec_i686_unknown_openbsd_rs,v 1.5 2020/02/11 12:48:20 semarie Exp $
 i386 should be pentiumpro (no SSE2, no ...)
+pass -znotext to avoid relocation problem with __rust_probestack symbol
 Index: src/librustc_target/spec/i686_unknown_openbsd.rs
 --- src/librustc_target/spec/i686_unknown_openbsd.rs.orig
 +++ src/librustc_target/spec/i686_unknown_openbsd.rs
-@@ -2,7 +2,7 @@ use crate::spec::{LinkerFlavor, Target, TargetResult};
+@@ -2,10 +2,11 @@ use crate::spec::{LinkerFlavor, Target, TargetResult};
  
  pub fn target() -> TargetResult {
      let mut base = super::openbsd_base::opts();
@@ -12,3 +13,7 @@ Index: src/librustc_target/spec/i686_unknown_openbsd.rs
      base.max_atomic_width = Some(64);
      base.pre_link_args.get_mut(&LinkerFlavor::Gcc).unwrap().push("-m32".to_string());
      base.pre_link_args.get_mut(&LinkerFlavor::Gcc).unwrap().push("-fuse-ld=lld".to_string());
++    base.pre_link_args.get_mut(&LinkerFlavor::Gcc).unwrap().push("-Wl,-znotext".to_string());
+     base.stack_probes = true;
+ 
+     Ok(Target {

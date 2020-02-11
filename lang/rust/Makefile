@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2020/01/17 19:13:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.107 2020/02/11 12:48:20 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,16 +13,16 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.40.0
-CARGO_V =		0.41.0
+V =			1.41.0
+CARGO_V =		0.42.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.9
+RUSTFMT_V =		1.4.11
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.40.0-20191221
-BV-amd64 =		1.40.0-20191217
-BV-i386 =		1.40.0-20191220
+BV-aarch64 =		1.41.0-20200201
+BV-amd64 =		1.41.0-20200130
+BV-i386 =		1.41.0-20200209
 BV-sparc64 =		1.40.0-20200110
 BV =			${BV-${MACHINE_ARCH}}
 
@@ -31,8 +31,6 @@ PKGNAME-main =		rust-${V}
 PKGNAME-gdb =		rust-gdb-${V}
 PKGNAME-clippy =	rust-clippy-${V}
 PKGNAME-rustfmt =	rust-rustfmt-${V}
-
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -gdb -clippy -rustfmt
 
@@ -114,6 +112,7 @@ RUN_DEPENDS-rustfmt +=	lang/rust,-main
 
 MAKE_ENV +=	OPENBSD_PORTS_LANG_RUST_VERSION=${V:C/\.[0-9]*$//} \
 		CARGO_HOME=${WRKBUILD}/cargo-home \
+		TMPDIR=${WRKBUILD} \
 		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 TEST_ENV +=	RUST_BACKTRACE=0
@@ -259,8 +258,7 @@ bootstrap: build
 	${_PBUILD} cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/${_bin} \
 		${BOOTSTRAPDIR}/bin/${_bin}
 	LD_LIBRARY_PATH="${BOOTSTRAPDIR}/lib" \
-	LD_PRELOAD="${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/codegen-backends/librustc_codegen_llvm-llvm.so" \
-		ldd ${BOOTSTRAPDIR}/bin/${_bin}.bin \
+	ldd ${BOOTSTRAPDIR}/bin/${_bin}.bin \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % ${_PBUILD} cp % ${BOOTSTRAPDIR}/lib || true
 .endfor
