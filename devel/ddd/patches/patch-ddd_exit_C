@@ -1,4 +1,4 @@
-$OpenBSD: patch-ddd_exit_C,v 1.5 2020/01/17 13:34:54 naddy Exp $
+$OpenBSD: patch-ddd_exit_C,v 1.6 2020/02/11 21:23:01 cwen Exp $
 
 Index: ddd/exit.C
 --- ddd/exit.C.orig
@@ -8,7 +8,7 @@ Index: ddd/exit.C
  static XtAppContext xt_error_app_context = 0;
  
 -static void ddd_xt_error(String message = 0)
-+static void ddd_xt_error(String message = 0) _X_NORETURN
++_X_NORETURN static void ddd_xt_error(String message = 0)
  {
      ddd_has_crashed = true;
  
