@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2019/12/28 18:35:39 kmos Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2020/02/11 11:45:31 sthen Exp $
 @option no-default-conflict
 @option is-branch
-@conflict python->=3.7,<3.8
-@conflict python->=3,<3.6.8p2
-@pkgpath lang/python3.5,-main
-@pkgpath lang/python3.6,-main
-@comment bin/2to3
+@conflict python-${VERSION_SPEC}
+@conflict python->=3.2,<3.7
+@pkgpath lang/python/3.2,-main
+@pkgpath lang/python/3.3,-main
+@pkgpath lang/python/3.4,-main
+@pkgpath lang/python/3.5,-main
+@pkgpath lang/python/3.6,-main
+@conflict python-<3.6.8p2
+bin/2to3
 bin/2to3-3.7
 bin/pydoc3
 bin/pydoc3.7

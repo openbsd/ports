@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2019/12/28 18:34:39 kmos Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2020/02/11 11:45:31 sthen Exp $
 @option no-default-conflict
 @option is-branch
-@conflict python-tests->=3.8,<3.9
+@conflict python-tests-${VERSION_SPEC}
 lib/python3.8/ctypes/test/
 lib/python3.8/ctypes/test/__init__.py
 lib/python3.8/ctypes/test/__main__.py

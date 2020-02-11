@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST-tests,v 1.5 2019/12/28 18:35:39 kmos Exp $
+@comment $OpenBSD: PLIST-tests,v 1.6 2020/02/11 11:45:31 sthen Exp $
 @option no-default-conflict
 @option is-branch
-@conflict python-tests->=3.7,<3.8
+@conflict python-tests-${VERSION_SPEC}
 @conflict python->=3.6,<3.6.8p0
-@pkgpath lang/python3.5,-tests
-@pkgpath lang/python3.6,-tests
+@conflict python-tests->=3.2,<3.7
+@pkgpath lang/python/3.2,-tests
+@pkgpath lang/python/3.3,-tests
+@pkgpath lang/python/3.4,-tests
+@pkgpath lang/python/3.5,-tests
+@pkgpath lang/python/3.6,-tests
 lib/python3.7/test/
 lib/python3.7/test/Sine-1000Hz-300ms.aif
 lib/python3.7/test/__init__.py

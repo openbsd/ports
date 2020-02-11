@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.119 2019/12/19 02:42:46 kmos Exp $
+# $OpenBSD: python.port.mk,v 1.120 2020/02/11 11:45:31 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -8,6 +8,31 @@ CATEGORIES +=		lang/python
 # define the default versions
 MODPY_DEFAULT_VERSION_2 = 2.7
 MODPY_DEFAULT_VERSION_3 = 3.7
+
+# If switching to a new MODPY_DEFAULT_VERSION_3:
+# - In the old default version, @comment the non-suffixed bin/XXX files (python3,
+#   pydoc3, idle3, etc), lib/pkgconfig/python3.pc, and man/man1/python3.1 and
+#   bump REVISION
+# - In the new version, un-@comment these same files
+# - In the new version, @conflict on the old REVISION of the old version
+#   (3.6.8p1 was "default py3 is py3.6", 3.6.8p2 was after the switch to "default
+#   is py3.7", so the 3.7 ports had @conflict python-subpkg-<3.6.8p2)
+
+# If later *removing* an old version:
+# - *move* the numbered @conflict python-*->=3.2,<3.7 to the new version
+#   and update e.g. to  @conflict python-*->=3.2,<3.8
+# - *move* the @pkgpath markers to the new version and add a new one for
+#   the old version you have just retired.
+
+# In all cases:
+# - keep the @conflict python-*-${VERSION_SPEC} PLIST lines as-is, they are
+#   there to override the "@option no-default-conflict" and set automatically
+#   from the variable defined in 3.x/Makefile.
+
+# Also note:
+# - Some subpackages e.g. -idle have a conflict on an old version of the main
+#   package e.g. "@conflict python->=3.6,<3.6.8p0", this is due to a file
+#   moving between subpackages in the past.
 
 .if !defined(MODPY_VERSION)
 

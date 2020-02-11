@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-idle,v 1.1 2019/11/07 16:14:09 kmos Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2020/02/11 11:45:31 sthen Exp $
 @option no-default-conflict
 @option is-branch
-@conflict python-idle->=3.8,<3.9
+@conflict python-idle-${VERSION_SPEC}
 @comment bin/idle3
 bin/idle3.8
 lib/python3.8/idlelib/
