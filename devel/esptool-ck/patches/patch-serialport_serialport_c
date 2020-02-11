@@ -1,0 +1,21 @@
+$OpenBSD: patch-serialport_serialport_c,v 1.1.1.1 2020/02/11 20:19:44 sthen Exp $
+
+Index: serialport/serialport.c
+--- serialport/serialport.c.orig
++++ serialport/serialport.c
+@@ -288,6 +288,7 @@ void serialport_set_baudrate(unsigned int baudrate)
+             cfsetospeed(&term,B230400);
+             break;
+ #ifndef __APPLE__
++#ifndef __OpenBSD__
+         case 460800:
+             cfsetispeed(&term,B460800);
+             cfsetospeed(&term,B460800);
+@@ -297,6 +298,7 @@ void serialport_set_baudrate(unsigned int baudrate)
+             cfsetispeed(&term,B921600);
+             cfsetospeed(&term,B921600);
+             break;
++#endif
+ #endif
+         default:
+             LOGWARN("serialport_set_baudrate: baud rate %d may not work", baudrate);

@@ -1,0 +1,2 @@
+Esptool is a tool to create firmware files for the ESP8266 chip and flash the
+firmware to the chip over serial port.
