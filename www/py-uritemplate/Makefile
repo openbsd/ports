@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/11 08:16:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/11 13:57:52 kmos Exp $
 
 COMMENT =	URI templates
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
 FLAVOR ?=
