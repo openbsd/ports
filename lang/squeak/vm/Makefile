@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2020/01/14 22:20:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/02/11 13:44:10 kmos Exp $
+
+BROKEN-sparc64 = Many undefined references when linking
 
 COMMENT =	smalltalk system, vm
 
