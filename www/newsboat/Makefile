@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/23 13:26:34 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2020/02/11 18:57:33 sthen Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
 V =		2.18
 DISTNAME =	newsboat-$V
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -30,7 +31,9 @@ MODCARGO_BUILD =	No
 MODCARGO_INSTALL =	No
 MODCARGO_TEST =		No
 
+# keep libc >=0.2.63 for sparc64 support
 MODCARGO_CRATES_UPDATE +=	libc
+MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
 
 MODCARGO_CRATES +=	aho-corasick	0.6.9	# Unlicense/MIT
 MODCARGO_CRATES +=	argon2rs	0.2.5	# MIT
@@ -60,7 +63,7 @@ MODCARGO_CRATES +=	idna	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys	0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static	0.2.11	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazy_static	1.2.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.48	# MIT OR Apache-2.0
+#MODCARGO_CRATES +=	libc	0.2.48	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libz-sys	1.0.17	# MIT/Apache-2.0
 MODCARGO_CRATES +=	locale_config	0.2.2	# MIT
 MODCARGO_CRATES +=	lock_api	0.1.5	# Apache-2.0/MIT
