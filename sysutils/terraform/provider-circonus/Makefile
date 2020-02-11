@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/08 11:15:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/11 10:45:43 ajacoutot Exp $
 
 PROVIDER=		circonus
-GH_TAGNAME=		v0.6.0
+GH_TAGNAME=		v0.7.0
 
 .include <bsd.port.mk>

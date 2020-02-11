@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/10 14:01:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/11 10:45:43 ajacoutot Exp $
 
 PROVIDER=		kubernetes
-GH_TAGNAME=		v1.10.0
+GH_TAGNAME=		v1.11.0
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/08 09:32:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/11 10:45:43 ajacoutot Exp $
 
 PROVIDER=		docker
-GH_TAGNAME=		v2.6.0
+GH_TAGNAME=		v2.7.0
 
 .include <bsd.port.mk>
