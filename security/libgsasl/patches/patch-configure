@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2017/11/01 16:31:24 naddy Exp $
+$OpenBSD: patch-configure,v 1.2 2020/02/11 15:27:55 sebastia Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -23904,7 +23904,7 @@ _ACEOF
+@@ -31493,7 +31493,7 @@ _ACEOF
  
  
    case "$host_os" in
