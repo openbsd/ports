@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/20 18:59:15 ian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/11 20:48:30 sthen Exp $
+@conflict google-cloud-sdk-*
 bin/gsutil
 share/doc/gsutil/
 share/doc/gsutil/README

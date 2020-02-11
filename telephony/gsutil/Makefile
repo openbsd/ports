@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/11 20:48:30 sthen Exp $
 
 COMMENT =		dump/restore Grandstream device configurations
 
 DISTNAME =		gsutil-3.1
+REVISION =		0
 
 CATEGORIES =		telephony
 
