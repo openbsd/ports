@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.129 2020/01/07 17:27:45 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.130 2020/02/11 16:49:11 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -61,13 +61,13 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.49
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.50
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_NSPR)
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.21
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.25
 MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif
@@ -91,7 +91,7 @@ CONFIGURE_ARGS +=	--with-system-hunspell
 
 .if !defined(MOZILLA_USE_BUNDLED_SQLITE)
 MODMOZ_WANTLIB +=	sqlite3
-MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.28
+MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.31.1
 CONFIGURE_ARGS +=	--enable-system-sqlite
 # hack to build against systemwide sqlite3 (# 546162)
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
