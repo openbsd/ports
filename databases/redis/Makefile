@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.108 2019/07/12 20:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2020/02/11 08:11:13 tb Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-4.0.14
+DISTNAME =		redis-5.0.7
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
-REVISION =		0
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -12,6 +11,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c ${MODLUA_WANTLIB} m pthread
 
 MASTER_SITES =		http://download.redis.io/releases/
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODULES =		lang/lua \
 			lang/tcl
@@ -30,8 +31,6 @@ FAKE_FLAGS =		INSTALL="${INSTALL_PROGRAM}" \
 
 USE_GMAKE =		Yes
 
-# Warning: running the test suite can take a long time and will
-# consume a lot of cpu cycles
 TEST_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 TEST_FLAGS =		TCL_BIN="${MODTCL_BIN}"
 

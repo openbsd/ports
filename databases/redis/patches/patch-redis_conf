@@ -1,4 +1,4 @@
-$OpenBSD: patch-redis_conf,v 1.20 2017/08/09 09:16:09 dcoppa Exp $
+$OpenBSD: patch-redis_conf,v 1.21 2020/02/11 08:11:13 tb Exp $
 Index: redis.conf
 --- redis.conf.orig
 +++ redis.conf
@@ -72,7 +72,7 @@ Index: redis.conf
  
  ################################# REPLICATION #################################
  
-@@ -497,7 +499,7 @@ slave-priority 100
+@@ -504,7 +506,7 @@ replica-priority 100
  # 150k passwords per second against a good box. This means that you should
  # use a very strong password otherwise it will be very easy to break.
  #
@@ -81,7 +81,7 @@ Index: redis.conf
  
  # Command renaming.
  #
-@@ -530,6 +532,7 @@ slave-priority 100
+@@ -537,6 +539,7 @@ replica-priority 100
  # an error 'max number of clients reached'.
  #
  # maxclients 10000
