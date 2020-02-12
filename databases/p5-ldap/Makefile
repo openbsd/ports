@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:43:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/02/12 13:08:24 benoit Exp $
 
 COMMENT=	client interface to LDAP servers
 
-VERSION=	0.65
+VERSION=	0.66
 EPOCH=		0
 DISTNAME=	perl-ldap-${VERSION}
 PKGNAME=	p5-ldap-${VERSION}
