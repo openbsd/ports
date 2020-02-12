@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.412 2020/01/01 02:29:25 jsg Exp $
+# $OpenBSD: Makefile,v 1.413 2020/02/12 06:19:42 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -233,7 +233,6 @@
      SUBDIR += puzzles
      SUBDIR += pyganim
      SUBDIR += pysol
-     SUBDIR += qgo
      SUBDIR += qqwing
      SUBDIR += qstat
      SUBDIR += quadrupleback
