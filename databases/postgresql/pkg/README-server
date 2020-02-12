@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.28 2020/02/09 09:38:45 florian Exp $
+$OpenBSD: README-server,v 1.29 2020/02/12 13:20:34 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -131,7 +131,12 @@ to the current version.
     "cp /var/postgresql/data-${PREV_MAJOR}/server.{crt,key} /var/postgresql/data/"
 
 Some postgresql.conf settings changed or disappeared in this version.
-Examine your old file for local changes and apply them to the new version.
+Examine your old file for local changes and apply them to the new version
+(/var/postgresql/data/postgresql.conf). The following command may help
+identify them:
+
+# diff -wu ${LOCALBASE}/share/postgresql-${PREV_MAJOR}/postgresql.conf.sample \
+    /var/postgresql/data-${PREV_MAJOR}/postgresql.conf
 
 7) Start PostgreSQL:
 # rcctl start postgresql
