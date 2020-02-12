@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/02/12 19:42:02 jasper Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -8,7 +8,7 @@ BROKEN-mips64 =	ecl_min fails
 V =		16.1.3
 DISTNAME =	ecl-$V
 SHARED_LIBS +=	ecl	6.0
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://common-lisp.net/project/ecl/
 MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
