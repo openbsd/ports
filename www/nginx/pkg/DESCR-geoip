@@ -1,2 +1,0 @@
-The ngx_http_geoip_module module creates variables with values depending on
-the client IP address, using the precompiled MaxMind databases.

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.141 2020/01/10 13:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2020/02/12 14:34:05 sthen Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
 COMMENT-main=		robust and small HTTP server and mail proxy server
 COMMENT-image_filter=	nginx image filter module
-COMMENT-geoip=		nginx GeoIP module
 COMMENT-geoip2=		nginx GeoIP2 module
 COMMENT-xslt=		nginx XSLT filter module
 COMMENT-mailproxy=	nginx mail proxy module
@@ -27,7 +26,6 @@ VERSION-rtmp=	1.2.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-image_filter=	nginx-image_filter-${VERSION}
-PKGNAME-geoip=		nginx-geoip-${VERSION}
 PKGNAME-geoip2=		nginx-geoip2-${VERSION}
 PKGNAME-xslt=		nginx-xslt-${VERSION}
 PKGNAME-mailproxy=	nginx-mailproxy-${VERSION}
@@ -68,8 +66,10 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
-MULTI_PACKAGES =	-main -image_filter -geoip -geoip2 -xslt -mailproxy -stream \
-			-naxsi -perl -passenger -headers_more -ldap_auth -lua -rtmp
+MULTI_PACKAGES =	-main -naxsi -perl ${MODULE_PACKAGES}
+
+MODULE_PACKAGES =	-image_filter -geoip2 -xslt -mailproxy -stream \
+			-passenger -headers_more -ldap_auth -lua -rtmp
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	no_lua no_passenger
@@ -82,7 +82,6 @@ WANTLIB-main=		c z pcre ssl crypto
 WANTLIB-mailproxy=
 WANTLIB-stream=
 WANTLIB-image_filter=	gd
-WANTLIB-geoip=		GeoIP
 WANTLIB-geoip2=		maxminddb
 WANTLIB-rtmp=
 WANTLIB-xslt=		exslt xml2 xslt
@@ -97,7 +96,6 @@ LIB_DEPENDS-main=	devel/pcre
 LIB_DEPENDS-xslt=	textproc/libxml \
 			textproc/libxslt
 LIB_DEPENDS-image_filter=graphics/gd
-LIB_DEPENDS-geoip=	net/GeoIP
 LIB_DEPENDS-geoip2=	net/libmaxminddb
 LIB_DEPENDS-ldap_auth=	databases/openldap
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
@@ -113,19 +111,10 @@ RUN_DEPENDS-passenger=	${RUN_DEPENDS} \
 
 NGINX_DIR=	/var/www
 SUBST_VARS=	NGINX_DIR
-NGINX_MODULES_DIR=	${NGINX_DIR}/modules
 
-PREFIX-mailproxy=	${NGINX_MODULES_DIR}
-PREFIX-stream=		${NGINX_MODULES_DIR}
-PREFIX-image_filter=	${NGINX_MODULES_DIR}
-PREFIX-geoip=		${NGINX_MODULES_DIR}
-PREFIX-geoip2=		${NGINX_MODULES_DIR}
-PREFIX-xslt=		${NGINX_MODULES_DIR}
-PREFIX-ldap_auth=	${NGINX_MODULES_DIR}
-PREFIX-lua=		${NGINX_MODULES_DIR}
-PREFIX-headers_more=	${NGINX_MODULES_DIR}
-PREFIX-passenger=	${NGINX_MODULES_DIR}
-PREFIX-rtmp=		${NGINX_MODULES_DIR}
+.for i in ${MODULE_PACKAGES}
+PREFIX$i=	${NGINX_DIR}/modules
+.endfor
 
 CFLAGS+=	-Wall -Wpointer-arith \
 		-I "${LOCALBASE}/include/libxml2" \
@@ -175,7 +164,6 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-http_auth_request_module \
 			--with-http_dav_module \
 			--with-http_image_filter_module=dynamic \
-			--with-http_geoip_module=dynamic \
 			--with-http_gzip_static_module \
 			--with-http_gunzip_module \
 			--with-http_perl_module=dynamic \

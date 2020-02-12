@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.858 2020/02/12 06:31:45 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.859 2020/02/12 14:34:05 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1369,6 +1369,7 @@ my $obsolete_reason = {
 	'dclib' => 3,
 	'luma' => 3,
 	'qhacc' => 15,
+	'nginx-geoip' => 17,
 	'qgo' => 16,
 	'qrfcview' => 3,
 };
@@ -1392,6 +1393,7 @@ my @msg = (
 	"python2 port superseded by python3 version", #14
 	"no longer maintained upstream, suggest homebank, gnucash, kmymoney", #15
 	"no longer maintained upstream, suggest kigo", #16
+	"old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb", #17
 );
 
 # ->is_base_system($handle, $state):
