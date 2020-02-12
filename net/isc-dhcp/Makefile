@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/01/24 10:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2020/02/12 13:59:48 cwen Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
@@ -41,6 +41,13 @@ NO_TEST=		Yes
 EXAMPLEDIR=		share/examples/isc-dhcp
 
 MAKE_ENV +=	CC='${CC}'
+
+# Fix "undefined reference to `__atomic_store_8'"
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB +=	atomic
+LIB_DEPENDS +=	lang/gcc/${MODGCC4_VERSION},-libs
+MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
+.endif
 
 # because we may want to patch bind, you know
 post-extract:
