@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/05 20:42:34 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/12 13:59:16 kmos Exp $
+
+BROKEN-sparc64 = multiple definition of use_vis3_instructions
 
 COMMENT =	Unicorn CPU emulator engine
 
