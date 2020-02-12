@@ -1,4 +1,3 @@
-make every warn() and die() complains loudly in the calling package and 
-elsewhere. More often used on the command line:
-
- perl -MCarp::Always script.pl
+This module is meant as a debugging aid. It can be used to make
+a script complain loudly with stack backtraces when warn()ing or
+die()ing.
