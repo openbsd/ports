@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_core_endian_type_hpp,v 1.1 2020/02/12 10:23:36 cwen Exp $
+
+Fix endianness detection, see:
+https://github.com/OpenTTD/OpenTTD/pull/7996
+
+Index: src/core/endian_type.hpp
+--- src/core/endian_type.hpp.orig
++++ src/core/endian_type.hpp
+@@ -35,6 +35,13 @@
+ #	else
+ #		define TTD_ENDIAN TTD_BIG_ENDIAN
+ #	endif
++#elif defined(__OpenBSD__)
++#	include <endian.h>
++#	if BYTE_ORDER == LITTLE_ENDIAN
++#		define TTD_ENDIAN TTD_LITTLE_ENDIAN
++#	else
++#		define TTD_ENDIAN TTD_BIG_ENDIAN
++#	endif
+ #elif !defined(TESTING)
+ #	include <sys/param.h>
+ #	if __BYTE_ORDER == __LITTLE_ENDIAN
