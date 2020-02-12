@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/24 15:32:23 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/12 14:05:23 bket Exp $
 
 COMMENT =		the missing terminal file browser for X
 
-V =			2.9
+V =			3.0
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
 
@@ -26,7 +26,7 @@ FAKE_FLAGS =		MANPREFIX="$(PREFIX)/man" \
 USE_GMAKE =		Yes
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/nnn
+WRKDIST =		${WRKDIR}/nnn-${V}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
