@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/12 14:46:03 benoit Exp $
 
 COMMENT =	working 'require Class::Name' and more
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Class-Load-0.24
+DISTNAME =	Class-Load-0.25
 CATEGORIES =	devel
 
 # same as perl
@@ -18,6 +18,7 @@ RUN_DEPENDS =	devel/p5-Data-OptList \
 
 TEST_DEPENDS =	devel/p5-Test-Fatal \
 		devel/p5-Test-Requires \
-		devel/p5-Test-Needs
+		devel/p5-Test-Needs \
+		devel/p5-Test-Without-Module
 
 .include <bsd.port.mk>
