@@ -1,4 +1,4 @@
-$OpenBSD: patch-intl_icu_source_Makefile_in,v 1.3 2018/10/03 14:55:36 sthen Exp $
+$OpenBSD: patch-intl_icu_source_Makefile_in,v 1.4 2020/02/13 07:41:53 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=990196
 
@@ -10,10 +10,11 @@ gmake[6]: Leaving directory '/usr/obj/ports/firefox-29.0beta3/build-amd64/js/src
 Makefile:77: recipe for target 'buildicu' failed
 
 Patch taken from www/firefox-esr
+
 Index: intl/icu/source/Makefile.in
 --- intl/icu/source/Makefile.in.orig
 +++ intl/icu/source/Makefile.in
-@@ -331,7 +331,7 @@ $(top_builddir)/config/pkgdataMakefile:
+@@ -337,7 +337,7 @@ $(top_builddir)/config/pkgdataMakefile:
  
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@

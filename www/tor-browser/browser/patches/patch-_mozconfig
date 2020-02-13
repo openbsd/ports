@@ -1,10 +1,14 @@
-$OpenBSD: patch-_mozconfig,v 1.4 2018/10/04 19:56:38 sthen Exp $
+$OpenBSD: patch-_mozconfig,v 1.5 2020/02/13 07:41:53 landry Exp $
 
 Disable the updater and related stuff.  Does nothing under OpenBSD
+
+Encrypted Media Extensions is not supported on OpenBSD. Apparently this also
+means we can not pass --disable-eme to configure so comment that out.
+
 Index: .mozconfig
 --- .mozconfig.orig
 +++ .mozconfig
-@@ -12,9 +12,9 @@ ac_add_options --enable-official-branding
+@@ -10,9 +10,9 @@ ac_add_options --enable-official-branding
  # Let's support GTK3 for ESR60
  ac_add_options --enable-default-toolkit=cairo-gtk3
  
@@ -17,10 +21,18 @@ Index: .mozconfig
  
  ac_add_options --disable-strip
  ac_add_options --disable-install-strip
-@@ -27,3 +27,6 @@ ac_add_options --disable-webrtc
- ac_add_options --disable-eme
- #ac_add_options --disable-ctypes
+@@ -21,8 +21,11 @@ ac_add_options --disable-debug
+ ac_add_options --disable-crashreporter
+ ac_add_options --disable-webrtc
+ # Let's make sure no preference is enabling either Adobe's or Google's CDM.
+-ac_add_options --disable-eme
++#ac_add_options --disable-eme
  ac_add_options --enable-proxy-bypass-protection
+ 
+ # Disable telemetry
+-ac_add_options MOZ_TELEMETRY_REPORTING=
+\ No newline at end of file
 +
 +# avoid 1.1GB libxul
 +ac_add_options --disable-debug-symbols
++ac_add_options MOZ_TELEMETRY_REPORTING=

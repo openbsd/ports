@@ -1,9 +1,0 @@
-Tor Browser uses its own instance of the tor daemon and communicates
-with it using the Tor control port on 127.0.0.1; the protocol is
-documented here:
-    https://gitweb.torproject.org/torspec.git/tree/control-spec.txt
-
-tor-launcher is a Firefox extension that uses this protocol to manage
-the tor daemon used by Tor browser.  It provides the control and
-communications glue used by the torbutton add-on to e.g. display the
-nodes in the current circuit, change the tor configuration, etc.

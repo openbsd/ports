@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/13 07:41:53 landry Exp $
 
     SUBDIR =
     SUBDIR += browser
-    SUBDIR += torbutton
-    SUBDIR += tor-launcher
     SUBDIR += noscript
     SUBDIR += https-everywhere
 

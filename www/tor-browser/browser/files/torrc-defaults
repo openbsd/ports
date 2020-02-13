@@ -1,0 +1,33 @@
+# If non-zero, try to write to disk less frequently than we would otherwise.
+AvoidDiskWrites 1
+# Where to send logging messages.  Format is minSeverity[-maxSeverity]
+# (stderr|stdout|syslog|file FILENAME).
+Log notice stdout
+# Bind to this address to listen to connections from SOCKS-speaking
+# applications.
+## XXX I think these two directives are actually screwing us over:
+#SocksPort 9150
+#ControlPort 9151
+CookieAuthentication 1
+GeoIPFile ${LOCALBASE}/share/tor/geoip
+GeoIPv6File ${LOCALBASE}/share/tor/geoip6
+
+##
+## N.B. PT not yet done on OpenBSD: 2015-07-21
+##
+
+## fteproxy configuration
+#ClientTransportPlugin fte exec fteproxy --managed
+
+## obfs4proxy configuration
+#ClientTransportPlugin obfs2,obfs3,obfs4,scramblesuit exec obfs4proxy
+
+## flash proxy configuration
+#
+# Change the second number here (9000) to the number of a port that can
+# receive connections from the Internet (the port for which you
+# configured port forwarding).
+#ClientTransportPlugin flashproxy exec flashproxy-client --register :0 :9000
+
+## meek configuration
+#ClientTransportPlugin meek exec meek-client-torbrowser -- meek-client
