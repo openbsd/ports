@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/26 22:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/02/13 15:57:00 kmos Exp $
 
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 
@@ -7,7 +7,7 @@ V =			2.4.0
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
-REVISION =		10
+REVISION =		11
 
 HOMEPAGE =		https://fs-uae.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -35,6 +35,10 @@ USE_GMAKE =		Yes
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
 CXXFLAGS =		-std=c++03
+.endif
+
+.if ${MACHINE} == "sparc64"
+CXXFLAGS +=		-fpermissive
 .endif
 
 MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}"
