@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.122 2019/07/12 20:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2020/02/13 18:51:01 bket Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.6.0
+VERSION=	2.6.1
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
@@ -23,15 +23,15 @@ EXTRACT_SUFX=	.tar.bz2
 cWANTLIB += bz2 c crypto curl iconv intl lzma m nghttp2 pthread sqlite3 ssl z
 cWANTLIB += ${MODLUA_WANTLIB}
 
-WANTLIB-main += curses readline ${cWANTLIB}
+WANTLIB-main += readline ${cWANTLIB}
 
-WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB-client += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB-client += cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
-WANTLIB-client += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-client += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB-client += harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB-client += pixman-1 png xcb xcb-render xcb-shm ${cWANTLIB}
+WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-client += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
+WANTLIB-client += epoxy expat fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB-client += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB-client += gthread-2.0 gtk-3 harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB-client += pangoft2-1.0 pixman-1 png xcb xcb-render xcb-shm
+WANTLIB-client += ${cWANTLIB}
 
 WANTLIB-share=
 
