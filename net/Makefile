@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1168 2020/02/10 22:44:20 solene Exp $
+# $OpenBSD: Makefile,v 1.1169 2020/02/13 11:59:42 landry Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -68,6 +68,7 @@
      SUBDIR += dhcping
      SUBDIR += dico
      SUBDIR += dictd
+     SUBDIR += dino
      SUBDIR += dleyna
      SUBDIR += dlint
      SUBDIR += dnscontrol
