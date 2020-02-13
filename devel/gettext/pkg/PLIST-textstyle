@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-textstyle,v 1.1 2019/05/20 22:15:03 naddy Exp $
+@comment $OpenBSD: PLIST-textstyle,v 1.2 2020/02/13 20:50:13 naddy Exp $
 include/textstyle/
 include/textstyle.h
 include/textstyle/stdbool.h
 include/textstyle/version.h
 include/textstyle/woe32dll.h
 @info info/libtextstyle.info
-lib/libtextstyle.a
+@static-lib lib/libtextstyle.a
 lib/libtextstyle.la
 @lib lib/libtextstyle.so.${LIBtextstyle_VERSION}
 share/doc/libtextstyle/

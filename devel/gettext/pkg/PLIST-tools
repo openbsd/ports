@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.1 2019/05/20 22:15:03 naddy Exp $
+@comment $OpenBSD: PLIST-tools,v 1.2 2020/02/13 20:50:13 naddy Exp $
 @pkgpath devel/gettext-tools
 bin/autopoint
 bin/gettextize
@@ -26,13 +26,13 @@ lib/gettext/
 lib/gettext/project-id
 @bin lib/gettext/urlget
 lib/gettext/user-email
-lib/libgettextlib.a
+@static-lib lib/libgettextlib.a
 lib/libgettextlib.la
 @lib lib/libgettextlib.so.${LIBgettextlib_VERSION}
-lib/libgettextpo.a
+@static-lib lib/libgettextpo.a
 lib/libgettextpo.la
 @lib lib/libgettextpo.so.${LIBgettextpo_VERSION}
-lib/libgettextsrc.a
+@static-lib lib/libgettextsrc.a
 lib/libgettextsrc.la
 @lib lib/libgettextsrc.so.${LIBgettextsrc_VERSION}
 @man man/man1/autopoint.1

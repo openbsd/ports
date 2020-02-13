@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2019/07/20 15:46:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.94 2020/02/13 20:50:13 naddy Exp $
 
 COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
@@ -9,9 +9,9 @@ DISTNAME=		gettext-${VERSION}
 PKGNAME-runtime=	gettext-runtime-${VERSION}
 PKGNAME-textstyle=	libtextstyle-${VERSION}
 PKGNAME-tools=		gettext-tools-${VERSION}
-REVISION-tools=		2
-REVISION-runtime=	0
-REVISION-textstyle=	0
+REVISION-tools=		3
+REVISION-runtime=	1
+REVISION-textstyle=	1
 
 SHARED_LIBS +=  intl                 6.0      # 9.6
 SHARED_LIBS +=  asprintf             1.1      # unknown
@@ -47,6 +47,8 @@ LIB_DEPENDS-tools=	${BASE_PKGPATH},-runtime \
 			${BASE_PKGPATH},-textstyle
 
 RUN_DEPENDS-tools=	archivers/xz
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # on critical path to lang/gcc.  XXX c++ used in libasprintf but seems
 # unused at present; may need to revisit if this changes

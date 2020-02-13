@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-runtime,v 1.1 2019/05/20 22:15:03 naddy Exp $
-@pkgpath devel/gettext
+@comment $OpenBSD: PLIST-runtime,v 1.2 2020/02/13 20:50:13 naddy Exp $
 @conflict gettext-*
+@pkgpath devel/gettext
 @bin bin/envsubst
 @bin bin/gettext
 bin/gettext.sh
@@ -9,10 +9,10 @@ include/autosprintf.h
 include/libintl.h
 @info info/autosprintf.info
 @comment lib/charset.alias
-lib/libasprintf.a
+@static-lib lib/libasprintf.a
 lib/libasprintf.la
 @lib lib/libasprintf.so.${LIBasprintf_VERSION}
-lib/libintl.a
+@static-lib lib/libintl.a
 lib/libintl.la
 @lib lib/libintl.so.${LIBintl_VERSION}
 @man man/man1/envsubst.1
