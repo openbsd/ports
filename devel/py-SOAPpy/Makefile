@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/02/13 22:11:40 naddy Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=0.12.22
 DISTNAME=	SOAPpy-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/^/py-/}
 CATEGORIES=    	devel www
-REVISION=	2
+REVISION=	3
 
 MODULES=	lang/python
 
@@ -21,7 +21,7 @@ MODPY_SETUPTOOLS=	Yes
 BUILD_DEPENDS=	devel/py-fpconst
 RUN_DEPENDS=	devel/py-fpconst \
 		textproc/py-defusedxml \
-		www/py-wtools
+		www/py-wstools
 
 # There are lots of tests, but most of them require network access
 # The one below doesn't, but it has a known failure...
