@@ -1,0 +1,8 @@
+Dino is a modern open-source chat client for the desktop. It focuses on
+providing a clean and reliable Jabber/XMPP experience while having your privacy
+in mind.
+
+Dino is secure by default: Your chats never leave your computer unencrypted.
+Once you enabled end-to-end encryption via OMEMO or OpenPGP, only you and your
+chat partners can read your messages, but not your server administrator or
+anyone else.
