@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_paths_in,v 1.1 2020/02/13 19:08:01 jasper Exp $
+
+Index: src/paths.in
+--- src/paths.in.orig
++++ src/paths.in
+@@ -1,6 +1,6 @@
+ namespace pdfpc.Paths {
+     public const string ICON_PATH = "@CMAKE_INSTALL_PREFIX@/share/pixmaps/pdfpc/";
+     public const string SOURCE_PATH = "@CMAKE_SOURCE_DIR@";
+-    public const string CONF_PATH = "@CMAKE_INSTALL_FULL_SYSCONFDIR@";
++    public const string CONF_PATH = "${SYSCONFDIR}";
+ }
+ 

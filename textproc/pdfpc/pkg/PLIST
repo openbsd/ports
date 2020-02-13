@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/01/07 19:03:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/02/13 19:08:01 jasper Exp $
 @bin bin/pdfpc
 @man man/man1/pdfpc.1
 @man man/man5/pdfpcrc.5
 share/examples/pdfpc/
 share/examples/pdfpc/pdfpcrc
+@sample ${SYSCONFDIR}/pdfpcrc
 share/pixmaps/
 share/pixmaps/pdfpc/
 share/pixmaps/pdfpc/blank.svg

@@ -1,0 +1,14 @@
+$OpenBSD: patch-man_pdfpcrc_in,v 1.1 2020/02/13 19:08:01 jasper Exp $
+
+Index: man/pdfpcrc.in
+--- man/pdfpcrc.in.orig
++++ man/pdfpcrc.in
+@@ -160,7 +160,7 @@ option black-on-end true
+ 
+ .SH FILES
+ .PP
+-.B @SYSCONFDIR@/pdfpcrc
++.B ${SYSCONFDIR}/pdfpcrc
+ .RS 4
+ System-wide configuration file
+ .RE
