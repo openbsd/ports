@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/11/03 11:07:54 danj Exp $
+@comment $OpenBSD: PLIST,v 1.1 2020/02/13 18:32:02 jasper Exp $
+%%python3%%
+!%%python3%%
 lib/python${MODPY_VERSION}/site-packages/wstools/
 lib/python${MODPY_VERSION}/site-packages/wstools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/wstools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

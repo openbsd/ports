@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.1 2016/11/03 11:07:54 danj Exp $
+$OpenBSD: patch-setup_py,v 1.1 2020/02/13 18:32:01 jasper Exp $
 
 Remove strong requirements on unported test depends
 
