@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/01 21:47:27 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/02/13 11:05:11 sthen Exp $
 bin/pcre2-config
 @bin bin/pcre2grep
 @bin bin/pcre2test
 include/pcre2.h
 include/pcre2posix.h
-lib/libpcre2-16.a
+@static-lib lib/libpcre2-16.a
 lib/libpcre2-16.la
 @lib lib/libpcre2-16.so.${LIBpcre2-16_VERSION}
-lib/libpcre2-32.a
+@static-lib lib/libpcre2-32.a
 lib/libpcre2-32.la
 @lib lib/libpcre2-32.so.${LIBpcre2-32_VERSION}
-lib/libpcre2-8.a
+@static-lib lib/libpcre2-8.a
 lib/libpcre2-8.la
 @lib lib/libpcre2-8.so.${LIBpcre2-8_VERSION}
-lib/libpcre2-posix.a
+@static-lib lib/libpcre2-posix.a
 lib/libpcre2-posix.la
 @lib lib/libpcre2-posix.so.${LIBpcre2-posix_VERSION}
 lib/pkgconfig/libpcre2-16.pc
@@ -43,6 +43,7 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2_general_context_free.3
 @man man/man3/pcre2_get_error_message.3
 @man man/man3/pcre2_get_mark.3
+@man man/man3/pcre2_get_match_data_size.3
 @man man/man3/pcre2_get_ovector_count.3
 @man man/man3/pcre2_get_ovector_pointer.3
 @man man/man3/pcre2_get_startchar.3
@@ -53,6 +54,7 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2_jit_stack_create.3
 @man man/man3/pcre2_jit_stack_free.3
 @man man/man3/pcre2_maketables.3
+@man man/man3/pcre2_maketables_free.3
 @man man/man3/pcre2_match.3
 @man man/man3/pcre2_match_context_copy.3
 @man man/man3/pcre2_match_context_create.3
@@ -144,6 +146,7 @@ share/doc/pcre2/html/pcre2_general_context_create.html
 share/doc/pcre2/html/pcre2_general_context_free.html
 share/doc/pcre2/html/pcre2_get_error_message.html
 share/doc/pcre2/html/pcre2_get_mark.html
+share/doc/pcre2/html/pcre2_get_match_data_size.html
 share/doc/pcre2/html/pcre2_get_ovector_count.html
 share/doc/pcre2/html/pcre2_get_ovector_pointer.html
 share/doc/pcre2/html/pcre2_get_startchar.html
@@ -154,6 +157,7 @@ share/doc/pcre2/html/pcre2_jit_stack_assign.html
 share/doc/pcre2/html/pcre2_jit_stack_create.html
 share/doc/pcre2/html/pcre2_jit_stack_free.html
 share/doc/pcre2/html/pcre2_maketables.html
+share/doc/pcre2/html/pcre2_maketables_free.html
 share/doc/pcre2/html/pcre2_match.html
 share/doc/pcre2/html/pcre2_match_context_copy.html
 share/doc/pcre2/html/pcre2_match_context_create.html
