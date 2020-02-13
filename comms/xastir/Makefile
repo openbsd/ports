@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2019/09/10 11:21:24 jca Exp $
+# $OpenBSD: Makefile,v 1.40 2020/02/13 03:59:42 kmos Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-2.0.6
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=    	comms hamradio geo
 
@@ -24,10 +24,10 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 .if ${MACHINE} == "sparc64"
-MAKE_FLAGS=	CFLAGS="${CFLAGS} -fno-tree-ter"
+CFLAGS +=		-fno-tree-ter
 .endif
 # https://github.com/Xastir/Xastir/issues/47 proj 6
-CONFIGURE_ENV +=	CFLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
+CFLAGS +=		-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 CONFIGURE_ARGS=		--with-shapelib					\
 			--with-pcre					\
