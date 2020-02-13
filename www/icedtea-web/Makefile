@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:50:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2020/02/13 11:01:11 giovanni Exp $
 
 COMMENT =	Java web start runtime
 DISTNAME =	icedtea-web-1.6.2
-REVISION =	7
+REVISION =	8
 CATEGORIES =	www
-
-MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
