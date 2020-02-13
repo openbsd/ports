@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2020/01/20 09:05:41 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2020/02/13 08:48:00 landry Exp $
 
 COMMENT =	Xfce4 alternative applications menu panel plugin
 
-XFCE_VERSION =	2.3.5
+XFCE_VERSION =	2.4.1
 XFCE_PLUGIN =	whiskermenu
 
 # GPLv2
@@ -15,7 +15,7 @@ MODXFCE_ICON_CACHE=	Yes
 LIB_DEPENDS +=	x11/xfce4/exo>=0.11
 
 WANTLIB +=	cairo exo-2 garcon-1 gdk_pixbuf-2.0 gdk-3 gio-2.0 glib-2.0
-WANTLIB +=	gobject-2.0 gtk-3 xfce4ui-2 xfce4util ${COMPILER_LIBCXX}
+WANTLIB +=	gobject-2.0 gtk-3 m xfce4ui-2 xfce4util ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
