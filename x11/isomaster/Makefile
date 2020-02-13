@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2020/02/13 07:46:07 giovanni Exp $
 
 COMMENT=		gui cd image editor
 
 DISTNAME=		isomaster-1.3.14
+REVISION=		0
 
 CATEGORIES=		x11
 HOMEPAGE=		http://littlesvr.ca/isomaster/
-
-MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
