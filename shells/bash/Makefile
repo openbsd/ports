@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.115 2019/09/04 18:08:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.116 2020/02/13 21:44:51 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-5.0
-PKGNAME=	bash-5.0.11
+PKGNAME=	bash-5.0.16
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/bash-5.0-patches/}
 DIST_SUBDIR=	bash
 .for i in 001 002 003 004 005 006 007 008 009 010 \
-          011
+          011 012 013 014 015 016
 PATCHFILES+=	bash50-$i:0
 .endfor
 
