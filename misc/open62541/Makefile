@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/11 10:35:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/13 13:26:20 bluhm Exp $
 
 COMMENT =	library implementation of OPC UA
 
 VERSION =	1.0.1
+REVISION =	0
 PKGNAME =	open62541-${VERSION}
 
 GH_ACCOUNT =	open62541
@@ -43,6 +44,8 @@ CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DUA_PACK_DEBIAN=ON \
 			-DUA_BUILD_TOOLS=ON \
 			-DUA_BUILD_UNIT_TESTS=ON
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WRKDIST =		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
