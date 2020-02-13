@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/01/10 13:37:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2020/02/13 22:31:04 cwen Exp $
 
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
@@ -56,6 +56,9 @@ LIB_DEPENDS-main= \
 		audio/speex \
 		security/libsrtp \
 		telephony/bcg729
+
+# needed for gcc archs, it's not inherited by subpackages
+LIB_DEPENDS-main += ${MODGCC4_CPPLIBDEP}
 
 LIB_DEPENDS-pjsua= telephony/pjsua,-main \
 		audio/portaudio-svn
