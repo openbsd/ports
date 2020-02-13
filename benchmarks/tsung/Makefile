@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/13 20:32:48 jasper Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
-V=		1.5.1
+V=		1.7.0
 DISTNAME=	tsung-$V
-REVISION=	4
 
 CATEGORIES=	benchmarks net
 
@@ -15,9 +14,10 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 
-MODPY_BUILDDEP= 	No
 MODULES=		lang/erlang \
 			lang/python
+MODERL_VERSION=		19
+MODPY_BUILDDEP= 	No
 
 RUN_DEPENDS=		graphics/py-matplotlib \
 			math/gnuplot \
@@ -36,8 +36,5 @@ FAKE_FLAGS=		CONFDIR="${PREFIX}/share/examples/tsung/" \
 			MAN_DIR="${PREFIX}/man/man1/"
 
 SUBST_VARS+=		V
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/tsung.sh.in ${WRKSRC}/tsung-recorder.sh.in
 
 .include <bsd.port.mk>
