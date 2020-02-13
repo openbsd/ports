@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/13 13:26:20 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/13 22:19:35 sthen Exp $
 
 COMMENT =	library implementation of OPC UA
 
@@ -46,8 +46,6 @@ CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DUA_BUILD_UNIT_TESTS=ON
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-WRKDIST =		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
 ALL_TARGET =		all doc_pdf
 

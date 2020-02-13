@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/10 15:01:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/13 22:19:35 sthen Exp $
 
 COMMENT =	lightweight Qt5 notes manager
 PKGNAME =	feathernotes-${GH_TAGNAME:S/^V//}
@@ -27,7 +27,5 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 NO_TEST =	Yes
-
-WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/^V//}
 
 .include <bsd.port.mk>

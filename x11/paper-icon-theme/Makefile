@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/13 22:19:35 sthen Exp $
 
 COMMENT=		modern freedesktop flat icon theme
 
-V=			1.5.0
-WRKDIST=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
-PKGNAME=		${GH_PROJECT}-${V}
-REVISION=		1
-
 GH_ACCOUNT=		snwh
 GH_PROJECT=		paper-icon-theme
-GH_TAGNAME=		v.${V}
+GH_TAGNAME=		v.1.5.0
+REVISION=		1
+
 CATEGORIES=		x11
 
 HOMEPAGE=		https://snwh.org/paper

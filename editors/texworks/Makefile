@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/07/12 20:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2020/02/13 22:19:35 sthen Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -17,8 +17,6 @@ REVISION-python =	0
 REVISION-main =		3
 
 EPOCH =			0
-
-WRKDIST =		${WRKDIR}/texworks-release-${V}
 
 CATEGORIES =		editors print
 HOMEPAGE =		http://www.tug.org/texworks/
