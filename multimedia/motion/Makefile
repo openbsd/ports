@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/02/14 10:29:25 sthen Exp $
 
-V=		4.2.2
+V=		4.3.0
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Motion-Project
 GH_PROJECT=	motion
-GH_TAGNAME=	release-$V
-PORTROACH=	skipv:release-$V
-DISTNAME=	motion-$V
+GH_TAGNAME=	Release-$V
 
 CATEGORIES=	multimedia
 
@@ -18,8 +16,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPL (according to source files, v2 only. website says v2+).
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += avcodec avdevice avformat avutil c intl jpeg m microhttpd
-WANTLIB += pthread sqlite3 swscale webp webpmux
+WANTLIB += avcodec avdevice avformat avutil c iconv intl jpeg
+WANTLIB += microhttpd pthread sqlite3 swscale webp webpmux
 
 FLAVOR?=
 FLAVORS=		mysql pgsql
@@ -27,6 +25,7 @@ FLAVORS=		mysql pgsql
 FLAVOR_COMMA=		${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=		FLAVOR_COMMA
 
+BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		databases/sqlite3 \
 			graphics/jpeg \
 			graphics/ffmpeg \
@@ -35,12 +34,13 @@ LIB_DEPENDS=		databases/sqlite3 \
 
 FAKE_FLAGS=		docdir=${PREFIX}/share/doc/motion \
 			examplesdir=${PREFIX}/share/examples/motion \
-			sysconfdir=${PREFIX}/share/examples
+			sysconfdir=${PREFIX}/share/examples/motion
+FAKE_TARGET=		install install-data
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
+AUTOMAKE_VERSION=	1.16
 CONFIGURE_ARGS=		--without-optimizecpu \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
@@ -49,7 +49,7 @@ CONFIGURE_ARGS=		--without-optimizecpu \
 LIB_DEPENDS+=		databases/mariadb
 WANTLIB+=		lib/mysql/mysqlclient z
 .else
-CONFIGURE_ARGS+=	--without-mysql
+CONFIGURE_ARGS+=	--without-mysql --without-mariadb
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
@@ -65,10 +65,6 @@ NO_TEST=		Yes
 pre-configure:
 	perl -pi -e s,/usr/local/etc,${SYSCONFDIR},g \
 		${WRKSRC}/motion-dist.conf.in
-
-post-install:
-	cd ${PREFIX}/share/examples/motion; \
-	    rm -f motion.init-{Fedora,Debian,FreeBSD.sh} motion.service
 
 .include <bsd.port.arch.mk>
 

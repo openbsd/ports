@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/01/29 22:40:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/02/14 10:29:25 sthen Exp $
 @pkgpath multimedia/motion,bktr${FLAVOR_COMMA}
 @newgroup _motion:808
 @newuser _motion:808:_motion:daemon:motion user:/nonexistent:/sbin/nologin
@@ -7,10 +7,8 @@
 @bin bin/motion
 @man man/man1/motion.1
 share/doc/motion/
-share/doc/motion/CHANGELOG
 share/doc/motion/COPYING
 share/doc/motion/CREDITS
-share/doc/motion/README.md
 share/doc/motion/mask1.png
 share/doc/motion/motion_build.html
 share/doc/motion/motion_config.html
@@ -26,3 +24,22 @@ share/examples/motion/camera3-dist.conf
 share/examples/motion/camera4-dist.conf
 share/examples/motion/motion-dist.conf
 @sample ${SYSCONFDIR}/motion/motion.conf
+share/locale/da/LC_MESSAGES/motion.mo
+share/locale/de/LC_MESSAGES/motion.mo
+share/locale/es/LC_MESSAGES/motion.mo
+share/locale/fi/LC_MESSAGES/motion.mo
+share/locale/fr/LC_MESSAGES/motion.mo
+share/locale/it/LC_MESSAGES/motion.mo
+share/locale/ja/LC_MESSAGES/motion.mo
+share/locale/ko/LC_MESSAGES/motion.mo
+share/locale/li/
+share/locale/li/LC_MESSAGES/
+share/locale/li/LC_MESSAGES/motion.mo
+share/locale/nl/LC_MESSAGES/motion.mo
+share/locale/no/LC_MESSAGES/motion.mo
+share/locale/pt/LC_MESSAGES/motion.mo
+share/locale/sk/LC_MESSAGES/motion.mo
+share/locale/sv/LC_MESSAGES/motion.mo
+share/locale/zh/
+share/locale/zh/LC_MESSAGES/
+share/locale/zh/LC_MESSAGES/motion.mo
