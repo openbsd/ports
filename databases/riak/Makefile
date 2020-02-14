@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/02/14 12:55:21 jasper Exp $
+
+# XXX: MODERL_VERSION is set to 21 below, otherwise dump-vars ends up with
+# bogus references.
+BROKEN =			does not build with erlang 18 or newer
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.2.5
@@ -100,7 +104,7 @@ MAKE_FLAGS =	rel
 
 MODULES =	lang/erlang
 MODERL_WX =	Yes
-MODERL_VERSION = 17
+MODERL_VERSION = 21
 SUBST_VARS+=MODERL_VERSION
 
 # configure bundled snappy correctly
