@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2020/02/11 18:59:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.63 2020/02/14 10:31:55 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -17901,5 +17901,6 @@ librenms/vendor/xjtuwangke/passwordhash/src/
 librenms/vendor/xjtuwangke/passwordhash/src/Phpass/
 librenms/vendor/xjtuwangke/passwordhash/src/Phpass/PasswordHash.php
 librenms/webpack.mix.js
-@cwd ${LOCALBASE}/share/doc/pkg-readmes
-${PKGSTEM}
+@cwd ${LOCALBASE}
+share/doc/pkg-readmes/${PKGSTEM}
+bin/lnms

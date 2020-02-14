@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2020/02/11 18:59:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2020/02/14 10:31:55 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -7,7 +7,7 @@ GH_PROJECT =	librenms
 GH_TAGNAME =	1.60
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net www
 
@@ -82,6 +82,7 @@ do-install:
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 	rm -rf ${INSTDIR}/tests ${INSTDIR}/vendor/*/*/.git
+	ln -s /var/www/librenms/lnms ${WRKINST}/${LOCALBASE}/bin/
 
 # maintainer convenience target
 dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
