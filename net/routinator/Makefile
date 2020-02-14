@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2020/01/21 05:27:18 semarie Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/14 23:15:09 sthen Exp $
+
+ONLY_FOR_ARCHS =	${RUST_ARCHS:Naarch64}
 
 COMMENT =		RPKI "relying party" software
 
