@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/14 01:43:22 kmos Exp $
+
+BROKEN-sparc64 = [Makefile:542: bigram.db] Bus error (core dumped)
 
 COMMENT =	library to deal with pinyin
 
