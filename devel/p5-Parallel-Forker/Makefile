@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/02/14 13:57:43 benoit Exp $
 
 COMMENT=	parallel job forking and management
 
-DISTNAME =	Parallel-Forker-1.234
+DISTNAME =	Parallel-Forker-1.252
 CATEGORIES=	devel
 
 # Artistic
