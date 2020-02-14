@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.164 2020/01/21 03:33:47 djm Exp $
+# $OpenBSD: OpenBSD,v 1.165 2020/02/14 15:44:32 paco Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -46,6 +46,7 @@
 40.552889	-8.333124	"rui"		# Rui Reis
 40.721300	-73.858770	"ray"		# Ray Lai
 41.2839		-81.2242	"bmercer"	# Brandon Mercer
+41.5397		2.4447		"paco"		# Paco Esteban
 41.92		-87.70		"jcs"		# joshua stein
 42.2325		-88.1178	"kspillner"	# Kent R. Spillner
 42.2731		-83.782		"aaron"		# Aaron Campbell
