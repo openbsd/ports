@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/09/01 07:04:04 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/02/14 12:19:29 benoit Exp $
 bin/cover
 bin/cpancover
 bin/gcov2perl
@@ -24,6 +24,7 @@ ${P5ARCH}/Devel/Cover/DB/Digests.pm
 ${P5ARCH}/Devel/Cover/DB/File.pm
 ${P5ARCH}/Devel/Cover/DB/IO/
 ${P5ARCH}/Devel/Cover/DB/IO.pm
+${P5ARCH}/Devel/Cover/DB/IO/Base.pm
 ${P5ARCH}/Devel/Cover/DB/IO/JSON.pm
 ${P5ARCH}/Devel/Cover/DB/IO/Sereal.pm
 ${P5ARCH}/Devel/Cover/DB/IO/Storable.pm
@@ -54,7 +55,7 @@ ${P5ARCH}/Devel/Cover/Util.pm
 ${P5ARCH}/Devel/Cover/Web.pm
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/Cover/
-${P5ARCH}/auto/Devel/Cover/Cover.so
+@so ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man1/cover.1
 @man man/man1/cpancover.1
 @man man/man1/gcov2perl.1
@@ -75,6 +76,7 @@ ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man3p/Devel::Cover::DB::Digests.3p
 @man man/man3p/Devel::Cover::DB::File.3p
 @man man/man3p/Devel::Cover::DB::IO.3p
+@man man/man3p/Devel::Cover::DB::IO::Base.3p
 @man man/man3p/Devel::Cover::DB::IO::JSON.3p
 @man man/man3p/Devel::Cover::DB::IO::Sereal.3p
 @man man/man3p/Devel::Cover::DB::IO::Storable.3p
