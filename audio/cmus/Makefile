@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/02/14 11:11:32 sthen Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
 
 V=			2.8.0
 REVISION=		0
-DISTNAME=		cmus-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
 

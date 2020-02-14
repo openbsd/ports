@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/02/14 11:11:32 sthen Exp $
 
 COMMENT =	file system library for the lua language
-V =		1_6_3
-REVISION =	1
 
-DISTNAME =	${GH_PROJECT}-v_${V}
-PKGNAME =	luafs-${V:S/_/./g}
-WRKDIST =	${WRKDIR}/${DISTNAME}
+GH_ACCOUNT =	keplerproject
+GH_PROJECT =	luafilesystem
+GH_TAGNAME =	v_1_6_3
+PKGNAME =	luafs-1.6.3
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -14,10 +14,6 @@ HOMEPAGE =	http://keplerproject.github.io/luafilesystem/
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-GH_ACCOUNT =	keplerproject
-GH_PROJECT =	luafilesystem
-GH_TAGNAME =	v_${V}
 
 MODULES =	lang/lua
 

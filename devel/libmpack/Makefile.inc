@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2020/02/14 11:11:32 sthen Exp $
 
 V ?=		1.0.3
-DISTNAME ?=	libmpack-${V}
 
 GH_ACCOUNT ?=	tarruda
 GH_PROJECT ?=	libmpack

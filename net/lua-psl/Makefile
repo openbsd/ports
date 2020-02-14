@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/03 22:42:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT =	Lua bindings to libpsl
 
-V =		0.3
-DISTNAME =	lua-psl-${V}
-REVISION =	0
-
 GH_ACCOUNT =	daurnimator
 GH_PROJECT =	lua-psl
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v0.3
+REVISION =	0
 
 CATEGORIES =	net
 

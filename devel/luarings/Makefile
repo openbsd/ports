@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/02/14 11:11:32 sthen Exp $
 
 COMMENT =	multiple states library for the lua language
 
-GH_TAGNAME =	v_1_3_0
-GH_PROJECT =	rings
 GH_ACCOUNT =	keplerproject
-DISTNAME =	rings-${GH_TAGNAME}
-PKGNAME =	luarings-${GH_TAGNAME:S/v_//:S/_/./g}
+GH_PROJECT =	rings
+GH_TAGNAME =	v_1_3_0
+PKGNAME =	luarings-1.3.0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://keplerproject.github.io/rings/

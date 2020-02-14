@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.38 2019/11/10 22:05:26 bentley Exp $
+# $OpenBSD: Makefile,v 1.39 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
 V =			0.7.3
-DISTNAME =		mgba-$V
+GH_ACCOUNT =		mgba-emu
+GH_PROJECT =		mgba
+GH_TAGNAME =		$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
 PKGNAME-libretro =	libretro-mgba-$V
@@ -35,10 +37,6 @@ WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} mgba Qt5Core Qt5Gui Qt5Multimedia \
 			Qt5Network Qt5OpenGL Qt5Widgets ${COMPILER_LIBCXX}
 WANTLIB-libretro =	m pthread z
-
-GH_ACCOUNT =		mgba-emu
-GH_PROJECT =		mgba
-GH_TAGNAME =		$V
 
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc

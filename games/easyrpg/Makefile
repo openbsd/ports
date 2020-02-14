@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
+
+GH_ACCOUNT =	EasyRPG
+GH_PROJECT =	Player
+GH_TAGNAME =	0.5.3
 PKGNAME =	easyrpg-${GH_TAGNAME}
 CATEGORIES =	games x11
 
@@ -14,10 +18,6 @@ WANTLIB += lcf m mpg123 opusfile pixman-1 png sndfile speexdsp
 WANTLIB += vorbisfile xmp z
 
 COMPILER =	base-clang ports-clang ports-gcc
-
-GH_ACCOUNT =	EasyRPG
-GH_PROJECT =	Player
-GH_TAGNAME =	0.5.3
 
 MODULES +=	devel/cmake
 

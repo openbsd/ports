@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT =		watch the command output with interval timer
 
-V = 			1.0.4
 GH_ACCOUNT =		iij
 GH_PROJECT =		iwatch
-GH_TAGNAME =		v${V}
-DISTNAME =      	${GH_PROJECT}-${V}
+GH_TAGNAME =		v1.0.4
 
 CATEGORIES =		sysutils
 

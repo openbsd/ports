@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/14 11:11:33 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
+
+GH_ACCOUNT =		dhewm
+GH_PROJECT =		dhewm3
+GH_TAGNAME =		1.5.0
 
 COMMENT =		open-source version of Doom 3
 
@@ -16,10 +20,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += SDL2 c curl jpeg m ogg openal pthread vorbis vorbisfile
 WANTLIB += z
 WANTLIB += ${COMPILER_LIBCXX}
-
-GH_ACCOUNT =		dhewm
-GH_PROJECT =		dhewm3
-GH_TAGNAME =		1.5.0
 
 MODULES =		devel/cmake
 

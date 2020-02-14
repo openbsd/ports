@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/20 13:38:44 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT =	very basic terminfo library
-VERSION =	2.0.0
-DISTNAME =	unibilium-${VERSION}
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	unibilium
-GH_TAGNAME =	v${VERSION}
+GH_TAGNAME =	v2.0.0
 
 SHARED_LIBS +=	unibilium	1.0 # 4.0
 

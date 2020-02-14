@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/14 11:11:32 sthen Exp $
 
 COMMENT =		library for writing Tor pluggable transports in Go
 
 GH_ACCOUNT =		torbsd
 GH_PROJECT =		goptlib
 GH_TAGNAME =		0.7
-DISTNAME =		go-goptlib
-PKGNAME =		${DISTNAME}-${GH_TAGNAME}
+PKGNAME =		go-${DISTNAME}
 
 CATEGORIES =		devel
 

@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/14 11:11:32 sthen Exp $
 
-V =		0.4.5
 COMMENT =	PEG-based parser generator
-DISTNAME =	${GH_PROJECT}-${V}
 CATEGORIES =	devel
 
 GH_ACCOUNT =	fasterthanlime
 GH_PROJECT =	greg
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v0.4.5
 
 MAINTAINER =	Sean Levy <attila@stalphonsos.com>
 

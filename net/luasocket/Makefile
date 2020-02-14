@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:48:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT=	network support for the lua language
 V=		3.0-rc1
@@ -6,7 +6,6 @@ GH_ACCOUNT=	diegonehab
 GH_PROJECT=	luasocket
 GH_TAGNAME=	v$V
 REVISION=	1
-DISTNAME=	${GH_PROJECT}-$V
 PKGNAME=	${DISTNAME:S/-rc/rc/}
 CATEGORIES=	net
 

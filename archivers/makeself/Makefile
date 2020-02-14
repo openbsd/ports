@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/11/09 12:19:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2020/02/14 11:11:32 sthen Exp $
 
 COMMENT=		script generating a self-extractible .tgz from a directory
 
-V=			2.4.0
-DISTNAME=		makeself-${V}
-REVISION=		0
-
-GH_PROJECT=		makeself
 GH_ACCOUNT=		megastep
-GH_TAGNAME=		release-${V}
+GH_PROJECT=		makeself
+GH_TAGNAME=		release-2.4.0
+REVISION=		0
 
 CATEGORIES=		archivers misc
 

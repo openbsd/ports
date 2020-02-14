@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/14 00:51:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/14 11:11:32 sthen Exp $
 
 COMMENT =	realtime audio and music engine for games
 
-V =		1.9.4
-DISTNAME =	audiality2-$V
-
 GH_ACCOUNT =	olofson
 GH_PROJECT =	audiality2
-GH_TAGNAME =	v$V
+GH_TAGNAME =	v1.9.4
 
 SHARED_LIBS +=  audiality2                0.1
 

@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT =	frenetic space shoot-em-up
 
-V =		0.7.5.1
-DISTNAME =	koboredux-$V
-REVISION =	2
-
 GH_ACCOUNT =	olofson
 GH_PROJECT =	koboredux
-GH_TAGNAME =	v$V
+GH_TAGNAME =	v0.7.5.1
+REVISION =	2
 
 CATEGORIES =	games
 

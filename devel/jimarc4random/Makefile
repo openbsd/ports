@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/14 11:11:32 sthen Exp $
 
 COMMENT =		arc4random for Jim
 
-DISTNAME =		jimarc4random-0.3
+GH_ACCOUNT =		aryler
+GH_PROJECT =		Jimarc4random
+GH_TAGNAME =		0.3
+DISTNAME =		jimarc4random-${GH_TAGNAME}
+
 CATEGORIES =		devel
 HOMEPAGE =		http://www3.bell.net/stwo/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -11,10 +15,6 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB	=		jim
-
-GH_ACCOUNT =		aryler
-GH_PROJECT =		Jimarc4random
-GH_TAGNAME =		0.3
 
 BUILD_DEPENDS =		lang/jimtcl
 RUN_DEPENDS =		lang/jimtcl

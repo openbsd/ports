@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT =	ocamlbuild
 CATEGORIES =	devel
 
-V =		0.14.0
-REVISION =	1
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	ocamlbuild
-GH_TAGNAME =	${V}
-DISTNAME =	${GH_PROJECT}-${V}
+GH_TAGNAME =	0.14.0
+REVISION =	1
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

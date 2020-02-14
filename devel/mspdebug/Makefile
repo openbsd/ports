@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/02/14 11:11:33 sthen Exp $
 
 COMMENT=		debugger for use with MSP 430 MCUs
 
-GH_ACCOUNT =		dlbeer
-GH_PROJECT =		mspdebug
-GH_TAGNAME =		v0.23
-DISTNAME=		mspdebug-0.23
-REVISION =		1
+GH_ACCOUNT=		dlbeer
+GH_PROJECT=		mspdebug
+GH_TAGNAME=		v0.23
+REVISION=		1
 CATEGORIES=		devel
 
 HOMEPAGE=		https://dlbeer.co.nz/mspdebug/
