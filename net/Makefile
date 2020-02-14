@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1169 2020/02/13 11:59:42 landry Exp $
+# $OpenBSD: Makefile,v 1.1170 2020/02/14 10:56:02 cwen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -273,7 +273,6 @@
      SUBDIR += mtr,gtk
      SUBDIR += mudix
      SUBDIR += munin
-     SUBDIR += mutella
      SUBDIR += mygpoclient
      SUBDIR += nagios
      SUBDIR += nam
