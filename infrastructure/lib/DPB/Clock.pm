@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.16 2019/10/24 15:05:22 espie Exp $
+# $OpenBSD: Clock.pm,v 1.17 2020/02/14 18:51:46 kmos Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -163,7 +163,7 @@ sub frozen_message
 		$unchanged .= int($diff/3600)." HOURS!";
 	} elsif ($diff > 300) {
 		$unchanged .= int($diff/60)."mn";
-	} elsif ($diff > 10) {
+	} elsif ($diff > 45) {
 		$unchanged .= int($diff)."s";
 	} else {
 		$unchanged = "";
