@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.860 2020/02/14 10:58:06 cwen Exp $
+# $OpenBSD: Quirks.pm,v 1.861 2020/02/14 11:55:55 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1373,6 +1373,8 @@ my $obsolete_reason = {
 	'qgo' => 16,
 	'qrfcview' => 3,
 	'mutella' => 3,
+	'erl-bcrypt' => 5,
+	'erl-mochiweb' => 5,
 };
 
 # reasons for obsolete packages
