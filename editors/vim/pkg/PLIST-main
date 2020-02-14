@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2019/12/21 13:27:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2020/02/14 10:59:55 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -302,6 +302,7 @@ share/vim/${P}/doc/version7.txt
 share/vim/${P}/doc/version8.txt
 share/vim/${P}/doc/vi_diff.txt
 share/vim/${P}/doc/vim2html.pl
+share/vim/${P}/doc/vim9.txt
 share/vim/${P}/doc/visual.txt
 share/vim/${P}/doc/windows.txt
 share/vim/${P}/doc/workshop.txt
@@ -500,6 +501,8 @@ share/vim/${P}/ftplugin/sql.vim
 share/vim/${P}/ftplugin/sshconfig.vim
 share/vim/${P}/ftplugin/sudoers.vim
 share/vim/${P}/ftplugin/svg.vim
+share/vim/${P}/ftplugin/swift.vim
+share/vim/${P}/ftplugin/swiftgyb.vim
 share/vim/${P}/ftplugin/sysctl.vim
 share/vim/${P}/ftplugin/systemd.vim
 share/vim/${P}/ftplugin/systemverilog.vim
@@ -1350,6 +1353,7 @@ share/vim/${P}/syntax/sgmllnx.vim
 share/vim/${P}/syntax/sh.vim
 share/vim/${P}/syntax/sicad.vim
 share/vim/${P}/syntax/sieve.vim
+share/vim/${P}/syntax/sil.vim
 share/vim/${P}/syntax/simula.vim
 share/vim/${P}/syntax/sinda.vim
 share/vim/${P}/syntax/sindacmp.vim
@@ -1399,6 +1403,8 @@ share/vim/${P}/syntax/strace.vim
 share/vim/${P}/syntax/sudoers.vim
 share/vim/${P}/syntax/svg.vim
 share/vim/${P}/syntax/svn.vim
+share/vim/${P}/syntax/swift.vim
+share/vim/${P}/syntax/swiftgyb.vim
 share/vim/${P}/syntax/syncolor.vim
 share/vim/${P}/syntax/synload.vim
 share/vim/${P}/syntax/syntax.vim

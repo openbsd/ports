@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_syntax_make_vim,v 1.9 2019/12/21 13:27:04 sthen Exp $
+$OpenBSD: patch-runtime_syntax_make_vim,v 1.10 2020/02/14 10:59:55 sthen Exp $
 
 Index: runtime/syntax/make.vim
 --- runtime/syntax/make.vim.orig
@@ -13,24 +13,7 @@ Index: runtime/syntax/make.vim
  hi link makeOverride makeStatement
  hi link makeExport makeStatement
  
-@@ -39,10 +42,14 @@ syn case match
- " identifiers
- syn region makeIdent	start="\$(" skip="\\)\|\\\\" end=")" contains=makeStatement,makeIdent
- syn region makeIdent	start="\${" skip="\\}\|\\\\" end="}" contains=makeStatement,makeIdent
-+syn region makeIdent   start="\<defined("rs=e skip="\\)\|\\\\" end=")" contains=makeStatement,makeIdent,makeSString,makeDString
-+syn region makeIdent   start="\<empty("rs=e skip="\\)\|\\\\" end=")" contains=makeStatement,makeIdent,makeSString,makeDString
-+syn region makeIdent   start="^\. *for\> *"rs=e+1 end=" *\<in\>"he=s contains=makePreCondit
- syn match makeIdent	"\$\$\w*"
- syn match makeIdent	"\$[^({]"
--syn match makeIdent	"^ *[^:#= \t]*\s*[:+?!*]="me=e-2
--syn match makeIdent	"^ *[^:#= \t]*\s*="me=e-1
-+syn match makeIdent	"^ *[A-Za-z_][-A-Z-a-z0-9_.]*\s*[:+?!][:+?!]="me=e-3
-+syn match makeIdent	"^ *[A-Za-z_][-A-Z-a-z0-9_.]*\s*[:+?!*]="me=e-2
-+syn match makeIdent	"^ *[A-Za-z_][-A-Z-a-z0-9_.]*\s*="me=e-1
- syn match makeIdent	"%"
- 
- " Makefile.in variables
-@@ -55,8 +62,8 @@ syn match makeImplicit		"^\.[A-Za-z0-9_./\t -]\+\s*:[^
+@@ -56,8 +59,8 @@ syn match makeImplicit		"^\.[A-Za-z0-9_./\t -]\+\s*:[^
  syn region makeTarget   transparent matchgroup=makeTarget start="^[~A-Za-z0-9_./$()%-][A-Za-z0-9_./\t $()%-]*:\{1,2}[^:=]"rs=e-1 end=";"re=e-1,me=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine,makeComment,makeDString skipnl nextGroup=makeCommands
  syn match makeTarget		"^[~A-Za-z0-9_./$()%*@-][A-Za-z0-9_./\t $()%*@-]*::\=\s*$" contains=makeIdent,makeSpecTarget,makeComment skipnl nextgroup=makeCommands,makeCommandError
  
@@ -41,7 +24,7 @@ Index: runtime/syntax/make.vim
  
  syn match makeCommandError "^\s\+\S.*" contained
  syn region makeCommands start=";"hs=s+1 start="^\t" end="^[^\t#]"me=e-1,re=e-1 end="^$" contained contains=makeCmdNextLine,makeSpecial,makeComment,makeIdent,makePreCondit,makeDefine,makeDString,makeSString nextgroup=makeCommandError
-@@ -68,10 +75,10 @@ syn match makeStatement contained "(\(abspath\|addpref
+@@ -69,10 +72,10 @@ syn match makeStatement contained "(\(abspath\|addpref
  
  " Comment
  if exists("make_microsoft")
