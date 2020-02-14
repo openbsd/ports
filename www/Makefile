@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.944 2020/02/13 18:32:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.945 2020/02/14 11:55:33 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -38,7 +38,6 @@
      SUBDIR += e2guardian
      SUBDIR += edbrowse
      SUBDIR += epiphany
-     SUBDIR += erl-mochiweb
      SUBDIR += fcgi
      SUBDIR += fcgi-cgi
      SUBDIR += ffproxy
