@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/09 23:29:56 pamela Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/14 18:11:29 bket Exp $
 
 COMMENT =		backport of new features added to unittest
 
 MODPY_EGG_VERSION =	1.1.0
+REVISION =		0
 DISTNAME =		unittest2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -19,10 +20,10 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	unittest2
 
-BUILD_DEPENDS =		devel/py-six \
-			devel/py-traceback2
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
-RUN_DEPENDS =		${BUILD_DEPENDS}
+RUN_DEPENDS =		devel/py-six \
+			devel/py-traceback2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unittest2
