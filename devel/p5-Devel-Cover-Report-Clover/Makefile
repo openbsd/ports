@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/14 12:40:52 benoit Exp $
 
 COMMENT =	backend for Clover reporting of coverage statistics
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Devel-Cover-Report-Clover-0.35
+DISTNAME =	Devel-Cover-Report-Clover-1.01
 CATEGORIES =	devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
