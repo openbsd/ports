@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1516 2020/02/13 22:19:35 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1517 2020/02/14 13:06:29 cwen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -844,8 +844,7 @@ COMPILER_LINKS += c++ ${CXX}
 
 
 # copy selected info from bsd.own.mk
-MAKE_ENV += COMPILER_VERSION=${COMPILER_VERSION} \
-	PICFLAG="${PICFLAG}" \
+MAKE_ENV += PICFLAG="${PICFLAG}" \
 	BINGRP=bin BINOWN=root BINMODE=${BINMODE} NONBINMODE=${NONBINMODE} \
 	DIRMODE=755 \
 	INSTALL_COPY=-c INSTALL_STRIP=${INSTALL_STRIP} \
