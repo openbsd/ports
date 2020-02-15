@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/12/15 23:53:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/02/15 23:05:04 sthen Exp $
 
 COMMENT=	C-based regular expression scanner generator
 
@@ -6,7 +6,9 @@ V=		1.3
 DISTNAME=	re2c-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel
-HOMEPAGE=	http://re2c.org/
+REVISION=	0
+
+HOMEPAGE=	https://re2c.org/
 
 # public domain
 PERMIT_PACKAGE=	Yes
@@ -17,9 +19,16 @@ COMPILER=	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://github.com/skvadrik/re2c/releases/download/$V/
 
-BUILD_DEPENDS=	devel/bison
 TEST_DEPENDS=	shells/bash
 
 CONFIGURE_STYLE= gnu
+
+# re2c will use bison if present at build time, but will otherwise fallback
+# to pregenerated files. because re2c is a dep on ninja, which is on the path
+# to building much of the tree (and is in the chain to build the ports version
+# of makeinfo, which is required to build newer versions of bison), forcibly
+# disable this rather than allowing it to be used.
+# 
+CONFIGURE_ENV=	ac_cv_path_BISON=no
 
 .include <bsd.port.mk>
