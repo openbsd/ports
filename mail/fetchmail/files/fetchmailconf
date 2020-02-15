@@ -4,12 +4,12 @@
 # and runs the real fetchmailconf or alerts the user, as appropriate.
 #
 
-if [ -x ${MODPY_BIN} -a -d ${MODPY_LIBDIR}/lib-tk ]; then
+if [ -x ${MODPY_BIN} -a -d ${MODPY_LIBDIR}/tkinter -a -d ${MODPY_LIBDIR}/site-packages/future ]; then
 	exec ${PREFIX}/libexec/fetchmailconf.bin
 else
 	cat <<EOF
-Please install the python and python-tkinter packages, then try running
-fetchmailconf again.
+Please install the python3, python-tkinter and py3-future packages, then try
+running fetchmailconf again.
 EOF
 	exit 1
 fi

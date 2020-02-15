@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.153 2020/01/27 13:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.154 2020/02/15 15:55:51 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
-DISTNAME=	fetchmail-6.4.1
+DISTNAME=	fetchmail-6.4.2
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
@@ -16,7 +16,12 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =  c crypto iconv intl ssl
 
 MODULES=		lang/python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+# used for fetchmailconf only (which has a wrapper telling people to install
+# python if necessary); don't force it
 MODPY_RUNDEP=		No
+
 MODPY_ADJ_FILES=	fetchmailconf.py
 SUBST_VARS+=		MODPY_LIBDIR
 BUILD_DEPENDS=		devel/bison
