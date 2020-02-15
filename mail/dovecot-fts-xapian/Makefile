@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/15 08:51:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/15 15:38:26 sthen Exp $
 
 COMMENT=		full text search plugin for Dovecot using Xapian
 
@@ -8,6 +8,10 @@ GH_ACCOUNT=		grosjo
 GH_PROJECT=		fts-xapian
 GH_TAGNAME=		${V}
 PKGNAME=		dovecot-fts-xapian-${V}
+
+# remove DISTNAME at next update; upstream rerolled the distfile
+DISTNAME=		fts-xapian-${V}-1
+REVISION=		0
 
 CATEGORIES=		mail
 
