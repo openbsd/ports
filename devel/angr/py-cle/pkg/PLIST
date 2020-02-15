@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/10 10:01:56 kn Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/02/15 18:36:18 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/cle/
 lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -128,6 +128,10 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/macho.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/section.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/segment.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/symbol.py
+lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/named_region.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/__init__.py

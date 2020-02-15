@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/15 18:36:18 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/pyvex/
 lib/python${MODPY_VERSION}/site-packages/pyvex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyvex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/expr.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/include/
 lib/python${MODPY_VERSION}/site-packages/pyvex/include/pyvex.h
 lib/python${MODPY_VERSION}/site-packages/pyvex/lib/
-lib/python${MODPY_VERSION}/site-packages/pyvex/lib/libpyvex.so
+@so lib/python${MODPY_VERSION}/site-packages/pyvex/lib/libpyvex.so
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/${MODPY_PYCACHE}/
@@ -39,8 +39,10 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}aarch64_spotter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}arm_spotter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}x86_spotter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/aarch64_spotter.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/arm_spotter.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/x86_spotter.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/libvex.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/15 18:36:18 kn Exp $
 include/angr-vex/
 include/angr-vex/libvex.h
 include/angr-vex/libvex_basictypes.h
@@ -17,5 +17,5 @@ include/angr-vex/libvex_guest_x86.h
 include/angr-vex/libvex_ir.h
 include/angr-vex/libvex_s390x_common.h
 include/angr-vex/libvex_trc_values.h
-lib/libvex.a
-lib/libvex.so
+@static-lib lib/libvex.a
+@so lib/libvex.so

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/12/28 14:10:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/15 18:36:18 kn Exp $
 
 COMMENT =		abstraction layer for constraint solvers
 
 ANGR_PYTHON_MODULE =	claripy
-REVISION =	0
 
 # tests write here
 PORTHOME =		${WRKDIR}

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/11 13:13:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/15 18:36:18 kn Exp $
 
 COMMENT =		Python interface to libVEX and VEX IR
 
 ANGR_PYTHON_MODULE =	pyvex
-REVISION=		0
 
 USE_GMAKE =		Yes
 CFLAGS +=		-shared -fPIC -I${LOCALBASE}/include/angr-vex/
