@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.863 2020/02/14 13:15:36 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.864 2020/02/15 08:23:13 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1377,6 +1377,7 @@ my $obsolete_reason = {
 	'erl-mochiweb' => 5,
 	'rebar18' => 5,
 	'rebar17' => 5,
+	'bouml' => 3,
 };
 
 # reasons for obsolete packages
