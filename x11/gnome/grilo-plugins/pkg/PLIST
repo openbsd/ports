@@ -1,24 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.29 2019/07/24 19:53:34 ajacoutot Exp $
-lib/grilo-${API}/libgrlchromaprint.so
-lib/grilo-${API}/libgrldleyna.so
-lib/grilo-${API}/libgrlfilesystem.so
-lib/grilo-${API}/libgrlflickr.so
-lib/grilo-${API}/libgrlfreebox.so
-lib/grilo-${API}/libgrlgravatar.so
-lib/grilo-${API}/libgrljamendo.so
-lib/grilo-${API}/libgrllocalmetadata.so
-lib/grilo-${API}/libgrlluafactory.so
-lib/grilo-${API}/libgrlmagnatune.so
-lib/grilo-${API}/libgrlmetadatastore.so
-lib/grilo-${API}/libgrlopensubtitles.so
-lib/grilo-${API}/libgrlopticalmedia.so
-lib/grilo-${API}/libgrlpodcasts.so
-lib/grilo-${API}/libgrlraitv.so
-lib/grilo-${API}/libgrlshoutcast.so
-lib/grilo-${API}/libgrltmdb.so
-lib/grilo-${API}/libgrltracker.so
-lib/grilo-${API}/libgrlvimeo.so
-lib/grilo-${API}/libgrlyoutube.so
+@comment $OpenBSD: PLIST,v 1.30 2020/02/15 10:43:24 jasper Exp $
+@so lib/grilo-${API}/libgrlchromaprint.so
+@so lib/grilo-${API}/libgrldleyna.so
+@so lib/grilo-${API}/libgrlfilesystem.so
+@so lib/grilo-${API}/libgrlflickr.so
+@so lib/grilo-${API}/libgrlfreebox.so
+@so lib/grilo-${API}/libgrlgravatar.so
+@so lib/grilo-${API}/libgrljamendo.so
+@so lib/grilo-${API}/libgrllocalmetadata.so
+@so lib/grilo-${API}/libgrlluafactory.so
+@so lib/grilo-${API}/libgrlmagnatune.so
+@so lib/grilo-${API}/libgrlmetadatastore.so
+@so lib/grilo-${API}/libgrlopensubtitles.so
+@so lib/grilo-${API}/libgrlopticalmedia.so
+@so lib/grilo-${API}/libgrlpodcasts.so
+@so lib/grilo-${API}/libgrlraitv.so
+@so lib/grilo-${API}/libgrlshoutcast.so
+@so lib/grilo-${API}/libgrltmdb.so
+@so lib/grilo-${API}/libgrltracker.so
+@so lib/grilo-${API}/libgrlvimeo.so
+@so lib/grilo-${API}/libgrlyoutube.so
 lib/pkgconfig/grilo-plugins-${API}.pc
 share/grilo-plugins/
 share/grilo-plugins/grl-lua-factory/
@@ -110,6 +110,7 @@ share/locale/ko/LC_MESSAGES/grilo-plugins.mo
 share/locale/lt/LC_MESSAGES/grilo-plugins.mo
 share/locale/lv/LC_MESSAGES/grilo-plugins.mo
 share/locale/ml/LC_MESSAGES/grilo-plugins.mo
+share/locale/ms/LC_MESSAGES/grilo-plugins.mo
 share/locale/nb/LC_MESSAGES/grilo-plugins.mo
 share/locale/ne/LC_MESSAGES/grilo-plugins.mo
 share/locale/nl/LC_MESSAGES/grilo-plugins.mo
