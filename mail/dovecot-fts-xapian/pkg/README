@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2020/02/06 11:30:32 sthen Exp $
+$OpenBSD: README,v 1.2 2020/02/15 08:51:23 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running dovecot-fts-xapian on OpenBSD
@@ -18,13 +18,22 @@ Then configure the plugin's settings in 90-plugin.conf:
 
     plugin {
       fts = xapian
-      fts_xapian = partial=2 full=20 verbose=0
+      fts_xapian = partial=2 full=20 attachments=0 verbose=0
 
       fts_autoindex = yes
       fts_enforced = yes
 
       fts_autoindex_exclude = \Trash
     }
+
+Parameters 'partial' and 'full' are required, and allow control over the length
+of n-grams generated for searching header fields.
+
+Parameter 'attachments' defaults to off. Setting it to 1 will enable indexing of
+text attachments.
+
+Parameter 'verbose' can be set between 0 (default) and 2 (debug) for more
+detailed logging.
 
 New mail will be indexed incrementally. Use doveadm-index(1) to index
 existing mail, e.g.:
