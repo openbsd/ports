@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2020/01/08 18:55:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2020/02/15 10:43:23 jasper Exp $
 
 # XXX PORTROACH overriden at end of this file.
 
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.3.11
+GNOME_VERSION=	0.3.12
 API=		0.3
 
 SUBST_VARS=	API
