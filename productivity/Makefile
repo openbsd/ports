@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2020/02/04 06:26:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.88 2020/02/15 11:37:34 solene Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -28,6 +28,7 @@
      SUBDIR += libkfbapi
      SUBDIR += libkgapi
      SUBDIR += librcps
+     SUBDIR += lifeograph
      SUBDIR += mcds
      SUBDIR += novprog
      SUBDIR += osmo
