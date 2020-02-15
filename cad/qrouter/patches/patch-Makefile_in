@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2020/02/03 22:21:57 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2020/02/15 17:24:51 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -97,7 +97,8 @@ qrouternullg$(EXEEXT): $(OBJECTS4)
+@@ -98,7 +98,8 @@ qrouternullg$(EXEEXT): $(OBJECTS4)
  	$(RM) qrouternullg$(EXEEXT)
  	$(CC) ${CFLAGS} ${CPPFLAGS} ${DEFS} ${EXTRA_DEFS} \
  		${SOURCES4} ${INC_SPECS} -o $@  ${LIB_SPECS_NOSTUB} \

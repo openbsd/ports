@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/08 10:26:32 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/15 17:24:51 sthen Exp $
 
 COMMENT =	multi-level, over-the-cell maze router for VLSI design
-DISTNAME =	qrouter-1.4.74
-REVISION =	0
+DISTNAME =	qrouter-1.4.76
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	cad
 
