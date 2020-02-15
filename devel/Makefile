@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1934 2020/02/11 23:39:35 kn Exp $
+# $OpenBSD: Makefile,v 1.1935 2020/02/15 08:06:43 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -47,7 +47,6 @@
      SUBDIR += boehm-gc
      SUBDIR += boost
      SUBDIR += boris
-     SUBDIR += bouml
      SUBDIR += bpython
      SUBDIR += bpython,python3
      SUBDIR += bullet
