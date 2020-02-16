@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/17 18:21:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2020/02/16 08:15:53 ajacoutot Exp $
 
 COMMENT=		MIME messages creation and parsing library
 
 GNOME_PROJECT=		gmime
-GNOME_VERSION=		3.2.5
+GNOME_VERSION=		3.2.6
 PKGNAME=		gmime30-${GNOME_VERSION}
 
-SHARED_LIBS +=  gmime-3.0            2.1      # 201.4
+SHARED_LIBS +=  gmime-3.0            2.2      # 206.0
 
 CATEGORIES=		mail devel
 
