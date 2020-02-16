@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.29 2019/01/06 10:07:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2020/02/16 10:24:19 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/meld/__init__.py
-lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}build_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/meld/iohelpers.py
 lib/python${MODPY_VERSION}/site-packages/meld/linkmap.py
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}diffutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -74,7 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/meld/tree.py
 lib/python${MODPY_VERSION}/site-packages/meld/treehelpers.py
 lib/python${MODPY_VERSION}/site-packages/meld/ui/
 lib/python${MODPY_VERSION}/site-packages/meld/ui/__init__.py
-lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}bufferselectors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}cellrenderers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -115,7 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/meld/vc/
 lib/python${MODPY_VERSION}/site-packages/meld/vc/COPYING
 lib/python${MODPY_VERSION}/site-packages/meld/vc/README
 lib/python${MODPY_VERSION}/site-packages/meld/vc/__init__.py
-lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}_null.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}_vc.${MODPY_PYC_MAGIC_TAG}pyc
