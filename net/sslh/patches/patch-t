@@ -1,0 +1,24 @@
+$OpenBSD: patch-t,v 1.1 2020/02/16 19:51:44 bket Exp $
+
+Index: t
+--- t.orig
++++ t
+@@ -37,8 +37,6 @@ my $RB_WRONG_USERNAME =         1;
+ my $RB_OPEN_PID_FILE =          1;
+ my $RB_RESOLVE_ADDRESS =        1;
+ 
+-`lcov --directory . --zerocounters`;
+-
+ sub verbose_exec
+ {
+     my ($cmd) = @_;
+@@ -369,8 +367,5 @@ if ($RB_RESOLVE_ADDRESS) {
+     is($code, 4, "Exit status if can't resolve address");
+ }
+ 
+-`lcov --directory . --capture --output-file sslh_cov.info`;
+-`genhtml sslh_cov.info`;
+-
+-`killall echosrv`;
++`pkill -q echosrv`;
+ 
