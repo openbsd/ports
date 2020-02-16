@@ -1,0 +1,19 @@
+$OpenBSD: patch-socket_c,v 1.1 2020/02/16 10:58:15 giovanni Exp $
+
+Hide all driver private symbols from runtime library.
+
+Index: socket.c
+--- socket.c.orig
++++ socket.c
+@@ -16,6 +16,11 @@
+ #include <unistd.h>
+ #endif
+ 
++#if defined(__GNUC__) && ((__GNUC__ == 4 && __GNUC_MINOR__ >= 1) || (__GNUC__ > 4))
++/* Do not export non-static functions from driver library */
++#pragma GCC visibility push(hidden)
++#endif
++
+ /*
+  * Warning: Native socket code must be outside of dbdimp.c and dbdimp.h because
+  *          perl header files redefine socket function. This file must not

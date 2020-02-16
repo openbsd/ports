@@ -1,0 +1,73 @@
+$OpenBSD: patch-dbdimp_c,v 1.1 2020/02/16 10:58:15 giovanni Exp $
+
+- Mark embedded_options functions as static.
+- Hide all driver private symbols from runtime library.
+
+Index: dbdimp.c
+--- dbdimp.c.orig
++++ dbdimp.c
+@@ -15,6 +15,16 @@
+ 
+ #include "dbdimp.h"
+ 
++#ifdef HAVE_GET_CHARSET_NUMBER
++/* Available only in some clients and declared in header file my_sys.h which cannot be included */
++unsigned int get_charset_number(const char *cs_name, unsigned int cs_flags);
++#endif
++
++#if defined(__GNUC__) && ((__GNUC__ == 4 && __GNUC_MINOR__ >= 1) || (__GNUC__ > 4))
++/* Do not export non-static functions from driver library */
++#pragma GCC visibility push(hidden)
++#endif
++
+ #define ASYNC_CHECK_RETURN(h, value)\
+   if(imp_dbh->async_query_in_flight) {\
+       mariadb_dr_do_error(h, CR_UNKNOWN_ERROR, "Calling a synchronous function on an asynchronous handle", "HY000");\
+@@ -513,7 +523,7 @@ PERL_STATIC_INLINE bool mysql_charsetnr_is_utf8(unsign
+ /* 
+   count embedded options
+ */
+-int count_embedded_options(char *st)
++static int count_embedded_options(char *st)
+ {
+   int rc;
+   char c;
+@@ -538,7 +548,7 @@ int count_embedded_options(char *st)
+ /*
+   Free embedded options
+ */
+-int free_embedded_options(char ** options_list, int options_count)
++static int free_embedded_options(char ** options_list, int options_count)
+ {
+   int i;
+ 
+@@ -556,7 +566,7 @@ int free_embedded_options(char ** options_list, int op
+  Print out embedded option settings
+ 
+ */
+-int print_embedded_options(PerlIO *stream, char ** options_list, int options_count)
++static int print_embedded_options(PerlIO *stream, char ** options_list, int options_count)
+ {
+   int i;
+ 
+@@ -573,7 +583,7 @@ int print_embedded_options(PerlIO *stream, char ** opt
+ /*
+ 
+ */
+-char **fill_out_embedded_options(char *options,
++static char **fill_out_embedded_options(char *options,
+                                  int options_type,
+                                  STRLEN slen, int cnt)
+ {
+@@ -1363,11 +1373,6 @@ static void error_no_connection(SV *h, const char *msg
+ #endif
+   mariadb_dr_do_error(h, CR_CONNECTION_ERROR, msg, "HY000");
+ }
+-
+-#ifdef HAVE_GET_CHARSET_NUMBER
+-/* Available only in some clients and declared in header file my_sys.h which cannot be included */
+-unsigned int get_charset_number(const char *cs_name, unsigned int cs_flags);
+-#endif
+ 
+ /***************************************************************************
+  *
