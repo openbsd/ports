@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/16 20:50:25 sthen Exp $
 
-# see https://github.com/i3/i3/issues/3085
+# see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
 COMMENT =	improved dynamic tiling window manager, fork with mouse drag
 
-GH_ACCOUNT=	orestisf1993
+GH_ACCOUNT=	orestisfl
 GH_PROJECT=	i3
-GH_COMMIT=	baff612902cc26a1760347b70cc3607a88579ebe
+GH_COMMIT=	592bd26703c8b325cf01f3b9f6ccea85751600fb
 
-DISTNAME =	i3-mousedrag-4.16pre20180825
+DISTNAME =	i3-mousedrag-4.17.1pre20191014
 
 CATEGORIES =	x11
 
@@ -17,11 +17,13 @@ HOMEPAGE =	https://i3wm.org/
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pcre pthread startup-notification-1 xcb
-WANTLIB += xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
-WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon
-WANTLIB += xkbcommon-x11 yajl
+WANTLIB += c cairo ev glib-2.0 gobject-2.0 harfbuzz iconv intl
+WANTLIB += m pango-1.0 pangocairo-1.0 pcre pthread startup-notification-1
+WANTLIB += xcb xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
+WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
+WANTLIB += yajl
+
+DEBUG_PACKAGS =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS =	textproc/asciidoc \
 		textproc/xmlto
@@ -54,7 +56,7 @@ CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
 
 CONFIGURE_STYLE =  autoreconf
 AUTOCONF_VERSION = 2.69
-AUTOMAKE_VERSION = 1.15
+AUTOMAKE_VERSION = 1.16
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/config \
