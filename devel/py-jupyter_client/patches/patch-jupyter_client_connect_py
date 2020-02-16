@@ -1,4 +1,4 @@
-$OpenBSD: patch-jupyter_client_connect_py,v 1.1 2018/12/29 11:53:38 mariani Exp $
+$OpenBSD: patch-jupyter_client_connect_py,v 1.2 2020/02/16 05:21:04 bket Exp $
 
 Index: jupyter_client/connect.py
 --- jupyter_client/connect.py.orig
@@ -9,10 +9,10 @@ Index: jupyter_client/connect.py
  import warnings
 +import sys
  from getpass import getpass
+ from contextlib import contextmanager
  
- import zmq
-@@ -137,7 +138,7 @@ def write_connection_file(fname=None, shell_port=0, io
-     with open(fname, 'w') as f:
+@@ -141,7 +142,7 @@ def write_connection_file(fname=None, shell_port=0, io
+     with secure_write(fname) as f:
          f.write(json.dumps(cfg, indent=2))
  
 -    if hasattr(stat, 'S_ISVTX'):

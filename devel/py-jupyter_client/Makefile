@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/16 05:21:04 bket Exp $
 
 COMMENT =		Jupyter protocol implementation and client libraries
 
-MODPY_EGG_VERSION =	5.2.4
+MODPY_EGG_VERSION =	5.3.4
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -20,23 +19,27 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	jupyter_client
-PORTHOME =		${WRKDIR}
+
+RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}>=2.1 \
+			devel/py-jupyter_core${MODPY_FLAVOR}>=4.6.0 \
+			devel/py-traitlets${MODPY_FLAVOR} \
+			net/py-zmq${MODPY_FLAVOR}>=13 \
+			www/py-tornado${MODPY_FLAVOR}>=4.1
+TEST_DEPENDS =		devel/ipython${MODPY_FLAVOR} \
+			devel/py-ipykernel${MODPY_FLAVOR} \
+			shells/bash
 
 FLAVORS =		python3
 FLAVOR ?=
 
-RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-jupyter_core${MODPY_FLAVOR}>=4.3.0 \
-			devel/py-traitlets${MODPY_FLAVOR} \
-			net/py-zmq${MODPY_FLAVOR} \
-			www/py-tornado${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
-			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2 \
-			shells/bash
-
 .if !${FLAVOR:Mpython3}
 TEST_DEPENDS +=		devel/py-mock
 .endif
+
+PORTHOME =		${WRKDIR}
+
+# Python 2 only: regression tests require a fair number of openfiles, an
+# increase to 768 is needed.
 
 post-install:
 	mv ${PREFIX}/bin/jupyter-kernel{,${MODPY_BIN_SUFFIX}}
