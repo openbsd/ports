@@ -1,0 +1,10 @@
+Srain is a modern IRC client written in GTK.
+
+Features:
+* RFC {1459,2812} compatible
+* Partial IRCv3 support
+* Multi-platform support
+* Interactive channel search
+* URL previews
+* Desktop notifications
+* Regex-based message rendering and filtering

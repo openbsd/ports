@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/16 19:48:24 bcallah Exp $
+@bin bin/srain
+share/applications/im.srain.Srain.desktop
+share/examples/srain/
+@sample ${SYSCONFDIR}/srain/
+share/examples/srain/builtin.cfg
+@sample ${SYSCONFDIR}/srain/builtin.cfg
+share/icons/hicolor/scalable/apps/im.srain.Srain.png
+share/locale/ru/LC_MESSAGES/srain.mo
+share/locale/zh_CN/LC_MESSAGES/srain.mo
+share/metainfo/
+share/metainfo/im.srain.Srain.appdata.xml
+share/srain/
+share/srain/themes/
+share/srain/themes/bubble.css
+share/srain/themes/default-bubble-dark.css
+share/srain/themes/default-bubble.css
+share/srain/themes/default-min.css
+share/srain/themes/reset.css
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
