@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1170 2020/02/14 10:56:02 cwen Exp $
+# $OpenBSD: Makefile,v 1.1171 2020/02/16 19:48:45 bcallah Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -707,6 +707,7 @@
      SUBDIR += softflowd
      SUBDIR += spectrum
      SUBDIR += spectrum-tools
+     SUBDIR += srain
      SUBDIR += ssldump
      SUBDIR += sslh
      SUBDIR += sslsniffer
