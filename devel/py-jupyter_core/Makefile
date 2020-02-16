@@ -1,30 +1,27 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/02/16 05:20:29 bket Exp $
 
 COMMENT =		Jupyter core package
 
-MODPY_EGG_VERSION =	4.4.0
+MODPY_EGG_VERSION =	4.6.1
 DISTNAME =		jupyter_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
 
-RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
-			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2
-
 # BSD
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	jupyter_core
-PORTHOME =		${WRKDIR}
+
+RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
+			devel/py-nose$(MODPY_FLAVOR)
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -32,6 +29,8 @@ FLAVOR ?=
 .if !${FLAVOR:Mpython3}
 TEST_DEPENDS +=		devel/py-mock
 .endif
+
+PORTHOME =		${WRKDIR}
 
 post-install:
 	mv ${PREFIX}/bin/jupyter{,${MODPY_BIN_SUFFIX}}
