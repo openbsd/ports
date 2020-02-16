@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/16 19:40:35 bket Exp $
+${P5ARCH}/
+${P5ARCH}/Conf/
+${P5ARCH}/Conf/Libconfig.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Conf/
+${P5ARCH}/auto/Conf/Libconfig/
+@so ${P5ARCH}/auto/Conf/Libconfig/Libconfig.so
+@man man/man3p/Conf::Libconfig.3p
