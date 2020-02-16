@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/05/17 09:56:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/02/16 08:54:30 ajacoutot Exp $
 @bin bin/wnck-urgency-monitor
 @bin bin/wnckprop
 include/libwnck-1.0/
@@ -11,12 +11,13 @@ include/libwnck-1.0/libwnck/screen.h
 include/libwnck-1.0/libwnck/selector.h
 include/libwnck-1.0/libwnck/tasklist.h
 include/libwnck-1.0/libwnck/util.h
+include/libwnck-1.0/libwnck/version.h
 include/libwnck-1.0/libwnck/window-action-menu.h
 include/libwnck-1.0/libwnck/window.h
 include/libwnck-1.0/libwnck/wnck-enum-types.h
 include/libwnck-1.0/libwnck/workspace.h
 lib/girepository-1.0/Wnck-1.0.typelib
-lib/libwnck-1.a
+@static-lib lib/libwnck-1.a
 lib/libwnck-1.la
 @lib lib/libwnck-1.so.${LIBwnck-1_VERSION}
 lib/pkgconfig/libwnck-1.0.pc
@@ -48,11 +49,12 @@ share/gtk-doc/html/libwnck/ix09.html
 share/gtk-doc/html/libwnck/ix10.html
 share/gtk-doc/html/libwnck/ix11.html
 share/gtk-doc/html/libwnck/ix12.html
+share/gtk-doc/html/libwnck/ix13.html
 share/gtk-doc/html/libwnck/left.png
 share/gtk-doc/html/libwnck/libwnck-Miscellaneous-Functions.html
 share/gtk-doc/html/libwnck/libwnck-Resource-Usage-of-X-Clients.html
+share/gtk-doc/html/libwnck/libwnck-Version-Information.html
 share/gtk-doc/html/libwnck/libwnck-Window-Action-Menu.html
-share/gtk-doc/html/libwnck/libwnck.devhelp
 share/gtk-doc/html/libwnck/libwnck.devhelp2
 share/gtk-doc/html/libwnck/right.png
 share/gtk-doc/html/libwnck/style.css
@@ -106,8 +108,6 @@ share/locale/kk/LC_MESSAGES/libwnck.mo
 share/locale/kn/LC_MESSAGES/libwnck.mo
 share/locale/ko/LC_MESSAGES/libwnck.mo
 share/locale/ku/LC_MESSAGES/libwnck.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/libwnck.mo
 share/locale/li/LC_MESSAGES/libwnck.mo
 share/locale/lt/LC_MESSAGES/libwnck.mo
