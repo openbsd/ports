@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/13 07:41:54 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2020/02/16 22:33:50 naddy Exp $
 
 ADDON_NAME =		https-everywhere
 V =			2019.11.7
@@ -9,5 +9,6 @@ GUID =			https-everywhere-eff@eff.org
 ADDON_XPI_FILE =	${ADDON_NAME}-${V}-eff.xpi
 DISTFILES =		${ADDON_XPI_FILE}
 DISTFILE_IS_XPI =	Yes
+REVISION =		0
 
 .include <bsd.port.mk>
