@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1935 2020/02/15 08:06:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1936 2020/02/16 19:44:00 bket Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -613,6 +613,7 @@
      SUBDIR += p5-Clone
      SUBDIR += p5-Clone-Choose
      SUBDIR += p5-Clone-PP
+     SUBDIR += p5-Conf-Libconfig
      SUBDIR += p5-Config-Any
      SUBDIR += p5-Config-Auto
      SUBDIR += p5-Config-AutoConf
