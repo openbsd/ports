@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/02/13 07:41:53 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2020/02/16 10:45:59 landry Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -15,7 +15,7 @@ EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-68.4.1esr-9.0-1-build1
+DISTNAME =		src-firefox-tor-browser-68.5.0esr-9.0-1-build2
 
 DISTFILES +=		${DISTNAME}.tar.xz \
 			src-tor-launcher-${TL_VERSION}.tar.xz
@@ -109,6 +109,7 @@ post-patch:
 	# drop in sh front end to configure.py so CONFIGURE_STYLE=simple works
 	${SUBST_PROGRAM} ${FILESDIR}/configure ${WRKSRC}/configure
 	${SUBST_PROGRAM} ${FILESDIR}/configure ${WRKSRC}/js/src/configure
+	${SUBST_CMD} ${WRKSRC}/browser/extensions/tor-launcher/src/defaults/preferences/torlauncher-prefs.js
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/third_party/rust/bindgen/.cargo-checksum.json
 

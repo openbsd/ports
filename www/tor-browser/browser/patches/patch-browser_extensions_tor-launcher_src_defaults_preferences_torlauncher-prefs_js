@@ -1,4 +1,4 @@
-$OpenBSD: patch-browser_extensions_tor-launcher_src_defaults_preferences_torlauncher-prefs_js,v 1.1 2020/02/13 07:41:53 landry Exp $
+$OpenBSD: patch-browser_extensions_tor-launcher_src_defaults_preferences_torlauncher-prefs_js,v 1.2 2020/02/16 10:45:59 landry Exp $
 
 Set all path-related prefs to minimize patching of tl-util.jsm/tl-process.js
 
@@ -10,10 +10,10 @@ Index: browser/extensions/tor-launcher/src/defaults/preferences/torlauncher-pref
  // Windows this is the Browser/ directory that contains the firefox
  // executables, and on Mac OS it is the TorBrowser.app directory.
 -pref("extensions.torlauncher.tor_path", "");
-+pref("extensions.torlauncher.tor_path", "/usr/local/bin/tor");
-+pref("extensions.torlauncher.torrc-defaults_path", "/usr/local/share/tor-browser/torrc-defaults");
-+pref("extensions.torlauncher.geoip_path", "/usr/local/share/tor/geoip");
-+pref("extensions.torlauncher.geoip6_path", "/usr/local/share/tor/geoip6");
++pref("extensions.torlauncher.tor_path", "${LOCALBASE}/bin/tor");
++pref("extensions.torlauncher.torrc-defaults_path", "${LOCALBASE}/share/tor-browser/torrc-defaults");
++pref("extensions.torlauncher.geoip_path", "${LOCALBASE}/share/tor/geoip");
++pref("extensions.torlauncher.geoip6_path", "${LOCALBASE}/share/tor/geoip6");
  
  // The torrc_path and tordatadir_path are relative to the data directory,
  // which is TorBrowser-Data/ if it exists as a sibling of the application
