@@ -1,7 +1,8 @@
-$OpenBSD: patch-htmldoc_file_c,v 1.5 2014/11/07 13:33:40 benoit Exp $
---- htmldoc/file.c.orig	Fri Dec 30 06:03:21 2011
-+++ htmldoc/file.c	Sun Apr  6 17:57:37 2014
-@@ -66,7 +66,7 @@
+$OpenBSD: patch-htmldoc_file_c,v 1.6 2020/02/16 08:30:08 benoit Exp $
+Index: htmldoc/file.c
+--- htmldoc/file.c.orig
++++ htmldoc/file.c
+@@ -42,7 +42,7 @@
  #  define OPENPERM	(_S_IREAD | _S_IWRITE)
  #else
  #  define TEMPLATE	"%s/%06ld.%06d.tmp"
@@ -10,7 +11,7 @@ $OpenBSD: patch-htmldoc_file_c,v 1.5 2014/11/07 13:33:40 benoit Exp $
  #  define OPENPERM	0600
  #endif /* WIN32 */
  
-@@ -164,7 +164,7 @@ file_cleanup(void)
+@@ -140,7 +140,7 @@ file_cleanup(void)
    }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
@@ -19,7 +20,7 @@ $OpenBSD: patch-htmldoc_file_c,v 1.5 2014/11/07 13:33:40 benoit Exp $
  #endif /* WIN32 */
  
   /*
-@@ -1086,7 +1086,7 @@ file_temp(char *name,			/* O - Filename */
+@@ -1106,7 +1106,7 @@ file_temp(char *name,			/* O - Filename */
    }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
@@ -27,4 +28,4 @@ $OpenBSD: patch-htmldoc_file_c,v 1.5 2014/11/07 13:33:40 benoit Exp $
 +    tmpdir = "/tmp";
  #endif /* WIN32 */
  
-   snprintf(name, (size_t)len, TEMPLATE, tmpdir, (long)getpid(), web_files);
+   snprintf(name, (size_t)len, TEMPLATE, tmpdir, (long)getpid(), (int)web_files);
