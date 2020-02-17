@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1936 2020/02/16 19:44:00 bket Exp $
+# $OpenBSD: Makefile,v 1.1937 2020/02/17 16:32:00 paco Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -157,6 +157,7 @@
      SUBDIR += gindent
      SUBDIR += git
      SUBDIR += git-cola
+     SUBDIR += git-crypt
      SUBDIR += git-cvs
      SUBDIR += git-lfs
      SUBDIR += github-backup
