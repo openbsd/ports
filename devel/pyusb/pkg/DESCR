@@ -1,1 +1,2 @@
-PyUSB is a native Python module which interfaces with libusb.
+The PyUSB module provides for Python easy access to the host machine's
+Universal Serial Bus (USB) system.
