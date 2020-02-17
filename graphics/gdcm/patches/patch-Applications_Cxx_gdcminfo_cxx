@@ -1,11 +1,25 @@
-$OpenBSD: patch-Applications_Cxx_gdcminfo_cxx,v 1.4 2020/01/02 20:32:24 kili Exp $
+$OpenBSD: patch-Applications_Cxx_gdcminfo_cxx,v 1.5 2020/02/17 20:34:11 kili Exp $
 
-Fix build with poppler-0.83.0.
+Fix build with poppler-0.83.0 and -0.85.0.
 
 Index: Applications/Cxx/gdcminfo.cxx
 --- Applications/Cxx/gdcminfo.cxx.orig
 +++ Applications/Cxx/gdcminfo.cxx
-@@ -513,7 +513,7 @@ static int ProcessOneFile( std::string const & filenam
+@@ -258,7 +258,7 @@ static std::string getInfoDate(Dict *infoDict, const c
+   return out;
+ }
+ 
+-static std::string getInfoString(Dict *infoDict, const char *key, UnicodeMap *uMap)
++static std::string getInfoString(Dict *infoDict, const char *key, const UnicodeMap *uMap)
+ {
+   Object obj;
+ #ifdef LIBPOPPLER_GOOSTRING_HAS_CONSTGETCHAR
+@@ -509,11 +509,11 @@ static int ProcessOneFile( std::string const & filenam
+     std::string creationdate;
+     std::string moddate;
+ 
+-    UnicodeMap *uMap;
++    const UnicodeMap *uMap;
  #ifdef LIBPOPPLER_GLOBALPARAMS_CSTOR_HAS_PARAM
      globalParams = new GlobalParams(0);
  #else
