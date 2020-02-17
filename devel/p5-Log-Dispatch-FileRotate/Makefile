@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/17 16:12:41 benoit Exp $
 
 COMMENT=	log to files that archive/rotate themselves
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Log-Dispatch-FileRotate-1.26
+DISTNAME =	Log-Dispatch-FileRotate-1.36
 CATEGORIES=	devel
 
 # Perl

@@ -1,3 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/20 18:43:21 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/17 16:12:41 benoit Exp $
+${P5SITE}/Log/Dispatch/FileRotate/
 ${P5SITE}/Log/Dispatch/FileRotate.pm
+${P5SITE}/Log/Dispatch/FileRotate/Flock.pm
+${P5SITE}/Log/Dispatch/FileRotate/Mutex.pm
 @man man/man3p/Log::Dispatch::FileRotate.3p
+@man man/man3p/Log::Dispatch::FileRotate::Flock.3p
+@man man/man3p/Log::Dispatch::FileRotate::Mutex.3p
