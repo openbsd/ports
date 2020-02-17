@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.101 2020/01/05 20:06:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.102 2020/02/17 18:58:34 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.34.3
+GNOME_VERSION=		3.34.4
 
 # XXX: Override libmutter_api_version because of SUBST_VARS.
 API_V =			5
