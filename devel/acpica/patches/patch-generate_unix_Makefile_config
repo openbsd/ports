@@ -1,8 +1,8 @@
-$OpenBSD: patch-generate_unix_Makefile_config,v 1.7 2017/10/15 13:02:07 jasper Exp $
+$OpenBSD: patch-generate_unix_Makefile_config,v 1.8 2020/02/17 22:38:35 daniel Exp $
 Index: generate/unix/Makefile.config
 --- generate/unix/Makefile.config.orig
 +++ generate/unix/Makefile.config
-@@ -196,7 +196,6 @@ CWARNINGFLAGS = \
+@@ -204,7 +204,6 @@ CWARNINGFLAGS = \
      -Wall\
      -Wbad-function-cast\
      -Wdeclaration-after-statement\
@@ -10,7 +10,7 @@ Index: generate/unix/Makefile.config
      -Wformat=2\
      -Wmissing-declarations\
      -Wmissing-prototypes\
-@@ -218,24 +217,7 @@ CWARNINGFLAGS += \
+@@ -226,24 +225,7 @@ CWARNINGFLAGS += \
      -Wmissing-field-initializers\
      -Wnested-externs\
      -Wold-style-definition\
@@ -19,11 +19,11 @@ Index: generate/unix/Makefile.config
 -#
 -# Per-host flags and exclusions
 -#
--ifneq ($(HOST), _FreeBSD)
+-ifneq ($(ACPI_HOST), _FreeBSD)
 -    CWARNINGFLAGS += \
 -        -Wempty-body
 -
--    ifneq ($(HOST), _APPLE)
+-    ifneq ($(ACPI_HOST), _APPLE)
 -        CWARNINGFLAGS += \
 -            -Woverride-init\
 -            -Wlogical-op\
