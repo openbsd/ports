@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/02/17 16:34:11 benoit Exp $
 
 COMMENT =	keep imports out of your namespace
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	namespace-autoclean-0.28
+DISTNAME =	namespace-autoclean-0.29
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
@@ -23,6 +22,6 @@ TEST_DEPENDS =	devel/p5-Moo \
 		devel/p5-Mouse \
 		devel/p5-Sub-Install \
 		devel/p5-Sub-Name \
-		devel/p5-Test-Requires
+		devel/p5-Test-Needs
 
 .include <bsd.port.mk>
