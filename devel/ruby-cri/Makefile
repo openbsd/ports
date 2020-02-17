@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/25 07:50:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/17 12:56:43 sebastia Exp $
 
 COMMENT =		command line interfaces with subcommands
 
+REVISION =		0
 DISTNAME =		cri-2.15.6
 CATEGORIES =		devel
 HOMEPAGE =		http://stoneship.org/software/cri/
@@ -11,8 +12,6 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
-BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		devel/ruby-colored,${MODRUBY_FLAVOR}>=1.2,<2
 
 CONFIGURE_STYLE = 	ruby gem
 
