@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST-web,v 1.1 2020/02/17 23:07:38 stsp Exp $
+cgi-bin/gotweb/
+@bin cgi-bin/gotweb/gotweb
+cgi-bin/gotweb/gw_tmpl/
+cgi-bin/gotweb/gw_tmpl/blame.tmpl
+cgi-bin/gotweb/gw_tmpl/briefs.tmpl
+cgi-bin/gotweb/gw_tmpl/commit.tmpl
+cgi-bin/gotweb/gw_tmpl/diff.tmpl
+cgi-bin/gotweb/gw_tmpl/err.tmpl
+cgi-bin/gotweb/gw_tmpl/index.tmpl
+cgi-bin/gotweb/gw_tmpl/summry.tmpl
+cgi-bin/gotweb/gw_tmpl/tag.tmpl
+cgi-bin/gotweb/gw_tmpl/tree.tmpl
+cgi-bin/gotweb/libexec/
+@bin cgi-bin/gotweb/libexec/got-read-blob
+@bin cgi-bin/gotweb/libexec/got-read-commit
+@bin cgi-bin/gotweb/libexec/got-read-gitconfig
+@bin cgi-bin/gotweb/libexec/got-read-object
+@bin cgi-bin/gotweb/libexec/got-read-pack
+@bin cgi-bin/gotweb/libexec/got-read-tag
+@bin cgi-bin/gotweb/libexec/got-read-tree
+got/
+got/public/
+got/tmp/
+htdocs/gotweb/
+htdocs/gotweb/android-chrome-192x192.png
+htdocs/gotweb/android-chrome-384x384.png
+htdocs/gotweb/apple-touch-icon.png
+htdocs/gotweb/browserconfig.xml
+htdocs/gotweb/favicon-16x16.png
+htdocs/gotweb/favicon-32x32.png
+htdocs/gotweb/favicon.ico
+htdocs/gotweb/got.png
+htdocs/gotweb/got_large.png
+htdocs/gotweb/gotweb.css
+htdocs/gotweb/index.html
+htdocs/gotweb/mstile-150x150.png
+htdocs/gotweb/safari-pinned-tab.svg
+htdocs/gotweb/site.webmanifest
+@cwd ${LOCALBASE}
+@man man/man5/gotweb.conf.5
+@man man/man8/gotweb.8
