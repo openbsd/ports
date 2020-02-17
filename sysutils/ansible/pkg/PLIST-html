@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.15 2020/01/21 07:20:20 pvk Exp $
+@comment $OpenBSD: PLIST-html,v 1.16 2020/02/17 18:17:42 pvk Exp $
 share/doc/ansible/html/
 share/doc/ansible/html/404.html
 share/doc/ansible/html/_downloads/
@@ -37,7 +37,6 @@ share/doc/ansible/html/_static/js/
 share/doc/ansible/html/_static/js/modernizr.min.js
 share/doc/ansible/html/_static/js/theme.js
 share/doc/ansible/html/_static/minus.png
-share/doc/ansible/html/_static/opensearch.xml
 share/doc/ansible/html/_static/plus.png
 share/doc/ansible/html/_static/pygments.css
 share/doc/ansible/html/_static/searchtools.js
@@ -3919,6 +3918,7 @@ share/doc/ansible/html/network/user_guide/faq.html
 share/doc/ansible/html/network/user_guide/index.html
 share/doc/ansible/html/network/user_guide/network_best_practices_2.5.html
 share/doc/ansible/html/network/user_guide/network_debug_troubleshooting.html
+share/doc/ansible/html/network/user_guide/network_resource_modules.html
 share/doc/ansible/html/network/user_guide/network_working_with_command_output.html
 share/doc/ansible/html/network/user_guide/platform_cnos.html
 share/doc/ansible/html/network/user_guide/platform_dellos10.html
