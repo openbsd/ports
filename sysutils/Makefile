@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.552 2020/02/06 14:10:53 kmos Exp $
+# $OpenBSD: Makefile,v 1.553 2020/02/17 09:37:59 martin Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -271,6 +271,7 @@
      SUBDIR += py-pynetbox,python3
      SUBDIR += py-scandir
      SUBDIR += py-scandir,python3
+     SUBDIR += py-schedule
      SUBDIR += py-statgrab
      SUBDIR += py-statgrab,python3
      SUBDIR += py-tsk
