@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/04 12:51:15 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/02/18 22:45:52 daniel Exp $
 %%native%%
 bin/camlp5
 bin/camlp5o
@@ -48,6 +48,9 @@ lib/ocaml/camlp5/pa_lexer.cmo
 lib/ocaml/camlp5/pa_lisp.cmo
 lib/ocaml/camlp5/pa_macro.cmi
 lib/ocaml/camlp5/pa_macro.cmo
+lib/ocaml/camlp5/pa_macro_gram.cmi
+lib/ocaml/camlp5/pa_macro_gram.cmo
+lib/ocaml/camlp5/pa_macro_print.cmo
 lib/ocaml/camlp5/pa_mkast.cmo
 lib/ocaml/camlp5/pa_mktest.cmo
 lib/ocaml/camlp5/pa_o.cmo
