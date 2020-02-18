@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2020/01/22 08:09:20 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.36 2020/02/18 08:06:40 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -5552,6 +5552,8 @@ nextcloud/apps/accessibility/l10n/sq.js
 nextcloud/apps/accessibility/l10n/sq.json
 nextcloud/apps/accessibility/l10n/sr.js
 nextcloud/apps/accessibility/l10n/sr.json
+nextcloud/apps/accessibility/l10n/sr@latin.js
+nextcloud/apps/accessibility/l10n/sr@latin.json
 nextcloud/apps/accessibility/l10n/sv.js
 nextcloud/apps/accessibility/l10n/sv.json
 nextcloud/apps/accessibility/l10n/tr.js
@@ -6340,6 +6342,8 @@ nextcloud/apps/dav/l10n/sv.js
 nextcloud/apps/dav/l10n/sv.json
 nextcloud/apps/dav/l10n/tr.js
 nextcloud/apps/dav/l10n/tr.json
+nextcloud/apps/dav/l10n/uk.js
+nextcloud/apps/dav/l10n/uk.json
 nextcloud/apps/dav/l10n/zh_CN.js
 nextcloud/apps/dav/l10n/zh_CN.json
 nextcloud/apps/dav/l10n/zh_TW.js
@@ -10331,6 +10335,7 @@ nextcloud/apps/notifications/appinfo/app.php
 nextcloud/apps/notifications/appinfo/info.xml
 nextcloud/apps/notifications/appinfo/routes.php
 nextcloud/apps/notifications/appinfo/signature.json
+nextcloud/apps/notifications/composer.json
 nextcloud/apps/notifications/css/
 nextcloud/apps/notifications/css/styles.scss
 nextcloud/apps/notifications/docs/
@@ -10625,6 +10630,8 @@ nextcloud/apps/oauth2/l10n/et_EE.js
 nextcloud/apps/oauth2/l10n/et_EE.json
 nextcloud/apps/oauth2/l10n/eu.js
 nextcloud/apps/oauth2/l10n/eu.json
+nextcloud/apps/oauth2/l10n/fa.js
+nextcloud/apps/oauth2/l10n/fa.json
 nextcloud/apps/oauth2/l10n/fi.js
 nextcloud/apps/oauth2/l10n/fi.json
 nextcloud/apps/oauth2/l10n/fr.js
@@ -10919,6 +10926,7 @@ nextcloud/apps/photos/appinfo/info.xml
 nextcloud/apps/photos/appinfo/routes.php
 nextcloud/apps/photos/appinfo/signature.json
 nextcloud/apps/photos/babel.config.js
+nextcloud/apps/photos/composer.json
 nextcloud/apps/photos/css/
 nextcloud/apps/photos/css/icons.scss
 nextcloud/apps/photos/img/
@@ -11667,12 +11675,6 @@ nextcloud/apps/settings/js/templates/federationscopemenu.handlebars
 nextcloud/apps/settings/js/usersettings.js
 nextcloud/apps/settings/js/vue-0.js
 nextcloud/apps/settings/js/vue-0.js.map
-nextcloud/apps/settings/js/vue-1.js
-nextcloud/apps/settings/js/vue-1.js.map
-nextcloud/apps/settings/js/vue-2.js
-nextcloud/apps/settings/js/vue-2.js.map
-nextcloud/apps/settings/js/vue-3.js
-nextcloud/apps/settings/js/vue-3.js.map
 nextcloud/apps/settings/js/vue-4.js
 nextcloud/apps/settings/js/vue-4.js.map
 nextcloud/apps/settings/js/vue-5.js
@@ -11961,6 +11963,8 @@ nextcloud/apps/sharebymail/l10n/es_UY.js
 nextcloud/apps/sharebymail/l10n/es_UY.json
 nextcloud/apps/sharebymail/l10n/et_EE.js
 nextcloud/apps/sharebymail/l10n/et_EE.json
+nextcloud/apps/sharebymail/l10n/fa.js
+nextcloud/apps/sharebymail/l10n/fa.json
 nextcloud/apps/sharebymail/l10n/fi.js
 nextcloud/apps/sharebymail/l10n/fi.json
 nextcloud/apps/sharebymail/l10n/fr.js
@@ -13111,6 +13115,8 @@ nextcloud/apps/text/l10n/zh_TW.json
 nextcloud/apps/text/lib/
 nextcloud/apps/text/lib/AppInfo/
 nextcloud/apps/text/lib/AppInfo/Application.php
+nextcloud/apps/text/lib/Command/
+nextcloud/apps/text/lib/Command/ResetDocument.php
 nextcloud/apps/text/lib/Controller/
 nextcloud/apps/text/lib/Controller/DirectSessionController.php
 nextcloud/apps/text/lib/Controller/NavigationController.php
@@ -13411,6 +13417,8 @@ nextcloud/apps/twofactor_backupcodes/l10n/ka_GE.js
 nextcloud/apps/twofactor_backupcodes/l10n/ka_GE.json
 nextcloud/apps/twofactor_backupcodes/l10n/ko.js
 nextcloud/apps/twofactor_backupcodes/l10n/ko.json
+nextcloud/apps/twofactor_backupcodes/l10n/lt_LT.js
+nextcloud/apps/twofactor_backupcodes/l10n/lt_LT.json
 nextcloud/apps/twofactor_backupcodes/l10n/lv.js
 nextcloud/apps/twofactor_backupcodes/l10n/lv.json
 nextcloud/apps/twofactor_backupcodes/l10n/mk.js
@@ -14102,6 +14110,7 @@ nextcloud/apps/viewer/appinfo/app.php
 nextcloud/apps/viewer/appinfo/info.xml
 nextcloud/apps/viewer/appinfo/signature.json
 nextcloud/apps/viewer/babel.config.js
+nextcloud/apps/viewer/composer.json
 nextcloud/apps/viewer/img/
 nextcloud/apps/viewer/img/app.svg
 nextcloud/apps/viewer/js/
@@ -14376,6 +14385,8 @@ nextcloud/apps/workflowengine/l10n/zh_TW.json
 nextcloud/apps/workflowengine/lib/
 nextcloud/apps/workflowengine/lib/AppInfo/
 nextcloud/apps/workflowengine/lib/AppInfo/Application.php
+nextcloud/apps/workflowengine/lib/BackgroundJobs/
+nextcloud/apps/workflowengine/lib/BackgroundJobs/Rotate.php
 nextcloud/apps/workflowengine/lib/Check/
 nextcloud/apps/workflowengine/lib/Check/AbstractStringCheck.php
 nextcloud/apps/workflowengine/lib/Check/FileMimeType.php
@@ -14398,12 +14409,14 @@ nextcloud/apps/workflowengine/lib/Controller/UserWorkflowsController.php
 nextcloud/apps/workflowengine/lib/Entity/
 nextcloud/apps/workflowengine/lib/Entity/File.php
 nextcloud/apps/workflowengine/lib/Helper/
+nextcloud/apps/workflowengine/lib/Helper/LogContext.php
 nextcloud/apps/workflowengine/lib/Helper/ScopeContext.php
 nextcloud/apps/workflowengine/lib/Manager.php
 nextcloud/apps/workflowengine/lib/Migration/
 nextcloud/apps/workflowengine/lib/Migration/PopulateNewlyIntroducedDatabaseFields.php
 nextcloud/apps/workflowengine/lib/Migration/Version2000Date20190808074233.php
 nextcloud/apps/workflowengine/lib/Service/
+nextcloud/apps/workflowengine/lib/Service/Logger.php
 nextcloud/apps/workflowengine/lib/Service/RuleMatcher.php
 nextcloud/apps/workflowengine/lib/Settings/
 nextcloud/apps/workflowengine/lib/Settings/ASettings.php
@@ -15995,6 +16008,7 @@ nextcloud/lib/private/App/AppStore/Bundles/CoreBundle.php
 nextcloud/lib/private/App/AppStore/Bundles/EducationBundle.php
 nextcloud/lib/private/App/AppStore/Bundles/EnterpriseBundle.php
 nextcloud/lib/private/App/AppStore/Bundles/GroupwareBundle.php
+nextcloud/lib/private/App/AppStore/Bundles/HubBundle.php
 nextcloud/lib/private/App/AppStore/Bundles/SocialSharingBundle.php
 nextcloud/lib/private/App/AppStore/Fetcher/
 nextcloud/lib/private/App/AppStore/Fetcher/AppFetcher.php
@@ -17186,6 +17200,7 @@ nextcloud/lib/public/Lock/ManuallyLockedException.php
 nextcloud/lib/public/Lockdown/
 nextcloud/lib/public/Lockdown/ILockdownManager.php
 nextcloud/lib/public/Log/
+nextcloud/lib/public/Log/IDataLogger.php
 nextcloud/lib/public/Log/IFileBased.php
 nextcloud/lib/public/Log/ILogFactory.php
 nextcloud/lib/public/Log/IWriter.php
