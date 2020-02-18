@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/18 16:32:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/18 23:06:53 sthen Exp $
 
 COMMENT =		Prometheus exporter for SNMP metrics
 
@@ -21,7 +21,7 @@ WANTLIB =		c netsnmp pthread
 # to update mibs file, comment-out DISTFILES, run "make mibs",
 # reenable DISTFILES, make makesum/etc.
 MASTER_SITES0 =		https://spacehopper.org/mirrors/
-xDISTFILES =		snmp_exporter-$V.tar.gz \
+DISTFILES =		snmp_exporter-$V.tar.gz \
 			snmp_exporter_mibs-$V.tar.xz:0
 
 LIB_DEPENDS =		net/net-snmp
