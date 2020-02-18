@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/02/18 09:30:55 benoit Exp $
 
 COMMENT =	act on upper scopes
 
 MODULES =	cpan
-DISTNAME =	Scope-Upper-0.30
+DISTNAME =	Scope-Upper-0.32
 CATEGORIES =	devel
 
 # Perl
