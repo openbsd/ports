@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2020/01/25 06:49:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2020/02/18 18:11:32 gkoehler Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
 V=			0.1.74
+REVISION=		0
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
 
