@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/10/24 14:37:09 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/02/18 09:41:35 pvk Exp $
 @rcscript ${RCDIR}/filebeat
 @bin bin/filebeat
 share/doc/pkg-readmes/${PKGSTEM}
@@ -31,7 +31,7 @@ share/filebeat/module/auditd/log/
 share/filebeat/module/auditd/log/config/
 share/filebeat/module/auditd/log/config/log.yml
 share/filebeat/module/auditd/log/ingest/
-share/filebeat/module/auditd/log/ingest/pipeline.json
+share/filebeat/module/auditd/log/ingest/pipeline.yml
 share/filebeat/module/auditd/log/manifest.yml
 share/filebeat/module/auditd/module.yml
 share/filebeat/module/elasticsearch/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2020/01/23 13:52:17 pvk Exp $
+# $OpenBSD: Makefile,v 1.39 2020/02/18 09:41:35 pvk Exp $
 
 COMMENT =	lightweight shipper for log file data
 
 BEAT =		filebeat
-VERSION =	7.5.2
+VERSION =	7.6.0
 
 GH_ACCOUNT =	elastic
 GH_PROJECT =	beats
