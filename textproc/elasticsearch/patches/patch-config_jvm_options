@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_jvm_options,v 1.5 2019/12/06 23:42:01 pvk Exp $
+$OpenBSD: patch-config_jvm_options,v 1.6 2020/02/18 09:25:53 pvk Exp $
 
 Index: config/jvm.options
 --- config/jvm.options.orig
 +++ config/jvm.options
-@@ -60,17 +60,17 @@
+@@ -61,17 +61,17 @@
  -XX:HeapDumpPath=data
  
  # specify an alternative path for JVM fatal error logs
