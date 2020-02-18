@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.4 2017/12/27 11:16:52 jasper Exp $
-lib/ocaml/lablgtk2/lablglade.cmxs
-lib/ocaml/lablgtk2/lablgnomecanvas.cmxs
-lib/ocaml/lablgtk2/lablgtk.cmxs
-lib/ocaml/lablgtk2/lablgtksourceview2.cmxs
-lib/ocaml/lablgtk2/lablrsvg.cmxs
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.5 2020/02/18 05:22:22 daniel Exp $
+@bin lib/ocaml/lablgtk2/lablglade.cmxs
+@bin lib/ocaml/lablgtk2/lablgnomecanvas.cmxs
+@bin lib/ocaml/lablgtk2/lablgtk.cmxs
+@bin lib/ocaml/lablgtk2/lablgtksourceview2.cmxs
+@bin lib/ocaml/lablgtk2/lablrsvg.cmxs

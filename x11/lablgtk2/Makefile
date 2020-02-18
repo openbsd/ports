@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.49 2020/02/18 05:22:21 daniel Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
-V =		2.18.8
-REVISION =	1
+V =		2.18.10
 DISTNAME =	lablgtk-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
@@ -18,10 +17,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender art_lgpl_2 atk-1.0 cairo fontconfig
-WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gnomecanvas-2 gobject-2.0 gtk-x11-2.0 gtksourceview-2.0
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 rsvg-2
-WANTLIB += xml2 z
+WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += rsvg-2 xml2 z
 
 BUILD_DEPENDS =	sysutils/findlib
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/12/27 11:16:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/02/18 05:22:22 daniel Exp $
 %%native%%
 bin/gdk_pixbuf_mlsource
 bin/lablgladecc2
@@ -215,11 +215,11 @@ lib/ocaml/lablgtk2/lablgnomecanvas.cma
 lib/ocaml/lablgtk2/lablgtk.cma
 lib/ocaml/lablgtk2/lablgtksourceview2.cma
 lib/ocaml/lablgtk2/lablrsvg.cma
-lib/ocaml/lablgtk2/liblablglade2.a
-lib/ocaml/lablgtk2/liblablgnomecanvas.a
-lib/ocaml/lablgtk2/liblablgtk2.a
-lib/ocaml/lablgtk2/liblablgtksourceview2.a
-lib/ocaml/lablgtk2/liblablrsvg.a
+@static-lib lib/ocaml/lablgtk2/liblablglade2.a
+@static-lib lib/ocaml/lablgtk2/liblablgnomecanvas.a
+@static-lib lib/ocaml/lablgtk2/liblablgtk2.a
+@static-lib lib/ocaml/lablgtk2/liblablgtksourceview2.a
+@static-lib lib/ocaml/lablgtk2/liblablrsvg.a
 lib/ocaml/lablgtk2/ml_domain.h
 lib/ocaml/lablgtk2/ml_gdk.h
 lib/ocaml/lablgtk2/ml_gdkpixbuf.h
@@ -282,10 +282,10 @@ lib/ocaml/lablgtk2/xml_lexer.mli
 lib/ocaml/site-lib/
 lib/ocaml/site-lib/lablgtk2/
 lib/ocaml/site-lib/lablgtk2/META
-lib/ocaml/stublibs/dlllablglade2.so
-lib/ocaml/stublibs/dlllablgnomecanvas.so
-lib/ocaml/stublibs/dlllablgtk2.so
-lib/ocaml/stublibs/dlllablgtksourceview2.so
-lib/ocaml/stublibs/dlllablrsvg.so
+@so lib/ocaml/stublibs/dlllablglade2.so
+@so lib/ocaml/stublibs/dlllablgnomecanvas.so
+@so lib/ocaml/stublibs/dlllablgtk2.so
+@so lib/ocaml/stublibs/dlllablgtksourceview2.so
+@so lib/ocaml/stublibs/dlllablrsvg.so
 share/doc/lablgtk2/
 share/doc/lablgtk2/README
