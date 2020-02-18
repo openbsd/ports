@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/18 08:46:30 benoit Exp $
 
 COMMENT =	some Moosish types and a type builder
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	MooX-Types-MooseLike-0.27
+DISTNAME =	MooX-Types-MooseLike-0.29
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
