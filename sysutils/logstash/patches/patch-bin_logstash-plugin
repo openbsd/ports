@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_logstash-plugin,v 1.1 2018/05/17 10:50:12 pvk Exp $
+$OpenBSD: patch-bin_logstash-plugin,v 1.2 2020/02/18 09:29:16 pvk Exp $
 
 Index: bin/logstash-plugin
 --- bin/logstash-plugin.orig
@@ -12,4 +12,4 @@ Index: bin/logstash-plugin
 +
  # bin/logstash-plugin is a short lived ruby script thus we can use aggressive "faster starting JRuby options"
  # see https://github.com/jruby/jruby/wiki/Improving-startup-time
- export JRUBY_OPTS="$JRUBY_OPTS -J-XX:+TieredCompilation -J-XX:TieredStopAtLevel=1 -J-noverify -X-C -Xcompile.invokedynamic=false"
+ export JRUBY_OPTS="${JRUBY_OPTS---dev}"
