@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/13 23:04:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/02/18 18:51:46 sthen Exp $
 
 COMMENT=	script to update an OpenBSD CVS repository via rsync
 
-DISTNAME=	reposync-20200213
+DISTNAME=	reposync-20200218
 
 CATEGORIES=	sysutils devel
 PKG_ARCH=	*
