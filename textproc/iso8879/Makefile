@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/02/18 22:55:00 daniel Exp $
 
 COMMENT=	character entity sets from ISO 8879:1986 (SGML)
 
-DISTNAME=	isoENTS
+DISTNAME=	ISOEnts
 PKGNAME=	iso8879-1986
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 
-MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
+MASTER_SITES=	http://xml.coverpages.org/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
