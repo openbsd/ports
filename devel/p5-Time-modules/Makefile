@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/18 10:10:45 benoit Exp $
 
 COMMENT=	object oriented time interface
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Time-modules-2006.0814
-REVISION=	1
+DISTNAME =	Time-modules-2013.0912
 CATEGORIES=	devel
 
 # perl
