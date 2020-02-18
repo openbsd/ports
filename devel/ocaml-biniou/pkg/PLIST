@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/04 19:04:48 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/18 22:59:50 daniel Exp $
 %%native%%
 @bin bin/bdump
 lib/ocaml/biniou/
@@ -46,5 +46,6 @@ lib/ocaml/biniou/dune-package
 lib/ocaml/biniou/opam
 share/doc/ocaml-biniou/
 share/doc/ocaml-biniou/biniou/
+share/doc/ocaml-biniou/biniou/CHANGES.md
 share/doc/ocaml-biniou/biniou/LICENSE
 share/doc/ocaml-biniou/biniou/README.md
