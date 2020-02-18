@@ -1,4 +1,2 @@
-SHA256 (CVE-2020-6750.patch) = Ig/zjkGKRwt3kOZaLAVSd5MRDDihEFVSuTvohCMCFfc=
-SHA256 (glib-2.62.4.tar.xz) = TIQDDXf6lxITXfqANq1mOSVlWulbHRk5m2IA6GmSW7w=
-SIZE (CVE-2020-6750.patch) = 29371
-SIZE (glib-2.62.4.tar.xz) = 4684768
+SHA256 (glib-2.62.5.tar.xz) = uNHNr6RmWLY9dRLvvizSG9Ns176DFA5EkwxHt5+CRS4=
+SIZE (glib-2.62.5.tar.xz) = 4702492

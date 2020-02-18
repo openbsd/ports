@@ -1,4 +1,4 @@
-$OpenBSD: patch-glib_gtimezone_c,v 1.1 2019/11/02 11:07:42 ajacoutot Exp $
+$OpenBSD: patch-glib_gtimezone_c,v 1.2 2020/02/18 12:24:00 ajacoutot Exp $
 
 From 551e83662de9815d161a82c760cfa77995905740 Mon Sep 17 00:00:00 2001
 From: rim <rozhuk.im@gmail.com>
@@ -25,7 +25,7 @@ Index: glib/gtimezone.c
  
  #define MIN_TZYEAR 1916 /* Daylight Savings started in WWI */
  #define MAX_TZYEAR 2999 /* And it's not likely ever to go away, but
-@@ -1656,10 +1659,20 @@ g_time_zone_new (const gchar *identifier)
+@@ -1672,10 +1675,20 @@ g_time_zone_new (const gchar *identifier)
   *
   * Since: 2.26
   **/
@@ -47,7 +47,7 @@ Index: glib/gtimezone.c
  }
  
  /**
-@@ -1682,7 +1695,23 @@ g_time_zone_new_utc (void)
+@@ -1698,7 +1711,23 @@ g_time_zone_new_utc (void)
  GTimeZone *
  g_time_zone_new_local (void)
  {

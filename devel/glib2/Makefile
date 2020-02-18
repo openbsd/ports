@@ -1,17 +1,10 @@
-# $OpenBSD: Makefile,v 1.326 2020/02/08 11:45:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.327 2020/02/18 12:24:00 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.62.4
+GNOME_VERSION=		2.62.5
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-
-REVISION=		0
-
-# CVE-2020-6750
-MASTER_SITES0=		https://src.fedoraproject.org/rpms/glib2/raw/f31/f/
-PATCH_DIST_STRIP=	-p1
-PATCHFILES=		CVE-2020-6750.patch:0
 
 CATEGORIES=		devel
 
@@ -23,11 +16,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS +=  glib-2.0             4201.3    # 0.6200.4
-SHARED_LIBS +=  gmodule-2.0          4200.10   # 0.6200.4
-SHARED_LIBS +=  gthread-2.0          4200.10   # 0.6200.4
-SHARED_LIBS +=  gobject-2.0          4200.10   # 0.6200.4
-SHARED_LIBS +=  gio-2.0              4200.10   # 0.6200.4
+SHARED_LIBS +=  glib-2.0             4201.3    # 0.6200.5
+SHARED_LIBS +=  gmodule-2.0          4200.10   # 0.6200.5
+SHARED_LIBS +=  gthread-2.0          4200.10   # 0.6200.5
+SHARED_LIBS +=  gobject-2.0          4200.10   # 0.6200.5
+SHARED_LIBS +=  gio-2.0              4200.10   # 0.6200.5
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
