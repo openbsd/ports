@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2020/02/02 11:28:22 kirby Exp $
+# $OpenBSD: Makefile,v 1.29 2020/02/18 08:05:08 kirby Exp $
 
 COMMENT =		seafile daemon
 
 GH_ACCOUNT =		haiwen
 GH_PROJECT =		seafile
-GH_COMMIT =		ac14eda9c1d45b37087988e9a8e435f51aaaa73c
+GH_COMMIT =		24630d46181fa255e82943bdc57737c4e1568ed2
 # upstream keep on sliding tags to pull in new commits
 # this commit is from the "v7.0.1" tag
-DISTNAME =		seafile-daemon-7.0.5pl20200119
+DISTNAME =		seafile-daemon-7.0.6pl20200216
 
 SHARED_LIBS =		seafile 4.0
 
