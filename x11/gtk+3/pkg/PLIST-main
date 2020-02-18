@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.52 2019/11/28 07:13:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.53 2020/02/18 07:34:05 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -1218,6 +1218,10 @@ share/locale/ca/LC_MESSAGES/gtk30-properties.mo
 share/locale/ca/LC_MESSAGES/gtk30.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk30-properties.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk30.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/gtk30-properties.mo
+share/locale/ckb/LC_MESSAGES/gtk30.mo
 share/locale/crh/LC_MESSAGES/gtk30-properties.mo
 share/locale/crh/LC_MESSAGES/gtk30.mo
 share/locale/cs/LC_MESSAGES/gtk30-properties.mo
