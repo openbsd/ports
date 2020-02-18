@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/18 11:39:49 benoit Exp $
 
 COMMENT =		tiny, yet Moo(se)-compatible type constraint
 
-DISTNAME =		Type-Tiny-1.002001
+DISTNAME =		Type-Tiny-1.006000
 CATEGORIES =		devel
 
 # perl
@@ -14,9 +14,11 @@ CPAN_AUTHOR =		TOBYINK
 
 RUN_DEPENDS =		devel/p5-Exporter-Tiny
 
-TEST_DEPENDS =		devel/p5-Test-LeakTrace \
+TEST_DEPENDS =		devel/p5-Class-InsideOut \
 			devel/p5-Mouse \
 			devel/p5-MouseX-Types \
+			devel/p5-Test-LeakTrace \
+			devel/p5-Test-Memory-Cycle \
 			devel/p5-Test-Warnings
 
 .include <bsd.port.mk>
