@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/10/23 20:42:54 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/19 12:10:58 sebastia Exp $
 
 COMMENT =		Ruby language binding for gpgme
 
-DISTNAME =		gpgme-2.0.19
-REVISION =		0
+DISTNAME =		gpgme-2.0.20
 CATEGORIES =		security
 
 HOMEPAGE =		http://github.com/ueno/ruby-gpgme

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/10/23 20:42:54 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/02/19 12:10:58 sebastia Exp $
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_EXTENSIONS_DIR}/gpgme_n.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/edit.rb
@@ -29,7 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme/signature.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme/sub_key.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme/user_id.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme/version.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/gpgme_n.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/gpgme_n.so
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/crypto_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/ctx_test.rb
