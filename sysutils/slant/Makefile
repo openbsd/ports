@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/13 20:11:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/19 21:27:41 jturner Exp $
 
 COMMENT =	minimal remote system monitor
 
-DISTNAME =	slant-0.0.21
-REVISION =	2
+DISTNAME =	slant-0.0.23
 
 CATEGORIES =	sysutils
 
@@ -18,8 +17,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c curses sqlite3 tls z
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	databases/ksql \
-		www/openradtool>=0.7.4
+RUN_DEPENDS =	databases/sqlbox \
+		www/openradtool>=0.8.5
 
 LIB_DEPENDS = databases/sqlite3
 
