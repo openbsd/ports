@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/14 00:39:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2020/02/19 20:31:08 fcambus Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -8,13 +8,11 @@ BROKEN-powerpc =ICE/failure on filter/hq2x.cpp
 GH_ACCOUNT =	snes9xgit
 GH_PROJECT =	snes9x
 GH_TAGNAME =	1.60
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators games
 
 HOMEPAGE =	http://www.snes9x.com/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # non-commercial
 PERMIT_PACKAGE =	Yes
