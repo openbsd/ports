@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2020/02/07 22:16:20 bket Exp $
+# $OpenBSD: Makefile,v 1.121 2020/02/19 17:38:05 juanfra Exp $
 
 BROKEN-powerpc =	does not build: "operand out of range"
 
@@ -10,7 +10,7 @@ DISTNAME =	qgis-3.10.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	qgis_core	39.0 \
 		qgis_app	22.0 \
@@ -42,7 +42,7 @@ BUILD_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
 		devel/py-sip${MODPY_FLAVOR}>=4.19.4v0 \
 		geo/gdal,-python${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
-		editors/py-qscintilla,qt5 \
+		editors/py-qscintilla${MODPY_FLAVOR} \
 		devel/bison>=2.4
 
 
@@ -54,7 +54,7 @@ RUN_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
-		editors/py-qscintilla,qt5 \
+		editors/py-qscintilla${MODPY_FLAVOR} \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		misc/shared-mime-info
