@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/03 04:30:25 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/19 15:48:41 bket Exp $
+@conflict py-jaraco-functoolsjaraco.functools-*
+@conflict py3-jaraco-functoolsjaraco.functools-*
 lib/python${MODPY_VERSION}/site-packages/jaraco/
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
