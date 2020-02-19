@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/08/01 19:40:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/02/19 06:10:17 rsadowski Exp $
 @conflict kdirstat-*
 @pkgpath x11/kdirstat
 @bin bin/qdirstat
@@ -14,7 +14,6 @@ share/doc/qdirstat/Installing.md
 share/doc/qdirstat/Pkg-View.md
 share/doc/qdirstat/QDirStat-for-Servers.md
 share/doc/qdirstat/README.md
-share/doc/qdirstat/TODO.md
 share/doc/qdirstat/Troubleshooting.md
 share/doc/qdirstat/Unpkg-View.md
 share/doc/qdirstat/cache-file-format.txt

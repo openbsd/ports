@@ -1,9 +1,9 @@
-$OpenBSD: patch-man_man_pro,v 1.1 2018/12/07 07:49:29 rsadowski Exp $
+$OpenBSD: patch-man_man_pro,v 1.2 2020/02/19 06:10:17 rsadowski Exp $
 
 Index: man/man.pro
 --- man/man.pro.orig
 +++ man/man.pro
-@@ -13,8 +13,7 @@ MAN_TARGET  ~= s/.1$/.1.gz/g
+@@ -21,8 +21,7 @@ MAN_TARGET   = qdirstat.1.gz              \
  # message(target: $$MAN_TARGET)
  
  man.files    = $$MAN_TARGET
