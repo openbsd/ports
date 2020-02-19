@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/02/19 05:58:26 rsadowski Exp $
 
 COMMENT =	D-Bus menu implementation for Qt
 V =		0.9.3
@@ -8,7 +8,7 @@ FULLPKGNAME =	${PKGNAME}
 CATEGORIES =	x11 devel
 HOMEPAGE =	https://launchpad.net/libdbusmenu-qt/
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	dbusmenu-qt	1.0 # 2.7
 SHARED_LIBS +=	dbusmenu-qt5	1.0 # 2.7
@@ -20,7 +20,6 @@ MASTER_SITES =	http://archive.ubuntu.com/ubuntu/pool/main/libd/libdbusmenu-qt/
 EXTRACT_SUFX =	.orig.tar.gz
 
 MODULES =	devel/cmake
-COMPILER =	base-clang ports-gcc
 
 FLAVORS =	qt5
 FLAVOR ?=
@@ -32,19 +31,21 @@ WANTLIB += ${COMPILER_LIBCXX}
 .if ${FLAVOR:Mqt5}
 MODULES +=	x11/qt5
 WANTLIB +=	Qt5Core Qt5DBus Qt5Gui Qt5Widgets m
-CONFIGURE_ARGS=	-DUSE_QT4=No -DUSE_QT5=Yes
+CONFIGURE_ARGS=	-DUSE_QT4=OFF \
+		-DUSE_QT5=ON \
+		-DCMAKE_DISABLE_FIND_PACKAGE_QJSON=ON
 PKGSTEM =	dbusmenu-qt5
 .else
 MODULES +=	x11/qt4
+COMPILER =	base-clang ports-gcc
 WANTLIB +=	QtDBus QtGui m
 CONFIGURE_ARGS=	-DUSE_QT4=Yes -DUSE_QT5=No
 PKGSTEM =	dbusmenu-qt
+BUILD_DEPENDS =	devel/qjson
+TEST_DEPENDS =	devel/qjson
 .endif
 
 CONFIGURE_ARGS +=	-DWITH_DOC=OFF
-
-BUILD_DEPENDS =	devel/qjson
-TEST_DEPENDS =	devel/qjson
 
 # XXX "!icon.isNull()" failed tests are normal, they do mean that
 # mentioned icon is not installed; e.g., these are the test bugs.
