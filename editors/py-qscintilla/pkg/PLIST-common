@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-common,v 1.1 2020/02/19 17:35:36 juanfra Exp $
+@conflict py3-qscintilla-${QTVER}-*
+@pkgpath editors/py-qscintilla,${QTVER}
+lib/${QTVER}/qsci/
+lib/${QTVER}/qsci/api/
+lib/${QTVER}/qsci/api/python/
+lib/${QTVER}/qsci/api/python/QScintilla2.api

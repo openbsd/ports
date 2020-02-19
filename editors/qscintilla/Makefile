@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/24 08:49:43 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2020/02/19 17:35:36 juanfra Exp $
 
 COMMENT =	Qt port of the Scintilla source code editor
 
 # XXX update py-qscintilla alongside this port (same distfile).
-VERSION =	2.11.2
-DISTNAME =	QScintilla_gpl-${VERSION}
-PKGNAME =	qscintilla-${VERSION}
+VERSION =	2.11.4
+DISTNAME =	QScintilla-${VERSION}
+PKGNAME =	${DISTNAME:L}
 CATEGORIES =	editors x11
 
 

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.867 2020/02/19 17:26:36 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.868 2020/02/19 17:35:36 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -342,6 +342,7 @@ my $stem_extensions = {
 # 6.7
 	'py-jaraco-functoolsjaraco.functools' => 'py-jaraco-functools',
 	'py3-jaraco-functoolsjaraco.functools' => 'py3-jaraco-functools',
+	'py3-qscintilla-qt5' => 'py3-qscintilla',
 };
 
 my $obsolete_reason = {

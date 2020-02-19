@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/07/24 08:50:19 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2020/02/19 17:35:36 juanfra Exp $
+@conflict ${MODPY_PY_PREFIX}qscintilla-${QTVER}-*
+@pkgpath editors/py-qscintilla,${QTVER}
+@pkgpath editors/py-qscintilla
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci.pyi
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci.so
-lib/python${MODPY_VERSION}/site-packages/QScintilla-2.11.2.dist-info/
-lib/python${MODPY_VERSION}/site-packages/QScintilla-2.11.2.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/QScintilla-2.11.2.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/QScintilla-2.11.2.dist-info/RECORD
-lib/${QTVER}/qsci/api/python/QScintilla2.api
+@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci.so
+lib/python${MODPY_VERSION}/site-packages/QScintilla-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/QScintilla-${MODPY_EGG_VERSION}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/QScintilla-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/QScintilla-${MODPY_EGG_VERSION}.dist-info/RECORD
 ${SIPDIR}/Qsci/
 ${SIPDIR}/Qsci/qsciabstractapis.sip
 ${SIPDIR}/Qsci/qsciapis.sip
