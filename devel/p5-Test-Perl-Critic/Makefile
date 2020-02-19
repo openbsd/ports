@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/02/19 22:11:27 bluhm Exp $
 
-COMMENT=	test framework to run Perl::Critic
+COMMENT =	test framework to run Perl::Critic
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Test-Perl-Critic-1.03
-REVISION=	0
-CATEGORIES=	devel
+DISTNAME =	Test-Perl-Critic-1.04
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-CONFIGURE_STYLE=	modbuild
+# Perl
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=		devel/p5-Perl-Critic \
-			devel/p5-MCE
+MODULES =		cpan
+RUN_DEPENDS =		devel/p5-MCE>=1.827 \
+			devel/p5-Perl-Critic>=1.105
 
-MAKE_ENV=		TEST_POD=Yes
+CONFIGURE_STYLE =	modbuild
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
