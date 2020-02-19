@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/02/19 08:18:36 benoit Exp $
 
 COMMENT=		configuration file parser library
-V=			3.2.1
+V =			3.2.2
 DISTNAME=		confuse-${V}
 PKGNAME=		lib${DISTNAME}
-SHARED_LIBS +=  confuse              2.1      # 2.0
+SHARED_LIBS +=  confuse              2.2      # 2.0
 CATEGORIES=		devel
-REVISION=		0
 
 HOMEPAGE=		https://github.com/martinh/libconfuse
 

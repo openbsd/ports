@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/06/11 15:38:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/02/19 08:18:36 benoit Exp $
 include/confuse.h
-lib/libconfuse.a
+@static-lib lib/libconfuse.a
 lib/libconfuse.la
 @lib lib/libconfuse.so.${LIBconfuse_VERSION}
 lib/pkgconfig/libconfuse.pc
