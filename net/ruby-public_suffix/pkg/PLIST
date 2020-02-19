@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/09/26 06:34:02 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/19 11:05:15 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
@@ -6,7 +6,6 @@ ${GEM_LIB}/gems/${DISTNAME}/.github/FUNDING.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop_defaults.yml
-${GEM_LIB}/gems/${DISTNAME}/.ruby-gemset
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/2.0-Upgrade.md
@@ -15,6 +14,7 @@ ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/SECURITY.md
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/console
 ${GEM_LIB}/gems/${DISTNAME}/data/
