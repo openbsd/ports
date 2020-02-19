@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/01/28 13:16:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/02/19 15:27:47 bket Exp $
 @pkgpath x11/py-qt5,-main
 bin/pylupdate5${MODPY_BIN_SUFFIX}
 bin/pyrcc5${MODPY_BIN_SUFFIX}
@@ -167,6 +167,10 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QAxContainer/QAxContainermod.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QAxContainer/qaxbase.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QAxContainer/qaxobject.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QAxContainer/qaxwidget.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtAndroidExtras/
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtAndroidExtras/QtAndroidExtrasmod.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtAndroidExtras/qandroidjniobject.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtAndroidExtras/qtandroid.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/QtBluetoothmod.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qbluetooth.sip

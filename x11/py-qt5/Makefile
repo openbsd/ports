@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/07 22:16:20 bket Exp $
+# $OpenBSD: Makefile,v 1.21 2020/02/19 15:27:46 bket Exp $
 
 COMMENT	=	python Qt5 bindings
 
-V=		5.9
+V=		5.9.2
 DISTNAME=	PyQt5_gpl-${V}
 PKGNAME=	py-qt5-${V}
-REVISION=	6
 
 CATEGORIES=	x11 devel
 
-HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
+HOMEPAGE=	https://www.riverbankcomputing.com/software/pyqt/intro
 MAINTAINER=	KDE porting team <openbsd-kde@googlegroups.com>
 
 # GPLv3 with exceptions for use with certain named open-source licenses
