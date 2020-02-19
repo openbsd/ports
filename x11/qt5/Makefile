@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/01/25 15:02:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.61 2020/02/19 16:08:53 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += docs
@@ -31,7 +31,6 @@
      SUBDIR += qtvirtualkeyboard
      SUBDIR += qtwebchannel
      SUBDIR += qtwebkit
-     SUBDIR += qtwebkit-examples
      SUBDIR += qtwebsockets
      SUBDIR += qtx11extras
      SUBDIR += qtxmlpatterns

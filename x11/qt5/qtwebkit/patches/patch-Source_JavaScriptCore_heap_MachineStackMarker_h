@@ -1,0 +1,32 @@
+$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_h,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
+
+Index: Source/JavaScriptCore/heap/MachineStackMarker.h
+--- Source/JavaScriptCore/heap/MachineStackMarker.h.orig
++++ Source/JavaScriptCore/heap/MachineStackMarker.h
+@@ -41,7 +41,10 @@
+ #if OS(FREEBSD)
+ #include <ucontext.h>
+ #endif
++#if OS(OPENBSD)
++typedef ucontext_t mcontext_t;
+ #endif
++#endif
+ 
+ #if OS(DARWIN)
+ typedef mach_port_t PlatformThread;
+@@ -51,6 +54,7 @@ typedef DWORD PlatformThread;
+ typedef pthread_t PlatformThread;
+ #endif // OS(DARWIN)
+ 
++
+ namespace JSC {
+ 
+ class CodeBlockSet;
+@@ -114,7 +118,6 @@ class MachineThreads { (public)
+ #else
+ #error Need a thread register struct for this platform
+ #endif
+-            
+             PlatformRegisters regs;
+         };
+         

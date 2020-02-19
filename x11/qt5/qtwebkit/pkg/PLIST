@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/01/07 20:22:08 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/19 16:08:53 rsadowski Exp $
 @conflict qt5-<5.6
 @pkgpath x11/qt5/qtwebkit,-main
 include/X11/qt5/QtWebKit/
 include/X11/qt5/QtWebKit/${VERSION}/
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/
-include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/bytearraytestdata.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qhttpheader_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qquicknetworkreply_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qquicknetworkrequest_p.h
@@ -14,8 +13,6 @@ include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qquickwebpage_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qquickwebpage_p_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qquickwebview_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qquickwebview_p_p.h
-include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qrawwebview_p.h
-include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qrawwebview_p_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qtwebsecurityorigin_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebchannelwebkittransport_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebdatabase_p.h
@@ -33,14 +30,12 @@ include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebpermissionrequest_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebplugindatabase_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebpreferences_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebpreferences_p_p.h
-include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebscriptworld.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebscriptworld_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebsecurityorigin_p.h
-include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/testwindow.h
-include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/util.h
 include/X11/qt5/QtWebKit/QWebDatabase
 include/X11/qt5/QtWebKit/QWebElement
 include/X11/qt5/QtWebKit/QWebElementCollection
+include/X11/qt5/QtWebKit/QWebFullScreenRequest
 include/X11/qt5/QtWebKit/QWebFullScreenVideoHandler
 include/X11/qt5/QtWebKit/QWebHapticFeedbackPlayer
 include/X11/qt5/QtWebKit/QWebHistory
@@ -62,6 +57,7 @@ include/X11/qt5/QtWebKit/QtWebKitVersion
 include/X11/qt5/QtWebKit/qtwebkitversion.h
 include/X11/qt5/QtWebKit/qwebdatabase.h
 include/X11/qt5/QtWebKit/qwebelement.h
+include/X11/qt5/QtWebKit/qwebfullscreenrequest.h
 include/X11/qt5/QtWebKit/qwebhistory.h
 include/X11/qt5/QtWebKit/qwebhistoryinterface.h
 include/X11/qt5/QtWebKit/qwebkitglobal.h
@@ -92,25 +88,36 @@ include/X11/qt5/QtWebKitWidgets/qwebframe.h
 include/X11/qt5/QtWebKitWidgets/qwebinspector.h
 include/X11/qt5/QtWebKitWidgets/qwebpage.h
 include/X11/qt5/QtWebKitWidgets/qwebview.h
+@lib lib/libJavaScriptCore.so.${LIBJavaScriptCore_VERSION}
 @lib lib/libQt5WebKit.so.${LIBQt5WebKit_VERSION}
 @lib lib/libQt5WebKitWidgets.so.${LIBQt5WebKitWidgets_VERSION}
+@lib lib/libWTF.so.${LIBWTF_VERSION}
+@lib lib/libWebCore.so.${LIBWebCore_VERSION}
+@lib lib/libWebKit2.so.${LIBWebKit2_VERSION}
 lib/pkgconfig/Qt5WebKit.pc
 lib/pkgconfig/Qt5WebKitWidgets.pc
 lib/qt5/cmake/Qt5WebKit/
 lib/qt5/cmake/Qt5WebKit/Qt5WebKitConfig.cmake
 lib/qt5/cmake/Qt5WebKit/Qt5WebKitConfigVersion.cmake
+lib/qt5/cmake/Qt5WebKit/WebKitTargets${MODCMAKE_BUILD_SUFFIX}
+lib/qt5/cmake/Qt5WebKit/WebKitTargets.cmake
 lib/qt5/cmake/Qt5WebKitWidgets/
 lib/qt5/cmake/Qt5WebKitWidgets/Qt5WebKitWidgetsConfig.cmake
 lib/qt5/cmake/Qt5WebKitWidgets/Qt5WebKitWidgetsConfigVersion.cmake
-lib/qt5/libQt5WebKit.la
-lib/qt5/libQt5WebKit.prl
+lib/qt5/cmake/Qt5WebKitWidgets/Qt5WebKitWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/qt5/cmake/Qt5WebKitWidgets/Qt5WebKitWidgetsTargets.cmake
+@static-lib lib/qt5/libANGLESupport.a
+@lib lib/qt5/libJavaScriptCore.so.${LIBJavaScriptCore_VERSION}
 @lib lib/qt5/libQt5WebKit.so.${LIBQt5WebKit_VERSION}
-lib/qt5/libQt5WebKitWidgets.la
-lib/qt5/libQt5WebKitWidgets.prl
 @lib lib/qt5/libQt5WebKitWidgets.so.${LIBQt5WebKitWidgets_VERSION}
+@lib lib/qt5/libWTF.so.${LIBWTF_VERSION}
+@lib lib/qt5/libWebCore.so.${LIBWebCore_VERSION}
+@lib lib/qt5/libWebKit2.so.${LIBWebKit2_VERSION}
 lib/qt5/libexec/
+@bin lib/qt5/libexec/QtWebNetworkProcess
 @bin lib/qt5/libexec/QtWebPluginProcess
 @bin lib/qt5/libexec/QtWebProcess
+@bin lib/qt5/libexec/QtWebStorageProcess
 lib/qt5/mkspecs/modules/qt_lib_webkit.pri
 lib/qt5/mkspecs/modules/qt_lib_webkit_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri

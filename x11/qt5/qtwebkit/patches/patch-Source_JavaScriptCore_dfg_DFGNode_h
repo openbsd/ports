@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_JavaScriptCore_dfg_DFGNode_h,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
+
+Index: Source/JavaScriptCore/dfg/DFGNode.h
+--- Source/JavaScriptCore/dfg/DFGNode.h.orig
++++ Source/JavaScriptCore/dfg/DFGNode.h
+@@ -226,7 +226,7 @@ struct OpInfo {
+     OpInfo() : m_value(0) { }
+     explicit OpInfo(int32_t value) : m_value(static_cast<uintptr_t>(value)) { }
+     explicit OpInfo(uint32_t value) : m_value(static_cast<uintptr_t>(value)) { }
+-#if OS(DARWIN) || USE(JSVALUE64)
++#if OS(DARWIN) || (CPU(ARM) && OS(OPENBSD)) || (CPU(X86) && OS(OPENBSD)) || USE(JSVALUE64)
+     explicit OpInfo(size_t value) : m_value(static_cast<uintptr_t>(value)) { }
+ #endif
+     explicit OpInfo(void* value) : m_value(reinterpret_cast<uintptr_t>(value)) { }

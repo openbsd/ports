@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_JavaScriptCore_API_ObjCCallbackFunction_h,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
+
+Index: Source/JavaScriptCore/API/ObjCCallbackFunction.h
+--- Source/JavaScriptCore/API/ObjCCallbackFunction.h.orig
++++ Source/JavaScriptCore/API/ObjCCallbackFunction.h
+@@ -29,7 +29,7 @@
+ 
+ #if JSC_OBJC_API_ENABLED
+ 
+-#import <JavaScriptCore/JSCallbackFunction.h>
++#import <JavaScriptCore/API/JSCallbackFunction.h>
+ 
+ #if defined(__OBJC__)
+ JSObjectRef objCCallbackFunctionForMethod(JSContext *, Class, Protocol *, BOOL isInstanceMethod, SEL, const char* types);

@@ -1,0 +1,13 @@
+$OpenBSD: patch-Source_ThirdParty_gtest_include_gtest_internal_gtest-port_h,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
+
+Index: Source/ThirdParty/gtest/include/gtest/internal/gtest-port.h
+--- Source/ThirdParty/gtest/include/gtest/internal/gtest-port.h.orig
++++ Source/ThirdParty/gtest/include/gtest/internal/gtest-port.h
+@@ -188,6 +188,7 @@
+ #include <iostream>  // NOLINT
+ #include <sstream>  // NOLINT
+ #include <string>  // NOLINT
++#include <unistd.h>
+ 
+ #define GTEST_DEV_EMAIL_ "googletestframework@@googlegroups.com"
+ #define GTEST_FLAG_PREFIX_ "gtest_"

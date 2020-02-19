@@ -1,15 +1,29 @@
-$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
-Use system malloc(3).
---- Source/WTF/wtf/Platform.h.orig	Tue Feb 17 07:57:01 2015
-+++ Source/WTF/wtf/Platform.h	Wed Apr  8 00:38:31 2015
-@@ -724,6 +724,10 @@
- #endif
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.2 2020/02/19 16:08:53 rsadowski Exp $
+
+https://bugs.webkit.org/show_bug.cgi?id=129963
+
+Index: Source/WTF/wtf/Platform.h
+--- Source/WTF/wtf/Platform.h.orig
++++ Source/WTF/wtf/Platform.h
+@@ -155,6 +155,13 @@
+ #define WTF_CPU_BIG_ENDIAN 1
  #endif
  
-+#if PLATFORM(OPENBSD)
-+#define USE_SYSTEM_MALLOC 1
++/* CPU(SPARC64) - SPARC V9 */
++#if defined(__sparc64__)
++#define WTF_CPU_KNOWN 1
++#define WTF_CPU_SPARC64 1
++#define WTF_CPU_BIG_ENDIAN 1
 +#endif
 +
- #if PLATFORM(EFL)
- #define ENABLE_GLOBAL_FASTMALLOC_NEW 0
- #endif
+ /* CPU(X86) - i386 / x86 32-bit */
+ #if   defined(__i386__) \
+     || defined(i386)     \
+@@ -707,6 +714,7 @@
+     || CPU(S390X) \
+     || CPU(MIPS64) \
+     || CPU(PPC64) \
++    || CPU(SPARC64) \
+     || CPU(PPC64LE)
+ #define USE_JSVALUE64 1
+ #else

@@ -1,29 +1,50 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/07 20:22:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2020/02/19 16:08:53 rsadowski Exp $
 
-QT5NAME =		QtWebkit
-REVISION =		11
-COMMENT =		old Webkit integration framework for Qt
+COMMENT =		QtWebKit with a more modern WebKit code base
+
 USE_WXNEEDED =		Yes
-DPB_PROPERTIES =	parallel
-VERSION =		${QT5_WEBKIT_VERSION}
-DIST_VERSION =		${QT5_WEBKIT_VERSION}
-
-SHARED_LIBS +=		Qt5WebKit		2.1
-SHARED_LIBS +=		Qt5WebKitWidgets	2.1
 
 CATEGORIES =		www
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sensors
-WANTLIB += Qt5Sql Qt5WebChannel Qt5Widgets X11 Xext Xrender c
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstvideo-1.0
-WANTLIB += icudata icui18n icuuc intl jpeg m png sqlite3 webp
-WANTLIB += xml2 xslt z
+DPB_PROPERTIES =	parallel
 
-MASTER_SITES =		https://download.qt.io/community_releases/${DIST_VERSION:R}/${DIST_VERSION}-final/
+VERSION =		${QT5_WEBKIT_VERSION}
+DISTNAME =		qtwebkit-${QT5_WEBKIT_VERSION}-alpha3
+PKGNAME =		qtwebkit-${QT5_WEBKIT_VERSION}
 
-MODULES =		perl lang/python lang/ruby
+SHARED_LIBS +=  Qt5WebKit               3.0 # 5.9
+SHARED_LIBS +=  Qt5WebKitWidgets        3.0 # 5.9
+SHARED_LIBS +=  JavaScriptCore          0.0 # 5.212.9
+SHARED_LIBS +=  WebCore                 0.0 # 5.212.9
+SHARED_LIBS +=  WebKit2                 0.0 # 5.212.9
+SHARED_LIBS +=  WTF                     0.0 # 5.212.9
+
+# Mostly LGPLv2.1 or LGPLv3 for code; FDLv1.3 for documentation.
+# Some third-party parts are BSD-licensed.
+# Also, many parts have are dual-licensed having either commercial, GPL,
+# Apache 2.0 or other type of license as an alternative option.
+# A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
+PERMIT_PACKAGE =	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Positioning
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sensors Qt5WebChannel
+WANTLIB += Qt5Widgets X11 Xcomposite Xrender c gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += hyphen icui18n icuuc jpeg m png sqlite3 webp xml2 xslt
+
+MASTER_SITES =		https://github.com/annulen/webkit/releases/download/${DISTNAME}/
+
+MODULES =		devel/cmake \
+			lang/ruby \
+			x11/qt5
+
+# Override to unbreak ninja build
+CONFIGURE_STYLE =	cmake
+
+# Remove default "first" target and build all
+ALL_TARGET =		
+
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
@@ -43,75 +64,66 @@ LIB_DEPENDS =		databases/sqlite3 \
 			multimedia/gstreamer1/plugins-base \
 			textproc/icu4c \
 			textproc/libxslt \
+			graphics/libwebp \
+			textproc/hyphen \
 			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtlocation>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtsensors>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebchannel>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
-MAKE_ENV =		NINJA_PATH="${LOCALBASE}/bin/ninja" \
-			PYTHON=${MODPY_BIN} \
-			RUBY=${RUBY}
+CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
+			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
+			-DENABLE_API_TESTS=OFF \
+			-DENABLE_QT_WEBCHANNEL=ON \
+			-DENABLE_TOOLS=OFF \
+			-DPORT=Qt \
+			-DSHARED_CORE=ON \
+			-DUSE_GSTREAMER=ON \
+			-DUSE_LD_GOLD=OFF \
+			-DUSE_QT_MULTIMEDIA=OFF \
+			-DUSE_SYSTEM_MALLOC=ON \
+			-DUSE_WOFF2=OFF
 
-MAKE_FLAGS =		PYTHON=${MODPY_BIN} \
-			RUBY=${RUBY}
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX="${WRKINST}${TRUEPREFIX}" \
+			-DECM_MKSPECS_INSTALL_DIR=${WRKINST}${MODQT_LIBDIR}/mkspecs/modules \
+			-DKDE_INSTALL_INCLUDEDIR=${WRKINST}${MODQT_INCDIR} \
+			-DKDE_INSTALL_LIBEXECDIR=${WRKINST}${MODQT_LIBDIR}/libexec \
+			-DKDE_INSTALL_SHAREDSTATEDIR=/var \
+			-DKDE_INSTALL_SYSCONFDIR=/etc \
+			-DKDE_INSTALL_MANDIR=${WRKINST}/man \
+			-DKDE_INSTALL_QTPLUGINDIR=${WRKINST}${MODQT_LIBDIR}/plugins \
+			-DKDE_INSTALL_LIBDIR=${WRKINST}${MODQT_LIBDIR} \
+			-DKDE_INSTALL_QMLDIR=${WRKINST}${MODQT_LIBDIR}/qml
 
-FLAVORS =		debug
-PSEUDO_FLAVORS =	no_tests
+.include <bsd.port.arch.mk>
 
-#MODQMAKE_ARGS =		WEBKIT_CONFIG+=web_audio
+# sync with Source/JavaScriptCore/assembler/MacroAssembler.h
+.if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
+    ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "i386" && \
+    ${MACHINE_ARCH} != "mips64" && ${MACHINE_ARCH} != "mips64el"
+# #error "The MacroAssembler is not supported on this platform."
+CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
+CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
+.endif
 
-# See qtbase/tests/README for details
-TEST_IS_INTERACTIVE =	X11
-TEST_DEPENDS =		${MODPY_RUN_DEPENDS} \
-			${MODRUBY_RUN_DEPENDS} \
-			audio/sox \
-			kde4-minimal-*|kdebase-*:meta/kde4,-minimal
+# ld.lld does not have this option
+# save memory on 32bit arches
+.if !${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "amd64"
+LDFLAGS +=		-Wl,--no-keep-memory
+.endif
 
-pre-configure:
-	# Python and Ruby are used for building mainly, those paths
-	# do not get into final packages.
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
+# __sync_add_and_fetch_8
+.if ${MACHINE_ARCH} == "i386"
+CFLAGS +=		-march=i686
+CXXFLAGS +=		-march=i686
+.endif
 
-	cd ${WRKSRC}; ${MODPY_BIN_ADJ} \
-		`find . -name '*.py'` \
-		`egrep -Rl '(env |bin/)python' Tools` \
-		Source/WebCore/inspector/generate-inspector-protocol-version \
-		Source/WebCore/html/parser/create-html-entity-table
-
-	cd ${WRKSRC}; ${MODRUBY_RUBY_ADJ} \
-		`find . -name '*.rb'` \
-		Tools/Scripts/check-for-webkit-framework-include-consistency \
-		Tools/Scripts/display-profiler-output \
-		Tools/Scripts/check-for-inappropriate-macros-in-external-headers \
-		Tools/Scripts/roll-over-ChangeLogs \
-		Tools/Scripts/check-for-inappropriate-files-in-framework \
-		Tools/Scripts/test-webkitruby \
-		Tools/Scripts/clean-header-guards \
-		Tools/Scripts/bencher \
-		Source/WebKit/WebKit.vcxproj/WebKitExportGenerator/make-export-file-generator \
-		Source/WebCore/make-export-file-generator \
-		Source/JavaScriptCore/JavaScriptCore.vcxproj/LLInt/LLIntDesiredOffsets/build-LLIntDesiredOffsets.sh \
-		Source/JavaScriptCore/JavaScriptCore.vcxproj/LLInt/LLIntAssembly/build-LLIntAssembly.sh
-
-	cd ${WRKSRC}; perl -pi.otheradj \
-		-e 's,/usr/bin/(env )?python\b,${MODPY_BIN},g;' \
-		-e 's,/usr/bin/(env )?ruby\b,${RUBY},g;' \
-		-e 's,(/usr)?/bin/(env )?bash\b,/bin/ksh,g;' \
-		Tools/BuildSlaveSupport/gtk/pulseaudio/run \
-		Tools/Scripts/old-run-webkit-tests \
-		Tools/Scripts/run-webkit-websocketserver \
-		Tools/Scripts/webkitpy/common/system/executive_unittest.py
-
-	cd ${WRKSRC}; perl -pi.symname \
-		-e 's/^__/_/;' \
-		qtwebkit/Source/JavaScriptCore/JavaScriptCore.order
-
-	cd ${WRKSRC}/Tools/qmake/config.tests; perl -pi.objdir \
-		-e 's/^OBJECTS_DIR/#$$&/;' \
-		*/*.pro
+post-install:
+	find ${WRKINST} -type f -print0 | xargs -0r perl -pi \
+		-e 's,${WRKINST},,g;'
 
 .include <bsd.port.mk>
+
 .if ${CHOSEN_COMPILER} == "base-clang"
 CXXFLAGS +=		-fno-ret-protector
 .endif

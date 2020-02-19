@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
-Unbreak build.
-Synchronized with WebKit upsteam.
---- Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig	Thu Sep 11 14:48:22 2014
-+++ Source/JavaScriptCore/heap/MachineStackMarker.cpp	Wed Jan  7 01:01:51 2015
-@@ -45,6 +45,10 @@
+$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.2 2020/02/19 16:08:53 rsadowski Exp $
+
+Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
+--- Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig
++++ Source/JavaScriptCore/heap/MachineStackMarker.cpp
+@@ -49,6 +49,10 @@
  
  #elif OS(UNIX)
  
@@ -14,45 +14,132 @@ Synchronized with WebKit upsteam.
  #include <sys/mman.h>
  #include <unistd.h>
  
-@@ -311,6 +315,8 @@ typedef arm_thread_state_t PlatformThreadRegisters;
- typedef CONTEXT PlatformThreadRegisters;
- #elif OS(QNX)
- typedef struct _debug_thread_info PlatformThreadRegisters;
-+#elif OS(OPENBSD)
-+typedef pthread_t PlatformThreadRegisters;
- #elif USE(PTHREADS)
- typedef pthread_attr_t PlatformThreadRegisters;
- #else
-@@ -369,6 +375,8 @@ static size_t getPlatformThreadRegisters(const Platfor
+@@ -86,11 +90,13 @@ static void pthreadSignalHandlerSuspendResume(int, sig
      }
-     close(fd);
-     return sizeof(struct _debug_thread_info);
-+#elif OS(OPENBSD)
-+    regs = platformThread;
- #elif USE(PTHREADS)
-     pthread_attr_init(&regs);
- #if HAVE(PTHREAD_NP_H) || OS(NETBSD)
-@@ -437,7 +445,14 @@ static inline void* otherThreadStackPointer(const Plat
- #elif USE(PTHREADS)
-     void* stackBase = 0;
-     size_t stackSize = 0;
-+#if OS(OPENBSD)
-+    stack_t ss;
-+    int rc = pthread_stackseg_np(regs, &ss);
-+    stackBase = (void*)((size_t) ss.ss_sp - ss.ss_size);
-+    stackSize = ss.ss_size;
-+#else
-     int rc = pthread_attr_getstack(&regs, &stackBase, &stackSize);
-+#endif
-     (void)rc; // FIXME: Deal with error code somehow? Seems fatal.
-     ASSERT(stackBase);
-     return static_cast<char*>(stackBase) + stackSize;
-@@ -448,7 +463,7 @@ static inline void* otherThreadStackPointer(const Plat
  
- static void freePlatformThreadRegisters(PlatformThreadRegisters& regs)
- {
--#if USE(PTHREADS) && !OS(WINDOWS) && !OS(DARWIN) && !OS(QNX)
-+#if USE(PTHREADS) && !OS(WINDOWS) && !OS(DARWIN) && !OS(QNX) && !OS(OPENBSD)
-     pthread_attr_destroy(&regs);
+     ucontext_t* userContext = static_cast<ucontext_t*>(ucontext);
+-#if CPU(PPC)
++
++// XXX we don't have ucontext || fix an error on powerpc
++#if CPU(PPC) && !OS(OPENBSD) 
+     thread->suspendedMachineContext = *userContext->uc_mcontext.uc_regs;
  #else
-     UNUSED_PARAM(regs);
+-    thread->suspendedMachineContext = userContext->uc_mcontext;
+-#endif
++    thread->suspendedMachineContext = *userContext;
++#endif 
+ 
+     // Allow suspend caller to see that this thread is suspended.
+     // sem_post is async-signal-safe function. It means that we can call this from a signal handler.
+@@ -566,6 +572,25 @@ void* MachineThreads::Thread::Registers::stackPointer(
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD) && ENABLE(JIT)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_edx);
++#elif CPU(X86_64)
++    //return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_rsp);
++#elif CPU(ARM)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.__gregs[_REG_R1]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_x[1]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.mc_regs[5]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.mc_rsi);
++#else
++#error Unknown Architecture
++#endif
++
++
+ #elif defined(__GLIBC__) && ENABLE(JIT)
+ 
+ #if CPU(X86)
+@@ -632,6 +657,7 @@ void* MachineThreads::Thread::Registers::framePointer(
+ #error Unknown Architecture
+ #endif
+ 
++
+ #endif // __DARWIN_UNIX03
+ 
+ // end OS(DARWIN)
+@@ -665,6 +691,25 @@ void* MachineThreads::Thread::Registers::framePointer(
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_esp);
++#elif CPU(X86_64)
++    //return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_rsp);
++#elif CPU(ARM)#
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.__gregs[_REG_SP]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_sp);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.mc_regs[29]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.mc_rsp);
++#else
++#error Unknown Architecture
++#endif
++
++
+ #elif defined(__GLIBC__)
+ 
+ // The following sequence depends on glibc's sys/ucontext.h.
+@@ -747,6 +792,25 @@ void* MachineThreads::Thread::Registers::instructionPo
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_ebp);
++#elif CPU(X86_64)
++    //return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_rbp);
++#elif CPU(ARM)#
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.__gregs[_REG_FP]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_x[29]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.mc_regs[30]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.mc_rbp);
++#else
++#error Unknown Architecture
++#endif
++
++
+ #elif defined(__GLIBC__)
+ 
+ // The following sequence depends on glibc's sys/ucontext.h.
+@@ -837,6 +901,25 @@ void* MachineThreads::Thread::Registers::llintPC() con
+ #else
+ #error Unknown Architecture
+ #endif
++
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_eip);
++#elif CPU(X86_64)
++    //return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_rip);
++#elif CPU(ARM)#
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.__gregs[_REG_PC]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_elr);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.mc_pc);                                                                                                                  
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.mc_rip);
++#else
++#error Unknown Architecture
++#endif
++
+ 
+ #elif defined(__GLIBC__)
+ 

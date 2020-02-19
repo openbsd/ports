@@ -1,0 +1,37 @@
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
+
+Our ar(1) is too old and have not support for `T'.
+
+Undefined references to libc functions.
+
+Index: Source/cmake/OptionsCommon.cmake
+--- Source/cmake/OptionsCommon.cmake.orig
++++ Source/cmake/OptionsCommon.cmake
+@@ -19,10 +19,10 @@ option(USE_THIN_ARCHIVES "Produce all static libraries
+ if (USE_THIN_ARCHIVES)
+     execute_process(COMMAND ${CMAKE_AR} -V OUTPUT_VARIABLE AR_VERSION)
+     if ("${AR_VERSION}" MATCHES "^GNU ar")
+-        set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> crT <TARGET> <LINK_FLAGS> <OBJECTS>")
+-        set(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> crT <TARGET> <LINK_FLAGS> <OBJECTS>")
+-        set(CMAKE_CXX_ARCHIVE_APPEND "<CMAKE_AR> rT <TARGET> <LINK_FLAGS> <OBJECTS>")
+-        set(CMAKE_C_ARCHIVE_APPEND "<CMAKE_AR> rT <TARGET> <LINK_FLAGS> <OBJECTS>")
++        set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> cr <TARGET> <LINK_FLAGS> <OBJECTS>")
++        set(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> cr <TARGET> <LINK_FLAGS> <OBJECTS>")
++        set(CMAKE_CXX_ARCHIVE_APPEND "<CMAKE_AR> r <TARGET> <LINK_FLAGS> <OBJECTS>")
++        set(CMAKE_C_ARCHIVE_APPEND "<CMAKE_AR> r <TARGET> <LINK_FLAGS> <OBJECTS>")
+     endif ()
+ endif ()
+ 
+@@ -174,9 +174,9 @@ if (NOT MSVC)
+     string(REGEX MATCHALL "-fsanitize=[^ ]*" ENABLED_COMPILER_SANITIZERS ${CMAKE_CXX_FLAGS})
+ endif ()
+ 
+-if (UNIX AND NOT APPLE AND NOT ENABLED_COMPILER_SANITIZERS)
+-    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
+-endif ()
++#if (UNIX AND NOT APPLE AND NOT ENABLED_COMPILER_SANITIZERS)
++#    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
++#endif ()
+ 
+ # Enable the usage of OpenMP.
+ #  - At this moment, OpenMP is only used as an alternative implementation
