@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2019/11/29 18:01:10 juanfra Exp $
+# $OpenBSD: Makefile,v 1.61 2020/02/19 20:39:56 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			7.5
+V =			7.6
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}

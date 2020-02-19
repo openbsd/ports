@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/08/09 21:16:13 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/02/19 20:39:56 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 @bin bin/racket
@@ -41,9 +41,11 @@ share/examples/racket/
 share/examples/racket/config.rktd
 @sample ${SYSCONFDIR}/racket/config.rktd
 share/racket/
-share/racket/COPYING-libscheme.txt
-share/racket/COPYING.txt
-share/racket/COPYING_LESSER.txt
+share/racket/LICENSE-APACHE.txt
+share/racket/LICENSE-GPL.txt
+share/racket/LICENSE-LGPL.txt
+share/racket/LICENSE-MIT.txt
+share/racket/LICENSE-libscheme.txt
 share/racket/collects/
 share/racket/collects/acks/
 share/racket/collects/acks/acks.rkt
@@ -89,11 +91,32 @@ share/racket/collects/compiler/find-exe.rkt
 share/racket/collects/compiler/module-suffix.rkt
 share/racket/collects/compiler/option.rkt
 share/racket/collects/compiler/private/
+share/racket/collects/compiler/private/cm-dep.rkt
+share/racket/collects/compiler/private/cm-file.rkt
+share/racket/collects/compiler/private/cm-hash.rkt
+share/racket/collects/compiler/private/cm-log.rkt
 share/racket/collects/compiler/private/cm-minimal.rkt
+share/racket/collects/compiler/private/cm-path.rkt
+share/racket/collects/compiler/private/cm-security.rkt
+share/racket/collects/compiler/private/cm-util.rkt
 share/racket/collects/compiler/private/collects-path.rkt
 share/racket/collects/compiler/private/compiled/
+share/racket/collects/compiler/private/compiled/cm-dep_rkt.dep
+share/racket/collects/compiler/private/compiled/cm-dep_rkt.zo
+share/racket/collects/compiler/private/compiled/cm-file_rkt.dep
+share/racket/collects/compiler/private/compiled/cm-file_rkt.zo
+share/racket/collects/compiler/private/compiled/cm-hash_rkt.dep
+share/racket/collects/compiler/private/compiled/cm-hash_rkt.zo
+share/racket/collects/compiler/private/compiled/cm-log_rkt.dep
+share/racket/collects/compiler/private/compiled/cm-log_rkt.zo
 share/racket/collects/compiler/private/compiled/cm-minimal_rkt.dep
 share/racket/collects/compiler/private/compiled/cm-minimal_rkt.zo
+share/racket/collects/compiler/private/compiled/cm-path_rkt.dep
+share/racket/collects/compiler/private/compiled/cm-path_rkt.zo
+share/racket/collects/compiler/private/compiled/cm-security_rkt.dep
+share/racket/collects/compiler/private/compiled/cm-security_rkt.zo
+share/racket/collects/compiler/private/compiled/cm-util_rkt.dep
+share/racket/collects/compiler/private/compiled/cm-util_rkt.zo
 share/racket/collects/compiler/private/compiled/collects-path_rkt.dep
 share/racket/collects/compiler/private/compiled/collects-path_rkt.zo
 share/racket/collects/compiler/private/compiled/configdir_rkt.dep
@@ -725,6 +748,8 @@ share/racket/collects/racket/compiled/kernel_rkt.dep
 share/racket/collects/racket/compiled/kernel_rkt.zo
 share/racket/collects/racket/compiled/keyword-transform_rkt.dep
 share/racket/collects/racket/compiled/keyword-transform_rkt.zo
+share/racket/collects/racket/compiled/keyword_rkt.dep
+share/racket/collects/racket/compiled/keyword_rkt.zo
 share/racket/collects/racket/compiled/language-info_rkt.dep
 share/racket/collects/racket/compiled/language-info_rkt.zo
 share/racket/collects/racket/compiled/lazy-require_rkt.dep
@@ -807,6 +832,8 @@ share/racket/collects/racket/compiled/stxparam_rkt.dep
 share/racket/collects/racket/compiled/stxparam_rkt.zo
 share/racket/collects/racket/compiled/surrogate_rkt.dep
 share/racket/collects/racket/compiled/surrogate_rkt.zo
+share/racket/collects/racket/compiled/symbol_rkt.dep
+share/racket/collects/racket/compiled/symbol_rkt.zo
 share/racket/collects/racket/compiled/syntax_rkt.dep
 share/racket/collects/racket/compiled/syntax_rkt.zo
 share/racket/collects/racket/compiled/system_rkt.dep
@@ -1028,6 +1055,7 @@ share/racket/collects/racket/kernel/compiled/init_rkt.dep
 share/racket/collects/racket/kernel/compiled/init_rkt.zo
 share/racket/collects/racket/kernel/init.rkt
 share/racket/collects/racket/keyword-transform.rkt
+share/racket/collects/racket/keyword.rkt
 share/racket/collects/racket/lang/
 share/racket/collects/racket/lang/compiled/
 share/racket/collects/racket/lang/compiled/reader_rkt.dep
@@ -1127,7 +1155,6 @@ share/racket/collects/racket/pretty.rkt
 share/racket/collects/racket/private/
 share/racket/collects/racket/private/arity.rkt
 share/racket/collects/racket/private/base.rkt
-share/racket/collects/racket/private/c.rkt
 share/racket/collects/racket/private/case.rkt
 share/racket/collects/racket/private/cert.rkt
 share/racket/collects/racket/private/check.rkt
@@ -1143,8 +1170,6 @@ share/racket/collects/racket/private/compiled/arity_rkt.dep
 share/racket/collects/racket/private/compiled/arity_rkt.zo
 share/racket/collects/racket/private/compiled/base_rkt.dep
 share/racket/collects/racket/private/compiled/base_rkt.zo
-share/racket/collects/racket/private/compiled/c_rkt.dep
-share/racket/collects/racket/private/compiled/c_rkt.zo
 share/racket/collects/racket/private/compiled/case_rkt.dep
 share/racket/collects/racket/private/compiled/case_rkt.zo
 share/racket/collects/racket/private/compiled/cert_rkt.dep
@@ -1291,6 +1316,8 @@ share/racket/collects/racket/private/compiled/set-types_rkt.dep
 share/racket/collects/racket/private/compiled/set-types_rkt.zo
 share/racket/collects/racket/private/compiled/set_rkt.dep
 share/racket/collects/racket/private/compiled/set_rkt.zo
+share/racket/collects/racket/private/compiled/share-search_rkt.dep
+share/racket/collects/racket/private/compiled/share-search_rkt.zo
 share/racket/collects/racket/private/compiled/shared-body_rkt.dep
 share/racket/collects/racket/private/compiled/shared-body_rkt.zo
 share/racket/collects/racket/private/compiled/small-scheme_rkt.dep
@@ -1418,6 +1445,7 @@ share/racket/collects/racket/private/serialize-structs.rkt
 share/racket/collects/racket/private/serialize.rkt
 share/racket/collects/racket/private/set-types.rkt
 share/racket/collects/racket/private/set.rkt
+share/racket/collects/racket/private/share-search.rkt
 share/racket/collects/racket/private/shared-body.rkt
 share/racket/collects/racket/private/small-scheme.rkt
 share/racket/collects/racket/private/so-search.rkt
@@ -1485,6 +1513,7 @@ share/racket/collects/racket/struct.rkt
 share/racket/collects/racket/stxparam-exptime.rkt
 share/racket/collects/racket/stxparam.rkt
 share/racket/collects/racket/surrogate.rkt
+share/racket/collects/racket/symbol.rkt
 share/racket/collects/racket/syntax.rkt
 share/racket/collects/racket/system.rkt
 share/racket/collects/racket/tcp.rkt
