@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1937 2020/02/17 16:32:00 paco Exp $
+# $OpenBSD: Makefile,v 1.1938 2020/02/19 15:51:42 bket Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1503,6 +1503,8 @@
      SUBDIR += py-isodate,python3
      SUBDIR += py-isort
      SUBDIR += py-isort,python3
+     SUBDIR += py-jaraco-functools
+     SUBDIR += py-jaraco-functools,python3
      SUBDIR += py-jedi
      SUBDIR += py-jedi,python3
      SUBDIR += py-jmespath
