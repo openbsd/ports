@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:50:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/02/19 16:09:00 rsadowski Exp $
 
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
-DISTNAME =	otter-browser-0.9.94
-REVISION =	2
+DISTNAME =	otter-browser-1.0.01
 
 CATEGORIES =	www
 
@@ -30,7 +29,7 @@ LIB_DEPENDS =	textproc/hunspell \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtsvg \
-		x11/qt5/qtwebkit \
+		x11/qt5/qtwebkit>=5.212.0 \
 		x11/qt5/qtxmlpatterns
 
 NO_TEST =	Yes
