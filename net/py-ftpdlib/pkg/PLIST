@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/05/01 23:34:17 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/02/19 21:27:17 juanfra Exp $
 bin/ftpbench${MODPY_BIN_SUFFIX}
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/__main__.py
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -17,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}filesystems.$
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}ioloop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}prefork.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}servers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/_compat.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/authorizers.py
@@ -24,11 +26,13 @@ lib/python${MODPY_VERSION}/site-packages/pyftpdlib/filesystems.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/handlers.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/ioloop.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/log.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/prefork.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/servers.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/README
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/__main__.py
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}pyc
