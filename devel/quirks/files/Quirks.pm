@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.865 2020/02/19 15:50:49 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.866 2020/02/19 17:16:35 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1381,6 +1381,7 @@ my $obsolete_reason = {
 	'rebar18' => 5,
 	'rebar17' => 5,
 	'bouml' => 3,
+	'beediff' => 18,
 };
 
 # reasons for obsolete packages
@@ -1403,6 +1404,7 @@ my @msg = (
 	"no longer maintained upstream, suggest homebank, gnucash, kmymoney", #15
 	"no longer maintained upstream, suggest kigo", #16
 	"old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb", #17
+	"no longer maintained upstream, suggest kompare", #18
 );
 
 # ->is_base_system($handle, $state):
