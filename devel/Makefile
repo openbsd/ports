@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1938 2020/02/19 15:51:42 bket Exp $
+# $OpenBSD: Makefile,v 1.1939 2020/02/19 17:14:33 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -40,7 +40,6 @@
      SUBDIR += avr32
      SUBDIR += avrdude
      SUBDIR += bashunit
-     SUBDIR += beediff
      SUBDIR += bison
      SUBDIR += blame
      SUBDIR += blocksruntime
