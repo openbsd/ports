@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2020/02/19 17:46:52 sthen Exp $
 
 COMMENT=		control and monitor storage systems using SMART
 
 # XXX at update time check whether C++11 is actually needed
-DISTNAME=		smartmontools-7.0
+DISTNAME=		smartmontools-7.1
 CATEGORIES=		sysutils
-REVISION=		0
 
 HOMEPAGE=		https://www.smartmontools.org/
+
+MAINTAINER =		Martin Ziemer <horrad@horrad.de>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -27,5 +28,9 @@ CONFIGURE_ARGS=		--docdir=${PREFIX}/share/doc/smartmontools \
 			--without-gnupg
 
 CONFIGURE_ARGS+=	--without-cxx11-option
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKBUILD}/smartd_warning.sh \
+		${PREFIX}/share/examples/smartmontools
 
 .include <bsd.port.mk>
