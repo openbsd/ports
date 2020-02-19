@@ -1,58 +1,55 @@
-# $OpenBSD: Makefile,v 1.67 2019/07/12 20:48:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2020/02/19 12:15:45 landry Exp $
 
 COMMENT=	desktop publishing program
-DISTNAME=	scribus-1.4.6
+DISTNAME=	scribus-1.5.5
 CATEGORIES=	print
-REVISION=	3
 
 HOMEPAGE=	https://www.scribus.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += QtGui QtNetwork QtXml c cairo cups fontconfig freetype
-WANTLIB += hyphen jpeg lcms2 m podofo tiff xml2 z
-
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c cairo cups execinfo
+WANTLIB += fontconfig freetype harfbuzz harfbuzz-icu hunspell-1.6
+WANTLIB += icudata icuuc jpeg lcms2 m podofo poppler ${MODPY_WANTLIB}
+WANTLIB += tiff util xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
-
 EXTRACT_SUFX=	.tar.xz
 
-MODULES=	x11/qt4 \
+MODULES=	x11/qt5 \
 		devel/cmake \
 		lang/python
 
-MODPY_RUNDEP=	No
-
 BUILD_DEPENDS=	devel/boost
+
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/py-Pillow \
 		print/ghostscript/gnu \
 		textproc/antiword \
 		misc/shared-mime-info \
+		x11/gtk+3,-guic \
 		${MODPY_TKINTER_DEPENDS}
+
 LIB_DEPENDS=	graphics/lcms2 \
 		graphics/tiff \
 		print/cups,-libs \
-		textproc/hyphen \
+		print/poppler \
+		devel/harfbuzz,-icu \
+		textproc/hunspell \
 		textproc/libxml \
 		textproc/podofo \
 		graphics/jpeg \
 		${MODPY_LIB_DEPENDS}
 
-FLAVORS=	debug
-FLAVOR?=
+CONFIGURE_ARGS+=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man/"
+#DEBUG_CONFIGURE_ARGS +=	-DWANT_DEBUG=1
 
-CONFIGURE_ARGS +=	-DCMAKE_SKIP_RPATH:BOOL=1 \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-			-DCMAKE_C_FLAGS="${CFLAGS}" \
-			-DMANDIR="${LOCALBASE}/man/"
-
-.if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS+=-DWANT_DEBUG=1
-.endif
+# delete DOS line endings
+post-extract:
+	@find ${WRKSRC} -type f -name "*.cpp" | xargs perl -i -pe 's/\r$$//'
+	@find ${WRKSRC} -type f -name "*.h" | xargs perl -i -pe 's/\r$$//'
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications

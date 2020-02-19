@@ -1,0 +1,17 @@
+$OpenBSD: patch-scribus_ui_colorlistmodel_cpp,v 1.1 2020/02/19 12:15:45 landry Exp $
+
+avoid segfault caused by CommonStrings::None by removing m_NoneColor, which is
+unused anyways
+
+Index: scribus/ui/colorlistmodel.cpp
+--- scribus/ui/colorlistmodel.cpp.orig
++++ scribus/ui/colorlistmodel.cpp
+@@ -10,8 +10,6 @@ for which a new license (GPL+exception) is in place.
+ #include "colorlistbox.h"
+ #include "commonstrings.h"
+ 
+-ColorPixmapValue ColorListModel::m_NoneColor(ScColor(), nullptr, CommonStrings::None);
+-
+ ColorListModel::ColorListModel(QObject *parent)
+ 	          : QAbstractItemModel(parent)
+ {

@@ -1,0 +1,14 @@
+$OpenBSD: patch-scribus_third_party_zip_zip_p_h,v 1.1 2020/02/19 12:15:45 landry Exp $
+
+Index: scribus/third_party/zip/zip_p.h
+--- scribus/third_party/zip/zip_p.h.orig
++++ scribus/third_party/zip/zip_p.h
+@@ -62,7 +62,7 @@ class ZipPrivate : public QObject
+     Q_OBJECT
+ 
+ public:
+-	typedef z_crc_t crc_t;
++	typedef uLongf crc_t;
+ 	ZipPrivate();
+ 	virtual ~ZipPrivate();
+ 

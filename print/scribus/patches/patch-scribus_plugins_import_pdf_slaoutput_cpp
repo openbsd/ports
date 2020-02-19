@@ -1,0 +1,46 @@
+$OpenBSD: patch-scribus_plugins_import_pdf_slaoutput_cpp,v 1.1 2020/02/19 12:15:45 landry Exp $
+
+
+Fix build with newer poppler, from archlinux
+
+Index: scribus/plugins/import/pdf/slaoutput.cpp
+--- scribus/plugins/import/pdf/slaoutput.cpp.orig
++++ scribus/plugins/import/pdf/slaoutput.cpp
+@@ -1224,6 +1224,11 @@ void SlaOutputDev::startDoc(PDFDoc *doc, XRef *xrefA, 
+ 	catalog = catA;
+ 	pdfDoc = doc;
+ 	updateGUICounter = 0;
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 84, 0)
++	m_fontEngine = new SplashFontEngine(true, true, true, true);
++#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 61, 0)
++	m_fontEngine = new SplashFontEngine(globalParams->getEnableFreeType(), true, true, true);
++#else
+ 	m_fontEngine = new SplashFontEngine(
+ #if HAVE_T1LIB_H
+ 	globalParams->getEnableT1lib(),
+@@ -1234,6 +1239,7 @@ void SlaOutputDev::startDoc(PDFDoc *doc, XRef *xrefA, 
+ 	true,
+ #endif
+ 	true);
++#endif
+ }
+ 
+ void SlaOutputDev::startPage(int pageNum, GfxState *, XRef *)
+@@ -3705,7 +3711,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
+ 	return fNam;
+ }
+ 
+-QString SlaOutputDev::convertPath(GfxPath *path)
++QString SlaOutputDev::convertPath(const GfxPath *path)
+ {
+ 	if (! path)
+ 		return QString();
+@@ -3715,7 +3721,7 @@ QString SlaOutputDev::convertPath(GfxPath *path)
+ 
+ 	for (int i = 0; i < path->getNumSubpaths(); ++i)
+ 	{
+-		GfxSubpath * subpath = path->getSubpath(i);
++		const GfxSubpath * subpath = path->getSubpath(i);
+ 		if (subpath->getNumPoints() > 0)
+ 		{
+ 			output += QString("M %1 %2").arg(subpath->getX(0)).arg(subpath->getY(0));

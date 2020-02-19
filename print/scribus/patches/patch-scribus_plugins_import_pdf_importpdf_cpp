@@ -1,0 +1,90 @@
+$OpenBSD: patch-scribus_plugins_import_pdf_importpdf_cpp,v 1.1 2020/02/19 12:15:45 landry Exp $
+
+Fix build with newer poppler, from archlinux
+
+Index: scribus/plugins/import/pdf/importpdf.cpp
+--- scribus/plugins/import/pdf/importpdf.cpp.orig
++++ scribus/plugins/import/pdf/importpdf.cpp
+@@ -75,7 +75,11 @@ PdfPlug::PdfPlug(ScribusDoc* doc, int flags)
+ QImage PdfPlug::readThumbnail(const QString& fName)
+ {
+ 	QString pdfFile = QDir::toNativeSeparators(fName);
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 83, 0)
++	globalParams.reset(new GlobalParams());
++#else
+ 	globalParams = new GlobalParams();
++#endif
+ 	if (globalParams)
+ 	{
+ #if defined(Q_OS_WIN32) && POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 62, 0)
+@@ -90,7 +94,9 @@ QImage PdfPlug::readThumbnail(const QString& fName)
+ 			if (pdfDoc->getErrorCode() == errEncrypted)
+ 			{
+ 				delete pdfDoc;
++#if POPPLER_ENCODED_VERSION < POPPLER_VERSION_ENCODE(0, 83, 0)
+ 				delete globalParams;
++#endif
+ 				return QImage();
+ 			}
+ 			if (pdfDoc->isOk())
+@@ -134,11 +140,15 @@ QImage PdfPlug::readThumbnail(const QString& fName)
+ 				image.setText("YSize", QString("%1").arg(h));
+ 				delete dev;
+ 				delete pdfDoc;
++#if POPPLER_ENCODED_VERSION < POPPLER_VERSION_ENCODE(0, 83, 0)
+ 				delete globalParams;
++#endif
+ 				return image;
+ 			}
+ 			delete pdfDoc;
++#if POPPLER_ENCODED_VERSION < POPPLER_VERSION_ENCODE(0, 83, 0)
+ 			delete globalParams;
++#endif
+ 		}
+ 	}
+ 	return QImage();
+@@ -387,7 +397,11 @@ bool PdfPlug::convert(const QString& fn)
+ 		qApp->processEvents();
+ 	}
+ 
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 83, 0)
++	globalParams.reset(new GlobalParams());
++#else
+ 	globalParams = new GlobalParams();
++#endif
+ 	GooString *userPW = nullptr;
+ 	if (globalParams)
+ 	{
+@@ -429,7 +443,9 @@ bool PdfPlug::convert(const QString& fn)
+ 					if (progressDialog)
+ 						progressDialog->close();
+ 					delete pdfDoc;
++#if POPPLER_ENCODED_VERSION < POPPLER_VERSION_ENCODE(0, 83, 0)
+ 					delete globalParams;
++#endif
+ 					return false;
+ 				}
+ 				if (progressDialog)
+@@ -474,7 +490,9 @@ bool PdfPlug::convert(const QString& fn)
+ 							progressDialog->close();
+ 						delete optImp;
+ 						delete pdfDoc;
++#if POPPLER_ENCODED_VERSION < POPPLER_VERSION_ENCODE(0, 83, 0)
+ 						delete globalParams;
++#endif
+ 						return false;
+ 					}
+ 					pageString = optImp->getPagesString();
+@@ -908,8 +926,12 @@ bool PdfPlug::convert(const QString& fn)
+ 		}
+ 		delete pdfDoc;
+ 	}
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 83, 0)
++	globalParams.release();
++#else
+ 	delete globalParams;
+ 	globalParams = nullptr;
++#endif
+ 
+ //	qDebug() << "converting finished";
+ //	qDebug() << "Imported" << Elements.count() << "Elements";

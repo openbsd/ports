@@ -1,0 +1,18 @@
+$OpenBSD: patch-scribus_plugins_import_pdf_importpdfconfig_h,v 1.1 2020/02/19 12:15:45 landry Exp $
+
+Fix build with newer poppler, from archlinux
+
+Index: scribus/plugins/import/pdf/importpdfconfig.h
+--- scribus/plugins/import/pdf/importpdfconfig.h.orig
++++ scribus/plugins/import/pdf/importpdfconfig.h
+@@ -52,4 +52,10 @@ for which a new license (GPL+exception) is in place.
+ #define POPPLER_REF
+ #endif
+ 
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 83, 0)
++#define POPPLER_CONST_083 const
++#else
++#define POPPLER_CONST_083
++#endif
++
+ #endif
