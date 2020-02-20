@@ -1,6 +1,8 @@
-$OpenBSD: patch-man_zkt-ls_8,v 1.2 2012/04/20 20:04:34 gonzalo Exp $
---- man/zkt-ls.8.orig	Tue Aug  3 12:20:37 2010
-+++ man/zkt-ls.8	Thu Apr  5 19:47:00 2012
+$OpenBSD: patch-man_zkt-ls_8,v 1.3 2020/02/20 11:21:13 sthen Exp $
+
+Index: man/zkt-ls.8
+--- man/zkt-ls.8.orig
++++ man/zkt-ls.8
 @@ -251,12 +251,12 @@ Specifies the name of the default global configuration
  
  .SH FILES

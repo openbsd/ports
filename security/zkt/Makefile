@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/17 14:39:42 danj Exp $
+# $OpenBSD: Makefile,v 1.16 2020/02/20 11:21:13 sthen Exp $
 
 COMMENT=	DNSsec Zone Key Tool
 
 DISTNAME=	zkt-1.1.4
 CATEGORIES=	security
-REVISION=	1
+REVISION=	2
 
-HOMEPAGE=	http://www.hznet.de/dns/zkt/
+# also https://github.com/hzuleger/ZKT http://www.zonekeytool.de/
+HOMEPAGE=	https://www.hznet.de/dns/zkt/
 
 # BSD
 PERMIT_PACKAGE=	Yes

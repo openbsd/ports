@@ -1,6 +1,8 @@
-$OpenBSD: patch-man_zkt-keyman_8,v 1.1 2010/06/20 14:01:35 jakob Exp $
---- man/zkt-keyman.8.orig	Fri Jun 11 10:49:01 2010
-+++ man/zkt-keyman.8	Fri Jun 11 11:21:54 2010
+$OpenBSD: patch-man_zkt-keyman_8,v 1.2 2020/02/20 11:21:13 sthen Exp $
+
+Index: man/zkt-keyman.8
+--- man/zkt-keyman.8.orig
++++ man/zkt-keyman.8
 @@ -282,12 +282,12 @@ Specifies the name of the default global configuration
  
  .SH FILES

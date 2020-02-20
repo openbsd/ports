@@ -1,0 +1,16 @@
+$OpenBSD: patch-zconf_c,v 1.1 2020/02/20 11:21:13 sthen Exp $
+
+Index: zconf.c
+--- zconf.c.orig
++++ zconf.c
+@@ -746,9 +746,7 @@ zconf_t	*dupconfig (const zconf_t *conf)
+ *****************************************************************/
+ zconf_t	*freeconfig (zconf_t *conf)
+ {
+-	if (conf != NULL);
+-		free (conf);
+-
++	free (conf);
+ 	return (zconf_t *)NULL;
+ }
+ 

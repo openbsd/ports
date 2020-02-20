@@ -1,6 +1,8 @@
-$OpenBSD: patch-man_zkt-conf_8,v 1.1 2010/06/20 14:01:35 jakob Exp $
---- man/zkt-conf.8.orig	Fri Jun 11 10:48:56 2010
-+++ man/zkt-conf.8	Fri Jun 11 11:21:50 2010
+$OpenBSD: patch-man_zkt-conf_8,v 1.2 2020/02/20 11:21:13 sthen Exp $
+
+Index: man/zkt-conf.8
+--- man/zkt-conf.8.orig
++++ man/zkt-conf.8
 @@ -64,7 +64,7 @@ b)
  The side wide config file or the file specified with option -c
  overloads the built-in vars.

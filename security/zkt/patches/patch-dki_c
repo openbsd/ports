@@ -1,0 +1,41 @@
+$OpenBSD: patch-dki_c,v 1.1 2020/02/20 11:21:13 sthen Exp $
+
+patch away use of -r, previously used to set the path to a /dev/random-like file,
+but not supported in dnssec-keygen after BIND 9.12
+
+Index: dki.c
+--- dki.c.orig
++++ dki.c
+@@ -242,7 +242,6 @@ dki_t	*dki_new (const char *dir, const char *name, int
+ {
+ 	char	cmdline[511+1];
+ 	char	fname[254+1];
+-	char	randfile[254+1];
+ 	FILE	*fp;
+ 	int	len;
+ 	char	*flag = "";
+@@ -252,20 +251,16 @@ dki_t	*dki_new (const char *dir, const char *name, int
+ 	if ( ksk )
+ 		flag = "-f KSK";
+ 
+-	randfile[0] = '\0';
+-	if ( rfile && *rfile )
+-		snprintf (randfile, sizeof (randfile), "-r %.250s ", rfile);
+-
+ #if defined(BIND_VERSION) && BIND_VERSION < 90902
+ 	if ( algo == DK_ALGO_RSA || algo == DK_ALGO_RSASHA1 || algo == DK_ALGO_RSASHA256 || algo == DK_ALGO_RSASHA512 )
+ 		expflag = "-e ";
+ #endif
+ 	if ( dir && *dir )
+-		snprintf (cmdline, sizeof (cmdline), "cd %s ; %s %s%s%s-n ZONE -a %s -b %d %s %s 2>&1",
+-			dir, KEYGENCMD, KEYGEN_COMPMODE, randfile, expflag, dki_algo2str(algo), bitsize, flag, name);
++		snprintf (cmdline, sizeof (cmdline), "cd %s ; %s %s%s-n ZONE -a %s -b %d %s %s 2>&1",
++			dir, KEYGENCMD, KEYGEN_COMPMODE, expflag, dki_algo2str(algo), bitsize, flag, name);
+ 	else
+-		snprintf (cmdline, sizeof (cmdline), "%s %s%s%s-n ZONE -a %s -b %d %s %s 2>&1",
+-			KEYGENCMD, KEYGEN_COMPMODE, randfile, expflag, dki_algo2str(algo), bitsize, flag, name);
++		snprintf (cmdline, sizeof (cmdline), "%s %s%s-n ZONE -a %s -b %d %s %s 2>&1",
++			KEYGENCMD, KEYGEN_COMPMODE, expflag, dki_algo2str(algo), bitsize, flag, name);
+ 
+ 	dbg_msg (cmdline);
+ 

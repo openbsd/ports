@@ -1,0 +1,30 @@
+$OpenBSD: patch-misc_c,v 1.1 2020/02/20 11:21:13 sthen Exp $
+
+Index: misc.c
+--- misc.c.orig
++++ misc.c
+@@ -946,21 +946,21 @@ char	*age2str (time_t sec)
+ 		len += snprintf (str+len, strsize - len, "   ");
+ 	if ( sec / DAYSEC > 0 )
+ 	{
+-		len += snprintf (str+len, strsize - len, "%2lud", sec / (ulong)DAYSEC);
++		len += snprintf (str+len, strsize - len, "%2lud", (ulong) sec / DAYSEC);
+ 		sec %= DAYSEC;
+ 	}
+ 	else
+ 		len += snprintf (str+len, strsize - len, "   ");
+ 	if ( sec / HOURSEC > 0 )
+ 	{
+-		len += snprintf (str+len, strsize - len, "%2luh", sec / (ulong)HOURSEC);
++		len += snprintf (str+len, strsize - len, "%2luh", (ulong) sec / HOURSEC);
+ 		sec %= HOURSEC;
+ 	}
+ 	else
+ 		len += snprintf (str+len, strsize - len, "   ");
+ 	if ( sec / MINSEC > 0 )
+ 	{
+-		len += snprintf (str+len, strsize - len, "%2lum", sec / (ulong)MINSEC);
++		len += snprintf (str+len, strsize - len, "%2lum", (ulong) sec / MINSEC);
+ 		sec %= MINSEC;
+ 	}
+ 	else
