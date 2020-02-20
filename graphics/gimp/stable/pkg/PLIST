@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2019/12/04 11:34:55 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.44 2020/02/20 12:24:53 sthen Exp $
 bin/gimp
 @bin bin/gimp-2.10
 bin/gimp-console
@@ -646,6 +646,7 @@ share/examples/gimp/2.0/sessionrc
 @sample ${SYSCONFDIR}/gimp/2.0/sessionrc
 share/examples/gimp/2.0/templaterc
 @sample ${SYSCONFDIR}/gimp/2.0/templaterc
+share/examples/gimp/2.0/toolrc
 share/examples/gimp/2.0/unitrc
 @sample ${SYSCONFDIR}/gimp/2.0/unitrc
 share/gimp/
@@ -838,6 +839,7 @@ share/gimp/2.0/gflare/Distant_Sun
 share/gimp/2.0/gflare/GFlare_101
 share/gimp/2.0/gflare/GFlare_102
 share/gimp/2.0/gflare/Hidden_Planet
+share/gimp/2.0/gimp-release
 share/gimp/2.0/gimpressionist/
 share/gimp/2.0/gimpressionist/Brushes/
 share/gimp/2.0/gimpressionist/Brushes/arrow01.pgm
@@ -1170,6 +1172,7 @@ share/gimp/2.0/icons/Color/24x24/apps/gimp-tool-shear.svg
 share/gimp/2.0/icons/Color/24x24/apps/gimp-tool-smudge.svg
 share/gimp/2.0/icons/Color/24x24/apps/gimp-tool-text.svg
 share/gimp/2.0/icons/Color/24x24/apps/gimp-tool-threshold.svg
+share/gimp/2.0/icons/Color/24x24/apps/gimp-tool-transform-3d.svg
 share/gimp/2.0/icons/Color/24x24/apps/gimp-tool-unified-transform.svg
 share/gimp/2.0/icons/Color/24x24/apps/gimp-tool-warp.svg
 share/gimp/2.0/icons/Color/24x24/apps/gimp-tool-zoom.svg
@@ -1339,6 +1342,15 @@ share/gimp/2.0/icons/Color/scalable/apps/gimp-path-stroke.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-path.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-paths.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-pattern.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-center.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-east.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-north-east.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-north-west.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-north.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-south-east.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-south-west.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-south.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-pivot-west.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-plugin.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-portrait.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-prefs-color-management.svg
@@ -1473,10 +1485,14 @@ share/gimp/2.0/icons/Color/scalable/apps/gimp-tool-shear.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-tool-smudge.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-tool-text.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-tool-threshold.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-tool-transform-3d.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-tool-unified-transform.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-tool-warp.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-tool-zoom.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-tools.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-transform-3d-camera.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-transform-3d-move.svg
+share/gimp/2.0/icons/Color/scalable/apps/gimp-transform-3d-rotate.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-transparency.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-undo-history.svg
 share/gimp/2.0/icons/Color/scalable/apps/gimp-user-manual.svg
@@ -2160,6 +2176,7 @@ share/gimp/2.0/icons/Symbolic-Inverted/24x24/apps/gimp-tool-shear.svg
 share/gimp/2.0/icons/Symbolic-Inverted/24x24/apps/gimp-tool-smudge.svg
 share/gimp/2.0/icons/Symbolic-Inverted/24x24/apps/gimp-tool-text.svg
 share/gimp/2.0/icons/Symbolic-Inverted/24x24/apps/gimp-tool-threshold.svg
+share/gimp/2.0/icons/Symbolic-Inverted/24x24/apps/gimp-tool-transform-3d.svg
 share/gimp/2.0/icons/Symbolic-Inverted/24x24/apps/gimp-tool-unified-transform.svg
 share/gimp/2.0/icons/Symbolic-Inverted/24x24/apps/gimp-tool-warp.svg
 share/gimp/2.0/icons/Symbolic-Inverted/24x24/apps/gimp-tool-zoom.svg
@@ -2329,6 +2346,15 @@ share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-path-stroke.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-path.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-paths.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pattern.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-center.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-east.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-north-east.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-north-west.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-north.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-south-east.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-south-west.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-south.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-pivot-west.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-plugin.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-portrait.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-prefs-color-management.svg
@@ -2463,10 +2489,14 @@ share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tool-shear.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tool-smudge.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tool-text.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tool-threshold.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tool-transform-3d.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tool-unified-transform.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tool-warp.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tool-zoom.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-tools.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-transform-3d-camera.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-transform-3d-move.svg
+share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-transform-3d-rotate.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-transparency.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-undo-history.svg
 share/gimp/2.0/icons/Symbolic-Inverted/scalable/apps/gimp-user-manual.svg
@@ -2673,6 +2703,7 @@ share/gimp/2.0/icons/Symbolic/24x24/apps/gimp-tool-shear.svg
 share/gimp/2.0/icons/Symbolic/24x24/apps/gimp-tool-smudge.svg
 share/gimp/2.0/icons/Symbolic/24x24/apps/gimp-tool-text.svg
 share/gimp/2.0/icons/Symbolic/24x24/apps/gimp-tool-threshold.svg
+share/gimp/2.0/icons/Symbolic/24x24/apps/gimp-tool-transform-3d.svg
 share/gimp/2.0/icons/Symbolic/24x24/apps/gimp-tool-unified-transform.svg
 share/gimp/2.0/icons/Symbolic/24x24/apps/gimp-tool-warp.svg
 share/gimp/2.0/icons/Symbolic/24x24/apps/gimp-tool-zoom.svg
@@ -2842,6 +2873,15 @@ share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-path-stroke.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-path.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-paths.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pattern.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-center.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-east.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-north-east.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-north-west.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-north.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-south-east.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-south-west.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-south.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-pivot-west.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-plugin.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-portrait.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-prefs-color-management.svg
@@ -2976,10 +3016,14 @@ share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tool-shear.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tool-smudge.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tool-text.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tool-threshold.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tool-transform-3d.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tool-unified-transform.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tool-warp.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tool-zoom.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-tools.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-transform-3d-camera.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-transform-3d-move.svg
+share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-transform-3d-rotate.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-transparency.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-undo-history.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/gimp-user-manual.svg
@@ -3889,6 +3933,7 @@ share/gtk-doc/html/libgimpconfig/style.css
 share/gtk-doc/html/libgimpconfig/up-insensitive.png
 share/gtk-doc/html/libgimpconfig/up.png
 share/gtk-doc/html/libgimpmath/
+share/gtk-doc/html/libgimpmath/api-index-2-10-16.html
 share/gtk-doc/html/libgimpmath/api-index-2-10.html
 share/gtk-doc/html/libgimpmath/api-index-2-4.html
 share/gtk-doc/html/libgimpmath/api-index-2-8.html
@@ -3975,6 +4020,7 @@ share/gtk-doc/html/libgimpwidgets/GimpEnumLabel.html
 share/gtk-doc/html/libgimpwidgets/GimpEnumStore.html
 share/gtk-doc/html/libgimpwidgets/GimpFileEntry.html
 share/gtk-doc/html/libgimpwidgets/GimpFrame.html
+share/gtk-doc/html/libgimpwidgets/GimpHintBox.html
 share/gtk-doc/html/libgimpwidgets/GimpIntComboBox.html
 share/gtk-doc/html/libgimpwidgets/GimpIntStore.html
 share/gtk-doc/html/libgimpwidgets/GimpMemsizeEntry.html
@@ -4126,6 +4172,15 @@ share/gtk-doc/html/libgimpwidgets/gimp-path-stroke.png
 share/gtk-doc/html/libgimpwidgets/gimp-path.png
 share/gtk-doc/html/libgimpwidgets/gimp-paths.png
 share/gtk-doc/html/libgimpwidgets/gimp-pattern.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-center.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-east.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-north-east.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-north-west.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-north.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-south-east.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-south-west.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-south.png
+share/gtk-doc/html/libgimpwidgets/gimp-pivot-west.png
 share/gtk-doc/html/libgimpwidgets/gimp-plugin.png
 share/gtk-doc/html/libgimpwidgets/gimp-portrait.png
 share/gtk-doc/html/libgimpwidgets/gimp-prefs-color-management.png
@@ -4261,10 +4316,14 @@ share/gtk-doc/html/libgimpwidgets/gimp-tool-shear.png
 share/gtk-doc/html/libgimpwidgets/gimp-tool-smudge.png
 share/gtk-doc/html/libgimpwidgets/gimp-tool-text.png
 share/gtk-doc/html/libgimpwidgets/gimp-tool-threshold.png
+share/gtk-doc/html/libgimpwidgets/gimp-tool-transform-3d.png
 share/gtk-doc/html/libgimpwidgets/gimp-tool-unified-transform.png
 share/gtk-doc/html/libgimpwidgets/gimp-tool-warp.png
 share/gtk-doc/html/libgimpwidgets/gimp-tool-zoom.png
 share/gtk-doc/html/libgimpwidgets/gimp-tools.png
+share/gtk-doc/html/libgimpwidgets/gimp-transform-3d-camera.png
+share/gtk-doc/html/libgimpwidgets/gimp-transform-3d-move.png
+share/gtk-doc/html/libgimpwidgets/gimp-transform-3d-rotate.png
 share/gtk-doc/html/libgimpwidgets/gimp-transparency.png
 share/gtk-doc/html/libgimpwidgets/gimp-undo-history.png
 share/gtk-doc/html/libgimpwidgets/gimp-user-manual.png
@@ -4312,7 +4371,6 @@ share/gtk-doc/html/libgimpwidgets/left.png
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpCairoUtils.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpEnumWidgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpHelpUI.html
-share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpHintBox.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpIcons.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpOldWidgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpPropWidgets.html
