@@ -1,1 +1,4 @@
-DNS query performance tester, from the contrib directory of BIND 9.
+Simple DNS query performance tester, previously in the contrib directory
+of BIND 9 but now split off to a separate repository.
+
+New users should probably look at the "dnsperf" package instead.
