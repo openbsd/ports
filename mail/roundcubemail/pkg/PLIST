@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.64 2020/01/03 11:29:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.65 2020/02/20 14:37:56 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -1223,6 +1223,7 @@ roundcubemail/plugins/markasjunk/localization/de_DE.inc
 roundcubemail/plugins/markasjunk/localization/el_GR.inc
 roundcubemail/plugins/markasjunk/localization/en_GB.inc
 roundcubemail/plugins/markasjunk/localization/en_US.inc
+roundcubemail/plugins/markasjunk/localization/es_ES.inc
 roundcubemail/plugins/markasjunk/localization/et_EE.inc
 roundcubemail/plugins/markasjunk/localization/eu_ES.inc
 roundcubemail/plugins/markasjunk/localization/fi_FI.inc
@@ -1230,8 +1231,10 @@ roundcubemail/plugins/markasjunk/localization/fr_FR.inc
 roundcubemail/plugins/markasjunk/localization/ga_IE.inc
 roundcubemail/plugins/markasjunk/localization/he_IL.inc
 roundcubemail/plugins/markasjunk/localization/hu_HU.inc
+roundcubemail/plugins/markasjunk/localization/id_ID.inc
 roundcubemail/plugins/markasjunk/localization/is_IS.inc
 roundcubemail/plugins/markasjunk/localization/ja_JP.inc
+roundcubemail/plugins/markasjunk/localization/ko_KR.inc
 roundcubemail/plugins/markasjunk/localization/lt_LT.inc
 roundcubemail/plugins/markasjunk/localization/nb_NO.inc
 roundcubemail/plugins/markasjunk/localization/nl_NL.inc
@@ -2381,6 +2384,7 @@ roundcubemail/program/localization/kn_IN/messages.inc
 roundcubemail/program/localization/ko_KR/
 roundcubemail/program/localization/ko_KR/labels.inc
 roundcubemail/program/localization/ko_KR/messages.inc
+roundcubemail/program/localization/ko_KR/timezones.inc
 roundcubemail/program/localization/ku/
 roundcubemail/program/localization/ku/labels.inc
 roundcubemail/program/localization/ku/messages.inc
@@ -3374,13 +3378,11 @@ roundcubemail/vendor/pear/crypt_gpg/package.xml
 roundcubemail/vendor/pear/crypt_gpg/scripts/
 roundcubemail/vendor/pear/crypt_gpg/scripts/crypt-gpg-pinentry
 roundcubemail/vendor/pear/mail_mime/
-roundcubemail/vendor/pear/mail_mime/.travis.yml
 roundcubemail/vendor/pear/mail_mime/Mail/
 roundcubemail/vendor/pear/mail_mime/Mail/mime.php
 roundcubemail/vendor/pear/mail_mime/Mail/mimePart.php
 roundcubemail/vendor/pear/mail_mime/README
 roundcubemail/vendor/pear/mail_mime/composer.json
-roundcubemail/vendor/pear/mail_mime/package.xml
 roundcubemail/vendor/pear/net_idna2/
 roundcubemail/vendor/pear/net_idna2/.travis.yml
 roundcubemail/vendor/pear/net_idna2/Net/
