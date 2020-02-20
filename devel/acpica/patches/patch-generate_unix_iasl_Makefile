@@ -1,0 +1,46 @@
+$OpenBSD: patch-generate_unix_iasl_Makefile,v 1.4 2020/02/20 14:13:06 sthen Exp $
+
+Index: generate/unix/iasl/Makefile
+--- generate/unix/iasl/Makefile.orig
++++ generate/unix/iasl/Makefile
+@@ -360,32 +360,32 @@ $(OBJDIR)/prparserparse.c $(OBJDIR)/prparser.y.h :    
+ #
+ $(OBJDIR)/aslcompilerlex.o :   $(OBJDIR)/aslcompilerlex.c
+ 	@echo "- " "Intermediate" $<
+-	@$(CC) -c $(CFLAGS) -Wall -Werror -o$@ $<
++	@$(CC) -c $(CFLAGS) -Wall -o$@ $<
+ 
+ $(OBJDIR)/aslcompilerparse.o : $(OBJDIR)/aslcompilerparse.c
+ 	@echo "- " "Intermediate" $<
+-	@$(CC) -c $(CFLAGS) -Wall -Werror -o$@ $<
++	@$(CC) -c $(CFLAGS) -Wall -o$@ $<
+ 
+ $(OBJDIR)/dtcompilerparserlex.o :      $(OBJDIR)/dtcompilerparserlex.c
+ 	@echo "- " "Intermediate" $<
+-	@$(CC) -c $(CFLAGS) -Wall -Werror -o$@ $<
++	@$(CC) -c $(CFLAGS) -Wall -o$@ $<
+ 
+ $(OBJDIR)/dtcompilerparserparse.o :    $(OBJDIR)/dtcompilerparserparse.c
+ 	@echo "- " "Intermediate" $<
+-	@$(CC) -c $(CFLAGS) -Wall -Werror -o$@ $<
++	@$(CC) -c $(CFLAGS) -Wall -o$@ $<
+ 
+ $(OBJDIR)/dtparserlex.o :      $(OBJDIR)/dtparserlex.c
+ 	@echo "- " "Intermediate" $<
+-	@$(CC) -c $(CFLAGS) -Wall -Werror -o$@ $<
++	@$(CC) -c $(CFLAGS) -Wall -o$@ $<
+ 
+ $(OBJDIR)/dtparserparse.o :    $(OBJDIR)/dtparserparse.c
+ 	@echo "- " "Intermediate" $<
+-	@$(CC) -c $(CFLAGS) -Wall -Werror -o$@ $<
++	@$(CC) -c $(CFLAGS) -Wall -o$@ $<
+ 
+ $(OBJDIR)/prparserlex.o :      $(OBJDIR)/prparserlex.c
+ 	@echo "- " "Intermediate" $<
+-	@$(CC) -c $(CFLAGS) -Wall -Werror -o$@ $<
++	@$(CC) -c $(CFLAGS) -Wall -o$@ $<
+ 
+ $(OBJDIR)/prparserparse.o :    $(OBJDIR)/prparserparse.c
+ 	@echo "- " "Intermediate" $<
+-	@$(CC) -c $(CFLAGS) -Wall -Werror -o$@ $<
++	@$(CC) -c $(CFLAGS) -Wall -o$@ $<
