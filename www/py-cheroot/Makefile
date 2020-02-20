@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/12/17 21:14:39 bket Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/20 09:37:20 sthen Exp $
 
 COMMENT = high-performance, pure-Python HTTP server used by CherryPy
 
 MODPY_EGG_VERSION =	8.2.1
 DISTNAME =		cheroot-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
