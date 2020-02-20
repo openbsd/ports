@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/17 17:47:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2020/02/20 20:09:07 jasper Exp $
 
 COMMENT=	python interface to libusb
 
+GH_PROJECT =	pyusb
+GH_ACCOUNT =	pyusb
+GH_COMMIT =	bf88211d65caf01b903005efae7f0915a53a8c4e
 MODPY_EGG_VERSION=	1.0.2
 DISTNAME=	pyusb-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	devel
 
@@ -15,7 +18,6 @@ HOMEPAGE=	https://pyusb.github.io/pyusb/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=	python3

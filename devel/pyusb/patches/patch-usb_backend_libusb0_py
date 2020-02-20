@@ -1,0 +1,35 @@
+$OpenBSD: patch-usb_backend_libusb0_py,v 1.1 2020/02/20 20:09:07 jasper Exp $
+
+Lacking ENODATA we use ENOENT instead;
+see devel/libusb-compat/patches/patch-libusb_core_c
+
+Index: usb/backend/libusb0.py
+--- usb/backend/libusb0.py.orig
++++ usb/backend/libusb0.py
+@@ -24,7 +24,7 @@ from usb._debug import methodtrace
+ import usb._interop as _interop
+ import logging
+ import usb.libloader
+-from errno import ENODATA
++from errno import ENOENT
+ 
+ __author__ = 'Wander Lairson Costa'
+ 
+@@ -610,7 +610,7 @@ class _LibUSB(usb.backend.IBackend):
+         length *= buf.itemsize
+         # based on the implementation of libusb_kernel_driver_active
+         # (see libusb/os/linux_usbfs.c @@ op_kernel_driver_active):
+-        # usb_get_driver_np fails with ENODATA when no kernel driver is bound,
++        # usb_get_driver_np fails with ENOENT when no kernel driver is bound,
+         # and if 'usbfs' is bound that means that a userspace program is
+         # controlling the device (e.g. using this very library)
+         try:
+@@ -621,7 +621,7 @@ class _LibUSB(usb.backend.IBackend):
+                         length))
+             return cast(name, c_char_p).value != b'usbfs'
+         except USBError as err:
+-            if err.backend_error_code == -ENODATA:
++            if err.backend_error_code == -ENOENT:
+                 return False
+             raise err
+ 
