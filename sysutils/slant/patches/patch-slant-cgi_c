@@ -1,0 +1,13 @@
+$OpenBSD: patch-slant-cgi_c,v 1.1 2020/02/20 14:58:39 jturner Exp $
+
+Index: slant-cgi.c
+--- slant-cgi.c.orig
++++ slant-cgi.c
+@@ -31,7 +31,6 @@
+ 
+ #include <kcgi.h>
+ #include <kcgijson.h>
+-#include <ksql.h>
+ 
+ #include "params.h"
+ #include "extern.h"
