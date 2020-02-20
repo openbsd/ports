@@ -9,3 +9,10 @@ zone signing keys
 
 Most of the commands are simple wrapper commands around BIND's
 dnssec-keygen(8) and dnssec-signzone(8) commands.
+
+Warning: ZKT is old and doesn't seem to be very actively maintained -
+it might not work with current versions of BIND tools. Users looking
+to setup DNSSEC should look elsewhere, either higher-level tools like
+opendnssec or the built-in support in PowerDNS authoritative server, or
+using lower-level tools directly (dnssec-signzone from the isc-bind
+package or ldns-signzone from the ldns-utils package).
