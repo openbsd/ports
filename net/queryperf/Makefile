@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.14 2019/12/17 18:03:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/02/20 11:31:33 sthen Exp $
 
 COMMENT =	DNS query performance tester from BIND 9
 
-V =		9.11.2
-DISTNAME =	bind-$V
-PKGNAME =	queryperf-${V:S/-P/pl/}
+C =		038c33d9506821a1397c3b590bdc6a2ea737394c
+DISTNAME =	queryperf-$C
+PKGNAME =	queryperf-20180511
 CATEGORIES =	net benchmarks
-REVISION =	0
 
-MASTER_SITES +=	${MASTER_SITE_ISC:=bind9/$V/}
+MASTER_SITES +=	https://gitlab.isc.org/isc-projects/queryperf/-/archive/$C/
 
-HOMEPAGE =	https://www.isc.org/bind/
+HOMEPAGE =	https://gitlab.isc.org/isc-projects/queryperf
 
-# MPL 2.0
+# ISC
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 
-WRKSRC =		${WRKDIST}/contrib/queryperf
 CONFIGURE_STYLE =	gnu
 ALL_TARGET =		queryperf
 NO_TEST =		Yes
