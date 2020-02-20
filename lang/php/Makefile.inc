@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.147 2020/01/03 15:06:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.148 2020/02/20 14:57:17 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -9,6 +9,7 @@ PKGSTEM=		php-${PV}
 PKGSTEM-main=		php-${PV}
 
 DISTNAME?=		php-${PHP_VERSION}
+#PGPSIGFILES?=		php-${PHP_VERSION}${EXTRACT_SUFX}.asc
 EXTRACT_SUFX?=		.tar.xz
 
 CATEGORIES=		lang www
@@ -319,7 +320,7 @@ CONFIGURE_ARGS+=	--with-pdo-odbc=shared,iODBC,${LOCALBASE}
 COMMENT-pdo_pgsql=	PDO pgsql database access extensions for php
 HOMEPAGE-pdo_pgsql=	https://www.php.net/pdo_pgsql
 LIB_DEPENDS-pdo_pgsql=	databases/postgresql
-WANTLIB-pdo_pgsql=	crypto pq pthread ssl
+WANTLIB-pdo_pgsql=	crypto m pq pthread ssl
 .if ${BUILD_PACKAGES:M-pdo_pgsql}
 CONFIGURE_ARGS+=	--with-pdo-pgsql=shared,${LOCALBASE}
 .endif
@@ -339,7 +340,7 @@ CONFIGURE_ARGS+=	--with-pdo-sqlite=no
 COMMENT-pgsql=		pgsql database access extensions for php
 HOMEPAGE-pgsql=		https://www.php.net/pgsql
 LIB_DEPENDS-pgsql=	databases/postgresql
-WANTLIB-pgsql=		crypto pq pthread ssl
+WANTLIB-pgsql=		crypto m pq pthread ssl
 .if ${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
 .endif
@@ -424,7 +425,7 @@ CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libzip=${LOCALBASE}
 LIB_DEPENDS-zip=	archivers/bzip2 \
 			archivers/libzip
-WANTLIB-zip=		bz2 crypto pthread ssl z zip
+WANTLIB-zip=		bz2 crypto lzma pthread ssl z zip
 
 # some variables to substitute
 SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV
