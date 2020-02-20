@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.188 2020/01/30 19:51:56 espie Exp $
+# $OpenBSD: update-plist,v 1.189 2020/02/20 16:33:45 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1132,6 +1132,9 @@ sub write_backsubst
 	my ($self, $f, $p) = @_;
 	if (defined $self->{nochecksum}) {
 		print {$f->fh} "\@comment no checksum\n";
+	}
+	if (defined $self->{nodebug}) {
+		print {$f->fh} "\@comment no debug\n";
 	}
 	$self->SUPER::write_backsubst($f, $p);
 }
