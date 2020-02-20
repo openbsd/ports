@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1517 2020/02/14 13:06:29 cwen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1518 2020/02/20 16:48:03 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2530,6 +2530,7 @@ _internal-plist _internal-update-plist: _internal-fake
 	@mkdir -p ${PKGDIR}
 	@${_MAKE} _internal-generate-readmes
 	@${_update_plist}
+	@${_PBUILD} rm -f ${_WRKDEBUG}/Makefile
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
@@ -2981,9 +2982,11 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_PBUILD} ${_MAKE_COOKIE} $@
 
-_copy-debug-info: ${_FAKE_COOKIE}
+${_WRKDEBUG}/Makefile: ${_FAKE_COOKIE}
 	@mkdir -p ${_WRKDEBUG}
 	@${_build_debug_info}
+
+_copy-debug-info: ${_FAKE_COOKIE} ${_WRKDEBUG}/Makefile
 	@cd ${PREFIX} && \
 		exec ${SETENV} ${MAKE} -r -f ${_WRKDEBUG}/Makefile \
 			INSTALL_DATA_DIR='${INSTALL_DATA_DIR}' all
@@ -3223,7 +3226,7 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:Mpackages} || ${_clean:Mpackage} && ${_clean:Msub}
-	${_PBUILD} rm -f ${_PACKAGE_COOKIES}
+	${_PBUILD} rm -f ${_PACKAGE_COOKIES} ${_WRKDEBUG}/Makefile
 	${_PFETCH} rm -f ${_CACHE_PACKAGE_COOKIES}
 	rm -f ${_UPDATE_COOKIES} 
 .elif ${_clean:Mpackage}
