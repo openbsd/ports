@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/19 21:27:41 jturner Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/20 15:17:42 jturner Exp $
 
 COMMENT =	minimal remote system monitor
 
-DISTNAME =	slant-0.0.23
+DISTNAME =	slant-0.0.24
 
 CATEGORIES =	sysutils
 
