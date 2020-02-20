@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/12/13 17:15:01 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/20 13:51:54 benoit Exp $
 @bin bin/udunits2
 include/converter.h
 include/udunits.h
@@ -6,7 +6,7 @@ include/udunits2.h
 @info info/udunits2.info
 @info info/udunits2lib.info
 @info info/udunits2prog.info
-lib/libudunits2.a
+@static-lib lib/libudunits2.a
 lib/libudunits2.la
 @lib lib/libudunits2.so.${LIBudunits2_VERSION}
 share/doc/udunits/
