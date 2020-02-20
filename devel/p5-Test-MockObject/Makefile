@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/02/20 12:19:18 benoit Exp $
 
 COMMENT = 	perl extension for emulating troublesome interfaces
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Test-MockObject-1.20180705
+DISTNAME =	Test-MockObject-1.20200122
 CATEGORIES =	devel
 
 # Artistic
