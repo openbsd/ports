@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 14:19:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/20 20:16:50 jasper Exp $
+@conflict py-IOSXR-*
+@pkgpath net/py-IOSXR
 lib/python${MODPY_VERSION}/site-packages/pyIOSXR/
 lib/python${MODPY_VERSION}/site-packages/pyIOSXR-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyIOSXR-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

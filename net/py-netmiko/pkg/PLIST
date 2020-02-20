@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/11/13 20:13:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/02/20 20:16:50 jasper Exp $
+@conflict py-netmiko-*
+@pkgpath net/py-netmiko
 lib/python${MODPY_VERSION}/site-packages/netmiko/
 lib/python${MODPY_VERSION}/site-packages/netmiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/netmiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -12,7 +14,6 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}__init__.${MODP
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}base_connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}cisco_base_connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}netmiko_globals.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}py23_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}scp_functions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}scp_handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}snmp_autodetect.${MODPY_PYC_MAGIC_TAG}pyc
@@ -47,9 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/${MODPY_PYCACHE}alcatel_aos_ssh.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/${MODPY_PYCACHE}alcatel_sros_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/alcatel_aos_ssh.py
-lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/alcatel_sros_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/
 lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/${MODPY_PYCACHE}/
@@ -85,8 +84,8 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/ciena/
 lib/python${MODPY_VERSION}/site-packages/netmiko/ciena/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/ciena/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netmiko/ciena/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/netmiko/ciena/${MODPY_PYCACHE}ciena_saos_ssh.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/netmiko/ciena/ciena_saos_ssh.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/ciena/${MODPY_PYCACHE}ciena_saos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/ciena/ciena_saos.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/cisco/
 lib/python${MODPY_VERSION}/site-packages/netmiko/cisco/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/cisco/${MODPY_PYCACHE}/
@@ -142,7 +141,9 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/
 lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/${MODPY_PYCACHE}eltex_esr_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/${MODPY_PYCACHE}eltex_ssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/eltex_esr_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/eltex_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/endace/
 lib/python${MODPY_VERSION}/site-packages/netmiko/endace/__init__.py
@@ -219,7 +220,9 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/juniper/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/juniper/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netmiko/juniper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/juniper/${MODPY_PYCACHE}juniper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/juniper/${MODPY_PYCACHE}juniper_screenos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/juniper/juniper.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/juniper/juniper_screenos.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/keymile/
 lib/python${MODPY_VERSION}/site-packages/netmiko/keymile/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/keymile/${MODPY_PYCACHE}/
@@ -261,6 +264,12 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/netapp/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/netmiko/netapp/${MODPY_PYCACHE}netapp_cdot_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/netapp/netapp_cdot_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/netmiko_globals.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/nokia/
+lib/python${MODPY_VERSION}/site-packages/netmiko/nokia/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/nokia/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netmiko/nokia/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/nokia/${MODPY_PYCACHE}nokia_sros_ssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/nokia/nokia_sros_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/
 lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/${MODPY_PYCACHE}/
@@ -285,7 +294,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/pluribus/${MODP
 lib/python${MODPY_VERSION}/site-packages/netmiko/pluribus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/pluribus/${MODPY_PYCACHE}pluribus_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/pluribus/pluribus_ssh.py
-lib/python${MODPY_VERSION}/site-packages/netmiko/py23_compat.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/quanta/
 lib/python${MODPY_VERSION}/site-packages/netmiko/quanta/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/quanta/${MODPY_PYCACHE}/
@@ -304,6 +312,12 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/ruckus/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/netmiko/ruckus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/ruckus/${MODPY_PYCACHE}ruckus_fastiron.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/ruckus/ruckus_fastiron.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/ruijie/
+lib/python${MODPY_VERSION}/site-packages/netmiko/ruijie/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/ruijie/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netmiko/ruijie/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/ruijie/${MODPY_PYCACHE}ruijie_os.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/ruijie/ruijie_os.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/scp_functions.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/scp_handler.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/snmp_autodetect.py

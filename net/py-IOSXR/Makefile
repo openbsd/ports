@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/12/21 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/20 20:16:50 jasper Exp $
 
 COMMENT =		library to manage IOS-XR devices
 
 MODPY_EGG_VERSION =	0.53
 DISTNAME =		pyIOSXR-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
@@ -13,11 +13,12 @@ CATEGORIES =		net
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-FLAVORS =		python3
-FLAVOR ?=
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR =		python3
 
 RUN_DEPENDS =		net/py-netmiko${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}
