@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.109 2020/01/23 22:08:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2020/02/20 14:00:32 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # 9.11 is an ESV.  After 9.11 the format changes: odd numbers are devel,
 # even numbers are stable (and for stable branches, point releases are
 # bug fixes only).  The next ESV will be 9.16.
-V=		9.14.10
+V=		9.16.0
+EXTRACT_SUFX=	.tar.xz
 EPOCH=		0
-REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
 # in shared_libs.log but not installed: isc-nosymtbl, t_api
-SHARED_LIBS +=  isc                  5.0
+SHARED_LIBS +=  isc                  5.1
 SHARED_LIBS +=  isccc                3.0
-SHARED_LIBS +=  dns                  9.0
-SHARED_LIBS +=  isccfg               4.0
+SHARED_LIBS +=  dns                  9.1
+SHARED_LIBS +=  isccfg               4.1
 SHARED_LIBS +=  bind9                1.0
 SHARED_LIBS +=  irs                  3.0
 SHARED_LIBS +=	ns                   0.0
@@ -30,22 +30,21 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto iconv idn2 json-c lzma m pthread unistring xml2 z
+WANTLIB += c crypto iconv idn2 json-c lzma m pthread unistring uv xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
 MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
-# XXX subpackage?
 MODPY_RUNDEP=	No
-BUILD_DEPENDS=	devel/py-ply
+BUILD_DEPENDS=	devel/py-ply${MODPY_FLAVOR}
 LIB_DEPENDS=	converters/libiconv \
 		devel/json-c \
 		devel/libidn2 \
+		devel/libuv \
 		textproc/libxml
 
-# /usr/obj/ports/isc-bind-9.14.9/bind-9.14.9/lib/dns/gen.c:29:10: fatal error: 'isc/platform.h' file not found
-# SEPARATE_BUILD=	Yes
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
@@ -61,6 +60,11 @@ CONFIGURE_ARGS=	--enable-full-report \
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB +=	atomic
+LIB_DEPENDS +=	${MODGCC4_CPPLIBDEP}
+MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
+.endif
 
 .include <bsd.port.arch.mk>
 
@@ -75,17 +79,21 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 FLAVORS=	geoip
 FLAVOR?=
 .if ${FLAVOR:Mgeoip}
-CONFIGURE_ARGS+= --with-geoip2
 LIB_DEPENDS+=	net/libmaxminddb
 WANTLIB+=	maxminddb
+.else
+CONFIGURE_ARGS+= --disable-geoip
 .endif
 
 # not strictly speaking interactive, but it configures temporary addresses on
 # lo0 as root, so let's try and avoid running it unintentionally
 TEST_IS_INTERACTIVE= Yes
+TEST_DEPENDS=	sysutils/coreutils
 
 pre-test:
+	@echo '*** tests still need more work in the port - server processes not starting'
 	cd ${WRKSRC}/bin/tests/system && ${SUDO} ./ifconfig.sh up
+	ln -fs ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 
 post-test:
 	cd ${WRKSRC}/bin/tests/system && ${SUDO} ./ifconfig.sh down

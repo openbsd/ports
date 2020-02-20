@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/12/18 15:05:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/02/20 14:00:32 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -6,14 +6,12 @@
 @extra ${LOCALSTATEDIR}/named/etc/rndc.key
 @rcscript ${RCDIR}/isc_named
 @bin bin/arpaname
-bin/bind9-config
 @bin bin/delv
 @bin bin/dig
 bin/edig
 bin/ehost
 bin/enslookup
 @bin bin/host
-bin/isc-config.sh
 @bin bin/mdig
 @bin bin/named-rrchecker
 @bin bin/nslookup
@@ -139,6 +137,7 @@ include/isc/
 include/isc/aes.h
 include/isc/app.h
 include/isc/assertions.h
+include/isc/astack.h
 include/isc/atomic.h
 include/isc/backtrace.h
 include/isc/base32.h
@@ -165,11 +164,11 @@ include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
 include/isc/hmac.h
+include/isc/hp.h
 include/isc/ht.h
 include/isc/httpd.h
 include/isc/interfaceiter.h
 include/isc/iterated_hash.h
-include/isc/json.h
 include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
@@ -231,7 +230,6 @@ include/isc/tm.h
 include/isc/types.h
 include/isc/util.h
 include/isc/version.h
-include/isc/xml.h
 include/isccc/
 include/isccc/alist.h
 include/isccc/base64.h
@@ -276,11 +274,8 @@ include/pk11/pk11.h
 include/pk11/result.h
 include/pk11/site.h
 include/pkcs11/
-include/pkcs11/cryptoki.h
 include/pkcs11/eddsa.h
 include/pkcs11/pkcs11.h
-include/pkcs11/pkcs11f.h
-include/pkcs11/pkcs11t.h
 @static-lib lib/libbind9.a
 lib/libbind9.la
 @lib lib/libbind9.so.${LIBbind9_VERSION}
@@ -309,42 +304,41 @@ lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/isc/
 lib/python${MODPY_VERSION}/site-packages/isc-2.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/isc/__init__.py
-lib/python${MODPY_VERSION}/site-packages/isc/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}checkds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}coverage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}dnskey.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}eventlist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keydict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keyevent.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keymgr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keyseries.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keyzone.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}parsetab.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}policy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}rndc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isc/checkds.py
-lib/python${MODPY_VERSION}/site-packages/isc/checkds.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/coverage.py
-lib/python${MODPY_VERSION}/site-packages/isc/coverage.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/dnskey.py
-lib/python${MODPY_VERSION}/site-packages/isc/dnskey.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/eventlist.py
-lib/python${MODPY_VERSION}/site-packages/isc/eventlist.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/keydict.py
-lib/python${MODPY_VERSION}/site-packages/isc/keydict.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/keyevent.py
-lib/python${MODPY_VERSION}/site-packages/isc/keyevent.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/keymgr.py
-lib/python${MODPY_VERSION}/site-packages/isc/keymgr.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/keyseries.py
-lib/python${MODPY_VERSION}/site-packages/isc/keyseries.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/keyzone.py
-lib/python${MODPY_VERSION}/site-packages/isc/keyzone.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/parsetab.py
-lib/python${MODPY_VERSION}/site-packages/isc/parsetab.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/policy.py
-lib/python${MODPY_VERSION}/site-packages/isc/policy.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/rndc.py
-lib/python${MODPY_VERSION}/site-packages/isc/rndc.pyc
 lib/python${MODPY_VERSION}/site-packages/isc/utils.py
-lib/python${MODPY_VERSION}/site-packages/isc/utils.pyc
 @man man/man1/arpaname.1
-@man man/man1/bind9-config.1
 @man man/man1/delv.1
 @man man/man1/dig.1
 @man man/man1/edig.1
 @man man/man1/ehost.1
 @man man/man1/enslookup.1
 @man man/man1/host.1
-@man man/man1/isc-config.sh.1
 @man man/man1/mdig.1
 @man man/man1/named-rrchecker.1
 @man man/man1/nslookup.1

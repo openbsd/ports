@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_isc_Makefile_in,v 1.5 2019/12/18 15:05:43 sthen Exp $
+$OpenBSD: patch-lib_isc_Makefile_in,v 1.6 2020/02/20 14:00:32 sthen Exp $
 
 Index: lib/isc/Makefile.in
 --- lib/isc/Makefile.in.orig
 +++ lib/isc/Makefile.in
-@@ -106,13 +106,13 @@ libisc.la: ${OBJS} ${SYMTBLOBJS}
+@@ -114,13 +114,13 @@ libisc.la: ${OBJS} ${SYMTBLOBJS}
  	${LIBTOOL_MODE_LINK} \
  		${CC} ${ALL_CFLAGS} ${LDFLAGS} -o libisc.la -rpath ${libdir} \
  		-version-info ${LIBINTERFACE}:${LIBREVISION}:${LIBAGE} \
