@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/28 13:48:04 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/20 13:09:06 kirby Exp $
 @bin bin/nextcloud
 @bin bin/nextcloudcmd
 include/nextcloudsync/
@@ -35,6 +35,7 @@ share/icons/hicolor/64x64/apps/Nextcloud.png
 share/nextcloud/
 share/nextcloud/i18n/
 share/nextcloud/i18n/client_TW.qm
+share/nextcloud/i18n/client_af.qm
 share/nextcloud/i18n/client_bg.qm
 share/nextcloud/i18n/client_ca.qm
 share/nextcloud/i18n/client_cs.qm
