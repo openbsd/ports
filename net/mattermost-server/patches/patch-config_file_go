@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_file_go,v 1.1 2019/08/06 09:38:15 pvk Exp $
+$OpenBSD: patch-config_file_go,v 1.2 2020/02/21 18:50:39 pvk Exp $
 
 Index: config/file.go
 --- config/file.go.orig
 +++ config/file.go
-@@ -71,7 +71,7 @@ func resolveConfigFilePath(path string) (string, error
+@@ -72,7 +72,7 @@ func resolveConfigFilePath(path string) (string, error
  
  	// Search for the relative path to the file in the config folder, taking into account
  	// various common starting points.
