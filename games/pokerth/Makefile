@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2020/02/21 16:07:06 rsadowski Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 #'
 BROKEN-hppa =	needs atomic ops
 
 DISTNAME =	pokerth-1.1.2
-REVISION =	4
+REVISION =	5
 
 CATEGORIES=	games x11
 
@@ -14,21 +14,19 @@ HOMEPAGE=	https://www.pokerth.net/
 # AGPL3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE QtGui QtNetwork QtSql SDL SDL_mixer
-WANTLIB += SM X11 Xext Xi Xinerama Xrender boost_chrono-mt boost_filesystem-mt
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Sql
+WANTLIB += Qt5Widgets SDL SDL_mixer boost_chrono-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_program_options-mt boost_random-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
-WANTLIB += curl fontconfig freetype gsasl iconv ircclient m protobuf
-WANTLIB += sqlite3 ssl tinyxml
+WANTLIB += curl gsasl iconv ircclient m protobuf sqlite3 ssl tinyxml
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pokerth/}
 
 # C++11
-COMPILER =	base-clang ports-gcc base-gcc
 CXXFLAGS +=	-std=gnu++11
 
 MODULES=	devel/qmake \
-		x11/qt4
+		x11/qt5
 
 MODQMAKE_PROJECTS =	pokerth.pro
 
@@ -44,8 +42,6 @@ LIB_DEPENDS=	converters/libiconv \
 		security/libgsasl \
 		textproc/tinyxml
 
-BUILD_DEPENDS =	devel/protobuf
-
 CONFIGURE_ENV=	HOME=${WRKDIR}
 
 NO_TEST=	Yes
@@ -58,7 +54,9 @@ MODQMAKE_ARGS +=	CONFIG+="client"
 pre-configure:
 	cd ${WRKSRC} && \
 		protoc --cpp_out=src/third_party/protobuf chatcleaner.proto && \
-		protoc --cpp_out=src/third_party/protobuf pokerth.proto
+		protoc --cpp_out=src/third_party/protobuf pokerth.proto && \
+	find . -name "*.pro" -print0 | xargs -0r perl -pi \
+		-e 's,qmake,${MODQT5_QMAKE},g;'
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/pokerth ${PREFIX}/bin

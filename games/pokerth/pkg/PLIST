@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:03:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/02/21 16:07:07 rsadowski Exp $
 @bin bin/pokerth
 @bin bin/pokerth_server
 share/applications/pokerth.desktop
@@ -423,7 +423,6 @@ share/pokerth/data/misc/agpl.html
 share/pokerth/data/misc/third_party_libs.txt
 share/pokerth/data/sounds/
 share/pokerth/data/sounds/default/
-share/pokerth/data/sounds/default/.directory
 share/pokerth/data/sounds/default/allin.wav
 share/pokerth/data/sounds/default/bet.wav
 share/pokerth/data/sounds/default/blinds_raises_level1.wav
