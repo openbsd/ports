@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/21 16:05:36 rsadowski Exp $
 
-COMMENT =	Qt4 client for the X2Go system
+COMMENT =	Qt client for the X2Go system
 
 DISTNAME =	x2goclient-4.1.2.1
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	x11
 
@@ -14,28 +14,24 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE QtGui QtNetwork QtSvg SM X11
-WANTLIB += Xext Xi Xinerama Xpm Xrender c cups fontconfig freetype
-WANTLIB += ldap m ssh
-
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5X11Extras X11 Xpm c cups ldap m ssh
 
 MASTER_SITES =	https://code.x2go.org/releases/source/x2goclient/
 
-MODULES +=	x11/qt4
+MODULES =	x11/qt5
 
-LIB_DEPENDS +=	security/libssh>=0.8.4 \
-		databases/openldap \
-		print/cups,-libs
+LIB_DEPENDS =	databases/openldap \
+		print/cups,-libs \
+		security/libssh>=0.8.4 \
+		x11/qt5/qtx11extras
 
-RUN_DEPENDS +=	x11/nx/nxcomp \
+RUN_DEPENDS =	x11/nx/nxcomp \
 		x11/nx/nxproxy \
 		shells/bash
 
 DOCSDIR =	${PREFIX}/share/doc/x2goclient
 EXAMPLESDIR =	${PREFIX}/share/examples/x2goclient
-
-LRELEASE =	${LOCALBASE}/bin/lrelease4
 
 do-configure:
 	find ${WRKSRC} -type f -iname "*.cpp"  -exec \
@@ -46,8 +42,8 @@ do-configure:
 		-e 's,#include <linux/fs.h>,,g;' {} \;
 	sed -i -e 's,nxproxy -S nx,${LOCALBASE}/NX/bin/nxproxy -S nx,' \
 		${WRKSRC}/src/onmainwindow.cpp
-	cd ${WRKSRC} && ${LRELEASE} x2goclient.pro \
-		&& ${MODQT4_QMAKE} x2goclient.pro
+	cd ${WRKSRC} && ${MODQT_LRELEASE} x2goclient.pro \
+		&& ${MODQT_QMAKE} x2goclient.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x2goclient ${PREFIX}/bin
