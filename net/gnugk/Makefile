@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2020/01/25 05:55:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2020/02/21 12:42:30 sthen Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -9,6 +9,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
 PKGNAME=		gnugk-${V}
+REVISION=		0
 
 CATEGORIES=		net telephony
 
@@ -38,8 +39,7 @@ LIB_DEPENDS=		net/curl \
 			net/libmaxminddb \
 			net/net-snmp \
 			net/rabbitmq-c \
-			security/libssh \
-			www/nghttp2
+			security/libssh
 
 ALL_TARGET=		optshared
 USE_GMAKE=		Yes
