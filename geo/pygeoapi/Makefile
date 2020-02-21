@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/01/20 09:42:38 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/21 12:33:28 landry Exp $
 
 COMMENT =		OGC API server implementation
 
-MODPY_EGG_VERSION =	0.6.0
+MODPY_EGG_VERSION =	0.7.0
 DISTNAME =		pygeoapi-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =		geo devel
 
