@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2018/11/02 18:43:56 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/02/21 23:36:55 naddy Exp $
 @pkgpath devel/gmp
 include/gmp.h
 @info info/gmp.info
-lib/libgmp.a
+@static-lib lib/libgmp.a
 lib/libgmp.la
 @lib lib/libgmp.so.${LIBgmp_VERSION}
+lib/pkgconfig/gmp.pc

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-cxx,v 1.1 2018/11/02 18:43:56 naddy Exp $
+@comment $OpenBSD: PLIST-cxx,v 1.2 2020/02/21 23:36:55 naddy Exp $
 @conflict gmp-<6.1.2p2
 include/gmpxx.h
-lib/libgmpxx.a
+@static-lib lib/libgmpxx.a
 lib/libgmpxx.la
 @lib lib/libgmpxx.so.${LIBgmpxx_VERSION}
+lib/pkgconfig/gmpxx.pc
