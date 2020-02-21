@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/12 23:50:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/21 15:24:38 jturner Exp $
 COMMENT =	minimalistic command-line ICB client
-VERSION =	1.2.2
+VERSION =	1.2.3
 DISTNAME =	oicb-${VERSION}
 CATEGORIES =	net
 MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
@@ -9,7 +9,7 @@ MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge() and unveil()
-WANTLIB =		c ncurses readline
+WANTLIB =		c curses readline
 
 MASTER_SITES =		https://github.com/grayed/oicb/releases/download/v${VERSION}/
 
