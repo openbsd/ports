@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2020/01/25 07:09:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2020/02/21 11:09:05 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.20
+V=			0.4.22
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  gegl-0.4                  0.3 # 419.1
+SHARED_LIBS +=  gegl-0.4                  0.3 # 421.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -23,7 +23,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += babl-0.1 c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 intl jasper jpeg json-glib-1.0 lcms2 m
-WANTLIB += pango-1.0 pangocairo-1.0 png raw rsvg-2 tiff webp
+WANTLIB += pango-1.0 pangocairo-1.0 png poppler-glib raw rsvg-2
+WANTLIB += tiff webp
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -43,6 +44,7 @@ LIB_DEPENDS=		devel/json-glib \
 			graphics/lcms2 \
 			graphics/libraw \
 			graphics/libwebp \
+			print/poppler \
 			x11/gnome/librsvg
 
 CONFIGURE_ARGS=		-Dgraphviz=disabled \

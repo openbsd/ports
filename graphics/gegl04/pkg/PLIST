@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/12/06 09:31:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/02/21 11:09:05 ajacoutot Exp $
 @conflict gegl-*
 @pkgpath graphics/gegl,-main
 @bin bin/gegl
@@ -102,6 +102,7 @@ lib/gegl-${API_VERSION}/grey2.json
 @so lib/gegl-${API_VERSION}/npd.so
 @so lib/gegl-${API_VERSION}/npy-save.so
 @so lib/gegl-${API_VERSION}/path.so
+@so lib/gegl-${API_VERSION}/pdf-load.so
 @so lib/gegl-${API_VERSION}/pixbuf-load.so
 @so lib/gegl-${API_VERSION}/pixbuf-save.so
 @so lib/gegl-${API_VERSION}/png-load.so
