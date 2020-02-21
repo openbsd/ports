@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/02/21 18:06:23 rsadowski Exp $
 @bin bin/djview
 lib/mozilla/
 lib/mozilla/plugins/
 @comment lib/mozilla/plugins/nsdejavu.la
-lib/mozilla/plugins/nsdejavu.so
+@so lib/mozilla/plugins/nsdejavu.so
 @man man/man1/djview.1
 @man man/man1/nsdejavu.1
 share/applications/djvulibre-djview4.desktop

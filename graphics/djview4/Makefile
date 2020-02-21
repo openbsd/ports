@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/02/21 18:06:23 rsadowski Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.10.6
 PKGNAME=	${DISTNAME:S/djview/djview4/}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
@@ -12,15 +12,13 @@ HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += GL ICE QtGui QtNetwork QtOpenGL SM X11 Xext Xi Xinerama
-WANTLIB += Xrender c djvulibre fontconfig freetype glib-2.0 iconv intl m
-WANTLIB += pcre pthread ${COMPILER_LIBCXX} tiff
-
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5PrintSupport Qt5Widgets c djvulibre glib-2.0 iconv
+WANTLIB += intl m pcre tiff
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 
-MODULES=	x11/qt4
+MODULES=	x11/qt5
 
 LIB_DEPENDS=	graphics/djvulibre
 
@@ -28,9 +26,12 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 USE_GMAKE=	Yes
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}
-CONFIGURE_ENV+=	QTDIR="${MODQT4_QTDIR}" \
+
+CONFIGURE_ARGS=		-with-tiff=${LOCALBASE}
+
+CONFIGURE_ENV+=	QTDIR="${MODQT_QTDIR}" \
 		CPPFLAGS="-I${X11BASE}/include"
 
 MAKE_ENV+=	V=1
