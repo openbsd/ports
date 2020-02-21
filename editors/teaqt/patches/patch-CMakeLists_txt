@@ -1,0 +1,25 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/02/21 15:32:07 rsadowski Exp $
+
+Fix install path
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -181,11 +181,11 @@ endif()
+ 
+ 
+ install (TARGETS tea DESTINATION bin)
+-install (FILES ${tea_ICONSVG} DESTINATION share/icons/hicolor/scalable/apps)
+-install (FILES ${tea_ICONPNG32} DESTINATION share/icons/hicolor/32x32/apps)
+-install (FILES ${tea_ICONPNG48} DESTINATION share/icons/hicolor/48x48/apps)
+-install (FILES ${tea_ICONPNG64} DESTINATION share/icons/hicolor/64x64/apps)
+-install (FILES ${tea_ICONPNG128} DESTINATION share/icons/hicolor/128x128/apps)
++install (FILES ${tea_ICONSVG} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps)
++install (FILES ${tea_ICONPNG32} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps)
++install (FILES ${tea_ICONPNG48} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/48x48/apps)
++install (FILES ${tea_ICONPNG64} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps)
++install (FILES ${tea_ICONPNG128} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps)
+ 
+-install (FILES ${tea_DESKTOP} DESTINATION share/applications)
++install (FILES ${tea_DESKTOP} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+ 

@@ -1,2 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/20 10:29:05 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/21 15:32:07 rsadowski Exp $
 @bin bin/tea
+share/applications/tea.desktop
+share/icons/hicolor/128x128/apps/tea.png
+share/icons/hicolor/32x32/apps/tea.png
+share/icons/hicolor/48x48/apps/tea.png
+share/icons/hicolor/64x64/apps/tea.png
+share/icons/hicolor/scalable/apps/tea.svg
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

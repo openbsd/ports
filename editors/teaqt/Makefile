@@ -1,33 +1,40 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/02/21 15:32:07 rsadowski Exp $
 
-COMMENT =	powerful and simple qt4 editor
+COMMENT =	powerful and simple Qt editor
 
-V =		33.3.0
-REVISION =	2
-DISTNAME =	tea-${V}
-PKGNAME =	teaqt-${V}
+GH_ACCOUNT =	psemiletov
+GH_PROJECT =	tea-qt
+GH_TAGNAME =	50.0.4
+
 CATEGORIES =	editors x11
-MASTER_SITES =	http://semiletov.org/tea/dloads/ \
-		${MASTER_SITE_SOURCEFORGE:=tea-editor/}
-EXTRACT_SUFX =	.tar.bz2
 
 HOMEPAGE =	http://semiletov.org/tea/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-LIB_DEPENDS =	textproc/aspell/core
-WANTLIB += c m pthread ${COMPILER_LIBCXX} z QtGui QtXml aspell
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
+WANTLIB += aspell c djvulibre hunspell-1.6 m poppler-qt5 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+MODULES =	devel/cmake \
+		x11/qt5
 
-MODULES =	devel/qmake x11/qt4
-CONFIGURE_ENV =	USE_ASPELL=true USE_HUNSPELL=false
+LIB_DEPENDS =	graphics/djvulibre \
+		print/poppler,-qt5 \
+		textproc/aspell/core \
+		textproc/hunspell
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+3,-guic
+
+
+CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} \
+				-I${LOCALBASE}/include" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
+				-I${LOCALBASE}/include" \
+			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
+				-L${LOCALBASE}/lib"
 
 NO_TEST =	Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/tea ${PREFIX}/bin/tea
 
 .include <bsd.port.mk>
