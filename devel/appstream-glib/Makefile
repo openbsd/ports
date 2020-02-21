@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2019/10/01 13:42:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2020/02/21 11:14:39 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.7.16
+DISTNAME=		appstream-glib-0.7.17
 EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS += appstream-glib            3.6 # 8.0.10

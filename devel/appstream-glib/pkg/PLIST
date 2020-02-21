@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/10/01 13:42:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/02/21 11:14:39 ajacoutot Exp $
 @bin bin/appstream-builder
 @bin bin/appstream-compose
 @bin bin/appstream-util
@@ -34,13 +34,13 @@ include/libappstream-glib/as-translation.h
 include/libappstream-glib/as-utils.h
 include/libappstream-glib/as-version.h
 lib/asb-plugins-5/
-lib/asb-plugins-5/libasb_plugin_appdata.so
-lib/asb-plugins-5/libasb_plugin_desktop.so
-lib/asb-plugins-5/libasb_plugin_font.so
-lib/asb-plugins-5/libasb_plugin_gettext.so
-lib/asb-plugins-5/libasb_plugin_hardcoded.so
-lib/asb-plugins-5/libasb_plugin_icon.so
-lib/asb-plugins-5/libasb_plugin_shell_extension.so
+@so lib/asb-plugins-5/libasb_plugin_appdata.so
+@so lib/asb-plugins-5/libasb_plugin_desktop.so
+@so lib/asb-plugins-5/libasb_plugin_font.so
+@so lib/asb-plugins-5/libasb_plugin_gettext.so
+@so lib/asb-plugins-5/libasb_plugin_hardcoded.so
+@so lib/asb-plugins-5/libasb_plugin_icon.so
+@so lib/asb-plugins-5/libasb_plugin_shell_extension.so
 lib/girepository-1.0/AppStreamGlib-1.0.typelib
 @lib lib/libappstream-glib.so.${LIBappstream-glib_VERSION}
 lib/pkgconfig/appstream-glib.pc
