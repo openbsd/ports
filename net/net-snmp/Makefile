@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.111 2020/02/13 21:48:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2020/02/21 15:14:57 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.8.1.pre1
-REVISION-main=	0
+V=		5.8.1.pre2
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
@@ -15,13 +14,12 @@ PKGNAME-tkmib=	net-snmp-tkmib-${V:S/.pre/pre/}
 FULLPKGPATH-tkmib= net/net-snmp,-tkmib
 FULLPKGNAME-tkmib= net-snmp-tkmib-${V:S/.pre/pre/}
 
-### XXX 5.8.1pre1 SHARED_LIBS not synced
 # N.B. p5 module picks up installed libs in /usr/local
 # please check sysutils/snmp_exporter "make test" if updating
-SHARED_LIBS += netsnmp		17.0
-SHARED_LIBS += netsnmpagent	16.0
+SHARED_LIBS += netsnmp		17.1
+SHARED_LIBS += netsnmpagent	16.1
 SHARED_LIBS += netsnmphelpers	15.1
-SHARED_LIBS += netsnmpmibs	17.0
+SHARED_LIBS += netsnmpmibs	17.1
 SHARED_LIBS += netsnmptrapd	15.1
 
 CATEGORIES=	net perl5
@@ -53,8 +51,11 @@ DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 # - base OpenBSD mibs (/usr/share/snmp/mibs), SNMPD-CONF pulls in the rest
 OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
 
-CONFIGURE_STYLE=  gnu
+CONFIGURE_STYLE=  autoreconf
+AUTOMAKE_VERSION= 1.16
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=   --enable-ipv6 \
+	--enable-blumenthal-aes \
 	--enable-mfd-rewrites \
 	--with-copy-persistent-files="no" \
 	--with-mib-modules="${NET_SNMP_MIB_LIST}" \
@@ -72,20 +73,6 @@ CONFIGURE_ENV=	ac_cv_IFNET_NEEDS_KERNEL=no \
 # disable to avoid linking that unnecessarily:
 CONFIGURE_ENV+=	ac_cv_lib_elf_nlist=false
 TEST_TARGET=	test
-
-#	--enable-blumenthal-aes : XXX
-#
-# uses ceil(3) but the build scaffolding to pull in libm is bogus; firstly
-# configure.d/config_os_libs1 search for exp(3) adds -lm to all following
-# lib checks, thus invalidating configure.d/config_os_libs2 check for ceil(3).
-# secondly, ceil(constant) in llvm is optimized away so doesn't call the
-# library function which probably also breaks the test. and finally, even
-# if it detects -lm as being needed, it doesn't actually get used.
-#
-# results: nm -s libnetsnmp.so.* | grep ceil -> U
-# objdump -p libnetsnmp.so.* | grep NEEDED   -> no libm
-# results in failure in autoconf of collectd/hplip if using ld.bfd (either
-# on sparc64 etc, or with USE_LLD=No on amd64).
 
 .if ${FLAVOR:Mreadonly}
 CONFIGURE_ARGS+= --enable-read-only

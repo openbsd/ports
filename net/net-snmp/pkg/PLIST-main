@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2020/01/03 22:34:35 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2020/02/21 15:14:58 sthen Exp $
 @conflict p5-SNMP-*
 @pkgpath net/net-snmp
 @pkgpath net/net-snmp,-perl
@@ -240,19 +240,19 @@ include/net-snmp/types.h
 include/net-snmp/utilities.h
 include/net-snmp/varbind_api.h
 include/net-snmp/version.h
-lib/libnetsnmp.a
+@static-lib lib/libnetsnmp.a
 lib/libnetsnmp.la
 @lib lib/libnetsnmp.so.${LIBnetsnmp_VERSION}
-lib/libnetsnmpagent.a
+@static-lib lib/libnetsnmpagent.a
 lib/libnetsnmpagent.la
 @lib lib/libnetsnmpagent.so.${LIBnetsnmpagent_VERSION}
-lib/libnetsnmphelpers.a
+@static-lib lib/libnetsnmphelpers.a
 lib/libnetsnmphelpers.la
 @lib lib/libnetsnmphelpers.so.${LIBnetsnmphelpers_VERSION}
-lib/libnetsnmpmibs.a
+@static-lib lib/libnetsnmpmibs.a
 lib/libnetsnmpmibs.la
 @lib lib/libnetsnmpmibs.so.${LIBnetsnmpmibs_VERSION}
-lib/libnetsnmptrapd.a
+@static-lib lib/libnetsnmptrapd.a
 lib/libnetsnmptrapd.la
 @lib lib/libnetsnmptrapd.so.${LIBnetsnmptrapd_VERSION}
 lib/pkgconfig/netsnmp-agent.pc
@@ -274,25 +274,25 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SNMP.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/OID.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/OID.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/TrapReceiver.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/TrapReceiver.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/agent.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/agent.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/autosplit.ix
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/default_store.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/default_store.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/autosplit.ix
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/default_store.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/default_store.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/SNMP.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/SNMP.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/autosplit.ix
 @man man/man1/agentxtrap.1
 @man man/man1/encode_keychange.1

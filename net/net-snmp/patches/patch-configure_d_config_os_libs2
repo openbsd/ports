@@ -1,0 +1,34 @@
+$OpenBSD: patch-configure_d_config_os_libs2,v 1.4 2020/02/21 15:14:58 sthen Exp $
+
+https://github.com/net-snmp/net-snmp/issues/72
+
+7497e2eade tries to detect if libm is required for ceil() (as used in
+snmplib/keytools.c if configure is called with --enable-blumenthal-aes),
+but there are some problems.
+
+- An earlier check for exp() - "diskIOLAx requires exp which may require
+-lm" in configure.d/config_os_libs1 leaves -lm in LIBS which is added to
+other checks including the one for ceil, so if exp requires -lm then you
+always get "checking for ceil without -lm... yes".
+
+- The ceil() check used is a link check for code calling
+"ceil((double)2.4)". Some compilers (at least I see it on clang 8.0.1 on
+OpenBSD) optimize away ceil with a fixed constant so you also always get
+"checking for ceil without -lm... yes" with such a compiler.
+
+- Even when it's detected as needed for ceil(), -lm is only added to
+LIBS not LNETSNMPLIBS so there's an unresolved symbol in the library.
+(Tools do pull in libm so work ok, but other software linking the
+library fails).
+
+Workaround for now.
+
+Index: configure.d/config_os_libs2
+--- configure.d/config_os_libs2.orig
++++ configure.d/config_os_libs2
+@@ -608,3 +608,5 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([
+ if test "${need_ceil_lib}" = yes; then
+   AC_SEARCH_LIBS([ceil], [m])
+ fi
++
++AC_CHECK_LIB(m, ceil, [LNETSNMPLIBS="$LNETSNMPLIBS -lm"])
