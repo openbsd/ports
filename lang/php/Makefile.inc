@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.148 2020/02/20 14:57:17 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.149 2020/02/21 19:09:32 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -255,16 +255,6 @@ LIB_DEPENDS-ldap=	databases/openldap
 WANTLIB-ldap=		crypto lber ldap pthread sasl2 ssl
 .if ${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
-.endif
-
-# mcrypt
-COMMENT-mcrypt=		mcrypt encryption/decryption extensions for php
-HOMEPAGE-mcrypt=	https://www.php.net/mcrypt
-LIB_DEPENDS-mcrypt=	security/libmcrypt \
-			devel/libtool,-ltdl
-WANTLIB-mcrypt=		ltdl mcrypt pthread
-.if ${BUILD_PACKAGES:M-mcrypt}
-CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
 .endif
 
 # mysqli

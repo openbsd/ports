@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.870 2020/02/21 12:38:13 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.871 2020/02/21 19:09:32 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1388,6 +1388,7 @@ my $obsolete_reason = {
 	'bouml' => 3,
 	'beediff' => 18,
 	'jupyter-notebook' => 14,
+	'php-mcrypt' => 3,
 };
 
 # reasons for obsolete packages
