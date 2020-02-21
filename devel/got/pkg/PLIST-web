@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.1 2020/02/17 23:07:38 stsp Exp $
+@comment $OpenBSD: PLIST-web,v 1.2 2020/02/21 08:38:38 stsp Exp $
 cgi-bin/gotweb/
 @bin cgi-bin/gotweb/gotweb
 cgi-bin/gotweb/gw_tmpl/
@@ -10,6 +10,7 @@ cgi-bin/gotweb/gw_tmpl/err.tmpl
 cgi-bin/gotweb/gw_tmpl/index.tmpl
 cgi-bin/gotweb/gw_tmpl/summry.tmpl
 cgi-bin/gotweb/gw_tmpl/tag.tmpl
+cgi-bin/gotweb/gw_tmpl/tags.tmpl
 cgi-bin/gotweb/gw_tmpl/tree.tmpl
 cgi-bin/gotweb/libexec/
 @bin cgi-bin/gotweb/libexec/got-read-blob
