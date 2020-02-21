@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.869 2020/02/20 20:16:50 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.870 2020/02/21 12:38:13 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -346,6 +346,7 @@ my $stem_extensions = {
 	'py-netmiko' => 'py3-netmiko',
 	'py-napalm' => 'py3-napalm',
 	'py-IOSXR' => 'py3-IOSXR',
+	'py-owslib' => 'py3-owslib',
 };
 
 my $obsolete_reason = {
