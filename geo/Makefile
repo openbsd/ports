@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2020/01/23 08:21:12 landry Exp $
+# $OpenBSD: Makefile,v 1.71 2020/02/21 12:36:59 landry Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
@@ -57,7 +57,6 @@
      SUBDIR += py-fiona,python3
      SUBDIR += py-laspy
      SUBDIR += py-laspy,python3
-     SUBDIR += py-owslib
      SUBDIR += py-owslib,python3
      SUBDIR += py-planet
      SUBDIR += py-planet,python3
