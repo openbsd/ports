@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/01/23 17:26:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/21 12:39:18 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -61,13 +61,11 @@ lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}schema.$
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}wfs100.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}wfs110.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}wfs200.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}wfs300.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/common.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/schema.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/wfs100.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/wfs110.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/wfs200.py
-lib/python${MODPY_VERSION}/site-packages/owslib/feature/wfs300.py
 lib/python${MODPY_VERSION}/site-packages/owslib/fes.py
 lib/python${MODPY_VERSION}/site-packages/owslib/fgdc.py
 lib/python${MODPY_VERSION}/site-packages/owslib/gm03.py
@@ -85,6 +83,12 @@ lib/python${MODPY_VERSION}/site-packages/owslib/map/common.py
 lib/python${MODPY_VERSION}/site-packages/owslib/map/wms111.py
 lib/python${MODPY_VERSION}/site-packages/owslib/map/wms130.py
 lib/python${MODPY_VERSION}/site-packages/owslib/namespaces.py
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/features.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ows.py
 lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/
 lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/__init__.py
