@@ -1,41 +1,60 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:12 espie Exp $
-@bin bin/automappingconverter
+@comment $OpenBSD: PLIST,v 1.6 2020/02/22 05:29:12 rsadowski Exp $
+@bin bin/terraingenerator
 @bin bin/tiled
 @bin bin/tmxrasterizer
 @bin bin/tmxviewer
 @lib lib/libtiled.so.${LIBtiled_VERSION}
 lib/tiled/
 lib/tiled/plugins/
-lib/tiled/plugins/libdroidcraft.so
-lib/tiled/plugins/libflare.so
-lib/tiled/plugins/libjson.so
-lib/tiled/plugins/liblua.so
-lib/tiled/plugins/libreplicaisland.so
-lib/tiled/plugins/libtengine.so
-lib/tiled/plugins/libtmw.so
-@man man/man1/automappingconverter.1
+@so lib/tiled/plugins/libcsv.so
+@so lib/tiled/plugins/libdefold.so
+@so lib/tiled/plugins/libdefoldcollection.so
+@so lib/tiled/plugins/libdroidcraft.so
+@so lib/tiled/plugins/libflare.so
+@so lib/tiled/plugins/libgmx.so
+@so lib/tiled/plugins/libjson.so
+@so lib/tiled/plugins/libjson1.so
+@so lib/tiled/plugins/liblua.so
+@so lib/tiled/plugins/libpython.so
+@so lib/tiled/plugins/libreplicaisland.so
+@so lib/tiled/plugins/libtbin.so
+@so lib/tiled/plugins/libtengine.so
 @man man/man1/tiled.1
 @man man/man1/tmxrasterizer.1
 @man man/man1/tmxviewer.1
-share/applications/tiled.desktop
-share/icons/hicolor/16x16/apps/tiled.png
-share/icons/hicolor/32x32/apps/tiled.png
+share/applications/org.mapeditor.Tiled.desktop
 share/icons/hicolor/scalable/apps/tiled.svg
+share/icons/hicolor/scalable/mimetypes/application-x-tiled.svg
+share/metainfo/
+share/metainfo/org.mapeditor.Tiled.appdata.xml
+share/mime/packages/org.mapeditor.Tiled.xml
+share/thumbnailers/tiled.thumbnailer
 share/tiled/
 share/tiled/translations/
+share/tiled/translations/tiled_ar_DZ.qm
+share/tiled/translations/tiled_bg.qm
 share/tiled/translations/tiled_cs.qm
 share/tiled/translations/tiled_de.qm
 share/tiled/translations/tiled_en.qm
 share/tiled/translations/tiled_es.qm
+share/tiled/translations/tiled_fi.qm
 share/tiled/translations/tiled_fr.qm
 share/tiled/translations/tiled_he.qm
+share/tiled/translations/tiled_hu.qm
 share/tiled/translations/tiled_it.qm
 share/tiled/translations/tiled_ja.qm
-share/tiled/translations/tiled_lv.qm
+share/tiled/translations/tiled_ko.qm
+share/tiled/translations/tiled_nb.qm
 share/tiled/translations/tiled_nl.qm
+share/tiled/translations/tiled_pl.qm
 share/tiled/translations/tiled_pt.qm
-share/tiled/translations/tiled_pt_BR.qm
+share/tiled/translations/tiled_pt_PT.qm
 share/tiled/translations/tiled_ru.qm
-share/tiled/translations/tiled_zh.qm
+share/tiled/translations/tiled_sv.qm
+share/tiled/translations/tiled_tr.qm
+share/tiled/translations/tiled_uk.qm
+share/tiled/translations/tiled_zh_CN.qm
+share/tiled/translations/tiled_zh_TW.qm
+@tag update-mime-database
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

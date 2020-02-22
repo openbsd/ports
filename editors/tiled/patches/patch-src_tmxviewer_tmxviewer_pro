@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_tmxviewer_tmxviewer_pro,v 1.1.1.1 2013/07/08 22:10:57 bentley Exp $
---- src/tmxviewer/tmxviewer.pro.orig	Sat Jul  6 21:00:07 2013
-+++ src/tmxviewer/tmxviewer.pro	Sat Jul  6 21:00:17 2013
-@@ -39,6 +39,6 @@ SOURCES += main.cpp \
+$OpenBSD: patch-src_tmxviewer_tmxviewer_pro,v 1.2 2020/02/22 05:29:12 rsadowski Exp $
+Index: src/tmxviewer/tmxviewer.pro
+--- src/tmxviewer/tmxviewer.pro.orig
++++ src/tmxviewer/tmxviewer.pro
+@@ -36,6 +36,6 @@ SOURCES += main.cpp \
  
  HEADERS += tmxviewer.h
  
 -manpage.path = $${PREFIX}/share/man/man1/
 +manpage.path = $${PREFIX}/man/man1/
- manpage.files += ../../docs/tmxviewer.1
+ manpage.files += ../../man/tmxviewer.1
  INSTALLS += manpage

@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_tmxrasterizer_tmxrasterizer_pro,v 1.1.1.1 2013/07/08 22:10:57 bentley Exp $
---- src/tmxrasterizer/tmxrasterizer.pro.orig	Sat Jul  6 21:00:01 2013
-+++ src/tmxrasterizer/tmxrasterizer.pro	Sat Jul  6 21:00:03 2013
-@@ -39,6 +39,6 @@ SOURCES += main.cpp \
+$OpenBSD: patch-src_tmxrasterizer_tmxrasterizer_pro,v 1.2 2020/02/22 05:29:12 rsadowski Exp $
+Index: src/tmxrasterizer/tmxrasterizer.pro
+--- src/tmxrasterizer/tmxrasterizer.pro.orig
++++ src/tmxrasterizer/tmxrasterizer.pro
+@@ -36,6 +36,6 @@ SOURCES += main.cpp \
  
  HEADERS += tmxrasterizer.h
  
 -manpage.path = $${PREFIX}/share/man/man1/
 +manpage.path = $${PREFIX}/man/man1/
- manpage.files += ../../docs/tmxrasterizer.1
+ manpage.files += ../../man/tmxrasterizer.1
  INSTALLS += manpage
