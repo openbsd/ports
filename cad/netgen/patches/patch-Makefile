@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2019/03/20 10:05:10 bentley Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/02/22 11:37:17 sthen Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -20,8 +20,8 @@ Index: Makefile
  
 @@ -69,7 +67,7 @@ install-dirs:
  install-tcl: install-dirs
- 	@echo --- installing executable to $(DESTDIR)${BINDIR}
- 	@echo --- installing run-time files to $(DESTDIR)${LIBDIR}
+ 	@echo --- installing executable to $(DESTDIR)${INSTALL_BINDIR}
+ 	@echo --- installing run-time files to $(DESTDIR)${INSTALL_LIBDIR}
 -	@${MAKE} install-tcl-real 2>&1 >> install.log
 +	@${MAKE} install-tcl-real
  

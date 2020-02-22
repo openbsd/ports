@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/20 10:05:10 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/22 11:37:17 sthen Exp $
 bin/netgen
 lib/netgen/
 lib/netgen/ntk2adl.sh
 lib/netgen/python/
-lib/netgen/python/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/netgen/python/${MODPY_PYCACHE}/
 lib/netgen/python/${MODPY_PYCACHE}consoletext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/netgen/python/${MODPY_PYCACHE}helpwindow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/netgen/python/${MODPY_PYCACHE}lvs_manager.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,7 +24,7 @@ lib/netgen/tcl/
 lib/netgen/tcl/console.tcl
 lib/netgen/tcl/netgen.tcl
 @bin lib/netgen/tcl/netgenexec
-lib/netgen/tcl/tclnetgen.so
+@so lib/netgen/tcl/tclnetgen.so
 lib/netgen/tcl/tkcon.tcl
 share/doc/netgen/
 share/doc/netgen/netgen.doc

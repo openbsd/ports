@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/22 11:37:16 sthen Exp $
 
 COMMENT =	tool for netlist comparison (LVS) and format manipulation
-DISTNAME =	netgen-1.5.118
+DISTNAME =	netgen-1.5.138
 EXTRACT_SUFX =	.tgz
-REVISION =	2
 
 CATEGORIES =	cad
 
 HOMEPAGE =	http://opencircuitdesign.com/netgen/
 
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # GPLv1
 PERMIT_PACKAGE =	Yes
@@ -32,7 +31,8 @@ WRKCONF =		${WRKSRC}/scripts
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
 			CFLAGS="-std=gnu89 ${CFLAGS}"
-CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS =	--with-distdir=${PREFIX} \
+			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR}
 
 USE_GMAKE =	Yes
