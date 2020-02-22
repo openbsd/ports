@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2018/09/04 12:53:16 espie Exp $
+$OpenBSD: README,v 1.11 2020/02/22 14:51:47 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -29,7 +29,7 @@ Foomatic configuration
 A specific PPD file has to be created for the printer. Refer to the
 documentation that comes with the foomatic-db-engine package to learn
 how to generate PPD files
-(cf. ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
+(cf. ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine).
 
 # mkdir -p ${SYSCONFDIR}/foomatic/direct
 # foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' > ${SYSCONFDIR}/foomatic/direct/samsung-ml2850d.ppd

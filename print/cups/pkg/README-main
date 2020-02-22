@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.24 2019/12/14 13:02:28 ajacoutot Exp $
+$OpenBSD: README-main,v 1.25 2020/02/22 14:51:48 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -26,7 +26,7 @@ Printer drivers
 Printer drivers are available as separate packages. The Foomatic
 framework provides most of them (see the foomatic-db-engine package
 documentation for more information and creating PPD files;
-${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
+${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine).
 
 Printer backends are also available as packages.
 e.g. cups-bjnp, hpcups, hplip, ptouch-driver, epson-inkjet-printer-escpr,
