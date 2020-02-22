@@ -1,9 +1,24 @@
-$OpenBSD: patch-qtcore_src_util_cpp,v 1.1 2018/04/24 12:17:39 naddy Exp $
+$OpenBSD: patch-qtcore_src_util_cpp,v 1.2 2020/02/22 05:38:04 rsadowski Exp $
 
 Index: qtcore/src/util.cpp
 --- qtcore/src/util.cpp.orig
 +++ qtcore/src/util.cpp
-@@ -515,7 +515,7 @@ SV* package_classId( const char *package ) {
+@@ -27,6 +27,14 @@ extern "C" {
+ #include "perl.h"
+ #include "XSUB.h"
+ #include "ppport.h"
++
++// Avoid clashing with GCC locale_facets.h
++#undef do_open
++#undef do_close
++
++// Avoid clashing with GCC locale_facets.h
++#undef do_open
++#undef do_close
+ }
+ 
+ // Now my own headers
+@@ -515,7 +523,7 @@ SV* package_classId( const char *package ) {
          }
      }
      // Found nothing, so
@@ -12,7 +27,7 @@ Index: qtcore/src/util.cpp
  }
  
  #ifdef PERLQTDEBUG
-@@ -2251,7 +2251,7 @@ XS(XS_AUTOLOAD) {
+@@ -2251,7 +2259,7 @@ XS(XS_AUTOLOAD) {
                  methcache.insert(mcid, new Smoke::ModuleIndex(mi));
          }
  

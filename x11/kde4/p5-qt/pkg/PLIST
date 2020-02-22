@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/30 20:01:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/22 05:38:04 rsadowski Exp $
 @bin bin/prcc4_bin
 @bin bin/puic4
 @bin bin/qdbusxml2perl
@@ -20,7 +20,6 @@ include/perlqt/smokeperl.h
 include/perlqt/util.h
 ${P5ARCH}/Phonon.pm
 ${P5ARCH}/QImageBlitz.pm
-${P5ARCH}/Qsci.pm
 ${P5ARCH}/Qt3Support4.pm
 ${P5ARCH}/QtCore4/
 ${P5ARCH}/QtCore4.pm
@@ -44,50 +43,45 @@ ${P5ARCH}/QtUiTools4.pm
 ${P5ARCH}/QtWebKit4.pm
 ${P5ARCH}/QtXml4.pm
 ${P5ARCH}/QtXmlPatterns4.pm
-${P5ARCH}/Qwt.pm
 ${P5ARCH}/auto/Phonon/
-${P5ARCH}/auto/Phonon/Phonon.so
+@so ${P5ARCH}/auto/Phonon/Phonon.so
 ${P5ARCH}/auto/QImageBlitz/
-${P5ARCH}/auto/QImageBlitz/QImageBlitz.so
-${P5ARCH}/auto/Qsci/
-${P5ARCH}/auto/Qsci/Qsci.so
+@so ${P5ARCH}/auto/QImageBlitz/QImageBlitz.so
 ${P5ARCH}/auto/Qt3Support4/
-${P5ARCH}/auto/Qt3Support4/Qt3Support4.so
+@so ${P5ARCH}/auto/Qt3Support4/Qt3Support4.so
 ${P5ARCH}/auto/QtCore4/
-${P5ARCH}/auto/QtCore4/QtCore4.so
-${P5ARCH}/auto/QtCore4/libQtCore4.so
+@so ${P5ARCH}/auto/QtCore4/QtCore4.so
+@so ${P5ARCH}/auto/QtCore4/libQtCore4.so
 ${P5ARCH}/auto/QtDBus4/
-${P5ARCH}/auto/QtDBus4/QtDBus4.so
+@so ${P5ARCH}/auto/QtDBus4/QtDBus4.so
 ${P5ARCH}/auto/QtDeclarative4/
-${P5ARCH}/auto/QtDeclarative4/QtDeclarative4.so
+@so ${P5ARCH}/auto/QtDeclarative4/QtDeclarative4.so
 ${P5ARCH}/auto/QtGui4/
-${P5ARCH}/auto/QtGui4/QtGui4.so
+@so ${P5ARCH}/auto/QtGui4/QtGui4.so
 ${P5ARCH}/auto/QtHelp4/
-${P5ARCH}/auto/QtHelp4/QtHelp4.so
+@so ${P5ARCH}/auto/QtHelp4/QtHelp4.so
 ${P5ARCH}/auto/QtMultimedia4/
-${P5ARCH}/auto/QtMultimedia4/QtMultimedia4.so
+@so ${P5ARCH}/auto/QtMultimedia4/QtMultimedia4.so
 ${P5ARCH}/auto/QtNetwork4/
-${P5ARCH}/auto/QtNetwork4/QtNetwork4.so
+@so ${P5ARCH}/auto/QtNetwork4/QtNetwork4.so
 ${P5ARCH}/auto/QtOpenGL4/
-${P5ARCH}/auto/QtOpenGL4/QtOpenGL4.so
+@so ${P5ARCH}/auto/QtOpenGL4/QtOpenGL4.so
 ${P5ARCH}/auto/QtScript4/
-${P5ARCH}/auto/QtScript4/QtScript4.so
+@so ${P5ARCH}/auto/QtScript4/QtScript4.so
 ${P5ARCH}/auto/QtSql4/
-${P5ARCH}/auto/QtSql4/QtSql4.so
+@so ${P5ARCH}/auto/QtSql4/QtSql4.so
 ${P5ARCH}/auto/QtSvg4/
-${P5ARCH}/auto/QtSvg4/QtSvg4.so
+@so ${P5ARCH}/auto/QtSvg4/QtSvg4.so
 ${P5ARCH}/auto/QtTest4/
-${P5ARCH}/auto/QtTest4/QtTest4.so
+@so ${P5ARCH}/auto/QtTest4/QtTest4.so
 ${P5ARCH}/auto/QtUiTools4/
-${P5ARCH}/auto/QtUiTools4/QtUiTools4.so
+@so ${P5ARCH}/auto/QtUiTools4/QtUiTools4.so
 ${P5ARCH}/auto/QtWebKit4/
-${P5ARCH}/auto/QtWebKit4/QtWebKit4.so
+@so ${P5ARCH}/auto/QtWebKit4/QtWebKit4.so
 ${P5ARCH}/auto/QtXml4/
-${P5ARCH}/auto/QtXml4/QtXml4.so
+@so ${P5ARCH}/auto/QtXml4/QtXml4.so
 ${P5ARCH}/auto/QtXmlPatterns4/
-${P5ARCH}/auto/QtXmlPatterns4/QtXmlPatterns4.so
-${P5ARCH}/auto/Qwt/
-${P5ARCH}/auto/Qwt/Qwt.so
+@so ${P5ARCH}/auto/QtXmlPatterns4/QtXmlPatterns4.so
 share/perlqt/
 share/perlqt/cmake/
 share/perlqt/cmake/FindPerlMore.cmake

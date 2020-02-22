@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/01/04 14:56:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2020/02/22 05:38:04 rsadowski Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	smokeakonadi		52.0 # 3.0
 SHARED_LIBS +=	smokeattica		51.0 # 3.0
@@ -51,7 +51,7 @@ MODKDE4_USE =	pim libs
 
 LIB_DEPENDS =	databases/soprano \
 		${MODKDE4_DEP_DIR}/smokegen>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}p6
 
 CXXFLAGS +=	-std=c++03
 

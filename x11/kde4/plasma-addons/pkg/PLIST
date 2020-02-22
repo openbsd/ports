@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/01/26 07:39:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/02/22 05:38:04 rsadowski Exp $
 @bin bin/lancelot
 include/kde4/KDE/Lancelot/
 include/kde4/KDE/Lancelot/ActionListModel
@@ -144,7 +144,6 @@ include/kde4/lancelot/widgets/Widget.h
 @so lib/kde4/plasma_applet_fuzzy_clock.so
 @so lib/kde4/plasma_applet_icontasks.so
 @so lib/kde4/plasma_applet_incomingmsg.so
-@so lib/kde4/plasma_applet_kdeobservatory.so
 @so lib/kde4/plasma_applet_kimpanel.so
 @so lib/kde4/plasma_applet_knowledgebase.so
 @so lib/kde4/plasma_applet_kolourpicker.so
@@ -511,7 +510,6 @@ share/config/virus_wallpaper.knsrc
 share/ibus/component/kimpanel.xml
 share/icons/hicolor/128x128/apps/bball.png
 share/icons/hicolor/128x128/apps/eyes.png
-share/icons/hicolor/128x128/apps/kdeobservatory.png
 share/icons/hicolor/128x128/apps/lancelot-start.png
 share/icons/hicolor/128x128/apps/lancelot.png
 share/icons/hicolor/128x128/apps/lifegame.png
@@ -522,7 +520,6 @@ share/icons/hicolor/128x128/apps/qalculate-applet.png
 share/icons/hicolor/16x16/actions/krunner_youtube.png
 share/icons/hicolor/16x16/apps/bball.png
 share/icons/hicolor/16x16/apps/eyes.png
-share/icons/hicolor/16x16/apps/kdeobservatory.png
 share/icons/hicolor/16x16/apps/lancelot-start.png
 share/icons/hicolor/16x16/apps/lancelot.png
 share/icons/hicolor/16x16/apps/lifegame.png
@@ -531,7 +528,6 @@ share/icons/hicolor/16x16/apps/plasmaapplet-shelf.png
 share/icons/hicolor/16x16/apps/previewer.png
 share/icons/hicolor/22x22/actions/krunner_youtube.png
 share/icons/hicolor/22x22/apps/eyes.png
-share/icons/hicolor/22x22/apps/kdeobservatory.png
 share/icons/hicolor/22x22/apps/lancelot-start.png
 share/icons/hicolor/22x22/apps/lancelot.png
 share/icons/hicolor/22x22/apps/lifegame.png
@@ -542,7 +538,6 @@ share/icons/hicolor/256x256/apps/eyes.png
 share/icons/hicolor/256x256/apps/lifegame.png
 share/icons/hicolor/32x32/actions/krunner_youtube.png
 share/icons/hicolor/32x32/apps/bball.png
-share/icons/hicolor/32x32/apps/kdeobservatory.png
 share/icons/hicolor/32x32/apps/lancelot-start.png
 share/icons/hicolor/32x32/apps/lancelot.png
 share/icons/hicolor/32x32/apps/lifegame.png
@@ -551,7 +546,6 @@ share/icons/hicolor/32x32/apps/plasmaapplet-shelf.png
 share/icons/hicolor/32x32/apps/previewer.png
 share/icons/hicolor/48x48/actions/krunner_youtube.png
 share/icons/hicolor/48x48/apps/bball.png
-share/icons/hicolor/48x48/apps/kdeobservatory.png
 share/icons/hicolor/48x48/apps/lancelot-start.png
 share/icons/hicolor/48x48/apps/lancelot.png
 share/icons/hicolor/48x48/apps/lifegame.png
@@ -562,7 +556,6 @@ share/icons/hicolor/48x48/apps/qalculate-applet.png
 share/icons/hicolor/64x64/actions/krunner_youtube.png
 share/icons/hicolor/64x64/apps/bball.png
 share/icons/hicolor/64x64/apps/eyes.png
-share/icons/hicolor/64x64/apps/kdeobservatory.png
 share/icons/hicolor/64x64/apps/lancelot-start.png
 share/icons/hicolor/64x64/apps/lancelot.png
 share/icons/hicolor/64x64/apps/lifegame.png
@@ -574,7 +567,6 @@ share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
 share/icons/hicolor/scalable/apps/bball.svgz
 share/icons/hicolor/scalable/apps/eyes.svgz
 share/icons/hicolor/scalable/apps/fifteenpuzzle.svgz
-share/icons/hicolor/scalable/apps/kdeobservatory.svgz
 share/icons/hicolor/scalable/apps/lifegame.svgz
 share/kde4/services/CharRunner_config.desktop
 share/kde4/services/CharacterRunner.desktop
@@ -600,7 +592,6 @@ share/kde4/services/plasma-applet-eyes.desktop
 share/kde4/services/plasma-applet-fifteenPuzzle.desktop
 share/kde4/services/plasma-applet-icontasks.desktop
 share/kde4/services/plasma-applet-incomingmsg.desktop
-share/kde4/services/plasma-applet-kdeobservatory.desktop
 share/kde4/services/plasma-applet-kimpanel.desktop
 share/kde4/services/plasma-applet-knowledgebase.desktop
 share/kde4/services/plasma-applet-konqprofiles.desktop

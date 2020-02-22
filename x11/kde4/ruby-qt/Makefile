@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2019/04/29 00:40:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.30 2020/02/22 05:38:04 rsadowski Exp $
 
 BROKEN-hppa =	relocation error
 CATEGORIES =	devel x11/kde4
 COMMENT =	Ruby bindings for Qt4
 DISTNAME =	qtruby-${MODKDE4_VERSION}
 PKGNAME =	qt4-${MODKDE4_VERSION}
-REVISION =	8
+REVISION =	9
 
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
 
@@ -16,15 +16,14 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/smokebase ${KDE4LIB}/smokephonon ${KDE4LIB}/smokeqsci
+WANTLIB += ${KDE4LIB}/smokebase ${KDE4LIB}/smokephonon
 WANTLIB += ${KDE4LIB}/smokeqtcore ${KDE4LIB}/smokeqtdbus
 WANTLIB += ${KDE4LIB}/smokeqtdeclarative ${KDE4LIB}/smokeqtgui
 WANTLIB += ${KDE4LIB}/smokeqtnetwork ${KDE4LIB}/smokeqtopengl
 WANTLIB += ${KDE4LIB}/smokeqtscript ${KDE4LIB}/smokeqtsql
 WANTLIB += ${KDE4LIB}/smokeqtsvg ${KDE4LIB}/smokeqttest
 WANTLIB += ${KDE4LIB}/smokeqtuitools ${KDE4LIB}/smokeqtwebkit
-WANTLIB += ${KDE4LIB}/smokeqtxml ${KDE4LIB}/smokeqwt
-WANTLIB += qscintilla2_qt4
+WANTLIB += ${KDE4LIB}/smokeqtxml
 
 MODULES =	multimedia/phonon lang/ruby
 MODKDE4_USE =
@@ -35,9 +34,11 @@ MODRUBY_HANDLE_FLAVORS=	Yes
 MODRUBY_ADJ_FILES =	*.rb rbqtapi
 SUBST_VARS =		MODRUBY_FLAVOR
 
-CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
+LIB_DEPENDS = 		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}p6
 
-LIB_DEPENDS =	${MODKDE4_DEP_DIR}/smokeqt
+CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY} \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Qwt5=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_QScintilla=ON
 
 NO_TEST =	Yes
 
