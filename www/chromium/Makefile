@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.488 2020/02/22 12:33:20 robert Exp $
+# $OpenBSD: Makefile,v 1.489 2020/02/22 12:34:34 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -212,7 +212,8 @@ GN_ARGS+=	is_official_build=true \
 .if ${FLAVOR:Melectron}
 MAKE_ENV+=	PATH=${PATH}:${WRKSRC}/electron/node_modules/.bin \
 		NODE_PATH=${WRKSRC}/electron/node_modules
-GN_ARGS+=	is_component_ffmpeg=false
+GN_ARGS+=	is_component_ffmpeg=false \
+		use_jumbo_build=true
 
 # manually de-jsonified list from electron/patches/common/config.json
 ELECTRON_PATCH_CONFIG+= electron/patches/common/chromium:.
