@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2020/02/17 20:33:00 kili Exp $
+# $OpenBSD: Makefile,v 1.154 2020/02/22 18:55:24 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
@@ -10,6 +10,9 @@ CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt5=	poppler-qt5-$V
+REVISION-main=	0
+REVISION-utils=	0
+REVISION-qt5=	0
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -26,6 +29,8 @@ MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 NOT_FOR_ARCHS-qt5 = arm
 
