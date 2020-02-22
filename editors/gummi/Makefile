@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/02/22 20:27:13 kili Exp $
 
 COMMENT =		simple LaTeX editor
 
-V =			0.6.6
+V =			0.8.1
 DISTNAME =		gummi-$V
-REVISION =		1
 
 CATEGORIES =		editors
 
@@ -17,11 +16,10 @@ MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 gtksourceview-2.0 gtkspell intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 poppler-glib pthread z
+WANTLIB += atk-1.0 c cairo cairo-gobject enchant-2 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 gtksourceview-3.0
+WANTLIB += gtkspell3-3 harfbuzz intl m pango-1.0 pangocairo-1.0
+WANTLIB += poppler-glib pthread synctex z
 
 MODULES =		textproc/intltool
 
@@ -29,8 +27,9 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			print/texlive/base
 
 LIB_DEPENDS =		print/poppler \
-			textproc/gtkspell \
-			x11/gtksourceview
+			print/texlive/base,-synctex \
+			textproc/gtkspell3 \
+			x11/gtksourceview3
 
 CONFIGURE_STYLE =	gnu
 
