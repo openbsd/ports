@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/08/04 02:47:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2020/02/22 19:56:05 bcallah Exp $
 
 COMMENT =		3D light cycle game
 
-DISTNAME =		armagetronad-0.2.8.3.4.src
+DISTNAME =		armagetronad-0.2.8.3.5.src
 PKGNAME =		${DISTNAME:S/.src//}
-REVISION =		3
 
 CATEGORIES =		games
 
