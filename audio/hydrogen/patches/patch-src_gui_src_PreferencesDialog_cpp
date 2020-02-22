@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_gui_src_PreferencesDialog_cpp,v 1.1 2019/06/08 18:42:32 rapha Exp $
+$OpenBSD: patch-src_gui_src_PreferencesDialog_cpp,v 1.2 2020/02/22 17:34:36 rapha Exp $
 
 Add sndio support
 
 Index: src/gui/src/PreferencesDialog.cpp
 --- src/gui/src/PreferencesDialog.cpp.orig
 +++ src/gui/src/PreferencesDialog.cpp
-@@ -64,6 +64,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+@@ -63,6 +63,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
  
  	driverComboBox->clear();
  	driverComboBox->addItem( "Auto" );
@@ -15,7 +15,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  #ifdef H2CORE_HAVE_JACK
  	driverComboBox->addItem( "Jack" );
  #endif
-@@ -95,6 +98,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+@@ -94,6 +97,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
  
  
  	m_pMidiDriverComboBox->clear();
@@ -25,7 +25,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  #ifdef H2CORE_HAVE_ALSA
  	m_pMidiDriverComboBox->addItem( "ALSA" );
  #endif
-@@ -333,6 +339,9 @@ void PreferencesDialog::on_okBtn_clicked()
+@@ -341,6 +347,9 @@ void PreferencesDialog::on_okBtn_clicked()
  	if (driverComboBox->currentText() == "Auto" ) {
  		pPref->m_sAudioDriver = "Auto";
  	}
@@ -35,7 +35,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  	else if (driverComboBox->currentText() == "Jack" ) {
  		pPref->m_sAudioDriver = "Jack";
  	}
-@@ -394,7 +403,10 @@ void PreferencesDialog::on_okBtn_clicked()
+@@ -402,7 +411,10 @@ void PreferencesDialog::on_okBtn_clicked()
  	// maxVoices
  	pPref->m_nMaxNotes = maxVoicesTxt->value();
  
@@ -47,7 +47,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  		pPref->m_sMidiDriver = "ALSA";
  	}
  	else if ( m_pMidiDriverComboBox->currentText() == "PortMidi" ) {
-@@ -514,6 +526,11 @@ void PreferencesDialog::updateDriverInfo()
+@@ -527,6 +539,11 @@ void PreferencesDialog::updateDriverInfo()
  	Preferences *pPref = Preferences::get_instance();
  	QString info;
  
@@ -59,7 +59,7 @@ Index: src/gui/src/PreferencesDialog.cpp
  	bool bJack_support = false;
  #ifdef H2CORE_HAVE_JACK
  	bJack_support = true;
-@@ -553,6 +570,19 @@ void PreferencesDialog::updateDriverInfo()
+@@ -566,6 +583,19 @@ void PreferencesDialog::updateDriverInfo()
  		sampleRateComboBox->setEnabled( false );
  		trackOutputComboBox->setEnabled( false );
  		connectDefaultsCheckBox->setEnabled( false );

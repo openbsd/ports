@@ -91,15 +91,13 @@ int SndioAudioDriver::connect()
 
 	Preferences *preferencesMng = Preferences::get_instance();
 	struct sio_par reqpar;
-	char audioDevice[32];
+	QString audioDevice = preferencesMng->m_sSndioDevice;
 
-	snprintf(audioDevice, 32, preferencesMng->m_sSndioDevice.toAscii());
-
-	if (strncmp(audioDevice, "", 1) == 0 ||
-	    strncmp(audioDevice, "default", 8) == 0)
+	if (audioDevice == "" ||
+	    audioDevice == "default")
 		hdl = sio_open(NULL, SIO_PLAY, 0);
 	else
-		hdl = sio_open(audioDevice, SIO_PLAY, 0);
+		hdl = sio_open(audioDevice.toLocal8Bit(), SIO_PLAY, 0);
 
 	if (hdl == NULL) {
 		ERRORLOG("sio_open failed");

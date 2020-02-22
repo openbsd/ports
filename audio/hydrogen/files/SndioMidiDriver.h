@@ -18,6 +18,7 @@
 #define SNDIO_MIDI_DRIVER_H
 
 #include <hydrogen/IO/MidiInput.h>
+#include <hydrogen/IO/MidiOutput.h>
 
 #ifdef H2CORE_HAVE_SNDIO
 
@@ -26,7 +27,7 @@
 namespace H2Core
 {
 
-class SndioMidiDriver : public virtual MidiInput
+class SndioMidiDriver : public virtual MidiInput, public virtual MidiOutput
 {
 	H2_OBJECT
 public:
@@ -39,6 +40,11 @@ public:
 	virtual void open();
 	virtual void close();
 	virtual std::vector<QString> getOutputPortList();
+
+	virtual void handleQueueNote( Note* pNote );
+	virtual void handleQueueNoteOff( int channel, int key, int velocity );
+	virtual void handleQueueAllNoteOff();
+	virtual void handleOutgoingControlChange( int param, int value, int channel );
 
 private:
 

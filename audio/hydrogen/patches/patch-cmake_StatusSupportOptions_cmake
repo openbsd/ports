@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_StatusSupportOptions_cmake,v 1.1 2020/02/22 17:34:36 rapha Exp $
+
+Index: cmake/StatusSupportOptions.cmake
+--- cmake/StatusSupportOptions.cmake.orig
++++ cmake/StatusSupportOptions.cmake
+@@ -21,7 +21,7 @@ function(COLOR_MESSAGE TEXT)
+ endfunction()
+ 
+ macro(COMPUTE_PKGS_FLAGS prefix)
+-    if(NOT ${prefix}_FOUND)
++    if(NOT ${prefix}_FOUND OR NOT WANT_${prefix})
+         SET(${prefix}_LIBRARIES "" )
+         SET(${prefix}_INCLUDE_DIRS "" )
+     endif()

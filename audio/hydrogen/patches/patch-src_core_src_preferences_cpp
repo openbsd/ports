@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_core_src_preferences_cpp,v 1.1 2019/06/08 18:42:32 rapha Exp $
+$OpenBSD: patch-src_core_src_preferences_cpp,v 1.2 2020/02/22 17:34:36 rapha Exp $
 
 Add sndio support
 
 Index: src/core/src/preferences.cpp
 --- src/core/src/preferences.cpp.orig
 +++ src/core/src/preferences.cpp
-@@ -182,11 +182,14 @@ Preferences::Preferences()
+@@ -200,11 +200,14 @@ Preferences::Preferences()
  	m_nBufferSize = 1024;
  	m_nSampleRate = 44100;
  
@@ -21,7 +21,7 @@ Index: src/core/src/preferences.cpp
  	m_sMidiPortName = QString("None");
  	m_nMidiChannelFilter = -1;
  	m_bMidiNoteOffIgnore = false;
-@@ -468,6 +471,16 @@ void Preferences::loadPreferences( bool bGlobal )
+@@ -491,6 +494,16 @@ void Preferences::loadPreferences( bool bGlobal )
  				m_nBufferSize = LocalFileMng::readXmlInt( audioEngineNode, "buffer_size", m_nBufferSize );
  				m_nSampleRate = LocalFileMng::readXmlInt( audioEngineNode, "samplerate", m_nSampleRate );
  
@@ -38,7 +38,7 @@ Index: src/core/src/preferences.cpp
  				//// OSS DRIVER ////
  				QDomNode ossDriverNode = audioEngineNode.firstChildElement( "oss_driver" );
  				if ( ossDriverNode.isNull()  ) {
-@@ -477,6 +490,7 @@ void Preferences::loadPreferences( bool bGlobal )
+@@ -500,6 +513,7 @@ void Preferences::loadPreferences( bool bGlobal )
  					m_sOSSDevice = LocalFileMng::readXmlString( ossDriverNode, "ossDevice", m_sOSSDevice );
  				}
  
@@ -46,7 +46,7 @@ Index: src/core/src/preferences.cpp
  				//// JACK DRIVER ////
  				QDomNode jackDriverNode = audioEngineNode.firstChildElement( "jack_driver" );
  				if ( jackDriverNode.isNull() ) {
-@@ -523,7 +537,7 @@ void Preferences::loadPreferences( bool bGlobal )
+@@ -546,7 +560,7 @@ void Preferences::loadPreferences( bool bGlobal )
  					WARNINGLOG( "midi_driver node not found" );
  					recreate = true;
  				} else {
@@ -55,7 +55,7 @@ Index: src/core/src/preferences.cpp
  					m_sMidiPortName = LocalFileMng::readXmlString( midiDriverNode, "port_name", "None" );
  					m_nMidiChannelFilter = LocalFileMng::readXmlInt( midiDriverNode, "channel_filter", -1 );
  					m_bMidiNoteOffIgnore = LocalFileMng::readXmlBool( midiDriverNode, "ignore_note_off", true );
-@@ -830,6 +844,13 @@ void Preferences::savePreferences()
+@@ -872,6 +886,13 @@ void Preferences::savePreferences()
  		LocalFileMng::writeXmlString( audioEngineNode, "maxNotes", QString("%1").arg( m_nMaxNotes ) );
  		LocalFileMng::writeXmlString( audioEngineNode, "buffer_size", QString("%1").arg( m_nBufferSize ) );
  		LocalFileMng::writeXmlString( audioEngineNode, "samplerate", QString("%1").arg( m_nSampleRate ) );

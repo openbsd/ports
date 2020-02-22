@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_core_src_hydrogen_cpp,v 1.1 2019/06/08 18:42:32 rapha Exp $
+$OpenBSD: patch-src_core_src_hydrogen_cpp,v 1.2 2020/02/22 17:34:36 rapha Exp $
 
 Add sndio support
 
 Index: src/core/src/hydrogen.cpp
 --- src/core/src/hydrogen.cpp.orig
 +++ src/core/src/hydrogen.cpp
-@@ -89,6 +89,8 @@
+@@ -91,6 +91,8 @@
  #include <hydrogen/IO/PortMidiDriver.h>
  #include <hydrogen/IO/CoreAudioDriver.h>
  #include <hydrogen/IO/PulseAudioDriver.h>
@@ -14,7 +14,7 @@ Index: src/core/src/hydrogen.cpp
  
  namespace H2Core
  {
-@@ -1392,7 +1394,13 @@ AudioOutput* createDriver( const QString& sDriver )
+@@ -1411,7 +1413,13 @@ AudioOutput* createDriver( const QString& sDriver )
  	Preferences *pPref = Preferences::get_instance();
  	AudioOutput *pDriver = NULL;
  
@@ -29,7 +29,7 @@ Index: src/core/src/hydrogen.cpp
  		pDriver = new OssDriver( audioEngine_process );
  		if ( pDriver->class_name() == NullDriver::class_name() ) {
  			delete pDriver;
-@@ -1491,6 +1499,7 @@ void audioEngine_startAudioDrivers()
+@@ -1510,6 +1518,7 @@ void audioEngine_startAudioDrivers()
  	QString sAudioDriver = preferencesMng->m_sAudioDriver;
  	if ( sAudioDriver == "Auto" ) {
  	#ifndef WIN32
@@ -37,7 +37,7 @@ Index: src/core/src/hydrogen.cpp
  		if ( ( m_pAudioDriver = createDriver( "Jack" ) ) == NULL ) {
  			if ( ( m_pAudioDriver = createDriver( "Alsa" ) ) == NULL ) {
  				if ( ( m_pAudioDriver = createDriver( "CoreAudio" ) ) == NULL ) {
-@@ -1510,6 +1519,7 @@ void audioEngine_startAudioDrivers()
+@@ -1529,6 +1538,7 @@ void audioEngine_startAudioDrivers()
  				}
  			}
  		}
@@ -45,14 +45,16 @@ Index: src/core/src/hydrogen.cpp
  	#else
  		//On Windows systems, use PortAudio is the prioritized backend
  		if ( ( m_pAudioDriver = createDriver( "PortAudio" ) ) == NULL ) {
-@@ -1545,7 +1555,13 @@ void audioEngine_startAudioDrivers()
+@@ -1564,7 +1574,15 @@ void audioEngine_startAudioDrivers()
  		}
  	}
  
 -	if ( preferencesMng->m_sMidiDriver == "ALSA" ) {
 +	if ( preferencesMng->m_sMidiDriver == "SndioMidi" ) {        
 +#ifdef H2CORE_HAVE_SNDIO
-+		m_pMidiDriver = new SndioMidiDriver();
++		SndioMidiDriver *sndioMidiDriver = new SndioMidiDriver();
++		m_pMidiDriver = sndioMidiDriver;
++		m_pMidiDriverOut = sndioMidiDriver;
 +		m_pMidiDriver->open();
 +		m_pMidiDriver->setActive( true );
 +#endif

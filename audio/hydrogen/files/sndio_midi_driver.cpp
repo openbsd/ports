@@ -20,6 +20,10 @@
 
 #include <poll.h>
 #include <pthread.h>
+#include <hydrogen/hydrogen.h>
+#include <hydrogen/basics/note.h>
+#include <hydrogen/basics/instrument.h>
+#include <hydrogen/basics/instrument_list.h>
 #include <hydrogen/Preferences.h>
 
 namespace H2Core
@@ -183,7 +187,7 @@ void* SndioMidiDriver_thread( void* param )
 }
 
 SndioMidiDriver::SndioMidiDriver()
-		: MidiInput("SndioMidiDriver"), Object( "SndioMidiDriver" )
+		: MidiInput("SndioMidiDriver"), MidiOutput("SndioMidiDriver"), Object( "SndioMidiDriver" )
 		, m_bRunning(false)
 {
 	hdl = NULL;
@@ -198,18 +202,16 @@ SndioMidiDriver::~SndioMidiDriver()
 
 void SndioMidiDriver::open()
 {
-	char midiDevice[32];
+	QString midiDevice = Preferences::get_instance()->m_sMidiPortName;
 
 	INFOLOG("SndioMidiDriver::open");
 
-	snprintf(midiDevice, 32, (Preferences::get_instance()->m_sMidiPortName).toAscii());
-
-	if (strncmp(midiDevice, "", 1) == 0 ||
-	    strncmp(midiDevice, "None", 5) == 0 ||
-	    strncmp(midiDevice, "default", 8) == 0)
-		hdl = mio_open(MIO_PORTANY, MIO_IN, 0);
+	if (midiDevice == "" ||
+	    midiDevice == "None" ||
+	    midiDevice == "default")
+		hdl = mio_open(MIO_PORTANY, MIO_IN | MIO_OUT, 0);
 	else
-		hdl = mio_open(midiDevice, MIO_IN, 0);
+		hdl = mio_open(midiDevice.toLocal8Bit(), MIO_IN | MIO_OUT, 0);
 
 	if (!hdl) {
 		ERRORLOG("mio_open failed");
@@ -257,6 +259,76 @@ std::vector<QString> SndioMidiDriver::getOutputPortList()
 	}
 
 	return portList;
+}
+
+void SndioMidiDriver::handleQueueNote( Note* pNote )
+{
+	uint8_t data[3];
+	int key = pNote->get_midi_key();
+	int velocity = pNote->get_midi_velocity();
+	int channel = pNote->get_instrument()->get_midi_out_channel();
+
+	if (!hdl || channel < 0)
+		return;
+
+	data[0] = 0x80 | channel;
+	data[1] = key;
+	data[2] = velocity;
+	mio_write(hdl, data, 3);
+
+	data[0] = 0x90 | channel;
+	mio_write(hdl, data, 3);
+}
+
+void SndioMidiDriver::handleQueueNoteOff( int channel, int key, int velocity )
+{
+	uint8_t data[3];
+	
+	if (!hdl)
+		return;
+
+	data[0] = 0x80 | channel;
+	data[1] = key;
+	data[2] = velocity;
+	mio_write(hdl, data, 3);
+}
+
+void SndioMidiDriver::handleQueueAllNoteOff()
+{
+	uint8_t data[3];
+	InstrumentList *instList = Hydrogen::get_instance()->getSong()->get_instrument_list();
+	Instrument *curInst;
+	int channel;
+	int key;
+	unsigned int numInstruments = instList->size();
+
+	if (!hdl)
+		return;
+
+	for (int index = 0; index < numInstruments; ++index) {
+		curInst = instList->get(index);
+		channel = curInst->get_midi_out_channel();
+		if (channel < 0) {
+			continue;
+		}
+		key = curInst->get_midi_out_note();
+		data[0] = 0x80 | channel;
+		data[1] = key;
+		data[2] = 0;
+		mio_write(hdl, data, 3);
+	}
+}
+
+void SndioMidiDriver::handleOutgoingControlChange( int param, int value, int channel )
+{
+	uint8_t data[3];
+
+	if (!hdl || channel < 0)
+		return;
+
+	data[0] = 0xB0 | channel;
+	data[1] = param;
+	data[2] = value;
 }
 
 };

@@ -1,27 +1,28 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/06/08 18:42:32 rapha Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/02/22 17:34:36 rapha Exp $
 
 Add sndio support
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -63,6 +63,7 @@ ELSE()
- 	OPTION(WANT_OSS          "Include OSS (Open Sound System) support" OFF)
+@@ -45,6 +45,8 @@ ELSE()
+     OPTION(WANT_ALSA        "Include ALSA (Advanced Linux Sound Architecture) support" ON)
  ENDIF()
  
-+OPTION(WANT_SNDIO        "Include Sndio support" ON)
- OPTION(WANT_ALSA         "Include ALSA (Advanced Linux Sound Architecture) support" ON)
- IF(MINGW)
- 	OPTION(WANT_JACK         "Include JACK (Jack Audio Connection Kit) support" ON)
-@@ -193,6 +194,7 @@ IF( WANT_LIBARCHIVE AND LIBARCHIVE_FOUND)
++OPTION(WANT_SNDIO           "Include Sndio support" ON)
++
+ OPTION(WANT_LIBARCHIVE      "Enable use of libarchive instead of libtar" ON)
+ OPTION(WANT_LADSPA          "Enable use of LADSPA plugins" ON)
+ 
+@@ -197,6 +199,7 @@ IF( WANT_LIBARCHIVE AND LIBARCHIVE_FOUND)
      SET(WANT_LIBTAR FALSE)
  ENDIF()
  FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
-+INCLUDE_DIRECTORIES(${LIBSNDFILE_INCLUDE_DIR})
++INCLUDE_DIRECTORIES(${LIBSNDFILE_INCLUDE_DIRS})
  FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
  FIND_LADSPA(LADSPA ladspa.h noise)
  
-@@ -204,6 +206,8 @@ ELSE()
+@@ -208,6 +211,8 @@ ELSE()
  	FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
  ENDIF()
  
@@ -30,16 +31,16 @@ Index: CMakeLists.txt
  FIND_HELPER(JACK jack jack/jack.h jack)
  CHECK_LIBRARY_EXISTS(jack jack_port_rename "" HAVE_JACK_PORT_RENAME)
  FIND_HELPER(JACKSESSION jack jack/session.h jack)
-@@ -243,7 +247,7 @@ endif(DOXYGEN_FOUND)
+@@ -246,7 +251,7 @@ endif(DOXYGEN_FOUND)
  #
  # COMPUTE H2CORE_HAVE_xxx xxx_STATUS_REPORT
  #
--SET(STATUS_LIST LIBSNDFILE LIBTAR LIBARCHIVE LADSPA ALSA OSS JACK JACKSESSION NSMSESSION COREAUDIO COREMIDI PORTAUDIO PORTMIDI PULSEAUDIO LASH LRDF RAPTOR RUBBERBAND CPPUNIT )
-+SET(STATUS_LIST LIBSNDFILE LIBTAR LIBARCHIVE LADSPA SNDIO ALSA OSS JACK JACKSESSION NSMSESSION COREAUDIO COREMIDI PORTAUDIO PORTMIDI PULSEAUDIO LASH LRDF RAPTOR RUBBERBAND CPPUNIT )
+-SET(STATUS_LIST LIBSNDFILE LIBTAR LIBARCHIVE LADSPA ALSA OSS JACK JACKSESSION OSC COREAUDIO COREMIDI PORTAUDIO PORTMIDI PULSEAUDIO LASH LRDF RUBBERBAND CPPUNIT )
++SET(STATUS_LIST LIBSNDFILE LIBTAR LIBARCHIVE LADSPA SNDIO ALSA OSS JACK JACKSESSION OSC COREAUDIO COREMIDI PORTAUDIO PORTMIDI PULSEAUDIO LASH LRDF RUBBERBAND CPPUNIT )
  FOREACH( _pkg ${STATUS_LIST})
      COMPUTE_PKGS_FLAGS(${_pkg})
  ENDFOREACH()
-@@ -293,6 +297,7 @@ COLOR_MESSAGE("${cyan}Main librarires${reset}
+@@ -296,6 +301,7 @@ COLOR_MESSAGE("* ${purple}libsndfile${reset}          
  
  COLOR_MESSAGE("${cyan}Supported audio interfaces${reset}
  --------------------------
@@ -47,3 +48,12 @@ Index: CMakeLists.txt
  * ${purple}ALSA${reset}                         : ${ALSA_STATUS}
  * ${purple}OSS${reset}                          : ${OSS_STATUS}
  * ${purple}JACK${reset}                         : ${JACK_STATUS}
+@@ -360,7 +366,7 @@ ENDIF()
+ IF(NOT MINGW AND NOT APPLE)
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.appdata.xml DESTINATION "${CMAKE_INSTALL_PREFIX}/share/appdata")
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.desktop DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
+-	INSTALL(FILES ${CMAKE_SOURCE_DIR}/data/img/gray/h2-icon.svg DESTINATION "/usr/share/pixmaps")
++	INSTALL(FILES ${CMAKE_SOURCE_DIR}/data/img/gray/h2-icon.svg DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pixmaps")
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.1 DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
+ ENDIF()
+ 
