@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2018/05/16 16:18:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-python,v 1.3 2020/02/22 08:57:02 ajacoutot Exp $
 @conflict avahi-gtk-<0.6.30p2
 @conflict avahi-gui-<0.6.31p7
 @conflict py-avahi-*
@@ -7,6 +7,6 @@ lib/avahi/service-types.db
 lib/python${MODPY_VERSION}/site-packages/avahi/
 lib/python${MODPY_VERSION}/site-packages/avahi/ServiceTypeDatabase.py
 lib/python${MODPY_VERSION}/site-packages/avahi/__init__.py
-lib/python${MODPY_VERSION}/site-packages/avahi/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/avahi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/avahi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/avahi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

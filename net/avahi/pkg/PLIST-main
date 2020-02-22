@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2018/09/04 12:46:16 espie Exp $
-@conflict avahi-qt3-*
+@comment $OpenBSD: PLIST-main,v 1.20 2020/02/22 08:57:02 ajacoutot Exp $
+@conflict avahi-gtk-*
+@conflict avahi-qt4-*
 @conflict avahi-qt4-*
 @conflict howl-*
+@pkgpath net/avahi,-gtk
 @pkgpath net/avahi,-qt3
 @pkgpath net/avahi,-qt4
 @newgroup _avahi:629
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/avahi_daemon
+@rcscript ${RCDIR}/avahi_dnsconfd
 @bin bin/avahi-browse
 bin/avahi-browse-domains
 @bin bin/avahi-publish
@@ -78,28 +82,33 @@ include/avahi-gobject/ga-error.h
 include/avahi-gobject/ga-record-browser.h
 include/avahi-gobject/ga-service-browser.h
 include/avahi-gobject/ga-service-resolver.h
+include/avahi-libevent/
+include/avahi-libevent/libevent-watch.h
 lib/girepository-1.0/
 lib/girepository-1.0/Avahi-0.6.typelib
 lib/girepository-1.0/AvahiCore-0.6.typelib
-lib/libavahi-client.a
+@static-lib lib/libavahi-client.a
 lib/libavahi-client.la
 @lib lib/libavahi-client.so.${LIBavahi-client_VERSION}
-lib/libavahi-common.a
+@static-lib lib/libavahi-common.a
 lib/libavahi-common.la
 @lib lib/libavahi-common.so.${LIBavahi-common_VERSION}
-lib/libavahi-core.a
+@static-lib lib/libavahi-core.a
 lib/libavahi-core.la
 @lib lib/libavahi-core.so.${LIBavahi-core_VERSION}
-lib/libavahi-glib.a
+@static-lib lib/libavahi-glib.a
 lib/libavahi-glib.la
 @lib lib/libavahi-glib.so.${LIBavahi-glib_VERSION}
-lib/libavahi-gobject.a
+@static-lib lib/libavahi-gobject.a
 lib/libavahi-gobject.la
 @lib lib/libavahi-gobject.so.${LIBavahi-gobject_VERSION}
-lib/libdns_sd.a
+@static-lib lib/libavahi-libevent.a
+lib/libavahi-libevent.la
+@lib lib/libavahi-libevent.so.${LIBavahi-libevent_VERSION}
+@static-lib lib/libdns_sd.a
 lib/libdns_sd.la
 @lib lib/libdns_sd.so.${LIBdns_sd_VERSION}
-lib/libhowl.a
+@static-lib lib/libhowl.a
 lib/libhowl.la
 @lib lib/libhowl.so.${LIBhowl_VERSION}
 lib/pkgconfig/avahi-client.pc
@@ -108,6 +117,7 @@ lib/pkgconfig/avahi-compat-libdns_sd.pc
 lib/pkgconfig/avahi-core.pc
 lib/pkgconfig/avahi-glib.pc
 lib/pkgconfig/avahi-gobject.pc
+lib/pkgconfig/avahi-libevent.pc
 @man man/man1/avahi-browse-domains.1
 @man man/man1/avahi-browse.1
 @man man/man1/avahi-publish-address.1
@@ -211,5 +221,3 @@ share/locale/tr/LC_MESSAGES/avahi.mo
 share/locale/uk/LC_MESSAGES/avahi.mo
 share/locale/zh_CN/LC_MESSAGES/avahi.mo
 share/locale/zh_TW/LC_MESSAGES/avahi.mo
-@rcscript ${RCDIR}/avahi_daemon
-@rcscript ${RCDIR}/avahi_dnsconfd

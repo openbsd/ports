@@ -1,11 +1,11 @@
-$OpenBSD: patch-avahi-core_socket_c,v 1.5 2018/05/10 15:08:37 ajacoutot Exp $
+$OpenBSD: patch-avahi-core_socket_c,v 1.6 2020/02/22 08:57:02 ajacoutot Exp $
 
 Unbreak IPv6: sendmsg() to 0:0:ff02:: failed: Invalid argument
 
 Index: avahi-core/socket.c
 --- avahi-core/socket.c.orig
 +++ avahi-core/socket.c
-@@ -574,7 +574,7 @@ int avahi_send_dns_packet_ipv6(
+@@ -583,7 +583,7 @@ int avahi_send_dns_packet_ipv6(
      struct msghdr msg;
      struct iovec io;
      struct cmsghdr *cmsg;
@@ -14,7 +14,7 @@ Index: avahi-core/socket.c
  
      assert(fd >= 0);
      assert(p);
-@@ -602,10 +602,10 @@ int avahi_send_dns_packet_ipv6(
+@@ -611,10 +611,10 @@ int avahi_send_dns_packet_ipv6(
  
          memset(cmsg_data, 0, sizeof(cmsg_data));
          msg.msg_control = cmsg_data;

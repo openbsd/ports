@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-gtk,v 1.6 2011/07/14 18:48:15 ajacoutot Exp $
-lib/libavahi-ui.a
-lib/libavahi-ui.la
-@lib lib/libavahi-ui.so.${LIBavahi-ui_VERSION}
-lib/pkgconfig/avahi-ui.pc
