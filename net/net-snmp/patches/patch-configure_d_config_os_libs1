@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_d_config_os_libs1,v 1.1 2020/02/22 22:45:59 sthen Exp $
+
+From 10823f0194e167b2e7860acd4f96d14380ae36b3 Mon Sep 17 00:00:00 2001
+From: Bart Van Assche <bvanassche@acm.org>
+Date: Sat, 22 Feb 2020 07:55:55 -0800
+Subject: [PATCH] configure: Add exp() library to LMIBLIBS instead of LIBS
+
+Index: configure.d/config_os_libs1
+--- configure.d/config_os_libs1.orig
++++ configure.d/config_os_libs1
+@@ -68,7 +68,7 @@ AC_CHECK_FUNCS(kinfo_get_cpus)
+ #
+ # diskIOLAx requires exp which may require -lm
+ #
+-AC_SEARCH_LIBS(exp, [m])
++NETSNMP_SEARCH_LIBS([exp], [m],,,, [LMIBLIBS])
+ 
+ #
+ #   libkvm
