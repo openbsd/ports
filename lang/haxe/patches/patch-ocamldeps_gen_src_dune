@@ -1,0 +1,14 @@
+$OpenBSD: patch-ocamldeps_gen_src_dune,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+remove unneeded tests with otherwise add qtest dependency
+
+Index: ocamldeps/gen/src/dune
+--- ocamldeps/gen/src/dune.orig
++++ ocamldeps/gen/src/dune
+@@ -14,6 +14,5 @@
+   (flags :standard -w +a-4-42-44-48-50-58-32-60@8 -safe-string -nolabels)
+   (ocamlopt_flags :standard (:include flambda.flags))
+   (libraries bytes)
+-  (inline_tests (backend qtest.lib))
+   )
+ 

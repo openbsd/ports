@@ -1,0 +1,16 @@
+$OpenBSD: patch-ocamldeps_gen_Makefile,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+Make dune build verbose
+
+Index: ocamldeps/gen/Makefile
+--- ocamldeps/gen/Makefile.orig
++++ ocamldeps/gen/Makefile
+@@ -2,7 +2,7 @@
+ all: build test
+ 
+ build:
+-	@dune build @install
++	@dune build @install --verbose
+ 
+ test:
+ 	@dune runtest --no-buffer --force

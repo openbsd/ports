@@ -1,0 +1,159 @@
+$OpenBSD: patch-ocamldeps_gen_src_gen_ml,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+don't use deprecated modules Pervasives
+
+Index: ocamldeps/gen/src/gen.ml
+--- ocamldeps/gen/src/gen.ml.orig
++++ ocamldeps/gen/src/gen.ml
+@@ -668,7 +668,7 @@ let eq ?(eq=(=)) gen1 gen2 =
+     eq (of_list l1)(of_list l2) = (l1 = l2))
+ *)
+ 
+-let lexico ?(cmp=Pervasives.compare) gen1 gen2 =
++let lexico ?(cmp=Stdlib.compare) gen1 gen2 =
+   let rec lexico () =
+     match gen1(), gen2() with
+     | None, None -> 0
+@@ -684,7 +684,7 @@ let compare ?cmp gen1 gen2 = lexico ?cmp gen1 gen2
+ (*$Q
+   (Q.pair (Q.list Q.small_int)(Q.list Q.small_int)) (fun (l1,l2) -> \
+     let sign x = if x < 0 then -1 else if x=0 then 0 else 1 in \
+-    sign (compare (of_list l1)(of_list l2)) = sign (Pervasives.compare l1 l2))
++    sign (compare (of_list l1)(of_list l2)) = sign (Stdlib.compare l1 l2))
+ *)
+ 
+ let rec find p e = match e () with
+@@ -838,17 +838,17 @@ let merge next_gen =
+ 
+ (*$T
+   merge (of_list [of_list [1;3;5]; of_list [2;4;6]; of_list [7;8;9]]) \
+-    |> to_list |> List.sort Pervasives.compare = [1;2;3;4;5;6;7;8;9]
++    |> to_list |> List.sort Stdlib.compare = [1;2;3;4;5;6;7;8;9]
+ *)
+ 
+ (*$R
+   let e = of_list [1--3; 4--6; 7--9] in
+   let e' = merge e in
+   OUnit.assert_equal [1;2;3;4;5;6;7;8;9]
+-    (to_list e' |> List.sort Pervasives.compare);
++    (to_list e' |> List.sort Stdlib.compare);
+ *)
+ 
+-let intersection ?(cmp=Pervasives.compare) gen1 gen2 =
++let intersection ?(cmp=Stdlib.compare) gen1 gen2 =
+   let x1 = ref (gen1 ()) in
+   let x2 = ref (gen2 ()) in
+   let rec next () =
+@@ -869,7 +869,7 @@ let intersection ?(cmp=Pervasives.compare) gen1 gen2 =
+     |> to_list = [1;2;4;8]
+ *)
+ 
+-let sorted_merge ?(cmp=Pervasives.compare) gen1 gen2 =
++let sorted_merge ?(cmp=Stdlib.compare) gen1 gen2 =
+   let x1 = ref (gen1 ()) in
+   let x2 = ref (gen2 ()) in
+   fun () ->
+@@ -937,7 +937,7 @@ module Heap = struct
+         x
+ end
+ 
+-let sorted_merge_n ?(cmp=Pervasives.compare) l =
++let sorted_merge_n ?(cmp=Stdlib.compare) l =
+   (* make a heap of (value, generator) *)
+   let cmp (v1,_) (v2,_) = cmp v1 v2 in
+   let heap = Heap.empty ~cmp in
+@@ -1169,7 +1169,7 @@ let product gena genb =
+ 
+ (*$T
+   product (1--3) (of_list ["a"; "b"]) |> to_list \
+-    |> List.sort Pervasives.compare = \
++    |> List.sort Stdlib.compare = \
+       [1, "a"; 1, "b"; 2, "a"; 2, "b"; 3, "a"; 3, "b"]
+ *)
+ 
+@@ -1177,7 +1177,7 @@ let product gena genb =
+   let printer = pi2list in
+   let e = Gen.product (1--3) (4--5) in
+   OUnit.assert_equal ~printer [1,4; 1,5; 2,4; 2,5; 3,4; 3,5]
+-    (List.sort Pervasives.compare (Gen.to_list e));
++    (List.sort Stdlib.compare (Gen.to_list e));
+ *)
+ 
+ (* Group equal consecutive elements together. *)
+@@ -1232,7 +1232,7 @@ let uniq ?(eq=(=)) gen =
+     [0;1;0;2;3;4;5;10]
+ *)
+ 
+-let sort ?(cmp=Pervasives.compare) gen =
++let sort ?(cmp=Stdlib.compare) gen =
+   (* build heap *)
+   let h = Heap.empty ~cmp in
+   iter (Heap.insert h) gen;
+@@ -1248,7 +1248,7 @@ let sort ?(cmp=Pervasives.compare) gen =
+ 
+ (* NOTE: using a set is not really possible, because once we have built the
+    set there is no simple way to iterate on it *)
+-let sort_uniq ?(cmp=Pervasives.compare) gen =
++let sort_uniq ?(cmp=Stdlib.compare) gen =
+   uniq ~eq:(fun x y -> cmp x y = 0) (sort ~cmp gen)
+ 
+ (*$T
+@@ -1350,7 +1350,7 @@ let permutations g =
+   next (make_machine (List.length l) l)
+ 
+ (*$T permutations
+-  permutations (1--3) |> to_list |> List.sort Pervasives.compare = \
++  permutations (1--3) |> to_list |> List.sort Stdlib.compare = \
+     [[1;2;3]; [1;3;2]; [2;1;3]; [2;3;1]; [3;1;2]; [3;2;1]]
+   permutations empty |> to_list = [[]]
+   permutations (singleton 1) |> to_list = [[1]]
+@@ -1434,7 +1434,7 @@ let permutations_heap g =
+   else next {elts = a; n=n; is=[0]}
+ 
+ (*$T permutations_heap
+-  permutations_heap (1--3) |> to_list |> List.sort Pervasives.compare = \
++  permutations_heap (1--3) |> to_list |> List.sort Stdlib.compare = \
+     [[|1;2;3|]; [|1;3;2|]; [|2;1;3|]; [|2;3;1|]; [|3;1;2|]; [|3;2;1|]]
+   permutations_heap empty |> to_list = []
+   permutations_heap (singleton 1) |> to_list = [[|1|]]
+@@ -1480,8 +1480,8 @@ let combinations n g =
+   next (make_state n l)
+ 
+ (*$T
+-  combinations 2 (1--4) |> map (List.sort Pervasives.compare) \
+-    |> to_list |> List.sort Pervasives.compare = \
++  combinations 2 (1--4) |> map (List.sort Stdlib.compare) \
++    |> to_list |> List.sort Stdlib.compare = \
+     [[1;2]; [1;3]; [1;4]; [2;3]; [2;4]; [3;4]]
+   combinations 0 (1--4) |> to_list = [[]]
+   combinations 1 (singleton 1) |> to_list = [[1]]
+@@ -1521,12 +1521,12 @@ let power_set g =
+   next (make_state l)
+ 
+ (*$T
+-  power_set (1--3) |> map (List.sort Pervasives.compare) \
+-    |> to_list |> List.sort Pervasives.compare = \
++  power_set (1--3) |> map (List.sort Stdlib.compare) \
++    |> to_list |> List.sort Stdlib.compare = \
+     [[]; [1]; [1;2]; [1;2;3]; [1;3]; [2]; [2;3]; [3]]
+   power_set empty |> to_list = [[]]
+-  power_set (singleton 1) |> map (List.sort Pervasives.compare) \
+-    |> to_list |> List.sort Pervasives.compare = [[]; [1]]
++  power_set (singleton 1) |> map (List.sort Stdlib.compare) \
++    |> to_list |> List.sort Stdlib.compare = [[]; [1]]
+ *)
+ 
+ (** {3 Conversion} *)
+@@ -1843,10 +1843,10 @@ module Restart = struct
+ 
+   let uniq ?eq e () = uniq ?eq (e ())
+ 
+-  let sort ?(cmp=Pervasives.compare) enum =
++  let sort ?(cmp=Stdlib.compare) enum =
+     fun () -> sort ~cmp (enum ())
+ 
+-  let sort_uniq ?(cmp=Pervasives.compare) e =
++  let sort_uniq ?(cmp=Stdlib.compare) e =
+     let e' = sort ~cmp e in
+     uniq ~eq:(fun x y -> cmp x y = 0) e'
+ 

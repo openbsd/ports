@@ -1,0 +1,16 @@
+$OpenBSD: patch-ocamldeps_ppx_tools_versioned_Makefile,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+Make dune build verbose
+
+Index: ocamldeps/ppx_tools_versioned/Makefile
+--- ocamldeps/ppx_tools_versioned/Makefile.orig
++++ ocamldeps/ppx_tools_versioned/Makefile
+@@ -1,7 +1,7 @@
+ INSTALL_ARGS := $(if $(PREFIX),--prefix $(PREFIX),)
+ 
+ all:
+-	dune build
++	dune build --verbose
+ 
+ install:
+ 	dune install $(INSTALL_ARGS)

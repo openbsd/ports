@@ -1,0 +1,24 @@
+$OpenBSD: patch-ocamldeps_sedlex_src_generator_gen_unicode_ml_inc,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+replace deprecated lib Pervasives
+
+Index: ocamldeps/sedlex/src/generator/gen_unicode.ml.inc
+--- ocamldeps/sedlex/src/generator/gen_unicode.ml.inc.orig
++++ ocamldeps/sedlex/src/generator/gen_unicode.ml.inc
+@@ -77,14 +77,14 @@ let split list n =
+ 
+ let print_elements ch hashtbl =
+   let cats =
+-    List.sort_uniq Pervasives.compare
++    List.sort_uniq Stdlib.compare
+       (Hashtbl.fold (fun cat _ l -> cat::l) hashtbl [])
+   in
+   let len = List.length cats in
+   List.iter (fun c ->
+     let entries =
+       List.map (fun (b,e) -> Printf.sprintf "0x%x, 0x%x" b e)
+-        (List.sort_uniq Pervasives.compare
++        (List.sort_uniq Stdlib.compare
+           (Hashtbl.find_all hashtbl c))
+     in
+     let entries =

@@ -1,0 +1,16 @@
+$OpenBSD: patch-ocamldeps_ocaml-sha_sha1_ml,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+replace deprecated lib Pervasives
+
+Index: ocamldeps/ocaml-sha/sha1.ml
+--- ocamldeps/ocaml-sha/sha1.ml.orig
++++ ocamldeps/ocaml-sha/sha1.ml
+@@ -62,7 +62,7 @@ let channel chan len =
+ 	while (!left == -1 || !left > 0) && not !eof
+ 	do
+ 		let len = if !left < 0 then blksize else (min !left blksize) in
+-		let readed = Pervasives.input chan buf 0 len in
++		let readed = Stdlib.input chan buf 0 len in
+ 		if readed = 0 then
+ 			eof := true
+ 		else (

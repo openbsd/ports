@@ -1,0 +1,16 @@
+$OpenBSD: patch-ocamldeps_ocaml-migrate-parsetree_Makefile,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+Make dune build verbose
+
+Index: ocamldeps/ocaml-migrate-parsetree/Makefile
+--- ocamldeps/ocaml-migrate-parsetree/Makefile.orig
++++ ocamldeps/ocaml-migrate-parsetree/Makefile
+@@ -7,7 +7,7 @@ INSTALL_ARGS := $(if $(PREFIX),--prefix $(PREFIX),)
+ 
+ .PHONY: all
+ all:
+-	dune build @install
++	dune build @install --verbose
+ 
+ .PHONY: install
+ install:

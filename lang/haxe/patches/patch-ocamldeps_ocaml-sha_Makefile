@@ -1,0 +1,14 @@
+$OpenBSD: patch-ocamldeps_ocaml-sha_Makefile,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+Make jbuilder verbose
+
+Index: ocamldeps/ocaml-sha/Makefile
+--- ocamldeps/ocaml-sha/Makefile.orig
++++ ocamldeps/ocaml-sha/Makefile
+@@ -1,5 +1,5 @@
+ all:
+-	jbuilder build --dev @install
++	jbuilder build --dev @install --verbose
+ 
+ test:
+ 	jbuilder runtest

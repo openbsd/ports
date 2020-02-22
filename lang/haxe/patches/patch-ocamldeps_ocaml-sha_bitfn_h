@@ -1,0 +1,23 @@
+$OpenBSD: patch-ocamldeps_ocaml-sha_bitfn_h,v 1.1 2020/02/22 02:36:28 thfr Exp $
+
+fix conflict with endian.h
+
+Index: ocamldeps/ocaml-sha/bitfn.h
+--- ocamldeps/ocaml-sha/bitfn.h.orig
++++ ocamldeps/ocaml-sha/bitfn.h
+@@ -40,6 +40,7 @@ static inline uint64_t ror64(uint64_t word, unsigned i
+ 	return (word >> shift) | (word << (64 - shift));
+ }
+ 
++/*
+ #if (defined(__i386__) || defined(__x86_64__)) && !defined(NO_INLINE_ASM)
+ static inline unsigned int swap32(unsigned int a)
+ {
+@@ -66,6 +67,7 @@ static inline uint64_t swap64(uint64_t a)
+ 	       (((uint64_t) swap32((unsigned int) a)) << 32);
+ }
+ #endif
++*/
+ 
+ /* big endian to cpu */
+ #ifdef __APPLE__
