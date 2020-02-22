@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2020/02/22 10:09:00 ajacoutot Exp $
-
-PORTROACH=		skipv:2.2.99.0
+# $OpenBSD: Makefile,v 1.251 2020/02/22 10:09:28 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
