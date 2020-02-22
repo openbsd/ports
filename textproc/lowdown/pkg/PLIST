@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/03 18:24:33 anton Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/02/22 11:29:17 sthen Exp $
 @bin bin/lowdown
 @bin bin/lowdown-diff
 include/lowdown.h
-lib/liblowdown.a
+@static-lib lib/liblowdown.a
 @man man/man1/lowdown.1
 @man man/man3/lowdown.3
 @man man/man3/lowdown_buf.3
@@ -10,7 +10,6 @@ lib/liblowdown.a
 @man man/man3/lowdown_doc_free.3
 @man man/man3/lowdown_doc_new.3
 @man man/man3/lowdown_doc_parse.3
-@man man/man3/lowdown_errstr.3
 @man man/man3/lowdown_file.3
 @man man/man3/lowdown_file_diff.3
 @man man/man3/lowdown_html_free.3
@@ -19,6 +18,9 @@ lib/liblowdown.a
 @man man/man3/lowdown_nroff_free.3
 @man man/man3/lowdown_nroff_new.3
 @man man/man3/lowdown_nroff_rndr.3
+@man man/man3/lowdown_term_free.3
+@man man/man3/lowdown_term_new.3
+@man man/man3/lowdown_term_rndr.3
 @man man/man3/lowdown_tree_free.3
 @man man/man3/lowdown_tree_new.3
 @man man/man3/lowdown_tree_rndr.3
