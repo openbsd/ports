@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2019/12/18 20:25:16 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2020/02/22 13:28:48 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -180,6 +180,7 @@ lib/kopano/userscripts/deleteuser.d/
 lib/mapi.d/
 lib/mapi.d/kopano.inf
 lib/mapi.d/zcontacts.inf
+lib/php-7.3/
 lib/pkgconfig/kopano.pc
 lib/python${MODPY_VERSION}/site-packages/MAPI/
 lib/python${MODPY_VERSION}/site-packages/MAPI-${V}-py${MODPY_VERSION}.egg-info/
@@ -630,6 +631,7 @@ share/examples/kopano/userscripts/deletegroup.d/
 share/examples/kopano/userscripts/deleteuser.d/
 share/examples/logrotate.d/
 share/examples/logrotate.d/kopano
+share/examples/php-7.3/
 share/gdb/auto-load/usr/local/lib/libmapi.so.1.0.0-gdb.py
 share/kopano/
 share/kopano-dagent/
