@@ -1,4 +1,4 @@
-$OpenBSD: patch-BUILD_gn,v 1.29 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.30 2020/02/22 12:33:20 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig
@@ -52,7 +52,7 @@ Index: BUILD.gn
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -905,7 +895,6 @@ if (is_chromeos) {
+@@ -918,7 +908,6 @@ if (is_chromeos) {
        "//ppapi/examples/video_decode",
        "//sandbox/linux:chrome_sandbox",
        "//sandbox/linux:sandbox_linux_unittests",
@@ -60,7 +60,7 @@ Index: BUILD.gn
  
        # Blocked on https://github.com/catapult-project/catapult/issues/2297
        #"//third_party/catapult/telemetry:bitmaptools",
-@@ -1076,7 +1065,7 @@ if (!is_ios) {
+@@ -1069,7 +1058,7 @@ if (!is_ios) {
        ]
      }
  
@@ -69,7 +69,7 @@ Index: BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1085,7 +1074,7 @@ if (!is_ios) {
+@@ -1078,7 +1067,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@ Index: BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1227,9 +1216,6 @@ group("chromium_builder_perf") {
+@@ -1220,9 +1209,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

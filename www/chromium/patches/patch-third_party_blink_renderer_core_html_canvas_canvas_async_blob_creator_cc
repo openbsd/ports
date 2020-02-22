@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_core_html_canvas_canvas_async_blob_creator_cc,v 1.6 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_html_canvas_canvas_async_blob_creator_cc,v 1.7 2020/02/22 12:33:22 robert Exp $
 
 Index: third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc
 --- third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc.orig
 +++ third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc
-@@ -40,7 +40,7 @@ constexpr base::TimeDelta kEncodeRowSlackBeforeDeadlin
+@@ -41,7 +41,7 @@ constexpr base::TimeDelta kEncodeRowSlackBeforeDeadlin
      base::TimeDelta::FromMicroseconds(100);
  
  /* The value is based on user statistics on Nov 2017. */

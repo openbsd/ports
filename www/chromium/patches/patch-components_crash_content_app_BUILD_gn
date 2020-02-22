@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.20 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.21 2020/02/22 12:33:21 robert Exp $
 
 Index: components/crash/content/app/BUILD.gn
 --- components/crash/content/app/BUILD.gn.orig
 +++ components/crash/content/app/BUILD.gn
-@@ -46,20 +46,20 @@ static_library("app") {
+@@ -48,20 +48,20 @@ static_library("app") {
      "crash_switches.h",
      "crashpad.h",
      "crashpad_android.cc",
@@ -27,7 +27,7 @@ Index: components/crash/content/app/BUILD.gn
      ]
    }
  
-@@ -73,7 +73,7 @@ static_library("app") {
+@@ -75,7 +75,7 @@ static_library("app") {
      "//build:branding_buildflags",
    ]
  
@@ -36,7 +36,7 @@ Index: components/crash/content/app/BUILD.gn
      deps += [
        "//third_party/crashpad/crashpad/client",
        "//third_party/crashpad/crashpad/util",
-@@ -89,7 +89,7 @@ static_library("app") {
+@@ -91,7 +91,7 @@ static_library("app") {
      ]
    }
  
@@ -45,7 +45,7 @@ Index: components/crash/content/app/BUILD.gn
      deps += [
        "//base:base_static",
        "//components/crash/core/common",
-@@ -99,7 +99,7 @@ static_library("app") {
+@@ -101,7 +101,7 @@ static_library("app") {
      ]
    }
  
@@ -54,7 +54,7 @@ Index: components/crash/content/app/BUILD.gn
      deps += [ "//third_party/breakpad:client" ]
    }
  
-@@ -130,7 +130,7 @@ static_library("app") {
+@@ -132,7 +132,7 @@ static_library("app") {
      libs = [ "log" ]
    }
  

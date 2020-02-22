@@ -1,27 +1,17 @@
-$OpenBSD: patch-ui_base_x_x11_shm_image_pool_base_cc,v 1.3 2019/12/15 13:55:34 robert Exp $
+$OpenBSD: patch-ui_base_x_x11_shm_image_pool_base_cc,v 1.4 2020/02/22 12:33:22 robert Exp $
 
 Index: ui/base/x/x11_shm_image_pool_base.cc
 --- ui/base/x/x11_shm_image_pool_base.cc.orig
 +++ ui/base/x/x11_shm_image_pool_base.cc
-@@ -12,12 +12,17 @@
- 
- #include "base/bind.h"
- #include "base/callback.h"
-+#include "base/command_line.h"
-+#include "base/environment.h"
+@@ -16,6 +16,7 @@
+ #include "base/environment.h"
  #include "base/location.h"
-+#include "base/strings/string_util.h"
+ #include "base/strings/string_util.h"
 +#include "base/system/sys_info.h"
  #include "base/threading/thread_task_runner_handle.h"
  #include "build/build_config.h"
  #include "ui/events/platform/platform_event_dispatcher.h"
- #include "ui/events/platform/platform_event_source.h"
- #include "ui/gfx/geometry/rect.h"
-+#include "ui/gfx/x/x11_switches.h"
- 
- namespace ui {
- 
-@@ -39,10 +44,14 @@ constexpr float kShmResizeShrinkThreshold =
+@@ -43,10 +44,14 @@ constexpr float kShmResizeShrinkThreshold =
      1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {
@@ -36,53 +26,17 @@ Index: ui/base/x/x11_shm_image_pool_base.cc
  }
  
  std::size_t MaxShmSegmentSize() {
-@@ -50,6 +59,33 @@ std::size_t MaxShmSegmentSize() {
-   return max_size;
- }
+@@ -56,6 +61,9 @@ std::size_t MaxShmSegmentSize() {
  
-+#if !defined(OS_CHROMEOS)
-+bool ShouldUseMitShm() {
-+// MIT-SHM does not play nice with pledge(2)
+ #if !defined(OS_CHROMEOS)
+ bool ShouldUseMitShm() {
 +#if defined(OS_BSD)
 +  return false;
 +#endif
-+  std::unique_ptr<base::Environment> env = base::Environment::Create();
-+  // Used by QT.
-+  if (env->HasVar("QT_X11_NO_MITSHM"))
-+    return false;
-+
-+  // Used by JRE.
-+  std::string j2d_use_mitshm;
-+  if (env->GetVar("J2D_USE_MITSHM", &j2d_use_mitshm) &&
-+      (j2d_use_mitshm == "0" ||
-+       base::LowerCaseEqualsASCII(j2d_use_mitshm, "false"))) {
-+    return false;
-+  }
-+
-+  // Used by GTK.
-+  if (base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoXshm))
-+    return false;
-+
-+  return true;
-+}
-+#endif
-+
- }  // namespace
+   std::unique_ptr<base::Environment> env = base::Environment::Create();
  
- XShmImagePoolBase::FrameState::FrameState() = default;
-@@ -90,6 +126,11 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
-   if (!event_task_runner_)
-     return false;
- 
-+#if !defined(OS_CHROMEOS)
-+  if (!ShouldUseMitShm())
-+    return false;
-+#endif
-+
-   if (!ui::QueryShmSupport())
-     return false;
- 
-@@ -139,7 +180,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+   // Used by QT.
+@@ -172,7 +180,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
          shmctl(state.shminfo_.shmid, IPC_RMID, 0);
          return false;
        }
@@ -91,7 +45,7 @@ Index: ui/base/x/x11_shm_image_pool_base.cc
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -149,7 +190,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+@@ -182,7 +190,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
        if (!XShmAttach(display_, &state.shminfo_))
          return false;
        state.shmem_attached_to_server_ = true;

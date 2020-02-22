@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.487 2020/01/24 15:35:16 robert Exp $
+# $OpenBSD: Makefile,v 1.488 2020/02/22 12:33:20 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			79.0.3945.130
+V=			80.0.3987.116
 ECV=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
@@ -35,8 +35,6 @@ FLAVORS=		debug component electron
 FLAVOR?=
 .if ${FLAVOR:Melectron}
 REVISION=		5
-.else
-REVISION=		0
 .endif
 
 # BSD-like
@@ -167,7 +165,6 @@ GN_ARGS=	enable_nacl=false \
 		use_sndio=true \
 		use_cups=true \
 		use_system_libdrm=true \
-		use_jumbo_build=true \
 		use_bundled_fontconfig=false \
 		is_clang=true \
 		use_sysroot=false \
@@ -322,7 +319,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIST_TARGET_DIR}/resources
-.for f in protoc icudtl.dat mksnapshot natives_blob.bin snapshot_blob.bin v8_context_snapshot.bin
+.for f in protoc icudtl.dat mksnapshot snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 .if ${FLAVOR:Melectron}

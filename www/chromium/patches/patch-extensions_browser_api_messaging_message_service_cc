@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_browser_api_messaging_message_service_cc,v 1.7 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-extensions_browser_api_messaging_message_service_cc,v 1.8 2020/02/22 12:33:21 robert Exp $
 
 Index: extensions/browser/api/messaging/message_service.cc
 --- extensions/browser/api/messaging/message_service.cc.orig
@@ -12,7 +12,7 @@ Index: extensions/browser/api/messaging/message_service.cc
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -382,7 +382,7 @@ void MessageService::OpenChannelToNativeApp(
+@@ -391,7 +391,7 @@ void MessageService::OpenChannelToNativeApp(
    if (!opener_port->IsValidPort())
      return;
  

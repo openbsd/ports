@@ -1,23 +1,14 @@
-$OpenBSD: patch-v8_src_api_api_cc,v 1.4 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-v8_src_api_api_cc,v 1.5 2020/02/22 12:33:22 robert Exp $
 
 Index: v8/src/api/api.cc
 --- v8/src/api/api.cc.orig
 +++ v8/src/api/api.cc
-@@ -111,7 +111,7 @@
+@@ -113,7 +113,7 @@
  #include "src/wasm/wasm-result.h"
  #include "src/wasm/wasm-serialization.h"
  
--#if V8_OS_LINUX || V8_OS_MACOSX
-+#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_OPENBSD
+-#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_FREEBSD
++#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_FREEBSD || V8_OS_OPENBSD
  #include <signal.h>
  #include "include/v8-wasm-trap-handler-posix.h"
  #include "src/trap-handler/handler-inside-posix.h"
-@@ -5609,7 +5609,7 @@ bool v8::V8::Initialize() {
-   return true;
- }
- 
--#if V8_OS_LINUX || V8_OS_MACOSX
-+#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_OPENBSD
- bool TryHandleWebAssemblyTrapPosix(int sig_code, siginfo_t* info,
-                                    void* context) {
- #if V8_TARGET_ARCH_X64 && !V8_OS_ANDROID

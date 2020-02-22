@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.40 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.41 2020/02/22 12:33:21 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -187,7 +187,7 @@
+@@ -175,7 +175,7 @@
  
  #if defined(OS_MACOSX)
  #include <malloc/malloc.h>
@@ -12,7 +12,7 @@ Index: content/renderer/render_thread_impl.cc
  #include <malloc.h>
  #endif
  
-@@ -921,7 +921,7 @@ void RenderThreadImpl::Init() {
+@@ -735,7 +735,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -21,16 +21,16 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -951,7 +951,7 @@ void RenderThreadImpl::Init() {
+@@ -758,7 +758,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
-       discardable_shared_memory_manager_.get());
+       discardable_memory_allocator_.get());
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1327,7 +1327,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1128,7 +1128,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
  #else
        cmd_line->HasSwitch(switches::kEnableGpuMemoryBufferVideoFrames);

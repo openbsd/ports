@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_audio_BUILD_gn,v 1.25 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-media_audio_BUILD_gn,v 1.26 2020/02/22 12:33:21 robert Exp $
 
 Index: media/audio/BUILD.gn
 --- media/audio/BUILD.gn.orig
 +++ media/audio/BUILD.gn
-@@ -250,8 +250,19 @@ source_set("audio") {
+@@ -238,8 +238,19 @@ source_set("audio") {
      ]
    }
  

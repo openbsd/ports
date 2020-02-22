@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_gpu_linux_platform_video_frame_utils_cc,v 1.2 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-media_gpu_linux_platform_video_frame_utils_cc,v 1.3 2020/02/22 12:33:21 robert Exp $
 
 Index: media/gpu/linux/platform_video_frame_utils.cc
 --- media/gpu/linux/platform_video_frame_utils.cc.orig
 +++ media/gpu/linux/platform_video_frame_utils.cc
-@@ -19,16 +19,16 @@
+@@ -20,16 +20,16 @@
  #include "ui/gfx/linux/native_pixmap_dmabuf.h"
  #include "ui/gfx/native_pixmap.h"
  
@@ -23,7 +23,7 @@ Index: media/gpu/linux/platform_video_frame_utils.cc
  
  scoped_refptr<VideoFrame> CreateVideoFrameGpu(
      gpu::GpuMemoryBufferFactory* factory,
-@@ -92,7 +92,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameGpu(
+@@ -93,7 +93,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameGpu(
                       gpu::kPlatformVideoFramePoolClientId));
    return frame;
  }
@@ -32,7 +32,7 @@ Index: media/gpu/linux/platform_video_frame_utils.cc
  
  }  // namespace
  
-@@ -104,11 +104,11 @@ scoped_refptr<VideoFrame> CreatePlatformVideoFrame(
+@@ -105,11 +105,11 @@ scoped_refptr<VideoFrame> CreatePlatformVideoFrame(
      const gfx::Size& natural_size,
      base::TimeDelta timestamp,
      gfx::BufferUsage buffer_usage) {

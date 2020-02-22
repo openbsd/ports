@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_json_schema_compiler_feature_compiler_py,v 1.6 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-tools_json_schema_compiler_feature_compiler_py,v 1.7 2020/02/22 12:33:22 robert Exp $
 
 Index: tools/json_schema_compiler/feature_compiler.py
 --- tools/json_schema_compiler/feature_compiler.py.orig
 +++ tools/json_schema_compiler/feature_compiler.py
-@@ -219,6 +219,7 @@ FEATURE_GRAMMAR = (
+@@ -220,6 +220,7 @@ FEATURE_GRAMMAR = (
            'linux': 'Feature::LINUX_PLATFORM',
            'mac': 'Feature::MACOSX_PLATFORM',
            'win': 'Feature::WIN_PLATFORM',

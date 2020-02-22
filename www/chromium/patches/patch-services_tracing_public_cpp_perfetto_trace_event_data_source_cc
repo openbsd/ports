@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_tracing_public_cpp_perfetto_trace_event_data_source_cc,v 1.1 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-services_tracing_public_cpp_perfetto_trace_event_data_source_cc,v 1.2 2020/02/22 12:33:22 robert Exp $
 
 Index: services/tracing/public/cpp/perfetto/trace_event_data_source.cc
 --- services/tracing/public/cpp/perfetto/trace_event_data_source.cc.orig
 +++ services/tracing/public/cpp/perfetto/trace_event_data_source.cc
-@@ -102,7 +102,7 @@ void WriteMetadataProto(ChromeMetadataPacket* metadata
+@@ -101,7 +101,7 @@ void WriteMetadataProto(ChromeMetadataPacket* metadata
  #endif  // defined(OS_ANDROID) && defined(OFFICIAL_BUILD)
  }
  

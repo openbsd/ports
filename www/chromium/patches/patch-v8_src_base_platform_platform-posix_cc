@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.22 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.23 2020/02/22 12:33:22 robert Exp $
 
 Index: v8/src/base/platform/platform-posix.cc
 --- v8/src/base/platform/platform-posix.cc.orig
 +++ v8/src/base/platform/platform-posix.cc
-@@ -383,7 +383,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
+@@ -427,7 +427,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
  
  // static
  bool OS::HasLazyCommits() {

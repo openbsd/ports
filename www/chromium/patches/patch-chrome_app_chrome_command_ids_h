@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.7 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.8 2020/02/22 12:33:20 robert Exp $
 Index: chrome/app/chrome_command_ids.h
 --- chrome/app/chrome_command_ids.h.orig
 +++ chrome/app/chrome_command_ids.h
-@@ -63,7 +63,7 @@
+@@ -62,7 +62,7 @@
  #define IDC_VISIT_DESKTOP_OF_LRU_USER_2 34049
  #define IDC_VISIT_DESKTOP_OF_LRU_USER_3 34050
  

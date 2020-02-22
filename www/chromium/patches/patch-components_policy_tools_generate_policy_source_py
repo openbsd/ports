@@ -1,17 +1,17 @@
-$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.18 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.19 2020/02/22 12:33:21 robert Exp $
 
 Index: components/policy/tools/generate_policy_source.py
 --- components/policy/tools/generate_policy_source.py.orig
 +++ components/policy/tools/generate_policy_source.py
-@@ -94,6 +94,7 @@ class PolicyDetails:
-           'webview_android',
+@@ -95,6 +95,7 @@ class PolicyDetails:
+           'ios',
            'chrome.win',
            'chrome.linux',
 +          'chrome.openbsd',
            'chrome.mac',
            'chrome.fuchsia',
            'chrome.*',
-@@ -118,7 +119,7 @@ class PolicyDetails:
+@@ -119,7 +120,7 @@ class PolicyDetails:
        if platform.startswith('chrome.'):
          platform_sub = platform[7:]
          if platform_sub == '*':

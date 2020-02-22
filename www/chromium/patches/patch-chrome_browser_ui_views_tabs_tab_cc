@@ -1,21 +1,12 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_cc,v 1.3 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_cc,v 1.4 2020/02/22 12:33:21 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/tab.cc
 --- chrome/browser/ui/views/tabs/tab.cc.orig
 +++ chrome/browser/ui/views/tabs/tab.cc
-@@ -550,7 +550,7 @@ void Tab::OnMouseCaptureLost() {
- void Tab::OnMouseMoved(const ui::MouseEvent& event) {
-   tab_style_->SetHoverLocation(event.location());
-   controller_->OnMouseEventInTab(this, event);
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   MaybeUpdateHoverStatus(event);
- #endif
- }
-@@ -560,7 +560,7 @@ void Tab::OnMouseEntered(const ui::MouseEvent& event) 
- }
+@@ -582,7 +582,7 @@ void Tab::MaybeUpdateHoverStatus(const ui::MouseEvent&
+   if (mouse_hovered_ || !GetWidget()->IsMouseEventsEnabled())
+     return;
  
- void Tab::MaybeUpdateHoverStatus(const ui::MouseEvent& event) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // Move the hit test area for hovering up so that it is not overlapped by tab

@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_common_channel_info_posix_cc,v 1.1 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-chrome_common_channel_info_posix_cc,v 1.2 2020/02/22 12:33:21 robert Exp $
 
 Index: chrome/common/channel_info_posix.cc
 --- chrome/common/channel_info_posix.cc.orig
 +++ chrome/common/channel_info_posix.cc
-@@ -69,7 +69,7 @@ std::string GetChannelSuffixForDataDir() {
+@@ -67,7 +67,7 @@ std::string GetChannelSuffixForDataDir() {
+   }
  }
- #endif  // defined(GOOGLE_CHROME_BUILD)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)

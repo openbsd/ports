@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_native_theme_native_theme_base_cc,v 1.5 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-ui_native_theme_native_theme_base_cc,v 1.6 2020/02/22 12:33:22 robert Exp $
 
 Index: ui/native_theme/native_theme_base.cc
 --- ui/native_theme/native_theme_base.cc.orig
 +++ ui/native_theme/native_theme_base.cc
-@@ -212,7 +212,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
+@@ -230,7 +230,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
      case kCheckbox:
        PaintCheckbox(canvas, state, rect, extra.button, color_scheme);
        break;

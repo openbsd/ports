@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_src_trap-handler_trap-handler_h,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-v8_src_trap-handler_trap-handler_h,v 1.2 2020/02/22 12:33:22 robert Exp $
 
 Index: v8/src/trap-handler/trap-handler.h
 --- v8/src/trap-handler/trap-handler.h.orig
 +++ v8/src/trap-handler/trap-handler.h
-@@ -19,6 +19,8 @@ namespace trap_handler {
+@@ -19,11 +19,15 @@ namespace trap_handler {
  // TODO(eholk): Support trap handlers on other platforms.
  #if V8_TARGET_ARCH_X64 && V8_OS_LINUX && !V8_OS_ANDROID
  #define V8_TRAP_HANDLER_SUPPORTED true
@@ -12,3 +12,10 @@ Index: v8/src/trap-handler/trap-handler.h
  #elif V8_TARGET_ARCH_X64 && V8_OS_WIN
  #define V8_TRAP_HANDLER_SUPPORTED true
  #elif V8_TARGET_ARCH_X64 && V8_OS_MACOSX
+ #define V8_TRAP_HANDLER_SUPPORTED true
+ #elif V8_TARGET_ARCH_X64 && V8_OS_FREEBSD
++#define V8_TRAP_HANDLER_SUPPORTED true
++#elif V8_TARGET_ARCH_X64 && V8_OS_OPENBSD
+ #define V8_TRAP_HANDLER_SUPPORTED true
+ #else
+ #define V8_TRAP_HANDLER_SUPPORTED false

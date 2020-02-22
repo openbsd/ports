@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_os_crypt_os_crypt_h,v 1.5 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-components_os_crypt_os_crypt_h,v 1.6 2020/02/22 12:33:21 robert Exp $
 
 Index: components/os_crypt/os_crypt.h
 --- components/os_crypt/os_crypt.h.orig
@@ -28,7 +28,7 @@ Index: components/os_crypt/os_crypt.h
    // On Linux returns true iff the real secret key (not hardcoded one) is
    // available. On MacOS returns true if Keychain is available (for mock
    // Keychain it returns true if not using locked Keychain, false if using
-@@ -112,7 +112,7 @@ class OSCrypt {
+@@ -131,7 +131,7 @@ class OSCrypt {
    DISALLOW_IMPLICIT_CONSTRUCTORS(OSCrypt);
  };
  
