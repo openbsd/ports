@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/22 22:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2020/02/22 00:31:58 jca Exp $
 
 COMMENT =		Debian Almquist shell, POSIX-compliant
 
 DISTNAME =		dash-0.5.10.2
+REVISION =		0
+
 CATEGORIES =		shells
 
 HOMEPAGE =		http://gondor.apana.org.au/~herbert/dash/
@@ -16,6 +18,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c curses edit
 
 MASTER_SITES =		${HOMEPAGE:=files/}
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 SEPARATE_BUILD =	flavored
 USE_GMAKE =		Yes
