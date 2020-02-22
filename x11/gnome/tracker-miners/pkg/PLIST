@@ -1,38 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/09/15 16:08:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/02/22 10:09:13 ajacoutot Exp $
 @conflict meta-tracker-<2.0
 lib/tracker-miners-2.0/
 lib/tracker-miners-2.0/extract-modules/
-lib/tracker-miners-2.0/extract-modules/libextract-abw.so
-lib/tracker-miners-2.0/extract-modules/libextract-bmp.so
-lib/tracker-miners-2.0/extract-modules/libextract-desktop.so
-lib/tracker-miners-2.0/extract-modules/libextract-dummy.so
-lib/tracker-miners-2.0/extract-modules/libextract-dvi.so
-lib/tracker-miners-2.0/extract-modules/libextract-epub.so
-lib/tracker-miners-2.0/extract-modules/libextract-flac.so
-lib/tracker-miners-2.0/extract-modules/libextract-gif.so
-lib/tracker-miners-2.0/extract-modules/libextract-gstreamer.so
-lib/tracker-miners-2.0/extract-modules/libextract-html.so
-lib/tracker-miners-2.0/extract-modules/libextract-icon.so
-lib/tracker-miners-2.0/extract-modules/libextract-iso.so
-lib/tracker-miners-2.0/extract-modules/libextract-jpeg.so
-lib/tracker-miners-2.0/extract-modules/libextract-mp3.so
-lib/tracker-miners-2.0/extract-modules/libextract-msoffice-xml.so
-lib/tracker-miners-2.0/extract-modules/libextract-msoffice.so
-lib/tracker-miners-2.0/extract-modules/libextract-oasis.so
-lib/tracker-miners-2.0/extract-modules/libextract-pdf.so
-lib/tracker-miners-2.0/extract-modules/libextract-playlist.so
-lib/tracker-miners-2.0/extract-modules/libextract-png.so
-lib/tracker-miners-2.0/extract-modules/libextract-ps.so
-lib/tracker-miners-2.0/extract-modules/libextract-raw.so
-lib/tracker-miners-2.0/extract-modules/libextract-text.so
-lib/tracker-miners-2.0/extract-modules/libextract-tiff.so
-lib/tracker-miners-2.0/extract-modules/libextract-vorbis.so
-lib/tracker-miners-2.0/extract-modules/libextract-xmp.so
-lib/tracker-miners-2.0/extract-modules/libextract-xps.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-abw.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-bmp.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-desktop.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-dummy.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-dvi.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-epub.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-flac.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-gif.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-gstreamer.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-html.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-icon.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-iso.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-jpeg.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-mp3.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-msoffice-xml.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-msoffice.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-oasis.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-pdf.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-playlist.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-png.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-ps.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-raw.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-text.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-tiff.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-vorbis.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-xmp.so
+@so lib/tracker-miners-2.0/extract-modules/libextract-xps.so
 @lib lib/tracker-miners-2.0/libtracker-extract.so.${LIBtracker-extract_VERSION}
 lib/tracker-miners-2.0/writeback-modules/
-lib/tracker-miners-2.0/writeback-modules/libwriteback-gstreamer.so
-lib/tracker-miners-2.0/writeback-modules/libwriteback-xmp.so
+@so lib/tracker-miners-2.0/writeback-modules/libwriteback-gstreamer.so
+@so lib/tracker-miners-2.0/writeback-modules/libwriteback-xmp.so
 @bin libexec/tracker-extract
 @bin libexec/tracker-miner-fs
 @bin libexec/tracker-writeback
@@ -87,6 +87,7 @@ share/locale/lt/LC_MESSAGES/tracker-miners.mo
 share/locale/lv/LC_MESSAGES/tracker-miners.mo
 share/locale/mk/LC_MESSAGES/tracker-miners.mo
 share/locale/ml/LC_MESSAGES/tracker-miners.mo
+share/locale/ms/LC_MESSAGES/tracker-miners.mo
 share/locale/nb/LC_MESSAGES/tracker-miners.mo
 share/locale/nds/LC_MESSAGES/tracker-miners.mo
 share/locale/ne/LC_MESSAGES/tracker-miners.mo

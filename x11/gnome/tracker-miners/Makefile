@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2019/10/19 09:54:09 ajacoutot Exp $
-
-PORTROACH=		skipv:2.2.99.0
+# $OpenBSD: Makefile,v 1.21 2020/02/22 10:09:13 ajacoutot Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		2.3.1
+GNOME_VERSION=		2.3.2
 
 SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
