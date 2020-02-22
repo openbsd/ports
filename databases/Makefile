@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.388 2020/02/04 06:20:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.389 2020/02/22 05:41:14 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -246,7 +246,6 @@
      SUBDIR += sqlite3-odbc
      SUBDIR += sqlite3-tcl
      SUBDIR += sqlitebrowser
-     SUBDIR += sqliteman
      SUBDIR += sqlports
      SUBDIR += sqsh
      SUBDIR += strigi
