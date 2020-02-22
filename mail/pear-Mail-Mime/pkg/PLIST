@@ -1,10 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/02/03 20:36:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/02/22 16:57:08 benoit Exp $
 lib/
 lib/php/
-pear/doc/
-pear/doc/Mail_Mime/
-pear/doc/Mail_Mime/scripts/
-pear/doc/Mail_Mime/scripts/phail.php
 pear/lib/.registry/mail_mime.reg
 pear/lib/Mail/
 pear/lib/Mail/mime.php
@@ -57,3 +53,4 @@ pear/tests/Mail_Mime/tests/test_Bug_8386_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_8541_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_9722_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_GH16.phpt
+pear/tests/Mail_Mime/tests/test_Bug_GH19.phpt
