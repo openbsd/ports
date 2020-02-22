@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/02/21 08:38:38 stsp Exp $
+# $OpenBSD: Makefile,v 1.29 2020/02/22 12:22:37 sthen Exp $
 
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
@@ -20,6 +20,7 @@ MULTI_PACKAGES =	-main -web
 WANTLIB-main =		c curses panel pthread util z
 WANTLIB-wb =		c util z 
 
+MAKE_FLAGS =		CC="${CC}"
 ALL_TARGET =		all web
 INSTALL_TARGET =	install web-install
 
