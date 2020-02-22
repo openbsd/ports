@@ -1,0 +1,16 @@
+$OpenBSD: patch-ui_scrollunload_py,v 1.1 2020/02/22 15:02:05 ajacoutot Exp $
+
+https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1718129
+
+Index: ui/scrollunload.py
+--- ui/scrollunload.py.orig
++++ ui/scrollunload.py
+@@ -120,7 +120,7 @@ class ScrollUnloadView(ScrollView):
+                 self.pc = photocard.PhotoCard(None, self.cur_device.device_uri, self.cur_printer)
+             except Error as e:
+                 QApplication.restoreOverrideCursor()
+-                self.form.FailureUI(self.__tr("An error occured: %s" % e[0]))
++                self.form.FailureUI(self.__tr("An error occured: %s" % e.msg))
+                 self.cleanup(EVENT_PCARD_UNABLE_TO_MOUNT)
+                 return False
+ 

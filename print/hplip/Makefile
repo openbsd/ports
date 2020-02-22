@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2019/12/14 16:46:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2020/02/22 15:02:05 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -13,12 +13,24 @@ V=			3.19.12
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
+# https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
+MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/master/f/
+PATCHFILES=		0026-Call-QMessageBox-constructors-of-PyQT5-with-the-corr.patch:0
+PATCH_DIST_STRIP=	-p1
+
 PKGNAME-main=		${DISTNAME}
 PKGNAME-common=		hplip-common-${V}
 PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
+
+REVISION-main=		0
+REVISION-common=	0
+REVISION-hpaio=		0
+REVISION-hpcups=	0
+REVISION-hpijs=		0
+REVISION-gui=		0
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -41,6 +53,7 @@ MULTI_PACKAGES= 	-main -common -hpaio -hpcups -hpijs -gui
 MODULES=		lang/python
 
 MODPY_RUNDEP=		No
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # createPPD.sh: make -f Makefile_dat2drv
 USE_GMAKE=		Yes
@@ -64,10 +77,10 @@ LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
-			devel/py-gobject \
-			print/py-reportlab \
-			x11/dbus-python \
-			graphics/py-Pillow \
+			devel/py-gobject3${MODPY_FLAVOR} \
+			print/py-reportlab${MODPY_FLAVOR} \
+			x11/dbus-python${MODPY_FLAVOR} \
+			graphics/py-Pillow${MODPY_FLAVOR} \
 			print/hplip,-hpcups \
 			print/hplip,-hpaio
 
@@ -87,6 +100,7 @@ WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud netsnmp nettle p11-kit idn2
 WANTLIB-hpaio += sane tasn1 usb-1.0 z hpdiscovery iconv intl unistring
+WANTLIB-hpaio += lzma xml2
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -122,7 +136,7 @@ RUN_DEPENDS-hpijs +=	print/cups-filters
 ### -gui
 WANTLIB-gui +=		# empty
 
-RUN_DEPENDS-gui=	x11/py-qt4 \
+RUN_DEPENDS-gui=	x11/py-qt5${MODPY_FLAVOR} \
 			print/hplip,-main \
 			devel/xdg-utils \
 			devel/desktop-file-utils \
@@ -148,6 +162,8 @@ CONFIGURE_ARGS=		--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
 			--with-cupsfilterdir=${PREFIX}/libexec/cups/filter \
 			--with-icondir=${PREFIX}/share/applications \
 			--with-docdir=${PREFIX}/share/doc/hplip \
+			--disable-qt4 \
+			--enable-qt5 \
 			--enable-hpijs-install \
 			--enable-foomatic-ppd-install \
 			--enable-foomatic-drv-install

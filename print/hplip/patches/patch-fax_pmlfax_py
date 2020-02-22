@@ -1,0 +1,33 @@
+$OpenBSD: patch-fax_pmlfax_py,v 1.1 2020/02/22 15:02:05 ajacoutot Exp $
+
+From Fedora:
+python3 - recent HP release removed encoding/decoding to utf-8 in fax/pmlfax.py -
+that results in text string going into translate function in base/utils.py, which
+expects binary string because of parameters. Remove this patch if base/utils.py
+code gets fixed.
+
+Index: fax/pmlfax.py
+--- fax/pmlfax.py.orig
++++ fax/pmlfax.py
+@@ -143,8 +143,8 @@ class PMLFaxDevice(FaxDevice):
+ 
+     def getPhoneNum(self):
+         if PY3:
+-            data = utils.printable(self.getPML(pml.OID_FAX_LOCAL_PHONE_NUM)[1])
+-            return data
++            data = utils.printable(self.getPML(pml.OID_FAX_LOCAL_PHONE_NUM)[1].encode('utf-8'))
++            return data.decode('utf-8')
+         else:
+             return utils.printable(self.getPML(pml.OID_FAX_LOCAL_PHONE_NUM)[1])
+     phone_num = property(getPhoneNum, setPhoneNum, doc="OID_FAX_LOCAL_PHONE_NUM")
+@@ -155,8 +155,8 @@ class PMLFaxDevice(FaxDevice):
+ 
+     def getStationName(self):
+         if PY3:
+-            data = utils.printable(self.getPML(pml.OID_FAX_STATION_NAME)[1])
+-            return data
++            data = utils.printable(self.getPML(pml.OID_FAX_STATION_NAME)[1].encode('utf-8'))
++            return data.decode('utf-8')
+         else:
+             return utils.printable(self.getPML(pml.OID_FAX_STATION_NAME)[1])
+ 

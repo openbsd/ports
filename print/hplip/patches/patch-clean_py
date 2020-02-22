@@ -1,0 +1,16 @@
+$OpenBSD: patch-clean_py,v 1.1 2020/02/22 15:02:05 ajacoutot Exp $
+
+https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1718129
+
+Index: clean.py
+--- clean.py.orig
++++ clean.py
+@@ -182,7 +182,7 @@ try:
+                         log.error("Cleaning not needed or supported on this device.")
+ 
+                 except Error as e:
+-                    log.error("An error occured: %s" % e[0])
++                    log.error("An error occured: %s" % e.msg)
+ 
+             else:
+                 log.error("Device is busy or in an error state. Please check device and try again.")

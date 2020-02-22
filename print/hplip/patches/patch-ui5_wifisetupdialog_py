@@ -1,0 +1,25 @@
+$OpenBSD: patch-ui5_wifisetupdialog_py,v 1.1 2020/02/22 15:02:05 ajacoutot Exp $
+
+https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1718129
+
+Index: ui5/wifisetupdialog.py
+--- ui5/wifisetupdialog.py.orig
++++ ui5/wifisetupdialog.py
+@@ -259,7 +259,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
+             try:
+                 self.dev = device.Device(self.device_uri)
+             except Error as e:
+-                FailureUI(self, self.__tr("<b>Error opening device:</b><p>%s</p><p>(%s)</p>") %(self.device_uri, str(e[0])))
++                FailureUI(self, self.__tr("<b>Error opening device:</b><p>%s</p><p>(%s)</p>") %(self.device_uri, str(e.msg)))
+ 
+                 if self.dev is not None:
+                     self.dev.close()
+@@ -840,7 +840,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
+ 
+ 
+     def showIOError(self, e):
+-        FailureUI(self, self.__tr("<b>An I/O error occurred.</b><p>Please check the USB connection to your printer and try again.</p>(%s)" % str(e[0])))
++        FailureUI(self, self.__tr("<b>An I/O error occurred.</b><p>Please check the USB connection to your printer and try again.</p>(%s)" % str(e.msg)))
+ 
+         if self.dev is not None:
+             self.dev.close()
