@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2019/11/19 10:42:38 sthen Exp $
+$OpenBSD: README,v 1.4 2020/02/22 10:39:56 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -16,7 +16,8 @@ conditions.
 
 If you have decided to accept the risks of using this software, it is
 advised to reboot into *single user mode* ("boot -s"), mount necessary
-filesystems (mount -a -t nonfs), flash and reboot.
+filesystems (mount -a -t nonfs), "ldconfig -m /usr/local/lib", flash
+and reboot.
 
 In single user mode, the system securelevel(8) does allow access to
 write directly to system memory, and importantly network services and
@@ -36,3 +37,6 @@ In some cases extra flags are needed to bypass warnings; see this URL
 for further information:
 
 https://github.com/pcengines/apu2-documentation/blob/master/docs/firmware_flashing.md
+
+The setpci command mentioned in that page, if needed, is in the
+pciutils package.
