@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/16 23:57:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/02/22 21:06:28 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/OpenSSL/
@@ -9,6 +9,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/OpenSSL/
 ${P5ARCH}/auto/Crypt/OpenSSL/Bignum/
-${P5ARCH}/auto/Crypt/OpenSSL/Bignum/Bignum.so
+@so ${P5ARCH}/auto/Crypt/OpenSSL/Bignum/Bignum.so
 @man man/man3p/Crypt::OpenSSL::Bignum.3p
 @man man/man3p/Crypt::OpenSSL::Bignum::CTX.3p
