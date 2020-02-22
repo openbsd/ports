@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.101 2020/02/16 08:42:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.102 2020/02/22 09:31:27 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -346,8 +346,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/transferconfig
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/transferconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/utils.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/utils.pyc
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3endpoint.py
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3endpoint.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3errormsg.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3errormsg.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3events.py
@@ -523,6 +521,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-api.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-integration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-route.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/appconfig/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/appconfig/get-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/appconfig/list-applications.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/appconfig/list-configuration-profiles.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/appconfig/list-environments.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/delete-scaling-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/delete-scheduled-action.rst
