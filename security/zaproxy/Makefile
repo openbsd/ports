@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/02/22 00:14:21 jca Exp $
 
 COMMENT =		web application security tool
 
-VERSION =		2.7.0
-REVISION =		2
+VERSION =		2.9.0
 DISTNAME =		ZAP_${VERSION}_Linux
 PKGNAME =		zaproxy-${VERSION}
 
@@ -14,8 +13,7 @@ HOMEPAGE =		https://www.owasp.org/index.php/ZAP
 # Apache v2.0 License
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/zaproxy/zaproxy/releases/download/${VERSION}/
-MASTER_SITES +=		${MASTER_SITE_PACKETSTORM:=web/}
+MASTER_SITES =		https://github.com/zaproxy/zaproxy/releases/download/v${VERSION}/
 
 MODULES =               java
 MODJAVA_VER =           1.8+
