@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2020/02/21 15:32:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2020/02/22 00:54:02 sthen Exp $
 
 COMMENT =	powerful and simple Qt editor
 
 GH_ACCOUNT =	psemiletov
 GH_PROJECT =	tea-qt
 GH_TAGNAME =	50.0.4
+PKGNAME =	teaqt-${GH_TAGNAME}
 
 CATEGORIES =	editors x11
 
