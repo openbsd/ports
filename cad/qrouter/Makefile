@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/15 17:24:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/22 11:03:31 sthen Exp $
+USE_LLD=No
 
 COMMENT =	multi-level, over-the-cell maze router for VLSI design
-DISTNAME =	qrouter-1.4.76
+DISTNAME =	qrouter-1.4.77
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	cad
 
@@ -21,8 +22,8 @@ LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 
 USE_GMAKE =	Yes
 
-CONFIGURE_STYLE =	autoconf no-autoheader
-AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		X11BASE="${X11BASE}"
 CONFIGURE_ARGS +=	--with-distdir=${PREFIX} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR}
@@ -31,8 +32,5 @@ CONFIGURE_ARGS +=	--with-distdir=${PREFIX} \
 CFLAGS +=	-Wno-return-type
 
 NO_TEST =	Yes
-
-post-patch:
-	@${SUBST_CMD} ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
