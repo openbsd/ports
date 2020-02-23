@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:51:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2020/02/23 18:39:51 sthen Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		3.0.26
+V=		3.0.28
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
-REVISION=	0
 
-HOMEPAGE=	http://www.privoxy.org/
+HOMEPAGE=	https://www.privoxy.org/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -20,34 +19,25 @@ EXTRACT_SUFX=	-src.tar.gz
 
 NO_TEST=	Yes
 
+USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
 
 LIB_DEPENDS=	devel/pcre
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
+CONFIGURE_ARGS=	--with-docbook=no
 CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoheader
 
-# make install is broken
-do-install:
-	@${SUBST_CMD} ${WRKSRC}/config
-	${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
-	cd ${WRKSRC}/tools && ${INSTALL_SCRIPT} * ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/privoxy.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/privoxy
-.for _f in AUTHORS ChangeLog README LICENSE
-	${INSTALL_DATA} ${WRKSRC}/${_f} ${PREFIX}/share/doc/privoxy
-.endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/privoxy
-	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/examples/privoxy
-	${INSTALL_DATA} ${WRKSRC}/default.filter ${PREFIX}/share/examples/privoxy
-	${INSTALL_DATA} ${WRKSRC}/user.filter ${PREFIX}/share/examples/privoxy
-	${INSTALL_DATA} ${WRKSRC}/*.action ${PREFIX}/share/examples/privoxy
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/privoxy/templates
-	${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/share/examples/privoxy/templates
+FAKE_FLAGS=	CONF_DEST=${PREFIX}/share/examples/privoxy
+
+post-install:
+	${SUBST_CMD} ${PREFIX}/share/examples/privoxy/config
+	rm ${PREFIX}/share/examples/privoxy/config.beforesubst
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/* ${PREFIX}/bin
 
 .include <bsd.port.mk>
