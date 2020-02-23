@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.489 2020/02/22 12:34:34 robert Exp $
+# $OpenBSD: Makefile,v 1.490 2020/02/23 16:50:50 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -324,6 +324,7 @@ do-install:
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 .if ${FLAVOR:Melectron}
+	${INSTALL_DATA} ${BUILDDIR}/natives_blob.bin ${PREFIX}/${DIST_TARGET_DIR}
 	cd ${BUILDDIR} && \
 		cp chromedriver.zip chromedriver-v${ELECTRON_V}-openbsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
 		cp dist.zip electron-v${ELECTRON_V}-openbsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
