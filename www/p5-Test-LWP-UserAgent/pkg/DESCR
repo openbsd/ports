@@ -1,0 +1,5 @@
+This module is a subclass of LWP::UserAgent which overrides a few key low-level
+methods that are concerned with actually sending your request over the network,
+allowing an interception of that request and simulating a particular response.
+This greatly facilitates testing of client networking code where the server
+follows a known protocol.
