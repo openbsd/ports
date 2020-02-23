@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2020/01/04 02:53:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/23 20:59:02 bcallah Exp $
 
 COMMENT =	simple console gopher client
-DISTNAME =	sacc-v1.00
-PKGNAME =	${DISTNAME:S/-v/-/}
-REVISION =	0
+DISTNAME =	sacc-1.01
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	net
 
