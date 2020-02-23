@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/02/23 22:59:22 jca Exp $
 
 COMMENT=		IPC library used by GnuPG and gpgme
 
-DISTNAME=		libassuan-2.5.1
-REVISION=		0
+DISTNAME=		libassuan-2.5.3
 
 SHARED_LIBS +=  assuan            2.1      # 8.1
 
