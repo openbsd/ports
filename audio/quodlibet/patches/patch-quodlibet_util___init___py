@@ -1,14 +1,14 @@
-$OpenBSD: patch-quodlibet_util___init___py,v 1.2 2019/04/30 21:52:44 sthen Exp $
+$OpenBSD: patch-quodlibet_util___init___py,v 1.3 2020/02/23 19:21:46 sthen Exp $
 
 Index: quodlibet/util/__init__.py
 --- quodlibet/util/__init__.py.orig
 +++ quodlibet/util/__init__.py
-@@ -34,14 +34,14 @@ from quodlibet.util.dprint import print_d, print_, pri
+@@ -33,14 +33,14 @@ from quodlibet.util.dprint import print_d, print_, pri
  from .misc import cached_func, get_module_dir, get_ca_file, \
      NamedTemporaryFile, cmp
  from .environment import is_plasma, is_unity, is_enlightenment, \
--    is_linux, is_windows, is_wine, is_osx, is_flatpak
-+    is_linux, is_openbsd, is_windows, is_wine, is_osx, is_flatpak
+-    is_linux, is_windows, is_wine, is_osx, is_flatpak, matches_flatpak_runtime
++    is_linux, is_openbsd, is_windows, is_wine, is_osx, is_flatpak, matches_flatpak_runtime
  from .enum import enum
  from .i18n import _, C_
  
@@ -17,6 +17,6 @@ Index: quodlibet/util/__init__.py
  cached_func, enum, print_w, print_exc, is_plasma, is_unity, is_enlightenment,
 -is_linux, is_windows, is_wine, is_osx, get_module_dir, get_ca_file,
 +is_linux, is_openbsd, is_windows, is_wine, is_osx, get_module_dir, get_ca_file,
- NamedTemporaryFile, is_flatpak, cmp
+ NamedTemporaryFile, is_flatpak, cmp, matches_flatpak_runtime
  
  

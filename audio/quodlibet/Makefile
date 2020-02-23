@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2020/02/23 19:21:46 sthen Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
-MODPY_EGG_VERSION= 4.2.1
+MODPY_EGG_VERSION= 4.3.0
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
 PORTROACH=	skipv:release-${MODPY_EGG_VERSION}
-REVISION=	2
 
 CATEGORIES=	audio
 
@@ -31,7 +30,6 @@ RUN_DEPENDS+=	devel/desktop-file-utils \
 		multimedia/gstreamer1/plugins-good \
 		multimedia/gstreamer1/plugins-libav \
 		multimedia/xine-lib \
-		x11/gtksourceview3 \
 		x11/gtk+3,-guic
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
