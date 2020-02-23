@@ -1,0 +1,19 @@
+$OpenBSD: patch-autogen_sh,v 1.3 2020/02/23 16:58:39 ajacoutot Exp $
+
+Use our actual autoconf and automake versions to unbreak build when
+autoconf-2.63 is installed but automake-1.11 is not.
+
+Index: autogen.sh
+--- autogen.sh.orig
++++ autogen.sh
+@@ -17,8 +17,8 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+ # USA.
+ 
+-AM_VERSION=1.11
+-AC_VERSION=2.63
++AM_VERSION=${AUTOMAKE_VERSION}
++AC_VERSION=${AUTOCONF_VERSION}
+ 
+ run_versioned() {
+     local P
