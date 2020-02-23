@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2020/01/06 16:32:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2020/02/23 16:58:18 kmos Exp $
 
 COMMENT=		simple note editor
 
@@ -19,6 +19,9 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+# Must specify C99 for base-gcc
+CFLAGS +=		-std=c99
 
 LIB_DEPENDS=		databases/evolution-data-server \
 			x11/gnome/online-accounts \
