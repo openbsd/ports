@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/04/28 09:03:13 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/02/23 08:34:12 kirby Exp $
 @bin bin/rawtherapee
 @bin bin/rawtherapee-cli
 @man man/man1/rawtherapee.1
@@ -37,6 +37,7 @@ share/rawtherapee/dcpprofiles/Canon EOS 6D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 7D Mark II.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 7D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS D60.dcp
+share/rawtherapee/dcpprofiles/Canon EOS RP.dcp
 share/rawtherapee/dcpprofiles/Canon EOS-1D Mark III.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot G10.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot G12.dcp
@@ -47,7 +48,10 @@ share/rawtherapee/dcpprofiles/FUJIFILM GFX 50R.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-Pro2.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-S1.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T1.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-T10.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-T2.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X-T20.dcp
+share/rawtherapee/dcpprofiles/FUJIFILM X-T30.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X100S.dcp
 share/rawtherapee/dcpprofiles/FUJIFILM X100T.dcp
 share/rawtherapee/dcpprofiles/Fujifilm FinePix S9500.dcp
@@ -99,13 +103,17 @@ share/rawtherapee/dcpprofiles/Panasonic DMC-G3.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-G5.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-GH1.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-GH2.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-GX7.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-GX85.dcp
 share/rawtherapee/dcpprofiles/Pentax K-r.dcp
 share/rawtherapee/dcpprofiles/Pentax K200D.dcp
+share/rawtherapee/dcpprofiles/RICOH GR III.dcp
 share/rawtherapee/dcpprofiles/RICOH PENTAX K-1.dcp
 share/rawtherapee/dcpprofiles/RICOH PENTAX K-3.dcp
 share/rawtherapee/dcpprofiles/SONY DSLR-A580.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-6000.dcp
+share/rawtherapee/dcpprofiles/SONY ILCE-6300.dcp
+share/rawtherapee/dcpprofiles/SONY ILCE-6500.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-7M2.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-7M3.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-7RM3.dcp
@@ -376,6 +384,7 @@ share/rawtherapee/images/power-on-small.svg
 share/rawtherapee/images/preferences.svg
 share/rawtherapee/images/profile-filled.svg
 share/rawtherapee/images/profile-partial.svg
+share/rawtherapee/images/questionmark.svg
 share/rawtherapee/images/rawtherapee-logo-128.png
 share/rawtherapee/images/rawtherapee-logo-16.png
 share/rawtherapee/images/rawtherapee-logo-24.png
@@ -409,6 +418,7 @@ share/rawtherapee/images/save.svg
 share/rawtherapee/images/saved-no-small.svg
 share/rawtherapee/images/saved-yes-small.svg
 share/rawtherapee/images/splash.svg
+share/rawtherapee/images/splash_template.svg
 share/rawtherapee/images/square-toggle-black-off-narrow.svg
 share/rawtherapee/images/square-toggle-black-on-narrow.svg
 share/rawtherapee/images/square-toggle-blue-off-narrow.svg
@@ -506,6 +516,7 @@ share/rawtherapee/languages/Portugues (Brasil)
 share/rawtherapee/languages/README
 share/rawtherapee/languages/Russian
 share/rawtherapee/languages/Serbian (Cyrilic Characters)
+share/rawtherapee/languages/Slovenian
 share/rawtherapee/languages/Swedish
 share/rawtherapee/languages/default
 share/rawtherapee/options
