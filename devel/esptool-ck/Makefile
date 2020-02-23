@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.2 2020/02/22 16:26:38 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/23 17:15:26 tracey Exp $
 
 COMMENT =		firmware creation helper for esp8266 chips
 V =			0.4.13
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/basepr1me/esptool-ck
 
-#GPLv2
+# GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
