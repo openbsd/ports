@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1939 2020/02/19 17:14:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1940 2020/02/23 17:35:29 tracey Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1431,6 +1431,7 @@
      SUBDIR += py-entrypoints
      SUBDIR += py-entrypoints,python3
      SUBDIR += py-enum34
+     SUBDIR += py-esptool,python3
      SUBDIR += py-execnet
      SUBDIR += py-execnet,python3
      SUBDIR += py-extras
