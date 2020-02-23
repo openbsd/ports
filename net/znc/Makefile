@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2020/02/23 09:13:54 ajacoutot Exp $
 
 COMMENT=	advanced IRC bouncer
 
-DISTNAME=	znc-1.7.4
+DISTNAME=	znc-1.7.5
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -19,7 +19,6 @@ MODULES=	devel/cmake
 
 COMPILER=	base-clang ports-gcc
 
-SEPARATE_BUILD=	Yes
 CONFIGURE_ARGS+=	-DWANT_CYRUS=NO \
 			-DWANT_I18N=NO \
 			-DWANT_ICU=NO
