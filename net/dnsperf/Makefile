@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/22 13:21:16 sthen Exp $
-
-BROKEN = needs further work to fix with new BIND
+# $OpenBSD: Makefile,v 1.6 2020/02/23 11:59:55 sthen Exp $
 
 COMMENT =	DNS performance testing tools
 
