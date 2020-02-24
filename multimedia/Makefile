@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2020/01/27 04:54:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.120 2020/02/24 23:23:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -26,8 +26,10 @@
      SUBDIR += libass
      SUBDIR += libbdplus
      SUBDIR += libbluray
+     SUBDIR += libde265
      SUBDIR += libdv
      SUBDIR += libdvdnav
+     SUBDIR += libheif
      SUBDIR += libmatroska
      SUBDIR += libmms
      SUBDIR += libmp4v2
