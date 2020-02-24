@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/24 23:22:56 sthen Exp $
+@bin bin/heif-convert
+@bin bin/heif-enc
+@bin bin/heif-info
+@bin bin/heif-thumbnailer
+include/libheif/
+include/libheif/heif.h
+include/libheif/heif_cxx.h
+include/libheif/heif_plugin.h
+include/libheif/heif_version.h
+@static-lib lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.a
+lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.la
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.so
+@static-lib lib/libheif.a
+lib/libheif.la
+@lib lib/libheif.so.${LIBheif_VERSION}
+lib/pkgconfig/libheif.pc
+@man man/man1/heif-convert.1
+@man man/man1/heif-enc.1
+@man man/man1/heif-info.1
+@man man/man1/heif-thumbnailer.1
+share/mime/packages/heif.xml
+share/thumbnailers/heif.thumbnailer
+@tag update-mime-database
+@tag update-gdk-pixbuf
