@@ -1,0 +1,2 @@
+The open62541 is a library implementing an OPC UA client and server.
+This module provides access to the C functionality from Perl programs.

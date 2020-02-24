@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/24 15:09:23 bluhm Exp $
+${P5ARCH}/
+${P5ARCH}/OPCUA/
+${P5ARCH}/OPCUA/Open62541.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/OPCUA/
+${P5ARCH}/auto/OPCUA/Open62541/
+@so ${P5ARCH}/auto/OPCUA/Open62541/Open62541.so
+@man man/man3p/OPCUA::Open62541.3p
