@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2020/02/11 10:36:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.193 2020/02/24 15:11:09 bluhm Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -73,6 +73,7 @@
      SUBDIR += p5-Finance-QuoteHist
      SUBDIR += p5-I18N-Charset
      SUBDIR += p5-Lingua-Romana-Perligata
+     SUBDIR += p5-OPCUA-Open62541
      SUBDIR += p5-Spreadsheet-ParseExcel
      SUBDIR += p5-Spreadsheet-WriteExcel
      SUBDIR += p5-Term-Animation
