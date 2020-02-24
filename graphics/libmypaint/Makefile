@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/24 22:44:45 sthen Exp $
 
 COMMENT =	library for making brushstrokes
 
-V =		1.3.0
+V =		1.5.1
 DISTNAME =	libmypaint-$V
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS +=		mypaint-1.3	0.0 # 0.0
+SHARED_LIBS +=		mypaint-1.5	0.0 # 0.0
 SHARED_LIBS +=		mypaint-gegl	0.0 # 0.0
 SHARED_LIBS +=		mypaint		0.0 # 0.0
 
@@ -17,8 +17,8 @@ HOMEPAGE =	http://mypaint.org/
 # ISC
 PERMIT_PACKAGE = Yes
 
-WANTLIB += babl-0.1 ffi gegl-0.3 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 iconv intl json-c json-glib-1.0
+WANTLIB += babl-0.1 ffi gegl-0.4 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 iconv intl json-c json-glib-1.0 lcms2
 WANTLIB += m pcre pthread z
 
 MASTER_SITES =	https://github.com/mypaint/libmypaint/releases/download/v$V/
@@ -37,7 +37,7 @@ BUILD_DEPENDS +=	devel/gobject-introspection
 LIB_DEPENDS +=		devel/json-c \
 			devel/glib2 \
 			graphics/babl \
-			graphics/gegl03
+			graphics/gegl04
 
 RUN_DEPENDS +=		devel/gobject-introspection \
 			graphics/mypaint-brushes
