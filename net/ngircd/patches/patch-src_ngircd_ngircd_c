@@ -1,7 +1,25 @@
-$OpenBSD: patch-src_ngircd_ngircd_c,v 1.4 2014/12/03 10:32:18 jasper Exp $
---- src/ngircd/ngircd.c.orig	Mon Jul 14 13:26:07 2014
-+++ src/ngircd/ngircd.c	Tue Dec  2 20:05:31 2014
-@@ -563,7 +563,7 @@ Setup_FDStreams(int fd)
+$OpenBSD: patch-src_ngircd_ngircd_c,v 1.5 2020/02/24 10:30:16 solene Exp $
+Index: src/ngircd/ngircd.c
+--- src/ngircd/ngircd.c.orig
++++ src/ngircd/ngircd.c
+@@ -259,6 +259,16 @@ main(int argc, const char *argv[])
+ 			exit(1);
+ 		}
+ 
++		/* XXX using a PID file needs cpath to unlink() later */
++		if(Conf_PidFile[0]) {
++			if ( pledge("stdio inet dns rpath proc getpw cpath", NULL) == -1)
++				err(1, "pledge");
++		}
++		else {
++			if ( pledge("stdio inet dns rpath proc getpw", NULL) == -1)
++				err(1, "pledge");
++		}
++
+ 		/* Initialize modules, part II: these functions are eventually
+ 		 * called with already dropped privileges ... */
+ 		Channel_Init();
+@@ -563,7 +573,7 @@ Setup_FDStreams(int fd)
  #if !defined(SINGLE_USER_OS)
  
  /**
@@ -10,7 +28,7 @@ $OpenBSD: patch-src_ngircd_ngircd_c,v 1.4 2014/12/03 10:32:18 jasper Exp $
   *
   * @param uid	User ID
   * @param gid	Group ID
-@@ -587,7 +587,7 @@ NGIRCd_getNobodyID(uid_t *uid, gid_t *gid )
+@@ -587,7 +597,7 @@ NGIRCd_getNobodyID(uid_t *uid, gid_t *gid )
  	}
  #endif
  
@@ -19,7 +37,7 @@ $OpenBSD: patch-src_ngircd_ngircd_c,v 1.4 2014/12/03 10:32:18 jasper Exp $
  	if (!pwd)
  		return false;
  
-@@ -703,11 +703,11 @@ NGIRCd_Init(bool NGIRCd_NoDaemon)
+@@ -703,11 +713,11 @@ NGIRCd_Init(bool NGIRCd_NoDaemon)
  	if (Conf_UID == 0) {
  		pwd = getpwuid(0);
  		Log(LOG_INFO,

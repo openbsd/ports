@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ngircd_proc_c,v 1.1 2020/02/24 10:30:16 solene Exp $
+
+Index: src/ngircd/proc.c
+--- src/ngircd/proc.c.orig
++++ src/ngircd/proc.c
+@@ -76,6 +76,9 @@ Proc_Fork(PROC_STAT *proc, int *pipefds, void (*cbfunc
+ 		return -1;
+ 	case 0:
+ 		/* New child process: */
++		/* XXX no PAM, fork only for DNS */
++		if (pledge("stdio dns", NULL) == -1)   
++			err(1, "pledge"); 
+ #ifdef HAVE_ARC4RANDOM_STIR
+ 		arc4random_stir();
+ #endif
