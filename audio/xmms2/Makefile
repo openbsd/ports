@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/07/17 14:49:20 danj Exp $
+# $OpenBSD: Makefile,v 1.52 2020/02/24 09:32:11 jca Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -78,10 +78,10 @@ post-configure:
 	sed -i "s/SONAME_ST.*/SONAME_ST=''/" ${WRKSRC}/_build_/c4che/_cache.py
 
 do-build:
-	cd ${WRKSRC} && ${MODPY_BIN} ./waf build
+	cd ${WRKSRC} && ${MODPY_BIN} ./waf build -v -j${MAKE_JOBS}
 
 do-install:
-	cd ${WRKSRC} && ${MODPY_BIN} ./waf install --without-ldconfig
+	cd ${WRKSRC} && ${MODPY_BIN} ./waf install -v -j${MAKE_JOBS} --without-ldconfig
 	/usr/bin/pod2man ${PREFIX}/${P5ARCH}/Audio/XMMSClient.pod > ${WRKDIR}/Audio::XMMSClient.3p
 	/usr/bin/pod2man ${PREFIX}/${P5ARCH}/Audio/XMMSClient/Glib.pm > ${WRKDIR}/Audio::XMMSClient::Glib.3p
 	/usr/bin/pod2man ${PREFIX}/${P5ARCH}/Audio/XMMSClient/Collection.pod > ${WRKDIR}/Audio::XMMSClient::Collection.3p
