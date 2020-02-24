@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.45 2019/12/20 13:18:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2020/02/24 18:41:19 ajacoutot Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
-VER=		3.2.1
+VER=		3.3
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
-REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/
 
-SHARED_LIBS=	x265	20.0
+SHARED_LIBS=	x265	21.0
 
 HOMEPAGE=	http://x265.org/
 
@@ -24,6 +23,7 @@ WRKSRC=		${WRKDIST}/source
 
 MODULES=	devel/cmake
 
+# XXX requires __sync builtins
 COMPILER=	base-clang ports-gcc
 
 .if ${MACHINE_ARCH} == "amd64"
@@ -33,16 +33,6 @@ BUILD_DEPENDS+=	devel/nasm
 CONFIGURE_ARGS+=-DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2" \
 		-DENABLE_PIC=On \
 		-DENABLE_TESTS=On
-
-.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "alpha" || \
-    ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" || \
-    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "mips64" || \
-    ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "powerpc" || \
-    ${MACHINE_ARCH} == "sparc64"
-CONFIGURE_ARGS+=-DNO_ATOMICS=Off
-.else
-CONFIGURE_ARGS+=-DNO_ATOMICS=On
-.endif
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=-DENABLE_ASSEMBLY=Off

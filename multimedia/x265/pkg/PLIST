@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/04 05:37:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/24 18:41:19 ajacoutot Exp $
 @bin bin/x265
 include/x265.h
 include/x265_config.h
-lib/libx265.a
+@static-lib lib/libx265.a
 @lib lib/libx265.so.${LIBx265_VERSION}
 lib/pkgconfig/x265.pc
