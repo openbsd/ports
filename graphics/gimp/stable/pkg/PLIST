@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2020/02/24 22:45:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.46 2020/02/24 23:24:40 sthen Exp $
 bin/gimp
 @bin bin/gimp-2.10
 bin/gimp-console
@@ -373,6 +373,8 @@ lib/gimp/2.0/plug-ins/file-glob/
 @bin lib/gimp/2.0/plug-ins/file-glob/file-glob
 lib/gimp/2.0/plug-ins/file-header/
 @bin lib/gimp/2.0/plug-ins/file-header/file-header
+lib/gimp/2.0/plug-ins/file-heif/
+@bin lib/gimp/2.0/plug-ins/file-heif/file-heif
 lib/gimp/2.0/plug-ins/file-html-table/
 @bin lib/gimp/2.0/plug-ins/file-html-table/file-html-table
 lib/gimp/2.0/plug-ins/file-ico/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.132 2020/02/24 22:59:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.133 2020/02/24 23:24:40 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.18
-REVISION =	0
+REVISION =	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -29,16 +29,16 @@ WANTLIB += Half-2_4 ICE Iex-2_4 IexMath-2_4 IlmImf-2_4 IlmThread-2_4
 WANTLIB += Imath-2_4 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xmu Xpm Xrandr Xrender Xt aa atk-1.0 avahi-client
 WANTLIB += avahi-common babl-0.1 bz2 c cairo cairo-gobject cups
-WANTLIB += curses dbus-1 execinfo exiv2 expat ffi fontconfig freetype
-WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4 gexiv2
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
-WANTLIB += graphite2 gs gtk-x11-2.0 harfbuzz hogweed iconv idn2
-WANTLIB += ijs intl jbig2dec jpeg json-c json-glib-1.0 lcms lcms2
-WANTLIB += lzma m mng mypaint-1.5 nettle openjp2 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
-WANTLIB += poppler-glib rsvg-2 tasn1 tiff unistring webp webpdemux
-WANTLIB += webpmux wmf-0.2 wmflite-0.2 xcb xcb-render xcb-shm
-WANTLIB += xml2 z zstd
+WANTLIB += curses dbus-1 de265 execinfo exiv2 expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4
+WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB += graphite2 gs gtk-x11-2.0 harfbuzz heif hogweed iconv
+WANTLIB += idn2 ijs intl jbig2dec jpeg json-c json-glib-1.0 lcms
+WANTLIB += lcms2 lzma m mng mypaint-1.5 nettle openjp2 p11-kit
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png poppler poppler-glib rsvg-2 tasn1 tiff unistring
+WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
+WANTLIB += xcb-render xcb-shm xml2 z zstd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -84,6 +84,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		graphics/openexr \
 		graphics/png \
 		graphics/tiff \
+		multimedia/libheif \
 		print/ghostscript/gnu \
 		print/poppler \
 		x11/gnome/librsvg \
@@ -100,7 +101,6 @@ CONFIGURE_ARGS+= \
 		--enable-gimp-console \
 		--with-pdbgen \
 		--without-alsa \
-		--without-libheif \
 		--without-webkit
 
 post-install:
