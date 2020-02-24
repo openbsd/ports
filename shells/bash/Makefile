@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.116 2020/02/13 21:44:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.117 2020/02/24 20:58:06 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-5.0
 PKGNAME=	bash-5.0.16
+REVISION=	0
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -22,6 +23,8 @@ PATCHFILES+=	bash50-$i:0
 
 LIB_DEPENDS=	devel/gettext,-runtime
 WANTLIB=	c curses iconv intl
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 ALL_TARGET=	all loadables
 CONFIGURE_STYLE=gnu
