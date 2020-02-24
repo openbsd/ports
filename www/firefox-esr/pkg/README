@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2019/09/19 19:15:55 landry Exp $
+$OpenBSD: README,v 1.5 2020/02/24 13:31:53 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -55,7 +55,7 @@ D-BUS
 For proper integration with various desktop-oriented components, firefox
 needs a session bus instance running.
 If you're not running a desktop environment that takes care of it,
-refer to /usr/local/share/doc/pkg-readmes/dbus-* to configure your
+refer to /usr/local/share/doc/pkg-readmes/dbus to configure your
 session startup script to start one.
 Without a session bus running, the port is faking one (see
 https://bugzilla.mozilla.org/show_bug.cgi?id=1466593), but GLIB might still try
