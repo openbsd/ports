@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/02/24 07:26:59 jasper Exp $
 
 COMMENT =		CPU, RAM memory, and load monitor for use with tmux(1)
 
 GH_ACCOUNT =		thewtex
 GH_PROJECT =		tmux-mem-cpu-load
 GH_TAGNAME =		v3.4.0
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		sysutils
 
