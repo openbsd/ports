@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/24 22:15:17 sthen Exp $
 
 COMMENT =	brushes used by software using libmypaint
 
-GH_ACCOUNT =	Jehan
-GH_PROJECT =	mypaint-brushes
-GH_TAGNAME =	v1.3.0
+V =		1.3.1
+DISTNAME =	mypaint-brushes-$V
+EXTRACT_SUFX =	.tar.xz
 
 CATEGORIES =	graphics
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
-AUTORECONF =		./autogen.sh
+MASTER_SITES =	https://github.com/mypaint/mypaint-brushes/releases/download/v$V/
 
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
 
 .include <bsd.port.mk>
