@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.130 2020/02/20 12:24:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2020/02/24 22:45:19 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME =	gimp-2.10.16
+DISTNAME =	gimp-2.10.18
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -31,13 +31,13 @@ WANTLIB += avahi-common babl-0.1 bz2 c cairo cairo-gobject cups
 WANTLIB += curses dbus-1 execinfo exiv2 expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4 gexiv2
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
-WANTLIB += graphite2 gs gthread-2.0 gtk-x11-2.0 harfbuzz hogweed
-WANTLIB += iconv idn2 ijs intl jbig2dec jpeg json-c json-glib-1.0
-WANTLIB += lcms lcms2 lzma m mng mypaint-1.3 nettle openjp2 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png poppler poppler-glib rsvg-2 tasn1 tiff unistring
-WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 xcb xcb-render
-WANTLIB += xcb-shm xml2 z zstd
+WANTLIB += graphite2 gs gtk-x11-2.0 harfbuzz hogweed iconv idn2
+WANTLIB += ijs intl jbig2dec jpeg json-c json-glib-1.0 lcms lcms2
+WANTLIB += lzma m mng mypaint-1.5 nettle openjp2 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
+WANTLIB += poppler-glib rsvg-2 tasn1 tiff unistring webp webpdemux
+WANTLIB += webpmux wmf-0.2 wmflite-0.2 xcb xcb-render xcb-shm
+WANTLIB += xml2 z zstd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -100,7 +100,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS+= --enable-gimp-console \
+CONFIGURE_ARGS+= \
+		--disable-check-update \
+		--enable-gimp-console \
 		--with-pdbgen \
 		--without-alsa \
 		--without-libheif \
