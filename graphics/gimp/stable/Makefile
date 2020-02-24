@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.131 2020/02/24 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.132 2020/02/24 22:59:25 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.18
+REVISION =	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -20,7 +21,7 @@ HOMEPAGE=	https://www.gimp.org/
 
 EXTRACT_SUFX=	.tar.bz2
 
-# GPLv2
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
@@ -47,52 +48,46 @@ COMPILER=	base-clang ports-gcc
 MODULES=	textproc/intltool \
 		lang/python
 
-BUILD_DEPENDS=	archivers/lzip/lzlib \
-		graphics/jasper \
-		x11/py-gtk2 \
-		net/glib2-networking \
-		devel/iso-codes \
-		devel/desktop-file-utils \
+COMMON_DEPENDS=	archivers/lzip/lzlib \
 		devel/appstream-glib \
-		print/poppler-data \
-		graphics/mypaint-brushes
-
-LIB_DEPENDS=	graphics/gegl04>=0.4.4 \
-		graphics/babl>=0.1.52 \
-		devel/glib2>=2.54.2 \
-		devel/libexecinfo \
-		devel/pango>=1.29.4 \
-		graphics/gdk-pixbuf2>=2.30.8 \
-		x11/gtk+2>=2.24.10 \
-		graphics/cairo>=1.12.2 \
-		devel/harfbuzz>=0.9.19 \
-		archivers/bzip2 \
-		archivers/xz \
-		graphics/libgexiv2 \
-		graphics/png \
-		graphics/jpeg \
-		graphics/tiff \
-		graphics/lcms2 \
-		graphics/libmypaint \
-		graphics/libmng \
-		x11/gnome/librsvg \
-		graphics/libwmf \
-		graphics/aalib \
-		print/ghostscript/gnu \
-		graphics/openexr \
-		print/poppler
-
-RUN_DEPENDS=	archivers/lzip/lzlib \
-		graphics/jasper \
-		x11/py-gtk2 \
-		net/glib2-networking \
-		devel/iso-codes \
 		devel/desktop-file-utils \
-		devel/appstream-glib \
-		print/poppler-data \
+		devel/iso-codes \
+		graphics/jasper \
 		graphics/mypaint-brushes \
+		net/glib2-networking \
+		print/poppler-data \
+		x11/py-gtk2
+
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+
+RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/xdg-utils \
 		x11/gtk+3,-guic
+
+LIB_DEPENDS=	archivers/bzip2 \
+		archivers/xz \
+		devel/glib2>=2.54.2 \
+		devel/harfbuzz>=0.9.19 \
+		devel/libexecinfo \
+		devel/pango>=1.29.4 \
+		graphics/aalib \
+		graphics/babl>=0.1.52 \
+		graphics/cairo>=1.12.2 \
+		graphics/gdk-pixbuf2>=2.30.8 \
+		graphics/gegl04>=0.4.4 \
+		graphics/jpeg \
+		graphics/lcms2 \
+		graphics/libgexiv2 \
+		graphics/libmng \
+		graphics/libmypaint>=1.5.0 \
+		graphics/libwmf \
+		graphics/openexr \
+		graphics/png \
+		graphics/tiff \
+		print/ghostscript/gnu \
+		print/poppler \
+		x11/gnome/librsvg \
+		x11/gtk+2>=2.24.10
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
