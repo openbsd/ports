@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/08 16:39:24 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/25 07:11:10 bentley Exp $
 share/doc/inter/
 share/doc/inter/LICENSE.txt
 share/fonts/
@@ -15,16 +15,16 @@ share/fonts/inter/Inter-ExtraBold.otf
 share/fonts/inter/Inter-ExtraBold.ttf
 share/fonts/inter/Inter-ExtraBoldItalic.otf
 share/fonts/inter/Inter-ExtraBoldItalic.ttf
-share/fonts/inter/Inter-ExtraLight-BETA.otf
-share/fonts/inter/Inter-ExtraLight-BETA.ttf
-share/fonts/inter/Inter-ExtraLightItalic-BETA.otf
-share/fonts/inter/Inter-ExtraLightItalic-BETA.ttf
+share/fonts/inter/Inter-ExtraLight.otf
+share/fonts/inter/Inter-ExtraLight.ttf
+share/fonts/inter/Inter-ExtraLightItalic.otf
+share/fonts/inter/Inter-ExtraLightItalic.ttf
 share/fonts/inter/Inter-Italic.otf
 share/fonts/inter/Inter-Italic.ttf
-share/fonts/inter/Inter-Light-BETA.otf
-share/fonts/inter/Inter-Light-BETA.ttf
-share/fonts/inter/Inter-LightItalic-BETA.otf
-share/fonts/inter/Inter-LightItalic-BETA.ttf
+share/fonts/inter/Inter-Light.otf
+share/fonts/inter/Inter-Light.ttf
+share/fonts/inter/Inter-LightItalic.otf
+share/fonts/inter/Inter-LightItalic.ttf
 share/fonts/inter/Inter-Medium.otf
 share/fonts/inter/Inter-Medium.ttf
 share/fonts/inter/Inter-MediumItalic.otf
@@ -35,7 +35,7 @@ share/fonts/inter/Inter-SemiBold.otf
 share/fonts/inter/Inter-SemiBold.ttf
 share/fonts/inter/Inter-SemiBoldItalic.otf
 share/fonts/inter/Inter-SemiBoldItalic.ttf
-share/fonts/inter/Inter-Thin-BETA.otf
-share/fonts/inter/Inter-Thin-BETA.ttf
-share/fonts/inter/Inter-ThinItalic-BETA.otf
-share/fonts/inter/Inter-ThinItalic-BETA.ttf
+share/fonts/inter/Inter-Thin.otf
+share/fonts/inter/Inter-Thin.ttf
+share/fonts/inter/Inter-ThinItalic.otf
+share/fonts/inter/Inter-ThinItalic.ttf
