@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/20 17:14:47 landry Exp $
-bin/lascopy${MODPY_BIN_SUFFIX}
-bin/lasexplorer${MODPY_BIN_SUFFIX}
-bin/lasnoise${MODPY_BIN_SUFFIX}
-bin/lasvalidate${MODPY_BIN_SUFFIX}
-bin/lasverify${MODPY_BIN_SUFFIX}
-bin/lasviewer${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.2 2020/02/25 10:06:56 landry Exp $
+@conflict py-laspy-*
+@pkgpath geo/py-laspy
+bin/lascopy
+bin/lasexplorer
+bin/lasnoise
+bin/lasvalidate
+bin/lasverify
+bin/lasviewer
 lib/python${MODPY_VERSION}/site-packages/laspy/
 lib/python${MODPY_VERSION}/site-packages/laspy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/laspy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

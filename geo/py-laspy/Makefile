@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/21 16:23:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/25 10:06:56 landry Exp $
 
 COMMENT =		library for reading, modifying and creating LAS LiDAR files
 
 MODPY_EGG_VERSION=	1.6.0
 DISTNAME=		laspy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		geo devel textproc
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES=		lang/python
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR=			python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
@@ -22,10 +23,5 @@ MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =	math/py-numpy,${FLAVOR}
 RUN_DEPENDS =	math/py-numpy,${FLAVOR} \
 		graphics/py-opengl,${FLAVOR}
-
-post-install:
-.for b in lascopy lasexplorer lasnoise lasvalidate lasverify lasviewer
-	mv ${PREFIX}/bin/${b}{,${MODPY_BIN_SUFFIX}}
-.endfor
 
 .include <bsd.port.mk>
