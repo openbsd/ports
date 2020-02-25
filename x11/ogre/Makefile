@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2020/02/25 20:43:13 kmos Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
 BROKEN-i386 =		MMX-related problems with clang build
+BROKEN-sparc64 =	undefined reference to TiXml*
+BROKEN-powerpc =	undefined reference to TiXml*
 
 COMMENT-main =		3D rendering engine
 COMMENT-samples =	3D rendering engine, demos
