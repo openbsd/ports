@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/02/25 10:04:27 landry Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
-MODPY_EGG_VERSION =	2.1.3
+MODPY_EGG_VERSION =	2.4.2.post1
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
-PKGNAME =		${DISTNAME:S/py/py-/}
+PKGNAME =		${DISTNAME:S/py/py-/:S/.post/pl/}
 
 CATEGORIES =		geo
 
@@ -24,7 +24,7 @@ MODPY_PYTEST =		Yes
 MODPY_TEST_DIR =	${WRKSRC}/test
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_SETUPTOOLS =	Yes
 
