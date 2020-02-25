@@ -1,0 +1,16 @@
+$OpenBSD: patch-templates_lib_lexer_p_h,v 1.1 2020/02/25 18:07:16 rsadowski Exp $
+
+https://github.com/steveire/grantlee/commit/1b4f22431ae35dfd11f07a5ae88a1b4db3de2a85#diff-a32621549f7e9585e444419c645b0d82
+
+Index: templates/lib/lexer_p.h
+--- templates/lib/lexer_p.h.orig
++++ templates/lib/lexer_p.h
+@@ -24,7 +24,7 @@
+ #include "textprocessingmachine_p.h"
+ #include "token.h"
+ 
+-template <typename T> class QList;
++#include <QList>
+ 
+ namespace Grantlee
+ {
