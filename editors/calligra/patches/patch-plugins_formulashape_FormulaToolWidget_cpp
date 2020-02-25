@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_formulashape_FormulaToolWidget_cpp,v 1.1 2020/02/25 18:08:07 rsadowski Exp $
+
+Unbreak with Qt 5.13
+
+Index: plugins/formulashape/FormulaToolWidget.cpp
+--- plugins/formulashape/FormulaToolWidget.cpp.orig
++++ plugins/formulashape/FormulaToolWidget.cpp
+@@ -30,6 +30,7 @@
+ #include <QWidgetAction>
+ #include <QTableWidget>
+ #include <QAction>
++#include <QHeaderView>
+ #include <QMenu>
+ 
+ FormulaToolWidget::FormulaToolWidget( KoFormulaTool* tool, QWidget* parent )
