@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/11/06 13:42:57 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/25 20:28:45 bket Exp $
+@conflict py-terminado-*
+@pkgpath www/py-terminado
 lib/python${MODPY_VERSION}/site-packages/terminado/
 lib/python${MODPY_VERSION}/site-packages/terminado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/terminado/__init__.py
