@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/07/12 20:48:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2020/02/25 07:02:21 bentley Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
@@ -27,6 +27,8 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 CONFIGURE_ENV +=	LDFLAGS=-pthread
 CONFIGURE_ARGS=		--disable-debug
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CXXFLAGS +=		-std=c++11
 
