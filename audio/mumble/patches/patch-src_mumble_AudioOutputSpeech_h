@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_mumble_AudioOutputSpeech_h,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+$OpenBSD: patch-src_mumble_AudioOutputSpeech_h,v 1.2 2020/02/25 05:14:52 rsadowski Exp $
 
 Use celt from our ports tree
 
---- src/mumble/AudioOutputSpeech.h.orig	Wed Sep 25 16:41:59 2013
-+++ src/mumble/AudioOutputSpeech.h	Wed Sep 25 16:42:22 2013
-@@ -36,7 +36,7 @@
+Index: src/mumble/AudioOutputSpeech.h
+--- src/mumble/AudioOutputSpeech.h.orig
++++ src/mumble/AudioOutputSpeech.h
+@@ -10,7 +10,7 @@
  #include <speex/speex.h>
  #include <speex/speex_resampler.h>
  #include <speex/speex_jitter.h>

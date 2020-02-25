@@ -1,15 +1,16 @@
-$OpenBSD: patch-main_pro,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+$OpenBSD: patch-main_pro,v 1.2 2020/02/25 05:14:52 rsadowski Exp $
 
 Use celt from our ports tree
 
---- main.pro.orig	Sat Jun  1 23:16:30 2013
-+++ main.pro	Thu Sep 26 11:10:30 2013
-@@ -12,7 +12,7 @@ CONFIG *= ordered debug_and_release
+Index: main.pro
+--- main.pro.orig
++++ main.pro
+@@ -21,7 +21,7 @@ SUBDIRS *= src/mumble_proto
    CONFIG(sbcelt) {
-     SUBDIRS *= celt-0.7.0-build sbcelt-lib-build sbcelt-helper-build
+     SUBDIRS *= 3rdparty/celt-0.7.0-build 3rdparty/sbcelt-lib-build 3rdparty/sbcelt-helper-build
    } else {
--    unix:!CONFIG(bundled-celt):system(pkg-config --atleast-version=0.7.0 celt) {
-+    unix:!CONFIG(bundled-celt):system(pkg-config --atleast-version=0.7.0 celt07) {
+-    unix:!CONFIG(bundled-celt):system($$PKG_CONFIG --atleast-version=0.7.0 celt) {
++    unix:!CONFIG(bundled-celt):system($$PKG_CONFIG --atleast-version=0.7.0 celt07) {
        CONFIG *= no-bundled-celt
      }
      !CONFIG(no-bundled-celt) {

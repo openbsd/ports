@@ -1,13 +1,14 @@
-$OpenBSD: patch-src_mumble_mumble_pch_hpp,v 1.2 2015/06/12 09:43:12 dcoppa Exp $
+$OpenBSD: patch-src_mumble_mumble_pch_hpp,v 1.3 2020/02/25 05:14:52 rsadowski Exp $
 
 Use celt from our ports tree
 
---- src/mumble/mumble_pch.hpp.orig	Thu Jun 11 21:49:58 2015
-+++ src/mumble/mumble_pch.hpp	Fri Jun 12 10:33:36 2015
-@@ -45,7 +45,7 @@
- #define __int64_t __int64
+Index: src/mumble/mumble_pch.hpp
+--- src/mumble/mumble_pch.hpp.orig
++++ src/mumble/mumble_pch.hpp
+@@ -55,7 +55,7 @@
+ #define ENABLE_SNDFILE_WINDOWS_PROTOTYPES 1
+ #endif
  #include <sndfile.h>
- #undef __int64_t
 -#include <celt.h>
 +#include <celt07/celt.h>
  #ifdef USE_SBCELT

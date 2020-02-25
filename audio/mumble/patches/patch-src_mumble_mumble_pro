@@ -1,29 +1,33 @@
-$OpenBSD: patch-src_mumble_mumble_pro,v 1.4 2016/05/10 07:44:11 dcoppa Exp $
+$OpenBSD: patch-src_mumble_mumble_pro,v 1.5 2020/02/25 05:14:52 rsadowski Exp $
 
-Use celt from our ports tree
-
---- src/mumble/mumble.pro.orig	Thu May  5 17:48:09 2016
-+++ src/mumble/mumble.pro	Tue May 10 09:19:52 2016
-@@ -67,12 +67,9 @@ CONFIG(sbcelt) {
+Index: src/mumble/mumble.pro
+--- src/mumble/mumble.pro.orig
++++ src/mumble/mumble.pro
+@@ -320,16 +320,9 @@ CONFIG(sbcelt) {
    LIBS *= -lcelt -lsbcelt
    DEFINES *= SBCELT_PREFIX_API SBCELT_COMPAT_API USE_SBCELT
  } else {
--  unix:!CONFIG(bundled-celt):system(pkg-config --atleast-version=0.7.0 celt) {
-+  unix:!CONFIG(bundled-celt):system(pkg-config --atleast-version=0.7.0 celt07) {
-     CONFIG	*= no-bundled-celt
+-  unix:!CONFIG(bundled-celt):system($$PKG_CONFIG --atleast-version=0.7.0 celt) {
++  unix:!CONFIG(bundled-celt):system($$PKG_CONFIG --atleast-version=0.7.0 celt07) {
+     CONFIG *= no-bundled-celt
    }
 -  CONFIG(no-bundled-celt) {
--    INCLUDEPATH	*= /usr/include/celt
+-    INCLUDEPATH *= /usr/include/celt
+-    unix {
+-      QMAKE_CFLAGS *= "-I/usr/include/celt" "-isystem /usr/include/celt"
+-      QMAKE_CXXFLAGS *= "-I/usr/include/celt" "-isystem /usr/include/celt"
+-    }
 -  }
    !CONFIG(no-bundled-celt) {
-     INCLUDEPATH	*= ../../celt-0.7.0-src/libcelt
-   }
-@@ -212,7 +209,7 @@ unix {
-     HEADERS *= GlobalShortcut_unix.h
-     SOURCES *= GlobalShortcut_unix.cpp TextToSpeech_unix.cpp Overlay_unix.cpp SharedMemory_unix.cpp Log_unix.cpp
-     PKGCONFIG *= x11
--    LIBS *= -lrt -lXi
-+    LIBS *= -lXi
+     INCLUDEPATH *= ../../3rdparty/celt-0.7.0-src/libcelt
+     unix {
+@@ -539,9 +532,6 @@ unix {
+     }
+     
+     must_pkgconfig(x11)
+-    linux* {
+-      LIBS *= -lrt
+-    }
+     LIBS *= -lXi
  
      !CONFIG(no-oss) {
-       CONFIG  *= oss

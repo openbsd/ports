@@ -1,28 +1,24 @@
-# $OpenBSD: Makefile,v 1.35 2019/12/06 23:12:07 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2020/02/25 05:14:52 rsadowski Exp $
 
 COMMENT =		low-latency voice chat client
 
-GH_ACCOUNT =		mumble-voip
-GH_PROJECT =		mumble
-GH_TAGNAME =		1.2.19
-REVISION =		5
+DISTNAME =		mumble-1.3.0
 
 CATEGORIES =		audio
 
 HOMEPAGE =		https://www.mumble.info/
 
+MASTER_SITES =		https://github.com/mumble-voip/mumble/releases/download/1.3.0/
+EXTRACT_SUFX =		.zip
+
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender c crypto
-WANTLIB +=		fontconfig freetype lib/qt4/QtDBus lib/qt4/QtGui
-WANTLIB +=		lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg
-WANTLIB +=		lib/qt4/QtXml m opus portaudio protobuf
-WANTLIB +=		pthread sndfile speex speexdsp ssl ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xi c crypto jack
+WANTLIB += m opus protobuf sndfile speex speexdsp ssl
 
-COMPILER =		base-clang ports-gcc
-
-MODULES =		devel/qmake x11/qt4
+MODULES =		devel/qmake x11/qt5
 SEPARATE_BUILD =	No
 
 BUILD_DEPENDS =		audio/celt07 \
@@ -30,9 +26,10 @@ BUILD_DEPENDS =		audio/celt07 \
 
 LIB_DEPENDS =		audio/libsndfile>=1.0.25p0 \
 			audio/opus \
-			audio/portaudio-svn \
+			audio/jack \
 			audio/speex \
-			devel/protobuf
+			devel/protobuf \
+			x11/qt5/qtsvg
 
 RUN_DEPENDS =		audio/celt07 \
 			audio/celt=0.11.1v1 \

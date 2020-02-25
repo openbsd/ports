@@ -1,30 +1,56 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/02/25 05:14:52 rsadowski Exp $
 @bin bin/mumble
 lib/mumble/
-lib/mumble/liblink.so
-lib/mumble/libmanual.so
+@so lib/mumble/liblink.so
 @man man/man1/mumble.1
 share/applications/mumble.desktop
 share/icons/hicolor/scalable/apps/mumble.svg
 share/mumble/
 share/mumble/locale/
+share/mumble/locale/mumble_ar.qm
+share/mumble/locale/mumble_be.qm
+share/mumble/locale/mumble_bg.qm
+share/mumble/locale/mumble_br.qm
 share/mumble/locale/mumble_cs.qm
+share/mumble/locale/mumble_cy.qm
 share/mumble/locale/mumble_da.qm
 share/mumble/locale/mumble_de.qm
+share/mumble/locale/mumble_el.qm
+share/mumble/locale/mumble_el_GR.qm
 share/mumble/locale/mumble_en.qm
+share/mumble/locale/mumble_en_GB.qm
+share/mumble/locale/mumble_eo.qm
 share/mumble/locale/mumble_es.qm
+share/mumble/locale/mumble_eu.qm
+share/mumble/locale/mumble_fa_IR.qm
+share/mumble/locale/mumble_fi.qm
 share/mumble/locale/mumble_fr.qm
+share/mumble/locale/mumble_gl.qm
 share/mumble/locale/mumble_he.qm
+share/mumble/locale/mumble_hi.qm
 share/mumble/locale/mumble_hu.qm
 share/mumble/locale/mumble_it.qm
 share/mumble/locale/mumble_ja.qm
+share/mumble/locale/mumble_ko.qm
+share/mumble/locale/mumble_lt.qm
+share/mumble/locale/mumble_nb_NO.qm
 share/mumble/locale/mumble_nl.qm
+share/mumble/locale/mumble_nl_BE.qm
+share/mumble/locale/mumble_no.qm
 share/mumble/locale/mumble_pl.qm
 share/mumble/locale/mumble_pt_BR.qm
+share/mumble/locale/mumble_pt_PT.qm
+share/mumble/locale/mumble_ro.qm
 share/mumble/locale/mumble_ru.qm
+share/mumble/locale/mumble_sk.qm
 share/mumble/locale/mumble_sv.qm
+share/mumble/locale/mumble_te.qm
+share/mumble/locale/mumble_th.qm
 share/mumble/locale/mumble_tr.qm
+share/mumble/locale/mumble_uk.qm
+share/mumble/locale/mumble_vi.qm
 share/mumble/locale/mumble_zh_CN.qm
+share/mumble/locale/mumble_zh_HK.qm
 share/mumble/locale/mumble_zh_TW.qm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
