@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/09 16:19:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/25 02:58:40 bcallah Exp $
 
 COMMENT =	space exploration and combat game similar to Escape Velocity
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	endless-sky
 GH_PROJECT =	endless-sky
-GH_TAGNAME =	v0.9.10
+GH_TAGNAME =	v0.9.11
 
 HOMEPAGE =	https://endless-sky.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

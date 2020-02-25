@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/09 16:19:08 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/02/25 02:58:40 bcallah Exp $
 @bin bin/endless-sky
 @man man/man6/endless-sky.6
 share/appdata/
@@ -49,6 +49,10 @@ share/endless-sky/data/indigenous.txt
 share/endless-sky/data/interfaces.txt
 share/endless-sky/data/intro missions.txt
 share/endless-sky/data/jobs.txt
+share/endless-sky/data/ka'het missions.txt
+share/endless-sky/data/ka'het outfits.txt
+share/endless-sky/data/ka'het ships.txt
+share/endless-sky/data/ka'het.txt
 share/endless-sky/data/kestrel.txt
 share/endless-sky/data/korath missions.txt
 share/endless-sky/data/korath outfits.txt
@@ -1196,6 +1200,9 @@ share/endless-sky/images/effect/quarg anti missile+1.png
 share/endless-sky/images/effect/railspark~0.png
 share/endless-sky/images/effect/railspark~1.png
 share/endless-sky/images/effect/railspark~2.png
+share/endless-sky/images/effect/ravager impact+0.png
+share/endless-sky/images/effect/ravager impact+1.png
+share/endless-sky/images/effect/ravager impact+2.png
 share/endless-sky/images/effect/remnant flare/
 share/endless-sky/images/effect/remnant flare/large~0.png
 share/endless-sky/images/effect/remnant flare/large~1.png
@@ -1312,6 +1319,7 @@ share/endless-sky/images/font/
 share/endless-sky/images/font/ubuntu14r.png
 share/endless-sky/images/font/ubuntu18r.png
 share/endless-sky/images/hardpoint/
+share/endless-sky/images/hardpoint/annihilator turret.png
 share/endless-sky/images/hardpoint/anti-missile hai.png
 share/endless-sky/images/hardpoint/anti-missile.png
 share/endless-sky/images/hardpoint/banisher.png
@@ -1339,6 +1347,7 @@ share/endless-sky/images/hardpoint/pulse turret.png
 share/endless-sky/images/hardpoint/quad blaster turret.png
 share/endless-sky/images/hardpoint/quarg anti missile.png
 share/endless-sky/images/hardpoint/quarg skylance.png
+share/endless-sky/images/hardpoint/ravager turret.png
 share/endless-sky/images/hardpoint/repeater turret.png
 share/endless-sky/images/hardpoint/slicer turret.png
 share/endless-sky/images/hardpoint/sunbeam turret.png
@@ -1369,6 +1378,7 @@ share/endless-sky/images/label/core+.png
 share/endless-sky/images/label/deep+.png
 share/endless-sky/images/label/dirt belt+.png
 share/endless-sky/images/label/earth+.png
+share/endless-sky/images/label/graveyard+.png
 share/endless-sky/images/label/hai+.png
 share/endless-sky/images/label/kimek+.png
 share/endless-sky/images/label/korath+.png
@@ -1709,6 +1719,8 @@ share/endless-sky/images/outfit/electron turret.png
 share/endless-sky/images/outfit/emergency ramscoop.png
 share/endless-sky/images/outfit/emp torpedo bay.png
 share/endless-sky/images/outfit/emp torpedo.png
+share/endless-sky/images/outfit/enforcer confrontation gear.png
+share/endless-sky/images/outfit/enforcer riot staff.png
 share/endless-sky/images/outfit/epoch cell.png
 share/endless-sky/images/outfit/finisher pod.png
 share/endless-sky/images/outfit/finisher.png
@@ -1723,10 +1735,14 @@ share/endless-sky/images/outfit/fusion hai.png
 share/endless-sky/images/outfit/fusion.png
 share/endless-sky/images/outfit/gat.png
 share/endless-sky/images/outfit/grab-strike.png
+share/endless-sky/images/outfit/hai boulder.png
+share/endless-sky/images/outfit/hai geode.png
+share/endless-sky/images/outfit/hai pebble core.png
 share/endless-sky/images/outfit/hai rifle.png
 share/endless-sky/images/outfit/hai tracker pod.png
 share/endless-sky/images/outfit/hai tracker storage.png
 share/endless-sky/images/outfit/hai tracker.png
+share/endless-sky/images/outfit/hai williwaw.png
 share/endless-sky/images/outfit/harvested aluminum.png
 share/endless-sky/images/outfit/harvested copper.png
 share/endless-sky/images/outfit/harvested gold.png
@@ -1770,6 +1786,14 @@ share/endless-sky/images/outfit/javelin storage.png
 share/endless-sky/images/outfit/javelin.png
 share/endless-sky/images/outfit/jump drive (broken).png
 share/endless-sky/images/outfit/jump drive.png
+share/endless-sky/images/outfit/ka'het annihilator turret.png
+share/endless-sky/images/outfit/ka'het annihilator.png
+share/endless-sky/images/outfit/ka'het emp deployer.png
+share/endless-sky/images/outfit/ka'het primary cooling.png
+share/endless-sky/images/outfit/ka'het ravager beam.png
+share/endless-sky/images/outfit/ka'het ravager turret.png
+share/endless-sky/images/outfit/ka'het shield restorer.png
+share/endless-sky/images/outfit/ka'het support cooling.png
 share/endless-sky/images/outfit/keystone.png
 share/endless-sky/images/outfit/korath fuel processor.png
 share/endless-sky/images/outfit/korath mine storage.png
@@ -1854,6 +1878,8 @@ share/endless-sky/images/outfit/navy license.png
 share/endless-sky/images/outfit/nerve gas.png
 share/endless-sky/images/outfit/nuke.png
 share/endless-sky/images/outfit/outfit scanner.png
+share/endless-sky/images/outfit/overcharged shield module.png
+share/endless-sky/images/outfit/overclocked repair module.png
 share/endless-sky/images/outfit/particle cannon.png
 share/endless-sky/images/outfit/piercer launcher.png
 share/endless-sky/images/outfit/piercer.png
@@ -1873,6 +1899,7 @@ share/endless-sky/images/outfit/pug gridfire turret.png
 share/endless-sky/images/outfit/pug lohmar steering.png
 share/endless-sky/images/outfit/pug lohmar thruster.png
 share/endless-sky/images/outfit/pug seeker.png
+share/endless-sky/images/outfit/pug staff.png
 share/endless-sky/images/outfit/pug zapper turret.png
 share/endless-sky/images/outfit/pug zapper.png
 share/endless-sky/images/outfit/pulse cannon.png
@@ -1978,6 +2005,7 @@ share/endless-sky/images/outfit/tiny plasma steering.png
 share/endless-sky/images/outfit/tiny plasma thruster.png
 share/endless-sky/images/outfit/tiny radiant steering.png
 share/endless-sky/images/outfit/tiny radiant thruster.png
+share/endless-sky/images/outfit/tiny remnant engine.png
 share/endless-sky/images/outfit/tiny shield.png
 share/endless-sky/images/outfit/torpedo launcher.png
 share/endless-sky/images/outfit/torpedo storage.png
@@ -1987,6 +2015,7 @@ share/endless-sky/images/outfit/typhoon launcher.png
 share/endless-sky/images/outfit/typhoon storage.png
 share/endless-sky/images/outfit/typhoon.png
 share/endless-sky/images/outfit/unknown.png
+share/endless-sky/images/outfit/void rifle.png
 share/endless-sky/images/outfit/wanderer anti-missile.png
 share/endless-sky/images/outfit/wanderer heat sink.png
 share/endless-sky/images/outfit/wanderer license.png
@@ -1998,6 +2027,7 @@ share/endless-sky/images/outfit/water cooling.png
 share/endless-sky/images/outfit/white sun.png
 share/endless-sky/images/outfit/yellow sun.png
 share/endless-sky/images/planet/
+share/endless-sky/images/planet/asteroid base.png
 share/endless-sky/images/planet/callisto-b.png
 share/endless-sky/images/planet/callisto.png
 share/endless-sky/images/planet/cloud0-b.png
@@ -2056,6 +2086,9 @@ share/endless-sky/images/planet/dust6-b.png
 share/endless-sky/images/planet/dust6.png
 share/endless-sky/images/planet/dust7-b.png
 share/endless-sky/images/planet/dust7.png
+share/endless-sky/images/planet/dyson1.png
+share/endless-sky/images/planet/dyson2.png
+share/endless-sky/images/planet/dyson3.png
 share/endless-sky/images/planet/earth-b.png
 share/endless-sky/images/planet/earth.png
 share/endless-sky/images/planet/europa-b.png
@@ -2236,18 +2269,35 @@ share/endless-sky/images/planet/rock9-b.png
 share/endless-sky/images/planet/rock9.png
 share/endless-sky/images/planet/station0.png
 share/endless-sky/images/planet/station1.png
+share/endless-sky/images/planet/station10.png
+share/endless-sky/images/planet/station11.png
+share/endless-sky/images/planet/station12.png
+share/endless-sky/images/planet/station13.png
+share/endless-sky/images/planet/station14.png
+share/endless-sky/images/planet/station15.png
+share/endless-sky/images/planet/station16.png
+share/endless-sky/images/planet/station17.png
+share/endless-sky/images/planet/station1b.png
+share/endless-sky/images/planet/station1c.png
 share/endless-sky/images/planet/station1k.png
 share/endless-sky/images/planet/station1kd.png
 share/endless-sky/images/planet/station2.png
+share/endless-sky/images/planet/station2b.png
+share/endless-sky/images/planet/station2c.png
 share/endless-sky/images/planet/station2k.png
 share/endless-sky/images/planet/station2kd.png
 share/endless-sky/images/planet/station3.png
+share/endless-sky/images/planet/station3b.png
+share/endless-sky/images/planet/station3bd.png
+share/endless-sky/images/planet/station3c.png
 share/endless-sky/images/planet/station3k.png
 share/endless-sky/images/planet/station3kd.png
 share/endless-sky/images/planet/station4.png
 share/endless-sky/images/planet/station5.png
 share/endless-sky/images/planet/station6.png
 share/endless-sky/images/planet/station7.png
+share/endless-sky/images/planet/station8.png
+share/endless-sky/images/planet/station9.png
 share/endless-sky/images/planet/tethys-b.png
 share/endless-sky/images/planet/tethys.png
 share/endless-sky/images/planet/titan-b.png
@@ -2411,6 +2461,9 @@ share/endless-sky/images/projectile/2x sunbeam+0.png
 share/endless-sky/images/projectile/2x sunbeam+1.png
 share/endless-sky/images/projectile/2x sunbeam+2.png
 share/endless-sky/images/projectile/2x sunbeam+3.png
+share/endless-sky/images/projectile/annihilator+0.png
+share/endless-sky/images/projectile/annihilator+1.png
+share/endless-sky/images/projectile/annihilator+2.png
 share/endless-sky/images/projectile/attractor+0.png
 share/endless-sky/images/projectile/attractor+1.png
 share/endless-sky/images/projectile/attractor+2.png
@@ -2535,6 +2588,8 @@ share/endless-sky/images/projectile/rainbow~2.png
 share/endless-sky/images/projectile/rainbow~3.png
 share/endless-sky/images/projectile/rainbow~4.png
 share/endless-sky/images/projectile/rainbow~5.png
+share/endless-sky/images/projectile/ravager beam+0.png
+share/endless-sky/images/projectile/ravager beam+1.png
 share/endless-sky/images/projectile/repeater+0.png
 share/endless-sky/images/projectile/repeater+1.png
 share/endless-sky/images/projectile/repeater+2.png
@@ -2607,6 +2662,7 @@ share/endless-sky/images/scene/loc6.jpg
 share/endless-sky/images/scene/loc7.jpg
 share/endless-sky/images/scene/loc8.jpg
 share/endless-sky/images/scene/loc9.jpg
+share/endless-sky/images/scene/penguinscene.jpg
 share/endless-sky/images/scene/tempest.jpg
 share/endless-sky/images/ship/
 share/endless-sky/images/ship/aerie.png
@@ -2616,6 +2672,10 @@ share/endless-sky/images/ship/arach freighter.png
 share/endless-sky/images/ship/arach hulk.png
 share/endless-sky/images/ship/arach spindle.png
 share/endless-sky/images/ship/arach transport.png
+share/endless-sky/images/ship/archon b-0.png
+share/endless-sky/images/ship/archon b-1.png
+share/endless-sky/images/ship/archon c-0.png
+share/endless-sky/images/ship/archon c-1.png
 share/endless-sky/images/ship/archon-0.png
 share/endless-sky/images/ship/archon-1.png
 share/endless-sky/images/ship/argosy.png
@@ -2649,6 +2709,7 @@ share/endless-sky/images/ship/deep river.png
 share/endless-sky/images/ship/derecho.png
 share/endless-sky/images/ship/dreadnought.png
 share/endless-sky/images/ship/earth shaper.png
+share/endless-sky/images/ship/faes'mar.png
 share/endless-sky/images/ship/falcon.png
 share/endless-sky/images/ship/far lek 14.png
 share/endless-sky/images/ship/far osk 27.png
@@ -2685,6 +2746,7 @@ share/endless-sky/images/ship/heliarch interdictor.png
 share/endless-sky/images/ship/heliarch neutralizer.png
 share/endless-sky/images/ship/heliarch punisher.png
 share/endless-sky/images/ship/hurricane.png
+share/endless-sky/images/ship/ibis.png
 share/endless-sky/images/ship/kar ik vot 349.png
 share/endless-sky/images/ship/kestrel.png
 share/endless-sky/images/ship/kimek briar.png
@@ -2694,6 +2756,11 @@ share/endless-sky/images/ship/kimek thorn.png
 share/endless-sky/images/ship/lampyrid.png
 share/endless-sky/images/ship/lance.png
 share/endless-sky/images/ship/leviathan.png
+share/endless-sky/images/ship/localworldship.png
+share/endless-sky/images/ship/maeri'het-00.png
+share/endless-sky/images/ship/maeri'het-01.png
+share/endless-sky/images/ship/maeri'het-02.png
+share/endless-sky/images/ship/maeri'het-03.png
 share/endless-sky/images/ship/manta.png
 share/endless-sky/images/ship/marrowe.png
 share/endless-sky/images/ship/marrows.png
@@ -2737,6 +2804,23 @@ share/endless-sky/images/ship/mule.png
 share/endless-sky/images/ship/nest.png
 share/endless-sky/images/ship/osprey.png
 share/endless-sky/images/ship/pelican.png
+share/endless-sky/images/ship/penguin/
+share/endless-sky/images/ship/penguin/penguin-00.png
+share/endless-sky/images/ship/penguin/penguin-01.png
+share/endless-sky/images/ship/penguin/penguin-02.png
+share/endless-sky/images/ship/penguin/penguin-03.png
+share/endless-sky/images/ship/penguin/penguin-04.png
+share/endless-sky/images/ship/penguin/penguin-05.png
+share/endless-sky/images/ship/penguin/penguin-06.png
+share/endless-sky/images/ship/penguin/penguin-07.png
+share/endless-sky/images/ship/penguin/penguin-08.png
+share/endless-sky/images/ship/penguin/penguin-09.png
+share/endless-sky/images/ship/penguin/penguin-10.png
+share/endless-sky/images/ship/penguin/penguin-11.png
+share/endless-sky/images/ship/penguin/penguin-12.png
+share/endless-sky/images/ship/penguin/penguin-13.png
+share/endless-sky/images/ship/penguin/penguin-14.png
+share/endless-sky/images/ship/petrel.png
 share/endless-sky/images/ship/pointedstick_vanguard.png
 share/endless-sky/images/ship/protector.png
 share/endless-sky/images/ship/pug arfecta.png
@@ -2747,6 +2831,7 @@ share/endless-sky/images/ship/quicksilver.png
 share/endless-sky/images/ship/raider.png
 share/endless-sky/images/ship/rainmaker.png
 share/endless-sky/images/ship/raven.png
+share/endless-sky/images/ship/riptide.png
 share/endless-sky/images/ship/roost.png
 share/endless-sky/images/ship/saryd runabout.png
 share/endless-sky/images/ship/saryd sojourner.png
@@ -2754,6 +2839,7 @@ share/endless-sky/images/ship/saryd traveler.png
 share/endless-sky/images/ship/saryd visitor.png
 share/endless-sky/images/ship/science drone.png
 share/endless-sky/images/ship/scout.png
+share/endless-sky/images/ship/selii'mar.png
 share/endless-sky/images/ship/shuttle=0.png
 share/endless-sky/images/ship/shuttle=1.png
 share/endless-sky/images/ship/shuttle=2.png
@@ -2770,7 +2856,9 @@ share/endless-sky/images/ship/surveillance drone.png
 share/endless-sky/images/ship/tek far 109.png
 share/endless-sky/images/ship/tek far 71 lek.png
 share/endless-sky/images/ship/tek far 78 osk.png
+share/endless-sky/images/ship/telis'het.png
 share/endless-sky/images/ship/tempest.png
+share/endless-sky/images/ship/tern.png
 share/endless-sky/images/ship/vanguard.png
 share/endless-sky/images/ship/void sprite adult-00.png
 share/endless-sky/images/ship/void sprite adult-01.png
@@ -2857,6 +2945,7 @@ share/endless-sky/images/thumbnail/deep river.png
 share/endless-sky/images/thumbnail/derecho.png
 share/endless-sky/images/thumbnail/dreadnought.png
 share/endless-sky/images/thumbnail/earth shaper.png
+share/endless-sky/images/thumbnail/faes'mar.png
 share/endless-sky/images/thumbnail/falcon.png
 share/endless-sky/images/thumbnail/far lek 14.png
 share/endless-sky/images/thumbnail/far osk 27.png
@@ -2891,6 +2980,7 @@ share/endless-sky/images/thumbnail/heliarch interdictor.png
 share/endless-sky/images/thumbnail/heliarch neutralizer.png
 share/endless-sky/images/thumbnail/heliarch punisher.png
 share/endless-sky/images/thumbnail/hurricane.png
+share/endless-sky/images/thumbnail/ibis.png
 share/endless-sky/images/thumbnail/kar ik vot 349.png
 share/endless-sky/images/thumbnail/kestrel.png
 share/endless-sky/images/thumbnail/kimek briar.png
@@ -2900,6 +2990,7 @@ share/endless-sky/images/thumbnail/kimek thorn.png
 share/endless-sky/images/thumbnail/lampyrid.png
 share/endless-sky/images/thumbnail/lance.png
 share/endless-sky/images/thumbnail/leviathan.png
+share/endless-sky/images/thumbnail/maeri'het.png
 share/endless-sky/images/thumbnail/manta.png
 share/endless-sky/images/thumbnail/marrowe.png
 share/endless-sky/images/thumbnail/marrows.png
@@ -2942,6 +3033,8 @@ share/endless-sky/images/thumbnail/mule.png
 share/endless-sky/images/thumbnail/nest.png
 share/endless-sky/images/thumbnail/osprey.png
 share/endless-sky/images/thumbnail/pelican.png
+share/endless-sky/images/thumbnail/penguin.png
+share/endless-sky/images/thumbnail/petrel.png
 share/endless-sky/images/thumbnail/protector.png
 share/endless-sky/images/thumbnail/pug arfecta.png
 share/endless-sky/images/thumbnail/pug enfolta.png
@@ -2951,12 +3044,14 @@ share/endless-sky/images/thumbnail/quicksilver.png
 share/endless-sky/images/thumbnail/raider.png
 share/endless-sky/images/thumbnail/rainmaker.png
 share/endless-sky/images/thumbnail/raven.png
+share/endless-sky/images/thumbnail/riptide.png
 share/endless-sky/images/thumbnail/roost.png
 share/endless-sky/images/thumbnail/saryd runabout.png
 share/endless-sky/images/thumbnail/saryd sojourner.png
 share/endless-sky/images/thumbnail/saryd traveler.png
 share/endless-sky/images/thumbnail/saryd visitor.png
 share/endless-sky/images/thumbnail/scout.png
+share/endless-sky/images/thumbnail/selii'mar.png
 share/endless-sky/images/thumbnail/shuttle.png
 share/endless-sky/images/thumbnail/skein.png
 share/endless-sky/images/thumbnail/skylark.png
@@ -2971,7 +3066,9 @@ share/endless-sky/images/thumbnail/surveillance drone.png
 share/endless-sky/images/thumbnail/tek far 109.png
 share/endless-sky/images/thumbnail/tek far 71 lek.png
 share/endless-sky/images/thumbnail/tek far 78 osk.png
+share/endless-sky/images/thumbnail/telis'het.png
 share/endless-sky/images/thumbnail/tempest.png
+share/endless-sky/images/thumbnail/tern.png
 share/endless-sky/images/thumbnail/vanguard.png
 share/endless-sky/images/thumbnail/wardragon.png
 share/endless-sky/images/thumbnail/wasp.png
