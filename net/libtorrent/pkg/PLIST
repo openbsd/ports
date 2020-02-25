@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/03/24 13:35:09 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/02/25 07:02:08 bentley Exp $
 include/torrent/
 include/torrent/bitfield.h
 include/torrent/chunk_manager.h
@@ -65,7 +65,7 @@ include/torrent/utils/resume.h
 include/torrent/utils/signal_bitfield.h
 include/torrent/utils/thread_base.h
 include/torrent/utils/thread_interrupt.h
-lib/libtorrent.a
+@static-lib lib/libtorrent.a
 lib/libtorrent.la
 @lib lib/libtorrent.so.${LIBtorrent_VERSION}
 lib/pkgconfig/libtorrent.pc
