@@ -1,19 +1,19 @@
-$OpenBSD: patch-mdal_CMakeLists_txt,v 1.2 2019/10/31 14:45:22 landry Exp $
+$OpenBSD: patch-mdal_CMakeLists_txt,v 1.3 2020/02/25 12:16:28 landry Exp $
 
 version the .so
 
 Index: mdal/CMakeLists.txt
 --- mdal/CMakeLists.txt.orig
 +++ mdal/CMakeLists.txt
-@@ -113,6 +113,11 @@ TARGET_INCLUDE_DIRECTORIES(mdal
-   $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
- )
+@@ -130,6 +130,11 @@ IF (BUILD_SHARED OR ENABLE_TESTS)
+   ENDIF(WIN32)
+ ENDIF (BUILD_SHARED OR ENABLE_TESTS)
  
 +set_target_properties(mdal PROPERTIES
 +  VERSION ${LIBmdal_VERSION}
 +  SOVERSION ${LIBmdal_VERSION}
 +)
 +
- IF(HDF5_FOUND)
-   TARGET_INCLUDE_DIRECTORIES(mdal PRIVATE ${HDF5_INCLUDE_DIRS})
-   TARGET_LINK_LIBRARIES(mdal PUBLIC ${HDF5_C_LIBRARIES} )
+ # LINK
+ FOREACH(LIB_NAME ${MDAL_LIBS})
+   TARGET_INCLUDE_DIRECTORIES(${LIB_NAME}

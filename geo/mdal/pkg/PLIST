@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/14 18:33:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/25 12:16:28 landry Exp $
+@bin bin/mdal_translate
 @bin bin/mdalinfo
 include/mdal.h
 @lib lib/libmdal.so.${LIBmdal_VERSION}
+@static-lib lib/libmdal_a.a
