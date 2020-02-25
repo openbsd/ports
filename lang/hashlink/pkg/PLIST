@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+@bin bin/hl
+include/hl.h
+include/hlc.h
+include/hlc_main.c
+@bin lib/fmt.hdll
+@lib lib/libhl.so.${LIBhl_VERSION}
+@bin lib/mysql.hdll
+@bin lib/openal.hdll
+@bin lib/sdl.hdll
+@bin lib/ssl.hdll
+@bin lib/ui.hdll
+@bin lib/uv.hdll

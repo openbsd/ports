@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_std_string_c,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+
+work around when nullptr is passed to hl_ucs2length()
+(can enable printing by uncommenting)
+
+Index: src/std/string.c
+--- src/std/string.c.orig
++++ src/std/string.c
+@@ -20,6 +20,7 @@
+  * DEALINGS IN THE SOFTWARE.
+  */
+ #include <hl.h>
++#include <string.h>
+ 
+ HL_PRIM vbyte *hl_itos( int i, int *len ) {
+ 	uchar tmp[24];
+@@ -77,7 +78,12 @@ HL_PRIM vbyte *hl_value_to_string( vdynamic *d, int *l
+ }
+ 
+ HL_PRIM int hl_ucs2length( vbyte *str, int pos ) {
+-	return (int)ustrlen((uchar*)(str + pos));
++	if (!str) {
++		//printf("DEBUG: str is nullptr!\n");
++		return 0;
++	} else {
++		return (int)ustrlen((uchar*)(str + pos));
++	}
+ }
+ 
+ HL_PRIM int hl_utf8_length( const vbyte *s, int pos ) {

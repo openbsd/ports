@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_std_thread_c,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+
+enable thread_id for OpenBSD using pthread_self()
+
+Index: src/std/thread.c
+--- src/std/thread.c.orig
++++ src/std/thread.c
+@@ -370,6 +370,8 @@ HL_PRIM int hl_thread_id() {
+ 	uint64_t tid64;
+ 	pthread_threadid_np(NULL, &tid64);
+ 	return (pid_t)tid64;
++#elif defined(__OpenBSD__)
++	return pthread_self();
+ #elif defined(SYS_gettid) && !defined(HL_TVOS)
+ 	return syscall(SYS_gettid);
+ #else

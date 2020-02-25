@@ -1,0 +1,9 @@
+HashLink is a virtual machine for Haxe.
+
+HashLink runtime includes the following features:
+* Fully compatible with Haxe specification
+* Support file I/O, regular expressions, network, etc.
+* Unicode strings by default
+* Mark-and-not-sweep Garbage Collector
+* x86 and x86-64 HL/C compilation
+* x86 and x86-64 HL/JIT compilation

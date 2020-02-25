@@ -1,0 +1,89 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+
+remove -m$(ARCH)
+add versioning to libhl
+{CFLAGS} -> (CFLAGS) to not get picked up by SUBST_CMD
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -6,11 +6,11 @@ INSTALL_DIR ?= $(PREFIX)
+ 
+ LIBS=fmt sdl ssl openal ui uv mysql
+ 
+-CFLAGS = -Wall -O3 -I src -msse2 -mfpmath=sse -std=c11 -I include/pcre -I include/mikktspace -I include/minimp3 -D LIBHL_EXPORTS
+-LFLAGS = -L. -lhl
+-LIBFLAGS =
+-HLFLAGS = -ldl
+-LIBEXT = so
++CFLAGS = ${CFLAGS} -I src -I${LOCALBASE}/include -I${X11BASE}/include -std=c11 -I include/pcre -I include/mikktspace -I include/minimp3 -D LIBHL_EXPORTS
++LFLAGS = -L. -L${LOCALBASE}/lib -lhl
++LIBFLAGS = -L${LOCALBASE}/lib -L${X11BASE}/lib
++HLFLAGS =
++LIBEXT = so.${LIBhl_VERSION}
+ LIBTURBOJPEG = -lturbojpeg
+ 
+ PCRE = include/pcre/pcre_chartables.o include/pcre/pcre_compile.o include/pcre/pcre_dfa_exec.o \
+@@ -80,7 +80,7 @@ RELEASE_NAME = osx
+ else
+ 
+ # Linux
+-CFLAGS += -m$(ARCH) -fPIC -pthread
++CFLAGS += -fPIC -pthread
+ LFLAGS += -lm -Wl,-rpath,. -Wl,--export-dynamic -Wl,--no-undefined
+ 
+ ifeq ($(ARCH),32)
+@@ -123,34 +123,34 @@ uninstall:
+ libs: $(LIBS)
+ 
+ libhl: ${LIB}
+-	${CC} -o libhl.$(LIBEXT) -m${ARCH} ${LIBFLAGS} -shared ${LIB} -lpthread -lm
++	${CC} -o libhl.$(LIBEXT) ${LIBFLAGS} -shared ${LIB} -lpthread -lm
+ 
+ hlc: ${BOOT}
+-	${CC} ${CFLAGS} -o hlc ${BOOT} ${LFLAGS}
++	${CC} $(CFLAGS) -o hlc ${BOOT} ${LFLAGS}
+ 
+ hl: ${HL} libhl
+-	${CC} ${CFLAGS} -o hl ${HL} ${LFLAGS} ${HLFLAGS}
++	${CC} $(CFLAGS) -o hl ${HL} ${LFLAGS} ${HLFLAGS}
+ 
+ fmt: ${FMT} libhl
+-	${CC} ${CFLAGS} -I include/mikktspace -I include/minimp3 -shared -o fmt.hdll ${FMT} ${LIBFLAGS} -L. -lhl -lpng $(LIBTURBOJPEG) -lz -lvorbisfile
++	${CC} $(CFLAGS) -I include/mikktspace -I include/minimp3 -shared -o fmt.hdll ${FMT} ${LIBFLAGS} -L. -lhl -lpng $(LIBTURBOJPEG) -lz -lvorbisfile
+ 
+ sdl: ${SDL} libhl
+-	${CC} ${CFLAGS} -shared -o sdl.hdll ${SDL} ${LIBFLAGS} -L. -lhl -lSDL2 $(LIBOPENGL)
++	${CC} $(CFLAGS) -shared -o sdl.hdll ${SDL} ${LIBFLAGS} -L. -lhl -lSDL2 $(LIBOPENGL)
+ 
+ openal: ${OPENAL} libhl
+-	${CC} ${CFLAGS} -shared -o openal.hdll ${OPENAL} ${LIBFLAGS} -L. -lhl $(LIBOPENAL)
++	${CC} $(CFLAGS) -shared -o openal.hdll ${OPENAL} ${LIBFLAGS} -L. -lhl $(LIBOPENAL)
+ 
+ ssl: ${SSL} libhl
+-	${CC} ${CFLAGS} -shared -o ssl.hdll ${SSL} ${LIBFLAGS} -L. -lhl -lmbedtls -lmbedx509 -lmbedcrypto $(LIBSSL)
++	${CC} $(CFLAGS) -shared -o ssl.hdll ${SSL} ${LIBFLAGS} -L. -lhl -lmbedtls -lmbedx509 -lmbedcrypto $(LIBSSL)
+ 
+ ui: ${UI} libhl
+-	${CC} ${CFLAGS} -shared -o ui.hdll ${UI} ${LIBFLAGS} -L. -lhl
++	${CC} $(CFLAGS) -shared -o ui.hdll ${UI} ${LIBFLAGS} -L. -lhl
+ 
+ uv: ${UV} libhl
+-	${CC} ${CFLAGS} -shared -o uv.hdll ${UV} ${LIBFLAGS} -L. -lhl -luv
++	${CC} $(CFLAGS) -shared -o uv.hdll ${UV} ${LIBFLAGS} -L. -lhl -luv
+ 
+ mysql: ${MYSQL} libhl
+-	${CC} ${CFLAGS} -shared -o mysql.hdll ${MYSQL} ${LIBFLAGS} -L. -lhl
++	${CC} $(CFLAGS) -shared -o mysql.hdll ${MYSQL} ${LIBFLAGS} -L. -lhl
+ 	
+ mesa:
+ 	(cd libs/mesa && make)
+@@ -204,7 +204,7 @@ release_osx:
+ .SUFFIXES : .c .o
+ 
+ .c.o :
+-	${CC} ${CFLAGS} -o $@ -c $<
++	${CC} $(CFLAGS) -o $@ -c $<
+ 
+ clean_o:
+ 	rm -f ${STD} ${BOOT} ${RUNTIME} ${PCRE} ${HL} ${FMT} ${SDL} ${SSL} ${OPENAL} ${UI} ${UV}

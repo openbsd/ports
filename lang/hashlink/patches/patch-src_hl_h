@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_hl_h,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+
+add OpenBSD to ifdef
+
+Index: src/hl.h
+--- src/hl.h.orig
++++ src/hl.h
+@@ -234,7 +234,7 @@ typedef uint16_t uchar;
+ #	define USTR(str)	u##str
+ #else
+ #	include <stdarg.h>
+-#if defined(HL_IOS) || defined(HL_TVOS) || defined(HL_MAC)
++#if defined(HL_IOS) || defined(HL_TVOS) || defined(HL_MAC) || defined(__OpenBSD__)
+ #include <stddef.h>
+ #include <stdint.h>
+ typedef uint16_t char16_t;
