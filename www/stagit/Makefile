@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/25 09:55:46 jca Exp $
 
 COMMENT =		static git page generator
 
-DISTNAME =		stagit-0.9.2
-REVISION =		0
+DISTNAME =		stagit-0.9.3
 
 CATEGORIES =		www
 
@@ -15,6 +14,7 @@ MAINTAINER =		Hiltjo Posthuma <hiltjo@codemadness.org>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
+# uses unveil()
 WANTLIB =		c git2
 
 LIB_DEPENDS =		devel/libgit2/libgit2>=0.22
@@ -22,8 +22,10 @@ LIB_DEPENDS =		devel/libgit2/libgit2>=0.22
 MASTER_SITES =		https://codemadness.org/releases/stagit/
 
 MAKE_FLAGS =		CC='${CC}' \
-			CFLAGS='${CFLAGS} -I${LOCALBASE}/include' \
-			LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -lgit2' \
+			CFLAGS='${CFLAGS}' \
+			LDFLAGS='${LDFLAGS}' \
+			LIBGIT_INC='-I${LOCALBASE}/include' \
+			LIBGIT_LIB='-L${LOCALBASE}/lib -lgit2' \
 			COMPATOBJ=''
 
 NO_TEST =		Yes
