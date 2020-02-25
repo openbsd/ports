@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/06/15 09:14:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/02/25 11:52:22 ajacoutot Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
-include/gphoto2/gphoto2
 include/gphoto2/gphoto2-abilities-list.h
 include/gphoto2/gphoto2-camera.h
 include/gphoto2/gphoto2-context.h
@@ -22,38 +21,40 @@ include/gphoto2/gphoto2-version.h
 include/gphoto2/gphoto2-widget.h
 include/gphoto2/gphoto2.h
 lib/libgphoto2/
-lib/libgphoto2.a
+@static-lib lib/libgphoto2.a
 lib/libgphoto2.la
 @lib lib/libgphoto2.so.${LIBgphoto2_VERSION}
 lib/libgphoto2/${VERSION}/
-lib/libgphoto2/${VERSION}/ax203.so
-lib/libgphoto2/${VERSION}/canon.so
-lib/libgphoto2/${VERSION}/digigr8.so
-lib/libgphoto2/${VERSION}/dimagev.so
-lib/libgphoto2/${VERSION}/directory.so
-lib/libgphoto2/${VERSION}/jl2005a.so
-lib/libgphoto2/${VERSION}/jl2005c.so
-lib/libgphoto2/${VERSION}/kodak_dc240.so
-lib/libgphoto2/${VERSION}/mars.so
-lib/libgphoto2/${VERSION}/pentax.so
-lib/libgphoto2/${VERSION}/ptp2.so
-lib/libgphoto2/${VERSION}/sierra.so
-lib/libgphoto2/${VERSION}/sonix.so
-lib/libgphoto2/${VERSION}/sq905.so
-lib/libgphoto2/${VERSION}/st2205.so
-lib/libgphoto2/${VERSION}/topfield.so
-lib/libgphoto2/${VERSION}/tp6801.so
+@so lib/libgphoto2/${VERSION}/ax203.so
+@so lib/libgphoto2/${VERSION}/canon.so
+@so lib/libgphoto2/${VERSION}/digigr8.so
+@so lib/libgphoto2/${VERSION}/dimagev.so
+@so lib/libgphoto2/${VERSION}/directory.so
+@so lib/libgphoto2/${VERSION}/jl2005a.so
+@so lib/libgphoto2/${VERSION}/jl2005c.so
+@so lib/libgphoto2/${VERSION}/kodak_dc240.so
+@so lib/libgphoto2/${VERSION}/lumix.so
+@so lib/libgphoto2/${VERSION}/mars.so
+@so lib/libgphoto2/${VERSION}/pentax.so
+@so lib/libgphoto2/${VERSION}/ptp2.so
+@so lib/libgphoto2/${VERSION}/ricoh_g3.so
+@so lib/libgphoto2/${VERSION}/sierra.so
+@so lib/libgphoto2/${VERSION}/sonix.so
+@so lib/libgphoto2/${VERSION}/sq905.so
+@so lib/libgphoto2/${VERSION}/st2205.so
+@so lib/libgphoto2/${VERSION}/topfield.so
+@so lib/libgphoto2/${VERSION}/tp6801.so
 @bin lib/libgphoto2/print-camera-list
 lib/libgphoto2_port/
-lib/libgphoto2_port.a
+@static-lib lib/libgphoto2_port.a
 lib/libgphoto2_port.la
 @lib lib/libgphoto2_port.so.${LIBgphoto2_port_VERSION}
 lib/libgphoto2_port/${GPHOTO2_PORT_API}/
-lib/libgphoto2_port/${GPHOTO2_PORT_API}/disk.so
-lib/libgphoto2_port/${GPHOTO2_PORT_API}/ptpip.so
-lib/libgphoto2_port/${GPHOTO2_PORT_API}/usb.so
-lib/libgphoto2_port/${GPHOTO2_PORT_API}/usbdiskdirect.so
-lib/libgphoto2_port/${GPHOTO2_PORT_API}/usbscsi.so
+@so lib/libgphoto2_port/${GPHOTO2_PORT_API}/disk.so
+@so lib/libgphoto2_port/${GPHOTO2_PORT_API}/ptpip.so
+@so lib/libgphoto2_port/${GPHOTO2_PORT_API}/usb.so
+@so lib/libgphoto2_port/${GPHOTO2_PORT_API}/usbdiskdirect.so
+@so lib/libgphoto2_port/${GPHOTO2_PORT_API}/usbscsi.so
 lib/pkgconfig/libgphoto2.pc
 lib/pkgconfig/libgphoto2_port.pc
 @man man/man3/libgphoto2.3
