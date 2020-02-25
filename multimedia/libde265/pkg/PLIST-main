@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2020/02/25 13:15:45 sthen Exp $
+@pkgpath multimedia/libde265
+include/libde265/
+include/libde265/de265-version.h
+include/libde265/de265.h
+@static-lib lib/libde265.a
+lib/libde265.la
+@lib lib/libde265.so.${LIBde265_VERSION}
+lib/pkgconfig/libde265.pc

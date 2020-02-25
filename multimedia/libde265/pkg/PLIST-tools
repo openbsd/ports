@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST-tools,v 1.1 2020/02/25 13:15:45 sthen Exp $
+@conflict libde265-1.0.5
+@bin bin/acceleration_speed
+@bin bin/bjoentegaard
+@bin bin/block-rate-estim
+@bin bin/dec265
+@bin bin/enc265
+@bin bin/gen-enc-table
+@bin bin/hdrcopy
+@bin bin/rd-curves
+@bin bin/sherlock265
+@comment @bin bin/tests
+@bin bin/yuv-distortion

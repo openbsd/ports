@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/24 23:22:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/25 13:15:46 sthen Exp $
 
 COMMENT=	ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 
 V=		1.6.2
 DISTNAME=	libheif-$V
+REVISION=	0
 
 SHARED_LIBS +=  heif                      0.0 # 7.2
 
@@ -28,7 +29,8 @@ CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 USE_GMAKE=	Yes
 
 LIB_DEPENDS=	graphics/gdk-pixbuf2 \
-		multimedia/libde265
+		multimedia/libde265 \
+		multimedia/x265
 RUN_DEPENDS=	misc/shared-mime-info
 
 .include <bsd.port.mk>
