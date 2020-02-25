@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2020/02/15 11:37:34 solene Exp $
+# $OpenBSD: Makefile,v 1.89 2020/02/25 05:39:18 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -10,7 +10,6 @@
      SUBDIR += davical
      SUBDIR += deskzilla
      SUBDIR += devtodo
-     SUBDIR += entomologist
      SUBDIR += fet
      SUBDIR += gbirthday
      SUBDIR += glabels
