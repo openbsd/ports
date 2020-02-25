@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.2 2020/02/19 16:08:53 rsadowski Exp $
+$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.3 2020/02/25 14:03:00 rsadowski Exp $
 
 Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
 --- Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig
@@ -75,7 +75,7 @@ Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_esp);
 +#elif CPU(X86_64)
 +    //return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_rsp);
-+#elif CPU(ARM)#
++#elif CPU(ARM)
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.__gregs[_REG_SP]);
 +#elif CPU(ARM64)
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_sp);
@@ -101,7 +101,7 @@ Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_ebp);
 +#elif CPU(X86_64)
 +    //return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_rbp);
-+#elif CPU(ARM)#
++#elif CPU(ARM)
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.__gregs[_REG_FP]);
 +#elif CPU(ARM64)
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_x[29]);
@@ -128,7 +128,7 @@ Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_eip);
 +#elif CPU(X86_64)
 +    //return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_rip);
-+#elif CPU(ARM)#
++#elif CPU(ARM)
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.__gregs[_REG_PC]);
 +#elif CPU(ARM64)
 +    return reinterpret_cast<void*&>((uintptr_t&) regs.machineContext.sc_elr);
