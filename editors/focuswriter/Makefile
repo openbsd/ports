@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2020/01/17 13:35:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.31 2020/02/25 02:27:37 bcallah Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
-DISTNAME =	focuswriter-1.7.4
+DISTNAME =	focuswriter-1.7.5
 CATEGORIES =	editors
 EXTRACT_SUFX =	-src.tar.bz2
 
