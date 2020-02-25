@@ -1,7 +1,9 @@
-$OpenBSD: patch-postgis_Makefile_in,v 1.1 2019/11/09 15:19:50 fcambus Exp $
+$OpenBSD: patch-postgis_Makefile_in,v 1.2 2020/02/25 10:24:12 landry Exp $
 
 Modify include paths order to prevent postgis from using system wide
 devel/uthash headers if they are installed.
+
+https://trac.osgeo.org/postgis/ticket/4573
 
 Index: postgis/Makefile.in
 --- postgis/Makefile.in.orig
