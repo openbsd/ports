@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1 2020/02/22 13:21:16 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2020/02/25 13:38:30 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -20,7 +20,7 @@ Index: configure.ac
  
 -AS_VAR_APPEND(CFLAGS, [" `$ac_cv_isc_config --cflags dns bind9`"])
 -AS_VAR_APPEND(LDFLAGS, [" `$ac_cv_isc_config --libs dns bind9`"])
-+AS_VAR_APPEND(LDFLAGS, ["-lbind9 -ldns -lisccfg -lisc -lcrypto -ljson-c -lxml2 -lz -llzma -lpthread -liconv -lm"])
++AS_VAR_APPEND(LDFLAGS, ["-lbind9"])
  
  AC_CHECK_HEADERS([isc/hmacmd5.h isc/hmacsha.h])
  

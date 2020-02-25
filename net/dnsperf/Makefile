@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/23 11:59:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/25 13:38:30 sthen Exp $
 
 COMMENT =	DNS performance testing tools
 
 DISTNAME =	dnsperf-2.3.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net benchmarks
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.dns-oarc.net/tools/dnsperf/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += bind9 c crypto dns iconv isc isccfg json-c lzma m
-WANTLIB += ssl xml2 z
+WANTLIB += ns ssl uv xml2 z
 
 # needs c++abi on clang arches; this is the simplest way (but results
 # in "Extra"s in check-lib-depends).
