@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/07 08:27:50 martin Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/25 10:01:17 landry Exp $
 
 COMMENT =	geospatial raster data API and CLI
 
 MODPY_EGG_VERSION =	1.1.2
 DISTNAME =	rasterio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	geo
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 COMPILER =	base-clang ports-gcc
 
@@ -38,10 +39,6 @@ RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR}>=0.5 \
 		math/py-snuggs${MODPY_FLAVOR} \
 		math/py-affine${MODPY_FLAVOR}
 
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=	devel/py-enum34
-.endif
-
 # test_read_no_band requires hdf5 support in GDAL
 # requires datafiles only on github...
 NO_TEST =	Yes
@@ -49,8 +46,5 @@ TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
 		devel/py-test-cov${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
-
-post-install:
-	mv ${PREFIX}/bin/rio{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>
