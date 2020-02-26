@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1518 2020/02/20 16:48:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1519 2020/02/26 15:32:45 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -46,12 +46,11 @@
 #
 # tests and variable definitions come first, THEN targets
 #
-.if ${.MAKEFLAGS:MFLAVOR=*}
-ERRORS += "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
-.endif
-.if ${.MAKEFLAGS:MSUBPACKAGE=*}
-ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
-.endif
+.for forbidden in FLAVOR SUBPACKAGE SUBDIR SUBDIRLIST
+.  if ${.MAKEFLAGS:M${forbidden}=*}
+ERRORS += "Fatal: Use 'env ${forbidden}=${${forbidden}} ${MAKE}' instead."
+.  endif
+.endfor
 
 .for f v in bsd.port.mk _BSD_PORT_MK bsd.port.subdir.mk _BSD_PORT_SUBDIR_MK
 .  if defined($v)
