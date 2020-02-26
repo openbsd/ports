@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/07 10:02:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/26 21:54:45 ajacoutot Exp $
+
+BROKEN =	does not build with new libgphoto2
 
 COMMENT =	KDE digital camera support
 DISTNAME =	kamera-${VERSION}
