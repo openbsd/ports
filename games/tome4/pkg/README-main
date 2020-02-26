@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2018/09/04 12:46:13 espie Exp $
+$OpenBSD: README-main,v 1.3 2020/02/26 23:20:43 solene Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -7,3 +7,25 @@ $OpenBSD: README-main,v 1.2 2018/09/04 12:46:13 espie Exp $
 If you have troubles running the game, you can try --safe-mode
 parameter. The full list of available parameters can be found on the
 project's wiki: https://te4.org/wiki/Command_Line_Arguments
+
+-Mmodule	Automatically load and run module instead of going to the boot menu
+-uname		Use name for the character name instead of prompting,
+		and either load that character's saved game or create a new game
+		with that name.
+-n		Force creating a new game, overwriting any previous saved game
+		for the given character name
+-Eargs		Passes extra arguments to the game module (?)
+--xpos		x Create the game window at the given X coordinate
+--ypos		y Create the game window at the given Y coordinate
+--flush‑stdout	Write to te4_log.txt immediately instead of buffering output.
+		This facilitates debugging but can slow T-Engine4 down.
+--no-debug	Disables most output to te4_log.txt
+--safe-mode	Disables many graphical effects and reverts to minimal screen
+		size and graphics settings
+--home path	Use the given directory instead of your default operating
+		system home directory. T-Engine's settings and saved games will
+		be saved in a subdirectory under this home directory, as
+		described here. For example, this can be used to set up a
+		separate directory for developing modules, with cheat enabled
+		and with less "stuff" so it loads faster, without interfering
+		with your regular ToME saved games.

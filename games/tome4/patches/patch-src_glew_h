@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_glew_h,v 1.1 2019/01/31 14:08:25 naddy Exp $
+$OpenBSD: patch-src_glew_h,v 1.2 2020/02/26 23:20:43 solene Exp $
+
+Cope with Mesa >= 18.2.5 which has newer OpenGL headers from Khronos which
+change the include guards.
 
 Index: src/glew.h
 --- src/glew.h.orig

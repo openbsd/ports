@@ -1,4 +1,8 @@
-$OpenBSD: patch-premake4_lua,v 1.3 2018/04/29 10:21:35 solene Exp $
+$OpenBSD: patch-premake4_lua,v 1.4 2020/02/26 23:20:43 solene Exp $
+
+Fix library and include paths.
+Remove hardcoded optimization flags/levels.
+
 Index: premake4.lua
 --- premake4.lua.orig
 +++ premake4.lua
@@ -18,7 +22,7 @@ Index: premake4.lua
  	}
  
  if _OPTIONS.wincross then
-@@ -87,8 +90,9 @@ configuration "Debug"
+@@ -107,8 +110,9 @@ configuration "Debug"
  
  configuration "Release"
  	defines { "NDEBUG=1" }

@@ -1,15 +1,97 @@
-$OpenBSD: lld-linking,v 1.1 2018/10/31 09:48:18 solene Exp $
+$OpenBSD: lld-linking,v 1.2 2020/02/26 23:20:43 solene Exp $
 
-link against libc++abi to access libunwind symbols needed by luajit
+Remove hardcoded optimization level.
 
 Index: build/te4core.lua
 --- build/te4core.lua.orig
 +++ build/te4core.lua
-@@ -50,6 +50,7 @@ project "TEngine"
- 	if _OPTIONS.relpath == "64" then defines{"TE4_RELPATH64"} end
+@@ -41,7 +41,6 @@ project "TEngine"
+ 	if _OPTIONS.discord then defines { "DISCORD_TE4" } end
+ 	defines { "_DEFAULT_VIDEOMODE_FLAGS_='SDL_HWSURFACE|SDL_DOUBLEBUF'" }
+ 	defines { [[TENGINE_HOME_PATH='".t-engine"']], "TE4CORE_VERSION="..TE4CORE_VERSION }
+-	--buildoptions { "-O3" }
  
- 	links { "m" }
-+	links { "c++abi" }
+ 	if _OPTIONS.relpath=="32" then linkoptions{"-Wl,-rpath -Wl,\\\$\$ORIGIN/lib "} end
+ 	if _OPTIONS.relpath=="64" then linkoptions{"-Wl,-rpath -Wl,\\\$\$ORIGIN/lib64 "} end
+@@ -197,9 +196,9 @@ elseif _OPTIONS.lua == "jit2" then
  
- 	if _OPTIONS.no_rwops_size then defines{"NO_RWOPS_SIZE"} end
+ 		local arch_test
+ 		if _OPTIONS.wincross then
+-			arch_test = os.capture("i686-pc-mingw32-gcc -E ../src/luajit2/src/lj_arch.h -dM", true)
++			arch_test = os.capture("i686-pc-mingw32-cc -E ../src/luajit2/src/lj_arch.h -dM", true)
+ 		else
+-			arch_test = os.capture("gcc -E ../src/luajit2/src/lj_arch.h -dM", true)
++			arch_test = os.capture("cc -E ../src/luajit2/src/lj_arch.h -dM", true)
+ 		end
  
+ 		if string.find(arch_test, "LJ_TARGET_X64") then
+@@ -233,16 +232,16 @@ elseif _OPTIONS.lua == "jit2" then
+ 		configuration {"Debug"}
+ 			if _OPTIONS.wincross then
+ 				postbuildcommands {
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/minilua/minilua.cross.o" -c "../src/luajit2/src/host/minilua.c"',
+-					'gcc -o ../bin/Debug/minilua ../obj/Debug/minilua/minilua.cross.o  -m32 -L/usr/lib32 -L/Test/xcompile/local/lib   -lm',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/minilua/minilua.cross.o" -c "../src/luajit2/src/host/minilua.c"',
++					'cc -o ../bin/Debug/minilua ../obj/Debug/minilua/minilua.cross.o  -m32 -L/usr/lib32 -L/Test/xcompile/local/lib   -lm',
+ 				}
+ 			end
+ 			postbuildcommands { "cp ../bin/Debug/minilua ../src/luajit2/src/host/", }
+ 		configuration {"Release"}
+ 			if _OPTIONS.wincross then
+ 				postbuildcommands {
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/minilua/minilua.cross.o" -c "../src/luajit2/src/host/minilua.c"',
+-					'gcc -o ../bin/Release/minilua ../obj/Release/minilua/minilua.cross.o  -m32 -L/usr/lib32 -L/Test/xcompile/local/lib   -lm',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/minilua/minilua.cross.o" -c "../src/luajit2/src/host/minilua.c"',
++					'cc -o ../bin/Release/minilua ../obj/Release/minilua/minilua.cross.o  -m32 -L/usr/lib32 -L/Test/xcompile/local/lib   -lm',
+ 				}
+ 			end
+ 			postbuildcommands { "cp ../bin/Release/minilua ../src/luajit2/src/host/", }
+@@ -256,9 +255,9 @@ elseif _OPTIONS.lua == "jit2" then
+ 		local dasm_flags = ""
+ 		local arch_test
+ 		if _OPTIONS.wincross then
+-			arch_test = os.capture("i686-pc-mingw32-gcc -E ../src/luajit2/src/lj_arch.h -dM", true)
++			arch_test = os.capture("i686-pc-mingw32-cc -E ../src/luajit2/src/lj_arch.h -dM", true)
+ 		else
+-			arch_test = os.capture("gcc -E ../src/luajit2/src/lj_arch.h -dM", true)
++			arch_test = os.capture("cc -E ../src/luajit2/src/lj_arch.h -dM", true)
+ 		end
+ 
+ 		if string.find(arch_test, "LJ_TARGET_X64") then
+@@ -335,24 +334,24 @@ elseif _OPTIONS.lua == "jit2" then
+ 		configuration {"Debug"}
+ 			if _OPTIONS.wincross then
+ 				postbuildcommands {
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm_lib.cross.o" -c "../src/luajit2/src/host/buildvm_lib.c"',
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm_asm.cross.o" -c "../src/luajit2/src/host/buildvm_asm.c"',
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm_peobj.cross.o" -c "../src/luajit2/src/host/buildvm_peobj.c"',
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm_fold.cross.o" -c "../src/luajit2/src/host/buildvm_fold.c"',
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm.cross.o" -c "../src/luajit2/src/host/buildvm.c"',
+-					'gcc -o ../bin/Debug/buildvm ../obj/Debug/buildvm/buildvm_lib.cross.o ../obj/Debug/buildvm/buildvm_asm.cross.o ../obj/Debug/buildvm/buildvm_peobj.cross.o ../obj/Debug/buildvm/buildvm_fold.cross.o ../obj/Debug/buildvm/buildvm.cross.o  -m32 -L/usr/lib32 -L/Test/xcompile/local/lib',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm_lib.cross.o" -c "../src/luajit2/src/host/buildvm_lib.c"',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm_asm.cross.o" -c "../src/luajit2/src/host/buildvm_asm.c"',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm_peobj.cross.o" -c "../src/luajit2/src/host/buildvm_peobj.c"',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm_fold.cross.o" -c "../src/luajit2/src/host/buildvm_fold.c"',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Debug/buildvm/buildvm.cross.o" -c "../src/luajit2/src/host/buildvm.c"',
++					'cc -o ../bin/Debug/buildvm ../obj/Debug/buildvm/buildvm_lib.cross.o ../obj/Debug/buildvm/buildvm_asm.cross.o ../obj/Debug/buildvm/buildvm_peobj.cross.o ../obj/Debug/buildvm/buildvm_fold.cross.o ../obj/Debug/buildvm/buildvm.cross.o  -m32 -L/usr/lib32 -L/Test/xcompile/local/lib',
+ 				}
+ 			end
+ 			postbuildcommands { "cp ../bin/Debug/buildvm ../src/luajit2/src/", }
+ 		configuration {"Release"}
+ 			if _OPTIONS.wincross then
+ 				postbuildcommands {
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm_lib.cross.o" -c "../src/luajit2/src/host/buildvm_lib.c"',
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm_asm.cross.o" -c "../src/luajit2/src/host/buildvm_asm.c"',
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm_peobj.cross.o" -c "../src/luajit2/src/host/buildvm_peobj.c"',
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm_fold.cross.o" -c "../src/luajit2/src/host/buildvm_fold.c"',
+-					'gcc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm.cross.o" -c "../src/luajit2/src/host/buildvm.c"',
+-					'gcc -o ../bin/Release/buildvm ../obj/Release/buildvm/buildvm_lib.cross.o ../obj/Release/buildvm/buildvm_asm.cross.o ../obj/Release/buildvm/buildvm_peobj.cross.o ../obj/Release/buildvm/buildvm_fold.cross.o ../obj/Release/buildvm/buildvm.cross.o  -m32 -L/usr/lib32 -L/Test/xcompile/local/lib',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm_lib.cross.o" -c "../src/luajit2/src/host/buildvm_lib.c"',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm_asm.cross.o" -c "../src/luajit2/src/host/buildvm_asm.c"',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm_peobj.cross.o" -c "../src/luajit2/src/host/buildvm_peobj.c"',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm_fold.cross.o" -c "../src/luajit2/src/host/buildvm_fold.c"',
++					'cc -MMD -MP -DGLEW_STATIC -DLUAJIT_TARGET=LUAJIT_ARCH_x86 -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -I../src -I../src/luasocket -I../src/fov -I../src/expat -I../src/lxp -I../src/libtcod_import -I../src/physfs -I../src/zlib -I../src/bzip2 -I../src/luajit2/src -I../src/luajit2/dynasm -g -m32 -ggdb -o "../obj/Release/buildvm/buildvm.cross.o" -c "../src/luajit2/src/host/buildvm.c"',
++					'cc -o ../bin/Release/buildvm ../obj/Release/buildvm/buildvm_lib.cross.o ../obj/Release/buildvm/buildvm_asm.cross.o ../obj/Release/buildvm/buildvm_peobj.cross.o ../obj/Release/buildvm/buildvm_fold.cross.o ../obj/Release/buildvm/buildvm.cross.o  -m32 -L/usr/lib32 -L/Test/xcompile/local/lib',
+ 				}
+ 			end
+ 			postbuildcommands { "cp ../bin/Release/buildvm ../src/luajit2/src/", }
