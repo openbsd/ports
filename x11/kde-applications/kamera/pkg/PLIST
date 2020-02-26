@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:02:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/26 22:05:44 ajacoutot Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
-lib/qt5/plugins/kcm_kamera.so
-lib/qt5/plugins/kio_kamera.so
+@so lib/qt5/plugins/kcm_kamera.so
+@so lib/qt5/plugins/kio_kamera.so
 share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/kamera/
 share/doc/HTML/ca/kcontrol/kamera/index.cache.bz2
