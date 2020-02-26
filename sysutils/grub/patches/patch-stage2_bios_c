@@ -1,14 +1,0 @@
-$OpenBSD: patch-stage2_bios_c,v 1.1.1.1 2007/04/13 08:29:17 sturm Exp $
---- stage2/bios.c.orig	Tue Apr 10 19:30:45 2007
-+++ stage2/bios.c	Tue Apr 10 19:31:03 2007
-@@ -20,6 +20,10 @@
- 
- #include "shared.h"
- 
-+void __enable_execute_stack(void *addr)
-+{
-+}
-+
- 
- /* These are defined in asm.S, and never be used elsewhere, so declare the
-    prototypes here.  */

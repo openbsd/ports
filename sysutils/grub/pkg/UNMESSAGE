@@ -1,2 +1,0 @@
-To completely uninstall GRUB, you have to delete /grub/ and install a new
-bootloader into your bootdisk's MBR (look at fdisk(8)'s -u option).

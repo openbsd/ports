@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.553 2020/02/17 09:37:59 martin Exp $
+# $OpenBSD: Makefile,v 1.554 2020/02/26 09:49:40 kn Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -115,7 +115,6 @@
      SUBDIR += gpioflicker
      SUBDIR += grafana
      SUBDIR += grive2
-     SUBDIR += grub
      SUBDIR += gsmartcontrol
      SUBDIR += hotplug-diskmount
      SUBDIR += htop
