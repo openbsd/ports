@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_libkstapp_view_h,v 1.1 2020/02/26 16:36:20 rsadowski Exp $
+
+Qt5.13 fix
+
+Index: src/libkstapp/view.h
+--- src/libkstapp/view.h.orig
++++ src/libkstapp/view.h
+@@ -14,6 +14,7 @@
+ #define VIEW_H
+ 
+ #include <QGraphicsView>
++#include <QMenu>
+ 
+ #include "kst_export.h"
+ 
