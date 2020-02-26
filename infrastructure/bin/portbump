@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.22 2018/06/27 16:20:08 zhuk Exp $
+# $OpenBSD: portbump,v 1.23 2020/02/26 15:25:47 espie Exp $
 #
 # Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
 #
@@ -98,12 +98,39 @@ my @_REV_NEIGHBORS_WEAK = qw(
 );
 my $_rev_neighbors_plain_all = join('|', @_REV_NEIGHBORS, @_REV_NEIGHBORS_WEAK);
 
+sub run_make_in
+{
+	my $self = shift;
+	my $dir = shift;
+	my $pid = open(my $pipe, "-|");
+	if (!defined $pid) {
+		die "Couldn't start pipe: $!";
+	}
+	if ($pid == 0) {
+		$ENV{SUBDIR}=$dir if defined $dir;
+		exec {'make'} ('make', @_);
+		exit(1);
+	}
+	my @lines = <$pipe>;
+	close($pipe);
+	if ($? != 0) {
+		die "Pipe errored out with $?";
+	}
+	return @lines;
+}
+
+sub run_make
+{
+	my $self = shift;
+	return $self->run_make_in(undef, @_);
+}
+
 sub new {
 	my ($class, $dir, $tweak_wantlib, $lib_depends_tgt) = @_;
 	die "lib depends target specified without WANTLIB tweaking"
 	    if !$tweak_wantlib and defined($lib_depends_tgt);
 
-	my $self = {
+	my $self = bless {
 		dir => $dir,
 		modules => [],
 		noarch => {},
@@ -111,15 +138,14 @@ sub new {
 		tweak_wantlib => $tweak_wantlib,
 		wantlib_mod => {},
 		verbose => 0,
-	};
+	}, $class;
 
 	#
 	# Get actual information about subpackages (including their
 	# REVISIONs) and shared libraries.
 	#
-	open (my $dumpvars, '-|', "make", "SUBDIR=$dir", "dump-vars") or
-		die "cannot run make dump-vars: $!";
-	while (<$dumpvars>) {
+
+	for ($self->run_make_in($dir, 'dump-vars')) {
 		chomp;
 		next unless /^[^,]*(?:,[^.-]*(-[^.]+)?)?\.([^=.]+)=(.*)$/;
 		my ($subpkg, $var, $value) = ($1, $2, $3);
@@ -142,7 +168,6 @@ sub new {
 			$self->{modules} = [ split(/\s+/, $value) ];
 		}
 	}
-	close $dumpvars;
 
 	if (scalar(keys %{$self->{mpkgs}}) == 1 and exists($self->{mpkgs}->{"-"})) {
 		$self->{mpkgs} = { "" => 1 };
@@ -154,32 +179,26 @@ sub new {
 		# Get actual value of WANTLIB (not the one of WANTLIB-foo or WANTLIB-),
 		# to be used to avoid extra WANTLIB-* lines.
 		#
-		open ($dumpvars, '-|', "make", "SUBDIR=$dir", "show=WANTLIB") or
-			die "cannot run make show=WANTLIB: $!";
-		while (<$dumpvars>) {
+		for ($self->run_make_in($dir, 'show=WANTLIB')) {
 			chomp;
 			next if /^===>/;
 			$_ =~ s/^\s*//;
 			$self->{wantlib_resolved}->{""} =
 			    { map { $_ => 1 } split(/\s+/, $_) };
 		}
-		close $dumpvars;
 	}
 	if (defined $lib_depends_tgt) {
 		my $dirref = ($dir eq ".") ? "" : " in $dir";
 		# first, make sure we don't have to build/install anything
 		if ($lib_depends_tgt eq 'lib-depends-check') {
-			open ($dumpvars, '-|', qw(make show=PKGFILES)) or
-				die "cannot run make show=PKGFILES: $!";
 			my @missing;
-			while (<$dumpvars>) {
+			for ($self->run_make('show=PKGFILES')) {
 				chomp;
 				unless (-e $_) {
 					$_ =~ s,.*/,,;
 					push(@missing, $_);
 				}
 			}
-			close $dumpvars;
 			if (scalar(@missing)) {
 				print STDERR "cannot tweak WANTLIB$dirref"
 				    . " due to missing packages: "
@@ -187,10 +206,7 @@ sub new {
 				return undef;
 			}
 		} else {
-			open ($dumpvars, '-|', qw(make show=_FAKE_COOKIE)) or
-				die "cannot run make show=_FAKE_COOKIE: $!";
-			my $cookie = <$dumpvars>;
-			close $dumpvars;
+			my $cookie = ($self->run_make('show=_FAKE_COOKIE'))[0];
 			chomp $cookie;
 			unless (-e $cookie) {
 				print STDERR "cannot tweak WANTLIB$dirref,"
@@ -201,11 +217,9 @@ sub new {
 
 		$self->{wantlib_extra} = { "" => [] };
 		$self->{wantlib_missing} = { "" => [] };
-		open ($dumpvars, '-|', "make", "SUBDIR=$dir", $lib_depends_tgt) or
-			die "cannot run make $lib_depends_tgt: $!";
 		my $subpkg;
 		my %not_reachable;
-		while (<$dumpvars>) {
+		for ($self->run_make_in($dir, $lib_depends_tgt)) {
 			chomp;
 			if (/^\s*$/) {
 				# ignore empty lines
@@ -240,7 +254,6 @@ sub new {
 #			print STDERR "wantlib_missing->{$subpkg} = ".join(', ', @{$self->{wantlib_missing}->{$subpkg}})."\n";
 #		}
 
-		close $dumpvars;
 		if (scalar(keys %not_reachable)) {
 			print STDERR "cannot tweak WANTLIB$dirref,"
 			    . " not reachable missing libraries detected: "
@@ -249,7 +262,7 @@ sub new {
 		}
 	}
 
-	return bless($self, $class);
+	return $self;
 }
 
 sub verbose {
@@ -782,17 +795,13 @@ sub process_makefile {
 	push(@mod_wantlib_seen, "MODGCC4_CPPWANTLIB", "MODGCC4_GCJWANTLIB")
 	    if $gcc4_seen;
 	if (scalar(@mod_wantlib_seen)) {
-		my $show = 'show='.join(' ', @mod_wantlib_seen);
-		open (my $makeh, '-|', 'make', $show)
-		    or die "cannot run make $show: $!";
-		while (<$makeh>) {
+	    	for ($self->run_make('show='.join(' ', @mod_wantlib_seen))) {
 			chomp;
 			my $m = shift @mod_wantlib_seen;
 			$self->{wantlib_mod}->{$m} = { map {
 				Util::w_stem($_) => $_
 			    } split(/\s+/, $_) };
 		}
-		close $makeh;
 	}
 }
 
