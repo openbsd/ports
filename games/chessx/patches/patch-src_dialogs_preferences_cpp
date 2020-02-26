@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_dialogs_preferences_cpp,v 1.1 2020/02/26 06:14:43 rsadowski Exp $
+
+Index: src/dialogs/preferences.cpp
+--- src/dialogs/preferences.cpp.orig
++++ src/dialogs/preferences.cpp
+@@ -21,6 +21,7 @@
+ #include "engineoptiondialog.h"
+ #include "downloadmanager.h"
+ 
++#include <QAction>
+ #include <QCheckBox>
+ #include <QColorDialog>
+ #include <QComboBox>

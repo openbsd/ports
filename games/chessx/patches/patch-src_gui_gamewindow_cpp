@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gui_gamewindow_cpp,v 1.1 2020/02/26 06:14:43 rsadowski Exp $
+
+Index: src/gui/gamewindow.cpp
+--- src/gui/gamewindow.cpp.orig
++++ src/gui/gamewindow.cpp
+@@ -8,6 +8,7 @@
+ #include "nag.h"
+ #include "settings.h"
+ 
++#include <QAction>
+ #include <QToolButton>
+ 
+ #if defined(_MSC_VER) && defined(_DEBUG)

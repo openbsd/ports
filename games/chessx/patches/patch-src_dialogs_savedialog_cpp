@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_dialogs_savedialog_cpp,v 1.1 2020/02/26 06:14:43 rsadowski Exp $
+
+Index: src/dialogs/savedialog.cpp
+--- src/dialogs/savedialog.cpp.orig
++++ src/dialogs/savedialog.cpp
+@@ -22,6 +22,7 @@
+ #include "settings.h"
+ #include "tags.h"
+ 
++#include <QButtonGroup>
+ #include <QLineEdit>
+ #include <QCompleter>
+ 
