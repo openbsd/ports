@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/29 13:05:01 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/26 09:09:00 paco Exp $
+@conflict sysutils/py-prometheus_client-*
+@pkgpath sysutils/py-prometheus_client
 lib/python${MODPY_VERSION}/site-packages/prometheus_client/
 lib/python${MODPY_VERSION}/site-packages/prometheus_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/prometheus_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

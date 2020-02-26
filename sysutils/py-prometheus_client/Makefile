@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/17 10:40:26 paco Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/26 09:09:00 paco Exp $
 
 COMMENT =		python client for the prometheus monitoring system
 
 MODPY_EGG_VERSION =	0.7.1
 DISTNAME =		prometheus_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -18,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 NO_TEST =		Yes
 
