@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.25 2019/10/14 14:11:36 robert Exp $
+$OpenBSD: patch-configure,v 1.26 2020/02/26 11:27:01 robert Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6527,6 +6527,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -6535,6 +6535,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  
  #include <stdlib.h>
  #include <sys/queue.h>
@@ -10,7 +10,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main ()
-@@ -9461,7 +9462,7 @@ $as_echo "yes" >&6; }
+@@ -9469,7 +9470,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
@@ -19,7 +19,7 @@ Index: configure
  
  fi
         else
-@@ -9471,7 +9472,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -9479,7 +9480,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"
@@ -28,7 +28,7 @@ Index: configure
  		       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
                 else
-@@ -12788,12 +12789,12 @@ LIBS="$LIBS $ICONV_LIBS"
+@@ -13067,12 +13068,12 @@ LIBS="$LIBS $ICONV_LIBS"
  RANLIB="ranlib"
  
  
