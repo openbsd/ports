@@ -1,0 +1,13 @@
+$OpenBSD: patch-librecad_src_ui_forms_qg_commandwidget_cpp,v 1.1 2020/02/26 16:38:40 rsadowski Exp $
+
+Index: librecad/src/ui/forms/qg_commandwidget.cpp
+--- librecad/src/ui/forms/qg_commandwidget.cpp.orig
++++ librecad/src/ui/forms/qg_commandwidget.cpp
+@@ -27,6 +27,7 @@
+ 
+ #include <algorithm>
+ 
++#include <QAction>
+ #include <QKeyEvent>
+ #include <QFileDialog>
+ #include <QSettings>

@@ -1,0 +1,13 @@
+$OpenBSD: patch-librecad_src_ui_generic_colorwizard_cpp,v 1.1 2020/02/26 16:38:40 rsadowski Exp $
+
+Index: librecad/src/ui/generic/colorwizard.cpp
+--- librecad/src/ui/generic/colorwizard.cpp.orig
++++ librecad/src/ui/generic/colorwizard.cpp
+@@ -27,6 +27,7 @@
+ #include "colorwizard.h"
+ #include "ui_colorwizard.h"
+ 
++#include <QAction>
+ #include <QColorDialog>
+ #include <QLineEdit>
+ #include <QListWidget>

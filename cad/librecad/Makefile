@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/14 12:09:40 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/26 16:38:40 rsadowski Exp $
 
 COMMENT =	2D CAD program
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =	LibreCAD
 GH_PROJECT =	LibreCAD
 GH_TAGNAME =	2.2.0-rc1
 PKGNAME =	${DISTNAME:L:S/-rc/rc/}
+REVISION =	0
 
 CATEGORIES =	cad graphics
 
