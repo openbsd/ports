@@ -1,0 +1,20 @@
+$OpenBSD: patch-dec265_Makefile_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
+
+Index: dec265/Makefile.in
+--- dec265/Makefile.in.orig
++++ dec265/Makefile.in
+@@ -361,12 +361,12 @@ AM_CPPFLAGS = -I$(top_srcdir)/libde265 -I$(top_srcdir)
+ dec265_DEPENDENCIES = ../libde265/libde265.la
+ dec265_CXXFLAGS = $(am__append_1) $(am__append_3)
+ dec265_LDFLAGS = $(am__append_2) $(am__append_4) $(am__append_6)
+-dec265_LDADD = ../libde265/libde265.la -lstdc++
++dec265_LDADD = ../libde265/libde265.la
+ dec265_SOURCES = dec265.cc $(am__append_5)
+ hdrcopy_DEPENDENCIES = ../libde265/libde265.la
+ hdrcopy_CXXFLAGS = 
+ hdrcopy_LDFLAGS = 
+-hdrcopy_LDADD = ../libde265/libde265.la -lstdc++
++hdrcopy_LDADD = ../libde265/libde265.la
+ hdrcopy_SOURCES = hdrcopy.cc
+ EXTRA_DIST = Makefile.vc7 \
+   CMakeLists.txt \

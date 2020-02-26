@@ -1,0 +1,14 @@
+$OpenBSD: patch-acceleration-speed_Makefile_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
+
+Index: acceleration-speed/Makefile.in
+--- acceleration-speed/Makefile.in.orig
++++ acceleration-speed/Makefile.in
+@@ -358,7 +358,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/libde265 -I$(top_srcdir)
+ acceleration_speed_DEPENDENCIES = ../libde265/libde265.la
+ acceleration_speed_CXXFLAGS = 
+ acceleration_speed_LDFLAGS = 
+-acceleration_speed_LDADD = ../libde265/libde265.la -lstdc++
++acceleration_speed_LDADD = ../libde265/libde265.la
+ acceleration_speed_SOURCES = acceleration-speed.cc \
+ 	acceleration-speed.h dct.cc dct.h dct-scalar.cc dct-scalar.h \
+ 	$(am__append_1)

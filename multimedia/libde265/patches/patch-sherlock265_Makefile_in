@@ -1,0 +1,14 @@
+$OpenBSD: patch-sherlock265_Makefile_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
+
+Index: sherlock265/Makefile.in
+--- sherlock265/Makefile.in.orig
++++ sherlock265/Makefile.in
+@@ -361,7 +361,7 @@ sherlock265_DEPENDENCIES = ../libde265/libde265.la
+ sherlock265_CXXFLAGS = $(QT_CFLAGS) -std=c++0x -fPIC $(am__append_1) \
+ 	$(am__append_3)
+ sherlock265_LDFLAGS = $(QT_LIBS) $(am__append_2) $(am__append_4)
+-sherlock265_LDADD = ../libde265/libde265.la -lstdc++ -lpthread
++sherlock265_LDADD = ../libde265/libde265.la -lpthread
+ sherlock265_SOURCES = \
+   sherlock265.cc \
+   VideoPlayer.cc \

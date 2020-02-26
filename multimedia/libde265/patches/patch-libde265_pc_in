@@ -1,0 +1,12 @@
+$OpenBSD: patch-libde265_pc_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
+
+Index: libde265.pc.in
+--- libde265.pc.in.orig
++++ libde265.pc.in
+@@ -9,5 +9,5 @@ URL: https://github.com/strukturag/libde265
+ Version: @VERSION@
+ Requires: 
+ Libs: -lde265 -L@libdir@
+-Libs.private: @LIBS@ -lstdc++
++Libs.private: @LIBS@
+ Cflags: -I@includedir@

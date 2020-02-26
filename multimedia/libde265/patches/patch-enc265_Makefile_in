@@ -1,0 +1,14 @@
+$OpenBSD: patch-enc265_Makefile_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
+
+Index: enc265/Makefile.in
+--- enc265/Makefile.in.orig
++++ enc265/Makefile.in
+@@ -351,7 +351,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/libde265 -I$(top_srcdir)
+ enc265_DEPENDENCIES = ../libde265/libde265.la
+ enc265_CXXFLAGS = $(am__append_1)
+ enc265_LDFLAGS = $(am__append_2)
+-enc265_LDADD = ../libde265/libde265.la -lstdc++
++enc265_LDADD = ../libde265/libde265.la
+ enc265_SOURCES = enc265.cc image-io-png.cc image-io-png.h
+ EXTRA_DIST = \
+   CMakeLists.txt \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/25 13:15:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/26 22:46:03 sthen Exp $
 
 COMMENT-main=	open H.265 video codec implementation
 COMMENT-tools=	tools for libde265 open H.265 video codec
@@ -7,7 +7,7 @@ V=		1.0.5
 DISTNAME=	libde265-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tools=	libde265-tools-$V
-REVISION-main=	0
+REVISION=	1
 
 SHARED_LIBS +=  de265                     0.0 # 0.12
 
