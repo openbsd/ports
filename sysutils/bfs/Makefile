@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2020/01/10 14:40:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/26 12:38:02 bcallah Exp $
 
 COMMENT =	breadth-first version of the UNIX find command
 CATEGORIES =	sysutils
 
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
-GH_TAGNAME =	1.5.2
+GH_TAGNAME =	1.6
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
