@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.130 2019/11/12 06:01:04 bentley Exp $
+# $OpenBSD: portcheck,v 1.131 2020/02/26 15:28:10 espie Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1481,7 +1481,7 @@ check_lib_depends() {
 	# TODO cache print-plist-libs output?
 	cd -- /usr/ports    # XXX "$portsdir" fails for openbsd-wip and like
 	unset FLAVOR SUBPACKAGE
-	make "${make_args[@]}" SUBDIR="${pure_lib_deps[*]}" \
+	SUBDIR="${pure_lib_deps[*]}" make "${make_args[@]}" \
 	    print-plist-libs </dev/null 2>/dev/null |&
 	while read -pr l; do
 		case $l in
