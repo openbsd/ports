@@ -1,11 +1,3 @@
-@comment $OpenBSD: PFRAG.old,v 1.2 2019/02/16 07:56:27 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.old,v 1.3 2020/02/27 11:50:06 ajacoutot Exp $
 include/librsvg-2.0/librsvg/librsvg-enum-types.h
 share/gtk-doc/html/rsvg-2.0/RsvgHandle.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-14.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-22.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-32.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-36.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-4.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-8.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-9.html
-share/gtk-doc/html/rsvg-2.0/api-index-deprecated.html
