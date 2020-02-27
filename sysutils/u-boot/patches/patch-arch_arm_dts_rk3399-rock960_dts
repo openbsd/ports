@@ -1,0 +1,14 @@
+$OpenBSD: patch-arch_arm_dts_rk3399-rock960_dts,v 1.1 2020/02/27 14:45:50 kurt Exp $
+
+Index: arch/arm/dts/rk3399-rock960.dts
+--- arch/arm/dts/rk3399-rock960.dts.orig
++++ arch/arm/dts/rk3399-rock960.dts
+@@ -11,7 +11,7 @@
+ 	compatible = "vamrs,rock960", "rockchip,rk3399";
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	leds {

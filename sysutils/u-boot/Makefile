@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.65 2020/02/05 17:54:03 kurt Exp $
+#	$OpenBSD: Makefile,v 1.66 2020/02/27 14:45:50 kurt Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,7 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2020.01
-REVISION=	2
+REVISION=	3
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -72,6 +72,7 @@ BOARDS=\
 	mvebu_mcbin-88f8040 \
 	qemu_arm64 \
 	rock64-rk3328 \
+	rock960-rk3399 \
 	rockpro64-rk3399 \
 	rpi_3 \
 	rpi_4
@@ -157,23 +158,23 @@ do-build:
 	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	        O="build/${BOARD}" \
 	        -f ${MAKE_FILE} "${BOARD}"_defconfig
-.if "${BOARD}" == "firefly-rk3399" || "${BOARD}" == "rockpro64-rk3399"
+.if "${BOARD:M*-rk3399}"
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} BL31=${RK3399_BL31} ${MAKE_PROGRAM} \
 	        ${MAKE_FLAGS} O="build/${BOARD}" \
 	        -f ${MAKE_FILE} ${ALL_TARGET}
-.elif "${BOARD}" == "rock64-rk3328"
+.elif "${BOARD:M*-rk3328}"
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} BL31=${RK3328_BL31} ${MAKE_PROGRAM} \
 	        ${MAKE_FLAGS} O="build/${BOARD}" \
-	        -f ${MAKE_FILE} ${ALL_TARGET} u-boot.itb
+	        -f ${MAKE_FILE} ${ALL_TARGET}
 .else
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	        O="build/${BOARD}" \
 	        -f ${MAKE_FILE} ${ALL_TARGET}
 .endif
-.if "${BOARD}" == "tinker-rk3288"
+.if "${BOARD:M*-rk3288}"
 	cd ${WRKSRC}/build/${BOARD} && \
 	    tools/mkimage -n rk3288 -T rksd -d tpl/u-boot-tpl.bin \
 	        idbloader.img && \
