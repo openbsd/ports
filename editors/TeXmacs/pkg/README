@@ -1,0 +1,36 @@
+$OpenBSD: README,v 1.1 2020/02/27 14:29:46 jca Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Plug-ins
+========
+
+Many plug-ins for external software exist for GNU TeXmacs. Install the
+corresponding packages to use these plug-ins (e.g., `pkg_add gnuplot').
+
+dratex: texlive_base
+gnuplot: gnuplot
+graphviz: graphviz
+lisp: clisp
+maxima: maxima
+octave: octave
+pari: pari
+R: R
+sympy: py3-sympy
+
+Usage
+-----
+Once an external package has been installed, it should be listed in the
+following menus.
+
+Interactive session: Insert > Session
+
+Executable folded environment: Insert > Fold > Executable
+
+Documentation
+-------------
+Inside TeXmacs: Help > Plug-ins
+${TRUEPREFIX}/share/TeXmacs/plugins/*/doc
+https://www.texmacs.org/tmweb/plugins/plugins.en.html

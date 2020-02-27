@@ -1,0 +1,29 @@
+$OpenBSD: patch-plugins_r_src_tm_r_c,v 1.1 2020/02/27 14:29:46 jca Exp $
+
+do not build TeXmacs-R interface at runtime. attempting to do so
+prevents interface from starting.
+
+Index: plugins/r/src/tm_r.c
+--- plugins/r/src/tm_r.c.orig
++++ plugins/r/src/tm_r.c
+@@ -101,7 +101,7 @@ jmp_buf error_return_env ;
+ 
+ int N_data_begins = 0 ;
+ 
+-char *DEFAULT_TEXMACS_SEND = "source(paste(Sys.getenv(\"TEXMACS_PATH\"),\"/plugins/r/texmacs.r\",sep=\"\"))\n";
++char *DEFAULT_TEXMACS_SEND = "";
+ 
+ 
+ // Add one more DATA_BEGIN, i.e. open bracket.
+@@ -850,11 +850,6 @@ int main(int argc, char *argv[])
+     snprintf( TEXMACS_HOME_PATH, 4096, "%s/.TeXmacs",HOME) ;
+   }
+   
+-  /* Lazy installing the TeXmacs package */
+-  TEXMACS_LIB = (char *)malloc(4096);
+-  snprintf(TEXMACS_LIB,4096,"%s/plugins/r/r",TEXMACS_HOME_PATH);
+-  if (stat(TEXMACS_LIB,&stat_buf))
+-    system("r_install"); 
+ 
+   setenv( "TERM", "dumb", 1) ;
+   

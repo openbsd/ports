@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_octave_octave_tm-start_m,v 1.1 2020/02/27 14:29:46 jca Exp $
+
+octave session does not start because tmrepl undefined
+https://github.com/texmacs/plugins/issues/11
+
+Index: plugins/octave/octave/tm-start.m
+--- plugins/octave/octave/tm-start.m.orig
++++ plugins/octave/octave/tm-start.m
+@@ -1,4 +1,5 @@
+ d=getenv("TEXMACS_PATH");
+ if (length(d) > 0)
++    addpath("tm")
+     tmrepl
+ endif
