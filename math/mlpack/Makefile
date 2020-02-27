@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/18 13:05:58 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/02/27 18:15:25 bket Exp $
 
 BROKEN-powerpc = virtual memory exhausted, even with -O1
 
@@ -7,7 +7,7 @@ COMMENT-python = python bindings to C++ machine learning library
 
 V = 		3.2.1
 REVISION-main =		1
-REVISION-python =	0
+REVISION-python =	1
 
 # STB stuff
 # XXX remember to bump REV if they change
@@ -53,8 +53,8 @@ WANTLIB-python = ${WANTLIB} ${MODPY_WANTLIB} boost_serialization mlpack
 MODULES = 	devel/cmake \
 		lang/python
 
-FLAVOR ?= 		python3
 FLAVORS = 		python3
+FLAVOR = 		python3
 
 MODPY_RUNDEP =	No
 
@@ -72,9 +72,6 @@ LIB_DEPENDS-python = 	math/mlpack,-main \
 			devel/boost
 
 RUN_DEPENDS-python = 	math/py-pandas${MODPY_FLAVOR}
-
-
-
 
 # XXX set this *explicitly*, do not depend on module order
 CONFIGURE_STYLE = 	cmake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2020/02/09 18:48:29 martin Exp $
+# $OpenBSD: Makefile,v 1.174 2020/02/27 18:15:25 bket Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -57,7 +57,6 @@
      SUBDIR += mcsim
      SUBDIR += minisat
      SUBDIR += mlpack
-     SUBDIR += mlpack,
      SUBDIR += moo
      SUBDIR += muparser
      SUBDIR += netcdf

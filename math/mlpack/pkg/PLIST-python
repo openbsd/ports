@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-python,v 1.5 2019/10/28 15:13:35 espie Exp $
+@comment $OpenBSD: PLIST-python,v 1.6 2020/02/27 18:15:25 bket Exp $
 @conflict mlpack-<3.0.4
+@conflict py-mlpack-*
 @pkgpath math/mlpack,-python${FLAVOR_EXT}
+@pkgpath math/mlpack,
 include/mlpack/bindings/python/
 include/mlpack/bindings/python/get_arma_type.hpp
 include/mlpack/bindings/python/get_cython_type.hpp
