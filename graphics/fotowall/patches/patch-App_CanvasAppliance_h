@@ -1,0 +1,14 @@
+$OpenBSD: patch-App_CanvasAppliance_h,v 1.1 2020/02/27 05:36:01 rsadowski Exp $
+
+Index: App/CanvasAppliance.h
+--- App/CanvasAppliance.h.orig
++++ App/CanvasAppliance.h
+@@ -15,6 +15,8 @@
+ #ifndef __CanvasAppliance_h__
+ #define __CanvasAppliance_h__
+ 
++#include <QActionGroup>
++
+ #include "Shared/PlugGui/AbstractAppliance.h"
+ #include "ui_CanvasAppliance.h"
+ class QMenu;

@@ -1,0 +1,13 @@
+$OpenBSD: patch-App_CanvasAppliance_cpp,v 1.1 2020/02/27 05:36:01 rsadowski Exp $
+
+Index: App/CanvasAppliance.cpp
+--- App/CanvasAppliance.cpp.orig
++++ App/CanvasAppliance.cpp
+@@ -30,6 +30,7 @@
+ #include "Settings.h"
+ #include "Workflow.h"
+ 
++#include <QButtonGroup>
+ #include <QDesktopWidget>
+ #include <QFileDialog>
+ #include <QInputDialog>
