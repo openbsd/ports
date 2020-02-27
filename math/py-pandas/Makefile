@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/10/05 16:28:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2020/02/27 18:23:39 bket Exp $
 
 COMMENT =		data analysis and manipulation library
 
-MODPY_EGG_VERSION =	0.24.2
-REVISION =		0
+MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -15,7 +14,7 @@ HOMEPAGE =		https://pandas.pydata.org/
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
@@ -28,12 +27,12 @@ WANTLIB +=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
 COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS +=	lang/cython${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}>=1.9.0
+			math/py-numpy${MODPY_FLAVOR}>=1.13.3
 
-RUN_DEPENDS +=		devel/py-dateutil${MODPY_FLAVOR}>=2.5.0 \
-			devel/py-tz${MODPY_FLAVOR} \
+RUN_DEPENDS +=		devel/py-dateutil${MODPY_FLAVOR}>=2.6.1 \
+			devel/py-tz${MODPY_FLAVOR}>=2017.2 \
 			lang/cython${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}>=1.9.0
+			math/py-numpy${MODPY_FLAVOR}>=1.13.3
 
 TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 			databases/py-psycopg2${MODPY_FLAVOR} \
