@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.876 2020/02/26 09:12:30 paco Exp $
+# $OpenBSD: Quirks.pm,v 1.877 2020/02/27 18:27:42 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -357,6 +357,10 @@ my $stem_extensions = {
 	'py-shapely' => 'py3-shapely',
 	'py-terminado' => 'py3-terminado',
 	'py-prometheus_client' => 'py3-prometheus_client',
+	'py-influxdb' => 'py3-influxdb',
+	'py-pandas' => 'py3-pandas',
+	'py-siphon' => 'py3-siphon',
+	'py-mlpack' => 'py3-mlpack',
 };
 
 my $obsolete_reason = {
