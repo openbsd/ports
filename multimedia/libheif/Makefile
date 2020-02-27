@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/25 13:15:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/02/27 12:20:24 sthen Exp $
 
 COMMENT=	ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 
 V=		1.6.2
 DISTNAME=	libheif-$V
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  heif                      0.0 # 7.2
 
 CATEGORIES=	multimedia graphics
 
-HOMEPAGE=	https://www.libheif.org/
+HOMEPAGE=	https://github.com/strukturag/libheif
 
 # LGPLv3+ (library), MIT (sample applications)
 PERMIT_PACKAGE=	Yes
