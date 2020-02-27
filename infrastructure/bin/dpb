@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.139 2019/11/03 10:18:31 espie Exp $
+# $OpenBSD: dpb,v 1.140 2020/02/27 11:37:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -45,6 +45,7 @@ use OpenBSD::Error;
 use DPB::Job;
 use DPB::Grabber;
 use DPB::Trace;
+use File::Basename;
 
 my $keep_going = 1;
 
@@ -77,10 +78,11 @@ sub show_duration
 sub report_tty
 {
 	my ($self, $state) = @_;
+	$state->{socket_location} //= basename($state->{external}{path});
 	my $t = CORE::time();
-	return DPB::Util->time2string($t)." [$$]".
+	return DPB::Util->time2string($t)." [$$] ".$state->{socket_location}.
 		($keep_going ? "" : " STOPPED!").
-		" running for ".show_duration($t-$state->{starttime})."\n";
+		" elapsed: ".show_duration($t-$state->{starttime})."\n";
 }
 
 sub affinityclass
