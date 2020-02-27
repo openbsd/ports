@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.140 2020/02/27 11:37:53 espie Exp $
+# $OpenBSD: dpb,v 1.141 2020/02/27 11:48:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -40,7 +40,6 @@ use DPB::Vars;
 use DPB::PortInfo;
 use DPB::Engine;
 use DPB::PortBuilder;
-use DPB::Reporter;
 use OpenBSD::Error;
 use DPB::Job;
 use DPB::Grabber;
@@ -122,8 +121,8 @@ for my $sig (qw(INT HUP TERM QUIT)) {
 my $trace = DPB::Trace->new($cleanup);
 
 $state->handle_options;
-my $reporter = DPB::Reporter->new($state)->add_producers("main", "DPB::Core");
-$trace->set_reporter($reporter);
+$state->{reporter}->add_producers("main", "DPB::Core");
+$trace->set_reporter($state->{reporter});
 
 $state->{all} = 1;
 
@@ -172,7 +171,7 @@ $state->{builder} = DPB::PortBuilder->new($state);
 $state->{affinity} = affinityclass()->new($state, join("/", $state->logdir, "affinity"));
 
 $state->{engine} = DPB::Engine->new($state);
-$reporter->add_producers($state->engine);
+$state->{reporter}->add_producers($state->engine);
 $state->{grabber} = DPB::Grabber->new($state, \&handle_non_waiting_jobs);
 
 print "Waiting for hosts to finish STARTUP...";
@@ -248,7 +247,7 @@ sub handle_non_waiting_jobs
 	}
 	DPB::Core->log_concurrency(CORE::time(), $state->{concurrent});
 	DPB::Core->wake_jobs;
-	$reporter->report($force_report);
+	$state->{reporter}->report($force_report);
 }
 
 sub main_loop
@@ -340,17 +339,17 @@ $state->engine->check_buildable;
 
 if ($state->{scan_only}) {
 	# very shortened loop
-	$reporter->report;
+	$state->{reporter}->report;
 	if (DPB::Core->running) {
 		DPB::Core->reap_wait;
 	}
 } else {
 	# and let's wait for all jobs now.
-	DPB::Core->start_clock($reporter);
+	DPB::Core->start_clock($state->{reporter});
 	main_loop();
 }
 
-$reporter->reset;
+$state->{reporter}->reset;
 DPB::Core->cleanup;
 $state->{external}->cleanup;
 print "Elapsed time=", show_duration(CORE::time()-$state->{starttime}),"\n";

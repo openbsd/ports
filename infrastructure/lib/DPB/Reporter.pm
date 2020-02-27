@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.33 2019/10/23 14:34:27 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.34 2020/02/27 11:48:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -141,7 +141,6 @@ sub create
 	    timeout => $state->{display_timeout} // 10,
 	    state => $state,
 	    continued => 0}, $class;
-	$state->{reporter} = $self;
 	return $self;
 }
 

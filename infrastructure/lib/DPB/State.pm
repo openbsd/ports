@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.28 2019/10/22 16:02:08 espie Exp $
+# $OpenBSD: State.pm,v 1.29 2020/02/27 11:48:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -33,6 +33,7 @@ use DPB::Core;
 use DPB::Core::Init;
 use DPB::Locks;
 use DPB::Serialize;
+use DPB::Reporter;
 
 sub define_present
 {
@@ -157,6 +158,7 @@ sub handle_options
 	$state->{logger} = DPB::Logger->new($state);
 	# must come after logger
 	$state->{locker} = DPB::Locks->new($state);
+	$state->{reporter} = DPB::Reporter->new($state);
 	DPB::Core::Init->init_cores($state);
 	DPB::Core->reap;
 	$state->sizer->parse_size_file;
