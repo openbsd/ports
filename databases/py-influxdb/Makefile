@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/08/27 10:34:13 bket Exp $
+# $OpenBSD: Makefile,v 1.8 2020/02/27 18:10:24 bket Exp $
 
 COMMENT =		Python client for interacting with InfluxDB
 
 MODPY_EGG_VERSION =	5.2.3
+REVISION =		0
 DISTNAME =		influxdb-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS +=		devel/py-dateutil${MODPY_FLAVOR}>=2.6.0 \
 			devel/py-six${MODPY_FLAVOR}>=1.10.0 \
