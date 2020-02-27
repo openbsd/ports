@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.11 2019/10/23 14:34:27 espie Exp $
+# $OpenBSD: Signature.pm,v 1.12 2020/02/27 13:50:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -48,27 +48,27 @@ sub new
 
 sub compare1
 {
-	my ($s1, $s2, $h1, $h2) = @_;
+	my ($s1, $s2, $h1, $h2, $full) = @_;
 	my $r = '';
 	while (my ($stem, $lib) = each %$s1) {
 		next if $stem eq 'la';
 		next if $stem eq 'a';
 		if (!defined $s2->{$stem}) {
-			$r .= "Can't find ".$lib->to_string." on $h2\n";
-		} elsif ($s2->{$stem}->to_string ne $lib->to_string) {
-			$r .= "versions don't match: ".
-			    $s2->{$stem}->to_string." on $h2 vs ".
-			    $lib->to_string.  " on $h1\n";
+			$r .= "  can't find ".$lib->to_string." on $h2\n";
+		} elsif ($full && $s2->{$stem}->to_string ne $lib->to_string) {
+			$r .= "  mismatch ".
+			    $s2->{$stem}->to_string." vs ".
+			    $lib->to_string."\n";
 		}
 	}
 	for my $k (keys %{$s1->{la}}) {
 		if (!defined $s2->{la}{$k}) {
-			$r .= "$h2 does not have $k.la (from $h1)\n";
+			$r .= "  Can't find $k.la on $h2\n";
 		}
 	}
 	for my $k (keys %{$s1->{a}}) {
 		if (!defined $s2->{a}{$k}) {
-			$r .= "$h2 does not have lib$k.a (from $h1)\n";
+			$r .= "  can't find lib$k.a on $h2\n";
 		}
 	}
 	return $r;
@@ -98,7 +98,8 @@ sub print_out
 sub compare
 {
 	my ($s1, $s2, $h1, $h2) = @_;
-	return compare1($s1, $s2, $h1, $h2) . compare1($s2, $s1, $h2, $h1);
+	return compare1($s1, $s2, $h1, $h2, 0) . 
+	    compare1($s2, $s1, $h2, $h1, 1);
 }
 
 package DPB::Signature::Task;
@@ -165,7 +166,7 @@ sub compare
 	}
 	if ($r) {
 		$s1->{reporter}->myprint(
-		    "Error between $s1->{host} and $s2->{host}: $r");
+		    "Error between $s1->{host} and $s2->{host}:\n$r");
 	}
 	return $r;
 }
