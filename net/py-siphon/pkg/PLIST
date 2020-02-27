@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/01 04:04:03 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/27 18:08:18 bket Exp $
+@conflict py-siphon-*
+@pkgpath net/py-siphon
 lib/python${MODPY_VERSION}/site-packages/siphon/
 lib/python${MODPY_VERSION}/site-packages/siphon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/siphon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
