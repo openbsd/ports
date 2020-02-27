@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2020/02/19 12:15:45 landry Exp $
+# $OpenBSD: Makefile,v 1.69 2020/02/27 14:06:13 landry Exp $
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.5
@@ -43,7 +43,8 @@ LIB_DEPENDS=	graphics/lcms2 \
 		graphics/jpeg \
 		${MODPY_LIB_DEPENDS}
 
-CONFIGURE_ARGS+=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man/"
+CONFIGURE_ARGS+=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man/" \
+			-DWANT_NOOSG=1
 #DEBUG_CONFIGURE_ARGS +=	-DWANT_DEBUG=1
 
 # delete DOS line endings
