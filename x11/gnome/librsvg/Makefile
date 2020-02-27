@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2020/02/27 11:50:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.164 2020/02/27 14:31:58 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -15,6 +15,7 @@ MASTER_SITES1=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${OLD_VERSION:C/^(
 
 ### stable
 .if ${PROPERTIES:Mrust}
+REVISION=		0
 SHARED_LIBS +=  rsvg-2               39.2     # 49.0
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
@@ -59,11 +60,6 @@ CONFIGURE_ARGS=		--disable-tools
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-post-patch:
-	# permit patching libc-rs to support sparc64 (could be removed with libc>=0.2.63)
-	-sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/vendor/libc/.cargo-checksum.json
 
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
