@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.24 2020/02/27 15:53:35 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.25 2020/02/27 16:06:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -131,7 +131,7 @@ sub run
 	my $site = $self->{site};
 	$site =~ s/^\"(.*)\"$/$1/;
 	$job->{logger}->redirect($job->{log});
-	if ($job->{file}{sz} // 0 == 0) {
+	if (($job->{file}{sz} // 0) == 0) {
 		print STDERR "No size in distinfo\n";
 		exit(1);
 	}
@@ -157,7 +157,7 @@ sub finalize
 	if ($job->{file}->checksize($job->{file}->tempfilename)) {
 	    	$job->new_checksum_task($self, $core->{status});
 	} else {
-		if ($job->{file}{sz} // 0 == 0) {
+		if (($job->{file}{sz} // 0) == 0) {
 			$job->{sites} = $job->{bak} = [];
 			return $job->bad_file($self, $core);
 		}
