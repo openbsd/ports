@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2019/11/01 19:37:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2020/02/28 15:04:03 ajacoutot Exp $
 @conflict libsoup-gnome-*
 @pkgpath devel/libsoup,-main
 @pkgpath devel/libsoup,-gnome
@@ -114,6 +114,7 @@ share/locale/lt/LC_MESSAGES/libsoup.mo
 share/locale/lv/LC_MESSAGES/libsoup.mo
 share/locale/ml/LC_MESSAGES/libsoup.mo
 share/locale/mr/LC_MESSAGES/libsoup.mo
+share/locale/ms/LC_MESSAGES/libsoup.mo
 share/locale/nb/LC_MESSAGES/libsoup.mo
 share/locale/ne/LC_MESSAGES/libsoup.mo
 share/locale/nl/LC_MESSAGES/libsoup.mo
