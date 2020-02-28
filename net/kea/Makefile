@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/30 21:24:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/02/28 13:35:39 sthen Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	1.7.4
+VERSION=	1.7.5
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
