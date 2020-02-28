@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/02/28 20:13:49 rsadowski Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
-COMMENT-qt4 =	fcitx for QT4
 
 V =		4.2.9.6
 DISTNAME = 	fcitx-$V
 PKGNAME-main =	fcitx-$V
 PKGNAME-gtk3 =	fcitx-gtk3-$V
-PKGNAME-qt4 =	fcitx-qt4-$V
 REVISION-main =	1
 REVISION-gtk3 =	0
-REVISION-qt4 =	0
 
 SHARED_LIBS +=	fcitx-config	0.0 # 4.1
 SHARED_LIBS +=	fcitx-core	0.0 # 0.3
@@ -28,7 +25,7 @@ MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 # GPLv2+ with plugin exception
 PERMIT_PACKAGE=	Yes
 
-MULTI_PACKAGES =	-main -gtk3 -qt4
+MULTI_PACKAGES =	-main -gtk3
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -69,15 +66,6 @@ LIB_DEPENDS-gtk3 =	devel/libexecinfo \
 			x11/gtk+3 \
 			x11/xkbcommon
 
-WANTLIB-qt4 +=		${WANTLIB-common}
-WANTLIB-qt4 +=		${COMPILER_LIBCXX} c ICE QtCore QtDBus QtGui SM X11 \
-			Xext m
-
-RUN_DEPENDS-qt4 =	inputmethods/fcitx,-main
-LIB_DEPENDS-qt4 =	${MODQT4_LIB_DEPENDS} \
-			devel/libexecinfo \
-			x11/xkbcommon
-
 MASTER_SITES =	https://download.fcitx-im.org/fcitx/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 
@@ -90,8 +78,7 @@ EXTRACT_SUFX =	.tar.xz
 
 DIST_SUBDIR =	fcitx
 
-MODULES =	devel/cmake \
-		x11/qt4
+MODULES =	devel/cmake
 
 CONFIGURE_ARGS =-DENABLE_GTK3_IM_MODULE=ON \
 		-DENABLE_ENCHANT=OFF \
