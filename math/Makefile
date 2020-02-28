@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2020/02/27 18:23:39 bket Exp $
+# $OpenBSD: Makefile,v 1.176 2020/02/28 18:58:47 martin Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -117,7 +117,6 @@
      SUBDIR += py-Numeric
      SUBDIR += py-affine
      SUBDIR += py-affine,python3
-     SUBDIR += py-bottleneck
      SUBDIR += py-bottleneck,python3
      SUBDIR += py-cftime
      SUBDIR += py-graphviz

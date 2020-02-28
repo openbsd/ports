@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/06 12:26:54 martin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/28 18:58:47 martin Exp $
+@conflict py-bottleneck-*
+@pkgpath math/py-bottleneck
 lib/python${MODPY_VERSION}/site-packages/Bottleneck-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Bottleneck-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Bottleneck-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
