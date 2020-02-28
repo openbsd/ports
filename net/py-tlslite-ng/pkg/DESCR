@@ -1,0 +1,4 @@
+tlslite-ng is an open source python library that implements the SSL and
+TLS cryptographic protocols.  It can be used either as a standalone
+wrapper around the python socket interface or as a backend for multiple
+other libraries.
