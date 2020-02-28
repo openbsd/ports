@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2019/11/12 18:00:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2020/02/28 16:54:38 ajacoutot Exp $
 include/totem-pl-parser/
 include/totem-pl-parser/1/
 include/totem-pl-parser/1/plparser/
@@ -14,7 +14,7 @@ lib/girepository-1.0/TotemPlParser-1.0.typelib
 lib/pkgconfig/totem-plparser-mini.pc
 lib/pkgconfig/totem-plparser.pc
 libexec/totem-pl-parser/
-@bin libexec/totem-pl-parser/99-totem-pl-parser-videosite
+@bin libexec/totem-pl-parser/99-totem-pl-parser-videosite-quvi
 share/gir-1.0/
 share/gir-1.0/TotemPlParser-1.0.gir
 share/locale/af/LC_MESSAGES/totem-pl-parser.mo

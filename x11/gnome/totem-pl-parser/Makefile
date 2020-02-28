@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.84 2019/11/12 18:00:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2020/02/28 16:54:37 ajacoutot Exp $
 
 COMMENT=		GObject-based parsing library
 
 GNOME_PROJECT=		totem-pl-parser
-GNOME_VERSION=		3.26.4
+GNOME_VERSION=		3.26.5
 
-SHARED_LIBS +=  totem-plparser       19.0     # 18.2.4
-SHARED_LIBS +=  totem-plparser-mini  18.0     # 18.2.4
+SHARED_LIBS +=  totem-plparser       19.0     # 18.3.4
+SHARED_LIBS +=  totem-plparser-mini  18.0     # 18.3.4
 
 CATEGORIES=		multimedia net textproc
 
@@ -27,5 +27,7 @@ LIB_DEPENDS=		archivers/libarchive \
 MODGNOME_TOOLS=		gobject-introspection
 
 TEST_DEPENDS=		${BASE_PKGPATH}=${GNOME_VERSION}
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
