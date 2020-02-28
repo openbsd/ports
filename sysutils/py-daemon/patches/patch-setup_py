@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1 2020/02/28 21:01:11 martin Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -68,7 +68,6 @@ setup_kwargs = dict(
+         zip_safe=False,
+         setup_requires=[
+             "docutils",
+-            "twine",
+             ],
+         test_suite="setup.test_suite",
+         tests_require=test_requirements,

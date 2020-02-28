@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/12 16:49:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/28 21:01:11 martin Exp $
+@conflict py-daemon-*
+@pkgpath sysutils/py-daemon
 lib/python${MODPY_VERSION}/site-packages/daemon/
 lib/python${MODPY_VERSION}/site-packages/daemon/__init__.py
-lib/python${MODPY_VERSION}/site-packages/daemon/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}_metadata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}daemon.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}pidfile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/_metadata.py
 lib/python${MODPY_VERSION}/site-packages/daemon/daemon.py
-lib/python${MODPY_VERSION}/site-packages/daemon/daemon.pyc
 lib/python${MODPY_VERSION}/site-packages/daemon/pidfile.py
-lib/python${MODPY_VERSION}/site-packages/daemon/pidfile.pyc
 lib/python${MODPY_VERSION}/site-packages/daemon/runner.py
-lib/python${MODPY_VERSION}/site-packages/daemon/runner.pyc
-lib/python${MODPY_VERSION}/site-packages/daemon/version/
-lib/python${MODPY_VERSION}/site-packages/daemon/version/__init__.py
-lib/python${MODPY_VERSION}/site-packages/daemon/version/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/daemon/version/version_info.py
-lib/python${MODPY_VERSION}/site-packages/daemon/version/version_info.pyc
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -20,5 +20,5 @@ lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-share/doc/py-daemon/
-share/doc/py-daemon/FAQ
+share/doc/${MODPY_PY_PREFIX}daemon/
+share/doc/${MODPY_PY_PREFIX}daemon/FAQ
