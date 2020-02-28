@@ -1,0 +1,14 @@
+$OpenBSD: patch-scripts_bacula-tray-monitor_desktop_in,v 1.1 2020/02/28 23:26:53 sthen Exp $
+
+Index: scripts/bacula-tray-monitor.desktop.in
+--- scripts/bacula-tray-monitor.desktop.in.orig
++++ scripts/bacula-tray-monitor.desktop.in
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=Bacula Monitor
+ Comment=Notification Tray Monitor
+-Icon=/usr/share/pixmaps/bacula-tray-monitor.xpm
++Icon=@datarootdir@/pixmaps/bacula-tray-monitor.xpm
+ Exec=@sbindir@/bacula-tray-monitor -c @sysconfdir@/tray-monitor.conf
+ Terminal=false
+ Type=Application

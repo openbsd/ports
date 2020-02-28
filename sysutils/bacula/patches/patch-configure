@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.24 2019/02/07 12:45:05 sthen Exp $
+$OpenBSD: patch-configure,v 1.25 2020/02/28 23:26:53 sthen Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4843,7 +4843,7 @@ $as_echo "no" >&6; }
+@@ -4840,7 +4840,7 @@ $as_echo "no" >&6; }
  fi
  
  
@@ -11,7 +12,7 @@ Index: configure
     as_fn_error $? "Unable to find C++ compiler" "$LINENO" 5
  fi
  
-@@ -16740,7 +16740,7 @@ if test x$use_libtool != xno; then
+@@ -16737,7 +16737,7 @@ if test x$use_libtool != xno; then
     LIBTOOL_INSTALL_TARGET="libtool-install"
     LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
     LIBTOOL_CLEAN_TARGET="libtool-clean"
@@ -20,7 +21,7 @@ Index: configure
     FD_PLUGIN_DIR="src/plugins/fd"
     have_plugins=yes
  else
-@@ -22407,7 +22407,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -22401,7 +22401,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  
  $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
@@ -29,7 +30,7 @@ Index: configure
  		    got_readline="yes"
  
  else
-@@ -22446,7 +22446,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+@@ -22440,7 +22440,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
  			got_readline="yes"
  			CONS_INC="-I${TOP_DIR}/depkgs/readline"
@@ -38,7 +39,7 @@ Index: configure
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -31070,6 +31070,7 @@ netbsd)
+@@ -31182,6 +31182,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -46,7 +47,7 @@ Index: configure
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -31088,6 +31089,7 @@ openbsd)
+@@ -31200,6 +31201,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.5 2017/07/07 16:01:58 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.6 2020/02/28 23:26:53 sthen Exp $
 @conflict bacula-server-<7.0.4p2
 @conflict bacula-mysql-*
 @conflict bacula-sqlite3-*
-@comment no checksum
-@lib lib/libbaccats.so.${LIBbaccats_VERSION}
 lib/libbaccats-postgresql.la
 @lib lib/libbaccats-postgresql.so.${LIBbaccats-postgresql_VERSION}
+@comment no checksum
+@lib lib/libbaccats.so.${LIBbaccats_VERSION}
 libexec/bacula/
 libexec/bacula/create_postgresql_database
 libexec/bacula/drop_postgresql_database

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-sqlite3,v 1.4 2017/07/07 16:01:58 sthen Exp $
+@comment $OpenBSD: PLIST-sqlite3,v 1.5 2020/02/28 23:26:53 sthen Exp $
 @conflict bacula-server-<7.0.4p2
 @conflict bacula-pgsql-*
 @conflict bacula-mysql-*
-@comment no checksum
-@lib lib/libbaccats.so.${LIBbaccats_VERSION}
 lib/libbaccats-sqlite3.la
 @lib lib/libbaccats-sqlite3.so.${LIBbaccats-sqlite3_VERSION}
+@comment no checksum
+@lib lib/libbaccats.so.${LIBbaccats_VERSION}
 libexec/bacula/
 libexec/bacula/create_sqlite3_database
 libexec/bacula/drop_sqlite3_database

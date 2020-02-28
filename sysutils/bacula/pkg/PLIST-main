@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2019/01/08 00:12:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2020/02/28 23:26:53 sthen Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
@@ -6,7 +6,7 @@
 @comment lib/bpipe-fd.a
 @rcscript ${RCDIR}/bacula
 @rcscript ${RCDIR}/bacula_fd
-lib/bpipe-fd.so
+@so lib/bpipe-fd.so
 lib/libbac.la
 @lib lib/libbac.so.${LIBbac_VERSION}
 lib/libbaccfg.la
@@ -15,7 +15,6 @@ lib/libbacfind.la
 @lib lib/libbacfind.so.${LIBbacfind_VERSION}
 libexec/bacula/
 libexec/bacula/bacula-ctl-fd
-libexec/bacula/bacula-tray-monitor.desktop
 libexec/bacula/bacula_config
 libexec/bacula/bconsole
 libexec/bacula/isworm

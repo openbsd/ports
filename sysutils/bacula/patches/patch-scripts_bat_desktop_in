@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_bat_desktop_in,v 1.4 2011/11/17 23:45:56 ajacoutot Exp $
+$OpenBSD: patch-scripts_bat_desktop_in,v 1.5 2020/02/28 23:26:53 sthen Exp $
 --- scripts/bat.desktop.in.orig	Sun Oct 30 13:03:42 2011
 +++ scripts/bat.desktop.in	Mon Nov 14 12:19:03 2011
 @@ -1,7 +1,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-scripts_bat_desktop_in,v 1.4 2011/11/17 23:45:56 ajacoutot Exp $
  Name=Bacula Administration Tool
  Comment=Bacula Director Console
 -Icon=/usr/share/pixmaps/bat_icon.png
-+Icon=${TRUEPREFIX}/share/pixmaps/bat_icon.png
++Icon=@datarootdir@/pixmaps/bat_icon.png
  Exec=@sbindir@/bat -c @sysconfdir@/bat.conf
  Terminal=false
  Type=Application
