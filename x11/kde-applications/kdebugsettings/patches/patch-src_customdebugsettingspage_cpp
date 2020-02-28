@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_customdebugsettingspage_cpp,v 1.1 2020/02/28 19:24:47 rsadowski Exp $
+
+Index: src/customdebugsettingspage.cpp
+--- src/customdebugsettingspage.cpp.orig
++++ src/customdebugsettingspage.cpp
+@@ -41,7 +41,7 @@ CustomDebugSettingsPage::CustomDebugSettingsPage(QWidg
+     mainLayout->addWidget(lab);
+ 
+     QHBoxLayout *horizontalLayout = new QHBoxLayout;
+-    horizontalLayout->setMargin(0);
++    horizontalLayout->setContentsMargins(0, 0, 0, 0);
+     mainLayout->addLayout(horizontalLayout);
+ 
+     QVBoxLayout *vbox = new QVBoxLayout;

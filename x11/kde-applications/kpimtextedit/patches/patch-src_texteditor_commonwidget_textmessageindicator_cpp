@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_texteditor_commonwidget_textmessageindicator_cpp,v 1.1 2020/02/28 19:24:47 rsadowski Exp $
+
+Index: src/texteditor/commonwidget/textmessageindicator.cpp
+--- src/texteditor/commonwidget/textmessageindicator.cpp.orig
++++ src/texteditor/commonwidget/textmessageindicator.cpp
+@@ -186,7 +186,7 @@ void TextMessageIndicator::paintEvent(QPaintEvent * /*
+     painter.setPen(Qt::black);
+     painter.setBrush(palette().color(QPalette::Window));
+     painter.translate(0.5, 0.5);
+-    painter.drawRoundRect(1, 1, width() - 2, height() - 2, 1600 / width(), 1600 / height());
++    painter.drawRoundedRect(1, 1, width() - 2, height() - 2, 1600 / width(), 1600 / height(), Qt::RelativeSize);
+ 
+     // draw icon if present
+     if (!mSymbol.isNull()) {

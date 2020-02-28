@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/23 08:05:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/28 19:24:47 rsadowski Exp $
 
 COMMENT =	application to edit QLoggingCategory
 DISTNAME =	kdebugsettings-${VERSION}
 CATEGORIES =	x11 sysutils
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kdebugsettings
 

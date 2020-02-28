@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_inserttablewidget_cpp,v 1.1 2020/02/28 19:24:47 rsadowski Exp $
+
+Index: src/inserttablewidget.cpp
+--- src/inserttablewidget.cpp.orig
++++ src/inserttablewidget.cpp
+@@ -49,7 +49,7 @@ class InsertTableWidget::InsertTableWidgetPrivate (pub
+         mBorder->setSuffix(i18n(" px"));
+ 
+         QGridLayout *gridLayout = new QGridLayout;
+-        gridLayout->setMargin(0);
++        gridLayout->setContentsMargins(0, 0, 0, 0);
+         gridLayout->addWidget(new QLabel(i18n("Rows:")), 0, 0);
+         gridLayout->addWidget(mRows, 0, 1);
+ 
