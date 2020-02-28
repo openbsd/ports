@@ -1,0 +1,35 @@
+$OpenBSD: patch-tests_Imap_test_Imap_BodyParts_cpp,v 1.1 2020/02/28 19:30:31 rsadowski Exp $
+
+https://cgit.kde.org/trojita.git/commit/?id=39772585033c1c0aff96f297e93de7be53f9b114
+
+commit 39772585033c1c0aff96f297e93de7be53f9b114
+Author: Heiko Becker <heirecka@exherbo.org>
+Date:   Sat Mar 23 01:17:11 2019 +0100
+
+    tests: Fix build with Qt 5.13
+    
+    QTest::toString(QModelIndex) was added in
+    7ef0b575b38d267bd3dc14ff46935d556562ff00 and thus causes a build
+    error with Qt 5.13 because it's redefined here.
+    
+    Change-Id: I015800e49cf8d0e87f3541642406396f150d0eeb
+
+Index: tests/Imap/test_Imap_BodyParts.cpp
+--- tests/Imap/test_Imap_BodyParts.cpp.orig
++++ tests/Imap/test_Imap_BodyParts.cpp
+@@ -51,6 +51,7 @@ struct Data {
+ 
+ Q_DECLARE_METATYPE(QList<Data>)
+ 
++#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
+ namespace QTest {
+ template <>
+ char *toString(const QModelIndex &index)
+@@ -60,6 +61,7 @@ char *toString(const QModelIndex &index)
+     return qstrdup(buf.toUtf8().constData());
+ }
+ }
++#endif
+ 
+ using namespace Imap::Mailbox;
+ 
