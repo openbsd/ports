@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/09/12 21:21:25 remi Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/28 07:45:04 remi Exp $
 @newgroup _netshot:817
 @newuser _netshot:817:_netshot:daemon:Netshot Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/netshot
@@ -18,6 +18,7 @@ share/examples/netshot/netshot.conf
 @group _netshot
 @sample ${SYSCONFDIR}/netshot.conf
 @extra ${SYSCONFDIR}/netshot.jks
+@extra ${SYSCONFDIR}/netshot.pfx
 @mode 0750
 @owner _netshot
 @sample ${VARBASE}/log/netshot/

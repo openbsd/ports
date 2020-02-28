@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2019/09/12 21:21:25 remi Exp $
+$OpenBSD: README,v 1.2 2020/02/28 07:45:04 remi Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -26,12 +26,21 @@ MariaDB on the same host.
   might be modified to look like this:
   netshot.db.url = jdbc:mysql://localhost/netshot01?serverTimezone=UTC
 
-- Create a TLS certificate in a Java keystore:
-  # ${LOCALBASE}/jdk-1.8.0/bin/keytool -genkey -keyalg RSA -alias selfsigned \
-    -keystore ${SYSCONFDIR}/netshot.jks -storepass password -validity 3600 \
-    -keysize 4096
-  # chmod 640 ${SYSCONFDIR}/netshot.jks
-  # chgrp _netshot ${SYSCONFDIR}/netshot.jks
+- Create a key and self-signed X509 certificate; alternatively you may
+  use a CA-signed certificate, possibly from acme-client(1).
+  # openssl req -new -x509 -days 825 \
+    -subj '/CN=netshot.example.com' \
+    -addext 'subjectAltName = DNS:netshot.example.com' \
+    -keyout ${SYSCONFDIR}/ssl/private/netshot.key \
+    -out ${SYSCONFDIR}/ssl/netshot.crt
+
+- Export to PKCS#12 format for use with Java.
+  # openssl pkcs12 -export -name netshot \
+    -in ${SYSCONFDIR}/ssl/netshot.crt \
+    -inkey ${SYSCONFDIR}/ssl/private/netshot.key \
+    -out ${SYSCONFDIR}/netshot.pfx
+  # chmod 640 ${SYSCONFDIR}/netshot.pfx
+  # chgrp _netshot ${SYSCONFDIR}/netshot.pfx
 
 - Enable and start Netshot to create the database tables.
   # rcctl enable netshot; rcctl start netshot
