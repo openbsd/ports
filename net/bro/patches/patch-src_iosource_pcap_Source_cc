@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_iosource_pcap_Source_cc,v 1.1 2019/11/25 07:57:43 ajacoutot Exp $
+$OpenBSD: patch-src_iosource_pcap_Source_cc,v 1.2 2020/02/28 16:48:59 ajacoutot Exp $
 
 error: use of undeclared identifier 'DLT_NFLOG'
 
 Index: src/iosource/pcap/Source.cc
 --- src/iosource/pcap/Source.cc.orig
 +++ src/iosource/pcap/Source.cc
-@@ -247,6 +247,7 @@ bool PcapSource::SetFilter(int index)
+@@ -258,6 +258,7 @@ bool PcapSource::SetFilter(int index)
  		return false;
  		}
  
@@ -13,7 +13,7 @@ Index: src/iosource/pcap/Source.cc
  	if ( LinkType() == DLT_NFLOG )
  		{
  		// No-op, NFLOG does not support BPF filters.
-@@ -256,12 +257,15 @@ bool PcapSource::SetFilter(int index)
+@@ -267,12 +268,15 @@ bool PcapSource::SetFilter(int index)
  		}
  	else
  		{

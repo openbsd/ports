@@ -1,9 +1,9 @@
-$OpenBSD: patch-aux_broker_3rdparty_caf_libcaf_io_CMakeLists_txt,v 1.2 2019/12/14 16:32:30 ajacoutot Exp $
+$OpenBSD: patch-aux_broker_3rdparty_caf_libcaf_io_CMakeLists_txt,v 1.3 2020/02/28 16:48:59 ajacoutot Exp $
 
 Index: aux/broker/3rdparty/caf/libcaf_io/CMakeLists.txt
 --- aux/broker/3rdparty/caf/libcaf_io/CMakeLists.txt.orig
 +++ aux/broker/3rdparty/caf/libcaf_io/CMakeLists.txt
-@@ -61,8 +61,8 @@ if (NOT CAF_BUILD_STATIC_ONLY)
+@@ -64,8 +64,8 @@ if (NOT CAF_BUILD_STATIC_ONLY)
    )
    set_target_properties(libcaf_io_shared
                          PROPERTIES
@@ -13,4 +13,4 @@ Index: aux/broker/3rdparty/caf/libcaf_io/CMakeLists.txt
 +                        VERSION ${LIBcaf_io_VERSION}
                          OUTPUT_NAME caf_io)
    install(TARGETS libcaf_io_shared
-           RUNTIME DESTINATION bin
+           RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

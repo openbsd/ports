@@ -1,9 +1,9 @@
-$OpenBSD: patch-aux_broker_CMakeLists_txt,v 1.3 2019/12/14 16:32:30 ajacoutot Exp $
+$OpenBSD: patch-aux_broker_CMakeLists_txt,v 1.4 2020/02/28 16:48:59 ajacoutot Exp $
 
 Index: aux/broker/CMakeLists.txt
 --- aux/broker/CMakeLists.txt.orig
 +++ aux/broker/CMakeLists.txt
-@@ -415,8 +415,8 @@ endif ()
+@@ -467,8 +467,8 @@ endif ()
  if (ENABLE_SHARED)
    add_library(broker SHARED ${BROKER_SRC})
    set_target_properties(broker PROPERTIES

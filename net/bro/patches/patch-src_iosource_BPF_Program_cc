@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_iosource_BPF_Program_cc,v 1.2 2019/12/14 16:32:30 ajacoutot Exp $
+$OpenBSD: patch-src_iosource_BPF_Program_cc,v 1.3 2020/02/28 16:48:59 ajacoutot Exp $
 
 error: use of undeclared identifier 'DLT_NFLOG'
 
 Index: src/iosource/BPF_Program.cc
 --- src/iosource/BPF_Program.cc.orig
 +++ src/iosource/BPF_Program.cc
-@@ -104,6 +104,7 @@ bool BPF_Program::Compile(int snaplen, int linktype, c
+@@ -105,6 +105,7 @@ bool BPF_Program::Compile(int snaplen, int linktype, c
  	{
  	FreeCode();
  
@@ -13,7 +13,7 @@ Index: src/iosource/BPF_Program.cc
  	if ( linktype == DLT_NFLOG )
  		{
  		// No-op, NFLOG does not support BPF filters.
-@@ -114,6 +115,7 @@ bool BPF_Program::Compile(int snaplen, int linktype, c
+@@ -115,6 +116,7 @@ bool BPF_Program::Compile(int snaplen, int linktype, c
  		m_matches_anything = true;
  		return true;
  		}

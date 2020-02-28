@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_iosource_Packet_cc,v 1.4 2019/12/14 16:32:30 ajacoutot Exp $
+$OpenBSD: patch-src_iosource_Packet_cc,v 1.5 2020/02/28 16:48:59 ajacoutot Exp $
 
 error: use of undeclared identifier 'DLT_NFLOG'
 
 Index: src/iosource/Packet.cc
 --- src/iosource/Packet.cc.orig
 +++ src/iosource/Packet.cc
-@@ -92,6 +92,7 @@ int Packet::GetLinkHeaderSize(int link_type)
+@@ -99,6 +99,7 @@ int Packet::GetLinkHeaderSize(int link_type)
  	case DLT_IEEE802_11_RADIO:	// 802.11 plus RadioTap
  		return 59;
  
@@ -13,7 +13,7 @@ Index: src/iosource/Packet.cc
  	case DLT_NFLOG:
  		// Linux netlink NETLINK NFLOG socket log messages
  		// The actual header size is variable, but we return the minimum
-@@ -99,6 +100,7 @@ int Packet::GetLinkHeaderSize(int link_type)
+@@ -106,6 +107,7 @@ int Packet::GetLinkHeaderSize(int link_type)
  		// least 2 bytes each for the type and length values assoicated with
  		// the final TLV carrying the packet payload.
  		return 8;
@@ -21,7 +21,7 @@ Index: src/iosource/Packet.cc
  
  	case DLT_RAW:
  		return 0;
-@@ -403,6 +405,7 @@ void Packet::ProcessLayer2()
+@@ -410,6 +412,7 @@ void Packet::ProcessLayer2()
  		break;
  		}
  
@@ -29,7 +29,7 @@ Index: src/iosource/Packet.cc
  	case DLT_NFLOG:
  		{
  		// See https://www.tcpdump.org/linktypes/LINKTYPE_NFLOG.html
-@@ -481,6 +484,7 @@ void Packet::ProcessLayer2()
+@@ -488,6 +491,7 @@ void Packet::ProcessLayer2()
  
  		break;
  		}

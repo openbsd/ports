@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/12/14 16:32:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/02/28 16:48:59 ajacoutot Exp $
 @conflict bro-*
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/zeek
 @rcscript ${RCDIR}/zeek
@@ -39,6 +39,7 @@ include/broker/configuration.hh
 include/broker/convert.hh
 include/broker/core_actor.hh
 include/broker/data.hh
+include/broker/defaults.hh
 include/broker/detail/
 include/broker/detail/abstract_backend.hh
 include/broker/detail/appliers.hh
@@ -47,16 +48,20 @@ include/broker/detail/blob.hh
 include/broker/detail/clone_actor.hh
 include/broker/detail/core_policy.hh
 include/broker/detail/core_scatterer.hh
+include/broker/detail/data_generator.hh
 include/broker/detail/die.hh
 include/broker/detail/filesystem.hh
 include/broker/detail/flare.hh
 include/broker/detail/flare_actor.hh
+include/broker/detail/generator_file_reader.hh
+include/broker/detail/generator_file_writer.hh
 include/broker/detail/hash.hh
 include/broker/detail/make_backend.hh
-include/broker/detail/make_unique.hh
 include/broker/detail/master_actor.hh
 include/broker/detail/master_resolver.hh
 include/broker/detail/memory_backend.hh
+include/broker/detail/meta_command_writer.hh
+include/broker/detail/meta_data_writer.hh
 include/broker/detail/network_cache.hh
 include/broker/detail/operators.hh
 include/broker/detail/prefix_matcher.hh
@@ -115,18 +120,24 @@ include/caf/actor_companion.hpp
 include/caf/actor_config.hpp
 include/caf/actor_control_block.hpp
 include/caf/actor_factory.hpp
-include/caf/actor_marker.hpp
 include/caf/actor_ostream.hpp
 include/caf/actor_pool.hpp
+include/caf/actor_profiler.hpp
 include/caf/actor_proxy.hpp
 include/caf/actor_registry.hpp
 include/caf/actor_storage.hpp
 include/caf/actor_system.hpp
 include/caf/actor_system_config.hpp
+include/caf/actor_traits.hpp
 include/caf/after.hpp
 include/caf/all.hpp
 include/caf/allowed_unsafe_message_type.hpp
 include/caf/atom.hpp
+include/caf/attach_continuous_stream_source.hpp
+include/caf/attach_continuous_stream_stage.hpp
+include/caf/attach_stream_sink.hpp
+include/caf/attach_stream_source.hpp
+include/caf/attach_stream_stage.hpp
 include/caf/attachable.hpp
 include/caf/behavior.hpp
 include/caf/behavior_policy.hpp
@@ -135,6 +146,7 @@ include/caf/binary_serializer.hpp
 include/caf/blocking_actor.hpp
 include/caf/broadcast_downstream_manager.hpp
 include/caf/buffered_downstream_manager.hpp
+include/caf/byte.hpp
 include/caf/byte_address.hpp
 include/caf/callback.hpp
 include/caf/catch_all.hpp
@@ -148,6 +160,11 @@ include/caf/config_option.hpp
 include/caf/config_option_adder.hpp
 include/caf/config_option_set.hpp
 include/caf/config_value.hpp
+include/caf/config_value_adaptor.hpp
+include/caf/config_value_adaptor_access.hpp
+include/caf/config_value_adaptor_field.hpp
+include/caf/config_value_field.hpp
+include/caf/config_value_object_access.hpp
 include/caf/cow_tuple.hpp
 include/caf/data_processor.hpp
 include/caf/decorator/
@@ -162,8 +179,11 @@ include/caf/defaults.hpp
 include/caf/delegated.hpp
 include/caf/deserializer.hpp
 include/caf/detail/
+include/caf/detail/abstract_worker.hpp
+include/caf/detail/abstract_worker_hub.hpp
 include/caf/detail/algorithms.hpp
 include/caf/detail/append_hex.hpp
+include/caf/detail/append_percent_encoded.hpp
 include/caf/detail/apply_args.hpp
 include/caf/detail/arg_match_t.hpp
 include/caf/detail/arg_wrapper.hpp
@@ -177,15 +197,20 @@ include/caf/detail/call_cfun.hpp
 include/caf/detail/cas_weak.hpp
 include/caf/detail/comparable.hpp
 include/caf/detail/concatenated_tuple.hpp
+include/caf/detail/config_value_adaptor_field_impl.hpp
+include/caf/detail/config_value_field_base.hpp
+include/caf/detail/config_value_field_impl.hpp
+include/caf/detail/consumer.hpp
 include/caf/detail/decorated_tuple.hpp
 include/caf/detail/default_invoke_result_visitor.hpp
 include/caf/detail/delegate_serialize.hpp
+include/caf/detail/dispatch_parse_cli.hpp
 include/caf/detail/disposer.hpp
 include/caf/detail/double_ended_queue.hpp
 include/caf/detail/dynamic_message_data.hpp
 include/caf/detail/embedded.hpp
 include/caf/detail/enqueue_result.hpp
-include/caf/detail/enum_to_string.hpp
+include/caf/detail/fnv_hash.hpp
 include/caf/detail/functor_attachable.hpp
 include/caf/detail/gcd.hpp
 include/caf/detail/get_mac_addresses.hpp
@@ -201,6 +226,7 @@ include/caf/detail/is_one_of.hpp
 include/caf/detail/is_primitive_config_value.hpp
 include/caf/detail/limited_vector.hpp
 include/caf/detail/log_level.hpp
+include/caf/detail/make_unique.hpp
 include/caf/detail/mask_bits.hpp
 include/caf/detail/merged_tuple.hpp
 include/caf/detail/message_data.hpp
@@ -209,6 +235,7 @@ include/caf/detail/mpi_splice.hpp
 include/caf/detail/network_order.hpp
 include/caf/detail/optional_message_visitor.hpp
 include/caf/detail/overload.hpp
+include/caf/detail/parse.hpp
 include/caf/detail/parser/
 include/caf/detail/parser/add_ascii.hpp
 include/caf/detail/parser/ascii_to_int.hpp
@@ -219,19 +246,23 @@ include/caf/detail/parser/is_char.hpp
 include/caf/detail/parser/is_digit.hpp
 include/caf/detail/parser/read_atom.hpp
 include/caf/detail/parser/read_bool.hpp
+include/caf/detail/parser/read_floating_point.hpp
 include/caf/detail/parser/read_ini.hpp
 include/caf/detail/parser/read_ipv4_address.hpp
 include/caf/detail/parser/read_ipv6_address.hpp
 include/caf/detail/parser/read_number.hpp
 include/caf/detail/parser/read_number_or_timespan.hpp
+include/caf/detail/parser/read_signed_integer.hpp
 include/caf/detail/parser/read_string.hpp
+include/caf/detail/parser/read_timespan.hpp
+include/caf/detail/parser/read_unsigned_integer.hpp
 include/caf/detail/parser/read_uri.hpp
-include/caf/detail/parser/state.hpp
 include/caf/detail/parser/sub_ascii.hpp
 include/caf/detail/path_state.hpp
 include/caf/detail/pp.hpp
 include/caf/detail/pretty_type_name.hpp
 include/caf/detail/private_thread.hpp
+include/caf/detail/profiled_send.hpp
 include/caf/detail/pseudo_tuple.hpp
 include/caf/detail/raw_access.hpp
 include/caf/detail/ringbuffer.hpp
@@ -240,6 +271,7 @@ include/caf/detail/safe_equal.hpp
 include/caf/detail/scope_guard.hpp
 include/caf/detail/select_all.hpp
 include/caf/detail/select_integer_type.hpp
+include/caf/detail/serialized_size.hpp
 include/caf/detail/set_thread_name.hpp
 include/caf/detail/shared_spinlock.hpp
 include/caf/detail/simple_actor_clock.hpp
@@ -268,13 +300,14 @@ include/caf/detail/tuple_vals.hpp
 include/caf/detail/type_erased_tuple_view.hpp
 include/caf/detail/type_erased_value_impl.hpp
 include/caf/detail/type_list.hpp
-include/caf/detail/type_name.hpp
 include/caf/detail/type_pair.hpp
 include/caf/detail/type_traits.hpp
 include/caf/detail/typed_actor_util.hpp
+include/caf/detail/unique_function.hpp
 include/caf/detail/unordered_flat_map.hpp
 include/caf/detail/uri_impl.hpp
 include/caf/detail/variant_data.hpp
+include/caf/detail/worker_hub.hpp
 include/caf/dictionary.hpp
 include/caf/downstream.hpp
 include/caf/downstream_manager.hpp
@@ -327,11 +360,15 @@ include/caf/io/basp/all.hpp
 include/caf/io/basp/buffer_type.hpp
 include/caf/io/basp/connection_state.hpp
 include/caf/io/basp/endpoint_context.hpp
+include/caf/io/basp/fwd.hpp
 include/caf/io/basp/header.hpp
 include/caf/io/basp/instance.hpp
+include/caf/io/basp/message_queue.hpp
 include/caf/io/basp/message_type.hpp
+include/caf/io/basp/remote_message_handler.hpp
 include/caf/io/basp/routing_table.hpp
 include/caf/io/basp/version.hpp
+include/caf/io/basp/worker.hpp
 include/caf/io/basp_broker.hpp
 include/caf/io/broker.hpp
 include/caf/io/broker_servant.hpp
@@ -344,7 +381,6 @@ include/caf/io/datagram_servant.hpp
 include/caf/io/doorman.hpp
 include/caf/io/fwd.hpp
 include/caf/io/handle.hpp
-include/caf/io/hook.hpp
 include/caf/io/middleman.hpp
 include/caf/io/middleman_actor.hpp
 include/caf/io/middleman_actor_impl.hpp
@@ -384,12 +420,14 @@ include/caf/io/scribe.hpp
 include/caf/io/system_messages.hpp
 include/caf/io/typed_broker.hpp
 include/caf/io/unpublish.hpp
-include/caf/io/visitors.hpp
 include/caf/ip_address.hpp
+include/caf/ip_endpoint.hpp
 include/caf/ip_subnet.hpp
 include/caf/ipv4_address.hpp
+include/caf/ipv4_endpoint.hpp
 include/caf/ipv4_subnet.hpp
 include/caf/ipv6_address.hpp
+include/caf/ipv6_endpoint.hpp
 include/caf/ipv6_subnet.hpp
 include/caf/is_actor_handle.hpp
 include/caf/is_message_sink.hpp
@@ -401,10 +439,12 @@ include/caf/logger.hpp
 include/caf/mailbox_element.hpp
 include/caf/make_actor.hpp
 include/caf/make_config_option.hpp
+include/caf/make_config_value_field.hpp
 include/caf/make_copy_on_write.hpp
 include/caf/make_counted.hpp
 include/caf/make_message.hpp
 include/caf/make_sink_result.hpp
+include/caf/make_source.hpp
 include/caf/make_source_result.hpp
 include/caf/make_stage_result.hpp
 include/caf/make_type_erased_tuple_view.hpp
@@ -450,8 +490,8 @@ include/caf/openssl/unpublish.hpp
 include/caf/optional.hpp
 include/caf/others.hpp
 include/caf/outbound_path.hpp
-include/caf/output_stream.hpp
 include/caf/param.hpp
+include/caf/parser_state.hpp
 include/caf/pec.hpp
 include/caf/policy/
 include/caf/policy/arg.hpp
@@ -479,6 +519,7 @@ include/caf/response_promise.hpp
 include/caf/response_type.hpp
 include/caf/result.hpp
 include/caf/resumable.hpp
+include/caf/rtti_pair.hpp
 include/caf/runtime_settings_map.hpp
 include/caf/scheduled_actor.hpp
 include/caf/scheduler/
@@ -493,7 +534,10 @@ include/caf/scoped_execution_unit.hpp
 include/caf/sec.hpp
 include/caf/send.hpp
 include/caf/serializer.hpp
+include/caf/serializer_impl.hpp
+include/caf/settings.hpp
 include/caf/skip.hpp
+include/caf/span.hpp
 include/caf/spawn_options.hpp
 include/caf/stateful_actor.hpp
 include/caf/static_visitor.hpp
@@ -540,13 +584,13 @@ include/caf/type_nr.hpp
 include/caf/typed_actor.hpp
 include/caf/typed_actor_pointer.hpp
 include/caf/typed_actor_view.hpp
+include/caf/typed_actor_view_base.hpp
 include/caf/typed_behavior.hpp
 include/caf/typed_event_based_actor.hpp
 include/caf/typed_response_promise.hpp
 include/caf/uniform_type_info_map.hpp
 include/caf/unifyn.hpp
 include/caf/unit.hpp
-include/caf/unsafe_actor_handle_init.hpp
 include/caf/upstream_msg.hpp
 include/caf/uri.hpp
 include/caf/uri_builder.hpp
@@ -559,11 +603,12 @@ include/paraglob/paraglob.h
 include/paraglob/serializer.h
 include/zeek/
 include/zeek/3rdparty/
-include/zeek/3rdparty/json.hpp
+include/zeek/3rdparty/rapidjson/
+include/zeek/3rdparty/rapidjson/include/
+include/zeek/3rdparty/rapidjson/include/rapidjson/
+include/zeek/3rdparty/rapidjson/include/rapidjson/document.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/writer.h
 include/zeek/3rdparty/sqlite3.h
-include/zeek/3rdparty/tsl-ordered-map/
-include/zeek/3rdparty/tsl-ordered-map/ordered_hash.h
-include/zeek/3rdparty/tsl-ordered-map/ordered_map.h
 include/zeek/Anon.h
 include/zeek/Attr.h
 include/zeek/Base64.h
@@ -603,6 +648,7 @@ include/zeek/ID.h
 include/zeek/IP.h
 include/zeek/IPAddr.h
 include/zeek/IntSet.h
+include/zeek/IntrusivePtr.h
 include/zeek/List.h
 include/zeek/NFA.h
 include/zeek/Net.h
@@ -610,6 +656,7 @@ include/zeek/NetVar.h
 include/zeek/Notifier.h
 include/zeek/Obj.h
 include/zeek/OpaqueVal.h
+include/zeek/Options.h
 include/zeek/PacketDumper.h
 include/zeek/PacketFilter.h
 include/zeek/Pipe.h
@@ -1006,6 +1053,7 @@ include/zeek/analyzer/protocol/tcp/TCP_Flags.h
 include/zeek/analyzer/protocol/tcp/TCP_Reassembler.h
 include/zeek/analyzer/protocol/tcp/events.bif.h
 include/zeek/analyzer/protocol/tcp/functions.bif.h
+include/zeek/analyzer/protocol/tcp/types.bif.h
 include/zeek/analyzer/protocol/teredo/
 include/zeek/analyzer/protocol/teredo/Teredo.h
 include/zeek/analyzer/protocol/teredo/events.bif.h
@@ -1028,7 +1076,6 @@ include/zeek/binpac.pac
 include/zeek/binpac_bro-lib.pac
 include/zeek/binpac_bro.h
 include/zeek/bro-bif.h
-include/zeek/bro-config.h
 include/zeek/bro.pac
 include/zeek/bro_inet_ntop.h
 include/zeek/broker/
@@ -1126,7 +1173,6 @@ include/zeek/input/readers/sqlite/sqlite.bif.h
 include/zeek/iosource/
 include/zeek/iosource/BPF_Program.h
 include/zeek/iosource/Component.h
-include/zeek/iosource/FD_Set.h
 include/zeek/iosource/IOSource.h
 include/zeek/iosource/Manager.h
 include/zeek/iosource/Packet.h
@@ -1184,6 +1230,10 @@ include/zeek/stats.bif.func_h
 include/zeek/stats.bif.netvar_h
 include/zeek/strings.bif.func_h
 include/zeek/strings.bif.netvar_h
+include/zeek/supervisor/
+include/zeek/supervisor.bif.func_h
+include/zeek/supervisor.bif.netvar_h
+include/zeek/supervisor/Supervisor.h
 include/zeek/threading/
 include/zeek/threading/BasicThread.h
 include/zeek/threading/Formatter.h
@@ -1197,6 +1247,7 @@ include/zeek/threading/formatters/JSON.h
 include/zeek/types.bif.func_h
 include/zeek/types.bif.netvar_h
 include/zeek/util.h
+include/zeek/zeek-affinity.h
 include/zeek/zeek-config.h
 include/zeek/zeek.bif.func_h
 include/zeek/zeek.bif.netvar_h
@@ -1446,6 +1497,7 @@ share/zeek/base/bif/plugins/Zeek_SteppingStone.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_Syslog.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_TCP.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_TCP.functions.bif.zeek
+share/zeek/base/bif/plugins/Zeek_TCP.types.bif.zeek
 share/zeek/base/bif/plugins/Zeek_Teredo.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_UDP.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_Unified2.events.bif.zeek
@@ -1461,6 +1513,7 @@ share/zeek/base/bif/reporter.bif.zeek
 share/zeek/base/bif/stats.bif.zeek
 share/zeek/base/bif/store.bif.zeek
 share/zeek/base/bif/strings.bif.zeek
+share/zeek/base/bif/supervisor.bif.zeek
 share/zeek/base/bif/top-k.bif.zeek
 share/zeek/base/bif/types.bif.zeek
 share/zeek/base/bif/zeek.bif.zeek
@@ -1619,6 +1672,11 @@ share/zeek/base/frameworks/sumstats/plugins/sum.zeek
 share/zeek/base/frameworks/sumstats/plugins/topk.zeek
 share/zeek/base/frameworks/sumstats/plugins/unique.zeek
 share/zeek/base/frameworks/sumstats/plugins/variance.zeek
+share/zeek/base/frameworks/supervisor/
+share/zeek/base/frameworks/supervisor/__load__.zeek
+share/zeek/base/frameworks/supervisor/api.zeek
+share/zeek/base/frameworks/supervisor/control.zeek
+share/zeek/base/frameworks/supervisor/main.zeek
 share/zeek/base/frameworks/tunnels/
 share/zeek/base/frameworks/tunnels/__load__.zeek
 share/zeek/base/frameworks/tunnels/main.zeek
@@ -1783,7 +1841,6 @@ share/zeek/base/utils/exec.zeek
 share/zeek/base/utils/files.zeek
 share/zeek/base/utils/geoip-distance.zeek
 share/zeek/base/utils/hash_hrw.zeek
-share/zeek/base/utils/json.zeek
 share/zeek/base/utils/numbers.zeek
 share/zeek/base/utils/paths.zeek
 share/zeek/base/utils/patterns.zeek
@@ -1815,9 +1872,11 @@ share/zeek/cmake/FindBroccoli.cmake
 share/zeek/cmake/FindBroker.cmake
 share/zeek/cmake/FindCAF.cmake
 share/zeek/cmake/FindCapstats.cmake
+share/zeek/cmake/FindClangTidy.cmake
 share/zeek/cmake/FindFTS.cmake
 share/zeek/cmake/FindGooglePerftools.cmake
 share/zeek/cmake/FindJeMalloc.cmake
+share/zeek/cmake/FindKqueue.cmake
 share/zeek/cmake/FindLibKrb5.cmake
 share/zeek/cmake/FindLibMMDB.cmake
 share/zeek/cmake/FindPCAP.cmake
@@ -1843,6 +1902,7 @@ share/zeek/cmake/PCAPTests.cmake
 share/zeek/cmake/ProhibitInSourceBuild.cmake
 share/zeek/cmake/README
 share/zeek/cmake/RequireCXX11.cmake
+share/zeek/cmake/RequireCXX17.cmake
 share/zeek/cmake/SetDefaultCompileFlags.cmake
 share/zeek/cmake/SetupRPATH.cmake
 share/zeek/cmake/UserChangedWarning.cmake
@@ -1938,6 +1998,7 @@ share/zeek/policy/protocols/conn/
 share/zeek/policy/protocols/conn/known-hosts.zeek
 share/zeek/policy/protocols/conn/known-services.zeek
 share/zeek/policy/protocols/conn/mac-logging.zeek
+share/zeek/policy/protocols/conn/speculative-service.zeek
 share/zeek/policy/protocols/conn/vlan-logging.zeek
 share/zeek/policy/protocols/conn/weirds.zeek
 share/zeek/policy/protocols/dhcp/
@@ -2006,6 +2067,7 @@ share/zeek/policy/tuning/defaults/warnings.zeek
 share/zeek/policy/tuning/json-logs.zeek
 share/zeek/policy/tuning/track-all-assets.zeek
 share/zeek/site
+share/zeek/test-all-policy.zeek
 share/zeek/zeekctl/
 share/zeek/zeekctl/__load__.zeek
 share/zeek/zeekctl/auto.zeek
