@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_lib_io_kprocess_h,v 1.1 2020/02/28 19:50:45 rsadowski Exp $
+
+Qt 5.13 fix form upstream
+
+Index: src/lib/io/kprocess.h
+--- src/lib/io/kprocess.h.orig
++++ src/lib/io/kprocess.h
+@@ -329,8 +329,10 @@ class KCOREADDONS_EXPORT KProcess : public QProcess (p
+ 
+ private:
+     // hide those
++#if QT_DEPRECATED_SINCE(5, 13)
+     using QProcess::setReadChannelMode;
+     using QProcess::readChannelMode;
++#endif
+     using QProcess::setProcessChannelMode;
+     using QProcess::processChannelMode;
+ };
