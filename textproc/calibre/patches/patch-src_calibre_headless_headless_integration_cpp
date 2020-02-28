@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_calibre_headless_headless_integration_cpp,v 1.1 2020/02/28 19:25:27 rsadowski Exp $
+
+fix qt 5.13 compatibility
+In qt/qtbase@01e1df9,
+screenAdded was deprecated, and as of qt 5.13 it is fully removed. Adapt
+to this change by using the new API in QWindowSystemInterface.
+
+Index: src/calibre/headless/headless_integration.cpp
+--- src/calibre/headless/headless_integration.cpp.orig
++++ src/calibre/headless/headless_integration.cpp
+@@ -50,7 +50,11 @@ HeadlessIntegration::HeadlessIntegration(const QString
+     mPrimaryScreen->mDepth = 32;
+     mPrimaryScreen->mFormat = QImage::Format_ARGB32_Premultiplied;
+ 
++#if (QT_VERSION >= QT_VERSION_CHECK(5, 13, 0))
++    QWindowSystemInterface::handleScreenAdded(mPrimaryScreen);
++#else
+     screenAdded(mPrimaryScreen);
++#endif
+     m_fontDatabase.reset(new QFontconfigDatabase());
+ 
+     platform_services.reset(new GenericUnixServices());

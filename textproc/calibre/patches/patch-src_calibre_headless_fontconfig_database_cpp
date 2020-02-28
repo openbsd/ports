@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_calibre_headless_fontconfig_database_cpp,v 1.2 2017/08/10 04:57:58 jca Exp $
+$OpenBSD: patch-src_calibre_headless_fontconfig_database_cpp,v 1.3 2020/02/28 19:25:27 rsadowski Exp $
 Subject: [PATCH] Compatibility with qt5-5.9.0
 Commit-Id: 82bd2e1a51df0650cb40894c5dc2b958f601a91d
+
+Qt 5.11 compatibility
+Commit-Id: 68bbec179abc980ebcb3f13854d2e4fd46f489
 
 Index: src/calibre/headless/fontconfig_database.cpp
 --- src/calibre/headless/fontconfig_database.cpp.orig
@@ -28,7 +31,29 @@ Index: src/calibre/headless/fontconfig_database.cpp
  #endif
  
  #include <QtGui/qguiapplication.h>
-@@ -763,7 +767,7 @@ QFontEngine *QFontconfigDatabase::fontEngine(const QFo
+@@ -280,7 +284,21 @@ static const char specialLanguages[][6] = {
+     "", // Hatran
+     "", // Multani
+     "", // OldHungarian
++#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
++    "", // SignWriting
++    "", // Adlam
++    "", // Bhaiksuki
++    "", // Marchen
++    "", // Newa
++    "", // Osage
++    "", // Tangut
++    "", // MasaramGondi
++    "", // Nushu
++    "", // Soyombo
++    "" // ZanabazarSquare
++#else
+     ""  // SignWriting
++#endif // Qt >= 5.11
+ #else
+     "hoc"  // WarangCiti
+ #endif  // Qt >= 5.6.0
+@@ -763,7 +781,7 @@ QFontEngine *QFontconfigDatabase::fontEngine(const QFo
  
  QFontEngine *QFontconfigDatabase::fontEngine(const QByteArray &fontData, qreal pixelSize, QFont::HintingPreference hintingPreference)
  {
@@ -37,7 +62,7 @@ Index: src/calibre/headless/fontconfig_database.cpp
      if (engine == 0)
          return 0;
  
-@@ -915,7 +919,7 @@ QStringList QFontconfigDatabase::addApplicationFont(co
+@@ -915,7 +933,7 @@ QStringList QFontconfigDatabase::addApplicationFont(co
  
  QString QFontconfigDatabase::resolveFontFamilyAlias(const QString &family) const
  {
