@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.878 2020/02/28 18:58:47 martin Exp $
+# $OpenBSD: Quirks.pm,v 1.879 2020/02/28 20:20:13 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1406,6 +1406,7 @@ my $obsolete_reason = {
 	'php-mcrypt' => 3,
 	'sqliteman' => 19,
 	'entomologist' => 3,
+	'fcitx-qt4' => 6,
 };
 
 # reasons for obsolete packages
