@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.650 2020/02/12 06:28:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.651 2020/02/29 14:37:08 bket Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -218,7 +218,6 @@
      SUBDIR += paper-gtk-theme
      SUBDIR += paper-icon-theme
      SUBDIR += parcellite
-     SUBDIR += partiwm
      SUBDIR += pcmanfm
      SUBDIR += peksystray
      SUBDIR += pekwm
