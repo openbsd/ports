@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/02/19 17:35:36 juanfra Exp $
+# $OpenBSD: Makefile,v 1.26 2020/02/29 08:17:59 rsadowski Exp $
 
 COMMENT =	Qt port of the Scintilla source code editor
 
@@ -6,42 +6,24 @@ COMMENT =	Qt port of the Scintilla source code editor
 VERSION =	2.11.4
 DISTNAME =	QScintilla-${VERSION}
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
+
 CATEGORIES =	editors x11
 
+SHARED_LIBS +=  qscintilla2_qt5          1.0 # 15.0
 
-HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
+HOMEPAGE =	https://www.riverbankcomputing.com/software/qscintilla/
 
 # GPLv2/GPLv3
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5PrintSupport
+WANTLIB += Qt5Widgets m
+
 MASTER_SITES =  https://www.riverbankcomputing.com/static/Downloads/QScintilla/${VERSION}/
 
-WANTLIB =	${COMPILER_LIBCXX} m
-MODULES =	devel/qmake
-FLAVORS = qt5
-FLAVOR?=
-
-# C++11 (at least)
-COMPILER=	base-clang ports-clang ports-gcc
-CXXFLAGS +=	-std=c++11
-
-.if ${FLAVOR} == "qt5"
-FULLPKGNAME =	qscintilla-qt5-${VERSION}
-QTVER =	qt5
-MODULES +=	x11/qt5
-SHARED_LIBS =	qscintilla2_qt5 1.0 # 15.0
-
-WANTLIB += GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
-.else
-QTVER =	qt4
-MODULES +=	x11/qt4
-SHARED_LIBS =	qscintilla2_qt4 1.0 # 15.0
-
-WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
-WANTLIB += freetype pthread
-.endif
-
-SUBST_VARS +=	QTVER
+MODULES =	devel/qmake \
+		x11/qt5
 
 SEPARATE_BUILD =	No
 

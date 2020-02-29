@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2020/02/20 16:10:07 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2020/02/29 08:17:58 rsadowski Exp $
 
 COMMENT-main =		Python binding for the Scintilla source code editor
 COMMENT-common =	common files for py-qscintilla
 
 VERSION =		2.11.4
-REVISION =		0
+REVISION =		1
 MODPY_EGG_VERSION =	${VERSION}
 DISTNAME =		QScintilla-${VERSION}
 
@@ -48,7 +48,7 @@ RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			editors/py-qscintilla,-common
-LIB_DEPENDS-main =	editors/qscintilla,qt5=${VERSION}
+LIB_DEPENDS-main =	editors/qscintilla=${VERSION}
 
 RUN_DEPENDS-common =
 LIB_DEPENDS-common =

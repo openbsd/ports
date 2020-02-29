@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2020/02/04 06:09:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2020/02/29 08:17:58 rsadowski Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2019.05
 DISTNAME =		openscad-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		cad
 
@@ -35,7 +35,7 @@ LIB_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/harfbuzz \
 			devel/mpfr \
-			editors/qscintilla,qt5 \
+			editors/qscintilla \
 			graphics/glew \
 			graphics/opencsg \
 			math/cgal \
