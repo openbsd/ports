@@ -1,0 +1,6 @@
+Kitchen aims to pull small snippets of code into a few python modules which you
+can import and use within your project;  those include but are not limited to:
+
+- i18n
+- iterating over objects
+- misc. functions to deal with text and character set conversion
