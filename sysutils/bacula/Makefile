@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2020/02/28 23:26:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2020/02/29 15:40:11 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -18,6 +18,8 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
+
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -110,22 +112,18 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 WANTLIB-server += ${WANTLIB} bac baccats baccfg bacfind lzo2
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
-			sysutils/bacula,-main-=$V \
 			bacula-pgsql-*|bacula-mysql-*|bacula-sqlite3-*:sysutils/bacula,-pgsql
 
 WANTLIB-pgsql += pq m ${COMPILER_LIBCXX}
 LIB_DEPENDS-pgsql +=	${MODGCC4_CPPLIBDEP} \
-			sysutils/bacula,-server-=$V \
 			databases/postgresql
 
 WANTLIB-mysql += m mariadb ${COMPILER_LIBCXX}
 LIB_DEPENDS-mysql +=	${MODGCC4_CPPLIBDEP} \
-			sysutils/bacula,-server-=$V \
 			databases/mariadb
 
 WANTLIB-sqlite3 += sqlite3 m pthread z ${COMPILER_LIBCXX}
 LIB_DEPENDS-sqlite3=	${MODGCC4_CPPLIBDEP} \
-			sysutils/bacula,-server-=$V \
 			databases/sqlite3
 
 MODULES +=		x11/qt5
