@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/22 02:36:28 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/29 03:00:03 thfr Exp $
+
+BROKEN =	calls to curl(1) and autodetection of CPUs break bulk builds
 
 COMMENT =	toolkit for the Haxe programming language
 
