@@ -1,0 +1,24 @@
+$OpenBSD: patch-tlslite_utils_cryptomath_py,v 1.1 2020/02/29 19:17:15 tb Exp $
+
+Avoid loading pycrypto.  If py3-cryptodome is installed, this will hit failures
+as the one below whenever RSA methods are used:
+
+>       raise NotImplementedError("Use module Crypto.Cipher.PKCS1_OAEP instead")
+E       NotImplementedError: Use module Crypto.Cipher.PKCS1_OAEP instead
+
+/usr/local/lib/python3.7/site-packages/Crypto/PublicKey/RSA.py:379: NotImplementedErro
+
+Index: tlslite/utils/cryptomath.py
+--- tlslite/utils/cryptomath.py.orig
++++ tlslite/utils/cryptomath.py
+@@ -51,8 +51,8 @@ except ImportError:
+ 
+ #Try to load pycrypto
+ try:
+-    import Crypto.Cipher.AES
+-    pycryptoLoaded = True
++    # import Crypto.Cipher.AES
++    pycryptoLoaded = False
+ except ImportError:
+     pycryptoLoaded = False
+ 

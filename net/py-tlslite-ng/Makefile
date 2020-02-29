@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/28 09:18:41 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2020/02/29 19:17:15 tb Exp $
 
 COMMENT =		Python SSL and TLS library
 
 MODPY_EGG_VERSION =	0.8.0-alpha37
 DISTNAME =		tlslite-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-alpha/alpha/}
+REVISION =		0
+
 CATEGORIES =		net
 
 GH_ACCOUNT =		tomato42
