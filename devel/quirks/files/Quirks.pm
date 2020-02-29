@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.882 2020/02/29 19:00:54 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.883 2020/02/29 19:57:47 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -364,6 +364,7 @@ my $stem_extensions = {
 	'py-bottleneck' => 'py3-bottleneck',
 	'py-daemon' => 'py3-daemon',
 	'py-nbval' => 'py3-nbval',
+	'py-oauthlib' => 'py3-oauthlib',
 };
 
 my $obsolete_reason = {
