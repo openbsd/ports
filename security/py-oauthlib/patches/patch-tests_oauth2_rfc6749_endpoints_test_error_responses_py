@@ -1,0 +1,31 @@
+$OpenBSD: patch-tests_oauth2_rfc6749_endpoints_test_error_responses_py,v 1.1 2020/02/29 19:34:27 kmos Exp $
+
+Index: tests/oauth2/rfc6749/endpoints/test_error_responses.py
+--- tests/oauth2/rfc6749/endpoints/test_error_responses.py.orig
++++ tests/oauth2/rfc6749/endpoints/test_error_responses.py
+@@ -179,21 +179,21 @@ class ErrorResponseTest(TestCase):
+         description = 'Duplicate client_id parameter.'
+ 
+         # Authorization code
+-        self.assertRaisesRegexp(errors.InvalidRequestFatalError,
++        self.assertRaisesRegex(errors.InvalidRequestFatalError,
+                               description,
+                               self.web.validate_authorization_request,
+                               uri.format('code'))
+-        self.assertRaisesRegexp(errors.InvalidRequestFatalError,
++        self.assertRaisesRegex(errors.InvalidRequestFatalError,
+                               description,
+                               self.web.create_authorization_response,
+                               uri.format('code'), scopes=['foo'])
+ 
+         # Implicit grant
+-        self.assertRaisesRegexp(errors.InvalidRequestFatalError,
++        self.assertRaisesRegex(errors.InvalidRequestFatalError,
+                               description,
+                               self.mobile.validate_authorization_request,
+                               uri.format('token'))
+-        self.assertRaisesRegexp(errors.InvalidRequestFatalError,
++        self.assertRaisesRegex(errors.InvalidRequestFatalError,
+                               description,
+                               self.mobile.create_authorization_response,
+                               uri.format('token'), scopes=['foo'])
