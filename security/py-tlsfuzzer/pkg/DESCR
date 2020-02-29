@@ -1,0 +1,4 @@
+Fuzzer and test suite for TLS implementations (SSLv2-TLSv1.3).  Provides
+ready-to-use scripts testing for many vulnerabilities (ROBOT, DROWN, etc.)
+and general standards conformity (RFC 5246, RFC 7627, RFC 7905, etc.)
+Early alpha version - no API stability guarantees.
