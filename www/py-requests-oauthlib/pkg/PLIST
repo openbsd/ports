@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/29 22:30:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/02/29 22:33:13 sthen Exp $
+@conflict py-requests-oauthlib-*
 @pkgpath www/py-requests-oauthlib
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
