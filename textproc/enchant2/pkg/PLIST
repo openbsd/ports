@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/29 09:05:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/29 09:37:53 ajacoutot Exp $
 @bin bin/enchant-2
 @bin bin/enchant-lsmod-2
 include/enchant-2/
@@ -6,9 +6,9 @@ include/enchant-2/enchant++.h
 include/enchant-2/enchant-provider.h
 include/enchant-2/enchant.h
 lib/enchant-2/
-lib/enchant-2/enchant_aspell.so
-lib/enchant-2/enchant_hunspell.so
-lib/libenchant-2.a
+@so lib/enchant-2/enchant_aspell.so
+@so lib/enchant-2/enchant_hunspell.so
+@static-lib lib/libenchant-2.a
 lib/libenchant-2.la
 @lib lib/libenchant-2.so.${LIBenchant-2_VERSION}
 lib/pkgconfig/enchant-2.pc

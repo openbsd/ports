@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2019/09/15 11:05:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2020/02/29 09:37:53 ajacoutot Exp $
 
 COMMENT=		generic spell checking library
 
-V=			2.2.7
+V=			2.2.8
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
 
-SHARED_LIBS +=  enchant-2                 0.1 # 4.7
+SHARED_LIBS +=  enchant-2            0.1      # 4.8
 
 CATEGORIES=		textproc
 
@@ -38,7 +38,10 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=		--without-applespell \
 			--without-voikko \
-			--without-zemberek
+			--without-zemberek \
+			--without-nuspell
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # prevent conflict with textproc/enchant
 MAKE_FLAGS=		pkgdatadir=${TRUEPREFIX}/share/enchant-2
