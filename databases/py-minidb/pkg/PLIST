@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/01 13:20:10 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/29 16:03:38 sthen Exp $
+@pkgpath databases/py-minidb
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}minidb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

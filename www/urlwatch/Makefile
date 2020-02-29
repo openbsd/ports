@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/03 16:06:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/02/29 16:03:38 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
 MODPY_EGG_VERSION=	2.17
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
@@ -23,7 +23,7 @@ MODPY_SETUPTOOLS= Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
-		databases/py-minidb \
+		databases/py-minidb${MODPY_FLAVOR} \
 		devel/py-appdirs${MODPY_FLAVOR} \
 		security/py-keyring${MODPY_FLAVOR} \
 		textproc/py-cssselect${MODPY_FLAVOR} \
