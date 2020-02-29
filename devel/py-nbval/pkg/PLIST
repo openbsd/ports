@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/29 12:55:44 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/29 18:57:50 bket Exp $
+@conflict py-nbval-*
+@pkgpath devel/py-nbval
 lib/python${MODPY_VERSION}/site-packages/nbval/
 lib/python${MODPY_VERSION}/site-packages/nbval-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/nbval-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,11 +12,15 @@ lib/python${MODPY_VERSION}/site-packages/nbval-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/nbval/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}_cover4.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}_cover5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}cover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}kernel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}nbdime_reporter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbval/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbval/_cover4.py
+lib/python${MODPY_VERSION}/site-packages/nbval/_cover5.py
 lib/python${MODPY_VERSION}/site-packages/nbval/_version.py
 lib/python${MODPY_VERSION}/site-packages/nbval/cover.py
 lib/python${MODPY_VERSION}/site-packages/nbval/kernel.py

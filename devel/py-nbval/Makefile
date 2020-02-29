@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/02/29 18:57:49 bket Exp $
 
 COMMENT =		py.test plugin to validate Jupyter notebooks
 
-MODPY_EGG_VERSION =	0.9.1
+MODPY_EGG_VERSION =	0.9.5
 DISTNAME =		nbval-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
+
+HOMEPAGE =		https://github.com/computationalmodelling/nbval
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -26,7 +28,7 @@ TEST_DEPENDS =		devel/py-nbval${MODPY_FLAVOR} \
 			math/py-sympy${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 post-patch:
 	sed -i 's,py.test,py.test${MODPY_BIN_SUFFIX},' \

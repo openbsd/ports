@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1940 2020/02/23 17:35:29 tracey Exp $
+# $OpenBSD: Makefile,v 1.1941 2020/02/29 18:57:49 bket Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1550,7 +1550,6 @@
      SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat
      SUBDIR += py-nbformat,python3
-     SUBDIR += py-nbval
      SUBDIR += py-nbval,python3
      SUBDIR += py-nose
      SUBDIR += py-nose,python3
