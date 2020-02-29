@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.880 2020/02/28 21:01:11 martin Exp $
+# $OpenBSD: Quirks.pm,v 1.881 2020/02/29 14:42:33 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1408,6 +1408,7 @@ my $obsolete_reason = {
 	'sqliteman' => 19,
 	'entomologist' => 3,
 	'fcitx-qt4' => 6,
+	'partiwm' => 3,
 };
 
 # reasons for obsolete packages
