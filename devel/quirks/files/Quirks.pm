@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.884 2020/02/29 22:34:56 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.885 2020/02/29 22:43:24 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -367,6 +367,14 @@ my $stem_extensions = {
 	'py-oauthlib' => 'py3-oauthlib',
 	'py-requests-oauthlib' => 'py3-requests-oauthlib',
 	'py-discogs-client' => 'py3-discogs-client',
+	'py-semver' => 'py3-semver',
+	'py-seaborn' => 'py3-seaborn',
+	'py-natsort' => 'py3-natsort',
+	'py-mastodon.py' => 'py3-mastodon.py',
+	'py-bokeh' => 'py3-bokeh',
+	'py-algorithm-munkres' => 'py3-algorithm-munkres',
+	'py-pdfminer' => 'py3-pdfminer',
+	'jupyter-notebook3' => 'jupyter-notebook',
 };
 
 my $obsolete_reason = {
@@ -1341,7 +1349,6 @@ my $obsolete_reason = {
 	'arm-elf-gcc' => 6,
 	'arm-elf-gdb' => 6,
 	'arm-elf-newlib' => 6,
-	'py-mastodon.py' => 14,
 	'g77' => 5,
 	'libf2c' => 5,
 	'p5-WWW-Curl' => 3,
@@ -1358,14 +1365,11 @@ my $obsolete_reason = {
 	'postgresql-plv8' => 5,
 	'py-GeoIP' => 6,
 	'cvsync' => 3,
-	'py-bokeh' => 14,
 	'pecl-geoip' => 6,
 	'clive' => 5,
 	'aws-shell' => 6,
 	'aqsis' => 5,
-	'py-algorithm-munkres' => 14,
 	'gtk-xfce-engine' => 3,
-	'py-pdfminer' => 14,
 	'firewalk' => 0,
 	'goffice08' => 5,
 	'terraform-provider-terraform' => 3,
@@ -1377,7 +1381,6 @@ my $obsolete_reason = {
 	'py-oauth2' => 5,
 	'afm' => 6,
 	'p5-Geo-IP' => 6,
-	'py-semver' => 14,
 	'py-libnacl' => 3,
 	'py3-libnacl' => 3,
 	'py3-typing' => 5,
@@ -1388,11 +1391,9 @@ my $obsolete_reason = {
 	'qt3-sqlite3' => 5,
 	'eigen' => 5,
 	'eigen2' => 5,
-	'py-seaborn' => 14,
 	'qt-gstreamer' => 5,
 	'qsynergy' => 3,
 	'kqoauth' => 5,
-	'py-natsort' => 14,
 	'valknut' => 3,
 	'dclib' => 3,
 	'luma' => 3,
@@ -1407,7 +1408,6 @@ my $obsolete_reason = {
 	'rebar17' => 5,
 	'bouml' => 3,
 	'beediff' => 18,
-	'jupyter-notebook' => 14,
 	'php-mcrypt' => 3,
 	'sqliteman' => 19,
 	'entomologist' => 3,
