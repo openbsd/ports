@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_build_cc,v 1.1 2019/12/20 15:51:26 kurt Exp $
+$OpenBSD: patch-src_build_cc,v 1.2 2020/02/29 14:29:28 rsadowski Exp $
 
 Use a deque for the ready_ queue so that build order is not randomized
 by using a set of pointers.
@@ -6,7 +6,7 @@ by using a set of pointers.
 Index: src/build.cc
 --- src/build.cc.orig
 +++ src/build.cc
-@@ -348,9 +348,8 @@ bool Plan::AddSubTarget(Node* node, Node* dependent, s
+@@ -382,9 +382,8 @@ void Plan::EdgeWanted(const Edge* edge) {
  Edge* Plan::FindWork() {
    if (ready_.empty())
      return NULL;
@@ -18,7 +18,7 @@ Index: src/build.cc
    return edge;
  }
  
-@@ -372,7 +371,7 @@ void Plan::ScheduleWork(map<Edge*, Want>::iterator wan
+@@ -406,7 +405,7 @@ void Plan::ScheduleWork(map<Edge*, Want>::iterator wan
      pool->RetrieveReadyEdges(&ready_);
    } else {
      pool->EdgeScheduled(*edge);
