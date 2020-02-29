@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/12/28 15:13:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/02/29 15:54:33 sthen Exp $
 
 COMMENT=		module and program for processing ID3 tags
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		${HOMEPAGE}releases/
 
 MODULES=		lang/python
+# standalone software - intentionally no py-* prefix/FLAVOR.
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS=		devel/py-magic${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
