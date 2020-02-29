@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_makefile,v 1.6 2019/10/31 16:12:08 bcallah Exp $
+$OpenBSD: patch-src_makefile,v 1.7 2020/02/29 13:44:07 bcallah Exp $
 Index: src/makefile
 --- src/makefile.orig
 +++ src/makefile
-@@ -84,27 +84,16 @@ NE_NOWCHAR=
+@@ -85,27 +85,16 @@ NE_NOWCHAR=
  NE_DEBUG=
  NE_TEST=
  
