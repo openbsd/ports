@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/28 20:13:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/29 14:09:05 rsadowski Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
@@ -7,7 +7,7 @@ V =		4.2.9.6
 DISTNAME = 	fcitx-$V
 PKGNAME-main =	fcitx-$V
 PKGNAME-gtk3 =	fcitx-gtk3-$V
-REVISION-main =	1
+REVISION-main =	2
 REVISION-gtk3 =	0
 
 SHARED_LIBS +=	fcitx-config	0.0 # 4.1
@@ -84,6 +84,9 @@ CONFIGURE_ARGS =-DENABLE_GTK3_IM_MODULE=ON \
 		-DENABLE_ENCHANT=OFF \
 		-DENABLE_OPENCC=OFF \
 		-DENABLE_PRESAGE=OFF \
+		-DENABLE_QT=OFF \
+		-DENABLE_QT_IM_MODULE=OFF \
+		-DENABLE_QT_GUI=OFF \
 		-DSYSCONFDIR=${PREFIX}/share/examples/fcitx \
 		-DMAN_INSTALL_DIR=${PREFIX}/man/ \
 		-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \

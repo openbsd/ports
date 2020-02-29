@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/02/20 06:16:07 kevlo Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/02/29 14:09:05 rsadowski Exp $
 @pkgpath inputmethods/fcitx
 @bin bin/createPYMB
 @bin bin/fcitx
@@ -97,39 +97,40 @@ include/fcitx/module/xkbdbus/fcitx-xkbdbus.h
 include/fcitx/profile.h
 include/fcitx/ui.h
 lib/fcitx/
-lib/fcitx/fcitx-autoeng.so
-lib/fcitx/fcitx-chttrans.so
-lib/fcitx/fcitx-classic-ui.so
-lib/fcitx/fcitx-clipboard.so
-lib/fcitx/fcitx-dbus.so
-lib/fcitx/fcitx-freedesktop-notify.so
-lib/fcitx/fcitx-fullwidth-char.so
-lib/fcitx/fcitx-imselector.so
-lib/fcitx/fcitx-ipc.so
-lib/fcitx/fcitx-ipcportal.so
-lib/fcitx/fcitx-keyboard.so
-lib/fcitx/fcitx-kimpanel-ui.so
-lib/fcitx/fcitx-notificationitem.so
-lib/fcitx/fcitx-pinyin-enhance.so
-lib/fcitx/fcitx-pinyin.so
-lib/fcitx/fcitx-punc.so
-lib/fcitx/fcitx-quickphrase.so
-lib/fcitx/fcitx-qw.so
-lib/fcitx/fcitx-remote-module.so
-lib/fcitx/fcitx-spell.so
-lib/fcitx/fcitx-table.so
-lib/fcitx/fcitx-unicode.so
-lib/fcitx/fcitx-vk.so
-lib/fcitx/fcitx-x11.so
-lib/fcitx/fcitx-xim.so
-lib/fcitx/fcitx-xkb.so
-lib/fcitx/fcitx-xkbdbus.so
+@so lib/fcitx/fcitx-autoeng.so
+@so lib/fcitx/fcitx-chttrans.so
+@so lib/fcitx/fcitx-classic-ui.so
+@so lib/fcitx/fcitx-clipboard.so
+@so lib/fcitx/fcitx-dbus.so
+@so lib/fcitx/fcitx-freedesktop-notify.so
+@so lib/fcitx/fcitx-fullwidth-char.so
+@so lib/fcitx/fcitx-imselector.so
+@so lib/fcitx/fcitx-ipc.so
+@so lib/fcitx/fcitx-ipcportal.so
+@so lib/fcitx/fcitx-keyboard.so
+@so lib/fcitx/fcitx-kimpanel-ui.so
+@so lib/fcitx/fcitx-notificationitem.so
+@so lib/fcitx/fcitx-pinyin-enhance.so
+@so lib/fcitx/fcitx-pinyin.so
+@so lib/fcitx/fcitx-punc.so
+@so lib/fcitx/fcitx-quickphrase.so
+@so lib/fcitx/fcitx-qw.so
+@so lib/fcitx/fcitx-remote-module.so
+@so lib/fcitx/fcitx-spell.so
+@so lib/fcitx/fcitx-table.so
+@so lib/fcitx/fcitx-unicode.so
+@so lib/fcitx/fcitx-vk.so
+@so lib/fcitx/fcitx-x11.so
+@so lib/fcitx/fcitx-xim.so
+@so lib/fcitx/fcitx-xkb.so
+@so lib/fcitx/fcitx-xkbdbus.so
 lib/fcitx/libexec/
 @bin lib/fcitx/libexec/comp-spell-dict
 @bin lib/fcitx/libexec/fcitx-po-parser
 @bin lib/fcitx/libexec/fcitx-scanner
 lib/girepository-1.0/Fcitx-1.0.typelib
-lib/gtk-2.0/2.10.0/immodules/im-fcitx.so
+@so lib/gtk-2.0/2.10.0/immodules/im-fcitx.so
+lib/gtk-3.0/
 @lib lib/libfcitx-config.so.${LIBfcitx-config_VERSION}
 @lib lib/libfcitx-core.so.${LIBfcitx-core_VERSION}
 @lib lib/libfcitx-gclient.so.${LIBfcitx-gclient_VERSION}
