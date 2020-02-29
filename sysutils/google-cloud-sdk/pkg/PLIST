@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.142 2020/02/22 08:57:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.143 2020/02/29 09:37:05 ajacoutot Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -686,6 +686,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/events/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/events/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/events/custom_resource_definition.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/events/custom_resource_definition.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/events/iam_util.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/events/iam_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/events/metric_names.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/events/metric_names.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/events/source.py
@@ -909,8 +911,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/privateca/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/privateca/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/privateca/base.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/privateca/base.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/privateca/kms.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/privateca/kms.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/privateca/certificate_utils.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/privateca/certificate_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/pubsub/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/pubsub/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/pubsub/__init__.pyc
@@ -970,6 +972,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/run/revision.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/revision.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/route.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/route.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/run/secret.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/run/secret.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/service.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/service.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/traffic.py
@@ -2566,12 +2570,17 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/oslogin/oslogin_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/exceptions.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/exceptions.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/key_generation.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/key_generation.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/operations.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/resource_args.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/resource_args.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/text_utils.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/text_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/projects/
@@ -4696,6 +4705,15 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha1/gkehub_v1al
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha1/gkehub_v1alpha1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/gkehub_v1alpha2_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/gkehub_v1alpha2_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/gkehub_v1alpha2_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/gkehub_v1alpha2_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1alpha2/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1beta1/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1beta1/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1beta1/__init__.pyc
@@ -4707,6 +4725,7 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1beta1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub/v1beta1/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub_v1alpha1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub_v1alpha2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gkehub_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/healthcare/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/healthcare/__init__.py
@@ -4889,6 +4908,19 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/managedidentities/v1beta1/r
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/managedidentities_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/managedidentities_v1alpha1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/managedidentities_v1beta1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/memcache_v1beta2_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/memcache_v1beta2_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/memcache_v1beta2_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/memcache_v1beta2_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache/v1beta2/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/memcache_v1beta2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/__init__.pyc
@@ -7190,8 +7222,7 @@ google-cloud-sdk/lib/surface/compute/instances/describe.py
 google-cloud-sdk/lib/surface/compute/instances/describe.pyc
 google-cloud-sdk/lib/surface/compute/instances/detach_disk.py
 google-cloud-sdk/lib/surface/compute/instances/detach_disk.pyc
-google-cloud-sdk/lib/surface/compute/instances/export.py
-google-cloud-sdk/lib/surface/compute/instances/export.pyc
+google-cloud-sdk/lib/surface/compute/instances/export.yaml
 google-cloud-sdk/lib/surface/compute/instances/get_guest_attributes.yaml
 google-cloud-sdk/lib/surface/compute/instances/get_iam_policy.yaml
 google-cloud-sdk/lib/surface/compute/instances/get_serial_port_output.py
@@ -8948,6 +8979,8 @@ google-cloud-sdk/lib/surface/error_reporting/events/report.pyc
 google-cloud-sdk/lib/surface/events/
 google-cloud-sdk/lib/surface/events/__init__.py
 google-cloud-sdk/lib/surface/events/__init__.pyc
+google-cloud-sdk/lib/surface/events/init.py
+google-cloud-sdk/lib/surface/events/init.pyc
 google-cloud-sdk/lib/surface/events/triggers/
 google-cloud-sdk/lib/surface/events/triggers/__init__.py
 google-cloud-sdk/lib/surface/events/triggers/__init__.pyc
@@ -10166,13 +10199,26 @@ google-cloud-sdk/lib/surface/privateca/certificates/describe.py
 google-cloud-sdk/lib/surface/privateca/certificates/describe.pyc
 google-cloud-sdk/lib/surface/privateca/certificates/list.py
 google-cloud-sdk/lib/surface/privateca/certificates/list.pyc
+google-cloud-sdk/lib/surface/privateca/certificates/revoke.py
+google-cloud-sdk/lib/surface/privateca/certificates/revoke.pyc
 google-cloud-sdk/lib/surface/privateca/certificates/update.py
 google-cloud-sdk/lib/surface/privateca/certificates/update.pyc
 google-cloud-sdk/lib/surface/privateca/roots/
 google-cloud-sdk/lib/surface/privateca/roots/__init__.py
 google-cloud-sdk/lib/surface/privateca/roots/__init__.pyc
+google-cloud-sdk/lib/surface/privateca/roots/add_iam_policy_binding.yaml
+google-cloud-sdk/lib/surface/privateca/roots/get_iam_policy.yaml
 google-cloud-sdk/lib/surface/privateca/roots/list.py
 google-cloud-sdk/lib/surface/privateca/roots/list.pyc
+google-cloud-sdk/lib/surface/privateca/roots/remove_iam_policy_binding.yaml
+google-cloud-sdk/lib/surface/privateca/roots/set_iam_policy.yaml
+google-cloud-sdk/lib/surface/privateca/subordinates/
+google-cloud-sdk/lib/surface/privateca/subordinates/__init__.py
+google-cloud-sdk/lib/surface/privateca/subordinates/__init__.pyc
+google-cloud-sdk/lib/surface/privateca/subordinates/add_iam_policy_binding.yaml
+google-cloud-sdk/lib/surface/privateca/subordinates/get_iam_policy.yaml
+google-cloud-sdk/lib/surface/privateca/subordinates/remove_iam_policy_binding.yaml
+google-cloud-sdk/lib/surface/privateca/subordinates/set_iam_policy.yaml
 google-cloud-sdk/lib/surface/projects/
 google-cloud-sdk/lib/surface/projects/__init__.py
 google-cloud-sdk/lib/surface/projects/__init__.pyc
