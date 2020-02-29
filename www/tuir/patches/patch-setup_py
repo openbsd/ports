@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2020/02/29 23:07:48 kn Exp $
+
+Fix MANPATH.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -63,7 +63,7 @@ setuptools.setup(
+         'tuir': ['templates/*', 'themes/*'],
+         'tuir.packages.praw': ['praw.ini']
+     },
+-    data_files=[("share/man/man1", ["tuir.1"])],
++    data_files=[("man/man1", ["tuir.1"])],
+     install_requires=install_requires,
+     tests_require=tests_require,
+     extras_require=extras_require,
