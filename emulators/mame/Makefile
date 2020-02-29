@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/02/03 22:00:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.37 2020/02/29 21:50:22 fcambus Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -7,7 +7,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		218
+V =		219
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
@@ -79,15 +79,8 @@ post-extract:
 		xargs sed -i 's|"png.h"|"localpng.h"|'
 	@perl -pi -e 's/\r//g' ${WRKSRC}/makefile ${WRKSRC}/scripts/genie.lua \
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd/genie.make \
-		${WRKSRC}/3rdparty/genie/src/actions/make/make_cpp.lua \
 		${WRKSRC}/3rdparty/asio/include/asio/detail/config.hpp \
 		${WRKSRC}/docs/man/* ${WRKSRC}/keymaps/*
-
-# Bootstrap genie, regenerate host/scripts.c from patched *.lua files
-pre-build:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${MAKE_FLAGS} -f ${MAKE_FILE} 3rdparty/genie/bin/bsd/genie
-	cd ${WRKBUILD}/3rdparty/genie && bin/bsd/genie embed
 
 do-install:
 .if ${MACHINE_ARCH} == "amd64"
