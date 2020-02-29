@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/23 23:36:47 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2020/02/29 22:31:11 sthen Exp $
 
 COMMENT =	Python interface to Discogs website
 
-MODPY_EGG_VERSION = 2.2.1
+MODPY_EGG_VERSION = 2.2.2
 DISTNAME =	discogs-client-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
-REVISION =	1
 
 HOMEPAGE =	https://github.com/discogs/discogs_client
 
@@ -22,7 +21,7 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	discogs_client
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR} \
 		security/py-oauthlib${MODPY_FLAVOR} \
