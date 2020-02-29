@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/14 05:56:19 remi Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/02/29 22:30:15 sthen Exp $
+@pkgpath www/py-requests-oauthlib
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -21,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MO
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}douban.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}facebook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}fitbit.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}instagram.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}linkedin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}mailchimp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}plentymarkets.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,6 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MO
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/douban.py
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/facebook.py
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/fitbit.py
+lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/instagram.py
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/linkedin.py
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/mailchimp.py
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/plentymarkets.py

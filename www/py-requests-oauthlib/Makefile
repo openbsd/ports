@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/02/29 22:30:15 sthen Exp $
 
 COMMENT =		OAuth library support for python-requests
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	1.3.0
 DISTNAME =		requests-oauthlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -28,7 +27,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 pre-test:
 	rm -rf ${WRKSRC}/tests/__pycache__
