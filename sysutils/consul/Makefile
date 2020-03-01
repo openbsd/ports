@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2020/02/16 08:58:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2020/03/01 16:28:15 ajacoutot Exp $
 
 # XXX no i386 equivalent to mem_openbsd_amd64.go
 ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		service discovery and configuration tool
 
-GH_TAGNAME=		v1.7.0
+GH_TAGNAME=		v1.7.1
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		consul
 
