@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.885 2020/02/29 22:43:24 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.886 2020/03/01 20:04:12 paco Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -375,6 +375,7 @@ my $stem_extensions = {
 	'py-algorithm-munkres' => 'py3-algorithm-munkres',
 	'py-pdfminer' => 'py3-pdfminer',
 	'jupyter-notebook3' => 'jupyter-notebook',
+	'py-html2text' => 'py3-html2text'
 };
 
 my $obsolete_reason = {
