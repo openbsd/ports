@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2019/12/24 15:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2020/03/01 10:02:12 ajacoutot Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
 V=		20191220
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -20,6 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m pthread
 
+# XXX requires __sync builtin
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
