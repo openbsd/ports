@@ -1,11 +1,11 @@
-$OpenBSD: patch-link-grammar_utilities_c,v 1.1 2019/03/10 12:17:39 ajacoutot Exp $
+$OpenBSD: patch-link-grammar_utilities_c,v 1.2 2020/03/01 10:26:49 ajacoutot Exp $
 
 Needs strtod_l / xlocale.h
 
 Index: link-grammar/utilities.c
 --- link-grammar/utilities.c.orig
 +++ link-grammar/utilities.c
-@@ -688,7 +688,7 @@ bool strtodC(const char *s, double *r)
+@@ -757,7 +757,7 @@ bool strtodC(const char *s, float *r)
  {
  	char *err;
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-link-grammar_utilities_h,v 1.6 2019/03/10 12:17:39 ajacoutot Exp $
+$OpenBSD: patch-link-grammar_utilities_h,v 1.7 2020/03/01 10:26:49 ajacoutot Exp $
 
 Index: link-grammar/utilities.h
 --- link-grammar/utilities.h.orig
 +++ link-grammar/utilities.h
-@@ -165,16 +165,20 @@ int strncasecmp(const char *s1, const char *s2, size_t
+@@ -162,16 +162,20 @@ int strncasecmp(const char *s1, const char *s2, size_t
  /* Cygwin < 2.6.0 doesn't have locale_t. */
  #ifdef HAVE_LOCALE_T
  locale_t newlocale_LC_CTYPE(const char *);

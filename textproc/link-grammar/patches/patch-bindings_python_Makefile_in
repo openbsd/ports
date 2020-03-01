@@ -1,9 +1,9 @@
-$OpenBSD: patch-bindings_python_Makefile_in,v 1.8 2019/03/10 12:17:39 ajacoutot Exp $
+$OpenBSD: patch-bindings_python_Makefile_in,v 1.9 2020/03/01 10:26:49 ajacoutot Exp $
 
 Index: bindings/python/Makefile.in
 --- bindings/python/Makefile.in.orig
 +++ bindings/python/Makefile.in
-@@ -449,10 +449,10 @@ _clinkgrammar_la_CPPFLAGS = \
+@@ -450,10 +450,10 @@ _clinkgrammar_la_CPPFLAGS = \
  # 2.4.6).  This is bad for Python modules, as they must have an identifier
  # name.
  # On MinGW, Python DLLs end with ".pyd". But Cygwin needs them with ".dll".
@@ -13,6 +13,6 @@ Index: bindings/python/Makefile.in
  _clinkgrammar_la_LDFLAGS = \
 -    -version-info @VERSION_INFO@ $(AVOID_VERSION) \
 +    $(AVOID_VERSION) \
-     $(PYTHON2_LDFLAGS) -module -no-undefined $(PYMODULE_EXT)
+     $(PYTHON_LDFLAGS) -module -no-undefined $(PYMODULE_EXT)
  
  _clinkgrammar_la_LIBADD = \

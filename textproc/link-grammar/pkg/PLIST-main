@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2019/03/10 12:17:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2020/03/01 10:26:49 ajacoutot Exp $
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
 include/link-grammar/dict-structures.h
 include/link-grammar/link-features.h
 include/link-grammar/link-includes.h
-lib/liblink-grammar.a
+@static-lib lib/liblink-grammar.a
 lib/liblink-grammar.la
 @lib lib/liblink-grammar.so.${LIBlink-grammar_VERSION}
 lib/pkgconfig/link-grammar.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so
 @man man/man1/link-parser.1
 share/link-grammar/
 share/link-grammar/ady/
@@ -86,6 +86,7 @@ share/link-grammar/demo-sql/dict.db
 share/link-grammar/en/
 share/link-grammar/en/4.0.affix
 share/link-grammar/en/4.0.constituent-knowledge
+share/link-grammar/en/4.0.dialect
 share/link-grammar/en/4.0.dict
 share/link-grammar/en/4.0.dict.m4
 share/link-grammar/en/4.0.knowledge
@@ -101,6 +102,10 @@ share/link-grammar/en/words/entities.gods
 share/link-grammar/en/words/entities.locations.sing
 share/link-grammar/en/words/entities.national.sing
 share/link-grammar/en/words/entities.organizations.sing
+share/link-grammar/en/words/entities.people
+share/link-grammar/en/words/entities.people.vowel
+share/link-grammar/en/words/entities.prof
+share/link-grammar/en/words/entities.prof.vowel
 share/link-grammar/en/words/entities.us-states.sing
 share/link-grammar/en/words/measures.1
 share/link-grammar/en/words/measures.2
