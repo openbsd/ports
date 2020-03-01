@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.102 2020/02/22 09:31:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.103 2020/03/01 10:17:34 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -2192,11 +2192,15 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/add-tags-to-vau
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/complete-multipart-upload.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/complete-vault-lock.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/create-vault.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/delete-archive.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/delete-vault-access-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/delete-vault-notifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/delete-vault.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/describe-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/describe-vault.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/get-data-retrieval-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/get-job-output.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/get-vault-access-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/get-vault-lock.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/get-vault-notifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/initiate-job.rst
@@ -2205,13 +2209,19 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/initiate-vault-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/list-jobs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/list-multipart-uploads.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/list-parts.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/list-provisioned-capacity.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/list-tags-for-vault.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/list-vaults.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/purchase-provisioned-capacity.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/remove-tags-from-vault.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/set-data-retrieval-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/set-vault-access-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/set-vault-notifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/upload-archive.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/upload-multipart-part.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/vault-exists.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/vault-not-exists.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-accelerator.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-endpoint-group.rst
@@ -4016,6 +4026,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-grou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-sessions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-automation-execution.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-calendar-state.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-command-invocation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-connection-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-default-patch-baseline.rst
@@ -4139,6 +4150,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/wafv2/get-logging-confi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/wafv2/get-rate-based-statement-managed-keys.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/wafv2/get-regex-pattern-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/wafv2/get-rule-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/wafv2/get-sampled-requests.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/wafv2/get-web-acl-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/wafv2/get-web-acl.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/wafv2/list-available-managed-rule-groups.rst
@@ -4203,6 +4215,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/create-alias.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/create-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/create-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/create-user.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/delete-access-control-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/delete-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/delete-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/delete-mailbox-permissions.rst
@@ -4215,7 +4228,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/describe-resou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/describe-user.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/disassociate-delegate-from-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/disassociate-member-from-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/get-access-control-effect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/get-mailbox-details.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-access-control-rules.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-aliases.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-group-members.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-groups.rst
@@ -4223,10 +4238,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-mailbox-p
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-organizations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-resource-delegates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-resources.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-tags-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-users.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/put-access-control-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/put-mailbox-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/register-to-work-mail.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/reset-password.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/update-mailbox-quota.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/update-primary-email-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/update-resource.rst
