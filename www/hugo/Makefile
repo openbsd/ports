@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/17 14:39:44 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/01 21:20:21 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
 
-DISTNAME =	hugo-0.53
-REVISION =	0
+DISTNAME =	hugo-0.65.3
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://gohugo.io/
+
+MAINTAINER =	Paco Esteban <paco@openbsd.org>
 
 #Apache License 2.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c pthread
 
-MASTER_SITES =	https://files.fairydust.space/
+MASTER_SITES =	https://e1e0.net/dist/
 
 MODULES =	lang/go
 

@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/27 17:39:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/01 21:20:22 paco Exp $
 @bin bin/hugo
+@man man/man1/hugo-config-mounts.1
 @man man/man1/hugo-config.1
 @man man/man1/hugo-convert-toJSON.1
 @man man/man1/hugo-convert-toTOML.1
 @man man/man1/hugo-convert-toYAML.1
 @man man/man1/hugo-convert.1
+@man man/man1/hugo-deploy.1
 @man man/man1/hugo-env.1
 @man man/man1/hugo-gen-autocomplete.1
 @man man/man1/hugo-gen-chromastyles.1
@@ -13,10 +15,19 @@
 @man man/man1/hugo-gen.1
 @man man/man1/hugo-import-jekyll.1
 @man man/man1/hugo-import.1
+@man man/man1/hugo-list-all.1
 @man man/man1/hugo-list-drafts.1
 @man man/man1/hugo-list-expired.1
 @man man/man1/hugo-list-future.1
 @man man/man1/hugo-list.1
+@man man/man1/hugo-mod-clean.1
+@man man/man1/hugo-mod-get.1
+@man man/man1/hugo-mod-graph.1
+@man man/man1/hugo-mod-init.1
+@man man/man1/hugo-mod-tidy.1
+@man man/man1/hugo-mod-vendor.1
+@man man/man1/hugo-mod-verify.1
+@man man/man1/hugo-mod.1
 @man man/man1/hugo-new-site.1
 @man man/man1/hugo-new-theme.1
 @man man/man1/hugo-new.1
