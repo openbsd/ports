@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/03/01 22:08:29 bcallah Exp $
 
 COMMENT=	clone of the classic Frog Bog game
 
-DISTNAME =	batrachians-0.1.6
+DISTNAME =	batrachians-0.1.7
 CATEGORIES=	games
-REVISION =	2
 
 HOMEPAGE=	http://sarrazip.com/dev/batrachians.html
 
@@ -18,7 +17,7 @@ WANTLIB=	SDL SDL_image SDL_mixer c m pthread ${COMPILER_LIBCXX} flatzebra-0.1>=1
 COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils
-LIB_DEPENDS=	devel/flatzebra>=0.1.5
+LIB_DEPENDS=	devel/flatzebra>=0.1.7
 
 CONFIGURE_STYLE=gnu
 

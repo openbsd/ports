@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2013/08/23 07:49:29 zhuk Exp $
---- Makefile.in.orig	Wed Apr 17 08:12:57 2013
-+++ Makefile.in	Wed Aug 21 20:08:39 2013
-@@ -786,7 +786,7 @@ info: info-recursive
+$OpenBSD: patch-Makefile_in,v 1.6 2020/03/01 22:08:29 bcallah Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -872,7 +872,7 @@ info: info-recursive
  
  info-am:
  

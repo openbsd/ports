@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/01 22:08:29 bcallah Exp $
 
 COMMENT =		clone of Doubleback, an intruder circling game
 
-DISTNAME =		quadrupleback-0.1.0
-REVISION =		3
+DISTNAME =		quadrupleback-0.1.1
 
 CATEGORIES =		games
 
@@ -22,7 +21,7 @@ MASTER_SITES =		http://sarrazip.com/dev/
 
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		converters/libiconv \
-			devel/flatzebra \
+			devel/flatzebra>=0.1.7 \
 			devel/sdl-gfx
 
 FAKE_FLAGS =		docdir=${PREFIX}/share/doc/quadrupleback

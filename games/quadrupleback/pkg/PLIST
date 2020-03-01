@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/01 22:08:29 bcallah Exp $
 @bin bin/quadrupleback
 share/applications/quadrupleback.desktop
 share/doc/quadrupleback/
 share/doc/quadrupleback/AUTHORS
 share/doc/quadrupleback/COPYING
-share/doc/quadrupleback/INSTALL
 share/doc/quadrupleback/NEWS
 share/doc/quadrupleback/README
 share/doc/quadrupleback/THANKS
-share/doc/quadrupleback/TODO
 share/pixmaps/
 share/pixmaps/quadrupleback.png
 share/quadrupleback/

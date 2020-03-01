@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/03/01 22:08:28 bcallah Exp $
 
 COMMENT=	Night Stalker clone for X
 
-DISTNAME=	afternoonstalker-1.1.5
-REVISION=	2
+DISTNAME=	afternoonstalker-1.1.6
 
 CATEGORIES=	games
 
@@ -18,7 +17,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-LIB_DEPENDS =	devel/flatzebra>=0.1.6
+LIB_DEPENDS =	devel/flatzebra>=0.1.7
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE= gnu

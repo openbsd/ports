@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/22 11:31:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/01 22:08:28 bcallah Exp $
 include/flatzebra-0.1/
 include/flatzebra-0.1/flatzebra/
 include/flatzebra-0.1/flatzebra/Couple.h
@@ -11,7 +11,7 @@ include/flatzebra-0.1/flatzebra/RCouple.h
 include/flatzebra-0.1/flatzebra/RSprite.h
 include/flatzebra-0.1/flatzebra/SoundMixer.h
 include/flatzebra-0.1/flatzebra/Sprite.h
-lib/libflatzebra-0.1.a
+@static-lib lib/libflatzebra-0.1.a
 lib/libflatzebra-0.1.la
 @lib lib/libflatzebra-0.1.so.${LIBflatzebra-0.1_VERSION}
 lib/pkgconfig/flatzebra-0.1.pc
