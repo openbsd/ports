@@ -1,9 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/24 15:09:23 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/01 23:55:53 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/OPCUA/
+${P5ARCH}/OPCUA/Open62541/
 ${P5ARCH}/OPCUA/Open62541.pm
+${P5ARCH}/OPCUA/Open62541/NS0ID.pm
+${P5ARCH}/OPCUA/Open62541/Test/
+${P5ARCH}/OPCUA/Open62541/Test/Client.pm
+${P5ARCH}/OPCUA/Open62541/Test/Server.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/OPCUA/
 ${P5ARCH}/auto/OPCUA/Open62541/
 @so ${P5ARCH}/auto/OPCUA/Open62541/Open62541.so
 @man man/man3p/OPCUA::Open62541.3p
+@man man/man3p/OPCUA::Open62541::NS0ID.3p
+@man man/man3p/OPCUA::Open62541::Test::Client.3p
+@man man/man3p/OPCUA::Open62541::Test::Server.3p
