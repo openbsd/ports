@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.17 2020/01/01 10:54:26 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.18 2020/03/01 10:04:24 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -28388,7 +28388,7 @@ done
+@@ -28276,7 +28276,7 @@ done
  #
  
  # Subdirectory under lib to place GraphicsMagick lib files
@@ -12,7 +12,7 @@ Index: configure
  
  cat >>confdefs.h <<_ACEOF
  #define MagickLibSubdir "$MagickLibSubdir"
-@@ -28492,7 +28492,7 @@ _ACEOF
+@@ -28380,7 +28380,7 @@ _ACEOF
  
  #
  # Path to GraphicsMagick share files

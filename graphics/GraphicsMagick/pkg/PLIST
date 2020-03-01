@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/01/01 10:54:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/03/01 10:04:24 ajacoutot Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -346,6 +346,7 @@ share/doc/GraphicsMagick/ChangeLog.2015
 share/doc/GraphicsMagick/ChangeLog.2016
 share/doc/GraphicsMagick/ChangeLog.2017
 share/doc/GraphicsMagick/ChangeLog.2018
+share/doc/GraphicsMagick/ChangeLog.2019
 share/doc/GraphicsMagick/Copyright.txt
 share/doc/GraphicsMagick/NEWS.txt
 share/doc/GraphicsMagick/www/
@@ -367,6 +368,7 @@ share/doc/GraphicsMagick/www/ChangeLog-2015.html
 share/doc/GraphicsMagick/www/ChangeLog-2016.html
 share/doc/GraphicsMagick/www/ChangeLog-2017.html
 share/doc/GraphicsMagick/www/ChangeLog-2018.html
+share/doc/GraphicsMagick/www/ChangeLog-2019.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
