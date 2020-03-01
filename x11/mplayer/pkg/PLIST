@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/09/04 12:46:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2020/03/01 10:01:04 ajacoutot Exp $
 @pkgpath x11/mplayer,mad
 @pkgpath x11/mplayer,mad,no_x11
 @pkgpath x11/mplayer,sdl,mad
@@ -23,6 +23,7 @@
 @pkgpath x11/mplayer,aa,debug,no_x11
 @pkgpath x11/mplayer,aa,debug,jack,no_x11,sdl
 @pkgpath x11/mplayer,aa,debug,jack,sdl
+@sample ${CONFDIR}/
 @bin bin/mencoder
 @bin bin/mplayer
 @man man/man1/mencoder.1
@@ -118,7 +119,6 @@ share/doc/mplayer/xv.html
 share/doc/mplayer/zr.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/mplayer/
-@sample ${CONFDIR}/
 share/examples/mplayer/codecs.conf
 share/examples/mplayer/input.conf
 @sample ${CONFDIR}/input.conf
