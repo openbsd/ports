@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2020/02/09 16:58:37 fcambus Exp $
+# $OpenBSD: Makefile,v 1.104 2020/03/01 19:55:13 paco Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -75,7 +75,6 @@
     SUBDIR += p5-Unicode-Stringprep
     SUBDIR += pflogx
     SUBDIR += ppmtoTbmp
-    SUBDIR += py-html2text
     SUBDIR += py-html2text,python3
     SUBDIR += py-mini-amf
     SUBDIR += py-mini-amf,python3
