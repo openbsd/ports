@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/27 21:06:31 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/01 19:52:41 paco Exp $
+@conflict py-html2text-*
+@pkgpath converters/py-html2text
 bin/${MODPY_PY_PREFIX}html2text
 lib/python${MODPY_VERSION}/site-packages/html2text/
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,13 +11,18 @@ lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/html2text/__init__.py
+lib/python${MODPY_VERSION}/site-packages/html2text/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}elements.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html2text/cli.py
-lib/python${MODPY_VERSION}/site-packages/html2text/compat.py
 lib/python${MODPY_VERSION}/site-packages/html2text/config.py
+lib/python${MODPY_VERSION}/site-packages/html2text/elements.py
+lib/python${MODPY_VERSION}/site-packages/html2text/py.typed
+lib/python${MODPY_VERSION}/site-packages/html2text/typing.py
 lib/python${MODPY_VERSION}/site-packages/html2text/utils.py

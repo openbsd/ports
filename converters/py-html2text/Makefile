@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/01 19:52:41 paco Exp $
 
 COMMENT =		HTML to markdown-formatted text converter
 
-MODPY_EGG_VERSION =	2018.1.9
+MODPY_EGG_VERSION =	2020.1.16
 DISTNAME =		html2text-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		converters
 HOMEPAGE =		http://alir3z4.github.io/html2text/
@@ -17,9 +16,10 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 post-install:
 	mv ${PREFIX}/bin/html2text ${PREFIX}/bin/${MODPY_PY_PREFIX}html2text
