@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/11/01 09:15:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/01 10:06:20 ajacoutot Exp $
 
 COMMENT=	small and fast AV1 decoder
 
@@ -21,6 +21,7 @@ WANTLIB=	c pthread
 
 MODULES=	devel/meson
 
+# atomic ops, stdatomic.h
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
