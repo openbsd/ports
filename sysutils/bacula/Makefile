@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2020/02/29 15:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2020/03/01 22:04:06 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -112,6 +112,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 WANTLIB-server += ${WANTLIB} bac baccats baccfg bacfind lzo2
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
+			sysutils/bacula,-main \
 			bacula-pgsql-*|bacula-mysql-*|bacula-sqlite3-*:sysutils/bacula,-pgsql
 
 WANTLIB-pgsql += pq m ${COMPILER_LIBCXX}
