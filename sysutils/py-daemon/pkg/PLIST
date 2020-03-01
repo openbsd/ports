@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/28 21:01:11 martin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/01 08:11:41 martin Exp $
 @conflict py-daemon-*
 @pkgpath sysutils/py-daemon
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/daemon/
 lib/python${MODPY_VERSION}/site-packages/daemon/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}/
