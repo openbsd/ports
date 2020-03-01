@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/01 16:45:02 bket Exp $
 
 GH_ACCOUNT =	e2guardian
 GH_PROJECT =	e2guardian
-GH_TAGNAME =	5.3.3
+GH_TAGNAME =	v5.3.4
 
 COMMENT =	content scanning web filter
 CATEGORIES =	www net

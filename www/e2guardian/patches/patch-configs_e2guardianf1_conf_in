@@ -1,9 +1,9 @@
-$OpenBSD: patch-configs_e2guardianf1_conf_in,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+$OpenBSD: patch-configs_e2guardianf1_conf_in,v 1.2 2020/03/01 16:45:02 bket Exp $
 
 Index: configs/e2guardianf1.conf.in
 --- configs/e2guardianf1.conf.in.orig
 +++ configs/e2guardianf1.conf.in
-@@ -303,7 +303,7 @@ bypasskey = ''
+@@ -308,7 +308,7 @@ bypasskey = ''
  #cgikey = 'you must change this text in order to be secure'
  
  #  Users will not be able to bypass sites/urls in these lists

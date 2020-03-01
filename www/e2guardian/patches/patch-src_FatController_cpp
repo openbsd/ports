@@ -1,20 +1,9 @@
-$OpenBSD: patch-src_FatController_cpp,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+$OpenBSD: patch-src_FatController_cpp,v 1.2 2020/03/01 16:45:02 bket Exp $
 
 Index: src/FatController.cpp
 --- src/FatController.cpp.orig
 +++ src/FatController.cpp
-@@ -46,6 +46,10 @@
- #include <openssl/conf.h>
- #endif //__SSLMITM
- 
-+#if defined(__OpenBSD__)
-+#include <sys/syscall.h>
-+#endif
-+
- #include "FatController.hpp"
- #include "ConnectionHandler.hpp"
- #include "DynamicURLList.hpp"
-@@ -194,7 +198,7 @@ void stat_rec::reset()
+@@ -194,7 +194,7 @@ void stat_rec::reset()
      	fprintf(fs, "%s	%d	%d	%d	%d	%ld	%ld	%ld	 %ld	%d	 %d\n", buffer, o.http_workers,
          bc, o.http_worker_Q.size(), o.log_Q->size(), cnx, cps, rqx, rqs, mfd, LC);
      } else {
@@ -23,15 +12,3 @@ Index: src/FatController.cpp
          bc, o.http_worker_Q.size(), o.log_Q->size(), cnx, cps, rqx, rqs, mfd, LC);
      }
  
-@@ -1696,7 +1700,11 @@ int fc_controlit()   //
-         }
-         timeout.tv_sec = 5;
-         timeout.tv_nsec = (long) 0;
-+#if defined(__OpenBSD__)
-+        rc = syscall(SYS___thrsigdivert, signal_set, NULL, &timeout);
-+#else
-         rc = sigtimedwait(&signal_set, NULL, &timeout);
-+#endif
-         if (rc < 0) {
-             if (errno != EAGAIN) {
-                 syslog(LOG_INFO, "%sUnexpected error from sigtimedwait() %d %s", thread_id.c_str(), errno, strerror(errno));
