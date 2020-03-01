@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2019/12/12 09:27:39 fcambus Exp $
+# $OpenBSD: Makefile,v 1.44 2020/03/01 22:00:28 fcambus Exp $
 
 COMMENT =		curses widgets (menus, lists, etc) for shell scripts
 
-V =			1.3-20191210
+V =			1.3-20200228
 DISTNAME =		dialog-${V}
 PKGNAME =		dialog-${V:S/-/./}
 
