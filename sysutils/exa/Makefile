@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/01/17 13:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/02 07:20:23 semarie Exp $
 
 COMMENT =		ls alternative written in Rust
 
@@ -17,7 +17,9 @@ DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
 
+# keep libc >=0.2.63 for sparc64 support
 MODCARGO_CRATES_UPDATE +=	libc
+MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
 
 MODCARGO_CRATES +=	aho-corasick	0.7.3	# Unlicense/MIT
 MODCARGO_CRATES +=	ansi_term	0.12.0	# MIT
@@ -36,7 +38,7 @@ MODCARGO_CRATES +=	idna	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	iso8601	0.1.1	# MIT
 MODCARGO_CRATES +=	kernel32-sys	0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static	1.3.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
+#MODCARGO_CRATES +=	libc	0.2.51	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libgit2-sys	0.8.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libz-sys	1.0.25	# MIT/Apache-2.0
 MODCARGO_CRATES +=	locale	0.2.2	# MIT
@@ -82,8 +84,6 @@ MODCARGO_CRATES +=	winapi-util	0.1.2	# Unlicense/MIT
 MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	wincolor	1.0.1	# Unlicense/MIT
 MODCARGO_CRATES +=	zoneinfo_compiled	0.4.8	# MIT
-
-MODCARGO_CRATES_UPDATE +=	libc
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes

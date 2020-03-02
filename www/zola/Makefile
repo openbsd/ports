@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/10/29 10:51:49 semarie Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/02 07:20:24 semarie Exp $
 
 COMMENT =	static site generator
 
@@ -145,7 +145,7 @@ MODCARGO_CRATES +=	kernel32-sys	0.2.2	# MIT
 MODCARGO_CRATES +=	language-tags	0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static	1.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazycell	1.2.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
+#MODCARGO_CRATES +=	libc	0.2.62	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	line-wrap	0.1.1	# Apache-2.0
 MODCARGO_CRATES +=	linked-hash-map	0.5.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lock_api	0.1.5	# Apache-2.0/MIT
@@ -355,6 +355,7 @@ MODCARGO_CRATES +=	yaml-rust	0.4.3	# MIT/Apache-2.0
 
 # use libc >=0.2.63 to support sparc64
 MODCARGO_CRATES_UPDATE +=	libc
+MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
 
 PATCHORIG =		.openbsd.orig
 

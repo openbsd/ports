@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/08/31 06:58:11 semarie Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/02 07:20:23 semarie Exp $
 
 COMMENT =		line oriented search tool using Rust's regex library #'
 
@@ -19,7 +19,9 @@ DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 MODULES =		devel/cargo
 BUILD_DEPENDS =		textproc/asciidoc
 
+# keep libc >=0.2.63 for sparc64 support
 MODCARGO_CRATES_UPDATE +=	libc
+MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
 
 MODCARGO_CRATES +=	aho-corasick	0.7.4	# Unlicense/MIT
 MODCARGO_CRATES +=	atty	0.2.13	# MIT
@@ -44,7 +46,7 @@ MODCARGO_CRATES +=	itoa	0.4.4	# MIT/Apache-2.0
 MODCARGO_CRATES +=	jemalloc-sys	0.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	jemallocator	0.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazy_static	1.3.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
+#MODCARGO_CRATES +=	libc	0.2.60	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	log	0.4.8	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	memchr	2.2.1	# Unlicense/MIT
 MODCARGO_CRATES +=	memmap	0.7.0	# MIT/Apache-2.0
