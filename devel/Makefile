@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1942 2020/02/29 23:01:03 kn Exp $
+# $OpenBSD: Makefile,v 1.1943 2020/03/02 16:26:25 landry Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -267,6 +267,7 @@
      SUBDIR += hs-vector
      SUBDIR += hs-vector-algorithms
      SUBDIR += hs-void
+     SUBDIR += http-parser
      SUBDIR += hub
      SUBDIR += hyena
      SUBDIR += id-utils
