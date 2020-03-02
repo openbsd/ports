@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2020/02/07 13:02:19 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2020/03/02 07:13:55 semarie Exp $
 
 COMMENT =		C bindings generator from rust code
 
@@ -19,8 +19,6 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
-
-MODCARGO_CRATES_UPDATE +=	libc
 
 MODCARGO_CRATES +=      ansi_term       0.11.0  # MIT
 MODCARGO_CRATES +=      atty    0.2.13  # MIT

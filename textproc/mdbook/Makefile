@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/19 14:25:46 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/02 07:13:55 semarie Exp $
 
 COMMENT =		create books from markdown files
 
@@ -19,8 +19,6 @@ WANTLIB += c c++abi m pthread
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
-
-MODCARGO_CRATES_UPDATE +=	libc
 
 MODCARGO_CRATES +=      aho-corasick    0.7.6   # Unlicense/MIT
 MODCARGO_CRATES +=      ammonia 3.0.0   # MIT OR Apache-2.0
