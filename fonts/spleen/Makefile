@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/13 11:53:15 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/02 10:05:28 edd Exp $
 
 COMMENT =	monospaced bitmap fonts for consoles and terminals
 
 V =		1.7.0
+REVISION =	0
 DISTNAME =	spleen-${V}
 
 CATEGORIES =	fonts
@@ -26,7 +27,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.{pcf.gz,otf} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts.alias-spleen ${FONTDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/spleen
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/spleen
