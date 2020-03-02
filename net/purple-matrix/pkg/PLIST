@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/02 16:37:32 landry Exp $
+@so lib/purple-2/libmatrix.so
+share/pixmaps/
+share/pixmaps/pidgin/
+share/pixmaps/pidgin/protocols/
+share/pixmaps/pidgin/protocols/16/
+share/pixmaps/pidgin/protocols/16/matrix.png
+share/pixmaps/pidgin/protocols/22/
+share/pixmaps/pidgin/protocols/22/matrix.png
+share/pixmaps/pidgin/protocols/48/
+share/pixmaps/pidgin/protocols/48/matrix.png

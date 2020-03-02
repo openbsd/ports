@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/03/02 16:37:32 landry Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,6 +1,6 @@
+ #!/usr/bin/make -f
+ 
+-CC=gcc
++CC=cc
+ LIBS=purple json-glib-1.0 glib-2.0 sqlite3
+ 
+ PKG_CONFIG=pkg-config

@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_common,v 1.1.1.1 2020/03/02 16:37:32 landry Exp $
+
+Index: Makefile.common
+--- Makefile.common.orig
++++ Makefile.common
+@@ -2,7 +2,7 @@
+ 
+ COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+ 
+-CFLAGS+=-Wall -g -O0 -Werror
++CFLAGS+=-Wall -g -Werror
+ CFLAGS += -DPURPLE_PLUGINS 
+ 
+ # generate .d files when compiling
