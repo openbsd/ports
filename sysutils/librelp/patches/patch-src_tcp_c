@@ -1,22 +1,26 @@
-$OpenBSD: patch-src_tcp_c,v 1.1 2019/05/04 20:16:42 remi Exp $
+$OpenBSD: patch-src_tcp_c,v 1.2 2020/03/02 16:41:50 remi Exp $
 
-LibreSSL has no support for @SECLEVEL
+LibreSSL has no support for @SECLEVEL and SSL_CONF_CTX_set_flags().
 
 Index: src/tcp.c
 --- src/tcp.c.orig
 +++ src/tcp.c
-@@ -1183,14 +1183,8 @@ relpTcpTLSSetPrio_ossl(relpTcp_t *const pThis)
+@@ -1200,7 +1200,8 @@ relpTcpTLSSetPrio_ossl(relpTcp_t *const pThis)
  	/* Compute priority string (in simple cases where the user does not care...) */
  	if(pThis->pristring == NULL) {
  		if (pThis->authmode == eRelpAuthMode_None) {
 -			#if OPENSSL_VERSION_NUMBER >= 0x10100000L
--			 /* NOTE: do never use: +eNULL, it DISABLES encryption! */
--			strncpy(pristringBuf, "ALL:+COMPLEMENTOFDEFAULT:+ADH:+ECDH:+aNULL@SECLEVEL=0",
--				sizeof(pristringBuf));
--			#else
- 			strncpy(pristringBuf, "ALL:+COMPLEMENTOFDEFAULT:+ADH:+ECDH:+aNULL",
++			#if OPENSSL_VERSION_NUMBER >= 0x10100000L \
++			    && !defined(LIBRESSL_VERSION_NUMBER)
+ 			 /* NOTE: do never use: +eNULL, it DISABLES encryption! */
+ 			strncpy(pristringBuf, "ALL:+COMPLEMENTOFDEFAULT:+ADH:+ECDH:+aNULL@SECLEVEL=0",
  				sizeof(pristringBuf));
--			#endif
- 		} else {
- 			strncpy(pristringBuf, "DEFAULT", sizeof(pristringBuf));
- 		}
+@@ -1578,7 +1579,7 @@ relpTcpSetSslConfCmd_ossl(relpTcp_t *const pThis, char
+ 	} else {
+ 		pThis->pEngine->dbgprint("relpTcpSetSslConfCmd_ossl: set to '%s'\n", tlsConfigCmd);
+ 		char errmsg[1424];
+-#if OPENSSL_VERSION_NUMBER >= 0x10020000L
++#if OPENSSL_VERSION_NUMBER >= 0x10020000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 		char *pCurrentPos;
+ 		char *pNextPos;
+ 		char *pszCmd;
