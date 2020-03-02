@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/29 07:57:47 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/02 08:21:58 tb Exp $
 
 COMMENT =		fuzzer and test suite for TLS implementations.
 
@@ -39,6 +39,6 @@ SCRIPTS_DIR = ${PREFIX}/share/tlsfuzzer/scripts
 post-install:
 	${INSTALL_DATA_DIR} ${SCRIPTS_DIR}
 	cd ${WRKSRC}/scripts && pax -rw . ${SCRIPTS_DIR}
-	cd ${SCRIPTS_DIR} && ${MODPY_BIN} -m compileall
+	${MODPY_BIN} -m compileall ${SCRIPTS_DIR}
 
 .include <bsd.port.mk>
