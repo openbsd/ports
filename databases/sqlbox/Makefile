@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/27 15:38:30 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/02 14:51:00 jturner Exp $
 
 COMMENT =		database access library
 
-DISTNAME =		sqlbox-0.1.9
+DISTNAME =		sqlbox-0.1.11
 CATEGORIES =		databases
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -17,10 +17,7 @@ PERMIT_PACKAGE =	Yes
 LIB_DEPENDS =		databases/sqlite3
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	PREFIX="${PREFIX}" \
-			LDADD="-lpthread" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS =	PREFIX="${PREFIX}"
 
 TEST_TARGET =		regress
 

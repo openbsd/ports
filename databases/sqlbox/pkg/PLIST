@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/24 04:54:04 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/02 14:51:00 jturner Exp $
 include/sqlbox.h
 @static-lib lib/libsqlbox.a
+lib/pkgconfig/sqlbox.pc
 @man man/man3/sqlbox.3
 @man man/man3/sqlbox_alloc.3
 @man man/man3/sqlbox_close.3
