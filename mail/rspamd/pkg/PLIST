@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2020/02/06 16:18:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.37 2020/03/02 20:53:48 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
@@ -302,6 +302,7 @@ share/rspamd/lualib/lua_settings.lua
 share/rspamd/lualib/lua_smtp.lua
 share/rspamd/lualib/lua_stat.lua
 share/rspamd/lualib/lua_tcp_sync.lua
+share/rspamd/lualib/lua_urls_compose.lua
 share/rspamd/lualib/lua_util.lua
 share/rspamd/lualib/lua_verdict.lua
 share/rspamd/lualib/lupa.lua
