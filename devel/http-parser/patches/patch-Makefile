@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/03/02 16:25:43 landry Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -53,8 +53,8 @@ CPPFLAGS_FAST += $(CPPFLAGS_FAST_EXTRA)
+ CPPFLAGS_BENCH = $(CPPFLAGS_FAST)
+ 
+ CFLAGS += -Wall -Wextra -Werror
+-CFLAGS_DEBUG = $(CFLAGS) -O0 -g $(CFLAGS_DEBUG_EXTRA)
+-CFLAGS_FAST = $(CFLAGS) -O3 $(CFLAGS_FAST_EXTRA)
++CFLAGS_DEBUG = $(CFLAGS) -g $(CFLAGS_DEBUG_EXTRA)
++CFLAGS_FAST = $(CFLAGS) $(CFLAGS_FAST_EXTRA)
+ CFLAGS_BENCH = $(CFLAGS_FAST) -Wno-unused-parameter
+ CFLAGS_LIB = $(CFLAGS_FAST) -fPIC
+ 
+@@ -131,10 +131,8 @@ tags: http_parser.c http_parser.h test.c
+ 	ctags $^
+ 
+ install: library
+-	$(INSTALL) -D  http_parser.h $(DESTDIR)$(INCLUDEDIR)/http_parser.h
+-	$(INSTALL) -D $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(LIBNAME)
+-	ln -sf $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SONAME)
+-	ln -sf $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SOLIBNAME).$(SOEXT)
++	$(INSTALL) -D  http_parser.h $(INCLUDEDIR)/http_parser.h
++	$(INSTALL) -D $(LIBNAME) $(LIBDIR)/$(LIBNAME)
+ 
+ install-strip: library
+ 	$(INSTALL) -D  http_parser.h $(DESTDIR)$(INCLUDEDIR)/http_parser.h
