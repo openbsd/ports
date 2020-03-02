@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/03/02 19:44:34 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
 V =		0.63
+REVISION =	0
 DISTNAME =	moreutils_$V.orig
 PKGNAME =	moreutils-$V
 WRKDIST =	${WRKDIR}/moreutils-$V
@@ -30,5 +31,9 @@ MAKE_FLAGS =		DOCBOOKXSL=${LOCALBASE}/share/xsl/docbook
 FAKE_FLAGS =		PREFIX=${PREFIX}
 USE_GMAKE =		Yes
 NO_TEST =		Yes
+
+post-install:
+	mv ${PREFIX}/bin/parallel{,.moreutils}
+	mv ${PREFIX}/man/man1/parallel{,.moreutils}.1
 
 .include <bsd.port.mk>
