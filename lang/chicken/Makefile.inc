@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.15 2019/08/06 18:19:51 juanfra Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2020/03/03 10:27:40 semarie Exp $
 
 COMMENT=	practical and portable Scheme system
 
-V=		5.1.0
+V=		5.2.0
 DISTNAME=	chicken-${V}
 
 MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>

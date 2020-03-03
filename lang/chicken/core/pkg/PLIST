@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/11/17 13:29:18 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/03 10:27:40 semarie Exp $
 @bin bin/chicken
 @bin bin/chicken-csc
 @bin bin/chicken-csi
@@ -13,51 +13,51 @@ include/chicken/chicken-config.h
 include/chicken/chicken.h
 lib/chicken/
 lib/chicken/${BINARYVERSION}/
-lib/chicken/${BINARYVERSION}/chicken.base.import.so
-lib/chicken/${BINARYVERSION}/chicken.bitwise.import.so
-lib/chicken/${BINARYVERSION}/chicken.blob.import.so
-lib/chicken/${BINARYVERSION}/chicken.compiler.user-pass.import.so
-lib/chicken/${BINARYVERSION}/chicken.condition.import.so
-lib/chicken/${BINARYVERSION}/chicken.continuation.import.so
-lib/chicken/${BINARYVERSION}/chicken.csi.import.so
-lib/chicken/${BINARYVERSION}/chicken.errno.import.so
-lib/chicken/${BINARYVERSION}/chicken.eval.import.so
-lib/chicken/${BINARYVERSION}/chicken.file.import.so
-lib/chicken/${BINARYVERSION}/chicken.file.posix.import.so
-lib/chicken/${BINARYVERSION}/chicken.fixnum.import.so
-lib/chicken/${BINARYVERSION}/chicken.flonum.import.so
-lib/chicken/${BINARYVERSION}/chicken.foreign.import.so
-lib/chicken/${BINARYVERSION}/chicken.format.import.so
-lib/chicken/${BINARYVERSION}/chicken.gc.import.so
-lib/chicken/${BINARYVERSION}/chicken.internal.import.so
-lib/chicken/${BINARYVERSION}/chicken.io.import.so
-lib/chicken/${BINARYVERSION}/chicken.irregex.import.so
-lib/chicken/${BINARYVERSION}/chicken.keyword.import.so
-lib/chicken/${BINARYVERSION}/chicken.load.import.so
-lib/chicken/${BINARYVERSION}/chicken.locative.import.so
-lib/chicken/${BINARYVERSION}/chicken.memory.import.so
-lib/chicken/${BINARYVERSION}/chicken.memory.representation.import.so
-lib/chicken/${BINARYVERSION}/chicken.pathname.import.so
-lib/chicken/${BINARYVERSION}/chicken.platform.import.so
-lib/chicken/${BINARYVERSION}/chicken.plist.import.so
-lib/chicken/${BINARYVERSION}/chicken.port.import.so
-lib/chicken/${BINARYVERSION}/chicken.pretty-print.import.so
-lib/chicken/${BINARYVERSION}/chicken.process-context.import.so
-lib/chicken/${BINARYVERSION}/chicken.process-context.posix.import.so
-lib/chicken/${BINARYVERSION}/chicken.process.import.so
-lib/chicken/${BINARYVERSION}/chicken.process.signal.import.so
-lib/chicken/${BINARYVERSION}/chicken.random.import.so
-lib/chicken/${BINARYVERSION}/chicken.read-syntax.import.so
-lib/chicken/${BINARYVERSION}/chicken.repl.import.so
-lib/chicken/${BINARYVERSION}/chicken.sort.import.so
-lib/chicken/${BINARYVERSION}/chicken.string.import.so
-lib/chicken/${BINARYVERSION}/chicken.syntax.import.so
-lib/chicken/${BINARYVERSION}/chicken.tcp.import.so
-lib/chicken/${BINARYVERSION}/chicken.time.import.so
-lib/chicken/${BINARYVERSION}/chicken.time.posix.import.so
-lib/chicken/${BINARYVERSION}/srfi-4.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.base.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.bitwise.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.blob.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.compiler.user-pass.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.condition.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.continuation.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.csi.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.errno.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.eval.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.file.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.file.posix.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.fixnum.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.flonum.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.foreign.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.format.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.gc.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.internal.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.io.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.irregex.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.keyword.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.load.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.locative.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.memory.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.memory.representation.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.pathname.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.platform.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.plist.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.port.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.pretty-print.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.process-context.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.process-context.posix.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.process.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.process.signal.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.random.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.read-syntax.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.repl.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.sort.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.string.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.syntax.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.tcp.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.time.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.time.posix.import.so
+@so lib/chicken/${BINARYVERSION}/srfi-4.import.so
 lib/chicken/${BINARYVERSION}/types.db
-lib/libchicken.a
+@static-lib lib/libchicken.a
 @lib lib/libchicken.so.${LIBchicken_VERSION}
 @man man/man1/chicken-csc.1
 @man man/man1/chicken-csi.1
