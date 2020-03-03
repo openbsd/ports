@@ -1,0 +1,14 @@
+$OpenBSD: patch-parallel_c,v 1.1 2020/03/03 20:13:30 sthen Exp $
+
+Index: parallel.c
+--- parallel.c.orig
++++ parallel.c
+@@ -114,7 +114,7 @@ void exec_child(char **command, char **arguments, int 
+ 	return;
+ }
+ 
+-#if defined(__CYGWIN__)
++#if defined(__CYGWIN__) || defined(__OpenBSD__)
+ typedef enum {
+ 	P_ALL,
+ 	P_PID,
