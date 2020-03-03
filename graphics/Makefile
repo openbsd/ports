@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.498 2020/01/26 19:15:13 bket Exp $
+# $OpenBSD: Makefile,v 1.499 2020/03/03 21:16:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -129,6 +129,7 @@
      SUBDIR += leptonica
      SUBDIR += libansilove
      SUBDIR += libart
+     SUBDIR += libavif
      SUBDIR += libcaca
      SUBDIR += libdmtx
      SUBDIR += libdvbpsi
