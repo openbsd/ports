@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.388 2020/02/06 11:30:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.389 2020/03/03 22:15:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -202,6 +202,7 @@
      SUBDIR += rcube-contextmenu
      SUBDIR += rcube-dkimstatus
      SUBDIR += rcube-dovecot_ident
+     SUBDIR += rcube-html5-notifier
      SUBDIR += rcube-ldapAliasSync
      SUBDIR += rcube-markasjunk2
      SUBDIR += rcube-sieverules
