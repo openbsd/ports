@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/03 21:15:51 sthen Exp $
+include/avif/
+include/avif/avif.h
+include/avif/internal.h
+lib/cmake/
+lib/cmake/libavif/
+lib/cmake/libavif/libavif-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libavif/libavif-config-version.cmake
+lib/cmake/libavif/libavif-config.cmake
+@lib lib/libavif.so.${LIBavif_VERSION}
