@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/03/03 21:07:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/03 21:10:08 sthen Exp $
 include/shout/
 include/shout/shout.h
 @comment lib/ckport/
 @comment lib/ckport/db/
 @comment lib/ckport/db/libshout.ckport
-lib/libshout.a
+@static-lib lib/libshout.a
 lib/libshout.la
 @lib lib/libshout.so.${LIBshout_VERSION}
 lib/pkgconfig/shout.pc

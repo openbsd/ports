@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2020/03/03 21:07:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/03/03 21:10:08 sthen Exp $
 
 COMMENT=	library for communicating with an icecast server
 
 DISTNAME=	libshout-2.4.3
+REVISION=	0
 
 SHARED_LIBS +=  shout                6.0      # 5.0
 
