@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/03 22:14:30 sthen Exp $
+roundcubemail/plugins/html5_notifier/
+roundcubemail/plugins/html5_notifier/LICENSE
+roundcubemail/plugins/html5_notifier/README.md
+roundcubemail/plugins/html5_notifier/changelog.txt
+roundcubemail/plugins/html5_notifier/composer.json
+roundcubemail/plugins/html5_notifier/config/
+roundcubemail/plugins/html5_notifier/config/config.inc.php.dist
+@sample roundcubemail/plugins/html5_notifier/config/config.inc.php
+roundcubemail/plugins/html5_notifier/html5_notifier.js
+roundcubemail/plugins/html5_notifier/html5_notifier.php
+roundcubemail/plugins/html5_notifier/images/
+roundcubemail/plugins/html5_notifier/images/new_mail.png
+roundcubemail/plugins/html5_notifier/localization/
+roundcubemail/plugins/html5_notifier/localization/cs_CZ.inc
+roundcubemail/plugins/html5_notifier/localization/de_DE.inc
+roundcubemail/plugins/html5_notifier/localization/en_US.inc
+roundcubemail/plugins/html5_notifier/localization/es_ES.inc
+roundcubemail/plugins/html5_notifier/localization/fr_FR.inc
+roundcubemail/plugins/html5_notifier/localization/it_IT.inc
+roundcubemail/plugins/html5_notifier/localization/ja_JP.inc
+roundcubemail/plugins/html5_notifier/localization/nl_NL.inc
+roundcubemail/plugins/html5_notifier/localization/pl_PL.inc
+roundcubemail/plugins/html5_notifier/localization/pt_BR.inc
+roundcubemail/plugins/html5_notifier/localization/ru_RU.inc
+roundcubemail/plugins/html5_notifier/localization/sk_SK.inc
+roundcubemail/plugins/html5_notifier/localization/zh_CN.inc
+roundcubemail/plugins/html5_notifier/screenshot.png
