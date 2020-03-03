@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/27 15:18:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/03 16:06:12 kmos Exp $
 
 COMMENT =		displays a cute cow and message on your desktop
 DISTNAME =		xcowsay-1.5
@@ -18,5 +18,6 @@ MASTER_SITES =		http://www.nickg.me.uk/files/
 CONFIGURE_STYLE =	gnu
 
 LIB_DEPENDS =		x11/gtk+3
+CFLAGS +=		-std=c99
 
 .include <bsd.port.mk>
