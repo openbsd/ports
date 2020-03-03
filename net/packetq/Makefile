@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/03 10:05:46 fcambus Exp $
 
 COMMENT =	run SQL queries directly on PCAP files
 
-DISTNAME =	packetq-1.4.1
+DISTNAME =	packetq-1.4.2
 
 CATEGORIES =	net
 
