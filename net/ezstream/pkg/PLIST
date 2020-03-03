@@ -1,21 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/01/16 20:01:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/03 21:11:40 sthen Exp $
 @bin bin/ezstream
+@bin bin/ezstream-cfgmigrate
 bin/ezstream-file.sh
+@man man/man1/ezstream-cfgmigrate.1
 @man man/man1/ezstream-file.sh.1
 @man man/man1/ezstream.1
 share/doc/ezstream/
 @comment share/doc/ezstream/COPYING
 share/doc/ezstream/NEWS
-share/doc/ezstream/README
+share/doc/ezstream/README.md
 share/examples/ezstream/
+share/examples/ezstream/artist.txt
 share/examples/ezstream/ezstream-file_template.xml
-share/examples/ezstream/ezstream_metadata.xml
-share/examples/ezstream/ezstream_mp3.xml
-share/examples/ezstream/ezstream_reencode_mp3.xml
-share/examples/ezstream/ezstream_reencode_theora.xml
-share/examples/ezstream/ezstream_reencode_vorbis.xml
-share/examples/ezstream/ezstream_stdin_vorbis.xml
-share/examples/ezstream/ezstream_vorbis.xml
+share/examples/ezstream/ezstream-full.xml
+share/examples/ezstream/ezstream-metadata.xml
+share/examples/ezstream/ezstream-minimal.xml
+share/examples/ezstream/ezstream-stdin.xml
+share/examples/ezstream/ezstream-video.xml
 share/examples/ezstream/meta.sh
+share/examples/ezstream/metadata.txt
 share/examples/ezstream/play.sh
 share/examples/ezstream/playlist-logger.sh
+share/examples/ezstream/title.txt

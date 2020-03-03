@@ -1,12 +1,8 @@
-Ezstream is a command line source client for Icecast media streaming servers.
+Ezstream is a command line source client for media streams, primarily
+for streaming to Icecast servers.
 
-In its basic mode of operation, it streams media files or data from standard
-input without reencoding and thus requires only very little CPU resources. It
-can also use various external decoders and encoders to reencode from one
-format to another, and stream the result to an Icecast server. Additional
-features include scriptable playlist and metadata handling. All of its
-features make ezstream a very flexible source client.
-
-Supported media formats for streaming are MP3, Ogg Vorbis and Ogg Theora.
-Metadata is supported through TagLib, which can read information from many
-media file formats.
+It allows the creation of media streams in different formats based on
+input from files or standard input that is piped through an optional
+external de- and encoder. As every part of this chain is highly
+configurable, ezstream can be useful in a large number of streaming
+setups.

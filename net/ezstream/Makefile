@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/03 21:11:40 sthen Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
-DISTNAME=	ezstream-0.6.0
-REVISION=	0
+DISTNAME=	ezstream-1.0.1
 CATEGORIES=	net multimedia
 
 HOMEPAGE=	https://icecast.org/ezstream/
 
+MAINTAINER=	Moritz Grimm <mgrimm@mrsserver.net>
+
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv m ogg pthread theora vorbis \
-		shout>=3 speex>=4 xml2>=9 tag_c>=1
+WANTLIB+=	${COMPILER_LIBCXX} c crypto iconv lzma m ogg shout \
+		speex ssl tag tag_c theora vorbis xml2 z
 
 MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/
 
+BUILD_DEPENDS=	devel/check
 LIB_DEPENDS=	converters/libiconv \
 		net/libshout \
 		audio/speex \
@@ -26,5 +28,7 @@ SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-taglib="${LOCALBASE}"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+$OpenBSD: patch-examples_ezstream-full_xml,v 1.1 2020/03/03 21:11:40 sthen Exp $
+
+* Use the OpenBSD CA bundle to verify server identities
+
+Index: examples/ezstream-full.xml
+--- examples/ezstream-full.xml.orig
++++ examples/ezstream-full.xml
+@@ -67,7 +67,7 @@
+         One of the <ca_dir /> or <ca_file /> settings must be enabled for
+         certificate verification to succeed.
+         -->
+-      <!-- <ca_file>/etc/ssl/certs/ca-certificates.crt</ca_file> -->
++      <ca_file>/etc/ssl/cert.pem</ca_file>
+ 
+       <!--
+         X.503 client certificate, in PEM format, containing both certificate
