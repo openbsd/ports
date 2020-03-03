@@ -1,24 +1,6 @@
-Libshout is a library for communicating with and sending data to an
-icecast server. It handles the socket connection, the timing of the
-data, and prevents bad data from getting to the icecast server.
+Libshout is a library for communicating with and sending data to a media
+streaming server like Icecast.
 
-With just a few lines of code, a programmer can easily turn any
-application into a streaming source for an icecast server. Libshout
-also allows developers who want a specific feature set (database
-access, request taking) to concentrate on that feature set, instead of
-worrying about how server communication works.
-
-Please refer to the api reference and example code to start learning
-how to use libshout in your own code. Exhaustive documentation doesn't
-exist, yet, but the following files should be helpful enough for
-starters:
-
-    ${PREFIX}/share/examples/libshout/example.c
-    ${PREFIX}/share/examples/libshout/nonblocking.c
-and of course
-    ${PREFIX}/include/shout/shout.h
-
-New in libshout 2.1 is nonblocking I/O and Ogg Theora support, as well
-as several bug fixes. However, Ogg Theora support will stay disabled
-on OpenBSD until an official Theora release makes it into the ports
-tree.
+It supports different streaming formats, such as HTTP, ICY, and
+RoarAudio, with optional TLS. Various media formats for both audio and
+video are supported as well, such as Ogg, MP3, WebM, and Matroska.
