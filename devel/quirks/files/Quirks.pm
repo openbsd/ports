@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.887 2020/03/01 20:49:06 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.888 2020/03/03 10:52:00 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -70,7 +70,7 @@ my $base_exceptions = {
 	'p5-Test-use-ok' => "$p5/Test/use/ok.pm",
 	'p5-Test-Tester' => "$p5/Test/Tester.pm",
 # 6.5
-	'libelf' => '/usr/lib/libelf.so.2.0',
+	'libelf' => '/usr/lib/libelf.so.3.0',
 };
 
 my $stem_extensions = {
