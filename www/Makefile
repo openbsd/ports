@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.949 2020/02/29 23:09:35 kn Exp $
+# $OpenBSD: Makefile,v 1.950 2020/03/03 21:41:29 tb Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -464,6 +464,7 @@
      SUBDIR += py-repoze-who
      SUBDIR += py-requests
      SUBDIR += py-requests,python3
+     SUBDIR += py-requests-cache,python3
      SUBDIR += py-requests-futures
      SUBDIR += py-requests-futures,python3
      SUBDIR += py-requests-mock
