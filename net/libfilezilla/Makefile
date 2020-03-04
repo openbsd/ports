@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2020/01/04 07:27:41 bket Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/04 17:56:36 bket Exp $
 
 COMMENT =	support library for FileZilla
 
-DISTNAME =	libfilezilla-0.19.3
+DISTNAME =	libfilezilla-0.20.1
 
-SHARED_LIBS +=  filezilla	2.0 # 3.1.0
+SHARED_LIBS +=  filezilla	3.0 # 4.1.0
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://lib.filezilla-project.org/
+
+MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -19,6 +21,7 @@ WANTLIB += intl m nettle p11-kit tasn1 unistring
 MASTER_SITES =		https://download.filezilla-project.org/libfilezilla/
 EXTRACT_SUFX =		.tar.bz2
 
+# c++17
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/cppunit \
