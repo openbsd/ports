@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/02/05 19:43:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/04 14:33:29 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
@@ -8,7 +8,7 @@ DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
@@ -23,15 +23,10 @@ RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
 		www/py-werkzeug${MODPY_FLAVOR}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-SUBST_VARS=	MODPY_FLAVOR
 
 MODPY_PYTEST =	Yes
 
 TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
 		security/py-josepy${MODPY_FLAVOR}
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS+=	devel/py-funcsigs
-.endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.568 2020/02/29 19:34:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.569 2020/03/04 14:33:28 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -303,7 +303,6 @@
      SUBDIR += py-fido2
      SUBDIR += py-gnupg
      SUBDIR += py-gnupg,python3
-     SUBDIR += py-josepy
      SUBDIR += py-josepy,python3
      SUBDIR += py-keyring
      SUBDIR += py-keyring,python3
