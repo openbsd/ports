@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1943 2020/03/02 16:26:25 landry Exp $
+# $OpenBSD: Makefile,v 1.1944 2020/03/04 06:37:36 martin Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1586,6 +1586,7 @@
      SUBDIR += py-pexpect,python3
      SUBDIR += py-pip
      SUBDIR += py-pip,python3
+     SUBDIR += py-pkgconfig,python3
      SUBDIR += py-pluggy
      SUBDIR += py-pluggy,python3
      SUBDIR += py-plugnplay
