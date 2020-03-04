@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.30 2018/07/01 18:33:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.31 2020/03/04 17:58:24 bket Exp $
 @bin bin/bluefish
 lib/bluefish/
-lib/bluefish/about.so
-lib/bluefish/charmap.so
-lib/bluefish/entities.so
-lib/bluefish/htmlbar.so
-lib/bluefish/infbrowser.so
-lib/bluefish/snippets.so
-lib/bluefish/zencoding.so
+@so lib/bluefish/about.so
+@so lib/bluefish/charmap.so
+@so lib/bluefish/entities.so
+@so lib/bluefish/htmlbar.so
+@so lib/bluefish/infbrowser.so
+@so lib/bluefish/snippets.so
+@so lib/bluefish/zencoding.so
 @man man/man1/bluefish.1
 share/appdata/
 share/appdata/bluefish.appdata.xml
@@ -94,22 +94,33 @@ share/bluefish/colorprofiles/Dark_theme
 share/bluefish/colorprofiles/Light_theme
 share/bluefish/css_decompressor
 share/bluefish/cssmin.py
+share/bluefish/cssmin.pyc
 share/bluefish/default_accelmap
 share/bluefish/encodings
 share/bluefish/jsbeautifier/
 share/bluefish/jsbeautifier/__init__.py
+share/bluefish/jsbeautifier/__init__.pyc
 share/bluefish/jsbeautifier/__version__.py
+share/bluefish/jsbeautifier/__version__.pyc
 share/bluefish/jsbeautifier/unpackers/
 share/bluefish/jsbeautifier/unpackers/__init__.py
+share/bluefish/jsbeautifier/unpackers/__init__.pyc
 share/bluefish/jsbeautifier/unpackers/evalbased.py
+share/bluefish/jsbeautifier/unpackers/evalbased.pyc
 share/bluefish/jsbeautifier/unpackers/javascriptobfuscator.py
+share/bluefish/jsbeautifier/unpackers/javascriptobfuscator.pyc
 share/bluefish/jsbeautifier/unpackers/myobfuscate.py
+share/bluefish/jsbeautifier/unpackers/myobfuscate.pyc
 share/bluefish/jsbeautifier/unpackers/packer.py
+share/bluefish/jsbeautifier/unpackers/packer.pyc
 share/bluefish/jsbeautifier/unpackers/urlencode.py
+share/bluefish/jsbeautifier/unpackers/urlencode.pyc
 share/bluefish/jsbeautify
 share/bluefish/jsmin.py
+share/bluefish/jsmin.pyc
 share/bluefish/lipsum/
 share/bluefish/lipsum/__init__.py
+share/bluefish/lipsum/__init__.pyc
 share/bluefish/lipsum/data/
 share/bluefish/lipsum/data/dictionary.txt
 share/bluefish/lipsum/data/lipsum.xml
@@ -121,37 +132,65 @@ share/bluefish/plugins/htmlbar/ui/
 share/bluefish/plugins/htmlbar/ui/htmlbar_menu_ui.xml
 share/bluefish/plugins/zencoding/
 share/bluefish/plugins/zencoding/__init__.py
+share/bluefish/plugins/zencoding/__init__.pyc
 share/bluefish/plugins/zencoding/actions/
 share/bluefish/plugins/zencoding/actions/__init__.py
+share/bluefish/plugins/zencoding/actions/__init__.pyc
 share/bluefish/plugins/zencoding/actions/basic.py
+share/bluefish/plugins/zencoding/actions/basic.pyc
 share/bluefish/plugins/zencoding/actions/token.py
+share/bluefish/plugins/zencoding/actions/token.pyc
 share/bluefish/plugins/zencoding/actions/traverse.py
+share/bluefish/plugins/zencoding/actions/traverse.pyc
 share/bluefish/plugins/zencoding/filters/
 share/bluefish/plugins/zencoding/filters/__init__.py
+share/bluefish/plugins/zencoding/filters/__init__.pyc
 share/bluefish/plugins/zencoding/filters/comment.py
+share/bluefish/plugins/zencoding/filters/comment.pyc
 share/bluefish/plugins/zencoding/filters/css.py
+share/bluefish/plugins/zencoding/filters/css.pyc
 share/bluefish/plugins/zencoding/filters/escape.py
+share/bluefish/plugins/zencoding/filters/escape.pyc
 share/bluefish/plugins/zencoding/filters/format-css.py
+share/bluefish/plugins/zencoding/filters/format-css.pyc
 share/bluefish/plugins/zencoding/filters/format.py
+share/bluefish/plugins/zencoding/filters/format.pyc
 share/bluefish/plugins/zencoding/filters/haml.py
+share/bluefish/plugins/zencoding/filters/haml.pyc
 share/bluefish/plugins/zencoding/filters/html.py
+share/bluefish/plugins/zencoding/filters/html.pyc
 share/bluefish/plugins/zencoding/filters/single-line.py
+share/bluefish/plugins/zencoding/filters/single-line.pyc
 share/bluefish/plugins/zencoding/filters/trim.py
+share/bluefish/plugins/zencoding/filters/trim.pyc
 share/bluefish/plugins/zencoding/filters/xsl.py
+share/bluefish/plugins/zencoding/filters/xsl.pyc
 share/bluefish/plugins/zencoding/html_matcher.py
+share/bluefish/plugins/zencoding/html_matcher.pyc
 share/bluefish/plugins/zencoding/interface/
 share/bluefish/plugins/zencoding/interface/__init__.py
+share/bluefish/plugins/zencoding/interface/__init__.pyc
 share/bluefish/plugins/zencoding/interface/editor.py
+share/bluefish/plugins/zencoding/interface/editor.pyc
 share/bluefish/plugins/zencoding/interface/file.py
+share/bluefish/plugins/zencoding/interface/file.pyc
 share/bluefish/plugins/zencoding/parser/
 share/bluefish/plugins/zencoding/parser/__init__.py
+share/bluefish/plugins/zencoding/parser/__init__.pyc
 share/bluefish/plugins/zencoding/parser/abbreviation.py
+share/bluefish/plugins/zencoding/parser/abbreviation.pyc
 share/bluefish/plugins/zencoding/parser/css.py
+share/bluefish/plugins/zencoding/parser/css.pyc
 share/bluefish/plugins/zencoding/parser/utils.py
+share/bluefish/plugins/zencoding/parser/utils.pyc
 share/bluefish/plugins/zencoding/parser/xml.py
+share/bluefish/plugins/zencoding/parser/xml.pyc
 share/bluefish/plugins/zencoding/resources.py
+share/bluefish/plugins/zencoding/resources.pyc
 share/bluefish/plugins/zencoding/utils.py
+share/bluefish/plugins/zencoding/utils.pyc
 share/bluefish/plugins/zencoding/zen_settings.py
+share/bluefish/plugins/zencoding/zen_settings.pyc
 share/bluefish/snippets
 share/bluefish/templates/
 share/bluefish/templates/C_header
