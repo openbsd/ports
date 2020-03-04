@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/03/04 17:57:53 bket Exp $
 
 COMMENT=		drop-down terminal emulator
 
 GH_ACCOUNT=		lanoxx
 GH_PROJECT=		tilda
-GH_TAGNAME=		tilda-1.3.3
-DISTNAME=		tilda-1.3.3
-
-REVISION=		2
+GH_TAGNAME=		tilda-1.5.0
+DISTNAME=		tilda-1.5.0
 
 CATEGORIES=		x11
 

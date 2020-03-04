@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/04 17:57:53 bket Exp $
 @bin bin/tilda
-share/appdata/
-share/appdata/tilda.appdata.xml
 share/applications/tilda.desktop
 share/doc/tilda/
 share/doc/tilda/README.md
@@ -16,6 +14,7 @@ share/locale/fr/LC_MESSAGES/tilda.mo
 share/locale/hu/LC_MESSAGES/tilda.mo
 share/locale/it/LC_MESSAGES/tilda.mo
 share/locale/lt/LC_MESSAGES/tilda.mo
+share/locale/nb/LC_MESSAGES/tilda.mo
 share/locale/pl/LC_MESSAGES/tilda.mo
 share/locale/pt/LC_MESSAGES/tilda.mo
 share/locale/pt_BR/LC_MESSAGES/tilda.mo
@@ -25,6 +24,9 @@ share/locale/sl/LC_MESSAGES/tilda.mo
 share/locale/sv/LC_MESSAGES/tilda.mo
 share/locale/tr/LC_MESSAGES/tilda.mo
 share/locale/zh_CN/LC_MESSAGES/tilda.mo
+share/locale/zh_TW/LC_MESSAGES/tilda.mo
+share/metainfo/
+share/metainfo/tilda.appdata.xml
 share/pixmaps/
 share/pixmaps/tilda.png
 @tag update-desktop-database
