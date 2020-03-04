@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/12/09 10:37:50 otto Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/04 10:01:10 otto Exp $
 
 COMMENT=		recursive nameserver
 
-V=			4.2.1
+V=			4.3.0
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
@@ -14,8 +14,9 @@ HOMEPAGE=		https://www.powerdns.com/
 # GPLv2 only, OpenSSL exemption
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_system-mt
-WANTLIB += boost_thread-mt c crypto m sodium
+WANTLIB+=		${COMPILER_LIBCXX} boost_context-mt boost_filesystem-mt
+WANTLIB+=		boost_system-mt boost_thread-mt c crypto fstrm m
+WANTLIB+=		protobuf sodium z
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 MAINTAINER=     	Otto Moerbeek <otto@drijf.net>
@@ -26,6 +27,8 @@ NO_TEST=		Yes
 
 LIB_DEPENDS=		devel/boost \
 			devel/boost,-md \
+			devel/protobuf \
+			net/libfstrm \
 			security/libsodium
 
 MODULES+=		lang/lua
@@ -37,10 +40,12 @@ WANTLIB+=		${MODLUA_WANTLIB}
 SYSCONFDIR=		${BASESYSCONFDIR}/pdns
 
 CONFIGURE_STYLE=	gnu
+USE_GMAKE=		Yes
 
 CONFIGURE_ARGS+=	--disable-botan \
 			--disable-libdecaf \
-			--without-protobuf \
+			--with-protobuf \
+			--enable-dnstap \
 			--with-lua=${MODLUA_DEP} \
 			--without-net-snmp \
 			--without-systemd
