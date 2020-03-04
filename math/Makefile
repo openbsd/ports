@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2020/02/28 18:58:47 martin Exp $
+# $OpenBSD: Makefile,v 1.177 2020/03/04 07:55:27 martin Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -121,6 +121,7 @@
      SUBDIR += py-cftime
      SUBDIR += py-graphviz
      SUBDIR += py-graphviz,python3
+     SUBDIR += py-h5py,python3
      SUBDIR += py-mpmath
      SUBDIR += py-mpmath,python3
      SUBDIR += py-networkx
