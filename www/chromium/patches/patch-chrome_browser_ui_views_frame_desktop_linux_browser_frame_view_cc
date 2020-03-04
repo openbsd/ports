@@ -1,0 +1,22 @@
+$OpenBSD: patch-chrome_browser_ui_views_frame_desktop_linux_browser_frame_view_cc,v 1.1 2020/03/04 15:44:17 robert Exp $
+
+Index: chrome/browser/ui/views/frame/desktop_linux_browser_frame_view.cc
+--- chrome/browser/ui/views/frame/desktop_linux_browser_frame_view.cc.orig
++++ chrome/browser/ui/views/frame/desktop_linux_browser_frame_view.cc
+@@ -22,13 +22,13 @@ DesktopLinuxBrowserFrameView::DesktopLinuxBrowserFrame
+     : OpaqueBrowserFrameView(frame, browser_view, layout),
+       nav_button_provider_(std::move(nav_button_provider)) {}
+ 
+-DesktopLinuxBrowserFrameView::~DesktopLinuxBrowserFrameView() {}
++DesktopLinuxBrowserFrameView::~DesktopLinuxBrowserFrameView() = default;
+ 
+ void DesktopLinuxBrowserFrameView::Layout() {
+   // Calling MaybeUpdateCachedFrameButtonImages() from Layout() is sufficient to
+   // catch all cases that could update the appearance, since
+-  // DesktopWindowTreeHostPlatform::OnWindowStateChanged() does a layout any
+-  // time any properties change.
++  // DesktopWindowTreeHostPlatform::On{Window,Activation}StateChanged() does a
++  // layout any time the maximized and activation state changes, respectively.
+   MaybeUpdateCachedFrameButtonImages();
+   OpaqueBrowserFrameView::Layout();
+ }

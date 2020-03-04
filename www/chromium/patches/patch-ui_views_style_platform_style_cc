@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.10 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.11 2020/03/04 15:44:17 robert Exp $
 
 Index: ui/views/style/platform_style.cc
 --- ui/views/style/platform_style.cc.orig
@@ -8,7 +8,7 @@ Index: ui/views/style/platform_style.cc
  #endif  // OS_MACOSX
  
 -#if !BUILDFLAG(ENABLE_DESKTOP_AURA) || !defined(OS_LINUX)
-+#if !BUILDFLAG(ENABLE_DESKTOP_AURA) || !defined(OS_LINUX) || !defined(OS_BSD)
++#if !BUILDFLAG(ENABLE_DESKTOP_AURA) || (!defined(OS_LINUX) && !defined(OS_BSD))
  // static
  std::unique_ptr<Border> PlatformStyle::CreateThemedLabelButtonBorder(
      LabelButton* button) {

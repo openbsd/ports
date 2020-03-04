@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.490 2020/02/23 16:50:50 robert Exp $
+# $OpenBSD: Makefile,v 1.491 2020/03/04 15:44:17 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			80.0.3987.116
+V=			80.0.3987.132
 ECV=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
@@ -34,7 +34,7 @@ EXTRACT_SUFX=		.tar.xz
 FLAVORS=		debug component electron
 FLAVOR?=
 .if ${FLAVOR:Melectron}
-REVISION=		5
+REVISION=		6
 .endif
 
 # BSD-like
@@ -53,7 +53,7 @@ PATCHORIG=	.orig.port
 
 # uses pledge()
 WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
-WANTLIB += execinfo
+WANTLIB += execinfo Xft
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
 WANTLIB += m
 WANTLIB += kvm pthread
@@ -202,7 +202,7 @@ MAKE_ENV+=	V=1
 .endif
 
 .if ${FLAVOR:Mcomponent}
-GN_ARGS+=	is_official_build=false \
+GN_ARGS+=	is_official_build=true \
 		is_component_build=true
 .else
 GN_ARGS+=	is_official_build=true \

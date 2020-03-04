@@ -1,8 +1,17 @@
-$OpenBSD: patch-BUILD_gn,v 1.30 2020/02/22 12:33:20 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.31 2020/03/04 15:44:17 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig
 +++ BUILD.gn
+@@ -43,7 +43,7 @@ declare_args() {
+ if (is_official_build) {
+   # An official (maximally optimized!) component (optimized for build times)
+   # build doesn't make sense and usually doesn't work.
+-  assert(!is_component_build)
++  #assert(!is_component_build)
+ }
+ 
+ # This file defines the following two main targets:
 @@ -411,7 +411,7 @@ group("gn_all") {
      ]
    }
