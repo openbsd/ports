@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/12/28 18:00:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/03/04 23:31:20 sthen Exp $
 @bin bin/copydatabase
 @bin bin/quest
 @bin bin/simpleexpand
@@ -368,7 +368,6 @@ share/doc/xapian-core/apidoc/html/files.html
 share/doc/xapian-core/apidoc/html/folderclosed.png
 share/doc/xapian-core/apidoc/html/folderopen.png
 share/doc/xapian-core/apidoc/html/functions.html
-share/doc/xapian-core/apidoc/html/functions_0x7e.html
 share/doc/xapian-core/apidoc/html/functions_b.html
 share/doc/xapian-core/apidoc/html/functions_c.html
 share/doc/xapian-core/apidoc/html/functions_d.html
@@ -377,7 +376,6 @@ share/doc/xapian-core/apidoc/html/functions_enum.html
 share/doc/xapian-core/apidoc/html/functions_eval.html
 share/doc/xapian-core/apidoc/html/functions_f.html
 share/doc/xapian-core/apidoc/html/functions_func.html
-share/doc/xapian-core/apidoc/html/functions_func_0x7e.html
 share/doc/xapian-core/apidoc/html/functions_func_b.html
 share/doc/xapian-core/apidoc/html/functions_func_c.html
 share/doc/xapian-core/apidoc/html/functions_func_d.html
@@ -399,6 +397,7 @@ share/doc/xapian-core/apidoc/html/functions_func_t.html
 share/doc/xapian-core/apidoc/html/functions_func_u.html
 share/doc/xapian-core/apidoc/html/functions_func_v.html
 share/doc/xapian-core/apidoc/html/functions_func_w.html
+share/doc/xapian-core/apidoc/html/functions_func_~.html
 share/doc/xapian-core/apidoc/html/functions_g.html
 share/doc/xapian-core/apidoc/html/functions_h.html
 share/doc/xapian-core/apidoc/html/functions_i.html
@@ -417,6 +416,7 @@ share/doc/xapian-core/apidoc/html/functions_u.html
 share/doc/xapian-core/apidoc/html/functions_v.html
 share/doc/xapian-core/apidoc/html/functions_vars.html
 share/doc/xapian-core/apidoc/html/functions_w.html
+share/doc/xapian-core/apidoc/html/functions_~.html
 share/doc/xapian-core/apidoc/html/geospatial_8h.html
 share/doc/xapian-core/apidoc/html/globals.html
 share/doc/xapian-core/apidoc/html/globals_defs.html

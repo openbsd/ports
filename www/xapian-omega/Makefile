@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2019/12/28 18:00:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/03/04 23:31:20 sthen Exp $
 
 COMMENT=	web search application
 
-V=		1.4.14
+V=		1.4.15
+# XXX remove ac_cv_func_snprintf=snprintf with next release
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
 
@@ -28,6 +29,7 @@ LIB_DEPENDS=	databases/xapian-core>=${V} \
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+= ac_cv_func_snprintf=snprintf
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/xapian-omega \
 		pkglibbindir=${PREFIX}/libexec/xapian-omega/cgi-bin
