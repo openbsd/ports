@@ -1,17 +1,10 @@
-$OpenBSD: patch-lib_cli_daemoncommand_cpp,v 1.5 2019/12/28 15:59:30 sthen Exp $
+$OpenBSD: patch-lib_cli_daemoncommand_cpp,v 1.6 2020/03/04 14:13:11 sthen Exp $
 
 cope with OpenBSD not filling in si_pid in siginfo
 
 Index: lib/cli/daemoncommand.cpp
 --- lib/cli/daemoncommand.cpp.orig
 +++ lib/cli/daemoncommand.cpp
-@@ -317,6 +317,6 @@ static Atomic<bool> l_RequestedReopenLogs (false);
-  */
- static void UmbrellaSignalHandler(int num, siginfo_t *info, void*)
- {
- 	switch (num) {
- 		case SIGUSR1:
- 			// Someone requested to re-open logs
 @@ -324,14 +324,14 @@ static void UmbrellaSignalHandler(int num, siginfo_t *
  			break;
  		case SIGUSR2:
@@ -29,9 +22,7 @@ Index: lib/cli/daemoncommand.cpp
  				// The seemless worker currently being started by StartUnixWorker() failed
  				l_CurrentlyStartingUnixWorkerState.store(UnixWorkerState::Failed);
  			}
-@@ -366,16 +366,16 @@ static void UmbrellaSignalHandler(int num, siginfo_t *
-  */
- static void WorkerSignalHandler(int num, siginfo_t *info, void*)
+@@ -368,14 +368,14 @@ static void WorkerSignalHandler(int num, siginfo_t *in
  {
  	switch (num) {
  		case SIGUSR2:
