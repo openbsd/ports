@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2020/01/04 07:28:07 bket Exp $
+# $OpenBSD: Makefile,v 1.66 2020/03/04 17:57:15 bket Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
-V=		3.46.3
+V=		3.47.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
@@ -13,6 +13,8 @@ CATEGORIES=	net
 
 MASTER_SITES=	https://download.filezilla-project.org/client/
 HOMEPAGE=	https://www.filezilla-project.org/
+
+MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -31,6 +33,7 @@ WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
 WANTLIB += z zstd
 
+# c++17
 COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	databases/sqlite3 \
