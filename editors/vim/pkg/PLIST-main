@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2020/02/14 10:59:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2020/03/05 20:53:13 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -215,6 +215,7 @@ share/vim/${P}/doc/os_390.txt
 share/vim/${P}/doc/os_amiga.txt
 share/vim/${P}/doc/os_beos.txt
 share/vim/${P}/doc/os_dos.txt
+share/vim/${P}/doc/os_haiku.txt
 share/vim/${P}/doc/os_mac.txt
 share/vim/${P}/doc/os_mint.txt
 share/vim/${P}/doc/os_msdos.txt
