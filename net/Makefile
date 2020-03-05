@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1175 2020/03/02 16:38:08 landry Exp $
+# $OpenBSD: Makefile,v 1.1176 2020/03/05 14:20:43 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -59,6 +59,7 @@
      SUBDIR += czmq
      SUBDIR += daq
      SUBDIR += darkstat
+     SUBDIR += dbip
      SUBDIR += ddclient
      SUBDIR += deluge
      SUBDIR += deluge-ltconfig
