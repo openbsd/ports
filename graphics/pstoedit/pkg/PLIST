@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/01/05 10:08:33 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/03/05 21:02:18 steven Exp $
 @bin bin/pstoedit
 include/pstoedit/
 include/pstoedit/base64writer.h
@@ -15,14 +15,14 @@ include/pstoedit/pstoedit.h
 include/pstoedit/pstoeditoptions.h
 include/pstoedit/pstoeditoutputlib.h
 include/pstoedit/pstoedll.h
-lib/libpstoedit.a
+@static-lib lib/libpstoedit.a
 lib/libpstoedit.la
 @lib lib/libpstoedit.so.${LIBpstoedit_VERSION}
 lib/pkgconfig/pstoedit.pc
 lib/pstoedit/
 @comment lib/pstoedit/libp2edrvstd.a
 @comment lib/pstoedit/libp2edrvstd.la
-lib/pstoedit/libp2edrvstd.so
+@so lib/pstoedit/libp2edrvstd.so
 @man man/man1/pstoedit.1
 share/aclocal/pstoedit.m4
 share/doc/pstoedit/

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.9 2019/01/05 10:08:33 steven Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.10 2020/03/05 21:02:17 steven Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -532,7 +532,7 @@ libp2edrvstd_la_SOURCES = \
+@@ -533,7 +533,7 @@ libp2edrvstd_la_SOURCES = \
          $(sample_drivers_src)                   
  
  libp2edrvstd_la_LIBADD = libpstoedit.la
@@ -11,7 +11,7 @@ Index: src/Makefile.in
  
  #libp2edrvplugins_la_SOURCES=drvmif.cpp drvcgm.cpp drvrtf.cpp drvwwmf.cpp
  #libp2edrvplugins_la_LIBADD=
-@@ -551,7 +551,7 @@ libp2edrvswf_la_LDFLAGS = -no-undefined -module
+@@ -552,7 +552,7 @@ libp2edrvswf_la_LDFLAGS = -no-undefined -module
  # note the __ stand for ++ - automake treats all no alphanums chars as _
  libp2edrvmagick___la_SOURCES = drvmagick++.cpp drvmagick++.h initlibrary.cpp
  libp2edrvmagick___la_LIBADD = ${LIBMAGICK_LDFLAGS} libpstoedit.la
@@ -20,7 +20,7 @@ Index: src/Makefile.in
  @USE_EMFBYSOURCE_FALSE@libp2edrvwmf_la_SOURCES = drvwmf.cpp drvwmf.h initlibrary.cpp
  # moved to configure.ac because needed only for g++ libp2edrvmagick___la_CPPFLAGS=$(LIBMAGICK_CFLAGS) $(AM_CPPFLAGS) -Wno-long-long
  @USE_EMFBYSOURCE_TRUE@libp2edrvwmf_la_SOURCES = emflib.cpp drvwmf.cpp drvwmf.h initlibrary.cpp
-@@ -575,7 +575,7 @@ libpstoedit_la_SOURCES = \
+@@ -576,7 +576,7 @@ libpstoedit_la_SOURCES = \
  	psfront.h				\
  	genericints.h
  
