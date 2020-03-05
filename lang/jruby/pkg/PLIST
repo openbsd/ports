@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2019/11/01 19:29:31 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.47 2020/03/05 15:29:13 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -15,7 +15,7 @@ jruby/bin/testrb
 jruby/lib/
 jruby/lib/jni/
 jruby/lib/jni/${JFFI_ARCH}/
-jruby/lib/jni/${JFFI_ARCH}/libjffi-1.2.so
+@so jruby/lib/jni/${JFFI_ARCH}/libjffi-1.2.so
 jruby/lib/jruby.jar
 jruby/lib/ruby/
 jruby/lib/ruby/1.8/
@@ -411,7 +411,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/csv-1.0.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/fileutils-1.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/ipaddr-1.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.4.0.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.10.2-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.10.4-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.3.7-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-2.2.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/psych-3.1.0-java.gemspec
@@ -562,13 +562,15 @@ jruby/lib/ruby/stdlib/getoptlong.rb
 jruby/lib/ruby/stdlib/io/
 jruby/lib/ruby/stdlib/io/console/
 jruby/lib/ruby/stdlib/io/console.rb
-jruby/lib/ruby/stdlib/io/console/bsd_console.rb
-jruby/lib/ruby/stdlib/io/console/common.rb
-jruby/lib/ruby/stdlib/io/console/linux_console.rb
-jruby/lib/ruby/stdlib/io/console/native_console.rb
+jruby/lib/ruby/stdlib/io/console/jruby/
+jruby/lib/ruby/stdlib/io/console/jruby.rb
+jruby/lib/ruby/stdlib/io/console/jruby/bsd_console.rb
+jruby/lib/ruby/stdlib/io/console/jruby/common.rb
+jruby/lib/ruby/stdlib/io/console/jruby/linux_console.rb
+jruby/lib/ruby/stdlib/io/console/jruby/native_console.rb
+jruby/lib/ruby/stdlib/io/console/jruby/stty_console.rb
+jruby/lib/ruby/stdlib/io/console/jruby/stub_console.rb
 jruby/lib/ruby/stdlib/io/console/size.rb
-jruby/lib/ruby/stdlib/io/console/stty_console.rb
-jruby/lib/ruby/stdlib/io/console/stub_console.rb
 jruby/lib/ruby/stdlib/io/nonblock.rb
 jruby/lib/ruby/stdlib/io/wait.rb
 jruby/lib/ruby/stdlib/ipaddr.rb
@@ -809,14 +811,14 @@ jruby/lib/ruby/stdlib/optparse/version.rb
 jruby/lib/ruby/stdlib/org/
 jruby/lib/ruby/stdlib/org/bouncycastle/
 jruby/lib/ruby/stdlib/org/bouncycastle/bcpkix-jdk15on/
-jruby/lib/ruby/stdlib/org/bouncycastle/bcpkix-jdk15on/1.61/
-jruby/lib/ruby/stdlib/org/bouncycastle/bcpkix-jdk15on/1.61/bcpkix-jdk15on-1.61.jar
+jruby/lib/ruby/stdlib/org/bouncycastle/bcpkix-jdk15on/1.62/
+jruby/lib/ruby/stdlib/org/bouncycastle/bcpkix-jdk15on/1.62/bcpkix-jdk15on-1.62.jar
 jruby/lib/ruby/stdlib/org/bouncycastle/bcprov-jdk15on/
-jruby/lib/ruby/stdlib/org/bouncycastle/bcprov-jdk15on/1.61/
-jruby/lib/ruby/stdlib/org/bouncycastle/bcprov-jdk15on/1.61/bcprov-jdk15on-1.61.jar
+jruby/lib/ruby/stdlib/org/bouncycastle/bcprov-jdk15on/1.62/
+jruby/lib/ruby/stdlib/org/bouncycastle/bcprov-jdk15on/1.62/bcprov-jdk15on-1.62.jar
 jruby/lib/ruby/stdlib/org/bouncycastle/bctls-jdk15on/
-jruby/lib/ruby/stdlib/org/bouncycastle/bctls-jdk15on/1.61/
-jruby/lib/ruby/stdlib/org/bouncycastle/bctls-jdk15on/1.61/bctls-jdk15on-1.61.jar
+jruby/lib/ruby/stdlib/org/bouncycastle/bctls-jdk15on/1.62/
+jruby/lib/ruby/stdlib/org/bouncycastle/bctls-jdk15on/1.62/bctls-jdk15on-1.62.jar
 jruby/lib/ruby/stdlib/org/yaml/
 jruby/lib/ruby/stdlib/org/yaml/snakeyaml/
 jruby/lib/ruby/stdlib/org/yaml/snakeyaml/1.23/
@@ -1226,6 +1228,7 @@ jruby/lib/ruby/stdlib/rubygems/commands/environment_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/fetch_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/generate_index_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/help_command.rb
+jruby/lib/ruby/stdlib/rubygems/commands/info_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/install_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/list_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/lock_command.rb
@@ -1255,6 +1258,7 @@ jruby/lib/ruby/stdlib/rubygems/config_file.rb
 jruby/lib/ruby/stdlib/rubygems/core_ext/
 jruby/lib/ruby/stdlib/rubygems/core_ext/kernel_gem.rb
 jruby/lib/ruby/stdlib/rubygems/core_ext/kernel_require.rb
+jruby/lib/ruby/stdlib/rubygems/core_ext/kernel_warn.rb
 jruby/lib/ruby/stdlib/rubygems/defaults/
 jruby/lib/ruby/stdlib/rubygems/defaults.rb
 jruby/lib/ruby/stdlib/rubygems/defaults/jruby.rb
@@ -1372,6 +1376,7 @@ jruby/lib/ruby/stdlib/rubygems/resolver/specification.rb
 jruby/lib/ruby/stdlib/rubygems/resolver/stats.rb
 jruby/lib/ruby/stdlib/rubygems/resolver/vendor_set.rb
 jruby/lib/ruby/stdlib/rubygems/resolver/vendor_specification.rb
+jruby/lib/ruby/stdlib/rubygems/s3_uri_signer.rb
 jruby/lib/ruby/stdlib/rubygems/safe_yaml.rb
 jruby/lib/ruby/stdlib/rubygems/security/
 jruby/lib/ruby/stdlib/rubygems/security.rb
@@ -1394,6 +1399,7 @@ jruby/lib/ruby/stdlib/rubygems/source_local.rb
 jruby/lib/ruby/stdlib/rubygems/source_specific_file.rb
 jruby/lib/ruby/stdlib/rubygems/spec_fetcher.rb
 jruby/lib/ruby/stdlib/rubygems/specification.rb
+jruby/lib/ruby/stdlib/rubygems/specification_policy.rb
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/index.rubygems.org/
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem
