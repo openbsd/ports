@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/01/03 02:00:29 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/05 13:27:10 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/CSV_XS.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Text/
 ${P5ARCH}/auto/Text/CSV_XS/
-${P5ARCH}/auto/Text/CSV_XS/CSV_XS.so
+@so ${P5ARCH}/auto/Text/CSV_XS/CSV_XS.so
 @man man/man3p/Text::CSV_XS.3p
