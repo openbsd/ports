@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/04/19 10:30:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/05 17:38:11 sthen Exp $
 bin/github-backup
 lib/python${MODPY_VERSION}/site-packages/github_backup/
 lib/python${MODPY_VERSION}/site-packages/github_backup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -8,5 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/github_backup-${MODPY_EGG_VERSION}-py${
 lib/python${MODPY_VERSION}/site-packages/github_backup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/github_backup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/github_backup/__init__.py
-lib/python${MODPY_VERSION}/site-packages/github_backup/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/github_backup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/github_backup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github_backup/${MODPY_PYCACHE}github_backup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github_backup/github_backup.py
