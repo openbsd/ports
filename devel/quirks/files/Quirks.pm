@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.889 2020/03/04 14:33:29 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.890 2020/03/05 13:30:44 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -62,7 +62,7 @@ my $base_exceptions = {
 # 5.7
 	'p5-IO-Socket-IP' => "$p5/IO/Socket/IP.pm",
 # 5.8
-	'libepoxy' => '/usr/X11R6/lib/libepoxy.so.1.0',
+	'libepoxy' => '/usr/X11R6/lib/libepoxy.so.*',
 	'flex' => '/usr/bin/flex',
 # 6.0
 	'p5-Term-ReadKey' => "$p5a/Term/ReadKey.pm",
@@ -70,7 +70,7 @@ my $base_exceptions = {
 	'p5-Test-use-ok' => "$p5/Test/use/ok.pm",
 	'p5-Test-Tester' => "$p5/Test/Tester.pm",
 # 6.5
-	'libelf' => '/usr/lib/libelf.so.3.0',
+	'libelf' => '/usr/lib/libelf.so.*',
 };
 
 my $stem_extensions = {
@@ -1464,7 +1464,8 @@ sub is_base_system
 
 	my $test = $base_exceptions->{$stem};
 	if (defined $test) {
-		if (-e $test) {
+		require File::Glob;
+		if (defined File::Glob::bsd_glob($test)) {
 			$state->say("Removing #1 #2", $handle->pkgname,
 			    " (part of base system now)");
 			return 1;
