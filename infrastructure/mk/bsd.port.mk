@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1520 2020/02/26 15:34:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1521 2020/03/06 10:49:00 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1727,11 +1727,7 @@ _UNLOCK = echo "Unlocking $$lock from $@"; ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 _LOCK = ${LOCK_CMD} ${LOCKDIR_MODE} ${LOCKDIR}/$$lock.lock ${BUILD_PKGPATH}
 _UNLOCK = ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  endif
-.  if ${SEPARATE_BUILD:L:Mflavored}
 _LOCKNAME = ${FULLPKGNAME}
-.  else
-_LOCKNAME = ${PKGNAME}
-.  endif
 
 .  for _i in ${_LOCKNAME}
 .    if empty(_LOCKS_HELD:M${_i})
