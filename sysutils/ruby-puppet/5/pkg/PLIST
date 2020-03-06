@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/07/19 06:09:21 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/03/06 15:20:31 sebastia Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -404,8 +404,6 @@ ${MODRUBY_SITEDIR}/puppet/locales/
 ${MODRUBY_SITEDIR}/puppet/locales/config.yaml
 ${MODRUBY_SITEDIR}/puppet/locales/en/
 ${MODRUBY_SITEDIR}/puppet/locales/en/puppet.po
-${MODRUBY_SITEDIR}/puppet/locales/ja/
-${MODRUBY_SITEDIR}/puppet/locales/ja/puppet.po
 ${MODRUBY_SITEDIR}/puppet/locales/puppet.pot
 ${MODRUBY_SITEDIR}/puppet/metatype/
 ${MODRUBY_SITEDIR}/puppet/metatype/manager.rb
@@ -652,7 +650,6 @@ ${MODRUBY_SITEDIR}/puppet/pops/loader/gem_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/loader_paths.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/module_loaders.rb
-${MODRUBY_SITEDIR}/puppet/pops/loader/null_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/predefined_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/puppet_function_instantiator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/puppet_plan_instantiator.rb
@@ -856,6 +853,7 @@ ${MODRUBY_SITEDIR}/puppet/provider/package/aptitude.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/aptrpm.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/blastwave.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/dnf.rb
+${MODRUBY_SITEDIR}/puppet/provider/package/dnfmodule.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/dpkg.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/fink.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/freebsd.rb

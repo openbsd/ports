@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_type_package_rb,v 1.4 2019/10/24 20:37:17 sebastia Exp $
+$OpenBSD: patch-lib_puppet_type_package_rb,v 1.5 2020/03/06 15:20:31 sebastia Exp $
 
 add new feature flavorable, and switch handling the flavor
 as a property instead of a parameter
@@ -20,6 +20,6 @@ Index: lib/puppet/type/package.rb
  
 -    newparam(:flavor) do
 +    newproperty(:flavor, :required_features => :flavorable) do
-       desc "OpenBSD supports 'flavors', which are further specifications for
-         which type of package you want."
+       desc "OpenBSD and DNF modules support 'flavors', which are
+         further specifications for which type of package you want."
      end
