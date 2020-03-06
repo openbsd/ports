@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/06 15:26:18 espie Exp $
 
 COMMENT = 			seam-carving smart rescale library
 CATEGORIES =			graphics devel
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =		Yes
 WANTLIB =  glib-2.0 iconv intl m pcre pthread
 
 CONFIGURE_STYLE =		gnu
-SEPARATE_BUILD =		simple
+SEPARATE_BUILD =		Yes
 
 SHARED_LIBS +=	lqr-1           1.0           # .0.0
 

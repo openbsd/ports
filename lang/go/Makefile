@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2020/02/23 14:28:44 jsing Exp $
+# $OpenBSD: Makefile,v 1.84 2020/03/06 15:26:18 espie Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -31,7 +31,7 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 
 BUILD_DEPENDS =		shells/bash
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	None
 SUBST_VARS =		GOCFG
 

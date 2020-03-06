@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/08 15:59:28 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/06 15:26:18 espie Exp $
 
 COMMENT=	test tool for slow HTTP reads/posts
 
@@ -18,7 +18,7 @@ WANTLIB += c m ssl ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

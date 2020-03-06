@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/12/06 14:22:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/06 15:26:18 espie Exp $
 
 # other GO_ARCHS machines use binary bootstraps
 ONLY_FOR_ARCHS =	amd64 i386
@@ -26,7 +26,7 @@ MASTER_SITES =		https://dl.google.com/go/
 
 BUILD_DEPENDS =		shells/bash
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	None
 SUBST_VARS =		GOEXE GOCFG
 
