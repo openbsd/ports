@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2020/03/06 19:32:35 edd Exp $
+share/fonts/
+@fontdir share/fonts/iosevka/
+share/fonts/iosevka/iosevka-bold.ttf
+share/fonts/iosevka/iosevka-bolditalic.ttf
+share/fonts/iosevka/iosevka-boldoblique.ttf
+share/fonts/iosevka/iosevka-extrabold.ttf
+share/fonts/iosevka/iosevka-extrabolditalic.ttf
+share/fonts/iosevka/iosevka-extraboldoblique.ttf
+share/fonts/iosevka/iosevka-extralight.ttf
+share/fonts/iosevka/iosevka-extralightitalic.ttf
+share/fonts/iosevka/iosevka-extralightoblique.ttf
+share/fonts/iosevka/iosevka-heavy.ttf
+share/fonts/iosevka/iosevka-heavyitalic.ttf
+share/fonts/iosevka/iosevka-heavyoblique.ttf
+share/fonts/iosevka/iosevka-italic.ttf
+share/fonts/iosevka/iosevka-light.ttf
+share/fonts/iosevka/iosevka-lightitalic.ttf
+share/fonts/iosevka/iosevka-lightoblique.ttf
+share/fonts/iosevka/iosevka-medium.ttf
+share/fonts/iosevka/iosevka-mediumitalic.ttf
+share/fonts/iosevka/iosevka-mediumoblique.ttf
+share/fonts/iosevka/iosevka-oblique.ttf
+share/fonts/iosevka/iosevka-regular.ttf
+share/fonts/iosevka/iosevka-semibold.ttf
+share/fonts/iosevka/iosevka-semibolditalic.ttf
+share/fonts/iosevka/iosevka-semiboldoblique.ttf
+share/fonts/iosevka/iosevka-thin.ttf
+share/fonts/iosevka/iosevka-thinitalic.ttf
+share/fonts/iosevka/iosevka-thinoblique.ttf
