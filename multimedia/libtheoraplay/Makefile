@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/06 15:24:40 espie Exp $
 
 COMMENT =	simple library to make decoding of Ogg Theora videos easier
 
@@ -30,12 +30,12 @@ LIB_DEPENDS =	audio/libogg \
 
 WRKDIST =	${WRKDIR}/theoraplay-${HG_COMMIT}
 
-SEPARATE_BUILD= YES
+SEPARATE_BUILD= Yes
 
 # Dist comes with directory 'test' containing shell script to compile 3
 # different binaries that can be used for testing. All 3 require an
 # external Ogg Theora file (.ogv) to test.
-NO_TEST =	YES
+NO_TEST =	Yes
 
 do-build:
 	cd ${WRKSRC} && \
