@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2018/07/01 18:33:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.35 2020/03/06 12:13:22 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -2448,34 +2448,34 @@ lib/calibre/calibre/libunzip.pyc
 lib/calibre/calibre/linux.py
 lib/calibre/calibre/linux.pyc
 lib/calibre/calibre/plugins/
-lib/calibre/calibre/plugins/_patiencediff_c.so
-lib/calibre/calibre/plugins/_regex.so
-lib/calibre/calibre/plugins/bzzdec.so
-lib/calibre/calibre/plugins/cPalmdoc.so
-lib/calibre/calibre/plugins/certgen.so
-lib/calibre/calibre/plugins/chm_extra.so
-lib/calibre/calibre/plugins/chmlib.so
-lib/calibre/calibre/plugins/dukpy.so
-lib/calibre/calibre/plugins/freetype.so
-lib/calibre/calibre/plugins/html.so
-lib/calibre/calibre/plugins/hunspell.so
-lib/calibre/calibre/plugins/icu.so
-lib/calibre/calibre/plugins/imageops.so
-lib/calibre/calibre/plugins/libheadless.so
-lib/calibre/calibre/plugins/lzma_binding.so
-lib/calibre/calibre/plugins/lzx.so
-lib/calibre/calibre/plugins/matcher.so
-lib/calibre/calibre/plugins/monotonic.so
-lib/calibre/calibre/plugins/msdes.so
-lib/calibre/calibre/plugins/pictureflow.so
-lib/calibre/calibre/plugins/podofo.so
-lib/calibre/calibre/plugins/progress_indicator.so
-lib/calibre/calibre/plugins/qt_hack.so
-lib/calibre/calibre/plugins/speedup.so
-lib/calibre/calibre/plugins/sqlite_custom.so
-lib/calibre/calibre/plugins/tokenizer.so
-lib/calibre/calibre/plugins/unrar.so
-lib/calibre/calibre/plugins/zlib2.so
+@so lib/calibre/calibre/plugins/_patiencediff_c.so
+@so lib/calibre/calibre/plugins/_regex.so
+@so lib/calibre/calibre/plugins/bzzdec.so
+@so lib/calibre/calibre/plugins/cPalmdoc.so
+@so lib/calibre/calibre/plugins/certgen.so
+@so lib/calibre/calibre/plugins/chm_extra.so
+@so lib/calibre/calibre/plugins/chmlib.so
+@so lib/calibre/calibre/plugins/dukpy.so
+@so lib/calibre/calibre/plugins/freetype.so
+@so lib/calibre/calibre/plugins/html.so
+@so lib/calibre/calibre/plugins/hunspell.so
+@so lib/calibre/calibre/plugins/icu.so
+@so lib/calibre/calibre/plugins/imageops.so
+@so lib/calibre/calibre/plugins/libheadless.so
+@so lib/calibre/calibre/plugins/lzma_binding.so
+@so lib/calibre/calibre/plugins/lzx.so
+@so lib/calibre/calibre/plugins/matcher.so
+@so lib/calibre/calibre/plugins/monotonic.so
+@so lib/calibre/calibre/plugins/msdes.so
+@so lib/calibre/calibre/plugins/pictureflow.so
+@so lib/calibre/calibre/plugins/podofo.so
+@so lib/calibre/calibre/plugins/progress_indicator.so
+@so lib/calibre/calibre/plugins/qt_hack.so
+@so lib/calibre/calibre/plugins/speedup.so
+@so lib/calibre/calibre/plugins/sqlite_custom.so
+@so lib/calibre/calibre/plugins/tokenizer.so
+@so lib/calibre/calibre/plugins/unrar.so
+@so lib/calibre/calibre/plugins/zlib2.so
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/ptempfile.pyc
 lib/calibre/calibre/rpdb.py
@@ -3182,7 +3182,6 @@ share/applications/calibre-ebook-viewer.desktop
 share/applications/calibre-gui.desktop
 share/applications/calibre-lrfviewer.desktop
 share/bash-completion/completions/calibre
-@sample ${SYSCONFDIR}/bash_completion.d/
 @sample ${SYSCONFDIR}/bash_completion.d/calibre
 share/calibre/
 share/calibre/builtin_recipes.xml
