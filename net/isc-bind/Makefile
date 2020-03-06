@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2020/02/20 14:00:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2020/03/06 12:08:46 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -8,6 +8,7 @@ COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 V=		9.16.0
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		0
+REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -33,6 +34,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto iconv idn2 json-c lzma m pthread unistring uv xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
+MASTER_SITES0=	${MASTER_SITES:=patches/}
+PATCHFILES=	bind-v9.16.0-tcp_quota_fix.patch:0
+PATCH_DIST_STRIP= -p1
 
 MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
