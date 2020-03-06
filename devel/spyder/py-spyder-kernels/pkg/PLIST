@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/23 17:57:43 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/06 15:28:44 bket Exp $
+@conflict py-spyder-kernels-*
+@pkgpath devel/spyder/py-spyder-kernels
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

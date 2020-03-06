@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/29 23:17:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/06 15:28:43 bket Exp $
 
      SUBDIR =
-     SUBDIR += spyder
      SUBDIR += spyder,python3
-     SUBDIR += py-spyder-kernels
      SUBDIR += py-spyder-kernels,python3
 
 

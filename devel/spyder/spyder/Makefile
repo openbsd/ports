@@ -1,27 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/05 15:44:12 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/06 15:28:44 bket Exp $
 
 COMMENT =		Scientific PYthon Development EnviRonment
 
 MODPY_EGG_VERSION =	3.3.3
+REVISION =		2
 DISTNAME =		spyder-${MODPY_EGG_VERSION}
-PKGNAME =		spyder${MAJOR_VERSION}-${MODPY_EGG_VERSION}
+PKGNAME =		spyder3-${MODPY_EGG_VERSION}
 
 PORTROACH=		limit:^3
 
 HOMEPAGE =		https://github.com/spyder-ide/spyder
 
 FLAVORS =	python3
-FLAVOR ?=
-
-.if ${FLAVOR:Mpython3}
-MAJOR_VERSION =	3
-PKGNAME =	spyder3-${MODPY_EGG_VERSION}
-.else
-MAJOR_VERSION =
-.endif
-REVISION =	1
-
-SUBST_VARS +=	MAJOR_VERSION
+FLAVOR =	python3
 
 RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR} \
 		devel/desktop-file-utils \

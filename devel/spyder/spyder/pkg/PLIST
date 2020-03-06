@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/23 17:57:43 mariani Exp $
-bin/spyder${MAJOR_VERSION}
+@comment $OpenBSD: PLIST,v 1.3 2020/03/06 15:28:44 bket Exp $
+@conflict spyder-*
+@pkgpath devel/spyder/spyder
+bin/spyder3
 lib/python${MODPY_VERSION}/site-packages/spyder/
 lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -1154,8 +1156,8 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_pylint/widgets/$
 lib/python${MODPY_VERSION}/site-packages/spyder_pylint/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_pylint/widgets/${MODPY_PYCACHE}pylintgui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_pylint/widgets/pylintgui.py
-share/applications/spyder${MAJOR_VERSION}.desktop
-share/icons/spyder${MAJOR_VERSION}.png
+share/applications/spyder3.desktop
+share/icons/spyder3.png
 ${MODPY_COMMENT}share/metainfo/
-${MODPY_COMMENT}share/metainfo/spyder${MAJOR_VERSION}.appdata.xml
+${MODPY_COMMENT}share/metainfo/spyder3.appdata.xml
 @tag update-desktop-database
