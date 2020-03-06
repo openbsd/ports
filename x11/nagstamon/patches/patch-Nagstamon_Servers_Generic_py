@@ -1,0 +1,39 @@
+$OpenBSD: patch-Nagstamon_Servers_Generic_py,v 1.1 2020/03/06 11:49:53 sthen Exp $
+
+Disable Kerberos support, we don't have requests_gssapi or requests_kerberos
+
+Index: Nagstamon/Servers/Generic.py
+--- Nagstamon/Servers/Generic.py.orig
++++ Nagstamon/Servers/Generic.py
+@@ -54,13 +54,13 @@ from Nagstamon.Config import (AppInfo,
+ 
+ 
+ # requests_gssapi is newer but not available everywhere
+-try:
+-    # extra imports needed to get it compiled on macOS
+-    import numbers
+-    import gssapi.raw.cython_converters
+-    from requests_gssapi import HTTPSPNEGOAuth as HTTPSKerberos
+-except ImportError:
+-    from requests_kerberos import HTTPKerberosAuth as HTTPSKerberos
++#try:
++#    # extra imports needed to get it compiled on macOS
++#    import numbers
++#    import gssapi.raw.cython_converters
++#    from requests_gssapi import HTTPSPNEGOAuth as HTTPSKerberos
++#except ImportError:
++#    from requests_kerberos import HTTPKerberosAuth as HTTPSKerberos
+ 
+ # disable annoying SubjectAltNameWarning warnings
+ try:
+@@ -260,8 +260,8 @@ class GenericServer(object):
+                 self.session.auth = requests.auth.HTTPBasicAuth(self.username, self.password)
+             elif self.authentication == 'digest':
+                 self.session.auth = requests.auth.HTTPDigestAuth(self.username, self.password)
+-            elif self.authentication == 'kerberos':
+-                self.session.auth = HTTPSKerberos()
++#            elif self.authentication == 'kerberos':
++#                self.session.auth = HTTPSKerberos()
+ 
+             # default to check TLS validity
+             if self.ignore_cert:

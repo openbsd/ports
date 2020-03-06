@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.6 2018/12/31 08:35:13 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.7 2020/03/06 11:49:53 sthen Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -113,7 +113,7 @@ setup(name=NAME,
+@@ -117,7 +117,7 @@ setup(name=NAME,
                  'Nagstamon.thirdparty.Xlib.xobject'],
        package_dir={'Nagstamon': 'Nagstamon'},
        package_data={'Nagstamon': ['resources/*']},

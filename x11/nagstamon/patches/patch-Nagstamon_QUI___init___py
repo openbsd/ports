@@ -1,0 +1,16 @@
+$OpenBSD: patch-Nagstamon_QUI___init___py,v 1.1 2020/03/06 11:49:53 sthen Exp $
+
+Disable Kerberos support, we don't have requests_gssapi or requests_kerberos
+
+Index: Nagstamon/QUI/__init__.py
+--- Nagstamon/QUI/__init__.py.orig
++++ Nagstamon/QUI/__init__.py
+@@ -5770,7 +5770,7 @@ class Dialog_Server(Dialog):
+         self.ui.button_choose_custom_cert_ca_file.clicked.connect(self.choose_custom_cert_ca_file)
+ 
+         # fill authentication combobox
+-        self.ui.input_combobox_authentication.addItems(['Basic', 'Digest', 'Kerberos'])
++        self.ui.input_combobox_authentication.addItems(['Basic', 'Digest'])
+ 
+         # detect change of server type which leads to certain options shown or hidden
+         self.ui.input_combobox_type.activated.connect(self.toggle_type)
