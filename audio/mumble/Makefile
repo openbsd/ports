@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/02/25 05:14:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2020/03/06 12:00:09 cwen Exp $
 
 COMMENT =		low-latency voice chat client
 
@@ -63,6 +63,12 @@ MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 ALL_TARGET =		release
 
 NO_TEST =		Yes
+
+.include <bsd.port.arch.mk>
+# pre compilated headers are invalid on gcc archs
+.if ${PROPERTIES:Mgcc4}
+MODQMAKE_ARGS +=	CONFIG+=no-pch
+.endif
 
 pre-configure:
 	cd ${WRKSRC}/src/mumble/ && QTDIR=${WRKDIR}/bin \
