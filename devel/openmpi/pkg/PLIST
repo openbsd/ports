@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/01/28 13:50:08 martin Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/06 06:59:33 martin Exp $
 bin/aggregate_profile.pl
 bin/mpiCC
 bin/mpic++
@@ -389,9 +389,6 @@ lib/pmix/mca_bfrops_v3.la
 lib/pmix/mca_gds_ds12.a
 lib/pmix/mca_gds_ds12.la
 @so lib/pmix/mca_gds_ds12.so
-lib/pmix/mca_gds_ds21.a
-lib/pmix/mca_gds_ds21.la
-@so lib/pmix/mca_gds_ds21.so
 lib/pmix/mca_gds_hash.a
 lib/pmix/mca_gds_hash.la
 @so lib/pmix/mca_gds_hash.so
