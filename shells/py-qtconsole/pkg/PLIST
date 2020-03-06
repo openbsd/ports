@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/12 09:32:52 shadchin Exp $
-bin/jupyter-qtconsole${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.3 2020/03/06 17:57:15 bket Exp $
+@conflict py-qtconsole-*
+@pkgpath shells/py-qtconsole
+bin/jupyter-qtconsole
 lib/python${MODPY_VERSION}/site-packages/qtconsole/
 lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/qtconsole/__init__.py

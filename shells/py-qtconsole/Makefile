@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/06 17:57:15 bket Exp $
 
 COMMENT =		Jupyter Qt console
 
 MODPY_EGG_VERSION =	4.3.0
+REVISION =		3
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-CATEGORIES =		shells
 
-REVISION =		2
+CATEGORIES =		shells
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -27,14 +27,7 @@ RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-mock
-.endif
-
-post-install:
-	mv ${PREFIX}/bin/jupyter-qtconsole{,${MODPY_BIN_SUFFIX}}
+FLAVOR =		python3
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
