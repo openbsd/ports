@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/04 07:28:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/06 10:03:28 sthen Exp $
 
 COMMENT=	library for encoding and decoding .avif files
 
@@ -25,9 +25,11 @@ MODULES=	devel/cmake
 LIB_DEPENDS=	multimedia/aom \
 		multimedia/dav1d
 
-CONFIGURE_ARGS+=-DAVIF_CODEC_AOM=ON \
+CONFIGURE_ARGS+=-DAVIF_BUILD_TESTS=ON \
+		-DAVIF_CODEC_AOM=ON \
 		-DAVIF_CODEC_DAV1D=ON
 
-NO_TEST=	Yes
+do-test:
+	${WRKBUILD}/aviftest ${WRKSRC}/tests/data
 
 .include <bsd.port.mk>
