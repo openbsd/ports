@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1521 2020/03/06 10:49:00 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1522 2020/03/06 15:21:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -855,11 +855,7 @@ WRKINST ?= ${FAKEOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
 WRKINST ?= ${WRKDIR}/fake-${MACHINE_ARCH}${_FLAVOR_EXT2}
 .endif
 
-.if ${SEPARATE_BUILD:L:Mflavored}
-_WRKDIR_STEM = ${PKGNAME}
-.else
 _WRKDIR_STEM = ${PKGNAME}${_FLAVOR_EXT2}
-.endif
 
 WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
 _WRKDIRS = ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
