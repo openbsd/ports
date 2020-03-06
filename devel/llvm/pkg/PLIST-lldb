@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lldb,v 1.3 2019/07/06 15:06:36 jca Exp $
+@comment $OpenBSD: PLIST-lldb,v 1.4 2020/03/06 14:39:57 jca Exp $
 @conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
 @conflict llvm-<6.0.1p19
 @bin bin/lldb
@@ -515,101 +515,100 @@ include/lldb/lldb-private.h
 include/lldb/lldb-public.h
 include/lldb/lldb-types.h
 include/lldb/lldb-versioning.h
-@comment include/llvm/CodeGen/ReturnProtectorLowering.h
 @lib lib/liblldb.so.${LIBlldb_VERSION}
-lib/liblldbBase.a
-lib/liblldbBreakpoint.a
-lib/liblldbCommands.a
-lib/liblldbCore.a
-lib/liblldbDataFormatters.a
-lib/liblldbExpression.a
-lib/liblldbHost.a
-lib/liblldbInitialization.a
-lib/liblldbInterpreter.a
-lib/liblldbPluginABIMacOSX_arm.a
-lib/liblldbPluginABIMacOSX_arm64.a
-lib/liblldbPluginABIMacOSX_i386.a
-lib/liblldbPluginABISysV_arm.a
-lib/liblldbPluginABISysV_arm64.a
-lib/liblldbPluginABISysV_hexagon.a
-lib/liblldbPluginABISysV_i386.a
-lib/liblldbPluginABISysV_mips.a
-lib/liblldbPluginABISysV_mips64.a
-lib/liblldbPluginABISysV_ppc.a
-lib/liblldbPluginABISysV_ppc64.a
-lib/liblldbPluginABISysV_s390x.a
-lib/liblldbPluginABISysV_x86_64.a
-lib/liblldbPluginAppleObjCRuntime.a
-lib/liblldbPluginArchitectureArm.a
-lib/liblldbPluginArchitectureMips.a
-lib/liblldbPluginArchitecturePPC64.a
-lib/liblldbPluginCPlusPlusLanguage.a
-lib/liblldbPluginCXXItaniumABI.a
-lib/liblldbPluginClangCommon.a
-lib/liblldbPluginDisassemblerLLVM.a
-lib/liblldbPluginDynamicLoaderDarwinKernel.a
-lib/liblldbPluginDynamicLoaderHexagonDYLD.a
-lib/liblldbPluginDynamicLoaderMacOSXDYLD.a
-lib/liblldbPluginDynamicLoaderPosixDYLD.a
-lib/liblldbPluginDynamicLoaderStatic.a
-lib/liblldbPluginDynamicLoaderWindowsDYLD.a
-lib/liblldbPluginExpressionParserClang.a
-lib/liblldbPluginInstructionARM.a
-lib/liblldbPluginInstructionARM64.a
-lib/liblldbPluginInstructionMIPS.a
-lib/liblldbPluginInstructionMIPS64.a
-lib/liblldbPluginInstructionPPC64.a
-lib/liblldbPluginInstrumentationRuntimeASan.a
-lib/liblldbPluginInstrumentationRuntimeMainThreadChecker.a
-lib/liblldbPluginInstrumentationRuntimeTSan.a
-lib/liblldbPluginInstrumentationRuntimeUBSan.a
-lib/liblldbPluginJITLoaderGDB.a
-lib/liblldbPluginMemoryHistoryASan.a
-lib/liblldbPluginOSPython.a
-lib/liblldbPluginObjCLanguage.a
-lib/liblldbPluginObjCPlusPlusLanguage.a
-lib/liblldbPluginObjectContainerBSDArchive.a
-lib/liblldbPluginObjectContainerMachOArchive.a
-lib/liblldbPluginObjectFileBreakpad.a
-lib/liblldbPluginObjectFileELF.a
-lib/liblldbPluginObjectFileJIT.a
-lib/liblldbPluginObjectFileMachO.a
-lib/liblldbPluginObjectFilePECOFF.a
-lib/liblldbPluginPlatformAndroid.a
-lib/liblldbPluginPlatformFreeBSD.a
-lib/liblldbPluginPlatformGDB.a
-lib/liblldbPluginPlatformKalimba.a
-lib/liblldbPluginPlatformLinux.a
-lib/liblldbPluginPlatformMacOSX.a
-lib/liblldbPluginPlatformNetBSD.a
-lib/liblldbPluginPlatformOpenBSD.a
-lib/liblldbPluginPlatformPOSIX.a
-lib/liblldbPluginPlatformWindows.a
-lib/liblldbPluginProcessElfCore.a
-lib/liblldbPluginProcessGDBRemote.a
-lib/liblldbPluginProcessMachCore.a
-lib/liblldbPluginProcessMinidump.a
-lib/liblldbPluginProcessUtility.a
-lib/liblldbPluginRenderScriptRuntime.a
-lib/liblldbPluginScriptInterpreterNone.a
-lib/liblldbPluginScriptInterpreterPython.a
-lib/liblldbPluginStructuredDataDarwinLog.a
-lib/liblldbPluginSymbolFileBreakpad.a
-lib/liblldbPluginSymbolFileDWARF.a
-lib/liblldbPluginSymbolFileNativePDB.a
-lib/liblldbPluginSymbolFilePDB.a
-lib/liblldbPluginSymbolFileSymtab.a
-lib/liblldbPluginSymbolVendorELF.a
-lib/liblldbPluginSystemRuntimeMacOSX.a
-lib/liblldbPluginUnwindAssemblyInstEmulation.a
-lib/liblldbPluginUnwindAssemblyX86.a
-lib/liblldbSymbol.a
-lib/liblldbTarget.a
-lib/liblldbUtility.a
-lib/liblldbUtilityHelpers.a
+@static-lib lib/liblldbBase.a
+@static-lib lib/liblldbBreakpoint.a
+@static-lib lib/liblldbCommands.a
+@static-lib lib/liblldbCore.a
+@static-lib lib/liblldbDataFormatters.a
+@static-lib lib/liblldbExpression.a
+@static-lib lib/liblldbHost.a
+@static-lib lib/liblldbInitialization.a
+@static-lib lib/liblldbInterpreter.a
+@static-lib lib/liblldbPluginABIMacOSX_arm.a
+@static-lib lib/liblldbPluginABIMacOSX_arm64.a
+@static-lib lib/liblldbPluginABIMacOSX_i386.a
+@static-lib lib/liblldbPluginABISysV_arm.a
+@static-lib lib/liblldbPluginABISysV_arm64.a
+@static-lib lib/liblldbPluginABISysV_hexagon.a
+@static-lib lib/liblldbPluginABISysV_i386.a
+@static-lib lib/liblldbPluginABISysV_mips.a
+@static-lib lib/liblldbPluginABISysV_mips64.a
+@static-lib lib/liblldbPluginABISysV_ppc.a
+@static-lib lib/liblldbPluginABISysV_ppc64.a
+@static-lib lib/liblldbPluginABISysV_s390x.a
+@static-lib lib/liblldbPluginABISysV_x86_64.a
+@static-lib lib/liblldbPluginAppleObjCRuntime.a
+@static-lib lib/liblldbPluginArchitectureArm.a
+@static-lib lib/liblldbPluginArchitectureMips.a
+@static-lib lib/liblldbPluginArchitecturePPC64.a
+@static-lib lib/liblldbPluginCPlusPlusLanguage.a
+@static-lib lib/liblldbPluginCXXItaniumABI.a
+@static-lib lib/liblldbPluginClangCommon.a
+@static-lib lib/liblldbPluginDisassemblerLLVM.a
+@static-lib lib/liblldbPluginDynamicLoaderDarwinKernel.a
+@static-lib lib/liblldbPluginDynamicLoaderHexagonDYLD.a
+@static-lib lib/liblldbPluginDynamicLoaderMacOSXDYLD.a
+@static-lib lib/liblldbPluginDynamicLoaderPosixDYLD.a
+@static-lib lib/liblldbPluginDynamicLoaderStatic.a
+@static-lib lib/liblldbPluginDynamicLoaderWindowsDYLD.a
+@static-lib lib/liblldbPluginExpressionParserClang.a
+@static-lib lib/liblldbPluginInstructionARM.a
+@static-lib lib/liblldbPluginInstructionARM64.a
+@static-lib lib/liblldbPluginInstructionMIPS.a
+@static-lib lib/liblldbPluginInstructionMIPS64.a
+@static-lib lib/liblldbPluginInstructionPPC64.a
+@static-lib lib/liblldbPluginInstrumentationRuntimeASan.a
+@static-lib lib/liblldbPluginInstrumentationRuntimeMainThreadChecker.a
+@static-lib lib/liblldbPluginInstrumentationRuntimeTSan.a
+@static-lib lib/liblldbPluginInstrumentationRuntimeUBSan.a
+@static-lib lib/liblldbPluginJITLoaderGDB.a
+@static-lib lib/liblldbPluginMemoryHistoryASan.a
+@static-lib lib/liblldbPluginOSPython.a
+@static-lib lib/liblldbPluginObjCLanguage.a
+@static-lib lib/liblldbPluginObjCPlusPlusLanguage.a
+@static-lib lib/liblldbPluginObjectContainerBSDArchive.a
+@static-lib lib/liblldbPluginObjectContainerMachOArchive.a
+@static-lib lib/liblldbPluginObjectFileBreakpad.a
+@static-lib lib/liblldbPluginObjectFileELF.a
+@static-lib lib/liblldbPluginObjectFileJIT.a
+@static-lib lib/liblldbPluginObjectFileMachO.a
+@static-lib lib/liblldbPluginObjectFilePECOFF.a
+@static-lib lib/liblldbPluginPlatformAndroid.a
+@static-lib lib/liblldbPluginPlatformFreeBSD.a
+@static-lib lib/liblldbPluginPlatformGDB.a
+@static-lib lib/liblldbPluginPlatformKalimba.a
+@static-lib lib/liblldbPluginPlatformLinux.a
+@static-lib lib/liblldbPluginPlatformMacOSX.a
+@static-lib lib/liblldbPluginPlatformNetBSD.a
+@static-lib lib/liblldbPluginPlatformOpenBSD.a
+@static-lib lib/liblldbPluginPlatformPOSIX.a
+@static-lib lib/liblldbPluginPlatformWindows.a
+@static-lib lib/liblldbPluginProcessElfCore.a
+@static-lib lib/liblldbPluginProcessGDBRemote.a
+@static-lib lib/liblldbPluginProcessMachCore.a
+@static-lib lib/liblldbPluginProcessMinidump.a
+@static-lib lib/liblldbPluginProcessUtility.a
+@static-lib lib/liblldbPluginRenderScriptRuntime.a
+@static-lib lib/liblldbPluginScriptInterpreterNone.a
+@static-lib lib/liblldbPluginScriptInterpreterPython.a
+@static-lib lib/liblldbPluginStructuredDataDarwinLog.a
+@static-lib lib/liblldbPluginSymbolFileBreakpad.a
+@static-lib lib/liblldbPluginSymbolFileDWARF.a
+@static-lib lib/liblldbPluginSymbolFileNativePDB.a
+@static-lib lib/liblldbPluginSymbolFilePDB.a
+@static-lib lib/liblldbPluginSymbolFileSymtab.a
+@static-lib lib/liblldbPluginSymbolVendorELF.a
+@static-lib lib/liblldbPluginSystemRuntimeMacOSX.a
+@static-lib lib/liblldbPluginUnwindAssemblyInstEmulation.a
+@static-lib lib/liblldbPluginUnwindAssemblyX86.a
+@static-lib lib/liblldbSymbol.a
+@static-lib lib/liblldbTarget.a
+@static-lib lib/liblldbUtility.a
+@static-lib lib/liblldbUtilityHelpers.a
 lib/python${MODPY_VERSION}/site-packages/lldb/
 lib/python${MODPY_VERSION}/site-packages/lldb/__init__.py
-lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.so
+@so lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.so
 lib/python${MODPY_VERSION}/site-packages/lldb/embedded_interpreter.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/Logger.py

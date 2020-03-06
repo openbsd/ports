@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2020/03/05 00:50:00 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.243 2020/03/06 14:39:57 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -18,7 +18,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	7
+REVISION-main =	8
 REVISION-lldb=	0
 
 CATEGORIES =	devel
@@ -90,7 +90,8 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_LINK_LLVM_DYLIB:Bool=True \
 			-DLLVM_BUILD_LLVM_DYLIB:Bool=True \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Backtrace:Bool=True
+			-DCMAKE_DISABLE_FIND_PACKAGE_Backtrace:Bool=True \
+			-DLLDB_USE_SYSTEM_SIX=ON
 
 # Disable some protections in the compiler to regain performance
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2019/12/05 15:24:59 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2020/03/06 14:39:57 jca Exp $
 @pkgpath devel/llvm
 @bin bin/bugpoint
 @bin bin/c-index-test
@@ -2278,199 +2278,199 @@ lib/cmake/llvm/LLVMInstallSymlink.cmake
 lib/cmake/llvm/LLVMProcessSources.cmake
 lib/cmake/llvm/TableGen.cmake
 lib/cmake/llvm/VersionFromVCS.cmake
-lib/libLLVM-${LLVM_V}.so
-lib/libLLVM-8.so
-lib/libLLVM.so
-lib/libLLVMAArch64AsmParser.a
-lib/libLLVMAArch64AsmPrinter.a
-lib/libLLVMAArch64CodeGen.a
-lib/libLLVMAArch64Desc.a
-lib/libLLVMAArch64Disassembler.a
-lib/libLLVMAArch64Info.a
-lib/libLLVMAArch64Utils.a
-lib/libLLVMAMDGPUAsmParser.a
-lib/libLLVMAMDGPUAsmPrinter.a
-lib/libLLVMAMDGPUCodeGen.a
-lib/libLLVMAMDGPUDesc.a
-lib/libLLVMAMDGPUDisassembler.a
-lib/libLLVMAMDGPUInfo.a
-lib/libLLVMAMDGPUUtils.a
-lib/libLLVMARMAsmParser.a
-lib/libLLVMARMAsmPrinter.a
-lib/libLLVMARMCodeGen.a
-lib/libLLVMARMDesc.a
-lib/libLLVMARMDisassembler.a
-lib/libLLVMARMInfo.a
-lib/libLLVMARMUtils.a
-lib/libLLVMAggressiveInstCombine.a
-lib/libLLVMAnalysis.a
-lib/libLLVMAsmParser.a
-lib/libLLVMAsmPrinter.a
-lib/libLLVMBPFAsmParser.a
-lib/libLLVMBPFAsmPrinter.a
-lib/libLLVMBPFCodeGen.a
-lib/libLLVMBPFDesc.a
-lib/libLLVMBPFDisassembler.a
-lib/libLLVMBPFInfo.a
-lib/libLLVMBinaryFormat.a
-lib/libLLVMBitReader.a
-lib/libLLVMBitWriter.a
-lib/libLLVMCodeGen.a
-lib/libLLVMCore.a
-lib/libLLVMCoroutines.a
-lib/libLLVMCoverage.a
-lib/libLLVMDebugInfoCodeView.a
-lib/libLLVMDebugInfoDWARF.a
-lib/libLLVMDebugInfoMSF.a
-lib/libLLVMDebugInfoPDB.a
-lib/libLLVMDemangle.a
-lib/libLLVMDlltoolDriver.a
-lib/libLLVMExecutionEngine.a
-lib/libLLVMFuzzMutate.a
-lib/libLLVMGlobalISel.a
-lib/libLLVMHexagonAsmParser.a
-lib/libLLVMHexagonCodeGen.a
-lib/libLLVMHexagonDesc.a
-lib/libLLVMHexagonDisassembler.a
-lib/libLLVMHexagonInfo.a
-lib/libLLVMIRReader.a
-lib/libLLVMInstCombine.a
-lib/libLLVMInstrumentation.a
-lib/libLLVMInterpreter.a
-lib/libLLVMLTO.a
-lib/libLLVMLanaiAsmParser.a
-lib/libLLVMLanaiAsmPrinter.a
-lib/libLLVMLanaiCodeGen.a
-lib/libLLVMLanaiDesc.a
-lib/libLLVMLanaiDisassembler.a
-lib/libLLVMLanaiInfo.a
-lib/libLLVMLibDriver.a
-lib/libLLVMLineEditor.a
-lib/libLLVMLinker.a
-lib/libLLVMMC.a
-lib/libLLVMMCA.a
-lib/libLLVMMCDisassembler.a
-lib/libLLVMMCJIT.a
-lib/libLLVMMCParser.a
-lib/libLLVMMIRParser.a
-lib/libLLVMMSP430AsmParser.a
-lib/libLLVMMSP430AsmPrinter.a
-lib/libLLVMMSP430CodeGen.a
-lib/libLLVMMSP430Desc.a
-lib/libLLVMMSP430Disassembler.a
-lib/libLLVMMSP430Info.a
-lib/libLLVMMipsAsmParser.a
-lib/libLLVMMipsAsmPrinter.a
-lib/libLLVMMipsCodeGen.a
-lib/libLLVMMipsDesc.a
-lib/libLLVMMipsDisassembler.a
-lib/libLLVMMipsInfo.a
-lib/libLLVMNVPTXAsmPrinter.a
-lib/libLLVMNVPTXCodeGen.a
-lib/libLLVMNVPTXDesc.a
-lib/libLLVMNVPTXInfo.a
-lib/libLLVMObjCARCOpts.a
-lib/libLLVMObject.a
-lib/libLLVMObjectYAML.a
-lib/libLLVMOptRemarks.a
-lib/libLLVMOption.a
-lib/libLLVMOrcJIT.a
-lib/libLLVMPasses.a
-lib/libLLVMPowerPCAsmParser.a
-lib/libLLVMPowerPCAsmPrinter.a
-lib/libLLVMPowerPCCodeGen.a
-lib/libLLVMPowerPCDesc.a
-lib/libLLVMPowerPCDisassembler.a
-lib/libLLVMPowerPCInfo.a
-lib/libLLVMProfileData.a
-lib/libLLVMRuntimeDyld.a
-lib/libLLVMScalarOpts.a
-lib/libLLVMSelectionDAG.a
-lib/libLLVMSparcAsmParser.a
-lib/libLLVMSparcAsmPrinter.a
-lib/libLLVMSparcCodeGen.a
-lib/libLLVMSparcDesc.a
-lib/libLLVMSparcDisassembler.a
-lib/libLLVMSparcInfo.a
-lib/libLLVMSupport.a
-lib/libLLVMSymbolize.a
-lib/libLLVMSystemZAsmParser.a
-lib/libLLVMSystemZAsmPrinter.a
-lib/libLLVMSystemZCodeGen.a
-lib/libLLVMSystemZDesc.a
-lib/libLLVMSystemZDisassembler.a
-lib/libLLVMSystemZInfo.a
-lib/libLLVMTableGen.a
-lib/libLLVMTarget.a
-lib/libLLVMTextAPI.a
-lib/libLLVMTransformUtils.a
-lib/libLLVMVectorize.a
-lib/libLLVMWebAssemblyAsmParser.a
-lib/libLLVMWebAssemblyAsmPrinter.a
-lib/libLLVMWebAssemblyCodeGen.a
-lib/libLLVMWebAssemblyDesc.a
-lib/libLLVMWebAssemblyDisassembler.a
-lib/libLLVMWebAssemblyInfo.a
-lib/libLLVMWindowsManifest.a
-lib/libLLVMX86AsmParser.a
-lib/libLLVMX86AsmPrinter.a
-lib/libLLVMX86CodeGen.a
-lib/libLLVMX86Desc.a
-lib/libLLVMX86Disassembler.a
-lib/libLLVMX86Info.a
-lib/libLLVMX86Utils.a
-lib/libLLVMXCoreAsmPrinter.a
-lib/libLLVMXCoreCodeGen.a
-lib/libLLVMXCoreDesc.a
-lib/libLLVMXCoreDisassembler.a
-lib/libLLVMXCoreInfo.a
-lib/libLLVMXRay.a
-lib/libLLVMipo.a
+@so lib/libLLVM-${LLVM_V}.so
+@so lib/libLLVM-8.so
+@so lib/libLLVM.so
+@static-lib lib/libLLVMAArch64AsmParser.a
+@static-lib lib/libLLVMAArch64AsmPrinter.a
+@static-lib lib/libLLVMAArch64CodeGen.a
+@static-lib lib/libLLVMAArch64Desc.a
+@static-lib lib/libLLVMAArch64Disassembler.a
+@static-lib lib/libLLVMAArch64Info.a
+@static-lib lib/libLLVMAArch64Utils.a
+@static-lib lib/libLLVMAMDGPUAsmParser.a
+@static-lib lib/libLLVMAMDGPUAsmPrinter.a
+@static-lib lib/libLLVMAMDGPUCodeGen.a
+@static-lib lib/libLLVMAMDGPUDesc.a
+@static-lib lib/libLLVMAMDGPUDisassembler.a
+@static-lib lib/libLLVMAMDGPUInfo.a
+@static-lib lib/libLLVMAMDGPUUtils.a
+@static-lib lib/libLLVMARMAsmParser.a
+@static-lib lib/libLLVMARMAsmPrinter.a
+@static-lib lib/libLLVMARMCodeGen.a
+@static-lib lib/libLLVMARMDesc.a
+@static-lib lib/libLLVMARMDisassembler.a
+@static-lib lib/libLLVMARMInfo.a
+@static-lib lib/libLLVMARMUtils.a
+@static-lib lib/libLLVMAggressiveInstCombine.a
+@static-lib lib/libLLVMAnalysis.a
+@static-lib lib/libLLVMAsmParser.a
+@static-lib lib/libLLVMAsmPrinter.a
+@static-lib lib/libLLVMBPFAsmParser.a
+@static-lib lib/libLLVMBPFAsmPrinter.a
+@static-lib lib/libLLVMBPFCodeGen.a
+@static-lib lib/libLLVMBPFDesc.a
+@static-lib lib/libLLVMBPFDisassembler.a
+@static-lib lib/libLLVMBPFInfo.a
+@static-lib lib/libLLVMBinaryFormat.a
+@static-lib lib/libLLVMBitReader.a
+@static-lib lib/libLLVMBitWriter.a
+@static-lib lib/libLLVMCodeGen.a
+@static-lib lib/libLLVMCore.a
+@static-lib lib/libLLVMCoroutines.a
+@static-lib lib/libLLVMCoverage.a
+@static-lib lib/libLLVMDebugInfoCodeView.a
+@static-lib lib/libLLVMDebugInfoDWARF.a
+@static-lib lib/libLLVMDebugInfoMSF.a
+@static-lib lib/libLLVMDebugInfoPDB.a
+@static-lib lib/libLLVMDemangle.a
+@static-lib lib/libLLVMDlltoolDriver.a
+@static-lib lib/libLLVMExecutionEngine.a
+@static-lib lib/libLLVMFuzzMutate.a
+@static-lib lib/libLLVMGlobalISel.a
+@static-lib lib/libLLVMHexagonAsmParser.a
+@static-lib lib/libLLVMHexagonCodeGen.a
+@static-lib lib/libLLVMHexagonDesc.a
+@static-lib lib/libLLVMHexagonDisassembler.a
+@static-lib lib/libLLVMHexagonInfo.a
+@static-lib lib/libLLVMIRReader.a
+@static-lib lib/libLLVMInstCombine.a
+@static-lib lib/libLLVMInstrumentation.a
+@static-lib lib/libLLVMInterpreter.a
+@static-lib lib/libLLVMLTO.a
+@static-lib lib/libLLVMLanaiAsmParser.a
+@static-lib lib/libLLVMLanaiAsmPrinter.a
+@static-lib lib/libLLVMLanaiCodeGen.a
+@static-lib lib/libLLVMLanaiDesc.a
+@static-lib lib/libLLVMLanaiDisassembler.a
+@static-lib lib/libLLVMLanaiInfo.a
+@static-lib lib/libLLVMLibDriver.a
+@static-lib lib/libLLVMLineEditor.a
+@static-lib lib/libLLVMLinker.a
+@static-lib lib/libLLVMMC.a
+@static-lib lib/libLLVMMCA.a
+@static-lib lib/libLLVMMCDisassembler.a
+@static-lib lib/libLLVMMCJIT.a
+@static-lib lib/libLLVMMCParser.a
+@static-lib lib/libLLVMMIRParser.a
+@static-lib lib/libLLVMMSP430AsmParser.a
+@static-lib lib/libLLVMMSP430AsmPrinter.a
+@static-lib lib/libLLVMMSP430CodeGen.a
+@static-lib lib/libLLVMMSP430Desc.a
+@static-lib lib/libLLVMMSP430Disassembler.a
+@static-lib lib/libLLVMMSP430Info.a
+@static-lib lib/libLLVMMipsAsmParser.a
+@static-lib lib/libLLVMMipsAsmPrinter.a
+@static-lib lib/libLLVMMipsCodeGen.a
+@static-lib lib/libLLVMMipsDesc.a
+@static-lib lib/libLLVMMipsDisassembler.a
+@static-lib lib/libLLVMMipsInfo.a
+@static-lib lib/libLLVMNVPTXAsmPrinter.a
+@static-lib lib/libLLVMNVPTXCodeGen.a
+@static-lib lib/libLLVMNVPTXDesc.a
+@static-lib lib/libLLVMNVPTXInfo.a
+@static-lib lib/libLLVMObjCARCOpts.a
+@static-lib lib/libLLVMObject.a
+@static-lib lib/libLLVMObjectYAML.a
+@static-lib lib/libLLVMOptRemarks.a
+@static-lib lib/libLLVMOption.a
+@static-lib lib/libLLVMOrcJIT.a
+@static-lib lib/libLLVMPasses.a
+@static-lib lib/libLLVMPowerPCAsmParser.a
+@static-lib lib/libLLVMPowerPCAsmPrinter.a
+@static-lib lib/libLLVMPowerPCCodeGen.a
+@static-lib lib/libLLVMPowerPCDesc.a
+@static-lib lib/libLLVMPowerPCDisassembler.a
+@static-lib lib/libLLVMPowerPCInfo.a
+@static-lib lib/libLLVMProfileData.a
+@static-lib lib/libLLVMRuntimeDyld.a
+@static-lib lib/libLLVMScalarOpts.a
+@static-lib lib/libLLVMSelectionDAG.a
+@static-lib lib/libLLVMSparcAsmParser.a
+@static-lib lib/libLLVMSparcAsmPrinter.a
+@static-lib lib/libLLVMSparcCodeGen.a
+@static-lib lib/libLLVMSparcDesc.a
+@static-lib lib/libLLVMSparcDisassembler.a
+@static-lib lib/libLLVMSparcInfo.a
+@static-lib lib/libLLVMSupport.a
+@static-lib lib/libLLVMSymbolize.a
+@static-lib lib/libLLVMSystemZAsmParser.a
+@static-lib lib/libLLVMSystemZAsmPrinter.a
+@static-lib lib/libLLVMSystemZCodeGen.a
+@static-lib lib/libLLVMSystemZDesc.a
+@static-lib lib/libLLVMSystemZDisassembler.a
+@static-lib lib/libLLVMSystemZInfo.a
+@static-lib lib/libLLVMTableGen.a
+@static-lib lib/libLLVMTarget.a
+@static-lib lib/libLLVMTextAPI.a
+@static-lib lib/libLLVMTransformUtils.a
+@static-lib lib/libLLVMVectorize.a
+@static-lib lib/libLLVMWebAssemblyAsmParser.a
+@static-lib lib/libLLVMWebAssemblyAsmPrinter.a
+@static-lib lib/libLLVMWebAssemblyCodeGen.a
+@static-lib lib/libLLVMWebAssemblyDesc.a
+@static-lib lib/libLLVMWebAssemblyDisassembler.a
+@static-lib lib/libLLVMWebAssemblyInfo.a
+@static-lib lib/libLLVMWindowsManifest.a
+@static-lib lib/libLLVMX86AsmParser.a
+@static-lib lib/libLLVMX86AsmPrinter.a
+@static-lib lib/libLLVMX86CodeGen.a
+@static-lib lib/libLLVMX86Desc.a
+@static-lib lib/libLLVMX86Disassembler.a
+@static-lib lib/libLLVMX86Info.a
+@static-lib lib/libLLVMX86Utils.a
+@static-lib lib/libLLVMXCoreAsmPrinter.a
+@static-lib lib/libLLVMXCoreCodeGen.a
+@static-lib lib/libLLVMXCoreDesc.a
+@static-lib lib/libLLVMXCoreDisassembler.a
+@static-lib lib/libLLVMXCoreInfo.a
+@static-lib lib/libLLVMXRay.a
+@static-lib lib/libLLVMipo.a
 @lib lib/libLTO.so.${LIBLTO_VERSION}
 @lib lib/libOptRemarks.so.${LIBOptRemarks_VERSION}
 @lib lib/libclang.so.${LIBclang_VERSION}
-lib/libclangARCMigrate.a
-lib/libclangAST.a
-lib/libclangASTMatchers.a
-lib/libclangAnalysis.a
-lib/libclangBasic.a
-lib/libclangCodeGen.a
-lib/libclangCrossTU.a
-lib/libclangDriver.a
-lib/libclangDynamicASTMatchers.a
-lib/libclangEdit.a
-lib/libclangFormat.a
-lib/libclangFrontend.a
-lib/libclangFrontendTool.a
-lib/libclangHandleCXX.a
-lib/libclangHandleLLVM.a
-lib/libclangIndex.a
-lib/libclangLex.a
-lib/libclangParse.a
-lib/libclangRewrite.a
-lib/libclangRewriteFrontend.a
-lib/libclangSema.a
-lib/libclangSerialization.a
-lib/libclangStaticAnalyzerCheckers.a
-lib/libclangStaticAnalyzerCore.a
-lib/libclangStaticAnalyzerFrontend.a
-lib/libclangTooling.a
+@static-lib lib/libclangARCMigrate.a
+@static-lib lib/libclangAST.a
+@static-lib lib/libclangASTMatchers.a
+@static-lib lib/libclangAnalysis.a
+@static-lib lib/libclangBasic.a
+@static-lib lib/libclangCodeGen.a
+@static-lib lib/libclangCrossTU.a
+@static-lib lib/libclangDriver.a
+@static-lib lib/libclangDynamicASTMatchers.a
+@static-lib lib/libclangEdit.a
+@static-lib lib/libclangFormat.a
+@static-lib lib/libclangFrontend.a
+@static-lib lib/libclangFrontendTool.a
+@static-lib lib/libclangHandleCXX.a
+@static-lib lib/libclangHandleLLVM.a
+@static-lib lib/libclangIndex.a
+@static-lib lib/libclangLex.a
+@static-lib lib/libclangParse.a
+@static-lib lib/libclangRewrite.a
+@static-lib lib/libclangRewriteFrontend.a
+@static-lib lib/libclangSema.a
+@static-lib lib/libclangSerialization.a
+@static-lib lib/libclangStaticAnalyzerCheckers.a
+@static-lib lib/libclangStaticAnalyzerCore.a
+@static-lib lib/libclangStaticAnalyzerFrontend.a
+@static-lib lib/libclangTooling.a
 @comment lib/libgtest.a
 @comment lib/libgtest_main.a
-lib/libclangToolingASTDiff.a
-lib/libclangToolingCore.a
-lib/libclangToolingInclusions.a
-lib/libclangToolingRefactor.a
-lib/liblldCOFF.a
-lib/liblldCommon.a
-lib/liblldCore.a
-lib/liblldDriver.a
-lib/liblldELF.a
-lib/liblldMachO.a
-lib/liblldMinGW.a
-lib/liblldReaderWriter.a
-lib/liblldWasm.a
-lib/liblldYAML.a
+@static-lib lib/libclangToolingASTDiff.a
+@static-lib lib/libclangToolingCore.a
+@static-lib lib/libclangToolingInclusions.a
+@static-lib lib/libclangToolingRefactor.a
+@static-lib lib/liblldCOFF.a
+@static-lib lib/liblldCommon.a
+@static-lib lib/liblldCore.a
+@static-lib lib/liblldDriver.a
+@static-lib lib/liblldELF.a
+@static-lib lib/liblldMachO.a
+@static-lib lib/liblldMinGW.a
+@static-lib lib/liblldReaderWriter.a
+@static-lib lib/liblldWasm.a
+@static-lib lib/liblldYAML.a
 libexec/c++-analyzer
 libexec/ccc-analyzer
 @man man/man1/bugpoint.1
