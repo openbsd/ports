@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_hl_h,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+$OpenBSD: patch-src_hl_h,v 1.2 2020/03/07 00:30:59 cwen Exp $
 
 add OpenBSD to ifdef
 

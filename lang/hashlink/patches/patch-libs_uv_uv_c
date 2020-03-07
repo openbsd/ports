@@ -1,17 +1,18 @@
-$OpenBSD: patch-libs_uv_uv_c,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+$OpenBSD: patch-libs_uv_uv_c,v 1.2 2020/03/07 00:30:59 cwen Exp $
 
 add stub resolve function
 
 Index: libs/uv/uv.c
 --- libs/uv/uv.c.orig
 +++ libs/uv/uv.c
-@@ -93,6 +93,9 @@ static void on_write( uv_write_t *wr, int status ) {
- 	trigger_callb((uv_handle_t*)wr,EVT_WRITE,&args,1,false);
+@@ -94,6 +94,10 @@ static void on_write( uv_write_t *wr, int status ) {
  	on_close((uv_handle_t*)wr);
  }
+ 
 +HL_PRIM void HL_NAME(resolve)() {
 +}
 +DEFINE_PRIM(_VOID, resolve, _NO_ARG);
- 
++
  HL_PRIM bool HL_NAME(stream_write)( uv_stream_t *s, vbyte *b, int size, vclosure *c ) {
  	uv_write_t *wr = UV_ALLOC(uv_write_t);
+ 	events_data *d = init_hl_data((uv_handle_t*)wr);

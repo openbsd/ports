@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_std_thread_c,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+$OpenBSD: patch-src_std_thread_c,v 1.2 2020/03/07 00:30:59 cwen Exp $
 
 enable thread_id for OpenBSD using pthread_self()
 
