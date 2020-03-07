@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.77 2020/03/07 09:53:24 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.78 2020/03/07 11:36:52 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -19,6 +19,8 @@
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
 @newuser _dovenull:666:_dovenull:daemon:Dovecot Login User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/dovecot/*
+@sample ${SYSCONFDIR}/dovecot/
+@rcscript ${RCDIR}/dovecot
 @bin bin/doveadm
 @bin bin/doveconf
 @comment bin/dovecot-sysreport
@@ -1065,7 +1067,6 @@ share/examples/dovecot/
 share/examples/dovecot/dovecot-openssl.cnf
 @sample /etc/ssl/dovecot-openssl.cnf
 share/examples/dovecot/example-config/
-@sample ${SYSCONFDIR}/dovecot/
 share/examples/dovecot/example-config/conf.d/
 @sample ${SYSCONFDIR}/dovecot/conf.d/
 share/examples/dovecot/example-config/conf.d/10-auth.conf
@@ -1133,8 +1134,7 @@ share/examples/dovecot/example-config/dovecot.conf
 @mode 750
 @group _dovenull
 @sample /var/dovecot/login/
-@extra /etc/ssl/dovecotcert.pem
-@extra /etc/ssl/private/dovecot.pem
 @mode
 @group
-@rcscript ${RCDIR}/dovecot
+@extra /etc/ssl/dovecotcert.pem
+@extra /etc/ssl/private/dovecot.pem
