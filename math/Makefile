@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2020/03/04 07:55:27 martin Exp $
+# $OpenBSD: Makefile,v 1.178 2020/03/07 06:50:42 bket Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -141,7 +141,6 @@
      SUBDIR += py-snuggs
      SUBDIR += py-snuggs,python3
      SUBDIR += py-statistics
-     SUBDIR += py-sympy
      SUBDIR += py-sympy,python3
      SUBDIR += py-tables
      SUBDIR += qhull

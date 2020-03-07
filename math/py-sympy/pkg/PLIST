@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/02/15 22:01:56 daniel Exp $
-bin/isympy${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.10 2020/03/07 06:50:43 bket Exp $
+@conflict py-sympy-*
+@pkgpath math/py-sympy
+bin/isympy
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}isympy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isympy.py
 lib/python${MODPY_VERSION}/site-packages/sympy/
@@ -2916,5 +2918,5 @@ lib/python${MODPY_VERSION}/site-packages/sympy/vector/tests/test_operators.py
 lib/python${MODPY_VERSION}/site-packages/sympy/vector/tests/test_printing.py
 lib/python${MODPY_VERSION}/site-packages/sympy/vector/tests/test_vector.py
 lib/python${MODPY_VERSION}/site-packages/sympy/vector/vector.py
-@man man/man1/isympy${MODPY_BIN_SUFFIX}.1
+@man man/man1/isympy.1
 share/doc/pkg-readmes/${PKGSTEM}

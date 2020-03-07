@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/15 22:01:55 daniel Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/07 06:50:43 bket Exp $
 
 COMMENT =		computer algebra system (CAS) in Python
 
 MODPY_EGG_VERSION =	1.5.1
+REVISION =		0
 DISTNAME =		sympy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -27,14 +28,10 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 TEST_IS_INTERACTIVE =	X11
 
 PORTHOME =		${WRKSRC}
-
-post-install:
-	mv ${PREFIX}/bin/isympy{,${MODPY_BIN_SUFFIX}}
-	mv ${PREFIX}/man/man1/isympy{,${MODPY_BIN_SUFFIX}}.1
 
 .include <bsd.port.mk>
