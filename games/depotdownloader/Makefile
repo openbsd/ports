@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/27 15:53:11 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/07 17:43:15 thfr Exp $
 
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
 
 COMMENT =	Steam depot downloader utilizing the SteamKit2 library
 
-V =		2.3.1
+V =		2.3.2
 DISTNAME =	depotdownloader-${V}
 
 CATEGORIES =	games
