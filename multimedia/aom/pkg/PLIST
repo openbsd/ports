@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/19 14:21:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/07 13:32:40 ajacoutot Exp $
 @bin bin/aomdec
 @bin bin/aomenc
 include/aom/
@@ -11,5 +11,6 @@ include/aom/aom_image.h
 include/aom/aom_integer.h
 include/aom/aomcx.h
 include/aom/aomdx.h
+@static-lib lib/libaom.a
 @lib lib/libaom.so.${LIBaom_VERSION}
 lib/pkgconfig/aom.pc
