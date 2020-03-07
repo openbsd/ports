@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/07 10:26:29 benoit Exp $
 
 COMMENT=	SOAP Client/Server for PHP
 
-DISTNAME=	SOAP-0.13.0
+DISTNAME =	SOAP-0.14.0
 CATEGORIES=	www
 
 MODULES=	www/pear
