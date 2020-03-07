@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/04 20:00:55 rapha Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/07 15:09:49 cwen Exp $
 
 COMMENT =	minimalistic plugin API for video effects
 CATEGORIES =	graphics multimedia
@@ -16,6 +16,8 @@ PERMIT_PACKAGE = Yes
 WANTLIB =	${COMPILER_LIBCXX} m cairo
 
 LIB_DEPENDS =	graphics/cairo
+
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
