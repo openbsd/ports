@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2020/02/21 11:24:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/07 12:40:55 ajacoutot Exp $
 
 PROVIDER=		newrelic
-GH_TAGNAME=		v1.14.0
+GH_TAGNAME=		v1.15.0
 
 .include <bsd.port.mk>
