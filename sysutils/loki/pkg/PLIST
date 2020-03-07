@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/07 10:12:55 sthen Exp $
+@newgroup _loki:848
+@newuser _loki:848:848:daemon:Loki Daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/loki/
+@extraunexec rm -rf /var/promtail/
+@rcscript ${RCDIR}/loki
+@rcscript ${RCDIR}/promtail
+@bin bin/logcli
+@bin bin/loki
+@bin bin/loki-canary
+@bin bin/promtail
+share/examples/loki/
+@sample ${SYSCONFDIR}/loki/
+share/examples/loki/loki-local-config.yaml
+@sample ${SYSCONFDIR}/loki/loki-config.yaml
+share/examples/promtail/
+@sample ${SYSCONFDIR}/promtail/
+share/examples/promtail/promtail-local-config.yaml
+@sample ${SYSCONFDIR}/promtail/promtail-config.yaml
+@mode 750
+@owner _loki
+@group _loki
+@sample /var/loki/
+@sample /var/promtail/

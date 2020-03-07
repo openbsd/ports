@@ -1,0 +1,14 @@
+#!/bin/ksh
+#
+# $OpenBSD: promtail.rc,v 1.1.1.1 2020/03/07 10:12:55 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/promtail"
+daemon_user="_loki"
+daemon_flags="-config.file ${SYSCONFDIR}/promtail/promtail-config.yaml"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

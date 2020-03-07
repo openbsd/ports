@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmd_loki_loki-local-config_yaml,v 1.1.1.1 2020/03/07 10:12:55 sthen Exp $
+
+Index: cmd/loki/loki-local-config.yaml
+--- cmd/loki/loki-local-config.yaml.orig
++++ cmd/loki/loki-local-config.yaml
+@@ -27,10 +27,10 @@ schema_config:
+ 
+ storage_config:
+   boltdb:
+-    directory: /tmp/loki/index
++    directory: /var/loki/index
+ 
+   filesystem:
+-    directory: /tmp/loki/chunks
++    directory: /var/loki/chunks
+ 
+ limits_config:
+   enforce_metric_name: false

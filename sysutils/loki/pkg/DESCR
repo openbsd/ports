@@ -1,0 +1,17 @@
+Loki is a log aggregation system inspired by Prometheus. It does not index the
+contents of the logs, but rather a set of labels for each log stream.
+
+Compared to other log aggregation systems, Loki:
+- does not do full text indexing on logs
+- indexes and groups log streams using the same labels as Prometheus, allowing
+  to seamlessly switch between metrics and logs using the same labels
+- has native support in Grafana
+
+A Loki-based logging stack consists of 3 components:
+- promtail is the agent, responsible for gathering logs and sending them to Loki
+- loki is the main server, responsible for storing logs and processing queries
+- Grafana for querying and displaying the logs
+
+Additionally 2 other components are provided:
+- logcli to run LoqQL queries against a Loki server
+- loki-canary to audit the log capturing performance of Loki

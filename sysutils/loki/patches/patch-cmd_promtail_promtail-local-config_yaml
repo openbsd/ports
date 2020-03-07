@@ -1,0 +1,31 @@
+$OpenBSD: patch-cmd_promtail_promtail-local-config_yaml,v 1.1.1.1 2020/03/07 10:12:55 sthen Exp $
+
+Index: cmd/promtail/promtail-local-config.yaml
+--- cmd/promtail/promtail-local-config.yaml.orig
++++ cmd/promtail/promtail-local-config.yaml
+@@ -3,16 +3,16 @@ server:
+   grpc_listen_port: 0
+ 
+ positions:
+-  filename: /tmp/positions.yaml
++  filename: /var/promtail/positions.yaml
+ 
+ clients:
+   - url: http://localhost:3100/loki/api/v1/push
+ 
+-scrape_configs:
+-- job_name: system
+-  static_configs:
+-  - targets:
+-      - localhost
+-    labels:
+-      job: varlogs
+-      __path__: /var/log/*log
++#scrape_configs:
++#- job_name: system
++#  static_configs:
++#  - targets:
++#      - localhost
++#    labels:
++#      job: varlogs
++#      __path__: /var/log/*log
