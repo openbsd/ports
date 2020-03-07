@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/02 10:48:17 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/07 09:50:09 benoit Exp $
 include/libHX/
 include/libHX.h
 include/libHX/ctype_helper.h
@@ -14,12 +14,12 @@ include/libHX/option.h
 include/libHX/proc.h
 include/libHX/string.h
 include/libHX/wx_helper.hpp
-lib/libHX.a
+@static-lib lib/libHX.a
 lib/libHX.la
 @lib lib/libHX.so.${LIBHX_VERSION}
-lib/libHX_rtcheck.a
+@static-lib lib/libHX_rtcheck.a
 lib/libHX_rtcheck.la
-lib/libHX_rtcheck.so
+@so lib/libHX_rtcheck.so
 lib/pkgconfig/libHX.pc
 share/doc/libhx/
 share/doc/libhx/libHX_Documentation.pdf

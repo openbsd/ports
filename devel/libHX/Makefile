@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/07 09:50:09 benoit Exp $
 
 COMMENT=		C/C++ library with common data structures and functions
 
-DISTNAME=		libHX-3.23
+DISTNAME =		libHX-3.24
 CATEGORIES=		devel
 EXTRACT_SUFX=		.tar.xz
 
