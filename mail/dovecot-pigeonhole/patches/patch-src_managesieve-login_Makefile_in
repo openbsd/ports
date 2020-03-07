@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_managesieve-login_Makefile_in,v 1.15 2019/05/02 22:06:35 sthen Exp $
+$OpenBSD: patch-src_managesieve-login_Makefile_in,v 1.16 2020/03/07 09:53:47 sthen Exp $
 
 Index: src/managesieve-login/Makefile.in
 --- src/managesieve-login/Makefile.in.orig
 +++ src/managesieve-login/Makefile.in
-@@ -431,7 +431,7 @@ libs = \
+@@ -432,7 +432,7 @@ libs = \
  
  managesieve_login_CPPFLAGS = $(AM_CPPFLAGS) $(BINARY_CFLAGS)
  managesieve_login_LDFLAGS = $(BINARY_LDFLAGS)
