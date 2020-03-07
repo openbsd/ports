@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.557 2020/03/04 14:33:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.558 2020/03/07 10:13:17 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -168,6 +168,7 @@
      SUBDIR += logstalgia
      SUBDIR += logstash
      SUBDIR += logtail
+     SUBDIR += loki
      SUBDIR += lookat
      SUBDIR += lscpu
      SUBDIR += lsyncd
