@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/07 10:19:27 benoit Exp $
 
 COMMENT=	integrated Templates for PHP
 
-DISTNAME =	HTML_Template_IT-1.3.0
+DISTNAME =	HTML_Template_IT-1.3.1
 CATEGORIES=	www
 
 MODULES=	www/pear
