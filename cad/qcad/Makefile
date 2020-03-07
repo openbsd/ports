@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2019/08/24 05:11:26 feinerer Exp $
+# $OpenBSD: Makefile,v 1.36 2020/03/07 17:35:00 rsadowski Exp $
 
 COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad
 GH_PROJECT =	qcad
 GH_TAGNAME =	v3.23.0.0
-REVISION =	0
+REVISION =	1
 
 SO_VERSION =	0.0
 QCAD_LIBS =	qcadcore \
@@ -41,7 +41,8 @@ MODULES =	devel/qmake \
 
 BUILD_DEPENDS =	x11/qt5/qtimageformats
 RUN_DEPENDS =	devel/desktop-file-utils
-LIB_DEPENDS =	x11/qt5/qtscript \
+LIB_DEPENDS =	print/cups,-libs \
+		x11/qt5/qtscript \
 		x11/qt5/qtsvg \
 		x11/qt5/qttools \
 		x11/qt5/qtxmlpatterns
