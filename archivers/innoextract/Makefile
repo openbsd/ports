@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/03/07 17:48:59 thfr Exp $
 
 COMMENT=	unpack Inno Setup installers
 
-DISTNAME=	innoextract-1.7pl20190228
-
-# revert to MASTER_SITES=${HOMEPAGE}files/ when releases have caught up
-GH_ACCOUNT=	dscharrer
-GH_PROJECT=	innoextract
-GH_COMMIT=	38ae68f393b2f3ed1862ec7f24b1d99bbbaacb19
+DISTNAME=	innoextract-1.8
 
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/
@@ -16,9 +11,14 @@ MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
 # zlib/libpng
 PERMIT_PACKAGE=	Yes
 
+# pthread req'd by lzma and boost at runtime
+# boost_system-mt req'd by boost_filesystem-mt at runtime
 WANTLIB=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
 WANTLIB+=	boost_system-mt c iconv lzma m pthread ${COMPILER_LIBCXX}
 
+MASTER_SITES =	${HOMEPAGE}files/
+
+# C++17
 COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	archivers/xz \
