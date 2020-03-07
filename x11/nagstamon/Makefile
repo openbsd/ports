@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/03/06 11:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/03/07 17:36:42 sthen Exp $
 
 COMMENT=		nagios status monitor for the Desktop
 
@@ -21,7 +21,7 @@ MODULES=		lang/python
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=		security/py-keyring${MODPY_FLAVOR}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			security/py-keyring${MODPY_FLAVOR} \
