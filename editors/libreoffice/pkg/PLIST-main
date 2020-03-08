@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.57 2020/02/05 19:58:10 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.58 2020/03/08 08:27:08 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -684,6 +684,7 @@ lib/libreoffice/share/classification/example_sl-SI.xml
 lib/libreoffice/share/config/
 lib/libreoffice/share/config/images_breeze.zip
 lib/libreoffice/share/config/images_breeze_dark.zip
+lib/libreoffice/share/config/images_breeze_dark_svg.zip
 lib/libreoffice/share/config/images_breeze_svg.zip
 lib/libreoffice/share/config/images_colibre.zip
 lib/libreoffice/share/config/images_colibre_svg.zip
@@ -693,6 +694,7 @@ lib/libreoffice/share/config/images_karasa_jaga.zip
 lib/libreoffice/share/config/images_karasa_jaga_svg.zip
 lib/libreoffice/share/config/images_sifr.zip
 lib/libreoffice/share/config/images_sifr_dark.zip
+lib/libreoffice/share/config/images_sifr_dark_svg.zip
 lib/libreoffice/share/config/images_sifr_svg.zip
 lib/libreoffice/share/config/images_tango.zip
 lib/libreoffice/share/config/soffice.cfg/
