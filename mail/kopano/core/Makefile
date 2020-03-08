@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/12/18 20:25:16 robert Exp $
+# $OpenBSD: Makefile,v 1.50 2020/03/08 08:17:57 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -44,7 +44,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/xmlto
 
 WANTLIB += m pthread z vmime iconv icudata icui18n icuuc intl
-WANTLIB += lzma crypto ssl kvm
+WANTLIB += lzma crypto ssl kvm idn2 unistring
 
 WANTLIB-main += c ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += curl nghttp2 ical icalss
@@ -65,10 +65,12 @@ UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
-		devel/libmagic \
+		databases/py-bsddb3${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
+		devel/py-magic${MODPY_FLAVOR} \
 		mail/p5-Mail-SpamAssassin \
 		textproc/catdoc \
+		sysutils/py-daemon${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR}
 LIB_DEPENDS-main= databases/mariadb \
 		databases/openldap \
@@ -77,7 +79,9 @@ LIB_DEPENDS-main= databases/mariadb \
 		devel/gsoap>=2.8.50 \
 		devel/jsoncpp \
 		devel/libHX \
+		devel/libidn2 \
 		devel/libvmime>=0.9.4 \
+		converters/libunistring \
 		net/curl \
 		net/rrdtool,-main \
 		textproc/icu4c \
@@ -109,7 +113,7 @@ CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 
-CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include -DSWIG_DIRECTOR_NO_UEH" \
 		PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	--disable-static \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.18 2019/12/01 20:34:46 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.19 2020/03/08 08:17:57 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -107,11 +107,13 @@ AS_CASE([$host_os],
+@@ -110,11 +110,13 @@ AS_CASE([$host_os],
  		BUILDOS="openbsd"
  		ZCPPFLAGS="$ZCPPFLAGS -DOPENBSD"
  		LN_TFSV="ln -fs"
@@ -17,16 +17,7 @@ Index: configure.ac
  	],
  	[*], [
  		LN_TFSV="ln -fs"
-@@ -163,7 +165,7 @@ ZCPPFLAGS="$ZCPPFLAGS $LFS_CFLAGS"
- 
- AC_MSG_CHECKING([available C++ standard])
- cxxmode=""
--for i in "c++17" "c++14"; do
-+for i in "c++14"; do
- 	CXXFLAGS="$CXXFLAGS_system -std=$i"
- 	AC_COMPILE_IFELSE([AC_LANG_SOURCE([])], [cxxmode="$i"])
- 	AS_IF([test -n "$cxxmode"], [break])
-@@ -238,7 +240,7 @@ AC_DEFUN([LIBNCURSES_WITH_CONFIG],[
+@@ -263,7 +265,7 @@ AC_DEFUN([LIBNCURSES_WITH_CONFIG],[
  		[
  			dnl just pick the lowest common denominator
  			NCURSES_FLAGS=""
@@ -35,7 +26,7 @@ Index: configure.ac
  		]
  	)
  	AC_CHECK_HEADERS([ncurses.h])
-@@ -275,7 +277,7 @@ PKG_CHECK_MODULES([libHX], [libHX >= 1.10])
+@@ -304,7 +306,7 @@ PKG_CHECK_MODULES([idn], [libidn2], [AC_DEFINE([HAVE_I
  PKG_CHECK_MODULES([xapian], [xapian-core])
  PKG_CHECK_MODULES([XML2], [libxml-2.0])
  
@@ -44,7 +35,7 @@ Index: configure.ac
  dbcxx_LIBS="-ldb_cxx"
  CPPFLAGS="$CPPFLAGS_system $dbcxx_CPPFLAGS"
  AC_CHECK_HEADERS([db_cxx.h], [], [AC_MSG_ERROR([Berkeley DB C++ interface required])])
-@@ -408,7 +410,7 @@ LDAP_FLAGS=""
+@@ -437,7 +439,7 @@ LDAP_FLAGS=""
  LDAP_LIBS=""
  AC_CHECK_HEADERS([ldap.h], [
  	LDAP_FLAGS="-DLDAP_DEPRECATED=1"
@@ -53,7 +44,7 @@ Index: configure.ac
  	want_ldap=yes
  ])
  AC_SUBST(LDAP_LIBS)
-@@ -433,7 +435,7 @@ iconv_t i; i = iconv_open("", "");
+@@ -462,7 +464,7 @@ iconv_t i; i = iconv_open("", "");
  	[ AC_MSG_RESULT([yes]) ],
  	[ AC_MSG_RESULT([no])
  	  AC_MSG_CHECKING([for iconv in -liconv])
@@ -62,7 +53,7 @@ Index: configure.ac
  	  AC_LINK_IFELSE([ AC_LANG_SOURCE([
  #include <stdlib.h>
  #include <iconv.h>
-@@ -452,7 +454,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
+@@ -481,7 +483,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
  ])
  LIBS="$LIBS_system"
  AC_SEARCH_LIBS([clock_gettime], [rt], [
@@ -71,7 +62,7 @@ Index: configure.ac
  ])
  LIBS="$LIBS_system"
  AC_SUBST([CRYPT_LIBS])
-@@ -565,12 +567,14 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
+@@ -594,12 +596,14 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
  )
  AC_SUBST(GZ_LIBS)
  

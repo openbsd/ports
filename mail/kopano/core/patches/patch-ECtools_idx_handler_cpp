@@ -1,8 +1,17 @@
-$OpenBSD: patch-ECtools_idx_handler_cpp,v 1.1 2019/06/29 13:52:11 robert Exp $
+$OpenBSD: patch-ECtools_idx_handler_cpp,v 1.2 2020/03/08 08:17:57 robert Exp $
 
 Index: ECtools/idx_handler.cpp
 --- ECtools/idx_handler.cpp.orig
 +++ ECtools/idx_handler.cpp
+@@ -196,7 +196,7 @@ static constexpr const configsetting_t idx_defaults[] 
+ 	{"index_attachment_parser_max_memory", "", CONFIGSETTING_UNUSED},
+ 	{"index_attachment_parser_max_cputime", "", CONFIGSETTING_UNUSED},
+ 	{"index_exclude_properties", "0x007d 0x0064 0x0c1e 0x0075 0x678e 0x678f 0x001a", CONFIGSETTING_RELOADABLE},
+-	{"index_path", "/var/lib/kopano/search"},
++	{"index_path", "/var/db/kopano/search"},
+ 	{"index_processes", "0"},
+ 	{"limit_results", "1000"},
+ 	{"optimize_age", "", CONFIGSETTING_UNUSED},
 @@ -218,8 +218,8 @@ static constexpr const configsetting_t idx_defaults[] 
  	{"log_level", "3"},
  	{"log_file", "/var/log/kopano/search.log"},

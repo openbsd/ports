@@ -1,10 +1,10 @@
-$OpenBSD: patch-installer_linux_ldap_cfg,v 1.2 2018/12/17 15:19:40 robert Exp $
+$OpenBSD: patch-installer_linux_ldap_cfg,v 1.3 2020/03/08 08:17:57 robert Exp $
 
 Index: installer/linux/ldap.cfg
 --- installer/linux/ldap.cfg.orig
 +++ installer/linux/ldap.cfg
-@@ -3,11 +3,11 @@
- #
+@@ -1,11 +1,11 @@
+ # See the kopano-ldap.cfg(5) manpage for details and more directives
  
  # Select implementation.
 -# If you have any reason to override settings from /usr/share/kopano/*.cfg,
@@ -16,5 +16,5 @@ Index: installer/linux/ldap.cfg
 +!include /usr/local/share/kopano/ldap.openldap.cfg
 +#!include /usr/local/share/kopano/ldap.active-directory.cfg
  
- # LDAP URI
- # Connection details for LDAP server e.g. ldaps://servername:port. Make sure
+ # List of URIs of LDAP servers to use. Make sure that etc/ldap/ldap.conf is
+ # /configured correctly with TLS_CACERT when using "ldaps".

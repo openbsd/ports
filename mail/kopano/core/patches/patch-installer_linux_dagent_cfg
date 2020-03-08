@@ -1,14 +1,18 @@
-$OpenBSD: patch-installer_linux_dagent_cfg,v 1.9 2019/11/16 20:01:20 robert Exp $
+$OpenBSD: patch-installer_linux_dagent_cfg,v 1.10 2020/03/08 08:17:57 robert Exp $
 
 Index: installer/linux/dagent.cfg
 --- installer/linux/dagent.cfg.orig
 +++ installer/linux/dagent.cfg
-@@ -110,16 +110,16 @@
- #plugin_enabled = yes
+@@ -26,7 +26,7 @@
+ # Log raw message to a file. Can be "no", "all", or a list of usernames
+ # for which messages should be saved.
+ #log_raw_message = no
+-#log_raw_message_path = /var/lib/kopano
++#log_raw_message_path = /var/db/kopano
  
- # Path to the dagent plugin manager
--#plugin_manager_path = /usr/share/kopano-dagent/python
-+#plugin_manager_path = /usr/local/share/kopano-dagent/python
+ # Maximum LMTP threads that can be running simultaneously
+ # This is also limited by your SMTP server. (20 is the postfix default concurrency limit)
+@@ -56,12 +56,12 @@
  
  # Path to the activated dagent plugins.
  #   This folder contains symlinks to the kopano plugins and custom scripts. The plugins are

@@ -1,0 +1,14 @@
+$OpenBSD: patch-ECtools_scriptrun_cpp,v 1.1 2020/03/08 08:17:57 robert Exp $
+
+Index: ECtools/scriptrun.cpp
+--- ECtools/scriptrun.cpp.orig
++++ ECtools/scriptrun.cpp
+@@ -37,6 +37,8 @@ static bool ignore_name(const char *n)
+ 
+ int main(int argc, char **argv)
+ {
++	extern char **environ;
++
+ 	if (argc < 2) {
+ 		fprintf(stderr, "One or more directories need to be specified where to scan for, and execute, scripts.\n");
+ 		return EXIT_FAILURE;

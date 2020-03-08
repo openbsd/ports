@@ -1,0 +1,13 @@
+$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.10 2020/03/08 08:17:57 robert Exp $
+
+Index: provider/libserver/ECSession.cpp
+--- provider/libserver/ECSession.cpp.orig
++++ provider/libserver/ECSession.cpp
+@@ -1184,6 +1184,7 @@ ECRESULT ECAuthSession::ValidateSSOData_NTLM(struct so
+ 	ssize_t bytes = 0;
+ 	char separator = '\\';      // get config version
+ 	struct pollfd pollfd[2];
++	extern char **environ;
+ 
+ 	if (!soap) {
+ 		ec_log_err("Invalid argument \"soap\" in call to ECAuthSession::ValidateSSOData_NTLM()");

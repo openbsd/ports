@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_utils_kopano_utils_autorespond_py,v 1.4 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-ECtools_utils_kopano_utils_autorespond_py,v 1.5 2020/03/08 08:17:57 robert Exp $
 
 Index: ECtools/utils/kopano_utils/autorespond.py
 --- ECtools/utils/kopano_utils/autorespond.py.orig
 +++ ECtools/utils/kopano_utils/autorespond.py
-@@ -18,7 +18,7 @@ CONFIG = {
+@@ -16,7 +16,7 @@ CONFIG = {
      "autorespond_bcc": kopano.Config.boolean(default=False),
      "autorespond_norecip": kopano.Config.boolean(default=False),
      "timelimit": kopano.Config.integer(default=24 * 3600),

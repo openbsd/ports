@@ -1,9 +1,9 @@
-$OpenBSD: patch-php-ext_ECImportContentsChangesProxy_cpp,v 1.1 2019/11/16 20:01:20 robert Exp $
+$OpenBSD: patch-php-ext_ECImportContentsChangesProxy_cpp,v 1.2 2020/03/08 08:17:57 robert Exp $
 
 Index: php-ext/ECImportContentsChangesProxy.cpp
 --- php-ext/ECImportContentsChangesProxy.cpp.orig
 +++ php-ext/ECImportContentsChangesProxy.cpp
-@@ -7,10 +7,6 @@
+@@ -8,10 +8,6 @@
  #include <cstdio>
  #include <ctime>
  #include <cmath>

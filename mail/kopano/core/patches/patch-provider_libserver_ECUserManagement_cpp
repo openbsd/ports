@@ -1,0 +1,13 @@
+$OpenBSD: patch-provider_libserver_ECUserManagement_cpp,v 1.4 2020/03/08 08:17:57 robert Exp $
+
+Index: provider/libserver/ECUserManagement.cpp
+--- provider/libserver/ECUserManagement.cpp.orig
++++ provider/libserver/ECUserManagement.cpp
+@@ -54,6 +54,7 @@ static bool execute_script(const char *scriptname, ...
+ 	std::list<std::string> lstEnv;
+ 	std::string strEnv;
+ 	int n = 0;
++	extern char **environ;
+ 
+ 	va_start(v, scriptname);
+ 	/* Set environment */

@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_ECChannel_cpp,v 1.5 2019/12/01 20:34:46 robert Exp $
+$OpenBSD: patch-common_ECChannel_cpp,v 1.6 2020/03/08 08:17:57 robert Exp $
 
 Index: common/ECChannel.cpp
 --- common/ECChannel.cpp.orig
 +++ common/ECChannel.cpp
-@@ -672,9 +672,11 @@ static int ec_listen_generic(const struct ec_socket &s
+@@ -739,9 +739,11 @@ static int ec_listen_generic(const struct ec_socket &s
  		}
  	}
  	int y = 1;
@@ -15,7 +15,7 @@ Index: common/ECChannel.cpp
  	if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, reinterpret_cast<const char *>(&y), sizeof(y)) < 0)
  		ec_log_warn("K-1557: Unable to set reuseaddr socket option: %s", strerror(errno));
  #ifdef LINUX
-@@ -889,6 +891,7 @@ static int ec_fdtable_socket_ai(const ec_socket &sk)
+@@ -956,6 +958,7 @@ static int ec_fdtable_socket_ai(const ec_socket &sk)
  		if (ret < 0)
  			continue;
  		char ifnam[24];
@@ -23,7 +23,7 @@ Index: common/ECChannel.cpp
  		arglen = sizeof(ifnam);
  		ret = getsockopt(fd, SOL_SOCKET, SO_BINDTODEVICE, ifnam, &arglen);
  		if (ret != 0)
-@@ -897,6 +900,9 @@ static int ec_fdtable_socket_ai(const ec_socket &sk)
+@@ -964,6 +967,9 @@ static int ec_fdtable_socket_ai(const ec_socket &sk)
  			ifnam[arglen] = '\0';
  		else
  			ifnam[sizeof(ifnam)-1] = '\0';

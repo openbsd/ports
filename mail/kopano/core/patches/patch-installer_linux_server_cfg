@@ -1,43 +1,30 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.11 2019/11/16 20:01:20 robert Exp $
+$OpenBSD: patch-installer_linux_server_cfg,v 1.12 2020/03/08 08:17:57 robert Exp $
 
 Index: installer/linux/server.cfg
 --- installer/linux/server.cfg.orig
 +++ installer/linux/server.cfg
-@@ -43,7 +43,7 @@ server_listen = *:236
- # field is SPACE separated
- # eg: local_admin_users = root vmail
- # Default: root
+@@ -34,7 +34,7 @@ server_listen = *%lo:236
+ #allow_local_users = yes
+ 
+ # Space-separated list of users that are considered Kopano admins.
 -local_admin_users = root kopano
 +local_admin_users = root _kopano
  
- # With owner_auto_full_access=true, the owner of an object is, in addition to
- # any ACLs, implicitly granted "read", "create-in" and "is-visible" rights,
-@@ -56,10 +56,10 @@ local_admin_users = root kopano
- #system_email_address = postmaster@localhost
+ #log_method = auto
+ #log_file = -
+@@ -44,7 +44,7 @@ local_admin_users = root kopano
  
- # drop privileges and run the process as this user
--#run_as_user = kopano
-+#run_as_user = _kopano
- 
- # drop privileges and run the process as this group
--#run_as_group = kopano
-+#run_as_group = _kopano
- 
- # create a pid file
- #pid_file = /var/run/kopano/server.pid
-@@ -155,7 +155,7 @@ local_admin_users = root kopano
- # When attachment_storage is 'files', use this path to store the files
- # When attachment_storage is 's3', use this path to set a prefix to all
- # attachment data of a certain cluster, for example 'attach'
+ # Attachment backend driver type: "database", "files", "files_v2", "s3"
+ #attachment_storage = files
 -#attachment_path = /var/lib/kopano/attachments
 +#attachment_path = /var/db/kopano/attachments
  
- # Compression level for attachments when attachment_storage is 'files'.
- # Set compression level for attachments disabled=0, max=9
-@@ -346,12 +346,12 @@ local_admin_users = root kopano
+ #attachment_s3_hostname = s3-eu-west-1.amazonaws.com
+ # The region where the bucket is located, e.g. "eu-west-1"
+@@ -68,12 +68,12 @@ local_admin_users = root kopano
+ #server_hostname =
  
  # scripts which create stores for users from an external source
- # used for ldap and unix plugins only
 -#createuser_script = /usr/lib/kopano/userscripts/createuser
 -#deleteuser_script = /usr/lib/kopano/userscripts/deleteuser
 -#creategroup_script = /usr/lib/kopano/userscripts/creategroup
@@ -50,6 +37,6 @@ Index: installer/linux/server.cfg
 +#deletegroup_script = /usr/local/lib/kopano/userscripts/deletegroup
 +#createcompany_script = /usr/local/lib/kopano/userscripts/createcompany
 +#deletecompany_script = /usr/local/lib/kopano/userscripts/deletecompany
+ # Skip creation/deletion of users for testing purposes, instead log it.
+ #user_safe_mode = no
  
- # Set this option to 'yes' to skip the creation and deletion of new users
- # The action will be logged, so you can see if your changes to the plugin

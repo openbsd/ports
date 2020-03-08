@@ -1,9 +1,9 @@
-$OpenBSD: patch-caldav_CalDAV_cpp,v 1.13 2019/06/29 13:52:11 robert Exp $
+$OpenBSD: patch-caldav_CalDAV_cpp,v 1.14 2020/03/08 08:17:57 robert Exp $
 
 Index: caldav/CalDAV.cpp
 --- caldav/CalDAV.cpp.orig
 +++ caldav/CalDAV.cpp
-@@ -200,8 +200,8 @@ int main(int argc, char **argv) {
+@@ -205,8 +205,8 @@ int main(int argc, char **argv) {
  	const char *lpszCfg = ECConfig::GetDefaultPath("ical.cfg");
  	bool exp_config = false;
  	static const configsetting_t lpDefaults[] = {

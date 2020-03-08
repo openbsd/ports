@@ -1,11 +1,11 @@
-$OpenBSD: patch-ECtools_mapitime_cpp,v 1.7 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-ECtools_mapitime_cpp,v 1.8 2020/03/08 08:17:57 robert Exp $
 
 Index: ECtools/mapitime.cpp
 --- ECtools/mapitime.cpp.orig
 +++ ECtools/mapitime.cpp
-@@ -32,6 +32,17 @@
- using namespace KC;
+@@ -33,6 +33,17 @@ using namespace KC;
  using clk = std::chrono::steady_clock;
+ using duration = decltype(time_point()-time_point());
  
 +#if defined(__OpenBSD__)
 +#define SIGEV_SIGNAL 1
@@ -19,5 +19,14 @@ Index: ECtools/mapitime.cpp
 +#endif
 +
  struct mpt_stat_entry {
- 	time_point start, stop;
+ 	duration delta;
  };
+@@ -488,6 +499,8 @@ static int mpt_main_pagetime(int argc, char **argv)
+ 
+ static int mpt_main_exectime(int argc, char **argv)
+ {
++	extern char **environ;
++
+ 	if (argc < 2) {
+ 		fprintf(stderr, "Need program to test\n");
+ 		return EXIT_FAILURE;

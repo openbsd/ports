@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2020/02/22 13:28:48 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2020/03/08 08:17:58 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -72,6 +72,7 @@ include/kopano/UnixUtil.h
 include/kopano/Util.h
 include/kopano/archiver-common.h
 include/kopano/automapi.hpp
+include/kopano/buildconfig.h
 include/kopano/charset/
 include/kopano/charset/convert.h
 include/kopano/charset/convstring.h
@@ -180,7 +181,6 @@ lib/kopano/userscripts/deleteuser.d/
 lib/mapi.d/
 lib/mapi.d/kopano.inf
 lib/mapi.d/zcontacts.inf
-lib/php-7.3/
 lib/pkgconfig/kopano.pc
 lib/python${MODPY_VERSION}/site-packages/MAPI/
 lib/python${MODPY_VERSION}/site-packages/MAPI-${V}-py${MODPY_VERSION}.egg-info/
@@ -354,21 +354,6 @@ lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}ps
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/pst.py
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/version.py
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_presence-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_presence/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/${MODPY_PYCACHE}plugin_spreed.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/${MODPY_PYCACHE}plugin_xmpp.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_spreed.py
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_xmpp.py
-lib/python${MODPY_VERSION}/site-packages/kopano_presence/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/
 lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -422,7 +407,6 @@ lib/systemd/system/kopano-dagent.service
 lib/systemd/system/kopano-gateway.service
 lib/systemd/system/kopano-ical.service
 lib/systemd/system/kopano-monitor.service
-lib/systemd/system/kopano-presence.service
 lib/systemd/system/kopano-search.service
 lib/systemd/system/kopano-server.service
 lib/systemd/system/kopano-spamd.service
@@ -507,7 +491,6 @@ sbin/kopano-migration-pst
 @bin sbin/kopano-monitor
 sbin/kopano-mr-accept
 sbin/kopano-mr-process
-sbin/kopano-presence
 sbin/kopano-recreate-systemfolders
 sbin/kopano-search
 sbin/kopano-search-upgrade-findroots.py
@@ -556,8 +539,6 @@ share/examples/kopano/apparmor.d/usr.sbin.kopano-search
 share/examples/kopano/apparmor.d/usr.sbin.kopano-server
 share/examples/kopano/archiver.cfg
 @sample ${SYSCONFDIR}/kopano/archiver.cfg
-share/examples/kopano/autorespond
-@sample ${SYSCONFDIR}/kopano/autorespond
 share/examples/kopano/autorespond.cfg
 @sample ${SYSCONFDIR}/kopano/autorespond.cfg
 share/examples/kopano/backup.cfg
@@ -582,8 +563,6 @@ share/examples/kopano/migration-pst.cfg
 @sample ${SYSCONFDIR}/kopano/migration-pst.cfg
 share/examples/kopano/monitor.cfg
 @sample ${SYSCONFDIR}/kopano/monitor.cfg
-share/examples/kopano/presence.cfg
-@sample ${SYSCONFDIR}/kopano/presence.cfg
 share/examples/kopano/quotamail/
 @sample ${SYSCONFDIR}/kopano/quotamail/
 share/examples/kopano/quotamail/companywarning.mail
@@ -631,7 +610,6 @@ share/examples/kopano/userscripts/deletegroup.d/
 share/examples/kopano/userscripts/deleteuser.d/
 share/examples/logrotate.d/
 share/examples/logrotate.d/kopano
-share/examples/php-7.3/
 share/gdb/auto-load/usr/local/lib/libmapi.so.1.0.0-gdb.py
 share/kopano/
 share/kopano-dagent/
