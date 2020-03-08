@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2020/03/08 19:26:38 bcallah Exp $
+
+Put example configs in examples rather than doc.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -970,9 +970,8 @@ bekijk.o: bekijk.c
+ 	$(COMPILE) -D_NED -DCONFIGFILE=\"$(CONFIGFILE)\" -DDOCFILE=\"$(NED_DOCFILE)\" -o bekijk.o -c bekijk.c
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)examples
+-	$(INSTALL_DATA) $(srcdir)/examples/blue_and_black.cfg $(DESTDIR)$(docdir)examples/blue_and_black.cfg
+-	$(INSTALL_DATA) $(srcdir)/examples/cyan_and_blue.cfg $(DESTDIR)$(docdir)examples/cyan_and_blue.cfg
++	$(INSTALL_DATA) $(srcdir)/examples/blue_and_black.cfg $(DESTDIR)$(datadir)/examples/lookat/blue_and_black.cfg
++	$(INSTALL_DATA) $(srcdir)/examples/cyan_and_blue.cfg $(DESTDIR)$(datadir)/examples/lookat/cyan_and_blue.cfg
+ 
+ 	@if test -f $(DESTDIR)$(CONFIGFILE); then \
+ 		echo ;\

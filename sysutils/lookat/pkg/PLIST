@@ -1,9 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/20 02:41:04 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/08 19:26:38 bcallah Exp $
+@bin bin/bekijk
 @bin bin/lookat
+@man man/man1/bekijk.1
 @man man/man1/lookat.1
 share/doc/lookat/
+share/doc/lookat/LEESMIJ
 share/doc/lookat/README
 share/examples/lookat/
-share/examples/lookat/blue_config.cfg
+share/examples/lookat/blue_and_black.cfg
+share/examples/lookat/cyan_and_blue.cfg
+share/examples/lookat/lookat.conf
 share/examples/lookat/lookat.conf.default
 @sample ${SYSCONFDIR}/lookat.conf
