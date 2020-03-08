@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.950 2020/03/03 21:41:29 tb Exp $
+# $OpenBSD: Makefile,v 1.951 2020/03/08 16:55:25 landry Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -442,6 +442,7 @@
      SUBDIR += py-jonpy
      SUBDIR += py-jwt
      SUBDIR += py-jwt,python3
+     SUBDIR += py-macaroons,python3
      SUBDIR += py-mako
      SUBDIR += py-mako,python3
      SUBDIR += py-mastodon.py
@@ -485,6 +486,7 @@
      SUBDIR += py-terminado,python3
      SUBDIR += py-tornado
      SUBDIR += py-tornado,python3
+     SUBDIR += py-treq,python3
      SUBDIR += py-uritemplate
      SUBDIR += py-uritemplate,python3
      SUBDIR += py-urlgrabber

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1945 2020/03/08 01:32:15 mariani Exp $
+# $OpenBSD: Makefile,v 1.1946 2020/03/08 16:55:25 landry Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1487,6 +1487,7 @@
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-icalendar
      SUBDIR += py-icalendar,python3
+     SUBDIR += py-importlib-metadata,python3
      SUBDIR += py-incremental
      SUBDIR += py-incremental,python3
      SUBDIR += py-iniparse
@@ -1717,6 +1718,7 @@
      SUBDIR += py-txaio
      SUBDIR += py-txaio,python3
      SUBDIR += py-typing
+     SUBDIR += py-typing-extensions,python3
      SUBDIR += py-tz
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal

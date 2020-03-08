@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.621 2020/02/09 23:46:10 bluhm Exp $
+# $OpenBSD: Makefile,v 1.622 2020/03/08 16:55:25 landry Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -366,6 +366,7 @@
      SUBDIR += py-alabaster
      SUBDIR += py-alabaster,python3
      SUBDIR += py-black
+     SUBDIR += py-canonicaljson,python3
      SUBDIR += py-chardet
      SUBDIR += py-chardet,python3
      SUBDIR += py-colored
@@ -441,6 +442,7 @@
      SUBDIR += py-recommonmark,python3
      SUBDIR += py-ruamel.yaml
      SUBDIR += py-ruamel.yaml,python3
+     SUBDIR += py-signedjson,python3
      SUBDIR += py-semver
      SUBDIR += py-snowballstemmer
      SUBDIR += py-snowballstemmer,python3
@@ -470,6 +472,7 @@
      SUBDIR += py-unicodecsv,python3
      SUBDIR += py-unidecode
      SUBDIR += py-unidecode,python3
+     SUBDIR += py-unpaddedbase64,python3
      SUBDIR += py-vatnumber
      SUBDIR += py-vobject
      SUBDIR += py-vobject,python3
