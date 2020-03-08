@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/09/15 14:27:13 ajacoutot Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/03/08 10:46:05 ajacoutot Exp $
 
 base gcc does not understand -Wtype-limits and errors out.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -423,7 +423,7 @@ if(CMAKE_COMPILER_IS_GNUCC OR "${CMAKE_C_COMPILER_ID}"
+@@ -445,7 +445,7 @@ if(CMAKE_COMPILER_IS_GNUCC OR "${CMAKE_C_COMPILER_ID}"
    check_c_compiler_flag(-Wsizeof-pointer-memaccess HAVE_GCC_POINTER_MEMACCESS)
    check_c_compiler_flag(-Wformat-security HAVE_GCC_FORMAT_SECURITY)
    check_c_compiler_flag(-Wredundant-decls HAVE_GCC_REDUNDANT_DECLS)
@@ -14,7 +14,7 @@ Index: CMakeLists.txt
    if(HAVE_GCC_UNUSED_BUT_SET)
      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wunused-but-set-variable")
    endif()
-@@ -455,7 +455,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_I
+@@ -477,7 +477,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_I
    check_cxx_compiler_flag(-Wreorder HAVE_GXX_REORDER)
    check_cxx_compiler_flag(-Wformat-security HAVE_GXX_FORMAT_SECURITY)
    check_cxx_compiler_flag(-Wredundant-decls HAVE_GXX_REDUNDANT_DECLS)
