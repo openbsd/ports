@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/10/26 08:41:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/08 19:20:45 rpointel Exp $
 
 COMMENT =	parse a PDF document
 
-MODPY_EGG_VERSION =	0.7.3
+MODPY_EGG_VERSION =	0.7.4
 DISTNAME =	pdf-parser_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	pdf-parser-${MODPY_EGG_VERSION}
 
@@ -20,6 +20,7 @@ MASTER_SITES =	https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =	security/yara/python
 
 NO_BUILD =	Yes
