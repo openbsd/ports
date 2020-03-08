@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2019/04/02 19:47:43 bcallah Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2020/03/08 04:04:02 bcallah Exp $
 
 XXX: Avoid rebuilding coreutils.info; our makeinfo is too old
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -11955,6 +11955,7 @@ doc/$(am__dirstamp):
+@@ -12700,6 +12700,7 @@ doc/$(am__dirstamp):
  	@: > doc/$(am__dirstamp)
  
  $(srcdir)/doc/coreutils.info: doc/coreutils.texi $(srcdir)/doc/version.texi $(doc_coreutils_TEXINFOS)

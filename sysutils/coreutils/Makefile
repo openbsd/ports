@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2020/01/11 18:28:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/08 04:04:02 bcallah Exp $
 
 COMMENT =		file, shell and text manipulation utilities
 
-DISTNAME =		coreutils-8.31
+DISTNAME =		coreutils-8.32
 CATEGORIES =		sysutils
-REVISION =		2
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
@@ -25,6 +24,9 @@ LIB_DEPENDS =		devel/gettext,-runtime
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--program-prefix=g \
 			--without-gmp
+
+# Fixes a spurrious test failure
+PORTHOME =		${WRKDIR}
 
 # Prevent conflicts with: id, gpr and god
 post-install:
