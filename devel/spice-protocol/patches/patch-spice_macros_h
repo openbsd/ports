@@ -1,4 +1,4 @@
-$OpenBSD: patch-spice_macros_h,v 1.9 2019/05/12 22:00:52 jca Exp $
+$OpenBSD: patch-spice_macros_h,v 1.10 2020/03/08 11:16:49 ajacoutot Exp $
 
 __builtin_bswap16 only found in gcc-4.5+.
 
@@ -7,7 +7,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=94570
 Index: spice/macros.h
 --- spice/macros.h.orig
 +++ spice/macros.h
-@@ -248,7 +248,7 @@
+@@ -232,7 +232,7 @@
  
  /* Arch specific stuff for speed
   */
@@ -16,7 +16,7 @@ Index: spice/macros.h
  #  define SPICE_BYTESWAP16(val) __builtin_bswap16(val)
  #  define SPICE_BYTESWAP32(val) __builtin_bswap32(val)
  #  define SPICE_BYTESWAP64(val) __builtin_bswap64(val)
-@@ -268,6 +268,13 @@
+@@ -252,6 +252,13 @@
  #define SPICE_ENDIAN_LITTLE 4321
  #define SPICE_ENDIAN_BIG    1234
  #define SPICE_ENDIAN_PDP    2143
