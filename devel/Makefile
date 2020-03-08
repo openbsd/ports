@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1944 2020/03/04 06:37:36 martin Exp $
+# $OpenBSD: Makefile,v 1.1945 2020/03/08 01:32:15 mariani Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1747,7 +1747,6 @@
      SUBDIR += py-wrapt
      SUBDIR += py-wrapt,python3
      SUBDIR += py-wsgiutils
-     SUBDIR += py-wurlitzer
      SUBDIR += py-wurlitzer,python3
      SUBDIR += py-xdg
      SUBDIR += py-xdg,python3
