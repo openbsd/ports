@@ -1,9 +1,9 @@
-$OpenBSD: patch-wurlitzer_py,v 1.1.1.1 2019/02/14 22:34:18 mariani Exp $
+$OpenBSD: patch-wurlitzer_py,v 1.2 2020/03/08 01:33:32 mariani Exp $
 
 Index: wurlitzer.py
 --- wurlitzer.py.orig
 +++ wurlitzer.py
-@@ -32,13 +32,20 @@ import warnings
+@@ -39,13 +39,20 @@ import warnings
  
  libc = ctypes.CDLL(None)
  
