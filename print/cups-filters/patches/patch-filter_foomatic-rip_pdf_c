@@ -1,0 +1,16 @@
+$OpenBSD: patch-filter_foomatic-rip_pdf_c,v 1.1 2020/03/08 14:34:05 ajacoutot Exp $
+
+https://github.com/OpenPrinting/cups-filters/issues/216
+
+Index: filter/foomatic-rip/pdf.c
+--- filter/foomatic-rip/pdf.c.orig
++++ filter/foomatic-rip/pdf.c
+@@ -47,7 +47,7 @@ int pdf_count_pages(const char *filename)
+     size_t bytes;
+     char *p;
+ 
+-    snprintf(gscommand, CMDLINE_MAX, "%s -dNODISPLAY -dSAFER -dNOPAUSE -q -c "
++    snprintf(gscommand, CMDLINE_MAX, "%s -dNODISPLAY -dNOPAUSE -q -c "
+ 	     "'/pdffile (%s) (r) file runpdfbegin (PageCount: ) print "
+ 	     "pdfpagecount = quit'",
+ 	     gspath, filename);
