@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/10/26 08:39:23 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/08 19:24:45 rpointel Exp $
 
 COMMENT =	tool to test a PDF file
 
-MODPY_EGG_VERSION =	0.2.6
+MODPY_EGG_VERSION =	0.2.7
 DISTNAME =	pdfid_v${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	pdfid-${MODPY_EGG_VERSION}
 
@@ -20,6 +20,7 @@ MASTER_SITES =	https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
