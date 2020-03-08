@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.894 2020/03/08 01:29:35 mariani Exp $
+# $OpenBSD: Quirks.pm,v 1.895 2020/03/08 16:44:37 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1390,7 +1390,6 @@ my $obsolete_reason = {
 	'afm' => 6,
 	'p5-Geo-IP' => 6,
 	'py-libnacl' => 3,
-	'py3-libnacl' => 3,
 	'py3-typing' => 5,
 	'p5-Net-IRC' => 3,
 	'pangox-compat' => 0,
