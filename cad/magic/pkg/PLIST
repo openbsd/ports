@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/08 12:47:36 sthen Exp $
 bin/ext2sim
 bin/ext2spice
 bin/magic
@@ -35,16 +35,16 @@ lib/magic/sys/windows22.glyphs
 lib/magic/sys/windows7.glyphs
 lib/magic/tcl/
 lib/magic/tcl/bitmaps/
-lib/magic/tcl/bitmaps/down.xbm
-lib/magic/tcl/bitmaps/left.xbm
+lib/magic/tcl/bitmaps/down.gif
+lib/magic/tcl/bitmaps/left.gif
 lib/magic/tcl/bitmaps/lock.xbm
-lib/magic/tcl/bitmaps/right.xbm
-lib/magic/tcl/bitmaps/up.xbm
-lib/magic/tcl/bitmaps/zoom.xbm
+lib/magic/tcl/bitmaps/right.gif
+lib/magic/tcl/bitmaps/up.gif
+lib/magic/tcl/bitmaps/zoom.gif
 lib/magic/tcl/bsitools.tcl
 lib/magic/tcl/cellmgr.tcl
 lib/magic/tcl/console.tcl
-lib/magic/tcl/drc.tcl
+lib/magic/tcl/drcmgr.tcl
 lib/magic/tcl/libmgr.tcl
 lib/magic/tcl/magic.tcl
 @bin lib/magic/tcl/magicdnull
@@ -52,7 +52,7 @@ lib/magic/tcl/magic.tcl
 lib/magic/tcl/mazeroute.tcl
 lib/magic/tcl/socketcmd.tcl
 lib/magic/tcl/strip_reflibs.tcl
-@bin lib/magic/tcl/tclmagic.so
+@so lib/magic/tcl/tclmagic.so
 lib/magic/tcl/techbuilder.tcl
 lib/magic/tcl/texthelper.tcl
 lib/magic/tcl/tkcon.tcl

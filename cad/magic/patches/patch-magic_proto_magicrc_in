@@ -1,0 +1,283 @@
+$OpenBSD: patch-magic_proto_magicrc_in,v 1.1 2020/03/08 12:47:36 sthen Exp $
+
+Index: magic/proto.magicrc.in
+--- magic/proto.magicrc.in.orig
++++ magic/proto.magicrc.in
+@@ -1,44 +1,44 @@
+-#	$(CAD_ROOT)/magic/sys/.magicrc 
+-# 	System wide start up file for magic, defines default macros.
+-#
+-#
+-#	Source file proto.magicrc.in
+-#	Process this file with the cpp macro processor
+-#
++/*	$(CAD_ROOT)/magic/sys/.magicrc                                  */
++/* 	System wide start up file for magic, defines default macros.    */
++/*                                                                      */
++/*                                                                      */
++/*	Source file proto.magicrc.in                                    */
++/*	Process this file with the cpp macro processor                  */
++/* */
+ #ifdef MAGIC_WRAPPER
+ puts stdout "Processing system .magicrc file"
+ #endif /* MAGIC_WRAPPER */
+ #ifdef USE_NEW_MACROS
+-###############################################################################
+-#  Default .magicrc macro file (new macros)
+-###############################################################################
+-# A key
++/* ############################################################################### */
++/* #  Default .magicrc macro file (new macros)                                     */
++/* ############################################################################### */
++/* # A key */
+ macro a "select visible"
+ macro A "select more visible"
+ macro ^A "select less visible"
+-# B key
++/* # B key */
+ macro b "box"
+ macro B "findbox"
+-# C key
++/* # C key */
+ macro c "copy"
+-# D key
++/* # D key */
+ macro d "delete"
+ macro ^D "erase $"
+-# E key
++/* # E key */
+ macro e "edit"
+-# F key
++/* # F key */
+ macro f "sideways"
+ macro F "upsidedown"
+-# G key
++/* # G key */
+ macro g "grid"
+ macro G "grid 2"
+-# I key
++/* # I key */
+ macro i "select cell"
+ macro I "select more cell"
+ #ifdef XLIB
+ macro Control_XK_i "select less cell"
+ #endif
+-# L key
++/* # L key */
+ #ifdef USE_READLINE
+ imacro l "label "
+ #endif   /* (USE_READLINE) */
+@@ -47,74 +47,74 @@ imacro l "label "
+ #endif  /* (MAGIC_WRAPPER) */
+ macro L "shell ls"
+ macro ^L "redraw"
+-# M key
++/* # M key */
+ macro m "move"
+ macro M "stretch"
+-# N key
++/* # N key */
+ macro ^N ""
+-# O key
++/* # O key */
+ macro o "openwindow"
+ macro O "closewindow"
+-# P key
++/* # P key */
+ #ifdef USE_READLINE
+ imacro p "paint "
+ #endif   /* (USE_READLINE) */
+ #ifdef MAGIC_WRAPPER
+ imacro p "paint "
+ #endif  /* (MAGIC_WRAPPER) */
+-# Q key
++/* # Q key */
+ #ifdef XLIB
+ macro Control_Shift_XK_q "quit"
+ #endif /* (XLIB) */
+-# R key
++/* # R key */
+ macro r "clockwise"
+ macro R "clockwise 270"
+ macro ^R "clockwise 180"
+-# S key
++/* # S key */
+ macro s "select"
+ macro S "select more"
+ macro ^S "select less"
+ #ifdef XLIB
+ macro Control_Shift_XK_s "undo ; select"
+ #endif /* (XLIB) */
+-# U key
++/* # U key */
+ macro u "undo"
+ macro U "redo"
+-# V key
++/* # V key */
+ macro v "view"
+ macro V "xview"
+-# W key
++/* # W key */
+ macro w "writeall"
+ macro W "writeall force"
+-# X key
++/* # X key */
+ macro x "expand"
+ macro X "unexpand"
+ macro ^X "expand toggle"
+-# Z key
++/* # Z key */
+ macro z "zoom .5"
+ macro Z "zoom 2"
+ macro ^Z "findbox zoom"
+ #ifdef XLIB
+ macro Control_Shift_XK_z "center"
+ #endif /* (XLIB) */
+-# Question mark
++/* # Question mark */
+ macro ? "drc why"
+ macro / "select area; what ; select clear"
+-# Comma key
++/* # Comma key */
+ macro , "select clear"
+-# Exclamation mark
++/* # Exclamation mark */
+ #ifdef USE_READLINE
+ imacro ! "shell "
+ #endif	/* (USE_READLINE) */
+-# Space bar
++/* # Space bar */
+ macro " " "tool"
+-# Colon and semicolon (interactive command)
++/* # Colon and semicolon (interactive command) */
+ imacro XK_colon ":"
+ imacro XK_semicolon ":"
+ #ifdef XLIB
+ macro Shift_XK_space "tool box"
+ macro Control_XK_space "tool wiring"
+-# Arrow keys (X11 versions only)
++/* # Arrow keys (X11 versions only) */
+ macro XK_Left "scroll l .1 w"
+ macro Shift_XK_Left "scroll l 1 w"
+ macro Control_XK_Left "box grow w 1"
+@@ -131,8 +131,8 @@ macro XK_Down "scroll d .1 w"
+ macro Shift_XK_Down "scroll d 1 w"
+ macro Control_XK_Down "box grow s 1"
+ macro Control_Shift_XK_Down "box shrink n 1"
+-# Keypad keys (X11 versions only)
+-# Functions duplicated for use both with Num_Lock ON and OFF
++/* # Keypad keys (X11 versions only) */
++/* # Functions duplicated for use both with Num_Lock ON and OFF */
+ macro XK_KP_Delete "box size 0 0"
+ macro XK_KP_Insert "box size 4 4"
+ macro XK_KP_0 "box size 7 2"
+@@ -164,10 +164,10 @@ macro XK_KP_8 "stretch u 1"
+ macro Shift_XK_KP_8 "stretch u 1"
+ macro XK_8 "stretch u 1"
+ macro XK_KP_Prior "move ne 1"
+-# Scroll wheel bindings
++/* # Scroll wheel bindings */
+ macro XK_Pointer_Button4 "scroll u .05 w"
+ macro XK_Pointer_Button5 "scroll d .05 w"
+-# Quick macro function keys for scmos tech (X11 versions only)
++/* # Quick macro function keys for scmos tech (X11 versions only) */
+ macro XK_F1  "paint ndiff"
+ macro XK_F2  "paint pdiff"
+ macro XK_F3  "paint poly"
+@@ -182,9 +182,9 @@ macro XK_F11 "paint pc"
+ macro XK_F12 "paint via"
+ #endif	/* (XLIB) */
+ #else	/* USE_NEW_MACROS */
+-###############################################################################
+-#  Default .magicrc macro file (original)
+-###############################################################################
++/* ############################################################################### */
++/* #  Default .magicrc macro file (original)                                       */
++/* ############################################################################### */
+ echo ""
+ macro s "select"
+ macro S "select more"
+@@ -230,12 +230,12 @@ imacro XK_semicolon ":"
+ macro ^R "iroute route -dBox"
+ macro ^N "iroute route -dSelection"
+ #endif	/* USE_NEW_MACROS */
+-# Allow some box manipulation from all tools.
++/* # Allow some box manipulation from all tools. */
+ #ifdef MAGIC_WRAPPER
+ macro Control_Button1 "*bypass box move bl cursor"
+ macro Control_Button2 "*bypass paint cursor"
+ macro Control_Button3 "*bypass box corner ur cursor"
+-# Box tool button bindings
++/* # Box tool button bindings */
+ macro Button1 "*bypass box move bl cursor"
+ macro Shift_Button1 "*bypass box corner bl cursor"
+ macro Button2 "*bypass paint cursor"
+@@ -246,7 +246,7 @@ macro Shift_Button3 "*bypass box move ur cursor"
+ macro Control_Button1 "box move bl cursor"
+ macro Control_Button2 "paint cursor"
+ macro Control_Button3 "box corner ur cursor"
+-# Box tool button bindings
++/* # Box tool button bindings */
+ macro Button1 "box move bl cursor"
+ macro Shift_Button1 "box corner bl cursor"
+ macro Button2 "paint cursor"
+@@ -254,7 +254,7 @@ macro Shift_Button2 "erase cursor"
+ macro Button3 "box corner ur cursor"
+ macro Shift_Button3 "box move ur cursor"
+ #endif /* (!MAGIC_WRAPPER) */
+-# Color window button bindings
++/* # Color window button bindings */
+ macro color Button1 "pushbutton left"
+ macro color Button2 "pushbutton middle"
+ macro color Button3 "pushbutton right"
+@@ -262,11 +262,11 @@ macro color u "undo"
+ macro color U "redo"
+ macro color plus "color next"
+ macro color minus "color last"
+-# Netlist window button bindings
++/* # Netlist window button bindings */
+ macro netlist Button1 "pushbutton left"
+ macro netlist Button2 "pushbutton middle"
+ macro netlist Button3 "pushbutton right"
+-# Wind3D window key bindings
++/* # Wind3D window key bindings */
+ macro wind3d  L "level up"
+ macro wind3d  l "level down"
+ macro wind3d  C "cif"
+@@ -294,15 +294,15 @@ macro wind3d  XK_equal "view 0 0 -1 rel"
+ macro wind3d  XK_greater "zoom 1 2.0 rel"
+ macro wind3d  XK_less "zoom 1 0.5 rel"
+ #endif	/* (XLIB) */
+-#
+-# Load basic set of fonts
+-#
++/* #                            */
++/* # Load basic set of fonts    */
++/* #                            */
+ setlabel font FreeSans.pt3 0.58
+ setlabel font FreeSerif.pt3 0.58
+ setlabel font FreeMono.pt3 0.6
+-#
+-# Additions for Tcl GUI wrapper
+-#
++/* #                                    */
++/* # Additions for Tcl GUI wrapper      */
++/* #                                    */
+ #ifdef MAGIC_WRAPPER
+ magic::suspendout
+ if {![catch {set Opts(tools)}]} { magic::enable_tools }
+@@ -311,11 +311,10 @@ set VDD "vdd!"
+ magic::resumeout
+ catch {source ${CAD_ROOT}/magic/sys/site.def}
+ #endif  /* (!MAGIC_WRAPPER) */
+-#
+ #ifdef SCHEME_INTERPRETER
+-#
+-# additions for default scm path
+-#
++/* #                                    */
++/* # additions for default scm path     */
++/* #                                    */
+ define scm-library-path "CAD_DIR/lib/magic/scm"
+ load-scm "default.scm"
+ load-scm "layout.scm"

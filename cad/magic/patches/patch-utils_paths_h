@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_paths_h,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+$OpenBSD: patch-utils_paths_h,v 1.2 2020/03/08 12:47:36 sthen Exp $
 
 Index: utils/paths.h
---- utils/paths.h.patch.orig
+--- utils/paths.h.orig
 +++ utils/paths.h
 @@ -28,20 +28,20 @@
   *

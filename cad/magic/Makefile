@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/08 12:47:35 sthen Exp $
 
 COMMENT =	interactive system for VLSI circuit layouts
-DISTNAME =	magic-8.1.224
+DISTNAME =	magic-8.2.190
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	cad
 HOMEPAGE =	http://opencircuitdesign.com/magic/
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # MIT (Magic, scmos), GPLv2 only (readline)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	${MODTK_WANTLIB} c m GL GLU X11
+WANTLIB =	${MODTK_WANTLIB} c cairo fontconfig freetype m GL GLU X11
 
 MASTER_SITES =	http://opencircuitdesign.com/magic/archive/
 
@@ -22,17 +22,18 @@ COMPILER_LANGS = c
 
 MODULES =	x11/tk
 
-BUILD_DEPENDS =	devel/m4
-RUN_DEPENDS =	shells/bash
-LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
+LIB_DEPENDS =	${MODTK_LIB_DEPENDS} \
+		graphics/cairo
 
-PATCHORIG =	.patch.orig
+RUN_DEPENDS =	shells/bash
 
 WRKCONF =		${WRKSRC}/scripts
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS +=	--with-distdir=${PREFIX} \
+			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR} \
-			--with-opengl=no
+			--with-cairo=${LOCALBASE}/include \
+			--enable-cairo-offscreen
 
 USE_GMAKE =	Yes
 
@@ -43,6 +44,8 @@ post-patch:
 	@${SUBST_CMD} ${WRKSRC}/utils/paths.h
 
 post-install:
+	mv ${PREFIX}/share/man/* ${PREFIX}/man/
+	rmdir ${PREFIX}/share/man
 	mv ${PREFIX}/lib/magic/doc ${PREFIX}/share/doc/magic
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/magic
 	mv ${PREFIX}/lib/magic/tutorial ${PREFIX}/share/examples/magic/

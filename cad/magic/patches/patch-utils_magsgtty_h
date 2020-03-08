@@ -1,21 +1,18 @@
-$OpenBSD: patch-utils_magsgtty_h,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+$OpenBSD: patch-utils_magsgtty_h,v 1.2 2020/03/08 12:47:36 sthen Exp $
 
 Index: utils/magsgtty.h
---- utils/magsgtty.h.patch.orig
+--- utils/magsgtty.h.orig
 +++ utils/magsgtty.h
-@@ -21,12 +21,14 @@
- #ifndef	_MAGSGTTY_H
- #define _MAGSGTTY_H
- 
--#if !defined(SYSV) && !defined(CYGWIN)
-+#if !defined(SYSV) && !defined(CYGWIN) && !defined(__OpenBSD__)
- # ifdef	ALPHA
- # undef MAX
- # undef MIN
+@@ -33,7 +33,12 @@
  # endif
- #include <sgtty.h>
-+#elif defined(__OpenBSD__)
+ 
+ #include <sys/ioctl.h>
++
++#if defined(__OpenBSD__)
 +#include <termios.h>
++#else
+ #include <sys/ioctl_compat.h>
++#endif
+ 
  #else
  #include <termio.h>
- #endif

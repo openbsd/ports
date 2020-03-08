@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcltk_magic_sh_in,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+$OpenBSD: patch-tcltk_magic_sh_in,v 1.2 2020/03/08 12:47:36 sthen Exp $
 
 Index: tcltk/magic.sh.in
---- tcltk/magic.sh.in.patch.orig
+--- tcltk/magic.sh.in.orig
 +++ tcltk/magic.sh.in
 @@ -1,4 +1,4 @@
 -#!/bin/bash

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/03/08 12:47:36 sthen Exp $
 
 Index: Makefile
---- Makefile.patch.orig
+--- Makefile.orig
 +++ Makefile
-@@ -18,12 +18,10 @@ include defs.mak
+@@ -18,12 +18,10 @@ INSTALL_CAD_DIRS = windows doc ${TECH}
  all:	$(ALL_TARGET)
  
  standard:
@@ -18,19 +18,19 @@ Index: Makefile
  
  force: clean all
  
-@@ -67,7 +65,7 @@ install: $(INSTALL_TARGET)
+@@ -68,7 +66,7 @@ install: $(INSTALL_TARGET)
  install-magic:
- 	@echo --- installing executable to $(DESTDIR)${BINDIR}
- 	@echo --- installing runtime files to $(DESTDIR)${LIBDIR}
+ 	@echo --- installing executable to $(DESTDIR)${INSTALL_BINDIR}
+ 	@echo --- installing runtime files to $(DESTDIR)${INSTALL_LIBDIR}
 -	@${MAKE} install-real 2>&1 >> install.log
 +	@${MAKE} install-real
  
  install-real: install-dirs
  	for dir in ${INSTALL_CAD_DIRS}; do \
-@@ -86,7 +84,7 @@ install-dirs:
+@@ -89,7 +87,7 @@ install-dirs:
  install-tcl:
- 	@echo --- installing executable to $(DESTDIR)${BINDIR}
- 	@echo --- installing runtime files to $(DESTDIR)${LIBDIR}
+ 	@echo --- installing executable to $(DESTDIR)${INSTALL_BINDIR}
+ 	@echo --- installing runtime files to $(DESTDIR)${INSTALL_LIBDIR}
 -	@${MAKE} install-tcl-real 2>&1 >> install.log
 +	@${MAKE} install-tcl-real
  

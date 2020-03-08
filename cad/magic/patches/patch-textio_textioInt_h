@@ -1,7 +1,7 @@
-$OpenBSD: patch-textio_textioInt_h,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+$OpenBSD: patch-textio_textioInt_h,v 1.2 2020/03/08 12:47:36 sthen Exp $
 
 Index: textio/textioInt.h
---- textio/textioInt.h.patch.orig
+--- textio/textioInt.h.orig
 +++ textio/textioInt.h
 @@ -41,7 +41,7 @@ typedef struct {
  #define TX_CMD_PROMPT	":"

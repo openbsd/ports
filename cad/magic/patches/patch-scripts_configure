@@ -1,9 +1,9 @@
-$OpenBSD: patch-scripts_configure,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+$OpenBSD: patch-scripts_configure,v 1.2 2020/03/08 12:47:36 sthen Exp $
 
 Index: scripts/configure
---- scripts/configure.patch.orig
+--- scripts/configure.orig
 +++ scripts/configure
-@@ -830,7 +830,7 @@ pdfdir='${docdir}'
+@@ -836,7 +836,7 @@ pdfdir='${docdir}'
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -12,8 +12,8 @@ Index: scripts/configure
  
  ac_prev=
  ac_dashdash=
-@@ -7884,7 +7884,7 @@ fi
-       CFLAGS="${CFLAGS} -l/usr/X11R6/include"
+@@ -8047,7 +8047,7 @@ fi
+       CFLAGS="${CFLAGS} -L/usr/X11R6/include"
        ;;
  
 -    *-netbsd*|*-openbsd*)
@@ -21,7 +21,7 @@ Index: scripts/configure
        # Not available on all versions:  check for include file.
        ac_fn_c_check_header_mongrel "$LINENO" "dlfcn.h" "ac_cv_header_dlfcn_h" "$ac_includes_default"
  if test "x$ac_cv_header_dlfcn_h" = xyes; then :
-@@ -7900,6 +7900,12 @@ fi
+@@ -8063,6 +8063,12 @@ fi
        fi
        ;;
  
@@ -34,7 +34,7 @@ Index: scripts/configure
      *-nextstep*)
        LDDL_FLAGS="-nostdlib -r"
        ;;
-@@ -9298,16 +9304,5 @@ else
+@@ -9501,16 +9507,5 @@ else
       echo
     fi
  fi
