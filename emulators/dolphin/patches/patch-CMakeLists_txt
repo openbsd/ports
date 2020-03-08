@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/03/08 02:15:51 thfr Exp $
+
+use devel/gtest instead of this bundled gtest, which fails to compile
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -748,8 +748,6 @@ include_directories("${PROJECT_BINARY_DIR}/Source/Core
+ # Unit testing.
+ #
+ if(ENABLE_TESTS)
+-  message(STATUS "Using static gtest from Externals")
+-  add_subdirectory(Externals/gtest EXCLUDE_FROM_ALL)
+ else()
+   message(STATUS "Unit tests are disabled")
+ endif()

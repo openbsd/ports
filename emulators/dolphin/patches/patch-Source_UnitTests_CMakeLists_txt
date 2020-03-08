@@ -1,0 +1,16 @@
+$OpenBSD: patch-Source_UnitTests_CMakeLists_txt,v 1.1 2020/03/08 02:15:51 thfr Exp $
+
+link against lgtest and lgtest_main, provided by devel/gtest
+
+Index: Source/UnitTests/CMakeLists.txt
+--- Source/UnitTests/CMakeLists.txt.orig
++++ Source/UnitTests/CMakeLists.txt
+@@ -16,7 +16,7 @@ macro(add_dolphin_test target)
+     $<TARGET_OBJECTS:unittests_stubhost>
+   )
+   set_target_properties(${target} PROPERTIES FOLDER Tests)
+-  target_link_libraries(${target} PRIVATE core uicommon gtest_main)
++  target_link_libraries(${target} PRIVATE core uicommon gtest gtest_main)
+   add_dependencies(unittests ${target})
+   add_test(NAME ${target} COMMAND ${target})
+ endmacro()

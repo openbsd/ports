@@ -1,0 +1,29 @@
+$OpenBSD: README-nogui,v 1.1 2020/03/08 02:15:51 thfr Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+/etc/login.conf
+===============
+
+Dolphin allocates a large amount of memory at startup. You may need to increase
+the datasize limit to more than 16G to run dolphin. In ksh(1) run:
+
+	$ ulimit -d 17000000
+
+or adjust the datasize entry for your user class in login.conf(5).
+
+Audio
+=====
+
+Config > Audio and under Backend Settings set Audio Backend: Cubeb.
+
+Performance issues
+==================
+
+If audio is stuttering and the framerate is unstable consider the following:
+  - Audio off will have good graphics performance
+  - Audio on will have worse graphics performance
+  - Compile a custom OpenBSD kernel to use 1000 ticks for the best possible
+    audio and graphics performance

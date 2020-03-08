@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_Core_Core_HW_WiimoteReal_IOhidapi_cpp,v 1.1.1.1 2018/07/22 16:54:48 thfr Exp $
+$OpenBSD: patch-Source_Core_Core_HW_WiimoteReal_IOhidapi_cpp,v 1.2 2020/03/08 02:15:51 thfr Exp $
 
 change hid_init to hidapi_hid_init which is renamed locally
 to avoid conflict with usbhid
@@ -6,7 +6,7 @@ to avoid conflict with usbhid
 Index: Source/Core/Core/HW/WiimoteReal/IOhidapi.cpp
 --- Source/Core/Core/HW/WiimoteReal/IOhidapi.cpp.orig
 +++ Source/Core/Core/HW/WiimoteReal/IOhidapi.cpp
-@@ -38,7 +38,7 @@ namespace WiimoteReal
+@@ -41,7 +41,7 @@ namespace WiimoteReal
  {
  WiimoteScannerHidapi::WiimoteScannerHidapi()
  {

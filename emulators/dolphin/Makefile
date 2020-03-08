@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/08 02:15:51 thfr Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -6,12 +6,10 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT-main =		Nintendo GameCube and Wii emulator with GUI
 COMMENT-nogui =		Nintendo GameCube and Wii emulator
 
-V =			5.0.0.20180901
+V =			5.0.0.20190621
 DISTNAME =		dolphin-emu-${V}
 PKGNAME-main =		dolphin-${V}
 PKGNAME-nogui =		dolphin-nogui-${V}
-REVISION-main =		2
-REVISION-nogui =	2
 
 MULTI_PACKAGES =	-main -nogui
 
@@ -19,7 +17,7 @@ MULTI_PACKAGES =	-main -nogui
 
 GH_ACCOUNT =		dolphin-emu
 GH_PROJECT =		dolphin
-GH_COMMIT =		5f0d825f40b8aabe13eaef32d44ab667ff8e8c28
+GH_COMMIT =		981925a831e28d3967104e1a64dd8fa9b382660a
 
 CATEGORIES =		emulators
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
@@ -27,10 +25,11 @@ MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-cWANTLIB =	GL GLU ICE SDL2 SM X11 Xext Xi Xrandr avcodec avformat avutil \
-		c curl hidapi iconv intl lzo2 m mbedcrypto mbedtls mbedx509 \
-		miniupnpc png pthread pugixml pulse sfml-network sfml-system \
-		sndio swscale usb-1.0 z ${COMPILER_LIBCXX}
+cWANTLIB =		EGL GL GLU ICE SDL2 SM X11 Xext Xi Xrandr avcodec \
+			avformat avutil c curl hidapi-libusb iconv intl lzo2 \
+			m mbedcrypto mbedtls mbedx509 miniupnpc png pthread \
+			pugixml sfml-network sfml-system sndio swscale \
+			usb-1.0 z ${COMPILER_LIBCXX}
 
 WANTLIB-main =	${cWANTLIB} Qt5Core Qt5Gui Qt5Widgets
 WANTLIB-nogui =	${cWANTLIB}
@@ -38,11 +37,12 @@ WANTLIB-nogui =	${cWANTLIB}
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
+TEST_DEPENDS =		devel/gtest
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS-nogui =	archivers/lzo2 \
-			audio/pulseaudio \
 			comms/libhidapi \
 			converters/libiconv \
+			devel/gettext,-runtime \
 			devel/libusb1 \
 			devel/sdl2 \
 			graphics/ffmpeg \
@@ -60,14 +60,14 @@ RUN_DEPENDS-main =	${RUN_DEPENDS-nogui} \
 			x11/gtk+3,-guic
 CONFIGURE_ARGS +=	-Dmandir:=${PREFIX}/man \
 			-DENABLE_ALSA=OFF \
+			-DENABLE_PULSEAUDIO=OFF \
+			-DENABLE_LLVM=OFF \
 			-DQt5_DIR="${LOCALBASE}/lib/qt5/cmake/Qt5" \
 			-DUSE_DISCORD_PRESENCE=OFF
+TEST_TARGET =		unittests
 
-# clang arches link with libLLVM. It's not versioned, therefore using BDEP +
-# RDEP instead of LDEP
-.if ${PROPERTIES:Mclang}
-BUILD_DEPENDS +=	devel/llvm
-RUN_DEPENDS-nogui +=	devel/llvm
-.endif
+post-configure:
+	@mv ${WRKSRC}/Externals/soundtouch/SoundTouch.h \
+		${WRKSRC}/Externals/soundtouch/ExtSoundTouch.h
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-Externals_soundtouch_SoundTouch_cpp,v 1.1 2020/03/08 02:15:51 thfr Exp $
+
+Index: Externals/soundtouch/SoundTouch.cpp
+--- Externals/soundtouch/SoundTouch.cpp.orig
++++ Externals/soundtouch/SoundTouch.cpp
+@@ -75,7 +75,7 @@
+ #include <math.h>
+ #include <stdio.h>
+ 
+-#include "SoundTouch.h"
++#include "ExtSoundTouch.h"
+ #include "TDStretch.h"
+ #include "RateTransposer.h"
+ #include "cpu_detect.h"

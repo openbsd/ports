@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_Core_AudioCommon_AudioStretcher_h,v 1.1 2020/03/08 02:15:51 thfr Exp $
+
+Index: Source/Core/AudioCommon/AudioStretcher.h
+--- Source/Core/AudioCommon/AudioStretcher.h.orig
++++ Source/Core/AudioCommon/AudioStretcher.h
+@@ -6,7 +6,7 @@
+ 
+ #include <array>
+ 
+-#include <soundtouch/SoundTouch.h>
++#include <soundtouch/ExtSoundTouch.h>
+ 
+ namespace AudioCommon
+ {
