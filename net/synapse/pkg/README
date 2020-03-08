@@ -1,0 +1,56 @@
+$OpenBSD: README,v 1.1.1.1 2020/03/08 17:03:15 landry Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Generate a config
+=================
+
+As root (or _synapse), go into ${LOCALSTATEDIR}/synapse, then use
+doas -u _synapse ${MODPY_BIN} -m synapse.app.homeserver \
+	-c ${LOCALSTATEDIR}/synapse/homeserver.yaml --generate-config \
+	--server-name matrix.example.com --report-stats=no \
+	--generate-keys --keys-directory ${LOCALSTATEDIR}/synapse
+
+Register a user
+===============
+doas -u _synapse \
+	${PREFIX}/share/synapse/register_new_matrix_user \
+	-c ${LOCALSTATEDIR}/synapse/homeserver.yaml \
+	http://localhost:8008
+
+Configuration with TLS
+======================
+
+By default, synapse will run without TLS on localhost:8008
+This means that you will not be able to connect to your server remotely.
+The best way to achieve remote connectivity is through a reverse proxy.
+
+Here is an Nginx vhost reverse proxy example:
+
+    server {
+        listen 443 ssl;
+        listen [::]:443 ssl;
+        ssl_certificate /etc/ssl/matrix.example.com.pem;
+        ssl_certificate_key /etc/ssl/private/matrix.example.com.key;
+        server_name matrix.example.com;
+
+        location /_matrix {
+            proxy_pass http://localhost:8008;
+            proxy_set_header X-Forwarded-For $remote_addr;
+        }
+    }
+
+    server {
+        listen 8448 ssl default_server;
+        listen [::]:8448 ssl default_server;
+        ssl_certificate /etc/ssl/matrix.example.com.pem;
+        ssl_certificate_key /etc/ssl/private/matrix.example.com.key;
+        server_name matrix.example.com;
+
+        location / {
+            proxy_pass http://localhost:8008;
+            proxy_set_header X-Forwarded-For $remote_addr;
+        }
+    }

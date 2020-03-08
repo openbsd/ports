@@ -1,0 +1,10 @@
+Matrix specifies a set of RESTful HTTP JSON APIs as an open standard for
+federated Instant Messaging and VoIP (creating and managing distributed chat
+rooms without points of control or failure, cryptographically secure state
+synchronisation across an open network, etc).
+
+In Matrix, every user runs one or more Matrix clients, which connect
+through to a Matrix homeserver. The homeserver stores all their personal
+chat history and user account information.
+
+Synapse is a reference "homeserver" implementation of Matrix.
