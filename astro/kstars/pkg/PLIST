@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/02/19 07:44:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/03/08 07:19:15 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kstars
@@ -1754,6 +1754,7 @@ share/locale/br/LC_MESSAGES/kstars.mo
 share/locale/bs/LC_MESSAGES/kstars.mo
 share/locale/ca/LC_MESSAGES/kstars.mo
 share/locale/ca@valencia/LC_MESSAGES/kstars.mo
+share/locale/cs/LC_MESSAGES/kstars.mo
 share/locale/cy/LC_MESSAGES/kstars.mo
 share/locale/da/LC_MESSAGES/kstars.mo
 share/locale/de/LC_MESSAGES/kstars.mo
