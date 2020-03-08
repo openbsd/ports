@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/19 16:09:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/08 11:58:24 rsadowski Exp $
 
 COMMENT-main =		C++ general-purpose toolkit, meta-package
 COMMENT-examples =	examples for Qt5, meta-package
@@ -6,8 +6,8 @@ COMMENT-examples =	examples for Qt5, meta-package
 PKGNAME =		qt5-${MODQT5_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
-REVISION-examples =	1
-REVISION-main =		1
+REVISION-examples =	2
+REVISION-main =		2
 
 MULTI_PACKAGES =	-main -examples
 
@@ -20,7 +20,6 @@ LIB_DEPENDS-main =
 RUN_DEPENDS-main =	\
 			x11/qt5/qt3d,-main=${MODQT5_VERSION} \
 			x11/qt5/qtbase,-main=${MODQT5_VERSION} \
-			x11/qt5/qtcanvas3d,-main=${MODQT5_VERSION} \
 			x11/qt5/qtcharts,-main=${MODQT5_VERSION} \
 			x11/qt5/qtdatavis3d,-main=${MODQT5_VERSION} \
 			x11/qt5/qtdeclarative,-main=${MODQT5_VERSION} \
@@ -56,7 +55,6 @@ LIB_DEPENDS-examples =
 RUN_DEPENDS-examples =	\
 			x11/qt5/qt3d,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtbase,-examples=${MODQT5_VERSION} \
-			x11/qt5/qtcanvas3d,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtcharts,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtdatavis3d,-examples=${MODQT5_VERSION} \
 			x11/qt5/qtdeclarative,,-examples=${MODQT5_VERSION} \
