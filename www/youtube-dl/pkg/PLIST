@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.134 2020/01/21 14:08:11 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.135 2020/03/08 15:00:45 cwen Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -338,7 +338,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}ja
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}jeuxvideo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}joj.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}jove.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}jpopsukitv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}jwplatform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}kakao.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}kaltura.${MODPY_PYC_MAGIC_TAG}pyc
@@ -515,6 +514,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}pl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}podomatic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}pokemon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}polskieradio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}popcorntimes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}popcorntv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}porn91.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}porncom.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1103,7 +1103,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jamendo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jeuxvideo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/joj.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jove.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jpopsukitv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jwplatform.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/kakao.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/kaltura.py
@@ -1280,6 +1279,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pluralsight.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/podomatic.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pokemon.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/polskieradio.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/popcorntimes.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/popcorntv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/porn91.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/porncom.py
