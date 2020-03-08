@@ -1,0 +1,7 @@
+importlib_metadata is a library which provides an API for accessing an
+installed packages metadata (see PEP 566), such as its entry points or
+its top-level name. This functionality intends to replace most uses of
+pkg_resources entry point API and metadata API. Along with
+importlib.resources in Python 3.7 and newer (backported as
+importlib_resources for older versions of Python), this can eliminate
+the need to use the older and less efficient pkg_resources package.
