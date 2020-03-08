@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/01/27 07:10:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/03/08 07:24:12 rsadowski Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -287,8 +287,6 @@ share/locale/be/LC_MESSAGES/homebank.mo
 share/locale/bg/LC_MESSAGES/homebank.mo
 share/locale/br/LC_MESSAGES/homebank.mo
 share/locale/ca/LC_MESSAGES/homebank.mo
-share/locale/ckb/
-share/locale/ckb/LC_MESSAGES/
 share/locale/ckb/LC_MESSAGES/homebank.mo
 share/locale/cs/LC_MESSAGES/homebank.mo
 share/locale/cy/LC_MESSAGES/homebank.mo

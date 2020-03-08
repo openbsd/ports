@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2020/02/02 15:22:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.45 2020/03/08 07:24:12 rsadowski Exp $
 
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.3.1
-REVISION =	0
+DISTNAME =	homebank-5.3.2
 
 CATEGORIES =	productivity x11
 
@@ -16,14 +15,15 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org> \
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl m ofx osp pango-1.0
-WANTLIB += pangocairo-1.0 soup-2.4
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl m
+WANTLIB += ofx osp pango-1.0 pangocairo-1.0 soup-2.4
 
 MASTER_SITES =	http://homebank.free.fr/public/
 
 MODULES =	textproc/intltool
 
 LIB_DEPENDS =	x11/gtk+3 \
+		devel/harfbuzz \
 		devel/libofx \
 		devel/libsoup
 
