@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/03/08 08:17:57 robert Exp $
+# $OpenBSD: Makefile,v 1.51 2020/03/08 09:22:39 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -8,6 +8,8 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
+
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -156,12 +158,11 @@ pre-configure:
 		for i in *.cfg ldap.m4 createuser.dotforward ; do \
 			${SUBST_CMD} $$i; \
 			perl -pi -e 's/\r\n/\n/;' $$i; done
-#	for i in ${SUB_SCRIPTS}; do \
-#		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
 	${SUBST_CMD} ${WRKSRC}/spooler/{DAgent,Spooler}.cpp \
 		${WRKSRC}/tools/python-scripts/kopano-cachestat
 	perl -pi -e 's,/bin/bash,/bin/sh,g' \
 		${WRKSRC}/installer/searchscripts/{attachments_parser,zmktemp}
+	find ${WRKSRC} -type f | xargs perl -pi -e 's,/usr/bin/python3,${MODPY_BIN},g'
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
