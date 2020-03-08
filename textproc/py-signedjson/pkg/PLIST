@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/08 16:46:03 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/signedjson/
+lib/python${MODPY_VERSION}/site-packages/signedjson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/signedjson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/signedjson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/signedjson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/signedjson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/signedjson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/signedjson/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/signedjson/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/signedjson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/signedjson/${MODPY_PYCACHE}key.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/signedjson/${MODPY_PYCACHE}sign.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/signedjson/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/signedjson/key.py
+lib/python${MODPY_VERSION}/site-packages/signedjson/sign.py
+lib/python${MODPY_VERSION}/site-packages/signedjson/types.py

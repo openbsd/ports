@@ -1,0 +1,10 @@
+Signs JSON objects with ED25519 signatures.
+
+- More than one entity can sign the same object.
+
+- Each entity can sign the object with more than one key making it
+easier to rotate keys
+
+- ED25519 can be replaced with a different algorithm.
+
+- Unprotected data can be added to the object under the "unsigned" key.
