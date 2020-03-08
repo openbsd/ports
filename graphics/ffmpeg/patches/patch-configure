@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.61 2019/08/17 08:23:50 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.62 2020/03/08 22:37:04 ajacoutot Exp $
 
 - section_data_rel_ro: required by NEON support
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5253,9 +5253,10 @@ case $target_os in
+@@ -5253,9 +5253,9 @@ case $target_os in
          ;;
      openbsd|bitrig)
          disable symver
@@ -13,11 +13,10 @@ Index: configure
          striptype=""
          SHFLAGS='-shared'
 -        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBMAJOR).$(LIBMINOR)'
-+        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBVERSION)'
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5606,7 +5607,7 @@ set_default libdir
+@@ -5606,7 +5606,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
