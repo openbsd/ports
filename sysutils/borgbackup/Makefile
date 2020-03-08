@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2019/11/18 04:30:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.33 2020/03/08 14:52:29 bket Exp $
 
 COMMENT =		deduplicating backup program
 
-MODPY_EGG_VERSION =	1.1.10
+MODPY_EGG_VERSION =	1.1.11
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
+
+HOMEPAGE =		https://www.borgbackup.org/
 
 MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
