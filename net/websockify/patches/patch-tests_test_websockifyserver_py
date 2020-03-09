@@ -1,10 +1,13 @@
-$OpenBSD: patch-tests_test_websocket_py,v 1.1.1.1 2015/12/18 13:18:39 sthen Exp $
---- tests/test_websocket.py.orig	Fri Jul 24 02:02:37 2015
-+++ tests/test_websocket.py	Fri Dec 18 12:33:34 2015
-@@ -313,38 +313,6 @@ class WebSocketServerTestCase(unittest.TestCase):
+$OpenBSD: patch-tests_test_websockifyserver_py,v 1.1 2020/03/09 12:43:16 sthen Exp $
+
+Index: tests/test_websockifyserver.py
+--- tests/test_websockifyserver.py.orig
++++ tests/test_websockifyserver.py
+@@ -421,36 +421,3 @@ class WebSockifyServerTestCase(unittest.TestCase):
+                        lambda *args, **kwargs: None)
          self.stubs.Set(select, 'select', fake_select)
          server.start_server()
- 
+-
 -    def test_socket_set_keepalive_options(self):
 -        keepcnt = 12
 -        keepidle = 34
@@ -16,8 +19,9 @@ $OpenBSD: patch-tests_test_websocket_py,v 1.1.1.1 2015/12/18 13:18:39 sthen Exp 
 -                             tcp_keepidle=keepidle,
 -                             tcp_keepintvl=keepintvl)
 -
--        self.assertEqual(sock.getsockopt(socket.SOL_TCP,
--                                         socket.TCP_KEEPCNT), keepcnt)
+-        if hasattr(socket, 'TCP_KEEPCNT'):
+-            self.assertEqual(sock.getsockopt(socket.SOL_TCP,
+-                                             socket.TCP_KEEPCNT), keepcnt)
 -        self.assertEqual(sock.getsockopt(socket.SOL_TCP,
 -                                         socket.TCP_KEEPIDLE), keepidle)
 -        self.assertEqual(sock.getsockopt(socket.SOL_TCP,
@@ -29,14 +33,10 @@ $OpenBSD: patch-tests_test_websocket_py,v 1.1.1.1 2015/12/18 13:18:39 sthen Exp 
 -                             tcp_keepidle=keepidle,
 -                             tcp_keepintvl=keepintvl)
 -
--        self.assertNotEqual(sock.getsockopt(socket.SOL_TCP,
--                                            socket.TCP_KEEPCNT), keepcnt)
+-        if hasattr(socket, 'TCP_KEEPCNT'):
+-            self.assertNotEqual(sock.getsockopt(socket.SOL_TCP,
+-                                                socket.TCP_KEEPCNT), keepcnt)
 -        self.assertNotEqual(sock.getsockopt(socket.SOL_TCP,
 -                                            socket.TCP_KEEPIDLE), keepidle)
 -        self.assertNotEqual(sock.getsockopt(socket.SOL_TCP,
 -                                            socket.TCP_KEEPINTVL), keepintvl)
--
--
- class HyBiEncodeDecodeTestCase(unittest.TestCase):
-     def test_decode_hybi_text(self):
-         buf = b'\x81\x85\x37\xfa\x21\x3d\x7f\x9f\x4d\x51\x58'

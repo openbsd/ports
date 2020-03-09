@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/12/22 14:41:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/09 12:43:16 sthen Exp $
 bin/websockify
 lib/python${MODPY_VERSION}/site-packages/websockify/
 lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -10,24 +10,24 @@ lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/websockify/__init__.py
-lib/python${MODPY_VERSION}/site-packages/websockify/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}auth_plugins.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}sysloghandler.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}token_plugins.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}websocketproxy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}websocketserver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/${MODPY_PYCACHE}websockifyserver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/websockify/auth_plugins.py
-lib/python${MODPY_VERSION}/site-packages/websockify/auth_plugins.pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/sysloghandler.py
 lib/python${MODPY_VERSION}/site-packages/websockify/token_plugins.py
-lib/python${MODPY_VERSION}/site-packages/websockify/token_plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/websockify/websocket.py
-lib/python${MODPY_VERSION}/site-packages/websockify/websocket.pyc
 lib/python${MODPY_VERSION}/site-packages/websockify/websocketproxy.py
-lib/python${MODPY_VERSION}/site-packages/websockify/websocketproxy.pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/websocketserver.py
+lib/python${MODPY_VERSION}/site-packages/websockify/websockifyserver.py
 lib/websockify/
-lib/websockify/rebind.so
+@so lib/websockify/rebind.so
 @man man/man1/websockify.1
-share/websockify/
-share/websockify/include/
-share/websockify/include/base64.js
-share/websockify/include/util.js
-share/websockify/include/web-socket-js/
-share/websockify/include/web-socket-js/WebSocketMain.swf
-share/websockify/include/web-socket-js/swfobject.js
-share/websockify/include/web-socket-js/web_socket.js
-share/websockify/include/websock.js
