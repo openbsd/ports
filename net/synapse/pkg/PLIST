@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/09 08:17:59 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/09 11:56:54 sthen Exp $
 @newgroup _synapse:849
 @newuser _synapse:849:849:daemon:Matrix.org Daemon:/var/synapse:/sbin/nologin
 @rcscript ${RCDIR}/synapse
@@ -115,6 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}saml2_co
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}server_notices_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}spam_checker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}sso.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}stats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}third_party_event_rules.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}tls.${MODPY_PYC_MAGIC_TAG}pyc
@@ -148,6 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/config/saml2_config.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/server.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/server_notices_config.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/spam_checker.py
+lib/python${MODPY_VERSION}/site-packages/synapse/config/sso.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/stats.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/third_party_event_rules.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/tls.py
@@ -525,6 +527,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/registration_fail
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/registration_success.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/room.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/room.txt
+lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/sso_redirect_confirm.html
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}/
@@ -1296,6 +1299,3 @@ share/synapse/synctl
 @owner _synapse
 @group _synapse
 @sample /var/synapse/
-@mode
-@owner
-@group
