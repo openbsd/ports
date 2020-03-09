@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/09 21:13:41 sthen Exp $
 
 COMMENT =	EPUB ebook editor
 
 PKGNAME =	sigil-${GH_TAGNAME}
 
+# newer versions require qtwebengine
 GH_ACCOUNT =	Sigil-Ebook
 GH_PROJECT =	Sigil
-GH_TAGNAME =	0.9.13
+GH_TAGNAME =	0.9.14
 
 CATEGORIES =	editors
 

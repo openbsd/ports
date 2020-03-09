@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Resource_Files_python3lib_updatechecker_py,v 1.1 2020/03/09 21:13:41 sthen Exp $
+
+disable phone-home
+
+Index: src/Resource_Files/python3lib/updatechecker.py
+--- src/Resource_Files/python3lib/updatechecker.py.orig
++++ src/Resource_Files/python3lib/updatechecker.py
+@@ -29,7 +29,7 @@ def check_for_updates(site_url):
+     latest_version = ""
+     _version_pattern = re.compile(r'<current-version>([^<]*)</current-version>')
+ 
+-    if is_connected():
++    if 0:
+         try:
+             from urllib.request import Request, urlopen
+             socket.setdefaulttimeout(2)
