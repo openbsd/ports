@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.58 2020/01/15 20:12:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.59 2020/03/09 22:11:29 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -204,6 +204,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_MAIL_AUTH.3
 @man man/man3/CURLOPT_MAIL_FROM.3
 @man man/man3/CURLOPT_MAIL_RCPT.3
+@man man/man3/CURLOPT_MAIL_RCPT_ALLLOWFAILS.3
 @man man/man3/CURLOPT_MAXAGE_CONN.3
 @man man/man3/CURLOPT_MAXCONNECTS.3
 @man man/man3/CURLOPT_MAXFILESIZE.3
