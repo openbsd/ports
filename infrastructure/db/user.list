@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.359 2020/03/07 10:01:32 sthen Exp $
+$OpenBSD: user.list,v 1.360 2020/03/09 08:17:31 landry Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -356,3 +356,4 @@ id  user		group		port
 846 _dhcpcd		_dhcpcd		net/dhcpcd
 847 _iperf3		_iperf3		net/iperf3
 848 _loki		_loki		sysutils/loki
+849 _synapse		_synapse	net/synapse
