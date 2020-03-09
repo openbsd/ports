@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/09 07:16:46 sebastia Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/check_changelog.yml
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
+${GEM_LIB}/gems/${DISTNAME}/get_process_mem.gemspec
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/get_process_mem/
+${GEM_LIB}/gems/${DISTNAME}/lib/get_process_mem.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/get_process_mem/darwin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/get_process_mem/version.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/heroku-bash-smap
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/heroku-bash-status
+${GEM_LIB}/gems/${DISTNAME}/test/get_process_mem_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
