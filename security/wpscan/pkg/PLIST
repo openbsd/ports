@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/09/26 06:37:40 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/09 07:23:48 sebastia Exp $
 ${GEM_BIN}/wpscan
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -44,7 +44,9 @@ ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/upload_sql_dump.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/wp_cron.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/main_theme/
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/main_theme.rb
-${GEM_LIB}/gems/${DISTNAME}/app/finders/main_theme/css_style.rb
+${GEM_LIB}/gems/${DISTNAME}/app/finders/main_theme/css_style_in_404_page.rb
+${GEM_LIB}/gems/${DISTNAME}/app/finders/main_theme/css_style_in_homepage.rb
+${GEM_LIB}/gems/${DISTNAME}/app/finders/main_theme/urls_in_404_page.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/main_theme/urls_in_homepage.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/main_theme/woo_framework_meta_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/medias/
@@ -67,6 +69,7 @@ ${GEM_LIB}/gems/${DISTNAME}/app/finders/plugins/header_pattern.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/plugins/javascript_var.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/plugins/known_locations.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/plugins/query_parameter.rb
+${GEM_LIB}/gems/${DISTNAME}/app/finders/plugins/urls_in_404_page.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/plugins/urls_in_homepage.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/plugins/xpath.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/theme_version/
@@ -76,6 +79,7 @@ ${GEM_LIB}/gems/${DISTNAME}/app/finders/theme_version/woo_framework_meta_generat
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/themes/
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/themes.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/themes/known_locations.rb
+${GEM_LIB}/gems/${DISTNAME}/app/finders/themes/urls_in_404_page.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/themes/urls_in_homepage.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/timthumb_version/
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/timthumb_version.rb
@@ -94,7 +98,7 @@ ${GEM_LIB}/gems/${DISTNAME}/app/finders/users/wp_json_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/users/yoast_seo_author_sitemap.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/wp_items/
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/wp_items.rb
-${GEM_LIB}/gems/${DISTNAME}/app/finders/wp_items/urls_in_homepage.rb
+${GEM_LIB}/gems/${DISTNAME}/app/finders/wp_items/urls_in_page.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/wp_version/
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/wp_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/wp_version/atom_generator.rb
