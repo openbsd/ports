@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1946 2020/03/08 16:55:25 landry Exp $
+# $OpenBSD: Makefile,v 1.1947 2020/03/09 07:20:36 sebastia Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1822,6 +1822,7 @@
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
+     SUBDIR += ruby-get_process_mem
      SUBDIR += ruby-gir_ffi
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
@@ -1885,6 +1886,7 @@
      SUBDIR += ruby-subset_sum,ruby26
      SUBDIR += ruby-subset_sum,ruby27
      SUBDIR += ruby-systemu
+     SUBDIR += ruby-sys-proctable
      SUBDIR += ruby-therubyracer,ruby25
      SUBDIR += ruby-therubyracer,ruby26
      SUBDIR += ruby-therubyracer,ruby27
