@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/09 16:28:17 sthen Exp $
+${P5SITE}/PPIx/
+${P5SITE}/PPIx/QuoteLike/
+${P5SITE}/PPIx/QuoteLike.pm
+${P5SITE}/PPIx/QuoteLike/Constant.pm
+${P5SITE}/PPIx/QuoteLike/Dumper.pm
+${P5SITE}/PPIx/QuoteLike/Token/
+${P5SITE}/PPIx/QuoteLike/Token.pm
+${P5SITE}/PPIx/QuoteLike/Token/Control.pm
+${P5SITE}/PPIx/QuoteLike/Token/Delimiter.pm
+${P5SITE}/PPIx/QuoteLike/Token/Interpolation.pm
+${P5SITE}/PPIx/QuoteLike/Token/String.pm
+${P5SITE}/PPIx/QuoteLike/Token/Structure.pm
+${P5SITE}/PPIx/QuoteLike/Token/Unknown.pm
+${P5SITE}/PPIx/QuoteLike/Token/Whitespace.pm
+${P5SITE}/PPIx/QuoteLike/Utils.pm
+@man man/man3p/PPIx::QuoteLike.3p
+@man man/man3p/PPIx::QuoteLike::Constant.3p
+@man man/man3p/PPIx::QuoteLike::Dumper.3p
+@man man/man3p/PPIx::QuoteLike::Token.3p
+@man man/man3p/PPIx::QuoteLike::Token::Control.3p
+@man man/man3p/PPIx::QuoteLike::Token::Delimiter.3p
+@man man/man3p/PPIx::QuoteLike::Token::Interpolation.3p
+@man man/man3p/PPIx::QuoteLike::Token::String.3p
+@man man/man3p/PPIx::QuoteLike::Token::Structure.3p
+@man man/man3p/PPIx::QuoteLike::Token::Unknown.3p
+@man man/man3p/PPIx::QuoteLike::Token::Whitespace.3p
+@man man/man3p/PPIx::QuoteLike::Utils.3p
