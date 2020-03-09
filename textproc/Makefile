@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.622 2020/03/08 16:55:25 landry Exp $
+# $OpenBSD: Makefile,v 1.623 2020/03/09 16:28:49 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -213,6 +213,7 @@
      SUBDIR += p5-POE-Filter-XML
      SUBDIR += p5-PPI
      SUBDIR += p5-PPI-HTML
+     SUBDIR += p5-PPIx-QuoteLike
      SUBDIR += p5-PPIx-Regexp
      SUBDIR += p5-PPIx-Utilities
      SUBDIR += p5-PatchReader
