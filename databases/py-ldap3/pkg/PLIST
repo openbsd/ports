@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/27 20:39:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/09 11:34:17 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/ldap3/
 lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -229,6 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}hashed.${MO
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}ntlm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}ordDict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}port_validators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}repr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}tls_backport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}uri.${MODPY_PYC_MAGIC_TAG}pyc
@@ -241,6 +242,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/utils/hashed.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/log.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/ntlm.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/ordDict.py
+lib/python${MODPY_VERSION}/site-packages/ldap3/utils/port_validators.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/repr.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/tls_backport.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/uri.py
