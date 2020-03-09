@@ -1,9 +1,9 @@
-$OpenBSD: patch-libraries_zmusic_mididevices_music_fluidsynth_mididevice_cpp,v 1.1 2019/12/06 17:40:24 solene Exp $
+$OpenBSD: patch-libraries_zmusic_mididevices_music_fluidsynth_mididevice_cpp,v 1.2 2020/03/09 12:18:50 solene Exp $
 
 Index: libraries/zmusic/mididevices/music_fluidsynth_mididevice.cpp
 --- libraries/zmusic/mididevices/music_fluidsynth_mididevice.cpp.orig
 +++ libraries/zmusic/mididevices/music_fluidsynth_mididevice.cpp
-@@ -140,8 +140,12 @@ class FluidSynthMIDIDevice : public SoftSynthMIDIDevic
+@@ -141,8 +141,12 @@ class FluidSynthMIDIDevice : public SoftSynthMIDIDevic
  #define FLUIDSYNTHLIB1	"libfluidsynth.1.dylib"
  #define FLUIDSYNTHLIB2	"libfluidsynth.2.dylib"
  #else // !__APPLE__

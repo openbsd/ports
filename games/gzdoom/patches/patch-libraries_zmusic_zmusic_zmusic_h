@@ -1,0 +1,20 @@
+$OpenBSD: patch-libraries_zmusic_zmusic_zmusic_h,v 1.1 2020/03/09 12:18:50 solene Exp $
+
+Index: libraries/zmusic/zmusic/zmusic.h
+--- libraries/zmusic/zmusic/zmusic.h.orig
++++ libraries/zmusic/zmusic/zmusic.h
+@@ -4,6 +4,7 @@
+ #include <stdint.h>
+ #include <vector>
+ #include <string>
++#include <stdarg.h>
+ 
+ // These constants must match the corresponding values of the Windows headers
+ // to avoid readjustment in the native Windows device's playback functions 
+@@ -314,4 +315,4 @@ inline bool ChangeMusicSetting(EStringConfigKey key, Z
+ 	return ChangeMusicSettingString(key, song, value);
+ }
+ 
+-#endif
+\ No newline at end of file
++#endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/06 17:40:23 solene Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/09 12:18:50 solene Exp $
 
 BROKEN-i386 =		various always_inline functions require sse2, but would be inlined into function 'Loop' that is compiled without support for sse2
 
@@ -8,13 +8,11 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		OpenGL engine for idTech 1 games like doom,hexen,heretic...
 
-V =			4.2.4
-PKGNAME =		gzdoom-${V}
-
+V =			4.3.3
 GH_ACCOUNT =		coelckers
 GH_PROJECT =		gzdoom
-GH_TAGNAME =		g4.2.4
-DISTNAME =		gzdoom-${GH_TAGNAME:S/g//}
+GH_TAGNAME =		g${V}
+DISTNAME =		gzdoom-${V}
 
 CATEGORIES=		games
 
