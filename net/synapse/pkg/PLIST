@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/08 17:03:15 landry Exp $
-@newgroup _synapse:848
-@newuser _synapse:848:848:daemon:Matrix.org Daemon:/var/synapse:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2020/03/09 08:17:59 landry Exp $
+@newgroup _synapse:849
+@newuser _synapse:849:849:daemon:Matrix.org Daemon:/var/synapse:/sbin/nologin
 @rcscript ${RCDIR}/synapse
 bin/export_signing_key
 bin/generate_log_config
