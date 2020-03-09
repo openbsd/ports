@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/08 16:28:41 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/09 12:03:05 sthen Exp $
 
-COMMENT =		library providng an API for accessing packages metadata
+COMMENT =		library providing an API for accessing packages metadata
 
-MODPY_EGG_VERSION =	0.23
+MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		importlib_metadata-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -20,6 +20,10 @@ BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+# XXX broken, needs zipp and pyfakefs (not in ports)
+MODPY_PYTEST =		Yes
+
 FLAVORS =		python3
 FLAVOR =		python3
 
