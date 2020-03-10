@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/10 09:32:46 landry Exp $
+@conflict py-qt5-<5.13
+lib/python${MODPY_VERSION}/site-packages/PyQt5/
+lib/python${MODPY_VERSION}/site-packages/PyQt5/sip.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PyQt5/sip.so
+lib/python${MODPY_VERSION}/site-packages/PyQt5_sip-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyQt5_sip-${MODPY_EGG_VERSION}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/PyQt5_sip-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyQt5_sip-${MODPY_EGG_VERSION}.dist-info/RECORD

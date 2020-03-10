@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_py,v 1.1.1.1 2020/03/10 09:32:46 landry Exp $
+
+Index: configure.py
+--- configure.py.orig
++++ configure.py
+@@ -270,7 +270,7 @@ def create_config(module, template, macros):
+         "sip_version":      sip_version,
+         "sip_version_str":  sip_version_str,
+         "platform":         build_platform,
+-        "sip_bin":          os.path.join(sip_bin_dir, "sip"),
++        "sip_bin":          os.path.join(sip_bin_dir, "sip${MODPY_BIN_SUFFIX}"),
+         "sip_inc_dir":      sip_inc_dir,
+         "sip_root_dir":     sip_root_dir,
+         "sip_module_dir":   sip_module_dir,

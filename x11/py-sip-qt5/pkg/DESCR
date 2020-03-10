@@ -1,0 +1,2 @@
+SIP is a tool for automatically generating Python bindings for C and C++
+libraries. This module contains Qt5 bindings that were previously in py-qt5.
