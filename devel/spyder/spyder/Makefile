@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/06 15:28:44 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/10 12:35:37 sthen Exp $
 
 COMMENT =		Scientific PYthon Development EnviRonment
 
 MODPY_EGG_VERSION =	3.3.3
-REVISION =		2
+REVISION =		3
 DISTNAME =		spyder-${MODPY_EGG_VERSION}
 PKGNAME =		spyder3-${MODPY_EGG_VERSION}
 
@@ -31,7 +31,7 @@ RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR} \
 		textproc/py-numpydoc${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}>=2.0 \
 		textproc/py-sphinx${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR}<5.12 \
+		x11/py-qt5${MODPY_FLAVOR} \
 		x11/py-qtpy${MODPY_FLAVOR}>=1.5.0 \
 		x11/py-qtawesome${MODPY_FLAVOR}>=0.4.1 \
 		devel/spyder/py-spyder-kernels${MODPY_FLAVOR}<1.0
