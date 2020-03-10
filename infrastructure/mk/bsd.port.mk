@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1522 2020/03/06 15:21:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1523 2020/03/10 17:15:19 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2185,17 +2185,17 @@ ${_FUPDATE_COOKIE${_S}}:
 
 makesum:
 	@${_warn_checksum}
-	@mv -f ${CHECKSUM_FILE}{,.orig} 2>/dev/null || true
 	@${MAKE} fetch-all _MAKESUM=true
 .if !empty(MAKESUMFILES)
-	@cd ${DISTDIR} && cksum -b -a "${_CIPHER}" -- ${MAKESUMFILES} >> ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && \
-		for file in ${MAKESUMFILES}; do \
-			${_size_fragment} $$file $$file >> ${CHECKSUM_FILE}; \
-		done
-	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
-	@diff -Lold -Lnew -u ${CHECKSUM_FILE}{.orig,} 2>/dev/null|| true
-	@rm -f ${CHECKSUM_FILE}.orig
+	@trap 'rm -f ${CHECKSUM_FILE}.new; exit 1' 1 2 3 13 15; \
+	cd ${DISTDIR}; \
+	cksum -b -a "${_CIPHER}" -- ${MAKESUMFILES} >> ${CHECKSUM_FILE}.new; \
+	for file in ${MAKESUMFILES}; do \
+		${_size_fragment} $$file $$file >> ${CHECKSUM_FILE}.new; \
+	done; \
+	sort -u -o ${CHECKSUM_FILE}.new ${CHECKSUM_FILE}.new; \
+	diff -Lold -Lnew -u ${CHECKSUM_FILE}{,.new} 2>/dev/null|| true; \
+	mv -f ${CHECKSUM_FILE}.new ${CHECKSUM_FILE}
 .endif
 
 ################################################################
