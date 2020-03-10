@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/10 19:58:20 juanfra Exp $
 @bin bin/bacon
 bin/bacon.sh
 @bin bin/bacongui-fltk
-lib/libbacon++.a
-lib/libbacon.a
+share/BaCon/
+share/BaCon/LICENSE
+share/BaCon/bacon.lang
+share/BaCon/bacon.vim
+share/BaCon/lower.m4
+share/BaCon/upper.m4
 share/applications/bacongui-fltk.desktop
 share/enscript/
 share/enscript/hl/

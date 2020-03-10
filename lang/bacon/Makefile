@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2020/01/16 09:53:38 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/10 19:58:20 juanfra Exp $
 
 COMMENT =		BASIC converter to C translator for Unix system
 
-DISTNAME =		bacon-3.9.3
+DISTNAME =		bacon-4.0
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://www.basic-converter.org/
+HOMEPAGE =		https://www.basic-converter.org/
 
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
@@ -18,8 +18,8 @@ WANTLIB += Xft Xinerama c fltk fltk_images fontconfig m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://www.basic-converter.org/stable/ \
-			http://www.basic-converter.org/museum/
+MASTER_SITES =		https://www.basic-converter.org/stable/ \
+			https://www.basic-converter.org/museum/
 
 BUILD_DEPENDS =		shells/bash
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS =	--with-bash \
 			--disable-gui-gtk
 CONFIGURE_ENV =		CPPFLAGS="`fltk-config --cxxflags`" \
 			CFLAGS="`fltk-config --cflags` ${CFLAGS}" \
-			CXXFLAGS="`fltk-config --cxxflags` ${CXXFLAGS}" \
+			CXXFLAGS="`fltk-config --cxxflags` -Wno-deprecated ${CXXFLAGS}" \
 			LDFLAGS="-L. `fltk-config --ldflags`" \
 			CC=${CC} CXX=${CXX}
 
