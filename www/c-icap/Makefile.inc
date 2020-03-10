@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.5 2019/06/03 16:06:58 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2020/03/10 21:25:07 sthen Exp $
 
 CATEGORIES+=	www
 
 HOMEPAGE?=	http://c-icap.sourceforge.net/
-
-MAINTAINER?=	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE?= Yes

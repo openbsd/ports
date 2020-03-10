@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2019/12/02 11:28:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/10 21:25:07 sthen Exp $
 
 MULTI_PACKAGES=	-main -urlcheck
 COMMENT-main=	libclamav-based virus scanner for c-icap
 COMMENT-urlcheck= basic URL filtering service for c-icap
 
 V=		0.5.4
+REVISION=	0
 DISTNAME=	c_icap_modules-$V
 PKGNAME-main=	c-icap-clamav-$V
 PKGNAME-urlcheck= c-icap-urlcheck-$V
