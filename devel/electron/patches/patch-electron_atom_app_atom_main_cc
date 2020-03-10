@@ -1,0 +1,23 @@
+$OpenBSD: patch-electron_atom_app_atom_main_cc,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+
+Index: electron/atom/app/atom_main.cc
+--- electron/atom/app/atom_main.cc.orig
++++ electron/atom/app/atom_main.cc
+@@ -26,7 +26,7 @@
+ #include "base/win/windows_version.h"
+ #include "content/public/app/sandbox_helper_win.h"
+ #include "sandbox/win/src/sandbox_types.h"
+-#elif defined(OS_LINUX)  // defined(OS_WIN)
++#elif defined(OS_LINUX) || defined(OS_BSD) // defined(OS_WIN)
+ #include <unistd.h>
+ #include <cstdio>
+ #include "atom/app/atom_main_delegate.h"  // NOLINT
+@@ -168,7 +168,7 @@ int APIENTRY wWinMain(HINSTANCE instance, HINSTANCE, w
+   return content::ContentMain(params);
+ }
+ 
+-#elif defined(OS_LINUX)  // defined(OS_WIN)
++#elif defined(OS_LINUX) || defined(OS_BSD)  // defined(OS_WIN)
+ 
+ int main(int argc, char* argv[]) {
+   FixStdioStreams();

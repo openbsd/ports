@@ -1,0 +1,18 @@
+# $OpenBSD: unveil.utility_network,v 1.1.1.1 2020/03/10 11:16:32 espie Exp $
+
+# needed for chromium
+/etc/chromium r
+
+# needed for dbus
+/etc/machine-id r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+# misc. files and libraries
+/usr/local/lib r
+
+~/.pki rwc
+
+~/.cache/chromium rwc
+~/.config/chromium rwc

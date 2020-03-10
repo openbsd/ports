@@ -1,0 +1,82 @@
+# $OpenBSD: unveil.main,v 1.1.1.1 2020/03/10 11:16:32 espie Exp $
+
+# needed for video(4)
+/dev/video rw
+
+# needed for FIDO authentication
+/dev/fido rw
+
+# needed for chromium
+/etc/chromium r
+
+# needed for fontconfig
+/etc/fonts r
+
+# needed for dbus
+/etc/machine-id r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+# needed for printing with lpr(1)
+/usr/bin/lpr rx
+
+# needed for xdg tools
+/usr/local/bin/xdg-desktop-menu rx
+/usr/local/bin/xdg-open rx
+/usr/local/bin/xdg-settings rx
+
+# misc. files and libraries
+/usr/local/lib r
+/usr/local/chrome rx
+/usr/local/share r
+
+# fontconfig
+/var/cache/fontconfig r
+
+# drm and misc xorg stuff
+/usr/X11R6/lib r
+/usr/X11R6/share r
+
+# needs /var/run in case /var/run/dbus is not available
+# needed by messagebus
+/var/run rw
+
+# ~ gets expanded to $HOME
+~/.XCompose r
+~/.Xauthority r
+~/.Xdefaults r
+~/.fontconfig r
+~/.fonts r
+~/.fonts.conf r
+~/.fonts.conf.d r
+~/.icons r
+~/.pki rwc
+~/.sndio rwc
+~/.terminfo r
+
+~/.cache/chromium rwc
+~/.cache/dconf rwc
+~/.cache/thumbnails rwc
+
+~/.config/chromium rwc
+~/.config/dconf r
+~/.config/fontconfig r
+~/.config/gtk-3.0 r
+~/.config/mimeapps.list r
+~/.config/user-dirs.dirs r
+
+~/.local/share/applications rwc
+~/.local/share/applnk r
+~/.local/share/fonts r
+~/.local/share/glib-2.0 r
+
+# needs write access due to chromium profile icons 
+~/.local/share/icons rwc
+
+~/.local/share/mime r
+~/.local/share/recently-used.xbel rwc
+~/.local/share/themes r
+
+# use this directory for downloading and uploading
+~/Downloads rwc

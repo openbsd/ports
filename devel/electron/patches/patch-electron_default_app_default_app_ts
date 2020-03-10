@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_default_app_default_app_ts,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+
+Index: electron/default_app/default_app.ts
+--- electron/default_app/default_app.ts.orig
++++ electron/default_app/default_app.ts
+@@ -63,7 +63,7 @@ async function createWindow () {
+     show: false
+   }
+ 
+-  if (process.platform === 'linux') {
++  if (process.platform === 'openbsd') {
+     options.icon = path.join(__dirname, 'icon.png')
+   }
+ 

@@ -1,0 +1,32 @@
+$OpenBSD: patch-electron_spec_api-net-log-spec_js,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+
+Index: electron/spec/api-net-log-spec.js
+--- electron/spec/api-net-log-spec.js.orig
++++ electron/spec/api-net-log-spec.js
+@@ -127,7 +127,7 @@ describe('netLog module', () => {
+   })
+ 
+   it('should begin and end logging automatically when --log-net-log is passed', done => {
+-    if (isCI && process.platform === 'linux') {
++    if (isCI && process.platform === 'openbsd') {
+       done()
+       return
+     }
+@@ -148,7 +148,7 @@ describe('netLog module', () => {
+ 
+   // FIXME(deepak1556): Ch69 follow up.
+   it('should begin and end logging automtically when --log-net-log is passed, and behave correctly when .startLogging() and .stopLogging() is called', done => {
+-    if (isCI && process.platform === 'linux') {
++    if (isCI && process.platform === 'openbsd') {
+       done()
+       return
+     }
+@@ -171,7 +171,7 @@ describe('netLog module', () => {
+   })
+ 
+   it('should end logging automatically when only .startLogging() is called', done => {
+-    if (isCI && process.platform === 'linux') {
++    if (isCI && process.platform === 'openbsd') {
+       done()
+       return
+     }

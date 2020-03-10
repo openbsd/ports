@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_spec_api-content-tracing-spec_js,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+
+Index: electron/spec/api-content-tracing-spec.js
+--- electron/spec/api-content-tracing-spec.js.orig
++++ electron/spec/api-content-tracing-spec.js
+@@ -22,7 +22,7 @@ const getPathInATempFolder = (filename) => {
+ describe('contentTracing', () => {
+   beforeEach(function () {
+     // FIXME: The tests are skipped on arm/arm64.
+-    if (process.platform === 'linux' &&
++    if (process.platform === 'openbsd' &&
+         ['arm', 'arm64'].includes(process.arch)) {
+       this.skip()
+     }

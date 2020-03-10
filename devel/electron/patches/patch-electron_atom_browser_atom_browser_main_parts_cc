@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_atom_browser_atom_browser_main_parts_cc,v 1.1.1.1 2020/03/10 11:16:32 espie Exp $
+
+Index: electron/atom/browser/atom_browser_main_parts.cc
+--- electron/atom/browser/atom_browser_main_parts.cc.orig
++++ electron/atom/browser/atom_browser_main_parts.cc
+@@ -6,7 +6,7 @@
+ 
+ #include <utility>
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include <glib.h>  // for g_setenv()
+ #endif
+ 

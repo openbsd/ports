@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_lib_common_api_clipboard_js,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+
+Index: electron/lib/common/api/clipboard.js
+--- electron/lib/common/api/clipboard.js.orig
++++ electron/lib/common/api/clipboard.js
+@@ -14,7 +14,7 @@ if (process.type === 'renderer') {
+     }
+   }
+ 
+-  if (process.platform === 'linux') {
++  if (process.platform === 'openbsd') {
+     // On Linux we could not access clipboard in renderer process.
+     for (const method of Object.keys(clipboard)) {
+       clipboard[method] = makeRemoteMethod(method)

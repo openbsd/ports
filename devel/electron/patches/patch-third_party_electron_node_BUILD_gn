@@ -1,0 +1,47 @@
+$OpenBSD: patch-third_party_electron_node_BUILD_gn,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+
+Index: third_party/electron_node/BUILD.gn
+--- third_party/electron_node/BUILD.gn.orig
++++ third_party/electron_node/BUILD.gn
+@@ -42,6 +42,14 @@ declare_args() {
+   node_module_version = ""
+ }
+ 
++if (is_openbsd) {
++  import("//build/config/linux/pkg_config.gni")
++
++  pkg_config("nghttp2") {
++    packages = [ "libnghttp2" ]
++  }
++}
++
+ assert(!node_use_dtrace, "node_use_dtrace not supported in GN")
+ assert(!node_use_etw, "node_use_etw not supported in GN")
+ 
+@@ -207,8 +215,6 @@ component("node_lib") {
+     "deps/histogram",
+     "deps/http_parser",
+     "deps/llhttp",
+-    "deps/nghttp2",
+-    "deps/zlib",
+     "//third_party/brotli:dec",
+     "//third_party/brotli:enc",
+     "//v8:v8_libplatform",
+@@ -222,6 +228,17 @@ component("node_lib") {
+   public_configs = [ ":node_lib_config" ]
+   include_dirs = [ "src" ]
+   libs = []
++  if (is_openbsd) {
++    configs += [
++      ":nghttp2",
++    ]
++    deps += [ "//third_party/zlib" ]
++  } else {
++    deps += [
++      "deps/nghttp2",
++      "deps/zlib",
++    ]
++  }
+   cflags_cc = [
+     "-Wno-deprecated-declarations",
+     "-Wno-implicit-fallthrough",

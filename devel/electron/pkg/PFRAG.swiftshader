@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.swiftshader,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+electron/swiftshader/
+electron/swiftshader/libEGL.so
+electron/swiftshader/libGLESv2.so

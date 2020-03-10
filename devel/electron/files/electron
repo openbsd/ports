@@ -1,0 +1,40 @@
+#!/bin/sh
+# $OpenBSD: electron,v 1.1.1.1 2020/03/10 11:16:32 espie Exp $
+
+DATASIZE="716800"
+OPENFILES="400"
+
+xm_log() {
+	echo -n "$@\nDo you want to run Electron anyway?\n\
+(If you don't increase these limits, Electron might fail to work properly.)" | \
+		${X11BASE}/bin/xmessage -file - -center -buttons yes:0,no:1 -default no
+}
+
+if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
+	ulimit -Sd ${DATASIZE} || \
+		xm_log "Cannot increase datasize-cur to at least ${DATASIZE}"
+		[ $? -eq 0 ] || exit
+fi
+
+if [ $(ulimit -Sn) -lt ${OPENFILES} ]; then
+	ulimit -Sn ${OPENFILES} || \
+		xm_log "Cannot increase openfiles-cur to at least ${OPENFILES}"
+		[ $? -eq 0 ] || exit
+fi
+
+#
+# Issue #395446
+# https://code.google.com/p/chromium/issues/detail?id=395446
+#
+[ -z ${LANG} ] && _l=en_US.UTF-8 || _l=${LANG}
+
+# Always use our versions of ffmpeg libs.
+# This also makes RPMs find the compatibly-named library symlinks.
+if [[ -n "$LD_LIBRARY_PATH" ]]; then
+	LD_LIBRARY_PATH="${TRUEPREFIX}/electron:${TRUEPREFIX}/eletrcon/lib:$LD_LIBRARY_PATH"
+else
+	LD_LIBRARY_PATH="${TRUEPREFIX}/electron:${TRUEPREFIX}/electron/lib"
+fi
+export LD_LIBRARY_PATH
+
+LANG=${_l} exec "${TRUEPREFIX}/electron/electron" --no-sandbox "${@}"
