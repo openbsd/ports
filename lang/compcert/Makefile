@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/16 04:34:23 daniel Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/10 03:31:45 daniel Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -11,12 +11,11 @@ GH_PROJECT =		CompCert
 GH_COMMIT =		9b881b7928ab7d21e9981133bef5b26e33b6cd9d
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 HOMEPAGE =		http://compcert.inria.fr/
 
 CATEGORIES =		lang
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # INRIA Non-Commercial License Agreement.
 PERMIT_PACKAGE =	Yes

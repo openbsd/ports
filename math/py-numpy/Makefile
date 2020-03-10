@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2019/11/18 04:10:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.57 2020/03/10 03:31:45 daniel Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
@@ -6,13 +6,11 @@ MODPY_EGG_VERSION=	1.14.6
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		math devel
 
 HOMEPAGE=		https://www.numpy.org/
-
-MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
