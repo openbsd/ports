@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/10 11:16:32 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/10 16:40:41 espie Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -16,10 +16,7 @@ V=			80.0.3987.116
 ECV=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
-DISTNAME=		chromium-${V}
-
-DISTFILES+=		chromium-${V}${EXTRACT_SUFX} \
-			chromium-${ECV}${EXTRACT_SUFX} \
+DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
 			chromium-patches-${ECV}.tar.gz:0
 
@@ -115,8 +112,6 @@ SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
 
 DISTNAME=		electron-${ELECTRON_V}
 WRKDIST=		${WRKDIR}/chromium-${ECV}
-FULLPKGNAME=		${DISTNAME}
-FULLPKGPATH=		www/chromium,electron
 ALL_TARGET=		electron
 DIST_TARGET=		dist.zip chromedriver.zip mksnapshot.zip
 DIST_TARGET_DIR=	electron
