@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.19 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2020/03/10 21:23:06 sthen Exp $
 
 CATEGORIES+=	net
 
-HOMEPAGE?=	http://www.icinga.org/
-
-MAINTAINER?=	Stuart Henderson <sthen@openbsd.org>
+HOMEPAGE?=	https://icinga.com/
 
 # GPLv2 only
 PERMIT_PACKAGE?=	Yes
