@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/26 13:05:38 danj Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/10 16:24:04 paco Exp $
+@pkgpath www/py-multidict
 @pkgpath www/py3-multidict
 lib/python${MODPY_VERSION}/site-packages/multidict/
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -8,18 +9,23 @@ lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/multidict/__init__.py
 lib/python${MODPY_VERSION}/site-packages/multidict/__init__.pyi
-lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_py.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multidict/_abc.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_compat.py
-lib/python${MODPY_VERSION}/site-packages/multidict/_istr.c
-lib/python${MODPY_VERSION}/site-packages/multidict/_istr.pyd
-lib/python${MODPY_VERSION}/site-packages/multidict/_istr.so
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.c
-lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.pyx
-lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.so
+@so lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.so
+lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_base.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_py.py
+lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/
+lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/defs.h
+lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/dict.h
+lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/istr.h
+lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/iter.h
+lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/pair_list.h
+lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/views.h
 lib/python${MODPY_VERSION}/site-packages/multidict/py.typed
