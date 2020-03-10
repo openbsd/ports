@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.85 2020/02/11 16:55:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.86 2020/03/10 15:53:40 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -60,7 +60,7 @@ lib/${MOZILLA_PROJECT}/gtk2/
 @lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}/omni.ja
-@bin lib/${MOZILLA_PROJECT}/pingsender
+lib/${MOZILLA_PROJECT}/pingsender
 lib/${MOZILLA_PROJECT}/platform.ini
 @bin lib/${MOZILLA_PROJECT}/plugin-container
 lib/${MOZILLA_PROJECT}/removed-files
