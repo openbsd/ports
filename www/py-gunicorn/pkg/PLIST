@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/04/24 20:14:08 sthen Exp $
-bin/gunicorn${MODPY_BIN_SUFFIX}
-bin/gunicorn_paster${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.10 2020/03/10 16:26:31 paco Exp $
+@conflict py-gunicorn-*
+@pkgpath www/py-gunicorn
+bin/gunicorn
 lib/python${MODPY_VERSION}/site-packages/gunicorn/
 lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,21 +14,16 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/gunicorn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}arbiter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}argparse_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}glogging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}pidfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}reloader.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}selectors.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}sock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}systemd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/_compat.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/app/${MODPY_PYCACHE}/
@@ -39,7 +35,6 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/app/base.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/pasterapp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/wsgiapp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/arbiter.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/argparse_compat.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/config.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/debug.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/errors.py
@@ -48,14 +43,12 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/http/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}_sendfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}body.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}unreader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/${MODPY_PYCACHE}wsgi.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/http/_sendfile.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/body.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/errors.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/message.py
@@ -70,8 +63,6 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/${MODPY_PYCACHE}sta
 lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/statsd.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/pidfile.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/reloader.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/selectors.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/six.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/sock.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/systemd.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/util.py
@@ -79,20 +70,16 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}_gaiohttp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}base_async.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}gaiohttp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}geventlet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}ggevent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}gthread.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}gtornado.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}workertmp.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/_gaiohttp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/base.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/base_async.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gaiohttp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/geventlet.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/ggevent.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gthread.py
