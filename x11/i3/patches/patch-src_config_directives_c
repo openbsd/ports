@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_config_directives_c,v 1.6 2019/08/23 15:07:20 sthen Exp $
+$OpenBSD: patch-src_config_directives_c,v 1.7 2020/03/10 16:27:53 bket Exp $
 
 Index: src/config_directives.c
 --- src/config_directives.c.orig
 +++ src/config_directives.c
-@@ -479,10 +479,6 @@ CFGFUN(no_focus) {
+@@ -481,10 +481,6 @@ CFGFUN(no_focus) {
      TAILQ_INSERT_TAIL(&assignments, assignment, assignments);
  }
  

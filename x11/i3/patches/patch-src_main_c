@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_main_c,v 1.19 2019/09/04 20:25:48 sthen Exp $
+$OpenBSD: patch-src_main_c,v 1.20 2020/03/10 16:27:53 bket Exp $
 
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -948,7 +948,7 @@ int main(int argc, char *argv[]) {
+@@ -954,7 +954,7 @@ int main(int argc, char *argv[]) {
          xcb_free_pixmap(conn, pixmap);
      }
  

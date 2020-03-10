@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.122 2019/09/04 20:25:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2020/03/10 16:27:52 bket Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.17.1
-REVISION =	1
+DISTNAME =	i3-4.18
 
 CATEGORIES =	x11
 
@@ -12,9 +11,10 @@ HOMEPAGE =	https://i3wm.org/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-# uses pledge()
-WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pcre pthread startup-notification-1
+# XXX use of pledge has been neutered. For more details see
+# https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
+WANTLIB += c cairo ev glib-2.0 gobject-2.0 harfbuzz iconv intl
+WANTLIB += m pango-1.0 pangocairo-1.0 pcre pthread startup-notification-1
 WANTLIB += xcb xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
 WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
 WANTLIB += yajl
