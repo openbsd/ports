@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/11 12:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/11 15:55:12 sthen Exp $
 
 COMMENT=	high performance, multi-platform VNC client and server
 
@@ -24,7 +24,8 @@ MODULES=	devel/cmake
 COMPILER=	base-clang ports-gcc
 
 CONFIGURE_ARGS=	-DMAN_DIR="${TRUEPREFIX}/man" \
-		-DDOC_DIR="${TRUEPREFIX}/share/doc/tigervnc"
+		-DDOC_DIR="${TRUEPREFIX}/share/doc/tigervnc" \
+		-DENABLE_PAM=OFF
 CFLAGS+=	-I${X11BASE}/include
 CXXFLAGS+=	-I${X11BASE}/include
 NO_TEST=	Yes
