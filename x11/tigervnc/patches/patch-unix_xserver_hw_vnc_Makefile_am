@@ -1,0 +1,14 @@
+$OpenBSD: patch-unix_xserver_hw_vnc_Makefile_am,v 1.1 2020/03/11 18:27:15 sthen Exp $
+
+Index: unix/xserver/hw/vnc/Makefile.am
+--- unix/xserver/hw/vnc/Makefile.am.orig
++++ unix/xserver/hw/vnc/Makefile.am
+@@ -46,7 +46,7 @@ Xvnc_CPPFLAGS = $(XVNC_CPPFLAGS) -DTIGERVNC -DNO_MODUL
+ 	-I$(top_srcdir)/include ${XSERVERLIBS_CFLAGS}
+ 
+ Xvnc_LDADD = $(XVNC_LIBS) libvnccommon.la $(COMMON_LIBS) \
+-	$(XSERVER_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lX11
++	$(XSERVER_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lX11 -lgnutls -ljpeg
+ 
+ Xvnc_LDFLAGS = $(LD_EXPORT_SYMBOLS_FLAG)
+ 

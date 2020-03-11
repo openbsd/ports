@@ -1,0 +1,45 @@
+$OpenBSD: patch-unix_vncserver,v 1.1 2020/03/11 18:27:15 sthen Exp $
+
+Patch away check which doesn't work on OpenBSD.
+Could maybe parse fstat output instead?
+
+Index: unix/vncserver
+--- unix/vncserver.orig
++++ unix/vncserver
+@@ -524,21 +524,21 @@ sub CheckDisplayNumber
+ {
+     local ($n) = @_;
+ 
+-    socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
+-    eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
+-    if (!bind(S, pack('S n x12', $AF_INET, 6000 + $n))) {
+-	close(S);
+-	return 0;
+-    }
+-    close(S);
+-
+-    socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
+-    eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
+-    if (!bind(S, pack('S n x12', $AF_INET, 5900 + $n))) {
+-	close(S);
+-	return 0;
+-    }
+-    close(S);
++#    socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
++#    eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
++#    if (!bind(S, pack('S n x12', $AF_INET, 6000 + $n))) {
++#	close(S);
++#	return 0;
++#    }
++#    close(S);
++#
++#    socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
++#    eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
++#    if (!bind(S, pack('S n x12', $AF_INET, 5900 + $n))) {
++#	close(S);
++#	return 0;
++#    }
++#    close(S);
+ 
+     if (-e "/tmp/.X$n-lock") {
+ 	warn "\nWarning: $host:$n is taken because of /tmp/.X$n-lock\n";
