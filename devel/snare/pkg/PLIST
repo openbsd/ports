@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/11 12:25:53 sthen Exp $
+@newgroup _snare:850
+@newuser _snare:850:_snare:daemon:snare account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/snare
+@bin bin/snare
+@man man/man1/snare.1
+@man man/man5/snare.conf.5
+@sample ${SYSCONFDIR}/snare/
+share/examples/snare/
+share/examples/snare/snare.conf
+@sample ${SYSCONFDIR}/snare/snare.conf

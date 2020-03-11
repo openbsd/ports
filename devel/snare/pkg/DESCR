@@ -1,0 +1,3 @@
+snare is a GitHub webhooks runner daemon. When snare receives a webhook event
+from a given repository, it authenticates the request, and then executes a
+user-defined "per-repo program" with information about the webhook event.

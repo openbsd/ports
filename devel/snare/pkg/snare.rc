@@ -1,0 +1,10 @@
+#!/bin/ksh
+#
+# $OpenBSD: snare.rc,v 1.1.1.1 2020/03/11 12:25:53 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/snare"
+daemon_user="_snare"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
