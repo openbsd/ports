@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.952 2020/03/10 16:28:09 paco Exp $
+# $OpenBSD: Makefile,v 1.953 2020/03/11 09:41:53 espie Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -25,7 +25,6 @@
      SUBDIR += cgiparse
      SUBDIR += cgit
      SUBDIR += chromium
-     SUBDIR += chromium,electron
      SUBDIR += cntlm
      SUBDIR += composer
      SUBDIR += cronolog
