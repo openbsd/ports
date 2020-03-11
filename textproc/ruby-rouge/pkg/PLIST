@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/02/12 13:13:40 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/03/11 08:20:25 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -51,6 +51,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/diff
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/digdag
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/docker
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/dot
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ecl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/eex
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/eiffel
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/elixir
@@ -181,8 +182,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/turtle
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/twig
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/typescript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/vala
-${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/varnish
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/vb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/vcl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/verilog
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/vhdl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/viml
@@ -259,6 +260,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/diff.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/digdag.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/docker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/dot.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ecl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/eex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/eiffel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/elixir.rb
