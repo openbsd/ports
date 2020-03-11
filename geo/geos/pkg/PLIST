@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/10/31 19:48:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/03/11 15:35:58 landry Exp $
 bin/geos-config
 include/geos/
 include/geos.h
@@ -452,9 +452,9 @@ include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
-lib/libgeos.a
+@static-lib lib/libgeos.a
 lib/libgeos.la
 @lib lib/libgeos.so.${LIBgeos_VERSION}
-lib/libgeos_c.a
+@static-lib lib/libgeos_c.a
 lib/libgeos_c.la
 @lib lib/libgeos_c.so.${LIBgeos_c_VERSION}
