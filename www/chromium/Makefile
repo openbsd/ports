@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.492 2020/03/05 07:52:49 robert Exp $
+# $OpenBSD: Makefile,v 1.493 2020/03/11 23:57:03 espie Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -13,15 +13,10 @@ DPB_PROPERTIES=		lonesome
 COMMENT=		Chromium browser
 
 V=			80.0.3987.132
-ECV=			76.0.3809.132
-ELECTRON_V=		6.0.3
 
 DISTNAME=		chromium-${V}
 
-DISTFILES+=		chromium-${V}${EXTRACT_SUFX} \
-			chromium-${ECV}${EXTRACT_SUFX} \
-			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
-			chromium-patches-${ECV}.tar.gz:0
+DISTFILES+=		chromium-${V}${EXTRACT_SUFX}
 
 CATEGORIES=		www
 
@@ -33,11 +28,7 @@ EXTRACT_SUFX=		.tar.xz
 
 FLAVORS=		debug component electron
 FLAVOR?=
-.if ${FLAVOR:Melectron}
-REVISION=		6
-.else
 REVISION=		0
-.endif
 
 # BSD-like
 PERMIT_PACKAGE =	Yes
@@ -122,32 +113,11 @@ BUILDTYPE=	Debug
 BUILDTYPE=	Release
 .endif
 
-SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
+SUBST_VARS+=	WRKSRC WRKDIR
 
-.if ${FLAVOR:Melectron}
-DISTNAME=		electron-${ELECTRON_V}
-WRKDIST=		${WRKDIR}/chromium-${ECV}
-FULLPKGNAME=		${DISTNAME}
-FULLPKGPATH=		www/chromium,electron
-ALL_TARGET=		electron
-DIST_TARGET=		dist.zip chromedriver.zip mksnapshot.zip
-DIST_TARGET_DIR=	electron
-PLIST=			${PKGDIR}/PLIST-electron
-DESCR=			${PKGDIR}/DESCR-electron
-PATCH_LIST=		epatch-*
-
-BUILD_DEPENDS+=		devel/libnotify
-LIB_DEPENDS+=		www/nghttp2
-WANTLIB+=		nghttp2
-
-WRKSRC=			${WRKDIR}/chromium-${ECV}
-EXTRACT_ONLY=		${DISTFILES:C/chromium-${V}.*//:C/:0//}
-.else
-EXTRACT_ONLY=		${DISTFILES:C/chromium-${ECV}.*//:C/electron.*//:C/chromium-patches.*//}
 ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests
 DIST_TARGET_DIR=	chrome
-.endif
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
 
@@ -177,15 +147,12 @@ GN_ARGS=	enable_nacl=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
 .if ${MACHINE_ARCH} == "i386"
-ELECTRON_ARCH=	ia32.zip
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
-ELECTRON_ARCH=	x64.zip
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 .endif
 
 .if ${MACHINE_ARCH} == "aarch64"
-ELECTRON_ARCH=	arm64.zip
 PKG_ARGS+=	-Dswiftshader=0
 .else
 PKG_ARGS+=	-Dswiftshader=1
@@ -211,35 +178,6 @@ GN_ARGS+=	is_official_build=true \
 		is_component_build=false
 .endif
 
-.if ${FLAVOR:Melectron}
-MAKE_ENV+=	PATH=${PATH}:${WRKSRC}/electron/node_modules/.bin \
-		NODE_PATH=${WRKSRC}/electron/node_modules
-GN_ARGS+=	is_component_ffmpeg=false \
-		use_jumbo_build=true
-
-# manually de-jsonified list from electron/patches/common/config.json
-ELECTRON_PATCH_CONFIG+= electron/patches/common/chromium:.
-ELECTRON_PATCH_CONFIG+= electron/patches/common/boringssl:third_party/boringssl/src
-ELECTRON_PATCH_CONFIG+= electron/patches/common/ffmpeg:third_party/ffmpeg
-ELECTRON_PATCH_CONFIG+= electron/patches/common/v8:v8
-ELECTRON_PATCH_CONFIG+= electron/patches/node:third_party/electron_node
-
-do-distpatch:
-	@for _p in ${WRKDIR}/chromium-patches-${ECV}/patch-*; do \
-		${PATCH} ${PATCH_DIST_ARGS} < $${_p}; \
-	done
-
-pre-patch:
-.  for pair in ${ELECTRON_PATCH_CONFIG}
-	@for _p in $$(cat ${WRKSRC}/${pair:C/\:.*//g}/.patches |	\
-		egrep -v "disable_(network_serv|custom_libcxx)"); do 	\
-			${PATCH} -p1 -z .orig.electron -d 		\
-				${WRKSRC}/${pair:C/.*\://g} 		\
-			<${WRKSRC}/${pair:C/\:.*//g}/$${_p};		\
-	done
-.  endfor
-.endif
-
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .if ${MACHINE_ARCH} == amd64
@@ -259,19 +197,6 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py
-.if ${FLAVOR:Melectron}
-	mkdir -p ${WRKSRC}/electron/node_modules/.bin
-	ln -sf /usr/bin/false ${WRKDIR}/bin/resize
-	ln -sf ${WRKSRC}/electron/node_modules/browserify/bin/cmd.js ${WRKSRC}/electron/node_modules/.bin/browserify
-	ln -sf ${WRKSRC}/electron/node_modules/electron-typescript-definitions/cli.js  ${WRKSRC}/electron/node_modules/.bin/electron-typescript-definitions
-	ln -sf ${WRKSRC}/electron/node_modules/electron-docs-linter/cli.js ${WRKSRC}/electron/node_modules/.bin/electron-docs-linter
-	ln -sf ${WRKSRC}/electron/node_modules/electron-typescript-definitions/cli.js ${WRKSRC}/electron/node_modules/.bin/gn-typescript-definitions
-	ln -sf ${WRKSRC}/electron/node_modules/rc/cli.js ${WRKSRC}/electron/node_modules/.bin/rc
-	ln -sf ${WRKSRC}/electron/node_modules/semver/bin/semver ${WRKSRC}/electron/node_modules/.bin/semver
-	ln -sf ${WRKSRC}/electron/node_modules/shx/lib/cli.js ${WRKSRC}/electron/node_modules/.bin/shx
-	ln -sf ${WRKSRC}/electron/node_modules/typescript/bin/tsc ${WRKSRC}/electron/node_modules/.bin/tsc
-	chmod +x ${WRKSRC}/electron/node_modules/.bin/tsc
-.endif
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
@@ -282,71 +207,40 @@ do-configure:
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
 		--no-clean -s --gn-gen-args "${GN_ARGS}"
-.if ${FLAVOR:Melectron}
-	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
-		gen --args="import(\"//electron/build/args/release.gn\") ${GN_ARGS}" out/${BUILDTYPE}
-.else
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
-.endif
 
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
-.if ${FLAVOR:Melectron}
-post-build:
-	# strip before creating the zip files
-	strip -s ${BUILDDIR}/electron
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
-		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${DIST_TARGET}
-.endif
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}
 	${INSTALL_PROGRAM} ${BUILDDIR}/${DIST_TARGET_DIR} ${PREFIX}/${DIST_TARGET_DIR}
 	${SUBST_PROGRAM} ${FILESDIR}/${DIST_TARGET_DIR} ${PREFIX}/bin/${DIST_TARGET_DIR}
-.if !${FLAVOR:Melectron}
 	${INSTALL_PROGRAM} ${BUILDDIR}/chromedriver ${PREFIX}/bin/chromedriver
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in ${PREFIX}/man/man1/chrome.1
 	@perl -pi -e "s,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g" \
 		${PREFIX}/man/man1/chrome.1
-.endif
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/${DIST_TARGET_DIR}
 
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/${DIST_TARGET_DIR}/locales
-.if !${FLAVOR:Melectron}
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/${DIST_TARGET_DIR}
-.endif
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIST_TARGET_DIR}/resources
 .for f in protoc icudtl.dat mksnapshot snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
-.if ${FLAVOR:Melectron}
-	${INSTALL_DATA} ${BUILDDIR}/natives_blob.bin ${PREFIX}/${DIST_TARGET_DIR}
-	cd ${BUILDDIR} && \
-		cp chromedriver.zip chromedriver-v${ELECTRON_V}-openbsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
-		cp dist.zip electron-v${ELECTRON_V}-openbsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
-		cp mksnapshot.zip mksnapshot-v${ELECTRON_V}-openbsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
-		sha256 -r *-v${ELECTRON_V}-openbsd-*.zip | sed -e 's/ / */' > SHASUMS256.txt
-	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/releases
-	${INSTALL_DATA} ${BUILDDIR}/SHASUMS256.txt ${PREFIX}/${DIST_TARGET_DIR}/releases
-	${INSTALL_DATA} ${BUILDDIR}/*-v${ELECTRON_V}-openbsd-*.zip \
-		${PREFIX}/${DIST_TARGET_DIR}/releases
-.endif
 
 	# ANGLE, EGL, Vk
 .for f in libEGL libGLESv2
 	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
-.if !${FLAVOR:Melectron}
 .for f in libVkICD_mock_icd
 	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
-.endif
 
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
@@ -360,7 +254,6 @@ do-install:
 	cp -Rp ${BUILDDIR}/*.so ${BUILDDIR}/*.so.[0-9] ${PREFIX}/${DIST_TARGET_DIR}/
 .endif
 
-.if !${FLAVOR:Melectron}
 .for s in 22_mono 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/${DIST_TARGET_DIR}/app/theme/chromium/product_logo_${s}.png \
@@ -375,6 +268,5 @@ do-install:
     unveil.plugin unveil.renderer unveil.utility unveil.utility_audio unveil.utility_network
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
-.endif
 
 .include <bsd.port.mk>
