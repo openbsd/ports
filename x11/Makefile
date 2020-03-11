@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.651 2020/02/29 14:37:08 bket Exp $
+# $OpenBSD: Makefile,v 1.652 2020/03/11 12:19:53 sthen Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -294,6 +294,7 @@
      SUBDIR += terminator
      SUBDIR += textsuggest
      SUBDIR += thewidgetfactory
+     SUBDIR += tigervnc
      SUBDIR += tilda
      SUBDIR += tint2
      SUBDIR += tk
