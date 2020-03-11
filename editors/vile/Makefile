@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/17 14:49:22 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/11 22:27:58 naddy Exp $
 
 COMMENT=		VI Editor Like Emacs
 DISTNAME=		vile-9.8q
 CATEGORIES=		editors
-HOMEPAGE=		http://invisible-island.net/vile/
-REVISION=		0
+HOMEPAGE=		https://invisible-island.net/vile/
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c curses iconv
 
-MASTER_SITES=		http://invisible-mirror.net/archives/vile/current/ \
+MASTER_SITES=		https://invisible-mirror.net/archives/vile/current/ \
 			ftp://ftp.invisible-island.net/vile/current/ \
 			ftp://dickey.his.com/vile/current/
 

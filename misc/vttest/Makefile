@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/09 22:29:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/11 22:27:58 naddy Exp $
 
 COMMENT=	test VT100-type terminal
 
 DISTNAME=	vttest-20200303
+REVISION=	0
 CATEGORIES=	misc
-HOMEPAGE=	http://invisible-island.net/vttest/vttest.html
+HOMEPAGE=	https://invisible-island.net/vttest/vttest.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://invisible-mirror.net/archives/vttest/ \
+MASTER_SITES=	https://invisible-mirror.net/archives/vttest/ \
 		ftp://ftp.invisible-island.net/vttest/
 EXTRACT_SUFX=	.tgz
 
