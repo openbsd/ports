@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/11 12:19:27 sthen Exp $
+@bin bin/vncconfig
+@bin bin/vncpasswd
+@comment bin/vncserver
+@bin bin/vncviewer.tigervnc
+@bin bin/x0vncserver
+@man man/man1/vncconfig.1
+@man man/man1/vncpasswd.1
+@comment @man man/man1/vncserver.1
+@man man/man1/vncviewer.tigervnc.1
+@man man/man1/x0vncserver.1
+share/applications/vncviewer.desktop
+share/doc/tigervnc/
+share/doc/tigervnc/LICENCE.TXT
+share/doc/tigervnc/README.rst
+share/icons/hicolor/16x16/apps/tigervnc.png
+share/icons/hicolor/22x22/apps/tigervnc.png
+share/icons/hicolor/24x24/apps/tigervnc.png
+share/icons/hicolor/32x32/apps/tigervnc.png
+share/icons/hicolor/48x48/apps/tigervnc.png
+share/icons/hicolor/scalable/apps/tigervnc.svg
+share/locale/bg/LC_MESSAGES/tigervnc.mo
+share/locale/cs/LC_MESSAGES/tigervnc.mo
+share/locale/da/LC_MESSAGES/tigervnc.mo
+share/locale/de/LC_MESSAGES/tigervnc.mo
+share/locale/el/LC_MESSAGES/tigervnc.mo
+share/locale/eo/LC_MESSAGES/tigervnc.mo
+share/locale/es/LC_MESSAGES/tigervnc.mo
+share/locale/fi/LC_MESSAGES/tigervnc.mo
+share/locale/fr/LC_MESSAGES/tigervnc.mo
+share/locale/fur/LC_MESSAGES/tigervnc.mo
+share/locale/hu/LC_MESSAGES/tigervnc.mo
+share/locale/id/LC_MESSAGES/tigervnc.mo
+share/locale/it/LC_MESSAGES/tigervnc.mo
+share/locale/ko/LC_MESSAGES/tigervnc.mo
+share/locale/nl/LC_MESSAGES/tigervnc.mo
+share/locale/pl/LC_MESSAGES/tigervnc.mo
+share/locale/pt_BR/LC_MESSAGES/tigervnc.mo
+share/locale/ru/LC_MESSAGES/tigervnc.mo
+share/locale/sk/LC_MESSAGES/tigervnc.mo
+share/locale/sr/LC_MESSAGES/tigervnc.mo
+share/locale/sv/LC_MESSAGES/tigervnc.mo
+share/locale/tr/LC_MESSAGES/tigervnc.mo
+share/locale/uk/LC_MESSAGES/tigervnc.mo
+share/locale/vi/LC_MESSAGES/tigervnc.mo
+share/locale/zh_CN/LC_MESSAGES/tigervnc.mo
+share/locale/zh_TW/LC_MESSAGES/tigervnc.mo
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

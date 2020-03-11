@@ -1,0 +1,14 @@
+$OpenBSD: patch-vncviewer_vncviewer_desktop_in_in,v 1.1.1.1 2020/03/11 12:19:27 sthen Exp $
+
+Index: vncviewer/vncviewer.desktop.in.in
+--- vncviewer/vncviewer.desktop.in.in.orig
++++ vncviewer/vncviewer.desktop.in.in
+@@ -2,7 +2,7 @@
+ Name=TigerVNC Viewer
+ GenericName=Remote Desktop Viewer
+ Comment=Connect to VNC server and display remote desktop
+-Exec=@BIN_DIR@/vncviewer
++Exec=@BIN_DIR@/vncviewer.tigervnc
+ Icon=tigervnc
+ Terminal=false
+ Type=Application

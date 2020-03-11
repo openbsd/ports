@@ -1,0 +1,17 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/03/11 12:19:27 sthen Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -29,9 +29,9 @@ set(RCVERSION 1,10,1,0)
+ # Installation paths
+ set(BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin")
+ set(DATA_DIR "${CMAKE_INSTALL_PREFIX}/share")
+-set(MAN_DIR "${DATA_DIR}/man")
++set(MAN_DIR "${DATA_DIR}/man" CACHE STRING "manpage dir")
+ set(LOCALE_DIR "${DATA_DIR}/locale")
+-set(DOC_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/${CMAKE_PROJECT_NAME}-${VERSION}")
++set(DOC_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/${CMAKE_PROJECT_NAME}-${VERSION}" CACHE STRING "doc dir")
+ 
+ if(WIN32)
+ set(BIN_DIR "${CMAKE_INSTALL_PREFIX}")
