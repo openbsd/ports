@@ -1,0 +1,23 @@
+$OpenBSD: patch-globals_h,v 1.1 2020/03/11 21:57:32 naddy Exp $
+
+Fix CVE-2019-13232: a zip bomb using overlapped entries
+https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
+
+--- globals.h.orig
++++ globals.h
+@@ -260,12 +260,15 @@ typedef struct Globals {
+     ecdir_rec       ecrec;         /* used in unzip.c, extract.c */
+     z_stat   statbuf;              /* used by main, mapname, check_for_newer */
+ 
++    int zip64;                     /* true if Zip64 info in extra field */
++
+     int      mem_mode;
+     uch      *outbufptr;           /* extract.c static */
+     ulg      outsize;              /* extract.c static */
+     int      reported_backslash;   /* extract.c static */
+     int      disk_full;
+     int      newfile;
++    void     **cover;              /* used in extract.c for bomb detection */
+ 
+     int      didCRlast;            /* fileio static */
+     ulg      numlines;             /* fileio static: number of lines printed */

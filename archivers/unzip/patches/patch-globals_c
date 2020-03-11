@@ -1,0 +1,15 @@
+$OpenBSD: patch-globals_c,v 1.1 2020/03/11 21:57:32 naddy Exp $
+
+Fix CVE-2019-13232: a zip bomb using overlapped entries
+https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
+
+--- globals.c.orig
++++ globals.c
+@@ -181,6 +181,7 @@ Uz_Globs *globalsCtor()
+ # if (!defined(NO_TIMESTAMPS))
+     uO.D_flag=1;    /* default to '-D', no restoration of dir timestamps */
+ # endif
++    G.cover = NULL;     /* not allocated yet */
+ #endif
+ 
+     uO.lflag=(-1);

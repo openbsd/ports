@@ -1,0 +1,16 @@
+$OpenBSD: patch-unzip_h,v 1.1 2020/03/11 21:57:32 naddy Exp $
+
+Fix CVE-2019-13232: a zip bomb using overlapped entries
+https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
+
+Index: unzip.h
+--- unzip.h.orig
++++ unzip.h
+@@ -645,6 +645,7 @@ typedef struct _Uzp_cdir_Rec {
+ #define PK_NOZIP           9   /* zipfile not found */
+ #define PK_PARAM          10   /* bad or illegal parameters specified */
+ #define PK_FIND           11   /* no files found */
++#define PK_BOMB           12   /* likely zip bomb */
+ #define PK_DISK           50   /* disk full */
+ #define PK_EOF            51   /* unexpected EOF */
+ 

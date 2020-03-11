@@ -1,9 +1,14 @@
-$OpenBSD: patch-fileio_c,v 1.1 2015/02/06 21:37:04 naddy Exp $
+$OpenBSD: patch-fileio_c,v 1.2 2020/03/11 21:57:32 naddy Exp $
 
 Fix CVE-2014-8141: out-of-bounds read issues in getZip64Data()
+Fix CVE-2018-1000035: buffer overflow for password-protected archives
+https://security-tracker.debian.org/tracker/CVE-2018-1000035
+Fix CVE-2019-13232: a zip bomb using overlapped entries
+https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
 
---- fileio.c.orig	Mon Apr 20 02:03:44 2009
-+++ fileio.c	Thu Feb  5 18:57:59 2015
+Index: fileio.c
+--- fileio.c.orig
++++ fileio.c
 @@ -176,6 +176,8 @@ static ZCONST char Far FilenameTooLongTrunc[] =
  #endif
  static ZCONST char Far ExtraFieldTooLong[] =
@@ -13,7 +18,49 @@ Fix CVE-2014-8141: out-of-bounds read issues in getZip64Data()
  
  #ifdef WINDLL
     static ZCONST char Far DiskFullQuery[] =
-@@ -2295,7 +2297,12 @@ int do_string(__G__ length, option)   /* return PK-typ
+@@ -530,8 +532,10 @@ void undefer_input(__G)
+          * This condition was checked when G.incnt_leftover was set > 0 in
+          * defer_leftover_input(), and it is NOT allowed to touch G.csize
+          * before calling undefer_input() when (G.incnt_leftover > 0)
+-         * (single exception: see read_byte()'s  "G.csize <= 0" handling) !!
++         * (single exception: see readbyte()'s  "G.csize <= 0" handling) !!
+          */
++        if (G.csize < 0L)
++            G.csize = 0L;
+         G.incnt = G.incnt_leftover + (int)G.csize;
+         G.inptr = G.inptr_leftover - (int)G.csize;
+         G.incnt_leftover = 0;
+@@ -1580,7 +1584,11 @@ int UZ_EXP UzpPassword (pG, rcnt, pwbuf, size, zfn, ef
+     int r = IZ_PW_ENTERED;
+     char *m;
+     char *prompt;
+-
++    char *zfnf;
++    char *efnf;
++    size_t zfnfl;
++    int isOverflow;
++    
+ #ifndef REENTRANT
+     /* tell picky compilers to shut up about "unused variable" warnings */
+     pG = pG;
+@@ -1588,7 +1596,15 @@ int UZ_EXP UzpPassword (pG, rcnt, pwbuf, size, zfn, ef
+ 
+     if (*rcnt == 0) {           /* First call for current entry */
+         *rcnt = 2;
+-        if ((prompt = (char *)malloc(2*FILNAMSIZ + 15)) != (char *)NULL) {
++        zfnf = FnFilter1(zfn);
++        efnf = FnFilter2(efn);
++        zfnfl = strlen(zfnf);
++        isOverflow = TRUE;
++        if (2*FILNAMSIZ >= zfnfl && (2*FILNAMSIZ - zfnfl) >= strlen(efnf))
++        {
++		isOverflow = FALSE;
++        }
++        if ((isOverflow == FALSE) && ((prompt = (char *)malloc(2*FILNAMSIZ + 15)) != (char *)NULL)) {
+             sprintf(prompt, LoadFarString(PasswPrompt),
+                     FnFilter1(zfn), FnFilter2(efn));
+             m = prompt;
+@@ -2295,7 +2311,12 @@ int do_string(__G__ length, option)   /* return PK-typ
              if (readbuf(__G__ (char *)G.extra_field, length) == 0)
                  return PK_EOF;
              /* Looks like here is where extra fields are read */

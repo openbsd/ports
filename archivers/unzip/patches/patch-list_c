@@ -1,14 +1,16 @@
-$OpenBSD: patch-list_c,v 1.1 2017/03/23 17:26:17 bluhm Exp $
+$OpenBSD: patch-list_c,v 1.2 2020/03/11 21:57:32 naddy Exp $
 
-Fix: increase size of cfactorstr array to avoid buffer overflow
+Fix CVE-2018-18384: increase size of cfactorstr array to avoid buffer overflow
     https://bugs.debian.org/741384
+    https://sourceforge.net/p/infozip/bugs/53/
 Fix CVE-2014-9913: buffer overflow in unzip
     https://sourceforge.net/p/infozip/bugs/27/
     https://bugs.debian.org/847485
     https://launchpad.net/bugs/387350
 
---- list.c.orig	Sun Feb  8 18:11:34 2009
-+++ list.c	Tue Mar 21 16:10:27 2017
+Index: list.c
+--- list.c.orig
++++ list.c
 @@ -97,7 +97,7 @@ int list_files(__G)    /* return PK-type error code */
  {
      int do_this_file=FALSE, cfactor, error, error_in_archive=PK_COOL;
@@ -38,3 +40,27 @@ Fix CVE-2014-9913: buffer overflow in unzip
              }
  
  #if 0       /* GRR/Euro:  add this? */
+@@ -378,9 +389,9 @@ int list_files(__G)    /* return PK-type error code */
+             }
+ #else /* !WINDLL */
+             if (cfactor == 100)
+-                sprintf(cfactorstr, LoadFarString(CompFactor100));
++                snprintf(cfactorstr, sizeof(cfactorstr), LoadFarString(CompFactor100));
+             else
+-                sprintf(cfactorstr, LoadFarString(CompFactorStr), sgn, cfactor);
++                snprintf(cfactorstr, sizeof(cfactorstr), LoadFarString(CompFactorStr), sgn, cfactor);
+             if (longhdr)
+                 Info(slide, 0, ((char *)slide, LoadFarString(LongHdrStats),
+                   FmZofft(G.crec.ucsize, "8", "u"), methbuf,
+@@ -460,9 +471,9 @@ int list_files(__G)    /* return PK-type error code */
+ 
+ #else /* !WINDLL */
+         if (cfactor == 100)
+-            sprintf(cfactorstr, LoadFarString(CompFactor100));
++            snprintf(cfactorstr, sizeof(cfactorstr), LoadFarString(CompFactor100));
+         else
+-            sprintf(cfactorstr, LoadFarString(CompFactorStr), sgn, cfactor);
++            snprintf(cfactorstr, sizeof(cfactorstr), LoadFarString(CompFactorStr), sgn, cfactor);
+         if (longhdr) {
+             Info(slide, 0, ((char *)slide, LoadFarString(LongFileTrailer),
+               FmZofft(tot_ucsize, "8", "u"), FmZofft(tot_csize, "8", "u"),

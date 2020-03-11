@@ -1,4 +1,4 @@
-$OpenBSD: patch-process_c,v 1.3 2017/03/23 17:26:17 bluhm Exp $
+$OpenBSD: patch-process_c,v 1.4 2020/03/11 21:57:32 naddy Exp $
 
 Fix: handle the PKWare verification bit of internal attributes
     https://bugs.debian.org/630078
@@ -8,9 +8,12 @@ Fix: do not ignore extra fields containing Unix Timestamps
     https://bugs.debian.org/842993
 Fix: restore uid and gid information when requested
     https://bugs.debian.org/689212
+Fix CVE-2019-13232: a zip bomb using overlapped entries
+https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
 
---- process.c.orig	Fri Mar  6 02:25:10 2009
-+++ process.c	Tue Mar 21 16:10:27 2017
+Index: process.c
+--- process.c.orig
++++ process.c
 @@ -1,5 +1,5 @@
  /*
 -  Copyright (c) 1990-2009 Info-ZIP.  All rights reserved.
@@ -18,7 +21,21 @@ Fix: restore uid and gid information when requested
  
    See the accompanying file LICENSE, version 2009-Jan-02 or later
    (the contents of which are also included in unzip.h) for terms of use.
-@@ -1729,6 +1729,13 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
+@@ -637,6 +637,13 @@ void free_G_buffers(__G)     /* releases all memory al
+     }
+ #endif
+ 
++    /* Free the cover span list and the cover structure. */
++    if (G.cover != NULL) {
++        free(*(G.cover));
++        free(G.cover);
++        G.cover = NULL;
++    }
++
+ } /* end function free_G_buffers() */
+ 
+ 
+@@ -1729,6 +1736,13 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
      else if (uO.L_flag > 1)   /* let -LL force lower case for all names */
          G.pInfo->lcflag = 1;
  
@@ -32,7 +49,7 @@ Fix: restore uid and gid information when requested
      /* do Amigas (AMIGA_) also have volume labels? */
      if (IS_VOLID(G.crec.external_file_attributes) &&
          (G.pInfo->hostnum == FS_FAT_ || G.pInfo->hostnum == FS_HPFS_ ||
-@@ -1751,6 +1758,12 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
+@@ -1751,6 +1765,12 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
          = (G.crec.general_purpose_bit_flag & (1 << 11)) == (1 << 11);
  #endif
  
@@ -45,7 +62,7 @@ Fix: restore uid and gid information when requested
      return PK_COOL;
  
  } /* end function process_cdir_file_hdr() */
-@@ -1888,48 +1901,82 @@ int getZip64Data(__G__ ef_buf, ef_len)
+@@ -1888,48 +1908,84 @@ int getZip64Data(__G__ ef_buf, ef_len)
      and a 4-byte version of disk start number.
      Sets both local header and central header fields.  Not terribly clever,
      but it means that this procedure is only called in one place.
@@ -60,6 +77,8 @@ Fix: restore uid and gid information when requested
  
 +#define Z64FLGS 0xffff
 +#define Z64FLGL 0xffffffff
++
++    G.zip64 = FALSE;
 +
      if (ef_len == 0 || ef_buf == NULL)
          return PK_COOL;
@@ -144,7 +163,16 @@ Fix: restore uid and gid information when requested
          ef_buf += (eb_len + EB_HEADSIZE);
          ef_len -= (eb_len + EB_HEADSIZE);
      }
-@@ -2867,10 +2914,13 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2037,6 +2093,8 @@ int getUnicodeData(__G__ ef_buf, ef_len)
+                     (ZCONST char *)(offset + ef_buf), ULen);
+             G.unipath_filename[ULen] = '\0';
+           }
++
++          G.zip64 = TRUE;
+         }
+ 
+         /* Skip this extra field block */
+@@ -2867,10 +2925,13 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
              break;
  
            case EF_IZUNIX2:
@@ -160,7 +188,7 @@ Fix: restore uid and gid information when requested
  #ifdef IZ_HAVE_UXUIDGID
              if (have_new_type_eb > 1)
                  break;          /* IZUNIX3 overrides IZUNIX2 e.f. block ! */
-@@ -2886,6 +2936,8 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2886,6 +2947,8 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
              /* new 3rd generation Unix ef */
              have_new_type_eb = 2;
  
@@ -169,7 +197,7 @@ Fix: restore uid and gid information when requested
          /*
            Version       1 byte      version of this extra field, currently 1
            UIDSize       1 byte      Size of UID field
-@@ -2897,7 +2949,7 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2897,7 +2960,7 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
  #ifdef IZ_HAVE_UXUIDGID
              if (eb_len >= EB_UX3_MINLEN
                  && z_uidgid != NULL
@@ -178,7 +206,7 @@ Fix: restore uid and gid information when requested
                      /* only know about version 1 */
              {
                  uch uid_size;
-@@ -2906,13 +2958,11 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2906,13 +2969,11 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
                  uid_size = *((EB_HEADSIZE + 1) + ef_buf);
                  gid_size = *((EB_HEADSIZE + uid_size + 2) + ef_buf);
  
