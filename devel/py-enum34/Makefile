@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/11 15:12:53 sthen Exp $
 
 COMMENT =		Python 3.4 Enum backported to previous versions
 
-MODPY_EGG_VERSION =	1.1.6
+MODPY_EGG_VERSION =	1.1.10
 DISTNAME =		enum34-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 

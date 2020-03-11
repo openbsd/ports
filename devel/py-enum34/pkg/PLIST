@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/05/31 08:46:19 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/11 15:12:53 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/enum/
 lib/python${MODPY_VERSION}/site-packages/enum/__init__.py
 lib/python${MODPY_VERSION}/site-packages/enum/__init__.pyc
@@ -8,5 +8,4 @@ lib/python${MODPY_VERSION}/site-packages/enum34-${MODPY_EGG_VERSION}-py${MODPY_V
 share/doc/${MODPY_PY_PREFIX}enum34/
 share/doc/${MODPY_PY_PREFIX}enum34/LICENSE
 share/doc/${MODPY_PY_PREFIX}enum34/README
-share/doc/${MODPY_PY_PREFIX}enum34/enum.pdf
 share/doc/${MODPY_PY_PREFIX}enum34/enum.rst
