@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1948 2020/03/11 09:41:53 espie Exp $
+# $OpenBSD: Makefile,v 1.1949 2020/03/11 12:26:24 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1932,6 +1932,7 @@
      SUBDIR += slib
      SUBDIR += smpeg
      SUBDIR += smpeg2
+     SUBDIR += snare
      SUBDIR += sparsehash
      SUBDIR += spe
      SUBDIR += spice-protocol
