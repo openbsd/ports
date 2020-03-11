@@ -1,0 +1,75 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/11 14:24:57 tracey Exp $
+@bin bin/xtensa-esp32-elf-addr2line
+@bin bin/xtensa-esp32-elf-ar
+@bin bin/xtensa-esp32-elf-as
+@bin bin/xtensa-esp32-elf-c++filt
+@bin bin/xtensa-esp32-elf-elfedit
+@bin bin/xtensa-esp32-elf-gprof
+@bin bin/xtensa-esp32-elf-ld
+@bin bin/xtensa-esp32-elf-ld.bfd
+@bin bin/xtensa-esp32-elf-nm
+@bin bin/xtensa-esp32-elf-objcopy
+@bin bin/xtensa-esp32-elf-objdump
+@bin bin/xtensa-esp32-elf-ranlib
+@bin bin/xtensa-esp32-elf-readelf
+@bin bin/xtensa-esp32-elf-size
+@bin bin/xtensa-esp32-elf-strings
+@bin bin/xtensa-esp32-elf-strip
+@comment @info info/as.info
+@comment @info info/bfd.info
+@comment @info info/binutils.info
+@comment @info info/gprof.info
+@comment @info info/ld.info
+lib/ldscripts/
+lib/ldscripts/elf32xtensa.x
+lib/ldscripts/elf32xtensa.xbn
+lib/ldscripts/elf32xtensa.xc
+lib/ldscripts/elf32xtensa.xce
+lib/ldscripts/elf32xtensa.xd
+lib/ldscripts/elf32xtensa.xdc
+lib/ldscripts/elf32xtensa.xdce
+lib/ldscripts/elf32xtensa.xde
+lib/ldscripts/elf32xtensa.xdw
+lib/ldscripts/elf32xtensa.xdwe
+lib/ldscripts/elf32xtensa.xe
+lib/ldscripts/elf32xtensa.xn
+lib/ldscripts/elf32xtensa.xr
+lib/ldscripts/elf32xtensa.xs
+lib/ldscripts/elf32xtensa.xsc
+lib/ldscripts/elf32xtensa.xsce
+lib/ldscripts/elf32xtensa.xse
+lib/ldscripts/elf32xtensa.xsw
+lib/ldscripts/elf32xtensa.xswe
+lib/ldscripts/elf32xtensa.xu
+lib/ldscripts/elf32xtensa.xw
+lib/ldscripts/elf32xtensa.xwe
+@man man/man1/xtensa-esp32-elf-addr2line.1
+@man man/man1/xtensa-esp32-elf-ar.1
+@man man/man1/xtensa-esp32-elf-as.1
+@man man/man1/xtensa-esp32-elf-c++filt.1
+@man man/man1/xtensa-esp32-elf-dlltool.1
+@man man/man1/xtensa-esp32-elf-elfedit.1
+@man man/man1/xtensa-esp32-elf-gprof.1
+@man man/man1/xtensa-esp32-elf-ld.1
+@man man/man1/xtensa-esp32-elf-nm.1
+@man man/man1/xtensa-esp32-elf-objcopy.1
+@man man/man1/xtensa-esp32-elf-objdump.1
+@man man/man1/xtensa-esp32-elf-ranlib.1
+@man man/man1/xtensa-esp32-elf-readelf.1
+@man man/man1/xtensa-esp32-elf-size.1
+@man man/man1/xtensa-esp32-elf-strings.1
+@man man/man1/xtensa-esp32-elf-strip.1
+@man man/man1/xtensa-esp32-elf-windmc.1
+@man man/man1/xtensa-esp32-elf-windres.1
+xtensa-esp32-elf/
+xtensa-esp32-elf/bin/
+@bin xtensa-esp32-elf/bin/ar
+@bin xtensa-esp32-elf/bin/as
+@bin xtensa-esp32-elf/bin/ld
+@bin xtensa-esp32-elf/bin/ld.bfd
+@bin xtensa-esp32-elf/bin/nm
+@bin xtensa-esp32-elf/bin/objcopy
+@bin xtensa-esp32-elf/bin/objdump
+@bin xtensa-esp32-elf/bin/ranlib
+@bin xtensa-esp32-elf/bin/readelf
+@bin xtensa-esp32-elf/bin/strip

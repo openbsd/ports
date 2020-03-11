@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+@comment @info info/configure.info
+@comment @info info/standards.info
+@bin bin/xtensa-esp32-elf-gdb
+@comment @info info/as.info
+@comment @info info/binutils.info
+@comment @info info/ld.info
+@comment @info info/gprof.info
+@comment include/gdb/
+@comment include/gdb/jit-reader.h
+@comment @info info/annotate.info
+@comment @info info/bfd.info
+@comment @info info/gdb.info
+@comment @info info/stabs.info
+@comment lib/charset.alias
+@man man/man1/xtensa-esp32-elf-gdb.1
+@man man/man1/xtensa-esp32-elf-gdbserver.1
+@man man/man5/xtensa-esp32-elf-gdbinit.5
+@comment @static-lib xtensa-esp32-elf/lib/libiberty.a
+@comment share/gdb/
+@comment share/gdb/syscalls/
+@comment share/gdb/syscalls/aarch64-linux.xml
+@comment share/gdb/syscalls/amd64-linux.xml
+@comment share/gdb/syscalls/arm-linux.xml
+@comment share/gdb/syscalls/freebsd.xml
+@comment share/gdb/syscalls/gdb-syscalls.dtd
+@comment share/gdb/syscalls/i386-linux.xml
+@comment share/gdb/syscalls/mips-n32-linux.xml
+@comment share/gdb/syscalls/mips-n64-linux.xml
+@comment share/gdb/syscalls/mips-o32-linux.xml
+@comment share/gdb/syscalls/ppc-linux.xml
+@comment share/gdb/syscalls/ppc64-linux.xml
+@comment share/gdb/syscalls/s390-linux.xml
+@comment share/gdb/syscalls/s390x-linux.xml
+@comment share/gdb/syscalls/sparc-linux.xml
+@comment share/gdb/syscalls/sparc64-linux.xml
+@comment share/gdb/system-gdbinit/
+@comment share/gdb/system-gdbinit/elinos.py
+@comment share/gdb/system-gdbinit/wrs-linux.py
+@comment xtensa-esp32-elf/
+@comment xtensa-esp32-elf/lib/
+@static-lib xtensa-esp32-elf/lib/libiberty.a

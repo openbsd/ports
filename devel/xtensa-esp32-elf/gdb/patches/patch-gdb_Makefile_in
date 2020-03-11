@@ -1,0 +1,16 @@
+$OpenBSD: patch-gdb_Makefile_in,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+
+Link mpfr dynamically
+
+Index: gdb/Makefile.in
+--- gdb/Makefile.in.orig
++++ gdb/Makefile.in
+@@ -195,7 +195,7 @@ LIBBABELTRACE = @LIBBABELTRACE@
+ LIBIPT = @LIBIPT@
+ 
+ # Where is libmpfr?  This will be empty if libmpfr was not available.
+-LIBMPFR = @LIBMPFR@
++LIBMPFR = @LTLIBMPFR@
+ 
+ WARN_CFLAGS = @WARN_CFLAGS@
+ WERROR_CFLAGS = @WERROR_CFLAGS@
