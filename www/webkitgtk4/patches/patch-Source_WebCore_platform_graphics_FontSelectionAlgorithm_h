@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_WebCore_platform_graphics_FontSelectionAlgorithm_h,v 1.1 2019/03/05 16:23:32 jca Exp $
+$OpenBSD: patch-Source_WebCore_platform_graphics_FontSelectionAlgorithm_h,v 1.2 2020/03/12 09:17:40 ajacoutot Exp $
 
 XXX libstdc++ from gcc-4.9.4 doesn't yet decorate std::min/std::max
 with constexpr
@@ -18,7 +18,7 @@ Index: Source/WebCore/platform/graphics/FontSelectionAlgorithm.h
  
      // Since floats have 23 mantissa bits, every value can be represented losslessly.
      constexpr operator float() const;
-@@ -101,7 +105,11 @@ constexpr FontSelectionValue FontSelectionValue::minim
+@@ -126,7 +130,11 @@ constexpr FontSelectionValue FontSelectionValue::minim
      return { std::numeric_limits<BackingType>::min(), RawTag::RawTag };
  }
  

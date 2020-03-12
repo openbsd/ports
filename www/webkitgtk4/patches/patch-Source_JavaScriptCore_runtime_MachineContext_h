@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_runtime_MachineContext_h,v 1.5 2019/03/05 16:17:59 jca Exp $
+$OpenBSD: patch-Source_JavaScriptCore_runtime_MachineContext_h,v 1.6 2020/03/12 09:17:40 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/runtime/MachineContext.h
 --- Source/JavaScriptCore/runtime/MachineContext.h.orig
 +++ Source/JavaScriptCore/runtime/MachineContext.h
-@@ -188,6 +188,22 @@ static inline void*& stackPointerImpl(mcontext_t& mach
+@@ -196,6 +196,22 @@ static inline void*& stackPointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -26,7 +26,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || defined(__GLIBC__) || defined(__BIONIC__)
  
  #if CPU(X86)
-@@ -335,6 +351,22 @@ static inline void*& framePointerImpl(mcontext_t& mach
+@@ -347,6 +363,22 @@ static inline void*& framePointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -49,7 +49,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || defined(__GLIBC__) || defined(__BIONIC__)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -482,6 +514,22 @@ static inline void*& instructionPointerImpl(mcontext_t
+@@ -498,6 +530,22 @@ static inline void*& instructionPointerImpl(mcontext_t
  #error Unknown Architecture
  #endif
  
@@ -72,7 +72,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || defined(__GLIBC__) || defined(__BIONIC__)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -639,6 +687,22 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
+@@ -656,6 +704,22 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
  #error Unknown Architecture
  #endif
  
@@ -95,7 +95,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || defined(__GLIBC__) || defined(__BIONIC__)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -750,6 +814,22 @@ inline void*& llintInstructionPointer(mcontext_t& mach
+@@ -767,6 +831,22 @@ inline void*& llintInstructionPointer(mcontext_t& mach
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R8]);
  #elif CPU(ARM64)
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[4]);

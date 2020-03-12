@@ -1,0 +1,16 @@
+$OpenBSD: patch-Source_WTF_wtf_PlatformHave_h,v 1.1 2020/03/12 09:17:40 ajacoutot Exp $
+
+https://bugs.webkit.org/show_bug.cgi?id=129963
+
+Index: Source/WTF/wtf/PlatformHave.h
+--- Source/WTF/wtf/PlatformHave.h.orig
++++ Source/WTF/wtf/PlatformHave.h
+@@ -222,7 +222,7 @@
+ #define HAVE_HOSTED_CORE_ANIMATION 1
+ #endif
+ 
+-#if OS(DARWIN) || OS(FUCHSIA) || ((OS(FREEBSD) || defined(__GLIBC__) || defined(__BIONIC__)) && (CPU(X86) || CPU(X86_64) || CPU(ARM) || CPU(ARM64) || CPU(MIPS)))
++#if OS(DARWIN) || OS(FUCHSIA) || ((OS(FREEBSD) || OS(OPENBSD) || defined(__GLIBC__) || defined(__BIONIC__)) && (CPU(X86) || CPU(X86_64) || CPU(ARM) || CPU(ARM64) || CPU(MIPS)))
+ #define HAVE_MACHINE_CONTEXT 1
+ #endif
+ 

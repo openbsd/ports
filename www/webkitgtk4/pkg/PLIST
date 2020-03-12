@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/11/12 20:20:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/03/12 09:17:40 ajacoutot Exp $
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -52,6 +52,7 @@ include/webkitgtk-${API}/webkit2/WebKitFrame.h
 include/webkitgtk-${API}/webkit2/WebKitGeolocationManager.h
 include/webkitgtk-${API}/webkit2/WebKitGeolocationPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitHitTestResult.h
+include/webkitgtk-${API}/webkit2/WebKitInputMethodContext.h
 include/webkitgtk-${API}/webkit2/WebKitInstallMissingMediaPluginsPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitJavascriptResult.h
 include/webkitgtk-${API}/webkit2/WebKitMimeInfo.h
@@ -64,6 +65,7 @@ include/webkitgtk-${API}/webkit2/WebKitOptionMenu.h
 include/webkitgtk-${API}/webkit2/WebKitOptionMenuItem.h
 include/webkitgtk-${API}/webkit2/WebKitPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitPlugin.h
+include/webkitgtk-${API}/webkit2/WebKitPointerLockPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitPolicyDecision.h
 include/webkitgtk-${API}/webkit2/WebKitPrintCustomWidget.h
 include/webkitgtk-${API}/webkit2/WebKitPrintOperation.h
@@ -81,6 +83,7 @@ include/webkitgtk-${API}/webkit2/WebKitUserContent.h
 include/webkitgtk-${API}/webkit2/WebKitUserContentFilterStore.h
 include/webkitgtk-${API}/webkit2/WebKitUserContentManager.h
 include/webkitgtk-${API}/webkit2/WebKitUserMediaPermissionRequest.h
+include/webkitgtk-${API}/webkit2/WebKitUserMessage.h
 include/webkitgtk-${API}/webkit2/WebKitVersion.h
 include/webkitgtk-${API}/webkit2/WebKitWebContext.h
 include/webkitgtk-${API}/webkit2/WebKitWebEditor.h

@@ -1,15 +1,15 @@
-$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.4 2019/09/24 06:56:43 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.5 2020/03/12 09:17:40 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/jit/ExecutableAllocator.cpp
 --- Source/JavaScriptCore/jit/ExecutableAllocator.cpp.orig
 +++ Source/JavaScriptCore/jit/ExecutableAllocator.cpp
-@@ -97,7 +97,8 @@ static const size_t fixedExecutableMemoryPoolSize = FI
- static const size_t fixedExecutableMemoryPoolSize = 16 * 1024 * 1024;
+@@ -97,7 +97,8 @@ static constexpr size_t fixedExecutableMemoryPoolSize 
+ static constexpr size_t fixedExecutableMemoryPoolSize = 16 * 1024 * 1024;
  #elif CPU(ARM64)
- static const size_t fixedExecutableMemoryPoolSize = 128 * 1024 * 1024;
+ static constexpr size_t fixedExecutableMemoryPoolSize = 128 * 1024 * 1024;
 -#elif CPU(X86_64)
 +// We don't want an initial allocation of 1GB, it's above the default ulimit
 +#elif CPU(X86_64) && !defined(__OpenBSD__)
- static const size_t fixedExecutableMemoryPoolSize = 1024 * 1024 * 1024;
+ static constexpr size_t fixedExecutableMemoryPoolSize = 1024 * 1024 * 1024;
  #else
- static const size_t fixedExecutableMemoryPoolSize = 32 * 1024 * 1024;
+ static constexpr size_t fixedExecutableMemoryPoolSize = 32 * 1024 * 1024;

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_cmake_WebKitFeatures_cmake,v 1.5 2019/09/24 06:56:43 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_WebKitFeatures_cmake,v 1.6 2020/03/12 09:17:40 ajacoutot Exp $
 
 Index: Source/cmake/WebKitFeatures.cmake
 --- Source/cmake/WebKitFeatures.cmake.orig
 +++ Source/cmake/WebKitFeatures.cmake
-@@ -399,7 +399,7 @@ macro(SET_CONFIGURATION_FOR_UNIFIED_SOURCE_LISTS)
+@@ -408,7 +408,7 @@ macro(SET_CONFIGURATION_FOR_UNIFIED_SOURCE_LISTS)
  endmacro()
  
  macro(WEBKIT_CHECK_HAVE_INCLUDE _variable _header)
