@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/20 21:45:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/12 19:02:21 tb Exp $
 
 COMMENT =		c protocol buffers
 
-V =			1.3.2
+V =			1.3.3
 DISTNAME =		protobuf-c-$V
 
 SHARED_LIBS =		protobuf-c 2.0	# 1.0
