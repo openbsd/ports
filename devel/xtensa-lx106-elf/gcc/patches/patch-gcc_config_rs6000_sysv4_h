@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: gcc/config/rs6000/sysv4.h
+--- gcc/config/rs6000/sysv4.h.orig
++++ gcc/config/rs6000/sysv4.h
+@@ -408,7 +408,7 @@ do {									\
+     {									\
+       fprintf (FILE, "%s", LCOMM_ASM_OP);				\
+       assemble_name ((FILE), (NAME));					\
+-      fprintf ((FILE), ","HOST_WIDE_INT_PRINT_UNSIGNED",%u\n",		\
++      fprintf ((FILE), "," HOST_WIDE_INT_PRINT_UNSIGNED",%u\n",		\
+ 	       (SIZE), (ALIGN) / BITS_PER_UNIT);			\
+     }									\
+   ASM_OUTPUT_TYPE_DIRECTIVE (FILE, NAME, "object");			\

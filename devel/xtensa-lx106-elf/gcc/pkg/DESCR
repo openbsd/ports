@@ -1,0 +1,2 @@
+GNU cross compiler suite, configured for the xtensa-lx106-elf target. This suite
+compiles binaries for the Espressif ESP8266 line of chips.

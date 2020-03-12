@@ -1,0 +1,26 @@
+$OpenBSD: patch-include_libiberty_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: include/libiberty.h
+--- include/libiberty.h.orig
++++ include/libiberty.h
+@@ -49,6 +49,20 @@ extern "C" {
+ 
+ #include <stdio.h>
+ 
++#ifndef PARAMS
++#define PARAMS(ARGS)		ARGS
++#endif
++
++#define VPARAMS(ARGS)		ARGS
++#define VA_START(VA_LIST, VAR)	va_start(VA_LIST, VAR)
++
++/* variadic function helper macros */
++/* "struct Qdmy" swallows the semicolon after VA_OPEN/VA_FIXEDARG's
++   use without inhibiting further decls and without declaring an
++   actual variable.  */
++#define VA_OPEN(AP, VAR)	{ va_list AP; va_start(AP, VAR); { struct Qdmy
++#define VA_CLOSE(AP)		} va_end(AP); }
++#define VA_FIXEDARG(AP, T, N)	struct Qdmy
+ /* If the OS supports it, ensure that the supplied stream is setup to
+    avoid any multi-threaded locking.  Otherwise leave the FILE pointer
+    unchanged.  If the stream is NULL do nothing.  */

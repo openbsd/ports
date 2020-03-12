@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_toplev_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: gcc/toplev.c
+--- gcc/toplev.c.orig
++++ gcc/toplev.c
+@@ -1025,7 +1025,7 @@ output_stack_usage (void)
+ 	id = raw_id;
+ 
+       fprintf (stack_usage_file,
+-	       "%s:%d:%d:%s\t"HOST_WIDE_INT_PRINT_DEC"\t%s\n",
++	       "%s:%d:%d:%s\t" HOST_WIDE_INT_PRINT_DEC"\t%s\n",
+ 	       lbasename (loc.file),
+ 	       loc.line,
+ 	       loc.column,

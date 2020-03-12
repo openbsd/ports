@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_config_mips_mips_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: gcc/config/mips/mips.h
+--- gcc/config/mips/mips.h.orig
++++ gcc/config/mips/mips.h
+@@ -2699,7 +2699,7 @@ do {									\
+ 
+ #undef ASM_OUTPUT_SKIP
+ #define ASM_OUTPUT_SKIP(STREAM,SIZE)					\
+-  fprintf (STREAM, "\t.space\t"HOST_WIDE_INT_PRINT_UNSIGNED"\n", (SIZE))
++  fprintf (STREAM, "\t.space\t" HOST_WIDE_INT_PRINT_UNSIGNED"\n", (SIZE))
+ 
+ /* This is how to output a string.  */
+ #undef ASM_OUTPUT_ASCII

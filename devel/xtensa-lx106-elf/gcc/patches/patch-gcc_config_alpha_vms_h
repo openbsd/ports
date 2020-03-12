@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_config_alpha_vms_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: gcc/config/alpha/vms.h
+--- gcc/config/alpha/vms.h.orig
++++ gcc/config/alpha/vms.h
+@@ -219,7 +219,7 @@ typedef struct {int num_args; enum avms_arg_type atype
+ /* This is how to advance the location counter by SIZE bytes.  */
+ 
+ #define ASM_OUTPUT_SKIP(FILE,SIZE)  \
+-  fprintf (FILE, "\t.space "HOST_WIDE_INT_PRINT_UNSIGNED"\n", (SIZE))
++  fprintf (FILE, "\t.space " HOST_WIDE_INT_PRINT_UNSIGNED"\n", (SIZE))
+ 
+ /* This says how to output an assembler line
+    to define a global common symbol.  */
+@@ -227,7 +227,7 @@ typedef struct {int num_args; enum avms_arg_type atype
+ #define ASM_OUTPUT_LOCAL(FILE, NAME, SIZE,ROUNDED)	\
+ ( fputs ("\t.lcomm ", (FILE)),				\
+   assemble_name ((FILE), (NAME)),			\
+-  fprintf ((FILE), ","HOST_WIDE_INT_PRINT_UNSIGNED"\n", (SIZE)))
++  fprintf ((FILE), "," HOST_WIDE_INT_PRINT_UNSIGNED"\n", (SIZE)))
+ 
+ /* Switch into a generic section.  */
+ #define TARGET_ASM_NAMED_SECTION vms_asm_named_section

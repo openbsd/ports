@@ -1,0 +1,52 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/12 15:05:21 tracey Exp $
+@comment lib/ldscripts/elf32xtensa.x
+@comment lib/ldscripts/elf32xtensa.xbn
+@comment lib/ldscripts/elf32xtensa.xc
+@comment lib/ldscripts/elf32xtensa.xd
+@comment lib/ldscripts/elf32xtensa.xdc
+@comment lib/ldscripts/elf32xtensa.xdw
+@comment lib/ldscripts/elf32xtensa.xn
+@comment lib/ldscripts/elf32xtensa.xr
+@comment lib/ldscripts/elf32xtensa.xs
+@comment lib/ldscripts/elf32xtensa.xsc
+@comment lib/ldscripts/elf32xtensa.xsw
+@comment lib/ldscripts/elf32xtensa.xu
+@comment lib/ldscripts/elf32xtensa.xw
+@comment @info info/as.info
+@comment @info info/binutils.info
+@comment @info info/gprof.info
+@comment @info info/ld.info
+@bin bin/xtensa-lx106-elf-gdb
+bin/xtensa-lx106-elf-gdb-add-index
+include/gdb/
+@comment include/gdb/jit-reader.h
+@comment @info info/annotate.info
+@comment @info info/bfd.info
+@comment @info info/gdb.info
+@comment @info info/stabs.info
+lib/charset.alias
+@man man/man1/xtensa-lx106-elf-gdb-add-index.1
+@man man/man1/xtensa-lx106-elf-gdb.1
+@man man/man1/xtensa-lx106-elf-gdbserver.1
+@man man/man5/xtensa-lx106-elf-gdbinit.5
+share/gdb/
+share/gdb/syscalls/
+@comment share/gdb/syscalls/aarch64-linux.xml
+@comment share/gdb/syscalls/amd64-linux.xml
+@comment share/gdb/syscalls/arm-linux.xml
+@comment share/gdb/syscalls/freebsd.xml
+@comment share/gdb/syscalls/gdb-syscalls.dtd
+@comment share/gdb/syscalls/i386-linux.xml
+@comment share/gdb/syscalls/mips-n32-linux.xml
+@comment share/gdb/syscalls/mips-n64-linux.xml
+@comment share/gdb/syscalls/mips-o32-linux.xml
+@comment share/gdb/syscalls/ppc-linux.xml
+@comment share/gdb/syscalls/ppc64-linux.xml
+@comment share/gdb/syscalls/s390-linux.xml
+@comment share/gdb/syscalls/s390x-linux.xml
+@comment share/gdb/syscalls/sparc-linux.xml
+@comment share/gdb/syscalls/sparc64-linux.xml
+share/gdb/system-gdbinit/
+@comment share/gdb/system-gdbinit/elinos.py
+@comment share/gdb/system-gdbinit/wrs-linux.py
+@static-lib xtensa-lx106-elf/lib/libiberty.a

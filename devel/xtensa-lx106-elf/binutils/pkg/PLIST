@@ -1,0 +1,89 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+@bin bin/xtensa-lx106-elf-addr2line
+@bin bin/xtensa-lx106-elf-ar
+@bin bin/xtensa-lx106-elf-as
+@bin bin/xtensa-lx106-elf-c++filt
+@bin bin/xtensa-lx106-elf-elfedit
+@bin bin/xtensa-lx106-elf-gprof
+@bin bin/xtensa-lx106-elf-ld
+@bin bin/xtensa-lx106-elf-ld.bfd
+@bin bin/xtensa-lx106-elf-nm
+@bin bin/xtensa-lx106-elf-objcopy
+@bin bin/xtensa-lx106-elf-objdump
+@bin bin/xtensa-lx106-elf-ranlib
+@bin bin/xtensa-lx106-elf-readelf
+@bin bin/xtensa-lx106-elf-size
+@bin bin/xtensa-lx106-elf-strings
+@bin bin/xtensa-lx106-elf-strip
+@comment lib/ldscripts/elf32xtensa.x
+@comment lib/ldscripts/elf32xtensa.xbn
+@comment lib/ldscripts/elf32xtensa.xc
+@comment lib/ldscripts/elf32xtensa.xd
+@comment lib/ldscripts/elf32xtensa.xdc
+@comment lib/ldscripts/elf32xtensa.xdw
+@comment lib/ldscripts/elf32xtensa.xn
+@comment lib/ldscripts/elf32xtensa.xr
+@comment lib/ldscripts/elf32xtensa.xs
+@comment lib/ldscripts/elf32xtensa.xsc
+@comment lib/ldscripts/elf32xtensa.xsw
+@comment lib/ldscripts/elf32xtensa.xu
+@comment lib/ldscripts/elf32xtensa.xw
+@comment @info info/as.info
+@comment @info info/bfd.info
+@comment @info info/binutils.info
+@comment @info info/gprof.info
+@comment @info info/ld.info
+@man man/man1/xtensa-lx106-elf-addr2line.1
+@man man/man1/xtensa-lx106-elf-ar.1
+@man man/man1/xtensa-lx106-elf-as.1
+@man man/man1/xtensa-lx106-elf-c++filt.1
+@man man/man1/xtensa-lx106-elf-dlltool.1
+@man man/man1/xtensa-lx106-elf-elfedit.1
+@man man/man1/xtensa-lx106-elf-gprof.1
+@man man/man1/xtensa-lx106-elf-ld.1
+@man man/man1/xtensa-lx106-elf-nm.1
+@man man/man1/xtensa-lx106-elf-objcopy.1
+@man man/man1/xtensa-lx106-elf-objdump.1
+@man man/man1/xtensa-lx106-elf-ranlib.1
+@man man/man1/xtensa-lx106-elf-readelf.1
+@man man/man1/xtensa-lx106-elf-size.1
+@man man/man1/xtensa-lx106-elf-strings.1
+@man man/man1/xtensa-lx106-elf-strip.1
+@man man/man1/xtensa-lx106-elf-windmc.1
+@man man/man1/xtensa-lx106-elf-windres.1
+xtensa-lx106-elf/
+xtensa-lx106-elf/bin/
+@bin xtensa-lx106-elf/bin/ar
+@bin xtensa-lx106-elf/bin/as
+@bin xtensa-lx106-elf/bin/ld
+@bin xtensa-lx106-elf/bin/ld.bfd
+@bin xtensa-lx106-elf/bin/nm
+@bin xtensa-lx106-elf/bin/objcopy
+@bin xtensa-lx106-elf/bin/objdump
+@bin xtensa-lx106-elf/bin/ranlib
+@bin xtensa-lx106-elf/bin/readelf
+@bin xtensa-lx106-elf/bin/strip
+xtensa-lx106-elf/lib/
+xtensa-lx106-elf/lib/ldscripts/
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.x
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xbn
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xc
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xce
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xd
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xdc
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xdce
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xde
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xdw
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xdwe
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xe
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xn
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xr
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xs
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xsc
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xsce
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xse
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xsw
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xswe
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xu
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xw
+xtensa-lx106-elf/lib/ldscripts/elf32xtensa.xwe

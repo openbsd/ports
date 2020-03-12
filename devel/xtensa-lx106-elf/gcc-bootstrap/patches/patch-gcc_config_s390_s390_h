@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_config_s390_s390_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: gcc/config/s390/s390.h
+--- gcc/config/s390/s390.h.orig
++++ gcc/config/s390/s390.h
+@@ -833,7 +833,7 @@ do {									\
+ 
+ /* Advance the location counter by SIZE bytes.  */
+ #define ASM_OUTPUT_SKIP(FILE, SIZE) \
+-  fprintf ((FILE), "\t.set\t.,.+"HOST_WIDE_INT_PRINT_UNSIGNED"\n", (SIZE))
++  fprintf ((FILE), "\t.set\t.,.+" HOST_WIDE_INT_PRINT_UNSIGNED"\n", (SIZE))
+ 
+ /* The LOCAL_LABEL_PREFIX variable is used by dbxelf.h.  */
+ #define LOCAL_LABEL_PREFIX "."

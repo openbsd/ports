@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/12 15:05:21 tracey Exp $
+include/xtensa/
+include/xtensa/cacheasm.h
+include/xtensa/config/
+include/xtensa/config/core-isa.h
+include/xtensa/config/core-matmap.h
+include/xtensa/config/core.h
+include/xtensa/config/defs.h
+include/xtensa/config/specreg.h
+include/xtensa/config/system.h
+include/xtensa/config/tie-asm.h
+include/xtensa/config/tie.h
+include/xtensa/coreasm.h
+include/xtensa/corebits.h
+include/xtensa/hal.h
+include/xtensa/xtensa-xer.h
+@static-lib lib/libhal.a

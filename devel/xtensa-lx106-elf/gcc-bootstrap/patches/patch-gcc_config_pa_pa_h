@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_config_pa_pa_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: gcc/config/pa/pa.h
+--- gcc/config/pa/pa.h.orig
++++ gcc/config/pa/pa.h
+@@ -1205,7 +1205,7 @@ do {									     \
+     fprintf (FILE, "\t.align %d\n", (1<<(LOG)))
+ 
+ #define ASM_OUTPUT_SKIP(FILE,SIZE)  \
+-  fprintf (FILE, "\t.blockz "HOST_WIDE_INT_PRINT_UNSIGNED"\n",		\
++  fprintf (FILE, "\t.blockz " HOST_WIDE_INT_PRINT_UNSIGNED"\n",		\
+ 	   (unsigned HOST_WIDE_INT)(SIZE))
+ 
+ /* This says how to output an assembler line to define an uninitialized

@@ -1,0 +1,30 @@
+$OpenBSD: patch-gcc_config_rs6000_rs6000_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: gcc/config/rs6000/rs6000.c
+--- gcc/config/rs6000/rs6000.c.orig
++++ gcc/config/rs6000/rs6000.c
+@@ -11104,8 +11104,8 @@ rs6000_va_start (tree valist, rtx nextarg)
+ 	       FP_ARG_NUM_REG);
+ 
+   if (TARGET_DEBUG_ARG)
+-    fprintf (stderr, "va_start: words = "HOST_WIDE_INT_PRINT_DEC", n_gpr = "
+-	     HOST_WIDE_INT_PRINT_DEC", n_fpr = "HOST_WIDE_INT_PRINT_DEC"\n",
++    fprintf (stderr, "va_start: words = " HOST_WIDE_INT_PRINT_DEC", n_gpr = "
++	     HOST_WIDE_INT_PRINT_DEC", n_fpr = " HOST_WIDE_INT_PRINT_DEC"\n",
+ 	     words, n_gpr, n_fpr);
+ 
+   if (cfun->va_list_gpr_size)
+@@ -21798,11 +21798,11 @@ debug_stack_info (rs6000_stack_t *info)
+     fprintf (stderr, "\tvarargs_save_offset = %5d\n", info->varargs_save_offset);
+ 
+   if (info->total_size)
+-    fprintf (stderr, "\ttotal_size          = "HOST_WIDE_INT_PRINT_DEC"\n",
++    fprintf (stderr, "\ttotal_size          = " HOST_WIDE_INT_PRINT_DEC"\n",
+ 	     info->total_size);
+ 
+   if (info->vars_size)
+-    fprintf (stderr, "\tvars_size           = "HOST_WIDE_INT_PRINT_DEC"\n",
++    fprintf (stderr, "\tvars_size           = " HOST_WIDE_INT_PRINT_DEC"\n",
+ 	     info->vars_size);
+ 
+   if (info->parm_size)

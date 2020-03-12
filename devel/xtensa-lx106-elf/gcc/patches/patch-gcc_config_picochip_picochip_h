@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_config_picochip_picochip_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+
+Index: gcc/config/picochip/picochip.h
+--- gcc/config/picochip/picochip.h.orig
++++ gcc/config/picochip/picochip.h
+@@ -596,7 +596,7 @@ do {                                                  
+ /* Assembler Commands for Alignment  */
+ 
+ #define ASM_OUTPUT_SKIP(STREAM,BYTES) \
+-  fprintf(STREAM, ".skip "HOST_WIDE_INT_PRINT_UNSIGNED"\n", BYTES);
++  fprintf(STREAM, ".skip " HOST_WIDE_INT_PRINT_UNSIGNED"\n", BYTES);
+ #define ASM_OUTPUT_ALIGN(STREAM,POWER) \
+   fprintf(STREAM, ".align %u\n", 1 << POWER);
+ 
