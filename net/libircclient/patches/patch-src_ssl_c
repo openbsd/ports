@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_ssl_c,v 1.1 2020/03/12 13:50:19 tracey Exp $
+
+Index: src/ssl.c
+--- src/ssl.c.orig
++++ src/ssl.c
+@@ -127,9 +127,10 @@ static int ssl_init_context( irc_session_t * session )
+ 		return LIBIRC_ERR_SSL_INIT_FAILED;
+ 
+ 	// Disable SSLv2 as it is unsecure
++#if !defined(__OpenBSD__)
+ 	if ( (SSL_CTX_set_options( ssl_context, SSL_OP_NO_SSLv2) & SSL_OP_NO_SSLv2) == 0 )
+ 		return LIBIRC_ERR_SSL_INIT_FAILED;
+-
++#endif
+ 	// Enable only strong ciphers
+ 	if ( SSL_CTX_set_cipher_list( ssl_context, "ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH" ) != 1 )
+ 		return LIBIRC_ERR_SSL_INIT_FAILED;
