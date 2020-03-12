@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_PL,v 1.7 2020/01/02 19:05:02 bluhm Exp $
+$OpenBSD: patch-Makefile_PL,v 1.8 2020/03/12 22:50:41 bluhm Exp $
 
 Alien::Build has been designed to build dependencies on the fly
 when installing from CPAN.  That does not make sense for our ports
@@ -8,25 +8,25 @@ library from our libxml-2 package.
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -17,12 +17,10 @@ use warnings;
+@@ -17,13 +17,10 @@ use warnings;
  
  require 5.008001;
  
--use Alien::Libxml2;
+-use Alien::Base::Wrapper qw( Alien::Libxml2 );
  use ExtUtils::MakeMaker;
  use Config;
  
  my %ConfigReqs = (
 -  "Alien::Libxml2" => 0,
+-  "Alien::Base::Wrapper" => 0,
    "Config" => 0,
    "ExtUtils::MakeMaker" => 0,
  );
-@@ -68,8 +66,9 @@ my %prereqs = (
+@@ -69,7 +66,9 @@ my %prereqs = (
  my %xsbuild = (
    DEFINE  => '-DHAVE_UTF8',
    OBJECT  => '$(O_FILES)',
--  CCFLAGS => Alien::Libxml2->cflags . " $Config{ccflags}",
--  LIBS    => [ Alien::Libxml2->libs ],
+-  Alien::Base::Wrapper->mm_args,
 +  CCFLAGS => $Config{ccflags} .
 +	' -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2',
 +  LIBS    => '-L${LOCALBASE}/lib -lxml2',
