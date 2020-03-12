@@ -1,0 +1,24 @@
+#!/bin/ksh
+
+game=`pwd | xargs basename | sed -e 's,_, ,g' | cut -d - -f 1`
+pyname=`ls -1 *.py | head -n 1`
+
+printf "Ren'Py-ify $game..."
+
+if [ ! -f $pyname ] ; then
+  echo "Could not find game script!"
+  echo "Make sure you are in the game directory, then run renpyify again."
+  exit 1
+fi
+
+if [ ! -d renpy ] ; then
+  echo "Could not find renpy directory."
+  echo "Make sure you are in the game directory, then run renpyify again."
+  exit 1
+fi
+
+mv renpy renpy-orig
+cp -R ${TRUEPREFIX}/share/renpy/renpy renpy
+
+echo " done!"
+printf "Run \"python2 $pyname\" to play.\n"
