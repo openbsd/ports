@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/09/29 12:38:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/03/12 20:08:05 jasper Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -160,6 +160,7 @@ share/locale/lt/LC_MESSAGES/gdata.mo
 share/locale/lv/LC_MESSAGES/gdata.mo
 share/locale/ml/LC_MESSAGES/gdata.mo
 share/locale/mr/LC_MESSAGES/gdata.mo
+share/locale/ms/LC_MESSAGES/gdata.mo
 share/locale/nb/LC_MESSAGES/gdata.mo
 share/locale/ne/LC_MESSAGES/gdata.mo
 share/locale/nl/LC_MESSAGES/gdata.mo

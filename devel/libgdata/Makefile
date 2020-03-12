@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.63 2019/09/29 12:38:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2020/03/12 20:08:05 jasper Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
 
 COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
-GNOME_VERSION=		0.17.11
+GNOME_VERSION=		0.17.12
 
-SHARED_LIBS += gdata                     20.3 # 22.5.0
+SHARED_LIBS += gdata                     21.0 # 22.5.0
 
 CATEGORIES=		devel net
 
@@ -18,10 +18,12 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += gcr-base-3 gio-2.0 glib-2.0 goa-1.0 gobject-2.0 json-glib-1.0
-WANTLIB += oauth soup-2.4 xml2
+WANTLIB += soup-2.4 xml2
 
 MODULES=		devel/meson \
 			x11/gnome
+
+BUILD_PACKAGES =	${DEBUG_PACKAGES}
 
 BUILD_DEPENDS=		net/uhttpmock
 TEST_DEPENDS=		net/uhttpmock
@@ -30,7 +32,6 @@ TEST_DEPENDS=		net/uhttpmock
 BUILD_DEPENDS +=	x11/gtk+3
 
 LIB_DEPENDS=		devel/libsoup \
-			net/liboauth \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts
 
