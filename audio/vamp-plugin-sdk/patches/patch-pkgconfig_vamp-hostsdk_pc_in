@@ -1,9 +1,11 @@
-$OpenBSD: patch-pkgconfig_vamp-hostsdk_pc_in,v 1.1 2016/01/10 17:29:28 jasper Exp $
---- pkgconfig/vamp-hostsdk.pc.in.orig	Sun Jan 10 17:49:43 2016
-+++ pkgconfig/vamp-hostsdk.pc.in	Sun Jan 10 17:49:47 2016
+$OpenBSD: patch-pkgconfig_vamp-hostsdk_pc_in,v 1.2 2020/03/12 14:53:00 rapha Exp $
+
+Index: pkgconfig/vamp-hostsdk.pc.in
+--- pkgconfig/vamp-hostsdk.pc.in.orig
++++ pkgconfig/vamp-hostsdk.pc.in
 @@ -6,5 +6,5 @@ includedir=${prefix}/include
  Name: vamp-hostsdk
- Version: 2.2
+ Version: 2.9
  Description: Development library for Vamp audio analysis plugin hosts
 -Libs: -L${libdir} -lvamp-hostsdk -ldl
 +Libs: -L${libdir} -lvamp-hostsdk

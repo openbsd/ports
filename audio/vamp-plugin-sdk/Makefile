@@ -1,41 +1,33 @@
-# $OpenBSD: Makefile,v 1.21 2019/11/18 12:06:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/12 14:53:00 rapha Exp $
 
 COMMENT =		audio plugin API
 
-VERSION =		2.2.1
+VERSION =		2.9.0
 DISTNAME =		vamp-plugin-sdk-${VERSION}
-REVISION =		5
 CATEGORIES =		audio
 
-SHARED_LIBS +=		vamp-sdk	1.0
-SHARED_LIBS +=		vamp-hostsdk	1.0
+SHARED_LIBS +=		vamp-sdk	1.1
+SHARED_LIBS +=		vamp-hostsdk	2.0
 
-HOMEPAGE =		http://www.vamp-plugins.org/
+HOMEPAGE =		https://www.vamp-plugins.org/
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++11
+COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vamp/}
+MASTER_SITES =		https://code.soundsoftware.ac.uk/attachments/download/2588/
 
-MAKE_ENV +=		CXX=${CXX} \
-			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBvamp-sdk_VERSION="${LIBvamp-sdk_VERSION}" \
+MAKE_ENV +=		LIBvamp-sdk_VERSION="${LIBvamp-sdk_VERSION}" \
 			LIBvamp-hostsdk_VERSION="${LIBvamp-hostsdk_VERSION}"
-FAKE_FLAGS =		PREFIX="${TRUEPREFIX}"
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		SNDFILE_CFLAGS="-I${LOCALBASE}/include" \
-			SNDFILE_LIBS="-L${LOCALBASE}/lib -lsndfile"
 
 TEST_TARGET =		test
 TEST_DEPENDS =		audio/libsndfile
-
-WRKDIST =		${WRKDIR}/vamp-plugin-sdk-v${VERSION}
 
 .include <bsd.port.mk>

@@ -1,11 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2019/11/18 12:06:23 sthen Exp $
---- Makefile.in.orig	Tue Apr  5 14:30:52 2011
-+++ Makefile.in	Sun Jan 10 17:02:16 2016
-@@ -75,15 +75,15 @@ INSTALL_SDK_LIBS	  = $(INSTALL_PREFIX)/lib
+$OpenBSD: patch-Makefile_in,v 1.5 2020/03/12 14:53:00 rapha Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -78,15 +78,15 @@ INSTALL_SDK_LIBS	  = $(INSTALL_PREFIX)/lib
  INSTALL_PLUGINS		  = $(INSTALL_PREFIX)/lib/vamp
  INSTALL_BINARIES	  = $(INSTALL_PREFIX)/bin 
  
--INSTALL_SDK_LIBNAME	  = libvamp-sdk.so.2.2.0
+-INSTALL_SDK_LIBNAME	  = libvamp-sdk.so.2.9.0
 -INSTALL_SDK_LINK_ABI	  = libvamp-sdk.so.2
 -INSTALL_SDK_LINK_DEV	  = libvamp-sdk.so
 +INSTALL_SDK_LIBNAME	  = libvamp-sdk.so.${LIBvamp-sdk_VERSION}
@@ -14,7 +16,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2019/11/18 12:06:23 sthen Exp $
  INSTALL_SDK_STATIC        = libvamp-sdk.a
  INSTALL_SDK_LA            = libvamp-sdk.la
  
--INSTALL_HOSTSDK_LIBNAME   = libvamp-hostsdk.so.3.2.0
+-INSTALL_HOSTSDK_LIBNAME   = libvamp-hostsdk.so.3.9.0
 -INSTALL_HOSTSDK_LINK_ABI  = libvamp-hostsdk.so.3
 -INSTALL_HOSTSDK_LINK_DEV  = libvamp-hostsdk.so
 +INSTALL_HOSTSDK_LIBNAME   = libvamp-hostsdk.so.${LIBvamp-hostsdk_VERSION}
@@ -23,7 +25,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2019/11/18 12:06:23 sthen Exp $
  INSTALL_HOSTSDK_STATIC    = libvamp-hostsdk.a
  INSTALL_HOSTSDK_LA        = libvamp-hostsdk.la
  
-@@ -91,9 +91,9 @@ INSTALL_PKGCONFIG	  = $(INSTALL_PREFIX)/lib/pkgconfig
+@@ -94,9 +94,9 @@ INSTALL_PKGCONFIG	  = $(INSTALL_PREFIX)/lib/pkgconfig
  
  # Flags required to tell the compiler to create a dynamically loadable object
  #
@@ -36,7 +38,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2019/11/18 12:06:23 sthen Exp $
  
  # Additional flags for making a plugin.  This version script tells the
  # GNU linker to make all symbols in the library hidden except for the
-@@ -157,10 +157,10 @@ HOSTSDK_STATIC	= \
+@@ -183,10 +183,10 @@ HOSTSDK_STATIC	= \
  		./libvamp-hostsdk.a
  
  SDK_DYNAMIC	= \
@@ -49,7 +51,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2019/11/18 12:06:23 sthen Exp $
  
  SDK_LA		= \
  		$(LADIR)/libvamp-sdk.la
-@@ -221,7 +221,7 @@ host:		$(HOST_TARGET)
+@@ -247,7 +247,7 @@ host:		$(HOST_TARGET)
  
  rdfgen:		$(RDFGEN_TARGET)
  
@@ -58,7 +60,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2019/11/18 12:06:23 sthen Exp $
  
  $(SDK_STATIC):	$(SDK_OBJECTS) $(API_HEADERS) $(SDK_HEADERS)
  		$(AR) r $@ $(SDK_OBJECTS)
-@@ -245,7 +245,7 @@ $(RDFGEN_TARGET):	$(RDFGEN_OBJECTS) $(HOSTSDK_STATIC) 
+@@ -271,7 +271,7 @@ $(RDFGEN_TARGET):	$(RDFGEN_OBJECTS) $(HOSTSDK_STATIC) 
  		$(CXX) $(LDFLAGS) $(RDFGEN_LDFLAGS) -o $@ $(RDFGEN_OBJECTS) $(RDFGEN_LIBS)
  
  test:		plugins host
@@ -67,7 +69,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2019/11/18 12:06:23 sthen Exp $
  
  clean:		
  		rm -f $(SDK_OBJECTS) $(HOSTSDK_OBJECTS) $(PLUGIN_OBJECTS) $(HOST_OBJECTS) $(RDFGEN_OBJECTS)
-@@ -254,15 +254,15 @@ distclean:	clean
+@@ -280,15 +280,15 @@ distclean:	clean
  		rm -f $(SDK_STATIC) $(SDK_DYNAMIC) $(HOSTSDK_STATIC) $(HOSTSDK_DYNAMIC) $(PLUGIN_TARGET) $(HOST_TARGET) $(RDFGEN_TARGET) *~ */*~
  		rm -f config.log config.status Makefile
  
@@ -85,7 +87,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2019/11/18 12:06:23 sthen Exp $
  		cp $(RDFGEN_TARGET) $(DESTDIR)$(INSTALL_BINARIES)
  		cp $(PLUGIN_TARGET) $(DESTDIR)$(INSTALL_PLUGINS)
  		cp $(PLUGIN_CAT) $(DESTDIR)$(INSTALL_PLUGINS)
-@@ -273,15 +273,8 @@ install:	$(SDK_STATIC) $(SDK_DYNAMIC) $(HOSTSDK_STATIC
+@@ -299,15 +299,8 @@ install:	$(SDK_STATIC) $(SDK_DYNAMIC) $(HOSTSDK_STATIC
  		cp $(SDK_STATIC) $(DESTDIR)$(INSTALL_SDK_LIBS)
  		cp $(HOSTSDK_STATIC) $(DESTDIR)$(INSTALL_SDK_LIBS)
  		cp $(SDK_DYNAMIC) $(DESTDIR)$(INSTALL_SDK_LIBS)/$(INSTALL_SDK_LIBNAME)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/03/19 10:22:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/12 14:53:00 rapha Exp $
 @bin bin/vamp-rdf-template-generator
 include/vamp/
 include/vamp-hostsdk/
@@ -12,9 +12,11 @@ include/vamp-hostsdk/PluginLoader.h
 include/vamp-hostsdk/PluginSummarisingAdapter.h
 include/vamp-hostsdk/PluginWrapper.h
 include/vamp-hostsdk/RealTime.h
+include/vamp-hostsdk/host-c.h
 include/vamp-hostsdk/hostguard.h
 include/vamp-hostsdk/vamp-hostsdk.h
 include/vamp-sdk/
+include/vamp-sdk/FFT.h
 include/vamp-sdk/Plugin.h
 include/vamp-sdk/PluginAdapter.h
 include/vamp-sdk/PluginBase.h
@@ -22,10 +24,10 @@ include/vamp-sdk/RealTime.h
 include/vamp-sdk/plugguard.h
 include/vamp-sdk/vamp-sdk.h
 include/vamp/vamp.h
-lib/libvamp-hostsdk.a
+@static-lib lib/libvamp-hostsdk.a
 lib/libvamp-hostsdk.la
 @lib lib/libvamp-hostsdk.so.${LIBvamp-hostsdk_VERSION}
-lib/libvamp-sdk.a
+@static-lib lib/libvamp-sdk.a
 lib/libvamp-sdk.la
 @lib lib/libvamp-sdk.so.${LIBvamp-sdk_VERSION}
 lib/pkgconfig/vamp-hostsdk.pc
@@ -34,4 +36,4 @@ lib/pkgconfig/vamp.pc
 lib/vamp/
 lib/vamp/vamp-example-plugins.cat
 lib/vamp/vamp-example-plugins.n3
-lib/vamp/vamp-example-plugins.so
+@so lib/vamp/vamp-example-plugins.so
