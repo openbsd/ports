@@ -1,0 +1,55 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/12 17:18:09 bcallah Exp $
+include/python${MODPY_VERSION}/pygame_sdl2/
+include/python${MODPY_VERSION}/pygame_sdl2/pygame_sdl2.display_api.h
+include/python${MODPY_VERSION}/pygame_sdl2/pygame_sdl2.h
+include/python${MODPY_VERSION}/pygame_sdl2/pygame_sdl2.rwobject_api.h
+include/python${MODPY_VERSION}/pygame_sdl2/pygame_sdl2.surface_api.h
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2-2.1.0-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2-2.1.0-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2-2.1.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2-2.1.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2-2.1.0-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2-2.1.0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/DejaVuSans.ttf
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/DejaVuSans.txt
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/__init__.pyc
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/color.so
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/compat.py
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/compat.pyc
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/controller.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/display.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/draw.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/error.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/event.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/font.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/gfxdraw.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/image.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/joystick.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/key.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/locals.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/mixer.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/mixer_music.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/mouse.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/power.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/pygame_time.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/rect.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/render.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/rwobject.so
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/scrap.so
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/sprite.py
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/sprite.pyc
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/surface.so
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/sysfont.py
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/sysfont.pyc
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/threads/
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/threads/Py25Queue.py
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/threads/Py25Queue.pyc
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/threads/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/threads/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/time.py
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/time.pyc
+@so lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/transform.so
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/version.py
+lib/python${MODPY_VERSION}/site-packages/pygame_sdl2/version.pyc
