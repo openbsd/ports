@@ -1,8 +1,8 @@
-$OpenBSD: patch-variable_c,v 1.3 2019/02/01 21:26:29 naddy Exp $
+$OpenBSD: patch-variable_c,v 1.4 2020/03/12 20:36:11 naddy Exp $
 Index: variable.c
 --- variable.c.orig
 +++ variable.c
-@@ -1096,7 +1096,7 @@ void variable_set(const wchar_t *name, variable_T *var
+@@ -1087,7 +1087,7 @@ void variable_set(const wchar_t *name, variable_T *var
  		    && var->v_value != NULL) {
  		unsigned long seed;
  		if (xwcstoul(var->v_value, 0, &seed)) {
