@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.413 2020/02/12 06:19:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.414 2020/03/12 17:18:47 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -231,6 +231,7 @@
      SUBDIR += prboom-plus
      SUBDIR += pushover
      SUBDIR += puzzles
+     SUBDIR += pygame_sdl2
      SUBDIR += pyganim
      SUBDIR += pysol
      SUBDIR += qqwing
