@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_unix_host_common_c,v 1.1.1.1 2020/03/12 12:24:08 solene Exp $
+
+Index: src/unix_host_common.c
+--- src/unix_host_common.c.orig
++++ src/unix_host_common.c
+@@ -425,7 +425,7 @@ word32 host_set_file_info(const char *path, struct fil
+ 
+     memset(times, 0, sizeof(times));
+ 
+-    times[0] = 0;             // access
++    times[0].tv_sec = 0;             // access
+     times[1].tv_sec = fi->modified_date;             // modified
+ 
+     int ok = utimes(path, times);

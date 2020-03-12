@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/12 12:24:08 solene Exp $
+@bin bin/GSplus
+share/doc/gsplus/
+share/doc/gsplus/README.txt
+share/doc/gsplus/gsplusmanual.pdf
+share/gsplus/
+share/gsplus/GSBug.Templates
+share/gsplus/GSOS.text
+share/gsplus/NList.Data
+share/gsplus/Tools.text
+share/gsplus/gsp_icon.icns
+share/gsplus/gsp_icon.ico
+share/gsplus/gsport32.ico
+share/gsplus/win32.ico

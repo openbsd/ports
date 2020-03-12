@@ -1,0 +1,4 @@
+GSplus is an Apple IIgs emulator. It's an open-source
+project based on the KEGS and GSPort emulators. It
+supports fullscreen, joysticks and audio through
+the SDL2 library across platforms.
