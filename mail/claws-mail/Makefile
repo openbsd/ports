@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2020/01/08 10:27:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.126 2020/03/12 20:08:56 jasper Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -14,9 +14,11 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
 
-REVISION-main=		2
-REVISION-pdfviewer=	0
-REVISION-gdata=		0
+REVISION-main=		3
+REVISION-bogofilter=	0
+REVISION-pdfviewer=	1
+REVISION-spamassassin=	0
+REVISION-gdata=		1
 
 CATEGORIES=		mail news
 
@@ -47,7 +49,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo crypto curl etpan execinfo
 WANTLIB += expat ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m nghttp2 pango-1.0
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m nghttp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sasl2 ssl xcb xcb-render xcb-shm z
 
@@ -57,12 +59,12 @@ WANTLIB-main += charset cairo-gobject db dbus-1 dbus-glib-1 enchant gmp gnutls g
 WANTLIB-main += gpgme gumbo hogweed ical icalss icalvcal icudata icui18n icuuc idn2
 WANTLIB-main += ltdl lz4 lzma nettle notify ogg p11-kit perl rsvg-2
 WANTLIB-main += startup-notification-1 ${COMPILER_LIBCXX} tasn1 unistring vorbis
-WANTLIB-main += vorbisfile xcb-util xml2 zstd
+WANTLIB-main += vorbisfile xcb-util xml2 zstd gthread-2.0
 
 WANTLIB-gdata = ${WANTLIB}
-WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error idn2 json-glib-1.0
-WANTLIB-gdata += lzma nspr4 nss3 oauth p11-kit plc4 plds4 smime3 nssutil3
-WANTLIB-gdata += psl soup-2.4 sqlite3 ssl3 unistring xml2 brotlicommon brotlidec
+WANTLIB-gdata += brotlicommon brotlidec gck-1 gcr-base-3 gcrypt gdata
+WANTLIB-gdata += goa-1.0 gpg-error gthread-2.0 idn2 json-glib-1.0 lzma
+WANTLIB-gdata += p11-kit psl soup-2.4 sqlite3 unistring xml2
 
 WANTLIB-pdfviewer =  ${WANTLIB}
 WANTLIB-pdfviewer += jpeg lcms2 lzma openjp2 png poppler poppler-glib tiff zstd
