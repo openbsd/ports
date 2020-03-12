@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/03/12 20:20:45 kirby Exp $
 
 # Crashes on strict-alignment archs, see: src/base/system.c:164
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
@@ -9,9 +9,9 @@ V=		0.6.4
 DISTNAME=	teeworlds-${V}-src
 PKGNAME=	teeworlds-${V}
 CATEGORIES=	games
-REVISION=	2
+REVISION=	3
 
-HOMEPAGE=	http://www.teeworlds.com/
+HOMEPAGE=	https://www.teeworlds.com/
 
 BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKSRC}/bam-${BAM_VERSION}
