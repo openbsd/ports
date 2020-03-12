@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/10 16:40:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/12 11:01:00 espie Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -28,7 +28,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz
 
-REVISION=		6
+REVISION=		7
 
 # BSD-like
 PERMIT_PACKAGE =	Yes
