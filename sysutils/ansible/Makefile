@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2020/02/17 18:17:42 pvk Exp $
+# $OpenBSD: Makefile,v 1.120 2020/03/12 21:03:34 kn Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
@@ -76,7 +76,7 @@ post-install:
 	cp -R ${WRKBUILD}/docs/docsite/_build/html ${DOCDIR}
 	rm -f ${DOCDIR}/html/.buildinfo
 	${INSTALL_DATA} ${WRKSRC}/{COPYING,README.rst} ${DOCDIR}/
-	find ${PREFIX} \( -name '*.orig' -o -name '.git*' \
-		-o -name '*.beforesubst' \) -type f -exec rm {} +
+	find ${PREFIX} -type f \( -name '*.orig' -o -name '.git*' \
+		-o -name '*.beforesubst' \) -delete
 
 .include <bsd.port.mk>
