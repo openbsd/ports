@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/02 07:20:23 semarie Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/12 10:30:05 semarie Exp $
 
 COMMENT =		ls alternative written in Rust
 
@@ -87,8 +87,6 @@ MODCARGO_CRATES +=	zoneinfo_compiled	0.4.8	# MIT
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
-
-MAKE_ENV +=		LIBGIT2_SYS_USE_PKG_CONFIG=1
 
 LIB_DEPENDS +=		devel/libgit2/libgit2
 WANTLIB +=		c c++abi pthread git2

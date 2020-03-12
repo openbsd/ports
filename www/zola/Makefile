@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/02 07:20:24 semarie Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/12 10:30:05 semarie Exp $
 
 COMMENT =	static site generator
 
@@ -7,6 +7,7 @@ DISTNAME =	zola-0.9.0
 GH_ACCOUNT =	getzola
 GH_PROJECT =	zola
 GH_TAGNAME =	v0.9.0
+REVISION =	0
 
 HOMEPAGE =	https://www.getzola.org
 
@@ -19,11 +20,10 @@ MAINTAINER =	Peter H. Ezetta <protocall7@gmail.com>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c c++abi crypto m pthread ssl sass
+WANTLIB +=	c c++abi crypto m pthread ssl sass onig
 
-LIB_DEPENDS +=	www/libsass
-
-MAKE_ENV +=	PKG_CONFIG_ALL_DYNAMIC=1
+LIB_DEPENDS +=	www/libsass \
+		textproc/oniguruma
 
 MODULES =	devel/cargo
 

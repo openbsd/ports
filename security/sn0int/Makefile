@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/02 07:20:23 semarie Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/12 10:30:05 semarie Exp $
 
 BROKEN-i386 =	error[E0428]: the name `U1024` is defined multiple times
 BROKEN-sparc64=	ring build-script error: called `Option::unwrap()` on a `None` value
@@ -8,6 +8,7 @@ COMMENT =	semi-automatic OSINT framework and package manager
 GH_ACCOUNT =	kpcyrd
 GH_PROJECT =	sn0int
 GH_TAGNAME =	v0.11.2
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -15,13 +16,17 @@ CATEGORIES =	security
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-LIB_DEPENDS =		databases/sqlite3
-WANTLIB +=		c c++abi m pthread sqlite3
+LIB_DEPENDS =		databases/sqlite3 ${MODLUA_LIB_DEPENDS}
+WANTLIB +=		c c++abi m pthread sqlite3 ${MODLUA_WANTLIB}
 
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
-MODULES =		devel/cargo
+MODLUA_VERSION =	5.2
+MODLUA_SA =		Yes
+
+MODULES =		devel/cargo \
+			lang/lua
 BUILD_DEPENDS =		lang/rust>=1.34 \
 			textproc/py-sphinx
 RUN_DEPENDS =		net/libmaxminddb,-asn \

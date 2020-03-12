@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/02 07:20:24 semarie Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/12 10:30:05 semarie Exp $
 
 COMMENT =	W3C webdriver for Gecko-based browsers
 
 GH_ACCOUNT =	mozilla
 GH_PROJECT =	geckodriver
 GH_TAGNAME =	v0.22.0
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -158,6 +159,7 @@ MODCARGO_CRATES +=	winreg	0.5.1		# MIT
 MODCARGO_CRATES +=	ws2_32-sys	0.2.1		# MIT
 MODCARGO_CRATES +=	zip	0.3.3		# MIT
 
-WANTLIB += c c++abi m pthread
+LIB_DEPENDS +=	archivers/bzip2
+WANTLIB += c c++abi m pthread bz2
 
 .include <bsd.port.mk>

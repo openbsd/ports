@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.14 2020/02/08 18:56:20 sthen Exp $
+# $OpenBSD: cargo.port.mk,v 1.15 2020/03/12 10:30:05 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -60,6 +60,102 @@ MODCARGO_post-extract = \
 MODCARGO_post-extract += \
 	mv ${WRKDIR}/${_cratename}-${_cratever} ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever} ;
 .endfor
+
+# post-extract target to provide clean environment for specific crates
+# in order to avoid rebuilding libraries from source behind us.
+MODCARGO_CRATES_BUILDDEP ?=	Yes
+.if ${MODCARGO_CRATES_BUILDDEP:L} == "yes"
+.  for _cratename _cratever in ${MODCARGO_CRATES}
+
+.    if "${_cratename}" == "pkg-config"
+# configure to build no static by default
+MODCARGO_ENV +=	PKG_CONFIG_ALL_DYNAMIC=1
+
+.    elif "${_cratename}" == "bzip2-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/bzip2-* ; \
+	echo 'fn main() { println!("cargo:rustc-link-lib=bz2\ncargo:rustc-link-search=${LOCALBASE}/lib"); }' \
+		> ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/build.rs ;
+	
+.    elif "${_cratename}" == "curl-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/curl ;
+
+.    elif "${_cratename}" == "gettext-sys"
+MODCARGO_ENV +=	GETTEXT_DIR=${LOCALBASE}
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -f -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/gettext-*.tar.xz ;
+
+.    elif "${_cratename}" == "libdbus-sys"
+# no libsrc, fail if lib not found
+
+.    elif "${_cratename}" == "libgit2-sys"
+MODCARGO_ENV +=	LIBGIT2_SYS_USE_PKG_CONFIG=1
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libgit2 ;
+
+.    elif "${_cratename}" == "libsqlite3-sys"
+MODCARGO_post-extract  += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/sqlite3 ;
+
+.    elif "${_cratename}" == "libssh2-sys"
+MODCARGO_ENV +=	LIBSSH2_SYS_USE_PKG_CONFIG=1
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libssh2 ;
+
+.    elif "${_cratename}" == "libz-sys"
+MODCARGO_ENV +=	LIBZ_SYS_STATIC=0
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/src/zlib ;
+
+.    elif "${_cratename}" == "lua52-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/lua ; \
+	${ECHO_MSG} "[modcargo] Patching ${_cratename}-${_cratever} to find lang/lua/5.2" ; \
+	sed -i -e 's,find_library("lua5.2"),find_library("lua52"),' \
+		${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/build.rs ;
+
+.    elif "${_cratename}" == "openssl-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Patching ${_cratename}-${_cratever} for supporting -current" ; \
+	sed -i -e "/ => ('.', '.'),/h" \
+		-e "/ => ('.', '.', '.'),/h" \
+		-e "/_ => version_error(),/{g; s/(.*) =>/_ =>/; }" \
+		${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/build/main.rs ;
+
+.    elif "${_cratename}" == "pcre2-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/pcre2 ;
+	
+.    elif "${_cratename}" == "portaudio-sys"
+# no libsrc, fail if lib not found
+
+.    elif "${_cratename}" == "pq-sys"
+# no libsrc, fail if lib not found
+
+.    elif "${_cratename}" == "onig_sys"
+MODCARGO_ENV +=	RUSTONIG_SYSTEM_LIBONIG=1
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/oniguruma ;
+
+.    elif "${_cratename}" == "sass-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libsass ;
+
+.    endif
+.  endfor
+.endif
 
 # post-patch target for generating metadata of crates.
 .for _cratename _cratever in ${MODCARGO_CRATES}
