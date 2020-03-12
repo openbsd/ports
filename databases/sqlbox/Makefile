@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/02 14:51:00 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/12 03:04:08 jturner Exp $
 
 COMMENT =		database access library
 
-DISTNAME =		sqlbox-0.1.11
+DISTNAME =		sqlbox-0.1.12
 CATEGORIES =		databases
 
 MAINTAINER =		James Turner <james@calminferno.net>
