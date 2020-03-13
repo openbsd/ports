@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/02/19 16:08:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/13 16:53:49 rsadowski Exp $
 
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
@@ -6,7 +6,6 @@ COMMENT-qch =		qdoc-compiled documentation for Qt5
 PKGNAME =		qt5-docs-${QT5_VERSION}
 PKGNAME-html =		qt5-html-${QT5_VERSION}
 PKGNAME-qch =		qt5-qch-${QT5_VERSION}
-WEBKIT_DOCS_VERSION =	5.9.0
 
 MULTI_PACKAGES =	-html -qch
 SUBPACKAGE ?=		-html
@@ -14,11 +13,9 @@ SUBPACKAGE ?=		-html
 WANTLIB-qch =
 WANTLIB-html =
 
+#qtbase qtquickcontrols2 qttools qtquickcontrols 
 DOC_COMPONENTS = \
 		qt3d \
-		qtactiveqt \
-		qtbase \
-		qtcanvas3d \
 		qtcharts \
 		qtconnectivity \
 		qtdatavis3d \
@@ -31,8 +28,6 @@ DOC_COMPONENTS = \
 		qtmultimedia \
 		qtnetworkauth \
 		qtpurchasing \
-		qtquickcontrols \
-		qtquickcontrols2 \
 		qtremoteobjects \
 		qtscript \
 		qtscxml \
@@ -41,7 +36,6 @@ DOC_COMPONENTS = \
 		qtserialport \
 		qtspeech \
 		qtsvg \
-		qttools \
 		qtvirtualkeyboard \
 		qtwebchannel \
 		qtwebkit \
@@ -49,10 +43,10 @@ DOC_COMPONENTS = \
 		qtx11extras \
 		qtxmlpatterns
 
-MASTER_SITES0 =	https://download.qt.io/community_releases/${DIST_VERSION:R}/${WEBKIT_DOCS_VERSION}-final/
-MASTER_SITES1 =	https://ftp1.nluug.nl/languages/qt/community_releases/${DIST_VERSION:R}/${WEBKIT_DOCS_VERSION}-final/
-DISTFILES =	${DOC_COMPONENTS:Nqtwebkit:C/$/-opensource-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}:0
-DISTFILES +=	qtwebkit-opensource-src-${WEBKIT_DOCS_VERSION}${EXTRACT_SUFX}:1
+MASTER_SITES0 =	https://download.qt.io/community_releases/${DIST_VERSION:R}/${QT5_WEBKIT_VERSION}-final/
+MASTER_SITES1 =	https://ftp1.nluug.nl/languages/qt/community_releases/${DIST_VERSION:R}/${QT5_WEBKIT_VERSION}-final/
+DISTFILES =	${DOC_COMPONENTS:Nqtwebkit:C/$/-everywhere-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}:0
+DISTFILES +=	qtwebkit-opensource-src-${QT5_WEBKIT_VERSION}${EXTRACT_SUFX}:1
 
 MODQT5_USE_CXX11 =	No
 CONFIGURE_STYLE =	none

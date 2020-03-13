@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_network_ssl_qsslsocket_opensslpre11_symbols_p_h,v 1.1 2020/03/13 16:53:50 rsadowski Exp $
+
+Index: src/network/ssl/qsslsocket_opensslpre11_symbols_p.h
+--- src/network/ssl/qsslsocket_opensslpre11_symbols_p.h.orig
++++ src/network/ssl/qsslsocket_opensslpre11_symbols_p.h
+@@ -78,8 +78,13 @@
+ unsigned char * q_ASN1_STRING_data(ASN1_STRING *a);
+ BIO *q_BIO_new_file(const char *filename, const char *mode);
+ void q_ERR_clear_error();
++#ifdef LIBRESSL_VERSION_NUMBER
++Q_AUTOTEST_EXPORT BIO *q_BIO_new(const BIO_METHOD *a);
++Q_AUTOTEST_EXPORT const BIO_METHOD *q_BIO_s_mem();
++#else
+ Q_AUTOTEST_EXPORT BIO *q_BIO_new(BIO_METHOD *a);
+ Q_AUTOTEST_EXPORT BIO_METHOD *q_BIO_s_mem();
++#endif
+ int q_CRYPTO_num_locks();
+ void q_CRYPTO_set_locking_callback(void (*a)(int, int, const char *, int));
+ void q_CRYPTO_set_id_callback(unsigned long (*a)());

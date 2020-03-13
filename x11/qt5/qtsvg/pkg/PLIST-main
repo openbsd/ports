@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/03/13 16:53:53 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtSvg/
 include/X11/qt5/QtSvg/${VERSION}/
@@ -32,6 +32,7 @@ lib/qt5/cmake/Qt5Svg/Qt5SvgConfig.cmake
 lib/qt5/cmake/Qt5Svg/Qt5SvgConfigVersion.cmake
 lib/qt5/cmake/Qt5Svg/Qt5Svg_QSvgIconPlugin.cmake
 lib/qt5/cmake/Qt5Svg/Qt5Svg_QSvgPlugin.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Svg.la
 lib/qt5/libQt5Svg.prl
 @lib lib/qt5/libQt5Svg.so.${LIBQt5Svg_VERSION}
@@ -39,5 +40,5 @@ lib/qt5/mkspecs/modules/qt_lib_svg.pri
 lib/qt5/mkspecs/modules/qt_lib_svg_private.pri
 lib/qt5/pkgconfig/Qt5Svg.pc
 lib/qt5/plugins/iconengines/
-lib/qt5/plugins/iconengines/libqsvgicon.so
-lib/qt5/plugins/imageformats/libqsvg.so
+@so lib/qt5/plugins/iconengines/libqsvgicon.so
+@so lib/qt5/plugins/imageformats/libqsvg.so

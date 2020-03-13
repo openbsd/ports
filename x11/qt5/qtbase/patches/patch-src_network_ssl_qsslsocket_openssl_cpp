@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_cpp,v 1.1 2020/03/13 16:53:50 rsadowski Exp $
+
+Index: src/network/ssl/qsslsocket_openssl.cpp
+--- src/network/ssl/qsslsocket_openssl.cpp.orig
++++ src/network/ssl/qsslsocket_openssl.cpp
+@@ -102,9 +102,7 @@ bool QSslSocketPrivate::s_libraryLoaded = false;
+ bool QSslSocketPrivate::s_loadedCiphersAndCerts = false;
+ bool QSslSocketPrivate::s_loadRootCertsOnDemand = false;
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10001000L
+ int QSslSocketBackendPrivate::s_indexForSSLExtraData = -1;
+-#endif
+ 
+ QString QSslSocketBackendPrivate::getErrorsFromOpenSsl()
+ {
+@@ -598,7 +596,7 @@ bool QSslSocketBackendPrivate::initSslContext()
+             q_SSL_set_psk_server_callback(ssl, &q_ssl_psk_server_callback);
+     }
+ #endif
+-#if OPENSSL_VERSION_NUMBER >= 0x10101006L
++#if OPENSSL_VERSION_NUMBER >= 0x10101006L && !defined(LIBRESSL_VERSION_NUMBER)
+     // Set the client callback for TLSv1.3 PSK
+     if (mode == QSslSocket::SslClientMode
+         && QSslSocket::sslLibraryBuildVersionNumber() >= 0x10101006L) {

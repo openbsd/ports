@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2020/02/19 16:08:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.62 2020/03/13 16:53:49 rsadowski Exp $
 
      SUBDIR =
-     SUBDIR += docs
+     #SUBDIR += docs (WIP)
      SUBDIR += qt3d
      SUBDIR += qtbase
-     SUBDIR += qtcanvas3d
      SUBDIR += qtcharts
      SUBDIR += qtconnectivity
      SUBDIR += qtdatavis3d
@@ -13,6 +12,7 @@
      SUBDIR += qtgraphicaleffects
      SUBDIR += qtimageformats
      SUBDIR += qtlocation
+     SUBDIR += qtlottie
      SUBDIR += qtmultimedia
      SUBDIR += qtnetworkauth
      SUBDIR += qtpurchasing
@@ -39,7 +39,10 @@
 #     SUBDIR += qtwayland
 # not ported yet
 #     SUBDIR += qtwebengine
+#     SUBDIR += qtwebglplugin
 # requires qtwebengine
 #     SUBDIR += qtwebview
+# Windows only
+#     SUBDIR += qtactiveqt
 
 .include <bsd.port.subdir.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2017/06/15 08:37:08 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2020/03/13 16:53:53 rsadowski Exp $
 lib/qt5/examples/virtualkeyboard/
 lib/qt5/examples/virtualkeyboard/basic/
 lib/qt5/examples/virtualkeyboard/basic/Basic.qml
@@ -10,9 +10,7 @@ lib/qt5/examples/virtualkeyboard/basic/content/FloatingButton_Active.svg
 lib/qt5/examples/virtualkeyboard/basic/content/FloatingButton_Available.svg
 lib/qt5/examples/virtualkeyboard/basic/content/FloatingButton_Unavailable.svg
 lib/qt5/examples/virtualkeyboard/basic/content/HandwritingModeButton.qml
-lib/qt5/examples/virtualkeyboard/basic/content/ScrollBar.qml
 lib/qt5/examples/virtualkeyboard/basic/content/TextArea.qml
-lib/qt5/examples/virtualkeyboard/basic/content/TextBase.qml
 lib/qt5/examples/virtualkeyboard/basic/content/TextField.qml
 lib/qt5/examples/virtualkeyboard/basic/demo.qrc
 lib/qt5/examples/virtualkeyboard/basic/main.cpp

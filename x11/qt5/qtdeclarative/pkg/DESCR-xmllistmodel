@@ -1,3 +1,0 @@
-This QML module contains types for creating models from XML data.
-To use the types in this module, import the module with the following line:
-  import QtQuick.XmlListModel 2.0

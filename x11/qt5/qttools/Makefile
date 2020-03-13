@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.10 2020/02/21 00:56:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/13 16:53:53 rsadowski Exp $
 
 QT5NAME =		QtTools
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin
 PKGNAME-webview =	qwebview-${VERSION}
-REVISION-main =		0
-REVISION-webview =	1
 
 DPB_PROPERTIES =	parallel
 
 MULTI_PACKAGES =	-main -examples -webview
 
-SHARED_LIBS +=	Qt5Designer		2.2
-SHARED_LIBS +=	Qt5DesignerComponents	2.2
-SHARED_LIBS +=	Qt5Help			2.2
+SHARED_LIBS +=  Qt5Designer             3.0 # 5.9
+SHARED_LIBS +=  Qt5DesignerComponents   3.0 # 5.9
+SHARED_LIBS +=  Qt5Help                 3.0 # 5.9
 
 WANTLIB-main =	${WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += GL c m pthread
+WANTLIB-main += GL c m pthread clang
 WANTLIB-main +=	Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB-main +=	Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Widgets Qt5Xml
 
@@ -28,8 +26,11 @@ WANTLIB-webview += Qt5WebKitWidgets Qt5Widgets Qt5Xml m pthread
 MODQT5_DEPS =	No
 
 LIB_DEPENDS =		x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			devel/llvm \
 			x11/qt5/qtdeclarative>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
+
 LIB_DEPENDS-webview =	${LIB_DEPENDS} \
 			${BUILD_PKGPATH}>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebkit>=${QT5_WEBKIT_VERSION}
@@ -37,6 +38,8 @@ LIB_DEPENDS-webview =	${LIB_DEPENDS} \
 FLAVORS =		debug
 PSEUDO_FLAVORS =	bootstrap no_examples no_webview
 FLAVOR ?=		bootstrap no_examples no_webview
+
+CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE}
 
 .include <bsd.port.arch.mk>
 

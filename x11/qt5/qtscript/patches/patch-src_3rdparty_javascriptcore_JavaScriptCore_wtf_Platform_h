@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.2 2020/03/13 16:53:52 rsadowski Exp $
 Enable W^X in JIT.
---- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	Fri May 29 23:29:43 2015
-+++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Wed Oct  7 19:13:02 2015
-@@ -1079,7 +1079,7 @@ on MinGW. See https://bugs.webkit.org/show_bug.cgi?id=
+Index: src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h
+@@ -1089,7 +1089,7 @@ on MinGW. See https://bugs.webkit.org/show_bug.cgi?id=
  #endif
  /* Setting this flag prevents the assembler from using RWX memory; this may improve
     security but currectly comes at a significant performance cost. */

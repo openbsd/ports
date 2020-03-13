@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/03/13 16:53:52 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtScript/
 include/X11/qt5/QtScript/${VERSION}/
@@ -28,6 +28,7 @@ include/X11/qt5/QtScript/${VERSION}/QtScript/private/qscriptstring_p.h
 include/X11/qt5/QtScript/${VERSION}/QtScript/private/qscriptsyntaxchecker_p.h
 include/X11/qt5/QtScript/${VERSION}/QtScript/private/qscriptvalue_p.h
 include/X11/qt5/QtScript/${VERSION}/QtScript/private/qscriptvariant_p.h
+include/X11/qt5/QtScript/${VERSION}/QtScript/private/qtscript-config_p.h
 include/X11/qt5/QtScript/QScriptClass
 include/X11/qt5/QtScript/QScriptClassPropertyIterator
 include/X11/qt5/QtScript/QScriptContext
@@ -60,6 +61,7 @@ include/X11/qt5/QtScript/qscriptprogram.h
 include/X11/qt5/QtScript/qscriptstring.h
 include/X11/qt5/QtScript/qscriptvalue.h
 include/X11/qt5/QtScript/qscriptvalueiterator.h
+include/X11/qt5/QtScript/qtscript-config.h
 include/X11/qt5/QtScript/qtscriptglobal.h
 include/X11/qt5/QtScript/qtscriptversion.h
 include/X11/qt5/QtScriptTools/
@@ -166,6 +168,7 @@ lib/qt5/cmake/Qt5Script/Qt5ScriptConfigVersion.cmake
 lib/qt5/cmake/Qt5ScriptTools/
 lib/qt5/cmake/Qt5ScriptTools/Qt5ScriptToolsConfig.cmake
 lib/qt5/cmake/Qt5ScriptTools/Qt5ScriptToolsConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Script.la
 lib/qt5/libQt5Script.prl
 @lib lib/qt5/libQt5Script.so.${LIBQt5Script_VERSION}

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_network_configure_json,v 1.1 2020/03/13 16:53:50 rsadowski Exp $
+
+Index: src/network/configure.json
+--- src/network/configure.json.orig
++++ src/network/configure.json
+@@ -167,7 +167,7 @@
+             "test": {
+                 "include": "openssl/opensslv.h",
+                 "tail": [
+-                    "#if !defined(OPENSSL_VERSION_NUMBER) || OPENSSL_VERSION_NUMBER-0 < 0x10100000L",
++                    "#f !defined(OPENSSL_VERSION_NUMBER) || OPENSSL_VERSION_NUMBER-0 < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)",
+                     "#  error OpenSSL >= 1.1 is required",
+                     "#endif"
+                 ]

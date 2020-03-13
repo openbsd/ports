@@ -1,57 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/01/07 20:22:07 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/13 16:53:51 rsadowski Exp $
 @conflict qt5-<5.6
 @pkgpath x11/qt5/qtgraphicaleffects,-main
 lib/qt5/qml/QtGraphicalEffects/
 lib/qt5/qml/QtGraphicalEffects/Blend.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/Blend.qmlc
 lib/qt5/qml/QtGraphicalEffects/BrightnessContrast.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/BrightnessContrast.qmlc
 lib/qt5/qml/QtGraphicalEffects/ColorOverlay.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/ColorOverlay.qmlc
 lib/qt5/qml/QtGraphicalEffects/Colorize.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/Colorize.qmlc
 lib/qt5/qml/QtGraphicalEffects/ConicalGradient.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/ConicalGradient.qmlc
 lib/qt5/qml/QtGraphicalEffects/Desaturate.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/Desaturate.qmlc
 lib/qt5/qml/QtGraphicalEffects/DirectionalBlur.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/DirectionalBlur.qmlc
 lib/qt5/qml/QtGraphicalEffects/Displace.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/Displace.qmlc
 lib/qt5/qml/QtGraphicalEffects/DropShadow.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/DropShadow.qmlc
 lib/qt5/qml/QtGraphicalEffects/FastBlur.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/FastBlur.qmlc
 lib/qt5/qml/QtGraphicalEffects/GammaAdjust.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/GammaAdjust.qmlc
 lib/qt5/qml/QtGraphicalEffects/GaussianBlur.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/GaussianBlur.qmlc
 lib/qt5/qml/QtGraphicalEffects/Glow.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/Glow.qmlc
 lib/qt5/qml/QtGraphicalEffects/HueSaturation.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/HueSaturation.qmlc
 lib/qt5/qml/QtGraphicalEffects/InnerShadow.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/InnerShadow.qmlc
 lib/qt5/qml/QtGraphicalEffects/LevelAdjust.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/LevelAdjust.qmlc
 lib/qt5/qml/QtGraphicalEffects/LinearGradient.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/LinearGradient.qmlc
 lib/qt5/qml/QtGraphicalEffects/MaskedBlur.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/MaskedBlur.qmlc
 lib/qt5/qml/QtGraphicalEffects/OpacityMask.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/OpacityMask.qmlc
 lib/qt5/qml/QtGraphicalEffects/RadialBlur.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/RadialBlur.qmlc
 lib/qt5/qml/QtGraphicalEffects/RadialGradient.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/RadialGradient.qmlc
 lib/qt5/qml/QtGraphicalEffects/RectangularGlow.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/RectangularGlow.qmlc
 lib/qt5/qml/QtGraphicalEffects/RecursiveBlur.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/RecursiveBlur.qmlc
 lib/qt5/qml/QtGraphicalEffects/ThresholdMask.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/ThresholdMask.qmlc
 lib/qt5/qml/QtGraphicalEffects/ZoomBlur.qml
-${MODQT5_COMMENT}lib/qt5/qml/QtGraphicalEffects/ZoomBlur.qmlc
 @so lib/qt5/qml/QtGraphicalEffects/libqtgraphicaleffectsplugin.so
 lib/qt5/qml/QtGraphicalEffects/plugins.qmltypes
 lib/qt5/qml/QtGraphicalEffects/private/

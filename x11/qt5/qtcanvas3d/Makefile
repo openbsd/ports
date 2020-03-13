@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2020/01/07 20:22:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/13 16:53:50 rsadowski Exp $
 
 QT5NAME =		QtCanvas3D
 COMMENT-main =		QML types for the Qt5 Canvas 3D API
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 

@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_nfc_nfc_pro,v 1.1.1.1 2016/12/25 14:13:16 zhuk Exp $
+$OpenBSD: patch-src_nfc_nfc_pro,v 1.2 2020/03/13 16:53:50 rsadowski Exp $
 Let's try to build a functional NFC library.
---- src/nfc/nfc.pro.orig	Wed Dec 14 09:45:47 2016
-+++ src/nfc/nfc.pro	Wed Dec 14 09:46:51 2016
-@@ -54,7 +54,7 @@ SOURCES += \
+Index: src/nfc/nfc.pro
+--- src/nfc/nfc.pro.orig
++++ src/nfc/nfc.pro
+@@ -56,7 +56,7 @@ SOURCES += \
      qnearfieldsharetarget.cpp \
      qnfc.cpp
  

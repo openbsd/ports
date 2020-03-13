@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/13 16:53:51 rsadowski Exp $
 lib/qt5/examples/multimedia/
 lib/qt5/examples/multimedia/audiodecoder/
 lib/qt5/examples/multimedia/audiodecoder/audiodecoder.cpp
@@ -52,6 +52,8 @@ lib/qt5/examples/multimedia/audiooutput/doc/src/
 lib/qt5/examples/multimedia/audiooutput/doc/src/audiooutput.qdoc
 lib/qt5/examples/multimedia/audiooutput/main.cpp
 lib/qt5/examples/multimedia/audiorecorder/
+lib/qt5/examples/multimedia/audiorecorder/audiolevel.cpp
+lib/qt5/examples/multimedia/audiorecorder/audiolevel.h
 lib/qt5/examples/multimedia/audiorecorder/audiorecorder.cpp
 lib/qt5/examples/multimedia/audiorecorder/audiorecorder.h
 lib/qt5/examples/multimedia/audiorecorder/audiorecorder.pro
@@ -62,8 +64,6 @@ lib/qt5/examples/multimedia/audiorecorder/doc/images/audiorecorder.png
 lib/qt5/examples/multimedia/audiorecorder/doc/src/
 lib/qt5/examples/multimedia/audiorecorder/doc/src/audiorecorder.qdoc
 lib/qt5/examples/multimedia/audiorecorder/main.cpp
-lib/qt5/examples/multimedia/audiorecorder/qaudiolevel.cpp
-lib/qt5/examples/multimedia/audiorecorder/qaudiolevel.h
 lib/qt5/examples/multimedia/declarative-camera/
 lib/qt5/examples/multimedia/declarative-camera/CameraButton.qml
 lib/qt5/examples/multimedia/declarative-camera/CameraListButton.qml
@@ -102,6 +102,7 @@ lib/qt5/examples/multimedia/declarative-camera/images/toolbutton.png
 lib/qt5/examples/multimedia/declarative-camera/images/toolbutton.sci
 lib/qt5/examples/multimedia/declarative-camera/qmlcamera.cpp
 lib/qt5/examples/multimedia/declarative-radio/
+lib/qt5/examples/multimedia/declarative-radio/Button.qml
 lib/qt5/examples/multimedia/declarative-radio/declarative-radio.pro
 lib/qt5/examples/multimedia/declarative-radio/declarative-radio.qrc
 lib/qt5/examples/multimedia/declarative-radio/doc/
@@ -117,6 +118,8 @@ lib/qt5/examples/multimedia/radio/main.cpp
 lib/qt5/examples/multimedia/radio/radio.cpp
 lib/qt5/examples/multimedia/radio/radio.h
 lib/qt5/examples/multimedia/radio/radio.pro
+lib/qt5/examples/multimedia/shared/
+lib/qt5/examples/multimedia/shared/shared.pri
 lib/qt5/examples/multimedia/spectrum/
 lib/qt5/examples/multimedia/spectrum/3rdparty/
 lib/qt5/examples/multimedia/spectrum/3rdparty/fftreal/
@@ -411,12 +414,15 @@ lib/qt5/examples/multimediawidgets/camera/
 lib/qt5/examples/multimediawidgets/camera/camera.cpp
 lib/qt5/examples/multimediawidgets/camera/camera.h
 lib/qt5/examples/multimediawidgets/camera/camera.pro
+lib/qt5/examples/multimediawidgets/camera/camera.qrc
 lib/qt5/examples/multimediawidgets/camera/camera.ui
 lib/qt5/examples/multimediawidgets/camera/doc/
 lib/qt5/examples/multimediawidgets/camera/doc/images/
 lib/qt5/examples/multimediawidgets/camera/doc/images/camera-example.png
 lib/qt5/examples/multimediawidgets/camera/doc/src/
 lib/qt5/examples/multimediawidgets/camera/doc/src/camera.qdoc
+lib/qt5/examples/multimediawidgets/camera/images/
+lib/qt5/examples/multimediawidgets/camera/images/shutter.svg
 lib/qt5/examples/multimediawidgets/camera/imagesettings.cpp
 lib/qt5/examples/multimediawidgets/camera/imagesettings.h
 lib/qt5/examples/multimediawidgets/camera/imagesettings.ui
@@ -481,5 +487,3 @@ lib/qt5/examples/multimediawidgets/videowidget/main.cpp
 lib/qt5/examples/multimediawidgets/videowidget/videoplayer.cpp
 lib/qt5/examples/multimediawidgets/videowidget/videoplayer.h
 lib/qt5/examples/multimediawidgets/videowidget/videowidget.pro
-lib/qt5/examples/shared/
-lib/qt5/examples/shared/shared.pri

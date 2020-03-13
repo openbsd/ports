@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/03/13 16:53:51 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtMultimedia/
 include/X11/qt5/QtMultimedia/${VERSION}/
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/gstvideoconnector_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qabstractvideobuffer_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiobuffer_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiodevicefactory_p.h
@@ -13,26 +12,6 @@ include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiosystemplugine
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qcamera_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qdeclarativevideooutput_backend_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qdeclarativevideooutput_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstappsrc_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstbufferpoolinterface_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstcodecsinfo_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreameraudioinputselector_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreameraudioprobecontrol_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamerbufferprobe_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamerbushelper_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamermessage_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamermirtexturerenderer_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamervideoinputdevicecontrol_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamervideooverlay_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamervideoprobecontrol_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamervideorenderer_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamervideorendererinterface_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamervideowidget_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstreamervideowindow_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstutils_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstvideobuffer_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstvideorendererplugin_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qgstvideorenderersink_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qimagevideobuffer_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediacontrol_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmedianetworkplaylistprovider_p.h
@@ -65,7 +44,6 @@ include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qtmultimediaquickde
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframe_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframeconversionhelper_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qvideooutputorientationhandler_p.h
-include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qvideosurfacegstsink_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qvideosurfaceoutput_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qwavedecoder_p.h
 include/X11/qt5/QtMultimedia/QAbstractAudioDeviceInfo
@@ -115,6 +93,7 @@ include/X11/qt5/QtMultimedia/QCameraViewfinderSettings
 include/X11/qt5/QtMultimedia/QCameraViewfinderSettingsControl
 include/X11/qt5/QtMultimedia/QCameraViewfinderSettingsControl2
 include/X11/qt5/QtMultimedia/QCameraZoomControl
+include/X11/qt5/QtMultimedia/QCustomAudioRoleControl
 include/X11/qt5/QtMultimedia/QImageEncoderControl
 include/X11/qt5/QtMultimedia/QImageEncoderSettings
 include/X11/qt5/QtMultimedia/QMediaAudioProbeControl
@@ -207,6 +186,7 @@ include/X11/qt5/QtMultimedia/qcameralockscontrol.h
 include/X11/qt5/QtMultimedia/qcameraviewfindersettings.h
 include/X11/qt5/QtMultimedia/qcameraviewfindersettingscontrol.h
 include/X11/qt5/QtMultimedia/qcamerazoomcontrol.h
+include/X11/qt5/QtMultimedia/qcustomaudiorolecontrol.h
 include/X11/qt5/QtMultimedia/qimageencodercontrol.h
 include/X11/qt5/QtMultimedia/qmediaaudioprobecontrol.h
 include/X11/qt5/QtMultimedia/qmediaavailabilitycontrol.h
@@ -251,19 +231,52 @@ include/X11/qt5/QtMultimedia/qvideoprobe.h
 include/X11/qt5/QtMultimedia/qvideorenderercontrol.h
 include/X11/qt5/QtMultimedia/qvideosurfaceformat.h
 include/X11/qt5/QtMultimedia/qvideowindowcontrol.h
-include/X11/qt5/QtMultimediaQuick_p/
-include/X11/qt5/QtMultimediaQuick_p/${VERSION}/
-include/X11/qt5/QtMultimediaQuick_p/${VERSION}/QtMultimediaQuick_p/
-include/X11/qt5/QtMultimediaQuick_p/${VERSION}/QtMultimediaQuick_p/private/
-include/X11/qt5/QtMultimediaQuick_p/${VERSION}/QtMultimediaQuick_p/private/qdeclarativevideooutput_render_p.h
-include/X11/qt5/QtMultimediaQuick_p/${VERSION}/QtMultimediaQuick_p/private/qdeclarativevideooutput_window_p.h
-include/X11/qt5/QtMultimediaQuick_p/${VERSION}/QtMultimediaQuick_p/private/qsgvideonode_rgb_p.h
-include/X11/qt5/QtMultimediaQuick_p/${VERSION}/QtMultimediaQuick_p/private/qsgvideonode_texture_p.h
-include/X11/qt5/QtMultimediaQuick_p/${VERSION}/QtMultimediaQuick_p/private/qsgvideonode_yuv_p.h
-include/X11/qt5/QtMultimediaQuick_p/QtMultimediaQuick_p
-include/X11/qt5/QtMultimediaQuick_p/QtMultimediaQuick_pDepends
-include/X11/qt5/QtMultimediaQuick_p/QtMultimediaQuick_pVersion
-include/X11/qt5/QtMultimediaQuick_p/qtmultimediaquick_pversion.h
+include/X11/qt5/QtMultimediaGstTools/
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/gstvideoconnector_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstappsrc_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstbufferpoolinterface_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstcodecsinfo_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreameraudioinputselector_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreameraudioprobecontrol_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamerbufferprobe_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamerbushelper_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamermessage_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamermirtexturerenderer_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamerplayercontrol_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamerplayersession_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamervideoinputdevicecontrol_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamervideooverlay_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamervideoprobecontrol_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamervideorenderer_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamervideorendererinterface_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamervideowidget_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstreamervideowindow_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgsttools_global_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstutils_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstvideobuffer_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstvideorendererplugin_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qgstvideorenderersink_p.h
+include/X11/qt5/QtMultimediaGstTools/${VERSION}/QtMultimediaGstTools/private/qvideosurfacegstsink_p.h
+include/X11/qt5/QtMultimediaGstTools/QtMultimediaGstTools
+include/X11/qt5/QtMultimediaGstTools/QtMultimediaGstToolsDepends
+include/X11/qt5/QtMultimediaGstTools/QtMultimediaGstToolsVersion
+include/X11/qt5/QtMultimediaGstTools/qtmultimediagsttoolsversion.h
+include/X11/qt5/QtMultimediaQuick/
+include/X11/qt5/QtMultimediaQuick/${VERSION}/
+include/X11/qt5/QtMultimediaQuick/${VERSION}/QtMultimediaQuick/
+include/X11/qt5/QtMultimediaQuick/${VERSION}/QtMultimediaQuick/private/
+include/X11/qt5/QtMultimediaQuick/${VERSION}/QtMultimediaQuick/private/qdeclarativevideooutput_render_p.h
+include/X11/qt5/QtMultimediaQuick/${VERSION}/QtMultimediaQuick/private/qdeclarativevideooutput_window_p.h
+include/X11/qt5/QtMultimediaQuick/${VERSION}/QtMultimediaQuick/private/qsgvideonode_rgb_p.h
+include/X11/qt5/QtMultimediaQuick/${VERSION}/QtMultimediaQuick/private/qsgvideonode_texture_p.h
+include/X11/qt5/QtMultimediaQuick/${VERSION}/QtMultimediaQuick/private/qsgvideonode_yuv_p.h
+include/X11/qt5/QtMultimediaQuick/QtMultimediaQuick
+include/X11/qt5/QtMultimediaQuick/QtMultimediaQuickDepends
+include/X11/qt5/QtMultimediaQuick/QtMultimediaQuickVersion
+include/X11/qt5/QtMultimediaQuick/qtmultimediaquickversion.h
 include/X11/qt5/QtMultimediaWidgets/
 include/X11/qt5/QtMultimediaWidgets/${VERSION}/
 include/X11/qt5/QtMultimediaWidgets/${VERSION}/QtMultimediaWidgets/
@@ -284,9 +297,9 @@ include/X11/qt5/QtMultimediaWidgets/qtmultimediawidgetsversion.h
 include/X11/qt5/QtMultimediaWidgets/qvideowidget.h
 include/X11/qt5/QtMultimediaWidgets/qvideowidgetcontrol.h
 @lib lib/libQt5Multimedia.so.${LIBQt5Multimedia_VERSION}
-@lib lib/libQt5MultimediaQuick_p.so.${LIBQt5MultimediaQuick_p_VERSION}
+@lib lib/libQt5MultimediaGstTools.so.${LIBQt5MultimediaGstTools_VERSION}
+@lib lib/libQt5MultimediaQuick.so.${LIBQt5MultimediaQuick_VERSION}
 @lib lib/libQt5MultimediaWidgets.so.${LIBQt5MultimediaWidgets_VERSION}
-@lib lib/libqgsttools_p.so.${LIBqgsttools_p_VERSION}
 lib/pkgconfig/Qt5Multimedia.pc
 lib/pkgconfig/Qt5MultimediaWidgets.pc
 lib/qt5/cmake/Qt5Multimedia/
@@ -298,42 +311,50 @@ lib/qt5/cmake/Qt5Multimedia/Qt5Multimedia_QGstreamerCaptureServicePlugin.cmake
 lib/qt5/cmake/Qt5Multimedia/Qt5Multimedia_QGstreamerPlayerServicePlugin.cmake
 lib/qt5/cmake/Qt5Multimedia/Qt5Multimedia_QM3uPlaylistPlugin.cmake
 lib/qt5/cmake/Qt5Multimedia/Qt5Multimedia_QPulseAudioPlugin.cmake
+lib/qt5/cmake/Qt5MultimediaGstTools/
+lib/qt5/cmake/Qt5MultimediaGstTools/Qt5MultimediaGstToolsConfig.cmake
+lib/qt5/cmake/Qt5MultimediaGstTools/Qt5MultimediaGstToolsConfigVersion.cmake
+lib/qt5/cmake/Qt5MultimediaQuick/
+lib/qt5/cmake/Qt5MultimediaQuick/Qt5MultimediaQuickConfig.cmake
+lib/qt5/cmake/Qt5MultimediaQuick/Qt5MultimediaQuickConfigVersion.cmake
 lib/qt5/cmake/Qt5MultimediaWidgets/
 lib/qt5/cmake/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfig.cmake
 lib/qt5/cmake/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfigVersion.cmake
 lib/qt5/libQt5Multimedia.la
 lib/qt5/libQt5Multimedia.prl
 @lib lib/qt5/libQt5Multimedia.so.${LIBQt5Multimedia_VERSION}
-lib/qt5/libQt5MultimediaQuick_p.la
-lib/qt5/libQt5MultimediaQuick_p.prl
-@lib lib/qt5/libQt5MultimediaQuick_p.so.${LIBQt5MultimediaQuick_p_VERSION}
+lib/qt5/libQt5MultimediaGstTools.la
+lib/qt5/libQt5MultimediaGstTools.prl
+@lib lib/qt5/libQt5MultimediaGstTools.so.${LIBQt5MultimediaGstTools_VERSION}
+lib/qt5/libQt5MultimediaQuick.la
+lib/qt5/libQt5MultimediaQuick.prl
+@lib lib/qt5/libQt5MultimediaQuick.so.${LIBQt5MultimediaQuick_VERSION}
 lib/qt5/libQt5MultimediaWidgets.la
 lib/qt5/libQt5MultimediaWidgets.prl
 @lib lib/qt5/libQt5MultimediaWidgets.so.${LIBQt5MultimediaWidgets_VERSION}
-lib/qt5/libqgsttools_p.prl
-@lib lib/qt5/libqgsttools_p.so.${LIBqgsttools_p_VERSION}
 lib/qt5/mkspecs/modules/qt_lib_multimedia.pri
 lib/qt5/mkspecs/modules/qt_lib_multimedia_private.pri
+lib/qt5/mkspecs/modules/qt_lib_multimediagsttools_private.pri
 lib/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri
 lib/qt5/mkspecs/modules/qt_lib_multimediawidgets_private.pri
 lib/qt5/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri
 lib/qt5/pkgconfig/Qt5Multimedia.pc
 lib/qt5/pkgconfig/Qt5MultimediaWidgets.pc
 lib/qt5/plugins/audio/
-lib/qt5/plugins/audio/libqtmedia_pulse.so
+@so lib/qt5/plugins/audio/libqtmedia_pulse.so
 lib/qt5/plugins/mediaservice/
-lib/qt5/plugins/mediaservice/libgstaudiodecoder.so
-lib/qt5/plugins/mediaservice/libgstcamerabin.so
-lib/qt5/plugins/mediaservice/libgstmediacapture.so
-lib/qt5/plugins/mediaservice/libgstmediaplayer.so
+@so lib/qt5/plugins/mediaservice/libgstaudiodecoder.so
+@so lib/qt5/plugins/mediaservice/libgstcamerabin.so
+@so lib/qt5/plugins/mediaservice/libgstmediacapture.so
+@so lib/qt5/plugins/mediaservice/libgstmediaplayer.so
 lib/qt5/plugins/playlistformats/
-lib/qt5/plugins/playlistformats/libqtmultimedia_m3u.so
+@so lib/qt5/plugins/playlistformats/libqtmultimedia_m3u.so
 lib/qt5/qml/QtAudioEngine/
-lib/qt5/qml/QtAudioEngine/libdeclarative_audioengine.so
+@so lib/qt5/qml/QtAudioEngine/libdeclarative_audioengine.so
 lib/qt5/qml/QtAudioEngine/plugins.qmltypes
 lib/qt5/qml/QtAudioEngine/qmldir
 lib/qt5/qml/QtMultimedia/
 lib/qt5/qml/QtMultimedia/Video.qml
-lib/qt5/qml/QtMultimedia/libdeclarative_multimedia.so
+@so lib/qt5/qml/QtMultimedia/libdeclarative_multimedia.so
 lib/qt5/qml/QtMultimedia/plugins.qmltypes
 lib/qt5/qml/QtMultimedia/qmldir

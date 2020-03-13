@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/03/13 16:53:51 rsadowski Exp $
 include/X11/qt5/QtPurchasing/
 include/X11/qt5/QtPurchasing/${VERSION}/
 include/X11/qt5/QtPurchasing/${VERSION}/QtPurchasing/
@@ -31,6 +31,7 @@ lib/pkgconfig/Qt5Purchasing.pc
 lib/qt5/cmake/Qt5Purchasing/
 lib/qt5/cmake/Qt5Purchasing/Qt5PurchasingConfig.cmake
 lib/qt5/cmake/Qt5Purchasing/Qt5PurchasingConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Purchasing.la
 lib/qt5/libQt5Purchasing.prl
 @lib lib/qt5/libQt5Purchasing.so.${LIBQt5Purchasing_VERSION}
@@ -38,6 +39,6 @@ lib/qt5/mkspecs/modules/qt_lib_purchasing.pri
 lib/qt5/mkspecs/modules/qt_lib_purchasing_private.pri
 lib/qt5/pkgconfig/Qt5Purchasing.pc
 lib/qt5/qml/QtPurchasing/
-lib/qt5/qml/QtPurchasing/libdeclarative_purchasing.so
+@so lib/qt5/qml/QtPurchasing/libdeclarative_purchasing.so
 lib/qt5/qml/QtPurchasing/plugins.qmltypes
 lib/qt5/qml/QtPurchasing/qmldir

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/01/07 20:22:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/13 16:53:52 rsadowski Exp $
 
 QT5NAME =		QtSerialBus
 COMMENT-main =		Qt5 API for accessing serial bus devices
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 
-SHARED_LIBS =		Qt5SerialBus		0.2
+SHARED_LIBS +=  Qt5SerialBus               1.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5SerialPort
 WANTLIB += c m
@@ -14,7 +13,5 @@ WANTLIB += c m
 LIB_DEPENDS =		x11/qt5/qtserialport>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
-
-# TODO: port/reimplement SocketCAN?
 
 .include <bsd.port.mk>

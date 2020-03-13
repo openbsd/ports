@@ -1,6 +1,45 @@
-@comment $OpenBSD: PLIST-global,v 1.1 2016/12/28 01:41:23 zhuk Exp $
+@comment $OpenBSD: PLIST-global,v 1.2 2020/03/13 16:53:50 rsadowski Exp $
 @conflict qtbase-<5.6.2p0
 share/doc/qt5/
+share/doc/qt5/config/
+share/doc/qt5/config/exampleurl-qt3d.qdocconf
+share/doc/qt5/config/exampleurl-qtactiveqt.qdocconf
+share/doc/qt5/config/exampleurl-qtandroidextras.qdocconf
+share/doc/qt5/config/exampleurl-qtbase.qdocconf
+share/doc/qt5/config/exampleurl-qtcharts.qdocconf
+share/doc/qt5/config/exampleurl-qtconnectivity.qdocconf
+share/doc/qt5/config/exampleurl-qtdatavis3d.qdocconf
+share/doc/qt5/config/exampleurl-qtdeclarative.qdocconf
+share/doc/qt5/config/exampleurl-qtdoc.qdocconf
+share/doc/qt5/config/exampleurl-qtgamepad.qdocconf
+share/doc/qt5/config/exampleurl-qtgraphicaleffects.qdocconf
+share/doc/qt5/config/exampleurl-qtimageformats.qdocconf
+share/doc/qt5/config/exampleurl-qtlocation.qdocconf
+share/doc/qt5/config/exampleurl-qtlottie.qdocconf
+share/doc/qt5/config/exampleurl-qtmacextras.qdocconf
+share/doc/qt5/config/exampleurl-qtmultimedia.qdocconf
+share/doc/qt5/config/exampleurl-qtnetworkauth.qdocconf
+share/doc/qt5/config/exampleurl-qtpurchasing.qdocconf
+share/doc/qt5/config/exampleurl-qtquickcontrols.qdocconf
+share/doc/qt5/config/exampleurl-qtquickcontrols2.qdocconf
+share/doc/qt5/config/exampleurl-qtremoteobjects.qdocconf
+share/doc/qt5/config/exampleurl-qtscript.qdocconf
+share/doc/qt5/config/exampleurl-qtscxml.qdocconf
+share/doc/qt5/config/exampleurl-qtsensors.qdocconf
+share/doc/qt5/config/exampleurl-qtserialbus.qdocconf
+share/doc/qt5/config/exampleurl-qtserialport.qdocconf
+share/doc/qt5/config/exampleurl-qtspeech.qdocconf
+share/doc/qt5/config/exampleurl-qtsvg.qdocconf
+share/doc/qt5/config/exampleurl-qttools.qdocconf
+share/doc/qt5/config/exampleurl-qtvirtualkeyboard.qdocconf
+share/doc/qt5/config/exampleurl-qtwayland.qdocconf
+share/doc/qt5/config/exampleurl-qtwebchannel.qdocconf
+share/doc/qt5/config/exampleurl-qtwebengine.qdocconf
+share/doc/qt5/config/exampleurl-qtwebsockets.qdocconf
+share/doc/qt5/config/exampleurl-qtwebview.qdocconf
+share/doc/qt5/config/exampleurl-qtwinextras.qdocconf
+share/doc/qt5/config/exampleurl-qtx11extras.qdocconf
+share/doc/qt5/config/exampleurl-qtxmlpatterns.qdocconf
 share/doc/qt5/global/
 share/doc/qt5/global/compat.qdocconf
 share/doc/qt5/global/config.qdocconf
@@ -20,6 +59,7 @@ share/doc/qt5/global/includes/
 share/doc/qt5/global/includes-online/
 share/doc/qt5/global/includes-online/search.qdoc
 share/doc/qt5/global/includes/examples-run.qdocinc
+share/doc/qt5/global/includes/module-use.qdocinc
 share/doc/qt5/global/macros.qdocconf
 share/doc/qt5/global/manifest-meta.qdocconf
 share/doc/qt5/global/qt-cpp-defines.qdocconf
@@ -72,6 +112,7 @@ share/doc/qt5/global/template/scripts/
 share/doc/qt5/global/template/scripts/extras.js
 share/doc/qt5/global/template/scripts/main.js
 share/doc/qt5/global/template/style/
+share/doc/qt5/global/template/style/cookie-confirm.css
 share/doc/qt5/global/template/style/cookiebar-x.png
 share/doc/qt5/global/template/style/doc_search.png
 share/doc/qt5/global/template/style/gsc.css

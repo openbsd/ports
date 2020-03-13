@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/07/05 09:49:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/13 16:53:53 rsadowski Exp $
 lib/qt5/translations/
 lib/qt5/translations/assistant_ar.qm
 lib/qt5/translations/assistant_bg.qm
@@ -55,22 +55,6 @@ lib/qt5/translations/linguist_sl.qm
 lib/qt5/translations/linguist_uk.qm
 lib/qt5/translations/linguist_zh_CN.qm
 lib/qt5/translations/linguist_zh_TW.qm
-lib/qt5/translations/qmlviewer_ar.qm
-lib/qt5/translations/qmlviewer_bg.qm
-lib/qt5/translations/qmlviewer_cs.qm
-lib/qt5/translations/qmlviewer_da.qm
-lib/qt5/translations/qmlviewer_en.qm
-lib/qt5/translations/qmlviewer_es.qm
-lib/qt5/translations/qmlviewer_fi.qm
-lib/qt5/translations/qmlviewer_fr.qm
-lib/qt5/translations/qmlviewer_he.qm
-lib/qt5/translations/qmlviewer_hu.qm
-lib/qt5/translations/qmlviewer_ja.qm
-lib/qt5/translations/qmlviewer_ko.qm
-lib/qt5/translations/qmlviewer_pl.qm
-lib/qt5/translations/qmlviewer_ru.qm
-lib/qt5/translations/qmlviewer_sk.qm
-lib/qt5/translations/qmlviewer_uk.qm
 lib/qt5/translations/qt_ar.qm
 lib/qt5/translations/qt_bg.qm
 lib/qt5/translations/qt_ca.qm
@@ -141,6 +125,7 @@ lib/qt5/translations/qtbase_pl.qm
 lib/qt5/translations/qtbase_ru.qm
 lib/qt5/translations/qtbase_sk.qm
 lib/qt5/translations/qtbase_uk.qm
+lib/qt5/translations/qtbase_zh_TW.qm
 lib/qt5/translations/qtconnectivity_bg.qm
 lib/qt5/translations/qtconnectivity_da.qm
 lib/qt5/translations/qtconnectivity_de.qm
@@ -171,6 +156,7 @@ lib/qt5/translations/qtlocation_da.qm
 lib/qt5/translations/qtlocation_de.qm
 lib/qt5/translations/qtlocation_en.qm
 lib/qt5/translations/qtlocation_es.qm
+lib/qt5/translations/qtlocation_fi.qm
 lib/qt5/translations/qtlocation_fr.qm
 lib/qt5/translations/qtlocation_hu.qm
 lib/qt5/translations/qtlocation_ko.qm
@@ -195,31 +181,19 @@ lib/qt5/translations/qtmultimedia_pl.qm
 lib/qt5/translations/qtmultimedia_ru.qm
 lib/qt5/translations/qtmultimedia_sk.qm
 lib/qt5/translations/qtmultimedia_uk.qm
-lib/qt5/translations/qtquick1_bg.qm
-lib/qt5/translations/qtquick1_ca.qm
-lib/qt5/translations/qtquick1_cs.qm
-lib/qt5/translations/qtquick1_da.qm
-lib/qt5/translations/qtquick1_de.qm
-lib/qt5/translations/qtquick1_en.qm
-lib/qt5/translations/qtquick1_es.qm
-lib/qt5/translations/qtquick1_fi.qm
-lib/qt5/translations/qtquick1_fr.qm
-lib/qt5/translations/qtquick1_he.qm
-lib/qt5/translations/qtquick1_hu.qm
-lib/qt5/translations/qtquick1_it.qm
-lib/qt5/translations/qtquick1_ja.qm
-lib/qt5/translations/qtquick1_ko.qm
-lib/qt5/translations/qtquick1_pl.qm
-lib/qt5/translations/qtquick1_ru.qm
-lib/qt5/translations/qtquick1_sk.qm
-lib/qt5/translations/qtquick1_uk.qm
+lib/qt5/translations/qtmultimedia_zh_TW.qm
 lib/qt5/translations/qtquickcontrols2_ar.qm
 lib/qt5/translations/qtquickcontrols2_bg.qm
+lib/qt5/translations/qtquickcontrols2_ca.qm
+lib/qt5/translations/qtquickcontrols2_da.qm
 lib/qt5/translations/qtquickcontrols2_en.qm
 lib/qt5/translations/qtquickcontrols2_hu.qm
 lib/qt5/translations/qtquickcontrols2_ko.qm
 lib/qt5/translations/qtquickcontrols2_uk.qm
+lib/qt5/translations/qtquickcontrols2_zh_TW.qm
 lib/qt5/translations/qtquickcontrols_bg.qm
+lib/qt5/translations/qtquickcontrols_ca.qm
+lib/qt5/translations/qtquickcontrols_da.qm
 lib/qt5/translations/qtquickcontrols_de.qm
 lib/qt5/translations/qtquickcontrols_en.qm
 lib/qt5/translations/qtquickcontrols_fi.qm
@@ -227,6 +201,7 @@ lib/qt5/translations/qtquickcontrols_fr.qm
 lib/qt5/translations/qtquickcontrols_ja.qm
 lib/qt5/translations/qtquickcontrols_ru.qm
 lib/qt5/translations/qtquickcontrols_uk.qm
+lib/qt5/translations/qtquickcontrols_zh_TW.qm
 lib/qt5/translations/qtscript_ar.qm
 lib/qt5/translations/qtscript_bg.qm
 lib/qt5/translations/qtscript_ca.qm
@@ -287,3 +262,4 @@ lib/qt5/translations/qtxmlpatterns_pl.qm
 lib/qt5/translations/qtxmlpatterns_ru.qm
 lib/qt5/translations/qtxmlpatterns_sk.qm
 lib/qt5/translations/qtxmlpatterns_uk.qm
+lib/qt5/translations/qtxmlpatterns_zh_TW.qm

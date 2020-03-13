@@ -1,5 +1,34 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/13 16:53:51 rsadowski Exp $
 lib/qt5/examples/location/
+lib/qt5/examples/location/geojson_viewer/
+lib/qt5/examples/location/geojson_viewer/GeoJsonDelegate.qml
+lib/qt5/examples/location/geojson_viewer/data/
+lib/qt5/examples/location/geojson_viewer/data/01-point.json
+lib/qt5/examples/location/geojson_viewer/data/02-linestring.json
+lib/qt5/examples/location/geojson_viewer/data/03-multipoint.json
+lib/qt5/examples/location/geojson_viewer/data/04-polygon.json
+lib/qt5/examples/location/geojson_viewer/data/05-multilinestring.json
+lib/qt5/examples/location/geojson_viewer/data/06-multipolygon.json
+lib/qt5/examples/location/geojson_viewer/data/07-geometrycollection.json
+lib/qt5/examples/location/geojson_viewer/data/08-feature.json
+lib/qt5/examples/location/geojson_viewer/data/09-featurecollection.json
+lib/qt5/examples/location/geojson_viewer/data/10-countries.json
+lib/qt5/examples/location/geojson_viewer/data/10-countries_LICENSE
+lib/qt5/examples/location/geojson_viewer/data/11-full.json
+lib/qt5/examples/location/geojson_viewer/geojson_viewer.pro
+lib/qt5/examples/location/geojson_viewer/main.cpp
+lib/qt5/examples/location/geojson_viewer/main.qml
+lib/qt5/examples/location/geojson_viewer/qml.qrc
+lib/qt5/examples/location/itemview_transitions/
+lib/qt5/examples/location/itemview_transitions/OsloListModel.qml
+lib/qt5/examples/location/itemview_transitions/doc/
+lib/qt5/examples/location/itemview_transitions/doc/images/
+lib/qt5/examples/location/itemview_transitions/doc/images/itemview_transitions.jpg
+lib/qt5/examples/location/itemview_transitions/doc/src/
+lib/qt5/examples/location/itemview_transitions/doc/src/itemview_transitions.qdoc
+lib/qt5/examples/location/itemview_transitions/itemview_transitions.pro
+lib/qt5/examples/location/itemview_transitions/main.cpp
+lib/qt5/examples/location/itemview_transitions/main.qml
 lib/qt5/examples/location/location.pro
 lib/qt5/examples/location/mapviewer/
 lib/qt5/examples/location/mapviewer/doc/
@@ -223,6 +252,7 @@ lib/qt5/examples/positioning/weatherinfo/doc/src/
 lib/qt5/examples/positioning/weatherinfo/doc/src/weatherinfo.qdoc
 lib/qt5/examples/positioning/weatherinfo/icons/
 lib/qt5/examples/positioning/weatherinfo/icons/README.txt
+lib/qt5/examples/positioning/weatherinfo/icons/qt_attribution.json
 lib/qt5/examples/positioning/weatherinfo/icons/weather-few-clouds.png
 lib/qt5/examples/positioning/weatherinfo/icons/weather-fog.png
 lib/qt5/examples/positioning/weatherinfo/icons/weather-haze.png

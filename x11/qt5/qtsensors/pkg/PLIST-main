@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:08 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:52 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtSensors/
 include/X11/qt5/QtSensors/${VERSION}/
@@ -140,6 +140,7 @@ lib/qt5/cmake/Qt5Sensors/Qt5SensorsConfigVersion.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QShakeSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QtSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_genericSensorPlugin.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Sensors.la
 lib/qt5/libQt5Sensors.prl
 @lib lib/qt5/libQt5Sensors.so.${LIBQt5Sensors_VERSION}

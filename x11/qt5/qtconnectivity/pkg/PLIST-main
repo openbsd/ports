@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:07 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:50 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtBluetooth/
 include/X11/qt5/QtBluetooth/${VERSION}/
@@ -8,6 +8,7 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/adapter1_bluez5_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/adapter_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/agent_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/androidbroadcastreceiver_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/battery1_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluetoothmanagement_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluez5_helper_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluez_data_p.h
@@ -15,6 +16,9 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/device1_bluez5_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/device_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/devicediscoverybroadcastreceiver_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/dummy_helper_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/gattchar1_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/gattdesc1_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/gattservice1_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/hcimanager_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/inputstreamthread_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/jni_android_p.h
@@ -36,6 +40,7 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtchanneldelegate_
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtconnectionmonitor_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtdeviceinquiry_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtdevicepair_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtgcdtimer_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtl2capchannel_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtledeviceinquiry_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtnotifier_p.h
@@ -47,6 +52,8 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtservicerecord_p.
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtsocketlistener_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtutility_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/profile1_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/profile1context_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/profilemanager1_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/properties_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothaddress_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothdevicediscoveryagent_p.h
@@ -57,18 +64,31 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothserver_osx_
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothserver_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothservicediscoveryagent_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothserviceinfo_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_android_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_bluez_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_bluezdbus_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_dummy_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_osx_p.h
-include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_winrt_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocketbase_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferreply_bluez_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferreply_osx_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferreply_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferrequest_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothutils_winrt_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qleadvertiser_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_android_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_bluez_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_bluezdbus_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_osx_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_winrt_new_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_winrt_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontrollerbase_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergyserviceprivate_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qprivatelinearbuffer_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qtbluetooth-config_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qtbluetoothglobal_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/remotedevicemanager_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/serveracceptancethread_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/service_p.h
@@ -128,6 +148,7 @@ include/X11/qt5/QtBluetooth/qlowenergydescriptordata.h
 include/X11/qt5/QtBluetooth/qlowenergyservice.h
 include/X11/qt5/QtBluetooth/qlowenergyservicedata.h
 include/X11/qt5/QtBluetooth/qtbluetooth-config.h
+include/X11/qt5/QtBluetooth/qtbluetoothglobal.h
 include/X11/qt5/QtBluetooth/qtbluetoothversion.h
 include/X11/qt5/QtNfc/
 include/X11/qt5/QtNfc/${VERSION}/
@@ -168,6 +189,7 @@ include/X11/qt5/QtNfc/${VERSION}/QtNfc/private/qnearfieldtarget_emulator_p.h
 include/X11/qt5/QtNfc/${VERSION}/QtNfc/private/qnearfieldtarget_neard_p.h
 include/X11/qt5/QtNfc/${VERSION}/QtNfc/private/qnearfieldtarget_p.h
 include/X11/qt5/QtNfc/${VERSION}/QtNfc/private/qtlv_p.h
+include/X11/qt5/QtNfc/${VERSION}/QtNfc/private/qtnfcglobal_p.h
 include/X11/qt5/QtNfc/${VERSION}/QtNfc/private/tag_p.h
 include/X11/qt5/QtNfc/${VERSION}/QtNfc/private/targetemulator_p.h
 include/X11/qt5/QtNfc/QNdefFilter
@@ -197,6 +219,7 @@ include/X11/qt5/QtNfc/qnearfieldsharetarget.h
 include/X11/qt5/QtNfc/qnearfieldtarget.h
 include/X11/qt5/QtNfc/qnfcglobal.h
 include/X11/qt5/QtNfc/qqmlndefrecord.h
+include/X11/qt5/QtNfc/qtnfcglobal.h
 include/X11/qt5/QtNfc/qtnfcversion.h
 @lib lib/libQt5Bluetooth.so.${LIBQt5Bluetooth_VERSION}
 @lib lib/libQt5Nfc.so.${LIBQt5Nfc_VERSION}
@@ -208,6 +231,7 @@ lib/qt5/cmake/Qt5Bluetooth/Qt5BluetoothConfigVersion.cmake
 lib/qt5/cmake/Qt5Nfc/
 lib/qt5/cmake/Qt5Nfc/Qt5NfcConfig.cmake
 lib/qt5/cmake/Qt5Nfc/Qt5NfcConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Bluetooth.la
 lib/qt5/libQt5Bluetooth.prl
 @lib lib/qt5/libQt5Bluetooth.so.${LIBQt5Bluetooth_VERSION}

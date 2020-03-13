@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/08 11:58:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/13 16:53:53 rsadowski Exp $
 
 COMMENT-main =		C++ general-purpose toolkit, meta-package
 COMMENT-examples =	examples for Qt5, meta-package
@@ -6,8 +6,6 @@ COMMENT-examples =	examples for Qt5, meta-package
 PKGNAME =		qt5-${MODQT5_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
-REVISION-examples =	2
-REVISION-main =		2
 
 MULTI_PACKAGES =	-main -examples
 
@@ -23,11 +21,11 @@ RUN_DEPENDS-main =	\
 			x11/qt5/qtcharts,-main=${MODQT5_VERSION} \
 			x11/qt5/qtdatavis3d,-main=${MODQT5_VERSION} \
 			x11/qt5/qtdeclarative,-main=${MODQT5_VERSION} \
-			x11/qt5/qtdeclarative,,-xmllistmodel=${MODQT5_VERSION} \
 			x11/qt5/qtgamepad,-main=${MODQT5_VERSION} \
 			x11/qt5/qtgraphicaleffects=${MODQT5_VERSION} \
 			x11/qt5/qtimageformats=${MODQT5_VERSION} \
 			x11/qt5/qtlocation,-main=${MODQT5_VERSION} \
+			x11/qt5/qtlottie=${MODQT5_VERSION} \
 			x11/qt5/qtmultimedia,-main=${MODQT5_VERSION} \
 			x11/qt5/qtnetworkauth,-main=${MODQT5_VERSION} \
 			x11/qt5/qtpurchasing,-main=${MODQT5_VERSION} \

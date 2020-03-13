@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugins_platforminputcontexts_platforminputcontexts_pro,v 1.1 2020/03/13 16:53:50 rsadowski Exp $
+
+Index: src/plugins/platforminputcontexts/platforminputcontexts.pro
+--- src/plugins/platforminputcontexts/platforminputcontexts.pro.orig
++++ src/plugins/platforminputcontexts/platforminputcontexts.pro
+@@ -5,7 +5,7 @@ qtConfig(xkbcommon) {
+     SUBDIRS += compose
+ 
+     qtHaveModule(dbus) {
+-        !macos:!win32:SUBDIRS += ibus
++        !openbsd:!macos:!win32:SUBDIRS += ibus
+     }
+ }
+ 

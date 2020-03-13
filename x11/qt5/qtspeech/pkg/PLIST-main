@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/03/13 16:53:52 rsadowski Exp $
 include/X11/qt5/QtTextToSpeech/
 include/X11/qt5/QtTextToSpeech/${VERSION}/
 include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/
@@ -23,6 +23,7 @@ lib/pkgconfig/Qt5TextToSpeech.pc
 lib/qt5/cmake/Qt5TextToSpeech/
 lib/qt5/cmake/Qt5TextToSpeech/Qt5TextToSpeechConfig.cmake
 lib/qt5/cmake/Qt5TextToSpeech/Qt5TextToSpeechConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5TextToSpeech.la
 lib/qt5/libQt5TextToSpeech.prl
 @lib lib/qt5/libQt5TextToSpeech.so.${LIBQt5TextToSpeech_VERSION}

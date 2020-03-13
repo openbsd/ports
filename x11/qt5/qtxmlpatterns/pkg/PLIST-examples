@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/13 16:53:53 rsadowski Exp $
 lib/qt5/examples/xmlpatterns/
 lib/qt5/examples/xmlpatterns/README
 lib/qt5/examples/xmlpatterns/filetree/
@@ -30,7 +30,6 @@ lib/qt5/examples/xmlpatterns/recipes/files/preparationLessThan30.xq
 lib/qt5/examples/xmlpatterns/recipes/files/preparationTimes.xq
 lib/qt5/examples/xmlpatterns/recipes/forms/
 lib/qt5/examples/xmlpatterns/recipes/forms/querywidget.ui
-lib/qt5/examples/xmlpatterns/recipes/forms/querywidget_mobiles.ui
 lib/qt5/examples/xmlpatterns/recipes/main.cpp
 lib/qt5/examples/xmlpatterns/recipes/querymainwindow.cpp
 lib/qt5/examples/xmlpatterns/recipes/querymainwindow.h
@@ -56,7 +55,6 @@ lib/qt5/examples/xmlpatterns/schema/mainwindow.h
 lib/qt5/examples/xmlpatterns/schema/schema.pro
 lib/qt5/examples/xmlpatterns/schema/schema.qrc
 lib/qt5/examples/xmlpatterns/schema/schema.ui
-lib/qt5/examples/xmlpatterns/schema/schema_mobiles.ui
 lib/qt5/examples/xmlpatterns/shared/
 lib/qt5/examples/xmlpatterns/shared/xmlsyntaxhighlighter.cpp
 lib/qt5/examples/xmlpatterns/shared/xmlsyntaxhighlighter.h

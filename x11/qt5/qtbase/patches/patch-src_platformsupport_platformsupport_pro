@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_platformsupport_platformsupport_pro,v 1.1 2020/03/13 16:53:50 rsadowski Exp $
+
+Index: src/platformsupport/platformsupport.pro
+--- src/platformsupport/platformsupport.pro.orig
++++ src/platformsupport/platformsupport.pro
+@@ -11,7 +11,7 @@ SUBDIRS = \
+ qtConfig(freetype)|darwin|win32: \
+     SUBDIRS += fontdatabases
+ 
+-qtConfig(evdev)|qtConfig(tslib)|qtConfig(libinput)|qtConfig(integrityhid) {
++qtConfig(evdev)|qtConfig(tslib)|qtConfig(libinput)|qtConfig(integrityhid)|qtConfig(xkbcommon) {
+     SUBDIRS += input
+     input.depends += devicediscovery
+ }

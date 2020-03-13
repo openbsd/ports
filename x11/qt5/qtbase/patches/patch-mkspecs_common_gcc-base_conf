@@ -1,4 +1,4 @@
-$OpenBSD: patch-mkspecs_common_gcc-base_conf,v 1.1 2019/01/13 12:32:15 rsadowski Exp $
+$OpenBSD: patch-mkspecs_common_gcc-base_conf,v 1.2 2020/03/13 16:53:49 rsadowski Exp $
 
 Index: mkspecs/common/gcc-base.conf
 --- mkspecs/common/gcc-base.conf.orig
@@ -9,8 +9,8 @@ Index: mkspecs/common/gcc-base.conf
  
 -QMAKE_CFLAGS_OPTIMIZE      = -O2
 -QMAKE_CFLAGS_OPTIMIZE_FULL = -O3
-+QMAKE_CFLAGS_OPTIMIZE      = $$(CXXFLAGS)
-+QMAKE_CFLAGS_OPTIMIZE_FULL = $$(CXXFLAGS)
++QMAKE_CFLAGS_OPTIMIZE      =
++QMAKE_CFLAGS_OPTIMIZE_FULL =
  QMAKE_CFLAGS_OPTIMIZE_DEBUG = -Og
  QMAKE_CFLAGS_OPTIMIZE_SIZE = -Os
  

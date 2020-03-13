@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2018/07/05 09:49:13 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/03/13 16:53:51 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtLocation/
 include/X11/qt5/QtLocation/${VERSION}/
@@ -6,7 +6,6 @@ include/X11/qt5/QtLocation/${VERSION}/QtLocation/
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/error_messages_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/locationvaluetypehelper_p.h
-include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/mapitemviewdelegateincubator_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qabstractgeotilecache_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qcache3q_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativecategory_p.h
@@ -18,8 +17,8 @@ include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomap_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapcopyrightsnotice_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapitembase_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapitemgroup_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapitemtransitionmanager_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapitemview_p.h
-include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapitemview_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapparameter_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapquickitem_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomaptype_p.h
@@ -27,6 +26,8 @@ include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeoroute_p.
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeoroutemodel_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeoroutesegment_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeoserviceprovider_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativenavigator_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativenavigator_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativeperiod_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativeplace_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativeplaceattribute_p.h
@@ -49,14 +50,19 @@ include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qdeclarativesupportedca
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocameracapabilities_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocameradata_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocameratiles_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocameratiles_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocodereply_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocodingmanager_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocodingmanagerengine_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeofiletilecache_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeojson_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomaneuver_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomap_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomap_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapitemgeometry_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapobject_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapobject_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapobjectqsgsupport_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapparameter_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomappingmanager_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomappingmanager_p_p.h
@@ -78,17 +84,39 @@ include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeoroutingmanagerengin
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeoserviceprovider_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmap_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmap_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmaplabs_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmappingmanagerengine_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmappingmanagerengine_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmapreply_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmapreply_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmapscene_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmapscene_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilefetcher_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilefetcher_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilerequestmanager_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilespec_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilespec_p_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qlocationglobal_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmapcircleobject_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmapcircleobject_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmapcircleobjectqsg_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmapiconobject_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmapiconobject_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmapiconobjectqsg_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmapobjectview_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmapobjectview_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmappolygonobject_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmappolygonobject_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmappolygonobjectqsg_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmappolylineobject_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmappolylineobject_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmappolylineobjectqsg_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmaprouteobject_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmaprouteobject_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qmaprouteobjectqsg_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qnavigationmanager_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qnavigationmanagerengine_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qparameterizableobject_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplace_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceattribute_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacecategory_p.h
@@ -104,9 +132,11 @@ include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceratings_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacereply_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceresult_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacereview_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacesearchrequest_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacesearchresult_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacesupplier_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceuser_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qqsgmapobject_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qquickgeomapgesturearea_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qtlocation-config_p.h
 include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/unsupportedreplies_p.h
@@ -115,6 +145,7 @@ include/X11/qt5/QtLocation/QGeoCodingManager
 include/X11/qt5/QtLocation/QGeoCodingManagerEngine
 include/X11/qt5/QtLocation/QGeoManeuver
 include/X11/qt5/QtLocation/QGeoRoute
+include/X11/qt5/QtLocation/QGeoRouteLeg
 include/X11/qt5/QtLocation/QGeoRouteReply
 include/X11/qt5/QtLocation/QGeoRouteRequest
 include/X11/qt5/QtLocation/QGeoRouteSegment
@@ -202,16 +233,16 @@ include/X11/qt5/QtPositioning/${VERSION}/
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qclipperutils_p.h
-include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qdeclarativegeoaddress_p.h
-include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qdeclarativegeolocation_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qdoublematrix4x4_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qdoublevector2d_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qdoublevector3d_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeoaddress_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeocircle_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeocoordinate_p.h
+include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeocoordinateobject_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeolocation_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeopath_p.h
+include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeopolygon_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeopositioninfo_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeopositioninfosource_p.h
 include/X11/qt5/QtPositioning/${VERSION}/QtPositioning/private/qgeorectangle_p.h
@@ -229,6 +260,7 @@ include/X11/qt5/QtPositioning/QGeoCircle
 include/X11/qt5/QtPositioning/QGeoCoordinate
 include/X11/qt5/QtPositioning/QGeoLocation
 include/X11/qt5/QtPositioning/QGeoPath
+include/X11/qt5/QtPositioning/QGeoPolygon
 include/X11/qt5/QtPositioning/QGeoPositionInfo
 include/X11/qt5/QtPositioning/QGeoPositionInfoSource
 include/X11/qt5/QtPositioning/QGeoPositionInfoSourceFactory
@@ -247,6 +279,7 @@ include/X11/qt5/QtPositioning/qgeocircle.h
 include/X11/qt5/QtPositioning/qgeocoordinate.h
 include/X11/qt5/QtPositioning/qgeolocation.h
 include/X11/qt5/QtPositioning/qgeopath.h
+include/X11/qt5/QtPositioning/qgeopolygon.h
 include/X11/qt5/QtPositioning/qgeopositioninfo.h
 include/X11/qt5/QtPositioning/qgeopositioninfosource.h
 include/X11/qt5/QtPositioning/qgeopositioninfosourcefactory.h
@@ -258,49 +291,85 @@ include/X11/qt5/QtPositioning/qnmeapositioninfosource.h
 include/X11/qt5/QtPositioning/qpositioningglobal.h
 include/X11/qt5/QtPositioning/qtpositioning-config.h
 include/X11/qt5/QtPositioning/qtpositioningversion.h
+include/X11/qt5/QtPositioningQuick/
+include/X11/qt5/QtPositioningQuick/${VERSION}/
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclarativegeoaddress_p.h
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclarativegeolocation_p.h
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclarativeposition_p.h
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qdeclarativepositionsource_p.h
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qpositioningquickglobal_p.h
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qquickgeocoordinateanimation_p.h
+include/X11/qt5/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qquickgeocoordinateanimation_p_p.h
+include/X11/qt5/QtPositioningQuick/QtPositioningQuick
+include/X11/qt5/QtPositioningQuick/QtPositioningQuickDepends
+include/X11/qt5/QtPositioningQuick/QtPositioningQuickVersion
+include/X11/qt5/QtPositioningQuick/qpositioningquickglobal.h
+include/X11/qt5/QtPositioningQuick/qtpositioningquickversion.h
 @lib lib/libQt5Location.so.${LIBQt5Location_VERSION}
 @lib lib/libQt5Positioning.so.${LIBQt5Positioning_VERSION}
+@lib lib/libQt5PositioningQuick.so.${LIBQt5PositioningQuick_VERSION}
 lib/pkgconfig/Qt5Location.pc
 lib/pkgconfig/Qt5Positioning.pc
+lib/pkgconfig/Qt5PositioningQuick.pc
 lib/qt5/cmake/Qt5Location/
 lib/qt5/cmake/Qt5Location/Qt5LocationConfig.cmake
 lib/qt5/cmake/Qt5Location/Qt5LocationConfigVersion.cmake
 lib/qt5/cmake/Qt5Location/Qt5Location_GeoServiceProviderFactoryEsri.cmake
 lib/qt5/cmake/Qt5Location/Qt5Location_QGeoServiceProviderFactoryItemsOverlay.cmake
 lib/qt5/cmake/Qt5Location/Qt5Location_QGeoServiceProviderFactoryMapbox.cmake
+lib/qt5/cmake/Qt5Location/Qt5Location_QGeoServiceProviderFactoryMapboxGL.cmake
 lib/qt5/cmake/Qt5Location/Qt5Location_QGeoServiceProviderFactoryNokia.cmake
 lib/qt5/cmake/Qt5Location/Qt5Location_QGeoServiceProviderFactoryOsm.cmake
 lib/qt5/cmake/Qt5Positioning/
 lib/qt5/cmake/Qt5Positioning/Qt5PositioningConfig.cmake
 lib/qt5/cmake/Qt5Positioning/Qt5PositioningConfigVersion.cmake
 lib/qt5/cmake/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryGeoclue.cmake
+lib/qt5/cmake/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryGeoclue2.cmake
 lib/qt5/cmake/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryPoll.cmake
+lib/qt5/cmake/Qt5PositioningQuick/
+lib/qt5/cmake/Qt5PositioningQuick/Qt5PositioningQuickConfig.cmake
+lib/qt5/cmake/Qt5PositioningQuick/Qt5PositioningQuickConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Location.la
 lib/qt5/libQt5Location.prl
 @lib lib/qt5/libQt5Location.so.${LIBQt5Location_VERSION}
 lib/qt5/libQt5Positioning.la
 lib/qt5/libQt5Positioning.prl
 @lib lib/qt5/libQt5Positioning.so.${LIBQt5Positioning_VERSION}
+lib/qt5/libQt5PositioningQuick.la
+lib/qt5/libQt5PositioningQuick.prl
+@lib lib/qt5/libQt5PositioningQuick.so.${LIBQt5PositioningQuick_VERSION}
 lib/qt5/mkspecs/modules/qt_lib_location.pri
 lib/qt5/mkspecs/modules/qt_lib_location_private.pri
 lib/qt5/mkspecs/modules/qt_lib_positioning.pri
 lib/qt5/mkspecs/modules/qt_lib_positioning_private.pri
+lib/qt5/mkspecs/modules/qt_lib_positioningquick.pri
+lib/qt5/mkspecs/modules/qt_lib_positioningquick_private.pri
 lib/qt5/pkgconfig/Qt5Location.pc
 lib/qt5/pkgconfig/Qt5Positioning.pc
+lib/qt5/pkgconfig/Qt5PositioningQuick.pc
 lib/qt5/plugins/geoservices/
-lib/qt5/plugins/geoservices/libqtgeoservices_esri.so
-lib/qt5/plugins/geoservices/libqtgeoservices_itemsoverlay.so
-lib/qt5/plugins/geoservices/libqtgeoservices_mapbox.so
-lib/qt5/plugins/geoservices/libqtgeoservices_nokia.so
-lib/qt5/plugins/geoservices/libqtgeoservices_osm.so
+@so lib/qt5/plugins/geoservices/libqtgeoservices_esri.so
+@so lib/qt5/plugins/geoservices/libqtgeoservices_itemsoverlay.so
+@so lib/qt5/plugins/geoservices/libqtgeoservices_mapbox.so
+@so lib/qt5/plugins/geoservices/libqtgeoservices_mapboxgl.so
+@so lib/qt5/plugins/geoservices/libqtgeoservices_nokia.so
+@so lib/qt5/plugins/geoservices/libqtgeoservices_osm.so
 lib/qt5/plugins/position/
-lib/qt5/plugins/position/libqtposition_geoclue.so
-lib/qt5/plugins/position/libqtposition_positionpoll.so
+@so lib/qt5/plugins/position/libqtposition_geoclue.so
+@so lib/qt5/plugins/position/libqtposition_geoclue2.so
+@so lib/qt5/plugins/position/libqtposition_positionpoll.so
+lib/qt5/qml/Qt/labs/location/
+@so lib/qt5/qml/Qt/labs/location/liblocationlabsplugin.so
+lib/qt5/qml/Qt/labs/location/plugins.qmltypes
+lib/qt5/qml/Qt/labs/location/qmldir
 lib/qt5/qml/QtLocation/
-lib/qt5/qml/QtLocation/libdeclarative_location.so
+@so lib/qt5/qml/QtLocation/libdeclarative_location.so
 lib/qt5/qml/QtLocation/plugins.qmltypes
 lib/qt5/qml/QtLocation/qmldir
 lib/qt5/qml/QtPositioning/
-lib/qt5/qml/QtPositioning/libdeclarative_positioning.so
+@so lib/qt5/qml/QtPositioning/libdeclarative_positioning.so
 lib/qt5/qml/QtPositioning/plugins.qmltypes
 lib/qt5/qml/QtPositioning/qmldir

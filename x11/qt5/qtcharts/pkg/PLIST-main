@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:07 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:50 rsadowski Exp $
 include/X11/qt5/QtCharts/
 include/X11/qt5/QtCharts/${VERSION}/
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/
@@ -54,6 +54,27 @@ include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/chartthemesystem_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/charttitle_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/chartvalueaxisx_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/chartvalueaxisy_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/datetimeaxislabel_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativeabstractrendernode_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativeareaseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativeaxes_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativebarseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativeboxplotseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativecandlestickseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativecategoryaxis_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativechart_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativechartglobal_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativechartnode_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativelineseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativemargins_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativeopenglrendernode_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativepieseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativepolarchart_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativescatterseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativesplineseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativexypoint_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/declarativexyseries_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/editableaxislabel_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/glwidget_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/glxyseriesdata_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/horizontalaxis_p.h
@@ -108,6 +129,7 @@ include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/qcandlestickseries_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/qcandlestickset_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/qcategoryaxis_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/qchart_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/qchartglobal_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/qchartview_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/qdatetimeaxis_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/qhorizontalbarseries_p.h
@@ -135,6 +157,7 @@ include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/scroller_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/splineanimation_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/splinechartitem_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/stackedbarchartitem_p.h
+include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/valueaxislabel_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/verticalaxis_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/xlogydomain_p.h
 include/X11/qt5/QtCharts/${VERSION}/QtCharts/private/xlogypolardomain_p.h
@@ -258,6 +281,7 @@ lib/pkgconfig/Qt5Charts.pc
 lib/qt5/cmake/Qt5Charts/
 lib/qt5/cmake/Qt5Charts/Qt5ChartsConfig.cmake
 lib/qt5/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Charts.la
 lib/qt5/libQt5Charts.prl
 @lib lib/qt5/libQt5Charts.so.${LIBQt5Charts_VERSION}

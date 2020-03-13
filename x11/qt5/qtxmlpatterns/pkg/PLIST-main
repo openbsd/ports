@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/03/13 16:53:53 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtXmlPatterns/
 include/X11/qt5/QtXmlPatterns/${VERSION}/
@@ -416,9 +416,16 @@ lib/pkgconfig/Qt5XmlPatterns.pc
 lib/qt5/cmake/Qt5XmlPatterns/
 lib/qt5/cmake/Qt5XmlPatterns/Qt5XmlPatternsConfig.cmake
 lib/qt5/cmake/Qt5XmlPatterns/Qt5XmlPatternsConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5XmlPatterns.la
 lib/qt5/libQt5XmlPatterns.prl
 @lib lib/qt5/libQt5XmlPatterns.so.${LIBQt5XmlPatterns_VERSION}
 lib/qt5/mkspecs/modules/qt_lib_xmlpatterns.pri
 lib/qt5/mkspecs/modules/qt_lib_xmlpatterns_private.pri
 lib/qt5/pkgconfig/Qt5XmlPatterns.pc
+lib/qt5/qml/
+lib/qt5/qml/QtQuick/
+lib/qt5/qml/QtQuick/XmlListModel/
+@so lib/qt5/qml/QtQuick/XmlListModel/libqmlxmllistmodelplugin.so
+lib/qt5/qml/QtQuick/XmlListModel/plugins.qmltypes
+lib/qt5/qml/QtQuick/XmlListModel/qmldir

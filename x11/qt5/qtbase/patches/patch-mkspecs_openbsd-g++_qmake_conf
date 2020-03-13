@@ -1,15 +1,9 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.2 2017/07/17 08:34:37 zhuk Exp $
-1. Un-hardcode system paths.
-2. Make sure some paths are listed before others, needed to 
-   make sure egcc won't pick up /usr/include before its own 
-   directories.
-3. Respect OpenBSD shared library naming rules.
-4. Use common GCC options to avoid duplication.
-5. Allow C++11 to work.
+$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.3 2020/03/13 16:53:49 rsadowski Exp $
+
 Index: mkspecs/openbsd-g++/qmake.conf
 --- mkspecs/openbsd-g++/qmake.conf.orig
 +++ mkspecs/openbsd-g++/qmake.conf
-@@ -5,23 +5,31 @@
+@@ -5,28 +5,36 @@
  MAKEFILE_GENERATOR      = UNIX
  QMAKE_PLATFORM          = openbsd
  
@@ -22,7 +16,7 @@ Index: mkspecs/openbsd-g++/qmake.conf
 +isEmpty(LOCALBASE) {
 +  LOCALBASE             = /usr/local
 +}
-+QMAKE_INCDIR_PREPEND    = ${OPENBSD_INCDIR_PREPEND}
++QMAKE_INCDIR_PREPEND    = /usr/local/lib/gcc/x86_64-unknown-openbsd6.6/8.3.0/include
  QMAKE_INCDIR_POST       = /usr/local/include
  QMAKE_LIBDIR_POST       = /usr/local/lib
  
@@ -48,15 +42,22 @@ Index: mkspecs/openbsd-g++/qmake.conf
  # System compiler is gcc 4.2.1 up to OpenBSD 6.0.
  # For proper C++11 support, we need to use a newer gcc from ports/packages,
  # where compiler commands are renamed to egcc/eg++. Therefore, redefine
-@@ -36,8 +44,11 @@ QMAKE_CXX               = eg++
+ # mkspecs/common/g++-base.conf compiler commands
+-QMAKE_CC                = egcc
++QMAKE_CC                = $$CC
+ 
+ QMAKE_LINK_C            = $$QMAKE_CC
+ QMAKE_LINK_C_SHLIB      = $$QMAKE_CC
+@@ -36,8 +44,12 @@ QMAKE_CXX               = eg++
  QMAKE_LINK              = $$QMAKE_CXX
  QMAKE_LINK_SHLIB        = $$QMAKE_CXX
  
-+QMAKE_OPENBSD_SHLIB	= 1
++QMAKE_OPENBSD_SHLIB    = 1
  
  # Reset g++-unix.conf's NOUNDEF flags as OpenBSD libc can't handle environ
- QMAKE_LFLAGS_NOUNDEF    =
-+QMAKE_LFLAGS_SONAME	=
++QMAKE_LFLAGS_SONAME     =
 +QMAKE_LFLAGS_NEW_DTAGS  =
++ 
+ QMAKE_LFLAGS_NOUNDEF    =
  
  load(qt_config)

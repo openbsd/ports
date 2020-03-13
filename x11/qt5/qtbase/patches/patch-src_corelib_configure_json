@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_corelib_configure_json,v 1.1 2020/03/13 16:53:50 rsadowski Exp $
+
+Index: src/corelib/configure.json
+--- src/corelib/configure.json.orig
++++ src/corelib/configure.json
+@@ -113,8 +113,7 @@
+                     },
+                     "condition": "config.win32 && !features.shared"
+                 },
+-                { "libs": "-licuin -licuuc -licudt", "condition": "config.win32 && features.shared" },
+-                { "libs": "-licui18n -licuuc -licudata", "condition": "!config.win32" }
++                { "type": "pkgConfig", "args": "icu-io" }
+             ],
+             "use": [
+                 { "lib": "libdl", "condition": "features.dlopen" }

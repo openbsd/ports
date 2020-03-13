@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2019/11/05 10:18:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/13 16:53:51 rsadowski Exp $
 
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
 
 MULTI_PACKAGES =	-main -examples
 
-SHARED_LIBS =	Qt5Multimedia		2.2
-SHARED_LIBS +=	Qt5MultimediaQuick_p	2.2
-SHARED_LIBS +=	Qt5MultimediaWidgets	2.2
-SHARED_LIBS +=	qgsttools_p		2.2
+SHARED_LIBS +=  Qt5Multimedia             3.0 # 5.9
+SHARED_LIBS +=  Qt5MultimediaWidgets      3.0 # 5.9
+SHARED_LIBS +=  Qt5MultimediaGstTools     0.0 # 5.13
+SHARED_LIBS +=  Qt5MultimediaQuick        0.0 # 5.13
 
-WANTLIB =  ${COMPILER_LIBCXX}
-WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Qml Qt5Quick
-WANTLIB += Qt5Widgets glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstpbutils-1.0 gstphotography-1.0 gstreamer-1.0
-WANTLIB += gstvideo-1.0 intl m openal pthread pulse pulse-mainloop-glib
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5Qml Qt5Quick Qt5Widgets glib-2.0 gobject-2.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstphotography-1.0
+WANTLIB += gstreamer-1.0 gstvideo-1.0 intl m openal pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =		multimedia/gstreamer1/mm
 
@@ -36,8 +35,8 @@ LIB_DEPENDS =		audio/openal \
 # via qtdeclarative-docindex
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	bootstrap no_examples
 FLAVOR ?=		bootstrap no_examples
+PSEUDO_FLAVORS =	bootstrap no_examples
 
 MODQMAKE_ARGS =		GST_VERSION=1.0
 MODQMAKE_RECURSIVE =	No

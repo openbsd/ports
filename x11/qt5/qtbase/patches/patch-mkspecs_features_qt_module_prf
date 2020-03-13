@@ -1,13 +1,13 @@
-$OpenBSD: patch-mkspecs_features_qt_module_prf,v 1.2 2017/07/17 08:34:37 zhuk Exp $
+$OpenBSD: patch-mkspecs_features_qt_module_prf,v 1.3 2020/03/13 16:53:49 rsadowski Exp $
+
 Index: mkspecs/features/qt_module.prf
 --- mkspecs/features/qt_module.prf.orig
 +++ mkspecs/features/qt_module.prf
-@@ -209,6 +209,8 @@ equals(QT_ARCH, i386):contains(QT_CPU_FEATURES.$$QT_AR
+@@ -214,6 +214,7 @@ equals(QT_ARCH, i386):contains(QT_CPU_FEATURES.$$QT_AR
+ }
  
  android: CONFIG += qt_android_deps no_linker_version_script
- 
 +openbsd-*: CONFIG += no_linker_version_script
-+
+ 
  !header_module:unix:!isEmpty(QMAKE_LFLAGS_VERSION_SCRIPT):!no_linker_version_script:!static {
      verscript = $${TARGET}.version
-     QMAKE_LFLAGS += $${QMAKE_LFLAGS_VERSION_SCRIPT}$$verscript

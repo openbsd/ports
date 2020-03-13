@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/13 16:53:52 rsadowski Exp $
 lib/qt5/examples/remoteobjects/
 lib/qt5/examples/remoteobjects/clientapp/
 lib/qt5/examples/remoteobjects/clientapp/clientapp.pro
@@ -75,4 +75,26 @@ lib/qt5/examples/remoteobjects/simpleswitch/registryconnectedserver/simpleswitch
 lib/qt5/examples/remoteobjects/simpleswitch/registryconnectedserver/simpleswitch.h
 lib/qt5/examples/remoteobjects/simpleswitch/registryconnectedserver/simpleswitch.rep
 lib/qt5/examples/remoteobjects/simpleswitch/simpleswitch.pro
+lib/qt5/examples/remoteobjects/ssl/
+lib/qt5/examples/remoteobjects/ssl/ssl.pro
+lib/qt5/examples/remoteobjects/ssl/sslcppclient/
+lib/qt5/examples/remoteobjects/ssl/sslcppclient/main.cpp
+lib/qt5/examples/remoteobjects/ssl/sslcppclient/sslcppclient.pro
+lib/qt5/examples/remoteobjects/ssl/sslcppclient/timemodel.rep
+lib/qt5/examples/remoteobjects/ssl/sslserver/
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/cert.qrc
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/client.crt
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/client.key
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/rootCA.key
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/rootCA.pem
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/rootCA.srl
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/server.crt
+lib/qt5/examples/remoteobjects/ssl/sslserver/cert/server.key
+lib/qt5/examples/remoteobjects/ssl/sslserver/main.cpp
+lib/qt5/examples/remoteobjects/ssl/sslserver/sslserver.cpp
+lib/qt5/examples/remoteobjects/ssl/sslserver/sslserver.h
+lib/qt5/examples/remoteobjects/ssl/sslserver/sslserver.pro
+lib/qt5/examples/remoteobjects/ssl/sslserver/timemodel.cpp
+lib/qt5/examples/remoteobjects/ssl/sslserver/timemodel.h
 lib/qt5/examples/remoteobjects/timemodel.rep

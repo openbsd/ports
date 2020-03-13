@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/13 16:53:50 rsadowski Exp $
 lib/qt5/examples/charts/
 lib/qt5/examples/charts/areachart/
 lib/qt5/examples/charts/areachart/areachart.pro
@@ -55,6 +55,7 @@ lib/qt5/examples/charts/chartthemes/chartthemes.pro
 lib/qt5/examples/charts/chartthemes/main.cpp
 lib/qt5/examples/charts/chartthemes/themewidget.cpp
 lib/qt5/examples/charts/chartthemes/themewidget.h
+lib/qt5/examples/charts/chartthemes/themewidget.ui
 lib/qt5/examples/charts/customchart/
 lib/qt5/examples/charts/customchart/customchart.pro
 lib/qt5/examples/charts/customchart/main.cpp
@@ -183,6 +184,7 @@ lib/qt5/examples/charts/qmlchart/
 lib/qt5/examples/charts/qmlchart/main.cpp
 lib/qt5/examples/charts/qmlchart/qml/
 lib/qt5/examples/charts/qmlchart/qml/qmlchart/
+lib/qt5/examples/charts/qmlchart/qml/qmlchart/MainForm.ui.qml
 lib/qt5/examples/charts/qmlchart/qml/qmlchart/View1.qml
 lib/qt5/examples/charts/qmlchart/qml/qmlchart/View10.qml
 lib/qt5/examples/charts/qmlchart/qml/qmlchart/View11.qml

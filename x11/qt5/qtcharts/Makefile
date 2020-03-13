@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/01/07 20:22:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/13 16:53:50 rsadowski Exp $
 
 QT5NAME =		QtCharts
 COMMENT-main =		Qt5 components for drawing 2D charts
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 
-SHARED_LIBS =		Qt5Charts		0.1
+SHARED_LIBS +=  Qt5Charts                 1.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick Qt5Widgets m

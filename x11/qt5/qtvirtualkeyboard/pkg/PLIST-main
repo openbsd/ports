@@ -1,13 +1,91 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:08 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:53 rsadowski Exp $
+include/X11/qt5/QtHunspellInputMethod/
+include/X11/qt5/QtHunspellInputMethod/${VERSION}/
+include/X11/qt5/QtHunspellInputMethod/${VERSION}/QtHunspellInputMethod/
+include/X11/qt5/QtHunspellInputMethod/${VERSION}/QtHunspellInputMethod/private/
+include/X11/qt5/QtHunspellInputMethod/${VERSION}/QtHunspellInputMethod/private/hunspellinputmethod_p.h
+include/X11/qt5/QtHunspellInputMethod/${VERSION}/QtHunspellInputMethod/private/hunspellinputmethod_p_p.h
+include/X11/qt5/QtHunspellInputMethod/${VERSION}/QtHunspellInputMethod/private/hunspellworker_p.h
+include/X11/qt5/QtHunspellInputMethod/QtHunspellInputMethod
+include/X11/qt5/QtHunspellInputMethod/QtHunspellInputMethodDepends
+include/X11/qt5/QtHunspellInputMethod/QtHunspellInputMethodVersion
+include/X11/qt5/QtHunspellInputMethod/qhunspellinputmethod_global.h
+include/X11/qt5/QtHunspellInputMethod/qthunspellinputmethodversion.h
+include/X11/qt5/QtVirtualKeyboard/
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/abstractinputpanel_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/appinputpanel_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/appinputpanel_p_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/desktopinputpanel_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/desktopinputselectioncontrol_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/enterkeyaction_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/enterkeyactionattachedtype_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/fallbackinputmethod_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/gesturerecognizer_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/handwritinggesturerecognizer_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/inputmethod_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/inputselectionhandle_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/inputview_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/plaininputmethod_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/platforminputcontext_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboard_staticplugin_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboardinputcontext_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/settings_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/shadowinputcontext_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/shifthandler_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/unipentrace_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/virtualkeyboarddebug_p.h
+include/X11/qt5/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/virtualkeyboardsettings_p.h
+include/X11/qt5/QtVirtualKeyboard/QVirtualKeyboardAbstractInputMethod
+include/X11/qt5/QtVirtualKeyboard/QVirtualKeyboardExtensionPlugin
+include/X11/qt5/QtVirtualKeyboard/QVirtualKeyboardInputContext
+include/X11/qt5/QtVirtualKeyboard/QVirtualKeyboardInputEngine
+include/X11/qt5/QtVirtualKeyboard/QVirtualKeyboardSelectionListModel
+include/X11/qt5/QtVirtualKeyboard/QVirtualKeyboardTrace
+include/X11/qt5/QtVirtualKeyboard/QtVirtualKeyboard
+include/X11/qt5/QtVirtualKeyboard/QtVirtualKeyboardDepends
+include/X11/qt5/QtVirtualKeyboard/QtVirtualKeyboardVersion
+include/X11/qt5/QtVirtualKeyboard/qtvirtualkeyboardversion.h
+include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboard_global.h
+include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardabstractinputmethod.h
+include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardextensionplugin.h
+include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardinputcontext.h
+include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardinputengine.h
+include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardselectionlistmodel.h
+include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardtrace.h
+lib/pkgconfig/Qt5VirtualKeyboard.pc
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake
+lib/qt5/cmake/Qt5HunspellInputMethod/
+lib/qt5/cmake/Qt5HunspellInputMethod/Qt5HunspellInputMethodConfig.cmake
+lib/qt5/cmake/Qt5HunspellInputMethod/Qt5HunspellInputMethodConfigVersion.cmake
+lib/qt5/cmake/Qt5VirtualKeyboard/
+lib/qt5/cmake/Qt5VirtualKeyboard/Qt5VirtualKeyboardConfig.cmake
+lib/qt5/cmake/Qt5VirtualKeyboard/Qt5VirtualKeyboardConfigVersion.cmake
+lib/qt5/cmake/Qt5VirtualKeyboard/Qt5VirtualKeyboard_QtVirtualKeyboardHunspellPlugin.cmake
+lib/qt5/libQt5HunspellInputMethod.la
+lib/qt5/libQt5HunspellInputMethod.prl
+@lib lib/qt5/libQt5HunspellInputMethod.so.${LIBQt5HunspellInputMethod_VERSION}
+lib/qt5/libQt5VirtualKeyboard.la
+lib/qt5/libQt5VirtualKeyboard.prl
+@lib lib/qt5/libQt5VirtualKeyboard.so.${LIBQt5VirtualKeyboard_VERSION}
+lib/qt5/mkspecs/modules/qt_lib_hunspellinputmethod_private.pri
+lib/qt5/mkspecs/modules/qt_lib_virtualkeyboard.pri
+lib/qt5/mkspecs/modules/qt_lib_virtualkeyboard_private.pri
+lib/qt5/pkgconfig/Qt5VirtualKeyboard.pc
 @so lib/qt5/plugins/platforminputcontexts/libqtvirtualkeyboardplugin.so
+lib/qt5/plugins/virtualkeyboard/
+@so lib/qt5/plugins/virtualkeyboard/libqtvirtualkeyboard_hunspell.so
 lib/qt5/qml/QtQuick/VirtualKeyboard/
 lib/qt5/qml/QtQuick/VirtualKeyboard/Settings/
+@so lib/qt5/qml/QtQuick/VirtualKeyboard/Settings/libqtquickvirtualkeyboardsettingsplugin.so
 lib/qt5/qml/QtQuick/VirtualKeyboard/Settings/plugins.qmltypes
 lib/qt5/qml/QtQuick/VirtualKeyboard/Settings/qmldir
 lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/
-@so lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/libqtvirtualkeyboardstylesplugin.so
+@so lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/libqtquickvirtualkeyboardstylesplugin.so
 lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/plugins.qmltypes
 lib/qt5/qml/QtQuick/VirtualKeyboard/Styles/qmldir
+@so lib/qt5/qml/QtQuick/VirtualKeyboard/libqtquickvirtualkeyboardplugin.so
 lib/qt5/qml/QtQuick/VirtualKeyboard/plugins.qmltypes
 lib/qt5/qml/QtQuick/VirtualKeyboard/qmldir

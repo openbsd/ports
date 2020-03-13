@@ -1,45 +1,14 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.6 2018/11/01 22:00:25 rsadowski Exp $
-Unbreak build with LibreSSL.
-See also https://github.com/libressl-portable/openbsd/issues/33
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.7 2020/03/13 16:53:50 rsadowski Exp $
+
 Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
 --- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig
 +++ src/network/ssl/qsslsocket_openssl_symbols_p.h
-@@ -228,7 +228,7 @@ int q_BIO_read(BIO *a, void *b, int c);
- Q_AUTOTEST_EXPORT BIO_METHOD *q_BIO_s_mem();
- Q_AUTOTEST_EXPORT int q_BIO_write(BIO *a, const void *b, int c);
- int q_BN_num_bits(const BIGNUM *a);
--#if OPENSSL_VERSION_NUMBER >= 0x10100000L
-+#if !defined(BN_is_word)
- int q_BN_is_word(BIGNUM *a, BN_ULONG w);
- #else
- // BN_is_word is implemented purely as a
-@@ -471,6 +471,8 @@ int q_ASN1_STRING_print(BIO *a, ASN1_STRING *b);
- int q_X509_check_issued(X509 *a, X509 *b);
- X509_NAME *q_X509_get_issuer_name(X509 *a);
- X509_NAME *q_X509_get_subject_name(X509 *a);
-+ASN1_TIME *q_X509_getm_notAfter(const X509 *x);
-+ASN1_TIME *q_X509_getm_notBefore(const X509 *x);
- int q_X509_verify_cert(X509_STORE_CTX *ctx);
- int q_X509_NAME_entry_count(X509_NAME *a);
- X509_NAME_ENTRY *q_X509_NAME_get_entry(X509_NAME *a,int b);
-@@ -558,8 +560,8 @@ DSA *q_d2i_DSAPrivateKey(DSA **a, unsigned char **pp, 
- #define q_sk_SSL_CIPHER_value(st, i) q_SKM_sk_value(SSL_CIPHER, (st), (i))
- #define q_SSL_CTX_add_extra_chain_cert(ctx,x509) \
-         q_SSL_CTX_ctrl(ctx,SSL_CTRL_EXTRA_CHAIN_CERT,0,(char *)x509)
--#define q_X509_get_notAfter(x) X509_get_notAfter(x)
--#define q_X509_get_notBefore(x) X509_get_notBefore(x)
-+#define q_X509_getm_notAfter(x) X509_getm_notAfter(x)
-+#define q_X509_getm_notBefore(x) X509_getm_notBefore(x)
- #define q_EVP_PKEY_assign_RSA(pkey,rsa) q_EVP_PKEY_assign((pkey),EVP_PKEY_RSA,\
-                                         (char *)(rsa))
- #define q_EVP_PKEY_assign_DSA(pkey,dsa) q_EVP_PKEY_assign((pkey),EVP_PKEY_DSA,\
-@@ -599,6 +601,9 @@ void q_SSL_get0_alpn_selected(const SSL *ssl, const un
-                               unsigned *len);
- #endif
- #endif // OPENSSL_VERSION_NUMBER >= 0x1000100fL ...
-+
-+int q_SSL_CTX_set1_groups(SSL_CTX *ctx, const int *groups, size_t ngroups);
-+#define q_SSL_CTX_set1_curves(ctx,curves,ncurves) q_SSL_CTX_set1_groups((ctx),(curves),(ncurves))
- 
- // Helper function
- class QDateTime;
+@@ -372,7 +372,7 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
+ int q_SSL_CTX_use_RSAPrivateKey(SSL_CTX *a, RSA *b);
+ int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
+ X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
+-#if OPENSSL_VERSION_NUMBER >= 0x10002000L
++#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(LIBRESSL_VERSION_NUMBER)
+ SSL_CONF_CTX *q_SSL_CONF_CTX_new();
+ void q_SSL_CONF_CTX_free(SSL_CONF_CTX *a);
+ void q_SSL_CONF_CTX_set_ssl_ctx(SSL_CONF_CTX *a, SSL_CTX *b);

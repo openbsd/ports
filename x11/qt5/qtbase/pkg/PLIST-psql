@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-psql,v 1.2 2020/01/07 20:22:07 zhuk Exp $
+@comment $OpenBSD: PLIST-psql,v 1.3 2020/03/13 16:53:50 rsadowski Exp $
 @pkgpath x11/qt5,-psql
 lib/qt5/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake
 @so lib/qt5/plugins/sqldrivers/libqsqlpsql.so

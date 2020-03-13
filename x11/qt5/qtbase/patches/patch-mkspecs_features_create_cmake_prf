@@ -1,27 +1,24 @@
-$OpenBSD: patch-mkspecs_features_create_cmake_prf,v 1.3 2017/12/27 16:27:06 rsadowski Exp $
-- Make sure correct library filenames get propagated into CMake package config
-  files.
-- Fix missing private includes https://bugreports.qt.io/browse/QTBUG-37417
+$OpenBSD: patch-mkspecs_features_create_cmake_prf,v 1.4 2020/03/13 16:53:49 rsadowski Exp $
+
 Index: mkspecs/features/create_cmake.prf
 --- mkspecs/features/create_cmake.prf.orig
 +++ mkspecs/features/create_cmake.prf
-@@ -30,7 +30,6 @@ CMAKE_MODULE_NAME = $$cmakeModuleName($${MODULE})
- 
- split_incpath {
-     CMAKE_ADD_SOURCE_INCLUDE_DIRS = true
--    CMAKE_NO_PRIVATE_INCLUDES = true # Don't add private includes in the build dir which don't exist
-     CMAKE_SOURCE_INCLUDES = \
-         $$cmakeTargetPaths($$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/Qt$${CMAKE_MODULE_NAME})
-     CMAKE_SOURCE_PRIVATE_INCLUDES = \
-@@ -53,7 +52,6 @@ contains(CMAKE_INCLUDE_DIR, "^\\.\\./.*") {
-     CMAKE_INCLUDE_DIR_IS_ABSOLUTE = True
+@@ -52,10 +52,10 @@ darwin:!qt_framework:!debug_and_release:CONFIG(debug, 
+     CMAKE_QT_STEM = $$replace(CMAKE_QT_STEM, _debug$, )
  }
  
--!exists($$first(QT.$${MODULE}_private.includes)): CMAKE_NO_PRIVATE_INCLUDES = true
- 
- CMAKE_LIB_DIR = $$cmakeRelativePath($$[QT_INSTALL_LIBS], $$[QT_INSTALL_PREFIX])
- contains(CMAKE_LIB_DIR,"^\\.\\./.*") {
-@@ -265,10 +263,16 @@ mac {
+-!generated_privates {
+-    isEmpty(SYNCQT.INJECTED_PRIVATE_HEADER_FILES):isEmpty(SYNCQT.PRIVATE_HEADER_FILES): \
+-        CMAKE_NO_PRIVATE_INCLUDES = true
+-}
++#!generated_privates {
++#    isEmpty(SYNCQT.INJECTED_PRIVATE_HEADER_FILES):isEmpty(SYNCQT.PRIVATE_HEADER_FILES): \
++#        CMAKE_NO_PRIVATE_INCLUDES = true
++#}
+ split_incpath {
+     CMAKE_ADD_SOURCE_INCLUDE_DIRS = true
+     CMAKE_SOURCE_INCLUDES = \
+@@ -311,10 +311,16 @@ mac {
          CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so
          CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so
          CMAKE_LIB_SONAME = lib$${CMAKE_QT_STEM}.so

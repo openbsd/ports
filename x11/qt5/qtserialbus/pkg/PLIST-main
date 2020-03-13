@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:08 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:52 rsadowski Exp $
 include/X11/qt5/QtSerialBus/
 include/X11/qt5/QtSerialBus/${VERSION}/
 include/X11/qt5/QtSerialBus/${VERSION}/QtSerialBus/
@@ -36,6 +36,7 @@ include/X11/qt5/QtSerialBus/QModbusRtuSerialMaster
 include/X11/qt5/QtSerialBus/QModbusRtuSerialSlave
 include/X11/qt5/QtSerialBus/QModbusServer
 include/X11/qt5/QtSerialBus/QModbusTcpClient
+include/X11/qt5/QtSerialBus/QModbusTcpConnectionObserver
 include/X11/qt5/QtSerialBus/QModbusTcpServer
 include/X11/qt5/QtSerialBus/QtSerialBus
 include/X11/qt5/QtSerialBus/QtSerialBusDepends
@@ -58,6 +59,7 @@ include/X11/qt5/QtSerialBus/qmodbustcpclient.h
 include/X11/qt5/QtSerialBus/qmodbustcpserver.h
 include/X11/qt5/QtSerialBus/qserialbusglobal.h
 include/X11/qt5/QtSerialBus/qtserialbus-config.h
+include/X11/qt5/QtSerialBus/qtserialbusglobal.h
 include/X11/qt5/QtSerialBus/qtserialbusversion.h
 @lib lib/libQt5SerialBus.so.${LIBQt5SerialBus_VERSION}
 lib/pkgconfig/Qt5SerialBus.pc
@@ -65,8 +67,10 @@ lib/pkgconfig/Qt5SerialBus.pc
 lib/qt5/cmake/Qt5SerialBus/
 lib/qt5/cmake/Qt5SerialBus/Qt5SerialBusConfig.cmake
 lib/qt5/cmake/Qt5SerialBus/Qt5SerialBusConfigVersion.cmake
+lib/qt5/cmake/Qt5SerialBus/Qt5SerialBus_PassThruCanBusPlugin.cmake
 lib/qt5/cmake/Qt5SerialBus/Qt5SerialBus_PeakCanBusPlugin.cmake
 lib/qt5/cmake/Qt5SerialBus/Qt5SerialBus_TinyCanBusPlugin.cmake
+lib/qt5/cmake/Qt5SerialBus/Qt5SerialBus_VirtualCanBusPlugin.cmake
 lib/qt5/libQt5SerialBus.la
 lib/qt5/libQt5SerialBus.prl
 @lib lib/qt5/libQt5SerialBus.so.${LIBQt5SerialBus_VERSION}
@@ -74,5 +78,7 @@ lib/qt5/mkspecs/modules/qt_lib_serialbus.pri
 lib/qt5/mkspecs/modules/qt_lib_serialbus_private.pri
 lib/qt5/pkgconfig/Qt5SerialBus.pc
 lib/qt5/plugins/canbus/
+@so lib/qt5/plugins/canbus/libqtpassthrucanbus.so
 @so lib/qt5/plugins/canbus/libqtpeakcanbus.so
 @so lib/qt5/plugins/canbus/libqttinycanbus.so
+@so lib/qt5/plugins/canbus/libqtvirtualcanbus.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/13 16:53:52 rsadowski Exp $
 lib/qt5/examples/serialbus/
 lib/qt5/examples/serialbus/can/
 lib/qt5/examples/serialbus/can/bitratebox.cpp
@@ -17,6 +17,9 @@ lib/qt5/examples/serialbus/can/main.cpp
 lib/qt5/examples/serialbus/can/mainwindow.cpp
 lib/qt5/examples/serialbus/can/mainwindow.h
 lib/qt5/examples/serialbus/can/mainwindow.ui
+lib/qt5/examples/serialbus/can/sendframebox.cpp
+lib/qt5/examples/serialbus/can/sendframebox.h
+lib/qt5/examples/serialbus/can/sendframebox.ui
 lib/qt5/examples/serialbus/modbus/
 lib/qt5/examples/serialbus/modbus/adueditor/
 lib/qt5/examples/serialbus/modbus/adueditor/adueditor.pro

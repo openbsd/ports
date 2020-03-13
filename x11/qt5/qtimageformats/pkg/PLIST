@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/01/07 20:22:07 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/13 16:53:51 rsadowski Exp $
 @conflict qt5-<5.6
 @pkgpath x11/qt5/qtimageformats,-main
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake

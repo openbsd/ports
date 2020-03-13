@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:08 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:53 rsadowski Exp $
 @conflict qt5-<5.6
 bin/assistant-qt5
 bin/designer-qt5
@@ -87,6 +87,7 @@ include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/private/qtresourceview_p.h
 include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/private/rcc_p.h
 include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/private/resourcebuilder_p.h
 include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/private/richtexteditor_p.h
+include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/private/selectsignaldialog_p.h
 include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/private/shared_enums_p.h
 include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/private/shared_global_p.h
 include/X11/qt5/QtDesigner/${VERSION}/QtDesigner/private/shared_settings_p.h
@@ -199,19 +200,19 @@ include/X11/qt5/QtHelp/${VERSION}/
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpcollectionhandler_p.h
-include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpdatainterface_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpdbreader_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpengine_p.h
-include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpgenerator_p.h
-include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpprojectdata_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexreader_default_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexreader_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexwriter_default_p.h
+include/X11/qt5/QtHelp/QCompressedHelpInfo
 include/X11/qt5/QtHelp/QHelpContentItem
 include/X11/qt5/QtHelp/QHelpContentModel
 include/X11/qt5/QtHelp/QHelpContentWidget
 include/X11/qt5/QtHelp/QHelpEngine
 include/X11/qt5/QtHelp/QHelpEngineCore
+include/X11/qt5/QtHelp/QHelpFilterData
+include/X11/qt5/QtHelp/QHelpFilterEngine
 include/X11/qt5/QtHelp/QHelpGlobal
 include/X11/qt5/QtHelp/QHelpIndexModel
 include/X11/qt5/QtHelp/QHelpIndexWidget
@@ -223,10 +224,13 @@ include/X11/qt5/QtHelp/QHelpSearchResultWidget
 include/X11/qt5/QtHelp/QtHelp
 include/X11/qt5/QtHelp/QtHelpDepends
 include/X11/qt5/QtHelp/QtHelpVersion
+include/X11/qt5/QtHelp/qcompressedhelpinfo.h
 include/X11/qt5/QtHelp/qhelp_global.h
 include/X11/qt5/QtHelp/qhelpcontentwidget.h
 include/X11/qt5/QtHelp/qhelpengine.h
 include/X11/qt5/QtHelp/qhelpenginecore.h
+include/X11/qt5/QtHelp/qhelpfilterdata.h
+include/X11/qt5/QtHelp/qhelpfilterengine.h
 include/X11/qt5/QtHelp/qhelpindexwidget.h
 include/X11/qt5/QtHelp/qhelpsearchengine.h
 include/X11/qt5/QtHelp/qhelpsearchquerywidget.h
@@ -258,19 +262,24 @@ include/X11/qt5/QtUiTools/quiloader.h
 @lib lib/libQt5Help.so.${LIBQt5Help_VERSION}
 lib/pkgconfig/Qt5Designer.pc
 lib/pkgconfig/Qt5Help.pc
+lib/pkgconfig/Qt5UiPlugin.pc
 lib/pkgconfig/Qt5UiTools.pc
+lib/qt5/Qt5UiPlugin.la
 @bin lib/qt5/bin/assistant
 @bin lib/qt5/bin/designer
 @bin lib/qt5/bin/lconvert
 @bin lib/qt5/bin/linguist
+@bin lib/qt5/bin/lprodump
 @bin lib/qt5/bin/lrelease
+@bin lib/qt5/bin/lrelease-pro
 @bin lib/qt5/bin/lupdate
+@bin lib/qt5/bin/lupdate-pro
 @bin lib/qt5/bin/pixeltool
 @bin lib/qt5/bin/qcollectiongenerator
 @bin lib/qt5/bin/qdbus
 @bin lib/qt5/bin/qdbusviewer
+@bin lib/qt5/bin/qdistancefieldgenerator
 @bin lib/qt5/bin/qdoc
-@bin lib/qt5/bin/qhelpconverter
 @bin lib/qt5/bin/qhelpgenerator
 @bin lib/qt5/bin/qtattributionsscanner
 @bin lib/qt5/bin/qtdiag
@@ -280,6 +289,9 @@ lib/qt5/cmake/Qt5Designer/
 lib/qt5/cmake/Qt5Designer/Qt5DesignerConfig.cmake
 lib/qt5/cmake/Qt5Designer/Qt5DesignerConfigVersion.cmake
 lib/qt5/cmake/Qt5Designer/Qt5Designer_QQuickWidgetPlugin.cmake
+lib/qt5/cmake/Qt5DesignerComponents/
+lib/qt5/cmake/Qt5DesignerComponents/Qt5DesignerComponentsConfig.cmake
+lib/qt5/cmake/Qt5DesignerComponents/Qt5DesignerComponentsConfigVersion.cmake
 lib/qt5/cmake/Qt5Help/
 lib/qt5/cmake/Qt5Help/Qt5HelpConfig.cmake
 lib/qt5/cmake/Qt5Help/Qt5HelpConfigExtras.cmake
@@ -294,6 +306,7 @@ lib/qt5/cmake/Qt5UiPlugin/Qt5UiPluginConfigVersion.cmake
 lib/qt5/cmake/Qt5UiTools/
 lib/qt5/cmake/Qt5UiTools/Qt5UiToolsConfig.cmake
 lib/qt5/cmake/Qt5UiTools/Qt5UiToolsConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Designer.la
 lib/qt5/libQt5Designer.prl
 @lib lib/qt5/libQt5Designer.so.${LIBQt5Designer_VERSION}
@@ -303,7 +316,8 @@ lib/qt5/libQt5DesignerComponents.prl
 lib/qt5/libQt5Help.la
 lib/qt5/libQt5Help.prl
 @lib lib/qt5/libQt5Help.so.${LIBQt5Help_VERSION}
-lib/qt5/libQt5UiTools.a
+lib/qt5/libQt5UiPlugin.prl
+@static-lib lib/qt5/libQt5UiTools.a
 lib/qt5/libQt5UiTools.la
 lib/qt5/libQt5UiTools.prl
 lib/qt5/mkspecs/modules/qt_lib_designer.pri
@@ -330,6 +344,7 @@ lib/qt5/phrasebooks/spanish.qph
 lib/qt5/phrasebooks/swedish.qph
 lib/qt5/pkgconfig/Qt5Designer.pc
 lib/qt5/pkgconfig/Qt5Help.pc
+lib/qt5/pkgconfig/Qt5UiPlugin.pc
 lib/qt5/pkgconfig/Qt5UiTools.pc
 lib/qt5/plugins/designer/
 @so lib/qt5/plugins/designer/libqquickwidget.so

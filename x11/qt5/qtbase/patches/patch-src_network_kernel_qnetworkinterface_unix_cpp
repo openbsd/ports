@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_network_kernel_qnetworkinterface_unix_cpp,v 1.1 2020/03/13 16:53:50 rsadowski Exp $
+
+Index: src/network/kernel/qnetworkinterface_unix.cpp
+--- src/network/kernel/qnetworkinterface_unix.cpp.orig
++++ src/network/kernel/qnetworkinterface_unix.cpp
+@@ -45,6 +45,12 @@
+ #include "qnetworkinterface_unix_p.h"
+ #include "qalgorithms.h"
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <netinet6/in6_var.h>
++
++
+ #ifndef QT_NO_NETWORKINTERFACE
+ 
+ #if defined(QT_NO_CLOCK_MONOTONIC)
+@@ -451,7 +457,7 @@ static QNetworkInterface::InterfaceType probeIfType(in
+         return QNetworkInterface::Ieee1394;
+ 
+     case IFT_GIF:
+-    case IFT_STF:
++    //case IFT_STF:
+         return QNetworkInterface::Virtual;
+     }
+ 
+@@ -538,7 +544,7 @@ static void getAddressExtraInfo(QNetworkAddressEntry *
+     }
+     int flags = ifr.ifr_ifru.ifru_flags6;
+     QNetworkInterfacePrivate::calculateDnsEligibility(entry,
+-                                                      flags & IN6_IFF_TEMPORARY,
++                                                      flags, //& IN6_IFF_TEMPORARY,
+                                                       flags & IN6_IFF_DEPRECATED);
+ 
+     // get lifetimes

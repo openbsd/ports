@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_serialbus_serialbus_pro,v 1.1 2020/03/13 16:53:52 rsadowski Exp $
+
+Index: src/serialbus/serialbus.pro
+--- src/serialbus/serialbus.pro.orig
++++ src/serialbus/serialbus.pro
+@@ -52,7 +52,7 @@ SOURCES += \
+     qmodbuspdu.cpp \
+     qmodbusdeviceidentification.cpp
+ 
+-qtConfig(modbus-serialport) {
++!openbsd:qtConfig(modbus-serialport) {
+     QT_FOR_PRIVATE += serialport
+ 
+     PUBLIC_HEADERS += \

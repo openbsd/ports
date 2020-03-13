@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:08 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:52 rsadowski Exp $
 include/X11/qt5/QtRemoteObjects/
 include/X11/qt5/QtRemoteObjects/${VERSION}/
 include/X11/qt5/QtRemoteObjects/${VERSION}/QtRemoteObjects/
@@ -20,11 +20,11 @@ include/X11/qt5/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobject
 include/X11/qt5/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectsource_p.h
 include/X11/qt5/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectsourceio_p.h
 include/X11/qt5/QtRemoteObjects/QAbstractItemModelReplica
-include/X11/qt5/QtRemoteObjects/QConnectionAbstractServer
 include/X11/qt5/QtRemoteObjects/QIOQnxSource
 include/X11/qt5/QtRemoteObjects/QIntHash
 include/X11/qt5/QtRemoteObjects/QQnxNativeIo
 include/X11/qt5/QtRemoteObjects/QQnxNativeServer
+include/X11/qt5/QtRemoteObjects/QRemoteObjectAbstractPersistedStore
 include/X11/qt5/QtRemoteObjects/QRemoteObjectDynamicReplica
 include/X11/qt5/QtRemoteObjects/QRemoteObjectHost
 include/X11/qt5/QtRemoteObjects/QRemoteObjectHostBase
@@ -32,21 +32,18 @@ include/X11/qt5/QtRemoteObjects/QRemoteObjectNode
 include/X11/qt5/QtRemoteObjects/QRemoteObjectPendingCall
 include/X11/qt5/QtRemoteObjects/QRemoteObjectPendingCallWatcher
 include/X11/qt5/QtRemoteObjects/QRemoteObjectPendingReply
-include/X11/qt5/QtRemoteObjects/QRemoteObjectPersistedStore
 include/X11/qt5/QtRemoteObjects/QRemoteObjectRegistry
 include/X11/qt5/QtRemoteObjects/QRemoteObjectRegistryHost
 include/X11/qt5/QtRemoteObjects/QRemoteObjectReplica
+include/X11/qt5/QtRemoteObjects/QRemoteObjectSettingsStore
 include/X11/qt5/QtRemoteObjects/QRemoteObjectSourceLocation
 include/X11/qt5/QtRemoteObjects/QRemoteObjectSourceLocationInfo
 include/X11/qt5/QtRemoteObjects/QRemoteObjectSourceLocations
-include/X11/qt5/QtRemoteObjects/QtROClientFactory
-include/X11/qt5/QtRemoteObjects/QtROServerFactory
 include/X11/qt5/QtRemoteObjects/QtRemoteObjects
 include/X11/qt5/QtRemoteObjects/QtRemoteObjectsDepends
 include/X11/qt5/QtRemoteObjects/QtRemoteObjectsVersion
 include/X11/qt5/QtRemoteObjects/qconnection_qnx_qiodevices.h
 include/X11/qt5/QtRemoteObjects/qconnection_qnx_server.h
-include/X11/qt5/QtRemoteObjects/qconnectionfactories.h
 include/X11/qt5/QtRemoteObjects/qremoteobjectabstractitemmodelreplica.h
 include/X11/qt5/QtRemoteObjects/qremoteobjectabstractitemmodeltypes.h
 include/X11/qt5/QtRemoteObjects/qremoteobjectdynamicreplica.h
@@ -54,6 +51,7 @@ include/X11/qt5/QtRemoteObjects/qremoteobjectnode.h
 include/X11/qt5/QtRemoteObjects/qremoteobjectpendingcall.h
 include/X11/qt5/QtRemoteObjects/qremoteobjectregistry.h
 include/X11/qt5/QtRemoteObjects/qremoteobjectreplica.h
+include/X11/qt5/QtRemoteObjects/qremoteobjectsettingsstore.h
 include/X11/qt5/QtRemoteObjects/qremoteobjectsource.h
 include/X11/qt5/QtRemoteObjects/qtremoteobjectglobal.h
 include/X11/qt5/QtRemoteObjects/qtremoteobjectsversion.h
@@ -67,6 +65,8 @@ include/X11/qt5/QtRepParser/qregexparser.h
 include/X11/qt5/QtRepParser/qtrepparserversion.h
 @lib lib/libQt5RemoteObjects.so.${LIBQt5RemoteObjects_VERSION}
 lib/pkgconfig/Qt5RemoteObjects.pc
+lib/pkgconfig/Qt5RepParser.pc
+lib/qt5/Qt5RepParser.la
 @bin lib/qt5/bin/repc
 lib/qt5/cmake/Qt5RemoteObjects/
 lib/qt5/cmake/Qt5RemoteObjects/Qt5RemoteObjectsConfig.cmake
@@ -76,9 +76,11 @@ lib/qt5/cmake/Qt5RemoteObjects/Qt5RemoteObjectsMacros.cmake
 lib/qt5/cmake/Qt5RepParser/
 lib/qt5/cmake/Qt5RepParser/Qt5RepParserConfig.cmake
 lib/qt5/cmake/Qt5RepParser/Qt5RepParserConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5RemoteObjects.la
 lib/qt5/libQt5RemoteObjects.prl
 @lib lib/qt5/libQt5RemoteObjects.so.${LIBQt5RemoteObjects_VERSION}
+lib/qt5/libQt5RepParser.prl
 lib/qt5/mkspecs/features/remoteobjects_repc.prf
 lib/qt5/mkspecs/features/repcclient.pri
 lib/qt5/mkspecs/features/repccommon.pri
@@ -90,6 +92,12 @@ lib/qt5/mkspecs/modules/qt_lib_remoteobjects_private.pri
 lib/qt5/mkspecs/modules/qt_lib_repparser.pri
 lib/qt5/mkspecs/modules/qt_lib_repparser_private.pri
 lib/qt5/pkgconfig/Qt5RemoteObjects.pc
+lib/qt5/pkgconfig/Qt5RepParser.pc
 lib/qt5/qml/QtQml/RemoteObjects/
 @so lib/qt5/qml/QtQml/RemoteObjects/libqtqmlremoteobjects.so
+lib/qt5/qml/QtQml/RemoteObjects/plugins.qmltypes
 lib/qt5/qml/QtQml/RemoteObjects/qmldir
+lib/qt5/qml/QtRemoteObjects/
+@so lib/qt5/qml/QtRemoteObjects/libqtremoteobjects.so
+lib/qt5/qml/QtRemoteObjects/plugins.qmltypes
+lib/qt5/qml/QtRemoteObjects/qmldir

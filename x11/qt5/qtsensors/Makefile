@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/01/07 20:22:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/13 16:53:52 rsadowski Exp $
 
 QT5NAME =		QtSensors
 COMMENT-main =		Qt5 hardware sensors support
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 
-SHARED_LIBS =		Qt5Sensors		2.2
+SHARED_LIBS +=  Qt5Sensors                 3.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml
 WANTLIB += m

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:07 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:51 rsadowski Exp $
 include/X11/qt5/QtGamepad/
 include/X11/qt5/QtGamepad/${VERSION}/
 include/X11/qt5/QtGamepad/${VERSION}/QtGamepad/
@@ -25,6 +25,7 @@ lib/qt5/cmake/Qt5Gamepad/
 lib/qt5/cmake/Qt5Gamepad/Qt5GamepadConfig.cmake
 lib/qt5/cmake/Qt5Gamepad/Qt5GamepadConfigVersion.cmake
 lib/qt5/cmake/Qt5Gamepad/Qt5Gamepad_QSdl2GamepadBackendPlugin.cmake
+lib/qt5/examples/
 lib/qt5/libQt5Gamepad.la
 lib/qt5/libQt5Gamepad.prl
 @lib lib/qt5/libQt5Gamepad.so.${LIBQt5Gamepad_VERSION}

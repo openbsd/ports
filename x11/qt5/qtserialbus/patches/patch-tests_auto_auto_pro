@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_auto_auto_pro,v 1.1 2020/03/13 16:53:52 rsadowski Exp $
+
+Index: tests/auto/auto.pro
+--- tests/auto/auto.pro.orig
++++ tests/auto/auto.pro
+@@ -14,7 +14,7 @@ SUBDIRS += cmake \
+ 
+ QT_FOR_CONFIG += serialbus
+ 
+-qtConfig(modbus-serialport): SUBDIRS += qmodbusrtuserialmaster
++!openbsd:qtConfig(modbus-serialport): SUBDIRS += qmodbusrtuserialmaster
+ 
+ !android: SUBDIRS += qcanbus
+ 

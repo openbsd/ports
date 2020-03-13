@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/01/07 20:22:07 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:50 rsadowski Exp $
 include/X11/qt5/QtDataVisualization/
 include/X11/qt5/QtDataVisualization/${VERSION}/
 include/X11/qt5/QtDataVisualization/${VERSION}/QtDataVisualization/
@@ -90,8 +90,10 @@ include/X11/qt5/QtDataVisualization/QAbstract3DInputHandler
 include/X11/qt5/QtDataVisualization/QAbstract3DSeries
 include/X11/qt5/QtDataVisualization/QAbstractDataProxy
 include/X11/qt5/QtDataVisualization/QBar3DSeries
+include/X11/qt5/QtDataVisualization/QBarDataArray
 include/X11/qt5/QtDataVisualization/QBarDataItem
 include/X11/qt5/QtDataVisualization/QBarDataProxy
+include/X11/qt5/QtDataVisualization/QBarDataRow
 include/X11/qt5/QtDataVisualization/QCategory3DAxis
 include/X11/qt5/QtDataVisualization/QCustom3DItem
 include/X11/qt5/QtDataVisualization/QCustom3DLabel
@@ -102,11 +104,14 @@ include/X11/qt5/QtDataVisualization/QItemModelScatterDataProxy
 include/X11/qt5/QtDataVisualization/QItemModelSurfaceDataProxy
 include/X11/qt5/QtDataVisualization/QLogValue3DAxisFormatter
 include/X11/qt5/QtDataVisualization/QScatter3DSeries
+include/X11/qt5/QtDataVisualization/QScatterDataArray
 include/X11/qt5/QtDataVisualization/QScatterDataItem
 include/X11/qt5/QtDataVisualization/QScatterDataProxy
 include/X11/qt5/QtDataVisualization/QSurface3DSeries
+include/X11/qt5/QtDataVisualization/QSurfaceDataArray
 include/X11/qt5/QtDataVisualization/QSurfaceDataItem
 include/X11/qt5/QtDataVisualization/QSurfaceDataProxy
+include/X11/qt5/QtDataVisualization/QSurfaceDataRow
 include/X11/qt5/QtDataVisualization/QTouch3DInputHandler
 include/X11/qt5/QtDataVisualization/QValue3DAxis
 include/X11/qt5/QtDataVisualization/QValue3DAxisFormatter
@@ -156,6 +161,7 @@ lib/pkgconfig/Qt5DataVisualization.pc
 lib/qt5/cmake/Qt5DataVisualization/
 lib/qt5/cmake/Qt5DataVisualization/Qt5DataVisualizationConfig.cmake
 lib/qt5/cmake/Qt5DataVisualization/Qt5DataVisualizationConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5DataVisualization.la
 lib/qt5/libQt5DataVisualization.prl
 @lib lib/qt5/libQt5DataVisualization.so.${LIBQt5DataVisualization_VERSION}

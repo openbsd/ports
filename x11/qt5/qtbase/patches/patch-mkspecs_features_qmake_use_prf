@@ -1,0 +1,14 @@
+$OpenBSD: patch-mkspecs_features_qmake_use_prf,v 1.1 2020/03/13 16:53:49 rsadowski Exp $
+
+Index: mkspecs/features/qmake_use.prf
+--- mkspecs/features/qmake_use.prf.orig
++++ mkspecs/features/qmake_use.prf
+@@ -22,6 +22,8 @@ for(ever) {
+         !defined(QMAKE_LIBS_$$nu, var): \
+             error("Library '$$lower($$replace(nu, _, -))' is not defined.")
+ 
++        QMAKE_LIBDIR += $$eval(QMAKE_LIBDIR_$$nu)
++
+         debug: \
+             LIBS$${suffix} += $$eval(QMAKE_LIBS_$${nu}_DEBUG) $$eval(QMAKE_LIBS_$$nu)
+         else: \

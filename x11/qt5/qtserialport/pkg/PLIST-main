@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/03/13 16:53:52 rsadowski Exp $
 @option no-default-conflict
 @conflict qtserialport->=5.6
 @conflict qt5-<5.6
@@ -9,6 +9,7 @@ include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qserialport_p.h
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qserialportinfo_p.h
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qtudev_p.h
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qwinoverlappedionotifier_p.h
 include/X11/qt5/QtSerialPort/QSerialPort
 include/X11/qt5/QtSerialPort/QSerialPortInfo
 include/X11/qt5/QtSerialPort/QtSerialPort
@@ -23,6 +24,7 @@ lib/pkgconfig/Qt5SerialPort.pc
 lib/qt5/cmake/Qt5SerialPort/
 lib/qt5/cmake/Qt5SerialPort/Qt5SerialPortConfig.cmake
 lib/qt5/cmake/Qt5SerialPort/Qt5SerialPortConfigVersion.cmake
+lib/qt5/examples/
 lib/qt5/libQt5SerialPort.la
 lib/qt5/libQt5SerialPort.prl
 @lib lib/qt5/libQt5SerialPort.so.${LIBQt5SerialPort_VERSION}

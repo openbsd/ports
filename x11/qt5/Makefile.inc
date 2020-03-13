@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile.inc,v 1.13 2020/01/07 20:22:06 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2020/03/13 16:53:49 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 .include "Makefile.version"
 
 # DIST_VERSION should be defined, e.g., when patch distfile gets issued,
-# e.g.: qtbase-opensource-src-5.5.1-1.tar.gz
+# e.g.: qtbase-everywhere-src-5.5.1-1.tar.gz
 
 VERSION ?=		${QT5_VERSION}
 DIST_VERSION ?=		${QT5_DIST_VERSION}
 NEXT_VERSION ?=		${QT5_NEXT_VERSION}
-DISTNAME ?=		${QT5NAME:L}-opensource-src-${DIST_VERSION}
+DISTNAME ?=		${QT5NAME:L}-everywhere-src-${DIST_VERSION}
 
-PKGNAME ?=		${DISTNAME:C/-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
+PKGNAME ?=		${DISTNAME:C/-everywhere-src//:C/-${DIST_VERSION}/-${VERSION}/}
 PKGNAME-main ?=		${PKGNAME}
 PKGNAME-examples ?=	${PKGNAME:C/(-[0-9])/-examples\1/}
 

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2019/03/08 12:50:37 cwen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:51 rsadowski Exp $
 @conflict qt5-<5.6
+lib/qt5/examples/
 lib/qt5/qml/QtQuick/Controls/
 lib/qt5/qml/QtQuick/Controls/ApplicationWindow.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls/ApplicationWindow.qmlc
@@ -272,7 +273,8 @@ lib/qt5/qml/QtQuick/Controls/Styles/Desktop/TreeViewStyle.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls/Styles/Desktop/TreeViewStyle.qmlc
 lib/qt5/qml/QtQuick/Controls/Styles/Desktop/qmldir
 lib/qt5/qml/QtQuick/Controls/Styles/Flat/
-lib/qt5/qml/QtQuick/Controls/Styles/Flat/libqtquickextrasflatplugin.so
+@so lib/qt5/qml/QtQuick/Controls/Styles/Flat/libqtquickextrasflatplugin.so
+lib/qt5/qml/QtQuick/Controls/Styles/Flat/plugins.qmltypes
 lib/qt5/qml/QtQuick/Controls/Styles/Flat/qmldir
 lib/qt5/qml/QtQuick/Controls/Styles/qmldir
 lib/qt5/qml/QtQuick/Controls/Switch.qml
@@ -295,7 +297,7 @@ lib/qt5/qml/QtQuick/Controls/ToolButton.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls/ToolButton.qmlc
 lib/qt5/qml/QtQuick/Controls/TreeView.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls/TreeView.qmlc
-lib/qt5/qml/QtQuick/Controls/libqtquickcontrolsplugin.so
+@so lib/qt5/qml/QtQuick/Controls/libqtquickcontrolsplugin.so
 lib/qt5/qml/QtQuick/Controls/plugins.qmltypes
 lib/qt5/qml/QtQuick/Controls/qmldir
 lib/qt5/qml/QtQuick/Dialogs/
@@ -310,7 +312,7 @@ ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Dialogs/DefaultFontDialog.qmlc
 lib/qt5/qml/QtQuick/Dialogs/DefaultMessageDialog.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Dialogs/DefaultMessageDialog.qmlc
 lib/qt5/qml/QtQuick/Dialogs/Private/
-lib/qt5/qml/QtQuick/Dialogs/Private/libdialogsprivateplugin.so
+@so lib/qt5/qml/QtQuick/Dialogs/Private/libdialogsprivateplugin.so
 lib/qt5/qml/QtQuick/Dialogs/Private/plugins.qmltypes
 lib/qt5/qml/QtQuick/Dialogs/Private/qmldir
 lib/qt5/qml/QtQuick/Dialogs/WidgetColorDialog.qml
@@ -333,7 +335,7 @@ lib/qt5/qml/QtQuick/Dialogs/images/slider_handle.png
 lib/qt5/qml/QtQuick/Dialogs/images/sunken_frame.png
 lib/qt5/qml/QtQuick/Dialogs/images/warning.png
 lib/qt5/qml/QtQuick/Dialogs/images/window_border.png
-lib/qt5/qml/QtQuick/Dialogs/libdialogplugin.so
+@so lib/qt5/qml/QtQuick/Dialogs/libdialogplugin.so
 lib/qt5/qml/QtQuick/Dialogs/plugins.qmltypes
 lib/qt5/qml/QtQuick/Dialogs/qml/
 lib/qt5/qml/QtQuick/Dialogs/qml/ColorSlider.qml
@@ -417,10 +419,10 @@ lib/qt5/qml/QtQuick/Extras/designer/images/togglebutton-icon16.png
 lib/qt5/qml/QtQuick/Extras/designer/images/tumbler-icon.png
 lib/qt5/qml/QtQuick/Extras/designer/images/tumbler-icon16.png
 lib/qt5/qml/QtQuick/Extras/designer/qtquickextras.metainfo
-lib/qt5/qml/QtQuick/Extras/libqtquickextrasplugin.so
+@so lib/qt5/qml/QtQuick/Extras/libqtquickextrasplugin.so
 lib/qt5/qml/QtQuick/Extras/plugins.qmltypes
 lib/qt5/qml/QtQuick/Extras/qmldir
 lib/qt5/qml/QtQuick/PrivateWidgets/
-lib/qt5/qml/QtQuick/PrivateWidgets/libwidgetsplugin.so
+@so lib/qt5/qml/QtQuick/PrivateWidgets/libwidgetsplugin.so
 lib/qt5/qml/QtQuick/PrivateWidgets/plugins.qmltypes
 lib/qt5/qml/QtQuick/PrivateWidgets/qmldir
