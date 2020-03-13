@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_interface_Mainfrm_h,v 1.1 2020/03/13 12:34:42 bket Exp $
+
+Index: src/interface/Mainfrm.h
+--- src/interface/Mainfrm.h.orig
++++ src/interface/Mainfrm.h
+@@ -7,6 +7,7 @@
+ #include "serverdata.h"
+ 
+ #include <wx/timer.h>
++#include <list>
+ 
+ #ifndef __WXMAC__
+ #include <wx/taskbar.h>
