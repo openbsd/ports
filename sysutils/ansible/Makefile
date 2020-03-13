@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.120 2020/03/12 21:03:34 kn Exp $
+# $OpenBSD: Makefile,v 1.121 2020/03/13 11:33:46 pvk Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
 
-MODPY_EGG_VERSION =	2.9.5
+MODPY_EGG_VERSION =	2.9.6
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
@@ -31,6 +31,7 @@ BUILD_DEPENDS =		devel/py-straight.plugin${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}
 RUN_DEPENDS =		net/py-netaddr${MODPY_FLAVOR} \
 			security/py-cryptodome${MODPY_FLAVOR} \
+			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-paramiko${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \

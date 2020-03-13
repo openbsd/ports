@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2020/01/20 17:49:05 pvk Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2020/03/13 11:33:46 pvk Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -12212,6 +12212,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/${MODPY_PYCACHE}azure.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/${MODPY_PYCACHE}cloudscale.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/${MODPY_PYCACHE}cs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/${MODPY_PYCACHE}fallaxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/${MODPY_PYCACHE}foreman.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/${MODPY_PYCACHE}gcp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/${MODPY_PYCACHE}hcloud.${MODPY_PYC_MAGIC_TAG}pyc
@@ -12227,6 +12228,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/aws.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/azure.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/cloudscale.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/cs.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/fallaxy.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/foreman.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/gcp.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/hcloud.py
