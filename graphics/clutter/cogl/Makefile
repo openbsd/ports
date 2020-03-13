@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2020/03/13 12:30:48 jasper Exp $
 
 COMMENT=		modern 3D graphics API
 
 GNOME_PROJECT=		cogl
-GNOME_VERSION=		1.22.4
-REVISION=		0
+GNOME_VERSION=		1.22.6
 
 SHARED_LIBS +=  cogl                 3.2      # 24.2
 SHARED_LIBS +=	cogl-path            0.1      # 24.2
@@ -13,10 +12,12 @@ SHARED_LIBS +=  cogl-pango           3.1      # 24.2
 WANTLIB += EGL X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xrandr Xrender
 WANTLIB += cairo drm expat ffi fontconfig freetype fribidi gbm
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 harfbuzz iconv intl m pango-1.0
+WANTLIB += graphite2 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
 WANTLIB += xcb-dri2 xcb-dri3 xcb-present xcb-render xcb-shm xcb-sync
 WANTLIB += xcb-xfixes xshmfence z
+
+BUILD_PACKAGES =	${DEBUG_PACKAGES}
 
 MODGNOME_TOOLS +=	gobject-introspection
 

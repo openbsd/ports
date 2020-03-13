@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/04/26 09:27:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/03/13 12:30:49 jasper Exp $
 @conflict clutter-<1.8.0
 include/cogl/
 include/cogl/cogl/
@@ -108,13 +108,13 @@ lib/girepository-${API_VERSION}/Cogl-${API_VERSION}.typelib
 lib/girepository-${API_VERSION}/Cogl-2.0.typelib
 lib/girepository-${API_VERSION}/CoglPango-${API_VERSION}.typelib
 lib/girepository-${API_VERSION}/CoglPango-2.0.typelib
-lib/libcogl-pango.a
+@static-lib lib/libcogl-pango.a
 lib/libcogl-pango.la
 @lib lib/libcogl-pango.so.${LIBcogl-pango_VERSION}
-lib/libcogl-path.a
+@static-lib lib/libcogl-path.a
 lib/libcogl-path.la
 @lib lib/libcogl-path.so.${LIBcogl-path_VERSION}
-lib/libcogl.a
+@static-lib lib/libcogl.a
 lib/libcogl.la
 @lib lib/libcogl.so.${LIBcogl_VERSION}
 lib/pkgconfig/cogl-${API_VERSION}.pc
@@ -150,6 +150,7 @@ share/locale/eo/LC_MESSAGES/cogl.mo
 share/locale/es/LC_MESSAGES/cogl.mo
 share/locale/eu/LC_MESSAGES/cogl.mo
 share/locale/fa/LC_MESSAGES/cogl.mo
+share/locale/fi/LC_MESSAGES/cogl.mo
 share/locale/fr/LC_MESSAGES/cogl.mo
 share/locale/fur/LC_MESSAGES/cogl.mo
 share/locale/gl/LC_MESSAGES/cogl.mo
@@ -166,6 +167,7 @@ share/locale/ko/LC_MESSAGES/cogl.mo
 share/locale/lt/LC_MESSAGES/cogl.mo
 share/locale/lv/LC_MESSAGES/cogl.mo
 share/locale/ml/LC_MESSAGES/cogl.mo
+share/locale/ms/LC_MESSAGES/cogl.mo
 share/locale/nb/LC_MESSAGES/cogl.mo
 share/locale/ne/LC_MESSAGES/cogl.mo
 share/locale/nl/LC_MESSAGES/cogl.mo
