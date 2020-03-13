@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_config_directives_c,v 1.1 2020/03/13 20:08:35 rsadowski Exp $
+
+Index: src/config_directives.c
+--- src/config_directives.c.orig
++++ src/config_directives.c
+@@ -639,10 +639,6 @@ CFGFUN(no_focus) {
+     TAILQ_INSERT_TAIL(&assignments, assignment, assignments);
+ }
+ 
+-CFGFUN(ipc_kill_timeout, const long timeout_ms) {
+-    ipc_set_kill_timeout(timeout_ms / 1000.0);
+-}
+-
+ /*******************************************************************************
+  * Bar configuration (i3bar)
+  ******************************************************************************/

@@ -1,7 +1,19 @@
-$OpenBSD: patch-man_i3_man,v 1.1.1.1 2019/03/07 19:34:32 rsadowski Exp $
+$OpenBSD: patch-man_i3_man,v 1.2 2020/03/13 20:08:35 rsadowski Exp $
+
 Index: man/i3.man
 --- man/i3.man.orig
 +++ man/i3.man
+@@ -172,8 +172,8 @@ When starting, i3 looks for configuration files in the
+ 
+ 1. ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set)
+ 2. ~/.i3/config
+-3. /etc/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
+-4. /etc/i3/config
++3. ${SYSCONFDIR}/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
++4. ${SYSCONFDIR}/i3/config
+ 
+ You can specify a custom path using the -c option.
+ 
 @@ -197,13 +197,13 @@ font pango:DejaVu Sans Mono 8
  floating_modifier Mod1
  

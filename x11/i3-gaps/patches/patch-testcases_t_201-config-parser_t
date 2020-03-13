@@ -1,0 +1,13 @@
+$OpenBSD: patch-testcases_t_201-config-parser_t,v 1.1 2020/03/13 20:08:35 rsadowski Exp $
+
+Index: testcases/t/201-config-parser.t
+--- testcases/t/201-config-parser.t.orig
++++ testcases/t/201-config-parser.t
+@@ -511,7 +511,6 @@ my $expected_all_tokens = "ERROR: CONFIG: Expected one
+         workspace
+         ipc_socket
+         ipc-socket
+-        ipc_kill_timeout
+         restart_state
+         popup_during_fullscreen
+         exec_always

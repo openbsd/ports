@@ -1,6 +1,8 @@
-$OpenBSD: patch-libi3_get_exe_path_c,v 1.1.1.1 2019/03/07 19:34:32 rsadowski Exp $
---- libi3/get_exe_path.c.orig	Tue Nov  8 19:54:01 2016
-+++ libi3/get_exe_path.c	Thu Nov 10 18:04:35 2016
+$OpenBSD: patch-libi3_get_exe_path_c,v 1.2 2020/03/13 20:08:35 rsadowski Exp $
+
+Index: libi3/get_exe_path.c
+--- libi3/get_exe_path.c.orig
++++ libi3/get_exe_path.c
 @@ -103,5 +103,5 @@ char *get_exe_path(const char *argv0) {
      free(tmp);
  

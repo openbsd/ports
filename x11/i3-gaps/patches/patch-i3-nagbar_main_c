@@ -1,9 +1,9 @@
-$OpenBSD: patch-i3-nagbar_main_c,v 1.2 2019/09/06 18:54:56 rsadowski Exp $
+$OpenBSD: patch-i3-nagbar_main_c,v 1.3 2020/03/13 20:08:35 rsadowski Exp $
 
 Index: i3-nagbar/main.c
 --- i3-nagbar/main.c.orig
 +++ i3-nagbar/main.c
-@@ -189,7 +189,7 @@ static void handle_button_release(xcb_connection_t *co
+@@ -190,7 +190,7 @@ static void handle_button_release(xcb_connection_t *co
  
      char *terminal_cmd;
      if (button->terminal) {
@@ -12,27 +12,12 @@ Index: i3-nagbar/main.c
      } else {
          terminal_cmd = sstrdup(link_path);
      }
-@@ -454,11 +454,6 @@ int main(int argc, char *argv[]) {
+@@ -462,7 +462,7 @@ int main(int argc, char *argv[]) {
      font = load_font(pattern, true);
      set_font(&font);
  
 -#if defined(__OpenBSD__)
--    if (pledge("stdio rpath wpath cpath getpw proc exec", NULL) == -1)
--        err(EXIT_FAILURE, "pledge");
--#endif
--
-     xcb_rectangle_t win_pos = get_window_position();
- 
-     xcb_cursor_t cursor;
-@@ -562,6 +557,11 @@ int main(int argc, char *argv[]) {
- 
-     /* Initialize the drawable bar */
-     draw_util_surface_init(conn, &bar, win, get_visualtype(root_screen), win_pos.width, win_pos.height);
-+
 +#if 0
-+    if (pledge("stdio rpath wpath cpath getpw proc exec", NULL) == -1)
-+        err(EXIT_FAILURE, "pledge");
-+#endif
- 
-     /* Startup complete. */
-     if (sncontext) {
+     if (pledge("stdio rpath wpath cpath getpw proc exec", NULL) == -1)
+         err(EXIT_FAILURE, "pledge");
+ #endif

@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_config_keycodes,v 1.2 2019/08/18 17:45:48 rsadowski Exp $
+$OpenBSD: patch-etc_config_keycodes,v 1.3 2020/03/13 20:08:35 rsadowski Exp $
 
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
@@ -6,7 +6,31 @@ different between Linux and OpenBSD.
 Index: etc/config.keycodes
 --- etc/config.keycodes.orig
 +++ etc/config.keycodes
-@@ -38,13 +38,13 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-s
+@@ -23,30 +23,30 @@ font pango:monospace 8
+ 
+ # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+ # screen before suspend. Use loginctl lock-session to lock your screen.
+-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
++#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+ 
+ # NetworkManager is the most popular way to manage wireless networks on Linux,
+ # and nm-applet is a desktop environment-independent system tray GUI for it.
+-exec --no-startup-id nm-applet
++#exec --no-startup-id nm-applet
+ 
+ # Use pactl to adjust volume in PulseAudio.
+-set $refresh_i3status killall -SIGUSR1 i3status
+-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
++#set $refresh_i3status killall -SIGUSR1 i3status
++#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
++#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
++#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
++#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+ 
+ # Use Mouse+$mod to drag floating windows to their wanted position
  floating_modifier $mod
  
  # start a terminal
@@ -22,7 +46,7 @@ Index: etc/config.keycodes
  # There also is the (new) i3-dmenu-desktop which only displays applications
  # shipping a .desktop file. It is a wrapper around dmenu, so you need that
  # installed.
-@@ -57,10 +57,10 @@ bindcode $mod+46 focus up
+@@ -59,10 +59,10 @@ bindcode $mod+46 focus up
  bindcode $mod+47 focus right
  
  # alternatively, you can use the cursor keys:
@@ -37,7 +61,7 @@ Index: etc/config.keycodes
  
  # move focused window
  bindcode $mod+Shift+44 move left
-@@ -69,10 +69,10 @@ bindcode $mod+Shift+46 move up
+@@ -71,10 +71,10 @@ bindcode $mod+Shift+46 move up
  bindcode $mod+Shift+47 move right
  
  # alternatively, you can use the cursor keys:
@@ -52,7 +76,7 @@ Index: etc/config.keycodes
  
  # split in horizontal orientation
  bindcode $mod+43 split h
-@@ -158,10 +158,10 @@ mode "resize" {
+@@ -160,10 +160,10 @@ mode "resize" {
          bindcode 47 resize grow width 10 px or 10 ppt
  
          # same bindings, but for the arrow keys

@@ -1,8 +1,35 @@
-$OpenBSD: patch-etc_config,v 1.2 2019/08/18 17:45:48 rsadowski Exp $
+$OpenBSD: patch-etc_config,v 1.3 2020/03/13 20:08:35 rsadowski Exp $
+
 Index: etc/config
 --- etc/config.orig
 +++ etc/config
-@@ -44,13 +44,13 @@ set $right semicolon
+@@ -22,18 +22,18 @@ font pango:monospace 8
+ 
+ # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+ # screen before suspend. Use loginctl lock-session to lock your screen.
+-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
++#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+ 
+ # NetworkManager is the most popular way to manage wireless networks on Linux,
+ # and nm-applet is a desktop environment-independent system tray GUI for it.
+-exec --no-startup-id nm-applet
++#exec --no-startup-id nm-applet
+ 
+ # Use pactl to adjust volume in PulseAudio.
+-set $refresh_i3status killall -SIGUSR1 i3status
+-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
++#set $refresh_i3status killall -SIGUSR1 i3status
++#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
++#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
++#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
++#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+ 
+ # use these keys for focus, movement, and resize directions when reaching for
+ # the arrows is not convenient
+@@ -46,13 +46,13 @@ set $right semicolon
  floating_modifier Mod1
  
  # start a terminal

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/06 18:54:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/13 20:08:35 rsadowski Exp $
 
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
-V =		4.17
+V =		4.18
 DISTNAME =	i3-gaps-${V}
-REVISION =	0
 
 CATEGORIES =	x11
 
@@ -13,8 +12,10 @@ HOMEPAGE =	https://i3wm.org/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pcre pthread startup-notification-1
+# XXX use of pledge has been neutered. For more details see
+# https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
+WANTLIB += c cairo ev glib-2.0 gobject-2.0 harfbuzz iconv intl
+WANTLIB += m pango-1.0 pangocairo-1.0 pcre pthread startup-notification-1
 WANTLIB += xcb xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
 WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
 WANTLIB += yajl
