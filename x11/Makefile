@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.652 2020/03/11 12:19:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.653 2020/03/13 16:54:00 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -238,6 +238,8 @@
      SUBDIR += py-qtawesome,python3
      SUBDIR += py-qtpy
      SUBDIR += py-qtpy,python3
+     SUBDIR += py-sip-qt5
+     SUBDIR += py-sip-qt5,python3
      SUBDIR += py-virtualdisplay
      SUBDIR += py-virtualdisplay,python3
      SUBDIR += py-wxPython
