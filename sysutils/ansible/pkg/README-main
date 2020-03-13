@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2018/09/04 12:53:16 espie Exp $
+$OpenBSD: README-main,v 1.3 2020/03/13 11:38:47 pvk Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -11,6 +11,3 @@ Ansible ships with many bundled modules and scripts, some of which may
 have external dependencies which are not installed by default as a
 run-time dependency of Ansible. In such events Ansible will notify
 the user of the missing dependency.
-
-py-cryptography may be installed to speed-up certain cryptographic
-operations performed by ansible-vault.
