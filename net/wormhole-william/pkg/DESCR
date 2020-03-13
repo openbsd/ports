@@ -1,0 +1,2 @@
+wormhole-william is a go (golang) implementation of magic wormhole. It provides
+secure end-to-end encrypted file transfers between computers.
