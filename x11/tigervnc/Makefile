@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/11 18:27:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/13 11:02:44 sthen Exp $
 
 COMMENT=	high performance, multi-platform VNC client and server
 
@@ -52,7 +52,8 @@ AUTOMAKE_VERSION= 1.16
 PATCHORIG=	.orig.port
 
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKDIST}/unix/xserver
 
