@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1177 2020/03/08 17:03:52 landry Exp $
+# $OpenBSD: Makefile,v 1.1178 2020/03/13 11:57:42 edd Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -789,6 +789,7 @@
      SUBDIR += wireshark
      SUBDIR += wmnetload
      SUBDIR += wol
+     SUBDIR += wormhole-william
      SUBDIR += xl2tpd
      SUBDIR += xmlrpc-c
      SUBDIR += xmlrpc-epi
