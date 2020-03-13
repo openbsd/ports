@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/12 06:58:25 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/13 04:59:13 kirby Exp $
 
-BROKEN-i386 =	std::bad_alloc when compiling fifePYTHON_wrap.cxx
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
 BROKEN-sparc64 =out of memory when compiling fifePYTHON_wrap.cxx
 
