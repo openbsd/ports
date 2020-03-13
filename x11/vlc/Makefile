@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2020/01/03 08:45:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.236 2020/03/13 16:54:08 rsadowski Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -7,7 +7,7 @@ V=		3.0.8
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	2
+REVISION-main=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -30,7 +30,7 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
 		Xxf86vm aom archive ass atk-1.0 atk-bridge-2.0 avcodec \
 		avformat avutil b2 bluray bz2 c cairo cairo-gobject cddb \
-		charset crypto dav1d double-conversion drm dvbpsi dvdnav \
+		charset crypto dav1d drm dvbpsi dvdnav \
 		dvdread ebml epoxy execinfo expat ffi fontconfig freetype \
 		fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi \
 		glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error \
