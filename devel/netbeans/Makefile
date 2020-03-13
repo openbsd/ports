@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.40 2019/11/03 13:54:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.41 2020/03/13 20:17:53 rsadowski Exp $
 
 COMMENT=		NetBeans Java IDE
 
-V=			11.2
+V=			11.3
 DISTNAME=		netbeans-${V}-bin
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		https://netbeans.apache.org
 
-MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org> \
-			Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER=		Rafael Sadowski <rsadowski@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
