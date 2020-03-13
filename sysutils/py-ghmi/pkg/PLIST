@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/12/23 16:46:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/03/13 12:35:30 jasper Exp $
 bin/fakebmc${MODPY_BIN_SUFFIX}
 bin/pyghmicons${MODPY_BIN_SUFFIX}
 bin/pyghmiutil${MODPY_BIN_SUFFIX}
@@ -100,12 +100,14 @@ lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/${MODPY_PYCACHE}con
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/${MODPY_PYCACHE}localsession.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/${MODPY_PYCACHE}serversession.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/${MODPY_PYCACHE}simplesession.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/${MODPY_PYCACHE}spd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/constants.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/localsession.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/serversession.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/session.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/simplesession.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/spd.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/util.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/sdr.py
