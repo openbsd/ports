@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/01 16:37:02 bket Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/13 12:31:46 bket Exp $
 
 COMMENT =		messagepack (de)serializer
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	0.6.2
+EPOCH =			0
 DISTNAME =		msgpack-${MODPY_EGG_VERSION}
 PKGNAME =		py-msgpack-${MODPY_EGG_VERSION}
 

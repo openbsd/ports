@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2019/07/12 20:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.136 2020/03/13 12:31:46 bket Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
@@ -19,7 +19,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2018.3.3
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 
@@ -40,7 +40,7 @@ BUILD_DEPENDS =		textproc/py-yaml \
 			
 # requirements/base.txt
 RUN_DEPENDS =		devel/py-futures \
-			net/py-msgpack \
+			net/py-msgpack>=0.6.2v0 \
 			textproc/py-MarkupSafe \
 			textproc/py-yaml \
 			www/py-jinja2 \
