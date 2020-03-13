@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/13 13:36:42 jca Exp $
 
 COMMENT=	C interface to the BLAS library
 
 VERSION=	1.0
 DISTNAME=	cblas
 PKGNAME=	${DISTNAME}-${VERSION}
-REVISION=	6
-SHARED_LIBS=	cblas	1.0
+REVISION=	7
+SHARED_LIBS=	cblas	1.1
 
 CATEGORIES=	math
 

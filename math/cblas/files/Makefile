@@ -42,5 +42,6 @@ cblas_dgemm.c       cblas_sdsdot.c      cblas_zhemm.c       zdotusub.f \
 cblas_dgemv.c       cblas_sgbmv.c       cblas_zhemv.c \
 cblas_dger.c        cblas_sgemm.c       cblas_zher.c \
 cblas_dnrm2.c       cblas_sgemv.c       cblas_zher2.c
+LDADD=-lblas -lgfortran
 
 .include <bsd.lib.mk>

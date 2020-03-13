@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/13 13:36:42 jca Exp $
 include/cblas.h
 include/cblas_f77.h
-lib/libcblas.a
+@static-lib lib/libcblas.a
 @lib lib/libcblas.so.${LIBcblas_VERSION}
-lib/libcblas_p.a
+@static-lib lib/libcblas_p.a
