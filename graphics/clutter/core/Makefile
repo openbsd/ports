@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2020/03/13 12:31:07 jasper Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter
-GNOME_VERSION=		1.26.2
-
-REVISION=		2
+GNOME_VERSION=		1.26.4
 
 SHARED_LIBS +=  clutter-1.0          6.1   # 2600.0
 
@@ -17,6 +15,9 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += iconv intl json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += xcb xcb-dri2 xcb-render xcb-shm xcb-xfixes z
+WANTLIB += fribidi glapi xcb-dri3 xcb-present xcb-sync xshmfence
+
+BUILD_PACKAGES =	${DEBUG_PACKAGES}
 
 MODGNOME_TOOLS +=	gobject-introspection
 

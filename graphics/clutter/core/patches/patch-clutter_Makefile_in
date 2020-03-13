@@ -1,8 +1,8 @@
-$OpenBSD: patch-clutter_Makefile_in,v 1.13 2017/09/25 09:16:13 robert Exp $
+$OpenBSD: patch-clutter_Makefile_in,v 1.14 2020/03/13 12:31:07 jasper Exp $
 Index: clutter/Makefile.in
 --- clutter/Makefile.in.orig
 +++ clutter/Makefile.in
-@@ -3232,13 +3232,8 @@ install-exec-local:
+@@ -3745,13 +3745,8 @@ install-exec-local:
  	    rm -f $$lib.0.$(CLUTTER_LT_CURRENT).$(CLUTTER_LT_REVISION); \
  	  ) ; \
  	  (cd $(DESTDIR)$(libdir) && \

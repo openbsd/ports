@@ -1,28 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.2 2017/10/06 15:38:35 naddy Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2020/03/13 12:31:07 jasper Exp $
 
-- Don't do bash pattern substitutions.
+- Don't do bash pattern substitutions
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -160,7 +160,7 @@ AC_ARG_ENABLE([Bsymbolic],
-                 saved_LDFLAGS="${LDFLAGS}"
-                 AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
-                 LDFLAGS=-Wl,-Bsymbolic-functions
--                AC_TRY_LINK([], [int main (void) { return 0; }],
-+                AC_TRY_LINK([], [],
-                             [
-                               AC_MSG_RESULT([yes])
-                               enable_Bsymbolic=yes
-@@ -189,7 +189,7 @@ case "$host" in
-     SAVED_CFLAGS="${CFLAGS}"
-     CFLAGS="-fvisibility=hidden"
-     AC_MSG_CHECKING([for -fvisibility=hidden compiler flag])
--    AC_TRY_COMPILE([], [int main (void) { return 0; }],
-+    AC_TRY_COMPILE([], [],
-                    AC_MSG_RESULT(yes)
-                    enable_fvisibility_hidden=yes,
-                    AC_MSG_RESULT(no)
 @@ -984,12 +984,12 @@ AS_CASE([$enable_maintainer_flags],
  )
  

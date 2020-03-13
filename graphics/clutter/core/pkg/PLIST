@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2017/05/21 17:47:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/03/13 12:31:07 jasper Exp $
 @conflict cogl-<1.8.0
 include/clutter-${API_VERSION}/
 include/clutter-${API_VERSION}/cally/
@@ -152,10 +152,10 @@ lib/girepository-${API_VERSION}/Cally-${API_VERSION}.typelib
 lib/girepository-${API_VERSION}/Clutter-${API_VERSION}.typelib
 lib/girepository-${API_VERSION}/ClutterGdk-${API_VERSION}.typelib
 lib/girepository-${API_VERSION}/ClutterX11-${API_VERSION}.typelib
-lib/libclutter-${API_VERSION}.a
+@static-lib lib/libclutter-${API_VERSION}.a
 lib/libclutter-${API_VERSION}.la
-@lib lib/libclutter-${API_VERSION}.so.${LIBclutter-1.0_VERSION}
-lib/libclutter-glx-${API_VERSION}.so
+@lib lib/libclutter-${API_VERSION}.so.${LIBclutter-${API_VERSION}_VERSION}
+@so lib/libclutter-glx-${API_VERSION}.so
 lib/pkgconfig/cally-${API_VERSION}.pc
 lib/pkgconfig/clutter-${API_VERSION}.pc
 lib/pkgconfig/clutter-cogl-${API_VERSION}.pc
@@ -163,6 +163,9 @@ lib/pkgconfig/clutter-egl-${API_VERSION}.pc
 lib/pkgconfig/clutter-gdk-${API_VERSION}.pc
 lib/pkgconfig/clutter-glx-${API_VERSION}.pc
 lib/pkgconfig/clutter-x11-${API_VERSION}.pc
+share/clutter-${API_VERSION}/
+share/clutter-${API_VERSION}/valgrind/
+share/clutter-${API_VERSION}/valgrind/clutter.supp
 share/gir-${API_VERSION}/Cally-${API_VERSION}.gir
 share/gir-${API_VERSION}/Clutter-${API_VERSION}.gir
 share/gir-${API_VERSION}/ClutterGdk-${API_VERSION}.gir
@@ -382,6 +385,7 @@ share/locale/lv/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/mk/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ml/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/nb/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/ne/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/nl/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/oc/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/or/LC_MESSAGES/clutter-${API_VERSION}.mo
