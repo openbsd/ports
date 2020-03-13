@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.8 2019/11/13 20:53:32 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.9 2020/03/13 12:41:03 jasper Exp $
 
 Index: lib/CMakeLists.txt
 --- lib/CMakeLists.txt.orig
 +++ lib/CMakeLists.txt
-@@ -87,6 +87,12 @@ set_target_properties(libmosquitto PROPERTIES
+@@ -91,6 +91,12 @@ set_target_properties(libmosquitto PROPERTIES
  	SOVERSION 1
  )
  

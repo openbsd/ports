@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.9 2019/11/13 20:53:32 jasper Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.10 2020/03/13 12:41:03 jasper Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -146,6 +146,8 @@ endif (HAVE_GETADDRINFO_A)
+@@ -151,6 +151,8 @@ endif (HAVE_GETADDRINFO_A AND WITH_ADNS)
  if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
