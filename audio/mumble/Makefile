@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2020/03/06 12:00:09 cwen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/03/13 23:31:22 jca Exp $
 
 COMMENT =		low-latency voice chat client
 
 DISTNAME =		mumble-1.3.0
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -15,8 +16,10 @@ EXTRACT_SUFX =		.zip
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xi c crypto jack
-WANTLIB += m opus protobuf sndfile speex speexdsp ssl
+WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xi c crypto
+WANTLIB += m opus portaudio protobuf sndfile speex speexdsp ssl
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODULES =		devel/qmake x11/qt5
 SEPARATE_BUILD =	No
@@ -26,7 +29,7 @@ BUILD_DEPENDS =		audio/celt07 \
 
 LIB_DEPENDS =		audio/libsndfile>=1.0.25p0 \
 			audio/opus \
-			audio/jack \
+			audio/portaudio-svn \
 			audio/speex \
 			devel/protobuf \
 			x11/qt5/qtsvg
@@ -49,6 +52,7 @@ MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			CONFIG+=no-crash-report \
 			CONFIG+=no-embed-qt-translations \
 			CONFIG+=no-g15 \
+			CONFIG+=no-jackaudio \
 			CONFIG+=no-oss \
 			CONFIG+=no-overlay \
 			CONFIG+=no-pulseaudio \
@@ -56,6 +60,7 @@ MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			CONFIG+=no-speechd \
 			CONFIG+=no-update \
 			CONFIG+=packaged \
+			CONFIG+=portaudio \
 			CONFIG+=release \
 			DEFINES+="LOCALE_PATH=${PREFIX}/share/mumble/locale" \
 			DEFINES+="PLUGIN_PATH=${PREFIX}/lib/mumble"
