@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/02/19 15:27:47 bket Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/13 16:54:12 rsadowski Exp $
 @pkgpath x11/py-qt5,-main
 bin/pylupdate5${MODPY_BIN_SUFFIX}
 bin/pyrcc5${MODPY_BIN_SUFFIX}
 bin/pyuic5${MODPY_BIN_SUFFIX}
-lib/python${MODPY_VERSION}/site-packages/PyQt5/
+lib/python${MODPY_VERSION}/site-packages/PyQt5-${V}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyQt5-${V}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/PyQt5-${V}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyQt5-${V}.dist-info/RECORD
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/Qt.so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtBluetooth.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtBluetooth.so
@@ -25,6 +28,8 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtMultimediaWidge
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtMultimediaWidgets.so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNetwork.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNetwork.so
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNetworkAuth.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNetworkAuth.so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNfc.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNfc.so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtOpenGL.pyi
@@ -39,6 +44,8 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtQuick.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtQuick.so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtQuickWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtQuickWidgets.so
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtRemoteObjects.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtRemoteObjects.so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtSensors.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtSensors.so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/QtSerialPort.pyi
@@ -118,7 +125,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/icon_cache.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/objcreator.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v${MODPY_MAJOR_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v${MODPY_MAJOR_VERSION}/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v${MODPY_MAJOR_VERSION}/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v${MODPY_MAJOR_VERSION}/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v${MODPY_MAJOR_VERSION}/${MODPY_PYCACHE}as_string.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v${MODPY_MAJOR_VERSION}/${MODPY_PYCACHE}ascii_upper.${MODPY_PYC_MAGIC_TAG}pyc
@@ -214,10 +221,13 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qbitarray.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qbuffer.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qbytearray.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qbytearraymatcher.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qcborcommon.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qcborstream.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qchar.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qcollator.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qcommandlineoption.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qcommandlineparser.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qconcatenatetablesproxymodel.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qcoreapplication.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qcoreevent.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qcryptographichash.sip
@@ -251,6 +261,7 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qline.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qlocale.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qlockfile.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qlogging.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qloggingcategory.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qmargins.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qmessageauthenticationcode.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qmetaobject.sip
@@ -271,13 +282,16 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpluginloader.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpoint.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qprocess.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpropertyanimation.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_onexit.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_qhash.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_qlist.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_qmap.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_qpair.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_qset.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_qvariantmap.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_qvector.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qpycore_virtual_error_handler.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qrandom.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qreadwritelock.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qrect.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qregexp.sip
@@ -314,6 +328,7 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qtimeline.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qtimer.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qtimezone.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qtranslator.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qtransposeproxymodel.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qurl.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qurlquery.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/quuid.sip
@@ -462,9 +477,12 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qwindow.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qwindowdefs.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/QtHelpmod.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qcompressedhelpinfo.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qhelpcontentwidget.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qhelpengine.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qhelpenginecore.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qhelpfilterdata.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qhelpfilterengine.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qhelpindexwidget.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qhelpsearchengine.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtHelp/qhelpsearchquerywidget.sip
@@ -587,6 +605,8 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qnetworkproxy.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qnetworkreply.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qnetworkrequest.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qnetworksession.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qocspresponse.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qpassworddigestor.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qpynetwork_qhash.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qpynetwork_qmap.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qssl.sip
@@ -603,6 +623,16 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qsslsocket.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qtcpserver.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qtcpsocket.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetwork/qudpsocket.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/QtNetworkAuthmod.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/qabstractoauth.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/qabstractoauth2.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/qabstractoauthreplyhandler.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/qoauth1.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/qoauth1signature.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/qoauth2authorizationcodeflow.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/qoauthhttpserverreplyhandler.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNetworkAuth/qoauthoobreplyhandler.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNfc/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNfc/QtNfcmod.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtNfc/qndeffilter.sip
@@ -628,6 +658,7 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtPositioning/qgeocircle.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtPositioning/qgeocoordinate.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtPositioning/qgeolocation.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtPositioning/qgeopath.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtPositioning/qgeopolygon.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtPositioning/qgeopositioninfo.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtPositioning/qgeopositioninfosource.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtPositioning/qgeorectangle.sip
@@ -654,6 +685,7 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQml/qjsvalueiterator.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQml/qmlattachedpropertiesobject.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQml/qmlregistertype.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQml/qpyqmllistproperty.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQml/qqml.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQml/qqmlabstracturlinterceptor.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQml/qqmlapplicationengine.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQml/qqmlcomponent.sip
@@ -701,6 +733,14 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQuick/qsgvertexcolormaterial.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQuickWidgets/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQuickWidgets/QtQuickWidgetsmod.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtQuickWidgets/qquickwidget.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtRemoteObjects/
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtRemoteObjects/QtRemoteObjectsmod.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtRemoteObjects/qremoteobjectabstractitemmodelreplica.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtRemoteObjects/qremoteobjectdynamicreplica.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtRemoteObjects/qremoteobjectnode.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtRemoteObjects/qremoteobjectregistry.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtRemoteObjects/qremoteobjectreplica.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtRemoteObjects/qtremoteobjectglobal.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtSensors/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtSensors/QtSensorsmod.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtSensors/qaccelerometer.sip
@@ -751,6 +791,7 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtSvg/qsvgrenderer.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtSvg/qsvgwidget.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtTest/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtTest/QtTestmod.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtTest/qabstractitemmodeltester.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtTest/qsignalspy.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtTest/qtestcase.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtTest/qtestkeyboard.sip
@@ -761,32 +802,6 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebChannel/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebChannel/QtWebChannelmod.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebChannel/qwebchannel.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebChannel/qwebchannelabstracttransport.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngine/
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngine/QtWebEnginemod.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngine/qquickwebengineprofile.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngine/qquickwebenginescript.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngine/qtwebengineglobal.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineCore/
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineCore/QtWebEngineCoremod.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineCore/qwebenginecookiestore.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineCore/qwebenginehttprequest.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineCore/qwebengineurlrequestinfo.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineCore/qwebengineurlrequestinterceptor.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineCore/qwebengineurlrequestjob.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineCore/qwebengineurlschemehandler.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/QtWebEngineWidgetsmod.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginecertificateerror.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginecontextmenudata.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginedownloaditem.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginefullscreenrequest.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginehistory.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginepage.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebengineprofile.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginescript.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginescriptcollection.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebenginesettings.sip
-share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebEngineWidgets/qwebengineview.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebKit/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebKit/QtWebKitmod.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtWebKit/qwebdatabase.sip
