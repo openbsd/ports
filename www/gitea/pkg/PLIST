@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/02/22 11:50:38 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/03/13 17:55:50 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/var/gitea:/bin/sh
 @rcscript ${RCDIR}/gitea
@@ -2816,6 +2816,8 @@ share/gitea/templates/admin/base/
 share/gitea/templates/admin/base/search.tmpl
 share/gitea/templates/admin/config.tmpl
 share/gitea/templates/admin/dashboard.tmpl
+share/gitea/templates/admin/emails/
+share/gitea/templates/admin/emails/list.tmpl
 share/gitea/templates/admin/hook_new.tmpl
 share/gitea/templates/admin/hooks.tmpl
 share/gitea/templates/admin/monitor.tmpl
