@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.260 2020/02/16 09:58:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.261 2020/03/13 13:15:58 jasper Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -6,6 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.34.4
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -48,6 +49,7 @@ LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 			databases/db/v4 \
 			databases/openldap \
 			devel/libgdata \
+			security/nss \
 			textproc/libical,-glib \
 			www/webkitgtk4 \
 			x11/gnome/gcr \
