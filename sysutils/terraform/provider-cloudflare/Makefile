@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2019/12/20 13:39:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/14 17:57:54 ajacoutot Exp $
 
 PROVIDER=		cloudflare
-GH_TAGNAME=		v2.3.0
+GH_TAGNAME=		v2.4.0
 
 .include <bsd.port.mk>
