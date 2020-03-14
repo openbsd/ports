@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.361 2020/03/11 12:22:51 sthen Exp $
+$OpenBSD: user.list,v 1.362 2020/03/14 16:18:59 abieber Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -358,3 +358,4 @@ id  user		group		port
 848 _loki		_loki		sysutils/loki
 849 _synapse		_synapse	net/synapse
 850 _snare		_snare		devel/snare
+851 _whatsapp		_whatsapp	net/mautrix-whatsapp
