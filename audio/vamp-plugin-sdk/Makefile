@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/12 14:53:00 rapha Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/14 00:18:25 jca Exp $
 
 COMMENT =		audio plugin API
 
@@ -28,6 +28,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 
 TEST_TARGET =		test
-TEST_DEPENDS =		audio/libsndfile
+# only needed for tests
+BUILD_DEPENDS =		audio/libsndfile
 
 .include <bsd.port.mk>
