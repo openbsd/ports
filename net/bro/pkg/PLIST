@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/02/28 16:48:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/03/14 17:58:47 ajacoutot Exp $
 @conflict bro-*
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/zeek
 @rcscript ${RCDIR}/zeek
@@ -606,7 +606,45 @@ include/zeek/3rdparty/
 include/zeek/3rdparty/rapidjson/
 include/zeek/3rdparty/rapidjson/include/
 include/zeek/3rdparty/rapidjson/include/rapidjson/
+include/zeek/3rdparty/rapidjson/include/rapidjson/allocators.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/cursorstreamwrapper.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/document.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/encodedstream.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/encodings.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/error/
+include/zeek/3rdparty/rapidjson/include/rapidjson/error/en.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/error/error.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/filereadstream.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/filewritestream.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/fwd.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/biginteger.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/clzll.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/diyfp.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/dtoa.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/ieee754.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/itoa.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/meta.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/pow10.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/regex.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/stack.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/strfunc.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/strtod.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/internal/swap.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/istreamwrapper.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/memorybuffer.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/memorystream.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/msinttypes/
+include/zeek/3rdparty/rapidjson/include/rapidjson/msinttypes/inttypes.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/msinttypes/stdint.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/ostreamwrapper.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/pointer.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/prettywriter.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/rapidjson.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/reader.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/schema.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/stream.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/stringbuffer.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/writer.h
 include/zeek/3rdparty/sqlite3.h
 include/zeek/Anon.h
