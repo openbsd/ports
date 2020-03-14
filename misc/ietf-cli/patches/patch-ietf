@@ -1,12 +1,16 @@
-$OpenBSD: patch-ietf,v 1.1.1.1 2015/11/21 20:13:04 sthen Exp $
---- ietf.orig	Fri Nov 20 20:46:35 2015
-+++ ietf	Fri Nov 20 20:57:03 2015
+$OpenBSD: patch-ietf,v 1.2 2020/03/14 15:59:46 kn Exp $
+
+Adjust ConfigPlaces.
+
+Index: ietf
+--- ietf.orig
++++ ietf
 @@ -78,7 +78,7 @@ __license__ = "https://en.wikipedia.org/wiki/WTFPL"
  
  KnownCmds = ("auth48", "author", "bcp", "charter", "conflict", "diff", "draft", "draftstatus", "iesg", "mirror", \
- 	"rfc", "rfcextra", "rfcinfo", "rfcstatus", "tools", "tracker", "foo")
+ 	"rfc", "rfcextra", "rfcinfo", "rfcstatus", "rg", "std", "tools", "tracker", "foo")
 -ConfigPlaces = ("~/bin/ietf.config", "/usr/local/bin/ietf.config", "~/.ietf/ietf.config")
 +ConfigPlaces = ("~/.ietf/ietf.config", "${SYSCONFDIR}/ietf.config")
- RFCZerosPat = compile(r'^0+(.*)')
  
  # Make a block of text that can be executed in the CLI
+ CLICmdCode = ""

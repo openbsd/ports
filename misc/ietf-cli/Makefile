@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/14 15:59:46 kn Exp $
 
 COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
-DISTNAME=	ietf-cli-1.14
+GH_ACCOUNT=	paulehoffman
+GH_PROJECT=	ietf-cli
+GH_TAGNAME=	4b2b52dc333b6b59403b102349572f8af1b20a52
+DISTNAME=	${GH_PROJECT}-1.16
 
 CATEGORIES=	misc net books
 
@@ -11,17 +14,15 @@ HOMEPAGE=	https://trac.tools.ietf.org/tools/ietf-cli/
 # WTFPL
 PERMIT_PACKAGE=	Yes
 
-# packaged from http://svn.tools.ietf.org/svn/tools/ietf-cli/ r32
-MASTER_SITES=	https://spacehopper.org/mirrors/
-
 MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP=	No
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-RUN_DEPENDS=	net/rsync \
-		devel/xdg-utils
+RUN_DEPENDS=	devel/xdg-utils \
+		net/rsync
 
 PKG_ARCH=	*
 
