@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2020/02/16 10:45:59 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2020/03/14 07:21:44 landry Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
 
 COMMENT =		modified version of Firefox ESR for browsing over Tor
-ONLY_FOR_ARCHS =	amd64 i386 aarch64
+ONLY_FOR_ARCHS =	amd64 i386
 
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
@@ -15,7 +15,7 @@ EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-68.5.0esr-9.0-1-build2
+DISTNAME =		src-firefox-tor-browser-68.6.0esr-9.0-1-build1
 
 DISTFILES +=		${DISTNAME}.tar.xz \
 			src-tor-launcher-${TL_VERSION}.tar.xz

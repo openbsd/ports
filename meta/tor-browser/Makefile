@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/16 10:45:59 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/14 07:21:44 landry Exp $
 
 COMMENT=	Tor Browser meta package
 
 MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>
 
-PKGNAME=	tor-browser-9.0.5
-ONLY_FOR_ARCHS =	amd64 i386 aarch64
+PKGNAME=	tor-browser-9.0.6
+ONLY_FOR_ARCHS =	amd64 i386
 
-RUN_DEPENDS=	www/tor-browser/browser>=9.0.5 \
-		www/tor-browser/noscript>=11.0.13 \
+RUN_DEPENDS=	www/tor-browser/browser>=9.0.6 \
+		www/tor-browser/noscript>=11.0.15 \
 		www/tor-browser/https-everywhere>=2019.11.7 \
 		net/tor>=0.4.2.5
 
