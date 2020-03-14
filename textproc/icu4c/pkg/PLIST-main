@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/10/16 13:42:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/03/14 13:22:08 ajacoutot Exp $
 @pkgpath textproc/icu4c
 @bin bin/derb
 @bin bin/genbrk
@@ -206,17 +206,17 @@ lib/icu/${VERSION}/pkgdata.inc
 lib/icu/Makefile.inc
 lib/icu/current
 lib/icu/pkgdata.inc
-lib/libicudata.a
+@static-lib lib/libicudata.a
 @lib lib/libicudata.so.${LIBicudata_VERSION}
-lib/libicui18n.a
+@static-lib lib/libicui18n.a
 @lib lib/libicui18n.so.${LIBicui18n_VERSION}
-lib/libicuio.a
+@static-lib lib/libicuio.a
 @lib lib/libicuio.so.${LIBicuio_VERSION}
-lib/libicutest.a
+@static-lib lib/libicutest.a
 @lib lib/libicutest.so.${LIBicutest_VERSION}
-lib/libicutu.a
+@static-lib lib/libicutu.a
 @lib lib/libicutu.so.${LIBicutu_VERSION}
-lib/libicuuc.a
+@static-lib lib/libicuuc.a
 @lib lib/libicuuc.so.${LIBicuuc_VERSION}
 lib/pkgconfig/icu-i18n.pc
 lib/pkgconfig/icu-io.pc

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.77 2019/11/09 12:19:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2020/03/14 13:22:07 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT-main=		International Components for Unicode
 COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
-VERSION=		65.1
+VERSION=		66.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
-
-REVISION-main=		0
 
 # XXX libicudata is not recognized as a SHARED_LIBS by the ports tools because
 # it's missing the '.note.openbsd.ident' section ("-nodefaultlibs -nostdlib" in
@@ -56,6 +54,7 @@ WRKDIST=		${WRKDIR}/icu
 WRKSRC=			${WRKDIST}/source
 
 MULTI_PACKAGES=		-main -wwwdata
+DEBUG_PACKAGES=		-main
 
 # see readme.html
 CXXFLAGS +=		-DICU_NO_USER_DATA_OVERRIDE
