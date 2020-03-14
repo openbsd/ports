@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/21 16:05:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/14 14:05:18 rsadowski Exp $
 
 COMMENT =	Qt client for the X2Go system
 
 DISTNAME =	x2goclient-4.1.2.1
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	x11
 
