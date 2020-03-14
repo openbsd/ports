@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/18 07:42:27 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/14 06:42:05 rsadowski Exp $
 
 COMMENT =	Parallax Static Timing Analyzer
 
 # use version number from git log
-DISTNAME =	opensta-2.0.12.20190329
-REVISION =	0
+DISTNAME =	opensta-2.0.18.20200308
 
 CATEGORIES =	cad
 
 GH_ACCOUNT =	abk-openroad
 GH_PROJECT =	OpenSTA
-GH_COMMIT =	ed3ad4fb3012feb53328a80df6ad01efd477f891
+GH_COMMIT =	d615f62fe412b0f12166e6d5559eacec43713e02
 
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -37,15 +36,18 @@ BUILD_DEPENDS =	devel/bison \
 CONFIGURE_ARGS = -DTCL_HEADER=${MODTCL_INCDIR}/tcl.h \
 		 -DCUDD=${LOCALBASE}
 
-NO_TEST =	Yes
-
 pre-configure:
 	cd ${WRKSRC}/etc && ${MODTCL_TCLSH_ADJ} TclEncode.tcl SwigCleanup.tcl
+	cd ${WRKSRC}/test && ${MODTCL_TCLSH_ADJ} regression
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/opensta
 	${INSTALL_DATA} ${WRKSRC}/doc/OpenSTA.pdf ${PREFIX}/share/doc/opensta
 	${INSTALL_DATA} ${WRKSRC}/doc/ChangeLog.txt ${PREFIX}/share/doc/opensta
 	${INSTALL_DATA} ${WRKSRC}/doc/StaApi.txt ${PREFIX}/share/doc/opensta
+	${INSTALL_DATA} ${WRKSRC}/doc/ApiChanges.txt ${PREFIX}/share/doc/opensta
+
+do-test:
+	cd ${WRKDIST} && test/regression all
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/30 11:50:06 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/14 06:42:05 rsadowski Exp $
 @bin bin/sta
 include/ArcDelayCalc.hh
 include/Arnoldi.hh
@@ -35,6 +35,7 @@ include/DelayNormal2.hh
 include/DeratingFactors.hh
 include/DisabledPorts.hh
 include/DisallowCopyAssign.hh
+include/DispatchQueue.hh
 include/DmpCeff.hh
 include/DmpDelayCalc.hh
 include/EnumNameMap.hh
@@ -64,6 +65,7 @@ include/Levelize.hh
 include/Liberty.hh
 include/LibertyBuilder.hh
 include/LibertyClass.hh
+include/LibertyExpr.hh
 include/LibertyParser.hh
 include/LibertyReader.hh
 include/LibertyReaderPvt.hh
@@ -81,7 +83,8 @@ include/Network.hh
 include/NetworkClass.hh
 include/NetworkCmp.hh
 include/NullParasitics.hh
-include/ObjectIndex.hh
+include/ObjectId.hh
+include/ObjectTable.hh
 include/Parasitics.hh
 include/ParasiticsClass.hh
 include/ParseBus.hh
@@ -97,7 +100,6 @@ include/PathVertex.hh
 include/PathVertexRep.hh
 include/PatternMatch.hh
 include/PinPair.hh
-include/Pool.hh
 include/PortDelay.hh
 include/PortDirection.hh
 include/PortExtCap.hh
@@ -139,7 +141,6 @@ include/StringUtil.hh
 include/TableModel.hh
 include/Tag.hh
 include/TagGroup.hh
-include/ThreadForEach.hh
 include/TimingArc.hh
 include/TimingModel.hh
 include/TimingRole.hh
@@ -150,9 +151,10 @@ include/Units.hh
 include/UnorderedMap.hh
 include/UnorderedSet.hh
 include/Vector.hh
-include/Verilog.hh
 include/VerilogNamespace.hh
 include/VerilogReader.hh
+include/VerilogReaderPvt.hh
+include/VerilogWriter.hh
 include/VertexVisitor.hh
 include/VisitPathEnds.hh
 include/VisitPathGroupVertices.hh
@@ -162,8 +164,9 @@ include/WritePathSpice.hh
 include/WriteSdc.hh
 include/WriteSdcPvt.hh
 include/Zlib.hh
-lib/libOpenSTA.a
+@static-lib lib/libOpenSTA.a
 share/doc/opensta/
+share/doc/opensta/ApiChanges.txt
 share/doc/opensta/ChangeLog.txt
 share/doc/opensta/OpenSTA.pdf
 share/doc/opensta/StaApi.txt
