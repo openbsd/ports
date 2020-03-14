@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_Imap_Network_FileDownloadManager_cpp,v 1.1 2020/03/14 01:17:13 jca Exp $
+
+https://cgit.kde.org/trojita.git/commit/?id=cf2364b80fa8ae844df8350cd5833d47cce235f2
+
+commit cf2364b80fa8ae844df8350cd5833d47cce235f2
+Author: Jan Kundrát <jkt@kde.org>
+Date:   Mon Mar 9 08:24:48 2020 -0700
+
+    Fix possible crash when downloading attachments
+    
+    Turns out we've been happily deleting network replies from the
+    QNetworkReply::finished(). That was never a good thing to do, but it did
+    not use to crash with older Qt. Now it does.
+    
+    [...]
+
+Index: src/Imap/Network/FileDownloadManager.cpp
+--- src/Imap/Network/FileDownloadManager.cpp.orig
++++ src/Imap/Network/FileDownloadManager.cpp
+@@ -139,7 +139,9 @@ void FileDownloadManager::downloadMessage()
+ 
+ void FileDownloadManager::onPartDataTransfered()
+ {
+-    Q_ASSERT(reply);
++    if (!reply) {
++        return;
++    }
+     if (reply->error() == QNetworkReply::NoError) {
+         if (!saving.open(QIODevice::WriteOnly)) {
+             emit transferError(saving.errorString());
+@@ -192,11 +194,11 @@ void FileDownloadManager::onCombinerTransferError(cons
+ 
+ void FileDownloadManager::deleteReply(QNetworkReply *reply)
+ {
+-    if (reply == this->reply) {
++    if (reply && reply == this->reply) {
+         if (!saved)
+             onPartDataTransfered();
+-        delete reply;
+-        this->reply = 0;
++        reply->deleteLater();
++        this->reply = nullptr;
+     }
+ }
+ 
