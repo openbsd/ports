@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/21 14:16:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/14 15:37:31 kn Exp $
 
 COMMENT =		JFFS2 filesystem extraction tool
 
 MODPY_EGG_VERSION =	0.2
-GH_COMMIT =		6f9169bad3ceb4e212fae62ad710eeca3350226b
+GH_COMMIT =		d1aff710928f05e889b0ae23d97d1b9640eecbd0
 GH_PROJECT =		jefferson
-GH_ACCOUNT =		sviehb
+GH_ACCOUNT =		wittrup
 DISTNAME =		jefferson-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -16,14 +17,9 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-# With python3 extraction fails with:
-#  File "/usr/local/lib/python3.7/site-packages/jefferson/rtime.py", line 7, in decompress
-#    value = ord(data_in[pos])
-# TypeError: ord() expected string of length 1, but int found
-#MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =		archivers/py-backports-lzma \
-			devel/py-cstruct${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-cstruct${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
