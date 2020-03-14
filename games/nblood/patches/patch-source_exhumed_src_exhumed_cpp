@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_exhumed_src_exhumed_cpp,v 1.2 2020/01/25 23:53:44 jsg Exp $
+$OpenBSD: patch-source_exhumed_src_exhumed_cpp,v 1.3 2020/03/14 06:15:15 jsg Exp $
 
 store log file in ~/.config/pcexhumed/
 
 Index: source/exhumed/src/exhumed.cpp
 --- source/exhumed/src/exhumed.cpp.orig
 +++ source/exhumed/src/exhumed.cpp
-@@ -2222,6 +2222,9 @@ static int32_t nonsharedtimer;
+@@ -2228,6 +2228,9 @@ static int32_t nonsharedtimer;
  int app_main(int argc, char const* const* argv)
  {
      char tempbuf[256];
@@ -15,7 +15,7 @@ Index: source/exhumed/src/exhumed.cpp
  #ifdef _WIN32
  #ifndef DEBUGGINGAIDS
      if (!G_CheckCmdSwitch(argc, argv, "-noinstancechecking") && !windowsCheckAlreadyRunning())
-@@ -2246,7 +2249,22 @@ int app_main(int argc, char const* const* argv)
+@@ -2252,7 +2255,22 @@ int app_main(int argc, char const* const* argv)
  
      G_ExtPreInit(argc, argv);
  

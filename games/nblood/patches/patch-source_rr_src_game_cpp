@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_rr_src_game_cpp,v 1.2 2020/01/25 23:53:44 jsg Exp $
+$OpenBSD: patch-source_rr_src_game_cpp,v 1.3 2020/03/14 06:15:15 jsg Exp $
 
 store log file in ~/.config/rednukem/
 
 Index: source/rr/src/game.cpp
 --- source/rr/src/game.cpp.orig
 +++ source/rr/src/game.cpp
-@@ -7782,6 +7782,9 @@ EDUKE32_STATIC_ASSERT(sizeof(DukePlayer_t)%4 == 0);
+@@ -7832,6 +7832,9 @@ EDUKE32_STATIC_ASSERT(sizeof(DukePlayer_t)%4 == 0);
  
  int app_main(int argc, char const * const * argv)
  {
@@ -15,7 +15,7 @@ Index: source/rr/src/game.cpp
  #ifndef NETCODE_DISABLE
      if (enet_initialize() != 0)
          initprintf("An error occurred while initializing ENet.\n");
-@@ -7812,21 +7815,22 @@ int app_main(int argc, char const * const * argv)
+@@ -7862,21 +7865,22 @@ int app_main(int argc, char const * const * argv)
  
      G_ExtPreInit(argc, argv);
  

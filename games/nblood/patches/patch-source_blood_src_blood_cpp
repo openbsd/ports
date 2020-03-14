@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_blood_src_blood_cpp,v 1.2 2020/01/25 23:53:44 jsg Exp $
+$OpenBSD: patch-source_blood_src_blood_cpp,v 1.3 2020/03/14 06:15:15 jsg Exp $
 
 store log file in ~/.config/nblood/
 
 Index: source/blood/src/blood.cpp
 --- source/blood/src/blood.cpp.orig
 +++ source/blood/src/blood.cpp
-@@ -1571,6 +1571,9 @@ static int32_t check_filename_casing(void)
+@@ -1505,6 +1505,9 @@ static int32_t check_filename_casing(void)
  int app_main(int argc, char const * const * argv)
  {
      char buffer[BMAX_PATH];
@@ -15,7 +15,7 @@ Index: source/blood/src/blood.cpp
      margc = argc;
      margv = argv;
  #ifdef _WIN32
-@@ -1597,7 +1600,22 @@ int app_main(int argc, char const * const * argv)
+@@ -1531,7 +1534,22 @@ int app_main(int argc, char const * const * argv)
  #endif
  #endif
  

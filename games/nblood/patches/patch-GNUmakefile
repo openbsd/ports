@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+$OpenBSD: patch-GNUmakefile,v 1.2 2020/03/14 06:15:15 jsg Exp $
 
 Index: GNUmakefile
 --- GNUmakefile.orig
@@ -31,7 +31,7 @@ Index: GNUmakefile
  endif
  
  ifeq ($(PLATFORM),DARWIN)
-@@ -1232,7 +1231,7 @@ endif
+@@ -1240,7 +1239,7 @@ endif
  
  #### Final setup
  
@@ -40,7 +40,7 @@ Index: GNUmakefile
      -I$(engine_inc) \
      -I$(mact_inc) \
      -I$(audiolib_inc) \
-@@ -1240,6 +1239,7 @@ COMPILERFLAGS += \
+@@ -1248,6 +1247,7 @@ COMPILERFLAGS += \
      -I$(voidwrap_inc) \
      -I$(libsmackerdec_inc) \
      -MP -MMD \
@@ -48,7 +48,7 @@ Index: GNUmakefile
  
  ifneq (0,$(USE_PHYSFS))
      COMPILERFLAGS += -I$(physfs_inc) -DUSE_PHYSFS
-@@ -1260,7 +1260,6 @@ libraries := \
+@@ -1268,7 +1268,6 @@ libraries := \
      audiolib \
      engine \
      glad \

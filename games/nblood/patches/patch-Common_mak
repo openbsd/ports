@@ -1,9 +1,9 @@
-$OpenBSD: patch-Common_mak,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+$OpenBSD: patch-Common_mak,v 1.2 2020/03/14 06:15:15 jsg Exp $
 
 Index: Common.mak
 --- Common.mak.orig
 +++ Common.mak
-@@ -714,7 +714,7 @@ ifeq (0,$(RELEASE))
+@@ -715,7 +715,7 @@ ifeq (0,$(RELEASE))
      F_NO_STACK_PROTECTOR :=
  else
      ifeq (0,$(CLANG))
