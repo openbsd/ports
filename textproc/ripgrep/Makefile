@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2020/03/02 07:20:23 semarie Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/14 16:49:58 abieber Exp $
 
 COMMENT =		line oriented search tool using Rust's regex library #'
 
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
 GH_TAGNAME =		11.0.2
+REVISION =		0
 
 CATEGORIES =		textproc sysutils
 
@@ -99,14 +100,13 @@ MODCARGO_RUSTFLAGS =	-C debuginfo=0
 RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release
 OUT_DIR =		${RELEASE_DIR}/build/ripgrep-*/out
 
+# fish completion excluded as it is shipped with shells/fish
 do-install:
 	${INSTALL_PROGRAM} ${RELEASE_DIR}/rg ${PREFIX}/bin/
 	${INSTALL_MAN} ${OUT_DIR}/rg.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${OUT_DIR}/rg.bash \
 	    ${PREFIX}/share/bash-completion/completions/rg
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions
-	${INSTALL_DATA} ${OUT_DIR}/rg.fish ${PREFIX}/share/fish/completions/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${OUT_DIR}/_rg.ps1 ${PREFIX}/share/zsh/site-functions/_rg
 
