@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2019/11/07 10:09:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2020/03/14 14:44:19 ajacoutot Exp $
 
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=		spice-gtk-0.37
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 CATEGORIES=		x11 net
 
@@ -42,6 +43,9 @@ BUILD_DEPENDS=		devel/gobject-introspection \
 			textproc/asciidoc
 
 RUN_DEPENDS=		sysutils/usbutils
+
+# "Requires: spice-protocol" in spice-client-glib-2.0.pc
+RUN_DEPENDS +=		devel/spice-protocol		
 
 LIB_DEPENDS=		archivers/lz4 \
 			audio/opus \
