@@ -1,0 +1,17 @@
+#!/bin/ksh
+#
+# $OpenBSD: mautrix_whatsapp.rc,v 1.1.1.1 2020/03/14 16:17:39 abieber Exp $
+
+daemon="${TRUEPREFIX}/bin/mautrix-whatsapp"
+daemon_user="_whatsapp"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_stop() {
+	pkill -INT -xf "${pexp}"
+}
+
+rc_cmd $1

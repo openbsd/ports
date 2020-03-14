@@ -1,0 +1,31 @@
+$OpenBSD: README,v 1.1.1.1 2020/03/14 16:17:39 abieber Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Requirements
+============
+
+To be able to run ${PKGSTEM}, you will need the following things:
+- a Matrix homeserver that supports application services (e.g. synapse)
+- a WhatsApp client running on a phone or in an emulated Android VM.
+
+Configuring ${PKGSTEM}
+======================
+
+Copy example-config.yaml to config.yaml
+Update the config to your liking.
+
+You need to make sure that the address and domain field point to your homeserver
+You will also need to add your user of admin user under the permissions section.
+
+Generate the appservice registration file by running ${PKGSTEM} -g
+
+You can use the -c and -r flags to change the location of the config and
+registration files. They default to config.yaml and registration.yaml in
+${VARBASE}/whatsapp.
+
+Add the path to the registration file to your synapse homeserver.yaml under
+app_service_config_files. You will then need to restart the synapse server.
+Remember to restart it every time the registration file is regenerated.

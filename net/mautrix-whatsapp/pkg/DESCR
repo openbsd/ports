@@ -1,0 +1,3 @@
+mautrix-whatsassp is a Matrix-WhatsApp puppeting bridge
+based the Rhymen/go-whatsapp implementation of the
+sigalor/whatsapp-web-reveng project.
