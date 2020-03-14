@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2019/12/04 00:14:45 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2020/03/14 15:35:29 kn Exp $
 
 COMMENT=	trivial database library
 
 # Keep in sync with the version bundled in net/samba
 DISTNAME=	tdb-1.3.18
+
+# 0750 on Makefile and other files breaks update-patches with PORTS_PRIVSEP=Yes
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 SHARED_LIBS+=	tdb	4.4
 
