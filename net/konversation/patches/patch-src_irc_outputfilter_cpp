@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_irc_outputfilter_cpp,v 1.1 2020/03/14 15:12:11 rsadowski Exp $
+
+Index: src/irc/outputfilter.cpp
+--- src/irc/outputfilter.cpp.orig
++++ src/irc/outputfilter.cpp
+@@ -36,6 +36,7 @@
+ #include <QTextCodec>
+ #include <QByteArray>
+ #include <QTextStream>
++#include <QMetaMethod>
+ 
+ #include <KPasswordDialog>
+ #include <KMessageBox>
