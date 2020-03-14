@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2019/08/24 06:37:13 giovanni Exp $
+# $OpenBSD: Makefile,v 1.138 2020/03/14 16:01:19 kn Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -7,6 +7,7 @@ MODPY_EGG_VERSION=	7.80
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dist/
@@ -26,6 +27,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 USE_GMAKE=	Yes
 MODLUA_SA=	Yes
 MODLUA_VERSION=	5.3
+# added manually for -zenmap
+MODPY_RUNDEP=	No
 MODULES=	lang/python \
 		lang/lua
 
@@ -53,7 +56,8 @@ LIB_DEPENDS-main=devel/pcre \
 		${MODLUA_LIB_DEPENDS} \
 		security/libssh2
 
-RUN_DEPENDS-zenmap=	x11/py-gtk2 \
+RUN_DEPENDS-zenmap=	${MODPY_RUN_DEPENDS} \
+			x11/py-gtk2 \
 			databases/py-sqlite2 \
 			devel/desktop-file-utils \
 			net/nmap
