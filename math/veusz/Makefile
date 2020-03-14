@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2019/11/23 17:51:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/14 13:29:02 bcallah Exp $
 
 COMMENT =	scientific plotting and graphing package
-MODPY_EGG_VERSION =	3.1
+MODPY_EGG_VERSION =	3.2
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
 CATEGORIES =	math graphics
 
