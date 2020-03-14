@@ -1,0 +1,13 @@
+$OpenBSD: patch-kguitar_trackview_cpp,v 1.1 2020/03/14 14:24:35 rsadowski Exp $
+
+Index: kguitar/trackview.cpp
+--- kguitar/trackview.cpp.orig
++++ kguitar/trackview.cpp
+@@ -22,6 +22,7 @@
+ #include <qstyle.h>
+ #include <QResizeEvent>
+ #include <QMouseEvent>
++#include <QHeaderView>
+ 
+ #include "trackprint.h"
+ #include "songprint.h"

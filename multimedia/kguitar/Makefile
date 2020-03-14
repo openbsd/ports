@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/03/14 14:24:35 rsadowski Exp $
 
 COMMENT =	guitar tab editor
 
@@ -8,7 +8,7 @@ GH_COMMIT =	a7c73491ef236134de55cbdcfc9f8cafa2a76ae1
 
 # commit date YYYYMMDD
 DISTNAME =	${GH_PROJECT}-20170809
-REVISION =	4
+REVISION =	5
 
 # override kf5
 EXTRACT_SUFX =	.tar.gz
