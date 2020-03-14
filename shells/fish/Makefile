@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/08 15:35:55 abieber Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/14 16:31:29 abieber Exp $
 
 COMMENT =		friendly interactive shell
 
-V =			3.0.2
+V =			3.1.0
 DISTNAME =		fish-$V
-REVISION =		2
 
 CATEGORIES =		shells
 
@@ -22,15 +21,10 @@ MASTER_SITES =		https://github.com/fish-shell/fish-shell/releases/download/${V}/
 # C++11
 COMPILER =		base-clang ports-gcc base-gcc
 
-MODULES =		lang/python
+MODULES =		devel/cmake \
+			lang/python
 
-# https://github.com/fish-shell/fish-shell/pull/4685
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
-
-BUILD_DEPENDS =		devel/gettext,-tools \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext,-runtime
@@ -44,20 +38,9 @@ MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 
 MAKE_FLAGS =		V=1
 
-USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-included-pcre2
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-FAKE_FLAGS =		SYSCONFDIR=${PREFIX}/share/examples/fish
-
-TEST_TARGET =		test
-
-pre-configure:
-	sed -i 's/getopt/gnugetopt/' ${WRKSRC}/share/functions/*.fish
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
@@ -67,11 +50,7 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/fish/tools/web_config/webconfig.py
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fish
-	mv ${DESTDIR}/etc/fish/config.fish ${PREFIX}/share/examples/fish/
-	rm -Rf ${DESTDIR}/etc/fish
-
-# Encountered 196 errors in low-level tests
-do-test:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} DESTDIR=${DESTDIR} test
+	mv ${PREFIX}/etc/fish/config.fish ${PREFIX}/share/examples/fish/
+	rm -Rf ${PREFIX}/etc/
 
 .include <bsd.port.mk>
