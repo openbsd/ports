@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2020/03/13 16:54:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.237 2020/03/15 19:57:16 rsadowski Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -7,7 +7,7 @@ V=		3.0.8
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	3
+REVISION-main=	4
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -29,14 +29,15 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		SDL SDL_image SM X11 X11-xcb Xau Xcomposite Xcursor \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
 		Xxf86vm aom archive ass atk-1.0 atk-bridge-2.0 avcodec \
-		avformat avutil b2 bluray bz2 c cairo cairo-gobject cddb \
-		charset crypto dav1d drm dvbpsi dvdnav \
-		dvdread ebml epoxy execinfo expat ffi fontconfig freetype \
-		fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi \
-		glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error \
-		graphite2 gsm gthread-2.0 gtk-3 harfbuzz hogweed icudata \
-		icui18n icuuc idn2 jpeg lcms2 lz4 lzma matroska mp3lame \
-		nettle nfs notify ogg opus p11-kit pango-1.0 pangocairo-1.0 \
+		avformat avutil b2 bluray bz2 c cairo cairo-gobject \
+		cddb charset crypto dav1d dbus-1 double-conversion \
+		drm dvbpsi dvdnav dvdread ebml epoxy execinfo expat \
+		ffi fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 \
+		gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 \
+		gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz \
+		hogweed iconv icudata icui18n icuio icuuc idn idn2 \
+		intl jpeg lcms2 lz4 lzma m matroska mp3lame nettle \
+		nfs notify ogg opus p11-kit pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pcre2-16 pixman-1 placebo png postproc \
 		rsvg-2 samplerate smb2 sndio speex speexdsp ssl swresample \
 		swscale tag tar tasn1 theoradec theoraenc tiff unistring \
