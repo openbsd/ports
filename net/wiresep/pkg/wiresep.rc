@@ -1,0 +1,12 @@
+#!/bin/ksh
+#
+# $OpenBSD: wiresep.rc,v 1.1.1.1 2020/03/15 22:02:04 abieber Exp $
+
+daemon="${TRUEPREFIX}/sbin/wiresep"
+
+. /etc/rc.d/rc.subr
+
+pexp="wiresep: master"
+rc_reload=NO
+
+rc_cmd $1

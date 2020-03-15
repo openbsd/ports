@@ -1,0 +1,21 @@
+$OpenBSD: README,v 1.1.1.1 2020/03/15 22:02:04 abieber Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Basics
+======
+
+Create a new configuration file in ${SYSCONFDIR}/wiresep/wiresep.conf and create
+a new private key with wiresep-keygen(1) and store it in
+${SYSCONFDIR}/wiresep/tun0.key.
+
+See wiresep.conf(5) and ${PREFIX}/share/examples/wiresep/wiresep.conf.example
+for a basic example configuration.
+
+After you have created a config file and a key for the interface, wiresep can be
+started with `rcctl start wiresep`. If you want to enable wiresep on startup run
+`rcctl enable wiresep`.
+
+Additional information on wiresep can be found in wiresep(8).

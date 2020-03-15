@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/15 22:02:04 abieber Exp $
+@newgroup _wiresep:505
+@newuser _wiresep:505:_wiresep:daemon:WireSep Daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/wiresep
+@sample ${SYSCONFDIR}/wiresep/
+@bin bin/wiresep-keygen
+@man man/man1/wiresep-keygen.1
+@man man/man5/wiresep.conf.5
+@man man/man8/wiresep.8
+@bin sbin/wiresep
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/wiresep/
+share/examples/wiresep/wiresep.conf.example
+@sample ${SYSCONFDIR}/wiresep/wiresep.conf

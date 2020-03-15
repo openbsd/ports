@@ -1,0 +1,5 @@
+WireSep is a privilege separated implementation of WireGuard for
+OpenBSD.
+
+WireGuard is a VPN that aims to be simpler and faster than IPsec and
+OpenVPN. Simpler both in configuration and in implementation.
