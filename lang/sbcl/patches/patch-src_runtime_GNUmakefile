@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_runtime_GNUmakefile,v 1.8 2018/03/08 15:17:39 sthen Exp $
+$OpenBSD: patch-src_runtime_GNUmakefile,v 1.9 2020/03/15 19:54:00 solene Exp $
 Index: src/runtime/GNUmakefile
 --- src/runtime/GNUmakefile.orig
 +++ src/runtime/GNUmakefile
-@@ -30,7 +30,7 @@ __LDFLAGS__ =
+@@ -34,7 +34,7 @@ __LDFLAGS__ =
  
  include ../../output/prefix.def
  

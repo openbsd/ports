@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/09/16 06:24:18 solene Exp $
+# $OpenBSD: Makefile,v 1.44 2020/03/15 19:53:59 solene Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -6,7 +6,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.5.5
+V =			2.0.1
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -82,6 +82,7 @@ do-install:
 
 post-install:
 	chown -R 0:0 ${PREFIX}/lib/sbcl
+	rmdir ${PREFIX}/share/doc/sbcl/html
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DONT_CLEAN_SBCL_CONTRIB=1 \
