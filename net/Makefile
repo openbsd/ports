@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1179 2020/03/14 16:21:52 abieber Exp $
+# $OpenBSD: Makefile,v 1.1180 2020/03/15 22:05:46 abieber Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -787,6 +787,7 @@
      SUBDIR += wireguard-go
      SUBDIR += wireguard-tools
      SUBDIR += wireless
+     SUBDIR += wiresep
      SUBDIR += wireshark
      SUBDIR += wmnetload
      SUBDIR += wol
