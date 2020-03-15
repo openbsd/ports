@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2020/03/06 22:22:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.245 2020/03/15 19:33:32 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -111,7 +111,7 @@ CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,-relax"
 CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,-relax"
 .endif
 
-TEST_TARGET =		check check-clang check-clang-tools
+TEST_TARGET =		check check-clang
 
 # XXX sync
 GCC_VER =		8.3.0
