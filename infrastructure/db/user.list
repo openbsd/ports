@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.362 2020/03/14 16:18:59 abieber Exp $
+$OpenBSD: user.list,v 1.363 2020/03/15 22:05:08 abieber Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -13,6 +13,7 @@ id  user		group		port
 502 _mysql		_mysql		databases/mariadb,-server
 503 _postgresql		_postgresql	databases/postgresql,-server
 504 _mailman		_mailman	mail/mailman
+505 _wiresep		_wiresep	net/wiresep
 506 _spamdaemon		_spamdaemon	mail/p5-Mail-SpamAssassin
 507 _postfix		_postfix	mail/postfix/{snapshot,stable}
 508			_postdrop	mail/postfix/{snapshot,stable}
