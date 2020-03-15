@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/13 11:56:53 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/15 11:13:49 edd Exp $
 
 COMMENT =	magic wormhole implementation in Go
 
-V =		1.0.2
+V =		1.0.3
 DISTNAME =	wormhole-william-vendored-${V}
 PKGNAME =	wormhole-william-${V}
 
