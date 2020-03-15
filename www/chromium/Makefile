@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.493 2020/03/11 23:57:03 espie Exp $
+# $OpenBSD: Makefile,v 1.494 2020/03/15 09:26:52 espie Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -26,9 +26,9 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz
 
-FLAVORS=		debug component electron
+FLAVORS=		debug component
 FLAVOR?=
-REVISION=		0
+REVISION=		1
 
 # BSD-like
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_BUILD_gn,v 1.30 2020/03/05 07:52:49 robert Exp $
+$OpenBSD: patch-v8_BUILD_gn,v 1.31 2020/03/15 09:26:52 espie Exp $
 
 Disable v8_enable_pointer_compression because it allocates 4G+ memory.
 A complete shitshow!
@@ -6,6 +6,17 @@ A complete shitshow!
 Index: v8/BUILD.gn
 --- v8/BUILD.gn.orig
 +++ v8/BUILD.gn
+@@ -103,8 +103,8 @@ declare_args() {
+   v8_enable_verify_csa = false
+ 
+   # Enable pointer compression (sets -dV8_COMPRESS_POINTERS).
+-  v8_enable_pointer_compression = ""
+-  v8_enable_31bit_smis_on_64bit_arch = true
++  v8_enable_pointer_compression = false
++  v8_enable_31bit_smis_on_64bit_arch = false
+ 
+   # Sets -dOBJECT_PRINT.
+   v8_enable_object_print = ""
 @@ -673,6 +673,9 @@ config("toolchain") {
    } else if (target_os == "win") {
      defines += [ "V8_HAVE_TARGET_OS" ]
