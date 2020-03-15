@@ -1,4 +1,4 @@
-$OpenBSD: patch-util-src_table_c,v 1.1 2017/11/24 12:47:34 jca Exp $
+$OpenBSD: patch-util-src_table_c,v 1.2 2020/03/15 19:04:25 solene Exp $
 
 Index: util-src/table.c
 --- util-src/table.c.orig
@@ -13,7 +13,7 @@ Index: util-src/table.c
  	lua_insert(L, 1);
  
 -	for(int arg = n_args; arg >= 1; arg--) {
-+	for(n_args; arg >= 1; arg--) {
++	for(arg = n_args; arg >= 1; arg--) {
  		lua_rawseti(L, 1, arg);
  	}
  

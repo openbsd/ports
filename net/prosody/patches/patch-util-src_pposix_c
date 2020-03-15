@@ -1,0 +1,19 @@
+$OpenBSD: patch-util-src_pposix_c,v 1.1 2020/03/15 19:04:25 solene Exp $
+
+Define _BSD_SOURCE to make initgroups(3) visible
+
+Index: util-src/pposix.c
+--- util-src/pposix.c.orig
++++ util-src/pposix.c
+@@ -33,6 +33,11 @@
+ #ifndef _POSIX_C_SOURCE
+ #define _POSIX_C_SOURCE 200809L
+ #endif
++#if defined(__OpenBSD__)
++#ifndef _BSD_SOURCE
++#define _BSD_SOURCE
++#endif
++#endif
+ 
+ #include <stdlib.h>
+ #include <math.h>

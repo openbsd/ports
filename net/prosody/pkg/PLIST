@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/02/07 19:23:39 danj Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/03/15 19:04:25 solene Exp $
 @newgroup _prosody:638
 @newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/prosody
@@ -149,18 +149,18 @@ lib/prosody/util/array.lua
 lib/prosody/util/async.lua
 lib/prosody/util/cache.lua
 lib/prosody/util/caps.lua
-lib/prosody/util/compat.so
+@so lib/prosody/util/compat.so
 lib/prosody/util/dataforms.lua
 lib/prosody/util/datamanager.lua
 lib/prosody/util/datetime.lua
 lib/prosody/util/debug.lua
 lib/prosody/util/dependencies.lua
-lib/prosody/util/encodings.so
+@so lib/prosody/util/encodings.so
 lib/prosody/util/envload.lua
 lib/prosody/util/events.lua
 lib/prosody/util/filters.lua
 lib/prosody/util/format.lua
-lib/prosody/util/hashes.so
+@so lib/prosody/util/hashes.so
 lib/prosody/util/helpers.lua
 lib/prosody/util/hex.lua
 lib/prosody/util/hmac.lua
@@ -176,12 +176,12 @@ lib/prosody/util/json.lua
 lib/prosody/util/logger.lua
 lib/prosody/util/mercurial.lua
 lib/prosody/util/multitable.lua
-lib/prosody/util/net.so
+@so lib/prosody/util/net.so
 lib/prosody/util/openssl.lua
 lib/prosody/util/paths.lua
 lib/prosody/util/pluginloader.lua
-lib/prosody/util/poll.so
-lib/prosody/util/pposix.so
+@so lib/prosody/util/poll.so
+@so lib/prosody/util/pposix.so
 lib/prosody/util/presence.lua
 lib/prosody/util/promise.lua
 lib/prosody/util/prosodyctl.lua
@@ -189,7 +189,7 @@ lib/prosody/util/pubsub.lua
 lib/prosody/util/queue.lua
 lib/prosody/util/random.lua
 lib/prosody/util/rfc6724.lua
-lib/prosody/util/ringbuffer.so
+@so lib/prosody/util/ringbuffer.so
 lib/prosody/util/rsm.lua
 lib/prosody/util/sasl/
 lib/prosody/util/sasl.lua
@@ -202,18 +202,18 @@ lib/prosody/util/sasl_cyrus.lua
 lib/prosody/util/serialization.lua
 lib/prosody/util/session.lua
 lib/prosody/util/set.lua
-lib/prosody/util/signal.so
+@so lib/prosody/util/signal.so
 lib/prosody/util/sql.lua
 lib/prosody/util/sslconfig.lua
 lib/prosody/util/stanza.lua
 lib/prosody/util/startup.lua
 lib/prosody/util/statistics.lua
 lib/prosody/util/statsd.lua
-lib/prosody/util/table.so
+@so lib/prosody/util/table.so
 lib/prosody/util/template.lua
 lib/prosody/util/termcolours.lua
 lib/prosody/util/throttle.lua
-lib/prosody/util/time.so
+@so lib/prosody/util/time.so
 lib/prosody/util/timer.lua
 lib/prosody/util/uuid.lua
 lib/prosody/util/vcard.lua
@@ -251,8 +251,4 @@ share/examples/prosody/prosody.cfg.lua
 @mode 770
 @owner _prosody
 @group _prosody
-share/examples/prosody/prosody.log
-@mode 660
-@sample /var/prosody/prosody.log
-@mode 770
 @sample /var/prosody/

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2018/09/04 12:46:18 espie Exp $
+$OpenBSD: README,v 1.11 2020/03/15 19:04:25 solene Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -40,8 +40,8 @@ Using Prosody in an OpenBSD environment
 
 5) In case you decide to enable 'mod_storage_sql', the default SQLite3
    driver has already been installed. If you like to use MySQL/MariaDB or
-   PostgreSQL for the database, please install luadbi-mysql,${FLAVOR}
-   or luadbi-pgsql,${FLAVOR} respectively.
+   PostgreSQL for the database, please install luadbi-mysql or luadbi-pgsql
+   respectively.
 
    For MySQL/MariaDB, also add the following to /etc/login.conf:
 
