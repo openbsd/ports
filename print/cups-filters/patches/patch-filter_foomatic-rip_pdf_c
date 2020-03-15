@@ -1,6 +1,9 @@
-$OpenBSD: patch-filter_foomatic-rip_pdf_c,v 1.1 2020/03/08 14:34:05 ajacoutot Exp $
+$OpenBSD: patch-filter_foomatic-rip_pdf_c,v 1.2 2020/03/15 10:54:33 ajacoutot Exp $
 
-https://github.com/OpenPrinting/cups-filters/issues/216
+From 84d0b48a4f20a770e5daff3c19f33ea1a02b66c3 Mon Sep 17 00:00:00 2001
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Tue, 10 Mar 2020 17:04:55 +0100
+Subject: [PATCH] foomatic-rip: Do PDF page count in -dNOSAFER mode
 
 Index: filter/foomatic-rip/pdf.c
 --- filter/foomatic-rip/pdf.c.orig
@@ -10,7 +13,7 @@ Index: filter/foomatic-rip/pdf.c
      char *p;
  
 -    snprintf(gscommand, CMDLINE_MAX, "%s -dNODISPLAY -dSAFER -dNOPAUSE -q -c "
-+    snprintf(gscommand, CMDLINE_MAX, "%s -dNODISPLAY -dNOPAUSE -q -c "
++    snprintf(gscommand, CMDLINE_MAX, "%s -dNODISPLAY -dNOSAFER -dNOPAUSE -q -c "
  	     "'/pdffile (%s) (r) file runpdfbegin (PageCount: ) print "
  	     "pdfpagecount = quit'",
  	     gspath, filename);
