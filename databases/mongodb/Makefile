@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/03/15 21:16:58 kn Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -12,7 +12,7 @@ COMMENT =	scalable, high-performance document-oriented database
 DISTNAME =	mongodb-src-r3.2.22
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.mongodb.com/
 
@@ -35,6 +35,7 @@ NO_CCACHE =	Yes
 
 COMPILER =	base-clang ports-gcc
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_RUNDEP =	No
 MODSCONS_ENV =	CC="${CC}" \
 		CXX="${CXX}" \
 		CCFLAGS="${CFLAGS} -DBOOST_NO_USER_CONFIG" \
