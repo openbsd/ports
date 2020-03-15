@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2020/03/13 16:53:50 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2020/03/15 19:57:07 rsadowski Exp $
 @conflict qt5-<5.6
 bin/moc-qt5
 bin/qmake-qt5
@@ -2736,6 +2736,7 @@ lib/qt5/cmake/Qt5PlatformCompositorSupport/Qt5PlatformCompositorSupportConfigVer
 lib/qt5/cmake/Qt5PrintSupport/
 lib/qt5/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake
 lib/qt5/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake
+lib/qt5/cmake/Qt5PrintSupport/Qt5PrintSupport_QCupsPrinterSupportPlugin.cmake
 lib/qt5/cmake/Qt5ServiceSupport/
 lib/qt5/cmake/Qt5ServiceSupport/Qt5ServiceSupportConfig.cmake
 lib/qt5/cmake/Qt5ServiceSupport/Qt5ServiceSupportConfigVersion.cmake
@@ -3591,6 +3592,8 @@ lib/qt5/plugins/platforms/
 lib/qt5/plugins/platformthemes/
 @so lib/qt5/plugins/platformthemes/libqgtk3.so
 @so lib/qt5/plugins/platformthemes/libqxdgdesktopportal.so
+lib/qt5/plugins/printsupport/
+@so lib/qt5/plugins/printsupport/libcupsprintersupport.so
 lib/qt5/plugins/sqldrivers/
 @so lib/qt5/plugins/sqldrivers/libqsqlite.so
 @so lib/qt5/plugins/sqldrivers/libqsqlodbc.so

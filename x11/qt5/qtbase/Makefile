@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/03/13 16:53:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2020/03/15 19:57:07 rsadowski Exp $
 
 DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -15,6 +15,8 @@ PKGNAME-global =	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
+
+REVISON-main =		0
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
@@ -38,14 +40,15 @@ SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.13
 SHARED_LIBS +=  Qt5XcbQpa                    0.0 # 5.13
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
-WANTLIB-main += c cairo cairo-gobject crypto dbus-1 drm execinfo fontconfig
-WANTLIB-main += freetype gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-main += gobject-2.0 gthread-2.0 gtk-3 harfbuzz icudata icui18n
-WANTLIB-main += icuio icuuc iodbc iodbcinst jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += pcre2-16 png sqlite3 ssl xcb xcb-glx xcb-icccm xcb-image
-WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
-WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xinput
-WANTLIB-main += xcb-xkb xkbcommon xkbcommon-x11 z zstd
+WANTLIB-main += c cairo cairo-gobject crypto cups dbus-1 double-conversion
+WANTLIB-main += drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
+WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB-main += icudata icui18n icuio icuuc iodbc iodbcinst jpeg m
+WANTLIB-main += pango-1.0 pangocairo-1.0 pcre2-16 png sqlite3 ssl xcb
+WANTLIB-main += xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr xcb-render
+WANTLIB-main += xcb-render-util xcb-shape xcb-shm xcb-sync xcb-xfixes
+WANTLIB-main += xcb-xinerama xcb-xinput xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB-main += z zstd
 
 WANTLIB-global =
 
@@ -81,6 +84,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/pcre2 \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \
+			math/double-conversion \
+			print/cups,-libs \
 			textproc/icu4c \
 			x11/dbus \
 			x11/gtk+3 \
@@ -143,6 +148,10 @@ QT_QMLDIR =	${QT_BASEDIR}/qml
 
 CONFIGURE_ARGS +=	OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto"
 
+# configure
+CONFIGURE_ARGS+= -I "${LOCALBASE}/include"
+CONFIGURE_ARGS+= -L "${LOCALBASE}/lib"
+
 # paths
 CONFIGURE_ARGS +=	-bindir ${QT_BINDIR} \
 			-datadir ${QT_BASEDIR} \
@@ -151,7 +160,7 @@ CONFIGURE_ARGS +=	-bindir ${QT_BINDIR} \
 			-headerdir ${QT_INCDIR} \
 			-libdir ${QT_BASEDIR} \
 			-plugindir ${QT_PLUGINSDIR} \
-			-prefix ${PREFIX} \
+			-prefix ${QT_BASEDIR} \
 			-qmldir ${QT_QMLDIR} \
 			-sysconfdir ${SYSCONFDIR}/xdg
 
@@ -159,7 +168,6 @@ CONFIGURE_ARGS +=	-bindir ${QT_BINDIR} \
 CONFIGURE_ARGS +=	-confirm-license \
 			-no-compile-examples \
 			-opensource \
-			-openssl-linked \
 			-rpath \
 			-shared \
 			-verbose
@@ -188,23 +196,11 @@ CONFIGURE_ARGS +=	-debug
 CONFIGURE_ARGS +=	-release
 .endif
 
-# paths
-CONFIGURE_ARGS +=	-L${X11BASE}/lib \
-			-R${X11BASE}/lib \
-			-bindir ${QT_BINDIR} \
-			-datadir ${QT_BASEDIR} \
-			-docdir ${QT_DOC} \
-			-examplesdir ${QT_EXAMPLES} \
-			-headerdir ${QT_INCDIR} \
-			-libdir ${QT_BASEDIR} \
-			-plugindir ${QT_PLUGINSDIR} \
-			-prefix ${QT_BASEDIR} \
-			-sysconfdir ${SYSCONFDIR}
-
 CONFIGURE_ARGS +=	-c++std c++17
 
 ## other options
 CONFIGURE_ARGS +=	-accessibility \
+			-cups \
 			-dbus-linked \
 			-glib \
 			-icu \
@@ -213,6 +209,7 @@ CONFIGURE_ARGS +=	-accessibility \
 			-pkg-config \
 			-syslog \
 			-system-harfbuzz \
+			-system-doubleconversion \
 			-system-libjpeg \
 			-system-libpng \
 			-system-pcre \
