@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/15 10:21:13 bket Exp $
 
 COMMENT =		Jupyter notebook format
 
-MODPY_EGG_VERSION =	4.3.0
+MODPY_EGG_VERSION =	4.4.0
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://jupyter.org
+HOMEPAGE =		https://jupyter.org
 
 RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
-			devel/py-traitlets${MODPY_FLAVOR} \
+			devel/py-traitlets${MODPY_FLAVOR}>=4.1 \
 			devel/py-jupyter_core${MODPY_FLAVOR}>=4.3.0 \
-			devel/py-jsonschema${MODPY_FLAVOR}
+			devel/py-jsonschema${MODPY_FLAVOR}>=2.4
 TEST_DEPENDS =		devel/py-testpath${MODPY_FLAVOR}
 
 # BSD
