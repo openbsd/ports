@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/02 08:21:58 tb Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/15 05:45:03 tb Exp $
 
 COMMENT =		fuzzer and test suite for TLS implementations.
 
-MODPY_EGG_VERSION =	20200215
+MODPY_EGG_VERSION =	20200313
 DISTNAME =		tlsfuzzer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
 
 GH_ACCOUNT =		tomato42
 GH_PROJECT =		tlsfuzzer
-GH_COMMIT =		64a76682530f70de17360eba86ae146e4f534217
+GH_COMMIT =		7f890e3b595a5e283cbbab66d04423048919b619
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
@@ -20,8 +20,7 @@ FLAVORS =		python3
 
 WANTLIB +=		${MODPY_WANTLIB}
 
-RUN_DEPENDS +=		net/py-tlslite-ng${MODPY_FLAVOR} \
-			security/py-ecdsa${MODPY_FLAVOR}
+RUN_DEPENDS +=		net/py-tlslite-ng${MODPY_FLAVOR}
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
