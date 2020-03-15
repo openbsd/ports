@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/04 08:33:50 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/15 19:48:10 fcambus Exp $
 include/uninameslist.h
-lib/libuninameslist.a
+@static-lib lib/libuninameslist.a
 lib/libuninameslist.la
 @lib lib/libuninameslist.so.${LIBuninameslist_VERSION}
 lib/pkgconfig/libuninameslist.pc
