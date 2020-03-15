@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/13 16:54:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/15 19:57:21 rsadowski Exp $
 
 COMMENT-main=	open H.265 video codec implementation
 COMMENT-tools=	tools for libde265 open H.265 video codec
@@ -8,7 +8,7 @@ DISTNAME=	libde265-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tools=	libde265-tools-$V
 REVISION=	1
-REVISION-tools=	2
+REVISION-tools=	3
 
 SHARED_LIBS +=  de265                     0.0 # 0.12
 
@@ -23,11 +23,12 @@ WANTLIB += ${COMPILER_LIBCXX} m
 
 WANTLIB-tools += ${WANTLIB}
 WANTLIB-tools += GL Qt5Core Qt5Gui Qt5Widgets SDL X11 X11-xcb Xdamage
-WANTLIB-tools += Xext Xfixes Xxf86vm avutil c de265 drm
-WANTLIB-tools += execinfo expat freetype glapi glib-2.0 graphite2 gthread-2.0
-WANTLIB-tools += harfbuzz iconv icudata icui18n icuuc intl pcre pcre2-16
-WANTLIB-tools += png sndio swscale usbhid xcb xcb-dri2 xcb-dri3 xcb-glx
-WANTLIB-tools += xcb-present xcb-sync xcb-xfixes xshmfence z
+WANTLIB-tools += Xext Xfixes Xxf86vm avutil c de265 double-conversion
+WANTLIB-tools += drm execinfo expat freetype glapi glib-2.0 graphite2
+WANTLIB-tools += gthread-2.0 harfbuzz iconv icudata icui18n icuio icuuc
+WANTLIB-tools += intl pcre pcre2-16 png sndio swscale usbhid xcb xcb-dri2
+WANTLIB-tools += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
+WANTLIB-tools += z zstd
 
 MULTI_PACKAGES=	-main -tools
 
