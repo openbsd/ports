@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1180 2020/03/15 22:05:46 abieber Exp $
+# $OpenBSD: Makefile,v 1.1181 2020/03/16 14:06:58 solene Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -86,7 +86,6 @@
      SUBDIR += dsvpn
      SUBDIR += dxpc
      SUBDIR += echoping
-     SUBDIR += ejabberd
      SUBDIR += ekg
      SUBDIR += enet
      SUBDIR += epic4
