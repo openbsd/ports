@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.70 2020/02/14 13:14:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2020/03/16 16:07:45 jasper Exp $
 
     SUBDIR =
-    SUBDIR += 16
     SUBDIR += 19
     SUBDIR += 21
 

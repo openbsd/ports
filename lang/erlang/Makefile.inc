@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.21 2020/02/14 13:14:57 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2020/03/16 16:07:45 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
 CATEGORIES =	lang
 
-# Erlang 16:	Erlang Public License
-#		http://www.erlang.org/EPLICENSE
-# Erlang 18+:	Apachev2
+# Apachev2
 PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =	http://www.erlang.org/

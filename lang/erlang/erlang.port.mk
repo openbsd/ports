@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.26 2020/02/14 13:14:57 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.27 2020/03/16 16:07:45 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -8,7 +8,7 @@ USE_GMAKE ?=		Yes
 
 # Default Erlang version to use if MODERL_VERSION is not set.
 # XXX: Keep in sync with devel/rebar/Makefile
-MODERL_DEFAULT_VERSION =16
+MODERL_DEFAULT_VERSION =21
 
 # If the port already has flavors, append ours to it unless the port requires
 # a specific version of Erlang.
@@ -32,9 +32,7 @@ MODERL_VERSION ?=	${MODERL_DEFAULT_VERSION}
 _MODERL_FLAVOR ?=	# empty
 .endif
 
-.if ${MODERL_VERSION} == 16
-_MODERL_FLAVOR =	erlang16
-.elif ${MODERL_VERSION} == 19
+.if ${MODERL_VERSION} == 19
 _MODERL_FLAVOR =	erlang19
 .elif ${MODERL_VERSION} == 21
 _MODERL_FLAVOR =	erlang21
@@ -48,7 +46,7 @@ CONFIGURE_STYLE =	rebar
 MODERL_BUILD_DEPENDS +=	devel/rebar
 REBAR_BIN ?=		${LOCALBASE}/bin/rebar${MODERL_VERSION}
 # Make sure rebar gets called as 'rebar', otherwise escript tries to call the
-# binary name (e.g. rebar16) as the script entrypoint.
+# binary name (e.g. rebar21) as the script entrypoint.
 _MODERL_LINKS +=	rebar${MODERL_VERSION} rebar
 .endif
 
