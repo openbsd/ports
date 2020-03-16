@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2019/07/12 20:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2020/03/16 15:07:55 ratchov Exp $
 
 COMMENT=		front-end to various audio players
 
 DISTNAME=		gqmpeg-0.91.1
-REVISION=		14
+REVISION=		15
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gqmpeg.sourceforge.net/
