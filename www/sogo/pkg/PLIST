@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2019/11/13 12:50:39 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.44 2020/03/16 06:59:37 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:${VARBASE}/sogo:/bin/sh
 @rcscript ${RCDIR}/sogod
@@ -2412,6 +2412,7 @@ lib/GNUstep/SOGo/WebServerResources/js/Common/loc.filter.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/mdColors.app.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/navController.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/range.filter.js
+lib/GNUstep/SOGo/WebServerResources/js/Common/sgAutogrow.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgAvatarImage.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgBlockToggle.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/sgCheckmark.directive.js
@@ -2649,6 +2650,9 @@ lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/table/dialogs/tab
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/tabletools/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/tabletools/dialogs/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/tabletools/dialogs/tableCell.js
+lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/widget/
+lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/widget/images/
+lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/widget/images/handle.png
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/LICENSE.md
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/dialogs/
