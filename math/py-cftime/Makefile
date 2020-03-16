@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/09 18:43:18 martin Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/16 18:06:29 martin Exp $
 
 COMMENT=	time and date handling utility functions from netcdf4-python
 
-MODPY_EGG_VERSION= 	1.0.4.2
+MODPY_EGG_VERSION= 	1.1.1
 DISTNAME=		cftime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
