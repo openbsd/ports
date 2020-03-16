@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2019/09/27 20:33:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2020/03/16 14:54:45 ratchov Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		generate a statusbar for use with i3/xmobar/dzen2
 
 DISTNAME=		i3status-2.13
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		https://i3wm.org/i3status/
@@ -28,7 +28,9 @@ BUILD_DEPENDS=		textproc/asciidoc>=8.6.8 \
 LIB_DEPENDS=		devel/libconfuse \
 			devel/libyajl
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+CONFIGURE_STYLE =	autoreconf
 SEPARATE_BUILD =	Yes
 
 FAKE_FLAGS +=		sysconfdir=${PREFIX}/share/examples/i3status/

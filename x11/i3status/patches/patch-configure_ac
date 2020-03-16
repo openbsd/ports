@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/03/16 14:54:45 ratchov Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -91,6 +91,13 @@ case $host_os in
+ 	;;
+ esac
+ 
++# if sndio is available, define USE_SNDIO
++AC_CHECK_HEADER(sndio.h,
++	[AC_CHECK_LIB([sndio], [sio_open], [
++		AC_SUBST(SNDIO_LIBS, "-lsndio")
++		AC_DEFINE([USE_SNDIO], [], [Use sndio])
++	], [])], [])
++
+ dnl TODO: check for libbsd for GNU/kFreeBSD
+ 
+ # Checks for programs.
