@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/13 22:19:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/16 23:22:17 bcallah Exp $
 
 COMMENT =	lightweight Qt5 plain-text editor
 PKGNAME =	featherpad-${GH_TAGNAME:S/^V//}
@@ -6,7 +6,7 @@ CATEGORIES =	editors x11
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherPad
-GH_TAGNAME =	V0.12.1
+GH_TAGNAME =	V0.13.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -31,5 +31,7 @@ CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 			-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
 NO_TEST =	Yes
+
+WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/V//}
 
 .include <bsd.port.mk>
