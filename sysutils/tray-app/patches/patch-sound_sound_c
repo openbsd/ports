@@ -1,0 +1,539 @@
+$OpenBSD: patch-sound_sound_c,v 1.1 2020/03/16 14:50:57 ratchov Exp $
+
+Index: sound/sound.c
+--- sound/sound.c.orig
++++ sound/sound.c
+@@ -4,12 +4,13 @@
+  */
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+-#include <sys/audioio.h>
++#include <sndio.h>
+ 
+ #include <gtk/gtk.h>
+ 
+ #include <err.h>
+ #include <fcntl.h>
++#include <poll.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+@@ -19,16 +20,20 @@
+ #include "sound-1.xpm"
+ #include "sound-2.xpm"
+ 
++struct control {
++	struct control *next;
++	unsigned int addr;
++	unsigned int value;
++	unsigned int max;
++	int ismute;
++};
++
+ static void	usage(const char *prog);
+-static int	get_mixer_index(int fd, mixer_devinfo_t *devinfo);
+-static int	get_volume(int fd, mixer_devinfo_t *devinfo, u_char *volume);
+-static int	set_volume(int fd, mixer_devinfo_t *devinfo, u_char volume);
+-static int	get_mute(int fd, mixer_devinfo_t *devinfo, int *mute);
+-static int	set_mute(int fd, mixer_devinfo_t *devinfo, int mute);
++static void	set_state(int ismute, int mute);
++static void	get_state(int *rvolume, int *rmute);
+ 
+ static void	prepare_tooltip(int mute, u_char volume, char *text, size_t sz);
+ 
+-static gboolean	cb_timer(GtkWidget *widget);
+ static void	cb_button_toggled(GtkWidget *widget, gpointer data);
+ static void	cb_scale_value_changed(GtkScale *scale, GtkAdjustment *adj);
+ static gboolean	cb_window_delete(GtkWidget *widget,GdkEvent *event,
+@@ -44,12 +49,13 @@ static gboolean	cb_tray_query_tooltip(GtkStatusIcon *i
+ static int	init_gui(void);
+ static void	show_gui(void);
+ static void	hide_gui(void);
++static void	refresh_gui(void);
+ 
+ static int	init_tray(int doinvert);
+ static void	set_tray_icon(u_char volume);
+ 
+-static int		mixer_fd;
+-static mixer_devinfo_t	outputs_master_dev[2];	/* volume, mute */
++static struct sioctl_hdl *hdl;
++static struct control    *controls;
+ 
+ static GtkWidget	*gui_window = NULL;
+ static GtkObject	*gui_adj = NULL;
+@@ -63,9 +69,6 @@ static GdkPixbuf	*tray_pixbuf_0 = NULL;
+ static GdkPixbuf	*tray_pixbuf_1 = NULL;
+ static GdkPixbuf	*tray_pixbuf_2 = NULL;
+ 
+-static u_char		current_volume = 0;
+-static int		current_mute = 0;
+-
+ void
+ usage(const char *prog)
+ {
+@@ -76,104 +79,134 @@ usage(const char *prog)
+ 	    prog);
+ }
+ 
+-static int
+-get_mixer_index(int fd, mixer_devinfo_t *devinfo)
++/*
++ * new control registered
++ */
++static void
++cb_control_desc(void *unused, struct sioctl_desc *d, int val)
+ {
+-	int error;
+-	int i, outputs_idx;
++	struct control *c, **pc;
++	int has_volume, has_mute;
++	int ismute;
+ 
+-	i = 0;
+-	outputs_idx = -1;
+-	devinfo[0].index = 0;
+-	for (;;) {
+-		error = ioctl(fd, AUDIO_MIXER_DEVINFO, devinfo + i);
+-		if (error == -1)
++	if (d == NULL) {
++		/*
++		 * NULL indicates that we got all changes and its time
++		 * to rebuild the GUI
++		 */
++		has_volume = has_mute = 0;
++		for (c = controls; c != NULL; c = c->next) {
++			if (c->ismute)
++				has_mute = 1;
++			else
++				has_volume = 1;
++		}
++		gtk_widget_set_sensitive(GTK_WIDGET(gui_scale), has_volume);
++		gtk_widget_set_sensitive(GTK_WIDGET(gui_check), has_mute);
++		return;
++	}
++
++	/*
++	 * delete existing control with the same address
++	 */
++	for (pc = &controls; (c = *pc) != NULL; pc = &c->next) {
++		if (d->addr == c->addr) {
++			*pc = c->next;
++			free(c);
+ 			break;
++		}
++	}
+ 
+-		if (i == 0 && devinfo[0].type == AUDIO_MIXER_CLASS &&
+-		    strcmp(devinfo[0].label.name, "outputs") == 0)
+-			outputs_idx = devinfo[0].index;
+-		else if (i == 0 && devinfo[0].type == AUDIO_MIXER_VALUE &&
+-		    strcmp(devinfo[0].label.name, "master") == 0 &&
+-		    outputs_idx != -1 &&
+-		    devinfo[0].mixer_class == outputs_idx) {
+-			devinfo[1].index = devinfo[0].index;
+-			i++;
+-		} else if (i == 1 && devinfo[1].prev == devinfo[0].index &&
+-		    devinfo[1].type == AUDIO_MIXER_ENUM &&
+-		    strcmp(devinfo[1].label.name, "mute") == 0 &&
+-		    devinfo[1].mixer_class == outputs_idx)
+-			return (0);
++	/*
++	 * SIOCTL_NONE means control was deleted
++	 */
++	if (d->type == SIOCTL_NONE)
++		return;
+ 
+-		devinfo[i].index++;
+-	}
+-	return (-1);
+-}
++	/*
++	 * we're interested in top-level output.xxx controls only
++	 */
++	if (strcmp(d->group, "") != 0 || strcmp(d->node0.name, "output") != 0)
++		return;
+ 
+-static int
+-get_volume(int fd, mixer_devinfo_t *devinfo, u_char *volume)
+-{
+-	mixer_ctrl_t mctl;
+-	int error;
++	if (strcmp(d->func, "level") == 0)
++		ismute = 0;
++	else if (strcmp(d->func, "mute") == 0)
++		ismute = 1;
++	else
++		return;
+ 
+-	memset(&mctl, 0, sizeof(mctl));
+-	mctl.dev = devinfo->index;
+-	mctl.type = AUDIO_MIXER_VALUE;
+-	error = ioctl(fd, AUDIO_MIXER_READ, &mctl);
+-	if (error == -1)
+-		return (-1);
+-	*volume = mctl.un.value.level[0];
+-	return (0);
++	c = malloc(sizeof(struct control));
++	if (c == NULL)
++		err(1, "malloc");
++
++	c->addr = d->addr;
++	c->max = d->maxval;
++	c->value = val;
++	c->ismute = ismute;
++	c->next = controls;
++	controls = c;
+ }
+ 
+-static int
+-set_volume(int fd, mixer_devinfo_t *devinfo, u_char volume)
++/*
++ * control value changed
++ */
++static void
++cb_control_value(void *unused, unsigned int addr, unsigned int value)
+ {
+-	mixer_ctrl_t mctl;
+-	int i, error;
++	struct control *c;
+ 
+-	memset(&mctl, 0, sizeof(mctl));
+-	mctl.dev = devinfo->index;
+-	mctl.type = devinfo->type;
+-	mctl.un.value.num_channels = devinfo->un.v.num_channels;
+-	for (i = 0; i < devinfo->un.v.num_channels; i++)
+-		mctl.un.value.level[i] = volume;
+-	error = ioctl(fd, AUDIO_MIXER_WRITE, &mctl);
+-	if (error == -1)
+-		return (-1);
+-	return (0);
++	for (c = controls; ; c = c->next) {
++		if (c == NULL)
++			return;
++		if (c->addr == addr)
++			break;
++	}
++	if (c->value == value)
++		return;
++		
++	c->value = value;
++	refresh_gui();
+ }
+ 
+-static int
+-get_mute(int fd, mixer_devinfo_t *devinfo, int *mute)
++/*
++ * Return current volume and mute states:
++ *   - the returned volume is the minimum volume of all channels.
++ *   - the returned mute set 1 if all channels are muted
++ */
++static void
++get_state(int *rvolume, int *rmute)
+ {
+-	mixer_ctrl_t mctl;
+-	int error;
+-
+-	memset(&mctl, 0, sizeof(mctl));
+-	mctl.dev = devinfo->index;
+-	mctl.type = AUDIO_MIXER_ENUM;
+-	error = ioctl(fd, AUDIO_MIXER_READ, &mctl);
+-	if (error == -1)
+-		return (-1);
+-	*mute = mctl.un.ord;
+-	return (0);
++	struct control *c;
++	int mute = 0;
++	int v, volume = 100;
++	
++	for (c = controls; c != NULL; c = c->next) {
++		if (c->ismute) {
++			mute |= !!c->value;
++		} else {
++			v = (c->value * 100 + c->max / 2) / c->max;
++			if (v < volume)
++				volume = v;
++		}
++	}
++	*rvolume = volume;
++	*rmute = mute;
+ }
+ 
+-static int
+-set_mute(int fd, mixer_devinfo_t *devinfo, int mute)
++static void
++set_state(int ismute, int value)
+ {
+-	mixer_ctrl_t mctl;
+-	int error;
++	struct control *c;
+ 
+-	memset(&mctl, 0, sizeof(mctl));
+-	mctl.dev = devinfo->index;
+-	mctl.type = devinfo->type;
+-	mctl.un.ord = mute;
+-	error = ioctl(fd, AUDIO_MIXER_WRITE, &mctl);
+-	if (error == -1)
+-		return (-1);
+-	return (0);
++	for (c = controls; c != NULL; c = c->next) {
++		if (c->ismute != ismute)
++			continue;
++		c->value = c->ismute ? !!value : (value * c->max + 50) / 100;
++		sioctl_setval(hdl, c->addr, c->value);
++	}
++
++	refresh_gui();
+ }
+ 
+ static void
+@@ -182,63 +215,20 @@ prepare_tooltip(int mute, u_char volume, char *text, s
+ 	if (mute) {
+ 		strlcpy(text, "Audio is muted", sz);
+ 	} else {
+-		snprintf(text, sz, "Audio volume: %u%%",
+-		    100U * (u_int)volume / AUDIO_MAX_GAIN);
++		snprintf(text, sz, "Audio volume: %u%%", volume);
+ 	}
+ }
+ 
+-static gboolean
+-cb_timer(GtkWidget *widget)
+-{
+-	int mute;
+-	u_char volume;
+-
+-	if (get_mute(mixer_fd, outputs_master_dev + 1, &mute) == -1)
+-		return (TRUE);
+-	else if (get_volume(mixer_fd, outputs_master_dev, &volume) == -1)
+-		return (TRUE);
+-	if (mute != current_mute || volume != current_volume) {
+-		set_tray_icon(mute ? 0 : volume);
+-
+-		/* Move slider. Change "check" button state. */
+-		if (widget->window != NULL) {
+-			gtk_adjustment_set_value(GTK_ADJUSTMENT(gui_adj),
+-			    AUDIO_MAX_GAIN - volume);
+-			gtk_toggle_button_set_active(
+-			    GTK_TOGGLE_BUTTON(gui_check), mute);
+-			gtk_widget_set_sensitive(GTK_WIDGET(gui_scale), !mute);
+-		}
+-
+-		current_volume = volume;
+-		current_mute = mute;
+-	}
+-
+-	return (TRUE);
+-}
+-
+ static void
+ cb_button_toggled(GtkWidget *widget, gpointer data)
+ {
+-	int mute;
+-
+-	mute = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(widget));
+-	if (set_mute(mixer_fd, outputs_master_dev + 1, mute) == 0) {
+-		gtk_widget_set_sensitive(GTK_WIDGET(gui_scale), !mute);
+-		set_tray_icon(mute ? 0 : current_volume);
+-		current_mute = mute;
+-	}
++	set_state(1, gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(widget)));
+ }
+ 
+ static void
+ cb_scale_value_changed(GtkScale *scale, GtkAdjustment *adj)
+ {
+-	u_char volume;
+-
+-	volume = AUDIO_MAX_GAIN - (u_char)gtk_adjustment_get_value(adj);
+-	if (set_volume(mixer_fd, outputs_master_dev, volume) == 0) {
+-		set_tray_icon(current_mute ? 0 : volume);
+-		current_volume = volume;
+-	}
++	set_state(0, 100 - (int)gtk_adjustment_get_value(adj));
+ }
+ 
+ static gboolean
+@@ -277,8 +267,10 @@ cb_tray_query_tooltip(GtkStatusIcon *icon, gint x, gin
+     gboolean keyboard_mode, GtkTooltip *tooltip, gpointer data)
+ {
+ 	char text[30];
++	int volume, mute;
+ 
+-	prepare_tooltip(current_mute, current_volume, text, sizeof(text));
++	get_state(&volume, &mute);
++	prepare_tooltip(mute, volume, text, sizeof(text));
+ 	gtk_tooltip_set_text(tooltip, text);
+ 	return (TRUE);
+ }
+@@ -304,8 +296,7 @@ init_gui(void)
+ 	gtk_window_set_deletable(GTK_WINDOW(gui_window), FALSE);
+ 	gtk_window_set_decorated(GTK_WINDOW(gui_window), FALSE);
+ 
+-	gui_adj = gtk_adjustment_new(0.0, AUDIO_MIN_GAIN,
+-	    AUDIO_MAX_GAIN, 1.0, 10.0, 0.0);
++	gui_adj = gtk_adjustment_new(0.0, 0, 100, 1.0, 10.0, 0.0);
+ 	if (gui_adj == NULL)
+ 		return (-1);
+ 
+@@ -355,12 +346,14 @@ show_gui(void)
+ 	GdkRectangle area;
+ 	GtkOrientation orientation;
+ 	int width, height, x, y;
++	int volume, mute;
+ 
++	get_state(&volume, &mute);
++
+ 	gtk_adjustment_set_value(GTK_ADJUSTMENT(gui_adj),
+-	    AUDIO_MAX_GAIN - current_volume);
++	    100 - volume);
+ 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gui_check),
+-	    current_mute);
+-	gtk_widget_set_sensitive(GTK_WIDGET(gui_scale), !current_mute);
++	    mute);
+ 	gtk_widget_show_all(GTK_WIDGET(gui_window));
+ 
+ 	gtk_status_icon_get_geometry(tray_icon, NULL, &area, &orientation);
+@@ -391,12 +384,33 @@ hide_gui(void)
+ 	gtk_widget_hide(GTK_WIDGET(gui_window));
+ }
+ 
++/*
++ * refresh gui state
++ */
++static void
++refresh_gui(void)
++{
++	GtkWidget *widget = (gpointer)gui_window;
++	int volume, mute;
++
++	get_state(&volume, &mute);
++
++	set_tray_icon(mute ? 0 : volume);
++
++	/* Move slider. Change "check" button state. */
++	if (widget->window != NULL) {
++		gtk_adjustment_set_value(GTK_ADJUSTMENT(gui_adj),
++		    100 - volume);
++		gtk_toggle_button_set_active(
++		    GTK_TOGGLE_BUTTON(gui_check), mute);
++	}
++}
++
+ static int
+ init_tray(int doinvert)
+ {
+ 	char tooltip[30];
+-	u_char volume;
+-	int mute;
++	int volume, mute;
+ 
+ 	tray_pixbuf = gdk_pixbuf_new_from_xpm_data(sound_xpm);
+ 	if (tray_pixbuf == NULL)
+@@ -421,13 +435,9 @@ init_tray(int doinvert)
+ 	tray_icon = gtk_status_icon_new();
+ 	if (tray_icon == NULL)
+ 		return (-1);
+-	volume = 0;
+-	mute = 0;
+-	get_volume(mixer_fd, outputs_master_dev, &volume);
+-	get_mute(mixer_fd, outputs_master_dev + 1, &mute);
++
++	get_state(&volume, &mute);
+ 	set_tray_icon(mute ? 0 : volume);
+-	current_volume = volume;
+-	current_mute = mute;
+ 
+ 	prepare_tooltip(mute, volume, tooltip, sizeof(tooltip));
+ 	gtk_status_icon_set_tooltip_text(tray_icon, tooltip);
+@@ -455,7 +465,43 @@ set_tray_icon(u_char volume)
+ 	gtk_status_icon_set_from_pixbuf(tray_icon, pb);
+ }
+ 
++/*
++ * Call poll(2), for both gtk and sndio descriptors.
++ */
+ int
++do_poll(GPollFD *gtk_pfds, guint gtk_nfds, gint timeout)
++{
++#define MAXFDS 64
++	struct pollfd pfds[MAXFDS], *sioctl_pfds;
++	unsigned int sioctl_nfds;
++	unsigned int i;
++	int revents;
++	int rc;
++
++	for (i = 0; i < gtk_nfds; i++) {
++		pfds[i].fd = gtk_pfds[i].fd;
++		pfds[i].events = gtk_pfds[i].events;
++	}
++	if (hdl != NULL) {
++		sioctl_pfds = pfds + gtk_nfds;
++		sioctl_nfds = sioctl_pollfd(hdl, sioctl_pfds, POLLIN);
++	} else
++		sioctl_nfds = 0;
++
++	rc = poll(pfds, gtk_nfds + sioctl_nfds, timeout);
++	if (rc > 0 && hdl != NULL) {
++		revents = sioctl_revents(hdl, sioctl_pfds);
++		if (revents & POLLHUP)
++			errx(1, "Device disconnected");
++	}
++
++	for (i = 0; i < gtk_nfds; i++)
++		gtk_pfds[i].revents = pfds[i].revents;
++
++	return rc;
++}
++
++int
+ main(int argc, char **argv)
+ {
+ 	char *progname;
+@@ -481,30 +527,34 @@ main(int argc, char **argv)
+ 	}
+ 	argc -= optind;
+ 	argv += optind;
+-
+-	mixer_fd = open("/dev/mixer", O_RDWR);
+-	if (mixer_fd == -1)
++	
++	hdl = sioctl_open(SIO_DEVANY, SIOCTL_READ | SIOCTL_WRITE, 0);
++	if (hdl == NULL) {
+ 		errx(1, "Cannot open mixer device");
+-
+-	error = get_mixer_index(mixer_fd, outputs_master_dev);
+-	if (error == -1) {
+-		close(mixer_fd);
+-		errx(1, "Cannot get mixer information");
+ 	}
+-
+ 	error = init_tray(invert_flag);
+ 	if (error == -1) {
+-		close(mixer_fd);
++		sioctl_close(hdl);
+ 		errx(1, "Cannot initialize notification area");
+ 	}
+ 	error = init_gui();
+ 	if (error == -1) {
+-		close(mixer_fd);
++		sioctl_close(hdl);
+ 		errx(1, "Cannot initialize program window");
+ 	}
+-	g_timeout_add(1000, (GSourceFunc)cb_timer, (gpointer)gui_window);
++
++	if (!sioctl_ondesc(hdl, cb_control_desc, NULL)) {
++		sioctl_close(hdl);
++		errx(1, "Cannot get mixer information");
++	}
++	if (!sioctl_onval(hdl, cb_control_value, NULL)) {
++		sioctl_close(hdl);
++		errx(1, "Cannot get mixer values");
++	}
++
++	g_main_context_set_poll_func(g_main_context_default(), do_poll);
+ 	gtk_main();
+ 
+-	close(mixer_fd);
++	sioctl_close(hdl);
+ 	return (0);
+ }
