@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.78 2019/11/23 00:49:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.79 2020/03/16 18:22:35 bcallah Exp $
 
 COMMENT =	high-level, extensible programming language
 
-V =		20191117
+V =		20200308
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 
@@ -15,14 +15,14 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Runtime libraries: LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += X11 c curses m
+WANTLIB += c curses m
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
 EXTRACT_SUFX =	.tgz
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" LDFLAGS="-L${X11BASE}/lib" \
-		SYSTEM_LIBS="-lm"
+		SYSTEM_LIBS="-lm -lcurses"
 MAKE_ENV +=	S7_LIB_DIR=${TRUEPREFIX}/lib/seed7/bin \
 		SEED7_LIBRARY=${TRUEPREFIX}/lib/seed7/lib
 MAKE_FILE =	makefile
