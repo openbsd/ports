@@ -1,36 +1,38 @@
-# $OpenBSD: Makefile,v 1.89 2019/07/12 20:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2020/03/16 02:40:45 mariani Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-2.3.2
-REVISION=	1
+DISTNAME=	lyx-2.3.4.2
 
 CATEGORIES=	print editors
 
 HOMEPAGE=	https://www.lyx.org/
 
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.3.x/ \
-		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.3.x/ \
-		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.3.x/ \
-		http://ftp.icm.edu.pl/packages/lyx/stable/ \
-		http://mirror.ufs.ac.za/applications/lyx/stable/2.3.x/
+MAINTAINER=	Elias M. Mariani <marianielias@gmail.com>
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Svg
-WANTLIB += Qt5Widgets Qt5X11Extras aspell c enchant-2 hunspell-1.6
-WANTLIB += iconv m magic xcb z
+MASTER_SITES=	https://ftp.lip6.fr/pub/lyx/stable/2.3.x/ \
+		http://ftp.icm.edu.pl/packages/lyx/stable/ \
+		http://mirror.ufs.ac.za/applications/lyx/stable/2.3.x/ \
+		ftp://ftp.lyx.org/pub/lyx/stable/2.3.x/ \
+		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.3.x/ \
+		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.3.x/
+
+WANTLIB+= ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Svg
+WANTLIB+= Qt5Widgets Qt5X11Extras aspell c enchant-2 hunspell-1.6
+WANTLIB+= iconv m magic xcb z
 
 COMPILER=	base-clang ports-gcc
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 MODULES=	lang/python \
 		x11/qt5
 
-BUILD_DEPENDS =	devel/boost
-TEST_DEPENDS  =	devel/boost
+BUILD_DEPENDS=	devel/boost
+TEST_DEPENDS=	devel/boost
 
 RUN_DEPENDS=	print/texlive/base \
 		graphics/ImageMagick \
