@@ -1,13 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2020/01/01 18:52:50 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/03/16 23:50:28 bcallah Exp $
 
 Don't do git here.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -19,14 +19,8 @@ option(NIGHTLY_BUILD "Enable options for nightly build
- option(USE_SDL1 "Use SDL1.2 instead of SDL2" OFF)
- option(NONET "Disable network" OFF)
+@@ -40,14 +40,8 @@ if(NIGHTLY_BUILD)
+   set(FASTER OFF)
+ endif()
  
 -include(CMake/git.cmake)
 -get_git_tag(GIT_TAG)
@@ -17,7 +17,7 @@ Index: CMakeLists.txt
 -
  project(DevilutionX
 -  VERSION ${GIT_TAG}
-+  VERSION 1.0.0
++  VERSION 1.0.1
    LANGUAGES C CXX)
  
- if(BINARY_RELEASE)
+ if(LTO)

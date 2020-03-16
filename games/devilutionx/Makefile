@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/01 18:52:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/16 23:50:28 bcallah Exp $
 
 COMMENT =	open source engine recreation for Diablo 1 game
 PKGNAME =	${DISTNAME:L}
@@ -6,7 +6,7 @@ CATEGORIES =	games x11
 
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
-GH_TAGNAME =	1.0.0
+GH_TAGNAME =	1.0.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
