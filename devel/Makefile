@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1951 2020/03/12 15:06:31 tracey Exp $
+# $OpenBSD: Makefile,v 1.1952 2020/03/16 19:53:57 juanfra Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1961,7 +1961,6 @@
      SUBDIR += tkcvs
      SUBDIR += tkdiff
      SUBDIR += tklib
-     SUBDIR += tortoisehg
      SUBDIR += ucpp
      SUBDIR += udis86
      SUBDIR += unibilium
