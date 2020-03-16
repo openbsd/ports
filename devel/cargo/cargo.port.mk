@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.15 2020/03/12 10:30:05 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.16 2020/03/16 10:55:36 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -97,6 +97,12 @@ MODCARGO_ENV +=	LIBGIT2_SYS_USE_PKG_CONFIG=1
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libgit2 ;
+
+.    elif "${_cratename}" == "libsodium-sys"
+MODCARGO_ENV +=	SODIUM_SHARED=1
+MODCARGO_post-extract  += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -f -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libsodium-*.tar.gz ;
 
 .    elif "${_cratename}" == "libsqlite3-sys"
 MODCARGO_post-extract  += \
