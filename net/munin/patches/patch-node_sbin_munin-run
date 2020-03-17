@@ -1,8 +1,8 @@
-$OpenBSD: patch-node_sbin_munin-run,v 1.3 2020/02/02 11:16:53 kirby Exp $
+$OpenBSD: patch-node_sbin_munin-run,v 1.4 2020/03/17 10:50:13 kirby Exp $
 Index: node/sbin/munin-run
 --- node/sbin/munin-run.orig
 +++ node/sbin/munin-run
-@@ -115,6 +115,9 @@ sub main
+@@ -118,6 +118,9 @@ sub main
          $ENV{$key} =~ /^(.*)$/s;
          $ENV{$key} = $1;
      }

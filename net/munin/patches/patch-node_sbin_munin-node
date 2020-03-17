@@ -1,7 +1,8 @@
-$OpenBSD: patch-node_sbin_munin-node,v 1.4 2013/06/03 19:45:32 kirby Exp $
---- node/sbin/munin-node.orig	Fri May 10 22:59:50 2013
-+++ node/sbin/munin-node	Sun May 26 22:02:43 2013
-@@ -53,6 +53,9 @@ sub main
+$OpenBSD: patch-node_sbin_munin-node,v 1.5 2020/03/17 10:50:13 kirby Exp $
+Index: node/sbin/munin-node
+--- node/sbin/munin-node.orig
++++ node/sbin/munin-node
+@@ -54,6 +54,9 @@ sub main
          $ENV{$key} =~ /^(.*)$/;
          $ENV{$key} = $1;
      }

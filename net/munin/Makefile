@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.90 2020/02/16 08:16:43 kirby Exp $
+# $OpenBSD: Makefile,v 1.91 2020/03/17 10:50:13 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		2.0.56
+V =		2.0.57
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2020/02/02 11:16:54 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2020/03/17 10:50:14 kirby Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -15,6 +15,7 @@ bin/munindoc
 libdata/perl5/site_perl/Munin/
 libdata/perl5/site_perl/Munin/Common/
 libdata/perl5/site_perl/Munin/Common/Config.pm
+libdata/perl5/site_perl/Munin/Common/Daemon.pm
 libdata/perl5/site_perl/Munin/Common/Defaults.pm
 libdata/perl5/site_perl/Munin/Common/DictFile.pm
 libdata/perl5/site_perl/Munin/Common/SyncDictFile.pm
@@ -270,6 +271,7 @@ libexec/munin/plugins/zimbra_
 @man man/man1/munin-run.1
 @man man/man1/munindoc.1
 @man man/man3p/Munin::Common::Config.3p
+@man man/man3p/Munin::Common::Daemon.3p
 @man man/man3p/Munin::Common::Defaults.3p
 @man man/man3p/Munin::Common::TLS.3p
 @man man/man3p/Munin::Common::TLSClient.3p
