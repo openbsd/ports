@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/03 11:32:39 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/17 21:12:07 rpointel Exp $
+@pkgpath security/py-dfdatetime
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -6,8 +7,9 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}apfs_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}cocoa_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}definitions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -27,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}systemtime.$
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}time_elements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}uuid_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}webkit_time.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/apfs_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/cocoa_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/decorators.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/definitions.py
