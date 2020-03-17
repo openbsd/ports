@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/03/09 07:58:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.51 2020/03/17 19:01:41 kmos Exp $
 
 COMMENT =	ARP level ping utility
 
@@ -18,6 +18,8 @@ MASTER_SITES =	http://www.habets.pp.se/synscan/files/ \
 		http://www.arcane-labs.net/download/OpenBSD/
 
 LIB_DEPENDS =	net/libnet/1.1
+
+CFLAGS +=	-std=gnu99
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \
