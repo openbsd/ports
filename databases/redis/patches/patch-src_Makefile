@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile,v 1.30 2020/02/11 08:11:13 tb Exp $
+$OpenBSD: patch-src_Makefile,v 1.31 2020/03/17 04:51:28 tb Exp $
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
@@ -28,7 +28,16 @@ Index: src/Makefile
  endif
  endif
  
-@@ -127,7 +128,7 @@ endif
+@@ -82,7 +83,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
+         FINAL_LIBS+=-latomic
+ else
+ ifneq (,$(findstring armv,$(uname_M)))
+-        FINAL_LIBS+=-latomic
++#        FINAL_LIBS+=-latomic
+ endif
+ endif
+ 
+@@ -136,7 +137,7 @@ endif
  endif
  endif
  # Include paths to dependencies
@@ -37,7 +46,7 @@ Index: src/Makefile
  
  ifeq ($(MALLOC),tcmalloc)
  	FINAL_CFLAGS+= -DUSE_TCMALLOC
-@@ -165,6 +166,7 @@ endif
+@@ -174,6 +175,7 @@ endif
  REDIS_SERVER_NAME=redis-server
  REDIS_SENTINEL_NAME=redis-sentinel
  REDIS_SERVER_OBJ=adlist.o quicklist.o ae.o anet.o dict.o server.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o pubsub.o multi.o debug.o sort.o intset.o syncio.o cluster.o crc16.o endianconv.o slowlog.o scripting.o bio.o rio.o rand.o memtest.o crc64.o bitops.o sentinel.o notify.o setproctitle.o blocked.o hyperloglog.o latency.o sparkline.o redis-check-rdb.o redis-check-aof.o geo.o lazyfree.o module.o evict.o expire.o geohash.o geohash_helper.o childinfo.o defrag.o siphash.o rax.o t_stream.o listpack.o localtime.o lolwut.o lolwut5.o
@@ -45,7 +54,7 @@ Index: src/Makefile
  REDIS_CLI_NAME=redis-cli
  REDIS_CLI_OBJ=anet.o adlist.o dict.o redis-cli.o zmalloc.o release.o anet.o ae.o crc64.o siphash.o crc16.o
  REDIS_BENCHMARK_NAME=redis-benchmark
-@@ -216,7 +218,7 @@ endif
+@@ -225,7 +227,7 @@ endif
  
  # redis-server
  $(REDIS_SERVER_NAME): $(REDIS_SERVER_OBJ)
@@ -54,7 +63,7 @@ Index: src/Makefile
  
  # redis-sentinel
  $(REDIS_SENTINEL_NAME): $(REDIS_SERVER_NAME)
-@@ -259,7 +261,7 @@ distclean: clean
+@@ -268,7 +270,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME)
@@ -63,7 +72,7 @@ Index: src/Makefile
  
  test-sentinel: $(REDIS_SENTINEL_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -303,13 +305,14 @@ src/help.h:
+@@ -312,13 +314,14 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all
