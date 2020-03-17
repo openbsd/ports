@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/12 07:07:55 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:25:07 rpointel Exp $
 include/libfwsi/
 include/libfwsi.h
 include/libfwsi/codepage.h
@@ -7,11 +7,11 @@ include/libfwsi/error.h
 include/libfwsi/extern.h
 include/libfwsi/features.h
 include/libfwsi/types.h
-lib/libfwsi.a
+@static-lib lib/libfwsi.a
 lib/libfwsi.la
 @lib lib/libfwsi.so.${LIBfwsi_VERSION}
 lib/pkgconfig/libfwsi.pc
 lib/python${MODPY_VERSION}/site-packages/pyfwsi.a
 lib/python${MODPY_VERSION}/site-packages/pyfwsi.la
-lib/python${MODPY_VERSION}/site-packages/pyfwsi.so
+@so lib/python${MODPY_VERSION}/site-packages/pyfwsi.so
 @man man/man3/libfwsi.3

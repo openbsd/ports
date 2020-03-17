@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/17 21:25:07 rpointel Exp $
 
 COMMENT =	library to access the Windows Shell Item format
 
-VERSION = 	20170117
+VERSION = 	20191221
 DISTNAME =	libfwsi-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
 
@@ -22,11 +22,12 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += m pthread util ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python
+CONFIGURE_ARGS +=	--enable-python3
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
