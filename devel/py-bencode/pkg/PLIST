@@ -1,12 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/22 08:00:32 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 20:53:55 rpointel Exp $
+@pkgpath devel/py-bencode
 lib/python${MODPY_VERSION}/site-packages/bencode/
-lib/python${MODPY_VERSION}/site-packages/bencode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/bencode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/bencode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/bencode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/bencode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/bencode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/bencode.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/bencode.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/bencode.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/bencode.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/bencode.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/bencode.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/bencode.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bencode/BTL.py
-lib/python${MODPY_VERSION}/site-packages/bencode/BTL.pyc
 lib/python${MODPY_VERSION}/site-packages/bencode/__init__.py
-lib/python${MODPY_VERSION}/site-packages/bencode/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bencode/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bencode/${MODPY_PYCACHE}BTL.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bencode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bencode/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bencode/exceptions.py
