@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/17 22:18:14 rpointel Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
-MODPY_EGG_VERSION =	20180818
+MODPY_EGG_VERSION =	20200121
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
@@ -19,12 +19,32 @@ DISTNAME =	plaso-${MODPY_EGG_VERSION}
 MASTER_SITES =	https://github.com/log2timeline/plaso/releases/download/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS = Yes
 
-RUN_DEPENDS +=	devel/ipython \
+RUN_DEPENDS +=	devel/py-bencode${MODPY_FLAVOR} \
+		devel/py-biplist${MODPY_FLAVOR} \
+		devel/py-cffi${MODPY_FLAVOR} \
+		devel/py-dateutil${MODPY_FLAVOR} \
+		devel/py-future${MODPY_FLAVOR} \
+		devel/py-parsing${MODPY_FLAVOR} \
+		devel/py-six${MODPY_FLAVOR} \
+		devel/py-tz${MODPY_FLAVOR} \
+		devel/py-xlsxwriter${MODPY_FLAVOR} \
+		net/py-zmq${MODPY_FLAVOR} \
+		security/libbde \
+		security/libewf \
+		security/py-artifacts${MODPY_FLAVOR} \
+		security/py-cryptography${MODPY_FLAVOR} \
+		security/py-dfdatetime${MODPY_FLAVOR} \
+		security/py-dfvfs${MODPY_FLAVOR} \
+		security/py-dfwinreg${MODPY_FLAVOR} \
+		security/py-pefile${MODPY_FLAVOR} \
+		security/yara/python${MODPY_FLAVOR} \
 		sysutils/libesedb \
 		sysutils/libevt \
 		sysutils/libevtx \
+		sysutils/libfsapfs \
 		sysutils/libfsntfs \
 		sysutils/libfvde \
 		sysutils/libfwnt \
@@ -42,50 +62,16 @@ RUN_DEPENDS +=	devel/ipython \
 		sysutils/libvmdk \
 		sysutils/libvshadow \
 		sysutils/libvslvm \
-		devel/py-bencode \
-		devel/py-binplist \
-		devel/py-certifi \
-		textproc/py-chardet \
-		devel/py-construct \
-		devel/py-dateutil \
-		devel/py-efilter \
-		devel/py-future \
-		devel/py-hachoir-core \
-		devel/py-hachoir-metadata \
-		devel/py-hachoir-parser \
-		devel/py-mock \
-		devel/py-parsing \
-		devel/py-six \
-		devel/py-tz \
-		devel/py-xlsxwriter \
-		net/py-dpkt \
-		net/py-zmq \
-		security/libbde \
-		security/libewf \
-		security/py-artifacts \
-		security/py-cryptodome \
-		security/py-dfdatetime \
-		security/py-dfvfs \
-		security/py-dfwinreg \
-		security/py-pefile \
-		security/yara/python \
-		sysutils/py-psutil \
-		sysutils/py-tsk \
-		textproc/py-yaml \
-		www/py-requests \
-		www/py-urllib3 \
-		devel/py-dtfabric \
-		devel/py-biplist
+		sysutils/py-psutil${MODPY_FLAVOR} \
+		sysutils/py-tsk${MODPY_FLAVOR} \
+		textproc/py-chardet${MODPY_FLAVOR} \
+		textproc/py-defusedxml${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR} \
+		www/py-urllib3${MODPY_FLAVOR}
+		
 
-TEST_DEPENDS +=	devel/py-test
-
-# py-elasticsearch in ports is > 5.5.1
-# mark elasticsearch as not required, so we can use plaso
-post-extract:
-	sed -i "s/'5.5.1', True)/'5.5.1', False)/" ${WRKSRC}/plaso/dependencies.py
-	sed -i "/maximum_version: 5.5.1/d" ${WRKSRC}/dependencies.ini
-	sed -i "/elasticsearch5/d" ${WRKSRC}/plaso/dependencies.py
-	sed -i "/^\[elasticsearch5/,/^$$/d"  ${WRKSRC}/dependencies.ini
+TEST_DEPENDS +=	devel/py-test${MODPY_FLAVOR}
 
 pre-test:
 	touch ${WRKSRC}/utils/__init__.py
