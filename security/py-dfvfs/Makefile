@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/17 21:48:23 rpointel Exp $
 
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_EGG_VERSION = 20180510
+MODPY_EGG_VERSION = 20200211
 DISTNAME =	dfvfs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -19,17 +18,22 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+
+FLAVORS =	python3
+FLAVOR =	python3
+
 MODPY_SETUPTOOLS =	Yes
-RUN_DEPENDS +=	devel/py-construct \
-		security/py-cryptodome \
-		security/py-dfdatetime \
-		devel/py-six \
-		sysutils/py-tsk \
+RUN_DEPENDS +=	devel/py-construct${MODPY_FLAVOR} \
+		security/py-cryptography${MODPY_FLAVOR} \
+		security/py-dfdatetime${MODPY_FLAVOR} \
+		devel/py-six${MODPY_FLAVOR} \
+		sysutils/py-tsk${MODPY_FLAVOR} \
 		security/libbde \
 		security/libewf \
 		sysutils/libfsntfs \
 		sysutils/libfvde \
 		sysutils/libfwnt \
+		sysutils/libluksde \
 		sysutils/libqcow \
 		sysutils/libsigscan \
 		sysutils/libsmdev \
