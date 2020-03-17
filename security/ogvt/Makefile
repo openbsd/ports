@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/09 18:01:05 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/17 01:59:17 abieber Exp $
 
 COMMENT =		simple tool for verifying gpg signatures
-VERSION =		v1.0.1
+VERSION =		v1.0.3
 DISTNAME =		ogvt-${VERSION}
 PKGNAME =		${DISTNAME:S/-v/-/g}
 
