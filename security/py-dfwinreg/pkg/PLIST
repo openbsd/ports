@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/07 05:56:09 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/17 21:52:42 rpointel Exp $
+@pkgpath security/py-dfwinreg
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/
 lib/python${MODPY_VERSION}/site-packages/dfwinreg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dfwinreg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,32 +8,33 @@ lib/python${MODPY_VERSION}/site-packages/dfwinreg-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/dfwinreg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/dfwinreg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/__init__.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}definitions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}fake.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}glob2regex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}key_paths.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}py2to3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}regf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}registry_searcher.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfwinreg/${MODPY_PYCACHE}virtual.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/decorators.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/decorators.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/definitions.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/definitions.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/dtfabric.yaml
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/errors.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/fake.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/fake.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/glob2regex.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/glob2regex.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/interface.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/key_paths.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/key_paths.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/py2to3.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/py2to3.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/regf.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/regf.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/registry.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/registry.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/registry_searcher.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/registry_searcher.pyc
 lib/python${MODPY_VERSION}/site-packages/dfwinreg/virtual.py
-lib/python${MODPY_VERSION}/site-packages/dfwinreg/virtual.pyc
 share/doc/dfwinreg/
 share/doc/dfwinreg/ACKNOWLEDGEMENTS
 share/doc/dfwinreg/AUTHORS

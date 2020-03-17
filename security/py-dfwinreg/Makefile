@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/08 09:02:55 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/17 21:52:42 rpointel Exp $
 
 COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 
-MODPY_EGG_VERSION = 20180712
+MODPY_EGG_VERSION = 20200121
 DISTNAME =	dfwinreg-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -19,14 +18,18 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+
+FLAVORS =	python3
+FLAVOR =	python3
+
 MODPY_SETUPTOOLS =	Yes
-RUN_DEPENDS =		devel/py-construct \
-			devel/py-dtfabric \
-			devel/py-six \
-			security/py-dfdatetime \
+RUN_DEPENDS =		devel/py-construct${MODPY_FLAVOR} \
+			devel/py-dtfabric${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR} \
+			security/py-dfdatetime${MODPY_FLAVOR} \
 			sysutils/libregf
-TEST_DEPENDS =		devel/py-test \
-			devel/py-mock
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR}
 
 do-test:
 	touch ${WRKSRC}/utils/__init__.py
