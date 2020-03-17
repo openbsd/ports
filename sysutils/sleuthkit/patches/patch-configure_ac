@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2019/05/23 11:01:14 naddy Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2020/03/17 20:41:46 rpointel Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -111,7 +111,7 @@ dnl Checks for libraries.
+@@ -113,7 +113,7 @@ dnl Checks for libraries.
  
  
  dnl Some platforms will complain about missing included functions if libstdc++ is not included.

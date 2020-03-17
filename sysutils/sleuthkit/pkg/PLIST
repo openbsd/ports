@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/10/31 21:38:28 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/03/17 20:41:46 rpointel Exp $
 @conflict ja-jvim-*
 @conflict freeze-*
 @bin bin/blkcalc
@@ -26,6 +26,7 @@ bin/mactime
 @bin bin/mmcat
 @bin bin/mmls
 @bin bin/mmstat
+@bin bin/pstat.sleuthkit
 @bin bin/sigfind
 bin/sorter
 @bin bin/srch_strings
@@ -36,12 +37,19 @@ bin/sorter
 @bin bin/usnjls
 include/tsk/
 include/tsk/auto/
+include/tsk/auto/guid.h
 include/tsk/auto/tsk_auto.h
 include/tsk/auto/tsk_is_image_supported.h
 include/tsk/base/
 include/tsk/base/tsk_base.h
 include/tsk/base/tsk_os.h
 include/tsk/fs/
+include/tsk/fs/apfs_compat.hpp
+include/tsk/fs/apfs_fs.h
+include/tsk/fs/apfs_fs.hpp
+include/tsk/fs/decmpfs.h
+include/tsk/fs/tsk_apfs.h
+include/tsk/fs/tsk_apfs.hpp
 include/tsk/fs/tsk_exfatfs.h
 include/tsk/fs/tsk_ext2fs.h
 include/tsk/fs/tsk_fatfs.h
@@ -55,9 +63,21 @@ include/tsk/fs/tsk_yaffs.h
 include/tsk/hashdb/
 include/tsk/hashdb/tsk_hashdb.h
 include/tsk/img/
+include/tsk/img/pool.hpp
 include/tsk/img/tsk_img.h
 include/tsk/libtsk.h
+include/tsk/pool/
+include/tsk/pool/apfs_pool_compat.hpp
+include/tsk/pool/pool_compat.hpp
+include/tsk/pool/tsk_apfs.h
+include/tsk/pool/tsk_apfs.hpp
+include/tsk/pool/tsk_pool.h
+include/tsk/pool/tsk_pool.hpp
 include/tsk/tsk_incs.h
+include/tsk/util/
+include/tsk/util/crypto.hpp
+include/tsk/util/lw_shared_ptr.hpp
+include/tsk/util/span.hpp
 include/tsk/vs/
 include/tsk/vs/tsk_bsd.h
 include/tsk/vs/tsk_dos.h
@@ -65,7 +85,7 @@ include/tsk/vs/tsk_gpt.h
 include/tsk/vs/tsk_mac.h
 include/tsk/vs/tsk_sun.h
 include/tsk/vs/tsk_vs.h
-lib/libtsk.a
+@static-lib lib/libtsk.a
 lib/libtsk.la
 @lib lib/libtsk.so.${LIBtsk_VERSION}
 @man man/man1/blkcalc.1

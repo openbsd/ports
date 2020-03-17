@@ -1,0 +1,17 @@
+$OpenBSD: patch-tsk_Makefile_am,v 1.1 2020/03/17 20:41:46 rpointel Exp $
+
+Tell libtool to link libtsk as a C++ library.
+
+Index: tsk/Makefile.am
+--- tsk/Makefile.am.orig
++++ tsk/Makefile.am
+@@ -4,6 +4,9 @@ SUBDIRS = base img vs fs hashdb auto pool util
+ # Merge the libraries into one
+ lib_LTLIBRARIES = libtsk.la
+ libtsk_la_SOURCES =
++# hack to force linkage with a c++ compiler
++# https://www.gnu.org/software/automake/manual/html_node/Libtool-Convenience-Libraries.html
++nodist_EXTRA_libtsk_la_SOURCES = dummy.cpp
+ libtsk_la_LIBADD = base/libtskbase.la img/libtskimg.la \
+     vs/libtskvs.la fs/libtskfs.la hashdb/libtskhashdb.la \
+     auto/libtskauto.la pool/libtskpool.la util/libtskutil.la
