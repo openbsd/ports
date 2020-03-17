@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/07/18 09:42:52 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/17 21:35:53 rpointel Exp $
 @bin bin/vmdkinfo
 @bin bin/vmdkmount
 include/libvmdk/
@@ -9,12 +9,12 @@ include/libvmdk/error.h
 include/libvmdk/extern.h
 include/libvmdk/features.h
 include/libvmdk/types.h
-lib/libvmdk.a
+@static-lib lib/libvmdk.a
 lib/libvmdk.la
 @lib lib/libvmdk.so.${LIBvmdk_VERSION}
 lib/pkgconfig/libvmdk.pc
 lib/python${MODPY_VERSION}/site-packages/pyvmdk.a
 lib/python${MODPY_VERSION}/site-packages/pyvmdk.la
-lib/python${MODPY_VERSION}/site-packages/pyvmdk.so
+@so lib/python${MODPY_VERSION}/site-packages/pyvmdk.so
 @man man/man1/vmdkinfo.1
 @man man/man3/libvmdk.3
