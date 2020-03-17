@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1952 2020/03/16 19:53:57 juanfra Exp $
+# $OpenBSD: Makefile,v 1.1953 2020/03/17 20:54:52 rpointel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1334,7 +1334,7 @@
      SUBDIR += py-backports-functools-lru-cache
      SUBDIR += py-backports-shutil-get-terminal-size
      SUBDIR += py-backports-ssl-match-hostname
-     SUBDIR += py-bencode
+     SUBDIR += py-bencode,python3
      SUBDIR += py-binaryornot
      SUBDIR += py-binaryornot,python3
      SUBDIR += py-binplist
