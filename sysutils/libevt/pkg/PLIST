@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/04 08:43:28 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:16:47 rpointel Exp $
 @bin bin/evtexport
 @bin bin/evtinfo
 include/libevt/
@@ -9,13 +9,13 @@ include/libevt/error.h
 include/libevt/extern.h
 include/libevt/features.h
 include/libevt/types.h
-lib/libevt.a
+@static-lib lib/libevt.a
 lib/libevt.la
 @lib lib/libevt.so.${LIBevt_VERSION}
 lib/pkgconfig/libevt.pc
 lib/python${MODPY_VERSION}/site-packages/pyevt.a
 lib/python${MODPY_VERSION}/site-packages/pyevt.la
-lib/python${MODPY_VERSION}/site-packages/pyevt.so
+@so lib/python${MODPY_VERSION}/site-packages/pyevt.so
 @man man/man1/evtexport.1
 @man man/man1/evtinfo.1
 @man man/man3/libevt.3
