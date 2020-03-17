@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/12 06:58:29 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:23:46 rpointel Exp $
 @bin bin/fvdeinfo
 @bin bin/fvdemount
 @bin bin/fvdewipekey
@@ -10,13 +10,13 @@ include/libfvde/error.h
 include/libfvde/extern.h
 include/libfvde/features.h
 include/libfvde/types.h
-lib/libfvde.a
+@static-lib lib/libfvde.a
 lib/libfvde.la
 @lib lib/libfvde.so.${LIBfvde_VERSION}
 lib/pkgconfig/libfvde.pc
 lib/python${MODPY_VERSION}/site-packages/pyfvde.a
 lib/python${MODPY_VERSION}/site-packages/pyfvde.la
-lib/python${MODPY_VERSION}/site-packages/pyfvde.so
+@so lib/python${MODPY_VERSION}/site-packages/pyfvde.so
 @man man/man1/fvdeinfo.1
 @man man/man1/fvdemount.1
 @man man/man3/libfvde.3
