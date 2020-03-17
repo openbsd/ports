@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/08/28 21:50:47 kmos Exp $
+# $OpenBSD: Makefile,v 1.15 2020/03/17 21:08:15 rpointel Exp $
 
 COMMENT =	ForensicArtifacts.com Artifact Repository
 
-MODPY_EGG_VERSION = 20180505
+MODPY_EGG_VERSION = 20200118
 DISTNAME =	artifacts-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -22,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
 TEST_DEPENDS =	devel/py-yapf${MODPY_FLAVOR}

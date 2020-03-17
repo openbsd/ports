@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/07/18 09:41:17 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/17 21:08:15 rpointel Exp $
+@pkgpath security/py-artifacts
 @conflict py-artifacts-*
 @conflict py3-artifacts-*
 bin/stats.py
@@ -8,7 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/artifacts/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/artifacts/${MODPY_PYCACHE}/
@@ -32,7 +32,10 @@ share/artifacts/antivirus.yaml
 share/artifacts/applications.yaml
 share/artifacts/cloud_services.yaml
 share/artifacts/config_files.yaml
+share/artifacts/docker.yaml
+share/artifacts/hadoop.yaml
 share/artifacts/installed_modules.yaml
+share/artifacts/instant_messaging.yaml
 share/artifacts/java.yaml
 share/artifacts/kaspersky_careto.yaml
 share/artifacts/legacy.yaml
@@ -40,8 +43,15 @@ share/artifacts/linux.yaml
 share/artifacts/linux_proc.yaml
 share/artifacts/macos.yaml
 share/artifacts/ntfs.yaml
+share/artifacts/tomcat.yaml
 share/artifacts/unix_common.yaml
 share/artifacts/webbrowser.yaml
+share/artifacts/webservers.yaml
 share/artifacts/windows.yaml
 share/artifacts/windows_dll_hijacking.yaml
 share/artifacts/wmi.yaml
+share/doc/artifacts/
+share/doc/artifacts/ACKNOWLEDGEMENTS
+share/doc/artifacts/AUTHORS
+share/doc/artifacts/LICENSE
+share/doc/artifacts/README
