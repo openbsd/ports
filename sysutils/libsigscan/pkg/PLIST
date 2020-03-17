@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/14 20:20:30 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:31:37 rpointel Exp $
 @bin bin/sigscan
 include/libsigscan/
 include/libsigscan.h
@@ -8,13 +8,13 @@ include/libsigscan/error.h
 include/libsigscan/extern.h
 include/libsigscan/features.h
 include/libsigscan/types.h
-lib/libsigscan.a
+@static-lib lib/libsigscan.a
 lib/libsigscan.la
 @lib lib/libsigscan.so.${LIBsigscan_VERSION}
 lib/pkgconfig/libsigscan.pc
 lib/python${MODPY_VERSION}/site-packages/pysigscan.a
 lib/python${MODPY_VERSION}/site-packages/pysigscan.la
-lib/python${MODPY_VERSION}/site-packages/pysigscan.so
+@so lib/python${MODPY_VERSION}/site-packages/pysigscan.so
 @man man/man1/sigscan.1
 @man man/man3/libsigscan.3
 share/examples/libsigscan/
