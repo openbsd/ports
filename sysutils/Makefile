@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.559 2020/03/17 20:45:16 rpointel Exp $
+# $OpenBSD: Makefile,v 1.560 2020/03/17 21:22:01 rpointel Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -134,6 +134,7 @@
      SUBDIR += libevt
      SUBDIR += libevtx
      SUBDIR += libfvde
+     SUBDIR += libfsapfs
      SUBDIR += libfsntfs
      SUBDIR += libfwnt
      SUBDIR += libfwsi
