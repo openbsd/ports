@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/13 19:45:46 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:15:38 rpointel Exp $
 @bin bin/esedbexport
 @bin bin/esedbinfo
 include/libesedb/
@@ -9,12 +9,12 @@ include/libesedb/error.h
 include/libesedb/extern.h
 include/libesedb/features.h
 include/libesedb/types.h
-lib/libesedb.a
+@static-lib lib/libesedb.a
 lib/libesedb.la
 @lib lib/libesedb.so.${LIBesedb_VERSION}
 lib/pkgconfig/libesedb.pc
 lib/python${MODPY_VERSION}/site-packages/pyesedb.a
 lib/python${MODPY_VERSION}/site-packages/pyesedb.la
-lib/python${MODPY_VERSION}/site-packages/pyesedb.so
+@so lib/python${MODPY_VERSION}/site-packages/pyesedb.so
 @man man/man1/esedbinfo.1
 @man man/man3/libesedb.3
