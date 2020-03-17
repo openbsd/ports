@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/13 19:35:38 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:26:58 rpointel Exp $
 @bin bin/msiecfexport
 @bin bin/msiecfinfo
 include/libmsiecf/
@@ -9,13 +9,13 @@ include/libmsiecf/error.h
 include/libmsiecf/extern.h
 include/libmsiecf/features.h
 include/libmsiecf/types.h
-lib/libmsiecf.a
+@static-lib lib/libmsiecf.a
 lib/libmsiecf.la
 @lib lib/libmsiecf.so.${LIBmsiecf_VERSION}
 lib/pkgconfig/libmsiecf.pc
 lib/python${MODPY_VERSION}/site-packages/pymsiecf.a
 lib/python${MODPY_VERSION}/site-packages/pymsiecf.la
-lib/python${MODPY_VERSION}/site-packages/pymsiecf.so
+@so lib/python${MODPY_VERSION}/site-packages/pymsiecf.so
 @man man/man1/msiecfexport.1
 @man man/man1/msiecfinfo.1
 @man man/man3/libmsiecf.3
