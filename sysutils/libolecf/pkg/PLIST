@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/13 19:41:08 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:27:33 rpointel Exp $
 @bin bin/olecfexport
 @bin bin/olecfinfo
 @bin bin/olecfmount
@@ -11,13 +11,13 @@ include/libolecf/extern.h
 include/libolecf/features.h
 include/libolecf/ole.h
 include/libolecf/types.h
-lib/libolecf.a
+@static-lib lib/libolecf.a
 lib/libolecf.la
 @lib lib/libolecf.so.${LIBolecf_VERSION}
 lib/pkgconfig/libolecf.pc
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYOEXTENSION}lecf.a
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYOEXTENSION}lecf.la
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYOEXTENSION}lecf.so
+lib/python${MODPY_VERSION}/site-packages/pyolecf.a
+lib/python${MODPY_VERSION}/site-packages/pyolecf.la
+@so lib/python${MODPY_VERSION}/site-packages/pyolecf.so
 @man man/man1/olecfexport.1
 @man man/man1/olecfinfo.1
 @man man/man3/libolecf.3
