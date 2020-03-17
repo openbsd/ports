@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/17 10:37:25 jca Exp $
 
 COMMENT=	simple and small C++ XML parser
 
 V=		2.6.2
-REVISION =	3
+REVISION =	4
 DISTNAME=	tinyxml_${V:S/./_/g}
 PKGNAME=	tinyxml-${V}
 EXTRACT_SUFX=	.zip
 
-SHARED_LIBS=	tinyxml 0.0
+SHARED_LIBS=	tinyxml 1.0
 
 CATEGORIES=	textproc
 
@@ -23,14 +23,16 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyxml/}
 
-WRKDIST=	${WRKDIR}/tinyxml
-NO_TEST=	Yes
+USE_GMAKE=	Yes
 
-do-build:
-.for i in tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlparser.cpp
-	cd ${WRKBUILD} && ${CXX} ${CXXFLAGS} -fPIC -o $i.o -c $i
-.endfor
-	cd ${WRKBUILD} &&  ${CXX} ${CXXFLAGS} -shared -o libtinyxml.so.${LIBtinyxml_VERSION} *.cpp.o
+WRKDIST=	${WRKDIR}/tinyxml
+
+MAKE_FLAGS=	CC="${CC}" \
+		CXX="${CXX}" \
+		LD="${CXX}" \
+		RELEASE_CXXFLAGS="-fPIC ${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
+		LIBtinyxml_VERSION=${LIBtinyxml_VERSION}
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/libtinyxml.so.${LIBtinyxml_VERSION} \
