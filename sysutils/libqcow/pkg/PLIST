@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/13 19:42:15 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:28:13 rpointel Exp $
 @bin bin/qcowinfo
 @bin bin/qcowmount
 include/libqcow/
@@ -9,12 +9,12 @@ include/libqcow/error.h
 include/libqcow/extern.h
 include/libqcow/features.h
 include/libqcow/types.h
-lib/libqcow.a
+@static-lib lib/libqcow.a
 lib/libqcow.la
 @lib lib/libqcow.so.${LIBqcow_VERSION}
 lib/pkgconfig/libqcow.pc
 lib/python${MODPY_VERSION}/site-packages/pyqcow.a
 lib/python${MODPY_VERSION}/site-packages/pyqcow.la
-lib/python${MODPY_VERSION}/site-packages/pyqcow.so
+@so lib/python${MODPY_VERSION}/site-packages/pyqcow.so
 @man man/man1/qcowinfo.1
 @man man/man3/libqcow.3
