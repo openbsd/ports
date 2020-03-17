@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1182 2020/03/17 08:41:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.1183 2020/03/17 18:46:13 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -704,7 +704,6 @@
      SUBDIR += snort
      SUBDIR += socat
      SUBDIR += softflowd
-     SUBDIR += spectrum
      SUBDIR += spectrum-tools
      SUBDIR += srain
      SUBDIR += ssldump
