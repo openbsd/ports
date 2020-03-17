@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/17 21:24:30 rpointel Exp $
 
 COMMENT =	library for Windows NT data types
 
-VERSION = 	20180117
+VERSION = 	20191222
 DISTNAME =	libfwnt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
 
@@ -19,14 +19,15 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += m pthread util ${MODPY_WANTLIB}
+WANTLIB += iconv intl m pthread util ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python --disable-nls
+CONFIGURE_ARGS +=	--enable-python3 --disable-nls
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
 
 TEST_DEPENDS += shells/bash
 
