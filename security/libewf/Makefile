@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/17 21:01:34 rpointel Exp $
 
 COMMENT =		access the Expert Witness Compression Format
 
-VERSION =		20171104
-DISTNAME =		libewf-experimental-${VERSION}
-PKGNAME =		libewf-${VERSION}
+VERSION =		20140808
+DISTNAME =		libewf-${VERSION}
+EPOCH =			0
 
 SHARED_LIBS +=		ewf                       1.0 # 3.0
 
 CATEGORIES =		security
 
-HOMEPAGE =		https://github.com/libyal/libewf
+HOMEPAGE =		https://github.com/libyal/libewf-legacy/
 
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
@@ -21,9 +21,10 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio bz2 c crypto fuse iconv intl m pthread smdev smraw util
 WANTLIB += z
 
-MASTER_SITES =		https://github.com/libyal/libewf/releases/download/${VERSION}/
+MASTER_SITES =		https://github.com/libyal/libewf-legacy/releases/download/${VERSION}/
 
 MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
@@ -35,8 +36,8 @@ LIB_DEPENDS +=		devel/libbfio \
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix='${PREFIX}' \
 			--mandir=${PREFIX}/man \
-			--enable-python \
-			--with-pyprefix=${LOCALBASE} \
+			--enable-python3 \
+			--with-pythondir3=${MODPY_SITEPKG} \
 			--with-libuuid=no \
 			AWK=/usr/bin/awk \
 			MKDIR_P='/bin/mkdir -p'
