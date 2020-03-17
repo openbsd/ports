@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/14 20:25:58 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:34:59 rpointel Exp $
 @bin bin/vhdiinfo
 @bin bin/vhdimount
 include/libvhdi/
@@ -9,12 +9,12 @@ include/libvhdi/error.h
 include/libvhdi/extern.h
 include/libvhdi/features.h
 include/libvhdi/types.h
-lib/libvhdi.a
+@static-lib lib/libvhdi.a
 lib/libvhdi.la
 @lib lib/libvhdi.so.${LIBvhdi_VERSION}
 lib/pkgconfig/libvhdi.pc
 lib/python${MODPY_VERSION}/site-packages/pyvhdi.a
 lib/python${MODPY_VERSION}/site-packages/pyvhdi.la
-lib/python${MODPY_VERSION}/site-packages/pyvhdi.so
+@so lib/python${MODPY_VERSION}/site-packages/pyvhdi.so
 @man man/man1/vhdiinfo.1
 @man man/man3/libvhdi.3
