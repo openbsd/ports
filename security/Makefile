@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.572 2020/03/17 21:13:10 rpointel Exp $
+# $OpenBSD: Makefile,v 1.573 2020/03/17 21:51:13 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -293,7 +293,7 @@
      SUBDIR += py-cryptography_vectors
      SUBDIR += py-cryptography_vectors,python3
      SUBDIR += py-dfdatetime,python3
-     SUBDIR += py-dfvfs
+     SUBDIR += py-dfvfs,python3
      SUBDIR += py-dfwinreg
      SUBDIR += py-ecdsa
      SUBDIR += py-ecdsa,python3
