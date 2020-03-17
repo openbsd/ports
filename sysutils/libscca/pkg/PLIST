@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/14 20:24:45 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:30:51 rpointel Exp $
 @bin bin/sccainfo
 include/libscca/
 include/libscca.h
@@ -8,12 +8,12 @@ include/libscca/error.h
 include/libscca/extern.h
 include/libscca/features.h
 include/libscca/types.h
-lib/libscca.a
+@static-lib lib/libscca.a
 lib/libscca.la
 @lib lib/libscca.so.${LIBscca_VERSION}
 lib/pkgconfig/libscca.pc
 lib/python${MODPY_VERSION}/site-packages/pyscca.a
 lib/python${MODPY_VERSION}/site-packages/pyscca.la
-lib/python${MODPY_VERSION}/site-packages/pyscca.so
+@so lib/python${MODPY_VERSION}/site-packages/pyscca.so
 @man man/man1/sccainfo.1
 @man man/man3/libscca.3
