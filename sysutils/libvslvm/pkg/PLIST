@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/21 12:33:47 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:40:46 rpointel Exp $
 @bin bin/vslvminfo
 @bin bin/vslvmmount
 include/libvslvm/
@@ -9,12 +9,12 @@ include/libvslvm/error.h
 include/libvslvm/extern.h
 include/libvslvm/features.h
 include/libvslvm/types.h
-lib/libvslvm.a
+@static-lib lib/libvslvm.a
 lib/libvslvm.la
 @lib lib/libvslvm.so.${LIBvslvm_VERSION}
 lib/pkgconfig/libvslvm.pc
 lib/python${MODPY_VERSION}/site-packages/pyvslvm.a
 lib/python${MODPY_VERSION}/site-packages/pyvslvm.la
-lib/python${MODPY_VERSION}/site-packages/pyvslvm.so
+@so lib/python${MODPY_VERSION}/site-packages/pyvslvm.so
 @man man/man1/vslvminfo.1
 @man man/man3/libvslvm.3
