@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/12 10:57:34 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:22:59 rpointel Exp $
 @bin bin/fsntfsinfo
+@bin bin/fsntfsmount
 include/libfsntfs/
 include/libfsntfs.h
 include/libfsntfs/codepage.h
@@ -8,12 +9,12 @@ include/libfsntfs/error.h
 include/libfsntfs/extern.h
 include/libfsntfs/features.h
 include/libfsntfs/types.h
-lib/libfsntfs.a
+@static-lib lib/libfsntfs.a
 lib/libfsntfs.la
 @lib lib/libfsntfs.so.${LIBfsntfs_VERSION}
 lib/pkgconfig/libfsntfs.pc
 lib/python${MODPY_VERSION}/site-packages/pyfsntfs.a
 lib/python${MODPY_VERSION}/site-packages/pyfsntfs.la
-lib/python${MODPY_VERSION}/site-packages/pyfsntfs.so
+@so lib/python${MODPY_VERSION}/site-packages/pyfsntfs.so
 @man man/man1/fsntfsinfo.1
 @man man/man3/libfsntfs.3
