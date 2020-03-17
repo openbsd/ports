@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/17 21:21:05 rpointel Exp $
+@bin bin/fsapfsinfo
+@bin bin/fsapfsmount
+include/libfsapfs/
+include/libfsapfs.h
+include/libfsapfs/codepage.h
+include/libfsapfs/definitions.h
+include/libfsapfs/error.h
+include/libfsapfs/extern.h
+include/libfsapfs/features.h
+include/libfsapfs/types.h
+@static-lib lib/libfsapfs.a
+lib/libfsapfs.la
+@lib lib/libfsapfs.so.${LIBfsapfs_VERSION}
+lib/pkgconfig/libfsapfs.pc
+lib/python${MODPY_VERSION}/site-packages/pyfsapfs.a
+lib/python${MODPY_VERSION}/site-packages/pyfsapfs.la
+@so lib/python${MODPY_VERSION}/site-packages/pyfsapfs.so
+@man man/man1/fsapfsinfo.1
+@man man/man1/fsapfsmount.1
+@man man/man3/libfsapfs.3
