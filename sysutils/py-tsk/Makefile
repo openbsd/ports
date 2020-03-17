@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/17 20:42:46 rpointel Exp $
 
 COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 
-MODPY_EGG_VERSION = 20180225
+MODPY_EGG_VERSION = 20200117
 DISTNAME =	pytsk3-${MODPY_EGG_VERSION}
 PKGNAME =	py-tsk-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -24,9 +23,12 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 WANTLIB += pthread talloc tsk ${MODPY_WANTLIB}
+
+# C++11
+COMPILER=	ports-clang ports-gcc
 
 pre-configure:
 		${SUBST_DATA} ${WRKSRC}/setup.py ${WRKSRC}/setup.py.new
