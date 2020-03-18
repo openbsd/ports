@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/16 18:06:29 martin Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/18 17:58:52 martin Exp $
 
 COMMENT=	time and date handling utility functions from netcdf4-python
 
 MODPY_EGG_VERSION= 	1.1.1
 DISTNAME=		cftime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		math
 
@@ -23,14 +24,14 @@ MODPY_PI=		Yes
 MODPY_PYTEST=		Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS=		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=		lang/cython${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}
 
 RUN_DEPENDS=		lang/cython${MODPY_FLAVOR} \
 			math/netcdf
 
 TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR}
 
