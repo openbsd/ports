@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/18 06:40:13 rpointel Exp $
+@bin bin/luksdeinfo
+@bin bin/luksdemount
+include/libluksde/
+include/libluksde.h
+include/libluksde/codepage.h
+include/libluksde/definitions.h
+include/libluksde/error.h
+include/libluksde/extern.h
+include/libluksde/features.h
+include/libluksde/types.h
+@static-lib lib/libluksde.a
+lib/libluksde.la
+@lib lib/libluksde.so.${LIBluksde_VERSION}
+lib/pkgconfig/libluksde.pc
+lib/python${MODPY_VERSION}/site-packages/pyluksde.a
+lib/python${MODPY_VERSION}/site-packages/pyluksde.la
+@so lib/python${MODPY_VERSION}/site-packages/pyluksde.so
+@man man/man1/luksdeinfo.1
+@man man/man1/luksdemount.1
+@man man/man3/libluksde.3
