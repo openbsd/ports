@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/24 06:46:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/18 11:53:15 pvk Exp $
 
 COMMENT =		python SDK for the VMware vSphere API
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	6.7.3
 
 DISTNAME =		pyvmomi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -26,7 +27,7 @@ RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-testtools${MODPY_FLAVOR} \
