@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/05/25 11:45:25 shadchin Exp $
-bin/jupyter-nbconvert${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.6 2020/03/18 18:08:13 bket Exp $
+@conflict py-nbconvert-*
+@pkgpath devel/py-nbconvert
+bin/jupyter-nbconvert
 lib/python${MODPY_VERSION}/site-packages/nbconvert/
 lib/python${MODPY_VERSION}/site-packages/nbconvert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/nbconvert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -166,6 +168,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}regexremove.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}sanitize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}svg2pdf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}tagremove.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/clearoutput.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/coalescestreams.py
@@ -178,6 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/latex.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/regexremove.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/sanitize.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/svg2pdf.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tagremove.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}/
@@ -194,6 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_regexremove.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_sanitize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_svg2pdf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_tagremove.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/fake_kernelmanager.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/
@@ -218,6 +223,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_late
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_regexremove.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_sanitize.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_svg2pdf.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_tagremove.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/${MODPY_PYCACHE}/

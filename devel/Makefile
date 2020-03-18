@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1953 2020/03/17 20:54:52 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1954 2020/03/18 18:08:13 bket Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1550,7 +1550,6 @@
      SUBDIR += py-munch
      SUBDIR += py-munch,python3
      SUBDIR += py-mxDateTime
-     SUBDIR += py-nbconvert
      SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat
      SUBDIR += py-nbformat,python3
