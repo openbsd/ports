@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.561 2020/03/18 06:43:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.562 2020/03/18 11:54:51 pvk Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -276,7 +276,6 @@
      SUBDIR += py-statgrab
      SUBDIR += py-statgrab,python3
      SUBDIR += py-tsk,python3
-     SUBDIR += py-vmomi
      SUBDIR += py-vmomi,python3
      SUBDIR += radiusreport
      SUBDIR += radmind
