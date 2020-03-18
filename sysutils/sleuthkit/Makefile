@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2020/03/17 20:41:45 rpointel Exp $
+# $OpenBSD: Makefile,v 1.29 2020/03/18 13:45:04 jca Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
 DISTNAME=		sleuthkit-4.8.0
+REVISION=		0
 CATEGORIES=		sysutils security
 
 SHARED_LIBS +=		tsk 2.0 # 20.0
 
-HOMEPAGE=		http://www.sleuthkit.org/
+HOMEPAGE=		https://www.sleuthkit.org/
 
 MAINTAINER=		Remi Pointel <rpointel@openbsd.org>
 
@@ -33,9 +34,9 @@ CONFIGURE_ENV =		ac_cv_path_CPPUNIT_CONFIG=no \
 			ac_cv_header_postgresql_libpq_fe_h=no
 RUN_DEPENDS =		converters/p5-DateManip
 LIB_DEPENDS =		databases/sqlite3 \
-   			devel/libbfio \
-   			sysutils/libvhdi \
-   			sysutils/libvmdk
+			devel/libbfio \
+			sysutils/libvhdi \
+			sysutils/libvmdk
 
 NO_TEST =		Yes
 
