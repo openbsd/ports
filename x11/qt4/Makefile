@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2019/12/06 09:44:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.163 2020/03/18 05:14:03 tb Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -26,39 +26,39 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		21
-REVISION-mysql =	7
-REVISION-postgresql =	6
-REVISION-sqlite2 =	6
-REVISION-tds =		6
-REVISION-debug =	3
-REVISION-examples =	8
-REVISION-html =		3
+REVISION-main =		22
+REVISION-mysql =	8
+REVISION-postgresql =	7
+REVISION-sqlite2 =	7
+REVISION-tds =		7
+REVISION-debug =	4
+REVISION-examples =	9
+REVISION-html =		4
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
 
-SHARED_LIBS =	Qt3Support 9.0 \
+SHARED_LIBS =	Qt3Support 10.0 \
 		QtCore 10.0 \
 		QtDesigner 8.0 \
 		QtDesignerComponents 8.0 \
 		QtGui 11.0 \
-		QtNetwork 11.0 \
+		QtNetwork 12.0 \
 		QtOpenGL 8.0 \
 		QtSql 9.0 \
 		QtXml 9.0 \
 		QtSvg 8.0 \
-		QtTest 8.0 \
-		QtDBus 3.0 \
+		QtTest 9.0 \
+		QtDBus 4.0 \
 		QtMultimedia 1.0 \
 		QtScript 3.0 \
-		QtCLucene 1.0 \
-		QtHelp 2.0 \
-		QtXmlPatterns 1.0 \
+		QtCLucene 2.0 \
+		QtHelp 3.0 \
+		QtXmlPatterns 2.0 \
 		QtScriptTools 1.0 \
-		QtWebKit 5.0 \
+		QtWebKit 6.0 \
 		phonon 5.0 \
-		QtDeclarative 1.0
+		QtDeclarative 2.0
 
 
 VERSION =	4.8.7

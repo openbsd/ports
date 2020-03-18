@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-mysql,v 1.2 2012/06/14 09:38:36 espie Exp $
-lib/qt4/plugins/sqldrivers/libqsqlmysql.so
+@comment $OpenBSD: PLIST-mysql,v 1.3 2020/03/18 05:14:03 tb Exp $
+@so lib/qt4/plugins/sqldrivers/libqsqlmysql.so

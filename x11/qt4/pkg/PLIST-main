@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2018/05/25 13:09:02 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2020/03/18 05:14:03 tb Exp $
 @conflict qt4-sqlite-*
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
@@ -3175,19 +3175,19 @@ lib/qt4/imports/
 lib/qt4/imports/Qt/
 lib/qt4/imports/Qt/labs/
 lib/qt4/imports/Qt/labs/folderlistmodel/
-lib/qt4/imports/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so
+@so lib/qt4/imports/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so
 lib/qt4/imports/Qt/labs/folderlistmodel/qmldir
 lib/qt4/imports/Qt/labs/gestures/
-lib/qt4/imports/Qt/labs/gestures/libqmlgesturesplugin.so
+@so lib/qt4/imports/Qt/labs/gestures/libqmlgesturesplugin.so
 lib/qt4/imports/Qt/labs/gestures/qmldir
 lib/qt4/imports/Qt/labs/particles/
-lib/qt4/imports/Qt/labs/particles/libqmlparticlesplugin.so
+@so lib/qt4/imports/Qt/labs/particles/libqmlparticlesplugin.so
 lib/qt4/imports/Qt/labs/particles/qmldir
 lib/qt4/imports/Qt/labs/shaders/
-lib/qt4/imports/Qt/labs/shaders/libqmlshadersplugin.so
+@so lib/qt4/imports/Qt/labs/shaders/libqmlshadersplugin.so
 lib/qt4/imports/Qt/labs/shaders/qmldir
 lib/qt4/imports/QtWebKit/
-lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so
+@so lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so
 lib/qt4/imports/QtWebKit/qmldir
 lib/qt4/include
 lib/qt4/libQt3Support.la
@@ -3239,7 +3239,7 @@ lib/qt4/libQtSvg.prl
 lib/qt4/libQtTest.la
 lib/qt4/libQtTest.prl
 @lib lib/qt4/libQtTest.so.${LIBQtTest_VERSION}
-lib/qt4/libQtUiTools.a
+@static-lib lib/qt4/libQtUiTools.a
 lib/qt4/libQtUiTools.prl
 lib/qt4/libQtWebKit.la
 lib/qt4/libQtWebKit.prl
@@ -4051,44 +4051,44 @@ lib/qt4/pkgconfig/QtXmlPatterns.pc
 lib/qt4/pkgconfig/phonon.pc
 lib/qt4/plugins/
 lib/qt4/plugins/accessible/
-lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
-lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
+@so lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
+@so lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
 lib/qt4/plugins/bearer/
-lib/qt4/plugins/bearer/libqgenericbearer.so
+@so lib/qt4/plugins/bearer/libqgenericbearer.so
 lib/qt4/plugins/codecs/
-lib/qt4/plugins/codecs/libqcncodecs.so
-lib/qt4/plugins/codecs/libqjpcodecs.so
-lib/qt4/plugins/codecs/libqkrcodecs.so
-lib/qt4/plugins/codecs/libqtwcodecs.so
+@so lib/qt4/plugins/codecs/libqcncodecs.so
+@so lib/qt4/plugins/codecs/libqjpcodecs.so
+@so lib/qt4/plugins/codecs/libqkrcodecs.so
+@so lib/qt4/plugins/codecs/libqtwcodecs.so
 lib/qt4/plugins/designer/
-lib/qt4/plugins/designer/libphononwidgets.so
-lib/qt4/plugins/designer/libqdeclarativeview.so
-lib/qt4/plugins/designer/libqt3supportwidgets.so
-lib/qt4/plugins/designer/libqwebview.so
+@so lib/qt4/plugins/designer/libphononwidgets.so
+@so lib/qt4/plugins/designer/libqdeclarativeview.so
+@so lib/qt4/plugins/designer/libqt3supportwidgets.so
+@so lib/qt4/plugins/designer/libqwebview.so
 lib/qt4/plugins/graphicssystems/
-lib/qt4/plugins/graphicssystems/libqglgraphicssystem.so
-lib/qt4/plugins/graphicssystems/libqtracegraphicssystem.so
+@so lib/qt4/plugins/graphicssystems/libqglgraphicssystem.so
+@so lib/qt4/plugins/graphicssystems/libqtracegraphicssystem.so
 lib/qt4/plugins/iconengines/
-lib/qt4/plugins/iconengines/libqsvgicon.so
+@so lib/qt4/plugins/iconengines/libqsvgicon.so
 lib/qt4/plugins/imageformats/
-lib/qt4/plugins/imageformats/libqgif.so
-lib/qt4/plugins/imageformats/libqico.so
-lib/qt4/plugins/imageformats/libqjpeg.so
-lib/qt4/plugins/imageformats/libqmng.so
-lib/qt4/plugins/imageformats/libqsvg.so
-lib/qt4/plugins/imageformats/libqtga.so
-lib/qt4/plugins/imageformats/libqtiff.so
+@so lib/qt4/plugins/imageformats/libqgif.so
+@so lib/qt4/plugins/imageformats/libqico.so
+@so lib/qt4/plugins/imageformats/libqjpeg.so
+@so lib/qt4/plugins/imageformats/libqmng.so
+@so lib/qt4/plugins/imageformats/libqsvg.so
+@so lib/qt4/plugins/imageformats/libqtga.so
+@so lib/qt4/plugins/imageformats/libqtiff.so
 lib/qt4/plugins/inputmethods/
-lib/qt4/plugins/inputmethods/libqimsw-multi.so
+@so lib/qt4/plugins/inputmethods/libqimsw-multi.so
 lib/qt4/plugins/phonon_backend/
-lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so
+@so lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so
 lib/qt4/plugins/qmltooling/
-lib/qt4/plugins/qmltooling/libqmldbg_inspector.so
-lib/qt4/plugins/qmltooling/libqmldbg_tcp.so
+@so lib/qt4/plugins/qmltooling/libqmldbg_inspector.so
+@so lib/qt4/plugins/qmltooling/libqmldbg_tcp.so
 lib/qt4/plugins/script/
-lib/qt4/plugins/script/libqtscriptdbus.so
+@so lib/qt4/plugins/script/libqtscriptdbus.so
 lib/qt4/plugins/sqldrivers/
-lib/qt4/plugins/sqldrivers/libqsqlite.so
+@so lib/qt4/plugins/sqldrivers/libqsqlite.so
 lib/qt4/q3porting.xml
 lib/qt4/tests/
 lib/qt4/tests/qt4/

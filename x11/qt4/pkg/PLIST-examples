@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.30 2014/07/12 11:10:14 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.31 2020/03/18 05:14:03 tb Exp $
 @conflict qt4-<=4.2.2
 bin/pixeltool
 bin/qtdemo
@@ -652,7 +652,7 @@ lib/qt4/demos/shared/images/slider_thumb_on.png
 lib/qt4/demos/shared/images/title_cap_left.png
 lib/qt4/demos/shared/images/title_cap_right.png
 lib/qt4/demos/shared/images/title_stretch.png
-lib/qt4/demos/shared/libdemo_shared.a
+@static-lib lib/qt4/demos/shared/libdemo_shared.a
 lib/qt4/demos/shared/libdemo_shared.prl
 lib/qt4/demos/shared/shared.pri
 lib/qt4/demos/shared/shared.pro
@@ -1105,7 +1105,7 @@ lib/qt4/examples/declarative/cppextensions/cppextensions.pro
 lib/qt4/examples/declarative/cppextensions/cppextensions.qmlproject
 lib/qt4/examples/declarative/cppextensions/imageprovider/
 lib/qt4/examples/declarative/cppextensions/imageprovider/ImageProviderCore/
-lib/qt4/examples/declarative/cppextensions/imageprovider/ImageProviderCore/libqmlimageproviderplugin.so
+@so lib/qt4/examples/declarative/cppextensions/imageprovider/ImageProviderCore/libqmlimageproviderplugin.so
 lib/qt4/examples/declarative/cppextensions/imageprovider/ImageProviderCore/qmldir
 lib/qt4/examples/declarative/cppextensions/imageprovider/imageprovider-example.qml
 lib/qt4/examples/declarative/cppextensions/imageprovider/imageprovider.cpp
@@ -1122,7 +1122,7 @@ lib/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/qml/netwo
 lib/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/qml/networkaccessmanagerfactory/view.qml
 lib/qt4/examples/declarative/cppextensions/plugins/
 lib/qt4/examples/declarative/cppextensions/plugins/README
-lib/qt4/examples/declarative/cppextensions/plugins/libqmlqwidgetsplugin.so
+@so lib/qt4/examples/declarative/cppextensions/plugins/libqmlqwidgetsplugin.so
 lib/qt4/examples/declarative/cppextensions/plugins/org/
 lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/
 lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/
@@ -1130,7 +1130,7 @@ lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/Clo
 lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/center.png
 lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/clock.png
 lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/hour.png
-lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/libqmlqtimeexampleplugin.so
+@so lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/libqmlqtimeexampleplugin.so
 lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/minute.png
 lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/qmldir
 lib/qt4/examples/declarative/cppextensions/plugins/plugin.cpp
@@ -3816,7 +3816,7 @@ lib/qt4/examples/tools/echoplugin/echowindow/main.cpp
 lib/qt4/examples/tools/echoplugin/plugin/
 lib/qt4/examples/tools/echoplugin/plugin/echoplugin.cpp
 lib/qt4/examples/tools/echoplugin/plugin/echoplugin.h
-lib/qt4/examples/tools/echoplugin/plugin/libechoplugin.so
+@so lib/qt4/examples/tools/echoplugin/plugin/libechoplugin.so
 lib/qt4/examples/tools/echoplugin/plugin/plugin.pro
 lib/qt4/examples/tools/i18n/
 @bin lib/qt4/examples/tools/i18n/i18n
@@ -3878,9 +3878,9 @@ lib/qt4/examples/tools/plugandpaint/plugandpaint.pro
 lib/qt4/examples/tools/plugandpaint/plugindialog.cpp
 lib/qt4/examples/tools/plugandpaint/plugindialog.h
 lib/qt4/examples/tools/plugandpaint/plugins/
-lib/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.a
+@static-lib lib/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.a
 lib/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.prl
-lib/qt4/examples/tools/plugandpaint/plugins/libpnp_extrafilters.so
+@so lib/qt4/examples/tools/plugandpaint/plugins/libpnp_extrafilters.so
 lib/qt4/examples/tools/plugandpaintplugins/
 lib/qt4/examples/tools/plugandpaintplugins/basictools/
 lib/qt4/examples/tools/plugandpaintplugins/basictools/basictools.pro
@@ -3922,7 +3922,7 @@ lib/qt4/examples/tools/styleplugin/plugin/simplestyleplugin.h
 @bin lib/qt4/examples/tools/styleplugin/styleplugin
 lib/qt4/examples/tools/styleplugin/styleplugin.pro
 lib/qt4/examples/tools/styleplugin/styles/
-lib/qt4/examples/tools/styleplugin/styles/libsimplestyleplugin.so
+@so lib/qt4/examples/tools/styleplugin/styles/libsimplestyleplugin.so
 lib/qt4/examples/tools/styleplugin/stylewindow/
 lib/qt4/examples/tools/styleplugin/stylewindow/main.cpp
 lib/qt4/examples/tools/styleplugin/stylewindow/stylewindow.cpp
@@ -4605,8 +4605,8 @@ lib/qt4/examples/xmlpatterns/xquery/globalVariables/globals.gccxml
 lib/qt4/examples/xmlpatterns/xquery/globalVariables/globals.html
 lib/qt4/examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
 lib/qt4/examples/xmlpatterns/xquery/xquery.pro
-lib/qt4/plugins/designer/libarthurplugin.so
-lib/qt4/plugins/designer/libcontainerextension.so
-lib/qt4/plugins/designer/libcustomwidgetplugin.so
-lib/qt4/plugins/designer/libtaskmenuextension.so
-lib/qt4/plugins/designer/libworldtimeclockplugin.so
+@so lib/qt4/plugins/designer/libarthurplugin.so
+@so lib/qt4/plugins/designer/libcontainerextension.so
+@so lib/qt4/plugins/designer/libcustomwidgetplugin.so
+@so lib/qt4/plugins/designer/libtaskmenuextension.so
+@so lib/qt4/plugins/designer/libworldtimeclockplugin.so
