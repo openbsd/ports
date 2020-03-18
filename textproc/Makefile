@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.623 2020/03/09 16:28:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.624 2020/03/18 11:41:14 pvk Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -386,7 +386,6 @@
      SUBDIR += py-dicttoxml,python3
      SUBDIR += py-docutils
      SUBDIR += py-docutils,python3
-     SUBDIR += py-elasticsearch
      SUBDIR += py-elasticsearch,python3
      SUBDIR += py-emoji
      SUBDIR += py-emoji,python3
