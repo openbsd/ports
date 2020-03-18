@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_WitchBlastGame_cpp,v 1.1.1.1 2017/12/26 20:14:34 awolk Exp $
+$OpenBSD: patch-src_WitchBlastGame_cpp,v 1.2 2020/03/18 18:55:24 sebastia Exp $
 
 fix save location for death certificates (rip_...)
 
@@ -14,3 +14,24 @@ Index: src/WitchBlastGame.cpp
    time_t t = time(0);   // get time now
    struct tm * now = localtime( & t );
  
+@@ -3109,6 +3109,11 @@ void WitchBlastGame::updateMenu()
+         return;
+       }
+ 
++      // Ignore buttons that get released
++      if (event.type == sf::Event::JoystickButtonReleased) {
++	return;
++      }
++
+       // button pressed ?
+       for (int i = 0; !found && i < nbButtons; i++)
+       {
+@@ -3124,7 +3129,7 @@ void WitchBlastGame::updateMenu()
+       if (!found)
+       {
+         // axis ?
+-        for (int i = sf::Joystick::X; i <= sf::Joystick::PovY; i++)
++        for (int i = sf::Joystick::PovX; i <= sf::Joystick::PovY; i++)
+         {
+           if (sf::Joystick::hasAxis(0, (sf::Joystick::Axis)i))
+           {

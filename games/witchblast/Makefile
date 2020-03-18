@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/18 18:55:24 sebastia Exp $
 
 COMMENT =	roguelite dungeon crawler game
 
 GH_ACCOUNT =	Cirrus-Minor
 GH_PROJECT =	witchblast
 GH_TAGNAME =	v0.7.5
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games x11
 
