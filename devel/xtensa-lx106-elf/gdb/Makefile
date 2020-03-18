@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/18 13:51:25 sthen Exp $
 
 COMMENT =	gdb for ${CONFIG} cross-development
 
@@ -35,5 +35,15 @@ CONFIGURE_ARGS +=	--enable-commonbfdlib=no \
 			--disable-install-libiberty \
 			--enable-gdb \
 			--enable-sim
+
+CONFIGURE_ENV =		LDFLAGS="${LDFLAGS}"
+
+.include <bsd.port.arch.mk>
+
+# can't create dynamic relocation R_386_32 against local symbol in readonly segment
+.if ${ARCH:Mi386}
+CFLAGS += -fno-pie
+LDFLAGS += -nopie
+.endif
 
 .include <bsd.port.mk>
