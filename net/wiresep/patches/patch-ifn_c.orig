@@ -1,0 +1,30 @@
+$OpenBSD: patch-ifn_c.orig,v 1.1 2020/03/18 22:18:37 tb Exp $
+
+ifn.c:2940:33: warning: left shift count >= width of type [-Wshift-count-overflow]
+    ifaddr->v4mask = htonl(((1UL << 32) - 1) <<
+                                 ^~
+ifn.c:3060:31: warning: left shift count >= width of type [-Wshift-count-overflow]
+     allowedip->v4mask = ((1UL << 32) - 1) <<
+                               ^~
+
+Index: ifn.c
+--- ifn.c.orig
++++ ifn.c
+@@ -2937,7 +2937,7 @@ recvconfig(int masterport)
+ 		} else if (ifaddr->addr.family == AF_INET) {
+ 			assert(ifaddr->prefixlen <= 32);
+ 
+-			ifaddr->v4mask = htonl(((1UL << 32) - 1) <<
++			ifaddr->v4mask = htonl(((1ULL << 32) - 1) <<
+ 			    (32 - ifaddr->prefixlen));
+ 
+ 			sin = (struct sockaddr_in *)&ifaddr->addr;
+@@ -3057,7 +3057,7 @@ recvconfig(int masterport)
+ 			} else if (allowedip->addr.family == AF_INET) {
+ 				assert(allowedip->prefixlen <= 32);
+ 
+-				allowedip->v4mask = ((1UL << 32) - 1) <<
++				allowedip->v4mask = ((1ULL << 32) - 1) <<
+ 				    (32 - allowedip->prefixlen);
+ 
+ 				sin = (struct sockaddr_in *)&allowedip->addr;

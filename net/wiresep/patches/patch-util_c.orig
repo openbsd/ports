@@ -1,0 +1,18 @@
+$OpenBSD: patch-util_c.orig,v 1.1 2020/03/18 22:18:37 tb Exp $
+
+util.c:142:42: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+   if (asciihexmap[(unsigned char)src[i]] < 0)
+                                          ^
+
+Index: util.c
+--- util.c.orig
++++ util.c
+@@ -43,7 +43,7 @@
+ 
+ extern int background, verbose;
+ 
+-const char asciihexmap[] = {
++const signed char asciihexmap[] = {
+ 	-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+ 	    -1, -1, -1, -1, -1, -1, -1, -1, -1,
+ 	-1, /* ! */
