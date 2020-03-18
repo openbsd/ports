@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/18 18:53:45 sebastia Exp $
 
 COMMENT =		simple and fast multimedia library
 
@@ -6,7 +6,7 @@ V =			2.4.0
 DISTNAME =		SFML-${V}-sources
 PKGNAME =		sfml-${V}
 EXTRACT_SUFX =		.zip
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  sfml-audio                1.0 # 2.1
 SHARED_LIBS +=  sfml-graphics             1.0 # 2.1
@@ -24,7 +24,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC GL X11-xcb freetype jpeg m ogg openal vorbis vorbisenc
-WANTLIB += vorbisfile xcb xcb-image xcb-randr ${COMPILER_LIBCXX}
+WANTLIB += vorbisfile xcb xcb-image xcb-randr usbhid ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://www.sfml-dev.org/files/
 
@@ -51,6 +51,8 @@ WRKDIST =		${WRKDIR}/SFML-${V}
 
 post-extract:
 	find ${WRKSRC} -type f -exec perl -pi -e 's/\015//g' {} \;
+	mkdir ${WRKSRC}/src/SFML/Window/OpenBSD
+	cp ${FILESDIR}/JoystickImpl.* ${WRKSRC}/src/SFML/Window/OpenBSD
 
 post-install:
 	find ${PREFIX}/include -name '*.orig' -exec rm {} \;

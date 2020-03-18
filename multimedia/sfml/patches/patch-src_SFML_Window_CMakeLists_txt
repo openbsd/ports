@@ -1,6 +1,10 @@
-$OpenBSD: patch-src_SFML_Window_CMakeLists_txt,v 1.2 2016/09/01 16:50:14 pascal Exp $
---- src/SFML/Window/CMakeLists.txt.orig	Wed Aug 31 17:33:33 2016
-+++ src/SFML/Window/CMakeLists.txt	Wed Aug 31 17:33:36 2016
+$OpenBSD: patch-src_SFML_Window_CMakeLists_txt,v 1.3 2020/03/18 18:53:45 sebastia Exp $
+
+Add Joystick implementation for OpenBSD
+
+Index: src/SFML/Window/CMakeLists.txt
+--- src/SFML/Window/CMakeLists.txt.orig
++++ src/SFML/Window/CMakeLists.txt
 @@ -69,7 +69,7 @@ if(SFML_OS_WINDOWS)
  
      # make sure that we use the Unicode version of the Win API functions
@@ -17,8 +21,8 @@ $OpenBSD: patch-src_SFML_Window_CMakeLists_txt,v 1.2 2016/09/01 16:50:14 pascal 
 +    elseif(SFML_OS_OPENBSD)
 +        set(PLATFORM_SRC
 +            ${PLATFORM_SRC}
-+            ${SRCROOT}/Android/JoystickImpl.cpp
-+            ${SRCROOT}/Android/JoystickImpl.hpp
++            ${SRCROOT}/OpenBSD/JoystickImpl.cpp
++            ${SRCROOT}/OpenBSD/JoystickImpl.hpp
 +        )
      endif()
      source_group("unix" FILES ${PLATFORM_SRC})
@@ -32,12 +36,14 @@ $OpenBSD: patch-src_SFML_Window_CMakeLists_txt,v 1.2 2016/09/01 16:50:14 pascal 
          find_package(XCB COMPONENTS xlib_xcb image randr REQUIRED)
          if(NOT LIBXCB_FOUND)
              message(FATAL_ERROR "Xcb library not found")
-@@ -234,6 +240,8 @@ elseif(SFML_OS_LINUX)
+@@ -232,7 +238,9 @@ if(SFML_OS_WINDOWS)
+     list(APPEND WINDOW_EXT_LIBS winmm gdi32)
+ elseif(SFML_OS_LINUX)
      list(APPEND WINDOW_EXT_LIBS ${X11_X11_LIB} ${LIBXCB_LIBRARIES} ${UDEV_LIBRARIES})
- elseif(SFML_OS_FREEBSD)
-     list(APPEND WINDOW_EXT_LIBS ${X11_X11_LIB} ${LIBXCB_LIBRARIES} usbhid)
+-elseif(SFML_OS_FREEBSD)
++elseif(SFML_OS_FREEBSD) 
++    list(APPEND WINDOW_EXT_LIBS ${X11_X11_LIB} ${LIBXCB_LIBRARIES} usbhid)
 +elseif(SFML_OS_OPENBSD)
-+    list(APPEND WINDOW_EXT_LIBS ${X11_X11_LIB} ${LIBXCB_LIBRARIES})
+     list(APPEND WINDOW_EXT_LIBS ${X11_X11_LIB} ${LIBXCB_LIBRARIES} usbhid)
  elseif(SFML_OS_MACOSX)
      list(APPEND WINDOW_EXT_LIBS "-framework Foundation -framework AppKit -framework IOKit -framework Carbon")
- elseif(SFML_OS_IOS)
