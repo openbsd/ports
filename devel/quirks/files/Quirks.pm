@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.901 2020/03/17 18:48:57 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.902 2020/03/18 11:42:37 pvk Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -385,6 +385,7 @@ my $stem_extensions = {
 	'py-wurlitzer' => 'py3-wurlitzer',
 	'py-gunicorn' => 'py3-gunicorn',
 	'py-multidict' => 'py3-multidict',
+	'py-elasticsearch' => 'py3-elasticsearch',
 };
 
 my $obsolete_reason = {
