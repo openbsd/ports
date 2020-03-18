@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_irrlicht_include_IrrCompileConfig_h,v 1.1 2020/03/18 18:57:46 sebastia Exp $
+
+We want Joystick events, so have to use
+SDL instead of X11 backend for Irrlicht
+
+Index: lib/irrlicht/include/IrrCompileConfig.h
+--- lib/irrlicht/include/IrrCompileConfig.h.orig
++++ lib/irrlicht/include/IrrCompileConfig.h
+@@ -44,7 +44,7 @@
+ 
+ 
+ //! Uncomment this line to compile with the SDL device
+-//#define _IRR_COMPILE_WITH_SDL_DEVICE_
++#define _IRR_COMPILE_WITH_SDL_DEVICE_
+ #ifdef NO_IRR_COMPILE_WITH_SDL_DEVICE_
+ #undef _IRR_COMPILE_WITH_SDL_DEVICE_
+ #endif
+@@ -111,7 +111,7 @@
+ #define _IRR_LINUX_PLATFORM_
+ #endif
+ #define _IRR_POSIX_API_
+-#define _IRR_COMPILE_WITH_X11_DEVICE_
++//#define _IRR_COMPILE_WITH_X11_DEVICE_
+ //#define _IRR_COMPILE_WITH_WAYLAND_DEVICE_
+ #endif
+ 

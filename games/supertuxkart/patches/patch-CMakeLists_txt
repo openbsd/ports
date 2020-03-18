@@ -1,0 +1,13 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/03/18 18:57:46 sebastia Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -416,6 +416,7 @@ target_link_libraries(supertuxkart
+     ${JPEG_LIBRARIES}
+     ${TURBOJPEG_LIBRARY}
+     #${VPX_LIBRARIES}
++    SDL
+     )
+ 
+ if(NOT SERVER_ONLY)

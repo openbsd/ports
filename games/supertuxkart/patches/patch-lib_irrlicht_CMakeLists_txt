@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_irrlicht_CMakeLists_txt,v 1.4 2017/11/27 15:45:19 pascal Exp $
+$OpenBSD: patch-lib_irrlicht_CMakeLists_txt,v 1.5 2020/03/18 18:57:46 sebastia Exp $
 Index: lib/irrlicht/CMakeLists.txt
 --- lib/irrlicht/CMakeLists.txt.orig
 +++ lib/irrlicht/CMakeLists.txt
@@ -13,12 +13,3 @@ Index: lib/irrlicht/CMakeLists.txt
      if(CMAKE_COMPILER_IS_GNUCC)
          set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS} -fexpensive-optimizations")
      endif()
-@@ -86,7 +86,7 @@ if(USE_GLES2)
-     add_definitions(-D_IRR_COMPILE_WITH_OGLES2_ -DNO_IRR_COMPILE_WITH_OPENGL_)
- endif()
- 
--if(CYGWIN)
-+if(NOT LINUX)
-     add_definitions(-DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_)
- endif()
- 
