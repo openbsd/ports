@@ -2,6 +2,7 @@
 /dev/urandom r
 /dev/video rw
 /dev/video0 rw
+/dev/fido rw
 
 /etc/fonts r
 /etc/machine-id r
