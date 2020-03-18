@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/18 09:22:56 rpointel Exp $
 
 COMMENT =		basic file input/output abstraction C library
 
-VERSION =		20160108
+VERSION =		20191230
 DISTNAME =		libbfio-alpha-${VERSION}
 PKGNAME =		libbfio-${VERSION}
 
