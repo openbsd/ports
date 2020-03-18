@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/20 19:25:56 pvk Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/18 11:40:34 pvk Exp $
 
 COMMENT=	Python client for Elasticsearch
 
 MODPY_EGG_VERSION=7.5.1
 DISTNAME=	elasticsearch-${MODPY_EGG_VERSION}
 PKGNAME=	py-elasticsearch-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -27,9 +28,9 @@ RUN_DEPENDS=	www/py-requests${MODPY_FLAVOR}>=2.4.0,<3.0.0 \
 MODPY_SETUPTOOLS= Yes
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR?=	python3
 
-# Requires unported nosexcover
+# Requires elasticsearch cluster
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
