@@ -1,0 +1,46 @@
+$OpenBSD: patch-kio_kssl_ksslcertificate_cpp,v 1.1 2020/03/18 14:31:20 tb Exp $
+
+The X509_get_notBefore() and X509_get_notAfter() macros were changed in
+<openssl/x509.h> rev 1.70 to reference the functions X509_getm_notBefore() 
+and X509_getm_notAfter(), so these need to be resolved at runtime.
+See also the patches for kio/kssl/kopenssl.{cpp,h}.
+
+Index: kio/kssl/ksslcertificate.cpp
+--- kio/kssl/ksslcertificate.cpp.orig
++++ kio/kssl/ksslcertificate.cpp
+@@ -978,7 +978,7 @@ KSSLCertificate::KSSLValidation KSSLCertificate::proce
+ 
+ QString KSSLCertificate::getNotBefore() const {
+ #ifdef KSSL_HAVE_SSL
+-    return ASN1_UTCTIME_QString(X509_get_notBefore(d->m_cert));
++    return ASN1_UTCTIME_QString(d->kossl->X509_getm_notBefore(d->m_cert));
+ #else
+     return QString();
+ #endif
+@@ -987,7 +987,7 @@ QString KSSLCertificate::getNotBefore() const {
+ 
+ QString KSSLCertificate::getNotAfter() const {
+ #ifdef KSSL_HAVE_SSL
+-    return ASN1_UTCTIME_QString(X509_get_notAfter(d->m_cert));
++    return ASN1_UTCTIME_QString(d->kossl->X509_getm_notAfter(d->m_cert));
+ #else
+     return QString();
+ #endif
+@@ -996,7 +996,7 @@ QString KSSLCertificate::getNotAfter() const {
+ 
+ QDateTime KSSLCertificate::getQDTNotBefore() const {
+ #ifdef KSSL_HAVE_SSL
+-    return ASN1_UTCTIME_QDateTime(X509_get_notBefore(d->m_cert), NULL);
++    return ASN1_UTCTIME_QDateTime(d->kossl->X509_getm_notBefore(d->m_cert), NULL);
+ #else
+     return QDateTime::currentDateTime();
+ #endif
+@@ -1005,7 +1005,7 @@ QDateTime KSSLCertificate::getQDTNotBefore() const {
+ 
+ QDateTime KSSLCertificate::getQDTNotAfter() const {
+ #ifdef KSSL_HAVE_SSL
+-    return ASN1_UTCTIME_QDateTime(X509_get_notAfter(d->m_cert), NULL);
++    return ASN1_UTCTIME_QDateTime(d->kossl->X509_getm_notAfter(d->m_cert), NULL);
+ #else
+     return QDateTime::currentDateTime();
+ #endif
