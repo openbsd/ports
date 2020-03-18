@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.4 2020/03/06 15:20:31 sebastia Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.5 2020/03/18 18:39:17 sebastia Exp $
 
 - Handle the flavor as a property, not as a parameter.  
 - Handle errors from pkg_add
@@ -9,11 +9,9 @@ $OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.4 2020/03/06 15:20:31
 Index: lib/puppet/provider/package/openbsd.rb
 --- lib/puppet/provider/package/openbsd.rb.orig
 +++ lib/puppet/provider/package/openbsd.rb
-@@ -20,69 +20,61 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
-   has_feature :install_options
-   has_feature :uninstall_options
+@@ -22,68 +22,59 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    has_feature :upgradeable
-+  has_feature :flavorable
+   has_feature :supports_flavors
  
 +  mk_resource_methods
 +
@@ -25,7 +23,7 @@ Index: lib/puppet/provider/package/openbsd.rb
      begin
 -      execpipe(listcmd) do |process|
 -        # our regex for matching pkg_info output
--        regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
+-        regex = /^(.*)-(\d[^-]*)[-]?([\w-]*)(.*)$/
 -        fields = [:name, :ensure, :flavor ]
 -        hash = {}
 -
@@ -49,7 +47,7 @@ Index: lib/puppet/provider/package/openbsd.rb
 +      packages = pkginfo('-a')
 +      packages.split("\n").collect do |package|
 +        if match = regex.match(package.split[0])
-+         new( :name => match.captures[0],
++          new( :name => match.captures[0],
 +               :ensure => match.captures[1],
 +               :flavor => match.captures[2],
 +          )
@@ -110,7 +108,7 @@ Index: lib/puppet/provider/package/openbsd.rb
      else
        # Remove all fuzzy matches first.
        output = output.split.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
-@@ -91,21 +83,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -92,21 +83,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
  
      if output =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*) \(installed\)$/
        debug "Package is already the latest available"
@@ -138,7 +136,7 @@ Index: lib/puppet/provider/package/openbsd.rb
        else
          return match[2]
        end
-@@ -116,53 +109,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -117,53 +109,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      self.install(true)
    end
  
@@ -203,7 +201,7 @@ Index: lib/puppet/provider/package/openbsd.rb
    end
  
    def get_full_name(latest = false)
-@@ -183,6 +148,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -184,6 +148,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
        if @resource[:ensure].to_s =~ /(\d[^-]*)$/
          use_version = @resource[:ensure]
        else
@@ -211,7 +209,7 @@ Index: lib/puppet/provider/package/openbsd.rb
          use_version = get_version
        end
  
-@@ -191,26 +157,26 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -192,26 +157,26 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def get_version
@@ -254,7 +252,7 @@ Index: lib/puppet/provider/package/openbsd.rb
    rescue Puppet::ExecutionFailure
      return nil
    end
-@@ -229,7 +195,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -230,7 +195,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def uninstall_options
