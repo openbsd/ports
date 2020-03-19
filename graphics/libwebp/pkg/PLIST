@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/07/14 08:11:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/03/19 22:23:47 ajacoutot Exp $
 @bin bin/cwebp
 @bin bin/dwebp
 @bin bin/gif2webp
@@ -12,16 +12,16 @@ include/webp/encode.h
 include/webp/mux.h
 include/webp/mux_types.h
 include/webp/types.h
-lib/libwebp.a
+@static-lib lib/libwebp.a
 lib/libwebp.la
 @lib lib/libwebp.so.${LIBwebp_VERSION}
-lib/libwebpdecoder.a
+@static-lib lib/libwebpdecoder.a
 lib/libwebpdecoder.la
 @lib lib/libwebpdecoder.so.${LIBwebpdecoder_VERSION}
-lib/libwebpdemux.a
+@static-lib lib/libwebpdemux.a
 lib/libwebpdemux.la
 @lib lib/libwebpdemux.so.${LIBwebpdemux_VERSION}
-lib/libwebpmux.a
+@static-lib lib/libwebpmux.a
 lib/libwebpmux.la
 @lib lib/libwebpmux.so.${LIBwebpmux_VERSION}
 lib/pkgconfig/libwebp.pc
