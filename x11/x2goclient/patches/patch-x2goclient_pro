@@ -1,20 +1,20 @@
-$OpenBSD: patch-x2goclient_pro,v 1.5 2018/10/23 19:28:47 jasper Exp $
+$OpenBSD: patch-x2goclient_pro,v 1.6 2020/03/19 19:51:09 rsadowski Exp $
 
 It's not required to link with libssh_threads anymore since libssh 0.8
 
 Index: x2goclient.pro
 --- x2goclient.pro.orig
 +++ x2goclient.pro
-@@ -132,7 +132,7 @@ SOURCES += src/sharewidget.cpp \
-            src/compat.cpp \
-            src/pulsemanager.cpp
+@@ -165,7 +165,7 @@ else:win32 {
+ }
+ else {
+   # For backwards-compatibility.
+-  LIBS += -lssh -lssh_threads
++  LIBS += -lssh
+ }
  
--LIBS += -lssh -lssh_threads
-+LIBS += -lssh
  win32:LIBS += -lAdvAPI32 -lshell32 -lUser32
- 
- RC_FILE = res/x2goclient.rc
-@@ -168,7 +168,7 @@ else:message("No translation files in project")
+@@ -203,7 +203,7 @@ else:message("No translation files in project")
  
  TEMPLATE = app
  DEPENDPATH += .
@@ -23,14 +23,14 @@ Index: x2goclient.pro
  RESOURCES += res/resources.qrc
  
  exists(res/txt/git-info) {
-@@ -190,6 +190,10 @@ linux-g++-64 {
-   message("building $$TARGET with ldap and cups")
+@@ -220,6 +220,10 @@ linux|linux-* {
+   message("building $$TARGET via $$QMAKESPEC with ldap and cups")
    LIBS += -lldap -lcups -lX11 -lXpm
    DEFINES += __linux__
 +}
 +openbsd-* {
-+  message("building $$TARGET with ldap and cups")
-+  LIBS += -lldap -lcups -lX11 -lXpm
++    message("building $$TARGET with ldap and cups")
++    LIBS += -lldap -lcups -lX11 -lXpm
  }
  x2go_linux_static {
    message("linking all libs statically")

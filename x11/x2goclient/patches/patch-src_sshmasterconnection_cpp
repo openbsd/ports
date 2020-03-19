@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_sshmasterconnection_cpp,v 1.1.1.1 2017/06/08 18:05:04 rsadowski Exp $
+$OpenBSD: patch-src_sshmasterconnection_cpp,v 1.2 2020/03/19 19:51:09 rsadowski Exp $
 
 Increase the thread stack size to the default size on Linux, fixes
 a crash.
 
---- src/sshmasterconnection.cpp.orig	Wed Feb 22 05:11:35 2017
-+++ src/sshmasterconnection.cpp	Wed Feb 22 20:59:17 2017
-@@ -159,7 +159,7 @@ SshMasterConnection::SshMasterConnection (QObject* par
+Index: src/sshmasterconnection.cpp
+--- src/sshmasterconnection.cpp.orig
++++ src/sshmasterconnection.cpp
+@@ -152,7 +152,7 @@ SshMasterConnection::SshMasterConnection (QObject* par
          QString proxylogin, QString proxypassword, QString proxykey,
          bool proxyautologin, bool proxyKrbLogin ) : QThread ( parent )
  {

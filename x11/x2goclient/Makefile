@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/14 14:05:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/19 19:51:09 rsadowski Exp $
 
 COMMENT =	Qt client for the X2Go system
 
-DISTNAME =	x2goclient-4.1.2.1
-REVISION =	4
+DISTNAME =	x2goclient-4.1.2.2
 
 CATEGORIES =	x11
 
@@ -14,8 +13,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5X11Extras X11 Xpm c cups ldap m ssh
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Svg
+WANTLIB += Qt5Widgets Qt5X11Extras X11 Xpm c cups ldap m ssh
 
 MASTER_SITES =	https://code.x2go.org/releases/source/x2goclient/
 
@@ -24,7 +23,8 @@ MODULES =	x11/qt5
 LIB_DEPENDS =	databases/openldap \
 		print/cups,-libs \
 		security/libssh>=0.8.4 \
-		x11/qt5/qtx11extras
+		x11/qt5/qtx11extras \
+		x11/qt5/qtsvg
 
 RUN_DEPENDS =	x11/nx/nxcomp \
 		x11/nx/nxproxy \
