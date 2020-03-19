@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/19 21:02:40 kn Exp $
+# $OpenBSD: Makefile,v 1.40 2020/03/19 21:20:36 kn Exp $
 
 COMMENT =		low-latency voice chat client
 
@@ -10,7 +10,6 @@ CATEGORIES =		audio
 HOMEPAGE =		https://www.mumble.info/
 
 MASTER_SITES =		https://github.com/mumble-voip/mumble/releases/download/1.3.0/
-EXTRACT_SUFX =		.zip
 
 # BSD3
 PERMIT_PACKAGE =	Yes
