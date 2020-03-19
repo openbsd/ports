@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2020/02/09 19:15:25 kili Exp $
+# $OpenBSD: Makefile,v 1.170 2020/03/19 21:32:58 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,12 +12,12 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.4.2.20190113
+BIN_VER =		8.6.4.20200103
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -42,11 +42,6 @@ BUILD_DEPENDS =		archivers/bzip2 \
 			archivers/gtar \
 			textproc/py-sphinx
 RUN_DEPENDS =
-
-# The bootstrapping compiler needs gcc, but the new ghc can be built
-# with clang. So we just BUILD_DEPEND on gcc instead of using the gcc
-# MODULE, because the latter would also add some wrapper scripts
-BUILD_DEPENDS +=	lang/gcc/8>=8,<9
 
 # We can't use the wrapper script, because it then gets hardcoded into
 # the packaged ghc. So we explicitly use -Wl,-z,wxneeded (see
@@ -170,8 +165,7 @@ post-patch:
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	CONFIGURE_ENV=${CONFIGURE_ENV} \
-	./configure --prefix=${WRKDIR}/bootstrap \
-		    CC=${LOCALBASE}/bin/egcc && \
+	./configure --prefix=${WRKDIR}/bootstrap CC="${CC}" && \
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
