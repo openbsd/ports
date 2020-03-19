@@ -1,4 +1,2 @@
-SHA256 (bind-9.16.0.tar.xz) = r0vZva6xqnOZQply86iqAd1ohreuBG1wOrjaRTMPLig=
-SHA256 (bind-v9.16.0-tcp_quota_fix.patch) = 0jt9q870DRZZQMcW5S5Y5IXySI3vBZ4cf40qykXwIIE=
-SIZE (bind-9.16.0.tar.xz) = 4533976
-SIZE (bind-v9.16.0-tcp_quota_fix.patch) = 9912
+SHA256 (bind-9.16.1.tar.xz) = qRPX54E1uRI9IzIVtYEC+g8YEw+x4VhGWhwrbzvXXpE=
+SIZE (bind-9.16.1.tar.xz) = 4541768

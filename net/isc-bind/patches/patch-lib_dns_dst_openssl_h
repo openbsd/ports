@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_dns_dst_openssl_h,v 1.4 2020/02/20 14:00:32 sthen Exp $
+$OpenBSD: patch-lib_dns_dst_openssl_h,v 1.5 2020/03/19 17:07:20 sthen Exp $
 
 Index: lib/dns/dst_openssl.h
 --- lib/dns/dst_openssl.h.orig
 +++ lib/dns/dst_openssl.h
 @@ -23,7 +23,7 @@
- #include <openssl/evp.h>
- #include <openssl/rand.h>
+ #include <isc/log.h>
+ #include <isc/result.h>
  
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L

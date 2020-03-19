@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.111 2020/03/06 12:08:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2020/03/19 17:07:20 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-# 9.11 is an ESV.  After 9.11 the format changes: odd numbers are devel,
-# even numbers are stable (and for stable branches, point releases are
-# bug fixes only).  The next ESV will be 9.16.
-V=		9.16.0
+# Odd numbers devel, even numbers stable, ESV branched occasionally.
+# 9.16.x is ESV.
+V=		9.16.1
+PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		0
-REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -34,9 +33,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto iconv idn2 json-c lzma m pthread unistring uv xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
-MASTER_SITES0=	${MASTER_SITES:=patches/}
-PATCHFILES=	bind-v9.16.0-tcp_quota_fix.patch:0
-PATCH_DIST_STRIP= -p1
+#MASTER_SITES0=	${MASTER_SITES:=patches/}
+#PATCHFILES=	bind-v9.16.0-tcp_quota_fix.patch:0
+#PATCH_DIST_STRIP= -p1
 
 MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}

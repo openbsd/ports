@@ -1,27 +1,27 @@
-$OpenBSD: patch-lib_isc_unix_socket_c,v 1.18 2020/02/20 14:00:32 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.19 2020/03/19 17:07:20 sthen Exp $
 
 Index: lib/isc/unix/socket.c
 --- lib/isc/unix/socket.c.orig
 +++ lib/isc/unix/socket.c
-@@ -2388,6 +2388,7 @@ again:
+@@ -2402,6 +2402,7 @@ again:
  		}
- #endif
+ #endif /* if defined(SO_SNDBUF) */
  	}
 +#if !defined(__OpenBSD__) /* pledge doesn't allow "receive ToS" sockopts */
  #ifdef IPV6_RECVTCLASS
  	if ((sock->pf == AF_INET6) &&
  	    (setsockopt(sock->fd, IPPROTO_IPV6, IPV6_RECVTCLASS, (void *)&on,
-@@ -2410,6 +2411,7 @@ again:
+@@ -2426,6 +2427,7 @@ again:
  				 sock->fd, strbuf);
  	}
- #endif
-+#endif /* pledge */
+ #endif /* ifdef IP_RECVTOS */
++#endif
  #endif /* defined(USE_CMSG) || defined(SO_RCVBUF) || defined(SO_SNDBUF) */
  
  setup_done:
-@@ -5149,6 +5151,13 @@ void
- isc_socket_ipv6only(isc_socket_t *sock0, bool yes)
- {
+@@ -5143,6 +5145,13 @@ isc_socket_gettype(isc_socket_t *sock0) {
+ void
+ isc_socket_ipv6only(isc_socket_t *sock0, bool yes) {
  	isc__socket_t *sock = (isc__socket_t *)sock0;
 +#ifdef __OpenBSD__
 +/*
@@ -32,4 +32,4 @@ Index: lib/isc/unix/socket.c
 +#endif
  #if defined(IPV6_V6ONLY)
  	int onoff = yes ? 1 : 0;
- #else
+ #else  /* if defined(IPV6_V6ONLY) */

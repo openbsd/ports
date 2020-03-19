@@ -1,20 +1,20 @@
-$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.11 2020/02/20 14:00:32 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.12 2020/03/19 17:07:20 sthen Exp $
 
 Index: lib/dns/openssldh_link.c
 --- lib/dns/openssldh_link.c.orig
 +++ lib/dns/openssldh_link.c
-@@ -258,7 +258,7 @@ openssldh_generate(dst_key_t *key, int generator, void
- {
- 	DH *	  dh = NULL;
+@@ -262,7 +262,7 @@ static isc_result_t
+ openssldh_generate(dst_key_t *key, int generator, void (*callback)(int)) {
+ 	DH *dh = NULL;
  	BN_GENCB *cb;
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L
  	BN_GENCB _cb;
- #endif
- 	union {
-@@ -297,7 +297,7 @@ openssldh_generate(dst_key_t *key, int generator, void
- 		if (dh == NULL)
+ #endif /* if OPENSSL_VERSION_NUMBER < 0x10100000L || \
+ 	* defined(LIBRESSL_VERSION_NUMBER) */
+@@ -308,7 +308,7 @@ openssldh_generate(dst_key_t *key, int generator, void
  			return (dst__openssl_toresult(ISC_R_NOMEMORY));
+ 		}
  		cb = BN_GENCB_new();
 -#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
 +#if OPENSSL_VERSION_NUMBER >= 0x10100000L

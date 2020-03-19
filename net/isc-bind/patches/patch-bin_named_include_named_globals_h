@@ -1,11 +1,11 @@
-$OpenBSD: patch-bin_named_include_named_globals_h,v 1.14 2020/02/20 14:00:32 sthen Exp $
+$OpenBSD: patch-bin_named_include_named_globals_h,v 1.15 2020/03/19 17:07:20 sthen Exp $
 
 Index: bin/named/include/named/globals.h
 --- bin/named/include/named/globals.h.orig
 +++ bin/named/include/named/globals.h
 @@ -133,7 +133,7 @@ EXTERN const char *named_g_defaultpidfile INIT(NAMED_L
  								   "named.pid");
- #endif
+ #endif /* if NAMED_RUN_PID_DIR */
  
 -EXTERN const char *named_g_username INIT(NULL);
 +EXTERN const char *named_g_username INIT("_bind");

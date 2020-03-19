@@ -1,9 +1,9 @@
-$OpenBSD: patch-bin_dig_nslookup_c,v 1.14 2020/02/20 14:00:32 sthen Exp $
+$OpenBSD: patch-bin_dig_nslookup_c,v 1.15 2020/03/19 17:07:20 sthen Exp $
 
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
 +++ bin/dig/nslookup.c
-@@ -996,6 +996,15 @@ main(int argc, char **argv)
+@@ -1004,6 +1004,15 @@ main(int argc, char **argv) {
  	result = isc_app_start();
  	check_result(result, "isc_app_start");
  
@@ -19,10 +19,11 @@ Index: bin/dig/nslookup.c
  	setup_libs();
  	progname = argv[0];
  
-@@ -1005,6 +1014,15 @@ main(int argc, char **argv)
- 		setup_file_key();
- 	else if (keysecret[0] != 0)
+@@ -1014,6 +1023,16 @@ main(int argc, char **argv) {
+ 	} else if (keysecret[0] != 0) {
  		setup_text_key();
+ 	}
++
 +	/*
 +	 * dns:   resolv.conf, also allows port 53 sockets
 +	 * inet:  needed if we query on port != 53
@@ -32,6 +33,6 @@ Index: bin/dig/nslookup.c
 +		exit(1);
 +	}
 +
- 	if (domainopt[0] != '\0')
+ 	if (domainopt[0] != '\0') {
  		set_search_domain(domainopt);
- 	if (in_use)
+ 	}
