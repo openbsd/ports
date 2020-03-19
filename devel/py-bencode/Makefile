@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/17 20:53:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/19 12:32:39 ajacoutot Exp $
 
 COMMENT =	bencoding and bdecoding implementation
 
@@ -20,6 +20,8 @@ MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+BUILD_DEPENDS =		devel/py-pbr${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
