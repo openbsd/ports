@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/01/15 16:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/19 19:19:23 sthen Exp $
 
 COMMENT=	full-text search engine based on Lucene
 
-V=		8.4.1
+V=		8.5.0
 DISTNAME=	solr-$V
 EXTRACT_SUFX=	.tgz
 
