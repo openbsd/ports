@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1184 2020/03/17 18:48:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.1185 2020/03/19 14:47:04 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -623,7 +623,6 @@
      SUBDIR += py-simplesoap,python3
      SUBDIR += py-siphon,python3
      SUBDIR += py-slixmpp
-     SUBDIR += py-smbc
      SUBDIR += py-smbc,python3
      SUBDIR += py-snmp
      SUBDIR += py-socketio-client

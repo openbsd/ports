@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/04/16 08:17:11 ajacoutot Exp $
-lib/python${MODPY_VERSION}/site-packages/_smbc.so
+@comment $OpenBSD: PLIST,v 1.5 2020/03/19 14:47:04 ajacoutot Exp $
+@conflict py-smbc-*
+@pkgpath net/py-smbc
+@so lib/python${MODPY_VERSION}/site-packages/_smbc.so
 lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

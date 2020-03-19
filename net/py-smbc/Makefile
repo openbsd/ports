@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/09/27 12:50:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/19 14:47:04 ajacoutot Exp $
 
 COMMENT=		Python bindings to wrap the libsmbclient API
 
-MODPY_EGG_VERSION=	1.0.18
+MODPY_EGG_VERSION=	1.0.19
 DISTNAME=		pysmbc-${MODPY_EGG_VERSION}
 PKGNAME=		py-smbc-${MODPY_EGG_VERSION}
 EXTRACT_SUFX=		.tar.bz2
@@ -24,7 +24,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR=			python3
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			net/samba
@@ -36,5 +36,6 @@ MAKE_ENV=		PYTHON="${MODPY_BIN}" \
 			LDFLAGS="${LDFLAGS}"
 
 NO_TEST=		Yes
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
