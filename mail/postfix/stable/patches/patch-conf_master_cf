@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_master_cf,v 1.11 2019/04/15 21:10:09 sthen Exp $
+$OpenBSD: patch-conf_master_cf,v 1.12 2020/03/19 17:07:42 sthen Exp $
 
 Index: conf/master.cf
 --- conf/master.cf.orig
@@ -90,8 +90,8 @@ Index: conf/master.cf
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
--#  user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
-+#  user=_cyrus argv=/usr/local/libexec/cyrus-imapd/deliver -e -r ${sender} -m ${extension} ${user}
+-#  flags=DRX user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
++#  flags=DRX user=_cyrus argv=/usr/local/libexec/cyrus-imapd/deliver -e -r ${sender} -m ${extension} ${user}
  #
  # ====================================================================
  #

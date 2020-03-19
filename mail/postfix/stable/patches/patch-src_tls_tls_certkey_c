@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_tls_tls_certkey_c,v 1.1 2019/04/15 21:10:09 sthen Exp $
+$OpenBSD: patch-src_tls_tls_certkey_c,v 1.2 2020/03/19 17:07:42 sthen Exp $
 
 Index: src/tls/tls_certkey.c
 --- src/tls/tls_certkey.c.orig
 +++ src/tls/tls_certkey.c
-@@ -144,7 +144,7 @@ static void init_pem_load_state(pem_load_state_t *st, 
+@@ -149,7 +149,7 @@ static void init_pem_load_state(pem_load_state_t *st, 
  
  /* use_chain - load cert, key and chain into ctx or ssl */
  
