@@ -1,2 +1,2 @@
-py-git2 is a set of Python 2.5+ bindings to the libgit2 linkable C Git
+pygit2 is a set of Python 3.5+ bindings to the libgit2 linkable C Git
 library.
