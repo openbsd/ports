@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.326 2020/02/14 21:02:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.327 2020/03/19 17:08:04 sthen Exp $
 
-VERSION=	3.5-20200203
+VERSION=	3.6-20200312
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=experimental/}
 
