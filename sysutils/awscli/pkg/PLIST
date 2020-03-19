@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.104 2020/03/07 12:18:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.105 2020/03/19 22:39:25 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -2223,13 +2223,28 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/vault-exists.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/vault-not-exists.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/advertise-byoip-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-accelerator.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-endpoint-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-listener.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/deprovision-byoip-cidr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-accelerator-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-endpoint-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-accelerators.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-byoip-cidr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-endpoint-groups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-listeners.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/provision-byoip-cidr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-accelerator-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-accelerator.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-endpoint-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-listener.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/withdraw-byoip-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/associate-role-to-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/associate-service-role-to-account.rst
