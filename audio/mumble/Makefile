@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/03/13 23:31:22 jca Exp $
+# $OpenBSD: Makefile,v 1.39 2020/03/19 21:02:40 kn Exp $
 
 COMMENT =		low-latency voice chat client
 
@@ -22,7 +22,6 @@ WANTLIB += m opus portaudio protobuf sndfile speex speexdsp ssl
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODULES =		devel/qmake x11/qt5
-SEPARATE_BUILD =	No
 
 BUILD_DEPENDS =		audio/celt07 \
 			devel/boost
@@ -80,21 +79,21 @@ pre-configure:
 		${MODQT_LRELEASE} *.ts
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/release/mumble \
+	${INSTALL_PROGRAM} ${WRKBUILD}/mumble \
 		${PREFIX}/bin/mumble
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/mumble
-	${INSTALL_DATA} ${WRKBUILD}/release/plugins/lib*.so \
+	${INSTALL_DATA} ${WRKBUILD}/plugins/lib*.so \
 		${PREFIX}/lib/mumble/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mumble/locale
-	${INSTALL_DATA} ${WRKBUILD}/src/mumble/*.qm \
+	${INSTALL_DATA} ${WRKSRC}/src/mumble/*.qm \
 		${PREFIX}/share/mumble/locale/
-	${INSTALL_MAN} ${WRKBUILD}/man/mumble.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/mumble.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKBUILD}/icons/mumble.svg \
+	${INSTALL_DATA} ${WRKSRC}/icons/mumble.svg \
 		${PREFIX}/share/icons/hicolor/scalable/apps/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKBUILD}/scripts/mumble.desktop \
+	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.desktop \
 		${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
