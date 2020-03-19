@@ -1,0 +1,16 @@
+$OpenBSD: patch-agent_plugins_inventory_gatherers_application_dataProvider_go,v 1.1 2020/03/19 19:09:30 ajacoutot Exp $
+
+dataProvider.go:10:2: imported and not used: "github.com/aws/amazon-ssm-agent/agent/plugins/configurepackage/localpackages"
+gmake: *** [makefile:169: build-openbsd] Error 2
+
+Index: agent/plugins/inventory/gatherers/application/dataProvider.go
+--- agent/plugins/inventory/gatherers/application/dataProvider.go.orig
++++ agent/plugins/inventory/gatherers/application/dataProvider.go
+@@ -7,7 +7,6 @@ import (
+ 	"fmt"
+ 
+ 	"github.com/aws/amazon-ssm-agent/agent/context"
+-	"github.com/aws/amazon-ssm-agent/agent/plugins/configurepackage/localpackages"
+ 	"github.com/aws/amazon-ssm-agent/agent/plugins/inventory/model"
+ )
+ 
