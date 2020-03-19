@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.499 2020/03/03 21:16:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.500 2020/03/19 13:23:57 kn Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -162,7 +162,6 @@
      SUBDIR += mapivi
      SUBDIR += mapnik
      SUBDIR += mhgui
-     SUBDIR += mirage
      SUBDIR += mojoshader
      SUBDIR += mpeg-lib
      SUBDIR += mpeg_encode
