@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2020/03/19 17:07:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2020/03/19 19:05:22 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -59,6 +59,7 @@ CONFIGURE_ARGS=	--enable-full-report \
 		--with-libidn2 \
 		--without-lmdb \
 		--without-readline \
+		--without-cmocka \
 		--with-python=${MODPY_BIN}
 
 COMPILER=	base-clang ports-gcc
