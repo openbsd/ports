@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/04 21:43:45 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/20 14:48:44 mariani Exp $
+@conflict py-xlrd-*
+@pkgpath textproc/py-xlrd
 bin/runxlrd${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/xlrd/
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
