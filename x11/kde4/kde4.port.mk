@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.40 2018/05/12 12:07:07 espie Exp $
+# $OpenBSD: kde4.port.mk,v 1.41 2020/03/20 12:09:52 kn Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.14.3
@@ -70,7 +70,7 @@ CONFIGURE_STYLE =	cmake
 
 .   if ${CONFIGURE_STYLE:Mcmake}
 MODULES +=		devel/cmake
-SEPARATE_BUILD ?=	flavored
+SEPARATE_BUILD ?=	Yes
 .   endif
 .endif
 
