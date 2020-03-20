@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.24 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: qt5.port.mk,v 1.25 2020/03/20 16:44:29 naddy Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
@@ -143,5 +143,5 @@ MODQT_VERSION ?=	${MODQT5_VERSION}
 _MODQT5_PKGMATCH !=
 show_deps: patch
 	@cpkgs=$$(echo ${_MODQT5_CMAKE_PKGS:NQt5} | sed 's/ /|/g'); \
-	find ${WRKSRC} \( -name '*.pr[iof]' -or -iname '*cmake*' \) -print0 | \
-		xargs -0r egrep -hA 2 "\\<(qtHaveModule|QT_CONFIG|$$cpkgs)\\>|Qt5::"
+	find ${WRKSRC} \( -name '*.pr[iof]' -o -iname '*cmake*' \) -exec \
+		egrep -hA 2 "\\<(qtHaveModule|QT_CONFIG|$$cpkgs)\\>|Qt5::" {} +

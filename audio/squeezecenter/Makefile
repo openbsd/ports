@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/20 16:44:21 naddy Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
@@ -114,6 +114,6 @@ do-install:
 	cd ${WRKSRC}/; tar cf - Firmware Graphics HTML IR MySQL Plugins \
 	    SQL strings.txt | tar xf - -C ${PREFIX}/${SSSHAREDIR}/
 	touch ${PREFIX}/share/examples/squeezecenter/empty
-	find ${PREFIX} -name '*.orig' -print0 | xargs -0 rm
+	find ${PREFIX} -name '*.orig' -delete
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/09/26 21:57:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -43,13 +43,13 @@ do-build:
 	cd ${WRKSRC}; perl ${FILESDIR}/run-go-pear ${WRKINST} ${PREFIX} ${MODPHP_BIN}
 
 do-install:
-	@find ${WRKINST}${PREFIX-main} -name "*.php" -exec perl -pi -e "s,${WRKINST},,g" {} \;
-	@find ${WRKINST}${PREFIX-utils}/bin -type f -exec perl -pi -e "s,${WRKINST},,g" {} \;
+	@find ${WRKINST}${PREFIX-main} -name "*.php" -exec perl -pi -e "s,${WRKINST},,g" {} +
+	@find ${WRKINST}${PREFIX-utils}/bin -type f -exec perl -pi -e "s,${WRKINST},,g" {} +
 
 	@for _f in patch-usr_local_bin_pear patch-usr_local_bin_peardev \
 		patch-usr_local_bin_pecl patch-var_www_pear_lib_PEAR_Config_php; do \
 		patch -d ${WRKINST} < ${FILESDIR}/$${_f}; done
-	@find ${WRKINST}/usr/local/bin -type f -exec ${SUBST_CMD} {} \;
+	@find ${WRKINST}/usr/local/bin -type f -exec ${SUBST_CMD} {} +
 	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${PREFIX-main}/pear',g" \
 		${WRKINST}${PREFIX-main}/pear/lib/PEAR/Config.php
 	@touch ${WRKINST}${PREFIX-main}/pear/.lock

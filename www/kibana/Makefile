@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/03/13 21:01:20 pvk Exp $
+# $OpenBSD: Makefile,v 1.41 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
@@ -35,7 +35,7 @@ do-install:
 		${PREFIX}/share/examples/kibana/
 	rm -r ${WRKDIST}/*.{orig,txt} ${WRKDIST}/{data,plugins} \
 		${WRKDIST}/{bin/*.{orig,beforesubst},config,node}
-	find ${WRKDIST} \( -name \*~ -or -name \.*~ \) -print0 | xargs -0 rm
+	find ${WRKDIST} \( -name \*~ -o -name \.*~ \) -delete
 	cd ${WRKDIST} && cp -R * ${PREFIX}/kibana/
 	${INSTALL_DATA_DIR} ${PREFIX}/kibana/config
 	cd ${PREFIX}/kibana && \

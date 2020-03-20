@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT =	Audit Record Generation and Utilization System
 
@@ -29,7 +29,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/argus/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/argus/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/argus/events
-	find ${WRKSRC}/support -type f -name '*.orig' -exec rm -f {} \;
+	find ${WRKSRC}/support -type f -name '*.orig' -delete
 	cd ${WRKSRC}/support && tar cf - . | \
 		tar -C ${PREFIX}/share/examples/argus/ -xf - 
 	cd ${PREFIX}/bin && mv argus-snmp argus-lsof argus-vmstat \

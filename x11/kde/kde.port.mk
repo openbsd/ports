@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.44 2016/03/19 22:48:28 naddy Exp $
+# $OpenBSD: kde.port.mk,v 1.45 2020/03/20 16:44:29 naddy Exp $
 
 MODKDE_VERSION ?=
 MODULES +=	x11/qt3
@@ -104,8 +104,9 @@ DPB_PROPERTIES += tag:kde3
 
 MODKDE_FIXUP_DATADIR ?=	No
 .if ${MODKDE_FIXUP_DATADIR:L} == "yes"
-MODKDE_post-patch = find ${WRKSRC} -name Makefile.in -or -name Makefile.am | \
-	xargs perl -pi.datadir \
+MODKDE_post-patch = find ${WRKSRC} \( -name Makefile.in -o -name Makefile.am \) \
+	-exec perl -pi.datadir \
 	  -e 's!^datadir\s*=\s*\$$\(kde_datadir\)(.*)$$!datadir = ${PREFIX}/${MODKDE_DATA_SUBDIR}$$1!;' \
-	  -e 's!^datadir\s*=\s*\$$\(kde_htmldir\)(.*)$$!datadir = ${PREFIX}/${MODKDE_HTML_SUBDIR}$$1!;'
+	  -e 's!^datadir\s*=\s*\$$\(kde_htmldir\)(.*)$$!datadir = ${PREFIX}/${MODKDE_HTML_SUBDIR}$$1!;' \
+	  {} +
 .endif

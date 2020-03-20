@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/09/11 13:42:35 kn Exp $
+# $OpenBSD: Makefile,v 1.32 2020/03/20 16:44:27 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
@@ -62,7 +62,7 @@ do-build:
 
 do-install:
 .for l in .cvsignore .hg .hgignore .hgtags .gitignore .gitkeep *.orig *.beforesubst .travis.yml
-	find ${WRKSRC} -name "$l" -exec rm -f {} \;
+	find ${WRKSRC} -name "$l" -delete
 .endfor
 	cd ${WRKSRC} && sed -i 's#/usr/local#${TRUEPREFIX}#' \
 		`cat lib/moveplan9.files`

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/02/14 10:40:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/20 16:44:21 naddy Exp $
 
 COMMENT =	tools for LiDAR processing
 DISTNAME =	lastools-0.20181229
@@ -24,7 +24,7 @@ MAKE_FLAGS =	COMPILER="${CXX}" \
 CXXFLAGS +=	-std=c++11
 
 post-patch:
-	find ${WRKSRC} -name Makefile | xargs sed -i 's/-O3/${CXXFLAGS}/'
+	find ${WRKSRC} -name Makefile -exec sed -i 's/-O3/${CXXFLAGS}/' {} +
 
 PROGS =	laszip lasinfo lasprecision las2txt txt2las las2las lasdiff lasmerge lasindex
 

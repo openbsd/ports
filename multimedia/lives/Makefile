@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT =		video editor and a VJ tool
 
@@ -52,8 +52,8 @@ CONFIGURE_ARGS +=	--disable-jack \
 WRKDIST =		${WRKDIR}/${DISTNAME:L}
 
 pre-configure:
-	find ${WRKSRC} -name Makefile.in -print0 | \
-		xargs -0r perl -pi -e 's/ -O3/ ${CFLAGS} -std=gnu89/g'
+	find ${WRKSRC} -name Makefile.in -exec \
+		perl -pi -e 's/ -O3/ ${CFLAGS} -std=gnu89/g' {} +
 
 pre-install:
 	@cd ${WRKDIST}/po && ${MAKE_PROGRAM} update-po
@@ -61,6 +61,6 @@ pre-install:
 post-install:
 	mv ${WRKINST}/${TRUEPREFIX}/share/doc/lives-${V} \
 	    ${WRKINST}/${TRUEPREFIX}/share/doc/lives/
-	find ${WRKINST}/${TRUEPREFIX}/lib/lives/plugins -name '*.la' | xargs rm
+	find ${WRKINST}/${TRUEPREFIX}/lib/lives/plugins -name '*.la' -delete
 
 .include <bsd.port.mk>

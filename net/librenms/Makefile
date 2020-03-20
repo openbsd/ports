@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2020/03/07 14:16:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -65,7 +65,7 @@ post-extract:
 	    -e 's,"/usr/bin/(mtr|nmap|nfdump|ipmitool|virsh|dot|sfdp),"/usr/local/bin/\1,;' \
 	    -e 's,"/usr/lib/nagios/plugins,"/usr/local/libexec/nagios/plugins,;' \
 	    ${WRKSRC}/misc/config_definitions.json
-	find ${WRKSRC} -type f -print0 | xargs -r0 perl -pi -e '$R'
+	find ${WRKSRC} -type f -exec perl -pi -e '$R' {} +
 	sed -i \
 	    -e 's, librenms *, _librenms ,' \
 	    -e 's,/var/www/librenms/cronic,-n,' \

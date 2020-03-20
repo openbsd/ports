@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/17 14:46:33 danj Exp $
+# $OpenBSD: Makefile,v 1.37 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=		Tcl/Tk interface to the MH mail system
 
@@ -43,7 +43,7 @@ do-install:
 	cd ${PREFIX}/share && echo 'auto_mkindex exmh'\
 		| ${MODTCL_BIN}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/exmh
-	find ${PREFIX}/share/exmh -type d -print0 | xargs -0 chmod ${DIRMODE}
-	find ${PREFIX}/share/exmh -type f -print0 | xargs -0 chmod ${SHAREMODE}
+	find ${PREFIX}/share/exmh -type d -exec chmod ${DIRMODE} {} + \
+		-o -type f -exec chmod ${SHAREMODE} {} +
 
 .include <bsd.port.mk>

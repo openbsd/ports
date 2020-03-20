@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/18 18:53:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT =		simple and fast multimedia library
 
@@ -50,7 +50,7 @@ NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/SFML-${V}
 
 post-extract:
-	find ${WRKSRC} -type f -exec perl -pi -e 's/\015//g' {} \;
+	find ${WRKSRC} -type f -exec perl -pi -e 's/\015//g' {} +
 	mkdir ${WRKSRC}/src/SFML/Window/OpenBSD
 	cp ${FILESDIR}/JoystickImpl.* ${WRKSRC}/src/SFML/Window/OpenBSD
 

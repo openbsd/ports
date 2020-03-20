@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
@@ -91,8 +91,7 @@ post-install:
 	mv ${PREFIX}/man/man${section}/${manpage}.${section} \
 	    ${PREFIX}/man/man${section}/sendmail-${manpage}.${section}
 .endfor
-	find ${PREFIX}/bin/ -type l -print -execdir rm -f {} ';' | \
-	    sed 's/^/rm -f /'
+	find ${PREFIX}/bin/ -type l -print -delete | sed 's/^/rm -f /'
 	mv ${PREFIX}/sbin/makemap ${PREFIX}/libexec/sendmail
 .for file in sendmail-enable sendmail-disable
 	@echo "Installing ${PREFIX}/sbin/${file}"

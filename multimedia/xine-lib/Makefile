@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2019/12/25 15:50:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=	multimedia decoding library
 
@@ -98,6 +98,6 @@ pre-configure:
 	sed -i 's/__u32/u_int32_t/' ${WRKSRC}/src/input/input_pvr.c
 
 post-install:
-	@find ${PREFIX}/lib/xine/plugins -name '*.a' -print | xargs rm
+	@find ${PREFIX}/lib/xine/plugins -name '*.a' -delete
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/11/21 17:49:57 cwen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/03/20 16:44:24 naddy Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 
@@ -67,6 +67,6 @@ WANTLIB +=              atomic
 .endif
 
 post-install:
-	find ${PREFIX} -name '*.orig' -exec rm -f {} \;
+	find ${PREFIX} -name '*.orig' -delete
 
 .include <bsd.port.mk>

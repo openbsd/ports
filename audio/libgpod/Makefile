@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/11/19 21:21:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2020/03/20 16:44:21 naddy Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -54,8 +54,8 @@ CONFIGURE_ARGS+=--enable-gdk-pixbuf \
 		--localedir=${TRUEPREFIX}/share/locale
 
 pre-configure:
-	@find ${WRKDIST} -name \*.py | \
-		xargs sed -i 's,/usr/bin/python,${MODPY_BIN},g'
+	@find ${WRKDIST} -name \*.py \
+		-exec sed -i 's,/usr/bin/python,${MODPY_BIN},g' {} +
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-gpod

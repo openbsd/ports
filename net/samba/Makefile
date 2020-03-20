@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2020/01/24 13:29:42 jca Exp $
+# $OpenBSD: Makefile,v 1.287 2020/03/20 16:44:26 naddy Exp $
 
 VERSION =		4.9.18
 DISTNAME =		samba-${VERSION}
@@ -198,22 +198,22 @@ SAMBA_LOGDIR =		${VARBASE}/log/samba
 SUBST_VARS =		SAMBA_LOGDIR
 
 post-patch:
-	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
+	find ${WRKSRC} -type f -exec ${MODPY_BIN_ADJ} {} +
 
 post-install:
 	# removing extra files
-	find ${PREFIX} \
-	    -name '*${PATCHORIG}' -or \
-	    -name '*.beforesubst' -or \
-	    -name '*.deconforig' | \
-		xargs -rt rm --
+	find ${PREFIX} \( \
+	    -name '*${PATCHORIG}' -o \
+	    -name '*.beforesubst' -o \
+	    -name '*.deconforig' \) \
+		-delete
 	# fix path to perl modules
 	mv ${PREFIX}/share/perl5/* ${PREFIX}/${P5SITE}
 	# precompiling Python modules
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 	# removing extra symlinks
-	find ${PREFIX}/lib -type l -name '*.so' -exec rm {} ';'
+	find ${PREFIX}/lib -type l -name '*.so' -delete
 	# creating library symlinks
 .for _l in ${UTIL_LIBS}
 	cd ${PREFIX}/lib && ln -fs samba/lib${_l}.so.${LIB${_l}_VERSION}
@@ -222,8 +222,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/samba
 	cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
-	find ${PREFIX}/share/examples/samba -type f | xargs chmod ${SHAREMODE}
-	find ${PREFIX}/share/examples/samba -type d | xargs chmod ${DIRMODE}
+	find ${PREFIX}/share/examples/samba \
+	     -type f -exec chmod ${SHAREMODE} {} + -o \
+	     -type d -exec chmod ${DIRMODE} {} +
 	sed -e 's:/usr/spool/samba:/var/spool/samba:g' \
 	     -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
 	     -e 's:MYGROUP:WORKGROUP:' \

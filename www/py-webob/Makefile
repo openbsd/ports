@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/08 23:37:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT =	wsgi request and response object
 
@@ -31,7 +31,7 @@ EXAMPLES =	comment-example.txt file-example.txt jsonrpc-example.txt \
 		wiki-example.txt
 
 post-extract:
-	find ${WRKSRC} -perm 0666 -exec chmod 0644 {} \;
+	find ${WRKSRC} -perm 0666 -exec chmod 0644 {} +
 
 PYPKGNAME =	${MODPY_PY_PREFIX}webob
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2019/12/19 19:43:14 stsp Exp $
+# $OpenBSD: Makefile,v 1.178 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -316,7 +316,6 @@ post-install:
 		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN}," \
 		-e "s,.*env python.*,#!${MODPY_BIN}," \
 			{} +
-	find ${PREFIX}/share/examples/subversion -type f -name '*\.orig' \
-		-exec rm -f {} \;
+	find ${PREFIX}/share/examples/subversion -type f -name '*.orig' -delete
 
 .include <bsd.port.mk>

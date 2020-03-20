@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/12/30 12:34:55 schwarze Exp $
+# $OpenBSD: Makefile,v 1.49 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT =		GNU troff typesetter
 VERSION =		1.22.4
@@ -40,7 +40,6 @@ CONFIGURE_ENV +=	ac_cv_prog_PDFFONTS= \
 TEST_TARGET =		check
 
 pre-configure:
-	find ${WRKBUILD} -name \*.pl -type f -print0 | \
-	    xargs -0 ${MODPERL_BIN_ADJ}
+	find ${WRKBUILD} -name \*.pl -type f -exec ${MODPERL_BIN_ADJ} {} +
 
 .include <bsd.port.mk>

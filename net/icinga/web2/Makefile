@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/12 09:39:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT =	next-generation web UI for icinga
 
@@ -30,7 +30,7 @@ do-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/icinga-web2
 	cd ${WRKSRC}; pax -rw ./ ${PREFIX}/icinga-web2/
-	find ${PREFIX}/icinga-web2 -name '*.orig' | xargs rm
+	find ${PREFIX}/icinga-web2 -name '*.orig' -delete
 	ln -s ${TRUEPREFIX}/icinga-web2/bin/icingacli \
 	    ${WRKINST}/usr/local/bin/
 

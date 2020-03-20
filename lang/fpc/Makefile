@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/28 20:32:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2020/03/20 16:44:24 naddy Exp $
 
 BROKEN =		syscalls from main program
 ONLY_FOR_ARCHS =	amd64 i386
@@ -79,7 +79,7 @@ post-install:
 		-o ${PREFIX}/share/examples/fpc-$V/fpc.cfg.sample
 
 do-test:
-	find ${WRKSRC} -name Package.fpc | xargs rm -f
+	find ${WRKSRC} -name Package.fpc -delete
 	cd ${WRKSRC}/fpcsrc/tests && \
 		env -i ${ALL_TEST_ENV} ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} full
 

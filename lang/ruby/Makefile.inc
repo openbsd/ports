@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2019/11/19 17:20:12 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT-main ?=		object oriented script language with threads
 COMMENT-gdbm ?=		gdbm interface for ruby
@@ -79,7 +79,7 @@ CFLAGS_OVERRIDE =	-O1
 FIX_RIPPER ?=	sed -i 's/%%CFLAGS_OVERRIDE%%/${CFLAGS_OVERRIDE}/g' \
 			${WRKSRC}/ext/ripper/depend;
 
-PRE_INSTALL ?=	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm; \
+PRE_INSTALL ?=	find ${WRKSRC} -name '*.orig' -delete; \
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby \
 		${PREFIX}/lib/ruby/gems/${REV}/extensions/${SUB} \
 		${PREFIX}/lib/ruby/gems/${REV}/extensions/${SUB}/${REV};

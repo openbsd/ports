@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/01/30 07:52:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT=		Scheme and language framework for the Java platform
 
@@ -50,8 +50,7 @@ TEST_FLAGS =		DIFF=diff \
 # Use a bit complex xargs avoid unneeded modifications to files
 # causing build issues on i386.
 pre-patch:
-	find ${WRKSRC} -type f | \
-		xargs fgrep -l "JAR =" | \
+	find ${WRKSRC} -type f -exec fgrep -l "JAR =" {} + | \
 		xargs sed -i 's,^JAR =.*,JAR = ${JAVA_HOME}/bin/jar,g'; \
 		touch ${WRKSRC}/configure.ac
 	sed -i 's,/usr/bin,${LOCALBASE}/bin,g' ${WRKDIST}/doc/*.man

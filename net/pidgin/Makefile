@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2019/07/12 20:48:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -143,8 +143,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/purple.service \
 	    ${PREFIX}/share/dbus-1/services
 .for dir in ${ARCHIVE_DIR_LIST}
-	@find ${PREFIX}/lib/${dir} -name '*.a' -print | xargs rm
-	@find ${PREFIX}/lib/${dir} -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib/${dir} \( -name '*.a' -o -name '*.la' \) -delete
 .endfor
 
 .include <bsd.port.mk>

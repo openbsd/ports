@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2020/01/24 13:25:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
@@ -75,7 +75,7 @@ post-build:
 		${PASS_DIR}/buildout/support-binaries/
 	mv ${PASS_DIR}/buildout/ruby/openbsd/*.so ${PASS_DIR}/buildout/
 	rm -r ${PASS_DIR}/buildout/ruby/
-	find ${PASS_DIR} -name '*.beforesubst' -or -name '*.orig' | xargs rm
+	find ${PASS_DIR} \( -name '*.beforesubst' -o -name '*.orig' \) -delete
 
 post-install:
 	cd ${WRKINST}/${LOCALBASE}/${GEM_LIB}/gems/${DISTNAME}/man && \

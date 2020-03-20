@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/02/06 00:40:06 jeremy Exp $
+# $OpenBSD: Makefile,v 1.32 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -41,6 +41,6 @@ BINFILES=	bulk_loader.py cube_dispatcher.py londiste.py \
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/Makefile
 	find ${WRKSRC} -name '*.py' \
-		-exec sed -i 's,/usr/bin/env python,${MODPY_BIN},' {} \;
+		-exec sed -i 's,/usr/bin/env python,${MODPY_BIN},' {} +
 
 .include <bsd.port.mk>

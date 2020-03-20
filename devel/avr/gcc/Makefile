@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:44:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
@@ -52,8 +52,8 @@ SUBST_VARS=	V
 
 # Fix build with clang in c++11 mode
 post-patch:
-	find ${WRKSRC} -type f \( -name '*.[ch]' -o -name '*.cc' \) | \
-		xargs egrep -l '"(HOST_WIDE|PLUGIN_COND|PRId64)' | \
+	find ${WRKSRC} -type f \( -name '*.[ch]' -o -name '*.cc' \) \
+		-exec egrep -l '"(HOST_WIDE|PLUGIN_COND|PRId64)' {} + | \
 		xargs sed -i -E -e 's/"(HOST_WIDE|PLUGIN_COND|PRId64)/" \1/g'
 
 # XXX

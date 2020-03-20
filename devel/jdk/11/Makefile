@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/26 02:17:12 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/20 16:44:22 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
@@ -187,7 +187,7 @@ build-bootjdk: build
 	@find ${WRKTMP}/bootjdk/lib ${WRKTMP}/bootjdk/bin -exec \
 		sh -c 'file {} | grep -q ELF && strip -S {}' \;
 	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/lib" \
-		find ${WRKTMP}/bootjdk -type f -perm -500 -exec ldd {} \; 2>/dev/null | \
+		find ${WRKTMP}/bootjdk -type f -perm -500 -exec ldd {} + 2>/dev/null | \
 		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
 		xargs -I % cp /% ${WRKTMP}/bootjdk-libs
 	@cd ${WRKTMP} && tar czf openjdk-jdk11u-bootjdk-${MACHINE_ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*

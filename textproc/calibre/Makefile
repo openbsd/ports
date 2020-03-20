@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2020/03/06 12:13:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT =		ebook management application
 
@@ -80,8 +80,8 @@ MODPY_DISTUTILS_INSTALL =	install --prefix=${LOCALBASE} \
 # Remove bundled cherrypy so it uses the system version
 pre-configure:
 	cd ${WRKSRC} && (rm -rf src/cherrypy ; \
-		find . -name '*.py' -print0 | xargs -0 perl -pi.beforesubst -e \
-		's,#!/usr/bin/env python(2)?,#!${MODPY_BIN},' )
+		find . -name '*.py' -exec perl -pi.beforesubst -e \
+		's,#!/usr/bin/env python(2)?,#!${MODPY_BIN},' {} + )
 	cd ${WRKSRC}/setup && ${SUBST_CMD} build.py build_environment.py
 	cp ${FILESDIR}/fake-xdg ${WRKDIR}/bin; chmod +x ${WRKDIR}/bin/fake-xdg
 .for i in xdg-icon-resource xdg-desktop-menu xdg-mime

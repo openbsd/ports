@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT =	visual programming environment and toolkit
 
@@ -59,8 +59,8 @@ do-install:
 	cp -r ${WRKSRC}/$f ${SC_DIR}/$f
 .endfor
 	chown -R ${SHAREOWN}:${SHAREGRP} ${SC_DIR}
-	find ${SC_DIR} -type d -exec chmod 755 {} ';'
-	find ${SC_DIR} -type f -exec chmod 444 {} ';'
+	find ${SC_DIR} -type d -exec chmod 755 {} + -o \
+		-type f -exec chmod 444 {} +
 	${INSTALL_SCRIPT} ${WRKBUILD}/scratch ${PREFIX}/bin/scratch
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKBUILD}/scratch.1 ${PREFIX}/man/man1/scratch.1

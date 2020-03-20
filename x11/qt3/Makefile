@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2020/02/06 00:40:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.132 2020/03/20 16:44:29 naddy Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -208,13 +208,13 @@ post-configure:
 	perl -pi.bak -e 's,-L(\Q${WRKDIST}\E|\Q$$(LOCALBASE)\E)/lib,,' ${WRKDIST}/lib/qt-mt.pc
 .if !${FLAVOR:Mdebug}
 	@cd ${WRKSRC} && cp -R examples examples-src
-	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm -f
-	@find ${WRKSRC}/examples-src -name '.moc' |xargs rm -rf
-	@find ${WRKSRC}/examples-src -name '.obj' |xargs rm -rf
+	@find ${WRKSRC}/examples-src \
+	    \( -name '*.orig' -o -name '.moc' -o -name '.obj' \) \
+	    -exec rm -rf {} +
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
-	@find ${WRKSRC}/tutorial-src -name '*.orig' |xargs rm -f
-	@find ${WRKSRC}/tutorial-src -name '.moc' |xargs rm -rf
-	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -rf
+	@find ${WRKSRC}/tutorial-src \
+	    \( -name '*.orig' -o -name '.moc' -o -name '.obj' \) \
+	    -exec rm -rf {} +
 
 pre-install:
 	${INSTALL_DATA_DIR} ${QT_EXAMPLES}

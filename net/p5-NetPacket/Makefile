@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=	Perl module for encoding/decoding network traffic
 
@@ -16,6 +16,6 @@ BUILD_DEPENDS=	net/p5-Net-Pcap
 NO_TEST=	Yes
 
 post-install:
-	@find ${WRKINST} -name '*.orig' | xargs rm
+	@find ${WRKINST} -name '*.orig' -delete
 
 .include <bsd.port.mk>

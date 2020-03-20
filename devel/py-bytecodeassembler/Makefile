@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT =		python bytecode assembler
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 MODPY_SETUPTOOLS =	Yes
 
 post-extract:
-	@find ${WRKSRC} -type f -exec chmod 644 {} \;
+	@find ${WRKSRC} -type f -exec chmod 644 {} +
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-bytecodeassembler

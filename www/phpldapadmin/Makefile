@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/09/26 21:59:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT=	web-based LDAP browser to manage LDAP servers
 
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/phpldapadmin
 	cd ${WRKBUILD} && tar -cf - * .* | \
 		tar -C ${PREFIX}/phpldapadmin -xf -
-	find ${PREFIX}/phpldapadmin -name '*.orig' | xargs -r rm -f
+	find ${PREFIX}/phpldapadmin -name '*.orig' -delete
 	chown -R root:daemon ${PREFIX}/phpldapadmin
 
 .include <bsd.port.mk>

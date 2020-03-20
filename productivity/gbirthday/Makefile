@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT =		birthday reminder with tray notification
 
@@ -33,7 +33,7 @@ post-patch:
 	sed -i 's,@VER@,${GH_TAGNAME:S/v//},g' ${WRKSRC}/src/gbirthday/__init__.py
 
 pre-install:
-	find ${WRKSRC} -name \*.orig -exec rm {} \;
+	find ${WRKSRC} -name \*.orig -delete
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/gb ${PREFIX}/bin/gbirthday

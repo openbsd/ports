@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT=	Makefile to build and upload Arduino sketches
 
@@ -37,6 +37,6 @@ do-install:
 	${INSTALL_MAN} ${WRKDIST}/robotis-loader.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/arduino-makefile
 	cp -r ${WRKDIST}/examples/* ${PREFIX}/share/examples/arduino-makefile/
-	find ${PREFIX} -type f -name \*.orig -exec rm '{}' \;
+	find ${PREFIX} -type f -name \*.orig -delete
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/12/17 02:21:53 jcs Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
@@ -46,6 +46,6 @@ do-install:
 	cp -r ${WRKSRC}/{license.txt,README.md} ${PREFIX}/share/doc/arduino
 	cp -r ${AVR_WRKDIST}/* ${PREFIX}/share/arduino
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
-	find ${PREFIX} -type f -name \*.orig -exec rm '{}' \;
+	find ${PREFIX} -type f -name \*.orig -delete
 
 .include <bsd.port.mk>

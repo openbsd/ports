@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/09/26 21:59:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT=	web frontend to symon
 DISTNAME=	syweb-0.65
@@ -23,7 +23,7 @@ RUN_DEPENDS=	net/rrdtool
 WRKDIST=	${WRKDIR}/syweb
 
 do-install:
-	find ${WRKDIR} -name \*.orig -exec rm {} \;
+	find ${WRKDIR} -name \*.orig -delete
 	${TAR} -C ${WRKDIST} -cf - htdocs symon | ${TAR} -C ${PREFIX} -xpf -
 	${INSTALL_DATA_DIR} ${PREFIX}/symon
 	${INSTALL_SCRIPT} ${WRKDIST}/install_rrdtool.sh ${PREFIX}/symon

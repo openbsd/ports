@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2020/03/14 14:12:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.176 2020/03/20 16:44:27 naddy Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -167,8 +167,8 @@ CFLAGS +=		-Wno-return-type
 DEBUG_PACKAGES=		-main -common -hpaio -hpcups -hpijs
 
 pre-configure:
-	find ${WRKSRC} -name \*.py | \
-		xargs perl -pi -e 's,(/usr/bin/python|/usr/bin/env python),${MODPY_BIN},g'
+	find ${WRKSRC} -name \*.py -exec \
+		perl -pi -e 's,(/usr/bin/python|/usr/bin/env python),${MODPY_BIN},g' {} +
 	sed -i 's,/usr/bin/python,${MODPY_BIN},g' \
 		${WRKSRC}/fax/filters/pstotiff
 	${SUBST_CMD} \

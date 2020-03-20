@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/07/12 20:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2020/03/20 16:44:27 naddy Exp $
 
 PKG_ARCH=		*
 
@@ -35,13 +35,13 @@ pre-configure:
 
 ### Fedora
 # splix
-	find ${WRKSRC}/db/source/printer -name '*.xml' | \
-		xargs grep -l "<driver>splix"|xargs -r rm
+	find ${WRKSRC}/db/source/printer -name '*.xml' \
+		-exec grep -l "<driver>splix" {} + | xargs -r rm
 	rm ${WRKSRC}/db/source/driver/splix.xml
 # foo2zjs
 .for x in zjs zjs-z1 zjs-z2 zjs-z3 oak oak-z1 hp qpdl lava kyo xqx slx hiperc hiperc-z1 hbpl2
-	find ${WRKSRC}/db/source/printer -name '*.xml' | \
-		xargs grep -l "<driver>foo2${x}" | xargs -r rm
+	find ${WRKSRC}/db/source/printer -name '*.xml' \
+		-exec grep -l "<driver>foo2${x}" {} + | xargs -r rm
 	find ${WRKSRC}/db/source/printer -name '*.xml' | \
 		grep -E 'Samsung-CLP-610|Samsung-CLP-620' | xargs -r rm
 	find ${WRKSRC}/db/source/printer -name '*.xml' | \
@@ -51,14 +51,14 @@ pre-configure:
 .endfor
 # these use binaries that are not provided anymore
 .for x in lm1100 pentaxpj pbm2l2030 pbm2l7k lex5700 lex7000 c2050 c2070 cjet
-	find ${WRKSRC}/db/source/printer -name '*.xml' | \
-		xargs grep -l "<driver>${x}</driver>"| xargs -r rm
+	find ${WRKSRC}/db/source/printer -name '*.xml' \
+		-exec grep -l "<driver>${x}</driver>" {} + | xargs -r rm
 	rm -f ${WRKSRC}/db/source/driver/${x}.xml \
 		${WRKSRC}/db/source/opt/${x}-*
 .endfor
 .for x in drv_x125 ml85p pbm2lwxl pbmtozjs bjc800j m2300w m2400w
-	find ${WRKSRC}/db/source/printer -name '*.xml' | \
-		xargs grep -l "<driver>${x}</driver>"| xargs -r rm
+	find ${WRKSRC}/db/source/printer -name '*.xml' \
+		-exec grep -l "<driver>${x}</driver>" {} + | xargs -r rm
 	rm -f ${WRKSRC}/db/source/driver/${x}.xml \
 		${WRKSRC}/db/source/opt/${x}-*
 .endfor

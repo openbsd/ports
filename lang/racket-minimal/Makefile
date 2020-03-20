@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2020/02/19 20:39:56 juanfra Exp $
+# $OpenBSD: Makefile,v 1.62 2020/03/20 16:44:24 naddy Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
@@ -116,7 +116,7 @@ CONFIGURE_ARGS +=	--disable-jit \
 .endif
 
 post-install:
-	@find ${PREFIX} -type f -name '*.orig' -exec rm -f {} \;
+	@find ${PREFIX} -type f -name '*.orig' -delete
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 	@cp ${WRKDIR}/racket-openbsd/racket-user-bin-paths ${PREFIX}/bin

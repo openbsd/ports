@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/07/12 20:48:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -42,7 +42,7 @@ LIB_DEPENDS=	devel/libevent2
 # the distribution tarball was updated incompletely
 post-extract:
 	@touch ${WRKDIR}/timestamp
-	@find ${WRKSRC} -type f -print0 | xargs -0 touch -r ${WRKDIR}/timestamp
+	@find ${WRKSRC} -type f -exec touch -r ${WRKDIR}/timestamp {} +
 
 # patch-sntp_tests_packetProcessing_c triggers a ruby script to regenerate
 # run-packetProcessing.c.  Avoid ruby, run file does not change anyway.

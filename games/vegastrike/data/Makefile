@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT =	data files for vegastrike
 
@@ -29,7 +29,7 @@ do-install:
 
 post-install:
 	find ${PREFIX}/share/vegastrike/modules/builtin/ \
-		-name *.py | xargs ${MODPY_BIN_ADJ}
+		-name *.py -exec ${MODPY_BIN_ADJ} {} +
 	${MODPY_BIN_ADJ} \
 		${PREFIX}/share/vegastrike/cgi-accountserver/accountserver.py
 

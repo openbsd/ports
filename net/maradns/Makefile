@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:48:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=	simple and performant DNS server
 
@@ -21,7 +21,7 @@ MAKE_FLAGS=	CC="${CC}" FLAGS="${CFLAGS} -D_THREAD_SAFE -pthread"
 NO_TEST=	Yes
 
 post-configure:
-	@find ${WRKSRC} -type f | xargs perl -pi -e "s,/etc,${SYSCONFDIR},g"
+	@find ${WRKSRC} -type f -exec perl -pi -e "s,/etc,${SYSCONFDIR},g" {} +
 	@perl -pi -e "s, = 99, = 537," ${WRKSRC}/doc/en/examples/ex*
 
 post-install:

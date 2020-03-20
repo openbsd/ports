@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2020/02/10 19:34:33 bket Exp $
+# $OpenBSD: Makefile,v 1.71 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
@@ -42,9 +42,8 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 post-install:
 	@mv ${WRKINST}${SYSCONFDIR}/mc ${PREFIX}/share/examples
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/mc
-	@find ${PREFIX}/share/examples/mc -type f | \
-	    xargs chmod ${SHAREMODE}
-	@find ${PREFIX}/share/examples/mc -type d | \
-	    xargs chmod ${DIRMODE}
+	@find ${PREFIX}/share/examples/mc \
+	    -type f -exec chmod ${SHAREMODE} {} + -o \
+	    -type d -exec chmod ${DIRMODE} {} +
 
 .include <bsd.port.mk>

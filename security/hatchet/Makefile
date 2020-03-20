@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT=	PF firewall log analysis
 
@@ -37,7 +37,7 @@ do-configure:
 			${WRKDIST}/sbin/hatchet_mkdb
 
 do-install:
-	@find ${WRKDIST} -name \*.bak -or -name \*.orig | xargs rm
+	@find ${WRKDIST} \( -name \*.bak -o -name \*.orig \) -delete
 	@cp -pR ${WRKDIST} ${INSTDIR}
 
 .include <bsd.port.mk>

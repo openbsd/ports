@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/11/10 15:32:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2020/03/20 16:44:29 naddy Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -95,6 +95,6 @@ post-extract:
 
 post-install:
 	rm -R ${PREFIX}/share/desktop-directories
-	find ${PREFIX}/share/icons -name 'knetattach*' | xargs rm
+	find ${PREFIX}/share/icons -name 'knetattach*' -delete
 
 .include <bsd.port.mk>

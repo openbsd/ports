@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:50:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT =	wiki engine written in python
 
@@ -26,7 +26,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/moinmoin
-	find ${PREFIX}/share/moin -type f -exec chmod 0644 {} \;
+	find ${PREFIX}/share/moin -type f -exec chmod 0644 {} +
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} CHANGES INSTALL.html \
 	    README.migration UPDATE.html ${PREFIX}/share/doc/moinmoin
 

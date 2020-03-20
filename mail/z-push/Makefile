@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/09/26 21:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=	ActiveSync protocol implementation
 
@@ -33,7 +33,7 @@ RUN_DEPENDS=	mail/kopano/core,-mapi \
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -Rp ${WRKSRC}/src/* ${INSTDIR}
-	find ${INSTDIR} -type f -name \*.orig -exec rm -f {} \;
+	find ${INSTDIR} -type f -name \*.orig -delete
 	find ${INSTDIR} -name config.php -exec mv {} {}.dist \;
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/z-push.conf \
 		${INSTDIR}/z-push.conf.dist

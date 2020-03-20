@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/20 16:44:21 naddy Exp $
 
 COMMENT =	Sun's official Java VM Specification, 2nd Ed.
 
@@ -26,6 +26,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_LOC}
 	cp -R ${WRKDIST}/* ${INSTALL_LOC}
 	chown -R ${DOCOWN}:${DOCGRP} ${INSTALL_LOC}
-	find ${INSTALL_LOC} -type f|xargs chmod ${DOCMODE}
+	find ${INSTALL_LOC} -type f -exec chmod ${DOCMODE} {} +
 
 .include <bsd.port.mk>

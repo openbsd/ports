@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT =	MySQL backup scripts
 
@@ -41,7 +41,7 @@ pre-configure:
 	    ${WRKSRC}/usr/bin/*zrm*
 
 do-install:
-	@find ${WRKSRC} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -exec rm {} \;
+	@find ${WRKSRC} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -delete
 	${INSTALL_SCRIPT} ${WRKSRC}/usr/bin/* ${PREFIX}/bin/
 	cd ${WRKSRC}/usr/lib; \
 	    tar cf - mysql-zrm | tar xf - -C ${PREFIX}/lib/

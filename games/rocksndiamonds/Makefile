@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/01/17 07:44:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.42 2020/03/20 16:44:23 naddy Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -35,7 +35,7 @@ NO_TEST =	Yes
 N = rocksndiamonds
 
 post-extract:
-	@find ${WRKSRC} -name \*.orig -exec rm {} \;
+	@find ${WRKSRC} -name \*.orig -delete
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin

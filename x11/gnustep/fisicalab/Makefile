@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/10/20 08:03:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT=	educational application to solve physics problems
 
@@ -23,6 +23,6 @@ WRKSRC =	${WRKDIR}/fisicalab-${VERSION}
 
 pre-configure:
 	cd ${WRKBUILD} && \
-		find . -name COPYING.txt~ -exec rm {} \;
+		find . -name COPYING.txt~ -delete
 
 .include <bsd.port.mk>

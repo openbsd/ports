@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/03/20 16:44:25 naddy Exp $
 
 PKG_ARCH=	*
 
@@ -45,8 +45,9 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/activemq.conf ${PREFIX}/share/examples/activemq/
 	mv ${PREFIX}/activemq/conf ${PREFIX}/share/examples/activemq/
 	# Lots of weird modes to fixup, use a sledgehammer
-	find ${INSTALL_DIRS} -type f -print0 | xargs -0 chmod ${SHAREMODE}
-	find ${PREFIX}/activemq/bin/ -type f -name \*.jar -print0 | xargs -0 chmod ${BINMODE}
+	find ${INSTALL_DIRS} -type f -exec chmod ${SHAREMODE} {} +
+	find ${PREFIX}/activemq/bin/ -type f -name \*.jar \
+		-exec chmod ${BINMODE} {} +
 	cd ${PREFIX}/activemq && ln -sf /var/db/activemq/data data
 	cd ${PREFIX}/activemq && ln -sf /var/db/activemq/tmp tmp
 	cd ${PREFIX}/activemq && ln -sf ${SYSCONFDIR}/activemq conf

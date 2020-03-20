@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT=	access and modify JPEG metadata
 
@@ -12,6 +12,6 @@ CATEGORIES=	graphics
 PERMIT_PACKAGE=	Yes
 
 pre-configure:
-	@find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm
+	@find ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.mk>

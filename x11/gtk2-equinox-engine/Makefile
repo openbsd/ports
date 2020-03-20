@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/03/20 16:44:29 naddy Exp $
 
 COMMENT=	Equinox GTK+2 engine
 
@@ -46,10 +46,10 @@ post-install:
 	cp -R ${WRKDIR}/Equinox_Evolution* ${PREFIX}/share/themes/
 	chown -R ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/themes/Equinox_Evolution*
-	find ${PREFIX}/share/themes/ -type f -name index.theme | \
-		xargs perl -pi -e 's,Equinox Evolution,Equinox_Evolution,g;' \
-			 -e 's,Evolution ,Evolution_,g'
-	find ${PREFIX}/share/themes/ -type f -name \*.crx \
-		-or -name README -or -name ChangeLog | xargs rm
+	find ${PREFIX}/share/themes/ -type f -name index.theme -exec \
+		perl -pi -e 's,Equinox Evolution,Equinox_Evolution,g;' \
+			 -e 's,Evolution ,Evolution_,g' {} +
+	find ${PREFIX}/share/themes/ -type f \( -name \*.crx \
+		-o -name README -o -name ChangeLog \) -delete
 
 .include <bsd.port.mk>

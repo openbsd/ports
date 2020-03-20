@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/11/18 19:57:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT=	educational game for children
 
@@ -66,7 +66,7 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/gcompris/*.{a,la}
-	find ${PREFIX}/share/gcompris -type f -perm 755 -exec chmod 644 {} \;
+	find ${PREFIX}/share/gcompris -type f -perm 755 -exec chmod 644 {} +
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/gcompris
 
 .include <bsd.port.mk>

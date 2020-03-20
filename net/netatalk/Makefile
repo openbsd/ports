@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/07/12 20:48:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2020/03/20 16:44:26 naddy Exp $
 
 PORTROACH=	limit:^2
 
@@ -50,7 +50,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/README.AppleTalk \
 	    ${PREFIX}/share/doc/netatalk
 	mv ${WRKINST}/etc/netatalk ${PREFIX}/share/examples/
-	@find ${PREFIX}/lib/netatalk/uams -name '*.a' -print | xargs rm
-	@find ${PREFIX}/lib/netatalk/uams -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib/netatalk/uams \( -name '*.a' -o -name '*.la' \) \
+	    -delete
 
 .include <bsd.port.mk>

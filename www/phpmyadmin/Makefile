@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2020/01/23 13:54:49 giovanni Exp $
+# $OpenBSD: Makefile,v 1.140 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
@@ -37,7 +37,7 @@ post-extract:
 	    ${WRKSRC}/examples/phpMyAdmin-nginx.conf
 
 do-install:
-	@find ${WRKSRC} -type f -name "*.orig" -exec rm -f {} \;
+	@find ${WRKSRC} -type f -name "*.orig" -delete
 	${INSTALL_DATA_DIR} ${INSTDIR}/
 	cd ${WRKSRC}; pax -rw ./ ${INSTDIR}/
 

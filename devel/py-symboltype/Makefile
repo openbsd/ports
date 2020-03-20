@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT =		symbol type for python
 
@@ -23,7 +23,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 post-extract:
-	@find ${WRKSRC} -type f -exec chmod 644 {} \;
+	@find ${WRKSRC} -type f -exec chmod 644 {} +
 
 post-install:
 	rm ${WRKSRC}/SymbolType.egg-info/dependency_links.txt

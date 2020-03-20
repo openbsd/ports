@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT =	advanced, stable and fast irc server
 
@@ -61,6 +61,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ircd-ratbox
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} \
 	    ${PREFIX}/share/doc/ircd-ratbox
-	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib -name '*.la' -delete
 
 .include <bsd.port.mk>

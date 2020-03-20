@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT=	software project management and comprehension tool
 
@@ -36,9 +36,9 @@ do-install:
 	cd ${WRKDIST} && \
 		tar -cf - bin boot lib `find * -prune -type f` | \
 		tar -C ${PREFIX}/maven -xf -
-	find ${WRKINST} \
-		-name \*.orig -o -name \*.bat -o -name \*.cmd -o -name \*.exe | \
-		xargs rm
+	find ${WRKINST} \( \
+		-name \*.orig -o -name \*.bat -o -name \*.cmd -o -name \*.exe \
+		\) -delete
 	${INSTALL_DATA_DIR} ${SAMPLEDIR}/logging/
 	${INSTALL_DATA} ${WRKSRC}/conf/logging/* ${SAMPLEDIR}/logging/
 	${INSTALL_DATA} ${WRKSRC}/conf/settings.xml ${SAMPLEDIR}/

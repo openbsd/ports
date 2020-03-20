@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT =		sexy and modern icon theme with Tango influences
 
@@ -25,7 +25,7 @@ ICONSDIR =		${PREFIX}/share/icons/
 do-install:
 	${INSTALL_DATA_DIR} ${ICONSDIR}
 	# Fix perms
-	find ${WRKDIST}/../faba* ! -perm 644 -type f -exec chmod 644 {} \;
+	find ${WRKDIST}/../faba* ! -perm 644 -type f -exec chmod 644 {} +
 	cd ${WRKDIST} ; pax -L -rw Faba ${ICONSDIR}
 	cd ${WRKDIST}/../faba-mono-icons-4.2/ ; pax -rw Faba-* ${ICONSDIR}
 

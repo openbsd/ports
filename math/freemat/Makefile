@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 BROKEN-hppa =	undefined reference to lapack funcs
@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	-DUSE_LLVM:BOOL=FALSE
 WRKDIST=	${WRKDIR}/FreeMat-${V}.1-Source
 
 post-extract:
-	@cd ${WRKSRC} && find . -name \*.moc.cpp | xargs rm
+	@cd ${WRKSRC} && find . -name \*.moc.cpp -delete
 
 pre-configure:
 	@rm ${WRKSRC}/CMakeCache.txt

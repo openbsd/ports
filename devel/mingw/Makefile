@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -114,13 +114,13 @@ do-install:
 	cp -r ${MINGW32_OUT}/lib/* ${MINGW32_DIR}/lib && \
 	    chown -R ${SHAREOWN}:${SHAREGRP} ${MINGW32_DIR}/lib && \
 	    chmod -R 644 ${MINGW32_DIR}/lib/* && \
-	    find ${MINGW32_DIR}/lib -type d -exec chmod a+x {} \;
+	    find ${MINGW32_DIR}/lib -type d -exec chmod a+x {} +
 
 	# Includes
 	cp -r ${MINGW32_OUT}/include/* ${MINGW32_DIR}/include && \
 	    chown -R ${SHAREOWN}:${SHAREGRP} ${MINGW32_DIR}/include && \
 	    chmod -R 644 ${MINGW32_DIR}/include/* && \
-	    find ${MINGW32_DIR}/include -type d -exec chmod a+x {} \;
+	    find ${MINGW32_DIR}/include -type d -exec chmod a+x {} +
 
 	# Documentation
 	${INSTALL_MAN} ${MINGW32_OUT}/share/man/man1/* \

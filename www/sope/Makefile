@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2020/03/16 06:59:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.83 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
@@ -65,7 +65,7 @@ WRKDIST =	${WRKDIR}/SOPE
 
 post-extract:
 	# those fhs.make files are not needed and may cause harm if they exist
-	@find ${WRKSRC} -name fhs.make -exec rm {} \;
+	@find ${WRKSRC} -name fhs.make -delete
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/configure

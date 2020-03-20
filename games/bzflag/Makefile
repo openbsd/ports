@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 21:02:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
@@ -47,6 +47,6 @@ post-install:
 	perl -pi -e "s,^Exec=.*,Exec=bzflag,g;" \
 		-e "s,^Icon=.*,Icon=${TRUEPREFIX}/share/bzflag/bzflag-48x48.png,g" \
 		${PREFIX}/share/applications/bzflag.desktop
-	@find ${PREFIX}/lib/bzflag -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib/bzflag -name '*.la' -delete
 
 .include <bsd.port.mk>

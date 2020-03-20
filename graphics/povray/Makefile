@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/14 00:39:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT=	3D image rendering package
 
@@ -58,7 +58,7 @@ post-extract:
 	    	-s ',^libpng-${PNG_V},png,' 'libpng-${PNG_V}/png*.[ch]'
 
 pre-patch:
-	cd ${WRKSRC} && find . -type f -name \*.orig | xargs rm
+	cd ${WRKSRC} && find . -type f -name \*.orig -delete
 
 post-configure:
 	sed -i 's,%INSTALLDIR%,${PREFIX}/share/povray/,g' \

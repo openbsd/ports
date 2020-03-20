@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/12/16 15:50:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2020/03/20 16:44:29 naddy Exp $
 
 BROKEN-alpha=	.got subsegment exceeds 64K
 
@@ -50,8 +50,8 @@ MODGNOME_LDFLAGS=-lintl -liconv
 TEST_IS_INTERACTIVE= x11
 
 pre-configure:
-	@find ${WRKDIST} -name \*.py | \
-	    xargs perl -i -pe 's,^#!/usr/bin/env python,#!${MODPY_BIN},'
+	@find ${WRKDIST} -name \*.py -exec \
+	    perl -i -pe 's,^#!/usr/bin/env python,#!${MODPY_BIN},' {} +
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/{,gtk}/*.{a,la}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT =	Playstation 1 emulator
 
@@ -44,6 +44,6 @@ RUN_DEPENDS =	devel/desktop-file-utils
 NO_TEST =	Yes
 
 post-install:
-	find ${WRKINST} -name '*.la' -print0 | xargs -0 rm
+	find ${WRKINST} -name '*.la' -delete
 
 .include <bsd.port.mk>

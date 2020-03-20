@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/25 14:03:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2020/03/20 16:44:29 naddy Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -120,8 +120,7 @@ CXXFLAGS +=		-march=i686
 .endif
 
 post-install:
-	find ${WRKINST} -type f -print0 | xargs -0r perl -pi \
-		-e 's,${WRKINST},,g;'
+	find ${WRKINST} -type f -exec perl -pi -e 's,${WRKINST},,g;' {} +
 
 .include <bsd.port.mk>
 

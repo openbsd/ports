@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2020/02/03 20:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=	web-based front end for the nfdump netflow tools
 
@@ -49,7 +49,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.pm ${PREFIX}/lib/nfsen/plugins/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.php ${WWWDIR}/nfsen/plugins/
 	-mv ${WWWDIR}/nfsen/conf.php ${WWWDIR}/nfsen/conf.php.dist
-	find ${WRKINST} -name '*.orig' -or -name '._*' -print0 | xargs -0r rm
+	find ${WRKINST} \( -name '*.orig' -o -name '._*' \) -delete
 	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}/var/www/htdocs/nfsen
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/libdata
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/03/20 16:44:29 naddy Exp $
 
 COMMENT=	Aurora GTK+2 engine
 
@@ -40,7 +40,7 @@ post-extract:
 		tar xzf ${_DNAME}.tar.gz && \
 		tar xjf Aurora${EXTRACT_SUFX}
 	chmod +x ${WRKSRC}/install-sh
-	find ${WRKDIR} -name '*\~' -exec rm {} \;
+	find ${WRKDIR} -name '*\~' -delete
 
 post-install:
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}

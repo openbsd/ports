@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT=	desktop publishing clip-art
 
@@ -27,7 +27,6 @@ do-install:
 	tar -xjf ${FULLDISTDIR}/${DISTFILES} \
 	    -C ${PREFIX}/share -s ',^openclipart-$V-full,openclipart,'
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/openclipart/
-	find ${PREFIX}/share/openclipart -type f -print0 | \
-	    xargs -0 chmod a-x
+	find ${PREFIX}/share/openclipart -type f -exec chmod a-x {} +
 
 .include <bsd.port.mk>

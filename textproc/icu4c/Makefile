@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2020/03/14 13:22:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2020/03/20 16:44:27 naddy Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -81,7 +81,7 @@ TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/${ENDIAN_DATA}"
 TEST_DEPENDS=		${BASE_PKGPATH}=${VERSION}
 
 post-install:
-	find ${PREFIX}/lib -type l -name 'libicu*.so*' -exec rm '{}' \;
+	find ${PREFIX}/lib -type l -name 'libicu*.so*' -delete
 	${INSTALL_DATA_DIR} ${WRKINST}/var/www${TRUEPREFIX}/share/icu/${VERSION}
 	${INSTALL_DATA} ${PREFIX}/share/icu/${VERSION}/${ENDIAN_DATA}.dat \
 		${WRKINST}/var/www${TRUEPREFIX}/share/icu/${VERSION}/

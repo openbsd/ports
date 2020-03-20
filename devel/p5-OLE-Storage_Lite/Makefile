@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT=	simple class for OLE document interface
 
@@ -15,6 +15,6 @@ MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	sample
 
 post-extract:
-	@find ${WRKDIST} -type f -exec perl -pi -e 's/\r$$//' {} \;
+	@find ${WRKDIST} -type f -exec perl -pi -e 's/\r$$//' {} +
 
 .include <bsd.port.mk>

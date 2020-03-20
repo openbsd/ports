@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2020/03/20 16:44:21 naddy Exp $
 
 COMMENT=	MS-DOS Telix-like serial communication program
 
@@ -35,7 +35,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/COPYING ${PREFIX}/share/doc/minicom
 	${INSTALL_DATA} ${WRKDIST}/ChangeLog ${PREFIX}/share/doc/minicom
 	@(umask 022; cp -RP ${WRKDIST}/extras ${PREFIX}/share/examples/minicom)
-	@find ${PREFIX}/share/examples/minicom -name Makefile\* \
-		-exec rm -f {} \;
+	@find ${PREFIX}/share/examples/minicom -name Makefile\* -delete
 
 .include <bsd.port.mk>

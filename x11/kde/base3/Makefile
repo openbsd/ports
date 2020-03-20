@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.166 2020/03/20 16:44:29 naddy Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -120,6 +120,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/kdesurc ${PREFIX}/${MODKDE_CONFIG_SUBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 	rm -R ${PREFIX}/share/desktop-directories
-	find ${PREFIX}/share/icons -name 'knetattach*' | xargs rm
+	find ${PREFIX}/share/icons -name 'knetattach*' -delete
 
 .include <bsd.port.mk>

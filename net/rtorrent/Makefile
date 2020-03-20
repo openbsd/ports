@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2020/02/25 07:02:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.69 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
@@ -41,6 +41,7 @@ post-install:
 # this patches *only* files containing tr1 to no longer refer to tr1
 # we do it pre-patch, because autoconf passes right after us
 pre-patch:
-	find ${WRKDIST} -type f|xargs fgrep -lw tr1|xargs sed -i.bak -e 's,<tr1/,<,' -e 's/std::tr1/std/g' -e 's/tr1::placeholders::/std::placeholders::/g' -e 's/tr1::bind/std::bind/g'
+	find ${WRKDIST} -type f -exec fgrep -lw tr1 {} + | \
+		xargs sed -i.bak -e 's,<tr1/,<,' -e 's/std::tr1/std/g' -e 's/tr1::placeholders::/std::placeholders::/g' -e 's/tr1::bind/std::bind/g'
 
 .include <bsd.port.mk>

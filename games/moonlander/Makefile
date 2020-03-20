@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT=	clone of atari game
 DISTNAME=	moon-lander-1.0
@@ -38,6 +38,6 @@ do-install:
 	@cp -R ${WRKSRC}/{fonts,images,sounds} ${PREFIX}/share/moonlander
 
 post-install:
-	@find ${PREFIX}/share/moonlander -type f -print0 |xargs -0 chmod 444
+	@find ${PREFIX}/share/moonlander -type f -exec chmod 444 {} +
 
 .include <bsd.port.mk>

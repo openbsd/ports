@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/27 14:29:46 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
@@ -51,7 +51,7 @@ post-extract:
 		${WRKSRC}/plugins/python/progs/init-python.scm
 .for l in asymptote dratex gnuplot graph graphviz sympy xypic
 	find ${WRKSRC}/plugins/$l -name '*.scm' \
-		-exec sed -i 's,python,python${MODPY_VERSION},' {} \;
+		-exec sed -i 's,python,python${MODPY_VERSION},' {} +
 .endfor
 
 .include <bsd.port.mk>

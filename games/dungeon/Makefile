@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/14 00:39:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT =		text adventure game
 
@@ -28,7 +28,7 @@ ALL_TARGET =		dungeon
 WRKDIST =		${WRKDIR}
 
 post-extract:
-	find ${WRKSRC} -type f | xargs perl -pi -e 's/\015//g; s/\032//g' 
+	find ${WRKSRC} -type f -exec perl -pi -e 's/\015//g; s/\032//g' {} +
 	(cd ${WRKSRC}; for f in `awk '{ print $$1 }' MANIFEST | tail +3`; do \
 		mv `echo $$f | tr a-z A-Z` $$f; done)
 

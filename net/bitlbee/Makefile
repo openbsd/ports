@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/07/12 20:48:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
@@ -65,8 +65,8 @@ NO_TEST=		Yes
 
 # don't hide compile command lines
 pre-configure:
-	find ${WRKSRC} -name Makefile | \
-	    xargs perl -pi -e 's,@\$$\(CC\),\$$(CC),g'
+	find ${WRKSRC} -name Makefile -exec \
+	    perl -pi -e 's,@\$$\(CC\),\$$(CC),g' {} +
 
 post-build:
 	${MAKE_PROGRAM} -C ${WRKSRC}/doc/user-guide user-guide.html

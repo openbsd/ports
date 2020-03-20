@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/09/26 21:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
@@ -28,7 +28,7 @@ pre-configure:
 	@sed -i -e 's,/usr/bin/php,${MODPHP_BIN},g;' \
 		-e 's,!!PREFIX!!,${PREFIX},g' \
 		 ${WRKSRC}/pgfouine.php ${WRKSRC}/pgfouine_vacuum.php
-	@find ${WRKSRC} -type d -name CVS | xargs rm -fr
+	@find ${WRKSRC} -type d -name CVS -prune -exec rm -fr {} +
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pgfouine.php ${PREFIX}/bin/pgfouine

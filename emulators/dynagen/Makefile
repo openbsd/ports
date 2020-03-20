@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT=		front-end for dynamips cisco emulator
 
@@ -21,7 +21,7 @@ NO_TEST=		Yes
 PKG_ARCH=		*
 
 post-extract:
-	@find ${WRKSRC} -type f -exec perl -pi -e 's:\x0d::' {} \;
+	@find ${WRKSRC} -type f -exec perl -pi -e 's:\x0d::' {} +
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/dynagen

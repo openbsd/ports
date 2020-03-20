@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2020/03/20 16:44:24 naddy Exp $
 
 # XXX consider moving to https://repo.or.cz/alpine.git
 
@@ -130,7 +130,7 @@ post-install:
 		${PREFIX}/share/examples/imap-uw
 	tar -C ${WRKSRC}/imap/docs -cf - . | \
 		tar -C ${PREFIX}/share/doc/imap-uw -xf -
-	find ${PREFIX}/share/doc/imap-uw -type f -exec chmod 0644 {} \;
+	find ${PREFIX}/share/doc/imap-uw -type f -exec chmod 0644 {} +
 	# mailutil
 	${INSTALL_PROGRAM} ${WRKBUILD}/imap/mailutil/mailutil ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/imap/src/mailutil/mailutil.1 ${PREFIX}/man/man1

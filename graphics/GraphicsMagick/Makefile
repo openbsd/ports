@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2020/03/01 10:04:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT=	image processing tools with stable ABI
 
@@ -69,6 +69,6 @@ post-install:
 	@perl -pi -e s,'-L${WRKBUILD}/(magick|wand)/.libs','',g \
 		${PREFIX}/bin/GraphicsMagick++-config \
 		${PREFIX}/bin/GraphicsMagick-config
-	@find ${PREFIX}/lib/GraphicsMagick/modules-Q16 -name '*.a' -print | xargs rm
+	@find ${PREFIX}/lib/GraphicsMagick/modules-Q16 -name '*.a' -delete
 
 .include <bsd.port.mk>

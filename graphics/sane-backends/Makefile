@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2020/02/09 20:33:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.90 2020/03/20 16:44:24 naddy Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
@@ -74,7 +74,7 @@ FAKE_FLAGS=		configdir=${PREFIX}/share/examples/sane-backends/sane.d
 
 post-install:
 	# removing the microtek2 backend which needs a Linux kernel module
-	find ${PREFIX} -name \*microtek2\* | xargs rm
+	find ${PREFIX} -name \*microtek2\* -delete
 	cp -R ${WRKSRC}/tools/openbsd/ \
 		${PREFIX}/share/examples/sane-backends/hotplug
 	rm ${PREFIX}/share/doc/sane-backends/README*

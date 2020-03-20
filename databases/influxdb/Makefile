@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/12 22:05:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT =	time-series datastore for metrics, events, and analytics
 
@@ -57,7 +57,7 @@ tarball: clean distclean
 	ftp -o ${WRKDIR}/${DISTFILES} https://github.com/influxdata/influxdb/archive/v${V}/${DISTFILES}
 	tar -s /influxdb-${V}/influxdb/ -C ${WRKDIR}/go/src/github.com/influxdata/ -xzf ${WRKDIR}/${DISTFILES}
 	${SETENV} ${MAKE_ENV} bash ${WRKDIR}/gpm get ${WRKSRC}/Godeps
-	find ${WRKDIR}/go -name .git -type d | xargs rm -Rf
+	find ${WRKDIR}/go -name .git -type d -prune -exec rm -Rf {} +
 	cd ${WRKDIR} && tar -czf /usr/ports/distfiles/${DISTFILES} go
 
 .include <bsd.port.mk>

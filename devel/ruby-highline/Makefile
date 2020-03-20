@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT =		high-level IO library for Ruby
 
@@ -19,9 +19,9 @@ MODRUBY_TEST=		testrb
 MODRUBY_TEST_TARGET =	-I lib test/*.rb
 
 post-install:
-	@find ${PREFIX}/${GEM_LIB}/ -type f -name \*.gitignore \
-		-or -name \*.cvsignore -or -name Rakefile \
-		-or -name setup.rb | xargs rm
+	@find ${PREFIX}/${GEM_LIB}/ -type f \( -name \*.gitignore \
+		-o -name \*.cvsignore -o -name Rakefile \
+		-o -name setup.rb \) -delete
 	@rmdir ${PREFIX}/${GEM_LIB}/gems/${DISTNAME}/doc
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/07/12 20:48:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
@@ -37,6 +37,6 @@ SUBST_VARS=	VERSION
 
 post-extract:
 	@mv -f ${WRKDIR}/help ${WRKSRC}
-	@find ${WRKSRC}/help -name CVS | xargs rm -rf
+	@find ${WRKSRC}/help -name CVS -prune -exec rm -rf {} +
 
 .include <bsd.port.mk>

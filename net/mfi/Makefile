@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/14 02:16:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=	Ubiquiti mfi wireless controller
 
@@ -37,8 +37,8 @@ do-install:
 	ln -fs ${LOCALBASE}/bin/mongod ${INSTDIR}/bin/mongod
 	ln -s /var/log/mfi ${INSTDIR}/logs
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} -type f|xargs chmod ${SHAREMODE}
-	find ${INSTDIR} -type d|xargs chmod ${DIRMODE}
+	find ${INSTDIR} -type f -exec chmod ${SHAREMODE} {} + -o \
+		-type d -exec chmod ${DIRMODE} {} +
 	${SUBST_CMD} -c -m 555 -o ${BINOWN} -g ${BINGRP} \
 		${FILESDIR}/mfi.sh ${PREFIX}/bin/mfi
 

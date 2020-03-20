@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/10/05 22:29:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT =	garmin GPS map management tool
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS =	-DQK_QT5_PORT=No \
 			-DCMAKE_CXX_FLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 post-extract:
-	@find ${WRKDIST} -name *.orig -exec rm {} \;
+	@find ${WRKDIST} -name *.orig -delete
 	@rm ${WRKSRC}/cmake/Modules/FindGDAL.cmake
 	@rm ${WRKSRC}/cmake/Modules/FindJPEG.cmake
 

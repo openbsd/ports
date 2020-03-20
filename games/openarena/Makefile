@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/20 16:44:23 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -69,7 +69,7 @@ WRKDIST =		${WRKDIR}/openarena-engine-source-${E_V}
 ALL_TARGET =		release
 
 post-extract:
-	find ${WRKDIR} -name '*.orig' -print0 | xargs -0r rm -f
+	find ${WRKDIR} -name '*.orig' -delete
 	mkdir ${WRKSRC}/code/sndio
 	cp ${FILESDIR}/snd_sndio.c ${WRKSRC}/code/sndio
 

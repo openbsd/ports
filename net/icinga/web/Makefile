@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2020/03/10 21:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT =	API-based web UI for obsolete version of Icinga
 
@@ -58,15 +58,15 @@ pre-configure:
 	ln -s ${MODPHP_BIN} ${WRKDIR}/bin/php
 
 post-configure:
-	find ${WRKSRC}/bin -name '*.sh' -print0 | xargs -0r \
-		perl -pi -e 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g'
+	find ${WRKSRC}/bin -name '*.sh' -exec \
+		perl -pi -e 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g' {} +
 	${SUBST_CMD} ${WRKSRC}/etc/apache2/icinga-web.conf
 
 pre-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${VARBASE}/www/conf/modules.sample
 
 post-install:
-	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm
+	find ${WRKINST} -name '*.orig' -delete
 	cd ${WRKSRC}/etc/schema; pax -rw ./ ${PREFIX}/etc/schema/
 	for i in ${PREFIX}/etc/conf.d/*xml; do mv $$i $$i.dist; done
 	for i in pnp-host-extension.xml pnp-service-extension.xml; do \

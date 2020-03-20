@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2020/03/13 16:53:49 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2020/03/20 16:44:29 naddy Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -150,11 +150,11 @@ qt5-post-install:
 		done; \
 	fi
 	# CMake files get values from QMake config "as is"
-	find ${QT_CMAKEDIR} -type f -print0 | xargs -0r perl -pi \
+	-find ${QT_CMAKEDIR} -type f -exec perl -pi \
 		-e 's,\$$\(LOCALBASE\),${LOCALBASE},g;' \
-		-e 's,\$$\(X11BASE\),${X11BASE},g;'
+		-e 's,\$$\(X11BASE\),${X11BASE},g;' {} +
 	# remove unpatched files
-	find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs -r rm
+	-find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' -delete
 .if ${CONFIGURE_STYLE:Mqmake} && ${BUILD_PACKAGES:M-examples}
 	# install examples sources
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt5/examples

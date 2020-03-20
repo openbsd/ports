@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/07/12 20:47:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -91,12 +91,11 @@ post-patch:
 	for file in Wnn/jd/jserverrc cWnn/cd/cserverrc kWnn/kd/kserverrc; do\
 	perl -pi.bak -e 's,\@LIBDIR/\@LANG/dic,${WNNDICDIR}/\@LANG,;' $$file; done
 # Commands are installed directly under /usr/local/bin and dictionaries in /var/dict
-	@{ for dir in ${SRCDOCDIRS}; do \
-	find ${WRKSRC}/$$dir -type f; done; } \
-		| xargs perl -pi.bok -e \
-		's,/usr/local/bin/Wnn4/,${PREFIX}/bin/,g; s,/usr/local/lib/wnn/dic,${WNNDICDIR},g;'
-	@{ for dir in ${SRCDOCDIRS}; do \
-	find ${WRKSRC}/$$dir -type f -name \*.bok; done; } | xargs rm
+	@for dir in ${SRCDOCDIRS}; do \
+	find ${WRKSRC}/$$dir -type f -exec perl -pi.bok -e \
+		's,/usr/local/bin/Wnn4/,${PREFIX}/bin/,g; s,/usr/local/lib/wnn/dic,${WNNDICDIR},g;' {} + ; done
+	@for dir in ${SRCDOCDIRS}; do \
+	find ${WRKSRC}/$$dir -type f -name \*.bok -delete ; done
 
 do-configure:
 	@echo "   WNNDICDIR = ${WNNDICDIR}"   >${CONFIG_FILE}

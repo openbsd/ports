@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT=	DBI wrapper and abstraction layer
 
@@ -26,6 +26,6 @@ RUN_DEPENDS=	math/p5-Bit-Vector \
 TEST_FLAGS +=	AUTOMATED_TESTING=1
 
 pre-configure:
-	find ${WRKSRC} -type f -name \*.orig -exec rm {} \;
+	find ${WRKSRC} -type f -name \*.orig -delete
 
 .include <bsd.port.mk>

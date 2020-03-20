@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2020/03/08 09:22:39 robert Exp $
+# $OpenBSD: Makefile,v 1.52 2020/03/20 16:44:25 naddy Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -162,7 +162,8 @@ pre-configure:
 		${WRKSRC}/tools/python-scripts/kopano-cachestat
 	perl -pi -e 's,/bin/bash,/bin/sh,g' \
 		${WRKSRC}/installer/searchscripts/{attachments_parser,zmktemp}
-	find ${WRKSRC} -type f | xargs perl -pi -e 's,/usr/bin/python3,${MODPY_BIN},g'
+	find ${WRKSRC} -type f -exec \
+		perl -pi -e 's,/usr/bin/python3,${MODPY_BIN},g' {} +
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
@@ -185,7 +186,7 @@ post-install:
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/version_info.py
 
-	find ${PREFIX} -name "*.la" -exec rm {} \;
+	find ${PREFIX} -name "*.la" -delete
 
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/kopano-dagent/python \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT =		simple weblog
 
@@ -34,7 +34,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/httpd-blogsum.conf
 
 do-install:
-	@find ${WRKDIST} -name \*.bak -or -name \*.orig | xargs rm
+	@find ${WRKDIST} \( -name \*.bak -o -name \*.orig \) -delete
 	@cp -R ${WRKDIST} ${INSTDIR}
 
 .include <bsd.port.mk>

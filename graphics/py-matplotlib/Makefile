@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2020/03/10 03:31:45 daniel Exp $
+# $OpenBSD: Makefile,v 1.81 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT=	Python charting and plotting API
 
@@ -72,7 +72,7 @@ post-patch:
 	cp ${WRKSRC}/setup.cfg{.template,}
 
 pre-configure:
-	@find ${WRKSRC}/examples -name \*.py | xargs ${MODPY_BIN_ADJ}
+	@find ${WRKSRC}/examples -name \*.py -exec ${MODPY_BIN_ADJ} {} +
 	${SUBST_CMD} ${WRKSRC}/setupext.py
 
 post-install:

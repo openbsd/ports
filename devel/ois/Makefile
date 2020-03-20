@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT =		object-oriented input system
 
@@ -39,7 +39,7 @@ AUTOMAKE_VERSION =	1.10
 NO_TEST =		Yes
 
 post-extract:
-	find ${WRKSRC} -type f | xargs perl -pi -e 's/\015//g'
+	find ${WRKSRC} -type f -exec perl -pi -e 's/\015//g' {} +
 
 post-patch:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \

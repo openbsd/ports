@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT=	gamma-adjusting utility
 
@@ -24,8 +24,8 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 
 pre-configure:
-	@find ${WRKDIST} -name \*.py | \
-		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
+	@find ${WRKDIST} -name \*.py -exec \
+		perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' {} +
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/GAMMApage.py ${PREFIX}/bin/GAMMApage

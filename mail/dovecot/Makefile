@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2020/03/07 11:36:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.288 2020/03/20 16:44:24 naddy Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -103,7 +103,6 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh \
 		${PREFIX}/sbin/dovecot-mkcert.sh
 	@rm ${PREFIX}/share/doc/dovecot/{dovecot-openssl.cnf,mkcert.sh}
-	@find ${PREFIX}/lib/dovecot -name '*.a' -print | xargs rm
-	@find ${PREFIX}/lib/dovecot -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib/dovecot \( -name '*.a' -o -name '*.la' \) -delete
 
 .include <bsd.port.mk>

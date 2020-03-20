@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2020/02/27 14:06:13 landry Exp $
+# $OpenBSD: Makefile,v 1.70 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.5
@@ -49,8 +49,8 @@ CONFIGURE_ARGS+=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man/" \
 
 # delete DOS line endings
 post-extract:
-	@find ${WRKSRC} -type f -name "*.cpp" | xargs perl -i -pe 's/\r$$//'
-	@find ${WRKSRC} -type f -name "*.h" | xargs perl -i -pe 's/\r$$//'
+	@find ${WRKSRC} -type f \( -name "*.cpp" -o -name "*.h" \) -exec \
+		perl -i -pe 's/\r$$//' {} +
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications

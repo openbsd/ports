@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2020/01/11 08:01:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.180 2020/03/20 16:44:22 naddy Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -60,10 +60,10 @@ SUBST_FILES =	${WRKSRC}/Source/cmLocalGenerator.cxx \
 		${WRKSRC}/bootstrap
 
 post-patch:
-	(find ${WRKSRC}/Modules -name "*.cmake" -print0; \
-	find ${WRKSRC}/Tests -name "CMakeLists.txt" -print0) | \
-	xargs -0 perl -e 's,/usr/local,${LOCALBASE},g; \
-	s,/usr/X11R6,${LOCALBASE},g'
+	find ${WRKSRC}/Modules -name "*.cmake" \
+		-exec perl -e 's,/usr/(local|X11R6),${LOCALBASE},g' {} +
+	find ${WRKSRC}/Tests -name "CMakeLists.txt" \
+		-exec perl -e 's,/usr/(local|X11R6),${LOCALBASE},g' {} +
 	perl -e 's,/usr/local,${LOCALBASE},g' \
 		${SUBST_FILES}
 	perl -e 's,/usr/include,${LOCALBASE}/include,' \
@@ -71,12 +71,12 @@ post-patch:
 
 pre-configure:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/
-	(find ${WRKSRC}/Modules -name "*.cmake" -print0; \
-	find ${WRKSRC}/Tests -name "CMakeLists.txt" -print0) | \
-	xargs -0 ${SUBST_CMD}
+	find ${WRKSRC}/Modules -name "*.cmake" -exec ${SUBST_CMD} {} +
+	find ${WRKSRC}/Tests -name "CMakeLists.txt" -exec ${SUBST_CMD} {} +
 	${SUBST_CMD} ${SUBST_FILES}
 
 post-install:
-	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -exec rm {} \;
+	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*.orig" -o \
+		-name "*.beforesubst" \) -delete
 
 .include <bsd.port.mk>

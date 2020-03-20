@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
@@ -59,7 +59,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} neverball neverputt ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/neverball \
 		${PREFIX}/share/doc/neverball
-	cd ${WRKSRC}/data && find . -type f ! -perm 644 -exec chmod 644 {} \;
+	cd ${WRKSRC}/data && find . -type f ! -perm 644 -exec chmod 644 {} +
 	cd ${WRKSRC} && find data -type f | pax -rw ${PREFIX}/share/neverball 
 	cd ${WRKSRC} && find locale -type f | pax -rw ${PREFIX}/share
 	cd ${WRKSRC} && ${INSTALL_DATA} LICENSE.md README.md doc/authors.txt \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/01/18 17:42:58 kurt Exp $
+# $OpenBSD: Makefile,v 1.51 2020/03/20 16:44:22 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -146,7 +146,7 @@ build-bootjdk: build
 	@cd ${WRKTMP}/bootjdk && rm bin/appletviewer bin/policytool jre/bin/policytool
 	@cd ${WRKTMP}/bootjdk/jre/lib/${ARCH} && rm libnpt.so libinstrument.so libsplashscreen.so libjsound.so libawt_xawt.so
 	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/jre/lib/${ARCH}:${WRKTMP}/bootjdk/jre/lib/${ARCH}/server" \
-		find ${WRKTMP}/bootjdk -type f -perm -500 -exec ldd {} \; 2>/dev/null | \
+		find ${WRKTMP}/bootjdk -type f -perm -500 -exec ldd {} + 2>/dev/null | \
 		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
 		xargs -I % cp /% ${WRKTMP}/bootjdk-libs
 	@cd ${WRKTMP} && tar czf openjdk8-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*

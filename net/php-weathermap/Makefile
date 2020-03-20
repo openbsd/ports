@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=	graphical network traffic map
 
@@ -45,6 +45,6 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/editor-config.php-dist ${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	chmod -R u=rwX,og=rX ${INSTDIR}
-	find ${INSTDIR} -name '*.orig' -print0 | xargs -0r rm
+	find ${INSTDIR} -name '*.orig' -delete
 
 .include <bsd.port.mk>

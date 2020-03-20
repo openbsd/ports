@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT-main =		system monitoring tool
 COMMENT-nagios =	nagios plugin for resmon
@@ -37,7 +37,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKDIST}/resmon ${WRKDIST}/resmon.conf.sample
 
 do-install:
-	@find ${WRKDIST} -name \*.bak -or -name \*.orig | xargs rm
+	@find ${WRKDIST} \( -name \*.bak -o -name \*.orig \) -delete
 	${INSTALL_SCRIPT} ${WRKSRC}/resmon ${PREFIX}/sbin
 	@cp -R ${WRKDIST}/lib/Resmon ${INSTDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}

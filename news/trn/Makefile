@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/14 00:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT=	threaded newsreader
 
@@ -35,7 +35,8 @@ FAKE_FLAGS= \
 	installfilexp=${WRKINST}${PREFIX}/lib/trn/filexp
 
 post-install:
-	find ${PREFIX}/lib/trn/HelpFiles | xargs chown ${SHAREOWN}:${SHAREGRP} 
+	find ${PREFIX}/lib/trn/HelpFiles \
+		-exec chown ${SHAREOWN}:${SHAREGRP} {} +
 
 NO_TEST=	Yes
 

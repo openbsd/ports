@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:20 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.11 2020/03/20 16:44:23 naddy Exp $ 
 COMMENT =		arcade-puzzle game
 V = 			0.3.2
 DISTNAME =		jag-${V}
@@ -31,7 +31,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/jag
 	cd ${WRKDIR}/jag-${V}-data/data && pax -rw . ${PREFIX}/share/jag
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/
-	find ${PREFIX}/share -type d -exec chmod ${DIRMODE} {} \;
-	find ${PREFIX}/share -type f -exec chmod ${SHAREMODE} {} \;
+	find ${PREFIX}/share -type d -exec chmod ${DIRMODE} {} + -o \
+		-type f -exec chmod ${SHAREMODE} {} +
 
 .include <bsd.port.mk>

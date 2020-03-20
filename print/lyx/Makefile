@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2020/03/16 02:40:45 mariani Exp $
+# $OpenBSD: Makefile,v 1.91 2020/03/20 16:44:27 naddy Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -67,8 +67,8 @@ pre-configure:
 		${WRKSRC}/lib/lyx2lyx/lyx2lyx \
 		${WRKSRC}/lib/scripts/listerrors \
 		${WRKSRC}/src/graphics/GraphicsConverter.cpp
-	find ${WRKSRC} -name "*.py" -print0 | xargs -0 \
-		perl -pi -e "s,#! ?/usr/bin/(env )?python,#!${MODPY_BIN},"
+	find ${WRKSRC} -name "*.py" -exec \
+		perl -pi -e "s,#! ?/usr/bin/(env )?python,#!${MODPY_BIN}," {} +
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

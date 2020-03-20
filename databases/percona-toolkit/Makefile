@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT =	MySQL Percona tools
 
@@ -24,7 +24,6 @@ CONFIGURE_STYLE =	perl
 TEST_TARGET =	test
 
 pre-configure:
-	@find ${WRKSRC} \( -name "*.orig" \) \
-		-exec rm -f {} \;
+	@find ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>

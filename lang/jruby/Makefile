@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2020/03/05 15:29:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.85 2020/03/20 16:44:24 naddy Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
@@ -85,8 +85,8 @@ do-install:
 	cd ${WRKBUILD}/lib && tar -cf - * | \
 		tar -C ${JRUBY_HOME}/lib -xf -
 	mkdir -p ${JRUBY_HOME}/lib/ruby/{1.8,1.9,2.0}/site_ruby
-	find ${JRUBY_HOME}/lib -name '*.orig' -print0 | xargs -0r rm
-	find ${JRUBY_HOME}/lib -name '*.beforesubst' -print0 | xargs -0r rm
+	find ${JRUBY_HOME}/lib \( -name '*.orig' -o -name '*.beforesubst' \) \
+		-delete
 	mv ${JRUBY_HOME}/lib/ruby/gems/{shared,1.8}
 	ln -s 1.8 ${JRUBY_HOME}/lib/ruby/gems/shared
 	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib

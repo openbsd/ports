@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/11/19 21:21:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2020/03/20 16:44:21 naddy Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
@@ -50,6 +50,6 @@ SUBST_VARS +=	MODPY_SITEPKG
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/data/exaile.desktop \
 		${WRKSRC}/plugins/Makefile ${WRKSRC}/tools/generate-launcher
-	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
+	@find ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>

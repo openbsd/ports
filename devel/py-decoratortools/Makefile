@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT=		class and function decorators
 
@@ -22,7 +22,7 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
 post-install:
-	find ${WRKINST}${MODPY_SITEPKG} -type f -exec chmod 444 {} \;
+	find ${WRKINST}${MODPY_SITEPKG} -type f -exec chmod 444 {} +
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-decoratortools
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/py-decoratortools/
 

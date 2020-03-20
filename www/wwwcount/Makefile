@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT=	access counter, clock and date for WWW pages
 
@@ -46,9 +46,8 @@ do-install:
 	@cd ${WRKSRC}/docs; cp -RP * ${PREFIX}/share/doc/wwwcount
 	@chown -R ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/doc/wwwcount
-	@find ${PREFIX}/share/doc/wwwcount -type f -print | \
-		xargs chmod ${SHAREMODE}
-	@find ${PREFIX}/share/doc/wwwcount -type d -print | \
-		xargs chmod ${BINMODE}
+	@find ${PREFIX}/share/doc/wwwcount \
+		-type f -exec chmod ${SHAREMODE} {} + -o \
+		-type d -exec chmod ${BINMODE} {} +
 
 .include <bsd.port.mk>

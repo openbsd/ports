@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/10/20 08:03:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT =	GNUstep theme following NeXT look and feel
 
@@ -20,7 +20,7 @@ WRKSRC =	${WRKDIR}/Neos.theme
 
 do-install:
 	mkdir -p ${PREFIX}/lib/GNUstep/Themes
-	find ${WRKSRC} -name CVS -type d | xargs rm -r
+	find ${WRKSRC} -name CVS -type d -prune -exec rm -r {} +
 	cp -r ${WRKSRC} ${PREFIX}/lib/GNUstep/Themes
 	chmod -R a+r ${PREFIX}/lib/GNUstep/Themes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=	Zolera SOAP Infrastructure
 
@@ -28,6 +28,6 @@ TEST_IS_INTERACTIVE=Yes
 TEST_DEPENDS=${BUILD_PKGPATH}
 
 do-test:
-	find ${WRKSRC}/test -name \*.py -exec ${MODPY_BIN} {} \;
+	find ${WRKSRC}/test -name \*.py -exec ${MODPY_BIN} {} +
 
 .include <bsd.port.mk>

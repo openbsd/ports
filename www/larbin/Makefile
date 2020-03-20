@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT=	little and fast Web crawler
 
@@ -30,12 +30,12 @@ USE_X11 =		Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/global.cc
 # Now fixup some C++ constructs not supported by clang
-	find ${WRKSRC}/src -name '*.cc' -or -name '*.h' | xargs \
+	find ${WRKSRC}/src \( -name '*.cc' -o -name '*.h' \) -exec \
 		sed -i -e 's|<iostream.h>|<iostream>| ; \
 			s|<string.h>|<cstring>| ; \
 			s|\([[:blank:]]\)cerr|\1std::cerr|g ; \
 			s|\([[:blank:]]\)cout|\1std::cout|g ; \
-			s|\([[:blank:]]\)endl|\1std::endl|g'
+			s|\([[:blank:]]\)endl|\1std::endl|g' {} +
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/larbin ${PREFIX}/bin

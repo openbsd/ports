@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/07/12 20:47:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=	virus/spam scanning framework
 
@@ -47,7 +47,7 @@ NO_TEST=	Yes
 
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xzf MailScanner-install-${V}.${Vs}/perl-tar/MailScanner-${V}.${Vss}${EXTRACT_SUFX} && \
-		find ${WRKDIST} -type d | xargs chmod 755
+		find ${WRKDIST} -type d -exec chmod 755 {} +
 
 do-install:	install_libexec install_etc install_share install_lib install_bin
 
@@ -105,7 +105,7 @@ install_share:
 	@${INST_DATA} ${WRKDIR}/MailScanner-install-${V}.${Vs}/README ${PREFIX}/share/doc/MailScanner/README
 	@cd ${WRKSRC}/etc ; find reports -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}'/share/examples/MailScanner/{}' \;
 	@cd ${WRKSRC}/etc ; find reports -type f ! -name "*.orig" | while read f; do ${INST_DATA} $$f ${PREFIX}/share/examples/MailScanner/$$f; done
-	@cd ${PREFIX}/share/examples/MailScanner/reports ; find . -name "*.bak" -print0 | xargs -0 rm -f
+	@find ${PREFIX}/share/examples/MailScanner/reports -name "*.bak" -delete
 
 install_lib:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/lib/MailScanner

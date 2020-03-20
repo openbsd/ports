@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2020/03/13 21:05:04 pvk Exp $
+# $OpenBSD: Makefile,v 1.33 2020/03/20 16:44:27 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
@@ -55,7 +55,7 @@ do-build:
 	cd ${WRKSRC}/vendor/jruby/lib/ruby/stdlib/ffi/platform/ && \
 		rm -r *-{aix,cygwin,darwin,freebsd,gnu,linux,netbsd,solaris,windows}*
 	@# apply hammer to fixup weird modes
-	find ${WRKSRC}/vendor/ -type f -exec chmod 0644 {} \;
+	find ${WRKSRC}/vendor/ -type f -exec chmod 0644 {} +
 	chmod 755 ${WRKSRC}/vendor/jruby/bin/*
 
 do-install:

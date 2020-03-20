@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/03/20 16:44:22 naddy Exp $
 
 COMMENT=	open-source LDAP software (server, legacy version)
 
@@ -84,10 +84,9 @@ post-install:
 	cd ${PREFIX} && rm -fR bin include lib man/man5/ldap.conf.5 \
 		man/man5/ldif.5 share/examples/openldap/ldap.conf \
 		man/man3/ld_errno.3
-	find ${PREFIX}/man/man1 -name 'ldap*' -exec rm -f {} \;
-	find ${PREFIX}/man/man3 -name 'ber_*' -exec rm -f {} \;
-	find ${PREFIX}/man/man3 -name 'lber*' -exec rm -f {} \;
-	find ${PREFIX}/man/man3 -name 'ldap*' -exec rm -f {} \;
-	find ${PREFIX}/man/man5 -name 'slapo*' -exec rm -f {} \;
+	find ${PREFIX}/man/man1 -name 'ldap*' -delete
+	find ${PREFIX}/man/man3 \
+		\( -name 'ber_*' -o -name 'lber*' -o -name 'ldap*' \) -delete
+	find ${PREFIX}/man/man5 -name 'slapo*' -delete
 
 .include <bsd.port.mk>

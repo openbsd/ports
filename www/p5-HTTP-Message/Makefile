@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/20 16:44:28 naddy Exp $
 
 COMMENT =	HTTP Style Messages
 
@@ -22,6 +22,6 @@ RUN_DEPENDS =	textproc/p5-Encode-Locale>=1.00 \
 TEST_DEPENDS =	devel/p5-Try-Tiny
 
 post-build:
-		@find ${WRKSRC}/blib \( -name "*.orig" -or -name "*.rej" \) -exec rm -f {} \;
+		@find ${WRKSRC}/blib \( -name "*.orig" -o -name "*.rej" \) -delete
 
 .include <bsd.port.mk>

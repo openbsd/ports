@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2020/02/25 07:02:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.62 2020/03/20 16:44:26 naddy Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -43,5 +43,6 @@ CXXFLAGS +=		-std=c++11
 # this patches *only* files containing tr1 to no longer refer to tr1
 # we do it pre-patch, because autoconf passes right after us
 pre-patch:
-	find ${WRKDIST} -type f|xargs fgrep -lw tr1|xargs sed -i.bak -e 's,<tr1/,<,' -e 's/std::tr1/std/g'
+	find ${WRKDIST} -type f -exec fgrep -lw tr1 {} + | \
+		xargs sed -i.bak -e 's,<tr1/,<,' -e 's/std::tr1/std/g'
 .include <bsd.port.mk>

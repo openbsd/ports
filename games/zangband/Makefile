@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/14 00:39:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2020/03/20 16:44:23 naddy Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
@@ -40,8 +40,7 @@ do-install:
 	(cd ${WRKDIST}/lib && tar -cf - * ) | \
 	   (cd ${PREFIX}/share/zangband && tar -xf - )
 	@chown -R ${SHAREOWN}:games ${PREFIX}/share/zangband
-	@find ${PREFIX} \( -name Makefile\* -o -name delete.me \) \
-           -exec rm "{}" \;
+	@find ${PREFIX} \( -name Makefile\* -o -name delete.me \) -delete
 	${INSTALL} -s -o ${BINOWN} -g games -m 2555 ${WRKSRC}/src/zangband \
 	   ${PREFIX}/bin
 

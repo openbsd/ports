@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=	library for reading and writing QuickTime files
 
@@ -52,7 +52,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		ac_cv_header_soundcard_h=no
 
 post-install:
-	@find ${PREFIX}/lib/libquicktime -name '*.a' -print | xargs rm
-	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib/libquicktime -name '*.a' -delete
+	@find ${PREFIX}/lib -name '*.la' -delete
 
 .include <bsd.port.mk>

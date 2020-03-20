@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2020/03/07 09:53:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2020/03/20 16:44:25 naddy Exp $
 
 COMMENT=	Sieve mail filtering for Dovecot
 
@@ -33,8 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	@find ${PREFIX}/lib/dovecot -name '*.a' -print | xargs rm
-	@find ${PREFIX}/lib/dovecot -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib/dovecot \( -name '*.a' -o -name '*.la' \) -delete
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dovecot/
 	@mv ${PREFIX}/share/doc/dovecot/example-config/ \
 		${PREFIX}/share/examples/dovecot/

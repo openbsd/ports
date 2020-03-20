@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.99 2020/01/02 21:21:56 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.100 2020/03/20 16:44:24 naddy Exp $
 
 # ruby module
 
@@ -175,8 +175,8 @@ MODRUBY_RUBY_ADJ =	perl -pi \
 MODRUBY_ADJ_FILES?=
 .if !empty(MODRUBY_ADJ_FILES)
 MODRUBY_ADJ_REPLACE=	for pat in ${MODRUBY_ADJ_FILES:QL}; do \
-			 find ${WRKSRC} -type f -name "$$pat" -print0 | \
-			  xargs -0r ${MODRUBY_RUBY_ADJ} ; \
+			 find ${WRKSRC} -type f -name "$$pat" \
+			  -exec ${MODRUBY_RUBY_ADJ} {} + ; \
 			done
 MODRUBY_pre-configure += ${MODRUBY_ADJ_REPLACE}
 .endif
