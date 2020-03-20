@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_applications-development_links,v 1.1.1.1 2020/03/20 07:10:29 landry Exp $
+
+non-printable chars breaks gtk-update-icon-cache
+
+Index: src/applications-development.links
+--- src/applications-development.links.orig
++++ src/applications-development.links
+@@ -2,6 +2,5 @@ applications-development.svg
+ gnome-devel.svg
+ package_development.svg
+ programacion.svg
+-programación.svg
+ redhat-programming.svg
+ xfce-devel.svg
