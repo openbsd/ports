@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/26 20:29:26 danj Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/20 11:46:06 mariani Exp $
+@conflict py-rope-*
+@pkgpath devel/py-rope
 lib/python${MODPY_VERSION}/site-packages/rope/
 lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/rope/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/${MODPY_PYCACHE}/
