@@ -1,29 +1,34 @@
-# $OpenBSD: Makefile,v 1.30 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/03/20 12:19:42 sthen Exp $
 
 COMMENT=	extract digital camera info tags from JPEG images
 
-DISTNAME=	libexif-0.6.21
+GH_ACCOUNT=	libexif
+GH_PROJECT=	libexif
+GH_COMMIT=	54b6f7fb6ae1d08602f9f7c44e0624c8344ee832
+
+DISTNAME=	libexif-0.6.22pre20200229
+
 SHARED_LIBS=	exif	13.1
-REVISION=	3
 
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://libexif.sourceforge.net/
+HOMEPAGE=	https://libexif.github.io/
 
 # LGPLv2.1
 PERMIT_PACKAGE=   Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libexif/}
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += iconv intl m
 
 LIB_DEPENDS=		devel/gettext,-runtime
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	gnu
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+BUILD_DEPENDS=		devel/gettext,-tools
+CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+
 CONFIGURE_ARGS=		--disable-docs
 USE_GMAKE=		Yes
-WANTLIB=		iconv intl m
-
-post-install:
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/libexif
 
 .include <bsd.port.mk>

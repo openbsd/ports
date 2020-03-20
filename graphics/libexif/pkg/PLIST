@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/03/16 18:07:47 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/03/20 12:19:42 sthen Exp $
 include/libexif/
 include/libexif/_stdint.h
 include/libexif/exif-byte-order.h
@@ -14,7 +14,7 @@ include/libexif/exif-mem.h
 include/libexif/exif-mnote-data.h
 include/libexif/exif-tag.h
 include/libexif/exif-utils.h
-lib/libexif.a
+@static-lib lib/libexif.a
 lib/libexif.la
 @lib lib/libexif.so.${LIBexif_VERSION}
 lib/pkgconfig/libexif.pc
@@ -25,6 +25,7 @@ share/doc/libexif/COPYING
 share/doc/libexif/ChangeLog
 share/doc/libexif/NEWS
 share/doc/libexif/README
+share/doc/libexif/SECURITY.md
 share/locale/be/LC_MESSAGES/libexif-12.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
@@ -45,6 +46,9 @@ share/locale/es/LC_MESSAGES/libexif-12.mo
 share/locale/fr/LC_MESSAGES/libexif-12.mo
 share/locale/it/LC_MESSAGES/libexif-12.mo
 share/locale/ja/LC_MESSAGES/libexif-12.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/libexif-12.mo
 share/locale/nl/LC_MESSAGES/libexif-12.mo
 share/locale/pl/LC_MESSAGES/libexif-12.mo
 share/locale/pt/LC_MESSAGES/libexif-12.mo
