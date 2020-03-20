@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.101 2020/03/16 22:00:58 juanfra Exp $
+# $OpenBSD: Makefile,v 1.102 2020/03/20 20:22:45 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
 MODPY_EGG_VERSION =	5.3.1
+REVISION =		0
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -22,6 +23,8 @@ MASTER_SITES =		https://www.mercurial-scm.org/release/ \
 			ftp://download.tuxfamily.org/jod/devel/mercurial/
 
 MODULES =		lang/python x11/tk
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
 USE_GMAKE =		Yes
 
 MULTI_PACKAGES =	-main -x11
