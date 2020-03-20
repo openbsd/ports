@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1954 2020/03/18 18:08:13 bket Exp $
+# $OpenBSD: Makefile,v 1.1955 2020/03/20 11:39:36 mariani Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1624,7 +1624,6 @@
      SUBDIR += py-rfc6555,python3
      SUBDIR += py-robotframework
      SUBDIR += py-robotframework,python3
-     SUBDIR += py-rope
      SUBDIR += py-rope,python3
      SUBDIR += py-ruamel.ordereddict
      SUBDIR += py-selectors2
