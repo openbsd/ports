@@ -1,8 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/20 10:51:21 sthen Exp $
 
 COMMENT =	proxy for Asterisk Manager Interface
-DISTNAME =	astmanproxy-1.22pre081119
-REVISION =	1
+
+# there is a slightly more active fork in davies147/astmanproxy, but it needs
+# fixing to not use gnu extensions
+GH_ACCOUNT =	davetroy
+GH_PROJECT =	astmanproxy
+GH_COMMIT =	f4b952a717b7e982b585bf0daa86398add394a88
+DISTNAME =	astmanproxy-1.22pre20081208
 
 CATEGORIES =	telephony
 
@@ -15,25 +20,23 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto pthread ssl
 
-# mirrored from git repository
-MASTER_SITES =	https://spacehopper.org/mirrors/
-
 MAKE_ENV =	CFLAGS="${CFLAGS}"
 
 MAKE_FLAGS =	CC="${CC}" SYSCONFDIR=${SYSCONFDIR} \
 		LIBDIR=${WRKINST}/${PREFIX}/lib/astmanproxy \
 		MODDIR=${PREFIX}/lib/astmanproxy/modules \
-		MODDIR_REAL=${WRKINST}/${PREFIX}/lib/astmanproxy/modules \
 		CONFDIR=${SYSCONFDIR}/astmanproxy \
-		CONFDIR_REAL=${WRKINST}/${PREFIX}/share/examples/astmanproxy \
-		PERMDIR=${SYSCONFDIR}/astmanproxy \
-		PERMDIR_REAL=${WRKINST}/${PREFIX}/share/examples/astmanproxy
+		PERMDIR=${SYSCONFDIR}/astmanproxy
 
-FAKE_FLAGS =	PREFIX=${PREFIX}
+FAKE_FLAGS =	PREFIX=${PREFIX} \
+		MODDIR=${WRKINST}${PREFIX}/lib/astmanproxy/modules \
+		CONFDIR_REAL=${WRKINST}/${PREFIX}/share/examples/astmanproxy \
+		PERMDIR_REAL=${WRKINST}/${PREFIX}/share/examples/astmanproxy
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes
 ALL_TARGET =	astmanproxy
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configs/astmanproxy.conf

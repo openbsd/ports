@@ -1,6 +1,8 @@
-$OpenBSD: patch-configs_astmanproxy_conf,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
---- configs/astmanproxy.conf.orig	Sat Jul  1 16:42:35 2006
-+++ configs/astmanproxy.conf	Fri Jan 18 15:15:48 2008
+$OpenBSD: patch-configs_astmanproxy_conf,v 1.2 2020/03/20 10:51:21 sthen Exp $
+
+Index: configs/astmanproxy.conf
+--- configs/astmanproxy.conf.orig
++++ configs/astmanproxy.conf
 @@ -37,13 +37,13 @@ asteriskwritetimeout=100
  clientwritetimeout=200
  

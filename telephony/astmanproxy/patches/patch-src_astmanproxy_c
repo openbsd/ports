@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_astmanproxy_c,v 1.1 2018/04/25 20:13:04 naddy Exp $
+$OpenBSD: patch-src_astmanproxy_c,v 1.2 2020/03/20 10:51:21 sthen Exp $
 
 Index: src/astmanproxy.c
 --- src/astmanproxy.c.orig
