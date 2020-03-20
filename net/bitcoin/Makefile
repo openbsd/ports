@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/01/13 19:59:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/20 06:24:00 rsadowski Exp $
 
 BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
@@ -6,7 +6,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v0.19.0.1
+GH_TAGNAME =		v0.19.1
 
 SHARED_LIBS +=  bitcoinconsensus          2.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
@@ -23,8 +23,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_chrono-mt boost_filesystem
 WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto
-WANTLIB += db_cxx event_core event_extra event_pthreads m sodium
-WANTLIB += zmq
+WANTLIB += db_cxx event_core event_extra event_pthreads icuio
+WANTLIB += m sodium ssl zmq zstd
 
 LIB_DEPENDS =		devel/boost \
 			net/zeromq \
