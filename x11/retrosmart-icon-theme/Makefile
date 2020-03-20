@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/20 07:10:27 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/20 08:01:47 landry Exp $
 
 COMMENT =	Haiku OS style icon theme
 
@@ -13,14 +13,10 @@ CATEGORIES =	x11
 PERMIT_PACKAGE =	Unsure
 
 PKG_ARCH =	*
-MAKE_FILE =	makefile
+CONFIGURE_STYLE =	simple
 NO_TEST =	Yes
 
 RUN_DEPENDS =	x11/gtk+3,-guic
-BUILD_DEPENDS =	shells/bash
-
-do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/bash ./configure
 
 post-install:
 	rm -Rf ${PREFIX}/share/licenses ${PREFIX}/share/doc

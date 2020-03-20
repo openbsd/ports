@@ -1,0 +1,98 @@
+$OpenBSD: patch-configure,v 1.1 2020/03/20 08:01:47 landry Exp $
+
+remove bashisms, from https://github.com/mdomlop/retrosmart-icon-theme/commit/e811b96c3235685a13af9de9b971ab0e98f0530e
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4,41 +4,39 @@ name=retrosmart-icon-theme
+ path=$name/scalable
+ suf='.svg'
+ 
+-icons=()
+-preview=()
+-links=()
++icons=""
++preview=""
++links=""
+ 
+-for i in $(ls src/*.links)
++for i in src/*.links
+ do
+-    source=src/$(basename $i .links).svg
+-    if [ -f $source ]
++    source="src/$(basename $i .links).svg"
++    if [ -f "$source" ]
+     then
+-        links+=($i)
++        links="$links $i"
+     else
+-        echo File $source not found
++        echo "File $source not found"
+         exit 1
+     fi
+ done
+-links=${links[*]}
+ 
+ for i in $(cat src/preview.list)
+ do
+-    source=src/$i
+-    if [ -f $source ]
++    source="src/$i"
++    if [ -f "$source" ]
+         then
+-            preview+=($source)
++            preview="$preview $source"
+         else
+-            echo File $source not found
++            echo "File $source not found"
+             exit 1
+         fi
+ done
+-preview=${preview[*]}
+ 
+ function makefile {
+ 
+ echo include makefile.mk
+ 
+-echo $name:
++echo "$name:"
+ echo -e '\t'mkdir -p $path
+ 
+ echo $name/index.theme: $name
+@@ -46,13 +44,13 @@ echo -e '\t'cp src/index.theme $name/
+ 
+ for i in $links
+ do
+-    source=src/$(basename $i .links).svg
+-    bsource=$(basename $source)
++    source="src/$(basename "$i" .links).svg"
++    bsource="$(basename "$source")"
+     for j in $(cat $i)
+     do
+-        icons+=($path/$j)
++        icons="$icons $path/$j"
+         echo "$path/$j: $name/index.theme"
+-        if [ $bsource == $j ]
++        if [ "$bsource" == "$j" ]
+         then
+             echo -e '\t'cp $source $path/$j
+         else
+@@ -61,9 +59,9 @@ do
+     done
+ done
+ 
+-echo icons: ${icons[*]}
++echo "icons: $icons"
+ 
+-echo preview.png: $preview
++echo "preview.png: $preview"
+ echo -e '\t'montage -verbose -resize 64 -geometry +16+16 -tile 9x6 $preview preview.png
+ 
+ echo README.md: preview.png
+@@ -82,4 +80,4 @@ echo doc: CREDITS.md AUTHORS.md INSTALL.md README.md
+ 
+ }
+ 
+-makefile > makefile
++makefile > Makefile
