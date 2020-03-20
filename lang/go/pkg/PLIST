@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2020/01/01 13:03:39 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.39 2020/03/20 09:04:07 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -678,6 +678,7 @@ go/misc/swig/stdio/file_test.go
 go/misc/trace/
 go/misc/trace/README.md
 go/misc/trace/trace_viewer_full.html
+go/misc/trace/webcomponents.min.js
 go/misc/wasm/
 go/misc/wasm/go_js_wasm_exec
 go/misc/wasm/wasm_exec.html
