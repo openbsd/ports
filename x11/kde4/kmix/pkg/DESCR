@@ -1,2 +1,0 @@
-KMix is an audio mixer controller. On OpenBSD it is forced to use
-PulseAudio as backend.
