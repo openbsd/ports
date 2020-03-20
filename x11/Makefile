@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.655 2020/03/18 22:05:41 jca Exp $
+# $OpenBSD: Makefile,v 1.656 2020/03/20 07:20:57 landry Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -262,6 +262,7 @@
      SUBDIR += remmina
      SUBDIR += rendercheck
      SUBDIR += rep-gtk
+     SUBDIR += retrosmart-icon-theme
      SUBDIR += root-tail
      SUBDIR += rox-filer
      SUBDIR += roxterm
