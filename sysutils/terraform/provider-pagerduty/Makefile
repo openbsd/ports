@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/07 12:40:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/20 07:59:02 ajacoutot Exp $
 
 PROVIDER=		pagerduty
-GH_TAGNAME=		v1.5.0
+GH_TAGNAME=		v1.5.1
 
 .include <bsd.port.mk>
