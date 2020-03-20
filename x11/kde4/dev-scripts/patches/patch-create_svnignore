@@ -1,9 +1,0 @@
-$OpenBSD: patch-create_svnignore,v 1.1.1.1 2013/12/08 18:01:35 zhuk Exp $
---- create_svnignore.orig	Sun Nov 10 14:19:46 2013
-+++ create_svnignore	Sun Nov 10 14:19:51 2013
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/sh
- # This script makes a preliminary svn:ignore in the current dir by
- # adding some standard stuff according to Makefile.am.
- # License: GPL

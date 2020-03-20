@@ -1,9 +1,0 @@
-$OpenBSD: patch-create_makefile,v 1.1.1.1 2013/12/08 18:01:35 zhuk Exp $
---- create_makefile.orig	Sun Nov 10 14:19:56 2013
-+++ create_makefile	Sun Nov 10 14:20:00 2013
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/sh
- 
- # Create Makefile.in and Makefile in a directory (containing a Makefile.am !)
- # Saves time compared to re-running configure completely
