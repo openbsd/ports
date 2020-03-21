@@ -1,0 +1,10 @@
+mdprint prints the contents of the provided binary sun4v MD file.
+
+If no file is provided, the "guest MD" is read from the device file "/dev/mdesc"
+which is expected to be present on all sun4v guest domains.
+
+If no file is provided and the -P/--PRI option is used, the PRI
+(physical resource inventory) MD is read from the device file
+"/devices/pseudo/ds_pri@0:ds_pri" (Solaris only).
+
+The complete PRI is only available on the "primary" domain.

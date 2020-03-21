@@ -1,0 +1,86 @@
+$OpenBSD: patch-tools_mdprint_mdprint_py,v 1.1.1.1 2020/03/21 09:12:37 kn Exp $
+
+Ensure integer typed results from integer division with the floordiv operator
+when using Python 3.  `type(int(1)/int(1))' yields "<class 'int'>" and
+"<class 'float'>" in Python 2 and 3 respectively.
+
+Decode ARC node names and string property values as UTF-8 to preserve the output
+format and fix --grep when using Python 3, e.g. print/use "value" instead of
+"b'value'".  Python 3 uses type "<class 'bytes'>" and does not decode
+automatically, Python 2 uses "<class 'str'>" already for everything.
+
+Index: tools/mdprint/mdprint.py
+--- tools/mdprint/mdprint.py.orig
++++ tools/mdprint/mdprint.py
+@@ -186,7 +186,7 @@ class Parser(dict):
+ 
+             if element.tag is Element.NodeTag:
+ 
+-                node_id = element.offset / Element.Size
++                node_id = element.offset // Element.Size
+                 self.counts[element.name] += 1
+ 
+                 if node_id in self:
+@@ -266,7 +266,7 @@ class Parser(dict):
+     def parse_name(self, name_off, name_len):
+         (name, ) = struct.unpack_from("!%ds" % name_len,
+             self.mdbuffer, self.name_blk_off + name_off)
+-        return name
++        return name.decode('utf-8')
+ 
+     def parse_data_string(self, data_off, data_len):
+         (name, ) = struct.unpack_from("!%ds" % (data_len - 1),
+@@ -304,7 +304,7 @@ class Parser(dict):
+             if re.match(b'[\x20-\x7f]+$', s) is None:
+                 return False
+ 
+-        return strings
++        return [s.decode('utf-8') for s in strings]
+ 
+ class Element:
+ 
+@@ -495,7 +495,7 @@ class ParsablePrinter(Printer):
+             self.p(node.type)
+ 
+     def print_str_prop(self, md, node, prop_name, prop_val):
+-        self.p("|%s=\"%s\"" % (prop_name, prop_val))
++        self.p("|%s=\"%s\"" % (prop_name, prop_val.decode('utf-8')))
+ 
+     def print_val_prop(self, md, node, prop_name, prop_val):
+         self.p("|%s=0x%x" % (prop_name, prop_val))
+@@ -552,7 +552,7 @@ class TextPrinter(Printer):
+         else:
+             print("%s {" % node.type)
+     def print_str_prop(self, md, node, prop_name, prop_val):
+-        print("\t%s = \"%s\"" % (prop_name, prop_val))
++        print("\t%s = \"%s\"" % (prop_name, prop_val.decode('utf-8')))
+     def print_val_prop(self, md, node, prop_name, prop_val):
+         print("\t%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val))
+     def print_data_prop(self, md, node, prop_name, prop_val):
+@@ -572,7 +572,7 @@ class TextPrinter(Printer):
+             # Some magic to print 8 columns of bytes: for each
+             # chunk of 8 bytes in the byte array, get an array
+             # slice 8-long and join it with a space.
+-            for i in range(0, (len(prop_val)+bpl-1)/bpl):
++            for i in range(0, (len(prop_val)+bpl-1)//bpl):
+                 raw = "%s" % ' '.join(map(print_byte,
+                     prop_val[i * bpl:(i+1) * bpl]))
+                 print "\t\t%s" % raw
+@@ -623,7 +623,7 @@ class HTMLPrinter(Printer):
+             md.counts[node.type], node.type))
+ 
+     def print_str_prop(self, md, node, prop_name, prop_val):
+-        print("<br>%s = \"%s\"" % (prop_name, prop_val))
++        print("<br>%s = \"%s\"" % (prop_name, prop_val.decode('utf-8')))
+ 
+     def print_val_prop(self, md, node, prop_name, prop_val):
+         print("<br>%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val))
+@@ -642,7 +642,7 @@ class HTMLPrinter(Printer):
+             # Some magic to print 8 columns of bytes: for each
+             # chunk of 8 bytes in the byte array, get an array
+             # slice 8-long and join it with a space.
+-            for i in range(0, (len(prop_val)+bpl-1)/bpl):
++            for i in range(0, (len(prop_val)+bpl-1)//bpl):
+                 print "<br>&nbsp;", ', '.join(map(print_byte,
+                     prop_val[i * bpl:(i+1) * bpl]))
+ 
