@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.36 2020/02/22 12:33:20 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.37 2020/03/21 14:08:01 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -147,7 +147,7 @@ Index: build/config/compiler/BUILD.gn
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
 -      cflags += [ "-g2" ]
-+      cflags += [ "-g0" ]
++      cflags += [ "${DEBUGFLAG}" ]
      }
  
      if (use_debug_fission && !is_nacl && !is_android) {

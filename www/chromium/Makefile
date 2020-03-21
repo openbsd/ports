@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.494 2020/03/15 09:26:52 espie Exp $
+# $OpenBSD: Makefile,v 1.495 2020/03/21 14:08:01 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			80.0.3987.132
+V=			80.0.3987.149
 
 DISTNAME=		chromium-${V}
 
@@ -26,9 +26,8 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz
 
-FLAVORS=		debug component
+FLAVORS=		component
 FLAVOR?=
-REVISION=		1
 
 # BSD-like
 PERMIT_PACKAGE =	Yes
@@ -98,22 +97,12 @@ LIB_DEPENDS=	devel/harfbuzz \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 
-.if ${MACHINE_ARCH} == amd64
-# they can make better javascript with java ...
-JAVA_HOME=	${LOCALBASE}/jdk-1.8.0
-BUILD_DEPENDS+=	jdk->=1.8v0,<1.9v0:devel/jdk/1.8
-.endif
-
 .include <bsd.own.mk>
 
-# Set BUILDTYPE to Debug for a debug build
-.if ${FLAVOR:Mdebug}
-BUILDTYPE=	Debug
-.else
+# Set BUILDTYPE to Release
 BUILDTYPE=	Release
-.endif
 
-SUBST_VARS+=	WRKSRC WRKDIR
+SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
 
 ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests
@@ -131,6 +120,9 @@ GN_SYSTEM_LIBS=	libevent \
 
 GN_ARGS=	enable_nacl=false \
 		is_debug=false \
+		is_cfi=false \
+		optimize_webui=false \
+		closure_compile=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		use_kerberos=false \
@@ -138,6 +130,8 @@ GN_ARGS=	enable_nacl=false \
 		use_cups=true \
 		use_system_libdrm=true \
 		use_bundled_fontconfig=false \
+		use_system_harfbuzz=true \
+		use_system_freetype=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -166,23 +160,19 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 		ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
 
-.if ${FLAVOR:Mdebug}
-MAKE_ENV+=	V=1
-.endif
-
 .if ${FLAVOR:Mcomponent}
+DEBUGFLAG=	-g2
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 GN_ARGS+=	is_official_build=true \
 		is_component_build=true
 .else
+DEBUGFLAG=	-g0
 GN_ARGS+=	is_official_build=true \
 		is_component_build=false
 .endif
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-.if ${MACHINE_ARCH} == amd64
-	@ln -sf ${JAVA_HOME}/bin/java ${WRKDIR}/bin/java
-.endif
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
@@ -196,7 +186,8 @@ pre-configure:
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
-		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py
+		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
+		${WRKSRC}/build/config/compiler/BUILD.gn
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
@@ -230,7 +221,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIST_TARGET_DIR}/resources
-.for f in protoc icudtl.dat mksnapshot snapshot_blob.bin v8_context_snapshot.bin
+.for f in icudtl.dat snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 

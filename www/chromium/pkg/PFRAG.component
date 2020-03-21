@@ -1,270 +1,290 @@
-@comment $OpenBSD: PFRAG.component,v 1.6 2019/11/05 22:30:28 robert Exp $
-chrome/libaccessibility.so
-chrome/libandroid_mojo_bindings_shared.so
-chrome/libanimation.so
-chrome/libapdu.so
-chrome/libaura.so
-chrome/libaura_extra.so
-chrome/libauthenticator_test_mojo_bindings_shared.so
-chrome/libbase.so
-chrome/libbase_i18n.so
-chrome/libbindings.so
-chrome/libbindings_base.so
-chrome/libblink_common.so
-chrome/libblink_controller.so
-chrome/libblink_core.so
-chrome/libblink_embedded_frame_sink_mojo_bindings_shared.so
-chrome/libblink_features.so
-chrome/libblink_modules.so
-chrome/libblink_mojom_broadcastchannel_bindings_shared.so
-chrome/libblink_platform.so
-chrome/libbluetooth.so
-chrome/libboringssl.so
-chrome/libbrowser_ui_views.so
-chrome/libcaptive_portal.so
-chrome/libcapture_base.so
-chrome/libcapture_lib.so
-chrome/libcbor.so
-chrome/libcc.so
-chrome/libcc_animation.so
-chrome/libcc_base.so
-chrome/libcc_debug.so
-chrome/libcc_mojo_embedder.so
-chrome/libcc_paint.so
-chrome/libcertificate_matching.so
-chrome/libchrome_features.so
-chrome/libchrome_zlib.so
-chrome/libchromium_sqlite3.so
-chrome/libclient.so
-chrome/libcloud_policy_proto_generated_compile.so
-chrome/libcodec.so
-chrome/libcolor_space.so
-chrome/libcolor_utils.so
-chrome/libcommon.so
-chrome/libcompositor.so
-chrome/libcontent.so
-chrome/libcontent_common_mojo_bindings_shared.so
-chrome/libcontent_public_common_mojo_bindings_shared.so
-chrome/libcontent_service_cpp.so
-chrome/libcontent_service_mojom.so
-chrome/libcontent_service_mojom_shared.so
-chrome/libcontent_settings_features.so
-chrome/libcrcrypto.so
-chrome/libdbus.so
-chrome/libdevice_base.so
-chrome/libdevice_event_log.so
-chrome/libdevice_features.so
-chrome/libdevice_gamepad.so
-chrome/libdevice_vr.so
-chrome/libdevice_vr_mojo_bindings.so
-chrome/libdevice_vr_mojo_bindings_blink.so
-chrome/libdevice_vr_mojo_bindings_shared.so
-chrome/libdevice_vr_test_mojo_bindings.so
-chrome/libdevice_vr_test_mojo_bindings_blink.so
-chrome/libdevice_vr_test_mojo_bindings_shared.so
-chrome/libdevices.so
-chrome/libdiscardable_memory_client.so
-chrome/libdiscardable_memory_common.so
-chrome/libdiscardable_memory_service.so
-chrome/libdisplay.so
-chrome/libdisplay_types.so
-chrome/libdisplay_util.so
-chrome/libdomain_reliability.so
-chrome/libembedder.so
-chrome/libembedder_switches.so
-chrome/libevents.so
-chrome/libevents_base.so
-chrome/libevents_devices_x11.so
-chrome/libevents_ozone_layout.so
-chrome/libevents_x.so
-chrome/libextras.so
-chrome/libffmpeg.so
-chrome/libfido.so
-chrome/libfingerprint.so
-chrome/libfreetype_harfbuzz.so
-chrome/libgamepad_mojom.so
-chrome/libgamepad_mojom_blink.so
-chrome/libgamepad_mojom_shared.so
-chrome/libgamepad_shared_typemap_traits.so
-chrome/libgcm.so
-chrome/libgeometry.so
-chrome/libgeometry_skia.so
-chrome/libgesture_detection.so
-chrome/libgfx.so
-chrome/libgfx_ipc.so
-chrome/libgfx_ipc_buffer_types.so
-chrome/libgfx_ipc_color.so
-chrome/libgfx_ipc_geometry.so
-chrome/libgfx_ipc_skia.so
-chrome/libgfx_switches.so
-chrome/libgfx_x11.so
-chrome/libgin.so
-chrome/libgl_in_process_context.so
-chrome/libgl_init.so
-chrome/libgl_wrapper.so
-chrome/libgles2.so
-chrome/libgles2_implementation.so
-chrome/libgles2_utils.so
-chrome/libgpu.so
-chrome/libgpu_ipc_service.so
-chrome/libgtkui.so
-chrome/libheadless_non_renderer.so
-chrome/libhost.so
-chrome/libicui18n.so
-chrome/libicuuc.so
-chrome/libinterfaces_shared.so
-chrome/libipc.so
-chrome/libipc_mojom.so
-chrome/libipc_mojom_shared.so
-chrome/libkeycodes_x11.so
-chrome/libkeyed_service_content.so
-chrome/libkeyed_service_core.so
-chrome/liblearning_common.so
-chrome/liblearning_impl.so
-chrome/libleveldatabase.so
-chrome/libleveldb_proto.so
-chrome/libmanager.so
-chrome/libmedia.so
-chrome/libmedia_blink.so
-chrome/libmedia_gpu.so
-chrome/libmedia_learning_mojo_impl.so
-chrome/libmedia_message_center.so
-chrome/libmedia_mojo_services.so
-chrome/libmedia_session_base_cpp.so
-chrome/libmedia_session_cpp.so
-chrome/libmedia_webrtc.so
-chrome/libmemory_instrumentation.so
-chrome/libmenu.so
-chrome/libmessage_center.so
-chrome/libmessage_support.so
-chrome/libmetrics_cpp.so
-chrome/libmidi.so
+@comment $OpenBSD: PFRAG.component,v 1.7 2020/03/21 14:08:01 robert Exp $
+@so chrome/libaccessibility.so
+@so chrome/libandroid_mojo_bindings_shared.so
+@so chrome/libanimation.so
+@so chrome/libapdu.so
+@so chrome/libaura.so
+@so chrome/libaura_extra.so
+@so chrome/libauthenticator_test_mojo_bindings_shared.so
+@so chrome/libbase.so
+@so chrome/libbase_i18n.so
+@so chrome/libbindings.so
+@so chrome/libbindings_base.so
+@so chrome/libblink_common.so
+@so chrome/libblink_controller.so
+@so chrome/libblink_core.so
+@so chrome/libblink_embedded_frame_sink_mojo_bindings_shared.so
+@so chrome/libblink_features.so
+@so chrome/libblink_modules.so
+@so chrome/libblink_mojom_broadcastchannel_bindings_shared.so
+@so chrome/libblink_platform.so
+@so chrome/libbluetooth.so
+@so chrome/libboringssl.so
+@so chrome/libbrowser_ui_views.so
+@so chrome/libcaptive_portal.so
+@so chrome/libcapture_base.so
+@so chrome/libcapture_lib.so
+@so chrome/libcbor.so
+@so chrome/libcc.so
+@so chrome/libcc_animation.so
+@so chrome/libcc_base.so
+@so chrome/libcc_debug.so
+@so chrome/libcc_ipc.so
+@so chrome/libcc_mojo_embedder.so
+@so chrome/libcc_paint.so
+@so chrome/libcert_verifier.so
+@so chrome/libcertificate_matching.so
+@so chrome/libchrome_features.so
+@so chrome/libchrome_zlib.so
+@so chrome/libchromium_sqlite3.so
+@so chrome/libclient.so
+@so chrome/libcloud_policy_proto_generated_compile.so
+@so chrome/libcodec.so
+@so chrome/libcolor_space.so
+@so chrome/libcolor_utils.so
+@so chrome/libcommon.so
+@so chrome/libcompositor.so
+@so chrome/libcontent.so
+@so chrome/libcontent_common_mojo_bindings_shared.so
+@so chrome/libcontent_public_common_mojo_bindings_shared.so
+@so chrome/libcontent_service_cpp.so
+@so chrome/libcontent_service_mojom.so
+@so chrome/libcontent_service_mojom_shared.so
+@so chrome/libcontent_settings_features.so
+@so chrome/libcrcrypto.so
+@so chrome/libcrdtp.so
+@so chrome/libdbus.so
+@so chrome/libdevice_base.so
+@so chrome/libdevice_event_log.so
+@so chrome/libdevice_features.so
+@so chrome/libdevice_gamepad.so
+@so chrome/libdevice_vr.so
+@so chrome/libdevice_vr_mojo_bindings.so
+@so chrome/libdevice_vr_mojo_bindings_blink.so
+@so chrome/libdevice_vr_mojo_bindings_shared.so
+@so chrome/libdevice_vr_test_mojo_bindings.so
+@so chrome/libdevice_vr_test_mojo_bindings_blink.so
+@so chrome/libdevice_vr_test_mojo_bindings_shared.so
+@so chrome/libdevices.so
+@so chrome/libdiscardable_memory_client.so
+@so chrome/libdiscardable_memory_common.so
+@so chrome/libdiscardable_memory_service.so
+@so chrome/libdisplay.so
+@so chrome/libdisplay_types.so
+@so chrome/libdisplay_util.so
+@so chrome/libdom_storage_mojom.so
+@so chrome/libdom_storage_mojom_shared.so
+@so chrome/libdomain_reliability.so
+@so chrome/libembedder.so
+@so chrome/libembedder_switches.so
+@so chrome/libevents.so
+@so chrome/libevents_base.so
+@so chrome/libevents_devices_x11.so
+@so chrome/libevents_ozone_layout.so
+@so chrome/libevents_x.so
+@so chrome/libextras.so
+@so chrome/libffmpeg.so
+@so chrome/libfido.so
+@so chrome/libfingerprint.so
+@so chrome/libfreetype_harfbuzz.so
+@so chrome/libgamepad_mojom.so
+@so chrome/libgamepad_mojom_blink.so
+@so chrome/libgamepad_mojom_shared.so
+@so chrome/libgamepad_shared_typemap_traits.so
+@so chrome/libgcm.so
+@so chrome/libgeometry.so
+@so chrome/libgeometry_skia.so
+@so chrome/libgesture_detection.so
+@so chrome/libgfx.so
+@so chrome/libgfx_ipc.so
+@so chrome/libgfx_ipc_buffer_types.so
+@so chrome/libgfx_ipc_color.so
+@so chrome/libgfx_ipc_geometry.so
+@so chrome/libgfx_ipc_skia.so
+@so chrome/libgfx_switches.so
+@so chrome/libgfx_x11.so
+@so chrome/libgin.so
+@so chrome/libgl_in_process_context.so
+@so chrome/libgl_init.so
+@so chrome/libgl_wrapper.so
+@so chrome/libgles2.so
+@so chrome/libgles2_implementation.so
+@so chrome/libgles2_utils.so
+@so chrome/libgpu.so
+@so chrome/libgpu_ipc_service.so
+@so chrome/libgtkui.so
+@so chrome/libheadless_non_renderer.so
+@so chrome/libhost.so
+@so chrome/libicui18n.so
+@so chrome/libicuuc.so
+@so chrome/libinterfaces_shared.so
+@so chrome/libipc.so
+@so chrome/libipc_mojom.so
+@so chrome/libipc_mojom_shared.so
+@so chrome/libkeycodes_x11.so
+@so chrome/libkeyed_service_content.so
+@so chrome/libkeyed_service_core.so
+@so chrome/liblearning_common.so
+@so chrome/liblearning_impl.so
+@so chrome/libleveldatabase.so
+@so chrome/libleveldb_proto.so
+@so chrome/libmanager.so
+@so chrome/libmedia.so
+@so chrome/libmedia_blink.so
+@so chrome/libmedia_gpu.so
+@so chrome/libmedia_learning_mojo_impl.so
+@so chrome/libmedia_message_center.so
+@so chrome/libmedia_mojo_services.so
+@so chrome/libmedia_session_base_cpp.so
+@so chrome/libmedia_session_cpp.so
+@so chrome/libmedia_webrtc.so
+@so chrome/libmemory_instrumentation.so
+@so chrome/libmenu.so
+@so chrome/libmessage_center.so
+@so chrome/libmessage_support.so
+@so chrome/libmetrics_cpp.so
+@so chrome/libmidi.so
 @bin chrome/libmirclient.so.9
-chrome/libmirroring_service.so
-chrome/libmojo_base_lib.so
-chrome/libmojo_base_mojom.so
-chrome/libmojo_base_mojom_blink.so
-chrome/libmojo_base_mojom_shared.so
-chrome/libmojo_base_shared_typemap_traits.so
-chrome/libmojo_core_embedder.so
-chrome/libmojo_core_embedder_internal.so
-chrome/libmojo_core_ports.so
-chrome/libmojo_cpp_platform.so
-chrome/libmojo_mojom_bindings.so
-chrome/libmojo_mojom_bindings_shared.so
-chrome/libmojo_public_system.so
-chrome/libmojo_public_system_cpp.so
-chrome/libmojom_core_shared.so
-chrome/libmojom_mhtml_load_result_shared.so
-chrome/libmojom_modules_shared.so
-chrome/libmojom_platform_shared.so
-chrome/libmpris.so
-chrome/libnative_theme.so
-chrome/libnet.so
-chrome/libnet_with_v8.so
-chrome/libnetwork_cpp.so
-chrome/libnetwork_cpp_base.so
-chrome/libnetwork_service.so
-chrome/libnetwork_session_configurator.so
-chrome/libonc.so
-chrome/libos_crypt.so
-chrome/libparsers.so
-chrome/libpdfium.so
-chrome/libperfetto.so
-chrome/libplatform.so
-chrome/libplatform_window_handler_libs.so
-chrome/libpolicy_component.so
-chrome/libpolicy_proto.so
-chrome/libppapi_host.so
-chrome/libppapi_proxy.so
-chrome/libppapi_shared.so
-chrome/libprefs.so
-chrome/libprinting.so
-chrome/libprotobuf_lite.so
-chrome/libproxy_config.so
-chrome/libpublic.so
-chrome/librange.so
-chrome/libraster.so
-chrome/libresource_coordinator_public_mojom.so
-chrome/libresource_coordinator_public_mojom_blink.so
-chrome/libresource_coordinator_public_mojom_shared.so
-chrome/libsandbox.so
-chrome/libsandbox_services.so
-chrome/libscheduling_metrics.so
-chrome/libservice.so
-chrome/libservice_manager_cpp.so
-chrome/libservice_manager_cpp_types.so
-chrome/libservice_manager_mojom.so
-chrome/libservice_manager_mojom_blink.so
-chrome/libservice_manager_mojom_constants.so
-chrome/libservice_manager_mojom_constants_blink.so
-chrome/libservice_manager_mojom_constants_shared.so
-chrome/libservice_manager_mojom_shared.so
-chrome/libservice_manager_mojom_traits.so
-chrome/libsessions.so
-chrome/libshared_memory_support.so
-chrome/libshared_with_blink.so
-chrome/libshell_dialogs.so
-chrome/libskia.so
-chrome/libsnapshot.so
-chrome/libsql.so
-chrome/libstartup_tracing.so
-chrome/libstorage_browser.so
-chrome/libstorage_common.so
-chrome/libstub_window.so
-chrome/libsurface.so
-chrome/libtab_count_metrics.so
-chrome/libthread_linux.so
-chrome/libtracing.so
-chrome/libtracing_cpp.so
-chrome/libtracing_mojom.so
-chrome/libtracing_mojom_shared.so
-chrome/libui_accessibility_ax_mojom.so
-chrome/libui_accessibility_ax_mojom_blink.so
-chrome/libui_accessibility_ax_mojom_shared.so
-chrome/libui_base.so
-chrome/libui_base_clipboard.so
-chrome/libui_base_clipboard_types.so
-chrome/libui_base_features.so
-chrome/libui_base_idle.so
-chrome/libui_base_ime.so
-chrome/libui_base_ime_init.so
-chrome/libui_base_ime_linux.so
-chrome/libui_base_ime_types.so
-chrome/libui_base_x.so
-chrome/libui_data_pack.so
-chrome/libui_devtools.so
-chrome/libui_message_center_cpp.so
-chrome/libui_touch_selection.so
-chrome/liburl.so
-chrome/liburl_ipc.so
-chrome/liburl_matcher.so
-chrome/libusb_shared.so
-chrome/libuser_manager.so
-chrome/libuser_prefs.so
-chrome/libv8.so
-chrome/libv8_libbase.so
-chrome/libv8_libplatform.so
-chrome/libviews.so
-chrome/libviz_common.so
-chrome/libviz_resource_format_utils.so
-chrome/libviz_vulkan_context_provider.so
-chrome/libvr_base.so
-chrome/libvr_common.so
-chrome/libvulkan_init.so
-chrome/libvulkan_wrapper.so
-chrome/libvulkan_x11.so
-chrome/libweb_bluetooth_mojo_bindings_shared.so
-chrome/libweb_dialogs.so
-chrome/libweb_feature_mojo_bindings_mojom.so
-chrome/libweb_feature_mojo_bindings_mojom_blink.so
-chrome/libweb_feature_mojo_bindings_mojom_shared.so
-chrome/libwebdata_common.so
-chrome/libwebgpu.so
-chrome/libwebview.so
-chrome/libwm.so
-chrome/libwm_public.so
-chrome/libwtf.so
-chrome/libx11_events_platform.so
-chrome/libx11_window.so
-chrome/libzygote.so
+@so chrome/libmirroring_service.so
+@so chrome/libmojo_base_lib.so
+@so chrome/libmojo_base_mojom.so
+@so chrome/libmojo_base_mojom_blink.so
+@so chrome/libmojo_base_mojom_shared.so
+@so chrome/libmojo_base_shared_typemap_traits.so
+@so chrome/libmojo_core_embedder.so
+@so chrome/libmojo_core_embedder_internal.so
+@so chrome/libmojo_core_ports.so
+@so chrome/libmojo_cpp_platform.so
+@so chrome/libmojo_mojom_bindings.so
+@so chrome/libmojo_mojom_bindings_shared.so
+@so chrome/libmojo_public_system.so
+@so chrome/libmojo_public_system_cpp.so
+@so chrome/libmojom_core_shared.so
+@so chrome/libmojom_mhtml_load_result_shared.so
+@so chrome/libmojom_modules_shared.so
+@so chrome/libmojom_platform_shared.so
+@so chrome/libnative_theme.so
+@so chrome/libnet.so
+@so chrome/libnetwork_cpp.so
+@so chrome/libnetwork_cpp_base.so
+@so chrome/libnetwork_service.so
+@so chrome/libnetwork_session_configurator.so
+@so chrome/libonc.so
+@so chrome/libos_crypt.so
+@so chrome/libparsers.so
+@so chrome/libpdfium.so
+@so chrome/libperfetto.so
+@so chrome/libperformace_manager_public_mojom.so
+@so chrome/libperformace_manager_public_mojom_blink.so
+@so chrome/libperformace_manager_public_mojom_shared.so
+@so chrome/libplatform.so
+@so chrome/libplatform_window.so
+@so chrome/libplatform_window_common.so
+@so chrome/libplatform_window_handler_libs.so
+@so chrome/libpolicy_component.so
+@so chrome/libpolicy_proto.so
+@so chrome/libppapi_host.so
+@so chrome/libppapi_proxy.so
+@so chrome/libppapi_shared.so
+@so chrome/libprefs.so
+@so chrome/libprinting.so
+@so chrome/libproperties.so
+@so chrome/libprotobuf_lite.so
+@so chrome/libproxy_config.so
+@so chrome/libpublic.so
+@so chrome/librange.so
+@so chrome/libraster.so
+@so chrome/libresource_coordinator_public_mojom.so
+@so chrome/libresource_coordinator_public_mojom_blink.so
+@so chrome/libresource_coordinator_public_mojom_shared.so
+@so chrome/libsandbox.so
+@so chrome/libsandbox_services.so
+@so chrome/libscheduling_metrics.so
+@so chrome/libsecurity_state_features.so
+@so chrome/libservice.so
+@so chrome/libservice_manager_cpp.so
+@so chrome/libservice_manager_cpp_types.so
+@so chrome/libservice_manager_mojom.so
+@so chrome/libservice_manager_mojom_blink.so
+@so chrome/libservice_manager_mojom_constants.so
+@so chrome/libservice_manager_mojom_constants_blink.so
+@so chrome/libservice_manager_mojom_constants_shared.so
+@so chrome/libservice_manager_mojom_shared.so
+@so chrome/libservice_manager_mojom_traits.so
+@so chrome/libservice_provider.so
+@so chrome/libsessions.so
+@so chrome/libshared_memory_support.so
+@so chrome/libshared_with_blink.so
+@so chrome/libshell_dialogs.so
+@so chrome/libskia.so
+@so chrome/libskia_shared_typemap_traits.so
+@so chrome/libsnapshot.so
+@so chrome/libsql.so
+@so chrome/libstartup_tracing.so
+@so chrome/libstorage_browser.so
+@so chrome/libstorage_common.so
+@so chrome/libstorage_service_public.so
+@so chrome/libstub_window.so
+@so chrome/libsurface.so
+@so chrome/libsystem_media_controls.so
+@so chrome/libtab_count_metrics.so
+@so chrome/libthread_linux.so
+@so chrome/libtracing.so
+@so chrome/libtracing_cpp.so
+@so chrome/libtracing_mojom.so
+@so chrome/libtracing_mojom_shared.so
+@so chrome/libui_accessibility_ax_mojom.so
+@so chrome/libui_accessibility_ax_mojom_blink.so
+@so chrome/libui_accessibility_ax_mojom_shared.so
+@so chrome/libui_base.so
+@so chrome/libui_base_clipboard.so
+@so chrome/libui_base_clipboard_types.so
+@so chrome/libui_base_features.so
+@so chrome/libui_base_idle.so
+@so chrome/libui_base_ime.so
+@so chrome/libui_base_ime_init.so
+@so chrome/libui_base_ime_linux.so
+@so chrome/libui_base_ime_types.so
+@so chrome/libui_base_x.so
+@so chrome/libui_data_pack.so
+@so chrome/libui_devtools.so
+@so chrome/libui_message_center_cpp.so
+@so chrome/libui_touch_selection.so
+@so chrome/liburl.so
+@so chrome/liburl_ipc.so
+@so chrome/liburl_matcher.so
+@so chrome/libusb_shared.so
+@so chrome/libuser_manager.so
+@so chrome/libuser_prefs.so
+@so chrome/libv8.so
+@so chrome/libv8_libbase.so
+@so chrome/libv8_libplatform.so
+@so chrome/libviews.so
+@so chrome/libviz_common.so
+@so chrome/libviz_resource_format_utils.so
+@so chrome/libviz_vulkan_context_provider.so
+@so chrome/libvk_swiftshader.so
+@so chrome/libvr_base.so
+@so chrome/libvr_common.so
+@so chrome/libvulkan_info.so
+@so chrome/libvulkan_init.so
+@so chrome/libvulkan_wrapper.so
+@so chrome/libvulkan_x11.so
+@so chrome/libvulkan_ycbcr_info.so
+@so chrome/libweb_bluetooth_mojo_bindings_shared.so
+@so chrome/libweb_dialogs.so
+@so chrome/libweb_feature_mojo_bindings_mojom.so
+@so chrome/libweb_feature_mojo_bindings_mojom_blink.so
+@so chrome/libweb_feature_mojo_bindings_mojom_shared.so
+@so chrome/libweb_modal.so
+@so chrome/libwebdata_common.so
+@so chrome/libwebgpu.so
+@so chrome/libwebrtc_component.so
+@so chrome/libwebview.so
+@so chrome/libwm.so
+@so chrome/libwm_public.so
+@so chrome/libwtf.so
+@so chrome/libwtf_support.so
+@so chrome/libx11_events_platform.so
+@so chrome/libx11_window.so
+@so chrome/libzygote.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.95 2020/02/22 12:33:22 robert Exp $
+@comment $OpenBSD: PLIST,v 1.96 2020/03/21 14:08:01 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -119,9 +119,7 @@ chrome/locales/zh-CN.pak
 chrome/locales/zh-CN.pak.info
 chrome/locales/zh-TW.pak
 chrome/locales/zh-TW.pak.info
-chrome/mksnapshot
 chrome/product_logo_48.png
-chrome/protoc
 chrome/resources/
 chrome/resources.pak
 chrome/resources/inspector/

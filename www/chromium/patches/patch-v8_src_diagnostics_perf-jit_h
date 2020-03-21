@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_diagnostics_perf-jit_h,v 1.1 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-v8_src_diagnostics_perf-jit_h,v 1.2 2020/03/21 14:08:01 robert Exp $
 
 XXX Disable this for OpenBSD now
 
@@ -10,7 +10,7 @@ Index: v8/src/diagnostics/perf-jit.h
  namespace internal {
  
 -#if V8_OS_LINUX
-+#if defined(V8_OS_LINUX)
++#if defined(V8_OS_LINUX) || defined(V8_OS_OPENBSD)
  
  // Linux perf tool logging support
  class PerfJitLogger : public CodeEventLogger {
