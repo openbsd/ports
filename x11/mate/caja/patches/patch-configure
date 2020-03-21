@@ -1,0 +1,95 @@
+$OpenBSD: patch-configure,v 1.1 2020/03/21 16:14:54 robert Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -3190,7 +3190,7 @@ fi
+ ACLOCAL_AMFLAGS="\${ACLOCAL_FLAGS}"
+ 
+ 
+-GDKPIXBUF_REQUIRED=gdk-pixbuf_minver
++GDKPIXBUF_REQUIRED=2.36.5
+ 
+ GLIB_REQUIRED=2.58.1
+ 
+@@ -13743,7 +13743,7 @@ if test -n "$ALL_CFLAGS"; then
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0
+@@ -13756,7 +13756,7 @@ if test -n "$ALL_CFLAGS"; then
+     gail-3.0 >= 3.0.0
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0
+@@ -13772,7 +13772,7 @@ if test -n "$ALL_CFLAGS"; then
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_ALL_CFLAGS=`$PKG_CONFIG --cflags "
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0
+@@ -13796,7 +13796,7 @@ if test -n "$ALL_LIBS"; then
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0
+@@ -13809,7 +13809,7 @@ if test -n "$ALL_LIBS"; then
+     gail-3.0 >= 3.0.0
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0
+@@ -13825,7 +13825,7 @@ if test -n "$ALL_LIBS"; then
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_ALL_LIBS=`$PKG_CONFIG --libs "
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0
+@@ -13858,7 +13858,7 @@ else
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        ALL_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0
+@@ -13872,7 +13872,7 @@ fi
+ " 2>&1`
+         else
+ 	        ALL_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0
+@@ -13889,7 +13889,7 @@ fi
+ 	echo "$ALL_PKG_ERRORS" >&5
+ 
+ 	as_fn_error $? "Package requirements (
+-    gdk-pixbuf-2.0 >= gdk-pixbuf_minver
++    gdk-pixbuf-2.0 >= 2.36.5
+     glib-2.0 >= 2.58.1
+     mate-desktop-2.0 >= 1.17.3
+     gthread-2.0

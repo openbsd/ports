@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/10/03 14:35:48 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/03/21 16:14:54 robert Exp $
 @bin bin/atril
 @bin bin/atril-previewer
 @bin bin/atril-thumbnailer
@@ -60,29 +60,37 @@ lib/atril/3/
 lib/atril/3/backends/
 lib/atril/3/backends/comicsdocument.atril-backend
 lib/atril/3/backends/djvudocument.atril-backend
+lib/atril/3/backends/dvidocument.atril-backend
 lib/atril/3/backends/epubdocument.atril-backend
 @comment lib/atril/3/backends/libcomicsdocument.a
 @comment lib/atril/3/backends/libcomicsdocument.la
-lib/atril/3/backends/libcomicsdocument.so
+@so lib/atril/3/backends/libcomicsdocument.so
 @comment lib/atril/3/backends/libdjvudocument.a
 @comment lib/atril/3/backends/libdjvudocument.la
-lib/atril/3/backends/libdjvudocument.so
+@so lib/atril/3/backends/libdjvudocument.so
+@static-lib lib/atril/3/backends/libdvidocument.a
+lib/atril/3/backends/libdvidocument.la
+@so lib/atril/3/backends/libdvidocument.so
 @comment lib/atril/3/backends/libepubdocument.a
 @comment lib/atril/3/backends/libepubdocument.la
-lib/atril/3/backends/libepubdocument.so
+@so lib/atril/3/backends/libepubdocument.so
 @comment lib/atril/3/backends/libpdfdocument.a
 @comment lib/atril/3/backends/libpdfdocument.la
-lib/atril/3/backends/libpdfdocument.so
+@so lib/atril/3/backends/libpdfdocument.so
+@static-lib lib/atril/3/backends/libpixbufdocument.a
+lib/atril/3/backends/libpixbufdocument.la
+@so lib/atril/3/backends/libpixbufdocument.so
 @comment lib/atril/3/backends/libpsdocument.a
 @comment lib/atril/3/backends/libpsdocument.la
-lib/atril/3/backends/libpsdocument.so
+@so lib/atril/3/backends/libpsdocument.so
 @comment lib/atril/3/backends/libtiffdocument.a
 @comment lib/atril/3/backends/libtiffdocument.la
-lib/atril/3/backends/libtiffdocument.so
+@so lib/atril/3/backends/libtiffdocument.so
 @comment lib/atril/3/backends/libxpsdocument.a
 @comment lib/atril/3/backends/libxpsdocument.la
-lib/atril/3/backends/libxpsdocument.so
+@so lib/atril/3/backends/libxpsdocument.so
 lib/atril/3/backends/pdfdocument.atril-backend
+lib/atril/3/backends/pixbufdocument.atril-backend
 lib/atril/3/backends/psdocument.atril-backend
 lib/atril/3/backends/tiffdocument.atril-backend
 lib/atril/3/backends/xpsdocument.atril-backend
@@ -90,11 +98,11 @@ lib/caja/
 lib/caja/extensions-2.0/
 @comment lib/caja/extensions-2.0/libatril-properties-page.a
 @comment lib/caja/extensions-2.0/libatril-properties-page.la
-lib/caja/extensions-2.0/libatril-properties-page.so
-lib/libatrildocument.a
+@so lib/caja/extensions-2.0/libatril-properties-page.so
+@static-lib lib/libatrildocument.a
 lib/libatrildocument.la
 @lib lib/libatrildocument.so.${LIBatrildocument_VERSION}
-lib/libatrilview.a
+@static-lib lib/libatrilview.a
 lib/libatrilview.la
 @lib lib/libatrilview.so.${LIBatrilview_VERSION}
 lib/pkgconfig/atril-document-1.5.0.pc
@@ -1045,8 +1053,6 @@ share/locale/hu/LC_MESSAGES/atril.mo
 share/locale/hy/LC_MESSAGES/atril.mo
 share/locale/ia/LC_MESSAGES/atril.mo
 share/locale/id/LC_MESSAGES/atril.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/atril.mo
 share/locale/ig/LC_MESSAGES/atril.mo
 share/locale/is/LC_MESSAGES/atril.mo

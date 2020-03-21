@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/10/03 14:37:13 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/03/21 16:14:57 robert Exp $
 @bin bin/mate-session
 @bin bin/mate-session-inhibit
 @bin bin/mate-session-properties
 @bin bin/mate-session-save
 bin/mate-wm
+@bin libexec/mate-session-check-accelerated
+@bin libexec/mate-session-check-accelerated-gl-helper
+@bin libexec/mate-session-check-accelerated-gles-helper
 @man man/man1/mate-session-inhibit.1
 @man man/man1/mate-session-properties.1
 @man man/man1/mate-session-save.1
@@ -158,6 +161,7 @@ share/locale/zh_TW/LC_MESSAGES/mate-session-manager.mo
 share/locale/zu/LC_MESSAGES/mate-session-manager.mo
 share/mate-session-manager/
 share/mate-session-manager/gsm-inhibit-dialog.ui
+share/mate-session-manager/hardware-compatibility
 share/mate-session-manager/session-properties.ui
 share/xsessions/
 share/xsessions/mate.desktop

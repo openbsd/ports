@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/03/27 18:13:38 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/21 16:14:55 robert Exp $
 include/mate-mixer/
 include/mate-mixer/libmatemixer/
 include/mate-mixer/libmatemixer/matemixer-app-info.h
@@ -18,15 +18,15 @@ include/mate-mixer/libmatemixer/matemixer-types.h
 include/mate-mixer/libmatemixer/matemixer-version.h
 include/mate-mixer/libmatemixer/matemixer.h
 lib/libmatemixer/
-lib/libmatemixer.a
+@static-lib lib/libmatemixer.a
 lib/libmatemixer.la
 @lib lib/libmatemixer.so.${LIBmatemixer_VERSION}
 @comment lib/libmatemixer/libmatemixer-null.a
 @comment lib/libmatemixer/libmatemixer-null.la
-lib/libmatemixer/libmatemixer-null.so
+@so lib/libmatemixer/libmatemixer-null.so
 @comment lib/libmatemixer/libmatemixer-pulse.a
 @comment lib/libmatemixer/libmatemixer-pulse.la
-lib/libmatemixer/libmatemixer-pulse.so
+@so lib/libmatemixer/libmatemixer-pulse.so
 lib/pkgconfig/libmatemixer.pc
 share/gtk-doc/
 share/gtk-doc/html/
@@ -126,6 +126,9 @@ share/locale/ia/
 share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/libmatemixer.mo
 share/locale/id/LC_MESSAGES/libmatemixer.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/libmatemixer.mo
 share/locale/is/LC_MESSAGES/libmatemixer.mo
 share/locale/it/LC_MESSAGES/libmatemixer.mo
 share/locale/ja/LC_MESSAGES/libmatemixer.mo

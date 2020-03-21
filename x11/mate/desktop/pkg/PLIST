@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/05/11 18:33:42 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/03/21 16:14:54 robert Exp $
 @bin bin/mate-about
 @bin bin/mate-color-select
 include/mate-desktop-2.0/
@@ -14,12 +14,13 @@ include/mate-desktop-2.0/libmate-desktop/mate-desktop-thumbnail.h
 include/mate-desktop-2.0/libmate-desktop/mate-desktop-utils.h
 include/mate-desktop-2.0/libmate-desktop/mate-desktop.h
 include/mate-desktop-2.0/libmate-desktop/mate-gsettings.h
+include/mate-desktop-2.0/libmate-desktop/mate-hsv.h
 include/mate-desktop-2.0/libmate-desktop/mate-languages.h
 include/mate-desktop-2.0/libmate-desktop/mate-rr-config.h
 include/mate-desktop-2.0/libmate-desktop/mate-rr-labeler.h
 include/mate-desktop-2.0/libmate-desktop/mate-rr.h
 lib/girepository-1.0/MateDesktop-2.0.typelib
-lib/libmate-desktop-2.a
+@static-lib lib/libmate-desktop-2.a
 lib/libmate-desktop-2.la
 @lib lib/libmate-desktop-2.so.${LIBmate-desktop-2_VERSION}
 lib/pkgconfig/mate-desktop-2.0.pc
@@ -34,6 +35,7 @@ share/glib-2.0/schemas/org.mate.applications-at-mobility.gschema.xml
 share/glib-2.0/schemas/org.mate.applications-at-visual.gschema.xml
 share/glib-2.0/schemas/org.mate.applications-browser.gschema.xml
 share/glib-2.0/schemas/org.mate.applications-calculator.gschema.xml
+share/glib-2.0/schemas/org.mate.applications-messenger.gschema.xml
 share/glib-2.0/schemas/org.mate.applications-office.gschema.xml
 share/glib-2.0/schemas/org.mate.applications-terminal.gschema.xml
 share/glib-2.0/schemas/org.mate.background.gschema.xml
@@ -41,8 +43,6 @@ share/glib-2.0/schemas/org.mate.debug.gschema.xml
 share/glib-2.0/schemas/org.mate.file-views.gschema.xml
 share/glib-2.0/schemas/org.mate.interface.gschema.xml
 share/glib-2.0/schemas/org.mate.lockdown.gschema.xml
-share/glib-2.0/schemas/org.mate.peripherals-keyboard.gschema.xml
-share/glib-2.0/schemas/org.mate.peripherals-mouse.gschema.xml
 share/glib-2.0/schemas/org.mate.sound.gschema.xml
 share/glib-2.0/schemas/org.mate.thumbnail-cache.gschema.xml
 share/glib-2.0/schemas/org.mate.thumbnailers.gschema.xml
@@ -149,6 +149,9 @@ share/locale/hu/LC_MESSAGES/mate-desktop.mo
 share/locale/hy/LC_MESSAGES/mate-desktop.mo
 share/locale/ia/LC_MESSAGES/mate-desktop.mo
 share/locale/id/LC_MESSAGES/mate-desktop.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/mate-desktop.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/mate-desktop.mo

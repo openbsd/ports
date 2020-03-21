@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/08/19 13:28:36 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/03/21 16:14:55 robert Exp $
 @bin bin/marco
 @bin bin/marco-message
 @bin bin/marco-theme-viewer
@@ -12,7 +12,7 @@ include/marco-1/marco-private/preview-widget.h
 include/marco-1/marco-private/theme-parser.h
 include/marco-1/marco-private/theme.h
 include/marco-1/marco-private/util.h
-lib/libmarco-private.a
+@static-lib lib/libmarco-private.a
 lib/libmarco-private.la
 @lib lib/libmarco-private.so.${LIBmarco-private_VERSION}
 lib/pkgconfig/libmarco-private.pc
@@ -167,6 +167,9 @@ share/mate-control-center/keybindings/50-marco-global-key.xml
 share/mate-control-center/keybindings/50-marco-window-key.xml
 share/mate/wm-properties/
 share/mate/wm-properties/marco-wm.desktop
+share/themes/Atlanta/
+share/themes/Atlanta/metacity-1/
+share/themes/Atlanta/metacity-1/metacity-theme-1.xml
 share/themes/ClearlooksRe/
 share/themes/ClearlooksRe/metacity-1/
 share/themes/ClearlooksRe/metacity-1/metacity-theme-1.xml
@@ -192,6 +195,40 @@ share/themes/DustBlue/metacity-1/button_min_prelight.png
 share/themes/DustBlue/metacity-1/button_min_pressed.png
 share/themes/DustBlue/metacity-1/menu.png
 share/themes/DustBlue/metacity-1/metacity-theme-1.xml
+share/themes/Esco/
+share/themes/Esco/metacity-1/
+share/themes/Esco/metacity-1/metacity-theme-1.xml
+share/themes/Gorilla/
+share/themes/Gorilla/metacity-1/
+share/themes/Gorilla/metacity-1/active-button.png
+share/themes/Gorilla/metacity-1/active-close-button.png
+share/themes/Gorilla/metacity-1/active-close-menu-icon.png
+share/themes/Gorilla/metacity-1/active-maximize-button.png
+share/themes/Gorilla/metacity-1/active-maximize-menu-icon.png
+share/themes/Gorilla/metacity-1/active-menu-button.png
+share/themes/Gorilla/metacity-1/active-minimize-button.png
+share/themes/Gorilla/metacity-1/active-minimize-menu-icon.png
+share/themes/Gorilla/metacity-1/inactive-close-button.png
+share/themes/Gorilla/metacity-1/inactive-maximize-button.png
+share/themes/Gorilla/metacity-1/inactive-menu-button.png
+share/themes/Gorilla/metacity-1/inactive-minimize-button.png
+share/themes/Gorilla/metacity-1/metacity-theme-1.xml
+share/themes/Motif/
+share/themes/Motif/metacity-1/
+share/themes/Motif/metacity-1/metacity-theme-1.xml
+share/themes/Raleigh/
+share/themes/Raleigh/metacity-1/
+share/themes/Raleigh/metacity-1/close_normal.png
+share/themes/Raleigh/metacity-1/close_normal_small.png
+share/themes/Raleigh/metacity-1/close_pressed.png
+share/themes/Raleigh/metacity-1/close_pressed_small.png
+share/themes/Raleigh/metacity-1/maximize_normal.png
+share/themes/Raleigh/metacity-1/maximize_pressed.png
+share/themes/Raleigh/metacity-1/metacity-theme-1.xml
+share/themes/Raleigh/metacity-1/minimize_normal.png
+share/themes/Raleigh/metacity-1/minimize_pressed.png
+share/themes/Raleigh/metacity-1/restore_normal.png
+share/themes/Raleigh/metacity-1/restore_pressed.png
 share/themes/Spidey/
 share/themes/Spidey-Left/
 share/themes/Spidey-Left/metacity-1/
@@ -228,6 +265,7 @@ share/themes/eOS/metacity-1/maximize_unfocused_over.png
 share/themes/eOS/metacity-1/menu.png
 share/themes/eOS/metacity-1/menu_prelight.png
 share/themes/eOS/metacity-1/metacity-theme-1.xml
+share/themes/eOS/metacity-1/metacity-theme-3.xml
 share/themes/eOS/metacity-1/minimize.png
 share/themes/eOS/metacity-1/minimize_unfocused.png
 share/themes/eOS/metacity-1/minimize_unfocused_over.png
@@ -237,6 +275,8 @@ share/themes/eOS/metacity-1/trough_middle.png
 share/themes/eOS/metacity-1/trough_middle_unfocused.png
 share/themes/eOS/metacity-1/trough_right.png
 share/themes/eOS/metacity-1/trough_right_unfocused.png
+share/themes/eOS/metacity-1/trough_single.png
+share/themes/eOS/metacity-1/trough_single_unfocused.png
 share/themes/eOS/metacity-1/unmaximize.png
 share/themes/eOS/metacity-1/unmaximize_unfocused.png
 share/themes/eOS/metacity-1/unmaximize_unfocused_over.png

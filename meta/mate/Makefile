@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2020/01/09 21:17:01 solene Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/21 16:14:53 robert Exp $
 
 COMMENT-main =		MATE desktop meta-package (base installation)
 COMMENT-extras =	MATE desktop meta-package (full installation)
 
 CATEGORIES =		meta x11
 
-V =			1.22
+V =			1.24
 PKGNAME =		mate-${V}
-REVISION-main =		0
 
 PKGNAME-main =		mate-${V}
 PKGNAME-extras =	mate-extras-${V}

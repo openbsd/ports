@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/10/03 14:37:18 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/03/21 16:14:57 robert Exp $
 include/mate-settings-daemon/
 include/mate-settings-daemon/mate-settings-client.h
 include/mate-settings-daemon/mate-settings-plugin.h
@@ -12,52 +12,52 @@ lib/mate-settings-daemon/keybindings.mate-settings-plugin
 lib/mate-settings-daemon/keyboard.mate-settings-plugin
 @comment lib/mate-settings-daemon/liba11y-keyboard.a
 @comment lib/mate-settings-daemon/liba11y-keyboard.la
-lib/mate-settings-daemon/liba11y-keyboard.so
+@so lib/mate-settings-daemon/liba11y-keyboard.so
 @comment lib/mate-settings-daemon/liba11y-settings.a
 @comment lib/mate-settings-daemon/liba11y-settings.la
-lib/mate-settings-daemon/liba11y-settings.so
+@so lib/mate-settings-daemon/liba11y-settings.so
 @comment lib/mate-settings-daemon/libbackground.a
 @comment lib/mate-settings-daemon/libbackground.la
-lib/mate-settings-daemon/libbackground.so
+@so lib/mate-settings-daemon/libbackground.so
 @comment lib/mate-settings-daemon/libclipboard.a
 @comment lib/mate-settings-daemon/libclipboard.la
-lib/mate-settings-daemon/libclipboard.so
+@so lib/mate-settings-daemon/libclipboard.so
 @comment lib/mate-settings-daemon/libhousekeeping.a
 @comment lib/mate-settings-daemon/libhousekeeping.la
-lib/mate-settings-daemon/libhousekeeping.so
+@so lib/mate-settings-daemon/libhousekeeping.so
 @comment lib/mate-settings-daemon/libkeybindings.a
 @comment lib/mate-settings-daemon/libkeybindings.la
-lib/mate-settings-daemon/libkeybindings.so
+@so lib/mate-settings-daemon/libkeybindings.so
 @comment lib/mate-settings-daemon/libkeyboard.a
 @comment lib/mate-settings-daemon/libkeyboard.la
-lib/mate-settings-daemon/libkeyboard.so
+@so lib/mate-settings-daemon/libkeyboard.so
 @comment lib/mate-settings-daemon/libmedia-keys.a
 @comment lib/mate-settings-daemon/libmedia-keys.la
-lib/mate-settings-daemon/libmedia-keys.so
+@so lib/mate-settings-daemon/libmedia-keys.so
 @comment lib/mate-settings-daemon/libmouse.a
 @comment lib/mate-settings-daemon/libmouse.la
-lib/mate-settings-daemon/libmouse.so
+@so lib/mate-settings-daemon/libmouse.so
 @comment lib/mate-settings-daemon/libmpris.a
 @comment lib/mate-settings-daemon/libmpris.la
-lib/mate-settings-daemon/libmpris.so
+@so lib/mate-settings-daemon/libmpris.so
 @comment lib/mate-settings-daemon/libsmartcard.a
 @comment lib/mate-settings-daemon/libsmartcard.la
-lib/mate-settings-daemon/libsmartcard.so
+@so lib/mate-settings-daemon/libsmartcard.so
 @comment lib/mate-settings-daemon/libsound.a
 @comment lib/mate-settings-daemon/libsound.la
-lib/mate-settings-daemon/libsound.so
+@so lib/mate-settings-daemon/libsound.so
 @comment lib/mate-settings-daemon/libtyping-break.a
 @comment lib/mate-settings-daemon/libtyping-break.la
-lib/mate-settings-daemon/libtyping-break.so
+@so lib/mate-settings-daemon/libtyping-break.so
 @comment lib/mate-settings-daemon/libxrandr.a
 @comment lib/mate-settings-daemon/libxrandr.la
-lib/mate-settings-daemon/libxrandr.so
+@so lib/mate-settings-daemon/libxrandr.so
 @comment lib/mate-settings-daemon/libxrdb.a
 @comment lib/mate-settings-daemon/libxrdb.la
-lib/mate-settings-daemon/libxrdb.so
+@so lib/mate-settings-daemon/libxrdb.so
 @comment lib/mate-settings-daemon/libxsettings.a
 @comment lib/mate-settings-daemon/libxsettings.la
-lib/mate-settings-daemon/libxsettings.so
+@so lib/mate-settings-daemon/libxsettings.so
 lib/mate-settings-daemon/media-keys.mate-settings-plugin
 lib/mate-settings-daemon/mouse.mate-settings-plugin
 lib/mate-settings-daemon/mpris.mate-settings-plugin
@@ -118,12 +118,17 @@ share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml
 share/glib-2.0/schemas/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml
 share/glib-2.0/schemas/org.mate.applications-at.gschema.xml
 share/glib-2.0/schemas/org.mate.font-rendering.gschema.xml
+share/glib-2.0/schemas/org.mate.peripherals-keyboard.gschema.xml
+share/glib-2.0/schemas/org.mate.peripherals-mouse.gschema.xml
 share/glib-2.0/schemas/org.mate.peripherals-smartcard.gschema.xml
 share/glib-2.0/schemas/org.mate.peripherals-touchpad.gschema.xml
 share/icons/hicolor/16x16/apps/msd-xrandr.png
 share/icons/hicolor/22x22/apps/msd-xrandr.png
 share/icons/hicolor/24x24/apps/msd-xrandr.png
 share/icons/hicolor/32x32/apps/msd-xrandr.png
+share/icons/hicolor/48x48/apps/msd-xrandr.png
+share/icons/hicolor/64x64/apps/msd-xrandr.png
+share/icons/hicolor/96x96/apps/msd-xrandr.png
 share/icons/hicolor/scalable/apps/msd-xrandr.svg
 share/locale/af/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/am/LC_MESSAGES/mate-settings-daemon.mo
@@ -184,8 +189,6 @@ share/locale/hr/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/hu/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/hy/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/id/LC_MESSAGES/mate-settings-daemon.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/is/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/it/LC_MESSAGES/mate-settings-daemon.mo

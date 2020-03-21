@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/10/03 14:36:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/03/21 16:14:56 robert Exp $
 include/mate-menus/
 include/mate-menus/matemenu-tree.h
 lib/girepository-1.0/
 lib/girepository-1.0/MateMenu-2.0.typelib
-lib/libmate-menu.a
+@static-lib lib/libmate-menu.a
 lib/libmate-menu.la
 @lib lib/libmate-menu.so.${LIBmate-menu_VERSION}
 lib/pkgconfig/libmate-menu.pc

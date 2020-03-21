@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/05/11 18:33:42 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/03/21 16:14:54 robert Exp $
 @bin bin/mate-about-me
 @bin bin/mate-appearance-properties
 @bin bin/mate-at-properties
@@ -11,6 +11,7 @@
 @bin bin/mate-mouse-properties
 @bin bin/mate-network-properties
 @bin bin/mate-thumbnail-font
+@bin bin/mate-time-admin
 @bin bin/mate-typing-monitor
 @bin bin/mate-window-properties
 include/libmate-slab/
@@ -33,10 +34,10 @@ include/libmate-slab/tile.h
 include/mate-window-settings-2.0/
 include/mate-window-settings-2.0/mate-window-manager.h
 include/mate-window-settings-2.0/mate-wm-manager.h
-lib/libmate-slab.a
+@static-lib lib/libmate-slab.a
 lib/libmate-slab.la
 @lib lib/libmate-slab.so.${LIBmate-slab_VERSION}
-lib/libmate-window-settings.a
+@static-lib lib/libmate-window-settings.a
 lib/libmate-window-settings.la
 @lib lib/libmate-window-settings.so.${LIBmate-window-settings_VERSION}
 lib/pkgconfig/mate-default-applications.pc
@@ -46,7 +47,7 @@ lib/pkgconfig/mate-window-settings-2.0.pc
 lib/window-manager-settings/
 @comment lib/window-manager-settings/libmarco.a
 @comment lib/window-manager-settings/libmarco.la
-lib/window-manager-settings/libmarco.so
+@so lib/window-manager-settings/libmarco.so
 @man man/man1/mate-about-me.1
 @man man/man1/mate-appearance-properties.1
 @man man/man1/mate-at-properties.1
@@ -74,6 +75,7 @@ share/applications/mate-keyboard.desktop
 share/applications/mate-network-properties.desktop
 share/applications/mate-settings-mouse.desktop
 share/applications/mate-theme-installer.desktop
+share/applications/mate-time-admin.desktop
 share/applications/mate-window-properties.desktop
 share/applications/matecc.desktop
 @comment share/applications/mimeinfo.cache
@@ -939,6 +941,23 @@ share/help/id/mate-control-center/config-screensaver.xml
 share/help/id/mate-control-center/config-themes.xml
 share/help/id/mate-control-center/index.docbook
 share/help/id/mate-control-center/legal.xml
+share/help/ie/
+share/help/ie/mate-control-center/
+share/help/ie/mate-control-center/config-accessibility-keyboard.xml
+share/help/ie/mate-control-center/config-background.xml
+share/help/ie/mate-control-center/config-behavior.xml
+share/help/ie/mate-control-center/config-cds.xml
+share/help/ie/mate-control-center/config-default-apps.xml
+share/help/ie/mate-control-center/config-file-type.xml
+share/help/ie/mate-control-center/config-hints.xml
+share/help/ie/mate-control-center/config-html.xml
+share/help/ie/mate-control-center/config-kbd.xml
+share/help/ie/mate-control-center/config-keybindings.xml
+share/help/ie/mate-control-center/config-mouse.xml
+share/help/ie/mate-control-center/config-screensaver.xml
+share/help/ie/mate-control-center/config-themes.xml
+share/help/ie/mate-control-center/index.docbook
+share/help/ie/mate-control-center/legal.xml
 share/help/ig/
 share/help/ig/mate-control-center/
 share/help/ig/mate-control-center/config-accessibility-keyboard.xml
@@ -1967,7 +1986,13 @@ share/help/zu/mate-control-center/config-screensaver.xml
 share/help/zu/mate-control-center/config-themes.xml
 share/help/zu/mate-control-center/index.docbook
 share/help/zu/mate-control-center/legal.xml
+share/icons/hicolor/16x16/categories/instant-messaging.png
+share/icons/hicolor/22x22/categories/instant-messaging.png
+share/icons/hicolor/24x24/categories/instant-messaging.png
+share/icons/hicolor/256x256/categories/instant-messaging.png
+share/icons/hicolor/32x32/categories/instant-messaging.png
 share/icons/hicolor/48x48/apps/mate-typing-monitor.png
+share/icons/hicolor/48x48/categories/instant-messaging.png
 share/icons/hicolor/scalable/apps/mate-typing-monitor.svg
 share/locale/af/LC_MESSAGES/mate-control-center.mo
 share/locale/am/LC_MESSAGES/mate-control-center.mo
@@ -2034,6 +2059,7 @@ share/locale/hu/LC_MESSAGES/mate-control-center.mo
 share/locale/hy/LC_MESSAGES/mate-control-center.mo
 share/locale/ia/LC_MESSAGES/mate-control-center.mo
 share/locale/id/LC_MESSAGES/mate-control-center.mo
+share/locale/ie/LC_MESSAGES/mate-control-center.mo
 share/locale/ig/LC_MESSAGES/mate-control-center.mo
 share/locale/is/LC_MESSAGES/mate-control-center.mo
 share/locale/it/LC_MESSAGES/mate-control-center.mo
@@ -2119,9 +2145,6 @@ share/mate-control-center/pixmaps/bar-disabled.png
 share/mate-control-center/pixmaps/bar-green.png
 share/mate-control-center/pixmaps/bar-red.png
 share/mate-control-center/pixmaps/bar.png
-share/mate-control-center/pixmaps/double-click-maybe.svg
-share/mate-control-center/pixmaps/double-click-off.svg
-share/mate-control-center/pixmaps/double-click-on.svg
 share/mate-control-center/pixmaps/gtk-theme-thumbnailing.png
 share/mate-control-center/pixmaps/icon-theme-thumbnailing.png
 share/mate-control-center/pixmaps/mouse-cursor-normal-large.png
@@ -2135,22 +2158,95 @@ share/mate-control-center/pixmaps/subpixel-vbgr.png
 share/mate-control-center/pixmaps/subpixel-vrgb.png
 share/mate-control-center/pixmaps/theme-thumbnailing.png
 share/mate-control-center/pixmaps/window-theme-thumbnailing.png
-share/mate-control-center/ui/
-share/mate-control-center/ui/appearance.ui
-share/mate-control-center/ui/at-enable-dialog.ui
-share/mate-control-center/ui/display-capplet.ui
-share/mate-control-center/ui/mate-about-me-dialog.ui
-share/mate-control-center/ui/mate-about-me-fingerprint.ui
-share/mate-control-center/ui/mate-about-me-password.ui
-share/mate-control-center/ui/mate-default-applications-properties.ui
-share/mate-control-center/ui/mate-keybinding-properties.ui
-share/mate-control-center/ui/mate-keyboard-properties-a11y-notifications.ui
-share/mate-control-center/ui/mate-keyboard-properties-dialog.ui
-share/mate-control-center/ui/mate-keyboard-properties-layout-chooser.ui
-share/mate-control-center/ui/mate-keyboard-properties-model-chooser.ui
-share/mate-control-center/ui/mate-keyboard-properties-options-dialog.ui
-share/mate-control-center/ui/mate-mouse-properties.ui
-share/mate-control-center/ui/mate-network-properties.ui
+share/mate-time-admin/
+share/mate-time-admin/map/
+share/mate-time-admin/map/backward
+share/mate-time-admin/map/bg.png
+share/mate-time-admin/map/bg_dim.png
+share/mate-time-admin/map/cc.png
+share/mate-time-admin/map/pin.png
+share/mate-time-admin/map/timezone_-1.png
+share/mate-time-admin/map/timezone_-10.png
+share/mate-time-admin/map/timezone_-10_dim.png
+share/mate-time-admin/map/timezone_-11.png
+share/mate-time-admin/map/timezone_-11_dim.png
+share/mate-time-admin/map/timezone_-1_dim.png
+share/mate-time-admin/map/timezone_-2.png
+share/mate-time-admin/map/timezone_-2_dim.png
+share/mate-time-admin/map/timezone_-3.5.png
+share/mate-time-admin/map/timezone_-3.5_dim.png
+share/mate-time-admin/map/timezone_-3.png
+share/mate-time-admin/map/timezone_-3_dim.png
+share/mate-time-admin/map/timezone_-4.5.png
+share/mate-time-admin/map/timezone_-4.5_dim.png
+share/mate-time-admin/map/timezone_-4.png
+share/mate-time-admin/map/timezone_-4_dim.png
+share/mate-time-admin/map/timezone_-5.5.png
+share/mate-time-admin/map/timezone_-5.5_dim.png
+share/mate-time-admin/map/timezone_-5.png
+share/mate-time-admin/map/timezone_-5_dim.png
+share/mate-time-admin/map/timezone_-6.png
+share/mate-time-admin/map/timezone_-6_dim.png
+share/mate-time-admin/map/timezone_-7.png
+share/mate-time-admin/map/timezone_-7_dim.png
+share/mate-time-admin/map/timezone_-8.png
+share/mate-time-admin/map/timezone_-8_dim.png
+share/mate-time-admin/map/timezone_-9.5.png
+share/mate-time-admin/map/timezone_-9.5_dim.png
+share/mate-time-admin/map/timezone_-9.png
+share/mate-time-admin/map/timezone_-9_dim.png
+share/mate-time-admin/map/timezone_0.png
+share/mate-time-admin/map/timezone_0_dim.png
+share/mate-time-admin/map/timezone_1.png
+share/mate-time-admin/map/timezone_10.5.png
+share/mate-time-admin/map/timezone_10.5_dim.png
+share/mate-time-admin/map/timezone_10.png
+share/mate-time-admin/map/timezone_10_dim.png
+share/mate-time-admin/map/timezone_11.5.png
+share/mate-time-admin/map/timezone_11.5_dim.png
+share/mate-time-admin/map/timezone_11.png
+share/mate-time-admin/map/timezone_11_dim.png
+share/mate-time-admin/map/timezone_12.75.png
+share/mate-time-admin/map/timezone_12.75_dim.png
+share/mate-time-admin/map/timezone_12.png
+share/mate-time-admin/map/timezone_12_dim.png
+share/mate-time-admin/map/timezone_13.png
+share/mate-time-admin/map/timezone_13_dim.png
+share/mate-time-admin/map/timezone_14.png
+share/mate-time-admin/map/timezone_14_dim.png
+share/mate-time-admin/map/timezone_1_dim.png
+share/mate-time-admin/map/timezone_2.png
+share/mate-time-admin/map/timezone_2_dim.png
+share/mate-time-admin/map/timezone_3.5.png
+share/mate-time-admin/map/timezone_3.5_dim.png
+share/mate-time-admin/map/timezone_3.png
+share/mate-time-admin/map/timezone_3_dim.png
+share/mate-time-admin/map/timezone_4.5.png
+share/mate-time-admin/map/timezone_4.5_dim.png
+share/mate-time-admin/map/timezone_4.png
+share/mate-time-admin/map/timezone_4_dim.png
+share/mate-time-admin/map/timezone_5.5.png
+share/mate-time-admin/map/timezone_5.5_dim.png
+share/mate-time-admin/map/timezone_5.75.png
+share/mate-time-admin/map/timezone_5.75_dim.png
+share/mate-time-admin/map/timezone_5.png
+share/mate-time-admin/map/timezone_5_dim.png
+share/mate-time-admin/map/timezone_6.5.png
+share/mate-time-admin/map/timezone_6.5_dim.png
+share/mate-time-admin/map/timezone_6.png
+share/mate-time-admin/map/timezone_6_dim.png
+share/mate-time-admin/map/timezone_7.png
+share/mate-time-admin/map/timezone_7_dim.png
+share/mate-time-admin/map/timezone_8.5.png
+share/mate-time-admin/map/timezone_8.5_dim.png
+share/mate-time-admin/map/timezone_8.75.png
+share/mate-time-admin/map/timezone_8.75_dim.png
+share/mate-time-admin/map/timezone_8.png
+share/mate-time-admin/map/timezone_8_dim.png
+share/mate-time-admin/map/timezone_9.5.png
+share/mate-time-admin/map/timezone_9.5_dim.png
+share/mate-time-admin/map/timezone_9.png
+share/mate-time-admin/map/timezone_9_dim.png
 @comment share/mime/XMLnamespaces
 @comment share/mime/aliases
 share/mime/application/

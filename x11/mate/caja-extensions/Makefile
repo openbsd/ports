@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/10/03 14:36:00 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2020/03/21 16:14:54 robert Exp $
 
 COMMENT=		extensions for Caja, the MATE file manager
 
 MATE_PROJECT=		caja-extensions
-MATE_VERSION=		1.22.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,6 +17,7 @@ WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png psl pthread soup-2.4 sqlite3
 WANTLIB += startup-notification-1 unistring xcb xcb-render xcb-shm
 WANTLIB += xcb-util xml2 z
+WANTLIB += brotlicommon brotlidec
 
 MODULES=		devel/dconf \
 			x11/gnome

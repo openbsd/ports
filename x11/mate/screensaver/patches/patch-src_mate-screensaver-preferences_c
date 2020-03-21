@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_mate-screensaver-preferences_c,v 1.1 2020/03/21 16:14:57 robert Exp $
+
+Index: src/mate-screensaver-preferences.c
+--- src/mate-screensaver-preferences.c.orig
++++ src/mate-screensaver-preferences.c
+@@ -1337,7 +1337,7 @@ setup_for_root_user (void)
+ }
+ 
+ /* copied from gs-window-x11.c */
+-#ifndef _GNU_SOURCE
++#if !defined(_GNU_SOURCE) || defined(__OpenBSD__)
+ extern char **environ;
+ #endif
+ 

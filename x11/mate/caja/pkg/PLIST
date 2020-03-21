@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/10/03 14:35:54 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/03/21 16:14:54 robert Exp $
 @bin bin/caja
 @bin bin/caja-autorun-software
 @bin bin/caja-connect-server
@@ -17,8 +17,9 @@ include/caja/libcaja-extension/caja-menu-provider.h
 include/caja/libcaja-extension/caja-menu.h
 include/caja/libcaja-extension/caja-property-page-provider.h
 include/caja/libcaja-extension/caja-property-page.h
+include/caja/libcaja-extension/caja-widget-view-provider.h
 lib/girepository-1.0/Caja-2.0.typelib
-lib/libcaja-extension.a
+@static-lib lib/libcaja-extension.a
 lib/libcaja-extension.la
 @lib lib/libcaja-extension.so.${LIBcaja-extension_VERSION}
 lib/pkgconfig/libcaja-extension.pc
@@ -35,7 +36,12 @@ share/applications/caja-home.desktop
 share/applications/caja.desktop
 share/applications/mate-network-scheme.desktop
 share/caja/
+share/caja/a11y-caja-desktop-base.css
 share/caja/browser.xml
+share/caja/caja-desktop-ContrastHigh.css
+share/caja/caja-desktop-ContrastHighInverse.css
+share/caja/caja-desktop-HighContrast.css
+share/caja/caja-desktop-HighContrastInverse.css
 share/caja/caja-desktop.css
 share/caja/caja-extras.placeholder
 share/caja/caja-suggested.placeholder
@@ -98,6 +104,7 @@ share/gtk-doc/html/libcaja-extension/CajaMenuItem.html
 share/gtk-doc/html/libcaja-extension/CajaMenuProvider.html
 share/gtk-doc/html/libcaja-extension/CajaPropertyPage.html
 share/gtk-doc/html/libcaja-extension/CajaPropertyPageProvider.html
+share/gtk-doc/html/libcaja-extension/CajaWidgetViewProvider.html
 share/gtk-doc/html/libcaja-extension/ch01.html
 share/gtk-doc/html/libcaja-extension/home.png
 share/gtk-doc/html/libcaja-extension/index.html
@@ -175,8 +182,6 @@ share/locale/hu/LC_MESSAGES/caja.mo
 share/locale/hy/LC_MESSAGES/caja.mo
 share/locale/ia/LC_MESSAGES/caja.mo
 share/locale/id/LC_MESSAGES/caja.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/caja.mo
 share/locale/ig/LC_MESSAGES/caja.mo
 share/locale/is/LC_MESSAGES/caja.mo

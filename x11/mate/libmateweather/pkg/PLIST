@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/10/03 14:36:19 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/03/21 16:14:55 robert Exp $
 include/libmateweather/
 include/libmateweather/location-entry.h
 include/libmateweather/mateweather-enum-types.h
@@ -8,7 +8,7 @@ include/libmateweather/mateweather-timezone.h
 include/libmateweather/mateweather-xml.h
 include/libmateweather/timezone-menu.h
 include/libmateweather/weather.h
-lib/libmateweather.a
+@static-lib lib/libmateweather.a
 lib/libmateweather.la
 @lib lib/libmateweather.so.${LIBmateweather_VERSION}
 lib/pkgconfig/mateweather.pc

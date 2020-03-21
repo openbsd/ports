@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/10/03 14:36:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/03/21 16:14:56 robert Exp $
 @bin bin/pluma
 include/pluma/
 include/pluma/pluma-app.h
@@ -30,127 +30,134 @@ lib/pluma/plugins/docinfo.plugin
 lib/pluma/plugins/externaltools/
 lib/pluma/plugins/externaltools.plugin
 lib/pluma/plugins/externaltools/__init__.py
-lib/pluma/plugins/externaltools/__init__.pyc
-lib/pluma/plugins/externaltools/__init__.pyo
+lib/pluma/plugins/externaltools/__pycache__/
+lib/pluma/plugins/externaltools/__pycache__/__init__.cpython-37.opt-1.pyc
+lib/pluma/plugins/externaltools/__pycache__/__init__.cpython-37.pyc
+lib/pluma/plugins/externaltools/__pycache__/capture.cpython-37.opt-1.pyc
+lib/pluma/plugins/externaltools/__pycache__/capture.cpython-37.pyc
+lib/pluma/plugins/externaltools/__pycache__/filelookup.cpython-37.opt-1.pyc
+lib/pluma/plugins/externaltools/__pycache__/filelookup.cpython-37.pyc
+lib/pluma/plugins/externaltools/__pycache__/functions.cpython-37.opt-1.pyc
+lib/pluma/plugins/externaltools/__pycache__/functions.cpython-37.pyc
+lib/pluma/plugins/externaltools/__pycache__/library.cpython-37.opt-1.pyc
+lib/pluma/plugins/externaltools/__pycache__/library.cpython-37.pyc
+lib/pluma/plugins/externaltools/__pycache__/linkparsing.cpython-37.opt-1.pyc
+lib/pluma/plugins/externaltools/__pycache__/linkparsing.cpython-37.pyc
+lib/pluma/plugins/externaltools/__pycache__/manager.cpython-37.opt-1.pyc
+lib/pluma/plugins/externaltools/__pycache__/manager.cpython-37.pyc
+lib/pluma/plugins/externaltools/__pycache__/outputpanel.cpython-37.opt-1.pyc
+lib/pluma/plugins/externaltools/__pycache__/outputpanel.cpython-37.pyc
 lib/pluma/plugins/externaltools/capture.py
-lib/pluma/plugins/externaltools/capture.pyc
-lib/pluma/plugins/externaltools/capture.pyo
 lib/pluma/plugins/externaltools/filelookup.py
-lib/pluma/plugins/externaltools/filelookup.pyc
-lib/pluma/plugins/externaltools/filelookup.pyo
 lib/pluma/plugins/externaltools/functions.py
-lib/pluma/plugins/externaltools/functions.pyc
-lib/pluma/plugins/externaltools/functions.pyo
 lib/pluma/plugins/externaltools/library.py
-lib/pluma/plugins/externaltools/library.pyc
-lib/pluma/plugins/externaltools/library.pyo
 lib/pluma/plugins/externaltools/linkparsing.py
-lib/pluma/plugins/externaltools/linkparsing.pyc
-lib/pluma/plugins/externaltools/linkparsing.pyo
 lib/pluma/plugins/externaltools/manager.py
-lib/pluma/plugins/externaltools/manager.pyc
-lib/pluma/plugins/externaltools/manager.pyo
 lib/pluma/plugins/externaltools/outputpanel.py
-lib/pluma/plugins/externaltools/outputpanel.pyc
-lib/pluma/plugins/externaltools/outputpanel.pyo
 lib/pluma/plugins/filebrowser.plugin
 @comment lib/pluma/plugins/libchangecase.a
 @comment lib/pluma/plugins/libchangecase.la
-lib/pluma/plugins/libchangecase.so
+@so lib/pluma/plugins/libchangecase.so
 @comment lib/pluma/plugins/libdocinfo.a
 @comment lib/pluma/plugins/libdocinfo.la
-lib/pluma/plugins/libdocinfo.so
+@so lib/pluma/plugins/libdocinfo.so
 @comment lib/pluma/plugins/libfilebrowser.a
 @comment lib/pluma/plugins/libfilebrowser.la
-lib/pluma/plugins/libfilebrowser.so
+@so lib/pluma/plugins/libfilebrowser.so
 @comment lib/pluma/plugins/libmodelines.a
 @comment lib/pluma/plugins/libmodelines.la
-lib/pluma/plugins/libmodelines.so
+@so lib/pluma/plugins/libmodelines.so
 @comment lib/pluma/plugins/libsort.a
 @comment lib/pluma/plugins/libsort.la
-lib/pluma/plugins/libsort.so
+@so lib/pluma/plugins/libsort.so
 @comment lib/pluma/plugins/libspell.a
 @comment lib/pluma/plugins/libspell.la
-lib/pluma/plugins/libspell.so
+@so lib/pluma/plugins/libspell.so
 @comment lib/pluma/plugins/libtaglist.a
 @comment lib/pluma/plugins/libtaglist.la
-lib/pluma/plugins/libtaglist.so
+@so lib/pluma/plugins/libtaglist.so
 @comment lib/pluma/plugins/libtime.a
 @comment lib/pluma/plugins/libtime.la
-lib/pluma/plugins/libtime.so
+@so lib/pluma/plugins/libtime.so
 @comment lib/pluma/plugins/libtrailsave.a
 @comment lib/pluma/plugins/libtrailsave.la
-lib/pluma/plugins/libtrailsave.so
+@so lib/pluma/plugins/libtrailsave.so
 lib/pluma/plugins/modelines.plugin
 lib/pluma/plugins/pythonconsole/
 lib/pluma/plugins/pythonconsole.plugin
 lib/pluma/plugins/pythonconsole/__init__.py
-lib/pluma/plugins/pythonconsole/__init__.pyc
-lib/pluma/plugins/pythonconsole/__init__.pyo
+lib/pluma/plugins/pythonconsole/__pycache__/
+lib/pluma/plugins/pythonconsole/__pycache__/__init__.cpython-37.opt-1.pyc
+lib/pluma/plugins/pythonconsole/__pycache__/__init__.cpython-37.pyc
+lib/pluma/plugins/pythonconsole/__pycache__/config.cpython-37.opt-1.pyc
+lib/pluma/plugins/pythonconsole/__pycache__/config.cpython-37.pyc
+lib/pluma/plugins/pythonconsole/__pycache__/console.cpython-37.opt-1.pyc
+lib/pluma/plugins/pythonconsole/__pycache__/console.cpython-37.pyc
 lib/pluma/plugins/pythonconsole/config.py
-lib/pluma/plugins/pythonconsole/config.pyc
-lib/pluma/plugins/pythonconsole/config.pyo
 lib/pluma/plugins/pythonconsole/console.py
-lib/pluma/plugins/pythonconsole/console.pyc
-lib/pluma/plugins/pythonconsole/console.pyo
 lib/pluma/plugins/quickopen/
 lib/pluma/plugins/quickopen.plugin
 lib/pluma/plugins/quickopen/__init__.py
-lib/pluma/plugins/quickopen/__init__.pyc
-lib/pluma/plugins/quickopen/__init__.pyo
+lib/pluma/plugins/quickopen/__pycache__/
+lib/pluma/plugins/quickopen/__pycache__/__init__.cpython-37.opt-1.pyc
+lib/pluma/plugins/quickopen/__pycache__/__init__.cpython-37.pyc
+lib/pluma/plugins/quickopen/__pycache__/popup.cpython-37.opt-1.pyc
+lib/pluma/plugins/quickopen/__pycache__/popup.cpython-37.pyc
+lib/pluma/plugins/quickopen/__pycache__/virtualdirs.cpython-37.opt-1.pyc
+lib/pluma/plugins/quickopen/__pycache__/virtualdirs.cpython-37.pyc
+lib/pluma/plugins/quickopen/__pycache__/windowhelper.cpython-37.opt-1.pyc
+lib/pluma/plugins/quickopen/__pycache__/windowhelper.cpython-37.pyc
 lib/pluma/plugins/quickopen/popup.py
-lib/pluma/plugins/quickopen/popup.pyc
-lib/pluma/plugins/quickopen/popup.pyo
 lib/pluma/plugins/quickopen/virtualdirs.py
-lib/pluma/plugins/quickopen/virtualdirs.pyc
-lib/pluma/plugins/quickopen/virtualdirs.pyo
 lib/pluma/plugins/quickopen/windowhelper.py
-lib/pluma/plugins/quickopen/windowhelper.pyc
-lib/pluma/plugins/quickopen/windowhelper.pyo
 lib/pluma/plugins/snippets/
 lib/pluma/plugins/snippets.plugin
 lib/pluma/plugins/snippets/Completion.py
-lib/pluma/plugins/snippets/Completion.pyc
-lib/pluma/plugins/snippets/Completion.pyo
 lib/pluma/plugins/snippets/Document.py
-lib/pluma/plugins/snippets/Document.pyc
-lib/pluma/plugins/snippets/Document.pyo
 lib/pluma/plugins/snippets/Exporter.py
-lib/pluma/plugins/snippets/Exporter.pyc
-lib/pluma/plugins/snippets/Exporter.pyo
 lib/pluma/plugins/snippets/Helper.py
-lib/pluma/plugins/snippets/Helper.pyc
-lib/pluma/plugins/snippets/Helper.pyo
 lib/pluma/plugins/snippets/Importer.py
-lib/pluma/plugins/snippets/Importer.pyc
-lib/pluma/plugins/snippets/Importer.pyo
 lib/pluma/plugins/snippets/LanguageManager.py
-lib/pluma/plugins/snippets/LanguageManager.pyc
-lib/pluma/plugins/snippets/LanguageManager.pyo
 lib/pluma/plugins/snippets/Library.py
-lib/pluma/plugins/snippets/Library.pyc
-lib/pluma/plugins/snippets/Library.pyo
 lib/pluma/plugins/snippets/Manager.py
-lib/pluma/plugins/snippets/Manager.pyc
-lib/pluma/plugins/snippets/Manager.pyo
 lib/pluma/plugins/snippets/Parser.py
-lib/pluma/plugins/snippets/Parser.pyc
-lib/pluma/plugins/snippets/Parser.pyo
 lib/pluma/plugins/snippets/Placeholder.py
-lib/pluma/plugins/snippets/Placeholder.pyc
-lib/pluma/plugins/snippets/Placeholder.pyo
 lib/pluma/plugins/snippets/Snippet.py
-lib/pluma/plugins/snippets/Snippet.pyc
-lib/pluma/plugins/snippets/Snippet.pyo
 lib/pluma/plugins/snippets/SubstitutionParser.py
-lib/pluma/plugins/snippets/SubstitutionParser.pyc
-lib/pluma/plugins/snippets/SubstitutionParser.pyo
 lib/pluma/plugins/snippets/WindowHelper.py
-lib/pluma/plugins/snippets/WindowHelper.pyc
-lib/pluma/plugins/snippets/WindowHelper.pyo
 lib/pluma/plugins/snippets/__init__.py
-lib/pluma/plugins/snippets/__init__.pyc
-lib/pluma/plugins/snippets/__init__.pyo
+lib/pluma/plugins/snippets/__pycache__/
+lib/pluma/plugins/snippets/__pycache__/Completion.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Completion.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Document.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Document.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Exporter.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Exporter.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Helper.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Helper.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Importer.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Importer.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/LanguageManager.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/LanguageManager.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Library.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Library.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Manager.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Manager.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Parser.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Parser.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Placeholder.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Placeholder.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/Snippet.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/Snippet.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/SubstitutionParser.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/SubstitutionParser.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/WindowHelper.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/WindowHelper.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/__init__.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/__init__.cpython-37.pyc
+lib/pluma/plugins/snippets/__pycache__/comment.cpython-37.opt-1.pyc
+lib/pluma/plugins/snippets/__pycache__/comment.cpython-37.pyc
+lib/pluma/plugins/snippets/comment.py
 lib/pluma/plugins/sort.plugin
 lib/pluma/plugins/spell.plugin
 lib/pluma/plugins/taglist.plugin
@@ -162,6 +169,7 @@ libexec/pluma/pluma-bugreport.sh
 share/applications/pluma.desktop
 share/glib-2.0/schemas/org.mate.pluma.gschema.xml
 share/glib-2.0/schemas/org.mate.pluma.plugins.filebrowser.gschema.xml
+share/glib-2.0/schemas/org.mate.pluma.plugins.pythonconsole.gschema.xml
 share/glib-2.0/schemas/org.mate.pluma.plugins.spell.gschema.xml
 share/glib-2.0/schemas/org.mate.pluma.plugins.time.gschema.xml
 share/gtk-doc/html/pluma/

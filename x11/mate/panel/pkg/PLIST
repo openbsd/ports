@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/10/03 14:36:48 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/03/21 16:14:56 robert Exp $
 @bin bin/mate-desktop-item-edit
 @bin bin/mate-panel
 @bin bin/mate-panel-test-applets
@@ -8,7 +8,7 @@ include/mate-panel-4.0/libmate-panel-applet/mate-panel-applet-enums.h
 include/mate-panel-4.0/libmate-panel-applet/mate-panel-applet-gsettings.h
 include/mate-panel-4.0/libmate-panel-applet/mate-panel-applet.h
 lib/girepository-1.0/MatePanelApplet-4.0.typelib
-lib/libmate-panel-applet-4.a
+@static-lib lib/libmate-panel-applet-4.a
 lib/libmate-panel-applet-4.la
 @lib lib/libmate-panel-applet-4.so.${LIBmate-panel-applet-4_VERSION}
 lib/pkgconfig/libmatepanelapplet-4.0.pc
@@ -28,6 +28,7 @@ share/gir-1.0/MatePanelApplet-4.0.gir
 share/glib-2.0/schemas/org.mate.panel.applet.clock.gschema.xml
 share/glib-2.0/schemas/org.mate.panel.applet.fish.gschema.xml
 share/glib-2.0/schemas/org.mate.panel.applet.notification-area.gschema.xml
+share/glib-2.0/schemas/org.mate.panel.applet.window-list-previews.gschema.xml
 share/glib-2.0/schemas/org.mate.panel.applet.window-list.gschema.xml
 share/glib-2.0/schemas/org.mate.panel.applet.workspace-switcher.gschema.xml
 share/glib-2.0/schemas/org.mate.panel.enums.xml

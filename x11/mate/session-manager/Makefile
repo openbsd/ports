@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2019/10/03 14:37:13 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/21 16:14:57 robert Exp $
 
 COMMENT=		MATE session manager
 
 MATE_PROJECT=		mate-session-manager
-MATE_VERSION=		1.22.2
 
 CATEGORIES=		x11
 
@@ -14,9 +13,11 @@ WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0 c cairo
 WANTLIB += cairo-gobject dbus-1 dbus-glib-1 epoxy execinfo expat ffi
 WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-3
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
+WANTLIB += EGL GL GLESv2 X11-xcb Xxf86vm drm gbm glapi xcb-dri2
+WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/10/03 14:36:00 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/03/21 16:14:54 robert Exp $
 @bin bin/caja-sendto
 include/caja-sendto/
 include/caja-sendto/caja-sendto-plugin.h
@@ -7,50 +7,49 @@ lib/caja-sendto/
 lib/caja-sendto/plugins/
 @comment lib/caja-sendto/plugins/libnstburn.a
 @comment lib/caja-sendto/plugins/libnstburn.la
-lib/caja-sendto/plugins/libnstburn.so
+@so lib/caja-sendto/plugins/libnstburn.so
 @comment lib/caja-sendto/plugins/libnstemailclient.a
 @comment lib/caja-sendto/plugins/libnstemailclient.la
-lib/caja-sendto/plugins/libnstemailclient.so
+@so lib/caja-sendto/plugins/libnstemailclient.so
 @comment lib/caja-sendto/plugins/libnstgajim.a
 @comment lib/caja-sendto/plugins/libnstgajim.la
-lib/caja-sendto/plugins/libnstgajim.so
+@so lib/caja-sendto/plugins/libnstgajim.so
 @comment lib/caja-sendto/plugins/libnstpidgin.a
 @comment lib/caja-sendto/plugins/libnstpidgin.la
-lib/caja-sendto/plugins/libnstpidgin.so
+@so lib/caja-sendto/plugins/libnstpidgin.so
 @comment lib/caja-sendto/plugins/libnstremovable_devices.a
 @comment lib/caja-sendto/plugins/libnstremovable_devices.la
-lib/caja-sendto/plugins/libnstremovable_devices.so
+@so lib/caja-sendto/plugins/libnstremovable_devices.so
 @comment lib/caja-sendto/plugins/libnstupnp.a
 @comment lib/caja-sendto/plugins/libnstupnp.la
-lib/caja-sendto/plugins/libnstupnp.so
+@so lib/caja-sendto/plugins/libnstupnp.so
 lib/caja/extensions-2.0/
 @comment lib/caja/extensions-2.0/libcaja-gksu.a
 @comment lib/caja/extensions-2.0/libcaja-gksu.la
-lib/caja/extensions-2.0/libcaja-gksu.so
+@so lib/caja/extensions-2.0/libcaja-gksu.so
 @comment lib/caja/extensions-2.0/libcaja-image-converter.a
 @comment lib/caja/extensions-2.0/libcaja-image-converter.la
-lib/caja/extensions-2.0/libcaja-image-converter.so
+@so lib/caja/extensions-2.0/libcaja-image-converter.so
 @comment lib/caja/extensions-2.0/libcaja-open-terminal.a
 @comment lib/caja/extensions-2.0/libcaja-open-terminal.la
-lib/caja/extensions-2.0/libcaja-open-terminal.so
+@so lib/caja/extensions-2.0/libcaja-open-terminal.so
 @comment lib/caja/extensions-2.0/libcaja-sendto.a
 @comment lib/caja/extensions-2.0/libcaja-sendto.la
-lib/caja/extensions-2.0/libcaja-sendto.so
+@so lib/caja/extensions-2.0/libcaja-sendto.so
 @comment lib/caja/extensions-2.0/libcaja-share.a
 @comment lib/caja/extensions-2.0/libcaja-share.la
-lib/caja/extensions-2.0/libcaja-share.so
+@so lib/caja/extensions-2.0/libcaja-share.so
 @comment lib/caja/extensions-2.0/libcaja-wallpaper.a
 @comment lib/caja/extensions-2.0/libcaja-wallpaper.la
-lib/caja/extensions-2.0/libcaja-wallpaper.so
+@so lib/caja/extensions-2.0/libcaja-wallpaper.so
 @comment lib/caja/extensions-2.0/libcaja-xattr-tags.a
 @comment lib/caja/extensions-2.0/libcaja-xattr-tags.la
-lib/caja/extensions-2.0/libcaja-xattr-tags.so
+@so lib/caja/extensions-2.0/libcaja-xattr-tags.so
 lib/pkgconfig/caja-sendto.pc
 @man man/man1/caja-sendto.1
 share/caja-extensions/
 share/caja-extensions/caja-image-resize.ui
 share/caja-extensions/caja-image-rotate.ui
-share/caja-extensions/caja-sendto.ui
 share/caja-extensions/share-dialog.ui
 share/caja/extensions/
 share/caja/extensions/libcaja-gksu.caja-extension

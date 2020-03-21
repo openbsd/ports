@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/10/03 14:37:31 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/21 16:14:57 robert Exp $
 
 COMMENT=		MATE support utilities
 
 SHARED_LIBS +=  matedict                  6.7 # 6.7
 
 MATE_PROJECT=		mate-utils
-MATE_VERSION=		1.22.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -33,5 +32,6 @@ RUN_DEPENDS=		graphics/inkscape
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--enable-disk-image-mounter=no
 
 .include <bsd.port.mk>

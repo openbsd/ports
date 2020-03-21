@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/10/03 14:37:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/03/21 16:14:57 robert Exp $
 @bin bin/mate-screensaver
 @bin bin/mate-screensaver-command
 @bin bin/mate-screensaver-preferences
@@ -158,7 +158,6 @@ share/mate-background-properties/
 share/mate-background-properties/cosmos.xml
 share/mate-screensaver/
 share/mate-screensaver/lock-dialog-default.ui
-share/mate-screensaver/mate-screensaver-preferences.ui
 share/pixmaps/
 share/pixmaps/gnome-logo-white.svg
 share/pixmaps/mate-logo-white.svg

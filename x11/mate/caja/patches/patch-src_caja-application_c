@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_caja-application_c,v 1.1 2019/12/24 19:51:08 robert Exp $
+$OpenBSD: patch-src_caja-application_c,v 1.2 2020/03/21 16:14:54 robert Exp $
 
 Index: src/caja-application.c
 --- src/caja-application.c.orig
 +++ src/caja-application.c
-@@ -2218,7 +2218,7 @@ caja_application_local_command_line (GApplication *app
+@@ -2005,7 +2005,7 @@ caja_application_local_command_line (GApplication *app
      if (len > 0)  {
          gchar* concatOptions = g_malloc0(64);
          if (self->priv->geometry == NULL) {

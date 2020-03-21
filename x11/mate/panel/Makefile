@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/11/18 19:57:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/21 16:14:56 robert Exp $
 
 COMMENT=		panel component for MATE
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
 MATE_PROJECT=		mate-panel
-MATE_VERSION=		1.22.2
-REVISION=		0
 
 CATEGORIES=		x11
 
@@ -17,7 +15,7 @@ WANTLIB += ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c
 WANTLIB += cairo cairo-gobject dconf epoxy expat ffi
 WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-3
 WANTLIB += harfbuzz iconv idn2 intl lzma m mate-desktop-2 mate-menu
 WANTLIB += mateweather pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread rsvg-2 soup-2.4 startup-notification-1

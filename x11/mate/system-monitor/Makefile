@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/18 19:57:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/21 16:14:57 robert Exp $
 
 COMMENT=		MATE system monitor
 
 MATE_PROJECT=		mate-system-monitor
-MATE_VERSION=		1.22.2
-REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -16,7 +14,7 @@ WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
 WANTLIB += atk-bridge-2.0 atkmm-1.6 c cairo cairo-gobject cairomm-1.0
 WANTLIB += epoxy expat ffi fontconfig freetype fribidi
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
-WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-3 gtkmm-3.0 gtop-2.0 harfbuzz iconv intl kvm lzma
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png rsvg-2 sigc-2.0 wnck-3 xcb xcb-render

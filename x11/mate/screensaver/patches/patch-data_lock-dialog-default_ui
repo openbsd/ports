@@ -1,6 +1,8 @@
-$OpenBSD: patch-data_lock-dialog-default_ui,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
---- data/lock-dialog-default.ui.orig	Sat Apr 29 13:19:16 2017
-+++ data/lock-dialog-default.ui	Sat Apr 29 13:19:31 2017
+$OpenBSD: patch-data_lock-dialog-default_ui,v 1.2 2020/03/21 16:14:57 robert Exp $
+
+Index: data/lock-dialog-default.ui
+--- data/lock-dialog-default.ui.orig
++++ data/lock-dialog-default.ui
 @@ -234,22 +234,6 @@
                        </packing>
                      </child>

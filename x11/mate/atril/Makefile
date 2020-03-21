@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/10/03 14:35:48 robert Exp $
+# $OpenBSD: Makefile,v 1.29 2020/03/21 16:14:53 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -10,7 +10,6 @@ SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
-MATE_VERSION=		1.22.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -32,7 +31,8 @@ WANTLIB += lz4 lzma nettle notify openjp2 orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png poppler-glib poppler psl secret-1
 WANTLIB += soup-2.4 spectre tasn1 tiff unistring webkit2gtk-4.0 webp xml2
 WANTLIB += z xslt aspell
-WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0
+WANTLIB += gstgl-1.0 kpathsea synctex
+WANTLIB += Xau Xdmcp b2 charset
 WANTLIB += brotlicommon brotlidec fribidi webpdemux woff2common
 WANTLIB += woff2dec
 WANTLIB += xcb-dri3 xcb-present xcb-sync xshmfence zstd
@@ -46,6 +46,8 @@ LIB_DEPENDS=		databases/sqlite3 \
 			multimedia/gstreamer1/plugins-base \
 			print/poppler \
 			print/libspectre \
+			print/texlive/base,-mktexlsr \
+			print/texlive/base,-synctex \
 			graphics/djvulibre \
 			graphics/libgxps \
 			textproc/icu4c \
@@ -57,6 +59,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV +=	ac_cv_lib_kpathsea_kpse_init_prog=no
+CONFIGURE_ARGS=		--enable-pixbuf
 
 .include <bsd.port.mk>

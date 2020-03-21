@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/10/03 14:36:42 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/03/21 16:14:56 robert Exp $
 @bin bin/mate-notification-properties
 lib/mate-notification-daemon/
 lib/mate-notification-daemon/engines/
 @comment lib/mate-notification-daemon/engines/libcoco.a
 @comment lib/mate-notification-daemon/engines/libcoco.la
-lib/mate-notification-daemon/engines/libcoco.so
+@so lib/mate-notification-daemon/engines/libcoco.so
 @comment lib/mate-notification-daemon/engines/libnodoka.a
 @comment lib/mate-notification-daemon/engines/libnodoka.la
-lib/mate-notification-daemon/engines/libnodoka.so
+@so lib/mate-notification-daemon/engines/libnodoka.so
 @comment lib/mate-notification-daemon/engines/libslider.a
 @comment lib/mate-notification-daemon/engines/libslider.la
-lib/mate-notification-daemon/engines/libslider.so
+@so lib/mate-notification-daemon/engines/libslider.so
 @comment lib/mate-notification-daemon/engines/libstandard.a
 @comment lib/mate-notification-daemon/engines/libstandard.la
-lib/mate-notification-daemon/engines/libstandard.so
+@so lib/mate-notification-daemon/engines/libstandard.so
 @bin libexec/mate-notification-daemon
 @man man/man1/mate-notification-properties.1
 share/applications/mate-notification-properties.desktop
@@ -162,8 +162,6 @@ share/locale/yo/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_CN/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/mate-notification-daemon.mo
-share/mate-notification-daemon/
-share/mate-notification-daemon/mate-notification-properties.ui
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

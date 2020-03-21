@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/20 11:15:55 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/21 16:14:55 robert Exp $
 include/libmatekbd/
 include/libmatekbd/matekbd-desktop-config.h
 include/libmatekbd/matekbd-indicator-config.h
@@ -8,19 +8,16 @@ include/libmatekbd/matekbd-keyboard-drawing.h
 include/libmatekbd/matekbd-status.h
 include/libmatekbd/matekbd-util.h
 lib/girepository-1.0/Matekbd-1.0.typelib
-lib/libmatekbd.a
+@static-lib lib/libmatekbd.a
 lib/libmatekbd.la
 @lib lib/libmatekbd.so.${LIBmatekbd_VERSION}
-lib/libmatekbdui.a
+@static-lib lib/libmatekbdui.a
 lib/libmatekbdui.la
 @lib lib/libmatekbdui.so.${LIBmatekbdui_VERSION}
 lib/pkgconfig/libmatekbd.pc
 lib/pkgconfig/libmatekbdui.pc
 share/gir-1.0/Matekbd-1.0.gir
 share/glib-2.0/schemas/org.mate.peripherals-keyboard-xkb.gschema.xml
-share/libmatekbd/
-share/libmatekbd/ui/
-share/libmatekbd/ui/show-layout.ui
 share/locale/af/LC_MESSAGES/libmatekbd.mo
 share/locale/am/LC_MESSAGES/libmatekbd.mo
 share/locale/an/LC_MESSAGES/libmatekbd.mo
@@ -42,8 +39,6 @@ share/locale/cmn/LC_MESSAGES/libmatekbd.mo
 share/locale/crh/LC_MESSAGES/libmatekbd.mo
 share/locale/cs/LC_MESSAGES/libmatekbd.mo
 share/locale/csb/LC_MESSAGES/libmatekbd.mo
-share/locale/cv/
-share/locale/cv/LC_MESSAGES/
 share/locale/cv/LC_MESSAGES/libmatekbd.mo
 share/locale/cy/LC_MESSAGES/libmatekbd.mo
 share/locale/da/LC_MESSAGES/libmatekbd.mo
@@ -123,19 +118,13 @@ share/locale/fr/LC_MESSAGES/libmatekbd.mo
 share/locale/fr_CA/
 share/locale/fr_CA/LC_MESSAGES/
 share/locale/fr_CA/LC_MESSAGES/libmatekbd.mo
-share/locale/frp/
-share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/libmatekbd.mo
 share/locale/fur/LC_MESSAGES/libmatekbd.mo
-share/locale/fy/
-share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/libmatekbd.mo
 share/locale/ga/LC_MESSAGES/libmatekbd.mo
 share/locale/gd/LC_MESSAGES/libmatekbd.mo
 share/locale/gl/LC_MESSAGES/libmatekbd.mo
 share/locale/gu/LC_MESSAGES/libmatekbd.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/libmatekbd.mo
 share/locale/he/LC_MESSAGES/libmatekbd.mo
 share/locale/hi/LC_MESSAGES/libmatekbd.mo
@@ -144,6 +133,9 @@ share/locale/hu/LC_MESSAGES/libmatekbd.mo
 share/locale/hy/LC_MESSAGES/libmatekbd.mo
 share/locale/ia/LC_MESSAGES/libmatekbd.mo
 share/locale/id/LC_MESSAGES/libmatekbd.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/libmatekbd.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/libmatekbd.mo
@@ -154,6 +146,7 @@ share/locale/jv/
 share/locale/jv/LC_MESSAGES/
 share/locale/jv/LC_MESSAGES/libmatekbd.mo
 share/locale/ka/LC_MESSAGES/libmatekbd.mo
+share/locale/kab/LC_MESSAGES/libmatekbd.mo
 share/locale/kk/LC_MESSAGES/libmatekbd.mo
 share/locale/km/LC_MESSAGES/libmatekbd.mo
 share/locale/kn/LC_MESSAGES/libmatekbd.mo
@@ -173,8 +166,6 @@ share/locale/lb/
 share/locale/lb/LC_MESSAGES/
 share/locale/lb/LC_MESSAGES/libmatekbd.mo
 share/locale/li/LC_MESSAGES/libmatekbd.mo
-share/locale/lo/
-share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/libmatekbd.mo
 share/locale/lt/LC_MESSAGES/libmatekbd.mo
 share/locale/lv/LC_MESSAGES/libmatekbd.mo
@@ -187,8 +178,6 @@ share/locale/mn/LC_MESSAGES/libmatekbd.mo
 share/locale/mr/LC_MESSAGES/libmatekbd.mo
 share/locale/ms/LC_MESSAGES/libmatekbd.mo
 share/locale/my/LC_MESSAGES/libmatekbd.mo
-share/locale/nah/
-share/locale/nah/LC_MESSAGES/
 share/locale/nah/LC_MESSAGES/libmatekbd.mo
 share/locale/nb/LC_MESSAGES/libmatekbd.mo
 share/locale/nds/LC_MESSAGES/libmatekbd.mo
@@ -212,8 +201,6 @@ share/locale/pt_BR/LC_MESSAGES/libmatekbd.mo
 share/locale/ro/LC_MESSAGES/libmatekbd.mo
 share/locale/ru/LC_MESSAGES/libmatekbd.mo
 share/locale/rw/LC_MESSAGES/libmatekbd.mo
-share/locale/sc/
-share/locale/sc/LC_MESSAGES/
 share/locale/sc/LC_MESSAGES/libmatekbd.mo
 share/locale/sco/
 share/locale/sco/LC_MESSAGES/
@@ -249,8 +236,6 @@ share/locale/vi/LC_MESSAGES/libmatekbd.mo
 share/locale/wa/LC_MESSAGES/libmatekbd.mo
 share/locale/xh/LC_MESSAGES/libmatekbd.mo
 share/locale/yi/LC_MESSAGES/libmatekbd.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/libmatekbd.mo
 share/locale/zh_CN/LC_MESSAGES/libmatekbd.mo
 share/locale/zh_HK/LC_MESSAGES/libmatekbd.mo

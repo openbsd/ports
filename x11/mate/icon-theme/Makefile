@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/21 16:14:55 robert Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		base icon theme for MATE
 
 MATE_PROJECT=		mate-icon-theme
-MATE_VERSION=		1.22.1
 
 CATEGORIES=		x11
 

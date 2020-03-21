@@ -1,32 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/10/03 14:36:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/03/21 16:14:55 robert Exp $
 @bin bin/engrampa
 lib/caja/
 lib/caja/extensions-2.0/
 @comment lib/caja/extensions-2.0/libcaja-engrampa.a
 @comment lib/caja/extensions-2.0/libcaja-engrampa.la
-lib/caja/extensions-2.0/libcaja-engrampa.so
+@so lib/caja/extensions-2.0/libcaja-engrampa.so
 libexec/engrampa/
 @bin libexec/engrampa-server
 libexec/engrampa/isoinfo.sh
-@bin libexec/engrampa/rpm2cpio
 @man man/man1/engrampa.1
 share/applications/engrampa.desktop
 share/caja/extensions/
 share/caja/extensions/libcaja-engrampa.caja-extension
 share/dbus-1/services/org.mate.Engrampa.service
 share/engrampa/
-share/engrampa/icons/
-share/engrampa/icons/hicolor/
-share/engrampa/icons/hicolor/16x16/
-share/engrampa/icons/hicolor/16x16/actions/
-share/engrampa/icons/hicolor/16x16/actions/add-files-to-archive.png
-share/engrampa/icons/hicolor/16x16/actions/add-folder-to-archive.png
-share/engrampa/icons/hicolor/16x16/actions/extract-archive.png
-share/engrampa/icons/hicolor/24x24/
-share/engrampa/icons/hicolor/24x24/actions/
-share/engrampa/icons/hicolor/24x24/actions/add-files-to-archive.png
-share/engrampa/icons/hicolor/24x24/actions/add-folder-to-archive.png
-share/engrampa/icons/hicolor/24x24/actions/extract-archive.png
 share/engrampa/packages.match
 share/glib-2.0/schemas/org.mate.engrampa.gschema.xml
 share/help/
@@ -990,8 +977,14 @@ share/help/zu/engrampa/figures/engrampa_rightarrow.png
 share/help/zu/engrampa/figures/engrampa_uparrow.png
 share/help/zu/engrampa/index.docbook
 share/help/zu/engrampa/legal.xml
+share/icons/hicolor/16x16/actions/add-files-to-archive.png
+share/icons/hicolor/16x16/actions/add-folder-to-archive.png
+share/icons/hicolor/16x16/actions/extract-archive.png
 share/icons/hicolor/16x16/apps/engrampa.png
 share/icons/hicolor/22x22/apps/engrampa.png
+share/icons/hicolor/24x24/actions/add-files-to-archive.png
+share/icons/hicolor/24x24/actions/add-folder-to-archive.png
+share/icons/hicolor/24x24/actions/extract-archive.png
 share/icons/hicolor/24x24/apps/engrampa.png
 share/icons/hicolor/32x32/apps/engrampa.png
 share/icons/hicolor/scalable/apps/engrampa.svg

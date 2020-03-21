@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/10/03 14:36:12 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/03/21 16:14:55 robert Exp $
 @bin bin/eom
+@bin bin/eom-thumbnailer
 include/eom-2.20/
 include/eom-2.20/eom/
 include/eom-2.20/eom/eom-application-activatable.h
@@ -30,13 +31,13 @@ lib/eom/plugins/
 lib/eom/plugins/fullscreen.plugin
 @comment lib/eom/plugins/libfullscreen.a
 @comment lib/eom/plugins/libfullscreen.la
-lib/eom/plugins/libfullscreen.so
+@so lib/eom/plugins/libfullscreen.so
 @comment lib/eom/plugins/libreload.a
 @comment lib/eom/plugins/libreload.la
-lib/eom/plugins/libreload.so
+@so lib/eom/plugins/libreload.so
 @comment lib/eom/plugins/libstatusbar-date.a
 @comment lib/eom/plugins/libstatusbar-date.la
-lib/eom/plugins/libstatusbar-date.so
+@so lib/eom/plugins/libstatusbar-date.so
 lib/eom/plugins/reload.plugin
 lib/eom/plugins/statusbar-date.plugin
 lib/pkgconfig/eom.pc
@@ -68,11 +69,6 @@ share/eom/icons/hicolor/32x32/actions/slideshow-play.png
 share/eom/icons/hicolor/48x48/
 share/eom/icons/hicolor/48x48/actions/
 share/eom/icons/hicolor/48x48/actions/slideshow-play.png
-share/eom/icons/hicolor/scalable/
-share/eom/icons/hicolor/scalable/actions/
-share/eom/icons/hicolor/scalable/actions/eom-image-collection.svg
-share/eom/icons/hicolor/scalable/actions/eom-plugin.svg
-share/eom/icons/hicolor/scalable/actions/slideshow-play.svg
 share/glib-2.0/schemas/org.mate.eom.enums.xml
 share/glib-2.0/schemas/org.mate.eom.gschema.xml
 share/gtk-doc/html/eom/
@@ -326,6 +322,14 @@ share/help/es/eom/figures/eom_start_window.png
 share/help/es/eom/figures/eom_toolbar_editor_window.png
 share/help/es/eom/index.docbook
 share/help/es/eom/legal.xml
+share/help/es_AR/
+share/help/es_AR/eom/
+share/help/es_AR/eom/figures/
+share/help/es_AR/eom/figures/eom_save_as_window.png
+share/help/es_AR/eom/figures/eom_start_window.png
+share/help/es_AR/eom/figures/eom_toolbar_editor_window.png
+share/help/es_AR/eom/index.docbook
+share/help/es_AR/eom/legal.xml
 share/help/et/
 share/help/et/eom/
 share/help/et/eom/figures/
@@ -438,6 +442,14 @@ share/help/id/eom/figures/eom_start_window.png
 share/help/id/eom/figures/eom_toolbar_editor_window.png
 share/help/id/eom/index.docbook
 share/help/id/eom/legal.xml
+share/help/ie/
+share/help/ie/eom/
+share/help/ie/eom/figures/
+share/help/ie/eom/figures/eom_save_as_window.png
+share/help/ie/eom/figures/eom_start_window.png
+share/help/ie/eom/figures/eom_toolbar_editor_window.png
+share/help/ie/eom/index.docbook
+share/help/ie/eom/legal.xml
 share/help/is/
 share/help/is/eom/
 share/help/is/eom/figures/
@@ -470,6 +482,14 @@ share/help/ka/eom/figures/eom_start_window.png
 share/help/ka/eom/figures/eom_toolbar_editor_window.png
 share/help/ka/eom/index.docbook
 share/help/ka/eom/legal.xml
+share/help/kab/
+share/help/kab/eom/
+share/help/kab/eom/figures/
+share/help/kab/eom/figures/eom_save_as_window.png
+share/help/kab/eom/figures/eom_start_window.png
+share/help/kab/eom/figures/eom_toolbar_editor_window.png
+share/help/kab/eom/index.docbook
+share/help/kab/eom/legal.xml
 share/help/kk/
 share/help/kk/eom/
 share/help/kk/eom/figures/
@@ -898,8 +918,6 @@ share/locale/hu/LC_MESSAGES/eom.mo
 share/locale/hy/LC_MESSAGES/eom.mo
 share/locale/ia/LC_MESSAGES/eom.mo
 share/locale/id/LC_MESSAGES/eom.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/eom.mo
 share/locale/ig/LC_MESSAGES/eom.mo
 share/locale/is/LC_MESSAGES/eom.mo
@@ -983,3 +1001,4 @@ share/locale/zu/LC_MESSAGES/eom.mo
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/metainfo/eom.appdata.xml
+share/thumbnailers/eom-thumbnailer.thumbnailer
