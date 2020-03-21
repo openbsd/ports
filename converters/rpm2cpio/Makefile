@@ -1,27 +1,21 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/21 11:07:38 kn Exp $
 
-COMMENT=	rpm2cpio converter in Perl
+COMMENT=	convert .rpm files to cpio format
 
-DISTNAME=	rpm2cpio-1.3
+DISTNAME=	rpm2cpio-1.4
 CATEGORIES=	converters archivers
 
-REVISION=	2
-
-HOMEPAGE=	http://www.freebsd.org/cgi/cvsweb.cgi/ports/archivers/rpm2cpio/
+HOMEPAGE=	https://svnweb.freebsd.org/ports/archivers/rpm2cpio/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 DISTFILES=	# empty
 
-RUN_DEPENDS=	archivers/bzip2 \
-		archivers/xz
+RUN_DEPENDS=	archivers/libarchive>2.8
 
-# don't extract, don't build. Install the script directly
-EXTRACT_ONLY=	# empty
 NO_BUILD=	Yes
 NO_TEST=	Yes
-PKG_ARCH=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/rpm2cpio ${PREFIX}/bin

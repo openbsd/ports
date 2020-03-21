@@ -1,4 +1,7 @@
-Rpm archives are actually cpio archive disguised behind another header.
+Convert .rpm files to cpio format.
 
-Rpm2cpio is a simple perl filter that strips this header, without
-having to install the whole rpm program.
+Why does the world need another rpm2cpio?  because the existing one
+won't build unless you have half a ton of things that aren't really
+required for it, since it uses the same library used to extract RPM's.
+
+This version is just a tiny wrapper around bsdtar.
