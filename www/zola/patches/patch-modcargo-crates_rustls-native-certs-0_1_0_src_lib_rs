@@ -1,0 +1,17 @@
+$OpenBSD: patch-modcargo-crates_rustls-native-certs-0_1_0_src_lib_rs,v 1.1 2020/03/21 08:09:44 semarie Exp $
+
+Index: modcargo-crates/rustls-native-certs-0.1.0/src/lib.rs
+--- modcargo-crates/rustls-native-certs-0.1.0/src/lib.rs.orig
++++ modcargo-crates/rustls-native-certs-0.1.0/src/lib.rs
+@@ -4,9 +4,9 @@
+ //! It consists of a single function [load_native_certs](fn.load_native_certs.html) which returns a
+ //! `rustls::RootCertStore` pre-filled from the native certificate store.
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "openbsd")]
+ mod linux;
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "openbsd")]
+ use linux as platform;
+ 
+ #[cfg(target_family = "windows")]

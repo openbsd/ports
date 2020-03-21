@@ -1,0 +1,14 @@
+$OpenBSD: patch-modcargo-crates_rustls-native-certs-0_1_0_Cargo_toml,v 1.1 2020/03/21 08:09:44 semarie Exp $
+
+Index: modcargo-crates/rustls-native-certs-0.1.0/Cargo.toml
+--- modcargo-crates/rustls-native-certs-0.1.0/Cargo.toml.orig
++++ modcargo-crates/rustls-native-certs-0.1.0/Cargo.toml
+@@ -34,7 +34,7 @@ version = "0.21"
+ 
+ [dev-dependencies.webpki-roots]
+ version = "0"
+-[target."cfg(target_os = \"linux\")".dependencies.openssl-probe]
++[target."cfg(target_os = \"openbsd\")".dependencies.openssl-probe]
+ version = "0.1.2"
+ [target."cfg(target_os = \"macos\")".dependencies.security-framework]
+ version = "0.3.2"
