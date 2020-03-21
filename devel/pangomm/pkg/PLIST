@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/11/05 17:20:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/03/21 13:40:45 ajacoutot Exp $
 @conflict gtk2mm-<2.14
 include/pangomm-1.4/
 include/pangomm-1.4/pangomm/
@@ -57,7 +57,7 @@ include/pangomm-1.4/pangomm/renderer.h
 include/pangomm-1.4/pangomm/tabarray.h
 include/pangomm-1.4/pangomm/types.h
 include/pangomm-1.4/pangomm/wrap_init.h
-lib/libpangomm-1.4.a
+@static-lib lib/libpangomm-1.4.a
 lib/libpangomm-1.4.la
 @lib lib/libpangomm-1.4.so.${LIBpangomm-1.4_VERSION}
 lib/pangomm-1.4/
@@ -78,6 +78,8 @@ share/doc/pangomm-1.4/images/top.gif
 share/doc/pangomm-1.4/reference/
 share/doc/pangomm-1.4/reference/html/
 share/doc/pangomm-1.4/reference/html/annotated.html
+share/doc/pangomm-1.4/reference/html/arrowdown.png
+share/doc/pangomm-1.4/reference/html/arrowright.png
 share/doc/pangomm-1.4/reference/html/bc_s.png
 share/doc/pangomm-1.4/reference/html/bdwn.png
 share/doc/pangomm-1.4/reference/html/classPango_1_1Analysis-members.html
@@ -249,12 +251,11 @@ share/doc/pangomm-1.4/reference/html/inherit_graph_8.png
 share/doc/pangomm-1.4/reference/html/inherit_graph_9.png
 share/doc/pangomm-1.4/reference/html/inherits.html
 share/doc/pangomm-1.4/reference/html/jquery.js
-share/doc/pangomm-1.4/reference/html/menu.js
-share/doc/pangomm-1.4/reference/html/menudata.js
 share/doc/pangomm-1.4/reference/html/modules.html
 share/doc/pangomm-1.4/reference/html/namespaceGlib.html
 share/doc/pangomm-1.4/reference/html/namespacePango.html
 share/doc/pangomm-1.4/reference/html/namespacemembers.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_b.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_c.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_d.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_e.html
@@ -273,11 +274,28 @@ share/doc/pangomm-1.4/reference/html/namespacemembers_eval_v.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_eval_w.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_f.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_func.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_b.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_c.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_f.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_g.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_i.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_l.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_m.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_o.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_p.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_s.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_t.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_u.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_v.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_func_w.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_g.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_i.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_k.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_l.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_m.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_n.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_o.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_p.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_r.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_s.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_t.html
@@ -285,6 +303,19 @@ share/doc/pangomm-1.4/reference/html/namespacemembers_type.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_u.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_v.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_vars.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_b.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_f.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_i.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_k.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_m.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_n.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_o.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_p.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_r.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_s.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_t.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_u.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_vars_v.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_w.html
 share/doc/pangomm-1.4/reference/html/namespaces.html
 share/doc/pangomm-1.4/reference/html/nav_f.png
