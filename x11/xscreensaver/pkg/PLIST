@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2019/07/03 16:15:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.49 2020/03/21 21:07:02 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -68,6 +68,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/dangerball
 @bin libexec/xscreensaver/decayscreen
 @bin libexec/xscreensaver/deco
+@bin libexec/xscreensaver/deepstars
 @bin libexec/xscreensaver/deluxe
 @bin libexec/xscreensaver/demon
 @bin libexec/xscreensaver/discoball
@@ -81,6 +82,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/epicycle
 @bin libexec/xscreensaver/eruption
 @bin libexec/xscreensaver/esper
+@bin libexec/xscreensaver/etruscanvenus
 @bin libexec/xscreensaver/euler2d
 @bin libexec/xscreensaver/extrusion
 @bin libexec/xscreensaver/fadeplot
@@ -102,6 +104,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/geodesic
 @bin libexec/xscreensaver/geodesicgears
 @bin libexec/xscreensaver/gflux
+@bin libexec/xscreensaver/gibson
 @bin libexec/xscreensaver/glblur
 @bin libexec/xscreensaver/glcells
 @bin libexec/xscreensaver/gleidescope
@@ -200,6 +203,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/rubik
 @bin libexec/xscreensaver/rubikblocks
 @bin libexec/xscreensaver/sballs
+@bin libexec/xscreensaver/scooter
 @bin libexec/xscreensaver/shadebobs
 @bin libexec/xscreensaver/sierpinski
 @bin libexec/xscreensaver/sierpinski3d
@@ -309,6 +313,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/cynosure.6
 @man man/man6/dangerball.6
 @man man/man6/decayscreen.6
+@man man/man6/deepstars.6
 @man man/man6/deluxe.6
 @man man/man6/demon.6
 @man man/man6/discoball.6
@@ -322,6 +327,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/epicycle.6
 @man man/man6/eruption.6
 @man man/man6/esper.6
+@man man/man6/etruscanvenus.6
 @man man/man6/euler2d.6
 @man man/man6/extrusion.6
 @man man/man6/fadeplot.6
@@ -343,6 +349,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/geodesic.6
 @man man/man6/geodesicgears.6
 @man man/man6/gflux.6
+@man man/man6/gibson.6
 @man man/man6/glblur.6
 @man man/man6/glcells.6
 @man man/man6/gleidescope.6
@@ -439,6 +446,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/rubik.6
 @man man/man6/rubikblocks.6
 @man man/man6/sballs.6
+@man man/man6/scooter.6
 @man man/man6/shadebobs.6
 @man man/man6/sierpinski.6
 @man man/man6/sierpinski3d.6
@@ -563,6 +571,7 @@ share/applications/screensavers/engine.desktop
 share/applications/screensavers/epicycle.desktop
 share/applications/screensavers/eruption.desktop
 share/applications/screensavers/esper.desktop
+share/applications/screensavers/etruscanvenus.desktop
 share/applications/screensavers/euler2d.desktop
 share/applications/screensavers/extrusion.desktop
 share/applications/screensavers/fadeplot.desktop
@@ -586,6 +595,7 @@ share/applications/screensavers/gears.desktop
 share/applications/screensavers/geodesic.desktop
 share/applications/screensavers/geodesicgears.desktop
 share/applications/screensavers/gflux.desktop
+share/applications/screensavers/gibson.desktop
 share/applications/screensavers/glblur.desktop
 share/applications/screensavers/glcells.desktop
 share/applications/screensavers/gleidescope.desktop
@@ -695,6 +705,7 @@ share/applications/screensavers/rotzoomer.desktop
 share/applications/screensavers/rubik.desktop
 share/applications/screensavers/rubikblocks.desktop
 share/applications/screensavers/sballs.desktop
+share/applications/screensavers/scooter.desktop
 share/applications/screensavers/shadebobs.desktop
 share/applications/screensavers/sierpinski.desktop
 share/applications/screensavers/sierpinski3d.desktop
@@ -832,6 +843,7 @@ share/xscreensaver/config/cynosure.xml
 share/xscreensaver/config/dangerball.xml
 share/xscreensaver/config/decayscreen.xml
 share/xscreensaver/config/deco.xml
+share/xscreensaver/config/deepstars.xml
 share/xscreensaver/config/deluxe.xml
 share/xscreensaver/config/demon.xml
 share/xscreensaver/config/discoball.xml
@@ -845,6 +857,7 @@ share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
 share/xscreensaver/config/eruption.xml
 share/xscreensaver/config/esper.xml
+share/xscreensaver/config/etruscanvenus.xml
 share/xscreensaver/config/euler2d.xml
 share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
@@ -866,6 +879,7 @@ share/xscreensaver/config/gears.xml
 share/xscreensaver/config/geodesic.xml
 share/xscreensaver/config/geodesicgears.xml
 share/xscreensaver/config/gflux.xml
+share/xscreensaver/config/gibson.xml
 share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/glcells.xml
 share/xscreensaver/config/gleidescope.xml
@@ -963,6 +977,7 @@ share/xscreensaver/config/rotzoomer.xml
 share/xscreensaver/config/rubik.xml
 share/xscreensaver/config/rubikblocks.xml
 share/xscreensaver/config/sballs.xml
+share/xscreensaver/config/scooter.xml
 share/xscreensaver/config/shadebobs.xml
 share/xscreensaver/config/sierpinski.xml
 share/xscreensaver/config/sierpinski3d.xml
