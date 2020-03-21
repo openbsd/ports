@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_css_c,v 1.5 2015/04/27 12:16:02 ajacoutot Exp $
---- src/css.c.orig	Tue Jan 27 08:56:05 2015
-+++ src/css.c	Tue Feb 10 14:33:01 2015
-@@ -230,10 +230,13 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
+$OpenBSD: patch-src_css_c,v 1.6 2020/03/21 18:58:07 kmos Exp $
+
+Index: src/css.c
+--- src/css.c.orig
++++ src/css.c
+@@ -231,10 +231,13 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
          {
              char psz_key[PSZ_KEY_SIZE];
              unsigned int k0, k1, k2, k3, k4;
@@ -17,7 +19,7 @@ $OpenBSD: patch-src_css_c,v 1.5 2015/04/27 12:16:02 ajacoutot Exp $
                   && sscanf( psz_key, "%x:%x:%x:%x:%x",
                              &k0, &k1, &k2, &k3, &k4 ) == 5 )
              {
-@@ -247,9 +250,12 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
+@@ -248,9 +251,12 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
                  /* Don't try to save it again */
                  b_cache = 0;
                  i_ret = 1;
@@ -32,7 +34,7 @@ $OpenBSD: patch-src_css_c,v 1.5 2015/04/27 12:16:02 ajacoutot Exp $
          }
      }
  
-@@ -263,6 +269,15 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
+@@ -264,6 +270,15 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
          {
              print_error( dvdcss, "fatal error in Video Title Set (VTS) "
                                   "Content Scrambling System (CSS) key" );
