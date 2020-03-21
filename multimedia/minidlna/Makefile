@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2020/02/03 20:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2020/03/21 18:32:32 ajacoutot Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
 GH_ACCOUNT=	glebius
 GH_PROJECT=	minidlna
-GH_TAGNAME=	43573257e45728e070a5f30bd74648c86537e625
+GH_TAGNAME=	f06964a9b4253c93ce96dabd8953eb6dfc4406bd
 V=		1.2.1
 DISTNAME=	minidlna-${V}-glebius
 PKGNAME=	minidlna-${V}
 
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	multimedia
 
