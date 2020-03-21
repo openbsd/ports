@@ -1,8 +1,8 @@
-$OpenBSD: patch-poppler_XRef_cc,v 1.22 2019/06/19 19:39:14 kili Exp $
+$OpenBSD: patch-poppler_XRef_cc,v 1.23 2020/03/21 22:42:42 kili Exp $
 Index: poppler/XRef.cc
 --- poppler/XRef.cc.orig
 +++ poppler/XRef.cc
-@@ -1013,49 +1013,38 @@ void XRef::getEncryptionParameters(unsigned char **fil
+@@ -1042,49 +1042,38 @@ bool XRef::isRefEncrypted(Ref r)
  }
  
  bool XRef::okToPrint(bool ignoreOwnerPW) const {
