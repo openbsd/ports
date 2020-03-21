@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/03/20 16:44:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/21 21:18:06 rsadowski Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -11,7 +11,7 @@ DPB_PROPERTIES =	parallel
 VERSION =		${QT5_WEBKIT_VERSION}
 DISTNAME =		qtwebkit-${QT5_WEBKIT_VERSION}-alpha3
 PKGNAME =		qtwebkit-${QT5_WEBKIT_VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  Qt5WebKit               3.0 # 5.9
 SHARED_LIBS +=  Qt5WebKitWidgets        3.0 # 5.9
@@ -37,6 +37,7 @@ WANTLIB += hyphen icui18n icuuc jpeg m png sqlite3 webp xml2 xslt
 MASTER_SITES =		https://github.com/annulen/webkit/releases/download/${DISTNAME}/
 
 MODULES =		devel/cmake \
+			lang/python \
 			lang/ruby \
 			x11/qt5
 
