@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.13 2019/12/10 07:32:42 semarie Exp $
+$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.14 2020/03/21 05:23:59 semarie Exp $
 try to reduce memory usage on aarch64:
  - reduce memory use by retaining fewer names within compilation artifacts
 Index: src/bootstrap/bin/rustc.rs
 --- src/bootstrap/bin/rustc.rs.orig
 +++ src/bootstrap/bin/rustc.rs
-@@ -113,6 +113,12 @@ fn main() {
+@@ -115,6 +115,12 @@ fn main() {
              Err(..) => "n",
          };
  

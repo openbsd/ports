@@ -1,14 +1,23 @@
-$OpenBSD: patch-src_bootstrap_lib_rs,v 1.27 2020/02/11 12:48:20 semarie Exp $
+$OpenBSD: patch-src_bootstrap_lib_rs,v 1.28 2020/03/21 05:23:59 semarie Exp $
 let us compilation choice to be honored.
 https://github.com/rust-lang/rust/issues/39900
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs
-@@ -752,7 +752,6 @@ impl Build {
-         // cc-rs because the build scripts will determine that for themselves.
-         let mut base = self.cc[&target].args().iter()
-                            .map(|s| s.to_string_lossy().into_owned())
--                           .filter(|s| !s.starts_with("-O") && !s.starts_with("/O"))
-                            .collect::<Vec<String>>();
+@@ -759,7 +759,6 @@ impl Build {
+             .args()
+             .iter()
+             .map(|s| s.to_string_lossy().into_owned())
+-            .filter(|s| !s.starts_with("-O") && !s.starts_with("/O"))
+             .collect::<Vec<String>>();
  
          // If we're compiling on macOS then we add a few unconditional flags
+@@ -1026,7 +1025,7 @@ impl Build {
+     }
+ 
+     fn llvm_link_tools_dynamically(&self, target: Interned<String>) -> bool {
+-        (target.contains("linux-gnu") || target.contains("apple-darwin"))
++        target.contains("linux-gnu") || target.contains("apple-darwin")
+     }
+ 
+     /// Returns the `version` string associated with this compiler for Rust

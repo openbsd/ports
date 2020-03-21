@@ -1,22 +1,21 @@
-$OpenBSD: patch-src_libstd_sys_unix_os_rs,v 1.14 2019/12/22 17:00:31 semarie Exp $
+$OpenBSD: patch-src_libstd_sys_unix_os_rs,v 1.15 2020/03/21 05:23:59 semarie Exp $
 argv0 isn't suitable as current_exe() in all cases.
 Index: src/libstd/sys/unix/os.rs
 --- src/libstd/sys/unix/os.rs.orig
 +++ src/libstd/sys/unix/os.rs
-@@ -279,13 +279,14 @@ pub fn current_exe() -> io::Result<PathBuf> {
+@@ -314,13 +314,13 @@ pub fn current_exe() -> io::Result<PathBuf> {
+         cvt(libc::sysctl(mib, 4, argv.as_mut_ptr() as *mut _, &mut argv_len, ptr::null_mut(), 0))?;
          argv.set_len(argv_len as usize);
          if argv[0].is_null() {
-             return Err(io::Error::new(io::ErrorKind::Other,
--                                      "no current exe available"))
-+                                      "no current exe available (null)"))
+-            return Err(io::Error::new(io::ErrorKind::Other, "no current exe available"));
++            return Err(io::Error::new(io::ErrorKind::Other, "no current exe available (null)"));
          }
          let argv0 = CStr::from_ptr(argv[0]).to_bytes();
          if argv0[0] == b'.' || argv0.iter().any(|b| *b == b'/') {
              crate::fs::canonicalize(OsStr::from_bytes(argv0))
          } else {
 -            Ok(PathBuf::from(OsStr::from_bytes(argv0)))
-+            Err(io::Error::new(io::ErrorKind::Other,
-+                               "no current exe available (short)"))
++            Err(io::Error::new(io::ErrorKind::Other, "no current exe available (short)"))
          }
      }
  }

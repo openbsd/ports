@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_tools_cargo_src_cargo_core_compiler_context_compilation_files_rs,v 1.10 2020/02/11 12:48:20 semarie Exp $
+$OpenBSD: patch-src_tools_cargo_src_cargo_core_compiler_context_compilation_files_rs,v 1.11 2020/03/21 05:23:59 semarie Exp $
 For port tree, use a custom metadata generation method to have stable hash between archs.
 Use an environment variable to use alternate method.
 
 Index: src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
 --- src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs.orig
 +++ src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
-@@ -511,6 +511,27 @@ fn compute_metadata<'a, 'cfg>(
+@@ -527,6 +527,27 @@ fn compute_metadata<'a, 'cfg>(
  
      let mut hasher = SipHasher::new_with_keys(0, 0);
  
