@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/22 17:44:53 kn Exp $
 
 COMMENT=	small tools to operate on patch files
 
@@ -22,8 +22,7 @@ MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		textproc/xmlto
 RUN_DEPENDS=	devel/gpatch
-TEST_DEPENDS=	misc/rpm \
-		shells/bash
+TEST_DEPENDS=	shells/bash
 TEST_FLAGS=	PATCH=${LOCALBASE}/bin/gpatch
 
 # only needed for tests

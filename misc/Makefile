@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2020/02/24 15:11:09 bluhm Exp $
+# $OpenBSD: Makefile,v 1.194 2020/03/22 17:44:52 kn Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -94,7 +94,6 @@
      SUBDIR += reprepro
      SUBDIR += rlwrap
      SUBDIR += rocrail
-     SUBDIR += rpm
      SUBDIR += screen
      SUBDIR += screen-shm,shm
      SUBDIR += sent
