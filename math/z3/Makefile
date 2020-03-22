@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/10/19 09:42:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/22 16:01:43 kn Exp $
 
 COMMENT =	Z3 theorem prover
 
@@ -10,6 +10,7 @@ GH_TAGNAME =	${GH_PROJECT}-${VERSION}
 
 DISTNAME =	${GH_TAGNAME}
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 SHARED_LIBS =	z3			2.0 # 4.8
 
