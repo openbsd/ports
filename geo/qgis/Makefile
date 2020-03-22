@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2020/02/29 08:17:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.125 2020/03/22 17:56:21 landry Exp $
 
 BROKEN-powerpc =	does not build: "operand out of range"
 
@@ -6,15 +6,14 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.12.0
-REVISION =	1
+DISTNAME =	qgis-3.12.1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	40.0 \
-		qgis_app	23.0 \
-		qgis_gui	30.0 \
+SHARED_LIBS =	qgis_core	40.1 \
+		qgis_app	24.0 \
+		qgis_gui	31.0 \
 		qgis_analysis	15.0 \
 		qgis_server	12.0 \
 		qgispython	6.0 \
