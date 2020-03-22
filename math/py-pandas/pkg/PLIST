@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/02/27 18:23:39 bket Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/22 16:36:29 bket Exp $
 @conflict py-pandas-*
 @pkgpath math/py-pandas
 lib/python${MODPY_VERSION}/site-packages/pandas/
@@ -615,6 +615,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}test_indexing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}test_missing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}test_operators.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}test_replace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}test_repr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}test_sorting.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}test_subclass.${MODPY_PYC_MAGIC_TAG}pyc
@@ -629,6 +630,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_dt
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_indexing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_missing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_operators.py
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_replace.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_repr.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_sorting.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_subclass.py
@@ -1038,6 +1040,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_datetimelike.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_formats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_indexing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_join.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_missing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_ops.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1054,6 +1057,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_dat
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_datetimelike.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_formats.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_indexing.py
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_join.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_misc.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_missing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_ops.py
@@ -1191,6 +1195,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_constructors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_formats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_indexing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_join.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_ops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_partial_slicing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_scalar_compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1203,6 +1208,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_as
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_constructors.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_formats.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_indexing.py
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_join.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_ops.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_partial_slicing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_scalar_compat.py
