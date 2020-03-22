@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2020/03/22 00:57:51 jca Exp $
+# $OpenBSD: Makefile,v 1.247 2020/03/22 00:58:36 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -16,11 +16,11 @@ DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
-PKGNAME-python =	py-llvm-${LLVM_V}
+PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	8
-REVISION-python = 0
-REVISION-lldb =	1
+REVISION-main =	9
+REVISION-python = 1
+REVISION-lldb =	2
 
 CATEGORIES =	devel
 
@@ -50,11 +50,16 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python
 
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_ADJ_FILES =	tools/clang/tools/clang-format/git-clang-format \
+			tools/clang/tools/scan-view/bin/scan-view \
+			tools/clang/utils/hmaptool/hmaptool
+
 TEST_DEPENDS =		devel/dejagnu \
 			shells/bash
 BUILD_DEPENDS +=	devel/swig \
-			textproc/py-sphinx \
-			textproc/py-recommonmark
+			textproc/py-sphinx${MODPY_FLAVOR} \
+			textproc/py-recommonmark${MODPY_FLAVOR}
 
 .include <bsd.port.arch.mk>
 
@@ -78,7 +83,7 @@ WANTLIB-lldb +=		curses edit form panel
 # XXX linked against libLLVM-x.so, should be LIB_DEPENDS
 RUN_DEPENDS-lldb =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-lldb +=	${MODPY_RUN_DEPENDS} \
-			devel/py-six
+			devel/py-six${MODPY_FLAVOR}
 LIB_DEPENDS-lldb =	${LIB_DEPENDS}
 
 CONFIGURE_STYLE =	cmake
@@ -126,6 +131,7 @@ post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
 	mv ${WRKDIR}/lldb-${LLVM_V}.src ${WRKSRC}/tools/lldb
+	${LOCALBASE}/bin/2to3 -w ${WRKSRC}/tools/lldb/examples/python/symbolication.py
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp \
@@ -133,8 +139,10 @@ pre-configure:
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-build:
-	cd ${WRKSRC}/docs && make -f Makefile.sphinx man
-	cd ${WRKSRC}/tools/clang/docs && make -f Makefile.sphinx man
+	cd ${WRKSRC}/docs && \
+	    make -f Makefile.sphinx man SPHINXBUILD="sphinx-build${MODPY_BIN_SUFFIX}"
+	cd ${WRKSRC}/tools/clang/docs && \
+	    make -f Makefile.sphinx man SPHINXBUILD="sphinx-build${MODPY_BIN_SUFFIX}"
 
 post-install:
 	${INSTALL_DATA_DIR} \
@@ -142,7 +150,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/clang/bindings/python/clang/* \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/clang
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/clang
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/
 	${INSTALL_DATA} ${WRKSRC}/docs/_build/man/* \
 	    ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/tools/clang/docs/_build/man/clang.1 \

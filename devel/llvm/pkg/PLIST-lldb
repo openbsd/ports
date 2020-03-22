@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lldb,v 1.4 2020/03/06 14:39:57 jca Exp $
+@comment $OpenBSD: PLIST-lldb,v 1.5 2020/03/22 00:58:36 jca Exp $
 @conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
 @conflict llvm-<6.0.1p19
 @bin bin/lldb
@@ -608,15 +608,29 @@ include/lldb/lldb-versioning.h
 @static-lib lib/liblldbUtilityHelpers.a
 lib/python${MODPY_VERSION}/site-packages/lldb/
 lib/python${MODPY_VERSION}/site-packages/lldb/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}embedded_interpreter.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.so
 lib/python${MODPY_VERSION}/site-packages/lldb/embedded_interpreter.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/Logger.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}Logger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}attrib_fromdict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}metrics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}synth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/attrib_fromdict.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cache.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}gnu_libstdcpp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}libcxx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/gnu_libstdcpp.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/libcxx.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/metrics.py
@@ -624,6 +638,11 @@ lib/python${MODPY_VERSION}/site-packages/lldb/formatters/synth.py
 lib/python${MODPY_VERSION}/site-packages/lldb/lldb-argdumper
 lib/python${MODPY_VERSION}/site-packages/lldb/runtime/
 lib/python${MODPY_VERSION}/site-packages/lldb/runtime/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/runtime/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lldb/runtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}symbolication.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/symbolication.py

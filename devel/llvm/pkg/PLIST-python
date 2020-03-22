@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-python,v 1.5 2020/03/06 14:39:57 jca Exp $
+@comment $OpenBSD: PLIST-python,v 1.6 2020/03/22 00:58:36 jca Exp $
 lib/python${MODPY_VERSION}/site-packages/clang/
 lib/python${MODPY_VERSION}/site-packages/clang/__init__.py
-lib/python${MODPY_VERSION}/site-packages/clang/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}cindex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}enumerations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/clang/cindex.py
-lib/python${MODPY_VERSION}/site-packages/clang/cindex.pyc
 lib/python${MODPY_VERSION}/site-packages/clang/enumerations.py
-lib/python${MODPY_VERSION}/site-packages/clang/enumerations.pyc
