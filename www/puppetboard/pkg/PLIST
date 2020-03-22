@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/07/19 05:39:59 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/03/22 22:18:06 sebastia Exp $
 @newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/puppetboard
 puppetboard/
@@ -45,8 +45,8 @@ puppetboard/puppetboard/static/css/puppetboard.css
 puppetboard/puppetboard/static/css/radiator.css
 puppetboard/puppetboard/static/fonts/
 puppetboard/puppetboard/static/fonts/Open_Sans.woff
-puppetboard/puppetboard/static/jquery-2.1.1/
-puppetboard/puppetboard/static/jquery-2.1.1/jquery.min.js
+puppetboard/puppetboard/static/jquery-3.4.1/
+puppetboard/puppetboard/static/jquery-3.4.1/jquery.min.js
 puppetboard/puppetboard/static/jquery-datatables-1.10.13/
 puppetboard/puppetboard/static/jquery-datatables-1.10.13/dataTables.semanticui.min.css
 puppetboard/puppetboard/static/jquery-datatables-1.10.13/dataTables.semanticui.min.js
