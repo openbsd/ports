@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/07/18 08:08:29 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/03/22 14:39:14 sthen Exp $
 @conflict kdebase-<4
 @pkgpath x11/kde4/artwork
 @bin bin/kbanner.kss
@@ -23,18 +23,18 @@
 @bin bin/kwave.kss
 @bin bin/kxsconfig
 @bin bin/kxsrun
-lib/kde4/kstyle_phase_config.so
-lib/kde4/kwin3_kde2.so
-lib/kde4/kwin3_keramik.so
-lib/kde4/kwin3_modernsys.so
-lib/kde4/kwin3_quartz.so
-lib/kde4/kwin3_redmond.so
-lib/kde4/kwin3_web.so
-lib/kde4/kwin_kde2_config.so
-lib/kde4/kwin_keramik_config.so
-lib/kde4/kwin_modernsys_config.so
-lib/kde4/kwin_quartz_config.so
-lib/kde4/plugins/styles/phasestyle.so
+@so lib/kde4/kstyle_phase_config.so
+@so lib/kde4/kwin3_kde2.so
+@so lib/kde4/kwin3_keramik.so
+@so lib/kde4/kwin3_modernsys.so
+@so lib/kde4/kwin3_quartz.so
+@so lib/kde4/kwin3_redmond.so
+@so lib/kde4/kwin3_web.so
+@so lib/kde4/kwin_kde2_config.so
+@so lib/kde4/kwin_keramik_config.so
+@so lib/kde4/kwin_modernsys_config.so
+@so lib/kde4/kwin_quartz_config.so
+@so lib/kde4/plugins/styles/phasestyle.so
 share/apps/color-schemes/CherryBlossom.colors
 share/apps/color-schemes/Chrome.colors
 share/apps/color-schemes/Desert.colors
