@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/05/29 21:16:03 naddy Exp $
-bin/bggen
-bin/vdcomp
-bin/xcmap
-bin/xv
-bin/xvpictoppm
+@comment $OpenBSD: PLIST,v 1.8 2020/03/22 10:02:26 espie Exp $
+@bin bin/bggen
+@bin bin/vdcomp
+@bin bin/xcmap
+@bin bin/xv
+@bin bin/xvpictoppm
 @man man/man1/bggen.1
 @man man/man1/vdcomp.1
 @man man/man1/xcmap.1

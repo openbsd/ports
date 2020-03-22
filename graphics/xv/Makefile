@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2019/07/14 00:39:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2020/03/22 10:02:26 espie Exp $
 
 COMMENT=	X11 image display and modification tool
 
 DISTNAME=	xv-3.10a
-REVISION=	15
+REVISION=	16
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
@@ -26,6 +26,7 @@ MAKE_ENV=	SYSCONFDIR="$(SYSCONFDIR)"
 
 DESTDIRNAME=	none
 NO_TEST=	Yes
+DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
 pre-patch:
 	@${PATCH} ${PATCH_DIST_ARGS} -p1 \
