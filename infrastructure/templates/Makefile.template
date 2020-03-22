@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.86 2019/11/19 12:39:04 espie Exp $
+# $OpenBSD: Makefile.template,v 1.87 2020/03/22 17:18:01 cwen Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -239,5 +239,9 @@ MASTER_SITES =		???
 #
 #do-gen:
 #	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
+
+# Fix dos line-endings in files needing patches
+#pre-patch:
+#	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' [...]
 
 .include <bsd.port.mk>
