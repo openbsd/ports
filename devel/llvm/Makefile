@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2020/03/15 19:33:32 jca Exp $
+# $OpenBSD: Makefile,v 1.246 2020/03/22 00:57:51 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -55,7 +55,6 @@ TEST_DEPENDS =		devel/dejagnu \
 BUILD_DEPENDS +=	devel/swig \
 			textproc/py-sphinx \
 			textproc/py-recommonmark
-RUN_DEPENDS +=		devel/gtest
 
 .include <bsd.port.arch.mk>
 

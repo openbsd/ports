@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2020/03/06 14:39:57 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2020/03/22 00:57:51 jca Exp $
 @pkgpath devel/llvm
 @bin bin/bugpoint
 @bin bin/c-index-test
@@ -2455,8 +2455,6 @@ lib/cmake/llvm/VersionFromVCS.cmake
 @static-lib lib/libclangStaticAnalyzerCore.a
 @static-lib lib/libclangStaticAnalyzerFrontend.a
 @static-lib lib/libclangTooling.a
-@comment lib/libgtest.a
-@comment lib/libgtest_main.a
 @static-lib lib/libclangToolingASTDiff.a
 @static-lib lib/libclangToolingCore.a
 @static-lib lib/libclangToolingInclusions.a
