@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/27 22:35:41 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/22 01:14:31 jca Exp $
 
 COMMENT=	keep X clipboard and cutbuffer in sync
 
 V=		0.10.0
 DISTNAME=	autocutsel-$V
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	x11
 
-HOMEPAGE=	http://www.nongnu.org/autocutsel/
+HOMEPAGE=	https://www.nongnu.org/autocutsel/
 
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
