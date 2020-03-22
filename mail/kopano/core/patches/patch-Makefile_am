@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_am,v 1.3 2020/03/08 08:17:57 robert Exp $
+$OpenBSD: patch-Makefile_am,v 1.4 2020/03/22 11:20:34 robert Exp $
 
 Index: Makefile.am
 --- Makefile.am.orig
@@ -18,10 +18,10 @@ Index: Makefile.am
  kopano_server_LDADD = \
 -	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} \
 +	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} ${PROG_LIBS} \
- 	${clock_LIBS} ${CRYPTO_LIBS} ${icu_uc_LIBS} ${icu_i18n_LIBS} ${DL_LIBS} \
+ 	${clock_LIBS} ${CRYPTO_LIBS} ${DL_LIBS} ${libHX_LIBS} ${icu_uc_LIBS} \
+ 	${icu_i18n_LIBS} \
  	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
- kopano_server_LDFLAGS = ${AM_LDFLAGS}
-@@ -678,6 +678,7 @@ libkcutil_la_LIBADD = \
+@@ -679,6 +679,7 @@ libkcutil_la_LIBADD = \
  if HAVE_TIDY
  libkcutil_la_LIBADD += -ltidy
  endif
@@ -29,7 +29,7 @@ Index: Makefile.am
  libkcutil_la_SYFLAGS = -Wl,--version-script=common/libkcutil.sym
  libkcutil_la_LDFLAGS = ${AM_LDFLAGS} -no-undefined \
  	${libkcutil_la_SYFLAGS${NO_VSYM}}
-@@ -799,7 +800,7 @@ tests_rosie_LDADD = libkcutil.la
+@@ -800,7 +801,7 @@ tests_rosie_LDADD = libkcutil.la
  tests_ustring_SOURCES = tests/ustring.cpp
  tests_ustring_LDADD = libkcutil.la ${icu_uc_LIBS}
  tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
@@ -38,7 +38,7 @@ Index: Makefile.am
  
  
  #
-@@ -972,7 +973,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
+@@ -973,7 +974,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
  
  .PHONY: source-moved-check
  source-moved-check:

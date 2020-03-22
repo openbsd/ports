@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_search_kopano_search___init___py,v 1.5 2019/11/16 20:01:20 robert Exp $
+$OpenBSD: patch-ECtools_search_kopano_search___init___py,v 1.6 2020/03/22 11:20:34 robert Exp $
 
 Index: ECtools/search/kopano_search/__init__.py
 --- ECtools/search/kopano_search/__init__.py.orig
 +++ ECtools/search/kopano_search/__init__.py
-@@ -61,14 +61,14 @@ CONFIG = {
+@@ -60,11 +60,11 @@ CONFIG = {
      # 0x678F: PR_EC_IMAP_BODYSTRUCTURE
      # 0x001A: PR_MESSAGE_CLASS # XXX add to cfg
      'index_exclude_properties': Config.integer(multiple=True, base=16, default=[0x007D, 0x0064, 0x0C1E, 0x0075, 0x678E, 0x678F, 0x001A]),
@@ -11,9 +11,6 @@ Index: ECtools/search/kopano_search/__init__.py
 +    'index_path': Config.string(default='/var/db/kopano/search/'),
      'index_processes': Config.integer(default=1),
      'limit_results': Config.integer(default=1000),
-     'optimize_age': Config.ignore(),
-     'optimize_start': Config.ignore(),
-     'optimize_stop': Config.ignore(),
 -    'run_as_user': Config.string(default="kopano"),
 -    'run_as_group': Config.string(default="kopano"),
 +    'run_as_user': Config.string(default="_kopano"),
