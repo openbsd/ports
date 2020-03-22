@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2020/01/02 14:54:03 landry Exp $
+# $OpenBSD: Makefile,v 1.71 2020/03/22 17:56:51 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -8,7 +8,7 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V =		7.4.3
+V =		7.4.4
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -58,15 +58,19 @@ LIB_DEPENDS=	devel/proj \
 		graphics/giflib
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 		www/fcgi
+LIB_DEPENDS-perl +=	${BUILD_PKGPATH},-main
+LIB_DEPENDS-php +=	${BUILD_PKGPATH},-main
+LIB_DEPENDS-utils +=	${BUILD_PKGPATH},-main
+LIB_DEPENDS-python +=	${BUILD_PKGPATH},-main
 
 WANTLIB += curl freetype jpeg m png pq xml2 z proj
 WANTLIB += gdal geos_c cairo fribidi gif harfbuzz protobuf-c
 
-WANTLIB-main =	${WANTLIB} c fcgi pthread ${COMPILER_LIBCXX}
-WANTLIB-utils =	${WANTLIB} c
-WANTLIB-php =	${WANTLIB}
-WANTLIB-perl =	${WANTLIB} c perl
-WANTLIB-python =	${WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-main =	${WANTLIB} c fcgi mapserver pthread ${COMPILER_LIBCXX}
+WANTLIB-utils =	${WANTLIB} c mapserver
+WANTLIB-php =	${WANTLIB} mapserver
+WANTLIB-perl =	${WANTLIB} c mapserver perl
+WANTLIB-python =	${WANTLIB} mapserver ${MODPY_WANTLIB}
 
 CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 			-DWITH_CLIENT_WFS=1 \
