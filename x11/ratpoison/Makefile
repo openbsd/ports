@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2019/12/27 22:35:41 jca Exp $
+# $OpenBSD: Makefile,v 1.37 2020/03/22 01:05:54 jca Exp $
 
 COMMENT=	minimal wm based on GNU screen
 
 DISTNAME=	ratpoison-1.4.9
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
-HOMEPAGE=	http://www.nongnu.org/ratpoison/
+HOMEPAGE=	https://www.nongnu.org/ratpoison/
 
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
