@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/22 15:23:38 kn Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -17,6 +17,7 @@ COMMENT=	Clang extra tools
 LLVM_V =	8.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
+REVISION=	0
 
 CATEGORIES =	devel
 
@@ -50,6 +51,7 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI=OFF \
 			-DLLVM_ENABLE_TERMINFO=ON \
 			-DLLVM_ENABLE_RTTI=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Z3=ON \
 			-DLLVM_LINK_LLVM_DYLIB=OFF \
 			-DLLVM_BUILD_LLVM_DYLIB=OFF \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
