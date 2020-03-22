@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/03/22 18:13:35 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -50,8 +50,8 @@ NO_TEST=		Yes
 INSTALL_TARGET=		system-install
 
 post-extract:
-			find ${WRKDIR} \( -name .gitattributes -or \
-			    -name .github -or -name .gitignore -or -name \
-			    .gitmodules \) -exec rm -r {} +
+			find ${WRKDIR} \( -name .gitattributes -o \
+			    -name .github -o -name .gitignore -o -name \
+			    .gitmodules \) -prune -exec rm -r {} +
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/03 20:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/22 18:13:36 naddy Exp $
 
 COMMENT=	VNC client using HTML5 (Web Sockets, Canvas)
 
@@ -27,7 +27,7 @@ do-install:
 	cd ${WRKSRC} && pax -rw * ${PREFIX}/noVNC
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/noVNC
 	chmod a=rX,u+w ${PREFIX}/noVNC
-	find ${PREFIX}/noVNC -name '*.orig' -exec rm {} +
+	find ${PREFIX}/noVNC -name '*.orig' -delete
 	ln -s ${TRUEPREFIX}/noVNC/utils/launch.sh \
 		${WRKINST}${LOCALBASE}/bin/noVNC
 

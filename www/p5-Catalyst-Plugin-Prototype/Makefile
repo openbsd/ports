@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/22 18:13:36 naddy Exp $
 
 COMMENT=		catalyst plugin for prototype
 
@@ -20,6 +20,6 @@ CONFIGURE_STYLE=	modinst
 
 # we shan't be needing MacOS resource forks in these parts!
 post-extract:
-	@find ${WRKSRC} -name '._*' -exec rm {} +
+	@find ${WRKSRC} -name '._*' -delete
 
 .include <bsd.port.mk>

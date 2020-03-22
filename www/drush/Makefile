@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/09/26 21:59:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/22 18:13:36 naddy Exp $
 
 COMMENT =	command line access to most of Drupal
 
@@ -31,7 +31,8 @@ do-install:
 	rm ${PREFIX}/libexec/drush/drush.bat
 	rm -r ${PREFIX}/libexec/drush/tests
 	${SUBST_CMD} -m 555 -c ${FILESDIR}/drush ${PREFIX}/bin/drush
-	find ${PREFIX}/libexec/drush -name '*.orig' -exec rm {} +
-	find ${PREFIX}/libexec/drush -name '.git' -type d -exec rm -rf {} +
+	find ${PREFIX}/libexec/drush \
+		-name '*.orig' -exec rm {} + -o \
+		-name '.git' -type d -prune -exec rm -rf {} +
 
 .include <bsd.port.mk>

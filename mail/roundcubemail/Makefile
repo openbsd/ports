@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2020/02/20 14:37:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.149 2020/03/22 18:13:36 naddy Exp $
 
 COMMENT=	imap4 webmail client
 
@@ -53,10 +53,11 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}; \
 	chgrp -R wheel ${INSTDIR}/bin; \
 	chmod -R o-rwx ${INSTDIR}/bin; \
-	find ${INSTDIR} \( -name \*.orig -or -name \*.beforesubst -or \
-	    -name \*.src \) -delete
-	find ${INSTDIR} \( -name \*.png -or -name \*.js -or \
-	    -name \*.css \) -exec chmod -x {} +
+	find ${INSTDIR} \
+	    \( -name \*.orig -o -name \*.beforesubst -o -name \*.src \) \
+		-delete -o \
+	    \( -name \*.png -o -name \*.js -o -name \*.css \) \
+		-exec chmod -x {} +
 	rm ${INSTDIR}/composer.json
 
 .include <bsd.port.mk>

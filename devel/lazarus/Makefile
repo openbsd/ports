@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/22 18:13:35 naddy Exp $
 
 BROKEN =	build fails fairly often, "EAccessViolation: Access violation"
 
@@ -58,12 +58,13 @@ WRKDIST =		${WRKDIR}/lazarus
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/lazarus
-	find ${PREFIX}/share/lazarus -type d -exec chmod ${DIRMODE} {} +
-	find ${PREFIX}/share/lazarus -type f -exec chmod ${SHAREMODE} {} +
+	find ${PREFIX}/share/lazarus \
+		-type d -exec chmod ${DIRMODE} {} + -o \
+		-type f -exec chmod ${SHAREMODE} {} +
 	cd ${PREFIX}/share/lazarus && \
 		chown ${BINOWN}:${BINGRP} lazarus startlazarus lazbuild && \
 		chmod ${BINMODE} lazarus startlazarus lazbuild
-	find ${PREFIX} -name '*.orig' -exec rm -f {} +
+	find ${PREFIX} -name '*.orig' -delete
 	cd ${PREFIX}/share/lazarus/components/chmhelp/lhelp/lhelp.app/Contents/MacOS \
 		&& ln -sf ../../../../lhelp .
 

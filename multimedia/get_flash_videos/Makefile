@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2020/03/22 18:13:36 naddy Exp $
 
 COMMENT=	download flash video files from various sites
 
@@ -46,6 +46,6 @@ pre-configure:
 	    doc/get_flash_videos.pod get_flash_videos
 
 post-install:
-	cd ${WRKINST}; find . -name '*.orig' -exec rm {} +
+	find ${WRKINST} -name '*.orig' -delete
 
 .include <bsd.port.mk>

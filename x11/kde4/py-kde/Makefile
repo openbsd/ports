@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/07 22:16:20 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/22 18:13:36 naddy Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
@@ -46,6 +46,6 @@ LIB_DEPENDS = 	databases/soprano>=${MIN_SOPRANO_VERSION}
 CONFIGURE_ARGS =	-DWITH_PolkitQt:Bool=FALSE
 
 post-install:
-	find ${PREFIX} -name '*.orig' -exec rm {} +
+	find ${PREFIX} -name '*.orig' -delete
 
 .include <bsd.port.mk>

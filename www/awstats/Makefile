@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/12/09 14:32:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.20 2020/03/22 18:13:36 naddy Exp $
 
 COMMENT=		free real-time logfile analyzer
 
@@ -44,7 +44,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/data
 	cp -R ${WRKSRC}/* ${INSTDIR}/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} -name '*.pl' -type f -exec chmod u=rwx,go=rx {} +
-	find ${INSTDIR} ! -name '*.pl' -type f -exec chmod u=rw,go=r {} +
+	find ${INSTDIR} -type f \
+		\( -name '*.pl' -exec chmod u=rwx,go=rx {} + -o \
+		-exec chmod u=rw,go=r {} + \)
 
 .include <bsd.port.mk>
