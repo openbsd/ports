@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.131 2020/02/26 15:28:10 espie Exp $
+# $OpenBSD: portcheck,v 1.132 2020/03/22 17:16:30 cwen Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -728,6 +728,14 @@ check_port_dir() {
 
 	pkgpath=${pkgpath:-"$pkgpath_this"}
 	last_subst_cmd="$subst_cmd"
+}
+
+# Checks made: obvious
+check_dos_line_endings() {
+	grep -q "$(printf '\r\n')\$" "$1" &&
+		err "MS-DOS line endings in $1 --"\
+		"see ${portsdir}/infrastructure/templates/Makefile.template"\
+		"to fix them."
 }
 
 # Checks made: obvious
@@ -1601,6 +1609,8 @@ check_patch() {
 	else
 		err "$F is empty and should be removed"
 	fi
+
+	check_dos_line_endings "$F"
 }
 
 # Checks made:
