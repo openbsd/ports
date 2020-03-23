@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_rediff_c,v 1.1 2020/03/23 11:05:19 tb Exp $
+
+Avoid use of unitialized variable.  Fixes addhunk2 test with vm.malloc_conf=J.
+
+Index: src/rediff.c
+--- src/rediff.c.orig
++++ src/rediff.c
+@@ -841,6 +841,7 @@ static int rediff (const char *original, const char *e
+ 		newhunk->filepos = pos;
+ 		newhunk->line_in_diff = linenum;
+ 		newhunk->num_lines = 0;
++		newhunk->discard_offset = 0;
+ 
+ 		if (!strncmp (line, "--- ", 4)) {
+ 			struct file_info *info = xmalloc (sizeof *info);

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/22 17:44:53 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/23 11:05:19 tb Exp $
 
 COMMENT=	small tools to operate on patch files
 
 DISTNAME=	patchutils-0.3.4
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	textproc devel
