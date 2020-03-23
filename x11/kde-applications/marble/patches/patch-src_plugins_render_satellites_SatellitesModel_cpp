@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_plugins_render_satellites_SatellitesModel_cpp,v 1.1.1.1 2018/11/21 06:50:04 rsadowski Exp $
+$OpenBSD: patch-src_plugins_render_satellites_SatellitesModel_cpp,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 
 Index: src/plugins/render/satellites/SatellitesModel.cpp
 --- src/plugins/render/satellites/SatellitesModel.cpp.orig
 +++ src/plugins/render/satellites/SatellitesModel.cpp
-@@ -242,8 +242,8 @@ void SatellitesModel::parseTLE( const QString &id,
+@@ -243,8 +243,8 @@ void SatellitesModel::parseTLE( const QString &id,
              mDebug() << "Invalid TLE data!";
              return;
          }

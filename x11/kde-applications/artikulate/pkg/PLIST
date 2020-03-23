@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:14 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/artikulate
 @bin bin/artikulate
@@ -8,38 +8,38 @@
 @lib lib/libartikulatesound.so.${LIBartikulatesound_VERSION}
 lib/qt5/plugins/artikulate/
 lib/qt5/plugins/artikulate/libsound/
-lib/qt5/plugins/artikulate/libsound/qtmultimediabackend.so
+@so lib/qt5/plugins/artikulate/libsound/qtmultimediabackend.so
 share/applications/org.kde.artikulate.desktop
 share/artikulate/
 share/artikulate/images/
 share/artikulate/images/course-gray.png
 share/artikulate/images/course.png
 share/artikulate/images/new-course.png
-share/artikulate/languages/
-share/artikulate/languages/ba.xml
-share/artikulate/languages/ca.xml
-share/artikulate/languages/de.xml
-share/artikulate/languages/du.xml
-share/artikulate/languages/en_BE.xml
-share/artikulate/languages/en_US.xml
-share/artikulate/languages/fr.xml
-share/artikulate/languages/gr.xml
-share/artikulate/languages/hi.xml
-share/artikulate/languages/it.xml
-share/artikulate/languages/mr.xml
-share/artikulate/languages/pl.xml
-share/artikulate/languages/sp.xml
-share/artikulate/schemes/
-share/artikulate/schemes/course.xsd
-share/artikulate/schemes/language.xsd
-share/artikulate/schemes/skeleton.xsd
 share/artikulate/sounds/
 share/artikulate/sounds/testsound.ogg
 share/config.kcfg/
 share/config.kcfg/artikulate.kcfg
 share/doc/HTML/ca/artikulate/
+share/doc/HTML/ca/artikulate/editor-apply.png
+share/doc/HTML/ca/artikulate/editor-cancel.png
+share/doc/HTML/ca/artikulate/first-steps-1-create-profile.png
+share/doc/HTML/ca/artikulate/first-steps-3-download-course.png
+share/doc/HTML/ca/artikulate/first-steps-4-start-training.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-expression.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-language.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-media-playback-start.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-media-playback-stop.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-media-record-active.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-media-record.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-paragraph.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-sentence.png
+share/doc/HTML/ca/artikulate/hi32-action-artikulate-word.png
 share/doc/HTML/ca/artikulate/index.cache.bz2
 share/doc/HTML/ca/artikulate/index.docbook
+share/doc/HTML/ca/artikulate/screen-training-progressbar.png
+share/doc/HTML/ca/artikulate/training-finish.png
+share/doc/HTML/ca/artikulate/training-ok.png
+share/doc/HTML/ca/artikulate/training-retry.png
 share/doc/HTML/de/artikulate/
 share/doc/HTML/de/artikulate/index.cache.bz2
 share/doc/HTML/de/artikulate/index.docbook
@@ -76,6 +76,10 @@ share/doc/HTML/es/artikulate/index.docbook
 share/doc/HTML/et/artikulate/
 share/doc/HTML/et/artikulate/index.cache.bz2
 share/doc/HTML/et/artikulate/index.docbook
+share/doc/HTML/id/
+share/doc/HTML/id/artikulate/
+share/doc/HTML/id/artikulate/index.cache.bz2
+share/doc/HTML/id/artikulate/index.docbook
 share/doc/HTML/nl/artikulate/
 share/doc/HTML/nl/artikulate/index.cache.bz2
 share/doc/HTML/nl/artikulate/index.docbook
@@ -145,6 +149,7 @@ share/locale/hu/LC_MESSAGES/artikulate.mo
 share/locale/it/LC_MESSAGES/artikulate.mo
 share/locale/ja/LC_MESSAGES/artikulate.mo
 share/locale/lt/LC_MESSAGES/artikulate.mo
+share/locale/ml/LC_MESSAGES/artikulate.mo
 share/locale/mr/LC_MESSAGES/artikulate.mo
 share/locale/nds/LC_MESSAGES/artikulate.mo
 share/locale/nl/LC_MESSAGES/artikulate.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/03/30 09:13:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/03/23 18:01:08 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -62,6 +62,7 @@ include/KF5/KIOCore/KSSLSettings
 include/KF5/KIOCore/KSambaShare
 include/KF5/KIOCore/KSambaShareData
 include/KF5/KIOCore/KSslCertificateManager
+include/KF5/KIOCore/KSslErrorUiData
 include/KF5/KIOCore/KTcpSocket
 include/KF5/KIOCore/KUrlAuthorized
 include/KF5/KIOCore/kacl.h
@@ -127,6 +128,7 @@ include/KF5/KIOCore/ksambashare.h
 include/KF5/KIOCore/ksambasharedata.h
 include/KF5/KIOCore/ksslcertificatemanager.h
 include/KF5/KIOCore/ksslcertificatemanager_p.h
+include/KF5/KIOCore/ksslerroruidata.h
 include/KF5/KIOCore/ksslsettings.h
 include/KF5/KIOCore/ktcpsocket.h
 include/KF5/KIOCore/kurlauthorized.h
@@ -136,6 +138,7 @@ include/KF5/KIOFileWidgets/KDirOperator
 include/KF5/KIOFileWidgets/KDirSortFilterProxyModel
 include/KF5/KIOFileWidgets/KEncodingFileDialog
 include/KF5/KIOFileWidgets/KFileCopyToMenu
+include/KF5/KIOFileWidgets/KFileCustomDialog
 include/KF5/KIOFileWidgets/KFileFilterCombo
 include/KF5/KIOFileWidgets/KFilePlaceEditDialog
 include/KF5/KIOFileWidgets/KFilePlacesModel
@@ -154,6 +157,7 @@ include/KF5/KIOFileWidgets/kdiroperator.h
 include/KF5/KIOFileWidgets/kdirsortfilterproxymodel.h
 include/KF5/KIOFileWidgets/kencodingfiledialog.h
 include/KF5/KIOFileWidgets/kfilecopytomenu.h
+include/KF5/KIOFileWidgets/kfilecustomdialog.h
 include/KF5/KIOFileWidgets/kfilefiltercombo.h
 include/KF5/KIOFileWidgets/kfileplaceeditdialog.h
 include/KF5/KIOFileWidgets/kfileplacesmodel.h
@@ -197,6 +201,7 @@ include/KF5/KIOWidgets/KIO/PasteJob
 include/KF5/KIOWidgets/KIO/PixmapLoader
 include/KF5/KIOWidgets/KIO/PreviewJob
 include/KF5/KIOWidgets/KIO/RenameDialog
+include/KF5/KIOWidgets/KIO/RenameFileDialog
 include/KF5/KIOWidgets/KIO/SkipDialog
 include/KF5/KIOWidgets/KIO/SslUi
 include/KF5/KIOWidgets/KIO/ThumbCreator
@@ -236,6 +241,7 @@ include/KF5/KIOWidgets/kio/pastejob.h
 include/KF5/KIOWidgets/kio/pixmaploader.h
 include/KF5/KIOWidgets/kio/previewjob.h
 include/KF5/KIOWidgets/kio/renamedialog.h
+include/KF5/KIOWidgets/kio/renamefiledialog.h
 include/KF5/KIOWidgets/kio/skipdialog.h
 include/KF5/KIOWidgets/kio/sslui.h
 include/KF5/KIOWidgets/kio/thumbcreator.h
@@ -268,35 +274,36 @@ lib/cmake/KF5KIO/KF5KIOTargets.cmake
 @lib lib/libKF5KIOGui.so.${LIBKF5KIOGui_VERSION}
 @lib lib/libKF5KIONTLM.so.${LIBKF5KIONTLM_VERSION}
 @lib lib/libKF5KIOWidgets.so.${LIBKF5KIOWidgets_VERSION}
-lib/qt5/plugins/kcm_kio.so
-lib/qt5/plugins/kcm_trash.so
-lib/qt5/plugins/kcm_webshortcuts.so
+@so lib/qt5/plugins/designer/kio5widgets.so
+@so lib/qt5/plugins/kcm_kio.so
+@so lib/qt5/plugins/kcm_trash.so
+@so lib/qt5/plugins/kcm_webshortcuts.so
 lib/qt5/plugins/kf5/kded/
-lib/qt5/plugins/kf5/kded/kcookiejar.so
-lib/qt5/plugins/kf5/kded/proxyscout.so
-lib/qt5/plugins/kf5/kded/remotenotifier.so
+@so lib/qt5/plugins/kf5/kded/kcookiejar.so
+@so lib/qt5/plugins/kf5/kded/proxyscout.so
+@so lib/qt5/plugins/kf5/kded/remotenotifier.so
 lib/qt5/plugins/kf5/kio/
-lib/qt5/plugins/kf5/kio/file.so
-lib/qt5/plugins/kf5/kio/ftp.so
-lib/qt5/plugins/kf5/kio/ghelp.so
-lib/qt5/plugins/kf5/kio/help.so
-lib/qt5/plugins/kf5/kio/http.so
-lib/qt5/plugins/kf5/kio/remote.so
-lib/qt5/plugins/kf5/kio/trash.so
+@so lib/qt5/plugins/kf5/kio/file.so
+@so lib/qt5/plugins/kf5/kio/ftp.so
+@so lib/qt5/plugins/kf5/kio/ghelp.so
+@so lib/qt5/plugins/kf5/kio/help.so
+@so lib/qt5/plugins/kf5/kio/http.so
+@so lib/qt5/plugins/kf5/kio/remote.so
+@so lib/qt5/plugins/kf5/kio/trash.so
 lib/qt5/plugins/kf5/kiod/
-lib/qt5/plugins/kf5/kiod/kioexecd.so
-lib/qt5/plugins/kf5/kiod/kpasswdserver.so
-lib/qt5/plugins/kf5/kiod/kssld.so
+@so lib/qt5/plugins/kf5/kiod/kioexecd.so
+@so lib/qt5/plugins/kf5/kiod/kpasswdserver.so
+@so lib/qt5/plugins/kf5/kiod/kssld.so
 lib/qt5/plugins/kf5/urifilters/
-lib/qt5/plugins/kf5/urifilters/fixhosturifilter.so
-lib/qt5/plugins/kf5/urifilters/kshorturifilter.so
-lib/qt5/plugins/kf5/urifilters/kuriikwsfilter.so
-lib/qt5/plugins/kf5/urifilters/kurisearchfilter.so
-lib/qt5/plugins/kf5/urifilters/localdomainurifilter.so
+@so lib/qt5/plugins/kf5/urifilters/fixhosturifilter.so
+@so lib/qt5/plugins/kf5/urifilters/kshorturifilter.so
+@so lib/qt5/plugins/kf5/urifilters/kuriikwsfilter.so
+@so lib/qt5/plugins/kf5/urifilters/kurisearchfilter.so
+@so lib/qt5/plugins/kf5/urifilters/localdomainurifilter.so
 @bin libexec/kf5/kio_http_cache_cleaner
 @bin libexec/kf5/kiod5
 @bin libexec/kf5/kioexec
-@bin libexec/kf5/kioslave
+@bin libexec/kf5/kioslave5
 @bin libexec/kf5/kpac_dhcp_helper
 @man man/man8/kcookiejar5.8
 share/applications/ktelnetservice5.desktop
@@ -766,6 +773,9 @@ share/doc/HTML/pt_BR/kioslave5/webdav/
 share/doc/HTML/pt_BR/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/webdav/index.docbook
 share/doc/HTML/ru/kcontrol5/
+share/doc/HTML/ru/kcontrol5/cookies/
+share/doc/HTML/ru/kcontrol5/cookies/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/cookies/index.docbook
 share/doc/HTML/ru/kcontrol5/proxy/
 share/doc/HTML/ru/kcontrol5/proxy/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/proxy/index.docbook
@@ -1002,8 +1012,6 @@ share/examples/kio/
 share/examples/kio/xdg/
 share/examples/kio/xdg/accept-languages.codes
 @sample ${SYSCONFDIR}/xdg/accept-languages.codes
-share/examples/kio/xdg/kio.categories
-@sample ${SYSCONFDIR}/xdg/kio.categories
 share/examples/kio/xdg/kshorturifilterrc
 @sample ${SYSCONFDIR}/xdg/kshorturifilterrc
 share/kconf_update/
@@ -1210,6 +1218,7 @@ share/kservicetypes5/searchprovider.desktop
 share/kservicetypes5/uasprovider.desktop
 share/locale/af/LC_MESSAGES/kio5.mo
 share/locale/ar/LC_MESSAGES/kio5.mo
+share/locale/ast/LC_MESSAGES/kio5.mo
 share/locale/be/LC_MESSAGES/kio5.mo
 share/locale/be@latin/LC_MESSAGES/kio5.mo
 share/locale/bg/LC_MESSAGES/kio5.mo
@@ -1291,4 +1300,5 @@ share/locale/wa/LC_MESSAGES/kio5.mo
 share/locale/xh/LC_MESSAGES/kio5.mo
 share/locale/zh_CN/LC_MESSAGES/kio5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5.mo
+share/qlogging-categories5/kio.categories
 @tag update-desktop-database

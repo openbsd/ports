@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/06/02 19:17:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:03 rsadowski Exp $
 @bin bin/kdiff3
 lib/qt5/plugins/kf5/kfileitemaction/
-lib/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
+@so lib/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
 lib/qt5/plugins/kf5/parts/
-lib/qt5/plugins/kf5/parts/kdiff3part.so
+@so lib/qt5/plugins/kf5/parts/kdiff3part.so
 @man man/man1/kdiff3.1
 share/applications/org.kde.kdiff3.desktop
 share/doc/HTML/en/kdiff3/

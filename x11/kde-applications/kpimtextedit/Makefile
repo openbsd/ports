@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/28 19:24:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/23 18:01:24 rsadowski Exp $
 
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
-SHARED_LIBS +=  KF5PimTextEdit            0.0 # 5.6
+SHARED_LIBS +=  KF5PimTextEdit            1.0 # 5.6
 
-
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_TextDocument KF5Auth KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Emoticons KF5I18n KF5IconThemes KF5JobWidgets
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_TextDocument KF5Auth KF5AuthCore
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Service KF5SonnetCore KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5TextToSpeech Qt5Widgets
@@ -20,15 +18,15 @@ MODKDE5_TRANSLATIONS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=devel/kf5/ktextwidgets \
+BUILD_DEPENDS =	devel/kf5/ktextwidgets \
 		devel/kf5/kdesignerplugin \
 		x11/qt5/qttools
 
-RUN_DEPENDS +=	devel/kf5/ktextwidgets \
+RUN_DEPENDS =	devel/kf5/ktextwidgets \
 		devel/kf5/kdesignerplugin \
 		x11/qt5/qttools
 
-LIB_DEPENDS +=	devel/kf5/kcodecs \
+LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \

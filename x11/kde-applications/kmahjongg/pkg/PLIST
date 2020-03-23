@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:22 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kmahjongg
 @bin bin/kmahjongg
@@ -20,6 +20,7 @@ share/doc/HTML/de/kmahjongg/index.docbook
 share/doc/HTML/de/kmahjongg/numbered.png
 share/doc/HTML/de/kmahjongg/shortcuts.png
 share/doc/HTML/en/kmahjongg/
+share/doc/HTML/en/kmahjongg/boardeditor.png
 share/doc/HTML/en/kmahjongg/config.png
 share/doc/HTML/en/kmahjongg/config_background.png
 share/doc/HTML/en/kmahjongg/config_layout.png
@@ -94,6 +95,7 @@ share/doc/HTML/sv/kmahjongg/numbered.png
 share/doc/HTML/sv/kmahjongg/shortcuts.png
 share/doc/HTML/sv/kmahjongg/showremoved.png
 share/doc/HTML/uk/kmahjongg/
+share/doc/HTML/uk/kmahjongg/boardeditor.png
 share/doc/HTML/uk/kmahjongg/config.png
 share/doc/HTML/uk/kmahjongg/config_background.png
 share/doc/HTML/uk/kmahjongg/config_layout.png
@@ -314,5 +316,6 @@ share/locale/zh_CN/LC_MESSAGES/kmahjongg.mo
 share/locale/zh_TW/LC_MESSAGES/kmahjongg.mo
 share/metainfo/
 share/metainfo/org.kde.kmahjongg.appdata.xml
+share/qlogging-categories5/kmahjongg.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

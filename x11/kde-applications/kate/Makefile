@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/24 11:56:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/23 18:01:16 rsadowski Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
-REVISION =	0
 
 HOMEPAGE =	https://kate-editor.org/
 
-
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
-WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels
 WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
@@ -28,16 +26,16 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=devel/kf5/kinit \
+BUILD_DEPENDS =	devel/kf5/kinit \
 		devel/kf5/kactivities \
 		devel/kf5/syntax-highlighting
 
-RUN_DEPENDS +=	devel/kf5/kinit \
+RUN_DEPENDS =	devel/kf5/kinit \
 		devel/kf5/kactivities \
 		devel/kf5/syntax-highlighting \
 		x11/kde-applications/kio-extras
 
-LIB_DEPENDS +=	devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kactivities \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \

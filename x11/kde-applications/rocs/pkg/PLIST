@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:29:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:29 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/rocs
@@ -10,16 +10,16 @@ include/rocs/node.h
 @lib lib/librocsgraphtheory.so.${LIBrocsgraphtheory_VERSION}
 lib/qt5/plugins/rocs/
 lib/qt5/plugins/rocs/editorplugins/
-lib/qt5/plugins/rocs/editorplugins/assignvaluesplugin.so
-lib/qt5/plugins/rocs/editorplugins/generategraphplugin.so
-lib/qt5/plugins/rocs/editorplugins/transformedgesplugin.so
+@so lib/qt5/plugins/rocs/editorplugins/assignvaluesplugin.so
+@so lib/qt5/plugins/rocs/editorplugins/generategraphplugin.so
+@so lib/qt5/plugins/rocs/editorplugins/transformedgesplugin.so
 lib/qt5/plugins/rocs/fileformats/
-lib/qt5/plugins/rocs/fileformats/dotfileformat.so
-lib/qt5/plugins/rocs/fileformats/gmlfileformat.so
-lib/qt5/plugins/rocs/fileformats/rocs1fileformat.so
-lib/qt5/plugins/rocs/fileformats/rocs2fileformat.so
-lib/qt5/plugins/rocs/fileformats/tgffileformat.so
-lib/qt5/plugins/rocs/fileformats/tikzfileformat.so
+@so lib/qt5/plugins/rocs/fileformats/dotfileformat.so
+@so lib/qt5/plugins/rocs/fileformats/gmlfileformat.so
+@so lib/qt5/plugins/rocs/fileformats/rocs1fileformat.so
+@so lib/qt5/plugins/rocs/fileformats/rocs2fileformat.so
+@so lib/qt5/plugins/rocs/fileformats/tgffileformat.so
+@so lib/qt5/plugins/rocs/fileformats/tikzfileformat.so
 share/applications/org.kde.rocs.desktop
 share/config.kcfg/
 share/config.kcfg/rocs.kcfg
@@ -191,6 +191,8 @@ share/locale/lt/LC_MESSAGES/libgraphtheory.mo
 share/locale/lt/LC_MESSAGES/rocs.mo
 share/locale/lv/LC_MESSAGES/libgraphtheory.mo
 share/locale/lv/LC_MESSAGES/rocs.mo
+share/locale/ml/LC_MESSAGES/libgraphtheory.mo
+share/locale/ml/LC_MESSAGES/rocs.mo
 share/locale/mr/LC_MESSAGES/libgraphtheory.mo
 share/locale/mr/LC_MESSAGES/rocs.mo
 share/locale/nb/LC_MESSAGES/libgraphtheory.mo

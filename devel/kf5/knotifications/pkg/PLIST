@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/30 09:13:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:09 rsadowski Exp $
 include/KF5/KNotifications/
 include/KF5/KNotifications/KNotification
 include/KF5/KNotifications/KNotificationPlugin
@@ -22,16 +22,13 @@ lib/cmake/KF5Notifications/KF5NotificationsTargets.cmake
 @lib lib/libKF5Notifications.so.${LIBKF5Notifications_VERSION}
 share/dbus-1/interfaces/kf5_org.kde.StatusNotifierItem.xml
 share/dbus-1/interfaces/kf5_org.kde.StatusNotifierWatcher.xml
-share/examples/knotifications/
-share/examples/knotifications/xdg/
-share/examples/knotifications/xdg/knotifications.categories
-@sample ${SYSCONFDIR}/xdg/knotifications.categories
 share/kf5/mkspecs/qt_KNotifications.pri
 share/kservicetypes5/
 share/kservicetypes5/knotificationplugin.desktop
 share/locale/af/LC_MESSAGES/knotifications5_qt.qm
 share/locale/ar/LC_MESSAGES/knotifications5_qt.qm
 share/locale/as/LC_MESSAGES/knotifications5_qt.qm
+share/locale/ast/LC_MESSAGES/knotifications5_qt.qm
 share/locale/be/LC_MESSAGES/knotifications5_qt.qm
 share/locale/be@latin/LC_MESSAGES/knotifications5_qt.qm
 share/locale/bg/LC_MESSAGES/knotifications5_qt.qm
@@ -128,3 +125,4 @@ share/locale/xh/LC_MESSAGES/knotifications5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/knotifications5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/knotifications5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/knotifications5_qt.qm
+share/qlogging-categories5/knotifications.categories

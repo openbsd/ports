@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 07:55:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:16 rsadowski Exp $
 bin/kajongg
 share/applications/org.kde.kajongg.desktop
 share/doc/HTML/de/kajongg/
@@ -63,7 +63,7 @@ share/icons/hicolor/64x64/apps/kajongg.png
 share/icons/hicolor/scalable/actions/games-kajongg-law.svgz
 share/icons/hicolor/scalable/apps/kajongg.svgz
 share/kajongg/
-share/kajongg/${MODPY_PYCACHE}/
+${MODPY_COMMENT}share/kajongg/${MODPY_PYCACHE}/
 share/kajongg/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}altint.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}pyc

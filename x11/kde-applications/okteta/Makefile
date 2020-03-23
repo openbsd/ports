@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/03 19:55:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:28 rsadowski Exp $
 
 COMMENT =	Hex Editor
-VERSION =	0.26.2
+VERSION =	0.26.3
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 
@@ -16,15 +16,15 @@ SHARED_LIBS +=  Kasten4Okteta2Gui         0.0 # 0.4
 SHARED_LIBS +=  Okteta3Core               0.0 # 0.10
 SHARED_LIBS +=  Okteta3Gui                0.0 # 0.10
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5IconThemes
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Parts
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Script Qt5Widgets Qt5Xml
-WANTLIB += c m qca-qt5
+WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
+WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5NewStuff
+WANTLIB += KF5NewStuffCore KF5Parts KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5Script Qt5Widgets Qt5Xml c m qca-qt5
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/okteta/${VERSION}/src/}
 

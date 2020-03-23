@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/03/14 14:24:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2020/03/23 18:01:13 rsadowski Exp $
 
 COMMENT =	guitar tab editor
 
@@ -8,7 +8,7 @@ GH_COMMIT =	a7c73491ef236134de55cbdcfc9f8cafa2a76ae1
 
 # commit date YYYYMMDD
 DISTNAME =	${GH_PROJECT}-20170809
-REVISION =	5
+REVISION =	6
 
 # override kf5
 EXTRACT_SUFX =	.tar.gz
@@ -22,12 +22,12 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+; for MusicXML copyright see licenseMusicXML.html
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Parts
 WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m Qt5Concurrent
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
 
 MODULES =	devel/cmake \
 		devel/kf5

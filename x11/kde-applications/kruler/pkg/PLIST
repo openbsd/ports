@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:11:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:25 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kruler
@@ -24,7 +24,6 @@ share/doc/HTML/id/
 share/doc/HTML/id/kruler/
 share/doc/HTML/id/kruler/index.cache.bz2
 share/doc/HTML/id/kruler/index.docbook
-share/doc/HTML/id/kruler/kruler-settings.png
 share/doc/HTML/it/kruler/
 share/doc/HTML/it/kruler/index.cache.bz2
 share/doc/HTML/it/kruler/index.docbook
@@ -102,6 +101,7 @@ share/locale/km/LC_MESSAGES/kruler.mo
 share/locale/ko/LC_MESSAGES/kruler.mo
 share/locale/lt/LC_MESSAGES/kruler.mo
 share/locale/lv/LC_MESSAGES/kruler.mo
+share/locale/ml/LC_MESSAGES/kruler.mo
 share/locale/mr/LC_MESSAGES/kruler.mo
 share/locale/nb/LC_MESSAGES/kruler.mo
 share/locale/nds/LC_MESSAGES/kruler.mo

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/23 18:01:11 rsadowski Exp $
 
 COMMENT =		large set of KDE widgets
 DISTNAME =		kwidgetsaddons-${VERSION}
 
-SHARED_LIBS =		KF5WidgetsAddons	4.3
+SHARED_LIBS =		KF5WidgetsAddons	5.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
 

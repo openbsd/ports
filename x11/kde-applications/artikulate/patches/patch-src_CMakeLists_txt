@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2018/11/08 14:21:26 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2020/03/23 18:01:14 rsadowski Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -80,7 +80,7 @@ set(GENERIC_LIB_VERSION "0")
+@@ -109,7 +109,7 @@ set(GENERIC_LIB_VERSION "0")
  set(GENERIC_LIB_SOVERSION "0")
  set_target_properties(
      artikulatecore PROPERTIES

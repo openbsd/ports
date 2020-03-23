@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 19:37:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:26 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kubrick
 @bin bin/kubrick
@@ -36,9 +36,6 @@ share/doc/HTML/sv/kubrick/index.docbook
 share/doc/HTML/uk/kubrick/
 share/doc/HTML/uk/kubrick/index.cache.bz2
 share/doc/HTML/uk/kubrick/index.docbook
-share/examples/kubrick/
-share/examples/kubrick/xdg/
-share/examples/kubrick/xdg/kubrick.categories
 share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/16x16/apps/kubrick.png
 share/icons/hicolor/22x22/apps/kubrick.png
@@ -92,11 +89,13 @@ share/locale/ga/LC_MESSAGES/kubrick.mo
 share/locale/gl/LC_MESSAGES/kubrick.mo
 share/locale/hr/LC_MESSAGES/kubrick.mo
 share/locale/hu/LC_MESSAGES/kubrick.mo
+share/locale/id/LC_MESSAGES/kubrick.mo
 share/locale/is/LC_MESSAGES/kubrick.mo
 share/locale/it/LC_MESSAGES/kubrick.mo
 share/locale/ja/LC_MESSAGES/kubrick.mo
 share/locale/kk/LC_MESSAGES/kubrick.mo
 share/locale/km/LC_MESSAGES/kubrick.mo
+share/locale/ko/LC_MESSAGES/kubrick.mo
 share/locale/lt/LC_MESSAGES/kubrick.mo
 share/locale/lv/LC_MESSAGES/kubrick.mo
 share/locale/mr/LC_MESSAGES/kubrick.mo
@@ -120,5 +119,6 @@ share/locale/zh_CN/LC_MESSAGES/kubrick.mo
 share/locale/zh_TW/LC_MESSAGES/kubrick.mo
 share/metainfo/
 share/metainfo/org.kde.kubrick.appdata.xml
+share/qlogging-categories5/kubrick.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

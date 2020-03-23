@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:25 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/ksirk
 @bin bin/ksirk
@@ -140,8 +140,6 @@ share/doc/HTML/uk/ksirkskineditor/index.cache.bz2
 share/doc/HTML/uk/ksirkskineditor/index.docbook
 share/examples/ksirk/
 share/examples/ksirk/xdg/
-share/examples/ksirk/xdg/ksirk.categories
-@sample ${SYSCONFDIR}/xdg/ksirk.categories
 share/examples/ksirk/xdg/ksirk.knsrc
 @sample ${SYSCONFDIR}/xdg/ksirk.knsrc
 share/icons/hicolor/128x128/apps/ksirk.png
@@ -292,4 +290,5 @@ share/locale/zh_TW/LC_MESSAGES/ksirk.mo
 share/locale/zh_TW/LC_MESSAGES/ksirkskineditor.mo
 share/metainfo/
 share/metainfo/org.kde.ksirk.appdata.xml
+share/qlogging-categories5/ksirk.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor

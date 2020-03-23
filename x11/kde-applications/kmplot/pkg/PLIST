@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:23 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kmplot
 @bin bin/kmplot
-lib/qt5/plugins/kmplotpart.so
+@so lib/qt5/plugins/kmplotpart.so
 @man man/man1/kmplot.1
 share/applications/org.kde.kmplot.desktop
 share/config.kcfg/
@@ -55,17 +55,11 @@ share/doc/HTML/es/kmplot/configuration.docbook
 share/doc/HTML/es/kmplot/credits.docbook
 share/doc/HTML/es/kmplot/dcop.docbook
 share/doc/HTML/es/kmplot/developer.docbook
-share/doc/HTML/es/kmplot/edu-logo.png
 share/doc/HTML/es/kmplot/firststeps.docbook
 share/doc/HTML/es/kmplot/index.cache.bz2
 share/doc/HTML/es/kmplot/index.docbook
 share/doc/HTML/es/kmplot/install.docbook
 share/doc/HTML/es/kmplot/introduction.docbook
-share/doc/HTML/es/kmplot/kfkt.png
-share/doc/HTML/es/kmplot/ksys1.png
-share/doc/HTML/es/kmplot/ksys2.png
-share/doc/HTML/es/kmplot/ksys3.png
-share/doc/HTML/es/kmplot/main.png
 share/doc/HTML/es/kmplot/reference.docbook
 share/doc/HTML/es/kmplot/threeplots.png
 share/doc/HTML/es/kmplot/using.docbook
@@ -298,6 +292,7 @@ share/locale/km/LC_MESSAGES/kmplot.mo
 share/locale/ko/LC_MESSAGES/kmplot.mo
 share/locale/lt/LC_MESSAGES/kmplot.mo
 share/locale/lv/LC_MESSAGES/kmplot.mo
+share/locale/ml/LC_MESSAGES/kmplot.mo
 share/locale/mr/LC_MESSAGES/kmplot.mo
 share/locale/nb/LC_MESSAGES/kmplot.mo
 share/locale/nds/LC_MESSAGES/kmplot.mo

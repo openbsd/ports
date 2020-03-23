@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/03 11:58:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:19 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdebase-*
@@ -39,6 +39,7 @@ share/locale/km/LC_MESSAGES/kdialog.mo
 share/locale/ko/LC_MESSAGES/kdialog.mo
 share/locale/lt/LC_MESSAGES/kdialog.mo
 share/locale/lv/LC_MESSAGES/kdialog.mo
+share/locale/ml/LC_MESSAGES/kdialog.mo
 share/locale/mr/LC_MESSAGES/kdialog.mo
 share/locale/nb/LC_MESSAGES/kdialog.mo
 share/locale/nds/LC_MESSAGES/kdialog.mo
@@ -60,3 +61,5 @@ share/locale/uk/LC_MESSAGES/kdialog.mo
 share/locale/wa/LC_MESSAGES/kdialog.mo
 share/locale/zh_CN/LC_MESSAGES/kdialog.mo
 share/locale/zh_TW/LC_MESSAGES/kdialog.mo
+share/metainfo/
+share/metainfo/org.kde.kdialog.metainfo.xml

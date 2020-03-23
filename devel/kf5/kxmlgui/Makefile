@@ -1,31 +1,32 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/23 18:01:11 rsadowski Exp $
 
 COMMENT =		KDE framework for managing menu and toolbar actions
 DISTNAME =		kxmlgui-${VERSION}
 
-SHARED_LIBS =		KF5XmlGui		4.3
+SHARED_LIBS =		KF5XmlGui		5.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5ItemViews KF5WidgetsAddons
+WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml c m
 
 MODULES +=	lang/python
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kglobalaccel \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kitemviews \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem
+LIB_DEPENDS =	devel/kf5/attica>=${MODKF5_VERSION} \
+		devel/kf5/kauth>=${MODKF5_VERSION} \
+		devel/kf5/kcodecs>=${MODKF5_VERSION} \
+		devel/kf5/kconfig>=${MODKF5_VERSION} \
+		devel/kf5/kconfigwidgets>=${MODKF5_VERSION} \
+		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
+		devel/kf5/kglobalaccel>=${MODKF5_VERSION} \
+		devel/kf5/ki18n>=${MODKF5_VERSION} \
+		devel/kf5/kiconthemes>=${MODKF5_VERSION} \
+		devel/kf5/kitemviews>=${MODKF5_VERSION} \
+		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
+		devel/kf5/kwindowsystem>=${MODKF5_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

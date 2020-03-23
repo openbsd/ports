@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:21 rsadowski Exp $
 
 COMMENT =	job-based API for interacting with IMAP servers
 DISTNAME =	kimap-${VERSION}
 CATEGORIES =	devel mail
-REVISION =	0
 
-
-SHARED_LIBS +=  KF5IMAP                   0.0 # 5.5
+SHARED_LIBS +=  KF5IMAP                   1.0 # 5.5
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Mime KF5Service Qt5Concurrent
@@ -16,7 +14,7 @@ MODKDE5_TRANSLATIONS = yes
 
 MODULES +=	x11/kde-applications
 
-LIB_DEPENDS +=	devel/kf5/kcodecs \
+LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
@@ -24,4 +22,5 @@ LIB_DEPENDS +=	devel/kf5/kcodecs \
 		devel/kf5/kservice \
 		security/cyrus-sasl2 \
 		x11/kde-applications/kmime
+
 .include <bsd.port.mk>

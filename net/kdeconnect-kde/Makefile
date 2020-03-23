@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/20 08:48:30 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:13 rsadowski Exp $
 
 COMMENT =	KDE app that allows your devices to communicate
 
 V =		1.3.5
 DISTNAME =	kdeconnect-kde-${V}
+REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		0.0 # 1.3
 SHARED_LIBS +=	kdeconnectinterfaces	0.0 # 1.3
@@ -18,14 +19,14 @@ MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
 # GPLv2+
 PERMIT_PACKAGE =Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5DBusAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Service KF5Solid
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += SM X11 Xext Xtst c fakekey m qca-qt5
+WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DBusAddons KF5I18n
+WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
+WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext Xtst c fakekey m qca-qt5
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdeconnect/${V}/}
 

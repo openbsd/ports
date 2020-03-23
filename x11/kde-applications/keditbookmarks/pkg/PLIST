@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 09:22:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:19 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kde-baseapps-*
@@ -30,6 +30,9 @@ share/doc/HTML/nl/keditbookmarks/index.docbook
 share/doc/HTML/pt/keditbookmarks/
 share/doc/HTML/pt/keditbookmarks/index.cache.bz2
 share/doc/HTML/pt/keditbookmarks/index.docbook
+share/doc/HTML/pt_BR/keditbookmarks/
+share/doc/HTML/pt_BR/keditbookmarks/index.cache.bz2
+share/doc/HTML/pt_BR/keditbookmarks/index.docbook
 share/doc/HTML/sv/keditbookmarks/
 share/doc/HTML/sv/keditbookmarks/index.cache.bz2
 share/doc/HTML/sv/keditbookmarks/index.docbook
@@ -74,6 +77,7 @@ share/locale/km/LC_MESSAGES/keditbookmarks.mo
 share/locale/ko/LC_MESSAGES/keditbookmarks.mo
 share/locale/lt/LC_MESSAGES/keditbookmarks.mo
 share/locale/lv/LC_MESSAGES/keditbookmarks.mo
+share/locale/ml/LC_MESSAGES/keditbookmarks.mo
 share/locale/mr/LC_MESSAGES/keditbookmarks.mo
 share/locale/nb/LC_MESSAGES/keditbookmarks.mo
 share/locale/nds/LC_MESSAGES/keditbookmarks.mo

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:56:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:16 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	letter order game
 DISTNAME =	kanagram-${VERSION}
 CATEGORIES =	education x11
-REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kanagram/
 
-
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
-WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5Declarative KF5I18n KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Package KF5Service KF5SonnetCore
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
@@ -25,11 +23,11 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=devel/kf5/kio
+BUILD_DEPENDS =	devel/kf5/kio
 
-RUN_DEPENDS +=	devel/kf5/kio
+RUN_DEPENDS =	devel/kf5/kio
 
-LIB_DEPENDS +=	devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \

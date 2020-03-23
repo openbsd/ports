@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:20 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kde-baseapps-*
@@ -53,10 +53,6 @@ share/doc/HTML/sv/kfind/index.docbook
 share/doc/HTML/uk/kfind/
 share/doc/HTML/uk/kfind/index.cache.bz2
 share/doc/HTML/uk/kfind/index.docbook
-share/examples/kfind/
-share/examples/kfind/xdg/
-share/examples/kfind/xdg/kfind.categories
-@sample ${SYSCONFDIR}/xdg/kfind.categories
 share/icons/hicolor/128x128/apps/kfind.png
 share/icons/hicolor/16x16/apps/kfind.png
 share/icons/hicolor/22x22/apps/kfind.png
@@ -98,6 +94,7 @@ share/locale/km/LC_MESSAGES/kfind.mo
 share/locale/ko/LC_MESSAGES/kfind.mo
 share/locale/lt/LC_MESSAGES/kfind.mo
 share/locale/lv/LC_MESSAGES/kfind.mo
+share/locale/ml/LC_MESSAGES/kfind.mo
 share/locale/mr/LC_MESSAGES/kfind.mo
 share/locale/nb/LC_MESSAGES/kfind.mo
 share/locale/nds/LC_MESSAGES/kfind.mo
@@ -121,5 +118,6 @@ share/locale/zh_CN/LC_MESSAGES/kfind.mo
 share/locale/zh_TW/LC_MESSAGES/kfind.mo
 share/metainfo/
 share/metainfo/org.kde.kfind.appdata.xml
+share/qlogging-categories5/kfind.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

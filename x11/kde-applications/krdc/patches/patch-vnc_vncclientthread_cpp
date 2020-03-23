@@ -1,11 +1,11 @@
-$OpenBSD: patch-vnc_vncclientthread_cpp,v 1.1.1.1 2019/11/23 07:52:48 rsadowski Exp $
+$OpenBSD: patch-vnc_vncclientthread_cpp,v 1.2 2020/03/23 18:01:24 rsadowski Exp $
 
 - No TCP_KEEPIDLE, TCP_KEEPINTVL, TCP_KEEPCNT on OpenBSD
 
 Index: vnc/vncclientthread.cpp
 --- vnc/vncclientthread.cpp.orig
 +++ vnc/vncclientthread.cpp
-@@ -602,23 +602,6 @@ void VncClientThread::clientSetKeepalive()
+@@ -597,23 +597,6 @@ void VncClientThread::clientSetKeepalive()
          return;
      }
  

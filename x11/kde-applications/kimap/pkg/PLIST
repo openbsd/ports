@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:21 rsadowski Exp $
 include/KF5/KIMAP/
 include/KF5/KIMAP/KIMAP/
 include/KF5/KIMAP/KIMAP/Acl
@@ -27,7 +27,9 @@ include/KF5/KIMAP/KIMAP/LogoutJob
 include/KF5/KIMAP/KIMAP/MetaDataJobBase
 include/KF5/KIMAP/KIMAP/MoveJob
 include/KF5/KIMAP/KIMAP/MyRightsJob
+include/KF5/KIMAP/KIMAP/NamespaceJob
 include/KF5/KIMAP/KIMAP/QuotaJobBase
+include/KF5/KIMAP/KIMAP/RFCCodecs
 include/KF5/KIMAP/KIMAP/RenameJob
 include/KF5/KIMAP/KIMAP/SearchJob
 include/KF5/KIMAP/KIMAP/SelectJob
@@ -67,7 +69,9 @@ include/KF5/KIMAP/kimap/LogoutJob
 include/KF5/KIMAP/kimap/MetaDataJobBase
 include/KF5/KIMAP/kimap/MoveJob
 include/KF5/KIMAP/kimap/MyRightsJob
+include/KF5/KIMAP/kimap/NamespaceJob
 include/KF5/KIMAP/kimap/QuotaJobBase
+include/KF5/KIMAP/kimap/RFCCodecs
 include/KF5/KIMAP/kimap/RenameJob
 include/KF5/KIMAP/kimap/SearchJob
 include/KF5/KIMAP/kimap/SelectJob
@@ -132,13 +136,7 @@ lib/cmake/KF5IMAP/KF5IMAPConfigVersion.cmake
 lib/cmake/KF5IMAP/KF5IMAPTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5IMAP/KF5IMAPTargets.cmake
 @lib lib/libKF5IMAP.so.${LIBKF5IMAP_VERSION}
-lib/libkimaptest.a
-share/examples/kimap/
-share/examples/kimap/xdg/
-share/examples/kimap/xdg/kimap.categories
-@sample ${SYSCONFDIR}/xdg/kimap.categories
-share/examples/kimap/xdg/kimap.renamecategories
-@sample ${SYSCONFDIR}/xdg/kimap.renamecategories
+@static-lib lib/libkimaptest.a
 share/kf5/mkspecs/qt_KIMAP.pri
 share/locale/bs/LC_MESSAGES/libkimap5.mo
 share/locale/ca/LC_MESSAGES/libkimap5.mo
@@ -184,3 +182,5 @@ share/locale/ug/LC_MESSAGES/libkimap5.mo
 share/locale/uk/LC_MESSAGES/libkimap5.mo
 share/locale/zh_CN/LC_MESSAGES/libkimap5.mo
 share/locale/zh_TW/LC_MESSAGES/libkimap5.mo
+share/qlogging-categories5/kimap.categories
+share/qlogging-categories5/kimap.renamecategories

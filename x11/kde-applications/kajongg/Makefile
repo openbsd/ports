@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:52:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:16 rsadowski Exp $
 
 COMMENT =	Mah Jongg four players board game for KDE5
 DISTNAME =	kajongg-${VERSION}
 CATEGORIES =	games
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/games/kajongg
 
@@ -21,13 +20,13 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=devel/kf5/kconfig \
+BUILD_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kpty \
 		x11/kde-applications/libkmahjongg \
 		devel/py-twisted${MODPY_FLAVOR} \
 		x11/py-qt5${MODPY_FLAVOR}
 
-RUN_DEPENDS +=	devel/py-twisted${MODPY_FLAVOR} \
+RUN_DEPENDS =	devel/py-twisted${MODPY_FLAVOR} \
 		x11/kde-applications/libkmahjongg \
 		audio/vorbis-tools \
 		x11/py-qt5${MODPY_FLAVOR}

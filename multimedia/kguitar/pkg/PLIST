@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:13 rsadowski Exp $
 @bin bin/kguitar
-lib/qt5/plugins/libkguitarpart.so
+@so lib/qt5/plugins/libkguitarpart.so
 share/applications/org.kde.kguitar.desktop
 share/applications/org.kde.kguitar_part.desktop
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/kguitar/
 share/doc/HTML/en/kguitar/index.cache.bz2
 share/doc/HTML/en/kguitar/index.docbook

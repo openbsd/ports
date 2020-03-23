@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/03/23 18:01:12 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-l10n-bs-*
 @conflict calligra-l10n-ca-*
@@ -86,6 +86,10 @@
 @lib lib/libkoodf.so.${LIBkoodf_VERSION}
 @lib lib/libkoodf2.so.${LIBkoodf2_VERSION}
 @lib lib/libkoodfreader.so.${LIBkoodfreader_VERSION}
+lib/libkookularGenerator_odp.so.16
+lib/libkookularGenerator_odp.so.16.0.0
+lib/libkookularGenerator_odt.so.16
+lib/libkookularGenerator_odt.so.16.0.0
 @lib lib/libkopageapp.so.${LIBkopageapp_VERSION}
 @lib lib/libkoplugin.so.${LIBkoplugin_VERSION}
 @lib lib/libkostore.so.${LIBkostore_VERSION}
@@ -101,134 +105,150 @@
 @lib lib/libwordsprivate.so.${LIBwordsprivate_VERSION}
 lib/qt5/plugins/calligra/
 lib/qt5/plugins/calligra/colorspaces/
-lib/qt5/plugins/calligra/colorspaces/kolcmsengine.so
+@so lib/qt5/plugins/calligra/colorspaces/kolcmsengine.so
 lib/qt5/plugins/calligra/deferred/
-lib/qt5/plugins/calligra/deferred/calligra_shape_spreadsheet-deferred.so
+@so lib/qt5/plugins/calligra/deferred/calligra_shape_spreadsheet-deferred.so
 lib/qt5/plugins/calligra/dockers/
-lib/qt5/plugins/calligra/dockers/calligra_docker_defaults.so
-lib/qt5/plugins/calligra/dockers/calligra_docker_stencils.so
+@so lib/qt5/plugins/calligra/dockers/calligra_docker_defaults.so
+@so lib/qt5/plugins/calligra/dockers/calligra_docker_stencils.so
 lib/qt5/plugins/calligra/formatfilters/
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_applixspread2kspread.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_applixword2odt.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_ascii2words.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_csv2sheets.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_dbase2kspread.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_doc2odt.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_docx2odt.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_eps2svgai.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_gnumeric2sheets.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_html2ods.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon1x2karbon.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2image.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2svg.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2wmf.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_kpr2odp.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_kspread2tex.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2ascii.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2docx.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2epub2.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2html.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2mobi.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2wiki.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_opencalc2sheets.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_pdf2svg.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_ppt2odp.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_pptx2odp.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_qpro2sheets.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_rtf2odt.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2csv.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2gnumeric.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2html.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2opencalc.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_svg2karbon.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_wmf2svg.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_xfig2odg.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_xls2ods.so
-lib/qt5/plugins/calligra/formatfilters/calligra_filter_xlsx2ods.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_applixspread2kspread.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_applixword2odt.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_ascii2words.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_csv2sheets.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_dbase2kspread.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_doc2odt.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_docx2odt.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_eps2svgai.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_gnumeric2sheets.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_html2ods.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon1x2karbon.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2image.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2svg.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2wmf.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_kpr2odp.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_kspread2tex.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2ascii.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2docx.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2epub2.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2html.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2mobi.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2wiki.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_opencalc2sheets.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_pdf2svg.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_ppt2odp.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_pptx2odp.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_qpro2sheets.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_rtf2odt.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2csv.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2gnumeric.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2html.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2opencalc.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_svg2karbon.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_wmf2svg.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_xfig2odg.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_xls2ods.so
+@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_xlsx2ods.so
 lib/qt5/plugins/calligra/pageapptools/
-lib/qt5/plugins/calligra/pageapptools/kopabackgroundtool.so
+@so lib/qt5/plugins/calligra/pageapptools/kopabackgroundtool.so
 lib/qt5/plugins/calligra/parts/
-lib/qt5/plugins/calligra/parts/calligrasheetspart.so
-lib/qt5/plugins/calligra/parts/calligrastagepart.so
-lib/qt5/plugins/calligra/parts/calligrawordspart.so
-lib/qt5/plugins/calligra/parts/karbonpart.so
+@so lib/qt5/plugins/calligra/parts/calligrasheetspart.so
+@so lib/qt5/plugins/calligra/parts/calligrastagepart.so
+@so lib/qt5/plugins/calligra/parts/calligrawordspart.so
+@so lib/qt5/plugins/calligra/parts/karbonpart.so
 lib/qt5/plugins/calligra/presentationeventactions/
-lib/qt5/plugins/calligra/presentationeventactions/calligrastageeventactions.so
+@so lib/qt5/plugins/calligra/presentationeventactions/calligrastageeventactions.so
 lib/qt5/plugins/calligra/shapefiltereffects/
-lib/qt5/plugins/calligra/shapefiltereffects/calligra_filtereffects.so
+@so lib/qt5/plugins/calligra/shapefiltereffects/calligra_filtereffects.so
 lib/qt5/plugins/calligra/shapes/
-lib/qt5/plugins/calligra/shapes/calligra_shape_artistictext.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_chart.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_formula.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_music.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_paths.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_picture.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_plugin.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_spreadsheet.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_text.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_vector.so
-lib/qt5/plugins/calligra/shapes/calligra_shape_video.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_artistictext.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_chart.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_formula.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_music.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_paths.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_picture.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_plugin.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_spreadsheet.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_text.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_vector.so
+@so lib/qt5/plugins/calligra/shapes/calligra_shape_video.so
 lib/qt5/plugins/calligra/textediting/
-lib/qt5/plugins/calligra/textediting/calligra_textediting_autocorrect.so
-lib/qt5/plugins/calligra/textediting/calligra_textediting_changecase.so
-lib/qt5/plugins/calligra/textediting/calligra_textediting_spellcheck.so
-lib/qt5/plugins/calligra/textediting/calligra_textediting_thesaurus.so
+@so lib/qt5/plugins/calligra/textediting/calligra_textediting_autocorrect.so
+@so lib/qt5/plugins/calligra/textediting/calligra_textediting_changecase.so
+@so lib/qt5/plugins/calligra/textediting/calligra_textediting_spellcheck.so
+@so lib/qt5/plugins/calligra/textediting/calligra_textediting_thesaurus.so
 lib/qt5/plugins/calligra/textinlineobjects/
-lib/qt5/plugins/calligra/textinlineobjects/calligra_textinlineobject_variables.so
-lib/qt5/plugins/calligra/textinlineobjects/kprvariables.so
+@so lib/qt5/plugins/calligra/textinlineobjects/calligra_textinlineobject_variables.so
+@so lib/qt5/plugins/calligra/textinlineobjects/kprvariables.so
 lib/qt5/plugins/calligra/tools/
-lib/qt5/plugins/calligra/tools/calligra_tool_basicflakes.so
-lib/qt5/plugins/calligra/tools/calligra_tool_defaults.so
-lib/qt5/plugins/calligra/tools/karbon_tools.so
-lib/qt5/plugins/calligradocinfopropspage.so
-lib/qt5/plugins/calligraimagethumbnail.so
+@so lib/qt5/plugins/calligra/tools/calligra_tool_basicflakes.so
+@so lib/qt5/plugins/calligra/tools/calligra_tool_defaults.so
+@so lib/qt5/plugins/calligra/tools/karbon_tools.so
+@so lib/qt5/plugins/calligradocinfopropspage.so
+@so lib/qt5/plugins/calligraimagethumbnail.so
 lib/qt5/plugins/calligrasheets/
 lib/qt5/plugins/calligrasheets/extensions/
-lib/qt5/plugins/calligrasheets/extensions/sheetssolver.so
+@so lib/qt5/plugins/calligrasheets/extensions/sheetssolver.so
 lib/qt5/plugins/calligrasheets/functions/
-lib/qt5/plugins/calligrasheets/functions/kspreadbitopsmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadconversionmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreaddatabasemodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreaddatetimemodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadengineeringmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadfinancialmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadinformationmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadlogicmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadmathmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadreferencemodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadstatisticalmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadtextmodule.so
-lib/qt5/plugins/calligrasheets/functions/kspreadtrigonometrymodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadbitopsmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadconversionmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreaddatabasemodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreaddatetimemodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadengineeringmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadfinancialmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadinformationmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadlogicmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadmathmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadreferencemodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadstatisticalmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadtextmodule.so
+@so lib/qt5/plugins/calligrasheets/functions/kspreadtrigonometrymodule.so
 lib/qt5/plugins/calligrastage/
 lib/qt5/plugins/calligrastage/pageeffects/
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_barwipe.so
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_clockwipe.so
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_edgewipe.so
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_fade.so
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_iriswipe.so
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_matrixwipe.so
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_slidewipe.so
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_spacerotation.so
-lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_swapeffect.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_barwipe.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_clockwipe.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_edgewipe.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_fade.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_iriswipe.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_matrixwipe.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_slidewipe.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_spacerotation.so
+@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_swapeffect.so
 lib/qt5/plugins/calligrastage/shapeanimations/
-lib/qt5/plugins/calligrastage/shapeanimations/kpr_shapeanimation_example.so
+@so lib/qt5/plugins/calligrastage/shapeanimations/kpr_shapeanimation_example.so
 lib/qt5/plugins/calligrastage/tools/
-lib/qt5/plugins/calligrastage/tools/calligrastagetoolanimation.so
-lib/qt5/plugins/calligrathumbnail.so
+@so lib/qt5/plugins/calligrastage/tools/calligrastagetoolanimation.so
+@so lib/qt5/plugins/calligrathumbnail.so
 lib/qt5/plugins/karbon/
 lib/qt5/plugins/karbon/extensions/
-lib/qt5/plugins/karbon/extensions/karbon_flattenpath.so
-lib/qt5/plugins/karbon/extensions/karbon_refinepath.so
-lib/qt5/plugins/karbon/extensions/karbon_roundcorners.so
-lib/qt5/plugins/karbon/extensions/karbon_whirlpinch.so
+@so lib/qt5/plugins/karbon/extensions/karbon_flattenpath.so
+@so lib/qt5/plugins/karbon/extensions/karbon_refinepath.so
+@so lib/qt5/plugins/karbon/extensions/karbon_roundcorners.so
+@so lib/qt5/plugins/karbon/extensions/karbon_whirlpinch.so
+lib/qt5/plugins/okular/
+lib/qt5/plugins/okular/generators/
+@so lib/qt5/plugins/okular/generators/okularGenerator_doc_calligra.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_docx_calligra.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_odp_calligra.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_odt_calligra.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_powerpoint_calligra.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_pptx_calligra.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_rtf_calligra.so
 lib/qt5/qml/Calligra/
 lib/qt5/qml/Calligra/Gemini/
 lib/qt5/qml/Calligra/Gemini/Dropbox/
-lib/qt5/qml/Calligra/Gemini/Dropbox/libcalligrageminidropboxplugin.so
+@so lib/qt5/qml/Calligra/Gemini/Dropbox/libcalligrageminidropboxplugin.so
 lib/qt5/qml/Calligra/Gemini/Dropbox/qmldir
 lib/qt5/qml/org/kde/calligra/
-lib/qt5/qml/org/kde/calligra/libCalligraComponentsPlugin.so
+@so lib/qt5/qml/org/kde/calligra/libCalligraComponentsPlugin.so
 lib/qt5/qml/org/kde/calligra/qmldir
+share/applications/okularApplication_doc_calligra.desktop
+share/applications/okularApplication_docx_calligra.desktop
+share/applications/okularApplication_odp_calligra.desktop
+share/applications/okularApplication_odt_calligra.desktop
+share/applications/okularApplication_powerpoint_calligra.desktop
+share/applications/okularApplication_pptx_calligra.desktop
+share/applications/okularApplication_rtf_calligra.desktop
 share/applications/org.kde.calligragemini.desktop
 share/applications/org.kde.calligrasheets.desktop
 share/applications/org.kde.calligrawords.desktop
@@ -5207,6 +5227,13 @@ share/kservices5/calligradocinfopropspage.desktop
 share/kservices5/karbon_karbon1x_thumbnail.desktop
 share/kservices5/karbon_wmf_thumbnail.desktop
 share/kservices5/karbon_xfig_thumbnail.desktop
+share/kservices5/okularDoc_calligra.desktop
+share/kservices5/okularDocx_calligra.desktop
+share/kservices5/okularOdp_calligra.desktop
+share/kservices5/okularOdt_calligra.desktop
+share/kservices5/okularPowerpoint_calligra.desktop
+share/kservices5/okularPptx_calligra.desktop
+share/kservices5/okularRtf_calligra.desktop
 share/kservices5/sheets_excel_thumbnail.desktop
 share/kservices5/sheets_ods_thumbnail.desktop
 share/kservices5/sheets_xlsx_thumbnail.desktop

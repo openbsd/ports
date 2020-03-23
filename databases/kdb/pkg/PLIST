@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/04/21 10:11:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:02 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-<3.0.0
 @bin bin/kdb3_sqlite3_dump
@@ -135,11 +135,11 @@ lib/cmake/KDb3/KDbTargets.cmake
 @lib lib/libKDb3.so.${LIBKDb3_VERSION}
 lib/pkgconfig/KDb3.pc
 lib/qt5/plugins/kdb3/
-lib/qt5/plugins/kdb3/kdb_mysqldriver.so
-lib/qt5/plugins/kdb3/kdb_postgresqldriver.so
-lib/qt5/plugins/kdb3/kdb_sqlitedriver.so
+@so lib/qt5/plugins/kdb3/kdb_mysqldriver.so
+@so lib/qt5/plugins/kdb3/kdb_postgresqldriver.so
+@so lib/qt5/plugins/kdb3/kdb_sqlitedriver.so
 lib/qt5/plugins/kdb3/sqlite3/
-lib/qt5/plugins/kdb3/sqlite3/kdb_sqlite_icu.so
+@so lib/qt5/plugins/kdb3/sqlite3/kdb_sqlite_icu.so
 share/kf5/mkspecs/qt_KDb3.pri
 share/locale/ast/LC_MESSAGES/kdb_mysqldriver_qt.qm
 share/locale/ast/LC_MESSAGES/kdb_postgresqldriver_qt.qm

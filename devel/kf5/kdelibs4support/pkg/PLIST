@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:06 rsadowski Exp $
 @bin bin/kdebugdialog5
 @bin bin/kf5-config
 include/KF5/KDELibs4Support/
@@ -949,8 +949,6 @@ lib/cmake/KF5KDELibs4Support/FindEigen2.cmake
 lib/cmake/KF5KDELibs4Support/FindExiv2.cmake
 lib/cmake/KF5KDELibs4Support/FindFFmpeg.cmake
 lib/cmake/KF5KDELibs4Support/FindFlac.cmake
-lib/cmake/KF5KDELibs4Support/FindFontconfig.cmake
-lib/cmake/KF5KDELibs4Support/FindGLIB2.cmake
 lib/cmake/KF5KDELibs4Support/FindGMP.cmake
 lib/cmake/KF5KDELibs4Support/FindGObject.cmake
 lib/cmake/KF5KDELibs4Support/FindGStreamer.cmake
@@ -980,7 +978,6 @@ lib/cmake/KF5KDELibs4Support/FindNetworkManager.cmake
 lib/cmake/KF5KDELibs4Support/FindOggVorbis.cmake
 lib/cmake/KF5KDELibs4Support/FindPlasma.cmake
 lib/cmake/KF5KDELibs4Support/FindPopplerQt4.cmake
-lib/cmake/KF5KDELibs4Support/FindPulseAudio.cmake
 lib/cmake/KF5KDELibs4Support/FindPythonLibrary.cmake
 lib/cmake/KF5KDELibs4Support/FindQImageBlitz.cmake
 lib/cmake/KF5KDELibs4Support/FindQt5Transitional.cmake
@@ -1024,10 +1021,10 @@ lib/cmake/KF5KDELibs4Support/create_exe_symlink.cmake
 lib/cmake/KF5KDELibs4Support/kde4_exec_via_sh.cmake
 lib/cmake/KF5KDELibs4Support/kde4uic.cmake
 @lib lib/libKF5KDELibs4Support.so.${LIBKF5KDELibs4Support_VERSION}
-lib/qt5/plugins/designer/kf5deprecatedwidgets.so
-lib/qt5/plugins/kcm_ssl.so
-lib/qt5/plugins/kf5/kded/networkstatus.so
-lib/qt5/plugins/kf5/kio/metainfo.so
+@so lib/qt5/plugins/designer/kf5deprecatedwidgets.so
+@so lib/qt5/plugins/kcm_ssl.so
+@so lib/qt5/plugins/kf5/kded/networkstatus.so
+@so lib/qt5/plugins/kf5/kio/metainfo.so
 libexec/kf5/filesharelist
 @mode 4555
 libexec/kf5/fileshareset
@@ -2083,6 +2080,8 @@ share/kf5/locale/currency/zar.desktop
 share/kf5/locale/currency/zmk.desktop
 share/kf5/locale/currency/zwd.desktop
 share/kf5/locale/currency/zwl.desktop
+share/kf5/widgets/
+share/kf5/widgets/pics/
 share/kf5/widgets/pics/kdatetimewidget.png
 share/kf5/widgets/pics/kdatewidget.png
 share/kf5/widgets/pics/kdialog.png

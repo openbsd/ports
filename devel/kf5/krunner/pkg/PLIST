@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:10 rsadowski Exp $
 include/KF5/KRunner/
 include/KF5/KRunner/KRunner/
 include/KF5/KRunner/KRunner/AbstractRunner
@@ -21,13 +21,10 @@ lib/cmake/KF5Runner/KF5RunnerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Runner/KF5RunnerTargets.cmake
 @lib lib/libKF5Runner.so.${LIBKF5Runner_VERSION}
 lib/qt5/qml/org/kde/runnermodel/
-lib/qt5/qml/org/kde/runnermodel/librunnermodelplugin.so
+@so lib/qt5/qml/org/kde/runnermodel/librunnermodelplugin.so
 lib/qt5/qml/org/kde/runnermodel/qmldir
 share/dbus-1/interfaces/kf5_org.kde.krunner1.xml
-share/examples/krunner/
-share/examples/krunner/xdg/
-share/examples/krunner/xdg/krunner.categories
-@sample ${SYSCONFDIR}/xdg/krunner.categories
 share/kdevappwizard/templates/runner.tar.bz2
 share/kf5/mkspecs/qt_KRunner.pri
 share/kservicetypes5/plasma-runner.desktop
+share/qlogging-categories5/krunner.categories

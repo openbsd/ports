@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:20 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/khangman
@@ -8,14 +8,8 @@ share/applications/org.kde.khangman.desktop
 share/config.kcfg/
 share/config.kcfg/khangman.kcfg
 share/doc/HTML/ca/khangman/
-share/doc/HTML/ca/khangman/getnewstuff.png
 share/doc/HTML/ca/khangman/index.cache.bz2
 share/doc/HTML/ca/khangman/index.docbook
-share/doc/HTML/ca/khangman/khangman-desert.png
-share/doc/HTML/ca/khangman/khangman-main.png
-share/doc/HTML/ca/khangman/settings-general.png
-share/doc/HTML/ca/khangman/settings-languages.png
-share/doc/HTML/ca/khangman/settings-timers.png
 share/doc/HTML/de/khangman/
 share/doc/HTML/de/khangman/getnewstuff.png
 share/doc/HTML/de/khangman/index.cache.bz2
@@ -50,9 +44,22 @@ share/doc/HTML/en/khangman/settings.png
 share/doc/HTML/en/khangman/settings_icon.png
 share/doc/HTML/en/khangman/statusbar.png
 share/doc/HTML/en/khangman/toolbar.png
+share/doc/HTML/es/khangman/
+share/doc/HTML/es/khangman/getnewstuff.png
+share/doc/HTML/es/khangman/index.cache.bz2
+share/doc/HTML/es/khangman/index.docbook
+share/doc/HTML/es/khangman/khangman-desert.png
+share/doc/HTML/es/khangman/khangman-main.png
+share/doc/HTML/es/khangman/settings-general.png
+share/doc/HTML/es/khangman/settings-languages.png
+share/doc/HTML/es/khangman/settings-timers.png
 share/doc/HTML/et/khangman/
 share/doc/HTML/et/khangman/index.cache.bz2
 share/doc/HTML/et/khangman/index.docbook
+share/doc/HTML/id/
+share/doc/HTML/id/khangman/
+share/doc/HTML/id/khangman/index.cache.bz2
+share/doc/HTML/id/khangman/index.docbook
 share/doc/HTML/it/khangman/
 share/doc/HTML/it/khangman/index.cache.bz2
 share/doc/HTML/it/khangman/index.docbook
@@ -71,6 +78,13 @@ share/doc/HTML/pt_BR/khangman/khangman-main.png
 share/doc/HTML/pt_BR/khangman/settings-general.png
 share/doc/HTML/pt_BR/khangman/settings-languages.png
 share/doc/HTML/pt_BR/khangman/settings-timers.png
+share/doc/HTML/ru/khangman/
+share/doc/HTML/ru/khangman/getnewstuff.png
+share/doc/HTML/ru/khangman/index.cache.bz2
+share/doc/HTML/ru/khangman/index.docbook
+share/doc/HTML/ru/khangman/khangman-desert.png
+share/doc/HTML/ru/khangman/khangman-main.png
+share/doc/HTML/ru/khangman/settings.png
 share/doc/HTML/sv/khangman/
 share/doc/HTML/sv/khangman/getnewstuff.png
 share/doc/HTML/sv/khangman/index.cache.bz2
@@ -200,6 +214,7 @@ share/locale/kk/LC_MESSAGES/khangman.mo
 share/locale/km/LC_MESSAGES/khangman.mo
 share/locale/lt/LC_MESSAGES/khangman.mo
 share/locale/lv/LC_MESSAGES/khangman.mo
+share/locale/ml/LC_MESSAGES/khangman.mo
 share/locale/mr/LC_MESSAGES/khangman.mo
 share/locale/nb/LC_MESSAGES/khangman.mo
 share/locale/nds/LC_MESSAGES/khangman.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:25 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/ksystemlog
@@ -9,7 +9,6 @@ share/doc/HTML/ca/ksystemlog/filter-process.png
 share/doc/HTML/ca/ksystemlog/first-opening.png
 share/doc/HTML/ca/ksystemlog/index.cache.bz2
 share/doc/HTML/ca/ksystemlog/index.docbook
-share/doc/HTML/ca/ksystemlog/main-screen.png
 share/doc/HTML/de/ksystemlog/
 share/doc/HTML/de/ksystemlog/filter-process.png
 share/doc/HTML/de/ksystemlog/first-opening.png
@@ -110,4 +109,6 @@ share/locale/ug/LC_MESSAGES/ksystemlog.mo
 share/locale/uk/LC_MESSAGES/ksystemlog.mo
 share/locale/zh_CN/LC_MESSAGES/ksystemlog.mo
 share/locale/zh_TW/LC_MESSAGES/ksystemlog.mo
+share/metainfo/
+share/metainfo/org.kde.ksystemlog.appdata.xml
 @tag update-desktop-database

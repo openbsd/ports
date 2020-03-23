@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:08:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:03 rsadowski Exp $
 include/KF5/
 include/KF5/BluezQt/
 include/KF5/BluezQt/BluezQt/
@@ -6,10 +6,16 @@ include/KF5/BluezQt/BluezQt/Adapter
 include/KF5/BluezQt/BluezQt/Agent
 include/KF5/BluezQt/BluezQt/Device
 include/KF5/BluezQt/BluezQt/DevicesModel
+include/KF5/BluezQt/BluezQt/GattApplication
+include/KF5/BluezQt/BluezQt/GattCharacteristic
+include/KF5/BluezQt/BluezQt/GattManager
+include/KF5/BluezQt/BluezQt/GattService
 include/KF5/BluezQt/BluezQt/InitManagerJob
 include/KF5/BluezQt/BluezQt/InitObexManagerJob
 include/KF5/BluezQt/BluezQt/Input
 include/KF5/BluezQt/BluezQt/Job
+include/KF5/BluezQt/BluezQt/LEAdvertisement
+include/KF5/BluezQt/BluezQt/LEAdvertisingManager
 include/KF5/BluezQt/BluezQt/Manager
 include/KF5/BluezQt/BluezQt/Media
 include/KF5/BluezQt/BluezQt/MediaEndpoint
@@ -33,10 +39,16 @@ include/KF5/BluezQt/bluezqt/agent.h
 include/KF5/BluezQt/bluezqt/bluezqt_export.h
 include/KF5/BluezQt/bluezqt/device.h
 include/KF5/BluezQt/bluezqt/devicesmodel.h
+include/KF5/BluezQt/bluezqt/gattapplication.h
+include/KF5/BluezQt/bluezqt/gattcharacteristic.h
+include/KF5/BluezQt/bluezqt/gattmanager.h
+include/KF5/BluezQt/bluezqt/gattservice.h
 include/KF5/BluezQt/bluezqt/initmanagerjob.h
 include/KF5/BluezQt/bluezqt/initobexmanagerjob.h
 include/KF5/BluezQt/bluezqt/input.h
 include/KF5/BluezQt/bluezqt/job.h
+include/KF5/BluezQt/bluezqt/leadvertisement.h
+include/KF5/BluezQt/bluezqt/leadvertisingmanager.h
 include/KF5/BluezQt/bluezqt/manager.h
 include/KF5/BluezQt/bluezqt/media.h
 include/KF5/BluezQt/bluezqt/mediaendpoint.h
@@ -65,12 +77,10 @@ lib/qt5/qml/org/
 lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/bluezqt/
 lib/qt5/qml/org/kde/bluezqt/DevicesModel.qml
-lib/qt5/qml/org/kde/bluezqt/libbluezqtextensionplugin.so
+@so lib/qt5/qml/org/kde/bluezqt/libbluezqtextensionplugin.so
 lib/qt5/qml/org/kde/bluezqt/qmldir
-share/examples/bluez-qt/
-share/examples/bluez-qt/xdg/
-share/examples/bluez-qt/xdg/bluez.categories
-@sample ${SYSCONFDIR}/xdg/bluez.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_BluezQt.pri
+share/qlogging-categories5/
+share/qlogging-categories5/bluezqt.categories

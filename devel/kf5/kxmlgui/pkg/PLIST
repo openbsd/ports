@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/30 09:13:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:11 rsadowski Exp $
 include/KF5/KXmlGui/
 include/KF5/KXmlGui/KAboutApplicationDialog
+include/KF5/KXmlGui/KAboutPluginDialog
 include/KF5/KXmlGui/KActionCategory
 include/KF5/KXmlGui/KActionCollection
 include/KF5/KXmlGui/KBugReport
@@ -19,12 +20,11 @@ include/KF5/KXmlGui/KXMLGUIClient
 include/KF5/KXmlGui/KXMLGUIFactory
 include/KF5/KXmlGui/KXmlGuiWindow
 include/KF5/KXmlGui/kaboutapplicationdialog.h
+include/KF5/KXmlGui/kaboutplugindialog.h
 include/KF5/KXmlGui/kactioncategory.h
 include/KF5/KXmlGui/kactioncollection.h
 include/KF5/KXmlGui/kbugreport.h
 include/KF5/KXmlGui/kedittoolbar.h
-include/KF5/KXmlGui/kgesture_p.h
-include/KF5/KXmlGui/kgesturemap_p.h
 include/KF5/KXmlGui/khelpmenu.h
 include/KF5/KXmlGui/kkeysequencewidget.h
 include/KF5/KXmlGui/kmainwindow.h
@@ -46,10 +46,10 @@ lib/cmake/KF5XmlGui/KF5XmlGuiConfigVersion.cmake
 lib/cmake/KF5XmlGui/KF5XmlGuiTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5XmlGui/KF5XmlGuiTargets.cmake
 @lib lib/libKF5XmlGui.so.${LIBKF5XmlGui_VERSION}
+@so lib/qt5/plugins/designer/kxmlgui5widgets.so
 @bin libexec/kf5/ksendbugmail
 share/examples/kxmlgui/
 share/examples/kxmlgui/xdg/
-share/examples/kxmlgui/xdg/kxmlgui.categories
 share/examples/kxmlgui/xdg/ui/
 @sample ${SYSCONFDIR}/xdg/ui/
 share/examples/kxmlgui/xdg/ui/ui_standards.rc
@@ -58,6 +58,7 @@ share/kf5/mkspecs/qt_KXmlGui.pri
 share/locale/af/LC_MESSAGES/kxmlgui5.mo
 share/locale/ar/LC_MESSAGES/kxmlgui5.mo
 share/locale/as/LC_MESSAGES/kxmlgui5.mo
+share/locale/ast/LC_MESSAGES/kxmlgui5.mo
 share/locale/be/LC_MESSAGES/kxmlgui5.mo
 share/locale/be@latin/LC_MESSAGES/kxmlgui5.mo
 share/locale/bg/LC_MESSAGES/kxmlgui5.mo
@@ -154,3 +155,4 @@ share/locale/xh/LC_MESSAGES/kxmlgui5.mo
 share/locale/zh_CN/LC_MESSAGES/kxmlgui5.mo
 share/locale/zh_HK/LC_MESSAGES/kxmlgui5.mo
 share/locale/zh_TW/LC_MESSAGES/kxmlgui5.mo
+share/qlogging-categories5/kxmlgui.categories

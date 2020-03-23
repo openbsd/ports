@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:05 rsadowski Exp $
 bin/preparetips5
 include/KF5/KConfigWidgets/
 include/KF5/KConfigWidgets/KCModule
@@ -10,6 +10,7 @@ include/KF5/KConfigWidgets/KConfigDialogManager
 include/KF5/KConfigWidgets/KConfigViewStateSaver
 include/KF5/KConfigWidgets/KHelpClient
 include/KF5/KConfigWidgets/KLanguageButton
+include/KF5/KConfigWidgets/KLanguageName
 include/KF5/KConfigWidgets/KPasteTextAction
 include/KF5/KConfigWidgets/KRecentFilesAction
 include/KF5/KConfigWidgets/KStandardAction
@@ -25,6 +26,7 @@ include/KF5/KConfigWidgets/kconfigviewstatesaver.h
 include/KF5/KConfigWidgets/kconfigwidgets_export.h
 include/KF5/KConfigWidgets/khelpclient.h
 include/KF5/KConfigWidgets/klanguagebutton.h
+include/KF5/KConfigWidgets/klanguagename.h
 include/KF5/KConfigWidgets/kpastetextaction.h
 include/KF5/KConfigWidgets/krecentfilesaction.h
 include/KF5/KConfigWidgets/kstandardaction.h
@@ -38,11 +40,8 @@ lib/cmake/KF5ConfigWidgets/KF5ConfigWidgetsConfigVersion.cmake
 lib/cmake/KF5ConfigWidgets/KF5ConfigWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5ConfigWidgets/KF5ConfigWidgetsTargets.cmake
 @lib lib/libKF5ConfigWidgets.so.${LIBKF5ConfigWidgets_VERSION}
+@so lib/qt5/plugins/designer/kconfigwidgets5widgets.so
 @man man/man1/preparetips5.1
-share/examples/kconfigwidgets/
-share/examples/kconfigwidgets/xdg/
-share/examples/kconfigwidgets/xdg/kconfigwidgets.categories
-@sample ${SYSCONFDIR}/xdg/kconfigwidgets.categories
 share/kf5/mkspecs/qt_KConfigWidgets.pri
 share/locale/af/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/af/kf5_entry.desktop
@@ -242,3 +241,4 @@ share/locale/zh_HK/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/zh_HK/kf5_entry.desktop
 share/locale/zh_TW/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/zh_TW/kf5_entry.desktop
+share/qlogging-categories5/kconfigwidgets.categories

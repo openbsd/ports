@@ -1,61 +1,62 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/23 18:01:11 rsadowski Exp $
 
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
 
-SHARED_LIBS =	KF5Plasma		5.3
-SHARED_LIBS +=	KF5PlasmaQuick		5.3
+SHARED_LIBS =	KF5Plasma		6.0
+SHARED_LIBS +=	KF5PlasmaQuick		6.0
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE KF5Activities KF5Archive
-WANTLIB += KF5Auth KF5CalendarEvents KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Declarative
-WANTLIB += KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5Notifications KF5Package
-WANTLIB += KF5QuickAddons KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext c m xcb xcb-composite xcb-damage
-WANTLIB += xcb-render xcb-shape xcb-xfixes
+WANTLIB += KF5Auth KF5AuthCore KF5CalendarEvents KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Declarative KF5GlobalAccel KF5GuiAddons KF5I18n
+WANTLIB += KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOWidgets
+WANTLIB += KF5Notifications KF5Package KF5QuickAddons KF5Service
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Sql
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
+WANTLIB += m xcb xcb-composite xcb-damage xcb-render xcb-shape
+WANTLIB += xcb-xfixes
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		devel/gettext,-tools \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kdesu \
-		devel/kf5/kdoctools \
-		devel/kf5/kirigami2 \
-		devel/kf5/kparts \
-		devel/kf5/solid \
+		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
+		devel/kf5/kdesu>=${MODKF5_VERSION} \
+		devel/kf5/kdoctools>=${MODKF5_VERSION} \
+		devel/kf5/kirigami2>=${MODKF5_VERSION} \
+		devel/kf5/kparts>=${MODKF5_VERSION} \
+		devel/kf5/solid>=${MODKF5_VERSION} \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	archivers/bzip2 \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kdoctools \
-		devel/kf5/oxygen-icons \
+		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
+		devel/kf5/kdoctools>=${MODKF5_VERSION} \
+		devel/kf5/oxygen-icons>=${MODKF5_VERSION} \
 		x11/qt5/qtquickcontrols
 
-LIB_DEPENDS =	devel/kf5/kactivities \
-		devel/kf5/karchive \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdeclarative \
-		devel/kf5/kglobalaccel \
-		devel/kf5/kguiaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/knotifications \
-		devel/kf5/kpackage \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
+LIB_DEPENDS =	devel/kf5/kactivities>=${MODKF5_VERSION} \
+		devel/kf5/karchive>=${MODKF5_VERSION} \
+		devel/kf5/kconfig>=${MODKF5_VERSION} \
+		devel/kf5/kconfigwidgets>=${MODKF5_VERSION} \
+		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
+		devel/kf5/kdeclarative>=${MODKF5_VERSION} \
+		devel/kf5/kglobalaccel>=${MODKF5_VERSION} \
+		devel/kf5/kguiaddons>=${MODKF5_VERSION} \
+		devel/kf5/ki18n>=${MODKF5_VERSION} \
+		devel/kf5/kiconthemes>=${MODKF5_VERSION} \
+		devel/kf5/kio>=${MODKF5_VERSION} \
+		devel/kf5/knotifications>=${MODKF5_VERSION} \
+		devel/kf5/kpackage>=${MODKF5_VERSION} \
+		devel/kf5/kservice>=${MODKF5_VERSION} \
+		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
+		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
+		devel/kf5/kxmlgui>=${MODKF5_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras
 
-CONFIGURE_ARGS +=	-DBUILD_EXAMPLES=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_KF5Wayland=Yes
+CONFIGURE_ARGS +=	-DBUILD_EXAMPLES=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_KF5Wayland=ON
 
 # TODO: The following tests FAILED (some dependencies missing?):
 # 1 - plasma-dialogqmltest (Failed)

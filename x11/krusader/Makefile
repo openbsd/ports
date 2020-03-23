@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2019/09/01 18:45:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.41 2020/03/23 18:01:29 rsadowski Exp $
 
 COMMENT=	twin panel file manager for KDE
 
 VERSION=	2.7.2
 DISTNAME=	krusader-${VERSION}
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -14,15 +15,15 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += KF5Archive KF5Auth KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
-WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m z
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GuiAddons KF5I18n
+WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOFileWidgets KF5KIOWidgets KF5Notifications KF5Parts
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml c m z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krusader/${VERSION}/}
 EXTRACT_SUFX=	.tar.xz

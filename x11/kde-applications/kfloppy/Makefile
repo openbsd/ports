@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/10 18:06:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:20 rsadowski Exp $
 
 COMMENT =	graphical floppy format utility for KDE
 DISTNAME =	kfloppy-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kfloppy
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5I18n KF5WidgetsAddons KF5XmlGui Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Widgets Qt5Xml c m

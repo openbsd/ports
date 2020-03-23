@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2019/11/26 21:58:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.56 2020/03/23 18:01:29 rsadowski Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
 DISTNAME =	tellico-3.2.3
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -13,17 +14,18 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5Bookmarks
-WANTLIB += KF5Cddb KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5FileMetaData
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews
-WANTLIB += KF5JS KF5JobWidgets KF5KHtml KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Parts KF5Sane KF5Service KF5Solid KF5SonnetCore
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c cdio exempi exslt
-WANTLIB += iconv iso9660 m poppler poppler-qt5 tag xml2 xslt yaz
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
+WANTLIB += KF5Bookmarks KF5Cddb KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5FileMetaData KF5GuiAddons KF5I18n KF5IconThemes
+WANTLIB += KF5ItemModels KF5ItemViews KF5JS KF5JobWidgets KF5KHtml
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5NewStuff KF5NewStuffCore KF5Parts KF5Sane KF5Service
+WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += c cdio exempi exslt iconv iso9660 m poppler poppler-qt5
+WANTLIB += tag xml2 xslt yaz
 
 MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/10 18:06:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:20 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kfloppy
@@ -47,9 +47,6 @@ share/doc/HTML/sv/kfloppy/index.docbook
 share/doc/HTML/uk/kfloppy/
 share/doc/HTML/uk/kfloppy/index.cache.bz2
 share/doc/HTML/uk/kfloppy/index.docbook
-share/examples/kfloppy/
-share/examples/kfloppy/xdg/
-share/examples/kfloppy/xdg/kfloppy.categories
 share/icons/hicolor/128x128/apps/kfloppy.png
 share/icons/hicolor/16x16/apps/kfloppy.png
 share/icons/hicolor/22x22/apps/kfloppy.png
@@ -112,5 +109,6 @@ share/locale/zh_CN/LC_MESSAGES/kfloppy.mo
 share/locale/zh_TW/LC_MESSAGES/kfloppy.mo
 share/metainfo/
 share/metainfo/org.kde.kfloppy.appdata.xml
+share/qlogging-categories5/kfloppy.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

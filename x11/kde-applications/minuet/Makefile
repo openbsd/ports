@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/07 10:23:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 
 COMMENT =	KDE software for music education
 DISTNAME =	minuet-${VERSION}
@@ -6,8 +6,7 @@ CATEGORIES =	audio education
 
 HOMEPAGE =	https://minuet.kde.org/
 
-
-SHARED_LIBS +=  minuetinterfaces          0.0 # 0.3
+SHARED_LIBS +=  minuetinterfaces          1.0 # 0.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5Crash KF5I18n Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickControls2
@@ -21,10 +20,10 @@ MODKDE5_DOCS = yes
 MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
-BUILD_DEPENDS +=x11/qt5/qtquickcontrols
-RUN_DEPENDS +=	x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+RUN_DEPENDS =	x11/qt5/qtquickcontrols
 
-LIB_DEPENDS +=	audio/fluidsynth \
+LIB_DEPENDS =	audio/fluidsynth \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \

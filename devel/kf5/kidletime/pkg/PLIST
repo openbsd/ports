@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/10/22 20:30:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:08 rsadowski Exp $
 include/KF5/
 include/KF5/KIdleTime/
 include/KF5/KIdleTime/KIdleTime
@@ -15,12 +15,10 @@ lib/cmake/KF5IdleTime/KF5IdleTimeTargets.cmake
 @lib lib/libKF5IdleTime.so.${LIBKF5IdleTime_VERSION}
 lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/org.kde.kidletime.platforms/
-lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
-lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so
-share/examples/kidletime/
-share/examples/kidletime/xdg/
-share/examples/kidletime/xdg/kidletime.categories
-@sample ${SYSCONFDIR}/xdg/kidletime.categories
+@so lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
+@so lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KIdleTime.pri
+share/qlogging-categories5/
+share/qlogging-categories5/kidletime.categories

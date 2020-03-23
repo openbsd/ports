@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:12 rsadowski Exp $
 lib/cmake/KF5QQC2DeskopStyle/
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfig.cmake
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
+lib/cmake/KF5QQC2DesktopStyle/
+lib/cmake/KF5QQC2DesktopStyle/KF5QQC2DesktopStyleConfig.cmake
+lib/cmake/KF5QQC2DesktopStyle/KF5QQC2DesktopStyleConfigVersion.cmake
 lib/qt5/plugins/kf5/kirigami/
-lib/qt5/plugins/kf5/kirigami/org.kde.desktop.so
+@so lib/qt5/plugins/kf5/kirigami/org.kde.desktop.so
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/BusyIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Button.qml
@@ -25,6 +28,7 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Label.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Menu.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuBarItem.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuItem.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuSeparator.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Popup.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ProgressBar.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RadioButton.qml
@@ -53,5 +57,5 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/MobileTextActionsToolBar.
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/qmldir
 lib/qt5/qml/org/kde/qqc2desktopstyle/
 lib/qt5/qml/org/kde/qqc2desktopstyle/private/
-lib/qt5/qml/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so
+@so lib/qt5/qml/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so
 lib/qt5/qml/org/kde/qqc2desktopstyle/private/qmldir

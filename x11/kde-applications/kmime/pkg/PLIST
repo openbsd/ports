@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:22 rsadowski Exp $
 include/KF5/KMime/
 include/KF5/KMime/KMime/
-include/KF5/KMime/KMime/Codecs
 include/KF5/KMime/KMime/Content
 include/KF5/KMime/KMime/ContentIndex
 include/KF5/KMime/KMime/DateFormatter

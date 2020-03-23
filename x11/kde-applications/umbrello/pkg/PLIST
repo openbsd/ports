@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/12/18 09:39:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:29 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/umbrello
@@ -6,9 +6,30 @@
 @bin bin/umbrello5
 @bin bin/xmi2pot5
 share/applications/org.kde.umbrello.desktop
+share/doc/HTML/ca/umbrello/
+share/doc/HTML/ca/umbrello/apphelp/
+share/doc/HTML/ca/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/ca/umbrello/apphelp/index.docbook
+share/doc/HTML/da/umbrello/
+share/doc/HTML/da/umbrello/authors.docbook
+share/doc/HTML/da/umbrello/code_import_and_generation.docbook
+share/doc/HTML/da/umbrello/credits.docbook
+share/doc/HTML/da/umbrello/index.cache.bz2
+share/doc/HTML/da/umbrello/index.docbook
+share/doc/HTML/da/umbrello/introduction.docbook
+share/doc/HTML/da/umbrello/other_features.docbook
+share/doc/HTML/da/umbrello/uml_basics.docbook
+share/doc/HTML/da/umbrello/working_with_umbrello.docbook
+share/doc/HTML/de/umbrello/
+share/doc/HTML/de/umbrello/apphelp/
+share/doc/HTML/de/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/de/umbrello/apphelp/index.docbook
 share/doc/HTML/en/umbrello/
 share/doc/HTML/en/umbrello/activity-diagram.png
 share/doc/HTML/en/umbrello/aggregation.png
+share/doc/HTML/en/umbrello/apphelp/
+share/doc/HTML/en/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/en/umbrello/apphelp/index.docbook
 share/doc/HTML/en/umbrello/association.png
 share/doc/HTML/en/umbrello/authors.docbook
 share/doc/HTML/en/umbrello/category.png
@@ -25,7 +46,6 @@ share/doc/HTML/en/umbrello/entity.png
 share/doc/HTML/en/umbrello/folders.png
 share/doc/HTML/en/umbrello/generalization.png
 share/doc/HTML/en/umbrello/generation-options.png
-share/doc/HTML/en/umbrello/index-kf5.docbook
 share/doc/HTML/en/umbrello/index.cache.bz2
 share/doc/HTML/en/umbrello/index.docbook
 share/doc/HTML/en/umbrello/introduction.docbook
@@ -38,6 +58,20 @@ share/doc/HTML/en/umbrello/umbrello-ui.png
 share/doc/HTML/en/umbrello/uml_basics.docbook
 share/doc/HTML/en/umbrello/use-case-diagram.png
 share/doc/HTML/en/umbrello/working_with_umbrello.docbook
+share/doc/HTML/es/umbrello/
+share/doc/HTML/es/umbrello/apphelp/
+share/doc/HTML/es/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/es/umbrello/apphelp/index.docbook
+share/doc/HTML/gl/umbrello/
+share/doc/HTML/gl/umbrello/authors.docbook
+share/doc/HTML/gl/umbrello/code_import_and_generation.docbook
+share/doc/HTML/gl/umbrello/credits.docbook
+share/doc/HTML/gl/umbrello/index.cache.bz2
+share/doc/HTML/gl/umbrello/index.docbook
+share/doc/HTML/gl/umbrello/introduction.docbook
+share/doc/HTML/gl/umbrello/other_features.docbook
+share/doc/HTML/gl/umbrello/uml_basics.docbook
+share/doc/HTML/gl/umbrello/working_with_umbrello.docbook
 share/doc/HTML/it/umbrello/
 share/doc/HTML/it/umbrello/authors.docbook
 share/doc/HTML/it/umbrello/code_import_and_generation.docbook
@@ -48,6 +82,48 @@ share/doc/HTML/it/umbrello/introduction.docbook
 share/doc/HTML/it/umbrello/other_features.docbook
 share/doc/HTML/it/umbrello/uml_basics.docbook
 share/doc/HTML/it/umbrello/working_with_umbrello.docbook
+share/doc/HTML/nl/umbrello/
+share/doc/HTML/nl/umbrello/apphelp/
+share/doc/HTML/nl/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/nl/umbrello/apphelp/index.docbook
+share/doc/HTML/pt/umbrello/
+share/doc/HTML/pt/umbrello/apphelp/
+share/doc/HTML/pt/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/pt/umbrello/apphelp/index.docbook
+share/doc/HTML/pt_BR/umbrello/
+share/doc/HTML/pt_BR/umbrello/activity-diagram.png
+share/doc/HTML/pt_BR/umbrello/aggregation.png
+share/doc/HTML/pt_BR/umbrello/association.png
+share/doc/HTML/pt_BR/umbrello/authors.docbook
+share/doc/HTML/pt_BR/umbrello/class-diagram.png
+share/doc/HTML/pt_BR/umbrello/class.png
+share/doc/HTML/pt_BR/umbrello/code-import.png
+share/doc/HTML/pt_BR/umbrello/code_import_and_generation.docbook
+share/doc/HTML/pt_BR/umbrello/collaboration-diagram.png
+share/doc/HTML/pt_BR/umbrello/composition.png
+share/doc/HTML/pt_BR/umbrello/credits.docbook
+share/doc/HTML/pt_BR/umbrello/folders.png
+share/doc/HTML/pt_BR/umbrello/generalization.png
+share/doc/HTML/pt_BR/umbrello/generation-options.png
+share/doc/HTML/pt_BR/umbrello/index.cache.bz2
+share/doc/HTML/pt_BR/umbrello/index.docbook
+share/doc/HTML/pt_BR/umbrello/introduction.docbook
+share/doc/HTML/pt_BR/umbrello/other_features.docbook
+share/doc/HTML/pt_BR/umbrello/sequence-diagram.png
+share/doc/HTML/pt_BR/umbrello/state-diagram.png
+share/doc/HTML/pt_BR/umbrello/umbrello-main-screen.png
+share/doc/HTML/pt_BR/umbrello/umbrello-ui.png
+share/doc/HTML/pt_BR/umbrello/uml_basics.docbook
+share/doc/HTML/pt_BR/umbrello/use-case-diagram.png
+share/doc/HTML/pt_BR/umbrello/working_with_umbrello.docbook
+share/doc/HTML/sv/umbrello/
+share/doc/HTML/sv/umbrello/apphelp/
+share/doc/HTML/sv/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/sv/umbrello/apphelp/index.docbook
+share/doc/HTML/uk/umbrello/
+share/doc/HTML/uk/umbrello/apphelp/
+share/doc/HTML/uk/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/uk/umbrello/apphelp/index.docbook
 share/icons/hicolor/128x128/apps/umbrello.png
 share/icons/hicolor/16x16/apps/umbrello.png
 share/icons/hicolor/16x16/mimetypes/application-x-uml.png
@@ -77,6 +153,7 @@ share/locale/de/LC_MESSAGES/umbrello.mo
 share/locale/de/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/de/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/el/LC_MESSAGES/umbrello.mo
+share/locale/el/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/el/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/en_GB/LC_MESSAGES/umbrello.mo
 share/locale/en_GB/LC_MESSAGES/umbrello_kdevphp.mo
@@ -116,8 +193,10 @@ share/locale/kk/LC_MESSAGES/umbrello.mo
 share/locale/kk/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/km/LC_MESSAGES/umbrello.mo
 share/locale/ko/LC_MESSAGES/umbrello.mo
+share/locale/ko/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/ko/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/lt/LC_MESSAGES/umbrello.mo
+share/locale/lt/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/lt/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/mr/LC_MESSAGES/umbrello.mo
 share/locale/mr/LC_MESSAGES/umbrello_kdevphp5.mo
@@ -142,6 +221,7 @@ share/locale/pt_BR/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/ro/LC_MESSAGES/umbrello.mo
 share/locale/ro/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/ru/LC_MESSAGES/umbrello.mo
+share/locale/ru/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/ru/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/sk/LC_MESSAGES/umbrello.mo
 share/locale/sk/LC_MESSAGES/umbrello_kdevphp.mo
@@ -164,6 +244,7 @@ share/locale/zh_CN/LC_MESSAGES/umbrello.mo
 share/locale/zh_CN/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/zh_CN/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/zh_TW/LC_MESSAGES/umbrello.mo
+share/locale/zh_TW/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/zh_TW/LC_MESSAGES/umbrello_kdevphp5.mo
 share/metainfo/
 share/metainfo/org.kde.umbrello.appdata.xml
@@ -194,6 +275,8 @@ share/umbrello5/layouts/activity-vertical.desktop
 share/umbrello5/layouts/class-export.desktop
 share/umbrello5/layouts/class-horizontal.desktop
 share/umbrello5/layouts/class-vertical.desktop
+share/umbrello5/layouts/component-horizontal.desktop
+share/umbrello5/layouts/component-vertical.desktop
 share/umbrello5/layouts/entityrelationship-export.desktop
 share/umbrello5/layouts/entityrelationship-horizontal.desktop
 share/umbrello5/layouts/entityrelationship-vertical.desktop
@@ -203,6 +286,16 @@ share/umbrello5/layouts/object-vertical.desktop
 share/umbrello5/layouts/state-export.desktop
 share/umbrello5/layouts/state-vertical.desktop
 share/umbrello5/layouts/usecase-default.desktop
+share/umbrello5/simple4125/
+share/umbrello5/simple4125/sdbcent.mod
+share/umbrello5/simple4125/sdbhier.mod
+share/umbrello5/simple4125/sdbpool.mod
+share/umbrello5/simple4125/sdocbook-custom.dtd
+share/umbrello5/simple4125/sdocbook.css
+share/umbrello5/simple4125/sdocbook.dtd
+share/umbrello5/simple4125/sdocbookref-custom.dtd
+share/umbrello5/simple4125/sdocbookref.dtd
+share/umbrello5/simple4125/sinclist.mod
 share/umbrello5/xmi.css
 share/umbrello5/xmi2docbook.xsl
 @tag update-desktop-database

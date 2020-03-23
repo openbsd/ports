@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/30 09:13:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/23 18:01:08 rsadowski Exp $
 
 COMMENT =		KDE item models extending the Qt model-view framework
 DISTNAME =		kitemmodels-${VERSION}
 
-SHARED_LIBS =		KF5ItemModels		4.3
+SHARED_LIBS =		KF5ItemModels		5.0
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml m
 
 BUILD_DEPENDS =	x11/qt5/qtdeclarative \
 		x11/qt5/qtquickcontrols \

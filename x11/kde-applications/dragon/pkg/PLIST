@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:15 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/dragon
 @bin bin/dragon
-lib/qt5/plugins/dragonpart.so
+lib/qt5/plugins/kf5/parts/
+@so lib/qt5/plugins/kf5/parts/dragonpart.so
 @man man/man1/dragon.1
 share/applications/org.kde.dragonplayer.desktop
 share/doc/HTML/ca/dragonplayer/
 share/doc/HTML/ca/dragonplayer/index.cache.bz2
 share/doc/HTML/ca/dragonplayer/index.docbook
-share/doc/HTML/ca/dragonplayer/main.png
-share/doc/HTML/ca/dragonplayer/playmedia.png
 share/doc/HTML/de/dragonplayer/
 share/doc/HTML/de/dragonplayer/index.cache.bz2
 share/doc/HTML/de/dragonplayer/index.docbook
@@ -32,12 +31,6 @@ share/doc/HTML/fr/dragonplayer/index.docbook
 share/doc/HTML/gl/dragonplayer/
 share/doc/HTML/gl/dragonplayer/index.cache.bz2
 share/doc/HTML/gl/dragonplayer/index.docbook
-share/doc/HTML/id/
-share/doc/HTML/id/dragonplayer/
-share/doc/HTML/id/dragonplayer/index.cache.bz2
-share/doc/HTML/id/dragonplayer/index.docbook
-share/doc/HTML/id/dragonplayer/main.png
-share/doc/HTML/id/dragonplayer/playmedia.png
 share/doc/HTML/it/dragonplayer/
 share/doc/HTML/it/dragonplayer/index.cache.bz2
 share/doc/HTML/it/dragonplayer/index.docbook
@@ -103,10 +96,6 @@ share/icons/oxygen/scalable/actions/player-volume-muted.svgz
 share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/dragonplayer_play_dvd.desktop
 share/kservices5/dragonplayer_part.desktop
-share/kxmlgui5/
-share/kxmlgui5/dragonplayer/
-share/kxmlgui5/dragonplayer/dragonlogo.png
-share/kxmlgui5/dragonplayer/dragonplayerui.rc
 share/locale/ar/LC_MESSAGES/dragonplayer.mo
 share/locale/bg/LC_MESSAGES/dragonplayer.mo
 share/locale/bs/LC_MESSAGES/dragonplayer.mo

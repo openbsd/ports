@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:56:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:14 rsadowski Exp $
 
 COMMENT =	Kio slave for accessing audio CDs
 DISTNAME =	audiocd-kio-${VERSION}
 PKGNAME =	audiocd-kio-kf5-${VERSION}
 CATEGORIES =	devel audio
-REVISION =	0
 
+SHARED_LIBS +=  audiocdplugins            1.0 # 5.0
 
-SHARED_LIBS +=  audiocdplugins            0.0 # 5.0
-
-WANTLIB += ${COMPILER_LIBCXX} FLAC KF5Auth KF5Cddb KF5Codecs KF5CompactDisc
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5KCMUtils KF5KIOCore KF5Service KF5Solid
-WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets Qt5Xml cdda_interface cdda_paranoia
-WANTLIB += m ogg phonon4qt5 vorbis vorbisenc vorbisfile
+WANTLIB += ${COMPILER_LIBCXX} FLAC KF5Auth KF5AuthCore KF5Cddb
+WANTLIB += KF5Codecs KF5CompactDisc KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5KCMUtils
+WANTLIB += KF5KIOCore KF5Service KF5Solid KF5WidgetsAddons Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += cdda_interface cdda_paranoia m ogg phonon4qt5 vorbis
+WANTLIB += vorbisenc vorbisfile
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-LIB_DEPENDS +=	audio/cdparanoia \
+LIB_DEPENDS =	audio/cdparanoia \
 		audio/flac \
 		audio/libvorbis \
 		devel/kf5/kauth \

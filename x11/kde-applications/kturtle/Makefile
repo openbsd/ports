@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/07 10:15:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:26 rsadowski Exp $
 
 COMMENT =	KDE educational Logo programming environment
 DISTNAME =	kturtle-${VERSION}
@@ -6,13 +6,12 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/kturtle
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5KIOCore KF5NewStuff KF5NewStuffCore KF5Service
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Crash KF5I18n KF5KIOCore KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -21,7 +20,7 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-LIB_DEPENDS +=	devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:56:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:14 rsadowski Exp $
 
 COMMENT =	CVS GUI for KDE
 DISTNAME =	cervisia-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Pty KF5Service
@@ -21,12 +19,12 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=devel/kf5/kinit \
+BUILD_DEPENDS =devel/kf5/kinit
 
-RUN_DEPENDS +=	misc/shared-mime-info \
+RUN_DEPENDS =	misc/shared-mime-info \
 		devel/kf5/kinit \
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \

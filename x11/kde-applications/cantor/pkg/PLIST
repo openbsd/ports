@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/12/06 10:44:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/03/23 18:01:14 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
-@bin bin/cantor_python2server
 @bin bin/cantor_python3server
 @bin bin/cantor_rserver
 @bin bin/cantor_scripteditor
@@ -11,6 +10,7 @@ include/cantor/animationresult.h
 include/cantor/backend.h
 include/cantor/cantor_export.h
 include/cantor/cantor_macros.h
+include/cantor/cantorlibs_version.h
 include/cantor/completionobject.h
 include/cantor/defaulthighlighter.h
 include/cantor/defaultvariablemodel.h
@@ -18,13 +18,22 @@ include/cantor/epsresult.h
 include/cantor/expression.h
 include/cantor/extension.h
 include/cantor/helpresult.h
+include/cantor/htmlresult.h
 include/cantor/imageresult.h
+include/cantor/jupyterutils.h
 include/cantor/latexresult.h
+include/cantor/mimeresult.h
+include/cantor/renderer.h
 include/cantor/result.h
 include/cantor/session.h
 include/cantor/syntaxhelpobject.h
 include/cantor/textresult.h
 include/cantor/worksheetaccess.h
+lib/cmake/Cantor/
+lib/cmake/Cantor/CantorConfig.cmake
+lib/cmake/Cantor/CantorConfigVersion.cmake
+lib/cmake/Cantor/CantorTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Cantor/CantorTargets.cmake
 @so lib/libcantor_config.so
 @so lib/libcantor_pythonbackend.so
 @lib lib/libcantorlibs.so.${LIBcantorlibs_VERSION}
@@ -47,9 +56,7 @@ lib/qt5/plugins/cantor/backends/
 @so lib/qt5/plugins/cantor/backends/cantor_kalgebrabackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_luabackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_maximabackend.so
-@so lib/qt5/plugins/cantor/backends/cantor_nullbackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_octavebackend.so
-@so lib/qt5/plugins/cantor/backends/cantor_python2backend.so
 @so lib/qt5/plugins/cantor/backends/cantor_python3backend.so
 @so lib/qt5/plugins/cantor/backends/cantor_qalculatebackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_rbackend.so
@@ -61,6 +68,8 @@ lib/qt5/plugins/cantor/panels/
 @so lib/qt5/plugins/libcantorpart.so
 share/applications/org.kde.cantor.desktop
 share/cantor/
+share/cantor/latex/
+share/cantor/latex/preview.sty
 share/cantor/maximabackend/
 share/cantor/maximabackend/cantor-initmaxima.lisp
 share/cantor/octavebackend/
@@ -79,15 +88,26 @@ share/config.kcfg/kalgebrabackend.kcfg
 share/config.kcfg/luabackend.kcfg
 share/config.kcfg/maximabackend.kcfg
 share/config.kcfg/octavebackend.kcfg
-share/config.kcfg/python2backend.kcfg
 share/config.kcfg/python3backend.kcfg
 share/config.kcfg/qalculatebackend.kcfg
 share/config.kcfg/rserver.kcfg
 share/config.kcfg/sagebackend.kcfg
 share/config.kcfg/scilabbackend.kcfg
 share/doc/HTML/ca/cantor/
+share/doc/HTML/ca/cantor/create-dlg.png
+share/doc/HTML/ca/cantor/differentiate-dlg.png
+share/doc/HTML/ca/cantor/import-dlg.png
 share/doc/HTML/ca/cantor/index.cache.bz2
 share/doc/HTML/ca/cantor/index.docbook
+share/doc/HTML/ca/cantor/integrate-dlg.png
+share/doc/HTML/ca/cantor/latex_formula.png
+share/doc/HTML/ca/cantor/matrix-dlg.png
+share/doc/HTML/ca/cantor/plot-dlg1.png
+share/doc/HTML/ca/cantor/plot-dlg2.png
+share/doc/HTML/ca/cantor/plot2d-dlg.png
+share/doc/HTML/ca/cantor/plot3d-dlg.png
+share/doc/HTML/ca/cantor/screenshot.png
+share/doc/HTML/ca/cantor/solve-equations-dlg.png
 share/doc/HTML/de/cantor/
 share/doc/HTML/de/cantor/index.cache.bz2
 share/doc/HTML/de/cantor/index.docbook
@@ -165,8 +185,6 @@ share/examples/cantor/xdg/cantor_maxima.knsrc
 @sample ${SYSCONFDIR}/xdg/cantor_maxima.knsrc
 share/examples/cantor/xdg/cantor_octave.knsrc
 @sample ${SYSCONFDIR}/xdg/cantor_octave.knsrc
-share/examples/cantor/xdg/cantor_python2.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_python2.knsrc
 share/examples/cantor/xdg/cantor_python3.knsrc
 @sample ${SYSCONFDIR}/xdg/cantor_python3.knsrc
 share/examples/cantor/xdg/cantor_qalculate.knsrc
@@ -235,6 +253,7 @@ share/locale/kk/LC_MESSAGES/cantor.mo
 share/locale/ko/LC_MESSAGES/cantor.mo
 share/locale/lt/LC_MESSAGES/cantor.mo
 share/locale/lv/LC_MESSAGES/cantor.mo
+share/locale/ml/LC_MESSAGES/cantor.mo
 share/locale/mr/LC_MESSAGES/cantor.mo
 share/locale/nb/LC_MESSAGES/cantor.mo
 share/locale/nds/LC_MESSAGES/cantor.mo

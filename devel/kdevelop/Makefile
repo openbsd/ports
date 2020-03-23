@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/01/09 04:50:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2020/03/23 18:01:03 rsadowski Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 VERSION =	5.4.6
 DISTNAME =	kdevelop-${VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -29,22 +30,22 @@ CATEGORIES =	devel x11
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Attica
-WANTLIB += KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5Declarative KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Package KF5Parts KF5Plasma KF5Purpose
-WANTLIB += KF5PurposeWidgets KF5Runner KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextEditor KF5TextWidgets KF5ThreadWeaver KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Kasten4Controllers Kasten4Core
-WANTLIB += Kasten4Gui Kasten4Okteta2Controllers Kasten4Okteta2Core
-WANTLIB += Kasten4Okteta2Gui Okteta3Core Okteta3Gui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network Qt5Qml Qt5Quick
-WANTLIB += Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebKit Qt5WebKitWidgets
-WANTLIB += Qt5Widgets Qt5Xml apr-1 aprutil-1 c clang komparediff2
-WANTLIB += m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1
-WANTLIB += svn_wc-1
+WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Crash KF5Declarative KF5GuiAddons KF5I18n KF5IconThemes
+WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5NewStuff
+WANTLIB += KF5NewStuffCore KF5Notifications KF5NotifyConfig KF5Package
+WANTLIB += KF5Parts KF5Plasma KF5Purpose KF5PurposeWidgets KF5Runner
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextEditor KF5TextWidgets
+WANTLIB += KF5ThreadWeaver KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Kasten4Controllers Kasten4Core Kasten4Gui Kasten4Okteta2Controllers
+WANTLIB += Kasten4Okteta2Core Kasten4Okteta2Gui Okteta3Core Okteta3Gui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebKit
+WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml apr-1 aprutil-1
+WANTLIB += c clang komparediff2 m svn_client-1 svn_fs-1 svn_ra-1
+WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
 

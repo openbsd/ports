@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:12 rsadowski Exp $
 @bin bin/solid-hardware5
 include/KF5/
 include/KF5/Solid/
@@ -49,16 +49,13 @@ lib/cmake/KF5Solid/KF5SolidTargets.cmake
 lib/qt5/qml/org/
 lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/solid/
-lib/qt5/qml/org/kde/solid/libsolidextensionplugin.so
+@so lib/qt5/qml/org/kde/solid/libsolidextensionplugin.so
 lib/qt5/qml/org/kde/solid/qmldir
-share/examples/solid/
-share/examples/solid/xdg/
-share/examples/solid/xdg/solid.categories
-@sample ${SYSCONFDIR}/xdg/solid.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Solid.pri
 share/locale/ar/LC_MESSAGES/solid5_qt.qm
+share/locale/ast/LC_MESSAGES/solid5_qt.qm
 share/locale/bg/LC_MESSAGES/solid5_qt.qm
 share/locale/bs/LC_MESSAGES/solid5_qt.qm
 share/locale/ca/LC_MESSAGES/solid5_qt.qm
@@ -118,9 +115,12 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/solid5_qt.qm
 share/locale/sr@latin/LC_MESSAGES/solid5_qt.qm
 share/locale/sv/LC_MESSAGES/solid5_qt.qm
 share/locale/ta/LC_MESSAGES/solid5_qt.qm
+share/locale/tg/LC_MESSAGES/solid5_qt.qm
 share/locale/th/LC_MESSAGES/solid5_qt.qm
 share/locale/tr/LC_MESSAGES/solid5_qt.qm
 share/locale/ug/LC_MESSAGES/solid5_qt.qm
 share/locale/uk/LC_MESSAGES/solid5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/solid5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/solid5_qt.qm
+share/qlogging-categories5/
+share/qlogging-categories5/solid.categories

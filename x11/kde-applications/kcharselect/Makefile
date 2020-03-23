@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/23 08:01:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:18 rsadowski Exp $
 
 COMMENT =	KDE character select and clipboard copy
 DISTNAME =	kcharselect-${VERSION}
@@ -6,10 +6,10 @@ CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kcharselect
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5WidgetsAddons KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

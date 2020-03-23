@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:05 rsadowski Exp $
 include/KF5/KAuth/
 include/KF5/KAuth/KAuth
 include/KF5/KAuth/KAuthAction
@@ -10,6 +10,7 @@ include/KF5/KAuth/kauth.h
 include/KF5/KAuth/kauth_export.h
 include/KF5/KAuth/kauthaction.h
 include/KF5/KAuth/kauthactionreply.h
+include/KF5/KAuth/kauthcore_export.h
 include/KF5/KAuth/kauthexecutejob.h
 include/KF5/KAuth/kauthhelpersupport.h
 include/KF5/KAuth/kauthobjectdecorator.h
@@ -23,25 +24,20 @@ lib/cmake/KF5Auth/KF5AuthTargets.cmake
 lib/cmake/KF5Auth/KF5AuthToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Auth/KF5AuthToolsTargets.cmake
 @lib lib/libKF5Auth.so.${LIBKF5Auth_VERSION}
+@lib lib/libKF5AuthCore.so.${LIBKF5AuthCore_VERSION}
 lib/qt5/plugins/kauth/
 lib/qt5/plugins/kauth/backend/
-lib/qt5/plugins/kauth/backend/kauth_backend_plugin.so
+@so lib/qt5/plugins/kauth/backend/kauth_backend_plugin.so
 lib/qt5/plugins/kauth/helper/
-lib/qt5/plugins/kauth/helper/kauth_helper_plugin.so
+@so lib/qt5/plugins/kauth/helper/kauth_helper_plugin.so
 libexec/kauth/
 @bin libexec/kauth/kauth-policy-gen
-share/examples/kauth/
-share/examples/kauth/dbus-1/
-share/examples/kauth/dbus-1/system.d/
-share/examples/kauth/dbus-1/system.d/org.kde.kf5auth.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kf5auth.conf
-share/examples/kauth/xdg/
-share/examples/kauth/xdg/kauth.categories
-@sample ${SYSCONFDIR}/xdg/kauth.categories
+share/dbus-1/system.d/org.kde.kf5auth.conf
 share/kf5/kauth/
 share/kf5/kauth/dbus_policy.stub
 share/kf5/kauth/dbus_service.stub
 share/kf5/mkspecs/qt_KAuth.pri
+share/kf5/mkspecs/qt_KAuthCore.pri
 share/locale/af/LC_MESSAGES/kauth5_qt.qm
 share/locale/ar/LC_MESSAGES/kauth5_qt.qm
 share/locale/as/LC_MESSAGES/kauth5_qt.qm
@@ -141,3 +137,4 @@ share/locale/xh/LC_MESSAGES/kauth5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kauth5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kauth5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kauth5_qt.qm
+share/qlogging-categories5/kauth.categories

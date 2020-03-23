@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/03/30 09:13:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/03/23 18:01:09 rsadowski Exp $
 @bin bin/kpackagetool5
 include/KF5/KPackage/
 include/KF5/KPackage/KPackage/
@@ -18,13 +18,11 @@ lib/cmake/KF5Package/KF5PackageConfigVersion.cmake
 lib/cmake/KF5Package/KF5PackageMacros.cmake
 lib/cmake/KF5Package/KF5PackageTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Package/KF5PackageTargets.cmake
+lib/cmake/KF5Package/KF5PackageToolsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5Package/KF5PackageToolsTargets.cmake
 lib/cmake/KF5Package/qrc.cmake
 @lib lib/libKF5Package.so.${LIBKF5Package_VERSION}
 @man man/man1/kpackagetool5.1
-share/examples/kpackage/
-share/examples/kpackage/xdg/
-share/examples/kpackage/xdg/kpackage.categories
-@sample ${SYSCONFDIR}/xdg/kpackage.categories
 share/kservicetypes5/
 share/kservicetypes5/kpackage-generic.desktop
 share/kservicetypes5/kpackage-genericqml.desktop
@@ -53,6 +51,7 @@ share/locale/it/LC_MESSAGES/libkpackage5.mo
 share/locale/ja/LC_MESSAGES/libkpackage5.mo
 share/locale/ko/LC_MESSAGES/libkpackage5.mo
 share/locale/lt/LC_MESSAGES/libkpackage5.mo
+share/locale/ml/LC_MESSAGES/libkpackage5.mo
 share/locale/mr/LC_MESSAGES/libkpackage5.mo
 share/locale/nb/LC_MESSAGES/libkpackage5.mo
 share/locale/nds/LC_MESSAGES/libkpackage5.mo
@@ -71,8 +70,10 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkpackage5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkpackage5.mo
 share/locale/sr@latin/LC_MESSAGES/libkpackage5.mo
 share/locale/sv/LC_MESSAGES/libkpackage5.mo
+share/locale/tg/LC_MESSAGES/libkpackage5.mo
 share/locale/tr/LC_MESSAGES/libkpackage5.mo
 share/locale/ug/LC_MESSAGES/libkpackage5.mo
 share/locale/uk/LC_MESSAGES/libkpackage5.mo
 share/locale/zh_CN/LC_MESSAGES/libkpackage5.mo
 share/locale/zh_TW/LC_MESSAGES/libkpackage5.mo
+share/qlogging-categories5/kpackage.categories

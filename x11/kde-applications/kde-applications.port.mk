@@ -1,28 +1,10 @@
-# $OpenBSD: kde-applications.port.mk,v 1.4 2019/11/08 13:38:38 rsadowski Exp $
-
-# Module for KDE applications related ports, divided into 16 categories:
-# - accessibility
-# - admin
-# - base
-# - education
-# - games
-# - graphics
-# - multimedia
-# - internet / network
-# - pim
-# - kdesdk
-# - utilities
-# - webdev
-# - KDE-Telepathy
-# - development environment
-# - KDE4
-# - Former projects under the hat of KDE Applications
+# $OpenBSD: kde-applications.port.mk,v 1.5 2020/03/23 18:01:13 rsadowski Exp $
 
 MODULES :=		devel/kf5 ${MODULES}
-VERSION ?=		18.12.0
-MASTER_SITES ?=		${MASTER_SITE_KDE:=Attic/applications/${VERSION}/src/}
+VERSION ?=		19.12.3
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
 
-# Set to 'yes' if there are .desktop files under share/applications/.
+# Set to 'yes' if there are .desktop files under share/release-service/.
 .if defined(MODKDE5_DESKTOP_FILE) && ${MODKDE5_DESKTOP_FILE:L} == "yes"
 MODKDE5_RUN_DEPENDS +=		devel/desktop-file-utils
 .endif
@@ -43,5 +25,5 @@ MODKDE5_BUILD_DEPENDS +=	devel/kf5/kdoctools
 MODKDE5_RUN_DEPENDS +=		devel/kf5/kdoctools
 .endif
 
-RUN_DEPENDS+=	${MODKDE5_RUN_DEPENDS}
-BUILD_DEPENDS+=	${MODKDE5_BUILD_DEPENDS}
+RUN_DEPENDS +=		${MODKDE5_RUN_DEPENDS}
+BUILD_DEPENDS +=	${MODKDE5_BUILD_DEPENDS}

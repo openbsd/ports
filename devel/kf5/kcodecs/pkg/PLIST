@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/03/30 09:13:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:05 rsadowski Exp $
 include/KF5/
 include/KF5/KCodecs/
 include/KF5/KCodecs/KCharsets
@@ -17,10 +17,6 @@ lib/cmake/KF5Codecs/KF5CodecsConfigVersion.cmake
 lib/cmake/KF5Codecs/KF5CodecsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Codecs/KF5CodecsTargets.cmake
 @lib lib/libKF5Codecs.so.${LIBKF5Codecs_VERSION}
-share/examples/kcodecs/
-share/examples/kcodecs/xdg/
-share/examples/kcodecs/xdg/kcodecs.categories
-@sample ${SYSCONFDIR}/xdg/kcodecs.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KCodecs.pri
@@ -139,3 +135,5 @@ share/locale/xh/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kcodecs5_qt.qm
+share/qlogging-categories5/
+share/qlogging-categories5/kcodecs.categories

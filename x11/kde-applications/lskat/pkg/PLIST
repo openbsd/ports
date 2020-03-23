@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 19:33:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdegames-*
@@ -34,6 +34,7 @@ share/doc/HTML/nl/lskat/index.docbook
 share/doc/HTML/pt/lskat/
 share/doc/HTML/pt/lskat/index.cache.bz2
 share/doc/HTML/pt/lskat/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/lskat/
 share/doc/HTML/pt_BR/lskat/index.cache.bz2
 share/doc/HTML/pt_BR/lskat/index.docbook
@@ -46,9 +47,6 @@ share/doc/HTML/sv/lskat/index.docbook
 share/doc/HTML/uk/lskat/
 share/doc/HTML/uk/lskat/index.cache.bz2
 share/doc/HTML/uk/lskat/index.docbook
-share/examples/lskat/
-share/examples/lskat/xdg/
-share/examples/lskat/xdg/lskat.categories
 share/icons/hicolor/128x128/apps/lskat.png
 share/icons/hicolor/16x16/apps/lskat.png
 share/icons/hicolor/22x22/apps/lskat.png
@@ -81,6 +79,7 @@ share/locale/he/LC_MESSAGES/lskat.mo
 share/locale/hi/LC_MESSAGES/lskat.mo
 share/locale/hr/LC_MESSAGES/lskat.mo
 share/locale/hu/LC_MESSAGES/lskat.mo
+share/locale/id/LC_MESSAGES/lskat.mo
 share/locale/is/LC_MESSAGES/lskat.mo
 share/locale/it/LC_MESSAGES/lskat.mo
 share/locale/ja/LC_MESSAGES/lskat.mo
@@ -122,5 +121,6 @@ share/lskat/grafix/oxygen.rc
 share/lskat/grafix/oxygen.svg
 share/metainfo/
 share/metainfo/org.kde.lskat.appdata.xml
+share/qlogging-categories5/lskat.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

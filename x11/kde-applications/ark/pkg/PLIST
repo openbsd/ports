@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:14 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/ark
 @bin bin/ark
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
-lib/qt5/plugins/arkpart.so
+@so lib/qt5/plugins/arkpart.so
 lib/qt5/plugins/kerfuffle/
-lib/qt5/plugins/kerfuffle/kerfuffle_cli7z.so
-lib/qt5/plugins/kerfuffle/kerfuffle_clirar.so
-lib/qt5/plugins/kerfuffle/kerfuffle_cliunarchiver.so
-lib/qt5/plugins/kerfuffle/kerfuffle_clizip.so
-lib/qt5/plugins/kerfuffle/kerfuffle_libarchive.so
-lib/qt5/plugins/kerfuffle/kerfuffle_libarchive_readonly.so
-lib/qt5/plugins/kerfuffle/kerfuffle_libbz2.so
-lib/qt5/plugins/kerfuffle/kerfuffle_libgz.so
-lib/qt5/plugins/kerfuffle/kerfuffle_libxz.so
-lib/qt5/plugins/kerfuffle/kerfuffle_libzip.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_cli7z.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_clirar.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_cliunarchiver.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_clizip.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_libarchive.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_libarchive_readonly.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_libbz2.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_libgz.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_libxz.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_libzip.so
 lib/qt5/plugins/kf5/kfileitemaction/
-lib/qt5/plugins/kf5/kfileitemaction/compressfileitemaction.so
-lib/qt5/plugins/kf5/kfileitemaction/extractfileitemaction.so
+@so lib/qt5/plugins/kf5/kfileitemaction/compressfileitemaction.so
+@so lib/qt5/plugins/kf5/kfileitemaction/extractfileitemaction.so
 lib/qt5/plugins/kf5/kio_dnd/
-lib/qt5/plugins/kf5/kio_dnd/extracthere.so
+@so lib/qt5/plugins/kf5/kio_dnd/extracthere.so
 @man man/man1/ark.1
 share/applications/org.kde.ark.desktop
 share/config.kcfg/
@@ -83,10 +83,6 @@ share/doc/HTML/uk/ark/create-protected-archive.png
 share/doc/HTML/uk/ark/extract-dialog.png
 share/doc/HTML/uk/ark/index.cache.bz2
 share/doc/HTML/uk/ark/index.docbook
-share/examples/ark/
-share/examples/ark/xdg/
-share/examples/ark/xdg/ark.categories
-@sample ${SYSCONFDIR}/xdg/ark.categories
 share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/64x64/apps/ark.png
@@ -152,6 +148,7 @@ share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/metainfo/
 share/metainfo/org.kde.ark.appdata.xml
 share/mime/packages/kerfuffle.xml
+share/qlogging-categories5/ark.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 @tag update-desktop-database

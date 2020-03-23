@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 07:59:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:25 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kteatime
@@ -16,7 +16,6 @@ share/doc/HTML/en/kteatime/config.png
 share/doc/HTML/en/kteatime/index.cache.bz2
 share/doc/HTML/en/kteatime/index.docbook
 share/doc/HTML/es/kteatime/
-share/doc/HTML/es/kteatime/config.png
 share/doc/HTML/es/kteatime/index.cache.bz2
 share/doc/HTML/es/kteatime/index.docbook
 share/doc/HTML/it/kteatime/
@@ -28,7 +27,6 @@ share/doc/HTML/nl/kteatime/index.docbook
 share/doc/HTML/pt/kteatime/
 share/doc/HTML/pt/kteatime/index.cache.bz2
 share/doc/HTML/pt/kteatime/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kteatime/
 share/doc/HTML/pt_BR/kteatime/config.png
 share/doc/HTML/pt_BR/kteatime/index.cache.bz2
@@ -47,7 +45,6 @@ share/icons/hicolor/32x32/apps/kteatime.png
 share/icons/hicolor/48x48/apps/kteatime.png
 share/icons/hicolor/64x64/apps/kteatime.png
 share/icons/hicolor/scalable/apps/kteatime.svgz
-share/knotifications5/
 share/knotifications5/kteatime.notifyrc
 share/locale/ar/LC_MESSAGES/kteatime.mo
 share/locale/bg/LC_MESSAGES/kteatime.mo
@@ -81,6 +78,7 @@ share/locale/km/LC_MESSAGES/kteatime.mo
 share/locale/ko/LC_MESSAGES/kteatime.mo
 share/locale/lt/LC_MESSAGES/kteatime.mo
 share/locale/lv/LC_MESSAGES/kteatime.mo
+share/locale/ml/LC_MESSAGES/kteatime.mo
 share/locale/mr/LC_MESSAGES/kteatime.mo
 share/locale/nb/LC_MESSAGES/kteatime.mo
 share/locale/nds/LC_MESSAGES/kteatime.mo
@@ -103,6 +101,6 @@ share/locale/wa/LC_MESSAGES/kteatime.mo
 share/locale/zh_CN/LC_MESSAGES/kteatime.mo
 share/locale/zh_TW/LC_MESSAGES/kteatime.mo
 share/metainfo/
+share/metainfo/org.kde.kteatime.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/metainfo/org.kde.kteatime.appdata.xml

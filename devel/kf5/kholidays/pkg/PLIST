@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/03/30 09:13:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:07 rsadowski Exp $
 include/KF5/
 include/KF5/KHolidays/
 include/KF5/KHolidays/KHolidays/
@@ -26,12 +26,13 @@ lib/cmake/KF5Holidays/KF5HolidaysTargets.cmake
 lib/qt5/qml/org/
 lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/kholidays/
-lib/qt5/qml/org/kde/kholidays/libkholidaysdeclarativeplugin.so
+@so lib/qt5/qml/org/kde/kholidays/libkholidaysdeclarativeplugin.so
 lib/qt5/qml/org/kde/kholidays/qmldir
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KHolidays.pri
 share/locale/ar/LC_MESSAGES/libkholidays5_qt.qm
+share/locale/ast/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/be/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/bg/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/br/LC_MESSAGES/libkholidays5_qt.qm
@@ -73,6 +74,7 @@ share/locale/ko/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/lt/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/lv/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/mk/LC_MESSAGES/libkholidays5_qt.qm
+share/locale/ml/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/mr/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/ms/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/nb/LC_MESSAGES/libkholidays5_qt.qm
@@ -102,6 +104,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/sr@latin/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/sv/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/ta/LC_MESSAGES/libkholidays5_qt.qm
+share/locale/tg/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/th/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/tr/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/ug/LC_MESSAGES/libkholidays5_qt.qm

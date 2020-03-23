@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/08/24 05:20:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/03/23 18:01:13 rsadowski Exp $
 @pkgpath sysutils/krename-kde4
 @bin bin/krename
 share/applications/org.kde.krename.desktop
@@ -11,7 +11,6 @@ share/icons/locolor/16x16/apps/krename.png
 share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/krename.png
-share/kservices5/
 share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/krename_all_nonrec.desktop
 share/kservices5/ServiceMenus/krename_dir_rec.desktop

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 07:52:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:24 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/krdc
@@ -11,25 +11,17 @@ include/krdccore_export.h
 @lib lib/libkrdccore.so.${LIBkrdccore_VERSION}
 lib/qt5/plugins/krdc/
 lib/qt5/plugins/krdc/kcms/
-lib/qt5/plugins/krdc/kcms/libkcm_krdc_vncplugin.so
-lib/qt5/plugins/krdc/libkrdc_testplugin.so
-lib/qt5/plugins/krdc/libkrdc_vncplugin.so
+@so lib/qt5/plugins/krdc/kcms/libkcm_krdc_vncplugin.so
+@so lib/qt5/plugins/krdc/libkrdc_testplugin.so
+@so lib/qt5/plugins/krdc/libkrdc_vncplugin.so
 share/applications/org.kde.krdc.desktop
 share/config.kcfg/
 share/config.kcfg/krdc.kcfg
 share/doc/HTML/ca/krdc/
-share/doc/HTML/ca/krdc/address_input.png
-share/doc/HTML/ca/krdc/bookmarks_menu.png
-share/doc/HTML/ca/krdc/general_preferences.png
 share/doc/HTML/ca/krdc/index.cache.bz2
 share/doc/HTML/ca/krdc/index.docbook
-share/doc/HTML/ca/krdc/krdc_mainwindow.png
-share/doc/HTML/ca/krdc/password_entry.png
-share/doc/HTML/ca/krdc/rdp_preferences.png
 share/doc/HTML/ca/krdc/view-fullscreen.png
 share/doc/HTML/ca/krdc/view-restore.png
-share/doc/HTML/ca/krdc/vnc_host_configuration.png
-share/doc/HTML/ca/krdc/vnc_preferences.png
 share/doc/HTML/de/krdc/
 share/doc/HTML/de/krdc/address_input.png
 share/doc/HTML/de/krdc/bookmarks_menu.png
@@ -90,7 +82,6 @@ share/doc/HTML/pl/krdc/vnc_preferences.png
 share/doc/HTML/pt/krdc/
 share/doc/HTML/pt/krdc/index.cache.bz2
 share/doc/HTML/pt/krdc/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/krdc/
 share/doc/HTML/pt_BR/krdc/index.cache.bz2
 share/doc/HTML/pt_BR/krdc/index.docbook
@@ -100,6 +91,9 @@ share/doc/HTML/ru/krdc/index.docbook
 share/doc/HTML/sr/krdc/
 share/doc/HTML/sr/krdc/index.cache.bz2
 share/doc/HTML/sr/krdc/index.docbook
+share/doc/HTML/sv/krdc/
+share/doc/HTML/sv/krdc/index.cache.bz2
+share/doc/HTML/sv/krdc/index.docbook
 share/doc/HTML/uk/krdc/
 share/doc/HTML/uk/krdc/index.cache.bz2
 share/doc/HTML/uk/krdc/index.docbook
@@ -107,7 +101,6 @@ share/krdc/
 share/krdc/pics/
 share/krdc/pics/pointcursor.png
 share/krdc/pics/pointcursormask.png
-share/kservices5/
 share/kservices5/krdc_vnc_config.desktop
 share/kservices5/vnc.protocol
 share/kxmlgui5/

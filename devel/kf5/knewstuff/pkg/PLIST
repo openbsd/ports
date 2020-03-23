@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/03/30 09:13:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/03/23 18:01:09 rsadowski Exp $
 include/KF5/KNewStuff3/
 include/KF5/KNewStuff3/KNS3/
 include/KF5/KNewStuff3/KNS3/Button
@@ -16,6 +16,7 @@ include/KF5/KNewStuff3/KNSCore/Cache
 include/KF5/KNewStuff3/KNSCore/DownloadManager
 include/KF5/KNewStuff3/KNSCore/Engine
 include/KF5/KNewStuff3/KNSCore/EntryInternal
+include/KF5/KNewStuff3/KNSCore/EntryWrapper
 include/KF5/KNewStuff3/KNSCore/ErrorCode
 include/KF5/KNewStuff3/KNSCore/Installation
 include/KF5/KNewStuff3/KNSCore/ItemsModel
@@ -44,6 +45,7 @@ include/KF5/KNewStuff3/knscore/cache.h
 include/KF5/KNewStuff3/knscore/downloadmanager.h
 include/KF5/KNewStuff3/knscore/engine.h
 include/KF5/KNewStuff3/knscore/entryinternal.h
+include/KF5/KNewStuff3/knscore/entrywrapper.h
 include/KF5/KNewStuff3/knscore/errorcode.h
 include/KF5/KNewStuff3/knscore/installation.h
 include/KF5/KNewStuff3/knscore/itemsmodel.h
@@ -74,20 +76,38 @@ lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfigVersion.cmake
 @lib lib/libKF5NewStuff.so.${LIBKF5NewStuff_VERSION}
 @lib lib/libKF5NewStuffCore.so.${LIBKF5NewStuffCore_VERSION}
 lib/qt5/qml/org/kde/newstuff/
-lib/qt5/qml/org/kde/newstuff/libnewstuffqmlplugin.so
+@so lib/qt5/qml/org/kde/newstuff/libnewstuffqmlplugin.so
 lib/qt5/qml/org/kde/newstuff/qml/
+lib/qt5/qml/org/kde/newstuff/qml/Button.qml
+lib/qt5/qml/org/kde/newstuff/qml/Dialog.qml
+lib/qt5/qml/org/kde/newstuff/qml/DialogContent.qml
+lib/qt5/qml/org/kde/newstuff/qml/DownloadItemsSheet.qml
+lib/qt5/qml/org/kde/newstuff/qml/EntryDetails.qml
 lib/qt5/qml/org/kde/newstuff/qml/NewStuffItem.qml
 lib/qt5/qml/org/kde/newstuff/qml/NewStuffList.qml
+lib/qt5/qml/org/kde/newstuff/qml/Page.qml
+lib/qt5/qml/org/kde/newstuff/qml/QuestionAsker.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/
+lib/qt5/qml/org/kde/newstuff/qml/private/ConditionalLoader.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/EntryCommentDelegate.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/EntryCommentsPage.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/EntryScreenshots.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/GridTileDelegate.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/Rating.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/Shadow.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/entrygriddelegates/
+lib/qt5/qml/org/kde/newstuff/qml/private/entrygriddelegates/BigPreviewDelegate.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/entrygriddelegates/FeedbackOverlay.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/entrygriddelegates/ThumbDelegate.qml
+lib/qt5/qml/org/kde/newstuff/qml/private/entrygriddelegates/TileDelegate.qml
 lib/qt5/qml/org/kde/newstuff/qmldir
-share/examples/knewstuff/
-share/examples/knewstuff/xdg/
-share/examples/knewstuff/xdg/knewstuff.categories
-@sample ${SYSCONFDIR}/xdg/knewstuff.categories
 share/kf5/kmoretools/
 share/kf5/kmoretools/presets-kmoretools/
 share/kf5/kmoretools/presets-kmoretools/_README.md
 share/kf5/kmoretools/presets-kmoretools/angrysearch.desktop
 share/kf5/kmoretools/presets-kmoretools/catfish.desktop
+share/kf5/kmoretools/presets-kmoretools/com.obsproject.Studio.desktop
+share/kf5/kmoretools/presets-kmoretools/com.obsproject.Studio.png
 share/kf5/kmoretools/presets-kmoretools/com.uploadedlobster.peek.desktop
 share/kf5/kmoretools/presets-kmoretools/ding.desktop
 share/kf5/kmoretools/presets-kmoretools/disk.desktop
@@ -133,9 +153,6 @@ share/kf5/kmoretools/presets-kmoretools/simplescreenrecorder.desktop
 share/kf5/kmoretools/presets-kmoretools/vokoscreen.desktop
 share/kf5/kmoretools/presets-kmoretools/vokoscreen.png
 share/kf5/kmoretools/presets-kmoretools/xfce4-taskmanager.desktop
-share/kf5/knewstuff/
-share/kf5/knewstuff/pics/
-share/kf5/knewstuff/pics/thumb_frame.png
 share/kf5/mkspecs/qt_KNewStuff.pri
 share/kf5/mkspecs/qt_KNewStuffCore.pri
 share/locale/af/LC_MESSAGES/knewstuff5.mo
@@ -237,3 +254,4 @@ share/locale/xh/LC_MESSAGES/knewstuff5.mo
 share/locale/zh_CN/LC_MESSAGES/knewstuff5.mo
 share/locale/zh_HK/LC_MESSAGES/knewstuff5.mo
 share/locale/zh_TW/LC_MESSAGES/knewstuff5.mo
+share/qlogging-categories5/knewstuff.categories

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 19:27:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/palapeli
 @bin bin/palapeli
@@ -20,10 +20,10 @@ lib/libpala/
 lib/libpala/libpala-config.cmake
 lib/libpala/pala-targets${MODCMAKE_BUILD_SUFFIX}
 lib/libpala/pala-targets.cmake
-lib/qt5/plugins/palapeli_goldbergslicer.so
-lib/qt5/plugins/palapeli_jigsawslicer.so
-lib/qt5/plugins/palapeli_rectslicer.so
-lib/qt5/plugins/palathumbcreator.so
+@so lib/qt5/plugins/palapeli_goldbergslicer.so
+@so lib/qt5/plugins/palapeli_jigsawslicer.so
+@so lib/qt5/plugins/palapeli_rectslicer.so
+@so lib/qt5/plugins/palathumbcreator.so
 share/applications/org.kde.palapeli.desktop
 share/doc/HTML/de/palapeli/
 share/doc/HTML/de/palapeli/index.cache.bz2
@@ -112,6 +112,7 @@ share/locale/it/LC_MESSAGES/palapeli.mo
 share/locale/ja/LC_MESSAGES/palapeli.mo
 share/locale/kk/LC_MESSAGES/palapeli.mo
 share/locale/km/LC_MESSAGES/palapeli.mo
+share/locale/ko/LC_MESSAGES/palapeli.mo
 share/locale/lt/LC_MESSAGES/palapeli.mo
 share/locale/lv/LC_MESSAGES/palapeli.mo
 share/locale/mr/LC_MESSAGES/palapeli.mo
@@ -156,6 +157,7 @@ share/palapeli/collection/european-honey-bee.jpg
 share/palapeli/collection/panther-chameleon-female.desktop
 share/palapeli/collection/panther-chameleon-female.jpg
 share/palapeli/palapeli.kcfg
+share/qlogging-categories5/palapeli.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 07:49:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:22 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kmix
@@ -7,7 +7,6 @@
 bin/kmixremote
 @lib lib/libkmixcore.so.${LIBkmixcore_VERSION}
 @so lib/qt5/plugins/kf5/kded/kmixd.so
-lib/qt5/plugins/plasma/dataengine/
 @so lib/qt5/plugins/plasma/dataengine/plasma_engine_mixer.so
 share/applications/org.kde.kmix.desktop
 share/dbus-1/interfaces/org.kde.kmix.control.xml
@@ -41,8 +40,6 @@ share/doc/HTML/en/kmix/kmix.png
 share/doc/HTML/es/kmix/
 share/doc/HTML/es/kmix/index.cache.bz2
 share/doc/HTML/es/kmix/index.docbook
-share/doc/HTML/es/kmix/kmix-channels.png
-share/doc/HTML/es/kmix/kmix-configure.png
 share/doc/HTML/es/kmix/kmix-file.png
 share/doc/HTML/es/kmix/kmix-master.png
 share/doc/HTML/es/kmix/kmix-options.png
@@ -56,6 +53,10 @@ share/doc/HTML/fr/kmix/index.docbook
 share/doc/HTML/gl/kmix/
 share/doc/HTML/gl/kmix/index.cache.bz2
 share/doc/HTML/gl/kmix/index.docbook
+share/doc/HTML/id/
+share/doc/HTML/id/kmix/
+share/doc/HTML/id/kmix/index.cache.bz2
+share/doc/HTML/id/kmix/index.docbook
 share/doc/HTML/it/kmix/
 share/doc/HTML/it/kmix/index.cache.bz2
 share/doc/HTML/it/kmix/index.docbook
@@ -198,8 +199,7 @@ share/locale/ug/LC_MESSAGES/kmix.mo
 share/locale/uk/LC_MESSAGES/kmix.mo
 share/locale/zh_CN/LC_MESSAGES/kmix.mo
 share/locale/zh_TW/LC_MESSAGES/kmix.mo
-share/metainfo/
-@tag gtk-update-icon-cache %D/share/icons/hicolor
 share/metainfo/org.kde.kmix.appdata.xml
 share/plasma/services/mixer.operations
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

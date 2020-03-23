@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2020/01/18 09:05:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.62 2020/03/23 18:01:13 rsadowski Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
 V =		6.2.0
 DISTNAME =	digikam-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	graphics
 
@@ -19,21 +19,21 @@ SHARED_LIBS +=  digikamgui                1.0 # 5.9
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE KF5Auth KF5CalendarCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5FileMetaData KF5I18n
-WANTLIB += KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOWidgets
-WANTLIB += KF5Notifications KF5NotifyConfig KF5Sane KF5Service
-WANTLIB += KF5Solid KF5ThreadWeaver KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Magick++-6.Q16 MagickCore-6.Q16 Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
-WANTLIB += Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml Qt5XmlPatterns SM X11 Xext avcodec avfilter
-WANTLIB += avformat avutil c exiv2 expat exslt glib-2.0 gphoto2
-WANTLIB += gphoto2_port intl jasper jpeg lcms2 lensfun lqr-1 m
-WANTLIB += marblewidget-qt5 opencv_calib3d opencv_core opencv_features2d
-WANTLIB += opencv_flann opencv_imgcodecs opencv_imgproc opencv_objdetect
-WANTLIB += png swscale tiff usb-1.0 xml2 xslt z
+WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE KF5Auth KF5AuthCore KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5FileMetaData KF5I18n KF5IconThemes
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Notifications
+WANTLIB += KF5NotifyConfig KF5Sane KF5Service KF5Solid KF5ThreadWeaver
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Magick++-6.Q16
+WANTLIB += MagickCore-6.Q16 Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Sql Qt5WebKit
+WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns
+WANTLIB += SM X11 Xext avcodec avfilter avformat avutil c exiv2
+WANTLIB += expat exslt glib-2.0 gphoto2 gphoto2_port intl jasper
+WANTLIB += jpeg lcms2 lensfun lqr-1 m marblewidget-qt5 opencv_calib3d
+WANTLIB += opencv_core opencv_features2d opencv_flann opencv_imgcodecs
+WANTLIB += opencv_imgproc opencv_objdetect png swscale tiff usb-1.0
+WANTLIB += xml2 xslt z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/${V}/}
 
@@ -88,7 +88,6 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		graphics/png \
 		graphics/tiff \
 		graphics/ImageMagick \
-		x11/kde-applications/kcalcore \
 		x11/kde-applications/libksane \
 		x11/kde-applications/marble \
 		x11/qt5/qtwebkit \

@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:17:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:26 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kwalletmanager
 @bin bin/kwalletmanager5
-lib/qt5/plugins/kcm_kwallet5.so
+@so lib/qt5/plugins/kcm_kwallet5.so
 @bin libexec/kauth/kcm_kwallet_helper5
 share/applications/kwalletmanager5-kwalletd.desktop
 share/applications/org.kde.kwalletmanager5.desktop
 share/dbus-1/system-services/org.kde.kcontrol.kcmkwallet5.service
+share/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
 share/doc/HTML/ca/kwallet5/
 share/doc/HTML/ca/kwallet5/index.cache.bz2
 share/doc/HTML/ca/kwallet5/index.docbook
@@ -66,13 +67,6 @@ share/doc/HTML/uk/kwallet5/index.docbook
 share/doc/HTML/uk/kwallet5/kwalletmanager.png
 share/doc/HTML/uk/kwallet5/openwallet-request.png
 share/doc/HTML/uk/kwallet5/save-login-information.png
-share/examples/kwalletmanager/
-share/examples/kwalletmanager/dbus-1/
-share/examples/kwalletmanager/dbus-1/system.d/
-share/examples/kwalletmanager/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
-share/examples/kwalletmanager/xdg/
-share/examples/kwalletmanager/xdg/kwalletmanager.categories
-@sample ${SYSCONFDIR}/xdg/kwalletmanager.categories
 share/icons/hicolor/128x128/apps/kwalletmanager.png
 share/icons/hicolor/128x128/apps/kwalletmanager2.png
 share/icons/hicolor/16x16/apps/kwalletmanager.png
@@ -138,6 +132,7 @@ share/locale/hu/LC_MESSAGES/kwalletmanager.mo
 share/locale/ia/LC_MESSAGES/kcmkwallet.mo
 share/locale/ia/LC_MESSAGES/kwalletmanager.mo
 share/locale/id/LC_MESSAGES/kcmkwallet.mo
+share/locale/id/LC_MESSAGES/kwalletmanager.mo
 share/locale/is/LC_MESSAGES/kcmkwallet.mo
 share/locale/is/LC_MESSAGES/kwalletmanager.mo
 share/locale/it/LC_MESSAGES/kcmkwallet.mo
@@ -197,5 +192,6 @@ share/locale/zh_TW/LC_MESSAGES/kwalletmanager.mo
 share/metainfo/
 share/metainfo/org.kde.kwalletmanager5.appdata.xml
 share/polkit-1/actions/org.kde.kcontrol.kcmkwallet5.policy
+share/qlogging-categories5/kwalletmanager.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

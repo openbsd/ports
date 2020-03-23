@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/26 16:08:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:24 rsadowski Exp $
 @pkgpath x11/kde4/kqtquickcharts
 include/KF5/
 include/KF5/kqtquickcharts_version.h
@@ -13,5 +13,5 @@ lib/qt5/qml/org/kde/charts/LegendItem.qml
 lib/qt5/qml/org/kde/charts/LineChart.qml
 lib/qt5/qml/org/kde/charts/LineLabel.qml
 lib/qt5/qml/org/kde/charts/XYChart.qml
-lib/qt5/qml/org/kde/charts/libkqtquickcharts.so
+@so lib/qt5/qml/org/kde/charts/libkqtquickcharts.so
 lib/qt5/qml/org/kde/charts/qmldir

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:08 rsadowski Exp $
 include/KF5/KHtml/
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
@@ -51,15 +51,13 @@ lib/cmake/KF5KHtml/KF5KHtmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5KHtml/KF5KHtmlTargets.cmake
 @lib lib/libKF5KHtml.so.${LIBKF5KHtml_VERSION}
 lib/qt5/plugins/kf5/parts/
-lib/qt5/plugins/kf5/parts/khtmladaptorpart.so
-lib/qt5/plugins/kf5/parts/khtmlimagepart.so
-lib/qt5/plugins/kf5/parts/khtmlpart.so
-lib/qt5/plugins/kf5/parts/kjavaappletviewer.so
-lib/qt5/plugins/kf5/parts/kmultipart.so
+@so lib/qt5/plugins/kf5/parts/khtmladaptorpart.so
+@so lib/qt5/plugins/kf5/parts/khtmlimagepart.so
+@so lib/qt5/plugins/kf5/parts/khtmlpart.so
+@so lib/qt5/plugins/kf5/parts/kjavaappletviewer.so
+@so lib/qt5/plugins/kf5/parts/kmultipart.so
 share/examples/khtml/
 share/examples/khtml/xdg/
-share/examples/khtml/xdg/khtml.categories
-@sample ${SYSCONFDIR}/xdg/khtml.categories
 share/examples/khtml/xdg/khtmlrc
 @sample ${SYSCONFDIR}/xdg/khtmlrc
 share/kf5/khtml/
@@ -177,3 +175,4 @@ share/locale/xh/LC_MESSAGES/khtml5.mo
 share/locale/zh_CN/LC_MESSAGES/khtml5.mo
 share/locale/zh_HK/LC_MESSAGES/khtml5.mo
 share/locale/zh_TW/LC_MESSAGES/khtml5.mo
+share/qlogging-categories5/khtml.categories

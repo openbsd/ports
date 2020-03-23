@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 19:19:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:23 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kmousetool
 @bin bin/kmousetool
@@ -82,6 +82,7 @@ share/locale/km/LC_MESSAGES/kmousetool.mo
 share/locale/ko/LC_MESSAGES/kmousetool.mo
 share/locale/lt/LC_MESSAGES/kmousetool.mo
 share/locale/lv/LC_MESSAGES/kmousetool.mo
+share/locale/ml/LC_MESSAGES/kmousetool.mo
 share/locale/mr/LC_MESSAGES/kmousetool.mo
 share/locale/nb/LC_MESSAGES/kmousetool.mo
 share/locale/nds/LC_MESSAGES/kmousetool.mo

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/24 11:57:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:23 rsadowski Exp $
 
 COMMENT =	battle ship game
 DISTNAME =	knavalbattle-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/knavalbattle
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5DNSSD KF5I18n KF5KDEGames
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
@@ -22,10 +20,10 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=x11/qt5/qtquickcontrols
-RUN_DEPENDS +=x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+RUN_DEPENDS =	x11/qt5/qtquickcontrols
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/ki18n \
 		devel/kf5/kcrash \

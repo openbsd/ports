@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:27 rsadowski Exp $
 include/KF5/KF5KDEGames/
 include/KF5/KF5KDEGames/KDE/
 include/KF5/KF5KDEGames/KDE/KExtHighscore
@@ -73,7 +73,7 @@ lib/cmake/KF5KDEGames/KF5KDEGamesLibraryDepends.cmake
 lib/qt5/qml/org/kde/games/
 lib/qt5/qml/org/kde/games/core/
 lib/qt5/qml/org/kde/games/core/KgItem.qml
-lib/qt5/qml/org/kde/games/core/libcorebindingsplugin.so
+@so lib/qt5/qml/org/kde/games/core/libcorebindingsplugin.so
 lib/qt5/qml/org/kde/games/core/qmldir
 share/carddecks/
 share/carddecks/svg-ancient-egyptians/
@@ -147,10 +147,6 @@ share/carddecks/svg-xskat-german/11.png
 share/carddecks/svg-xskat-german/COPYRIGHT
 share/carddecks/svg-xskat-german/german.svgz
 share/carddecks/svg-xskat-german/index.desktop
-share/examples/libkdegames-kf5/
-share/examples/libkdegames-kf5/xdg/
-share/examples/libkdegames-kf5/xdg/libkdegames.categories
-@sample ${SYSCONFDIR}/xdg/libkdegames.categories
 share/kconf_update/kgthemeprovider-migration.upd
 share/locale/ar/LC_MESSAGES/libkdegames5.mo
 share/locale/bg/LC_MESSAGES/libkdegames5.mo
@@ -205,3 +201,4 @@ share/locale/uk/LC_MESSAGES/libkdegames5.mo
 share/locale/wa/LC_MESSAGES/libkdegames5.mo
 share/locale/zh_CN/LC_MESSAGES/libkdegames5.mo
 share/locale/zh_TW/LC_MESSAGES/libkdegames5.mo
+share/qlogging-categories5/libkdegames.categories

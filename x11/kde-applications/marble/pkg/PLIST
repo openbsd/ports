@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/30 21:07:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:28 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict marble-<=4.14.3
@@ -100,6 +100,7 @@ include/marble/MapWizard.h
 include/marble/MarbleAboutDialog.h
 include/marble/MarbleColors.h
 include/marble/MarbleDebug.h
+include/marble/MarbleDeclarativePlugin.h
 include/marble/MarbleDirs.h
 include/marble/MarbleGlobal.h
 include/marble/MarbleGraphicsGridLayout.h
@@ -167,6 +168,7 @@ include/marble/ViewportParams.h
 include/marble/WaitEditWidget.h
 include/marble/WidgetGraphicsItem.h
 include/marble/geodata_export.h
+include/marble/marble_declarative_export.h
 include/marble/marble_export.h
 lib/cmake/Astro/
 lib/cmake/Astro/AstroConfig.cmake
@@ -179,78 +181,78 @@ lib/cmake/Marble/MarbleConfigVersion.cmake
 lib/cmake/Marble/MarbleTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Marble/MarbleTargets.cmake
 @lib lib/libastro.so.${LIBastro_VERSION}
-lib/libmarbledeclarative.so
+@so lib/libmarbledeclarative.so
 @lib lib/libmarblewidget-qt5.so.${LIBmarblewidget-qt5_VERSION}
 lib/marble/
 lib/marble/plugins/
-lib/marble/plugins/libAnnotatePlugin.so
-lib/marble/plugins/libAprsPlugin.so
-lib/marble/plugins/libAtmospherePlugin.so
-lib/marble/plugins/libCachePlugin.so
-lib/marble/plugins/libCompassFloatItem.so
-lib/marble/plugins/libCrosshairsPlugin.so
-lib/marble/plugins/libCycleStreetsPlugin.so
-lib/marble/plugins/libEarthquakePlugin.so
-lib/marble/plugins/libEclipsesPlugin.so
-lib/marble/plugins/libElevationProfileFloatItem.so
-lib/marble/plugins/libElevationProfileMarker.so
-lib/marble/plugins/libFlightGearPositionProviderPlugin.so
-lib/marble/plugins/libFoursquarePlugin.so
-lib/marble/plugins/libGeoUriPlugin.so
-lib/marble/plugins/libGosmoreReverseGeocodingPlugin.so
-lib/marble/plugins/libGosmoreRoutingPlugin.so
-lib/marble/plugins/libGpsInfo.so
-lib/marble/plugins/libGpsbabelPlugin.so
-lib/marble/plugins/libGpsdPositionProviderPlugin.so
-lib/marble/plugins/libGpxPlugin.so
-lib/marble/plugins/libGraticulePlugin.so
-lib/marble/plugins/libHostipPlugin.so
-lib/marble/plugins/libJsonPlugin.so
-lib/marble/plugins/libKmlPlugin.so
-lib/marble/plugins/libLatLonPlugin.so
-lib/marble/plugins/libLicense.so
-lib/marble/plugins/libLocalDatabasePlugin.so
-lib/marble/plugins/libLocalOsmSearchPlugin.so
-lib/marble/plugins/libLogPlugin.so
-lib/marble/plugins/libMapQuestPlugin.so
-lib/marble/plugins/libMapScaleFloatItem.so
-lib/marble/plugins/libMeasureTool.so
-lib/marble/plugins/libMonavPlugin.so
-lib/marble/plugins/libNavigationFloatItem.so
-lib/marble/plugins/libNominatimReverseGeocodingPlugin.so
-lib/marble/plugins/libNominatimSearchPlugin.so
-lib/marble/plugins/libNotesPlugin.so
-lib/marble/plugins/libOSRMPlugin.so
-lib/marble/plugins/libOpenLocationCodeSearchPlugin.so
-lib/marble/plugins/libOpenRouteServicePlugin.so
-lib/marble/plugins/libOsmPlugin.so
-lib/marble/plugins/libOverviewMap.so
-lib/marble/plugins/libPn2Plugin.so
-lib/marble/plugins/libPntPlugin.so
-lib/marble/plugins/libPositionMarker.so
-lib/marble/plugins/libPostalCode.so
-lib/marble/plugins/libProgressFloatItem.so
-lib/marble/plugins/libQtPositioningPositionProviderPlugin.so
-lib/marble/plugins/libRoutingPlugin.so
-lib/marble/plugins/libRoutinoPlugin.so
-lib/marble/plugins/libSatellitesPlugin.so
-lib/marble/plugins/libShpPlugin.so
-lib/marble/plugins/libSpeedometer.so
-lib/marble/plugins/libStarsPlugin.so
-lib/marble/plugins/libSunPlugin.so
-lib/marble/plugins/libYoursPlugin.so
+@so lib/marble/plugins/libAnnotatePlugin.so
+@so lib/marble/plugins/libAprsPlugin.so
+@so lib/marble/plugins/libAtmospherePlugin.so
+@so lib/marble/plugins/libCachePlugin.so
+@so lib/marble/plugins/libCompassFloatItem.so
+@so lib/marble/plugins/libCrosshairsPlugin.so
+@so lib/marble/plugins/libCycleStreetsPlugin.so
+@so lib/marble/plugins/libEarthquakePlugin.so
+@so lib/marble/plugins/libEclipsesPlugin.so
+@so lib/marble/plugins/libElevationProfileFloatItem.so
+@so lib/marble/plugins/libElevationProfileMarker.so
+@so lib/marble/plugins/libFlightGearPositionProviderPlugin.so
+@so lib/marble/plugins/libFoursquarePlugin.so
+@so lib/marble/plugins/libGeoUriPlugin.so
+@so lib/marble/plugins/libGosmoreReverseGeocodingPlugin.so
+@so lib/marble/plugins/libGosmoreRoutingPlugin.so
+@so lib/marble/plugins/libGpsInfo.so
+@so lib/marble/plugins/libGpsbabelPlugin.so
+@so lib/marble/plugins/libGpsdPositionProviderPlugin.so
+@so lib/marble/plugins/libGpxPlugin.so
+@so lib/marble/plugins/libGraticulePlugin.so
+@so lib/marble/plugins/libHostipPlugin.so
+@so lib/marble/plugins/libJsonPlugin.so
+@so lib/marble/plugins/libKmlPlugin.so
+@so lib/marble/plugins/libLatLonPlugin.so
+@so lib/marble/plugins/libLicense.so
+@so lib/marble/plugins/libLocalDatabasePlugin.so
+@so lib/marble/plugins/libLocalOsmSearchPlugin.so
+@so lib/marble/plugins/libLogPlugin.so
+@so lib/marble/plugins/libMapQuestPlugin.so
+@so lib/marble/plugins/libMapScaleFloatItem.so
+@so lib/marble/plugins/libMeasureTool.so
+@so lib/marble/plugins/libMonavPlugin.so
+@so lib/marble/plugins/libNavigationFloatItem.so
+@so lib/marble/plugins/libNominatimReverseGeocodingPlugin.so
+@so lib/marble/plugins/libNominatimSearchPlugin.so
+@so lib/marble/plugins/libNotesPlugin.so
+@so lib/marble/plugins/libOSRMPlugin.so
+@so lib/marble/plugins/libOpenLocationCodeSearchPlugin.so
+@so lib/marble/plugins/libOpenRouteServicePlugin.so
+@so lib/marble/plugins/libOsmPlugin.so
+@so lib/marble/plugins/libOverviewMap.so
+@so lib/marble/plugins/libPn2Plugin.so
+@so lib/marble/plugins/libPntPlugin.so
+@so lib/marble/plugins/libPositionMarker.so
+@so lib/marble/plugins/libPostalCode.so
+@so lib/marble/plugins/libProgressFloatItem.so
+@so lib/marble/plugins/libQtPositioningPositionProviderPlugin.so
+@so lib/marble/plugins/libRoutingPlugin.so
+@so lib/marble/plugins/libRoutinoPlugin.so
+@so lib/marble/plugins/libSatellitesPlugin.so
+@so lib/marble/plugins/libShpPlugin.so
+@so lib/marble/plugins/libSpeedometer.so
+@so lib/marble/plugins/libStarsPlugin.so
+@so lib/marble/plugins/libSunPlugin.so
+@so lib/marble/plugins/libYoursPlugin.so
 lib/plugins/
 lib/plugins/designer/
-lib/plugins/designer/libLatLonEditPlugin.so
-lib/plugins/designer/libMarbleNavigatorPlugin.so
-lib/plugins/designer/libMarbleWidgetPlugin.so
-lib/qt5/plugins/libmarble_part.so
-lib/qt5/plugins/libmarblethumbnail.so
-lib/qt5/plugins/plasma_runner_marble.so
+@so lib/plugins/designer/libLatLonEditPlugin.so
+@so lib/plugins/designer/libMarbleNavigatorPlugin.so
+@so lib/plugins/designer/libMarbleWidgetPlugin.so
+@so lib/qt5/plugins/libmarble_part.so
+@so lib/qt5/plugins/libmarblethumbnail.so
+@so lib/qt5/plugins/plasma_runner_marble.so
 lib/qt5/qml/org/kde/marble/
 lib/qt5/qml/org/kde/marble/private/
 lib/qt5/qml/org/kde/marble/private/plasma/
-lib/qt5/qml/org/kde/marble/private/plasma/libmarblequick.so
+@so lib/qt5/qml/org/kde/marble/private/plasma/libmarblequick.so
 lib/qt5/qml/org/kde/marble/private/plasma/qmldir
 mkspecs/
 mkspecs/modules/
@@ -267,11 +269,6 @@ share/applications/org.kde.marble.desktop
 share/config.kcfg/
 share/config.kcfg/marble.kcfg
 share/doc/HTML/ca/marble/
-share/doc/HTML/ca/marble/configure-cacheproxy.png
-share/doc/HTML/ca/marble/configure-navigation.png
-share/doc/HTML/ca/marble/configure-plugins.png
-share/doc/HTML/ca/marble/configure-routing.png
-share/doc/HTML/ca/marble/configure-view.png
 share/doc/HTML/ca/marble/index.cache.bz2
 share/doc/HTML/ca/marble/index.docbook
 share/doc/HTML/de/marble/
@@ -576,10 +573,17 @@ share/locale/ko/LC_MESSAGES/marble_qt.qm
 share/locale/ko/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/lt/LC_MESSAGES/marble.mo
 share/locale/lt/LC_MESSAGES/marble_qt.qm
+share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/lt/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/lv/LC_MESSAGES/marble.mo
 share/locale/lv/LC_MESSAGES/marble_qt.qm
 share/locale/lv/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/ml/LC_MESSAGES/marble.mo
+share/locale/ml/LC_MESSAGES/marble_qt.qm
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
+share/locale/ml/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/ml/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/mr/LC_MESSAGES/marble.mo
 share/locale/mr/LC_MESSAGES/marble_qt.qm
 share/locale/mr/LC_MESSAGES/plasma_runner_marble.mo
@@ -1781,6 +1785,7 @@ share/marble/data/svg/application-x-marble.png
 share/marble/data/svg/application-x-marble.svg
 share/marble/data/svg/bookmark.svg
 share/marble/data/svg/coordinate.svg
+share/marble/data/svg/dot-circle-regular.svg
 share/marble/data/svg/glow.png
 share/marble/data/svg/lunarmap.svg
 share/marble/data/svg/marble-logo-32dpi.png
@@ -2048,11 +2053,10 @@ share/marble/data/weather/weather-storm-day.png
 share/marble/data/weather/weather-storm-night.png
 share/marble/data/weather/weather-storm.png
 share/marble/data/weather/wind-arrows.svgz
-share/metainfo/
 share/metainfo/org.kde.marble.appdata.xml
 share/metainfo/org.kde.plasma.worldclock.appdata.xml
+share/metainfo/org.kde.plasma.worldmap.appdata.xml
 share/mime/packages/geo.xml
-share/plasma/plasmoids/
 share/plasma/plasmoids/org.kde.plasma.worldclock/
 share/plasma/plasmoids/org.kde.plasma.worldclock/contents/
 share/plasma/plasmoids/org.kde.plasma.worldclock/contents/config/
@@ -2064,7 +2068,6 @@ share/plasma/plasmoids/org.kde.plasma.worldclock/contents/ui/configTimeZones.qml
 share/plasma/plasmoids/org.kde.plasma.worldclock/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.worldclock/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.worldclock/metadata.json
-share/plasma/wallpapers/
 share/plasma/wallpapers/org.kde.plasma.worldmap/
 share/plasma/wallpapers/org.kde.plasma.worldmap/contents/
 share/plasma/wallpapers/org.kde.plasma.worldmap/contents/config/

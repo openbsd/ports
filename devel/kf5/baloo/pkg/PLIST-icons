@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-icons,v 1.1 2019/03/28 20:32:42 rsadowski Exp $
+@comment $OpenBSD: PLIST-icons,v 1.2 2020/03/23 18:01:03 rsadowski Exp $
 @conflict kf5-baloo-<=5.51.0p1v0
 @conflict baloo->=4
 @pkgpath devel/kf5/baloo,icons
-share/icons/hicolor/128x128/apps/baloo.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor

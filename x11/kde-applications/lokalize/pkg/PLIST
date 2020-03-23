@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/10 18:13:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:27 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kmix
@@ -7,16 +7,8 @@ share/applications/org.kde.lokalize.desktop
 share/config.kcfg/
 share/config.kcfg/lokalize.kcfg
 share/doc/HTML/ca/lokalize/
-share/doc/HTML/ca/lokalize/configure_shortcuts.png
-share/doc/HTML/ca/lokalize/configure_toolbar.png
-share/doc/HTML/ca/lokalize/default_editor_lokalize.png
-share/doc/HTML/ca/lokalize/glossary.png
 share/doc/HTML/ca/lokalize/index.cache.bz2
 share/doc/HTML/ca/lokalize/index.docbook
-share/doc/HTML/ca/lokalize/original-diff.png
-share/doc/HTML/ca/lokalize/project_overview.png
-share/doc/HTML/ca/lokalize/sync.png
-share/doc/HTML/ca/lokalize/tmview.png
 share/doc/HTML/de/lokalize/
 share/doc/HTML/de/lokalize/index.cache.bz2
 share/doc/HTML/de/lokalize/index.docbook
@@ -39,14 +31,8 @@ share/doc/HTML/et/lokalize/index.cache.bz2
 share/doc/HTML/et/lokalize/index.docbook
 share/doc/HTML/id/
 share/doc/HTML/id/lokalize/
-share/doc/HTML/id/lokalize/configure_shortcuts.png
-share/doc/HTML/id/lokalize/configure_toolbar.png
-share/doc/HTML/id/lokalize/default_editor_lokalize.png
-share/doc/HTML/id/lokalize/glossary.png
 share/doc/HTML/id/lokalize/index.cache.bz2
 share/doc/HTML/id/lokalize/index.docbook
-share/doc/HTML/id/lokalize/project_overview.png
-share/doc/HTML/id/lokalize/tmview.png
 share/doc/HTML/it/lokalize/
 share/doc/HTML/it/lokalize/index.cache.bz2
 share/doc/HTML/it/lokalize/index.docbook
@@ -56,7 +42,6 @@ share/doc/HTML/nl/lokalize/index.docbook
 share/doc/HTML/pt/lokalize/
 share/doc/HTML/pt/lokalize/index.cache.bz2
 share/doc/HTML/pt/lokalize/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/lokalize/
 share/doc/HTML/pt_BR/lokalize/index.cache.bz2
 share/doc/HTML/pt_BR/lokalize/index.docbook
@@ -81,14 +66,10 @@ share/doc/HTML/uk/lokalize/original-diff.png
 share/doc/HTML/uk/lokalize/project_overview.png
 share/doc/HTML/uk/lokalize/sync.png
 share/doc/HTML/uk/lokalize/tmview.png
-share/examples/lokalize/
-share/examples/lokalize/xdg/
-share/examples/lokalize/xdg/lokalize.categories
 share/icons/hicolor/128x128/apps/lokalize.png
 share/icons/hicolor/32x32/apps/lokalize.png
 share/icons/hicolor/64x64/apps/lokalize.png
 share/icons/hicolor/scalable/apps/lokalize.svgz
-share/knotifications5/
 share/knotifications5/lokalize.notifyrc
 share/kxmlgui5/
 share/kxmlgui5/lokalize/
@@ -99,6 +80,7 @@ share/kxmlgui5/lokalize/projectmanagerui.rc
 share/kxmlgui5/lokalize/scriptsui.rc
 share/kxmlgui5/lokalize/translationmemoryrui.rc
 share/locale/ar/LC_MESSAGES/lokalize.mo
+share/locale/ast/LC_MESSAGES/lokalize.mo
 share/locale/bg/LC_MESSAGES/lokalize.mo
 share/locale/bs/LC_MESSAGES/lokalize.mo
 share/locale/ca/LC_MESSAGES/lokalize.mo
@@ -321,5 +303,6 @@ share/lokalize/scripts/odf/xliff2odf.rc
 share/lokalize/scripts/odf/xliffmerge.py
 share/metainfo/
 share/metainfo/org.kde.lokalize.appdata.xml
+share/qlogging-categories5/lokalize.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

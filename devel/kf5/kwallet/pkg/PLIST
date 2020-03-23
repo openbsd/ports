@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/30 09:13:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:11 rsadowski Exp $
 @bin bin/kwallet-query
 @bin bin/kwalletd5
 include/KF5/KWallet/
@@ -15,12 +15,7 @@ lib/cmake/KF5Wallet/KF5WalletTargets.cmake
 @lib lib/libkwalletbackend5.so.${LIBkwalletbackend5_VERSION}
 @man man/man1/kwallet-query.1
 share/dbus-1/interfaces/kf5_org.kde.KWallet.xml
-share/dbus-1/services/org.kde.kwalletd.service
 share/dbus-1/services/org.kde.kwalletd5.service
-share/examples/kf5-kwallet/
-share/examples/kf5-kwallet/xdg/
-share/examples/kf5-kwallet/xdg/kwallet.categories
-@sample ${SYSCONFDIR}/xdg/kwallet.categories
 share/kf5/mkspecs/qt_KWallet.pri
 share/knotifications5/
 share/knotifications5/kwalletd.notifyrc
@@ -91,6 +86,7 @@ share/locale/lt/LC_MESSAGES/kwalletd5.mo
 share/locale/lv/LC_MESSAGES/kwalletd5.mo
 share/locale/mai/LC_MESSAGES/kwalletd5.mo
 share/locale/mk/LC_MESSAGES/kwalletd5.mo
+share/locale/ml/LC_MESSAGES/kwallet-query.mo
 share/locale/ml/LC_MESSAGES/kwalletd5.mo
 share/locale/mr/LC_MESSAGES/kwalletd5.mo
 share/locale/ms/LC_MESSAGES/kwalletd5.mo
@@ -128,6 +124,7 @@ share/locale/sr@latin/LC_MESSAGES/kwalletd5.mo
 share/locale/sv/LC_MESSAGES/kwallet-query.mo
 share/locale/sv/LC_MESSAGES/kwalletd5.mo
 share/locale/te/LC_MESSAGES/kwalletd5.mo
+share/locale/tg/LC_MESSAGES/kwallet-query.mo
 share/locale/tg/LC_MESSAGES/kwalletd5.mo
 share/locale/th/LC_MESSAGES/kwalletd5.mo
 share/locale/tr/LC_MESSAGES/kwallet-query.mo
@@ -141,3 +138,4 @@ share/locale/zh_CN/LC_MESSAGES/kwallet-query.mo
 share/locale/zh_CN/LC_MESSAGES/kwalletd5.mo
 share/locale/zh_TW/LC_MESSAGES/kwallet-query.mo
 share/locale/zh_TW/LC_MESSAGES/kwalletd5.mo
+share/qlogging-categories5/kwallet.categories

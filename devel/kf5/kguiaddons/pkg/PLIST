@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:07 rsadowski Exp $
 include/KF5/
 include/KF5/KGuiAddons/
 include/KF5/KGuiAddons/KColorCollection
@@ -20,6 +20,7 @@ include/KF5/KGuiAddons/kiconutils.h
 include/KF5/KGuiAddons/kimagecache.h
 include/KF5/KGuiAddons/klocalimagecacheimpl.h
 include/KF5/KGuiAddons/kmodifierkeyinfo.h
+include/KF5/KGuiAddons/kmodifierkeyinfoprovider_p.h
 include/KF5/KGuiAddons/kwordwrap.h
 include/KF5/kguiaddons_version.h
 lib/cmake/KF5GuiAddons/
@@ -28,6 +29,10 @@ lib/cmake/KF5GuiAddons/KF5GuiAddonsConfigVersion.cmake
 lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets.cmake
 @lib lib/libKF5GuiAddons.so.${LIBKF5GuiAddons_VERSION}
+lib/qt5/plugins/kf5/
+lib/qt5/plugins/kf5/kguiaddons/
+lib/qt5/plugins/kf5/kguiaddons/kmodifierkey/
+@so lib/qt5/plugins/kf5/kguiaddons/kmodifierkey/kmodifierkey_xcb.so
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KGuiAddons.pri

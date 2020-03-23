@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/23 07:49:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:22 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
@@ -6,12 +6,12 @@ CATEGORIES =	audio
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
 
-SHARED_LIBS +=  kmixcore                0.0 # 5.13.80
+SHARED_LIBS +=  kmixcore                1.0 # 5.13.80
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
-WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5Notifications
-WANTLIB += KF5Package KF5Plasma KF5Service KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5GlobalAccel KF5I18n KF5Notifications KF5Package
+WANTLIB += KF5Plasma KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += c canberra glib-2.0 m pulse pulse-mainloop-glib
 
@@ -23,10 +23,10 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=devel/kf5/kinit
-RUN_DEPENDS +=	devel/kf5/kinit
+BUILD_DEPENDS =	devel/kf5/kinit
+RUN_DEPENDS =	devel/kf5/kinit
 
-LIB_DEPENDS +=	audio/libcanberra \
+LIB_DEPENDS =	audio/libcanberra \
 		devel/glib2 \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \

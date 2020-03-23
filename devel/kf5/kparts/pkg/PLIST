@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/03/30 09:13:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/03/23 18:01:10 rsadowski Exp $
 include/KF5/KParts/
 include/KF5/KParts/KParts/
 include/KF5/KParts/KParts/BrowserArguments
@@ -73,8 +73,8 @@ lib/cmake/KF5Parts/KF5PartsConfigVersion.cmake
 lib/cmake/KF5Parts/KF5PartsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Parts/KF5PartsTargets.cmake
 @lib lib/libKF5Parts.so.${LIBKF5Parts_VERSION}
-lib/qt5/plugins/notepadpart.so
-lib/qt5/plugins/spellcheckplugin.so
+@so lib/qt5/plugins/notepadpart.so
+@so lib/qt5/plugins/spellcheckplugin.so
 share/kdevappwizard/
 share/kdevappwizard/templates/
 share/kdevappwizard/templates/kpartsapp.tar.bz2

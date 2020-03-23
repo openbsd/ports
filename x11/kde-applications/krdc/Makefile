@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/23 07:52:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:24 rsadowski Exp $
 
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
 CATEGORIES =	net x11
 
-SHARED_LIBS +=  krdccore               0.0 # 5.0
+SHARED_LIBS +=  krdccore               1.0 # 5.0
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krdc
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DNSSD KF5I18n KF5IconThemes KF5KCMUtils KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Service KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c m ssh vncclient
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DNSSD KF5I18n KF5IconThemes
+WANTLIB += KF5KCMUtils KF5Notifications KF5NotifyConfig KF5Service
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m ssh vncclient
 
 MODULES +=	x11/kde-applications
 
@@ -21,7 +21,7 @@ MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcmutils \
 		devel/kf5/kcodecs \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/30 09:13:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:06 rsadowski Exp $
 @bin bin/kquitapp5
 include/KF5/
 include/KF5/KDBusAddons/
@@ -22,10 +22,6 @@ lib/cmake/KF5DBusAddons/KF5DBusAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5DBusAddons/KF5DBusAddonsTargets.cmake
 lib/cmake/KF5DBusAddons/KF5dbus.service.in
 @lib lib/libKF5DBusAddons.so.${LIBKF5DBusAddons_VERSION}
-share/examples/kdbusaddons/
-share/examples/kdbusaddons/xdg/
-share/examples/kdbusaddons/xdg/kdbusaddons.categories
-@sample ${SYSCONFDIR}/xdg/kdbusaddons.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KDBusAddons.pri
@@ -52,6 +48,7 @@ share/locale/it/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ja/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ko/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/lt/LC_MESSAGES/kdbusaddons5_qt.qm
+share/locale/ml/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/nb/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/nds/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/nl/LC_MESSAGES/kdbusaddons5_qt.qm
@@ -76,7 +73,10 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/sr@latin/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/sv/LC_MESSAGES/kdbusaddons5_qt.qm
+share/locale/tg/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/tr/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/uk/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kdbusaddons5_qt.qm
+share/qlogging-categories5/
+share/qlogging-categories5/kdbusaddons.categories

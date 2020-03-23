@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/24 11:57:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/23 18:01:23 rsadowski Exp $
 
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
 CATEGORIES =	textproc devel
-REVISION =	0
 
+SHARED_LIBS +=  komparedialogpages  1.0 # 0.0
+SHARED_LIBS +=  kompareinterface    1.0 # 0.0
 
-SHARED_LIBS +=  komparedialogpages  0.0 # 0.0
-SHARED_LIBS +=  kompareinterface    0.0 # 0.0
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOWidgets
 WANTLIB += KF5Parts KF5Service KF5SonnetUi KF5TextEditor KF5TextWidgets
@@ -23,7 +21,7 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-LIB_DEPENDS +=	devel/kf5/kcodecs \
+LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kiconthemes \

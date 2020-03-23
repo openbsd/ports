@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/06/03 05:35:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:25 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdegames-*
@@ -37,6 +37,7 @@ share/doc/HTML/nl/kspaceduel/kspaceduel3.png
 share/doc/HTML/pt/kspaceduel/
 share/doc/HTML/pt/kspaceduel/index.cache.bz2
 share/doc/HTML/pt/kspaceduel/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kspaceduel/
 share/doc/HTML/pt_BR/kspaceduel/index.cache.bz2
 share/doc/HTML/pt_BR/kspaceduel/index.docbook
@@ -122,6 +123,7 @@ share/locale/it/LC_MESSAGES/kspaceduel.mo
 share/locale/ja/LC_MESSAGES/kspaceduel.mo
 share/locale/kk/LC_MESSAGES/kspaceduel.mo
 share/locale/km/LC_MESSAGES/kspaceduel.mo
+share/locale/ko/LC_MESSAGES/kspaceduel.mo
 share/locale/lt/LC_MESSAGES/kspaceduel.mo
 share/locale/lv/LC_MESSAGES/kspaceduel.mo
 share/locale/mr/LC_MESSAGES/kspaceduel.mo

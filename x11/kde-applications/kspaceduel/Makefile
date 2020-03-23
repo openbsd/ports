@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/03 05:35:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:25 rsadowski Exp $
 
 COMMENT =	2D space arcade game for KDE
 DISTNAME =	kspaceduel-${VERSION}
@@ -11,7 +11,7 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5KDEGames KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml

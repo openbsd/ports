@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-hunspell,v 1.2 2018/02/12 19:35:37 rsadowski Exp $
-lib/qt5/plugins/kf5/sonnet/sonnet_hunspell.so
+@comment $OpenBSD: PLIST-hunspell,v 1.3 2020/03/23 18:01:12 rsadowski Exp $
+@so lib/qt5/plugins/kf5/sonnet/sonnet_hunspell.so

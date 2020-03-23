@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_html_kopenssl_cpp,v 1.1 2020/03/23 18:01:08 rsadowski Exp $
+
+Index: src/html/kopenssl.cpp
+--- src/html/kopenssl.cpp.orig
++++ src/html/kopenssl.cpp
+@@ -253,7 +253,7 @@ static QString findMostRecentLib(QString dir, QString 
+     QString best = 0L;
+     // where do we start
+     uint s = filter.length() - 1;
+-    for (QStringList::const_iterator it = l.begin(); it != l.end(); ++it) {
++    for (QStringList::iterator it = l.begin(); it != l.end(); ++it) {
+         QString numberpart = (*it).mid(s);
+         uint endmaj = numberpart.indexOf('.');
+         if (endmaj == -1) {

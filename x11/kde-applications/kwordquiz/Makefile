@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/07 10:21:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:26 rsadowski Exp $
 
 COMMENT =	general purpose flash card program for KDE
 DISTNAME =	kwordquiz-${VERSION}
@@ -6,9 +6,8 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/kwordquiz
 
-
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
-WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemViews KF5NewStuff KF5NewStuffCore KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Service KF5WidgetsAddons KF5WindowSystem
@@ -23,7 +22,7 @@ MODKDE5_DOCS = yes
 MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
-LIB_DEPENDS +=	devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \

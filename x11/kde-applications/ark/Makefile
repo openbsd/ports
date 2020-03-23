@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/24 11:56:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:14 rsadowski Exp $
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
 CATEGORIES =	archivers
-REVISION =	0
 
+SHARED_LIBS +=  kerfuffle                 2.0 # 17.08
 
-SHARED_LIBS +=  kerfuffle                 1.0 # 17.08
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
@@ -24,14 +22,14 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=archivers/bzip2 \
+BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/lzo2 \
 		archivers/p7zip \
 		archivers/rzip \
 		archivers/unrar \
 		archivers/zstd
 
-RUN_DEPENDS +=	archivers/bzip2 \
+RUN_DEPENDS =	archivers/bzip2 \
 		archivers/unrar \
 		archivers/p7zip \
 		archivers/lzo2 \
@@ -39,7 +37,7 @@ RUN_DEPENDS +=	archivers/bzip2 \
 		archivers/zstd \
 		misc/shared-mime-info
 
-LIB_DEPENDS +=	archivers/libarchive \
+LIB_DEPENDS =	archivers/libarchive \
 		archivers/libzip \
 		devel/kf5/karchive \
 		devel/kf5/kauth \

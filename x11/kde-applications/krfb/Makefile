@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/23 07:55:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:24 rsadowski Exp $
 
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
 
-SHARED_LIBS +=  krfbprivate               0.0 # 5.0
+SHARED_LIBS +=  krfbprivate               1.0 # 5.0
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krfb
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5DNSSD KF5I18n KF5Notifications KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 Xdamage Xext Xtst
-WANTLIB += c m vncserver xcb xcb-damage xcb-image xcb-render xcb-shape
-WANTLIB += xcb-shm xcb-xfixes
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml
+WANTLIB += X11 Xdamage Xext Xtst c m vncserver xcb xcb-damage
+WANTLIB += xcb-image xcb-render xcb-shape xcb-shm xcb-xfixes
 
 MODULES +=	x11/kde-applications
 
@@ -23,7 +23,7 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \

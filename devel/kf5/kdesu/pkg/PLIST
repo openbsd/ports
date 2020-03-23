@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:06 rsadowski Exp $
 include/KF5/KDESu/
 include/KF5/KDESu/KDESu/
 include/KF5/KDESu/KDESu/Client
@@ -31,6 +31,7 @@ lib/cmake/KF5Su/KF5SuTargets.cmake
 @mode
 share/kf5/mkspecs/qt_KDESu.pri
 share/locale/ar/LC_MESSAGES/kdesud5.mo
+share/locale/ast/LC_MESSAGES/kdesud5.mo
 share/locale/bs/LC_MESSAGES/kdesud5.mo
 share/locale/ca/LC_MESSAGES/kdesud5.mo
 share/locale/ca@valencia/LC_MESSAGES/kdesud5.mo
@@ -53,6 +54,7 @@ share/locale/it/LC_MESSAGES/kdesud5.mo
 share/locale/ja/LC_MESSAGES/kdesud5.mo
 share/locale/ko/LC_MESSAGES/kdesud5.mo
 share/locale/lt/LC_MESSAGES/kdesud5.mo
+share/locale/ml/LC_MESSAGES/kdesud5.mo
 share/locale/nb/LC_MESSAGES/kdesud5.mo
 share/locale/nds/LC_MESSAGES/kdesud5.mo
 share/locale/nl/LC_MESSAGES/kdesud5.mo
@@ -71,6 +73,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kdesud5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kdesud5.mo
 share/locale/sr@latin/LC_MESSAGES/kdesud5.mo
 share/locale/sv/LC_MESSAGES/kdesud5.mo
+share/locale/tg/LC_MESSAGES/kdesud5.mo
 share/locale/tr/LC_MESSAGES/kdesud5.mo
 share/locale/uk/LC_MESSAGES/kdesud5.mo
 share/locale/zh_CN/LC_MESSAGES/kdesud5.mo

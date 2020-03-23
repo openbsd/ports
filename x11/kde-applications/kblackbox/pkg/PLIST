@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:17 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kblackbox
 @bin bin/kblackbox
@@ -70,6 +70,7 @@ share/locale/he/LC_MESSAGES/kblackbox.mo
 share/locale/hi/LC_MESSAGES/kblackbox.mo
 share/locale/hr/LC_MESSAGES/kblackbox.mo
 share/locale/hu/LC_MESSAGES/kblackbox.mo
+share/locale/id/LC_MESSAGES/kblackbox.mo
 share/locale/is/LC_MESSAGES/kblackbox.mo
 share/locale/it/LC_MESSAGES/kblackbox.mo
 share/locale/ja/LC_MESSAGES/kblackbox.mo

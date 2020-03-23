@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/10 18:09:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:17 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kcachegrind
@@ -36,7 +36,6 @@ share/doc/HTML/nl/kcachegrind/index.docbook
 share/doc/HTML/pt/kcachegrind/
 share/doc/HTML/pt/kcachegrind/index.cache.bz2
 share/doc/HTML/pt/kcachegrind/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kcachegrind/
 share/doc/HTML/pt_BR/kcachegrind/index.cache.bz2
 share/doc/HTML/pt_BR/kcachegrind/index.docbook
@@ -69,9 +68,6 @@ share/kcachegrind/icons/hicolor/32x32/
 share/kcachegrind/icons/hicolor/32x32/actions/
 share/kcachegrind/icons/hicolor/32x32/actions/percent.png
 share/kcachegrind/tips
-share/kxmlgui5/
-share/kxmlgui5/kcachegrind/
-share/kxmlgui5/kcachegrind/kcachegrindui.rc
 share/locale/ar/LC_MESSAGES/kcachegrind.mo
 share/locale/bs/LC_MESSAGES/kcachegrind.mo
 share/locale/bs/LC_MESSAGES/kcachegrind_qt.qm
@@ -156,4 +152,6 @@ share/locale/zh_CN/LC_MESSAGES/kcachegrind.mo
 share/locale/zh_CN/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kcachegrind.mo
 share/locale/zh_TW/LC_MESSAGES/kcachegrind_qt.qm
+share/metainfo/
+share/metainfo/org.kde.kcachegrind.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor

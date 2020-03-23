@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/10 16:37:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/23 18:01:03 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,7 +7,7 @@ COMMENT =	visual database applications creator
 
 VERSION =	3.2.0
 DISTNAME =	kexi-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kexicore3.2               0.0 # 3.2
 SHARED_LIBS +=  kexidatatable3.2          0.0 # 3.2
@@ -31,16 +31,16 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KDb3 KF5Auth KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5IconThemes
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += KPropertyCore3 KPropertyWidgets3 KReport3 Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Test
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c glib-2.0
-WANTLIB += iconv m mariadb
+WANTLIB += ${COMPILER_LIBCXX} GL KDb3 KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GuiAddons
+WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOFileWidgets KF5KIOWidgets KF5Parts KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextEditor KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5XmlGui KPropertyCore3 KPropertyWidgets3 KReport3
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
+WANTLIB += c glib-2.0 iconv m mariadb
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kexi/src/}
 EXTRACT_SUFX =	.tar.xz

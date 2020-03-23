@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/01/18 09:05:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/03/23 18:01:13 rsadowski Exp $
 @conflict digikam-kde4-*
 @conflict kipi-plugins-<=4
 bin/cleanup_digikamdb
@@ -675,7 +675,9 @@ share/icons/hicolor/scalable/apps/dk-piwigo.svgz
 share/icons/hicolor/scalable/apps/dk-smugmug.svgz
 share/icons/hicolor/scalable/apps/panorama.svgz
 share/icons/hicolor/scalable/apps/showfoto.svgz
+share/knotifications5/
 share/knotifications5/digikam.notifyrc
+share/kxmlgui5/
 share/kxmlgui5/digikam/
 share/kxmlgui5/digikam/digikamui5.rc
 share/kxmlgui5/digikam/imageeditorui5.rc
@@ -738,6 +740,7 @@ share/locale/uk/LC_MESSAGES/digikam.mo
 share/locale/vi/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/digikam.mo
 share/locale/zh_TW/LC_MESSAGES/digikam.mo
+share/metainfo/
 share/metainfo/org.kde.digikam.appdata.xml
 share/metainfo/org.kde.showfoto.appdata.xml
 share/showfoto/

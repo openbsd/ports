@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/30 09:13:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:10 rsadowski Exp $
 include/KF5/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/AbstractAnnotationItemDelegate
@@ -71,19 +71,10 @@ lib/cmake/KF5TextEditor/KF5TextEditorTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5TextEditor/KF5TextEditorTargets.cmake
 @lib lib/libKF5TextEditor.so.${LIBKF5TextEditor_VERSION}
 lib/qt5/plugins/kf5/parts/
-lib/qt5/plugins/kf5/parts/katepart.so
+@so lib/qt5/plugins/kf5/parts/katepart.so
 @bin libexec/kauth/kauth_ktexteditor_helper
 share/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
-share/examples/ktexteditor/
-share/examples/ktexteditor/dbus-1/
-@sample ${SYSCONFDIR}/xdg/dbus-1/
-share/examples/ktexteditor/dbus-1/system.d/
-@sample ${SYSCONFDIR}/xdg/dbus-1/system.d/
-share/examples/ktexteditor/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
-@sample ${SYSCONFDIR}/xdg/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
-share/examples/ktexteditor/xdg/
-share/examples/ktexteditor/xdg/ktexteditor.categories
-@sample ${SYSCONFDIR}/xdg/ktexteditor.categories
+share/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 share/katepart5/
 share/katepart5/script/
 share/katepart5/script/README.md
@@ -94,6 +85,7 @@ share/kservicetypes5/ktexteditor.desktop
 share/kservicetypes5/ktexteditorplugin.desktop
 share/locale/af/LC_MESSAGES/ktexteditor5.mo
 share/locale/ar/LC_MESSAGES/ktexteditor5.mo
+share/locale/ast/LC_MESSAGES/ktexteditor5.mo
 share/locale/be/LC_MESSAGES/ktexteditor5.mo
 share/locale/bg/LC_MESSAGES/ktexteditor5.mo
 share/locale/bn/LC_MESSAGES/ktexteditor5.mo
@@ -177,3 +169,4 @@ share/locale/xh/LC_MESSAGES/ktexteditor5.mo
 share/locale/zh_CN/LC_MESSAGES/ktexteditor5.mo
 share/locale/zh_TW/LC_MESSAGES/ktexteditor5.mo
 share/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy
+share/qlogging-categories5/ktexteditor.categories

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ProcessInfo_cpp,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
+$OpenBSD: patch-src_ProcessInfo_cpp,v 1.3 2020/03/23 18:01:24 rsadowski Exp $
 
 Index: src/ProcessInfo.cpp
 --- src/ProcessInfo.cpp.orig
 +++ src/ProcessInfo.cpp
-@@ -772,12 +772,12 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pri
+@@ -777,12 +777,12 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pri
              return false;
          }
  
@@ -18,7 +18,7 @@ Index: src/ProcessInfo.cpp
  
          free(kInfoProc);
          return true;
-@@ -826,7 +826,7 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pri
+@@ -831,7 +831,7 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pri
          }
  
          for (char **p = argv; *p != NULL; p++) {

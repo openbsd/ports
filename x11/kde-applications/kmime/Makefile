@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:22 rsadowski Exp $
 
 COMMENT =	library for handling mail messages and newsgroup articles
 DISTNAME =	kmime-${VERSION}
 CATEGORIES =	mail devel
-REVISION =	0
 
-
-SHARED_LIBS +=  KF5Mime                   0.0 # 5.5
+SHARED_LIBS +=  KF5Mime                   1.0 # 5.5
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5I18n Qt5Core m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/07 09:55:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:15 rsadowski Exp $
 
 COMMENT =	graphical equivalent of du
 DISTNAME =	filelight-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.filelight
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
@@ -22,7 +22,7 @@ MODULES +=	x11/kde-applications
 BUILD_DEPENDS =	devel/kf5/kitemviews \
 		devel/kf5/solid
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfigwidgets \

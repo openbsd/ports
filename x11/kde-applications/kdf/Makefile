@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2019/12/11 13:09:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/23 18:01:19 rsadowski Exp $
 
 COMMENT =	KDE storage device statistics
 DISTNAME =	kdf-${VERSION}
 CATEGORIES =	x11 sysutils
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/system/org.kde.kdf
 
-SHARED_LIBS +=  kdfprivate               0.0 # 18.12.0
+SHARED_LIBS +=  kdfprivate               1.0 # 18.12.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOWidgets
 WANTLIB += KF5Notifications KF5Service KF5WidgetsAddons KF5XmlGui

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:10 rsadowski Exp $
 @bin bin/kf5kross
 include/KF5/KrossCore/
 include/KF5/KrossCore/Kross/
@@ -53,11 +53,11 @@ lib/cmake/KF5Kross/KF5KrossTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Kross/KF5KrossTargets.cmake
 @lib lib/libKF5KrossCore.so.${LIBKF5KrossCore_VERSION}
 @lib lib/libKF5KrossUi.so.${LIBKF5KrossUi_VERSION}
-lib/qt5/plugins/krossmoduleforms.so
-lib/qt5/plugins/krossmodulekdetranslation.so
-lib/qt5/plugins/krossqts.so
+@so lib/qt5/plugins/krossmoduleforms.so
+@so lib/qt5/plugins/krossmodulekdetranslation.so
+@so lib/qt5/plugins/krossqts.so
 lib/qt5/plugins/script/
-lib/qt5/plugins/script/krossqtsplugin.so
+@so lib/qt5/plugins/script/krossqtsplugin.so
 @man man/man1/kf5kross.1
 share/kf5/mkspecs/qt_KrossCore.pri
 share/kf5/mkspecs/qt_KrossUi.pri

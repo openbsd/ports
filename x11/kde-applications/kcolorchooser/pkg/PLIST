@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:05:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:18 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kcolorchooser
@@ -37,6 +37,7 @@ share/locale/km/LC_MESSAGES/kcolorchooser.mo
 share/locale/ko/LC_MESSAGES/kcolorchooser.mo
 share/locale/lt/LC_MESSAGES/kcolorchooser.mo
 share/locale/lv/LC_MESSAGES/kcolorchooser.mo
+share/locale/ml/LC_MESSAGES/kcolorchooser.mo
 share/locale/mr/LC_MESSAGES/kcolorchooser.mo
 share/locale/nb/LC_MESSAGES/kcolorchooser.mo
 share/locale/nds/LC_MESSAGES/kcolorchooser.mo
@@ -58,5 +59,7 @@ share/locale/uk/LC_MESSAGES/kcolorchooser.mo
 share/locale/wa/LC_MESSAGES/kcolorchooser.mo
 share/locale/zh_CN/LC_MESSAGES/kcolorchooser.mo
 share/locale/zh_TW/LC_MESSAGES/kcolorchooser.mo
+share/metainfo/
+share/metainfo/org.kde.kcolorchooser.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

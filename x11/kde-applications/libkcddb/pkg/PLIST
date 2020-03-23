@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:26 rsadowski Exp $
 @conflict kdebase-<4
 @conflict kde-l10n-*
 include/KF5/KCddb/
@@ -26,7 +26,7 @@ lib/cmake/KF5Cddb/KF5CddbTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Cddb/KF5CddbTargets.cmake
 @lib lib/libKF5Cddb.so.${LIBKF5Cddb_VERSION}
 @lib lib/libKF5CddbWidgets.so.${LIBKF5CddbWidgets_VERSION}
-lib/qt5/plugins/kcm_cddb.so
+@so lib/qt5/plugins/kcm_cddb.so
 share/config.kcfg/
 share/config.kcfg/libkcddb5.kcfg
 share/doc/HTML/ca/kcontrol/

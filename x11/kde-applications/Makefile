@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/12/10 18:30:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.54 2020/03/23 18:01:13 rsadowski Exp $
 
      SUBDIR =
 
@@ -201,9 +201,9 @@
      #SUBDIR += kaccounts-providers
      #SUBDIR += kalarmcal
      #SUBDIR += kblog
-     SUBDIR += kcalcore
+     #SUBDIR += kcalcore gone in 19.12.3
      #SUBDIR += kcalutils
-     SUBDIR += kcontacts
+     #SUBDIR += kcontacts gone in 19.12.3
      #SUBDIR += kdav
      SUBDIR += kdeedu-data
      #SUBDIR += kidentitymanagement

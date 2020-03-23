@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/06/23 05:24:00 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2020/03/23 18:01:03 rsadowski Exp $
 
 CATEGORIES +=		devel devel/kf5
 
 VERSION ?=		${MODKF5_VERSION}
-MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
+MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 HOMEPAGE ?=		https://projects.kde.org/projects/frameworks/${DISTNAME:C/-[0-9].*//}
 
 # usual KDE rules:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:07 rsadowski Exp $
 @bin bin/kglobalaccel5
 include/KF5/KGlobalAccel/
 include/KF5/KGlobalAccel/KGlobalAccel
@@ -19,14 +19,10 @@ lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets.cmake
 @lib lib/libKF5GlobalAccel.so.${LIBKF5GlobalAccel_VERSION}
 @lib lib/libKF5GlobalAccelPrivate.so.${LIBKF5GlobalAccelPrivate_VERSION}
 lib/qt5/plugins/org.kde.kglobalaccel5.platforms/
-lib/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
+@so lib/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 share/dbus-1/interfaces/kf5_org.kde.KGlobalAccel.xml
 share/dbus-1/interfaces/kf5_org.kde.kglobalaccel.Component.xml
 share/dbus-1/services/org.kde.kglobalaccel.service
-share/examples/kglobalaccel/
-share/examples/kglobalaccel/xdg/
-share/examples/kglobalaccel/xdg/kglobalaccel.categories
-@sample ${SYSCONFDIR}/xdg/kglobalaccel.categories
 share/kf5/mkspecs/qt_KGlobalAccel.pri
 share/kservices5/
 share/kservices5/kglobalaccel5.desktop
@@ -129,3 +125,4 @@ share/locale/xh/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kglobalaccel5_qt.qm
+share/qlogging-categories5/kglobalaccel.categories

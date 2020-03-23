@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:22 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kmag
@@ -8,6 +8,7 @@ share/applications/org.kde.kmag.desktop
 share/doc/HTML/ca/kmag/
 share/doc/HTML/ca/kmag/index.cache.bz2
 share/doc/HTML/ca/kmag/index.docbook
+share/doc/HTML/ca/kmag/screenshot.png
 share/doc/HTML/de/kmag/
 share/doc/HTML/de/kmag/index.cache.bz2
 share/doc/HTML/de/kmag/index.docbook
@@ -19,7 +20,6 @@ share/doc/HTML/en/kmag/screenshot.png
 share/doc/HTML/es/kmag/
 share/doc/HTML/es/kmag/index.cache.bz2
 share/doc/HTML/es/kmag/index.docbook
-share/doc/HTML/es/kmag/screenshot.png
 share/doc/HTML/fr/kmag/
 share/doc/HTML/fr/kmag/index.cache.bz2
 share/doc/HTML/fr/kmag/index.docbook
@@ -56,9 +56,6 @@ share/kmag/icons/hicolor/16x16/actions/
 share/kmag/icons/hicolor/16x16/actions/followmouse.png
 share/kmag/icons/hicolor/16x16/actions/hidemouse.png
 share/kmag/icons/hicolor/16x16/actions/window.png
-share/kxmlgui5/
-share/kxmlgui5/kmag/
-share/kxmlgui5/kmag/kmagui.rc
 share/locale/ar/LC_MESSAGES/kmag.mo
 share/locale/bg/LC_MESSAGES/kmag.mo
 share/locale/bs/LC_MESSAGES/kmag.mo
@@ -91,6 +88,7 @@ share/locale/km/LC_MESSAGES/kmag.mo
 share/locale/ko/LC_MESSAGES/kmag.mo
 share/locale/lt/LC_MESSAGES/kmag.mo
 share/locale/lv/LC_MESSAGES/kmag.mo
+share/locale/ml/LC_MESSAGES/kmag.mo
 share/locale/mr/LC_MESSAGES/kmag.mo
 share/locale/nb/LC_MESSAGES/kmag.mo
 share/locale/nds/LC_MESSAGES/kmag.mo

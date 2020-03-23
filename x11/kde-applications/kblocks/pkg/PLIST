@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/18 09:39:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:17 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kblocks
 @bin bin/kblocks
@@ -48,8 +48,6 @@ share/doc/HTML/uk/kblocks/index.cache.bz2
 share/doc/HTML/uk/kblocks/index.docbook
 share/examples/kblocks/
 share/examples/kblocks/xdg/
-share/examples/kblocks/xdg/kblocks.categories
-@sample ${SYSCONFDIR}/xdg/kblocks.categories
 share/examples/kblocks/xdg/kblocks.knsrc
 @sample ${SYSCONFDIR}/xdg/kblocks.knsrc
 share/icons/hicolor/128x128/apps/kblocks.png
@@ -96,6 +94,7 @@ share/locale/gl/LC_MESSAGES/kblocks.mo
 share/locale/hi/LC_MESSAGES/kblocks.mo
 share/locale/hr/LC_MESSAGES/kblocks.mo
 share/locale/hu/LC_MESSAGES/kblocks.mo
+share/locale/id/LC_MESSAGES/kblocks.mo
 share/locale/is/LC_MESSAGES/kblocks.mo
 share/locale/it/LC_MESSAGES/kblocks.mo
 share/locale/ja/LC_MESSAGES/kblocks.mo
@@ -104,6 +103,7 @@ share/locale/km/LC_MESSAGES/kblocks.mo
 share/locale/ko/LC_MESSAGES/kblocks.mo
 share/locale/lt/LC_MESSAGES/kblocks.mo
 share/locale/lv/LC_MESSAGES/kblocks.mo
+share/locale/ml/LC_MESSAGES/kblocks.mo
 share/locale/mr/LC_MESSAGES/kblocks.mo
 share/locale/nb/LC_MESSAGES/kblocks.mo
 share/locale/nds/LC_MESSAGES/kblocks.mo
@@ -125,5 +125,6 @@ share/locale/zh_CN/LC_MESSAGES/kblocks.mo
 share/locale/zh_TW/LC_MESSAGES/kblocks.mo
 share/metainfo/
 share/metainfo/org.kde.kblocks.appdata.xml
+share/qlogging-categories5/kblocks.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/30 09:13:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:06 rsadowski Exp $
 @bin bin/kded5
 lib/cmake/KDED/
 lib/cmake/KDED/KDEDConfig.cmake
 lib/cmake/KDED/KDEDConfigVersion.cmake
-lib/cmake/KDED/KDEDTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KDED/KDEDTargets.cmake
-@lib lib/libkdeinit5_kded5.so.${LIBkdeinit5_kded5_VERSION}
 @man man/man8/kded5.8
+share/applications/org.kde.kded5.desktop
 share/dbus-1/interfaces/org.kde.kded5.xml
 share/dbus-1/services/org.kde.kded5.service
-share/examples/kded/
-share/examples/kded/xdg/
-share/examples/kded/xdg/kded.categories
-@sample ${SYSCONFDIR}/xdg/kded.categories
 share/kservicetypes5/kdedmodule.desktop
+share/qlogging-categories5/kded.categories
+@tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/10/22 20:30:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:04 rsadowski Exp $
 include/KF5/
 include/KF5/KArchive/
 include/KF5/KArchive/K7Zip
@@ -10,6 +10,7 @@ include/KF5/KArchive/KArchiveFile
 include/KF5/KArchive/KCompressionDevice
 include/KF5/KArchive/KFilterBase
 include/KF5/KArchive/KFilterDev
+include/KF5/KArchive/KRcc
 include/KF5/KArchive/KTar
 include/KF5/KArchive/KZip
 include/KF5/KArchive/KZipFileEntry
@@ -23,6 +24,7 @@ include/KF5/KArchive/karchivefile.h
 include/KF5/KArchive/kcompressiondevice.h
 include/KF5/KArchive/kfilterbase.h
 include/KF5/KArchive/kfilterdev.h
+include/KF5/KArchive/krcc.h
 include/KF5/KArchive/ktar.h
 include/KF5/KArchive/kzip.h
 include/KF5/KArchive/kzipfileentry.h
@@ -33,10 +35,8 @@ lib/cmake/KF5Archive/KF5ArchiveConfigVersion.cmake
 lib/cmake/KF5Archive/KF5ArchiveTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Archive/KF5ArchiveTargets.cmake
 @lib lib/libKF5Archive.so.${LIBKF5Archive_VERSION}
-share/examples/karchive/
-share/examples/karchive/xdg/
-share/examples/karchive/xdg/karchive.categories
-@sample ${SYSCONFDIR}/xdg/karchive.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KArchive.pri
+share/qlogging-categories5/
+share/qlogging-categories5/karchive.categories

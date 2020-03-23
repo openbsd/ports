@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/30 09:13:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:07 rsadowski Exp $
 include/KF5/KEmoticons/
 include/KF5/KEmoticons/KEmoticons
 include/KF5/KEmoticons/KEmoticonsProvider
@@ -14,12 +14,12 @@ lib/cmake/KF5Emoticons/KF5EmoticonsConfigVersion.cmake
 lib/cmake/KF5Emoticons/KF5EmoticonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Emoticons/KF5EmoticonsTargets.cmake
 @lib lib/libKF5Emoticons.so.${LIBKF5Emoticons_VERSION}
-lib/qt5/plugins/kf5/KEmoticonsIntegrationPlugin.so
+@so lib/qt5/plugins/kf5/KEmoticonsIntegrationPlugin.so
 lib/qt5/plugins/kf5/emoticonsthemes/
-lib/qt5/plugins/kf5/emoticonsthemes/adium.so
-lib/qt5/plugins/kf5/emoticonsthemes/kde.so
-lib/qt5/plugins/kf5/emoticonsthemes/pidgin.so
-lib/qt5/plugins/kf5/emoticonsthemes/xmpp.so
+@so lib/qt5/plugins/kf5/emoticonsthemes/adium.so
+@so lib/qt5/plugins/kf5/emoticonsthemes/kde.so
+@so lib/qt5/plugins/kf5/emoticonsthemes/pidgin.so
+@so lib/qt5/plugins/kf5/emoticonsthemes/xmpp.so
 share/emoticons/
 share/emoticons/Breeze/
 share/emoticons/Breeze/drink-beer.png
@@ -1715,10 +1715,6 @@ share/emoticons/Konqi/food-cake.png
 share/emoticons/Konqi/red-heart.png
 share/emoticons/Konqi/shine-heart.png
 share/emoticons/Konqi/yellow-heart.png
-share/examples/kemoticons/
-share/examples/kemoticons/xdg/
-share/examples/kemoticons/xdg/kemoticons.categories
-@sample ${SYSCONFDIR}/xdg/kemoticons.categories
 share/kf5/mkspecs/qt_KEmoticons.pri
 share/kservices5/
 share/kservices5/emoticonstheme_adium.desktop
@@ -1726,3 +1722,4 @@ share/kservices5/emoticonstheme_kde.desktop
 share/kservices5/emoticonstheme_pidgin.desktop
 share/kservices5/emoticonstheme_xmpp.desktop
 share/kservicetypes5/kemoticonsTheme.desktop
+share/qlogging-categories5/kemoticons.categories

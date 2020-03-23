@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2020/02/25 18:08:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.40 2020/03/23 18:01:12 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.1.0
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	10
+REVISION =	11
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
@@ -56,85 +56,87 @@ SHARED_LIBS +=  gemini                    0.0 # 16.0
 
 WANTLIB += ${COMPILER_LIBCXX} Half-2_4 ICE Iex-2_4 IlmImf-2_4
 WANTLIB += IlmThread-2_4 Imath-2_4 KChart KF5Activities KF5Archive
-WANTLIB += KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5JS KF5JobWidgets KF5KCMUtils KF5KDELibs4Support
+WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes
+WANTLIB += KF5ItemViews KF5JS KF5JobWidgets KF5KCMUtils KF5KDELibs4Support
 WANTLIB += KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
 WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
 WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5UnitConversion
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
-WANTLIB += fontconfig freetype gsl gslcblas iconv lcms2 m phonon4qt5experimental
-WANTLIB += poppler poppler-qt5 qca-qt5 z
+WANTLIB += Okular5Core Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11
+WANTLIB += Xext c fontconfig freetype gsl gslcblas iconv lcms2
+WANTLIB += m phonon4qt5experimental poppler poppler-qt5 qca-qt5
+WANTLIB += z
 
-BUILD_DEPENDS +=devel/boost \
-		math/eigen3 \
-		productivity/librcps \
+BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
 		devel/kf5/kdoctools \
-		devel/kf5/threadweaver \
 		devel/kf5/kross \
+		devel/kf5/threadweaver \
+		math/eigen3 \
+		productivity/librcps \
 		x11/qt5/qtwebkit
 
-RUN_DEPENDS +=	devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-runtime \
 		devel/kf5/ktexteditor \
 		misc/shared-mime-info \
 		productivity/librcps \
-		x11/qt5/qtwebkit \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/qt5/qtwebkit
 
-LIB_DEPENDS +=	x11/qt5/qtdeclarative \
-		converters/libiconv \
-		graphics/openexr \
+LIB_DEPENDS =	converters/libiconv \
+		devel/gsl \
+		devel/kf5/kactivities \
 		devel/kf5/karchive \
+		devel/kf5/kcmutils \
 		devel/kf5/kcodecs\
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kdbusaddons \
+		devel/kf5/kdelibs4support \
 		devel/kf5/kguiaddons\
+		devel/kf5/khtml \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
-		devel/kf5/kitemviews \
-		devel/kf5/kdelibs4support \
 		devel/kf5/kio \
+		devel/kf5/kitemviews \
+		devel/kf5/knotifications \
+		devel/kf5/knotifyconfig \
 		devel/kf5/kparts \
 		devel/kf5/ktextwidgets \
-		devel/kf5/sonnet \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		devel/kf5/knotifications \
-		devel/kf5/kactivities \
-		devel/kf5/knotifyconfig \
-		devel/kf5/kcmutils \
-		devel/kf5/khtml \
+		devel/kf5/sonnet \
 		graphics/kdiagram \
-		devel/gsl \
 		graphics/lcms2 \
+		graphics/openexr \
 		print/poppler,-qt5 \
-		security/qca-qt5
+		security/qca-qt5 \
+		x11/kde-applications/okular \
+		x11/qt5/qtdeclarative
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
-CONFIGURE_ARGS +=	-DWITH_Cauchy:BOOL=Off \
-			-DWITH_Libgit2:BOOL=Off \
-			-DWITH_Libqgit2:BOOL=Off \
-			-DWITH_LibEtonyek:BOOL=Off \
-			-DWITH_LibOdfGen:BOOL=Off \
-			-DWITH_LibVisio:BOOL=Off \
-			-DWITH_LibWpg:BOOL=Off \
-			-DWITH_LibWps:BOOL=Off \
-			-DWITH_Spnav:BOOL=Off
+CONFIGURE_ARGS +=	-DWITH_Cauchy=OFF \
+			-DWITH_Libgit2=OFF \
+			-DWITH_Libqgit2=OFF \
+			-DWITH_LibEtonyek=OFF \
+			-DWITH_LibOdfGen=OFF \
+			-DWITH_LibVisio=OFF \
+			-DWITH_LibWpg=OFF \
+			-DWITH_LibWps=OFF \
+			-DWITH_Spnav=OFF
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
-CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
+CONFIGURE_ARGS +=	-DWITH_Pstoedit=OFF
 
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11

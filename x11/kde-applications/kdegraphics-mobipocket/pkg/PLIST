@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/28 18:52:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:19 rsadowski Exp $
 include/qmobipocket/
 include/qmobipocket/mobipocket.h
 include/qmobipocket/qfilestream.h
@@ -9,5 +9,7 @@ lib/cmake/QMobipocket/QMobipocketConfigVersion.cmake
 lib/cmake/QMobipocket/QMobipocketTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QMobipocket/QMobipocketTargets.cmake
 @lib lib/libqmobipocket.so.${LIBqmobipocket_VERSION}
-lib/qt5/plugins/mobithumbnail.so
+@so lib/qt5/plugins/mobithumbnail.so
 share/kservices5/mobithumbnail.desktop
+share/metainfo/
+share/metainfo/org.kde.kdegraphics-mobipocket.metainfo.xml

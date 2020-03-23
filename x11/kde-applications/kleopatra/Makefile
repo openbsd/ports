@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/24 11:57:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/23 18:01:21 rsadowski Exp $
 
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
@@ -8,13 +8,6 @@ SHARED_LIBS +=  kleopatraclientcore       0.0 # 1.3
 SHARED_LIBS +=  kleopatraclientgui        0.0 # 1.3
 
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels KF5KCMUtils
-WANTLIB += KF5Libkleo KF5Mime KF5Notifications KF5Service KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml assuan c gpg-error gpgmepp m qgpgme
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

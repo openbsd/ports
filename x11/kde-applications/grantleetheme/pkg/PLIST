@@ -1,18 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 09:57:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:15 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 include/KF5/GrantleeTheme/
+include/KF5/GrantleeTheme/GenericFormatter
 include/KF5/GrantleeTheme/GrantleeKi18nLocalizer
 include/KF5/GrantleeTheme/GrantleeTheme
 include/KF5/GrantleeTheme/GrantleeThemeEngine
 include/KF5/GrantleeTheme/GrantleeThemeManager
 include/KF5/GrantleeTheme/QtResourceTemplateLoader
 include/KF5/grantleetheme/
+include/KF5/grantleetheme/GenericFormatter
 include/KF5/grantleetheme/GrantleeKi18nLocalizer
 include/KF5/grantleetheme/GrantleeTheme
 include/KF5/grantleetheme/GrantleeThemeEngine
 include/KF5/grantleetheme/GrantleeThemeManager
 include/KF5/grantleetheme/QtResourceTemplateLoader
+include/KF5/grantleetheme/genericformatter.h
 include/KF5/grantleetheme/grantleeki18nlocalizer.h
 include/KF5/grantleetheme/grantleetheme.h
 include/KF5/grantleetheme/grantleetheme_export.h
@@ -25,14 +28,8 @@ lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeConfig.cmake
 lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeConfigVersion.cmake
 lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5GrantleeTheme/KF5GrantleeThemeTargets.cmake
-lib/grantlee/5.1/kde_grantlee_plugin.so
+@so lib/grantlee/5.1/kde_grantlee_plugin.so
 @lib lib/libKF5GrantleeTheme.so.${LIBKF5GrantleeTheme_VERSION}
-share/examples/grantleetheme/
-share/examples/grantleetheme/xdg/
-share/examples/grantleetheme/xdg/grantleetheme.categories
-@sample ${SYSCONFDIR}/xdg/grantleetheme.categories
-share/examples/grantleetheme/xdg/grantleetheme.renamecategories
-@sample ${SYSCONFDIR}/xdg/grantleetheme.renamecategories
 share/kf5/mkspecs/qt_GrantleeTheme.pri
 share/locale/ar/LC_MESSAGES/libgrantleetheme.mo
 share/locale/bg/LC_MESSAGES/libgrantleetheme.mo
@@ -73,3 +70,5 @@ share/locale/ug/LC_MESSAGES/libgrantleetheme.mo
 share/locale/uk/LC_MESSAGES/libgrantleetheme.mo
 share/locale/zh_CN/LC_MESSAGES/libgrantleetheme.mo
 share/locale/zh_TW/LC_MESSAGES/libgrantleetheme.mo
+share/qlogging-categories5/grantleetheme.categories
+share/qlogging-categories5/grantleetheme.renamecategories

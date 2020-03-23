@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:18 rsadowski Exp $
 
 COMMENT =	data files for KDE education applications
 DISTNAME =	kdeedu-data-${VERSION}
 CATEGORIES =	devel education
-REVISION =	0
-
 
 MODKDE5_ICON_CACHE = yes
 

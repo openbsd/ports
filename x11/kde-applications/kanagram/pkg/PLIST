@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:16 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kanagram
@@ -38,6 +38,9 @@ share/doc/HTML/en/kanagram/kanagram.png
 share/doc/HTML/en/kanagram/newstuff-dialog.png
 share/doc/HTML/en/kanagram/vocab-editor.png
 share/doc/HTML/en/kanagram/vocab-settings.png
+share/doc/HTML/es/kanagram/
+share/doc/HTML/es/kanagram/index.cache.bz2
+share/doc/HTML/es/kanagram/index.docbook
 share/doc/HTML/et/kanagram/
 share/doc/HTML/et/kanagram/index.cache.bz2
 share/doc/HTML/et/kanagram/index.docbook
@@ -63,6 +66,9 @@ share/doc/HTML/pt/kanagram/index.docbook
 share/doc/HTML/pt_BR/kanagram/
 share/doc/HTML/pt_BR/kanagram/index.cache.bz2
 share/doc/HTML/pt_BR/kanagram/index.docbook
+share/doc/HTML/ru/kanagram/
+share/doc/HTML/ru/kanagram/index.cache.bz2
+share/doc/HTML/ru/kanagram/index.docbook
 share/doc/HTML/sv/kanagram/
 share/doc/HTML/sv/kanagram/answer-highlight.png
 share/doc/HTML/sv/kanagram/general-settings.png
@@ -163,6 +169,7 @@ share/locale/km/LC_MESSAGES/kanagram.mo
 share/locale/ko/LC_MESSAGES/kanagram.mo
 share/locale/lt/LC_MESSAGES/kanagram.mo
 share/locale/lv/LC_MESSAGES/kanagram.mo
+share/locale/ml/LC_MESSAGES/kanagram.mo
 share/locale/mr/LC_MESSAGES/kanagram.mo
 share/locale/nb/LC_MESSAGES/kanagram.mo
 share/locale/nds/LC_MESSAGES/kanagram.mo

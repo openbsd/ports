@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/30 09:08:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/23 18:01:03 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules
@@ -30,6 +30,7 @@ SUBDIR += sonnet
 SUBDIR += threadweaver
 SUBDIR += syntax-highlighting
 SUBDIR += prison
+#SUBDIR += syndication enable later
 SUBDIR += kholidays
 
 # tier 2
@@ -69,9 +70,7 @@ SUBDIR += kded
 SUBDIR += kxmlrpcclient
 SUBDIR += kdeclarative
 SUBDIR += kcmutils
-SUBDIR += kdewebkit
 SUBDIR += baloo	
-SUBDIR += kdesignerplugin
 SUBDIR += knotifyconfig
 SUBDIR += ktexteditor
 SUBDIR += plasma-framework
@@ -84,7 +83,9 @@ SUBDIR += kjs
 SUBDIR += kjsembed
 SUBDIR += khtml
 SUBDIR += kmediaplayer
+SUBDIR += kdesignerplugin
 SUBDIR += kross
+SUBDIR += kdewebkit
 SUBDIR += kdelibs4support
 
 # tier 4

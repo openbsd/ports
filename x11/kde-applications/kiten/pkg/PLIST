@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:21 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kiten
@@ -27,22 +27,8 @@ share/applications/org.kde.kitenradselect.desktop
 share/config.kcfg/
 share/config.kcfg/kiten.kcfg
 share/doc/HTML/ca/kiten/
-share/doc/HTML/ca/kiten/common_uncommon_filtering.png
-share/doc/HTML/ca/kiten/ending_search.png
-share/doc/HTML/ca/kiten/font.png
-share/doc/HTML/ca/kiten/grade_search.png
 share/doc/HTML/ca/kiten/index.cache.bz2
 share/doc/HTML/ca/kiten/index.docbook
-share/doc/HTML/ca/kiten/introduction.png
-share/doc/HTML/ca/kiten/kanji_information.png
-share/doc/HTML/ca/kiten/kanji_list.png
-share/doc/HTML/ca/kiten/looking_up_words.png
-share/doc/HTML/ca/kiten/radical_selector.png
-share/doc/HTML/ca/kiten/search_in_results.png
-share/doc/HTML/ca/kiten/stroke_search.png
-share/doc/HTML/ca/kiten/verb_deinflection.png
-share/doc/HTML/ca/kiten/with_filtering.png
-share/doc/HTML/ca/kiten/word_type_results.png
 share/doc/HTML/de/kiten/
 share/doc/HTML/de/kiten/index.cache.bz2
 share/doc/HTML/de/kiten/index.docbook
@@ -157,6 +143,7 @@ share/locale/kk/LC_MESSAGES/kiten.mo
 share/locale/km/LC_MESSAGES/kiten.mo
 share/locale/lt/LC_MESSAGES/kiten.mo
 share/locale/lv/LC_MESSAGES/kiten.mo
+share/locale/ml/LC_MESSAGES/kiten.mo
 share/locale/mr/LC_MESSAGES/kiten.mo
 share/locale/nb/LC_MESSAGES/kiten.mo
 share/locale/nds/LC_MESSAGES/kiten.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:20 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kgoldrunner
 @bin bin/kgoldrunner
@@ -55,8 +55,6 @@ share/doc/HTML/uk/kgoldrunner/select.png
 share/doc/HTML/uk/kgoldrunner/tute008.png
 share/examples/kgoldrunner/
 share/examples/kgoldrunner/xdg/
-share/examples/kgoldrunner/xdg/kgoldrunner.categories
-@sample ${SYSCONFDIR}/xdg/kgoldrunner.categories
 share/examples/kgoldrunner/xdg/kgoldrunner.knsrc
 @sample ${SYSCONFDIR}/xdg/kgoldrunner.knsrc
 share/icons/hicolor/128x128/apps/kgoldrunner.png
@@ -163,6 +161,7 @@ share/locale/gl/LC_MESSAGES/kgoldrunner.mo
 share/locale/hi/LC_MESSAGES/kgoldrunner.mo
 share/locale/hr/LC_MESSAGES/kgoldrunner.mo
 share/locale/hu/LC_MESSAGES/kgoldrunner.mo
+share/locale/id/LC_MESSAGES/kgoldrunner.mo
 share/locale/is/LC_MESSAGES/kgoldrunner.mo
 share/locale/it/LC_MESSAGES/kgoldrunner.mo
 share/locale/ja/LC_MESSAGES/kgoldrunner.mo
@@ -192,5 +191,6 @@ share/locale/zh_CN/LC_MESSAGES/kgoldrunner.mo
 share/locale/zh_TW/LC_MESSAGES/kgoldrunner.mo
 share/metainfo/
 share/metainfo/org.kde.kgoldrunner.appdata.xml
+share/qlogging-categories5/kgoldrunner.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

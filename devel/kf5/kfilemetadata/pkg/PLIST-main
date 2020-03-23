@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2019/03/30 09:13:51 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2020/03/23 18:01:07 rsadowski Exp $
 include/KF5/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/EmbeddedImageData
@@ -6,6 +6,7 @@ include/KF5/KFileMetaData/KFileMetaData/ExtractionResult
 include/KF5/KFileMetaData/KFileMetaData/Extractor
 include/KF5/KFileMetaData/KFileMetaData/ExtractorCollection
 include/KF5/KFileMetaData/KFileMetaData/ExtractorPlugin
+include/KF5/KFileMetaData/KFileMetaData/MimeUtils
 include/KF5/KFileMetaData/KFileMetaData/Properties
 include/KF5/KFileMetaData/KFileMetaData/PropertyInfo
 include/KF5/KFileMetaData/KFileMetaData/SimpleExtractionResult
@@ -23,6 +24,7 @@ include/KF5/KFileMetaData/kfilemetadata/extractor.h
 include/KF5/KFileMetaData/kfilemetadata/extractorcollection.h
 include/KF5/KFileMetaData/kfilemetadata/extractorplugin.h
 include/KF5/KFileMetaData/kfilemetadata/kfilemetadata_export.h
+include/KF5/KFileMetaData/kfilemetadata/mimeutils.h
 include/KF5/KFileMetaData/kfilemetadata/properties.h
 include/KF5/KFileMetaData/kfilemetadata/propertyinfo.h
 include/KF5/KFileMetaData/kfilemetadata/simpleextractionresult.h
@@ -40,24 +42,23 @@ lib/cmake/KF5FileMetaData/KF5FileMetaDataTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5FileMetaData/KF5FileMetaDataTargets.cmake
 @lib lib/libKF5FileMetaData.so.${LIBKF5FileMetaData_VERSION}
 lib/qt5/plugins/kf5/kfilemetadata/
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_epubextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_exiv2extractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_ffmpegextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_odfextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_office2007extractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_officeextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_plaintextextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_poextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_postscriptdscextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
-lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_xmlextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_epubextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_exiv2extractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_ffmpegextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_odfextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_office2007extractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_officeextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_plaintextextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_poextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_postscriptdscextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_xmlextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/writers/
-lib/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so
-share/examples/kfilemetadata/
-share/examples/kfilemetadata/xdg/
-share/examples/kfilemetadata/xdg/kfilemetadata.categories
-@sample ${SYSCONFDIR}/xdg/kfilemetadata.categories
+@so lib/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so
 share/kf5/mkspecs/qt_KFileMetaData.pri
 share/locale/eu/LC_MESSAGES/kfilemetadata5.mo
 share/locale/id/LC_MESSAGES/kfilemetadata5.mo
+share/locale/ml/LC_MESSAGES/kfilemetadata5.mo
+share/locale/tg/LC_MESSAGES/kfilemetadata5.mo
+share/qlogging-categories5/kfilemetadata.categories

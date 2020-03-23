@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/24 11:57:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/23 18:01:20 rsadowski Exp $
 
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
-
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
-WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5DocTools KF5I18n KF5JS KF5JobWidgets KF5KHtml KF5KIOCore
 WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi KF5TextWidgets
@@ -21,10 +19,10 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=devel/kf5/kinit
-RUN_DEPENDS +=	devel/kf5/kinit
+BUILD_DEPENDS =	devel/kf5/kinit
+RUN_DEPENDS =	devel/kf5/kinit
 
-LIB_DEPENDS +=	databases/xapian-core \
+LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \

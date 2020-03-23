@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/10 18:07:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
@@ -6,9 +6,9 @@ CATEGORIES =	sysutils print
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.print-manager
 
-SHARED_LIBS +=  kcupslib          60.0 # 18.18.0
+SHARED_LIBS +=  kcupslib          61.0 # 18.18.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5JobWidgets KF5KCMUtils
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Notifications KF5Service

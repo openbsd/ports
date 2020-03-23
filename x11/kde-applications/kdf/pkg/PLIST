@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/10 18:04:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:19 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kdf
@@ -15,7 +15,6 @@ share/doc/HTML/ca/kcontrol/blockdevices/index.docbook
 share/doc/HTML/ca/kdf/
 share/doc/HTML/ca/kdf/index.cache.bz2
 share/doc/HTML/ca/kdf/index.docbook
-share/doc/HTML/ca/kdf/kdf_config.png
 share/doc/HTML/de/kcontrol/
 share/doc/HTML/de/kcontrol/blockdevices/
 share/doc/HTML/de/kcontrol/blockdevices/index.cache.bz2
@@ -41,8 +40,6 @@ share/doc/HTML/es/kcontrol/blockdevices/index.docbook
 share/doc/HTML/es/kdf/
 share/doc/HTML/es/kdf/index.cache.bz2
 share/doc/HTML/es/kdf/index.docbook
-share/doc/HTML/es/kdf/kdf.png
-share/doc/HTML/es/kdf/kdf_config.png
 share/doc/HTML/et/kdf/
 share/doc/HTML/et/kdf/index.cache.bz2
 share/doc/HTML/et/kdf/index.docbook
@@ -77,7 +74,6 @@ share/doc/HTML/pt/kcontrol/blockdevices/index.docbook
 share/doc/HTML/pt/kdf/
 share/doc/HTML/pt/kdf/index.cache.bz2
 share/doc/HTML/pt/kdf/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kcontrol/
 share/doc/HTML/pt_BR/kcontrol/blockdevices/
 share/doc/HTML/pt_BR/kcontrol/blockdevices/index.cache.bz2
@@ -119,9 +115,6 @@ share/doc/HTML/uk/kdf/index.cache.bz2
 share/doc/HTML/uk/kdf/index.docbook
 share/doc/HTML/uk/kdf/kdf.png
 share/doc/HTML/uk/kdf/kdf_config.png
-share/examples/kdf/
-share/examples/kdf/xdg/
-share/examples/kdf/xdg/kdf.categories
 share/icons/hicolor/128x128/apps/kdf.png
 share/icons/hicolor/128x128/apps/kwikdisk.png
 share/icons/hicolor/16x16/apps/kcmdf.png
@@ -137,7 +130,6 @@ share/icons/hicolor/48x48/apps/kdf.png
 share/icons/hicolor/48x48/apps/kwikdisk.png
 share/icons/hicolor/64x64/apps/kdf.png
 share/icons/hicolor/64x64/apps/kwikdisk.png
-share/kservices5/
 share/kservices5/kcmdf.desktop
 share/kxmlgui5/
 share/kxmlgui5/kdf/
@@ -197,5 +189,6 @@ share/locale/zh_CN/LC_MESSAGES/kdf.mo
 share/locale/zh_TW/LC_MESSAGES/kdf.mo
 share/metainfo/
 share/metainfo/org.kde.kdf.appdata.xml
+share/qlogging-categories5/kdf.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,9 +1,9 @@
-$OpenBSD: patch-kde-modules_KDECompilerSettings_cmake,v 1.4 2019/03/30 09:08:42 rsadowski Exp $
+$OpenBSD: patch-kde-modules_KDECompilerSettings_cmake,v 1.5 2020/03/23 18:01:04 rsadowski Exp $
 Allow KDE5 libraries to be built without having to link to libc explicitly.
 Index: kde-modules/KDECompilerSettings.cmake
 --- kde-modules/KDECompilerSettings.cmake.orig
 +++ kde-modules/KDECompilerSettings.cmake
-@@ -340,6 +340,8 @@ endfunction()
+@@ -352,6 +352,8 @@ endfunction()
  # Better diagnostics (warnings, errors)
  ############################################################
  
@@ -12,7 +12,7 @@ Index: kde-modules/KDECompilerSettings.cmake
  if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT APPLE) OR
          (CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT APPLE) OR
          (CMAKE_CXX_COMPILER_ID STREQUAL "Intel" AND NOT WIN32))
-@@ -347,9 +349,11 @@ if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT APPL
+@@ -359,9 +361,11 @@ if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT APPL
      set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--fatal-warnings ${CMAKE_SHARED_LINKER_FLAGS}")
      set(CMAKE_MODULE_LINKER_FLAGS "-Wl,--fatal-warnings ${CMAKE_MODULE_LINKER_FLAGS}")
  

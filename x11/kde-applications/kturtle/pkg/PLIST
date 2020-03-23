@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:15:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:26 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kturtle
@@ -9,8 +9,6 @@ share/doc/HTML/ca/kturtle/getting-started.docbook
 share/doc/HTML/ca/kturtle/glossary.docbook
 share/doc/HTML/ca/kturtle/index.cache.bz2
 share/doc/HTML/ca/kturtle/index.docbook
-share/doc/HTML/ca/kturtle/mainwindow.png
-share/doc/HTML/ca/kturtle/mainwindow_flower_nrs.png
 share/doc/HTML/ca/kturtle/programming-reference.docbook
 share/doc/HTML/ca/kturtle/translator-guide.docbook
 share/doc/HTML/ca/kturtle/using-kturtle.docbook
@@ -230,6 +228,7 @@ share/locale/kk/LC_MESSAGES/kturtle.mo
 share/locale/km/LC_MESSAGES/kturtle.mo
 share/locale/lt/LC_MESSAGES/kturtle.mo
 share/locale/lv/LC_MESSAGES/kturtle.mo
+share/locale/ml/LC_MESSAGES/kturtle.mo
 share/locale/mr/LC_MESSAGES/kturtle.mo
 share/locale/nb/LC_MESSAGES/kturtle.mo
 share/locale/nds/LC_MESSAGES/kturtle.mo

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/24 11:57:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/23 18:01:19 rsadowski Exp $
 
 COMMENT =	KDE dialog boxes from shell scripts
 DISTNAME =	kdialog-${VERSION}
 CATEGORIES =	x11
-
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5JobWidgets
@@ -16,7 +15,7 @@ MODKDE5_TRANSLATIONS = yes
 
 MODULES +=	x11/kde-applications
 
-LIB_DEPENDS +=	devel/kf5/kcompletion \
+LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kdbusaddons \

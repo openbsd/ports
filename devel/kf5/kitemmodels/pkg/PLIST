@@ -1,24 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/10/22 20:30:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:09 rsadowski Exp $
 include/KF5/
 include/KF5/KItemModels/
 include/KF5/KItemModels/KBreadcrumbSelectionModel
 include/KF5/KItemModels/KCheckableProxyModel
+include/KF5/KItemModels/KColumnHeadersModel
 include/KF5/KItemModels/KConcatenateRowsProxyModel
 include/KF5/KItemModels/KDescendantsProxyModel
 include/KF5/KItemModels/KExtraColumnsProxyModel
 include/KF5/KItemModels/KLinkItemSelectionModel
 include/KF5/KItemModels/KModelIndexProxyMapper
+include/KF5/KItemModels/KNumberModel
 include/KF5/KItemModels/KRearrangeColumnsProxyModel
 include/KF5/KItemModels/KRecursiveFilterProxyModel
 include/KF5/KItemModels/KSelectionProxyModel
 include/KF5/KItemModels/kbreadcrumbselectionmodel.h
 include/KF5/KItemModels/kcheckableproxymodel.h
+include/KF5/KItemModels/kcolumnheadersmodel.h
 include/KF5/KItemModels/kconcatenaterowsproxymodel.h
 include/KF5/KItemModels/kdescendantsproxymodel.h
 include/KF5/KItemModels/kextracolumnsproxymodel.h
 include/KF5/KItemModels/kitemmodels_export.h
 include/KF5/KItemModels/klinkitemselectionmodel.h
 include/KF5/KItemModels/kmodelindexproxymapper.h
+include/KF5/KItemModels/knumbermodel.h
 include/KF5/KItemModels/krearrangecolumnsproxymodel.h
 include/KF5/KItemModels/krecursivefilterproxymodel.h
 include/KF5/KItemModels/kselectionproxymodel.h
@@ -29,10 +33,13 @@ lib/cmake/KF5ItemModels/KF5ItemModelsConfigVersion.cmake
 lib/cmake/KF5ItemModels/KF5ItemModelsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5ItemModels/KF5ItemModelsTargets.cmake
 @lib lib/libKF5ItemModels.so.${LIBKF5ItemModels_VERSION}
-share/examples/kitemmodels/
-share/examples/kitemmodels/xdg/
-share/examples/kitemmodels/xdg/kitemmodels.categories
-@sample ${SYSCONFDIR}/xdg/kitemmodels.categories
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/kitemmodels/
+@so lib/qt5/qml/org/kde/kitemmodels/libitemmodelsplugin.so
+lib/qt5/qml/org/kde/kitemmodels/qmldir
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KItemModels.pri
+share/qlogging-categories5/
+share/qlogging-categories5/kitemmodels.categories

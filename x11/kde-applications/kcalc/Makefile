@@ -3,13 +3,12 @@
 COMMENT =	KDE versatile math calculator
 DISTNAME =	kcalc-${VERSION}
 CATEGORIES =	x11 math
-REVISION =	0
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons
-WANTLIB += KF5I18n KF5Notifications KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml c gmp m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5GuiAddons KF5I18n KF5Notifications KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += c gmp m mpfr
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -17,10 +16,11 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=devel/kf5/kinit
-RUN_DEPENDS +=	devel/kf5/kinit
+BUILD_DEPENDS =	devel/kf5/kinit
+RUN_DEPENDS =	devel/kf5/kinit
 
-LIB_DEPENDS +=	devel/gmp \
+LIB_DEPENDS =	devel/gmp \
+		devel/mpfr \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \

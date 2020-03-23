@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/09/01 18:45:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/03/23 18:01:29 rsadowski Exp $
 @bin bin/krusader
-lib/qt5/plugins/kio_iso.so
-lib/qt5/plugins/kio_krarc.so
+@so lib/qt5/plugins/kio_iso.so
+@so lib/qt5/plugins/kio_krarc.so
 @man man/man1/krusader.1
 share/applications/org.kde.krusader.desktop
 share/doc/HTML/de/krusader/
@@ -365,6 +365,7 @@ share/krusader/total_commander.keymap.info
 share/krusader/useraction_examples.xml
 share/kservices5/iso.protocol
 share/kservices5/krarc.protocol
+share/kxmlgui5/
 share/kxmlgui5/krusader/
 share/kxmlgui5/krusader/krusaderlisterui.rc
 share/kxmlgui5/krusader/krusaderui.rc

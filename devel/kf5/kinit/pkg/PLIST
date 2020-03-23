@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/30 09:13:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:08 rsadowski Exp $
 @bin bin/kdeinit5
 @bin bin/kdeinit5_shutdown
 @bin bin/kdeinit5_wrapper
@@ -15,13 +15,10 @@ lib/cmake/KF5Init/kde5init_dummy.cpp.in
 @bin libexec/kf5/start_kdeinit_wrapper
 @man man/man8/kdeinit5.8
 share/dbus-1/interfaces/kf5_org.kde.KLauncher.xml
-share/examples/kinit/
-share/examples/kinit/xdg/
-share/examples/kinit/xdg/kinit.categories
-@sample ${SYSCONFDIR}/xdg/kinit.categories
 share/locale/af/LC_MESSAGES/kinit5.mo
 share/locale/ar/LC_MESSAGES/kinit5.mo
 share/locale/as/LC_MESSAGES/kinit5.mo
+share/locale/ast/LC_MESSAGES/kinit5.mo
 share/locale/be/LC_MESSAGES/kinit5.mo
 share/locale/be@latin/LC_MESSAGES/kinit5.mo
 share/locale/bg/LC_MESSAGES/kinit5.mo
@@ -118,3 +115,4 @@ share/locale/xh/LC_MESSAGES/kinit5.mo
 share/locale/zh_CN/LC_MESSAGES/kinit5.mo
 share/locale/zh_HK/LC_MESSAGES/kinit5.mo
 share/locale/zh_TW/LC_MESSAGES/kinit5.mo
+share/qlogging-categories5/kinit.categories

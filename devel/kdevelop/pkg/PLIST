@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/12/09 07:02:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/03/23 18:01:03 rsadowski Exp $
 @bin bin/kdev_dbus_socket_transformer
 @bin bin/kdev_format_source
 @bin bin/kdev_includepathsconverter
@@ -586,12 +586,6 @@ share/doc/HTML/en/kdevelop/kdevelop-template-result.png
 share/doc/HTML/en/kdevelop/kdevelop-template-selection.png
 share/doc/HTML/en/kdevelop/kdevelop4_noworkingset.png
 share/doc/HTML/en/kdevelop/kdevelop4_sessionsprojectsworkingsets.png
-share/examples/kdevelop/
-share/examples/kdevelop/xdg/
-share/examples/kdevelop/xdg/kdevelop.categories
-@sample ${SYSCONFDIR}/xdg/kdevelop.categories
-share/examples/kdevelop/xdg/kdevplatform.categories
-@sample ${SYSCONFDIR}/xdg/kdevplatform.categories
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/kdevelop.png
@@ -3150,6 +3144,8 @@ share/plasma/plasmoids/kdevelopsessions/contents/ui/
 share/plasma/plasmoids/kdevelopsessions/contents/ui/kdevelopsessions.qml
 share/plasma/plasmoids/kdevelopsessions/metadata.desktop
 share/plasma/services/org.kde.plasma.dataengine.kdevelopsessions.operations
+share/qlogging-categories5/kdevelop.categories
+share/qlogging-categories5/kdevplatform.categories
 @tag update-desktop-database
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

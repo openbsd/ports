@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:21 rsadowski Exp $
 @conflict kde-l10n-*
 include/KF5/KLDAP/
 include/KF5/KLDAP/KLDAP/
@@ -41,7 +41,7 @@ lib/cmake/KF5Ldap/KF5LdapConfigVersion.cmake
 lib/cmake/KF5Ldap/KF5LdapTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Ldap/KF5LdapTargets.cmake
 @lib lib/libKF5Ldap.so.${LIBKF5Ldap_VERSION}
-lib/qt5/plugins/kf5/kio/ldap.so
+@so lib/qt5/plugins/kf5/kio/ldap.so
 share/doc/HTML/ca/kioslave5/ldap/
 share/doc/HTML/ca/kioslave5/ldap/index.cache.bz2
 share/doc/HTML/ca/kioslave5/ldap/index.docbook
@@ -81,10 +81,6 @@ share/doc/HTML/sv/kioslave5/ldap/index.docbook
 share/doc/HTML/uk/kioslave5/ldap/
 share/doc/HTML/uk/kioslave5/ldap/index.cache.bz2
 share/doc/HTML/uk/kioslave5/ldap/index.docbook
-share/examples/kldap/
-share/examples/kldap/xdg/
-share/examples/kldap/xdg/kldap.categories
-share/examples/kldap/xdg/kldap.renamecategories
 share/kf5/mkspecs/qt_Ldap.pri
 share/kservices5/ldap.protocol
 share/kservices5/ldaps.protocol
@@ -185,3 +181,5 @@ share/locale/zh_CN/LC_MESSAGES/kio_ldap.mo
 share/locale/zh_CN/LC_MESSAGES/libkldap5.mo
 share/locale/zh_TW/LC_MESSAGES/kio_ldap.mo
 share/locale/zh_TW/LC_MESSAGES/libkldap5.mo
+share/qlogging-categories5/kldap.categories
+share/qlogging-categories5/kldap.renamecategories

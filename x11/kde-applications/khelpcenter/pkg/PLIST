@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 09:25:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:20 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kde-baseapps-*
 @bin bin/khelpcenter
-lib/libkdeinit5_khelpcenter.so
+@so lib/libkdeinit5_khelpcenter.so
 libexec/khc_mansearch.pl
 @bin libexec/khc_xapianindexer
 @bin libexec/khc_xapiansearch
@@ -399,10 +399,6 @@ share/doc/HTML/uk/khelpcenter/index.docbook
 share/doc/HTML/uk/onlinehelp/
 share/doc/HTML/uk/onlinehelp/index.cache.bz2
 share/doc/HTML/uk/onlinehelp/index.docbook
-share/examples/khelpcenter/
-share/examples/khelpcenter/xdg/
-share/examples/khelpcenter/xdg/khelpcenter.categories
-@sample ${SYSCONFDIR}/xdg/khelpcenter.categories
 share/kde4/
 share/kde4/services/
 share/kde4/services/khelpcenter.desktop
@@ -480,6 +476,7 @@ share/locale/km/LC_MESSAGES/khelpcenter5.mo
 share/locale/ko/LC_MESSAGES/khelpcenter5.mo
 share/locale/lt/LC_MESSAGES/khelpcenter5.mo
 share/locale/lv/LC_MESSAGES/khelpcenter5.mo
+share/locale/ml/LC_MESSAGES/khelpcenter5.mo
 share/locale/mr/LC_MESSAGES/khelpcenter5.mo
 share/locale/nb/LC_MESSAGES/khelpcenter5.mo
 share/locale/nds/LC_MESSAGES/khelpcenter5.mo
@@ -503,4 +500,5 @@ share/locale/zh_CN/LC_MESSAGES/khelpcenter5.mo
 share/locale/zh_TW/LC_MESSAGES/khelpcenter5.mo
 share/metainfo/
 share/metainfo/org.kde.Help.appdata.xml
+share/qlogging-categories5/khelpcenter.categories
 @tag update-desktop-database

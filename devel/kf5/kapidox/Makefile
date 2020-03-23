@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/07 13:07:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:04 rsadowski Exp $
 
 COMMENT =	doxygen wrapper for KDE
 DISTNAME =	kapidox-${VERSION}
 FULLPKGNAME =	${PKGNAME}${FLAVOR_EXT}
-REVISION =	0
 
 WANTLIB- =
 

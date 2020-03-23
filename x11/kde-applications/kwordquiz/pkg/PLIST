@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:21:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:26 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kwordquiz
@@ -340,6 +340,7 @@ share/locale/km/LC_MESSAGES/kwordquiz.mo
 share/locale/ko/LC_MESSAGES/kwordquiz.mo
 share/locale/lt/LC_MESSAGES/kwordquiz.mo
 share/locale/lv/LC_MESSAGES/kwordquiz.mo
+share/locale/ml/LC_MESSAGES/kwordquiz.mo
 share/locale/mr/LC_MESSAGES/kwordquiz.mo
 share/locale/nb/LC_MESSAGES/kwordquiz.mo
 share/locale/nds/LC_MESSAGES/kwordquiz.mo

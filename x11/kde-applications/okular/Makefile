@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/07 16:58:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:28 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
-REVISION =	3
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=  Okular5Core               0.0 # 9.0
+SHARED_LIBS +=  Okular5Core               1.0 # 9.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
-WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JS KF5JSApi KF5JobWidgets
 WANTLIB += KF5KExiv2 KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
@@ -19,8 +18,8 @@ WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5Xml c chm djvulibre
-WANTLIB += epub freetype jpeg m poppler poppler-qt5 qca-qt5 qmobipocket
-WANTLIB += tiff z zip
+WANTLIB += epub freetype jpeg m markdown poppler poppler-qt5 qca-qt5
+WANTLIB += qmobipocket tiff z zip
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -30,15 +29,15 @@ MODKDE5_DOCS = yes
 MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
-BUILD_DEPENDS +=net/libvncserver \
+BUILD_DEPENDS = net/libvncserver \
 		print/libspectre \
 		textproc/discount
 
-RUN_DEPENDS +=	misc/shared-mime-info \
+RUN_DEPENDS =	misc/shared-mime-info \
 		net/libvncserver \
 		textproc/discount
 
-LIB_DEPENDS +=	devel/chmlib \
+LIB_DEPENDS =	devel/chmlib \
 		devel/kf5/kactivities \
 		devel/kf5/karchive \
 		devel/kf5/kauth \

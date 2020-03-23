@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/04 14:49:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/okular
@@ -19,7 +19,9 @@ include/okular/core/okularcore_export.h
 include/okular/core/page.h
 include/okular/core/pagesize.h
 include/okular/core/pagetransition.h
+include/okular/core/printoptionswidget.h
 include/okular/core/settings_core.h
+include/okular/core/signatureutils.h
 include/okular/core/sound.h
 include/okular/core/sourcereference.h
 include/okular/core/textdocumentgenerator.h
@@ -40,26 +42,27 @@ lib/cmake/Okular5/Okular5ConfigVersion.cmake
 lib/cmake/Okular5/Okular5Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Okular5/Okular5Targets.cmake
 @lib lib/libOkular5Core.so.${LIBOkular5Core_VERSION}
-lib/qt5/plugins/kio_msits.so
-lib/qt5/plugins/libokularpart.so
+@so lib/qt5/plugins/kio_msits.so
+@so lib/qt5/plugins/libokularpart.so
 lib/qt5/plugins/okular/
 lib/qt5/plugins/okular/generators/
-lib/qt5/plugins/okular/generators/okularGenerator_chmlib.so
-lib/qt5/plugins/okular/generators/okularGenerator_comicbook.so
-lib/qt5/plugins/okular/generators/okularGenerator_djvu.so
-lib/qt5/plugins/okular/generators/okularGenerator_dvi.so
-lib/qt5/plugins/okular/generators/okularGenerator_epub.so
-lib/qt5/plugins/okular/generators/okularGenerator_fax.so
-lib/qt5/plugins/okular/generators/okularGenerator_fb.so
-lib/qt5/plugins/okular/generators/okularGenerator_ghostview.so
-lib/qt5/plugins/okular/generators/okularGenerator_kimgio.so
-lib/qt5/plugins/okular/generators/okularGenerator_mobi.so
-lib/qt5/plugins/okular/generators/okularGenerator_ooo.so
-lib/qt5/plugins/okular/generators/okularGenerator_plucker.so
-lib/qt5/plugins/okular/generators/okularGenerator_poppler.so
-lib/qt5/plugins/okular/generators/okularGenerator_tiff.so
-lib/qt5/plugins/okular/generators/okularGenerator_txt.so
-lib/qt5/plugins/okular/generators/okularGenerator_xps.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_chmlib.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_comicbook.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_djvu.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_dvi.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_epub.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_fax.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_fb.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_ghostview.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_kimgio.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_md.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_mobi.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_ooo.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_plucker.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_poppler.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_tiff.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_txt.so
+@so lib/qt5/plugins/okular/generators/okularGenerator_xps.so
 @man man/man1/okular.1
 share/applications/okularApplication_chm.desktop
 share/applications/okularApplication_comicbook.desktop
@@ -70,6 +73,7 @@ share/applications/okularApplication_fax.desktop
 share/applications/okularApplication_fb.desktop
 share/applications/okularApplication_ghostview.desktop
 share/applications/okularApplication_kimgio.desktop
+share/applications/okularApplication_md.desktop
 share/applications/okularApplication_mobi.desktop
 share/applications/okularApplication_ooo.desktop
 share/applications/okularApplication_pdf.desktop
@@ -86,6 +90,7 @@ share/applications/org.kde.mobile.okular_fax.desktop
 share/applications/org.kde.mobile.okular_fb.desktop
 share/applications/org.kde.mobile.okular_ghostview.desktop
 share/applications/org.kde.mobile.okular_kimgio.desktop
+share/applications/org.kde.mobile.okular_md.desktop
 share/applications/org.kde.mobile.okular_mobi.desktop
 share/applications/org.kde.mobile.okular_ooo.desktop
 share/applications/org.kde.mobile.okular_pdf.desktop
@@ -100,12 +105,30 @@ share/config.kcfg/okular.kcfg
 share/config.kcfg/okular_core.kcfg
 share/config.kcfg/pdfsettings.kcfg
 share/doc/HTML/ca/okular/
+share/doc/HTML/ca/okular/bookmark-management.png
+share/doc/HTML/ca/okular/bookmarks.png
+share/doc/HTML/ca/okular/configure-annotations.png
+share/doc/HTML/ca/okular/configure-backends.png
 share/doc/HTML/ca/okular/configure-editor.png
 share/doc/HTML/ca/okular/configure.png
+share/doc/HTML/ca/okular/enhance-lowcontrast.png
+share/doc/HTML/ca/okular/enhance-shape.png
+share/doc/HTML/ca/okular/enhance-solid.png
+share/doc/HTML/ca/okular/enhance-thinline.png
 share/doc/HTML/ca/okular/index.cache.bz2
 share/doc/HTML/ca/okular/index.docbook
 share/doc/HTML/ca/okular/mainwindow.png
 share/doc/HTML/ca/okular/presentation.png
+share/doc/HTML/ca/okular/tool-ellipse-okular.png
+share/doc/HTML/ca/okular/tool-highlighter-okular.png
+share/doc/HTML/ca/okular/tool-ink-okular.png
+share/doc/HTML/ca/okular/tool-line-okular.png
+share/doc/HTML/ca/okular/tool-note-inline-okular.png
+share/doc/HTML/ca/okular/tool-note-okular.png
+share/doc/HTML/ca/okular/tool-polygon-okular.png
+share/doc/HTML/ca/okular/tool-stamp-okular.png
+share/doc/HTML/ca/okular/tool-typewriter-okular.png
+share/doc/HTML/ca/okular/tool-underline-okular.png
 share/doc/HTML/de/okular/
 share/doc/HTML/de/okular/annotation-properties.png
 share/doc/HTML/de/okular/configure-annotations.png
@@ -134,6 +157,8 @@ share/doc/HTML/en/okular/index.cache.bz2
 share/doc/HTML/en/okular/index.docbook
 share/doc/HTML/en/okular/mainwindow.png
 share/doc/HTML/en/okular/presentation.png
+share/doc/HTML/en/okular/signatures-bar.png
+share/doc/HTML/en/okular/signatures-panel.png
 share/doc/HTML/en/okular/tool-ellipse-okular.png
 share/doc/HTML/en/okular/tool-highlighter-okular.png
 share/doc/HTML/en/okular/tool-ink-okular.png
@@ -210,6 +235,10 @@ share/doc/HTML/pt/okular/index.docbook
 share/doc/HTML/pt_BR/okular/
 share/doc/HTML/pt_BR/okular/annotation-properties.png
 share/doc/HTML/pt_BR/okular/annotations.png
+share/doc/HTML/pt_BR/okular/bookmark-management.png
+share/doc/HTML/pt_BR/okular/configure-annotations.png
+share/doc/HTML/pt_BR/okular/configure-backends.png
+share/doc/HTML/pt_BR/okular/configure-editor.png
 share/doc/HTML/pt_BR/okular/configure.png
 share/doc/HTML/pt_BR/okular/embedded-files-bar.png
 share/doc/HTML/pt_BR/okular/forms-bar.png
@@ -217,6 +246,8 @@ share/doc/HTML/pt_BR/okular/index.cache.bz2
 share/doc/HTML/pt_BR/okular/index.docbook
 share/doc/HTML/pt_BR/okular/mainwindow.png
 share/doc/HTML/pt_BR/okular/presentation.png
+share/doc/HTML/pt_BR/okular/signatures-bar.png
+share/doc/HTML/pt_BR/okular/signatures-panel.png
 share/doc/HTML/sv/okular/
 share/doc/HTML/sv/okular/configure.png
 share/doc/HTML/sv/okular/index.cache.bz2
@@ -234,10 +265,8 @@ share/doc/HTML/uk/okular/forms-bar.png
 share/doc/HTML/uk/okular/index.cache.bz2
 share/doc/HTML/uk/okular/index.docbook
 share/doc/HTML/uk/okular/mainwindow.png
-share/examples/okular/
-share/examples/okular/xdg/
-share/examples/okular/xdg/okular.categories
-@sample ${SYSCONFDIR}/xdg/okular.categories
+share/doc/HTML/uk/okular/signatures-bar.png
+share/doc/HTML/uk/okular/signatures-panel.png
 share/icons/hicolor/128x128/apps/okular.png
 share/icons/hicolor/16x16/apps/okular.png
 share/icons/hicolor/22x22/apps/okular.png
@@ -255,6 +284,7 @@ share/kservices5/okularFax.desktop
 share/kservices5/okularFb.desktop
 share/kservices5/okularGhostview.desktop
 share/kservices5/okularKimgio.desktop
+share/kservices5/okularMd.desktop
 share/kservices5/okularMobi.desktop
 share/kservices5/okularOoo.desktop
 share/kservices5/okularPlucker.desktop
@@ -285,6 +315,10 @@ share/locale/ar/LC_MESSAGES/okular_plucker.mo
 share/locale/ar/LC_MESSAGES/okular_poppler.mo
 share/locale/ar/LC_MESSAGES/okular_txt.mo
 share/locale/ar/LC_MESSAGES/okular_xps.mo
+share/locale/ast/LC_MESSAGES/okular_chm.mo
+share/locale/ast/LC_MESSAGES/okular_fax.mo
+share/locale/ast/LC_MESSAGES/okular_plucker.mo
+share/locale/ast/LC_MESSAGES/okular_xps.mo
 share/locale/bg/LC_MESSAGES/okular.mo
 share/locale/bg/LC_MESSAGES/okular_chm.mo
 share/locale/bg/LC_MESSAGES/okular_comicbook.mo
@@ -487,6 +521,7 @@ share/locale/et/LC_MESSAGES/okular_fax.mo
 share/locale/et/LC_MESSAGES/okular_fictionbook.mo
 share/locale/et/LC_MESSAGES/okular_ghostview.mo
 share/locale/et/LC_MESSAGES/okular_kimgio.mo
+share/locale/et/LC_MESSAGES/okular_markdown.mo
 share/locale/et/LC_MESSAGES/okular_mobi.mo
 share/locale/et/LC_MESSAGES/okular_ooo.mo
 share/locale/et/LC_MESSAGES/okular_plucker.mo
@@ -758,6 +793,7 @@ share/locale/lt/LC_MESSAGES/okular_fax.mo
 share/locale/lt/LC_MESSAGES/okular_fictionbook.mo
 share/locale/lt/LC_MESSAGES/okular_ghostview.mo
 share/locale/lt/LC_MESSAGES/okular_kimgio.mo
+share/locale/lt/LC_MESSAGES/okular_markdown.mo
 share/locale/lt/LC_MESSAGES/okular_mobi.mo
 share/locale/lt/LC_MESSAGES/okular_ooo.mo
 share/locale/lt/LC_MESSAGES/okular_plucker.mo
@@ -780,6 +816,24 @@ share/locale/lv/LC_MESSAGES/okular_ooo.mo
 share/locale/lv/LC_MESSAGES/okular_plucker.mo
 share/locale/lv/LC_MESSAGES/okular_poppler.mo
 share/locale/lv/LC_MESSAGES/okular_xps.mo
+share/locale/ml/LC_MESSAGES/okular.mo
+share/locale/ml/LC_MESSAGES/okular_chm.mo
+share/locale/ml/LC_MESSAGES/okular_comicbook.mo
+share/locale/ml/LC_MESSAGES/okular_djvu.mo
+share/locale/ml/LC_MESSAGES/okular_dvi.mo
+share/locale/ml/LC_MESSAGES/okular_epub.mo
+share/locale/ml/LC_MESSAGES/okular_fax.mo
+share/locale/ml/LC_MESSAGES/okular_fictionbook.mo
+share/locale/ml/LC_MESSAGES/okular_ghostview.mo
+share/locale/ml/LC_MESSAGES/okular_kimgio.mo
+share/locale/ml/LC_MESSAGES/okular_markdown.mo
+share/locale/ml/LC_MESSAGES/okular_mobi.mo
+share/locale/ml/LC_MESSAGES/okular_ooo.mo
+share/locale/ml/LC_MESSAGES/okular_plucker.mo
+share/locale/ml/LC_MESSAGES/okular_poppler.mo
+share/locale/ml/LC_MESSAGES/okular_txt.mo
+share/locale/ml/LC_MESSAGES/okular_xps.mo
+share/locale/ml/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/mr/LC_MESSAGES/okular.mo
 share/locale/mr/LC_MESSAGES/okular_chm.mo
 share/locale/mr/LC_MESSAGES/okular_comicbook.mo
@@ -1137,6 +1191,7 @@ share/locale/zh_TW/LC_MESSAGES/okular_fax.mo
 share/locale/zh_TW/LC_MESSAGES/okular_fictionbook.mo
 share/locale/zh_TW/LC_MESSAGES/okular_ghostview.mo
 share/locale/zh_TW/LC_MESSAGES/okular_kimgio.mo
+share/locale/zh_TW/LC_MESSAGES/okular_markdown.mo
 share/locale/zh_TW/LC_MESSAGES/okular_mobi.mo
 share/locale/zh_TW/LC_MESSAGES/okular_ooo.mo
 share/locale/zh_TW/LC_MESSAGES/okular_plucker.mo
@@ -1144,7 +1199,6 @@ share/locale/zh_TW/LC_MESSAGES/okular_poppler.mo
 share/locale/zh_TW/LC_MESSAGES/okular_txt.mo
 share/locale/zh_TW/LC_MESSAGES/okular_xps.mo
 share/locale/zh_TW/LC_MESSAGES/org.kde.active.documentviewer.mo
-share/metainfo/
 share/metainfo/org.kde.okular-chm.metainfo.xml
 share/metainfo/org.kde.okular-comicbook.metainfo.xml
 share/metainfo/org.kde.okular-djvu.metainfo.xml
@@ -1153,6 +1207,7 @@ share/metainfo/org.kde.okular-epub.metainfo.xml
 share/metainfo/org.kde.okular-fax.metainfo.xml
 share/metainfo/org.kde.okular-fb.metainfo.xml
 share/metainfo/org.kde.okular-kimgio.metainfo.xml
+share/metainfo/org.kde.okular-md.metainfo.xml
 share/metainfo/org.kde.okular-mobipocket.metainfo.xml
 share/metainfo/org.kde.okular-ooo.metainfo.xml
 share/metainfo/org.kde.okular-plucker.metainfo.xml
@@ -1213,6 +1268,7 @@ share/okular/pics/tool-typewriter-okular-colorizable@2x.png
 share/okular/pics/uparrow.png
 share/okular/pics/upleftarrow.png
 share/okular/tools.xml
+share/qlogging-categories5/okular.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

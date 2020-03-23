@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:24 rsadowski Exp $
 
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
-REVISION =	1
 
-SHARED_LIBS +=  konsoleprivate            0.0 # 17.08
+SHARED_LIBS +=  konsoleprivate            1.0 # 17.08
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GlobalAccel
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Parts KF5Pty KF5Service KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
+WANTLIB += KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOWidgets KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Pty KF5Service
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus  Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -24,10 +22,10 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=devel/kf5/kinit
-RUN_DEPENDS +=	devel/kf5/kinit
+BUILD_DEPENDS =	devel/kf5/kinit
+RUN_DEPENDS =	devel/kf5/kinit
 
-LIB_DEPENDS +=	devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kglobalaccel \
 		devel/kf5/kcodecs \
 		devel/kf5/kbookmarks \

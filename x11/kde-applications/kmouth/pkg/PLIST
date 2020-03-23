@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/03 11:26:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:23 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kmouth
@@ -8,6 +8,11 @@ share/applications/org.kde.kmouth.desktop
 share/doc/HTML/ca/kmouth/
 share/doc/HTML/ca/kmouth/index.cache.bz2
 share/doc/HTML/ca/kmouth/index.docbook
+share/doc/HTML/ca/kmouth/kmouthcpref.png
+share/doc/HTML/ca/kmouth/kmouthctts.png
+share/doc/HTML/ca/kmouth/kmouthwizard1.png
+share/doc/HTML/ca/kmouth/kmouthwizard2.png
+share/doc/HTML/ca/kmouth/kmouthwizard3.png
 share/doc/HTML/da/kmouth/
 share/doc/HTML/da/kmouth/index.cache.bz2
 share/doc/HTML/da/kmouth/index.docbook
@@ -36,11 +41,6 @@ share/doc/HTML/en/kmouth/kmouthwizard3.png
 share/doc/HTML/es/kmouth/
 share/doc/HTML/es/kmouth/index.cache.bz2
 share/doc/HTML/es/kmouth/index.docbook
-share/doc/HTML/es/kmouth/kmouthcpref.png
-share/doc/HTML/es/kmouth/kmouthctts.png
-share/doc/HTML/es/kmouth/kmouthcwcp.png
-share/doc/HTML/es/kmouth/kmouthedit.png
-share/doc/HTML/es/kmouth/kmouthmain.png
 share/doc/HTML/fr/kmouth/
 share/doc/HTML/fr/kmouth/index.cache.bz2
 share/doc/HTML/fr/kmouth/index.docbook
@@ -156,6 +156,7 @@ share/locale/km/LC_MESSAGES/kmouth.mo
 share/locale/ko/LC_MESSAGES/kmouth.mo
 share/locale/lt/LC_MESSAGES/kmouth.mo
 share/locale/lv/LC_MESSAGES/kmouth.mo
+share/locale/ml/LC_MESSAGES/kmouth.mo
 share/locale/mr/LC_MESSAGES/kmouth.mo
 share/locale/nb/LC_MESSAGES/kmouth.mo
 share/locale/nds/LC_MESSAGES/kmouth.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:09 rsadowski Exp $
 include/KF5/KJobWidgets/
 include/KF5/KJobWidgets/KAbstractWidgetJobTracker
 include/KF5/KJobWidgets/KDialogJobUiDelegate
@@ -23,10 +23,6 @@ lib/cmake/KF5JobWidgets/KF5JobWidgetsTargets.cmake
 share/dbus-1/interfaces/kf5_org.kde.JobView.xml
 share/dbus-1/interfaces/kf5_org.kde.JobViewServer.xml
 share/dbus-1/interfaces/kf5_org.kde.JobViewV2.xml
-share/examples/kjobwidgets/
-share/examples/kjobwidgets/xdg/
-share/examples/kjobwidgets/xdg/kjobwidgets.categories
-@sample ${SYSCONFDIR}/xdg/kjobwidgets.categories
 share/kf5/mkspecs/qt_KJobWidgets.pri
 share/locale/af/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/ar/LC_MESSAGES/kjobwidgets5_qt.qm
@@ -128,3 +124,4 @@ share/locale/xh/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kjobwidgets5_qt.qm
+share/qlogging-categories5/kjobwidgets.categories

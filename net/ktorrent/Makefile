@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2020/01/09 04:34:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.50 2020/03/23 18:01:13 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
 VERSION =	5.1.2
 DISTNAME =	ktorrent-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  ktcore                    1.0 # 0.0
 
@@ -17,7 +17,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5DNSSD KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets

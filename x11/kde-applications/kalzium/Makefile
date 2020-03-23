@@ -1,28 +1,20 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:16 rsadowski Exp $
 
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
 CATEGORIES =	education math
-REVISION =	3
 
 HOMEPAGE =	https://edu.kde.org/kalzium/
 
+SHARED_LIBS +=  science                   1.0 # 5.0
 
-SHARED_LIBS +=  science                   0.0 # 5.0
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5JS KF5JobWidgets KF5KDELibs4Support KF5KHtml KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOWidgets KF5Notifications KF5Parts
-WANTLIB += KF5Plotting KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Script Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml c m openbabel
-
-MODPY_RUNDEP=	No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOWidgets
+WANTLIB += KF5Plotting KF5Service KF5SonnetUi KF5TextWidgets KF5UnitConversion
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Script Qt5Svg Qt5Widgets Qt5Xml
+WANTLIB += c m openbabel
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -33,12 +25,16 @@ MODULES +=	x11/kde-applications \
 		lang/python \
 		lang/ocaml
 
-BUILD_DEPENDS +=devel/kf5/karchive \
+MODPY_RUNDEP=	No
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
+
+BUILD_DEPENDS =	devel/kf5/karchive \
 		math/eigen3
 
-RUN_DEPENDS +=	devel/kf5/karchive
+RUN_DEPENDS =	devel/kf5/karchive
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \

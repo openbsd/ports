@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:23 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kolf
 @bin bin/kolf
-@lib lib/libkolfprivate.so.${LIBkolfprivate_VERSION}
 share/applications/org.kde.kolf.desktop
 share/doc/HTML/de/kolf/
 share/doc/HTML/de/kolf/index.cache.bz2
@@ -46,6 +45,7 @@ share/icons/hicolor/22x22/apps/kolf.png
 share/icons/hicolor/32x32/apps/kolf.png
 share/icons/hicolor/48x48/apps/kolf.png
 share/icons/hicolor/64x64/apps/kolf.png
+share/icons/hicolor/scalable/apps/kolf.svgz
 share/kolf/
 share/kolf/courses/
 share/kolf/courses/Classic.kolf
@@ -63,11 +63,13 @@ share/kolf/sounds/
 share/kolf/sounds/blackhole.wav
 share/kolf/sounds/blackholeeject.wav
 share/kolf/sounds/blackholeputin.wav
+share/kolf/sounds/bumper.wav
 share/kolf/sounds/hit.wav
 share/kolf/sounds/holed.wav
 share/kolf/sounds/holeinone.wav
 share/kolf/sounds/puddle.wav
 share/kolf/sounds/wall.wav
+share/kolf/sounds/woohoo.wav
 share/kolf/tutorial.kolf
 share/kolf/tutorial.kolfgame
 share/kxmlgui5/
@@ -101,6 +103,7 @@ share/locale/it/LC_MESSAGES/kolf.mo
 share/locale/ja/LC_MESSAGES/kolf.mo
 share/locale/kk/LC_MESSAGES/kolf.mo
 share/locale/km/LC_MESSAGES/kolf.mo
+share/locale/ko/LC_MESSAGES/kolf.mo
 share/locale/lt/LC_MESSAGES/kolf.mo
 share/locale/lv/LC_MESSAGES/kolf.mo
 share/locale/mr/LC_MESSAGES/kolf.mo

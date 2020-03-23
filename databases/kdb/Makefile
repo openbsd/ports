@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/06 00:39:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:02 rsadowski Exp $
 
 COMMENT =	database connectivity and creation framework
 
 VERSION =	3.2.0
 DISTNAME =	kdb-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KDb3                      1.1 # 3.0
 
@@ -18,8 +18,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons Qt5Core Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c icui18n icuuc m mysqlclient pq
-WANTLIB += sqlite3
+WANTLIB += Qt5Widgets Qt5Xml c icui18n icuuc m mariadb pq sqlite3
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdb/src/}}
 EXTRACT_SUFX =	.tar.xz

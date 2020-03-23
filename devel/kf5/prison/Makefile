@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/30 09:13:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/23 18:01:11 rsadowski Exp $
 
 COMMENT =		bar code generator
 DISTNAME =		prison-${VERSION}
 
-SHARED_LIBS =		KF5Prison	4.3 # 5.29
+SHARED_LIBS =		KF5Prison	5.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick dmtx m qrencode

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 07:51:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:19 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
-lib/qt5/plugins/sambausershareplugin.so
+@so lib/qt5/plugins/sambausershareplugin.so
 share/kservices5/sambausershareplugin.desktop
 share/locale/ar/LC_MESSAGES/kfileshare.mo
 share/locale/bg/LC_MESSAGES/kfileshare.mo
@@ -55,3 +55,5 @@ share/locale/ug/LC_MESSAGES/kfileshare.mo
 share/locale/uk/LC_MESSAGES/kfileshare.mo
 share/locale/zh_CN/LC_MESSAGES/kfileshare.mo
 share/locale/zh_TW/LC_MESSAGES/kfileshare.mo
+share/metainfo/
+share/metainfo/org.kde.kdenetwork-filesharing.metainfo.xml

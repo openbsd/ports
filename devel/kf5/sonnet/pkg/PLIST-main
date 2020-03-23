@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/03/30 09:13:56 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2020/03/23 18:01:12 rsadowski Exp $
 @bin bin/gentrigrams
 @bin bin/parsetrigrams
 include/KF5/
@@ -36,18 +36,14 @@ lib/cmake/KF5Sonnet/KF5SonnetTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Sonnet/KF5SonnetTargets.cmake
 @lib lib/libKF5SonnetCore.so.${LIBKF5SonnetCore_VERSION}
 @lib lib/libKF5SonnetUi.so.${LIBKF5SonnetUi_VERSION}
+lib/qt5/plugins/designer/
+@so lib/qt5/plugins/designer/sonnetui5widgets.so
 lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/sonnet/
-share/examples/sonnet/
-share/examples/sonnet/xdg/
-share/examples/sonnet/xdg/sonnet.categories
-@sample ${SYSCONFDIR}/xdg/sonnet.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_SonnetCore.pri
 share/kf5/mkspecs/qt_SonnetUi.pri
-share/kf5/sonnet/
-share/kf5/sonnet/trigrams.map
 share/locale/af/LC_MESSAGES/sonnet5_qt.qm
 share/locale/ar/LC_MESSAGES/sonnet5_qt.qm
 share/locale/as/LC_MESSAGES/sonnet5_qt.qm
@@ -163,3 +159,5 @@ share/locale/xh/LC_MESSAGES/sonnet5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/sonnet5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/sonnet5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/sonnet5_qt.qm
+share/qlogging-categories5/
+share/qlogging-categories5/sonnet.categories

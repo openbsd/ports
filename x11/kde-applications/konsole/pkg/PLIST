@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:24 rsadowski Exp $
 @conflict kdebase-<4
 @conflict kde-l10n-*
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
 bin/konsoleprofile
-lib/libkdeinit5_konsole.so
+@so lib/libkdeinit5_konsole.so
 @lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
-lib/qt5/plugins/konsolepart.so
+@so lib/qt5/plugins/konsolepart.so
 share/applications/org.kde.konsole.desktop
 share/doc/HTML/ca/konsole/
 share/doc/HTML/ca/konsole/draganddrop-contextmenu.png
@@ -42,15 +42,11 @@ share/doc/HTML/uk/konsole/
 share/doc/HTML/uk/konsole/draganddrop-contextmenu.png
 share/doc/HTML/uk/konsole/index.cache.bz2
 share/doc/HTML/uk/konsole/index.docbook
-share/examples/konsole/
-share/examples/konsole/xdg/
-share/examples/konsole/xdg/konsole.categories
-@sample ${SYSCONFDIR}/xdg/konsole.categories
-share/examples/konsole/xdg/konsole.knsrc
-@sample ${SYSCONFDIR}/xdg/konsole.knsrc
 share/khotkeys/
 share/khotkeys/konsole.khotkeys
 share/knotifications5/konsole.notifyrc
+share/knsrcfiles/
+share/knsrcfiles/konsole.knsrc
 share/konsole/
 share/konsole/BlackOnLightYellow.colorscheme
 share/konsole/BlackOnRandomLight.colorscheme
@@ -106,6 +102,7 @@ share/locale/km/LC_MESSAGES/konsole.mo
 share/locale/ko/LC_MESSAGES/konsole.mo
 share/locale/lt/LC_MESSAGES/konsole.mo
 share/locale/lv/LC_MESSAGES/konsole.mo
+share/locale/ml/LC_MESSAGES/konsole.mo
 share/locale/mr/LC_MESSAGES/konsole.mo
 share/locale/nb/LC_MESSAGES/konsole.mo
 share/locale/nds/LC_MESSAGES/konsole.mo
@@ -129,4 +126,5 @@ share/locale/zh_CN/LC_MESSAGES/konsole.mo
 share/locale/zh_TW/LC_MESSAGES/konsole.mo
 share/metainfo/
 share/metainfo/org.kde.konsole.appdata.xml
+share/qlogging-categories5/konsole.categories
 @tag update-desktop-database

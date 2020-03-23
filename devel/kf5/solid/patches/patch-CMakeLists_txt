@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/03/23 18:01:12 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -109,7 +109,7 @@ elseif (NOT ANDROID)
+     add_device_backend(upower)
+     add_device_backend(fstab)
+ 
+-    if (CMAKE_SYSTEM_NAME MATCHES FreeBSD)
++    if (CMAKE_SYSTEM_NAME MATCHES FreeBSD OR CMAKE_SYSTEM_NAME MATCHES OpenBSD)
+         # FIXME: this should work on more Unix systems
+         option(EXPERIMENTAL_BSDISKS "Use UDisks2/bsdisks backend instead of HAL to manage disk devices" OFF)
+     else ()

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/03/30 09:13:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/03/23 18:01:11 rsadowski Exp $
 include/KF5/KXmlRpcClient/
 include/KF5/KXmlRpcClient/KXmlRpcClient/
 include/KF5/KXmlRpcClient/KXmlRpcClient/Client
@@ -12,12 +12,6 @@ lib/cmake/KF5XmlRpcClient/KF5XmlRpcClientConfigVersion.cmake
 lib/cmake/KF5XmlRpcClient/KF5XmlRpcClientTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5XmlRpcClient/KF5XmlRpcClientTargets.cmake
 @lib lib/libKF5XmlRpcClient.so.${LIBKF5XmlRpcClient_VERSION}
-share/examples/kxmlrpcclient/
-share/examples/kxmlrpcclient/xdg/
-share/examples/kxmlrpcclient/xdg/kxmlrpcclient.categories
-@sample ${SYSCONFDIR}/xdg/kxmlrpcclient.categories
-share/examples/kxmlrpcclient/xdg/kxmlrpcclient.renamecategories
-@sample ${SYSCONFDIR}/xdg/kxmlrpcclient.renamecategories
 share/kf5/mkspecs/qt_KXmlRpcClient.pri
 share/locale/ar/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/be/LC_MESSAGES/libkxmlrpcclient5.mo
@@ -52,6 +46,7 @@ share/locale/km/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/ko/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/lt/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/lv/LC_MESSAGES/libkxmlrpcclient5.mo
+share/locale/ml/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/mr/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/nb/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/nds/LC_MESSAGES/libkxmlrpcclient5.mo
@@ -72,8 +67,11 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/sr@latin/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/sv/LC_MESSAGES/libkxmlrpcclient5.mo
+share/locale/tg/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/tr/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/ug/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/uk/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/zh_CN/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/zh_TW/LC_MESSAGES/libkxmlrpcclient5.mo
+share/qlogging-categories5/kxmlrpcclient.categories
+share/qlogging-categories5/kxmlrpcclient.renamecategories

@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/24 11:56:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:15 rsadowski Exp $
 
 COMMENT =	Dolphin plugins
 DISTNAME =	dolphin-plugins-${VERSION}
 PKGNAME  =	dolphin-plugins-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION  =	0
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml dolphinvcs m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextEditor
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += dolphinvcs m
 
 MODKDE5_TRANSLATIONS = yes
 
 MODULES +=	x11/kde-applications
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \

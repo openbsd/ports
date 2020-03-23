@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 07:58:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:26 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/ktimer
 @bin bin/ktimer
 share/applications/org.kde.ktimer.desktop
 share/doc/HTML/ca/ktimer/
-share/doc/HTML/ca/ktimer/first.png
 share/doc/HTML/ca/ktimer/index.cache.bz2
 share/doc/HTML/ca/ktimer/index.docbook
-share/doc/HTML/ca/ktimer/main.png
-share/doc/HTML/ca/ktimer/running.png
-share/doc/HTML/ca/ktimer/two_at_once.png
 share/doc/HTML/cs/ktimer/
 share/doc/HTML/cs/ktimer/index.cache.bz2
 share/doc/HTML/cs/ktimer/index.docbook
@@ -43,7 +39,6 @@ share/doc/HTML/nl/ktimer/index.docbook
 share/doc/HTML/pt/ktimer/
 share/doc/HTML/pt/ktimer/index.cache.bz2
 share/doc/HTML/pt/ktimer/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/ktimer/
 share/doc/HTML/pt_BR/ktimer/first.png
 share/doc/HTML/pt_BR/ktimer/index.cache.bz2
@@ -122,6 +117,6 @@ share/locale/uk/LC_MESSAGES/ktimer.mo
 share/locale/zh_CN/LC_MESSAGES/ktimer.mo
 share/locale/zh_TW/LC_MESSAGES/ktimer.mo
 share/metainfo/
+share/metainfo/org.kde.ktimer.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/metainfo/org.kde.ktimer.appdata.xml

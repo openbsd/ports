@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:15 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/granatier
 @bin bin/granatier
@@ -77,10 +77,6 @@ share/doc/HTML/uk/granatier/config_theme.png
 share/doc/HTML/uk/granatier/granatier.png
 share/doc/HTML/uk/granatier/index.cache.bz2
 share/doc/HTML/uk/granatier/index.docbook
-share/examples/granatier/
-share/examples/granatier/xdg/
-share/examples/granatier/xdg/granatier.categories
-@sample ${SYSCONFDIR}/xdg/granatier.categories
 share/granatier/
 share/granatier/arenas/
 share/granatier/arenas/clanbomber_Arena.desktop
@@ -221,6 +217,7 @@ share/locale/ga/LC_MESSAGES/granatier.mo
 share/locale/gl/LC_MESSAGES/granatier.mo
 share/locale/hr/LC_MESSAGES/granatier.mo
 share/locale/hu/LC_MESSAGES/granatier.mo
+share/locale/id/LC_MESSAGES/granatier.mo
 share/locale/is/LC_MESSAGES/granatier.mo
 share/locale/it/LC_MESSAGES/granatier.mo
 share/locale/ja/LC_MESSAGES/granatier.mo
@@ -250,5 +247,6 @@ share/locale/zh_CN/LC_MESSAGES/granatier.mo
 share/locale/zh_TW/LC_MESSAGES/granatier.mo
 share/metainfo/
 share/metainfo/org.kde.granatier.appdata.xml
+share/qlogging-categories5/granatier.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

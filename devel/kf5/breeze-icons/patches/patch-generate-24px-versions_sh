@@ -1,0 +1,13 @@
+$OpenBSD: patch-generate-24px-versions_sh,v 1.1 2020/03/23 18:01:03 rsadowski Exp $
+
+Index: generate-24px-versions.sh
+--- generate-24px-versions.sh.orig
++++ generate-24px-versions.sh
+@@ -1,6 +1,4 @@
+-#!/bin/bash
+-
+-set -e
++#!/bin/sh
+ 
+ OUTPUT_DIR=$1
+ 

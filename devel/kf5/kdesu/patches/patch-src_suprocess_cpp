@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_suprocess_cpp,v 1.1 2019/03/30 09:13:50 rsadowski Exp $
+$OpenBSD: patch-src_suprocess_cpp,v 1.2 2020/03/23 18:01:06 rsadowski Exp $
 
 use base doas(1) instead sudo(1) from ports
 
@@ -49,7 +49,7 @@ Index: src/suprocess.cpp
          args += "-u";
      }
  
-@@ -138,7 +145,8 @@ int SuProcess::exec(const char *password, int check)
+@@ -144,7 +151,8 @@ int SuProcess::exec(const char *password, int check)
      }
      if (check == NeedPassword) {
          if (ret == killme) {
@@ -59,7 +59,7 @@ Index: src/suprocess.cpp
                  // sudo can not be killed, just return
                  return ret;
              }
-@@ -163,7 +171,8 @@ int SuProcess::exec(const char *password, int check)
+@@ -169,7 +177,8 @@ int SuProcess::exec(const char *password, int check)
  
      if (ret != ok) {
          kill(m_pid, SIGKILL);

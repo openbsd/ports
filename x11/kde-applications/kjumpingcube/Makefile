@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/24 11:57:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:21 rsadowski Exp $
 
 COMMENT =	territory capture game
 DISTNAME =	kjumpingcube-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kjumpingcube
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KDEGames
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Service KF5WidgetsAddons
@@ -21,12 +19,12 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=x11/qt5/qtquickcontrols
-RUN_DEPENDS +=	x11/qt5/qtquickcontrols
-
 MODULES +=	x11/kde-applications
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+RUN_DEPENDS =	x11/qt5/qtquickcontrols
+
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/ki18n \
 		devel/kf5/kcrash \

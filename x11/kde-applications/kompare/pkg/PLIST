@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/03 10:52:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:23 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @bin bin/kompare
@@ -6,8 +6,8 @@ include/kompare/
 include/kompare/kompareinterface.h
 @lib lib/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
 @lib lib/libkompareinterface.so.${LIBkompareinterface_VERSION}
-lib/qt5/plugins/komparenavtreepart.so
-lib/qt5/plugins/komparepart.so
+@so lib/qt5/plugins/kf5/parts/komparenavtreepart.so
+@so lib/qt5/plugins/kf5/parts/komparepart.so
 share/applications/org.kde.kompare.desktop
 share/doc/HTML/ca/kompare/
 share/doc/HTML/ca/kompare/dock.png
@@ -49,7 +49,6 @@ share/doc/HTML/nl/kompare/index.docbook
 share/doc/HTML/pt/kompare/
 share/doc/HTML/pt/kompare/index.cache.bz2
 share/doc/HTML/pt/kompare/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kompare/
 share/doc/HTML/pt_BR/kompare/index.cache.bz2
 share/doc/HTML/pt_BR/kompare/index.docbook
@@ -77,19 +76,12 @@ share/icons/hicolor/22x22/apps/kompare.png
 share/icons/hicolor/32x32/apps/kompare.png
 share/icons/hicolor/48x48/apps/kompare.png
 share/icons/hicolor/scalable/apps/kompare.svgz
-share/kservices5/
 share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/kompare.desktop
 share/kservices5/komparenavtreepart.desktop
 share/kservices5/komparepart.desktop
-share/kservicetypes5/
 share/kservicetypes5/komparenavigationpart.desktop
 share/kservicetypes5/kompareviewpart.desktop
-share/kxmlgui5/
-share/kxmlgui5/kompare/
-share/kxmlgui5/kompare/kompareui.rc
-share/kxmlgui5/komparepart/
-share/kxmlgui5/komparepart/komparepartui.rc
 share/locale/ar/LC_MESSAGES/kompare.mo
 share/locale/bg/LC_MESSAGES/kompare.mo
 share/locale/bs/LC_MESSAGES/kompare.mo

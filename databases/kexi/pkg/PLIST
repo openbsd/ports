@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/04/21 10:12:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:03 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-<3.0.0
 @bin bin/kexi-3.2
@@ -18,19 +18,19 @@ lib/qt5/plugins/kexi/
 lib/qt5/plugins/kexi/3.2/
 lib/qt5/plugins/kexi/3.2/forms/
 lib/qt5/plugins/kexi/3.2/forms/widgets/
-lib/qt5/plugins/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.main.so
-lib/qt5/plugins/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.web-browser.so
-lib/qt5/plugins/kexi/3.2/kexi_csvimportexportplugin.so
-lib/qt5/plugins/kexi/3.2/kexi_formplugin.so
-lib/qt5/plugins/kexi/3.2/kexi_migrationplugin.so
-lib/qt5/plugins/kexi/3.2/kexi_queryplugin.so
-lib/qt5/plugins/kexi/3.2/kexi_reportplugin.so
-lib/qt5/plugins/kexi/3.2/kexi_tableplugin.so
+@so lib/qt5/plugins/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.main.so
+@so lib/qt5/plugins/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.web-browser.so
+@so lib/qt5/plugins/kexi/3.2/kexi_csvimportexportplugin.so
+@so lib/qt5/plugins/kexi/3.2/kexi_formplugin.so
+@so lib/qt5/plugins/kexi/3.2/kexi_migrationplugin.so
+@so lib/qt5/plugins/kexi/3.2/kexi_queryplugin.so
+@so lib/qt5/plugins/kexi/3.2/kexi_reportplugin.so
+@so lib/qt5/plugins/kexi/3.2/kexi_tableplugin.so
 lib/qt5/plugins/kexi/3.2/migrate/
-lib/qt5/plugins/kexi/3.2/migrate/keximigrate_mdb.so
-lib/qt5/plugins/kexi/3.2/migrate/keximigrate_mysql.so
-lib/qt5/plugins/kexi/3.2/migrate/keximigrate_postgresql.so
-lib/qt5/plugins/kexi/3.2/migrate/keximigrate_tsv.so
+@so lib/qt5/plugins/kexi/3.2/migrate/keximigrate_mdb.so
+@so lib/qt5/plugins/kexi/3.2/migrate/keximigrate_mysql.so
+@so lib/qt5/plugins/kexi/3.2/migrate/keximigrate_postgresql.so
+@so lib/qt5/plugins/kexi/3.2/migrate/keximigrate_tsv.so
 share/applications/org.kde.kexi-3.2.desktop
 share/doc/HTML/ca/kexi/
 share/doc/HTML/ca/kexi/index.cache.bz2

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 22:15:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/23 18:01:10 rsadowski Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
 
-SHARED_LIBS =		KF5TextEditor		5.3
+SHARED_LIBS =		KF5TextEditor		6.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5GuiAddons KF5I18n KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Parts KF5Service KF5SonnetCore
 WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
@@ -22,23 +22,22 @@ RUN_DEPENDS =	x11/qt5/qtscript \
 
 # The following OPTIONAL packages have not been found:
 # * EditorConfi
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kguiaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kjobwidgets\
-		devel/kf5/kparts \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet \
-		devel/kf5/syntax-highlighting \
+LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
+		devel/kf5/kauth>=${MODKF5_VERSION} \
+		devel/kf5/kcodecs>=${MODKF5_VERSION} \
+		devel/kf5/kcompletion>=${MODKF5_VERSION} \
+		devel/kf5/kconfig>=${MODKF5_VERSION} \
+		devel/kf5/kconfigwidgets>=${MODKF5_VERSION} \
+		devel/kf5/kguiaddons>=${MODKF5_VERSION} \
+		devel/kf5/ki18n>=${MODKF5_VERSION} \
+		devel/kf5/kio>=${MODKF5_VERSION} \
+		devel/kf5/kjobwidgets>=${MODKF5_VERSION} \
+		devel/kf5/kparts>=${MODKF5_VERSION} \
+		devel/kf5/ktextwidgets>=${MODKF5_VERSION} \
+		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
+		devel/kf5/kxmlgui>=${MODKF5_VERSION} \
+		devel/kf5/sonnet>=${MODKF5_VERSION} \
+		devel/kf5/syntax-highlighting>=${MODKF5_VERSION} \
 		devel/libgit2/libgit2
 
 #The following tests FAILED:

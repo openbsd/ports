@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:27 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict libksane-<=4
@@ -38,6 +38,7 @@ share/locale/hi/LC_MESSAGES/libksane.mo
 share/locale/hr/LC_MESSAGES/libksane.mo
 share/locale/hu/LC_MESSAGES/libksane.mo
 share/locale/ia/LC_MESSAGES/libksane.mo
+share/locale/id/LC_MESSAGES/libksane.mo
 share/locale/is/LC_MESSAGES/libksane.mo
 share/locale/it/LC_MESSAGES/libksane.mo
 share/locale/ja/LC_MESSAGES/libksane.mo
@@ -46,6 +47,7 @@ share/locale/km/LC_MESSAGES/libksane.mo
 share/locale/ko/LC_MESSAGES/libksane.mo
 share/locale/lt/LC_MESSAGES/libksane.mo
 share/locale/lv/LC_MESSAGES/libksane.mo
+share/locale/ml/LC_MESSAGES/libksane.mo
 share/locale/mr/LC_MESSAGES/libksane.mo
 share/locale/nb/LC_MESSAGES/libksane.mo
 share/locale/nds/LC_MESSAGES/libksane.mo

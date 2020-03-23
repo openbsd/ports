@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/24 11:57:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/23 18:01:29 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
-REVISION =	0
 
 HOMEPAGE =	https://umbrello.kde.org/
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GuiAddons
 WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KDELibs4Support
@@ -27,9 +25,9 @@ MODKDE5_DOCS = yes
 MODULES +=	x11/kde-applications \
 		lang/python
 
-RUN_DEPENDS +=	math/graphviz
+RUN_DEPENDS =	math/graphviz
 
-LIB_DEPENDS +=	devel/kf5/ki18n \
+LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/karchive \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \

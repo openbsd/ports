@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:11 rsadowski Exp $
 include/KF5/
 include/KF5/KWidgetsAddons/
 include/KF5/KWidgetsAddons/KAcceleratorManager
@@ -6,6 +6,7 @@ include/KF5/KWidgetsAddons/KActionMenu
 include/KF5/KWidgetsAddons/KActionSelector
 include/KF5/KWidgetsAddons/KAnimatedButton
 include/KF5/KWidgetsAddons/KAssistantDialog
+include/KF5/KWidgetsAddons/KBusyIndicatorWidget
 include/KF5/KWidgetsAddons/KCapacityBar
 include/KF5/KWidgetsAddons/KCharSelect
 include/KF5/KWidgetsAddons/KCollapsibleGroupBox
@@ -80,6 +81,7 @@ include/KF5/KWidgetsAddons/kactionmenu.h
 include/KF5/KWidgetsAddons/kactionselector.h
 include/KF5/KWidgetsAddons/kanimatedbutton.h
 include/KF5/KWidgetsAddons/kassistantdialog.h
+include/KF5/KWidgetsAddons/kbusyindicatorwidget.h
 include/KF5/KWidgetsAddons/kcapacitybar.h
 include/KF5/KWidgetsAddons/kcharselect.h
 include/KF5/KWidgetsAddons/kcollapsiblegroupbox.h
@@ -152,6 +154,8 @@ lib/cmake/KF5WidgetsAddons/KF5WidgetsAddonsConfigVersion.cmake
 lib/cmake/KF5WidgetsAddons/KF5WidgetsAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5WidgetsAddons/KF5WidgetsAddonsTargets.cmake
 @lib lib/libKF5WidgetsAddons.so.${LIBKF5WidgetsAddons_VERSION}
+lib/qt5/plugins/designer/
+@so lib/qt5/plugins/designer/kwidgetsaddons5widgets.so
 share/kf5/
 share/kf5/kcharselect/
 share/kf5/kcharselect/kcharselect-data
@@ -160,6 +164,7 @@ share/kf5/mkspecs/qt_KWidgetsAddons.pri
 share/locale/af/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/ar/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/as/LC_MESSAGES/kwidgetsaddons5_qt.qm
+share/locale/ast/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/be/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/bg/LC_MESSAGES/kwidgetsaddons5_qt.qm

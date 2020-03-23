@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2019/03/30 09:13:50 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2020/03/23 18:01:06 rsadowski Exp $
 
 use base doas(1) instead sudo(1) from ports
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -31,9 +31,15 @@ generate_export_header(KF5Su BASE_NAME KDESu EXPORT_FI
- add_library(KF5::Su ALIAS KF5Su)
- 
+@@ -38,9 +38,15 @@ ecm_generate_export_header(KF5Su
+     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
+ )
  option(KDESU_USE_SUDO_DEFAULT "Set On to use sudo instead of su [default=Off]" Off)
 -if(KDESU_USE_SUDO_DEFAULT)
 +option(KDESU_USE_DOAS_DEFAULT "Set On to use doas instead of su and sudo [default=Off]" Off)
@@ -22,7 +22,7 @@ Index: src/CMakeLists.txt
  else()
    message("Using su as default (set KDESU_USE_SUDO_DEFAULT=On to use sudo)")
  endif()
-@@ -53,6 +59,11 @@ target_link_libraries(KF5Su
+@@ -60,6 +66,11 @@ target_link_libraries(KF5Su
  if(KDESU_USE_SUDO_DEFAULT)
     set_source_files_properties(suprocess.cpp PROPERTIES 
                                 COMPILE_FLAGS -DKDESU_USE_SUDO_DEFAULT)

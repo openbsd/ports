@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2020/03/23 18:01:03 rsadowski Exp $
 
 COMMENT-main =	KDE file search and metadata handling framework
 COMMENT-icons =	icons for baloo
@@ -7,9 +7,9 @@ PKGNAME-main =	kf5-${DISTNAME}
 PKGNAME-icons =	kf5-icons-${DISTNAME}
 EPOCH-main =	0
 
-SHARED_LIBS =   KF5Baloo                  2.2
-SHARED_LIBS +=  KF5BalooXapian            2.2
-SHARED_LIBS +=  KF5BalooEngine            0.2 # 5.46
+SHARED_LIBS =   KF5Baloo                  3.0
+SHARED_LIBS +=  KF5BalooXapian            3.0
+SHARED_LIBS +=  KF5BalooEngine            1.0 # 5.46
 
 WANTLIB-icons =
 
@@ -19,28 +19,31 @@ WANTLIB-main += lmdb m
 
 # split icons off main package to deconflict with KDE4's baloo
 # To avoid bulk build conflicts use it like:
-# BUILD_DEPENDS +=devel/kf5/baloo,-main
-# RUN_DEPENDS +=>-devel/kf5/baloo,-icons
+# BUILD_DEPENDS +=devel/kf5/baloo,-main>=${MODKF5_VERSION}
+# RUN_DEPENDS +=>-devel/kf5/baloo,-icons>=${MODKF5_VERSION}
 MULTI_PACKAGES =	-main -icons
 
-BUILD_DEPENDS	+=	devel/gettext,-tools \
-			devel/kf5/kidletime \
-			devel/kf5/kio \
-			devel/kf5/kcrash
+BUILD_DEPENDS	=	devel/gettext,-tools \
+			devel/kf5/kidletime>=${MODKF5_VERSION} \
+			devel/kf5/kio>=${MODKF5_VERSION} \
+			devel/kf5/kcrash>=${MODKF5_VERSION}
 
-RUN_DEPENDS-main =	devel/kf5/kidletime \
-			devel/kf5/kio \
-			devel/kf5/kcrash
+RUN_DEPENDS-main =	devel/kf5/kidletime>=${MODKF5_VERSION} \
+			devel/kf5/kio>=${MODKF5_VERSION} \
+			devel/kf5/kcrash>=${MODKF5_VERSION}
 
 RUN_DEPENDS-icons =	x11/gtk+3,-guic
 
 LIB_DEPENDS-main =	databases/lmdb \
-			devel/kf5/kconfig \
-			devel/kf5/kidletime \
-			devel/kf5/kfilemetadata \
-			devel/kf5/ki18n \
-			devel/kf5/solid \
-			devel/kf5/kcoreaddons \
+			devel/libinotify \
+			devel/kf5/kconfig>=${MODKF5_VERSION} \
+			devel/kf5/kfilemetadata>=${MODKF5_VERSION} \
+			devel/kf5/ki18n>=${MODKF5_VERSION} \
+			devel/kf5/solid>=${MODKF5_VERSION} \
+			devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 			x11/qt5/qtdeclarative
+
+MAKE_ENV =	CXXOPTS="-I${LOCALBASE}/include/inotify" \
+		LIBS="-L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify"
 
 .include <bsd.port.mk>

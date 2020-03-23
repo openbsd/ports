@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 09:55:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:15 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/filelight
@@ -36,7 +36,6 @@ share/doc/HTML/nl/filelight/index.docbook
 share/doc/HTML/pt/filelight/
 share/doc/HTML/pt/filelight/index.cache.bz2
 share/doc/HTML/pt/filelight/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/filelight/
 share/doc/HTML/pt_BR/filelight/config_appear.png
 share/doc/HTML/pt_BR/filelight/config_scan.png
@@ -114,6 +113,7 @@ share/locale/uk/LC_MESSAGES/filelight.mo
 share/locale/zh_CN/LC_MESSAGES/filelight.mo
 share/locale/zh_TW/LC_MESSAGES/filelight.mo
 share/metainfo/
+share/metainfo/org.kde.filelight.appdata.xml
+share/qlogging-categories5/filelight.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/metainfo/org.kde.filelight.appdata.xml

@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:20 rsadowski Exp $
 
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${VERSION}
 CATEGORIES =	games education
-REVISION =	0
-
 
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
-WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5Declarative KF5I18n KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Package KF5Service KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
@@ -20,10 +18,10 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=x11/qt5/qtquickcontrols
-RUN_DEPENDS +=	x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+RUN_DEPENDS =	x11/qt5/qtquickcontrols
 
-LIB_DEPENDS +=	devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \

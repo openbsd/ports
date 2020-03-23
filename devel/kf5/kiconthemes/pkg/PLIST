@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/30 09:13:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:08 rsadowski Exp $
 @bin bin/kiconfinder5
 include/KF5/KIconThemes/
 include/KF5/KIconThemes/KIconButton
@@ -21,14 +21,12 @@ lib/cmake/KF5IconThemes/KF5IconThemesConfigVersion.cmake
 lib/cmake/KF5IconThemes/KF5IconThemesTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5IconThemes/KF5IconThemesTargets.cmake
 @lib lib/libKF5IconThemes.so.${LIBKF5IconThemes_VERSION}
-lib/qt5/plugins/iconengines/KIconEnginePlugin.so
-share/examples/kiconthemes/
-share/examples/kiconthemes/xdg/
-share/examples/kiconthemes/xdg/kiconthemes.categories
-@sample ${SYSCONFDIR}/xdg/kiconthemes.categories
+@so lib/qt5/plugins/designer/kiconthemes5widgets.so
+@so lib/qt5/plugins/iconengines/KIconEnginePlugin.so
 share/kf5/mkspecs/qt_KIconThemes.pri
 share/locale/af/LC_MESSAGES/kiconthemes5.mo
 share/locale/ar/LC_MESSAGES/kiconthemes5.mo
+share/locale/ast/LC_MESSAGES/kiconthemes5.mo
 share/locale/be/LC_MESSAGES/kiconthemes5.mo
 share/locale/be@latin/LC_MESSAGES/kiconthemes5.mo
 share/locale/bg/LC_MESSAGES/kiconthemes5.mo
@@ -111,3 +109,4 @@ share/locale/wa/LC_MESSAGES/kiconthemes5.mo
 share/locale/xh/LC_MESSAGES/kiconthemes5.mo
 share/locale/zh_CN/LC_MESSAGES/kiconthemes5.mo
 share/locale/zh_TW/LC_MESSAGES/kiconthemes5.mo
+share/qlogging-categories5/kiconthemes.categories

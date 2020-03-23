@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/07 20:17:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:20 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kgeography
@@ -7,23 +7,8 @@ share/applications/org.kde.kgeography.desktop
 share/config.kcfg/
 share/config.kcfg/kgeography.kcfg
 share/doc/HTML/ca/kgeography/
-share/doc/HTML/ca/kgeography/first-start1.png
-share/doc/HTML/ca/kgeography/first-start10.png
-share/doc/HTML/ca/kgeography/first-start11.png
-share/doc/HTML/ca/kgeography/first-start12.png
-share/doc/HTML/ca/kgeography/first-start13.png
-share/doc/HTML/ca/kgeography/first-start2.png
-share/doc/HTML/ca/kgeography/first-start3.png
-share/doc/HTML/ca/kgeography/first-start4.png
-share/doc/HTML/ca/kgeography/first-start5.png
-share/doc/HTML/ca/kgeography/first-start6.png
-share/doc/HTML/ca/kgeography/first-start7.png
-share/doc/HTML/ca/kgeography/first-start8.png
-share/doc/HTML/ca/kgeography/first-start9.png
 share/doc/HTML/ca/kgeography/index.cache.bz2
 share/doc/HTML/ca/kgeography/index.docbook
-share/doc/HTML/ca/kgeography/kgeography.png
-share/doc/HTML/ca/kgeography/zoom.png
 share/doc/HTML/de/kgeography/
 share/doc/HTML/de/kgeography/first-start1.png
 share/doc/HTML/de/kgeography/first-start10.png
@@ -638,24 +623,17 @@ share/kgeography/flags/norfolk_island.png
 share/kgeography/flags/northern_mariana_islands.png
 share/kgeography/flags/norway/
 share/kgeography/flags/norway.png
-share/kgeography/flags/norway/akershus.png
-share/kgeography/flags/norway/aust-agder.png
-share/kgeography/flags/norway/buskerud.png
-share/kgeography/flags/norway/finnmark.png
-share/kgeography/flags/norway/hedmark.png
-share/kgeography/flags/norway/hordaland.png
+share/kgeography/flags/norway/agder.png
+share/kgeography/flags/norway/innlandet.png
 share/kgeography/flags/norway/more_og_romsdal.png
 share/kgeography/flags/norway/nordland.png
-share/kgeography/flags/norway/oppland.png
 share/kgeography/flags/norway/oslo.png
-share/kgeography/flags/norway/ostfold.png
 share/kgeography/flags/norway/rogaland.png
-share/kgeography/flags/norway/sogn_og_fjordane.png
-share/kgeography/flags/norway/telemark.png
-share/kgeography/flags/norway/troms.png
+share/kgeography/flags/norway/troms_og_finnmark.png
 share/kgeography/flags/norway/trondelag.png
-share/kgeography/flags/norway/vest-agder.png
-share/kgeography/flags/norway/vestfold.png
+share/kgeography/flags/norway/vestfold_og_telemark.png
+share/kgeography/flags/norway/vestland.png
+share/kgeography/flags/norway/viken.png
 share/kgeography/flags/oman.png
 share/kgeography/flags/pakistan.png
 share/kgeography/flags/palau.png
@@ -1208,6 +1186,10 @@ share/locale/km/LC_MESSAGES/kgeography.mo
 share/locale/ko/LC_MESSAGES/kgeography.mo
 share/locale/lt/LC_MESSAGES/kgeography.mo
 share/locale/lv/LC_MESSAGES/kgeography.mo
+share/locale/ml/LC_MESSAGES/kgeography.mo
+share/locale/ml/LC_SCRIPTS/
+share/locale/ml/LC_SCRIPTS/kgeography/
+share/locale/ml/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/mr/LC_MESSAGES/kgeography.mo
 share/locale/nb/LC_MESSAGES/kgeography.mo
 share/locale/nds/LC_MESSAGES/kgeography.mo

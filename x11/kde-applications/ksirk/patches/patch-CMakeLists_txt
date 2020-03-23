@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/11/16 07:56:00 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/03/23 18:01:25 rsadowski Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -38,6 +38,7 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_F
+@@ -47,6 +47,7 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_F
  add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
  
  find_package(Phonon4Qt5 CONFIG REQUIRED)

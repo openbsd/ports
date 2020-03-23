@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 10:23:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 @bin bin/minuet
 include/minuet/
 include/minuet/interfaces/
@@ -11,13 +11,11 @@ include/minuet/interfaces/iuicontroller.h
 include/minuet/interfaces/minuetinterfacesexport.h
 @lib lib/libminuetinterfaces.so.${LIBminuetinterfaces_VERSION}
 lib/qt5/plugins/minuet/
-lib/qt5/plugins/minuet/minuetfluidsynthsoundcontroller.so
+@so lib/qt5/plugins/minuet/minuetfluidsynthsoundcontroller.so
 share/applications/org.kde.minuet.desktop
 share/doc/HTML/ca/minuet/
 share/doc/HTML/ca/minuet/index.cache.bz2
 share/doc/HTML/ca/minuet/index.docbook
-share/doc/HTML/ca/minuet/minuet-screenshot.png
-share/doc/HTML/ca/minuet/minuet-ui-components.png
 share/doc/HTML/de/minuet/
 share/doc/HTML/de/minuet/index.cache.bz2
 share/doc/HTML/de/minuet/index.docbook
@@ -29,6 +27,9 @@ share/doc/HTML/en/minuet/minuet-ui-components.png
 share/doc/HTML/es/minuet/
 share/doc/HTML/es/minuet/index.cache.bz2
 share/doc/HTML/es/minuet/index.docbook
+share/doc/HTML/it/minuet/
+share/doc/HTML/it/minuet/index.cache.bz2
+share/doc/HTML/it/minuet/index.docbook
 share/doc/HTML/nl/minuet/
 share/doc/HTML/nl/minuet/index.cache.bz2
 share/doc/HTML/nl/minuet/index.docbook
@@ -76,7 +77,10 @@ share/locale/es/LC_MESSAGES/minuet.mo
 share/locale/et/LC_MESSAGES/minuet.mo
 share/locale/fr/LC_MESSAGES/minuet.mo
 share/locale/gl/LC_MESSAGES/minuet.mo
+share/locale/it/LC_MESSAGES/minuet.mo
 share/locale/ja/LC_MESSAGES/minuet.mo
+share/locale/lt/LC_MESSAGES/minuet.mo
+share/locale/ml/LC_MESSAGES/minuet.mo
 share/locale/nl/LC_MESSAGES/minuet.mo
 share/locale/nn/LC_MESSAGES/minuet.mo
 share/locale/pl/LC_MESSAGES/minuet.mo

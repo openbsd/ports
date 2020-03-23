@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/10/22 20:30:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/03/23 18:01:30 rsadowski Exp $
 @pkgpath x11/yakuake-kde4
 @bin bin/yakuake
 share/applications/org.kde.yakuake.desktop
 share/dbus-1/services/org.kde.yakuake.service
 share/examples/yakuake/
 share/examples/yakuake/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/yakuake/xdg/yakuake.knsrc
 @sample ${SYSCONFDIR}/xdg/yakuake.knsrc
 share/icons/hicolor/128x128/apps/yakuake.png

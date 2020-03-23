@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/03/08 07:19:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2020/03/23 18:01:02 rsadowski Exp $
 
 COMMENT =	planetarium simulator for KDE
 
 DISTNAME =	kstars-3.4.1
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	astro education
 
@@ -14,15 +15,16 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Notifications KF5NotifyConfig KF5Plotting
-WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5DataVisualization Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5WebSockets
-WANTLIB += Qt5Widgets Qt5Xml c cfitsio m qt5keychain raw wcs z
+WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5I18n KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5NotifyConfig
+WANTLIB += KF5Plotting KF5Service KF5Solid KF5WidgetsAddons KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5DataVisualization
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sql
+WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets Qt5Xml c cfitsio m
+WANTLIB += qt5keychain raw wcs z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kstars/}
 

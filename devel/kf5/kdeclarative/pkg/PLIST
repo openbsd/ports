@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/30 09:13:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:06 rsadowski Exp $
 @bin bin/kpackagelauncherqml
 include/KF5/KDeclarative/
 include/KF5/KDeclarative/CalendarEvents/
@@ -11,6 +11,7 @@ include/KF5/KDeclarative/KDeclarative/QmlObjectSharedEngine
 include/KF5/KDeclarative/KQuickAddons/
 include/KF5/KDeclarative/KQuickAddons/ConfigModule
 include/KF5/KDeclarative/KQuickAddons/ImageTexturesCache
+include/KF5/KDeclarative/KQuickAddons/ManagedConfigModule
 include/KF5/KDeclarative/KQuickAddons/ManagedTextureNode
 include/KF5/KDeclarative/KQuickAddons/QtQuickSettings
 include/KF5/KDeclarative/KQuickAddons/QuickViewSharedEngine
@@ -29,6 +30,7 @@ include/KF5/KDeclarative/kdeclarative/qmlobjectsharedengine.h
 include/KF5/KDeclarative/kquickaddons/
 include/KF5/KDeclarative/kquickaddons/configmodule.h
 include/KF5/KDeclarative/kquickaddons/imagetexturescache.h
+include/KF5/KDeclarative/kquickaddons/managedconfigmodule.h
 include/KF5/KDeclarative/kquickaddons/managedtexturenode.h
 include/KF5/KDeclarative/kquickaddons/qtquicksettings.h
 include/KF5/KDeclarative/kquickaddons/quickaddons_export.h
@@ -47,7 +49,7 @@ lib/cmake/KF5Declarative/KF5DeclarativeTargets.cmake
 @lib lib/libKF5Declarative.so.${LIBKF5Declarative_VERSION}
 @lib lib/libKF5QuickAddons.so.${LIBKF5QuickAddons_VERSION}
 lib/qt5/qml/org/kde/draganddrop/
-lib/qt5/qml/org/kde/draganddrop/libdraganddropplugin.so
+@so lib/qt5/qml/org/kde/draganddrop/libdraganddropplugin.so
 lib/qt5/qml/org/kde/draganddrop/qmldir
 lib/qt5/qml/org/kde/kcm/
 lib/qt5/qml/org/kde/kcm/GridDelegate.qml
@@ -56,30 +58,32 @@ lib/qt5/qml/org/kde/kcm/GridViewKCM.qml
 lib/qt5/qml/org/kde/kcm/ScrollView.qml
 lib/qt5/qml/org/kde/kcm/ScrollViewKCM.qml
 lib/qt5/qml/org/kde/kcm/SimpleKCM.qml
-lib/qt5/qml/org/kde/kcm/libkcmcontrolsplugin.so
+@so lib/qt5/qml/org/kde/kcm/libkcmcontrolsplugin.so
+lib/qt5/qml/org/kde/kcm/private/
+lib/qt5/qml/org/kde/kcm/private/GridViewInternal.qml
 lib/qt5/qml/org/kde/kcm/qmldir
 lib/qt5/qml/org/kde/kconfig/
-lib/qt5/qml/org/kde/kconfig/libkconfigplugin.so
+@so lib/qt5/qml/org/kde/kconfig/libkconfigplugin.so
 lib/qt5/qml/org/kde/kconfig/qmldir
 lib/qt5/qml/org/kde/kcoreaddons/
-lib/qt5/qml/org/kde/kcoreaddons/libkcoreaddonsplugin.so
+@so lib/qt5/qml/org/kde/kcoreaddons/libkcoreaddonsplugin.so
 lib/qt5/qml/org/kde/kcoreaddons/qmldir
 lib/qt5/qml/org/kde/kio/
-lib/qt5/qml/org/kde/kio/libkio.so
+@so lib/qt5/qml/org/kde/kio/libkio.so
 lib/qt5/qml/org/kde/kio/qmldir
 lib/qt5/qml/org/kde/kquickcontrols/
 lib/qt5/qml/org/kde/kquickcontrols/ColorButton.qml
 lib/qt5/qml/org/kde/kquickcontrols/KeySequenceItem.qml
 lib/qt5/qml/org/kde/kquickcontrols/qmldir
 lib/qt5/qml/org/kde/kquickcontrolsaddons/
-lib/qt5/qml/org/kde/kquickcontrolsaddons/libkquickcontrolsaddonsplugin.so
+@so lib/qt5/qml/org/kde/kquickcontrolsaddons/libkquickcontrolsaddonsplugin.so
 lib/qt5/qml/org/kde/kquickcontrolsaddons/qmldir
 lib/qt5/qml/org/kde/kwindowsystem/
-lib/qt5/qml/org/kde/kwindowsystem/libkwindowsystem.so
+@so lib/qt5/qml/org/kde/kwindowsystem/libkwindowsystem.so
 lib/qt5/qml/org/kde/kwindowsystem/qmldir
 lib/qt5/qml/org/kde/private/
 lib/qt5/qml/org/kde/private/kquickcontrols/
-lib/qt5/qml/org/kde/private/kquickcontrols/libkquickcontrolsprivateplugin.so
+@so lib/qt5/qml/org/kde/private/kquickcontrols/libkquickcontrolsprivateplugin.so
 lib/qt5/qml/org/kde/private/kquickcontrols/qmldir
 share/kf5/mkspecs/qt_KDeclarative.pri
 share/kf5/mkspecs/qt_QuickAddons.pri

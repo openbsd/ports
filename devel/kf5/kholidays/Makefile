@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/20 22:15:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/23 18:01:07 rsadowski Exp $
 
 COMMENT =		holiday calculation library
 DISTNAME =		kholidays-${VERSION}
 
-SHARED_LIBS +=  KF5Holidays               0.3 # 5.43
+SHARED_LIBS +=  KF5Holidays               1.0 # 5.43
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml m
 

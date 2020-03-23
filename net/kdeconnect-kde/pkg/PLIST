@@ -1,37 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/20 08:48:30 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:13 rsadowski Exp $
 @bin bin/kdeconnect-cli
 @bin bin/kdeconnect-handler
 @bin bin/kdeconnect-indicator
 @lib lib/libkdeconnectcore.so.${LIBkdeconnectcore_VERSION}
 @lib lib/libkdeconnectinterfaces.so.${LIBkdeconnectinterfaces_VERSION}
 @lib lib/libkdeconnectpluginkcm.so.${LIBkdeconnectpluginkcm_VERSION}
-lib/qt5/plugins/kcm_kdeconnect.so
+@so lib/qt5/plugins/kcm_kdeconnect.so
 lib/qt5/plugins/kdeconnect/
-lib/qt5/plugins/kdeconnect/kdeconnect_battery.so
-lib/qt5/plugins/kdeconnect/kdeconnect_clipboard.so
-lib/qt5/plugins/kdeconnect/kdeconnect_findmyphone.so
-lib/qt5/plugins/kdeconnect/kdeconnect_mousepad.so
-lib/qt5/plugins/kdeconnect/kdeconnect_mpriscontrol.so
-lib/qt5/plugins/kdeconnect/kdeconnect_notifications.so
-lib/qt5/plugins/kdeconnect/kdeconnect_pausemusic.so
-lib/qt5/plugins/kdeconnect/kdeconnect_ping.so
-lib/qt5/plugins/kdeconnect/kdeconnect_remotekeyboard.so
-lib/qt5/plugins/kdeconnect/kdeconnect_runcommand.so
-lib/qt5/plugins/kdeconnect/kdeconnect_screensaver_inhibit.so
-lib/qt5/plugins/kdeconnect/kdeconnect_sendnotifications.so
-lib/qt5/plugins/kdeconnect/kdeconnect_sftp.so
-lib/qt5/plugins/kdeconnect/kdeconnect_share.so
-lib/qt5/plugins/kdeconnect/kdeconnect_telephony.so
-lib/qt5/plugins/kdeconnect_pausemusic_config.so
-lib/qt5/plugins/kdeconnect_runcommand_config.so
-lib/qt5/plugins/kdeconnect_sendnotifications_config.so
-lib/qt5/plugins/kdeconnect_share_config.so
-lib/qt5/plugins/kdeconnectfileitemaction.so
-lib/qt5/plugins/kf5/kio/kdeconnect.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_battery.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_clipboard.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_findmyphone.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_mousepad.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_mpriscontrol.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_notifications.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_pausemusic.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_ping.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_remotekeyboard.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_runcommand.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_screensaver_inhibit.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_sendnotifications.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_sftp.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_share.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_telephony.so
+@so lib/qt5/plugins/kdeconnect_pausemusic_config.so
+@so lib/qt5/plugins/kdeconnect_runcommand_config.so
+@so lib/qt5/plugins/kdeconnect_sendnotifications_config.so
+@so lib/qt5/plugins/kdeconnect_share_config.so
+@so lib/qt5/plugins/kdeconnectfileitemaction.so
+@so lib/qt5/plugins/kf5/kio/kdeconnect.so
 lib/qt5/qml/org/kde/kdeconnect/
 lib/qt5/qml/org/kde/kdeconnect/DBusProperty.qml
 lib/qt5/qml/org/kde/kdeconnect/PluginChecker.qml
-lib/qt5/qml/org/kde/kdeconnect/libkdeconnectdeclarativeplugin.so
+@so lib/qt5/qml/org/kde/kdeconnect/libkdeconnectdeclarativeplugin.so
 lib/qt5/qml/org/kde/kdeconnect/qmldir
 @bin libexec/kdeconnectd
 share/applications/org.kde.kdeconnect.daemon.desktop

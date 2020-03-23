@@ -1,4 +1,4 @@
-$OpenBSD: patch-libsound_src_CMakeLists_txt,v 1.1.1.1 2018/11/08 14:21:26 rsadowski Exp $
+$OpenBSD: patch-libsound_src_CMakeLists_txt,v 1.2 2020/03/23 18:01:14 rsadowski Exp $
 
 Index: libsound/src/CMakeLists.txt
 --- libsound/src/CMakeLists.txt.orig
@@ -12,10 +12,3 @@ Index: libsound/src/CMakeLists.txt
      SOVERSION ${GENERIC_LIB_SOVERSION}
  )
  
-@@ -63,4 +63,4 @@ if (BUILD_GSTREAMER_PLUGIN)
- endif()
- if (BUILD_QTMULTIMEDIA_PLUGIN)
-     ecm_optional_add_subdirectory(qtmultimediabackend)
--endif()
-\ No newline at end of file
-+endif()

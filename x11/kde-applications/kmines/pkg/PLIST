@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 07:45:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:22 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdegames-*
@@ -75,7 +75,6 @@ share/kmines/themes/green.png
 share/kmines/themes/kmines_classic.svgz
 share/kmines/themes/kmines_green.svgz
 share/kmines/themes/kmines_oxygen.svgz
-share/knotifications5/kmines.notifyrc
 share/locale/ar/LC_MESSAGES/kmines.mo
 share/locale/bg/LC_MESSAGES/kmines.mo
 share/locale/bs/LC_MESSAGES/kmines.mo
@@ -99,6 +98,7 @@ share/locale/he/LC_MESSAGES/kmines.mo
 share/locale/hi/LC_MESSAGES/kmines.mo
 share/locale/hr/LC_MESSAGES/kmines.mo
 share/locale/hu/LC_MESSAGES/kmines.mo
+share/locale/id/LC_MESSAGES/kmines.mo
 share/locale/is/LC_MESSAGES/kmines.mo
 share/locale/it/LC_MESSAGES/kmines.mo
 share/locale/ja/LC_MESSAGES/kmines.mo
@@ -107,6 +107,7 @@ share/locale/km/LC_MESSAGES/kmines.mo
 share/locale/ko/LC_MESSAGES/kmines.mo
 share/locale/lt/LC_MESSAGES/kmines.mo
 share/locale/lv/LC_MESSAGES/kmines.mo
+share/locale/ml/LC_MESSAGES/kmines.mo
 share/locale/mr/LC_MESSAGES/kmines.mo
 share/locale/nb/LC_MESSAGES/kmines.mo
 share/locale/nds/LC_MESSAGES/kmines.mo

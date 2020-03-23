@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/23 08:02:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:17 rsadowski Exp $
 
 COMMENT =	KDE backup program with an easy to use user interface
 DISTNAME =	kbackup-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kbackup
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/30 09:13:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:07 rsadowski Exp $
 include/KF5/
 include/KF5/KDNSSD/
 include/KF5/KDNSSD/DNSSD/
@@ -33,6 +33,7 @@ share/kf5/mkspecs/qt_KDNSSD.pri
 share/locale/af/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/ar/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/as/LC_MESSAGES/kdnssd5_qt.qm
+share/locale/ast/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/be/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/bg/LC_MESSAGES/kdnssd5_qt.qm

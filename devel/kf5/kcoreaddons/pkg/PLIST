@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:06 rsadowski Exp $
 @bin bin/desktoptojson
 include/KF5/
 include/KF5/KCoreAddons/
@@ -10,16 +10,20 @@ include/KF5/KCoreAddons/KCoreAddons
 include/KF5/KCoreAddons/KDirWatch
 include/KF5/KCoreAddons/KExportPlugin
 include/KF5/KCoreAddons/KFileSystemType
+include/KF5/KCoreAddons/KFileUtils
 include/KF5/KCoreAddons/KFormat
 include/KF5/KCoreAddons/KJob
 include/KF5/KCoreAddons/KJobTrackerInterface
 include/KF5/KCoreAddons/KJobUiDelegate
+include/KF5/KCoreAddons/KListOpenFilesJob
 include/KF5/KCoreAddons/KMacroExpander
 include/KF5/KCoreAddons/KMessage
+include/KF5/KCoreAddons/KOSRelease
 include/KF5/KCoreAddons/KPluginFactory
 include/KF5/KCoreAddons/KPluginLoader
 include/KF5/KCoreAddons/KPluginMetaData
 include/KF5/KCoreAddons/KProcess
+include/KF5/KCoreAddons/KProcessList
 include/KF5/KCoreAddons/KRandom
 include/KF5/KCoreAddons/KRandomSequence
 include/KF5/KCoreAddons/KSharedDataCache
@@ -42,16 +46,20 @@ include/KF5/KCoreAddons/kdelibs4migration.h
 include/KF5/KCoreAddons/kdirwatch.h
 include/KF5/KCoreAddons/kexportplugin.h
 include/KF5/KCoreAddons/kfilesystemtype.h
+include/KF5/KCoreAddons/kfileutils.h
 include/KF5/KCoreAddons/kformat.h
 include/KF5/KCoreAddons/kjob.h
 include/KF5/KCoreAddons/kjobtrackerinterface.h
 include/KF5/KCoreAddons/kjobuidelegate.h
+include/KF5/KCoreAddons/klistopenfilesjob.h
 include/KF5/KCoreAddons/kmacroexpander.h
 include/KF5/KCoreAddons/kmessage.h
+include/KF5/KCoreAddons/kosrelease.h
 include/KF5/KCoreAddons/kpluginfactory.h
 include/KF5/KCoreAddons/kpluginloader.h
 include/KF5/KCoreAddons/kpluginmetadata.h
 include/KF5/KCoreAddons/kprocess.h
+include/KF5/KCoreAddons/kprocesslist.h
 include/KF5/KCoreAddons/krandom.h
 include/KF5/KCoreAddons/krandomsequence.h
 include/KF5/KCoreAddons/kshareddatacache.h
@@ -71,10 +79,6 @@ lib/cmake/KF5CoreAddons/KF5CoreAddonsTargets.cmake
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets.cmake
 @lib lib/libKF5CoreAddons.so.${LIBKF5CoreAddons_VERSION}
-share/examples/kcoreaddons/
-share/examples/kcoreaddons/xdg/
-share/examples/kcoreaddons/xdg/kcoreaddons.categories
-@sample ${SYSCONFDIR}/xdg/kcoreaddons.categories
 share/kf5/
 share/kf5/licenses/
 share/kf5/licenses/ARTISTIC
@@ -90,6 +94,7 @@ share/kf5/mkspecs/qt_KCoreAddons.pri
 share/locale/af/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/ar/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/as/LC_MESSAGES/kcoreaddons5_qt.qm
+share/locale/ast/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/be/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/bg/LC_MESSAGES/kcoreaddons5_qt.qm
@@ -204,4 +209,6 @@ share/locale/zh_CN/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kcoreaddons5_qt.qm
 share/mime/packages/kde5.xml
+share/qlogging-categories5/
+share/qlogging-categories5/kcoreaddons.categories
 @tag update-mime-database

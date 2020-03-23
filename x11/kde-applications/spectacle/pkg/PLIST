@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/10 14:21:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:29 rsadowski Exp $
 @pkgpath x11/kde4/ksnapshot
 @bin bin/spectacle
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml
 share/dbus-1/services/org.kde.Spectacle.service
 share/doc/HTML/ca/spectacle/
+share/doc/HTML/ca/spectacle/ApplicationPreferences.png
 share/doc/HTML/ca/spectacle/MainWindow.png
 share/doc/HTML/ca/spectacle/SaveOptions.png
 share/doc/HTML/ca/spectacle/index.cache.bz2
@@ -21,13 +22,6 @@ share/doc/HTML/en/spectacle/index.docbook
 share/doc/HTML/es/spectacle/
 share/doc/HTML/es/spectacle/index.cache.bz2
 share/doc/HTML/es/spectacle/index.docbook
-share/doc/HTML/id/
-share/doc/HTML/id/spectacle/
-share/doc/HTML/id/spectacle/ApplicationPreferences.png
-share/doc/HTML/id/spectacle/MainWindow.png
-share/doc/HTML/id/spectacle/SaveOptions.png
-share/doc/HTML/id/spectacle/index.cache.bz2
-share/doc/HTML/id/spectacle/index.docbook
 share/doc/HTML/it/spectacle/
 share/doc/HTML/it/spectacle/index.cache.bz2
 share/doc/HTML/it/spectacle/index.docbook

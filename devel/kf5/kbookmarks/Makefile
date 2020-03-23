@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/23 18:01:05 rsadowski Exp $
 
 COMMENT =		XBEL bookmarks format support for KDE
 DISTNAME =		kbookmarks-${VERSION}
 
-SHARED_LIBS =		KF5Bookmarks		3.3
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5IconThemes
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += Qt5Xml m
+SHARED_LIBS =		KF5Bookmarks		4.0
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
-LIB_DEPENDS =		devel/kf5/kauth \
-			devel/kf5/kcodecs \
-			devel/kf5/kconfig \
-			devel/kf5/kconfigwidgets \
-			devel/kf5/kcoreaddons \
-			devel/kf5/kiconthemes \
-			devel/kf5/kwidgetsaddons \
-			devel/kf5/kxmlgui
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += m
+
+LIB_DEPENDS =		devel/kf5/kauth>=${MODKF5_VERSION} \
+			devel/kf5/kcodecs>=${MODKF5_VERSION} \
+			devel/kf5/kconfig>=${MODKF5_VERSION} \
+			devel/kf5/kconfigwidgets>=${MODKF5_VERSION} \
+			devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
+			devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
+			devel/kf5/kxmlgui>=${MODKF5_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

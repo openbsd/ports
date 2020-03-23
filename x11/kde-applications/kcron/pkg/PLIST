@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/03 11:40:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:18 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
-lib/qt5/plugins/kcm_cron.so
+@so lib/qt5/plugins/kcm_cron.so
 share/doc/HTML/ca/kcontrol5/kcron/
 share/doc/HTML/ca/kcontrol5/kcron/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/kcron/index.docbook
-share/doc/HTML/ca/kcontrol5/kcron/kcronstart.png
-share/doc/HTML/ca/kcontrol5/kcron/newtask.png
-share/doc/HTML/ca/kcontrol5/kcron/newvariable.png
 share/doc/HTML/de/kcontrol5/kcron/
 share/doc/HTML/de/kcontrol5/kcron/index.cache.bz2
 share/doc/HTML/de/kcontrol5/kcron/index.docbook
@@ -23,9 +20,6 @@ share/doc/HTML/en/kcontrol5/kcron/newvariable.png
 share/doc/HTML/es/kcontrol5/kcron/
 share/doc/HTML/es/kcontrol5/kcron/index.cache.bz2
 share/doc/HTML/es/kcontrol5/kcron/index.docbook
-share/doc/HTML/es/kcontrol5/kcron/kcronstart.png
-share/doc/HTML/es/kcontrol5/kcron/newtask.png
-share/doc/HTML/es/kcontrol5/kcron/newvariable.png
 share/doc/HTML/es/kcontrol5/kcron/print.png
 share/doc/HTML/et/kcontrol5/
 share/doc/HTML/et/kcontrol5/kcron/
@@ -78,10 +72,6 @@ share/doc/HTML/uk/kcontrol5/kcron/index.docbook
 share/doc/HTML/uk/kcontrol5/kcron/kcronstart.png
 share/doc/HTML/uk/kcontrol5/kcron/newtask.png
 share/doc/HTML/uk/kcontrol5/kcron/newvariable.png
-share/examples/kcron-kf5/
-share/examples/kcron-kf5/xdg/
-share/examples/kcron-kf5/xdg/kcron.categories
-@sample ${SYSCONFDIR}/xdg/kcron.categories
 share/kservices5/kcm_cron.desktop
 share/locale/ar/LC_MESSAGES/kcron.mo
 share/locale/bg/LC_MESSAGES/kcron.mo
@@ -136,3 +126,6 @@ share/locale/uk/LC_MESSAGES/kcron.mo
 share/locale/wa/LC_MESSAGES/kcron.mo
 share/locale/zh_CN/LC_MESSAGES/kcron.mo
 share/locale/zh_TW/LC_MESSAGES/kcron.mo
+share/metainfo/
+share/metainfo/org.kde.kcron.metainfo.xml
+share/qlogging-categories5/kcron.categories

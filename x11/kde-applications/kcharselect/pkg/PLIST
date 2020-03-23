@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 08:01:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:18 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kcharselect
@@ -7,7 +7,6 @@ share/applications/org.kde.kcharselect.desktop
 share/doc/HTML/ca/kcharselect/
 share/doc/HTML/ca/kcharselect/index.cache.bz2
 share/doc/HTML/ca/kcharselect/index.docbook
-share/doc/HTML/ca/kcharselect/kcharselect.png
 share/doc/HTML/cs/kcharselect/
 share/doc/HTML/cs/kcharselect/index.cache.bz2
 share/doc/HTML/cs/kcharselect/index.docbook
@@ -38,6 +37,9 @@ share/doc/HTML/gl/kcharselect/index.docbook
 share/doc/HTML/it/kcharselect/
 share/doc/HTML/it/kcharselect/index.cache.bz2
 share/doc/HTML/it/kcharselect/index.docbook
+share/doc/HTML/ko/kcharselect/
+share/doc/HTML/ko/kcharselect/index.cache.bz2
+share/doc/HTML/ko/kcharselect/index.docbook
 share/doc/HTML/nl/kcharselect/
 share/doc/HTML/nl/kcharselect/index.cache.bz2
 share/doc/HTML/nl/kcharselect/index.docbook
@@ -116,7 +118,7 @@ share/locale/uk/LC_MESSAGES/kcharselect.mo
 share/locale/zh_CN/LC_MESSAGES/kcharselect.mo
 share/locale/zh_TW/LC_MESSAGES/kcharselect.mo
 share/metainfo/
+share/metainfo/org.kde.kcharselect.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
-share/metainfo/org.kde.kcharselect.appdata.xml

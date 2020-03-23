@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:21 rsadowski Exp $
 
 COMMENT =	LDAP access API for KDE
 DISTNAME =	kldap-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-
-SHARED_LIBS +=  KF5Ldap                   0.0 # 5.9
+SHARED_LIBS +=  KF5Ldap                   1.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Service KF5WidgetsAddons Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets lber-2.4
-WANTLIB += ldap-2.4 m sasl2
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets lber ldap
+WANTLIB += m sasl2
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes

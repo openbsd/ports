@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/10 18:13:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:27 rsadowski Exp $
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
@@ -6,14 +6,15 @@ CATEGORIES =	x11 devel
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5KrossCore
-WANTLIB += KF5KrossUi KF5Notifications KF5Parts KF5Service KF5Solid
-WANTLIB += KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5Sql Qt5Widgets Qt5Xml c hunspell-1.6 m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
+WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOWidgets KF5KrossCore KF5KrossUi KF5Notifications
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql
+WANTLIB += Qt5Widgets Qt5Xml c hunspell-1.6 m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

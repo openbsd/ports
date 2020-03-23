@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 08:02:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:17 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @bin bin/kbackup
@@ -39,6 +39,7 @@ share/locale/ca@valencia/LC_MESSAGES/kbackup.mo
 share/locale/cs/LC_MESSAGES/kbackup.mo
 share/locale/da/LC_MESSAGES/kbackup.mo
 share/locale/de/LC_MESSAGES/kbackup.mo
+share/locale/el/LC_MESSAGES/kbackup.mo
 share/locale/en_GB/LC_MESSAGES/kbackup.mo
 share/locale/es/LC_MESSAGES/kbackup.mo
 share/locale/eu/LC_MESSAGES/kbackup.mo
@@ -48,6 +49,8 @@ share/locale/gl/LC_MESSAGES/kbackup.mo
 share/locale/ia/LC_MESSAGES/kbackup.mo
 share/locale/it/LC_MESSAGES/kbackup.mo
 share/locale/ja/LC_MESSAGES/kbackup.mo
+share/locale/ko/LC_MESSAGES/kbackup.mo
+share/locale/lt/LC_MESSAGES/kbackup.mo
 share/locale/nl/LC_MESSAGES/kbackup.mo
 share/locale/nn/LC_MESSAGES/kbackup.mo
 share/locale/pl/LC_MESSAGES/kbackup.mo
@@ -58,9 +61,10 @@ share/locale/sk/LC_MESSAGES/kbackup.mo
 share/locale/sv/LC_MESSAGES/kbackup.mo
 share/locale/uk/LC_MESSAGES/kbackup.mo
 share/locale/zh_CN/LC_MESSAGES/kbackup.mo
+share/locale/zh_TW/LC_MESSAGES/kbackup.mo
 share/metainfo/
-@tag update-desktop-database
-@tag gtk-update-icon-cache %D/share/icons/hicolor
 share/metainfo/org.kde.kbackup.appdata.xml
 share/mime/packages/kbackup.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

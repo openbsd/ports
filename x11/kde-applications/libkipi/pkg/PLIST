@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/29 22:16:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:27 rsadowski Exp $
 @conflict kde4-libkipi-icons-*
 include/KF5/KIPI/
 include/KF5/KIPI/KIPI/
@@ -32,7 +32,7 @@ lib/cmake/KF5Kipi/KF5KipiConfigVersion.cmake
 lib/cmake/KF5Kipi/KF5KipiTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Kipi/KF5KipiTargets.cmake
 @lib lib/libKF5Kipi.so.${LIBKF5Kipi_VERSION}
-lib/qt5/plugins/kipiplugin_kxmlhelloworld.so
+@so lib/qt5/plugins/kipiplugin_kxmlhelloworld.so
 share/icons/hicolor/128x128/apps/kipi.png
 share/icons/hicolor/16x16/apps/kipi.png
 share/icons/hicolor/22x22/apps/kipi.png

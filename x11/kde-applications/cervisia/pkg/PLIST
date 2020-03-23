@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:15 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/cervisia
 @bin bin/cervisia
 @bin bin/cvsaskpass
 @bin bin/cvsservice5
-lib/libkdeinit5_cervisia.so
-lib/libkdeinit5_cvsaskpass.so
-lib/libkdeinit5_cvsservice.so
-lib/qt5/plugins/cervisiapart5.so
+@so lib/libkdeinit5_cervisia.so
+@so lib/libkdeinit5_cvsaskpass.so
+@so lib/libkdeinit5_cvsservice.so
+@so lib/qt5/plugins/cervisiapart5.so
 @man man/man1/cervisia.1
 share/applications/org.kde.cervisia.desktop
 share/config.kcfg/
@@ -28,11 +28,9 @@ share/doc/HTML/ca/cervisia/index.cache.bz2
 share/doc/HTML/ca/cervisia/index.docbook
 share/doc/HTML/ca/cervisia/logtree.png
 share/doc/HTML/ca/cervisia/mainview.png
-share/doc/HTML/ca/cervisia/patch.png
 share/doc/HTML/ca/cervisia/popup.png
 share/doc/HTML/ca/cervisia/repositories.png
 share/doc/HTML/ca/cervisia/resolve.png
-share/doc/HTML/ca/cervisia/updatetag.png
 share/doc/HTML/de/cervisia/
 share/doc/HTML/de/cervisia/index.cache.bz2
 share/doc/HTML/de/cervisia/index.docbook

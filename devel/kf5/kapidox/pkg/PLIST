@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:04 rsadowski Exp $
 bin/depdiagram-generate
 bin/depdiagram-generate-all
 bin/depdiagram-prepare
@@ -16,6 +16,34 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/dependencies.md.tmpl
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/footer.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/header.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/bootstrap-theme.css
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/bootstrap-theme.css.map
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/bootstrap-theme.min.css
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/bootstrap-theme.min.css.map
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/bootstrap.css
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/bootstrap.css.map
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/bootstrap.min.css
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/css/bootstrap.min.css.map
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/fonts/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/fonts/glyphicons-halflings-regular.eot
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/fonts/glyphicons-halflings-regular.svg
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/fonts/glyphicons-halflings-regular.ttf
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/fonts/glyphicons-halflings-regular.woff
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/fonts/glyphicons-halflings-regular.woff2
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/js/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/js/bootstrap.js
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/js/bootstrap.min.js
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/bootstrap/js/npm.js
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/jquery/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/jquery/jquery-3.1.0.min.js
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/css/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/css/bg.png
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/css/kapidox.css
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/default_product.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/frameworks.css
@@ -23,6 +51,10 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/bad.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/ok.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/warning.png
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/notetip.js
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/search.js
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/subgroup.js
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/kde-white.svg
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/kde.css
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/

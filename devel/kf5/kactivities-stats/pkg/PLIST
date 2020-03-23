@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:59:00 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:04 rsadowski Exp $
 include/KF5/KActivitiesStats/
 include/KF5/KActivitiesStats/KActivities/
 include/KF5/KActivitiesStats/KActivities/Stats/
@@ -25,3 +25,4 @@ lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsLibraryTargets.cmake
 @lib lib/libKF5ActivitiesStats.so.${LIBKF5ActivitiesStats_VERSION}
 lib/pkgconfig/libKActivitiesStats.pc
 share/kf5/mkspecs/qt_KActivitiesStats.pri
+share/qlogging-categories5/kactivities-stats.categories

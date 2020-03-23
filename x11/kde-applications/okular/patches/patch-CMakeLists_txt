@@ -1,10 +1,10 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/01/04 14:49:18 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -428,7 +428,7 @@ if (KDEExperimentalPurpose_FOUND)
-     target_link_libraries(okularpart KDEExperimental::PurposeWidgets)
+@@ -448,7 +448,7 @@ if (KF5Purpose_FOUND)
+     target_link_libraries(okularpart KF5::PurposeWidgets)
  endif()
  
 -set_target_properties(okularpart PROPERTIES PREFIX "")

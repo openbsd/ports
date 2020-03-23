@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_backends_qalculate_qalculateexpression_cpp,v 1.1 2018/12/18 09:39:17 rsadowski Exp $
+$OpenBSD: patch-src_backends_qalculate_qalculateexpression_cpp,v 1.2 2020/03/23 18:01:14 rsadowski Exp $
 
 Index: src/backends/qalculate/qalculateexpression.cpp
 --- src/backends/qalculate/qalculateexpression.cpp.orig
 +++ src/backends/qalculate/qalculateexpression.cpp
-@@ -750,7 +750,7 @@ ParseOptions QalculateExpression::parseOptions()
+@@ -749,7 +749,7 @@ ParseOptions QalculateExpression::parseOptions()
      }
  
      po.base = QalculateSettings::base();

@@ -1,8 +1,8 @@
-# $OpenBSD: kf5.port.mk,v 1.11 2019/03/30 09:08:41 rsadowski Exp $
+# $OpenBSD: kf5.port.mk,v 1.12 2020/03/23 18:01:03 rsadowski Exp $
 
-MODKF5_VERSION =	5.54.0
+MODKF5_VERSION =	5.68.0
 
-MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
+MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 
 EXTRACT_SUFX ?=		.tar.xz
 
@@ -28,13 +28,13 @@ CONFIGURE_ARGS += \
 	-DKDE_INSTALL_QMLDIR=${MODQT_LIBDIR}/qml
 
 # XXX it's very strange this is off by default
-CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=Yes
+CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=ON
 
 # The PythonModuleGeneration CMake find module picks up highest Python3
 # version it could find, and fails to build anyway.
 # The module needs more fixes. Also, it's not clear how to deal
 # with multiple Python dependencies.
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration:Bool=Yes
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration=ON
 .endif
 
 # make sure cmake module preceeds qt5, unless we really want qmake

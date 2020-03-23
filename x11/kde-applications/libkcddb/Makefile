@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:26 rsadowski Exp $
 
 COMMENT =	KDE CDDB library
 DISTNAME =	libkcddb-${VERSION}
 PKGNAME =	libkcddb-kf5-${VERSION}
 CATEGORIES =	devel multimedia
-REVISION =	0
 
+SHARED_LIBS +=  KF5Cddb                   1.0 # 5.0
+SHARED_LIBS +=  KF5CddbWidgets            1.0 # 5.0
 
-SHARED_LIBS +=  KF5Cddb                   0.0 # 5.0
-SHARED_LIBS +=  KF5CddbWidgets            0.0 # 5.0
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service
 WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
@@ -21,7 +19,7 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-LIB_DEPENDS +=	audio/libmusicbrainz5 \
+LIB_DEPENDS =	audio/libmusicbrainz5 \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \

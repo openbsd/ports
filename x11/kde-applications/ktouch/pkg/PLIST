@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/18 09:39:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:26 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/ktouch
 @bin bin/ktouch
@@ -61,15 +61,11 @@ share/doc/HTML/en/ktouch/training_options.png
 share/doc/HTML/en/ktouch/welcome_screen.png
 share/doc/HTML/es/ktouch/
 share/doc/HTML/es/ktouch/color_options.png
-share/doc/HTML/es/ktouch/general_options.png
 share/doc/HTML/es/ktouch/index.cache.bz2
 share/doc/HTML/es/ktouch/index.docbook
-share/doc/HTML/es/ktouch/keyboard_options.png
 share/doc/HTML/es/ktouch/main_screen_default_color.png
 share/doc/HTML/es/ktouch/main_window_german.png
-share/doc/HTML/es/ktouch/sound_options.png
 share/doc/HTML/es/ktouch/statistics_dialog.png
-share/doc/HTML/es/ktouch/statistics_dialog_chart.png
 share/doc/HTML/es/ktouch/training_options.png
 share/doc/HTML/fr/ktouch/
 share/doc/HTML/fr/ktouch/color_options.png
@@ -189,6 +185,7 @@ share/ktouch/courses/gb.xml
 share/ktouch/courses/gr.xml
 share/ktouch/courses/ir.xml
 share/ktouch/courses/it.xml
+share/ktouch/courses/it2.xml
 share/ktouch/courses/lt.std.xml
 share/ktouch/courses/nl1.xml
 share/ktouch/courses/nl2.xml
@@ -207,24 +204,6 @@ share/ktouch/courses/us.dvorak2.xml
 share/ktouch/courses/us.workman.xml
 share/ktouch/courses/us.xml
 share/ktouch/data.xml
-share/ktouch/images/
-share/ktouch/images/accuracymeter-background.png
-share/ktouch/images/accuracymeter-hand.png
-share/ktouch/images/accuracymeter-scale.png
-share/ktouch/images/balloontip.svgz
-share/ktouch/images/charactersperminutemeter-background.png
-share/ktouch/images/charactersperminutemeter-hand.png
-share/ktouch/images/charactersperminutemeter-scale.png
-share/ktouch/images/elapsedtimemeter-background.png
-share/ktouch/images/elapsedtimemeter-minute-hand.png
-share/ktouch/images/elapsedtimemeter-second-hand.png
-share/ktouch/images/meterbox-left.png
-share/ktouch/images/meterbox-right.png
-share/ktouch/images/trainingscreen-footer.png
-share/ktouch/images/trainingscreen-header.png
-share/ktouch/images/trainingscreen-toolbar.png
-share/ktouch/images/trainingscreen-viewport-shadow.png
-share/ktouch/images/trainingscreen-viewport.png
 share/ktouch/keyboardlayouts/
 share/ktouch/keyboardlayouts/ara.xml
 share/ktouch/keyboardlayouts/be.xml
@@ -307,6 +286,7 @@ share/locale/kk/LC_MESSAGES/ktouch.mo
 share/locale/km/LC_MESSAGES/ktouch.mo
 share/locale/lt/LC_MESSAGES/ktouch.mo
 share/locale/lv/LC_MESSAGES/ktouch.mo
+share/locale/ml/LC_MESSAGES/ktouch.mo
 share/locale/mr/LC_MESSAGES/ktouch.mo
 share/locale/nb/LC_MESSAGES/ktouch.mo
 share/locale/nds/LC_MESSAGES/ktouch.mo

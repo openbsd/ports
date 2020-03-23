@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/07 10:25:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
 
 COMMENT =	single player puzzle game for KDE
 DISTNAME =	picmi-${VERSION}
@@ -6,8 +6,7 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/picmi
 
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KDEGames
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Service KF5WidgetsAddons
@@ -22,10 +21,10 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=x11/qt5/qtquickcontrols
-RUN_DEPENDS +=	x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+RUN_DEPENDS =	x11/qt5/qtquickcontrols
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \

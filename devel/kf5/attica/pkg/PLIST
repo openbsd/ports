@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:03 rsadowski Exp $
 include/KF5/
 include/KF5/Attica/
 include/KF5/Attica/Attica/
@@ -93,10 +93,8 @@ lib/cmake/KF5Attica/KF5AtticaTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Attica/KF5AtticaTargets.cmake
 @lib lib/libKF5Attica.so.${LIBKF5Attica_VERSION}
 lib/pkgconfig/libKF5Attica.pc
-share/examples/kf5-attica/
-share/examples/kf5-attica/xdg/
-share/examples/kf5-attica/xdg/attica.categories
-@sample ${SYSCONFDIR}/xdg/attica.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Attica.pri
+share/qlogging-categories5/
+share/qlogging-categories5/attica.categories

@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/23 18:01:07 rsadowski Exp $
 
 COMMENT =	create documentation from DocBook
 DISTNAME =	kdoctools-${VERSION}
 
-SHARED_LIBS +=  KF5DocTools               2.3 # 5.34
+SHARED_LIBS +=  KF5DocTools               3.0 # 5.34
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive Qt5Core c exslt m xml2
 WANTLIB += xslt
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/kf5/ki18n \
+		devel/kf5/ki18n>=${MODKF5_VERSION} \
 		textproc/docbook-xsl \
 		www/p5-URI
 
-RUN_DEPENDS =	devel/kf5/ki18n \
+RUN_DEPENDS =	devel/kf5/ki18n>=${MODKF5_VERSION} \
 		textproc/docbook-xsl
 
-LIB_DEPENDS =	devel/kf5/karchive \
+LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		textproc/libxml \
 		textproc/libxslt
 

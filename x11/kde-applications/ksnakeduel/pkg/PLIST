@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:00:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:25 rsadowski Exp $
 @bin bin/ksnakeduel
 share/applications/org.kde.ksnakeduel.desktop
 share/config.kcfg/
@@ -46,7 +46,6 @@ share/doc/HTML/uk/ksnakeduel/settings-general.png
 share/doc/HTML/uk/ksnakeduel/settings-theme.png
 share/examples/ksnakeduel/
 share/examples/ksnakeduel/xdg/
-share/examples/ksnakeduel/xdg/ksnakeduel.categories
 share/examples/ksnakeduel/xdg/ksnakeduel.knsrc
 share/icons/hicolor/128x128/apps/ksnakeduel.png
 share/icons/hicolor/16x16/apps/ksnakeduel.png
@@ -110,5 +109,6 @@ share/locale/zh_CN/LC_MESSAGES/ksnakeduel.mo
 share/locale/zh_TW/LC_MESSAGES/ksnakeduel.mo
 share/metainfo/
 share/metainfo/org.kde.ksnakeduel.appdata.xml
+share/qlogging-categories5/ksnakeduel.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

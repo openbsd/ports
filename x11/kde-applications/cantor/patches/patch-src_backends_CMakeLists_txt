@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_backends_CMakeLists_txt,v 1.1 2020/03/23 18:01:14 rsadowski Exp $
+
+only try to build python3 support
+
+Index: src/backends/CMakeLists.txt
+--- src/backends/CMakeLists.txt.orig
++++ src/backends/CMakeLists.txt
+@@ -57,8 +57,8 @@ set_package_properties(PythonLibs PROPERTIES DESCRIPTI
+ # find_package(PythonLibs) will prefer that version over whatever
+ # version information you pass the find_package call. Set a special
+ # variable to override that:
+-set(Python_ADDITIONAL_VERSIONS 2.7)
+-find_package(PythonLibs 2.7)
++#set(Python_ADDITIONAL_VERSIONS 2.7)
++#find_package(PythonLibs 2.7)
+ 
+ set_package_properties(PythonLibs3 PROPERTIES DESCRIPTION "A powerful dynamic programming language."
+     URL "https://www.python.org/"
+@@ -71,9 +71,9 @@ if(PYTHONLIBS_FOUND OR PYTHONLIBS3_FOUND)
+     add_subdirectory(python)
+ endif(PYTHONLIBS_FOUND OR PYTHONLIBS3_FOUND)
+ 
+-if(PYTHONLIBS_FOUND)
+-    add_subdirectory(python2)
+-endif(PYTHONLIBS_FOUND)
++#if(PYTHONLIBS_FOUND)
++#    add_subdirectory(python2)
++#endif(PYTHONLIBS_FOUND)
+ 
+ if(PYTHONLIBS3_FOUND)
+     add_subdirectory(python3)

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/23 18:01:03 rsadowski Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
 DISTNAME =	kdiff3-1.8.1
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -14,7 +15,7 @@ EXTRACT_SUFX =	.tar.xz
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi KF5TextWidgets

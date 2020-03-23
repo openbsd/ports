@@ -1,9 +1,9 @@
-$OpenBSD: patch-libgraphtheory_CMakeLists_txt,v 1.1.1.1 2019/11/07 10:29:14 rsadowski Exp $
+$OpenBSD: patch-libgraphtheory_CMakeLists_txt,v 1.2 2020/03/23 18:01:29 rsadowski Exp $
 
 Index: libgraphtheory/CMakeLists.txt
 --- libgraphtheory/CMakeLists.txt.orig
 +++ libgraphtheory/CMakeLists.txt
-@@ -109,7 +109,7 @@ set(GRAPHTHEORY_LIB_SOVERSION "0")
+@@ -110,7 +110,7 @@ set(GRAPHTHEORY_LIB_SOVERSION "0")
  set_target_properties(
      rocsgraphtheory
      PROPERTIES

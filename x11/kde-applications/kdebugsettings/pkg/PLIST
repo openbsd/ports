@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 08:05:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:18 rsadowski Exp $
 @bin bin/kdebugsettings
+lib/libkdebugsettings.so.19.12.3
+lib/libkdebugsettings.so.5
 share/applications/org.kde.kdebugsettings.desktop
-share/examples/kdebugsettings/
-share/examples/kdebugsettings/xdg/
-share/examples/kdebugsettings/xdg/kde.categories
-@sample ${SYSCONFDIR}/xdg/kde.categories
-share/examples/kdebugsettings/xdg/kde.renamecategories
-@sample ${SYSCONFDIR}/xdg/kde.renamecategories
 share/locale/ar/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca@valencia/LC_MESSAGES/kdebugsettings.mo
@@ -42,3 +38,8 @@ share/locale/tr/LC_MESSAGES/kdebugsettings.mo
 share/locale/uk/LC_MESSAGES/kdebugsettings.mo
 share/locale/zh_CN/LC_MESSAGES/kdebugsettings.mo
 share/locale/zh_TW/LC_MESSAGES/kdebugsettings.mo
+share/metainfo/
+share/metainfo/org.kde.kdebugsettings.appdata.xml
+share/qlogging-categories5/kde.categories
+share/qlogging-categories5/kde.renamecategories
+share/qlogging-categories5/kdebugsettings.categories

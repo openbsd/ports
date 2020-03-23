@@ -1,20 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 07:55:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:24 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/krfb
 @bin bin/krfb
 @lib lib/libkrfbprivate.so.${LIBkrfbprivate_VERSION}
 lib/qt5/plugins/krfb/
-lib/qt5/plugins/krfb/krfb_framebuffer_qt.so
-lib/qt5/plugins/krfb/krfb_framebuffer_xcb.so
+@so lib/qt5/plugins/krfb/krfb_events_x11.so
+@so lib/qt5/plugins/krfb/krfb_framebuffer_qt.so
+@so lib/qt5/plugins/krfb/krfb_framebuffer_xcb.so
 share/applications/org.kde.krfb.desktop
 share/doc/HTML/ca/krfb/
-share/doc/HTML/ca/krfb/configuration_network.png
-share/doc/HTML/ca/krfb/configuration_security.png
-share/doc/HTML/ca/krfb/connection.png
 share/doc/HTML/ca/krfb/index.cache.bz2
 share/doc/HTML/ca/krfb/index.docbook
-share/doc/HTML/ca/krfb/screenshot.png
 share/doc/HTML/de/krfb/
 share/doc/HTML/de/krfb/configuration_network.png
 share/doc/HTML/de/krfb/configuration_security.png
@@ -68,6 +65,17 @@ share/doc/HTML/ru/krfb/index.docbook
 share/doc/HTML/sr/krfb/
 share/doc/HTML/sr/krfb/index.cache.bz2
 share/doc/HTML/sr/krfb/index.docbook
+share/doc/HTML/sv/krfb/
+share/doc/HTML/sv/krfb/configuration_access.png
+share/doc/HTML/sv/krfb/configuration_network.png
+share/doc/HTML/sv/krfb/configuration_session.png
+share/doc/HTML/sv/krfb/connection.png
+share/doc/HTML/sv/krfb/email_invitation.png
+share/doc/HTML/sv/krfb/index.cache.bz2
+share/doc/HTML/sv/krfb/index.docbook
+share/doc/HTML/sv/krfb/invitation_management.png
+share/doc/HTML/sv/krfb/personal_invitation.png
+share/doc/HTML/sv/krfb/screenshot.png
 share/doc/HTML/uk/krfb/
 share/doc/HTML/uk/krfb/index.cache.bz2
 share/doc/HTML/uk/krfb/index.docbook
@@ -75,6 +83,7 @@ share/icons/hicolor/48x48/apps/krfb.png
 share/icons/hicolor/scalable/apps/krfb.svgz
 share/krfb/
 share/krfb/krfb.notifyrc
+share/kservicetypes5/krfb-events.desktop
 share/kservicetypes5/krfb-framebuffer.desktop
 share/locale/ar/LC_MESSAGES/krfb.mo
 share/locale/bg/LC_MESSAGES/krfb.mo
@@ -109,6 +118,7 @@ share/locale/km/LC_MESSAGES/krfb.mo
 share/locale/ko/LC_MESSAGES/krfb.mo
 share/locale/lt/LC_MESSAGES/krfb.mo
 share/locale/lv/LC_MESSAGES/krfb.mo
+share/locale/ml/LC_MESSAGES/krfb.mo
 share/locale/mr/LC_MESSAGES/krfb.mo
 share/locale/nb/LC_MESSAGES/krfb.mo
 share/locale/nds/LC_MESSAGES/krfb.mo
