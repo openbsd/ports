@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/03/23 13:20:45 landry Exp $
 
 COMMENT=		system to monitor and control processes
 
-MODPY_EGG_VERSION =	4.0.2
+MODPY_EGG_VERSION =	4.1.0
 DISTNAME=		supervisor-${MODPY_EGG_VERSION}
 
 CATEGORIES=		sysutils
@@ -18,10 +18,7 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=		www/py-meld3
-TEST_DEPENDS=		devel/py-mock \
-			www/py-meld3
-
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 SUBST_VARS+=		VARBASE
 
 pre-configure:

@@ -1,9 +1,9 @@
-$OpenBSD: patch-supervisor_skel_sample_conf,v 1.6 2019/05/04 15:08:44 edd Exp $
+$OpenBSD: patch-supervisor_skel_sample_conf,v 1.7 2020/03/23 13:20:45 landry Exp $
 Index: supervisor/skel/sample.conf
 --- supervisor/skel/sample.conf.orig
 +++ supervisor/skel/sample.conf
-@@ -13,7 +13,7 @@
- ;    "command=bash -c 'foo ; bar'" will truncate to "command=bash -c 'foo ".
+@@ -20,7 +20,7 @@
+ ;  is deleted, supervisorctl will be unable to connect to supervisord.
  
  [unix_http_server]
 -file=/tmp/supervisor.sock   ; the path to the socket file
@@ -11,7 +11,7 @@ Index: supervisor/skel/sample.conf
  ;chmod=0700                 ; socket file mode (default 0700)
  ;chown=nobody:nogroup       ; socket file uid:gid owner
  ;username=user              ; default is no username (open server)
-@@ -25,11 +25,11 @@ file=/tmp/supervisor.sock   ; the path to the socket f
+@@ -42,11 +42,11 @@ file=/tmp/supervisor.sock   ; the path to the socket f
  ;password=123               ; default is no password (open server)
  
  [supervisord]
@@ -25,7 +25,7 @@ Index: supervisor/skel/sample.conf
  nodaemon=false               ; start in foreground if true; default false
  minfds=1024                  ; min. avail startup file descriptors; default 1024
  minprocs=200                 ; min. avail process descriptors;default 200
-@@ -54,7 +54,7 @@ supervisor.rpcinterface_factory = supervisor.rpcinterf
+@@ -71,7 +71,7 @@ supervisor.rpcinterface_factory = supervisor.rpcinterf
  ; or inet_http_server section.
  
  [supervisorctl]
@@ -34,7 +34,7 @@ Index: supervisor/skel/sample.conf
  ;serverurl=http://127.0.0.1:9001 ; use an http:// url to specify an inet socket
  ;username=chris              ; should be same as in [*_http_server] if set
  ;password=123                ; should be same as in [*_http_server] if set
-@@ -73,7 +73,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+@@ -90,7 +90,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;umask=022                     ; umask for process (default None)
  ;priority=999                  ; the relative start priority (default 999)
  ;autostart=true                ; start at supervisord start (default: true)
@@ -43,7 +43,7 @@ Index: supervisor/skel/sample.conf
  ;startretries=3                ; max # of serial start failures when starting (default 3)
  ;autorestart=unexpected        ; when to restart if exited after running (def: unexpected)
  ;exitcodes=0                   ; 'expected' exit codes used with autorestart (default 0)
-@@ -95,7 +95,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+@@ -112,7 +112,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;stderr_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
  ;stderr_events_enabled=false   ; emit events on stderr writes (default false)
  ;stderr_syslog=false           ; send stderr to syslog with process name (default false)
@@ -52,7 +52,7 @@ Index: supervisor/skel/sample.conf
  ;serverurl=AUTO                ; override serverurl computation (childutils)
  
  ; The sample eventlistener section below shows all possible eventlistener
-@@ -112,7 +112,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+@@ -129,7 +129,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;umask=022                     ; umask for process (default None)
  ;priority=-1                   ; the relative start priority (default -1)
  ;autostart=true                ; start at supervisord start (default: true)
@@ -61,7 +61,7 @@ Index: supervisor/skel/sample.conf
  ;startretries=3                ; max # of serial start failures when starting (default 3)
  ;autorestart=unexpected        ; autorestart if exited after running (def: unexpected)
  ;exitcodes=0                   ; 'expected' exit codes used with autorestart (default 0)
-@@ -132,7 +132,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+@@ -149,7 +149,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;stderr_logfile_backups=10     ; # of stderr logfile backups (0 means none, default 10)
  ;stderr_events_enabled=false   ; emit events on stderr writes (default false)
  ;stderr_syslog=false           ; send stderr to syslog with process name (default false)
@@ -70,7 +70,7 @@ Index: supervisor/skel/sample.conf
  ;serverurl=AUTO                ; override serverurl computation (childutils)
  
  ; The sample group section below shows all possible group values.  Create one
-@@ -148,5 +148,5 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+@@ -165,5 +165,5 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ; interpreted as relative to this file.  Included files *cannot*
  ; include files themselves.
  
