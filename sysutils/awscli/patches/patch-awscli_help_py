@@ -1,4 +1,4 @@
-$OpenBSD: patch-awscli_help_py,v 1.1 2017/06/04 09:34:46 ajacoutot Exp $
+$OpenBSD: patch-awscli_help_py,v 1.2 2020/03/23 12:09:21 ajacoutot Exp $
 
 https://github.com/aws/aws-cli/pull/2635
 
@@ -16,7 +16,7 @@ Index: awscli/help.py
 +            cmdline = ['groff', '-m', 'man', '-T', 'ascii']
 +        elif self._exists_on_path('mandoc'):
 +            cmdline = ['mandoc', '-T', 'ascii']
-+	else:
++        else:
 +            raise ExecutableNotFoundError('groff or mandoc')
          LOG.debug("Running command: %s", cmdline)
          p3 = self._popen(cmdline, stdin=PIPE, stdout=PIPE, stderr=PIPE)
