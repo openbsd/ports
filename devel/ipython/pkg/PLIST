@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/10/31 12:37:34 bket Exp $
-bin/iptest${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.25 2020/03/23 05:05:03 bket Exp $
+@conflict ipython-*
+@pkgpath devel/ipython
 @comment bin/iptest2
-@comment bin/iptest3
-bin/ipython${MODPY_BIN_SUFFIX}
 @comment bin/ipython2
+bin/iptest
+@comment bin/iptest3
+bin/ipython
 @comment bin/ipython3
 lib/python${MODPY_VERSION}/site-packages/IPython/
 lib/python${MODPY_VERSION}/site-packages/IPython/__init__.py
@@ -665,6 +667,6 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/version.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/warn.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/wildcard.py
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-@man man/man1/ipython${MODPY_BIN_SUFFIX}.1
-share/applications/ipython${MODPY_BIN_SUFFIX}.desktop
 @tag update-desktop-database
+@man man/man1/ipython.1
+share/applications/ipython.desktop

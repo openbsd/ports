@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/10/02 11:08:14 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/23 05:05:03 bket Exp $
+@conflict py-traitlets-*
+@pkgpath devel/py-traitlets
 lib/python${MODPY_VERSION}/site-packages/traitlets/
 lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/traitlets/__init__.py

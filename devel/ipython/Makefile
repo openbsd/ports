@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2019/11/24 19:40:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2020/03/23 05:05:03 bket Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	5.8.0
-REVISION =		2
+REVISION =		3
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
+PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		https://ipython.org/
@@ -20,6 +21,7 @@ RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
 			devel/py-pexpect${MODPY_FLAVOR} \
 			devel/py-prompt_toolkit${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
 # Note that if you have pdb++ installed, tests will fail.
@@ -41,16 +43,7 @@ PERMIT_PACKAGE=	Yes
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
-
-.if ${FLAVOR:Mpython3}
-PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
-RUN_DEPENDS +=		math/py-numpy,python3
-.else
-RUN_DEPENDS +=		devel/py-backports-shutil-get-terminal-size \
-			devel/py-pathlib2
-TEST_DEPENDS +=		devel/py-mock
-.endif
+FLAVOR =		python3
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
@@ -62,11 +55,7 @@ post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
 		${WRKSRC}/examples/IPython\ Kernel/ipython.desktop
 	mv ${WRKSRC}/examples/IPython\ Kernel/ipython.desktop \
-		${APPS_DIR}/ipython${MODPY_BIN_SUFFIX}.desktop
-
-	mv ${PREFIX}/bin/ipython ${PREFIX}/bin/ipython${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/bin/iptest ${PREFIX}/bin/iptest${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/man/man1/ipython.1 ${PREFIX}/man/man1/ipython${MODPY_BIN_SUFFIX}.1
+		${APPS_DIR}/ipython.desktop
 
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
@@ -74,6 +63,6 @@ pre-build:
 
 do-test:
 	env LC_CTYPE=en_US.UTF-8 PYTHONNOUSERSITE=1 \
-		${LOCALBASE}/bin/iptest${MODPY_BIN_SUFFIX}
+		${LOCALBASE}/bin/iptest
 
 .include <bsd.port.mk>

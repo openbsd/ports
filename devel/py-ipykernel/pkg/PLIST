@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/10/31 12:38:38 bket Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 05:05:03 bket Exp $
+@conflict py-ipykernel-*
+@pkgpath devel/py-ipykernel
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ipykernel_launcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/
 lib/python${MODPY_VERSION}/site-packages/ipykernel-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/15 10:21:13 bket Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/23 05:05:03 bket Exp $
 
 COMMENT =		Jupyter notebook format
 
 MODPY_EGG_VERSION =	4.4.0
+REVISION =		0
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -25,9 +26,6 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	nbformat
 
 FLAVORS =		python3
-FLAVOR ?=
-
-post-install:
-	mv ${PREFIX}/bin/jupyter-trust ${PREFIX}/bin/jupyter-trust${MODPY_BIN_SUFFIX}
+FLAVOR =		python3
 
 .include <bsd.port.mk>

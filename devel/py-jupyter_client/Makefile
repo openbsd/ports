@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2020/02/16 05:21:04 bket Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/23 05:05:03 bket Exp $
 
 COMMENT =		Jupyter protocol implementation and client libraries
 
 MODPY_EGG_VERSION =	5.3.4
+REVISION =		0
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -30,20 +31,8 @@ TEST_DEPENDS =		devel/ipython${MODPY_FLAVOR} \
 			shells/bash
 
 FLAVORS =		python3
-FLAVOR ?=
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-mock
-.endif
+FLAVOR =		python3
 
 PORTHOME =		${WRKDIR}
-
-# Python 2 only: regression tests require a fair number of openfiles, an
-# increase to 768 is needed.
-
-post-install:
-	mv ${PREFIX}/bin/jupyter-kernel{,${MODPY_BIN_SUFFIX}}
-	mv ${PREFIX}/bin/jupyter-kernelspec{,${MODPY_BIN_SUFFIX}}
-	mv ${PREFIX}/bin/jupyter-run{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>

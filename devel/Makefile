@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1955 2020/03/20 11:39:36 mariani Exp $
+# $OpenBSD: Makefile,v 1.1956 2020/03/23 05:05:02 bket Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -277,7 +277,6 @@
      SUBDIR += include-what-you-use
      SUBDIR += iniparser
      SUBDIR += intellij
-     SUBDIR += ipython
      SUBDIR += ipython,python3
      SUBDIR += iso-codes
      SUBDIR += itcl
@@ -1494,7 +1493,6 @@
      SUBDIR += py-iniparse
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
-     SUBDIR += py-ipykernel
      SUBDIR += py-ipykernel,python3
      SUBDIR += py-ipython_genutils
      SUBDIR += py-ipython_genutils,python3
@@ -1515,9 +1513,7 @@
      SUBDIR += py-jsonrpclib
      SUBDIR += py-jsonschema
      SUBDIR += py-jsonschema,python3
-     SUBDIR += py-jupyter_client
      SUBDIR += py-jupyter_client,python3
-     SUBDIR += py-jupyter_core
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-kitchen,python3
      SUBDIR += py-kiwisolver
@@ -1551,7 +1547,6 @@
      SUBDIR += py-munch,python3
      SUBDIR += py-mxDateTime
      SUBDIR += py-nbconvert,python3
-     SUBDIR += py-nbformat
      SUBDIR += py-nbformat,python3
      SUBDIR += py-nbval,python3
      SUBDIR += py-nose
@@ -1709,7 +1704,6 @@
      SUBDIR += py-tox
      SUBDIR += py-tox,python3
      SUBDIR += py-traceback2
-     SUBDIR += py-traitlets
      SUBDIR += py-traitlets,python3
      SUBDIR += py-trollius
      SUBDIR += py-twisted

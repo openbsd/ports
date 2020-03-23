@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/12/29 11:53:38 mariani Exp $
-bin/jupyter-kernel${MODPY_BIN_SUFFIX}
-bin/jupyter-kernelspec${MODPY_BIN_SUFFIX}
-bin/jupyter-run${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 05:05:03 bket Exp $
+@conflict py-jupyter_client-*
+@pkgpath devel/py-jupyter_client
+bin/jupyter-kernel
+bin/jupyter-kernelspec
+bin/jupyter-run
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

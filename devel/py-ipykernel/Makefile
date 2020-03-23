@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/23 05:05:03 bket Exp $
 
 COMMENT =		IPython kernel for Jupyter
 
 MODPY_EGG_VERSION =	4.10.0
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 PORTROACH=		limit:^4
 
@@ -32,11 +32,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-mock
-.endif
+FLAVOR =		python3
 
 do-test:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} ipykernel

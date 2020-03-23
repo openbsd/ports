@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/13 14:46:43 shadchin Exp $
-bin/jupyter${MODPY_BIN_SUFFIX}
-bin/jupyter-migrate${MODPY_BIN_SUFFIX}
-bin/jupyter-troubleshoot${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.3 2020/03/23 05:05:03 bket Exp $
+@conflict py-jupyter_core-*
+@pkgpath devel/py-jupyter_core
+bin/jupyter
+bin/jupyter-migrate
+bin/jupyter-troubleshoot
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}jupyter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/
