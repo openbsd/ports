@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/09/26 06:35:09 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/03/23 21:33:38 sebastia Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -36,7 +36,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/parser_context.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/push_parser.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/nokogiri.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/nokogiri.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/syntax_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/
@@ -92,7 +92,7 @@ ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0001-Revert-Do-not-URI-escape-in-server-side-includes.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0002-Remove-script-macro-support.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0003-Update-entities-to-remove-handling-of-ssi.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/
-${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/0001-Fix-security-framework-bypass.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0004-libxml2.la-is-in-top_builddir.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0005-Fix-infinite-loop-in-xmlStringLenDecodeEntities.patch
 ${GEM_LIB}/gems/${DISTNAME}/ports/
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

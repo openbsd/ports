@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2019/09/26 06:35:09 sebastia Exp $
+# $OpenBSD: Makefile,v 1.36 2020/03/23 21:33:38 sebastia Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
-DISTNAME=		nokogiri-1.10.4
+DISTNAME=		nokogiri-1.10.8
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.org/
