@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2020/02/11 10:18:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2020/03/23 08:52:55 ajacoutot Exp $
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-demo
 @bin bin/gtk4-demo-application
@@ -28,6 +28,7 @@ include/gtk-4.0/gdk/gdkdevicetool.h
 include/gtk-4.0/gdk/gdkdisplay.h
 include/gtk-4.0/gdk/gdkdisplaymanager.h
 include/gtk-4.0/gdk/gdkdrag.h
+include/gtk-4.0/gdk/gdkdragsurface.h
 include/gtk-4.0/gdk/gdkdrawcontext.h
 include/gtk-4.0/gdk/gdkdrop.h
 include/gtk-4.0/gdk/gdkenumtypes.h
@@ -43,13 +44,16 @@ include/gtk-4.0/gdk/gdkmonitor.h
 include/gtk-4.0/gdk/gdkpaintable.h
 include/gtk-4.0/gdk/gdkpango.h
 include/gtk-4.0/gdk/gdkpixbuf.h
-include/gtk-4.0/gdk/gdkproperty.h
+include/gtk-4.0/gdk/gdkpopup.h
+include/gtk-4.0/gdk/gdkpopuplayout.h
 include/gtk-4.0/gdk/gdkrectangle.h
 include/gtk-4.0/gdk/gdkrgba.h
 include/gtk-4.0/gdk/gdkseat.h
 include/gtk-4.0/gdk/gdksnapshot.h
 include/gtk-4.0/gdk/gdksurface.h
 include/gtk-4.0/gdk/gdktexture.h
+include/gtk-4.0/gdk/gdktoplevel.h
+include/gtk-4.0/gdk/gdktoplevellayout.h
 include/gtk-4.0/gdk/gdktypes.h
 include/gtk-4.0/gdk/gdkversionmacros.h
 include/gtk-4.0/gdk/gdkvulkancontext.h
@@ -208,16 +212,20 @@ include/gtk-4.0/gtk/gtkcssprovider.h
 include/gtk-4.0/gtk/gtkcustomlayout.h
 include/gtk-4.0/gtk/gtkdebug.h
 include/gtk-4.0/gtk/gtkdialog.h
-include/gtk-4.0/gtk/gtkdragdest.h
 include/gtk-4.0/gtk/gtkdragicon.h
 include/gtk-4.0/gtk/gtkdragsource.h
 include/gtk-4.0/gtk/gtkdrawingarea.h
+include/gtk-4.0/gtk/gtkdropcontrollermotion.h
+include/gtk-4.0/gtk/gtkdroptarget.h
+include/gtk-4.0/gtk/gtkdroptargetasync.h
 include/gtk-4.0/gtk/gtkeditable.h
+include/gtk-4.0/gtk/gtkemojichooser.h
 include/gtk-4.0/gtk/gtkentry.h
 include/gtk-4.0/gtk/gtkentrybuffer.h
 include/gtk-4.0/gtk/gtkentrycompletion.h
 include/gtk-4.0/gtk/gtkenums.h
 include/gtk-4.0/gtk/gtkeventcontroller.h
+include/gtk-4.0/gtk/gtkeventcontrollerfocus.h
 include/gtk-4.0/gtk/gtkeventcontrollerkey.h
 include/gtk-4.0/gtk/gtkeventcontrollerlegacy.h
 include/gtk-4.0/gtk/gtkeventcontrollermotion.h
@@ -310,7 +318,6 @@ include/gtk-4.0/gtk/gtkscrollbar.h
 include/gtk-4.0/gtk/gtkscrolledwindow.h
 include/gtk-4.0/gtk/gtksearchbar.h
 include/gtk-4.0/gtk/gtksearchentry.h
-include/gtk-4.0/gtk/gtkselection.h
 include/gtk-4.0/gtk/gtkselectionmodel.h
 include/gtk-4.0/gtk/gtkseparator.h
 include/gtk-4.0/gtk/gtksettings.h
@@ -415,6 +422,9 @@ share/glib-2.0/schemas/org.gtk.gtk4.Settings.EmojiChooser.gschema.xml
 share/glib-2.0/schemas/org.gtk.gtk4.Settings.FileChooser.gschema.xml
 share/gtk-4.0/
 share/gtk-4.0/gtk4builder.rng
+share/gtk-4.0/valgrind/
+share/gtk-4.0/valgrind/gtk.supp
+share/gtk-4.0/valgrind/gtk64.supp
 share/icons/hicolor/scalable/apps/org.gtk.Demo4.svg
 share/icons/hicolor/scalable/apps/org.gtk.IconBrowser4.svg
 share/icons/hicolor/scalable/apps/org.gtk.WidgetFactory4.svg

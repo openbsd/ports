@@ -1,0 +1,19 @@
+$OpenBSD: patch-testsuite_gtk_flattenlistmodel_c,v 1.1 2020/03/23 08:52:55 ajacoutot Exp $
+
+From eb8e0910c321ffdd3104a3ea3e5c034782bb9d46 Mon Sep 17 00:00:00 2001
+From: Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+Date: Sun, 22 Mar 2020 10:53:59 +0100
+Subject: [PATCH] testsuite/gtk/flattenlistmodel.c: fix build
+
+Index: testsuite/gtk/flattenlistmodel.c
+--- testsuite/gtk/flattenlistmodel.c.orig
++++ testsuite/gtk/flattenlistmodel.c
+@@ -307,7 +307,7 @@ static void
+ test_submodel_add2 (void)
+ {
+   GtkFlattenListModel *flat;
+-  GListStore *model, *store[2];
++  GListStore *model, *store[3];
+ 
+   model = g_list_store_new (G_TYPE_LIST_MODEL);
+   flat = new_model (model);
