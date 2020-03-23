@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/08/28 06:53:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/23 13:23:33 landry Exp $
 @bin bin/pdal
 bin/pdal-config
 include/pdal/
@@ -36,7 +36,6 @@ include/pdal/PointLayout.hpp
 include/pdal/PointRef.hpp
 include/pdal/PointTable.hpp
 include/pdal/PointView.hpp
-include/pdal/PointViewIter.hpp
 include/pdal/Polygon.hpp
 include/pdal/QuadIndex.hpp
 include/pdal/QuickInfo.hpp
@@ -55,10 +54,14 @@ include/pdal/XMLSchema.hpp
 include/pdal/compression/
 include/pdal/compression/Compression.hpp
 include/pdal/compression/DeflateCompression.hpp
+include/pdal/compression/LazPerfCompression.hpp
+include/pdal/compression/LazPerfVlrCompression.hpp
+include/pdal/compression/LzmaCompression.hpp
 include/pdal/compression/ZstdCompression.hpp
 include/pdal/filters/
 include/pdal/filters/ApproximateCoplanarFilter.hpp
 include/pdal/filters/AssignFilter.hpp
+include/pdal/filters/CSFilter.hpp
 include/pdal/filters/ChipperFilter.hpp
 include/pdal/filters/ClusterFilter.hpp
 include/pdal/filters/ColorInterpRamps.hpp
@@ -66,6 +69,7 @@ include/pdal/filters/ColorinterpFilter.hpp
 include/pdal/filters/ColorizationFilter.hpp
 include/pdal/filters/CovarianceFeaturesFilter.hpp
 include/pdal/filters/CropFilter.hpp
+include/pdal/filters/DBSCANFilter.hpp
 include/pdal/filters/DEMFilter.hpp
 include/pdal/filters/DecimationFilter.hpp
 include/pdal/filters/DelaunayFilter.hpp
@@ -73,10 +77,14 @@ include/pdal/filters/DividerFilter.hpp
 include/pdal/filters/ELMFilter.hpp
 include/pdal/filters/EigenvaluesFilter.hpp
 include/pdal/filters/EstimateRankFilter.hpp
+include/pdal/filters/FarthestPointSamplingFilter.hpp
 include/pdal/filters/FerryFilter.hpp
 include/pdal/filters/GreedyProjection.hpp
 include/pdal/filters/GroupByFilter.hpp
 include/pdal/filters/HAGFilter.hpp
+include/pdal/filters/HagDelaunayFilter.hpp
+include/pdal/filters/HagDemFilter.hpp
+include/pdal/filters/HagNnFilter.hpp
 include/pdal/filters/HeadFilter.hpp
 include/pdal/filters/HexBinFilter.hpp
 include/pdal/filters/IQRFilter.hpp
@@ -106,7 +114,9 @@ include/pdal/filters/ReprojectionFilter.hpp
 include/pdal/filters/ReturnsFilter.hpp
 include/pdal/filters/SMRFilter.hpp
 include/pdal/filters/SampleFilter.hpp
+include/pdal/filters/SeparateScanLineFilter.hpp
 include/pdal/filters/ShellFilter.hpp
+include/pdal/filters/SkewnessBalancingFilter.hpp
 include/pdal/filters/SortFilter.hpp
 include/pdal/filters/SplitterFilter.hpp
 include/pdal/filters/StatsFilter.hpp
@@ -115,6 +125,34 @@ include/pdal/filters/TailFilter.hpp
 include/pdal/filters/TransformationFilter.hpp
 include/pdal/filters/VoxelCenterNearestNeighborFilter.hpp
 include/pdal/filters/VoxelCentroidNearestNeighborFilter.hpp
+include/pdal/filters/VoxelDownsizeFilter.hpp
+include/pdal/filters/private/
+include/pdal/filters/private/DimRange.hpp
+include/pdal/filters/private/Point.hpp
+include/pdal/filters/private/Segmentation.hpp
+include/pdal/filters/private/csf/
+include/pdal/filters/private/delaunator.hpp
+include/pdal/filters/private/hexer/
+include/pdal/filters/private/hexer/HexGrid.hpp
+include/pdal/filters/private/hexer/HexInfo.hpp
+include/pdal/filters/private/hexer/HexIter.hpp
+include/pdal/filters/private/hexer/Hexagon.hpp
+include/pdal/filters/private/hexer/Mathpair.hpp
+include/pdal/filters/private/hexer/Path.hpp
+include/pdal/filters/private/hexer/Processor.hpp
+include/pdal/filters/private/hexer/Segment.hpp
+include/pdal/filters/private/hexer/exception.hpp
+include/pdal/filters/private/miniball/
+include/pdal/filters/private/mongoexpression/
+include/pdal/filters/private/mongoexpression/Comparison.hpp
+include/pdal/filters/private/mongoexpression/Expression.hpp
+include/pdal/filters/private/mongoexpression/LogicGate.hpp
+include/pdal/filters/private/mongoexpression/Support.hpp
+include/pdal/filters/private/pnp/
+include/pdal/filters/private/pnp/Comparison.hpp
+include/pdal/filters/private/pnp/Grid.hpp
+include/pdal/filters/private/pnp/GridPnp.hpp
+include/pdal/filters/private/pnp/VoxelRayTrace.hpp
 include/pdal/gitsha.h
 include/pdal/io/
 include/pdal/io/BpfCompressor.hpp
@@ -141,7 +179,6 @@ include/pdal/io/LasVLR.hpp
 include/pdal/io/LasWriter.hpp
 include/pdal/io/MemoryViewReader.hpp
 include/pdal/io/NullWriter.hpp
-include/pdal/io/NumpyReader.hpp
 include/pdal/io/OGRWriter.hpp
 include/pdal/io/OptechCommon.hpp
 include/pdal/io/OptechReader.hpp
@@ -161,6 +198,9 @@ include/pdal/io/TerrasolidReader.hpp
 include/pdal/io/TextReader.hpp
 include/pdal/io/TextWriter.hpp
 include/pdal/io/point_types.hpp
+include/pdal/io/private/
+include/pdal/io/private/EptSupport.hpp
+include/pdal/io/private/GDALGrid.hpp
 include/pdal/kernels/
 include/pdal/kernels/DeltaKernel.hpp
 include/pdal/kernels/DensityKernel.hpp
@@ -175,6 +215,9 @@ include/pdal/kernels/SplitKernel.hpp
 include/pdal/kernels/TIndexKernel.hpp
 include/pdal/kernels/TileKernel.hpp
 include/pdal/kernels/TranslateKernel.hpp
+include/pdal/kernels/private/
+include/pdal/kernels/private/density/
+include/pdal/kernels/private/density/OGR.hpp
 include/pdal/pdal.hpp
 include/pdal/pdal_config.hpp
 include/pdal/pdal_export.hpp
@@ -182,6 +225,10 @@ include/pdal/pdal_features.hpp
 include/pdal/pdal_internal.hpp
 include/pdal/pdal_test_main.hpp
 include/pdal/pdal_types.hpp
+include/pdal/private/
+include/pdal/private/DynamicLibrary.hpp
+include/pdal/private/SrsTransform.hpp
+include/pdal/private/StageRunner.hpp
 include/pdal/util/
 include/pdal/util/Algorithm.hpp
 include/pdal/util/Backtrace.hpp
@@ -199,6 +246,8 @@ include/pdal/util/Utils.hpp
 include/pdal/util/Uuid.hpp
 include/pdal/util/pdal_util_export.hpp
 include/pdal/util/portable_endian.hpp
+include/pdal/util/private/
+include/pdal/util/private/BacktraceImpl.hpp
 lib/cmake/PDAL/
 lib/cmake/PDAL/PDALConfig.cmake
 lib/cmake/PDAL/PDALConfigVersion.cmake
@@ -210,8 +259,6 @@ lib/libpdalcpp.so
 lib/pkgconfig/pdal.pc
 share/pdal/
 share/pdal/plugins/
-share/pdal/plugins/libpdal_plugin_filter_python.so
-share/pdal/plugins/libpdal_plugin_kernel_fauxplugin.so
-share/pdal/plugins/libpdal_plugin_reader_numpy.so
-share/pdal/plugins/libpdal_plugin_reader_pgpointcloud.so
-share/pdal/plugins/libpdal_plugin_writer_pgpointcloud.so
+@so share/pdal/plugins/libpdal_plugin_kernel_fauxplugin.so
+@so share/pdal/plugins/libpdal_plugin_reader_pgpointcloud.so
+@so share/pdal/plugins/libpdal_plugin_writer_pgpointcloud.so
