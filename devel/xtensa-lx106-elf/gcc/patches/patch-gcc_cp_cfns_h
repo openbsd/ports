@@ -1,0 +1,18 @@
+$OpenBSD: patch-gcc_cp_cfns_h,v 1.1 2020/03/23 14:12:31 tracey Exp $
+
+Index: gcc/cp/cfns.h
+# patch required to build with gcc
+--- gcc/cp/cfns.h.orig
++++ gcc/cp/cfns.h
+@@ -52,7 +52,11 @@ __inline
+ #endif
+ static unsigned int hash (const char *, unsigned int);
+ #ifdef __GNUC__
++#ifdef __GNUC_STDC_INLINE__
++__attribute__ ((__gnu_inline__))
++#else
+ __inline
++#endif
+ #endif
+ const char * libc_name_p (const char *, unsigned int);
+ /* maximum key range = 391, duplicates = 0 */

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/18 13:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/23 14:12:31 tracey Exp $
 
 COMMENT =	gdb for ${CONFIG} cross-development
 
@@ -8,6 +8,7 @@ PKGNAME =	${CONFIG}-gdb-${VERSION}
 GH_ACCOUNT =	jcmvbkbc
 GH_PROJECT =	binutils-gdb-xtensa
 GH_TAGNAME =	gdb-8.2.1-release
+REVISION =	0
 
 WANTLIB +=	${COMPILER_LIBCXX} c curses expat m
 
@@ -15,6 +16,8 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS = 	devel/libtool \
 			devel/bison \
+			devel/gmp \
+			devel/mpfr \
 			devel/xtensa-lx106-elf/binutils
 RUN_DEPENDS +=		devel/xtensa-lx106-elf/binutils
 
@@ -24,6 +27,8 @@ YACC =			bison -y
 
 CONFIGURE_ARGS +=	--enable-commonbfdlib=no \
 			--with-cross-host=yes \
+			--with-gmp=${LOCALBASE} \
+			--with-mpfr=${LOCALBASE} \
 			--disable-werror \
 			--disable-nls \
 			--without-guile \

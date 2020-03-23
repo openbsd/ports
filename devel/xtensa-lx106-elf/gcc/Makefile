@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/23 14:12:31 tracey Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
 VERSION =	4.8.5
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	jcmvbkbc
 GH_PROJECT =	gcc-xtensa
