@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.425 2020/02/29 22:31:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.426 2020/03/23 17:15:02 jasper Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -212,7 +212,6 @@
      SUBDIR += pympd
      SUBDIR += qsynth
      SUBDIR += quodlibet
-     SUBDIR += radiotray
      SUBDIR += rgain
      SUBDIR += rhythmbox
      SUBDIR += rtunes
