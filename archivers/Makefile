@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2020/01/25 22:57:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.100 2020/03/23 13:17:03 landry Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -21,6 +21,7 @@
      SUBDIR += hs-zip-archive
      SUBDIR += hs-zlib
      SUBDIR += innoextract
+     SUBDIR += laszip
      SUBDIR += lha
      SUBDIR += libarchive
      SUBDIR += libmspack
