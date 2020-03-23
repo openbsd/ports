@@ -1,0 +1,47 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/03/23 18:22:59 bcallah Exp $
+
+Don't hardcode optimizations, install to the correct locations.
+Disable warnings; clang is very chatty.
+Put in obstack code.
+Convert to bsd make
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,19 +1,15 @@
+-ifneq ($(srcdir),)
+-VPATH = $(srcdir)
+-else
+-srcdir=$(shell pwd)
+-endif
+-CFLAGS = -O2 -g
+-DWZ_VERSION := $(shell cat $(srcdir)/VERSION)
+-override CFLAGS += -Wall -W -D_FILE_OFFSET_BITS=64 -DDWZ_VERSION='"$(DWZ_VERSION)"'
+-prefix = /usr
++srcdir = .
++CFLAGS ?= -O2 -g
++DWZ_VERSION != cat $(srcdir)/VERSION
++CFLAGS += -D_FILE_OFFSET_BITS=64 -DDWZ_VERSION='"$(DWZ_VERSION)"'
++prefix ?= /usr/local
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ datarootdir = $(prefix)/share
+-mandir = $(datarootdir)/man
+-OBJECTS = dwz.o hashtab.o sha1.o dwarfnames.o
++mandir = $(prefix)/man
++OBJECTS = dwz.o hashtab.o sha1.o dwarfnames.o obstack.o
+ dwz: $(OBJECTS)
+-	$(CC) $(LDFLAGS) -o $@ $^ -lelf
++	$(CC) $(LDFLAGS) -o $@ $(OBJECTS) -lelf
+ install: dwz
+ 	install -D dwz $(DESTDIR)$(bindir)/dwz
+ 	install -D -m 644 $(srcdir)/dwz.1 $(DESTDIR)$(mandir)/man1/dwz.1
+@@ -51,7 +47,7 @@ DWZ_TEST_SOURCES := $(patsubst %.o,%-for-test.c,$(OBJE
+ 	sed 's/__GNUC__/NOT_DEFINED/' $< > $@
+ 
+ dwz-for-test: $(DWZ_TEST_SOURCES)
+-	$(CC) $(DWZ_TEST_SOURCES) -O2 -g -lelf -o $@ -Wall -W -DDEVEL \
++	$(CC) $(DWZ_TEST_SOURCES) -O2 -g -lelf -o $@ -DDEVEL \
+ 	  -D_FILE_OFFSET_BITS=64 -DDWZ_VERSION='"for-test"' -I$(srcdir)
+ 
+ min:
