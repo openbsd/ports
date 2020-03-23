@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/08/13 08:12:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.51 2020/03/23 19:17:38 ajacoutot Exp $
 
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
@@ -8,6 +8,8 @@ DISTNAME=		amavis-v${V}
 PKGNAME-main=		amavisd-new-${V}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
+
+REVISION-main=		0
 
 HOMEPAGE=		http://www.amavis.org/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
@@ -28,7 +30,7 @@ RUN_DEPENDS=		archivers/arc \
 			archivers/ripole \
 			archivers/unzip \
 			archivers/zoo \
-			rpm2cpio-*|rpm-*:converters/rpm2cpio \
+			converters/rpm2cpio \
 			databases/p5-BerkeleyDB \
 			devel/p5-Net-Server \
 			devel/p5-IO-Multiplex \

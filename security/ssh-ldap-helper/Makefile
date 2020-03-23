@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/23 19:17:39 ajacoutot Exp $
 
 COMMENT =	fetch ssh AuthorizedKeys from LDAP
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS =	--with-ldap=${LOCALBASE} \
 NO_TEST =	Yes
 ALL_TARGET =	ssh-ldap-helper
 
-BUILD_DEPENDS=	rpm-*|rpm2cpio-*:converters/rpm2cpio \
+BUILD_DEPENDS=	converters/rpm2cpio \
 		archivers/bzip2
 LIB_DEPENDS =	databases/openldap
 
