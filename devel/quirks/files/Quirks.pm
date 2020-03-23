@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.912 2020/03/23 05:06:19 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.913 2020/03/23 14:35:06 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1448,6 +1448,7 @@ my $obsolete_reason = {
 	'py-xmpp' => 3,
 	'mirage' => 0,
 	'rpm' => 0,
+	'oggconvert' => 3,
 };
 
 # reasons for obsolete packages
