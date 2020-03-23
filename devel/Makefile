@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1956 2020/03/23 05:05:02 bket Exp $
+# $OpenBSD: Makefile,v 1.1957 2020/03/23 18:23:23 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -127,6 +127,7 @@
      SUBDIR += droplet
      SUBDIR += dtc
      SUBDIR += dune
+     SUBDIR += dwz
      SUBDIR += ectags
      SUBDIR += electron
      SUBDIR += elftoolchain
