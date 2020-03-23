@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2020/03/22 17:56:51 landry Exp $
+# $OpenBSD: Makefile,v 1.72 2020/03/23 11:46:20 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -66,7 +66,7 @@ LIB_DEPENDS-python +=	${BUILD_PKGPATH},-main
 WANTLIB += curl freetype jpeg m png pq xml2 z proj
 WANTLIB += gdal geos_c cairo fribidi gif harfbuzz protobuf-c
 
-WANTLIB-main =	${WANTLIB} c fcgi mapserver pthread ${COMPILER_LIBCXX}
+WANTLIB-main =	${WANTLIB} c fcgi pthread ${COMPILER_LIBCXX}
 WANTLIB-utils =	${WANTLIB} c mapserver
 WANTLIB-php =	${WANTLIB} mapserver
 WANTLIB-perl =	${WANTLIB} c mapserver perl
