@@ -1,0 +1,9 @@
+LASzip quickly turns bulky LAS files into compact LAZ files without
+information loss and is the de-facto standard for LiDAR compression.
+
+LASzip compression can be many times smaller and many times faster than
+generic compressors like bz2, gzip, and rar because it knows what the
+different bytes in a LAS file represent. Another advantage of LASzip is
+that it allows you to treat compressed LAZ files just like standard LAS
+files. You can load them directly from compressed form into your
+application without needing to decompress them onto disk first.

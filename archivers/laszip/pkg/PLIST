@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/23 13:15:22 landry Exp $
+include/laszip/
+include/laszip/laszip_api.h
+include/laszip/laszip_api_version.h
+@lib lib/liblaszip.so.${LIBlaszip_VERSION}
+@lib lib/liblaszip_api.so.${LIBlaszip_api_VERSION}
