@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.59 2019/11/08 13:06:00 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.60 2020/03/23 19:22:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,23 +53,46 @@ sub clone_properties
 	$n->{info} //= $o->{info};
 }
 
+my $lock_bypkgname = {};
+
+sub check_path
+{
+	my ($class, $w, $p) = @_;
+	if (!defined $w->{info}) {
+		return " has no info(". $p->fullpkgpath. ")";
+	}
+	if (!defined $w->{info}{FULLPKGNAME}) {
+		return " has no fullpkgname(".$p->fullpkgpath.")";
+	}
+	my $lock = $w->lockname;
+	if ($lock ne $p->lockname) {
+		return " has inconsistent lockname $lock compared to ".
+		    $p->fullpkgpath." (".$p->lockname.")";
+	}
+	my $k = $w->fullpkgname;
+	$lock_bypkgname->{$k} //= $lock;
+	if ($lock_bypkgname->{$k} ne $lock) {
+		return " has inconsistent lockname $lock for $k ",
+		    "(is also $lock_bypkgname->{$k})\n";
+	}
+	return undef;
+}
+
 sub sanity_check
 {
 	my ($class, $state) = @_;
 
-	my $quicklog = $state->logger->append('equiv');
+	my $log = $state->logger->append('equiv');
 	for my $p ($class->seen) {
 		next if defined $p->{category};
 		next unless defined $p->{info};
 		for my $w ($p->build_path_list) {
-			if (!defined $w->{info}) {
-				print $quicklog $w->fullpkgpath, 
-				    " has no info(", $p->fullpkgpath, ")\n";
-				$w->{info} = DPB::PortInfo->stub;
-			} elsif (!defined $w->{info}{FULLPKGNAME}) {
-				print $quicklog $w->fullpkgpath,
-				    " has no fullpkgname(", 
-				    $p->fullpkgpath, ")\n";
+			next if $w->{info} eq DPB::PortInfo->stub;
+			my $reason = $class->check_path($w, $p);
+			if (defined $reason) {
+				$reason = $w->fullpkgpath.$reason;
+				print $log $reason, "\n";
+				$w->break($reason);
 				$w->{info} = DPB::PortInfo->stub;
 			}
 		}
@@ -140,8 +163,11 @@ sub logname
 
 sub lockname
 {
-	my $self = shift;
-	return $self->pkgpath;
+	my $v = shift;
+	if (defined $v->{info} && defined $v->{info}{DPB_LOCKNAME}) {
+		return ${$v->{info}{DPB_LOCKNAME}};
+	}
+	return $v->pkgpath;
 }
 
 sub print_parent
