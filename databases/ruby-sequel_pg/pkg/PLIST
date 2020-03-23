@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/23 15:28:39 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
@@ -10,6 +10,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_streaming.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg/
-${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg/sequel_pg.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
