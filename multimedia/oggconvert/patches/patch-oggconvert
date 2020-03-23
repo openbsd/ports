@@ -1,9 +1,0 @@
-$OpenBSD: patch-oggconvert,v 1.1 2009/03/10 13:18:33 jasper Exp $
---- oggconvert.orig	Tue Mar 10 13:50:15 2009
-+++ oggconvert	Tue Mar 10 13:50:28 2009
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!${MODPY_BIN}
- #
- #
- # OggConvert -- Converts media files to Free formats

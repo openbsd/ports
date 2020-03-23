@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2020/02/24 23:23:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.121 2020/03/23 14:34:57 jasper Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -54,7 +54,6 @@
      SUBDIR += motion,pgsql
      SUBDIR += mpgtx
      SUBDIR += mpv
-     SUBDIR += oggconvert
      SUBDIR += oggz
      SUBDIR += ogmrip
      SUBDIR += ogmtools
