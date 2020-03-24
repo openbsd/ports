@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/05/08 11:24:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/24 14:54:27 sthen Exp $
 @option is-branch
 @pkgpath net/unifi/5.6
 @newgroup _unifi:732
@@ -28,7 +28,6 @@ share/unifi/dl/firmware/bundles.json
 share/unifi/lib/
 share/unifi/lib/Java-WebSocket-1.3.0-45-gf96ce50.jar
 share/unifi/lib/ace.jar
-share/unifi/lib/activation.jar
 share/unifi/lib/annotations-2.0.0.jar
 share/unifi/lib/aws-java-sdk-cloudwatch-1.9.3.jar
 share/unifi/lib/aws-java-sdk-core-1.9.3.jar

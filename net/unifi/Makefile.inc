@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2020/01/25 22:03:23 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2020/03/24 14:54:27 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -9,8 +9,7 @@ DISTFILES=	unifi-$V{UniFi.unix}.zip \
 		unifi_sh_api-$V{unifi_sh_api} \
 		snappy-java-${SNAPPY_V}.jar:0 \
 		UBNT-MIB:1 \
-		UBNT-UniFi-MIB:1 \
-		activation-${JAF}.jar:2
+		UBNT-UniFi-MIB:1
 EXTRACT_ONLY=	unifi-$V.zip
 PKGNAME=	unifi-$V
 
@@ -18,7 +17,6 @@ PKGNAME=	unifi-$V
 # openbsd .so's. use a locally built one to replace.
 MASTER_SITES0=	https://spacehopper.org/mirrors/
 MASTER_SITES1=	http://dl.ubnt-ut.com/snmp/
-MASTER_SITES2=	http://central.maven.org/maven2/javax/activation/activation/${JAF}/
 
 CATEGORIES=	net
 
@@ -63,8 +61,6 @@ post-extract:
 do-configure:
 	@if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then echo "** Version mismatch in snappy-java"; ls -l ${WRKSRC}/lib/snappy-java*; exit 1; fi
 	cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}.jar ${WRKSRC}/lib/
-	@if [ -r ${WRKSRC}/lib/activation.jar ]; then echo "** Check activation.jar, did upstream start including it?"; ls -l ${WRKSRC}/lib/activation.jar ${WRKSRC}/lib/activation.jar; exit 1; fi
-	cp ${FULLDISTDIR}/activation-${JAF}.jar ${WRKSRC}/lib/activation.jar
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}
