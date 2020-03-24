@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/22 15:23:38 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/24 16:21:14 kn Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -17,7 +17,7 @@ COMMENT=	Clang extra tools
 LLVM_V =	8.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES =	devel
 
@@ -41,6 +41,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/llvm
 
@@ -88,6 +89,8 @@ pre-configure:
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-install:
+	find ${PREFIX}/share/clang -type f -name \*.py -exec ${MODPY_BIN_ADJ} {} +
+	2to3 -w -n ${PREFIX}/share/clang
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/clang
 

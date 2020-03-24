@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/24 16:21:14 kn Exp $
 @bin bin/clang-apply-replacements
 @bin bin/clang-change-namespace
 @bin bin/clang-include-fixer
@@ -8,43 +8,44 @@
 @bin bin/clangd
 @bin bin/find-all-symbols
 @bin bin/modularize
-lib/libclangApplyReplacements.a
-lib/libclangChangeNamespace.a
-lib/libclangDaemon.a
-lib/libclangDoc.a
-lib/libclangIncludeFixer.a
-lib/libclangIncludeFixerPlugin.a
-lib/libclangMove.a
-lib/libclangQuery.a
-lib/libclangReorderFields.a
-lib/libclangTidy.a
-lib/libclangTidyAbseilModule.a
-lib/libclangTidyAndroidModule.a
-lib/libclangTidyBoostModule.a
-lib/libclangTidyBugproneModule.a
-lib/libclangTidyCERTModule.a
-lib/libclangTidyCppCoreGuidelinesModule.a
-lib/libclangTidyFuchsiaModule.a
-lib/libclangTidyGoogleModule.a
-lib/libclangTidyHICPPModule.a
-lib/libclangTidyLLVMModule.a
-lib/libclangTidyMPIModule.a
-lib/libclangTidyMiscModule.a
-lib/libclangTidyModernizeModule.a
-lib/libclangTidyObjCModule.a
-lib/libclangTidyPerformanceModule.a
-lib/libclangTidyPlugin.a
-lib/libclangTidyPortabilityModule.a
-lib/libclangTidyReadabilityModule.a
-lib/libclangTidyUtils.a
-lib/libclangTidyZirconModule.a
-lib/libfindAllSymbols.a
+@static-lib lib/libclangApplyReplacements.a
+@static-lib lib/libclangChangeNamespace.a
+@static-lib lib/libclangDaemon.a
+@static-lib lib/libclangDoc.a
+@static-lib lib/libclangIncludeFixer.a
+@static-lib lib/libclangIncludeFixerPlugin.a
+@static-lib lib/libclangMove.a
+@static-lib lib/libclangQuery.a
+@static-lib lib/libclangReorderFields.a
+@static-lib lib/libclangTidy.a
+@static-lib lib/libclangTidyAbseilModule.a
+@static-lib lib/libclangTidyAndroidModule.a
+@static-lib lib/libclangTidyBoostModule.a
+@static-lib lib/libclangTidyBugproneModule.a
+@static-lib lib/libclangTidyCERTModule.a
+@static-lib lib/libclangTidyCppCoreGuidelinesModule.a
+@static-lib lib/libclangTidyFuchsiaModule.a
+@static-lib lib/libclangTidyGoogleModule.a
+@static-lib lib/libclangTidyHICPPModule.a
+@static-lib lib/libclangTidyLLVMModule.a
+@static-lib lib/libclangTidyMPIModule.a
+@static-lib lib/libclangTidyMiscModule.a
+@static-lib lib/libclangTidyModernizeModule.a
+@static-lib lib/libclangTidyObjCModule.a
+@static-lib lib/libclangTidyPerformanceModule.a
+@static-lib lib/libclangTidyPlugin.a
+@static-lib lib/libclangTidyPortabilityModule.a
+@static-lib lib/libclangTidyReadabilityModule.a
+@static-lib lib/libclangTidyUtils.a
+@static-lib lib/libclangTidyZirconModule.a
+@static-lib lib/libfindAllSymbols.a
+share/clang/${MODPY_PYCACHE}/
+share/clang/${MODPY_PYCACHE}clang-include-fixer.${MODPY_PYC_MAGIC_TAG}pyc
+share/clang/${MODPY_PYCACHE}clang-tidy-diff.${MODPY_PYC_MAGIC_TAG}pyc
+share/clang/${MODPY_PYCACHE}run-clang-tidy.${MODPY_PYC_MAGIC_TAG}pyc
+share/clang/${MODPY_PYCACHE}run-find-all-symbols.${MODPY_PYC_MAGIC_TAG}pyc
 share/clang/clang-include-fixer.el
 share/clang/clang-include-fixer.py
-share/clang/clang-include-fixer.pyc
 share/clang/clang-tidy-diff.py
-share/clang/clang-tidy-diff.pyc
 share/clang/run-clang-tidy.py
-share/clang/run-clang-tidy.pyc
 share/clang/run-find-all-symbols.py
-share/clang/run-find-all-symbols.pyc
