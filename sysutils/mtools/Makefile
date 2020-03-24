@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2019/07/12 20:49:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2020/03/24 14:30:01 fcambus Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
-DISTNAME=	mtools-4.0.23
+DISTNAME=	mtools-4.0.24
 
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://mtools.linux.lu/
+HOMEPAGE=	https://www.gnu.org/software/mtools/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
