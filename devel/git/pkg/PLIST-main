@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.94 2020/01/27 23:49:12 abieber Exp $
+@comment $OpenBSD: PLIST-main,v 1.95 2020/03/24 07:54:45 benoit Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -444,6 +444,7 @@ share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/git.mo
 share/locale/ru/LC_MESSAGES/git.mo
 share/locale/sv/LC_MESSAGES/git.mo
+share/locale/tr/LC_MESSAGES/git.mo
 share/locale/vi/LC_MESSAGES/git.mo
 share/locale/zh_CN/LC_MESSAGES/git.mo
 share/locale/zh_TW/LC_MESSAGES/git.mo
