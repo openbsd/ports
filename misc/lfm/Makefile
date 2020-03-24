@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/17 14:46:33 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/24 15:12:39 fcambus Exp $
 
 COMMENT =		powerful curses interface python file manager
 
 MODPY_EGG_VERSION =	2.3
 DISTNAME =		lfm-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES =		misc
 
-HOMEPAGE =		http://katxi.org/devel/lfm/
+HOMEPAGE =		https://inigo.katxi.org/devel/lfm/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
