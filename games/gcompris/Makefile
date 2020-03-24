@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.73 2020/03/24 07:20:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2020/03/24 15:46:07 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
-DISTNAME=	gcompris-17.05
-EXTRACT_SUFX=	.tar.bz2
-REVISION=	4
+V=		0.97
+DISTNAME=	gcompris-qt-${V}
+PKGNAME=	gcompris-${V}
+EPOCH=		0
+EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	games education
 
@@ -16,58 +18,32 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # SIL Open Font License (OFL)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 c cairo cairo-gobject expat ffi fontconfig
-WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gstreamer-0.10 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread rsvg-2
-WANTLIB += sqlite3 util xcb xcb-render xcb-shm xml2 z
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Network
+WANTLIB += Qt5Qml Qt5Quick Qt5Sensors Qt5Svg Qt5Widgets Qt5Xml
+WANTLIB += Qt5XmlPatterns c m
 
-MASTER_SITES=	http://gcompris.net/download/gtk/src/
+MASTER_SITES=	http://gcompris.net/download/qt/src/
 
-MODULES=	lang/python \
-		textproc/intltool
+MODULES=	devel/cmake \
+		x11/qt5
 
-BUILD_DEPENDS=	textproc/texi2html \
-		x11/py-gtk2 \
-		games/gnuchess \
-		archivers/gtar
+BUILD_DEPENDS=	devel/gettext,-tools \
+		devel/kf5/extra-cmake-modules \
+		devel/kf5/kdoctools
 
-LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		databases/sqlite3 \
-		gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
-		x11/gnome/librsvg \
-		x11/gtk+2
+LIB_DEPENDS=	x11/qt5/qtmultimedia \
+		x11/qt5/qtxmlpatterns \
+		x11/qt5/qtsensors \
+		x11/qt5/qtsvg
 
-RUN_DEPENDS=	games/gnuchess \
-		databases/py-sqlite \
-		x11/py-gtk2 \
-		games/tuxpaint \
-		cad/gnucap \
-		devel/desktop-file-utils \
-		multimedia/gstreamer-0.10/plugins-base \
-		multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+3,-guic \
+		x11/qt5/qtgraphicaleffects \
+		x11/qt5/qtquickcontrols
 
-USE_GMAKE=	Yes
-
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-py-build-only \
-		--with-python=${MODPY_BIN}
-
-# don't install under share/gnome/help/, there is no yelp (xml) file
-FAKE_FLAGS=	gcompris_helpdir=${PREFIX}/share/doc/gcompris/html
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/chess_computer-activity/chess.c \
-		${WRKSRC}/src/electric-activity/electric.py
+CONFIGURE_ARGS=	-DQML_BOX2D_MODULE=disabled
 
 post-install:
-	rm ${PREFIX}/lib/gcompris/*.{a,la}
-	find ${PREFIX}/share/gcompris -type f -perm 755 -exec chmod 644 {} +
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/gcompris
+	cd ${PREFIX} && ln -s gcompris-qt gcompris
 
 .include <bsd.port.mk>
