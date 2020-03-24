@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/23 18:22:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/24 17:33:43 espie Exp $
 
 COMMENT =	DWARF optimization and duplicate removal tool
 DISTNAME =	dwz-0.13
@@ -21,5 +21,9 @@ ALL_TARGET =	dwz
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/dwz
+
+# XXX bootstrap: DEBUG_PACKAGES needs a dwz binary to work
+post-build:
+	${INSTALL_PROGRAM} ${WRKBUILD}/dwz ${WRKDIR}/bin
 
 .include <bsd.port.mk>

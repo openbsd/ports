@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1525 2020/03/24 15:01:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1526 2020/03/24 17:33:43 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -940,6 +940,14 @@ ${_v}${_s} ?= ${${_v}}
 DEBUG_PACKAGES := ${DEBUG_PACKAGES:N$i}
 .    endif
 .  endfor
+.endif
+
+# not yet
+#DWZ = dwz -L 100000000
+DWZ = :
+
+.if !empty(DEBUG_PACKAGES) && ${DWZ} != ":"  && ${PKGPATH} != "devel/dwz"
+BUILD_DEPENDS += devel/dwz
 .endif
 
 .for _s in ${BUILD_PACKAGES}
@@ -2981,6 +2989,7 @@ ${_WRKDEBUG}/Makefile: ${_FAKE_COOKIE}
 _copy-debug-info: ${_FAKE_COOKIE} ${_WRKDEBUG}/Makefile
 	@cd ${PREFIX} && \
 		exec ${SETENV} ${MAKE} -r -f ${_WRKDEBUG}/Makefile \
+			PATH='${PATH}' DWZ='${DWZ}' \
 			INSTALL_DATA_DIR='${INSTALL_DATA_DIR}' all
 
 show-debug-info:
