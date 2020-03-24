@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.500 2020/03/19 13:23:57 kn Exp $
+# $OpenBSD: Makefile,v 1.501 2020/03/24 21:05:16 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -282,6 +282,7 @@
      SUBDIR += sk1
      SUBDIR += spirv-headers
      SUBDIR += spirv-tools
+     SUBDIR += skanlite
      SUBDIR += sketch
      SUBDIR += slop
      SUBDIR += sxiv
