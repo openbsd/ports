@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2020/03/24 07:20:39 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-17.05
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	games education
 
@@ -47,7 +47,8 @@ RUN_DEPENDS=	games/gnuchess \
 		games/tuxpaint \
 		cad/gnucap \
 		devel/desktop-file-utils \
-		multimedia/gstreamer-0.10/plugins-base
+		multimedia/gstreamer-0.10/plugins-base \
+		multimedia/gstreamer-0.10/plugins-good
 
 USE_GMAKE=	Yes
 
