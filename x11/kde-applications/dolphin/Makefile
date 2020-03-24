@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/03/23 18:01:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/03/24 07:43:28 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 SHARED_LIBS +=  dolphinprivate            1.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                1.0 # 5.0
@@ -64,6 +65,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/solid \
 		devel/kf5/sonnet
+
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 TEST_IS_INTERACTIVE =	X11
 
