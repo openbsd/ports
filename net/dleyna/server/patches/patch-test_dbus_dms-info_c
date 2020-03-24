@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_dbus_dms-info_c,v 1.1 2020/03/24 15:26:27 kmos Exp $
+
+https://github.com/intel/dleyna-server/pull/161
+
+Index: test/dbus/dms-info.c
+--- test/dbus/dms-info.c.orig
++++ test/dbus/dms-info.c
+@@ -360,8 +360,6 @@ int main(int argc, char *argv[])
+ 	if (sigprocmask(SIG_BLOCK, &mask, NULL) == -1)
+ 		goto on_error;
+ 
+-	g_type_init();
+-
+ 	/* Create proxy for com.intel.dLeynaServer.Manager.  The Manager
+ 	object has no properties.  We will create the proxy asynchronously
+ 	and use G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES to ensure that

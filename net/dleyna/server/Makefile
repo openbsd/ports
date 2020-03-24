@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/10 12:57:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/24 15:26:26 kmos Exp $
 
 COMMENT=		service for interacting with DMSes
 
 GH_PROJECT=		dleyna-server
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	dleyna-server-1.0         0.0 # 1.3
 

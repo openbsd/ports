@@ -1,0 +1,20 @@
+$OpenBSD: patch-libdleyna_server_upnp_c,v 1.1 2020/03/24 15:26:27 kmos Exp $
+
+Stop using deprecated gupnp_context_get_host_ip
+
+https://github.com/intel/dleyna-server/pull/161
+
+Index: libdleyna/server/upnp.c
+--- libdleyna/server/upnp.c.orig
++++ libdleyna/server/upnp.c
+@@ -351,8 +351,8 @@ static void prv_device_unavailable_cb(GUPnPControlPoin
+ 
+ 	udn = gupnp_device_info_get_udn((GUPnPDeviceInfo *)proxy);
+ 
+-	ip_address = gupnp_context_get_host_ip(
+-		gupnp_control_point_get_context(cp));
++	ip_address = gssdp_client_get_host_ip(
++		GSSDP_CLIENT(gupnp_control_point_get_context(cp)));
+ 
+ 	if (!udn || !ip_address)
+ 		goto on_error;
