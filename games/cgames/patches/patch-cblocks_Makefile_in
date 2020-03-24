@@ -1,7 +1,8 @@
-$OpenBSD: patch-cblocks_Makefile_in,v 1.1.1.1 2014/12/01 23:12:08 bcallah Exp $
---- cblocks/Makefile.in.orig	Sun Nov 30 22:38:49 2014
-+++ cblocks/Makefile.in	Sun Nov 30 22:39:23 2014
-@@ -33,8 +33,8 @@ install: cblocks
+$OpenBSD: patch-cblocks_Makefile_in,v 1.2 2020/03/24 15:31:30 fcambus Exp $
+Index: cblocks/Makefile.in
+--- cblocks/Makefile.in.orig
++++ cblocks/Makefile.in
+@@ -35,8 +35,8 @@ install: cblocks
  	install -c ./cblocks $(bindir)/cblocks
  	install -d $(mandir)/man6
  	install -c ./cblocks.6 $(mandir)/man6/cblocks.6

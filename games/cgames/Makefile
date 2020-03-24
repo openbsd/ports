@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/24 15:31:30 fcambus Exp $
 
 PORTROACH =	skipv:2.2
 
 COMMENT =	free console games suite
-DISTNAME =	cgames-2.2a
+DISTNAME =	cgames-2.2b
 CATEGORIES =	games
-REVISION =	1
 
-HOMEPAGE =	http://www.muppetlabs.com/~breadbox/software/cgames.html
+HOMEPAGE =	https://www.muppetlabs.com/~breadbox/software/cgames.html
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =	http://www.muppetlabs.com/~breadbox/pub/software/
+MASTER_SITES =	https://www.muppetlabs.com/~breadbox/pub/software/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--datarootdir="${LOCALBASE}/share/cgames" \
