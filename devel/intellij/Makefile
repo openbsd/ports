@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.64 2020/02/19 06:19:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.65 2020/03/24 21:08:46 rsadowski Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2019.3.3
+V=			2019.3.4
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		https://www.jetbrains.com/idea/
-MAINTAINER=		Caspar Schutijser <caspar@schutijser.com>
+MAINTAINER=		Lucas Raab <tuftedocelot@fastmail.fm>
 
 # Apache v2.0
 PERMIT_PACKAGE=	Yes
@@ -25,7 +25,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=		${WRKDIR}/idea-IC-193.6494.35
+WRKDIST=		${WRKDIR}/idea-IC-193.6911.18
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
