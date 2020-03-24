@@ -1,20 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/24 17:58:12 solene Exp $
 @newgroup _yquake2:779
 @newuser _yquake2:779:_yquake2:daemon:Yamagi Quake II Server:/var/yquake2:/sbin/nologin
+@rcscript ${RCDIR}/q2ded
 bin/quake2
-@bin share/yquake2/q2ded
-@bin share/yquake2/quake2
+lib/yquake2/
 share/doc/pkg-readmes/${PKGSTEM}
 share/yquake2/
-share/yquake2/ref_gl1.so
-share/yquake2/ref_gl3.so
 share/yquake2/baseq2/
-share/yquake2/baseq2/game.so
+@so share/yquake2/baseq2/game.so
 @mode 750
 @owner _yquake2
 @group _yquake2
 @sample /var/yquake2/
+@mode
 @owner
 @group
-@mode
-@rcscript ${RCDIR}/q2ded
+@bin share/yquake2/q2ded
+@bin share/yquake2/quake2
+@so share/yquake2/ref_gl1.so
+@so share/yquake2/ref_gl3.so
+@so share/yquake2/ref_soft.so
