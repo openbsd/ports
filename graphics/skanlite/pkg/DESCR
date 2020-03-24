@@ -1,0 +1,11 @@
+Skanlite is a simple image scanning application to scan and save images.
+Skanlite is based on libksane, an interface for SANE library to control image
+scanners.
+
+Features:
+
+- Save dialog for every image scanned or saving the images immediately in a
+  specified folder with auto-generated names and format
+- Support for networks scanners
+- Preview with selection feature for the final scan
+- Scanning multiple selections of an image
