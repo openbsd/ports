@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2020/01/09 04:32:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/24 07:02:33 ajacoutot Exp $
 
 COMMENT =	KTorrent engine
 
 DISTNAME =	libktorrent-2.1.1
+REVISION =	0
 
 CATEGORIES =	net
 
