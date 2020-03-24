@@ -1,27 +1,25 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/24 18:23:21 jca Exp $
 
 COMMENT =	implementation of complex error functions
 
-V =		1.11
-DISTNAME =	libcerf-${V}
+V =		1.13
+DISTNAME =	libcerf-v${V}
+PKGNAME =	libcerf-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	math
-MASTER_SITES =	http://apps.jcns.fz-juelich.de/src/libcerf/
-REVISION =	0
+MASTER_SITES =	https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v${V}/
 
-SHARED_LIBS +=  cerf	2.0 # 1.10
+SHARED_LIBS +=  cerf	2.0 # 1.13
 
-HOMEPAGE =	http://apps.jcns.fz-juelich.de/doku/sc/libcerf
+HOMEPAGE =	https://jugit.fz-juelich.de/mlz/libcerf/
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m ${COMPILER_LIBCXX}
+WANTLIB += m
 
 MODULES =		devel/cmake
-
-COMPILER =		ports-gcc   # imaginary constants are a GNU extension
 
 .include <bsd.port.mk>
