@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/02/07 21:39:42 kn Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/03/24 16:22:15 kn Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @rcscript ${RCDIR}/varnishd
@@ -45,7 +45,6 @@ include/varnish/tbl/obj_attr.h
 include/varnish/tbl/oc_exp_flags.h
 include/varnish/tbl/oc_flags.h
 include/varnish/tbl/params.h
-include/varnish/tbl/req_body.h
 include/varnish/tbl/req_flags.h
 include/varnish/tbl/sess_attr.h
 include/varnish/tbl/sess_close.h
@@ -104,6 +103,7 @@ lib/pkgconfig/varnishapi.pc
 lib/varnish/
 lib/varnish/vmods/
 @so lib/varnish/vmods/libvmod_blob.so
+@so lib/varnish/vmods/libvmod_cookie.so
 @so lib/varnish/vmods/libvmod_debug.so
 @so lib/varnish/vmods/libvmod_directors.so
 @so lib/varnish/vmods/libvmod_proxy.so
@@ -121,6 +121,7 @@ lib/varnish/vmods/
 @man man/man1/varnishtest.1
 @man man/man1/varnishtop.1
 @man man/man3/vmod_blob.3
+@man man/man3/vmod_cookie.3
 @man man/man3/vmod_directors.3
 @man man/man3/vmod_proxy.3
 @man man/man3/vmod_purge.3

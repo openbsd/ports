@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2020/02/07 21:39:42 kn Exp $
+# $OpenBSD: Makefile,v 1.53 2020/03/24 16:22:15 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-6.3.2
+DISTNAME =		varnish-6.4.0
 
 CATEGORIES =		www
 
-SHARED_LIBS =		varnishapi      2.0     # 2.2
+SHARED_LIBS =		varnishapi      2.1     # 2.4
 
 HOMEPAGE =		https://www.varnish-cache.org/
 
