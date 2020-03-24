@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/24 07:42:10 rsadowski Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
+REVISION =	0
 
 SHARED_LIBS +=  kioarchive                1.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            1.0 # 18.08
@@ -13,10 +14,10 @@ WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5DNSSD KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Pty KF5Service KF5Solid KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml m mtp phonon4qt5experimental
-WANTLIB += smbclient ssh tag util
+WANTLIB += KF5KIOWidgets KF5Pty KF5Service KF5Solid KF5SyntaxHighlighting
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml m
+WANTLIB += mtp phonon4qt5experimental smbclient ssh tag util
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
@@ -30,8 +31,8 @@ RUN_DEPENDS =	devel/gperf \
 		misc/shared-mime-info
 
 LIB_DEPENDS =	audio/taglib \
-		devel/kf5/kactivities-stats \
 		devel/kf5/kactivities \
+		devel/kf5/kactivities-stats \
 		devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -52,6 +53,7 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
+		devel/kf5/syntax-highlighting \
 		devel/libmtp \
 		graphics/openexr \
 		security/libssh \
