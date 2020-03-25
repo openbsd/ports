@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/25 14:11:13 tracey Exp $
+
+BROKEN-sparc64 = 'build/genmodes -h > tmp-modes.h' 'Illegal instruction (core dumped)'
 
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
