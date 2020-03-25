@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2020/03/25 14:03:14 kmos Exp $
+
+BROKEN-sparc64=		Fails to compile in obj/sigsegv.o
 
 COMMENT=		open source 68k Macintosh emulator
 
