@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/03/24 17:58:12 solene Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/25 21:22:59 awolk Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
@@ -8,6 +8,7 @@ V=		7.43
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
 CATEGORIES=	games
+REVISION=	0
 
 HOMEPAGE=	https://www.yamagi.org/quake2/
 MAINTAINER=	Adam Wolk <awolk@openbsd.org>
@@ -17,10 +18,11 @@ EXTRACT_SUFX=	.tar.xz
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	GL SDL2 c m openal pthread
+WANTLIB +=	GL SDL2 c curl m openal pthread
 
 LIB_DEPENDS=	audio/openal \
-		devel/sdl2
+		devel/sdl2 \
+		net/curl
 
 MAKE_ENV+=	VERBOSE=1
 USE_GMAKE=	Yes
