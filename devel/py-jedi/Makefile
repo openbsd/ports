@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/10/14 22:31:20 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/25 10:01:46 mariani Exp $
 
 COMMENT =		autocompletion tool for Python
 
 MODPY_EGG_VERSION =	0.15.1
 DISTNAME =		jedi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION = 		0
 
 CATEGORIES =		devel
 
@@ -28,6 +29,6 @@ TEST_DEPENDS =		devel/py-docopt${MODPY_FLAVOR} \
 PORTHOME =		/tmp
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>
