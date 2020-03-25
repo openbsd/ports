@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/21 16:14:57 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/25 15:02:51 robert Exp $
 
 COMMENT=		MATE system monitor
 
 MATE_PROJECT=		mate-system-monitor
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -33,7 +34,12 @@ LIB_DEPENDS=		devel/libgtop2 \
 			x11/gtk+3 \
 			x11/gtk3mm
 
-RUN_DEPENDS=		sysutils/consolekit
+# share/polkit-1/actions/org.mate.mate-system-monitor.policy
+BUILD_DEPENDS +=	sysutils/polkit
+RUN_DEPENDS +=		sysutils/polkit
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=		sysutils/consolekit
 
 CONFIGURE_STYLE=	gnu
 
