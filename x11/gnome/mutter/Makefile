@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2020/02/17 18:58:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.103 2020/03/25 21:18:33 kmos Exp $
 
 COMMENT=		window and compositing manager
 
@@ -27,6 +27,9 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
 WANTLIB += gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 startup-notification-1 xcb xcb-randr xcb-res
 WANTLIB += xkbcommon xkbcommon-x11 xkbfile
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MODULES=		devel/dconf \
 			devel/meson \
