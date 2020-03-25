@@ -1,8 +1,12 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
+
+- Add support for building against libestdc++ from ports-gcc.
+- Make clang emit the proper path to our libcompiler_rt.a when asked to.
+
 Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
 --- tools/clang/lib/Driver/ToolChains/OpenBSD.h.orig
 +++ tools/clang/lib/Driver/ToolChains/OpenBSD.h
-@@ -69,6 +69,11 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+@@ -69,6 +69,14 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
    void AddCXXStdlibLibArgs(const llvm::opt::ArgList &Args,
                             llvm::opt::ArgStringList &CmdArgs) const override;
  
@@ -10,6 +14,9 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
 +  void AddClangCXXStdlibIncludeArgs(
 +      const llvm::opt::ArgList &DriverArgs,
 +      llvm::opt::ArgStringList &CC1Args) const override;
++
++  std::string getCompilerRT(const llvm::opt::ArgList &Args, StringRef Component,
++                            bool Shared = false) const override;
 +
    unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const override {
      return 2;

@@ -1,15 +1,12 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64ReturnProtectorLowering_h,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsReturnProtectorLowering_h,v 1.1 2020/03/25 06:16:30 rsadowski Exp $
 
-- Add retguard for arm64.
-- Do not store the retguard cookie in frame in leaf functions if possible.
-  Makes things slightly faster and also improves security in these functions,
-  since the retguard cookie can't leak via the stack.
+Add retguard for octeon/mips64.
 
-Index: lib/Target/AArch64/AArch64ReturnProtectorLowering.h
---- lib/Target/AArch64/AArch64ReturnProtectorLowering.h.orig
-+++ lib/Target/AArch64/AArch64ReturnProtectorLowering.h
-@@ -0,0 +1,52 @@
-+//===-- AArch64ReturnProtectorLowering.h - --------------------- -*- C++ -*-==//
+Index: lib/Target/Mips/MipsReturnProtectorLowering.h
+--- lib/Target/Mips/MipsReturnProtectorLowering.h.orig
++++ lib/Target/Mips/MipsReturnProtectorLowering.h
+@@ -0,0 +1,46 @@
++//===-- MipsReturnProtectorLowering.h - --------------------- -*- C++ -*-==//
 +//
 +//                     The LLVM Compiler Infrastructure
 +//
@@ -18,19 +15,19 @@ Index: lib/Target/AArch64/AArch64ReturnProtectorLowering.h
 +//
 +//===----------------------------------------------------------------------===//
 +//
-+// This file contains the AArch64 implementation of ReturnProtectorLowering
++// This file contains the Mips implementation of ReturnProtectorLowering
 +// class.
 +//
 +//===----------------------------------------------------------------------===//
 +
-+#ifndef LLVM_LIB_TARGET_AARCH64_AARCH64RETURNPROTECTORLOWERING_H
-+#define LLVM_LIB_TARGET_AARCH64_AARCH64RETURNPROTECTORLOWERING_H
++#ifndef LLVM_LIB_TARGET_MIPS_MIPSRETURNPROTECTORLOWERING_H
++#define LLVM_LIB_TARGET_MIPS_MIPSRETURNPROTECTORLOWERING_H
 +
 +#include "llvm/CodeGen/ReturnProtectorLowering.h"
 +
 +namespace llvm {
 +
-+class AArch64ReturnProtectorLowering : public ReturnProtectorLowering {
++class MipsReturnProtectorLowering : public ReturnProtectorLowering {
 +public:
 +  /// insertReturnProtectorPrologue/Epilogue - insert return protector
 +  /// instrumentation in prologue or epilogue.
@@ -50,12 +47,6 @@ Index: lib/Target/AArch64/AArch64ReturnProtectorLowering.h
 +  virtual void
 +  fillTempRegisters(MachineFunction &MF,
 +                    std::vector<unsigned> &TempRegs) const override;
-+
-+  /// saveReturnProtectorRegister - Allows the target to save the
-+  /// CalculationRegister in the CalleeSavedInfo vector if needed.
-+  virtual void
-+  saveReturnProtectorRegister(MachineFunction &MF,
-+                              std::vector<CalleeSavedInfo> &CSI) const override;
 +};
 +
 +} // namespace llvm

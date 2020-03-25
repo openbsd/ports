@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Transforms_Scalar_LoopIdiomRecognize_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-lib_Transforms_Scalar_LoopIdiomRecognize_cpp,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
 Disable loop idiom recognition for _libc_memset and _libc_memcpy.  These are
 the internal names we use in libc for memset and memcpy and having the

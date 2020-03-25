@@ -1,11 +1,44 @@
-$OpenBSD: patch-lib_Target_Mips_MipsInstrInfo_td,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsInstrInfo_td,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
+- Add retguard for octeon/mips64.
 - Implement SGE pseudo-instructions. Needed when building libcrypto.
 
 Index: lib/Target/Mips/MipsInstrInfo.td
 --- lib/Target/Mips/MipsInstrInfo.td.orig
 +++ lib/Target/Mips/MipsInstrInfo.td
-@@ -3007,6 +3007,20 @@ def LDMacro : MipsAsmPseudoInst<(outs GPR32Opnd:$rt),
+@@ -2022,6 +2022,31 @@ def LONG_BRANCH_ADDiu : PseudoSE<(outs GPR32Opnd:$dst)
+ def LONG_BRANCH_ADDiu2Op : PseudoSE<(outs GPR32Opnd:$dst),
+   (ins GPR32Opnd:$src, brtarget:$tgt), []>;
+ 
++// Pseudo instructions used by retguard. In order to calculste the PC
++// for PIC code, we use a pair of pseudos to get the function address
++// into T9, which is normally used to hold this value but is trashed
++// by function epilogue.
++let isCodeGenOnly = 1, hasNoSchedulingInfo = 1 in {
++
++  // Use BAL to get the PC into RA, then calculate the address of the
++  // current function and save this value in $rd. $rs and $rt are used
++  // as scratch registers and are trashed by this pseudo. $tgt is the
++  // symbol to branch to when calling BAL.
++  let Size = 32 in {
++  def RETGUARD_GET_FUNCTION_ADDR: PseudoSE<(outs GPR64:$rd),
++    (ins GPR64:$rs, GPR64:$rt, brtarget:$tgt), []>;
++  }
++
++  // Emit the symbol used for $tgt in RETGUARD_GET_FUNCTION_ADDR. We
++  // emit this symbol immediately before the usual function return, with
++  // the effect that the BAL branches to an immediate return and resumes
++  // execution through the rest of the RETGUARD epilogue. We pair BAL
++  // with RET to satisfy return branch predictors.
++  let Size = 0 in {
++  def RETGUARD_EMIT_SYMBOL: PseudoSE<(outs), (ins brtarget:$tgt), []>;
++  }
++}
++
+ //===----------------------------------------------------------------------===//
+ // Instruction definition
+ //===----------------------------------------------------------------------===//
+@@ -3007,6 +3032,20 @@ def LDMacro : MipsAsmPseudoInst<(outs GPR32Opnd:$rt),
  def SDMacro : MipsAsmPseudoInst<(outs GPR32Opnd:$rt),
                                  (ins mem_simm16:$addr), "sd $rt, $addr">,
                                  ISA_MIPS1_NOT_MIPS3;

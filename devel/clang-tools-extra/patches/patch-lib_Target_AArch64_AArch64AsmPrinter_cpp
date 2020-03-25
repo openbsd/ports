@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64AsmPrinter_cpp,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64AsmPrinter_cpp,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
 Add retguard for arm64.
 

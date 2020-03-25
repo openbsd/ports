@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_ReturnProtectorPass_cpp,v 1.1.1.1 2019/11/06 10:07:55 rsadowski Exp $
+$OpenBSD: patch-lib_CodeGen_ReturnProtectorPass_cpp,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -20,11 +20,14 @@ $OpenBSD: patch-lib_CodeGen_ReturnProtectorPass_cpp,v 1.1.1.1 2019/11/06 10:07:5
 - Put the new retguard symbols in their own section,
   '.openbsd.randomdata.retguard', to make them easier to work with in the
   kernel hibernate code.
+- Move the hashed __retguard_* symbols into individual sections and mark
+  them as COMDATs so that the linker can individually discard them, instead
+  of just ignoring duplicate symbols but keep the (duplicate) space.
 
 Index: lib/CodeGen/ReturnProtectorPass.cpp
 --- lib/CodeGen/ReturnProtectorPass.cpp.orig
 +++ lib/CodeGen/ReturnProtectorPass.cpp
-@@ -0,0 +1,60 @@
+@@ -0,0 +1,62 @@
 +//===- ReturnProtectorPass.cpp - Set up rteurn protectors -----------------===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -60,14 +63,16 @@ Index: lib/CodeGen/ReturnProtectorPass.cpp
 +        // Create a symbol for the cookie
 +        Module *M = F.getParent();
 +        std::hash<std::string> hasher;
-+        std::string cookiename = "__retguard_" + std::to_string(hasher((M->getName() + F.getName()).str()) % 4000);
++        std::string hash = std::to_string(hasher((M->getName() + F.getName()).str()) % 4000);
++        std::string cookiename = "__retguard_" + hash;
 +        Type *cookietype = Type::getInt8PtrTy(M->getContext());
 +        GlobalVariable *cookie = dyn_cast_or_null<GlobalVariable>(
 +            M->getOrInsertGlobal(cookiename, cookietype));
 +        cookie->setInitializer(Constant::getNullValue(cookietype));
-+        cookie->setLinkage(GlobalVariable::WeakAnyLinkage);
++        cookie->setLinkage(GlobalVariable::LinkOnceAnyLinkage);
 +        cookie->setVisibility(GlobalValue::HiddenVisibility);
-+        cookie->setSection(".openbsd.randomdata.retguard");
++        cookie->setComdat(M->getOrInsertComdat(cookiename));
++        cookie->setSection(".openbsd.randomdata.retguard." + hash);
 +        cookie->setExternallyInitialized(true);
 +        F.addFnAttr("ret-protector-cookie", cookiename);
 +        NumSymbols++;

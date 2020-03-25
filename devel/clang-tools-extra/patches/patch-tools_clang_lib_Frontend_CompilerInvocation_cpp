@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Frontend_CompilerInvocation_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Frontend_CompilerInvocation_cpp,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
 Add RETGUARD to clang for amd64. This security mechanism uses per-function
 random cookies to protect access to function return instructions, with the
@@ -18,6 +18,8 @@ essentially gadget free, leaving only the polymorphic gadgets that result from
 jumping into the instruction stream partway through other instructions. Work to
 remove these gadgets will continue through other mechanisms.
 
+Add -msvr4-struct-return for powerpc.
+
 Index: tools/clang/lib/Frontend/CompilerInvocation.cpp
 --- tools/clang/lib/Frontend/CompilerInvocation.cpp.orig
 +++ tools/clang/lib/Frontend/CompilerInvocation.cpp
@@ -30,3 +32,25 @@ Index: tools/clang/lib/Frontend/CompilerInvocation.cpp
    if (Arg *A = Args.getLastArg(OPT_mstack_probe_size)) {
      StringRef Val = A->getValue();
      unsigned StackProbeSize = Opts.StackProbeSize;
+@@ -1197,11 +1199,18 @@ static bool ParseCodeGenArgs(CodeGenOptions &Opts, Arg
+       Diags.Report(diag::err_drv_invalid_value) << A->getAsString(Args) << Val;
+   }
+ 
+-  if (Arg *A = Args.getLastArg(OPT_fpcc_struct_return, OPT_freg_struct_return)) {
+-    if (A->getOption().matches(OPT_fpcc_struct_return)) {
++  // X86_32 has -fppc-struct-return and -freg-struct-return.
++  // PPC32 has -maix-struct-return and -msvr4-struct-return.
++  if (Arg *A =
++          Args.getLastArg(OPT_fpcc_struct_return, OPT_freg_struct_return,
++                          OPT_maix_struct_return, OPT_msvr4_struct_return)) {
++    const Option &O = A->getOption();
++    if (O.matches(OPT_fpcc_struct_return) ||
++        O.matches(OPT_maix_struct_return)) {
+       Opts.setStructReturnConvention(CodeGenOptions::SRCK_OnStack);
+     } else {
+-      assert(A->getOption().matches(OPT_freg_struct_return));
++      assert(O.matches(OPT_freg_struct_return) ||
++             O.matches(OPT_msvr4_struct_return));
+       Opts.setStructReturnConvention(CodeGenOptions::SRCK_InRegs);
+     }
+   }

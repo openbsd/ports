@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Support_CMakeLists_txt,v 1.1 2020/03/25 06:16:30 rsadowski Exp $
+
+For upstream:
+bogus dep on all headers in ${Backtrace_INCLUDE_DIRS} ie /usr/local/include.
+
+Index: lib/Support/CMakeLists.txt
+--- lib/Support/CMakeLists.txt.orig
++++ lib/Support/CMakeLists.txt
+@@ -174,7 +174,6 @@ add_llvm_library(LLVMSupport
+   Windows
+   ${LLVM_MAIN_INCLUDE_DIR}/llvm/ADT
+   ${LLVM_MAIN_INCLUDE_DIR}/llvm/Support
+-  ${Backtrace_INCLUDE_DIRS}
+   LINK_LIBS ${system_libs} ${delayload_flags}
+   )
+ 

@@ -1,0 +1,37 @@
+$OpenBSD: patch-lib_Target_Mips_MipsFrameLowering_h,v 1.1 2020/03/25 06:16:30 rsadowski Exp $
+
+Add retguard for octeon/mips64.
+
+Index: lib/Target/Mips/MipsFrameLowering.h
+--- lib/Target/Mips/MipsFrameLowering.h.orig
++++ lib/Target/Mips/MipsFrameLowering.h
+@@ -15,6 +15,7 @@
+ #define LLVM_LIB_TARGET_MIPS_MIPSFRAMELOWERING_H
+ 
+ #include "Mips.h"
++#include "MipsReturnProtectorLowering.h"
+ #include "llvm/CodeGen/TargetFrameLowering.h"
+ 
+ namespace llvm {
+@@ -25,8 +26,11 @@ class MipsFrameLowering : public TargetFrameLowering {
+   const MipsSubtarget &STI;
+ 
+ public:
++
++  const MipsReturnProtectorLowering RPL;
++
+   explicit MipsFrameLowering(const MipsSubtarget &sti, unsigned Alignment)
+-    : TargetFrameLowering(StackGrowsDown, Alignment, 0, Alignment), STI(sti) {}
++    : TargetFrameLowering(StackGrowsDown, Alignment, 0, Alignment), STI(sti), RPL() {}
+ 
+   static const MipsFrameLowering *create(const MipsSubtarget &ST);
+ 
+@@ -39,6 +43,8 @@ class MipsFrameLowering : public TargetFrameLowering {
+   bool enableShrinkWrapping(const MachineFunction &MF) const override {
+     return true;
+   }
++
++  const ReturnProtectorLowering *getReturnProtector() const override;
+ 
+   MachineBasicBlock::iterator
+   eliminateCallFramePseudoInstr(MachineFunction &MF,

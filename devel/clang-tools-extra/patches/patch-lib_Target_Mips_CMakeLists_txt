@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Target_Mips_CMakeLists_txt,v 1.1 2020/03/25 06:16:30 rsadowski Exp $
+
+Add retguard for octeon/mips64.
+
+Index: lib/Target/Mips/CMakeLists.txt
+--- lib/Target/Mips/CMakeLists.txt.orig
++++ lib/Target/Mips/CMakeLists.txt
+@@ -47,6 +47,7 @@ add_llvm_target(MipsCodeGen
+   MipsPreLegalizerCombiner.cpp
+   MipsRegisterBankInfo.cpp
+   MipsRegisterInfo.cpp
++  MipsReturnProtectorLowering.cpp
+   MipsSEFrameLowering.cpp
+   MipsSEInstrInfo.cpp
+   MipsSEISelDAGToDAG.cpp

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
 - Fix a bug in memory operand handling. If a load or store uses a symbol
   as a memory operand, the assembler generates incorrect relocations in

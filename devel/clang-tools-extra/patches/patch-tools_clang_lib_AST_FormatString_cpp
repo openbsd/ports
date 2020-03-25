@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_AST_FormatString_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_AST_FormatString_cpp,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
 - The %b printf extension in the kernel is not fixed to a int type. On sparc64
   there are various %llb formats. Adjust the code to handle the length specifiers

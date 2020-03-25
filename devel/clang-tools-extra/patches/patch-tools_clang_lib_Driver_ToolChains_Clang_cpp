@@ -1,5 +1,6 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
+- Add -msvr4-struct-return for powerpc.
 - Make LLVM create strict aligned code for OpenBSD/arm64.
 - Disable -fstrict-aliasing per default on OpenBSD.
 - Enable -fwrapv by default
@@ -22,6 +23,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.1.1.1 2019/11/06
   jumping into the instruction stream partway through other instructions. Work to
   remove these gadgets will continue through other mechanisms.
 - Add retguard for arm64.
+- Add retguard for octeon/mips64.
 - Improve the X86FixupGadgets pass
 - On OpenBSD disable the malloc/calloc/realloc/free/str*dup builtins, since
   they can perform strange transforms and optimizations.  Some of those could
@@ -32,7 +34,27 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.1.1.1 2019/11/06
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
-@@ -3899,9 +3899,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3870,6 +3870,19 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+     CmdArgs.push_back(A->getValue());
+   }
+ 
++  if (Arg *A = Args.getLastArg(options::OPT_maix_struct_return,
++                               options::OPT_msvr4_struct_return)) {
++    if (TC.getArch() != llvm::Triple::ppc) {
++      D.Diag(diag::err_drv_unsupported_opt_for_target)
++          << A->getSpelling() << RawTriple.str();
++    } else if (A->getOption().matches(options::OPT_maix_struct_return)) {
++      CmdArgs.push_back("-maix-struct-return");
++    } else {
++      assert(A->getOption().matches(options::OPT_msvr4_struct_return));
++      CmdArgs.push_back("-msvr4-struct-return");
++    }
++  }
++
+   if (Arg *A = Args.getLastArg(options::OPT_fpcc_struct_return,
+                                options::OPT_freg_struct_return)) {
+     if (TC.getArch() != llvm::Triple::x86) {
+@@ -3899,9 +3912,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -47,7 +69,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -4527,7 +4530,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4527,7 +4543,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -57,7 +79,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -4544,9 +4548,44 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4544,9 +4561,46 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                     false))
      CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
  
@@ -75,6 +97,8 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 +  }
 +  if (RetProtector &&
 +      ((getToolChain().getArch() == llvm::Triple::x86_64) ||
++       (getToolChain().getArch() == llvm::Triple::mips64) ||
++       (getToolChain().getArch() == llvm::Triple::mips64el) ||
 +       (getToolChain().getArch() == llvm::Triple::aarch64)) &&
 +      !Args.hasArg(options::OPT_fno_stack_protector) &&
 +      !Args.hasArg(options::OPT_pg)) {
@@ -103,7 +127,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    // Translate -mstackrealign
    if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
                     false))
-@@ -5029,6 +5068,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5029,6 +5083,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");

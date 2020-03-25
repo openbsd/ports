@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_Mips_h,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_Mips_h,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 
 - Implement the 'h' register constraint on mips64. This lets clang build
   pieces of software that use the constraint if the compiler claims

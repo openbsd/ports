@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmake_modules_LLVMProcessSources_cmake,v 1.1 2020/03/25 06:16:30 rsadowski Exp $
+
+Avoid adding a dep on all headers in ${LOCALBASE}/include, not
+compatible with dpb(1) junking.
+
+Index: cmake/modules/LLVMProcessSources.cmake
+--- cmake/modules/LLVMProcessSources.cmake.orig
++++ cmake/modules/LLVMProcessSources.cmake
+@@ -46,6 +46,9 @@ function(find_all_header_files hdrs_out additional_hea
+   list(APPEND all_headers ${hds})
+ 
+   foreach(additional_dir ${additional_headerdirs})
++    if (${additional_dir} MATCHES "^${LOCALBASE}/include")
++      message(FATAL_ERROR "ports: refusing to scan ${additional_dir}")
++    endif()
+     add_header_files_for_glob(hds "${additional_dir}/*.h")
+     list(APPEND all_headers ${hds})
+     add_header_files_for_glob(hds "${additional_dir}/*.inc")

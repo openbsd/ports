@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_Assembler_debug-variant-discriminator_ll,v 1.1.1.1 2019/11/06 10:07:56 rsadowski Exp $
+$OpenBSD: patch-test_Assembler_debug-variant-discriminator_ll,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
 https://github.com/llvm-mirror/llvm/commit/cc1f2a595ead516812a6c50398f0f3480ebe031f
 Index: test/Assembler/debug-variant-discriminator.ll
 --- test/Assembler/debug-variant-discriminator.ll.orig

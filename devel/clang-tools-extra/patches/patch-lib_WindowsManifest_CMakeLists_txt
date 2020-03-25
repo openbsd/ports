@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_WindowsManifest_CMakeLists_txt,v 1.1 2020/03/25 06:16:30 rsadowski Exp $
+
+For upstream:
+bogus dep on all headers in ${Backtrace_INCLUDE_DIRS} ie /usr/local/include.
+
+Index: lib/WindowsManifest/CMakeLists.txt
+--- lib/WindowsManifest/CMakeLists.txt.orig
++++ lib/WindowsManifest/CMakeLists.txt
+@@ -10,7 +10,6 @@ add_llvm_library(LLVMWindowsManifest
+ 
+   ADDITIONAL_HEADER_DIRS
+   ${LLVM_MAIN_INCLUDE_DIR}/llvm/WindowsManifest
+-  ${Backtrace_INCLUDE_DIRS}
+ 
+   LINK_LIBS ${system_libs}
+   )
