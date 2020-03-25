@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/25 15:03:07 tb Exp $
 
-BROKEN-powerpc =	assertion "get_int () == TLS_SCHEMA_V2" failed: file "generate.c", line 2831, function "parse_tlo_file"
+# assertion "get_int () == TLS_SCHEMA_V2" failed: file "generate.c", line 2831, function "parse_tlo_file"
+NOT_FOR_ARCHS =		${BE_ARCHS}
 
 V =			1.3.1
 REVISION =		2
