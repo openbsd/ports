@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2020/02/18 08:06:40 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.37 2020/03/25 22:52:41 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -6446,6 +6446,7 @@ nextcloud/apps/dav/lib/CalDAV/Search/Xml/Request/
 nextcloud/apps/dav/lib/CalDAV/Search/Xml/Request/CalendarSearchReport.php
 nextcloud/apps/dav/lib/CalDAV/WebcalCaching/
 nextcloud/apps/dav/lib/CalDAV/WebcalCaching/Plugin.php
+nextcloud/apps/dav/lib/CalDAV/WebcalCaching/RefreshWebcalService.php
 nextcloud/apps/dav/lib/Capabilities.php
 nextcloud/apps/dav/lib/CardDAV/
 nextcloud/apps/dav/lib/CardDAV/AddressBook.php
@@ -10329,6 +10330,7 @@ nextcloud/apps/nextcloud_announcements/templates/
 nextcloud/apps/nextcloud_announcements/templates/admin.php
 nextcloud/apps/notifications/
 nextcloud/apps/notifications/.babelrc.js
+nextcloud/apps/notifications/.eslintignore
 nextcloud/apps/notifications/COPYING
 nextcloud/apps/notifications/appinfo/
 nextcloud/apps/notifications/appinfo/app.php
@@ -15112,6 +15114,9 @@ nextcloud/core/doc/user/_images/files_page.png
 nextcloud/core/doc/user/_images/files_versioning.png
 nextcloud/core/doc/user/_images/gallery-1.png
 nextcloud/core/doc/user/_images/gallery-2.png
+nextcloud/core/doc/user/_images/gnome-online-accounts.png
+nextcloud/core/doc/user/_images/goa-add-nextcloud-account.png
+nextcloud/core/doc/user/_images/goa-nextcloud-select.png
 nextcloud/core/doc/user/_images/hidden_files.png
 nextcloud/core/doc/user/_images/korganizer_credentials.png
 nextcloud/core/doc/user/_images/korganizer_resource_choice.png
@@ -15168,6 +15173,7 @@ nextcloud/core/doc/user/_sources/pim/calendar.rst.txt
 nextcloud/core/doc/user/_sources/pim/contacts.rst.txt
 nextcloud/core/doc/user/_sources/pim/index.rst.txt
 nextcloud/core/doc/user/_sources/pim/sync_android.rst.txt
+nextcloud/core/doc/user/_sources/pim/sync_gnome.rst.txt
 nextcloud/core/doc/user/_sources/pim/sync_ios.rst.txt
 nextcloud/core/doc/user/_sources/pim/sync_kde.rst.txt
 nextcloud/core/doc/user/_sources/pim/sync_osx.rst.txt
@@ -15288,6 +15294,7 @@ nextcloud/core/doc/user/pim/calendar.html
 nextcloud/core/doc/user/pim/contacts.html
 nextcloud/core/doc/user/pim/index.html
 nextcloud/core/doc/user/pim/sync_android.html
+nextcloud/core/doc/user/pim/sync_gnome.html
 nextcloud/core/doc/user/pim/sync_ios.html
 nextcloud/core/doc/user/pim/sync_kde.html
 nextcloud/core/doc/user/pim/sync_osx.html
