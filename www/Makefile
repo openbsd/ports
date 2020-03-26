@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.953 2020/03/11 09:41:53 espie Exp $
+# $OpenBSD: Makefile,v 1.954 2020/03/26 20:11:08 kmos Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -447,6 +447,7 @@
      SUBDIR += py-mechanize
      SUBDIR += py-meld3
      SUBDIR += py-meld3,python3
+     SUBDIR += py-metallum,python3
      SUBDIR += py-multidict,python3
      SUBDIR += py-ndg-httpsclient
      SUBDIR += py-ndg-httpsclient,python3
