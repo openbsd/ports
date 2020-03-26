@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/02/08 14:50:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/26 13:25:01 ajacoutot Exp $
+@conflict py-s3transfer-*
+@pkgpath net/py-s3transfer
 lib/python${MODPY_VERSION}/site-packages/s3transfer/
 lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

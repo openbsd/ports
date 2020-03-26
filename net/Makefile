@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1186 2020/03/26 13:20:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1187 2020/03/26 13:25:01 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -615,7 +615,6 @@
      SUBDIR += py-pf,python3
      SUBDIR += py-portend
      SUBDIR += py-portend,python3
-     SUBDIR += py-s3transfer
      SUBDIR += py-s3transfer,python3
      SUBDIR += py-simplesoap
      SUBDIR += py-simplesoap,python3
