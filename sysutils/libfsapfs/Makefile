@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/17 21:21:05 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/26 07:28:17 ajacoutot Exp $
 
 COMMENT =	library and tools to access the Apple File System
 
@@ -31,6 +31,8 @@ WRKDIST =       ${WRKDIR}/${PKGNAME}
 MODULES +=	lang/python
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/libbfio \
 		sysutils/libfwnt
