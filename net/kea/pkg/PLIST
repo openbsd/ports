@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/01/30 21:24:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/26 16:33:23 sthen Exp $
 @newgroup _kea:763
 @newuser _kea:763:_kea:daemon:Kea user:/nonexistent:/sbin/nologin
 @mode 0750
@@ -552,6 +552,7 @@ share/doc/kea/examples/netconf/kea-dhcp6-operations/twopools.xml
 share/doc/kea/examples/netconf/kea-dhcp6-operations/twosubnets.xml
 share/doc/kea/examples/netconf/simple-dhcp4.json
 share/doc/kea/examples/netconf/simple-dhcp6.json
+share/doc/kea/platforms.rst
 share/examples/kea/
 share/examples/kea/kea-ctrl-agent.conf
 @sample ${SYSCONFDIR}/kea/kea-ctrl-agent.conf
