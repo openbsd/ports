@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.414 2020/03/12 17:18:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.415 2020/03/26 13:58:18 kmos Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -338,7 +338,6 @@
      SUBDIR += xcowsay
      SUBDIR += xcubes
      SUBDIR += xdino
-     SUBDIR += xevil
      SUBDIR += xgalaga-sdl
      SUBDIR += xgolgo
      SUBDIR += xinvaders
