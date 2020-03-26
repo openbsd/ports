@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/26 19:55:08 jca Exp $
 
 COMMENT=	library for handling Microsoft compression formats
 
 DISTNAME=	libmspack-0.10.1alpha
-
-# XXX packages-specs(7) does not treat "alpha" specially; there is just an
-# alphanumeric comparison so 0.9alpha is "higher than" 0.10alpha.
-EPOCH=		1
+EPOCH=		2
 
 SHARED_LIBS +=  mspack               3.0      # 1.0
 
