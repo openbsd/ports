@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.416 2020/03/18 15:46:43 tb Exp $
+# $OpenBSD: Makefile,v 1.417 2020/03/26 14:52:38 espie Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -72,6 +72,8 @@ CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 SUBST_VARS +=	LOCALBASE X11BASE MOZILLA_PROJECT
 
+# XXX badly formed debug ?
+DWZ = :
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip

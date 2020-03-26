@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.495 2020/03/21 14:08:01 robert Exp $
+# $OpenBSD: Makefile,v 1.496 2020/03/26 14:52:38 espie Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -159,6 +159,9 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 		google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
 		ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
+
+# XXX dwz doesn't work with chromium yet
+DWZ = :
 
 .if ${FLAVOR:Mcomponent}
 DEBUGFLAG=	-g2

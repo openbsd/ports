@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2020/03/10 15:56:47 landry Exp $
+# $OpenBSD: Makefile,v 1.121 2020/03/26 14:52:38 espie Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -7,6 +7,9 @@ MOZILLA_VERSION =	68.6.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+
+# XXX badly formed debug in libxul ?
+DWZ = :
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
