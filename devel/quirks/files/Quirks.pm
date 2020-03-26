@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.917 2020/03/26 13:25:36 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.918 2020/03/26 13:59:46 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1455,6 +1455,7 @@ my $obsolete_reason = {
 	'rpm' => 0,
 	'oggconvert' => 3,
 	'radiotray' => 3,
+	'xevil' => 0,
 };
 
 # reasons for obsolete packages
