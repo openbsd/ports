@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.429 2020/03/21 13:50:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.430 2020/03/26 13:17:00 ajacoutot Exp $
 
 # !!! do not update blindly, these ports require a specific version:
 # net/py-boto3
@@ -6,7 +6,7 @@
 
 COMMENT=		low-level interface to Amazon Web Services
 
-MODPY_EGG_VERSION=	1.15.26
+MODPY_EGG_VERSION=	1.15.29
 DISTNAME=		botocore-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -30,7 +30,7 @@ RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR=			python3
 
 # XXX py-behave, unported yet
 TEST_DEPENDS=		${BUILD_PKGPATH} \
