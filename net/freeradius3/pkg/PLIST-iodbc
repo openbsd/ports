@@ -1,12 +1,24 @@
-@comment $OpenBSD: PLIST-iodbc,v 1.4 2019/11/19 12:19:39 sthen Exp $
+@comment $OpenBSD: PLIST-iodbc,v 1.5 2020/03/26 09:47:30 sthen Exp $
 @option is-branch
 @conflict freeradius-iodbc-*
 @so lib/freeradius/rlm_sql_iodbc.so
 @mode 750
 @group _freeradius
+share/examples/freeradius/mods-config/sql/ippool/mssql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mssql/
+@mode 640
+share/examples/freeradius/mods-config/sql/ippool/mssql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mssql/procedure.sql
+share/examples/freeradius/mods-config/sql/ippool/mssql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mssql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool/mssql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mssql/schema.sql
+@mode 750
 share/examples/freeradius/mods-config/sql/main/mssql/
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/mssql/
 @mode 640
+share/examples/freeradius/mods-config/sql/main/mssql/process-radacct.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mssql/process-radacct.sql
 share/examples/freeradius/mods-config/sql/main/mssql/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/mssql/queries.conf
 share/examples/freeradius/mods-config/sql/main/mssql/schema.sql

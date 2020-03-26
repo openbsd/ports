@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2020/01/30 22:37:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2020/03/26 09:47:30 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -588,6 +588,10 @@ share/examples/freeradius/mods-config/sql/main/
 @comment @sample ${FREERADIUS_ETC}/mods-config/sql/main/mongo/queries.conf
 share/examples/freeradius/mods-config/sql/main/sqlite/
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/
+share/examples/freeradius/mods-config/sql/main/sqlite/process-radacct-refresh.sh
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/process-radacct-refresh.sh
+share/examples/freeradius/mods-config/sql/main/sqlite/process-radacct-schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/process-radacct-schema.sql
 share/examples/freeradius/mods-config/sql/main/sqlite/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/queries.conf
 share/examples/freeradius/mods-config/sql/main/sqlite/schema.sql
@@ -847,6 +851,7 @@ share/freeradius/dictionary.motorola
 share/freeradius/dictionary.motorola.illegal
 share/freeradius/dictionary.motorola.wimax
 share/freeradius/dictionary.navini
+share/freeradius/dictionary.net
 share/freeradius/dictionary.netscreen
 share/freeradius/dictionary.networkphysics
 share/freeradius/dictionary.nexans
@@ -861,12 +866,14 @@ share/freeradius/dictionary.paloalto
 share/freeradius/dictionary.patton
 share/freeradius/dictionary.perle
 share/freeradius/dictionary.pfsense
+share/freeradius/dictionary.pica8
 share/freeradius/dictionary.propel
 share/freeradius/dictionary.prosoft
 share/freeradius/dictionary.proxim
 share/freeradius/dictionary.purewave
 share/freeradius/dictionary.quiconnect
 share/freeradius/dictionary.quintum
+share/freeradius/dictionary.rcntec
 share/freeradius/dictionary.redcreek
 share/freeradius/dictionary.rfc2865
 share/freeradius/dictionary.rfc2866
@@ -935,6 +942,7 @@ share/freeradius/dictionary.usr
 share/freeradius/dictionary.usr.illegal
 share/freeradius/dictionary.utstarcom
 share/freeradius/dictionary.valemount
+share/freeradius/dictionary.vasexperts
 share/freeradius/dictionary.verizon
 share/freeradius/dictionary.versanet
 share/freeradius/dictionary.vqp

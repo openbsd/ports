@@ -1,19 +1,9 @@
-$OpenBSD: patch-src_main_tls_c,v 1.8 2019/11/19 13:03:49 sthen Exp $
+$OpenBSD: patch-src_main_tls_c,v 1.9 2020/03/26 09:47:30 sthen Exp $
 
 Index: src/main/tls.c
 --- src/main/tls.c.orig
 +++ src/main/tls.c
-@@ -1565,7 +1565,8 @@ done:
- 	return 0;
- }
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
-+    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2080000fL)
- static SSL_SESSION *cbtls_get_session(SSL *ssl, unsigned char *data, int len, int *copy)
- #else
- static SSL_SESSION *cbtls_get_session(SSL *ssl, const unsigned char *data, int len, int *copy)
-@@ -2120,7 +2121,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -2122,7 +2122,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  	char		cn_str[1024];
  	char		buf[64];
  	X509		*client_cert;
@@ -23,7 +13,7 @@ Index: src/main/tls.c
  	const STACK_OF(X509_EXTENSION) *ext_list;
  #else
  	STACK_OF(X509_EXTENSION) *ext_list;
-@@ -2319,7 +2321,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -2334,7 +2335,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  	}
  
  	if (lookup == 0) {
@@ -33,7 +23,7 @@ Index: src/main/tls.c
  		ext_list = X509_get0_extensions(client_cert);
  #else
  		X509_CINF	*client_inf;
-@@ -3182,7 +3185,7 @@ post_ca:
+@@ -3222,7 +3224,7 @@ post_ca:
  #ifdef SSL_OP_NO_TLSv1
  	if (conf->disable_tlsv1) {
  		ctx_options |= SSL_OP_NO_TLSv1;
@@ -42,7 +32,7 @@ Index: src/main/tls.c
  		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1");
  #endif
  	}
-@@ -3192,7 +3195,7 @@ post_ca:
+@@ -3232,7 +3234,7 @@ post_ca:
  #ifdef SSL_OP_NO_TLSv1_1
  	if (conf->disable_tlsv1_1) {
  		ctx_options |= SSL_OP_NO_TLSv1_1;
@@ -51,7 +41,7 @@ Index: src/main/tls.c
  		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1_2");
  #endif
  	}
-@@ -3203,7 +3206,7 @@ post_ca:
+@@ -3243,7 +3245,7 @@ post_ca:
  
  	if (conf->disable_tlsv1_2) {
  		ctx_options |= SSL_OP_NO_TLSv1_2;
@@ -60,20 +50,3 @@ Index: src/main/tls.c
  		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1_2");
  #endif
  	}
-@@ -3394,14 +3397,14 @@ post_ca:
- 		 */
- 		SSL_CTX_sess_set_cache_size(ctx, conf->session_cache_size);
- 
--#if OPENSSL_VERSION_NUMBER >= 0x10101000L
-+#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
- 		SSL_CTX_set_num_tickets(ctx, 1);
- #endif
- 
- 	} else {
- 		SSL_CTX_set_session_cache_mode(ctx, SSL_SESS_CACHE_OFF);
- 
--#if OPENSSL_VERSION_NUMBER >= 0x10101000L
-+#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
- 		/*
- 		 *	This controls the number of stateful or stateless tickets
- 		 *	generated with TLS 1.3.  In OpenSSL 1.1.1 it's also

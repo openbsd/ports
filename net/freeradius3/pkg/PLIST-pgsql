@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.7 2019/11/19 12:19:39 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.8 2020/03/26 09:47:30 sthen Exp $
 @option is-branch
 @conflict freeradius-pgsql-*
 @so lib/freeradius/rlm_sql_postgresql.so
@@ -43,6 +43,8 @@ share/examples/freeradius/mods-config/sql/main/postgresql/extras/cisco_h323_db_s
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/extras/cisco_h323_db_schema.sql
 share/examples/freeradius/mods-config/sql/main/postgresql/extras/voip-postpaid.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/extras/voip-postpaid.conf
+share/examples/freeradius/mods-config/sql/main/postgresql/process-radacct.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/process-radacct.sql
 share/examples/freeradius/mods-config/sql/main/postgresql/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/queries.conf
 share/examples/freeradius/mods-config/sql/main/postgresql/schema.sql
