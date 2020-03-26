@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2019/09/15 10:15:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2020/03/26 08:30:27 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
 COMMENT=		callback framework for C++
 
-GNOME_VERSION=		2.10.2
+GNOME_VERSION=		2.10.3
 GNOME_PROJECT=		libsigc++
 
 CATEGORIES=		devel
@@ -32,5 +32,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		M4='m4 -g' \
 			ac_cv_path_DOT= \
 			ac_cv_path_DOXYGEN=
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
