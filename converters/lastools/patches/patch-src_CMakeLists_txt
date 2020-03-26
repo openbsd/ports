@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2020/03/26 08:23:53 landry Exp $
+
+remove 64 suffix on binaries
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -31,7 +31,5 @@ endforeach(TARGET)
+ 
+ foreach(TARGET ${ALL_TARGETS})
+ 	target_link_libraries(${TARGET} LASlib)
+-	set_target_properties(${TARGET} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../bin64)
+-	set_target_properties(${TARGET} PROPERTIES OUTPUT_NAME ${TARGET}64)
+ 	install(TARGETS ${TARGET} RUNTIME DESTINATION bin)
+ endforeach(TARGET)

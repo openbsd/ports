@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/20 16:44:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/26 08:23:53 landry Exp $
 
 COMMENT =	tools for LiDAR processing
-DISTNAME =	lastools-0.20181229
+DISTNAME =	lastools-0.20200310
 GH_ACCOUNT =	LAStools
 GH_PROJECT =	LAStools
-GH_COMMIT =	384056a5ba27edba629da1328cc7ac5020c3d9d4
+GH_COMMIT =	978d1709a4e15a84deb09f65475554f56172e831
 
 CATEGORIES =	converters textproc devel
 
@@ -13,33 +13,18 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
+MODULES =	devel/cmake
 #c++11
-COMPILER =		base-clang ports-gcc base-gcc
-
-MAKE_FLAGS =	COMPILER="${CXX}" \
-		LINKER="${CXX}"
-# building with ports-gcc generates the following error: 
-# warning.h:32:2: error: #error This file requires compiler
-# and library support for the ISO C++ 2011 standard.
-CXXFLAGS +=	-std=c++11
-
-post-patch:
-	find ${WRKSRC} -name Makefile -exec sed -i 's/-O3/${CXXFLAGS}/' {} +
+COMPILER =	base-clang ports-gcc
 
 PROGS =	laszip lasinfo lasprecision las2txt txt2las las2las lasdiff lasmerge lasindex
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/LASlib/src/liblas.a ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/LASlib/inc/*.hpp ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/LASzip/src/{mydefs,laspoint,laszip,lasquantizer,lasattributer,laszip_decompress_selective_v3,bytestream{in,out}_array}.hpp \
-		${PREFIX}/include/
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lastools/
 .for f in ${PROGS}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/${f}_README.txt ${PREFIX}/share/doc/lastools/
 .endfor
 
 do-test:
-	${WRKSRC}/bin/lasinfo ${WRKSRC}/data/test.laz
+	${WRKBUILD}/src/lasinfo ${WRKSRC}/data/test.laz
 
 .include <bsd.port.mk>
