@@ -1,12 +1,13 @@
-$OpenBSD: patch-config_h_in,v 1.8 2017/01/18 21:28:35 naddy Exp $
---- config.h.in.orig	Fri Dec 30 12:27:05 2016
-+++ config.h.in	Wed Jan 18 21:21:16 2017
-@@ -365,7 +365,11 @@
+$OpenBSD: patch-config_h_in,v 1.9 2020/03/26 20:44:51 naddy Exp $
+Index: config.h.in
+--- config.h.in.orig
++++ config.h.in
+@@ -377,7 +377,11 @@
  
  /* Define to 1 if the system supports fast unaligned access to 16-bit and
     32-bit integers. */
 -#undef TUKLIB_FAST_UNALIGNED_ACCESS
-+#include <sys/types.h>
++#include <endian.h>
 +#if !defined(__STRICT_ALIGNMENT)
 +#define \
 +    TUKLIB_FAST_UNALIGNED_ACCESS 1

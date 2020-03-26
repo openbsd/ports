@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/01/12 22:07:17 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/03/26 20:44:51 naddy Exp $
 @conflict lzma-*
 @pkgpath archivers/lzma
 bin/lzcat
@@ -40,7 +40,7 @@ include/lzma/lzma12.h
 include/lzma/stream_flags.h
 include/lzma/version.h
 include/lzma/vli.h
-lib/liblzma.a
+@static-lib lib/liblzma.a
 lib/liblzma.la
 @lib lib/liblzma.so.${LIBlzma_VERSION}
 lib/pkgconfig/liblzma.pc
