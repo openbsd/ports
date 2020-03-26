@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/03 20:09:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/26 20:51:02 naddy Exp $
 
 COMMENT =		clone of Doubleback, an intruder circling game
 
 DISTNAME =		quadrupleback-0.1.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
-HOMEPAGE =		https://perso.b2b2c.ca/~sarrazip/dev/quadrupleback.html
+HOMEPAGE =		http://perso.b2b2c.ca/~sarrazip/dev/quadrupleback.html
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -18,7 +18,7 @@ WANTLIB += usbhid vorbis vorbisfile webp z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://perso.b2b2c.ca/~sarrazip/dev/
+MASTER_SITES =		http://perso.b2b2c.ca/~sarrazip/dev/
 
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		converters/libiconv \

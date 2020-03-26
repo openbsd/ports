@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.21 2020/03/03 20:09:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/26 20:51:02 naddy Exp $
 
 COMMENT=	clone of the classic Frog Bog game
 
 DISTNAME =	batrachians-0.1.7
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games
 
-HOMEPAGE=	https://perso.b2b2c.ca/~sarrazip/dev/batrachians.html
+HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/batrachians.html
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://perso.b2b2c.ca/~sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
 
 WANTLIB=	SDL SDL_image SDL_mixer c m pthread ${COMPILER_LIBCXX} flatzebra-0.1>=1
 

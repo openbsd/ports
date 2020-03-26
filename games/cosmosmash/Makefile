@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.33 2020/03/03 20:09:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.34 2020/03/26 20:51:02 naddy Exp $
 
 COMMENT=	astrosmash clone for X
 
 DISTNAME =	cosmosmash-1.4.8
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	games
 
-HOMEPAGE=	https://perso.b2b2c.ca/~sarrazip/dev/cosmosmash.html
+HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/cosmosmash.html
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -18,7 +18,7 @@ WANTLIB += vorbis vorbisfile webp z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://perso.b2b2c.ca/~sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/flatzebra>=0.1.7
