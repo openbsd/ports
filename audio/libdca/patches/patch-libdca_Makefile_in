@@ -1,4 +1,7 @@
-$OpenBSD: patch-libdca_Makefile_in,v 1.3 2018/06/23 16:32:24 ajacoutot Exp $
+$OpenBSD: patch-libdca_Makefile_in,v 1.4 2020/03/27 07:33:02 ajacoutot Exp $
+
+Link the installed libdts to the installed libdca.
+
 Index: libdca/Makefile.in
 --- libdca/Makefile.in.orig
 +++ libdca/Makefile.in
@@ -11,11 +14,12 @@ Index: libdca/Makefile.in
  libdca_la_LIBADD = $(LIBDCA_LIBS)
  pkgconfigdir = $(libdir)/pkgconfig
  pkgconfig_DATA = libdca.pc libdts.pc
-@@ -625,7 +625,6 @@ install-dvi-am:
+@@ -689,7 +689,7 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-pkgco
  
- install-exec-am: install-libLTLIBRARIES
- 	@$(NORMAL_INSTALL)
--	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
- install-html: install-html-am
  
- install-html-am:
+ install-exec-hook:
+-	ln -sf "libdca.a" "$(DESTDIR)$(libdir)/libdts.a"
++	$(LN_S)f "$(libdir)/libdca.a" "$(DESTDIR)$(libdir)/libdts.a"
+ 
+ uninstall-hook:
+ 	unlink "$(DESTDIR)$(libdir)/libdts.a"

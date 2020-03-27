@@ -1,6 +1,8 @@
-$OpenBSD: patch-libao_audio_out_c,v 1.1 2014/10/26 15:23:09 ratchov Exp $
---- libao/audio_out.c.orig	Fri Oct 24 12:21:31 2014
-+++ libao/audio_out.c	Fri Oct 24 12:22:02 2014
+$OpenBSD: patch-libao_audio_out_c,v 1.2 2020/03/27 07:33:02 ajacoutot Exp $
+
+Index: libao/audio_out.c
+--- libao/audio_out.c.orig
++++ libao/audio_out.c
 @@ -34,6 +34,10 @@ extern ao_open_t ao_oss_open;
  extern ao_open_t ao_ossdolby_open;
  extern ao_open_t ao_oss4_open;

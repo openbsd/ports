@@ -1,4 +1,5 @@
-$OpenBSD: patch-libao_Makefile_in,v 1.2 2018/06/23 16:32:24 ajacoutot Exp $
+$OpenBSD: patch-libao_Makefile_in,v 1.3 2020/03/27 07:33:02 ajacoutot Exp $
+
 Index: libao/Makefile.in
 --- libao/Makefile.in.orig
 +++ libao/Makefile.in
