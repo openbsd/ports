@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/24 21:02:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/27 05:07:27 rsadowski Exp $
 
 COMMENT =	scanning application for KDE
 
-VERSION =	2.1.0
+VERSION =	2.1.0.1
 DISTNAME =	skanlite-${VERSION}
 
 CATEGORIES =	graphics
@@ -21,7 +21,7 @@ WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += c m png
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/skanlite/${VERSION:R}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/skanlite/2.1/}
 
 MODULES =	devel/kf5
 
