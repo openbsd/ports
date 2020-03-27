@@ -1,0 +1,17 @@
+$OpenBSD: patch-hashtab_c,v 1.1 2020/03/27 13:45:25 jca Exp $
+
+More portable endianness check
+https://www.austingroupbugs.net/view.php?id=162#c665
+
+Index: hashtab.c
+--- hashtab.c.orig
++++ hashtab.c
+@@ -38,7 +38,7 @@ Boston, MA 02110-1301, USA.  */
+ #include "hashtab.h"
+ 
+ #include <endian.h>
+-#if __BYTE_ORDER == __BIG_ENDIAN
++#if BYTE_ORDER == BIG_ENDIAN
+ # define WORDS_BIGENDIAN 1
+ #endif
+ 

@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/24 17:33:43 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/27 13:45:25 jca Exp $
 
 COMMENT =	DWARF optimization and duplicate removal tool
 DISTNAME =	dwz-0.13
+REVISION =	0
+
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/dwz/

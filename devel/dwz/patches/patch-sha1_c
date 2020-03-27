@@ -1,0 +1,17 @@
+$OpenBSD: patch-sha1_c,v 1.1 2020/03/27 13:45:25 jca Exp $
+
+More portable endianness check
+https://www.austingroupbugs.net/view.php?id=162#c665
+
+Index: sha1.c
+--- sha1.c.orig
++++ sha1.c
+@@ -29,7 +29,7 @@
+ #include <string.h>
+ #include <endian.h>
+ 
+-#if __BYTE_ORDER == __BIG_ENDIAN
++#if BYTE_ORDER == BIG_ENDIAN
+ # define SWAP(n) (n)
+ #else
+ # define SWAP(n) \
