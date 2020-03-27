@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2017/11/11 20:21:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/03/27 07:38:36 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -59,7 +59,7 @@ include/libgsf-1/gsf/gsf-timestamp.h
 include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/girepository-1.0/Gsf-1.typelib
-lib/libgsf-1.a
+@static-lib lib/libgsf-1.a
 lib/libgsf-1.la
 @lib lib/libgsf-1.so.${LIBgsf-1_VERSION}
 lib/pkgconfig/libgsf-1.pc
@@ -82,6 +82,7 @@ share/gtk-doc/html/gsf/gsf-Outfile-writing-structed-files.html
 share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html
 share/gtk-doc/html/gsf/gsf-Reading-and-Writing-from-local-files-and-directories.html
 share/gtk-doc/html/gsf/gsf-Text.html
+share/gtk-doc/html/gsf/gsf-Utilities.html
 share/gtk-doc/html/gsf/gsf-XML-and-libxml.html
 share/gtk-doc/html/gsf/gsf-Zip.html
 share/gtk-doc/html/gsf/gsf-blobs.html
@@ -90,7 +91,6 @@ share/gtk-doc/html/gsf/gsf-index.html
 share/gtk-doc/html/gsf/gsf-memory.html
 share/gtk-doc/html/gsf/gsf-metadata.html
 share/gtk-doc/html/gsf/gsf-users.html
-share/gtk-doc/html/gsf/gsf-utils.html
 share/gtk-doc/html/gsf/gsf.devhelp2
 share/gtk-doc/html/gsf/history.html
 share/gtk-doc/html/gsf/home.png

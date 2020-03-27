@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.98 2019/07/12 20:44:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2020/03/27 07:38:36 ajacoutot Exp $
 
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.46
+GNOME_VERSION=		1.14.47
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=  gsf-1                114.12   # 114.45
+SHARED_LIBS +=  gsf-1                114.12   # 114.47
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -27,5 +27,7 @@ LIB_DEPENDS=		archivers/bzip2 \
 			textproc/libxml
 
 CONFIGURE_STYLE=	gnu
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
