@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2019/03/19 20:12:10 cwen Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2020/03/27 22:28:35 sebastia Exp $
 
 Don't compress manpages, also install(1) has no -v option
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -104,16 +104,18 @@ translations_lrelease:	translations_lupdate $(translat
+@@ -109,16 +109,15 @@ translations_lrelease:	translations_lupdate $(translat
  
  install:	$(target) translations_lrelease $(name).1
  	@$(MAKE) INSTALL_ROOT=$(DESTDIR) -f $(name).mak install
@@ -13,20 +13,17 @@ Index: Makefile.in
 -	@install -d -v -m 0755 $(DESTDIR)$(mandir)/man1
 -	@install -v -m 0644 $(translations_targets) $(DESTDIR)$(translations_dir)
 -	@install -v -m 0644 $(name)*.1 $(DESTDIR)$(mandir)/man1
--	@gzip -vf $(DESTDIR)$(mandir)/man1/$(name)*.1
+-	@gzip -nvf $(DESTDIR)$(mandir)/man1/$(name)*.1
 +	@install -d -m 0755 $(DESTDIR)$(translations_dir)
 +	@install -d -m 0755 $(DESTDIR)$(mandir)/man1
-+	@install -d -m 0755 $(DESTDIR)$(mandir)/fr/man1
 +	@install -m 0644 $(translations_targets) $(DESTDIR)$(translations_dir)
-+	@install -m 0644 $(name).1 $(DESTDIR)$(mandir)/man1
-+	@install -m 0644 $(name).fr.1 $(DESTDIR)$(mandir)/fr/man1/$(name).1
++	@install -m 0644 $(name)*.1 $(DESTDIR)$(mandir)/man1
  
  uninstall:	$(DESTDIR)$(prefix)/bin/$(name)
  	@$(MAKE) INSTALL_ROOT=$(DESTDIR) -f $(name).mak uninstall
  	@rm -rvf $(DESTDIR)$(translations_dir)
 -	@rm -vf $(DESTDIR)$(mandir)/man1/$(name)*.1.gz
-+	@rm -vf $(DESTDIR)$(mandir)/man1/$(name).1
-+	@rm -vf $(DESTDIR)$(mandir)/fr/man1/$(name).1
++	@rm -vf $(DESTDIR)$(mandir)/man1/$(name)*.1
  
  
  clean:	$(name).mak

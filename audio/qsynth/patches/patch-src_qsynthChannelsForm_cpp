@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_qsynthChannelsForm_cpp,v 1.1 2019/03/19 20:12:10 cwen Exp $
+$OpenBSD: patch-src_qsynthChannelsForm_cpp,v 1.2 2020/03/27 22:28:35 sebastia Exp $
 
 Index: src/qsynthChannelsForm.cpp
 --- src/qsynthChannelsForm.cpp.orig
 +++ src/qsynthChannelsForm.cpp
-@@ -290,10 +290,12 @@ void qsynthChannelsForm::updateChannel ( int iChan )
+@@ -281,10 +281,12 @@ void qsynthChannelsForm::updateChannel ( int iChan )
  		pItem->setText(QSYNTH_CHANNELS_PROG,
  			QString::number(iProg));
  		pItem->setText(QSYNTH_CHANNELS_NAME, sName);
