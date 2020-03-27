@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/27 17:31:26 sthen Exp $
 
 COMMENT=		parse regular expressions
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		PPIx-Regexp-0.063
+DISTNAME =		PPIx-Regexp-0.070
 CATEGORIES=		textproc
 
 # perl
