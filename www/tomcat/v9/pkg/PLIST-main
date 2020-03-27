@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2019/08/08 20:59:23 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/03/27 15:59:39 sthen Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
@@ -95,10 +95,11 @@ tomcat/lib/
 tomcat/lib/annotations-api.jar
 tomcat/lib/catalina-ant.jar
 tomcat/lib/catalina-ha.jar
+tomcat/lib/catalina-ssi.jar
 tomcat/lib/catalina-storeconfig.jar
 tomcat/lib/catalina-tribes.jar
 tomcat/lib/catalina.jar
-tomcat/lib/ecj-4.12.jar
+tomcat/lib/ecj-4.13.jar
 tomcat/lib/el-api.jar
 tomcat/lib/jasper-el.jar
 tomcat/lib/jasper.jar
