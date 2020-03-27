@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2020/02/10 15:07:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/27 17:39:04 sthen Exp $
+
+FIX_EXTRACT_PERMISSIONS = Yes
 
 COMMENT =	Carp for clan of modules
 
