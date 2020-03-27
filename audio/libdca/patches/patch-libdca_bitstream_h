@@ -1,0 +1,20 @@
+$OpenBSD: patch-libdca_bitstream_h,v 1.1 2020/03/27 08:50:31 ajacoutot Exp $
+
+bitstream: swab: Fix potentially undefined shifts.
+
+Index: libdca/bitstream.h
+--- libdca/bitstream.h.orig
++++ libdca/bitstream.h
+@@ -30,8 +30,10 @@
+ #else
+ 
+ #   define swab32(x)\
+-((((uint8_t*)&x)[0] << 24) | (((uint8_t*)&x)[1] << 16) |  \
+- (((uint8_t*)&x)[2] << 8)  | (((uint8_t*)&x)[3]))
++    (((uint32_t)(((uint8_t*)&x)[0]) << 24u) | \
++     ((uint32_t)(((uint8_t*)&x)[1]) << 16u)  | \
++     ((uint32_t)(((uint8_t*)&x)[2]) << 8u)   | \
++     ((uint32_t)(((uint8_t*)&x)[3])))
+ 
+ #endif
+ 

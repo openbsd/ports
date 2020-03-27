@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/27 07:33:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/27 08:50:31 ajacoutot Exp $
 
 COMMENT=		free DTS Coherent Acoustics decoder
 
 V=			0.0.6
 DISTNAME=		libdca-${V}
-REVISION=		1
+REVISION=		2
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		audio
 MASTER_SITES=		https://download.videolan.org/pub/videolan/libdca/${V}/

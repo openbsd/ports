@@ -1,0 +1,16 @@
+$OpenBSD: patch-libdca_downmix_c,v 1.1 2020/03/27 08:50:31 ajacoutot Exp $
+
+downmix: Reject out of bounds parameter.
+
+Index: libdca/downmix.c
+--- libdca/downmix.c.orig
++++ libdca/downmix.c
+@@ -86,7 +86,7 @@ int dca_downmix_init (int input, int flags, level_t * 
+ 
+     output = flags & DCA_CHANNEL_MASK;
+ 
+-    if (output > DCA_CHANNEL_MAX)
++    if (output > DCA_CHANNEL_MAX || input > 9)
+ 	return -1;
+ 
+     output = table[output][input];
