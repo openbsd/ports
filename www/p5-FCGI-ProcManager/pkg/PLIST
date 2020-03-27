@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1 2006/12/17 09:25:11 dassow Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/27 17:34:13 sthen Exp $
 ${P5SITE}/FCGI/
+${P5SITE}/FCGI/ProcManager/
 ${P5SITE}/FCGI/ProcManager.pm
+${P5SITE}/FCGI/ProcManager/Constrained.pm
 @man man/man3p/FCGI::ProcManager.3p
+@man man/man3p/FCGI::ProcManager::Constrained.3p
