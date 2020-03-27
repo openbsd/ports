@@ -1,11 +1,18 @@
-$OpenBSD: patch-plugins_sftp_mounter_cpp,v 1.1.1.1 2019/08/20 08:48:30 feinerer Exp $
+$OpenBSD: patch-plugins_sftp_mounter_cpp,v 1.2 2020/03/27 21:27:09 feinerer Exp $
 
+Use doas(1) so that normal users can use sshfs(1).
+
+On OpenBSD sshfs(1) does not seem to support the "-o password_stdin" option.
+Workaround suggested in FreeBSD:
 https://svnweb.freebsd.org/ports/head/deskutils/kdeconnect-kde/files/patch-plugins_sftp_mounter.cpp?view=markup
+
+Cope with diffie-hellman-group14-sha1 removal in OpenSSH 8.2:
+https://git.archlinux.org/svntogit/packages.git/plain/trunk/kdeconnect-openssh-8.2.patch?h=packages/kdeconnect
 
 Index: plugins/sftp/mounter.cpp
 --- plugins/sftp/mounter.cpp.orig
 +++ plugins/sftp/mounter.cpp
-@@ -108,7 +108,7 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+@@ -113,7 +113,7 @@ void Mounter::onPackageReceived(const NetworkPacket& n
  
      QDir().mkpath(m_mountPoint);
  
@@ -13,8 +20,8 @@ Index: plugins/sftp/mounter.cpp
 +    const QString program = QStringLiteral("/usr/bin/doas");
  
      QString path;
-     if (np.has(QStringLiteral("multiPaths"))) path = '/';
-@@ -122,6 +122,7 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+     if (np.has(QStringLiteral("multiPaths"))) path = QStringLiteral("/");
+@@ -127,6 +127,7 @@ void Mounter::onPackageReceived(const NetworkPacket& n
      QString ip = addr.toString();
  
      const QStringList arguments = QStringList()
@@ -22,18 +29,19 @@ Index: plugins/sftp/mounter.cpp
          << QStringLiteral("%1@%2:%3").arg(
              np.get<QString>(QStringLiteral("user")),
              ip,
-@@ -139,7 +140,9 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+@@ -144,7 +145,10 @@ void Mounter::onPackageReceived(const NetworkPacket& n
          << QStringLiteral("-o") << QStringLiteral("gid=") + QString::number(getgid())
          << QStringLiteral("-o") << QStringLiteral("reconnect")
          << QStringLiteral("-o") << QStringLiteral("ServerAliveInterval=30")
 -        << QStringLiteral("-o") << QStringLiteral("password_stdin")
++        << QStringLiteral("-o") << QStringLiteral("KexAlgorithms=+diffie-hellman-group14-sha1")
 +        << QStringLiteral("-o") << QStringLiteral("allow_other")
 +        << QStringLiteral("-o") << QStringLiteral("umask=0022")
-+        << QStringLiteral("-o") << QStringLiteral("ssh_command=${LOCALBASE}/bin/sshpass -p ") + np.get<QString>("password").toLatin1() + (" /usr/bin/ssh")
++        << QStringLiteral("-o") << QStringLiteral("ssh_command=${LOCALBASE}/bin/sshpass -p %1 %2").arg(np.get<QString>(QStringLiteral("password")), QStringLiteral("/usr/bin/ssh"))
          ;
  
      m_proc->setProgram(program, arguments);
-@@ -148,8 +151,6 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+@@ -153,8 +157,6 @@ void Mounter::onPackageReceived(const NetworkPacket& n
      m_proc->start();
  
      //qCDebug(KDECONNECT_PLUGIN_SFTP) << "Passing password: " << np.get<QString>("password").toLatin1();

@@ -1,0 +1,17 @@
+$OpenBSD: patch-core_backends_lan_compositeuploadjob_cpp,v 1.1 2020/03/27 21:27:09 feinerer Exp $
+
+OpenBSD does not support IPv4 mapped IPv6 addresses, so QHostAddress::Any
+listens only on IPv6. Use the IPv4 any-address instead.
+
+Index: core/backends/lan/compositeuploadjob.cpp
+--- core/backends/lan/compositeuploadjob.cpp.orig
++++ core/backends/lan/compositeuploadjob.cpp
+@@ -85,7 +85,7 @@ void CompositeUploadJob::start() {
+ bool CompositeUploadJob::startListening()
+ {
+     m_port = MIN_PORT;
+-    while (!m_server->listen(QHostAddress::Any, m_port)) {
++    while (!m_server->listen(QHostAddress::AnyIPv4, m_port)) {
+         m_port++;
+         if (m_port > MAX_PORT) { //No ports available?
+             qCWarning(KDECONNECT_CORE) << "CompositeUploadJob::startListening() - Error opening a port in range" << MIN_PORT << "-" << MAX_PORT;

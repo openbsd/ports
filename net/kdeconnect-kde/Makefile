@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/27 21:27:08 feinerer Exp $
 
 COMMENT =	KDE app that allows your devices to communicate
 
-V =		1.3.5
+V =		1.4
 DISTNAME =	kdeconnect-kde-${V}
-REVISION =	0
 
-SHARED_LIBS +=	kdeconnectcore		0.0 # 1.3
-SHARED_LIBS +=	kdeconnectinterfaces	0.0 # 1.3
-SHARED_LIBS +=	kdeconnectpluginkcm	0.0 # 1.3
+SHARED_LIBS +=	kdeconnectcore		1.0 # 1.4
+SHARED_LIBS +=	kdeconnectinterfaces	1.0 # 1.4
+SHARED_LIBS +=	kdeconnectsmshelper	0.0 # 1.4
+SHARED_LIBS +=	kdeconnectpluginkcm	0.0 # 1.4
 
 CATEGORIES =	net
 
@@ -23,17 +23,21 @@ WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DBusAddons KF5I18n
 WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications KF5People
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Widgets
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Quick Qt5Qml Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext Xtst c fakekey m qca-qt5
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdeconnect/${V}/}
 
-MODULES =	devel/kf5
+MODULES =	devel/kf5 \
+		lang/python
 
-BUILD_DEPENDS =	devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf5/kirigami2
 RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf5/breeze-icons \
+		devel/kf5/kirigami2 \
 		sysutils/sshfs-fuse \
 		sysutils/sshpass \
 		x11/gtk+3,-guic
@@ -52,6 +56,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knotifications \
+		devel/kf5/kpeople \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
@@ -61,7 +66,13 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/qt5/qtdeclarative,-main \
 		x11/qt5/qtx11extras
 
+MODPY_ADJ_FILES =	nautilus-extension/kdeconnect-share.py
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/sftp/mounter.cpp
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/nautilus-python/extensions
 
 .include <bsd.port.mk>
