@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/10 12:57:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/27 20:08:40 kmos Exp $
 
 COMMENT=		service for interacting with DMRs
 
 GH_PROJECT=		dleyna-renderer
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	dleyna-renderer-1.0       0.0 # 1.3
 
