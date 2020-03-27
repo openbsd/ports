@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.59 2020/01/26 11:14:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2020/03/27 08:08:31 ajacoutot Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
-DISTNAME=		libpst-0.6.74
+DISTNAME=		libpst-0.6.75
 
-SHARED_LIBS +=  pst                  3.0      # 5.16
+SHARED_LIBS +=  pst                  3.0      # 5.17
 
 PKGNAME-main=		${DISTNAME}
-PKGNAME-python=		py-${DISTNAME}
+PKGNAME-python=		py${MODPY_MAJOR_VERSION}-${DISTNAME}
 
 CATEGORIES=		converters mail
 
@@ -21,24 +21,25 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-cWANTLIB += m pthread z ${COMPILER_LIBCXX}
+WANTLIB += m pthread z ${COMPILER_LIBCXX}
 
-WANTLIB-main += ${cWANTLIB} iconv intl 
+WANTLIB-main += ${WANTLIB} iconv intl 
 WANTLIB-main += bz2 c expat ffi fontconfig freetype gd gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 gsf-1 jpeg pcre png zstd
 WANTLIB-main += tiff webp xml2 z m pthread ${COMPILER_LIBCXX} lzma
 
-WANTLIB-python += ${cWANTLIB} iconv
-WANTLIB-python += pst boost_python
+WANTLIB-python += ${WANTLIB} iconv
+WANTLIB-python += pst boost_python3-mt
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${HOMEPAGE}/packages/ \
-			https://distfiles.sigtrap.nl/
+MASTER_SITES=		http://www.five-ten-sg.com/libpst/packages/
 
 MULTI_PACKAGES=		-main -python
 
 MODULES=		lang/python
+
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		graphics/ImageMagick
 RUN_DEPENDS-main=	graphics/ImageMagick
@@ -51,12 +52,12 @@ LIB_DEPENDS-python=	${BASE_PKGPATH} \
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-pst-debug \
+CONFIGURE_ARGS=		--enable-pst-debug \
 			--disable-static-tools \
 			--enable-libpst-shared
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${MODPY_INCDIR}" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON_LDFLAGS="-L${LOCALBASE}/lib -lpython${MODPY_VERSION} -lm" \
+			PYTHON_LDFLAGS="$$(pkg-config --libs python${MODPY_MAJOR_VERSION})" \
 			PYTHON_BIN="python${MODPY_VERSION}"
 
 # XXX eats all memory
@@ -66,11 +67,8 @@ CFLAGS+=	-O0
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-FAKE_FLAGS+=		htmldir="${PREFIX}/share/doc/libpst/" \
+FAKE_FLAGS=		htmldir="${PREFIX}/share/doc/libpst/" \
 			htmldeveldir="${PREFIX}/share/doc/libpst/devel/"
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
