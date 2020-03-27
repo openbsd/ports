@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/27 01:04:30 kn Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
 GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
 GH_TAGNAME =	2.2.1
-REVISION =	2
+REVISION =	3
 CATEGORIES =	sysutils
-
-MAINTAINER =	Wesley MOUEDINE ASSABY <milo974@gmail.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -23,14 +21,16 @@ CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-debug
 
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=       1.15
+AUTOMAKE_VERSION=       1.16
 AUTORECONF=		./autogen.sh
+
+SEPARATE_BUILD =	Yes
 
 pre-configure:
 # Fixup any stragglers that would pickup libevent1 from base
 	sed -i 's,<event.h>,<event2/event.h>,' ${WRKSRC}/*.[ch]
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tmate ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/tmate ${PREFIX}/bin/
 
 .include <bsd.port.mk>
