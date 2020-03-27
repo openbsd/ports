@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.53 2020/03/22 11:20:34 robert Exp $
+# $OpenBSD: Makefile,v 1.54 2020/03/27 19:04:07 kmos Exp $
+
+BROKEN-sparc64=	Cannot find libc with ld.lld, more library problems without lld
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
