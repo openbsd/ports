@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/14 16:17:39 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2020/03/27 13:23:42 abieber Exp $
 
 COMMENT =	matrix-WhatsApp puppeting bridge
 
-V =		20200225
+V =		20200327
+COMMIT =	3a9642386cdff8293657c8409da4bffd674184bf
 DISTNAME =	mautrix-whatsapp-${V}
+
+# warning, for the .tar.gz, "go mod vendor" is not sufficient
+# you need to clone https://github.com/chai2010/webp and
+# copy webp/internal into vendor/github.com/chai2010/webp/
 
 CATEGORIES =	net
 
