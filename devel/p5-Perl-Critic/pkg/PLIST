@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/05 15:58:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/03/27 17:31:52 sthen Exp $
 bin/perlcritic
 ${P5SITE}/Perl/Critic/
 ${P5SITE}/Perl/Critic.pm
@@ -40,6 +40,7 @@ ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitBooleanGrep.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitComplexMappings.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitLvalueSubstr.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitReverseSortBlock.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitShiftRef.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitSleepViaSelect.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringyEval.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringySplit.pm
@@ -80,7 +81,6 @@ ${P5SITE}/Perl/Critic/Policy/Documentation/
 ${P5SITE}/Perl/Critic/Policy/Documentation/PodSpelling.pm
 ${P5SITE}/Perl/Critic/Policy/Documentation/RequirePackageMatchesPodName.pm
 ${P5SITE}/Perl/Critic/Policy/Documentation/RequirePodAtEnd.pm
-${P5SITE}/Perl/Critic/Policy/Documentation/RequirePodLinksIncludeText.pm
 ${P5SITE}/Perl/Critic/Policy/Documentation/RequirePodSections.pm
 ${P5SITE}/Perl/Critic/Policy/ErrorHandling/
 ${P5SITE}/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
@@ -262,6 +262,7 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitComplexMappings.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitReverseSortBlock.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitShiftRef.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitSleepViaSelect.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitStringyEval.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitStringySplit.3p
@@ -298,7 +299,6 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Policy::Documentation::PodSpelling.3p
 @man man/man3p/Perl::Critic::Policy::Documentation::RequirePackageMatchesPodName.3p
 @man man/man3p/Perl::Critic::Policy::Documentation::RequirePodAtEnd.3p
-@man man/man3p/Perl::Critic::Policy::Documentation::RequirePodLinksIncludeText.3p
 @man man/man3p/Perl::Critic::Policy::Documentation::RequirePodSections.3p
 @man man/man3p/Perl::Critic::Policy::ErrorHandling::RequireCarping.3p
 @man man/man3p/Perl::Critic::Policy::ErrorHandling::RequireCheckingReturnValueOfEval.3p
