@@ -1,6 +1,7 @@
-$OpenBSD: patch-conf_server_xml,v 1.4 2016/12/15 11:41:43 dcoppa Exp $
---- conf/server.xml.orig	Mon Dec  5 21:20:27 2016
-+++ conf/server.xml	Thu Dec 15 12:17:55 2016
+$OpenBSD: patch-conf_server_xml,v 1.5 2020/03/27 15:59:34 sthen Exp $
+Index: conf/server.xml
+--- conf/server.xml.orig
++++ conf/server.xml
 @@ -66,12 +66,12 @@
           APR (HTTP/AJP) Connector: /docs/apr.html
           Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
@@ -34,16 +35,7 @@ $OpenBSD: patch-conf_server_xml,v 1.4 2016/12/15 11:41:43 dcoppa Exp $
                 maxThreads="150" SSLEnabled="true" >
          <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
          <SSLHostConfig>
-@@ -113,7 +113,7 @@
-     -->
- 
-     <!-- Define an AJP 1.3 Connector on port 8009 -->
--    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
-+    <Connector address="0.0.0.0" port="8009" protocol="AJP/1.3" redirectPort="8443" />
- 
- 
-     <!-- An Engine represents the entry point (within Catalina) that processes
-@@ -145,7 +145,7 @@
+@@ -149,7 +149,7 @@
                 resourceName="UserDatabase"/>
        </Realm>
  
