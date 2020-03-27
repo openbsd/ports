@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2019/04/24 16:31:51 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2020/03/27 15:59:31 sthen Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
@@ -51,6 +51,7 @@ share/examples/tomcat/tomcat-users.xml
 @mode
 @owner
 @group
+share/examples/tomcat/tomcat-users.xsd
 share/examples/tomcat/web.xml
 @owner _tomcat
 @group _tomcat
@@ -96,10 +97,13 @@ tomcat/lib/servlet-api.jar
 tomcat/lib/tomcat-api.jar
 tomcat/lib/tomcat-coyote.jar
 tomcat/lib/tomcat-dbcp.jar
+tomcat/lib/tomcat-i18n-de.jar
 tomcat/lib/tomcat-i18n-es.jar
 tomcat/lib/tomcat-i18n-fr.jar
 tomcat/lib/tomcat-i18n-ja.jar
+tomcat/lib/tomcat-i18n-ko.jar
 tomcat/lib/tomcat-i18n-ru.jar
+tomcat/lib/tomcat-i18n-zh-CN.jar
 tomcat/lib/tomcat-jdbc.jar
 tomcat/lib/tomcat-util.jar
 tomcat/lib/tomcat7-websocket.jar
