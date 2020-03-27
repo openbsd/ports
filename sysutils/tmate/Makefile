@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/27 01:32:06 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/27 01:37:16 kn Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
@@ -7,9 +7,12 @@ GH_PROJECT =	tmate
 GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
 
+HOMEPAGE =	https://tmate.io
+
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB += c event_core event_extra msgpackc curses ssh util
 
 LIB_DEPENDS =	devel/libevent2 \
