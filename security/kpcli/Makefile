@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/27 07:20:53 landry Exp $
 
 COMMENT =	cli browser for keepassx databases
 
-DISTNAME =	kpcli-3.2
+DISTNAME =	kpcli-3.3
 CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
