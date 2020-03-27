@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.159 2020/03/19 22:20:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2020/03/27 10:10:59 ajacoutot Exp $
 
 COMMENT=		manage resources on Google Cloud Platform
 
-V=			285.0.1
+V=			286.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
@@ -20,12 +20,12 @@ MASTER_SITES=		https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 
 MODULES=		lang/python
 
-NO_BUILD=		Yes
 MODPY_BUILDDEP=		Yes
 
-RUN_DEPENDS=		devel/git
-
+NO_BUILD=		Yes
 NO_TEST=		Yes
+
+RUN_DEPENDS=		devel/git
 
 pre-configure:
 # wildcard, cannot use MODPY_ADJ_FILES
@@ -53,7 +53,7 @@ do-install:
 		-exec rm '{}' \+
 	find ${PREFIX} -type d -name python3 -exec rm -rf '{}' \+
 
-# XXX ||true: ignore python >=3.5 syntax in unused examples
+# XXX ||true: ignore old python syntax in unused examples
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/google-cloud-sdk/{lib,platform} || true
 
