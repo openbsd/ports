@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/02/18 11:39:50 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/27 17:43:17 sthen Exp $
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/TypeTiny/
 ${P5SITE}/Devel/TypeTiny/Perl56Compat.pm
@@ -17,7 +17,6 @@ ${P5SITE}/Reply/Plugin/TypeTiny.pm
 ${P5SITE}/Test/
 ${P5SITE}/Test/TypeTiny.pm
 ${P5SITE}/Type/
-${P5SITE}/Type/CONTRIBUTING.pod
 ${P5SITE}/Type/Coercion/
 ${P5SITE}/Type/Coercion.pm
 ${P5SITE}/Type/Coercion/FromMoose.pm
@@ -29,20 +28,29 @@ ${P5SITE}/Type/Registry.pm
 ${P5SITE}/Type/Tiny/
 ${P5SITE}/Type/Tiny.pm
 ${P5SITE}/Type/Tiny/Class.pm
+${P5SITE}/Type/Tiny/ConstrainedObject.pm
 ${P5SITE}/Type/Tiny/Duck.pm
 ${P5SITE}/Type/Tiny/Enum.pm
 ${P5SITE}/Type/Tiny/Intersection.pm
 ${P5SITE}/Type/Tiny/Manual/
 ${P5SITE}/Type/Tiny/Manual.pod
+${P5SITE}/Type/Tiny/Manual/AllTypes.pod
 ${P5SITE}/Type/Tiny/Manual/Coercions.pod
+${P5SITE}/Type/Tiny/Manual/Contributing.pod
+${P5SITE}/Type/Tiny/Manual/Installation.pod
 ${P5SITE}/Type/Tiny/Manual/Libraries.pod
+${P5SITE}/Type/Tiny/Manual/NonOO.pod
 ${P5SITE}/Type/Tiny/Manual/Optimization.pod
 ${P5SITE}/Type/Tiny/Manual/Params.pod
 ${P5SITE}/Type/Tiny/Manual/Policies.pod
+${P5SITE}/Type/Tiny/Manual/UsingWithClassTiny.pod
 ${P5SITE}/Type/Tiny/Manual/UsingWithMoo.pod
+${P5SITE}/Type/Tiny/Manual/UsingWithMoo2.pod
+${P5SITE}/Type/Tiny/Manual/UsingWithMoo3.pod
 ${P5SITE}/Type/Tiny/Manual/UsingWithMoose.pod
 ${P5SITE}/Type/Tiny/Manual/UsingWithMouse.pod
 ${P5SITE}/Type/Tiny/Manual/UsingWithOther.pod
+${P5SITE}/Type/Tiny/Manual/UsingWithTestMore.pod
 ${P5SITE}/Type/Tiny/Role.pm
 ${P5SITE}/Type/Tiny/Union.pm
 ${P5SITE}/Type/Tiny/_HalfOp.pm
@@ -72,7 +80,6 @@ ${P5SITE}/Types/TypeTiny.pm
 @man man/man3p/Eval::TypeTiny.3p
 @man man/man3p/Reply::Plugin::TypeTiny.3p
 @man man/man3p/Test::TypeTiny.3p
-@man man/man3p/Type::CONTRIBUTING.3p
 @man man/man3p/Type::Coercion.3p
 @man man/man3p/Type::Coercion::FromMoose.3p
 @man man/man3p/Type::Coercion::Union.3p
@@ -82,19 +89,28 @@ ${P5SITE}/Types/TypeTiny.pm
 @man man/man3p/Type::Registry.3p
 @man man/man3p/Type::Tiny.3p
 @man man/man3p/Type::Tiny::Class.3p
+@man man/man3p/Type::Tiny::ConstrainedObject.3p
 @man man/man3p/Type::Tiny::Duck.3p
 @man man/man3p/Type::Tiny::Enum.3p
 @man man/man3p/Type::Tiny::Intersection.3p
 @man man/man3p/Type::Tiny::Manual.3p
+@man man/man3p/Type::Tiny::Manual::AllTypes.3p
 @man man/man3p/Type::Tiny::Manual::Coercions.3p
+@man man/man3p/Type::Tiny::Manual::Contributing.3p
+@man man/man3p/Type::Tiny::Manual::Installation.3p
 @man man/man3p/Type::Tiny::Manual::Libraries.3p
+@man man/man3p/Type::Tiny::Manual::NonOO.3p
 @man man/man3p/Type::Tiny::Manual::Optimization.3p
 @man man/man3p/Type::Tiny::Manual::Params.3p
 @man man/man3p/Type::Tiny::Manual::Policies.3p
+@man man/man3p/Type::Tiny::Manual::UsingWithClassTiny.3p
 @man man/man3p/Type::Tiny::Manual::UsingWithMoo.3p
+@man man/man3p/Type::Tiny::Manual::UsingWithMoo2.3p
+@man man/man3p/Type::Tiny::Manual::UsingWithMoo3.3p
 @man man/man3p/Type::Tiny::Manual::UsingWithMoose.3p
 @man man/man3p/Type::Tiny::Manual::UsingWithMouse.3p
 @man man/man3p/Type::Tiny::Manual::UsingWithOther.3p
+@man man/man3p/Type::Tiny::Manual::UsingWithTestMore.3p
 @man man/man3p/Type::Tiny::Role.3p
 @man man/man3p/Type::Tiny::Union.3p
 @man man/man3p/Type::Tiny::_HalfOp.3p
