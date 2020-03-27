@@ -1,4 +1,7 @@
-$OpenBSD: patch-tmux_h,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
+$OpenBSD: patch-tmux_h,v 1.2 2020/03/27 01:32:06 kn Exp $
+
+Use libevent2 not libevent from base.
+
 --- tmux.h.orig	Tue Mar 29 05:30:07 2016
 +++ tmux.h	Wed Feb  8 20:42:10 2017
 @@ -26,7 +26,14 @@

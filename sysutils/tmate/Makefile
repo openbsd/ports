@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/27 01:04:30 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/27 01:32:06 kn Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
 GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
-GH_TAGNAME =	2.2.1
-REVISION =	3
+GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
 
 # BSD

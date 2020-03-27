@@ -1,6 +1,11 @@
-$OpenBSD: patch-server_c,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
---- server.c.orig	Tue Mar 29 05:30:07 2016
-+++ server.c	Wed Feb  8 20:57:39 2017
+$OpenBSD: patch-server_c,v 1.2 2020/03/27 01:32:06 kn Exp $
+
+Use libevent2 not libevent from base.
+Add missing inet promise.
+
+Index: server.c
+--- server.c.orig
++++ server.c
 @@ -24,7 +24,7 @@
  #include <sys/wait.h>
  
@@ -10,7 +15,7 @@ $OpenBSD: patch-server_c,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
  #include <fcntl.h>
  #include <signal.h>
  #include <stdio.h>
-@@ -167,7 +167,7 @@ server_start(struct event_base *base, int lockfd, char
+@@ -169,7 +169,7 @@ server_start(struct event_base *base, int lockfd, char
  
  #ifdef __OpenBSD__
  	if (pledge("stdio rpath wpath cpath fattr unix getpw recvfd proc exec "
