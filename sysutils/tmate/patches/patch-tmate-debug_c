@@ -1,4 +1,4 @@
-$OpenBSD: patch-tmate-debug_c,v 1.3 2020/03/27 01:32:06 kn Exp $
+$OpenBSD: patch-tmate-debug_c,v 1.4 2020/03/28 17:23:44 kn Exp $
 
 Actually disable all debug handling when not requested.
 Fixes undefined references to backtrace{,_symbols}().
@@ -6,16 +6,7 @@ Fixes undefined references to backtrace{,_symbols}().
 Index: tmate-debug.c
 --- tmate-debug.c.orig
 +++ tmate-debug.c
-@@ -1,6 +1,8 @@
- #ifdef HAVE_EXECINFO_H
- #include <execinfo.h>
-+#if DEBUG
- #endif
-+#endif
- #include <stdio.h>
- #include <stdlib.h>
- #include <regex.h>
-@@ -65,6 +67,7 @@ static int print_resolved_stack_frame(const char *fram
+@@ -65,6 +65,7 @@ static int print_resolved_stack_frame(const char *fram
  
  void tmate_print_stack_trace(void)
  {
@@ -23,7 +14,7 @@ Index: tmate-debug.c
  	void *array[20];
  	size_t size;
  	char **strings;
-@@ -76,13 +79,12 @@ void tmate_print_stack_trace(void)
+@@ -76,13 +77,12 @@ void tmate_print_stack_trace(void)
  	tmate_info ("============ %zd stack frames ============", size);
  
  	for (i = 1; i < size; i++) {
