@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/10/03 05:28:31 chrisz Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/28 17:56:44 sthen Exp $
 
 COMMENT =		OCaml source-based package manager
 
@@ -23,7 +23,8 @@ WANTLIB =		${COMPILER_LIBCXX} c m
 BUILD_DEPENDS =		lang/ocaml \
 			sysutils/findlib \
 			devel/dune \
-			devel/ocaml-cppo
+			devel/ocaml-cppo \
+			archivers/bzip2
 
 RUN_DEPENDS =		archivers/unzip \
 			archivers/bzip2 \
