@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/27 01:37:16 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/28 17:19:09 kn Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
 GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	https://tmate.io
 
@@ -28,8 +29,9 @@ AUTORECONF=		./autogen.sh
 
 SEPARATE_BUILD =	Yes
 
-pre-configure:
-# Fixup any stragglers that would pickup libevent1 from base
+# before patch, otherwise updates-patches fails
+post-extract:
+	# XXX: use ports libevent2 not base libevent, avoid massive patching
 	sed -i 's,<event.h>,<event2/event.h>,' ${WRKSRC}/*.[ch]
 
 do-install:

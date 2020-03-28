@@ -1,4 +1,4 @@
-$OpenBSD: patch-tmate-ssh-client_c,v 1.2 2020/03/27 01:32:06 kn Exp $
+$OpenBSD: patch-tmate-ssh-client_c,v 1.3 2020/03/28 17:19:09 kn Exp $
 
 Add missing <errno.h>, the SSO() macro uses it.
 
@@ -12,4 +12,4 @@ Index: tmate-ssh-client.c
 +#include <errno.h>
  #include <stdio.h>
  #include <stdlib.h>
- #include <event.h>
+ #include <event2/event.h>
