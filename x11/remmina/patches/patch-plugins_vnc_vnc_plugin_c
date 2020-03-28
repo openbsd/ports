@@ -1,0 +1,37 @@
+$OpenBSD: patch-plugins_vnc_vnc_plugin_c,v 1.1 2020/03/28 07:24:37 robert Exp $
+
+https://github.com/FreeRDP/Remmina/commit/d9cd9a740de54210d464700ab87a9dc2bb71f92a
+
++ 
+
+Fix a double free and double mutex lock.
+
+Index: plugins/vnc/vnc_plugin.c
+--- plugins/vnc/vnc_plugin.c.orig
++++ plugins/vnc/vnc_plugin.c
+@@ -182,8 +182,6 @@ static void onMainThread_schedule_callback_and_wait( s
+ 	pthread_mutex_lock( &d->mu );
+ 	gdk_threads_add_idle( (GSourceFunc)onMainThread_cb, (gpointer)d );
+ 
+-	pthread_mutex_lock( &d->mu );
+-
+ 	pthread_cleanup_pop(0);
+ 	pthread_mutex_unlock( &d->mu );
+ 	pthread_mutex_destroy( &d->mu );
+@@ -297,7 +295,6 @@ static void remmina_plugin_vnc_update_scale(RemminaPro
+ 		d->gp = gp;
+ 		d->scale = scale;
+ 		onMainThread_schedule_callback_and_wait( d );
+-		g_free(d);
+ 		return;
+ 	}
+ 
+@@ -1896,7 +1893,7 @@ static const RemminaProtocolSetting remmina_plugin_vnc
+ 	{ REMMINA_PROTOCOL_SETTING_TYPE_PASSWORD, "password",	    N_("User password"),       FALSE,   NULL,		     NULL   },
+ 	{ REMMINA_PROTOCOL_SETTING_TYPE_SELECT,	  "colordepth",	    N_("Color depth"),	       FALSE,   colordepth_list,     NULL   },
+ 	{ REMMINA_PROTOCOL_SETTING_TYPE_SELECT,	  "quality",	    N_("Quality"),	       FALSE,   quality_list,	     NULL   },
+-	{ REMMINA_PROTOCOL_SETTING_TYPE_KEYMAP,	  NULL,		    NULL,		       FALSE,   NULL,		     NULL   },
++	{ REMMINA_PROTOCOL_SETTING_TYPE_KEYMAP,	  "keymap",	    NULL,		       FALSE,   NULL,		     NULL   },
+ 	{ REMMINA_PROTOCOL_SETTING_TYPE_END,	  NULL,		    NULL,		       FALSE,   NULL,		     NULL   }
+ };
+ 

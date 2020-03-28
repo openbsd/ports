@@ -1,29 +1,17 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2018/05/29 18:43:11 jasper Exp $
-
-https://github.com/FreeRDP/Remmina/pull/1645
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2020/03/28 07:24:37 robert Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -86,7 +86,7 @@ include_directories(src/include)
+@@ -198,9 +198,9 @@ check_include_files(errno.h HAVE_ERRNO_H)
+ include_directories(.)
+ include_directories(src/include)
  
- # FreeBSD
+-# FreeBSD
++# FreeBSD, OpenBSD and NetBSD
  
 -if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
-+if((CMAKE_SYSTEM_NAME MATCHES "FreeBSD") OR (CMAKE_SYSTEM_NAME MATCHES "OpenBSD"))
++if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD|OpenBSD|NetBSD")
      set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "-rdynamic")
      include_directories(/usr/local/include /usr/include)
      link_directories(/usr/local/lib /usr/lib)
-@@ -241,12 +241,6 @@ if(GTK_FOUND)
-     add_subdirectory(plugins/secret)
- endif()
- 
--find_package(Intl)
--if(INTL_FOUND AND "${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD|OpenBSD|NetBSD")
--    message(STATUS "${CMAKE_SYSTEM_NAME} detected, of type BSD, building with Intl")
--    include_directories(${Intl_INCLUDE_DIRS})
--    target_link_libraries(remmina ${Intl_LIBRARIES})
--endif()
- if(WITH_TRANSLATIONS)
-         add_subdirectory(po)
- endif()

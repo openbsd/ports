@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.41 2019/12/17 09:26:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/03/28 07:24:37 robert Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
 # XXX development moves to GitLab: https://gitlab.com/Remmina/Remmina;
 # XXX before updating, ensure freerdp works:
 # cf. http://openbsd-archive.7691.n7.nabble.com/x11-freerdp-update-to-2-0-0-rc4-tp360502p360567.html
-GH_TAGNAME=		v1.2.30
+GH_TAGNAME=		v1.3.6
 GH_PROJECT=		Remmina
 GH_ACCOUNT=		FreeRDP
 PKGNAME=		remmina-${GH_TAGNAME:S/v//}
-REVISION=		9
 
 CATEGORIES=		x11 net
 
@@ -24,7 +23,7 @@ WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 harfbuzz intl json-glib-1.0
 WANTLIB += pango-1.0 pangocairo-1.0 pthread secret-1 soup-2.4
 WANTLIB += spice-client-glib-2.0 spice-client-gtk-3.0 ssh ssl
-WANTLIB += vncclient vte-2.91 winpr2 xkbfile
+WANTLIB += vncclient vte-2.91 winpr2 xkbfile sodium
 
 MODULES=		devel/cmake
 
@@ -37,6 +36,7 @@ LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/vte3 \
 			net/avahi,,-gtk3 \
 			net/libvncserver \
+			security/libsodium \
 			security/libssh \
 			x11/freerdp \
 			x11/spice-gtk \

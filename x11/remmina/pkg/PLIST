@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/12/17 09:26:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/03/28 07:24:37 robert Exp $
 @conflict remmina-plugins-*
 @conflict remmina-plugins-telepathy-*
 @pkgpath x11/remmina,-rdp
@@ -6,7 +6,10 @@
 @pkgpath x11/remmina/plugins,-main
 @pkgpath x11/remmina/plugins,-rdp
 @pkgpath x11/remmina/plugins,-telepathy
+bin/gnome-session-remmina
 @bin bin/remmina
+bin/remmina-file-wrapper.sh
+bin/remmina-gnome
 include/remmina/
 include/remmina/plugin.h
 include/remmina/remmina_trace_calls.h
@@ -19,60 +22,81 @@ lib/remmina/plugins/
 @so lib/remmina/plugins/remmina-plugin-rdp.so
 @so lib/remmina/plugins/remmina-plugin-secret.so
 @so lib/remmina/plugins/remmina-plugin-spice.so
+@so lib/remmina/plugins/remmina-plugin-st.so
 @so lib/remmina/plugins/remmina-plugin-vnc.so
 @so lib/remmina/plugins/remmina-plugin-xdmcp.so
+@man man/man1/gnome-session-remmina.1
+@man man/man1/remmina-gnome.1
 @man man/man1/remmina.1
 share/applications/org.remmina.Remmina.desktop
 share/applications/remmina-file.desktop
+share/applications/remmina-gnome.desktop
+share/gnome-session/
+share/gnome-session/sessions/
+share/gnome-session/sessions/remmina-gnome.session
 share/icons/hicolor/128x128/apps/org.remmina.Remmina.png
-share/icons/hicolor/16x16/actions/remmina-dynres.png
-share/icons/hicolor/16x16/actions/remmina-fit-window.png
-share/icons/hicolor/16x16/actions/remmina-fullscreen.png
-share/icons/hicolor/16x16/actions/remmina-pin-down.png
-share/icons/hicolor/16x16/actions/remmina-pin-up.png
-share/icons/hicolor/16x16/actions/remmina-scale.png
-share/icons/hicolor/16x16/actions/remmina-switch-page.png
+share/icons/hicolor/128x128/apps/remmina-panel-inverted.png
+share/icons/hicolor/128x128/apps/remmina-panel.png
 share/icons/hicolor/16x16/apps/org.remmina.Remmina.png
 share/icons/hicolor/16x16/apps/remmina-panel-inverted.png
 share/icons/hicolor/16x16/apps/remmina-panel.png
-share/icons/hicolor/16x16/emblems/remmina-nx.png
-share/icons/hicolor/16x16/emblems/remmina-rdp-ssh.png
-share/icons/hicolor/16x16/emblems/remmina-rdp.png
-share/icons/hicolor/16x16/emblems/remmina-sftp.png
-share/icons/hicolor/16x16/emblems/remmina-spice.png
-share/icons/hicolor/16x16/emblems/remmina-tool.png
-share/icons/hicolor/16x16/emblems/remmina-vnc-ssh.png
-share/icons/hicolor/16x16/emblems/remmina-vnc.png
-share/icons/hicolor/16x16/emblems/remmina-xdmcp-ssh.png
-share/icons/hicolor/16x16/emblems/remmina-xdmcp.png
-share/icons/hicolor/22x22/actions/remmina-dynres.png
-share/icons/hicolor/22x22/actions/remmina-fit-window.png
-share/icons/hicolor/22x22/actions/remmina-fullscreen.png
-share/icons/hicolor/22x22/actions/remmina-scale.png
-share/icons/hicolor/22x22/actions/remmina-switch-page.png
 share/icons/hicolor/22x22/apps/org.remmina.Remmina.png
 share/icons/hicolor/22x22/apps/remmina-panel-inverted.png
 share/icons/hicolor/22x22/apps/remmina-panel.png
-share/icons/hicolor/22x22/emblems/remmina-nx.png
-share/icons/hicolor/22x22/emblems/remmina-rdp-ssh.png
-share/icons/hicolor/22x22/emblems/remmina-rdp.png
-share/icons/hicolor/22x22/emblems/remmina-sftp.png
-share/icons/hicolor/22x22/emblems/remmina-spice.png
-share/icons/hicolor/22x22/emblems/remmina-tool.png
-share/icons/hicolor/22x22/emblems/remmina-vnc-ssh.png
-share/icons/hicolor/22x22/emblems/remmina-vnc.png
-share/icons/hicolor/22x22/emblems/remmina-xdmcp-ssh.png
-share/icons/hicolor/22x22/emblems/remmina-xdmcp.png
 share/icons/hicolor/24x24/apps/org.remmina.Remmina.png
 share/icons/hicolor/24x24/apps/remmina-panel-inverted.png
 share/icons/hicolor/24x24/apps/remmina-panel.png
 share/icons/hicolor/256x256/apps/org.remmina.Remmina.png
+share/icons/hicolor/256x256/apps/remmina-panel-inverted.png
+share/icons/hicolor/256x256/apps/remmina-panel.png
 share/icons/hicolor/32x32/apps/org.remmina.Remmina.png
+share/icons/hicolor/32x32/apps/remmina-panel-inverted.png
+share/icons/hicolor/32x32/apps/remmina-panel.png
 share/icons/hicolor/48x48/apps/org.remmina.Remmina.png
+share/icons/hicolor/48x48/apps/remmina-panel-inverted.png
+share/icons/hicolor/48x48/apps/remmina-panel.png
 share/icons/hicolor/64x64/apps/org.remmina.Remmina.png
+share/icons/hicolor/64x64/apps/remmina-panel-inverted.png
+share/icons/hicolor/64x64/apps/remmina-panel.png
 share/icons/hicolor/72x72/apps/org.remmina.Remmina.png
+share/icons/hicolor/72x72/apps/remmina-panel-inverted.png
+share/icons/hicolor/72x72/apps/remmina-panel.png
 share/icons/hicolor/96x96/apps/org.remmina.Remmina.png
+share/icons/hicolor/96x96/apps/remmina-panel-inverted.png
+share/icons/hicolor/96x96/apps/remmina-panel.png
+share/icons/hicolor/scalable/actions/remmina-camera-photo-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-connect-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-disconnect-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-document-save-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-document-send-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-duplicate-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-dynres-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-fit-window-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-fullscreen-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-go-bottom-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-keyboard-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-pan-down-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-pan-up-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-pin-down-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-pin-up-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-preferences-system-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-scale-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-switch-page-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-system-run-symbolic.svg
+share/icons/hicolor/scalable/actions/view-list.svg
 share/icons/hicolor/scalable/apps/org.remmina.Remmina.svg
+share/icons/hicolor/scalable/emblems/remmina-nx-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-rdp-ssh-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-rdp-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-sftp-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-spice-ssh-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-spice-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-ssh-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-tool-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-vnc-ssh-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-vnc-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-xdmcp-ssh-symbolic.svg
+share/icons/hicolor/scalable/emblems/remmina-xdmcp-symbolic.svg
 share/locale/ar/LC_MESSAGES/remmina.mo
 share/locale/ast/LC_MESSAGES/remmina.mo
 share/locale/bg/LC_MESSAGES/remmina.mo
@@ -87,6 +111,9 @@ share/locale/el/LC_MESSAGES/remmina.mo
 share/locale/en_AU/LC_MESSAGES/remmina.mo
 share/locale/en_GB/LC_MESSAGES/remmina.mo
 share/locale/es/LC_MESSAGES/remmina.mo
+share/locale/es_VE/
+share/locale/es_VE/LC_MESSAGES/
+share/locale/es_VE/LC_MESSAGES/remmina.mo
 share/locale/et/LC_MESSAGES/remmina.mo
 share/locale/eu/LC_MESSAGES/remmina.mo
 share/locale/fi/LC_MESSAGES/remmina.mo
@@ -152,6 +179,7 @@ share/remmina/theme/3024 Night.colors
 share/remmina/theme/AdventureTime.colors
 share/remmina/theme/Afterglow.colors
 share/remmina/theme/AlienBlood.colors
+share/remmina/theme/Andromeda.colors
 share/remmina/theme/Argonaut.colors
 share/remmina/theme/Arthur.colors
 share/remmina/theme/AtelierSulphurpool.colors
@@ -180,11 +208,14 @@ share/remmina/theme/CLRS.colors
 share/remmina/theme/Calamity.colors
 share/remmina/theme/Chalk.colors
 share/remmina/theme/Chalkboard.colors
+share/remmina/theme/ChallengerDeep.colors
+share/remmina/theme/Chester.colors
 share/remmina/theme/Ciapre.colors
 share/remmina/theme/Cobalt Neon.colors
 share/remmina/theme/Cobalt2.colors
 share/remmina/theme/CrayonPonyFish.colors
 share/remmina/theme/Dark Pastel.colors
+share/remmina/theme/Dark+.colors
 share/remmina/theme/Darkside.colors
 share/remmina/theme/Desert.colors
 share/remmina/theme/DimmedMonokai.colors
@@ -206,6 +237,7 @@ share/remmina/theme/Flat.colors
 share/remmina/theme/Flatland.colors
 share/remmina/theme/Floraverse.colors
 share/remmina/theme/ForestBlue.colors
+share/remmina/theme/Framer.colors
 share/remmina/theme/FrontEndDelight.colors
 share/remmina/theme/FunForrest.colors
 share/remmina/theme/Galaxy.colors
@@ -220,6 +252,8 @@ share/remmina/theme/Harper.colors
 share/remmina/theme/Highway.colors
 share/remmina/theme/Hipster Green.colors
 share/remmina/theme/Homebrew.colors
+share/remmina/theme/Hopscotch.256.colors
+share/remmina/theme/Hopscotch.colors
 share/remmina/theme/Hurtado.colors
 share/remmina/theme/Hybrid.colors
 share/remmina/theme/IC_Green_PPL.colors
@@ -230,6 +264,8 @@ share/remmina/theme/Japanesque.colors
 share/remmina/theme/Jellybeans.colors
 share/remmina/theme/JetBrains Darcula.colors
 share/remmina/theme/Kibble.colors
+share/remmina/theme/Kolorit.colors
+share/remmina/theme/Lab Fox.colors
 share/remmina/theme/Later This Evening.colors
 share/remmina/theme/Lavandula.colors
 share/remmina/theme/LiquidCarbon.colors
@@ -238,6 +274,7 @@ share/remmina/theme/LiquidCarbonTransparentInverse.colors
 share/remmina/theme/Man Page.colors
 share/remmina/theme/Material.colors
 share/remmina/theme/MaterialDark.colors
+share/remmina/theme/MaterialOcean.colors
 share/remmina/theme/Mathias.colors
 share/remmina/theme/Medallion.colors
 share/remmina/theme/Misterioso.colors
@@ -249,8 +286,10 @@ share/remmina/theme/Monokai Vivid.colors
 share/remmina/theme/N0tch2k.colors
 share/remmina/theme/Neopolitan.colors
 share/remmina/theme/Neutron.colors
+share/remmina/theme/Night Owlish Light.colors
 share/remmina/theme/NightLion v1.colors
 share/remmina/theme/NightLion v2.colors
+share/remmina/theme/Nocturnal Winter.colors
 share/remmina/theme/Novel.colors
 share/remmina/theme/Obsidian.colors
 share/remmina/theme/Ocean.colors
@@ -258,6 +297,7 @@ share/remmina/theme/OceanicMaterial.colors
 share/remmina/theme/Ollie.colors
 share/remmina/theme/OneHalfDark.colors
 share/remmina/theme/OneHalfLight.colors
+share/remmina/theme/Operator Mono Dark.colors
 share/remmina/theme/Pandora.colors
 share/remmina/theme/Paraiso Dark.colors
 share/remmina/theme/Parasio Dark.colors
@@ -272,6 +312,7 @@ share/remmina/theme/Purple Rain.colors
 share/remmina/theme/Red Alert.colors
 share/remmina/theme/Red Planet.colors
 share/remmina/theme/Red Sands.colors
+share/remmina/theme/Relaxed.colors
 share/remmina/theme/Rippedcasts.colors
 share/remmina/theme/Royal.colors
 share/remmina/theme/Ryuuko.colors
@@ -295,6 +336,7 @@ share/remmina/theme/Spacedust.colors
 share/remmina/theme/Spiderman.colors
 share/remmina/theme/Spring.colors
 share/remmina/theme/Square.colors
+share/remmina/theme/Subliminal.colors
 share/remmina/theme/Sundried.colors
 share/remmina/theme/Symfonic.colors
 share/remmina/theme/Tango Adapted.colors
@@ -313,7 +355,9 @@ share/remmina/theme/ToyChest.colors
 share/remmina/theme/Treehouse.colors
 share/remmina/theme/Twilight.colors
 share/remmina/theme/Ubuntu.colors
+share/remmina/theme/UltraViolent.colors
 share/remmina/theme/UnderTheSea.colors
+share/remmina/theme/Unikitty.colors
 share/remmina/theme/Urple.colors
 share/remmina/theme/Vaughn.colors
 share/remmina/theme/VibrantInk.colors
@@ -321,25 +365,36 @@ share/remmina/theme/Violet Dark.colors
 share/remmina/theme/Violet Light.colors
 share/remmina/theme/WarmNeon.colors
 share/remmina/theme/Wez.colors
+share/remmina/theme/Whimsy.colors
 share/remmina/theme/WildCherry.colors
 share/remmina/theme/Wombat.colors
 share/remmina/theme/Wryan.colors
 share/remmina/theme/Zenburn.colors
 share/remmina/theme/ayu.colors
 share/remmina/theme/ayu_light.colors
+share/remmina/theme/cyberpunk.colors
 share/remmina/theme/deep.colors
+share/remmina/theme/idea.colors
 share/remmina/theme/idleToes.colors
+share/remmina/theme/lovelace.colors
+share/remmina/theme/midnight-in-mojave.colors
+share/remmina/theme/primary.colors
 share/remmina/theme/purplepeter.colors
+share/remmina/theme/rebecca.colors
 share/remmina/theme/synthwave.colors
 share/remmina/ui/
 share/remmina/ui/remmina_about.glade
 share/remmina/ui/remmina_key_chooser.glade
 share/remmina/ui/remmina_main.glade
 share/remmina/ui/remmina_mpc.glade
+share/remmina/ui/remmina_news.glade
 share/remmina/ui/remmina_preferences.glade
 share/remmina/ui/remmina_snap_info_dialog.glade
 share/remmina/ui/remmina_spinner.glade
 share/remmina/ui/remmina_string_list.glade
+share/remmina/ui/remmina_unlock.glade
+share/xsessions/
+share/xsessions/remmina-gnome.desktop
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag update-mime-database
