@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_nano_1,v 1.15 2020/02/15 19:56:37 naddy Exp $
+$OpenBSD: patch-doc_nano_1,v 1.16 2020/03/28 16:17:40 naddy Exp $
 Index: doc/nano.1
 --- doc/nano.1.orig
 +++ doc/nano.1
-@@ -382,5 +382,3 @@ the environment variable \fBNANO_NOCATCH\fR.
+@@ -383,5 +383,3 @@ the environment variable \fBNANO_NOCATCH\fR.
  
  .SH SEE ALSO
  .BR nanorc (5)
