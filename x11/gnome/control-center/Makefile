@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2020/02/16 09:55:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2020/03/28 18:51:17 kmos Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -24,6 +24,9 @@ MODULES=		devel/meson \
 			devel/dconf \
 			security/heimdal \
 			x11/gnome
+
+# Needed to build on base-gcc architectures
+CFLAGS=			-std=gnu99
 
 LIB_DEPENDS=		audio/gsound \
 			audio/pulseaudio \
