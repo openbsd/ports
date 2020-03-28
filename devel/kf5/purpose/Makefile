@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/28 13:38:32 rsadowski Exp $
 
 COMMENT =		framework to create integrate services and actions
 DISTNAME =		purpose-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  KF5Purpose                1.0
 SHARED_LIBS +=  KF5PurposeWidgets         1.0
@@ -16,16 +17,17 @@ WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Widgets c m
 MODULES +=	lang/python
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf5/kirigami2>=${MODKF5_VERSION} \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	x11/qt5/qtquickcontrols \
+		devel/kf5/kirigami2>=${MODKF5_VERSION} \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 		devel/kf5/ki18n>=${MODKF5_VERSION} \
 		devel/kf5/kio>=${MODKF5_VERSION} \
-		devel/kf5/kirigami2>=${MODKF5_VERSION} \
 		devel/kf5/kjobwidgets>=${MODKF5_VERSION} \
 		devel/kf5/knotifications>=${MODKF5_VERSION} \
 		devel/kf5/kservice>=${MODKF5_VERSION} \
