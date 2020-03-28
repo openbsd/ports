@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.53 2020/02/18 07:34:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.54 2020/03/28 11:26:19 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -486,6 +486,9 @@ share/glib-2.0/schemas/org.gtk.Settings.FileChooser.gschema.xml
 share/glib-2.0/schemas/org.gtk.exampleapp.gschema.xml
 share/gtk-3.0/
 share/gtk-3.0/gtkbuilder.rng
+share/gtk-3.0/valgrind/
+share/gtk-3.0/valgrind/gtk.supp
+share/gtk-3.0/valgrind/gtk64.supp
 share/gtk-doc/html/gail-libgail-util3/
 share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3-GailMisc.html
 share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3-GailTextUtil.html
