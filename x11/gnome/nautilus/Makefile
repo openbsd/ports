@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.196 2019/12/16 15:51:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.197 2020/03/28 11:14:05 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.34.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += nautilus-extension        3.0 # 1.5.0
 
@@ -29,6 +29,9 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
 RUN_DEPENDS=		x11/gnome/gvfs \
 			devel/gsettings-desktop-schemas
+
+# needs org.freedesktop.Tracker.Miner.Files
+RUN_DEPENDS +=		x11/gnome/tracker-miners
 
 LIB_DEPENDS=		graphics/libgexiv2 \
 			multimedia/gstreamer1/plugins-base \
