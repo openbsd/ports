@@ -1,4 +1,4 @@
-$OpenBSD: patch-libmariadb_libmariadb_CMakeLists_txt,v 1.4 2020/01/29 02:16:43 sthen Exp $
+$OpenBSD: patch-libmariadb_libmariadb_CMakeLists_txt,v 1.5 2020/03/28 13:11:06 sthen Exp $
 
 Index: libmariadb/libmariadb/CMakeLists.txt
 --- libmariadb/libmariadb/CMakeLists.txt.orig
@@ -12,18 +12,18 @@ Index: libmariadb/libmariadb/CMakeLists.txt
  IF(UNIX)
    ADD_LIBRARY(libmariadb SHARED ${libmariadb_RC} ${MARIADB_OBJECTS} ${EMPTY_FILE})
    SET_TARGET_PROPERTIES(libmariadb PROPERTIES COMPILE_FLAGS "${CMAKE_SHARED_LIBRARY_C_FLAGS}")
-@@ -432,16 +434,12 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
+@@ -431,17 +433,9 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
+ # of the config program. To make sure these programs can
  # use mariadb client library we provide libmysql symlinks
  
- IF(WITH_MYSQLCOMPAT)
+-IF(WITH_MYSQLCOMPAT)
 -  create_symlink(libmysqlclient${CMAKE_SHARED_LIBRARY_SUFFIX} libmariadb ${INSTALL_LIBDIR})
 -  create_symlink(libmysqlclient_r${CMAKE_SHARED_LIBRARY_SUFFIX} libmariadb ${INSTALL_LIBDIR})
 -  create_symlink(libmysqlclient${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})
 -  create_symlink(libmysqlclient_r${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})
- ENDIF()
- 
+-ENDIF()
 -
-+MESSAGE( STATUS "!!!LIBVER_OVERRIDE:         " ${LIBVER_OVERRIDE} )
+-
  SET_TARGET_PROPERTIES(libmariadb PROPERTIES VERSION
 - ${CPACK_PACKAGE_VERSION_MAJOR}
 - SOVERSION ${CPACK_PACKAGE_VERSION_MAJOR})
