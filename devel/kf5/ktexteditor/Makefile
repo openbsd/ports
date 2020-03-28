@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/03/23 18:01:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2020/03/28 13:39:22 rsadowski Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5TextEditor		6.0
 
@@ -17,7 +18,8 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt5/qtscript \
 		x11/qt5/qtxmlpatterns
 
-RUN_DEPENDS =	x11/qt5/qtscript \
+RUN_DEPENDS =	x11/dbus,-suid \
+		x11/qt5/qtscript \
 		x11/qt5/qtxmlpatterns
 
 # The following OPTIONAL packages have not been found:
