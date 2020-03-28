@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/10 15:32:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/28 18:19:31 landry Exp $
 
 COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
@@ -20,12 +20,13 @@ MODULES =	devel/cmake x11/qt5
 LIB_DEPENDS =	graphics/glew>=2.0 \
 		graphics/openexr
 
-# links with static liblas.a
+# links with static libLASlib.a
 BUILD_DEPENDS =	textproc/py-docutils \
 		converters/lastools
 
 CONFIGURE_ARGS =	-DDISPLAZ_EMBED_GLEW=false \
-			-DLASLIB_LIBRARY=${LOCALBASE}/lib/liblas.a \
+			-DLASLIB_LIBRARY=${LOCALBASE}/lib/LASlib/libLASlib.a \
+			-DLASLIB_INCLUDE_DIRS=${LOCALBASE}/include/LASlib/
 
 SUBST_VARS +=	TRUEPREFIX
 post-patch:
