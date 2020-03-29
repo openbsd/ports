@@ -1,6 +1,8 @@
-$OpenBSD: patch-configs_samples_res_odbc_conf_sample,v 1.1 2015/10/12 22:07:29 sthen Exp $
---- configs/samples/res_odbc.conf.sample.orig	Thu Jul 17 22:17:28 2014
-+++ configs/samples/res_odbc.conf.sample	Thu Feb 19 21:08:57 2015
+$OpenBSD: patch-configs_samples_res_odbc_conf_sample,v 1.2 2020/03/29 15:42:27 sthen Exp $
+
+Index: configs/samples/res_odbc.conf.sample
+--- configs/samples/res_odbc.conf.sample.orig
++++ configs/samples/res_odbc.conf.sample
 @@ -19,8 +19,7 @@
  ; If not specified, it is assumed the section is enabled.
  enabled => no

@@ -1,4 +1,5 @@
-$OpenBSD: patch-contrib_scripts_ast_coredumper,v 1.4 2018/07/18 08:47:28 sthen Exp $
+$OpenBSD: patch-contrib_scripts_ast_coredumper,v 1.5 2020/03/29 15:42:27 sthen Exp $
+
 Index: contrib/scripts/ast_coredumper
 --- contrib/scripts/ast_coredumper.orig
 +++ contrib/scripts/ast_coredumper

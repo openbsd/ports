@@ -1,6 +1,8 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.19 2015/10/12 22:07:29 sthen Exp $
---- contrib/scripts/safe_asterisk.orig	Thu Oct  9 09:08:43 2014
-+++ contrib/scripts/safe_asterisk	Thu Feb 19 21:08:57 2015
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.20 2020/03/29 15:42:27 sthen Exp $
+
+Index: contrib/scripts/safe_asterisk
+--- contrib/scripts/safe_asterisk.orig
++++ contrib/scripts/safe_asterisk
 @@ -6,21 +6,22 @@ ASTVARRUNDIR="__ASTERISK_VARRUN_DIR__"
  ASTVARLOGDIR="__ASTERISK_LOG_DIR__"
  

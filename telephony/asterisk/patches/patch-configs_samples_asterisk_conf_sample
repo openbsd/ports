@@ -1,4 +1,5 @@
-$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.6 2019/01/29 23:40:02 sthen Exp $
+$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.7 2020/03/29 15:42:27 sthen Exp $
+
 Index: configs/samples/asterisk.conf.sample
 --- configs/samples/asterisk.conf.sample.orig
 +++ configs/samples/asterisk.conf.sample
@@ -23,8 +24,8 @@ Index: configs/samples/asterisk.conf.sample
  				; functions from external sources (AMI,
  				; etc.) These functions (such as SHELL) are
  				; considered dangerous because they can allow
-@@ -120,8 +121,8 @@ documentation_language = en_US	; Set the language you 
- 				; back to value 96.
+@@ -125,8 +126,8 @@ documentation_language = en_US	; Set the language you 
+                 ; when the Digium Phone Module for Asterisk is in use.
  
  ; Changing the following lines may compromise your security.
 -;[files]

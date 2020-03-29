@@ -1,4 +1,5 @@
-$OpenBSD: patch-configs_samples_ast_debug_tools_conf_sample,v 1.2 2018/01/14 13:11:48 sthen Exp $
+$OpenBSD: patch-configs_samples_ast_debug_tools_conf_sample,v 1.3 2020/03/29 15:42:27 sthen Exp $
+
 Index: configs/samples/ast_debug_tools.conf.sample
 --- configs/samples/ast_debug_tools.conf.sample.orig
 +++ configs/samples/ast_debug_tools.conf.sample

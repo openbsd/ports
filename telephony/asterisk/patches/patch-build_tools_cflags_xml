@@ -1,4 +1,5 @@
-$OpenBSD: patch-build_tools_cflags_xml,v 1.13 2019/04/18 19:10:06 sthen Exp $
+$OpenBSD: patch-build_tools_cflags_xml,v 1.14 2020/03/29 15:42:27 sthen Exp $
+
 Index: build_tools/cflags.xml
 --- build_tools/cflags.xml.orig
 +++ build_tools/cflags.xml

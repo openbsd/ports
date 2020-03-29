@@ -1,4 +1,5 @@
-$OpenBSD: patch-configs_samples_sip_conf_sample,v 1.2 2019/01/29 23:40:02 sthen Exp $
+$OpenBSD: patch-configs_samples_sip_conf_sample,v 1.3 2020/03/29 15:42:27 sthen Exp $
+
 Index: configs/samples/sip.conf.sample
 --- configs/samples/sip.conf.sample.orig
 +++ configs/samples/sip.conf.sample
