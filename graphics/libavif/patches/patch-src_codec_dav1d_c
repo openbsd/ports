@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_codec_dav1d_c,v 1.1 2020/03/29 09:54:58 ajacoutot Exp $
+
+Set dav1dSettings.frame_size_limit to avoid OOM.
+
+Index: src/codec_dav1d.c
+--- src/codec_dav1d.c.orig
++++ src/codec_dav1d.c
+@@ -201,5 +201,7 @@ avifCodec * avifCodecCreateDav1d(void)
+     codec->internal = (struct avifCodecInternal *)avifAlloc(sizeof(struct avifCodecInternal));
+     memset(codec->internal, 0, sizeof(struct avifCodecInternal));
+     dav1d_default_settings(&codec->internal->dav1dSettings);
++    // Set a maximum frame size limit to avoid OOM'ing fuzzers.
++    codec->internal->dav1dSettings.frame_size_limit = 16384 * 16384;
+     return codec;
+ }
