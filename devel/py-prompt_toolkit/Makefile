@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/12/02 14:16:45 bket Exp $
+# $OpenBSD: Makefile,v 1.15 2020/03/29 18:46:05 paco Exp $
 
 COMMENT=		python library for building powerful interactive CLI
 
@@ -9,6 +9,7 @@ MODPY_EGG_VERSION=	1.0.15
 DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			1
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -29,6 +30,6 @@ RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

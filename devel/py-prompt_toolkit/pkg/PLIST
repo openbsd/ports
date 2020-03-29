@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/12/02 14:16:45 bket Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/03/29 18:46:05 paco Exp $
+@conflict py-prompt_toolkit-*
+@pkgpath devel/py-prompt_toolkit
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
