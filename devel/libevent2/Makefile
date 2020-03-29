@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/03/29 17:26:23 kn Exp $
 
 COMMENT=	event notification library
 
@@ -22,6 +22,8 @@ MASTER_SITES=	https://github.com/libevent/libevent/releases/download/release-$V-
 WANTLIB=	crypto pthread ssl
 
 CONFIGURE_STYLE=gnu
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MAKE_FLAGS=	RELEASE=""
 
