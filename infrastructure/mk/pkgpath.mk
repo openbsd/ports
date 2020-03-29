@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.83 2019/05/30 17:23:46 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.84 2020/03/29 12:11:45 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -141,7 +141,13 @@ _PREDIR = |${_PBUILD} tee >/dev/null
 _PSUDO = ${SUDO}
 _UPDATE_PLIST_SETUP=FAKE_TREE_OWNER=${BUILD_USER} \
 	PORTS_TREE_OWNER=$$(id -un) ${SUDO}
-_INSTALL_CACHE_REPO = ${SUDO} install -d -o ${FETCH_USER} -g $$(id -g ${FETCH_USER}) ${PACKAGE_REPOSITORY_MODE}
+_INSTALL_CACHE_REPO = \
+	if ${_PFETCH} install -d -o ${FETCH_USER} -g $$(id -g ${FETCH_USER}) ${PACKAGE_REPOSITORY_MODE}; then \
+		:; \
+	else \
+		echo >&2 "Can't create ${_CACHE_REPO}; run 'make fix-permissions' as root"; \
+		exit 1; \
+	fi
 .else
 _PFETCH =
 _PBUILD =
@@ -150,7 +156,7 @@ _PREDIR = >
 _PMAKE = ${_MAKE}
 _MK_READABLE = :
 _UPDATE_PLIST_SETUP=${_PBUILD}
-_INSTALL_CACHE_REPO = install -d ${PACKAGE_REPOSITORY_MODE}
+_INSTALL_CACHE_REPO = install -d ${PACKAGE_REPOSITORY_MODE} ${_CACHE_REPO}
 .endif
 
 _SUDOMAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${SUDO} ${MAKE}
