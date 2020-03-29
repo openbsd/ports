@@ -1,13 +1,14 @@
-$OpenBSD: patch-master__bin_munin-check_in,v 1.1 2014/03/25 08:42:25 kirby Exp $
---- master/_bin/munin-check.in.orig	Sat Dec  7 14:55:16 2013
-+++ master/_bin/munin-check.in	Sat Feb 15 19:23:30 2014
+$OpenBSD: patch-master__bin_munin-check_in,v 1.2 2020/03/29 10:22:17 kirby Exp $
+Index: master/_bin/munin-check.in
+--- master/_bin/munin-check.in.orig
++++ master/_bin/munin-check.in
 @@ -1,4 +1,4 @@
 -#!@@BASH@@
 +#!@@GOODSH@@
  # -*- sh -*-
  # Copyright (C) 2008 Matthias Schmitz
  # This program is free software; you can redistribute it and/or
-@@ -20,20 +20,17 @@
+@@ -19,20 +19,17 @@
  
  ####
  # prints usage
@@ -33,7 +34,7 @@ $OpenBSD: patch-master__bin_munin-check_in,v 1.1 2014/03/25 08:42:25 kirby Exp $
  
  if [[ $? -ne 0 ]]; then
      echo "Terminating..." >&2
-@@ -45,8 +42,8 @@ eval set -- "$TEMP"
+@@ -44,8 +41,8 @@ eval set -- "$TEMP"
  
  while :; do
      case "$1" in
@@ -44,7 +45,7 @@ $OpenBSD: patch-master__bin_munin-check_in,v 1.1 2014/03/25 08:42:25 kirby Exp $
  	--) shift ; break ;;
  	*) echo "Internal error!" ; exit 1 ;;
      esac
-@@ -54,7 +51,7 @@ done
+@@ -53,7 +50,7 @@ done
  
  ####
  # sets owner to "@@USER@@"
@@ -53,7 +54,7 @@ $OpenBSD: patch-master__bin_munin-check_in,v 1.1 2014/03/25 08:42:25 kirby Exp $
      fix_object=$1; shift
      fix_owner=$1; shift
  
-@@ -72,7 +69,7 @@ function fix_owner() {
+@@ -71,7 +68,7 @@ function fix_owner() {
  ####
  # check if "@@USER@@" is owner, if PLEASE_FIXME set it calls fix_owner()
  
@@ -62,7 +63,7 @@ $OpenBSD: patch-master__bin_munin-check_in,v 1.1 2014/03/25 08:42:25 kirby Exp $
      object=$1; shift || exit 1
      correctowner=$1; shift || exit 1
  
-@@ -94,6 +91,11 @@ function owner_ok() {
+@@ -93,6 +90,11 @@ function owner_ok() {
  	    "lost+found") return 0;;
  	esac
  
@@ -74,7 +75,7 @@ $OpenBSD: patch-master__bin_munin-check_in,v 1.1 2014/03/25 08:42:25 kirby Exp $
  	# ... and then dive into it
  	for subobject in $object/*; do
  		owner_ok $subobject $correctowner
-@@ -102,7 +104,7 @@ function owner_ok() {
+@@ -101,7 +103,7 @@ function owner_ok() {
  }
  
  
@@ -83,7 +84,7 @@ $OpenBSD: patch-master__bin_munin-check_in,v 1.1 2014/03/25 08:42:25 kirby Exp $
      object=$1; shift || exit 1
      correctperm=$1; shift || exit 1
  
-@@ -145,12 +147,20 @@ for dir in @@DBDIR@@/*; do
+@@ -144,12 +146,20 @@ for dir in @@DBDIR@@/*; do
  	*/plugin-state)
  	    continue;;
      esac

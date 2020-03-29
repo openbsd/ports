@@ -1,8 +1,8 @@
-$OpenBSD: patch-plugins_node_d_exim_mailstats_in,v 1.2 2018/09/23 13:47:59 kirby Exp $
+$OpenBSD: patch-plugins_node_d_exim_mailstats_in,v 1.3 2020/03/29 10:22:17 kirby Exp $
 Index: plugins/node.d/exim_mailstats.in
 --- plugins/node.d/exim_mailstats.in.orig
 +++ plugins/node.d/exim_mailstats.in
-@@ -130,7 +130,7 @@ sub parseEximfile
+@@ -126,7 +126,7 @@ sub parseEximfile
  }
  
  

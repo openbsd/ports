@@ -1,8 +1,8 @@
-$OpenBSD: patch-plugins_node_d_openbsd_df_inode_in,v 1.2 2018/07/01 15:02:36 kirby Exp $
+$OpenBSD: patch-plugins_node_d_openbsd_df_inode_in,v 1.3 2020/03/29 10:22:17 kirby Exp $
 Index: plugins/node.d.openbsd/df_inode.in
 --- plugins/node.d.openbsd/df_inode.in.orig
 +++ plugins/node.d.openbsd/df_inode.in
-@@ -25,7 +25,7 @@ fi
+@@ -23,7 +23,7 @@ fi
  
  print_values() {
  	mfs=0
@@ -11,7 +11,7 @@ Index: plugins/node.d.openbsd/df_inode.in
  		case $i in
  		mfs:*) name=mfs$mfs; mfs=`expr $mfs + 1`;;
  		*) name=`echo $i | awk '{ gsub("[^a-zA-Z0-9_]", "_", $1); print $1 }'` ;;
-@@ -52,7 +52,7 @@ if [ "$1" = "config" ]; then
+@@ -50,7 +50,7 @@ if [ "$1" = "config" ]; then
  	echo 'graph_category disk'
  	echo 'graph_scale no'
  	echo 'graph_info This graph shows the inode usage for the partitions of types that use inodes.'

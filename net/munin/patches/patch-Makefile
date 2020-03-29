@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.16 2020/02/02 11:16:53 kirby Exp $
+$OpenBSD: patch-Makefile,v 1.17 2020/03/29 10:22:17 kirby Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -99,7 +99,6 @@ install-pre: $(MAKEFILES)
+@@ -98,7 +98,6 @@ install-pre: $(MAKEFILES)
  	mkdir -p $(STATEDIR)
  	mkdir -p $(SPOOLDIR)
  	mkdir -p $(CONFDIR)
@@ -10,7 +10,7 @@ Index: Makefile
  
  install-master-prime: $(INFILES_MASTER) install-pre install-master
  	mkdir -p $(CONFDIR)/templates
-@@ -111,15 +110,15 @@ install-master-prime: $(INFILES_MASTER) install-pre in
+@@ -110,15 +109,15 @@ install-master-prime: $(INFILES_MASTER) install-pre in
  	mkdir -p $(PERLLIB)
  	mkdir -p $(PERLLIB)/Munin/Master
  	mkdir -p $(HTMLDIR)
@@ -32,7 +32,7 @@ Index: Makefile
  
  	for p in master/www/*.tmpl ;  do \
  		$(INSTALL) -m 0644 "$$p" $(CONFDIR)/templates/ ; \
-@@ -158,10 +157,10 @@ install-plugins-prime: install-plugins build $(PLUGINS
+@@ -157,10 +156,10 @@ install-plugins-prime: install-plugins build $(PLUGINS
  	mkdir -p $(CONFDIR)/plugins
  	mkdir -p $(CONFDIR)/plugin-conf.d
  	mkdir -p $(LIBDIR)/plugins
@@ -46,7 +46,7 @@ Index: Makefile
  	$(CHMOD) 0755 $(CONFDIR)/plugin-conf.d
  
  	@# Process the OS specific plugins at the end. Otherwise they would be overridden by the
-@@ -535,7 +534,7 @@ install-%: %/Build
+@@ -534,7 +533,7 @@ install-%: %/Build
  		--install_path script=$(BINDIR) \
  		--install_path sbin=$(SBINDIR) \
  		--install_path bindoc=$(MANDIR)/man1 \
