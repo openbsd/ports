@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/03/29 16:49:36 rsadowski Exp $
 @bin bin/kdebugdialog5
 @bin bin/kf5-config
 include/KF5/KDELibs4Support/
@@ -1014,6 +1014,10 @@ lib/cmake/KF5KDELibs4Support/PythonCompile.py
 lib/cmake/KF5KDELibs4Support/PythonMacros.cmake
 lib/cmake/KF5KDELibs4Support/SIPMacros.cmake
 lib/cmake/KF5KDELibs4Support/Win32Macros.cmake
+${MODPY_COMMENT}lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}/
+lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}FindLibPython.${MODPY_PYC_MAGIC_TAG}pyc
+lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}FindSIP.${MODPY_PYC_MAGIC_TAG}pyc
+lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}PythonCompile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/cmake/KF5KDELibs4Support/check_installed_exports_file.cmake
 lib/cmake/KF5KDELibs4Support/cmake-modules-styleguide.txt
 lib/cmake/KF5KDELibs4Support/config-alsa.h.cmake

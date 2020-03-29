@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/23 18:01:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2020/03/29 16:49:36 rsadowski Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5KDELibs4Support	7.0
 
@@ -15,6 +16,10 @@ WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Designer
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5Test Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext c m xcb
+
+MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kded>=${MODKF5_VERSION} \
@@ -60,5 +65,9 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_NetworkManager=ON
 # sucks
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/cmake/KF5KDELibs4Support
 
 .include <bsd.port.mk>
