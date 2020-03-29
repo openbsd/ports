@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/07 08:13:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/03/29 18:46:23 paco Exp $
+@conflict py-wcwidth-*
+@pkgpath devel/py-wcwidth
 lib/python${MODPY_VERSION}/site-packages/wcwidth/
 lib/python${MODPY_VERSION}/site-packages/wcwidth-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/wcwidth-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
