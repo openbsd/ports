@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2020/03/29 14:47:51 kn Exp $
+# $OpenBSD: Makefile,v 1.65 2020/03/29 17:23:30 kn Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -23,7 +23,7 @@ WANTLIB = c expat kvm m curses pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-#SEPARATE_BUILD = Yes
+SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=e \
 		--disable-nls \
