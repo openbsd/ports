@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/12/08 09:32:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/29 17:39:58 ajacoutot Exp $
 
 PROVIDER=		consul
-GH_TAGNAME=		v2.6.1
+GH_TAGNAME=		v2.7.0
 
 .include <bsd.port.mk>
