@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/29 17:06:14 rsadowski Exp $
 
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.juk
 
@@ -24,7 +25,7 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =devel/kf5/kinit
+BUILD_DEPENDS =	devel/kf5/kinit
 
 RUN_DEPENDS =	devel/kf5/kinit \
 		x11/kde-applications/kio-extras
@@ -37,21 +38,22 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kitemviews \
 		devel/kf5/kcrash \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
+		devel/kf5/kio \
+		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knotifications \
 		devel/kf5/kservice \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
+		devel/kf5/solid \
+		devel/kf5/sonnet \
 		x11/qt5/qtsvg
 
 TEST_IS_INTERACTIVE =	X11
