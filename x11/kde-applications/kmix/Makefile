@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/29 17:21:37 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
 
@@ -35,7 +36,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/knotifications \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
