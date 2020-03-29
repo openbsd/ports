@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2020/03/28 07:24:37 robert Exp $
+# $OpenBSD: Makefile,v 1.43 2020/03/29 21:02:20 robert Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
@@ -52,6 +52,9 @@ CONFIGURE_ARGS +=	-DWITH_APPINDICATOR=OFF \
 
 # telepathy support is removed in newer releases
 CONFIGURE_ARGS +=	-DWITH_TELEPATHY=OFF
+
+# disable KF5Wallet support
+CONFIGURE_ARGS +=	-DWITH_KF5WALLET=OFF
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
