@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_snes_src_lib_libco_x86_c,v 1.1 2020/03/29 10:10:29 solene Exp $
+
+This prevent the snes module to crash on load on i386
+
+Index: src/snes/src/lib/libco/x86.c
+--- src/snes/src/lib/libco/x86.c.orig
++++ src/snes/src/lib/libco/x86.c
+@@ -9,6 +9,8 @@
+ 
+ #include <assert.h>
+ #include <stdlib.h>
++#include <err.h>
++#include <stdint.h>
+ 
+ #ifdef __cplusplus
+ extern "C" {
+@@ -25,6 +27,7 @@ extern "C" {
+ static thread_local long co_active_buffer[64];
+ static thread_local cothread_t co_active_handle = 0;
+ static void (fastcall *co_swap)(cothread_t, cothread_t) = 0;
++long pagesize, newsize;
+ 
+ /* ABI: fastcall */
+ force_text_section static const unsigned char co_swap_function[] = {
+@@ -64,7 +67,19 @@ cothread_t co_create(unsigned int size, void (*entrypo
+   size += 256;  /* allocate additional space for storage */
+   size &= ~15;  /* align stack to 16-byte boundary */
+ 
+-  if(handle = (cothread_t)malloc(size)) {
++  pagesize = sysconf(_SC_PAGESIZE);
++  if(pagesize == -1)
++    err(1, "sysconf failed");
++  newsize = size / pagesize * pagesize + !!(size % pagesize) * pagesize;
++  handle = (cothread_t)malloc(newsize);
++  if(handle == NULL)
++    err(1, "malloc failed");
++  if((uintptr_t)handle % pagesize)
++    err(1, "misaligned allocation");
++  handle = (cothread_t)mmap(handle, newsize, PROT_READ|PROT_WRITE, MAP_FIXED|MAP_STACK|MAP_PRIVATE|MAP_ANON, -1, 0);
++  if(handle == MAP_FAILED)
++    err(1, "mmap failed");
++  else {
+     long *p = (long*)((char*)handle + size);  /* seek to top of stack */
+     *--p = (long)crash;                       /* crash if entrypoint returns */
+     *--p = (long)entrypoint;                  /* start of function */

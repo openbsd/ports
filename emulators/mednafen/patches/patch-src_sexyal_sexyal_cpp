@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_sexyal_sexyal_cpp,v 1.1 2018/09/08 23:08:39 jeremy Exp $
+$OpenBSD: patch-src_sexyal_sexyal_cpp,v 1.2 2020/03/29 10:10:29 solene Exp $
 
 Give sdl driver higher priority than openbsd driver, since sdl driver
 works with sndiod, and openbsd driver requires exclusive access to the
@@ -8,7 +8,7 @@ audio device.  You can still use the openbsd driver by setting
 Index: src/sexyal/sexyal.cpp
 --- src/sexyal/sexyal.cpp.orig
 +++ src/sexyal/sexyal.cpp
-@@ -150,6 +150,10 @@ static SexyAL_driver drivers[] = 
+@@ -153,6 +153,10 @@ static SexyAL_driver drivers[] = 
          { SEXYAL_TYPE_ALSA, "ALSA", "alsa", SexyALI_ALSA_Open, SexyALI_ALSA_EnumerateDevices },
          #endif
  
@@ -19,7 +19,7 @@ Index: src/sexyal/sexyal.cpp
  	#if HAVE_OPENBSD_AUDIO
  	{ SEXYAL_TYPE_OPENBSD, "OpenBSD(/dev/audio*)", "openbsd", SexyALI_OpenBSD_Open, SexyALI_OpenBSD_EnumerateDevices },
  	#endif
-@@ -182,13 +186,6 @@ static SexyAL_driver drivers[] = 
+@@ -185,13 +189,6 @@ static SexyAL_driver drivers[] = 
  	{ SEXYAL_TYPE_DOS_ES1371, "Ensoniq ES1371", "es1371", SexyALI_DOS_ES1371_Open, 	NULL, SexyALI_DOS_ES1371_Avail },
  	{ SEXYAL_TYPE_DOS_CMI8738, "CMI8738", "cmi8738", SexyALI_DOS_CMI8738_Open, 	NULL, SexyALI_DOS_CMI8738_Avail },
  	#endif
