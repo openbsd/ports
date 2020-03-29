@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/29 20:18:38 rsadowski Exp $
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
@@ -23,6 +24,8 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications \
 		lang/python
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -51,8 +54,11 @@ LIB_DEPENDS =	devel/kf5/kauth \
 
 MODPY_ADJ_FILES =	scripts/xliffmerge.py
 
-
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/lokalize/scripts
+	find ${PREFIX}/share/lokalize/scripts/odf -type f -name \*.py -exec ${MODPY_BIN_ADJ} {} +
+	2to3 -w -n ${PREFIX}/share/lokalize/scripts/odf
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/apps/lokalize/scripts/ \
+		${PREFIX}/share/lokalize/scripts/odf/
 
 .include <bsd.port.mk>

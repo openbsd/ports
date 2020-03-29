@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/29 20:18:38 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kmix
@@ -297,6 +297,10 @@ share/lokalize/scripts/find-gui-text.sh
 share/lokalize/scripts/msgmerge.py
 share/lokalize/scripts/msgmerge.rc
 share/lokalize/scripts/odf/
+share/lokalize/scripts/odf/${MODPY_PYCACHE}/
+share/lokalize/scripts/odf/${MODPY_PYCACHE}xliff2odf-standalone.${MODPY_PYC_MAGIC_TAG}pyc
+share/lokalize/scripts/odf/${MODPY_PYCACHE}xliff2odf.${MODPY_PYC_MAGIC_TAG}pyc
+share/lokalize/scripts/odf/${MODPY_PYCACHE}xliffmerge.${MODPY_PYC_MAGIC_TAG}pyc
 share/lokalize/scripts/odf/xliff2odf-standalone.py
 share/lokalize/scripts/odf/xliff2odf.py
 share/lokalize/scripts/odf/xliff2odf.rc
