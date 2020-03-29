@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/29 16:44:09 rsadowski Exp $
 
 COMMENT =	world domination strategy game
 DISTNAME =	ksirk-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksirk
 
@@ -19,6 +20,7 @@ WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m qca-qt5 z
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
+MODKDE5_DESKTOP_FILE = yes
 
 MODULES +=	x11/kde-applications \
 		multimedia/phonon

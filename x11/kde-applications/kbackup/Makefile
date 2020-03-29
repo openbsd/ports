@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/29 16:44:08 rsadowski Exp $
 
 COMMENT =	KDE backup program with an easy to use user interface
 DISTNAME =	kbackup-${VERSION}
 CATEGORIES =	x11 sysutils
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kbackup
 
@@ -20,6 +21,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
+
+RUN_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \

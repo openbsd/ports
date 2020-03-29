@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/29 16:44:08 rsadowski Exp $
 
 COMMENT =	KDE calculating fractions practicing app
 DISTNAME =	kbruch-${VERSION}
 CATEGORIES =	education x11
+REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kbruch/
 
@@ -14,6 +15,7 @@ WANTLIB += Qt5Gui Qt5Widgets Qt5Xml c m
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
+MODKDE5_DESKTOP_FILE = yes
 
 MODULES +=	x11/kde-applications
 

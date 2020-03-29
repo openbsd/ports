@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/29 16:44:09 rsadowski Exp $
 
 COMMENT =	KDE version of Color Lines game
 DISTNAME =	klines-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/klines
 
@@ -15,6 +16,7 @@ WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
+MODKDE5_DESKTOP_FILE = yes
 
 MODULES +=	x11/kde-applications
 

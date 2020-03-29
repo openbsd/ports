@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/03/29 16:44:08 rsadowski Exp $
 
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
 CATEGORIES =	education
+REVISION =	0
 
 SHARED_LIBS +=  artikulatecore            1.0 # 0.0
 SHARED_LIBS +=  artikulatelearnerprofile  1.0 # 0.0
@@ -23,6 +24,7 @@ MODPY_RUNDEP =	No
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
+MODKDE5_DESKTOP_FILE = yes
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 RUN_DEPENDS =	x11/qt5/qtquickcontrols
