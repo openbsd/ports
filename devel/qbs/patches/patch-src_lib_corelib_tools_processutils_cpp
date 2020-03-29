@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_lib_corelib_tools_processutils_cpp,v 1.1 2018/04/07 07:48:12 rsadowski Exp $
+$OpenBSD: patch-src_lib_corelib_tools_processutils_cpp,v 1.2 2020/03/29 10:49:51 rsadowski Exp $
+
+TODO: Replace kvm
 
 Index: src/lib/corelib/tools/processutils.cpp
 --- src/lib/corelib/tools/processutils.cpp.orig

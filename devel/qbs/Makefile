@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/29 10:49:51 rsadowski Exp $
 
 COMMENT =	declarative cross-platform build tool
-V =		1.12.1
+V =		1.15.0
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
-REVISION =	1
 
-SHARED_LIBS =	qbscore			5.0
-SHARED_LIBS +=	qbsqtprofilesetup	3.0
+SHARED_LIBS =	qbscore			6.0
+SHARED_LIBS +=	qbsqtprofilesetup	4.0
 
 CATEGORIES =	devel
 HOMEPAGE =	https://doc.qt.io/qbs/
