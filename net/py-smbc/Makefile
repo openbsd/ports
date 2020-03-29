@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/19 14:47:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/29 10:11:04 ajacoutot Exp $
 
 COMMENT=		Python bindings to wrap the libsmbclient API
 
-MODPY_EGG_VERSION=	1.0.19
+MODPY_EGG_VERSION=	1.0.20
 DISTNAME=		pysmbc-${MODPY_EGG_VERSION}
 PKGNAME=		py-smbc-${MODPY_EGG_VERSION}
 EXTRACT_SUFX=		.tar.bz2
