@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/08/09 00:00:40 bcallah Exp $
-bin/bpdb${MODPY_BIN_SUFFIX}
-bin/bpython${MODPY_BIN_SUFFIX}
-bin/bpython-curses${MODPY_BIN_SUFFIX}
-bin/bpython-urwid${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.10 2020/03/29 18:45:52 paco Exp $
+@conflict bpython3-*
+@pkgpath devel/bpython
+bin/bpdb
+bin/bpython
+bin/bpython-curses
+bin/bpython-urwid
 lib/python${MODPY_VERSION}/site-packages/bpdb/
 lib/python${MODPY_VERSION}/site-packages/bpdb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpdb/__main__.py
@@ -180,11 +182,11 @@ lib/python${MODPY_VERSION}/site-packages/bpython/translations/nl_NL/
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/nl_NL/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/nl_NL/LC_MESSAGES/bpython.mo
 lib/python${MODPY_VERSION}/site-packages/bpython/urwid.py
-@man man/man1/bpython${MODPY_BIN_SUFFIX}.1
-@man man/man5/bpython-config${MODPY_BIN_SUFFIX}.5
+@man man/man1/bpython.1
+@man man/man5/bpython-config.5
 share/appinfo/
-share/appinfo/org.bpython-interpreter.bpython${MODPY_BIN_SUFFIX}.appdata.xml
-share/applications/org.bpython-interpreter.bpython${MODPY_BIN_SUFFIX}.desktop
+share/appinfo/org.bpython-interpreter.bpython.appdata.xml
+share/applications/org.bpython-interpreter.bpython.desktop
 share/pixmaps/
-share/pixmaps/bpython${MODPY_BIN_SUFFIX}.png
 @tag update-desktop-database
+share/pixmaps/bpython.png
