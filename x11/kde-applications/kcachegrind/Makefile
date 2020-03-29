@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/29 17:15:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/29 17:16:04 rsadowski Exp $
 
 COMMENT =	profile data visualization tool
 DISTNAME =	kcachegrind-${VERSION}
 CATEGORIES =	x11 devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kcachegrind
 
