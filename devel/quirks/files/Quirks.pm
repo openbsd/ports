@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.919 2020/03/27 08:08:49 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.920 2020/03/29 09:33:48 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -409,6 +409,7 @@ my $stem_extensions = {
 	'py-boto3' => 'py3-boto3',
 	'py-s3transfer' => 'py3-s3transfer',
 	'py-libpst' => 'py3-libpst',
+	'Clementine' => 'clementine',
 };
 
 my $obsolete_reason = {
