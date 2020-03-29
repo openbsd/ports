@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2019/10/31 22:19:48 kn Exp $
+# $OpenBSD: Makefile,v 1.64 2020/03/29 14:47:51 kn Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.12.1
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -39,7 +39,6 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
 TEST_DEPENDS +=	devel/dejagnu
-MODPY_BUILDDEP = No
 
 post-install:
 	${MODPY_BIN} -m compileall ${PREFIX}/share/gdb/python

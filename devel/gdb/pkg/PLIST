@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2019/10/31 22:19:48 kn Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/03/29 14:47:52 kn Exp $
 @conflict arm-none-eabi-gdb-*
 @conflict libbfd-*
 @bin bin/egdb
@@ -15,9 +15,9 @@ include/symcat.h
 @info info/gdb.info
 @info info/stabs.info
 @comment lib/charset.alias
-lib/libbfd.a
+@static-lib lib/libbfd.a
 lib/libbfd.la
-lib/libopcodes.a
+@static-lib lib/libopcodes.a
 lib/libopcodes.la
 @man man/man1/egdb.1
 @man man/man1/egdbserver.1
