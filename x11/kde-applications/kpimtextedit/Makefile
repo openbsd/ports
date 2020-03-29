@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/23 18:01:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/29 18:18:01 rsadowski Exp $
 
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5PimTextEdit            1.0 # 5.6
 
@@ -20,20 +21,28 @@ MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/ktextwidgets \
 		devel/kf5/kdesignerplugin \
+		devel/kf5/kiconthemes \
+		devel/kf5/kitemviews \
+		devel/kf5/solid \
 		x11/qt5/qttools
 
 RUN_DEPENDS =	devel/kf5/ktextwidgets \
 		devel/kf5/kdesignerplugin \
+		devel/kf5/kiconthemes \
+		devel/kf5/kitemviews \
+		devel/kf5/solid \
 		x11/qt5/qttools
 
-LIB_DEPENDS =	devel/kf5/kcodecs \
+LIB_DEPENDS =	devel/kf5/kauth \
+		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
+		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kemoticons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
+		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
