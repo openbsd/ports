@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2020/02/10 18:18:47 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2020/03/30 11:00:11 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -57,6 +57,7 @@ share/vala-${API_V}/
 share/vala-${API_V}/vapi/
 share/vala-${API_V}/vapi/alsa.deps
 share/vala-${API_V}/vapi/alsa.vapi
+share/vala-${API_V}/vapi/atk.deps
 share/vala-${API_V}/vapi/atk.vapi
 share/vala-${API_V}/vapi/atspi-2.deps
 share/vala-${API_V}/vapi/atspi-2.vapi
@@ -64,6 +65,8 @@ share/vala-${API_V}/vapi/avahi-client.vapi
 share/vala-${API_V}/vapi/avahi-gobject.deps
 share/vala-${API_V}/vapi/avahi-gobject.vapi
 share/vala-${API_V}/vapi/bzlib.vapi
+share/vala-${API_V}/vapi/cairo-gobject.deps
+share/vala-${API_V}/vapi/cairo-gobject.vapi
 share/vala-${API_V}/vapi/cairo-xcb.deps
 share/vala-${API_V}/vapi/cairo-xcb.vapi
 share/vala-${API_V}/vapi/cairo.vapi
@@ -111,12 +114,14 @@ share/vala-${API_V}/vapi/gedit-2.20.deps
 share/vala-${API_V}/vapi/gedit-2.20.vapi
 share/vala-${API_V}/vapi/geocode-glib-1.0.deps
 share/vala-${API_V}/vapi/geocode-glib-1.0.vapi
+share/vala-${API_V}/vapi/gio-2.0.deps
 share/vala-${API_V}/vapi/gio-2.0.vapi
 share/vala-${API_V}/vapi/gio-unix-2.0.deps
 share/vala-${API_V}/vapi/gio-unix-2.0.vapi
 share/vala-${API_V}/vapi/gio-windows-2.0.deps
 share/vala-${API_V}/vapi/gio-windows-2.0.vapi
 share/vala-${API_V}/vapi/glib-2.0.vapi
+share/vala-${API_V}/vapi/gmodule-2.0.deps
 share/vala-${API_V}/vapi/gmodule-2.0.vapi
 share/vala-${API_V}/vapi/gnet-2.0.deps
 share/vala-${API_V}/vapi/gnet-2.0.vapi
@@ -126,7 +131,9 @@ share/vala-${API_V}/vapi/gnome-desktop-3.0.deps
 share/vala-${API_V}/vapi/gnome-desktop-3.0.vapi
 share/vala-${API_V}/vapi/gnome-vfs-2.0.vapi
 share/vala-${API_V}/vapi/gnutls.vapi
+share/vala-${API_V}/vapi/gobject-2.0.deps
 share/vala-${API_V}/vapi/gobject-2.0.vapi
+share/vala-${API_V}/vapi/gobject-introspection-1.0.deps
 share/vala-${API_V}/vapi/gobject-introspection-1.0.vapi
 share/vala-${API_V}/vapi/goocanvas-2.0.deps
 share/vala-${API_V}/vapi/goocanvas-2.0.vapi
@@ -139,6 +146,7 @@ share/vala-${API_V}/vapi/graphene-gobject-1.0.vapi
 share/vala-${API_V}/vapi/gsl.vapi
 share/vala-${API_V}/vapi/gst-editing-services-1.0.deps
 share/vala-${API_V}/vapi/gst-editing-services-1.0.vapi
+share/vala-${API_V}/vapi/gstreamer-1.0.deps
 share/vala-${API_V}/vapi/gstreamer-1.0.vapi
 share/vala-${API_V}/vapi/gstreamer-allocators-1.0.deps
 share/vala-${API_V}/vapi/gstreamer-allocators-1.0.vapi
@@ -198,6 +206,8 @@ share/vala-${API_V}/vapi/gudev-1.0.deps
 share/vala-${API_V}/vapi/gudev-1.0.vapi
 share/vala-${API_V}/vapi/hal.deps
 share/vala-${API_V}/vapi/hal.vapi
+share/vala-${API_V}/vapi/harfbuzz-gobject.deps
+share/vala-${API_V}/vapi/harfbuzz-gobject.vapi
 share/vala-${API_V}/vapi/hildon-1.deps
 share/vala-${API_V}/vapi/hildon-1.vapi
 share/vala-${API_V}/vapi/hildon-fm-2.deps
