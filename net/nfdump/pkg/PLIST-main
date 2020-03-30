@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/04/23 13:48:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2020/03/30 14:13:11 sthen Exp $
 @newgroup _nfcapd:649
 @newuser _nfcapd:649:_nfcapd:daemon:nfcapd user:/nonexistent:/sbin/nologin
 @bin bin/ft2nfdump
@@ -8,7 +8,7 @@
 @bin bin/nfexpire
 @bin bin/nfreplay
 @bin bin/sfcapd
-lib/libnfdump.a
+@static-lib lib/libnfdump.a
 lib/libnfdump.la
 @lib lib/libnfdump.so.${LIBnfdump_VERSION}
 @man man/man1/ft2nfdump.1
