@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/29 19:34:39 jturner Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/30 17:13:26 jturner Exp $
 
 COMMENT =		application source generator
 
-DISTNAME =		openradtool-0.8.8
+DISTNAME =		openradtool-0.8.10
 CATEGORIES =		www
 
 MAINTAINER =		James Turner <james@calminferno.net>
