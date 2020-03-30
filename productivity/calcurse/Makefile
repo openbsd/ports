@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2019/11/08 15:45:20 fcambus Exp $
+# $OpenBSD: Makefile,v 1.33 2020/03/30 11:11:31 fcambus Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
-DISTNAME=	calcurse-4.5.1
+DISTNAME=	calcurse-4.6.0
 EPOCH=		0
 
 CATEGORIES=	productivity
