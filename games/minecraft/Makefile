@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/03/30 14:10:37 kmos Exp $
 
 PORTROACH=	skipv:0.1
 PORTROACH_COMMENT=version 0.1 is actually older than 0.0.4
@@ -10,7 +10,7 @@ GH_PROJECT=	minecraft
 GH_ACCOUNT=	qbit
 GH_TAGNAME=	${GH_PROJECT}-${V}
 DISTNAME=	${GH_TAGNAME}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	games
 
@@ -23,7 +23,8 @@ MODJAVA_VER=	1.8+
 # BSD
 PERMIT_PACKAGE=	Yes
 
-RUN_DEPENDS=	devel/desktop-file-utils \
+RUN_DEPENDS=	audio/openal \
+		devel/desktop-file-utils \
 		games/lwjgl \
 		java/javaPathHelper \
 		x11/gtk+3,-guic
