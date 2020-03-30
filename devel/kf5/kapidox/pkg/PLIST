@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/30 16:34:36 rsadowski Exp $
 bin/depdiagram-generate
 bin/depdiagram-generate-all
 bin/depdiagram-prepare
@@ -6,9 +6,16 @@ bin/kapidox_generate
 lib/python${MODPY_VERSION}/site-packages/kapidox/
 lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/kapidox/__init__.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}argparserutils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}doxyfilewriter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}hlfunctions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}preprocessing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/argparserutils.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/argparserutils.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/Doxyfile.global
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/DoxygenLayout.xml
@@ -71,29 +78,24 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/subgroup-sidebar
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/subgroup.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/__init__.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}block.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}framework.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}frameworkdb.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}gvutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/block.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/block.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/framework.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/framework.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/frameworkdb.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/frameworkdb.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/generate.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/generate.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/gvutils.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/gvutils.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/doxyfilewriter.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/doxyfilewriter.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/generator.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/generator.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/hlfunctions.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/hlfunctions.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/models.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/models.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/preprocessing.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/preprocessing.pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/utils.py
-lib/python${MODPY_VERSION}/site-packages/kapidox/utils.pyc
 @man man/man1/depdiagram-generate-all.1
 @man man/man1/depdiagram-generate.1
 @man man/man1/depdiagram-prepare.1
