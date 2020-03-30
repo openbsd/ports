@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2019/08/15 06:47:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.32 2020/03/30 07:56:27 landry Exp $
 @conflict xfce4-toys-*
 @conflict xfce-utils-*
 @pkgpath x11/xfce4/xfce-utils
@@ -33,6 +33,9 @@ share/locale/am/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
 share/locale/ast/LC_MESSAGES/xfce4-session.mo
 share/locale/be/LC_MESSAGES/xfce4-session.mo
+share/locale/be@tarask/
+share/locale/be@tarask/LC_MESSAGES/
+share/locale/be@tarask/LC_MESSAGES/xfce4-session.mo
 share/locale/bg/LC_MESSAGES/xfce4-session.mo
 share/locale/bn/LC_MESSAGES/xfce4-session.mo
 share/locale/ca/LC_MESSAGES/xfce4-session.mo
