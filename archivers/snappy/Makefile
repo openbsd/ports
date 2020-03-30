@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/30 20:43:50 sthen Exp $
 
 COMMENT =	fast compression/decompression library
 
-GH_TAGNAME =	1.1.7
+GH_TAGNAME =	1.1.8
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
-REVISION =	0
 
-SHARED_LIBS =	snappy	0.0	# 4.1
+SHARED_LIBS =	snappy	1.0	# 4.1
 
 CATEGORIES =	archivers
 
