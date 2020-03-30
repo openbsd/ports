@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.192 2020/01/26 22:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.193 2020/03/30 20:10:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-4.2.0
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz

@@ -1,11 +1,11 @@
-$OpenBSD: patch-audio_sndioaudio_c,v 1.3 2020/01/25 17:40:29 ajacoutot Exp $
+$OpenBSD: patch-audio_sndioaudio_c,v 1.4 2020/03/30 20:10:24 ajacoutot Exp $
 
 sndio module
 
 Index: audio/sndioaudio.c
 --- audio/sndioaudio.c.orig
 +++ audio/sndioaudio.c
-@@ -0,0 +1,553 @@
+@@ -0,0 +1,555 @@
 +/*
 + * Copyright (c) 2019 Alexandre Ratchov <alex@caoua.org>
 + *
@@ -51,19 +51,19 @@ Index: audio/sndioaudio.c
 +        HWVoiceOut out;
 +        HWVoiceIn in;
 +    } hw;
-+    struct sio_par par;			/* hardware parameters */
-+    struct sio_hdl *hdl;		/* device handle */
-+    struct pollfd *pfds;		/* used by poll() interface */
++    struct sio_par par;
++    struct sio_hdl *hdl;
++    struct pollfd *pfds;
 +    struct pollindex {
 +        struct SndioVoice *self;
 +        int index;
-+    } *pindexes;			/* map index to "self" pointer */
-+    unsigned char *buf;			/* single block of audio samples */
-+    size_t buf_size;			/* size of buf */
-+    size_t sndio_pos;			/* h/w read/write position in buf */
-+    size_t qemu_pos;			/* caller position in buf */
-+    unsigned int mode;			/* SIO_PLAY or SIO_REC */
-+    unsigned int nfds;			/* number of polled descriptors */
++    } *pindexes;
++    unsigned char *buf;
++    size_t buf_size;
++    size_t sndio_pos;
++    size_t qemu_pos;
++    unsigned int mode;
++    unsigned int nfds;
 +} SndioVoice;
 +
 +typedef struct SndioConf {
@@ -78,7 +78,7 @@ Index: audio/sndioaudio.c
 +/*
 + * stop polling descriptors
 + */
-+static void sndio_poll_clear (SndioVoice *self)
++static void sndio_poll_clear(SndioVoice *self)
 +{
 +    struct pollfd *pfd;
 +    int i;
@@ -103,21 +103,22 @@ Index: audio/sndioaudio.c
 +
 +    /*
 +     * transfer data to device, until it blocks
-+     */    
++     */
 +    while (todo > 0) {
-+        n = sio_write (self->hdl, self->buf + self->sndio_pos, todo);
-+        if (n == 0)
++        n = sio_write(self->hdl, self->buf + self->sndio_pos, todo);
++        if (n == 0) {
 +            break;
++        }
 +        self->sndio_pos += n;
 +        todo -= n;
 +    }
 +
 +    if (self->sndio_pos == self->buf_size) {
-+	/*
-+	 * we complete the block
-+	 */
-+	self->sndio_pos = 0;
-+	self->qemu_pos = 0;
++        /*
++         * we complete the block
++         */
++        self->sndio_pos = 0;
++        self->qemu_pos = 0;
 +    }
 +}
 +
@@ -133,11 +134,12 @@ Index: audio/sndioaudio.c
 +
 +    /*
 +     * transfer data from the device, until it blocks
-+     */    
++     */
 +    while (todo > 0) {
-+        n = sio_read (self->hdl, self->buf + self->sndio_pos, todo);
-+        if (n == 0)
++        n = sio_read(self->hdl, self->buf + self->sndio_pos, todo);
++        if (n == 0) {
 +            break;
++        }
 +        self->sndio_pos += n;
 +        todo -= n;
 +    }
@@ -154,11 +156,13 @@ Index: audio/sndioaudio.c
 +
 +    events = 0;
 +    if (self->mode == SIO_PLAY) {
-+        if (self->sndio_pos < self->qemu_pos)
++        if (self->sndio_pos < self->qemu_pos) {
 +            events |= POLLOUT;
++        }
 +    } else {
-+        if (self->sndio_pos < self->buf_size)
++        if (self->sndio_pos < self->buf_size) {
 +            events |= POLLIN;
++        }
 +    }
 +
 +    /*
@@ -166,13 +170,14 @@ Index: audio/sndioaudio.c
 +     * wants, they are different from our 'event' variable because
 +     * sndio may use descriptors internally.
 +     */
-+    self->nfds = sio_pollfd (self->hdl, self->pfds, events);
++    self->nfds = sio_pollfd(self->hdl, self->pfds, events);
 +
 +    for (i = 0; i < self->nfds; i++) {
 +        pfd = &self->pfds[i];
-+        if (pfd->fd < 0)
++        if (pfd->fd < 0) {
 +                continue;
-+        qemu_set_fd_handler (pfd->fd,
++        }
++        qemu_set_fd_handler(pfd->fd,
 +                (pfd->events & POLLIN) ? sndio_poll_in : NULL,
 +                (pfd->events & POLLOUT) ? sndio_poll_out : NULL,
 +                &self->pindexes[i]);
@@ -184,14 +189,14 @@ Index: audio/sndioaudio.c
 + * call-back called when one of the descriptors
 + * became readable or writable
 + */
-+static void sndio_poll_event (SndioVoice *self, int index, int event)
++static void sndio_poll_event(SndioVoice *self, int index, int event)
 +{
 +    int revents;
 +
 +    /*
 +     * ensure we're not called twice this cycle
 +     */
-+    sndio_poll_clear (self);
++    sndio_poll_clear(self);
 +
 +    /*
 +     * make self->pfds[] look as we're returning from poll syscal,
@@ -203,23 +208,26 @@ Index: audio/sndioaudio.c
 +     * tell sndio to handle events and return whether we can read or
 +     * write without blocking.
 +     */
-+    revents = sio_revents (self->hdl, self->pfds);
++    revents = sio_revents(self->hdl, self->pfds);
 +    if (self->mode == SIO_PLAY) {
-+        if (revents & POLLOUT)
-+            sndio_write (self);
++        if (revents & POLLOUT) {
++            sndio_write(self);
++        }
 +
-+        if (self->qemu_pos < self->buf_size)
-+           audio_run (self->hw.out.s, "sndio_out");
-+
++        if (self->qemu_pos < self->buf_size) {
++            audio_run(self->hw.out.s, "sndio_out");
++        }
 +    } else {
-+        if (revents & POLLIN)
-+            sndio_read (self);
++        if (revents & POLLIN) {
++            sndio_read(self);
++        }
 +
-+        if (self->qemu_pos < self->sndio_pos)
-+           audio_run (self->hw.in.s, "sndio_in");
++        if (self->qemu_pos < self->sndio_pos) {
++            audio_run(self->hw.in.s, "sndio_in");
++        }
 +    }
 +
-+    sndio_poll_wait (self);
++    sndio_poll_wait(self);
 +}
 +
 +/*
@@ -243,7 +251,7 @@ Index: audio/sndioaudio.c
 +    SndioVoice *self = (SndioVoice *) hw;
 +
 +    self->qemu_pos += size;
-+    sndio_poll_wait (self);
++    sndio_poll_wait(self);
 +    return size;
 +}
 +
@@ -261,11 +269,12 @@ Index: audio/sndioaudio.c
 +     * unlike the get_buffer_out() method, get_buffer_in()
 +     * must return a buffer of at most the given size, see audio.c
 +     */
-+    max_todo = *size; 
++    max_todo = *size;
 +
 +    todo = self->sndio_pos - self->qemu_pos;
-+    if (todo > max_todo)
++    if (todo > max_todo) {
 +        todo = max_todo;
++    }
 +
 +    *size = todo;
 +    return self->buf + self->qemu_pos;
@@ -280,10 +289,10 @@ Index: audio/sndioaudio.c
 +
 +    self->qemu_pos += size;
 +    if (self->qemu_pos == self->buf_size) {
-+	    self->qemu_pos = 0;
-+	    self->sndio_pos = 0;
++        self->qemu_pos = 0;
++        self->sndio_pos = 0;
 +    }
-+    sndio_poll_wait (self);
++    sndio_poll_wait(self);
 +}
 +
 +/*
@@ -293,7 +302,7 @@ Index: audio/sndioaudio.c
 +{
 +    struct pollindex *pindex = (struct pollindex *) arg;
 +
-+    sndio_poll_event (pindex->self, pindex->index, POLLOUT);
++    sndio_poll_event(pindex->self, pindex->index, POLLOUT);
 +}
 +
 +/*
@@ -303,34 +312,23 @@ Index: audio/sndioaudio.c
 +{
 +    struct pollindex *pindex = (struct pollindex *) arg;
 +
-+    sndio_poll_event (pindex->self, pindex->index, POLLIN);
++    sndio_poll_event(pindex->self, pindex->index, POLLIN);
 +}
 +
-+static void sndio_fini (SndioVoice *self)
++static void sndio_fini(SndioVoice *self)
 +{
 +    if (self->hdl) {
-+        sio_close (self->hdl);
++        sio_close(self->hdl);
 +        self->hdl = NULL;
 +    }
 +
-+    if (self->pfds) {
-+        g_free (self->pfds);
-+        self->pfds = NULL;
-+    }
-+
-+    if (self->pindexes) {
-+        g_free (self->pindexes);
-+        self->pindexes = NULL;
-+    }
-+
-+    if (self->buf) {
-+        g_free (self->buf);
-+        self->buf = NULL;
-+    }
++    g_free(self->pfds);
++    g_free(self->pindexes);
++    g_free(self->buf);
 +}
 +
-+static int sndio_init (SndioVoice *self,
-+                       struct audsettings *as, int mode, Audiodev *dev)
++static int sndio_init(SndioVoice *self,
++                      struct audsettings *as, int mode, Audiodev *dev)
 +{
 +    AudiodevSndioOptions *opts = &dev->u.sndio;
 +    unsigned long long latency;
@@ -343,9 +341,9 @@ Index: audio/sndioaudio.c
 +    latency = opts->has_latency ? opts->latency : SNDIO_LATENCY_US;
 +
 +    /* open the device in non-blocking mode */
-+    self->hdl = sio_open (dev_name, mode, 1);
++    self->hdl = sio_open(dev_name, mode, 1);
 +    if (self->hdl == NULL) {
-+        dolog ("failed to open device\n");
++        dolog("failed to open device\n");
 +        return -1;
 +    }
 +
@@ -378,29 +376,31 @@ Index: audio/sndioaudio.c
 +        req.bits = 32;
 +        req.sig = 0;
 +    default:
-+        dolog ("unknown audio sample format\n");
++        dolog("unknown audio sample format\n");
 +        return -1;
 +    }
 +
-+    if (req.bits > 8)
++    if (req.bits > 8) {
 +        req.le = as->endianness ? 0 : 1;
++    }
 +
 +    req.rate = as->freq;
-+    if (mode == SIO_PLAY)
++    if (mode == SIO_PLAY) {
 +            req.pchan = as->nchannels;
-+    else
++    } else {
 +            req.rchan = as->nchannels;
++    }
 +
 +    /* set on-device buffer size */
 +    req.appbufsz = req.rate * latency / 1000000;
 +
-+    if (!sio_setpar (self->hdl, &req)) {
-+        dolog ("failed set audio params\n");
++    if (!sio_setpar(self->hdl, &req)) {
++        dolog("failed set audio params\n");
 +        goto fail;
 +    }
 +
-+    if (!sio_getpar (self->hdl, &self->par)) {
-+        dolog ("failed get audio params\n");
++    if (!sio_getpar(self->hdl, &self->par)) {
++        dolog("failed get audio params\n");
 +        goto fail;
 +    }
 +
@@ -413,7 +413,7 @@ Index: audio/sndioaudio.c
 +    if (self->par.bits != req.bits || self->par.bps != req.bits / 8 ||
 +        self->par.sig != req.sig || (req.bits > 8 && self->par.le != req.le) ||
 +        self->par.rate != as->freq || nch != as->nchannels) {
-+        dolog ("unsupported audio params\n");
++        dolog("unsupported audio params\n");
 +        goto fail;
 +    }
 +
@@ -423,23 +423,23 @@ Index: audio/sndioaudio.c
 +     */
 +    self->buf_size = self->par.round * self->par.bps * nch;
 +
-+    self->buf = g_malloc (self->buf_size);
++    self->buf = g_malloc(self->buf_size);
 +    if (self->buf == NULL) {
-+        dolog ("failed to allocate audio buffer\n");
++        dolog("failed to allocate audio buffer\n");
 +        goto fail;
 +    }
 +
-+    nfds = sio_nfds (self->hdl);
++    nfds = sio_nfds(self->hdl);
 +
-+    self->pfds = g_malloc_n (nfds, sizeof(struct pollfd));
++    self->pfds = g_malloc_n(nfds, sizeof(struct pollfd));
 +    if (self->pfds == NULL) {
-+        dolog ("failed to allocate pollfd structures\n");
++        dolog("failed to allocate pollfd structures\n");
 +        goto fail;
 +    }
 +
-+    self->pindexes = g_malloc_n (nfds, sizeof(struct pollindex));
++    self->pindexes = g_malloc_n(nfds, sizeof(struct pollindex));
 +    if (self->pindexes == NULL) {
-+        dolog ("failed to allocate pollindex structures\n");
++        dolog("failed to allocate pollindex structures\n");
 +        goto fail;
 +    }
 +
@@ -450,92 +450,94 @@ Index: audio/sndioaudio.c
 +
 +    return 0;
 +fail:
-+    sndio_fini (self);
++    sndio_fini(self);
 +    return -1;
 +}
 +
-+static void sndio_enable (SndioVoice *self, bool enable)
++static void sndio_enable(SndioVoice *self, bool enable)
 +{
 +    if (enable) {
-+        sio_start (self->hdl);
-+        sndio_poll_wait (self);
++        sio_start(self->hdl);
++        sndio_poll_wait(self);
 +    } else {
-+        sndio_poll_clear (self);
-+        sio_stop (self->hdl);
++        sndio_poll_clear(self);
++        sio_stop(self->hdl);
 +    }
 +}
 +
-+static void sndio_enable_out (HWVoiceOut *hw, bool enable)
++static void sndio_enable_out(HWVoiceOut *hw, bool enable)
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    return sndio_enable (self, enable);
++    return sndio_enable(self, enable);
 +}
 +
-+static void sndio_enable_in (HWVoiceIn *hw, bool enable)
++static void sndio_enable_in(HWVoiceIn *hw, bool enable)
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    return sndio_enable (self, enable);
++    return sndio_enable(self, enable);
 +}
 +
-+static int sndio_init_out (HWVoiceOut *hw, struct audsettings *as, void *opaque)
++static int sndio_init_out(HWVoiceOut *hw, struct audsettings *as, void *opaque)
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    if (sndio_init (self, as, SIO_PLAY, opaque) == -1)
++    if (sndio_init(self, as, SIO_PLAY, opaque) == -1) {
 +        return -1;
++    }
 +
-+    audio_pcm_init_info (&hw->info, as);
++    audio_pcm_init_info(&hw->info, as);
 +    hw->samples = self->par.round;
 +    return 0;
 +}
 +
-+static int sndio_init_in (HWVoiceIn *hw, struct audsettings *as, void *opaque)
++static int sndio_init_in(HWVoiceIn *hw, struct audsettings *as, void *opaque)
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    if (sndio_init (self, as, SIO_REC, opaque) == -1)
++    if (sndio_init(self, as, SIO_REC, opaque) == -1) {
 +        return -1;
++    }
 +
-+    audio_pcm_init_info (&hw->info, as);
++    audio_pcm_init_info(&hw->info, as);
 +    hw->samples = self->par.round;
 +    return 0;
 +}
 +
-+static void sndio_fini_out (HWVoiceOut *hw)
++static void sndio_fini_out(HWVoiceOut *hw)
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
 +    return sndio_fini(self);
 +}
 +
-+static void sndio_fini_in (HWVoiceIn *hw)
++static void sndio_fini_in(HWVoiceIn *hw)
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
 +    return sndio_fini(self);
 +}
 +
-+static void *sndio_audio_init (Audiodev *dev)
++static void *sndio_audio_init(Audiodev *dev)
 +{
 +    assert(dev->driver == AUDIODEV_DRIVER_SNDIO);
 +    return dev;
 +}
 +
-+static void sndio_audio_fini (void *opaque)
++static void sndio_audio_fini(void *opaque)
 +{
 +}
 +
 +static struct audio_pcm_ops sndio_pcm_ops = {
-+    .init_out	    = sndio_init_out,
-+    .fini_out	    = sndio_fini_out,
-+    .enable_out	    = sndio_enable_out,
++    .init_out       = sndio_init_out,
++    .fini_out       = sndio_fini_out,
++    .enable_out     = sndio_enable_out,
 +    .get_buffer_out = sndio_get_buffer_out,
 +    .put_buffer_out = sndio_put_buffer_out,
-+    .init_in	    = sndio_init_in,
-+    .fini_in	    = sndio_fini_in,
-+    .enable_in	    = sndio_enable_in,
++    .init_in        = sndio_init_in,
++    .fini_in        = sndio_fini_in,
++    .enable_in      = sndio_enable_in,
 +    .get_buffer_in  = sndio_get_buffer_in,
 +    .put_buffer_in  = sndio_put_buffer_in,
 +};
@@ -549,8 +551,8 @@ Index: audio/sndioaudio.c
 +    .can_be_default = 1,
 +    .max_voices_out = INT_MAX,
 +    .max_voices_in  = INT_MAX,
-+    .voice_size_out = sizeof (SndioVoice),
-+    .voice_size_in  = sizeof (SndioVoice)
++    .voice_size_out = sizeof(SndioVoice),
++    .voice_size_in  = sizeof(SndioVoice)
 +};
 +
 +static void register_audio_sndio(void)
