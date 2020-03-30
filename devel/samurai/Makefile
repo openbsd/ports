@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/19 21:13:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2020/03/30 20:02:42 bcallah Exp $
 
 COMMENT =	ninja-compatible build tool written in C
 
-V =		1.0
+V =		1.1
 DISTNAME =	samurai-$V
 CATEGORIES =	devel
 
