@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/25 23:57:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/03/30 13:51:55 sthen Exp $
 
 COMMENT=	IPsec-based VPN software (IKEv1/IKEv2) with XAUTH and EAP
 
-DISTNAME=	strongswan-5.8.3
+DISTNAME=	strongswan-5.8.4
 # don't want versions like strongswan-5.8.0dr2
 PORTROACH=	limit:.*[0-9]\.[0-9]\.[0-9]$$
 EXTRACT_SUFX=	.tar.bz2
