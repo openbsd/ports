@@ -1,0 +1,20 @@
+$OpenBSD: patch-utils_HtmlOutputDev_cc,v 1.1 2020/03/30 18:26:06 kili Exp $
+
+Upstream commit 68b6dd2ecd868c1a757cb8b9273e2e26687e5229 (Adam
+Reichold):
+
+Replace dynamic_cast by static_cast where we already perform the
+type checks explicitly before downcasting.
+
+Index: utils/HtmlOutputDev.cc
+--- utils/HtmlOutputDev.cc.orig
++++ utils/HtmlOutputDev.cc
+@@ -1838,7 +1838,7 @@ int HtmlOutputDev::getOutlinePageNum(OutlineItem *item
+     if (!action || action->getKind() != actionGoTo)
+         return pagenum;
+ 
+-    link = dynamic_cast<const LinkGoTo*>(action);
++    link = static_cast<const LinkGoTo*>(action);
+ 
+     if (!link || !link->isOk())
+         return pagenum;
