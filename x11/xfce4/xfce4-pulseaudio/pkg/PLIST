@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/08/15 07:03:48 landry Exp $
-lib/xfce4/panel/plugins/libpulseaudio-plugin.so
+@comment $OpenBSD: PLIST,v 1.8 2020/03/30 07:54:28 landry Exp $
+@so lib/xfce4/panel/plugins/libpulseaudio-plugin.so
 share/icons/hicolor/48x48/apps/xfce4-pulseaudio-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-pulseaudio-plugin.svg
 share/icons/hicolor/scalable/status/audio-volume-high-symbolic.svg
@@ -46,6 +46,7 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/sl/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
+share/locale/sq/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/sr/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/th/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
