@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/21 16:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/03/30 13:19:06 sthen Exp $
 
 COMMENT =		link-aggregation VPN software
 
-V =			2.3.4
+V =			2.3.5
 DISTNAME =		mlvpn-$V
 
 CATEGORIES =		net
@@ -15,6 +15,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c ev m sodium
 
 MASTER_SITES =		https://github.com/zehome/MLVPN/releases/download/$V/
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS =		devel/libev \
 			security/libsodium
