@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2018/09/29 19:53:47 sthen Exp $
+$OpenBSD: README,v 1.7 2020/03/30 21:38:42 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -23,9 +23,10 @@ chroma: This plugin is for acoustic fingerprinting. Install py3-acoustid
 and add 'chroma' to the plugins: line.
 
 replaygain: This plugin adds support for ReplayGain, a technique for
-normalizing audio playback levels. Install dependencies with "pkg_add
-py3-gstreamer1 py3-gobject3". Edit in ~/.config/beets/config.yaml -
-add 'replaygain' to the plugins: line, and add the following:
+normalizing audio playback levels. It requires dependencies:
+"pkg_add py3-gstreamer1 py3-gobject3 gstreamer1-plugins-good".
+Edit ~/.config/beets/config.yaml - add 'replaygain' to the plugins:
+line, and add the following:
 
 replaygain:
     backend: gstreamer
