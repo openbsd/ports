@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/05/12 10:00:24 espie Exp $
-@bin bin/nap
-@mode u+s
-@bin bin/napping
-@mode
-@man man/man1/nap.1
-share/doc/nap/
-share/doc/nap/README
-share/doc/nap/userguide.html

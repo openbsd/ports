@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.427 2020/03/27 21:32:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.428 2020/03/30 13:48:48 fcambus Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -135,7 +135,6 @@
      SUBDIR += mumble
      SUBDIR += musepack
      SUBDIR += musique
-     SUBDIR += nap
      SUBDIR += ncmpc
      SUBDIR += ncmpcpp
      SUBDIR += ncspot
