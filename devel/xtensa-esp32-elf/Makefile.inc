@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2020/03/11 14:24:57 tracey Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2020/03/30 19:24:41 tracey Exp $
+
+BROKEN-sparc64 = 'in gcc-bootsrap build/genmodes -h > tmp-modes.h' 'Illegal instruction (core dumped)'
 
 CONFIG =	xtensa-esp32-elf
 CATEGORIES +=	devel
