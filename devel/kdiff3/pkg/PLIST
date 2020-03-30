@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/03/30 04:21:40 rsadowski Exp $
 @bin bin/kdiff3
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
@@ -6,6 +6,14 @@ lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/kdiff3part.so
 @man man/man1/kdiff3.1
 share/applications/org.kde.kdiff3.desktop
+share/doc/HTML/ca/kdiff3/
+share/doc/HTML/ca/kdiff3/index.cache.bz2
+share/doc/HTML/ca/kdiff3/index.docbook
+share/doc/HTML/ca/kdiff3/letter_by_letter.png
+share/doc/HTML/ca/kdiff3/open_dialog.png
+share/doc/HTML/de/kdiff3/
+share/doc/HTML/de/kdiff3/index.cache.bz2
+share/doc/HTML/de/kdiff3/index.docbook
 share/doc/HTML/en/kdiff3/
 share/doc/HTML/en/kdiff3/dirbrowser.png
 share/doc/HTML/en/kdiff3/dirmergebig.png
@@ -20,12 +28,18 @@ share/doc/HTML/en/kdiff3/screenshot_diff.png
 share/doc/HTML/en/kdiff3/screenshot_merge.png
 share/doc/HTML/en/kdiff3/triple_diff.png
 share/doc/HTML/en/kdiff3/white_space.png
+share/doc/HTML/es/kdiff3/
+share/doc/HTML/es/kdiff3/index.cache.bz2
+share/doc/HTML/es/kdiff3/index.docbook
 share/doc/HTML/it/kdiff3/
 share/doc/HTML/it/kdiff3/index.cache.bz2
 share/doc/HTML/it/kdiff3/index.docbook
 share/doc/HTML/nl/kdiff3/
 share/doc/HTML/nl/kdiff3/index.cache.bz2
 share/doc/HTML/nl/kdiff3/index.docbook
+share/doc/HTML/sv/kdiff3/
+share/doc/HTML/sv/kdiff3/index.cache.bz2
+share/doc/HTML/sv/kdiff3/index.docbook
 share/doc/HTML/uk/kdiff3/
 share/doc/HTML/uk/kdiff3/index.cache.bz2
 share/doc/HTML/uk/kdiff3/index.docbook
@@ -91,6 +105,9 @@ share/locale/hne/LC_MESSAGES/kdiff3.mo
 share/locale/hr/LC_MESSAGES/kdiff3.mo
 share/locale/hu/LC_MESSAGES/kdiff3.mo
 share/locale/hu/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/locale/ia/LC_MESSAGES/diff_ext.mo
+share/locale/ia/LC_MESSAGES/kdiff3.mo
+share/locale/ia/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/is/LC_MESSAGES/kdiff3.mo
 share/locale/it/LC_MESSAGES/diff_ext.mo
 share/locale/it/LC_MESSAGES/kdiff3.mo

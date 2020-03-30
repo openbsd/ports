@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/23 18:01:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2020/03/30 04:21:40 rsadowski Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
-DISTNAME =	kdiff3-1.8.1
-REVISION =	0
+DISTNAME =	kdiff3-1.8.2
 
 CATEGORIES =	devel
 
@@ -25,16 +24,16 @@ WANTLIB += c m
 
 MODULES =		devel/kf5
 
-BUILD_DEPENDS +=	devel/gettext,-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kbookmarks \
 			devel/kf5/kdoctools \
 
-RUN_DEPENDS +=		devel/desktop-file-utils \
+RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf5/kbookmarks \
 			devel/kf5/kdoctools \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS +=		devel/kf5/kauth \
+LIB_DEPENDS =		devel/kf5/kauth \
 			devel/kf5/kcodecs \
 			devel/kf5/kcompletion \
 			devel/kf5/kconfig \
