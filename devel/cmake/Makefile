@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2020/03/29 19:14:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.182 2020/03/30 20:11:34 rsadowski Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -22,12 +22,7 @@ WANTLIB += jsoncpp m rhash uv z
 
 COMPILER =		base-clang ports-gcc
 
-MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_RUNDEP =		No
-MODPY_TESTDEP =		No
-
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-sphinx>=1.4
 
 LIB_DEPENDS =		archivers/libarchive \
 			devel/libuv \
@@ -43,7 +38,7 @@ CONFIGURE_ARGS =	--datadir=share/cmake \
 			--no-qt-gui \
 			--parallel=${MAKE_JOBS} \
 			--prefix=${PREFIX} \
-			--sphinx-build=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX} \
+			--sphinx-build=${LOCALBASE}/bin/sphinx-build \
 			--sphinx-html \
 			--sphinx-man \
 			--system-libs \
