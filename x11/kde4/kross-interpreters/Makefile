@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.22 2020/03/30 17:13:40 rsadowski Exp $
 
 COMMENT-main =	KDE bindings for running interpreters
 COMMENT-java =	KDE Java bindings
@@ -6,7 +6,7 @@ DISTNAME =	kross-interpreters-${MODKDE4_VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-java =	${PKGNAME:C/interpreters/java/}
 REVISION-java =	4
-REVISION-main =	7
+REVISION-main =	8
 
 MULTI_PACKAGES =	-main -java
 
@@ -31,6 +31,7 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_FALCON:Bool=Yes
 
 MODULES =		lang/python lang/ruby
 CONFIGURE_ARGS +=	-DRUBY_EXECUTABLE=${RUBY}
+CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN}
 
 .if ${FLAVOR:Mno_java}
 CONFIGURE_ARGS +=	-DBUILD_java:Bool=No
