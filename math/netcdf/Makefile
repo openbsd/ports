@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2019/12/10 21:38:15 feinerer Exp $
+# $OpenBSD: Makefile,v 1.39 2020/03/30 09:21:47 martin Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
 
-V=		4.7.3
+V=		4.7.4
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	0
 
 CATEGORIES=	math
 
