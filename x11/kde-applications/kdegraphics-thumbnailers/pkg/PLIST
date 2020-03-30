@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 07:57:03 rsadowski Exp $
-lib/qt5/plugins/gsthumbnail.so
-lib/qt5/plugins/rawthumbnail.so
+@comment $OpenBSD: PLIST,v 1.2 2020/03/30 17:36:27 rsadowski Exp $
+lib/qt5/
+lib/qt5/plugins/
+@so lib/qt5/plugins/blenderthumbnail.so
+@so lib/qt5/plugins/gsthumbnail.so
+@so lib/qt5/plugins/rawthumbnail.so
+share/kservices5/
+share/kservices5/blenderthumbnail.desktop
 share/kservices5/gsthumbnail.desktop
 share/kservices5/rawthumbnail.desktop
+share/metainfo/
+share/metainfo/org.kde.kdegraphics-thumbnailers.metainfo.xml

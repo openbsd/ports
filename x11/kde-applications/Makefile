@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/03/23 18:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.55 2020/03/30 17:36:27 rsadowski Exp $
 
      SUBDIR =
 
@@ -93,7 +93,7 @@
      SUBDIR += kamera
      SUBDIR += kcolorchooser
      SUBDIR += kdegraphics-mobipocket
-     #SUBDIR += kdegraphics-thumbnailers
+     SUBDIR += kdegraphics-thumbnailers
      SUBDIR += kolourpaint
      SUBDIR += kruler
      SUBDIR += okular
