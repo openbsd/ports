@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/03/30 17:36:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.56 2020/03/30 17:39:06 rsadowski Exp $
 
      SUBDIR =
 
@@ -242,7 +242,6 @@
      #SUBDIR += pim-sieve-editor
      #SUBDIR += pimcommon
      #SUBDIR += signon-kwallet-extension
-     #SUBDIR += syndication
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
