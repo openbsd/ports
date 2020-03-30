@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/30 09:21:47 martin Exp $
+# $OpenBSD: Makefile,v 1.40 2020/03/30 13:29:40 martin Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
 
@@ -6,10 +6,11 @@ V=		4.7.4
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
+REVISION=	0
 
 CATEGORIES=	math
 
-SHARED_LIBS=	netcdf		6.0 # 5.0
+SHARED_LIBS=	netcdf		7.0 # 18.0
 
 HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 
