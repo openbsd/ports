@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/03/30 13:29:40 martin Exp $
+# $OpenBSD: Makefile,v 1.41 2020/03/31 11:57:58 ajacoutot Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
 
@@ -22,6 +22,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m z pthread
 WANTLIB+=		curl crypto nghttp2 ssl
 WANTLIB+=		hdf5 hdf5_hl
+
+BUILD_DEPENDS =		devel/libexecinfo
 
 LIB_DEPENDS =		net/curl \
 			math/hdf5
