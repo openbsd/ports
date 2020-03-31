@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2019/08/13 21:14:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/03/31 14:30:33 sthen Exp $
 @conflict apache-httpd-common-*
 @pkgpath www/apache-httpd,-main${FLAVOR_COMMA}
 @pkgpath www/apache-httpd,-common
@@ -79,119 +79,119 @@ include/apache2/util_varbuf.h
 include/apache2/util_xml.h
 lib/apache2/
 lib/apache2/httpd.exp
-lib/apache2/mod_access_compat.so
-lib/apache2/mod_actions.so
-lib/apache2/mod_alias.so
-lib/apache2/mod_allowmethods.so
-lib/apache2/mod_asis.so
-lib/apache2/mod_auth_basic.so
-lib/apache2/mod_auth_digest.so
-lib/apache2/mod_auth_form.so
-lib/apache2/mod_authn_anon.so
-lib/apache2/mod_authn_core.so
-lib/apache2/mod_authn_dbd.so
-lib/apache2/mod_authn_dbm.so
-lib/apache2/mod_authn_file.so
-lib/apache2/mod_authn_socache.so
-lib/apache2/mod_authnz_fcgi.so
-lib/apache2/mod_authz_core.so
-lib/apache2/mod_authz_dbd.so
-lib/apache2/mod_authz_dbm.so
-lib/apache2/mod_authz_groupfile.so
-lib/apache2/mod_authz_host.so
-lib/apache2/mod_authz_owner.so
-lib/apache2/mod_authz_user.so
-lib/apache2/mod_autoindex.so
-lib/apache2/mod_brotli.so
-lib/apache2/mod_buffer.so
-lib/apache2/mod_cache.so
-lib/apache2/mod_cache_disk.so
-lib/apache2/mod_cache_socache.so
-lib/apache2/mod_cgi.so
-lib/apache2/mod_cgid.so
-lib/apache2/mod_charset_lite.so
-lib/apache2/mod_data.so
-lib/apache2/mod_dav.so
-lib/apache2/mod_dav_fs.so
-lib/apache2/mod_dav_lock.so
-lib/apache2/mod_dbd.so
-lib/apache2/mod_deflate.so
-lib/apache2/mod_dialup.so
-lib/apache2/mod_dir.so
-lib/apache2/mod_dumpio.so
-lib/apache2/mod_echo.so
-lib/apache2/mod_env.so
-lib/apache2/mod_expires.so
-lib/apache2/mod_ext_filter.so
-lib/apache2/mod_file_cache.so
-lib/apache2/mod_filter.so
-lib/apache2/mod_headers.so
-lib/apache2/mod_heartbeat.so
-lib/apache2/mod_heartmonitor.so
-lib/apache2/mod_http2.so
-lib/apache2/mod_include.so
-lib/apache2/mod_info.so
-lib/apache2/mod_lbmethod_bybusyness.so
-lib/apache2/mod_lbmethod_byrequests.so
-lib/apache2/mod_lbmethod_bytraffic.so
-lib/apache2/mod_lbmethod_heartbeat.so
-lib/apache2/mod_log_config.so
-lib/apache2/mod_log_debug.so
-lib/apache2/mod_log_forensic.so
-lib/apache2/mod_logio.so
-lib/apache2/mod_macro.so
-lib/apache2/mod_md.so
-lib/apache2/mod_mime.so
-lib/apache2/mod_mime_magic.so
-lib/apache2/mod_mpm_event.so
-lib/apache2/mod_mpm_prefork.so
-lib/apache2/mod_mpm_worker.so
-lib/apache2/mod_negotiation.so
-lib/apache2/mod_proxy.so
-lib/apache2/mod_proxy_ajp.so
-lib/apache2/mod_proxy_balancer.so
-lib/apache2/mod_proxy_connect.so
-lib/apache2/mod_proxy_express.so
-lib/apache2/mod_proxy_fcgi.so
-lib/apache2/mod_proxy_fdpass.so
-lib/apache2/mod_proxy_ftp.so
-lib/apache2/mod_proxy_hcheck.so
-lib/apache2/mod_proxy_html.so
-lib/apache2/mod_proxy_http.so
-lib/apache2/mod_proxy_scgi.so
-lib/apache2/mod_proxy_uwsgi.so
-lib/apache2/mod_proxy_wstunnel.so
-lib/apache2/mod_ratelimit.so
-lib/apache2/mod_reflector.so
-lib/apache2/mod_remoteip.so
-lib/apache2/mod_reqtimeout.so
-lib/apache2/mod_request.so
-lib/apache2/mod_rewrite.so
-lib/apache2/mod_sed.so
-lib/apache2/mod_session.so
-lib/apache2/mod_session_cookie.so
-lib/apache2/mod_session_crypto.so
-lib/apache2/mod_session_dbd.so
-lib/apache2/mod_setenvif.so
-lib/apache2/mod_slotmem_plain.so
-lib/apache2/mod_slotmem_shm.so
-lib/apache2/mod_socache_dbm.so
-lib/apache2/mod_socache_memcache.so
-lib/apache2/mod_socache_redis.so
-lib/apache2/mod_socache_shmcb.so
-lib/apache2/mod_speling.so
-lib/apache2/mod_ssl.so
-lib/apache2/mod_status.so
-lib/apache2/mod_substitute.so
-lib/apache2/mod_suexec.so
-lib/apache2/mod_unique_id.so
-lib/apache2/mod_unixd.so
-lib/apache2/mod_userdir.so
-lib/apache2/mod_usertrack.so
-lib/apache2/mod_version.so
-lib/apache2/mod_vhost_alias.so
-lib/apache2/mod_watchdog.so
-lib/apache2/mod_xml2enc.so
+@so lib/apache2/mod_access_compat.so
+@so lib/apache2/mod_actions.so
+@so lib/apache2/mod_alias.so
+@so lib/apache2/mod_allowmethods.so
+@so lib/apache2/mod_asis.so
+@so lib/apache2/mod_auth_basic.so
+@so lib/apache2/mod_auth_digest.so
+@so lib/apache2/mod_auth_form.so
+@so lib/apache2/mod_authn_anon.so
+@so lib/apache2/mod_authn_core.so
+@so lib/apache2/mod_authn_dbd.so
+@so lib/apache2/mod_authn_dbm.so
+@so lib/apache2/mod_authn_file.so
+@so lib/apache2/mod_authn_socache.so
+@so lib/apache2/mod_authnz_fcgi.so
+@so lib/apache2/mod_authz_core.so
+@so lib/apache2/mod_authz_dbd.so
+@so lib/apache2/mod_authz_dbm.so
+@so lib/apache2/mod_authz_groupfile.so
+@so lib/apache2/mod_authz_host.so
+@so lib/apache2/mod_authz_owner.so
+@so lib/apache2/mod_authz_user.so
+@so lib/apache2/mod_autoindex.so
+@so lib/apache2/mod_brotli.so
+@so lib/apache2/mod_buffer.so
+@so lib/apache2/mod_cache.so
+@so lib/apache2/mod_cache_disk.so
+@so lib/apache2/mod_cache_socache.so
+@so lib/apache2/mod_cgi.so
+@so lib/apache2/mod_cgid.so
+@so lib/apache2/mod_charset_lite.so
+@so lib/apache2/mod_data.so
+@so lib/apache2/mod_dav.so
+@so lib/apache2/mod_dav_fs.so
+@so lib/apache2/mod_dav_lock.so
+@so lib/apache2/mod_dbd.so
+@so lib/apache2/mod_deflate.so
+@so lib/apache2/mod_dialup.so
+@so lib/apache2/mod_dir.so
+@so lib/apache2/mod_dumpio.so
+@so lib/apache2/mod_echo.so
+@so lib/apache2/mod_env.so
+@so lib/apache2/mod_expires.so
+@so lib/apache2/mod_ext_filter.so
+@so lib/apache2/mod_file_cache.so
+@so lib/apache2/mod_filter.so
+@so lib/apache2/mod_headers.so
+@so lib/apache2/mod_heartbeat.so
+@so lib/apache2/mod_heartmonitor.so
+@so lib/apache2/mod_http2.so
+@so lib/apache2/mod_include.so
+@so lib/apache2/mod_info.so
+@so lib/apache2/mod_lbmethod_bybusyness.so
+@so lib/apache2/mod_lbmethod_byrequests.so
+@so lib/apache2/mod_lbmethod_bytraffic.so
+@so lib/apache2/mod_lbmethod_heartbeat.so
+@so lib/apache2/mod_log_config.so
+@so lib/apache2/mod_log_debug.so
+@so lib/apache2/mod_log_forensic.so
+@so lib/apache2/mod_logio.so
+@so lib/apache2/mod_macro.so
+@so lib/apache2/mod_md.so
+@so lib/apache2/mod_mime.so
+@so lib/apache2/mod_mime_magic.so
+@so lib/apache2/mod_mpm_event.so
+@so lib/apache2/mod_mpm_prefork.so
+@so lib/apache2/mod_mpm_worker.so
+@so lib/apache2/mod_negotiation.so
+@so lib/apache2/mod_proxy.so
+@so lib/apache2/mod_proxy_ajp.so
+@so lib/apache2/mod_proxy_balancer.so
+@so lib/apache2/mod_proxy_connect.so
+@so lib/apache2/mod_proxy_express.so
+@so lib/apache2/mod_proxy_fcgi.so
+@so lib/apache2/mod_proxy_fdpass.so
+@so lib/apache2/mod_proxy_ftp.so
+@so lib/apache2/mod_proxy_hcheck.so
+@so lib/apache2/mod_proxy_html.so
+@so lib/apache2/mod_proxy_http.so
+@so lib/apache2/mod_proxy_scgi.so
+@so lib/apache2/mod_proxy_uwsgi.so
+@so lib/apache2/mod_proxy_wstunnel.so
+@so lib/apache2/mod_ratelimit.so
+@so lib/apache2/mod_reflector.so
+@so lib/apache2/mod_remoteip.so
+@so lib/apache2/mod_reqtimeout.so
+@so lib/apache2/mod_request.so
+@so lib/apache2/mod_rewrite.so
+@so lib/apache2/mod_sed.so
+@so lib/apache2/mod_session.so
+@so lib/apache2/mod_session_cookie.so
+@so lib/apache2/mod_session_crypto.so
+@so lib/apache2/mod_session_dbd.so
+@so lib/apache2/mod_setenvif.so
+@so lib/apache2/mod_slotmem_plain.so
+@so lib/apache2/mod_slotmem_shm.so
+@so lib/apache2/mod_socache_dbm.so
+@so lib/apache2/mod_socache_memcache.so
+@so lib/apache2/mod_socache_redis.so
+@so lib/apache2/mod_socache_shmcb.so
+@so lib/apache2/mod_speling.so
+@so lib/apache2/mod_ssl.so
+@so lib/apache2/mod_status.so
+@so lib/apache2/mod_substitute.so
+@so lib/apache2/mod_suexec.so
+@so lib/apache2/mod_unique_id.so
+@so lib/apache2/mod_unixd.so
+@so lib/apache2/mod_userdir.so
+@so lib/apache2/mod_usertrack.so
+@so lib/apache2/mod_version.so
+@so lib/apache2/mod_vhost_alias.so
+@so lib/apache2/mod_watchdog.so
+@so lib/apache2/mod_xml2enc.so
 @man man/man1/ab.1
 @man man/man1/apxs.1
 @man man/man1/dbmmanage.1
@@ -830,6 +830,7 @@ share/doc/apache2/mod/mod_macro.html.en
 share/doc/apache2/mod/mod_macro.html.fr.utf8
 share/doc/apache2/mod/mod_md.html
 share/doc/apache2/mod/mod_md.html.en
+share/doc/apache2/mod/mod_md.html.fr.utf8
 share/doc/apache2/mod/mod_mime.html
 share/doc/apache2/mod/mod_mime.html.en
 share/doc/apache2/mod/mod_mime.html.fr.utf8
@@ -892,6 +893,7 @@ share/doc/apache2/mod/mod_proxy_scgi.html.en
 share/doc/apache2/mod/mod_proxy_scgi.html.fr.utf8
 share/doc/apache2/mod/mod_proxy_uwsgi.html
 share/doc/apache2/mod/mod_proxy_uwsgi.html.en
+share/doc/apache2/mod/mod_proxy_uwsgi.html.fr.utf8
 share/doc/apache2/mod/mod_proxy_wstunnel.html
 share/doc/apache2/mod/mod_proxy_wstunnel.html.en
 share/doc/apache2/mod/mod_proxy_wstunnel.html.fr.utf8
@@ -958,6 +960,7 @@ share/doc/apache2/mod/mod_socache_memcache.html.en
 share/doc/apache2/mod/mod_socache_memcache.html.fr.utf8
 share/doc/apache2/mod/mod_socache_redis.html
 share/doc/apache2/mod/mod_socache_redis.html.en
+share/doc/apache2/mod/mod_socache_redis.html.fr.utf8
 share/doc/apache2/mod/mod_socache_shmcb.html
 share/doc/apache2/mod/mod_socache_shmcb.html.en
 share/doc/apache2/mod/mod_socache_shmcb.html.fr.utf8
@@ -984,6 +987,9 @@ share/doc/apache2/mod/mod_suexec.html.fr.utf8
 share/doc/apache2/mod/mod_suexec.html.ja.utf8
 share/doc/apache2/mod/mod_suexec.html.ko.euc-kr
 share/doc/apache2/mod/mod_suexec.html.tr.utf8
+share/doc/apache2/mod/mod_systemd.html
+share/doc/apache2/mod/mod_systemd.html.en
+share/doc/apache2/mod/mod_systemd.html.fr.utf8
 share/doc/apache2/mod/mod_unique_id.html
 share/doc/apache2/mod/mod_unique_id.html.en
 share/doc/apache2/mod/mod_unique_id.html.fr.utf8

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.101 2019/08/13 21:14:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2020/03/31 14:30:33 sthen Exp $
 
 COMMENT=		apache HTTP server
 
-V=			2.4.41
+V=			2.4.43
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
@@ -35,6 +35,7 @@ FLAVOR_COMMA=		${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=		CONFDIR FLAVOR_COMMA
 
 CONFIGURE_STYLE=	simple
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CONFIGURE_ARGS=		--enable-authnz-fcgi \
 			--enable-cache \

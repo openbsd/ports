@@ -1,9 +1,9 @@
-$OpenBSD: patch-support_apxs_in,v 1.5 2019/08/13 21:14:11 sthen Exp $
+$OpenBSD: patch-support_apxs_in,v 1.6 2020/03/31 14:30:33 sthen Exp $
 
 Index: support/apxs.in
 --- support/apxs.in.orig
 +++ support/apxs.in
-@@ -671,8 +671,8 @@ __DATA__
+@@ -681,8 +681,8 @@ __DATA__
  ##
  
  builddir=.

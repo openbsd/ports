@@ -1,9 +1,9 @@
-$OpenBSD: patch-modules_ssl_ssl_private_h,v 1.7 2019/08/13 21:14:11 sthen Exp $
+$OpenBSD: patch-modules_ssl_ssl_private_h,v 1.8 2020/03/31 14:30:33 sthen Exp $
 
 Index: modules/ssl/ssl_private.h
 --- modules/ssl/ssl_private.h.orig
 +++ modules/ssl/ssl_private.h
-@@ -228,9 +228,11 @@
+@@ -229,9 +229,11 @@
  #define BN_get_rfc3526_prime_4096  get_rfc3526_prime_4096
  #define BN_get_rfc3526_prime_6144  get_rfc3526_prime_6144
  #define BN_get_rfc3526_prime_8192  get_rfc3526_prime_8192
