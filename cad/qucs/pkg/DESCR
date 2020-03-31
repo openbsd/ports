@@ -1,6 +1,0 @@
-Qucs is a circuit simulator with graphical user interface.  The software
-aims to support all kinds of circuit simulation types, e.g. DC, AC,
-S-parameter and harmonic balance analysis.
-
-To permit digital circuit simulation, it's recommended to install
-the freehdl package.

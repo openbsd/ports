@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/11/08 16:07:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/03/31 15:04:47 kmos Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -23,7 +23,6 @@
      SUBDIR += qcad
      SUBDIR += qelectrotech
      SUBDIR += qrouter
-     SUBDIR += qucs
      SUBDIR += qucs-s
      SUBDIR += tkgate
      SUBDIR += xcircuit
