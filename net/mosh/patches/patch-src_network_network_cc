@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_network_network_cc,v 1.1 2019/02/05 13:27:25 jca Exp $
+$OpenBSD: patch-src_network_network_cc,v 1.2 2020/03/31 11:41:39 jca Exp $
 
 Ambiguous bind(2) call.
+https://github.com/mobile-shell/mosh/commit/e5f8a826ef9ff5da4cfce3bb8151f9526ec19db0
 
 Index: src/network/network.cc
 --- src/network/network.cc.orig
