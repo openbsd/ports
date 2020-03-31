@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/18 22:22:25 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/31 19:00:59 kn Exp $
 
-COMMENT	=		privilege separated implementation of WireGuard
+COMMENT =		privilege separated implementation of WireGuard
 
 GH_ACCOUNT =		timkuijsten
 GH_PROJECT =		wiresep
-GH_TAGNAME =		v0.9.0
+GH_TAGNAME =		v0.10.1
 
 CATEGORIES =		net
 
