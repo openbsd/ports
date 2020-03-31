@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.23 2019/10/27 09:21:11 espie Exp $
+# $OpenBSD: External.pm,v 1.24 2020/03/31 11:13:14 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -109,7 +109,7 @@ sub wipe
 		if (!defined $h) {
 			$fh->print("Can't wipe on $info->{host}: no such host\n");
 		} elsif (!$h->is_alive) {
-			$h->print("Can't wipe on $info->{host}: host is AWOL\n");
+			$fh->print("Can't wipe on $info->{host}: host is AWOL\n");
 		} else {
 			$fh->print("cleaning up $info->{locked}\n");
 			my $w = DPB::PkgPath->new($info->{locked});
@@ -174,6 +174,8 @@ sub handle_command
 		}
 	} elsif ($line =~ m/^stats\b/) {
 		$fh->print($state->engine->statline, "\n");
+	} elsif ($line =~ m/^cores\b/) {
+		DPB::Core->stats($fh, $state);
 	} elsif ($line =~ m/^status\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
 			my $v = DPB::PkgPath->new($p);

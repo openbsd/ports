@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.100 2019/10/22 15:44:10 espie Exp $
+# $OpenBSD: Core.pm,v 1.101 2020/03/31 11:13:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -463,6 +463,24 @@ my %stopped = ();
 
 my $logdir;
 my $lastcount = 0;
+
+sub stats
+{
+	my ($class, $fh, $state) = @_;
+	$fh->print("Available:\n");
+	for my $c (@$available) {
+		$fh->print("  ", $c->hostname, "\n");
+	}
+	my $msg = "Running";
+	my $current = Time::HiRes::time();
+	for my $repo ($class->repositories) {
+		$fh->print("$msg:\n");
+		while (my ($k, $c) = each %$repo) {
+			$fh->print("  ", one_core($c, $current), "\n");
+		}
+		$msg = "Special";
+	}
+}
 
 sub log_concurrency
 {
