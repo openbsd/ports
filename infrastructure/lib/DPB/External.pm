@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.24 2020/03/31 11:13:14 espie Exp $
+# $OpenBSD: External.pm,v 1.25 2020/03/31 19:06:44 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -200,6 +200,12 @@ sub handle_command
 	} elsif ($line =~ m/^wipehost\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
 			$self->wipehost($fh, $1);
+		}
+	} elsif ($line =~ m/^rescan\b/) {
+		for my $v (DPB::PkgPath->seen) {
+			if (defined $v->{info} && $v->{info}->is_stub) {
+				$v->add_to_subdirlist($self->{subdirlist});
+			}
 		}
 	} elsif ($line =~ m/^summary(?:\s+(.*))?/) {
 		$self->summary($fh, $1 // 'summary');
