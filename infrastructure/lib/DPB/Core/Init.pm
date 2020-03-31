@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.46 2020/01/18 10:28:25 espie Exp $
+# $OpenBSD: Init.pm,v 1.47 2020/03/31 11:11:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -192,7 +192,7 @@ sub cores
 
 sub add_startup
 {
-	my ($self, $state, $logger, $core, $job, @startup) = @_;
+	my ($self, $core, $state, $logger, $job, @startup) = @_;
 	my $fetch = $state->{fetch_user};
 	my $prop = $core->prop;
 	my $build = $prop->{build_user};
@@ -217,64 +217,70 @@ sub add_startup
 	));
 }
 
+sub init_core
+{
+	my ($self, $core, $state) = @_;
+	my $logger = $state->logger;
+	my $startup = $state->{startup_script};
+	my $stale = $state->stalelocks;
+	if (defined $core->prop->{socket}) {
+		my $fh = $logger->open('>>',
+		    $logger->logfile("init.".$core->hostname));
+		print {$fh} "Socket name: ", 
+		    $core->prop->{socket}, "\n";
+	}
+	my $job = DPB::Job::Init->new($logger);
+	my $t = DPB::Task::WhoAmI->new;
+	# XXX can't get these before I know who I am
+	$t->{extra_code} = sub {
+	    my $prop = $core->prop;
+	    ($prop->{wrkobjdir}, $prop->{portslockdir}) = 
+		DPB::Vars->get($core->shell, $state, 
+		"WRKOBJDIR", "LOCKDIR");
+	};
+	$job->add_tasks($t);
+	if (!defined $core->prop->{jobs}) {
+		$job->add_tasks(DPB::Task::Ncpu->new);
+	}
+	if (!$state->{fetch_only}) {
+		$job->{signature} = DPB::Signature->new($state);
+		$job->{signature}->add_tasks($job);
+	}
+	if (defined $startup) {
+		$self->add_startup($core, $state, $logger, $job, 
+		    split(/\s+/, $startup));
+	}
+
+	my $tag = $state->locker->find_tag($core->hostname);
+	if (defined $tag) {
+		$core->prop->{tainted} = $tag;
+	}
+	if (defined $stale->{$core->hostname}) {
+		my $subdirlist=join(' ', @{$stale->{$core->hostname}});
+		$job->add_tasks(DPB::Task::Fork->new(
+		    sub {
+			my $shell = shift;
+			$logger->redirect( 
+			    $logger->logfile("init.".$core->hostname));
+			$shell
+			    ->env(SUBDIR => $subdirlist)
+			    ->exec($state->make_args, 'unlock');
+		    }
+		));
+	}
+	$core->start_job($job);
+}
+
 sub init_cores
 {
 	my ($self, $state) = @_;
 
-	my $logger = $state->logger;
-	my $startup = $state->{startup_script};
-	my $stale = $state->stalelocks;
-	DPB::Core->set_logdir($logger->{logdir});
+	DPB::Core->set_logdir($state->logger->{logdir});
 	if (values %$init == 0) {
 		$state->fatal("configuration error: no job runner");
 	}
 	for my $core (values %$init) {
-		if (defined $core->prop->{socket}) {
-			my $fh = $logger->open('>>',
-			    $logger->logfile("init.".$core->hostname));
-			print {$fh} "Socket name: ", 
-			    $core->prop->{socket}, "\n";
-		}
-		my $job = DPB::Job::Init->new($logger);
-		my $t = DPB::Task::WhoAmI->new;
-		# XXX can't get these before I know who I am
-		$t->{extra_code} = sub {
-		    my $prop = $core->prop;
-		    ($prop->{wrkobjdir}, $prop->{portslockdir}) = 
-			DPB::Vars->get($core->shell, $state, 
-			"WRKOBJDIR", "LOCKDIR");
-		};
-		$job->add_tasks($t);
-		if (!defined $core->prop->{jobs}) {
-			$job->add_tasks(DPB::Task::Ncpu->new);
-		}
-		if (!$state->{fetch_only}) {
-			$job->{signature} = DPB::Signature->new($state);
-			$job->{signature}->add_tasks($job);
-		}
-		if (defined $startup) {
-			$self->add_startup($state, $logger, $core, $job, 
-			    split(/\s+/, $startup));
-		}
-
-		my $tag = $state->locker->find_tag($core->hostname);
-		if (defined $tag) {
-			$core->prop->{tainted} = $tag;
-		}
-		if (defined $stale->{$core->hostname}) {
-			my $subdirlist=join(' ', @{$stale->{$core->hostname}});
-			$job->add_tasks(DPB::Task::Fork->new(
-			    sub {
-				my $shell = shift;
-				$logger->redirect( 
-				    $logger->logfile("init.".$core->hostname));
-				$shell
-				    ->env(SUBDIR => $subdirlist)
-				    ->exec($state->make_args, 'unlock');
-			    }
-			));
-		}
-		$core->start_job($job);
+		$self->init_core($core, $state);
 	}
 	$state->{default_prop}{fetch_user} //= $state->{fetch_user};
 	if ($state->opt('f')) {
