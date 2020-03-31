@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/09/01 18:54:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2020/03/31 04:43:59 rsadowski Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel
 VERSION =	4.10.3
 DISTNAME =	phonon-${VERSION}
-HOMEPAGE =	https://phonon.kde.org/
+HOMEPAGE =	https://community.kde.org/Phonon
+REVISION =	0
 
 # The phonon_s* are for KDE4-only, renamed to avoid clashing with Qt4's one
 # XXX major should be tweaked on any update, to unbreak
