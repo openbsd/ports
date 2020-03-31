@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/01/06 21:28:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/03/31 19:06:06 kn Exp $
 bin/event_rpcgen.py
 include/event2/
 include/event2/buffer.h
@@ -26,18 +26,21 @@ include/event2/tag.h
 include/event2/tag_compat.h
 include/event2/thread.h
 include/event2/util.h
-lib/libevent_core.a
+include/event2/visibility.h
+@static-lib lib/libevent_core.a
 lib/libevent_core.la
 @lib lib/libevent_core.so.${LIBevent_core_VERSION}
-lib/libevent_extra.a
+@static-lib lib/libevent_extra.a
 lib/libevent_extra.la
 @lib lib/libevent_extra.so.${LIBevent_extra_VERSION}
-lib/libevent_openssl.a
+@static-lib lib/libevent_openssl.a
 lib/libevent_openssl.la
 @lib lib/libevent_openssl.so.${LIBevent_openssl_VERSION}
-lib/libevent_pthreads.a
+@static-lib lib/libevent_pthreads.a
 lib/libevent_pthreads.la
 @lib lib/libevent_pthreads.so.${LIBevent_pthreads_VERSION}
 lib/pkgconfig/libevent.pc
+lib/pkgconfig/libevent_core.pc
+lib/pkgconfig/libevent_extra.pc
 lib/pkgconfig/libevent_openssl.pc
 lib/pkgconfig/libevent_pthreads.pc
