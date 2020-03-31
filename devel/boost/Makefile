@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2020/01/30 14:29:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2020/03/31 04:37:47 rsadowski Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 powerpc
 
@@ -11,8 +11,8 @@ VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
-REVISION-main=	10
-REVISION-md=	4
+REVISION-main=	11
+REVISION-md=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
@@ -68,7 +68,7 @@ BOOST_LIBS+=	boost_context-mt \
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
-HOMEPAGE=	http://www.boost.org/
+HOMEPAGE=	https://www.boost.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com> \
 		Rafael Sadowski <rsadowski@openbsd.org>
