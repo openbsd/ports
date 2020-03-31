@@ -1,0 +1,35 @@
+$OpenBSD: patch-include_libssh_priv_h,v 1.1 2020/03/31 18:46:01 kn Exp $
+
+Fix macro collision with __attribute__ ((__unused__)) in system-wide headers.
+Problem known upstream: https://bugs.libssh.org/T175
+
+Index: include/libssh/priv.h
+--- include/libssh/priv.h.orig
++++ include/libssh/priv.h
+@@ -405,20 +405,20 @@ void explicit_bzero(void *s, size_t n);
+ # endif /* HAVE_FALLTHROUGH_ATTRIBUTE */
+ #endif /* FALL_THROUGH */
+ 
+-#ifndef __unused__
++#ifndef ssh__unused
+ # ifdef HAVE_UNUSED_ATTRIBUTE
+-#  define __unused__ __attribute__((unused))
++#  define ssh__unused __attribute__((unused))
+ # else /* HAVE_UNUSED_ATTRIBUTE */
+-#  define __unused__
++#  define ssh__unused
+ # endif /* HAVE_UNUSED_ATTRIBUTE */
+-#endif /* __unused__ */
++#endif /* ssh__unused */
+ 
+ #ifndef UNUSED_PARAM
+-#define UNUSED_PARAM(param) param __unused__
++#define UNUSED_PARAM(param) param ssh__unused
+ #endif /* UNUSED_PARAM */
+ 
+ #ifndef UNUSED_VAR
+-#define UNUSED_VAR(var) __unused__ var
++#define UNUSED_VAR(var) ssh__unused var
+ #endif /* UNUSED_VAR */
+ 
+ void ssh_agent_state_free(void *data);

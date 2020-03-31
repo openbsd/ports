@@ -1,0 +1,30 @@
+$OpenBSD: patch-examples_sshd_direct-tcpip_c,v 1.1 2020/03/31 18:46:01 kn Exp $
+
+Fix macro collision with __attribute__ ((__unused__)) in system-wide headers.
+Problem known upstream: https://bugs.libssh.org/T175
+
+Index: examples/sshd_direct-tcpip.c
+--- examples/sshd_direct-tcpip.c.orig
++++ examples/sshd_direct-tcpip.c
+@@ -35,16 +35,16 @@ clients must be made or how a client should react.
+ 
+ #define SAFE_FREE(x) do { if ((x) != NULL) {free(x); x=NULL;} } while(0)
+ 
+-#ifndef __unused__
++#ifndef ssh__unused
+ # ifdef HAVE_UNUSED_ATTRIBUTE
+-#  define __unused__ __attribute__((unused))
++#  define ssh__unused __attribute__((unused))
+ # else /* HAVE_UNUSED_ATTRIBUTE */
+-#  define __unused__
++#  define ssh__unused
+ # endif /* HAVE_UNUSED_ATTRIBUTE */
+-#endif /* __unused__ */
++#endif /* ssh__unused */
+ 
+ #ifndef UNUSED_PARAM
+-#define UNUSED_PARAM(param) param __unused__
++#define UNUSED_PARAM(param) param ssh__unused
+ #endif /* UNUSED_PARAM */
+ 
+ #ifndef KEYS_FOLDER

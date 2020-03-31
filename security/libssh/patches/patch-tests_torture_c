@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_torture_c,v 1.1 2020/03/31 18:46:01 kn Exp $
+
+Missing include for PATH_MAX.
+
+Index: tests/torture.c
+--- tests/torture.c.orig
++++ tests/torture.c
+@@ -38,6 +38,7 @@
+ 
+ #ifdef HAVE_UNISTD_H
+ #include <unistd.h>
++#include <limits.h>
+ #elif (defined _WIN32) || (defined _WIN64)
+ #include <direct.h>
+ #include <io.h>

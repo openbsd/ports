@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/31 18:46:01 kn Exp $
 
 COMMENT =		C library implementing server and client side
-DISTNAME =		libssh-0.8.7
+V =			0.9.3
+DISTNAME =		libssh-${V}
 
-SHARED_LIBS +=  	ssh		4.0 # 4.7
+SHARED_LIBS +=  	ssh		4.1 # 4.8
 
 CATEGORIES =		security devel
 
 HOMEPAGE =		https://www.libssh.org/
-MASTER_SITES =		https://www.libssh.org/files/0.8/
+MASTER_SITES =		https://www.libssh.org/files/${V:R}/
 EXTRACT_SUFX =		.tar.xz
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # LGPL v2.1
 PERMIT_PACKAGE =	Yes

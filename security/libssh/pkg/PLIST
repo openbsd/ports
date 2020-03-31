@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/10/23 19:28:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/03/31 18:46:01 kn Exp $
 include/libssh/
 include/libssh/callbacks.h
 include/libssh/legacy.h
@@ -9,6 +9,7 @@ include/libssh/sftp.h
 include/libssh/ssh2.h
 lib/cmake/
 lib/cmake/libssh/
+lib/cmake/libssh/libssh-config${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/libssh/libssh-config-version.cmake
 lib/cmake/libssh/libssh-config.cmake
 @lib lib/libssh.so.${LIBssh_VERSION}

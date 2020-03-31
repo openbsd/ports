@@ -1,8 +1,11 @@
-$OpenBSD: patch-tests_unittests_torture_misc_c,v 1.4 2018/10/23 19:28:18 jasper Exp $
+$OpenBSD: patch-tests_unittests_torture_misc_c,v 1.5 2020/03/31 18:46:01 kn Exp $
+
+Disable unit test "torture_path_expand_tilde_unix": real user required.
+
 Index: tests/unittests/torture_misc.c
 --- tests/unittests/torture_misc.c.orig
 +++ tests/unittests/torture_misc.c
-@@ -361,7 +361,8 @@ int torture_run_tests(void) {
+@@ -665,7 +665,8 @@ int torture_run_tests(void) {
  #ifdef _WIN32
          cmocka_unit_test(torture_path_expand_tilde_win),
  #else
