@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.87 2019/11/07 16:36:42 espie Exp $
+# $OpenBSD: Config.pm,v 1.88 2020/03/31 11:12:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -463,7 +463,8 @@ sub add_host
 		}
 	}
 	$prop->finalize_with_overrides($state->{override_prop});
-	DPB::Core::Init->new(DPB::Host->new($host, $prop));
+	DPB::Core::Init->init_core(
+	    DPB::Core::Init->new(DPB::Host->new($host, $prop)), $state);
 }
 
 package DPB::ExternalStub;
