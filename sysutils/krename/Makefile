@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2020/03/23 18:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2020/03/31 04:42:01 rsadowski Exp $
 
 COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.0
 DISTNAME =	krename-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils x11
 
-HOMEPAGE =	http://www.krename.net/
+HOMEPAGE =	https://kde.org/applications/utilities/org.kde.krename
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
