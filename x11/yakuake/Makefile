@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.36 2020/03/23 18:01:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2020/03/31 04:47:26 rsadowski Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
 VERSION =	3.0.5
 DISTNAME =	yakuake-${VERSION}
 EPOCH =		0
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	x11 sysutils
 
-HOMEPAGE =	https://yakuake.kde.org/
+HOMEPAGE =	https://kde.org/applications/system/org.kde.yakuake
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 
