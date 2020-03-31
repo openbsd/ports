@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 05:05:03 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2020/03/31 19:20:04 bket Exp $
 
 COMMENT =		Jupyter core package
 
-MODPY_EGG_VERSION =	4.6.1
-REVISION =		0
+MODPY_EGG_VERSION =	4.6.3
 DISTNAME =		jupyter_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
