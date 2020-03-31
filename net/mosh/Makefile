@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2019/11/14 16:09:34 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2020/03/31 11:41:03 jca Exp $
 
 COMMENT =		mobile shell
 
 DISTNAME =		mosh-1.3.2
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		net
 
@@ -24,7 +24,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # C++11 needed by protobuf
 COMPILER =		base-clang ports-gcc
-CXXFLAGS +=		-std=gnu++11
 
 LIB_DEPENDS =		devel/protobuf
 

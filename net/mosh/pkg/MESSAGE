@@ -1,3 +1,0 @@
-N.B. At the time of writing, JuiceSSH's default server command is
-incorrect for use with mosh-1.2.5. To work-around, add -s in
-settings/mosh/Server Command.
