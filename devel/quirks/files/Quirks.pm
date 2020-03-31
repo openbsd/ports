@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.923 2020/03/30 13:50:23 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.924 2020/03/31 15:03:33 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1464,6 +1464,7 @@ my $obsolete_reason = {
 	'xevil' => 0,
 	'py-vatnumber' => 3,
 	'nap' => 6,
+	'qucs' => 5,
 };
 
 # reasons for obsolete packages
