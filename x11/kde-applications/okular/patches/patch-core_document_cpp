@@ -1,0 +1,18 @@
+$OpenBSD: patch-core_document_cpp,v 1.1 2020/03/31 05:01:46 rsadowski Exp $
+
+https://nvd.nist.gov/vuln/detail/CVE-2020-9359
+https://kde.org/info/security/advisory-20200312-1.txt
+
+Index: core/document.cpp
+--- core/document.cpp.orig
++++ core/document.cpp
+@@ -4352,7 +4352,8 @@ void Document::processAction( const Action * action )
+                 {
+                     const QUrl realUrl = KIO::upUrl(d->m_url).resolved(url);
+                     // KRun autodeletes
+-                    new KRun( realUrl, d->m_widget );
++                    KRun *r = new KRun( realUrl, d->m_widget );
++                    r->setRunExecutables(false);
+                 }
+             }
+             } break;
