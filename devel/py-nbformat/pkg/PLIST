@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 05:05:03 bket Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/03/31 19:19:23 bket Exp $
 @conflict py-nbformat-*
 @pkgpath devel/py-nbformat
-bin/jupyter-trust
 lib/python${MODPY_VERSION}/site-packages/nbformat/
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/nbformat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}converter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}current.${MODPY_PYC_MAGIC_TAG}pyc
@@ -15,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}reader.${MODPY
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}sentinel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}sign.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}validator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbformat/_compat.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/_version.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/converter.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/current.py
@@ -40,6 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test4.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test4custom.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test4docinfo.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test4jupyter_metadata.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test4jupyter_metadata_timings.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test4plus.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test_api.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test_convert.py
@@ -137,6 +139,11 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/v4/${MODPY_PYCACHE}nbjson.${MO
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/${MODPY_PYCACHE}rwbase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/convert.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbbase.py
+lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbformat.v4.0.schema.json
+lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbformat.v4.1.schema.json
+lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbformat.v4.2.schema.json
+lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbformat.v4.3.schema.json
+lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbformat.v4.4.schema.json
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbformat.v4.schema.json
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbjson.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/rwbase.py
