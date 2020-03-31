@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/06/03 16:06:56 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2020/03/31 14:50:08 tb Exp $
 
 COMMENT?=	TLS/SSL library and tools
 
@@ -8,8 +8,6 @@ PKGNAME?=	openssl-$V
 CATEGORIES?=	security net
 
 HOMEPAGE?=	https://www.openssl.org/
-
-MAINTAINER?=	Stuart Henderson <sthen@openbsd.org>
 
 # OpenSSL
 PERMIT_PACKAGE?=	Yes
