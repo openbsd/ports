@@ -1,20 +1,22 @@
-$OpenBSD: patch-src_snes_src_lib_libco_x86_c,v 1.1 2020/03/29 10:10:29 solene Exp $
+$OpenBSD: patch-src_snes_src_lib_libco_x86_c,v 1.2 2020/03/31 11:47:01 solene Exp $
 
 This prevent the snes module to crash on load on i386
 
 Index: src/snes/src/lib/libco/x86.c
 --- src/snes/src/lib/libco/x86.c.orig
 +++ src/snes/src/lib/libco/x86.c
-@@ -9,6 +9,8 @@
+@@ -9,6 +9,10 @@
  
  #include <assert.h>
  #include <stdlib.h>
 +#include <err.h>
 +#include <stdint.h>
++#include <unistd.h>
++#include <sys/mman.h>
  
  #ifdef __cplusplus
  extern "C" {
-@@ -25,6 +27,7 @@ extern "C" {
+@@ -25,6 +29,7 @@ extern "C" {
  static thread_local long co_active_buffer[64];
  static thread_local cothread_t co_active_handle = 0;
  static void (fastcall *co_swap)(cothread_t, cothread_t) = 0;
@@ -22,7 +24,7 @@ Index: src/snes/src/lib/libco/x86.c
  
  /* ABI: fastcall */
  force_text_section static const unsigned char co_swap_function[] = {
-@@ -64,7 +67,19 @@ cothread_t co_create(unsigned int size, void (*entrypo
+@@ -64,7 +69,19 @@ cothread_t co_create(unsigned int size, void (*entrypo
    size += 256;  /* allocate additional space for storage */
    size &= ~15;  /* align stack to 16-byte boundary */
  
