@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/01 18:55:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/03/31 04:45:01 rsadowski Exp $
 
 COMMENT =	multimedia layer for Qt5/KDE5
 VERSION =	4.10.3
 DISTNAME =	phonon-${VERSION}
 PKGNAME =	phonon-qt5-${VERSION}
+REVISION =	0
 
 # XXX major should be tweaked on any update, to unbreak
 # IMPORTED_LINK_INTERFACE_LIBRARIES CMake feature.
@@ -11,7 +12,7 @@ SHARED_LIBS +=	phonon4qt5		3.0
 SHARED_LIBS +=	phonon4qt5experimental	3.0
 
 CATEGORIES =	multimedia devel
-HOMEPAGE =	https://phonon.kde.org/
+HOMEPAGE =	https://community.kde.org/Phonon
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
