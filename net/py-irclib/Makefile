@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/04/01 07:52:38 bket Exp $
 
 COMMENT=	Internet Relay Chat (IRC) protocol client library for Python
 
-DISTNAME=	python-irclib-0.4.6
-PKGNAME=	${DISTNAME:S/python/py/g}
-REVISION =	4
+GH_ACCOUNT=	sixohsix
+GH_PROJECT=	python-irclib
+GH_COMMIT=	acd5aa66f431550bd142e90590b64ff6840e6648
+DISTNAME=	py-irclib-0.4.8.20110306
+
 CATEGORIES=	net
 
-HOMEPAGE=	http://python-irclib.sourceforge.net/
-
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-irclib/}
+MODULES=		lang/python
+MODPY_SETUPTOOLS=	Yes
 
-MODULES=	lang/python
+FLAVORS=	python3
+FLAVOR=		python3
 
 NO_TEST=	Yes
 

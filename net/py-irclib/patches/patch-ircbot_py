@@ -1,0 +1,52 @@
+$OpenBSD: patch-ircbot_py,v 1.1 2020/04/01 07:52:38 bket Exp $
+
+Remove unneeded imports that don't work in python3, avoid an infinite
+recursion in __contains__, remove unneeded method using a deprecated
+function, fix variable error
+
+Index: ircbot.py
+--- ircbot.py.orig
++++ ircbot.py
+@@ -25,10 +25,9 @@ write simpler bots.
+ """
+ 
+ import sys
+-from UserDict import UserDict
+ 
+ from irclib import SimpleIRCClient
+-from irclib import nm_to_n, irc_lower, all_events
++from irclib import nm_to_n, irc_lower
+ from irclib import parse_channel_modes, is_channel
+ from irclib import ServerConnectionError
+ 
+@@ -263,11 +262,6 @@ class IRCDict:
+             self.update(dict)
+     def __repr__(self):
+         return repr(self.data)
+-    def __cmp__(self, dict):
+-        if isinstance(dict, IRCDict):
+-            return cmp(self.data, dict.data)
+-        else:
+-            return cmp(self.data, dict)
+     def __len__(self):
+         return len(self.data)
+     def __getitem__(self, key):
+@@ -284,7 +278,8 @@ class IRCDict:
+     def __iter__(self):
+         return iter(self.data)
+     def __contains__(self, key):
+-        return key in self
++        return True if key in self.keys() else False
++
+     def clear(self):
+         self.data.clear()
+         self.canon_keys.clear()
+@@ -424,7 +419,7 @@ class Channel:
+ 
+     def limit(self):
+         if self.has_limit():
+-            return self.modes[l]
++            return self.modes["l"]
+         else:
+             return None
+ 

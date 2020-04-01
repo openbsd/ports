@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/09/20 12:41:46 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/04/01 07:52:38 bket Exp $
+@conflict py-irclib-*
+@pkgpath net/py-irclib
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ircbot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}irclib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ircbot.py
-lib/python${MODPY_VERSION}/site-packages/ircbot.pyc
 lib/python${MODPY_VERSION}/site-packages/irclib.py
-lib/python${MODPY_VERSION}/site-packages/irclib.pyc
+lib/python${MODPY_VERSION}/site-packages/python_irclib-0.4.8-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_irclib-0.4.8-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_irclib-0.4.8-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_irclib-0.4.8-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_irclib-0.4.8-py${MODPY_VERSION}.egg-info/top_level.txt
 share/examples/py-irclib/
 share/examples/py-irclib/dccreceive
 share/examples/py-irclib/dccsend

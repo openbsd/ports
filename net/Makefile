@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1188 2020/04/01 07:42:28 bket Exp $
+# $OpenBSD: Makefile,v 1.1189 2020/04/01 07:52:38 bket Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -585,7 +585,7 @@
      SUBDIR += py-impacket
      SUBDIR += py-ipaddr
      SUBDIR += py-ipaddress
-     SUBDIR += py-irclib
+     SUBDIR += py3-irclib
      SUBDIR += py-junos-eznc
      SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud
