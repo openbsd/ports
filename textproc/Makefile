@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.626 2020/03/30 11:37:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.627 2020/04/01 17:07:12 ian Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -10,6 +10,7 @@
      SUBDIR += apertium-streamparser
      SUBDIR += arabica
      SUBDIR += asciidoc
+     SUBDIR += asciidoctor
      SUBDIR += asciinema
      SUBDIR += aspell
      SUBDIR += bibelot
