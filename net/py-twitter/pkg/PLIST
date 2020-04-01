@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/09/08 11:38:04 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/04/01 07:42:29 bket Exp $
+@conflict py-twitter-*
+@pkgpath net/py-twitter
 bin/twitter
 bin/twitter-archiver
 bin/twitter-follow
@@ -14,36 +16,39 @@ lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/twitter/__init__.py
-lib/python${MODPY_VERSION}/site-packages/twitter/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}ansi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}archiver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}cmdline.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}corrupt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}follow.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}ircbot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}oauth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}oauth2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}oauth_dance.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}stream.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}stream_example.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}timezones.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}twitter_globals.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/ansi.py
-lib/python${MODPY_VERSION}/site-packages/twitter/ansi.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/api.py
-lib/python${MODPY_VERSION}/site-packages/twitter/api.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/archiver.py
-lib/python${MODPY_VERSION}/site-packages/twitter/archiver.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/auth.py
-lib/python${MODPY_VERSION}/site-packages/twitter/auth.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/cmdline.py
-lib/python${MODPY_VERSION}/site-packages/twitter/cmdline.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/corrupt.py
 lib/python${MODPY_VERSION}/site-packages/twitter/follow.py
-lib/python${MODPY_VERSION}/site-packages/twitter/follow.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/ircbot.py
-lib/python${MODPY_VERSION}/site-packages/twitter/ircbot.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/logger.py
-lib/python${MODPY_VERSION}/site-packages/twitter/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/oauth.py
-lib/python${MODPY_VERSION}/site-packages/twitter/oauth.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/oauth2.py
-lib/python${MODPY_VERSION}/site-packages/twitter/oauth2.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/oauth_dance.py
-lib/python${MODPY_VERSION}/site-packages/twitter/oauth_dance.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/stream.py
-lib/python${MODPY_VERSION}/site-packages/twitter/stream.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/stream_example.py
-lib/python${MODPY_VERSION}/site-packages/twitter/stream_example.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/timezones.py
-lib/python${MODPY_VERSION}/site-packages/twitter/timezones.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/twitter_globals.py
-lib/python${MODPY_VERSION}/site-packages/twitter/twitter_globals.pyc
 lib/python${MODPY_VERSION}/site-packages/twitter/util.py
-lib/python${MODPY_VERSION}/site-packages/twitter/util.pyc

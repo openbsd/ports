@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1187 2020/03/26 13:25:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1188 2020/04/01 07:42:28 bket Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -632,7 +632,7 @@
      SUBDIR += py-tld,python3
      SUBDIR += py-tlslite-ng,python3
      SUBDIR += py-transmissionrpc-ng
-     SUBDIR += py-twitter
+     SUBDIR += py3-twitter
      SUBDIR += py-websocket-client
      SUBDIR += py-websocket-client,python3
      SUBDIR += py-xmpppy
