@@ -1,4 +1,4 @@
-$OpenBSD: patch-pdf_c,v 1.1 2019/10/17 20:44:24 fcambus Exp $
+$OpenBSD: patch-pdf_c,v 1.2 2020/04/01 15:42:40 fcambus Exp $
 
 Index: pdf.c
 --- pdf.c.orig
@@ -25,7 +25,7 @@ Index: pdf.c
        pdfstream (STR1, 1, &cx);
      }
      waswhite = iswhite;
-@@ -853,7 +853,7 @@ pdfdraw (primitive * node) {
+@@ -850,7 +850,7 @@ pdfdraw (primitive * node) {
        pdfwpos (node->Upr.Uline.endpos);
        pdfstream (" l", 2, &cx);
        if (node->son != NULL) {
@@ -34,7 +34,7 @@ Index: pdf.c
  	pdfstream (STR1, 1, &cx);
        } else {
  	pdfwln (" S", 2, &cx);
-@@ -932,7 +932,7 @@ pdfdraw (primitive * node) {
+@@ -929,7 +929,7 @@ pdfdraw (primitive * node) {
    case XLaTeX:
      if (node->textp != NULL) {
        pdfwstring (node->textp);

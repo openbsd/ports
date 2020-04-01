@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/10/17 20:44:24 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2020/04/01 15:42:40 fcambus Exp $
 
 COMMENT =		pic-like interpreter for producing line graphics
 
-DISTNAME =		dpic-2019.08.30
+DISTNAME =		dpic-2020.03.01
 
 CATEGORIES =		graphics
 
@@ -15,8 +15,7 @@ WANTLIB +=		c m
 
 ALL_TARGET =		dpic
 
-MASTER_SITES =		${HOMEPAGE}
-
+MASTER_SITES =		https://ece.uwaterloo.ca/~aplevich/dpic/
 
 TEST_DEPENDS =		print/texlive/base \
 			print/texlive/texmf,-main
