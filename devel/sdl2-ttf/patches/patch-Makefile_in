@@ -1,7 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/11/05 17:30:07 bcallah Exp $
---- Makefile.in.orig	Sat Oct 12 16:35:50 2013
-+++ Makefile.in	Sat Oct 12 16:36:06 2013
-@@ -368,12 +368,10 @@ EXTRA_DIST = \
+$OpenBSD: patch-Makefile_in,v 1.2 2020/04/01 20:43:08 naddy Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -413,12 +413,10 @@ EXTRA_DIST = \
  
  @USE_VERSION_RC_FALSE@libSDL2_ttf_la_LDFLAGS = \
  @USE_VERSION_RC_FALSE@	-no-undefined		\

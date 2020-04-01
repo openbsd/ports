@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.4 2019/09/22 15:46:26 thfr Exp $
+$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.5 2020/04/01 20:43:08 naddy Exp $
 
 enable GameController API the Linux fallback way (by posing as Xbox360
 controller)
@@ -11,7 +11,7 @@ many controllers use this mapping
 Index: src/joystick/SDL_gamecontroller.c
 --- src/joystick/SDL_gamecontroller.c.orig
 +++ src/joystick/SDL_gamecontroller.c
-@@ -735,7 +735,7 @@ static char *SDL_PrivateGetControllerGUIDFromMappingSt
+@@ -739,7 +739,7 @@ static char *SDL_PrivateGetControllerGUIDFromMappingSt
              SDL_memcpy(&pchGUID[8], &pchGUID[0], 4);
              SDL_memcpy(&pchGUID[0], "03000000", 8);
          }
@@ -20,7 +20,7 @@ Index: src/joystick/SDL_gamecontroller.c
          if (SDL_strlen(pchGUID) == 32 &&
              SDL_memcmp(&pchGUID[4], "000000000000", 12) == 0 &&
              SDL_memcmp(&pchGUID[20], "000000000000", 12) == 0) {
-@@ -1022,17 +1022,21 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
+@@ -1026,17 +1026,21 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
      ControllerMapping_t *mapping;
  
      mapping = SDL_PrivateGetControllerMappingForGUID(&guid, SDL_FALSE);

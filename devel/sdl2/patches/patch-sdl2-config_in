@@ -1,6 +1,8 @@
-$OpenBSD: patch-sdl2-config_in,v 1.1.1.1 2013/10/30 18:11:11 bcallah Exp $
---- sdl2-config.in.orig	Sat Aug 10 15:37:09 2013
-+++ sdl2-config.in	Sat Aug 10 15:38:41 2013
+$OpenBSD: patch-sdl2-config_in,v 1.2 2020/04/01 20:43:08 naddy Exp $
+
+Index: sdl2-config.in
+--- sdl2-config.in.orig
++++ sdl2-config.in
 @@ -42,10 +42,10 @@ while test $# -gt 0; do
        echo @SDL_VERSION@
        ;;

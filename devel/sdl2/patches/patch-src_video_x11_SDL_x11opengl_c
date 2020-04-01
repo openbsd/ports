@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_video_x11_SDL_x11opengl_c,v 1.2 2018/01/07 22:56:46 awolk Exp $
---- src/video/x11/SDL_x11opengl.c.orig	Fri Sep 20 16:47:56 2013
-+++ src/video/x11/SDL_x11opengl.c	Fri Sep 20 16:48:19 2013
+$OpenBSD: patch-src_video_x11_SDL_x11opengl_c,v 1.3 2020/04/01 20:43:08 naddy Exp $
+
+Index: src/video/x11/SDL_x11opengl.c
+--- src/video/x11/SDL_x11opengl.c.orig
++++ src/video/x11/SDL_x11opengl.c
 @@ -32,7 +32,7 @@
  #include "SDL_loadso.h"
  #include "SDL_x11opengles.h"

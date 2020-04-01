@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_video_SDL_egl_c,v 1.4 2019/09/22 15:46:26 thfr Exp $
+$OpenBSD: patch-src_video_SDL_egl_c,v 1.5 2020/04/01 20:43:08 naddy Exp $
+
 Index: src/video/SDL_egl.c
 --- src/video/SDL_egl.c.orig
 +++ src/video/SDL_egl.c

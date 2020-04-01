@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/11/10 21:35:39 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/04/01 20:43:08 naddy Exp $
 bin/sdl2-config
 include/SDL2/
 include/SDL2/SDL.h
@@ -26,6 +26,7 @@ include/SDL2/SDL_loadso.h
 include/SDL2/SDL_log.h
 include/SDL2/SDL_main.h
 include/SDL2/SDL_messagebox.h
+include/SDL2/SDL_metal.h
 include/SDL2/SDL_mouse.h
 include/SDL2/SDL_mutex.h
 include/SDL2/SDL_name.h
@@ -76,6 +77,7 @@ include/SDL2/begin_code.h
 include/SDL2/close_code.h
 lib/cmake/
 lib/cmake/SDL2/
+lib/cmake/SDL2/sdl2-config-version.cmake
 lib/cmake/SDL2/sdl2-config.cmake
 @static-lib lib/libSDL2.a
 lib/libSDL2.la
