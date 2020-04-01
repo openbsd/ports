@@ -1,0 +1,14 @@
+$OpenBSD: patch-docs_Makefile,v 1.1 2020/04/01 14:43:18 jasper Exp $
+
+Index: docs/Makefile
+--- docs/Makefile.orig
++++ docs/Makefile
+@@ -2,7 +2,7 @@
+ 
+ # You can set these variables from the command line.
+ SPHINXOPTS    =
+-SPHINXBUILD   = sphinx-build
++SPHINXBUILD   = sphinx-build${MODPY_BIN_SUFFIX}
+ PAPER         = a4
+ BUILDDIR      = build
+ 

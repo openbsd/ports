@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.5 2020/04/01 14:43:18 jasper Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -163,8 +163,8 @@ def find_data_files():
+     data_files.extend(find_user_help())
+ 
+     # Generate man files and include them
+-    os.system('sphinx-build -b man docs/source build/docs')
+-    data_files.append(('share/man/man1', glob('build/docs/*.1')))
++    os.system('sphinx-build${MODPY_BIN_SUFFIX} -b man docs/source build/docs')
++    data_files.append(('man/man1', glob('build/docs/*.1')))
+ 
+     # Misc files
+     data_files.extend([

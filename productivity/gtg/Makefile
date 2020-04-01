@@ -1,39 +1,40 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/04/01 14:43:18 jasper Exp $
 
 COMMENT=		GTD organizer for GNOME
 
-MODPY_EGG_VERSION=	0.3.1
-DISTNAME=		gtg-${MODPY_EGG_VERSION}
-REVISION=		3
+GH_PROJECT =		gtg
+GH_ACCOUNT =		getting-things-gnome
+GH_COMMIT =		54b2793be236da41549360c5aeb0da5e33a7ff60
+MODPY_EGG_VERSION =	0.4.0
+DISTNAME =		gtg-${MODPY_EGG_VERSION}
 
 CATEGORIES=		productivity
 
-HOMEPAGE=		http://gtgnome.net/
+HOMEPAGE=		https://wiki.gnome.org/Apps/GTG
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://launchpad.net/gtg/${MODPY_EGG_VERSION:R}/${MODPY_EGG_VERSION}/+download/
-
 MODULES=		lang/python
 
-BUILD_DEPENDS=		devel/gettext,-tools
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
+BUILD_DEPENDS=		devel/gettext,-tools \
+			textproc/py-sphinx${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/py-configobj \
-			devel/py-dateutil \
-			devel/py-liblarch>=2.1.0 \
-			devel/py-notify \
-			devel/py-suds \
-			devel/py-xdg \
-			x11/dbus-python \
+			devel/py-dateutil${MODPY_FLAVOR} \
+			devel/py-liblarch \
+			devel/py-xdg${MODPY_FLAVOR} \
+			x11/dbus-python${MODPY_FLAVOR} \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gtk+3,-guic
 
-MODPY_ADJ_FILES=	GTG/gtg.py gtg
-
-NO_TEST=		Yes
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR}
+TEST_TARGET =		tests
 
 pre-configure:
-	sed -i "s,share/man,man,g" ${WRKSRC}/setup.py
+	${SUBST_CMD} ${WRKSRC}/docs/Makefile ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
