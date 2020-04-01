@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/04/01 14:35:10 jasper Exp $
 
 COMMENT=		python library to easily handle data structure
 
-GH_ACCOUNT=		liblarch
+GH_ACCOUNT=		getting-things-gnome
 GH_PROJECT=		liblarch
-GH_TAGNAME=		v2.1.0
+GH_TAGNAME=		v3.0
 MODPY_EGG_VERSION=	${GH_TAGNAME:S/v//}
 DISTNAME=		liblarch-${MODPY_EGG_VERSION}
 PKGNAME=		py-liblarch-${MODPY_EGG_VERSION}
@@ -18,10 +18,10 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		x11/py-gtk2
-TEST_DEPENDS=		x11/py-gtk2
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-MODPY_ADJ_FILES=	run-tests
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 TEST_IS_INTERACTIVE=	x11
 

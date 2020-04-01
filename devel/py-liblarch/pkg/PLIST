@@ -1,26 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/09 13:28:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/04/01 14:35:10 jasper Exp $
 @conflict py-liblarch_gtk-*
 @pkgpath devel/py-liblarch_gtk
 lib/python${MODPY_VERSION}/site-packages/liblarch/
-lib/python${MODPY_VERSION}/site-packages/liblarch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/liblarch-3.0.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/liblarch/__init__.py
-lib/python${MODPY_VERSION}/site-packages/liblarch/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}filteredtree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}filters_bank.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}processqueue.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}tree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}treenode.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}viewcount.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}viewtree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/filteredtree.py
-lib/python${MODPY_VERSION}/site-packages/liblarch/filteredtree.pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/filters_bank.py
-lib/python${MODPY_VERSION}/site-packages/liblarch/filters_bank.pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/processqueue.py
-lib/python${MODPY_VERSION}/site-packages/liblarch/processqueue.pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/tree.py
-lib/python${MODPY_VERSION}/site-packages/liblarch/tree.pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/treenode.py
-lib/python${MODPY_VERSION}/site-packages/liblarch/treenode.pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/viewcount.py
-lib/python${MODPY_VERSION}/site-packages/liblarch/viewcount.pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/viewtree.py
-lib/python${MODPY_VERSION}/site-packages/liblarch/viewtree.pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/
 lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/__init__.py
-lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/${MODPY_PYCACHE}treemodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/treemodel.py
-lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/treemodel.pyc
