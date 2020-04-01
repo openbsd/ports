@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.64 2020/03/07 14:16:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.65 2020/04/01 20:05:49 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -27,7 +27,6 @@ librenms/.github/label-actions.yml
 librenms/.github/lock.yml
 librenms/.github/no-response.yml
 librenms/.github/stale.yml
-librenms/.gitignore
 librenms/.mention-bot
 librenms/.scrutinizer.yml
 librenms/.travis.yml
@@ -108,6 +107,19 @@ librenms/LibreNMS/DB/
 librenms/LibreNMS/DB/Eloquent.php
 librenms/LibreNMS/DB/Schema.php
 librenms/LibreNMS/DB/SyncsModels.php
+librenms/LibreNMS/Data/
+librenms/LibreNMS/Data/Measure/
+librenms/LibreNMS/Data/Measure/Measurement.php
+librenms/LibreNMS/Data/Measure/MeasurementCollection.php
+librenms/LibreNMS/Data/Measure/MeasurementSummary.php
+librenms/LibreNMS/Data/Store/
+librenms/LibreNMS/Data/Store/BaseDatastore.php
+librenms/LibreNMS/Data/Store/Datastore.php
+librenms/LibreNMS/Data/Store/Graphite.php
+librenms/LibreNMS/Data/Store/InfluxDB.php
+librenms/LibreNMS/Data/Store/OpenTSDB.php
+librenms/LibreNMS/Data/Store/Prometheus.php
+librenms/LibreNMS/Data/Store/Rrd.php
 librenms/LibreNMS/Device/
 librenms/LibreNMS/Device/Processor.php
 librenms/LibreNMS/Device/Sensor.php
@@ -146,6 +158,8 @@ librenms/LibreNMS/Interfaces/Alert/
 librenms/LibreNMS/Interfaces/Alert/Transport.php
 librenms/LibreNMS/Interfaces/Authentication/
 librenms/LibreNMS/Interfaces/Authentication/Authorizer.php
+librenms/LibreNMS/Interfaces/Data/
+librenms/LibreNMS/Interfaces/Data/Datastore.php
 librenms/LibreNMS/Interfaces/Discovery/
 librenms/LibreNMS/Interfaces/Discovery/DiscoveryItem.php
 librenms/LibreNMS/Interfaces/Discovery/DiscoveryModule.php
@@ -426,7 +440,6 @@ librenms/LibreNMS/Validations/Disk.php
 librenms/LibreNMS/Validations/DistributedPoller.php
 librenms/LibreNMS/Validations/Mail.php
 librenms/LibreNMS/Validations/Php.php
-librenms/LibreNMS/Validations/Poller.php
 librenms/LibreNMS/Validations/Programs.php
 librenms/LibreNMS/Validations/Rrd.php
 librenms/LibreNMS/Validations/RrdCheck.php
@@ -475,6 +488,7 @@ librenms/app/Facades/
 librenms/app/Facades/DeviceCache.php
 librenms/app/Facades/LogManager.php
 librenms/app/Facades/Permissions.php
+librenms/app/Facades/Rrd.php
 librenms/app/Guards/
 librenms/app/Guards/ApiTokenGuard.php
 librenms/app/Http/
@@ -503,6 +517,8 @@ librenms/app/Http/Controllers/Maps/
 librenms/app/Http/Controllers/Maps/DeviceDependencyController.php
 librenms/app/Http/Controllers/Maps/MapController.php
 librenms/app/Http/Controllers/PaginatedAjaxController.php
+librenms/app/Http/Controllers/PollerController.php
+librenms/app/Http/Controllers/PollerGroupController.php
 librenms/app/Http/Controllers/Select/
 librenms/app/Http/Controllers/Select/ApplicationController.php
 librenms/app/Http/Controllers/Select/BillController.php
@@ -635,6 +651,10 @@ librenms/app/Models/OspfNbr.php
 librenms/app/Models/OspfPort.php
 librenms/app/Models/Package.php
 librenms/app/Models/Plugin.php
+librenms/app/Models/Poller.php
+librenms/app/Models/PollerCluster.php
+librenms/app/Models/PollerClusterStat.php
+librenms/app/Models/PollerGroup.php
 librenms/app/Models/Port.php
 librenms/app/Models/PortRelatedModel.php
 librenms/app/Models/PortsFdb.php
@@ -665,6 +685,7 @@ librenms/app/Providers/AuthServiceProvider.php
 librenms/app/Providers/BroadcastServiceProvider.php
 librenms/app/Providers/CliServiceProvider.php
 librenms/app/Providers/ComposerServiceProvider.php
+librenms/app/Providers/DatastoreServiceProvider.php
 librenms/app/Providers/EventServiceProvider.php
 librenms/app/Providers/LegacyUserProvider.php
 librenms/app/Providers/RouteServiceProvider.php
@@ -680,7 +701,6 @@ librenms/bootstrap/autoload.php
 @owner _librenms
 @group www
 librenms/bootstrap/cache/
-@comment librenms/bootstrap/cache/.gitignore
 @mode
 @owner
 @group
@@ -690,7 +710,6 @@ librenms/build.sql
 @owner _librenms
 @group www
 librenms/cache/
-@comment librenms/cache/.gitignore
 @mode
 @owner
 @group
@@ -892,6 +911,7 @@ librenms/database/migrations/2020_01_09_1300_migrate_devices_attribs_table.php
 librenms/database/migrations/2020_02_05_093457_add_inserted_to_devices.php
 librenms/database/migrations/2020_02_05_224042_device_inserted_null.php
 librenms/database/migrations/2020_02_10_223323_create_alert_location_map_table.php
+librenms/database/migrations/2020_03_24_0844_add_primary_key_to_device_graphs.php
 librenms/database/seeds/
 librenms/database/seeds/DatabaseSeeder.php
 librenms/database/seeds/DefaultAlertTemplateSeeder.php
@@ -1290,6 +1310,7 @@ librenms/html/images/logos/phybridge.svg
 librenms/html/images/logos/protelevision.png
 librenms/html/images/logos/proxmox.svg
 librenms/html/images/logos/raritan.svg
+librenms/html/images/logos/ribbon.svg
 librenms/html/images/logos/rittal.svg
 librenms/html/images/logos/rockstor.svg
 librenms/html/images/logos/ruckus.svg
@@ -1489,6 +1510,8 @@ librenms/html/images/os/illustra.png
 librenms/html/images/os/infinera.png
 librenms/html/images/os/infoblox.svg
 librenms/html/images/os/ingrasys.png
+librenms/html/images/os/innovaphone.png
+librenms/html/images/os/inteno.svg
 librenms/html/images/os/ionodes.png
 librenms/html/images/os/istars.png
 librenms/html/images/os/ixia.svg
@@ -1589,6 +1612,7 @@ librenms/html/images/os/raspbian.svg
 librenms/html/images/os/ray.png
 librenms/html/images/os/redhat.svg
 librenms/html/images/os/redlion.png
+librenms/html/images/os/ribbon.svg
 librenms/html/images/os/ricoh.svg
 librenms/html/images/os/riello.png
 librenms/html/images/os/rittal.svg
@@ -1611,6 +1635,7 @@ librenms/html/images/os/sharp.png
 librenms/html/images/os/siae.png
 librenms/html/images/os/siemens.svg
 librenms/html/images/os/siklu.png
+librenms/html/images/os/silverpeak.png
 librenms/html/images/os/siteboss.png
 librenms/html/images/os/sixnet.png
 librenms/html/images/os/slackware.png
@@ -1721,7 +1746,6 @@ librenms/html/js/jquery.mousewheel.min.js
 librenms/html/js/jquery.qrcode.min.js
 librenms/html/js/justgage.js
 librenms/html/js/lang/
-librenms/html/js/lang/.gitignore
 librenms/html/js/lazyload.js
 librenms/html/js/leaflet-bing-layer.min.js
 librenms/html/js/leaflet.awesome-markers.min.js
@@ -1981,6 +2005,7 @@ librenms/includes/definitions/discovery/arris-apex.yaml
 librenms/includes/definitions/discovery/arris-c3.yaml
 librenms/includes/definitions/discovery/arris-dsr4410md.yaml
 librenms/includes/definitions/discovery/arubaos.yaml
+librenms/includes/definitions/discovery/asa.yaml
 librenms/includes/definitions/discovery/ats.yaml
 librenms/includes/definitions/discovery/audiocodes.yaml
 librenms/includes/definitions/discovery/avocent.yaml
@@ -2027,6 +2052,7 @@ librenms/includes/definitions/discovery/eaton-mgeups.yaml
 librenms/includes/definitions/discovery/eatonpdu.yaml
 librenms/includes/definitions/discovery/edfa.yaml
 librenms/includes/definitions/discovery/edgecos.yaml
+librenms/includes/definitions/discovery/edgeos-ep.yaml
 librenms/includes/definitions/discovery/edgeswitch.yaml
 librenms/includes/definitions/discovery/eds.yaml
 librenms/includes/definitions/discovery/ees.yaml
@@ -2073,6 +2099,8 @@ librenms/includes/definitions/discovery/icotera.yaml
 librenms/includes/definitions/discovery/ies5000.yaml
 librenms/includes/definitions/discovery/ies52xxM.yaml
 librenms/includes/definitions/discovery/infinera-groove.yaml
+librenms/includes/definitions/discovery/innovaphone.yaml
+librenms/includes/definitions/discovery/inteno.yaml
 librenms/includes/definitions/discovery/ionodes.yaml
 librenms/includes/definitions/discovery/ionos.yaml
 librenms/includes/definitions/discovery/ird.yaml
@@ -2189,6 +2217,7 @@ librenms/includes/definitions/eatonpdu.yaml
 librenms/includes/definitions/eatonups.yaml
 librenms/includes/definitions/edfa.yaml
 librenms/includes/definitions/edgecos.yaml
+librenms/includes/definitions/edgeos-ep.yaml
 librenms/includes/definitions/edgeos.yaml
 librenms/includes/definitions/edgeswitch.yaml
 librenms/includes/definitions/eds.yaml
@@ -2297,7 +2326,9 @@ librenms/includes/definitions/infinera-groove.yaml
 librenms/includes/definitions/infinera-pon.yaml
 librenms/includes/definitions/infinity.yaml
 librenms/includes/definitions/informos.yaml
+librenms/includes/definitions/innovaphone.yaml
 librenms/includes/definitions/intelliflash.yaml
+librenms/includes/definitions/inteno.yaml
 librenms/includes/definitions/ionodes.yaml
 librenms/includes/definitions/ionos.yaml
 librenms/includes/definitions/ios.yaml
@@ -2539,6 +2570,7 @@ librenms/includes/definitions/voss.yaml
 librenms/includes/definitions/voswall.yaml
 librenms/includes/definitions/vrp.yaml
 librenms/includes/definitions/vubiq.yaml
+librenms/includes/definitions/vxoa.yaml
 librenms/includes/definitions/vyatta.yaml
 librenms/includes/definitions/vyos.yaml
 librenms/includes/definitions/waas.yaml
@@ -2944,6 +2976,7 @@ librenms/includes/discovery/sensors/state/hpblmos.inc.php
 librenms/includes/discovery/sensors/state/ibm-amm.inc.php
 librenms/includes/discovery/sensors/state/ict-pdu.inc.php
 librenms/includes/discovery/sensors/state/infinera-groove.inc.php
+librenms/includes/discovery/sensors/state/innovaphone.inc.php
 librenms/includes/discovery/sensors/state/juniper-mss.inc.php
 librenms/includes/discovery/sensors/state/linux.inc.php
 librenms/includes/discovery/sensors/state/netagent2.inc.php
@@ -3132,7 +3165,6 @@ librenms/includes/discovery/vmware-vminfo.inc.php
 librenms/includes/discovery/vrf.inc.php
 librenms/includes/discovery/wireless.inc.php
 librenms/includes/functions.php
-librenms/includes/graphite.inc.php
 librenms/includes/helpers.php
 librenms/includes/html/
 librenms/includes/html/api_functions.inc.php
@@ -3196,7 +3228,6 @@ librenms/includes/html/forms/parse-alert-template.inc.php
 librenms/includes/html/forms/parse-customoid.inc.php
 librenms/includes/html/forms/parse-poller-groups.inc.php
 librenms/includes/html/forms/parse-service.inc.php
-librenms/includes/html/forms/poller-group-remove.inc.php
 librenms/includes/html/forms/poller-groups.inc.php
 librenms/includes/html/forms/poller-module-update.inc.php
 librenms/includes/html/forms/processor-update.inc.php
@@ -3322,6 +3353,9 @@ librenms/includes/html/graphs/application/freeswitch_peak.inc.php
 librenms/includes/html/graphs/application/gpsd_dop.inc.php
 librenms/includes/html/graphs/application/gpsd_mode.inc.php
 librenms/includes/html/graphs/application/gpsd_satellites.inc.php
+librenms/includes/html/graphs/application/mailcow-postfix_domains.inc.php
+librenms/includes/html/graphs/application/mailcow-postfix_emails.inc.php
+librenms/includes/html/graphs/application/mailcow-postfix_traffic.inc.php
 librenms/includes/html/graphs/application/mailscanner_reject.inc.php
 librenms/includes/html/graphs/application/mailscanner_sent.inc.php
 librenms/includes/html/graphs/application/mailscanner_spam.inc.php
@@ -3533,6 +3567,8 @@ librenms/includes/html/graphs/application/tinydns_queries.inc.php
 librenms/includes/html/graphs/application/unbound_cache.inc.php
 librenms/includes/html/graphs/application/unbound_operations.inc.php
 librenms/includes/html/graphs/application/unbound_queries.inc.php
+librenms/includes/html/graphs/application/unbound_recursiontime.inc.php
+librenms/includes/html/graphs/application/unbound_requestlist.inc.php
 librenms/includes/html/graphs/application/ups-apcups_charge.inc.php
 librenms/includes/html/graphs/application/ups-apcups_load.inc.php
 librenms/includes/html/graphs/application/ups-apcups_remaining.inc.php
@@ -3844,8 +3880,10 @@ librenms/includes/html/graphs/device/ubnt_airfiber_RxPower.inc.php
 librenms/includes/html/graphs/device/ubnt_airfiber_TxPower.inc.php
 librenms/includes/html/graphs/device/ucd_contexts.inc.php
 librenms/includes/html/graphs/device/ucd_cpu.inc.php
+librenms/includes/html/graphs/device/ucd_cpu_steal.inc.php
 librenms/includes/html/graphs/device/ucd_interrupts.inc.php
 librenms/includes/html/graphs/device/ucd_io.inc.php
+librenms/includes/html/graphs/device/ucd_io_wait.inc.php
 librenms/includes/html/graphs/device/ucd_load.inc.php
 librenms/includes/html/graphs/device/ucd_memory.inc.php
 librenms/includes/html/graphs/device/ucd_swap_io.inc.php
@@ -4073,7 +4111,6 @@ librenms/includes/html/modal/new_alert_rule.inc.php
 librenms/includes/html/modal/new_bill.inc.php
 librenms/includes/html/modal/new_customoid.inc.php
 librenms/includes/html/modal/new_service.inc.php
-librenms/includes/html/modal/poller_groups.inc.php
 librenms/includes/html/modal/remove_alert_schedule.inc.php
 librenms/includes/html/object-cache.inc.php
 librenms/includes/html/output/
@@ -4139,6 +4176,7 @@ librenms/includes/html/pages/device/apps/fbsd-nfs-server.inc.php
 librenms/includes/html/pages/device/apps/freeradius.inc.php
 librenms/includes/html/pages/device/apps/freeswitch.inc.php
 librenms/includes/html/pages/device/apps/gpsd.inc.php
+librenms/includes/html/pages/device/apps/mailcow-postfix.inc.php
 librenms/includes/html/pages/device/apps/mailscanner.inc.php
 librenms/includes/html/pages/device/apps/mdadm.inc.php
 librenms/includes/html/pages/device/apps/memcached.inc.php
@@ -4442,12 +4480,6 @@ librenms/includes/html/pages/peering/ix-peers.inc.php
 librenms/includes/html/pages/plugin/
 librenms/includes/html/pages/plugin.inc.php
 librenms/includes/html/pages/plugin/admin.inc.php
-librenms/includes/html/pages/pollers/
-librenms/includes/html/pages/pollers.inc.php
-librenms/includes/html/pages/pollers/groups.inc.php
-librenms/includes/html/pages/pollers/log.inc.php
-librenms/includes/html/pages/pollers/performance.inc.php
-librenms/includes/html/pages/pollers/pollers.inc.php
 librenms/includes/html/pages/ports/
 librenms/includes/html/pages/ports.inc.php
 librenms/includes/html/pages/ports/graph.inc.php
@@ -4549,10 +4581,8 @@ librenms/includes/html/table/toner.inc.php
 librenms/includes/html/table/wireless-sensors.inc.php
 librenms/includes/html/vars.inc.php
 librenms/includes/include-dir.inc.php
-librenms/includes/influxdb.inc.php
 librenms/includes/init.php
 librenms/includes/notifications.php
-librenms/includes/opentsdb.inc.php
 librenms/includes/polling/
 librenms/includes/polling/applications/
 librenms/includes/polling/applications.inc.php
@@ -4571,6 +4601,7 @@ librenms/includes/polling/applications/fbsd-nfs-server.inc.php
 librenms/includes/polling/applications/freeradius.inc.php
 librenms/includes/polling/applications/freeswitch.inc.php
 librenms/includes/polling/applications/gpsd.inc.php
+librenms/includes/polling/applications/mailcow-postfix.inc.php
 librenms/includes/polling/applications/mailscanner.inc.php
 librenms/includes/polling/applications/mdadm.inc.php
 librenms/includes/polling/applications/memcached.inc.php
@@ -4877,6 +4908,7 @@ librenms/includes/polling/os/eaton-mgeups.inc.php
 librenms/includes/polling/os/eatonpdu.inc.php
 librenms/includes/polling/os/edfa.inc.php
 librenms/includes/polling/os/edgecos.inc.php
+librenms/includes/polling/os/edgeos-ep.inc.php
 librenms/includes/polling/os/edgeos.inc.php
 librenms/includes/polling/os/edgeswitch.inc.php
 librenms/includes/polling/os/eds.inc.php
@@ -4964,6 +4996,7 @@ librenms/includes/polling/os/infinera-groove.inc.php
 librenms/includes/polling/os/infinera-pon.inc.php
 librenms/includes/polling/os/infinity.inc.php
 librenms/includes/polling/os/informos.inc.php
+librenms/includes/polling/os/inteno.inc.php
 librenms/includes/polling/os/ios.inc.php
 librenms/includes/polling/os/iosxe.inc.php
 librenms/includes/polling/os/iosxr.inc.php
@@ -5131,6 +5164,7 @@ librenms/includes/polling/os/viptela.inc.php
 librenms/includes/polling/os/vmware.inc.php
 librenms/includes/polling/os/voss.inc.php
 librenms/includes/polling/os/vrp.inc.php
+librenms/includes/polling/os/vxoa.inc.php
 librenms/includes/polling/os/vyatta.inc.php
 librenms/includes/polling/os/vyos.inc.php
 librenms/includes/polling/os/waas.inc.php
@@ -5234,7 +5268,6 @@ librenms/includes/polling/wireless/cano${MODPY_PY_PREFIX}generic.inc.php
 librenms/includes/polling/wireless/cisco-wwan.inc.php
 librenms/includes/polling/wireless/xirrus.inc.php
 librenms/includes/port-descr-parser.inc.php
-librenms/includes/prometheus.inc.php
 librenms/includes/rewrites.php
 librenms/includes/rrdtool.inc.php
 librenms/includes/services/
@@ -5276,7 +5309,6 @@ librenms/logs/
 @mode
 @owner
 @group
-librenms/logs/.gitignore
 librenms/mibs/
 librenms/mibs/2n/
 librenms/mibs/2n/TEL2N-MIB
@@ -5446,11 +5478,6 @@ librenms/mibs/NETWORK-APPLIANCE-MIB
 librenms/mibs/NETWORK-SERVICES-MIB.txt
 librenms/mibs/NOTIFICATION-LOG-MIB
 librenms/mibs/NetWare-Host-Ext-MIB
-librenms/mibs/OLD-CISCO-CHASSIS-MIB
-librenms/mibs/OLD-CISCO-CPU-MIB
-librenms/mibs/OLD-CISCO-INTERFACES-MIB
-librenms/mibs/OLD-CISCO-MEMORY-MIB
-librenms/mibs/OLD-CISCO-SYS-MIB
 librenms/mibs/OPENBSD-BASE-MIB.txt
 librenms/mibs/OPENBSD-CARP-MIB.txt
 librenms/mibs/OPENBSD-MEM-MIB.txt
@@ -6391,6 +6418,11 @@ librenms/mibs/cisco/CISCOWAN-SMI
 librenms/mibs/cisco/DIFF-SERV-MIB
 librenms/mibs/cisco/DOCS-IF-MIB
 librenms/mibs/cisco/IRONPORT-SMI
+librenms/mibs/cisco/OLD-CISCO-CHASSIS-MIB
+librenms/mibs/cisco/OLD-CISCO-CPU-MIB
+librenms/mibs/cisco/OLD-CISCO-INTERFACES-MIB
+librenms/mibs/cisco/OLD-CISCO-MEMORY-MIB
+librenms/mibs/cisco/OLD-CISCO-SYS-MIB
 librenms/mibs/cisco/SA-CM-MIB
 librenms/mibs/cisco/SA-CM-MTA-MIB
 librenms/mibs/cisco/SA-HARDWARE-MIB
@@ -6398,6 +6430,7 @@ librenms/mibs/cisco/SA-MTA-MIB
 librenms/mibs/cisco/SA-RG-MIB
 librenms/mibs/citrix/
 librenms/mibs/citrix/CITRIX-NetScaler-SD-WAN-MIB
+librenms/mibs/citrix/MAS-MIB-SMIV2-MIB
 librenms/mibs/citrix/NS-MIB-SMIV2-MIB
 librenms/mibs/citrix/SDX-MIB-SMIV2-MIB
 librenms/mibs/comet/
@@ -7487,6 +7520,10 @@ librenms/mibs/infoblox/IB-PLATFORMONE-MIB
 librenms/mibs/infoblox/IB-SMI-MIB
 librenms/mibs/ingrasys/
 librenms/mibs/ingrasys/IPOMANII-MIB
+librenms/mibs/innovaphone/
+librenms/mibs/innovaphone/INNO-MIB
+librenms/mibs/inteno/
+librenms/mibs/inteno/XAVI-XG6846-MIB
 librenms/mibs/ionodes/
 librenms/mibs/ionodes/IONODES-IONSERIES-MIB
 librenms/mibs/ixia/
@@ -8827,6 +8864,11 @@ librenms/mibs/siae/SIAE-UNITYPE-MIB
 librenms/mibs/siae/SIAE-USER-MIB
 librenms/mibs/siklu/
 librenms/mibs/siklu/RADIO-BRIDGE-MIB
+librenms/mibs/silverpeak/
+librenms/mibs/silverpeak/SILVERPEAK-MGMT-MIB
+librenms/mibs/silverpeak/SILVERPEAK-PRODUCTS-MIB
+librenms/mibs/silverpeak/SILVERPEAK-SMI
+librenms/mibs/silverpeak/SILVERPEAK-TC
 librenms/mibs/sinetica/
 librenms/mibs/sinetica/HAWK-I2-MIB
 librenms/mibs/smartoptics/
@@ -9125,6 +9167,7 @@ librenms/mibs/ubnt/
 librenms/mibs/ubnt/UBNT-AFLTU-MIB
 librenms/mibs/ubnt/UBNT-AirFIBER-MIB
 librenms/mibs/ubnt/UBNT-AirMAX-MIB
+librenms/mibs/ubnt/UBNT-EdgeMAX-MIB
 librenms/mibs/ubnt/UBNT-MIB
 librenms/mibs/ubnt/UBNT-UniFi-MIB
 librenms/mibs/unitrends/
@@ -9348,7 +9391,6 @@ librenms/resources/views/about/
 librenms/resources/views/about/index.blade.php
 librenms/resources/views/alerts/
 librenms/resources/views/alerts/templates/
-librenms/resources/views/alerts/templates/.gitignore
 librenms/resources/views/alerts/templates/default.blade.php
 librenms/resources/views/auth/
 librenms/resources/views/auth/2fa.blade.php
@@ -9376,6 +9418,12 @@ librenms/resources/views/layouts/menu.blade.php
 librenms/resources/views/locations.blade.php
 librenms/resources/views/map/
 librenms/resources/views/map/device-dependency.blade.php
+librenms/resources/views/poller/
+librenms/resources/views/poller/groups.blade.php
+librenms/resources/views/poller/index.blade.php
+librenms/resources/views/poller/log.blade.php
+librenms/resources/views/poller/performance.blade.php
+librenms/resources/views/poller/poller.blade.php
 librenms/resources/views/settings/
 librenms/resources/views/settings/index.blade.php
 librenms/resources/views/settings/search.blade.php
@@ -9438,7 +9486,6 @@ librenms/rrd/
 @mode
 @owner
 @group
-librenms/rrd/.gitignore
 librenms/scripts/
 librenms/scripts/Migration/
 librenms/scripts/Migration/Standard_Conversion/
@@ -9776,69 +9823,18 @@ librenms/sql-schema/281.sql
 @group www
 librenms/storage/
 librenms/storage/app/
-@mode
-@owner
-@group
-librenms/storage/app/.gitignore
-@mode 775
-@owner _librenms
-@group www
 librenms/storage/app/public/
-@mode
-@owner
-@group
-librenms/storage/app/public/.gitignore
-@mode 775
-@owner _librenms
-@group www
 librenms/storage/debugbar/
-@mode
-@owner
-@group
-librenms/storage/debugbar/.gitignore
-@mode 775
-@owner _librenms
-@group www
 librenms/storage/framework/
 librenms/storage/framework/cache/
-@mode
-@owner
-@group
-librenms/storage/framework/cache/.gitignore
 librenms/storage/framework/cache/data/
-librenms/storage/framework/cache/data/.gitignore
-@mode 775
-@owner _librenms
-@group www
 librenms/storage/framework/sessions/
-@mode
-@owner
-@group
-librenms/storage/framework/sessions/.gitignore
-@mode 775
-@owner _librenms
-@group www
 librenms/storage/framework/testing/
-@mode
-@owner
-@group
-librenms/storage/framework/testing/.gitignore
-@mode 775
-@owner _librenms
-@group www
 librenms/storage/framework/views/
-@mode
-@owner
-@group
-librenms/storage/framework/views/.gitignore
-@mode 775
-@owner _librenms
-@group www
 librenms/storage/logs/
 @mode
 @owner
 @group
-librenms/storage/logs/.gitignore
 librenms/syslog.php
 librenms/validate.php
 librenms/vendor/
@@ -9847,7 +9843,6 @@ librenms/vendor/amenadiel/jpgraph/
 librenms/vendor/amenadiel/jpgraph/.codeclimate.yml
 librenms/vendor/amenadiel/jpgraph/.editorconfig
 librenms/vendor/amenadiel/jpgraph/.env.example
-librenms/vendor/amenadiel/jpgraph/.gitignore
 librenms/vendor/amenadiel/jpgraph/.php_cs
 librenms/vendor/amenadiel/jpgraph/.php_cs.cache
 librenms/vendor/amenadiel/jpgraph/.prettierrc
@@ -10716,13 +10711,11 @@ librenms/vendor/amenadiel/jpgraph/tests/
 librenms/vendor/amenadiel/jpgraph/tests/_data/
 librenms/vendor/amenadiel/jpgraph/tests/_data/.gitkeep
 librenms/vendor/amenadiel/jpgraph/tests/_output/
-librenms/vendor/amenadiel/jpgraph/tests/_output/.gitignore
 librenms/vendor/amenadiel/jpgraph/tests/_support/
 librenms/vendor/amenadiel/jpgraph/tests/_support/Helper/
 librenms/vendor/amenadiel/jpgraph/tests/_support/Helper/Unit.php
 librenms/vendor/amenadiel/jpgraph/tests/_support/UnitWizard.php
 librenms/vendor/amenadiel/jpgraph/tests/_support/_generated/
-librenms/vendor/amenadiel/jpgraph/tests/_support/_generated/.gitignore
 librenms/vendor/amenadiel/jpgraph/tests/unit/
 librenms/vendor/amenadiel/jpgraph/tests/unit.suite.yml
 librenms/vendor/amenadiel/jpgraph/tests/unit/AxisTest.php
@@ -10761,6 +10754,24 @@ librenms/vendor/bin/doctrine-dbal
 librenms/vendor/bin/php-parse
 librenms/vendor/bin/psysh
 librenms/vendor/bin/var-dump-server
+librenms/vendor/clue/
+librenms/vendor/clue/socket-raw/
+librenms/vendor/clue/socket-raw/.travis.yml
+librenms/vendor/clue/socket-raw/CHANGELOG.md
+librenms/vendor/clue/socket-raw/LICENSE
+librenms/vendor/clue/socket-raw/README.md
+librenms/vendor/clue/socket-raw/composer.json
+librenms/vendor/clue/socket-raw/examples/
+librenms/vendor/clue/socket-raw/examples/client-tcp.php
+librenms/vendor/clue/socket-raw/phpunit.xml.dist
+librenms/vendor/clue/socket-raw/src/
+librenms/vendor/clue/socket-raw/src/Exception.php
+librenms/vendor/clue/socket-raw/src/Factory.php
+librenms/vendor/clue/socket-raw/src/Socket.php
+librenms/vendor/clue/socket-raw/tests/
+librenms/vendor/clue/socket-raw/tests/ExceptionTest.php
+librenms/vendor/clue/socket-raw/tests/FactoryTest.php
+librenms/vendor/clue/socket-raw/tests/SocketTest.php
 librenms/vendor/composer/
 librenms/vendor/composer/ClassLoader.php
 librenms/vendor/composer/LICENSE
@@ -10801,7 +10812,6 @@ librenms/vendor/dapphp/radius/tests/ClientTest.php
 librenms/vendor/dapphp/radius/tests/bootstrap.php
 librenms/vendor/darkghosthunter/
 librenms/vendor/darkghosthunter/larapoke/
-librenms/vendor/darkghosthunter/larapoke/.gitignore
 librenms/vendor/darkghosthunter/larapoke/.travis.yml
 librenms/vendor/darkghosthunter/larapoke/LICENSE
 librenms/vendor/darkghosthunter/larapoke/README.md
@@ -10845,7 +10855,6 @@ librenms/vendor/darkghosthunter/larapoke/tests/Unit/Script/ScriptTest.php
 librenms/vendor/darkghosthunter/larapoke/tests/bootstrap.php
 librenms/vendor/dnoegel/
 librenms/vendor/dnoegel/php-xdg-base-dir/
-librenms/vendor/dnoegel/php-xdg-base-dir/.gitignore
 librenms/vendor/dnoegel/php-xdg-base-dir/LICENSE
 librenms/vendor/dnoegel/php-xdg-base-dir/README.md
 librenms/vendor/dnoegel/php-xdg-base-dir/composer.json
@@ -11223,7 +11232,6 @@ librenms/vendor/doctrine/lexer/
 librenms/vendor/doctrine/lexer/.doctrine-project.json
 librenms/vendor/doctrine/lexer/.github/
 librenms/vendor/doctrine/lexer/.github/FUNDING.yml
-librenms/vendor/doctrine/lexer/.gitignore
 librenms/vendor/doctrine/lexer/LICENSE
 librenms/vendor/doctrine/lexer/README.md
 librenms/vendor/doctrine/lexer/composer.json
@@ -12147,7 +12155,6 @@ librenms/vendor/ezyang/htmlpurifier/phpdoc.ini
 librenms/vendor/ezyang/htmlpurifier/plugins/
 librenms/vendor/ezyang/htmlpurifier/plugins/modx.txt
 librenms/vendor/ezyang/htmlpurifier/plugins/phorum/
-librenms/vendor/ezyang/htmlpurifier/plugins/phorum/.gitignore
 librenms/vendor/ezyang/htmlpurifier/plugins/phorum/Changelog
 librenms/vendor/ezyang/htmlpurifier/plugins/phorum/INSTALL
 librenms/vendor/ezyang/htmlpurifier/plugins/phorum/README
@@ -12172,7 +12179,6 @@ librenms/vendor/ezyang/htmlpurifier/tests/path2class.func.php
 librenms/vendor/ezyang/htmlpurifier/update-for-release
 librenms/vendor/fico7489/
 librenms/vendor/fico7489/laravel-pivot/
-librenms/vendor/fico7489/laravel-pivot/.gitignore
 librenms/vendor/fico7489/laravel-pivot/.php_cs
 librenms/vendor/fico7489/laravel-pivot/LICENSE
 librenms/vendor/fico7489/laravel-pivot/README.md
@@ -12317,7 +12323,6 @@ librenms/vendor/guzzlehttp/psr7/src/functions.php
 librenms/vendor/guzzlehttp/psr7/src/functions_include.php
 librenms/vendor/influxdb/
 librenms/vendor/influxdb/influxdb-php/
-librenms/vendor/influxdb/influxdb-php/.gitignore
 librenms/vendor/influxdb/influxdb-php/.travis.yml
 librenms/vendor/influxdb/influxdb-php/CONTRIBUTE.md
 librenms/vendor/influxdb/influxdb-php/LICENSE
@@ -12377,7 +12382,6 @@ librenms/vendor/influxdb/influxdb-php/tests/unit/json/result.example.json
 librenms/vendor/influxdb/influxdb-php/tests/unit/json/users.example.json
 librenms/vendor/jakub-onderka/
 librenms/vendor/jakub-onderka/php-console-color/
-librenms/vendor/jakub-onderka/php-console-color/.gitignore
 librenms/vendor/jakub-onderka/php-console-color/.travis.yml
 librenms/vendor/jakub-onderka/php-console-color/LICENSE
 librenms/vendor/jakub-onderka/php-console-color/README.md
@@ -12391,7 +12395,6 @@ librenms/vendor/jakub-onderka/php-console-color/src/InvalidStyleException.php
 librenms/vendor/jakub-onderka/php-console-color/tests/
 librenms/vendor/jakub-onderka/php-console-color/tests/ConsoleColorTest.php
 librenms/vendor/jakub-onderka/php-console-highlighter/
-librenms/vendor/jakub-onderka/php-console-highlighter/.gitignore
 librenms/vendor/jakub-onderka/php-console-highlighter/.travis.yml
 librenms/vendor/jakub-onderka/php-console-highlighter/LICENSE
 librenms/vendor/jakub-onderka/php-console-highlighter/README.md
@@ -13602,7 +13605,6 @@ librenms/vendor/laravel/laravel/
 librenms/vendor/laravel/laravel/.editorconfig
 librenms/vendor/laravel/laravel/.env.example
 librenms/vendor/laravel/laravel/.gitattributes
-librenms/vendor/laravel/laravel/.gitignore
 librenms/vendor/laravel/laravel/.styleci.yml
 librenms/vendor/laravel/laravel/app/
 librenms/vendor/laravel/laravel/app/Console/
@@ -13638,7 +13640,6 @@ librenms/vendor/laravel/laravel/artisan
 librenms/vendor/laravel/laravel/bootstrap/
 librenms/vendor/laravel/laravel/bootstrap/app.php
 librenms/vendor/laravel/laravel/bootstrap/cache/
-librenms/vendor/laravel/laravel/bootstrap/cache/.gitignore
 librenms/vendor/laravel/laravel/composer.json
 librenms/vendor/laravel/laravel/config/
 librenms/vendor/laravel/laravel/config/app.php
@@ -13655,7 +13656,6 @@ librenms/vendor/laravel/laravel/config/services.php
 librenms/vendor/laravel/laravel/config/session.php
 librenms/vendor/laravel/laravel/config/view.php
 librenms/vendor/laravel/laravel/database/
-librenms/vendor/laravel/laravel/database/.gitignore
 librenms/vendor/laravel/laravel/database/factories/
 librenms/vendor/laravel/laravel/database/factories/UserFactory.php
 librenms/vendor/laravel/laravel/database/migrations/
@@ -13701,23 +13701,14 @@ librenms/vendor/laravel/laravel/routes/web.php
 librenms/vendor/laravel/laravel/server.php
 librenms/vendor/laravel/laravel/storage/
 librenms/vendor/laravel/laravel/storage/app/
-librenms/vendor/laravel/laravel/storage/app/.gitignore
 librenms/vendor/laravel/laravel/storage/app/public/
-librenms/vendor/laravel/laravel/storage/app/public/.gitignore
 librenms/vendor/laravel/laravel/storage/framework/
-librenms/vendor/laravel/laravel/storage/framework/.gitignore
 librenms/vendor/laravel/laravel/storage/framework/cache/
-librenms/vendor/laravel/laravel/storage/framework/cache/.gitignore
 librenms/vendor/laravel/laravel/storage/framework/cache/data/
-librenms/vendor/laravel/laravel/storage/framework/cache/data/.gitignore
 librenms/vendor/laravel/laravel/storage/framework/sessions/
-librenms/vendor/laravel/laravel/storage/framework/sessions/.gitignore
 librenms/vendor/laravel/laravel/storage/framework/testing/
-librenms/vendor/laravel/laravel/storage/framework/testing/.gitignore
 librenms/vendor/laravel/laravel/storage/framework/views/
-librenms/vendor/laravel/laravel/storage/framework/views/.gitignore
 librenms/vendor/laravel/laravel/storage/logs/
-librenms/vendor/laravel/laravel/storage/logs/.gitignore
 librenms/vendor/laravel/laravel/tests/
 librenms/vendor/laravel/laravel/tests/CreatesApplication.php
 librenms/vendor/laravel/laravel/tests/Feature/
@@ -13797,7 +13788,6 @@ librenms/vendor/league/flysystem/src/Util/MimeType.php
 librenms/vendor/league/flysystem/src/Util/StreamHasher.php
 librenms/vendor/martinlindhe/
 librenms/vendor/martinlindhe/laravel-vue-i18n-generator/
-librenms/vendor/martinlindhe/laravel-vue-i18n-generator/.gitignore
 librenms/vendor/martinlindhe/laravel-vue-i18n-generator/.travis.yml
 librenms/vendor/martinlindhe/laravel-vue-i18n-generator/LICENSE
 librenms/vendor/martinlindhe/laravel-vue-i18n-generator/Makefile
@@ -15088,7 +15078,6 @@ librenms/vendor/opis/closure/src/SelfReference.php
 librenms/vendor/opis/closure/src/SerializableClosure.php
 librenms/vendor/oriceon/
 librenms/vendor/oriceon/toastr-5-laravel/
-librenms/vendor/oriceon/toastr-5-laravel/.gitignore
 librenms/vendor/oriceon/toastr-5-laravel/.travis.yml
 librenms/vendor/oriceon/toastr-5-laravel/LICENSE
 librenms/vendor/oriceon/toastr-5-laravel/README.md
@@ -15153,7 +15142,6 @@ librenms/vendor/pear/console_table/tests/no_rows.phpt
 librenms/vendor/pear/console_table/tests/rules.phpt
 librenms/vendor/php-amqplib/
 librenms/vendor/php-amqplib/php-amqplib/
-librenms/vendor/php-amqplib/php-amqplib/.gitignore
 librenms/vendor/php-amqplib/php-amqplib/.travis.yml
 librenms/vendor/php-amqplib/php-amqplib/CREDITS
 librenms/vendor/php-amqplib/php-amqplib/LICENSE
@@ -15327,7 +15315,6 @@ librenms/vendor/phpmailer/phpmailer/src/POP3.php
 librenms/vendor/phpmailer/phpmailer/src/SMTP.php
 librenms/vendor/phpoption/
 librenms/vendor/phpoption/phpoption/
-librenms/vendor/phpoption/phpoption/.gitignore
 librenms/vendor/phpoption/phpoption/.travis.yml
 librenms/vendor/phpoption/phpoption/LICENSE
 librenms/vendor/phpoption/phpoption/README.md
@@ -15351,7 +15338,6 @@ librenms/vendor/phpoption/phpoption/tests/PhpOption/Tests/SomeTest.php
 librenms/vendor/phpoption/phpoption/tests/bootstrap.php
 librenms/vendor/psr/
 librenms/vendor/psr/container/
-librenms/vendor/psr/container/.gitignore
 librenms/vendor/psr/container/LICENSE
 librenms/vendor/psr/container/README.md
 librenms/vendor/psr/container/composer.json
@@ -15373,7 +15359,6 @@ librenms/vendor/psr/http-message/src/StreamInterface.php
 librenms/vendor/psr/http-message/src/UploadedFileInterface.php
 librenms/vendor/psr/http-message/src/UriInterface.php
 librenms/vendor/psr/log/
-librenms/vendor/psr/log/.gitignore
 librenms/vendor/psr/log/LICENSE
 librenms/vendor/psr/log/Psr/
 librenms/vendor/psr/log/Psr/Log/
@@ -15404,7 +15389,6 @@ librenms/vendor/psy/psysh/
 librenms/vendor/psy/psysh/.editorconfig
 librenms/vendor/psy/psysh/.github/
 librenms/vendor/psy/psysh/.github/CONTRIBUTING.md
-librenms/vendor/psy/psysh/.gitignore
 librenms/vendor/psy/psysh/.phan/
 librenms/vendor/psy/psysh/.phan/config.php
 librenms/vendor/psy/psysh/.php_cs
@@ -15771,7 +15755,6 @@ librenms/vendor/ramsey/uuid/src/UuidInterface.php
 librenms/vendor/rmccue/
 librenms/vendor/rmccue/requests/
 librenms/vendor/rmccue/requests/.coveralls.yml
-librenms/vendor/rmccue/requests/.gitignore
 librenms/vendor/rmccue/requests/.travis.yml
 librenms/vendor/rmccue/requests/CHANGELOG.md
 librenms/vendor/rmccue/requests/LICENSE
@@ -15920,7 +15903,6 @@ librenms/vendor/swiftmailer/swiftmailer/.gitattributes
 librenms/vendor/swiftmailer/swiftmailer/.github/
 librenms/vendor/swiftmailer/swiftmailer/.github/ISSUE_TEMPLATE.md
 librenms/vendor/swiftmailer/swiftmailer/.github/PULL_REQUEST_TEMPLATE.md
-librenms/vendor/swiftmailer/swiftmailer/.gitignore
 librenms/vendor/swiftmailer/swiftmailer/.php_cs.dist
 librenms/vendor/swiftmailer/swiftmailer/.travis.yml
 librenms/vendor/swiftmailer/swiftmailer/CHANGES
@@ -16520,7 +16502,6 @@ librenms/vendor/symfony/debug/LICENSE
 librenms/vendor/symfony/debug/README.md
 librenms/vendor/symfony/debug/composer.json
 librenms/vendor/symfony/dotenv/
-librenms/vendor/symfony/dotenv/.gitignore
 librenms/vendor/symfony/dotenv/CHANGELOG.md
 librenms/vendor/symfony/dotenv/Dotenv.php
 librenms/vendor/symfony/dotenv/Exception/
@@ -16593,7 +16574,6 @@ librenms/vendor/symfony/error-handler/ThrowableUtils.php
 librenms/vendor/symfony/error-handler/composer.json
 librenms/vendor/symfony/event-dispatcher/
 librenms/vendor/symfony/event-dispatcher-contracts/
-librenms/vendor/symfony/event-dispatcher-contracts/.gitignore
 librenms/vendor/symfony/event-dispatcher-contracts/Event.php
 librenms/vendor/symfony/event-dispatcher-contracts/EventDispatcherInterface.php
 librenms/vendor/symfony/event-dispatcher-contracts/LICENSE
@@ -17212,7 +17192,6 @@ librenms/vendor/symfony/routing/Router.php
 librenms/vendor/symfony/routing/RouterInterface.php
 librenms/vendor/symfony/routing/composer.json
 librenms/vendor/symfony/service-contracts/
-librenms/vendor/symfony/service-contracts/.gitignore
 librenms/vendor/symfony/service-contracts/LICENSE
 librenms/vendor/symfony/service-contracts/README.md
 librenms/vendor/symfony/service-contracts/ResetInterface.php
@@ -17225,7 +17204,6 @@ librenms/vendor/symfony/service-contracts/Test/ServiceLocatorTest.php
 librenms/vendor/symfony/service-contracts/composer.json
 librenms/vendor/symfony/translation/
 librenms/vendor/symfony/translation-contracts/
-librenms/vendor/symfony/translation-contracts/.gitignore
 librenms/vendor/symfony/translation-contracts/LICENSE
 librenms/vendor/symfony/translation-contracts/LocaleAwareInterface.php
 librenms/vendor/symfony/translation-contracts/README.md
@@ -17832,7 +17810,6 @@ librenms/vendor/tecnickcom/tcpdf/tools/convert_fonts_examples.txt
 librenms/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 librenms/vendor/tightenco/
 librenms/vendor/tightenco/ziggy/
-librenms/vendor/tightenco/ziggy/.gitignore
 librenms/vendor/tightenco/ziggy/LICENSE.md
 librenms/vendor/tightenco/ziggy/README.md
 librenms/vendor/tightenco/ziggy/composer.json
@@ -17898,7 +17875,6 @@ librenms/vendor/vlucas/phpdotenv/src/Regex/Success.php
 librenms/vendor/vlucas/phpdotenv/src/Validator.php
 librenms/vendor/wpb/
 librenms/vendor/wpb/string-blade-compiler/
-librenms/vendor/wpb/string-blade-compiler/.gitignore
 librenms/vendor/wpb/string-blade-compiler/LICENSE
 librenms/vendor/wpb/string-blade-compiler/README.md
 librenms/vendor/wpb/string-blade-compiler/composer.json

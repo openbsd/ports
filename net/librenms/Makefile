@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.100 2020/03/20 16:44:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.101 2020/04/01 20:05:49 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.61
+GH_TAGNAME =	1.62
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 
@@ -74,7 +74,7 @@ post-extract:
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cd ${WRKSRC}; pax -rw . ${INSTDIR}
-	find ${INSTDIR} -name '*.orig' -delete
+	find ${INSTDIR} \( -name '*.orig' -or -name '.gitignore' \) -delete
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	cd ${INSTDIR}; \
 	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php includes/html/output/capture.inc.php scripts/composer_wrapper.php; \
