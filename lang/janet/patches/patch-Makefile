@@ -1,7 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.12 2020/02/04 23:15:01 jturner Exp $
+$OpenBSD: patch-Makefile,v 1.13 2020/04/01 14:10:53 jturner Exp $
 
 Use a date stamp for JANET_BUILD to avoid using git.
-Replace hardcoded -O2.
 Fix installation.
 
 Index: Makefile
@@ -11,7 +10,7 @@ Index: Makefile
  INCLUDEDIR?=$(PREFIX)/include
  BINDIR?=$(PREFIX)/bin
  LIBDIR?=$(PREFIX)/lib
--JANET_BUILD?="\"$(shell git log --pretty=format:'%h' -n 1 || 'local')\""
+-JANET_BUILD?="\"$(shell git log --pretty=format:'%h' -n 1 || echo local)\""
 +JANET_BUILD?="\"$(shell date +%Y%m%d)\""
  CLIBS=-lm -lpthread
  JANET_TARGET=build/janet
@@ -23,41 +22,22 @@ Index: Makefile
  PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
  DEBUGGER=gdb
  
-@@ -246,23 +246,20 @@ build/janet.pc: $(JANET_TARGET)
- 	echo 'Libs.private: $(CLIBS)' >> $@
- 
- install: $(JANET_TARGET) build/janet.pc
--	mkdir -p '$(BINDIR)'
--	cp $(JANET_TARGET) '$(BINDIR)/janet'
--	mkdir -p '$(INCLUDEDIR)/janet'
--	cp -rf $(JANET_HEADERS) '$(INCLUDEDIR)/janet'
--	mkdir -p '$(JANET_PATH)'
--	mkdir -p '$(LIBDIR)'
--	cp $(JANET_LIBRARY) '$(LIBDIR)/libjanet.so.$(shell $(JANET_TARGET) -e '(print janet/version)')'
--	cp $(JANET_STATIC_LIBRARY) '$(LIBDIR)/libjanet.a'
--	ln -sf $(SONAME) '$(LIBDIR)/libjanet.so'
--	ln -sf libjanet.so.$(shell $(JANET_TARGET) -e '(print janet/version)') $(LIBDIR)/$(SONAME)
--	cp -rf auxbin/* '$(BINDIR)'
--	mkdir -p '$(MANPATH)'
--	cp janet.1 '$(MANPATH)'
--	cp jpm.1 '$(MANPATH)'
--	mkdir -p '$(PKG_CONFIG_PATH)'
--	cp build/janet.pc '$(PKG_CONFIG_PATH)/janet.pc'
--	-$(LDCONFIG)
-+	mkdir -p '$(DESTDIR)$(BINDIR)'
-+	cp $(JANET_TARGET) '$(DESTDIR)$(BINDIR)/janet'
-+	mkdir -p '$(DESTDIR)$(INCLUDEDIR)/janet'
-+	cp -rf $(JANET_HEADERS) '$(DESTDIR)$(INCLUDEDIR)/janet'
-+	mkdir -p '$(DESTDIR)$(JANET_PATH)'
-+	mkdir -p '$(DESTDIR)$(LIBDIR)'
-+	cp $(JANET_LIBRARY) '$(DESTDIR)$(LIBDIR)'
-+	cp $(JANET_STATIC_LIBRARY) '$(DESTDIR)$(LIBDIR)/libjanet.a'
-+	cp -rf auxbin/* '$(DESTDIR)$(BINDIR)'
-+	mkdir -p '$(DESTDIR)$(MANPATH)'
-+	cp janet.1 '$(DESTDIR)$(MANPATH)'
-+	cp jpm.1 '$(DESTDIR)$(MANPATH)'
-+	mkdir -p '$(DESTDIR)$(PKG_CONFIG_PATH)'
-+	cp build/janet.pc '$(DESTDIR)$(PKG_CONFIG_PATH)/janet.pc'
+@@ -252,17 +252,14 @@ install: $(JANET_TARGET) build/janet.pc
+ 	cp -rf $(JANET_HEADERS) '$(DESTDIR)$(INCLUDEDIR)/janet'
+ 	mkdir -p '$(DESTDIR)$(JANET_PATH)'
+ 	mkdir -p '$(DESTDIR)$(LIBDIR)'
+-	cp $(JANET_LIBRARY) '$(DESTDIR)$(LIBDIR)/libjanet.so.$(shell $(JANET_TARGET) -e '(print janet/version)')'
++	cp $(JANET_LIBRARY) '$(DESTDIR)/$(LIBDIR)'
+ 	cp $(JANET_STATIC_LIBRARY) '$(DESTDIR)$(LIBDIR)/libjanet.a'
+-	ln -sf $(SONAME) '$(DESTDIR)$(LIBDIR)/libjanet.so'
+-	ln -sf libjanet.so.$(shell $(JANET_TARGET) -e '(print janet/version)') $(DESTDIR)$(LIBDIR)/$(SONAME)
+ 	cp -rf auxbin/* '$(DESTDIR)$(BINDIR)'
+ 	mkdir -p '$(DESTDIR)$(MANPATH)'
+ 	cp janet.1 '$(DESTDIR)$(MANPATH)'
+ 	cp jpm.1 '$(DESTDIR)$(MANPATH)'
+ 	mkdir -p '$(DESTDIR)$(PKG_CONFIG_PATH)'
+ 	cp build/janet.pc '$(DESTDIR)$(PKG_CONFIG_PATH)/janet.pc'
+-	[ -z '$(DESTDIR)' ] && $(LDCONFIG) || true
  
  uninstall:
- 	-rm '$(BINDIR)/janet'
+ 	-rm '$(DESTDIR)$(BINDIR)/janet'
