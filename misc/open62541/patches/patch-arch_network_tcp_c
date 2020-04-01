@@ -1,0 +1,15 @@
+$OpenBSD: patch-arch_network_tcp_c,v 1.1 2020/04/01 15:32:44 bluhm Exp $
+
+https://github.com/open62541/open62541/commit/f9ceec7be7940495cf2ee091bed1bb5acec74551
+
+Index: arch/network_tcp.c
+--- arch/network_tcp.c.orig
++++ arch/network_tcp.c
+@@ -775,6 +775,7 @@ UA_ClientConnectionTCP_init(UA_ConnectionConfig config
+ 
+     TCPClientConnection *tcpClientConnection = (TCPClientConnection*) UA_malloc(
+                     sizeof(TCPClientConnection));
++    memset(tcpClientConnection, 0, sizeof(TCPClientConnection));
+     connection.handle = (void*) tcpClientConnection;
+     tcpClientConnection->timeout = timeout;
+     UA_String hostnameString = UA_STRING_NULL;

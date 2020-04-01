@@ -1,7 +1,6 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.1.1.1 2020/02/11 10:35:25 bluhm Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.2 2020/04/01 15:32:44 bluhm Exp $
 
-There is no libsubunit port for OpenBSD.
-Includes for libcheck were not found.
+https://github.com/open62541/open62541/commit/71738ec1ed9f1ba32bdb52650a103d72cb8f6d1d
 
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
@@ -15,11 +14,28 @@ Index: tests/CMakeLists.txt
    list(APPEND LIBS subunit)
  endif()
  
-@@ -12,6 +12,7 @@ if(NOT MSVC AND UA_ENABLE_UNIT_TESTS_MEMCHECK)
+@@ -11,11 +11,6 @@ if(NOT MSVC AND UA_ENABLE_UNIT_TESTS_MEMCHECK)
+     find_package(Valgrind REQUIRED)
  endif()
  
- if(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
-+    include_directories(/usr/local/include)
-     link_directories(/usr/local/lib)
-     add_definitions(-Wno-gnu-zero-variadic-macro-arguments)
+-if(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
+-    link_directories(/usr/local/lib)
+-    add_definitions(-Wno-gnu-zero-variadic-macro-arguments)
+-endif()
+-
+ if(APPLE)
+     # CLang on Apple complains about many cases like this:
+     # /Users/travis/build/open62541/open62541/tests/check_chunking.c:148:22: warning: implicit conversion changes signedness: 'size_t' (aka 'unsigned long') to 'intmax_t' (aka 'long') [-Wsign-conversion]
+@@ -36,6 +31,12 @@ include_directories("${PROJECT_BINARY_DIR}")
+ if(UA_ENABLE_ENCRYPTION)
+     # mbedtls includes
+     include_directories(${MBEDTLS_INCLUDE_DIRS})
++endif()
++
++if(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
++    include_directories(AFTER /usr/local/include)
++    link_directories(AFTER /usr/local/lib)
++    add_definitions(-Wno-gnu-zero-variadic-macro-arguments)
  endif()
+ 
+ add_definitions(-DUA_sleep_ms=UA_comboSleep)
