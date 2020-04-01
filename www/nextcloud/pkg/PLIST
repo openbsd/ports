@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/03/25 22:52:41 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/04/01 01:15:25 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -8451,10 +8451,16 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/bn-IN/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/bn-IN/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/br/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/br/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/brx/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/brx/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/bs/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/bs/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ca/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ca/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/cak/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/cak/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/crh/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/crh/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/cs/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/cs/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/csb/
@@ -8467,6 +8473,8 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/de/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/de/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/el/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/el/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/en-CA/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/en-CA/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/en-GB/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/en-GB/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/en-US/
@@ -8503,6 +8511,8 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/gd/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/gd/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/gl/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/gl/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/gn/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/gn/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/gu-IN/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/gu-IN/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/he/
@@ -8511,10 +8521,16 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hi-IN/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hi-IN/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hr/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hr/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hsb/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hsb/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hto/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hto/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hu/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hu/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hy-AM/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/hy-AM/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ia/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ia/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/id/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/id/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/is/
@@ -8525,6 +8541,8 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ja/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ja/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ka/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ka/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/kab/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/kab/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/kk/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/kk/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/km/
@@ -8533,19 +8551,29 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/kn/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/kn/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ko/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ko/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/kok/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/kok/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ks/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ks/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ku/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ku/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lg/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lg/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lij/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lij/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lo/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lo/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/locale.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lt/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lt/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ltg/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ltg/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lv/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/lv/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/mai/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/mai/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/meh/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/meh/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/mk/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/mk/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ml/
@@ -8560,6 +8588,8 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/my/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/my/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/nb-NO/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/nb-NO/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ne-NP/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ne-NP/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/nl/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/nl/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/nn-NO/
@@ -8588,6 +8618,8 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/rw/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/rw/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/sah/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/sah/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/sat/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/sat/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/si/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/si/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/sk/
@@ -8618,16 +8650,22 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/tn/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/tn/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/tr/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/tr/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/tsz/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/tsz/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/uk/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/uk/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ur/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/ur/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/uz/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/uz/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/vi/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/vi/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/wo/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/wo/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/xh/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/xh/viewer.properties
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/zam/
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/zam/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/zh-CN/
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/zh-CN/viewer.properties
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/locale/zh-TW/
