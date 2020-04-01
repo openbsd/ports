@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.496 2020/03/26 14:52:38 espie Exp $
+# $OpenBSD: Makefile,v 1.497 2020/04/01 12:32:05 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			80.0.3987.149
+V=			80.0.3987.162
 
 DISTNAME=		chromium-${V}
 
@@ -66,7 +66,7 @@ WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
 WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
-WANTLIB += harfbuzz 
+WANTLIB += harfbuzz harfbuzz-subset
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
