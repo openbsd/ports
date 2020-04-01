@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/23 08:52:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2020/04/01 08:44:24 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -12,7 +12,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		3.98.1
+GNOME_VERSION=		3.98.2
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
@@ -22,7 +22,7 @@ PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     3.0 # 0.9801.0
+SHARED_LIBS += gtk-4                     3.1 # 0.9802.0
 
 HOMEPAGE=		http://www.gtk.org/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2020/03/23 08:52:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2020/04/01 08:44:24 ajacoutot Exp $
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-demo
 @bin bin/gtk4-demo-application
@@ -155,7 +155,6 @@ include/gtk-4.0/gtk/gtk.h
 include/gtk-4.0/gtk/gtkaboutdialog.h
 include/gtk-4.0/gtk/gtkaccelgroup.h
 include/gtk-4.0/gtk/gtkaccellabel.h
-include/gtk-4.0/gtk/gtkaccelmap.h
 include/gtk-4.0/gtk/gtkaccessible.h
 include/gtk-4.0/gtk/gtkactionable.h
 include/gtk-4.0/gtk/gtkactionbar.h
@@ -169,7 +168,6 @@ include/gtk-4.0/gtk/gtkapplicationwindow.h
 include/gtk-4.0/gtk/gtkaspectframe.h
 include/gtk-4.0/gtk/gtkassistant.h
 include/gtk-4.0/gtk/gtkbin.h
-include/gtk-4.0/gtk/gtkbindings.h
 include/gtk-4.0/gtk/gtkbinlayout.h
 include/gtk-4.0/gtk/gtkborder.h
 include/gtk-4.0/gtk/gtkbox.h
@@ -321,11 +319,16 @@ include/gtk-4.0/gtk/gtksearchentry.h
 include/gtk-4.0/gtk/gtkselectionmodel.h
 include/gtk-4.0/gtk/gtkseparator.h
 include/gtk-4.0/gtk/gtksettings.h
+include/gtk-4.0/gtk/gtkshortcut.h
+include/gtk-4.0/gtk/gtkshortcutaction.h
+include/gtk-4.0/gtk/gtkshortcutcontroller.h
 include/gtk-4.0/gtk/gtkshortcutlabel.h
+include/gtk-4.0/gtk/gtkshortcutmanager.h
 include/gtk-4.0/gtk/gtkshortcutsgroup.h
 include/gtk-4.0/gtk/gtkshortcutssection.h
 include/gtk-4.0/gtk/gtkshortcutsshortcut.h
 include/gtk-4.0/gtk/gtkshortcutswindow.h
+include/gtk-4.0/gtk/gtkshortcuttrigger.h
 include/gtk-4.0/gtk/gtkshow.h
 include/gtk-4.0/gtk/gtksingleselection.h
 include/gtk-4.0/gtk/gtksizegroup.h
