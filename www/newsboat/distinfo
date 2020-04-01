@@ -38,7 +38,7 @@ SHA256 (cargo/nom-4.2.3.tar.gz) = KtKpGo6GnuswucsxGa6HdzqPSuYX9BseucFUspBfe9Y=
 SHA256 (cargo/num-integer-0.1.39.tar.gz) = 6D1SjSZ38FGMVwuvK3q9zwzS0kiGC2hQe9yz6R1MDOo=
 SHA256 (cargo/num-traits-0.2.6.tar.gz) = CzpdfMl9bTDYubyPoZv0U0n/5GJB6IFvUPYvbWqqvuE=
 SHA256 (cargo/once_cell-0.1.8.tar.gz) = UywpomEWikXOKJSPlTfd16XdJyzFE7MBex6CqI+WLDc=
-SHA256 (cargo/openssl-sys-0.9.46.tar.gz) = BWNuBrT4di1LgdJKNR85ZvOL0lzLz9I1YGyR/bgsxg8=
+SHA256 (cargo/openssl-sys-0.9.53.tar.gz) = Rl0Wrn/A4xMxj33lzs9XsvvnUR/SE5eLRX4clv9Gc28=
 SHA256 (cargo/parking_lot-0.7.1.tar.gz) = q0G0rtCCcF0QVkFq5EaLbqmdUlmezzFpsACI1DET4zc=
 SHA256 (cargo/parking_lot_core-0.4.0.tar.gz) = lMjHkjk2so1Ubf0U1EcurzTJmxThyXOjKz5tTrBCmMk=
 SHA256 (cargo/percent-encoding-1.0.1.tar.gz) = MQEN0uGsM9W0altBNJUjmIKBPgNp+O2KXiZvFzYC+DE=
@@ -86,7 +86,6 @@ SHA256 (cargo/time-0.1.42.tar.gz) = 243PyghsEUPJJwrEKiu9in7kd7eKyORbGav7DL7eS28=
 SHA256 (cargo/ucd-util-0.1.3.tar.gz) = U1wgTuTYQ0R4WTSAuPhqtF7JquDoPFaMqBq/D9Doj4Y=
 SHA256 (cargo/unicode-bidi-0.3.4.tar.gz) = SfK9DGRoqCMOHbIpz/gCkhfPYjx2fqXWC/vUJynqVNU=
 SHA256 (cargo/unicode-normalization-0.1.8.tar.gz) = FBM5oIuYLZQr4soG/4sHZWPL4iPRvv1UUHFnkNROJCY=
-SHA256 (cargo/unicode-segmentation-1.2.1.tar.gz) = qmAk/BLd/RxtvBSoD6IyTUVohJhpt3n2vTfl5MAzRNE=
 SHA256 (cargo/unicode-width-0.1.5.tar.gz) = iCOGIxxF30cAsnXH/1W282mHgKZQAmOA5y2r52+kZSY=
 SHA256 (cargo/unicode-xid-0.1.0.tar.gz) = /HIwR5bQgY41fq1OAA0ZycF0qyPcEQk6yRkFTSCmp/w=
 SHA256 (cargo/url-1.7.2.tar.gz) = 3U58DVMSZjaVGaSqTzmddIvTcEOwC94eT/H2ChILNVo=
@@ -100,7 +99,7 @@ SHA256 (cargo/winapi-build-0.1.1.tar.gz) = LTFe7js0rKR5ey2msT7Ygmbm1hJWKgxGOQr4K
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/xdg-2.2.0.tar.gz) = 0IloGqEGqG+t4bASj7Xa8H1YZ6UJqwNtmZiN7IBCmlc=
-SHA256 (newsboat-2.18.tar.xz) = 8jkywCJuw/aerHZo2kROcxdQSEmOFenXc0UWSLLLpLA=
+SHA256 (newsboat-2.19.tar.xz) = ukhMglu5A9r20z1VEmEHtZ5BERtFXTaDYiCPGCVAPRs=
 SIZE (cargo/aho-corasick-0.6.9.tar.gz) = 25979
 SIZE (cargo/argon2rs-0.2.5.tar.gz) = 353096
 SIZE (cargo/arrayvec-0.4.10.tar.gz) = 26133
@@ -141,7 +140,7 @@ SIZE (cargo/nom-4.2.3.tar.gz) = 115343
 SIZE (cargo/num-integer-0.1.39.tar.gz) = 17881
 SIZE (cargo/num-traits-0.2.6.tar.gz) = 39923
 SIZE (cargo/once_cell-0.1.8.tar.gz) = 14908
-SIZE (cargo/openssl-sys-0.9.46.tar.gz) = 44219
+SIZE (cargo/openssl-sys-0.9.53.tar.gz) = 45434
 SIZE (cargo/parking_lot-0.7.1.tar.gz) = 32670
 SIZE (cargo/parking_lot_core-0.4.0.tar.gz) = 26817
 SIZE (cargo/percent-encoding-1.0.1.tar.gz) = 10057
@@ -189,7 +188,6 @@ SIZE (cargo/time-0.1.42.tar.gz) = 30005
 SIZE (cargo/ucd-util-0.1.3.tar.gz) = 25897
 SIZE (cargo/unicode-bidi-0.3.4.tar.gz) = 32228
 SIZE (cargo/unicode-normalization-0.1.8.tar.gz) = 71158
-SIZE (cargo/unicode-segmentation-1.2.1.tar.gz) = 68223
 SIZE (cargo/unicode-width-0.1.5.tar.gz) = 15761
 SIZE (cargo/unicode-xid-0.1.0.tar.gz) = 16000
 SIZE (cargo/url-1.7.2.tar.gz) = 68597
@@ -203,4 +201,4 @@ SIZE (cargo/winapi-build-0.1.1.tar.gz) = 669
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/xdg-2.2.0.tar.gz) = 13387
-SIZE (newsboat-2.18.tar.xz) = 577632
+SIZE (newsboat-2.19.tar.xz) = 591616

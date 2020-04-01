@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/11 18:57:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/04/01 18:18:11 fcambus Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.18
+V =		2.19
 DISTNAME =	newsboat-$V
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -63,7 +62,6 @@ MODCARGO_CRATES +=	idna	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys	0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static	0.2.11	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazy_static	1.2.0	# MIT/Apache-2.0
-#MODCARGO_CRATES +=	libc	0.2.48	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libz-sys	1.0.17	# MIT/Apache-2.0
 MODCARGO_CRATES +=	locale_config	0.2.2	# MIT
 MODCARGO_CRATES +=	lock_api	0.1.5	# Apache-2.0/MIT
@@ -75,7 +73,7 @@ MODCARGO_CRATES +=	nom	4.2.3	# MIT
 MODCARGO_CRATES +=	num-integer	0.1.39	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-traits	0.2.6	# MIT/Apache-2.0
 MODCARGO_CRATES +=	once_cell	0.1.8	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	openssl-sys	0.9.46	# MIT
+MODCARGO_CRATES +=	openssl-sys	0.9.53	# MIT
 MODCARGO_CRATES +=	parking_lot	0.7.1	# Apache-2.0/MIT
 MODCARGO_CRATES +=	parking_lot_core	0.4.0	# Apache-2.0/MIT
 MODCARGO_CRATES +=	percent-encoding	1.0.1	# MIT/Apache-2.0
@@ -123,7 +121,6 @@ MODCARGO_CRATES +=	time	0.1.42	# MIT/Apache-2.0
 MODCARGO_CRATES +=	ucd-util	0.1.3	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-bidi	0.3.4	# MIT / Apache-2.0
 MODCARGO_CRATES +=	unicode-normalization	0.1.8	# MIT/Apache-2.0
-MODCARGO_CRATES +=	unicode-segmentation	1.2.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-width	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-xid	0.1.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	url	1.7.2	# MIT/Apache-2.0
@@ -139,7 +136,7 @@ MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	xdg	2.2.0	# Apache-2.0/MIT
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		textproc/asciidoc
+		textproc/asciidoctor
 
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/gettext,-runtime \
