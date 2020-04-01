@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2019/12/14 22:42:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/01 17:34:48 bcallah Exp $
 
-V =		12.1.04
+V =		13.0.01
 COMMENT =	free Unicode font from the GNU project
 DISTNAME =	unifont-${V}
 DISTFILES =	${DISTNAME}.ttf
