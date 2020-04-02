@@ -1,0 +1,15 @@
+$OpenBSD: patch-osdep-openbsd_c,v 1.1 2020/04/02 15:08:21 kn Exp $
+
+Add missing libevent2 compat includes.
+
+Index: osdep-openbsd.c
+--- osdep-openbsd.c.orig
++++ osdep-openbsd.c
+@@ -24,6 +24,7 @@
+ 
+ #include <errno.h>
+ #include <event2/event.h>
++#include <event2/event_compat.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>

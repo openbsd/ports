@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/28 17:39:42 kn Exp $
+# $OpenBSD: Makefile,v 1.13 2020/04/02 15:08:20 kn Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
@@ -6,9 +6,11 @@ GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
 GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://tmate.io
+
+MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -22,6 +24,8 @@ LIB_DEPENDS =	devel/libevent2 \
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-debug
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=       1.16
