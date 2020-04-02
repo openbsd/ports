@@ -1,0 +1,14 @@
+$OpenBSD: patch-demos_python_scripts_examples_plot_board_py,v 1.1 2020/04/02 14:48:27 tracey Exp $
+# fix print for python3+
+Index: demos/python_scripts_examples/plot_board.py
+--- demos/python_scripts_examples/plot_board.py.orig
++++ demos/python_scripts_examples/plot_board.py
+@@ -72,7 +72,7 @@ plot_plan = [
+ for layer_info in plot_plan:
+     pctl.SetLayer(layer_info[1])
+     pctl.OpenPlotfile(layer_info[0], PLOT_FORMAT_GERBER, layer_info[2])
+-    print layer_info[0]
++    print(layer_info[0]);
+     pctl.PlotLayer()
+ 
+ # Our fabricators want two additional gerbers:

@@ -1,5 +1,5 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/11/08 14:43:53 sthen Exp $
-
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2020/04/02 14:48:27 tracey Exp $
+# assign proper lib name and add boost check
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt

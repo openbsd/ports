@@ -1,5 +1,5 @@
-$OpenBSD: patch-include_tool_coroutine_h,v 1.1 2019/11/08 14:43:53 sthen Exp $
-
+$OpenBSD: patch-include_tool_coroutine_h,v 1.2 2020/04/02 14:48:27 tracey Exp $
+# otto@ patch for building proper stack
 Index: include/tool/coroutine.h
 --- include/tool/coroutine.h.orig
 +++ include/tool/coroutine.h

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/10 23:09:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/04/02 14:48:27 tracey Exp $
 @pkgpath cad/kicad,-docs
 @pkgpath cad/kicad,-main
 @bin bin/bitmap2component
@@ -27,6 +27,10 @@ lib/kicad/plugins/3d/
 @so lib/kicad/plugins/3d/libs3d_plugin_oce.so
 @so lib/kicad/plugins/3d/libs3d_plugin_vrml.so
 @lib lib/libkicad_3dsg.so.${LIBkicad_3dsg_VERSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pcbnew.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/_pcbnew.so
+lib/python${MODPY_VERSION}/site-packages/pcbnew.py
 share/appdata/
 share/appdata/kicad.appdata.xml
 share/applications/bitmap2component.desktop
@@ -224,16 +228,17 @@ share/kicad/demos/pic_programmer/pic_programmer.sch
 share/kicad/demos/pic_programmer/pic_sockets.sch
 share/kicad/demos/pic_programmer/sym-lib-table
 share/kicad/demos/python_scripts_examples/
+${MODPY_COMMENT}share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}/
+share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}action_menu_add_automatic_border.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}action_menu_text_by_date.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}action_plugin_test_undoredo.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}gen_gerber_and_drill_files_board.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}plot_board.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/demos/python_scripts_examples/action_menu_add_automatic_border.py
-share/kicad/demos/python_scripts_examples/action_menu_add_automatic_border.pyc
 share/kicad/demos/python_scripts_examples/action_menu_text_by_date.py
-share/kicad/demos/python_scripts_examples/action_menu_text_by_date.pyc
 share/kicad/demos/python_scripts_examples/action_plugin_test_undoredo.py
-share/kicad/demos/python_scripts_examples/action_plugin_test_undoredo.pyc
 share/kicad/demos/python_scripts_examples/gen_gerber_and_drill_files_board.py
-share/kicad/demos/python_scripts_examples/gen_gerber_and_drill_files_board.pyc
 share/kicad/demos/python_scripts_examples/plot_board.py
-share/kicad/demos/python_scripts_examples/plot_board.pyc
 share/kicad/demos/simulation/
 share/kicad/demos/simulation/laser_driver/
 share/kicad/demos/simulation/laser_driver/ad8009.lib
@@ -316,27 +321,61 @@ share/kicad/demos/video/video.pro
 share/kicad/demos/video/video.sch
 share/kicad/plugins/
 share/kicad/plugins/README-bom.txt
+${MODPY_COMMENT}share/kicad/plugins/${MODPY_PYCACHE}/
+share/kicad/plugins/${MODPY_PYCACHE}bom_csv_grouped_by_value.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/plugins/${MODPY_PYCACHE}bom_csv_grouped_by_value_with_fp.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/plugins/${MODPY_PYCACHE}bom_csv_sorted_by_ref.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/plugins/${MODPY_PYCACHE}bom_html_grouped_by_value.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/plugins/${MODPY_PYCACHE}bom_html_with_advanced_grouping.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/plugins/${MODPY_PYCACHE}bom_sorted_by_ref.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/plugins/${MODPY_PYCACHE}kicad_netlist_reader.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/plugins/bom2csv.xsl
 share/kicad/plugins/bom2grouped_csv.xsl
 share/kicad/plugins/bom_csv_grouped_by_value.py
-share/kicad/plugins/bom_csv_grouped_by_value.pyc
 share/kicad/plugins/bom_csv_grouped_by_value_with_fp.py
-share/kicad/plugins/bom_csv_grouped_by_value_with_fp.pyc
 share/kicad/plugins/bom_csv_sorted_by_ref.py
-share/kicad/plugins/bom_csv_sorted_by_ref.pyc
 share/kicad/plugins/bom_html_grouped_by_value.py
-share/kicad/plugins/bom_html_grouped_by_value.pyc
 share/kicad/plugins/bom_html_with_advanced_grouping.py
-share/kicad/plugins/bom_html_with_advanced_grouping.pyc
 share/kicad/plugins/bom_sorted_by_ref.py
-share/kicad/plugins/bom_sorted_by_ref.pyc
 share/kicad/plugins/bom_with_title_block_2_csv.xsl
 share/kicad/plugins/kicad_netlist_reader.py
-share/kicad/plugins/kicad_netlist_reader.pyc
 share/kicad/plugins/netlist_form_OrcadPcb2.xsl
 share/kicad/plugins/netlist_form_cadstar-RINF.xsl
 share/kicad/plugins/netlist_form_cadstar.xsl
 share/kicad/plugins/netlist_form_pads-pcb.asc.xsl
+share/kicad/scripting/
+share/kicad/scripting/plugins/
+share/kicad/scripting/plugins/FPC_wizard.py
+share/kicad/scripting/plugins/FootprintWizardBase.py
+share/kicad/scripting/plugins/PadArray.py
+share/kicad/scripting/plugins/__init__.py
+${MODPY_COMMENT}share/kicad/scripting/plugins/${MODPY_PYCACHE}/
+share/kicad/scripting/plugins/${MODPY_PYCACHE}FPC_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}FootprintWizardBase.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}PadArray.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}bga_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}circular_pad_array_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}kicad_qrcode.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}microMatch_connectors.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}qfn_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}qfp_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}qrcode_footprint_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}sdip_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}touch_slider_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}uss39_barcode.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}zip_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/bga_wizard.py
+share/kicad/scripting/plugins/circular_pad_array_wizard.py
+share/kicad/scripting/plugins/kicad_qrcode.py
+share/kicad/scripting/plugins/microMatch_connectors.py
+share/kicad/scripting/plugins/qfn_wizard.py
+share/kicad/scripting/plugins/qfp_wizard.py
+share/kicad/scripting/plugins/qrcode_footprint_wizard.py
+share/kicad/scripting/plugins/sdip_wizard.py
+share/kicad/scripting/plugins/touch_slider_wizard.py
+share/kicad/scripting/plugins/uss39_barcode.py
+share/kicad/scripting/plugins/zip_wizard.py
 share/kicad/template/kicad.pro
 share/mime/packages/kicad-gerbers.xml
 share/mime/packages/kicad-kicad.xml

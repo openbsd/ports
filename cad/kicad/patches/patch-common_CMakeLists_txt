@@ -1,5 +1,5 @@
-$OpenBSD: patch-common_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
-
+$OpenBSD: patch-common_CMakeLists_txt,v 1.2 2020/04/02 14:48:27 tracey Exp $
+# get rid of -lrt linker
 Index: common/CMakeLists.txt
 --- common/CMakeLists.txt.orig
 +++ common/CMakeLists.txt

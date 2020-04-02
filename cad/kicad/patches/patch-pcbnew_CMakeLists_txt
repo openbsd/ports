@@ -1,5 +1,5 @@
-$OpenBSD: patch-pcbnew_CMakeLists_txt,v 1.2 2019/11/08 14:43:53 sthen Exp $
-
+$OpenBSD: patch-pcbnew_CMakeLists_txt,v 1.3 2020/04/02 14:48:27 tracey Exp $
+# multiple cmake changes to build, prevent multiple rules for _pcbnew.so
 Index: pcbnew/CMakeLists.txt
 --- pcbnew/CMakeLists.txt.orig
 +++ pcbnew/CMakeLists.txt
@@ -12,3 +12,45 @@ Index: pcbnew/CMakeLists.txt
  endif()
  
  
+@@ -808,11 +808,7 @@ if( KICAD_SCRIPTING_MODULES )
+         add_dependencies( ScriptingModulesPcbnewSoCopy ScriptingWxpythonCopy )
+         set( PYMOD_EXT "so" )
+     else()  # only linux remains among supported platforms
+-        add_library( pcbnew_python MODULE $<TARGET_OBJECTS:pcbnew_kiface_objects> )
+-        target_link_libraries( pcbnew_python ${PCBNEW_KIFACE_LIBRARIES} )
+-        set_target_properties( pcbnew_python PROPERTIES OUTPUT_NAME pcbnew PREFIX "_" SUFFIX ".so" )
+-        install( TARGETS pcbnew_python DESTINATION ${PYTHON_DEST} COMPONENT binary )
+-
++        install( FILES ${CMAKE_CURRENT_BINARY_DIR}/libpcbnew.a DESTINATION ${PYTHON_DEST} COMPONENT binary RENAME "_pcbnew.so" )
+         set( PYMOD_EXT "so" )
+     endif()
+ 
+@@ -827,18 +823,16 @@ if( KICAD_SCRIPTING_MODULES )
+             DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_pcbnew.${PYMOD_EXT}
+             )
+     else()
+-
+-
+-    # For phase 1, copy _pcbnew.kiface to the python module.
+-    add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_pcbnew.${PYMOD_EXT}
+-        DEPENDS pcbnew_kiface
+-        COMMAND ${CMAKE_COMMAND} -E copy _pcbnew.kiface _pcbnew.${PYMOD_EXT}
+-        COMMENT "Creating python's pcbnew native module _pcbnew.${PYMOD_EXT} for command line use."
+-        )
+-    add_custom_target(
+-        pcbnew_python_module ALL
+-        DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_pcbnew.${PYMOD_EXT}
+-        )
++        # For phase 1, copy _pcbnew.kiface to the python module.
++        add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_pcbnew.${PYMOD_EXT}
++            DEPENDS pcbnew_kiface
++            COMMAND ${CMAKE_COMMAND} -E copy libpcbnew.a _pcbnew.${PYMOD_EXT}
++            COMMENT "Creating python's pcbnew native module _pcbnew.${PYMOD_EXT} for command line use."
++            )
++        add_custom_target(
++            pcbnew_python_module ALL
++            DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_pcbnew.${PYMOD_EXT}
++            )
+     endif()
+ 
+ endif()
