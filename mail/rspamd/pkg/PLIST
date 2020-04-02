@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/03/02 20:53:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/04/02 16:33:41 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
@@ -389,6 +389,7 @@ share/rspamd/rules/rspamd.lua
 share/rspamd/rules/subject_checks.lua
 share/rspamd/www/
 share/rspamd/www/README.md
+share/rspamd/www/apple-touch-icon.png
 share/rspamd/www/browserconfig.xml
 share/rspamd/www/css/
 share/rspamd/www/css/bootstrap.min.css
