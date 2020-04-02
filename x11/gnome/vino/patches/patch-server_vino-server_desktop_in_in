@@ -1,0 +1,20 @@
+$OpenBSD: patch-server_vino-server_desktop_in_in,v 1.1 2020/04/02 14:34:50 robert Exp $
+
+re-add AutostartCondition support to be able to handle vino-server by the desktop 
+session or vino-preferences 
+
+Index: server/vino-server.desktop.in.in
+--- server/vino-server.desktop.in.in.orig
++++ server/vino-server.desktop.in.in
+@@ -4,9 +4,10 @@ _Comment=GNOME Desktop Sharing Server
+ _Keywords=vnc;share;remote;
+ Exec=@LIBEXECDIR@/vino-server
+ Icon=preferences-desktop-remote-desktop
+-NoDisplay=true
++OnlyShowIn=MATE;GNOME;Unity;
+ Terminal=false
+ Type=Application
++AutostartCondition=GSettings org.gnome.Vino enabled
+ X-GNOME-Autostart-Phase=Applications
+ X-GNOME-AutoRestart=true
+ X-GNOME-UsesNotifications=true

@@ -1,0 +1,36 @@
+$OpenBSD: patch-server_vino-prefs_c,v 1.1 2020/04/02 14:34:50 robert Exp $
+
+re-add AutostartCondition support to be able to handle vino-server by the desktop 
+session or vino-preferences 
+
+Index: server/vino-prefs.c
+--- server/vino-prefs.c.orig
++++ server/vino-prefs.c
+@@ -114,6 +114,16 @@ vino_prefs_sighandler (int sig)
+   exit (0);
+ }
+ 
++static void
++notify_enabled (void)
++{
++  if (!g_settings_get_boolean (settings, "enabled"))
++    {
++      g_message ("The desktop sharing service is disabled, exiting.");
++      exit (0);
++    }
++}
++
+ void
+ vino_prefs_init (gboolean view_only)
+ {
+@@ -123,6 +133,10 @@ vino_prefs_init (gboolean view_only)
+   signal (SIGQUIT, vino_prefs_sighandler);
+   signal (SIGTERM, vino_prefs_sighandler); /* kill -15 */
+   signal (SIGSEGV, vino_prefs_sighandler); /* Segmentation fault */
++
++  g_signal_connect (settings, "changed::enabled",
++                    G_CALLBACK (notify_enabled), NULL);
++  notify_enabled ();
+ 
+   force_view_only = view_only;
+ }

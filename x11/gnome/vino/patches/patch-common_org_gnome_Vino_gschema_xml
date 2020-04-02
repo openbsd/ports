@@ -1,0 +1,24 @@
+$OpenBSD: patch-common_org_gnome_Vino_gschema_xml,v 1.1 2020/04/02 14:34:50 robert Exp $
+
+re-add AutostartCondition support to be able to handle vino-server by the desktop
+session or vino-preferences
+
+Index: common/org.gnome.Vino.gschema.xml
+--- common/org.gnome.Vino.gschema.xml.orig
++++ common/org.gnome.Vino.gschema.xml
+@@ -1,5 +1,15 @@
+ <schemalist>
+   <schema id='org.gnome.Vino' path='/org/gnome/desktop/remote-access/'>
++    <key name='enabled' type='b'>
++      <summary>Enable remote access to the desktop</summary>
++      <description>
++        If true, allows remote access to the desktop via the RFB
++        protocol. Users on remote machines may then connect to the
++        desktop using a VNC viewer.
++      </description>
++      <default>false</default>
++    </key>
++
+     <key name='prompt-enabled' type='b'>
+       <summary>Prompt the user before completing a connection</summary>
+       <description>

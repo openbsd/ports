@@ -1,0 +1,18 @@
+$OpenBSD: patch-server_vino-status-icon_c,v 1.1 2020/04/02 14:34:50 robert Exp $
+
+do not try to use the  gnome-sharing-panel for now
+
+Index: server/vino-status-icon.c
+--- server/vino-status-icon.c.orig
++++ server/vino-status-icon.c
+@@ -200,9 +200,7 @@ vino_status_icon_preferences (VinoStatusIcon *icon)
+   GError *error = NULL;
+ 
+   screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
+-  info = g_desktop_app_info_new ("gnome-sharing-panel.desktop");
+-  if (info == NULL)
+-    info = g_desktop_app_info_new ("vino-preferences.desktop");
++  info = g_desktop_app_info_new ("vino-preferences.desktop");
+   if (info == NULL)
+     {
+       vino_util_show_error (NULL, _("Error displaying preferences"), NULL);
