@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1959 2020/03/29 18:47:09 paco Exp $
+# $OpenBSD: Makefile,v 1.1960 2020/04/02 13:40:57 abieber Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1926,6 +1926,7 @@
      SUBDIR += spidermonkey60
      SUBDIR += splint
      SUBDIR += spyder
+     SUBDIR += sqlc
      SUBDIR += src
      SUBDIR += srecord
      SUBDIR += startup-notification
