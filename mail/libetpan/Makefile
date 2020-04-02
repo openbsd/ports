@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/04/02 22:49:32 danj Exp $
+# $OpenBSD: Makefile,v 1.39 2020/04/02 22:50:17 danj Exp $
 
 COMMENT=	mail purpose library
 
@@ -10,7 +10,7 @@ REVISION=	0
 
 SHARED_LIBS +=  etpan                18.2     # 24.0
 
-HOMEPAGE=	http://www.etpan.org/libetpan.html
+HOMEPAGE=	https://www.etpan.org/libetpan.html
 
 # BSD
 PERMIT_PACKAGE=	Yes
