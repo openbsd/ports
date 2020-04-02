@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_memory_buffer_factory_cc,v 1.4 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_memory_buffer_factory_cc,v 1.5 2020/04/02 15:11:58 robert Exp $
 
 Index: gpu/ipc/service/gpu_memory_buffer_factory.cc
 --- gpu/ipc/service/gpu_memory_buffer_factory.cc.orig

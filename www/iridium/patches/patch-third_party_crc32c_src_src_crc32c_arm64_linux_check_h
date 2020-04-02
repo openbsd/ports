@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crc32c_src_src_crc32c_arm64_linux_check_h,v 1.1 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_crc32c_src_src_crc32c_arm64_linux_check_h,v 1.2 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/crc32c/src/src/crc32c_arm64_linux_check.h
 --- third_party/crc32c/src/src/crc32c_arm64_linux_check.h.orig

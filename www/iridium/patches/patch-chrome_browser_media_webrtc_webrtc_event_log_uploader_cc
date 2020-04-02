@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_event_log_uploader_cc,v 1.5 2019/11/10 13:37:51 robert Exp $
+$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_event_log_uploader_cc,v 1.6 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/media/webrtc/webrtc_event_log_uploader.cc
 --- chrome/browser/media/webrtc/webrtc_event_log_uploader.cc.orig
 +++ chrome/browser/media/webrtc/webrtc_event_log_uploader.cc
-@@ -36,7 +36,7 @@ constexpr size_t kExpectedMimeOverheadBytes = 1000;  /
+@@ -38,7 +38,7 @@ constexpr size_t kExpectedMimeOverheadBytes = 1000;  /
  const char kProduct[] = "Chrome";
  #elif defined(OS_MACOSX)
  const char kProduct[] = "Chrome_Mac";

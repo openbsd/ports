@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.4 2020/04/02 15:11:59 robert Exp $
+
+Index: ui/gfx/gpu_memory_buffer.cc
+--- ui/gfx/gpu_memory_buffer.cc.orig
++++ ui/gfx/gpu_memory_buffer.cc
+@@ -28,7 +28,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
+   handle.region = region.Duplicate();
+   handle.offset = offset;
+   handle.stride = stride;
+-#if defined(OS_LINUX) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+   handle.native_pixmap_handle = CloneHandleForIPC(native_pixmap_handle);
+ #elif defined(OS_MACOSX) && !defined(OS_IOS)
+   NOTIMPLEMENTED();

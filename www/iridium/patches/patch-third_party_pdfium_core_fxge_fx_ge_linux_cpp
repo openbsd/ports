@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.6 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.7 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/pdfium/core/fxge/fx_ge_linux.cpp
 --- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig

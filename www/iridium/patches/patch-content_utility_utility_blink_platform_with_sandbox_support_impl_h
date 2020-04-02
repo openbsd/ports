@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_h,v 1.3 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_h,v 1.4 2020/04/02 15:11:58 robert Exp $
 
 Index: content/utility/utility_blink_platform_with_sandbox_support_impl.h
 --- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig
@@ -12,7 +12,7 @@ Index: content/utility/utility_blink_platform_with_sandbox_support_impl.h
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -39,10 +39,10 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
+@@ -33,10 +33,10 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
    blink::WebSandboxSupport* GetSandboxSupport() override;
  
   private:

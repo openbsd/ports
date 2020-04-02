@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_viz_common_features_cc,v 1.1 2020/04/02 15:11:58 robert Exp $
+
+Index: components/viz/common/features.cc
+--- components/viz/common/features.cc.orig
++++ components/viz/common/features.cc
+@@ -26,7 +26,7 @@ const base::Feature kUseSkiaForGLReadback{"UseSkiaForG
+                                           base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ // Use the SkiaRenderer.
+-#if defined(OS_LINUX) && !(defined(OS_CHROMEOS) || defined(IS_CHROMECAST))
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !(defined(OS_CHROMEOS) || defined(IS_CHROMECAST))
+ const base::Feature kUseSkiaRenderer{"UseSkiaRenderer",
+                                      base::FEATURE_ENABLED_BY_DEFAULT};
+ #else

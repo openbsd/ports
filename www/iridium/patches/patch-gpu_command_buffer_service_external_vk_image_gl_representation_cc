@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_gl_representation_cc,v 1.1 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_gl_representation_cc,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_gl_representation.cc
 --- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig
 +++ gpu/command_buffer/service/external_vk_image_gl_representation.cc
-@@ -183,7 +183,7 @@ GLuint ExternalVkImageGlRepresentation::ImportVkSemaph
+@@ -179,7 +179,7 @@ GLuint ExternalVkImageGLRepresentationShared::ImportVk
  #if defined(OS_FUCHSIA)
    NOTIMPLEMENTED_LOG_ONCE();
    return 0;

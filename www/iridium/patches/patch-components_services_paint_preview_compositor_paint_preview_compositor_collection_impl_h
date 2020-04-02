@@ -1,0 +1,23 @@
+$OpenBSD: patch-components_services_paint_preview_compositor_paint_preview_compositor_collection_impl_h,v 1.1 2020/04/02 15:11:58 robert Exp $
+
+Index: components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h
+--- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h.orig
++++ components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h
+@@ -19,7 +19,7 @@
+ #include "mojo/public/cpp/bindings/pending_receiver.h"
+ #include "mojo/public/cpp/bindings/receiver.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "components/services/font/public/cpp/font_loader.h"
+ #include "third_party/skia/include/core/SkRefCnt.h"
+ #endif
+@@ -68,7 +68,7 @@ class PaintPreviewCompositorCollectionImpl
+                  std::unique_ptr<PaintPreviewCompositorImpl>>
+       compositors_;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   sk_sp<font_service::FontLoader> font_loader_;
+ #endif
+ 

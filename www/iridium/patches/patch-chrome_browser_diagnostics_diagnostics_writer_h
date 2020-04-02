@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_diagnostics_diagnostics_writer_h,v 1.4 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-chrome_browser_diagnostics_diagnostics_writer_h,v 1.5 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/diagnostics/diagnostics_writer.h
 --- chrome/browser/diagnostics/diagnostics_writer.h.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_ui_base_features_h,v 1.3 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_h,v 1.4 2020/04/02 15:11:59 robert Exp $
 
 Index: ui/base/ui_base_features.h
 --- ui/base/ui_base_features.h.orig
 +++ ui/base/ui_base_features.h
-@@ -61,10 +61,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+@@ -65,10 +65,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
  extern const base::Feature kEnableAutomaticUiAdjustmentsForTouch;
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  

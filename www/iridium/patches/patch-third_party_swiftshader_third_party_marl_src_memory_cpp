@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_swiftshader_third_party_marl_src_memory_cpp,v 1.1 2020/04/02 15:11:59 robert Exp $
+
+Index: third_party/swiftshader/third_party/marl/src/memory.cpp
+--- third_party/swiftshader/third_party/marl/src/memory.cpp.orig
++++ third_party/swiftshader/third_party/marl/src/memory.cpp
+@@ -19,7 +19,7 @@
+ 
+ #include <cstring>
+ 
+-#if defined(__linux__) || defined(__APPLE__)
++#if defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+ #include <sys/mman.h>
+ #include <unistd.h>
+ namespace {

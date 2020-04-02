@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_gamepad_hid_writer_linux_cc,v 1.1 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-device_gamepad_hid_writer_linux_cc,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: device/gamepad/hid_writer_linux.cc
 --- device/gamepad/hid_writer_linux.cc.orig

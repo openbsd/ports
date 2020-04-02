@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.swiftshader,v 1.1 2018/11/05 22:04:40 robert Exp $
-iridium/
+@comment $OpenBSD: PFRAG.swiftshader,v 1.2 2020/04/02 15:12:00 robert Exp $
 iridium/swiftshader/
-iridium/swiftshader/libEGL.so
-iridium/swiftshader/libGLESv2.so
+@so iridium/swiftshader/libEGL.so
+@so iridium/swiftshader/libGLESv2.so

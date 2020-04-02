@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.22 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.23 2020/04/02 15:11:58 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
@@ -12,7 +12,7 @@ Index: content/gpu/gpu_main.cc
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/sandbox_init.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
-@@ -111,7 +111,7 @@ namespace content {
+@@ -106,7 +106,7 @@ namespace content {
  
  namespace {
  
@@ -21,7 +21,7 @@ Index: content/gpu/gpu_main.cc
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -172,7 +172,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -174,7 +174,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -30,7 +30,7 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -383,17 +383,19 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -409,17 +409,19 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -51,7 +51,7 @@ Index: content/gpu/gpu_main.cc
  
    // SandboxLinux::InitializeSandbox() must always be called
    // with only one thread.
-@@ -410,11 +412,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -436,11 +438,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
            *base::CommandLine::ForCurrentProcess()),
        base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
  

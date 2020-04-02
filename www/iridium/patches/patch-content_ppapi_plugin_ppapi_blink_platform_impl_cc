@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.10 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.11 2020/04/02 15:11:58 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_blink_platform_impl.cc
 --- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig
@@ -21,17 +21,8 @@ Index: content/ppapi_plugin/ppapi_blink_platform_impl.cc
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    ChildThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -51,7 +51,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
- }
- 
- void PpapiBlinkPlatformImpl::Shutdown() {
--#if defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
-   // SandboxSupport contains a map of OutOfProcessFont objects, which hold
-   // WebStrings and WebVectors, which become invalidated when blink is shut
-   // down. Hence, we need to clear that map now, just before blink::shutdown()
-@@ -61,7 +61,7 @@ void PpapiBlinkPlatformImpl::Shutdown() {
- }
+@@ -52,7 +52,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
+ void PpapiBlinkPlatformImpl::Shutdown() {}
  
  blink::WebSandboxSupport* PpapiBlinkPlatformImpl::GetSandboxSupport() {
 -#if defined(OS_LINUX) || defined(OS_MACOSX)

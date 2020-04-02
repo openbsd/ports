@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_embedder_switches_h,v 1.4 2019/11/10 13:37:55 robert Exp $
+$OpenBSD: patch-services_service_manager_embedder_switches_h,v 1.5 2020/04/02 15:11:58 robert Exp $
 
 Index: services/service_manager/embedder/switches.h
 --- services/service_manager/embedder/switches.h.orig

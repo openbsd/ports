@@ -1,9 +1,21 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.16 2019/11/10 13:37:49 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.17 2020/04/02 15:11:56 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
 +++ base/process/process_posix.cc
-@@ -380,7 +380,53 @@ bool Process::SetProcessBackgrounded(bool value) {
+@@ -23,6 +23,11 @@
+ #include <sys/event.h>
+ #endif
+ 
++#if defined(OS_BSD)
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#endif
++
+ #if BUILDFLAG(CLANG_COVERAGE)
+ #include "base/test/clang_coverage.h"
+ #endif
+@@ -380,7 +385,53 @@ bool Process::SetProcessBackgrounded(bool value) {
  
  int Process::GetPriority() const {
    DCHECK(IsValid());

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_memory_singleton_h,v 1.7 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_memory_singleton_h,v 1.8 2020/04/02 15:11:59 robert Exp $
 --- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h.orig.port	Thu May 26 13:05:44 2016
 +++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h	Thu May 26 13:06:40 2016
 @@ -56,7 +56,7 @@ template <class T> boost::once_flag Singleton<T>::flag

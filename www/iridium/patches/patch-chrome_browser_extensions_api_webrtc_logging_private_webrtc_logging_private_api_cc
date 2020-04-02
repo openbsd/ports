@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_webrtc_logging_private_webrtc_logging_private_api_cc,v 1.1 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_webrtc_logging_private_webrtc_logging_private_api_cc,v 1.2 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc
 --- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig

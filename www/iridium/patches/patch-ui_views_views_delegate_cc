@@ -1,4 +1,5 @@
-$OpenBSD: patch-ui_views_views_delegate_cc,v 1.17 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-ui_views_views_delegate_cc,v 1.18 2020/04/02 15:11:59 robert Exp $
+
 Index: ui/views/views_delegate.cc
 --- ui/views/views_delegate.cc.orig
 +++ ui/views/views_delegate.cc
@@ -6,8 +7,8 @@ Index: ui/views/views_delegate.cc
  bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow window) const {
    return false;
  }
--#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+-#elif defined(OS_LINUX) && BUILDFLAG(ENABLE_DESKTOP_AURA)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && BUILDFLAG(ENABLE_DESKTOP_AURA)
  gfx::ImageSkia* ViewsDelegate::GetDefaultWindowIcon() const {
    return nullptr;
  }

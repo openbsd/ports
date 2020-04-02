@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.2 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.3 2020/04/02 15:11:57 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_util.cc
 --- components/policy/core/common/cloud/cloud_policy_util.cc.orig
@@ -12,43 +12,43 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
  #include <pwd.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -28,7 +28,7 @@
- #include <sys/sysctl.h>
+@@ -31,7 +31,7 @@
+ #import <SystemConfiguration/SCDynamicStoreCopySpecific.h>
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -52,7 +52,7 @@
+@@ -60,7 +60,7 @@
  #include "base/system/sys_info.h"
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "base/system/sys_info.h"
  #endif
  
-@@ -61,7 +61,7 @@ namespace policy {
+@@ -69,7 +69,7 @@ namespace policy {
  namespace em = enterprise_management;
  
  std::string GetMachineName() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -111,7 +111,7 @@ std::string GetMachineName() {
+@@ -123,7 +123,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -134,7 +134,7 @@ std::string GetOSArchitecture() {
+@@ -146,7 +146,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

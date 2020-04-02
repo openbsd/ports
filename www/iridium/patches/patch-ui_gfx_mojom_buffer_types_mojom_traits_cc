@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_mojom_buffer_types_mojom_traits_cc,v 1.1 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-ui_gfx_mojom_buffer_types_mojom_traits_cc,v 1.2 2020/04/02 15:11:59 robert Exp $
 
 Index: ui/gfx/mojom/buffer_types_mojom_traits.cc
 --- ui/gfx/mojom/buffer_types_mojom_traits.cc.orig

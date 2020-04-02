@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.17 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.18 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/chrome_browser_main.cc
 --- chrome/browser/chrome_browser_main.cc.orig
 +++ chrome/browser/chrome_browser_main.cc
-@@ -222,7 +222,7 @@
+@@ -223,7 +223,7 @@
  #include "components/arc/metrics/stability_metrics_manager.h"
  #endif  // defined(OS_CHROMEOS)
  
@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_browser_main.cc
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -261,7 +261,7 @@
+@@ -264,7 +264,7 @@
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_browser_main.cc
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #include "chrome/browser/profiles/profile_activity_metrics_recorder.h"
  #endif
-@@ -1075,7 +1075,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1073,7 +1073,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        AddFirstRunNewTabs(browser_creator_.get(), master_prefs_->new_tabs);
      }
  
@@ -30,15 +30,15 @@ Index: chrome/browser/chrome_browser_main.cc
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -1088,7 +1088,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1086,7 +1086,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX)
    // Set the product channel for crash reports.
-   breakpad::SetChannelCrashKey(chrome::GetChannelName());
- #endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
+   if (!crash_reporter::IsCrashpadEnabled()) {
+     breakpad::SetChannelCrashKey(chrome::GetChannelName());
 @@ -1120,7 +1120,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
      tracing::SetupNavigationTracing();
    }

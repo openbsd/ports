@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.1 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.cc
 --- gpu/vulkan/vulkan_function_pointers.cc.orig
 +++ gpu/vulkan/vulkan_function_pointers.cc
-@@ -731,7 +731,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -772,7 +772,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
    }
  #endif  // defined(OS_ANDROID)
  
@@ -12,7 +12,7 @@ Index: gpu/vulkan/vulkan_function_pointers.cc
    if (gfx::HasExtension(enabled_extensions,
                          VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME)) {
      vkGetSemaphoreFdKHRFn = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
-@@ -750,9 +750,9 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -791,9 +791,9 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
        return false;
      }
    }
@@ -24,7 +24,7 @@ Index: gpu/vulkan/vulkan_function_pointers.cc
    if (gfx::HasExtension(enabled_extensions,
                          VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME)) {
      vkGetMemoryFdKHRFn = reinterpret_cast<PFN_vkGetMemoryFdKHR>(
-@@ -763,7 +763,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -813,7 +813,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
        return false;
      }
    }

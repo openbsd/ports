@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_network_context_cc,v 1.4 2019/11/10 13:37:55 robert Exp $
+$OpenBSD: patch-services_network_network_context_cc,v 1.5 2020/04/02 15:11:58 robert Exp $
 
 Index: services/network/network_context.cc
 --- services/network/network_context.cc.orig
 +++ services/network/network_context.cc
-@@ -1776,7 +1776,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
+@@ -1738,7 +1738,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
  
      net::CookieCryptoDelegate* crypto_delegate = nullptr;
      if (params_->enable_encrypted_cookies) {

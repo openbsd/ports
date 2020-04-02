@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_crashpad_crashpad_minidump_minidump_misc_info_writer_cc,v 1.1 2020/04/02 15:11:59 robert Exp $
+
+Index: third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
+--- third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc.orig
++++ third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
+@@ -110,6 +110,8 @@ std::string MinidumpMiscInfoDebugBuildString() {
+   static constexpr char kOS[] = "win";
+ #elif defined(OS_FUCHSIA)
+   static constexpr char kOS[] = "fuchsia";
++#elif defined(OS_OPENBSD)
++  static constexpr char kOS[] = "openbsd";
+ #else
+ #error define kOS for this operating system
+ #endif

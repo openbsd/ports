@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_boringssl_src_include_openssl_cpu_h,v 1.4 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_boringssl_src_include_openssl_cpu_h,v 1.5 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/boringssl/src/include/openssl/cpu.h
 --- third_party/boringssl/src/include/openssl/cpu.h.orig

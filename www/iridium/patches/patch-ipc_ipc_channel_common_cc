@@ -1,9 +1,9 @@
-$OpenBSD: patch-ipc_ipc_channel_common_cc,v 1.4 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-ipc_ipc_channel_common_cc,v 1.5 2020/04/02 15:11:58 robert Exp $
 
 Index: ipc/ipc_channel_common.cc
 --- ipc/ipc_channel_common.cc.orig
 +++ ipc/ipc_channel_common.cc
-@@ -9,7 +9,7 @@
+@@ -10,7 +10,7 @@
  
  namespace IPC {
  

@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_compositor_host_host_context_factory_private_cc,v 1.1 2020/04/02 15:11:59 robert Exp $
+
+Index: ui/compositor/host/host_context_factory_private.cc
+--- ui/compositor/host/host_context_factory_private.cc.orig
++++ ui/compositor/host/host_context_factory_private.cc
+@@ -30,7 +30,7 @@ namespace {
+ 
+ static const char* kBrowser = "Browser";
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ class HostDisplayClient : public viz::HostDisplayClient {
+  public:
+   explicit HostDisplayClient(ui::Compositor* compositor)

@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_flatbuffers_src_src_util_cpp,v 1.1 2020/04/02 15:11:59 robert Exp $
+
+Index: third_party/flatbuffers/src/src/util.cpp
+--- third_party/flatbuffers/src/src/util.cpp.orig
++++ third_party/flatbuffers/src/src/util.cpp
+@@ -16,7 +16,6 @@
+ 
+ // clang-format off
+ // Dont't remove `format off`, it prevent reordering of win-includes.
+-#define _POSIX_C_SOURCE 200112L // For stat from stat/stat.h and fseeko() (POSIX extensions).
+ #ifdef _WIN32
+ #  ifndef WIN32_LEAN_AND_MEAN
+ #    define WIN32_LEAN_AND_MEAN
+@@ -32,7 +31,6 @@
+ #  include <winbase.h>
+ #  undef interface  // This is also important because of reasons
+ #else
+-#  define _XOPEN_SOURCE 600 // For PATH_MAX from limits.h (SUSv2 extension) 
+ #  include <limits.h>
+ #endif
+ // clang-format on

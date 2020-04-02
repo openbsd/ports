@@ -1,10 +1,10 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_h,v 1.1 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_h,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_backing.h
 --- gpu/command_buffer/service/external_vk_image_backing.h.orig
 +++ gpu/command_buffer/service/external_vk_image_backing.h
-@@ -133,7 +133,7 @@ class ExternalVkImageBacking : public SharedImageBacki
-                          base::Optional<DawnTextureFormat> dawn_format,
+@@ -135,7 +135,7 @@ class ExternalVkImageBacking final : public SharedImag
+                          base::Optional<WGPUTextureFormat> wgpu_format,
                           base::Optional<uint32_t> memory_type_index);
  
 -#ifdef OS_LINUX

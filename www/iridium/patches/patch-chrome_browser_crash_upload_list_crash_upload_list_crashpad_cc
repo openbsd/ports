@@ -1,0 +1,19 @@
+$OpenBSD: patch-chrome_browser_crash_upload_list_crash_upload_list_crashpad_cc,v 1.1 2020/04/02 15:11:57 robert Exp $
+
+Index: chrome/browser/crash_upload_list/crash_upload_list_crashpad.cc
+--- chrome/browser/crash_upload_list/crash_upload_list_crashpad.cc.orig
++++ chrome/browser/crash_upload_list/crash_upload_list_crashpad.cc
+@@ -57,9 +57,13 @@ std::vector<UploadList::UploadInfo> CrashUploadListCra
+ 
+ void CrashUploadListCrashpad::ClearUploadList(const base::Time& begin,
+                                               const base::Time& end) {
++#if !defined(OS_BSD)
+   crash_reporter::ClearReportsBetween(begin, end);
++#endif
+ }
+ 
+ void CrashUploadListCrashpad::RequestSingleUpload(const std::string& local_id) {
++#if !defined(OS_BSD)
+   crash_reporter::RequestSingleCrashUpload(local_id);
++#endif
+ }

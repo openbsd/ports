@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.1 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: gpu/vulkan/generate_bindings.py
 --- gpu/vulkan/generate_bindings.py.orig
 +++ gpu/vulkan/generate_bindings.py
-@@ -150,7 +150,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -164,7 +164,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
@@ -12,7 +12,7 @@ Index: gpu/vulkan/generate_bindings.py
      'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
      'functions': [
        'vkGetSemaphoreFdKHR',
-@@ -158,7 +158,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -172,7 +172,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
@@ -20,4 +20,4 @@ Index: gpu/vulkan/generate_bindings.py
 +    'ifdef': 'defined(OS_LINUX) || defined(OS_BSD)',
      'extension': 'VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME',
      'functions': [
-       'vkGetMemoryFdKHR'
+       'vkGetMemoryFdKHR',

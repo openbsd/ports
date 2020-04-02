@@ -1,4 +1,4 @@
-$OpenBSD: patch-chromecast_media_base_monotonic_clock_cc,v 1.1 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-chromecast_media_base_monotonic_clock_cc,v 1.2 2020/04/02 15:11:57 robert Exp $
 
 Index: chromecast/media/base/monotonic_clock.cc
 --- chromecast/media/base/monotonic_clock.cc.orig

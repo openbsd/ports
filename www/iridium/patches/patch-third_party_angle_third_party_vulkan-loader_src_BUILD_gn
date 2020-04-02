@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_angle_third_party_vulkan-loader_src_BUILD_gn,v 1.1 2020/04/02 15:11:58 robert Exp $
+
+Index: third_party/angle/third_party/vulkan-loader/src/BUILD.gn
+--- third_party/angle/third_party/vulkan-loader/src/BUILD.gn.orig
++++ third_party/angle/third_party/vulkan-loader/src/BUILD.gn
+@@ -59,7 +59,7 @@ config("vulkan_loader_config") {
+   if (is_win) {
+     cflags = [ "/wd4201" ]
+   }
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     # assume secure_getenv() is available
+     defines += [ "HAVE_SECURE_GETENV" ]
+   }

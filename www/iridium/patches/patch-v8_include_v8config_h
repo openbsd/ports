@@ -1,0 +1,32 @@
+$OpenBSD: patch-v8_include_v8config_h,v 1.1 2020/04/02 15:11:59 robert Exp $
+
+Index: v8/include/v8config.h
+--- v8/include/v8config.h.orig
++++ v8/include/v8config.h
+@@ -141,6 +141,7 @@
+   && !defined(V8_TARGET_OS_FUCHSIA) \
+   && !defined(V8_TARGET_OS_IOS) \
+   && !defined(V8_TARGET_OS_LINUX) \
++  && !defined(V8_TARGET_OS_OPENBSD) \
+   && !defined(V8_TARGET_OS_MACOSX) \
+   && !defined(V8_TARGET_OS_WIN)
+ #  error No known target OS defined.
+@@ -152,6 +153,7 @@
+   || defined(V8_TARGET_OS_FUCHSIA) \
+   || defined(V8_TARGET_OS_IOS) \
+   || defined(V8_TARGET_OS_LINUX) \
++  || defined(V8_TARGET_OS_OPENBSD) \
+   || defined(V8_TARGET_OS_MACOSX) \
+   || defined(V8_TARGET_OS_WIN)
+ #  error A target OS is defined but V8_HAVE_TARGET_OS is unset.
+@@ -172,6 +174,10 @@
+ 
+ #ifdef V8_OS_LINUX
+ # define V8_TARGET_OS_LINUX
++#endif
++
++#ifdef V8_OS_OPENBSD
++# define V8_TARGET_OS_OPENBSD
+ #endif
+ 
+ #ifdef V8_OS_MACOSX

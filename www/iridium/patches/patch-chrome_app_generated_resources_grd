@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.14 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.15 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig
 +++ chrome/app/generated_resources.grd
-@@ -4885,7 +4885,7 @@ Keep your key file in a safe place. You will need it t
+@@ -5008,7 +5008,7 @@ Keep your key file in a safe place. You will need it t
        </if>
  
        <!-- chrome://browser-switch strings -->
@@ -12,7 +12,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
            Legacy Browser Support
          </message>
-@@ -6514,7 +6514,7 @@ the Bookmarks menu.">
+@@ -6712,7 +6712,7 @@ the Bookmarks menu.">
          Google Pay
        </message>
  
@@ -21,7 +21,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -7395,7 +7395,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -7669,7 +7669,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_viz_service_display_embedder_skia_output_device_dawn_cc,v 1.1 2020/04/02 15:11:58 robert Exp $
+
+Index: components/viz/service/display_embedder/skia_output_device_dawn.cc
+--- components/viz/service/display_embedder/skia_output_device_dawn.cc.orig
++++ components/viz/service/display_embedder/skia_output_device_dawn.cc
+@@ -10,7 +10,7 @@
+ 
+ #if defined(OS_WIN)
+ #include <dawn_native/D3D12Backend.h>
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+ #include <dawn_native/VulkanBackend.h>
+ #endif
+ 

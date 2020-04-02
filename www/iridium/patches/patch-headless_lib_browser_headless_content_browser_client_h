@@ -1,9 +1,9 @@
-$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_h,v 1.6 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_h,v 1.7 2020/04/02 15:11:58 robert Exp $
 
 Index: headless/lib/browser/headless_content_browser_client.h
 --- headless/lib/browser/headless_content_browser_client.h.orig
 +++ headless/lib/browser/headless_content_browser_client.h
-@@ -33,7 +33,7 @@ class HeadlessContentBrowserClient : public content::C
+@@ -34,7 +34,7 @@ class HeadlessContentBrowserClient : public content::C
        ::storage::OptionalQuotaSettingsCallback callback) override;
    content::GeneratedCodeCacheSettings GetGeneratedCodeCacheSettings(
        content::BrowserContext* context) override;

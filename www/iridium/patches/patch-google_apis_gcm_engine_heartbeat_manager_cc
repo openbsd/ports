@@ -1,4 +1,4 @@
-$OpenBSD: patch-google_apis_gcm_engine_heartbeat_manager_cc,v 1.1 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-google_apis_gcm_engine_heartbeat_manager_cc,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: google_apis/gcm/engine/heartbeat_manager.cc
 --- google_apis/gcm/engine/heartbeat_manager.cc.orig

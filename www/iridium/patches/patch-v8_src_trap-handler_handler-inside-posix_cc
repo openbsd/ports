@@ -1,18 +1,9 @@
-$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_cc,v 1.2 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_cc,v 1.3 2020/04/02 15:12:00 robert Exp $
 
 Index: v8/src/trap-handler/handler-inside-posix.cc
 --- v8/src/trap-handler/handler-inside-posix.cc.orig
 +++ v8/src/trap-handler/handler-inside-posix.cc
-@@ -31,6 +31,8 @@
- #include <ucontext.h>
- #elif V8_OS_MACOSX
- #include <sys/ucontext.h>
-+#elif V8_OS_MACOSX
-+#include <sys/signal.h>
- #endif
- 
- #include <stddef.h>
-@@ -48,8 +50,12 @@ bool IsKernelGeneratedSignal(siginfo_t* info) {
+@@ -48,8 +48,12 @@ bool IsKernelGeneratedSignal(siginfo_t* info) {
    // si_code at its default of 0 for signals that don’t originate in hardware.
    // The other conditions are only relevant for Linux.
    return info->si_code > 0 && info->si_code != SI_USER &&
@@ -20,17 +11,17 @@ Index: v8/src/trap-handler/handler-inside-posix.cc
 -         info->si_code != SI_ASYNCIO && info->si_code != SI_MESGQ;
 +         info->si_code != SI_QUEUE && info->si_code != SI_TIMER
 +#ifdef V8_OS_OPENBSD
-+	;
++	 ;
 +#else
 +         && info->si_code != SI_ASYNCIO && info->si_code != SI_MESGQ;
 +#endif
  }
  
  class SigUnmaskStack {
-@@ -112,6 +118,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
-     auto* context_rip = &uc->uc_mcontext.gregs[REG_RIP];
- #elif V8_OS_MACOSX
+@@ -114,6 +118,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
      auto* context_rip = &uc->uc_mcontext->__ss.__rip;
+ #elif V8_OS_FREEBSD
+     auto* context_rip = &uc->uc_mcontext.mc_rip;
 +#elif V8_OS_OPENBSD
 +    auto* context_rip = &uc->sc_rip;
  #else

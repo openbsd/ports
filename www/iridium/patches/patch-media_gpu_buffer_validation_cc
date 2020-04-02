@@ -1,0 +1,32 @@
+$OpenBSD: patch-media_gpu_buffer_validation_cc,v 1.1 2020/04/02 15:11:58 robert Exp $
+
+Index: media/gpu/buffer_validation.cc
+--- media/gpu/buffer_validation.cc.orig
++++ media/gpu/buffer_validation.cc
+@@ -12,7 +12,7 @@
+ #include "ui/gfx/geometry/size.h"
+ #include "ui/gfx/gpu_memory_buffer.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include <sys/types.h>
+ #include <unistd.h>
+ #endif  // defined(OS_LINUX)
+@@ -20,7 +20,7 @@
+ namespace media {
+ 
+ bool GetFileSize(const int fd, size_t* size) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (fd < 0) {
+     VLOGF(1) << "Invalid file descriptor";
+     return false;
+@@ -56,7 +56,7 @@ bool VerifyGpuMemoryBufferHandle(media::VideoPixelForm
+     VLOGF(1) << "Unexpected GpuMemoryBufferType: " << gmb_handle.type;
+     return false;
+   }
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   const size_t num_planes = media::VideoFrame::NumPlanes(pixel_format);
+   if (num_planes != gmb_handle.native_pixmap_handle.planes.size() ||
+       num_planes == 0) {

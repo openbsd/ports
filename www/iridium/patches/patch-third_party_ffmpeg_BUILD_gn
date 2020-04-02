@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_BUILD_gn,v 1.8 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_BUILD_gn,v 1.9 2020/04/02 15:11:59 robert Exp $
 Index: third_party/ffmpeg/BUILD.gn
 --- third_party/ffmpeg/BUILD.gn.orig
 +++ third_party/ffmpeg/BUILD.gn

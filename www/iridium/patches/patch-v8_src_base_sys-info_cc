@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_base_sys-info_cc,v 1.1 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-v8_src_base_sys-info_cc,v 1.2 2020/04/02 15:11:59 robert Exp $
 
 Index: v8/src/base/sys-info.cc
 --- v8/src/base/sys-info.cc.orig

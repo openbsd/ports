@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_handle_openbsd_cc,v 1.9 2019/11/10 13:37:49 robert Exp $
+$OpenBSD: patch-base_process_process_handle_openbsd_cc,v 1.10 2020/04/02 15:11:56 robert Exp $
 
 Index: base/process/process_handle_openbsd.cc
 --- base/process/process_handle_openbsd.cc.orig

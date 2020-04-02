@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_cc,v 1.4 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_cc,v 1.5 2020/04/02 15:11:58 robert Exp $
 
 Index: content/utility/utility_blink_platform_with_sandbox_support_impl.cc
 --- content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig
@@ -12,16 +12,16 @@ Index: content/utility/utility_blink_platform_with_sandbox_support_impl.cc
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #endif
  
-@@ -18,7 +18,7 @@ namespace content {
+@@ -17,7 +17,7 @@ namespace content {
+ 
  UtilityBlinkPlatformWithSandboxSupportImpl::
-     UtilityBlinkPlatformWithSandboxSupportImpl(
-         service_manager::Connector* connector) {
+     UtilityBlinkPlatformWithSandboxSupportImpl() {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    UtilityThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -35,7 +35,7 @@ UtilityBlinkPlatformWithSandboxSupportImpl::
+@@ -34,7 +34,7 @@ UtilityBlinkPlatformWithSandboxSupportImpl::
  
  blink::WebSandboxSupport*
  UtilityBlinkPlatformWithSandboxSupportImpl::GetSandboxSupport() {

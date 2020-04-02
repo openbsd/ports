@@ -1,23 +1,23 @@
-$OpenBSD: patch-chrome_app_chrome_content_browser_overlay_manifest_cc,v 1.1 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_content_browser_overlay_manifest_cc,v 1.2 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/app/chrome_content_browser_overlay_manifest.cc
 --- chrome/app/chrome_content_browser_overlay_manifest.cc.orig
 +++ chrome/app/chrome_content_browser_overlay_manifest.cc
-@@ -70,7 +70,7 @@
+@@ -61,7 +61,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
- #include "chrome/browser/performance_manager/webui_graph_dump.mojom.h"  // nogncheck
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #endif
-@@ -206,7 +206,7 @@ const service_manager::Manifest& GetChromeContentBrows
+ 
+@@ -146,7 +146,7 @@ const service_manager::Manifest& GetChromeContentBrows
                  app_management::mojom::PageHandlerFactory,
  #endif
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
-                 mojom::DiscardsDetailsProvider,
-                 performance_manager::mojom::WebUIGraphDump,
+                 discards::mojom::DetailsProvider, discards::mojom::GraphDump,
  #endif
+ #if defined(OS_CHROMEOS)

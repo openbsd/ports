@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.12 2019/11/10 13:37:49 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.13 2020/04/02 15:11:56 robert Exp $
 
 Index: base/process/process_metrics_openbsd.cc
 --- base/process/process_metrics_openbsd.cc.orig
 +++ base/process/process_metrics_openbsd.cc
-@@ -4,10 +4,21 @@
+@@ -4,11 +4,25 @@
  
  #include "base/process/process_metrics.h"
  
@@ -19,13 +19,17 @@ Index: base/process/process_metrics_openbsd.cc
 +
  #include <stddef.h>
  #include <stdint.h>
++#include <fcntl.h>
  #include <sys/param.h>
  #include <sys/sysctl.h>
 +#include <sys/vmmeter.h>
  
++#include <kvm.h>
++
  #include "base/memory/ptr_util.h"
  #include "base/process/process_metrics_iocounters.h"
-@@ -25,48 +36,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+ #include "base/stl_util.h"
+@@ -25,48 +39,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
    return false;
  }
  
@@ -75,7 +79,7 @@ Index: base/process/process_metrics_openbsd.cc
  
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
-@@ -85,6 +61,120 @@ size_t GetSystemCommitCharge() {
+@@ -85,6 +64,120 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);

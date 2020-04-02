@@ -1,0 +1,32 @@
+$OpenBSD: patch-base_profiler_stack_sampler_openbsd_cc,v 1.1 2020/04/02 15:11:56 robert Exp $
+
+Index: base/profiler/stack_sampler_openbsd.cc
+--- base/profiler/stack_sampler_openbsd.cc.orig
++++ base/profiler/stack_sampler_openbsd.cc
+@@ -0,0 +1,26 @@
++// Copyright 2019 The Chromium Authors. All rights reserved.
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++#include "base/profiler/stack_sampler.h"
++
++namespace base {
++
++// static
++std::unique_ptr<StackSampler> StackSampler::Create(
++    SamplingProfilerThreadToken thread_token,
++    ModuleCache* module_cache,
++    StackSamplerTestDelegate* test_delegate) {
++  return nullptr;
++}
++
++// static
++size_t StackSampler::GetStackBufferSize() {
++  size_t stack_size = PlatformThread::GetDefaultThreadStackSize();
++
++  // If getrlimit somehow fails, return the default main thread stack size
++  // of 32 MB.
++  return stack_size > 0 ? stack_size : 32 * 1024 * 1024;
++}
++
++}  // namespace base

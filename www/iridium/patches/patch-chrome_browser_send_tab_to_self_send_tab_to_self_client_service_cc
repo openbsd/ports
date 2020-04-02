@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_send_tab_to_self_send_tab_to_self_client_service_cc,v 1.1 2019/11/10 13:37:51 robert Exp $
+$OpenBSD: patch-chrome_browser_send_tab_to_self_send_tab_to_self_client_service_cc,v 1.2 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/send_tab_to_self/send_tab_to_self_client_service.cc
 --- chrome/browser/send_tab_to_self/send_tab_to_self_client_service.cc.orig

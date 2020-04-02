@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.9 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.10 2020/04/02 15:11:58 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
@@ -12,17 +12,17 @@ Index: gpu/ipc/service/gpu_init.cc
  bool CanAccessNvidiaDeviceFile() {
    bool res = true;
    base::ScopedBlockingCall scoped_blocking_call(FROM_HERE,
-@@ -165,7 +165,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
-   // crash during feature collection.
-   gpu::SetKeysForCrashLogging(gpu_info_);
+@@ -170,7 +170,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+   gpu_info_.subpixel_font_rendering = true;
+ #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
    if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
        gpu_info_.gpu.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -246,7 +246,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
-   sandbox_helper_->PreSandboxStartup();
+@@ -254,7 +254,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+   }
  
    bool attempted_startsandbox = false;
 -#if defined(OS_LINUX)
@@ -30,7 +30,7 @@ Index: gpu/ipc/service/gpu_init.cc
    // On Chrome OS ARM Mali, GPU driver userspace creates threads when
    // initializing a GL context, so start the sandbox early.
    // TODO(zmo): Need to collect OS version before this.
-@@ -377,7 +377,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -410,7 +410,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
  
    InitializePlatformOverlaySettings(&gpu_info_);
  
@@ -39,7 +39,7 @@ Index: gpu/ipc/service/gpu_init.cc
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -569,7 +569,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -608,7 +608,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_);
  

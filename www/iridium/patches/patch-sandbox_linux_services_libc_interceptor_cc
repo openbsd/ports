@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_services_libc_interceptor_cc,v 1.3 2019/11/10 13:37:55 robert Exp $
+$OpenBSD: patch-sandbox_linux_services_libc_interceptor_cc,v 1.4 2020/04/02 15:11:58 robert Exp $
 
 Index: sandbox/linux/services/libc_interceptor.cc
 --- sandbox/linux/services/libc_interceptor.cc.orig
@@ -13,7 +13,7 @@ Index: sandbox/linux/services/libc_interceptor.cc
  #include <sys/socket.h>
  #include <sys/types.h>
  #include <time.h>
-@@ -94,7 +96,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
+@@ -93,7 +95,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
    } else {
      base::AutoLock lock(g_timezones_lock.Get());
      auto ret_pair = g_timezones.Get().insert(timezone);

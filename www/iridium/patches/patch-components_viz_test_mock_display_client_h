@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_viz_test_mock_display_client_h,v 1.1 2020/04/02 15:11:58 robert Exp $
+
+Index: components/viz/test/mock_display_client.h
+--- components/viz/test/mock_display_client.h.orig
++++ components/viz/test/mock_display_client.h
+@@ -35,7 +35,7 @@ class MockDisplayClient : public mojom::DisplayClient 
+   MOCK_METHOD1(OnContextCreationResult, void(gpu::ContextResult));
+   MOCK_METHOD1(SetPreferredRefreshRate, void(float refresh_rate));
+ #endif
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   MOCK_METHOD1(DidCompleteSwapWithNewSize, void(const gfx::Size&));
+ #endif
+ 

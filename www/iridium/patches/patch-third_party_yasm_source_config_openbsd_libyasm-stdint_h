@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_yasm_source_config_openbsd_libyasm-stdint_h,v 1.8 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-third_party_yasm_source_config_openbsd_libyasm-stdint_h,v 1.9 2020/04/02 15:11:59 robert Exp $
 --- third_party/yasm/source/config/openbsd/libyasm-stdint.h.orig.port	Fri Mar 22 02:13:37 2013
 +++ third_party/yasm/source/config/openbsd/libyasm-stdint.h	Tue Apr  2 21:05:18 2013
 @@ -1,7 +1,7 @@

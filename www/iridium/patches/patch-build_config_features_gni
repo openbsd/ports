@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_features_gni,v 1.7 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-build_config_features_gni,v 1.8 2020/04/02 15:11:57 robert Exp $
 Index: build/config/features.gni
 --- build/config/features.gni.orig
 +++ build/config/features.gni

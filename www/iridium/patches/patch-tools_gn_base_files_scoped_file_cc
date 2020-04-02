@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_base_files_scoped_file_cc,v 1.3 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-tools_gn_base_files_scoped_file_cc,v 1.4 2020/04/02 15:11:59 robert Exp $
 
 Index: tools/gn/base/files/scoped_file.cc
 --- tools/gn/base/files/scoped_file.cc.orig

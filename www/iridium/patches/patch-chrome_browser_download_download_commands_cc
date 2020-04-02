@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.14 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.15 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/download/download_commands.cc
 --- chrome/browser/download/download_commands.cc.orig
 +++ chrome/browser/download/download_commands.cc
-@@ -30,7 +30,7 @@
+@@ -26,7 +26,7 @@
  #include "net/base/url_util.h"
  #include "ui/base/clipboard/scoped_clipboard_writer.h"
  
@@ -12,7 +12,7 @@ Index: chrome/browser/download/download_commands.cc
  #include "chrome/browser/ui/browser.h"
  #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/scoped_tabbed_browser_displayer.h"
-@@ -157,7 +157,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+@@ -153,7 +153,7 @@ void DownloadCommands::ExecuteCommand(Command command)
    model_->ExecuteCommand(this, command);
  }
  
@@ -21,7 +21,7 @@ Index: chrome/browser/download/download_commands.cc
  
  Browser* DownloadCommands::GetBrowser() const {
    chrome::ScopedTabbedBrowserDisplayer browser_displayer(model_->profile());
-@@ -180,12 +180,12 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
+@@ -176,12 +176,12 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
    return IsDownloadPdf() &&
           (IsAdobeReaderDefaultPDFViewer() ? is_adobe_pdf_reader_up_to_date
                                            : true);

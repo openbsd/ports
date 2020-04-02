@@ -1,23 +1,14 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.6 2019/11/10 13:37:55 robert Exp $
+$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.7 2020/04/02 15:11:58 robert Exp $
 
 Index: third_party/angle/src/libANGLE/Display.cpp
 --- third_party/angle/src/libANGLE/Display.cpp.orig
 +++ third_party/angle/src/libANGLE/Display.cpp
-@@ -68,7 +68,7 @@
- #if defined(ANGLE_ENABLE_VULKAN)
- #    if defined(ANGLE_PLATFORM_WINDOWS)
- #        include "libANGLE/renderer/vulkan/win32/DisplayVkWin32.h"
+@@ -269,7 +269,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
+             {
+                 impl = rx::CreateVulkanWin32Display(state);
+             }
 -#    elif defined(ANGLE_PLATFORM_LINUX)
 +#    elif defined(ANGLE_PLATFORM_POSIX)
- #        include "libANGLE/renderer/vulkan/xcb/DisplayVkXcb.h"
- #    elif defined(ANGLE_PLATFORM_ANDROID)
- #        include "libANGLE/renderer/vulkan/android/DisplayVkAndroid.h"
-@@ -268,7 +268,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
- #if defined(ANGLE_ENABLE_VULKAN)
- #    if defined(ANGLE_PLATFORM_WINDOWS)
-             impl = new rx::DisplayVkWin32(state);
--#    elif defined(ANGLE_PLATFORM_LINUX)
-+#    elif defined(ANGLE_PLATFORM_POSIX)
-             impl = new rx::DisplayVkXcb(state);
- #    elif defined(ANGLE_PLATFORM_ANDROID)
-             impl = new rx::DisplayVkAndroid(state);
+             if (rx::IsVulkanXcbDisplayAvailable())
+             {
+                 impl = rx::CreateVulkanXcbDisplay(state);

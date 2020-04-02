@@ -1,15 +1,16 @@
-$OpenBSD: patch-base_system_sys_info_openbsd_cc,v 1.2 2019/11/10 13:37:49 robert Exp $
+$OpenBSD: patch-base_system_sys_info_openbsd_cc,v 1.3 2020/04/02 15:11:56 robert Exp $
 
 Index: base/system/sys_info_openbsd.cc
 --- base/system/sys_info_openbsd.cc.orig
 +++ base/system/sys_info_openbsd.cc
-@@ -29,9 +29,13 @@ int64_t AmountOfMemory(int pages_name) {
+@@ -29,9 +29,14 @@ int64_t AmountOfMemory(int pages_name) {
  
  namespace base {
  
 +// pledge(2)
 +int64_t aofpmem = 0;
 +int64_t aofapmem = 0;
++int64_t shmmax = 0;
 +
  // static
  int SysInfo::NumberOfProcessors() {
@@ -18,7 +19,7 @@ Index: base/system/sys_info_openbsd.cc
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, base::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -43,26 +47,20 @@ int SysInfo::NumberOfProcessors() {
+@@ -43,29 +48,23 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  int64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -34,9 +35,13 @@ Index: base/system/sys_info_openbsd.cc
    // We should add inactive file-backed memory also but there is no such
    // information from OpenBSD unfortunately.
 -  return AmountOfMemory(_SC_AVPHYS_PAGES);
--}
--
--// static
++  // pledge(2)
++  if (!aofapmem)
++    aofapmem = AmountOfMemory(_SC_AVPHYS_PAGES);
++  return aofapmem;
+ }
+ 
+ // static
 -uint64_t SysInfo::MaxSharedMemorySize() {
 -  int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
 -  size_t limit;
@@ -46,10 +51,33 @@ Index: base/system/sys_info_openbsd.cc
 -    return 0;
 -  }
 -  return static_cast<uint64_t>(limit);
+-}
+-
+-// static
+ std::string SysInfo::CPUModelName() {
+   int mib[] = {CTL_HW, HW_MODEL};
+   char name[256];
+@@ -75,6 +74,23 @@ std::string SysInfo::CPUModelName() {
+     return std::string();
+   }
+   return name;
++}
++
++// static
++uint64_t SysInfo::MaxSharedMemorySize() {
++  int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
++  size_t limit;
++  size_t size = sizeof(limit);
 +  // pledge(2)
-+  if (!aofapmem)
-+    aofapmem = AmountOfMemory(_SC_AVPHYS_PAGES);
-+  return aofapmem;
++  if (shmmax)
++    goto out;
++  if (sysctl(mib, base::size(mib), &limit, &size, NULL, 0) < 0) {
++    NOTREACHED();
++    return 0;
++  }
++  shmmax = static_cast<uint64_t>(limit);
++out:
++  return shmmax;
  }
  
- // static
+ }  // namespace base

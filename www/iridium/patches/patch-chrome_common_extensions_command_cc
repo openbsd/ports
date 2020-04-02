@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_extensions_command_cc,v 1.10 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-chrome_common_extensions_command_cc,v 1.11 2020/04/02 15:11:57 robert Exp $
 Index: chrome/common/extensions/command.cc
 --- chrome/common/extensions/command.cc.orig
 +++ chrome/common/extensions/command.cc

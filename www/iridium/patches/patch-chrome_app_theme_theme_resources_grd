@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.9 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.10 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/app/theme/theme_resources.grd
 --- chrome/app/theme/theme_resources.grd.orig

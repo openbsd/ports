@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.15 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.16 2020/04/02 15:11:56 robert Exp $
 
 Index: base/threading/platform_thread_linux.cc
 --- base/threading/platform_thread_linux.cc.orig

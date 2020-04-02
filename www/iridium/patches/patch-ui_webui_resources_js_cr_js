@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_webui_resources_js_cr_js,v 1.10 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-ui_webui_resources_js_cr_js,v 1.11 2020/04/02 15:11:59 robert Exp $
 Index: ui/webui/resources/js/cr.js
 --- ui/webui/resources/js/cr.js.orig
 +++ ui/webui/resources/js/cr.js
-@@ -452,6 +452,11 @@ var cr = cr || function(global) {
+@@ -448,6 +448,11 @@ var cr = cr || function(global) {
        return /CrOS/.test(navigator.userAgent);
      },
  

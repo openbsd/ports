@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_webui_settings_appearance_handler_h,v 1.5 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_settings_appearance_handler_h,v 1.6 2020/04/02 15:11:57 robert Exp $
 Index: chrome/browser/ui/webui/settings/appearance_handler.h
 --- chrome/browser/ui/webui/settings/appearance_handler.h.orig
 +++ chrome/browser/ui/webui/settings/appearance_handler.h

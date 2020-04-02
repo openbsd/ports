@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.6 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.7 2020/04/02 15:11:59 robert Exp $
 
 Index: ui/views/corewm/tooltip_aura.cc
 --- ui/views/corewm/tooltip_aura.cc.orig
 +++ ui/views/corewm/tooltip_aura.cc
-@@ -42,7 +42,7 @@ constexpr int kVerticalPaddingBottom = 5;
+@@ -43,7 +43,7 @@ constexpr int kVerticalPaddingBottom = 5;
  
  // TODO(varkha): Update if native widget can be transparent on Linux.
  bool CanUseTranslucentTooltipWidget() {

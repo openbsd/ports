@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_url_request_url_fetcher_h,v 1.1 2019/11/10 13:37:54 robert Exp $
+$OpenBSD: patch-net_url_request_url_fetcher_h,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: net/url_request/url_fetcher.h
 --- net/url_request/url_fetcher.h.orig

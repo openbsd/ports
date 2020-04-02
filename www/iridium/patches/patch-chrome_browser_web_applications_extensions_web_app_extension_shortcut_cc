@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_web_applications_extensions_web_app_extension_shortcut_cc,v 1.4 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_extensions_web_app_extension_shortcut_cc,v 1.5 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/web_applications/extensions/web_app_extension_shortcut.cc
 --- chrome/browser/web_applications/extensions/web_app_extension_shortcut.cc.orig
 +++ chrome/browser/web_applications/extensions/web_app_extension_shortcut.cc
-@@ -50,7 +50,7 @@ namespace {
+@@ -51,7 +51,7 @@ namespace {
  #if defined(OS_MACOSX)
  const int kDesiredSizes[] = {16, 32, 128, 256, 512};
  const size_t kNumDesiredSizes = base::size(kDesiredSizes);

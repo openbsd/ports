@@ -1,7 +1,10 @@
-# $OpenBSD: unveil.main,v 1.6 2019/11/10 13:37:49 robert Exp $
+# $OpenBSD: unveil.main,v 1.7 2020/04/02 15:11:56 robert Exp $
 
 # needed for video(4)
 /dev/video rw
+
+# needed for FIDO authentication
+/dev/fido rw
 
 # needed for iridium
 /etc/chromium r

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_third_party_llvm-7_0_configs_linux_include_llvm_Config_config_h,v 1.2 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_third_party_llvm-7_0_configs_linux_include_llvm_Config_config_h,v 1.3 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h
 --- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig

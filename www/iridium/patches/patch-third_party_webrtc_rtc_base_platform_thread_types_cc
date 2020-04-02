@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_types_cc,v 1.3 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_types_cc,v 1.4 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/webrtc/rtc_base/platform_thread_types.cc
 --- third_party/webrtc/rtc_base/platform_thread_types.cc.orig
@@ -31,9 +31,9 @@ Index: third_party/webrtc/rtc_base/platform_thread_types.cc
  void SetCurrentThreadName(const char* name) {
 +#if !defined(__OpenBSD__)
  #if defined(WEBRTC_WIN)
-   struct {
-     DWORD dwType;
-@@ -74,6 +79,7 @@ void SetCurrentThreadName(const char* name) {
+   // For details see:
+   // https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-a-thread-name-in-native-code
+@@ -81,6 +86,7 @@ void SetCurrentThreadName(const char* name) {
    prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name));  // NOLINT
  #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
    pthread_setname_np(name);

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libusb_src_libusb_core_c,v 1.7 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_libusb_src_libusb_core_c,v 1.8 2020/04/02 15:11:59 robert Exp $
 --- third_party/libusb/src/libusb/core.c.orig.port	Sun Aug 16 11:07:28 2015
 +++ third_party/libusb/src/libusb/core.c	Sun Aug 16 11:07:39 2015
 @@ -448,7 +448,7 @@ libusb_free_device_list(list, 1);

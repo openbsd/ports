@@ -1,0 +1,41 @@
+$OpenBSD: patch-base_memory_discardable_memory_cc,v 1.1 2020/04/02 15:11:56 robert Exp $
+
+Index: base/memory/discardable_memory.cc
+--- base/memory/discardable_memory.cc.orig
++++ base/memory/discardable_memory.cc
+@@ -23,7 +23,7 @@ const base::Feature kMadvFreeDiscardableMemory{
+     "MadvFreeDiscardableMemory", base::FEATURE_DISABLED_BY_DEFAULT};
+ #endif  // defined(OS_POSIX)
+ 
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+ const base::Feature kDiscardableMemoryBackingTrial{
+     "DiscardableMemoryBackingTrial", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+@@ -47,7 +47,7 @@ const base::FeatureParam<DiscardableMemoryTrialGroup>
+ 
+ namespace {
+ 
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ DiscardableMemoryBacking GetBackingForFieldTrial() {
+   DiscardableMemoryTrialGroup trial_group =
+@@ -65,7 +65,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
+ 
+ }  // namespace
+ 
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ // Probe capabilities of this device to determine whether we should participate
+ // in the discardable memory backing trial.
+@@ -94,7 +94,7 @@ DiscardableMemory::DiscardableMemory() = default;
+ DiscardableMemory::~DiscardableMemory() = default;
+ 
+ DiscardableMemoryBacking GetDiscardableMemoryBacking() {
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+   if (DiscardableMemoryBackingFieldTrialIsEnabled()) {
+     return GetBackingForFieldTrial();
+   }

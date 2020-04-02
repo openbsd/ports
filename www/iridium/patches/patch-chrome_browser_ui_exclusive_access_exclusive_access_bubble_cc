@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_exclusive_access_exclusive_access_bubble_cc,v 1.9 2019/11/10 13:37:51 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_exclusive_access_exclusive_access_bubble_cc,v 1.10 2020/04/02 15:11:57 robert Exp $
 --- chrome/browser/ui/exclusive_access/exclusive_access_bubble.cc.orig.port	Fri Dec  2 00:02:08 2016
 +++ chrome/browser/ui/exclusive_access/exclusive_access_bubble.cc	Fri Dec  2 17:44:53 2016
 @@ -16,7 +16,7 @@

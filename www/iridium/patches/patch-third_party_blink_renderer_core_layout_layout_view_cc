@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_layout_layout_view_cc,v 1.4 2019/11/10 13:37:55 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_layout_layout_view_cc,v 1.5 2020/04/02 15:11:58 robert Exp $
 
 Index: third_party/blink/renderer/core/layout/layout_view.cc
 --- third_party/blink/renderer/core/layout/layout_view.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_v8_target_cpu_gni,v 1.1 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-build_config_v8_target_cpu_gni,v 1.2 2020/04/02 15:11:57 robert Exp $
 
 Index: build/config/v8_target_cpu.gni
 --- build/config/v8_target_cpu.gni.orig

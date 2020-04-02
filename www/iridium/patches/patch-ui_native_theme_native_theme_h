@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_native_theme_native_theme_h,v 1.4 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-ui_native_theme_native_theme_h,v 1.5 2020/04/02 15:11:59 robert Exp $
 
 Index: ui/native_theme/native_theme.h
 --- ui/native_theme/native_theme.h.orig

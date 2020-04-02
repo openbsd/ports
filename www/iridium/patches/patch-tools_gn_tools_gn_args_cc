@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_tools_gn_args_cc,v 1.3 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-tools_gn_tools_gn_args_cc,v 1.4 2020/04/02 15:11:59 robert Exp $
 
 Index: tools/gn/tools/gn/args.cc
 --- tools/gn/tools/gn/args.cc.orig

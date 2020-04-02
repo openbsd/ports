@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_Main_SwiftConfig_cpp,v 1.3 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_Main_SwiftConfig_cpp,v 1.4 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/swiftshader/src/Main/SwiftConfig.cpp
 --- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig

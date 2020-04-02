@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_audio_audio_manager_cc,v 1.13 2019/11/10 13:37:54 robert Exp $
+$OpenBSD: patch-media_audio_audio_manager_cc,v 1.14 2020/04/02 15:11:58 robert Exp $
 Index: media/audio/audio_manager.cc
 --- media/audio/audio_manager.cc.orig
 +++ media/audio/audio_manager.cc

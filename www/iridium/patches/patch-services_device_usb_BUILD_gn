@@ -1,8 +1,17 @@
-$OpenBSD: patch-services_device_usb_BUILD_gn,v 1.1 2019/11/10 13:37:55 robert Exp $
+$OpenBSD: patch-services_device_usb_BUILD_gn,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: services/device/usb/BUILD.gn
 --- services/device/usb/BUILD.gn.orig
 +++ services/device/usb/BUILD.gn
+@@ -77,7 +77,7 @@ static_library("usb") {
+     deps += [ ":jni_headers" ]
+   }
+ 
+-  if (is_win || is_mac) {
++  if (is_win || is_mac || is_openbsd) {
+     sources += [
+       "scoped_libusb_device_handle.cc",
+       "scoped_libusb_device_handle.h",
 @@ -110,7 +110,7 @@ static_library("usb") {
      ]
    }

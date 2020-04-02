@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_platform_macros_h,v 1.8 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_platform_macros_h,v 1.9 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/protobuf/src/google/protobuf/stubs/platform_macros.h
 --- third_party/protobuf/src/google/protobuf/stubs/platform_macros.h.orig

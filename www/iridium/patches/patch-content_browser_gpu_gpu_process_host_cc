@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.6 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.7 2020/04/02 15:11:58 robert Exp $
 
 Index: content/browser/gpu/gpu_process_host.cc
 --- content/browser/gpu/gpu_process_host.cc.orig
 +++ content/browser/gpu/gpu_process_host.cc
-@@ -216,6 +216,7 @@ static const char* const kSwitchNames[] = {
+@@ -208,6 +208,7 @@ static const char* const kSwitchNames[] = {
      switches::kDisableWebRtcHWEncoding,
      switches::kEnableGpuRasterization,
      switches::kEnableLogging,

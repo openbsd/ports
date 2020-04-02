@@ -1,11 +1,20 @@
-$OpenBSD: patch-ui_platform_window_platform_window_init_properties_h,v 1.1 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-ui_platform_window_platform_window_init_properties_h,v 1.2 2020/04/02 15:11:59 robert Exp $
 
 Index: ui/platform_window/platform_window_init_properties.h
 --- ui/platform_window/platform_window_init_properties.h.orig
 +++ ui/platform_window/platform_window_init_properties.h
-@@ -73,7 +73,7 @@ struct PlatformWindowInitProperties {
-   bool remove_standard_frame = false;
-   std::string workspace;
+@@ -41,7 +41,7 @@ enum class PlatformWindowOpacity {
+ 
+ class WorkspaceExtensionDelegate;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ class X11ExtensionDelegate;
+ #endif
+ 
+@@ -82,7 +82,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+ 
+   WorkspaceExtensionDelegate* workspace_extension_delegate = nullptr;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

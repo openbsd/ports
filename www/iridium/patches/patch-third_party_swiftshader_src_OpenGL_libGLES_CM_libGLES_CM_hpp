@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libGLES_CM_libGLES_CM_hpp,v 1.6 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libGLES_CM_libGLES_CM_hpp,v 1.7 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp
 --- third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp.orig

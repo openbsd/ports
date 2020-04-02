@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.18 2019/11/10 13:37:51 robert Exp $
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.19 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/memory_details.cc
 --- chrome/browser/memory_details.cc.orig

@@ -1,0 +1,15 @@
+$OpenBSD: patch-third_party_boringssl_src_crypto_fipsmodule_rand_internal_h,v 1.1 2020/04/02 15:11:59 robert Exp $
+
+Index: third_party/boringssl/src/crypto/fipsmodule/rand/internal.h
+--- third_party/boringssl/src/crypto/fipsmodule/rand/internal.h.orig
++++ third_party/boringssl/src/crypto/fipsmodule/rand/internal.h
+@@ -27,7 +27,8 @@ extern "C" {
+ 
+ 
+ #if !defined(OPENSSL_WINDOWS) && !defined(OPENSSL_FUCHSIA) && \
+-    !defined(BORINGSSL_UNSAFE_DETERMINISTIC_MODE) && !defined(OPENSSL_TRUSTY)
++    !defined(BORINGSSL_UNSAFE_DETERMINISTIC_MODE) && !defined(OPENSSL_TRUSTY) && \
++    !defined(OPENSSL_ARC4RANDOM)
+ #define OPENSSL_URANDOM
+ #endif
+ 

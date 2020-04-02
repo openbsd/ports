@@ -1,0 +1,16 @@
+$OpenBSD: patch-components_sync_device_info_device_info_sync_bridge_cc,v 1.1 2020/04/02 15:11:58 robert Exp $
+
+Index: components/sync_device_info/device_info_sync_bridge.cc
+--- components/sync_device_info/device_info_sync_bridge.cc.orig
++++ components/sync_device_info/device_info_sync_bridge.cc
+@@ -445,6 +445,10 @@ void DeviceInfoSyncBridge::OnStoreCreated(
+     return;
+   }
+ 
++#if defined(OS_BSD)
++  return;
++#endif
++
+   store_ = std::move(store);
+ 
+   base::SysInfo::GetHardwareInfo(

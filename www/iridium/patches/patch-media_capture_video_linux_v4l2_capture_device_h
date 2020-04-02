@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_linux_v4l2_capture_device_h,v 1.1 2019/11/10 13:37:54 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_v4l2_capture_device_h,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: media/capture/video/linux/v4l2_capture_device.h
 --- media/capture/video/linux/v4l2_capture_device.h.orig

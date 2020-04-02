@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_webui_resources_js_icon_js,v 1.6 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-ui_webui_resources_js_icon_js,v 1.7 2020/04/02 15:11:59 robert Exp $
 Index: ui/webui/resources/js/icon.js
 --- ui/webui/resources/js/icon.js.orig
 +++ ui/webui/resources/js/icon.js

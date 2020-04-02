@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.1 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.h
 --- gpu/vulkan/vulkan_function_pointers.h.orig
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -170,14 +170,14 @@ struct VulkanFunctionPointers {
+@@ -178,15 +178,15 @@ struct VulkanFunctionPointers {
        vkGetAndroidHardwareBufferPropertiesANDROIDFn = nullptr;
  #endif  // defined(OS_ANDROID)
  
@@ -17,12 +17,13 @@ Index: gpu/vulkan/vulkan_function_pointers.h
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    PFN_vkGetMemoryFdKHR vkGetMemoryFdKHRFn = nullptr;
+   PFN_vkGetMemoryFdPropertiesKHR vkGetMemoryFdPropertiesKHRFn = nullptr;
 -#endif  // defined(OS_LINUX)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  
  #if defined(OS_FUCHSIA)
    PFN_vkImportSemaphoreZirconHandleFUCHSIA
-@@ -356,16 +356,16 @@ struct VulkanFunctionPointers {
+@@ -374,18 +374,18 @@ struct VulkanFunctionPointers {
        ->vkGetAndroidHardwareBufferPropertiesANDROIDFn
  #endif  // defined(OS_ANDROID)
  
@@ -38,6 +39,8 @@ Index: gpu/vulkan/vulkan_function_pointers.h
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #define vkGetMemoryFdKHR gpu::GetVulkanFunctionPointers()->vkGetMemoryFdKHRFn
+ #define vkGetMemoryFdPropertiesKHR \
+   gpu::GetVulkanFunctionPointers()->vkGetMemoryFdPropertiesKHRFn
 -#endif  // defined(OS_LINUX)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  

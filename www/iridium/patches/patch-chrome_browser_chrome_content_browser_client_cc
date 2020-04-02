@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.22 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.23 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -403,7 +403,7 @@
+@@ -382,7 +382,7 @@
  #include "components/user_manager/user.h"
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -458,7 +458,7 @@
+@@ -434,7 +434,7 @@
  #include "chrome/grit/chrome_unscaled_resources.h"
  #endif  //  !defined(OS_ANDROID)
  
@@ -20,8 +20,8 @@ Index: chrome/browser/chrome_content_browser_client.cc
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_navigation_throttle.h"
- #endif
-@@ -485,7 +485,7 @@
+ #include "services/service_manager/sandbox/features.h"
+@@ -468,7 +468,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -30,7 +30,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #if defined(USE_X11)
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux_x11.h"
  #else
-@@ -798,7 +798,7 @@ bool IsAutoplayAllowedByPolicy(content::WebContents* c
+@@ -764,7 +764,7 @@ bool IsAutoplayAllowedByPolicy(content::WebContents* c
  int GetCrashSignalFD(const base::CommandLine& command_line) {
    return crashpad::CrashHandlerHost::Get()->GetDeathSignalSocket();
  }
@@ -39,7 +39,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1200,7 +1200,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1222,7 +1222,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
  #elif defined(OS_CHROMEOS)
    main_parts = std::make_unique<chromeos::ChromeBrowserMainPartsChromeos>(
        parameters, startup_data_);
@@ -48,7 +48,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts =
        std::make_unique<ChromeBrowserMainPartsLinux>(parameters, startup_data_);
  #elif defined(OS_ANDROID)
-@@ -1226,7 +1226,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1248,7 +1248,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
      // Construct additional browser parts. Stages are called in the order in
      // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -57,16 +57,16 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #if defined(USE_X11)
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinuxX11());
  #else
-@@ -2032,6 +2032,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1990,6 +1990,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
  #elif defined(OS_POSIX)
  #if defined(OS_ANDROID)
    bool enable_crash_reporter = true;
 +#elif defined(OS_BSD)
 +  bool enable_crash_reporter = false;
  #else
-   bool enable_crash_reporter = breakpad::IsCrashReporterEnabled();
- #endif
-@@ -2267,7 +2269,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+   bool enable_crash_reporter = false;
+   if (crash_reporter::IsCrashpadEnabled()) {
+@@ -2252,7 +2254,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
    StackSamplingConfiguration::Get()->AppendCommandLineSwitchForChildProcess(
        process_type, command_line);
  
@@ -75,7 +75,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // Processes may only query perf_event_open with the BPF sandbox disabled.
    if (browser_command_line.HasSwitch(switches::kEnableThreadInstructionCount) &&
        command_line->HasSwitch(service_manager::switches::kNoSandbox)) {
-@@ -3575,7 +3577,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3553,7 +3555,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -84,12 +84,12 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -4244,7 +4246,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -3987,7 +3989,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
              handle));
    }
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || \
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-   std::unique_ptr<content::NavigationThrottle> browser_switcher_throttle =
-       browser_switcher::BrowserSwitcherNavigationThrottle ::
+   MaybeAddThrottle(&throttles,
+                    browser_switcher::BrowserSwitcherNavigationThrottle::

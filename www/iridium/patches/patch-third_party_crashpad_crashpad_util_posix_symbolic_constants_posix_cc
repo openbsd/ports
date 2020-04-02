@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_symbolic_constants_posix_cc,v 1.4 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_symbolic_constants_posix_cc,v 1.5 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/posix/symbolic_constants_posix.cc
 --- third_party/crashpad/crashpad/util/posix/symbolic_constants_posix.cc.orig

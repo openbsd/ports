@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_tools_run_py,v 1.8 2019/11/10 13:41:38 robert Exp $
+$OpenBSD: patch-v8_tools_run_py,v 1.9 2020/04/02 15:12:00 robert Exp $
 
 Index: v8/tools/run.py
 --- v8/tools/run.py.orig
@@ -8,4 +8,4 @@ Index: v8/tools/run.py
  import sys
  
 -sys.exit(subprocess.call(sys.argv[1:]))
-+sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release"}))
++sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"/usr/ports/pobj/iridium-2020.03.80/iridium-browser-2020.03.80/out/Release"}))

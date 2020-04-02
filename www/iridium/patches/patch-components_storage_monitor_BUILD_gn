@@ -1,0 +1,19 @@
+$OpenBSD: patch-components_storage_monitor_BUILD_gn,v 1.8 2020/04/02 15:11:58 robert Exp $
+
+Index: components/storage_monitor/BUILD.gn
+--- components/storage_monitor/BUILD.gn.orig
++++ components/storage_monitor/BUILD.gn
+@@ -81,6 +81,13 @@ static_library("storage_monitor") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    sources += [
++      "storage_monitor_openbsd.cc",
++      "storage_monitor_openbsd.h"
++    ]
++  }
++
+   if (use_udev) {
+     sources += [
+       "udev_util_linux.cc",

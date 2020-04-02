@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_content_settings_core_browser_website_settings_registry_cc,v 1.9 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-components_content_settings_core_browser_website_settings_registry_cc,v 1.10 2020/04/02 15:11:57 robert Exp $
 Index: components/content_settings/core/browser/website_settings_registry.cc
 --- components/content_settings/core/browser/website_settings_registry.cc.orig
 +++ components/content_settings/core/browser/website_settings_registry.cc

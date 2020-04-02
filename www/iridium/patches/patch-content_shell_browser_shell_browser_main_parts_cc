@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.12 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.13 2020/04/02 15:11:58 robert Exp $
 
 Index: content/shell/browser/shell_browser_main_parts.cc
 --- content/shell/browser/shell_browser_main_parts.cc.orig
@@ -12,7 +12,7 @@ Index: content/shell/browser/shell_browser_main_parts.cc
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  #if defined(OS_CHROMEOS)
-@@ -125,7 +125,7 @@ int ShellBrowserMainParts::PreEarlyInitialization() {
+@@ -123,7 +123,7 @@ int ShellBrowserMainParts::PreEarlyInitialization() {
  #if defined(USE_X11)
    ui::SetDefaultX11ErrorHandlers();
  #endif

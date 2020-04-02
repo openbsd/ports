@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_system_sys_info_h,v 1.1 2020/04/02 15:11:56 robert Exp $
+
+Index: base/system/sys_info.h
+--- base/system/sys_info.h.orig
++++ base/system/sys_info.h
+@@ -188,6 +188,8 @@ class BASE_EXPORT SysInfo {
+   // See also SysUtils.java, method isLowEndDevice.
+   static bool IsLowEndDevice();
+ 
++  static uint64_t MaxSharedMemorySize();
++
+  private:
+   FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
+   FRIEND_TEST_ALL_PREFIXES(debug::SystemMetricsTest, ParseMeminfo);

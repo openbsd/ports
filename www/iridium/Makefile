@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2019/11/10 13:37:48 robert Exp $
+# $OpenBSD: Makefile,v 1.98 2020/04/02 15:11:56 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Iridium browser
 
-V=			2019.11.78
+V=			2020.03.80
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -26,7 +26,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz
 
-FLAVORS=		debug component
+FLAVORS=		component
 FLAVOR?=
 
 # BSD-like
@@ -45,7 +45,7 @@ PATCHORIG=	.orig.port
 
 # uses pledge()
 WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
-WANTLIB += execinfo
+WANTLIB += execinfo Xft
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
 WANTLIB += m
 WANTLIB += kvm pthread
@@ -62,12 +62,14 @@ WANTLIB += atk-1.0 cairo gdk-3 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0
 WANTLIB += Xcomposite Xdamage
 WANTLIB += EGL Xau Xdmcp Xinerama Xxf86vm atspi cairo-gobject
-WANTLIB += drm epoxy ffi fontconfig freetype fribidi gmodule-2.0 graphite2
+WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
 WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png util xcb-dri2 xcb-glx xcb-render xcb-shm
+WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
-WANTLIB += uuid
-WANTLIB += harfbuzz 
+WANTLIB += harfbuzz harfbuzz-subset
+WANTLIB += ffi png
+WANTLIB += iconv lzma
+WANTLIB += fido2 cbor usbhid crypto
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -90,31 +92,21 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	devel/harfbuzz \
 		devel/libexecinfo \
 		security/nss \
-		sysutils/e2fsprogs \
 		textproc/libxslt \
 		x11/gtk+3 \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 
-.if ${MACHINE_ARCH} == amd64
-# they can make better javascript with java ...
-JAVA_HOME=	${LOCALBASE}/jdk-1.8.0
-BUILD_DEPENDS+=	jdk->=1.8v0,<1.9v0:devel/jdk/1.8
-.endif
-
 .include <bsd.own.mk>
 
-# Set BUILDTYPE to Debug for a debug build
-.if ${FLAVOR:Mdebug}
-BUILDTYPE=	Debug
-.else
+# Set BUILDTYPE to Release
 BUILDTYPE=	Release
-.endif
 
-SUBST_VARS+=	WRKSRC WRKDIR
+SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
 
-ALL_TARGET=	chrome
-TEST_TARGET=	base_unittests
+ALL_TARGET=		chrome
+TEST_TARGET=		base_unittests
+DIST_TARGET_DIR=	iridium
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
 
@@ -128,13 +120,18 @@ GN_SYSTEM_LIBS=	libevent \
 
 GN_ARGS=	enable_nacl=false \
 		is_debug=false \
+		is_cfi=false \
+		optimize_webui=false \
+		closure_compile=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
 		use_system_libdrm=true \
-		use_jumbo_build=true \
+		use_bundled_fontconfig=false \
+		use_system_harfbuzz=true \
+		use_system_freetype=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -143,7 +140,7 @@ GN_ARGS=	enable_nacl=false \
 		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
-.if ${MACHINE_ARCH} == i386
+.if ${MACHINE_ARCH} == "i386"
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
@@ -163,23 +160,22 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 		ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
 
-.if ${FLAVOR:Mdebug}
-MAKE_ENV+=	V=1
-.endif
+# XXX dwz doesn't work with iridium yet
+DWZ = :
 
 .if ${FLAVOR:Mcomponent}
-GN_ARGS+=	is_official_build=false \
+DEBUGFLAG=	-g2
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+GN_ARGS+=	is_official_build=true \
 		is_component_build=true
 .else
+DEBUGFLAG=	-g0
 GN_ARGS+=	is_official_build=true \
 		is_component_build=false
 .endif
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-.if ${MACHINE_ARCH} == amd64
-	@ln -sf ${JAVA_HOME}/bin/java ${WRKDIR}/bin/java
-.endif
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
@@ -187,12 +183,14 @@ pre-configure:
 .  endfor
 .endfor
 	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
+	@cp ${FILESDIR}/hid_{service,connection}_fido.{cc,h} ${WRKSRC}/services/device/hid
 	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio
 	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
-		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py
+		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
+		${WRKSRC}/build/config/compiler/BUILD.gn
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
@@ -206,47 +204,47 @@ do-configure:
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
-pre-build:
-	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py
-
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/iridium
-	${INSTALL_PROGRAM} ${BUILDDIR}/chrome ${PREFIX}/iridium/iridium
-	${SUBST_PROGRAM} ${FILESDIR}/iridium ${PREFIX}/bin/iridium
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}
+	${INSTALL_PROGRAM} ${BUILDDIR}/chrome ${PREFIX}/${DIST_TARGET_DIR}/${DIST_TARGET_DIR}
+	${SUBST_PROGRAM} ${FILESDIR}/${DIST_TARGET_DIR} ${PREFIX}/bin/${DIST_TARGET_DIR}
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in ${PREFIX}/man/man1/iridium.1
 	@perl -pi -e "s,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Iridium Web Browser,g" \
 		${PREFIX}/man/man1/iridium.1
-	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/iridium
+	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/${DIST_TARGET_DIR}
 
-	${INSTALL_DATA_DIR} ${PREFIX}/iridium/locales
-	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/iridium/locales
-	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/iridium
-	${INSTALL_DATA_DIR} ${PREFIX}/iridium/resources
-	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/iridium/resources
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/iridium/resources
-.for f in protoc icudtl.dat mksnapshot natives_blob.bin snapshot_blob.bin v8_context_snapshot.bin
-	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/iridium
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/locales
+	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/${DIST_TARGET_DIR}/locales
+	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/${DIST_TARGET_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/resources
+	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/${DIST_TARGET_DIR}/resources
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIST_TARGET_DIR}/resources
+.for f in icudtl.dat snapshot_blob.bin v8_context_snapshot.bin
+	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 
-	# ANGLE   
-.for f in libEGL.so libGLESv2.so 
-	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/iridium
+	# ANGLE, EGL, Vk
+.for f in libEGL libGLESv2
+	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
+.endfor
+.for f in libVkICD_mock_icd
+	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
-	${INSTALL_DATA_DIR} ${PREFIX}/iridium/swiftshader
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/swiftshader
 .for f in libEGL.so libGLESv2.so
-	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/iridium/swiftshader
+	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/${DIST_TARGET_DIR}/swiftshader
 .endfor
 .endif
 
 .if ${FLAVOR:Mcomponent}
-	cp -Rp ${BUILDDIR}/*.so ${PREFIX}/iridium/
+	cp -Rp ${BUILDDIR}/*.so ${BUILDDIR}/*.so.[0-9] ${PREFIX}/${DIST_TARGET_DIR}/
 .endif
 
 .for s in 22_mono 24 48 64 128 256

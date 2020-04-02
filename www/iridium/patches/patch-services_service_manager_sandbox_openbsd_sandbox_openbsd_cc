@@ -1,7 +1,7 @@
 Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,346 @@
+@@ -0,0 +1,347 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -130,7 +130,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +    base::PathService::Get(base::DIR_CACHE, &cache_directory);
 +    base::PathService::Get(base::DIR_HOME, &local_directory);   
 +
-+    cache_directory = cache_directory.AppendASCII("chromium");
++    cache_directory = cache_directory.AppendASCII("iridium");
 +    local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
 +
 +    if (!base::CreateDirectory(cache_directory)) {
@@ -338,6 +338,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +
 +  // Cache the resource limit before turning on the sandbox.
 +  base::SysInfo::AmountOfVirtualMemory();
++  base::SysInfo::MaxSharedMemorySize();
 +
 +  return *error == 0;
 +#else

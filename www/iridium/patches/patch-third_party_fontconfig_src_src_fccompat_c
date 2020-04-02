@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_fontconfig_src_src_fccompat_c,v 1.4 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_fontconfig_src_src_fccompat_c,v 1.5 2020/04/02 15:11:59 robert Exp $
 
 Index: third_party/fontconfig/src/src/fccompat.c
 --- third_party/fontconfig/src/src/fccompat.c.orig

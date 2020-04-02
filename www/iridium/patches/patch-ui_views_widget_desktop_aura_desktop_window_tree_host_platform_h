@@ -1,14 +1,14 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_h,v 1.1 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_h,v 1.2 2020/04/02 15:11:59 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h
-@@ -146,7 +146,7 @@ class VIEWS_EXPORT DesktopWindowTreeHostPlatform
+@@ -129,7 +129,7 @@ class VIEWS_EXPORT DesktopWindowTreeHostPlatform
+   gfx::Rect ToPixelRect(const gfx::Rect& rect_in_dip) const;
  
-   base::string16 window_title_;
+  private:
+-  void Relayout();
++  void ScheduleRelayout();
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   // A handler for events intended for non client area.
-   std::unique_ptr<WindowEventFilter> non_client_window_event_filter_;
- #endif
+   Widget* GetWidget();
+   const Widget* GetWidget() const;

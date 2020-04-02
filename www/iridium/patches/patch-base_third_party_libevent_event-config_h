@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_third_party_libevent_event-config_h,v 1.6 2019/11/10 13:37:50 robert Exp $
+$OpenBSD: patch-base_third_party_libevent_event-config_h,v 1.7 2020/04/02 15:11:56 robert Exp $
 Index: base/third_party/libevent/event-config.h
 --- base/third_party/libevent/event-config.h.orig
 +++ base/third_party/libevent/event-config.h

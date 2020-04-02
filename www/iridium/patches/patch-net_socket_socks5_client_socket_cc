@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_socket_socks5_client_socket_cc,v 1.11 2019/11/10 13:37:54 robert Exp $
+$OpenBSD: patch-net_socket_socks5_client_socket_cc,v 1.12 2020/04/02 15:11:58 robert Exp $
 Index: net/socket/socks5_client_socket.cc
 --- net/socket/socks5_client_socket.cc.orig
 +++ net/socket/socks5_client_socket.cc

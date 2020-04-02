@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.13 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.14 2020/04/02 15:11:58 robert Exp $
 
 Index: content/renderer/renderer_main_platform_delegate_linux.cc
 --- content/renderer/renderer_main_platform_delegate_linux.cc.orig

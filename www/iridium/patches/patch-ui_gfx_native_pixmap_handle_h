@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_native_pixmap_handle_h,v 1.4 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-ui_gfx_native_pixmap_handle_h,v 1.5 2020/04/02 15:11:59 robert Exp $
 
 Index: ui/gfx/native_pixmap_handle.h
 --- ui/gfx/native_pixmap_handle.h.orig

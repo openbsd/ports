@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libXNVCtrl_NVCtrl_c,v 1.8 2019/11/10 13:37:56 robert Exp $
+$OpenBSD: patch-third_party_libXNVCtrl_NVCtrl_c,v 1.9 2020/04/02 15:11:59 robert Exp $
 --- third_party/libXNVCtrl/NVCtrl.c.orig.port	Fri Mar 22 02:13:35 2013
 +++ third_party/libXNVCtrl/NVCtrl.c	Tue Apr  2 21:05:17 2013
 @@ -27,10 +27,6 @@

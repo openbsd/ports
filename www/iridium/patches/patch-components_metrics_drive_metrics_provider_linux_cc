@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_metrics_drive_metrics_provider_linux_cc,v 1.7 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-components_metrics_drive_metrics_provider_linux_cc,v 1.8 2020/04/02 15:11:57 robert Exp $
 --- components/metrics/drive_metrics_provider_linux.cc.orig.port	Wed Oct 14 07:45:52 2015
 +++ components/metrics/drive_metrics_provider_linux.cc	Wed Oct 14 07:46:06 2015
 @@ -4,7 +4,13 @@

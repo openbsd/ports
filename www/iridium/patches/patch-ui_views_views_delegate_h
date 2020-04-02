@@ -1,13 +1,14 @@
-$OpenBSD: patch-ui_views_views_delegate_h,v 1.16 2019/11/10 13:37:58 robert Exp $
+$OpenBSD: patch-ui_views_views_delegate_h,v 1.17 2020/04/02 15:11:59 robert Exp $
+
 Index: ui/views/views_delegate.h
 --- ui/views/views_delegate.h.orig
 +++ ui/views/views_delegate.h
-@@ -130,7 +130,7 @@ class VIEWS_EXPORT ViewsDelegate {
+@@ -131,7 +131,7 @@ class VIEWS_EXPORT ViewsDelegate {
    // Returns true if the window passed in is in the Windows 8 metro
    // environment.
    virtual bool IsWindowInMetro(gfx::NativeWindow window) const;
--#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+-#elif defined(OS_LINUX) && BUILDFLAG(ENABLE_DESKTOP_AURA)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && BUILDFLAG(ENABLE_DESKTOP_AURA)
    virtual gfx::ImageSkia* GetDefaultWindowIcon() const;
  #endif
  

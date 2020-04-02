@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_browser_compositor_gpu_process_transport_factory_cc,v 1.1 2020/04/02 15:11:58 robert Exp $
+
+Index: content/browser/compositor/gpu_process_transport_factory.cc
+--- content/browser/compositor/gpu_process_transport_factory.cc.orig
++++ content/browser/compositor/gpu_process_transport_factory.cc
+@@ -115,7 +115,7 @@ viz::FrameSinkManagerImpl* GetFrameSinkManager() {
+   return content::BrowserMainLoop::GetInstance()->GetFrameSinkManager();
+ }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ class HostDisplayClient : public viz::HostDisplayClient {
+  public:
+   explicit HostDisplayClient(ui::Compositor* compositor)

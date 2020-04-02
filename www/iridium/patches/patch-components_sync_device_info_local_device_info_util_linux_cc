@@ -1,11 +1,11 @@
-$OpenBSD: patch-components_sync_device_info_local_device_info_util_linux_cc,v 1.1 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-components_sync_device_info_local_device_info_util_linux_cc,v 1.2 2020/04/02 15:11:58 robert Exp $
 
 Index: components/sync_device_info/local_device_info_util_linux.cc
 --- components/sync_device_info/local_device_info_util_linux.cc.orig
 +++ components/sync_device_info/local_device_info_util_linux.cc
-@@ -31,8 +31,9 @@ std::string GetSessionNameInternal() {
-   }
-   return "Chromebook";
+@@ -37,8 +37,9 @@ std::string GetPersonalizableDeviceNameInternal() {
+ #if defined(OS_CHROMEOS)
+   return GetChromeOSDeviceNameFromType();
  #else
 -  char hostname[HOST_NAME_MAX];
 -  if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.

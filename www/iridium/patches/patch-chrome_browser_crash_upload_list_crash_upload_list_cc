@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_crash_upload_list_crash_upload_list_cc,v 1.1 2020/04/02 15:11:57 robert Exp $
+
+Index: chrome/browser/crash_upload_list/crash_upload_list.cc
+--- chrome/browser/crash_upload_list/crash_upload_list.cc.orig
++++ chrome/browser/crash_upload_list/crash_upload_list.cc
+@@ -38,7 +38,7 @@ scoped_refptr<UploadList> CreateCrashUploadList() {
+ // ChromeOS uses crash_sender as its uploader even when Crashpad is enabled,
+ // which isn't compatible with CrashUploadListCrashpad. crash_sender continues
+ // to log uploads in CrashUploadList::kReporterLogFilename.
+-#if !defined(OS_CHROMEOS)
++#if !defined(OS_CHROMEOS) && !defined(OS_BSD)
+   if (crash_reporter::IsCrashpadEnabled()) {
+     return new CrashUploadListCrashpad();
+   }

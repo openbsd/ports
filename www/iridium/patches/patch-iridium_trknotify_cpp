@@ -1,4 +1,4 @@
-$OpenBSD: patch-iridium_trknotify_cpp,v 1.8 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-iridium_trknotify_cpp,v 1.9 2020/04/02 15:11:58 robert Exp $
 
 Index: iridium/trknotify.cpp
 --- iridium/trknotify.cpp.orig

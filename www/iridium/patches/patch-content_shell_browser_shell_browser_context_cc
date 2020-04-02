@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_context_cc,v 1.14 2019/11/10 13:37:53 robert Exp $
+$OpenBSD: patch-content_shell_browser_shell_browser_context_cc,v 1.15 2020/04/02 15:11:58 robert Exp $
 Index: content/shell/browser/shell_browser_context.cc
 --- content/shell/browser/shell_browser_context.cc.orig
 +++ content/shell/browser/shell_browser_context.cc

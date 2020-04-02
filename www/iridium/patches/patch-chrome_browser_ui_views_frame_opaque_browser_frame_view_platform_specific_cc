@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_platform_specific_cc,v 1.7 2019/11/10 13:37:51 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_platform_specific_cc,v 1.8 2020/04/02 15:11:57 robert Exp $
 Index: chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific.cc
 --- chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific.cc.orig
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific.cc

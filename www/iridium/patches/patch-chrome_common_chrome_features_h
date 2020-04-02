@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.8 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.9 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -64,10 +64,10 @@ COMPONENT_EXPORT(CHROME_FEATURES)
- extern const base::Feature kAutoFetchOnNetErrorPage;
- #endif
+@@ -62,10 +62,10 @@ extern const base::Feature kAppServiceShelf;
+ 
+ COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
@@ -16,7 +16,7 @@ Index: chrome/common/chrome_features.h
  
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBlockPromptsIfDismissedOften;
-@@ -86,7 +86,7 @@ extern const base::Feature kBundledConnectionHelpFeatu
+@@ -84,7 +84,7 @@ extern const base::Feature kBundledConnectionHelpFeatu
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kCaptionSettings;
  

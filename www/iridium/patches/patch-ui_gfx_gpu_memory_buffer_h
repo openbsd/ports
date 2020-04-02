@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_gpu_memory_buffer_h,v 1.5 2019/11/10 13:37:57 robert Exp $
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_h,v 1.6 2020/04/02 15:11:59 robert Exp $
 
 Index: ui/gfx/gpu_memory_buffer.h
 --- ui/gfx/gpu_memory_buffer.h.orig
 +++ ui/gfx/gpu_memory_buffer.h
-@@ -16,7 +16,7 @@
+@@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/rect.h"
  #include "ui/gfx/gfx_export.h"
  

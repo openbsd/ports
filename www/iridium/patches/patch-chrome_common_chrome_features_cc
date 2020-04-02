@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.8 2019/11/10 13:37:52 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.9 2020/04/02 15:11:57 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -84,13 +84,13 @@ const base::Feature kAutoFetchOnNetErrorPage{"AutoFetc
-                                              base::FEATURE_DISABLED_BY_DEFAULT};
- #endif  // defined(OS_ANDROID)
+@@ -81,13 +81,13 @@ const base::Feature kAsyncDns {
+ #endif
+ };
  
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
@@ -19,9 +19,9 @@ Index: chrome/common/chrome_features.cc
  
  // Enables or disables whether permission prompts are automatically blocked
  // after the user has explicitly dismissed them too many times.
-@@ -140,7 +140,7 @@ const base::Feature kThirdPartyModulesBlocking{
-     "ThirdPartyModulesBlocking", base::FEATURE_DISABLED_BY_DEFAULT};
- #endif
+@@ -147,7 +147,7 @@ const base::Feature kThirdPartyModulesBlocking{
+ const base::Feature kTLS13HardeningForLocalAnchors{
+     "TLS13HardeningForLocalAnchors", base::FEATURE_DISABLED_BY_DEFAULT};
  
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)

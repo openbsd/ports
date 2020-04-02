@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.4 2019/11/10 13:37:54 robert Exp $
+$OpenBSD: patch-net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.5 2020/04/02 15:11:58 robert Exp $
 
 Index: net/tools/cert_verify_tool/cert_verify_tool.cc
 --- net/tools/cert_verify_tool/cert_verify_tool.cc.orig
 +++ net/tools/cert_verify_tool/cert_verify_tool.cc
-@@ -28,7 +28,7 @@
+@@ -29,7 +29,7 @@
  #include "net/url_request/url_request_context_builder.h"
  #include "net/url_request/url_request_context_getter.h"
  
@@ -12,7 +12,7 @@ Index: net/tools/cert_verify_tool/cert_verify_tool.cc
  #include "net/proxy_resolution/proxy_config.h"
  #include "net/proxy_resolution/proxy_config_service_fixed.h"
  #endif
-@@ -49,7 +49,7 @@ void SetUpOnNetworkThread(
+@@ -50,7 +50,7 @@ void SetUpOnNetworkThread(
      base::WaitableEvent* initialization_complete_event) {
    net::URLRequestContextBuilder url_request_context_builder;
    url_request_context_builder.set_user_agent(GetUserAgent());
