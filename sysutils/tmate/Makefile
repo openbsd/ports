@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/04/02 15:08:20 kn Exp $
+# $OpenBSD: Makefile,v 1.14 2020/04/02 16:09:26 kn Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
@@ -23,7 +23,9 @@ LIB_DEPENDS =	devel/libevent2 \
 		security/libssh
 
 CONFIGURE_STYLE =	autoreconf
+.ifndef DEBUG
 CONFIGURE_ARGS +=	--disable-debug
+.endif
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

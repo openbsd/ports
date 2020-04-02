@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2020/04/02 16:09:26 kn Exp $
+
+Remove hardcoded optimizations.
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -27,7 +27,7 @@ endif
+ 
+ # Set flags for gcc.
+ if IS_GCC
+-CFLAGS += -std=gnu99 -O2
++CFLAGS += -std=gnu99
+ if IS_DEBUG
+ CFLAGS += -g
+ CFLAGS += -Wno-long-long -Wall -W -Wnested-externs -Wformat=2
