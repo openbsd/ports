@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.926 2020/04/01 07:56:26 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.927 2020/04/02 14:35:33 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -892,7 +892,6 @@ my $obsolete_reason = {
 	'letskencrypt' => 4,
 	'emiclock' => 0,
 	'rygel' => 8,
-	'vino' => 8,
 	'ttcp' => 0,
 	'aget' => 3,
 	'xfprint' => 3,
