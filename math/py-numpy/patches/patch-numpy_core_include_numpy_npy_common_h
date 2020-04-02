@@ -1,13 +1,8 @@
-$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.6 2018/06/30 21:49:33 daniel Exp $
+$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.7 2020/04/02 07:39:09 pirofti Exp $
 
-(1) optimize function attributes were added in gcc 4.4. Apply a fix for the warnings. But
-the next release of numpy should fix this in a better way. See:
-https://github.com/numpy/numpy/issues/5451
+XXX recheck powerpc, is this still needed?
 
-Gets rid of these warnings from the build:
-numpy/core/src/multiarray/lowlevel_strided_loops.c.src:120: warning: 'optimize' attribute directive ignored
-
-(2) py-numpy only checks for expl to determine whether extended-precision
+py-numpy only checks for expl to determine whether extended-precision
 support is present.  since we don't have it yet;  it implements
 it's own.  however, on alpha, powerpc, it declared functions with
 types that conflict with C99 (double for *l), therefore failed.
@@ -15,36 +10,7 @@ types that conflict with C99 (double for *l), therefore failed.
 Index: numpy/core/include/numpy/npy_common.h
 --- numpy/core/include/numpy/npy_common.h.orig
 +++ numpy/core/include/numpy/npy_common.h
-@@ -20,6 +20,7 @@
- #endif
- #endif
- 
-+#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ > 4)))
- /*
-  * gcc does not unroll even with -O3
-  * use with care, unrolling on modern cpus rarely speeds things up
-@@ -30,13 +31,20 @@
- #else
- #define NPY_GCC_UNROLL_LOOPS
- #endif
-+#else
-+#define NPY_GCC_UNROLL_LOOPS
-+#endif
- 
-+#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ > 4)))
- /* highest gcc optimization level, enabled autovectorizer */
- #ifdef HAVE_ATTRIBUTE_OPTIMIZE_OPT_3
- #define NPY_GCC_OPT_3 __attribute__((optimize("O3")))
- #else
- #define NPY_GCC_OPT_3
- #endif
-+#else
-+#define NPY_GCC_OPT_3
-+#endif
- 
- /* compile target attributes */
- #if defined HAVE_ATTRIBUTE_TARGET_AVX && defined HAVE_LINK_AVX
-@@ -336,14 +344,8 @@ typedef unsigned char npy_bool;
+@@ -320,14 +320,8 @@ typedef unsigned char npy_bool;
  #define NPY_FALSE 0
  #define NPY_TRUE 1
  

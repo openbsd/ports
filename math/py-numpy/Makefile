@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2020/03/10 03:31:45 daniel Exp $
+# $OpenBSD: Makefile,v 1.58 2020/04/02 07:39:09 pirofti Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.14.6
+MODPY_EGG_VERSION=	1.16.5
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip
-REVISION=		2
 
 CATEGORIES=		math devel
 
@@ -15,7 +14,8 @@ HOMEPAGE=		https://www.numpy.org/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB=		blas lapack m pthread ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
+WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
+WANTLIB += blas cblas lapack m pthread
 
 MODULES=		lang/python \
 			fortran
@@ -27,13 +27,14 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
-TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR}
-
+TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-tz${MODPY_FLAVOR}
 MODFORTRAN_COMPILER =	gfortran
 
 BUILD_DEPENDS = ${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=            math/lapack \
+LIB_DEPENDS=		math/cblas \
+			math/lapack \
 			${MODFORTRAN_LIB_DEPENDS}
 
 # Cython 0.28.* uses __attribute__((optimize("Os"))) which
@@ -54,7 +55,7 @@ pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
 
 do-test:
-	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
+	cd ${WRKDIR} && ${MAKE_ENV} ${MODPY_BIN} -c \
 	    'import numpy ; numpy.test()'
 
 .include <bsd.port.mk>

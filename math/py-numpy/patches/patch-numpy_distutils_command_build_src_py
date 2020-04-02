@@ -1,4 +1,4 @@
-$OpenBSD: patch-numpy_distutils_command_build_src_py,v 1.3 2018/06/30 21:49:33 daniel Exp $
+$OpenBSD: patch-numpy_distutils_command_build_src_py,v 1.4 2020/04/02 07:39:09 pirofti Exp $
 
 fix build of other packages (e.g. py-scipy) in some cases (e.g. when
 WRKOBJDIR has a trailing slash)
@@ -6,7 +6,7 @@ WRKOBJDIR has a trailing slash)
 Index: numpy/distutils/command/build_src.py
 --- numpy/distutils/command/build_src.py.orig
 +++ numpy/distutils/command/build_src.py
-@@ -372,6 +372,7 @@ class build_src(build_ext.build_ext):
+@@ -370,6 +370,7 @@ class build_src(build_ext.build_ext):
              #    incl_dirs.append(self.build_src)
              build_dir = os.path.join(*([self.build_src]\
                                         +name.split('.')[:-1]))

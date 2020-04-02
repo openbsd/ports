@@ -1,0 +1,14 @@
+$OpenBSD: patch-numpy_core_setup_common_py,v 1.1 2020/04/02 07:39:09 pirofti Exp $
+
+Index: numpy/core/setup_common.py
+--- numpy/core/setup_common.py.orig
++++ numpy/core/setup_common.py
+@@ -111,7 +111,7 @@ OPTIONAL_STDFUNCS = ["expm1", "log1p", "acosh", "asinh
+         "rint", "trunc", "exp2", "log2", "hypot", "atan2", "pow",
+         "copysign", "nextafter", "ftello", "fseeko",
+         "strtoll", "strtoull", "cbrt", "strtold_l", "fallocate",
+-        "backtrace", "madvise"]
++        "madvise"]
+ 
+ 
+ OPTIONAL_HEADERS = [
