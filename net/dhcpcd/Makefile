@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2020/01/27 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2020/04/02 16:33:19 sthen Exp $
 
 COMMENT=	DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
 
-DISTNAME=	dhcpcd-8.1.6
+DISTNAME=	dhcpcd-9.0.0
 
 CATEGORIES=	net
 EXTRACT_SUFX=	.tar.xz
@@ -20,7 +20,8 @@ MASTER_SITES=	https://roy.marples.name/downloads/dhcpcd/ \
 		ftp://roy.marples.name/pub/dhcpcd/
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	--prefix='${PREFIX}' \
+CONFIGURE_ARGS=	--enable-privsep \
+		--prefix='${PREFIX}' \
 		--sysconfdir='${SYSCONFDIR}' \
 		--mandir='${PREFIX}/man' \
 		--localstatedir='${LOCALSTATEDIR}'

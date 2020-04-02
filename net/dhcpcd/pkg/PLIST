@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/04/02 16:33:19 sthen Exp $
+@newgroup _dhcpcd:846
+@newuser _dhcpcd:846:_dhcpcd:daemon:dhcpcd user:/var/empty:/sbin/nologin
 @extraunexec rm ${LOCALSTATEDIR}/db/dhcpcd/*
 @rcscript ${RCDIR}/dhcpcd
 libexec/dhcpcd-hooks/
@@ -22,6 +24,9 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/examples/dhcpcd/
 share/examples/dhcpcd/dhcpcd.conf
 @sample ${SYSCONFDIR}/dhcpcd.conf
+@owner _dhcpcd:_dhcpcd
 @sample ${LOCALSTATEDIR}/db/dhcpcd/
 @comment handle DUID file move for a smoother transition to 7.0
 @exec-update [[ ! -f ${LOCALSTATEDIR}/db/dhcpcd/duid ]] && [[ -r ${SYSCONFDIR}/dhcpcd.duid ]] && cp ${SYSCONFDIR}/dhcpcd.duid ${LOCALSTATEDIR}/db/dhcpcd/duid; true
+@comment fix dir ownership - 9.x starts using privsep
+@exec-update [[ -d ${LOCALSTATEDIR}/db/dhcpcd ]] && chown -R _dhcpcd:_dhcpcd ${LOCALSTATEDIR}/db/dhcpcd
