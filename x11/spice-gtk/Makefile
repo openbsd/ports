@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.44 2020/03/14 14:44:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2020/04/03 10:32:09 ajacoutot Exp $
 
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=		spice-gtk-0.37
-EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+DISTNAME=		spice-gtk-0.38
+EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		x11 net
 
-SHARED_LIBS +=  spice-client-glib-2.0 6.0      # 14.0
-SHARED_LIBS +=  spice-client-gtk-3.0  4.0      # 5.0
+SHARED_LIBS +=  spice-client-glib-2.0 6.1      # 14.0
+SHARED_LIBS +=  spice-client-gtk-3.0  4.1      # 5.0
 
 HOMEPAGE=		http://www.spice-space.org/page/Spice-Gtk
 
@@ -18,29 +17,26 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0
-WANTLIB += atk-bridge-2.0 c cairo cairo-gobject crypto dbus-1
-WANTLIB += epoxy execinfo expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += iconv intl jpeg json-glib-1.0 lz4 m ogg opus orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pulse pulse-mainloop-glib sasl2 sndfile
-WANTLIB += ssl vorbis vorbisenc xcb xcb-render xcb-shm z
+WANTLIB += X11 c cairo crypto gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gstvideo-1.0 gtk-3 intl jpeg json-glib-1.0 lz4 m opus
+WANTLIB += pixman-1 sasl2 ssl z
 
 MASTER_SITES=		http://www.spice-space.org/download/gtk/
 
-MODULES=		lang/python
+MODULES=		devel/meson \
+			lang/python
 
 MODPY_RUNDEP=		No
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS=		devel/gobject-introspection \
+BUILD_DEPENDS=		devel/gettext,-tools \
+			devel/gobject-introspection \
+			devel/py-parsing${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR} \
 			devel/spice-protocol \
 			lang/vala \
-			sysutils/usbutils \
-			textproc/asciidoc
+			sysutils/usbutils
 
 RUN_DEPENDS=		sysutils/usbutils
 
@@ -49,31 +45,24 @@ RUN_DEPENDS +=		devel/spice-protocol
 
 LIB_DEPENDS=		archivers/lz4 \
 			audio/opus \
-			audio/pulseaudio \
 			devel/json-glib \
 			multimedia/gstreamer1/plugins-base \
 			security/cyrus-sasl2 \
 			x11/gtk+3
 
-USE_GMAKE=		Yes
-
-MODGNU_CONFIG_GUESS_DIRS= \
-			${WRKSRC} \
-			${WRKSRC}/subprojects/spice-common
-
-CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ARGS=		--disable-smartcard \
-			--disable-usbredir \
-			--enable-introspection \
-			--enable-vala \
-			--enable-gstaudio \
-			--enable-lz4
+CONFIGURE_ARGS=		-Dsmartcard=disabled \
+			-Dusbredir=disabled \
+			-Dpulse=disabled \
+			-Dcelt051=disabled \
+			-Dgtk_doc=disabled
 
 # XXX requires new phodav port
-CONFIGURE_ARGS +=	--disable-webdav
+CONFIGURE_ARGS +=	-Dwebdav=disabled
 
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+# XXX requires libacl
+CONFIGURE_ARGS +=	-Dpolkit=disabled
+
+# XXX requires the makecontext function (ucontext)
+CONFIGURE_ARGS +=	-Dcoroutine=gthread
 
 .include <bsd.port.mk>

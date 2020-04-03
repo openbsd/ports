@@ -1,0 +1,16 @@
+$OpenBSD: patch-man_meson_build,v 1.1 2020/04/03 10:32:09 ajacoutot Exp $
+
+https://gitlab.freedesktop.org/spice/spice-gtk/-/merge_requests/40
+
+Index: man/meson.build
+--- man/meson.build.orig
++++ man/meson.build
+@@ -5,7 +5,7 @@ if pod2man.found()
+             output : 'spice-client.1',
+             input : 'spice-client.pod',
+             install : true,
+-            install_dir : spice_gtk_datadir / 'man' / 'man1',
++            install_dir : join_paths(get_option('prefix'), get_option('mandir'), 'man1'),
+             build_by_default : true,
+             command : [pod2man, '-c', 'Spice-GTK Documentation', '@INPUT@', '@OUTPUT@'])
+ endif
