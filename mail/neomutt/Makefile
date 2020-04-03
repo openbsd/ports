@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/03/20 14:30:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2020/04/03 19:22:56 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		--idn=0 \
 		--idn2 \
 		--fmemopen \
-		--ssl
+		--ssl --debug
 
 CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
