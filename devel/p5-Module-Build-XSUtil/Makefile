@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/03 02:31:46 afresh1 Exp $
 
 COMMENT =		Module::Build class for building XS modules
 
-DISTNAME =		Module-Build-XSUtil-0.16
+DISTNAME =		Module-Build-XSUtil-0.19
 CATEGORIES =		devel
 
 # perl
