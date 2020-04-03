@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_if-bsd_c,v 1.10 2020/04/03 12:20:17 sthen Exp $
+$OpenBSD: patch-src_if-bsd_c,v 1.11 2020/04/03 13:34:36 sthen Exp $
 
-Just after dhcpcd started using these constants(!), they were moved from a
-kernel header to src/usr.sbin/rad/rad.h (ADV_PREFERRED_LIFETIME and
-ADV_VALID_LIFETIME). Just use dhcpcd's own definitions instead.
+Just after dhcpcd started using these constants(!), they were moved
+from a kernel header to src/sbin/slaacd/engine.c. Just use dhcpcd's own
+definitions instead.
 
 Index: src/if-bsd.c
 --- src/if-bsd.c.orig
