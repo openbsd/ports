@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/12/30 14:57:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2020/04/03 10:23:29 kn Exp $
 
 COMMENT=		the Git library, take 2
 
@@ -11,6 +11,7 @@ SHARED_LIBS +=  git2                      12.0 # 0.28
 MODULES=		devel/cmake \
 			lang/python
 
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 
 COMPILER=		base-clang ports-gcc base-gcc
