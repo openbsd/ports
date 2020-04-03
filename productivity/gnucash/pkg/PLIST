@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2019/12/31 14:34:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2020/04/03 09:39:13 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -307,6 +307,7 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/job-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/locale-specific/
 lib/gnucash/scm/ccache/2.2/gnucash/report/locale-specific/de_DE.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/locale-specific/us.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/lot-viewer.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/new-aging.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/new-owner-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/owner-report.go
@@ -454,6 +455,7 @@ share/doc/gnucash/ChangeLog.2015
 share/doc/gnucash/ChangeLog.2016
 share/doc/gnucash/ChangeLog.2017
 share/doc/gnucash/ChangeLog.2018
+share/doc/gnucash/ChangeLog.2019
 share/doc/gnucash/DOCUMENTERS
 share/doc/gnucash/HACKING
 share/doc/gnucash/LICENSE
@@ -796,9 +798,9 @@ share/gnucash/accounts/de_AT/acctchrt_investment.gnucash-xea
 share/gnucash/accounts/de_AT/acctchrt_kids.gnucash-xea
 share/gnucash/accounts/de_CH/
 share/gnucash/accounts/de_CH/acctchrt_brokerage.gnucash-xea
-share/gnucash/accounts/de_CH/acctchrt_chkmu.gnucash-xea
 share/gnucash/accounts/de_CH/acctchrt_common.gnucash-xea
 share/gnucash/accounts/de_CH/acctchrt_kids.gnucash-xea
+share/gnucash/accounts/de_CH/acctchrt_kmu.gnucash-xea
 share/gnucash/accounts/de_CH/acctchrt_otherasset.gnucash-xea
 share/gnucash/accounts/de_CH/acctchrt_otherloan.gnucash-xea
 share/gnucash/accounts/de_DE/
@@ -968,23 +970,23 @@ share/gnucash/accounts/hr/acctchrt_homeloan.gnucash-xea
 share/gnucash/accounts/hr/acctchrt_homeown.gnucash-xea
 share/gnucash/accounts/hr/acctchrt_otherloan.gnucash-xea
 share/gnucash/accounts/hr/acctchrt_renter.gnucash-xea
-share/gnucash/accounts/hu_HU/
-share/gnucash/accounts/hu_HU/acctchrt_brokerage.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_business.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_carloan.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_cdmoneymkt.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_checkbook.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_childcare.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_common.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_eduloan.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_fixedassets.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_homeloan.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_homeown.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_otherloan.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_renter.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_retiremt.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_spouseinc.gnucash-xea
-share/gnucash/accounts/hu_HU/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/hu/
+share/gnucash/accounts/hu/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_business.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_common.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/hu/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/it/
 share/gnucash/accounts/it/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/it/acctchrt_carloan.gnucash-xea
@@ -1158,7 +1160,8 @@ share/gnucash/accounts/sv_FI/acctchrt_rf.gnucash-xea
 share/gnucash/accounts/sv_FI/acctchrt_sbr-xbrl.gnucash-xea
 share/gnucash/accounts/sv_SE/
 share/gnucash/accounts/sv_SE/acctchrt_common.gnucash-xea
-share/gnucash/accounts/sv_SE/bas_2012.gnucash-xea
+share/gnucash/accounts/sv_SE/bas_2019_k1.gnucash-xea
+share/gnucash/accounts/sv_SE/bas_2019_k2_grund.gnucash-xea
 share/gnucash/accounts/tr_TR/
 share/gnucash/accounts/tr_TR/acctchrt_TEKDUZ.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_brokerage.gnucash-xea
@@ -1414,6 +1417,7 @@ share/gnucash/scm/gnucash/report/job-report.scm
 share/gnucash/scm/gnucash/report/locale-specific/
 share/gnucash/scm/gnucash/report/locale-specific/de_DE.scm
 share/gnucash/scm/gnucash/report/locale-specific/us.scm
+share/gnucash/scm/gnucash/report/lot-viewer.scm
 share/gnucash/scm/gnucash/report/new-aging.scm
 share/gnucash/scm/gnucash/report/new-owner-report.scm
 share/gnucash/scm/gnucash/report/owner-report.scm
