@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.929 2020/04/03 14:49:05 paco Exp $
+# $OpenBSD: Quirks.pm,v 1.930 2020/04/03 15:36:10 paco Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1467,9 +1467,13 @@ my $obsolete_reason = {
 	'nap' => 6,
 	'qucs' => 5,
 	'py-arrow' => 1,
+	'py3-arrow' => 1,
 	'py-chai' => 1,
+	'py3-chai' => 1,
 	'py-binaryornot' => 1,
+	'py3-binaryornot' => 1,
 	'py-whichcraft' => 1,
+	'py3-whichcraft' => 1,
 };
 
 # reasons for obsolete packages
