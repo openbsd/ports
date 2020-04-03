@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2020/02/18 09:25:53 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.40 2020/04/03 09:27:02 pvk Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/elasticsearch.keystore
@@ -85,7 +85,7 @@ elasticsearch/modules/ingest-geoip/GeoLite2-Country.mmdb
 elasticsearch/modules/ingest-geoip/geoip2-2.9.0.jar
 elasticsearch/modules/ingest-geoip/ingest-geoip-${V}.jar
 elasticsearch/modules/ingest-geoip/jackson-annotations-2.8.11.jar
-elasticsearch/modules/ingest-geoip/jackson-databind-2.8.11.4.jar
+elasticsearch/modules/ingest-geoip/jackson-databind-2.8.11.6.jar
 elasticsearch/modules/ingest-geoip/maxmind-db-1.2.2.jar
 elasticsearch/modules/ingest-geoip/plugin-descriptor.properties
 elasticsearch/modules/ingest-geoip/plugin-security.policy
