@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2020/03/24 07:54:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.216 2020/04/03 01:17:28 kn Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
@@ -88,6 +88,8 @@ CONFIGURE_ARGS =	--sysconfdir=${SYSCONFDIR} \
 CONFIGURE_ENV =		CPPFLAGS="-I${WRKSRC} -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			DIFF=diff TAR=tar
+
+DEBUG_PACKAGES =	-main
 
 USE_GMAKE =		Yes
 
