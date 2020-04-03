@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/09 11:56:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/04/03 07:19:47 landry Exp $
 @newgroup _synapse:849
 @newuser _synapse:849:849:daemon:Matrix.org Daemon:/var/synapse:/sbin/nologin
 @rcscript ${RCDIR}/synapse
@@ -58,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/app/${MODPY_PYCACHE}event_creat
 lib/python${MODPY_VERSION}/site-packages/synapse/app/${MODPY_PYCACHE}federation_reader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/app/${MODPY_PYCACHE}federation_sender.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/app/${MODPY_PYCACHE}frontend_proxy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/app/${MODPY_PYCACHE}generic_worker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/app/${MODPY_PYCACHE}homeserver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/app/${MODPY_PYCACHE}media_repository.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/app/${MODPY_PYCACHE}pusher.${MODPY_PYC_MAGIC_TAG}pyc
@@ -71,6 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/app/event_creator.py
 lib/python${MODPY_VERSION}/site-packages/synapse/app/federation_reader.py
 lib/python${MODPY_VERSION}/site-packages/synapse/app/federation_sender.py
 lib/python${MODPY_VERSION}/site-packages/synapse/app/frontend_proxy.py
+lib/python${MODPY_VERSION}/site-packages/synapse/app/generic_worker.py
 lib/python${MODPY_VERSION}/site-packages/synapse/app/homeserver.py
 lib/python${MODPY_VERSION}/site-packages/synapse/app/media_repository.py
 lib/python${MODPY_VERSION}/site-packages/synapse/app/pusher.py
@@ -527,6 +529,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/registration_fail
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/registration_success.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/room.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/room.txt
+lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/saml_error.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/sso_redirect_confirm.html
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/__init__.py
@@ -758,6 +761,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}push_ru
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}relations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}roommember.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}state.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/_base.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/background_updates.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/
@@ -1098,6 +1102,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema/delta/57/rooms_version_column.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema/delta/57/rooms_version_column_2.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema/delta/57/rooms_version_column_2.sql.sqlite
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema/delta/57/rooms_version_column_3.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema/delta/57/rooms_version_column_3.sql.sqlite
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema/full_schemas/16/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/data_stores/main/schema/full_schemas/16/application_services.sql
@@ -1189,6 +1195,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/full_schemas/54/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/full_schemas/54/full.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/schema_version.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/state.py
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/types.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/util/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/storage/util/${MODPY_PYCACHE}/
