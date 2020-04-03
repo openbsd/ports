@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-gdbm,v 1.1.1.1 2019/01/14 16:13:05 jeremy Exp $
-lib/ruby/${REV}/${SUB}/gdbm.so
+@comment $OpenBSD: PLIST-gdbm,v 1.2 2020/04/03 01:47:05 jeremy Exp $
+@so lib/ruby/${REV}/${SUB}/gdbm.so
