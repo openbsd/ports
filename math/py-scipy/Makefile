@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2020/03/10 03:31:45 daniel Exp $
+# $OpenBSD: Makefile,v 1.45 2020/04/03 15:12:07 jca Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	1.2.3
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 # XXX gcc 8 issue:
 # ld: error: dfft_subr_6.f:(.debug_loc+0x2A7D): has non-ABS relocation R_386_GOTOFF against symbol 'ntryh.3712'
@@ -20,7 +20,7 @@ CATEGORIES=		math devel
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
-WANTLIB += blas lapack m pthread ${COMPILER_LIBCXX} util
+WANTLIB += blas cblas lapack m pthread ${COMPILER_LIBCXX} util
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -39,7 +39,9 @@ MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS}
+LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
+			math/cblas \
+			math/lapack
 RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.8.2 \
 			devel/swig
 
@@ -47,6 +49,9 @@ TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
 
 MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV+=		LDFLAGS="-shared -L${LOCALBASE}/lib -pthread -lutil"
+
+post-install:
+	${MODPY_BIN} -m compileall ${WRKINST}/${MODPY_SITEPKG}/scipy
 
 do-test: fake
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
