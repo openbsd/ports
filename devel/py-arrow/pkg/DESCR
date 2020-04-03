@@ -1,4 +1,0 @@
-Arrow is a lightweight library which makes working with dates and times
-simpler. This is done by including an API which supports many common
-scenarios. Arrow can also easily generate time span, ranges and more while
-being a drop in replacement for the standard datetime module.

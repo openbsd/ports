@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.no-python3,v 1.1.1.1 2018/11/23 17:15:53 sthen Exp $
-lib/python${MODPY_VERSION}/site-packages/chai/python2.pyc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1960 2020/04/02 13:40:57 abieber Exp $
+# $OpenBSD: Makefile,v 1.1961 2020/04/03 14:47:33 paco Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1309,8 +1309,6 @@
      SUBDIR += py-argcomplete,python3
      SUBDIR += py-argh
      SUBDIR += py-argh,python3
-     SUBDIR += py-arrow
-     SUBDIR += py-arrow,python3
      SUBDIR += py-asn1
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules
@@ -1334,8 +1332,6 @@
      SUBDIR += py-backports-shutil-get-terminal-size
      SUBDIR += py-backports-ssl-match-hostname
      SUBDIR += py-bencode,python3
-     SUBDIR += py-binaryornot
-     SUBDIR += py-binaryornot,python3
      SUBDIR += py-binplist
      SUBDIR += py-biplist
      SUBDIR += py-biplist,python3
@@ -1361,8 +1357,6 @@
      SUBDIR += py-cffi
      SUBDIR += py-cffi,python3
      SUBDIR += py-cflow2dot
-     SUBDIR += py-chai
-     SUBDIR += py-chai,python3
      SUBDIR += py-characteristic
      SUBDIR += py-characteristic,python3
      SUBDIR += py-cheetah
@@ -1732,8 +1726,6 @@
      SUBDIR += py-wcwidth,python3
      SUBDIR += py-wheel
      SUBDIR += py-wheel,python3
-     SUBDIR += py-whichcraft
-     SUBDIR += py-whichcraft,python3
      SUBDIR += py-wrapt
      SUBDIR += py-wrapt,python3
      SUBDIR += py-wsgiutils

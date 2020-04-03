@@ -1,3 +1,0 @@
-Ultra-lightweight pure Python package to guess whether a file is binary
-or text, using a heuristic similar to Perl's `pp_fttext`. This package
-is cross platform and works with a variety of file types and encodings.
