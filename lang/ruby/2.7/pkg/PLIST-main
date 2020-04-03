@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2020/01/02 21:19:57 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/04/03 01:47:41 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.7,<2.8
 bin/bundle27
@@ -15,8 +15,6 @@ bin/ri27
 bin/y2racc27
 include/ruby-${REV}/
 include/ruby-${REV}/ruby/
-include/ruby-${REV}/ruby-${REV}/
-include/ruby-${REV}/ruby-${REV}/${SUB}/
 include/ruby-${REV}/ruby.h
 include/ruby-${REV}/ruby/assert.h
 include/ruby-${REV}/ruby/backward/
@@ -47,7 +45,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.7.0.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.7.1.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby27.so
@@ -462,6 +460,7 @@ lib/ruby/${REV}/irb/cmd/subirb.rb
 lib/ruby/${REV}/irb/color.rb
 lib/ruby/${REV}/irb/completion.rb
 lib/ruby/${REV}/irb/context.rb
+lib/ruby/${REV}/irb/easter-egg.rb
 lib/ruby/${REV}/irb/ext/
 lib/ruby/${REV}/irb/ext/change-ws.rb
 lib/ruby/${REV}/irb/ext/history.rb
@@ -650,7 +649,6 @@ lib/ruby/${REV}/racc/parser-text.rb
 lib/ruby/${REV}/racc/parser.rb
 lib/ruby/${REV}/racc/parserfilegenerator.rb
 lib/ruby/${REV}/racc/pre-setup
-lib/ruby/${REV}/racc/rdoc/
 lib/ruby/${REV}/racc/sourcetext.rb
 lib/ruby/${REV}/racc/state.rb
 lib/ruby/${REV}/racc/statetransitiontable.rb
@@ -1386,7 +1384,7 @@ lib/ruby/gems/${REV}/build_info/
 lib/ruby/gems/${REV}/cache/
 lib/ruby/gems/${REV}/cache/minitest-5.13.0.gem
 lib/ruby/gems/${REV}/cache/net-telnet-0.2.0.gem
-lib/ruby/gems/${REV}/cache/power_assert-1.1.5.gem
+lib/ruby/gems/${REV}/cache/power_assert-1.1.7.gem
 lib/ruby/gems/${REV}/cache/rake-13.0.1.gem
 lib/ruby/gems/${REV}/cache/test-unit-3.3.4.gem
 lib/ruby/gems/${REV}/cache/xmlrpc-0.3.0.gem
@@ -1397,10 +1395,10 @@ lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/
 lib/ruby/gems/${REV}/gems/
 lib/ruby/gems/${REV}/gems/benchmark-0.1.0/
 lib/ruby/gems/${REV}/gems/bigdecimal-2.0.0/
-lib/ruby/gems/${REV}/gems/bundler-2.1.2/
-lib/ruby/gems/${REV}/gems/bundler-2.1.2/libexec/
-lib/ruby/gems/${REV}/gems/bundler-2.1.2/libexec/bundle
-lib/ruby/gems/${REV}/gems/bundler-2.1.2/libexec/bundler
+lib/ruby/gems/${REV}/gems/bundler-2.1.4/
+lib/ruby/gems/${REV}/gems/bundler-2.1.4/libexec/
+lib/ruby/gems/${REV}/gems/bundler-2.1.4/libexec/bundle
+lib/ruby/gems/${REV}/gems/bundler-2.1.4/libexec/bundler
 lib/ruby/gems/${REV}/gems/cgi-0.1.0/
 lib/ruby/gems/${REV}/gems/csv-3.1.2/
 lib/ruby/gems/${REV}/gems/date-3.0.0/
@@ -1414,11 +1412,11 @@ lib/ruby/gems/${REV}/gems/fileutils-1.4.1/
 lib/ruby/gems/${REV}/gems/forwardable-1.3.1/
 lib/ruby/gems/${REV}/gems/gdbm-2.1.0/
 lib/ruby/gems/${REV}/gems/getoptlong-0.1.0/
-lib/ruby/gems/${REV}/gems/io-console-0.5.3/
+lib/ruby/gems/${REV}/gems/io-console-0.5.6/
 lib/ruby/gems/${REV}/gems/ipaddr-1.2.2/
-lib/ruby/gems/${REV}/gems/irb-1.2.1/
-lib/ruby/gems/${REV}/gems/irb-1.2.1/exe/
-lib/ruby/gems/${REV}/gems/irb-1.2.1/exe/irb
+lib/ruby/gems/${REV}/gems/irb-1.2.3/
+lib/ruby/gems/${REV}/gems/irb-1.2.3/exe/
+lib/ruby/gems/${REV}/gems/irb-1.2.3/exe/irb
 lib/ruby/gems/${REV}/gems/json-2.3.0/
 lib/ruby/gems/${REV}/gems/logger-1.4.2/
 lib/ruby/gems/${REV}/gems/matrix-0.2.0/
@@ -1479,29 +1477,29 @@ lib/ruby/gems/${REV}/gems/observer-0.1.0/
 lib/ruby/gems/${REV}/gems/open3-0.1.0/
 lib/ruby/gems/${REV}/gems/openssl-2.1.2/
 lib/ruby/gems/${REV}/gems/ostruct-0.2.0/
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/.gitignore
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/.travis.yml
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/BSDL
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/COPYING
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/Gemfile
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/LEGAL
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/README.rdoc
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/Rakefile
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/bin/
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/bin/console
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/bin/setup
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert/
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert.rb
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert/colorize.rb
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert/configuration.rb
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert/context.rb
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert/enable_tracepoint_events.rb
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert/inspector.rb
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert/parser.rb
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/lib/power_assert/version.rb
-lib/ruby/gems/${REV}/gems/power_assert-1.1.5/power_assert.gemspec
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/.gitignore
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/.travis.yml
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/BSDL
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/COPYING
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/Gemfile
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/LEGAL
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/README.rdoc
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/Rakefile
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/bin/
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/bin/console
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/bin/setup
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert/
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert.rb
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert/colorize.rb
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert/configuration.rb
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert/context.rb
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert/enable_tracepoint_events.rb
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert/inspector.rb
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert/parser.rb
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/lib/power_assert/version.rb
+lib/ruby/gems/${REV}/gems/power_assert-1.1.7/power_assert.gemspec
 lib/ruby/gems/${REV}/gems/prime-0.1.1/
 lib/ruby/gems/${REV}/gems/pstore-0.1.0/
 lib/ruby/gems/${REV}/gems/psych-3.1.0/
@@ -1600,7 +1598,7 @@ lib/ruby/gems/${REV}/gems/rdoc-6.2.1/exe/rdoc
 lib/ruby/gems/${REV}/gems/rdoc-6.2.1/exe/ri
 lib/ruby/gems/${REV}/gems/readline-0.0.2/
 lib/ruby/gems/${REV}/gems/readline-ext-0.1.0/
-lib/ruby/gems/${REV}/gems/reline-0.1.2/
+lib/ruby/gems/${REV}/gems/reline-0.1.3/
 lib/ruby/gems/${REV}/gems/rexml-3.2.3/
 lib/ruby/gems/${REV}/gems/rss-0.2.8/
 lib/ruby/gems/${REV}/gems/sdbm-1.0.0/
@@ -1762,7 +1760,7 @@ lib/ruby/gems/${REV}/specifications/
 lib/ruby/gems/${REV}/specifications/default/
 lib/ruby/gems/${REV}/specifications/default/benchmark-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/bigdecimal-2.0.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/bundler-2.1.2.gemspec
+lib/ruby/gems/${REV}/specifications/default/bundler-2.1.4.gemspec
 lib/ruby/gems/${REV}/specifications/default/cgi-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/csv-3.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/date-3.0.0.gemspec
@@ -1776,9 +1774,9 @@ lib/ruby/gems/${REV}/specifications/default/fileutils-1.4.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/forwardable-1.3.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/gdbm-2.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/getoptlong-0.1.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/io-console-0.5.3.gemspec
+lib/ruby/gems/${REV}/specifications/default/io-console-0.5.6.gemspec
 lib/ruby/gems/${REV}/specifications/default/ipaddr-1.2.2.gemspec
-lib/ruby/gems/${REV}/specifications/default/irb-1.2.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/irb-1.2.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/json-2.3.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/logger-1.4.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/matrix-0.2.0.gemspec
@@ -1796,7 +1794,7 @@ lib/ruby/gems/${REV}/specifications/default/racc-1.4.16.gemspec
 lib/ruby/gems/${REV}/specifications/default/rdoc-6.2.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-0.0.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-ext-0.1.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/reline-0.1.2.gemspec
+lib/ruby/gems/${REV}/specifications/default/reline-0.1.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/rexml-3.2.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/rss-0.2.8.gemspec
 lib/ruby/gems/${REV}/specifications/default/sdbm-1.0.0.gemspec
@@ -1811,7 +1809,7 @@ lib/ruby/gems/${REV}/specifications/default/yaml-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/zlib-1.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/minitest-5.13.0.gemspec
 lib/ruby/gems/${REV}/specifications/net-telnet-0.2.0.gemspec
-lib/ruby/gems/${REV}/specifications/power_assert-1.1.5.gemspec
+lib/ruby/gems/${REV}/specifications/power_assert-1.1.7.gemspec
 lib/ruby/gems/${REV}/specifications/rake-13.0.1.gemspec
 lib/ruby/gems/${REV}/specifications/test-unit-3.3.4.gemspec
 lib/ruby/gems/${REV}/specifications/xmlrpc-0.3.0.gemspec

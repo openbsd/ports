@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1.1.1 2020/01/02 21:19:58 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2020/04/03 01:47:41 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -1867,7 +1867,6 @@ share/ri/${REV}/system/Bundler/Persistent/Net/HTTP/Persistent/no_proxy-i.ri
 share/ri/${REV}/system/Bundler/Persistent/Net/HTTP/Persistent/normalize_uri-i.ri
 share/ri/${REV}/system/Bundler/Persistent/Net/HTTP/Persistent/open_timeout-i.ri
 share/ri/${REV}/system/Bundler/Persistent/Net/HTTP/Persistent/override_headers-i.ri
-share/ri/${REV}/system/Bundler/Persistent/Net/HTTP/Persistent/pipeline-i.ri
 share/ri/${REV}/system/Bundler/Persistent/Net/HTTP/Persistent/private_key%3d-i.ri
 share/ri/${REV}/system/Bundler/Persistent/Net/HTTP/Persistent/private_key-i.ri
 share/ri/${REV}/system/Bundler/Persistent/Net/HTTP/Persistent/proxy%3d-i.ri
@@ -7655,6 +7654,8 @@ share/ri/${REV}/system/Hash/rehash-i.ri
 share/ri/${REV}/system/Hash/reject%21-i.ri
 share/ri/${REV}/system/Hash/reject-i.ri
 share/ri/${REV}/system/Hash/replace-i.ri
+share/ri/${REV}/system/Hash/ruby2_keywords_hash%3f-c.ri
+share/ri/${REV}/system/Hash/ruby2_keywords_hash-c.ri
 share/ri/${REV}/system/Hash/select%21-i.ri
 share/ri/${REV}/system/Hash/select-i.ri
 share/ri/${REV}/system/Hash/shift-i.ri
@@ -7920,6 +7921,12 @@ share/ri/${REV}/system/IRB/CantReturnToNormalMode/
 share/ri/${REV}/system/IRB/CantReturnToNormalMode/cdesc-CantReturnToNormalMode.ri
 share/ri/${REV}/system/IRB/CantShiftToMultiIrbMode/
 share/ri/${REV}/system/IRB/CantShiftToMultiIrbMode/cdesc-CantShiftToMultiIrbMode.ri
+share/ri/${REV}/system/IRB/Canvas/
+share/ri/${REV}/system/IRB/Canvas/cdesc-Canvas.ri
+share/ri/${REV}/system/IRB/Canvas/draw-i.ri
+share/ri/${REV}/system/IRB/Canvas/line-i.ri
+share/ri/${REV}/system/IRB/Canvas/line0-i.ri
+share/ri/${REV}/system/IRB/Canvas/new-c.ri
 share/ri/${REV}/system/IRB/Color/
 share/ri/${REV}/system/IRB/Color/SymbolState/
 share/ri/${REV}/system/IRB/Color/SymbolState/cdesc-SymbolState.ri
@@ -7970,6 +7977,8 @@ share/ri/${REV}/system/IRB/Context/last_value-i.ri
 share/ri/${REV}/system/IRB/Context/load_modules-i.ri
 share/ri/${REV}/system/IRB/Context/main-i.ri
 share/ri/${REV}/system/IRB/Context/new-c.ri
+share/ri/${REV}/system/IRB/Context/newline_before_multiline_output%3f-i.ri
+share/ri/${REV}/system/IRB/Context/newline_before_multiline_output-i.ri
 share/ri/${REV}/system/IRB/Context/pop_workspace-i.ri
 share/ri/${REV}/system/IRB/Context/prompt_c-i.ri
 share/ri/${REV}/system/IRB/Context/prompt_i-i.ri
@@ -8243,6 +8252,11 @@ share/ri/${REV}/system/IRB/ReidlineInputMethod/gets-i.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/line-i.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/new-c.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/readable_after_eof%3f-i.ri
+share/ri/${REV}/system/IRB/RubyModel/
+share/ri/${REV}/system/IRB/RubyModel/cdesc-RubyModel.ri
+share/ri/${REV}/system/IRB/RubyModel/init_ruby_model-i.ri
+share/ri/${REV}/system/IRB/RubyModel/new-c.ri
+share/ri/${REV}/system/IRB/RubyModel/render_frame-i.ri
 share/ri/${REV}/system/IRB/StdioInputMethod/
 share/ri/${REV}/system/IRB/StdioInputMethod/cdesc-StdioInputMethod.ri
 share/ri/${REV}/system/IRB/StdioInputMethod/encoding-i.ri
@@ -8258,6 +8272,16 @@ share/ri/${REV}/system/IRB/UndefinedPromptMode/
 share/ri/${REV}/system/IRB/UndefinedPromptMode/cdesc-UndefinedPromptMode.ri
 share/ri/${REV}/system/IRB/UnrecognizedSwitch/
 share/ri/${REV}/system/IRB/UnrecognizedSwitch/cdesc-UnrecognizedSwitch.ri
+share/ri/${REV}/system/IRB/Vec/
+share/ri/${REV}/system/IRB/Vec/cdesc-Vec.ri
+share/ri/${REV}/system/IRB/Vec/cross-i.ri
+share/ri/${REV}/system/IRB/Vec/dot-i.ri
+share/ri/${REV}/system/IRB/Vec/new-c.ri
+share/ri/${REV}/system/IRB/Vec/normalize-i.ri
+share/ri/${REV}/system/IRB/Vec/sub-i.ri
+share/ri/${REV}/system/IRB/Vec/x-i.ri
+share/ri/${REV}/system/IRB/Vec/y-i.ri
+share/ri/${REV}/system/IRB/Vec/z-i.ri
 share/ri/${REV}/system/IRB/WorkSpace/
 share/ri/${REV}/system/IRB/WorkSpace/__evaluate__-i.ri
 share/ri/${REV}/system/IRB/WorkSpace/binding-i.ri
@@ -8272,6 +8296,7 @@ share/ri/${REV}/system/IRB/WorkSpace/new-c.ri
 share/ri/${REV}/system/IRB/cdesc-IRB.ri
 share/ri/${REV}/system/IRB/conf-c.ri
 share/ri/${REV}/system/IRB/default_src_encoding-c.ri
+share/ri/${REV}/system/IRB/easter_egg-c.ri
 share/ri/${REV}/system/IRB/initialize_tracer-c.ri
 share/ri/${REV}/system/IRB/irb-c.ri
 share/ri/${REV}/system/IRB/irb_abort-c.ri
@@ -16082,6 +16107,7 @@ share/ri/${REV}/system/Reline/Core/config-i.ri
 share/ri/${REV}/system/Reline/Core/dig_perfect_match_proc%3d-i.ri
 share/ri/${REV}/system/Reline/Core/emacs_editing_mode%3f-i.ri
 share/ri/${REV}/system/Reline/Core/emacs_editing_mode-i.ri
+share/ri/${REV}/system/Reline/Core/encoding-i.ri
 share/ri/${REV}/system/Reline/Core/filename_quote_characters%3d-i.ri
 share/ri/${REV}/system/Reline/Core/get_screen_size-i.ri
 share/ri/${REV}/system/Reline/Core/inner_readline-i.ri
@@ -16105,6 +16131,7 @@ share/ri/${REV}/system/Reline/Core/vi_editing_mode%3f-i.ri
 share/ri/${REV}/system/Reline/Core/vi_editing_mode-i.ri
 share/ri/${REV}/system/Reline/cdesc-Reline.ri
 share/ri/${REV}/system/Reline/core-c.ri
+share/ri/${REV}/system/Reline/encoding_system_needs-c.ri
 share/ri/${REV}/system/Reline/insert_text-c.ri
 share/ri/${REV}/system/Reline/line_editor-c.ri
 share/ri/${REV}/system/RequiredArgumentMissingError/
@@ -18571,8 +18598,6 @@ share/ri/${REV}/system/cache.ri
 share/ri/${REV}/system/fatal/
 share/ri/${REV}/system/fatal/cdesc-fatal.ri
 share/ri/${REV}/system/lib/
-share/ri/${REV}/system/lib/irb/
-share/ri/${REV}/system/lib/irb/page-ruby_logo_aa.ri
 share/ri/${REV}/system/lib/racc/
 share/ri/${REV}/system/lib/racc/page-pre-setup.ri
 share/ri/${REV}/system/lib/racc/rdoc/
