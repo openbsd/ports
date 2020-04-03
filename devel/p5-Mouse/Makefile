@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/04/03 02:54:46 afresh1 Exp $
 
 COMMENT =	Moose minus the antlers
 
 MODULES =	cpan
-DISTNAME =	Mouse-v2.5.6
+DISTNAME =	Mouse-v2.5.10
 PKGNAME =	p5-${DISTNAME:S/-v/-/}
 CATEGORIES =	devel
 
@@ -16,7 +16,7 @@ CONFIGURE_STYLE = modbuild
 
 CPAN_AUTHOR =	SKAJI
 
-BUILD_DEPENDS =	devel/p5-Module-Build-XSUtil
+BUILD_DEPENDS =	devel/p5-Module-Build-XSUtil>=0.19
 TEST_DEPENDS =	devel/p5-Declare-Constraints-Simple \
 		devel/p5-IO-String \
 		devel/p5-Locale-US \
