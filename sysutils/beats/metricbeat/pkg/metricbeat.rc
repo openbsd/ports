@@ -1,9 +1,11 @@
 #!/bin/ksh
 #
-# $OpenBSD: metricbeat.rc,v 1.4 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: metricbeat.rc,v 1.5 2020/04/04 02:57:57 pvk Exp $
 
 daemon="${PREFIX}/bin/metricbeat"
-daemon_flags="-path.config ${SYSCONFDIR}/metricbeat/"
+daemon_flags="-path.config ${SYSCONFDIR}/metricbeat \
+	-path.data ${LOCALSTATEDIR}/db/metricbeat \
+	-path.logs ${LOCALSTATEDIR}/log/metricbeat"
 
 . /etc/rc.d/rc.subr
 
