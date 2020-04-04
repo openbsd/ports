@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/07/16 21:29:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2020/04/04 20:26:17 naddy Exp $
 
 COMMENT=	GNU parser generator
 
@@ -17,17 +17,15 @@ WANTLIB=	c iconv intl m
 
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
+
 LIB_DEPENDS=	devel/gettext,-runtime
-BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/help2man \
 		devel/m4
 RUN_DEPENDS=	devel/m4
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
 CONFIGURE_ARGS=	--disable-yacc
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
-
-do-gen:
-	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} automake -fi
 
 .include <bsd.port.mk>
