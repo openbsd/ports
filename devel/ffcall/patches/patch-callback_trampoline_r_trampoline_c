@@ -1,4 +1,4 @@
-$OpenBSD: patch-callback_trampoline_r_trampoline_c,v 1.3 2010/09/23 13:38:33 joshe Exp $
+$OpenBSD: patch-callback_trampoline_r_trampoline_c,v 1.4 2020/04/04 12:55:38 jca Exp $
 
 Fix the horrible trampoline code to work on sparc and
 sparc64. OpenBSD's runtime linker trashes registers which are supposed
@@ -7,8 +7,9 @@ stack instead.
 
 Also fix powerpc and mips64.
 
---- callback/trampoline_r/trampoline.c.orig	Mon Jan 26 07:00:05 2004
-+++ callback/trampoline_r/trampoline.c	Fri Jul 30 14:34:10 2010
+Index: callback/trampoline_r/trampoline.c
+--- callback/trampoline_r/trampoline.c.orig
++++ callback/trampoline_r/trampoline.c
 @@ -21,7 +21,7 @@
  #endif
  #endif
@@ -18,7 +19,7 @@ Also fix powerpc and mips64.
  #define __rs6000netbsd__
  #else
  #if !defined(_AIX)
-@@ -196,8 +196,12 @@ extern RETGETPAGESIZETYPE getpagesize ();
+@@ -196,19 +196,23 @@ extern RETGETPAGESIZETYPE getpagesize ();
  #ifdef linux
  #include <asm/cachectl.h>
  #else
@@ -27,11 +28,23 @@ Also fix powerpc and mips64.
 +#else
  #ifdef HAVE_SYS_CACHECTL_H
  #include <sys/cachectl.h>
+ #endif
+ #endif
+ #endif
+ #endif
 +#endif
+ #ifdef __m88k__
+ #include <sys/syslocal.h>
  #endif
+ /* Inline assembly function for instruction cache flush. */
+ #if defined(__sparc__) || defined(__sparc64__) || defined(__alpha__) || defined(__hppaold__) || defined(__rs6000sysv4__) || defined(__rs6000netbsd__) || defined(__convex__)
+ #ifdef __GNUC__
+-extern inline
++static inline
+ #if defined(__sparc__) || defined(__sparc64__)
+ #include "cache-sparc.c"
  #endif
- #endif
-@@ -259,11 +259,11 @@ extern void __TR_clear_cache();
+@@ -259,11 +263,11 @@ extern void __TR_clear_cache();
  #define TRAMP_ALIGN 8
  #endif
  #if defined(__sparc__) && !defined(__sparc64__)
@@ -45,7 +58,7 @@ Also fix powerpc and mips64.
  #define TRAMP_ALIGN 16
  #endif
  #ifdef __alpha__
-@@ -614,52 +614,64 @@ __TR_function alloc_trampoline_r (address, data0, data
+@@ -614,52 +618,64 @@ __TR_function alloc_trampoline_r (address, data0, data
    /* function:
     *    sethi %hi(<data>),%g2		05000000 | (<data> >> 10)
     *    sethi %hi(<address>),%g1	03000000 | (<address> >> 10)
