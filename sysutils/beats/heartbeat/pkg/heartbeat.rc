@@ -1,9 +1,11 @@
 #!/bin/ksh
 #
-# $OpenBSD: heartbeat.rc,v 1.4 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: heartbeat.rc,v 1.5 2020/04/04 02:56:10 pvk Exp $
 
 daemon="${PREFIX}/bin/heartbeat"
-daemon_flags="-path.config ${SYSCONFDIR}/heartbeat/"
+daemon_flags="-path.config ${SYSCONFDIR}/heartbeat \
+	-path.data ${LOCALSTATEDIR}/db/heartbeat \
+	-path.logs ${LOCALSTATEDIR}/log/heartbeat"
 
 . /etc/rc.d/rc.subr
 
