@@ -1,0 +1,19 @@
+$OpenBSD: patch-libdispatch_dfilter_c,v 1.1 2020/04/04 19:26:43 cwen Exp $
+
+Fix build on BE_ARCHS, see:
+https://github.com/Unidata/netcdf-c/pull/1688
+
+Index: libdispatch/dfilter.c
+--- libdispatch/dfilter.c.orig
++++ libdispatch/dfilter.c
+@@ -40,6 +40,10 @@ Unified filter related code
+ 
+ /* Forward */
+ static int gettype(const int q0, const int q1, int* unsignedp);
++#ifdef WORDS_BIGENDIAN
++static void byteswap8(unsigned char* mem);
++static void byteswap4(unsigned char* mem);
++#endif
+ 
+ const struct LegalFormat {
+     const char* tag;

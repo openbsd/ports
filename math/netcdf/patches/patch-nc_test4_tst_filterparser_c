@@ -1,0 +1,20 @@
+$OpenBSD: patch-nc_test4_tst_filterparser_c,v 1.1 2020/04/04 19:26:43 cwen Exp $
+
+Fix build on BE_ARCHS, see:
+https://github.com/Unidata/netcdf-c/pull/1688
+
+Index: nc_test4/tst_filterparser.c
+--- nc_test4/tst_filterparser.c.orig
++++ nc_test4/tst_filterparser.c
+@@ -122,6 +122,11 @@ static const char* spectype[] = {"i", "b", "ub", "s", 
+ 
+ static int nerrs = 0;
+ 
++#ifdef WORDS_BIGENDIAN
++static void byteswap8(unsigned char* mem);
++static void byteswap4(unsigned char* mem);
++#endif
++
+ static void
+ mismatch(size_t i, unsigned int *params, const char* tag)
+ {

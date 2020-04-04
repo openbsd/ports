@@ -1,9 +1,9 @@
-$OpenBSD: patch-ncgen_ncgenl_c,v 1.1 2019/03/13 20:27:40 sthen Exp $
+$OpenBSD: patch-ncgen_ncgenl_c,v 1.2 2020/04/04 19:26:43 cwen Exp $
 
 Index: ncgen/ncgenl.c
 --- ncgen/ncgenl.c.orig
 +++ ncgen/ncgenl.c
-@@ -1420,8 +1420,6 @@ char *yytext;
+@@ -1204,8 +1204,6 @@ char *ncgtext;
  #include "ncgen.h"
  #include "ncgeny.h"
  

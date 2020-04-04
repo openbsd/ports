@@ -1,9 +1,9 @@
-$OpenBSD: patch-ncdap_test_tst_urls_sh,v 1.1 2019/03/13 20:27:40 sthen Exp $
+$OpenBSD: patch-ncdap_test_tst_urls_sh,v 1.2 2020/04/04 19:26:43 cwen Exp $
 
 Index: ncdap_test/tst_urls.sh
 --- ncdap_test/tst_urls.sh.orig
 +++ ncdap_test/tst_urls.sh
-@@ -8,7 +8,7 @@
+@@ -9,7 +9,7 @@
  # Define various sets of test targets
  
  # Figure our dst server; if none, then just stop
@@ -11,4 +11,4 @@ Index: ncdap_test/tst_urls.sh
 +DTS=`./findtestserver dap2 dts`
  if test "x$DTS" = "x" ; then
  echo "WARNING: Cannot locate test server for dts"
- exit 1
+ exit 0

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ncgen3_ncgenyy_c,v 1.1 2019/03/13 20:27:40 sthen Exp $
+$OpenBSD: patch-ncgen3_ncgenyy_c,v 1.2 2020/04/04 19:26:43 cwen Exp $
 
 Index: ncgen3/ncgenyy.c
 --- ncgen3/ncgenyy.c.orig
 +++ ncgen3/ncgenyy.c
-@@ -865,8 +865,6 @@ char *ncgtext;
+@@ -1081,8 +1081,6 @@ char *yytext;
     We include lexical definitions for all three, but use the second version.
  */
  
