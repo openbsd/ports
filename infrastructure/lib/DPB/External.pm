@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.25 2020/03/31 19:06:44 espie Exp $
+# $OpenBSD: External.pm,v 1.26 2020/04/04 08:40:36 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -78,7 +78,7 @@ sub status
 	if (!defined $v->{info}) {
 		return "unscanned/unknown";
 	}
-	if ($v->{info} == DPB::PortInfo->stub) {
+	if ($v->{info}->is_stub) {
 		return "ignored";
 	}
 	my $status = $self->{state}->{engine}->status($v);
@@ -116,6 +116,30 @@ sub wipe
 			# steal a temporary core
 			$state->engine->wipe($w, DPB::Core->new_noreg($h));
 		}
+	}
+}
+
+sub stub_out
+{
+	my ($self, $fh, $p) = @_;
+
+	my $v = DPB::PkgPath->new($p);
+	my $state = $self->{state};
+	my $info = $state->locker->get_info($v);
+	if ($info->is_bad) {
+		$state->engine->stub_out($v);
+	} elsif (defined $info->{locked}) {
+		if ($info->{same_pid} && !$info->{errored}) {
+			$fh->print($p, " is still running\n");
+			return;
+		}
+		my $w = DPB::PkgPath->new($info->{locked});
+		if ($w ne $v) {
+			$fh->print($p, " doesn't match ", $w->fullpkgpath, "\n");
+			return;
+		}
+		$state->engine->stub_out($v);
+		$state->locker->unlock($v);
 	}
 }
 
@@ -174,7 +198,7 @@ sub handle_command
 		}
 	} elsif ($line =~ m/^stats\b/) {
 		$fh->print($state->engine->statline, "\n");
-	} elsif ($line =~ m/^cores\b/) {
+	} elsif ($line =~ m/^info\s+cores\b/) {
 		DPB::Core->stats($fh, $state);
 	} elsif ($line =~ m/^status\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
@@ -197,6 +221,10 @@ sub handle_command
 		for my $p (split(/\s+/, $1)) {
 			$self->wipe($fh, $1);
 		}
+	} elsif ($line =~ m/^stub\s+(.*)/) {
+		for my $p (split(/\s+/, $1)) {
+			$self->stub_out($fh, $1);
+		}
 	} elsif ($line =~ m/^wipehost\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
 			$self->wipehost($fh, $1);
@@ -216,8 +244,11 @@ sub handle_command
 		    "\taddpath <fullpkgpath>...\n",
 		    "\tbye\n",
 		    "\tdontclean <pkgpath>...\n",
+		    "\tinfo cores\n",
+		    "\trescan\n",
 		    "\tstats\n",
 		    "\tstatus <fullpkgpath>...\n",
+		    "\tstub <fullpkgpath>...\n",
 		    "\tsummary [<logname>]\n",
 		    "\twipe <fullpkgpath>...\n",
 		    "\twipehost <hostname>...\n"
