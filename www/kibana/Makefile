@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2020/04/03 10:12:32 pvk Exp $
+# $OpenBSD: Makefile,v 1.43 2020/04/04 20:25:34 pvk Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
 V =		7.6.2
 PKGNAME =	kibana-${V}
 DISTNAME =	kibana-oss-${V}-darwin-x86_64
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -35,7 +36,8 @@ do-install:
 		${PREFIX}/share/examples/kibana/
 	rm -r ${WRKDIST}/*.{orig,txt} ${WRKDIST}/{data,plugins} \
 		${WRKDIST}/{bin/*.{orig,beforesubst},config,node}
-	find ${WRKDIST} \( -name \*~ -o -name \.*~ \) -delete
+	find ${WRKDIST} \( -name \.* -a \! -name \.cache \) -exec rm -rf {} +
+	find ${WRKDIST} -name \*~ -delete
 	cd ${WRKDIST} && cp -R * ${PREFIX}/kibana/
 	${INSTALL_DATA_DIR} ${PREFIX}/kibana/config
 	cd ${PREFIX}/kibana && \
