@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2020/03/21 16:19:27 kn Exp $
+# $OpenBSD: Makefile,v 1.42 2020/04/04 15:41:06 kn Exp $
 
 COMMENT =		low-latency voice chat client
 
 DISTNAME =		mumble-1.3.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 
@@ -33,7 +33,6 @@ LIB_DEPENDS =		audio/libsndfile>=1.0.25p0 \
 			x11/qt5/qtsvg
 
 RUN_DEPENDS =		audio/celt07 \
-			audio/celt=0.11.1v1 \
 			devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
