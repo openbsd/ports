@@ -1,13 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/02/18 09:41:35 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/04/04 02:52:58 pvk Exp $
+@extraunexec rm -rf ${LOCALSTATEDIR}/db/filebeat/{*,registry/filebeat/*}
+@extraunexec rm -rf ${LOCALSTATEDIR}/log/filebeat/*
 @rcscript ${RCDIR}/filebeat
 @bin bin/filebeat
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/filebeat/
 @sample ${SYSCONFDIR}/filebeat/
-share/examples/filebeat/README.md
+@sample ${LOCALSTATEDIR}/db/filebeat/
+@sample ${LOCALSTATEDIR}/log/filebeat/
 share/examples/filebeat/filebeat.reference.yml
 share/examples/filebeat/filebeat.yml
 @sample ${SYSCONFDIR}/filebeat/filebeat.yml
+share/examples/filebeat/modules.d/
+share/examples/filebeat/modules.d/apache.yml.disabled
+@comment share/examples/filebeat/modules.d/auditd.yml.disabled
+share/examples/filebeat/modules.d/elasticsearch.yml.disabled
+share/examples/filebeat/modules.d/haproxy.yml.disabled
+share/examples/filebeat/modules.d/icinga.yml.disabled
+@comment share/examples/filebeat/modules.d/iis.yml.disabled
+@comment share/examples/filebeat/modules.d/kafka.yml.disabled
+share/examples/filebeat/modules.d/kibana.yml.disabled
+share/examples/filebeat/modules.d/logstash.yml.disabled
+share/examples/filebeat/modules.d/mongodb.yml.disabled
+share/examples/filebeat/modules.d/mysql.yml.disabled
+share/examples/filebeat/modules.d/nats.yml.disabled
+share/examples/filebeat/modules.d/nginx.yml.disabled
+@comment share/examples/filebeat/modules.d/osquery.yml.disabled
+share/examples/filebeat/modules.d/postgresql.yml.disabled
+share/examples/filebeat/modules.d/redis.yml.disabled
+@comment share/examples/filebeat/modules.d/santa.yml.disabled
+share/examples/filebeat/modules.d/system.yml.disabled
+@comment share/examples/filebeat/modules.d/traefik.yml.disabled
 share/filebeat/
 share/filebeat/module/
 share/filebeat/module/apache/
@@ -26,14 +49,14 @@ share/filebeat/module/apache/error/manifest.yml
 share/filebeat/module/apache/module.yml
 share/filebeat/module/apache2/
 share/filebeat/module/apache2/module.yml
-share/filebeat/module/auditd/
-share/filebeat/module/auditd/log/
-share/filebeat/module/auditd/log/config/
-share/filebeat/module/auditd/log/config/log.yml
-share/filebeat/module/auditd/log/ingest/
-share/filebeat/module/auditd/log/ingest/pipeline.yml
-share/filebeat/module/auditd/log/manifest.yml
-share/filebeat/module/auditd/module.yml
+@comment share/filebeat/module/auditd/
+@comment share/filebeat/module/auditd/log/
+@comment share/filebeat/module/auditd/log/config/
+@comment share/filebeat/module/auditd/log/config/log.yml
+@comment share/filebeat/module/auditd/log/ingest/
+@comment share/filebeat/module/auditd/log/ingest/pipeline.yml
+@comment share/filebeat/module/auditd/log/manifest.yml
+@comment share/filebeat/module/auditd/module.yml
 share/filebeat/module/elasticsearch/
 share/filebeat/module/elasticsearch/audit/
 share/filebeat/module/elasticsearch/audit/config/
@@ -103,27 +126,27 @@ share/filebeat/module/icinga/startup/config/startup.yml
 share/filebeat/module/icinga/startup/ingest/
 share/filebeat/module/icinga/startup/ingest/pipeline.json
 share/filebeat/module/icinga/startup/manifest.yml
-share/filebeat/module/iis/
-share/filebeat/module/iis/access/
-share/filebeat/module/iis/access/config/
-share/filebeat/module/iis/access/config/iis-access.yml
-share/filebeat/module/iis/access/ingest/
-share/filebeat/module/iis/access/ingest/default.json
-share/filebeat/module/iis/access/manifest.yml
-share/filebeat/module/iis/error/
-share/filebeat/module/iis/error/config/
-share/filebeat/module/iis/error/config/iis-error.yml
-share/filebeat/module/iis/error/ingest/
-share/filebeat/module/iis/error/ingest/default.json
-share/filebeat/module/iis/error/manifest.yml
-share/filebeat/module/kafka/
-share/filebeat/module/kafka/log/
-share/filebeat/module/kafka/log/config/
-share/filebeat/module/kafka/log/config/log.yml
-share/filebeat/module/kafka/log/ingest/
-share/filebeat/module/kafka/log/ingest/pipeline.json
-share/filebeat/module/kafka/log/manifest.yml
-share/filebeat/module/kafka/module.yml
+@comment share/filebeat/module/iis/
+@comment share/filebeat/module/iis/access/
+@comment share/filebeat/module/iis/access/config/
+@comment share/filebeat/module/iis/access/config/iis-access.yml
+@comment share/filebeat/module/iis/access/ingest/
+@comment share/filebeat/module/iis/access/ingest/default.json
+@comment share/filebeat/module/iis/access/manifest.yml
+@comment share/filebeat/module/iis/error/
+@comment share/filebeat/module/iis/error/config/
+@comment share/filebeat/module/iis/error/config/iis-error.yml
+@comment share/filebeat/module/iis/error/ingest/
+@comment share/filebeat/module/iis/error/ingest/default.json
+@comment share/filebeat/module/iis/error/manifest.yml
+@comment share/filebeat/module/kafka/
+@comment share/filebeat/module/kafka/log/
+@comment share/filebeat/module/kafka/log/config/
+@comment share/filebeat/module/kafka/log/config/log.yml
+@comment share/filebeat/module/kafka/log/ingest/
+@comment share/filebeat/module/kafka/log/ingest/pipeline.json
+@comment share/filebeat/module/kafka/log/manifest.yml
+@comment share/filebeat/module/kafka/module.yml
 share/filebeat/module/kibana/
 share/filebeat/module/kibana/log/
 share/filebeat/module/kibana/log/config/
@@ -192,14 +215,14 @@ share/filebeat/module/nginx/error/ingest/
 share/filebeat/module/nginx/error/ingest/pipeline.json
 share/filebeat/module/nginx/error/manifest.yml
 share/filebeat/module/nginx/module.yml
-share/filebeat/module/osquery/
-share/filebeat/module/osquery/module.yml
-share/filebeat/module/osquery/result/
-share/filebeat/module/osquery/result/config/
-share/filebeat/module/osquery/result/config/result.yml
-share/filebeat/module/osquery/result/ingest/
-share/filebeat/module/osquery/result/ingest/pipeline.json
-share/filebeat/module/osquery/result/manifest.yml
+@comment share/filebeat/module/osquery/
+@comment share/filebeat/module/osquery/module.yml
+@comment share/filebeat/module/osquery/result/
+@comment share/filebeat/module/osquery/result/config/
+@comment share/filebeat/module/osquery/result/config/result.yml
+@comment share/filebeat/module/osquery/result/ingest/
+@comment share/filebeat/module/osquery/result/ingest/pipeline.json
+@comment share/filebeat/module/osquery/result/manifest.yml
 share/filebeat/module/postgresql/
 share/filebeat/module/postgresql/log/
 share/filebeat/module/postgresql/log/config/
@@ -222,14 +245,14 @@ share/filebeat/module/redis/slowlog/config/slowlog.yml
 share/filebeat/module/redis/slowlog/ingest/
 share/filebeat/module/redis/slowlog/ingest/pipeline.json
 share/filebeat/module/redis/slowlog/manifest.yml
-share/filebeat/module/santa/
-share/filebeat/module/santa/log/
-share/filebeat/module/santa/log/config/
-share/filebeat/module/santa/log/config/file.yml
-share/filebeat/module/santa/log/ingest/
-share/filebeat/module/santa/log/ingest/pipeline.json
-share/filebeat/module/santa/log/manifest.yml
-share/filebeat/module/santa/module.yml
+@comment share/filebeat/module/santa/
+@comment share/filebeat/module/santa/log/
+@comment share/filebeat/module/santa/log/config/
+@comment share/filebeat/module/santa/log/config/file.yml
+@comment share/filebeat/module/santa/log/ingest/
+@comment share/filebeat/module/santa/log/ingest/pipeline.json
+@comment share/filebeat/module/santa/log/manifest.yml
+@comment share/filebeat/module/santa/module.yml
 share/filebeat/module/system/
 share/filebeat/module/system/auth/
 share/filebeat/module/system/auth/config/
@@ -244,11 +267,11 @@ share/filebeat/module/system/syslog/config/syslog.yml
 share/filebeat/module/system/syslog/ingest/
 share/filebeat/module/system/syslog/ingest/pipeline.json
 share/filebeat/module/system/syslog/manifest.yml
-share/filebeat/module/traefik/
-share/filebeat/module/traefik/access/
-share/filebeat/module/traefik/access/config/
-share/filebeat/module/traefik/access/config/traefik-access.yml
-share/filebeat/module/traefik/access/ingest/
-share/filebeat/module/traefik/access/ingest/pipeline.json
-share/filebeat/module/traefik/access/manifest.yml
-share/filebeat/module/traefik/module.yml
+@comment share/filebeat/module/traefik/
+@comment share/filebeat/module/traefik/access/
+@comment share/filebeat/module/traefik/access/config/
+@comment share/filebeat/module/traefik/access/config/traefik-access.yml
+@comment share/filebeat/module/traefik/access/ingest/
+@comment share/filebeat/module/traefik/access/ingest/pipeline.json
+@comment share/filebeat/module/traefik/access/manifest.yml
+@comment share/filebeat/module/traefik/module.yml

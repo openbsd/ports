@@ -1,12 +1,17 @@
-$OpenBSD: README,v 1.4 2018/09/04 12:46:21 espie Exp $
+$OpenBSD: README,v 1.5 2020/04/04 02:52:58 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Migrating from Logstash Forwarder
-=================================
-When migrating from logstash-forwarder to filebeat, please review this
-document on how to adapt your configuration:
+Using filebeat modules
+======================
+Filebeat modules example configuration files are located in
+${TRUEPREFIX}/share/examples/filebeat/modules.d directory.
 
-    https://www.elastic.co/guide/en/beats/filebeat/current/migrating-from-logstash-forwarder.html
+To start using modules, create ${SYSCONFDIR}/filebeat/modules.d directory,
+copy configuration file(s) from ${TRUEPREFIX}/share/examples/filebeat/modules.d
+to ${SYSCONFDIR}/filebeat/modules.d and remove *.disabled extension.
+
+Set filebeat.config.modules option to "enabled: true" in
+${SYSCONFDIR}/filebeat/filebeat.yml and restart filebeat.
