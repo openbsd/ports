@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2019/07/13 10:59:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2020/04/04 02:44:37 pvk Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -36,9 +36,8 @@ BEATS_MODULES ?=	No
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${BEAT}/
 .for c in ${CONFIGS}
-	cp ${WRKSRC}/$c ${PREFIX}/share/examples/${BEAT}/
+	cp -R ${WRKSRC}/$c ${PREFIX}/share/examples/${BEAT}/
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/${BEAT}/
 .if defined(BEATS_MODULES) && ${BEATS_MODULES:L} == "yes"
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${BEAT}/module/
 	cd ${WRKSRC}/module && \
