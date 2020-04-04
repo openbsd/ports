@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.26 2020/04/04 08:40:36 espie Exp $
+# $OpenBSD: External.pm,v 1.27 2020/04/04 16:45:33 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -200,6 +200,8 @@ sub handle_command
 		$fh->print($state->engine->statline, "\n");
 	} elsif ($line =~ m/^info\s+cores\b/) {
 		DPB::Core->stats($fh, $state);
+	} elsif ($line =~ m/^info\s+queue\b/) {
+		$state->engine->dump_queue($fh, $state);
 	} elsif ($line =~ m/^status\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
 			my $v = DPB::PkgPath->new($p);

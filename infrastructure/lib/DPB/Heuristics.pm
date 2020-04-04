@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.36 2019/11/06 16:36:11 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.37 2020/04/04 16:45:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -329,6 +329,18 @@ sub sorted_values
 {
 	my $self = shift;
 	return [sort {$self->{h}->compare($a, $b)} values %{$self->{o}}];
+}
+
+sub dump
+{
+	my ($self, $fh, $state) = @_;
+	my $l = $self->sorted_values;
+	for my $i (0 .. 49) {
+		last if @$l == 0;
+		my $v = pop @$l;
+		$fh->print($v->fullpkgpath, " ", 
+		    DPB::Heuristics->full_weight($v), "\n");
+    	}
 }
 
 # so, the "simple" case is just a simple bin with no other bins.

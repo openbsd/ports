@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.142 2019/11/08 13:06:00 espie Exp $
+# $OpenBSD: Engine.pm,v 1.143 2020/04/04 16:45:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -63,6 +63,12 @@ sub new
 	$o->{log} = $state->logger->append("engine");
 	$o->{stats} = DPB::Stats->new($state);
 	return $o;
+}
+
+sub dump_queue
+{
+	my $self = shift;
+	$self->{buildable}->dump_queue(@_);
 }
 
 sub build_subengine_class
