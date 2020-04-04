@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2020/03/30 06:44:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2020/04/04 09:52:23 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.34.5
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -71,6 +72,10 @@ RUN_DEPENDS +=		x11/gnome/libgnomekbd
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
+
+# panels/sound/cc-speaker-test-button.c:
+# return g_strsplit ("audio-channel-front-left;audio-test-signal;bell", ";", -1);
+RUN_DEPENDS +=		audio/sound-theme-freedesktop
 
 # needed for gnome-region-panel; optional and would create a cyclic dep:
 # gnome-session -> gnome-shell -> gnome-control-center -> gnome-session
