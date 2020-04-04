@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.88 2020/04/04 14:27:21 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.89 2020/04/04 14:41:46 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -33,7 +33,7 @@ LANGUAGES =	ach af an ar ast az bg bn br bs ca cs cy da de dsb el en-GB en-US eo
 		ta te th tr uk vi xh zh-CN zh-TW
 
 BUILD_DEPENDS =	archivers/unzip
-RUN_DEPENDS =	firefox-esr-${FV:S/b/beta/}:www/firefox-esr
+RUN_DEPENDS =	firefox-esr->=${FV:S/b/beta/}:www/firefox-esr
 
 DIST_SUBDIR =	mozilla/${NAME}-esr-${FV}
 NO_BUILD =	Yes
