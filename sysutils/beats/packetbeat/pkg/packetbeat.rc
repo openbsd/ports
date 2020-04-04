@@ -1,9 +1,11 @@
 #!/bin/ksh
 #
-# $OpenBSD: packetbeat.rc,v 1.5 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: packetbeat.rc,v 1.6 2020/04/04 03:07:49 pvk Exp $
 
 daemon="${PREFIX}/bin/packetbeat"
-daemon_flags="-path.config ${SYSCONFDIR}/packetbeat/"
+daemon_flags="-path.config ${SYSCONFDIR}/packetbeat \
+	-path.data ${LOCALSTATEDIR}/db/packetbeat \
+	-path.logs ${LOCALSTATEDIR}/log/packetbeat"
 
 . /etc/rc.d/rc.subr
 
