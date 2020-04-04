@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.12 2019/12/27 00:15:46 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.13 2020/04/04 21:48:39 jca Exp $
 
 - Add support for building against libestdc++ from ports-gcc.
 - Use more *_p.a libraries from base when profiling is requested.
@@ -47,7 +47,7 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
    }
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
-@@ -255,16 +267,79 @@ OpenBSD::OpenBSD(const Driver &D, const llvm::Triple &
+@@ -255,16 +267,80 @@ OpenBSD::OpenBSD(const Driver &D, const llvm::Triple &
    getFilePaths().push_back(getDriver().SysRoot + "/usr/lib");
  }
  
@@ -69,11 +69,12 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 +        << A->getAsString(Args);
 +  }
 +  switch (getTriple().getArch()) {
-+  case llvm::Triple::arm:
 +  case llvm::Triple::aarch64:
++  case llvm::Triple::arm:
++  case llvm::Triple::mips64:
++  case llvm::Triple::ppc:
 +  case llvm::Triple::x86:
 +  case llvm::Triple::x86_64:
-+  case llvm::Triple::mips64:
 +    return ToolChain::CST_Libcxx;
 +    break;
 +  default:
