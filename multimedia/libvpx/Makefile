@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/12/24 15:08:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/04/04 08:36:55 ajacoutot Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
@@ -29,6 +29,7 @@ BUILD_DEPENDS+=	devel/yasm
 
 MAKE_FLAGS=	LIBVPX_VERSION=${LIBvpx_VERSION} verbose=yes
 
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--enable-shared \

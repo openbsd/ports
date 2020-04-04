@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/03/01 10:02:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2020/04/04 08:36:55 ajacoutot Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -29,6 +29,7 @@ COMPILER_LANGS=	c
 BUILD_DEPENDS+=	devel/nasm
 .endif
 
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	API=${LIBx264_VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2020/01/01 10:56:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.199 2020/04/04 08:36:55 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -81,6 +81,7 @@ OPTFLAGS=	${CFLAGS}
 OPTFLAGS+=	-Wno-redundant-decls
 
 FIX_EXTRACT_PERMISSIONS=	Yes
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--enable-shared \

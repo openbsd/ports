@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2020/03/30 20:10:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2020/04/04 08:36:55 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
@@ -68,6 +68,7 @@ EXTRA_CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
 # until the system headers are fixed properly.
 EXTRA_CFLAGS+=	-Wno-redundant-decls
 
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
