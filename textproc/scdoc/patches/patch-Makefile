@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2020/01/25 16:44:51 schwarze Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/04/04 16:58:26 schwarze Exp $
 
 In OpenBSD, we do not compile programs statically when it isn't necessary.
 
@@ -6,7 +6,7 @@ Index: Makefile
 --- Makefile.orig
 +++ Makefile
 @@ -1,6 +1,5 @@
- VERSION=1.10.0
+ VERSION=1.10.1
  CFLAGS+=-g -DVERSION='"$(VERSION)"' -Wall -Wextra -Werror -Wno-unused-parameter
 -LDFLAGS+=-static
  INCLUDE+=-Iinclude

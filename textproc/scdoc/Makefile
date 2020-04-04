@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/25 16:44:51 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/04 16:58:26 schwarze Exp $
 
 COMMENT =		convert scdoc text files to man(7) pages
-VERSION =		1.10.0
+VERSION =		1.10.1
 DISTNAME =		scdoc-${VERSION}
 CATEGORIES =		textproc
 HOMEPAGE =		https://git.sr.ht/~sircmpwn/scdoc
@@ -21,9 +21,5 @@ FAKE_FLAGS =		DESTDIR=${WRKINST}\
 			MANDIR=${DESTDIR}${PREFIX}/man
 
 TEST_TARGET =		check
-
-# will attempt to run the unpatched tests if they are not rm'd
-pre-test:
-	rm ${WRKSRC}/test/*.orig
 
 .include <bsd.port.mk>
