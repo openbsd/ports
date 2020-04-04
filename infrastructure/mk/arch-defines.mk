@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.70 2019/12/20 20:00:30 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.71 2020/04/04 19:35:44 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -18,7 +18,7 @@ APM_ARCHS = arm64 amd64 i386 loongson macppc sparc64
 BE_ARCHS = hppa m88k mips64 powerpc sparc64
 LE_ARCHS = aarch64 alpha amd64 arm i386 mips64el sh
 LP64_ARCHS = aarch64 alpha amd64 sparc64 mips64 mips64el
-GCC4_ARCHS = alpha hppa mips64el powerpc sh sparc64
+GCC4_ARCHS = alpha hppa mips64el sh sparc64
 GCC3_ARCHS = m88k
 # XXX easier for ports that depend on mono
 MONO_ARCHS = amd64 i386
@@ -28,7 +28,7 @@ GO_ARCHS = aarch64 amd64 arm arm64 armv7 i386
 RUST_ARCHS = aarch64 amd64 i386 sparc64
 
 # arches where the base compiler is clang
-CLANG_ARCHS = aarch64 amd64 arm i386 mips64
+CLANG_ARCHS = aarch64 amd64 arm i386 mips64 powerpc
 # arches using LLVM's linker (ld.lld); others use binutils' ld.bfd
 LLD_ARCHS = aarch64 amd64 arm i386
 
@@ -90,6 +90,7 @@ _SYSTEM_VERSION-amd64 = 4
 _SYSTEM_VERSION-arm = 3
 _SYSTEM_VERSION-i386 = 2
 _SYSTEM_VERSION-mips64 = 1
+_SYSTEM_VERSION-powerpc = 1
 _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
 _SYSTEM_VERSION-${ARCH} ?= 0
 
