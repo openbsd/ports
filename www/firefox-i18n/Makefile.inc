@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.152 2020/04/04 07:18:44 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.153 2020/04/04 14:25:06 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -9,6 +9,7 @@ ONLY_FOR_ARCHS =	amd64 i386 aarch64
 PKG_ARCH =	*
 
 FV =		74.0.1
+REVISION =	0
 V =		${FV:C/b.$//}
 NAME =		firefox-i18n
 
@@ -56,5 +57,5 @@ MESSAGE=	${PKGDIR}/MESSAGE
 SUBST_VARS =	V L
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/firefox/browser/extensions
-	${INSTALL_DATA} ${FULLDISTDIR}/$L.xpi ${PREFIX}/lib/firefox/browser/extensions/langpack-$L@firefox.mozilla.org.xpi
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/firefox/distribution/extensions
+	${INSTALL_DATA} ${FULLDISTDIR}/$L.xpi ${PREFIX}/lib/firefox/distribution/extensions/langpack-$L@firefox.mozilla.org.xpi

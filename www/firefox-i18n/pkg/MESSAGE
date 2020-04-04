@@ -1,5 +1,3 @@
-To configure Firefox for your language, go to add-ons language
-management (Tools->Add-ons->Languages), click 'activate' on your
-installed language, type "about:config" in the URL-bar and edit
-"intl.locale.requested" (e.g. fr-FR ; default is en-US), then
-restart Firefox.
+To configure Firefox for your language, go to the language section in the
+preferences, select your installed locale in the dropdown menu, then restart
+Firefox.
