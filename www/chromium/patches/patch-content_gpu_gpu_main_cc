@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.40 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.41 2020/04/04 13:38:02 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
@@ -30,6 +30,15 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
+@@ -316,7 +316,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+ 
+   base::PlatformThread::SetName("CrGpuMain");
+ 
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
+   if (base::FeatureList::IsEnabled(features::kGpuUseDisplayThreadPriority)) {
+     // Set thread priority before sandbox initialization.
+     base::PlatformThread::SetCurrentThreadPriority(
 @@ -409,17 +409,19 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
