@@ -1,4 +1,5 @@
-$OpenBSD: patch-Makefile_libretro,v 1.1.1.1 2019/05/07 08:36:19 bentley Exp $
+$OpenBSD: patch-Makefile_libretro,v 1.2 2020/04/04 10:20:36 bentley Exp $
+
 Index: Makefile.libretro
 --- Makefile.libretro.orig
 +++ Makefile.libretro
@@ -7,7 +8,18 @@ Index: Makefile.libretro
     TARGET := $(TARGET_NAME)_libretro.so
     fpic := -fPIC
 -   SHARED := -shared -Wl,-version-script=$(BUILD_DIR)/link.T -Wl,-no-undefined
-+   SHARED := -shared -Wl,-version-script=$(BUILD_DIR)/link.T
++   SHARED := -shared $(fpic) -Wl,-version-script=$(BUILD_DIR)/link.T
  
  # OS X
  else ifeq ($(platform), osx)
+@@ -298,8 +298,8 @@ else ifeq ($(platform), emscripten)
+    CXXFLAGS += -O2 -fno-exceptions -fno-rtti -DHAVE_STDINT_H -DNDEBUG
+    OBJS += $(SOURCES_LUA_C:.c=.o)
+ else
+-   CFLAGS += -O3 -DNDEBUG
+-   CXXFLAGS += -O3 -fno-exceptions -fno-rtti -DHAVE_STDINT_H -DNDEBUG
++   CFLAGS += -DNDEBUG
++   CXXFLAGS += -fno-exceptions -fno-rtti -DHAVE_STDINT_H -DNDEBUG
+    OBJS += $(SOURCES_LUA_C:.c=.o)
+ endif
+ 

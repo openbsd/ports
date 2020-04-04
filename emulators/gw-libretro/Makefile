@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/04 10:20:36 bentley Exp $
 
 COMMENT =	Game & Watch core for retroarch
 
 DISTNAME =	gw-libretro-1.6.3
+REVISION =	0
 
 # version numbers from README.md / git log
 GH_ACCOUNT =	libretro
