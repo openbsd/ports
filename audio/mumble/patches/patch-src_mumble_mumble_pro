@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_mumble_mumble_pro,v 1.5 2020/02/25 05:14:52 rsadowski Exp $
+$OpenBSD: patch-src_mumble_mumble_pro,v 1.6 2020/04/05 02:46:58 kn Exp $
+
+use celt from our tree
+
+Do not include nonexistent librt (part of libc).
 
 Index: src/mumble/mumble.pro
 --- src/mumble/mumble.pro.orig

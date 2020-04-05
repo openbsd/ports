@@ -1,75 +1,24 @@
-$OpenBSD: patch-src_mumble_CELTCodec_cpp,v 1.2 2020/02/25 05:14:52 rsadowski Exp $
+$OpenBSD: patch-src_mumble_CELTCodec_cpp,v 1.3 2020/04/05 02:46:58 kn Exp $
 
 Fix loading of CELT plugins; use celt from our tree
 
 Index: src/mumble/CELTCodec.cpp
 --- src/mumble/CELTCodec.cpp.orig
 +++ src/mumble/CELTCodec.cpp
-@@ -17,12 +17,6 @@
- #define RESOLVE(var) { * reinterpret_cast<void **>(&var) = static_cast<void *>(qlCELT.resolve(#var)); bValid = bValid && (var != NULL); }
- #endif
- 
--#ifdef Q_OS_WIN
--extern "C" {
--	void __cpuid(int a[4], int b);
--};
--#endif
--
- CELTCodec::CELTCodec(const QString &celt_version) {
- 	bValid = false;
- 	cmMode = NULL;
-@@ -31,53 +25,8 @@ CELTCodec::CELTCodec(const QString &celt_version) {
+@@ -31,6 +31,8 @@ CELTCodec::CELTCodec(const QString &celt_version) {
  	qlCELT.setLoadHints(QLibrary::ResolveAllSymbolsHint);
  
  	QStringList alternatives;
--#if defined(Q_OS_MAC)
--	alternatives << QString::fromLatin1("libcelt0.%1.dylib").arg(celt_version);
--	alternatives << QString::fromLatin1("celt0.%1.dylib").arg(celt_version);
--	alternatives << QString::fromLatin1("libcelt.%1.dylib").arg(celt_version);
--	alternatives << QString::fromLatin1("celt.%1.dylib").arg(celt_version);
--#elif defined(Q_OS_UNIX)
--	alternatives << QString::fromLatin1("libcelt0.so.%1").arg(celt_version);
--	alternatives << QString::fromLatin1("libcelt.so.%1").arg(celt_version);
--	alternatives << QString::fromLatin1("celt.so.%1").arg(celt_version);
--#else
--	int cpuinfo[4];
--	__cpuid(cpuinfo, 1);
--	if (cpuinfo[3] & 0x02000000) {
--		if (cpuinfo[3] & 0x04000000) {
--			if (cpuinfo[2] & 0x00000001) {
--				alternatives << QString::fromLatin1("celt0.%1.sse3.dll").arg(celt_version);
--			}
--			alternatives << QString::fromLatin1("celt0.%1.sse2.dll").arg(celt_version);
--		}
--		alternatives << QString::fromLatin1("celt0.%1.sse.dll").arg(celt_version);
--	}
--
--	alternatives << QString::fromLatin1("celt0.%1.dll").arg(celt_version);
--#endif
-+    alternatives << QString::fromLatin1("libcelt%1.so").arg(celt_version);
- 	foreach(const QString &lib, alternatives) {
--		qlCELT.setFileName(MumbleApplication::instance()->applicationVersionRootPath() + QLatin1String("/") + lib);
--		if (qlCELT.load()) {
--			bValid = true;
--			break;
--		}
--
--#ifdef Q_OS_MAC
--		qlCELT.setFileName(QApplication::instance()->applicationDirPath() + QLatin1String("/../Codecs/") + lib);
--		if (qlCELT.load()) {
--			bValid = true;
--			break;
--		}
--#endif
--
--#ifdef PLUGIN_PATH
--		qlCELT.setFileName(QLatin1String(MUMTEXT(PLUGIN_PATH) "/") + lib);
--		if (qlCELT.load()) {
--			bValid = true;
--			break;
--		}
--#endif
--
- 		qlCELT.setFileName(lib);
- 		if (qlCELT.load()) {
- 			bValid = true;
++	alternatives << QString::fromLatin1("libcelt%1.so").arg(celt_version);
++#if 0
+ #if defined(Q_OS_MAC)
+ 	alternatives << QString::fromLatin1("libcelt0.%1.dylib").arg(celt_version);
+ 	alternatives << QString::fromLatin1("celt0.%1.dylib").arg(celt_version);
+@@ -84,6 +86,7 @@ CELTCodec::CELTCodec(const QString &celt_version) {
+ 			break;
+ 		}
+ 	}
++#endif /* 0 */
+ 
+ 	RESOLVE(celt_mode_destroy);
+ 	RESOLVE(celt_mode_info);
