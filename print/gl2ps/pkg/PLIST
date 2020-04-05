@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/20 12:04:59 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/05 07:26:59 feinerer Exp $
 include/gl2ps.h
-lib/libgl2ps.a
+@static-lib lib/libgl2ps.a
 @lib lib/libgl2ps.so.${LIBgl2ps_VERSION}
 share/doc/gl2ps/
 share/doc/gl2ps/COPYING.GL2PS

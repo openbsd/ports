@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/05 07:26:59 feinerer Exp $
 
 COMMENT =		OpenGL to PostScript printing library
 
-DISTNAME =		gl2ps-1.4.0
+DISTNAME =		gl2ps-1.4.1
 
-SHARED_LIBS =		gl2ps	0.1 # 1.4
+SHARED_LIBS =		gl2ps	0.2 # 1.4
 
 CATEGORIES =		print
 
@@ -27,8 +27,6 @@ LIB_DEPENDS =		graphics/freeglut \
 			graphics/png
 
 TEST_IS_INTERACTIVE =	x11
-
-WRKSRC =		${WRKDIR}/${DISTNAME}-source
 
 TEST_TMP=${WRKDIR}/test_tmp
 do-test:
