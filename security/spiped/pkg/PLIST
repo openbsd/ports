@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/04/30 02:15:24 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/04/05 21:26:11 jturner Exp $
 @newgroup _spiped:707
 @newuser _spiped:707:_spiped:daemon:spiped user:/nonexistent:/sbin/nologin
 @extra ${SYSCONFDIR}/spiped/spiped.key
+@rcscript ${RCDIR}/spiped
 @bin bin/spipe
 @bin bin/spiped
 @man man/man1/spipe.1
@@ -9,11 +10,7 @@
 share/doc/spiped/
 share/doc/spiped/COPYRIGHT
 share/doc/spiped/README.md
+@mode 750
 @owner root
 @group _spiped
-@mode 750
 @sample ${SYSCONFDIR}/spiped/
-@mode
-@group
-@owner
-@rcscript ${RCDIR}/spiped
