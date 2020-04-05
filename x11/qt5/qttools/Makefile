@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/13 16:53:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/04/05 15:43:05 rsadowski Exp $
 
 QT5NAME =		QtTools
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin
 PKGNAME-webview =	qwebview-${VERSION}
+REVISON-webview =	0
 
 DPB_PROPERTIES =	parallel
 

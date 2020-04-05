@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_WebKit_qt_WebCoreSupport_QWebFrameAdapter_cpp,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
+$OpenBSD: patch-Source_WebKit_qt_WebCoreSupport_QWebFrameAdapter_cpp,v 1.2 2020/04/05 15:43:06 rsadowski Exp $
 
 Index: Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp
 --- Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp.orig
 +++ Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp
-@@ -964,6 +964,9 @@ void QWebFrameAdapter::setViewportSize(const QSize& si
+@@ -965,6 +965,9 @@ void QWebFrameAdapter::setViewportSize(const QSize& si
      if (view->needsLayout())
          view->layout();
      view->adjustViewSize();

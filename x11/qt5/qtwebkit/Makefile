@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/03/21 21:18:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2020/04/05 15:43:06 rsadowski Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -8,16 +8,15 @@ CATEGORIES =		www
 
 DPB_PROPERTIES =	parallel
 
-VERSION =		${QT5_WEBKIT_VERSION}
-DISTNAME =		qtwebkit-${QT5_WEBKIT_VERSION}-alpha3
+DISTNAME =		qtwebkit-${QT5_WEBKIT_VERSION:C/alpha4v0/-alpha4/}
 PKGNAME =		qtwebkit-${QT5_WEBKIT_VERSION}
-REVISION =		1
 
-SHARED_LIBS +=  Qt5WebKit               3.0 # 5.9
-SHARED_LIBS +=  Qt5WebKitWidgets        3.0 # 5.9
+
+SHARED_LIBS +=  Qt5WebKit               3.1 # 5.9
+SHARED_LIBS +=  Qt5WebKitWidgets        3.1 # 5.9
 SHARED_LIBS +=  JavaScriptCore          0.0 # 5.212.9
-SHARED_LIBS +=  WebCore                 0.0 # 5.212.9
-SHARED_LIBS +=  WebKit2                 0.0 # 5.212.9
+SHARED_LIBS +=  WebCore                 1.0 # 5.212.9
+SHARED_LIBS +=  WebKit2                 0.1 # 5.212.9
 SHARED_LIBS +=  WTF                     0.0 # 5.212.9
 
 # Mostly LGPLv2.1 or LGPLv3 for code; FDLv1.3 for documentation.
@@ -47,6 +46,7 @@ CONFIGURE_STYLE =	cmake
 # Remove default "first" target and build all
 ALL_TARGET =		
 
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
@@ -58,6 +58,9 @@ BUILD_DEPENDS =		devel/bison \
 
 RUN_DEPENDS =		geo/geoclue \
 			x11/dbus
+
+# avoid using wrong $VERSION
+RUN_DEPENDS-examples =
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS =		databases/sqlite3 \
@@ -96,6 +99,8 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX="${WRKINST}${TRUEPREFIX}" \
 			-DKDE_INSTALL_QTPLUGINDIR=${WRKINST}${MODQT_LIBDIR}/plugins \
 			-DKDE_INSTALL_LIBDIR=${WRKINST}${MODQT_LIBDIR} \
 			-DKDE_INSTALL_QMLDIR=${WRKINST}${MODQT_LIBDIR}/qml
+
+CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN}
 
 .include <bsd.port.arch.mk>
 

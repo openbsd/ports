@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_CMakeLists_txt,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
+$OpenBSD: patch-Source_JavaScriptCore_CMakeLists_txt,v 1.2 2020/04/05 15:43:06 rsadowski Exp $
 
 Index: Source/JavaScriptCore/CMakeLists.txt
 --- Source/JavaScriptCore/CMakeLists.txt.orig
 +++ Source/JavaScriptCore/CMakeLists.txt
-@@ -1286,6 +1286,7 @@ elseif (WTF_CPU_S390)
+@@ -1287,6 +1287,7 @@ elseif (WTF_CPU_S390)
  elseif (WTF_CPU_S390X)
  elseif (WTF_CPU_MIPS)
  elseif (WTF_CPU_SH4)
