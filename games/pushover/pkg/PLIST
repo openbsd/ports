@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/01 02:15:15 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/05 13:01:54 jasper Exp $
+@conflict py3-pushover-*
 @bin bin/pushover
 share/doc/pushover/
 share/doc/pushover/AUTHORS
