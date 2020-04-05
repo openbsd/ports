@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.563 2020/03/21 09:13:51 kn Exp $
+# $OpenBSD: Makefile,v 1.564 2020/04/05 13:03:13 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -269,6 +269,7 @@
      SUBDIR += py-prometheus_client,python3
      SUBDIR += py-psutil
      SUBDIR += py-psutil,python3
+     SUBDIR += py-pushover,python3
      SUBDIR += py-pynetbox
      SUBDIR += py-pynetbox,python3
      SUBDIR += py-scandir
