@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2020/04/05 02:46:58 kn Exp $
+# $OpenBSD: Makefile,v 1.44 2020/04/05 21:14:44 kn Exp $
 
 COMMENT =		low-latency voice chat client
 
 DISTNAME =		mumble-1.3.0
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		audio
 
@@ -22,8 +22,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODULES =		devel/qmake x11/qt5
 
-BUILD_DEPENDS =		audio/celt07 \
-			devel/boost
+BUILD_DEPENDS =		devel/boost
 
 LIB_DEPENDS =		audio/libsndfile>=1.0.25p0 \
 			audio/opus \
@@ -32,8 +31,7 @@ LIB_DEPENDS =		audio/libsndfile>=1.0.25p0 \
 			devel/protobuf \
 			x11/qt5/qtsvg
 
-RUN_DEPENDS =		audio/celt07 \
-			devel/desktop-file-utils \
+RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 # CONFIG+=c++11 because of protobuf
@@ -43,7 +41,6 @@ MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			CONFIG+=no-11x \
 			CONFIG+=no-alsa \
 			CONFIG+=no-bonjour \
-			CONFIG+=no-bundled-celt \
 			CONFIG+=no-bundled-opus \
 			CONFIG+=no-bundled-speex \
 			CONFIG+=no-crash-report \
@@ -56,6 +53,7 @@ MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			CONFIG+=no-server \
 			CONFIG+=no-speechd \
 			CONFIG+=no-update \
+			CONFIG+=bundled-celt \
 			CONFIG+=packaged \
 			CONFIG+=portaudio \
 			CONFIG+=release \

@@ -1,4 +1,7 @@
-$OpenBSD: patch-plugins_link_link_pro,v 1.4 2020/02/25 05:14:52 rsadowski Exp $
+$OpenBSD: patch-plugins_link_link_pro,v 1.5 2020/04/05 21:14:44 kn Exp $
+
+Do not link against nonexistent librt (part of libc).
+
 Index: plugins/link/link.pro
 --- plugins/link/link.pro.orig
 +++ plugins/link/link.pro

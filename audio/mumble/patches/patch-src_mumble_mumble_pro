@@ -1,31 +1,11 @@
-$OpenBSD: patch-src_mumble_mumble_pro,v 1.6 2020/04/05 02:46:58 kn Exp $
-
-use celt from our tree
+$OpenBSD: patch-src_mumble_mumble_pro,v 1.7 2020/04/05 21:14:44 kn Exp $
 
 Do not include nonexistent librt (part of libc).
 
 Index: src/mumble/mumble.pro
 --- src/mumble/mumble.pro.orig
 +++ src/mumble/mumble.pro
-@@ -320,16 +320,9 @@ CONFIG(sbcelt) {
-   LIBS *= -lcelt -lsbcelt
-   DEFINES *= SBCELT_PREFIX_API SBCELT_COMPAT_API USE_SBCELT
- } else {
--  unix:!CONFIG(bundled-celt):system($$PKG_CONFIG --atleast-version=0.7.0 celt) {
-+  unix:!CONFIG(bundled-celt):system($$PKG_CONFIG --atleast-version=0.7.0 celt07) {
-     CONFIG *= no-bundled-celt
-   }
--  CONFIG(no-bundled-celt) {
--    INCLUDEPATH *= /usr/include/celt
--    unix {
--      QMAKE_CFLAGS *= "-I/usr/include/celt" "-isystem /usr/include/celt"
--      QMAKE_CXXFLAGS *= "-I/usr/include/celt" "-isystem /usr/include/celt"
--    }
--  }
-   !CONFIG(no-bundled-celt) {
-     INCLUDEPATH *= ../../3rdparty/celt-0.7.0-src/libcelt
-     unix {
-@@ -539,9 +532,6 @@ unix {
+@@ -539,9 +539,6 @@ unix {
      }
      
      must_pkgconfig(x11)
