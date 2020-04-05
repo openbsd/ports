@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.428 2020/03/30 13:48:48 fcambus Exp $
+# $OpenBSD: Makefile,v 1.429 2020/04/05 21:26:04 kn Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -20,7 +20,6 @@
      SUBDIR += cd-discid
      SUBDIR += cdparanoia
      SUBDIR += celt
-     SUBDIR += celt07
      SUBDIR += checkmate
      SUBDIR += chromaprint
      SUBDIR += clementine

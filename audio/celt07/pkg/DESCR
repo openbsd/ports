@@ -1,9 +1,0 @@
-The CELT codec is an experimental audio codec for use in low-delay
-speech and audio communication. It's meant to close the gap between
-Vorbis and Speex for applications where both high quality audio and
-low delay are desired.
-
-This package contains the celt 0.7 API.
-
-Note that the CELT codec has been merged into the IETF Opus codec
-(http://opus-codec.org/) and is now considered obsolete.

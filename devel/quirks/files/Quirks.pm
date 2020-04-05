@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.930 2020/04/03 15:36:10 paco Exp $
+# $OpenBSD: Quirks.pm,v 1.931 2020/04/05 21:26:04 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1474,6 +1474,7 @@ my $obsolete_reason = {
 	'py3-binaryornot' => 1,
 	'py-whichcraft' => 1,
 	'py3-whichcraft' => 1,
+	'celt07' => 20,
 };
 
 # reasons for obsolete packages
@@ -1498,6 +1499,7 @@ my @msg = (
 	"old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb", #17
 	"no longer maintained upstream, suggest kompare", #18
 	"no longer maintained upstream, suggest sqlitebrowser, kexi", #19
+	"merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now", #20
 );
 
 # ->is_base_system($handle, $state):
