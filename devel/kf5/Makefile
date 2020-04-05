@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/23 18:01:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2020/04/05 11:04:03 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules
@@ -30,7 +30,7 @@ SUBDIR += sonnet
 SUBDIR += threadweaver
 SUBDIR += syntax-highlighting
 SUBDIR += prison
-#SUBDIR += syndication enable later
+SUBDIR += syndication
 SUBDIR += kholidays
 
 # tier 2
