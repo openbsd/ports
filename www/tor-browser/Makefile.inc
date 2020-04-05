@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.22 2020/03/25 07:32:47 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2020/04/05 16:58:27 landry Exp $
 
 MAINTAINER ?=		Caspar Schutijser <caspar@schutijser.com>
 HOMEPAGE ?=		https://www.torproject.org
 PERMIT_PACKAGE ?=	Yes
 CATEGORIES =		www
 BROWSER_NAME =		tor-browser
-TB_VERSION =		9.0.7
+TB_VERSION =		9.0.8
 TB_PREFIX =		tb
 
 SUBST_VARS +=		BROWSER_NAME TB_VERSION
