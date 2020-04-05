@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2020/01/26 11:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2020/04/05 15:44:52 naddy Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-powerpc =	pl-modul.c:1497: internal compiler error: in extract_insn, at recog.c:2077
@@ -7,7 +7,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 COMMENT =		Prolog for the real world
 
 V =			7.6.0
-REVISION =		5
+REVISION =		6
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang

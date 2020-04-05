@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/01/12 11:37:28 cwen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/04/05 15:44:52 naddy Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
@@ -16,7 +16,7 @@ USE_LLD = No
 DPB_PROPERTIES = parallel
 
 V = 8.3.0
-REVISION = 4
+REVISION = 5
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/09/07 13:16:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2020/04/05 15:44:52 naddy Exp $
 
 BROKEN-i386 =		segfault during build since switch to clang
 
@@ -6,7 +6,7 @@ COMMENT =		basic widget set, based on EFL
 
 VERSION =		1.7.10
 DISTNAME =		elementary-${VERSION}
-REVISION =		15
+REVISION =		16
 
 SHARED_LIBS +=	elementary                1.0 # 8.10
 
