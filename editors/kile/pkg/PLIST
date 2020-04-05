@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/03/23 18:01:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/04/05 15:49:09 rsadowski Exp $
 @bin bin/kile
 @so lib/libkdeinit5_kile.so
 share/applications/org.kde.kile.desktop
@@ -295,6 +295,7 @@ share/doc/kile/
 share/doc/kile/AUTHORS
 share/doc/kile/ChangeLog
 share/doc/kile/README
+share/doc/kile/README.MacOSX
 share/doc/kile/README.cwl
 share/doc/kile/kile-remote-control.txt
 share/examples/kile/
@@ -302,12 +303,15 @@ share/examples/kile/xdg/
 share/examples/kile/xdg/kile.categories
 @sample ${SYSCONFDIR}/xdg/kile.categories
 share/icons/hicolor/128x128/apps/kile.png
+share/icons/hicolor/150x150/apps/kile.png
 share/icons/hicolor/16x16/apps/kile.png
 share/icons/hicolor/22x22/apps/kile.png
+share/icons/hicolor/310x310/apps/kile.png
 share/icons/hicolor/32x32/apps/kile.png
+share/icons/hicolor/44x44/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
 share/icons/hicolor/64x64/apps/kile.png
-share/icons/hicolor/scalable/apps/kile.svgz
+share/icons/hicolor/scalable/apps/kile.svg
 share/kconf_update/kile.upd
 share/kconf_update/kile1.6_upd.pl
 share/kconf_update/kile1.7_upd.pl
@@ -496,14 +500,12 @@ share/kile/icons/hicolor/16x16/actions/closegroup.png
 share/kile/icons/hicolor/16x16/actions/complete1.png
 share/kile/icons/hicolor/16x16/actions/complete2.png
 share/kile/icons/hicolor/16x16/actions/complete3.png
-share/kile/icons/hicolor/16x16/actions/configure_kile.png
 share/kile/icons/hicolor/16x16/actions/configure_project.png
 share/kile/icons/hicolor/16x16/actions/contents.png
 share/kile/icons/hicolor/16x16/actions/ddot.png
 share/kile/icons/hicolor/16x16/actions/delenv_i.png
 share/kile/icons/hicolor/16x16/actions/delenv_o.png
 share/kile/icons/hicolor/16x16/actions/deleol.png
-share/kile/icons/hicolor/16x16/actions/delete.png
 share/kile/icons/hicolor/16x16/actions/delgroup_i.png
 share/kile/icons/hicolor/16x16/actions/delgroup_o.png
 share/kile/icons/hicolor/16x16/actions/delline.png
@@ -556,7 +558,6 @@ share/kile/icons/hicolor/16x16/actions/medskip.png
 share/kile/icons/hicolor/16x16/actions/medspace.png
 share/kile/icons/hicolor/16x16/actions/minipage.png
 share/kile/icons/hicolor/16x16/actions/modified.png
-share/kile/icons/hicolor/16x16/actions/modonhd.png
 share/kile/icons/hicolor/16x16/actions/multline.png
 share/kile/icons/hicolor/16x16/actions/nextbullet.png
 share/kile/icons/hicolor/16x16/actions/nextparagraph.png
@@ -632,7 +633,6 @@ share/kile/icons/hicolor/22x22/actions/cline.png
 share/kile/icons/hicolor/22x22/actions/complete1.png
 share/kile/icons/hicolor/22x22/actions/complete2.png
 share/kile/icons/hicolor/22x22/actions/complete3.png
-share/kile/icons/hicolor/22x22/actions/configure_kile.png
 share/kile/icons/hicolor/22x22/actions/configure_project.png
 share/kile/icons/hicolor/22x22/actions/contents.png
 share/kile/icons/hicolor/22x22/actions/convert.png
@@ -1825,7 +1825,6 @@ share/kile/test/test_plain.tex
 share/kile/usermenu/
 share/kile/usermenu/example.xml
 share/locale/ar/LC_MESSAGES/kile.mo
-share/locale/ast/LC_MESSAGES/kile.mo
 share/locale/bg/LC_MESSAGES/kile.mo
 share/locale/bs/LC_MESSAGES/kile.mo
 share/locale/ca/LC_MESSAGES/kile.mo
@@ -1849,6 +1848,7 @@ share/locale/ia/LC_MESSAGES/kile.mo
 share/locale/it/LC_MESSAGES/kile.mo
 share/locale/ja/LC_MESSAGES/kile.mo
 share/locale/kk/LC_MESSAGES/kile.mo
+share/locale/ko/LC_MESSAGES/kile.mo
 share/locale/lt/LC_MESSAGES/kile.mo
 share/locale/mai/LC_MESSAGES/kile.mo
 share/locale/mr/LC_MESSAGES/kile.mo

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/23 18:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.40 2020/04/05 15:49:09 rsadowski Exp $
 
 COMMENT =	user-friendly TeX/LaTeX editor for KDE
 
 CATEGORIES =	editors
 
-DISTNAME =	kile-2.9.92
-REVISION =	2
+DISTNAME =	kile-2.9.93
 
 HOMEPAGE =	https://kile.sourceforge.io
 
@@ -31,12 +30,12 @@ EXTRACT_SUFX =	.tar.bz2
 MODULES =	devel/kf5 \
 		multimedia/phonon
 
-BUILD_DEPENDS +=devel/gettext,-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools \
 		devel/kf5/kinit \
 		x11/kde-applications/kate
 
-RUN_DEPENDS +=	devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kdoctools \
 		devel/kf5/kinit \
 		graphics/ImageMagick \
@@ -45,7 +44,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		x11/kde-applications/kate
 
-LIB_DEPENDS +=	devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
@@ -66,6 +65,7 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
 		print/poppler,-qt5 \
-		x11/kde-applications/okular
+		x11/kde-applications/okular \
+		x11/qt5/qtscript
 
 .include <bsd.port.mk>
