@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/04/05 09:45:30 ajacoutot Exp $
 
 COMMENT =	lightweight Tox client
 
@@ -35,5 +35,8 @@ NO_TEST =	yes
 WRKDIST =	${WRKDIR}/uTox
 
 CONFIGURE_ARGS =-DLLD_EMUL:String=${LLD_EMUL}
+
+post-extract:
+	perl -i -pe 's/\r$$//' ${WRKSRC}/src/av/audio.h
 
 .include <bsd.port.mk>

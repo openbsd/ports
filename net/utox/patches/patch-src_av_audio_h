@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_av_audio_h,v 1.1 2020/04/05 09:45:30 ajacoutot Exp $
+
+Fix build with newer OpenAL.
+
+Index: src/av/audio.h
+--- src/av/audio.h.orig
++++ src/av/audio.h
+@@ -5,7 +5,11 @@
+ #include <stdint.h>
+ #include <stdbool.h>
+ 
+-typedef struct ALCdevice_struct ALCdevice;
++#ifdef __APPLE__
++#include <OpenAL/alc.h>
++#else
++#include <AL/alc.h>
++#endif
+ 
+ extern bool utox_audio_thread_init;
+ 
