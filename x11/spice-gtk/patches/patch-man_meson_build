@@ -1,6 +1,9 @@
-$OpenBSD: patch-man_meson_build,v 1.1 2020/04/03 10:32:09 ajacoutot Exp $
+$OpenBSD: patch-man_meson_build,v 1.2 2020/04/05 09:47:09 ajacoutot Exp $
 
-https://gitlab.freedesktop.org/spice/spice-gtk/-/merge_requests/40
+From c355bc02e33ff047a876c71b5b5d269fea2a7a6e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 3 Apr 2020 12:07:56 +0200
+Subject: [PATCH] Install man pages under mandir.
 
 Index: man/meson.build
 --- man/meson.build.orig
@@ -10,7 +13,7 @@ Index: man/meson.build
              input : 'spice-client.pod',
              install : true,
 -            install_dir : spice_gtk_datadir / 'man' / 'man1',
-+            install_dir : join_paths(get_option('prefix'), get_option('mandir'), 'man1'),
++            install_dir : get_option('prefix') / get_option('mandir') / 'man1',
              build_by_default : true,
              command : [pod2man, '-c', 'Spice-GTK Documentation', '@INPUT@', '@OUTPUT@'])
  endif
