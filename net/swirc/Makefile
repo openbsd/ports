@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/09 19:25:33 solene Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/05 18:08:29 solene Exp $
 
 COMMENT =	curses icb and irc client
-DISTNAME =	swirc-3.2.1
+DISTNAME =	swirc-3.2.3
 CATEGORIES =	net
 HOMEPAGE =	https://www.nifty-networks.net/swirc/
 
