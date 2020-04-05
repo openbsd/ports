@@ -1,32 +1,32 @@
-$OpenBSD: patch-gcc_cgraph_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_cgraph_c,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/cgraph.c
 --- gcc/cgraph.c.orig
 +++ gcc/cgraph.c
-@@ -1513,7 +1513,7 @@ dump_cgraph_node (FILE *f, struct cgraph_node *node)
-   if (node->analyzed)
-     fprintf (f, " analyzed");
-   if (node->count)
--    fprintf (f, " executed "HOST_WIDEST_INT_PRINT_DEC"x",
-+    fprintf (f, " executed " HOST_WIDEST_INT_PRINT_DEC"x",
- 	     (HOST_WIDEST_INT)node->count);
-   if (node->origin)
-     fprintf (f, " nested in: %s", cgraph_node_asm_name (node->origin));
-@@ -1565,7 +1565,7 @@ dump_cgraph_node (FILE *f, struct cgraph_node *node)
-       fprintf (f, "%s/%i ", cgraph_node_asm_name (edge->caller),
- 	       edge->caller->symbol.order);
-       if (edge->count)
--	fprintf (f, "("HOST_WIDEST_INT_PRINT_DEC"x) ",
-+	fprintf (f, "(" HOST_WIDEST_INT_PRINT_DEC"x) ",
- 		 (HOST_WIDEST_INT)edge->count);
-       if (edge->frequency)
- 	fprintf (f, "(%.2f per call) ",
-@@ -1588,7 +1588,7 @@ dump_cgraph_node (FILE *f, struct cgraph_node *node)
-       if (edge->indirect_inlining_edge)
- 	fprintf(f, "(indirect_inlining) ");
-       if (edge->count)
--	fprintf (f, "("HOST_WIDEST_INT_PRINT_DEC"x) ",
-+	fprintf (f, "(" HOST_WIDEST_INT_PRINT_DEC"x) ",
- 		 (HOST_WIDEST_INT)edge->count);
-       if (edge->frequency)
- 	fprintf (f, "(%.2f per call) ",
+@@ -1326,7 +1326,7 @@ cgraph_edge::redirect_call_stmt_to_callee (void)
+ 	  if (dump_file)
+ 	    fprintf (dump_file,
+ 		     "Expanding speculative call of %s/%i -> %s/%i count:"
+-		     "%"PRId64"\n",
++		     "%" PRId64"\n",
+ 		     xstrdup_for_dump (e->caller->name ()),
+ 		     e->caller->order,
+ 		     xstrdup_for_dump (e->callee->name ()),
+@@ -1958,7 +1958,7 @@ cgraph_edge::dump_edge_flags (FILE *f)
+   if (indirect_inlining_edge)
+     fprintf (f, "(indirect_inlining) ");
+   if (count)
+-    fprintf (f, "(%"PRId64"x) ", (int64_t)count);
++    fprintf (f, "(%" PRId64"x) ", (int64_t)count);
+   if (frequency)
+     fprintf (f, "(%.2f per call) ", frequency / (double)CGRAPH_FREQ_BASE);
+   if (can_throw_external)
+@@ -1994,7 +1994,7 @@ cgraph_node::dump (FILE *f)
+   fprintf (f, "  First run: %i\n", tp_first_run);
+   fprintf (f, "  Function flags:");
+   if (count)
+-    fprintf (f, " executed %"PRId64"x",
++    fprintf (f, " executed %" PRId64"x",
+ 	     (int64_t)count);
+   if (origin)
+     fprintf (f, " nested in: %s", origin->asm_name ());

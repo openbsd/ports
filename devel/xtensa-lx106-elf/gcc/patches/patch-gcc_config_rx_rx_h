@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_rx_rx_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_rx_rx_h,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/rx/rx.h
 --- gcc/config/rx/rx.h.orig
 +++ gcc/config/rx/rx.h
-@@ -549,15 +549,15 @@ typedef unsigned int CUMULATIVE_ARGS;
+@@ -556,15 +556,15 @@ typedef unsigned int CUMULATIVE_ARGS;
  	  switch ((ALIGN) / BITS_PER_UNIT)				\
              {								\
              case 4:							\
@@ -22,7 +22,7 @@ Index: gcc/config/rx/rx.h
  		       (SIZE));						\
  	      break;							\
              }								\
-@@ -566,7 +566,7 @@ typedef unsigned int CUMULATIVE_ARGS;
+@@ -573,7 +573,7 @@ typedef unsigned int CUMULATIVE_ARGS;
          {								\
            fprintf ((FILE), "%s", COMMON_ASM_OP);			\
            assemble_name ((FILE), (NAME));				\

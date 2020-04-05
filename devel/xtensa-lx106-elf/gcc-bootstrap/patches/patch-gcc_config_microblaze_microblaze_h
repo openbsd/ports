@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_microblaze_microblaze_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_microblaze_microblaze_h,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/microblaze/microblaze.h
 --- gcc/config/microblaze/microblaze.h.orig
 +++ gcc/config/microblaze/microblaze.h
-@@ -659,7 +659,7 @@ do {									\
+@@ -657,7 +657,7 @@ do {									\
      }                                                                   \
    fprintf (FILE, "%s", COMMON_ASM_OP);                                  \
    assemble_name ((FILE), (NAME));					\
@@ -12,7 +12,7 @@ Index: gcc/config/microblaze/microblaze.h
             (SIZE), (ALIGN) / BITS_PER_UNIT);                            \
    ASM_OUTPUT_TYPE_DIRECTIVE (FILE, NAME, "object");			\
  } while (0)
-@@ -679,7 +679,7 @@ do {									\
+@@ -677,7 +677,7 @@ do {									\
      }                                                                   \
    fprintf (FILE, "%s", LCOMMON_ASM_OP);                                 \
    assemble_name ((FILE), (NAME));					\

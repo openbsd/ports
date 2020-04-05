@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_rs6000_xcoff_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_rs6000_xcoff_h,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/rs6000/xcoff.h
 --- gcc/config/rs6000/xcoff.h.orig
 +++ gcc/config/rs6000/xcoff.h
-@@ -271,7 +271,7 @@
+@@ -208,7 +208,7 @@
  #define SKIP_ASM_OP "\t.space "
  
  #define ASM_OUTPUT_SKIP(FILE,SIZE)  \
@@ -12,7 +12,7 @@ Index: gcc/config/rs6000/xcoff.h
  
  /* This says how to output an assembler line
     to define a global common symbol.  */
-@@ -282,12 +282,12 @@
+@@ -219,12 +219,12 @@
    do { fputs (COMMON_ASM_OP, (FILE));			\
         RS6000_OUTPUT_BASENAME ((FILE), (NAME));		\
         if ((ALIGN) > 32)				\
@@ -28,7 +28,7 @@ Index: gcc/config/rs6000/xcoff.h
    } while (0)
  
  /* This says how to output an assembler line
-@@ -304,15 +304,15 @@
+@@ -241,15 +241,15 @@
    do { fputs (LOCAL_COMMON_ASM_OP, (FILE));			\
         RS6000_OUTPUT_BASENAME ((FILE), (NAME));			\
         if ((ALIGN) > 32)					\
@@ -47,7 +47,7 @@ Index: gcc/config/rs6000/xcoff.h
  		  (SIZE), xcoff_bss_section_name);		\
       } while (0)
  #endif
-@@ -320,7 +320,7 @@
+@@ -257,7 +257,7 @@
  #define ASM_OUTPUT_LOCAL(FILE, NAME, SIZE, ROUNDED)	\
    do { fputs (LOCAL_COMMON_ASM_OP, (FILE));		\
         RS6000_OUTPUT_BASENAME ((FILE), (NAME));		\
@@ -56,7 +56,7 @@ Index: gcc/config/rs6000/xcoff.h
  		(TARGET_32BIT ? (SIZE) : (ROUNDED)),	\
  		xcoff_bss_section_name);		\
       } while (0)
-@@ -329,7 +329,7 @@
+@@ -266,7 +266,7 @@
  #define ASM_OUTPUT_TLS_COMMON(FILE, DECL, NAME, SIZE)	\
    do { fputs(COMMON_ASM_OP, (FILE));			\
         RS6000_OUTPUT_BASENAME ((FILE), (NAME));		\

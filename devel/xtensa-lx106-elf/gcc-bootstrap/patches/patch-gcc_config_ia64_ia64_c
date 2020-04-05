@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_ia64_ia64_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_ia64_ia64_c,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/ia64/ia64.c
 --- gcc/config/ia64/ia64.c.orig
 +++ gcc/config/ia64/ia64.c
-@@ -798,7 +798,7 @@ ia64_vms_output_aligned_decl_common (FILE *file, tree 
+@@ -858,7 +858,7 @@ ia64_vms_output_aligned_decl_common (FILE *file, tree 
  
    /*  Code from elfos.h.  */
    assemble_name (file, name);
@@ -12,7 +12,7 @@ Index: gcc/config/ia64/ia64.c
             size, align / BITS_PER_UNIT);
  
    fputc ('\n', file);
-@@ -9959,7 +9959,7 @@ process_cfa_adjust_cfa (FILE *asm_out_file, rtx pat, r
+@@ -10032,7 +10032,7 @@ process_cfa_adjust_cfa (FILE *asm_out_file, rtx pat, r
  	      gcc_assert (!frame_pointer_needed);
  	      if (unwind)
  		fprintf (asm_out_file,

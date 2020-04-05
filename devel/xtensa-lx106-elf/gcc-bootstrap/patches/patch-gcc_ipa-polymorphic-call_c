@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_ipa-polymorphic-call_c,v 1.1 2020/04/05 21:55:01 tracey Exp $
+
+Index: gcc/ipa-polymorphic-call.c
+--- gcc/ipa-polymorphic-call.c.orig
++++ gcc/ipa-polymorphic-call.c
+@@ -652,7 +652,7 @@ ipa_polymorphic_call_context::dump (FILE *f, bool newl
+ 	    fprintf (f, " (or a derived type)");
+ 	  if (maybe_in_construction)
+ 	    fprintf (f, " (maybe in construction)");
+-	  fprintf (f, " offset "HOST_WIDE_INT_PRINT_DEC,
++	  fprintf (f, " offset " HOST_WIDE_INT_PRINT_DEC,
+ 		   offset);
+ 	}
+       if (speculative_outer_type)
+@@ -663,7 +663,7 @@ ipa_polymorphic_call_context::dump (FILE *f, bool newl
+ 	  print_generic_expr (f, speculative_outer_type, TDF_SLIM);
+ 	  if (speculative_maybe_derived_type)
+ 	    fprintf (f, " (or a derived type)");
+-	  fprintf (f, " at offset "HOST_WIDE_INT_PRINT_DEC,
++	  fprintf (f, " at offset " HOST_WIDE_INT_PRINT_DEC,
+ 		   speculative_offset);
+ 	}
+     }

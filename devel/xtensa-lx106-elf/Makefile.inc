@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2020/03/12 15:05:19 tracey Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2020/04/05 21:55:01 tracey Exp $
+
+BROKEN-sparc64 = 'in gcc-bootstrap multiple wide-int.h:370:10: error: too many template-parameter-lists'
 
 CONFIG =	xtensa-lx106-elf
 CATEGORIES +=	devel

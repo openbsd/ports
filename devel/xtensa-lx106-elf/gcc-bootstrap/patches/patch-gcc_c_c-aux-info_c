@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_c_c-aux-info_c,v 1.1 2020/04/05 21:55:01 tracey Exp $
+
+Index: gcc/c/c-aux-info.c
+--- gcc/c/c-aux-info.c.orig
++++ gcc/c/c-aux-info.c
+@@ -319,7 +319,7 @@ gen_type (const char *ret_val, tree t, formals_style s
+ 	  else
+ 	    {
+ 	      char buff[23];
+-	      sprintf (buff, "["HOST_WIDE_INT_PRINT_DEC"]",
++	      sprintf (buff, "[" HOST_WIDE_INT_PRINT_DEC"]",
+ 		       int_size_in_bytes (t)
+ 		       / int_size_in_bytes (TREE_TYPE (t)));
+ 	      ret_val = gen_type (concat (ret_val, buff, NULL),

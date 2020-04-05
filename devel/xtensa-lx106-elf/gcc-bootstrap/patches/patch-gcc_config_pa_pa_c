@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_pa_pa_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_pa_pa_c,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/pa/pa.c
 --- gcc/config/pa/pa.c.orig
 +++ gcc/config/pa/pa.c
-@@ -8700,7 +8700,7 @@ pa_asm_output_aligned_bss (FILE *stream,
+@@ -8624,7 +8624,7 @@ pa_asm_output_aligned_bss (FILE *stream,
  
    fprintf (stream, "\t.align %u\n", align / BITS_PER_UNIT);
    ASM_OUTPUT_LABEL (stream, name);
@@ -12,7 +12,7 @@ Index: gcc/config/pa/pa.c
  }
  
  /* Both the HP and GNU assemblers under HP-UX provide a .comm directive
-@@ -8730,7 +8730,7 @@ pa_asm_output_aligned_common (FILE *stream,
+@@ -8654,7 +8654,7 @@ pa_asm_output_aligned_common (FILE *stream,
    switch_to_section (bss_section);
  
    assemble_name (stream, name);
@@ -21,7 +21,7 @@ Index: gcc/config/pa/pa.c
             MAX (size, align / BITS_PER_UNIT));
  }
  
-@@ -8757,7 +8757,7 @@ pa_asm_output_aligned_local (FILE *stream,
+@@ -8681,7 +8681,7 @@ pa_asm_output_aligned_local (FILE *stream,
  #endif
  
    ASM_OUTPUT_LABEL (stream, name);

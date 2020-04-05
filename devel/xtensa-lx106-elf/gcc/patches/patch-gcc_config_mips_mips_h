@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_mips_mips_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_mips_mips_h,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/mips/mips.h
 --- gcc/config/mips/mips.h.orig
 +++ gcc/config/mips/mips.h
-@@ -2699,7 +2699,7 @@ do {									\
+@@ -2910,7 +2910,7 @@ do {									\
  
  #undef ASM_OUTPUT_SKIP
  #define ASM_OUTPUT_SKIP(STREAM,SIZE)					\

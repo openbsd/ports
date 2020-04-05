@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_rs6000_rs6000_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_rs6000_rs6000_c,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/rs6000/rs6000.c
 --- gcc/config/rs6000/rs6000.c.orig
 +++ gcc/config/rs6000/rs6000.c
-@@ -11104,8 +11104,8 @@ rs6000_va_start (tree valist, rtx nextarg)
+@@ -11332,8 +11332,8 @@ rs6000_va_start (tree valist, rtx nextarg)
  	       FP_ARG_NUM_REG);
  
    if (TARGET_DEBUG_ARG)
@@ -14,7 +14,7 @@ Index: gcc/config/rs6000/rs6000.c
  	     words, n_gpr, n_fpr);
  
    if (cfun->va_list_gpr_size)
-@@ -21798,11 +21798,11 @@ debug_stack_info (rs6000_stack_t *info)
+@@ -22186,11 +22186,11 @@ debug_stack_info (rs6000_stack_t *info)
      fprintf (stderr, "\tvarargs_save_offset = %5d\n", info->varargs_save_offset);
  
    if (info->total_size)

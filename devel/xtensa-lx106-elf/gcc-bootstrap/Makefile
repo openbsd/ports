@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
-VERSION =	4.8.5
+VERSION =	5.2.0
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-bootstrap-${VERSION}
 
 GH_ACCOUNT =	jcmvbkbc
 GH_PROJECT =	gcc-xtensa
-GH_COMMIT =	81033786686bcee08e68583ea8fb3408bdff034a
+GH_COMMIT =	4a86aa4eb36ae95cf42f99251965f4a3a8f45f88
 
 WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr
 

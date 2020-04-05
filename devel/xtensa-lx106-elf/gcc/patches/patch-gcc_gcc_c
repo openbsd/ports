@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_gcc_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_gcc_c,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/gcc.c
 --- gcc/gcc.c.orig
 +++ gcc/gcc.c
-@@ -693,12 +693,12 @@ proper position among the other output files.  */
+@@ -771,12 +771,12 @@ proper position among the other output files.  */
  #define PLUGIN_COND_CLOSE ""
  #endif
  #define LINK_PLUGIN_SPEC \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_libiberty_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-include_libiberty_h,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: include/libiberty.h
 --- include/libiberty.h.orig
 +++ include/libiberty.h
-@@ -49,6 +49,20 @@ extern "C" {
+@@ -48,6 +48,20 @@ extern "C" {
  
  #include <stdio.h>
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_sparc_sparc_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_sparc_sparc_h,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/sparc/sparc.h
 --- gcc/config/sparc/sparc.h.orig
 +++ gcc/config/sparc/sparc.h
-@@ -1696,7 +1696,7 @@ do {									\
+@@ -1694,7 +1694,7 @@ do {									\
      fprintf (FILE, "\t.align %d\n", (1<<(LOG)))
  
  #define ASM_OUTPUT_SKIP(FILE,SIZE)  \
@@ -12,7 +12,7 @@ Index: gcc/config/sparc/sparc.h
  
  /* This says how to output an assembler line
     to define a global common symbol.  */
-@@ -1704,7 +1704,7 @@ do {									\
+@@ -1702,7 +1702,7 @@ do {									\
  #define ASM_OUTPUT_COMMON(FILE, NAME, SIZE, ROUNDED)  \
  ( fputs ("\t.common ", (FILE)),		\
    assemble_name ((FILE), (NAME)),		\
@@ -21,7 +21,7 @@ Index: gcc/config/sparc/sparc.h
  
  /* This says how to output an assembler line to define a local common
     symbol.  */
-@@ -1712,7 +1712,7 @@ do {									\
+@@ -1710,7 +1710,7 @@ do {									\
  #define ASM_OUTPUT_ALIGNED_LOCAL(FILE, NAME, SIZE, ALIGNED)		\
  ( fputs ("\t.reserve ", (FILE)),					\
    assemble_name ((FILE), (NAME)),					\

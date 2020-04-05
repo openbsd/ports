@@ -1,0 +1,18 @@
+$OpenBSD: patch-gcc_predict_c,v 1.1 2020/04/05 21:55:01 tracey Exp $
+
+Index: gcc/predict.c
+--- gcc/predict.c.orig
++++ gcc/predict.c
+@@ -714,10 +714,10 @@ dump_prediction (FILE *file, enum br_predictor predict
+ 
+   if (bb->count)
+     {
+-      fprintf (file, "  exec %"PRId64, bb->count);
++      fprintf (file, "  exec %" PRId64, bb->count);
+       if (e)
+ 	{
+-	  fprintf (file, " hit %"PRId64, e->count);
++	  fprintf (file, " hit %" PRId64, e->count);
+ 	  fprintf (file, " (%.1f%%)", e->count * 100.0 / bb->count);
+ 	}
+     }

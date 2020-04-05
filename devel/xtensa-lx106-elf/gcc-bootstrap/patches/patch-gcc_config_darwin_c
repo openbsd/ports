@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_darwin_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_darwin_c,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/darwin.c
 --- gcc/config/darwin.c.orig
 +++ gcc/config/darwin.c
-@@ -2203,7 +2203,7 @@ fprintf (file, "# dadon: %s %s (%llu, %u) local %d wea
+@@ -2259,7 +2259,7 @@ fprintf (file, "# dadon: %s %s (%llu, %u) local %d wea
  
        ASM_OUTPUT_LABEL (file, xname);
        size = 1;
@@ -12,7 +12,7 @@ Index: gcc/config/darwin.c
  
        /* Check that we've correctly picked up the zero-sized item and placed it
           properly.  */
-@@ -2344,7 +2344,7 @@ darwin_emit_local_bss (FILE *fp, tree decl, const char
+@@ -2400,7 +2400,7 @@ darwin_emit_local_bss (FILE *fp, tree decl, const char
  	fprintf (fp, "\t.align\t%u\n", l2align);
  
        assemble_name (fp, name);        
@@ -21,7 +21,7 @@ Index: gcc/config/darwin.c
      }
    else 
      {
-@@ -2365,10 +2365,10 @@ darwin_emit_local_bss (FILE *fp, tree decl, const char
+@@ -2421,10 +2421,10 @@ darwin_emit_local_bss (FILE *fp, tree decl, const char
  	size = 1;
  
        if (l2align)
@@ -34,7 +34,7 @@ Index: gcc/config/darwin.c
      }
  
    (*targetm.encode_section_info) (decl, DECL_RTL (decl), false);
-@@ -2516,7 +2516,7 @@ fprintf (fp, "# albss: %s (%lld,%d) ro %d cst %d stat 
+@@ -2572,7 +2572,7 @@ fprintf (fp, "# albss: %s (%lld,%d) ro %d cst %d stat 
  	fprintf (fp, "\t.align\t%u\n", l2align);
  
        assemble_name (fp, name);
@@ -43,7 +43,7 @@ Index: gcc/config/darwin.c
      }
    else 
      {
-@@ -2537,9 +2537,9 @@ fprintf (fp, "# albss: %s (%lld,%d) ro %d cst %d stat 
+@@ -2593,9 +2593,9 @@ fprintf (fp, "# albss: %s (%lld,%d) ro %d cst %d stat 
  	size = 1;
  
        if (l2align)

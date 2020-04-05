@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/12 15:05:21 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/05 21:55:02 tracey Exp $
 
 COMMENT =	newlib for ${CONFIG} cross-development
 
 VERSION =	2.1.0
 DISTNAME =	newlib-${VERSION}
 PKGNAME =	${CONFIG}-newlib-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	jcmvbkbc
 GH_PROJECT =	newlib-xtensa
 GH_COMMIT =	05722e6770fba6b7059e54b3c81a737f7e7cec59
 
 BUILD_DEPENDS =	devel/${CONFIG}/binutils \
-		${RUN_DEPENDS}
-RUN_DEPENDS =	devel/${CONFIG}/gcc-bootstrap
+		devel/${CONFIG}/gcc-bootstrap
 
 # cope with user settings in /etc/mk.conf
 MAKE_FLAGS =	CFLAGS="-I${LOCALBASE}/include"

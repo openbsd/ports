@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_pa_pa_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_pa_pa_h,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/pa/pa.h
 --- gcc/config/pa/pa.h.orig
 +++ gcc/config/pa/pa.h
-@@ -1205,7 +1205,7 @@ do {									     \
+@@ -1210,7 +1210,7 @@ do {									     \
      fprintf (FILE, "\t.align %d\n", (1<<(LOG)))
  
  #define ASM_OUTPUT_SKIP(FILE,SIZE)  \

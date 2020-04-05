@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_wide-int-print_cc,v 1.1 2020/04/05 21:55:01 tracey Exp $
+
+Index: gcc/wide-int-print.cc
+--- gcc/wide-int-print.cc.orig
++++ gcc/wide-int-print.cc
+@@ -127,7 +127,7 @@ print_hex (const wide_int_ref &wi, char *buf)
+ 
+ 	}
+       else
+-	buf += sprintf (buf, "0x"HOST_WIDE_INT_PRINT_HEX_PURE, wi.elt (--i));
++	buf += sprintf (buf, "0x" HOST_WIDE_INT_PRINT_HEX_PURE, wi.elt (--i));
+ 
+       while (--i >= 0)
+ 	buf += sprintf (buf, HOST_WIDE_INT_PRINT_PADDED_HEX, wi.elt (i));

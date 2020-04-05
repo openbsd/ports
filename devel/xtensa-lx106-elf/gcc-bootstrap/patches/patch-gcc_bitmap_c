@@ -1,27 +1,25 @@
-$OpenBSD: patch-gcc_bitmap_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_bitmap_c,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/bitmap.c
 --- gcc/bitmap.c.orig
 +++ gcc/bitmap.c
-@@ -2159,9 +2159,9 @@ print_statistics (void **slot, void *b)
+@@ -2170,8 +2170,8 @@ print_statistics (bitmap_descriptor_d **slot, bitmap_o
+       sprintf (s, "%s:%i (%s)", s1, d->line, d->function);
        s[41] = 0;
        fprintf (stderr,
- 	       "%-41s %9u"
--	       " %15"HOST_WIDEST_INT_PRINT"d %15"HOST_WIDEST_INT_PRINT"d"
--	       " %15"HOST_WIDEST_INT_PRINT"d"
--	       " %10"HOST_WIDEST_INT_PRINT"d %10"HOST_WIDEST_INT_PRINT"d\n",
-+	       " %15" HOST_WIDEST_INT_PRINT"d %15" HOST_WIDEST_INT_PRINT"d"
-+	       " %15" HOST_WIDEST_INT_PRINT"d"
-+	       " %10" HOST_WIDEST_INT_PRINT"d %10" HOST_WIDEST_INT_PRINT"d\n",
+-	       "%-41s %9u %15"PRId64" %15"PRId64" %15"PRId64
+-	       " %10"PRId64" %10"PRId64"\n",
++	       "%-41s %9u %15" PRId64" %15" PRId64" %15" PRId64
++	       " %10" PRId64" %10" PRId64"\n",
  	       s, d->created,
  	       d->allocated, d->peak, d->current,
  	       d->nsearches, d->search_iter);
-@@ -2194,7 +2194,7 @@ dump_bitmap_statistics (void)
-   htab_traverse (bitmap_desc_hash, print_statistics, &info);
+@@ -2204,7 +2204,7 @@ dump_bitmap_statistics (void)
+   bitmap_desc_hash->traverse <bitmap_output_info *, print_statistics> (&info);
    fprintf (stderr, "---------------------------------------------------------------------------------\n");
    fprintf (stderr,
--	   "%-41s %9"HOST_WIDEST_INT_PRINT"d %15"HOST_WIDEST_INT_PRINT"d\n",
-+	   "%-41s %9" HOST_WIDEST_INT_PRINT"d %15" HOST_WIDEST_INT_PRINT"d\n",
+-	   "%-41s %9"PRId64" %15"PRId64"\n",
++	   "%-41s %9" PRId64" %15" PRId64"\n",
  	   "Total", info.count, info.size);
    fprintf (stderr, "---------------------------------------------------------------------------------\n");
  }

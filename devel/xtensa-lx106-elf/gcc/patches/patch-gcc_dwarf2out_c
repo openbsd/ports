@@ -1,14 +1,14 @@
-$OpenBSD: patch-gcc_dwarf2out_c,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_dwarf2out_c,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/dwarf2out.c
 --- gcc/dwarf2out.c.orig
 +++ gcc/dwarf2out.c
-@@ -5268,7 +5268,7 @@ print_die (dw_die_ref die, FILE *outfile)
- 	  fprintf (outfile, HOST_WIDE_INT_PRINT_UNSIGNED, AT_unsigned (a));
- 	  break;
- 	case dw_val_class_const_double:
--	  fprintf (outfile, "constant ("HOST_WIDE_INT_PRINT_DEC","\
-+	  fprintf (outfile, "constant (" HOST_WIDE_INT_PRINT_DEC","\
- 			    HOST_WIDE_INT_PRINT_UNSIGNED")",
- 		   a->dw_attr_val.v.val_double.high,
- 		   a->dw_attr_val.v.val_double.low);
+@@ -5448,7 +5448,7 @@ print_dw_val (dw_val_node *val, bool recurse, FILE *ou
+       fprintf (outfile, HOST_WIDE_INT_PRINT_UNSIGNED, val->v.val_unsigned);
+       break;
+     case dw_val_class_const_double:
+-      fprintf (outfile, "constant ("HOST_WIDE_INT_PRINT_DEC","\
++      fprintf (outfile, "constant (" HOST_WIDE_INT_PRINT_DEC","\
+ 			HOST_WIDE_INT_PRINT_UNSIGNED")",
+ 	       val->v.val_double.high,
+ 	       val->v.val_double.low);

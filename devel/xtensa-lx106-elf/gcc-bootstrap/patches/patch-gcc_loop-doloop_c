@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_loop-doloop_c,v 1.1 2020/04/05 21:55:01 tracey Exp $
+
+Index: gcc/loop-doloop.c
+--- gcc/loop-doloop.c.orig
++++ gcc/loop-doloop.c
+@@ -446,7 +446,7 @@ doloop_modify (struct loop *loop, struct niter_desc *d
+     {
+       fprintf (dump_file, "Doloop: Inserting doloop pattern (");
+       if (desc->const_iter)
+-	fprintf (dump_file, "%"PRId64, desc->niter);
++	fprintf (dump_file, "%" PRId64, desc->niter);
+       else
+ 	fputs ("runtime", dump_file);
+       fputs (" iterations).\n", dump_file);

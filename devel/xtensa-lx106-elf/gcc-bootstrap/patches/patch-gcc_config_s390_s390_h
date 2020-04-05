@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_s390_s390_h,v 1.1.1.1 2020/03/12 15:05:20 tracey Exp $
+$OpenBSD: patch-gcc_config_s390_s390_h,v 1.2 2020/04/05 21:55:01 tracey Exp $
 
 Index: gcc/config/s390/s390.h
 --- gcc/config/s390/s390.h.orig
 +++ gcc/config/s390/s390.h
-@@ -833,7 +833,7 @@ do {									\
+@@ -863,7 +863,7 @@ do {									\
  
  /* Advance the location counter by SIZE bytes.  */
  #define ASM_OUTPUT_SKIP(FILE, SIZE) \
