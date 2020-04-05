@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2020/04/02 23:01:17 danj Exp $
+# $OpenBSD: Makefile,v 1.63 2020/04/05 19:28:09 sthen Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -24,7 +24,7 @@ SUBST_VARS =	HAPROXYCONF HAPROXYSTATE \
 USE_GMAKE =	Yes
 MAKE_FLAGS +=	CFLAGS="${CFLAGS} -fno-strict-aliasing" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}" TARGET="openbsd"
-MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1 USE_ZLIB=1
+MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1 USE_ZLIB=1 V=1
 
 COMPILER =	base-clang ports-gcc
 
