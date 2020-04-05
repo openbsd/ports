@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2020/03/28 10:15:24 stsp Exp $
+# $OpenBSD: Makefile,v 1.35 2020/04/05 10:09:06 stsp Exp $
 
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
 
 V =			0.32
 DISTNAME =		got-${V}
+REVISION = 		0
 PKGNAME-main =		${DISTNAME}
 PKGNAME-web =		gotweb-${V}
 CATEGORIES =		devel
@@ -26,8 +27,7 @@ INSTALL_TARGET =	install web-install
 
 MASTER_SITES =		https://gameoftrees.org/releases/
 
-DEBUG_PACKAGES-main =	${BUILD_PACKAGES:N-web}
-DEBUG_PACKAGES-web =	${BUILD_PACKAGES:N-main}
+DEBUG_PACKAGES =	-main
 
 BUILD_DEPENDS =		www/kcgi
 
