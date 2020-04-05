@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2019/01/13 16:40:20 kirby Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2020/04/05 09:24:51 ajacoutot Exp $
 
 Fix parallel build. Taken from FreeBSD.
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -3690,9 +3690,9 @@ doc/aclocal.1 doc/automake.1:
+@@ -3695,9 +3695,9 @@ doc/aclocal.1 doc/automake.1:
  	  && echo ".so man1/$$f-$(APIVERSION).1" > $@
  
  doc/aclocal-$(APIVERSION).1: $(aclocal_script) lib/Automake/Config.pm

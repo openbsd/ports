@@ -1,8 +1,8 @@
-$OpenBSD: patch-bin_automake_in,v 1.1.1.1 2018/09/24 09:45:35 ajacoutot Exp $
+$OpenBSD: patch-bin_automake_in,v 1.2 2020/04/05 09:24:51 ajacoutot Exp $
 Index: bin/automake.in
 --- bin/automake.in.orig
 +++ bin/automake.in
-@@ -5243,6 +5243,7 @@ sub scan_autoconf_traces
+@@ -5240,6 +5240,7 @@ sub scan_autoconf_traces
  		_LT_AC_TAGCONFIG => 0,
  		m4_include => 1,
  		m4_sinclude => 1,
@@ -10,7 +10,7 @@ Index: bin/automake.in
  		sinclude => 1,
  	      );
  
-@@ -5266,6 +5267,7 @@ sub scan_autoconf_traces
+@@ -5263,6 +5264,7 @@ sub scan_autoconf_traces
        my ($here, $depth, @args) = split (/::/);
        $where = new Automake::Location $here;
        my $macro = $args[0];
