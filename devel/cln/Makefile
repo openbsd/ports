@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2020/04/06 00:04:31 pirofti Exp $
+# $OpenBSD: Makefile,v 1.30 2020/04/06 08:48:06 pirofti Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
 COMMENT =	library for efficient computations
 
 DISTNAME =	cln-1.3.4
-REVISION =	4
+REVISION =	5
 SHARED_LIBS +=  cln                  3.0      # .6.4
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/06 00:04:32 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2020/04/06 08:48:07 pirofti Exp $
 
 COMMENT =	pretty print LaTeX messages
 
@@ -8,7 +8,7 @@ GH_COMMIT =	5cec891ad6aec0115081cdd114ae1cc4f1ed7c06
 
 DISTNAME =	pplatex
 PKGNAME =	pplatex-1.0-rc2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 

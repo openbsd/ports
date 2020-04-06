@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/04/06 00:04:32 pirofti Exp $
+# $OpenBSD: Makefile,v 1.15 2020/04/06 08:48:06 pirofti Exp $
 
 COMMENT =	IP-Transparent Tor Hidden Service Connector
 
 V =		0.2.1
 DISTNAME =	onioncat-$V
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.cypherpunk.at/onioncat_trac/

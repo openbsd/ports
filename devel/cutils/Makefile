@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/04/06 00:04:31 pirofti Exp $
+# $OpenBSD: Makefile,v 1.13 2020/04/06 08:48:06 pirofti Exp $
 
 COMMENT=	collection of utilities for C programmers
 
 DISTNAME=	cutils-1.6
-REVISION =	4
+REVISION =	5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.sigala.it/sandro/software.php

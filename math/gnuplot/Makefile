@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2020/04/06 00:04:31 pirofti Exp $
+# $OpenBSD: Makefile,v 1.77 2020/04/06 08:48:06 pirofti Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -7,6 +7,7 @@ PATCHLEVEL =	7
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
+REVISION =	0
 
 HOMEPAGE =	http://www.gnuplot.info/
 

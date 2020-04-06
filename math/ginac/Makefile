@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2020/04/06 00:04:31 pirofti Exp $
+# $OpenBSD: Makefile,v 1.34 2020/04/06 08:48:06 pirofti Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
 DISTNAME=	ginac-1.7.4
 SHARED_LIBS +=	ginac	7.0	# 8.0
 CATEGORIES=	math
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.ginac.de/
 

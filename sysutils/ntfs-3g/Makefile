@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/04/06 00:04:32 pirofti Exp $
+# $OpenBSD: Makefile,v 1.15 2020/04/06 08:48:07 pirofti Exp $
 
 COMMENT =	FUSE NTFS driver with read/write support
 
@@ -7,7 +7,7 @@ DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
 SHARED_LIBS +=	ntfs-3g		0.2	# .88
 CATEGORIES =	sysutils
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.tuxera.com/community/open-source-ntfs-3g/
 

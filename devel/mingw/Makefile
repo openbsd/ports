@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2020/04/06 00:04:31 pirofti Exp $
+# $OpenBSD: Makefile,v 1.21 2020/04/06 08:48:06 pirofti Exp $
 
 COMMENT =	development environment for native Windows applications
 
 V = 		1.0.1
-REVISION =	7
+REVISION =	8
 BASENAME =	x86-mingw32-build
 DISTNAME =	${BASENAME}-${V}-sh
 PKGNAME =	mingw-${V}
