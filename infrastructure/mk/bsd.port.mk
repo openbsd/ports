@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1530 2020/04/06 14:32:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1531 2020/04/06 14:43:57 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2070,7 +2070,7 @@ fix-permissions:
 	if test -d ${_CACHE_REPO}; then \
 		cd ${_CACHE_REPO} && chown -R ${FETCH_USER}:$$f .; \
 	else \
-		install -o ${FETCH_USER} -g $$f -d $${_CACHE_REPO}; \
+		install -o ${FETCH_USER} -g $$f -d ${_CACHE_REPO}; \
 	fi
 .endif
 
