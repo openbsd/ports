@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:47:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2020/04/06 01:25:18 jca Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -41,7 +41,7 @@ CONFIGURE_ENV =		ac_cv_prog_DVIPDF='' \
 			ac_cv_prog_PS2PDF=''
 
 .if ${MACHINE_ARCH} == "sparc64"
-CFLAGS +=		-DSAFETY=2 -DNO_ASM -mcmodel=medany
+CFLAGS +=		-DSAFETY=2 -DNO_ASM
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"
