@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2020/01/29 02:16:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2020/04/06 20:58:29 cwen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -117,7 +117,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "hppa"
 LDFLAGS+=	-latomic
 WANTLIB+=	atomic
 .endif
