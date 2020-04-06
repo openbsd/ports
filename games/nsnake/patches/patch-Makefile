@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/04/06 11:05:27 fcambus Exp $
+
+With OpenBSD install(1), -p and -d switches cannot be used together.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -114,24 +114,24 @@ all: dirs $(EXE)
+ 
+ install: all
+ 	# Installing...
+-	$(MUTE)install -pdm755 $(DESTDIR)$(BINDIR)
++	$(MUTE)install -dm755 $(DESTDIR)$(BINDIR)
+ 	$(MUTE)install -pm755 bin/$(EXE) $(DESTDIR)$(BINDIR)
+ 
+ 	-$(MUTE)cat $(MANPAGE) | sed -e "s|DATE|$(DATE)|g" -e "s|VERSION|$(VERSION)|g" >$(MANFILE)
+-	$(MUTE)install -pdm755 $(DESTDIR)$(MANDIR)
++	$(MUTE)install -dm755 $(DESTDIR)$(MANDIR)
+ 	$(MUTE)install -pm644 $(MANFILE) $(DESTDIR)$(MANDIR)
+ 	$(MUTE)rm -f $(MANFILE)
+ 
+-	$(MUTE)install -pdm755 $(DESTDIR)$(LEVELDIR)
++	$(MUTE)install -dm755 $(DESTDIR)$(LEVELDIR)
+ 	$(MUTE)install -pm644 levels/* $(DESTDIR)$(LEVELDIR)
+ 
+-	$(MUTE)install -pdm755 $(DESTDIR)$(PNGDIR)/16x16/apps/
++	$(MUTE)install -dm755 $(DESTDIR)$(PNGDIR)/16x16/apps/
+ 	$(MUTE)install -pm644 misc/nsnake16.png $(DESTDIR)$(PNGDIR)/16x16/apps/nsnake.png
+-	$(MUTE)install -pdm755 $(DESTDIR)$(PNGDIR)/32x32/apps/
++	$(MUTE)install -dm755 $(DESTDIR)$(PNGDIR)/32x32/apps/
+ 	$(MUTE)install -pm644 misc/nsnake32.png $(DESTDIR)$(PNGDIR)/32x32/apps/nsnake.png
+-	$(MUTE)install -pdm755 $(DESTDIR)$(XPMDIR)
++	$(MUTE)install -dm755 $(DESTDIR)$(XPMDIR)
+ 	$(MUTE)install -pm644 misc/nsnake32.xpm $(DESTDIR)$(XPMDIR)/nsnake.xpm
+-	$(MUTE)install -pdm755 $(DESTDIR)$(DESKTOPDIR)
++	$(MUTE)install -dm755 $(DESTDIR)$(DESKTOPDIR)
+ 	$(MUTE)install -pm644 misc/nsnake.desktop $(DESTDIR)$(DESKTOPDIR)
+ 
+ 	# $(PACKAGE) successfuly installed!

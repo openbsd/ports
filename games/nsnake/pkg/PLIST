@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/06 11:05:27 fcambus Exp $
+@bin bin/nsnake
+@man man/man6/nsnake.6
+share/applications/nsnake.desktop
+share/games/
+share/games/nsnake/
+share/games/nsnake/levels/
+share/games/nsnake/levels/3-hearts.nsnake
+share/games/nsnake/levels/NSNAKE.nsnake
+share/games/nsnake/levels/arena00.nsnake
+share/games/nsnake/levels/arena01.nsnake
+share/games/nsnake/levels/arena02.nsnake
+share/games/nsnake/levels/balls.nsnake
+share/games/nsnake/levels/cave00.nsnake
+share/games/nsnake/levels/diagonal-split.nsnake
+share/games/nsnake/levels/horizontal-madness.nsnake
+share/games/nsnake/levels/lenny.nsnake
+share/games/nsnake/levels/retro00.nsnake
+share/games/nsnake/levels/retro01.nsnake
+share/games/nsnake/levels/retro02.nsnake
+share/games/nsnake/levels/retro03.nsnake
+share/games/nsnake/levels/retro04.nsnake
+share/games/nsnake/levels/retro05-2.nsnake
+share/games/nsnake/levels/retro05.nsnake
+share/games/nsnake/levels/retro06.nsnake
+share/games/nsnake/levels/retro07.nsnake
+share/games/nsnake/levels/s.nsnake
+share/games/nsnake/levels/spiral-large.nsnake
+share/games/nsnake/levels/squares00.nsnake
+share/games/nsnake/levels/squares01.nsnake
+share/games/nsnake/levels/squares02.nsnake
+share/games/nsnake/levels/tetris.nsnake
+share/games/nsnake/levels/tricky-horizontal.nsnake
+share/games/nsnake/levels/tricky-vertical.nsnake
+share/games/nsnake/levels/tricky.nsnake
+share/games/nsnake/levels/vertical-madness.nsnake
+share/games/nsnake/levels/w.nsnake
+share/games/nsnake/levels/z.nsnake
+share/icons/hicolor/16x16/apps/nsnake.png
+share/icons/hicolor/32x32/apps/nsnake.png
+share/pixmaps/
+share/pixmaps/nsnake.xpm
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
