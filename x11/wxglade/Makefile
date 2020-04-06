@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/06 00:42:58 jca Exp $
 
 COMMENT=		GUI designer for wxWidgets/wxPython user interfaces
 
-MODPY_EGG_VERSION=	0.7.0
+MODPY_EGG_VERSION=	0.9.5
 DISTNAME=		wxGlade-${MODPY_EGG_VERSION}
 PKGNAME=		wxglade-${MODPY_EGG_VERSION}
-REVISION=		0
+EXTRACT_SUFX=		.zip
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxglade/}
 
@@ -18,6 +18,7 @@ MAINTAINER=		Daniel Winters <daniel@tydirium.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_SETUPTOOLS=	Yes
 
 MODPY_ADJ_FILES=	./*.py test/*.py test/casefiles/*.py
 
@@ -31,9 +32,6 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	mv ${PREFIX}/share/doc/wxglade/wxGlade.desktop \
-	    ${PREFIX}/share/applications/
-	mv ${PREFIX}/share/man/man1/wxglade.1 ${PREFIX}/man/man1
-	rm -Rf ${PREFIX}/share/man
+	mv ${WRKSRC}/wxGlade.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

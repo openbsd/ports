@@ -1,53 +1,89 @@
-$OpenBSD: patch-wxglade,v 1.1.1.1 2015/10/13 16:58:07 jca Exp $
+$OpenBSD: patch-wxglade,v 1.2 2020/04/06 00:42:58 jca Exp $
 
 Fix path to the wxglade python package.
 
---- wxglade.orig	Fri Oct  9 16:12:29 2015
-+++ wxglade	Fri Oct  9 16:16:43 2015
-@@ -6,14 +6,8 @@
- # Copyright 2011-2013 Carsten Grohmann
+Index: wxglade
+--- wxglade.orig
++++ wxglade
+@@ -7,79 +7,12 @@
  #
  # Shell script to start wxGlade
--# 
+ #
 -# The wxGlade main script is called wxglade.py. It will be searched at
 -# three places:
 -#  1. parallel to this script
 -#  2. in the module directory of the current Python
 -#  3. in a parallel Python module directory
  
--PYTHON_BIN=${PYTHON_BIN:=python2}
-+PYTHON_BIN=${MODPY_BIN}
+ # Keep this up to date with version.py and sphinx/conf.py
+ WXG_VERSION="0.9.5"
  
- ${PYTHON_BIN} --version > /dev/null 2>&1
- if [ $? -ne 0 ]; then
-@@ -21,29 +15,7 @@ if [ $? -ne 0 ]; then
-   exit 1
- fi
- 
--# determined current python version
--PY_VERSION=$(${PYTHON_BIN} -c 'import sys; print sys.version[:3]')
+-# search order for Python interpreter
+-INTERPRETER_LIST="python3 python2 \
+-                  python2.7 python27 \
+-                  python"
 -
--# determined prefix of the Python module directory structure
--if [ -e /etc/debian_version ]; then
--  WXGLADE_MODULE_PATH="/usr/lib/pymodules/python${PY_VERSION}/wxglade"
--else
--  WXGLADE_MODULE_PATH="/usr/lib/python${PY_VERSION}/wxglade"
+-# Use the binary from PYTHON_BIN, if this environment variable is set
+-if [ "$PYTHON_BIN" ]; then
+-  INTERPRETER_LIST="$PYTHON_BIN"
 -fi
 -
--CURR_DIR=$(dirname $0)
+-for INTERPRETER in $INTERPRETER_LIST; do
+-  ${INTERPRETER} -V >/dev/null 2>&1
+-  if [ $? -ne 0 ]; then
+-    continue
+-  fi
 -
--# search wxglade.py
--if [ -e "${CURR_DIR}/wxglade.py" ]; then
--  WXG_PATH="${CURR_DIR}/wxglade.py"
--elif [ -e "${WXGLADE_MODULE_PATH}/wxglade.py" ]; then
--  WXG_PATH="${WXGLADE_MODULE_PATH}/wxglade.py"
--elif [ -e "${CURR_DIR}/../lib/python${PY_VERSION}/site-packages/wxglade/wxglade.py" ]; then
--  WXG_PATH="${CURR_DIR}/../lib/python${PY_VERSION}/site-packages/wxglade/wxglade.py"
--else
+-  # Python interpreter found
+-  PYTHON_BIN=$INTERPRETER
+-
+-  # determined current python version
+-  PY_VERSION=$(${PYTHON_BIN} -c 'import sys; print(sys.version[:3])')
+-
+-  EGG_DIR="wxGlade-${WXG_VERSION}-py${PY_VERSION}.egg"
+-
+-  # determined prefix of the Python module directory structure
+-  if [ -d "/usr/lib/pymodules/python${PY_VERSION}/wxglade" ]; then
+-    WXG_MODULE_PATH="/usr/lib/pymodules/python${PY_VERSION}/wxglade"
+-  elif [ -d "/usr/lib/pymodules/python${PY_VERSION}/site-packages/${EGG_DIR}/wxglade" ]; then
+-    WXG_MODULE_PATH="/usr/lib/pymodules/python${PY_VERSION}/site-packages/${EGG_DIR}/wxglade"
+-  else
+-    WXG_MODULE_PATH="/usr/lib/python${PY_VERSION}/wxglade"
+-  fi
+-
+-  # search wxglade.py
+-  # dist-packages is only used in Debian and Debian derivates
+-  CURR_DIR=$(dirname "$0")
+-  for DIR in \
+-     "${CURR_DIR}" \
+-     "${WXG_MODULE_PATH}" \
+-     "${CURR_DIR}/../lib/python${PY_VERSION}/site-packages/wxglade" \
+-     "${CURR_DIR}/../lib/python${PY_VERSION}/site-packages/${EGG_DIR}/wxglade" \
+-     "${CURR_DIR}/../lib/python${PY_VERSION}/dist-packages/wxglade" \
+-     ; do
+-    BINARY="${DIR}/wxglade.py"
+-    if [ -e "${BINARY}" ]; then
+-      WXG_BINARY="$BINARY"
+-      break
+-    fi
+-  done
+-  if [ -n "${WXG_BINARY}" ]; then
+-    break
+-  fi
+-done
+-
+-if [ ! "$PYTHON_BIN" ]; then
+-  echo "ERROR: No interpreter for Python found!"
+-  echo "       Please install Python to run wxGlade!"
+-  exit 1
+-fi
+-
+-if [ ! "${WXG_BINARY}" ]; then
 -  echo "ERROR: wxglade.py not found!"
 -  exit 1
 -fi
-+WXG_PATH=${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/wxglade/wxglade.py
++PYTHON_BIN=${MODPY_BIN}
++WXG_BINARY=${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/wxglade/wxglade.py
  
  # exec wxGlade
- exec ${PYTHON_BIN} "${WXG_PATH}" "$@"
+ exec "${PYTHON_BIN}" "${WXG_BINARY}" "$@"
