@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.54 2020/02/03 20:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2020/04/06 18:30:58 bket Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-8.05
-REVISION=	0
+DISTNAME=	openconnect-8.08
 
-SHARED_LIBS +=  openconnect               4.4 # 5.5
+SHARED_LIBS +=  openconnect               4.5 # 5.6
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.infradead.org/openconnect/
+
+MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
 # LGPLv2.1 only
 PERMIT_PACKAGE=	Yes
@@ -26,6 +27,7 @@ FLAVOR?=
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
+
 # groff is used to format html during build, USE_GROFF not needed
 # XXX can probably convert to using mandoc?
 BUILD_DEPENDS=	devel/gettext,-tools \
@@ -34,7 +36,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 RUN_DEPENDS=	net/vpnc-scripts
 LIB_DEPENDS=	archivers/lz4 \
 		devel/gettext,-runtime \
-		security/gnutls \
+		security/gnutls>=3.6.13 \
 		textproc/libxml
 # also wants socket_wrapper and uid_wrapper from cwrap to be present at
 # configure time (in openbsd-wip); tests currently failing, in need of
@@ -44,11 +46,10 @@ TEST_DEPENDS=	net/ocserv
 FAKE_FLAGS=	pkgdatadir=${PREFIX}/share/doc/openconnect
 
 CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv"
-CONFIGURE_ARGS=	--with-vpnc-script=${SYSCONFDIR}/vpnc-script \
-		--without-stoken
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -liconv"
+CONFIGURE_ARGS=		--with-vpnc-script=${SYSCONFDIR}/vpnc-script \
+			--without-stoken
 # make sure libstoken isn't picked up automatically if we import it.
 
 .if ${FLAVOR:Mlight}

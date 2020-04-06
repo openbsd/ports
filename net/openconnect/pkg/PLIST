@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/08/10 04:02:13 bket Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/04/06 18:30:59 bket Exp $
 include/openconnect.h
-lib/libopenconnect.a
+@static-lib lib/libopenconnect.a
 lib/libopenconnect.la
 @lib lib/libopenconnect.so.${LIBopenconnect_VERSION}
 lib/pkgconfig/openconnect.pc
