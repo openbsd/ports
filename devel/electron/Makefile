@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/06 18:58:16 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2020/04/06 19:29:02 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -101,7 +101,7 @@ LIB_DEPENDS=	devel/harfbuzz \
 BUILDTYPE=	Release
 DEBUGFLAG=	-g0
 
-SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
+SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH DEBUGFLAG
 
 DISTNAME=		electron-${ELECTRON_V}
 WRKDIST=		${WRKDIR}/chromium-${ECV}
