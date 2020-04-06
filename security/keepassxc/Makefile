@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/01/20 06:28:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2020/04/06 06:50:22 kn Exp $
 
 COMMENT =	management tool for password and sensitive data
 
 V =		2.5.3
 DISTNAME =	keepassxc-${V}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -40,6 +41,7 @@ CONFIGURE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" \
 		-DWITH_GUI_TESTS=ON \
 		-DWITH_XC_AUTOTYPE=ON \
 		-DWITH_XC_SSHAGENT=ON \
+		-DWITH_XC_UPDATECHECK=OFF \
 		-DWITH_XC_FDOSECRETS=ON
 
 TEST_IS_INTERACTIVE =	X11
