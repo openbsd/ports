@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/08 04:35:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2020/04/06 20:24:53 cwen Exp $
 
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${GH_TAGNAME:S/^sf_//}
@@ -30,9 +30,7 @@ MAKE_ENV =	ARCH=x86-32
 .elif ${MACHINE_ARCH:Marm}
 MAKE_ENV =	ARCH=armv7
 .elif ${MACHINE_ARCH:Mpowerpc}
-WANTLIB += atomic
 MAKE_ENV =	ARCH=ppc-32
-MAKE_FLAGS =	EXTRALDFLAGS="-L${LOCALBASE}/lib -latomic"
 .elif ${MACHINE_ARCH:Maarch64} || ${MACHINE_ARCH:Malpha} || \
 	${MACHINE_ARCH:Msparc64} || ${MACHINE_ARCH:Mmips64} || \
 	${MACHINE_ARCH:Mmips64el}
