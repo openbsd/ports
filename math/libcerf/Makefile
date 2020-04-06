@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/24 18:23:21 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2020/04/06 00:04:32 pirofti Exp $
 
 COMMENT =	implementation of complex error functions
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  cerf	2.0 # 1.13
 
 HOMEPAGE =	https://jugit.fz-juelich.de/mlz/libcerf/
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # MIT
 PERMIT_PACKAGE =	Yes

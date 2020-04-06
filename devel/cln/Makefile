@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:44:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/04/06 00:04:31 pirofti Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	http://www.ginac.de/CLN/
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # GPL v2
 PERMIT_PACKAGE =		Yes

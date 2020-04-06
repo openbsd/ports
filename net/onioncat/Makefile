@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/04/06 00:04:32 pirofti Exp $
 
 COMMENT =	IP-Transparent Tor Hidden Service Connector
 
@@ -9,7 +9,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://www.cypherpunk.at/onioncat_trac/
 
-MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER=	Paul Irofti <paul@irofti.net>
 
 # GPLv3
 PERMIT_PACKAGE =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/04/06 00:04:31 pirofti Exp $
 
 COMMENT=	collection of utilities for C programmers
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://www.sigala.it/sandro/software.php
 
-MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER=	Paul Irofti <paul@irofti.net>
 
 # BSD
 PERMIT_PACKAGE=	Yes

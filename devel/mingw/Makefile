@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/03/20 16:44:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2020/04/06 00:04:31 pirofti Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	http://www.mingw.org/
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # Headers: public domain
 # Compiler/toolchain: GPL

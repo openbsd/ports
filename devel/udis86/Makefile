@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/04/06 00:04:31 pirofti Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
@@ -10,7 +10,7 @@ SHARED_LIBS=	udis86		1.0
 
 HOMEPAGE =	http://udis86.sourceforge.net/
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # BSD
 PERMIT_PACKAGE =		Yes

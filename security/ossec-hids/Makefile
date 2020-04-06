@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/06 00:04:32 pirofti Exp $
 
 COMMENT =	host-based intrusion detection system
 
@@ -11,7 +11,7 @@ CATEGORIES =	security
 
 HOMEPAGE =	https://www.ossec.net/
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # GPLv2
 PERMIT_PACKAGE =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/04/06 00:04:32 pirofti Exp $
 
 BROKEN-hppa=	undefined refs to dtrsv/dgemv/dtrsm/dgemm/dger in libumfpack.a
 
@@ -12,7 +12,7 @@ CATEGORIES=		math
 
 HOMEPAGE=		http://faculty.cse.tamu.edu/davis/suitesparse.html
 
-MAINTAINER=		Paul Irofti <pirofti@openbsd.org>
+MAINTAINER=		Paul Irofti <paul@irofti.net>
 
 SO_VERSION=		2.1
 .for _lib in \

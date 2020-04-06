@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/11/08 23:29:56 pirofti Exp $
+# $OpenBSD: Makefile,v 1.76 2020/04/06 00:04:31 pirofti Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -10,7 +10,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
 
 HOMEPAGE =	http://www.gnuplot.info/
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # see Copyright in source
 # http://gnuplot.cvs.sourceforge.net/gnuplot/gnuplot/Copyright

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/29 11:39:32 kirby Exp $
+# $OpenBSD: Makefile,v 1.14 2020/04/06 00:04:32 pirofti Exp $
 
 COMMENT =	FUSE NTFS driver with read/write support
 
@@ -11,7 +11,7 @@ REVISION =	1
 
 HOMEPAGE =	https://www.tuxera.com/community/open-source-ntfs-3g/
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

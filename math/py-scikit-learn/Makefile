@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/26 16:11:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/06 00:04:32 pirofti Exp $
 
 COMMENT =	set of python modules for machine learning and data mining
 
@@ -10,7 +10,7 @@ CATEGORIES =		math
 
 HOMEPAGE =		http://scikit-learn.org
 
-MAINTAINER =		Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # BSD-3
 PERMIT_PACKAGE =	Yes

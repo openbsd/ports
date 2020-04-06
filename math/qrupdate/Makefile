@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/04/06 00:04:32 pirofti Exp $
 
 COMMENT =	library for fast updates of QR and Cholesky decompositions
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE =	http://qrupdate.sourceforge.net/
 
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # GPL v3
 PERMIT_PACKAGE =		Yes

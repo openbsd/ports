@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/04/06 00:04:31 pirofti Exp $
 
 COMMENT=	ODBC driver for PostgreSQL
 VERSION=	10.02.0000
@@ -8,7 +8,7 @@ CATEGORIES=	databases
 
 HOMEPAGE=	https://odbc.postgresql.org/
 
-MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER=	Paul Irofti <paul@irofti.net>
 
 # LGPL
 PERMIT_PACKAGE=	Yes

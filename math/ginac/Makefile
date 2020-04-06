@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2020/04/06 00:04:31 pirofti Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
@@ -9,7 +9,7 @@ REVISION=	0
 
 HOMEPAGE=	https://www.ginac.de/
 
-MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
+MAINTAINER=	Paul Irofti <paul@irofti.net>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

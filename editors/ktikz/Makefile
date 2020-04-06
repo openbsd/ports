@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/04/06 00:04:31 pirofti Exp $
 
 COMMENT =		editor for the TikZ language
 
@@ -10,7 +10,7 @@ REVISION =		0
 
 CATEGORIES =		editors
 HOMEPAGE =		http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/
-MAINTAINER =		Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
