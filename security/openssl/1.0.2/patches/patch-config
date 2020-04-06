@@ -1,7 +1,11 @@
-$OpenBSD: patch-config,v 1.1 2018/11/07 11:00:30 sthen Exp $
+$OpenBSD: patch-config,v 1.2 2020/04/06 11:45:35 jca Exp $
 
 Don't misdetect OpenBSD/i386 as a.out when /usr/lib/libc.so.XX.Y.a
 is present (for /etc/rc rebuildlibs).
+
+Drop tentative use of -Wa,--noexecstack, issues an unused argument warning
+with clang which trips up -Werror (clang on sparc64 uses gas instead of
+the integrated assembler).
 
 Index: config
 --- config.orig
@@ -14,3 +18,16 @@ Index: config
    *86*-*-*bsd*)		# mimic ld behaviour when it's looking for libc...
  			if [ -L /usr/lib/libc.so ]; then	# [Free|Net]BSD
  			    libc=/usr/lib/libc.so
+@@ -886,12 +887,6 @@ esac
+ #then
+ #  options="$options -DATALLA"
+ #fi
+-
+-if expr "$options" : '.*no\-asm' > /dev/null; then :; else
+-  sh -c "$CROSS_COMPILE${CC:-gcc} -Wa,--help -c -o /tmp/null.$$.o -x assembler /dev/null && rm /tmp/null.$$.o" 2>&1 | \
+-  grep \\--noexecstack >/dev/null && \
+-  options="$options -Wa,--noexecstack"
+-fi
+ 
+ # gcc < 2.8 does not support -march=ultrasparc
+ if [ "$OUT" = solaris-sparcv9-gcc -a $GCCVER -lt 28 ]
