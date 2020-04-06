@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/06 00:41:14 jca Exp $
 
 COMMENT =	ratcheting forward secrecy protocol
 
 GH_ACCOUNT =	signalapp
 GH_PROJECT =	libsignal-protocol-c
-GH_TAGNAME =	v2.3.2
+GH_TAGNAME =	v2.3.3
 
 SHARED_LIBS +=  signal-protocol-c         0.0 # 2.3
 
