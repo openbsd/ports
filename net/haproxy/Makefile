@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2020/04/05 19:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2020/04/06 13:36:08 cwen Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -39,7 +39,7 @@ DOCSDIR =	${PREFIX}/share/doc/haproxy
 EXAMPLESDIR =	${PREFIX}/share/examples/haproxy
 
 # Fix undefined reference to __atomic_*
-.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+.if ${MACHINE_ARCH} == "hppa"
 LDFLAGS +=		"-latomic"
 WANTLIB +=		atomic
 .endif
