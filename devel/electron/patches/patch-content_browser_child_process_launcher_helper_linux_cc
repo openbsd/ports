@@ -1,0 +1,21 @@
+$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.1 2020/04/06 21:01:24 robert Exp $
+
+Index: content/browser/child_process_launcher_helper_linux.cc
+--- content/browser/child_process_launcher_helper_linux.cc.orig
++++ content/browser/child_process_launcher_helper_linux.cc
+@@ -56,6 +56,7 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
+     options->fds_to_remap.push_back(
+         std::make_pair(sandbox_fd, service_manager::GetSandboxFD()));
+ 
++#if !defined(OS_BSD)
+     // (For Electron), if we're launching without zygote, that means we're
+     // launching an unsandboxed process (since all sandboxed processes are
+     // forked from the zygote). Relax the allow_new_privs option to permit
+@@ -67,6 +68,7 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
+     if (!zygote_handle) {
+       options->allow_new_privs = true;
+     }
++#endif
+   }
+ 
+   options->environment = delegate_->GetEnvironment();
