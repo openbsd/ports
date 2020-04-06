@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/06 19:25:16 jasper Exp $
 
 COMMENT =		suite for simulating common internet services
 
@@ -24,7 +24,7 @@ RUN_DEPENDS =		devel/p5-IPC-Shareable \
 			net/p5-Net-DNS \
 			devel/p5-Net-Server
 
-pre-install:
+do-install:
 	find ${WRKSRC} -type f -name \*.orig -delete
 	${SUBST_CMD} ${WRKSRC}/lib/INetSim/Config.pm
 	${INSTALL_SCRIPT} ${WRKSRC}/inetsim ${PREFIX}/bin/
