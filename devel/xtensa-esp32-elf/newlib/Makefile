@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/06 06:21:01 claudio Exp $
 
 COMMENT =	newlib for ${CONFIG} cross-development
 
 VERSION =	2019.2
 PKGNAME =	${CONFIG}-newlib-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	newlib-esp32
 GH_TAGNAME =	esp-2019r2
 
 BUILD_DEPENDS =	devel/${CONFIG}/binutils \
-		${RUN_DEPENDS}
-RUN_DEPENDS =	devel/${CONFIG}/gcc-bootstrap
+		devel/${CONFIG}/gcc-bootstrap
 
 USE_GROFF =	No
 
