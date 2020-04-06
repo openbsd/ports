@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_INetSim_pm,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
+
+Index: lib/INetSim.pm
+--- lib/INetSim.pm.orig
++++ lib/INetSim.pm
+@@ -356,7 +356,7 @@ EOF
+     }
+ 
+     # Check if group "inetsim" exists on system
+-    my $gid = getgrnam("inetsim");
++    my $gid = getgrnam(INetSim::Config::getConfigParameter("Default_RunAsGroup"));
+     if (! defined $gid) {
+         print STDOUT "No such group 'inetsim' configured on this system!\n";
+         print STDOUT "Please create group and start again. See documentation for more information.\n";

@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_INetSim_HTTP_pm,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
+
+Index: lib/INetSim/HTTP.pm
+--- lib/INetSim/HTTP.pm.orig
++++ lib/INetSim/HTTP.pm
+@@ -196,7 +196,7 @@ sub configure_hook {
+     }
+     my ($dev, $inode, $mode, $nlink, $uid, $gid, $rdev, $size, $atime, $mtime, $ctime, $blksize, $blocks, $grpname) = undef;
+ 
+-    $gid = getgrnam("inetsim");
++    $gid = getgrnam(INetSim::Config::getConfigParameter("Default_RunAsGroup"));
+     if (! defined $gid) {
+         INetSim::Log::MainLog("Warning: Unable to get GID for group 'inetsim'", $self->{servicename});
+     }
+@@ -205,7 +205,7 @@ sub configure_hook {
+ 
+     # check for group owner 'inetsim'
+     $grpname = getgrgid $gid;
+-    if ($grpname ne "inetsim") {
++    if ($grpname ne INetSim::Config::getConfigParameter("Default_RunAsGroup")) {
+         INetSim::Log::MainLog("Warning: Group owner of POST data directory '$self->{postdata_dirname}' is not 'inetsim' but '$grpname'", $self->{servicename});
+     }
+     # check for group r/w permissions

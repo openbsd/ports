@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Semaphores
+==========
+
+The default number of semaphore identifiers should be increased to at least 20:
+
+	sysctl kern.seminfo.semmni=20
+
+Otherwise inetsim will fail at startup with the following error:
+"Could not create semaphore set: No space left on device"
+
+Response data
+=============
+
+Certain services may be configured to reply with actual response data. A set of
+example data has been installed into ${PREFIX}/share/examples/inetsim/data/ .
+Depending on the services which are simulated these can be copied over to
+/var/db/inetsim/data/ .

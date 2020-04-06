@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_INetSim_SMTP_pm,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
+
+Index: lib/INetSim/SMTP.pm
+--- lib/INetSim/SMTP.pm.orig
++++ lib/INetSim/SMTP.pm
+@@ -179,7 +179,7 @@ sub configure_hook {
+     else {
+         close DAT;
+         chmod 0660, $self->{mboxFile};
+-        $gid = getgrnam("inetsim");
++        $gid = getgrnam(INetSim::Config::getConfigParameter("Default_RunAsGroup"));
+         if (! defined $gid) {
+             INetSim::Log::MainLog("Warning: Unable to get GID for group 'inetsim'", $self->{servicename});
+         }
+@@ -187,7 +187,7 @@ sub configure_hook {
+         ($dev, $inode, $mode, $nlink, $uid, $gid, $rdev, $size, $atime, $mtime, $ctime, $blksize, $blocks) = stat $self->{mboxFile};
+         $grpname = getgrgid $gid;
+         # check for group owner 'inetsim'
+-        if ($grpname ne "inetsim") {
++        if ($grpname ne INetSim::Config::getConfigParameter("Default_RunAsGroup")) {
+             INetSim::Log::MainLog("Warning: Group owner of SMTP mbox file '$self->{mboxFile}' is not 'inetsim' but '$grpname'", $self->{servicename});
+         }
+         # check for group r/w permissions

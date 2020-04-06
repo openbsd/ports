@@ -1,0 +1,38 @@
+$OpenBSD: patch-lib_INetSim_Config_pm,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
+
+Index: lib/INetSim/Config.pm
+--- lib/INetSim/Config.pm.orig
++++ lib/INetSim/Config.pm
+@@ -30,9 +30,9 @@ my $SSL = (! $@) ? 1 : 0;
+ # set BaseDir to current working directory
+ my $currentdir = cwd();
+ $currentdir =~ /\A(.*)\z/; # evil untaint!
+-my $logdir = $currentdir . "/log/";
+-my $datadir = $currentdir . "/data/";
+-my $reportdir = $currentdir . "/report/";
++my $logdir = "/var/log/inetsim/";
++my $datadir = "/var/db/inetsim/data/";
++my $reportdir = "/var/db/inetsim/report/";
+ 
+ #############################################################
+ # Configuration Options
+@@ -47,7 +47,7 @@ tie %ConfigOptions, 'IPC::Shareable', "CNFG", { %share
+         MainLogfileName => $logdir . "main.log",
+         SubLogfileName => $logdir . "service.log",
+         DebugLogfileName => $logdir . "debug.log",
+-        ConfigFileName => $currentdir . "/conf/inetsim.conf",
++        ConfigFileName => "${SYSCONFDIR}/inetsim/inetsim.conf",
+         DataDir => $datadir,
+         CertDir => $datadir . "certs/",
+         ReportDir => $reportdir,
+@@ -60,8 +60,8 @@ tie %ConfigOptions, 'IPC::Shareable', "CNFG", { %share
+ 
+         Default_BindAddress => "127.0.0.1",
+         Default_MaxChilds => 10,
+-        Default_RunAsUser => 'nobody',
+-        Default_RunAsGroup => 'inetsim',
++        Default_RunAsUser => '_inetsim',
++        Default_RunAsGroup => '_inetsim',
+         Default_TimeOut => 120,
+ 
+         Default_KeyFileName => "default_key.pem",
