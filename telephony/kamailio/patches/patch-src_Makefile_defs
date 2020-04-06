@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_defs,v 1.3 2018/03/20 22:03:35 sthen Exp $
+$OpenBSD: patch-src_Makefile_defs,v 1.4 2020/04/06 14:48:59 jca Exp $
 Index: src/Makefile.defs
 --- src/Makefile.defs.orig
 +++ src/Makefile.defs
@@ -37,3 +37,21 @@ Index: src/Makefile.defs
  else      	# CC_NAME, clang
  ifeq		($(CC_NAME), icc)
  			C_DEFS+=-DCC_GCC_LIKE_ASM
+@@ -1130,6 +1129,9 @@ endif			#CC_SHORTVER, 4.x
+ endif			#CC_SHORTVER, 7.0+, 6.0+, 5.0+, 4.5+ or 4.2+
+ 
+ else		#CC_NAME, gcc
++ifeq		($(CC_NAME), clang)
++					C_DEFS+=-DCC_GCC_LIKE_ASM
++else		# CC_NAME, clang
+ ifeq		($(CC_NAME), suncc)
+ 			C_DEFS+=-DCC_GCC_LIKE_ASM
+ 			C_DEFS+=-DSPARC64_MODE
+@@ -1142,6 +1144,7 @@ else
+ 				#other compilers
+ $(error 			Unsupported compiler ($(CC):$(CC_NAME)), try gcc)
+ endif		#CC_NAME, suncc
++endif		#CC_NAME, clang
+ endif		#CC_NAME, gcc
+ endif	#ARCH, sparc64
+ 
