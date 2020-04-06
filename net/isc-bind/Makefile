@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2020/03/19 19:05:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2020/04/06 22:10:30 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -64,7 +64,7 @@ CONFIGURE_ARGS=	--enable-full-report \
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
-.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+.if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=	atomic
 LIB_DEPENDS +=	${MODGCC4_CPPLIBDEP}
 MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"

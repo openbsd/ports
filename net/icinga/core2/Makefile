@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2020/03/10 21:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2020/04/06 22:10:30 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
@@ -82,7 +82,7 @@ CONFIGURE_ARGS += \
 	-DHAVE_LIBEXECINFO=OFF
 
 # Fix "undefined reference to `__atomic_fetch_sub_8'"
-.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+.if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=		atomic
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif

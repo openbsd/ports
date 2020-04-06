@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2020/03/26 09:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2020/04/06 22:10:30 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -168,13 +168,6 @@ SUBST_VARS=	FREERADIUS_ETC
 MAKE_FLAGS=	PACKAGE=openbsd VERBOSE=1
 FAKE_FLAGS=	VERBOSE=1 R=${WRKINST} \
 		raddbdir=${PREFIX}/share/examples/freeradius
-
-.if ${MACHINE_ARCH} == "powerpc"
-LDFLAGS += 	-latomic
-.for i in ${MULTI_PACKAGES}
-WANTLIB$i +=	atomic
-.endfor
-.endif
 
 post-configure:
 	sed -i -e 's,/etc/raddb,${SYSCONFDIR}/raddb,g' ${WRKSRC}/man/*/*
