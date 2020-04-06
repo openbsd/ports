@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.12 2020/02/03 22:00:01 fcambus Exp $
+$OpenBSD: patch-makefile,v 1.13 2020/04/06 12:26:06 fcambus Exp $
 
 - Disable hardcoded -O3 optimizations
 - Fix GCC_VERSION and CLANG_VERSION detection
@@ -6,7 +6,7 @@ $OpenBSD: patch-makefile,v 1.12 2020/02/03 22:00:01 fcambus Exp $
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -207,7 +207,7 @@ GENIEOS := freebsd
+@@ -208,7 +208,7 @@ GENIEOS := freebsd
  endif
  ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
  OS := openbsd
@@ -15,7 +15,7 @@ Index: makefile
  endif
  ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
  OS := macosx
-@@ -588,11 +588,6 @@ PROFILER =
+@@ -589,11 +589,6 @@ PROFILER =
  SYMBOLS = 1
  endif
  
@@ -27,7 +27,7 @@ Index: makefile
  # set the symbols level
  ifdef SYMBOLS
  PARAMS += --SYMBOLS='$(SYMBOLS)'
-@@ -953,8 +948,8 @@ endif
+@@ -958,8 +953,8 @@ endif
  
  ifeq ($(OS),windows)
  ifeq (posix,$(SHELLTYPE))
@@ -38,7 +38,7 @@ Index: makefile
  PYTHON_AVAILABLE := $(shell $(PYTHON) --version > /dev/null 2>&1 && echo python)
  GIT_AVAILABLE    := $(shell git --version > /dev/null 2>&1 && echo git)
  else
-@@ -1009,9 +1004,9 @@ else
+@@ -1014,9 +1009,9 @@ else
  $(info Clang $(CLANG_VERSION) detected)
  ifneq ($(TARGETOS),asmjs)
  ifeq ($(ARCHITECTURE),_x64)
