@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.415 2020/03/26 13:58:18 kmos Exp $
+# $OpenBSD: Makefile,v 1.416 2020/04/06 11:06:08 fcambus Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -199,6 +199,7 @@
      SUBDIR += netris
      SUBDIR += neverball
      SUBDIR += newvox
+     SUBDIR += nsnake
      SUBDIR += nudoku
      SUBDIR += numptyphysics
      SUBDIR += oilwar
