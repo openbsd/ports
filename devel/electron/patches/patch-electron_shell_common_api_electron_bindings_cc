@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_shell_common_api_electron_bindings_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/common/api/electron_bindings.cc
+--- electron/shell/common/api/electron_bindings.cc.orig
++++ electron/shell/common/api/electron_bindings.cc
+@@ -289,7 +289,7 @@ void ElectronBindings::DidReceiveMemoryDump(
+     if (base::GetCurrentProcId() == dump.pid()) {
+       mate::Dictionary dict = mate::Dictionary::CreateEmpty(isolate);
+       const auto& osdump = dump.os_dump();
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+       dict.Set("residentSet", osdump.resident_set_kb);
+ #endif
+       dict.Set("private", osdump.private_footprint_kb);

@@ -1,0 +1,41 @@
+$OpenBSD: patch-electron_shell_browser_api_electron_api_app_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/api/electron_api_app.cc
+--- electron/shell/browser/api/electron_api_app.cc.orig
++++ electron/shell/browser/api/electron_api_app.cc
+@@ -604,7 +604,7 @@ void App::OnWillFinishLaunching() {
+ }
+ 
+ void App::OnFinishLaunching(const base::DictionaryValue& launch_info) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Set the application name for audio streams shown in external
+   // applications. Only affects pulseaudio currently.
+   media::AudioManager::SetGlobalAppName(Browser::Get()->GetName());
+@@ -892,7 +892,7 @@ void App::SetPath(gin_helper::ErrorThrower thrower,
+ }
+ 
+ void App::SetDesktopName(const std::string& desktop_name) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   std::unique_ptr<base::Environment> env(base::Environment::Create());
+   env->SetVar("CHROME_DESKTOP", desktop_name);
+ #endif
+@@ -1221,7 +1221,7 @@ std::vector<mate::Dictionary> App::GetAppMetrics(v8::I
+     pid_dict.Set("creationTime",
+                  process_metric.second->process.CreationTime().ToJsTime());
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+     auto memory_info = process_metric.second->GetMemoryInfo();
+ 
+     mate::Dictionary memory_dict = mate::Dictionary::CreateEmpty(isolate);
+@@ -1485,7 +1485,7 @@ void App::BuildPrototype(v8::Isolate* isolate,
+       .SetMethod("getJumpListSettings", &App::GetJumpListSettings)
+       .SetMethod("setJumpList", &App::SetJumpList)
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       .SetMethod("isUnityRunning",
+                  base::BindRepeating(&Browser::IsUnityRunning, browser))
+ #endif

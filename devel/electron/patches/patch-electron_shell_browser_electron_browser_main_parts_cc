@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_shell_browser_electron_browser_main_parts_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/electron_browser_main_parts.cc
+--- electron/shell/browser/electron_browser_main_parts.cc.orig
++++ electron/shell/browser/electron_browser_main_parts.cc
+@@ -8,7 +8,7 @@
+ 
+ #include <utility>
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include <glib.h>  // for g_setenv()
+ #endif
+ 

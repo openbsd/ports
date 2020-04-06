@@ -1,0 +1,17 @@
+$OpenBSD: patch-electron_shell_common_crash_reporter_crash_reporter_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/common/crash_reporter/crash_reporter.cc
+--- electron/shell/common/crash_reporter/crash_reporter.cc.orig
++++ electron/shell/common/crash_reporter/crash_reporter.cc
+@@ -127,7 +127,11 @@ CrashReporter* CrashReporter::GetInstance() {
+ #endif
+ 
+ void CrashReporter::StartInstance(const gin_helper::Dictionary& options) {
++#if !defined(OS_BSD)
+   auto* reporter = GetInstance();
++#else
++  CrashReporter *reporter = NULL;
++#endif
+   if (!reporter)
+     return;
+ 

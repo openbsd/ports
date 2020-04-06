@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_shell_common_platform_util_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/common/platform_util.h
+--- electron/shell/common/platform_util.h.orig
++++ electron/shell/common/platform_util.h
+@@ -50,7 +50,7 @@ bool GetLoginItemEnabled();
+ bool SetLoginItemEnabled(bool enabled);
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Returns a success flag.
+ // Unlike libgtkui, does *not* use "chromium-browser.desktop" as a fallback.
+ bool GetDesktopName(std::string* setme);

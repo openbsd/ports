@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_spec_fixtures_module_crash_js,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/spec/fixtures/module/crash.js
+--- electron/spec/fixtures/module/crash.js.orig
++++ electron/spec/fixtures/module/crash.js
+@@ -10,7 +10,7 @@ process.crashReporter.start({
+   }
+ });
+ 
+-if (process.platform !== 'linux') {
++if (process.platform !== 'openbsd') {
+   process.crashReporter.addExtraParameter('newExtra', 'newExtra');
+   process.crashReporter.addExtraParameter('removeExtra', 'removeExtra');
+   process.crashReporter.removeExtraParameter('removeExtra');

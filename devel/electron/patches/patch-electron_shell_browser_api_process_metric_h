@@ -1,0 +1,23 @@
+$OpenBSD: patch-electron_shell_browser_api_process_metric_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/api/process_metric.h
+--- electron/shell/browser/api/process_metric.h.orig
++++ electron/shell/browser/api/process_metric.h
+@@ -13,7 +13,7 @@
+ 
+ namespace electron {
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+ struct ProcessMemoryInfo {
+   size_t working_set_size = 0;
+   size_t peak_working_set_size = 0;
+@@ -43,7 +43,7 @@ struct ProcessMetric {
+                 std::unique_ptr<base::ProcessMetrics> metrics);
+   ~ProcessMetric();
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+   ProcessMemoryInfo GetMemoryInfo() const;
+ #endif
+ 

@@ -1,0 +1,23 @@
+$OpenBSD: patch-electron_shell_app_electron_main_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/app/electron_main.cc
+--- electron/shell/app/electron_main.cc.orig
++++ electron/shell/app/electron_main.cc
+@@ -26,7 +26,7 @@
+ #include "shell/app/command_line_args.h"
+ #include "shell/app/electron_main_delegate.h"
+ #include "shell/common/crash_reporter/win/crash_service_main.h"
+-#elif defined(OS_LINUX)  // defined(OS_WIN)
++#elif defined(OS_LINUX) || defined(OS_BSD)  // defined(OS_WIN)
+ #include <unistd.h>
+ #include <cstdio>
+ #include "content/public/app/content_main.h"
+@@ -168,7 +168,7 @@ int APIENTRY wWinMain(HINSTANCE instance, HINSTANCE, w
+   return content::ContentMain(params);
+ }
+ 
+-#elif defined(OS_LINUX)  // defined(OS_WIN)
++#elif defined(OS_LINUX) || defined(OS_BSD)  // defined(OS_WIN)
+ 
+ int main(int argc, char* argv[]) {
+   FixStdioStreams();

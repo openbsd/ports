@@ -1,0 +1,41 @@
+$OpenBSD: patch-third_party_electron_node_deps_uv_src_unix_udp_c,v 1.1 2020/04/06 18:58:17 robert Exp $
+
+Index: third_party/electron_node/deps/uv/src/unix/udp.c
+--- third_party/electron_node/deps/uv/src/unix/udp.c.orig
++++ third_party/electron_node/deps/uv/src/unix/udp.c
+@@ -664,6 +664,7 @@ static int uv__udp_set_source_membership4(uv_udp_t* ha
+                                           const char* interface_addr,
+                                           const struct sockaddr_in* source_addr,
+                                           uv_membership membership) {
++#if 0
+   struct ip_mreq_source mreq;
+   int optname;
+   int err;
+@@ -701,6 +702,9 @@ static int uv__udp_set_source_membership4(uv_udp_t* ha
+   }
+ 
+   return 0;
++#else
++  return UV_EINVAL;
++#endif
+ }
+ 
+ 
+@@ -709,6 +713,7 @@ static int uv__udp_set_source_membership6(uv_udp_t* ha
+                                           const char* interface_addr,
+                                           const struct sockaddr_in6* source_addr,
+                                           uv_membership membership) {
++#if 0
+   struct group_source_req mreq;
+   struct sockaddr_in6 addr6;
+   int optname;
+@@ -748,6 +753,9 @@ static int uv__udp_set_source_membership6(uv_udp_t* ha
+   }
+ 
+   return 0;
++#else
++  return UV_EINVAL;
++#endif
+ }
+ 
+ 

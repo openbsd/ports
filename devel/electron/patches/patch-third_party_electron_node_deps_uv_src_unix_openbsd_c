@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_electron_node_deps_uv_src_unix_openbsd_c,v 1.1 2020/04/06 18:58:17 robert Exp $
+
+Index: third_party/electron_node/deps/uv/src/unix/openbsd.c
+--- third_party/electron_node/deps/uv/src/unix/openbsd.c.orig
++++ third_party/electron_node/deps/uv/src/unix/openbsd.c
+@@ -186,7 +186,7 @@ int uv_cpu_info(uv_cpu_info_t** cpu_infos, int* count)
+   int numcpus = 1;
+   int which[] = {CTL_HW,HW_MODEL,0};
+   size_t size;
+-  int i;
++  int i, j;
+   uv_cpu_info_t* cpu_info;
+ 
+   size = sizeof(model);

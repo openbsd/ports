@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_shell_common_electron_command_line_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/common/electron_command_line.h
+--- electron/shell/common/electron_command_line.h.orig
++++ electron/shell/common/electron_command_line.h
+@@ -21,7 +21,7 @@ class ElectronCommandLine {
+ 
+   static void Init(int argc, base::CommandLine::CharType** argv);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // On Linux the command line has to be read from base::CommandLine since
+   // it is using zygote.
+   static void InitializeFromCommandLine();

@@ -1,0 +1,32 @@
+$OpenBSD: patch-electron_shell_browser_api_electron_api_power_monitor_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/api/electron_api_power_monitor.cc
+--- electron/shell/browser/api/electron_api_power_monitor.cc.orig
++++ electron/shell/browser/api/electron_api_power_monitor.cc
+@@ -36,7 +36,7 @@ namespace electron {
+ namespace api {
+ 
+ PowerMonitor::PowerMonitor(v8::Isolate* isolate) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   SetShutdownHandler(base::BindRepeating(&PowerMonitor::ShouldShutdown,
+                                          base::Unretained(this)));
+ #elif defined(OS_MACOSX)
+@@ -58,7 +58,7 @@ bool PowerMonitor::ShouldShutdown() {
+   return !Emit("shutdown");
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ void PowerMonitor::BlockShutdown() {
+   PowerObserverLinux::BlockShutdown();
+ }
+@@ -117,7 +117,7 @@ void PowerMonitor::BuildPrototype(v8::Isolate* isolate
+   prototype->SetClassName(mate::StringToV8(isolate, "PowerMonitor"));
+   gin_helper::Destroyable::MakeDestroyable(isolate, prototype);
+   mate::ObjectTemplateBuilder(isolate, prototype->PrototypeTemplate())
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       .SetMethod("blockShutdown", &PowerMonitor::BlockShutdown)
+       .SetMethod("unblockShutdown", &PowerMonitor::UnblockShutdown)
+ #endif

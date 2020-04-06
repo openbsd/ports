@@ -1,13 +1,14 @@
-$OpenBSD: patch-electron_script_lib_utils_js,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+$OpenBSD: patch-electron_script_lib_utils_js,v 1.2 2020/04/06 18:58:16 robert Exp $
 
 Index: electron/script/lib/utils.js
 --- electron/script/lib/utils.js.orig
 +++ electron/script/lib/utils.js
-@@ -15,6 +15,7 @@ function getElectronExec () {
-     case 'win32':
-       return `out/${OUT_DIR}/electron.exe`
+@@ -18,6 +18,8 @@ function getElectronExec () {
+       return `out/${OUT_DIR}/electron.exe`;
      case 'linux':
+       return `out/${OUT_DIR}/electron`;
 +    case 'openbsd':
-       return `out/${OUT_DIR}/electron`
++      return `out/${OUT_DIR}/electron`;
      default:
-       throw new Error('Unknown platform')
+       throw new Error('Unknown platform');
+   }

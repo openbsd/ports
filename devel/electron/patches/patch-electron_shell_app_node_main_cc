@@ -1,0 +1,23 @@
+$OpenBSD: patch-electron_shell_app_node_main_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/app/node_main.cc
+--- electron/shell/app/node_main.cc.orig
++++ electron/shell/app/node_main.cc
+@@ -31,7 +31,7 @@
+ 
+ namespace electron {
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+ void AddExtraParameter(const std::string& key, const std::string& value) {
+   crash_reporter::CrashReporter::GetInstance()->AddExtraParameter(key, value);
+ }
+@@ -103,7 +103,7 @@ int NodeMain(int argc, char* argv[]) {
+         gin::Dictionary::CreateEmpty(gin_env.isolate());
+     reporter.SetMethod("start", &crash_reporter::CrashReporter::StartInstance);
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+     reporter.SetMethod("addExtraParameter", &AddExtraParameter);
+     reporter.SetMethod("removeExtraParameter", &RemoveExtraParameter);
+ #endif

@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_shell_browser_api_electron_api_power_monitor_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/api/electron_api_power_monitor.h
+--- electron/shell/browser/api/electron_api_power_monitor.h.orig
++++ electron/shell/browser/api/electron_api_power_monitor.h
+@@ -30,7 +30,7 @@ class PowerMonitor : public mate::TrackableObject<Powe
+   // Called by native calles.
+   bool ShouldShutdown();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Private JS APIs.
+   void BlockShutdown();
+   void UnblockShutdown();

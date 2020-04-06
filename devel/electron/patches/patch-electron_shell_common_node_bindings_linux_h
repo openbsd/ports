@@ -1,0 +1,15 @@
+$OpenBSD: patch-electron_shell_common_node_bindings_linux_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/common/node_bindings_linux.h
+--- electron/shell/common/node_bindings_linux.h.orig
++++ electron/shell/common/node_bindings_linux.h
+@@ -24,7 +24,9 @@ class NodeBindingsLinux : public NodeBindings {
+   void PollEvents() override;
+ 
+   // Epoll to poll for uv's backend fd.
++#if !defined(OS_BSD)
+   int epoll_;
++#endif
+ 
+   DISALLOW_COPY_AND_ASSIGN(NodeBindingsLinux);
+ };

@@ -1,14 +1,23 @@
-$OpenBSD: patch-electron_script_spec-runner_js,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+$OpenBSD: patch-electron_script_spec-runner_js,v 1.2 2020/04/06 18:58:16 robert Exp $
 
 Index: electron/script/spec-runner.js
 --- electron/script/spec-runner.js.orig
 +++ electron/script/spec-runner.js
-@@ -113,7 +113,7 @@ async function runElectronTests () {
+@@ -127,7 +127,7 @@ async function runElectronTests () {
  async function runRemoteBasedElectronTests () {
-   let exe = path.resolve(BASE, utils.getElectronExec())
-   const runnerArgs = ['electron/spec', ...unknownArgs.slice(2)]
+   let exe = path.resolve(BASE, utils.getElectronExec());
+   const runnerArgs = ['electron/spec', ...unknownArgs.slice(2)];
 -  if (process.platform === 'linux') {
 +  if (process.platform === 'openbsd') {
-     runnerArgs.unshift(path.resolve(__dirname, 'dbus_mock.py'), exe)
-     exe = 'python'
+     runnerArgs.unshift(path.resolve(__dirname, 'dbus_mock.py'), exe);
+     exe = 'python';
+   }
+@@ -198,7 +198,7 @@ async function runNativeElectronTests () {
+ async function runMainProcessElectronTests () {
+   let exe = path.resolve(BASE, utils.getElectronExec());
+   const runnerArgs = ['electron/spec-main', ...unknownArgs.slice(2)];
+-  if (process.platform === 'linux') {
++  if (process.platform === 'openbsd') {
+     runnerArgs.unshift(path.resolve(__dirname, 'dbus_mock.py'), exe);
+     exe = 'python';
    }

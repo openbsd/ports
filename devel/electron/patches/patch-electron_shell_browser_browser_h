@@ -1,0 +1,23 @@
+$OpenBSD: patch-electron_shell_browser_browser_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/browser.h
+--- electron/shell/browser/browser.h.orig
++++ electron/shell/browser/browser.h
+@@ -219,7 +219,7 @@ class Browser : public WindowListObserver {
+   PCWSTR GetAppUserModelID();
+ #endif  // defined(OS_WIN)
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Whether Unity launcher is running.
+   bool IsUnityRunning();
+ #endif  // defined(OS_LINUX)
+@@ -301,7 +301,7 @@ class Browser : public WindowListObserver {
+ 
+   std::unique_ptr<util::Promise<void*>> ready_promise_;
+ 
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+   base::Value about_panel_options_;
+ #elif defined(OS_MACOSX)
+   base::DictionaryValue about_panel_options_;

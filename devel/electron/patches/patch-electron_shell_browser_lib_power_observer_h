@@ -1,0 +1,23 @@
+$OpenBSD: patch-electron_shell_browser_lib_power_observer_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/lib/power_observer.h
+--- electron/shell/browser/lib/power_observer.h.orig
++++ electron/shell/browser/lib/power_observer.h
+@@ -7,7 +7,7 @@
+ 
+ #include "base/macros.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "shell/browser/lib/power_observer_linux.h"
+ #else
+ #include "base/power_monitor/power_observer.h"
+@@ -15,7 +15,7 @@
+ 
+ namespace electron {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ typedef PowerObserverLinux PowerObserver;
+ #else
+ typedef base::PowerObserver PowerObserver;

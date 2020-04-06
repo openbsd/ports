@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_spec_node-spec_js,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/spec/node-spec.js
+--- electron/spec/node-spec.js.orig
++++ electron/spec/node-spec.js
+@@ -147,7 +147,7 @@ describe('node feature', () => {
+     });
+ 
+     describe('child_process.exec', () => {
+-      (process.platform === 'linux' ? it : it.skip)('allows executing a setuid binary from non-sandboxed renderer', () => {
++      (process.platform === 'openbsd' ? it : it.skip)('allows executing a setuid binary from non-sandboxed renderer', () => {
+         // Chrome uses prctl(2) to set the NO_NEW_PRIVILEGES flag on Linux (see
+         // https://github.com/torvalds/linux/blob/40fde647cc/Documentation/userspace-api/no_new_privs.rst).
+         // We disable this for unsandboxed processes, which the remote tests

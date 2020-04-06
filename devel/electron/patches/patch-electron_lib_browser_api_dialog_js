@@ -1,14 +1,14 @@
-$OpenBSD: patch-electron_lib_browser_api_dialog_js,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+$OpenBSD: patch-electron_lib_browser_api_dialog_js,v 1.2 2020/04/06 18:58:16 robert Exp $
 
 Index: electron/lib/browser/api/dialog.js
 --- electron/lib/browser/api/dialog.js.orig
 +++ electron/lib/browser/api/dialog.js
-@@ -28,7 +28,7 @@ const normalizeAccessKey = (text) => {
+@@ -42,7 +42,7 @@ const normalizeAccessKey = (text) => {
    // existing single underscores with a second underscore, replace double
    // ampersands with a single ampersand, and replace a single ampersand with
    // a single underscore
 -  if (process.platform === 'linux') {
 +  if (process.platform === 'openbsd') {
      return text.replace(/_/g, '__').replace(/&(.?)/g, (match, after) => {
-       if (after === '&') return after
-       return `_${after}`
+       if (after === '&') return after;
+       return `_${after}`;

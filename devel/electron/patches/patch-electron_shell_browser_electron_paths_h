@@ -1,0 +1,21 @@
+$OpenBSD: patch-electron_shell_browser_electron_paths_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/electron_paths.h
+--- electron/shell/browser/electron_paths.h.orig
++++ electron/shell/browser/electron_paths.h
+@@ -26,13 +26,13 @@ enum {
+   DIR_USER_CACHE,              // Directory where user cache can be written.
+   DIR_APP_LOGS,                // Directory where app logs live
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   DIR_APP_DATA,  // Application Data directory under the user profile.
+ #endif
+ 
+   PATH_END,  // End of new paths. Those that follow redirect to base::DIR_*
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+   DIR_APP_DATA = base::DIR_APP_DATA,
+ #endif
+ 

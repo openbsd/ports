@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/12 11:01:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/06 18:58:16 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,9 +12,8 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			80.0.3987.116
-ECV=			76.0.3809.132
-ELECTRON_V=		6.0.3
+ECV=			80.0.3987.158
+ELECTRON_V=		8.2.0
 
 DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
@@ -27,8 +26,6 @@ HOMEPAGE=		https://www.chromium.org/Home
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz
-
-REVISION=		7
 
 # BSD-like
 PERMIT_PACKAGE =	Yes
@@ -71,6 +68,7 @@ WANTLIB += harfbuzz
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
+WANTLIB += Xft harfbuzz-subset
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -98,15 +96,10 @@ LIB_DEPENDS=	devel/harfbuzz \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 
-.if ${MACHINE_ARCH} == amd64
-# they can make better javascript with java ...
-JAVA_HOME=	${LOCALBASE}/jdk-1.8.0
-BUILD_DEPENDS+=	jdk->=1.8v0,<1.9v0:devel/jdk/1.8
-.endif
-
 .include <bsd.own.mk>
 
 BUILDTYPE=	Release
+DEBUGFLAG=	-g0
 
 SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
 
@@ -121,7 +114,6 @@ LIB_DEPENDS+=		www/nghttp2
 WANTLIB+=		nghttp2
 
 WRKSRC=			${WRKDIR}/chromium-${ECV}
-EXTRACT_ONLY=		${DISTFILES:C/chromium-${V}.*//:C/:0//}
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
 
@@ -135,6 +127,10 @@ GN_SYSTEM_LIBS=	libevent \
 
 GN_ARGS=	enable_nacl=false \
 		is_debug=false \
+		is_cfi=false \
+		is_electron_build=true \
+		optimize_webui=false \
+		closure_compile=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		use_kerberos=false \
@@ -142,6 +138,8 @@ GN_ARGS=	enable_nacl=false \
 		use_cups=true \
 		use_system_libdrm=true \
 		use_bundled_fontconfig=false \
+		use_system_harfbuzz=true \
+		use_system_freetype=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -175,23 +173,21 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 
 
 GN_ARGS+=	is_official_build=true \
-		is_component_build=false
+		is_component_build=false \
+		is_component_ffmpeg=false
 
 MAKE_ENV+=	PATH=${PATH}:${WRKSRC}/electron/node_modules/.bin \
 		NODE_PATH=${WRKSRC}/electron/node_modules
-GN_ARGS+=	is_component_ffmpeg=false \
-		use_jumbo_build=true
 
-# manually de-jsonified list from electron/patches/common/config.json
-ELECTRON_PATCH_CONFIG+= electron/patches/common/chromium:.
-ELECTRON_PATCH_CONFIG+= electron/patches/common/boringssl:third_party/boringssl/src
-ELECTRON_PATCH_CONFIG+= electron/patches/common/ffmpeg:third_party/ffmpeg
-ELECTRON_PATCH_CONFIG+= electron/patches/common/v8:v8
+# manually de-jsonified list from electron/patches/config.json
+ELECTRON_PATCH_CONFIG+= electron/patches/chromium:.
+ELECTRON_PATCH_CONFIG+= electron/patches/boringssl:third_party/boringssl/src
+ELECTRON_PATCH_CONFIG+= electron/patches/v8:v8
 ELECTRON_PATCH_CONFIG+= electron/patches/node:third_party/electron_node
 
 do-distpatch:
 	@for _p in ${WRKDIR}/chromium-patches-${ECV}/patch-*; do \
-		${PATCH} ${PATCH_DIST_ARGS} < $${_p}; \
+		${PATCH} ${PATCH_DIST_ARGS} -z .orig.chromium < $${_p}; \
 	done
 
 pre-patch:
@@ -206,9 +202,6 @@ pre-patch:
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-.if ${MACHINE_ARCH} == amd64
-	@ln -sf ${JAVA_HOME}/bin/java ${WRKDIR}/bin/java
-.endif
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
@@ -222,18 +215,10 @@ pre-configure:
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
-		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py
+		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
+		${WRKSRC}/build/config/compiler/BUILD.gn
 	mkdir -p ${WRKSRC}/electron/node_modules/.bin
 	ln -sf /usr/bin/false ${WRKDIR}/bin/resize
-	ln -sf ${WRKSRC}/electron/node_modules/browserify/bin/cmd.js ${WRKSRC}/electron/node_modules/.bin/browserify
-	ln -sf ${WRKSRC}/electron/node_modules/electron-typescript-definitions/cli.js  ${WRKSRC}/electron/node_modules/.bin/electron-typescript-definitions
-	ln -sf ${WRKSRC}/electron/node_modules/electron-docs-linter/cli.js ${WRKSRC}/electron/node_modules/.bin/electron-docs-linter
-	ln -sf ${WRKSRC}/electron/node_modules/electron-typescript-definitions/cli.js ${WRKSRC}/electron/node_modules/.bin/gn-typescript-definitions
-	ln -sf ${WRKSRC}/electron/node_modules/rc/cli.js ${WRKSRC}/electron/node_modules/.bin/rc
-	ln -sf ${WRKSRC}/electron/node_modules/semver/bin/semver ${WRKSRC}/electron/node_modules/.bin/semver
-	ln -sf ${WRKSRC}/electron/node_modules/shx/lib/cli.js ${WRKSRC}/electron/node_modules/.bin/shx
-	ln -sf ${WRKSRC}/electron/node_modules/typescript/bin/tsc ${WRKSRC}/electron/node_modules/.bin/tsc
-	chmod +x ${WRKSRC}/electron/node_modules/.bin/tsc
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
@@ -271,7 +256,6 @@ do-install:
 .for f in protoc icudtl.dat mksnapshot snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
-	${INSTALL_DATA} ${BUILDDIR}/natives_blob.bin ${PREFIX}/${DIST_TARGET_DIR}
 	cd ${BUILDDIR} && \
 		cp chromedriver.zip chromedriver-v${ELECTRON_V}-openbsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
 		cp dist.zip electron-v${ELECTRON_V}-openbsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \

@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_shell_browser_native_window_views_h,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/native_window_views.h
+--- electron/shell/browser/native_window_views.h.orig
++++ electron/shell/browser/native_window_views.h
+@@ -209,7 +209,7 @@ class NativeWindowViews : public NativeWindow,
+       content::WebContents*,
+       const content::NativeWebKeyboardEvent& event) override;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // ui::EventHandler:
+   void OnMouseEvent(ui::MouseEvent* event) override;
+ #endif

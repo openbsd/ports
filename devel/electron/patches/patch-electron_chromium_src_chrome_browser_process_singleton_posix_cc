@@ -1,18 +1,18 @@
-$OpenBSD: patch-electron_chromium_src_chrome_browser_process_singleton_posix_cc,v 1.1.1.1 2020/03/10 11:16:33 espie Exp $
+$OpenBSD: patch-electron_chromium_src_chrome_browser_process_singleton_posix_cc,v 1.2 2020/04/06 18:58:16 robert Exp $
 
 Index: electron/chromium_src/chrome/browser/process_singleton_posix.cc
 --- electron/chromium_src/chrome/browser/process_singleton_posix.cc.orig
 +++ electron/chromium_src/chrome/browser/process_singleton_posix.cc
-@@ -95,7 +95,7 @@
+@@ -94,7 +94,7 @@
+ #include "content/public/browser/browser_thread.h"
  #include "net/base/network_interfaces.h"
- #include "ui/base/l10n/l10n_util.h"
  
 -#if defined(TOOLKIT_VIEWS) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if defined(TOOLKIT_VIEWS) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -862,7 +862,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
+@@ -861,7 +861,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
      // The other process is shutting down, it's safe to start a new process.
      return PROCESS_NONE;
    } else if (strncmp(buf, kACKToken, base::size(kACKToken) - 1) == 0) {

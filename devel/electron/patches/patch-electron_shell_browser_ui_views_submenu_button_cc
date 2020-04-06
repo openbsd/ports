@@ -1,0 +1,14 @@
+$OpenBSD: patch-electron_shell_browser_ui_views_submenu_button_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/browser/ui/views/submenu_button.cc
+--- electron/shell/browser/ui/views/submenu_button.cc.orig
++++ electron/shell/browser/ui/views/submenu_button.cc
+@@ -27,7 +27,7 @@ SubmenuButton::SubmenuButton(const base::string16& tit
+           gfx::RemoveAcceleratorChar(title, '&', nullptr, nullptr),
+           button_listener),
+       background_color_(background_color) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Dont' use native style border.
+   SetBorder(CreateDefaultBorder());
+ #endif

@@ -1,0 +1,42 @@
+$OpenBSD: patch-electron_shell_app_electron_main_delegate_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
+
+Index: electron/shell/app/electron_main_delegate.cc
+--- electron/shell/app/electron_main_delegate.cc.orig
++++ electron/shell/app/electron_main_delegate.cc
+@@ -8,7 +8,7 @@
+ #include <memory>
+ #include <string>
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include <glib.h>  // for g_setenv()
+ #endif
+ 
+@@ -183,6 +183,9 @@ bool ElectronMainDelegate::BasicStartupComplete(int* e
+   if (env->HasVar("ELECTRON_DISABLE_SANDBOX"))
+     command_line->AppendSwitch(service_manager::switches::kNoSandbox);
+ 
++  // XXX OpenBSD -> pledge & unveil
++  command_line->AppendSwitch(service_manager::switches::kNoSandbox);
++
+   tracing_sampler_profiler_ =
+       tracing::TracingSamplerProfiler::CreateOnMainThread();
+ 
+@@ -205,7 +208,7 @@ bool ElectronMainDelegate::BasicStartupComplete(int* e
+     base::win::PinUser32();
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Check for --no-sandbox parameter when running as root.
+   if (getuid() == 0 && IsSandboxEnabled(command_line))
+     LOG(FATAL) << "Running as root without --"
+@@ -245,7 +248,7 @@ void ElectronMainDelegate::PostEarlyInitialization(boo
+         ui::ResourceBundle::GetSharedInstance().GetLocaleFilePath(locale);
+     if (!locale_file_path.empty()) {
+       custom_locale = locale;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       /* When built with USE_GLIB, libcc's GetApplicationLocaleInternal() uses
+        * glib's g_get_language_names(), which keys off of getenv("LC_ALL") */
+       g_setenv("LC_ALL", custom_locale.c_str(), TRUE);
