@@ -1,18 +1,19 @@
-$OpenBSD: patch-mcs_class_System_System_Net_NetworkInformation_UnixNetworkInterfaceFactory_cs,v 1.1 2019/03/31 18:28:39 thfr Exp $
-
-Initialize network interface for OpenBSD like for FreeBSD to address issue
-https://github.com/mono/mono/issues/8168
-Pull Request: https://github.com/mono/mono/pull/13633
+$OpenBSD: patch-mcs_class_System_System_Net_NetworkInformation_UnixNetworkInterfaceFactory_cs,v 1.2 2020/04/06 15:11:11 robert Exp $
 
 Index: mcs/class/System/System.Net.NetworkInformation/UnixNetworkInterfaceFactory.cs
 --- mcs/class/System/System.Net.NetworkInformation/UnixNetworkInterfaceFactory.cs.orig
 +++ mcs/class/System/System.Net.NetworkInformation/UnixNetworkInterfaceFactory.cs
-@@ -41,7 +41,7 @@ namespace System.Net.NetworkInformation {
- 			bool runningOnUnix = (Environment.OSVersion.Platform == PlatformID.Unix);
- 
+@@ -43,10 +43,12 @@ namespace System.Net.NetworkInformation {
  			if (runningOnUnix) {
--				if (Platform.IsMacOS || Platform.IsFreeBSD)
-+				if (Platform.IsMacOS || Platform.IsFreeBSD || Platform.IsOpenBSD)
+ 				// XXX: OpenBSD and NetBSD too? It seems other platforms map closer to the Mac OS version than Linux,
+ 				// even if not exactly; it seems Linux and/or glibc are the different ones.
+-				if (Platform.IsMacOS || Platform.IsOpenBSD)
++				if (Platform.IsMacOS)
  					return new MacOsNetworkInterfaceAPI ();
+ 				if (Platform.IsFreeBSD)
+ 					return new FreeBSDNetworkInterfaceAPI ();
++				if (Platform.IsOpenBSD)
++					return new OpenBSDNetworkInterfaceAPI ();
  
- 				return new LinuxNetworkInterfaceAPI ();
+ 				// XXX: IBM i would be better with its own API targetting Qp2getifaddrs
+ 				if (Platform.IsAix || Platform.IsIBMi)

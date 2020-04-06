@@ -1,0 +1,11 @@
+$OpenBSD: patch-mcs_class_System_macos_networkinfo_sources,v 1.1 2020/04/06 15:11:11 robert Exp $
+
+Index: mcs/class/System/macos_networkinfo.sources
+--- mcs/class/System/macos_networkinfo.sources.orig
++++ mcs/class/System/macos_networkinfo.sources
+@@ -1,4 +1,5 @@
+ System.Net.NetworkInformation/FreeBSDNetworkInterface.cs
++System.Net.NetworkInformation/OpenBSDNetworkInterface.cs
+ System.Net.NetworkInformation/MacOsIPInterfaceProperties.cs
+ System.Net.NetworkInformation/MacOsIPv4InterfaceProperties.cs
+ System.Net.NetworkInformation/MacOsIPv4InterfaceStatistics.cs

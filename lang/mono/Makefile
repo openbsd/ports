@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.133 2019/11/11 17:05:01 thfr Exp $
+# $OpenBSD: Makefile,v 1.134 2020/04/06 15:11:11 robert Exp $
 
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		5.20.1.34
-REVISION=	0
+V=		6.8.0.105
 
 DISTNAME=	mono-${V}
 
@@ -16,6 +15,7 @@ SHARED_LIBS +=  mono-2.0		1.0	# .0.0
 SHARED_LIBS +=  monoboehm-2.0           1.0     # .1.0
 SHARED_LIBS +=  monosgen-2.0            1.0	# .0.0
 
+SHARED_LIBS +=  mono-native		0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
 SHARED_LIBS +=  mono-profiler-coverage	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-log	0.0	# .0.0
@@ -27,10 +27,10 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv2, LGPL, MIT X11, MPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv m pthread z
+WANTLIB=	c m pthread z
 
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 
 MODULES=	lang/mono \
 		lang/python
@@ -43,28 +43,22 @@ USE_LIBTOOL=	gnu
 SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \
+		devel/cmake \
 		devel/gettext,-tools \
 		lang/gawk \
 		shells/bash \
-		x11/libgdiplus
-
-# XXX what is this for?
-BUILD_DEPENDS +=	devel/cmake \
-			devel/ninja
+		x11/libgdiplus \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
 RUN_DEPENDS=	x11/libgdiplus
 
-LIB_DEPENDS=	converters/libiconv
-
 TEST_DEPENDS=	lang/python/${MODPY_VERSION}
 
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=autoreconf
 AUTOCONF_VERSION=2.69
 AUTOMAKE_VERSION=1.15
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		ac_cv_header_execinfo_h=no
+CONFIGURE_ENV=	ac_cv_header_execinfo_h=no
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+=	CFLAGS="-march=i586"

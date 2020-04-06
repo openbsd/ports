@@ -1,0 +1,13 @@
+$OpenBSD: patch-mono_native_mono-native-platform_h,v 1.1 2020/04/06 15:11:11 robert Exp $
+
+Index: mono/native/mono-native-platform.h
+--- mono/native/mono-native-platform.h.orig
++++ mono/native/mono-native-platform.h
+@@ -14,6 +14,7 @@ typedef enum {
+ 	MONO_NATIVE_PLATFORM_TYPE_FREEBSD	= 6,
+ 	MONO_NATIVE_PLATFORM_TYPE_HAIKU		= 7,
+ 	MONO_NATIVE_PLATFORM_TYPE_NETBSD	= 8,
++	MONO_NATIVE_PLATFORM_TYPE_OPENBSD	= 9,
+ 
+ 	MONO_NATIVE_PLATFORM_TYPE_IPHONE	= 0x100,
+ 	MONO_NATIVE_PLATFORM_TYPE_TV		= 0x200,

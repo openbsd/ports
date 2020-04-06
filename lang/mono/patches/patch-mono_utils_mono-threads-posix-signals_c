@@ -1,11 +1,11 @@
-$OpenBSD: patch-mono_utils_mono-threads-posix-signals_c,v 1.3 2019/03/31 18:28:39 thfr Exp $
+$OpenBSD: patch-mono_utils_mono-threads-posix-signals_c,v 1.4 2020/04/06 15:11:11 robert Exp $
 
 Use SIGUSR1 in OpenBSD as abort signal
 
 Index: mono/utils/mono-threads-posix-signals.c
 --- mono/utils/mono-threads-posix-signals.c.orig
 +++ mono/utils/mono-threads-posix-signals.c
-@@ -76,6 +76,8 @@ abort_signal_get (void)
+@@ -77,6 +77,8 @@ abort_signal_get (void)
  	if (abort_signum == -1)
  		abort_signum = mono_threads_suspend_search_alternative_signal ();
  	return abort_signum;

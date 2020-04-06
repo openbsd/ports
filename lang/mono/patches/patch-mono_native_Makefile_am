@@ -1,0 +1,36 @@
+$OpenBSD: patch-mono_native_Makefile_am,v 1.1 2020/04/06 15:11:11 robert Exp $
+
+Index: mono/native/Makefile.am
+--- mono/native/Makefile.am.orig
++++ mono/native/Makefile.am
+@@ -79,6 +79,8 @@ freebsd_sources = $(unix_sources)
+ 
+ netbsd_sources = $(unix_sources)
+ 
++openbsd_sources = $(unix_sources)
++
+ haiku_sources = $(unix_sources)
+ 
+ android_sources = \
+@@ -119,7 +121,7 @@ ios_sources += $(gss_sources)
+ android_sources += $(gss_sources)
+ endif
+ 
+-EXTRA_libmono_native_la_SOURCES = $(common_sources) $(macos_sources) $(ios_sources) $(linux_sources) $(aix_sources) $(freebsd_sources) $(netbsd_sources) $(haiku_sources) $(unix_sources) $(gss_sources)
++EXTRA_libmono_native_la_SOURCES = $(common_sources) $(macos_sources) $(ios_sources) $(linux_sources) $(aix_sources) $(freebsd_sources) $(netbsd_sources) $(openbsd_sources) $(haiku_sources) $(unix_sources) $(gss_sources)
+ 
+ if MONO_NATIVE_PLATFORM_MACOS
+ platform_sources = $(macos_sources)
+@@ -142,8 +144,12 @@ else
+ if MONO_NATIVE_PLATFORM_NETBSD
+ platform_sources = $(netbsd_sources)
+ else
++if MONO_NATIVE_PLATFORM_OPENBSD
++platform_sources = $(openbsd_sources)
++else
+ if MONO_NATIVE_PLATFORM_HAIKU
+ platform_sources = $(haiku_sources)
++endif
+ endif
+ endif
+ endif

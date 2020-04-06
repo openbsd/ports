@@ -1,0 +1,16 @@
+$OpenBSD: patch-mono_tests_fullaot-mixed_Makefile_am,v 1.1 2020/04/06 15:11:11 robert Exp $
+
+adapt to the coop-by-default syntax in our port
+
+Index: mono/tests/fullaot-mixed/Makefile.am
+--- mono/tests/fullaot-mixed/Makefile.am.orig
++++ mono/tests/fullaot-mixed/Makefile.am
+@@ -51,7 +51,7 @@ $(AOTDIR)/%.exe: %.exe
+ 
+ if !X86
+ if !DISABLE_INTERPRETER
+-if !ENABLE_COOP_SUSPEND
++if DISABLE_COOP_SUSPEND
+ check: $(AOT_IMAGES) $(TEST_IMAGES)
+ 	MONO_PATH="$(AOTDIR)$(PLATFORM_PATH_SEPARATOR)$(CLASS)" $(MONO_EXE) --aot-path=$(AOTDIR) --full-aot-interp $(AOTDIR)/lambda.exe
+ endif

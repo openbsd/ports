@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.36 2019/09/19 12:03:00 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.37 2020/04/06 15:11:11 robert Exp $
 bin/al
 bin/al2
+bin/aprofutil
 bin/caspol
 bin/cccheck
 bin/ccrewrite
@@ -10,7 +11,6 @@ bin/certmgr
 bin/chktrust
 bin/crlupdate
 bin/csc
-bin/csc-dim
 bin/csharp
 bin/csi
 bin/disco
@@ -50,6 +50,7 @@ bin/mono-configuration-crypto
 bin/mono-find-provides
 bin/mono-find-requires
 bin/mono-gdb.py
+@bin bin/mono-hang-watchdog
 bin/mono-heapviz
 bin/mono-package-runtime
 bin/mono-service
@@ -64,15 +65,11 @@ bin/mono-xmltool
 bin/monodocer
 bin/monodocs2html
 bin/monodocs2slashdoc
-@bin bin/monograph
 bin/monolinker
 bin/monop
 bin/monop2
 bin/mozroots
 @bin bin/mprof-report
-bin/nunit-console
-bin/nunit-console2
-bin/nunit-console4
 bin/pdb2mdb
 @bin bin/pedump
 bin/permview
@@ -135,38 +132,41 @@ include/mono-2.0/mono/utils/mono-forward.h
 include/mono-2.0/mono/utils/mono-jemalloc.h
 include/mono-2.0/mono/utils/mono-logger.h
 include/mono-2.0/mono/utils/mono-publib.h
-lib/libMonoPosixHelper.a
+@static-lib lib/libMonoPosixHelper.a
 lib/libMonoPosixHelper.la
-lib/libMonoPosixHelper.so
-lib/libMonoSupportW.a
+@so lib/libMonoPosixHelper.so
+@static-lib lib/libMonoSupportW.a
 lib/libMonoSupportW.la
-lib/libMonoSupportW.so
-lib/libikvm-native.a
+@so lib/libMonoSupportW.so
+@static-lib lib/libikvm-native.a
 lib/libikvm-native.la
-lib/libikvm-native.so
-lib/libmono-2.0.a
+@so lib/libikvm-native.so
+@static-lib lib/libmono-2.0.a
 lib/libmono-2.0.la
 @lib lib/libmono-2.0.so.${LIBmono-2.0_VERSION}
-lib/libmono-btls-shared.so
-lib/libmono-profiler-aot-static.a
+@so lib/libmono-btls-shared.so
+@static-lib lib/libmono-native.a
+lib/libmono-native.la
+@lib lib/libmono-native.so.${LIBmono-native_VERSION}
+@static-lib lib/libmono-profiler-aot-static.a
 lib/libmono-profiler-aot-static.la
-lib/libmono-profiler-aot.a
+@static-lib lib/libmono-profiler-aot.a
 lib/libmono-profiler-aot.la
 @lib lib/libmono-profiler-aot.so.${LIBmono-profiler-aot_VERSION}
-lib/libmono-profiler-coverage-static.a
+@static-lib lib/libmono-profiler-coverage-static.a
 lib/libmono-profiler-coverage-static.la
-lib/libmono-profiler-coverage.a
+@static-lib lib/libmono-profiler-coverage.a
 lib/libmono-profiler-coverage.la
 @lib lib/libmono-profiler-coverage.so.${LIBmono-profiler-coverage_VERSION}
-lib/libmono-profiler-log-static.a
+@static-lib lib/libmono-profiler-log-static.a
 lib/libmono-profiler-log-static.la
-lib/libmono-profiler-log.a
+@static-lib lib/libmono-profiler-log.a
 lib/libmono-profiler-log.la
 @lib lib/libmono-profiler-log.so.${LIBmono-profiler-log_VERSION}
-lib/libmonoboehm-2.0.a
+@static-lib lib/libmonoboehm-2.0.a
 lib/libmonoboehm-2.0.la
 @lib lib/libmonoboehm-2.0.so.${LIBmonoboehm-2.0_VERSION}
-lib/libmonosgen-2.0.a
+@static-lib lib/libmonosgen-2.0.a
 lib/libmonosgen-2.0.la
 @lib lib/libmonosgen-2.0.so.${LIBmonosgen-2.0_VERSION}
 lib/mono/
@@ -1194,6 +1194,7 @@ lib/mono/4.5/System.IdentityModel.dll
 lib/mono/4.5/System.Json.Microsoft.dll
 lib/mono/4.5/System.Json.dll
 lib/mono/4.5/System.Management.dll
+lib/mono/4.5/System.Memory.dll
 lib/mono/4.5/System.Messaging.dll
 lib/mono/4.5/System.Net.Http.Formatting.dll
 lib/mono/4.5/System.Net.Http.WebRequest.dll
@@ -1215,6 +1216,7 @@ lib/mono/4.5/System.Reactive.Windows.Threading.dll
 lib/mono/4.5/System.Reflection.Context.dll
 lib/mono/4.5/System.Reflection.Metadata.dll
 lib/mono/4.5/System.Runtime.Caching.dll
+lib/mono/4.5/System.Runtime.CompilerServices.Unsafe.dll
 lib/mono/4.5/System.Runtime.DurableInstancing.dll
 lib/mono/4.5/System.Runtime.Remoting.dll
 lib/mono/4.5/System.Runtime.Serialization.Formatters.Soap.dll
@@ -1228,6 +1230,7 @@ lib/mono/4.5/System.ServiceModel.Web.dll
 lib/mono/4.5/System.ServiceModel.dll
 lib/mono/4.5/System.ServiceProcess.dll
 lib/mono/4.5/System.Threading.Tasks.Dataflow.dll
+lib/mono/4.5/System.Threading.Tasks.Extensions.dll
 lib/mono/4.5/System.Transactions.dll
 lib/mono/4.5/System.Web.Abstractions.dll
 lib/mono/4.5/System.Web.ApplicationServices.dll
@@ -1264,6 +1267,8 @@ lib/mono/4.5/WebMatrix.Data.dll
 lib/mono/4.5/WindowsBase.dll
 lib/mono/4.5/al.exe
 lib/mono/4.5/al.pdb
+lib/mono/4.5/aprofutil.exe
+lib/mono/4.5/aprofutil.pdb
 lib/mono/4.5/browsercaps-updater.exe
 lib/mono/4.5/browsercaps-updater.pdb
 lib/mono/4.5/caspol.exe
@@ -1293,14 +1298,6 @@ lib/mono/4.5/csi.exe.config
 lib/mono/4.5/csi.rsp
 lib/mono/4.5/culevel.exe
 lib/mono/4.5/culevel.pdb
-lib/mono/4.5/dim/
-lib/mono/4.5/dim/Microsoft.CodeAnalysis.CSharp.dll
-lib/mono/4.5/dim/Microsoft.CodeAnalysis.dll
-lib/mono/4.5/dim/System.Collections.Immutable.dll
-lib/mono/4.5/dim/System.Reflection.Metadata.dll
-lib/mono/4.5/dim/csc.exe
-lib/mono/4.5/dim/csc.exe.config
-lib/mono/4.5/dim/csc.rsp
 lib/mono/4.5/disco.exe
 lib/mono/4.5/disco.pdb
 lib/mono/4.5/dtd2rng.exe
@@ -1368,17 +1365,6 @@ lib/mono/4.5/mozroots.exe
 lib/mono/4.5/mozroots.pdb
 lib/mono/4.5/mscorlib.dll
 lib/mono/4.5/mscorlib.pdb
-lib/mono/4.5/nunit-console-runner.dll
-lib/mono/4.5/nunit-console.exe
-lib/mono/4.5/nunit-console.exe.config
-lib/mono/4.5/nunit-console.pdb
-lib/mono/4.5/nunit.core.dll
-lib/mono/4.5/nunit.core.extensions.dll
-lib/mono/4.5/nunit.core.interfaces.dll
-lib/mono/4.5/nunit.framework.dll
-lib/mono/4.5/nunit.framework.extensions.dll
-lib/mono/4.5/nunit.mocks.dll
-lib/mono/4.5/nunit.util.dll
 lib/mono/4.5/pdb2mdb.exe
 lib/mono/4.5/pdb2mdb.pdb
 lib/mono/4.5/permview.exe
@@ -2677,6 +2663,249 @@ lib/mono/4.7.2-api/WebMatrix.Data.dll
 lib/mono/4.7.2-api/WindowsBase.dll
 lib/mono/4.7.2-api/cscompmgd.dll
 lib/mono/4.7.2-api/mscorlib.dll
+lib/mono/4.8-api/
+lib/mono/4.8-api/Accessibility.dll
+lib/mono/4.8-api/Commons.Xml.Relaxng.dll
+lib/mono/4.8-api/CustomMarshalers.dll
+lib/mono/4.8-api/Facades/
+lib/mono/4.8-api/Facades/Microsoft.Win32.Primitives.dll
+lib/mono/4.8-api/Facades/System.AppContext.dll
+lib/mono/4.8-api/Facades/System.Collections.Concurrent.dll
+lib/mono/4.8-api/Facades/System.Collections.NonGeneric.dll
+lib/mono/4.8-api/Facades/System.Collections.Specialized.dll
+lib/mono/4.8-api/Facades/System.Collections.dll
+lib/mono/4.8-api/Facades/System.ComponentModel.Annotations.dll
+lib/mono/4.8-api/Facades/System.ComponentModel.EventBasedAsync.dll
+lib/mono/4.8-api/Facades/System.ComponentModel.Primitives.dll
+lib/mono/4.8-api/Facades/System.ComponentModel.TypeConverter.dll
+lib/mono/4.8-api/Facades/System.ComponentModel.dll
+lib/mono/4.8-api/Facades/System.Console.dll
+lib/mono/4.8-api/Facades/System.Data.Common.dll
+lib/mono/4.8-api/Facades/System.Diagnostics.Contracts.dll
+lib/mono/4.8-api/Facades/System.Diagnostics.Debug.dll
+lib/mono/4.8-api/Facades/System.Diagnostics.FileVersionInfo.dll
+lib/mono/4.8-api/Facades/System.Diagnostics.Process.dll
+lib/mono/4.8-api/Facades/System.Diagnostics.StackTrace.dll
+lib/mono/4.8-api/Facades/System.Diagnostics.TextWriterTraceListener.dll
+lib/mono/4.8-api/Facades/System.Diagnostics.Tools.dll
+lib/mono/4.8-api/Facades/System.Diagnostics.TraceSource.dll
+lib/mono/4.8-api/Facades/System.Drawing.Primitives.dll
+lib/mono/4.8-api/Facades/System.Dynamic.Runtime.dll
+lib/mono/4.8-api/Facades/System.Globalization.Calendars.dll
+lib/mono/4.8-api/Facades/System.Globalization.Extensions.dll
+lib/mono/4.8-api/Facades/System.Globalization.dll
+lib/mono/4.8-api/Facades/System.IO.Compression.ZipFile.dll
+lib/mono/4.8-api/Facades/System.IO.FileSystem.DriveInfo.dll
+lib/mono/4.8-api/Facades/System.IO.FileSystem.Primitives.dll
+lib/mono/4.8-api/Facades/System.IO.FileSystem.Watcher.dll
+lib/mono/4.8-api/Facades/System.IO.FileSystem.dll
+lib/mono/4.8-api/Facades/System.IO.IsolatedStorage.dll
+lib/mono/4.8-api/Facades/System.IO.MemoryMappedFiles.dll
+lib/mono/4.8-api/Facades/System.IO.Pipes.dll
+lib/mono/4.8-api/Facades/System.IO.UnmanagedMemoryStream.dll
+lib/mono/4.8-api/Facades/System.IO.dll
+lib/mono/4.8-api/Facades/System.Linq.Expressions.dll
+lib/mono/4.8-api/Facades/System.Linq.Parallel.dll
+lib/mono/4.8-api/Facades/System.Linq.Queryable.dll
+lib/mono/4.8-api/Facades/System.Linq.dll
+lib/mono/4.8-api/Facades/System.Net.Http.Rtc.dll
+lib/mono/4.8-api/Facades/System.Net.NameResolution.dll
+lib/mono/4.8-api/Facades/System.Net.NetworkInformation.dll
+lib/mono/4.8-api/Facades/System.Net.Ping.dll
+lib/mono/4.8-api/Facades/System.Net.Primitives.dll
+lib/mono/4.8-api/Facades/System.Net.Requests.dll
+lib/mono/4.8-api/Facades/System.Net.Security.dll
+lib/mono/4.8-api/Facades/System.Net.Sockets.dll
+lib/mono/4.8-api/Facades/System.Net.WebHeaderCollection.dll
+lib/mono/4.8-api/Facades/System.Net.WebSockets.Client.dll
+lib/mono/4.8-api/Facades/System.Net.WebSockets.dll
+lib/mono/4.8-api/Facades/System.ObjectModel.dll
+lib/mono/4.8-api/Facades/System.Reflection.Emit.ILGeneration.dll
+lib/mono/4.8-api/Facades/System.Reflection.Emit.Lightweight.dll
+lib/mono/4.8-api/Facades/System.Reflection.Emit.dll
+lib/mono/4.8-api/Facades/System.Reflection.Extensions.dll
+lib/mono/4.8-api/Facades/System.Reflection.Primitives.dll
+lib/mono/4.8-api/Facades/System.Reflection.dll
+lib/mono/4.8-api/Facades/System.Resources.Reader.dll
+lib/mono/4.8-api/Facades/System.Resources.ResourceManager.dll
+lib/mono/4.8-api/Facades/System.Resources.Writer.dll
+lib/mono/4.8-api/Facades/System.Runtime.CompilerServices.VisualC.dll
+lib/mono/4.8-api/Facades/System.Runtime.Extensions.dll
+lib/mono/4.8-api/Facades/System.Runtime.Handles.dll
+lib/mono/4.8-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll
+lib/mono/4.8-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll
+lib/mono/4.8-api/Facades/System.Runtime.InteropServices.dll
+lib/mono/4.8-api/Facades/System.Runtime.Numerics.dll
+lib/mono/4.8-api/Facades/System.Runtime.Serialization.Formatters.dll
+lib/mono/4.8-api/Facades/System.Runtime.Serialization.Json.dll
+lib/mono/4.8-api/Facades/System.Runtime.Serialization.Primitives.dll
+lib/mono/4.8-api/Facades/System.Runtime.Serialization.Xml.dll
+lib/mono/4.8-api/Facades/System.Runtime.dll
+lib/mono/4.8-api/Facades/System.Security.Claims.dll
+lib/mono/4.8-api/Facades/System.Security.Cryptography.Algorithms.dll
+lib/mono/4.8-api/Facades/System.Security.Cryptography.Csp.dll
+lib/mono/4.8-api/Facades/System.Security.Cryptography.Encoding.dll
+lib/mono/4.8-api/Facades/System.Security.Cryptography.Primitives.dll
+lib/mono/4.8-api/Facades/System.Security.Cryptography.X509Certificates.dll
+lib/mono/4.8-api/Facades/System.Security.Principal.dll
+lib/mono/4.8-api/Facades/System.Security.SecureString.dll
+lib/mono/4.8-api/Facades/System.ServiceModel.Duplex.dll
+lib/mono/4.8-api/Facades/System.ServiceModel.Http.dll
+lib/mono/4.8-api/Facades/System.ServiceModel.NetTcp.dll
+lib/mono/4.8-api/Facades/System.ServiceModel.Primitives.dll
+lib/mono/4.8-api/Facades/System.ServiceModel.Security.dll
+lib/mono/4.8-api/Facades/System.Text.Encoding.Extensions.dll
+lib/mono/4.8-api/Facades/System.Text.Encoding.dll
+lib/mono/4.8-api/Facades/System.Text.RegularExpressions.dll
+lib/mono/4.8-api/Facades/System.Threading.Overlapped.dll
+lib/mono/4.8-api/Facades/System.Threading.Tasks.Parallel.dll
+lib/mono/4.8-api/Facades/System.Threading.Tasks.dll
+lib/mono/4.8-api/Facades/System.Threading.Thread.dll
+lib/mono/4.8-api/Facades/System.Threading.ThreadPool.dll
+lib/mono/4.8-api/Facades/System.Threading.Timer.dll
+lib/mono/4.8-api/Facades/System.Threading.dll
+lib/mono/4.8-api/Facades/System.ValueTuple.dll
+lib/mono/4.8-api/Facades/System.Xml.ReaderWriter.dll
+lib/mono/4.8-api/Facades/System.Xml.XDocument.dll
+lib/mono/4.8-api/Facades/System.Xml.XPath.XDocument.dll
+lib/mono/4.8-api/Facades/System.Xml.XPath.dll
+lib/mono/4.8-api/Facades/System.Xml.XmlDocument.dll
+lib/mono/4.8-api/Facades/System.Xml.XmlSerializer.dll
+lib/mono/4.8-api/Facades/netstandard.dll
+lib/mono/4.8-api/I18N.CJK.dll
+lib/mono/4.8-api/I18N.MidEast.dll
+lib/mono/4.8-api/I18N.Other.dll
+lib/mono/4.8-api/I18N.Rare.dll
+lib/mono/4.8-api/I18N.West.dll
+lib/mono/4.8-api/I18N.dll
+lib/mono/4.8-api/IBM.Data.DB2.dll
+lib/mono/4.8-api/Microsoft.Build.Engine.dll
+lib/mono/4.8-api/Microsoft.Build.Framework.dll
+lib/mono/4.8-api/Microsoft.Build.Tasks.v4.0.dll
+lib/mono/4.8-api/Microsoft.Build.Utilities.v4.0.dll
+lib/mono/4.8-api/Microsoft.Build.dll
+lib/mono/4.8-api/Microsoft.CSharp.dll
+lib/mono/4.8-api/Microsoft.VisualBasic.dll
+lib/mono/4.8-api/Microsoft.VisualC.dll
+lib/mono/4.8-api/Microsoft.Web.Infrastructure.dll
+lib/mono/4.8-api/Mono.C5.dll
+lib/mono/4.8-api/Mono.CSharp.dll
+lib/mono/4.8-api/Mono.Cairo.dll
+lib/mono/4.8-api/Mono.CodeContracts.dll
+lib/mono/4.8-api/Mono.CompilerServices.SymbolWriter.dll
+lib/mono/4.8-api/Mono.Data.Sqlite.dll
+lib/mono/4.8-api/Mono.Data.Tds.dll
+lib/mono/4.8-api/Mono.Debugger.Soft.dll
+lib/mono/4.8-api/Mono.Http.dll
+lib/mono/4.8-api/Mono.Management.dll
+lib/mono/4.8-api/Mono.Messaging.RabbitMQ.dll
+lib/mono/4.8-api/Mono.Messaging.dll
+lib/mono/4.8-api/Mono.Options.dll
+lib/mono/4.8-api/Mono.Parallel.dll
+lib/mono/4.8-api/Mono.Posix.dll
+lib/mono/4.8-api/Mono.Security.Win32.dll
+lib/mono/4.8-api/Mono.Security.dll
+lib/mono/4.8-api/Mono.Simd.dll
+lib/mono/4.8-api/Mono.Tasklets.dll
+lib/mono/4.8-api/Mono.WebBrowser.dll
+lib/mono/4.8-api/Novell.Directory.Ldap.dll
+lib/mono/4.8-api/PEAPI.dll
+lib/mono/4.8-api/RabbitMQ.Client.dll
+lib/mono/4.8-api/SMDiagnostics.dll
+lib/mono/4.8-api/System.ComponentModel.Composition.dll
+lib/mono/4.8-api/System.ComponentModel.DataAnnotations.dll
+lib/mono/4.8-api/System.Configuration.Install.dll
+lib/mono/4.8-api/System.Configuration.dll
+lib/mono/4.8-api/System.Core.dll
+lib/mono/4.8-api/System.Data.DataSetExtensions.dll
+lib/mono/4.8-api/System.Data.Entity.dll
+lib/mono/4.8-api/System.Data.Linq.dll
+lib/mono/4.8-api/System.Data.OracleClient.dll
+lib/mono/4.8-api/System.Data.Services.Client.dll
+lib/mono/4.8-api/System.Data.Services.dll
+lib/mono/4.8-api/System.Data.dll
+lib/mono/4.8-api/System.Deployment.dll
+lib/mono/4.8-api/System.Design.dll
+lib/mono/4.8-api/System.Diagnostics.Tracing.dll
+lib/mono/4.8-api/System.DirectoryServices.Protocols.dll
+lib/mono/4.8-api/System.DirectoryServices.dll
+lib/mono/4.8-api/System.Drawing.Design.dll
+lib/mono/4.8-api/System.Drawing.dll
+lib/mono/4.8-api/System.Dynamic.dll
+lib/mono/4.8-api/System.EnterpriseServices.dll
+lib/mono/4.8-api/System.IO.Compression.FileSystem.dll
+lib/mono/4.8-api/System.IO.Compression.dll
+lib/mono/4.8-api/System.IdentityModel.Selectors.dll
+lib/mono/4.8-api/System.IdentityModel.dll
+lib/mono/4.8-api/System.Json.Microsoft.dll
+lib/mono/4.8-api/System.Json.dll
+lib/mono/4.8-api/System.Management.dll
+lib/mono/4.8-api/System.Messaging.dll
+lib/mono/4.8-api/System.Net.Http.Formatting.dll
+lib/mono/4.8-api/System.Net.Http.WebRequest.dll
+lib/mono/4.8-api/System.Net.Http.dll
+lib/mono/4.8-api/System.Net.dll
+lib/mono/4.8-api/System.Numerics.Vectors.dll
+lib/mono/4.8-api/System.Numerics.dll
+lib/mono/4.8-api/System.Reactive.Core.dll
+lib/mono/4.8-api/System.Reactive.Debugger.dll
+lib/mono/4.8-api/System.Reactive.Experimental.dll
+lib/mono/4.8-api/System.Reactive.Interfaces.dll
+lib/mono/4.8-api/System.Reactive.Linq.dll
+lib/mono/4.8-api/System.Reactive.Observable.Aliases.dll
+lib/mono/4.8-api/System.Reactive.PlatformServices.dll
+lib/mono/4.8-api/System.Reactive.Providers.dll
+lib/mono/4.8-api/System.Reactive.Runtime.Remoting.dll
+lib/mono/4.8-api/System.Reactive.Windows.Forms.dll
+lib/mono/4.8-api/System.Reactive.Windows.Threading.dll
+lib/mono/4.8-api/System.Reflection.Context.dll
+lib/mono/4.8-api/System.Runtime.Caching.dll
+lib/mono/4.8-api/System.Runtime.DurableInstancing.dll
+lib/mono/4.8-api/System.Runtime.Remoting.dll
+lib/mono/4.8-api/System.Runtime.Serialization.Formatters.Soap.dll
+lib/mono/4.8-api/System.Runtime.Serialization.dll
+lib/mono/4.8-api/System.Security.dll
+lib/mono/4.8-api/System.ServiceModel.Activation.dll
+lib/mono/4.8-api/System.ServiceModel.Discovery.dll
+lib/mono/4.8-api/System.ServiceModel.Routing.dll
+lib/mono/4.8-api/System.ServiceModel.Web.dll
+lib/mono/4.8-api/System.ServiceModel.dll
+lib/mono/4.8-api/System.ServiceProcess.dll
+lib/mono/4.8-api/System.Threading.Tasks.Dataflow.dll
+lib/mono/4.8-api/System.Transactions.dll
+lib/mono/4.8-api/System.Web.Abstractions.dll
+lib/mono/4.8-api/System.Web.ApplicationServices.dll
+lib/mono/4.8-api/System.Web.DynamicData.dll
+lib/mono/4.8-api/System.Web.Extensions.Design.dll
+lib/mono/4.8-api/System.Web.Extensions.dll
+lib/mono/4.8-api/System.Web.Http.SelfHost.dll
+lib/mono/4.8-api/System.Web.Http.WebHost.dll
+lib/mono/4.8-api/System.Web.Http.dll
+lib/mono/4.8-api/System.Web.Mobile.dll
+lib/mono/4.8-api/System.Web.Mvc.dll
+lib/mono/4.8-api/System.Web.Razor.dll
+lib/mono/4.8-api/System.Web.RegularExpressions.dll
+lib/mono/4.8-api/System.Web.Routing.dll
+lib/mono/4.8-api/System.Web.Services.dll
+lib/mono/4.8-api/System.Web.WebPages.Deployment.dll
+lib/mono/4.8-api/System.Web.WebPages.Razor.dll
+lib/mono/4.8-api/System.Web.WebPages.dll
+lib/mono/4.8-api/System.Web.dll
+lib/mono/4.8-api/System.Windows.Forms.DataVisualization.dll
+lib/mono/4.8-api/System.Windows.Forms.dll
+lib/mono/4.8-api/System.Windows.dll
+lib/mono/4.8-api/System.Workflow.Activities.dll
+lib/mono/4.8-api/System.Workflow.ComponentModel.dll
+lib/mono/4.8-api/System.Workflow.Runtime.dll
+lib/mono/4.8-api/System.Xaml.dll
+lib/mono/4.8-api/System.Xml.Linq.dll
+lib/mono/4.8-api/System.Xml.Serialization.dll
+lib/mono/4.8-api/System.Xml.dll
+lib/mono/4.8-api/System.dll
+lib/mono/4.8-api/WebMatrix.Data.dll
+lib/mono/4.8-api/WindowsBase.dll
+lib/mono/4.8-api/cscompmgd.dll
+lib/mono/4.8-api/mscorlib.dll
 lib/mono/gac/
 lib/mono/gac/Accessibility/
 lib/mono/gac/Accessibility/4.0.0.0__b03f5f7f11d50a3a/
@@ -2801,9 +3030,9 @@ lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll
 lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.pdb
 lib/mono/gac/Mono.Cecil/
-lib/mono/gac/Mono.Cecil/0.10.3.0__0738eb9f132ed756/
-lib/mono/gac/Mono.Cecil/0.10.3.0__0738eb9f132ed756/Mono.Cecil.dll
-lib/mono/gac/Mono.Cecil/0.10.3.0__0738eb9f132ed756/Mono.Cecil.pdb
+lib/mono/gac/Mono.Cecil/0.11.0.0__0738eb9f132ed756/
+lib/mono/gac/Mono.Cecil/0.11.0.0__0738eb9f132ed756/Mono.Cecil.dll
+lib/mono/gac/Mono.Cecil/0.11.0.0__0738eb9f132ed756/Mono.Cecil.pdb
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/Mono.Cecil.dll
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/Mono.Cecil.pdb
@@ -3280,38 +3509,6 @@ lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.config
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.pdb
-lib/mono/gac/nunit-console-runner/
-lib/mono/gac/nunit-console-runner/2.4.8.0__96d09a1eb7f44a77/
-lib/mono/gac/nunit-console-runner/2.4.8.0__96d09a1eb7f44a77/nunit-console-runner.dll
-lib/mono/gac/nunit-console-runner/2.4.8.0__96d09a1eb7f44a77/nunit-console-runner.pdb
-lib/mono/gac/nunit.core/
-lib/mono/gac/nunit.core.extensions/
-lib/mono/gac/nunit.core.extensions/2.4.8.0__96d09a1eb7f44a77/
-lib/mono/gac/nunit.core.extensions/2.4.8.0__96d09a1eb7f44a77/nunit.core.extensions.dll
-lib/mono/gac/nunit.core.extensions/2.4.8.0__96d09a1eb7f44a77/nunit.core.extensions.pdb
-lib/mono/gac/nunit.core.interfaces/
-lib/mono/gac/nunit.core.interfaces/2.4.8.0__96d09a1eb7f44a77/
-lib/mono/gac/nunit.core.interfaces/2.4.8.0__96d09a1eb7f44a77/nunit.core.interfaces.dll
-lib/mono/gac/nunit.core.interfaces/2.4.8.0__96d09a1eb7f44a77/nunit.core.interfaces.pdb
-lib/mono/gac/nunit.core/2.4.8.0__96d09a1eb7f44a77/
-lib/mono/gac/nunit.core/2.4.8.0__96d09a1eb7f44a77/nunit.core.dll
-lib/mono/gac/nunit.core/2.4.8.0__96d09a1eb7f44a77/nunit.core.pdb
-lib/mono/gac/nunit.framework/
-lib/mono/gac/nunit.framework.extensions/
-lib/mono/gac/nunit.framework.extensions/2.4.8.0__96d09a1eb7f44a77/
-lib/mono/gac/nunit.framework.extensions/2.4.8.0__96d09a1eb7f44a77/nunit.framework.extensions.dll
-lib/mono/gac/nunit.framework.extensions/2.4.8.0__96d09a1eb7f44a77/nunit.framework.extensions.pdb
-lib/mono/gac/nunit.framework/2.4.8.0__96d09a1eb7f44a77/
-lib/mono/gac/nunit.framework/2.4.8.0__96d09a1eb7f44a77/nunit.framework.dll
-lib/mono/gac/nunit.framework/2.4.8.0__96d09a1eb7f44a77/nunit.framework.pdb
-lib/mono/gac/nunit.mocks/
-lib/mono/gac/nunit.mocks/2.4.8.0__96d09a1eb7f44a77/
-lib/mono/gac/nunit.mocks/2.4.8.0__96d09a1eb7f44a77/nunit.mocks.dll
-lib/mono/gac/nunit.mocks/2.4.8.0__96d09a1eb7f44a77/nunit.mocks.pdb
-lib/mono/gac/nunit.util/
-lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/
-lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/nunit.util.dll
-lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/nunit.util.pdb
 lib/mono/lldb/
 lib/mono/lldb/mono.py
 lib/mono/mono-configuration-crypto/
@@ -3336,7 +3533,10 @@ lib/mono/msbuild/Current/bin/Roslyn/Microsoft.CodeAnalysis.dll
 lib/mono/msbuild/Current/bin/Roslyn/Microsoft.Managed.Core.targets
 lib/mono/msbuild/Current/bin/Roslyn/Microsoft.VisualBasic.Core.targets
 lib/mono/msbuild/Current/bin/Roslyn/System.Collections.Immutable.dll
+lib/mono/msbuild/Current/bin/Roslyn/System.Memory.dll
 lib/mono/msbuild/Current/bin/Roslyn/System.Reflection.Metadata.dll
+lib/mono/msbuild/Current/bin/Roslyn/System.Runtime.CompilerServices.Unsafe.dll
+lib/mono/msbuild/Current/bin/Roslyn/System.Threading.Tasks.Extensions.dll
 lib/mono/msbuild/Current/bin/Roslyn/VBCSCompiler.exe
 lib/mono/msbuild/Current/bin/Roslyn/VBCSCompiler.exe.config
 lib/mono/msbuild/Current/bin/Roslyn/csc.exe
@@ -3394,6 +3594,9 @@ lib/mono/xbuild-frameworks/.NETFramework/v4.7.2/RedistList/
 lib/mono/xbuild-frameworks/.NETFramework/v4.7.2/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETFramework/v4.7/RedistList/
 lib/mono/xbuild-frameworks/.NETFramework/v4.7/RedistList/FrameworkList.xml
+lib/mono/xbuild-frameworks/.NETFramework/v4.8/
+lib/mono/xbuild-frameworks/.NETFramework/v4.8/RedistList/
+lib/mono/xbuild-frameworks/.NETFramework/v4.8/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETPortable/
 lib/mono/xbuild-frameworks/.NETPortable/v5.0/
 lib/mono/xbuild-frameworks/.NETPortable/v5.0/RedistList/
@@ -3539,7 +3742,6 @@ lib/pkgconfig/dotnet35.pc
 lib/pkgconfig/mono-2.pc
 lib/pkgconfig/mono-cairo.pc
 lib/pkgconfig/mono-lineeditor.pc
-lib/pkgconfig/mono-nunit.pc
 lib/pkgconfig/mono-options.pc
 lib/pkgconfig/mono.pc
 lib/pkgconfig/monodoc.pc
@@ -3553,6 +3755,7 @@ lib/pkgconfig/system.web.mvc3.pc
 lib/pkgconfig/wcf.pc
 lib/pkgconfig/xbuild12.pc
 @man man/man1/al.1
+@man man/man1/aprofutil.1
 @man man/man1/cccheck.1
 @man man/man1/ccrewrite.1
 @man man/man1/cert-sync.1

@@ -1,11 +1,11 @@
-$OpenBSD: patch-mono_utils_mono-threads-coop_c,v 1.4 2019/09/19 12:02:59 thfr Exp $
+$OpenBSD: patch-mono_utils_mono-threads-coop_c,v 1.5 2020/04/06 15:11:11 robert Exp $
 
-adapt to coop-by-default approach of the port
+adapt to the coop-by-default syntax in our port
 
 Index: mono/utils/mono-threads-coop.c
 --- mono/utils/mono-threads-coop.c.orig
 +++ mono/utils/mono-threads-coop.c
-@@ -511,7 +511,7 @@ mono_threads_assert_gc_unsafe_region (void)
+@@ -580,7 +580,7 @@ mono_threads_assert_gc_unsafe_region (void)
  static int
  threads_suspend_policy_default (void)
  {

@@ -1,14 +1,14 @@
-$OpenBSD: patch-mono_utils_mono-state_c,v 1.1 2019/03/31 18:28:39 thfr Exp $
+$OpenBSD: patch-mono_utils_mono-state_c,v 1.2 2020/04/06 15:11:11 robert Exp $
 
 sys/stat.h required for macros lik S_IWUSR
 
 Index: mono/utils/mono-state.c
 --- mono/utils/mono-state.c.orig
 +++ mono/utils/mono-state.c
-@@ -10,6 +10,7 @@
+@@ -8,6 +8,7 @@
+  * (C) 2018 Microsoft, Inc.
+  *
   */
- #ifndef DISABLE_CRASH_REPORTING
- 
 +#include <sys/stat.h>
  #include <config.h>
  #include <glib.h>

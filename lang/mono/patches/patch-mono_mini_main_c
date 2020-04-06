@@ -1,8 +1,8 @@
-$OpenBSD: patch-mono_mini_main_c,v 1.9 2019/09/19 12:02:59 thfr Exp $
+$OpenBSD: patch-mono_mini_main_c,v 1.10 2020/04/06 15:11:11 robert Exp $
 Index: mono/mini/main.c
 --- mono/mini/main.c.orig
 +++ mono/mini/main.c
-@@ -396,10 +396,14 @@ main (void)
+@@ -417,10 +417,14 @@ main (int _argc, char* _argv[])
  }
  
  #else
@@ -17,4 +17,4 @@ Index: mono/mini/main.c
 +#endif
  	mono_build_date = build_date;
  
- 	probe_embedded (argv [0], &argc, &argv);
+ #if TEST_ICALL_SYMBOL_MAP

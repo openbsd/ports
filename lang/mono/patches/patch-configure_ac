@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.9 2019/09/19 12:02:59 thfr Exp $
+$OpenBSD: patch-configure_ac,v 1.10 2020/04/06 15:11:11 robert Exp $
 
 enable cooperative suspend by default
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1137,7 +1137,7 @@ with_unreal_default=no
+@@ -1350,7 +1350,7 @@ with_unreal_default=no
  with_wasm_default=no
  
  with_bitcode_default=no
@@ -13,8 +13,8 @@ Index: configure.ac
 +enable_cooperative_suspend_default=yes
  enable_hybrid_suspend_default=no
  
- INVARIANT_AOT_OPTIONS=nimt-trampolines=2000,ntrampolines=10000,nrgctx-fetch-trampolines=256,ngsharedvt-trampolines=4000
-@@ -5035,7 +5035,7 @@ fi
+ # For the sake of clearer error messages, these numbers should all be different from each other.
+@@ -5661,7 +5661,7 @@ fi
  dnl Now check if there were flags overriding the defaults
  
  AC_ARG_WITH(cooperative_gc,        [  --with-cooperative-gc=yes|no        Enable cooperative stop-the-world garbage collection (sgen only) (defaults to no)], [AC_MSG_WARN([--with-cooperative-gc is deprecated, use --enable-cooperative-suspend instead])], [with_cooperative_gc=default])
@@ -23,8 +23,8 @@ Index: configure.ac
  
  if test x$enable_cooperative_suspend = xdefault -a x$with_cooperative_gc != xdefault; then
  	enable_cooperative_suspend=$with_cooperative_gc
-@@ -5049,7 +5049,7 @@ if test x$enable_cooperative_suspend != xno; then
- 	AC_DEFINE(ENABLE_COOP_SUSPEND,1,[Enable cooperative stop-the-world garbage collection.])
+@@ -5676,7 +5676,7 @@ if test x$enable_cooperative_suspend != xno; then
+ 	enable_hybrid_suspend_default=no
  fi
  
 -AM_CONDITIONAL([ENABLE_COOP_SUSPEND], [test x$enable_cooperative_suspend != xno])
@@ -32,3 +32,34 @@ Index: configure.ac
  
  AC_ARG_ENABLE(hybrid_suspend, [ --enable-hybrid-suspend     Enable hybrid stop-the-world garbage collection (sgen only) - cooperative suspend for threads running managed and runtime code, and preemptive suspend for threads running native and P/Invoke code (defaults to no)], [], [enable_hybrid_suspend=default])
  
+@@ -6516,6 +6516,22 @@ elif case $host_os in netbsd*) true;; *) false;; esac;
+ 	AC_MSG_RESULT(netbsd)
+ 
+ 	MONO_NATIVE_PLATFORM_TYPE="MONO_NATIVE_PLATFORM_TYPE_NETBSD"
++elif case $host_os in openbsd*) true;; *) false;; esac; then
++	mono_native_text="OpenBSD"
++	MONO_NATIVE_CC=$CC
++	MONO_NATIVE_CXX=$CXX
++	MONO_NATIVE_CPPFLAGS=$CPPFLAGS
++	MONO_NATIVE_CXXFLAGS=$CXXFLAGS
++	MONO_NATIVE_CFLAGS=$CFLAGS
++	MONO_NATIVE_LDFLAGS=$LDFLAGS
++
++	mono_native=yes
++	mono_native_compat=no
++	MONO_NATIVE_PLATFORM=openbsd
++	AC_MSG_CHECKING([Mono.Native support])
++	AC_MSG_RESULT(openbsd)
++
++	MONO_NATIVE_PLATFORM_TYPE="MONO_NATIVE_PLATFORM_TYPE_OPENBSD"
+ elif case $host_os in haiku*) true;; *) false;; esac; then
+ 	mono_native_text="Haiku"
+ 	MONO_NATIVE_CC=$CC
+@@ -6590,6 +6606,7 @@ AM_CONDITIONAL(MONO_NATIVE_PLATFORM_AIX, test x$MONO_N
+ AM_CONDITIONAL(MONO_NATIVE_PLATFORM_ANDROID, test x$MONO_NATIVE_PLATFORM = xandroid)
+ AM_CONDITIONAL(MONO_NATIVE_PLATFORM_FREEBSD, test x$MONO_NATIVE_PLATFORM = xfreebsd)
+ AM_CONDITIONAL(MONO_NATIVE_PLATFORM_NETBSD, test x$MONO_NATIVE_PLATFORM = xnetbsd)
++AM_CONDITIONAL(MONO_NATIVE_PLATFORM_OPENBSD, test x$MONO_NATIVE_PLATFORM = xopenbsd)
+ AM_CONDITIONAL(MONO_NATIVE_PLATFORM_HAIKU, test x$MONO_NATIVE_PLATFORM = xhaiku)
+ 
+ MONO_NATIVE_PLATFORM_TYPE_COMPAT="$MONO_NATIVE_PLATFORM_TYPE | MONO_NATIVE_PLATFORM_TYPE_COMPAT"

@@ -1,9 +1,9 @@
-$OpenBSD: patch-mcs_class_corlib_System_Environment_cs,v 1.1 2018/03/29 19:33:18 robert Exp $
+$OpenBSD: patch-mcs_class_corlib_System_Environment_cs,v 1.2 2020/04/06 15:11:11 robert Exp $
 
 Index: mcs/class/corlib/System/Environment.cs
 --- mcs/class/corlib/System/Environment.cs.orig
 +++ mcs/class/corlib/System/Environment.cs
-@@ -676,7 +676,7 @@ namespace System {
+@@ -678,7 +678,7 @@ namespace System {
  			case SpecialFolder.MyVideos:
  				return ReadXdgUserDir (config, home, "XDG_VIDEOS_DIR", "Videos");
  			case SpecialFolder.CommonTemplates:
@@ -12,7 +12,7 @@ Index: mcs/class/corlib/System/Environment.cs
  			case SpecialFolder.Fonts:
  				if (Platform == PlatformID.MacOSX)
  					return Path.Combine (home, "Library", "Fonts");
-@@ -739,7 +739,7 @@ namespace System {
+@@ -741,7 +741,7 @@ namespace System {
  				return String.Empty;
  			// This is where data common to all users goes
  			case SpecialFolder.CommonApplicationData:

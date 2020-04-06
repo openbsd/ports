@@ -1,9 +1,9 @@
-$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.21 2019/03/31 18:28:39 thfr Exp $
+$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.22 2020/04/06 15:11:11 robert Exp $
 
 Index: mono/utils/mono-proclib.c
 --- mono/utils/mono-proclib.c.orig
 +++ mono/utils/mono-proclib.c
-@@ -102,30 +102,30 @@ mono_process_list (int *size)
+@@ -107,30 +107,30 @@ mono_process_list (int *size)
  {
  #if USE_SYSCTL
  	int res, i;
@@ -41,7 +41,7 @@ Index: mono/utils/mono-proclib.c
  	mib [5] = 400; /* XXX */
  
  	res = sysctl (mib, 6, processes, &data_len, NULL, 0);
-@@ -155,13 +155,13 @@ mono_process_list (int *size)
+@@ -160,13 +160,13 @@ mono_process_list (int *size)
  			break;
  		}
  	}
@@ -59,7 +59,7 @@ Index: mono/utils/mono-proclib.c
  	buf = (void **) g_realloc (buf, res * sizeof (void*));
  	for (i = 0; i < res; ++i)
  		buf [i] = GINT_TO_POINTER (processes [i].kinfo_pid_member);
-@@ -296,8 +296,8 @@ get_pid_status_item_buf (int pid, const char *item, ch
+@@ -300,8 +300,8 @@ get_pid_status_item_buf (int pid, const char *item, ch
  
  #if USE_SYSCTL
  
@@ -70,7 +70,7 @@ Index: mono/utils/mono-proclib.c
  #else
  #define KINFO_PROC struct kinfo_proc
  #endif
-@@ -308,10 +308,10 @@ sysctl_kinfo_proc (gpointer pid, KINFO_PROC* processi)
+@@ -312,10 +312,10 @@ sysctl_kinfo_proc (gpointer pid, KINFO_PROC* processi)
  	int res;
  	size_t data_len = sizeof (KINFO_PROC);
  
@@ -83,7 +83,7 @@ Index: mono/utils/mono-proclib.c
  	mib [2] = KERN_PROC_PID;
  	mib [3] = GPOINTER_TO_UINT (pid);
  	mib [4] = sizeof(KINFO_PROC);
-@@ -326,7 +326,7 @@ sysctl_kinfo_proc (gpointer pid, KINFO_PROC* processi)
+@@ -330,7 +330,7 @@ sysctl_kinfo_proc (gpointer pid, KINFO_PROC* processi)
  	mib [3] = GPOINTER_TO_UINT (pid);
  
  	res = sysctl (mib, 4, processi, &data_len, NULL, 0);

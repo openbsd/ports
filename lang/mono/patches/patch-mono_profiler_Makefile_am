@@ -1,16 +1,16 @@
-$OpenBSD: patch-mono_profiler_Makefile_am,v 1.3 2019/03/31 18:28:39 thfr Exp $
+$OpenBSD: patch-mono_profiler_Makefile_am,v 1.4 2020/04/06 15:11:11 robert Exp $
 
 adapt to the coop-by-default syntax in our port
 
 Index: mono/profiler/Makefile.am
 --- mono/profiler/Makefile.am.orig
 +++ mono/profiler/Makefile.am
-@@ -35,7 +35,7 @@ suppression_DATA = mono-profiler-coverage.suppression
+@@ -36,7 +36,7 @@ suppression_DATA = mono-profiler-coverage.suppression
  # sampling infrastructure depends on signals being available.
  #
  # See: https://bugzilla.xamarin.com/show_bug.cgi?id=57011
 -if !ENABLE_COOP_SUSPEND
 +if DISABLE_COOP_SUSPEND
- if !ENABLE_HYBRID_SUSPEND
- check_targets = testlog
+ check_targets = run-test
  endif
+ 

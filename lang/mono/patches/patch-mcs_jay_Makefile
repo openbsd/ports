@@ -1,8 +1,9 @@
-$OpenBSD: patch-mcs_jay_Makefile,v 1.1 2008/10/24 07:06:01 jasper Exp $
---- mcs/jay/Makefile.orig	Thu Oct 23 00:31:57 2008
-+++ mcs/jay/Makefile	Thu Oct 23 00:32:10 2008
-@@ -21,12 +21,12 @@ ifndef NO_INSTALL
- install-local:
+$OpenBSD: patch-mcs_jay_Makefile,v 1.2 2020/04/06 15:11:11 robert Exp $
+Index: mcs/jay/Makefile
+--- mcs/jay/Makefile.orig
++++ mcs/jay/Makefile
+@@ -22,12 +22,12 @@ ifndef NO_INSTALL
+ install-local: jay
  	$(MKINSTALLDIRS) $(DESTDIR)$(prefix)/bin
  	$(MKINSTALLDIRS) $(DESTDIR)$(prefix)/share/jay
 -	$(MKINSTALLDIRS) $(DESTDIR)$(prefix)/share/man/man1
