@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1190 2020/04/01 16:08:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.1191 2020/04/06 12:41:05 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -151,6 +151,7 @@
      SUBDIR += ii,ucspi
      SUBDIR += ike-scan
      SUBDIR += inadyn
+     SUBDIR += inetsim
      SUBDIR += iodine
      SUBDIR += ipaudit
      SUBDIR += ipcad
