@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/02/14 11:11:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/04/06 22:56:29 cwen Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
@@ -76,7 +76,7 @@ CONFIGURE_ARGS=		prefix=${PREFIX} \
 NO_TEST=		Yes
 
 #  undefined reference to `__atomic_fetch_add_8'
-.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+.if ${MACHINE_ARCH} == "hppa"
 WANTLIB-main += atomic
 WANTLIB-ffmpeg += atomic
 LDFLAGS += -latomic
