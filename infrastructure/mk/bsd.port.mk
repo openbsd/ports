@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1529 2020/03/31 21:18:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1530 2020/04/06 14:32:14 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3114,7 +3114,7 @@ ${DISTDIR}/$f:
 # then we do normal files, just avoid the ones in _REFETCH_INFO
 .for p f m u in ${_FULL_FETCH_LIST}
 .  if empty(_REFETCH_INFO:M$f)
-${DISTDIR}/$p:
+${DISTDIR}/$p: # XXX that comment works around a limitation in make
 .    if ${FETCH_MANUALLY:L} != "no"
 .      if !empty(MISSING_FILES)
 	@echo "*** You're missing files: ${MISSING_FILES}"
