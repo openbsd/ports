@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2019/11/11 22:54:10 edd Exp $
+# $OpenBSD: Makefile,v 1.113 2020/04/07 15:34:36 jca Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -7,6 +7,8 @@ COMMENT-synctex =	synctex for TeXLive typesetting distribution
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
+
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
@@ -93,7 +95,7 @@ USE_LIBTOOL =	gnu
 
 # clisp limits which arches we can use xindy on
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
-	${MACHINE} == "powerpc" || ${MACHINE} == "sparc64"
+	${MACHINE} == "powerpc"
 BUILD_DEPENDS +=	lang/clisp
 RUN_DEPENDS-main +=		lang/clisp
 CONFIGURE_ARGS +=	--enable-xindy \
