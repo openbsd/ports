@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2019/08/30 18:41:31 otto Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2020/04/07 17:42:46 otto Exp $
 @conflict powerdns-sqlite-*
 @conflict powerdns-sqlite3-*
 @pkgpath net/powerdns,-sqlite
@@ -17,6 +17,7 @@
 @bin bin/dnstcpbench
 @bin bin/dnswasher
 @bin bin/dumresp
+@bin bin/ixfrdist
 @bin bin/ixplore
 @bin bin/nproxy
 @bin bin/nsec3dig
@@ -41,6 +42,7 @@ lib/pdns/libgsqlite3backend.so
 @man man/man1/dnstcpbench.1
 @man man/man1/dnswasher.1
 @man man/man1/dumresp.1
+@man man/man1/ixfrdist.1
 @man man/man1/ixplore.1
 @man man/man1/nproxy.1
 @man man/man1/nsec3dig.1
@@ -56,9 +58,12 @@ lib/pdns/libgsqlite3backend.so
 share/doc/pdns/
 share/doc/pdns/3.4.0_to_4.0.0_schema.sqlite3.sql
 share/doc/pdns/4.0.0_to_4.2.0_schema.sqlite3.sql
+share/doc/pdns/4.2.0_to_4.3.0_schema.sqlite3.sql
 share/doc/pdns/dnssec-3.x_to_3.4.0_schema.sqlite3.sql
 share/doc/pdns/nodnssec-3.x_to_3.4.0_schema.sqlite3.sql
 share/doc/pdns/schema.sqlite3.sql
+share/doc/pdns/bind-dnssec.schema.sqlite3.sql
+share/doc/pdns/bind-dnssec.4.2.0_to_4.3.0_schema.sqlite3.sql
 share/examples/pdns/
 share/examples/pdns/pdns.conf
 @sample ${SYSCONFDIR}/pdns.conf

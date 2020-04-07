@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-mysql,v 1.5 2019/08/30 18:41:31 otto Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.6 2020/04/07 17:42:46 otto Exp $
 @conflict powerdns-<3.4.3
 lib/pdns/libgmysqlbackend.so
 share/doc/pdns/3.4.0_to_4.1.0_schema.mysql.sql
 share/doc/pdns/dnssec-3.x_to_3.4.0_schema.mysql.sql
 share/doc/pdns/nodnssec-3.x_to_3.4.0_schema.mysql.sql
 share/doc/pdns/4.1.0_to_4.2.0_schema.mysql.sql
+share/doc/pdns/4.2.0_to_4.3.0_schema.mysql.sql
 share/doc/pdns/schema.mysql.sql

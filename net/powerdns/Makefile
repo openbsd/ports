@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2019/12/03 06:46:09 otto Exp $
+# $OpenBSD: Makefile,v 1.76 2020/04/07 17:42:46 otto Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP database access module for PowerDNS
 
-V=			4.2.1
+V=			4.3.0
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -31,7 +31,7 @@ WANTLIB += crypto m pthread ssl ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += boost_program_options-mt c curl nghttp2 sodium
-WANTLIB-main += sqlite3 z
+WANTLIB-main += sqlite3 yaml-cpp z
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 MAINTAINER=		Otto Moerbeek <otto@drijf.net>
@@ -40,9 +40,16 @@ COMPILER =		base-clang ports-gcc
 
 NO_TEST=		Yes
 
+MODULES+=		lang/lua
+MODLUA_VERSION=		5.3
+MODLUA_SA=		Yes
+WANTLIB-main+=		${MODLUA_WANTLIB}
+
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			${MODLUA_LIB_DEPENDS} \
 			databases/sqlite3 \
 			devel/boost \
+			devel/yaml-cpp \
 			net/curl \
 			security/libsodium
 
@@ -58,12 +65,12 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--with-modules="bind" \
 			--with-sqlite3 \
 			--with-dynmodules="${BACKENDS}" \
-			--without-lua \
-			--disable-lua-records \
+			--with-lua=${MODLUA_DEP} \
+			--enable-lua-records \
 			--disable-hardening \
 			--with-protobuf=no \
 			--enable-tools \
-			--disable-ixfrdist
+			--enable-ixfrdist
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -119,5 +126,6 @@ post-install:
 	cat ${FILESDIR}/pdns.conf ${WRKSRC}/pdns/pdns.conf-dist > \
 	    ${WRKSRC}/pdns.conf # concatenate local and upstream sample configs
 	${INSTALL_DATA} ${WRKSRC}/pdns.conf ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/pdns/*schema*sql ${PREFIX}/share/doc/pdns
 
 .include <bsd.port.mk>
