@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/02/19 11:05:15 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/04/07 20:57:31 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/FUNDING.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
-${GEM_LIB}/gems/${DISTNAME}/.rubocop_defaults.yml
+${GEM_LIB}/gems/${DISTNAME}/.rubocop_opinionated.yml
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/2.0-Upgrade.md
