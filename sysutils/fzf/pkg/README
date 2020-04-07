@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.2 2020/04/07 08:32:50 paco Exp $
+
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
@@ -44,3 +46,13 @@ fzf_key_bindings
 ```
 
 There is no **<tab> completion support for fish.
+
+VIM Integration
+===============
+
+The fzf.vim plugin and documentation are installed at
+${VIMFILES}.  That is part of `runtimepath` by default
+and will be loaded automatically.
+
+It should be noted that https://github.com/junegunn/fzf.vim are not the
+same files, but is built on top of the files installed by this port.
