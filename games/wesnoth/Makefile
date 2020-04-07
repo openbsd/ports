@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.81 2019/07/12 20:46:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2020/04/07 14:26:38 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
 BROKEN-hppa =		missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.14.7
+DISTNAME=	wesnoth-1.14.11
 
 CATEGORIES=	games x11
 
@@ -23,8 +23,8 @@ WANTLIB += ICE SDL2 SDL2_image SDL2_mixer SDL2_ttf SM X11 Xext
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c cairo crypto dbus-1
-WANTLIB += fontconfig freetype fribidi glib-2.0 gobject-2.0 intl
-WANTLIB += m pango-1.0 pangocairo-1.0 vorbisfile z
+WANTLIB += fontconfig freetype fribidi glib-2.0 gobject-2.0
+WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 vorbisfile z
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=	devel/cmake
@@ -53,8 +53,5 @@ CONFIGURE_ARGS+=-DFIFO_DIR=/var/wesnothd \
 		-Wno_dev
 
 NO_TEST=	Yes
-
-post-install:
-	find ${PREFIX} -name .gitignore -exec rm -f {} \+
 
 .include <bsd.port.mk>

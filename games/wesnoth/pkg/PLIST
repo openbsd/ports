@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2019/04/25 08:37:01 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.43 2020/04/07 14:26:38 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708
@@ -20,6 +20,7 @@ man/en_GB/man6/
 @man man/en_GB/man6/wesnothd.6
 man/es/
 man/es/man6/
+@man man/es/man6/wesnoth.6
 @man man/es/man6/wesnothd.6
 man/et/
 man/et/man6/
@@ -29,6 +30,7 @@ man/fi/man6/
 @man man/fi/man6/wesnothd.6
 man/fr/
 man/fr/man6/
+@man man/fr/man6/wesnoth.6
 @man man/fr/man6/wesnothd.6
 man/gl/
 man/gl/man6/
@@ -60,6 +62,7 @@ man/pt/man6/
 @man man/pt/man6/wesnothd.6
 man/pt_BR/
 man/pt_BR/man6/
+@man man/pt_BR/man6/wesnoth.6
 @man man/pt_BR/man6/wesnothd.6
 man/ru/
 man/ru/man6/
@@ -81,6 +84,8 @@ man/sr@latin/man6/
 @man man/sr@latin/man6/wesnothd.6
 man/tr/
 man/tr/man6/
+@man man/tr/man6/wesnoth.6
+@man man/tr/man6/wesnothd.6
 man/uk/
 man/uk/man6/
 @man man/uk/man6/wesnothd.6
@@ -93,12 +98,20 @@ man/zh_CN/man6/
 @man man/zh_CN/man6/wesnothd.6
 man/zh_TW/
 man/zh_TW/man6/
+@man man/zh_TW/man6/wesnoth.6
 @man man/zh_TW/man6/wesnothd.6
 share/applications/wesnoth.desktop
 share/doc/wesnoth/
 share/doc/wesnoth/html/
 share/doc/wesnoth/html/images/
 share/doc/wesnoth/html/images/README.md
+share/doc/wesnoth/html/images/de/
+share/doc/wesnoth/html/images/de/game-screen-1.14.8+dev.jpg
+share/doc/wesnoth/html/images/de/main-menu-1.14.8+dev.jpg
+share/doc/wesnoth/html/images/de/multiplayer-1.14.8+dev.png
+share/doc/wesnoth/html/images/de/recruit-1.14.8+dev.png
+share/doc/wesnoth/html/images/de/right-pane-1.14.8+dev.png
+share/doc/wesnoth/html/images/de/top-pane-1.14.8+dev.png
 share/doc/wesnoth/html/images/fr/
 share/doc/wesnoth/html/images/fr/game-screen-1.11.11.jpg
 share/doc/wesnoth/html/images/fr/main-menu-1.11.11.jpg
@@ -137,6 +150,13 @@ share/doc/wesnoth/html/images/pt/right_pane-1.11.19.jpg
 share/doc/wesnoth/html/images/pt/top_pane-1.11.19.jpg
 share/doc/wesnoth/html/images/recruit-1.13.11+dev.png
 share/doc/wesnoth/html/images/right_pane-1.13.11+dev.png
+share/doc/wesnoth/html/images/ru/
+share/doc/wesnoth/html/images/ru/game-screen-1.14.7.jpg
+share/doc/wesnoth/html/images/ru/main-menu-1.14.7.jpg
+share/doc/wesnoth/html/images/ru/multiplayer-1.14.7.jpg
+share/doc/wesnoth/html/images/ru/recruit-1.14.7.jpg
+share/doc/wesnoth/html/images/ru/right_pane-1.14.7.jpg
+share/doc/wesnoth/html/images/ru/top_pane-1.14.7.jpg
 share/doc/wesnoth/html/images/schedule-afternoon.png
 share/doc/wesnoth/html/images/schedule-dawn.png
 share/doc/wesnoth/html/images/schedule-dusk.png
@@ -145,6 +165,13 @@ share/doc/wesnoth/html/images/schedule-morning.png
 share/doc/wesnoth/html/images/schedule-secondwatch.png
 share/doc/wesnoth/html/images/schedule-underground.png
 share/doc/wesnoth/html/images/top_pane-1.13.11+dev.png
+share/doc/wesnoth/html/images/tr/
+share/doc/wesnoth/html/images/tr/game-screen-1.14.7.jpg
+share/doc/wesnoth/html/images/tr/main-menu-1.14.7.jpg
+share/doc/wesnoth/html/images/tr/multiplayer-1.14.7.jpg
+share/doc/wesnoth/html/images/tr/recruit-1.14.7.jpg
+share/doc/wesnoth/html/images/tr/right_pane-1.14.7.jpg
+share/doc/wesnoth/html/images/tr/top_pane-1.14.7.jpg
 share/doc/wesnoth/html/manual.cs.html
 share/doc/wesnoth/html/manual.de.html
 share/doc/wesnoth/html/manual.en.html
@@ -167,6 +194,7 @@ share/doc/wesnoth/html/manual.sr.html
 share/doc/wesnoth/html/manual.sr@ijekavian.html
 share/doc/wesnoth/html/manual.sr@ijekavianlatin.html
 share/doc/wesnoth/html/manual.sr@latin.html
+share/doc/wesnoth/html/manual.tr.html
 share/doc/wesnoth/html/manual.uk.html
 share/doc/wesnoth/html/manual.vi.html
 share/doc/wesnoth/html/manual.zh_CN.html
@@ -360,6 +388,8 @@ share/wesnoth/data/campaigns/An_Orcish_Incursion/images/maps/l10n/lt/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/maps/l10n/lt/aoi--overlay.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/maps/l10n/pt/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/maps/l10n/pt/aoi--overlay.png
+share/wesnoth/data/campaigns/An_Orcish_Incursion/images/maps/l10n/zh_CN/
+share/wesnoth/data/campaigns/An_Orcish_Incursion/images/maps/l10n/zh_CN/aoi--overlay.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/portraits/
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/portraits/erlornas.png
 share/wesnoth/data/campaigns/An_Orcish_Incursion/images/portraits/linaera.png
@@ -411,6 +441,8 @@ share/wesnoth/data/campaigns/Dead_Water/images/maps/l10n/it/
 share/wesnoth/data/campaigns/Dead_Water/images/maps/l10n/it/dw--overlay.png
 share/wesnoth/data/campaigns/Dead_Water/images/maps/l10n/pt/
 share/wesnoth/data/campaigns/Dead_Water/images/maps/l10n/pt/dw--overlay.png
+share/wesnoth/data/campaigns/Dead_Water/images/maps/l10n/zh_CN/
+share/wesnoth/data/campaigns/Dead_Water/images/maps/l10n/zh_CN/dw--overlay.png
 share/wesnoth/data/campaigns/Dead_Water/images/misc/
 share/wesnoth/data/campaigns/Dead_Water/images/misc/stunned-status-icon.png
 share/wesnoth/data/campaigns/Dead_Water/images/overlays/
@@ -671,6 +703,8 @@ share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/l10n/lt/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/l10n/lt/did--overlay.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/l10n/pt/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/l10n/pt/did--overlay.png
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/l10n/zh_CN/
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/l10n/zh_CN/did--overlay.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/book-icon.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/makeshift-altar.png
@@ -785,6 +819,8 @@ share/wesnoth/data/campaigns/Eastern_Invasion/images/maps/l10n/it/
 share/wesnoth/data/campaigns/Eastern_Invasion/images/maps/l10n/it/ei--overlay.png
 share/wesnoth/data/campaigns/Eastern_Invasion/images/maps/l10n/pt/
 share/wesnoth/data/campaigns/Eastern_Invasion/images/maps/l10n/pt/ei--overlay.png
+share/wesnoth/data/campaigns/Eastern_Invasion/images/maps/l10n/zh_CN/
+share/wesnoth/data/campaigns/Eastern_Invasion/images/maps/l10n/zh_CN/ei--overlay.png
 share/wesnoth/data/campaigns/Eastern_Invasion/images/misc/
 share/wesnoth/data/campaigns/Eastern_Invasion/images/misc/arcane-icon.png
 share/wesnoth/data/campaigns/Eastern_Invasion/images/portraits/
@@ -1129,6 +1165,8 @@ share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/it/
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/it/low-map--overlay.png
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/pt/
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/pt/low-map--overlay.png
+share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/zh_CN/
+share/wesnoth/data/campaigns/Legend_of_Wesmere/images/l10n/zh_CN/low-map--overlay.png
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/low-map.png
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/portraits/
 share/wesnoth/data/campaigns/Legend_of_Wesmere/images/portraits/aldar.png
@@ -1461,6 +1499,8 @@ share/wesnoth/data/campaigns/Sceptre_of_Fire/images/maps/l10n/it/
 share/wesnoth/data/campaigns/Sceptre_of_Fire/images/maps/l10n/it/sof--overlay.png
 share/wesnoth/data/campaigns/Sceptre_of_Fire/images/maps/l10n/pt/
 share/wesnoth/data/campaigns/Sceptre_of_Fire/images/maps/l10n/pt/sof--overlay.png
+share/wesnoth/data/campaigns/Sceptre_of_Fire/images/maps/l10n/zh_CN/
+share/wesnoth/data/campaigns/Sceptre_of_Fire/images/maps/l10n/zh_CN/sof--overlay.png
 share/wesnoth/data/campaigns/Sceptre_of_Fire/images/maps/sof.png
 share/wesnoth/data/campaigns/Sceptre_of_Fire/images/misc/
 share/wesnoth/data/campaigns/Sceptre_of_Fire/images/misc/coal-icon.png
@@ -1862,6 +1902,8 @@ share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/maps/l10n/it/
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/maps/l10n/it/sotbe--overlay.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/maps/l10n/pt/
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/maps/l10n/pt/sotbe--overlay.png
+share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/maps/l10n/zh_CN/
+share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/maps/l10n/zh_CN/sotbe--overlay.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/maps/sotbe.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/portraits/
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/portraits/albrock.png
@@ -2170,6 +2212,8 @@ share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/maps/l10n/it/
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/maps/l10n/it/green_isle--overlay.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/maps/l10n/pt/
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/maps/l10n/pt/green_isle--overlay.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/maps/l10n/zh_CN/
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/maps/l10n/zh_CN/green_isle--overlay.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/misc/
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/misc/treaty-icon.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/portraits/
@@ -2452,6 +2496,8 @@ share/wesnoth/data/campaigns/The_South_Guard/images/maps/l10n/lt/
 share/wesnoth/data/campaigns/The_South_Guard/images/maps/l10n/lt/tsg--overlay.png
 share/wesnoth/data/campaigns/The_South_Guard/images/maps/l10n/pt/
 share/wesnoth/data/campaigns/The_South_Guard/images/maps/l10n/pt/tsg--overlay.png
+share/wesnoth/data/campaigns/The_South_Guard/images/maps/l10n/zh_CN/
+share/wesnoth/data/campaigns/The_South_Guard/images/maps/l10n/zh_CN/tsg--overlay.png
 share/wesnoth/data/campaigns/The_South_Guard/images/maps/tsg.png
 share/wesnoth/data/campaigns/The_South_Guard/images/portraits/
 share/wesnoth/data/campaigns/The_South_Guard/images/portraits/deoran-glad.png
@@ -2522,7 +2568,6 @@ share/wesnoth/data/campaigns/The_South_Guard/utils/
 share/wesnoth/data/campaigns/The_South_Guard/utils/bigmap.cfg
 share/wesnoth/data/campaigns/The_South_Guard/utils/sg_deaths.cfg
 share/wesnoth/data/campaigns/The_South_Guard/utils/sg_help.cfg
-share/wesnoth/data/campaigns/The_South_Guard/utils/sg_help_NEW.cfg
 share/wesnoth/data/campaigns/The_South_Guard/utils/sg_story.cfg
 share/wesnoth/data/campaigns/The_South_Guard/utils/sg_utils.cfg
 share/wesnoth/data/campaigns/Two_Brothers/
@@ -2573,6 +2618,7 @@ share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/blowgun.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/claws-crab.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/energyray.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/faerie-fire-sun.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/fangs-ant.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/fangs-horror.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/fist-golem.png
@@ -3532,8 +3578,11 @@ share/wesnoth/data/core/images/halo/undead/idle-flash-7.png
 share/wesnoth/data/core/images/halo/undead/idle-flash-8.png
 share/wesnoth/data/core/images/halo/undead/idle-flash-9.png
 share/wesnoth/data/core/images/help/
+share/wesnoth/data/core/images/help/combat1.png
 share/wesnoth/data/core/images/help/hp-bars.png
 share/wesnoth/data/core/images/help/hpxp.png
+share/wesnoth/data/core/images/help/income-upkeep1.png
+share/wesnoth/data/core/images/help/income-upkeep2.png
 share/wesnoth/data/core/images/help/l10n/
 share/wesnoth/data/core/images/help/l10n/cs/
 share/wesnoth/data/core/images/help/l10n/cs/hpxp.png
@@ -3986,15 +4035,20 @@ share/wesnoth/data/core/images/portraits/merfolk/priestess.png
 share/wesnoth/data/core/images/portraits/merfolk/spearman.png
 share/wesnoth/data/core/images/portraits/merfolk/triton.png
 share/wesnoth/data/core/images/portraits/monsters/
+share/wesnoth/data/core/images/portraits/monsters/bat-dread.png
+share/wesnoth/data/core/images/portraits/monsters/bat-red.png
 share/wesnoth/data/core/images/portraits/monsters/bat.png
+share/wesnoth/data/core/images/portraits/monsters/cuttlefish.png
 share/wesnoth/data/core/images/portraits/monsters/deep-tentacle.png
 share/wesnoth/data/core/images/portraits/monsters/giant-mudcrawler.png
 share/wesnoth/data/core/images/portraits/monsters/giant-rat.png
 share/wesnoth/data/core/images/portraits/monsters/giant-spider.png
 share/wesnoth/data/core/images/portraits/monsters/gryphon.png
+share/wesnoth/data/core/images/portraits/monsters/mudcrawler.png
 share/wesnoth/data/core/images/portraits/monsters/ogre.png
 share/wesnoth/data/core/images/portraits/monsters/scorpion.png
 share/wesnoth/data/core/images/portraits/monsters/sea-serpent.png
+share/wesnoth/data/core/images/portraits/monsters/water-serpent.png
 share/wesnoth/data/core/images/portraits/monsters/yeti.png
 share/wesnoth/data/core/images/portraits/monsters/young-ogre.png
 share/wesnoth/data/core/images/portraits/nagas/
@@ -4054,11 +4108,17 @@ share/wesnoth/data/core/images/portraits/undead/zombie-drake.png
 share/wesnoth/data/core/images/portraits/undead/zombie-dwarf.png
 share/wesnoth/data/core/images/portraits/undead/zombie-goblin.png
 share/wesnoth/data/core/images/portraits/undead/zombie-gryphon.png
+share/wesnoth/data/core/images/portraits/undead/zombie-rider.png
 share/wesnoth/data/core/images/portraits/undead/zombie-saurian.png
 share/wesnoth/data/core/images/portraits/undead/zombie-swimmer.png
 share/wesnoth/data/core/images/portraits/undead/zombie-troll.png
 share/wesnoth/data/core/images/portraits/undead/zombie-wolf.png
 share/wesnoth/data/core/images/portraits/undead/zombie-wose.png
+share/wesnoth/data/core/images/portraits/wolves/
+share/wesnoth/data/core/images/portraits/wolves/wolf-chewing.png
+share/wesnoth/data/core/images/portraits/wolves/wolf-dark.png
+share/wesnoth/data/core/images/portraits/wolves/wolf-great.png
+share/wesnoth/data/core/images/portraits/wolves/wolf-red.png
 share/wesnoth/data/core/images/portraits/woses/
 share/wesnoth/data/core/images/portraits/woses/ancient-wose.png
 share/wesnoth/data/core/images/portraits/woses/wose.png
@@ -10115,6 +10175,22 @@ share/wesnoth/data/core/images/units/dwarves/runesmith-defend-2.png
 share/wesnoth/data/core/images/units/dwarves/runesmith.png
 share/wesnoth/data/core/images/units/dwarves/scout-defend-1.png
 share/wesnoth/data/core/images/units/dwarves/scout-defend-2.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-1.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-10.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-11.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-12.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-13.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-14.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-15.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-16.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-2.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-3.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-4.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-5.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-6.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-7.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-8.png
+share/wesnoth/data/core/images/units/dwarves/scout-idle-9.png
 share/wesnoth/data/core/images/units/dwarves/scout-melee-1.png
 share/wesnoth/data/core/images/units/dwarves/scout-melee-2.png
 share/wesnoth/data/core/images/units/dwarves/scout-melee-3.png
@@ -10706,6 +10782,20 @@ share/wesnoth/data/core/images/units/elves-wood/marshal-defend.png
 share/wesnoth/data/core/images/units/elves-wood/marshal-leading.png
 share/wesnoth/data/core/images/units/elves-wood/marshal-melee-1.png
 share/wesnoth/data/core/images/units/elves-wood/marshal-melee-2.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-1.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-10.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-11.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-12.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-13.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-14.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-2.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-3.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-4.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-5.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-6.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-7.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-8.png
+share/wesnoth/data/core/images/units/elves-wood/marshal-stand-9.png
 share/wesnoth/data/core/images/units/elves-wood/marshal.png
 share/wesnoth/data/core/images/units/elves-wood/outrider/
 share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-attack1.png
@@ -10791,6 +10881,12 @@ share/wesnoth/data/core/images/units/elves-wood/shaman-heal6.png
 share/wesnoth/data/core/images/units/elves-wood/shaman-heal7.png
 share/wesnoth/data/core/images/units/elves-wood/shaman-heal8.png
 share/wesnoth/data/core/images/units/elves-wood/shaman-heal9.png
+share/wesnoth/data/core/images/units/elves-wood/shaman-idle-1.png
+share/wesnoth/data/core/images/units/elves-wood/shaman-idle-2.png
+share/wesnoth/data/core/images/units/elves-wood/shaman-idle-3.png
+share/wesnoth/data/core/images/units/elves-wood/shaman-idle-4.png
+share/wesnoth/data/core/images/units/elves-wood/shaman-idle-5.png
+share/wesnoth/data/core/images/units/elves-wood/shaman-idle-6.png
 share/wesnoth/data/core/images/units/elves-wood/shaman.png
 share/wesnoth/data/core/images/units/elves-wood/sharpshooter+female-bow-attack1.png
 share/wesnoth/data/core/images/units/elves-wood/sharpshooter+female-bow-attack2.png
@@ -10918,6 +11014,10 @@ share/wesnoth/data/core/images/units/goblins/spearman-attack-s2.png
 share/wesnoth/data/core/images/units/goblins/spearman-attack-se1.png
 share/wesnoth/data/core/images/units/goblins/spearman-attack-se2.png
 share/wesnoth/data/core/images/units/goblins/spearman-defend.png
+share/wesnoth/data/core/images/units/goblins/spearman-die-1.png
+share/wesnoth/data/core/images/units/goblins/spearman-die-2.png
+share/wesnoth/data/core/images/units/goblins/spearman-die-3.png
+share/wesnoth/data/core/images/units/goblins/spearman-die-4.png
 share/wesnoth/data/core/images/units/goblins/spearman-idle-1.png
 share/wesnoth/data/core/images/units/goblins/spearman-idle-10.png
 share/wesnoth/data/core/images/units/goblins/spearman-idle-11.png
@@ -10945,6 +11045,10 @@ share/wesnoth/data/core/images/units/goblins/spearman.png
 share/wesnoth/data/core/images/units/goblins/wolf-rider-attack.png
 share/wesnoth/data/core/images/units/goblins/wolf-rider-defend-1.png
 share/wesnoth/data/core/images/units/goblins/wolf-rider-defend-2.png
+share/wesnoth/data/core/images/units/goblins/wolf-rider-die-1.png
+share/wesnoth/data/core/images/units/goblins/wolf-rider-die-2.png
+share/wesnoth/data/core/images/units/goblins/wolf-rider-die-3.png
+share/wesnoth/data/core/images/units/goblins/wolf-rider-die-4.png
 share/wesnoth/data/core/images/units/goblins/wolf-rider-idle-1.png
 share/wesnoth/data/core/images/units/goblins/wolf-rider-idle-2.png
 share/wesnoth/data/core/images/units/goblins/wolf-rider-idle-3.png
@@ -11617,6 +11721,15 @@ share/wesnoth/data/core/images/units/human-magi/arch-mage+female-attack-magic-2.
 share/wesnoth/data/core/images/units/human-magi/arch-mage+female-attack-staff-1.png
 share/wesnoth/data/core/images/units/human-magi/arch-mage+female-attack-staff-2.png
 share/wesnoth/data/core/images/units/human-magi/arch-mage+female-defend.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-1.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-2.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-3.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-4.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-5.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-6.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-7.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-8.png
+share/wesnoth/data/core/images/units/human-magi/arch-mage+female-idle-9.png
 share/wesnoth/data/core/images/units/human-magi/arch-mage+female.png
 share/wesnoth/data/core/images/units/human-magi/arch-mage-attack-magic-1.png
 share/wesnoth/data/core/images/units/human-magi/arch-mage-attack-magic-2.png
@@ -11663,12 +11776,48 @@ share/wesnoth/data/core/images/units/human-magi/mage+female-attack-magic2.png
 share/wesnoth/data/core/images/units/human-magi/mage+female-attack-staff1.png
 share/wesnoth/data/core/images/units/human-magi/mage+female-attack-staff2.png
 share/wesnoth/data/core/images/units/human-magi/mage+female-defend.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-1.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-10.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-11.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-12.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-13.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-14.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-15.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-16.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-2.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-3.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-4.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-5.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-6.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-7.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-8.png
+share/wesnoth/data/core/images/units/human-magi/mage+female-die-9.png
 share/wesnoth/data/core/images/units/human-magi/mage+female.png
 share/wesnoth/data/core/images/units/human-magi/mage-attack-magic1.png
 share/wesnoth/data/core/images/units/human-magi/mage-attack-magic2.png
 share/wesnoth/data/core/images/units/human-magi/mage-attack-staff1.png
 share/wesnoth/data/core/images/units/human-magi/mage-attack-staff2.png
 share/wesnoth/data/core/images/units/human-magi/mage-defend.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-1.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-10.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-11.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-12.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-13.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-14.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-15.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-16.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-2.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-3.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-4.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-5.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-6.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-7.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-8.png
+share/wesnoth/data/core/images/units/human-magi/mage-die-9.png
+share/wesnoth/data/core/images/units/human-magi/mage-idle-1.png
+share/wesnoth/data/core/images/units/human-magi/mage-idle-2.png
+share/wesnoth/data/core/images/units/human-magi/mage-idle-3.png
+share/wesnoth/data/core/images/units/human-magi/mage-idle-4.png
 share/wesnoth/data/core/images/units/human-magi/mage.png
 share/wesnoth/data/core/images/units/human-magi/red-mage+female-attack-magic-1.png
 share/wesnoth/data/core/images/units/human-magi/red-mage+female-attack-magic-2.png
@@ -11681,6 +11830,11 @@ share/wesnoth/data/core/images/units/human-magi/red-mage-attack-magic-2.png
 share/wesnoth/data/core/images/units/human-magi/red-mage-attack-staff-1.png
 share/wesnoth/data/core/images/units/human-magi/red-mage-attack-staff-2.png
 share/wesnoth/data/core/images/units/human-magi/red-mage-defend.png
+share/wesnoth/data/core/images/units/human-magi/red-mage-idle-1.png
+share/wesnoth/data/core/images/units/human-magi/red-mage-idle-2.png
+share/wesnoth/data/core/images/units/human-magi/red-mage-idle-3.png
+share/wesnoth/data/core/images/units/human-magi/red-mage-idle-4.png
+share/wesnoth/data/core/images/units/human-magi/red-mage-idle-5.png
 share/wesnoth/data/core/images/units/human-magi/red-mage.png
 share/wesnoth/data/core/images/units/human-magi/silver-mage+female-attack-magic1.png
 share/wesnoth/data/core/images/units/human-magi/silver-mage+female-attack-magic2.png
@@ -11748,6 +11902,24 @@ share/wesnoth/data/core/images/units/human-magi/white-mage-die-1.png
 share/wesnoth/data/core/images/units/human-magi/white-mage-die-2.png
 share/wesnoth/data/core/images/units/human-magi/white-mage-die-3.png
 share/wesnoth/data/core/images/units/human-magi/white-mage-die-4.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-1.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-10.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-11.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-12.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-13.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-14.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-15.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-16.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-17.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-18.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-2.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-3.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-4.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-5.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-6.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-7.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-8.png
+share/wesnoth/data/core/images/units/human-magi/white-mage-idle-9.png
 share/wesnoth/data/core/images/units/human-magi/white-mage-magic-1.png
 share/wesnoth/data/core/images/units/human-magi/white-mage-magic-2.png
 share/wesnoth/data/core/images/units/human-magi/white-mage-magic-3.png
@@ -11779,6 +11951,12 @@ share/wesnoth/data/core/images/units/human-outlaws/assassin-throwknife2.png
 share/wesnoth/data/core/images/units/human-outlaws/assassin.png
 share/wesnoth/data/core/images/units/human-outlaws/bandit-defend-1.png
 share/wesnoth/data/core/images/units/human-outlaws/bandit-defend-2.png
+share/wesnoth/data/core/images/units/human-outlaws/bandit-idle-1.png
+share/wesnoth/data/core/images/units/human-outlaws/bandit-idle-2.png
+share/wesnoth/data/core/images/units/human-outlaws/bandit-idle-3.png
+share/wesnoth/data/core/images/units/human-outlaws/bandit-idle-4.png
+share/wesnoth/data/core/images/units/human-outlaws/bandit-idle-5.png
+share/wesnoth/data/core/images/units/human-outlaws/bandit-idle-6.png
 share/wesnoth/data/core/images/units/human-outlaws/bandit-melee-1.png
 share/wesnoth/data/core/images/units/human-outlaws/bandit-melee-2.png
 share/wesnoth/data/core/images/units/human-outlaws/bandit-melee-3.png
@@ -12012,6 +12190,11 @@ share/wesnoth/data/core/images/units/human-peasants/ruffian-attack-8.png
 share/wesnoth/data/core/images/units/human-peasants/ruffian-attack-9.png
 share/wesnoth/data/core/images/units/human-peasants/ruffian-defend-1.png
 share/wesnoth/data/core/images/units/human-peasants/ruffian-defend-2.png
+share/wesnoth/data/core/images/units/human-peasants/ruffian-idle-1.png
+share/wesnoth/data/core/images/units/human-peasants/ruffian-idle-2.png
+share/wesnoth/data/core/images/units/human-peasants/ruffian-idle-3.png
+share/wesnoth/data/core/images/units/human-peasants/ruffian-idle-4.png
+share/wesnoth/data/core/images/units/human-peasants/ruffian-idle-5.png
 share/wesnoth/data/core/images/units/human-peasants/ruffian.png
 share/wesnoth/data/core/images/units/human-peasants/woodsman-bow-attack-1.png
 share/wesnoth/data/core/images/units/human-peasants/woodsman-bow-attack-2.png
@@ -12484,6 +12667,11 @@ share/wesnoth/data/core/images/units/orcs/grunt-die-5.png
 share/wesnoth/data/core/images/units/orcs/grunt-die-6.png
 share/wesnoth/data/core/images/units/orcs/grunt-die-7.png
 share/wesnoth/data/core/images/units/orcs/grunt-die-8.png
+share/wesnoth/data/core/images/units/orcs/grunt-stand-se-1.png
+share/wesnoth/data/core/images/units/orcs/grunt-stand-se-2.png
+share/wesnoth/data/core/images/units/orcs/grunt-stand-se-3.png
+share/wesnoth/data/core/images/units/orcs/grunt-stand-se-4.png
+share/wesnoth/data/core/images/units/orcs/grunt-stand-se-5.png
 share/wesnoth/data/core/images/units/orcs/grunt.png
 share/wesnoth/data/core/images/units/orcs/leader-attack-1.png
 share/wesnoth/data/core/images/units/orcs/leader-attack-2.png
@@ -13245,6 +13433,38 @@ share/wesnoth/data/core/images/units/undead-necromancers/adept-die5.png
 share/wesnoth/data/core/images/units/undead-necromancers/adept-die6.png
 share/wesnoth/data/core/images/units/undead-necromancers/adept-die7.png
 share/wesnoth/data/core/images/units/undead-necromancers/adept-die8.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-1.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-10.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-11.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-2.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-3.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-4.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-5.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-6.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-7.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-8.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-9.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-1.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-10.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-11.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-12.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-13.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-14.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-15.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-16.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-17.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-18.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-19.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-2.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-20.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-21.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-3.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-4.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-5.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-6.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-7.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-8.png
+share/wesnoth/data/core/images/units/undead-necromancers/adept-idle-long-9.png
 share/wesnoth/data/core/images/units/undead-necromancers/adept-magic-1.png
 share/wesnoth/data/core/images/units/undead-necromancers/adept-magic-2.png
 share/wesnoth/data/core/images/units/undead-necromancers/adept-magic-3.png
@@ -13604,6 +13824,11 @@ share/wesnoth/data/core/images/units/undead/ghoul-attack-3.png
 share/wesnoth/data/core/images/units/undead/ghoul-attack-4.png
 share/wesnoth/data/core/images/units/undead/ghoul-defend-1.png
 share/wesnoth/data/core/images/units/undead/ghoul-defend-2.png
+share/wesnoth/data/core/images/units/undead/ghoul-idle-1.png
+share/wesnoth/data/core/images/units/undead/ghoul-idle-2.png
+share/wesnoth/data/core/images/units/undead/ghoul-idle-3.png
+share/wesnoth/data/core/images/units/undead/ghoul-idle-4.png
+share/wesnoth/data/core/images/units/undead/ghoul-idle-5.png
 share/wesnoth/data/core/images/units/undead/ghoul.png
 share/wesnoth/data/core/images/units/undead/necrophage-attack-1.png
 share/wesnoth/data/core/images/units/undead/necrophage-attack-2.png
@@ -13903,6 +14128,8 @@ share/wesnoth/data/core/images/units/undead/zombie-wose.png
 share/wesnoth/data/core/images/units/undead/zombie.png
 share/wesnoth/data/core/images/units/unknown-unit.png
 share/wesnoth/data/core/images/units/woses/
+share/wesnoth/data/core/images/units/woses/elder-wose-die-decay-1.png
+share/wesnoth/data/core/images/units/woses/elder-wose-die-decay-2.png
 share/wesnoth/data/core/images/units/woses/wose-ancient-attack-1.png
 share/wesnoth/data/core/images/units/woses/wose-ancient-attack-2.png
 share/wesnoth/data/core/images/units/woses/wose-ancient-defend.png
@@ -13968,6 +14195,18 @@ share/wesnoth/data/core/images/units/woses/wose-elder-die-fall-7.png
 share/wesnoth/data/core/images/units/woses/wose-elder-die-fall-8.png
 share/wesnoth/data/core/images/units/woses/wose-elder-die-fall-9.png
 share/wesnoth/data/core/images/units/woses/wose-elder.png
+share/wesnoth/data/core/images/units/woses/wose-hand-1.png
+share/wesnoth/data/core/images/units/woses/wose-hand-2.png
+share/wesnoth/data/core/images/units/woses/wose-hand-3.png
+share/wesnoth/data/core/images/units/woses/wose-hand-4.png
+share/wesnoth/data/core/images/units/woses/wose-idle-1.png
+share/wesnoth/data/core/images/units/woses/wose-idle-2.png
+share/wesnoth/data/core/images/units/woses/wose-idle-3.png
+share/wesnoth/data/core/images/units/woses/wose-idle-4.png
+share/wesnoth/data/core/images/units/woses/wose-idle-5.png
+share/wesnoth/data/core/images/units/woses/wose-idle-6.png
+share/wesnoth/data/core/images/units/woses/wose-idle-7.png
+share/wesnoth/data/core/images/units/woses/wose-sapling-blink.png
 share/wesnoth/data/core/images/units/woses/wose.png
 share/wesnoth/data/core/images/wesnoth-icon.png
 share/wesnoth/data/core/macros/
@@ -15009,6 +15248,7 @@ share/wesnoth/data/multiplayer/scenarios/ANL_utils/ANL_auto_working.cfg
 share/wesnoth/data/multiplayer/scenarios/ANL_utils/ANL_general_macros.cfg
 share/wesnoth/data/multiplayer/scenarios/ANL_utils/ANL_help.cfg
 share/wesnoth/data/multiplayer/scenarios/ANL_utils/ANL_leader_options.cfg
+share/wesnoth/data/multiplayer/scenarios/ANL_utils/ANL_objectives.cfg
 share/wesnoth/data/multiplayer/scenarios/ANL_utils/ANL_research_options.cfg
 share/wesnoth/data/multiplayer/scenarios/ANL_utils/ANL_special_macros.cfg
 share/wesnoth/data/multiplayer/scenarios/ANL_utils/ANL_worker_options.cfg
@@ -15041,6 +15281,7 @@ share/wesnoth/data/test/maps/move_skip_sighted.map
 share/wesnoth/data/test/maps/pathfind_1.cfg
 share/wesnoth/data/test/maps/sighted_events.map
 share/wesnoth/data/test/maps/test_grunt_tod_damage.map
+share/wesnoth/data/test/maps/test_movetype.map
 share/wesnoth/data/test/multiplayer/
 share/wesnoth/data/test/multiplayer/_main.cfg
 share/wesnoth/data/test/multiplayer/macros/
@@ -15095,6 +15336,7 @@ share/wesnoth/data/test/scenarios/test_max_menu_items.cfg
 share/wesnoth/data/test/scenarios/test_menu_items.cfg
 share/wesnoth/data/test/scenarios/test_move.cfg
 share/wesnoth/data/test/scenarios/test_move_unit.cfg
+share/wesnoth/data/test/scenarios/test_movetype.cfg
 share/wesnoth/data/test/scenarios/test_relative_dir.cfg
 share/wesnoth/data/test/scenarios/test_require.cfg
 share/wesnoth/data/test/scenarios/test_return.cfg
@@ -15178,7 +15420,6 @@ share/wesnoth/data/test/test/leading_space.cfg
 share/wesnoth/data/test/test/umc.cfg
 share/wesnoth/data/themes/
 share/wesnoth/data/themes/_initial.cfg
-share/wesnoth/data/themes/classic.cfg
 share/wesnoth/data/themes/cutscene-minimal.cfg
 share/wesnoth/data/themes/cutscene.cfg
 share/wesnoth/data/themes/default.cfg
@@ -15777,6 +16018,7 @@ share/wesnoth/images/cursors-bw/
 share/wesnoth/images/cursors-bw/attack.png
 share/wesnoth/images/cursors-bw/attack_drag.png
 share/wesnoth/images/cursors-bw/attack_drag_alt.png
+share/wesnoth/images/cursors-bw/ibeam.png
 share/wesnoth/images/cursors-bw/move.png
 share/wesnoth/images/cursors-bw/move_drag.png
 share/wesnoth/images/cursors-bw/move_drag_alt.png
@@ -15791,6 +16033,7 @@ share/wesnoth/images/cursors/attack.png
 share/wesnoth/images/cursors/attack@2x.png
 share/wesnoth/images/cursors/attack_drag.png
 share/wesnoth/images/cursors/attack_drag@2x.png
+share/wesnoth/images/cursors/ibeam.png
 share/wesnoth/images/cursors/move.png
 share/wesnoth/images/cursors/move@2x.png
 share/wesnoth/images/cursors/move_drag.png
@@ -16642,7 +16885,7 @@ share/wesnoth/images/icons/profiles/ambush.png
 share/wesnoth/images/icons/profiles/arcane.png
 share/wesnoth/images/icons/profiles/backstab.png
 share/wesnoth/images/icons/profiles/berserk.png
-share/wesnoth/images/icons/profiles/blades.png
+share/wesnoth/images/icons/profiles/blade.png
 share/wesnoth/images/icons/profiles/chaotic.png
 share/wesnoth/images/icons/profiles/charge.png
 share/wesnoth/images/icons/profiles/cold.png

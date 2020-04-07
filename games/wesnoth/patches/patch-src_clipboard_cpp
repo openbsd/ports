@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_clipboard_cpp,v 1.5 2018/08/26 12:24:50 kirby Exp $
+$OpenBSD: patch-src_clipboard_cpp,v 1.6 2020/04/07 14:26:38 kirby Exp $
 Index: src/desktop/clipboard.cpp
 --- src/desktop/clipboard.cpp.orig
 +++ src/desktop/clipboard.cpp
@@ -9,4 +9,4 @@ Index: src/desktop/clipboard.cpp
 +#include <unistd.h>
  #include <algorithm>
  
- #include <SDL_events.h>
+ #include <SDL2/SDL_events.h>
