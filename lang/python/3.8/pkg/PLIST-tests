@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.3 2020/02/11 11:45:31 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.4 2020/04/07 06:51:25 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -2734,6 +2734,9 @@ lib/python3.8/test/test_importlib/__pycache__/abc.cpython-38.pyc
 lib/python3.8/test/test_importlib/__pycache__/fixtures.cpython-38.opt-1.pyc
 lib/python3.8/test/test_importlib/__pycache__/fixtures.cpython-38.opt-2.pyc
 lib/python3.8/test/test_importlib/__pycache__/fixtures.cpython-38.pyc
+lib/python3.8/test/test_importlib/__pycache__/stubs.cpython-38.opt-1.pyc
+lib/python3.8/test/test_importlib/__pycache__/stubs.cpython-38.opt-2.pyc
+lib/python3.8/test/test_importlib/__pycache__/stubs.cpython-38.pyc
 lib/python3.8/test/test_importlib/__pycache__/test_abc.cpython-38.opt-1.pyc
 lib/python3.8/test/test_importlib/__pycache__/test_abc.cpython-38.opt-2.pyc
 lib/python3.8/test/test_importlib/__pycache__/test_abc.cpython-38.pyc
@@ -3058,6 +3061,7 @@ lib/python3.8/test/test_importlib/source/test_file_loader.py
 lib/python3.8/test/test_importlib/source/test_finder.py
 lib/python3.8/test/test_importlib/source/test_path_hook.py
 lib/python3.8/test/test_importlib/source/test_source_encoding.py
+lib/python3.8/test/test_importlib/stubs.py
 lib/python3.8/test/test_importlib/test_abc.py
 lib/python3.8/test/test_importlib/test_api.py
 lib/python3.8/test/test_importlib/test_lazy.py

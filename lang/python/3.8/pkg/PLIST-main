@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2020/02/11 11:45:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/04/07 06:51:25 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
@@ -2197,9 +2197,9 @@ lib/python3.8/lib-dynload/
 @so lib/python3.8/lib-dynload/zlib.so
 lib/python3.8/lib2to3/
 lib/python3.8/lib2to3/Grammar.txt
-lib/python3.8/lib2to3/Grammar3.8.1.final.0.pickle
+lib/python3.8/lib2to3/Grammar3.8.2.final.0.pickle
 lib/python3.8/lib2to3/PatternGrammar.txt
-lib/python3.8/lib2to3/PatternGrammar3.8.1.final.0.pickle
+lib/python3.8/lib2to3/PatternGrammar3.8.2.final.0.pickle
 lib/python3.8/lib2to3/__init__.py
 lib/python3.8/lib2to3/__main__.py
 lib/python3.8/lib2to3/__pycache__/
