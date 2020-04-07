@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.33 2019/11/08 13:06:00 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.34 2020/04/07 15:18:33 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -75,6 +75,12 @@ sub remove
 {
 	my ($self, $v) = @_;
 	$self->{queue}->remove($v);
+}
+
+sub dump_queue
+{
+	my $self = shift;
+	$self->{queue}->dump(@_);
 }
 
 sub is_done_quick
