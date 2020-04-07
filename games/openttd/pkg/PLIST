@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/04/20 00:33:32 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.31 2020/04/07 15:13:34 solene Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
 share/doc/openttd/
-share/doc/openttd/COPYING
-share/doc/openttd/HOWTO_compile_lang_files.txt
+share/doc/openttd/COPYING.md
 share/doc/openttd/README.md
-share/doc/openttd/Readme_OS2.txt
-share/doc/openttd/Readme_Windows_MSVC.md
-share/doc/openttd/admin_network.txt
+share/doc/openttd/admin_network.md
 share/doc/openttd/changelog.txt
-share/doc/openttd/desync.txt
+share/doc/openttd/compiling_lang_files.md
+share/doc/openttd/debugging_desyncs.md
+share/doc/openttd/desync.md
+share/doc/openttd/directory_structure.md
 share/doc/openttd/elrail.svg
 share/doc/openttd/elrail_tile.png
 share/doc/openttd/elrail_track.png
@@ -18,8 +18,9 @@ share/doc/openttd/known-bugs.txt
 share/doc/openttd/landscape.html
 share/doc/openttd/landscape_externals.html
 share/doc/openttd/landscape_grid.html
-share/doc/openttd/linkgraph.txt
-share/doc/openttd/multiplayer.txt
+share/doc/openttd/linkgraph.md
+share/doc/openttd/logging_and_performance_metrics.md
+share/doc/openttd/multiplayer.md
 share/doc/openttd/obg_format.txt
 share/doc/openttd/obm_format.txt
 share/doc/openttd/obs_format.txt
@@ -50,6 +51,7 @@ share/openttd/ai/
 share/openttd/ai/compat_0.7.nut
 share/openttd/ai/compat_1.0.nut
 share/openttd/ai/compat_1.1.nut
+share/openttd/ai/compat_1.10.nut
 share/openttd/ai/compat_1.2.nut
 share/openttd/ai/compat_1.3.nut
 share/openttd/ai/compat_1.4.nut
@@ -73,6 +75,7 @@ share/openttd/baseset/orig_win.obg
 share/openttd/baseset/orig_win.obm
 share/openttd/baseset/orig_win.obs
 share/openttd/game/
+share/openttd/game/compat_1.10.nut
 share/openttd/game/compat_1.2.nut
 share/openttd/game/compat_1.3.nut
 share/openttd/game/compat_1.4.nut
@@ -186,6 +189,9 @@ share/openttd/media/extra_grf/oneway.png
 share/openttd/media/extra_grf/openttd.nfo
 share/openttd/media/extra_grf/openttdgui.nfo
 share/openttd/media/extra_grf/openttdgui.png
+share/openttd/media/extra_grf/openttdgui_build_tram.png
+share/openttd/media/extra_grf/openttdgui_convert_road.png
+share/openttd/media/extra_grf/openttdgui_convert_tram.png
 share/openttd/media/extra_grf/openttdgui_group_livery.png
 share/openttd/media/extra_grf/orig_extra.nfo
 share/openttd/media/extra_grf/palette.nfo
@@ -212,6 +218,7 @@ share/openttd/media/extra_grf/sloped_tracks.nfo
 share/openttd/media/extra_grf/sloped_tracks.png
 share/openttd/media/extra_grf/tramtracks.nfo
 share/openttd/media/extra_grf/tramtracks.png
+share/openttd/media/extra_grf/tramtracks_bare_depot.png
 share/openttd/media/extra_grf/tunnel_portals.nfo
 share/openttd/media/extra_grf/tunnel_portals.png
 share/openttd/media/openttd.128.png

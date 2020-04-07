@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2020/02/12 10:23:36 cwen Exp $
+# $OpenBSD: Makefile,v 1.67 2020/04/07 15:13:34 solene Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		1.9.3
+V =		1.10.0
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
-REVISION =	1
 
 CATEGORIES=	games
 
@@ -16,7 +15,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += SDL c fluidsynth fontconfig freetype icudata icui18n icuuc
+WANTLIB += SDL2 c fluidsynth fontconfig freetype icudata icui18n icuuc
 WANTLIB += lzma lzo2 m png pthread ${COMPILER_LIBCXX} xdg-basedir z
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -28,7 +27,7 @@ DIST_SUBDIR =		openttd
 
 LIB_DEPENDS=		archivers/lzo2 \
 			audio/fluidsynth \
-			devel/sdl \
+			devel/sdl2 \
 			graphics/png \
 			textproc/icu4c \
 			archivers/xz \
@@ -52,7 +51,6 @@ CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
 			--with-png \
 			--with-zlib \
 			--without-allegro \
-			--without-libtimidity \
 			--CFLAGS_BUILD="${CFLAGS}" \
 			--disable-strip
 

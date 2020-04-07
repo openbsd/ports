@@ -1,14 +1,14 @@
-$OpenBSD: patch-config_lib,v 1.6 2019/04/20 00:33:32 bentley Exp $
+$OpenBSD: patch-config_lib,v 1.7 2020/04/07 15:13:34 solene Exp $
 Don't build with -O1. The reason they add it is irrevelant to OpenBSD anyway.
 Index: config.lib
 --- config.lib.orig
 +++ config.lib
-@@ -1566,7 +1566,7 @@ make_cflags_and_ldflags() {
+@@ -1525,7 +1525,7 @@ make_cflags_and_ldflags() {
  		cc_build_is_gcc=`basename "$cc_build" | grep "gcc" 2>/dev/null`
  		if [ -n "$cc_build_is_gcc" ]; then
  			# Just add -O1 to the tools needed for building.
 -			CFLAGS_BUILD="$CFLAGS_BUILD -D_FORTIFY_SOURCE=2 -O1"
 +			CFLAGS_BUILD="$CFLAGS_BUILD -D_FORTIFY_SOURCE=2"
- 		fi
- 	fi
- 
+ 			if [ "$os" = "MINGW" ]; then
+ 				# Prevent undefined references when _FORTIFY_SOURCE > 0
+ 				LDFLAGS_BUILD="$LDFLAGS_BUILD -fstack-protector"
