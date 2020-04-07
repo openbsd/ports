@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.86 2019/11/09 17:06:37 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.87 2020/04/07 16:02:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -229,7 +229,9 @@ sub read_checksums
 	my ($self, $filename) = @_;
 	# XXX the fetch user might not have read access there ?
 	my $fh = $self->{build_user}->open('<', $filename);
-	return if !defined $fh;
+	if (!defined $fh) {
+		return { error => $! };
+	}
 	my $r = { size => {}, sha => {}};
 	while (<$fh>) {
 		if (my ($file, $sz) = m/^SIZE \((.*)\) \= (\d+)$/) {

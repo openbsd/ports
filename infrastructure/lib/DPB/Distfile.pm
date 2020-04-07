@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.23 2020/02/27 15:53:35 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.24 2020/04/07 16:02:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -59,7 +59,11 @@ sub complete
 	my $sha = $distinfo->{sha}{$file};
 	my $error = 0;
 	if (!defined $sz && !defined $sha) {
-		$v->break("Missing info for $file in $fname");
+		if (defined $distinfo->{error}) {
+			$v->break("Missing info for $file because $fname couldn't be read: $distinfo->{error}");
+		} else {
+			$v->break("Missing info for $file in $fname");
+		}
 		return;
 	}
 	if (!defined $sz) {
