@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/07 13:29:52 bentley Exp $
 
 COMMENT =	tiny pop3 daemon
 
 DISTNAME =	popa3d-1.0.3
-REVISION =	1
+REVISION =	2
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =	mail
 
-HOMEPAGE =	http://www.openwall.com/popa3d/
+HOMEPAGE =	https://www.openwall.com/popa3d/
 
 # (Very) Simplified BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto
 
-MASTER_SITES =	http://www.openwall.com/popa3d/
+MASTER_SITES =	https://www.openwall.com/popa3d/
 
 CFLAGS +=	-Wall -DHAVE_PROGNAME -DHAVE_OPENSSL
 LIBS =		-lcrypto

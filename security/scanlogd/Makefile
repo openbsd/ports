@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:49:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/04/07 13:29:53 bentley Exp $
 
 COMMENT=	TCP port scan detection tool
 
 DISTNAME=	scanlogd-2.2.7
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 FIX_EXTRACT_PERMISSIONS=Yes
 
-HOMEPAGE=	http://www.openwall.com/scanlogd/
+HOMEPAGE=	https://www.openwall.com/scanlogd/
 
 # BSD
 PERMIT_PACKAGE=	Yes
