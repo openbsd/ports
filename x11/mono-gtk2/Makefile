@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/04/07 07:38:29 robert Exp $
 
 COMMENT=		.NET language binding for the GTK+2 toolkit
 
@@ -8,7 +8,7 @@ VERSION=		2.${MAJOR}.${MINOR}
 
 DISTNAME=		gtk-sharp-${VERSION}
 PKGNAME=		mono-gtk2-${VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
