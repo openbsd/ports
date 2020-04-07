@@ -1,0 +1,30 @@
+$OpenBSD: patch-dom_ipc_ContentChild_cpp,v 1.7 2020/04/07 14:10:48 landry Exp $
+
+Do not unveil an already visible pledge file since that interferes with
+other unveils.
+
+cf https://bugzilla.mozilla.org/show_bug.cgi?id=1623086
+Index: dom/ipc/ContentChild.cpp
+--- dom/ipc/ContentChild.cpp.orig
++++ dom/ipc/ContentChild.cpp
+@@ -4602,8 +4602,18 @@ OpenBSDUnveilPaths(const nsACString& uPath, const nsAC
+   if (disabled) {
+     warnx("%s: disabled", PromiseFlatCString(uPath).get());
+   } else {
+-    if (unveil(PromiseFlatCString(pledgePath).get(), "r") == -1) {
+-      err(1, "unveil(%s, r) failed", PromiseFlatCString(pledgePath).get());
++    struct stat st;
++
++    // Only unveil the pledgePath file if it's not already unveiled, otherwise
++    // some containing directory will lose visibility.
++    if (stat(PromiseFlatCString(pledgePath).get(), &st) == -1) {
++      if (errno == ENOENT) {
++        if (unveil(PromiseFlatCString(pledgePath).get(), "r") == -1) {
++          err(1, "unveil(%s, r) failed", PromiseFlatCString(pledgePath).get());
++        }
++      } else {
++        err(1, "stat(%s)", PromiseFlatCString(pledgePath).get());
++      }
+     }
+   }
+ 

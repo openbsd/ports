@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.86 2020/03/10 15:53:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.87 2020/04/07 14:10:48 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -26,13 +26,20 @@ lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default48.png
 lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default64.png
 lib/${MOZILLA_PROJECT}/browser/defaults/
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
+@sample ${SYSCONFDIR}/firefox/
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/all-openbsd.js
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.content
+@sample ${SYSCONFDIR}/firefox/pledge.content
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.gpu
+@sample ${SYSCONFDIR}/firefox/pledge.gpu
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.main
+@sample ${SYSCONFDIR}/firefox/pledge.main
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.content
+@sample ${SYSCONFDIR}/firefox/unveil.content
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.gpu
+@sample ${SYSCONFDIR}/firefox/unveil.gpu
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.main
+@sample ${SYSCONFDIR}/firefox/unveil.main
 lib/${MOZILLA_PROJECT}/browser/features/
 lib/${MOZILLA_PROJECT}/browser/features/doh-rollout@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
@@ -48,6 +55,8 @@ lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
+lib/${MOZILLA_PROJECT}/fonts/
+lib/${MOZILLA_PROJECT}/fonts/TwemojiMozilla.ttf
 lib/${MOZILLA_PROJECT}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 @lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
@@ -58,9 +67,10 @@ lib/${MOZILLA_PROJECT}/gtk2/
 @lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}/omni.ja
-lib/${MOZILLA_PROJECT}/pingsender
+@bin lib/${MOZILLA_PROJECT}/pingsender
 lib/${MOZILLA_PROJECT}/platform.ini
 @bin lib/${MOZILLA_PROJECT}/plugin-container
 lib/${MOZILLA_PROJECT}/removed-files

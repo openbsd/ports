@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.26 2020/02/24 13:31:54 ajacoutot Exp $
+$OpenBSD: README,v 1.27 2020/04/07 14:10:48 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -23,10 +23,7 @@ only ~/Downloads and /tmp can be written to when downloading files,
 or when viewing local files as file:// URLs.
 
 Files containing pledge promises and unveil paths and permissions
-for each type of process are located in
-${LOCALBASE}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/.
-Each file can be overridden by copying it to ${SYSCONFDIR}/firefox/
-and modifying it.
+for each type of process are located in ${SYSCONFDIR}/firefox/.
 
 3rd-Party MIME Handlers
 =======================
@@ -112,6 +109,9 @@ It is also required to change the ownership of the video(4) device so that your
 regular user can access the webcam device.
 
 # chown youruser /dev/video0
+
+Screen sharing needs shmget() which isnt available when pledge() is active, so
+you will have to disable pledge for the main process.
 
 KerberosV support
 =================
