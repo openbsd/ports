@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.84 2020/01/19 21:35:24 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.85 2020/04/08 22:10:51 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -684,7 +684,6 @@ share/examples/asterisk/default/extconfig.conf
 @sample ${SYSCONFDIR}/asterisk/extconfig.conf
 share/examples/asterisk/default/extensions.ael
 share/examples/asterisk/default/extensions.conf
-share/examples/asterisk/default/extensions.lua
 share/examples/asterisk/default/extensions_minivm.conf
 share/examples/asterisk/default/features.conf
 share/examples/asterisk/default/festival.conf

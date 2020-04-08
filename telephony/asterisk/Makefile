@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.315 2020/03/29 15:42:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.316 2020/04/08 22:10:50 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -7,6 +7,7 @@ PJ_V=		2.9
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
+REVISION-main=	0
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
@@ -57,8 +58,8 @@ COMPILER=		ports-gcc
 SHARED_LIBS+=		asteriskssl 0.0		# 1
 SHARED_LIBS+=		asteriskpj 0.0		# 2
 
-MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -odbc \
-			-pgsql -snmp -speex -tds
+MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -lua \
+			-odbc -pgsql -snmp -speex -tds
 PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:N-kqueue:C/-/no_/g}
 
 LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
@@ -91,16 +92,17 @@ MASTER_SITES0=	https://raw.githubusercontent.com/asterisk/third-party/master/pjp
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTORECONF=		./bootstrap.sh
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			archivers/bzip2 \
+AUTOMAKE_VERSION=	1.16
+BUILD_DEPENDS+=		archivers/bzip2 \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
 
-CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
-LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
+CPPFLAGS+=		-I${X11BASE}/include \
+			-I${LOCALBASE}/include
+LDFLAGS+=		-L${X11BASE}/lib \
+			-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
@@ -121,31 +123,39 @@ CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729"
 MAKE_ENV=		LOCALBASE="${LOCALBASE}"
 
 CONFIGURE_ARGS+=	--with-asound=no \
+			--with-bfd=no \
+			--with-bluetooth=no \
 			--with-cap=no \
+			--with-codec2=no \
+			--with-cpg=no \
 			--with-dahdi=no \
+			--with-avcodec=no \
 			--with-gtk2=no \
 			--with-h323=no \
+			--with-hoard=no \
 			--with-isdnnet=no \
+			--with-jack=no \
 			--with-misdn=no \
 			--with-nbs=no \
 			--with-newt=no \
+			--with-openr2=no \
+			--with-opus=no \
+			--with-opusfile=no \
 			--with-osptk=no \
 			--with-oss=no \
+			--with-beanstalk=no \
 			--with-portaudio=${LOCALBASE} \
 			--with-pri=no \
-			--with-pwlib=no \
-			--with-SDL_image=no \
+			--with-fftw3=no \
+			--with-resample=no \
+			--with-sndfile=no \
 			--with-sdl=no \
+			--with-SDL_image=no \
 			--with-sqlite=no \
 			--with-ss7=no \
 			--with-suppserv=no \
-			--with-tinfo=no \
 			--with-tonezone=no \
 			--with-vpb=no
-
-CONFIGURE_ARGS+=	--with-jack=no \
-			--with-lua=no \
-			--with-resample=no
 
 # Some build options (including a useful malloc debug) are available
 # via menuselect. They may be enabled by running 'make menuselect'
@@ -216,6 +226,21 @@ COMMENT-kqueue=		kqueue-backed timer for Asterisk
 LIB_DEPENDS-kqueue=
 WANTLIB-kqueue=		pthread
 
+# lua
+MODULES=		lang/lua
+MODLUA_SA=		yes
+MODLUA_RUNDEP=		no
+MODLUA_VERSION=		5.3
+COMMENT-lua=		lua support for Asterisk
+LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
+WANTLIB-lua=		${MODLUA_WANTLIB} m pthread
+.if !${BUILD_PACKAGES:M-lua}
+CONFIGURE_ARGS+=	--with-lua=no
+MODLUA_BUILDDEP=	no
+.else
+CONFIGURE_ARGS+=	--with-lua
+.endif
+
 # odbc
 COMMENT-odbc=		ODBC support for Asterisk
 LIB_DEPENDS-odbc=	databases/iodbc
@@ -282,13 +307,6 @@ pre-patch:
 post-patch:
 	cd ${WRKSRC}/third-party/pjproject/source; ../../apply_patches ../patches .
 	touch ${WRKSRC}/third-party/pjproject/source/.unpacked
-
-do-gen:
-	@#for clang#  sed -i.beforesubst -e 's, -ftrampolines,,' ${WRKSRC}/Makefile
-	cd ${WRKSRC}; \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    ./bootstrap.sh
 
 menuselect: configure
 	@cd ${WRKSRC}; ${_PBUILD} ${MAKE_PROGRAM} menuselect

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-lua,v 1.1 2020/04/08 22:10:51 sthen Exp $
+@conflict asterisk-<16.9.0p0
+@so lib/asterisk/modules/pbx_lua.so
+share/examples/asterisk/default/extensions.lua
+@sample ${SYSCONFDIR}/asterisk/extensions.lua
