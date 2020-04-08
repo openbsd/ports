@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/04/08 18:25:48 espie Exp $
 
 COMMENT=	Perl interface to Radius
 
@@ -101,7 +101,6 @@ post-install:
 .for file in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCDIR}
 .endfor
-	${INSTALL_DATA_DIR} ${EXDIR}
 	${MODCPAN_POST_INSTALL}
 
 .include <bsd.port.mk>

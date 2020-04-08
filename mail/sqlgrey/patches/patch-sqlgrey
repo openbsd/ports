@@ -1,6 +1,7 @@
-$OpenBSD: patch-sqlgrey,v 1.2 2014/07/11 05:59:24 giovanni Exp $
---- sqlgrey.orig	Mon Feb 13 17:54:08 2012
-+++ sqlgrey	Thu Jun 26 10:01:05 2014
+$OpenBSD: patch-sqlgrey,v 1.3 2020/04/08 18:25:48 espie Exp $
+Index: sqlgrey
+--- sqlgrey.orig
++++ sqlgrey
 @@ -32,6 +32,7 @@ use Pod::Usage;
  use Getopt::Long 2.25 qw(:config posix_default no_ignore_case);
  use Net::Server::Multiplex;
@@ -9,6 +10,15 @@ $OpenBSD: patch-sqlgrey,v 1.2 2014/07/11 05:59:24 giovanni Exp $
  use Math::BigInt;
  
  use POSIX ':sys_wait_h';
+@@ -39,7 +40,7 @@ use POSIX ':sys_wait_h';
+ use vars qw(@ISA);
+ @ISA = qw(Net::Server::Multiplex);
+ 
+-my $VERSION = "1.8.0";
++my $VERSION = "";
+ my $software = 'SQLgrey-' . $VERSION;
+ 
+ my $DB_VERSION = 3;
 @@ -2475,7 +2476,7 @@ sub read_conffile($)
          s/\s+$//;       # no trailing white
          next unless length;     # anything left ?
