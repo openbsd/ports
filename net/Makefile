@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1191 2020/04/06 12:41:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.1192 2020/04/08 04:58:50 bket Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -696,6 +696,7 @@
      SUBDIR += sipsak
      SUBDIR += slurm
      SUBDIR += smokeping
+     SUBDIR += sniproxy
      SUBDIR += snmptt
      SUBDIR += snort
      SUBDIR += socat
