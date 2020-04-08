@@ -8,7 +8,6 @@
 /etc/machine-id r
 
 /usr/local/lib r
-/usr/local/firefox r
 /usr/local/lib/firefox rx
 /usr/local/share r
 /usr/share/locale r
