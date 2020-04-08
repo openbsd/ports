@@ -1,0 +1,30 @@
+$OpenBSD: patch-source_dialogs_script_c,v 1.3 2020/04/08 12:33:32 edd Exp $
+
+Fix a crash in dmenu mode:
+https://github.com/davatorium/rofi/issues/1083
+
+Index: source/dialogs/script.c
+--- source/dialogs/script.c.orig
++++ source/dialogs/script.c
+@@ -78,10 +78,10 @@ typedef struct
+ void dmenuscript_parse_entry_extras ( G_GNUC_UNUSED Mode *sw, DmenuScriptEntry *entry, char *buffer, size_t length )
+ {
+     size_t               length_key = 0;//strlen ( line );
+-    while ( length_key <= length && buffer[length_key] != '\x1f' ) {
++    while ( length_key < length && buffer[length_key] != '\x1f' ) {
+         length_key++;
+     }
+-    if ( length_key < length ) {
++    if ( (length_key+1) < length ) {
+         buffer[length_key] = '\0';
+         char *value = buffer + length_key + 1;
+         if ( strcasecmp(buffer, "icon" ) == 0 ) {
+@@ -98,7 +98,7 @@ static void parse_header_entry ( Mode *sw, char *line,
+ {
+     ScriptModePrivateData *pd        = (ScriptModePrivateData *) sw->private_data;
+     ssize_t               length_key = 0;//strlen ( line );
+-    while ( length_key <= length && line[length_key] != '\x1f' ) {
++    while ( length_key < length && line[length_key] != '\x1f' ) {
+         length_key++;
+     }
+ 
