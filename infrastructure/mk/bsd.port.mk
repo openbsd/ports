@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1531 2020/04/06 14:43:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1532 2020/04/08 09:10:00 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1329,7 +1329,16 @@ MAKESUMFILES = ${CHECKSUMFILES} ${_PATH_SUPDISTFILES}
 
 # This is what is actually going to be extracted, and is overridable
 # by the user.
-EXTRACT_ONLY ?= ${_LIST_DISTFILES}
+
+.if !defined(EXTRACT_ONLY)
+EXTRACT_ONLY = ${_LIST_DISTFILES}
+.else
+.  for f in ${EXTRACT_ONLY}
+.    if empty(_LIST_DISTFILES:M$f)
+ERRORS += "Fatal: EXTRACT_ONLY file $f not part of DISTFILES"
+.    endif
+.  endfor
+.endif
 
 PATCH_CASES ?=
 EXTRACT_CASES ?=
