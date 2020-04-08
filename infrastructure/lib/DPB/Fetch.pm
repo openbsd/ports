@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.87 2020/04/07 16:02:04 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.88 2020/04/08 08:01:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -258,7 +258,7 @@ sub build1info
 
 	if (!defined $checksum_file) {
 		$v->break("No checksum file");
-		next;
+		return;
 	}
 	$checksum_file = $checksum_file->string;
 	# collapse identical checksum files together
