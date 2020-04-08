@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2020/01/04 13:52:08 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.42 2020/04/08 12:45:06 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -202,6 +202,7 @@ share/highlight/langDefs/rpl.lang
 share/highlight/langDefs/rs.lang
 share/highlight/langDefs/ruby.lang
 share/highlight/langDefs/s.lang
+share/highlight/langDefs/sam.lang
 share/highlight/langDefs/sas.lang
 share/highlight/langDefs/scad.lang
 share/highlight/langDefs/scala.lang
@@ -426,6 +427,7 @@ share/highlight/themes/navy.theme
 share/highlight/themes/neon.theme
 share/highlight/themes/night.theme
 share/highlight/themes/nightshimmer.theme
+share/highlight/themes/nord.theme
 share/highlight/themes/nuvola.theme
 share/highlight/themes/olive.theme
 share/highlight/themes/orion.theme
