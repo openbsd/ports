@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/04/06 18:58:17 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/04/08 06:44:48 robert Exp $
 @pkgpath www/chromium,electron
 bin/electron
 electron/
-electron/INS@JLqe0T4pJH
 electron/chrome_100_percent.pak
 electron/chrome_200_percent.pak
 @bin electron/electron
