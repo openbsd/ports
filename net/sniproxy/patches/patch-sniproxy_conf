@@ -1,0 +1,16 @@
+$OpenBSD: patch-sniproxy_conf,v 1.1.1.1 2020/04/08 04:56:52 bket Exp $
+
+Index: sniproxy.conf
+--- sniproxy.conf.orig
++++ sniproxy.conf
+@@ -2,8 +2,8 @@
+ # lines that start with # are comments
+ # lines with only white space are ignored
+ 
+-user nobody
+-group nogroup
++user _sniproxy
++group _sniproxy
+ 
+ # PID file, needs to be placed in directory writable by user
+ pidfile /var/run/sniproxy.pid

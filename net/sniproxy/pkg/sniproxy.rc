@@ -1,0 +1,12 @@
+#!/bin/ksh
+#
+# $OpenBSD: sniproxy.rc,v 1.1.1.1 2020/04/08 04:56:52 bket Exp $
+
+daemon="${TRUEPREFIX}/sbin/sniproxy"
+daemon_flags="-c ${SYSCONFDIR}/sniproxy.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

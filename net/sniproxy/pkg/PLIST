@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/08 04:56:52 bket Exp $
+@newgroup _sniproxy:853
+@newuser _sniproxy:853:853:daemon:sniproxy daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/sniproxy
+@man man/man5/sniproxy.conf.5
+@man man/man8/sniproxy.8
+@bin sbin/sniproxy
+share/examples/sniproxy/
+share/examples/sniproxy/sniproxy.conf
+@sample ${SYSCONFDIR}/sniproxy.conf
