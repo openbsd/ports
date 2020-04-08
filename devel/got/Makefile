@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/04/05 10:09:06 stsp Exp $
+# $OpenBSD: Makefile,v 1.36 2020/04/08 09:16:07 espie Exp $
 
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
@@ -27,7 +27,7 @@ INSTALL_TARGET =	install web-install
 
 MASTER_SITES =		https://gameoftrees.org/releases/
 
-DEBUG_PACKAGES =	-main
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS =		www/kcgi
 
