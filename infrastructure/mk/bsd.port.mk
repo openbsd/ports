@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1532 2020/04/08 09:10:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1533 2020/04/08 09:15:39 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1186,7 +1186,7 @@ DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 .endif
 
 
-_EXCLUDE_DEBUG_PLISTS = ${_WRKDEBUG} ${_WRKDEBUG}/Makefile
+_EXCLUDE_DEBUG_PLISTS = ${_WRKDEBUG} ${_WRKDEBUG}/Makefile ${_WRKDEBUG}/Makefile.new
 
 .for _S in ${MULTI_PACKAGES}
 PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
@@ -2124,7 +2124,7 @@ ${_pkg_cookie${_S}}:
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
 .  if !empty(DEBUG_PACKAGES)
-	@${_SUDOMAKESYS} _copy-debug-info ${FAKE_SETUP}
+	@${_SUDOMAKESYS} _copy-debug-info
 .  endif
 	@${_MAKE} _internal-generate-readmes
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
@@ -3003,9 +3003,9 @@ ${_WRKDEBUG}/Makefile: ${_FAKE_COOKIE}
 	@${_build_debug_info}
 
 _copy-debug-info: ${_FAKE_COOKIE} ${_WRKDEBUG}/Makefile
-	@cd ${PREFIX} && \
+	@cd ${WRKINST} && \
 		exec ${SETENV} ${MAKE} -r -f ${_WRKDEBUG}/Makefile \
-			PATH='${PATH}' DWZ='${DWZ}' \
+			PATH='${PORTPATH}' DWZ='${DWZ}' \
 			INSTALL_DATA_DIR='${INSTALL_DATA_DIR}' all
 
 show-debug-info:
