@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/05/06 16:34:44 kn Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/04/09 15:15:09 sthen Exp $
 include/upnp/
 include/upnp/ActionComplete.h
 include/upnp/ActionRequest.h
@@ -6,6 +6,7 @@ include/upnp/Callback.h
 include/upnp/Discovery.h
 include/upnp/Event.h
 include/upnp/EventSubscribe.h
+include/upnp/ExtraHeaders.h
 include/upnp/FileInfo.h
 include/upnp/StateVarComplete.h
 include/upnp/StateVarRequest.h
@@ -28,10 +29,10 @@ include/upnp/upnp.h
 include/upnp/upnpconfig.h
 include/upnp/upnpdebug.h
 include/upnp/upnptools.h
-lib/libixml.a
+@static-lib lib/libixml.a
 lib/libixml.la
 @lib lib/libixml.so.${LIBixml_VERSION}
-lib/libupnp.a
+@static-lib lib/libupnp.a
 lib/libupnp.la
 @lib lib/libupnp.so.${LIBupnp_VERSION}
 lib/pkgconfig/libupnp.pc
