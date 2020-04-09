@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/09 13:26:13 jca Exp $
 
 COMMENT =	C++ API for dbus
 DISTNAME =	libdbus-c++-0.9.0
-SHARED_LIBS =	dbus-c++-1	0.0 \
+REVISION =	0
+
+SHARED_LIBS =	dbus-c++-1	0.1 \
 		dbus-c++-glib-1	0.0
+
 CATEGORIES =	x11 devel
+
 HOMEPAGE =	http://dbus-cplusplus.sourceforge.net/
 
 # LGPLv2.1+

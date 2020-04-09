@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_types_cpp,v 1.1 2020/04/09 13:26:13 jca Exp $
+
+Fix build failure due to symbols not being declared in the DBus namespace.
+https://github.com/andreas-volz/dbus-cplusplus/commit/a0b9ef3b469ca23c6a3229d8abb967cbbddcee38
+
+Index: src/types.cpp
+--- src/types.cpp.orig
++++ src/types.cpp
+@@ -34,7 +34,7 @@
+ #include "message_p.h"
+ #include "internalerror.h"
+ 
+-using namespace DBus;
++namespace DBus {
+ 
+ Variant::Variant()
+   : _msg(CallMessage()) // dummy message used as temporary storage for variant data
+@@ -104,3 +104,4 @@ MessageIter &operator >> (MessageIter &iter, Variant &
+   return ++iter;
+ }
+ 
++} /* namespace DBus */

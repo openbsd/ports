@@ -1,21 +1,57 @@
-$OpenBSD: patch-include_dbus-c++_types_h,v 1.1.1.1 2019/03/13 10:52:51 stsp Exp $
+$OpenBSD: patch-include_dbus-c++_types_h,v 1.2 2020/04/09 13:26:13 jca Exp $
+
 Fix build failure due to symbols not being declared in the DBus namespace.
+https://github.com/andreas-volz/dbus-cplusplus/commit/a0b9ef3b469ca23c6a3229d8abb967cbbddcee38
+
 Index: include/dbus-c++/types.h
 --- include/dbus-c++/types.h.orig
 +++ include/dbus-c++/types.h
-@@ -316,8 +316,6 @@ struct type< Struct<T1, T2, T3, T4, T5, T6, T7, T8, T9
+@@ -89,13 +89,7 @@ class DXXAPI Variant (public)
+   }
+ 
+   template <typename T>
+-  operator T() const
+-  {
+-    T cast;
+-    MessageIter ri = _msg.reader();
+-    ri >> cast;
+-    return cast;
+-  }
++  operator T() const;
+ 
+ private:
+ 
+@@ -316,7 +310,7 @@ struct type< Struct<T1, T2, T3, T4, T5, T6, T7, T8, T9
    }
  };
  
 -} /* namespace DBus */
--
++extern DXXAPI DBus::MessageIter &operator << (DBus::MessageIter &iter, const DBus::Variant &val);
+ 
  inline DBus::MessageIter &operator << (DBus::MessageIter &iter, const DBus::Invalid &)
  {
-   return iter;
-@@ -645,6 +643,8 @@ inline DBus::MessageIter &operator >> (DBus::MessageIt
+@@ -551,6 +545,8 @@ inline DBus::MessageIter &operator >> (DBus::MessageIt
+   return ++iter;
  }
  
- extern DXXAPI DBus::MessageIter &operator >> (DBus::MessageIter &iter, DBus::Variant &val);
++extern DXXAPI DBus::MessageIter &operator >> (DBus::MessageIter &iter, DBus::Variant &val);
++
+ template<typename E>
+ inline DBus::MessageIter &operator >> (DBus::MessageIter &iter, std::vector<E>& val)
+ {
+@@ -644,7 +640,16 @@ inline DBus::MessageIter &operator >> (DBus::MessageIt
+   return ++iter;
+ }
+ 
+-extern DXXAPI DBus::MessageIter &operator >> (DBus::MessageIter &iter, DBus::Variant &val);
++template <typename T>
++inline DBus::Variant::operator T() const
++{
++  T cast;
++  DBus::MessageIter ri = _msg.reader();
++  ri >> cast;
++  return cast;
++}
 +
 +} /* namespace DBus */
  
