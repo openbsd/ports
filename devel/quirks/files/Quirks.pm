@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.931 2020/04/05 21:26:04 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.932 2020/04/09 19:10:54 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -416,6 +416,7 @@ my $stem_extensions = {
 	'py-wcwidth' => 'py3-wcwidth',
 	'py-twitter' => 'py3-twitter',
 	'py-irclib' => 'py3-irclib',
+	'py-casttube' => 'py3-casttube',
 };
 
 my $obsolete_reason = {
