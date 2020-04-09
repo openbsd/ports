@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2020/04/05 21:14:44 kn Exp $
+# $OpenBSD: Makefile,v 1.45 2020/04/09 18:18:06 tb Exp $
 
 COMMENT =		low-latency voice chat client
 
 DISTNAME =		mumble-1.3.0
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		audio
 
