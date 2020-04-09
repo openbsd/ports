@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2019/12/10 06:46:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2020/04/09 07:36:49 jca Exp $
 
-COMMENT =	GNUstep libobjc2 objective-c runtime
 BROKEN-hppa =	missing asm impl in block_trampolines.S
 BROKEN-mips64 =	binutils < 2.18 lack support for symbolic register naming
 NOT_FOR_ARCHS = ${GCC3_ARCHS}
+
+COMMENT =	GNUstep libobjc2 objective-c runtime
 
 # note: this port does not use the gnustep module
 VERSION =	1.8.1
@@ -12,21 +13,20 @@ GH_PROJECT =	libobjc2
 GH_TAGNAME =	v${VERSION}
 DISTNAME =	libobjc2-${VERSION:S/_//}
 PKGNAME =	gnustep-${DISTNAME}
-CATEGORIES =	x11/gnustep devel
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=	objc2	1.1
 SHARED_LIBS +=  objcxx	0.0
 
+CATEGORIES =	x11/gnustep devel
+
 HOMEPAGE =	http://www.gnustep.org/
 
-MODULES =	devel/cmake 
-WANTLIB += 	m ${LIBCXX} pthread
+WANTLIB += ${COMPILER_LIBCXX} m
 
 COMPILER =	base-clang ports-clang
-MODCLANG_ARCHS =amd64 i386
+MODULES =	devel/cmake
 
-MAKE_ENV +=	CPPFLAGS+=${CPPFLAGS}
 MAKE_FLAGS +=	LIBOBJCLIBNAME=objc2 \
 		LIBOBJC=libobjc2 \
 		HEADER_DIR=${DESTDIR}${PREFIX}/include/gnustep \
