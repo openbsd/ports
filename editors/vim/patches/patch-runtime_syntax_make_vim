@@ -1,30 +1,30 @@
-$OpenBSD: patch-runtime_syntax_make_vim,v 1.10 2020/02/14 10:59:55 sthen Exp $
+$OpenBSD: patch-runtime_syntax_make_vim,v 1.11 2020/04/09 20:07:47 sthen Exp $
 
 Index: runtime/syntax/make.vim
 --- runtime/syntax/make.vim.orig
 +++ runtime/syntax/make.vim
-@@ -24,6 +24,9 @@ syn match makeInclude	"^ *[-s]\=include\s.*$"
+@@ -54,10 +54,10 @@ syn match makeTarget		"^[~A-Za-z0-9_./$()%*@-][A-Za-z0
+ 	\ skipnl nextgroup=makeCommands,makeCommandError
+ 
+ syn region makeSpecTarget	transparent matchgroup=makeSpecTarget
+-	\ start="^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>\s*:\{1,2}[^:=]"rs=e-1
++	\ start="^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>\s*:\{1,2}[^:=]"rs=e-1
+ 	\ end="[^\\]$" keepend
+ 	\ contains=makeIdent,makeSpecTarget,makeNextLine,makeComment skipnl nextGroup=makeCommands
+-syn match makeSpecTarget	"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>\s*::\=\s*$"
++syn match makeSpecTarget	"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>\s*::\=\s*$"
+ 	\ contains=makeIdent,makeComment
+ 	\ skipnl nextgroup=makeCommands,makeCommandError
+ 
+@@ -74,15 +74,18 @@ syn match makeInclude	"^ *[-s]\=include\s.*$"
  syn match makeStatement	"^ *vpath"
  syn match makeExport    "^ *\(export\|unexport\)\>"
  syn match makeOverride	"^ *override"
 +" BSD directives
 +syn match makePreCondit	"^\. *\(if\|else\|endif\|ifdef\|ifndef\|ifmake\|ifnmake\|elif\|elifdef\|for\|endfor\|undef\)\>"
 +syn match makeInclude	"^ *\. *include"
- hi link makeOverride makeStatement
- hi link makeExport makeStatement
- 
-@@ -56,8 +59,8 @@ syn match makeImplicit		"^\.[A-Za-z0-9_./\t -]\+\s*:[^
- syn region makeTarget   transparent matchgroup=makeTarget start="^[~A-Za-z0-9_./$()%-][A-Za-z0-9_./\t $()%-]*:\{1,2}[^:=]"rs=e-1 end=";"re=e-1,me=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine,makeComment,makeDString skipnl nextGroup=makeCommands
- syn match makeTarget		"^[~A-Za-z0-9_./$()%*@-][A-Za-z0-9_./\t $()%*@-]*::\=\s*$" contains=makeIdent,makeSpecTarget,makeComment skipnl nextgroup=makeCommands,makeCommandError
- 
--syn region makeSpecTarget	transparent matchgroup=makeSpecTarget start="^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>\s*:\{1,2}[^:=]"rs=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine,makeComment skipnl nextGroup=makeCommands
--syn match makeSpecTarget		"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>\s*::\=\s*$" contains=makeIdent,makeComment skipnl nextgroup=makeCommands,makeCommandError
-+syn region makeSpecTarget	transparent matchgroup=makeSpecTarget start="^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>\s*:\{1,2}[^:=]"rs=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine,makeComment skipnl nextGroup=makeCommands
-+syn match makeSpecTarget		"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>\s*::\=\s*$" contains=makeIdent,makeComment skipnl nextgroup=makeCommands,makeCommandError
- 
- syn match makeCommandError "^\s\+\S.*" contained
- syn region makeCommands start=";"hs=s+1 start="^\t" end="^[^\t#]"me=e-1,re=e-1 end="^$" contained contains=makeCmdNextLine,makeSpecial,makeComment,makeIdent,makePreCondit,makeDefine,makeDString,makeSString nextgroup=makeCommandError
-@@ -69,10 +72,10 @@ syn match makeStatement contained "(\(abspath\|addpref
+ " Statements / Functions (GNU make)
+ syn match makeStatement contained "(\(abspath\|addprefix\|addsuffix\|and\|basename\|call\|dir\|error\|eval\|file\|filter-out\|filter\|findstring\|firstword\|flavor\|foreach\|guile\|if\|info\|join\|lastword\|notdir\|or\|origin\|patsubst\|realpath\|shell\|sort\|strip\|subst\|suffix\|value\|warning\|wildcard\|word\|wordlist\|words\)\>"ms=s+1
  
  " Comment
  if exists("make_microsoft")
