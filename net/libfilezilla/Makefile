@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/13 12:34:14 bket Exp $
+# $OpenBSD: Makefile,v 1.11 2020/04/09 12:43:22 cwen Exp $
 
 COMMENT =	support library for FileZilla
 
@@ -42,7 +42,7 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
 # undefined reference to `__atomic_store_8'
-.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+.if ${MACHINE_ARCH:Mhppa}
 WANTLIB += atomic
 LDFLAGS += -latomic
 .endif
