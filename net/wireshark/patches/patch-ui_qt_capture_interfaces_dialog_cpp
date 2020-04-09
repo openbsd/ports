@@ -1,0 +1,16 @@
+$OpenBSD: patch-ui_qt_capture_interfaces_dialog_cpp,v 1.1 2020/04/09 20:06:48 sthen Exp $
+
+https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=16489
+
+Index: ui/qt/capture_interfaces_dialog.cpp
+--- ui/qt/capture_interfaces_dialog.cpp.orig
++++ ui/qt/capture_interfaces_dialog.cpp
+@@ -1291,7 +1291,7 @@ QWidget* InterfaceTreeDelegate::createEditor(QWidget *
+ //            ti->setSizeHint(index.column(), w->sizeHint());
+ //        }
+     }
+-    w->setAutoFillBackground(true);
++    // w->setAutoFillBackground(true);
+     return w;
+ }
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-text,v 1.12 2019/12/19 15:48:56 sthen Exp $
+@comment $OpenBSD: PLIST-text,v 1.13 2020/04/09 20:06:48 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
 @bin bin/captype
@@ -624,6 +624,7 @@ lib/pkgconfig/wireshark.pc
 lib/wireshark/
 lib/wireshark/cmake/
 lib/wireshark/cmake/FindGLIB2.cmake
+lib/wireshark/cmake/FindWSLibrary.cmake
 lib/wireshark/cmake/FindWSWinLibs.cmake
 lib/wireshark/cmake/LocatePythonModule.cmake
 lib/wireshark/cmake/UseAsn2Wrs.cmake
