@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/26 09:10:08 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2020/04/09 07:47:40 kirby Exp $
 
 COMMENT = 	naev game data
 
 DISTNAME =	naev-${VERSION}-ndata
 PKGNAME = 	naev-data-${VERSION}
-REVISION = 	0
+REVISION = 	1
 
 EXTRACT_SUFX = 	.zip
 EXTRACT_ONLY = 	#
