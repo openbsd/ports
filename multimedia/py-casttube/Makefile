@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/09 19:10:39 ajacoutot Exp $
 
 COMMENT=		interact with Youtube Chromecast api
 
-MODPY_EGG_VERSION=	0.2.0
+MODPY_EGG_VERSION=	0.2.1
 DISTNAME=		casttube-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		multimedia net
 
@@ -20,7 +19,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 TEST_DEPENDS=		net/py-idna${MODPY_FLAVOR} \
 			textproc/py-chardet${MODPY_FLAVOR} \
@@ -28,5 +27,8 @@ TEST_DEPENDS=		net/py-idna${MODPY_FLAVOR} \
 
 # needs screen_id: https://github.com/ur1katz/CastTube-Scripts
 TEST_IS_INTERACTIVE=	Yes
+
+post-install:
+	rm ${PREFIX}/LICENSE
 
 .include <bsd.port.mk>
