@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/25 06:16:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/04/09 14:28:51 jca Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -9,8 +9,6 @@
 # patches: rm patches/patch-*lld*
 
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
-
-DPB_PROPERTIES = parallel
 
 COMMENT=	Clang extra tools
 
