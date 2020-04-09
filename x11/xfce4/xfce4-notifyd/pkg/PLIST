@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/10/27 12:36:52 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/04/09 06:48:09 landry Exp $
 @bin bin/xfce4-notifyd-config
 lib/systemd/user/xfce4-notifyd.service
 lib/xfce4/notifyd/
 @bin lib/xfce4/notifyd/xfce4-notifyd
-lib/xfce4/panel/plugins/libnotification-plugin.so
+@so lib/xfce4/panel/plugins/libnotification-plugin.so
 @man man/man1/xfce4-notifyd-config.1
 share/applications/xfce4-notifyd-config.desktop
 share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service
@@ -35,10 +35,13 @@ share/locale/gl/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/he/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/hr/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/hu/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/hy_AM/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/id/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/ie/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/is/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/it/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/ja/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/ka/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/kk/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/ko/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/lt/LC_MESSAGES/xfce4-notifyd.mo
