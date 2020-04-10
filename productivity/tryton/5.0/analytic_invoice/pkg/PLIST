@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:19 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:12 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/${MODPY_PYCACHE}asset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/${MODPY_PYCACHE}invoice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/locale
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/locale/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/tests/${MODPY_PYCACHE}test_analytic_invoice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_invoice/tests/scenario_analytic_invoice.rst

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:26:55 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:16 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/${MODPY_PYCACHE}carrier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/${MODPY_PYCACHE}stock.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/stock.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/tests/${MODPY_PYCACHE}test_purchase_shipment_cost.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/tests/scenario_purchase_shipment_cost.rst

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:19:27 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:13 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/${MODPY_PYCACHE}product.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/product
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/product.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/tests/${MODPY_PYCACHE}test_edocument_unece.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_unece/tests/test_edocument_unece.py

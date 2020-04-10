@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:21 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:14 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/${MODPY_PYCACHE}product.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/locale/
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/pr
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/product.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/tests/${MODPY_PYCACHE}test_product_measurements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_measurements/tests/test_product_measurements.py

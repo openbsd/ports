@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:21 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:11 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/${MODPY_PYCACHE}invoice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/invoice.py
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_st
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/${MODPY_PYCACHE}test_account_invoice_line_standalone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/test_account_invoice_line_standalone.py

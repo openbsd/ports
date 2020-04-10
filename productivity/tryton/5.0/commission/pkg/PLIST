@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:16:43 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:13 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/${MODPY_PYCACHE}commission.${MODPY_PYC_MAGIC_TAG}pyc
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/sale.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/sale.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/tests/${MODPY_PYCACHE}test_commission.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/commission/tests/scenario_commission.rst

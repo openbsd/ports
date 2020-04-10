@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:19:57 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:13 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/${MODPY_PYCACHE}address.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.py
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/sl.p
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/${MODPY_PYCACHE}test_google_maps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/test_google_maps.py

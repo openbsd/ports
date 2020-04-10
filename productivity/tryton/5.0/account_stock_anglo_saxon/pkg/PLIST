@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:22 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:11 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/${MODPY_PYCACHE}invoice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_sax
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/stock.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/${MODPY_PYCACHE}test_account_stock_anglo_saxon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc

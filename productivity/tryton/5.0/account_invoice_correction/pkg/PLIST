@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:20 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:11 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/${MODPY_PYCACHE}invoice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/invoice.py
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correct
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/locale/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/tests/${MODPY_PYCACHE}test_account_invoice_correction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_correction/tests/scenario_invoice_correction.rst

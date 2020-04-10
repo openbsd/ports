@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:16 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:13 semarie Exp $
 @option is-branch
 bin/trytond_import_zip
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/${MODPY_PYCACHE}country.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/country.py
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/sl.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/${MODPY_PYCACHE}test_country.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/test_country.py

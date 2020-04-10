@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/10 15:21:14 semarie Exp $
 
-MODPY_EGG_VERSION =	5.0.1
+MODPY_EGG_VERSION =	5.0.2
 TRYTON_MODULE =		party_siret
-REVISION =		0
 
 TRYTON_DEPENDS +=	party
 

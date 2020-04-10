@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:26:32 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:15 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/${MODPY_PYCACHE}routing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/${MODPY_PYCACHE}timesheet.${MODPY_PYC_MAGIC_TAG}pyc
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timeshe
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/routing.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/tests/${MODPY_PYCACHE}test_production_work_timesheet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work_timesheet/tests/test_production_work_timesheet.py
