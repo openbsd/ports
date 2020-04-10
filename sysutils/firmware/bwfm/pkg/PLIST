@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/12/03 11:47:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/04/10 14:45:43 kurt Exp $
 firmware/bcm4329-fullmac-4.bin
 firmware/brcmfmac43143-sdio.bin
 firmware/brcmfmac43143.bin
@@ -8,25 +8,47 @@ firmware/brcmfmac43241b4-sdio.bin
 firmware/brcmfmac43241b5-sdio.bin
 firmware/brcmfmac43242a.bin
 firmware/brcmfmac4329-sdio.bin
+firmware/brcmfmac4330-sdio.Prowise-PT301.txt
 firmware/brcmfmac4330-sdio.bin
 firmware/brcmfmac4334-sdio.bin
 firmware/brcmfmac43340-sdio.bin
+firmware/brcmfmac43340-sdio.meegopad-t08.txt
+firmware/brcmfmac43340-sdio.pov-tab-p1006w-data.txt
 firmware/brcmfmac4335-sdio.bin
 firmware/brcmfmac43362-sdio.bin
+firmware/brcmfmac43362-sdio.cubietech,cubietruck.txt
+firmware/brcmfmac43362-sdio.lemaker,bananapro.txt
 firmware/brcmfmac4339-sdio.bin
+firmware/brcmfmac43430-sdio.AP6212.txt
+firmware/brcmfmac43430-sdio.Hampoo-D2D3_Vi8A1.txt
+firmware/brcmfmac43430-sdio.MUR1DX.txt
 firmware/brcmfmac43430-sdio.bin
+firmware/brcmfmac43430-sdio.raspberrypi,3-model-b.txt
+firmware/brcmfmac43430a0-sdio.ONDA-V80 PLUS.txt
 firmware/brcmfmac43430a0-sdio.bin
+firmware/brcmfmac43430a0-sdio.jumper-ezpad-mini3.txt
+firmware/brcmfmac43455-sdio.MINIX-NEO Z83-4.txt
 firmware/brcmfmac43455-sdio.bin
+firmware/brcmfmac43455-sdio.raspberrypi,3-model-b-plus.txt
+firmware/brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+firmware/brcmfmac43456-sdio.pine64,pinebook-pro.bin
+firmware/brcmfmac43456-sdio.pine64,pinebook-pro.txt
 firmware/brcmfmac4350-pcie.bin
 firmware/brcmfmac4350c2-pcie.bin
 firmware/brcmfmac4354-sdio.bin
 firmware/brcmfmac4356-pcie.bin
+firmware/brcmfmac4356-pcie.gpd-win-pocket.txt
 firmware/brcmfmac4356-sdio.bin
+firmware/brcmfmac4356-sdio.vamrs,rock960.bin
+firmware/brcmfmac4356-sdio.vamrs,rock960.txt
 firmware/brcmfmac43569.bin
 firmware/brcmfmac43570-pcie.bin
 firmware/brcmfmac4358-pcie.bin
 firmware/brcmfmac43602-pcie.ap.bin
 firmware/brcmfmac43602-pcie.bin
 firmware/brcmfmac4366b-pcie.bin
+firmware/brcmfmac4366c-pcie.bin
 firmware/brcmfmac4371-pcie.bin
+firmware/brcmfmac4373-sdio.bin
+firmware/brcmfmac4373.bin
 firmware/bwfm-license

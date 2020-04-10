@@ -1,2 +1,4 @@
-SHA256 (firmware/linux-firmware-20171125.tar.xz) = 0UYplUmSCAcbHC7rmXHfR5HSHk2893h49ferMjZPgwk=
-SIZE (firmware/linux-firmware-20171125.tar.xz) = 50813168
+SHA256 (firmware/brcm-supplemental-1.0.tar.gz) = UqMS2jjNARvCPw872PWemaL9xmzNsxzUiLwOIUTtZ5Y=
+SHA256 (firmware/linux-firmware-20200316.tar.xz) = euyzFxpV9d8+HwLEDd/Mh0zyMdIN6uHurhyoZASYLoI=
+SIZE (firmware/brcm-supplemental-1.0.tar.gz) = 668530
+SIZE (firmware/linux-firmware-20200316.tar.xz) = 97897640
