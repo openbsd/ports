@@ -1,11 +1,11 @@
-$OpenBSD: patch-PSUtils_pm,v 1.3 2020/01/05 11:15:49 ajacoutot Exp $
+$OpenBSD: patch-PSUtils_pm,v 1.4 2020/04/10 10:57:36 ajacoutot Exp $
 
 https://bugzilla.redhat.com/show_bug.cgi?id=1072371
 
 Index: PSUtils.pm
 --- PSUtils.pm.orig
 +++ PSUtils.pm
-@@ -59,7 +59,7 @@ sub singledimen {
+@@ -60,7 +60,7 @@ sub singledimen {
  # Get the size of the given paper, or the default paper if no argument given.
  sub paper {
    my ($cmd, $silent) = @_;
@@ -14,7 +14,7 @@ Index: PSUtils.pm
    my $out;
    run3 $cmd, undef, \$out, $silent ? \undef : undef, {return_if_system_error=>1};
    Die("could not run `paper' command") if $? == -1;
-@@ -72,7 +72,7 @@ sub paper {
+@@ -73,7 +73,7 @@ sub paper {
  sub paper_size {
    my ($paper_name) = @_;
    chomp($paper_name = paper([])) unless defined($paper_name);
