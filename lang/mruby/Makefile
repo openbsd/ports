@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/12/06 14:33:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/04/10 14:07:14 fcambus Exp $
 
 BROKEN-arm =		SIGBUS
 
 COMMENT =		lightweight, embeddable implementation of ruby
 
+# Keep in sync with the version bundled in www/h2o
 GH_ACCOUNT =		mruby
 GH_PROJECT =		mruby
 GH_TAGNAME =		2.0.1
