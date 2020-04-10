@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.55 2020/04/04 09:32:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.56 2020/04/10 07:55:00 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -1116,6 +1116,7 @@ share/gtk-doc/html/gtk3/panes.png
 share/gtk-doc/html/gtk3/placessidebar.png
 share/gtk-doc/html/gtk3/platform-support.html
 share/gtk-doc/html/gtk3/popup-anchors.png
+share/gtk-doc/html/gtk3/popup-at.svg
 share/gtk-doc/html/gtk3/popup-flip.png
 share/gtk-doc/html/gtk3/popup-slide.png
 share/gtk-doc/html/gtk3/printdialog.png
