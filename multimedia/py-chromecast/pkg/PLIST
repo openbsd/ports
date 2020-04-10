@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/09/15 14:07:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/04/10 08:02:31 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -13,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}authority_keys_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}cast_channel_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}dial.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}discovery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}socket_cli
 lib/python${MODPY_VERSION}/site-packages/pychromecast/authority_keys_pb2.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/cast_channel_pb2.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/config.py
+lib/python${MODPY_VERSION}/site-packages/pychromecast/const.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}/
