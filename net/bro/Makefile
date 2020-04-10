@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2020/03/14 17:58:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2020/04/10 15:00:55 cwen Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
@@ -65,7 +65,7 @@ RUN_DEPENDS +=		net/curl
 CONFIGURE_STYLE=	simple
 
 # Fix undefined reference to __atomic_load_8
-.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+.if ${MACHINE_ARCH} == "hppa"
 LDFLAGS +=		"-latomic"
 WANTLIB +=		atomic
 .endif
