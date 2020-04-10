@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.416 2020/04/06 11:06:08 fcambus Exp $
+# $OpenBSD: Makefile,v 1.417 2020/04/10 11:16:58 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -138,6 +138,7 @@
      SUBDIR += gnurobbo
      SUBDIR += gnushogi
      SUBDIR += godot
+     SUBDIR += gogrepo
      SUBDIR += golly
      SUBDIR += gottcode
      SUBDIR += grhino
