@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_pdfium_BUILD_gn,v 1.1 2020/03/04 15:44:17 robert Exp $
+$OpenBSD: patch-third_party_pdfium_BUILD_gn,v 1.2 2020/04/10 18:51:32 robert Exp $
 
 Index: third_party/pdfium/BUILD.gn
 --- third_party/pdfium/BUILD.gn.orig
 +++ third_party/pdfium/BUILD.gn
-@@ -194,9 +194,9 @@ component("pdfium") {
+@@ -192,9 +192,9 @@ component("pdfium") {
      configs -= [ "//build/config/compiler:thin_archive" ]
    }
  

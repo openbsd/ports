@@ -1,0 +1,14 @@
+$OpenBSD: patch-device_fido_features_h,v 1.1 2020/04/10 18:51:31 robert Exp $
+
+Index: device/fido/features.h
+--- device/fido/features.h.orig
++++ device/fido/features.h
+@@ -30,7 +30,7 @@ extern const base::Feature kWebAuthPhoneSupport;
+ COMPONENT_EXPORT(DEVICE_FIDO)
+ extern const base::Feature kWebAuthFeaturePolicy;
+ 
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+ // Use a low connection latency BLE mode when connecting to caBLE
+ // authenticators.
+ COMPONENT_EXPORT(DEVICE_FIDO)

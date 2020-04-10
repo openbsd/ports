@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_crc32c_BUILD_gn,v 1.3 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-third_party_crc32c_BUILD_gn,v 1.4 2020/04/10 18:51:32 robert Exp $
 
 Index: third_party/crc32c/BUILD.gn
 --- third_party/crc32c/BUILD.gn.orig
 +++ third_party/crc32c/BUILD.gn
-@@ -46,7 +46,7 @@ config("crc32c_config") {
+@@ -47,7 +47,7 @@ config("crc32c_config") {
    }
  
    # Android added <sys/auxv.h> in API level 18.

@@ -1,11 +1,12 @@
-$OpenBSD: patch-base_third_party_symbolize_symbolize_cc,v 1.5 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-base_third_party_symbolize_symbolize_cc,v 1.6 2020/04/10 18:51:30 robert Exp $
+
 Index: base/third_party/symbolize/symbolize.cc
 --- base/third_party/symbolize/symbolize.cc.orig
 +++ base/third_party/symbolize/symbolize.cc
-@@ -111,7 +111,7 @@ _END_GOOGLE_NAMESPACE_
- #if defined(__ELF__)
- 
+@@ -113,7 +113,7 @@ _END_GOOGLE_NAMESPACE_
+ #if defined(HAVE_DLFCN_H)
  #include <dlfcn.h>
+ #endif
 -#if defined(OS_OPENBSD)
 +#if defined(__OpenBSD__)
  #include <sys/exec_elf.h>

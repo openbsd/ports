@@ -1,0 +1,19 @@
+$OpenBSD: patch-third_party_blink_renderer_BUILD_gn,v 1.1 2020/04/10 18:51:32 robert Exp $
+
+Index: third_party/blink/renderer/BUILD.gn
+--- third_party/blink/renderer/BUILD.gn.orig
++++ third_party/blink/renderer/BUILD.gn
+@@ -48,13 +48,6 @@ config("inside_blink") {
+       "-Wno-implicit-float-conversion",
+       "-Wno-implicit-int-conversion",
+     ]
+-
+-    if (!is_chromeos || default_toolchain != "//build/toolchain/cros:target") {
+-      cflags += [
+-        "-Wno-enum-enum-conversion",
+-        "-Wno-enum-float-conversion",
+-      ]
+-    }
+   }
+ }
+ 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_third_party_llvm-7_0_configs_linux_include_llvm_Config_config_h,v 1.4 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_third_party_llvm-7_0_configs_linux_include_llvm_Config_config_h,v 1.5 2020/04/10 18:51:32 robert Exp $
 
 Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h
 --- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig
@@ -17,11 +17,11 @@ Index: third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/C
 +#define BUG_REPORT_URL "http://llvm.org/bugs/"
  
  /* Define to 1 to enable backtraces, and to 0 otherwise. */
--/* #undef ENABLE_BACKTRACES */
+-#define ENABLE_BACKTRACES 0
 +#define ENABLE_BACKTRACES 1
  
  /* Define to 1 to enable crash overrides, and to 0 otherwise. */
--/* #undef ENABLE_CRASH_OVERRIDES */
+-#define ENABLE_CRASH_OVERRIDES 0
 +#define ENABLE_CRASH_OVERRIDES 1
  
 +/* Define to 1 to enable crash memory dumps, and to 0 otherwise. */

@@ -1,9 +1,9 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.3 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.4 2020/04/10 18:51:32 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.cc
 --- weblayer/browser/content_browser_client_impl.cc.orig
 +++ weblayer/browser/content_browser_client_impl.cc
-@@ -65,7 +65,7 @@
+@@ -72,7 +72,7 @@
  #include "weblayer/browser/safe_browsing/safe_browsing_service.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -232,7 +232,7 @@ ContentBrowserClientImpl::CreateNetworkContext(
+@@ -247,7 +247,7 @@ ContentBrowserClientImpl::CreateNetworkContext(
  
  void ContentBrowserClientImpl::OnNetworkServiceCreated(
      network::mojom::NetworkService* network_service) {
@@ -21,7 +21,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -371,7 +371,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -426,7 +426,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  }
  #endif
  
@@ -30,7 +30,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  void ContentBrowserClientImpl::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -405,7 +405,7 @@ void ContentBrowserClientImpl::GetAdditionalMappedFile
+@@ -460,7 +460,7 @@ void ContentBrowserClientImpl::GetAdditionalMappedFile
      mappings->Share(service_manager::kCrashDumpSignal, crash_signal_fd);
  #endif  // defined(OS_ANDROID)
  }

@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_device_serial_BUILD_gn,v 1.1 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-services_device_serial_BUILD_gn,v 1.2 2020/04/10 18:51:31 robert Exp $
 
 Index: services/device/serial/BUILD.gn
 --- services/device/serial/BUILD.gn.orig
 +++ services/device/serial/BUILD.gn
-@@ -60,6 +60,13 @@ if (is_win || (is_linux && use_udev) || is_mac) {
+@@ -58,6 +58,13 @@ if (is_win || (is_linux && use_udev) || is_mac) {
        ]
      }
  

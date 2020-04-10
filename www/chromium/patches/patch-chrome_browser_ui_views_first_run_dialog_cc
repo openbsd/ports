@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.21 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.22 2020/04/10 18:51:31 robert Exp $
 
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -119,8 +119,10 @@ void FirstRunDialog::Done() {
+@@ -114,8 +114,10 @@ void FirstRunDialog::Done() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

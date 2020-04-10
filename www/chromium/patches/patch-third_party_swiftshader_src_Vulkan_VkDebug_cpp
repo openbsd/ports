@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_src_Vulkan_VkDebug_cpp,v 1.1 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_Vulkan_VkDebug_cpp,v 1.2 2020/04/10 18:51:32 robert Exp $
 
 Index: third_party/swiftshader/src/Vulkan/VkDebug.cpp
 --- third_party/swiftshader/src/Vulkan/VkDebug.cpp.orig
 +++ third_party/swiftshader/src/Vulkan/VkDebug.cpp
-@@ -33,7 +33,7 @@ namespace {
+@@ -34,7 +34,7 @@ namespace {
  
  bool IsUnderDebugger()
  {

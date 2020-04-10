@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_angle_util_BUILD_gn,v 1.1 2020/04/10 18:51:32 robert Exp $
+
+Index: third_party/angle/util/BUILD.gn
+--- third_party/angle/util/BUILD.gn.orig
++++ third_party/angle/util/BUILD.gn
+@@ -165,7 +165,7 @@ foreach(is_shared_library,
+     public_deps = []
+     libs = []
+ 
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       libs += [
+         "rt",
+         "dl",

@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_proxy_resolution_proxy_config_service_linux_cc,v 1.5 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-net_proxy_resolution_proxy_config_service_linux_cc,v 1.6 2020/04/10 18:51:31 robert Exp $
 
 Index: net/proxy_resolution/proxy_config_service_linux.cc
 --- net/proxy_resolution/proxy_config_service_linux.cc.orig
@@ -13,7 +13,7 @@ Index: net/proxy_resolution/proxy_config_service_linux.cc
  #include <unistd.h>
  
  #include <map>
-@@ -486,6 +488,7 @@ bool SettingGetterImplGSettings::CheckVersion(
+@@ -502,6 +504,7 @@ bool SettingGetterImplGSettings::CheckVersion(
  }
  #endif  // defined(USE_GIO)
  
@@ -21,7 +21,7 @@ Index: net/proxy_resolution/proxy_config_service_linux.cc
  // Converts |value| from a decimal string to an int. If there was a failure
  // parsing, returns |default_value|.
  int StringToIntOrDefault(base::StringPiece value, int default_value) {
-@@ -986,6 +989,7 @@ class SettingGetterImplKDE : public ProxyConfigService
+@@ -1000,6 +1003,7 @@ class SettingGetterImplKDE : public ProxyConfigService
  
    DISALLOW_COPY_AND_ASSIGN(SettingGetterImplKDE);
  };
@@ -29,7 +29,7 @@ Index: net/proxy_resolution/proxy_config_service_linux.cc
  
  }  // namespace
  
-@@ -1197,8 +1201,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1214,8 +1218,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:

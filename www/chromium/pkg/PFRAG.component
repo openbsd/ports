@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.component,v 1.7 2020/03/21 14:08:01 robert Exp $
+@comment $OpenBSD: PFRAG.component,v 1.8 2020/04/10 18:51:32 robert Exp $
 @so chrome/libaccessibility.so
 @so chrome/libandroid_mojo_bindings_shared.so
 @so chrome/libanimation.so
@@ -21,9 +21,10 @@
 @so chrome/libbluetooth.so
 @so chrome/libboringssl.so
 @so chrome/libbrowser_ui_views.so
-@so chrome/libcaptive_portal.so
+@so chrome/libcaptive_portal_core.so
 @so chrome/libcapture_base.so
 @so chrome/libcapture_lib.so
+@so chrome/libcapture_switches.so
 @so chrome/libcbor.so
 @so chrome/libcc.so
 @so chrome/libcc_animation.so
@@ -51,6 +52,7 @@
 @so chrome/libcontent_service_mojom.so
 @so chrome/libcontent_service_mojom_shared.so
 @so chrome/libcontent_settings_features.so
+@so chrome/libcpp.so
 @so chrome/libcrcrypto.so
 @so chrome/libcrdtp.so
 @so chrome/libdbus.so
@@ -58,6 +60,7 @@
 @so chrome/libdevice_event_log.so
 @so chrome/libdevice_features.so
 @so chrome/libdevice_gamepad.so
+@so chrome/libdevice_service_binder_overrides.so
 @so chrome/libdevice_vr.so
 @so chrome/libdevice_vr_mojo_bindings.so
 @so chrome/libdevice_vr_mojo_bindings_blink.so
@@ -85,7 +88,10 @@
 @so chrome/libextras.so
 @so chrome/libffmpeg.so
 @so chrome/libfido.so
+@so chrome/libfile_info.so
 @so chrome/libfingerprint.so
+@so chrome/libframe_mojom.so
+@so chrome/libframe_mojom_shared.so
 @so chrome/libfreetype_harfbuzz.so
 @so chrome/libgamepad_mojom.so
 @so chrome/libgamepad_mojom_blink.so
@@ -112,12 +118,14 @@
 @so chrome/libgles2_utils.so
 @so chrome/libgpu.so
 @so chrome/libgpu_ipc_service.so
-@so chrome/libgtkui.so
+@so chrome/libgpu_memory_buffer_support_x11.so
+@so chrome/libgtk.so
 @so chrome/libheadless_non_renderer.so
 @so chrome/libhost.so
 @so chrome/libicui18n.so
 @so chrome/libicuuc.so
 @so chrome/libinterfaces_shared.so
+@so chrome/libip_address_mojom_support.so
 @so chrome/libipc.so
 @so chrome/libipc_mojom.so
 @so chrome/libipc_mojom_shared.so
@@ -228,6 +236,8 @@
 @so chrome/libsurface.so
 @so chrome/libsystem_media_controls.so
 @so chrome/libtab_count_metrics.so
+@so chrome/libtab_groups.so
+@so chrome/libtesting_api_support.so
 @so chrome/libthread_linux.so
 @so chrome/libtracing.so
 @so chrome/libtracing_cpp.so
@@ -248,6 +258,7 @@
 @so chrome/libui_base_x.so
 @so chrome/libui_data_pack.so
 @so chrome/libui_devtools.so
+@so chrome/libui_events_ipc.so
 @so chrome/libui_message_center_cpp.so
 @so chrome/libui_touch_selection.so
 @so chrome/liburl.so
@@ -266,6 +277,7 @@
 @so chrome/libvk_swiftshader.so
 @so chrome/libvr_base.so
 @so chrome/libvr_common.so
+@so chrome/libvulkan.so
 @so chrome/libvulkan_info.so
 @so chrome/libvulkan_init.so
 @so chrome/libvulkan_wrapper.so

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_webrtc_gni,v 1.16 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-third_party_webrtc_webrtc_gni,v 1.17 2020/04/10 18:51:32 robert Exp $
 
 Index: third_party/webrtc/webrtc.gni
 --- third_party/webrtc/webrtc.gni.orig
 +++ third_party/webrtc/webrtc.gni
-@@ -262,7 +262,7 @@ rtc_opus_dir = "//third_party/opus"
+@@ -265,7 +265,7 @@ rtc_opus_dir = "//third_party/opus"
  # Desktop capturer is supported only on Windows, OSX and Linux.
  rtc_desktop_capture_supported =
      (is_win && current_os != "winuwp") || is_mac ||

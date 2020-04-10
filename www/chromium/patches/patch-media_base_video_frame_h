@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.25 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-media_base_video_frame_h,v 1.26 2020/04/10 18:51:31 robert Exp $
 
 Index: media/base/video_frame.h
 --- media/base/video_frame.h.orig
@@ -33,7 +33,7 @@ Index: media/base/video_frame.h
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -476,7 +476,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -480,7 +480,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // mailbox, the caller must wait for the included sync point.
    const gpu::MailboxHolder& mailbox_holder(size_t texture_index) const;
  

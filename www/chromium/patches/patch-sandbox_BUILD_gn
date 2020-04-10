@@ -1,13 +1,14 @@
-$OpenBSD: patch-sandbox_BUILD_gn,v 1.6 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-sandbox_BUILD_gn,v 1.7 2020/04/10 18:51:31 robert Exp $
+
 Index: sandbox/BUILD.gn
 --- sandbox/BUILD.gn.orig
 +++ sandbox/BUILD.gn
-@@ -33,7 +33,7 @@ group("sandbox") {
+@@ -27,7 +27,7 @@ group("sandbox") {
        "//sandbox/mac:system_services",
        "//sandbox/mac/mojom",
      ]
 -  } else if (is_linux || is_android) {
 +  } else if ((is_linux && !is_openbsd) || is_android) {
-     public_deps = [
-       "//sandbox/linux:sandbox",
-     ]
+     public_deps = [ "//sandbox/linux:sandbox" ]
+   }
+ }

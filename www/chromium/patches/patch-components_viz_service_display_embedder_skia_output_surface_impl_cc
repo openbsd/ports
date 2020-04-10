@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_viz_service_display_embedder_skia_output_surface_impl_cc,v 1.1 2020/04/10 18:51:31 robert Exp $
+
+Index: components/viz/service/display_embedder/skia_output_surface_impl.cc
+--- components/viz/service/display_embedder/skia_output_surface_impl.cc.orig
++++ components/viz/service/display_embedder/skia_output_surface_impl.cc
+@@ -224,7 +224,7 @@ void SkiaOutputSurfaceImpl::Reshape(const gfx::Size& s
+   if (characterization_.isValid()) {
+     // TODO(vasilyt): We temporary keep old code for linux to not interferee
+     // with M81. Remove this after.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     sk_sp<SkColorSpace> sk_color_space = color_space.ToSkColorSpace();
+     if (!SkColorSpace::Equals(characterization_.colorSpace(),
+                               sk_color_space.get())) {

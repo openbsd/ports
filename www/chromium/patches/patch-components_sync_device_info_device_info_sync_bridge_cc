@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_sync_device_info_device_info_sync_bridge_cc,v 1.2 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-components_sync_device_info_device_info_sync_bridge_cc,v 1.3 2020/04/10 18:51:31 robert Exp $
 
 Index: components/sync_device_info/device_info_sync_bridge.cc
 --- components/sync_device_info/device_info_sync_bridge.cc.orig
 +++ components/sync_device_info/device_info_sync_bridge.cc
-@@ -445,6 +445,10 @@ void DeviceInfoSyncBridge::OnStoreCreated(
+@@ -456,6 +456,10 @@ void DeviceInfoSyncBridge::OnStoreCreated(
      return;
    }
  

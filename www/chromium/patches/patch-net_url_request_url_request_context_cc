@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_url_request_url_request_context_cc,v 1.2 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-net_url_request_url_request_context_cc,v 1.3 2020/04/10 18:51:31 robert Exp $
 
 Index: net/url_request/url_request_context.cc
 --- net/url_request/url_request_context.cc.orig
 +++ net/url_request/url_request_context.cc
-@@ -90,7 +90,7 @@ const HttpNetworkSession::Context* URLRequestContext::
+@@ -89,7 +89,7 @@ const HttpNetworkSession::Context* URLRequestContext::
    return &network_session->context();
  }
  

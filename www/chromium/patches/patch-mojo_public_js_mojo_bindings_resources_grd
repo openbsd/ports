@@ -1,9 +1,9 @@
-$OpenBSD: patch-mojo_public_js_mojo_bindings_resources_grd,v 1.4 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-mojo_public_js_mojo_bindings_resources_grd,v 1.5 2020/04/10 18:51:31 robert Exp $
 
 Index: mojo/public/js/mojo_bindings_resources.grd
 --- mojo/public/js/mojo_bindings_resources.grd.orig
 +++ mojo/public/js/mojo_bindings_resources.grd
-@@ -60,7 +60,7 @@
+@@ -70,7 +70,7 @@
            use_base_dir="false"
            type="BINDATA"
            compress="gzip" />

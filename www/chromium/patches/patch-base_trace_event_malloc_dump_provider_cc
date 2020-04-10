@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.13 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.14 2020/04/10 18:51:30 robert Exp $
 
 Index: base/trace_event/malloc_dump_provider.cc
 --- base/trace_event/malloc_dump_provider.cc.orig
@@ -21,4 +21,4 @@ Index: base/trace_event/malloc_dump_provider.cc
 +  allocated_objects_size = 0;
  #else
    struct mallinfo info = mallinfo();
- #if !defined(ADDRESS_SANITIZER) && !defined(THREAD_SANITIZER)
+   // In case of Android's jemalloc |arena| is 0 and the outer pages size is

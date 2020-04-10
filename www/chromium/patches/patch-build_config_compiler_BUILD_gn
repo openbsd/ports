@@ -1,18 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.37 2020/03/21 14:08:01 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.38 2020/04/10 18:51:30 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -57,7 +57,7 @@ declare_args() {
-   # only two architectures that are currently checked in). Turn this off when
-   # you are using a custom toolchain and need to control -B in cflags.
-   linux_use_bundled_binutils =
--      linux_use_bundled_binutils_override && is_linux &&
-+      linux_use_bundled_binutils_override && (is_linux && !is_openbsd) &&
-       (current_cpu == "x64" || current_cpu == "x86")
-   binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
-                               root_build_dir)
-@@ -308,7 +308,7 @@ config("compiler") {
+@@ -298,7 +298,7 @@ config("compiler") {
  
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
@@ -21,7 +12,7 @@ Index: build/config/compiler/BUILD.gn
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        ldflags += [ "-Wl,--fatal-warnings" ]
      }
-@@ -393,6 +393,7 @@ config("compiler") {
+@@ -383,6 +383,7 @@ config("compiler") {
      }
  
      ldflags += [
@@ -29,7 +20,7 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,noexecstack",
        "-Wl,-z,relro",
      ]
-@@ -401,13 +402,8 @@ config("compiler") {
+@@ -391,13 +392,8 @@ config("compiler") {
        ldflags += [ "-Wl,-z,now" ]
      }
  
@@ -45,7 +36,7 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -503,7 +499,7 @@ config("compiler") {
+@@ -486,7 +482,7 @@ config("compiler") {
      }
    }
  
@@ -54,7 +45,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" +
                  rebase_path("//tools/clang/crashreports", root_build_dir) ]
  
-@@ -759,7 +755,7 @@ config("compiler_cpu_abi") {
+@@ -753,7 +749,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -63,7 +54,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -773,7 +769,7 @@ config("compiler_cpu_abi") {
+@@ -767,7 +763,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -72,20 +63,10 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1124,7 +1120,7 @@ config("compiler_deterministic") {
-       "-Xclang",
-       ".",
-     ]
--    if (!is_win) {
-+    if (!is_win && !is_openbsd) {
-       # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
-       asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
-     }
-@@ -1520,21 +1516,6 @@ config("default_warnings") {
-           # Ignore warnings about MSVC optimization pragmas.
+@@ -1515,24 +1511,6 @@ config("default_warnings") {
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
--
+ 
 -          # TODO(https://crbug.com/989932): Evaluate and possibly enable.
 -          "-Wno-implicit-int-float-conversion",
 -
@@ -100,10 +81,14 @@ Index: build/config/compiler/BUILD.gn
 -
 -          # TODO(https://crbug.com/1028110): Evaluate and possible enable.
 -          "-Wno-deprecated-copy",
+-
+-          # TODO(https://crbug.com/1031169): Clean up and enable.
+-          "-Wno-misleading-indentation",
+-
+           # TODO(https://crbug.com/1039697): Evaluate and possibly enable.
+           "-Wno-range-loop-analysis",
          ]
- 
-         if (is_fuchsia) {
-@@ -1761,7 +1742,7 @@ config("thin_archive") {
+@@ -1741,7 +1719,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -112,37 +97,25 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2225,29 +2206,6 @@ config("afdo_optimize_size") {
+@@ -2212,7 +2190,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
 -  if (is_clang) {
--    cflags = []
--    if (clang_emit_debug_info_for_profiling) {
--      # Add the following flags to generate debug info for profiling.
--      cflags += [ "-gline-tables-only" ]
--      if (!is_nacl) {
--        cflags += [ "-fdebug-info-for-profiling" ]
--      }
--    }
--    if (_clang_sample_profile != "") {
--      rebased_clang_sample_profile =
--          rebase_path(_clang_sample_profile, root_build_dir)
--      cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
--      inputs = [
--        _clang_sample_profile,
--      ]
--    }
++  if (is_clang && !is_openbsd) {
+     cflags = []
+     if (clang_emit_debug_info_for_profiling) {
+       # Add the following flags to generate debug info for profiling.
+@@ -2227,7 +2205,7 @@ config("afdo") {
+       cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
+       inputs = [ _clang_sample_profile ]
+     }
 -  } else if (auto_profile_path != "" && is_a_target_toolchain) {
--    cflags = [ "-fauto-profile=${auto_profile_path}" ]
--    inputs = [
--      auto_profile_path,
--    ]
--  }
- }
- 
- # Symbols ----------------------------------------------------------------------
-@@ -2351,7 +2309,7 @@ config("symbols") {
++  } else if (auto_profile_path != "" && is_a_target_toolchain && !is_openbsd) {
+     cflags = [ "-fauto-profile=${auto_profile_path}" ]
+     inputs = [ auto_profile_path ]
+   }
+@@ -2334,7 +2312,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {

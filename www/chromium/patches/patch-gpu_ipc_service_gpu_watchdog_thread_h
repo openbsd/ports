@@ -1,18 +1,18 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.9 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.10 2020/04/10 18:51:31 robert Exp $
 
 Index: gpu/ipc/service/gpu_watchdog_thread.h
 --- gpu/ipc/service/gpu_watchdog_thread.h.orig
 +++ gpu/ipc/service/gpu_watchdog_thread.h
-@@ -181,7 +181,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
+@@ -207,7 +207,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
    base::ThreadTicks GetWatchedThreadTime();
  #endif
  
 -#if defined(USE_X11)
 +#if defined(USE_X11) && !defined(OS_BSD)
-   int GetActiveTTY() const;
+   void UpdateActiveTTY();
  #endif
  
-@@ -232,7 +232,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
+@@ -265,7 +265,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
    // whether GpuWatchdogThreadEvent::kGpuWatchdogStart has been recorded.
    bool is_watchdog_start_histogram_recorded = false;
  
@@ -20,4 +20,4 @@ Index: gpu/ipc/service/gpu_watchdog_thread.h
 +#if defined(USE_X11) && !defined(OS_BSD)
    FILE* tty_file_;
    int host_tty_;
- #endif
+   int active_tty_ = -1;

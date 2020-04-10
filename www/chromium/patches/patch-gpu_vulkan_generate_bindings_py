@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.6 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.7 2020/04/10 18:51:31 robert Exp $
 
 Index: gpu/vulkan/generate_bindings.py
 --- gpu/vulkan/generate_bindings.py.orig
 +++ gpu/vulkan/generate_bindings.py
-@@ -164,7 +164,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -165,7 +165,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
@@ -12,7 +12,7 @@ Index: gpu/vulkan/generate_bindings.py
      'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
      'functions': [
        'vkGetSemaphoreFdKHR',
-@@ -172,7 +172,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -173,7 +173,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.10 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.11 2020/04/10 18:51:30 robert Exp $
 Index: chrome/browser/download/download_shelf_context_menu.cc
 --- chrome/browser/download/download_shelf_context_menu.cc.orig
 +++ chrome/browser/download/download_shelf_context_menu.cc
-@@ -137,7 +137,7 @@ base::string16 DownloadShelfContextMenu::GetLabelForCo
+@@ -147,7 +147,7 @@ base::string16 DownloadShelfContextMenu::GetLabelForCo
                     : IDS_DOWNLOAD_MENU_PLATFORM_OPEN_ALWAYS;
            break;
          }

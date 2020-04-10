@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_dev_ui_browser_resources_grd,v 1.1 2020/04/10 18:51:30 robert Exp $
+
+Index: chrome/browser/dev_ui_browser_resources.grd
+--- chrome/browser/dev_ui_browser_resources.grd.orig
++++ chrome/browser/dev_ui_browser_resources.grd
+@@ -55,7 +55,7 @@ This file specifies browser resources for developer-fa
+       <include name="IDR_PREDICTORS_HTML" file="resources\predictors\predictors.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" compress="gzip" />
+       <include name="IDR_PREDICTORS_JS" file="resources\predictors\predictors.js" flattenhtml="true" type="BINDATA" compress="gzip" />
+ 
+-      <if expr="is_android or is_linux">
++      <if expr="is_android or is_posix">
+         <include name="IDR_SANDBOX_INTERNALS_HTML" file="resources\sandbox_internals\sandbox_internals.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" compress="gzip" />
+         <include name="IDR_SANDBOX_INTERNALS_JS" file="resources\sandbox_internals\sandbox_internals.js" type="BINDATA" compress="gzip" />
+       </if>

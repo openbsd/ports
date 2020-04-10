@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.8 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.9 2020/04/10 18:51:32 robert Exp $
 
 Index: services/service_manager/sandbox/BUILD.gn
 --- services/service_manager/sandbox/BUILD.gn.orig
 +++ services/service_manager/sandbox/BUILD.gn
-@@ -28,7 +28,7 @@ component("sandbox") {
+@@ -26,7 +26,7 @@ component("sandbox") {
      "//base",
      "//sandbox:common",
    ]

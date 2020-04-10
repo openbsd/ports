@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_gn_src_base_files_file_posix_cc,v 1.1 2020/04/10 18:51:32 robert Exp $
+
+Index: tools/gn/src/base/files/file_posix.cc
+--- tools/gn/src/base/files/file_posix.cc.orig
++++ tools/gn/src/base/files/file_posix.cc
+@@ -372,7 +372,7 @@ void File::DoInitialize(const FilePath& path, uint32_t
+ bool File::Flush() {
+   DCHECK(IsValid());
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   return !HANDLE_EINTR(fdatasync(file_.get()));
+ #else
+   return !HANDLE_EINTR(fsync(file_.get()));

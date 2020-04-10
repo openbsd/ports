@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.52 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.53 2020/04/10 18:51:31 robert Exp $
 
 Index: chrome/common/chrome_switches.cc
 --- chrome/common/chrome_switches.cc.orig
 +++ chrome/common/chrome_switches.cc
-@@ -868,7 +868,7 @@ const char kAllowNaClFileHandleAPI[]        = "allow-n
+@@ -846,7 +846,7 @@ const char kAllowNaClFileHandleAPI[]        = "allow-n
  const char kAllowNaClSocketAPI[]            = "allow-nacl-socket-api";
  #endif
  

@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_gn_src_gn_args_cc,v 1.1 2020/04/10 18:51:32 robert Exp $
+
+Index: tools/gn/src/gn/args.cc
+--- tools/gn/src/gn/args.cc.orig
++++ tools/gn/src/gn/args.cc
+@@ -342,6 +342,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+     arch = kX86;
+   else if (os_arch == "x86_64")
+     arch = kX64;
++  else if (os_arch == "arm64")
++    arch = kArm64;
+   else if (os_arch.substr(0, 3) == "arm")
+     arch = kArm;
+   else if (os_arch == "aarch64")

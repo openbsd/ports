@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_content_app_crashpad_linux_cc,v 1.1 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-components_crash_content_app_crashpad_linux_cc,v 1.2 2020/04/10 18:51:31 robert Exp $
 
 Index: components/crash/content/app/crashpad_linux.cc
 --- components/crash/content/app/crashpad_linux.cc.orig
@@ -13,7 +13,7 @@ Index: components/crash/content/app/crashpad_linux.cc
  
  #include <limits>
  
-@@ -66,9 +68,11 @@ void SetPtracerAtFork() {
+@@ -67,9 +69,11 @@ void SetPtracerAtFork() {
    if (!GetHandlerSocket(nullptr, &pid)) {
      return;
    }

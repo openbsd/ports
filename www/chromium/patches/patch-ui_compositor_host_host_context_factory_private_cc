@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_compositor_host_host_context_factory_private_cc,v 1.2 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-ui_compositor_host_host_context_factory_private_cc,v 1.3 2020/04/10 18:51:32 robert Exp $
 
 Index: ui/compositor/host/host_context_factory_private.cc
 --- ui/compositor/host/host_context_factory_private.cc.orig
 +++ ui/compositor/host/host_context_factory_private.cc
-@@ -30,7 +30,7 @@ namespace {
+@@ -29,7 +29,7 @@ namespace {
  
  static const char* kBrowser = "Browser";
  

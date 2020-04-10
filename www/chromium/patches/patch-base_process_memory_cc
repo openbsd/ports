@@ -1,8 +1,9 @@
-$OpenBSD: patch-base_process_memory_cc,v 1.5 2016/10/26 06:22:07 robert Exp $
---- base/process/memory.cc.orig.port	Fri Oct 21 00:01:59 2016
-+++ base/process/memory.cc	Sat Oct 22 15:54:28 2016
-@@ -10,7 +10,7 @@
- namespace base {
+$OpenBSD: patch-base_process_memory_cc,v 1.6 2020/04/10 18:51:30 robert Exp $
+Index: base/process/memory.cc
+--- base/process/memory.cc.orig
++++ base/process/memory.cc
+@@ -42,7 +42,7 @@ void OnNoMemoryInternal(size_t size) {
+ }  // namespace internal
  
  // Defined in memory_win.cc for Windows.
 -#if !defined(OS_WIN)
@@ -10,8 +11,8 @@ $OpenBSD: patch-base_process_memory_cc,v 1.5 2016/10/26 06:22:07 robert Exp $
  
  namespace {
  
-@@ -31,7 +31,7 @@ void TerminateBecauseOutOfMemory(size_t size) {
- #endif
+@@ -61,7 +61,7 @@ void TerminateBecauseOutOfMemory(size_t size) {
+ #endif  // !defined(OS_WIN)
  
  // Defined in memory_mac.mm for Mac.
 -#if !defined(OS_MACOSX)

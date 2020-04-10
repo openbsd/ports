@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_sharing_webrtc_webrtc_flags_cc,v 1.1 2020/04/10 18:51:31 robert Exp $
+
+Index: chrome/browser/sharing/webrtc/webrtc_flags.cc
+--- chrome/browser/sharing/webrtc/webrtc_flags.cc.orig
++++ chrome/browser/sharing/webrtc/webrtc_flags.cc
+@@ -5,7 +5,7 @@
+ #include "chrome/browser/sharing/webrtc/webrtc_flags.h"
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ const base::Feature kSharingPeerConnectionReceiver{
+     "SharingPeerConnectionReceiver", base::FEATURE_DISABLED_BY_DEFAULT};
+ 

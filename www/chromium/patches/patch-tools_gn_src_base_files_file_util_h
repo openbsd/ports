@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_gn_base_files_file_util_h,v 1.3 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-tools_gn_src_base_files_file_util_h,v 1.1 2020/04/10 18:51:32 robert Exp $
 
-Index: tools/gn/base/files/file_util.h
---- tools/gn/base/files/file_util.h.orig
-+++ tools/gn/base/files/file_util.h
-@@ -360,7 +360,7 @@ bool VerifyPathControlledByAdmin(const base::FilePath&
+Index: tools/gn/src/base/files/file_util.h
+--- tools/gn/src/base/files/file_util.h.orig
++++ tools/gn/src/base/files/file_util.h
+@@ -325,7 +325,7 @@ bool VerifyPathControlledByAdmin(const base::FilePath&
  // the directory |path|, in the number of FilePath::CharType, or -1 on failure.
  int GetMaximumPathComponentLength(const base::FilePath& path);
  

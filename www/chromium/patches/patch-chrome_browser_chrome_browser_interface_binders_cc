@@ -1,0 +1,23 @@
+$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.1 2020/04/10 18:51:30 robert Exp $
+
+Index: chrome/browser/chrome_browser_interface_binders.cc
+--- chrome/browser/chrome_browser_interface_binders.cc.orig
++++ chrome/browser/chrome_browser_interface_binders.cc
+@@ -98,7 +98,7 @@
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "chrome/browser/ui/webui/discards/discards.mojom.h"
+ #include "chrome/browser/ui/webui/discards/discards_ui.h"
+ #endif
+@@ -472,7 +472,7 @@ void PopulateChromeWebUIFrameBinders(
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+   RegisterWebUIControllerInterfaceBinder<discards::mojom::DetailsProvider,
+                                          DiscardsUI>(map);
+ 

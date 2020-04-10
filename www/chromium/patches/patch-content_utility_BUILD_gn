@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_utility_BUILD_gn,v 1.1 2020/04/10 18:51:31 robert Exp $
+
+Index: content/utility/BUILD.gn
+--- content/utility/BUILD.gn.orig
++++ content/utility/BUILD.gn
+@@ -78,7 +78,7 @@ jumbo_source_set("utility") {
+     deps += [ "//services/proxy_resolver:lib" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     deps += [ "//content/utility/soda:soda_sandbox_hook" ]
+   }
+ }

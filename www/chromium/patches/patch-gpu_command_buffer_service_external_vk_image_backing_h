@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_h,v 1.3 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_h,v 1.4 2020/04/10 18:51:31 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_backing.h
 --- gpu/command_buffer/service/external_vk_image_backing.h.orig
 +++ gpu/command_buffer/service/external_vk_image_backing.h
-@@ -135,7 +135,7 @@ class ExternalVkImageBacking final : public SharedImag
+@@ -132,7 +132,7 @@ class ExternalVkImageBacking final : public ClearTrack
                           base::Optional<WGPUTextureFormat> wgpu_format,
                           base::Optional<uint32_t> memory_type_index);
  

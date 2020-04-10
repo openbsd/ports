@@ -1,9 +1,9 @@
-$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_cc,v 1.19 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_cc,v 1.20 2020/04/10 18:51:31 robert Exp $
 
 Index: headless/lib/browser/headless_content_browser_client.cc
 --- headless/lib/browser/headless_content_browser_client.cc.orig
 +++ headless/lib/browser/headless_content_browser_client.cc
-@@ -167,7 +167,7 @@ HeadlessContentBrowserClient::GetGeneratedCodeCacheSet
+@@ -157,7 +157,7 @@ HeadlessContentBrowserClient::GetGeneratedCodeCacheSet
    return content::GeneratedCodeCacheSettings(true, 0, context->GetPath());
  }
  

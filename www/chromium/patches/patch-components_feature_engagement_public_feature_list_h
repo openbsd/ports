@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_list_h,v 1.6 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_list_h,v 1.7 2020/04/10 18:51:31 robert Exp $
 
 Index: components/feature_engagement/public/feature_list.h
 --- components/feature_engagement/public/feature_list.h.orig
 +++ components/feature_engagement/public/feature_list.h
-@@ -111,7 +111,7 @@ DEFINE_VARIATION_PARAM(kIPHBadgedTranslateManualTrigge
+@@ -112,7 +112,7 @@ DEFINE_VARIATION_PARAM(kIPHBadgedTranslateManualTrigge
  #endif  // defined(OS_IOS)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: components/feature_engagement/public/feature_list.h
  DEFINE_VARIATION_PARAM(kIPHFocusModeFeature, "IPH_FocusMode");
  DEFINE_VARIATION_PARAM(kIPHGlobalMediaControls, "IPH_GlobalMediaControls");
  DEFINE_VARIATION_PARAM(kIPHReopenTabFeature, "IPH_ReopenTab");
-@@ -122,7 +122,7 @@ DEFINE_VARIATION_PARAM(kIPHIncognitoWindowFeature, "IP
+@@ -123,7 +123,7 @@ DEFINE_VARIATION_PARAM(kIPHIncognitoWindowFeature, "IP
  DEFINE_VARIATION_PARAM(kIPHNewTabFeature, "IPH_NewTab");
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
@@ -21,7 +21,7 @@ Index: components/feature_engagement/public/feature_list.h
  
  }  // namespace
  
-@@ -171,7 +171,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -173,7 +173,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHBadgedReadingListFeature),
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
  #elif defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -30,7 +30,7 @@ Index: components/feature_engagement/public/feature_list.h
          VARIATION_ENTRY(kIPHFocusModeFeature),
          VARIATION_ENTRY(kIPHGlobalMediaControls),
          VARIATION_ENTRY(kIPHReopenTabFeature),
-@@ -182,7 +182,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -184,7 +184,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHNewTabFeature),
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||

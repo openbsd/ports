@@ -1,13 +1,13 @@
-$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.6 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.7 2020/04/10 18:51:32 robert Exp $
 
 Index: tools/variations/fieldtrial_to_struct.py
 --- tools/variations/fieldtrial_to_struct.py.orig
 +++ tools/variations/fieldtrial_to_struct.py
-@@ -39,6 +39,7 @@ _platforms = [
-   'linux',
-   'mac',
-   'windows',
-+  'openbsd',
+@@ -40,6 +40,7 @@ _platforms = [
+     'linux',
+     'mac',
+     'windows',
++    'openbsd',
  ]
  
  _form_factors = [
