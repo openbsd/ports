@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/29 17:18:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2020/04/10 15:02:59 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 GH_TAGNAME=	v0.23.4
 GH_ACCOUNT=	gruntwork-io
 GH_PROJECT=	terragrunt
+REVISION=	0
 
 CATEGORIES=	sysutils net
 
@@ -19,7 +20,7 @@ MODULES=	lang/go
 
 MODGO_LDFLAGS=	-X main.VERSION=${GH_TAGNAME}
 
-RUN_DEPENDS=	sysutils/terraform/terraform
+RUN_DEPENDS=	sysutils/terraform
 
 MASTER_SITES=	https://distfiles.bsdfrog.org/
 
