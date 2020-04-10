@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/02 21:25:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/10 07:54:11 ajacoutot Exp $
 
 COMMENT=	minimalist and read-only implementation of SMB
 
-VER=		0.3.1
+VER=		0.3.2
 DISTNAME=	libdsm-${VER}
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/videolabs/libdsm/releases/download/v${VER}/
