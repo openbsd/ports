@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:58 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:22:49 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/${MODPY_PYCACHE}production.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/icons/
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/produc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/production.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/tests/${MODPY_PYCACHE}test_production_split.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_split/tests/test_production_split.py

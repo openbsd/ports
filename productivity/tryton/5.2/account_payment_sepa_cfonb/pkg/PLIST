@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:53 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:22:44 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/${MODPY_PYCACHE}payment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/payment.py
@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cf
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/template/pain.008.001.02-cfonb.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/${MODPY_PYCACHE}test_account_payment_sepa_cfonb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/test_account_payment_sepa_cfonb.py

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:54 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:22:44 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/${MODPY_PYCACHE}product.${MODPY_PYC_MAGIC_TAG}pyc
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_co
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/stock.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/tests/${MODPY_PYCACHE}test_account_stock_landed_cost.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_landed_cost/tests/scenario_account_stock_landed_cost.rst

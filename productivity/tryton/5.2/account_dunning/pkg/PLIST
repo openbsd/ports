@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:51 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:22:42 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/${MODPY_PYCACHE}dunning.${MODPY_PYC_MAGIC_TAG}pyc
@@ -38,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/party.p
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/party.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/${MODPY_PYCACHE}test_account_dunning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/scenario_account_dunning.rst

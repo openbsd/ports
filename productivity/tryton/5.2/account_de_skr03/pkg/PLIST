@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:51 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:22:41 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/account_de.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/tax_de.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/tests/${MODPY_PYCACHE}test_account_de_skr03.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_de_skr03/tests/test_account_de_skr03.py

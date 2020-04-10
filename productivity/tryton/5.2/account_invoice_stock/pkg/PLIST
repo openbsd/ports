@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:53 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:22:43 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/${MODPY_PYCACHE}stock.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/s
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/stock.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/tests/${MODPY_PYCACHE}test_account_invoice_stock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_stock/tests/test_account_invoice_stock.py
