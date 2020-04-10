@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2020/01/27 16:29:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2020/04/10 12:01:40 ajacoutot Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-9.1.1
+DISTNAME=	qpdf-10.0.1
 
-SHARED_LIBS +=  qpdf                 7.1      # 27.1
+SHARED_LIBS +=  qpdf                 8.0      # 28.1
 
 CATEGORIES=	print graphics
 
@@ -15,8 +15,9 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # Artistic License 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c ffi gmp gnutls hogweed iconv idn2
-WANTLIB += intl jpeg m nettle p11-kit tasn1 unistring z
+WANTLIB += ${COMPILER_LIBCXX} c crypto ffi gmp gnutls hogweed
+WANTLIB += iconv idn2 intl jpeg m nettle p11-kit ssl tasn1 unistring
+WANTLIB += z
 
 COMPILER=	base-clang ports-gcc base-gcc
 
