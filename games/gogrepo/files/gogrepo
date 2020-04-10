@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ${MODPY_BIN} ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/gogrepo/gogrepo.py $*
