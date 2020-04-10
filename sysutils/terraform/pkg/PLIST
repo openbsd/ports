@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/06/25 15:10:58 ajacoutot Exp $
-@bin bin/terraform-provider-${PROVIDER}
+@comment $OpenBSD: PLIST,v 1.6 2020/04/10 15:01:48 ajacoutot Exp $
+@pkgpath sysutils/terraform/terraform
+@bin bin/terraform
