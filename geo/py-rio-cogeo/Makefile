@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/25 10:01:42 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2020/04/10 07:20:01 landry Exp $
 
 COMMENT =	cloud optimized GeoTiff creation plugin for rasterio
 
-# 1.0dev9 and later require numpy 1.15
-MODPY_EGG_VERSION =	1.0.dev8
+MODPY_EGG_VERSION =	1.1.10
 DISTNAME =	rio-cogeo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/.dev/pre/}
-REVISION =	1
 
 CATEGORIES =	geo
 
@@ -21,7 +19,10 @@ FLAVOR =	python3
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =	Yes
 
-RUN_DEPENDS =	geo/py-rasterio${MODPY_FLAVOR}
+RUN_DEPENDS =	geo/py-rasterio${MODPY_FLAVOR} \
+		geo/py-mercantile${MODPY_FLAVOR} \
+		geo/py-supermercado${MODPY_FLAVOR} \
+		math/py-numpy${MODPY_FLAVOR}>=1.15
 
 # test_read_no_band requires hdf5 support in GDAL
 # requires datafiles only on github...

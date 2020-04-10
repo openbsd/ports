@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/25 10:01:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/04/10 07:20:01 landry Exp $
 @conflict py-rio-cogeo-*
 @pkgpath geo/py-rio-cogeo
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/
@@ -13,8 +13,11 @@ lib/python${MODPY_VERSION}/site-packages/rio_cogeo/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}cogeo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}profiles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/cogeo.py
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/errors.py
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/profiles.py
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/__init__.py
@@ -22,3 +25,4 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/${MOD
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/cli.py
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/utils.py
