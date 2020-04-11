@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/07 00:30:59 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/11 09:59:20 thfr Exp $
 
 # JIT segfaults without USE_WXNEEDED
 USE_WXNEEDED =	Yes
@@ -9,7 +9,7 @@ V =		1.10
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	hashlink
 GH_TAGNAME =	${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	hl	0.0	# 1.10
 

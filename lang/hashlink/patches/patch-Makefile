@@ -1,13 +1,19 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/04/11 09:59:20 thfr Exp $
 
 remove -m$(ARCH)
 add versioning to libhl
 {CFLAGS} -> (CFLAGS) to not get picked up by SUBST_CMD
+remove Linux's 32-/64-bit detection
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -6,11 +6,11 @@ INSTALL_DIR ?= $(PREFIX)
+@@ -1,16 +1,14 @@
+ 
+-LBITS := $(shell getconf LONG_BIT)
+-ARCH ?= $(LBITS)
+ PREFIX ?= /usr/local
+ INSTALL_DIR ?= $(PREFIX)
  
  LIBS=fmt sdl ssl openal ui uv mysql
  
@@ -24,7 +30,7 @@ Index: Makefile
  LIBTURBOJPEG = -lturbojpeg
  
  PCRE = include/pcre/pcre_chartables.o include/pcre/pcre_compile.o include/pcre/pcre_dfa_exec.o \
-@@ -80,7 +80,7 @@ RELEASE_NAME = osx
+@@ -80,16 +78,9 @@ RELEASE_NAME = osx
  else
  
  # Linux
@@ -32,8 +38,17 @@ Index: Makefile
 +CFLAGS += -fPIC -pthread
  LFLAGS += -lm -Wl,-rpath,. -Wl,--export-dynamic -Wl,--no-undefined
  
- ifeq ($(ARCH),32)
-@@ -123,34 +123,34 @@ uninstall:
+-ifeq ($(ARCH),32)
+-CFLAGS += -I /usr/include/i386-linux-gnu
+-LIBFLAGS += -L/opt/libjpeg-turbo/lib
+-else
+-LIBFLAGS += -L/opt/libjpeg-turbo/lib64
+-endif
+-
+ LIBOPENAL = -lopenal
+ RELEASE_NAME = linux
+ 
+@@ -123,34 +114,34 @@ uninstall:
  libs: $(LIBS)
  
  libhl: ${LIB}
@@ -78,7 +93,7 @@ Index: Makefile
  	
  mesa:
  	(cd libs/mesa && make)
-@@ -204,7 +204,7 @@ release_osx:
+@@ -204,7 +195,7 @@ release_osx:
  .SUFFIXES : .c .o
  
  .c.o :
