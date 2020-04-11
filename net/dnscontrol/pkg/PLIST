@@ -1,3 +1,47 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/05 11:43:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/11 12:45:31 kn Exp $
 @bin bin/convertzone
 @bin bin/dnscontrol
+share/doc/dnscontrol/
+share/doc/dnscontrol/README.md
+share/doc/dnscontrol/adding-new-rtypes.md
+share/doc/dnscontrol/alias.md
+share/doc/dnscontrol/bug-triage.md
+share/doc/dnscontrol/caa-builder.md
+share/doc/dnscontrol/check-creds.md
+share/doc/dnscontrol/examples.md
+share/doc/dnscontrol/get-certs.md
+share/doc/dnscontrol/get-zones.md
+share/doc/dnscontrol/getting-started.md
+share/doc/dnscontrol/index.md
+share/doc/dnscontrol/js.md
+share/doc/dnscontrol/migrating.md
+share/doc/dnscontrol/nameservers.md
+share/doc/dnscontrol/notifications.md
+share/doc/dnscontrol/opinions.md
+share/doc/dnscontrol/provider-list.md
+share/doc/dnscontrol/providers/
+share/doc/dnscontrol/providers/activedir.md
+share/doc/dnscontrol/providers/azuredns.md
+share/doc/dnscontrol/providers/bind.md
+share/doc/dnscontrol/providers/cloudflare.md
+share/doc/dnscontrol/providers/cloudns.md
+share/doc/dnscontrol/providers/digitalocean.md
+share/doc/dnscontrol/providers/dnsimple.md
+share/doc/dnscontrol/providers/gandi_v5.md
+share/doc/dnscontrol/providers/gcloud.md
+share/doc/dnscontrol/providers/hexonet.md
+share/doc/dnscontrol/providers/internetbs.md
+share/doc/dnscontrol/providers/linode.md
+share/doc/dnscontrol/providers/name.com.md
+share/doc/dnscontrol/providers/namecheap.md
+share/doc/dnscontrol/providers/ns1.md
+share/doc/dnscontrol/providers/ovh.md
+share/doc/dnscontrol/providers/route53.md
+share/doc/dnscontrol/providers/softlayer.md
+share/doc/dnscontrol/providers/vultr.md
+share/doc/dnscontrol/release-engineering.md
+share/doc/dnscontrol/spf-optimizer.md
+share/doc/dnscontrol/toc.md
+share/doc/dnscontrol/unittests.md
+share/doc/dnscontrol/why-the-dot.md
+share/doc/dnscontrol/writing-providers.md
