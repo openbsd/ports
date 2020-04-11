@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/12/18 20:10:44 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/04/11 08:23:57 landry Exp $
 @bin bin/xfce4-taskmanager
 share/applications/xfce4-taskmanager.desktop
 share/icons/hicolor/16x16/actions/xc_crosshair.png
@@ -25,7 +25,13 @@ share/locale/gl/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/he/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/hr/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/hu/LC_MESSAGES/xfce4-taskmanager.mo
+share/locale/hy_AM/
+share/locale/hy_AM/LC_MESSAGES/
+share/locale/hy_AM/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/id/LC_MESSAGES/xfce4-taskmanager.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/is/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/it/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/ja/LC_MESSAGES/xfce4-taskmanager.mo
