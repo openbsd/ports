@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/05 07:26:59 feinerer Exp $
+# $OpenBSD: Makefile,v 1.7 2020/04/11 04:44:37 feinerer Exp $
 
 COMMENT =		OpenGL to PostScript printing library
 
-DISTNAME =		gl2ps-1.4.1
+DISTNAME =		gl2ps-1.4.2
 
 SHARED_LIBS =		gl2ps	0.2 # 1.4
 
