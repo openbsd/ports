@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.933 2020/04/10 15:02:26 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.934 2020/04/11 18:49:59 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1544,6 +1544,7 @@ my $obsolete_reason = {
 	'terraform-provider-vault' => 1,
 	'terraform-provider-vcd' => 1,
 	'terraform-provider-vsphere' => 1,
+	'radare2-bindings' => 6,
 };
 
 # reasons for obsolete packages
