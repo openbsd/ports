@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/12/09 20:23:29 gilles Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/11 16:01:46 eric Exp $
 
 COMMENT =	rspamd integration to the OpenSMTPD daemon
 
-V =		0.1.5
+V =		0.1.6
 FILTER_NAME =	rspamd
 DISTNAME =	filter-rspamd-${V}
 
@@ -21,5 +21,7 @@ MODULES =	lang/go
 NO_TEST =	Yes
 
 ALL_TARGET =	filter-rspamd
+
+BUILD_DEPENDS = devel/go-sys
 
 .include <bsd.port.mk>
