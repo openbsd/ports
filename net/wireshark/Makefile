@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2020/04/09 20:06:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2020/04/11 14:17:50 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -10,6 +10,7 @@ PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
+REVISION-main = 0
 
 SHARED_LIBS +=	wscodecs             1.0
 SHARED_LIBS +=	wsutil               4.0
