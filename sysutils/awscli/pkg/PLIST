@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.106 2020/03/23 12:09:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.107 2020/04/11 10:07:18 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1149,6 +1149,19 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-reso
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-user-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-user-pool-client.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-user-pool.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/describe-entities-detection-v2-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/describe-phi-detection-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/detect-entities-v2.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/detect-phi.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/infer-icd10-cm.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/infer-rx-norm.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/list-entities-detection-v2-jobs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/list-phi-detection-jobs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/start-entities-detection-v2-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/start-phi-detection-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/stop-entities-detection-v2-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehendmedical/stop-phi-detection-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/delete-config-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/delete-delivery-channel.rst
@@ -4072,6 +4085,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/create-association-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/create-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/create-document.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/create-maintenance-window.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/create-ops-item.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/create-patch-baseline.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/create-resource-data-sync.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/delete-activation.rst
@@ -4112,10 +4126,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-maintenanc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-maintenance-window-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-maintenance-windows-for-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-maintenance-windows.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-ops-items.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-parameters.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-baselines.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-group-state.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-groups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-properties.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-sessions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-automation-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-calendar-state.rst
@@ -4131,6 +4147,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-maintenance-win
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-maintenance-window-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-maintenance-window-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-maintenance-window.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-ops-item.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-ops-summary.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-parameter-history.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-parameter.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-parameters-by-path.rst
@@ -4177,6 +4195,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-maintenance-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-maintenance-window-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-maintenance-window.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-managed-instance-role.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-ops-item.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-patch-baseline.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-service-setting.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/
