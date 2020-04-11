@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/21 01:35:51 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/11 18:49:31 jasper Exp $
 
 SUBDIR =
 SUBDIR += main
-SUBDIR += bindings
 
 .include <bsd.port.subdir.mk>
