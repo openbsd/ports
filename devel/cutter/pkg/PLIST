@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/11 18:58:04 jasper Exp $
+@bin bin/cutter
