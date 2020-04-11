@@ -1,34 +1,35 @@
-$OpenBSD: patch-Makefile,v 1.8 2019/02/13 12:24:44 kirby Exp $
+$OpenBSD: patch-Makefile,v 1.9 2020/04/11 06:41:47 kirby Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -86,7 +86,6 @@
- # RELEASE is flags for release builds, this disables some debugging flags and
- # enforces build failure when warnings are encountered.
- # We want to error on everything to make sure we don't check in code with new warnings.
--RELEASE_FLAGS = -Werror
- WARNINGS = -Wall -Wextra
- # Uncomment below to disable warnings
- #WARNINGS = -w
-@@ -276,7 +275,6 @@ ifdef RELEASE
+@@ -92,7 +92,7 @@
+ # RELEASE_FLAGS is flags for release builds.
+ RELEASE_FLAGS =
+ WARNINGS = \
+-  -Werror -Wall -Wextra \
++  -Wall -Wextra \
+   -Wformat-signedness \
+   -Wlogical-op \
+   -Wmissing-declarations \
+@@ -310,7 +310,6 @@ ifdef RELEASE
        OPTLEVEL = -O3
      endif
    endif
 -  CXXFLAGS += $(OPTLEVEL)
  
    ifdef LTO
-     LDFLAGS += -fuse-ld=gold
-@@ -317,7 +315,7 @@ endif
+     ifeq ($(NATIVE), osx)
+@@ -368,7 +367,7 @@ endif
  ifeq ($(shell sh -c 'uname -o 2>/dev/null || echo not'),Cygwin)
-   OTHERS += -std=gnu++11
+   OTHERS += -std=gnu++14
  else
--  OTHERS += -std=c++11
-+  OTHERS += -std=c++11 -I${LOCALBASE}/include
+-  OTHERS += -std=c++14
++  OTHERS += -std=c++14 -I$(LOCALBASE)/include
  endif
  
- CXXFLAGS += $(WARNINGS) $(DEBUG) $(DEBUGSYMS) $(PROFILE) $(OTHERS) -MMD -MP
-@@ -462,11 +460,6 @@ ifdef MAPSIZE
+ ifeq ($(CYGWIN),1)
+@@ -522,11 +521,6 @@ ifdef MAPSIZE
      CXXFLAGS += -DMAPSIZE=$(MAPSIZE)
  endif
  
@@ -40,7 +41,16 @@ Index: Makefile
  PKG_CONFIG = $(CROSS)pkg-config
  SDL2_CONFIG = $(CROSS)sdl2-config
  
-@@ -780,7 +773,7 @@ ifdef LTO
+@@ -699,7 +693,7 @@ ifeq ($(BSD), 1)
+ 
+   # And similarly, their libcs don't have gettext built in
+   ifeq ($(LOCALIZE),1)
+-    LDFLAGS += -lintl -liconv
++    LDFLAGS += -L/usr/local/lib -lintl -liconv
+   endif
+ endif
+ 
+@@ -825,7 +819,7 @@ ifdef LTO
    endif
  endif
  
@@ -49,15 +59,15 @@ Index: Makefile
  	@
  
  $(TARGET): $(OBJS)
-@@ -799,7 +792,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(OBJS)
- .PHONY: version json-verify
+@@ -844,7 +838,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(OBJS)
+ .PHONY: version
  version:
  	@( VERSION_STRING=$(VERSION) ; \
 -            [ -e ".git" ] && GITVERSION=$$( git describe --tags --always --dirty --match "[0-9A-Z]*.[0-9A-Z]*" ) && VERSION_STRING=$$GITVERSION ; \
              [ -e "$(SRC_DIR)/version.h" ] && OLDVERSION=$$(grep VERSION $(SRC_DIR)/version.h|cut -d '"' -f2) ; \
              if [ "x$$VERSION_STRING" != "x$$OLDVERSION" ]; then echo "#define VERSION \"$$VERSION_STRING\"" | tee $(SRC_DIR)/version.h ; fi \
           )
-@@ -853,36 +845,36 @@ distclean:
+@@ -891,31 +884,31 @@ distclean:
  bindist: $(BINDIST)
  
  ifeq ($(TARGETSYSTEM), LINUX)
@@ -80,6 +90,7 @@ Index: Makefile
 -	cp -R --no-preserve=ownership data/motd $(DATA_PREFIX)
 -	cp -R --no-preserve=ownership data/credits $(DATA_PREFIX)
 -	cp -R --no-preserve=ownership data/title $(DATA_PREFIX)
+-	cp -R --no-preserve=ownership data/help $(DATA_PREFIX)
 +	install -m 755 $(TARGET) $(BIN_PREFIX)
 +	cp -R data/core $(DATA_PREFIX)
 +	cp -R data/font $(DATA_PREFIX)
@@ -90,6 +101,7 @@ Index: Makefile
 +	cp -R data/motd $(DATA_PREFIX)
 +	cp -R data/credits $(DATA_PREFIX)
 +	cp -R data/title $(DATA_PREFIX)
++	cp -R data/help $(DATA_PREFIX)
  ifdef TILES
 -	cp -R --no-preserve=ownership gfx $(DATA_PREFIX)
 +	cp -R gfx $(DATA_PREFIX)
@@ -98,31 +110,31 @@ Index: Makefile
 -	cp -R --no-preserve=ownership data/sound $(DATA_PREFIX)
 +	cp -R data/sound $(DATA_PREFIX)
  endif
- ifdef LUA
- 	mkdir -p $(DATA_PREFIX)/lua
--	install --mode=644 lua/autoexec.lua $(DATA_PREFIX)/lua
--	install --mode=644 lua/log.lua $(DATA_PREFIX)/lua
--	install --mode=644 lua/class_definitions.lua $(DATA_PREFIX)/lua
-+	install -m 644 lua/autoexec.lua $(DATA_PREFIX)/lua
-+	install -m 644 lua/log.lua $(DATA_PREFIX)/lua
-+	install -m 644 lua/class_definitions.lua $(DATA_PREFIX)/lua
- endif
 -	install --mode=644 data/changelog.txt data/cataicon.ico data/fontdata.json \
--                   LICENSE.txt -t $(DATA_PREFIX)
+-                   LICENSE.txt LICENSE-OFL-Terminus-Font.txt -t $(DATA_PREFIX)
 +	install -m 644 data/changelog.txt data/cataicon.ico data/fontdata.json \
-+                   LICENSE.txt $(DATA_PREFIX)
++                   LICENSE.txt LICENSE-OFL-Terminus-Font.txt $(DATA_PREFIX)
  	mkdir -p $(LOCALE_DIR)
  ifdef LANGUAGES
  	LOCALE_DIR=$(LOCALE_DIR) lang/compile_mo.sh $(LANGUAGES)
-@@ -1055,11 +1047,6 @@ astyle: $(ASTYLED_WHITELIST)
- astyle-all: $(SOURCES) $(HEADERS) $(TESTSRC) $(TESTHDR) $(TOOLSRC)
- 	$(ASTYLE_BINARY) --options=.astylerc -n $(SOURCES) $(HEADERS)
- 	$(ASTYLE_BINARY) --options=.astylerc -n $(TESTSRC) $(TESTHDR)
--
+@@ -1074,11 +1067,6 @@ etags: $(ASTYLE_SOURCES)
+ astyle: $(ASTYLE_SOURCES)
+ 	$(ASTYLE_BINARY) --options=.astylerc -n $(ASTYLE_SOURCES)
+ 
 -# Test whether the system has a version of astyle that supports --dry-run
 -ifeq ($(shell if $(ASTYLE_BINARY) -Q -X --dry-run src/game.h > /dev/null; then echo foo; fi),foo)
--  ASTYLE_CHECK=$(shell LC_ALL=C $(ASTYLE_BINARY) --options=.astylerc --dry-run -X -Q $(ASTYLED_WHITELIST))
+-  ASTYLE_CHECK=$(shell LC_ALL=C $(ASTYLE_BINARY) --options=.astylerc --dry-run -X -Q $(ASTYLE_SOURCES))
 -endif
- 
+-
  astyle-check:
  ifdef ASTYLE_CHECK
+ 	$(info $(ASTYLE_BINARY) -V: $(shell $(ASTYLE_BINARY) -V))
+@@ -1121,7 +1109,7 @@ ifneq ($(CYGWIN),1)
+ 	@build-scripts/validate_pr_in_jenkins
+ endif
+ 
+-.PHONY: tests check ctags etags clean-tests install lint validate-pr
++.PHONY: tests check ctags etags clean-tests install lint
+ 
+ -include $(SOURCES:$(SRC_DIR)/%.cpp=$(DEPDIR)/%.P)
+ -include ${OBJS:.o=.d}

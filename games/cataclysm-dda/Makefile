@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/04/11 06:41:47 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
-DISTNAME=		cataclysm-dda-0.D
+DISTNAME=		cataclysm-dda-0.E
 CATEGORIES=		games
-REVISION=		0
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
-GH_TAGNAME=		0.D
+GH_TAGNAME=		0.E
 EPOCH=			0
 
 HOMEPAGE=		https://cataclysmdda.org
@@ -19,15 +18,11 @@ PERMIT_PACKAGE=	Yes
 FLAVORS=		no_x11
 FLAVOR?=
 
-WANTLIB=		${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c \
-			execinfo iconv intl m pthread
+WANTLIB=		${COMPILER_LIBCXX} c execinfo iconv intl m pthread
 
 COMPILER=		base-clang ports-gcc
 
-MODULES=		lang/lua \
-			textproc/intltool
-MODLUA_VERSION=		5.3
-MODLUA_SA=		Yes
+MODULES=		textproc/intltool
 
 BUILD_DEPENDS=		devel/libexecinfo
 
@@ -36,8 +31,8 @@ LIB_DEPENDS=		devel/gettext,-runtime \
 
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-MAKE_FLAGS=		ASTYLE=0 BSD=1 RELEASE=1 USE_XDG_DIR=1 LINTJSON=0 \
-			LOCALIZE=1 LANGUAGES=all LUA=1 LUA_BINARY=${MODLUA_BIN:T}
+MAKE_FLAGS=		ASTYLE=0 BSD=1 RELEASE=1 USE_XDG_DIR=1 \
+			LINTJSON=0 LOCALIZE=1 LANGUAGES=all
 
 .if ${FLAVOR:Mno_x11}
 WANTLIB+=		curses
@@ -56,9 +51,6 @@ MAN_TILES=		-tiles
 USE_GMAKE=		Yes
 
 NO_TEST=		Yes
-
-post-patch:
-	sed -i 's,/usr,${PREFIX},' ${WRKSRC}/lua/autoexec.lua
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/cataclysm${MAN_TILES}.6 ${PREFIX}/man/man6/
