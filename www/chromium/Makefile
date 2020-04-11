@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.501 2020/04/10 18:51:30 robert Exp $
+# $OpenBSD: Makefile,v 1.502 2020/04/11 19:05:09 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -13,6 +13,7 @@ DPB_PROPERTIES=		lonesome
 COMMENT=		Chromium browser
 
 V=			81.0.4044.92
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -131,7 +132,7 @@ GN_ARGS=	enable_nacl=false \
 		use_system_libdrm=true \
 		use_bundled_fontconfig=false \
 		use_system_harfbuzz=true \
-		use_system_freetype=true \
+		use_system_freetype=false \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
