@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1961 2020/04/03 14:47:33 paco Exp $
+# $OpenBSD: Makefile,v 1.1962 2020/04/11 18:58:58 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -94,6 +94,7 @@
      SUBDIR += cudd
      SUBDIR += cunit
      SUBDIR += cutils
+     SUBDIR += cutter
      SUBDIR += cvs-fast-export
      SUBDIR += cvs20hg
      SUBDIR += cvs2cl
