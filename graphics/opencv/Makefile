@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2020/01/19 20:41:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.57 2020/04/11 12:52:29 cwen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -84,7 +84,7 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 .endif
 
 # Fix "undefined reference to `__atomic_store_8'" (and more)
-.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+.if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=		atomic
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
