@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/10 11:15:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/11 09:51:16 thfr Exp $
 
 COMMENT =	downloader for GOG.com games and bonus collections
 
@@ -17,21 +17,26 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+PYCACHE_DIR =	${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gogrepo/${MODPY_PYCACHE:S/"//g}
 
 # optional dep on html2text for prettying up game changelog
 RUN_DEPENDS =		devel/py-html5lib${MODPY_FLAVOR}
 
-NO_BUILD =		Yes
 NO_TEST =		Yes
+
+do-build:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gogrepo
-	${INSTALL_DATA} ${WRKSRC}/* \
+	${INSTALL_DATA} ${WRKSRC}/{README.md,gogrepo.py} \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gogrepo/
+	${INSTALL_DATA_DIR} ${PYCACHE_DIR}
+	${INSTALL_DATA} \
+		${WRKSRC}/${MODPY_PYCACHE:S/"//g}/gogrepo.${MODPY_PYC_MAGIC_TAG:S/"//g}pyc \
+		${PYCACHE_DIR}/gogrepo.${MODPY_PYC_MAGIC_TAG:S/"//g}pyc
 	${SUBST_CMD} -c -m 755 ${FILESDIR}/gogrepo \
 		${PREFIX}/bin/gogrepo
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gogrepo
 
 .include <bsd.port.mk>
