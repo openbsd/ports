@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.148 2020/04/02 15:20:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.149 2020/04/11 07:53:25 ajacoutot Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -886,6 +886,9 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/monitoring/policies.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/network_management/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/network_management/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/network_management/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/network_services/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/network_services/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/network_services/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/notebooks/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/notebooks/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/notebooks/__init__.pyc
@@ -2579,6 +2582,10 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/network_management/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/network_management/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/network_management/util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/network_management/util.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/network_services/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/network_services/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/network_services/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/network_services/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/notebooks/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/notebooks/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/notebooks/__init__.pyc
@@ -3642,6 +3649,16 @@ google-cloud-sdk/lib/googlecloudsdk/schemas/dataproc/v1beta2/TemplateParameter.y
 google-cloud-sdk/lib/googlecloudsdk/schemas/dataproc/v1beta2/ValueValidation.yaml
 google-cloud-sdk/lib/googlecloudsdk/schemas/dataproc/v1beta2/WorkflowTemplate.yaml
 google-cloud-sdk/lib/googlecloudsdk/schemas/dataproc/v1beta2/WorkflowTemplatePlacement.yaml
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/EndpointConfigSelector.yaml
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/EndpointMatcher.yaml
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/HttpFilter.yaml
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/HttpFilters.yaml
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/LabelsValue.yaml
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/MetadataLabelMatcher.yaml
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/MetadataLabels.yaml
+google-cloud-sdk/lib/googlecloudsdk/schemas/networkservices/v1alpha1/TrafficPortSelector.yaml
 google-cloud-sdk/lib/googlecloudsdk/third_party/
 google-cloud-sdk/lib/googlecloudsdk/third_party/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/__init__.pyc
@@ -6141,6 +6158,8 @@ google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/delete.py
 google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/delete.pyc
 google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/describe.py
 google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/describe.pyc
+google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/drop.py
+google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/drop.pyc
 google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/list.py
 google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/list.pyc
 google-cloud-sdk/lib/surface/access_context_manager/perimeters/dry_run/reset.py
@@ -6316,6 +6335,8 @@ google-cloud-sdk/lib/surface/api_gateway/api_configs/update.pyc
 google-cloud-sdk/lib/surface/api_gateway/apis/
 google-cloud-sdk/lib/surface/api_gateway/apis/__init__.py
 google-cloud-sdk/lib/surface/api_gateway/apis/__init__.pyc
+google-cloud-sdk/lib/surface/api_gateway/apis/add_iam_policy_binding.py
+google-cloud-sdk/lib/surface/api_gateway/apis/add_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/api_gateway/apis/create.py
 google-cloud-sdk/lib/surface/api_gateway/apis/create.pyc
 google-cloud-sdk/lib/surface/api_gateway/apis/delete.py
@@ -6326,11 +6347,15 @@ google-cloud-sdk/lib/surface/api_gateway/apis/get_iam_policy.py
 google-cloud-sdk/lib/surface/api_gateway/apis/get_iam_policy.pyc
 google-cloud-sdk/lib/surface/api_gateway/apis/list.py
 google-cloud-sdk/lib/surface/api_gateway/apis/list.pyc
+google-cloud-sdk/lib/surface/api_gateway/apis/remove_iam_policy_binding.py
+google-cloud-sdk/lib/surface/api_gateway/apis/remove_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/api_gateway/apis/update.py
 google-cloud-sdk/lib/surface/api_gateway/apis/update.pyc
 google-cloud-sdk/lib/surface/api_gateway/gateways/
 google-cloud-sdk/lib/surface/api_gateway/gateways/__init__.py
 google-cloud-sdk/lib/surface/api_gateway/gateways/__init__.pyc
+google-cloud-sdk/lib/surface/api_gateway/gateways/add_iam_policy_binding.py
+google-cloud-sdk/lib/surface/api_gateway/gateways/add_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/api_gateway/gateways/create.py
 google-cloud-sdk/lib/surface/api_gateway/gateways/create.pyc
 google-cloud-sdk/lib/surface/api_gateway/gateways/delete.py
@@ -6341,6 +6366,8 @@ google-cloud-sdk/lib/surface/api_gateway/gateways/get_iam_policy.py
 google-cloud-sdk/lib/surface/api_gateway/gateways/get_iam_policy.pyc
 google-cloud-sdk/lib/surface/api_gateway/gateways/list.py
 google-cloud-sdk/lib/surface/api_gateway/gateways/list.pyc
+google-cloud-sdk/lib/surface/api_gateway/gateways/remove_iam_policy_binding.py
+google-cloud-sdk/lib/surface/api_gateway/gateways/remove_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/api_gateway/gateways/update.py
 google-cloud-sdk/lib/surface/api_gateway/gateways/update.pyc
 google-cloud-sdk/lib/surface/api_gateway/operations/
@@ -8388,6 +8415,8 @@ google-cloud-sdk/lib/surface/container/hub/configmanagement/disable.py
 google-cloud-sdk/lib/surface/container/hub/configmanagement/disable.pyc
 google-cloud-sdk/lib/surface/container/hub/configmanagement/enable.py
 google-cloud-sdk/lib/surface/container/hub/configmanagement/enable.pyc
+google-cloud-sdk/lib/surface/container/hub/configmanagement/status.py
+google-cloud-sdk/lib/surface/container/hub/configmanagement/status.pyc
 google-cloud-sdk/lib/surface/container/hub/features/
 google-cloud-sdk/lib/surface/container/hub/features/__init__.py
 google-cloud-sdk/lib/surface/container/hub/features/__init__.pyc
@@ -10092,12 +10121,16 @@ google-cloud-sdk/lib/surface/logging/sinks/update.pyc
 google-cloud-sdk/lib/surface/logging/views/
 google-cloud-sdk/lib/surface/logging/views/__init__.py
 google-cloud-sdk/lib/surface/logging/views/__init__.pyc
+google-cloud-sdk/lib/surface/logging/views/create.py
+google-cloud-sdk/lib/surface/logging/views/create.pyc
 google-cloud-sdk/lib/surface/logging/views/delete.py
 google-cloud-sdk/lib/surface/logging/views/delete.pyc
 google-cloud-sdk/lib/surface/logging/views/describe.py
 google-cloud-sdk/lib/surface/logging/views/describe.pyc
 google-cloud-sdk/lib/surface/logging/views/list.py
 google-cloud-sdk/lib/surface/logging/views/list.pyc
+google-cloud-sdk/lib/surface/logging/views/update.py
+google-cloud-sdk/lib/surface/logging/views/update.pyc
 google-cloud-sdk/lib/surface/logging/write.py
 google-cloud-sdk/lib/surface/logging/write.pyc
 google-cloud-sdk/lib/surface/memcache/
@@ -10386,6 +10419,23 @@ google-cloud-sdk/lib/surface/network_management/operations/__init__.py
 google-cloud-sdk/lib/surface/network_management/operations/__init__.pyc
 google-cloud-sdk/lib/surface/network_management/operations/describe.yaml
 google-cloud-sdk/lib/surface/network_management/operations/list.yaml
+google-cloud-sdk/lib/surface/network_services/
+google-cloud-sdk/lib/surface/network_services/__init__.py
+google-cloud-sdk/lib/surface/network_services/__init__.pyc
+google-cloud-sdk/lib/surface/network_services/endpoint_config_selectors/
+google-cloud-sdk/lib/surface/network_services/endpoint_config_selectors/__init__.py
+google-cloud-sdk/lib/surface/network_services/endpoint_config_selectors/__init__.pyc
+google-cloud-sdk/lib/surface/network_services/endpoint_config_selectors/delete.yaml
+google-cloud-sdk/lib/surface/network_services/endpoint_config_selectors/export.yaml
+google-cloud-sdk/lib/surface/network_services/endpoint_config_selectors/import.yaml
+google-cloud-sdk/lib/surface/network_services/endpoint_config_selectors/list.yaml
+google-cloud-sdk/lib/surface/network_services/http_filters/
+google-cloud-sdk/lib/surface/network_services/http_filters/__init__.py
+google-cloud-sdk/lib/surface/network_services/http_filters/__init__.pyc
+google-cloud-sdk/lib/surface/network_services/http_filters/delete.yaml
+google-cloud-sdk/lib/surface/network_services/http_filters/export.yaml
+google-cloud-sdk/lib/surface/network_services/http_filters/import.yaml
+google-cloud-sdk/lib/surface/network_services/http_filters/list.yaml
 google-cloud-sdk/lib/surface/notebooks/
 google-cloud-sdk/lib/surface/notebooks/__init__.py
 google-cloud-sdk/lib/surface/notebooks/__init__.pyc
