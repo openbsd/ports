@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/09/02 18:20:12 thfr Exp $
+# $OpenBSD: Makefile,v 1.10 2020/04/12 13:30:55 cwen Exp $
 
 COMMENT =	2D and 3D game engine
 
@@ -69,7 +69,7 @@ LIB_DEPENDS =		archivers/zstd \
 
 NO_TEST =		Yes
 
-.if ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Mpowerpc}
+.if ${MACHINE_ARCH:Mhppa}
 LDFLAGS +=     -latomic
 WANTLIB +=     atomic
 .endif
