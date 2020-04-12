@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1192 2020/04/08 04:58:50 bket Exp $
+# $OpenBSD: Makefile,v 1.1193 2020/04/12 23:42:58 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -171,7 +171,6 @@
      SUBDIR += ircd-ratbox
      SUBDIR += irrtoolset
      SUBDIR += irssi
-     SUBDIR += irssi,socks
      SUBDIR += irssi-icb
      SUBDIR += irssi-xmpp
      SUBDIR += isc-bind

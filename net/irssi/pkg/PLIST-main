@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2019/07/02 20:30:02 sthen Exp $
-@pkgpath net/irssi${FLAVOR_STRING}
+@comment $OpenBSD: PLIST-main,v 1.3 2020/04/12 23:42:58 jca Exp $
+@pkgpath net/irssi,socks
 @bin bin/irssi
 include/irssi/
 include/irssi/irssi-config

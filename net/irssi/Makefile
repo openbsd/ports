@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2019/08/30 07:24:49 kn Exp $
+# $OpenBSD: Makefile,v 1.87 2020/04/12 23:42:58 jca Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -9,10 +9,7 @@ V =		1.2.2
 DISTNAME =	irssi-$V
 PKGSPEC =	irssi-=$V
 PKGNAME-main =	irssi-$V
-
-# -otr module doesn't vary between FLAVORs; override default FLAVOR suffix
-FULLPKGNAME-otr = irssi-otr-$V
-FULLPKGPATH-otr = net/irssi,-otr
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -27,11 +24,6 @@ WANTLIB +=	c crypto curses glib-2.0 gmodule-2.0 \
 		iconv intl m pcre perl pthread ssl
 
 MASTER_SITES =	https://github.com/irssi/irssi/releases/download/${V}/
-
-FLAVORS =	socks
-FLAVOR ?=
-FLAVOR_STRING =	${FLAVOR_EXT:S/-/,/g}
-SUBST_VARS =	FLAVOR_STRING
 
 LIB_DEPENDS =	devel/glib2>=2.28.0
 
@@ -52,12 +44,6 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_lib_utf8proc_utf8proc_version=no
 SEPARATE_BUILD =	Yes
-
-.if ${FLAVOR:Msocks}
-CONFIGURE_ARGS +=	--with-socks
-LIB_DEPENDS +=		security/dante
-WANTLIB +=		socks
-.endif
 
 MAKE_FLAGS =	scriptdir="${SYSCONFDIR}/irssi/scripts" \
 		themedir="${SYSCONFDIR}/irssi/themes"
