@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.25 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.26 2020/04/12 10:52:45 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
@@ -12,7 +12,7 @@ Index: content/public/common/content_switches.cc
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -981,7 +984,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
+@@ -997,7 +1000,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
  // Enable indication that browser is controlled by automation.
  const char kEnableAutomation[] = "enable-automation";
  

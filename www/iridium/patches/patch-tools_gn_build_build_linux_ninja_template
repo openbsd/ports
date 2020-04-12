@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_gn_build_build_linux_ninja_template,v 1.4 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-tools_gn_build_build_linux_ninja_template,v 1.5 2020/04/12 10:52:46 robert Exp $
 
 Index: tools/gn/build/build_linux.ninja.template
 --- tools/gn/build/build_linux.ninja.template.orig
 +++ tools/gn/build/build_linux.ninja.template
-@@ -11,7 +11,7 @@ rule cxx
+@@ -5,7 +5,7 @@ rule cxx
    deps = gcc
  
  rule alink_thin

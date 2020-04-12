@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_service_manager_BUILD_gn,v 1.2 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-services_service_manager_BUILD_gn,v 1.3 2020/04/12 10:52:46 robert Exp $
 
 Index: services/service_manager/BUILD.gn
 --- services/service_manager/BUILD.gn.orig
 +++ services/service_manager/BUILD.gn
-@@ -67,7 +67,7 @@ source_set("service_manager") {
+@@ -65,7 +65,7 @@ source_set("service_manager") {
      ]
    }
  

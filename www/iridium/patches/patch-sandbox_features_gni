@@ -1,13 +1,13 @@
-$OpenBSD: patch-sandbox_features_gni,v 1.6 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-sandbox_features_gni,v 1.7 2020/04/12 10:52:46 robert Exp $
 
 Index: sandbox/features.gni
 --- sandbox/features.gni.orig
 +++ sandbox/features.gni
-@@ -12,6 +12,6 @@ use_seccomp_bpf =
-     (is_linux || is_android) &&
-     (current_cpu == "x86" || current_cpu == "x64" || current_cpu == "arm" ||
-      current_cpu == "arm64" || current_cpu == "mipsel" ||
--     current_cpu == "mips64el")
-+     current_cpu == "mips64el") && !is_openbsd
+@@ -11,6 +11,6 @@ import("//build/config/nacl/config.gni")
+ use_seccomp_bpf = (is_linux || is_android) &&
+                   (current_cpu == "x86" || current_cpu == "x64" ||
+                    current_cpu == "arm" || current_cpu == "arm64" ||
+-                   current_cpu == "mipsel" || current_cpu == "mips64el")
++                   current_cpu == "mipsel" || current_cpu == "mips64el") && !is_openbsd
  
  use_seccomp_bpf = use_seccomp_bpf || is_nacl_nonsfi

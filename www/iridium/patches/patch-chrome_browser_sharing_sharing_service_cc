@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_sharing_sharing_service_cc,v 1.1 2020/04/12 10:52:45 robert Exp $
+
+Index: chrome/browser/sharing/sharing_service.cc
+--- chrome/browser/sharing/sharing_service.cc.orig
++++ chrome/browser/sharing/sharing_service.cc
+@@ -31,7 +31,7 @@ SharingMessageSender::DelegateType GetSendDelegateType
+     const syncer::DeviceInfo& device,
+     const chrome_browser_sharing::SharingMessage& message) {
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Messages other than SharedClipboard are always sent via FCM.
+   if (message.payload_case() !=
+       chrome_browser_sharing::SharingMessage::kSharedClipboardMessage) {

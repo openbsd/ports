@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.2 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.3 2020/04/12 10:52:46 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.h
 --- gpu/vulkan/vulkan_function_pointers.h.orig
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -178,15 +178,15 @@ struct VulkanFunctionPointers {
+@@ -180,15 +180,15 @@ struct VulkanFunctionPointers {
        vkGetAndroidHardwareBufferPropertiesANDROIDFn = nullptr;
  #endif  // defined(OS_ANDROID)
  
@@ -23,7 +23,7 @@ Index: gpu/vulkan/vulkan_function_pointers.h
  
  #if defined(OS_FUCHSIA)
    PFN_vkImportSemaphoreZirconHandleFUCHSIA
-@@ -374,18 +374,18 @@ struct VulkanFunctionPointers {
+@@ -378,18 +378,18 @@ struct VulkanFunctionPointers {
        ->vkGetAndroidHardwareBufferPropertiesANDROIDFn
  #endif  // defined(OS_ANDROID)
  

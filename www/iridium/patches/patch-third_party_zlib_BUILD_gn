@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.9 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.10 2020/04/12 10:52:46 robert Exp $
 
 Index: third_party/zlib/BUILD.gn
 --- third_party/zlib/BUILD.gn.orig
 +++ third_party/zlib/BUILD.gn
-@@ -72,7 +72,7 @@ if (use_arm_neon_optimizations) {
+@@ -75,7 +75,7 @@ if (use_arm_neon_optimizations) {
      # Disabled for iPhone, as described in DDI0487C_a_armv8_arm:
      #  "All implementations of the ARMv8.1 architecture are required to
      #   implement the CRC32* instructions. These are optional in ARMv8.0."
@@ -12,7 +12,7 @@ Index: third_party/zlib/BUILD.gn
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {
          defines += [ "ARMV8_OS_ANDROID" ]
-@@ -91,7 +91,7 @@ if (use_arm_neon_optimizations) {
+@@ -94,7 +94,7 @@ if (use_arm_neon_optimizations) {
    source_set("zlib_arm_crc32") {
      visibility = [ ":*" ]
  
@@ -20,8 +20,8 @@ Index: third_party/zlib/BUILD.gn
 +    if (!is_ios && !is_openbsd) {
        include_dirs = [ "." ]
  
-       if (is_android) {
-@@ -336,7 +336,7 @@ static_library("minizip") {
+       if (!is_win && !is_clang) {
+@@ -347,7 +347,7 @@ static_library("minizip") {
      ]
    }
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_sharing_sharing_handler_registry_impl_cc,v 1.1 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_sharing_sharing_handler_registry_impl_cc,v 1.2 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/browser/sharing/sharing_handler_registry_impl.cc
 --- chrome/browser/sharing/sharing_handler_registry_impl.cc.orig
 +++ chrome/browser/sharing/sharing_handler_registry_impl.cc
-@@ -23,10 +23,10 @@
+@@ -25,7 +25,7 @@
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -11,12 +11,8 @@ Index: chrome/browser/sharing/sharing_handler_registry_impl.cc
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "chrome/browser/sharing/shared_clipboard/remote_copy_message_handler.h"
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- SharingHandlerRegistryImpl::SharingHandlerRegistryImpl(
-     Profile* profile,
-@@ -71,14 +71,14 @@ SharingHandlerRegistryImpl::SharingHandlerRegistryImpl
+         // defined(OS_CHROMEOS)
+@@ -74,7 +74,7 @@ SharingHandlerRegistryImpl::SharingHandlerRegistryImpl
    }
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -25,11 +21,3 @@ Index: chrome/browser/sharing/sharing_handler_registry_impl.cc
    if (sharing_device_registration->IsRemoteCopySupported()) {
      AddSharingHandler(
          std::make_unique<RemoteCopyMessageHandler>(profile),
-         {chrome_browser_sharing::SharingMessage::kRemoteCopyMessage});
-   }
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- }
- 
- SharingHandlerRegistryImpl::~SharingHandlerRegistryImpl() = default;

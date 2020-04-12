@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.21 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.22 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/app/chrome_main_delegate.cc
 --- chrome/app/chrome_main_delegate.cc.orig
@@ -57,7 +57,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -684,7 +684,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -688,7 +688,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
      *exit_code = 0;
      return true;  // Got a --version switch; exit with a success error code.
    }
@@ -66,7 +66,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -708,7 +708,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -712,7 +712,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
  #if defined(OS_CHROMEOS)
    chromeos::RegisterPathProvider();
  #endif
@@ -75,7 +75,7 @@ Index: chrome/app/chrome_main_delegate.cc
    nacl::RegisterPathProvider();
  #endif
  
-@@ -1026,7 +1026,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1028,7 +1028,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    InitializePDF();
  #endif
  
@@ -84,7 +84,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != service_manager::switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -1057,7 +1057,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1059,7 +1059,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  void ChromeMainDelegate::SandboxInitialized(const std::string& process_type) {
    // Note: If you are adding a new process type below, be sure to adjust the
    // AdjustLinuxOOMScore function too.

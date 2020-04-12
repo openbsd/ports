@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.14 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.15 2020/04/12 10:52:45 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -908,7 +908,7 @@ jumbo_component("base") {
+@@ -912,7 +912,7 @@ jumbo_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -12,7 +12,7 @@ Index: base/BUILD.gn
        sources += [
          "profiler/stack_copier_signal.cc",
          "profiler/stack_copier_signal.h",
-@@ -917,6 +917,12 @@ jumbo_component("base") {
+@@ -921,6 +921,12 @@ jumbo_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -25,7 +25,7 @@ Index: base/BUILD.gn
    }
  
    if (is_win) {
-@@ -1302,11 +1308,16 @@ jumbo_component("base") {
+@@ -1305,11 +1311,16 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -43,7 +43,7 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1328,7 +1339,7 @@ jumbo_component("base") {
+@@ -1331,7 +1342,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -52,7 +52,7 @@ Index: base/BUILD.gn
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1919,6 +1930,29 @@ jumbo_component("base") {
+@@ -1930,6 +1941,29 @@ jumbo_component("base") {
      }
    }
  
@@ -82,8 +82,8 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      sources -= [
-@@ -2372,6 +2406,8 @@ if (is_win || is_mac) {
-       ]
+@@ -2373,6 +2407,8 @@ if (is_win || is_mac) {
+       sources = [ "profiler/test_support_library.cc" ]
      }
    }
 +

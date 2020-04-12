@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_compositor_compositor_h,v 1.1 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_h,v 1.2 2020/04/12 10:52:46 robert Exp $
 
 Index: ui/compositor/compositor.h
 --- ui/compositor/compositor.h.orig
 +++ ui/compositor/compositor.h
-@@ -417,7 +417,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
+@@ -380,7 +380,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
    void OnFirstSurfaceActivation(const viz::SurfaceInfo& surface_info) override;
    void OnFrameTokenChanged(uint32_t frame_token) override;
  

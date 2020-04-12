@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.9 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.10 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
 +++ chrome/browser/flag_descriptions.h
-@@ -20,9 +20,9 @@
+@@ -21,9 +21,9 @@
  #include "ui/android/buildflags.h"
  #endif  // defined(OS_ANDROID)
  
@@ -15,7 +15,7 @@ Index: chrome/browser/flag_descriptions.h
  
  // This file declares strings used in chrome://flags. These messages are not
  // translated, because instead of end-users they target Chromium developers and
-@@ -2292,14 +2292,14 @@ extern const char kZeroStateFilesDescription[];
+@@ -2132,14 +2132,14 @@ extern const char kZeroStateFilesDescription[];
  
  #endif  // #if defined(OS_CHROMEOS)
  
@@ -32,7 +32,7 @@ Index: chrome/browser/flag_descriptions.h
  
  // All views-based platforms --------------------------------------------------
  
-@@ -2318,12 +2318,12 @@ extern const char kReopenTabInProductHelpDescription[]
+@@ -2158,12 +2158,12 @@ extern const char kReopenTabInProductHelpDescription[]
  
  // Random platform combinations -----------------------------------------------
  
@@ -47,7 +47,7 @@ Index: chrome/browser/flag_descriptions.h
  
  #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
-@@ -2336,15 +2336,15 @@ extern const char kClickToCallDetectionV2Description[]
+@@ -2176,20 +2176,20 @@ extern const char kClickToCallDetectionV2Description[]
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -66,12 +66,9 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kDirectManipulationStylusName[];
  extern const char kDirectManipulationStylusDescription[];
-@@ -2355,7 +2355,7 @@ extern const char kAnimatedAvatarButtonDescription[];
- extern const char kProfileMenuRevampName[];
- extern const char kProfileMenuRevampDescription[];
  
 -#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
- #if defined(OS_MACOSX) || defined(OS_CHROMEOS)
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
  

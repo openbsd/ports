@@ -1,0 +1,21 @@
+$OpenBSD: patch-services_tracing_public_cpp_perfetto_trace_time_cc,v 1.1 2020/04/12 10:52:46 robert Exp $
+
+Index: services/tracing/public/cpp/perfetto/trace_time.cc
+--- services/tracing/public/cpp/perfetto/trace_time.cc.orig
++++ services/tracing/public/cpp/perfetto/trace_time.cc
+@@ -13,7 +13,7 @@ namespace tracing {
+ 
+ int64_t TraceBootTicksNow() {
+   // On Windows and Mac, TRACE_TIME_TICKS_NOW() behaves like boottime already.
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
+   struct timespec ts;
+   int res = clock_gettime(CLOCK_BOOTTIME, &ts);
+   if (res != -1)
+@@ -22,4 +22,4 @@ int64_t TraceBootTicksNow() {
+   return TRACE_TIME_TICKS_NOW().since_origin().InNanoseconds();
+ }
+ 
+-}  // namespace tracing
+\ No newline at end of file
++}  // namespace tracing

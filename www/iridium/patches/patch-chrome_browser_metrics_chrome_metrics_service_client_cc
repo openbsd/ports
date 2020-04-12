@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_metrics_service_client_cc,v 1.5 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_metrics_service_client_cc,v 1.6 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/browser/metrics/chrome_metrics_service_client.cc
 --- chrome/browser/metrics/chrome_metrics_service_client.cc.orig
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -707,7 +707,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -717,7 +717,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<AntiVirusMetricsProvider>());
  #endif  // defined(OS_WIN)
  
@@ -12,8 +12,8 @@ Index: chrome/browser/metrics/chrome_metrics_service_client.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
-@@ -954,8 +954,8 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
-     return true;
+@@ -979,8 +979,8 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+         profile->GetPath());
    }
  #endif
 -#if defined(OS_WIN) || defined(OS_MACOSX) || \

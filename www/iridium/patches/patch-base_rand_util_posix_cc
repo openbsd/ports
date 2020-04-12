@@ -1,27 +1,29 @@
-$OpenBSD: patch-base_rand_util_posix_cc,v 1.4 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-base_rand_util_posix_cc,v 1.5 2020/04/12 10:52:45 robert Exp $
 
 Index: base/rand_util_posix.cc
 --- base/rand_util_posix.cc.orig
 +++ base/rand_util_posix.cc
-@@ -15,6 +15,7 @@
- #include "base/logging.h"
- #include "base/posix/eintr_wrapper.h"
+@@ -17,6 +17,7 @@
  
-+#if !defined(OS_OPENBSD)
  namespace {
  
++#if !defined(OS_OPENBSD)
  // We keep the file descriptor for /dev/urandom around so we don't need to
-@@ -46,18 +47,25 @@ class URandomFd {
- base::LazyInstance<URandomFd>::Leaky g_urandom_fd = LAZY_INSTANCE_INITIALIZER;
+ // reopen it (which is expensive), and since we may not even be able to reopen
+ // it if we are later put in a sandbox. This class wraps the file descriptor so
+@@ -42,21 +43,28 @@ class URandomFd {
+  private:
+   const int fd_;
+ };
++#endif
  
  }  // namespace
-+#endif
  
  namespace base {
  
  void RandBytes(void* output, size_t output_length) {
 +#if !defined(OS_OPENBSD)
-   const int urandom_fd = g_urandom_fd.Pointer()->fd();
+   const int urandom_fd = GetUrandomFD();
    const bool success =
        ReadFromFD(urandom_fd, static_cast<char*>(output), output_length);
    CHECK(success);
@@ -31,8 +33,9 @@ Index: base/rand_util_posix.cc
  }
  
 +#if !defined(OS_OPENBSD)
- int GetUrandomFD(void) {
-   return g_urandom_fd.Pointer()->fd();
+ int GetUrandomFD() {
+   static NoDestructor<URandomFd> urandom_fd;
+   return urandom_fd->fd();
  }
 +#endif
  

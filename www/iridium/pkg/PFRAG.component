@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.component,v 1.2 2020/04/02 15:12:00 robert Exp $
+@comment $OpenBSD: PFRAG.component,v 1.3 2020/04/12 10:52:46 robert Exp $
 @so iridium/libaccessibility.so
 @so iridium/libandroid_mojo_bindings_shared.so
 @so iridium/libanimation.so
@@ -21,9 +21,10 @@
 @so iridium/libbluetooth.so
 @so iridium/libboringssl.so
 @so iridium/libbrowser_ui_views.so
-@so iridium/libcaptive_portal.so
+@so iridium/libcaptive_portal_core.so
 @so iridium/libcapture_base.so
 @so iridium/libcapture_lib.so
+@so iridium/libcapture_switches.so
 @so iridium/libcbor.so
 @so iridium/libcc.so
 @so iridium/libcc_animation.so
@@ -51,6 +52,7 @@
 @so iridium/libcontent_service_mojom.so
 @so iridium/libcontent_service_mojom_shared.so
 @so iridium/libcontent_settings_features.so
+@so iridium/libcpp.so
 @so iridium/libcrcrypto.so
 @so iridium/libcrdtp.so
 @so iridium/libdbus.so
@@ -58,6 +60,7 @@
 @so iridium/libdevice_event_log.so
 @so iridium/libdevice_features.so
 @so iridium/libdevice_gamepad.so
+@so iridium/libdevice_service_binder_overrides.so
 @so iridium/libdevice_vr.so
 @so iridium/libdevice_vr_mojo_bindings.so
 @so iridium/libdevice_vr_mojo_bindings_blink.so
@@ -80,12 +83,14 @@
 @so iridium/libevents.so
 @so iridium/libevents_base.so
 @so iridium/libevents_devices_x11.so
-@so iridium/libevents_ozone_layout.so
 @so iridium/libevents_x.so
 @so iridium/libextras.so
 @so iridium/libffmpeg.so
 @so iridium/libfido.so
+@so iridium/libfile_info.so
 @so iridium/libfingerprint.so
+@so iridium/libframe_mojom.so
+@so iridium/libframe_mojom_shared.so
 @so iridium/libfreetype_harfbuzz.so
 @so iridium/libgamepad_mojom.so
 @so iridium/libgamepad_mojom_blink.so
@@ -112,12 +117,14 @@
 @so iridium/libgles2_utils.so
 @so iridium/libgpu.so
 @so iridium/libgpu_ipc_service.so
-@so iridium/libgtkui.so
+@so iridium/libgpu_memory_buffer_support_x11.so
+@so iridium/libgtk.so
 @so iridium/libheadless_non_renderer.so
 @so iridium/libhost.so
 @so iridium/libicui18n.so
 @so iridium/libicuuc.so
 @so iridium/libinterfaces_shared.so
+@so iridium/libip_address_mojom_support.so
 @so iridium/libipc.so
 @so iridium/libipc_mojom.so
 @so iridium/libipc_mojom_shared.so
@@ -144,7 +151,7 @@
 @so iridium/libmessage_support.so
 @so iridium/libmetrics_cpp.so
 @so iridium/libmidi.so
-@bin chrome/libmirclient.so.9
+@bin iridium/libmirclient.so.9
 @so iridium/libmirroring_service.so
 @so iridium/libmojo_base_lib.so
 @so iridium/libmojo_base_mojom.so
@@ -228,11 +235,14 @@
 @so iridium/libsurface.so
 @so iridium/libsystem_media_controls.so
 @so iridium/libtab_count_metrics.so
+@so iridium/libtab_groups.so
+@so iridium/libtesting_api_support.so
 @so iridium/libthread_linux.so
 @so iridium/libtracing.so
 @so iridium/libtracing_cpp.so
 @so iridium/libtracing_mojom.so
 @so iridium/libtracing_mojom_shared.so
+@so iridium/libtrknotify.so
 @so iridium/libui_accessibility_ax_mojom.so
 @so iridium/libui_accessibility_ax_mojom_blink.so
 @so iridium/libui_accessibility_ax_mojom_shared.so
@@ -248,6 +258,7 @@
 @so iridium/libui_base_x.so
 @so iridium/libui_data_pack.so
 @so iridium/libui_devtools.so
+@so iridium/libui_events_ipc.so
 @so iridium/libui_message_center_cpp.so
 @so iridium/libui_touch_selection.so
 @so iridium/liburl.so
@@ -266,6 +277,7 @@
 @so iridium/libvk_swiftshader.so
 @so iridium/libvr_base.so
 @so iridium/libvr_common.so
+@so iridium/libvulkan.so
 @so iridium/libvulkan_info.so
 @so iridium/libvulkan_init.so
 @so iridium/libvulkan_wrapper.so

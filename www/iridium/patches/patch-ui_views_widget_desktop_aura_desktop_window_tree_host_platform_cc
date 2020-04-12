@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.2 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.3 2020/04/12 10:52:46 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -560,7 +560,7 @@ void DesktopWindowTreeHostPlatform::SetFullscreen(bool
+@@ -556,7 +556,7 @@ void DesktopWindowTreeHostPlatform::SetFullscreen(bool
    DCHECK_EQ(fullscreen, IsFullscreen());
  
    if (IsFullscreen() == fullscreen)
@@ -12,7 +12,7 @@ Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
    // Else: the widget will be relaid out either when the window bounds change
    // or when |platform_window|'s fullscreen state changes.
  }
-@@ -673,7 +673,7 @@ void DesktopWindowTreeHostPlatform::OnWindowStateChang
+@@ -669,7 +669,7 @@ void DesktopWindowTreeHostPlatform::OnWindowStateChang
    // Now that we have different window properties, we may need to relayout the
    // window. (The windows code doesn't need this because their window change is
    // synchronous.)
@@ -21,7 +21,7 @@ Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
  }
  
  void DesktopWindowTreeHostPlatform::OnCloseRequest() {
-@@ -681,9 +681,12 @@ void DesktopWindowTreeHostPlatform::OnCloseRequest() {
+@@ -677,9 +677,12 @@ void DesktopWindowTreeHostPlatform::OnCloseRequest() {
  }
  
  void DesktopWindowTreeHostPlatform::OnActivationChanged(bool active) {
@@ -34,7 +34,7 @@ Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
  }
  
  base::Optional<gfx::Size>
-@@ -716,7 +719,7 @@ gfx::Rect DesktopWindowTreeHostPlatform::ToPixelRect(
+@@ -712,7 +715,7 @@ gfx::Rect DesktopWindowTreeHostPlatform::ToPixelRect(
    return gfx::ToEnclosingRect(rect_in_pixels);
  }
  
@@ -43,7 +43,7 @@ Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
    Widget* widget = native_widget_delegate_->AsWidget();
    NonClientView* non_client_view = widget->non_client_view();
    // non_client_view may be NULL, especially during creation.
-@@ -751,7 +754,7 @@ void DesktopWindowTreeHostPlatform::AddAdditionalInitP
+@@ -747,7 +750,7 @@ void DesktopWindowTreeHostPlatform::AddAdditionalInitP
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

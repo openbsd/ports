@@ -1,25 +1,14 @@
-$OpenBSD: patch-v8_src_diagnostics_perf-jit_cc,v 1.1 2020/04/02 15:12:00 robert Exp $
-
-XXX disable this for OpenBSD now
+$OpenBSD: patch-v8_src_diagnostics_perf-jit_cc,v 1.2 2020/04/12 10:52:46 robert Exp $
 
 Index: v8/src/diagnostics/perf-jit.cc
 --- v8/src/diagnostics/perf-jit.cc.orig
 +++ v8/src/diagnostics/perf-jit.cc
-@@ -37,7 +37,7 @@
- #include "src/utils/ostreams.h"
- #include "src/wasm/wasm-code-manager.h"
+@@ -28,7 +28,7 @@
+ #include "src/diagnostics/perf-jit.h"
  
+ // Only compile the {PerfJitLogger} on Linux.
 -#if V8_OS_LINUX
 +#if defined(V8_OS_LINUX) || defined(V8_OS_OPENBSD)
+ 
  #include <fcntl.h>
  #include <sys/mman.h>
- // jumbo: conflicts with v8::internal::InstanceType::MAP_TYPE
-@@ -48,7 +48,7 @@
- namespace v8 {
- namespace internal {
- 
--#if V8_OS_LINUX
-+#if defined(V8_OS_LINUX) || defined(V8_OS_OPENBSD)
- 
- struct PerfJitHeader {
-   uint32_t magic_;

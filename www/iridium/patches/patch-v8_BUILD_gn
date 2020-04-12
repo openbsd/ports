@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_BUILD_gn,v 1.12 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-v8_BUILD_gn,v 1.13 2020/04/12 10:52:46 robert Exp $
 
 Disable v8_enable_pointer_compression because it allocates 4G+ memory.
 A complete shitshow!
@@ -6,7 +6,7 @@ A complete shitshow!
 Index: v8/BUILD.gn
 --- v8/BUILD.gn.orig
 +++ v8/BUILD.gn
-@@ -673,6 +673,9 @@ config("toolchain") {
+@@ -691,6 +691,9 @@ config("toolchain") {
    } else if (target_os == "win") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_WIN" ]
@@ -16,7 +16,7 @@ Index: v8/BUILD.gn
    }
  
    # TODO(jochen): Support v8_enable_prof on Windows.
-@@ -3561,7 +3564,7 @@ v8_component("v8_libbase") {
+@@ -3616,7 +3619,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -25,7 +25,7 @@ Index: v8/BUILD.gn
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -3571,6 +3574,12 @@ v8_component("v8_libbase") {
+@@ -3626,6 +3629,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

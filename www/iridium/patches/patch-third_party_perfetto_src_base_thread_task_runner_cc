@@ -1,0 +1,29 @@
+$OpenBSD: patch-third_party_perfetto_src_base_thread_task_runner_cc,v 1.1 2020/04/12 10:52:46 robert Exp $
+
+Index: third_party/perfetto/src/base/thread_task_runner.cc
+--- third_party/perfetto/src/base/thread_task_runner.cc.orig
++++ third_party/perfetto/src/base/thread_task_runner.cc
+@@ -27,8 +27,9 @@
+ #include "perfetto/base/logging.h"
+ #include "perfetto/ext/base/unix_task_runner.h"
+ 
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
+-    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
+ #include <sys/prctl.h>
+ #endif
+ 
+@@ -84,8 +85,9 @@ void ThreadTaskRunner::RunTaskThread(
+   if (!name_.empty()) {
+ #if PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX)
+     pthread_setname_np(name_.c_str());
+-#elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
+-    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
++#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
+     prctl(PR_SET_NAME, name_.c_str());
+ #endif
+   }

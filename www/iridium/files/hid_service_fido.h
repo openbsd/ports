@@ -20,7 +20,7 @@ public:
   ~HidServiceFido() override;
 
   void Connect(const std::string &device_guid,
-               const ConnectCallback &connect) override;
+               ConnectCallback connect) override;
   base::WeakPtr<HidService> GetWeakPtr() override;
 
 private:

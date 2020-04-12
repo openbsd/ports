@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2020/04/05 09:02:19 robert Exp $
+# $OpenBSD: Makefile,v 1.100 2020/04/12 10:52:45 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,8 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Iridium browser
 
-V=			2020.03.80
-REVISION=		0
+V=			2020.04.81
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -71,6 +70,7 @@ WANTLIB += harfbuzz harfbuzz-subset
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
+WANTLIB += gbm xcb-dri3
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -132,7 +132,7 @@ GN_ARGS=	enable_nacl=false \
 		use_system_libdrm=true \
 		use_bundled_fontconfig=false \
 		use_system_harfbuzz=true \
-		use_system_freetype=true \
+		use_system_freetype=false \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \

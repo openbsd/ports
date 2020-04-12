@@ -1,8 +1,8 @@
-$OpenBSD: patch-tools_gn_base_files_scoped_file_cc,v 1.4 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-tools_gn_base_files_scoped_file_cc,v 1.5 2020/04/12 10:52:46 robert Exp $
 
-Index: tools/gn/base/files/scoped_file.cc
---- tools/gn/base/files/scoped_file.cc.orig
-+++ tools/gn/base/files/scoped_file.cc
+Index: tools/gn/src/base/files/scoped_file.cc
+--- tools/gn/src/base/files/scoped_file.cc.orig
++++ tools/gn/src/base/files/scoped_file.cc
 @@ -31,7 +31,7 @@ void ScopedFDCloseTraits::Free(int fd) {
    int ret = IGNORE_EINTR(close(fd));
  

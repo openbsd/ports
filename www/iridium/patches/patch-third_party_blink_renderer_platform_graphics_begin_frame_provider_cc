@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_graphics_begin_frame_provider_cc,v 1.1 2020/04/05 09:02:19 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_graphics_begin_frame_provider_cc,v 1.2 2020/04/12 10:52:46 robert Exp $
 
 Index: third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
 --- third_party/blink/renderer/platform/graphics/begin_frame_provider.cc.orig
@@ -14,4 +14,4 @@ Index: third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
 +#endif
  
    mojo::Remote<mojom::blink::EmbeddedFrameSinkProvider> provider;
-   Platform::Current()->GetInterfaceProvider()->GetInterface(
+   Platform::Current()->GetBrowserInterfaceBroker()->GetInterface(

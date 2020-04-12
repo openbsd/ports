@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_core_editing_editing_behavior_cc,v 1.4 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_editing_editing_behavior_cc,v 1.5 2020/04/12 10:52:46 robert Exp $
 
 Index: third_party/blink/renderer/core/editing/editing_behavior.cc
 --- third_party/blink/renderer/core/editing/editing_behavior.cc.orig
 +++ third_party/blink/renderer/core/editing/editing_behavior.cc
-@@ -270,7 +270,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
+@@ -274,7 +274,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
    // unexpected behaviour
    if (ch < ' ')
      return false;

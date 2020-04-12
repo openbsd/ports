@@ -1,18 +1,27 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.15 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.16 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig
 +++ chrome/app/generated_resources.grd
-@@ -5008,7 +5008,7 @@ Keep your key file in a safe place. You will need it t
+@@ -2,7 +2,7 @@
+ 
+ <!--
+ This file contains definitions of resources that will be translated for each
+-locale.  The variables is_win, is_macosx, is_linux, and is_posix are available
++locale.  The variables is_win, is_macosx, is_posix, and is_posix are available
+ for making strings OS specific.  Other platform defines such as use_titlecase
+ are declared in tools/grit/grit_rule.gni.
+ -->
+@@ -5141,7 +5141,7 @@ Keep your key file in a safe place. You will need it t
        </if>
  
        <!-- chrome://browser-switch strings -->
--      <if expr="is_win or is_macosx or (is_linux and not is_chromeos)">
-+      <if expr="is_win or is_macosx or (is_posix and not is_chromeos)">
+-      <if expr="is_win or is_macosx or (is_linux and not chromeos)">
++      <if expr="is_win or is_macosx or (is_posix and not chromeos)">
          <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
            Legacy Browser Support
          </message>
-@@ -6712,7 +6712,7 @@ the Bookmarks menu.">
+@@ -6861,7 +6861,7 @@ the Bookmarks menu.">
          Google Pay
        </message>
  
@@ -21,7 +30,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -7669,7 +7669,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -7822,7 +7822,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

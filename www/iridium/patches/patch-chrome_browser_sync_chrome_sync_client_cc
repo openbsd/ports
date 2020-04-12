@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.15 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.16 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/browser/sync/chrome_sync_client.cc
 --- chrome/browser/sync/chrome_sync_client.cc.orig
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -408,7 +408,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -442,7 +442,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
    }
  #endif  // defined(OS_CHROMEOS)
  

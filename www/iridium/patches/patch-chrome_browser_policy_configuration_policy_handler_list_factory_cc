@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.3 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.4 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -117,7 +117,7 @@
+@@ -118,7 +118,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
  
-@@ -357,11 +357,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -355,11 +355,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
    { key::kWebComponentsV0Enabled,
      prefs::kWebComponentsV0Enabled,
      base::Value::Type::BOOLEAN },
@@ -26,7 +26,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
  #if defined(OS_POSIX)
    { key::kNtlmV2Enabled,
      prefs::kNtlmV2Enabled,
-@@ -1147,7 +1147,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1163,7 +1163,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kExternalProtocolDialogShowAlwaysOpenCheckbox,
      base::Value::Type::BOOLEAN },
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -35,7 +35,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kAlternativeBrowserPath,
      browser_switcher::prefs::kAlternativeBrowserPath,
      base::Value::Type::STRING },
-@@ -1208,7 +1208,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1203,7 +1203,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      browser_switcher::prefs::kChromeParameters,
      base::Value::Type::LIST },
  #endif

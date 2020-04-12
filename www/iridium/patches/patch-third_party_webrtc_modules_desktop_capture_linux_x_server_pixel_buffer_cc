@@ -1,0 +1,19 @@
+$OpenBSD: patch-third_party_webrtc_modules_desktop_capture_linux_x_server_pixel_buffer_cc,v 1.1 2020/04/12 10:52:46 robert Exp $
+
+Index: third_party/webrtc/modules/desktop_capture/linux/x_server_pixel_buffer.cc
+--- third_party/webrtc/modules/desktop_capture/linux/x_server_pixel_buffer.cc.orig
++++ third_party/webrtc/modules/desktop_capture/linux/x_server_pixel_buffer.cc
+@@ -205,6 +205,13 @@ void XServerPixelBuffer::InitShm(const XWindowAttribut
+   Visual* default_visual = attributes.visual;
+   int default_depth = attributes.depth;
+ 
++#if defined(__OpenBSD__)
++  // pledge(2)
++  RTC_LOG(LS_WARNING) << "Unable to use shmget(2) while using pledge(2). "
++                         "Performance may be degraded.";
++  return;
++#endif
++
+   int major, minor;
+   Bool have_pixmaps;
+   if (!XShmQueryVersion(display_, &major, &minor, &have_pixmaps)) {

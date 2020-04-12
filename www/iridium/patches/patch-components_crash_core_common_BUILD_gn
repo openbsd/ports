@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.6 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.7 2020/04/12 10:52:45 robert Exp $
 
 Index: components/crash/core/common/BUILD.gn
 --- components/crash/core/common/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: components/crash/core/common/BUILD.gn
  }
  
  group("common") {
-@@ -173,7 +173,7 @@ source_set("unit_tests") {
+@@ -167,7 +167,7 @@ source_set("unit_tests") {
      sources += [ "objc_zombie_unittest.mm" ]
    }
  

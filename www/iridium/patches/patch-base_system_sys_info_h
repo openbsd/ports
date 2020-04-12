@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_system_sys_info_h,v 1.1 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-base_system_sys_info_h,v 1.2 2020/04/12 10:52:45 robert Exp $
 
 Index: base/system/sys_info.h
 --- base/system/sys_info.h.orig
 +++ base/system/sys_info.h
-@@ -188,6 +188,8 @@ class BASE_EXPORT SysInfo {
-   // See also SysUtils.java, method isLowEndDevice.
+@@ -194,6 +194,8 @@ class BASE_EXPORT SysInfo {
+   // On Desktop this returns true when memory <= 512MB.
    static bool IsLowEndDevice();
  
 +  static uint64_t MaxSharedMemorySize();

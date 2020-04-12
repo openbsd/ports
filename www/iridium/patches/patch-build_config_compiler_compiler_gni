@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.10 2020/04/12 10:52:45 robert Exp $
+
+Index: build/config/compiler/compiler.gni
+--- build/config/compiler/compiler.gni.orig
++++ build/config/compiler/compiler.gni
+@@ -47,7 +47,7 @@ declare_args() {
+   # only two architectures that are currently checked in). Turn this off when
+   # you are using a custom toolchain and need to control -B in cflags.
+   linux_use_bundled_binutils =
+-      linux_use_bundled_binutils_override && is_linux &&
++      linux_use_bundled_binutils_override && (is_linux && !is_openbsd) &&
+       (current_cpu == "x64" || current_cpu == "x86")
+   binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
+                               root_build_dir)

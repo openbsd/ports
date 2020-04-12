@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_app_google_chrome_strings_grd,v 1.22 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_app_google_chrome_strings_grd,v 1.23 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/app/google_chrome_strings.grd
 --- chrome/app/google_chrome_strings.grd.orig
 +++ chrome/app/google_chrome_strings.grd
-@@ -635,7 +635,7 @@ Google Chrome is unable to recover your settings.
+@@ -661,7 +661,7 @@ Google Chrome is unable to recover your settings.
        </if>
  
        <!-- about:browser-switch strings -->
--      <if expr="is_win or is_macosx or (is_linux and not is_chromeos)">
-+      <if expr="is_win or is_macosx or (is_posix and not is_chromeos)">
+-      <if expr="is_win or is_macosx or (is_linux and not chromeos)">
++      <if expr="is_win or is_macosx or (is_posix and not chromeos)">
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
            Your system administrator has configured Google Chrome to open an alternative browser to access <ph name="TARGET_URL_HOSTNAME">$1<ex>example.com</ex></ph>.
          </message>
-@@ -739,7 +739,7 @@ Google Chrome is unable to recover your settings.
+@@ -762,7 +762,7 @@ Google Chrome is unable to recover your settings.
        </message>
  
        <!-- ProcessSingleton -->
@@ -21,7 +21,7 @@ Index: chrome/app/google_chrome_strings.grd
          <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
            The profile appears to be in use by another Google Chrome process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>).  Chrome has locked the profile so that it doesn't get corrupted.  If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chrome.
          </message>
-@@ -979,7 +979,7 @@ Google Chrome is unable to recover your settings.
+@@ -991,7 +991,7 @@ Google Chrome is unable to recover your settings.
        </message>
  
        <!-- Plugin Placeholders -->

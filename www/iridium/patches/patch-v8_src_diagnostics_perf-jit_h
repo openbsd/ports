@@ -1,16 +1,14 @@
-$OpenBSD: patch-v8_src_diagnostics_perf-jit_h,v 1.1 2020/04/02 15:12:00 robert Exp $
-
-XXX Disable this for OpenBSD now
+$OpenBSD: patch-v8_src_diagnostics_perf-jit_h,v 1.2 2020/04/12 10:52:46 robert Exp $
 
 Index: v8/src/diagnostics/perf-jit.h
 --- v8/src/diagnostics/perf-jit.h.orig
 +++ v8/src/diagnostics/perf-jit.h
-@@ -33,7 +33,7 @@
- namespace v8 {
- namespace internal {
+@@ -31,7 +31,7 @@
+ #include "include/v8config.h"
  
+ // {PerfJitLogger} is only implemented on Linux.
 -#if V8_OS_LINUX
 +#if defined(V8_OS_LINUX) || defined(V8_OS_OPENBSD)
  
- // Linux perf tool logging support
- class PerfJitLogger : public CodeEventLogger {
+ #include "src/logging/log.h"
+ 

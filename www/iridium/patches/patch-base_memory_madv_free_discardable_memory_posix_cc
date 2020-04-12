@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_memory_madv_free_discardable_memory_posix_cc,v 1.1 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-base_memory_madv_free_discardable_memory_posix_cc,v 1.2 2020/04/12 10:52:45 robert Exp $
 
 Index: base/memory/madv_free_discardable_memory_posix.cc
 --- base/memory/madv_free_discardable_memory_posix.cc.orig
 +++ base/memory/madv_free_discardable_memory_posix.cc
-@@ -267,6 +267,10 @@ void MadvFreeDiscardableMemoryPosix::SetKeepMemoryForT
+@@ -282,6 +282,10 @@ void MadvFreeDiscardableMemoryPosix::SetKeepMemoryForT
  
  bool MadvFreeDiscardableMemoryPosix::IsResident() const {
    DFAKE_SCOPED_RECURSIVE_LOCK(thread_collision_warner_);
@@ -14,7 +14,7 @@ Index: base/memory/madv_free_discardable_memory_posix.cc
  #ifdef OS_MACOSX
    std::vector<char> vec(allocated_pages_);
  #else
-@@ -282,6 +286,7 @@ bool MadvFreeDiscardableMemoryPosix::IsResident() cons
+@@ -297,6 +301,7 @@ bool MadvFreeDiscardableMemoryPosix::IsResident() cons
        return false;
    }
    return true;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_widget_native_widget_aura_cc,v 1.1 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-ui_views_widget_native_widget_aura_cc,v 1.2 2020/04/12 10:52:46 robert Exp $
 
 Index: ui/views/widget/native_widget_aura.cc
 --- ui/views/widget/native_widget_aura.cc.orig
@@ -12,7 +12,7 @@ Index: ui/views/widget/native_widget_aura.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #include "ui/views/widget/desktop_aura/desktop_window_tree_host_linux.h"
  #endif
-@@ -1095,13 +1095,13 @@ void Widget::CloseAllSecondaryWidgets() {
+@@ -1099,13 +1099,13 @@ void Widget::CloseAllSecondaryWidgets() {
    EnumThreadWindows(GetCurrentThreadId(), WindowCallbackProc, 0);
  #endif
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_viz_service_frame_sinks_root_compositor_frame_sink_impl_cc,v 1.1 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-components_viz_service_frame_sinks_root_compositor_frame_sink_impl_cc,v 1.2 2020/04/12 10:52:45 robert Exp $
 
 Index: components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc
 --- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc.orig
@@ -12,7 +12,7 @@ Index: components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc
    // For X11, we need notify client about swap completion after resizing, so the
    // client can use it for synchronize with X11 WM.
    output_surface->SetNeedsSwapSizeNotifications(true);
-@@ -353,7 +353,7 @@ void RootCompositorFrameSinkImpl::DisplayDidCompleteSw
+@@ -418,7 +418,7 @@ void RootCompositorFrameSinkImpl::DisplayDidCompleteSw
  #if defined(OS_ANDROID)
    if (display_client_)
      display_client_->DidCompleteSwapWithSize(pixel_size);

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.9 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.10 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -3852,7 +3852,7 @@ const char kZeroStateFilesDescription[] =
+@@ -3651,7 +3651,7 @@ const char kZeroStateFilesDescription[] =
  
  #endif  // defined(OS_CHROMEOS)
  
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
-@@ -3861,7 +3861,7 @@ const char kDynamicTcmallocDescription[] =
+@@ -3660,7 +3660,7 @@ const char kDynamicTcmallocDescription[] =
      "utilization.";
  #endif  // BUILDFLAG(USE_TCMALLOC)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  // All views-based platforms --------------------------------------------------
  
-@@ -3886,13 +3886,13 @@ const char kReopenTabInProductHelpDescription[] =
+@@ -3685,13 +3685,13 @@ const char kReopenTabInProductHelpDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -37,7 +37,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
-@@ -3910,7 +3910,7 @@ const char kClickToCallDetectionV2Description[] =
+@@ -3709,7 +3709,7 @@ const char kClickToCallDetectionV2Description[] =
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -46,7 +46,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kRemoteCopyReceiverName[] =
      "Enables the remote copy feature to receive messages";
-@@ -3919,9 +3919,9 @@ const char kRemoteCopyReceiverDescription[] =
+@@ -3718,15 +3718,15 @@ const char kRemoteCopyReceiverDescription[] =
      "the clipboard and showing a notification to the user.";
  
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
@@ -58,12 +58,10 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
  const char kDirectManipulationStylusDescription[] =
-@@ -3936,7 +3936,7 @@ const char kProfileMenuRevampName[] = "Profile menu re
- const char kProfileMenuRevampDescription[] =
-     "Enables the new version of the profile menu (aka user menu).";
+     "If enabled, Chrome will scroll web pages on stylus drag.";
  
 -#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
- #if defined(OS_MACOSX) || defined(OS_CHROMEOS)
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
  

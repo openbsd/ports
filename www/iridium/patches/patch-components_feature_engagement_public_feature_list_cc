@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.4 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.5 2020/04/12 10:52:45 robert Exp $
 
 Index: components/feature_engagement/public/feature_list.cc
 --- components/feature_engagement/public/feature_list.cc.orig
 +++ components/feature_engagement/public/feature_list.cc
-@@ -58,7 +58,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -59,7 +59,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHBadgedTranslateManualTriggerFeature,
  #endif  // defined(OS_IOS)
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: components/feature_engagement/public/feature_list.cc
      &kIPHFocusModeFeature,
      &kIPHGlobalMediaControlsFeature,
      &kIPHReopenTabFeature,
-@@ -69,7 +69,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -70,7 +70,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHNewTabFeature,
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||

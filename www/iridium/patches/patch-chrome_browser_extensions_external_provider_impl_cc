@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.12 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.13 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/browser/extensions/external_provider_impl.cc
 --- chrome/browser/extensions/external_provider_impl.cc.orig
 +++ chrome/browser/extensions/external_provider_impl.cc
-@@ -762,7 +762,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+@@ -760,7 +760,7 @@ void ExternalProviderImpl::CreateExternalProviders(
    }
  #endif
    if (!profile->GetPrefs()->GetBoolean(pref_names::kBlockExternalExtensions)) {
@@ -12,7 +12,7 @@ Index: chrome/browser/extensions/external_provider_impl.cc
      provider_list->push_back(std::make_unique<ExternalProviderImpl>(
          service,
          base::MakeRefCounted<ExternalPrefLoader>(
-@@ -789,7 +789,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+@@ -787,7 +787,7 @@ void ExternalProviderImpl::CreateExternalProviders(
            bundled_extension_creation_flags));
  
        // Define a per-user source of external extensions.

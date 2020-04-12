@@ -1,0 +1,23 @@
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_receiver_bindings_cc,v 1.1 2020/04/12 10:52:45 robert Exp $
+
+Index: chromecast/browser/cast_content_browser_client_receiver_bindings.cc
+--- chromecast/browser/cast_content_browser_client_receiver_bindings.cc.orig
++++ chromecast/browser/cast_content_browser_client_receiver_bindings.cc
+@@ -39,7 +39,7 @@
+ #include "chromecast/external_mojo/broker_service/broker_service.h"
+ #endif
+ 
+-#if defined(OS_LINUX) && defined(USE_OZONE)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_OZONE)
+ #include "chromecast/browser/webview/js_channel_service.h"
+ #include "chromecast/common/mojom/js_channel.mojom.h"
+ #endif
+@@ -217,7 +217,7 @@ void CastContentBrowserClient::RunServiceInstance(
+ void CastContentBrowserClient::BindHostReceiverForRenderer(
+     content::RenderProcessHost* render_process_host,
+     mojo::GenericPendingReceiver receiver) {
+-#if defined(OS_LINUX) && defined(USE_OZONE)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_OZONE)
+   if (auto r = receiver.As<::chromecast::mojom::JsChannelBindingProvider>()) {
+     JsChannelService::Create(render_process_host, std::move(r),
+                              base::ThreadTaskRunnerHandle::Get());

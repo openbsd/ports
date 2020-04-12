@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_download_download_item_model_cc,v 1.3 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_item_model_cc,v 1.4 2020/04/12 10:52:45 robert Exp $
 
 Index: chrome/browser/download/download_item_model.cc
 --- chrome/browser/download/download_item_model.cc.orig
 +++ chrome/browser/download/download_item_model.cc
-@@ -575,7 +575,7 @@ bool DownloadItemModel::IsCommandChecked(
+@@ -592,7 +592,7 @@ bool DownloadItemModel::IsCommandChecked(
        return download_->GetOpenWhenComplete() ||
               download_crx_util::IsExtensionDownload(*download_);
      case DownloadCommands::ALWAYS_OPEN_TYPE:
@@ -12,7 +12,7 @@ Index: chrome/browser/download/download_item_model.cc
        if (download_commands->CanOpenPdfInSystemViewer()) {
          DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(profile());
          return prefs->ShouldOpenPdfInSystemReader();
-@@ -612,7 +612,7 @@ void DownloadItemModel::ExecuteCommand(DownloadCommand
+@@ -632,7 +632,7 @@ void DownloadItemModel::ExecuteCommand(DownloadCommand
        bool is_checked = IsCommandChecked(download_commands,
                                           DownloadCommands::ALWAYS_OPEN_TYPE);
        DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(profile());

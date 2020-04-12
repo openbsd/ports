@@ -1,0 +1,19 @@
+$OpenBSD: patch-chrome_browser_browser_switcher_browser_switcher_service_cc,v 1.1 2020/04/12 10:52:45 robert Exp $
+
+commit 15ef0a8101b82d480ed94b20a6266a41ec166bf3
+Author: Takashi Toyoshima <toyoshim@chromium.org>
+Date:   Fri Jan 31 06:04:23 2020 +0000
+
+    Remove unintentional LOG(ERROR)
+
+Index: chrome/browser/browser_switcher/browser_switcher_service.cc
+--- chrome/browser/browser_switcher/browser_switcher_service.cc.orig
++++ chrome/browser/browser_switcher/browser_switcher_service.cc
+@@ -235,7 +235,6 @@ BrowserSwitcherService::BrowserSwitcherService(Profile
+ BrowserSwitcherService::~BrowserSwitcherService() = default;
+ 
+ void BrowserSwitcherService::Init() {
+-  LOG(ERROR) << "XXX Init()";
+   LoadRulesFromPrefs();
+   StartDownload(fetch_delay());
+ }

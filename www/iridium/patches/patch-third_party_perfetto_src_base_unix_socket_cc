@@ -1,0 +1,17 @@
+$OpenBSD: patch-third_party_perfetto_src_base_unix_socket_cc,v 1.1 2020/04/12 10:52:46 robert Exp $
+
+Index: third_party/perfetto/src/base/unix_socket.cc
+--- third_party/perfetto/src/base/unix_socket.cc.orig
++++ third_party/perfetto/src/base/unix_socket.cc
+@@ -603,7 +603,11 @@ void UnixSocket::ReadPeerCredentials() {
+ 
+ #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
+     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
++#if PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
++  struct sockpeercred user_cred;
++#else
+   struct ucred user_cred;
++#endif
+   socklen_t len = sizeof(user_cred);
+   int fd = sock_raw_.fd();
+   int res = getsockopt(fd, SOL_SOCKET, SO_PEERCRED, &user_cred, &len);
