@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/16 07:37:33 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/12 14:46:04 sthen Exp $
 
 COMMENT =	lightweight GTK calendar applet
 
 GH_ACCOUNT =	dmedvinsky
 GH_PROJECT =	gsimplecal
 GH_TAGNAME =	v2.1
+REVISION =	0
 
 CATEGORIES =	productivity x11
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # BSD
 PERMIT_PACKAGE = Yes

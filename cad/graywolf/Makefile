@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/12 14:46:04 sthen Exp $
 
 COMMENT =	placement tool used in VLSI design
 
 GH_ACCOUNT =	rubund
 GH_PROJECT =	graywolf
 GH_TAGNAME =	0.1.6
+REVISION =	0
 
 SHARED_LIBS +=  ycadgraywolf	0.0	# 0.0
 
 CATEGORIES =	cad
 
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

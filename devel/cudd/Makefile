@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/12 14:46:04 sthen Exp $
 
 COMMENT =	Colorado University Decision Diagram
 
@@ -7,12 +7,13 @@ GH_ACCOUNT =	ivmai
 GH_PROJECT =	cudd
 GH_TAGNAME =	cudd-$V
 DISTNAME =	cudd-$V
+REVISION=	0
 
 CATEGORIES =	devel
 
 SHARED_LIBS +=  cudd			0.0	# 0.0
 
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

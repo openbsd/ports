@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.81 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.82 2020/04/12 14:46:04 sthen Exp $
 
 COMMENT=		a fast, compact Motif/X11 plain text editor
 
 DISTNAME=		nedit-5.7
 P_V=			0.5
 EPOCH=			0
+REVISION =		0
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:0
 
 CATEGORIES=		editors x11
 HOMEPAGE =		https://sourceforge.net/projects/nedit/
-MAINTAINER =		Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =		Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nedit/}
 MASTER_SITES0=		http://distfiles.sigtrap.nl/
