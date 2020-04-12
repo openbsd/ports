@@ -33,7 +33,7 @@ SHA256 (cargo/wasi-0.7.0.tar.gz) = uJw85M4Uvcb7a+r57HkoyjMd5d9+XqJ4N1ZCovR4Vw0=
 SHA256 (cargo/winapi-0.3.8.tar.gz) = gJMJHusmCQahg+auGr26LvXvIleiGAESiJnD/GmSKcY=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (cbindgen-0.13.1.tar.gz) = vIpPthF+MM57fh/GJHDtu5GRqGpfcWjcEOEimDq6LF0=
+SHA256 (cbindgen-0.14.1.tar.gz) = Q2dCFrBmhQHlxFgtYDQelEWj/p41gxMR3P/3oiMmSks=
 SIZE (cargo/ansi_term-0.11.0.tar.gz) = 17087
 SIZE (cargo/atty-0.2.13.tar.gz) = 4764
 SIZE (cargo/bitflags-1.2.1.tar.gz) = 16745
@@ -69,4 +69,4 @@ SIZE (cargo/wasi-0.7.0.tar.gz) = 33941
 SIZE (cargo/winapi-0.3.8.tar.gz) = 1128308
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (cbindgen-0.13.1.tar.gz) = 162009
+SIZE (cbindgen-0.14.1.tar.gz) = 168400
