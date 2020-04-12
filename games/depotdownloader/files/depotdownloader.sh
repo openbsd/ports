@@ -23,7 +23,7 @@ while [ $# -gt 0 ]; do
 done
 
 if [ -n "$appname" ]; then
-	appentry="$(ftp -Vo - https://api.steampowered.com/ISteamApps/GetAppList/v0002 \
+	appentry="$(ftp -Vo - https://api.steampowered.com/ISteamApps/GetAppList/v2 \
 		| grep -Eio "\{[^\{]*\"[[:blank:]]*$appname[[:blank:]]*\"")"
 	appid="$(echo "$appentry" | grep -Eo '[[:digit:]]+')"
 	if [ -z "$appid" ]; then
