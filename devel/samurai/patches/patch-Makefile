@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1 2020/04/12 04:14:36 kmos Exp $
+
+base-gcc doesn't like -Wpedantic
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -2,7 +2,7 @@
+ 
+ PREFIX=/usr/local
+ MANDIR=$(PREFIX)/share/man
+-ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wpedantic
++ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra
+ OBJ=\
+ 	build.o\
+ 	deps.o\
