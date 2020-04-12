@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/09/20 23:21:15 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/04/12 13:41:59 thfr Exp $
 lib/steamworks-nosteam/
 lib/steamworks-nosteam/Steamworks.NET.dll
 lib/steamworks-nosteam/libSteamworksNative.so.0.0
+@lib lib/steamworks-nosteam/libcestub.so.${LIBcestub_VERSION}
 lib/steamworks-nosteam/libsteamwrapper.so.0.0
+@bin lib/steamworks-nosteam/steam.hdll
