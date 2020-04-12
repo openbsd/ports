@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2020/04/02 07:37:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.168 2020/04/12 14:27:59 sthen Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -10,6 +10,8 @@ DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 
 MASTER_SITES0=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${STABLE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 MASTER_SITES1=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${OLD_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 
@@ -57,8 +59,6 @@ CONFIGURE_ARGS=		--disable-tools
 
 # error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
