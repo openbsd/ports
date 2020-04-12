@@ -1,0 +1,14 @@
+$OpenBSD: patch-arch_arm64_boot_dts_rockchip_rk3399-rockpro64_dtsi,v 1.1 2020/04/12 10:59:07 jsg Exp $
+
+Index: arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
+--- arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi.orig
++++ arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
+@@ -11,7 +11,7 @@
+ 
+ / {
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	clkin_gmac: external-gmac-clock {

@@ -1,7 +1,8 @@
-$OpenBSD: patch-arch_arm_boot_dts_omap3-beagle_dts,v 1.1 2016/07/17 15:09:39 jsg Exp $
---- arch/arm/boot/dts/omap3-beagle.dts.orig	Sun Jul 17 00:58:41 2016
-+++ arch/arm/boot/dts/omap3-beagle.dts	Sun Jul 17 01:00:01 2016
-@@ -24,6 +24,10 @@
+$OpenBSD: patch-arch_arm_boot_dts_omap3-beagle_dts,v 1.2 2020/04/12 10:59:07 jsg Exp $
+Index: arch/arm/boot/dts/omap3-beagle.dts
+--- arch/arm/boot/dts/omap3-beagle.dts.orig
++++ arch/arm/boot/dts/omap3-beagle.dts
+@@ -21,6 +21,10 @@
  		reg = <0x80000000 0x10000000>; /* 256 MB */
  	};
  

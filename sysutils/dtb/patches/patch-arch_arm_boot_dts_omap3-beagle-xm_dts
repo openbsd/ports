@@ -1,7 +1,8 @@
-$OpenBSD: patch-arch_arm_boot_dts_omap3-beagle-xm_dts,v 1.1 2016/07/17 15:09:39 jsg Exp $
---- arch/arm/boot/dts/omap3-beagle-xm.dts.orig	Sun Jul 17 00:58:31 2016
-+++ arch/arm/boot/dts/omap3-beagle-xm.dts	Sun Jul 17 00:59:41 2016
-@@ -24,6 +24,10 @@
+$OpenBSD: patch-arch_arm_boot_dts_omap3-beagle-xm_dts,v 1.2 2020/04/12 10:59:07 jsg Exp $
+Index: arch/arm/boot/dts/omap3-beagle-xm.dts
+--- arch/arm/boot/dts/omap3-beagle-xm.dts.orig
++++ arch/arm/boot/dts/omap3-beagle-xm.dts
+@@ -21,6 +21,10 @@
  		reg = <0x80000000 0x20000000>; /* 512 MB */
  	};
  
