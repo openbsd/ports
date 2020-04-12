@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.149 2020/02/21 19:09:32 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.150 2020/04/12 14:26:02 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -125,8 +125,6 @@ PSEUDO_FLAVORS+=	no_apache
 .if ${MACHINE_ARCH:Maarch64}
 BUILD_PACKAGES:=	${BUILD_PACKAGES:N-apache}
 .endif
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # sapi
 CONFIGURE_ARGS+=	--enable-cli \
