@@ -1,24 +1,24 @@
-$OpenBSD: patch-src_gfx_main_c,v 1.2 2019/11/01 17:38:04 bentley Exp $
+$OpenBSD: patch-src_gfx_main_c,v 1.3 2020/04/12 04:24:56 bentley Exp $
 
 Index: src/gfx/main.c
 --- src/gfx/main.c.orig
 +++ src/gfx/main.c
-@@ -15,6 +15,8 @@
- 
- #include "version.h"
+@@ -50,6 +50,8 @@ static struct option const longopts[] = {
+ 	{ NULL,              no_argument,       NULL, 0   }
+ };
  
 +int pledge(const char *, const char *);
 +
  static void print_usage(void)
  {
- 	printf(
-@@ -34,6 +36,9 @@ int main(int argc, char *argv[])
+ 	fputs(
+@@ -79,6 +81,9 @@ int main(int argc, char *argv[])
+ 	struct Mapfile tilemap = {0};
  	struct Mapfile attrmap = {0};
  	char *ext;
- 	const char *errmsg = "Warning: The PNG's %s setting is not the same as the setting defined on the command line.";
 +
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1)
 +		errx(1, "pledge");
  
- 	if (argc == 1)
- 		print_usage();
+ 	opts.tilemapfile = "";
+ 	opts.attrmapfile = "";

@@ -1,24 +1,24 @@
-$OpenBSD: patch-src_link_main_c,v 1.1.1.1 2018/04/03 05:31:41 bentley Exp $
+$OpenBSD: patch-src_link_main_c,v 1.2 2020/04/12 04:24:56 bentley Exp $
 
 Index: src/link/main.c
 --- src/link/main.c.orig
 +++ src/link/main.c
-@@ -36,6 +36,8 @@ int32_t options;
- int32_t fillchar;
- char *smartlinkstartsymbol;
+@@ -51,6 +51,8 @@ FILE *openFile(char const *fileName, char const *mode)
+ /* Short options */
+ static char const *optstring = "dl:m:n:O:o:p:s:tVvw";
  
 +int pledge(const char *, const char *);
 +
  /*
-  * Print the usagescreen
-  */
-@@ -56,6 +58,9 @@ int main(int argc, char *argv[])
- {
- 	int ch;
- 	char *ep;
+  * Equivalent long options
+  * Please keep in the same order as short opts
+@@ -112,6 +114,9 @@ int main(int argc, char *argv[])
+ 	int optionChar;
+ 	char *endptr; /* For error checking with `strtol` */
+ 	unsigned long value; /* For storing `strtoul`'s return value */
 +
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1)
 +		errx(1, "pledge");
  
- 	if (argc == 1)
- 		print_usage();
+ 	/* Parse options */
+ 	while ((optionChar = musl_getopt_long_only(argc, argv, optstring,

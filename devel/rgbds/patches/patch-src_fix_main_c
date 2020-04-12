@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_fix_main_c,v 1.1.1.1 2018/04/03 05:31:41 bentley Exp $
+$OpenBSD: patch-src_fix_main_c,v 1.2 2020/04/12 04:24:56 bentley Exp $
 
 Index: src/fix/main.c
 --- src/fix/main.c.orig
 +++ src/fix/main.c
-@@ -17,6 +17,8 @@
- 
- #include "version.h"
+@@ -49,6 +49,8 @@ static struct option const longopts[] = {
+ 	{ NULL,               no_argument,       NULL, 0   }
+ };
  
 +int pledge(const char *, const char *);
 +
  static void print_usage(void)
  {
- 	printf(
-@@ -65,6 +67,9 @@ int main(int argc, char *argv[])
+ 	fputs(
+@@ -107,6 +109,9 @@ int main(int argc, char *argv[])
  	int ramsize = 0;   /* RAM size ID */
  	int version = 0;   /* mask ROM version number */
  	int padvalue = 0;  /* to pad the rom with if it changes size */
@@ -20,5 +20,5 @@ Index: src/fix/main.c
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1)
 +		errx(1, "pledge");
  
- 	while ((ch = getopt(argc, argv, "Ccf:i:jk:l:m:n:p:sr:t:Vv")) != -1) {
- 		switch (ch) {
+ 	while ((ch = musl_getopt_long_only(argc, argv, optstring, longopts,
+ 					   NULL)) != -1) {

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/01 17:38:04 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/12 04:24:56 bentley Exp $
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =	Game Boy development system
 
-V =		0.3.9
+V =		0.4.0
 DISTNAME =	rgbds-$V
 
 CATEGORIES =	devel
@@ -30,5 +30,7 @@ MAKE_FLAGS =	CFLAGS="${CFLAGS}" \
 
 # tests require network access, involve building software with unclear license
 NO_TEST =	Yes
+
+WRKDIST =	${WRKDIR}/rgbds
 
 .include <bsd.port.mk>
