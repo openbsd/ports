@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2019/07/12 02:16:23 visa Exp $
+# $OpenBSD: Makefile,v 1.116 2020/04/12 18:29:01 cwen Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
@@ -56,7 +56,8 @@ GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 
 .include <bsd.port.arch.mk>
 .if (${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "mips64" || \
-     ${MACHINE_ARCH} == "mips64el") && ${PROPERTIES:Mclang}
+     ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "powerpc") \
+     && ${PROPERTIES:Mclang}
 CFLAGS += -fheinous-gnu-extensions
 .endif
 

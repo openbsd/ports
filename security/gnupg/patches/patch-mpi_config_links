@@ -1,0 +1,15 @@
+$OpenBSD: patch-mpi_config_links,v 1.7 2020/04/12 18:29:01 cwen Exp $
+
+Fix "error: unsupported argument '-mppc' to option 'Wa,'" with clang on macppc
+
+Index: mpi/config.links
+--- mpi/config.links.orig
++++ mpi/config.links
+@@ -234,7 +234,6 @@ case "${host}" in
+        echo '/* configured for {Open,Net}BSD on powerpc */' >>./mpi/asm-syntax.h
+        echo '#define ELF_SYNTAX'                 >>./mpi/asm-syntax.h
+        cat   $srcdir/mpi/powerpc32/syntax.h	 >>./mpi/asm-syntax.h
+-       mpi_sflags="-Wa,-mppc"
+        path="powerpc32"
+        ;;
+ 
