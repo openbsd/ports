@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/12/08 17:02:33 thfr Exp $
+# $OpenBSD: Makefile,v 1.8 2020/04/12 13:37:32 thfr Exp $
 
 # Don't bother on non-mono archs.
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
 
-V =		2.1
+V =		2.2
 COMMENT =	run FNA/XNA games on OpenBSD
 DISTNAME =	fnaify-${V}
 CATEGORIES =	games
