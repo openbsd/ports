@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/08/10 23:03:29 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/04/12 14:30:21 bcallah Exp $
 bin/nfoview
 lib/python${MODPY_VERSION}/site-packages/nfoview/
 lib/python${MODPY_VERSION}/site-packages/nfoview-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/nfoview/__init__.py
-lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}pyc
