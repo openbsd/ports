@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2019/11/23 10:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2020/04/12 14:47:31 sthen Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -90,6 +90,8 @@ MULTI_PACKAGES=		-main -goa -nfs -smb -google
 PSEUDO_FLAVORS=		no_smb no_goa no_nfs no_google bootstrap
 FLAVOR?=		no_smb no_goa no_nfs no_google bootstrap
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 .include <bsd.port.arch.mk>
 
 # disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
@@ -116,8 +118,6 @@ CONFIGURE_ARGS +=	-Dgoogle=false
 
 # test_polkitd.py, gvfs-test
 TEST_DEPENDS=		devel/py-gobject3
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # -Dadmin=false
 post-install:
