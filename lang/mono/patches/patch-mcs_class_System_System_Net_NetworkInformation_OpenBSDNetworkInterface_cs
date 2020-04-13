@@ -1,4 +1,8 @@
-$OpenBSD: patch-mcs_class_System_System_Net_NetworkInformation_OpenBSDNetworkInterface_cs,v 1.1 2020/04/06 15:11:11 robert Exp $
+$OpenBSD: patch-mcs_class_System_System_Net_NetworkInformation_OpenBSDNetworkInterface_cs,v 1.2 2020/04/13 19:26:20 robert Exp $
+
+AF_INET6 is defined as 24 in OpenBSD however some ports are distributed in
+a binary form and they freak out if there is a mismatch between the mono
+runtime that they were compiled with and the one that they are running with.
 
 Index: mcs/class/System/System.Net.NetworkInformation/OpenBSDNetworkInterface.cs
 --- mcs/class/System/System.Net.NetworkInformation/OpenBSDNetworkInterface.cs.orig
@@ -11,7 +15,7 @@ Index: mcs/class/System/System.Net.NetworkInformation/OpenBSDNetworkInterface.cs
 +//	Robert Nagy (robert@openbsd.org)
 +//	Conrad Meyer (cem@FreeBSD.org)
 +//
-+// Copyright (c) 2019 Conrad Meyer, Robert Nagy
++// Copyright (c) 2020, 2019 Conrad Meyer, Robert Nagy
 +//
 +// Permission is hereby granted, free of charge, to any person obtaining
 +// a copy of this software and associated documentation files (the
@@ -36,7 +40,7 @@ Index: mcs/class/System/System.Net.NetworkInformation/OpenBSDNetworkInterface.cs
 +	internal class OpenBSDNetworkInterfaceAPI : MacOsNetworkInterfaceAPI
 +	{
 +		public OpenBSDNetworkInterfaceAPI ()
-+			: base (AF_INET6: 24)
++			: base (AF_INET6: 30)
 +		{
 +		}
 +	}
