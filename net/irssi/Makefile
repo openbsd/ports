@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2020/04/12 23:42:58 jca Exp $
+# $OpenBSD: Makefile,v 1.88 2020/04/13 00:02:48 jca Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -9,6 +9,7 @@ V =		1.2.2
 DISTNAME =	irssi-$V
 PKGSPEC =	irssi-=$V
 PKGNAME-main =	irssi-$V
+PKGNAME-otr =	irssi-otr-$V
 REVISION =	0
 
 CATEGORIES =	net
