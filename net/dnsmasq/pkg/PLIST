@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/04/30 06:02:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/04/13 11:05:50 sthen Exp $
 @newgroup _dnsmasq:631
 @newuser _dnsmasq:631:_dnsmasq:daemon:dnsmasq Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/dnsmasq
 @man man/man8/dnsmasq.8
 @bin sbin/dnsmasq
 share/examples/dnsmasq/
 share/examples/dnsmasq/dnsmasq.conf.example
 @sample ${SYSCONFDIR}/dnsmasq.conf
-@rcscript ${RCDIR}/dnsmasq

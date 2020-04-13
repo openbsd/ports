@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_config_h,v 1.21 2019/01/17 10:14:33 jca Exp $
+$OpenBSD: patch-src_config_h,v 1.22 2020/04/13 11:05:50 sthen Exp $
+
 Index: src/config.h
 --- src/config.h.orig
 +++ src/config.h
