@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/04/12 23:42:58 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/04/13 00:50:47 jca Exp $
 @pkgpath net/irssi,socks
 @bin bin/irssi
 include/irssi/
@@ -151,7 +151,7 @@ include/irssi/src/lib-config/module.h
 lib/irssi/
 lib/irssi/modules/
 lib/irssi/modules/libirc_proxy.la
-lib/irssi/modules/libirc_proxy.so
+@so lib/irssi/modules/libirc_proxy.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
@@ -161,12 +161,12 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/Irc.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/Irc.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
 @man man/man1/irssi.1
 share/doc/irssi/
 share/doc/irssi/capsicum.txt

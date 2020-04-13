@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2020/04/13 00:02:48 jca Exp $
+# $OpenBSD: Makefile,v 1.89 2020/04/13 00:50:47 jca Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -10,7 +10,7 @@ DISTNAME =	irssi-$V
 PKGSPEC =	irssi-=$V
 PKGNAME-main =	irssi-$V
 PKGNAME-otr =	irssi-otr-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
@@ -25,6 +25,8 @@ WANTLIB +=	c crypto curses glib-2.0 gmodule-2.0 \
 		iconv intl m pcre perl pthread ssl
 
 MASTER_SITES =	https://github.com/irssi/irssi/releases/download/${V}/
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS =	devel/glib2>=2.28.0
 
