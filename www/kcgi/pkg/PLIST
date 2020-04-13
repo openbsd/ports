@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/03/29 19:33:27 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/04/13 14:34:37 jturner Exp $
 include/kcgi.h
 include/kcgihtml.h
 include/kcgijson.h
@@ -52,6 +52,10 @@ lib/pkgconfig/kcgi.pc
 @man man/man3/khttp_putc.3
 @man man/man3/khttp_puts.3
 @man man/man3/khttp_template.3
+@man man/man3/khttp_urlabs.3
+@man man/man3/khttp_urldecode.3
+@man man/man3/khttp_urlencode.3
+@man man/man3/khttp_urlpart.3
 @man man/man3/khttp_write.3
 @man man/man3/khttpbasic_validate.3
 @man man/man3/khttpdigest_validate.3
@@ -74,8 +78,17 @@ lib/pkgconfig/kcgi.pc
 @man man/man3/kutil_invalidate.3
 @man man/man3/kutil_log.3
 @man man/man3/kutil_openlog.3
-@man man/man3/kutil_urlencode.3
 @man man/man3/kvalid_string.3
+@man man/man3/kxml_close.3
+@man man/man3/kxml_open.3
+@man man/man3/kxml_pop.3
+@man man/man3/kxml_popall.3
+@man man/man3/kxml_prologue.3
+@man man/man3/kxml_push.3
+@man man/man3/kxml_pushnull.3
+@man man/man3/kxml_putc.3
+@man man/man3/kxml_puts.3
+@man man/man3/kxml_write.3
 @man man/man8/kfcgi.8
 @bin sbin/kfcgi
 share/kcgi/
