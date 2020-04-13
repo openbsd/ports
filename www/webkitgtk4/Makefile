@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2020/03/12 09:17:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2020/04/13 14:02:59 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,7 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.28.0
+V =			2.28.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
