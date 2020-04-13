@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2020/02/14 10:29:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/04/13 17:01:46 sthen Exp $
 
-V=		4.3.0
+V=		4.3.1
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Motion-Project
 GH_PROJECT=	motion
-GH_TAGNAME=	Release-$V
+GH_TAGNAME=	release-$V
 
 CATEGORIES=	multimedia
 
