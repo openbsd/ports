@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export FONTCONFIG_PATH="${TRUEBROWSER_DIR}/browser/fontconfig/"
+export FONTCONFIG_FILE="fonts.conf"
+
+exec ${TRUEBROWSER_DIR}/${BROWSER_NAME} ${@}

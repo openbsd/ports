@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2020/04/09 21:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2020/04/13 16:25:42 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -16,9 +16,12 @@ PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
 DISTNAME =		src-firefox-tor-browser-68.7.0esr-9.0-2-build1
+REVISION =		0
 
+FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
-			src-tor-launcher-${TL_VERSION}.tar.xz
+			src-tor-launcher-${TL_VERSION}.tar.xz \
+			tor-browser-linux64-${TB_VERSION}_en-US.tar.xz
 
 SO_VERSION =		5.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
@@ -99,6 +102,7 @@ CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 CONFIGURE_ARGS +=	--with-clang-path=${LOCALBASE}/bin/clang
 
 post-extract:
+	mv ${WRKDIR}/tor-browser_en-US ${WRKSRC}
 	mv ${WRKDIR}/tor-launcher-${TL_VERSION}/ \
 		${WRKSRC}/browser/extensions/tor-launcher
 
@@ -112,10 +116,16 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/browser/extensions/tor-launcher/src/defaults/preferences/torlauncher-prefs.js
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/third_party/rust/bindgen/.cargo-checksum.json
+	# Not using a patch for this; patch context would contain UTF-8
+	sed -i 's/#ifdef XP_LINUX/#if defined(XP_LINUX) || defined(XP_OPENBSD)/' \
+	    ${WRKSRC}/browser/app/profile/000-tor-browser.js
 
 BROWSER_DIR = ${PREFIX}/lib/${BROWSER_NAME}
+TRUEBROWSER_DIR = ${TRUEPREFIX}/lib/${BROWSER_NAME}
 BROWSER_CFG = ${BROWSER_DIR}/${BROWSER_NAME}.cfg
 BROWSER_INI = ${BROWSER_DIR}/distribution/distribution.ini
+
+SUBST_VARS +=		TRUEBROWSER_DIR
 
 post-install:
 	# install prefs, bookmarks, app config file for Tor browser
@@ -150,5 +160,19 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${BROWSER_NAME}
 	${SUBST_DATA} ${FILESDIR}/torrc-defaults \
 		${PREFIX}/share/${BROWSER_NAME}/torrc-defaults
+
+	# install fonts.conf and fonts
+	${INSTALL_DATA_DIR} ${BROWSER_DIR}/browser/fontconfig
+	${SUBST_DATA} \
+	    ${WRKSRC}/tor-browser_en-US/Browser/TorBrowser/Data/fontconfig/fonts.conf \
+	    ${BROWSER_DIR}/browser/fontconfig/fonts.conf
+	${INSTALL_DATA_DIR} ${BROWSER_DIR}/browser/fonts
+	cp ${WRKSRC}/tor-browser_en-US/Browser/fonts/* \
+	    ${BROWSER_DIR}/browser/fonts
+
+	# install wrapper script (remove symlink first)
+	rm ${PREFIX}/bin/${BROWSER_NAME}
+	${SUBST_PROGRAM} ${FILESDIR}/${BROWSER_NAME} \
+	    ${PREFIX}/bin/${BROWSER_NAME}
 
 .include <bsd.port.mk>

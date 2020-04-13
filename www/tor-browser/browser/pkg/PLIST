@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/02/13 07:41:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/04/13 16:25:42 sthen Exp $
 @conflict tor-launcher-*
 @conflict torbutton-*
 @pkgpath www/tor-browser/tor-launcher
@@ -25,6 +25,55 @@ lib/${BROWSER_NAME}/browser/defaults/profile/
 lib/${BROWSER_NAME}/browser/defaults/profile/bookmarks.html
 lib/${BROWSER_NAME}/browser/features/
 lib/${BROWSER_NAME}/browser/features/onboarding@mozilla.org.xpi
+lib/${BROWSER_NAME}/browser/fontconfig/
+lib/${BROWSER_NAME}/browser/fontconfig/fonts.conf
+lib/${BROWSER_NAME}/browser/fonts/
+lib/${BROWSER_NAME}/browser/fonts/Arimo-Bold.ttf
+lib/${BROWSER_NAME}/browser/fonts/Arimo-BoldItalic.ttf
+lib/${BROWSER_NAME}/browser/fonts/Arimo-Italic.ttf
+lib/${BROWSER_NAME}/browser/fonts/Arimo-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/Cousine-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoEmoji-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoNaskhArabic-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansArmenian-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansBengali-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansBuginese-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansCanadianAboriginal-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansCherokee-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansDevanagari-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansEthiopic-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansGeorgian-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansGujarati-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansGurmukhi-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansHebrew-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansJP-Regular.otf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansKR-Regular.otf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansKannada-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansKhmer-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansLao-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansMalayalam-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansMongolian-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansMyanmar-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansOriya-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansSC-Regular.otf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansSinhala-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansTC-Regular.otf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansTamil-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansTelugu-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansThaana-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansThai-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansTibetan-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSansYi-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSerifArmenian-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSerifKhmer-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSerifLao-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSerifThai-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/STIXMath-Regular.otf
+lib/${BROWSER_NAME}/browser/fonts/Tinos-Bold.ttf
+lib/${BROWSER_NAME}/browser/fonts/Tinos-BoldItalic.ttf
+lib/${BROWSER_NAME}/browser/fonts/Tinos-Italic.ttf
+lib/${BROWSER_NAME}/browser/fonts/Tinos-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/TwemojiMozilla.ttf
 lib/${BROWSER_NAME}/browser/omni.ja
 lib/${BROWSER_NAME}/chrome.manifest
 lib/${BROWSER_NAME}/defaults/

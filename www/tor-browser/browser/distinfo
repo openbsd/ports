@@ -1,4 +1,6 @@
 SHA256 (mozilla/src-firefox-tor-browser-68.7.0esr-9.0-2-build1.tar.xz) = 3paD2CYF+AUbO1xO0rAIHXSFqSGQeJmpJzg6F3/I+vg=
 SHA256 (mozilla/src-tor-launcher-0.2.20.5.tar.xz) = LVEbHAxcGf49cC8NF4bVYfFD7k2GA8SX+f+VA5p7L4U=
+SHA256 (mozilla/tor-browser-linux64-9.0.9_en-US.tar.xz) = z5ELlXfclLz+72D+mQTn+PKSd78ac2BgDDKVYiXQRHM=
 SIZE (mozilla/src-firefox-tor-browser-68.7.0esr-9.0-2-build1.tar.xz) = 348594032
 SIZE (mozilla/src-tor-launcher-0.2.20.5.tar.xz) = 210916
+SIZE (mozilla/tor-browser-linux64-9.0.9_en-US.tar.xz) = 80156396
