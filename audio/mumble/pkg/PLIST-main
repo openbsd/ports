@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/02/25 05:14:52 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2020/04/13 13:18:36 kn Exp $
+@pkgpath audio/mumble
 @bin bin/mumble
 lib/mumble/
 @so lib/mumble/liblink.so

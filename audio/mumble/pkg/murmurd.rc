@@ -1,0 +1,16 @@
+#!/bin/ksh
+#
+# $OpenBSD: murmurd.rc,v 1.1 2020/04/13 13:18:36 kn Exp $
+
+daemon="${TRUEPREFIX}/sbin/murmurd"
+daemon_flags="-ini ${SYSCONFDIR}/murmur.ini"
+daemon_user="_murmurd"
+
+. /etc/rc.d/rc.subr
+
+# only reloads TLS settings
+rc_reload() {
+	pkill -USR1 -T "${daemon_rtable}" -xf "${pexp}"
+}
+
+rc_cmd $1

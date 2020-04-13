@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-server,v 1.1 2020/04/13 13:18:36 kn Exp $
+@newgroup _murmurd:854
+@newuser _murmurd:854:_murmurd:daemon:Mumble server:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/murmurd
+@man man/man1/murmurd.1
+@bin sbin/murmurd
+share/examples/murmur/
+share/examples/murmur/murmur.ini
+@mode 640
+@group _murmurd
+@sample ${SYSCONFDIR}/murmur.ini
+@mode
+@owner _murmurd
+@sample ${LOCALSTATEDIR}/murmur/
+@extraunexec rm -rf ${LOCALSTATEDIR}/murmur/*
