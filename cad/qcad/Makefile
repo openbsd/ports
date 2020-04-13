@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2020/03/07 17:35:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2020/04/13 08:48:39 rsadowski Exp $
 
 COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad
 GH_PROJECT =	qcad
-GH_TAGNAME =	v3.23.0.0
-REVISION =	1
+GH_TAGNAME =	v3.24.3.0
 
-SO_VERSION =	0.0
+SO_VERSION =	1.0
 QCAD_LIBS =	qcadcore \
 		qcadecmaapi \
 		qcadentity \

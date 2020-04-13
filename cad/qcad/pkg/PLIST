@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/08/14 06:56:51 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/04/13 08:48:39 rsadowski Exp $
 @bin bin/qcad
-lib/libdxflib.a
-lib/libopennurbs.a
+@static-lib lib/libdxflib.a
+@static-lib lib/libopennurbs.a
 @lib lib/libqcadcore.so.${LIBqcadcore_VERSION}
 @lib lib/libqcadecmaapi.so.${LIBqcadecmaapi_VERSION}
 @lib lib/libqcadentity.so.${LIBqcadentity_VERSION}
@@ -12,7 +12,7 @@ lib/libopennurbs.a
 @lib lib/libqcadspatialindex.so.${LIBqcadspatialindex_VERSION}
 @lib lib/libqcadstemmer.so.${LIBqcadstemmer_VERSION}
 @lib lib/libspatialindexnavel.so.${LIBspatialindexnavel_VERSION}
-lib/libstemmer.a
+@static-lib lib/libstemmer.a
 @man man/man1/qcad.1
 share/applications/qcad.desktop
 share/examples/qcad/
@@ -109,6 +109,9 @@ share/qcad/libraries/default/Hydraulics/cylinder.dxf
 share/qcad/libraries/default/Hydraulics/cylinder.rdf
 share/qcad/libraries/default/Mechanics/
 share/qcad/libraries/default/Mechanics/Gears/
+share/qcad/libraries/default/Mechanics/Gears/CrankWheel.js
+share/qcad/libraries/default/Mechanics/Gears/CrankWheel.ui
+share/qcad/libraries/default/Mechanics/Gears/CrankWheel_LICENSE.txt
 share/qcad/libraries/default/Mechanics/Gears/InvoluteSpur.js
 share/qcad/libraries/default/Mechanics/Gears/InvoluteSpur.rdf
 share/qcad/libraries/default/Mechanics/Gears/InvoluteSpur.ui
@@ -240,6 +243,8 @@ share/qcad/libraries/templates/metric/dl3dl/Vorlage_Qcad_Din6771-1_quer_A4.dxf
 share/qcad/libraries/templates/metric/dl3dl/Vorlage_Qcad_Din6771_quer_A3.dxf
 share/qcad/libraries/templates/metric/dl3dl/Vorlage_Qcad_Din7200_quer_A3.dxf
 share/qcad/libraries/templates/metric/dl3dl/Vorlage_Qcad_Plankopf gross_quer_A3.dxf
+share/qcad/libraries/templates/metric/dl3dl/Vorlage_elt_2.dxf
+share/qcad/libraries/templates/metric/dl3dl/Vorlage_elt_3.dxf
 share/qcad/libraries/templates/metric/dl3dl/_META/
 share/qcad/libraries/templates/metric/dl3dl/_META/meta.rdf
 share/qcad/libraries/templates/metric/dl3dl/nur Plankopf.dxf
@@ -306,10 +311,19 @@ share/qcad/patterns/imperial/ar-parq1.pat
 share/qcad/patterns/imperial/ar-rroof.pat
 share/qcad/patterns/imperial/ar-rshke.pat
 share/qcad/patterns/imperial/ar-sand.pat
+share/qcad/patterns/imperial/blocks-01.pat
+share/qcad/patterns/imperial/blocks-02.pat
+share/qcad/patterns/imperial/box-overlap.pat
 share/qcad/patterns/imperial/box.pat
+share/qcad/patterns/imperial/boxjoin-01.pat
+share/qcad/patterns/imperial/boxjoin-02.pat
 share/qcad/patterns/imperial/brass.pat
 share/qcad/patterns/imperial/brick.pat
 share/qcad/patterns/imperial/brstone.pat
+share/qcad/patterns/imperial/celtic-01.pat
+share/qcad/patterns/imperial/celtic-02.pat
+share/qcad/patterns/imperial/circles-02.pat
+share/qcad/patterns/imperial/circles.pat
 share/qcad/patterns/imperial/clay.pat
 share/qcad/patterns/imperial/cork.pat
 share/qcad/patterns/imperial/cross.pat
@@ -318,27 +332,47 @@ share/qcad/patterns/imperial/dolmit.pat
 share/qcad/patterns/imperial/dots.pat
 share/qcad/patterns/imperial/earth.pat
 share/qcad/patterns/imperial/escher.pat
+share/qcad/patterns/imperial/explosion.pat
 share/qcad/patterns/imperial/flex.pat
 share/qcad/patterns/imperial/grass.pat
 share/qcad/patterns/imperial/grate.pat
 share/qcad/patterns/imperial/gravel.pat
 share/qcad/patterns/imperial/hex.pat
+share/qcad/patterns/imperial/hexagons.pat
+share/qcad/patterns/imperial/hexjoin-01.pat
+share/qcad/patterns/imperial/hexjoin-02.pat
+share/qcad/patterns/imperial/holly.pat
 share/qcad/patterns/imperial/honey.pat
 share/qcad/patterns/imperial/hound.pat
 share/qcad/patterns/imperial/insul.pat
+share/qcad/patterns/imperial/lattice-01.pat
+share/qcad/patterns/imperial/lattice-02.pat
+share/qcad/patterns/imperial/lattice-03.pat
+share/qcad/patterns/imperial/lattice-04.pat
+share/qcad/patterns/imperial/lattice-05.pat
+share/qcad/patterns/imperial/lattice-06.pat
 share/qcad/patterns/imperial/line.pat
+share/qcad/patterns/imperial/looplinks.pat
+share/qcad/patterns/imperial/maze-01.pat
+share/qcad/patterns/imperial/maze-02.pat
 share/qcad/patterns/imperial/mudst.pat
 share/qcad/patterns/imperial/net.pat
 share/qcad/patterns/imperial/net3.pat
 share/qcad/patterns/imperial/plast.pat
 share/qcad/patterns/imperial/plasti.pat
+share/qcad/patterns/imperial/qcad-logo.pat
 share/qcad/patterns/imperial/sacncr.pat
+share/qcad/patterns/imperial/scaffold.pat
 share/qcad/patterns/imperial/square.pat
+share/qcad/patterns/imperial/squiggle-01.pat
+share/qcad/patterns/imperial/squiggle-02.pat
 share/qcad/patterns/imperial/stars.pat
 share/qcad/patterns/imperial/steel.pat
 share/qcad/patterns/imperial/swamp.pat
 share/qcad/patterns/imperial/trans.pat
+share/qcad/patterns/imperial/tri-overlap.pat
 share/qcad/patterns/imperial/triang.pat
+share/qcad/patterns/imperial/wire-fence.pat
 share/qcad/patterns/imperial/zigzag.pat
 share/qcad/patterns/metric/
 share/qcad/patterns/metric/acad_iso02w100.pat
@@ -369,16 +403,32 @@ share/qcad/patterns/metric/ar-b816c.pat
 share/qcad/patterns/metric/ar-b88.pat
 share/qcad/patterns/metric/ar-brelm.pat
 share/qcad/patterns/metric/ar-brstd.pat
+share/qcad/patterns/metric/ar-conc-01.pat
 share/qcad/patterns/metric/ar-conc.pat
 share/qcad/patterns/metric/ar-hbone.pat
 share/qcad/patterns/metric/ar-parq1.pat
 share/qcad/patterns/metric/ar-rroof.pat
 share/qcad/patterns/metric/ar-rshke.pat
 share/qcad/patterns/metric/ar-sand.pat
+share/qcad/patterns/metric/barbwire.pat
+share/qcad/patterns/metric/blocks-01.pat
+share/qcad/patterns/metric/blocks-02.pat
+share/qcad/patterns/metric/box-overlap.pat
 share/qcad/patterns/metric/box.pat
+share/qcad/patterns/metric/boxjoin-01.pat
+share/qcad/patterns/metric/boxjoin-02.pat
 share/qcad/patterns/metric/brass.pat
 share/qcad/patterns/metric/brick.pat
 share/qcad/patterns/metric/brstone.pat
+share/qcad/patterns/metric/bubbles-01.pat
+share/qcad/patterns/metric/bubbles-02.pat
+share/qcad/patterns/metric/bubbles-03.pat
+share/qcad/patterns/metric/celtic-01.pat
+share/qcad/patterns/metric/celtic-02.pat
+share/qcad/patterns/metric/celtic-03.pat
+share/qcad/patterns/metric/celtic-04.pat
+share/qcad/patterns/metric/circles-02.pat
+share/qcad/patterns/metric/circles.pat
 share/qcad/patterns/metric/clay.pat
 share/qcad/patterns/metric/cork.pat
 share/qcad/patterns/metric/cross.pat
@@ -387,11 +437,19 @@ share/qcad/patterns/metric/dolmit.pat
 share/qcad/patterns/metric/dots.pat
 share/qcad/patterns/metric/earth.pat
 share/qcad/patterns/metric/escher.pat
+share/qcad/patterns/metric/explosion.pat
 share/qcad/patterns/metric/flex.pat
 share/qcad/patterns/metric/grass.pat
 share/qcad/patterns/metric/grate.pat
+share/qcad/patterns/metric/gravel-01.pat
 share/qcad/patterns/metric/gravel.pat
+share/qcad/patterns/metric/hatch-dots.pat
+share/qcad/patterns/metric/hatch-sqrs.pat
 share/qcad/patterns/metric/hex.pat
+share/qcad/patterns/metric/hexagons.pat
+share/qcad/patterns/metric/hexjoin-01.pat
+share/qcad/patterns/metric/hexjoin-02.pat
+share/qcad/patterns/metric/holly.pat
 share/qcad/patterns/metric/honey.pat
 share/qcad/patterns/metric/hound.pat
 share/qcad/patterns/metric/insul.pat
@@ -406,52 +464,76 @@ share/qcad/patterns/metric/jis_rc_30.pat
 share/qcad/patterns/metric/jis_stn_1e.pat
 share/qcad/patterns/metric/jis_stn_2.5.pat
 share/qcad/patterns/metric/jis_wood.pat
+share/qcad/patterns/metric/lattice-01.pat
+share/qcad/patterns/metric/lattice-02.pat
+share/qcad/patterns/metric/lattice-03.pat
+share/qcad/patterns/metric/lattice-04.pat
+share/qcad/patterns/metric/lattice-05.pat
+share/qcad/patterns/metric/lattice-06.pat
+share/qcad/patterns/metric/lattice-07.pat
+share/qcad/patterns/metric/leaf-01.pat
+share/qcad/patterns/metric/leaf-02.pat
+share/qcad/patterns/metric/leaf-03.pat
 share/qcad/patterns/metric/line.pat
+share/qcad/patterns/metric/looplinks.pat
+share/qcad/patterns/metric/maze-01.pat
+share/qcad/patterns/metric/maze-02.pat
 share/qcad/patterns/metric/mudst.pat
 share/qcad/patterns/metric/net.pat
 share/qcad/patterns/metric/net3.pat
 share/qcad/patterns/metric/plast.pat
 share/qcad/patterns/metric/plasti.pat
+share/qcad/patterns/metric/qcad-logo.pat
+share/qcad/patterns/metric/redback.pat
 share/qcad/patterns/metric/sacncr.pat
+share/qcad/patterns/metric/scaffold.pat
 share/qcad/patterns/metric/square.pat
+share/qcad/patterns/metric/squiggle-01.pat
+share/qcad/patterns/metric/squiggle-02.pat
 share/qcad/patterns/metric/stars.pat
 share/qcad/patterns/metric/steel.pat
 share/qcad/patterns/metric/swamp.pat
 share/qcad/patterns/metric/trans.pat
+share/qcad/patterns/metric/tri-overlap.pat
 share/qcad/patterns/metric/triang.pat
+share/qcad/patterns/metric/weatherboard.pat
+share/qcad/patterns/metric/weaving.pat
+share/qcad/patterns/metric/wire-fence.pat
+share/qcad/patterns/metric/xmastree-01.pat
+share/qcad/patterns/metric/xmastree-02.pat
 share/qcad/patterns/metric/zigzag.pat
 share/qcad/plugins/
 share/qcad/plugins/codecs/
 share/qcad/plugins/codecs/readme.txt
 share/qcad/plugins/designer/
-share/qcad/plugins/designer/libqcadcustomwidgets.so
+@so share/qcad/plugins/designer/libqcadcustomwidgets.so
 share/qcad/plugins/designer/readme.txt
 share/qcad/plugins/imageformats/
-share/qcad/plugins/imageformats/libqgif.so
-share/qcad/plugins/imageformats/libqico.so
-share/qcad/plugins/imageformats/libqjpeg.so
-share/qcad/plugins/imageformats/libqsvg.so
-share/qcad/plugins/imageformats/libqtga.so
-share/qcad/plugins/imageformats/libqtiff.so
+@so share/qcad/plugins/imageformats/libqgif.so
+@so share/qcad/plugins/imageformats/libqico.so
+@so share/qcad/plugins/imageformats/libqjpeg.so
+@so share/qcad/plugins/imageformats/libqsvg.so
+@so share/qcad/plugins/imageformats/libqtga.so
+@so share/qcad/plugins/imageformats/libqtiff.so
 share/qcad/plugins/imageformats/readme.txt
-share/qcad/plugins/libqcaddxf.so
-share/qcad/plugins/libqcadscripts.so
+@so share/qcad/plugins/libqcaddxf.so
+@so share/qcad/plugins/libqcadscripts.so
 share/qcad/plugins/printsupport/
-share/qcad/plugins/printsupport/libcupsprintersupport.so
+@so share/qcad/plugins/printsupport/libcupsprintersupport.so
 share/qcad/plugins/printsupport/readme.txt
 share/qcad/plugins/script/
-share/qcad/plugins/script/libqtscript_core.so.1.0
-share/qcad/plugins/script/libqtscript_gui.so.1.0
-share/qcad/plugins/script/libqtscript_network.so.1.0
-share/qcad/plugins/script/libqtscript_opengl.so.1.0
-share/qcad/plugins/script/libqtscript_printsupport.so.1.0
-share/qcad/plugins/script/libqtscript_sql.so.1.0
-share/qcad/plugins/script/libqtscript_uitools.so.1.0
-share/qcad/plugins/script/libqtscript_widgets.so.1.0
-share/qcad/plugins/script/libqtscript_xml.so.1.0
-share/qcad/plugins/script/libqtscript_xmlpatterns.so.1.0
+@lib share/qcad/plugins/script/libqtscript_core.so.1.0
+@lib share/qcad/plugins/script/libqtscript_gui.so.1.0
+@lib share/qcad/plugins/script/libqtscript_network.so.1.0
+@lib share/qcad/plugins/script/libqtscript_opengl.so.1.0
+@lib share/qcad/plugins/script/libqtscript_printsupport.so.1.0
+@lib share/qcad/plugins/script/libqtscript_sql.so.1.0
+@lib share/qcad/plugins/script/libqtscript_uitools.so.1.0
+@lib share/qcad/plugins/script/libqtscript_widgets.so.1.0
+@lib share/qcad/plugins/script/libqtscript_xml.so.1.0
+@lib share/qcad/plugins/script/libqtscript_xmlpatterns.so.1.0
 share/qcad/plugins/sqldrivers/
-share/qcad/plugins/sqldrivers/libqsqlite.so
+@so share/qcad/plugins/sqldrivers/libqsqlite.so
 share/qcad/plugins/sqldrivers/readme.txt
 share/qcad/qcadshp.cxf
 share/qcad/qt/
@@ -1706,11 +1788,13 @@ share/qcad/scripts/Draw/Circle/Circle2TP/Tests/
 share/qcad/scripts/Draw/Circle/Circle2TP/Tests/Circle2TPTest00.js
 share/qcad/scripts/Draw/Circle/Circle2TP/Tests/Circle2TPTest01.js
 share/qcad/scripts/Draw/Circle/Circle2TP/Tests/Circle2TPTest02.js
+share/qcad/scripts/Draw/Circle/Circle2TP/Tests/Circle2TPTest03.js
 share/qcad/scripts/Draw/Circle/Circle2TP/Tests/actual/
 share/qcad/scripts/Draw/Circle/Circle2TP/Tests/required/
 share/qcad/scripts/Draw/Circle/Circle2TP/Tests/required/Circle2TPTest00_000.dxf
 share/qcad/scripts/Draw/Circle/Circle2TP/Tests/required/Circle2TPTest01_000.dxf
 share/qcad/scripts/Draw/Circle/Circle2TP/Tests/required/Circle2TPTest02_000.dxf
+share/qcad/scripts/Draw/Circle/Circle2TP/Tests/required/Circle2TPTest03_000.dxf
 share/qcad/scripts/Draw/Circle/Circle2TP/doc/
 share/qcad/scripts/Draw/Circle/Circle2TP/doc/Circle2TP.png
 share/qcad/scripts/Draw/Circle/Circle2TP/doc/Circle2TP_de.html
@@ -3034,9 +3118,11 @@ share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/HatchFromSelectionTest04.
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/HatchFromSelectionTest05.js
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/HatchFromSelectionTest06.js
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/HatchFromSelectionTest07.js
+share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/HatchFromSelectionTest08.js
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/actual/
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/data/
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/data/contour.dxf
+share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/data/hatch_block_line.dxf
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/data/hatch_block_lines.dxf
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/data/hatch_block_polyline.dxf
 share/qcad/scripts/Draw/Hatch/HatchFromSelection/Tests/data/hatch_blocks.dxf
@@ -5609,6 +5695,7 @@ share/qcad/scripts/Help/About/doc/About_desc_ru.html
 share/qcad/scripts/Help/About/doc/About_desc_sl.html
 share/qcad/scripts/Help/About/doc/About_ja.html
 share/qcad/scripts/Help/About/doc/About_nl.html
+share/qcad/scripts/Help/About/doc/About_pt.html
 share/qcad/scripts/Help/About/doc/About_ru.html
 share/qcad/scripts/Help/About/doc/About_sl.html
 share/qcad/scripts/Help/BrowseUserManual/
@@ -5650,6 +5737,7 @@ share/qcad/scripts/Help/FAQ/doc/FAQ_desc_ru.html
 share/qcad/scripts/Help/FAQ/doc/FAQ_desc_sl.html
 share/qcad/scripts/Help/FAQ/doc/FAQ_ja.html
 share/qcad/scripts/Help/FAQ/doc/FAQ_nl.html
+share/qcad/scripts/Help/FAQ/doc/FAQ_pt.html
 share/qcad/scripts/Help/FAQ/doc/FAQ_ru.html
 share/qcad/scripts/Help/FAQ/doc/FAQ_sl.html
 share/qcad/scripts/Help/Forum/
@@ -5669,6 +5757,7 @@ share/qcad/scripts/Help/Forum/doc/Forum_desc_ru.html
 share/qcad/scripts/Help/Forum/doc/Forum_desc_sl.html
 share/qcad/scripts/Help/Forum/doc/Forum_ja.html
 share/qcad/scripts/Help/Forum/doc/Forum_nl.html
+share/qcad/scripts/Help/Forum/doc/Forum_pt.html
 share/qcad/scripts/Help/Forum/doc/Forum_ru.html
 share/qcad/scripts/Help/Forum/doc/Forum_sl.html
 share/qcad/scripts/Help/Help.js
@@ -5689,6 +5778,7 @@ share/qcad/scripts/Help/ReportBug/doc/ReportBug_desc_ru.html
 share/qcad/scripts/Help/ReportBug/doc/ReportBug_desc_sl.html
 share/qcad/scripts/Help/ReportBug/doc/ReportBug_ja.html
 share/qcad/scripts/Help/ReportBug/doc/ReportBug_nl.html
+share/qcad/scripts/Help/ReportBug/doc/ReportBug_pt.html
 share/qcad/scripts/Help/ReportBug/doc/ReportBug_ru.html
 share/qcad/scripts/Help/ReportBug/doc/ReportBug_sl.html
 share/qcad/scripts/Help/ReportTranslationError/
@@ -5698,6 +5788,7 @@ share/qcad/scripts/Help/ReportTranslationError/doc/
 share/qcad/scripts/Help/ReportTranslationError/doc/ReportTranslationError_de.html
 share/qcad/scripts/Help/ReportTranslationError/doc/ReportTranslationError_ja.html
 share/qcad/scripts/Help/ReportTranslationError/doc/ReportTranslationError_nl.html
+share/qcad/scripts/Help/ReportTranslationError/doc/ReportTranslationError_pt.html
 share/qcad/scripts/Help/ReportTranslationError/doc/ReportTranslationError_ru.html
 share/qcad/scripts/Help/ReportTranslationError/doc/ReportTranslationError_sl.html
 share/qcad/scripts/Help/ShowReadme/
@@ -5708,6 +5799,7 @@ share/qcad/scripts/Help/ShowReadme/doc/
 share/qcad/scripts/Help/ShowReadme/doc/ShowReadme_de.html
 share/qcad/scripts/Help/ShowReadme/doc/ShowReadme_ja.html
 share/qcad/scripts/Help/ShowReadme/doc/ShowReadme_nl.html
+share/qcad/scripts/Help/ShowReadme/doc/ShowReadme_pt.html
 share/qcad/scripts/Help/ShowReadme/doc/ShowReadme_ru.html
 share/qcad/scripts/Help/ShowReadme/doc/ShowReadme_sl.html
 share/qcad/scripts/Help/Website/
@@ -5727,6 +5819,7 @@ share/qcad/scripts/Help/Website/doc/Website_desc_ru.html
 share/qcad/scripts/Help/Website/doc/Website_desc_sl.html
 share/qcad/scripts/Help/Website/doc/Website_ja.html
 share/qcad/scripts/Help/Website/doc/Website_nl.html
+share/qcad/scripts/Help/Website/doc/Website_pt.html
 share/qcad/scripts/Help/Website/doc/Website_ru.html
 share/qcad/scripts/Help/Website/doc/Website_sl.html
 share/qcad/scripts/Help/dir/
@@ -5734,6 +5827,7 @@ share/qcad/scripts/Help/doc/
 share/qcad/scripts/Help/doc/Help_de.html
 share/qcad/scripts/Help/doc/Help_ja.html
 share/qcad/scripts/Help/doc/Help_nl.html
+share/qcad/scripts/Help/doc/Help_pt.html
 share/qcad/scripts/Help/doc/Help_ru.html
 share/qcad/scripts/Help/doc/Help_sl.html
 share/qcad/scripts/ImportExport/
@@ -6635,6 +6729,50 @@ share/qcad/scripts/Misc/Examples/MathExamples/ExMandelbrot/
 share/qcad/scripts/Misc/Examples/MathExamples/ExMandelbrot/ExMandelbrot.js
 share/qcad/scripts/Misc/Examples/MathExamples/ExMathSpiral/
 share/qcad/scripts/Misc/Examples/MathExamples/ExMathSpiral/ExMathSpiral.js
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/CurtainRope.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/FlexPainter.js
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/FlexPainter.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/FlexPainterDialog.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/FlexPainterDialog.ui
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/FlexPainterTemplates/
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/FlexPainterTemplates/PainterConstruct_Rope.dxf
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/FlexPainterTemplates/PainterTestEntities.dxf
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/1OrthoPointGlobal.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/1OrthoPointGlobalFlex.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/2OrthoPointsGlobal.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/2OrthoPointsGlobalFlex.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/3PhaseWaveGlobal.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/AllPainterDataTypes.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/CurtainRopeProto.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/CurtainRopeProtoKnot.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/GreekMeander15.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/GreekMeander15Flexing.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/OrthogonalBar.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/OrthogonalMark.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/RailwayTrackConcrete.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/RailwayTrackLineArt.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/RulerInch.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/RulerMetric.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SawtoothWave.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SawtoothWaveGlobal.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SinusoidWave.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SinusoidWaveGlobal.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SqaureWave.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SqaureWaveFlexing.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SqaureWaveGlobal.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SqauredShape.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SqauredShapeFlexing.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SteppedWave.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/SteppedWaveGlobal.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/TelephoneCoilMedio.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/TriangleWave.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/Icons/TriangleWaveGlobal.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/PreserveLookOff.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/PreserveLookOffSq.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/PreserveLookOn.svg
+share/qcad/scripts/Misc/Examples/MathExamples/FlexPainter/PreserveLookOnSq.svg
 share/qcad/scripts/Misc/Examples/MathExamples/MathExamples.js
 share/qcad/scripts/Misc/Examples/MathExamples/dir/
 share/qcad/scripts/Misc/Examples/ModifyExamples/
@@ -8000,11 +8138,13 @@ share/qcad/scripts/Modify/Scale/Tests/ScaleTest05.js
 share/qcad/scripts/Modify/Scale/Tests/ScaleTest06.js
 share/qcad/scripts/Modify/Scale/Tests/ScaleTest07.js
 share/qcad/scripts/Modify/Scale/Tests/ScaleTest08.js
+share/qcad/scripts/Modify/Scale/Tests/ScaleTest09.js
 share/qcad/scripts/Modify/Scale/Tests/actual/
 share/qcad/scripts/Modify/Scale/Tests/data/
 share/qcad/scripts/Modify/Scale/Tests/data/arcs.dxf
 share/qcad/scripts/Modify/Scale/Tests/data/circles.dxf
 share/qcad/scripts/Modify/Scale/Tests/data/ellipses_ellipse_arcs.dxf
+share/qcad/scripts/Modify/Scale/Tests/data/entities.dxf
 share/qcad/scripts/Modify/Scale/Tests/data/lines.dxf
 share/qcad/scripts/Modify/Scale/Tests/data/mtext.dxf
 share/qcad/scripts/Modify/Scale/Tests/data/points.dxf
@@ -8021,6 +8161,7 @@ share/qcad/scripts/Modify/Scale/Tests/required/ScaleTest05_000.dxf
 share/qcad/scripts/Modify/Scale/Tests/required/ScaleTest06_000.dxf
 share/qcad/scripts/Modify/Scale/Tests/required/ScaleTest07_000.dxf
 share/qcad/scripts/Modify/Scale/Tests/required/ScaleTest08_000.dxf
+share/qcad/scripts/Modify/Scale/Tests/required/ScaleTest09_000.dxf
 share/qcad/scripts/Modify/Scale/doc/
 share/qcad/scripts/Modify/Scale/doc/ByMouse.png
 share/qcad/scripts/Modify/Scale/doc/ByMouseSq.png
@@ -8074,6 +8215,9 @@ share/qcad/scripts/Modify/Stretch/Tests/StretchTest02.js
 share/qcad/scripts/Modify/Stretch/Tests/StretchTest03.js
 share/qcad/scripts/Modify/Stretch/Tests/StretchTest05.js
 share/qcad/scripts/Modify/Stretch/Tests/StretchTest06.js
+share/qcad/scripts/Modify/Stretch/Tests/StretchTest07.js
+share/qcad/scripts/Modify/Stretch/Tests/StretchTest08.js
+share/qcad/scripts/Modify/Stretch/Tests/StretchTest09.js
 share/qcad/scripts/Modify/Stretch/Tests/actual/
 share/qcad/scripts/Modify/Stretch/Tests/data/
 share/qcad/scripts/Modify/Stretch/Tests/data/entities0.dxf
@@ -8086,6 +8230,9 @@ share/qcad/scripts/Modify/Stretch/Tests/required/StretchTest02_000.dxf
 share/qcad/scripts/Modify/Stretch/Tests/required/StretchTest03_000.dxf
 share/qcad/scripts/Modify/Stretch/Tests/required/StretchTest05_000.dxf
 share/qcad/scripts/Modify/Stretch/Tests/required/StretchTest06_000.dxf
+share/qcad/scripts/Modify/Stretch/Tests/required/StretchTest07_000.dxf
+share/qcad/scripts/Modify/Stretch/Tests/required/StretchTest08_000.dxf
+share/qcad/scripts/Modify/Stretch/Tests/required/StretchTest09_000.dxf
 share/qcad/scripts/Modify/Stretch/doc/
 share/qcad/scripts/Modify/Stretch/doc/Stretch.png
 share/qcad/scripts/Modify/Stretch/doc/StretchFigure.dxf
@@ -10540,6 +10687,9 @@ share/qcad/scripts/Widgets/LibraryBrowser/doc/ShowOptionsDown.png
 share/qcad/scripts/Widgets/LibraryBrowser/doc/ShowOptionsUp.png
 share/qcad/scripts/Widgets/LibraryBrowser/doc/Sync.png
 share/qcad/scripts/Widgets/LibraryBrowser/doc/Tag.png
+share/qcad/scripts/Widgets/MenuBar/
+share/qcad/scripts/Widgets/MenuBar/MenuBar.js
+share/qcad/scripts/Widgets/MenuBar/PreferencesPage.ui
 share/qcad/scripts/Widgets/MouseDisplay/
 share/qcad/scripts/Widgets/MouseDisplay/Mouse-inverse.svg
 share/qcad/scripts/Widgets/MouseDisplay/Mouse.svg
@@ -10759,24 +10909,7 @@ share/qcad/scripts/splashscreen@2x.png
 share/qcad/scripts/sprintf.js
 share/qcad/themes/
 share/qcad/themes/Dark/
-share/qcad/themes/Dark/checkbox_checked.png
-share/qcad/themes/Dark/checkbox_checked_disabled.png
-share/qcad/themes/Dark/checkbox_checked_focus.png
-share/qcad/themes/Dark/checkbox_unchecked.png
-share/qcad/themes/Dark/checkbox_unchecked_disabled.png
-share/qcad/themes/Dark/checkbox_unchecked_focus.png
-share/qcad/themes/Dark/close-hover.png
-share/qcad/themes/Dark/close.png
-share/qcad/themes/Dark/radio_checked.png
-share/qcad/themes/Dark/radio_checked_disabled.png
-share/qcad/themes/Dark/radio_checked_focus.png
-share/qcad/themes/Dark/radio_unchecked.png
-share/qcad/themes/Dark/radio_unchecked_disabled.png
-share/qcad/themes/Dark/radio_unchecked_focus.png
 share/qcad/themes/Dark/stylesheet.css
-share/qcad/themes/Dark/stylesheet_linux.css
-share/qcad/themes/Dark/triangle_down.png
-share/qcad/themes/Dark/triangle_right.png
 share/qcad/ts/
 share/qcad/ts/assistant_ar.qm
 share/qcad/ts/assistant_bg.qm

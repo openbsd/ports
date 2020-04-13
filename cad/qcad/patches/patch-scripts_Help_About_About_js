@@ -1,11 +1,11 @@
-$OpenBSD: patch-scripts_Help_About_About_js,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+$OpenBSD: patch-scripts_Help_About_About_js,v 1.2 2020/04/13 08:48:39 rsadowski Exp $
 
 Index: scripts/Help/About/About.js
 --- scripts/Help/About/About.js.orig
 +++ scripts/Help/About/About.js
-@@ -451,6 +451,9 @@ About.prototype.initAboutSystem = function(textEdit) {
-     if (RS.getSystemId()==="linux") {
-         text += "Linux";
+@@ -467,6 +467,9 @@ About.prototype.initAboutSystem = function(textEdit) {
+     if (RS.getSystemId()==="solaris") {
+         text += "Solaris";
      }
 +    if (RS.getSystemId()==="openbsd") {
 +        text += "OpenBSD";
