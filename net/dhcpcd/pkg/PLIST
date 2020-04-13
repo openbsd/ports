@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/04/07 17:36:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/04/13 16:12:25 sthen Exp $
 @newgroup _dhcpcd:846
-@newuser _dhcpcd:846:_dhcpcd:daemon:dhcpcd user:/var/empty:/sbin/nologin
+@newuser _dhcpcd:846:_dhcpcd:daemon:dhcpcd user:/var/dhcpcd:/sbin/nologin
 @extraunexec rm ${LOCALSTATEDIR}/db/dhcpcd/*
 @rcscript ${RCDIR}/dhcpcd
 libexec/dhcpcd-hooks/
 libexec/dhcpcd-hooks/01-test
-libexec/dhcpcd-hooks/02-dump
 libexec/dhcpcd-hooks/20-resolv.conf
 libexec/dhcpcd-hooks/30-hostname
 libexec/dhcpcd-hooks/50-ntp.conf
