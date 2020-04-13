@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_options_c,v 1.15 2019/07/14 21:53:23 bcallah Exp $
+$OpenBSD: patch-src_options_c,v 1.16 2020/04/13 18:46:02 bcallah Exp $
 Index: src/options.c
 --- src/options.c.orig
 +++ src/options.c
-@@ -161,7 +161,7 @@ static void feh_load_options_for_theme(char *theme)
+@@ -162,7 +162,7 @@ static void feh_load_options_for_theme(char *theme)
  
  	free(oldrcpath);
  
