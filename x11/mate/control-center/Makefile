@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/03/21 16:14:54 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2020/04/13 18:40:25 kmos Exp $
 
 COMMENT=		MATE control center
 
@@ -45,5 +45,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/mate-control-center
 
 CONFIGURE_STYLE=	gnu
+
+CFLAGS +=		-std=gnu99
 
 .include <bsd.port.mk>
