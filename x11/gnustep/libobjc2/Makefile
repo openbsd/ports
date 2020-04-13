@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/04/09 08:16:29 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2020/04/13 21:43:55 jca Exp $
 
 BROKEN-hppa =	missing asm impl in block_trampolines.S
 BROKEN-mips64 =	binutils < 2.18 lack support for symbolic register naming
@@ -24,7 +24,7 @@ HOMEPAGE =	http://www.gnustep.org/
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-COMPILER =	base-clang ports-clang
+COMPILER =	base-clang
 MODULES =	devel/cmake
 
 # clang on sparc64 doesn't use the integrated assembler by default
