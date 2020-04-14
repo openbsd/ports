@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2019/11/19 21:45:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/04/14 21:44:01 sthen Exp $
+
+BROKEN-aarch64 = needs new bootstrap following ABI change
 
 ONLY_FOR_ARCHS =	aarch64 amd64
 
