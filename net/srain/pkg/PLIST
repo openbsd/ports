@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/15 14:40:09 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/04/14 16:58:52 bcallah Exp $
 @bin bin/srain
 share/applications/im.srain.Srain.desktop
 share/examples/srain/
 @sample ${SYSCONFDIR}/srain/
 share/examples/srain/builtin.cfg
 @sample ${SYSCONFDIR}/srain/builtin.cfg
-share/icons/hicolor/scalable/apps/im.srain.Srain.png
+share/icons/hicolor/128x128/apps/im.srain.Srain.png
 share/locale/nl/LC_MESSAGES/srain.mo
 share/locale/ru/LC_MESSAGES/srain.mo
 share/locale/zh_CN/LC_MESSAGES/srain.mo

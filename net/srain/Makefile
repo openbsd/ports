@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/15 14:40:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/14 16:58:52 bcallah Exp $
 
 COMMENT =	modern IRC client written in GTK
 CATEGORIES =	net
 
 GH_ACCOUNT =	SrainApp
 GH_PROJECT =	srain
-GH_TAGNAME =	1.0.1
+GH_TAGNAME =	1.0.2
 
 HOMEPAGE =	https://srain.im/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -38,7 +38,7 @@ CONFIGURE_ARGS =	--disable-debug \
 
 USE_GMAKE =	Yes
 ALL_TARGET =	default
-MAKE_FLAGS =	MAKE="${MAKE_PROGRAM}"
+MAKE_FLAGS =	CC="${CC}" MAKE="${MAKE_PROGRAM}"
 
 FAKE_FLAGS =	INSTALL="${INSTALL}" \
 		SYSCONFDIR="${PREFIX}/share/examples"
