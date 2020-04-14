@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/01/30 22:27:17 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/04/14 15:34:49 bcallah Exp $
 @bin bin/worker
 man/fr/
 man/fr/man1/
@@ -93,6 +93,8 @@ share/worker/config-updates/update-3.8.4-utf8.conf
 share/worker/config-updates/update-3.8.4.conf
 share/worker/config-updates/update-3.9.0-utf8.conf
 share/worker/config-updates/update-3.9.0.conf
+share/worker/config-updates/update-4.4.0-utf8.conf
+share/worker/config-updates/update-4.4.0.conf
 share/worker/hints-english
 share/worker/hints-english.utf8
 share/worker/scripts/
@@ -103,6 +105,7 @@ share/worker/scripts/cd2ogg.sh
 share/worker/scripts/cd2wav.sh
 share/worker/scripts/displaywrapper_worker
 share/worker/scripts/find_file_by_chksum.py
+share/worker/scripts/git_changed_files.sh
 share/worker/scripts/git_modified_files.sh
 share/worker/scripts/git_untracked_files.sh
 share/worker/scripts/terminal_wrapper.sh
