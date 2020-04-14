@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/17 08:07:15 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/14 10:44:24 fcambus Exp $
 @bin bin/openmpt123
 include/libopenmpt/
 include/libopenmpt/libopenmpt.h
@@ -10,7 +10,7 @@ include/libopenmpt/libopenmpt_stream_callbacks_buffer.h
 include/libopenmpt/libopenmpt_stream_callbacks_fd.h
 include/libopenmpt/libopenmpt_stream_callbacks_file.h
 include/libopenmpt/libopenmpt_version.h
-lib/libopenmpt.a
+@static-lib lib/libopenmpt.a
 lib/libopenmpt.la
 @lib lib/libopenmpt.so.${LIBopenmpt_VERSION}
 lib/pkgconfig/libopenmpt.pc
