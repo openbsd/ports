@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2020/01/08 18:39:00 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2020/04/14 21:38:00 sthen Exp $
+
+BROKEN-aarch64 = looks like the vendored golang.org/x/sys/unix is too old for aarch64
 
 COMMENT =	fast, efficient and secure backup program
 

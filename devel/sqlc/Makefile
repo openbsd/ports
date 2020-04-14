@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/02 13:40:05 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/14 21:38:00 sthen Exp $
+
+BROKEN-aarch64 = port/atomics/arch-arm.h file not found
 
 COMMENT =	create type safe go from SQL
 

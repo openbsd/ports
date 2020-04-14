@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2020/02/29 09:35:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2020/04/14 21:38:00 sthen Exp $
+
+BROKEN-aarch64 = looks like the vendored golang.org/x/sys/unix is too old for aarch64
 
 COMMENT=		CLI for AWS ECS
 

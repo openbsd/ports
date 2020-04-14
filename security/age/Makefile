@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/29 19:27:05 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/14 21:38:00 sthen Exp $
+
+BROKEN-aarch64 = looks like the vendored golang.org/x/sys/unix is too old for aarch64
 
 COMMENT =	simple, modern and secure file encryption tool
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2019/10/05 09:03:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2020/04/14 21:38:00 sthen Exp $
+
+BROKEN-aarch64 = looks like the vendored golang.org/x/sys/unix is too old for aarch64
 
 COMMENT=		decentralized service discovery and orchestration
 

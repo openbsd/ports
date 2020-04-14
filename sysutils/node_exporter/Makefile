@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2019/10/16 06:50:09 claudio Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/14 21:38:00 sthen Exp $
+
+BROKEN-aarch64 = looks like the vendored golang.org/x/net/internal/socket is too old for aarch64
 
 COMMENT =		prometheus exporter for hardware and OS metrics
 
