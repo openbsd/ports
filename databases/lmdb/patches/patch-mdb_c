@@ -1,24 +1,11 @@
-$OpenBSD: patch-mdb_c,v 1.5 2019/05/02 12:49:25 chrisz Exp $
-
-backport ITS#9007 don't free loose writemap pages.
+$OpenBSD: patch-mdb_c,v 1.6 2020/04/14 09:06:42 chrisz Exp $
 
 enforce MDB_WRITEMAP, because we have no UBC (Unified Buffer Cache).
 
 Index: mdb.c
 --- mdb.c.orig
 +++ mdb.c
-@@ -3109,9 +3109,9 @@ mdb_freelist_save(MDB_txn *txn)
- 			} else {
- 				x = mdb_mid2l_search(dl, mp->mp_pgno);
- 				mdb_tassert(txn, dl[x].mid == mp->mp_pgno);
-+				mdb_dpage_free(env, mp);
- 			}
- 			dl[x].mptr = NULL;
--			mdb_dpage_free(env, mp);
- 		}
- 		{
- 			/* squash freed slots out of the dirty list */
-@@ -4968,6 +4968,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
+@@ -4968,6 +4967,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
  		/* silently ignore WRITEMAP when we're only getting read access */
  		flags &= ~MDB_WRITEMAP;
  	} else {
