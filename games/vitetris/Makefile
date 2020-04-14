@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/04/14 04:46:12 rsadowski Exp $
 
 COMMENT =	terminal-based tetris clone in vein of nintendo tetris
-DISTNAME =	vitetris-0.57
 CATEGORIES =	games
-REVISION =	3
 
-HOMEPAGE =	http://victornils.net/tetris/
+GH_TAGNAME =	v0.58.0
+GH_ACCOUNT =	vicgeralds
+GH_PROJECT =	vitetris
+
+HOMEPAGE =	https://www.victornils.net/tetris/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
@@ -13,8 +15,6 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c curses
-
-MASTER_SITES =	http://victornils.net/tetris/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
