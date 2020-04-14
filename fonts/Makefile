@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2020/03/06 19:33:37 edd Exp $
+# $OpenBSD: Makefile,v 1.68 2020/04/14 14:57:02 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -46,6 +46,7 @@
      SUBDIR += ja-funetfonts
      SUBDIR += ja-kanjistrokeorders-ttf
      SUBDIR += ja-sazanami-ttf
+     SUBDIR += jetbrains-mono
      SUBDIR += jmk-fonts
      SUBDIR += junicode
      SUBDIR += ko-baekmuk-fonts
