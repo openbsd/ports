@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/14 14:55:32 rsadowski Exp $
+share/fonts/
+@fontdir share/fonts/JetBrainsMono/
+share/fonts/JetBrainsMono/JetBrainsMono-Bold-Italic.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-Bold.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-ExtraBold.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-Italic.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-Medium-Italic.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-Medium.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf
