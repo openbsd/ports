@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2020/02/15 21:40:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.28 2020/04/15 20:51:10 sthen Exp $
 
 COMMENT =	extension for generating GUIDs/UUIDs
 
 MODULES =	cpan
-DISTNAME =	Data-UUID-1.224
+DISTNAME =	Data-UUID-1.226
 CATEGORIES =	devel
 
 # BSD
