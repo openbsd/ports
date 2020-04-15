@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2020/04/14 12:06:25 stsp Exp $
+# $OpenBSD: Makefile,v 1.38 2020/04/15 22:26:32 kn Exp $
 
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
@@ -7,6 +7,7 @@ V =			0.33
 DISTNAME =		got-${V}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-web =		gotweb-${V}
+REVISION-web =		0
 CATEGORIES =		devel
 HOMEPAGE =		https://gameoftrees.org
 MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
@@ -18,7 +19,7 @@ MULTI_PACKAGES =	-main -web
 
 # uses pledge()
 WANTLIB-main =		c curses panel pthread util z
-WANTLIB-wb =		c util z 
+WANTLIB-web =		c util z
 
 MAKE_FLAGS =		CC="${CC}"
 ALL_TARGET =		all web
