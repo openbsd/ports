@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/24 11:10:41 giovanni Exp $
+# $OpenBSD: Makefile,v 1.13 2020/04/15 09:32:57 giovanni Exp $
 
 COMMENT=	Perl implementation of DMARC
 
-DISTNAME=	Mail-DMARC-1.20191024
+DISTNAME=	Mail-DMARC-1.20200214
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 CATEGORIES=	mail

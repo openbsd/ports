@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/24 11:10:41 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/04/15 09:32:57 giovanni Exp $
 bin/dmarc_http_client
 bin/dmarc_httpd
 bin/dmarc_lookup
@@ -10,6 +10,7 @@ bin/dmarc_view_reports
 ${P5SITE}/Mail/DMARC/
 ${P5SITE}/Mail/DMARC.pm
 ${P5SITE}/Mail/DMARC/Base.pm
+${P5SITE}/Mail/DMARC/ConfigData.pm
 ${P5SITE}/Mail/DMARC/HTTP.pm
 ${P5SITE}/Mail/DMARC/Policy.pm
 ${P5SITE}/Mail/DMARC/PurePerl.pm
@@ -126,6 +127,7 @@ ${P5SITE}/auto/share/dist/Mail-DMARC/rua-schema.xsd
 @comment @man man/man1/install_deps.pl.1
 @man man/man3p/Mail::DMARC.3p
 @man man/man3p/Mail::DMARC::Base.3p
+@man man/man3p/Mail::DMARC::ConfigData.3p
 @man man/man3p/Mail::DMARC::HTTP.3p
 @man man/man3p/Mail::DMARC::Policy.3p
 @man man/man3p/Mail::DMARC::PurePerl.3p
