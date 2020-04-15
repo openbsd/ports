@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/15 15:56:24 bket Exp $
+@pkgpath audio/audacious
