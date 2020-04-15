@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_suites_host_test_function,v 1.3 2019/10/18 04:56:37 bket Exp $
+$OpenBSD: patch-tests_suites_host_test_function,v 1.4 2020/04/15 13:04:41 bket Exp $
 
 Can't take the address of stdout.
 
@@ -15,7 +15,7 @@ Index: tests/suites/host_test.function
  
  #if defined(MBEDTLS_MEMORY_BUFFER_ALLOC_C) && \
      !defined(TEST_SUITE_MEMORY_BUFFER_ALLOC)
-@@ -549,20 +546,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -537,20 +534,6 @@ int execute_tests( int argc , const char ** argv )
                  test_info.result = TEST_RESULT_SUCCESS;
                  test_info.paramfail_test_state = PARAMFAIL_TESTSTATE_IDLE;
  
@@ -36,7 +36,7 @@ Index: tests/suites/host_test.function
  
                  function_id = strtol( params[0], NULL, 10 );
                  if ( (ret = check_test( function_id )) == DISPATCH_TEST_SUCCESS )
-@@ -574,13 +557,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -562,13 +545,6 @@ int execute_tests( int argc , const char ** argv )
                      }
                  }
  
@@ -50,7 +50,7 @@ Index: tests/suites/host_test.function
  
              }
  
-@@ -669,10 +645,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -652,10 +628,6 @@ int execute_tests( int argc , const char ** argv )
      mbedtls_memory_buffer_alloc_free();
  #endif
  
