@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.68 2020/01/31 12:18:14 espie Exp $
+# $OpenBSD: proot,v 1.69 2020/04/15 16:18:48 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -187,6 +187,8 @@ sub do_parm
 	    	$state->{DISTDIR} = File::Spec->canonpath($v);
 	    }, LOCKDIR => sub {
 	    	$state->{LOCKDIR} = File::Spec->canonpath($v);
+	    }, LOGDIR => sub {
+	    	$state->{LOGDIR} = File::Spec->canonpath($v);
 	    }, snapshot => sub {
 	    	$state->{snapshot} = $v;
 	    }, actions => sub {
@@ -216,7 +218,7 @@ sub do_parm
 	if (defined $opts->{$k}) {
 		&{$opts->{$k}};
 	} else {
-		$state->fatal_error("Unknown options #1=#2", $k, $v);
+		$state->fatal_error("Unknown option #1=#2", $k, $v);
 	}
 }
 
