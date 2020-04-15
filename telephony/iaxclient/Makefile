@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2020/04/14 21:57:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2020/04/15 16:31:15 kmos Exp $
 
 # strangely, though aarch64 *only* uses LLD, the same failure can be
 # reproduced on amd64 by forcing ld.bfd (USE_LLD=No)
 BROKEN-aarch64=	linker error, undefined refs to avcodec_encode_video and avcodec_alloc_frame
+
+# Same error that hits aarch64 hits sparc64, albeit with ld.bfd
+BROKEN-sparc64=	linker error, undefined refs to avcodec_encode_video and avcodec_alloc_frame
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
