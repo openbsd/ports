@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/15 14:34:50 fcambus Exp $
 
 COMMENT =	DNS and DNSSEC zone file validator
 
 DISTNAME =	validns-0.8
+REVISION =	0
 
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.validns.net/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

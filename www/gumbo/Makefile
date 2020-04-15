@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/15 14:34:50 fcambus Exp $
 
 COMMENT =	HTML5 parsing library in pure C99
 
@@ -7,12 +7,11 @@ GH_PROJECT =	gumbo-parser
 GH_TAGNAME =	v0.10.1
 
 PKGNAME =	${DISTNAME:S/-parser//}
+REVISION =	0
 
 SHARED_LIBS +=	gumbo	0.0 # 1.0
 
 CATEGORIES =	www
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
