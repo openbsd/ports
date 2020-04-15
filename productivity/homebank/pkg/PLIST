@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/03/08 07:24:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/04/15 09:02:41 rsadowski Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -271,8 +271,11 @@ share/homebank/icons/hicolor/scalable/actions/edit-split-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-collapse-all-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-expand-all-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/list-merge-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/text-casesensitive-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/text-regularexpression-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/toggle-sign-symbolic.svg
 share/homebank/images/
+share/homebank/images/homebank-icon.svg
 share/homebank/images/splash.png
 share/icons/hicolor/16x16/apps/homebank.png
 share/icons/hicolor/22x22/apps/homebank.png
