@@ -1,4 +1,4 @@
-$OpenBSD: patch-buildsys_mk_in,v 1.8 2020/02/02 16:06:40 bket Exp $
+$OpenBSD: patch-buildsys_mk_in,v 1.1 2020/04/15 15:50:16 bket Exp $
 Index: buildsys.mk.in
 --- buildsys.mk.in.orig
 +++ buildsys.mk.in

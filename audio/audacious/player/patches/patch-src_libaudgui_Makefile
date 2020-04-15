@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_libaudgui_Makefile,v 1.5 2017/09/08 13:33:07 dcoppa Exp $
+$OpenBSD: patch-src_libaudgui_Makefile,v 1.1 2020/04/15 15:50:16 bket Exp $
 Index: src/libaudgui/Makefile
 --- src/libaudgui/Makefile.orig
 +++ src/libaudgui/Makefile
@@ -6,5 +6,5 @@ Index: src/libaudgui/Makefile
 -SHARED_LIB = ${LIB_PREFIX}audgui${LIB_SUFFIX}
 +SHARED_LIB = ${LIB_PREFIX}audgui.so.${LIBaudgui_VERSION}
  LIB_MAJOR = 5
- LIB_MINOR = 0
+ LIB_MINOR = 1
  

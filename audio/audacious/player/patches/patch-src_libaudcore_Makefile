@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_libaudcore_Makefile,v 1.9 2020/02/02 16:06:40 bket Exp $
+$OpenBSD: patch-src_libaudcore_Makefile,v 1.1 2020/04/15 15:50:16 bket Exp $
 Index: src/libaudcore/Makefile
 --- src/libaudcore/Makefile.orig
 +++ src/libaudcore/Makefile
@@ -6,5 +6,5 @@ Index: src/libaudcore/Makefile
 -SHARED_LIB = ${LIB_PREFIX}audcore${LIB_SUFFIX}
 +SHARED_LIB = ${LIB_PREFIX}audcore.so.${LIBaudcore_VERSION}
  LIB_MAJOR = 5
- LIB_MINOR = 1
+ LIB_MINOR = 2
  

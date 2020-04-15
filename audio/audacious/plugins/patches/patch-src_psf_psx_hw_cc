@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_psf_psx_hw_cc,v 1.1 2020/04/15 15:50:16 bket Exp $
+
+change some srand to srand_deterministic, found by deraadt@
+
+Index: src/psf/psx_hw.cc
+--- src/psf/psx_hw.cc.orig
++++ src/psf/psx_hw.cc
+@@ -1518,7 +1518,7 @@ void psx_bios_hle(uint32_t pc)
+ 					#if DEBUG_HLE_BIOS
+ 					printf("HLEBIOS: srand(%x)\n", a0);
+ 					#endif
+-					srand(a0);
++					srand_deterministic(a0);
+ 					break;
+ 
+ 				case 0x33:	// malloc

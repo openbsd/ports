@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_neon_neon_cc,v 1.1 2020/04/15 15:50:16 bket Exp $
+
+Fix for ports gcc as feof() is a macro
+
+neon.cc:968:16: error: expected unqualified-id before '(' token
+bool NeonFile::feof ()
+
+Index: src/neon/neon.cc
+--- src/neon/neon.cc.orig
++++ src/neon/neon.cc
+@@ -45,6 +45,8 @@
+ #define NEON_ICY_BUFSIZE    (4096)
+ #define NEON_RETRY_COUNT 6
+ 
++#undef feof
++
+ enum FillBufferResult {
+     FILL_BUFFER_SUCCESS,
+     FILL_BUFFER_ERROR,
