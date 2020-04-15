@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.89 2019/06/08 15:25:57 jca Exp $
+# $OpenBSD: Makefile,v 1.90 2020/04/15 15:24:31 cwen Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		16
+REVISION =		17
 DISTNAME =		arts-1.5.10
 MODKDE_VERSION =	3.5.8
 
@@ -50,5 +50,5 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 post-patch:
 	cp ${FILESDIR}/audioiosndio.cc ${WRKSRC}/flow
-		
+
 .include <bsd.port.mk>

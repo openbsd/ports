@@ -1,0 +1,23 @@
+$OpenBSD: patch-flow_gsl_gslglib_h,v 1.1 2020/04/15 15:24:31 cwen Exp $
+
+Pointless #ifdef hell that breaks with clang on powerpc,
+va_copy was introduced in C99
+
+Index: flow/gsl/gslglib.h
+--- flow/gsl/gslglib.h.orig
++++ flow/gsl/gslglib.h
+@@ -505,13 +505,7 @@ gboolean g_path_is_absolute (const gchar *file_name);
+  * glibconfig.h may have already defined G_VA_COPY as va_copy or __va_copy.
+  */
+ #if !defined (G_VA_COPY)
+-#  if defined (__GNUC__) && ( defined (__PPC__) || defined (__s390__) ) && (defined (_CALL_SYSV) || defined (_WIN32) || defined (__s390__) )
+-#    define G_VA_COPY(ap1, ap2)   (*(ap1) = *(ap2))
+-#  elif defined (G_VA_COPY_AS_ARRAY)
+-#    define G_VA_COPY(ap1, ap2)   g_memmove ((ap1), (ap2), sizeof (va_list))
+-#  else /* va_list is a pointer */
+-#    define G_VA_COPY(ap1, ap2)   ((ap1) = (ap2))
+-#  endif /* va_list is a pointer */
++#  define G_VA_COPY va_copy
+ #endif /* !G_VA_COPY */
+ 
+ 
