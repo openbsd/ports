@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_dig_dig_c,v 1.17 2020/03/19 17:07:20 sthen Exp $
+$OpenBSD: patch-bin_dig_dig_c,v 1.18 2020/04/15 18:41:07 sthen Exp $
 
 Index: bin/dig/dig.c
 --- bin/dig/dig.c.orig
@@ -11,7 +11,7 @@ Index: bin/dig/dig.c
  
  #include <isc/app.h>
  #include <isc/netaddr.h>
-@@ -2624,6 +2625,15 @@ dig_setup(int argc, char **argv) {
+@@ -2620,6 +2621,15 @@ dig_setup(int argc, char **argv) {
  	ISC_LIST_INIT(server_list);
  	ISC_LIST_INIT(search_list);
  
@@ -27,7 +27,7 @@ Index: bin/dig/dig.c
  	debug("dig_setup()");
  
  	/* setup dighost callbacks */
-@@ -2655,6 +2665,16 @@ dig_query_setup(bool is_batchfile, bool config_only, i
+@@ -2651,6 +2661,16 @@ dig_query_setup(bool is_batchfile, bool config_only, i
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}
