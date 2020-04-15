@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/15 13:48:29 fcambus Exp $
 
 COMMENT =	create MaxMind DB database files
 
 DISTNAME =	MaxMind-DB-Writer-0.300003
+REVISION =	0
 
 CATEGORIES =	net
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

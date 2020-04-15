@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/15 13:48:29 fcambus Exp $
 
 COMMENT =	code shared by the MaxMind DB reader and writer modules
 
 DISTNAME =	MaxMind-DB-Common-0.040001
+REVISION =	0
 
 CATEGORIES =	net
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes
