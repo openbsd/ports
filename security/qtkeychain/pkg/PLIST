@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/07 07:13:40 rsadowski Exp $
-@pkgpath security/qtkeychain,qt5
+@comment $OpenBSD: PLIST,v 1.5 2020/04/15 12:42:21 kirby Exp $
 @conflict qtkeychain-qt5-*
+@pkgpath security/qtkeychain,qt5
 include/${LIBNAME_L}/
 include/${LIBNAME_L}/keychain.h
 include/${LIBNAME_L}/qkeychain_export.h
@@ -10,7 +10,7 @@ lib/cmake/${LIBNAME}/${LIBNAME}ConfigVersion.cmake
 lib/cmake/${LIBNAME}/${LIBNAME}LibraryDepends${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/${LIBNAME}/${LIBNAME}LibraryDepends.cmake
 @lib lib/lib${LIBNAME_L}.so.${LIB${LIBNAME_L}_VERSION}
-lib/${QT}/
+lib/${QT}/mkspecs/modules/qt_${LIBNAME}.pri
 lib/${QT}/translations/
 lib/${QT}/translations/qtkeychain_de.qm
 lib/${QT}/translations/qtkeychain_ro.qm
