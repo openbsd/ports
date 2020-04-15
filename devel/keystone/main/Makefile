@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2018/04/08 20:43:05 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/15 14:23:20 fcambus Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	keystone	1.0
 
