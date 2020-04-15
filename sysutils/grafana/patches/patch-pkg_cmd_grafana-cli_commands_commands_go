@@ -1,14 +1,14 @@
-$OpenBSD: patch-pkg_cmd_grafana-cli_commands_commands_go,v 1.2 2020/03/05 10:09:51 martin Exp $
+$OpenBSD: patch-pkg_cmd_grafana-cli_commands_commands_go,v 1.3 2020/04/15 18:18:19 martin Exp $
 
 Index: pkg/cmd/grafana-cli/commands/commands.go
 --- pkg/cmd/grafana-cli/commands/commands.go.orig
 +++ pkg/cmd/grafana-cli/commands/commands.go
-@@ -73,7 +73,7 @@ func runPluginCommand(command func(commandLine utils.C
- 			os.Exit(1)
+@@ -57,7 +57,7 @@ func runPluginCommand(command func(commandLine utils.C
+ 			return err
  		}
  
 -		logger.Info("\nRestart grafana after installing plugins . <service grafana-server restart>\n\n")
 +		logger.Info("\nRestart grafana after installing plugins . <rcctl restart grafana>\n\n")
+ 		return nil
  	}
  }
- 

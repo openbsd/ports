@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_sample_ini,v 1.5 2020/03/05 10:09:51 martin Exp $
+$OpenBSD: patch-conf_sample_ini,v 1.6 2020/04/15 18:18:19 martin Exp $
 
 Index: conf/sample.ini
 --- conf/sample.ini.orig
@@ -27,7 +27,7 @@ Index: conf/sample.ini
  
  #################################### Server ####################################
  [server]
-@@ -469,7 +469,7 @@
+@@ -486,7 +486,7 @@
  [log]
  # Either "console", "file", "syslog". Default is console and  file
  # Use space to separate multiple modes, e.g. "console file"
