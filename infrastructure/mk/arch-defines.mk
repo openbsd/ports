@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.72 2020/04/15 13:45:02 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.73 2020/04/15 14:25:57 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -40,7 +40,7 @@ GCC49_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
 # arches where there is a C++11 compiler, either clang in base or ports-gcc
 CXX11_ARCHS = ${CLANG_ARCHS} ${GCC49_ARCHS}
-DEBUGINFO_ARCHS = amd64
+DEBUGINFO_ARCHS = aarch64 amd64
 
 .for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 GCC49 MONO LLVM \
                      CXX11 OCAML_NATIVE OCAML_NATIVE_DYNLINK GO \
