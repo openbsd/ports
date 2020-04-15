@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/15 14:08:17 fcambus Exp $
 
 COMMENT =	simple VTXXX-compatible terminal emulator
 
 MODPY_EGG_VERSION = 0.8.0
 DISTNAME =	pyte-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/selectel/pyte
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
