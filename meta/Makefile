@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/07 20:01:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/04/15 15:57:27 bket Exp $
 
      SUBDIR =
+     SUBDIR += audacious
      SUBDIR += avr
      SUBDIR += geda
      SUBDIR += gnome
