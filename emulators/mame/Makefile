@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/04/06 12:26:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.39 2020/04/15 13:31:42 fcambus Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -12,12 +12,11 @@ GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
 DISTNAME =	mame-0.${V}
+REVISION =	0
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://mamedev.org/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

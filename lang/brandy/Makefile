@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/15 13:31:42 fcambus Exp $
 
 COMMENT =	interpreter for BBC Basic (Basic V)
 
 DISTNAME =	brandy-1.20.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	lang
 
 HOMEPAGE =	http://jaguar.orpheusweb.co.uk/branpage.html
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/01/03 11:53:44 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2020/04/15 13:31:42 fcambus Exp $
 
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
@@ -6,12 +6,11 @@ V =		4.2.0
 DISTNAME =	atari800-${V}-src
 PKGNAME =	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tgz
+REVISION =	0
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://atari800.github.io/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

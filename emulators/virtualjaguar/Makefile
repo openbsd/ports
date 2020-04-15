@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/04/15 13:31:42 fcambus Exp $
 
 COMMENT =	Atari Jaguar emulator
 
 V =		2.1.3
 DISTNAME =	virtualjaguar-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators games
 
 HOMEPAGE =	https://icculus.org/virtualjaguar/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

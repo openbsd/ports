@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2019/08/21 20:35:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/15 13:31:42 fcambus Exp $
 
 COMMENT =	keyboard driven tiling window manager
 
 DISTNAME =	coma-1.1
+REVISION =	0
 
 CATEGORIES =	x11
 
 HOMEPAGE =	https://coma.one/wm/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

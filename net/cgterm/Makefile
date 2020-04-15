@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/15 13:31:42 fcambus Exp $
 
 COMMENT =	C/G telnet client for C64 BBSes
 
 DISTNAME =	cgterm-1.6
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://paradroid.automac.se/cgterm/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
