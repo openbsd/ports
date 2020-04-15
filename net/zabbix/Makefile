@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2020/04/14 14:47:24 robert Exp $
+# $OpenBSD: Makefile,v 1.165 2020/04/15 05:58:12 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -15,6 +15,9 @@ FULLPKGPATH-proxy =	net/zabbix,-proxy
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
+
+REVISION-proxy =	0
+REVISION-server =	0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -145,17 +148,21 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
 	${SUBST_DATA} ${FILESDIR}/zabbix.ini \
 		${PREFIX}/share/examples/php-${MODPHP_VERSION}/zabbix.ini
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/schema
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data/images
+.for _n in proxy server
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix-${_n}/schema
+
+	# Database schemas. The proxy needs sqlite3 as well.
+	cd ${WRKSRC}/database/ && tar -cf - mysql postgresql | \
+		tar -C ${PREFIX}/share/zabbix-${_n}/schema -xf -
+.  if "${_n}" == "proxy"
+	cd ${WRKSRC}/database/ && tar -cf - sqlite3 | \
+		tar -C ${PREFIX}/share/zabbix-${_n}/schema -xf -
+.  endif
+	@find ${PREFIX}/share/zabbix-${_n}/schema -name data.sql -exec \
+		perl -pi -e "s,/bin/ping,/sbin/ping,g;s,/usr/bin/traceroute,/usr/sbin/traceroute,g" {} \;
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/zabbix
 	${INSTALL_DATA} ${WRKBUILD}/conf/*.conf \
 		${PREFIX}/share/examples/zabbix
-	# Database schemas
-	cd ${WRKSRC}/database/ && tar -cf - mysql postgresql sqlite3 | \
-		tar -C ${PREFIX}/share/zabbix/schema -xf -
-
-	@find ${PREFIX}/share/zabbix/schema -name data.sql -exec \
-		perl -pi -e "s,/bin/ping,/sbin/ping,g;s,/usr/bin/traceroute,/usr/sbin/traceroute,g" {} \;
 
 .include <bsd.port.mk>

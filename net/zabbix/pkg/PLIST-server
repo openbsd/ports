@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.22 2018/10/26 06:57:21 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.23 2020/04/15 05:58:12 robert Exp $
 @conflict zabbix-agent-<=1.8.3p5
 @extraunexec rm -rf /var/log/zabbix/*
 @man man/man8/zabbix_server.8
@@ -12,22 +12,16 @@ share/examples/zabbix/zabbix_server.conf
 @sample ${SYSCONFDIR}/zabbix/zabbix_server.conf
 @mode
 @group
-share/zabbix/
-share/zabbix/data/
-share/zabbix/data/images/
-share/zabbix/schema/
-share/zabbix/schema/mysql/
-share/zabbix/schema/mysql/data.sql
-share/zabbix/schema/mysql/images.sql
-share/zabbix/schema/mysql/schema.sql
-share/zabbix/schema/postgresql/
-share/zabbix/schema/postgresql/data.sql
-share/zabbix/schema/postgresql/images.sql
-share/zabbix/schema/postgresql/schema.sql
-share/zabbix/schema/sqlite3/
-share/zabbix/schema/sqlite3/data.sql
-share/zabbix/schema/sqlite3/images.sql
-share/zabbix/schema/sqlite3/schema.sql
+share/zabbix-server/
+share/zabbix-server/schema/
+share/zabbix-server/schema/mysql/
+share/zabbix-server/schema/mysql/data.sql
+share/zabbix-server/schema/mysql/images.sql
+share/zabbix-server/schema/mysql/schema.sql
+share/zabbix-server/schema/postgresql/
+share/zabbix-server/schema/postgresql/data.sql
+share/zabbix-server/schema/postgresql/images.sql
+share/zabbix-server/schema/postgresql/schema.sql
 @mode 0755
 @owner _zabbix
 @sample /var/log/zabbix/

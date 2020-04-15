@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.14 2018/09/04 12:46:19 espie Exp $
+$OpenBSD: README-server,v 1.15 2020/04/15 05:58:12 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -66,7 +66,7 @@ Connect to MariaDB, and create a user and database for Zabbix;
 Then initialize the database from the files installed in
 ${TRUEPREFIX}/share/examples/zabbix:
 
-    $ cd ${TRUEPREFIX}/share/zabbix/schema/mysql
+    $ cd ${TRUEPREFIX}/share/zabbix-server/schema/mysql
     $ mysql -uzabbix -p[password] zabbix < schema.sql
 The following steps are not required for setting up a Zabbix Proxy.
     $ mysql -uzabbix -p[password] zabbix < images.sql
@@ -84,7 +84,7 @@ you can create the 'zabbix' user and database like this:
 
 And initialize the database:
 
-    $ cd ${TRUEPREFIX}/share/zabbix/schema/postgresql
+    $ cd ${TRUEPREFIX}/share/zabbix-server/schema/postgresql
     $ cat schema.sql | psql -U zabbix zabbix
 The following steps are not required for setting up a Zabbix Proxy.
     $ cat images.sql | psql -U zabbix zabbix
@@ -104,7 +104,7 @@ automatically created and initialized if it does not exist. Note that
 for obvious performance reasons, it is NOT encouraged to use the SQLite
 backend for a server.
 
-    # cd ${TRUEPREFIX}/share/zabbix/schema/sqlite3
+    # cd ${TRUEPREFIX}/share/zabbix-server/schema/sqlite3
     # su -m _zabbix -c "sqlite3 /var/db/zabbix/zabbix.db < schema.sql"
 The following steps are not required for setting up a Zabbix Proxy.
     # su -m _zabbix -c "sqlite3 /var/db/zabbix/zabbix.db < images.sql"
