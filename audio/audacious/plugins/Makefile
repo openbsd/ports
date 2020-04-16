@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2020/04/15 15:50:16 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/16 11:01:10 bket Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -43,8 +43,7 @@ LIB_DEPENDS =		audio/faad>=2.7 \
 			net/curl \
 			net/neon \
 			textproc/libxml \
-			x11/gtk+2 \
-			x11/dbus-glib
+			x11/gtk+2
 
 USE_GMAKE =		Yes
 
