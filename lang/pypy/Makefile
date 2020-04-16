@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/04/14 21:44:01 sthen Exp $
-
-BROKEN-aarch64 = needs new bootstrap following ABI change
+# $OpenBSD: Makefile,v 1.40 2020/04/16 10:30:08 sthen Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64
 
@@ -52,7 +50,11 @@ MASTER_SITES0 =		https://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
 PSEUDO_FLAVORS =	no_bootstrap
+.if ${MACHINE_ARCH} == aarch64
+FLAVOR = no_bootstrap
+.else
 FLAVOR ?=
+.endif
 
 DIST_SUBDIR =		pypy
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
