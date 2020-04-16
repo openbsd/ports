@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_plugins_qtsupport_baseqtversion_cpp,v 1.1 2020/04/16 10:34:57 rsadowski Exp $
+
+Fix ABI detection under OpenBSD.
+
+Index: src/plugins/qtsupport/baseqtversion.cpp
+--- src/plugins/qtsupport/baseqtversion.cpp.orig
++++ src/plugins/qtsupport/baseqtversion.cpp
+@@ -1978,6 +1978,9 @@ FilePathList BaseQtVersionPrivate::qtCorePaths()
+                 else if (file.endsWith(".dll")
+                          || file.endsWith(QString::fromLatin1(".so.") + versionString)
+                          || file.endsWith(".so")
++#if defined(Q_OS_OPENBSD)
++                         || file.contains(QRegExp(".so.[0-9]*.[0-9]*$"))
++#endif
+                          || file.endsWith(QLatin1Char('.') + versionString + ".dylib"))
+                     dynamicLibs.append(FilePath::fromFileInfo(info));
+             }
