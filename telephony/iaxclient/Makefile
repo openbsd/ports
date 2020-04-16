@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2020/04/15 16:31:15 kmos Exp $
+# $OpenBSD: Makefile,v 1.48 2020/04/16 06:45:19 ratchov Exp $
 
 # strangely, though aarch64 *only* uses LLD, the same failure can be
 # reproduced on amd64 by forcing ld.bfd (USE_LLD=No)
@@ -13,7 +13,7 @@ COMMENT-tcl=	IAX client library, tcl bindings
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION=	26
+REVISION=	27
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \

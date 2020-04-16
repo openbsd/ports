@@ -1,6 +1,8 @@
-$OpenBSD: patch-lib_portmixer_px_unix_oss_px_unix_oss_c,v 1.1 2010/06/18 17:32:21 sebastia Exp $
---- lib/portmixer/px_unix_oss/px_unix_oss.c.orig	Sat Nov 14 13:57:56 2009
-+++ lib/portmixer/px_unix_oss/px_unix_oss.c	Sat Nov 14 13:58:45 2009
+$OpenBSD: patch-lib_portmixer_px_unix_oss_px_unix_oss_c,v 1.2 2020/04/16 06:45:19 ratchov Exp $
+
+Index: lib/portmixer/px_unix_oss/px_unix_oss.c
+--- lib/portmixer/px_unix_oss/px_unix_oss.c.orig
++++ lib/portmixer/px_unix_oss/px_unix_oss.c
 @@ -39,6 +39,8 @@
  #include <linux/soundcard.h>
  #elif defined(__FreeBSD__)
@@ -10,3 +12,12 @@ $OpenBSD: patch-lib_portmixer_px_unix_oss_px_unix_oss_c,v 1.1 2010/06/18 17:32:2
  #else
  #include <machine/soundcard.h> /* JH20010905 */
  #endif
+@@ -65,7 +67,7 @@ typedef struct PxInfo
+    int recs[SOUND_MIXER_NRDEVICES];
+ } PxInfo;
+ 
+-char PxDevice[20] = "/dev/mixerX";
++char PxDevice[20] = "/dev//nullX";
+ 
+ int PxNumDevices = 0;
+ int PxDevices[10];

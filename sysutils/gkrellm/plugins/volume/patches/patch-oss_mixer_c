@@ -1,6 +1,7 @@
-$OpenBSD: patch-oss_mixer_c,v 1.1 2005/01/20 20:19:40 sturm Exp $
---- oss_mixer.c.orig	Wed Jan 19 21:49:53 2005
-+++ oss_mixer.c	Wed Jan 19 21:50:09 2005
+$OpenBSD: patch-oss_mixer_c,v 1.2 2020/04/16 06:45:19 ratchov Exp $
+Index: oss_mixer.c
+--- oss_mixer.c.orig
++++ oss_mixer.c
 @@ -30,7 +30,7 @@
  #if defined(__FreeBSD__) && __FreeBSD_version < 500000
    #include <machine/soundcard.h>
@@ -10,3 +11,12 @@ $OpenBSD: patch-oss_mixer_c,v 1.1 2005/01/20 20:19:40 sturm Exp $
  #endif
  
  #include "mixer.h"
+@@ -138,7 +138,7 @@ oss_mixer_device_set_volume(mixer_t *mixer, int devid,
+ static mixer_idz_t *
+ oss_mixer_get_id_list(void) {
+   mixer_idz_t *result = NULL;
+-  char *device[] = { "/dev/mixer*","/dev/sound/mixer*"};
++  char *device[] = {"/dev/null"};
+   glob_t pglob;
+   int i,n;
+ 

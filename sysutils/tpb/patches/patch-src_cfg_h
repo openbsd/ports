@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cfg_h,v 1.1 2020/04/16 06:45:19 ratchov Exp $
+
+Index: src/cfg.h
+--- src/cfg.h.orig
++++ src/cfg.h
+@@ -42,7 +42,7 @@ enum mode {MODE_COMMENT, MODE_INDENT, MODE_KEYWORD, MO
+ #define DEFAULT_NVRAMDEV_DEVFS "/dev/misc/nvram"
+ #define DEFAULT_MIXER STATE_OFF
+ #define DEFAULT_MIXERSTEPS 14
+-#define DEFAULT_MIXERDEV "/dev/mixer"
++#define DEFAULT_MIXERDEV "/dev/null"
+ #ifdef HAVE_LIBXOSD
+ #define DEFAULT_OSD STATE_ON
+ #define DEFAULT_OSDZOOM UNDEFINED
