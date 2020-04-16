@@ -1,17 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/26 21:49:36 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/16 04:37:57 rsadowski Exp $
 lib/python${MODPY_VERSION}/site-packages/bitcoin/
 lib/python${MODPY_VERSION}/site-packages/bitcoin/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}base58.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}bech32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}bloom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}messages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}net.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}rpc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}segwit_addr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}signature.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}signmessage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}wallet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/base58.py
+lib/python${MODPY_VERSION}/site-packages/bitcoin/bech32.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/bloom.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/core/
 lib/python${MODPY_VERSION}/site-packages/bitcoin/core/__init__.py
@@ -30,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/bitcoin/core/serialize.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/messages.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/net.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/rpc.py
+lib/python${MODPY_VERSION}/site-packages/bitcoin/segwit_addr.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/signature.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/signmessage.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/
@@ -38,6 +42,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}fakebitcoinproxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}test_base58.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}test_bech32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}test_bloom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}test_checkblock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}test_core.${MODPY_PYC_MAGIC_TAG}pyc
@@ -55,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}test_tran
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/${MODPY_PYCACHE}test_wallet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/fakebitcoinproxy.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/test_base58.py
+lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/test_bech32.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/test_bloom.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/test_checkblock.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/test_core.py
