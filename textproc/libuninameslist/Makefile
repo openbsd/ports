@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/15 19:48:10 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/16 12:28:36 fcambus Exp $
 
 COMMENT =	library of Unicode names and annotation data
 
-V =		20200313
+V =		20200413
 DISTNAME =	libuninameslist-dist-$V
 PKGNAME =	${DISTNAME:S/-dist//}
 
-SHARED_LIBS +=	uninameslist	0.0	# 1.6
+SHARED_LIBS +=	uninameslist	0.1	# 1.7
 
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://github.com/fontforge/libuninameslist
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
