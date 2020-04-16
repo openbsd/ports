@@ -1,9 +1,16 @@
-$OpenBSD: patch-stats_h,v 1.3 2019/02/24 15:02:19 sthen Exp $
+$OpenBSD: patch-stats_h,v 1.4 2020/04/16 06:54:41 ratchov Exp $
 Index: stats.h
 --- stats.h.orig
 +++ stats.h
-@@ -30,10 +30,12 @@
- #include <sys/audioio.h>
+@@ -25,15 +25,18 @@
+ #include <fcntl.h>
+ #include <math.h>
+ #include <err.h>
++#include <poll.h>
++#include <sndio.h>
+ 
+ #include <machine/apmvar.h>
+-#include <sys/audioio.h>
  #include <sys/ioctl.h>
  #include <sys/param.h>
 +#include <sys/mount.h>
@@ -15,7 +22,30 @@ Index: stats.h
  
  #include "xstatbar.h"
  
-@@ -74,6 +76,8 @@ typedef struct {
+@@ -45,14 +48,14 @@
+ /* volume */
+ typedef struct {
+    bool  is_setup;
+-
+-   int   dev_fd;
+-   int   master_idx;
+-
+-   int   max;
+-   int   nchan;
+-   int   left;
+-   int   right;
++   struct sioctl_hdl *hdl;
++   struct pollfd *pfds;
++   int left;
++   int left_addr;
++   int left_max;
++   int right;
++   int right_addr;
++   int right_max;
+ } volume_info_t;
+ extern volume_info_t volume;
+ 
+@@ -74,6 +77,8 @@ typedef struct {
  
     int       swap_used;    /* swap space used */
     int       swap_total;   /* total amount of swap space */
@@ -24,7 +54,7 @@ Index: stats.h
  
     /* cpu/memory historical stuff (for graphs) */
  
-@@ -84,6 +88,7 @@ typedef struct {
+@@ -84,6 +89,7 @@ typedef struct {
  #define MEM_ACT 0
  #define MEM_TOT 1
  #define MEM_FRE 2

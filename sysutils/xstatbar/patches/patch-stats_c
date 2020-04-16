@@ -1,4 +1,4 @@
-$OpenBSD: patch-stats_c,v 1.10 2019/02/24 15:02:19 sthen Exp $
+$OpenBSD: patch-stats_c,v 1.11 2020/04/16 06:54:41 ratchov Exp $
 
 If devinfo.type != AUDIO_MIXER_CLASS is true, xstatbar will never make
 progress and loop forever. Fix it by trying the next device.
@@ -6,19 +6,212 @@ progress and loop forever. Fix it by trying the next device.
 Index: stats.c
 --- stats.c.orig
 +++ stats.c
-@@ -101,8 +101,10 @@ volume_init()
-    devinfo.index = 0;
-    while (ioctl(volume.dev_fd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
+@@ -61,118 +61,104 @@ fmtmem(int m)
+  * volume stuff
+  ****************************************************************************/
  
--      if (devinfo.type != AUDIO_MIXER_CLASS)
-+      if (devinfo.type != AUDIO_MIXER_CLASS) {
-+         devinfo.index++;
-          continue;
+-int
+-volume_check_dev(int fd, int class, char *name)
++/*
++ * new control
++ */
++void
++volume_ondesc(void *unused, struct sioctl_desc *d, int val)
+ {
+-   mixer_devinfo_t devinfo;
++   if (d == NULL)
++      return;
+ 
+-   if (class < 0 || name == NULL)
+-      return (-1);
++   if (d->addr == volume.left_addr)
++      volume.left_addr = -1;
++   if (d->addr == volume.right_addr)
++      volume.right_addr = -1;
+ 
+-   devinfo.index = 0;
+-   while (ioctl(fd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
+-      if ((devinfo.type == AUDIO_MIXER_VALUE)
+-      &&  (devinfo.mixer_class == class)
+-      &&  (strncmp(devinfo.label.name, name, MAX_AUDIO_DEV_LEN) == 0))
+-         return (devinfo.index);
++   if (d->type == SIOCTL_NUM &&
++      strcmp(d->group, "") == 0 &&
++      strcmp(d->node0.name, "output") == 0 &&
++      strcmp(d->func, "level") == 0) {
+ 
+-      devinfo.index++;
++      switch (d->node0.unit) {
++      case -1:	/* mono */
++      case 0:	/* left */
++         volume.left_addr = d->addr;
++         volume.left_max = d->maxval;
++         volume.left = val;
++         break;
++      case 1:	/* right */
++         volume.right_addr = d->addr;
++         volume.right_max = d->maxval;
++         volume.right = val;
 +      }
+    }
++}
  
-       if (strncmp(devinfo.label.name, AudioCoutputs, MAX_AUDIO_DEV_LEN) == 0)
-          oclass_idx = devinfo.index;
-@@ -358,7 +360,7 @@ sysinfo_init(int hist_size)
+-   return (-1);
++/*
++ * control value changed
++ */
++void
++volume_onval(void *unused, unsigned int addr, unsigned int value)
++{
++   if (addr == volume.left_addr)
++      volume.left = value;
++   if (addr == volume.right_addr)
++      volume.right = value;
+ }
+ 
+ void
+ volume_init()
+ {
+-   mixer_devinfo_t devinfo;
+-   int oclass_idx, iclass_idx;
+-
+    volume.is_setup = false;
++   volume.left_addr = volume.right_addr = -1;
+ 
+-   /* open mixer */
+-   if ((volume.dev_fd = open("/dev/mixer", O_RDWR)) < 0) {
+-      warn("volume: failed to open /dev/mixer");
++   if ((volume.hdl = sioctl_open(SIO_DEVANY, SIOCTL_READ, 0)) == NULL) {
++      warn("volume: failed to open default device");
+       return;
+    }
+ 
+-   /* find the outputs and inputs classes */
+-   oclass_idx = iclass_idx = -1;
+-   devinfo.index = 0;
+-   while (ioctl(volume.dev_fd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
+-
+-      if (devinfo.type != AUDIO_MIXER_CLASS)
+-         continue;
+-
+-      if (strncmp(devinfo.label.name, AudioCoutputs, MAX_AUDIO_DEV_LEN) == 0)
+-         oclass_idx = devinfo.index;
+-      if (strncmp(devinfo.label.name, AudioCinputs, MAX_AUDIO_DEV_LEN) == 0)
+-         iclass_idx = devinfo.index;
+-
+-      if (oclass_idx != -1 && iclass_idx != -1)
+-         break;
+-
+-      devinfo.index++;
++   volume.pfds = calloc(sioctl_nfds(volume.hdl), sizeof(struct pollfd));
++   if (volume.pfds == NULL) {
++      warnx("volume: cannot allocate pfds\n");
++      goto bad_close;
+    }
++  
+ 
+-   /* find the master device */
+-   volume.master_idx = volume_check_dev(volume.dev_fd, oclass_idx, AudioNmaster);
+-   if (volume.master_idx == -1)
+-      volume.master_idx = volume_check_dev(volume.dev_fd, iclass_idx, AudioNdac);
+-   if (volume.master_idx == -1)
+-      volume.master_idx = volume_check_dev(volume.dev_fd, oclass_idx, AudioNdac);
+-   if (volume.master_idx == -1)
+-      volume.master_idx = volume_check_dev(volume.dev_fd, oclass_idx, AudioNoutput);
+-
+-   if (volume.master_idx == -1) {
+-      warnx("volume: failed to find \"master\" mixer device");
+-      return;
++   if (!sioctl_ondesc(volume.hdl, volume_ondesc, NULL)) {
++      warnx("volume: cannot get descriptions\n");
++      goto bad_free;
+    }
+ 
+-   devinfo.index = volume.master_idx;
+-   if (ioctl(volume.dev_fd, AUDIO_MIXER_DEVINFO, &devinfo) == -1) {
+-      warn("AUDIO_MIXER_DEVINFO");
+-      return;
++   if (!sioctl_onval(volume.hdl, volume_onval, NULL)) {
++      warnx("volume: cannot get values\n");
++      goto bad_free;
+    }
+ 
+-   volume.max = AUDIO_MAX_GAIN;
+-   volume.nchan = devinfo.un.v.num_channels;
+-
+-   /* finished... now close the device and reopen as read only */
+-   close(volume.dev_fd);
+-   volume.dev_fd = open("/dev/mixer", O_RDONLY);
+-   if (volume.dev_fd < 0) {
+-      warn("volume: failed to re-open /dev/mixer");
+-      return;
+-   }
+-
+    volume.is_setup = true;
++   return;
++bad_free:
++   free(volume.pfds);
++bad_close:
++   sioctl_close(volume.hdl);
+ }
+ 
+ void
+ volume_update()
+ {
+-   static mixer_ctrl_t vinfo;
++   int n;
+ 
+    if (!volume.is_setup)
+       return;
+ 
+-   /* query info */
+-   vinfo.dev = volume.master_idx;
+-   vinfo.type = AUDIO_MIXER_VALUE;
+-   vinfo.un.value.num_channels = volume.nchan;
+-   if (ioctl(volume.dev_fd, AUDIO_MIXER_READ, &(vinfo)) < 0) {
+-      warn("volume update: AUDIO_MIXER_READ");
+-      return;
++   n = sioctl_pollfd(volume.hdl, volume.pfds, POLLIN);
++   if (n > 0) {
++      n = poll(volume.pfds, n, 0);
++      if (n == -1)
++         return;
++      if (n > 0)
++         sioctl_revents(volume.hdl, volume.pfds);
+    }
+-
+-   /* record in global struct */
+-   if (volume.nchan == 1)
+-      volume.left = volume.right = vinfo.un.value.level[AUDIO_MIXER_LEVEL_MONO];
+-   else {
+-      volume.left  = vinfo.un.value.level[AUDIO_MIXER_LEVEL_LEFT];
+-      volume.right = vinfo.un.value.level[AUDIO_MIXER_LEVEL_RIGHT];
+-   }
+ }
+ 
+ void
+@@ -180,7 +166,7 @@ volume_close() {
+    if (!volume.is_setup)
+       return;
+ 
+-   close(volume.dev_fd);
++   sioctl_close(volume.hdl);
+ }
+ 
+ int
+@@ -199,8 +185,9 @@ volume_draw(XColor color, int x, int y)
+    width = 5;
+ 
+    /* get volume as percents */
+-   left  = roundf(100.0 * (float)volume.left  / (float)volume.max);
+-   right = roundf(100.0 * (float)volume.right / (float)volume.max);
++   left  = roundf(100.0 * (float)volume.left  / (float)volume.left_max);
++   right = (volume.right_addr == -1) ?
++      left : roundf(100.0 * (float)volume.right / (float)volume.right_max);
+ 
+    /* determine height of green-part of bar graphs */
+    lheight = (int)(left  * (float)XINFO.height / 100.0);
+@@ -358,7 +345,7 @@ sysinfo_init(int hist_size)
        err(1, "sysinfo init: memory calloc failed");
  
     for (i = 0; i < hist_size; i++) {
@@ -27,7 +220,7 @@ Index: stats.c
           err(1, "sysinfo init: memory[%d] calloc failed", i);
  
        for (j = 0; j < 3; j++)
-@@ -372,6 +374,7 @@ sysinfo_init(int hist_size)
+@@ -372,6 +359,7 @@ sysinfo_init(int hist_size)
  
     /* allocate cpu history */
     sysinfo.cpu_raw   = calloc(sysinfo.ncpu, sizeof(uint64_t**));
@@ -35,7 +228,7 @@ Index: stats.c
     sysinfo.cpu_pcnts = calloc(sysinfo.ncpu, sizeof(int**));
     if (sysinfo.cpu_raw == NULL || sysinfo.cpu_pcnts == NULL)
        err(1, "sysinfo init: cpu_raw/cpu_pcnts calloc failed");
-@@ -404,10 +407,14 @@ sysinfo_update()
+@@ -404,10 +392,14 @@ sysinfo_update()
  {
     static int mib_nprocs[] = { CTL_KERN, KERN_NPROCS };
     static int mib_vm[] = { CTL_VM, VM_METER };
@@ -51,7 +244,7 @@ Index: stats.c
     size_t    size;
     int       cpu, state;
     int       cur, prev;
-@@ -431,9 +438,16 @@ sysinfo_update()
+@@ -431,9 +423,16 @@ sysinfo_update()
     if (sysctl(mib_vm, 2, &vminfo, &size, NULL, 0) < 0)
        err(1, "sysinfo update: VM.METER failed");
  
@@ -68,7 +261,7 @@ Index: stats.c
  
     /* get swap status */
     if ((nswaps = swapctl(SWAP_NSWAP, 0, 0)) == 0)
-@@ -454,24 +468,15 @@ sysinfo_update()
+@@ -454,24 +453,15 @@ sysinfo_update()
  
     /* get states for each cpu. note this is raw # of ticks */
     size = CPUSTATES * sizeof(int64_t);
@@ -102,7 +295,7 @@ Index: stats.c
     }
  
     /* convert ticks to percentages */
-@@ -509,12 +514,16 @@ int
+@@ -509,12 +499,16 @@ int
  cpu_draw(int cpu, XColor color, int x, int y)
  {
     static char  str[1000];
@@ -121,7 +314,7 @@ Index: stats.c
     startx = x;
  
     snprintf(str, sizeof(str), "cpu%d:", cpu);
-@@ -531,7 +540,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
+@@ -531,7 +525,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* user time */
        h = 0;
@@ -130,7 +323,7 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_RED.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -540,7 +549,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
+@@ -540,7 +534,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* nice time */
        h = 0;
@@ -139,7 +332,7 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_BLUE.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -549,15 +558,24 @@ cpu_draw(int cpu, XColor color, int x, int y)
+@@ -549,15 +543,24 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* system time */
        h = 0;
@@ -166,7 +359,7 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_MAGENTA.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -594,7 +612,8 @@ mem_draw(XColor color, int x, int y)
+@@ -594,7 +597,8 @@ mem_draw(XColor color, int x, int y)
     /* determine total memory */
     total = sysinfo.memory[cur][MEM_ACT]
           + sysinfo.memory[cur][MEM_TOT]
@@ -176,7 +369,7 @@ Index: stats.c
  
     /* start drawing ... */
     x += render_text(color, x, y, "mem:") + 1;
-@@ -610,7 +629,8 @@ mem_draw(XColor color, int x, int y)
+@@ -610,7 +614,8 @@ mem_draw(XColor color, int x, int y)
  
        if ((sysinfo.memory[time][MEM_ACT] != 0)
        ||  (sysinfo.memory[time][MEM_TOT] != 0)
@@ -186,7 +379,7 @@ Index: stats.c
  
  
           /* draw yellow (total) bar */
-@@ -627,6 +647,13 @@ mem_draw(XColor color, int x, int y)
+@@ -627,6 +632,13 @@ mem_draw(XColor color, int x, int y)
           XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
              x + col, XINFO.height - h,
              x + col, XINFO.height);
@@ -200,7 +393,7 @@ Index: stats.c
        }
  
        time = (time + 1) % sysinfo.hist_size;
-@@ -639,6 +666,8 @@ mem_draw(XColor color, int x, int y)
+@@ -639,6 +651,8 @@ mem_draw(XColor color, int x, int y)
     x += render_text(COLOR_YELLOW, x, y, fmtmem(sysinfo.memory[cur][MEM_TOT]));
     x += render_text(color, x, y, "/");
     x += render_text(COLOR_GREEN, x, y, fmtmem(sysinfo.memory[cur][MEM_FRE]));
