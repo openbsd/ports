@@ -1,6 +1,6 @@
-$OpenBSD: patch-vendor_gtest_src_gtest-port_cc,v 1.1 2020/03/23 13:23:32 landry Exp $
+$OpenBSD: patch-vendor_gtest_src_gtest-port_cc,v 1.2 2020/04/16 05:38:16 landry Exp $
 
-https://github.com/PDAL/PDAL/commit/dc9436f4df2bcfcf0246268855d6bb60905e8cb7
+https://github.com/PDAL/PDAL/commit/ba54981839055a3531487a96dc3d3794b618949b
 
 Index: vendor/gtest/src/gtest-port.cc
 --- vendor/gtest/src/gtest-port.cc.orig
