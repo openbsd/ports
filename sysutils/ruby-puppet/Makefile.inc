@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.46 2019/07/12 20:49:50 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.47 2020/04/16 13:59:04 kn Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -50,5 +50,5 @@ FAKE_FLAGS +=		HOME=${WKRDIR}/home
 SUBST_VARS +=		MODRUBY_BINREV
 
 post-install:
-	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) -exec rm {} \;
+	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) -delete
 	gunzip ${PREFIX}/man/*/*.gz

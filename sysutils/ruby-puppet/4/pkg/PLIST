@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/09/04 12:46:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/04/16 13:59:04 kn Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppetlabs/*
+@rcscript ${RCDIR}/puppet
+@rcscript ${RCDIR}/puppetmaster
 bin/extlookup2hiera
 bin/puppet
 ${MODRUBY_SITEDIR}/hiera/
@@ -1521,25 +1523,23 @@ ${MODRUBY_SITEDIR}/semver.rb
 @man man/man8/puppet-status.8
 @man man/man8/puppet.8
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/ruby${MODRUBY_BINREV}-puppet/
-@sample ${SYSCONFDIR}/puppetlabs/
-share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/
-@sample ${SYSCONFDIR}/puppetlabs/puppet/
-share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/auth.conf
-@sample ${SYSCONFDIR}/puppetlabs/puppet/auth.conf
-share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/config.ru
-share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/environment.conf
-@sample ${SYSCONFDIR}/puppetlabs/puppet/environment.conf
-share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/fileserver.conf
-@sample ${SYSCONFDIR}/puppetlabs/puppet/fileserver.conf
-share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/puppet.conf
-@sample ${SYSCONFDIR}/puppetlabs/puppet/puppet.conf
-share/examples/ruby${MODRUBY_BINREV}-puppet/code/
-@sample ${SYSCONFDIR}/puppetlabs/code/
+${MODRUBY_RELEXAMPLEDIR}-puppet/
+${MODRUBY_RELEXAMPLEDIR}-puppet/code/
 @sample ${SYSCONFDIR}/puppetlabs/code/environments/
 @sample ${SYSCONFDIR}/puppetlabs/code/environments/production/
 @sample ${SYSCONFDIR}/puppetlabs/code/environments/production/manifests/
 @sample ${SYSCONFDIR}/puppetlabs/code/environments/production/modules/
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/
+@sample ${SYSCONFDIR}/puppetlabs/puppet/
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/auth.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppet/auth.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/config.ru
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/environment.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppet/environment.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/fileserver.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppet/fileserver.conf
+${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/puppet.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppet/puppet.conf
 @sample ${LOCALSTATEDIR}/log/puppetlabs/
 @sample ${LOCALSTATEDIR}/log/puppetlabs/puppet/
 @mode 0755
@@ -1549,6 +1549,3 @@ share/examples/ruby${MODRUBY_BINREV}-puppet/code/
 @sample ${LOCALSTATEDIR}/puppetlabs/puppet/cache/lib/
 @sample ${LOCALSTATEDIR}/puppetlabs/puppet/cache/facts.d/
 @sample ${LOCALSTATEDIR}/puppetlabs/puppet/modules/
-@mode
-@rcscript ${RCDIR}/puppet
-@rcscript ${RCDIR}/puppetmaster
