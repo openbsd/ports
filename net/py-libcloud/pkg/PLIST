@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/01/03 08:58:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/04/16 06:25:33 ajacoutot Exp $
+@conflict py-libcloud-*
+@pkgpath net/py-libcloud,python3
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -59,10 +61,12 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}durable
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}gandi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}gandi_live.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}gig_g8.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}gogrid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}google.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}gridscale.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}hostvirtual.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}kubernetes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}linode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}liquidweb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}luadns.${MODPY_PYC_MAGIC_TAG}pyc
@@ -102,10 +106,12 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/common/durabledns.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/gandi.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/gandi_live.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/gig_g8.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/gogrid.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/google.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/gridscale.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/hostvirtual.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/kubernetes.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/linode.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/liquidweb.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/luadns.py
@@ -168,6 +174,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}exoscale.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}gandi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}gce.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}gig_g8.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}gogrid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}gridscale.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}gridspot.${MODPY_PYC_MAGIC_TAG}pyc
@@ -176,8 +183,10 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}indosat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}internetsolutions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}joyent.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}kamatera.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}kili.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}ktucloud.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}kubevirt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}libvirt_driver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}linode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}maxihost.${MODPY_PYC_MAGIC_TAG}pyc
@@ -203,7 +212,6 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}vcloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}voxel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}vpsnet.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}vsphere.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}vultr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/abiquo.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/auroracompute.py
@@ -227,6 +235,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/elasticstack.p
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/exoscale.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/gandi.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/gce.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/gig_g8.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/gogrid.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/gridscale.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/gridspot.py
@@ -235,8 +244,10 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ikoula.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/indosat.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/internetsolutions.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/joyent.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/kamatera.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/kili.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ktucloud.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/kubevirt.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/libvirt_driver.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/linode.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/maxihost.py
@@ -262,7 +273,6 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vcl.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vcloud.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/voxel.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vpsnet.py
-lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vsphere.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vultr.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/providers.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/ssh.py
@@ -285,6 +295,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}gke.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}joyent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}kubernetes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}lxd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}rancher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/docker.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/dummy.py
@@ -292,6 +303,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/ecs.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/gke.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/joyent.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/kubernetes.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/lxd.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/rancher.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/providers.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/types.py

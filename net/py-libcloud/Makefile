@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2020/03/04 08:54:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2020/04/16 06:25:33 ajacoutot Exp $
 
 COMMENT=		unified interface for interacting with cloud services
 
-MODPY_EGG_VERSION=	2.8.1
+MODPY_EGG_VERSION=	3.0.0
 DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
 PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
 
@@ -23,7 +23,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 BUILD_DEPENDS=		devel/py-test-runner${MODPY_FLAVOR}
 
@@ -36,13 +36,7 @@ TEST_DEPENDS=		devel/flake8 \
 			sysutils/py-lockfile${MODPY_FLAVOR} \
 			www/py-requests-mock${MODPY_FLAVOR}
 
-# python2
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname
-TEST_DEPENDS +=		devel/py-backports-ssl-match-hostname \
-			devel/py-enum34
-.endif
-
+# no need to package the test suite
 post-install:
 	rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/libcloud/test/
 
