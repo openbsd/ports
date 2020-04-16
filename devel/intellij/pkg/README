@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2018/09/04 12:53:16 espie Exp $
+$OpenBSD: README,v 1.4 2020/04/16 04:34:51 rsadowski Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -14,3 +14,16 @@ window manager (e.g. cwm).
 Native Libraries
 ================
 Functionality depending on native libraries is not likely to work.
+
+Errors After Upgrading
+======================
+If you receive errors starting after an upgrade, try the following:
+
+1. Remove the ${HOME}/.IdeaICXXXX.Y/config/plugins directory
+2. Remove the following directories
+  a. ${HOME}/.local/share/JetBrains
+  b. ${HOME}/.cache/JetBrains
+  c. ${HOME}/.config/JetBrains
+3. Relaunch intellij
+4. Reinstall the removed plugins
+
