@@ -1,11 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/04/16 06:45:19 ratchov Exp $
-
-# strangely, though aarch64 *only* uses LLD, the same failure can be
-# reproduced on amd64 by forcing ld.bfd (USE_LLD=No)
-BROKEN-aarch64=	linker error, undefined refs to avcodec_encode_video and avcodec_alloc_frame
-
-# Same error that hits aarch64 hits sparc64, albeit with ld.bfd
-BROKEN-sparc64=	linker error, undefined refs to avcodec_encode_video and avcodec_alloc_frame
+# $OpenBSD: Makefile,v 1.49 2020/04/16 08:51:57 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -13,7 +6,7 @@ COMMENT-tcl=	IAX client library, tcl bindings
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION=	27
+REVISION=	28
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -34,9 +27,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 cWANTLIB	+= avcodec gsm m ogg ossaudio portaudio pthread speex
 cWANTLIB	+= speexdsp sndio theora theoradec vidcap z
 
-WANTLIB-main 	+= ${cWANTLIB} ${COMPILER_LIBCXX} avutil c dav1d
-WANTLIB-main 	+= iconv lzma mp3lame opus swresample theoraenc vorbis
-WANTLIB-main 	+= vorbisenc vpx x264 x265 xvidcore
+WANTLIB-main	+= ${cWANTLIB} ${COMPILER_LIBCXX} avutil c dav1d
+WANTLIB-main	+= iconv lzma mp3lame opus swresample theoraenc vorbis
+WANTLIB-main	+= vorbisenc vpx x264 x265 xvidcore
 
 WANTLIB-tcl	+= X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo

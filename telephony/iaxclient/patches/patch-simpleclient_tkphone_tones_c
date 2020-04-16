@@ -1,0 +1,15 @@
+$OpenBSD: patch-simpleclient_tkphone_tones_c,v 1.1 2020/04/16 08:51:57 sthen Exp $
+
+For strchr() / memset().
+
+Index: simpleclient/tkphone/tones.c
+--- simpleclient/tkphone/tones.c.orig
++++ simpleclient/tkphone/tones.c
+@@ -33,6 +33,7 @@
+ #  include <stdio.h>
+ #endif
+ #include <strings.h>
++#include <string.h>
+ #include <stdlib.h>
+ #include <math.h>
+ #include "tones.h"

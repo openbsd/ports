@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_codec_ffmpeg_c,v 1.5 2019/02/18 10:05:39 ajacoutot Exp $
+$OpenBSD: patch-lib_codec_ffmpeg_c,v 1.6 2020/04/16 08:51:57 sthen Exp $
 
 Update for newer FFmpeg API.
 
@@ -90,16 +90,49 @@ Index: lib/codec_ffmpeg.c
  		if ( bytes_decoded < 0 )
  		{
  			fprintf(stderr,
-@@ -374,7 +378,7 @@ static int encode(struct iaxc_video_codec *c,
+@@ -372,9 +376,10 @@ static int encode(struct iaxc_video_codec *c,
+ 		int inlen, char * in, struct slice_set_t * slice_set)
+ {
  	struct encoder_ctx *e = (struct encoder_ctx *) c->encstate;
- 	int encoded_size;
+-	int encoded_size;
++	int encoded_size, ret, got_packet = 0;
++	AVPacket pkt;
  
 -	avcodec_get_frame_defaults(e->picture);
 +	av_frame_unref(e->picture);
  
  	e->picture->data[0] = (unsigned char *)in;
  	e->picture->data[1] = (unsigned char *)in
-@@ -441,6 +445,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -395,15 +400,25 @@ static int encode(struct iaxc_video_codec *c,
+ 	g_slice_set = slice_set;
+ 	slice_set->num_slices = 0;
+ 
+-	encoded_size = avcodec_encode_video(e->avctx,
+-			e->frame_buf, e->frame_buf_len, e->picture);
++	av_init_packet(&pkt);
++	pkt.data = e->frame_buf;
++	pkt.size = e->frame_buf_len;
+ 
+-	if (!encoded_size)
++	ret = avcodec_encode_video2(e->avctx, &pkt, e->picture, &got_packet);
++	if ( ret < 0 )
+ 	{
+ 		fprintf(stderr, "codec_ffmpeg: encode failed\n");
+ 		return -1;
+ 	}
+ 
++	encoded_size = pkt.size;
++
++	if (encoded_size < 0)
++	{
++		fprintf(stderr, "codec_ffmpeg: encode failed\n");
++		return -1;
++	}
++
+ 	slice_set->key_frame = e->avctx->coded_frame->key_frame;
+ 
+ 	/* This is paranoia, of course. */
+@@ -441,6 +456,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  {
  	struct encoder_ctx *e;
  	struct decoder_ctx *d;
@@ -107,7 +140,7 @@ Index: lib/codec_ffmpeg.c
  	AVCodec *codec;
  	int ff_enc_id, ff_dec_id;
  	char *name;
-@@ -454,7 +459,6 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -454,7 +470,6 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  		return NULL;
  	}
  
@@ -115,7 +148,7 @@ Index: lib/codec_ffmpeg.c
  	avcodec_register_all();
  
  	c->format = format;
-@@ -475,10 +479,10 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -475,10 +490,10 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  	if (!c->encstate)
  		goto bail;
  	e = c->encstate;
@@ -128,7 +161,7 @@ Index: lib/codec_ffmpeg.c
  	if (!e->picture)
  		goto bail;
  	/* The idea here is that the encoded frame that will land in this
-@@ -496,7 +500,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -496,10 +511,10 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  	if (!c->decstate)
  		goto bail;
  	d = c->decstate;
@@ -136,8 +169,12 @@ Index: lib/codec_ffmpeg.c
 +	d->avctx = avcodec_alloc_context3(NULL);
  	if (!d->avctx)
  		goto bail;
- 	d->picture = avcodec_alloc_frame();
-@@ -521,20 +525,20 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+-	d->picture = avcodec_alloc_frame();
++	d->picture = av_frame_alloc();
+ 	if (!d->picture)
+ 		goto bail;
+ 	d->frame_buf_len = e->frame_buf_len;
+@@ -521,20 +536,20 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  
  	/* This determines how often i-frames are sent */
  	e->avctx->gop_size = framerate * 3;
@@ -164,7 +201,7 @@ Index: lib/codec_ffmpeg.c
  
  	e->avctx->mb_decision = FF_MB_DECISION_SIMPLE;
  
-@@ -555,37 +559,38 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -555,37 +570,38 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  	case IAXC_FORMAT_H263:
  		/* TODO: H263 only works with specific resolutions. */
  		name = "H.263";
@@ -214,7 +251,7 @@ Index: lib/codec_ffmpeg.c
  		}
  		break;
  
-@@ -595,12 +600,11 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -595,12 +611,11 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  		e->avctx->rtp_payload_size = fragsize;
  		e->avctx->rtp_callback = encode_rtp_callback;
  		e->avctx->flags |=
@@ -232,7 +269,7 @@ Index: lib/codec_ffmpeg.c
  		break;
  
  	case IAXC_FORMAT_H264:
-@@ -611,35 +615,35 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -611,35 +626,35 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  		 */
  
  		/* Headers are not repeated */
@@ -280,7 +317,7 @@ Index: lib/codec_ffmpeg.c
  
  		/*
  		 * Decoder flags
-@@ -686,7 +690,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -686,7 +701,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  		goto bail;
  	}
  
@@ -289,7 +326,7 @@ Index: lib/codec_ffmpeg.c
  	{
  		iaxci_usermsg(IAXC_TEXT_TYPE_ERROR,
  			     "codec_ffmpeg: cannot open encoder %s\n", name);
-@@ -701,7 +705,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -701,7 +716,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  			     ff_dec_id);
  		goto bail;
  	}
@@ -298,7 +335,7 @@ Index: lib/codec_ffmpeg.c
  	{
  		iaxci_usermsg(IAXC_TEXT_TYPE_ERROR,
  			     "codec_ffmpeg: cannot open decoder %s\n", name);
-@@ -709,8 +713,8 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+@@ -709,8 +724,8 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
  	}
  
  	{
@@ -309,7 +346,7 @@ Index: lib/codec_ffmpeg.c
  		{
  			iaxci_usermsg(IAXC_TEXT_TYPE_ERROR,
  					"codec_ffmpeg: cannot set decode format to YUV420P\n");
-@@ -728,17 +732,16 @@ bail:
+@@ -728,17 +743,16 @@ bail:
  int codec_video_ffmpeg_check_codec(int format)
  {
  	AVCodec *codec;
