@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/04/16 06:26:00 bket Exp $
 
 COMMENT =	small RSA key management package
 
-V =		3.0.6
+V =		3.0.7
 PKGNAME =	easy-rsa-$V
-DISTNAME =	EasyRSA-unix-v$V
+DISTNAME =	EasyRSA-$V
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	security
 
@@ -17,8 +17,6 @@ MASTER_SITES =	https://github.com/OpenVPN/easy-rsa/releases/download/v$V/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
-
-WRKDIST =	${WRKDIR}/${DISTNAME:S/unix-//}
 
 I =		${PREFIX}/share/easy-rsa
 

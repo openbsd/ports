@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/02/15 20:50:40 bket Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/04/16 06:26:00 bket Exp $
 @extraunexec rm -rf %D/share/easy-rsa/pki
 share/easy-rsa/
 share/easy-rsa/COPYING.md
@@ -22,5 +22,7 @@ share/easy-rsa/x509-types/COMMON
 share/easy-rsa/x509-types/ca
 share/easy-rsa/x509-types/client
 share/easy-rsa/x509-types/code-signing
+share/easy-rsa/x509-types/email
+share/easy-rsa/x509-types/kdc
 share/easy-rsa/x509-types/server
 share/easy-rsa/x509-types/serverClient
