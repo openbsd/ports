@@ -1,0 +1,14 @@
+$OpenBSD: patch-sys_oss_gstossmixerelement_c,v 1.1 2020/04/16 06:49:22 ratchov Exp $
+
+Index: sys/oss/gstossmixerelement.c
+--- sys/oss/gstossmixerelement.c.orig
++++ sys/oss/gstossmixerelement.c
+@@ -42,7 +42,7 @@
+ GST_DEBUG_CATEGORY_EXTERN (oss_debug);
+ #define GST_CAT_DEFAULT oss_debug
+ 
+-#define DEFAULT_DEVICE       "/dev/mixer"
++#define DEFAULT_DEVICE       "/dev/null"
+ #define DEFAULT_DEVICE_NAME  NULL
+ 
+ enum
