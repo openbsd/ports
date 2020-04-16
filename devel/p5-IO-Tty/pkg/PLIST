@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/07/16 23:57:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/04/16 09:02:22 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/IO/
 ${P5ARCH}/IO/Pty.pm
@@ -8,7 +8,7 @@ ${P5ARCH}/IO/Tty/Constant.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/IO/
 ${P5ARCH}/auto/IO/Tty/
-${P5ARCH}/auto/IO/Tty/Tty.so
+@so ${P5ARCH}/auto/IO/Tty/Tty.so
 @man man/man3p/IO::Pty.3p
 @man man/man3p/IO::Tty.3p
 @man man/man3p/IO::Tty::Constant.3p
