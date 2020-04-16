@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.73 2020/04/15 14:25:57 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.74 2020/04/16 19:33:29 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -51,11 +51,6 @@ PROPERTIES += ${PROP:L}
 .    endif
 .  endfor
 .endfor
-
-.if !${PROPERTIES:Mdebuginfo}
-DEBUG_PACKAGES =
-DEBUG_FILES =
-.endif
 
 .if ${PROPERTIES:Mclang}
 LIBCXX = c++ c++abi pthread

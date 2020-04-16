@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.13 2016/03/15 21:45:16 naddy Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.14 2020/04/16 19:33:29 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -13,6 +13,11 @@ _BSD_PORT_ARCH_MK_INCLUDED = Done
 .if !defined(_ARCH_DEFINES_INCLUDED)
 _ARCH_DEFINES_INCLUDED = Done
 .  include "${PORTSDIR}/infrastructure/mk/arch-defines.mk"
+.endif
+
+.if !${PROPERTIES:Mdebuginfo}
+DEBUG_PACKAGES =
+DEBUG_FILES =
 .endif
 
 # early include of Makefile.inc
