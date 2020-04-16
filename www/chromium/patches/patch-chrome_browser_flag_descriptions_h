@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.27 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.28 2020/04/16 15:23:04 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
@@ -15,7 +15,7 @@ Index: chrome/browser/flag_descriptions.h
  
  // This file declares strings used in chrome://flags. These messages are not
  // translated, because instead of end-users they target Chromium developers and
-@@ -2128,14 +2128,14 @@ extern const char kZeroStateFilesDescription[];
+@@ -2131,14 +2131,14 @@ extern const char kZeroStateFilesDescription[];
  
  #endif  // #if defined(OS_CHROMEOS)
  
@@ -32,7 +32,7 @@ Index: chrome/browser/flag_descriptions.h
  
  // All views-based platforms --------------------------------------------------
  
-@@ -2154,12 +2154,12 @@ extern const char kReopenTabInProductHelpDescription[]
+@@ -2157,12 +2157,12 @@ extern const char kReopenTabInProductHelpDescription[]
  
  // Random platform combinations -----------------------------------------------
  
@@ -47,7 +47,7 @@ Index: chrome/browser/flag_descriptions.h
  
  #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
-@@ -2172,20 +2172,20 @@ extern const char kClickToCallDetectionV2Description[]
+@@ -2175,20 +2175,20 @@ extern const char kClickToCallDetectionV2Description[]
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

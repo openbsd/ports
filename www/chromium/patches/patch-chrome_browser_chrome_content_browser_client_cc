@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.62 2020/04/10 18:51:30 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.63 2020/04/16 15:23:04 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
@@ -75,7 +75,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // Processes may only query perf_event_open with the BPF sandbox disabled.
    if (browser_command_line.HasSwitch(switches::kEnableThreadInstructionCount) &&
        command_line->HasSwitch(service_manager::switches::kNoSandbox)) {
-@@ -3564,7 +3566,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3566,7 +3568,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -84,7 +84,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -3998,7 +4000,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4000,7 +4002,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
              handle));
    }
  
