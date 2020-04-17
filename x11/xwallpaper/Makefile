@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/27 05:10:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2020/04/17 04:12:40 rsadowski Exp $
 
 COMMENT =	wallpaper setting utility for X
 
-V =		0.6.4
+V =		0.6.5
 DISTNAME =	xwallpaper-${V}
 
 CATEGORIES =	x11 graphics
