@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2020/03/21 05:23:59 semarie Exp $
+# $OpenBSD: Makefile,v 1.110 2020/04/17 14:49:19 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -23,7 +23,7 @@ DISTNAME =		rustc-${V}-src
 BV-aarch64 =		1.42.0-20200315
 BV-amd64 =		1.42.0-20200310
 BV-i386 =		1.42.0-20200311
-BV-sparc64 =		1.41.0-20200224
+BV-sparc64 =		1.42.0-20200413
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -92,6 +92,8 @@ COMPILER =		base-clang ports-gcc
 
 MODULES +=		lang/python \
 			gnu
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS +=	devel/cmake
