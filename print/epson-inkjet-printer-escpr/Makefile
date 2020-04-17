@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/01/02 19:27:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/17 16:14:40 naddy Exp $
 
 # MASTER_SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
@@ -25,7 +25,7 @@ WANTLIB += avahi-client avahi-common c cups cupsimage dbus-1 ffi
 WANTLIB += gmp gnutls hogweed iconv idn2 intl m nettle p11-kit
 WANTLIB += pthread tasn1 unistring z
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			print/cups,-libs
 
 CONFIGURE_STYLE=	autoreconf

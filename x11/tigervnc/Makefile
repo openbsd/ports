@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/13 11:27:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/17 16:14:41 naddy Exp $
 
 COMMENT=	high performance, multi-platform VNC client and server
 
@@ -44,7 +44,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 NO_TEST=	Yes
 
 BUILD_DEPENDS=	devel/gettext,-tools
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		security/gnutls \
 		x11/fltk
 RUN_DEPENDS=	devel/desktop-file-utils \

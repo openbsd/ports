@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/04/17 16:14:40 naddy Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
@@ -42,7 +42,7 @@ MODULES =	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MAKE_ENV +=	PYTHON=1
 WANTLIB +=	${MODPY_WANTLIB} intl m util
-LIB_DEPENDS +=	devel/gettext
+LIB_DEPENDS +=	devel/gettext,-runtime
 .endif
 
 USE_GMAKE =	Yes
