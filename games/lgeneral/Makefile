@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/19 19:12:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.21 2020/04/17 15:49:58 naddy Exp $
 
 COMMENT=	turn-based strategy engine
 
@@ -17,7 +17,8 @@ WANTLIB += SDL SDL_mixer c intl m pthread
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgeneral/}
 
-LIB_DEPENDS=	devel/gettext \
+BUILD_DEPENDS=	devel/gettext,-tools
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/sdl-mixer
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
