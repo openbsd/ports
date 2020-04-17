@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/14 21:38:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/17 23:59:50 sthen Exp $
 
 BROKEN-aarch64 = looks like the vendored golang.org/x/sys/unix is too old for aarch64
+# try removing above with next update
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 

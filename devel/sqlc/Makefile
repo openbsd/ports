@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/14 21:38:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/17 23:59:50 sthen Exp $
 
 BROKEN-aarch64 = port/atomics/arch-arm.h file not found
+# try removing above with next update
 
 COMMENT =	create type safe go from SQL
 
