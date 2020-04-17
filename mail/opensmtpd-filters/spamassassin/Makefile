@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/12/16 21:32:02 jung Exp $
+# $OpenBSD: Makefile,v 1.5 2020/04/17 23:28:30 jung Exp $
 
 COMMENT =	Apache SpamAssassin integration to the OpenSMTPD daemon
 
-V =		0.6
+V =		0.7
 FILTER_NAME =	spamassassin
 DISTNAME =	filter-spamassassin-${V}
 HOMEPAGE =	https://www.umaxx.net/
