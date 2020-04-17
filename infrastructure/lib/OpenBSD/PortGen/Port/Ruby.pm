@@ -1,4 +1,4 @@
-# $OpenBSD: Ruby.pm,v 1.5 2019/05/11 19:36:27 afresh1 Exp $
+# $OpenBSD: Ruby.pm,v 1.6 2020/04/17 02:14:01 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -111,6 +111,9 @@ sub get_deps
 			$ver =~ s/(\d)\.\d$/($1+1).".0"/e;
 			$req .= ",<$ver";
 		}
+
+		# turn =6.0.2.2 into ==6.0.2.2
+		$req =~ s/^=\b/==/;
 
 		$deps->add_run( $port . ',${MODRUBY_FLAVOR}', $req );
 
