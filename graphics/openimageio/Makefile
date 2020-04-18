@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/20 16:44:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2020/04/18 13:53:58 cwen Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
+BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
 
 COMMENT =		library for reading and writing images
 
@@ -61,7 +62,7 @@ CXXFLAGS +=		-march=i686
 WRKDIST =		${WRKDIR}/oiio-Release-$V
 
 # Fix undefined reference to __atomic_*
-.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+.if ${MACHINE_ARCH:Mhppa}
 CONFIGURE_ENV += 	LDFLAGS="${LDFLAGS} -latomic"
 WANTLIB +=              atomic
 .endif
