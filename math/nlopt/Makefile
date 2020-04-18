@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/18 23:26:00 kn Exp $
 
 COMMENT =		library for nonlinear optimization
 
 GH_ACCOUNT =		stevengj
 GH_PROJECT =		nlopt
-GH_TAGNAME =		v2.6.1
+GH_TAGNAME =		v2.6.2
 
-SHARED_LIBS =		nlopt	0.1	# 0.10.0
+SHARED_LIBS =		nlopt	0.2	# 0.10.0
 
 CATEGORIES =		math
 
@@ -22,7 +22,6 @@ WANTLIB =		${COMPILER_LIBCXX} m
 MODULES =		devel/cmake
 
 CONFIGURE_ARGS =	-DNLOPT_GUILE=OFF \
-			-DNLOPT_LINK_PYTHON=OFF \
 			-DNLOPT_MATLAB=OFF \
 			-DNLOPT_OCTAVE=OFF \
 			-DNLOPT_PYTHON=OFF \
