@@ -1,3 +1,3 @@
 CMixer is a simple Curses-based mixer written for OpenBSD.
-It allows to control mixerctl outputs/inputs volume and mute status,
-and also sndio clients volume.
+It allows to control outputs/inputs volume, mute status,
+and sndio clients volume.
