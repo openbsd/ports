@@ -1,0 +1,192 @@
+$OpenBSD: patch-dstat_c,v 1.1 2020/04/18 20:40:19 ratchov Exp $
+
+Index: dstat.c
+--- dstat.c.orig
++++ dstat.c
+@@ -15,18 +15,20 @@
+  */
+ #include <stdio.h>
+ #include <stdarg.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <err.h>
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <ifaddrs.h>
+ #include <limits.h>
++#include <poll.h>
++#include <sndio.h>
+ #include <time.h>
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/param.h>
+-#include <sys/audioio.h>
+ #include <sys/sched.h>
+ #include <sys/resource.h>
+ #include <sys/sensors.h>
+@@ -49,6 +51,16 @@
+ 
+ #define d_warn(s) (warn(s), s)
+ 
++struct d_vol_state {
++    struct sioctl_hdl *h;
++    struct pollfd *pfds;
++    struct d_vol_ctl {
++        struct d_vol_ctl *next;
++	unsigned int addr;
++	int val, maxval, ismute;
++    } *ctls;
++};
++
+ static const char *d_bar(unsigned char p) {
+     const char *s[] = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█", "█" };
+ 
+@@ -231,45 +243,68 @@ static char *d_temp(void) {
+         d_fmt(s, sizeof(s), "T %.1f°C", (t - 273150000) / 1000000.0);
+ }
+ 
+-static char *d_vol(int fd) {
+-    static char s[D_BUF];
+-    static int cls = -1;
+-    struct mixer_devinfo mdi;
+-    struct mixer_ctrl mc;
+-    int v = -1, m = -1, p;
++static void d_cb_desc(void *a, struct sioctl_desc *d, int v) {
++    struct d_vol_state *p = a;
++    struct d_vol_ctl *c, **pc;
++    int ismute;
+ 
+-    for (mdi.index = 0; cls == -1; mdi.index++) {
+-        if (ioctl(fd, AUDIO_MIXER_DEVINFO, &mdi) == -1)
+-            return d_warn("ioctl failed");
+-        if (mdi.type == AUDIO_MIXER_CLASS &&
+-            !strcmp(mdi.label.name, AudioCoutputs))
+-                cls = mdi.index;
++    if (!d)
++        return;
++    for (pc = &p->ctls; (c = *pc) != NULL; pc = &c->next) {
++        if (d->addr == c->addr) {
++	    *pc = c->next;
++            free(c);
++            break;
++        }
+     }
+-    for (mdi.index = 0; v == -1 || m == -1; mdi.index++) {
+-        if (ioctl(fd, AUDIO_MIXER_DEVINFO, &mdi) == -1)
+-            return d_warn("ioctl failed");
+-        if (mdi.mixer_class == cls &&
+-            ((mdi.type == AUDIO_MIXER_VALUE &&
+-              !strcmp(mdi.label.name, AudioNmaster)) ||
+-             (mdi.type == AUDIO_MIXER_ENUM &&
+-              !strcmp(mdi.label.name, AudioNmute)))) {
+-            mc.dev = mdi.index, mc.type = mdi.type;
+-            if (ioctl(fd, AUDIO_MIXER_READ, &mc) == -1)
+-                return d_warn("ioctl failed");
+-            if (mc.type == AUDIO_MIXER_VALUE)
+-                v = mc.un.value.num_channels == 1 ?
+-                    mc.un.value.level[AUDIO_MIXER_LEVEL_MONO] :
+-                    (mc.un.value.level[AUDIO_MIXER_LEVEL_LEFT] >
+-                     mc.un.value.level[AUDIO_MIXER_LEVEL_RIGHT] ?
+-                     mc.un.value.level[AUDIO_MIXER_LEVEL_LEFT] :
+-                     mc.un.value.level[AUDIO_MIXER_LEVEL_RIGHT]);
+-            else if (mc.type == AUDIO_MIXER_ENUM)
+-                m = mc.un.ord;
++    if (strcmp(d->group, "") || strcmp(d->node0.name, "output"))
++        return;
++    if (d->type == SIOCTL_NUM && !strcmp(d->func, "level"))
++        ismute = 0;
++    else if (d->type == SIOCTL_SW && !strcmp(d->func, "mute"))
++        ismute = 1;
++    else
++        return;
++    if ((c = malloc(sizeof(struct d_vol_ctl))) == NULL)
++        return;
++    c->addr = d->addr;
++    c->val = v;
++    c->maxval = d->maxval;
++    c->next = p->ctls;
++    c->ismute = ismute;
++    p->ctls = c;
++}
++
++static void d_cb_val(void *a, unsigned int addr, unsigned int val) {
++    struct d_vol_state *p = a;
++    struct d_vol_ctl *c;
++
++    for (c = p->ctls; c->addr != addr; c = c->next)
++        ; /* nothing */
++    c->val = val;
++}
++
++static char *d_vol(struct d_vol_state *p) {
++    static char s[D_BUF];
++    struct d_vol_ctl *c;
++    int n, v = 0, m = 0, pct;
++
++    n = sioctl_pollfd(p->h, p->pfds, 0);
++    if (n > 0 && poll(p->pfds, n, 0) > 0)
++        sioctl_revents(p->h, p->pfds);
++
++    for (c = p->ctls; c != NULL; c = c->next) {
++        if (c->ismute) {
++            if (c->val)
++                m = 1;
++        } else {
++            pct = c->val * 100 / c->maxval;
++            if (v < pct)
++                v = pct;
+         }
+     }
+-    return v == -1 ? "volume failed" : (m == -1 ? "mute failed" : (m ?
+-        d_fmt(s, sizeof(s), "♫ mute") : (p = ((v * 100) / 255),
+-        d_fmt(s, sizeof(s), "♫ %d%% %s", p, d_bar(p)))));
++
++    return m ? "♫ mute" : d_fmt(s, sizeof(s), "♫ %d%% %s", v, d_bar(v));
+ }
+ 
+ static char *d_time(void) {
+@@ -289,7 +324,9 @@ static char *d_time(void) {
+ static void d_run(const char *ifn) {
+     Display *d;
+     XFontStruct *f;
+-    int a = -1, m = -1;
++    struct d_vol_state v = {0};
++    struct d_vol_ctl *c;
++    int a = -1;
+     char s[LINE_MAX];
+ 
+     if (!(d = XOpenDisplay(NULL)))
+@@ -297,17 +334,28 @@ static void d_run(const char *ifn) {
+     if (!(f = XLoadQueryFont(d, "-*-terminus-medium-*")) &&
+         !(f = XLoadQueryFont(d, "fixed")))
+         err(1, "XLoadQueryFont failed");
+-    if ((a = open("/dev/apm", O_RDONLY)) == -1 ||
+-        (m = open("/dev/mixer", O_RDONLY)) == -1)
++    if (!(v.h = sioctl_open(SIO_DEVANY, SIOCTL_READ, 0)) ||
++        !sioctl_ondesc(v.h, d_cb_desc, &v) ||
++        !sioctl_onval(v.h, d_cb_val, &v))
++        errx(1, "sioctl failed");
++    if ((v.pfds = calloc(sioctl_nfds(v.h), sizeof(struct pollfd))) == NULL)
++	err(1, "calloc failed");
++    if ((a = open("/dev/apm", O_RDONLY)) == -1)
+         err(1, "open failed");
+     for (;;) {
+         XStoreName(d, DefaultRootWindow(d),
+             d_fmt(s, sizeof(s), "%s %s %s %s %s %s",
+-                d_net(ifn), d_cpu(), d_bat(a, d, f), d_temp(), d_vol(m), d_time()));
++                d_net(ifn), d_cpu(), d_bat(a, d, f), d_temp(), d_vol(&v), d_time()));
+         printf("%s\n", s);
+         XSync(d, False), sleep(1);
+     }
+-    close(m), close(a);
++    sioctl_close(v.h);
++    free(v.pfds);
++    while ((c = v.ctls) != NULL) {
++        v.ctls = c->next;
++        free(c); 
++    }
++    close(a);
+     XUnloadFont(d, f->fid);
+     XCloseDisplay(d);
+ }
