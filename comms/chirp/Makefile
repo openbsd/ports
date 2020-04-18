@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/04/18 18:14:13 sthen Exp $
 
 COMMENT=	tool to programme a wide range of amateur radios
 
-MODPY_EGG_VERSION= 20190429
+MODPY_EGG_VERSION= 20200409
 DISTNAME=	chirp-daily-${MODPY_EGG_VERSION}
 PKGNAME=	chirp-${MODPY_EGG_VERSION}
 
@@ -21,6 +21,7 @@ COMMON_DEPS=	devel/py-serial \
 BUILD_DEPENDS=	${COMMON_DEPS}
 RUN_DEPENDS=	${COMMON_DEPS} \
 		devel/desktop-file-utils \
+		devel/py-future \
 		devel/py-suds \
 		x11/py-gtk2
 
