@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/10 14:45:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/18 18:53:55 sthen Exp $
 
 FW_DRIVER=	bwfm
 FW_VER=		20200316
@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		brcm-supplemental-${SUP_VER}.tar.gz:1
 
 MAINTAINER=	Patrick Wildt <patrick@blueri.se>
-# switch to pre-rolled tarball when updating:
+
 MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
 MASTER_SITES1=	https://github.com/bsdkurt/brcm-supplemental/archive/
 
