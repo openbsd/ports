@@ -1,0 +1,86 @@
+$OpenBSD: patch-src-qt5_core_libLumina_LuminaOS-OpenBSD_cpp,v 1.1 2020/04/18 21:05:57 ratchov Exp $
+
+Index: src-qt5/core/libLumina/LuminaOS-OpenBSD.cpp
+--- src-qt5/core/libLumina/LuminaOS-OpenBSD.cpp.orig
++++ src-qt5/core/libLumina/LuminaOS-OpenBSD.cpp
+@@ -86,15 +86,12 @@ void LOS::setScreenBrightness(int percent){
+ 
+ //Read the current volume
+ int LOS::audioVolume(){ //Returns: audio volume as a percentage (0-100, with -1 for errors)
+-  QString info = LUtils::getCmdOutput("mixerctl -n outputs.master").join(",").simplified(); //ignores any other lines
++  QStringList info = LUtils::getCmdOutput("sndioctl -n output.level");
+   int out = -1;
+-  if(!info.isEmpty()){
+-    int L = info.section(",",0,0).toInt();
+-    int R = info.section(",",1,1).toInt();
+-    L = (L*100)/255; //percent
+-    R = (R*100)/255; //percent
+-    if(L>R){ out = L; }
+-    else{ out = R; }
++  for (int i = 0; i < info.size(); i++) {
++    int v = 100 * info.at(i).toFloat();
++    if (out < v)
++        out = v;
+   }
+   return out;
+ }
+@@ -103,43 +100,27 @@ int LOS::audioVolume(){ //Returns: audio volume as a p
+ void LOS::setAudioVolume(int percent){
+   if(percent<0){percent=0;}
+   else if(percent>100){percent=100;}
+-  QString info = LUtils::getCmdOutput("mixerctl -n outputs.master").join(",").simplified(); //ignores any other lines
+-  if(!info.isEmpty()){
+-    int L = info.section(",",0,0).toInt();
+-    int R = info.section(",",1,1).toInt();
+-    L = (L*100)/255; //percent
+-    R = (R*100)/255; //percent
+-    int diff = L-R;
+-    if(diff<0){ R=percent; L=percent+diff; } //R Greater
+-    else{ L=percent; R=percent-diff; } //L Greater or equal
+-    //Check bounds
+-    if(L<0){L=0;}else if(L>100){L=100;}
+-    if(R<0){R=0;}else if(R>100){R=100;}
+-    //Run Command
+-    L = (L*255)/100; //0-255
+-    R = (R*255)/100; //0-255
+-    LUtils::runCmd("mixerctl -q outputs.master="+QString::number(L)+","+QString::number(R));
+-  }    
++
++  LUtils::runCmd("sndioctl -q output.level="+QString::number(percent / 100.));
+ }
+ 
+ //Change the current volume a set amount (+ or -)
+ void LOS::changeAudioVolume(int percentdiff){
+-  QString info = LUtils::getCmdOutput("mixerctl -n outputs.master").join(",").simplified(); //ignores any other lines
+-  if(!info.isEmpty()){
+-    int L = info.section(",",0,0).toInt();
+-    int R = info.section(",",1,1).toInt();
+-    L = (L*100)/255; //percent
+-    R = (R*100)/255; //percent
+-    L = L + percentdiff;
+-    R = R + percentdiff;
+-    //Check bounds
+-    if(L<0){L=0;}else if(L>100){L=100;}
+-    if(R<0){R=0;}else if(R>100){R=100;}
+-    //Run Command
+-    L = (L*255)/100; //0-255
+-    R = (R*255)/100; //0-255
+-    LUtils::runCmd("mixerctl -q outputs.master="+QString::number(L)+","+QString::number(R));
++  float diff;
++  QString sign;
++
++  if(percentdiff<-100){percentdiff=-100;}
++  else if(percentdiff>100){percentdiff=100;}
++
++  if (percentdiff >= 0) {
++    diff = percentdiff / 100.;
++    sign = "+";
++  } else {
++    diff = percentdiff / -100.;
++    sign = "-";
+   }
++
++  LUtils::runCmd("sndioctl -q output.level="+sign+QString::number(diff));
+ }
+ 
+ //Check if a graphical audio mixer is installed
