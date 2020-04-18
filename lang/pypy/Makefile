@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/04/16 10:30:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/04/18 10:15:26 sthen Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64
 
@@ -25,7 +25,7 @@ BOOTSTRAP_V =		7.2.0
 DISTNAME =		pypy2.7-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
-BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}.tar.xz
+BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}-1.tar.xz
 # list bootstraps for all arches in SUPDISTFILES
 SUPDISTFILES +=		${BOOTSTRAP-amd64}:0
 SUPDISTFILES +=		${BOOTSTRAP-aarch64}:0
@@ -50,11 +50,7 @@ MASTER_SITES0 =		https://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
 PSEUDO_FLAVORS =	no_bootstrap
-.if ${MACHINE_ARCH} == aarch64
-FLAVOR = no_bootstrap
-.else
 FLAVOR ?=
-.endif
 
 DIST_SUBDIR =		pypy
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
