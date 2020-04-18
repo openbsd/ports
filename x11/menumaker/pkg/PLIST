@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/06 11:33:45 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/18 09:01:37 rsadowski Exp $
 bin/mmaker
 @info info/mmaker.info
 share/menumaker/
@@ -10,17 +10,19 @@ share/menumaker/MenuMaker/CLI.py
 share/menumaker/MenuMaker/Deskmenu.py
 share/menumaker/MenuMaker/FluxBox.py
 share/menumaker/MenuMaker/IceWM.py
+share/menumaker/MenuMaker/JWM.py
 share/menumaker/MenuMaker/OpenBox3.py
 share/menumaker/MenuMaker/PekWM.py
 share/menumaker/MenuMaker/WindowMaker.py
 share/menumaker/MenuMaker/Xfce4.py
 share/menumaker/MenuMaker/__init__.py
-share/menumaker/MenuMaker/${MODPY_PYCACHE}/
+${MODPY_COMMENT}share/menumaker/MenuMaker/${MODPY_PYCACHE}/
 share/menumaker/MenuMaker/${MODPY_PYCACHE}BlackBox.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/MenuMaker/${MODPY_PYCACHE}CLI.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/MenuMaker/${MODPY_PYCACHE}Deskmenu.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/MenuMaker/${MODPY_PYCACHE}FluxBox.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/MenuMaker/${MODPY_PYCACHE}IceWM.${MODPY_PYC_MAGIC_TAG}pyc
+share/menumaker/MenuMaker/${MODPY_PYCACHE}JWM.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/MenuMaker/${MODPY_PYCACHE}OpenBox3.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/MenuMaker/${MODPY_PYCACHE}PekWM.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/MenuMaker/${MODPY_PYCACHE}WindowMaker.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,7 +35,7 @@ share/menumaker/Prophet/
 share/menumaker/Prophet/Categories.py
 share/menumaker/Prophet/Debian/
 share/menumaker/Prophet/Debian/__init__.py
-share/menumaker/Prophet/Debian/${MODPY_PYCACHE}/
+${MODPY_COMMENT}share/menumaker/Prophet/Debian/${MODPY_PYCACHE}/
 share/menumaker/Prophet/Debian/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/Prophet/Debian/menu/
 share/menumaker/Prophet/Debian/menu/debian-2.2r5
@@ -42,7 +44,7 @@ share/menumaker/Prophet/Debian/menu/ubuntu-5.04
 share/menumaker/Prophet/Debian/menu/ubuntu-5.10
 share/menumaker/Prophet/Desktop/
 share/menumaker/Prophet/Desktop/__init__.py
-share/menumaker/Prophet/Desktop/${MODPY_PYCACHE}/
+${MODPY_COMMENT}share/menumaker/Prophet/Desktop/${MODPY_PYCACHE}/
 share/menumaker/Prophet/Desktop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/Prophet/Legacy/
 share/menumaker/Prophet/Legacy/Development.py
@@ -53,7 +55,7 @@ share/menumaker/Prophet/Legacy/Multimedia.py
 share/menumaker/Prophet/Legacy/Network.py
 share/menumaker/Prophet/Legacy/Shell.py
 share/menumaker/Prophet/Legacy/__init__.py
-share/menumaker/Prophet/Legacy/${MODPY_PYCACHE}/
+${MODPY_COMMENT}share/menumaker/Prophet/Legacy/${MODPY_PYCACHE}/
 share/menumaker/Prophet/Legacy/${MODPY_PYCACHE}Development.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/Prophet/Legacy/${MODPY_PYCACHE}Editor.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/Prophet/Legacy/${MODPY_PYCACHE}Emulator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -63,10 +65,10 @@ share/menumaker/Prophet/Legacy/${MODPY_PYCACHE}Network.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/Prophet/Legacy/${MODPY_PYCACHE}Shell.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/Prophet/Legacy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/Prophet/__init__.py
-share/menumaker/Prophet/${MODPY_PYCACHE}/
+${MODPY_COMMENT}share/menumaker/Prophet/${MODPY_PYCACHE}/
 share/menumaker/Prophet/${MODPY_PYCACHE}Categories.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/Prophet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-share/menumaker/${MODPY_PYCACHE}/
+${MODPY_COMMENT}share/menumaker/${MODPY_PYCACHE}/
 share/menumaker/${MODPY_PYCACHE}Config.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/${MODPY_PYCACHE}Keywords.${MODPY_PYC_MAGIC_TAG}pyc
 share/menumaker/${MODPY_PYCACHE}Paths.${MODPY_PYC_MAGIC_TAG}pyc

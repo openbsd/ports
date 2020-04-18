@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/04/18 09:01:37 rsadowski Exp $
 
 COMMENT =	menu generation utility for X window managers
-DISTNAME =	menumaker-0.99.10
+DISTNAME =	menumaker-0.99.11
 CATEGORIES =	x11
-REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=menumaker/}
 
 HOMEPAGE =	http://menumaker.sourceforge.net/
-MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
+MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes
