@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/04 20:58:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/18 13:49:03 sthen Exp $
 @newgroup _routinator:844
 @newuser _routinator:844:_routinator:daemon:routinator user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/routinator
+@comment .crates2.json
 @bin bin/routinator
 @man man/man1/routinator.1
 share/examples/routinator/
@@ -22,4 +23,3 @@ share/routinator/repository/tmp/
 @sample /var/db/routinator/repository/rrdp/
 @sample /var/db/routinator/repository/rsync/
 @sample /var/db/routinator/repository/tmp/
-@extraunexec rm -rf /var/db/routinator/repository/{http,rrdp,rsync,tmp}/*
