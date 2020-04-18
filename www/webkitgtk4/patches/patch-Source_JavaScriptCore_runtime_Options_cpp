@@ -1,0 +1,27 @@
+$OpenBSD: patch-Source_JavaScriptCore_runtime_Options_cpp,v 1.3 2020/04/18 16:14:28 cwen Exp $
+
+powerpc fix for:
+undefined reference to `WTF::Optional<unsigned long>
+JSC::parse<unsigned long>(char const*)'
+
+Index: Source/JavaScriptCore/runtime/Options.cpp
+--- Source/JavaScriptCore/runtime/Options.cpp.orig
++++ Source/JavaScriptCore/runtime/Options.cpp
+@@ -88,7 +88,7 @@ Optional<OptionsStorage::Unsigned> parse(const char* s
+     return WTF::nullopt;
+ }
+ 
+-#if CPU(ADDRESS64) || OS(DARWIN)
++#if CPU(ADDRESS64) || OS(DARWIN) || ( defined(__OpenBSD__) && defined(__powerpc__) )
+ template<>
+ Optional<OptionsStorage::Size> parse(const char* string)
+ {
+@@ -97,7 +97,7 @@ Optional<OptionsStorage::Size> parse(const char* strin
+         return value;
+     return WTF::nullopt;
+ }
+-#endif // CPU(ADDRESS64) || OS(DARWIN)
++#endif // CPU(ADDRESS64) || OS(DARWIN) || ( defined(__OpenBSD__) && defined(__powerpc__) )
+ 
+ template<>
+ Optional<OptionsStorage::Double> parse(const char* string)
