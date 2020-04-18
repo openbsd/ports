@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/04/18 23:53:25 kn Exp $
 
 PORTROACH =	limit:^0\.11\.1
-PORTROACH_COMMENT =	audio/mumble (at least as of 1.2.4) requires *exactly* 0.11.1
 
-# Warning: CELT is experimental software. Neither the API/ABI, nor
-# the bit-stream are stable. Compatibility between different releases
-# (even minor ones) is not preserved.
+# The CELT codec has been merged into the IETF Opus codec and is now obsolete
 
 # invalid use of `restrict'
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
