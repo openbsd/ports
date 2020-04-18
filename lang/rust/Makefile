@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2020/04/17 14:49:19 semarie Exp $
+# $OpenBSD: Makefile,v 1.111 2020/04/18 06:47:10 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -18,6 +18,8 @@ CARGO_V =		0.43.0
 CLIPPY_V =		0.0.212
 RUSTFMT_V =		1.4.11
 DISTNAME =		rustc-${V}-src
+
+REVISION =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.42.0-20200315

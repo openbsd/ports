@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-clippy,v 1.1 2018/12/16 09:19:57 semarie Exp $
+@comment $OpenBSD: PLIST-clippy,v 1.2 2020/04/18 06:47:10 semarie Exp $
 @bin bin/cargo-clippy
-@bin bin/clip${MODPY_PY_PREFIX}driver
+@bin bin/clippy-driver
 share/doc/clippy/
 share/doc/clippy/LICENSE-APACHE
 share/doc/clippy/LICENSE-MIT
