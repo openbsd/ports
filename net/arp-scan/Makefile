@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/03/07 00:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2020/04/18 18:17:08 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -8,7 +8,7 @@ DISTNAME =	arp-scan-$V
 PKGNAME-main =	${DISTNAME}
 REVISION-main =	13
 
-M =		20200306
+M =		20200418
 PKGNAME-mac =	mac-vendor-$M
 
 CATEGORIES =	net
