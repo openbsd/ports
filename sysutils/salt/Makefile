@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2020/03/13 12:31:46 bket Exp $
+# $OpenBSD: Makefile,v 1.137 2020/04/18 09:22:32 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
@@ -67,10 +67,11 @@ TEST_DEPENDS =		databases/py-mysql \
 			devel/py-six \
 			devel/py-virtualenv \
 			devel/subversion \
-			net/py-libcloud \
 			net/rabbitmq \
 			sysutils/salt-testing \
 			www/py-CherryPy
+# python3 only
+#TEST_DEPENDS +=	net/py-libcloud
 
 # https://github.com/saltstack/salt/pull/45164
 post-extract:
