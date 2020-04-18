@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/14 14:55:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/18 12:45:05 fcambus Exp $
 
 COMMENT =	monotype font for developers
 
-V =		1.0.2
+V =		1.0.3
 DISTNAME =	${TYPEFACE}-$V
 PKGNAME =	jetbrains-mono-$V
 
