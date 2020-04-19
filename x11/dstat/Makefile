@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/04/18 20:40:19 ratchov Exp $
+# $OpenBSD: Makefile,v 1.9 2020/04/19 21:44:29 jung Exp $
 
 ONLY_FOR_ARCHS =	${APM_ARCHS}
 
 COMMENT =		dwm status bar statistics
 
-DISTNAME =		dstat-0.6
-
-REVISION =		0
+DISTNAME =		dstat-0.7
 
 CATEGORIES =		x11 sysutils
 
