@@ -1,0 +1,14 @@
+$OpenBSD: patch-htop_c,v 1.1 2020/04/19 12:43:43 robert Exp $
+
+Index: htop.c
+--- htop.c.orig
++++ htop.c
+@@ -93,7 +93,7 @@ static CommandLineSettings parseArguments(int argc, ch
+ 
+    int opt, opti=0;
+    /* Parse arguments */
+-   while ((opt = getopt_long(argc, argv, "hvCst::d:u:p:i", long_opts, &opti))) {
++   while ((opt = getopt_long(argc, argv, "hvCs:t::d:u:p:i", long_opts, &opti))) {
+       if (opt == EOF) break;
+       switch (opt) {
+          case 'h':
