@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2020/02/21 12:42:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2020/04/19 11:14:13 ajacoutot Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -55,6 +55,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=		--disable-sqlite \
 			--disable-unixodbc \
+			--disable-mqtt \
 			--with-pgsql-include-dir=${LOCALBASE}/include/postgresql \
 			--with-lua-include-dir=${MODLUA_INCL_DIR} \
 			--with-lua-lib-dir=${LOCALBASE}/lib
