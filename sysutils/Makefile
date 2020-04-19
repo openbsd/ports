@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.564 2020/04/05 13:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.565 2020/04/19 19:57:23 pvk Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -232,6 +232,7 @@
      SUBDIR += p5-Unix-Statgrab
      SUBDIR += p5-Unix-Syslog
      SUBDIR += packer
+     SUBDIR += packer-vmm
      SUBDIR += parallel
      SUBDIR += pciutils
      SUBDIR += perp
