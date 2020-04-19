@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/10/03 10:29:00 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/04/19 14:37:41 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -43,6 +43,8 @@ share/raspberrypi-firmware/boot/overlays/allo-digione.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-katana-dac-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo
+share/raspberrypi-firmware/boot/overlays/anyspi.dtbo
+share/raspberrypi-firmware/boot/overlays/apds9960.dtbo
 share/raspberrypi-firmware/boot/overlays/applepi-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/at86rf233.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-addons.dtbo
@@ -83,6 +85,7 @@ share/raspberrypi-firmware/boot/overlays/hifiberry-dacplus.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dacplusadc.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dacplusadcpro.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dacplusdsp.dtbo
+share/raspberrypi-firmware/boot/overlays/hifiberry-dacplushd.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-digi-pro.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-digi.dtbo
 share/raspberrypi-firmware/boot/overlays/hy28a.dtbo
@@ -111,7 +114,9 @@ share/raspberrypi-firmware/boot/overlays/iqaudio-codec.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-dacplus.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-digi-wm8804-audio.dtbo
+share/raspberrypi-firmware/boot/overlays/irs1125.dtbo
 share/raspberrypi-firmware/boot/overlays/jedec-spi-nor.dtbo
+share/raspberrypi-firmware/boot/overlays/justboom-both.dtbo
 share/raspberrypi-firmware/boot/overlays/justboom-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/justboom-digi.dtbo
 share/raspberrypi-firmware/boot/overlays/ltc294x.dtbo
@@ -211,6 +216,7 @@ share/raspberrypi-firmware/boot/overlays/vc4-kms-v3d.dtbo
 share/raspberrypi-firmware/boot/overlays/vga666.dtbo
 share/raspberrypi-firmware/boot/overlays/w1-gpio-pullup.dtbo
 share/raspberrypi-firmware/boot/overlays/w1-gpio.dtbo
+share/raspberrypi-firmware/boot/overlays/w5500.dtbo
 share/raspberrypi-firmware/boot/overlays/wittypi.dtbo
 share/raspberrypi-firmware/boot/start.elf
 share/raspberrypi-firmware/boot/start4.elf
