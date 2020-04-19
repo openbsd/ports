@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2020/04/15 22:26:32 kn Exp $
+# $OpenBSD: Makefile,v 1.39 2020/04/19 09:59:45 stsp Exp $
 
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
 
-V =			0.33
+V =			0.34
 DISTNAME =		got-${V}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-web =		gotweb-${V}
-REVISION-web =		0
 CATEGORIES =		devel
 HOMEPAGE =		https://gameoftrees.org
 MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
@@ -29,7 +28,7 @@ MASTER_SITES =		https://gameoftrees.org/releases/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-BUILD_DEPENDS =		www/kcgi
+BUILD_DEPENDS =		www/kcgi>=0.12.0
 
 # some tests will fail without working non-interactive 'ssh 127.0.0.1'
 TEST_DEPENDS =		devel/git \
