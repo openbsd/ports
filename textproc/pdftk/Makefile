@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2019/12/12 14:41:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/04/19 15:12:23 sthen Exp $
 
 COMMENT=	pdf swiss army knife
 
-V=		v3.0.8
-DISTNAME=	pdftk-$V
-PKGNAME=	${DISTNAME:S/-v/-/}
-EXTRACT_ONLY=	pdftk-$V.tar.gz \
-		commons-lang3-3.8.1-bin.tar.gz
+V=		3.0.10
+BC=		165
+CL3=		3.10
+DISTNAME=	pdftk-v$V
+PKGNAME=	pdftk-$V
+EXTRACT_ONLY=	pdftk-v$V.tar.gz \
+		commons-lang3-${CL3}-bin.tar.gz
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -17,12 +19,12 @@ PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	https://gitlab.com/pdftk-java/
 
-MASTER_SITES=	https://gitlab.com/pdftk-java/pdftk/-/archive/$V/
+MASTER_SITES=	https://gitlab.com/pdftk-java/pdftk/-/archive/v$V/
 MASTER_SITES0=	${MASTER_SITE_APACHE:=commons/lang/binaries/}
 MASTER_SITES1=	https://www.bouncycastle.org/download/
-DISTFILES=	pdftk-$V.tar.gz \
-		commons-lang3-3.8.1-bin.tar.gz:0 \
-		bcprov-jdk15on-160.jar:1
+DISTFILES=	pdftk-v$V.tar.gz \
+		commons-lang3-${CL3}-bin.tar.gz:0 \
+		bcprov-jdk15on-${BC}.jar:1
 
 MODULES=	java
 MODJAVA_VER=	1.8+
@@ -31,18 +33,20 @@ MODJAVA_BUILD_TARGET_NAME= jar
 
 RUN_DEPENDS+=	java/javaPathHelper
 
-# there are some tests, but it's not clear how to run them
-NO_TEST=	Yes
-
 post-extract:
 	mkdir ${WRKSRC}/lib
-	cp ${FULLDISTDIR}/bcprov-jdk15on-160.jar ${WRKSRC}/lib/bcprov.jar
-	cp ${WRKDIR}/commons-lang3-3.8.1/commons-lang3-3.8.1.jar ${WRKSRC}/lib/commons-lang3.jar
+	cp ${FULLDISTDIR}/bcprov-jdk15on-${BC}.jar ${WRKSRC}/lib/bcprov.jar
+	cp ${WRKDIR}/commons-lang3-${CL3}/commons-lang3-${CL3}.jar ${WRKSRC}/lib/commons-lang3.jar
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pdftk
 	cd ${WRKSRC}; ${INSTALL_DATA} build/jar/pdftk.jar lib/bcprov.jar lib/commons-lang3.jar ${PREFIX}/share/pdftk
 	$(INSTALL_MAN) $(WRKDIST)/pdftk.1 $(PREFIX)/man/man1
 	$(SUBST_CMD) -m 755 -c $(FILESDIR)/pdftk $(PREFIX)/bin/pdftk
+
+# tests require additional dependencies (at least: junit, system-rules, jacoco)
+NO_TEST=	Yes
+#do-test:
+#	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/ant -lib /path/to/libs test-run
 
 .include <bsd.port.mk>
