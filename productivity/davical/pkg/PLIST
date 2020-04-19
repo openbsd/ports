@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/08/18 14:30:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/04/19 08:13:59 landry Exp $
 davical/
 davical/INSTALL
 davical/README
@@ -133,6 +133,7 @@ davical/inc/caldav-REPORT.php
 davical/inc/caldav-client-v2.php
 davical/inc/caldav-client.php
 davical/inc/check_UTF8.php
+davical/inc/csrf_tokens.php
 davical/inc/davical_configuration_missing.php
 davical/inc/drivers_imap_pam.php
 davical/inc/drivers_ldap.php
