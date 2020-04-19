@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2020/04/15 18:41:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2020/04/19 15:38:58 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -52,10 +52,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--enable-full-report \
-		--enable-filter-aaaa \
-		--enable-threads \
 		--with-libtool \
-		--with-randomdev=/dev/random \
 		--with-libidn2 \
 		--without-lmdb \
 		--without-readline \
