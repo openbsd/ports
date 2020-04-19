@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_include_kopano_platform_linux_h,v 1.4 2019/11/16 20:01:20 robert Exp $
+$OpenBSD: patch-common_include_kopano_platform_linux_h,v 1.5 2020/04/19 12:44:22 robert Exp $
 
 Index: common/include/kopano/platform.linux.h
 --- common/include/kopano/platform.linux.h.orig
 +++ common/include/kopano/platform.linux.h
-@@ -23,7 +23,11 @@
+@@ -21,7 +21,11 @@
  #include <dlfcn.h>
  #include <cstddef>
  #include <libgen.h>
@@ -15,7 +15,7 @@ Index: common/include/kopano/platform.linux.h
  #include <cerrno>
  #include <clocale>
  
-@@ -36,6 +40,10 @@
+@@ -34,6 +38,10 @@
  
  #ifndef UNUSED_VAR
  #define UNUSED_VAR __attribute__((unused))

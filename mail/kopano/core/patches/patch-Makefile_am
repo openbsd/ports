@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_am,v 1.4 2020/03/22 11:20:34 robert Exp $
+$OpenBSD: patch-Makefile_am,v 1.5 2020/04/19 12:44:22 robert Exp $
 
 Index: Makefile.am
 --- Makefile.am.orig
@@ -38,7 +38,7 @@ Index: Makefile.am
  
  
  #
-@@ -973,7 +974,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
+@@ -957,7 +958,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
  
  .PHONY: source-moved-check
  source-moved-check:
