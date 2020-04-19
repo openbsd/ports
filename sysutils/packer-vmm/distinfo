@@ -1,0 +1,4 @@
+SHA256 (packer-1.5.5.tar.gz) = JEIXpU61Q0fr6Xdgf/GiY6CXAhl+RGLWiNwte8KAATE=
+SHA256 (packer-builder-openbsd-vmm-c00a5cf3a9cfb5451e366c2fdcf7333b9b55c25d.tar.gz) = a+NvtC2V593K09VHtT4mccxP6L24zrolOJja2881P2I=
+SIZE (packer-1.5.5.tar.gz) = 15837472
+SIZE (packer-builder-openbsd-vmm-c00a5cf3a9cfb5451e366c2fdcf7333b9b55c25d.tar.gz) = 39538

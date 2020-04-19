@@ -1,0 +1,92 @@
+$OpenBSD: README,v 1.1.1.1 2020/04/19 19:28:56 pvk Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To allow interaction with vmd(8) for unprivileged users, create VM template
+and assign permissions for user accounts. This template will be used as parent
+VM for VM instances created by Packer.
+
+For more infornation, see VM INSTANCES section in vm.conf(5) and example files
+provided with the package.
+
+Build process steps
+===================
+1) Create image output dir if it does not exist
+2) Create disk image, error out if it already exists
+3) Start VM
+4) Start local HTTP server
+5) Generate installation files from templates in HTTP server directiry
+6) Pass boot_command to VM console
+7) Upon OS installation, shutdown VM
+
+Optional steps can include communication with VM by ssh(1) and performing
+various Packer provisioners and post-processors.
+
+List of Variables
+=================
+-------------------------------------------------------------------------------
+      Variable       |   Description                                 | Defaults
+-------------------------------------------------------------------------------
+vm_name*             | VM name, image filename, disk image filename  |
+vm_template*         | vm.conf(5) template name                      |
+boot_device          | passed as -B option to vmctl(8) start         | template
+boot                 | passed as -b option to vmctl(8) start         | vmctl(8)
+cdrom                | passed as -r option to vmctl(8) start         | template
+disk_format          | passed to vmctl(8) create, qcow2 or raw       | "raw"
+disk_base            | passed as -b option to vmctl(8) create        | template
+disk_size            | passed as -b option to vmctl(8) create        | template
+memory               | passed as -m option to vmctl(8) start         | vmctl(8)
+log_directory        | path to packer's build log directory          | $PWD
+output_directory     | path to packer's VM image output directory    | $PWD
+gen_files_extension  | file extension for installation templates     | "pkr.in"
+gen_files_pattern    | filename pattern for installation templates   | vm_name
+-------------------------------------------------------------------------------
+* - required
+
+Packer HTTP server and installation files templates
+===================================================
+Packer starts HTTP server on dynamic port serving files from directory
+specified by http_directory variable. This directory can contain unattended
+scripts like OpenBSD autoinstall(8) response files and autopartitioning
+templates, Linux distributions kickstart/preseed files, etc.
+
+To simplify unattended installation process, Packer vmm builder plugin will
+process files in http_directory by recursively searching for filenames matching
+the fileglob "gen_files_pattern*.gen_files_extension", where "gen_files_pattern"
+and "gen_files_extension" are the template variables, respectively.
+If these variables are not configured, by default fileglob is "vm_name.pkr.in",
+where "vm_name" is the respecive template variable.
+
+Packer will replace the following Packer template variables in these files:
+ {{ .VMName }}   - with vm_name variable
+ {{ .HTTPIP }}   - with dynamic local interface address created by vmd(8)
+ {{ .HTTPPort }} - with the port, on which Packer's HTTP process is listening
+
+and write new files which names are constructed by omiting
+"gen_files_extension", by default "pkr.in".
+E.g. if there's a file "http_directory/openbsd.autoinstall.pkr.in", Packer will
+process its contents, replace variables with actual values, and write a new
+file, "http_directory/openbsd.autoinstall", which can be passed to OpenBSD
+autoinstall(8).
+
+Example workflow
+================
+1) Configure VM template in ${SYSCONFDIR}/vm.conf
+2) Create directories for Packer's templates, http server, logs, and output
+3) Configure Packer by setting environment variables/editing config files
+4) Create build templates
+5) Copy ISO images and installation files to configured locations
+6) Create base OS image with minimal necessary configurations changes
+7) Create and deploy customized images using base OS images
+
+Example Packer templates, autoinstall scripts for OpenBSD/Linux guests can be
+found in ${PREFIX}/share/examples/${PKGSTEM}.
+
+Caveats
+=======
+Provided sample templates are written in HashiCorp configuration language HCL2,
+which is considered a beta feature.
+More information on HCL2 support:
+https://hashicorp.com/blog/announcing-hashicorp-packer-1-5-with-hcl2-support

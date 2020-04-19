@@ -1,0 +1,2 @@
+This plugin enables packer (sysutils/packer) to use the OpenBSD
+hypervisor (VMM) as a builder engine.
