@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/09/07 07:23:56 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2020/04/20 20:51:51 kn Exp $
 
 COMMENT =		solitaire card games collection
 MODPY_EGG_VERSION =	2.6.4
 DISTNAME =		PySolFC-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-${MODPY_EGG_VERSION}
 CATEGORIES =		games
+REVISION =		0
 
 HOMEPAGE =		http://pysolfc.sourceforge.net/
 
@@ -22,8 +23,9 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
 RUN_DEPENDS =		${MODPY_TKINTER_DEPENDS} \
-			devel/pygame,python3 \
-			graphics/py-Pillow,python3
+			devel/py-six${MODPY_FLAVOR} \
+			devel/pygame${MODPY_FLAVOR} \
+			graphics/py-Pillow${MODPY_FLAVOR}
 
 # needs pycotap (not ported), p5-Moo, py-gtk - and gmake
 NO_TEST =		Yes
