@@ -1,42 +1,47 @@
-# $OpenBSD: Makefile,v 1.25 2020/01/26 11:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2020/04/20 10:15:36 ajacoutot Exp $
 
-COMMENT =	japanese input engine for ibus
+COMMENT =		japanese input engine for ibus
 
-GH_ACCOUNT =	ibus
-GH_PROJECT =	ibus-anthy
-GH_TAGNAME =	1.5.4
-REVISION =	5
+GH_ACCOUNT =		ibus
+GH_PROJECT =		ibus-anthy
+GH_TAGNAME =		1.5.11
 
-SHARED_LIBS =	anthygobject-1.0	1.0 # 5.504
+SHARED_LIBS =	anthygobject-1.0	1.1 # 5.511
 
-CATEGORIES =	inputmethods japanese
+CATEGORIES =		inputmethods japanese
 
-HOMEPAGE =	https://github.com/fujiwarat/ibus-anthy/wiki
+HOMEPAGE =		https://github.com/fujiwarat/ibus-anthy/wiki
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  anthy anthydic ffi glib-2.0 gobject-2.0 iconv intl m pcre
-WANTLIB += pthread
+WANTLIB += anthy anthydic ffi glib-2.0 gobject-2.0 iconv intl
+WANTLIB += m pcre pthread
 
-# XXX: Remove when upgrading to newer tag
-MASTER_SITES =	https://distfiles.sigtrap.nl/
+MODULES =		devel/dconf \
+			lang/python
 
-MODULES =	lang/python \
-		textproc/intltool
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =	inputmethods/ibus>=1.5.0
-RUN_DEPENDS =	devel/desktop-file-utils \
-		inputmethods/ibus>=1.5.0 \
-		x11/gtk+3,-guic
-LIB_DEPENDS =	inputmethods/anthy
+BUILD_DEPENDS =		devel/gettext,-tools \
+			inputmethods/ibus
 
-USE_GMAKE =	Yes
-LIBTOOL_FLAGS =	--tag=disable-static
+RUN_DEPENDS =		devel/desktop-file-utils \
+			inputmethods/ibus \
+			x11/gtk+3,-guic
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS = --with-kasumi-exec=${LOCALBASE}/bin/kasumi \
-		 --with-kasumi-icon=${LOCALBASE}/share/pixmaps/kasumi.png
+LIB_DEPENDS =		inputmethods/anthy
+
+USE_GMAKE =		Yes
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS = 	--with-kasumi-exec=${LOCALBASE}/bin/kasumi \
+		 	--with-kasumi-icon=${LOCALBASE}/share/pixmaps/kasumi.png
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
