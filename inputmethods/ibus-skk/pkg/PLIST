@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/04/20 10:15:56 ajacoutot Exp $
 @bin libexec/ibus-engine-skk
 @bin libexec/ibus-setup-skk
 share/applications/ibus-setup-skk.desktop
-share/ibus/
 share/ibus-skk/
 share/ibus-skk/icons/
 share/ibus-skk/icons/ibus-skk.svg
 share/ibus-skk/setup/
 share/ibus-skk/setup/ibus-skk-preferences.ui
-share/ibus/component/
 share/ibus/component/skk.xml
 share/locale/ja/LC_MESSAGES/ibus-skk.mo
 @tag update-desktop-database
