@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.937 2020/04/16 06:26:35 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.938 2020/04/20 14:38:12 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1756,7 +1756,7 @@ my $cve = {
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
-	'security/libssh' => 'libssh-<0.9.3',
+	'security/libssh' => 'libssh-<0.9.4',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
