@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/20 07:59:43 pvk Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/20 08:19:50 pvk Exp $
 
 # vmm(4) architecture(s)
 ONLY_FOR_ARCHS =	amd64
@@ -7,6 +7,7 @@ COMMENT =	vmm(4) builder engine for HashiCorp Packer
 
 VERSION =	1.0.0
 PACKER_V =	1.5.5
+PKGNAME =	packer-vmm-${VERSION}
 GH_ACCOUNT =	double-p
 GH_PROJECT =	packer-builder-openbsd-vmm
 GH_TAGNAME =	v${VERSION}
