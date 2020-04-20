@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2020/03/31 18:46:01 kn Exp $
+# $OpenBSD: Makefile,v 1.22 2020/04/20 11:28:34 jasper Exp $
 
 COMMENT =		C library implementing server and client side
-V =			0.9.3
+V =			0.9.4
 DISTNAME =		libssh-${V}
 
 SHARED_LIBS +=  	ssh		4.1 # 4.8
