@@ -1,0 +1,18 @@
+$OpenBSD: patch-master_c,v 1.1 2020/04/20 20:45:12 kn Exp $
+
+getopt(3) returns int not char;  fix endless loop on platforms where char
+is unsigned, e.g. macppc.
+
+Index: master.c
+--- master.c.orig
++++ master.c
+@@ -133,7 +133,8 @@ main(int argc, char **argv)
+ 	int configtest, foreground, stdopen, masterport, stat;
+ 	pid_t pid;
+ 	const char *errstr;
+-	char c, *eargs[4], *eenv[1], *logfacilitystr, *oldprogname;
++	char *eargs[4], *eenv[1], *logfacilitystr, *oldprogname;
++	int c;
+ 
+ 	/* should endup in a configure script */
+ 	if (sizeof(struct msgwginit) != 148)
