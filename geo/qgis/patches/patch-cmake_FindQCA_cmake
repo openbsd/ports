@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_FindQCA_cmake,v 1.1 2018/04/20 20:52:39 landry Exp $
+$OpenBSD: patch-cmake_FindQCA_cmake,v 1.2 2020/04/20 06:08:33 landry Exp $
 
 Index: cmake/FindQCA.cmake
 --- cmake/FindQCA.cmake.orig
 +++ cmake/FindQCA.cmake
-@@ -44,7 +44,7 @@ else(QCA_INCLUDE_DIR AND QCA_LIBRARY)
+@@ -45,7 +45,7 @@ else(QCA_INCLUDE_DIR AND QCA_LIBRARY)
        "$ENV{LIB_DIR}/include"
        $ENV{INCLUDE}
        /usr/local/include
