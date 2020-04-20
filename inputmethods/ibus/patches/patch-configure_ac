@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/04/20 10:15:16 ajacoutot Exp $
+
+Makefile.am: error: required file './ChangeLog' not found
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -62,7 +62,7 @@ VALA_TARGET_GLIB_VERSION=2.46
+ AC_SUBST(VALA_TARGET_GLIB_VERSION)
+ 
+ # Init automake.
+-AM_INIT_AUTOMAKE([1.11.1 parallel-tests])
++AM_INIT_AUTOMAKE([1.11.1 foreign parallel-tests])
+ AM_MAINTAINER_MODE([enable])
+ AC_GNU_SOURCE
+ 

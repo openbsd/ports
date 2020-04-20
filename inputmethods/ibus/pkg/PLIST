@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/09/04 12:46:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/04/20 10:15:17 ajacoutot Exp $
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
 include/ibus-1.0/
 include/ibus-1.0/ibus.h
+include/ibus-1.0/ibusaccelgroup.h
 include/ibus-1.0/ibusattribute.h
 include/ibus-1.0/ibusattrlist.h
 include/ibus-1.0/ibusbus.h
@@ -11,6 +12,7 @@ include/ibus-1.0/ibuscomponent.h
 include/ibus-1.0/ibusconfig.h
 include/ibus-1.0/ibusconfigservice.h
 include/ibus-1.0/ibusdebug.h
+include/ibus-1.0/ibusemoji.h
 include/ibus-1.0/ibusengine.h
 include/ibus-1.0/ibusenginedesc.h
 include/ibus-1.0/ibusenginesimple.h
@@ -36,31 +38,37 @@ include/ibus-1.0/ibusservice.h
 include/ibus-1.0/ibusshare.h
 include/ibus-1.0/ibustext.h
 include/ibus-1.0/ibustypes.h
+include/ibus-1.0/ibusunicode.h
 include/ibus-1.0/ibusutil.h
 include/ibus-1.0/ibusversion.h
+include/ibus-1.0/ibusxevent.h
 include/ibus-1.0/ibusxml.h
 lib/girepository-1.0/IBus-1.0.typelib
-@comment lib/gtk-2.0/2.10.0/immodules/im-ibus.la
-lib/gtk-2.0/2.10.0/immodules/im-ibus.so
-@comment lib/gtk-3.0/3.0.0/immodules/im-ibus.la
-lib/gtk-3.0/3.0.0/immodules/im-ibus.so
-@comment lib/libibus-1.0.la
+@so lib/gtk-2.0/2.10.0/immodules/im-ibus.so
+@so lib/gtk-3.0/3.0.0/immodules/im-ibus.so
+@static-lib lib/libibus-1.0.a
+lib/libibus-1.0.la
 @lib lib/libibus-1.0.so.${LIBibus-1.0_VERSION}
 lib/pkgconfig/ibus-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/IBus.py
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/IBus.pyc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/IBus.pyo
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}IBus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}IBus.${MODPY_PYC_MAGIC_TAG}pyc
 @bin libexec/ibus-dconf
 @bin libexec/ibus-engine-simple
+@bin libexec/ibus-portal
 @bin libexec/ibus-ui-gtk3
 @bin libexec/ibus-x11
 @man man/man1/ibus-daemon.1
 @man man/man1/ibus-setup.1
 @man man/man1/ibus.1
+@man man/man5/00-upstream-settings.5
+@man man/man5/ibus.5
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/ibus.convert
-share/applications/ibus-setup.desktop
+share/applications/org.freedesktop.IBus.Setup.desktop
+share/dbus-1/services/org.freedesktop.IBus.service
+share/dbus-1/services/org.freedesktop.portal.IBus.service
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ibus/
 share/examples/ibus/bash_completion.d/
@@ -76,65 +84,18 @@ share/examples/ibus/dconf/db/ibus.d/00-upstream-settings
 share/examples/ibus/dconf/profile/
 share/examples/ibus/dconf/profile/ibus
 @sample ${SYSCONFDIR}/dconf/profile/ibus
+share/gettext/its/ibus.its
+share/gettext/its/ibus.loc
 share/gir-1.0/IBus-1.0.gir
 share/glib-2.0/schemas/org.freedesktop.ibus.gschema.xml
-share/gtk-doc/html/ibus/
-share/gtk-doc/html/ibus/IBusAttrList.html
-share/gtk-doc/html/ibus/IBusAttribute.html
-share/gtk-doc/html/ibus/IBusBus.html
-share/gtk-doc/html/ibus/IBusComponent.html
-share/gtk-doc/html/ibus/IBusConfig.html
-share/gtk-doc/html/ibus/IBusConfigService.html
-share/gtk-doc/html/ibus/IBusEngine.html
-share/gtk-doc/html/ibus/IBusEngineDesc.html
-share/gtk-doc/html/ibus/IBusFactory.html
-share/gtk-doc/html/ibus/IBusHotkeyProfile.html
-share/gtk-doc/html/ibus/IBusInputContext.html
-share/gtk-doc/html/ibus/IBusKeymap.html
-share/gtk-doc/html/ibus/IBusLookupTable.html
-share/gtk-doc/html/ibus/IBusObject.html
-share/gtk-doc/html/ibus/IBusObservedPath.html
-share/gtk-doc/html/ibus/IBusPanelService.html
-share/gtk-doc/html/ibus/IBusPropList.html
-share/gtk-doc/html/ibus/IBusProperty.html
-share/gtk-doc/html/ibus/IBusProxy.html
-share/gtk-doc/html/ibus/IBusRegistry.html
-share/gtk-doc/html/ibus/IBusSerializable.html
-share/gtk-doc/html/ibus/IBusService.html
-share/gtk-doc/html/ibus/IBusText.html
-share/gtk-doc/html/ibus/annotation-glossary.html
-share/gtk-doc/html/ibus/api-index-deprecated.html
-share/gtk-doc/html/ibus/api-index-full.html
-share/gtk-doc/html/ibus/ch01.html
-share/gtk-doc/html/ibus/ch02.html
-share/gtk-doc/html/ibus/ch03.html
-share/gtk-doc/html/ibus/ch04.html
-share/gtk-doc/html/ibus/ch05.html
-share/gtk-doc/html/ibus/ch06.html
-share/gtk-doc/html/ibus/home.png
-share/gtk-doc/html/ibus/ibus-IBusEngineSimple.html
-share/gtk-doc/html/ibus/ibus-IBusKeysyms.html
-share/gtk-doc/html/ibus/ibus-ibusdebug.html
-share/gtk-doc/html/ibus/ibus-ibuserror.html
-share/gtk-doc/html/ibus/ibus-ibuskeys.html
-share/gtk-doc/html/ibus/ibus-ibuskeysyms-compat.html
-share/gtk-doc/html/ibus/ibus-ibusshare.html
-share/gtk-doc/html/ibus/ibus-ibustypes.html
-share/gtk-doc/html/ibus/ibus-ibusutil.html
-share/gtk-doc/html/ibus/ibus-ibusversion.html
-share/gtk-doc/html/ibus/ibus-ibusxml.html
-share/gtk-doc/html/ibus/ibus.devhelp2
-share/gtk-doc/html/ibus/index.html
-share/gtk-doc/html/ibus/index.sgml
-share/gtk-doc/html/ibus/left.png
-share/gtk-doc/html/ibus/right.png
-share/gtk-doc/html/ibus/style.css
-share/gtk-doc/html/ibus/up.png
 share/ibus/
 share/ibus/component/
 share/ibus/component/dconf.xml
 share/ibus/component/gtkpanel.xml
 share/ibus/component/simple.xml
+share/ibus/dicts/
+share/ibus/dicts/unicode-blocks.dict
+share/ibus/dicts/unicode-names.dict
 share/ibus/engine/
 share/ibus/keymaps/
 share/ibus/keymaps/common
@@ -144,27 +105,34 @@ share/ibus/keymaps/kr
 share/ibus/keymaps/modifiers
 share/ibus/keymaps/us
 share/ibus/setup/
+${MODPY_COMMENT}share/ibus/setup/${MODPY_PYCACHE}/
+share/ibus/setup/${MODPY_PYCACHE}emojilang.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}emojilang.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/${MODPY_PYCACHE}engineabout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}engineabout.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/${MODPY_PYCACHE}enginecombobox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}enginecombobox.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/${MODPY_PYCACHE}enginedialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}enginedialog.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/${MODPY_PYCACHE}enginetreeview.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}enginetreeview.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/${MODPY_PYCACHE}icon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}icon.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/${MODPY_PYCACHE}keyboardshortcut.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}keyboardshortcut.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus/setup/emojilang.py
 share/ibus/setup/engineabout.py
-share/ibus/setup/engineabout.pyc
-share/ibus/setup/engineabout.pyo
 share/ibus/setup/enginecombobox.py
-share/ibus/setup/enginecombobox.pyc
-share/ibus/setup/enginecombobox.pyo
+share/ibus/setup/enginedialog.py
 share/ibus/setup/enginetreeview.py
-share/ibus/setup/enginetreeview.pyc
-share/ibus/setup/enginetreeview.pyo
 share/ibus/setup/i18n.py
-share/ibus/setup/i18n.pyc
-share/ibus/setup/i18n.pyo
 share/ibus/setup/icon.py
-share/ibus/setup/icon.pyc
-share/ibus/setup/icon.pyo
 share/ibus/setup/keyboardshortcut.py
-share/ibus/setup/keyboardshortcut.pyc
-share/ibus/setup/keyboardshortcut.pyo
 share/ibus/setup/main.py
-share/ibus/setup/main.pyc
-share/ibus/setup/main.pyo
 share/ibus/setup/setup.ui
 share/icons/hicolor/16x16/apps/ibus-keyboard.png
 share/icons/hicolor/22x22/apps/ibus-keyboard.png
@@ -181,6 +149,7 @@ share/locale/bg/LC_MESSAGES/ibus10.mo
 share/locale/bn/LC_MESSAGES/ibus10.mo
 share/locale/bn_IN/LC_MESSAGES/ibus10.mo
 share/locale/ca/LC_MESSAGES/ibus10.mo
+share/locale/cs/LC_MESSAGES/ibus10.mo
 share/locale/da/LC_MESSAGES/ibus10.mo
 share/locale/de/LC_MESSAGES/ibus10.mo
 share/locale/en_GB/LC_MESSAGES/ibus10.mo
@@ -188,37 +157,47 @@ share/locale/es/LC_MESSAGES/ibus10.mo
 share/locale/et/LC_MESSAGES/ibus10.mo
 share/locale/eu/LC_MESSAGES/ibus10.mo
 share/locale/fa/LC_MESSAGES/ibus10.mo
+share/locale/fi/LC_MESSAGES/ibus10.mo
 share/locale/fr/LC_MESSAGES/ibus10.mo
 share/locale/gu/LC_MESSAGES/ibus10.mo
+share/locale/he/LC_MESSAGES/ibus10.mo
 share/locale/hi/LC_MESSAGES/ibus10.mo
 share/locale/hu/LC_MESSAGES/ibus10.mo
 share/locale/ia/LC_MESSAGES/ibus10.mo
+share/locale/id/LC_MESSAGES/ibus10.mo
 share/locale/it/LC_MESSAGES/ibus10.mo
 share/locale/ja/LC_MESSAGES/ibus10.mo
 share/locale/kn/LC_MESSAGES/ibus10.mo
 share/locale/ko/LC_MESSAGES/ibus10.mo
 share/locale/lv/LC_MESSAGES/ibus10.mo
 share/locale/ml/LC_MESSAGES/ibus10.mo
+share/locale/mn/LC_MESSAGES/ibus10.mo
 share/locale/mr/LC_MESSAGES/ibus10.mo
 share/locale/nb/LC_MESSAGES/ibus10.mo
 share/locale/nl/LC_MESSAGES/ibus10.mo
 share/locale/or/LC_MESSAGES/ibus10.mo
 share/locale/pa/LC_MESSAGES/ibus10.mo
 share/locale/pl/LC_MESSAGES/ibus10.mo
+share/locale/pt/LC_MESSAGES/ibus10.mo
 share/locale/pt_BR/LC_MESSAGES/ibus10.mo
 share/locale/ru/LC_MESSAGES/ibus10.mo
+share/locale/sq/LC_MESSAGES/ibus10.mo
 share/locale/sr/LC_MESSAGES/ibus10.mo
 share/locale/sr@latin/LC_MESSAGES/ibus10.mo
+share/locale/sv/LC_MESSAGES/ibus10.mo
 share/locale/ta/LC_MESSAGES/ibus10.mo
 share/locale/te/LC_MESSAGES/ibus10.mo
 share/locale/tg/LC_MESSAGES/ibus10.mo
+share/locale/tr/LC_MESSAGES/ibus10.mo
 share/locale/uk/LC_MESSAGES/ibus10.mo
+share/locale/ur/LC_MESSAGES/ibus10.mo
 share/locale/vi/LC_MESSAGES/ibus10.mo
 share/locale/zh_CN/LC_MESSAGES/ibus10.mo
 share/locale/zh_HK/LC_MESSAGES/ibus10.mo
 share/locale/zh_TW/LC_MESSAGES/ibus10.mo
 share/vala/vapi/ibus-1.0.deps
 share/vala/vapi/ibus-1.0.vapi
+@sample /var/cache/ibus/
 @tag glib-compile-schemas
 @tag gtk-query-immodules-2.0
 @tag gtk-query-immodules-3.0
@@ -227,4 +206,3 @@ share/vala/vapi/ibus-1.0.vapi
 @exec %D/bin/dconf update
 @unexec-delete %D/bin/dconf update
 @unexec-delete rm -f ${SYSCONFDIR}/dconf/db/ibus
-@sample /var/cache/ibus/

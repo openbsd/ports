@@ -1,0 +1,20 @@
+$OpenBSD: patch-data_dconf_make-dconf-override-db_sh,v 1.1 2020/04/20 10:15:16 ajacoutot Exp $
+
+Index: data/dconf/make-dconf-override-db.sh
+--- data/dconf/make-dconf-override-db.sh.orig
++++ data/dconf/make-dconf-override-db.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 
+@@ -6,7 +6,7 @@ set -e
+ # breaks dbus-launch.  There's dbus-run-session which is
+ # better, but not everyone has it yet.
+ export DBUS_FATAL_WARNINGS=0
+-export TMPDIR=$(mktemp -d --tmpdir="$PWD")
++export TMPDIR=$(mktemp -d -t -p "$PWD")
+ export XDG_CONFIG_HOME="$TMPDIR/config"
+ export XDG_CACHE_HOME="$TMPDIR/cache"
+ export GSETTINGS_SCHEMA_DIR="$TMPDIR/schemas"

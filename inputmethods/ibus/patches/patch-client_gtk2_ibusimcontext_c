@@ -1,7 +1,9 @@
-$OpenBSD: patch-client_gtk2_ibusimcontext_c,v 1.2 2013/10/01 21:21:17 fgsch Exp $
---- client/gtk2/ibusimcontext.c.orig	Fri Sep 20 04:15:51 2013
-+++ client/gtk2/ibusimcontext.c	Sat Sep 28 19:31:13 2013
-@@ -593,10 +593,7 @@ ibus_im_context_class_init (IBusIMContextClass *class)
+$OpenBSD: patch-client_gtk2_ibusimcontext_c,v 1.3 2020/04/20 10:15:16 ajacoutot Exp $
+
+Index: client/gtk2/ibusimcontext.c
+--- client/gtk2/ibusimcontext.c.orig
++++ client/gtk2/ibusimcontext.c
+@@ -688,10 +688,7 @@ ibus_im_context_class_init (IBusIMContextClass *class)
  
      /* always install snooper */
      if (_key_snooper_id == 0) {
@@ -12,7 +14,7 @@ $OpenBSD: patch-client_gtk2_ibusimcontext_c,v 1.2 2013/10/01 21:21:17 fgsch Exp 
      }
  
      _daemon_name_watch_id = g_bus_watch_name (G_BUS_TYPE_SESSION,
-@@ -613,10 +610,7 @@ ibus_im_context_class_fini (IBusIMContextClass *class)
+@@ -708,10 +705,7 @@ ibus_im_context_class_fini (IBusIMContextClass *class)
  {
      if (_key_snooper_id != 0) {
          IDEBUG ("snooper is terminated.");
