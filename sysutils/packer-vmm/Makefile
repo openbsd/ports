@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/19 19:28:56 pvk Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/20 07:59:43 pvk Exp $
 
 # vmm(4) architecture(s)
 ONLY_FOR_ARCHS =	amd64
 
-COMMENT =	builder engine to use OpenBSD vmm(4) with HashiCorp Packer
+COMMENT =	vmm(4) builder engine for HashiCorp Packer
 
+VERSION =	1.0.0
 PACKER_V =	1.5.5
-PLUGIN_V =	0.0.20200419
-DISTNAME =	packer-vmm-${PLUGIN_V}
-
 GH_ACCOUNT =	double-p
 GH_PROJECT =	packer-builder-openbsd-vmm
-GH_COMMIT =	c00a5cf3a9cfb5451e366c2fdcf7333b9b55c25d
+GH_TAGNAME =	v${VERSION}
 
 CATEGORIES =	sysutils
 
 MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
 MASTER_SITES0 =	https://github.com/hashicorp/packer/archive/v${PACKER_V}/
-DISTFILES +=	packer-builder-openbsd-vmm-{}${GH_COMMIT}.tar.gz \
+DISTFILES +=	${GH_PROJECT}-${VERSION}${EXTRACT_SUFX} \
 		packer-${PACKER_V}${EXTRACT_SUFX}:0
 
 # BSD
