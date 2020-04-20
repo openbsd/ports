@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_parse_scanner_cc,v 1.1 2020/04/20 07:30:20 jasper Exp $
+
+Fix crash with very long lexemes
+https://github.com/skvadrik/re2c/commit/c4603ba5ce229db83a2a4fb93e6d4b4e3ec3776a
+
+Index: src/parse/scanner.cc
+--- src/parse/scanner.cc.orig
++++ src/parse/scanner.cc
+@@ -155,13 +155,14 @@ bool Scanner::fill(size_t need)
+         if (!buf) fatal("out of memory");
+ 
+         memmove(buf, tok, copy);
+-        shift_ptrs_and_fpos(buf - bot);
++        shift_ptrs_and_fpos(buf - tok);
+         delete [] bot;
+         bot = buf;
+ 
+         free = BSIZE - copy;
+     }
+ 
++    DASSERT(lim + free <= bot + BSIZE);
+     if (!read(free)) {
+         eof = lim;
+         memset(lim, 0, YYMAXFILL);
