@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2019/11/26 08:03:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.41 2020/04/20 06:31:05 jasper Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
@@ -415,6 +415,7 @@ share/locale/br/LC_MESSAGES/file-roller.mo
 share/locale/bs/LC_MESSAGES/file-roller.mo
 share/locale/ca/LC_MESSAGES/file-roller.mo
 share/locale/ca@valencia/LC_MESSAGES/file-roller.mo
+share/locale/ckb/LC_MESSAGES/file-roller.mo
 share/locale/cs/LC_MESSAGES/file-roller.mo
 share/locale/csb/LC_MESSAGES/file-roller.mo
 share/locale/cy/LC_MESSAGES/file-roller.mo
