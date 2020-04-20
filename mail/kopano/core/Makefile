@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/03/27 19:04:07 kmos Exp $
+# $OpenBSD: Makefile,v 1.55 2020/04/20 15:31:47 robert Exp $
 
 BROKEN-sparc64=	Cannot find libc with ld.lld, more library problems without lld
 
@@ -10,6 +10,8 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
+
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -70,6 +72,7 @@ RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/py-bsddb3${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
 		devel/py-magic${MODPY_FLAVOR} \
+		devel/py-tzlocal${MODPY_FLAVOR} \
 		mail/p5-Mail-SpamAssassin \
 		textproc/catdoc \
 		sysutils/py-daemon${MODPY_FLAVOR} \
