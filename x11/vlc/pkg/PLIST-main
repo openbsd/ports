@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.45 2020/01/03 08:45:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.46 2020/04/20 08:35:41 sthen Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -130,7 +130,7 @@ lib/vlc/plugins/access/
 @so lib/vlc/plugins/access/libfilesystem_plugin.so
 @so lib/vlc/plugins/access/libftp_plugin.so
 @so lib/vlc/plugins/access/libhttp_plugin.so
-@lib lib/vlc/plugins/access/libhttps_plugin.so.${LIBhttps_plugin_VERSION}
+@so lib/vlc/plugins/access/libhttps_plugin.so
 @so lib/vlc/plugins/access/libidummy_plugin.so
 @so lib/vlc/plugins/access/libimem_plugin.so
 @so lib/vlc/plugins/access/liblibbluray_plugin.so

@@ -1,4 +1,4 @@
-$OpenBSD: patch-modules_access_http_Makefile_am,v 1.1 2019/12/01 22:44:13 ajacoutot Exp $
+$OpenBSD: patch-modules_access_http_Makefile_am,v 1.2 2020/04/20 08:35:41 sthen Exp $
 
 Workaround for duplicate symbols from libcompat being linked twice.
 
@@ -8,7 +8,7 @@ Index: modules/access/http/Makefile.am
 @@ -1,5 +1,6 @@
  libhttps_plugin_la_SOURCES = access/http/access.c
  libhttps_plugin_la_LIBADD = libvlc_http.la
-+libhttps_plugin_la_LDFLAGS = -Wl,--allow-multiple-definition
++libhttps_plugin_la_LDFLAGS = -Wl,--allow-multiple-definition -avoid-version -module -export-symbols-regex ^vlc_entry -shrext .so 
  access_LTLIBRARIES += libhttps_plugin.la
  
  libvlc_http_la_SOURCES = \
