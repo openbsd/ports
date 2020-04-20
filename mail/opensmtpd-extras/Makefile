@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/12/26 11:19:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2020/04/20 06:13:11 giovanni Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
@@ -6,14 +6,13 @@ COMMENT-pgsql=		postgresql based smtpd table support
 COMMENT-python=		extras with python bindings for smtpd
 COMMENT-redis=		redis based smtpd table support
 
-V=			6.6.0
+V=			6.7.1
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-mysql=		opensmtpd-extras-mysql-${V}
 PKGNAME-pgsql=		opensmtpd-extras-pgsql-${V}
 PKGNAME-python=		opensmtpd-extras-python-${V}
 PKGNAME-redis=		opensmtpd-extras-redis-${V}
-REVISION=		2
 EPOCH=			0
 
 CATEGORIES=		mail
@@ -36,9 +35,8 @@ WANTLIB-redis=		c crypto event ssl hiredis
 
 MASTER_SITES=		${HOMEPAGE}archives/
 
-WRKSRC=			${WRKDIR}/OpenSMTPD-extras-${V}
-
 MODULES=		lang/python
+MODPY_RUNDEP=		no
 
 LIB_DEPENDS-main=	databases/sqlite3
 LIB_DEPENDS-mysql=	databases/mariadb,-main
