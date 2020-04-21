@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-tidy,v 1.1 2020/04/21 20:38:32 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-tidy->=7.4,<7.5
+@so lib/php-${PV}/modules/tidy.so
+share/examples/php-${PV}/tidy.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/tidy.ini

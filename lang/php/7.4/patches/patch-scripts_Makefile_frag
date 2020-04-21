@@ -1,0 +1,16 @@
+$OpenBSD: patch-scripts_Makefile_frag,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+Index: scripts/Makefile.frag
+--- scripts/Makefile.frag.orig
++++ scripts/Makefile.frag
+@@ -2,8 +2,8 @@
+ # Build environment install
+ #
+ 
+-phpincludedir = $(includedir)/php
+-phpbuilddir = $(libdir)/build
++phpincludedir = $(peardir)/include
++phpbuilddir = $(peardir)/build
+ 
+ BUILD_FILES = \
+ 	scripts/phpize.m4 \

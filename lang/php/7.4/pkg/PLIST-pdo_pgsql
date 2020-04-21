@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-pdo_pgsql,v 1.1 2020/04/21 20:38:31 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-pdo_pgsql->=7.4,<7.5
+@so lib/php-${PV}/modules/pdo_pgsql.so
+share/examples/php-${PV}/pdo_pgsql.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/pdo_pgsql.ini

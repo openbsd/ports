@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.150 2020/04/12 14:26:02 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.151 2020/04/21 20:38:31 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
+
+PV=		${PHP_VERSION:R}
+MV=		${PV:R}
+SV=		${PV:S/.//}
 
 PKGNAME-main?=		php-${PHP_VERSION}
 PKGSTEM=		php-${PV}
@@ -77,10 +81,8 @@ CONFIGURE_ARGS+=	--enable-opcache
 # default included php extensions
 CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
-			--with-onig=${LOCALBASE} \
 			--with-openssl \
 			--with-password-argon2=${LOCALBASE} \
-			--with-pcre-regex \
 			--with-sodium=${LOCALBASE} \
 			--with-zlib \
 			--enable-bcmath \
@@ -95,8 +97,16 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--enable-sysvmsg \
 			--enable-sysvsem \
 			--enable-sysvshm \
-			--enable-wddx \
 			--enable-xml
+
+.if ${PV:M7.2} || ${PV:M7.3}
+CONFIGURE_ARGS+=	--enable-wddx \
+			--with-onig=${LOCALBASE} \
+			--with-pcre-regex
+.else
+# wddx moved to pecl in 7.4
+CONFIGURE_ARGS+=	--with-external-pcre
+.endif
 
 RUN_DEPENDS-main=	mail/femail,-chroot
 
@@ -157,6 +167,10 @@ LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			security/libsodium \
 			textproc/libxml \
 			textproc/oniguruma
+.  if !${PV:M7.2} && !${PV:M7.3}
+WANTLIB$i +=		${COMPILER_LIBCXX} pcre2-8
+LIB_DEPENDS$i +=	devel/pcre2
+.  endif
 .endfor
 
 #
@@ -205,15 +219,30 @@ CONFIGURE_ARGS+=	--with-enchant=shared,${LOCALBASE}
 COMMENT-gd=		image manipulation extensions for php
 HOMEPAGE-gd=		https://www.php.net/image
 LIB_DEPENDS-gd=		graphics/jpeg \
+			graphics/libwebp \
 			graphics/png
-WANTLIB-gd+=		X11 Xpm freetype jpeg m png pthread xcb z
+WANTLIB-gd+=		freetype jpeg m png pthread webp z
+# for bundled gd
+WANTLIB-gd+=		X11 Xpm xcb
+# for standalone gd (needs more testing, defer to post 6.7)
+#WANTLIB-gd+=		expat fontconfig iconv lzma tiff zstd
+#LIB_DEPENDS-gd=	graphics/gd
 .if ${BUILD_PACKAGES:M-gd}
+.  if ${PV:M7.2} || ${PV:M7.3}
 CONFIGURE_ARGS+=	--with-gd=shared \
+			--with-freetype-dir=${X11BASE} \
 			--with-jpeg-dir=${LOCALBASE} \
 			--with-png-dir=${LOCALBASE} \
-			--with-zlib-dir=/usr \
-			--with-freetype-dir=${X11BASE} \
-			--with-xpm-dir=${X11BASE}
+			--with-webp-dir=${LOCALBASE} \
+			--with-xpm-dir=${X11BASE} \
+			--with-zlib-dir=/usr
+.  else
+CONFIGURE_ARGS+=	--enable-gd=shared \
+			--with-freetype=${X11BASE} \
+			--with-jpeg=${LOCALBASE} \
+			--with-webp=${LOCALBASE} \
+			--with-xpm=${X11BASE}
+.  endif
 .endif
 
 # gmp
@@ -242,8 +271,12 @@ LIB_DEPENDS-intl=	textproc/icu4c
 RUN_DEPENDS-intl=	textproc/icu4c,-wwwdata
 WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m
 .if ${BUILD_PACKAGES:M-intl}
+.  if ${PV:M7.2} || ${PV:M7.3}
 CONFIGURE_ARGS+=	--enable-intl=shared \
 			--with-icu-dir=${LOCALBASE}
+.  else
+CONFIGURE_ARGS+=	--enable-intl=shared
+.  endif
 .endif
 
 # ldap
@@ -409,8 +442,12 @@ CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 # zip
 COMMENT-zip=		zip functions for php
 HOMEPAGE-zip=		https://www.php.net/zip
+.if ${PV:M7.2} || ${PV:M7.3}
 CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libzip=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-zip=shared
+.endif
 LIB_DEPENDS-zip=	archivers/bzip2 \
 			archivers/libzip
 WANTLIB-zip=		bz2 crypto lzma pthread ssl z zip
@@ -418,9 +455,6 @@ WANTLIB-zip=		bz2 crypto lzma pthread ssl z zip
 # some variables to substitute
 SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV
 UPDATE_PLIST_ARGS+= -i MV
-PV=		${PHP_VERSION:R}
-MV=		${PV:R}
-SV=		${PV:S/.//}
 DEFAULT_PHP?=	No
 
 .for i in TRUEPREFIX MODULES_DIR PHP_VERSION APACHE_MODULE_DIR

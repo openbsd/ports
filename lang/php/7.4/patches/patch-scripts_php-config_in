@@ -1,0 +1,33 @@
+$OpenBSD: patch-scripts_php-config_in,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+Index: scripts/php-config.in
+--- scripts/php-config.in.orig
++++ scripts/php-config.in
+@@ -1,12 +1,12 @@
+ #! /bin/sh
+ 
+ SED="@SED@"
+-prefix="@prefix@"
++prefix='/var/www/pear'
+ datarootdir="@datarootdir@"
+ exec_prefix="@exec_prefix@"
+ version="@PHP_VERSION@"
+ vernum="@PHP_VERSION_ID@"
+-include_dir="@includedir@/php"
++include_dir="@PEAR_INSTALLDIR@/include"
+ includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
+ ldflags="@PHP_LDFLAGS@"
+ libs="@EXTRA_LIBS@"
+@@ -26,10 +26,11 @@ ini_path="@EXPANDED_PHP_CONFIG_FILE_PATH@"
+ for sapi in $php_sapis; do
+   case $sapi in
+   cli)
+-    php_cli_binary="@bindir@/${program_prefix}php${program_suffix}${exe_extension}"
++    php_cli_binary="/usr/local/bin/php${program_suffix}"
+     ;;
+   cgi)
+     php_cgi_binary="@bindir@/${program_prefix}php-cgi${program_suffix}${exe_extension}"
++    php_cgi_binary="/usr/local/bin/php-cgi${program_suffix}"
+     ;;
+   esac
+ done

@@ -1,0 +1,13 @@
+$OpenBSD: patch-ext_mysqlnd_config9_m4,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+Index: ext/mysqlnd/config9.m4
+--- ext/mysqlnd/config9.m4.orig
++++ ext/mysqlnd/config9.m4
+@@ -14,6 +14,7 @@ PHP_ARG_ENABLE([mysqlnd_compression_support],
+   [no])
+ 
+ dnl If some extension uses mysqlnd it will get compiled in PHP core
++PHP_MYSQLND_ENABLED="yes"
+ if test "$PHP_MYSQLND" != "no" || test "$PHP_MYSQLND_ENABLED" = "yes"; then
+   mysqlnd_ps_sources="mysqlnd_ps.c mysqlnd_ps_codec.c"
+   mysqlnd_base_sources="mysqlnd_connection.c mysqlnd_alloc.c mysqlnd_charset.c mysqlnd_wireprotocol.c \

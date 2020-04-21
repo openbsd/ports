@@ -1,0 +1,27 @@
+$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+Index: sapi/cgi/cgi_main.c
+--- sapi/cgi/cgi_main.c.orig
++++ sapi/cgi/cgi_main.c
+@@ -1752,6 +1752,7 @@ int main(int argc, char *argv[])
+ 	char *orig_optarg = php_optarg;
+ 	char *script_file = NULL;
+ 	size_t ini_entries_len = 0;
++	char *ini;
+ 	/* end of temporary locals */
+ 
+ 	int max_requests = 500;
+@@ -1801,7 +1802,12 @@ int main(int argc, char *argv[])
+ 
+ 	sapi_startup(&cgi_sapi_module);
+ 	fastcgi = fcgi_is_fastcgi();
+-	cgi_sapi_module.php_ini_path_override = NULL;
++
++	if ((ini = getenv("PHP_INI_PATH"))) {
++		cgi_sapi_module.php_ini_path_override = ini;
++	} else {
++		cgi_sapi_module.php_ini_path_override = NULL;
++	}
+ 
+ #ifdef PHP_WIN32
+ 	_fmode = _O_BINARY; /* sets default for file streams to binary */

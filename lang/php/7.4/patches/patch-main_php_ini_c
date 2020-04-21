@@ -1,0 +1,14 @@
+$OpenBSD: patch-main_php_ini_c,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+Index: main/php_ini.c
+--- main/php_ini.c.orig
++++ main/php_ini.c
+@@ -609,7 +609,7 @@ int php_init_config(void)
+ 
+ 		/* If still no ini file found, search for php.ini file in search path */
+ 		if (!fp) {
+-			fp = php_fopen_with_path("php.ini", "r", php_ini_search_path, &opened_path);
++			fp = php_fopen_with_path("php-7.4.ini", "r", php_ini_search_path, &opened_path);
+ 			if (fp) {
+ 				filename = ZSTR_VAL(opened_path);
+ 			}

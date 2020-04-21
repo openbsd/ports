@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-xsl,v 1.1 2020/04/21 20:38:32 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-xsl->=7.4,<7.5
+@so lib/php-${PV}/modules/xsl.so
+share/examples/php-${PV}/xsl.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/xsl.ini

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-zip,v 1.1 2020/04/21 20:38:32 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-zip->=7.4,<7.5
+@so lib/php-${PV}/modules/zip.so
+share/examples/php-${PV}/zip.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/zip.ini

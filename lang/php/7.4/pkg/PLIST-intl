@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-intl,v 1.1 2020/04/21 20:38:31 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-intl->=7.4,<7.5
+@so lib/php-${PV}/modules/intl.so
+share/examples/php-${PV}/intl.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/intl.ini

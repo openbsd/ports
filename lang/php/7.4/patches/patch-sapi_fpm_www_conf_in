@@ -1,0 +1,37 @@
+$OpenBSD: patch-sapi_fpm_www_conf_in,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+Index: sapi/fpm/www.conf.in
+--- sapi/fpm/www.conf.in.orig
++++ sapi/fpm/www.conf.in
+@@ -33,7 +33,8 @@ group = @php_fpm_group@
+ ;                            (IPv6 and IPv4-mapped) on a specific port;
+ ;   '/path/to/unix/socket' - to listen on a unix socket.
+ ; Note: This value is mandatory.
+-listen = 127.0.0.1:9000
++; If using a TCP port, never expose this to a public network.
++listen = /var/www/run/php-fpm.sock
+ 
+ ; Set listen(2) backlog.
+ ; Default Value: 511 (-1 on FreeBSD and OpenBSD)
+@@ -45,9 +46,9 @@ listen = 127.0.0.1:9000
+ ; and group can be specified either by name or by their numeric IDs.
+ ; Default Values: user and group are set as the running user
+ ;                 mode is set to 0660
+-;listen.owner = @php_fpm_user@
+-;listen.group = @php_fpm_group@
+-;listen.mode = 0660
++listen.owner = www
++listen.group = www
++listen.mode = 0660
+ ; When POSIX Access Control Lists are supported you can set them using
+ ; these options, value is a comma separated list of user/group names.
+ ; When set, listen.owner and listen.group are ignored
+@@ -366,7 +367,7 @@ pm.max_spare_servers = 3
+ ;       possible. However, all PHP paths will be relative to the chroot
+ ;       (error_log, sessions.save_path, ...).
+ ; Default Value: not set
+-;chroot =
++chroot = /var/www
+ 
+ ; Chdir to this directory at the start.
+ ; Note: relative path can be used.

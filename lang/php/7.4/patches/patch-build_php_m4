@@ -1,0 +1,16 @@
+$OpenBSD: patch-build_php_m4,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+bogus version in pkgconfig file
+
+Index: build/php.m4
+--- build/php.m4.orig
++++ build/php.m4
+@@ -1917,7 +1917,7 @@ dnl
+ AC_DEFUN([PHP_SETUP_OPENSSL],[
+   found_openssl=no
+ 
+-  PKG_CHECK_MODULES([OPENSSL], [openssl >= 1.0.1], [found_openssl=yes])
++  PKG_CHECK_MODULES([OPENSSL], [openssl], [found_openssl=yes])
+ 
+   if test "$found_openssl" = "yes"; then
+     PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)

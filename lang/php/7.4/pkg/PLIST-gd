@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-gd,v 1.1 2020/04/21 20:38:31 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-gd->=7.4,<7.5
+@so lib/php-${PV}/modules/gd.so
+share/examples/php-${PV}/gd.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/gd.ini
+share/php-${PV}/include/ext/gd/
+share/php-${PV}/include/ext/gd/gd_compat.h
+share/php-${PV}/include/ext/gd/php_gd.h

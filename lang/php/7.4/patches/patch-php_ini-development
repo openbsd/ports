@@ -1,0 +1,61 @@
+$OpenBSD: patch-php_ini-development,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+Index: php.ini-development
+--- php.ini-development.orig
++++ php.ini-development
+@@ -729,11 +729,8 @@ default_charset = "UTF-8"
+ ;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+ ; UNIX: "/path1:/path2"
+-;include_path = ".:/php/includes"
++include_path = ".:OPENBSD_INCLUDE_PATH"
+ ;
+-; Windows: "\path1;\path2"
+-;include_path = ".;c:\php\includes"
+-;
+ ; PHP's default setting for include_path is ".;/path/to/php/pear"
+ ; http://php.net/include-path
+ 
+@@ -755,6 +752,7 @@ user_dir =
+ ;extension_dir = "./"
+ ; On windows:
+ ;extension_dir = "ext"
++extension_dir = "MODULES_DIR"
+ 
+ ; Directory where the temporary files should be placed.
+ ; Defaults to the system default (see sys_get_temp_dir)
+@@ -850,7 +848,7 @@ max_file_uploads = 20
+ 
+ ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
+ ; http://php.net/allow-url-fopen
+-allow_url_fopen = On
++allow_url_fopen = Off
+ 
+ ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
+ ; http://php.net/allow-url-include
+@@ -955,7 +953,7 @@ cli_server.color = On
+ [Date]
+ ; Defines the default timezone used by the date functions
+ ; http://php.net/date.timezone
+-;date.timezone =
++date.timezone = UTC
+ 
+ ; http://php.net/date.default-latitude
+ ;date.default_latitude = 31.7667
+@@ -1061,16 +1059,6 @@ pdo_mysql.default_socket=
+ ;phar.cache_list =
+ 
+ [mail function]
+-; For Win32 only.
+-; http://php.net/smtp
+-SMTP = localhost
+-; http://php.net/smtp-port
+-smtp_port = 25
+-
+-; For Win32 only.
+-; http://php.net/sendmail-from
+-;sendmail_from = me@example.com
+-
+ ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
+ ; http://php.net/sendmail-path
+ ;sendmail_path =

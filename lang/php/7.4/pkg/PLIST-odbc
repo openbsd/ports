@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-odbc,v 1.1 2020/04/21 20:38:31 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-odbc->=7.4,<7.5
+@so lib/php-${PV}/modules/odbc.so
+share/examples/php-${PV}/odbc.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/odbc.ini

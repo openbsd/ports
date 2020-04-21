@@ -1,0 +1,50 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/04/21 20:38:31 sthen Exp $
+
+hunk 1: disable cpu opt; runtime crashes in at least the optimized
+avx2 b64decode and sse4.2 addslashes
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -542,12 +542,6 @@ PHP_CHECK_BUILTIN_CPU_INIT
+ dnl Check __builtin_cpu_supports
+ PHP_CHECK_BUILTIN_CPU_SUPPORTS
+ 
+-dnl Check instructions.
+-PHP_CHECK_CPU_SUPPORTS([ssse3])
+-PHP_CHECK_CPU_SUPPORTS([sse4.2])
+-PHP_CHECK_CPU_SUPPORTS([avx])
+-PHP_CHECK_CPU_SUPPORTS([avx2])
+-
+ dnl Check for structure members.
+ AC_CHECK_MEMBERS([struct tm.tm_gmtoff],,,[#include <time.h>])
+ AC_CHECK_MEMBERS([struct stat.st_blksize, struct stat.st_rdev])
+@@ -1081,16 +1075,16 @@ case $php_sapi_module in
+     enable_static=no
+     case $with_pic in
+       yes)
+-        standard_libtool_flag='-prefer-pic'
++        standard_libtool_flag=''
+         ;;
+       no)
+-        standard_libtool_flag='-prefer-non-pic'
++        standard_libtool_flag=''
+         ;;
+     esac
+     EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
+     ;;
+   *[)]
+-    standard_libtool_flag='-prefer-non-pic -static'
++    standard_libtool_flag=''
+     if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
+       enable_shared=no
+     fi
+@@ -1276,7 +1270,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+ EXPANDED_DATADIR=$datadir
+ EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
+ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
+-INCLUDE_PATH=.:$EXPANDED_PEAR_INSTALLDIR
++INCLUDE_PATH=.:$libdir
+ 
+ exec_prefix=$old_exec_prefix
+ libdir=$old_libdir
