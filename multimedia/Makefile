@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2020/04/09 19:10:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2020/04/21 15:53:39 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -66,7 +66,7 @@
      SUBDIR += phonon-backend
      SUBDIR += py-caption
      SUBDIR += py-casttube,python3
-     SUBDIR += py-chromecast
+     SUBDIR += py-chromecast,python3
      SUBDIR += py-pafy
      SUBDIR += qtav
      SUBDIR += regionset
