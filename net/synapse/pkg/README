@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2020/03/08 17:03:15 landry Exp $
+$OpenBSD: README,v 1.2 2020/04/21 19:14:12 kn Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -26,6 +26,29 @@ Configuration with TLS
 By default, synapse will run without TLS on localhost:8008
 This means that you will not be able to connect to your server remotely.
 The best way to achieve remote connectivity is through a reverse proxy.
+
+Here is a relayd.conf(5) example:
+
+  http protocol synapse {
+    match request header append "X-Forwarded-For" value "$REMOTE_ADDR"
+    match request header append "X-Forwaded-By" value "$SERVER_ADDR:$SERVER_PORT"
+
+    tls keypair "matrix.example.com"
+
+    match request header set "Connection" value "close"
+  }
+
+  relay "synapse" {
+    listen on matrix.example.com port 443 tls
+    protocol "synapse"
+    forward to 127.0.0.1 port 8008 
+  }
+
+  relay "synapse-server" {
+    listen on matrix.example.com port 8448 tls
+    protocol "synapse"
+    forward to 127.0.0.1 port 8008
+  }
 
 Here is an Nginx vhost reverse proxy example:
 
