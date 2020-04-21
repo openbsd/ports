@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.574 2020/03/17 21:54:18 rpointel Exp $
+# $OpenBSD: Makefile,v 1.575 2020/04/21 20:42:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -255,8 +255,9 @@
      SUBDIR += pear-Auth
      SUBDIR += pear-Auth-HTTP
      SUBDIR += pear-Auth-SASL
-     SUBDIR += pecl-mcrypt,php72	# in core up to 7.1
+     SUBDIR += pecl-mcrypt,php72
      SUBDIR += pecl-mcrypt,php73
+     SUBDIR += pecl-mcrypt,php74
      SUBDIR += pgp5
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr
