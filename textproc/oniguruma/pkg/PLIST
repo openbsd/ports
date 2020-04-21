@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/09 15:07:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/04/21 19:37:52 sthen Exp $
 bin/onig-config
 include/oniggnu.h
-include/onigposix.h
 include/oniguruma.h
 @static-lib lib/libonig.a
 lib/libonig.la
