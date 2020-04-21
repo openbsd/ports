@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/21 12:20:42 sebastia Exp $
 
 COMMENT =		commandline option parser for Ruby
 
-DISTNAME =		optimist-3.0.0
+DISTNAME =		optimist-3.0.1
 CATEGORIES =		devel
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
