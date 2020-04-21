@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/04/14 13:18:25 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2020/04/21 13:11:48 sebastia Exp $
 
 COMMENT =	framework to implement CMS scanners
 
-DISTNAME =	cms_scanner-0.9.0
+DISTNAME =	cms_scanner-0.10.0
 CATEGORIES =	security
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
