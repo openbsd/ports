@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2020/03/30 08:59:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2020/04/21 17:53:47 ajacoutot Exp $
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v0.20.0
+GH_TAGNAME=		v0.20.1
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
 

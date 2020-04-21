@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2020/03/30 08:59:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2020/04/21 17:53:47 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/applications/stellarium.desktop
@@ -2443,6 +2443,7 @@ share/stellarium/textures/saturn.png
 share/stellarium/textures/saturn_rings_radial.png
 share/stellarium/textures/sedna.png
 share/stellarium/textures/star16x16.png
+share/stellarium/textures/star16x16_rays.png
 share/stellarium/textures/sun.png
 share/stellarium/textures/telescope.png
 share/stellarium/textures/tethys.png
@@ -2509,6 +2510,7 @@ share/stellarium/translations/stellarium-planetary-features/ko.qm
 share/stellarium/translations/stellarium-planetary-features/ku.qm
 share/stellarium/translations/stellarium-planetary-features/ky.qm
 share/stellarium/translations/stellarium-planetary-features/la.qm
+share/stellarium/translations/stellarium-planetary-features/lb.qm
 share/stellarium/translations/stellarium-planetary-features/lt.qm
 share/stellarium/translations/stellarium-planetary-features/lv.qm
 share/stellarium/translations/stellarium-planetary-features/mk.qm
@@ -2600,6 +2602,7 @@ share/stellarium/translations/stellarium-remotecontrol/ko.qm
 share/stellarium/translations/stellarium-remotecontrol/ku.qm
 share/stellarium/translations/stellarium-remotecontrol/ky.qm
 share/stellarium/translations/stellarium-remotecontrol/la.qm
+share/stellarium/translations/stellarium-remotecontrol/lb.qm
 share/stellarium/translations/stellarium-remotecontrol/lt.qm
 share/stellarium/translations/stellarium-remotecontrol/lv.qm
 share/stellarium/translations/stellarium-remotecontrol/mk.qm
@@ -2691,6 +2694,7 @@ share/stellarium/translations/stellarium-scripts/ko.qm
 share/stellarium/translations/stellarium-scripts/ku.qm
 share/stellarium/translations/stellarium-scripts/ky.qm
 share/stellarium/translations/stellarium-scripts/la.qm
+share/stellarium/translations/stellarium-scripts/lb.qm
 share/stellarium/translations/stellarium-scripts/lt.qm
 share/stellarium/translations/stellarium-scripts/lv.qm
 share/stellarium/translations/stellarium-scripts/mk.qm
@@ -2794,6 +2798,7 @@ share/stellarium/translations/stellarium-skycultures/ko.qm
 share/stellarium/translations/stellarium-skycultures/ku.qm
 share/stellarium/translations/stellarium-skycultures/ky.qm
 share/stellarium/translations/stellarium-skycultures/la.qm
+share/stellarium/translations/stellarium-skycultures/lb.qm
 share/stellarium/translations/stellarium-skycultures/lt.qm
 share/stellarium/translations/stellarium-skycultures/lv.qm
 share/stellarium/translations/stellarium-skycultures/mk.qm
@@ -2900,6 +2905,7 @@ share/stellarium/translations/stellarium/ko.qm
 share/stellarium/translations/stellarium/ku.qm
 share/stellarium/translations/stellarium/ky.qm
 share/stellarium/translations/stellarium/la.qm
+share/stellarium/translations/stellarium/lb.qm
 share/stellarium/translations/stellarium/lt.qm
 share/stellarium/translations/stellarium/lv.qm
 share/stellarium/translations/stellarium/mk.qm
