@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/04/21 20:41:12 sthen Exp $
 
 COMMENT=		PHP wrapper for pledge(2) and unveil(2)
 
@@ -13,10 +13,6 @@ MAINTAINER=		Tom Van Looy <tom@ctors.net>
 
 # PHP
 PERMIT_PACKAGE=	Yes
-
-# override default; only compatible with 7.2+
-FLAVORS=		php72 php73
-FLAVOR?=		php72
 
 WANTLIB=		c
 

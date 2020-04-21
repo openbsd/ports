@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/21 20:41:12 sthen Exp $
 
 COMMENT =	PHP bindings for the libmcrypt library
 
@@ -12,10 +12,6 @@ CATEGORIES =	security
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ltdl mcrypt
-
-# 7.2+ only
-FLAVORS =	php72 php73
-FLAVOR ?=	php72
 
 MODULES =	lang/php/pecl
 
