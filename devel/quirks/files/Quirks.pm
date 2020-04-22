@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.941 2020/04/22 02:09:55 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.942 2020/04/22 06:35:08 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1548,6 +1548,9 @@ my $obsolete_reason = {
 	'radare2-bindings' => 6,
 	'py3-django' => 1,
 	'py3-django-lts' => 1,
+	'dspam' => 3,
+	'dspam-mysql' => 3,
+	'dspam-pgsql' => 3,
 };
 
 # reasons for obsolete packages

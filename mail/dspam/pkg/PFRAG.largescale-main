@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.largescale-main,v 1.1 2013/09/14 17:12:14 landry Exp $
-@pkgpath mail/dspam,largescale[,hash][,sqlite][,sqlite3][,mysql][,pgsql][,preferences]
