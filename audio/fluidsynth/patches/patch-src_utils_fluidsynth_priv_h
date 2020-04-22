@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_utils_fluidsynth_priv_h,v 1.1 2020/04/22 16:53:20 cwen Exp $
+
+Don't use an header that is not provided
+
+Index: src/utils/fluidsynth_priv.h
+--- src/utils/fluidsynth_priv.h.orig
++++ src/utils/fluidsynth_priv.h
+@@ -28,10 +28,6 @@
+ #include "config.h"
+ #endif
+ 
+-#if defined(__POWERPC__) && !(defined(__APPLE__) && defined(__MACH__))
+-#include "config_maxmsp43.h"
+-#endif
+-
+ #if defined(WIN32) && !defined(MINGW32)
+ #include "config_win32.h"
+ #endif
