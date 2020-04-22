@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_configuration_c,v 1.3 2019/11/28 20:00:44 kn Exp $
+$OpenBSD: patch-src_configuration_c,v 1.4 2020/04/22 11:18:32 kn Exp $
+
+Set ocsp_dir.
 
 Index: src/configuration.c
 --- src/configuration.c.orig
