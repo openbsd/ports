@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/04/15 18:18:19 martin Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/04/22 17:18:11 martin Exp $
 @newgroup _grafana:798
 @newuser _grafana:798:798:daemon:Grafana Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/grafana/
@@ -7,25 +7,75 @@
 @bin bin/grafana-cli
 @bin bin/grafana-server
 share/examples/grafana/
+@mode 0755
+@owner root
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/
+@mode
+@owner
+@group
 share/examples/grafana/ldap.toml
+@mode 0640
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/ldap.toml
+@mode
+@group
 share/examples/grafana/provisioning/
+@mode 0755
+@owner root
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/provisioning/
+@mode
+@owner
+@group
 share/examples/grafana/provisioning/dashboards/
+@mode 0755
+@owner root
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/provisioning/dashboards/
+@mode
+@owner
+@group
 share/examples/grafana/provisioning/dashboards/sample.yaml
+@mode 0640
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/provisioning/dashboards/sample.yaml
+@mode
+@group
 share/examples/grafana/provisioning/datasources/
+@mode 0755
+@owner root
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/provisioning/datasources/
+@mode
+@owner
+@group
 share/examples/grafana/provisioning/datasources/sample.yaml
+@mode 0640
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/provisioning/datasources/sample.yaml
+@mode
+@group
 share/examples/grafana/provisioning/notifiers/
+@mode 0755
+@owner root
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/provisioning/notifiers/
+@mode
+@owner
+@group
 share/examples/grafana/provisioning/notifiers/sample.yaml
+@mode 0640
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/provisioning/notifiers/sample.yaml
+@mode
+@group
 share/examples/grafana/sample.ini
+@mode 0640
+@group _grafana
 @sample ${SYSCONFDIR}/grafana/config.ini
+@mode
+@group
 share/grafana/
 share/grafana/conf/
 share/grafana/conf/defaults.ini
@@ -2510,7 +2560,7 @@ share/grafana/public/views/error-template.html
 share/grafana/public/views/error.html
 share/grafana/public/views/index-template.html
 share/grafana/public/views/index.html
-@mode 750
+@mode 0750
 @owner _grafana
 @group _grafana
 @sample /var/grafana/
