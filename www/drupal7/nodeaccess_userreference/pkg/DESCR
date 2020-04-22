@@ -1,4 +1,0 @@
-Allows editing/deleting of nodes according to a userreference field.
-
-Please note that this works in conjunction with content-access if you
-set the priority to the same value, e.g., 1.

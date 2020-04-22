@@ -1,7 +1,0 @@
-ABT (Access by Term) is a module that controls node access based
-on relationship between node->term<-user where taxonomy terms allow
-for hierarchical content access control.
-
-To use, add a "term reference" field to the content type(s) and the user.
-Just make sure to use the exact same field for content checking permissions
-to happen.

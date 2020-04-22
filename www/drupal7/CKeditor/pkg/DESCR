@@ -1,5 +1,0 @@
-This module allows Drupal to replace textarea fields with
-CKeditor - a visual HTML editor (http://ckeditor.com/)
-
-CKEditor is supposed to be the next generation of FCKeditor,
-and indeed, it seems to be lighter and work better.

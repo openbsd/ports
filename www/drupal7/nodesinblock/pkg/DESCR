@@ -1,8 +1,0 @@
-Nodes in block makes it possible to add nodes into a block. A number of
-configurable blocks are generated which you can assign to a region.
-Visibility settings of this block are automatically set to 'Show on only
-the listed pages'. On the node content form, you define the weight and
-visibility per node thus making it easier for content administration as
-all your content is now in the same place. With this module, you don't
-have to explain your customers how blocks work but is still able to
-decide on which pages content must be rendered.

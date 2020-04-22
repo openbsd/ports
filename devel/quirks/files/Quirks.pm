@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.943 2020/04/22 10:50:32 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.944 2020/04/22 11:24:48 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1576,6 +1576,7 @@ my @msg = (
 	"no longer maintained upstream, suggest kompare", #18
 	"no longer maintained upstream, suggest sqlitebrowser, kexi", #19
 	"merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now", #20
+	"upstream recommends to use composer to build a drupal site", #21
 );
 
 # ->is_base_system($handle, $state):
@@ -1627,7 +1628,8 @@ sub filter_obsolete
 	for my $pkgname (@in) {
 		my $stem = OpenBSD::PackageName::splitstem($pkgname);
 		my $reason = $obsolete_reason->{$stem};
-		$reason = 3 if (!defined $reason && $pkgname =~ m/^(drupal(-6|6-)|ruby(19|2[0-4])-|ruby-[^0-9])/);
+		$reason = 3 if (!defined $reason && $pkgname =~ m/^(ruby(19|2[0-4])-|ruby-[^0-9])/);
+		$reason = 21 if (!defined $reason && $pkgname =~ m/^drupal/);
 		if (defined $reason) {
 			$state->say("Obsolete package: #1 (#2)", $pkgname, 
 			    $msg[$reason]);

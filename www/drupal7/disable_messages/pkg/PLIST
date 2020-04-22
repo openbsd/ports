@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/12 21:48:14 jasper Exp $
-@owner ${DRUPAL_OWNER}
-@group ${DRUPAL_GROUP}
-${DRUPAL_MODS}disable_messages/
-${DRUPAL_MODS}disable_messages/LICENSE.txt
-${DRUPAL_MODS}disable_messages/README.txt
-${DRUPAL_MODS}disable_messages/disable_messages.info
-${DRUPAL_MODS}disable_messages/disable_messages.install
-${DRUPAL_MODS}disable_messages/disable_messages.module

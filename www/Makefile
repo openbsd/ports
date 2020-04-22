@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.956 2020/04/21 20:42:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.957 2020/04/22 11:24:43 landry Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -32,7 +32,6 @@
      SUBDIR += darkhttpd
      SUBDIR += dillo
      SUBDIR += dokuwiki
-     SUBDIR += drupal7
      SUBDIR += drush
      SUBDIR += e2guardian
      SUBDIR += edbrowse

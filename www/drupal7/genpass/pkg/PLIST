@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
-@owner ${DRUPAL_OWNER}
-@group ${DRUPAL_GROUP}
-${DRUPAL_MODS}genpass/
-${DRUPAL_MODS}genpass/LICENSE.txt
-${DRUPAL_MODS}genpass/genpass.css
-${DRUPAL_MODS}genpass/genpass.info
-${DRUPAL_MODS}genpass/genpass.install
-${DRUPAL_MODS}genpass/genpass.module

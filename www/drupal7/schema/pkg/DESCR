@@ -1,7 +1,0 @@
-drupal7 includes some database schema reflexivity.
-
-This module presents the database schema information for the developer,
-and also allows various sanity checks to be performed comparing the live
-database to the module information.
-
-Note that this module does not work with sqlite databases.

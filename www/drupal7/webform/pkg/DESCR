@@ -1,9 +1,0 @@
-web forms: flexible creation of complex forms (quizzes) that
-can be presented to users, stored on the website, and exported
-to csv.
-
-To build a quiz, you most often want to enable only grid, markup,
-and select fields, then create your quizz.
-
-The author should submit a `perfect' answer, then you can give it
-to other users.
