@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2020/03/24 15:46:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2020/04/22 19:18:34 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
@@ -7,6 +7,7 @@ DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	games education
 
@@ -44,6 +45,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 CONFIGURE_ARGS=	-DQML_BOX2D_MODULE=disabled
 
 post-install:
-	cd ${PREFIX} && ln -s gcompris-qt gcompris
+	cd ${PREFIX}/bin && ln -s gcompris-qt gcompris
 
 .include <bsd.port.mk>

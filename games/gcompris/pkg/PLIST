@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.31 2020/03/24 15:46:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2020/04/22 19:18:34 ajacoutot Exp $
+bin/gcompris
 @bin bin/gcompris-qt
-gcompris
 share/applications/org.kde.gcompris.desktop
 share/doc/HTML/
 share/doc/HTML/en/
