@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.9 2016/02/06 07:48:37 ajacoutot Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.10 2020/04/22 09:51:25 ratchov Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -475,6 +475,7 @@ sndio_thread(void *arg)
 			u->last_master = u->set_master;
 			msg.start = SYSEX_START;
 			msg.type = SYSEX_TYPE_RT;
+			msg.dev = 0;
 			msg.id0 = SYSEX_CONTROL;
 			msg.id1 = SYSEX_MASTER;
 			msg.u.master.fine = 0;
