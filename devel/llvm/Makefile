@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2020/04/05 15:44:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.250 2020/04/22 09:59:45 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -64,7 +64,6 @@ BUILD_DEPENDS +=	devel/swig \
 .include <bsd.port.arch.mk>
 
 .if !${PROPERTIES:Mclang}
-TEST_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
 RUN_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
 .endif
 
