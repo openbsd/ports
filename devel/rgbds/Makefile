@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/12 04:24:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2020/04/22 17:50:15 kmos Exp $
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
@@ -20,6 +20,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c m png z
 
 MASTER_SITES =	https://github.com/rednex/rgbds/releases/download/v$V/
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 LIB_DEPENDS =	graphics/png
 
