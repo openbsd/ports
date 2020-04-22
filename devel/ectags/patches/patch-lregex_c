@@ -1,0 +1,16 @@
+$OpenBSD: patch-lregex_c,v 1.1 2020/04/22 11:07:49 jasper Exp $
+
+Add missing format string.
+
+Index: lregex.c
+--- lregex.c.orig
++++ lregex.c
+@@ -408,7 +408,7 @@ static void processLanguageRegex (const langType langu
+ 		const char* regexfile = parameter + 1;
+ 		FILE* const fp = fopen (regexfile, "r");
+ 		if (fp == NULL)
+-			error (WARNING | PERROR, regexfile);
++			error (WARNING | PERROR, "%s", regexfile);
+ 		else
+ 		{
+ 			vString* const regex = vStringNew ();

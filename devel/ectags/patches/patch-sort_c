@@ -1,0 +1,16 @@
+$OpenBSD: patch-sort_c,v 1.1 2020/04/22 11:07:49 jasper Exp $
+
+Add missing format string.
+
+Index: sort.c
+--- sort.c.orig
++++ sort.c
+@@ -109,7 +109,7 @@ static void failedSort (FILE *const fp, const char* ms
+ 	if (fp != NULL)
+ 		fclose (fp);
+ 	if (msg == NULL)
+-		error (FATAL | PERROR, cannotSort);
++		error (FATAL | PERROR, "%s", cannotSort);
+ 	else
+ 		error (FATAL, "%s: %s", msg, cannotSort);
+ }
