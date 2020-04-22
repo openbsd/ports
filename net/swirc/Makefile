@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/05 18:08:29 solene Exp $
+# $OpenBSD: Makefile,v 1.7 2020/04/22 15:48:32 ajacoutot Exp $
 
 COMMENT =	curses icb and irc client
-DISTNAME =	swirc-3.2.3
+DISTNAME =	swirc-3.2.4
 CATEGORIES =	net
 HOMEPAGE =	https://www.nifty-networks.net/swirc/
 
@@ -19,11 +19,13 @@ COMPILER =		base-clang ports-gcc
 LIB_DEPENDS =		devel/libidn net/curl
 CONFIGURE_STYLE =	simple
 
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/cmocka
+TEST_TARGET =		check
 
 MAKE_FLAGS =		DEST_CONFMAN=${WRKINST}${PREFIX}/man/man5 \
 			DEST_MANUAL=${WRKINST}${PREFIX}/man/man1 \
 			INSTALL_DEPS=swirc src/swirc.1 swirc.conf.5 \
-			PREFIX=${PREFIX}
+			PREFIX=${PREFIX} CC="${CC}" CXX="${CXX}" \
+			E=@: Q=
 
 .include <bsd.port.mk>
