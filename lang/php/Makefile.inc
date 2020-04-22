@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.152 2020/04/22 11:15:41 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.153 2020/04/22 11:55:14 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -163,7 +163,7 @@ LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			textproc/libxml \
 			textproc/oniguruma
 .  if !${PV:M7.2} && !${PV:M7.3}
-WANTLIB$i +=		${COMPILER_LIBCXX} pcre2-8
+WANTLIB$i +=		pcre2-8
 LIB_DEPENDS$i +=	devel/pcre2
 .  endif
 .endfor

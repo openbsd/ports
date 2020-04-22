@@ -1,11 +1,23 @@
-$OpenBSD: patch-build_php_m4,v 1.1 2020/04/21 20:38:31 sthen Exp $
+$OpenBSD: patch-build_php_m4,v 1.2 2020/04/22 11:55:14 sthen Exp $
 
-bogus version in pkgconfig file
+- don't hardcode libstdc++
+- bogus version in pkgconfig file
 
 Index: build/php.m4
 --- build/php.m4.orig
 +++ build/php.m4
-@@ -1917,7 +1917,7 @@ dnl
+@@ -758,7 +758,9 @@ AC_DEFUN([PHP_REQUIRE_CXX],[
+   if test -z "$php_cxx_done"; then
+     AC_PROG_CXX
+     AC_PROG_CXXCPP
+-    PHP_ADD_LIBRARY(stdc++)
++    for i in $LIBCXX; do
++      PHP_ADD_LIBRARY($i)
++    done
+     php_cxx_done=yes
+   fi
+ ])
+@@ -1917,7 +1919,7 @@ dnl
  AC_DEFUN([PHP_SETUP_OPENSSL],[
    found_openssl=no
  
