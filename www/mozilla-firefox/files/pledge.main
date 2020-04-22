@@ -20,5 +20,3 @@ getpw
 mcast
 # only needed for WebRTC
 video
-# only needed if not running sndiod(8)
-audio
