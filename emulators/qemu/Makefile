@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2020/04/04 08:36:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.195 2020/04/23 04:30:35 cwen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
@@ -105,6 +105,11 @@ CONFIGURE_ARGS+=--disable-debug-info
 .endif
 
 TEST_TARGET=	check
+
+# XXX Optimizer bug, using -O2 causes segfaults, -O1 linking errors
+.if ${MACHINE_ARCH:Mpowerpc}
+CFLAGS +=	-O0
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu

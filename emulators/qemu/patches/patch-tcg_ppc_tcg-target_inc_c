@@ -1,0 +1,19 @@
+$OpenBSD: patch-tcg_ppc_tcg-target_inc_c,v 1.6 2020/04/23 04:30:35 cwen Exp $
+
+Workaround the lack of _CALL_SYSV with clang on powerpc
+
+Index: tcg/ppc/tcg-target.inc.c
+--- tcg/ppc/tcg-target.inc.c.orig
++++ tcg/ppc/tcg-target.inc.c
+@@ -25,6 +25,11 @@
+ #include "elf.h"
+ #include "tcg-pool.inc.c"
+ 
++/* clang does not define _CALL_* */
++#if defined __clang__ && defined __ELF__
++#define _CALL_SYSV 1
++#endif
++
+ #if defined _CALL_DARWIN || defined __APPLE__
+ #define TCG_TARGET_CALL_DARWIN
+ #endif
