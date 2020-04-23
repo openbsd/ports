@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_synfig_filesystem_cpp,v 1.1 2020/04/23 04:55:46 cwen Exp $
+
+Fix segfaults during the build of multimedia/synfigstudio, from
+https://github.com/synfig/synfig/issues/822
+
+Index: src/synfig/filesystem.cpp
+--- src/synfig/filesystem.cpp.orig
++++ src/synfig/filesystem.cpp
+@@ -181,7 +181,7 @@ String FileSystem::fix_slashes(const String &filename)
+ {
+ 	String fixed = etl::cleanup_path(filename);
+ 	if (fixed == ".") fixed = "";
+-	for(size_t i = 0; i < filename.size(); ++i)
++	for(size_t i = 0; i < fixed.size(); ++i)
+ 		if (fixed[i] == '\\') fixed[i] = '/';
+ 	return fixed;
+ }

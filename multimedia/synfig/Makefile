@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2019/11/10 15:32:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2020/04/23 04:55:46 cwen Exp $
+
+BROKEN-powerpc =	segfault in multi-threaded mode, synfigstudio can't be built
 
 COMMENT =		2D animation software
 
 V=			1.2.1
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=  synfig                    2.0 # 0.0
 
