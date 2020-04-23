@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-bsddb,v 1.3 2019/11/11 17:47:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-bsddb,v 1.4 2020/04/23 07:56:01 rpointel Exp $
 @option no-default-conflict
 @option is-branch
-@conflict python-bsddb->=2.7,<2.8
+@conflict python-bsddb-${VERSION_SPEC}
 lib/python2.7/bsddb/
 lib/python2.7/bsddb/__init__.py
 lib/python2.7/bsddb/__init__.pyc

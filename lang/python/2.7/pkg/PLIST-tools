@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-tools,v 1.12 2019/04/21 09:32:19 sthen Exp $
+@comment $OpenBSD: PLIST-tools,v 1.13 2020/04/23 07:56:01 rpointel Exp $
 @option no-default-conflict
 @option is-branch
-@conflict python-tools->=2.7,<2.8
+@conflict python-tools-${VERSION_SPEC}
 lib/python2.7/Tools/
 lib/python2.7/Tools/README
 lib/python2.7/Tools/audiopy/

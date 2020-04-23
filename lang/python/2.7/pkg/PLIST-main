@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2019/11/11 17:47:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2020/04/23 07:56:01 rpointel Exp $
 @option no-default-conflict
 @option is-branch
-@conflict python->=2.7,<2.8
-@conflict python-bz2->=2.7,<2.8
+@conflict python-${VERSION_SPEC}
+@conflict python-bz2-${VERSION_SPEC}
 @pkgpath lang/python/2.7
 @pkgpath lang/python/2.7,-bz2
 @pkgpath lang/python/2.7,-sqlite
@@ -1552,7 +1552,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.17-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.18-py2.7.egg-info
 @so lib/python2.7/lib-dynload/_bisect.so
 @so lib/python2.7/lib-dynload/_codecs_cn.so
 @so lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1615,9 +1615,9 @@ lib/python2.7/lib-dynload/Python-2.7.17-py2.7.egg-info
 @so lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.17.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.18.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.17.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.18.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo

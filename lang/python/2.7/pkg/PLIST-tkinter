@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.7 2019/11/11 17:47:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.8 2020/04/23 07:56:01 rpointel Exp $
 @option no-default-conflict
 @option is-branch
-@conflict python-tkinter->=2.7,<2.8
+@conflict python-tkinter-${VERSION_SPEC}
 @so lib/python2.7/lib-dynload/_tkinter.so
 lib/python2.7/lib-tk/
 lib/python2.7/lib-tk/Canvas.py
