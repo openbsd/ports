@@ -1,3 +1,10 @@
 ruby-shims is a set of symlinks to a script that executes Ruby binaries
 based on a per-directory .ruby-version or system-wide /etc/ruby-version
 file.
+
+The file must only contain the exact version string, e.g.
+
+	$ cat .ruby-version
+	2.6
+	$ ruby --version
+	ruby 2.6.5p114 (2019-10-01 revision 67812) [sparc64-openbsd]

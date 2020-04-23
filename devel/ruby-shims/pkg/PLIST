@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/04/19 22:31:30 kn Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/04/23 19:00:17 kn Exp $
 @conflict go-tools-*
-bin/_rubyshim
 bin/bundle
 bin/bundler
 bin/erb
@@ -10,3 +9,4 @@ bin/rake
 bin/rdoc
 bin/ri
 bin/ruby
+libexec/rubyshim

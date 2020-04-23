@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/19 22:31:30 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2020/04/23 19:00:17 kn Exp $
 
 COMMENT=	Ruby version redirection shim
 
-DISTNAME=	ruby-shims-2
+DISTNAME=	ruby-shims-3
 CATEGORIES=	devel
-REVISION=	0
 
 MAINTAINER=	joshua stein <jcs@openbsd.org>
 
@@ -26,9 +25,9 @@ BINS=		ruby \
 		bundler
 
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/rubyshim.sh ${PREFIX}/bin/_rubyshim
+	${INSTALL_SCRIPT} ${FILESDIR}/rubyshim.sh ${PREFIX}/libexec/rubyshim
 .	for p in ${BINS}
-		cd ${PREFIX}/bin && ln -sf _rubyshim ${p}
+		ln -sf ${TRUEPREFIX}/libexec/rubyshim ${PREFIX}/bin/${p}
 .	endfor
 
 .include <bsd.port.mk>
