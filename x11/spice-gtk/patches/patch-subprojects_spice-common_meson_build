@@ -1,0 +1,15 @@
+$OpenBSD: patch-subprojects_spice-common_meson_build,v 1.1 2020/04/23 14:21:54 kmos Exp $
+
+Deprecated functions means -Werror aborts the build
+
+Index: subprojects/spice-common/meson.build
+--- subprojects/spice-common/meson.build.orig
++++ subprojects/spice-common/meson.build
+@@ -12,7 +12,6 @@ endif
+ 
+ # some global vars
+ spice_common_global_cflags = ['-DG_LOG_DOMAIN="Spice"',
+-                              '-Werror',
+                               '-Wno-unused-parameter']
+ 
+ if get_option('alignment-checks')
