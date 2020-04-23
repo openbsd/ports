@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1963 2020/04/15 17:13:04 kmos Exp $
+# $OpenBSD: Makefile,v 1.1964 2020/04/23 14:37:16 tracey Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -20,6 +20,8 @@
      SUBDIR += arduino
      SUBDIR += arduino-adafruit-gfx
      SUBDIR += arduino-adafruit-ra8875
+     SUBDIR += arduino-esp32
+     SUBDIR += arduino-esp8266
      SUBDIR += arduino-makefile
      SUBDIR += argp-standalone
      SUBDIR += argtable
@@ -462,6 +464,7 @@
      SUBDIR += luastdlib,lua52
      SUBDIR += lutok
      SUBDIR += m4
+     SUBDIR += makeesparduino
      SUBDIR += maven
      SUBDIR += mcs
      SUBDIR += mercurial
@@ -469,6 +472,7 @@
      SUBDIR += metaauto
      SUBDIR += mingw
      SUBDIR += mk
+     SUBDIR += mkspiffs
      SUBDIR += mm
      SUBDIR += mm-common
      SUBDIR += mono-addins
