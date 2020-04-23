@@ -1,0 +1,40 @@
+$OpenBSD: patch-libraries_LittleFS_lib_littlefs_scripts_debug_py,v 1.1.1.1 2020/04/23 14:28:54 tracey Exp $
+
+Index: libraries/LittleFS/lib/littlefs/scripts/debug.py
+--- libraries/LittleFS/lib/littlefs/scripts/debug.py.orig
++++ libraries/LittleFS/lib/littlefs/scripts/debug.py
+@@ -59,14 +59,14 @@ def main(*blocks):
+             pass
+ 
+     if not file:
+-        print 'Bad metadata pair {%s}' % ', '.join(blocks)
++        print('Bad metadata pair {%s}' % ', '.join(blocks))
+         return 1
+ 
+-    print "--- %s ---" % ', '.join(v for _,v in sorted(versions, reverse=True))
++    print("--- %s ---" % ', '.join(v for _,v in sorted(versions, reverse=True)))
+ 
+     # go through each tag, print useful information
+-    print "%-4s  %-8s  %-14s  %3s %4s  %s" % (
+-        'off', 'tag', 'type', 'id', 'len', 'dump')
++    print("%-4s  %-8s  %-14s  %3s %4s  %s" % (
++        'off', 'tag', 'type', 'id', 'len', 'dump'))
+ 
+     tag = 0xffffffff
+     off = 4
+@@ -92,13 +92,13 @@ def main(*blocks):
+         else:
+             crc = binascii.crc32(data, crc)
+ 
+-        print '%04x: %08x  %-15s %3s %4s  %-23s  %-8s' % (
++        print('%04x: %08x  %-15s %3s %4s  %-23s  %-8s' % (
+             off, tag,
+             typeof(type) + (' bad!' if iscrc and ~crc else ''),
+             hex(id)[2:] if id != 0x3ff else '.',
+             size if size != 0x3ff else 'x',
+             ' '.join('%02x' % ord(c) for c in data[:8]),
+-            ''.join(c if c >= ' ' and c <= '~' else '.' for c in data[:8]))
++            ''.join(c if c >= ' ' and c <= '~' else '.' for c in data[:8])))
+ 
+         off += size if size != 0x3ff else 0
+         if iscrc:

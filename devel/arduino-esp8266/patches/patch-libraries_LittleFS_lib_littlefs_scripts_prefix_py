@@ -1,0 +1,17 @@
+$OpenBSD: patch-libraries_LittleFS_lib_littlefs_scripts_prefix_py,v 1.1.1.1 2020/04/23 14:28:54 tracey Exp $
+
+Index: libraries/LittleFS/lib/littlefs/scripts/prefix.py
+--- libraries/LittleFS/lib/littlefs/scripts/prefix.py.orig
++++ libraries/LittleFS/lib/littlefs/scripts/prefix.py
+@@ -52,9 +52,9 @@ def main(from_prefix, to_prefix=None, files=None):
+         subprocess.check_call(['git', 'add', newname])
+ 
+         # Summary
+-        print '%s: %d replacements' % (
++        print('%s: %d replacements' % (
+                 '%s -> %s' % (oldname, newname) if namecount else oldname,
+-                count)
++                count))
+ 
+ if __name__ == "__main__":
+     import sys

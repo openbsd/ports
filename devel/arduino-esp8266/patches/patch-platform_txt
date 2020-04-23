@@ -1,0 +1,18 @@
+$OpenBSD: patch-platform_txt,v 1.1.1.1 2020/04/23 14:28:54 tracey Exp $
+
+Index: platform.txt
+--- platform.txt.orig
++++ platform.txt
+@@ -9,9 +9,9 @@ name=ESP8266 Boards (2.6.3)
+ version=2.6.3
+ 
+ # These will be removed by the packager script when doing a JSON release
+-
+-
+-
++runtime.tools.xtensa-lx106-elf-gcc.path=${LOCALBASE}
++runtime.tools.python3.path=${LOCALBASE}/bin/
++runtime.tools.esptool.path=${LOCALBASE}/bin
+ 
+ runtime.tools.signing={runtime.platform.path}/tools/signing.py
+ runtime.tools.elf2bin={runtime.platform.path}/tools/elf2bin.py

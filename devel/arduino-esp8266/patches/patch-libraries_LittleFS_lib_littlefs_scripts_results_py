@@ -1,0 +1,16 @@
+$OpenBSD: patch-libraries_LittleFS_lib_littlefs_scripts_results_py,v 1.1.1.1 2020/04/23 14:28:54 tracey Exp $
+
+Index: libraries/LittleFS/lib/littlefs/scripts/results.py
+--- libraries/LittleFS/lib/littlefs/scripts/results.py.orig
++++ libraries/LittleFS/lib/littlefs/scripts/results.py
+@@ -21,8 +21,8 @@ def main():
+ 
+     runtime = time.time() - os.stat('blocks').st_ctime
+ 
+-    print 'results: %dB %dB %dB %.3fs' % (
+-        read_count, prog_count, erase_count, runtime)
++    print('results: %dB %dB %dB %.3fs' % (
++        read_count, prog_count, erase_count, runtime))
+ 
+ if __name__ == "__main__":
+     main(*sys.argv[1:])
