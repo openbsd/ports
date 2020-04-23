@@ -1,4 +1,4 @@
-Mailparse is a PHP extension for parsing and working with
-plain and MIME compliant email messages. It is stream based,
-so does not keep in-memory copies of the files it processes,
-lowering resource use with large messages.
+Mailparse is a PHP extension for parsing and working with plain and
+MIME compliant email messages. It is stream based, so does not keep
+in-memory copies of the files it processes, lowering resource use with
+large messages.
