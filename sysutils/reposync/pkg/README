@@ -1,0 +1,43 @@
+$OpenBSD: README,v 1.1 2020/04/23 13:49:31 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Prepare the repository owner and directories
+============================================
+To allow working on existing mirrors without changing configuration,
+the reposync package avoids using a specific username and does not setup
+directories automatically.
+
+For a repository owned by the new user "cvs" stored in /home/cvs (as is common
+on a standard user's development machine), you can proceed as follows:
+
+# useradd -d /nonexistent -s /sbin/nologin cvs
+# install -d -o cvs /home/cvs /var/db/reposync
+
+For a new anoncvs server following the standard OpenBSD directory layout,
+use /open/anoncvs/cvs instead of /home/cvs. If you are adding reposync to an
+existing anoncvs server, simply create /var/db/reposync and chown it to the
+owner of the repository.
+
+Initial checkout after preparing directories
+============================================
+Open the list of official mirrors at https://www.openbsd.org/anoncvs.html
+and choose a mirror showing reposync support.
+
+Mirrors listed as "reposync rsync://..." support ssh-forwarding.
+
+Mirrors listed as "reposync -p rsync://" do not, and must use the plaintext
+protocol that does not validate the server identity.
+
+Simply run:
+
+$ doas -u cvs reposync rsync://anoncvs.mirror.example/cvs /home/cvs
+cd+++++++++ CVSROOT/
+>f+++++++++ CVSROOT/ChangeLog
+>f+++++++++ CVSROOT/ChangeLog.0
+>f+++++++++ CVSROOT/ChangeLog.1
+[...]
+
+and wait for it to finish.

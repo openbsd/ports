@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/12 16:34:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/04/23 13:49:31 sthen Exp $
 bin/reposync
 @man man/man1/reposync.1
-share/examples/reposync/
-share/examples/reposync/ssh_known_hosts
+share/doc/pkg-readmes/${PKGSTEM}
+share/reposync/
+share/reposync/ssh_known_hosts
