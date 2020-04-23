@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2020/02/22 10:39:56 sthen Exp $
+$OpenBSD: README,v 1.5 2020/04/23 15:06:27 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -20,7 +20,7 @@ filesystems (mount -a -t nonfs), "ldconfig -m /usr/local/lib", flash
 and reboot.
 
 In single user mode, the system securelevel(8) does allow access to
-write directly to system memory, and importantly network services and
+write directly to system memory and, importantly, network services and
 other third-party software will usually not be running at the time.
 
 flashrom also supports some external programming devices via USB; in
