@@ -1,0 +1,42 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/04/23 14:26:06 tracey Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -22,6 +22,9 @@ else
+ 	ifeq ($(UNAME_S),FreeBSD)
+ 		TARGET_OS := freebsd
+ 	endif
++	ifeq ($(UNAME_S),OpenBSD)
++		TARGET_OS := openbsd
++	endif
+ endif
+ endif # TARGET_OS
+ 
+@@ -54,7 +57,6 @@ endif
+ 
+ 
+ VERSION ?= $(shell git describe --always)
+-SPIFFS_VERSION := $(shell git -C spiffs describe --tags || echo "unknown")
+ BUILD_CONFIG_NAME ?= -generic
+ 
+ OBJ		:= main.o \
+@@ -82,8 +84,8 @@ override CPPFLAGS := \
+ 	-D __NO_INLINE__ \
+ 	$(CPPFLAGS)
+ 
+-override CFLAGS := -std=gnu99 -Os -Wall $(TARGET_CFLAGS) $(CFLAGS)
+-override CXXFLAGS := -std=gnu++11 -Os -Wall $(TARGET_CXXFLAGS) $(CXXFLAGS)
++override CFLAGS := -std=gnu99 -Wall $(TARGET_CFLAGS) $(CFLAGS)
++override CXXFLAGS := -std=gnu++11 -Wall $(TARGET_CXXFLAGS) $(CXXFLAGS)
+ override LDFLAGS := $(TARGET_LDFLAGS) $(LDFLAGS)
+ 
+ DIST_NAME := mkspiffs-$(VERSION)$(BUILD_CONFIG_NAME)-$(TARGET_OS)
+@@ -104,7 +106,6 @@ $(DIST_ARCHIVE): $(TARGET) $(DIST_DIR)
+ 
+ $(TARGET): $(OBJ)
+ 	$(CXX) $^ -o $@ $(LDFLAGS)
+-	strip $(TARGET)
+ 
+ $(DIST_DIR):
+ 	@mkdir -p $@

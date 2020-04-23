@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/23 14:26:06 tracey Exp $
+@bin bin/mkspiffs

@@ -1,0 +1,4 @@
+Wear-leveled SPI flash file system for embedded devices.
+
+This tool is specifically patched to build and unpack SPIFFS images for
+esp32 and esp8266 wifi devices, using SPIFFS as the submodule.
