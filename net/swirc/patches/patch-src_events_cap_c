@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_events_cap_c,v 1.1 2020/04/23 16:01:15 ajacoutot Exp $
+
+Index: src/events/cap.c
+--- src/events/cap.c.orig
++++ src/events/cap.c
+@@ -89,7 +89,7 @@ shouldContinueCapabilityNegotiation_case1()
+     return (config_bool_unparse("away_notify", false) ||
+ 	    config_bool_unparse("invite_notify", false) ||
+ 	    config_bool_unparse("ircv3_server_time", false) ||
+-	    config_bool_unparse("sasl", false));
++	    sasl_is_enabled());
+ }
+ 
+ static bool
+@@ -97,20 +97,20 @@ shouldContinueCapabilityNegotiation_case2()
+ {
+     return (config_bool_unparse("invite_notify", false) ||
+ 	    config_bool_unparse("ircv3_server_time", false) ||
+-	    config_bool_unparse("sasl", false));
++	    sasl_is_enabled());
+ }
+ 
+ static bool
+ shouldContinueCapabilityNegotiation_case3()
+ {
+     return (config_bool_unparse("ircv3_server_time", false) ||
+-	    config_bool_unparse("sasl", false));
++	    sasl_is_enabled());
+ }
+ 
+ static bool
+ shouldContinueCapabilityNegotiation_case4()
+ {
+-    return (config_bool_unparse("sasl", false));
++    return (sasl_is_enabled());
+ }
+ 
+ /**

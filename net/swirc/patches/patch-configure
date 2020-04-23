@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2020/04/23 16:01:15 ajacoutot Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -50,9 +50,9 @@ SHARED_FLAGS=-DBSD=1\\
+ 	-I/usr/local/include\\
+ 	-Wall
+ CC=cc
+-CFLAGS=\$(SHARED_FLAGS) -std=c99
++CFLAGS=\$(SHARED_FLAGS) -std=c99 ${CFLAGS}
+ CXX=c++
+-CXXFLAGS=\$(SHARED_FLAGS) -std=c++14
++CXXFLAGS=\$(SHARED_FLAGS) -std=c++14 ${CXXFLAGS}
+ LDFLAGS=-L/usr/local/lib
+ LDLIBS=-lcrypto\\
+ 	-lcurl\\
