@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_layoutex_Makefile_in,v 1.4 2017/05/24 15:44:42 ajacoutot Exp $
+$OpenBSD: patch-source_layoutex_Makefile_in,v 1.5 2020/04/23 06:33:13 ajacoutot Exp $
 
 Don't strip static libraries.
 
@@ -13,4 +13,4 @@ Index: source/layoutex/Makefile.in
 +	$(INSTALL_DATA) $(TARGET) $(DESTDIR)$(libdir)
  endif
  ifneq ($(ENABLE_SHARED),)
- 	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)
+ # For MinGW, do we want the DLL to go in the bin location?

@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_i18n_Makefile_in,v 1.6 2019/10/16 13:42:59 ajacoutot Exp $
+$OpenBSD: patch-source_i18n_Makefile_in,v 1.7 2020/04/23 06:33:13 ajacoutot Exp $
 
 Don't strip static libraries.
 
@@ -13,4 +13,4 @@ Index: source/i18n/Makefile.in
 +	$(INSTALL_DATA) $(TARGET) $(DESTDIR)$(libdir)
  endif
  ifneq ($(ENABLE_SHARED),)
- 	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)
+ # For MinGW, do we want the DLL to go in the bin location?
