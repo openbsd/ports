@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/26 11:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2020/04/23 08:36:11 jasper Exp $
 
 COMMENT=	lightweight scripting language with C-like syntax
 
 DISTNAME=	arena-0.9.13
-REVISION=	3
+REVISION=	4
 CATEGORIES=	lang
 
 # BSD

@@ -1,0 +1,38 @@
+$OpenBSD: patch-libparser_expr_dump_c,v 1.1 2020/04/23 08:36:11 jasper Exp $
+
+Add missing specifier in format string.
+
+Index: libparser/expr_dump.c
+--- libparser/expr_dump.c.orig
++++ libparser/expr_dump.c
+@@ -263,7 +263,7 @@ void expr_dump(expr *ex)
+       parenthesis(ex, ex->inner, 1);
+       break;
+     case EXPR_ASSIGN_ARRAY:
+-      printf(ex->name);
++      printf("%s", ex->name);
+       expr_dump_index(ex->argc, ex->argv);
+       printf(" = ");
+       parenthesis(ex, ex->inner, 1);
+@@ -294,10 +294,10 @@ void expr_dump(expr *ex)
+       printf(")");
+       break;
+     case EXPR_REF:
+-      printf(ex->name);
++      printf("%s", ex->name);
+       break;
+     case EXPR_REF_ARRAY:
+-      printf(ex->name);
++      printf("%s", ex->name);
+       expr_dump_index(ex->argc, ex->argv);
+       break;
+     case EXPR_INDEX:
+@@ -316,7 +316,7 @@ void expr_dump(expr *ex)
+     case EXPR_CONST_BOOL:
+     case EXPR_CONST_INT:
+     case EXPR_CONST_FLOAT:
+-      printf(ex->name);
++      printf("%s", ex->name);
+       break;
+     case EXPR_CONST_STRING:
+       printf("\"%s\"", ex->name);
