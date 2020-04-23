@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2020/04/03 10:32:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2020/04/23 14:39:39 kmos Exp $
 
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
@@ -64,5 +64,8 @@ CONFIGURE_ARGS +=	-Dpolkit=disabled
 
 # XXX requires the makecontext function (ucontext)
 CONFIGURE_ARGS +=	-Dcoroutine=gthread
+
+# base-gcc doesn't default to c99
+CFLAGS +=		-std=gnu99
 
 .include <bsd.port.mk>
