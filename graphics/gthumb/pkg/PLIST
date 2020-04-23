@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2019/12/23 19:46:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.37 2020/04/23 08:59:12 jasper Exp $
 @bin bin/gthumb
 include/gthumb/
 include/gthumb/cairo-scale.h
@@ -12,6 +12,7 @@ include/gthumb/glib-utils.h
 include/gthumb/gnome-desktop-thumbnail.h
 include/gthumb/gsignature.h
 include/gthumb/gth-accel-button.h
+include/gthumb/gth-accel-dialog.h
 include/gthumb/gth-async-task.h
 include/gthumb/gth-auto-paned.h
 include/gthumb/gth-browser.h
@@ -28,6 +29,7 @@ include/gthumb/gth-file-chooser-dialog.h
 include/gthumb/gth-file-data.h
 include/gthumb/gth-file-list.h
 include/gthumb/gth-file-properties.h
+include/gthumb/gth-file-selection-info.h
 include/gthumb/gth-file-selection.h
 include/gthumb/gth-file-source-vfs.h
 include/gthumb/gth-file-source.h
@@ -64,6 +66,7 @@ include/gthumb/gth-image.h
 include/gthumb/gth-info-bar.h
 include/gthumb/gth-load-file-data-task.h
 include/gthumb/gth-location-bar.h
+include/gthumb/gth-location-chooser-dialog.h
 include/gthumb/gth-location-chooser.h
 include/gthumb/gth-main.h
 include/gthumb/gth-marshal.h
@@ -81,9 +84,9 @@ include/gthumb/gth-request-dialog.h
 include/gthumb/gth-save-file-data-task.h
 include/gthumb/gth-save-image-task.h
 include/gthumb/gth-screensaver.h
+include/gthumb/gth-shortcut.h
 include/gthumb/gth-sidebar-section.h
 include/gthumb/gth-sidebar.h
-include/gthumb/gth-source-tree.h
 include/gthumb/gth-statusbar.h
 include/gthumb/gth-string-list.h
 include/gthumb/gth-tags-entry.h
@@ -101,6 +104,7 @@ include/gthumb/gth-time.h
 include/gthumb/gth-toolbox.h
 include/gthumb/gth-uri-list.h
 include/gthumb/gth-user-dir.h
+include/gthumb/gth-vfs-tree.h
 include/gthumb/gth-viewer-page.h
 include/gthumb/gth-window.h
 include/gthumb/gthumb.h
@@ -110,7 +114,9 @@ include/gthumb/main.h
 include/gthumb/pixbuf-cache.h
 include/gthumb/pixbuf-io.h
 include/gthumb/pixbuf-utils.h
+include/gthumb/str-utils.h
 include/gthumb/typedefs.h
+include/gthumb/uri-utils.h
 include/gthumb/zlib-utils.h
 lib/gthumb/
 lib/gthumb/extensions/
@@ -177,6 +183,7 @@ lib/gthumb/extensions/jpeg_utils.extension
 @so lib/gthumb/extensions/libsearch.so
 @so lib/gthumb/extensions/libselections.so
 @so lib/gthumb/extensions/libslideshow.so
+@so lib/gthumb/extensions/libterminal.so
 @so lib/gthumb/extensions/libwebalbums.so
 lib/gthumb/extensions/list_tools.extension
 lib/gthumb/extensions/oauth.extension
@@ -189,11 +196,13 @@ lib/gthumb/extensions/resize_images.extension
 lib/gthumb/extensions/search.extension
 lib/gthumb/extensions/selections.extension
 lib/gthumb/extensions/slideshow.extension
+lib/gthumb/extensions/terminal.extension
 lib/gthumb/extensions/webalbums.extension
-lib/pkgconfig/gthumb-3.8.pc
+lib/pkgconfig/gthumb-3.10.pc
 @man man/man1/gthumb.1
 share/aclocal/gthumb.m4
 share/applications/org.gnome.gThumb.desktop
+share/glib-2.0/schemas/org.gnome.gthumb.catalogs.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.change-date.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.comments.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.contact-sheet.gschema.xml
@@ -216,6 +225,7 @@ share/glib-2.0/schemas/org.gnome.gthumb.resize-images.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.resize.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.rotate.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.slideshow.gschema.xml
+share/glib-2.0/schemas/org.gnome.gthumb.terminal.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.webalbums.gschema.xml
 share/gthumb/
 share/gthumb/albumthemes/
@@ -312,8 +322,10 @@ share/gthumb/icons/hicolor/16x16/actions/image-rotate-left-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/image-rotate-right-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/image-rotate-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/image-sharpen-symbolic.svg
+share/gthumb/icons/hicolor/16x16/actions/lock-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/map-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/palette-symbolic.svg
+share/gthumb/icons/hicolor/16x16/actions/pinned-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/presets-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/site-facebook.png
 share/gthumb/icons/hicolor/16x16/actions/site-flickr.png
@@ -324,6 +336,7 @@ share/gthumb/icons/hicolor/16x16/actions/special-effects-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/swap-values-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/tag-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/tools-symbolic.svg
+share/gthumb/icons/hicolor/16x16/actions/transparency-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/view-presentation-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/view-zoom-fit-height-symbolic.svg
 share/gthumb/icons/hicolor/16x16/actions/view-zoom-fit-symbolic.svg
@@ -358,6 +371,8 @@ share/gthumb/ui/export-to-flickr.ui
 share/gthumb/ui/export-to-picasaweb.ui
 share/gthumb/ui/extensions-preferences.ui
 share/gthumb/ui/facebook-album-properties.ui
+share/gthumb/ui/favorite-properties.ui
+share/gthumb/ui/file-selection-info.ui
 share/gthumb/ui/filter-editor.ui
 share/gthumb/ui/find-duplicates-choose-folders.ui
 share/gthumb/ui/find-duplicates-dialog.ui
@@ -394,9 +409,11 @@ share/gthumb/ui/rotate-options.ui
 share/gthumb/ui/save-options-preferences.ui
 share/gthumb/ui/search-editor.ui
 share/gthumb/ui/sharpen-options.ui
+share/gthumb/ui/shortcuts-preferences.ui
 share/gthumb/ui/slideshow-preferences.ui
 share/gthumb/ui/sort-order.ui
 share/gthumb/ui/tag-chooser.ui
+share/gthumb/ui/terminal-preferences.ui
 share/gthumb/ui/tga-options.ui
 share/gthumb/ui/tiff-options.ui
 share/gthumb/ui/web-album-exporter.ui
@@ -439,7 +456,6 @@ share/help/C/gthumb/printing.page
 share/help/C/gthumb/rename-series.page
 share/help/C/gthumb/sharing-disc.page
 share/help/C/gthumb/sharing-social.page
-share/help/C/gthumb/shortcuts.page
 share/help/C/gthumb/slideshow.page
 share/help/C/gthumb/sorting.page
 share/help/C/gthumb/strftime.page
@@ -484,7 +500,6 @@ share/help/cs/gthumb/printing.page
 share/help/cs/gthumb/rename-series.page
 share/help/cs/gthumb/sharing-disc.page
 share/help/cs/gthumb/sharing-social.page
-share/help/cs/gthumb/shortcuts.page
 share/help/cs/gthumb/slideshow.page
 share/help/cs/gthumb/sorting.page
 share/help/cs/gthumb/strftime.page
@@ -529,7 +544,6 @@ share/help/de/gthumb/printing.page
 share/help/de/gthumb/rename-series.page
 share/help/de/gthumb/sharing-disc.page
 share/help/de/gthumb/sharing-social.page
-share/help/de/gthumb/shortcuts.page
 share/help/de/gthumb/slideshow.page
 share/help/de/gthumb/sorting.page
 share/help/de/gthumb/strftime.page
@@ -574,7 +588,6 @@ share/help/el/gthumb/printing.page
 share/help/el/gthumb/rename-series.page
 share/help/el/gthumb/sharing-disc.page
 share/help/el/gthumb/sharing-social.page
-share/help/el/gthumb/shortcuts.page
 share/help/el/gthumb/slideshow.page
 share/help/el/gthumb/sorting.page
 share/help/el/gthumb/strftime.page
@@ -619,7 +632,6 @@ share/help/es/gthumb/printing.page
 share/help/es/gthumb/rename-series.page
 share/help/es/gthumb/sharing-disc.page
 share/help/es/gthumb/sharing-social.page
-share/help/es/gthumb/shortcuts.page
 share/help/es/gthumb/slideshow.page
 share/help/es/gthumb/sorting.page
 share/help/es/gthumb/strftime.page
@@ -664,7 +676,6 @@ share/help/eu/gthumb/printing.page
 share/help/eu/gthumb/rename-series.page
 share/help/eu/gthumb/sharing-disc.page
 share/help/eu/gthumb/sharing-social.page
-share/help/eu/gthumb/shortcuts.page
 share/help/eu/gthumb/slideshow.page
 share/help/eu/gthumb/sorting.page
 share/help/eu/gthumb/strftime.page
@@ -709,7 +720,6 @@ share/help/fr/gthumb/printing.page
 share/help/fr/gthumb/rename-series.page
 share/help/fr/gthumb/sharing-disc.page
 share/help/fr/gthumb/sharing-social.page
-share/help/fr/gthumb/shortcuts.page
 share/help/fr/gthumb/slideshow.page
 share/help/fr/gthumb/sorting.page
 share/help/fr/gthumb/strftime.page
@@ -754,7 +764,6 @@ share/help/hu/gthumb/printing.page
 share/help/hu/gthumb/rename-series.page
 share/help/hu/gthumb/sharing-disc.page
 share/help/hu/gthumb/sharing-social.page
-share/help/hu/gthumb/shortcuts.page
 share/help/hu/gthumb/slideshow.page
 share/help/hu/gthumb/sorting.page
 share/help/hu/gthumb/strftime.page
@@ -799,7 +808,6 @@ share/help/nl/gthumb/printing.page
 share/help/nl/gthumb/rename-series.page
 share/help/nl/gthumb/sharing-disc.page
 share/help/nl/gthumb/sharing-social.page
-share/help/nl/gthumb/shortcuts.page
 share/help/nl/gthumb/slideshow.page
 share/help/nl/gthumb/sorting.page
 share/help/nl/gthumb/strftime.page
@@ -844,7 +852,6 @@ share/help/oc/gthumb/printing.page
 share/help/oc/gthumb/rename-series.page
 share/help/oc/gthumb/sharing-disc.page
 share/help/oc/gthumb/sharing-social.page
-share/help/oc/gthumb/shortcuts.page
 share/help/oc/gthumb/slideshow.page
 share/help/oc/gthumb/sorting.page
 share/help/oc/gthumb/strftime.page
@@ -889,7 +896,6 @@ share/help/sl/gthumb/printing.page
 share/help/sl/gthumb/rename-series.page
 share/help/sl/gthumb/sharing-disc.page
 share/help/sl/gthumb/sharing-social.page
-share/help/sl/gthumb/shortcuts.page
 share/help/sl/gthumb/slideshow.page
 share/help/sl/gthumb/sorting.page
 share/help/sl/gthumb/strftime.page
@@ -934,7 +940,6 @@ share/help/sv/gthumb/printing.page
 share/help/sv/gthumb/rename-series.page
 share/help/sv/gthumb/sharing-disc.page
 share/help/sv/gthumb/sharing-social.page
-share/help/sv/gthumb/shortcuts.page
 share/help/sv/gthumb/slideshow.page
 share/help/sv/gthumb/sorting.page
 share/help/sv/gthumb/strftime.page
@@ -979,7 +984,6 @@ share/help/zh_CN/gthumb/printing.page
 share/help/zh_CN/gthumb/rename-series.page
 share/help/zh_CN/gthumb/sharing-disc.page
 share/help/zh_CN/gthumb/sharing-social.page
-share/help/zh_CN/gthumb/shortcuts.page
 share/help/zh_CN/gthumb/slideshow.page
 share/help/zh_CN/gthumb/sorting.page
 share/help/zh_CN/gthumb/strftime.page
@@ -989,10 +993,7 @@ share/help/zh_CN/gthumb/viewer.page
 share/help/zh_CN/gthumb/wallpaper.page
 share/icons/hicolor/16x16/apps/org.gnome.gThumb-symbolic.svg
 share/icons/hicolor/16x16/apps/org.gnome.gThumb.png
-share/icons/hicolor/22x22/apps/gthumb.png
 share/icons/hicolor/256x256/apps/org.gnome.gThumb.png
-share/icons/hicolor/32x32/apps/gthumb.png
-share/icons/hicolor/48x48/apps/gthumb.png
 share/icons/hicolor/scalable/apps/org.gnome.gThumb.svg
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/ar/LC_MESSAGES/gthumb.mo
