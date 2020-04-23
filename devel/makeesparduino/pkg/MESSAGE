@@ -1,0 +1,5 @@
+Before using makeesparduino, an arduino-core package must be installed for the
+desired Espressif chipset.
+
+If you haven't already, please use pkg_add to install arduino-esp8266,
+arduino-esp32, or both.

@@ -1,0 +1,104 @@
+$OpenBSD: patch-makeEspArduino_mk,v 1.1.1.1 2020/04/23 14:31:06 tracey Exp $
+
+Index: makeEspArduino.mk
+--- makeEspArduino.mk.orig
++++ makeEspArduino.mk
+@@ -26,8 +26,13 @@ CHIP ?= esp8266
+ BOARD ?= $(if $(filter $(CHIP), esp32),esp32,generic)
+ 
+ # Serial flashing parameters
+-UPLOAD_PORT ?= $(shell ls -1tr /dev/tty*USB* 2>/dev/null | tail -1)
+-UPLOAD_PORT := $(if $(UPLOAD_PORT),$(UPLOAD_PORT),/dev/ttyS0)
++ifeq ($(OS), OpenBSD)
++	UPLOAD_PORT ?= $(shell ls -1tr /dev/tty*U* 2>/dev/null | tail -1)
++	UPLOAD_PORT := $(if $(UPLOAD_PORT),$(UPLOAD_PORT),/dev/ttyU0)
++else
++	UPLOAD_PORT ?= $(shell ls -1tr /dev/tty*USB* 2>/dev/null | tail -1)
++	UPLOAD_PORT := $(if $(UPLOAD_PORT),$(UPLOAD_PORT),/dev/ttyS0)
++endif
+ 
+ # OTA parameters
+ OTA_ADDR ?=
+@@ -57,7 +62,7 @@ FS_REST_DIR ?= $(BUILD_DIR)/file_system
+ 
+ # Bootloader
+ BOOT_LOADER ?= $(ESP_ROOT)/bootloaders/eboot/eboot.elf
+-
++#XXX: HERE
+ #====================================================================================
+ # Standard build logic and values
+ #====================================================================================
+@@ -70,6 +75,8 @@ git_description = $(shell git -C  $(1) describe --tags
+ time_string = $(shell date +$(1))
+ ifeq ($(OS), Darwin)
+   find_files = $(shell find -E $2 -regex ".*\.($1)" | sed 's/\/\//\//')
++else ifeq ($(OS), OpenBSD)
++  find_files = $(shell find $2 | awk '/.*\.($1)/')
+ else
+   find_files = $(shell find $2 -regextype posix-egrep -regex ".*\.($1)")
+ endif
+@@ -81,20 +88,33 @@ ifndef ESP_ROOT
+     ARDUINO_ROOT = $(shell cygpath -m $(LOCALAPPDATA)/Arduino15)
+   else ifeq ($(OS), Darwin)
+     ARDUINO_ROOT = $(HOME)/Library/Arduino15
++  else ifeq ($(OS), OpenBSD)
++    ARDUINO_ROOT = ${LOCALBASE}/share/arduino
+   else
+     ARDUINO_ROOT = $(HOME)/.arduino15
+   endif
+   ARDUINO_ESP_ROOT = $(ARDUINO_ROOT)/packages/$(CHIP)
+-  ESP_ROOT := $(lastword $(wildcard $(ARDUINO_ESP_ROOT)/hardware/$(CHIP)/*))
++  ifeq ($(OS), OpenBSD)
++    ESP_ROOT = $(ARDUINO_ROOT)/hardware/espressif/$(CHIP)
++    ARDUINO_LIBS = ${LOCALBASE}/share/arduino/libraries
++  else
++    ESP_ROOT := $(lastword $(wildcard $(ARDUINO_ESP_ROOT)/hardware/$(CHIP)/*))
++    ARDUINO_LIBS = $(shell grep -o "sketchbook.path=.*" $(ARDUINO_ROOT)/preferences.txt 2>/dev/null | cut -f2- -d=)/libraries
++  endif
+   ifeq ($(ESP_ROOT),)
+     $(error No installed version of $(CHIP) Arduino found)
+   endif
+-  ARDUINO_LIBS = $(shell grep -o "sketchbook.path=.*" $(ARDUINO_ROOT)/preferences.txt 2>/dev/null | cut -f2- -d=)/libraries
+   ESP_ARDUINO_VERSION := $(notdir $(ESP_ROOT))
+   # Find used version of compiler and tools
+-  COMP_PATH := $(lastword $(wildcard $(ARDUINO_ESP_ROOT)/tools/xtensa-*/*))
+-  ESPTOOL_PATH := $(lastword $(wildcard $(ARDUINO_ESP_ROOT)/tools/esptool*/*))
+-  MKSPIFFS_PATH := $(lastword $(wildcard $(ARDUINO_ESP_ROOT)/tools/mkspiffs/*/*))
++  ifeq ($(OS), OpenBSD)
++    COMP_PATH := ${LOCALBASE}/bin
++    ESPTOOL_PATH := ${LOCALBASE}/bin
++    MKSPIFFS_PATH := ${LOCALBASE}/bin
++  else
++    COMP_PATH := $(lastword $(wildcard $(ARDUINO_ESP_ROOT)/tools/xtensa-*/*))
++    ESPTOOL_PATH := $(lastword $(wildcard $(ARDUINO_ESP_ROOT)/tools/esptool*/*))
++    MKSPIFFS_PATH := $(lastword $(wildcard $(ARDUINO_ESP_ROOT)/tools/mkspiffs/*/*))
++  endif
+ else
+   # Location defined, assume it is a git clone
+   ESP_ARDUINO_VERSION = $(call git_description,$(ESP_ROOT))
+@@ -213,6 +233,8 @@ LWIP_VARIANT ?= $(shell cat $(ESP_ROOT)/boards.txt | p
+ # Handle possible changed state i.e. make command line parameters or changed git versions
+ ifeq ($(OS), Darwin)
+   CMD_LINE := $(shell ps $$PPID -o command | tail -1)
++else ifeq ($(OS), OpenBSD)
++  CMD_LINE := $(shell ps $$PPID -o command | tail -1)
+ else
+   CMD_LINE := $(shell tr "\0" " " </proc/$$PPID/cmdline)
+ endif
+@@ -496,6 +518,8 @@ DEFAULT_GOAL ?= all
+ 
+ ifeq ($(OS), Darwin)
+   BUILD_THREADS ?= $(shell sysctl -n hw.ncpu)
++else ifeq ($(OS), OpenBSD)
++  BUILD_THREADS ?= $(shell sysctl -n hw.ncpuonline)
+ else
+   BUILD_THREADS ?= $(shell nproc)
+ endif
+@@ -516,6 +540,7 @@ my $$os = shift;
+ $$os =~ s/Windows_NT/windows/;
+ $$os =~ s/Linux/linux/;
+ $$os =~ s/Darwin/macosx/;
++$$os =~ s/OpenBSD/openbsd/;
+ my $$lwipvariant = shift;
+ my %v;
+ 
