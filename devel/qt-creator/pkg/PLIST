@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/03/29 10:50:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/04/24 13:14:09 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
@@ -17,6 +17,7 @@ bin/qtcreator.sh
 @lib lib/libTracing.so.${LIBTracing_VERSION}
 @lib lib/libUtils.so.${LIBUtils_VERSION}
 lib/qtcreator/
+@lib lib/qtcreator/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
 @lib lib/qtcreator/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/qtcreator/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
 @lib lib/qtcreator/libClangsupport.so.${LIBClangsupport_VERSION}
@@ -70,6 +71,7 @@ lib/qtcreator/plugins/
 @so lib/qtcreator/plugins/libIos.so
 @so lib/qtcreator/plugins/libLanguageClient.so
 @so lib/qtcreator/plugins/libMacros.so
+@so lib/qtcreator/plugins/libMarketplace.so
 @so lib/qtcreator/plugins/libMcuSupport.so
 @so lib/qtcreator/plugins/libMercurial.so
 @so lib/qtcreator/plugins/libModelEditor.so
@@ -126,6 +128,8 @@ share/icons/hicolor/48x48/apps/QtProject-qtcreator.png
 share/icons/hicolor/512x512/apps/QtProject-qtcreator.png
 share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 share/qtcreator/
+share/qtcreator/android/
+share/qtcreator/android/sdk_definitions.json
 share/qtcreator/cplusplus/
 share/qtcreator/cplusplus/examples/
 share/qtcreator/cplusplus/examples/CMakeLists.txt
@@ -150,7 +154,9 @@ share/qtcreator/debugger/opencvtypes.py
 share/qtcreator/debugger/pdbbridge.py
 share/qtcreator/debugger/personaltypes.py
 share/qtcreator/debugger/qttypes.py
+share/qtcreator/debugger/setup.cfg
 share/qtcreator/debugger/stdtypes.py
+share/qtcreator/debugger/utils.py
 share/qtcreator/externaltools/
 share/qtcreator/externaltools/lrelease.xml
 share/qtcreator/externaltools/lupdate.xml
@@ -237,14 +243,12 @@ share/qtcreator/qml/qmlpuppet/commands/createscenecommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/createscenecommand.h
 share/qtcreator/qml/qmlpuppet/commands/debugoutputcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/debugoutputcommand.h
-share/qtcreator/qml/qmlpuppet/commands/drop3dlibraryitemcommand.cpp
-share/qtcreator/qml/qmlpuppet/commands/drop3dlibraryitemcommand.h
-share/qtcreator/qml/qmlpuppet/commands/enable3dviewcommand.cpp
-share/qtcreator/qml/qmlpuppet/commands/enable3dviewcommand.h
 share/qtcreator/qml/qmlpuppet/commands/endpuppetcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/endpuppetcommand.h
 share/qtcreator/qml/qmlpuppet/commands/informationchangedcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/informationchangedcommand.h
+share/qtcreator/qml/qmlpuppet/commands/inputeventcommand.cpp
+share/qtcreator/qml/qmlpuppet/commands/inputeventcommand.h
 share/qtcreator/qml/qmlpuppet/commands/pixmapchangedcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/pixmapchangedcommand.h
 share/qtcreator/qml/qmlpuppet/commands/puppetalivecommand.cpp
@@ -269,8 +273,8 @@ share/qtcreator/qml/qmlpuppet/commands/update3dviewstatecommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/update3dviewstatecommand.h
 share/qtcreator/qml/qmlpuppet/commands/valueschangedcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/valueschangedcommand.h
-share/qtcreator/qml/qmlpuppet/commands/view3dclosedcommand.cpp
-share/qtcreator/qml/qmlpuppet/commands/view3dclosedcommand.h
+share/qtcreator/qml/qmlpuppet/commands/view3dactioncommand.cpp
+share/qtcreator/qml/qmlpuppet/commands/view3dactioncommand.h
 share/qtcreator/qml/qmlpuppet/container/
 share/qtcreator/qml/qmlpuppet/container/addimportcontainer.cpp
 share/qtcreator/qml/qmlpuppet/container/addimportcontainer.h
@@ -317,6 +321,7 @@ share/qtcreator/qml/qmlpuppet/mockfiles/Arrow.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/AutoScaleHelper.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/AxisHelper.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/AxisHelperArm.qml
+share/qtcreator/qml/qmlpuppet/mockfiles/CameraFrustum.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/CameraGizmo.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/Dialog.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/DirectionalDraggable.qml
@@ -325,7 +330,10 @@ share/qtcreator/qml/qmlpuppet/mockfiles/EditView3D.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/GenericBackend.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/HelperGrid.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/IconGizmo.qml
+share/qtcreator/qml/qmlpuppet/mockfiles/IconRenderer3D.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/LightGizmo.qml
+share/qtcreator/qml/qmlpuppet/mockfiles/LightModel.qml
+share/qtcreator/qml/qmlpuppet/mockfiles/Line3D.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/MoveGizmo.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/Overlay2D.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/PlanarDraggable.qml
@@ -335,6 +343,7 @@ share/qtcreator/qml/qmlpuppet/mockfiles/RotateGizmo.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/RotateRing.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/ScaleGizmo.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/ScaleRod.qml
+share/qtcreator/qml/qmlpuppet/mockfiles/SceneView3D.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/SelectionBox.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/SwipeView.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/ToggleButton.qml
@@ -345,48 +354,12 @@ share/qtcreator/qml/qmlpuppet/mockfiles/images/area_light_gradient.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/area_light_gradient@2x.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/directional_light_gradient.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/directional_light_gradient@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/edit_light_off.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/edit_light_off@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/edit_light_on.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/edit_light_on@2x.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/editor_camera.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/editor_camera@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/fit_active.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/fit_active@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/fit_selected.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/fit_selected@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/global.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/global@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/group_selection_active.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/group_selection_active@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/group_selection_selected.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/group_selection_selected@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/item_selection_active.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/item_selection_active@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/item_selection_selected.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/item_selection_selected@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/light-pick-icon.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/light-pick-icon@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/local.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/local@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/move_active.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/move_active@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/move_selected.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/move_selected@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/ortho.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/ortho@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/persp.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/persp@2x.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/point_light_gradient.png
 share/qtcreator/qml/qmlpuppet/mockfiles/images/point_light_gradient@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/rotate_active.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/rotate_active@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/rotate_selected.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/rotate_selected@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/scale_active.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/scale_active@2x.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/scale_selected.png
-share/qtcreator/qml/qmlpuppet/mockfiles/images/scale_selected@2x.png
+share/qtcreator/qml/qmlpuppet/mockfiles/images/spot_light_gradient.png
+share/qtcreator/qml/qmlpuppet/mockfiles/images/spot_light_gradient@2x.png
 share/qtcreator/qml/qmlpuppet/mockfiles/meshes/
 share/qtcreator/qml/qmlpuppet/mockfiles/meshes/arrow.mesh
 share/qtcreator/qml/qmlpuppet/mockfiles/meshes/axishelper.mesh
@@ -403,10 +376,20 @@ share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/generalhelper.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/generalhelper.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/gridgeometry.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/gridgeometry.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/icongizmoimageprovider.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/icongizmoimageprovider.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/lightgeometry.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/lightgeometry.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/linegeometry.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/linegeometry.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/mousearea3d.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/mousearea3d.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/selectionboxgeometry.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/editor3d/selectionboxgeometry.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/iconrenderer/
+share/qtcreator/qml/qmlpuppet/qml2puppet/iconrenderer/iconrenderer.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/iconrenderer/iconrenderer.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/iconrenderer/iconrenderer.pri
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/anchorchangesnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/anchorchangesnodeinstance.h
@@ -496,7 +479,10 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/UrlEditor
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/AdvancedSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/AnchorRow.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/AnimationSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/AnimationTargetSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/BorderImageSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/ColorAnimationSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/ColumnSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Controls/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Controls/DialogSpecifics.qml
@@ -518,10 +504,17 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Layouts/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Layouts/GridLayoutSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/ListViewSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/MouseAreaSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/NumberAnimationSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/ParallelAnimationSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/PathViewSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/PauseAnimationSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/PropertyActionSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/PropertyAnimationSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/QtObjectPane.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/RectangleSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/RowSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/ScriptActionSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/SequentialAnimationSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/TargetComboBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/TextEditSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/TextInputSection.qml
@@ -655,6 +648,9 @@ share/qtcreator/qmldesigner/statesEditorQmlSources/
 share/qtcreator/qmldesigner/statesEditorQmlSources/DesignerTextFieldStyle.qml
 share/qtcreator/qmldesigner/statesEditorQmlSources/StatesDelegate.qml
 share/qtcreator/qmldesigner/statesEditorQmlSources/StatesList.qml
+share/qtcreator/qmldesigner/workspacePresets/
+share/qtcreator/qmldesigner/workspacePresets/3D_Preset.wrk
+share/qtcreator/qmldesigner/workspacePresets/Essentials.wrk
 share/qtcreator/qmlicons/
 share/qtcreator/qmlicons/Qt/
 share/qtcreator/qmlicons/Qt/16x16/
@@ -878,6 +874,32 @@ share/qtcreator/templates/wizards/projects/nim/icon.png
 share/qtcreator/templates/wizards/projects/nim/icon@2x.png
 share/qtcreator/templates/wizards/projects/nim/main.nim
 share/qtcreator/templates/wizards/projects/nim/wizard.json
+share/qtcreator/templates/wizards/projects/nimble/
+share/qtcreator/templates/wizards/projects/nimble/binary/
+share/qtcreator/templates/wizards/projects/nimble/binary/binary.nimble
+share/qtcreator/templates/wizards/projects/nimble/binary/src/
+share/qtcreator/templates/wizards/projects/nimble/binary/src/binary.nim
+share/qtcreator/templates/wizards/projects/nimble/hybrid/
+share/qtcreator/templates/wizards/projects/nimble/hybrid/hybrid.nimble
+share/qtcreator/templates/wizards/projects/nimble/hybrid/src/
+share/qtcreator/templates/wizards/projects/nimble/hybrid/src/hybrid.nim
+share/qtcreator/templates/wizards/projects/nimble/hybrid/src/hybridpkg/
+share/qtcreator/templates/wizards/projects/nimble/hybrid/src/hybridpkg/submodule.nim
+share/qtcreator/templates/wizards/projects/nimble/hybrid/tests/
+share/qtcreator/templates/wizards/projects/nimble/hybrid/tests/config.nims
+share/qtcreator/templates/wizards/projects/nimble/hybrid/tests/test1.nim
+share/qtcreator/templates/wizards/projects/nimble/icon.png
+share/qtcreator/templates/wizards/projects/nimble/icon@2x.png
+share/qtcreator/templates/wizards/projects/nimble/library/
+share/qtcreator/templates/wizards/projects/nimble/library/library.nimble
+share/qtcreator/templates/wizards/projects/nimble/library/src/
+share/qtcreator/templates/wizards/projects/nimble/library/src/library/
+share/qtcreator/templates/wizards/projects/nimble/library/src/library.nim
+share/qtcreator/templates/wizards/projects/nimble/library/src/library/submodule.nim
+share/qtcreator/templates/wizards/projects/nimble/library/tests/
+share/qtcreator/templates/wizards/projects/nimble/library/tests/config.nims
+share/qtcreator/templates/wizards/projects/nimble/library/tests/test1.nim
+share/qtcreator/templates/wizards/projects/nimble/wizard.json
 share/qtcreator/templates/wizards/projects/plainc/
 share/qtcreator/templates/wizards/projects/plainc/CMakeLists.txt
 share/qtcreator/templates/wizards/projects/plainc/file.pro
@@ -899,13 +921,24 @@ share/qtcreator/templates/wizards/projects/qtforpythonapplication/empty/
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/empty/icon.png
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/empty/icon@2x.png
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/empty/wizard.json
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/icons/
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/icons/icon.png
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/icons/icon@2x.png
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/main.pyproject
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/main_empty.py
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/main_mainwindow.py
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/main_qtquick.py
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/main_widget.py
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/main_widget.ui
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/mainwindow/
-share/qtcreator/templates/wizards/projects/qtforpythonapplication/mainwindow/icon.png
-share/qtcreator/templates/wizards/projects/qtforpythonapplication/mainwindow/icon@2x.png
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/mainwindow/wizard.json
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/qtquickapplication/
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/qtquickapplication/main.pyproject
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/qtquickapplication/main.qml.tpl
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/qtquickapplication/wizard.json
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/widget/
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/widget/main.pyproject
+share/qtcreator/templates/wizards/projects/qtforpythonapplication/widget/wizard.json
 share/qtcreator/templates/wizards/projects/qtquick2-extension/
 share/qtcreator/templates/wizards/projects/qtquick2-extension/lib.png
 share/qtcreator/templates/wizards/projects/qtquick2-extension/lib@2x.png
@@ -989,6 +1022,8 @@ share/qtcreator/templates/wizards/projects/vcs/subversion/icon@2x.png
 share/qtcreator/templates/wizards/projects/vcs/subversion/wizard.json
 share/qtcreator/templates/wizards/qtcreatorplugin/
 share/qtcreator/templates/wizards/qtcreatorplugin/MyPlugin.json.in
+share/qtcreator/templates/wizards/qtcreatorplugin/github_workflow_README.md
+share/qtcreator/templates/wizards/qtcreatorplugin/github_workflow_build_qmake.yml
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.cpp
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.h
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.pro
@@ -996,7 +1031,7 @@ share/qtcreator/templates/wizards/qtcreatorplugin/myplugin_global.h
 share/qtcreator/templates/wizards/qtcreatorplugin/mypluginconstants.h
 share/qtcreator/templates/wizards/qtcreatorplugin/qtcreatorplugin.png
 share/qtcreator/templates/wizards/qtcreatorplugin/qtcreatorplugin@2x.png
-share/qtcreator/templates/wizards/qtcreatorplugin/wizard.xml
+share/qtcreator/templates/wizards/qtcreatorplugin/wizard.json
 share/qtcreator/templates/wizards/qtquickstyleicons/
 share/qtcreator/templates/wizards/qtquickstyleicons/default.png
 share/qtcreator/templates/wizards/qtquickstyleicons/default@2x.png
@@ -1020,6 +1055,7 @@ share/qtcreator/translations/qtcreator_cs.qm
 share/qtcreator/translations/qtcreator_da.qm
 share/qtcreator/translations/qtcreator_de.qm
 share/qtcreator/translations/qtcreator_fr.qm
+share/qtcreator/translations/qtcreator_hr.qm
 share/qtcreator/translations/qtcreator_ja.qm
 share/qtcreator/translations/qtcreator_pl.qm
 share/qtcreator/translations/qtcreator_ru.qm
