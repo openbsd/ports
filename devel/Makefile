@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1965 2020/04/24 09:03:07 kmos Exp $
+# $OpenBSD: Makefile,v 1.1966 2020/04/24 21:14:36 naddy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -279,6 +279,7 @@
      SUBDIR += imake
      SUBDIR += imake-cf
      SUBDIR += include-what-you-use
+     SUBDIR += iniparser
      SUBDIR += intellij
      SUBDIR += ipython,python3
      SUBDIR += iso-codes
@@ -1488,7 +1489,6 @@
      SUBDIR += py-importlib-metadata,python3
      SUBDIR += py-incremental
      SUBDIR += py-incremental,python3
-     SUBDIR += py-iniparse
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
      SUBDIR += py-ipykernel,python3
