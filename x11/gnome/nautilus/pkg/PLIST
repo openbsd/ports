@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.66 2019/11/23 10:14:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.67 2020/04/24 16:02:29 ajacoutot Exp $
 @conflict totem-<3.32.0
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -48,13 +48,12 @@ share/locale/be@latin/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/bn/LC_MESSAGES/nautilus.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus.mo
-share/locale/bo/
-share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/nautilus.mo
 share/locale/br/LC_MESSAGES/nautilus.mo
 share/locale/bs/LC_MESSAGES/nautilus.mo
 share/locale/ca/LC_MESSAGES/nautilus.mo
 share/locale/ca@valencia/LC_MESSAGES/nautilus.mo
+share/locale/ckb/LC_MESSAGES/nautilus.mo
 share/locale/crh/LC_MESSAGES/nautilus.mo
 share/locale/cs/LC_MESSAGES/nautilus.mo
 share/locale/cy/LC_MESSAGES/nautilus.mo
