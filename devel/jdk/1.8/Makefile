@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2020/03/20 16:44:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2020/04/24 14:46:56 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -6,8 +6,8 @@ DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${V}
 BASE_VER=	1.8.0
-UPDATE_VER=	242
-BUILD_VER=	b07
+UPDATE_VER=	252
+BUILD_VER=	b09
 BSD_PORT_REL=	1
 V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
@@ -137,19 +137,27 @@ do-install:
 # and a copy of the system shared libs needed to run it.
 # The parts deleted are not needed for bootstrap and would
 # require more system shared libs to be saved.
+BOOTJDK_TAR=	openjdk8-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz
 build-bootjdk: build
-	@rm -rf ${WRKTMP}
-	@mkdir -p ${WRKTMP}/bootjdk
-	@mkdir -p ${WRKTMP}/bootjdk-libs
-	@cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${WRKTMP}/bootjdk -xf - 
-	@cd ${WRKTMP}/bootjdk && rm -rf demo sample
-	@cd ${WRKTMP}/bootjdk && rm bin/appletviewer bin/policytool jre/bin/policytool
-	@cd ${WRKTMP}/bootjdk/jre/lib/${ARCH} && rm libnpt.so libinstrument.so libsplashscreen.so libjsound.so libawt_xawt.so
+	@${_PBUILD} rm -rf ${WRKTMP}
+	@${_PBUILD} mkdir -p ${WRKTMP}/bootjdk
+	@${_PBUILD} mkdir -p ${WRKTMP}/bootjdk-libs
+	@cd ${JDKIMAGEDIR} && \
+		tar -cf - * | \
+		${_PBUILD} tar -C ${WRKTMP}/bootjdk -xf - 
+	@cd ${WRKTMP}/bootjdk && \
+		${_PBUILD} rm -rf demo sample
+	@cd ${WRKTMP}/bootjdk && \
+		${_PBUILD} rm bin/appletviewer bin/policytool jre/bin/policytool
+	@cd ${WRKTMP}/bootjdk/jre/lib/${ARCH} && \
+		${_PBUILD} rm libnpt.so libinstrument.so libsplashscreen.so \
+		libjsound.so libawt_xawt.so
 	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/jre/lib/${ARCH}:${WRKTMP}/bootjdk/jre/lib/${ARCH}/server" \
 		find ${WRKTMP}/bootjdk -type f -perm -500 -exec ldd {} + 2>/dev/null | \
 		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
-		xargs -I % cp /% ${WRKTMP}/bootjdk-libs
-	@cd ${WRKTMP} && tar czf openjdk8-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*
-	@echo "New bootjdk is located at ${WRKTMP}/openjdk8-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz"
+		xargs -I % ${_PBUILD} cp /% ${WRKTMP}/bootjdk-libs
+	@cd ${WRKTMP} && \
+		${_PBUILD} tar czf ${BOOTJDK_TAR} bootjdk*
+	@echo "New bootjdk is located at ${WRKTMP}/${BOOTJDK_TAR}"
 
 .include <bsd.port.mk>
