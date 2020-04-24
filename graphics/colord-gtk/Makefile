@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile,v 1.23 2020/04/24 04:13:02 kmos Exp $
 
 COMMENT=	GTK+ support library for colord
 
@@ -37,5 +37,11 @@ CONFIGURE_ARGS=	-Ddocs=false \
 
 # XXX require docbook-xsl-nsl
 CONFIGURE_ARGS +=	-Dman=false
+CONFIGURE_ENV =	LDFLAGS="${LDFLAGS}"
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+LDFLAGS +=	-L${X11BASE}/lib
+.endif
 
 .include <bsd.port.mk>
