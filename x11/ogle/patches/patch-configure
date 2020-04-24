@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2009/12/09 10:19:33 jakemsr Exp $
---- configure.orig	Tue Nov  4 03:34:13 2003
-+++ configure	Sun Feb  8 23:20:43 2009
+$OpenBSD: patch-configure,v 1.9 2020/04/24 16:04:48 cwen Exp $
+Index: configure
+--- configure.orig
++++ configure
 @@ -11184,7 +11184,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_jpeg_main" >&5
  echo "${ECHO_T}$ac_cv_lib_jpeg_main" >&6
@@ -46,3 +47,12 @@ $OpenBSD: patch-configure,v 1.8 2009/12/09 10:19:33 jakemsr Exp $
      ;;
      esac
  fi
+@@ -13842,7 +13842,7 @@ _ACEOF
+ powerpc|ppc)
+ 	if test "x$GCC" = xyes; then
+ 	  O_CFLAGS="$O_CFLAGS -fomit-frame-pointer -funroll-loops"
+-	  XCFLAGS="-Wa,-m7400"
++	  XCFLAGS="-maltivec -mabi=altivec"
+ 	  USE_ALTIVEC=yes
+ 	fi
+         ;;
