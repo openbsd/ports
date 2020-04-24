@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.95 2020/03/24 07:54:45 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.96 2020/04/24 23:22:38 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -6,7 +6,7 @@
 @bin bin/git
 bin/git-cvsserver
 @bin bin/git-receive-pack
-@bin bin/git-shell
+@shell bin/git-shell
 @bin bin/git-upload-archive
 @bin bin/git-upload-pack
 @static-lib lib/libgit.a
