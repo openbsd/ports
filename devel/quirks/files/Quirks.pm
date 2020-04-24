@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.944 2020/04/22 11:24:48 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.945 2020/04/24 09:03:08 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1551,6 +1551,7 @@ my $obsolete_reason = {
 	'dspam' => 3,
 	'dspam-mysql' => 3,
 	'dspam-pgsql' => 3,
+	'py-iniparse' => 5,
 };
 
 # reasons for obsolete packages

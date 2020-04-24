@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1964 2020/04/23 14:37:16 tracey Exp $
+# $OpenBSD: Makefile,v 1.1965 2020/04/24 09:03:07 kmos Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -279,7 +279,6 @@
      SUBDIR += imake
      SUBDIR += imake-cf
      SUBDIR += include-what-you-use
-     SUBDIR += iniparser
      SUBDIR += intellij
      SUBDIR += ipython,python3
      SUBDIR += iso-codes
