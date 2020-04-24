@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/10 21:27:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/04/24 16:17:35 cwen Exp $
 
 COMMENT =	graphical wordcount grapher
 DISTNAME =	novprog-3.1.6
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
 
-.if ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Mpowerpc}
+.if ${MACHINE_ARCH:Mhppa}
 WANTLIB += atomic
 .endif
 
