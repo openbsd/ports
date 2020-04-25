@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2020/03/31 10:48:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.187 2020/04/25 10:07:42 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -62,7 +62,7 @@ RUN_DEPENDS +=		x11/gnome/caribou
 RUN_DEPENDS +=		sysutils/consolekit
 
 # gnome-shell-extension-tool, gnome-shell-perf-tool
-RUN_DEPENDS +=		devel/py-gobject3,python3
+RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
 
 # Don't depend on evolution to lower down the amount of dependencies and
 # because most users want to be able to choose their PIM. Evolution can

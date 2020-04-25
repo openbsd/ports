@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/02/18 08:05:16 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.30 2020/04/25 10:07:42 ajacoutot Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -27,11 +27,11 @@ WANTLIB +=	ssl3 yaml-0 z
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =	textproc/py-sphinx,python3 \
-		textproc/py-yaml,python3 \
+BUILD_DEPENDS =	textproc/py-sphinx${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
 		lang/rust
 
-RUN_DEPENDS =	textproc/py-yaml,python3
+RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
 
 LIB_DEPENDS =	archivers/lz4 \
 		archivers/xz \

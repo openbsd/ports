@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/11/20 13:43:35 edd Exp $
+# $OpenBSD: Makefile,v 1.20 2020/04/25 10:07:41 ajacoutot Exp $
 
 COMMENT =	continuation and extension of Vim
 
@@ -58,9 +58,13 @@ CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN} \
 # Tests need gmake
 USE_GMAKE = Yes
 # `test_startup_utf8.vim' requires either bash or zsh
+MODULES +=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP =	No
+MODPY_BUILDDEP =	No
 TEST_DEPENDS =	shells/bash \
 		editors/py-neovim \
-		editors/py-neovim,python3
+		editors/py-neovim${MODPY_FLAVOR}
 
 # Build libluv first as a static library. We opted not to create a libluv
 # port because it must be built for a specific Lua version and we don't know

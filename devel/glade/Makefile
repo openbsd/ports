@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2020/03/17 08:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.87 2020/04/25 10:07:41 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -32,13 +32,13 @@ MODULES=	lang/python \
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS=	devel/py-gobject3,python3
+BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 
 LIB_DEPENDS=	x11/gtk+3 \
 		devel/libffi
 
 RUN_DEPENDS=	x11/gnome/devhelp \
-		devel/py-gobject3,python3
+		devel/py-gobject3${MODPY_FLAVOR}
 
 MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache
 MODGNOME_TOOLS += gobject-introspection yelp
