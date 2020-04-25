@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/10 15:30:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2020/04/25 18:36:39 afresh1 Exp $
 
 COMMENT =	provides Moose-like method modifiers
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Class-Method-Modifiers-2.13
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 # Perl
 PERMIT_PACKAGE =	Yes

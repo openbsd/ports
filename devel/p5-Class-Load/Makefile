@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/12 14:46:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2020/04/25 18:36:38 afresh1 Exp $
 
 COMMENT =	working 'require Class::Name' and more
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Class-Load-0.25
 CATEGORIES =	devel
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 # same as perl
 PERMIT_PACKAGE =	Yes

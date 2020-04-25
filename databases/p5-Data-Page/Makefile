@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/02/05 08:41:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2020/04/25 18:36:38 afresh1 Exp $
 
 COMMENT =	pager utility
 
@@ -6,6 +6,7 @@ DISTNAME =	Data-Page-2.03
 CATEGORIES =	databases
 MODULES =	cpan
 PKG_ARCH =	*
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 # Perl
 PERMIT_PACKAGE =	Yes
