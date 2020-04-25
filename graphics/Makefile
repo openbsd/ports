@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.502 2020/04/21 20:42:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.503 2020/04/25 14:02:58 espie Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -295,6 +295,7 @@
      SUBDIR += tkimg
      SUBDIR += tkpng
      SUBDIR += ttfautohint
+     SUBDIR += tumble
      SUBDIR += ufraw
      SUBDIR += unwebp
      SUBDIR += vcdimager
