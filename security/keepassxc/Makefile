@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/04/10 07:25:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.30 2020/04/25 11:12:35 cwen Exp $
 
 COMMENT =	management tool for password and sensitive data
 
@@ -56,6 +56,8 @@ WANTLIB += yubikey ykpers-1
 .endif
 
 .if ${FLAVOR:Mbrowser}
+# Sync with archs that ship Firefox and/or Chromium
+ONLY_FOR_ARCHS =	amd64 i386 aarch64
 CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
 			-DWITH_XC_NETWORKING=ON
 .endif
