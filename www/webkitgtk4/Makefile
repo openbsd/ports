@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2020/04/24 15:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2020/04/25 20:04:50 jca Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -84,6 +84,7 @@ LIB_DEPENDS =		archivers/woff2 \
 			x11/gnome/libsecret \
 			x11/gtk+3
 
+CONFIGURE_ENV =		WK_USE_CCACHE=NO
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
