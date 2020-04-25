@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/08/27 02:03:32 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.16 2020/04/25 17:59:42 afresh1 Exp $
 
 COMMENT =	library for sending email
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	Email-Sender-1.300031
+DISTNAME =	Email-Sender-1.300034
 CATEGORIES =	mail
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
@@ -26,7 +26,7 @@ RUN_DEPENDS =	devel/p5-List-MoreUtils>=0 \
 
 TEST_DEPENDS =	sysutils/p5-Capture-Tiny>=0.08
 
-# Addiional modules to avoid skipping tests
+# Additional modules to avoid skipping tests
 TEST_DEPENDS +=	devel/p5-Test-MockObject \
 		devel/p5-Sub-Override
 
