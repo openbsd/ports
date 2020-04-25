@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/24 06:46:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2020/04/25 11:54:42 ajacoutot Exp $
 
 COMMENT=		Ubuntu GNOME theme
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE=	Yes
 MODULES=		devel/dconf \
 			devel/meson
 
-BUILD_DEPENDS=		www/sassc
+BUILD_DEPENDS=		shells/bash \
+			www/sassc
 
 RUN_DEPENDS=		x11/gtk+3,-guic
 
