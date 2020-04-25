@@ -1,0 +1,24 @@
+Tumble is a utility to construct PDF files from one or more image
+files.  Supported input image file formats are JPEG, and black and
+white 1-bit TIFF (single- or multi-page).
+
+Black and white images will be encoded in the PDF output using
+lossless Group 4 fax compression (ITU-T recommendation T.6).  This
+provides a very good compression ratio for text and line art.  JPEG
+images will be preserved with the original coding.
+
+The general command line syntax is:
+
+tumble [options] <input>... -o <output.pdf>
+
+The options in this mode are:
+
+    -v        verbose
+    -b <fmt>  create bookmarks
+
+If the "-b" option is given, bookmarks will be created using the
+format string, which may contain arbitrary text and/or the following
+format specifiers:
+
+    %F  file name, sans suffix  e.g., "foo.tif" will just appear as "foo"
+    %p  page number of input file, useful for multipage TIFF files

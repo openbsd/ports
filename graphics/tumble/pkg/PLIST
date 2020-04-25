@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/25 14:02:14 espie Exp $
+@bin bin/tumble
+share/doc/tumble/
+share/doc/tumble/README

@@ -1,0 +1,24 @@
+$OpenBSD: patch-tumble_tiff_c,v 1.1.1.1 2020/04/25 14:02:14 espie Exp $
+get rid of insane header testing:
+- TiFFFdOpen is perfectly capable of detecting tiff files
+- FILE* and fd  are two different layers
+
+Index: tumble_tiff.c
+--- tumble_tiff.c.orig
++++ tumble_tiff.c
+@@ -67,6 +67,7 @@ static bool close_tiff_input_file (void)
+ 
+ static bool open_tiff_input_file (FILE *f, char *name)
+ {
++#if 0
+   uint8_t buf [2];
+   size_t l;
+ 
+@@ -79,6 +80,7 @@ static bool open_tiff_input_file (FILE *f, char *name)
+   if (! (((buf [0] == 0x49) && (buf [1] == 0x49)) ||
+ 	 ((buf [0] == 0x4d) && (buf [1] == 0x4d))))
+     return (0);
++#endif
+ 
+   tiff_in = TIFFFdOpen (fileno (f), name, "r");
+   if (! tiff_in)
