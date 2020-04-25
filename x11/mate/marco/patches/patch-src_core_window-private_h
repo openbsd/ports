@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_core_window-private_h,v 1.1 2020/04/25 10:49:43 robert Exp $
+
+From 5dc180ef7308b44f19f61ffb39e1c2df507731e2 Mon Sep 17 00:00:00 2001
+From: rcaridade145 <rcaridade145@gmail.com>
+Date: Sat, 29 Feb 2020 13:01:36 +0000
+Subject: [PATCH 2/4] compositor: fix possible crash closing/destroying window
+ . Fixes to previous commit.
+
+Index: src/core/window-private.h
+--- src/core/window-private.h.orig
++++ src/core/window-private.h
+@@ -618,6 +618,9 @@ void meta_window_set_gravity (MetaWindow *window,
+ void meta_window_handle_mouse_grab_op_event (MetaWindow *window,
+                                              XEvent     *event);
+ 
++MetaWorkspace *
++meta_window_get_workspace (MetaWindow *window);
++
+ GList* meta_window_get_workspaces (MetaWindow *window);
+ 
+ gboolean meta_window_located_on_workspace (MetaWindow    *window,

@@ -1,0 +1,91 @@
+$OpenBSD: patch-src_compositor_compositor-xrender_c,v 1.1 2020/04/25 10:49:43 robert Exp $
+
+From 1748fcb3c74836c8f59453f8a1689bb7c612f035 Mon Sep 17 00:00:00 2001
+From: rcaridade145 <rcaridade145@gmail.com>
+Date: Mon, 24 Feb 2020 10:42:20 +0000
+Subject: [PATCH 2/3] Guard against null changes introduced by previous commit
+
+From 5dc180ef7308b44f19f61ffb39e1c2df507731e2 Mon Sep 17 00:00:00 2001
+From: rcaridade145 <rcaridade145@gmail.com>
+Date: Sat, 29 Feb 2020 13:01:36 +0000
+Subject: [PATCH 2/4] compositor: fix possible crash closing/destroying window
+ . Fixes to previous commit.
+
+Index: src/compositor/compositor-xrender.c
+--- src/compositor/compositor-xrender.c.orig
++++ src/compositor/compositor-xrender.c
+@@ -645,7 +645,7 @@ shadow_picture_clip (Display          *xdisplay,
+ 
+   visible_region = meta_window_get_frame_bounds (cw->window);
+ 
+-  if (!visible_region)
++  if (visible_region == NULL)
+     return;
+ 
+   shadow_dx = -1 * (int) shadow_offsets_x [cw->shadow_type] - borders.invisible.left;
+@@ -1153,7 +1153,7 @@ border_size (MetaCompWindow *cw)
+     {
+       visible_region = meta_window_get_frame_bounds (cw->window);
+ 
+-      if (visible_region)
++      if (visible_region != NULL)
+         visible = cairo_region_to_xserver_region (xdisplay, visible_region);
+     }
+ 
+@@ -3041,23 +3041,40 @@ xrender_end_move (MetaCompositor *compositor,
+ #endif
+ }
+ 
++#endif /* 0 */
++
+ static void
+ xrender_free_window (MetaCompositor *compositor,
+                      MetaWindow     *window)
+ {
+ #ifdef HAVE_COMPOSITE_EXTENSIONS
+-  /* FIXME: When an undecorated window is hidden this is called,
+-     but the window does not get readded if it is subsequentally shown again
+-     See http://bugzilla.gnome.org/show_bug.cgi?id=504876
++  MetaCompositorXRender *xrc;
++  MetaFrame *frame;
++  Window xwindow;
+ 
+-     I don't *think* theres any need for this call anyway, leaving it out
+-     does not seem to cause any side effects so far, but I should check with
+-     someone who understands more. */
+-  /* destroy_win (compositor->display, window->xwindow, FALSE); */
++  xrc = (MetaCompositorXRender *) compositor;
++  frame = meta_window_get_frame (window);
++  xwindow = None;
++
++  if (frame)
++    {
++      xwindow = meta_frame_get_xwindow (frame);
++    }
++  else
++    {
++      /* FIXME: When an undecorated window is hidden this is called, but the
++       * window does not get readded if it is subsequentally shown again. See:
++       * http://bugzilla.gnome.org/show_bug.cgi?id=504876
++       */
++      /* xwindow = meta_window_get_xwindow (window); */
++    }
++
++  if (xwindow != None)
++    destroy_win (xrc->display, xwindow, FALSE);
+ #endif
+ }
+-#endif /* 0 */
+ 
++
+ static void
+ xrender_process_event (MetaCompositor *compositor,
+                        XEvent         *event,
+@@ -3360,6 +3377,7 @@ static MetaCompositor comp_info = {
+   xrender_process_event,
+   xrender_get_window_surface,
+   xrender_set_active_window,
++  xrender_free_window,
+   xrender_maximize_window,
+   xrender_unmaximize_window,
+ };

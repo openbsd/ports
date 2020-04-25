@@ -1,0 +1,76 @@
+$OpenBSD: patch-src_core_stack_c,v 1.1 2020/04/25 10:49:43 robert Exp $
+
+From 5716fe12e40368141aec92b99bd8e76a963225fb Mon Sep 17 00:00:00 2001
+From: rcaridade145 <rcaridade145@gmail.com>
+Date: Tue, 3 Mar 2020 20:05:27 +0000
+Subject: [PATCH 3/4] stack: make meta_window_raise() and meta_window_lower()
+ smarter
+
+Index: src/core/stack.c
+--- src/core/stack.c.orig
++++ src/core/stack.c
+@@ -181,9 +181,26 @@ void
+ meta_stack_raise (MetaStack  *stack,
+                   MetaWindow *window)
+ {
+-  meta_window_set_stack_position_no_sync (window,
+-                                          stack->n_positions - 1);
++  GList *l;
++  int max_stack_position = window->stack_position;
++  MetaWorkspace *workspace;
+ 
++  g_assert (stack->added == NULL);
++
++  workspace = meta_window_get_workspace (window);
++  for (l = stack->sorted; l; l = l->next)
++    {
++      MetaWindow *w = (MetaWindow *) l->data;
++      if (meta_window_located_on_workspace (w, workspace) &&
++          w->stack_position > max_stack_position)
++        max_stack_position = w->stack_position;
++    }
++
++  if (max_stack_position == window->stack_position)
++    return;
++
++  meta_window_set_stack_position_no_sync (window, max_stack_position);
++
+   stack_sync_to_server (stack);
+ }
+ 
+@@ -191,8 +208,26 @@ void
+ meta_stack_lower (MetaStack  *stack,
+                   MetaWindow *window)
+ {
+-  meta_window_set_stack_position_no_sync (window, 0);
++  GList *l;
++  int min_stack_position = window->stack_position;
++  MetaWorkspace *workspace;
+ 
++  g_assert (stack->added == NULL);
++
++  workspace = meta_window_get_workspace (window);
++  for (l = stack->sorted; l; l = l->next)
++    {
++      MetaWindow *w = (MetaWindow *) l->data;
++      if (meta_window_located_on_workspace (w, workspace) &&
++          w->stack_position < min_stack_position)
++        min_stack_position = w->stack_position;
++    }
++
++  if (min_stack_position == window->stack_position)
++    return;
++
++  meta_window_set_stack_position_no_sync (window, min_stack_position);
++
+   stack_sync_to_server (stack);
+ }
+ 
+@@ -201,6 +236,7 @@ meta_stack_freeze (MetaStack *stack)
+ {
+   stack->freeze_count += 1;
+ }
++
+ 
+ void
+ meta_stack_thaw (MetaStack *stack)

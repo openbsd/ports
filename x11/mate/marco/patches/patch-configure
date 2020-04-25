@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
---- configure.orig	Sun Apr 30 20:45:41 2017
-+++ configure	Sun Apr 30 20:46:11 2017
-@@ -14812,25 +14812,6 @@ $as_echo "#define HAVE_XCURSOR /**/" >>confdefs.h
+$OpenBSD: patch-configure,v 1.2 2020/04/25 10:49:43 robert Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -16709,25 +16709,6 @@ $as_echo "#define HAVE_XCURSOR /**/" >>confdefs.h
  
  fi
  
