@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/25 10:07:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2020/04/25 20:48:29 sthen Exp $
 
 # Upstream says 64-bit only.
 # https://github.com/jarun/bcal/issues/4
@@ -27,6 +27,7 @@ MODULES +=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =	No
 MODPY_BUILDDEP =	No
+CONFIGURE_STYLE = python.port.mk-is-annoying
 TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 USE_GMAKE =	Yes
