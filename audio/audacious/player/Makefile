@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2020/04/15 15:50:16 bket Exp $
-
-BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
-BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
+# $OpenBSD: Makefile,v 1.2 2020/04/26 07:37:13 ajacoutot Exp $
 
 COMMENT =		graphical audio player which supports lots of formats
 
