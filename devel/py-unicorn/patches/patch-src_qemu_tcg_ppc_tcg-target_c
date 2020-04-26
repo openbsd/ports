@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_qemu_tcg_ppc_tcg-target_c,v 1.1 2020/04/26 21:43:42 cwen Exp $
+
+Workaround the lack of _CALL_SYSV with clang on powerpc
+
+Index: src/qemu/tcg/ppc/tcg-target.c
+--- src/qemu/tcg/ppc/tcg-target.c.orig
++++ src/qemu/tcg/ppc/tcg-target.c
+@@ -24,6 +24,11 @@
+ 
+ #include "tcg-be-ldst.h"
+ 
++/* clang does not define _CALL_* */
++#if defined __clang__ && defined __ELF__
++#define _CALL_SYSV 1
++#endif
++
+ #if defined _CALL_DARWIN || defined __APPLE__
+ #define TCG_TARGET_CALL_DARWIN
+ #endif
