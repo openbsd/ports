@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/04/24 20:50:15 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2020/04/26 16:40:16 kn Exp $
 
 COMMENT =		privilege separated implementation of WireGuard
 
-DISTNAME = 		wiresep-0.11.2
+DISTNAME = 		wiresep-0.11.3
 MASTER_SITES =		https://netsend.nl/wiresep/archive/
 
 CATEGORIES =		net security
