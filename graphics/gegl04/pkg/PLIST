@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/02/21 11:09:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/04/26 10:53:50 ajacoutot Exp $
 @conflict gegl-*
+@conflict gegl03-*
 @pkgpath graphics/gegl,-main
+@pkgpath graphics/gegl03
 @bin bin/gegl
 @bin bin/gegl-imgcmp
 include/gegl-${API_VERSION}/
