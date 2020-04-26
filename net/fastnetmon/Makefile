@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/10/09 23:12:39 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/04/26 20:18:58 cwen Exp $
 
 COMMENT =		DDoS detector with multiple packet capture engines
 
@@ -37,10 +37,11 @@ CONFIGURE_ARGS +=	-DENABLE_LUA_SUPPORT=Off \
 			-DJSONC_INCLUDES_FOLDER="${LOCALBASE}/include/json-c" \
 			-DHIREDIS_INCLUDES_FOLDER="${LOCALBASE}/include/hiredis"
 
-# Use __atomic* function instead of __sync* ones, allowing to build on
-# the following archs.
+# Use __atomic* primitives, allowing to build on archs where there are no
+# 64-bit __sync* ones.  Such archs, when using gcc, need ports-gcc's
+# libatomic on top of that.
 CONFIGURE_ARGS +=	-DUSE_NEW_ATOMIC_BUILTINS=On
-.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+.if ${MACHINE_ARCH} == "hppa"
 WANTLIB +=		atomic
 .endif
 
