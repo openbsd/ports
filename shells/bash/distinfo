@@ -15,6 +15,7 @@ SHA256 (bash/bash50-013) = 9dcXjY2jB5ngG4OggCAY2RPWqpct0t2tO5J/Pz63CZo=
 SHA256 (bash/bash50-014) = XW7uZRTubiKoe7qNIr4KhiGgrhGSRvHFqaNdsfcq9Yk=
 SHA256 (bash/bash50-015) = pRffLdqTsm1cvwDv/v6pPjpMzWZS8VL0EJFwVE6/oF4=
 SHA256 (bash/bash50-016) = /9HXpUqZ+n9bGCXk9+ldjIh2vCyhUfFQ51HUKcZQsG0=
+SHA256 (bash/bash50-017) = TPO5+vuKZtQR3V/JEgAyUzpAEt8dxu4CTHgzNz4t3DE=
 SIZE (bash/bash-5.0.tar.gz) = 10135110
 SIZE (bash/bash50-001) = 4133
 SIZE (bash/bash50-002) = 4380
@@ -32,3 +33,4 @@ SIZE (bash/bash50-013) = 2328
 SIZE (bash/bash50-014) = 1747
 SIZE (bash/bash50-015) = 2565
 SIZE (bash/bash50-016) = 1534
+SIZE (bash/bash50-017) = 6517
