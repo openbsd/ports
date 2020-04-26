@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/01/05 11:54:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/04/26 07:48:27 ajacoutot Exp $
 @newgroup _gnome-initial-setup:724
 @newuser _gnome-initial-setup:724:_gnome-initial-setup:daemon:GNOME Initial Setup:/nonexistent:/sbin/nologin
 @bin libexec/gnome-initial-setup
@@ -28,6 +28,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/bs/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ca/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-initial-setup.mo
+share/locale/ckb/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/cs/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/da/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/de/LC_MESSAGES/gnome-initial-setup.mo
