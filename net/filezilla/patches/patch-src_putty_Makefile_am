@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_putty_Makefile_am,v 1.1 2020/04/26 19:16:07 naddy Exp $
+
+Index: src/putty/Makefile.am
+--- src/putty/Makefile.am.orig
++++ src/putty/Makefile.am
+@@ -48,7 +48,8 @@ libfzputtycommon_a_SOURCES += \
+ 			unix/uxmisc.c \
+ 			unix/uxnoise.c \
+ 			unix/uxpoll.c \
+-			unix/uxstore.c
++			unix/uxstore.c \
++			unix/uxutils.c
+ endif
+ 
+ bin_PROGRAMS = fzsftp fzputtygen

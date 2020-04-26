@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2020/03/13 12:34:42 bket Exp $
+# $OpenBSD: Makefile,v 1.68 2020/04/26 19:16:07 naddy Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
@@ -69,5 +69,8 @@ AUTOMAKE_VERSION =	1.15
 WRKDIST=	${WRKDIR}/filezilla-$V
 
 FAKE_FLAGS+=	docsdir="${PREFIX}/share/examples/filezilla/"
+
+post-extract:
+	cp ${FILESDIR}/uxutils.c ${WRKSRC}/src/putty/unix/uxutils.c
 
 .include <bsd.port.mk>
