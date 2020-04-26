@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/04/26 00:58:20 kmos Exp $
+
+# colors are off on big endian architectures
+NOT_FOR_ARCHS =	${BE_ARCHS}
 
 V =		20171127
 COMMENT =	Postal 1, the non-stop killing isometric shooter game
@@ -25,7 +28,7 @@ LIB_DEPENDS =	devel/sdl2
 USE_GMAKE =	Yes
 MAKE_FILE =	makefile
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" LINKER="${CXX}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST =	Yes
 
