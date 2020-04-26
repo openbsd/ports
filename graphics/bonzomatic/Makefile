@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/26 21:22:51 kn Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -8,6 +8,7 @@ GH_ACCOUNT =		Gargaj
 GH_PROJECT =		Bonzomatic
 GH_TAGNAME =		2019-03-26
 PKGNAME =		bonzomatic-${GH_TAGNAME:S/-//g}
+REVISION =		0
 
 CATEGORIES =		graphics
 

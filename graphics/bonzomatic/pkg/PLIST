@@ -1,11 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/22 08:55:50 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/04/26 21:22:51 kn Exp $
 @bin bin/bonzomatic
-share/applications/
 share/applications/bonzomatic.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
+share/bonzomatic/
+share/bonzomatic/README.md
 share/icons/hicolor/256x256/apps/bonzomatic.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
