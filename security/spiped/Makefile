@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/04/05 21:26:11 jturner Exp $
+# $OpenBSD: Makefile,v 1.15 2020/04/26 00:29:16 kmos Exp $
 
 COMMENT =		utility for creating secure pipes between socket addresses
 
@@ -12,6 +12,9 @@ MASTER_SITES =		http://www.tarsnap.com/spiped/
 
 # BSD
 PERMIT_PACKAGE =	Yes
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB =		c crypto pthread
 
