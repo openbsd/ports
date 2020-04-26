@@ -1,6 +1,0 @@
-GEGL (Generic Graphics Library) is a graph based image processing framework.
-
-With GEGL you chain together image processing operations represented by nodes
-into a graph. GEGL provides such operations for loading and storing images,
-adjusting colors, filtering in different ways, transforming and compositing
-images.
