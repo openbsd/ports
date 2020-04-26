@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/09/04 12:46:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/04/26 15:21:11 robert Exp $
 @group daemon
 phpldapadmin/
 @comment phpldapadmin/.gitignore
-phpldapadmin/INSTALL
+phpldapadmin/INSTALL.md
 phpldapadmin/LICENSE
 phpldapadmin/VERSION
 phpldapadmin/config/
