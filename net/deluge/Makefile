@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/06 20:00:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/04/26 00:58:39 kn Exp $
 
 COMMENT =	bittorrent client
 
 DISTNAME =		deluge-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.0.3
+REVISION =		0
 
 CATEGORIES =	net
 
@@ -20,21 +21,21 @@ MODULES =		lang/python \
 			textproc/intltool
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
-BUILD_DEPENDS =		devel/py-wheel,python3 \
-			devel/py-xdg,python3 \
+BUILD_DEPENDS =		devel/py-wheel${MODPY_FLAVOR} \
+			devel/py-xdg${MODPY_FLAVOR} \
 			net/libtorrent-rasterbar \
-			textproc/py-chardet,python3
+			textproc/py-chardet${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/py-gobject3,python3 \
-			devel/py-rencode,python3 \
-			devel/py-setproctitle,python3 \
-			devel/py-twisted,python3 \
-			devel/py-xdg,python3 \
-			graphics/py-Pillow,python3 \
+			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-rencode${MODPY_FLAVOR} \
+			devel/py-setproctitle${MODPY_FLAVOR} \
+			devel/py-twisted${MODPY_FLAVOR} \
+			devel/py-xdg${MODPY_FLAVOR} \
+			graphics/py-Pillow${MODPY_FLAVOR} \
 			net/libtorrent-rasterbar \
-			textproc/py-chardet,python3 \
-			www/py-mako,python3 \
-			x11/gtk+3,-guic \
-			x11/py-gtk2
+			textproc/py-chardet${MODPY_FLAVOR} \
+			www/py-mako${MODPY_FLAVOR} \
+			x11/gtk+3 \
+			x11/gtk+3,-guic
 
 .include <bsd.port.mk>
