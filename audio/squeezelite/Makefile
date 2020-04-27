@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/04/27 10:01:05 sthen Exp $
 
 COMMENT=	lightweight headless squeezebox player
 
@@ -7,11 +7,11 @@ GH_ACCOUNT=	ralph-irving
 GH_PROJECT=	squeezelite
 GH_COMMIT=	1cff80e5330501b1f587a474f06db08fd53d9521
 DISTNAME=	squeezelite-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC avcodec avformat avutil c crypto faad m mad mpg123
