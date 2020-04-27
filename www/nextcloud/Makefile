@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2020/04/01 01:15:25 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.52 2020/04/27 11:24:08 landry Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
-V=			18.0.3
+V=			18.0.4
 DISTNAME=		nextcloud-${V}
 EXTRACT_SUFX=		.tar.bz2
 
