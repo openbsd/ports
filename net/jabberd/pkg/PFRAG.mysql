@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.2 2005/09/14 10:41:02 espie Exp $
-@pkgpath net/jabberd
-share/examples/jabberd/db-setup.mysql
-share/examples/jabberd/db-update.mysql
