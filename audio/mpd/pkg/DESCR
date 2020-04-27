@@ -3,9 +3,3 @@ Ogg, FLAC, AAC, Mod and WAV files) and managing playlists. MPD is
 designed for integrating a computer into a stereo system that
 provides control for music playback over a local network.  It also
 makes a great desktop music player and has several frontend options.
-
-Flavors
-
-tremor:	Use the tremor integer-only Vorbis decoder. This disables
-	the use of the FLAC codec within Ogg containers and the
-	network streaming functionality.
