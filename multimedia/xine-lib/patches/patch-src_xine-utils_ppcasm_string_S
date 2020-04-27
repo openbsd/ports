@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_xine-utils_ppcasm_string_S,v 1.1 2020/04/27 20:00:11 cwen Exp $
+
+Index: src/xine-utils/ppcasm_string.S
+--- src/xine-utils/ppcasm_string.S.orig
++++ src/xine-utils/ppcasm_string.S
+@@ -32,7 +32,6 @@
+ #define __stringify(x)          __stringify_1(x)
+ 
+ #define _GLOBFN(n)\
+-        .stabs __stringify(n:F-1),N_FUN,0,0,n;\
+         .type  n,@function; \
+ 	.globl n;\
+ 	.hidden n;\
+@@ -43,8 +42,6 @@ n:
+ 
+ 	.text
+ 
+-       .stabs  "src/xine-utils",N_SO,0,0,.
+-       .stabs  "ppcasm_string.S",N_SO,0,0,.
+ 
+ #warning FIXME:        Get cache line sizes from /proc
+ #define L1_CACHE_LINE_SIZE 32
