@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/09/05 13:37:08 okan Exp $
+@comment $OpenBSD: PLIST,v 1.32 2020/04/27 12:27:49 okan Exp $
 @pkgpath mail/mailman,postfix
 @pkgpath mail/mailman,sendmail
 @pkgpath mail/mailman,smtpd
@@ -2499,6 +2499,7 @@ lib/mailman/tests/bounces/dsn_14.txt
 lib/mailman/tests/bounces/dsn_15.txt
 lib/mailman/tests/bounces/dsn_16.txt
 lib/mailman/tests/bounces/dsn_17.txt
+lib/mailman/tests/bounces/dsn_18.txt
 lib/mailman/tests/bounces/dumbass_01.txt
 lib/mailman/tests/bounces/exim_01.txt
 lib/mailman/tests/bounces/groupwise_01.txt
@@ -2615,6 +2616,10 @@ share/doc/mailman/README.NETSCAPE
 share/doc/mailman/README.USERAGENT
 share/doc/mailman/UPGRADING
 share/doc/pkg-readmes/${PKGSTEM}
+share/examples/mailman/
+share/examples/mailman/sitelist.cfg
+@sample /var/spool/mailman/data/sitelist.cfg
+@extra /var/cron/tabs/_mailman
 @mode 0775
 @owner _mailman
 @group _mailman
@@ -2631,10 +2636,3 @@ share/doc/pkg-readmes/${PKGSTEM}
 @sample /var/spool/mailman/qfiles/
 @sample /var/spool/mailman/spam/
 @unexec find %D/lib/mailman -name paths.pyc -exec rm -f {} \;
-@mode
-@owner
-@group
-share/examples/mailman/
-share/examples/mailman/sitelist.cfg
-@sample /var/spool/mailman/data/sitelist.cfg
-@extra /var/cron/tabs/_mailman

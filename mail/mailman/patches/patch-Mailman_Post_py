@@ -1,9 +1,10 @@
-$OpenBSD: patch-Mailman_Post_py,v 1.1 2008/07/09 19:30:23 wcmaier Exp $
---- Mailman/Post.py.orig	Fri Aug 26 20:40:17 2005
-+++ Mailman/Post.py	Wed Jul  9 13:13:53 2008
+$OpenBSD: patch-Mailman_Post_py,v 1.2 2020/04/27 12:27:49 okan Exp $
+Index: Mailman/Post.py
+--- Mailman/Post.py.orig
++++ Mailman/Post.py
 @@ -1,4 +1,4 @@
 -#! /usr/bin/env python
 +#!${MODPY_BIN}
  #
- # Copyright (C) 2001,2002 by the Free Software Foundation, Inc.
+ # Copyright (C) 2001-2018 by the Free Software Foundation, Inc.
  #

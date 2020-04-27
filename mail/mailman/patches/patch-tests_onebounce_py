@@ -1,9 +1,10 @@
-$OpenBSD: patch-tests_onebounce_py,v 1.2 2015/04/09 15:37:08 okan Exp $
---- tests/onebounce.py.orig	Tue May  6 12:43:56 2014
-+++ tests/onebounce.py	Sun Jan 11 10:33:39 2015
+$OpenBSD: patch-tests_onebounce_py,v 1.3 2020/04/27 12:27:49 okan Exp $
+Index: tests/onebounce.py
+--- tests/onebounce.py.orig
++++ tests/onebounce.py
 @@ -1,4 +1,4 @@
 -#! /usr/bin/env python
 +#!${MODPY_BIN}
  
- # Copyright (C) 2002-2013 by the Free Software Foundation, Inc.
+ # Copyright (C) 2002-2018 by the Free Software Foundation, Inc.
  #
