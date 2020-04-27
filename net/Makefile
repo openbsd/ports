@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1195 2020/04/21 15:52:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1196 2020/04/27 20:23:00 danj Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -176,8 +176,6 @@
      SUBDIR += isc-bind
      SUBDIR += isc-bind,geoip
      SUBDIR += isc-dhcp
-     SUBDIR += jabberd,mysql
-     SUBDIR += jabberd,mysql,ldap
      SUBDIR += jftpgw
      SUBDIR += jnettop
      SUBDIR += kdeconnect-kde
