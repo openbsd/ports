@@ -1,0 +1,25 @@
+$OpenBSD: README,v 1.1 2020/04/28 17:16:21 jca Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+sndiod(8) concurrent access by mpd(1) and other users
+=====================================================
+
+sndiod(8) normally only allows access to audio by a single system user
+at a time. This is done by generating a random authentication token and
+storing it in $HOME/.sndio/cookie when a user first accesses audio,
+providing a limited capability to share with other users by copying
+the token to their home directory.  See AUTHENTICATION in sndio(7) for
+more details.
+
+If you want to share sndiod(8) access with mpd(1) running as the
+default _mpd user, you may copy .sndio/cookie from your user's home
+directory to /var/spool/mpd/.sndio/cookie.
+
+If you previously had mpd installed on your system, make sure the home
+directory of the _mpd user is actually /var/spool/mpd, or reset it
+with:
+
+# usermod -d /var/spool/mpd _mpd

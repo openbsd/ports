@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/08/15 05:44:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/04/28 17:16:21 jca Exp $
 @pkgpath audio/mpd,tremor
 @newgroup _mpd:560
-@newuser _mpd:560:560:daemon:Music Player Daemon:/var/empty:/sbin/nologin
+@newuser _mpd:560:560:daemon:Music Player Daemon:/var/spool/mpd:/sbin/nologin
 @extraunexec rm -rf /var/log/mpd/*
 @extraunexec find /var/spool/mpd \! -name playlists -mindepth 1 -exec rm -rf "{}" \;
 @rcscript ${RCDIR}/mpd
@@ -13,10 +13,11 @@ share/doc/mpd/AUTHORS
 share/doc/mpd/COPYING
 share/doc/mpd/NEWS
 share/doc/mpd/README.md
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/mpd/
 share/examples/mpd/mpd.conf
 @sample ${SYSCONFDIR}/mpd.conf
-@mode 770
+@mode 750
 @owner _mpd
 @group _mpd
 @sample /var/log/mpd/
