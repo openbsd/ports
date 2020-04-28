@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST-db,v 1.1 2016/03/01 00:06:57 sthen Exp $
-@conflict GeoIP-<1.6.5p3
-share/examples/GeoIP/
-@sample ${LOCALSTATEDIR}/db/GeoIP/
-share/examples/GeoIP/GeoIP.dat
-@sample ${LOCALSTATEDIR}/db/GeoIP/GeoIP.dat
-share/examples/GeoIP/GeoIPv6.dat
-@sample ${LOCALSTATEDIR}/db/GeoIP/GeoIPv6.dat
-share/examples/GeoIP/readme.txt

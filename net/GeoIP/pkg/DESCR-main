@@ -1,7 +1,0 @@
-GeoIP includes a C library and command-line tools to look up information in
-MaxMind's IP geolocation databases.
-
-Free-of-charge city and AS number databases and updated country databases are
-available from http://dev.maxmind.com/geoip/legacy/geolite/ (and packaged in
-the geolite-* packages), commercial databases and automatic update services
-from http://www.maxmind.com/.

@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-city,v 1.3 2017/04/16 14:17:16 sthen Exp $
-@sample ${LOCALSTATEDIR}/db/GeoIP/
-share/examples/GeoIP/
-share/examples/GeoIP/GeoLiteCity.dat
-@sample ${LOCALSTATEDIR}/db/GeoIP/GeoIPCity.dat
-share/examples/GeoIP/GeoLiteCityv6.dat
-@sample ${LOCALSTATEDIR}/db/GeoIP/GeoIPCityv6.dat

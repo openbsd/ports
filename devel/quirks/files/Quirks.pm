@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.949 2020/04/27 19:52:14 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.950 2020/04/28 12:47:33 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1555,6 +1555,7 @@ my $obsolete_reason = {
 	'py-iniparse' => 5,
 	'qtdeclarative-xmllistmodel' => 3,
 	'jabberd' => 3,
+	'GeoIP' => 22,
 };
 
 # reasons for obsolete packages
@@ -1581,6 +1582,7 @@ my @msg = (
 	"no longer maintained upstream, suggest sqlitebrowser, kexi", #19
 	"merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now", #20
 	"upstream recommends to use composer to build a drupal site", #21
+	"the original GeoIP database is end of life; use libmaxminddb/GeoIP2", #22
 );
 
 # ->is_base_system($handle, $state):

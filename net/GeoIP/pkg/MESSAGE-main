@@ -1,8 +1,0 @@
-
-The free databases used by this software are no longer updated and are
-increasingly inaccurate. The commercial databases compatible with this are 
-no longer available to new customers.
-
-Switch to libmaxminddb to continue using free databases (geolite2),
-see https://blog.maxmind.com/tag/geolite-legacy/
-

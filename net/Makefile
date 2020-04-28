@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.1196 2020/04/27 20:23:00 danj Exp $
+# $OpenBSD: Makefile,v 1.1197 2020/04/28 12:47:33 sthen Exp $
 
      SUBDIR =
-     SUBDIR += GeoIP
      SUBDIR += adns
      SUBDIR += adsuck
      SUBDIR += aggregate
