@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2020/04/23 14:39:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.47 2020/04/28 12:02:52 sthen Exp $
 
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=		spice-gtk-0.38
+REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		x11 net
@@ -40,8 +41,10 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 
 RUN_DEPENDS=		sysutils/usbutils
 
-# "Requires: spice-protocol" in spice-client-glib-2.0.pc
-RUN_DEPENDS +=		devel/spice-protocol		
+# "Requires: spice-protocol" in spice-client-glib-2.0.pc,
+# "Requires.private: gobject-introspection-1.0" in spice-client-gtk-3.0.pc.
+RUN_DEPENDS +=		devel/gobject-introspection \
+			devel/spice-protocol
 
 LIB_DEPENDS=		archivers/lz4 \
 			audio/opus \
