@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_config_json,v 1.4 2020/04/23 06:23:53 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_config_json,v 1.5 2020/04/28 08:07:42 ajacoutot Exp $
 
 Index: lib/googlecloudsdk/core/config.json
 --- lib/googlecloudsdk/core/config.json.orig
@@ -11,10 +11,3 @@ Index: lib/googlecloudsdk/core/config.json
    "disable_usage_reporting": false,
    "documentation_url": "https://cloud.google.com/sdk/",
    "release_channel": "rapid",
-@@ -10,4 +10,4 @@
-   "snapshot_url": "https://dl.google.com/dl/cloudsdk/channels/rapid/components-2.json",
-   "user_agent": "google-cloud-sdk",
-   "version": "290.0.0"
--}
-\ No newline at end of file
-+}
