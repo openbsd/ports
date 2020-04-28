@@ -1,0 +1,3 @@
+To use the cpplint.py script, install the required Python version:
+
+	# pkg_add python%${MODPY_VERSION}
