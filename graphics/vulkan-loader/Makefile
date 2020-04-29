@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/27 15:47:35 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2020/04/29 04:11:29 jsg Exp $
 
 COMMENT =	Vulkan ICD loader
 
@@ -38,5 +38,7 @@ NO_TEST =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+	cp ${WRKSRC}/loader/unknown_ext_chain_gas.asm \
+	    ${WRKSRC}/loader/unknown_ext_chain_gas.S
 
 .include <bsd.port.mk>
