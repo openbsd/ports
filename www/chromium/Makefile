@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.509 2020/04/29 11:24:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.510 2020/04/29 13:27:02 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -15,7 +15,7 @@ COMMENT=		Chromium browser
 V=			81.0.4044.129
 
 DISTNAME=		chromium-${V}
-REVISION=		1
+REVISION=		2
 
 DISTFILES+=		chromium-${V}${EXTRACT_SUFX}
 
