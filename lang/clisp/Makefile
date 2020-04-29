@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2020/04/06 01:25:18 jca Exp $
+# $OpenBSD: Makefile,v 1.54 2020/04/29 19:04:02 gkoehler Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		ANSI Common Lisp implementation
 
 DISTNAME=		clisp-2.49
-REVISION =		4
+REVISION =		5
 CATEGORIES=		lang
 HOMEPAGE=		http://clisp.cons.org/
 
@@ -36,9 +36,17 @@ CONFIGURE_ARGS=		--fsstnd=openbsd \
 			--srcdir=${WRKSRC} ${WRKBUILD} \
 			--without-dynamic-modules
 
+# Override some mmap, shm tests: their fixed addresses may conflict
+# with ASLR, and a random 'no' might break the build.
 CONFIGURE_ENV =		ac_cv_prog_DVIPDF='' \
 			ac_cv_prog_GROFF='' \
-			ac_cv_prog_PS2PDF=''
+			ac_cv_prog_PS2PDF='' \
+			cl_cv_func_mmap_anon=yes \
+			cl_cv_func_mmap_anonymous=yes \
+			cl_cv_func_mmap_devzero=yes \
+			cl_cv_func_mmap_works=yes \
+			cl_cv_func_shmctl_attachable=yes \
+			cl_cv_sys_shm_works=yes
 
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS +=		-DSAFETY=2 -DNO_ASM
