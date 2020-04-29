@@ -1,0 +1,33 @@
+Chromium uses several mitigations on OpenBSD:
+
+- each category of process uses pledge(2) to limit system call access
+- each category of process uses unveil(2) to limit filesystem access.
+
+Occasionally, some extensions may violate some pledge(2) specifications.
+This will appear in syslog's /var/log/messages as
+
+    chromium[<pid>]: pledge "<name>", syscall <n.
+
+along with the more obvious
+"Oops"  in chromium tabs.
+
+Disabling pledge() or unveil() is not recommended!
+
+THE FOLLOWING INFORMATION FOR DEBUG PURPOSES ONLY
+
+- global pledge knob: invoke chromium with --no-sandbox
+- specific pledge for specific processes: 
+/etc/chromium/pledge.*
+
+- global unveil knob: invoke chromium with --no-unveil
+- specific unveil for specific processes:
+/etc/chromium/unveil.*
+
+webgl and 3d and acceleration support:
+- some DRM supported cards are marked as unsupported by chromium
+Using --ignore-gpu-blacklist may allow you to test
+
+Interoperability with base window managers:
+- some window managers do not have compositing support; for instance, fvwm.
+In order to have decent graphic rendering, they should be supplemented by
+a compositing manager. For instance, xcompmgr in base.
