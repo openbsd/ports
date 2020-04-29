@@ -1,14 +1,14 @@
-$OpenBSD: patch-LibreNMS_Config_php,v 1.6 2020/02/06 22:42:29 sthen Exp $
+$OpenBSD: patch-LibreNMS_Config_php,v 1.7 2020/04/29 17:23:52 sthen Exp $
 
 openbsd (and netbsd) whereis don't support -b
 
 Index: LibreNMS/Config.php
 --- LibreNMS/Config.php.orig
 +++ LibreNMS/Config.php
-@@ -535,7 +535,7 @@ class Config
+@@ -536,7 +536,7 @@ class Config
      public static function locateBinary($binary)
      {
-         if (!str_contains($binary, '/')) {
+         if (!Str::contains($binary, '/')) {
 -            $output = `whereis -b $binary`;
 +            $output = `whereis $binary`;
              $list = trim(substr($output, strpos($output, ':') + 1));
