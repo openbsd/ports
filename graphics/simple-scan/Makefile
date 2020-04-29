@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2020/02/16 07:59:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2020/04/29 05:13:46 ajacoutot Exp $
 
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
-GNOME_VERSION=		3.34.4
+GNOME_VERSION=		3.34.6
 
 CATEGORIES=		graphics
 
