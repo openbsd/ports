@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.950 2020/04/28 12:47:33 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.951 2020/04/29 15:25:45 schwarze Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1556,6 +1556,7 @@ my $obsolete_reason = {
 	'qtdeclarative-xmllistmodel' => 3,
 	'jabberd' => 3,
 	'GeoIP' => 22,
+	'akpop3d' => 2,
 };
 
 # reasons for obsolete packages

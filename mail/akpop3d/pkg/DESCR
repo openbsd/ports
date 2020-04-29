@@ -1,6 +1,0 @@
-akpop3d is a POP3 daemon aimed to be small and secure.  It is
-stand-alone, very small, easy to modify.  Despite its small size, it
-offers a lot of features.  It is completely RFC 1939 compliant.  It
-features POP3-over-SSL (based on OpenSSL), and can use a separate
-authfile (enabling authentication of virtual users who do not have an
-entry in /etc/passwd).

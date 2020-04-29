@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/22 20:03:43 giovanni Exp $
-@newgroup _akpop3d:555
-@man man/man8/akpop3d.8
-@bin sbin/akpop3d

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.391 2020/04/22 06:35:08 landry Exp $
+# $OpenBSD: Makefile,v 1.392 2020/04/29 15:25:45 schwarze Exp $
 
      SUBDIR =
      SUBDIR += abook
      SUBDIR += adcomplain
-     SUBDIR += akpop3d
      SUBDIR += alpine
      SUBDIR += altermime
      SUBDIR += amavisd-new
