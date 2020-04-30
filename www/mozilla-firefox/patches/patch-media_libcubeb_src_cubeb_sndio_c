@@ -1,4 +1,6 @@
-$OpenBSD: patch-media_libcubeb_src_cubeb_sndio_c,v 1.9 2020/04/30 12:54:28 ratchov Exp $
+$OpenBSD: patch-media_libcubeb_src_cubeb_sndio_c,v 1.10 2020/04/30 14:08:36 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1633769
 
 Index: media/libcubeb/src/cubeb_sndio.c
 --- media/libcubeb/src/cubeb_sndio.c.orig
