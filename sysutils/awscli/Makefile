@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.450 2020/04/29 05:50:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.451 2020/04/30 06:51:55 ajacoutot Exp $
 
 COMMENT=		universal command line environment for AWS
 
-MODPY_EGG_VERSION=	1.18.48
+MODPY_EGG_VERSION=	1.18.49
 DISTNAME=		awscli-${MODPY_EGG_VERSION}
 
 CATEGORIES=		sysutils
