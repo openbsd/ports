@@ -1,0 +1,14 @@
+$OpenBSD: patch-media_libcubeb_src_cubeb_sndio_c,v 1.9 2020/04/30 12:54:28 ratchov Exp $
+
+Index: media/libcubeb/src/cubeb_sndio.c
+--- media/libcubeb/src/cubeb_sndio.c.orig
++++ media/libcubeb/src/cubeb_sndio.c
+@@ -626,7 +626,7 @@ sndio_enumerate_devices(cubeb *context, cubeb_device_t
+   device->preferred = CUBEB_DEVICE_PREF_ALL;
+   device->format = CUBEB_DEVICE_FMT_S16NE;
+   device->default_format = CUBEB_DEVICE_FMT_S16NE;
+-  device->max_channels = 16;
++  device->max_channels = (type == CUBEB_DEVICE_TYPE_INPUT) ? 2 : 8;
+   device->default_rate = 48000;
+   device->min_rate = 4000;
+   device->max_rate = 192000;
