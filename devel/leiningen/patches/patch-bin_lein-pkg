@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_lein-pkg,v 1.1.1.1 2019/11/29 01:07:49 kn Exp $
+$OpenBSD: patch-bin_lein-pkg,v 1.2 2020/04/30 23:19:51 kn Exp $
 
 - fix shebang
 - set path to standalone jar
@@ -28,7 +28,7 @@ Index: bin/lein-pkg
  # and add them individually to the classpath/bootclasspath as well.
  
 -LEIN_JAR=/usr/share/java/leiningen-$LEIN_VERSION-standalone.jar
-+LEIN_JAR=${LEIN_DIR}/${JAR_FILE}
++LEIN_JAR=${TRUEPREFIX}/share/leiningen/${JAR_FILE}
  
  # Do not use installed leiningen jar during self-compilation
  if ! { [ "$1" = "compile" ] &&

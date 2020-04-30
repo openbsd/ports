@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/29 01:29:15 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2020/04/30 23:19:51 kn Exp $
 
 COMMENT =		Clojure project automation
 
 GH_ACCOUNT =		technomancy
 GH_PROJECT =		leiningen
 GH_TAGNAME =		2.9.1
+REVISION =		0
 
 JAR_FILE =		${DISTNAME}-standalone.zip
 
@@ -36,8 +37,7 @@ BASH_DIR =		${PREFIX}/share/bash_completion.d
 ZSH_DIR =		${PREFIX}/share/zsh/site-functions
 
 SUBST_VARS +=		JAR_FILE \
-			JAVA_HOME \
-			LEIN_DIR
+			JAVA_HOME
 
 do-install:
 	${SUBST_PROGRAM} ${LEIN} ${PREFIX}/bin/lein
