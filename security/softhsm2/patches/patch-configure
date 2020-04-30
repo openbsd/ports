@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2018/11/14 22:23:07 pvk Exp $
+$OpenBSD: patch-configure,v 1.2 2020/04/30 18:18:27 pvk Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -8495,7 +8495,7 @@ full_sysconfdir=`eval eval eval eval eval echo "${sysc
+@@ -7884,7 +7884,7 @@ full_sysconfdir=`eval eval eval eval eval echo "${sysc
  full_localstatedir=`eval eval eval eval eval echo "${localstatedir}" | sed "s#NONE#${prefix}#" | sed "s#NONE#${ac_default_prefix}#"`
  full_libdir=`eval eval eval eval eval echo "${libdir}" | sed "s#NONE#${prefix}#" | sed "s#NONE#${ac_default_prefix}#"`
  default_softhsm2_conf="`eval echo ${full_sysconfdir} | sed s,NONE,$ac_default_prefix,g`/softhsm2.conf"

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/30 18:18:27 pvk Exp $
 
 COMMENT =	software PKCS\#11 cryptographic token
 
-DISTNAME =	softhsm-2.5.0
+DISTNAME =	softhsm-2.6.1
 PKGNAME =	${DISTNAME:S/-/2-/}
 
 CATEGORIES =	security
