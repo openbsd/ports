@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/07 13:58:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/04/30 21:05:03 cwen Exp $
+
+BROKEN-powerpc =	kicad is broken, this is the only consumer (save bulk time)
 
 COMMENT =	C++ 3d modeling library
 DPB_PROPERTIES = parallel

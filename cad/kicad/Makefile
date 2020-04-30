@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.40 2020/04/02 14:48:26 tracey Exp $
+# $OpenBSD: Makefile,v 1.41 2020/04/30 21:05:03 cwen Exp $
+
+BROKEN-powerpc =	segfaults when trying to run the PCB editor
 
 V =			5.1.5
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		kicad_3dsg                0.0 # 2.0
 
 CATEGORIES =		cad
 
-HOMEPAGE =		http://www.kicad-pcb.org
+HOMEPAGE =		https://www.kicad-pcb.org
 
 #GPLv3
 PERMIT_PACKAGE =	Yes
