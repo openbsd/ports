@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/09/30 11:44:18 kili Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/04/30 23:16:59 kn Exp $
 @conflict hs-xhtml-*
 @conflict hs-deepseq-<=1.1.0.2p0
 @conflict hs-binary-*
@@ -738,9 +738,9 @@ lib/ghc/Cabal-${CABAL_VER}/Language/Haskell/Extension.p_hi
 lib/ghc/Cabal-${CABAL_VER}/Paths_Cabal.dyn_hi
 lib/ghc/Cabal-${CABAL_VER}/Paths_Cabal.hi
 lib/ghc/Cabal-${CABAL_VER}/Paths_Cabal.p_hi
-lib/ghc/Cabal-${CABAL_VER}/libHSCabal-${CABAL_VER}-ghc${GHC_VER}.so
-lib/ghc/Cabal-${CABAL_VER}/libHSCabal-${CABAL_VER}.a
-lib/ghc/Cabal-${CABAL_VER}/libHSCabal-${CABAL_VER}_p.a
+@so lib/ghc/Cabal-${CABAL_VER}/libHSCabal-${CABAL_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/Cabal-${CABAL_VER}/libHSCabal-${CABAL_VER}.a
+@static-lib lib/ghc/Cabal-${CABAL_VER}/libHSCabal-${CABAL_VER}_p.a
 lib/ghc/array-${ARRAY_VER}/
 lib/ghc/array-${ARRAY_VER}/Data/
 lib/ghc/array-${ARRAY_VER}/Data/Array/
@@ -794,9 +794,9 @@ lib/ghc/array-${ARRAY_VER}/Data/Array/Unsafe.dyn_hi
 lib/ghc/array-${ARRAY_VER}/Data/Array/Unsafe.hi
 lib/ghc/array-${ARRAY_VER}/Data/Array/Unsafe.p_hi
 lib/ghc/array-${ARRAY_VER}/HSarray-${ARRAY_VER}.o
-lib/ghc/array-${ARRAY_VER}/libHSarray-${ARRAY_VER}-ghc${GHC_VER}.so
-lib/ghc/array-${ARRAY_VER}/libHSarray-${ARRAY_VER}.a
-lib/ghc/array-${ARRAY_VER}/libHSarray-${ARRAY_VER}_p.a
+@so lib/ghc/array-${ARRAY_VER}/libHSarray-${ARRAY_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/array-${ARRAY_VER}/libHSarray-${ARRAY_VER}.a
+@static-lib lib/ghc/array-${ARRAY_VER}/libHSarray-${ARRAY_VER}_p.a
 lib/ghc/base-${BASE_VER}/
 lib/ghc/base-${BASE_VER}/Control/
 lib/ghc/base-${BASE_VER}/Control/Applicative.dyn_hi
@@ -1564,9 +1564,9 @@ lib/ghc/base-${BASE_VER}/include/HsBase.h
 lib/ghc/base-${BASE_VER}/include/HsBaseConfig.h
 lib/ghc/base-${BASE_VER}/include/WCsubst.h
 lib/ghc/base-${BASE_VER}/include/consUtils.h
-lib/ghc/base-${BASE_VER}/libHSbase-${BASE_VER}-ghc${GHC_VER}.so
-lib/ghc/base-${BASE_VER}/libHSbase-${BASE_VER}.a
-lib/ghc/base-${BASE_VER}/libHSbase-${BASE_VER}_p.a
+@so lib/ghc/base-${BASE_VER}/libHSbase-${BASE_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/base-${BASE_VER}/libHSbase-${BASE_VER}.a
+@static-lib lib/ghc/base-${BASE_VER}/libHSbase-${BASE_VER}_p.a
 lib/ghc/bin/
 @bin lib/ghc/bin/ghc
 @bin lib/ghc/bin/ghc-iserv
@@ -1612,9 +1612,9 @@ lib/ghc/binary-${BINARY_VER}/Data/Binary/Put.dyn_hi
 lib/ghc/binary-${BINARY_VER}/Data/Binary/Put.hi
 lib/ghc/binary-${BINARY_VER}/Data/Binary/Put.p_hi
 lib/ghc/binary-${BINARY_VER}/HSbinary-${BINARY_VER}.o
-lib/ghc/binary-${BINARY_VER}/libHSbinary-${BINARY_VER}-ghc${GHC_VER}.so
-lib/ghc/binary-${BINARY_VER}/libHSbinary-${BINARY_VER}.a
-lib/ghc/binary-${BINARY_VER}/libHSbinary-${BINARY_VER}_p.a
+@so lib/ghc/binary-${BINARY_VER}/libHSbinary-${BINARY_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/binary-${BINARY_VER}/libHSbinary-${BINARY_VER}.a
+@static-lib lib/ghc/binary-${BINARY_VER}/libHSbinary-${BINARY_VER}_p.a
 lib/ghc/bytestring-${BYTESTRING_VER}/
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/
 lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/
@@ -1696,9 +1696,9 @@ lib/ghc/bytestring-${BYTESTRING_VER}/Data/ByteString/Unsafe.p_hi
 lib/ghc/bytestring-${BYTESTRING_VER}/HSbytestring-${BYTESTRING_VER}.o
 lib/ghc/bytestring-${BYTESTRING_VER}/include/
 lib/ghc/bytestring-${BYTESTRING_VER}/include/fpstring.h
-lib/ghc/bytestring-${BYTESTRING_VER}/libHSbytestring-${BYTESTRING_VER}-ghc${GHC_VER}.so
-lib/ghc/bytestring-${BYTESTRING_VER}/libHSbytestring-${BYTESTRING_VER}.a
-lib/ghc/bytestring-${BYTESTRING_VER}/libHSbytestring-${BYTESTRING_VER}_p.a
+@so lib/ghc/bytestring-${BYTESTRING_VER}/libHSbytestring-${BYTESTRING_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/bytestring-${BYTESTRING_VER}/libHSbytestring-${BYTESTRING_VER}.a
+@static-lib lib/ghc/bytestring-${BYTESTRING_VER}/libHSbytestring-${BYTESTRING_VER}_p.a
 lib/ghc/containers-${CONTAINERS_VER}/
 lib/ghc/containers-${CONTAINERS_VER}/Data/
 lib/ghc/containers-${CONTAINERS_VER}/Data/Containers/
@@ -1822,9 +1822,9 @@ lib/ghc/containers-${CONTAINERS_VER}/Utils/Containers/Internal/StrictPair.p_hi
 lib/ghc/containers-${CONTAINERS_VER}/Utils/Containers/Internal/TypeError.dyn_hi
 lib/ghc/containers-${CONTAINERS_VER}/Utils/Containers/Internal/TypeError.hi
 lib/ghc/containers-${CONTAINERS_VER}/Utils/Containers/Internal/TypeError.p_hi
-lib/ghc/containers-${CONTAINERS_VER}/libHScontainers-${CONTAINERS_VER}-ghc${GHC_VER}.so
-lib/ghc/containers-${CONTAINERS_VER}/libHScontainers-${CONTAINERS_VER}.a
-lib/ghc/containers-${CONTAINERS_VER}/libHScontainers-${CONTAINERS_VER}_p.a
+@so lib/ghc/containers-${CONTAINERS_VER}/libHScontainers-${CONTAINERS_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/containers-${CONTAINERS_VER}/libHScontainers-${CONTAINERS_VER}.a
+@static-lib lib/ghc/containers-${CONTAINERS_VER}/libHScontainers-${CONTAINERS_VER}_p.a
 lib/ghc/deepseq-${DEEPSEQ_VER}/
 lib/ghc/deepseq-${DEEPSEQ_VER}/Control/
 lib/ghc/deepseq-${DEEPSEQ_VER}/Control/DeepSeq/
@@ -1835,9 +1835,9 @@ lib/ghc/deepseq-${DEEPSEQ_VER}/Control/DeepSeq/BackDoor.dyn_hi
 lib/ghc/deepseq-${DEEPSEQ_VER}/Control/DeepSeq/BackDoor.hi
 lib/ghc/deepseq-${DEEPSEQ_VER}/Control/DeepSeq/BackDoor.p_hi
 lib/ghc/deepseq-${DEEPSEQ_VER}/HSdeepseq-${DEEPSEQ_VER}.o
-lib/ghc/deepseq-${DEEPSEQ_VER}/libHSdeepseq-${DEEPSEQ_VER}-ghc${GHC_VER}.so
-lib/ghc/deepseq-${DEEPSEQ_VER}/libHSdeepseq-${DEEPSEQ_VER}.a
-lib/ghc/deepseq-${DEEPSEQ_VER}/libHSdeepseq-${DEEPSEQ_VER}_p.a
+@so lib/ghc/deepseq-${DEEPSEQ_VER}/libHSdeepseq-${DEEPSEQ_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/deepseq-${DEEPSEQ_VER}/libHSdeepseq-${DEEPSEQ_VER}.a
+@static-lib lib/ghc/deepseq-${DEEPSEQ_VER}/libHSdeepseq-${DEEPSEQ_VER}_p.a
 lib/ghc/directory-${DIRECTORY_VER}/
 lib/ghc/directory-${DIRECTORY_VER}/HSdirectory-${DIRECTORY_VER}.o
 lib/ghc/directory-${DIRECTORY_VER}/System/
@@ -1867,9 +1867,9 @@ lib/ghc/directory-${DIRECTORY_VER}/System/Directory/Internal/Prelude.p_hi
 lib/ghc/directory-${DIRECTORY_VER}/System/Directory/Internal/Windows.dyn_hi
 lib/ghc/directory-${DIRECTORY_VER}/System/Directory/Internal/Windows.hi
 lib/ghc/directory-${DIRECTORY_VER}/System/Directory/Internal/Windows.p_hi
-lib/ghc/directory-${DIRECTORY_VER}/libHSdirectory-${DIRECTORY_VER}-ghc${GHC_VER}.so
-lib/ghc/directory-${DIRECTORY_VER}/libHSdirectory-${DIRECTORY_VER}.a
-lib/ghc/directory-${DIRECTORY_VER}/libHSdirectory-${DIRECTORY_VER}_p.a
+@so lib/ghc/directory-${DIRECTORY_VER}/libHSdirectory-${DIRECTORY_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/directory-${DIRECTORY_VER}/libHSdirectory-${DIRECTORY_VER}.a
+@static-lib lib/ghc/directory-${DIRECTORY_VER}/libHSdirectory-${DIRECTORY_VER}_p.a
 lib/ghc/filepath-${FILEPATH_VER}/
 lib/ghc/filepath-${FILEPATH_VER}/HSfilepath-${FILEPATH_VER}.o
 lib/ghc/filepath-${FILEPATH_VER}/System/
@@ -1883,9 +1883,9 @@ lib/ghc/filepath-${FILEPATH_VER}/System/FilePath/Posix.p_hi
 lib/ghc/filepath-${FILEPATH_VER}/System/FilePath/Windows.dyn_hi
 lib/ghc/filepath-${FILEPATH_VER}/System/FilePath/Windows.hi
 lib/ghc/filepath-${FILEPATH_VER}/System/FilePath/Windows.p_hi
-lib/ghc/filepath-${FILEPATH_VER}/libHSfilepath-${FILEPATH_VER}-ghc${GHC_VER}.so
-lib/ghc/filepath-${FILEPATH_VER}/libHSfilepath-${FILEPATH_VER}.a
-lib/ghc/filepath-${FILEPATH_VER}/libHSfilepath-${FILEPATH_VER}_p.a
+@so lib/ghc/filepath-${FILEPATH_VER}/libHSfilepath-${FILEPATH_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/filepath-${FILEPATH_VER}/libHSfilepath-${FILEPATH_VER}.a
+@static-lib lib/ghc/filepath-${FILEPATH_VER}/libHSfilepath-${FILEPATH_VER}_p.a
 lib/ghc/ghc-${GHC_VER}/
 lib/ghc/ghc-${GHC_VER}/Annotations.dyn_hi
 lib/ghc/ghc-${GHC_VER}/Annotations.hi
@@ -3243,9 +3243,9 @@ lib/ghc/ghc-${GHC_VER}/X86/Regs.p_hi
 lib/ghc/ghc-${GHC_VER}/include/
 lib/ghc/ghc-${GHC_VER}/include/HsVersions.h
 lib/ghc/ghc-${GHC_VER}/include/ghc_boot_platform.h
-lib/ghc/ghc-${GHC_VER}/libHSghc-${GHC_VER}-ghc${GHC_VER}.so
-lib/ghc/ghc-${GHC_VER}/libHSghc-${GHC_VER}.a
-lib/ghc/ghc-${GHC_VER}/libHSghc-${GHC_VER}_p.a
+@so lib/ghc/ghc-${GHC_VER}/libHSghc-${GHC_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/ghc-${GHC_VER}/libHSghc-${GHC_VER}.a
+@static-lib lib/ghc/ghc-${GHC_VER}/libHSghc-${GHC_VER}_p.a
 lib/ghc/ghc-boot-${GHC_VER}/
 lib/ghc/ghc-boot-${GHC_VER}/GHC/
 lib/ghc/ghc-boot-${GHC_VER}/GHC/ForeignSrcLang.dyn_hi
@@ -3264,9 +3264,9 @@ lib/ghc/ghc-boot-${GHC_VER}/GHC/Serialized.dyn_hi
 lib/ghc/ghc-boot-${GHC_VER}/GHC/Serialized.hi
 lib/ghc/ghc-boot-${GHC_VER}/GHC/Serialized.p_hi
 lib/ghc/ghc-boot-${GHC_VER}/HSghc-boot-${GHC_VER}.o
-lib/ghc/ghc-boot-${GHC_VER}/libHSghc-boot-${GHC_VER}-ghc${GHC_VER}.so
-lib/ghc/ghc-boot-${GHC_VER}/libHSghc-boot-${GHC_VER}.a
-lib/ghc/ghc-boot-${GHC_VER}/libHSghc-boot-${GHC_VER}_p.a
+@so lib/ghc/ghc-boot-${GHC_VER}/libHSghc-boot-${GHC_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/ghc-boot-${GHC_VER}/libHSghc-boot-${GHC_VER}.a
+@static-lib lib/ghc/ghc-boot-${GHC_VER}/libHSghc-boot-${GHC_VER}_p.a
 lib/ghc/ghc-boot-th-${GHC_VER}/
 lib/ghc/ghc-boot-th-${GHC_VER}/GHC/
 lib/ghc/ghc-boot-th-${GHC_VER}/GHC/ForeignSrcLang/
@@ -3281,9 +3281,9 @@ lib/ghc/ghc-boot-th-${GHC_VER}/GHC/Lexeme.dyn_hi
 lib/ghc/ghc-boot-th-${GHC_VER}/GHC/Lexeme.hi
 lib/ghc/ghc-boot-th-${GHC_VER}/GHC/Lexeme.p_hi
 lib/ghc/ghc-boot-th-${GHC_VER}/HSghc-boot-th-${GHC_VER}.o
-lib/ghc/ghc-boot-th-${GHC_VER}/libHSghc-boot-th-${GHC_VER}-ghc${GHC_VER}.so
-lib/ghc/ghc-boot-th-${GHC_VER}/libHSghc-boot-th-${GHC_VER}.a
-lib/ghc/ghc-boot-th-${GHC_VER}/libHSghc-boot-th-${GHC_VER}_p.a
+@so lib/ghc/ghc-boot-th-${GHC_VER}/libHSghc-boot-th-${GHC_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/ghc-boot-th-${GHC_VER}/libHSghc-boot-th-${GHC_VER}.a
+@static-lib lib/ghc/ghc-boot-th-${GHC_VER}/libHSghc-boot-th-${GHC_VER}_p.a
 lib/ghc/ghc-compact-${GHC_COMPACT_VER}/
 lib/ghc/ghc-compact-${GHC_COMPACT_VER}/GHC/
 lib/ghc/ghc-compact-${GHC_COMPACT_VER}/GHC/Compact/
@@ -3294,9 +3294,9 @@ lib/ghc/ghc-compact-${GHC_COMPACT_VER}/GHC/Compact/Serialized.dyn_hi
 lib/ghc/ghc-compact-${GHC_COMPACT_VER}/GHC/Compact/Serialized.hi
 lib/ghc/ghc-compact-${GHC_COMPACT_VER}/GHC/Compact/Serialized.p_hi
 lib/ghc/ghc-compact-${GHC_COMPACT_VER}/HSghc-compact-${GHC_COMPACT_VER}.o
-lib/ghc/ghc-compact-${GHC_COMPACT_VER}/libHSghc-compact-${GHC_COMPACT_VER}-ghc${GHC_VER}.so
-lib/ghc/ghc-compact-${GHC_COMPACT_VER}/libHSghc-compact-${GHC_COMPACT_VER}.a
-lib/ghc/ghc-compact-${GHC_COMPACT_VER}/libHSghc-compact-${GHC_COMPACT_VER}_p.a
+@so lib/ghc/ghc-compact-${GHC_COMPACT_VER}/libHSghc-compact-${GHC_COMPACT_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/ghc-compact-${GHC_COMPACT_VER}/libHSghc-compact-${GHC_COMPACT_VER}.a
+@static-lib lib/ghc/ghc-compact-${GHC_COMPACT_VER}/libHSghc-compact-${GHC_COMPACT_VER}_p.a
 lib/ghc/ghc-heap-${GHC_VER}/
 lib/ghc/ghc-heap-${GHC_VER}/GHC/
 lib/ghc/ghc-heap-${GHC_VER}/GHC/Exts/
@@ -3327,9 +3327,9 @@ lib/ghc/ghc-heap-${GHC_VER}/GHC/Exts/Heap/Utils.dyn_hi
 lib/ghc/ghc-heap-${GHC_VER}/GHC/Exts/Heap/Utils.hi
 lib/ghc/ghc-heap-${GHC_VER}/GHC/Exts/Heap/Utils.p_hi
 lib/ghc/ghc-heap-${GHC_VER}/HSghc-heap-${GHC_VER}.o
-lib/ghc/ghc-heap-${GHC_VER}/libHSghc-heap-${GHC_VER}-ghc${GHC_VER}.so
-lib/ghc/ghc-heap-${GHC_VER}/libHSghc-heap-${GHC_VER}.a
-lib/ghc/ghc-heap-${GHC_VER}/libHSghc-heap-${GHC_VER}_p.a
+@so lib/ghc/ghc-heap-${GHC_VER}/libHSghc-heap-${GHC_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/ghc-heap-${GHC_VER}/libHSghc-heap-${GHC_VER}.a
+@static-lib lib/ghc/ghc-heap-${GHC_VER}/libHSghc-heap-${GHC_VER}_p.a
 lib/ghc/ghc-prim-${GHC_PRIM_VER}/
 lib/ghc/ghc-prim-${GHC_PRIM_VER}/GHC/
 lib/ghc/ghc-prim-${GHC_PRIM_VER}/GHC/CString.dyn_hi
@@ -3357,9 +3357,9 @@ lib/ghc/ghc-prim-${GHC_PRIM_VER}/GHC/Types.dyn_hi
 lib/ghc/ghc-prim-${GHC_PRIM_VER}/GHC/Types.hi
 lib/ghc/ghc-prim-${GHC_PRIM_VER}/GHC/Types.p_hi
 lib/ghc/ghc-prim-${GHC_PRIM_VER}/HSghc-prim-${GHC_PRIM_VER}.o
-lib/ghc/ghc-prim-${GHC_PRIM_VER}/libHSghc-prim-${GHC_PRIM_VER}-ghc${GHC_VER}.so
-lib/ghc/ghc-prim-${GHC_PRIM_VER}/libHSghc-prim-${GHC_PRIM_VER}.a
-lib/ghc/ghc-prim-${GHC_PRIM_VER}/libHSghc-prim-${GHC_PRIM_VER}_p.a
+@so lib/ghc/ghc-prim-${GHC_PRIM_VER}/libHSghc-prim-${GHC_PRIM_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/ghc-prim-${GHC_PRIM_VER}/libHSghc-prim-${GHC_PRIM_VER}.a
+@static-lib lib/ghc/ghc-prim-${GHC_PRIM_VER}/libHSghc-prim-${GHC_PRIM_VER}_p.a
 lib/ghc/ghc-usage.txt
 lib/ghc/ghci-${GHC_VER}/
 lib/ghc/ghci-${GHC_VER}/GHCi/
@@ -3410,9 +3410,9 @@ lib/ghc/ghci-${GHC_VER}/HSghci-${GHC_VER}.o
 lib/ghc/ghci-${GHC_VER}/SizedSeq.dyn_hi
 lib/ghc/ghci-${GHC_VER}/SizedSeq.hi
 lib/ghc/ghci-${GHC_VER}/SizedSeq.p_hi
-lib/ghc/ghci-${GHC_VER}/libHSghci-${GHC_VER}-ghc${GHC_VER}.so
-lib/ghc/ghci-${GHC_VER}/libHSghci-${GHC_VER}.a
-lib/ghc/ghci-${GHC_VER}/libHSghci-${GHC_VER}_p.a
+@so lib/ghc/ghci-${GHC_VER}/libHSghci-${GHC_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/ghci-${GHC_VER}/libHSghci-${GHC_VER}.a
+@static-lib lib/ghc/ghci-${GHC_VER}/libHSghci-${GHC_VER}_p.a
 lib/ghc/ghci-usage.txt
 lib/ghc/haskeline-${HASKELINE_VER}/
 lib/ghc/haskeline-${HASKELINE_VER}/HShaskeline-${HASKELINE_VER}.o
@@ -3503,9 +3503,9 @@ lib/ghc/haskeline-${HASKELINE_VER}/System/Console/Haskeline/Term.p_hi
 lib/ghc/haskeline-${HASKELINE_VER}/System/Console/Haskeline/Vi.dyn_hi
 lib/ghc/haskeline-${HASKELINE_VER}/System/Console/Haskeline/Vi.hi
 lib/ghc/haskeline-${HASKELINE_VER}/System/Console/Haskeline/Vi.p_hi
-lib/ghc/haskeline-${HASKELINE_VER}/libHShaskeline-${HASKELINE_VER}-ghc${GHC_VER}.so
-lib/ghc/haskeline-${HASKELINE_VER}/libHShaskeline-${HASKELINE_VER}.a
-lib/ghc/haskeline-${HASKELINE_VER}/libHShaskeline-${HASKELINE_VER}_p.a
+@so lib/ghc/haskeline-${HASKELINE_VER}/libHShaskeline-${HASKELINE_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/haskeline-${HASKELINE_VER}/libHShaskeline-${HASKELINE_VER}.a
+@static-lib lib/ghc/haskeline-${HASKELINE_VER}/libHShaskeline-${HASKELINE_VER}_p.a
 lib/ghc/hpc-${HPC_VER}/
 lib/ghc/hpc-${HPC_VER}/HShpc-${HPC_VER}.o
 lib/ghc/hpc-${HPC_VER}/Trace/
@@ -3522,9 +3522,9 @@ lib/ghc/hpc-${HPC_VER}/Trace/Hpc/Tix.p_hi
 lib/ghc/hpc-${HPC_VER}/Trace/Hpc/Util.dyn_hi
 lib/ghc/hpc-${HPC_VER}/Trace/Hpc/Util.hi
 lib/ghc/hpc-${HPC_VER}/Trace/Hpc/Util.p_hi
-lib/ghc/hpc-${HPC_VER}/libHShpc-${HPC_VER}-ghc${GHC_VER}.so
-lib/ghc/hpc-${HPC_VER}/libHShpc-${HPC_VER}.a
-lib/ghc/hpc-${HPC_VER}/libHShpc-${HPC_VER}_p.a
+@so lib/ghc/hpc-${HPC_VER}/libHShpc-${HPC_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/hpc-${HPC_VER}/libHShpc-${HPC_VER}.a
+@static-lib lib/ghc/hpc-${HPC_VER}/libHShpc-${HPC_VER}_p.a
 lib/ghc/html/
 lib/ghc/html/Classic.theme/
 lib/ghc/html/Classic.theme/haskell_icon.gif
@@ -3637,9 +3637,9 @@ lib/ghc/integer-gmp-${INTEGER_GMP_VER}/HSinteger-gmp-${INTEGER_GMP_VER}.o
 lib/ghc/integer-gmp-${INTEGER_GMP_VER}/include/
 lib/ghc/integer-gmp-${INTEGER_GMP_VER}/include/HsIntegerGmp.h
 lib/ghc/integer-gmp-${INTEGER_GMP_VER}/include/ghc-gmp.h
-lib/ghc/integer-gmp-${INTEGER_GMP_VER}/libHSinteger-gmp-${INTEGER_GMP_VER}-ghc${GHC_VER}.so
-lib/ghc/integer-gmp-${INTEGER_GMP_VER}/libHSinteger-gmp-${INTEGER_GMP_VER}.a
-lib/ghc/integer-gmp-${INTEGER_GMP_VER}/libHSinteger-gmp-${INTEGER_GMP_VER}_p.a
+@so lib/ghc/integer-gmp-${INTEGER_GMP_VER}/libHSinteger-gmp-${INTEGER_GMP_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/integer-gmp-${INTEGER_GMP_VER}/libHSinteger-gmp-${INTEGER_GMP_VER}.a
+@static-lib lib/ghc/integer-gmp-${INTEGER_GMP_VER}/libHSinteger-gmp-${INTEGER_GMP_VER}_p.a
 lib/ghc/latex/
 lib/ghc/latex/haddock.sty
 lib/ghc/libiserv-${LIBISERV_VER}/
@@ -3651,9 +3651,9 @@ lib/ghc/libiserv-${LIBISERV_VER}/HSlibiserv-${LIBISERV_VER}.o
 lib/ghc/libiserv-${LIBISERV_VER}/Lib.dyn_hi
 lib/ghc/libiserv-${LIBISERV_VER}/Lib.hi
 lib/ghc/libiserv-${LIBISERV_VER}/Lib.p_hi
-lib/ghc/libiserv-${LIBISERV_VER}/libHSlibiserv-${LIBISERV_VER}-ghc${GHC_VER}.so
-lib/ghc/libiserv-${LIBISERV_VER}/libHSlibiserv-${LIBISERV_VER}.a
-lib/ghc/libiserv-${LIBISERV_VER}/libHSlibiserv-${LIBISERV_VER}_p.a
+@so lib/ghc/libiserv-${LIBISERV_VER}/libHSlibiserv-${LIBISERV_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/libiserv-${LIBISERV_VER}/libHSlibiserv-${LIBISERV_VER}.a
+@static-lib lib/ghc/libiserv-${LIBISERV_VER}/libHSlibiserv-${LIBISERV_VER}_p.a
 lib/ghc/llvm-passes
 lib/ghc/llvm-targets
 lib/ghc/mtl-${MTL_VER}/
@@ -3732,9 +3732,9 @@ lib/ghc/mtl-${MTL_VER}/Control/Monad/Writer/Strict.dyn_hi
 lib/ghc/mtl-${MTL_VER}/Control/Monad/Writer/Strict.hi
 lib/ghc/mtl-${MTL_VER}/Control/Monad/Writer/Strict.p_hi
 lib/ghc/mtl-${MTL_VER}/HSmtl-${MTL_VER}.o
-lib/ghc/mtl-${MTL_VER}/libHSmtl-${MTL_VER}-ghc${GHC_VER}.so
-lib/ghc/mtl-${MTL_VER}/libHSmtl-${MTL_VER}.a
-lib/ghc/mtl-${MTL_VER}/libHSmtl-${MTL_VER}_p.a
+@so lib/ghc/mtl-${MTL_VER}/libHSmtl-${MTL_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/mtl-${MTL_VER}/libHSmtl-${MTL_VER}.a
+@static-lib lib/ghc/mtl-${MTL_VER}/libHSmtl-${MTL_VER}_p.a
 lib/ghc/package.conf.d/
 lib/ghc/package.conf.d/Cabal-${CABAL_VER}.conf
 lib/ghc/package.conf.d/array-${ARRAY_VER}.conf
@@ -3855,9 +3855,9 @@ lib/ghc/parsec-${PARSEC_VER}/Text/ParserCombinators/Parsec/Prim.p_hi
 lib/ghc/parsec-${PARSEC_VER}/Text/ParserCombinators/Parsec/Token.dyn_hi
 lib/ghc/parsec-${PARSEC_VER}/Text/ParserCombinators/Parsec/Token.hi
 lib/ghc/parsec-${PARSEC_VER}/Text/ParserCombinators/Parsec/Token.p_hi
-lib/ghc/parsec-${PARSEC_VER}/libHSparsec-${PARSEC_VER}-ghc${GHC_VER}.so
-lib/ghc/parsec-${PARSEC_VER}/libHSparsec-${PARSEC_VER}.a
-lib/ghc/parsec-${PARSEC_VER}/libHSparsec-${PARSEC_VER}_p.a
+@so lib/ghc/parsec-${PARSEC_VER}/libHSparsec-${PARSEC_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/parsec-${PARSEC_VER}/libHSparsec-${PARSEC_VER}.a
+@static-lib lib/ghc/parsec-${PARSEC_VER}/libHSparsec-${PARSEC_VER}_p.a
 lib/ghc/platformConstants
 lib/ghc/pretty-${PRETTY_VER}/
 lib/ghc/pretty-${PRETTY_VER}/HSpretty-${PRETTY_VER}.o
@@ -3882,9 +3882,9 @@ lib/ghc/pretty-${PRETTY_VER}/Text/PrettyPrint/HughesPJ.p_hi
 lib/ghc/pretty-${PRETTY_VER}/Text/PrettyPrint/HughesPJClass.dyn_hi
 lib/ghc/pretty-${PRETTY_VER}/Text/PrettyPrint/HughesPJClass.hi
 lib/ghc/pretty-${PRETTY_VER}/Text/PrettyPrint/HughesPJClass.p_hi
-lib/ghc/pretty-${PRETTY_VER}/libHSpretty-${PRETTY_VER}-ghc${GHC_VER}.so
-lib/ghc/pretty-${PRETTY_VER}/libHSpretty-${PRETTY_VER}.a
-lib/ghc/pretty-${PRETTY_VER}/libHSpretty-${PRETTY_VER}_p.a
+@so lib/ghc/pretty-${PRETTY_VER}/libHSpretty-${PRETTY_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/pretty-${PRETTY_VER}/libHSpretty-${PRETTY_VER}.a
+@static-lib lib/ghc/pretty-${PRETTY_VER}/libHSpretty-${PRETTY_VER}_p.a
 lib/ghc/process-${PROCESS_VER}/
 lib/ghc/process-${PROCESS_VER}/HSprocess-${PROCESS_VER}.o
 lib/ghc/process-${PROCESS_VER}/System/
@@ -3907,24 +3907,24 @@ lib/ghc/process-${PROCESS_VER}/System/Process/Posix.p_hi
 lib/ghc/process-${PROCESS_VER}/include/
 lib/ghc/process-${PROCESS_VER}/include/processFlags.h
 lib/ghc/process-${PROCESS_VER}/include/runProcess.h
-lib/ghc/process-${PROCESS_VER}/libHSprocess-${PROCESS_VER}-ghc${GHC_VER}.so
-lib/ghc/process-${PROCESS_VER}/libHSprocess-${PROCESS_VER}.a
-lib/ghc/process-${PROCESS_VER}/libHSprocess-${PROCESS_VER}_p.a
+@so lib/ghc/process-${PROCESS_VER}/libHSprocess-${PROCESS_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/process-${PROCESS_VER}/libHSprocess-${PROCESS_VER}.a
+@static-lib lib/ghc/process-${PROCESS_VER}/libHSprocess-${PROCESS_VER}_p.a
 lib/ghc/rts/
-lib/ghc/rts/libHSrts-ghc${GHC_VER}.so
-lib/ghc/rts/libHSrts.a
-lib/ghc/rts/libHSrts_debug-ghc${GHC_VER}.so
-lib/ghc/rts/libHSrts_debug.a
-lib/ghc/rts/libHSrts_l-ghc${GHC_VER}.so
-lib/ghc/rts/libHSrts_l.a
-lib/ghc/rts/libHSrts_p.a
-lib/ghc/rts/libHSrts_thr-ghc${GHC_VER}.so
-lib/ghc/rts/libHSrts_thr.a
-lib/ghc/rts/libHSrts_thr_debug-ghc${GHC_VER}.so
-lib/ghc/rts/libHSrts_thr_debug.a
-lib/ghc/rts/libHSrts_thr_l-ghc${GHC_VER}.so
-lib/ghc/rts/libHSrts_thr_l.a
-lib/ghc/rts/libHSrts_thr_p.a
+@so lib/ghc/rts/libHSrts-ghc${GHC_VER}.so
+@static-lib lib/ghc/rts/libHSrts.a
+@so lib/ghc/rts/libHSrts_debug-ghc${GHC_VER}.so
+@static-lib lib/ghc/rts/libHSrts_debug.a
+@so lib/ghc/rts/libHSrts_l-ghc${GHC_VER}.so
+@static-lib lib/ghc/rts/libHSrts_l.a
+@static-lib lib/ghc/rts/libHSrts_p.a
+@so lib/ghc/rts/libHSrts_thr-ghc${GHC_VER}.so
+@static-lib lib/ghc/rts/libHSrts_thr.a
+@so lib/ghc/rts/libHSrts_thr_debug-ghc${GHC_VER}.so
+@static-lib lib/ghc/rts/libHSrts_thr_debug.a
+@so lib/ghc/rts/libHSrts_thr_l-ghc${GHC_VER}.so
+@static-lib lib/ghc/rts/libHSrts_thr_l.a
+@static-lib lib/ghc/rts/libHSrts_thr_p.a
 lib/ghc/settings
 lib/ghc/stm-${STM_VER}/
 lib/ghc/stm-${STM_VER}/Control/
@@ -3963,9 +3963,9 @@ lib/ghc/stm-${STM_VER}/Control/Sequential/STM.dyn_hi
 lib/ghc/stm-${STM_VER}/Control/Sequential/STM.hi
 lib/ghc/stm-${STM_VER}/Control/Sequential/STM.p_hi
 lib/ghc/stm-${STM_VER}/HSstm-${STM_VER}.o
-lib/ghc/stm-${STM_VER}/libHSstm-${STM_VER}-ghc${GHC_VER}.so
-lib/ghc/stm-${STM_VER}/libHSstm-${STM_VER}.a
-lib/ghc/stm-${STM_VER}/libHSstm-${STM_VER}_p.a
+@so lib/ghc/stm-${STM_VER}/libHSstm-${STM_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/stm-${STM_VER}/libHSstm-${STM_VER}.a
+@static-lib lib/ghc/stm-${STM_VER}/libHSstm-${STM_VER}_p.a
 lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/
 lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/HStemplate-haskell-${TEMPLATE_HASKELL_VER}.o
 lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/Language/
@@ -3999,9 +3999,9 @@ lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/Language/Haskell/TH/Quote.p_hi
 lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/Language/Haskell/TH/Syntax.dyn_hi
 lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/Language/Haskell/TH/Syntax.hi
 lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/Language/Haskell/TH/Syntax.p_hi
-lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/libHStemplate-haskell-${TEMPLATE_HASKELL_VER}-ghc${GHC_VER}.so
-lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/libHStemplate-haskell-${TEMPLATE_HASKELL_VER}.a
-lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/libHStemplate-haskell-${TEMPLATE_HASKELL_VER}_p.a
+@so lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/libHStemplate-haskell-${TEMPLATE_HASKELL_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/libHStemplate-haskell-${TEMPLATE_HASKELL_VER}.a
+@static-lib lib/ghc/template-haskell-${TEMPLATE_HASKELL_VER}/libHStemplate-haskell-${TEMPLATE_HASKELL_VER}_p.a
 lib/ghc/template-hsc.h
 lib/ghc/terminfo-${TERMINFO_VER}/
 lib/ghc/terminfo-${TERMINFO_VER}/HSterminfo-${TERMINFO_VER}.o
@@ -4029,9 +4029,9 @@ lib/ghc/terminfo-${TERMINFO_VER}/System/Console/Terminfo/Effects.p_hi
 lib/ghc/terminfo-${TERMINFO_VER}/System/Console/Terminfo/Keys.dyn_hi
 lib/ghc/terminfo-${TERMINFO_VER}/System/Console/Terminfo/Keys.hi
 lib/ghc/terminfo-${TERMINFO_VER}/System/Console/Terminfo/Keys.p_hi
-lib/ghc/terminfo-${TERMINFO_VER}/libHSterminfo-${TERMINFO_VER}-ghc${GHC_VER}.so
-lib/ghc/terminfo-${TERMINFO_VER}/libHSterminfo-${TERMINFO_VER}.a
-lib/ghc/terminfo-${TERMINFO_VER}/libHSterminfo-${TERMINFO_VER}_p.a
+@so lib/ghc/terminfo-${TERMINFO_VER}/libHSterminfo-${TERMINFO_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/terminfo-${TERMINFO_VER}/libHSterminfo-${TERMINFO_VER}.a
+@static-lib lib/ghc/terminfo-${TERMINFO_VER}/libHSterminfo-${TERMINFO_VER}_p.a
 lib/ghc/text-${TEXT_VER}/
 lib/ghc/text-${TEXT_VER}/Data/
 lib/ghc/text-${TEXT_VER}/Data/Text/
@@ -4181,9 +4181,9 @@ lib/ghc/text-${TEXT_VER}/Data/Text/Unsafe.dyn_hi
 lib/ghc/text-${TEXT_VER}/Data/Text/Unsafe.hi
 lib/ghc/text-${TEXT_VER}/Data/Text/Unsafe.p_hi
 lib/ghc/text-${TEXT_VER}/HStext-${TEXT_VER}.o
-lib/ghc/text-${TEXT_VER}/libHStext-${TEXT_VER}-ghc${GHC_VER}.so
-lib/ghc/text-${TEXT_VER}/libHStext-${TEXT_VER}.a
-lib/ghc/text-${TEXT_VER}/libHStext-${TEXT_VER}_p.a
+@so lib/ghc/text-${TEXT_VER}/libHStext-${TEXT_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/text-${TEXT_VER}/libHStext-${TEXT_VER}.a
+@static-lib lib/ghc/text-${TEXT_VER}/libHStext-${TEXT_VER}_p.a
 lib/ghc/time-${TIME_VER}/
 lib/ghc/time-${TIME_VER}/Data/
 lib/ghc/time-${TIME_VER}/Data/Time/
@@ -4296,9 +4296,9 @@ lib/ghc/time-${TIME_VER}/HStime-${TIME_VER}.o
 lib/ghc/time-${TIME_VER}/include/
 lib/ghc/time-${TIME_VER}/include/HsTime.h
 lib/ghc/time-${TIME_VER}/include/HsTimeConfig.h
-lib/ghc/time-${TIME_VER}/libHStime-${TIME_VER}-ghc${GHC_VER}.so
-lib/ghc/time-${TIME_VER}/libHStime-${TIME_VER}.a
-lib/ghc/time-${TIME_VER}/libHStime-${TIME_VER}_p.a
+@so lib/ghc/time-${TIME_VER}/libHStime-${TIME_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/time-${TIME_VER}/libHStime-${TIME_VER}.a
+@static-lib lib/ghc/time-${TIME_VER}/libHStime-${TIME_VER}_p.a
 lib/ghc/transformers-${TRANSFORMERS_VER}/
 lib/ghc/transformers-${TRANSFORMERS_VER}/Control/
 lib/ghc/transformers-${TRANSFORMERS_VER}/Control/Applicative/
@@ -4388,9 +4388,9 @@ lib/ghc/transformers-${TRANSFORMERS_VER}/Data/Functor/Reverse.dyn_hi
 lib/ghc/transformers-${TRANSFORMERS_VER}/Data/Functor/Reverse.hi
 lib/ghc/transformers-${TRANSFORMERS_VER}/Data/Functor/Reverse.p_hi
 lib/ghc/transformers-${TRANSFORMERS_VER}/HStransformers-${TRANSFORMERS_VER}.o
-lib/ghc/transformers-${TRANSFORMERS_VER}/libHStransformers-${TRANSFORMERS_VER}-ghc${GHC_VER}.so
-lib/ghc/transformers-${TRANSFORMERS_VER}/libHStransformers-${TRANSFORMERS_VER}.a
-lib/ghc/transformers-${TRANSFORMERS_VER}/libHStransformers-${TRANSFORMERS_VER}_p.a
+@so lib/ghc/transformers-${TRANSFORMERS_VER}/libHStransformers-${TRANSFORMERS_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/transformers-${TRANSFORMERS_VER}/libHStransformers-${TRANSFORMERS_VER}.a
+@static-lib lib/ghc/transformers-${TRANSFORMERS_VER}/libHStransformers-${TRANSFORMERS_VER}_p.a
 lib/ghc/unix-${UNIX_VER}/
 lib/ghc/unix-${UNIX_VER}/HSunix-${UNIX_VER}.o
 lib/ghc/unix-${UNIX_VER}/System/
@@ -4531,9 +4531,9 @@ lib/ghc/unix-${UNIX_VER}/include/
 lib/ghc/unix-${UNIX_VER}/include/HsUnix.h
 lib/ghc/unix-${UNIX_VER}/include/HsUnixConfig.h
 lib/ghc/unix-${UNIX_VER}/include/execvpe.h
-lib/ghc/unix-${UNIX_VER}/libHSunix-${UNIX_VER}-ghc${GHC_VER}.so
-lib/ghc/unix-${UNIX_VER}/libHSunix-${UNIX_VER}.a
-lib/ghc/unix-${UNIX_VER}/libHSunix-${UNIX_VER}_p.a
+@so lib/ghc/unix-${UNIX_VER}/libHSunix-${UNIX_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/unix-${UNIX_VER}/libHSunix-${UNIX_VER}.a
+@static-lib lib/ghc/unix-${UNIX_VER}/libHSunix-${UNIX_VER}_p.a
 lib/ghc/xhtml-${XHTML_VER}/
 lib/ghc/xhtml-${XHTML_VER}/HSxhtml-${XHTML_VER}.o
 lib/ghc/xhtml-${XHTML_VER}/Text/
@@ -4586,9 +4586,9 @@ lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Attributes.p_hi
 lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Elements.dyn_hi
 lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Elements.hi
 lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Elements.p_hi
-lib/ghc/xhtml-${XHTML_VER}/libHSxhtml-${XHTML_VER}-ghc${GHC_VER}.so
-lib/ghc/xhtml-${XHTML_VER}/libHSxhtml-${XHTML_VER}.a
-lib/ghc/xhtml-${XHTML_VER}/libHSxhtml-${XHTML_VER}_p.a
+@so lib/ghc/xhtml-${XHTML_VER}/libHSxhtml-${XHTML_VER}-ghc${GHC_VER}.so
+@static-lib lib/ghc/xhtml-${XHTML_VER}/libHSxhtml-${XHTML_VER}.a
+@static-lib lib/ghc/xhtml-${XHTML_VER}/libHSxhtml-${XHTML_VER}_p.a
 @man man/man1/ghc.1
 share/doc/ghc/
 share/doc/ghc/html/

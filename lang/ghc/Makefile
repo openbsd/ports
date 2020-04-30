@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2020/03/19 21:32:58 kili Exp $
+# $OpenBSD: Makefile,v 1.171 2020/04/30 23:16:59 kn Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -40,7 +40,7 @@ LIB_DEPENDS =		converters/libiconv \
 
 BUILD_DEPENDS =		archivers/bzip2 \
 			archivers/gtar \
-			textproc/py-sphinx
+			textproc/py-sphinx${MODPY_FLAVOR}
 RUN_DEPENDS =
 
 # We can't use the wrapper script, because it then gets hardcoded into
@@ -134,6 +134,8 @@ CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS} -Wl,-z,wxneeded" \
 			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS} -Wl,-z,wxneeded"
+
+CONFIGURE_ENV +=	SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
