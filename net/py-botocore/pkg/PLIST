@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.133 2020/04/22 07:24:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.134 2020/04/30 06:51:22 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -694,6 +694,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsecuretunneling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsecuretunneling/2018-10-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsecuretunneling/2018-10-05/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsecuretunneling/2018-10-05/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsitewise/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsitewise/2019-12-02/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsitewise/2019-12-02/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsitewise/2019-12-02/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsitewise/2019-12-02/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotthingsgraph/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotthingsgraph/2018-09-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotthingsgraph/2018-09-06/paginators-1.json
