@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.18 2019/12/15 00:18:05 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.19 2020/04/30 23:04:48 kn Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -118,7 +118,7 @@ sub fill_in_makefile
 		shift @versions;    # remove default, lowest
 		$self->{reset_values}{MODPY_VERSION} = 1;
 		$self->set_other( 'FLAVORS', "python$_" ) for @versions;
-		$self->set_other( 'FLAVOR', '' );
+		$self->set_other( 'FLAVOR', "python$versions[-1]" );
 	} elsif ( @versions && $versions[0] != 2 ) {
 		$self->{reset_values}{$_} = 1 for qw( FLAVORS FLAVOR );
 		$self->set_other(
