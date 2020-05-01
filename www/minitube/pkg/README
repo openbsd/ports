@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2018/09/04 12:46:25 espie Exp $
+$OpenBSD: README,v 1.6 2020/05/01 02:56:11 kn Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -6,8 +6,7 @@ $OpenBSD: README,v 1.5 2018/09/04 12:46:25 espie Exp $
 
 Google API key
 ==============
-Minitube 2.4 has been ported to the new YouTube API version 3, hence an
-API key is now required in order to access the YouTube Data web services.
+An API key is required in order to access the YouTube Data web services.
 
 Go to https://console.developers.google.com/
 
@@ -39,7 +38,7 @@ If not, go to "APIs & auth" -> "APIs" -> "API Library", click on "YouTube
 Data API" and then on "Enable API" to enable it.
 
 Add the environment variable containing your newly generated key
-to your ~/.profile or ~/.xinitrc:
+to your ~/.profile or ~/.xsession:
 
 GOOGLE_API_KEY="AIzaSyD7zlL9sAC6-IcwU7Bpds8lZNzmqQTmALQ"
 export GOOGLE_API_KEY
