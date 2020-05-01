@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.951 2020/04/29 15:25:45 schwarze Exp $
+# $OpenBSD: Quirks.pm,v 1.952 2020/05/01 10:20:17 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1739,6 +1739,7 @@ my $cve = {
 	'net/znc' => 'znc-<1.7.3',
 	'print/cups,-main' => 'cups-<1.7.4',
 	'security/clamav' => 'clamav-<0.100.2',
+	'security/libssh' => 'libssh-<0.9.4',
 	'security/opensc' => 'opensc-<0.20.0',
 	'security/openssl/1.1' => 'openssl-<1.1.1g',
 	'security/polarssl' => 'mbedtls-<2.16.6',
@@ -1746,6 +1747,7 @@ my $cve = {
 	'shells/bash' => 'bash-<4.3.27',
 	'sysutils/ansible,-main' => 'ansible-<2.7.1',
 	'sysutils/mcollective' => 'mcollective-<2.5.3',
+	'sysutils/salt' => 'salt-<2018.3.3p2',
 	'telephony/asterisk,-main' => 'asterisk-<13.23.1',
 	'telephony/coturn' => 'turnserver-<4.5.1.1',
 	'www/apache-httpd,-main' => 'apache-httpd-<2.4.35',
@@ -1773,7 +1775,6 @@ my $cve = {
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
-	'security/libssh' => 'libssh-<0.9.4',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
