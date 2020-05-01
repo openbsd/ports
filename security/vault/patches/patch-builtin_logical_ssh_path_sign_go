@@ -1,0 +1,45 @@
+$OpenBSD: patch-builtin_logical_ssh_path_sign_go,v 1.1 2020/05/01 14:06:44 pvk Exp $
+Sign SSH keys using rsa-sha2-256 algorithm, see
+https://github.com/hashicorp/vault/pull/8383
+https://github.com/golang/go/issues/36261
+
+Index: builtin/logical/ssh/path_sign.go
+--- builtin/logical/ssh/path_sign.go.orig
++++ builtin/logical/ssh/path_sign.go
+@@ -9,6 +9,7 @@ import (
+ 	"crypto/sha256"
+ 	"errors"
+ 	"fmt"
++	"io"
+ 	"regexp"
+ 	"strconv"
+ 	"strings"
+@@ -511,10 +512,27 @@ func (b *creationBundle) sign() (retCert *ssh.Certific
+ 		},
+ 	}
+ 
+-	err = certificate.SignCert(rand.Reader, b.Signer)
++	sshAlgorithmSigner, _ := b.Signer.(ssh.AlgorithmSigner)
++
++	// prepare certificate for signing
++	certificate.Nonce = make([]byte, 32)
++	if _, err := io.ReadFull(rand.Reader, certificate.Nonce); err != nil {
++		return nil, fmt.Errorf("failed to generate signed SSH key")
++	}
++	certificate.SignatureKey = sshAlgorithmSigner.PublicKey()
++
++	// get bytes to sign
++	c2 := *certificate
++	c2.Signature = nil
++	out := c2.Marshal()
++	certificateBytes := out[:len(out)-4]
++
++	// sign with rsa-sha2-256
++	sig, err := sshAlgorithmSigner.SignWithAlgorithm(rand.Reader, certificateBytes, ssh.SigAlgoRSASHA2256)
+ 	if err != nil {
+ 		return nil, fmt.Errorf("failed to generate signed SSH key")
+ 	}
++	certificate.Signature = sig
+ 
+ 	return certificate, nil
+ }

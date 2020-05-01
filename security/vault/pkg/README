@@ -1,0 +1,82 @@
+$OpenBSD: README,v 1.1 2020/05/01 14:06:44 pvk Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Default Vault locations
+=======================
+	configuration:	${SYSCONFDIR}/vault/vault.hcl
+	logs:		/var/log/vault/
+	plugins:	${LOCALSTATEDIR}/vault/plugins/
+	storage:	${LOCALSTATEDIR}/vault/storage/
+
+Default configuration
+=====================
+
+Default storage engine
+----------------------
+For more info on integrated Raft storage backend, see:
+check https://www.vaultproject.io/docs/concepts/integrated-storage
+
+disable_mlock option
+--------------------
+Without this option, "vault operator init" will SIGSEGV.
+Since OpenBSD encrypts swap by default, this fixes the problem with leaking
+plaintext secrets via swap thus setting disable_mlock=true considered harmless.
+
+Initializing Vault
+==================
+Check the following ${SYSCONFDIR}/vault/vault.hcl configuration options:
+	api_addr
+	cluster_addr
+	cluster_name
+	listener address
+	listener cluster_address
+	storage node_id
+
+and set to the real cluster/node addresses/names for cluster/client
+communications.
+
+Enable and start Vault server:
+	# rcctl enable vault && rcctl start vault
+      
+Set environment variable appropriately:
+	$ export VAULT_ADDR="http://localhost:8200"
+
+Initialize Vault:
+	$ vault operator init
+
+Unseal Vault:
+	$ vault operator unseal
+
+For more information on Vault server deployment, see:
+https://learn.hashicorp.com/vault/getting-started/deploy
+
+Note, that Vault server supports PGP, GPG and Keybase for unseal keys,
+for more info, see:
+https://www.vaultproject.io/docs/concepts/pgp-gpg-keybase.html
+
+Auditing Vault operations
+--------------------------
+To enable writing audit logs to /var/log/vault/, run
+	$ vault audit enable file file_path=/var/log/vault/audit.log mode=0640
+
+Logging
+-------
+Vault server uses logger(1) to log to syslogd(8) with daemon.info facility/level
+and tag "vault". If you want to use a separate file for Vault server logs, add
+the following lines to the top of ${SYSCONFDIR}/syslog.conf:
+	!!vault
+	*.*						/var/log/vault/vault.log
+	!*
+
+create logfile:
+	# install -o _vault -g _vault -m 0640 /dev/null /var/log/vault/vault.log
+
+and restart syslogd(8):
+	# rcctl reload syslogd
+
+For log rotation, adjust/add the following lines to ${SYSCONFDIR}/newsyslog.conf:
+	/var/log/vault/audit.log _vault:_vault  640  7     *    $D23  Z "rcctl reload vault"
+	/var/log/vault/vault.log _vault:_vault  640  7     *    $D23  Z

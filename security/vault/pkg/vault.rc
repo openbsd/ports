@@ -1,12 +1,17 @@
 #!/bin/ksh
 #
-# $OpenBSD: vault.rc,v 1.4 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: vault.rc,v 1.5 2020/05/01 14:06:44 pvk Exp $
 
 daemon="${TRUEPREFIX}/bin/vault server"
-daemon_flags="-config=${SYSCONFDIR}/vault.hcl"
+daemon_flags="-config=${SYSCONFDIR}/vault/vault.hcl"
 daemon_user="_vault"
 
 . /etc/rc.d/rc.subr
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} < /dev/null 2>&1 | \
+		logger -p daemon.info -t vault"
+}
 
 rc_bg=YES
 
