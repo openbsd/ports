@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/27 04:54:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.40 2020/05/01 10:13:59 cwen Exp $
+
+BROKEN-powerpc =	colors are off and as such it is not useable
 
 COMMENT =	advanced drawing and image manipulation
 
