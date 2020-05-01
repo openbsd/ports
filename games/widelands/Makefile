@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2019/09/09 04:42:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2020/05/01 21:17:03 cwen Exp $
+
+# See https://github.com/widelands/widelands/issues/3887
+NOT_FOR_ARCHS =	powerpc
 
 COMMENT=	economic and military simulation game
 
