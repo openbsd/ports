@@ -1,0 +1,35 @@
+$OpenBSD: patch-salt_wheel_config_py,v 1.1 2020/05/01 08:01:08 robert Exp $
+
+commit 7bd0ab195fbec4f34523dad11149f741c154e2b7
+Author: Daniel A. Wozniak <dwozniak@saltstack.com>
+Date:   Mon Apr 13 06:44:58 2020 +0000
+
+    Fix CVE-2020-11652
+    
+    Sanitize paths in ClearFuncs methods provided by salt-master. This
+    ensures we do not allow access to un-intended files and directories.
+
+Index: salt/wheel/config.py
+--- salt/wheel/config.py.orig
++++ salt/wheel/config.py
+@@ -75,13 +75,19 @@ def update_config(file_name, yaml_contents):
+     dir_path = os.path.join(__opts__['config_dir'],
+                             os.path.dirname(__opts__['default_include']))
+     try:
+-        yaml_out = salt.utils.yaml.safe_dump(yaml_contents, default_flow_style=False)
++        yaml_out = salt.utils.yaml.safe_dump(
++            yaml_contents,
++            default_flow_style=False,
++        )
+ 
+         if not os.path.exists(dir_path):
+             log.debug('Creating directory %s', dir_path)
+             os.makedirs(dir_path, 0o755)
+ 
+         file_path = os.path.join(dir_path, file_name)
++        if not salt.utils.verify.clean_path(dir_path, file_path):
++            return 'Invalid path'
++
+         with salt.utils.files.fopen(file_path, 'w') as fp_:
+             fp_.write(yaml_out)
+ 

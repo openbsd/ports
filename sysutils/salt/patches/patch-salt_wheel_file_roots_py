@@ -1,0 +1,35 @@
+$OpenBSD: patch-salt_wheel_file_roots_py,v 1.1 2020/05/01 08:01:08 robert Exp $
+
+commit 7bd0ab195fbec4f34523dad11149f741c154e2b7
+Author: Daniel A. Wozniak <dwozniak@saltstack.com>
+Date:   Mon Apr 13 06:44:58 2020 +0000
+
+    Fix CVE-2020-11652
+    
+    Sanitize paths in ClearFuncs methods provided by salt-master. This
+    ensures we do not allow access to un-intended files and directories.
+
+Index: salt/wheel/file_roots.py
+--- salt/wheel/file_roots.py.orig
++++ salt/wheel/file_roots.py
+@@ -25,6 +25,8 @@ def find(path, saltenv='base'):
+         return ret
+     for root in __opts__['file_roots'][saltenv]:
+         full = os.path.join(root, path)
++        if not salt.utils.verify.clean_path(root, full):
++            continue
+         if os.path.isfile(full):
+             # Add it to the dict
+             with salt.utils.files.fopen(full, 'rb') as fp_:
+@@ -107,7 +109,10 @@ def write(data, path, saltenv='base', index=0):
+     if os.path.isabs(path):
+         return ('The path passed in {0} is not relative to the environment '
+                 '{1}').format(path, saltenv)
+-    dest = os.path.join(__opts__['file_roots'][saltenv][index], path)
++    root = __opts__['file_roots'][saltenv][index]
++    dest = os.path.join(root, path)
++    if not salt.utils.verify.clean_path(root, dest, subdir=True):
++        return 'Invalid path: {}'.format(path)
+     dest_dir = os.path.dirname(dest)
+     if not os.path.isdir(dest_dir):
+         os.makedirs(dest_dir)
