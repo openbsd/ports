@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/02 08:43:25 landry Exp $
 
 COMMENT=	perl-based deployment and configuration management
 
-CPAN_AUTHOR=	JFRIED
-DISTNAME=	Rex-1.6.0
+CPAN_AUTHOR=	FERKI
+DISTNAME=	Rex-1.9.0
 
 CATEGORIES=	sysutils
 

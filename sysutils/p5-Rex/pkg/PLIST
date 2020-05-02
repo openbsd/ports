@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/21 04:54:50 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/02 08:43:25 landry Exp $
 bin/rex
 bin/rexify
 ${P5SITE}/Rex/
@@ -247,6 +247,7 @@ ${P5SITE}/Rex/Pkg/SunOS.pm
 ${P5SITE}/Rex/Pkg/SunOS/OpenCSW.pm
 ${P5SITE}/Rex/Pkg/SunOS/pkg.pm
 ${P5SITE}/Rex/Pkg/Ubuntu.pm
+${P5SITE}/Rex/Pkg/VoidLinux.pm
 ${P5SITE}/Rex/PkgConf/
 ${P5SITE}/Rex/PkgConf.pm
 ${P5SITE}/Rex/PkgConf/Base.pm
@@ -301,6 +302,7 @@ ${P5SITE}/Rex/Service/SunOS/
 ${P5SITE}/Rex/Service/SunOS.pm
 ${P5SITE}/Rex/Service/SunOS/svcadm.pm
 ${P5SITE}/Rex/Service/Ubuntu.pm
+${P5SITE}/Rex/Service/VoidLinux.pm
 ${P5SITE}/Rex/Shared/
 ${P5SITE}/Rex/Shared/Var/
 ${P5SITE}/Rex/Shared/Var.pm
