@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/14 00:39:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2020/05/02 16:40:06 cwen Exp $
 
 COMMENT=		C library to produce PDF files
 
 DISTNAME=		pdflib-4.0.3
-REVISION = 		5
+REVISION = 		6
 CATEGORIES=     	print
 SHARED_LIBS=		pdf	2.3
 
-HOMEPAGE=		http://www.pdflib.com/pdflib/
+HOMEPAGE=		https://www.pdflib.com/pdflib/
 
+# Aladdin Free Public License V8
 PERMIT_PACKAGE=	Yes
-
-MASTER_SITES=		http://www.pdflib.com/pdflib/download/
 
 WANTLIB=		m z jpeg png>=2 tiff>=35
 
@@ -38,6 +37,12 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 MAKE_ENV=		${CONFIGURE_ENV}
 
 TEST_TARGET=		test
+
+# In various places in the code, it's assumed that the __POWERPC__ define
+# is Mac OS 9 specific, but our clang defines it as well, breaking the build.
+.if ${MACHINE_ARCH:Mpowerpc}
+CFLAGS +=		-U__POWERPC__
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pdflib
