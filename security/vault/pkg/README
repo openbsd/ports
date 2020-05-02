@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2020/05/01 14:06:44 pvk Exp $
+$OpenBSD: README,v 1.2 2020/05/02 06:30:05 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -77,6 +77,6 @@ create logfile:
 and restart syslogd(8):
 	# rcctl reload syslogd
 
-For log rotation, adjust/add the following lines to ${SYSCONFDIR}/newsyslog.conf:
+For log rotation, adjust/add the following lines to /etc/newsyslog.conf:
 	/var/log/vault/audit.log _vault:_vault  640  7     *    $D23  Z "rcctl reload vault"
 	/var/log/vault/vault.log _vault:_vault  640  7     *    $D23  Z
