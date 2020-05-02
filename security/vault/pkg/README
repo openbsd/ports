@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2020/05/02 06:30:05 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2020/05/02 06:35:12 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -72,7 +72,7 @@ the following lines to the top of ${SYSCONFDIR}/syslog.conf:
 	!*
 
 create logfile:
-	# install -o _vault -g _vault -m 0640 /dev/null /var/log/vault/vault.log
+	# install -Do _vault -g _vault -m 0640 /dev/null /var/log/vault/vault.log
 
 and restart syslogd(8):
 	# rcctl reload syslogd
