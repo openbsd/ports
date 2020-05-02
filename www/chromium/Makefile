@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.510 2020/04/29 13:27:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.511 2020/05/02 08:18:07 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -28,6 +28,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 EXTRACT_SUFX=		.tar.xz
 
 FLAVORS=		component
+PSEUDO_FLAVORS=		debug
 FLAVOR?=
 
 # BSD-like
@@ -120,6 +121,7 @@ GN_SYSTEM_LIBS=	libevent \
 		libxslt
 
 GN_ARGS=	enable_nacl=false \
+		is_official_build=true \
 		is_debug=false \
 		is_cfi=false \
 		optimize_webui=false \
@@ -164,15 +166,17 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 # XXX dwz doesn't work with chromium yet
 DWZ = :
 
-.if ${FLAVOR:Mcomponent}
+.if ${FLAVOR:Mdebug}
 DEBUGFLAG=	-g2
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-GN_ARGS+=	is_official_build=true \
-		is_component_build=true
 .else
 DEBUGFLAG=	-g0
-GN_ARGS+=	is_official_build=true \
-		is_component_build=false
+.endif
+
+.if ${FLAVOR:Mcomponent}
+GN_ARGS+=	is_component_build=true
+.else
+GN_ARGS+=	is_component_build=false
 .endif
 
 pre-configure:
