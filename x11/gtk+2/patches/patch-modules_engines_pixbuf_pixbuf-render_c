@@ -1,0 +1,26 @@
+$OpenBSD: patch-modules_engines_pixbuf_pixbuf-render_c,v 1.1 2020/05/02 11:21:08 sthen Exp $
+
+From d1b21ff1598cfab03e6b918edd76de766356566c Mon Sep 17 00:00:00 2001
+From: Nam Nguyen <namn@berkeley.edu>
+Date: Fri, 1 May 2020 21:55:49 +0000
+Subject: [PATCH] Resolve GIMP segfault from accessing memory past end of
+ pixbuf Fixes https://gitlab.gnome.org/GNOME/gtk/-/issues/2684
+
+GIMP segfaults while switching themes between dark and gray and inputting Ctrl-O
+to open a file. This is because p advances past end of pixbuf in pixbuf-render.c
+compute_hint() with num_channels = 3 (no alpha). This is resolved by fixing the
+if statement to only check for alpha, thereby advancing p, if there is an alpha
+channel.
+
+Index: modules/engines/pixbuf/pixbuf-render.c
+--- modules/engines/pixbuf/pixbuf-render.c.orig
++++ modules/engines/pixbuf/pixbuf-render.c
+@@ -603,7 +603,7 @@ compute_hint (GdkPixbuf *pixbuf,
+ 	  if (r != *(p++) ||
+ 	      g != *(p++) ||
+ 	      b != *(p++) ||
+-	      (n_channels != 4 && a != *(p++)))
++	      (n_channels == 4 && a != *(p++)))
+ 	    {
+ 	      hints &= ~THEME_CONSTANT_ROWS;
+ 	      if (!(hints & THEME_MISSING))
