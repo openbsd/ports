@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/08/31 15:36:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/05/02 09:33:06 denis Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -6,7 +6,7 @@ BROKEN-i386 = hardcodes gcc; see config/nim.cfg
 
 COMMENT =		statically typed, imperative programming language
 
-VERSION =		0.16.0
+VERSION =		1.2.0
 DISTNAME =		nim-${VERSION}
 EXTRACT_SUFX =		.tar.xz
 REVISION =		0
@@ -39,10 +39,14 @@ do-build:
 	cd ${WRKSRC} && ./koch boot -d:release --parallelBuild:1 \
 		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
 		--listCmd --putenv:"PATH=${PATH}"
+	cd ${WRKSRC} && ./koch nimble -d:release --parallelBuild:1 \
+		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
+		--listCmd --putenv:"PATH=${PATH}"
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nim ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/nimble ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/nim
 	cp -R ${WRKSRC}/lib/* ${PREFIX}/lib/nim
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/nim

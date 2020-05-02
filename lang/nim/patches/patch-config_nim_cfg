@@ -1,56 +1,25 @@
-$OpenBSD: patch-config_nim_cfg,v 1.3 2017/01/09 10:32:33 juanfra Exp $
+$OpenBSD: patch-config_nim_cfg,v 1.4 2020/05/02 09:33:06 denis Exp $
 --- config/nim.cfg.orig	Sun Jan  8 21:33:42 2017
 +++ config/nim.cfg	Mon Jan  9 02:28:32 2017
-@@ -76,7 +76,7 @@ path="$lib/pure"
-   @end
-   @if bsd or haiku:
-     # BSD got posix_spawn only recently, so we deactivate it for osproc:
+@@ -8,7 +8,7 @@
+ # Environment variables can be accessed like so:
+ #  gcc.path %= "$CC_PATH"
+ 
+-cc = gcc
++cc = clang
+ 
+ # additional options always passed to the compiler:
+ --parallel_build: "0" # 0 to auto-detect number of processors
+@@ -118,12 +118,6 @@ path="$lib/pure"
+     clang.options.linker = "-ldl"
+     clang.cpp.options.linker = "-ldl"
+     tcc.options.linker = "-ldl"
+-  @end
+-  @if bsd:
+-    # BSD got posix_spawn only recently, so we deactivate it for osproc:
 -    define:useFork
-+    #define:useFork
-     # at least NetBSD has problems with thread local storage:
-     tlsEmulation:on
+-    # at least NetBSD has problems with thread local storage:
+-    tlsEmulation:on
    @end
-@@ -112,6 +112,8 @@ path="$lib/pure"
- @else:
-   gcc.options.always = "-w"
-   gcc.cpp.options.always = "-w -fpermissive"
-+  egcc.options.always = "-w"
-+  egpp.options.alaways = "-w -fpermissive"
- @end
- 
- # Configuration for Objective-C compiler:
-@@ -155,18 +157,23 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
-   gcc.options.linker %= "-L $WIND_BASE/target/lib/usr/lib/ppc/PPC32/common -mrtp -fno-strict-aliasing -D_C99 -D_HAS_C9X -std=c99 -fasm -Wall -Wno-write-strings"
- @end
- 
--gcc.options.speed = "-O3 -fno-strict-aliasing"
-+gcc.options.speed = "-O2 -fno-strict-aliasing"
- gcc.options.size = "-Os"
- @if windows:
-   gcc.options.debug = "-g3 -O0 -gdwarf-3"
- @else:
-   gcc.options.debug = "-g3 -O0"
- @end
--gcc.cpp.options.speed = "-O3 -fno-strict-aliasing"
-+gcc.cpp.options.speed = "-O2 -fno-strict-aliasing"
- gcc.cpp.options.size = "-Os"
- gcc.cpp.options.debug = "-g3 -O0"
- #passl = "-pg"
- 
-+# Configuration for the OpenBSD ports GCC compiler:
-+egcc.options.speed = "-O2 -fno-strict-aliasing"
-+egcc.options.size = "-Os"
-+egcc.options.debug = "-g3 -O0"
-+
- # Configuration for the LLVM GCC compiler:
- llvm_gcc.options.debug = "-g"
- llvm_gcc.options.always = "-w"
-@@ -176,7 +183,7 @@ llvm_gcc.options.size = "-Os"
- # Configuration for the LLVM CLang compiler:
- clang.options.debug = "-g"
- clang.options.always = "-w"
--clang.options.speed = "-O3"
-+clang.options.speed = "-O2"
- clang.options.size = "-Os"
- 
- # Configuration for the Visual C/C++ compiler:
+   @if haiku:
+     gcc.options.linker = "-Wl,--as-needed -lnetwork"
