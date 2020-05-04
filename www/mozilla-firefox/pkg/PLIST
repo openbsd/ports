@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.87 2020/04/07 14:10:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.88 2020/05/04 11:34:19 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -14,7 +14,6 @@ bin/mozilla-${MOZILLA_PROJECT}
 lib/${MOZILLA_PROJECT}/
 lib/${MOZILLA_PROJECT}/application.ini
 lib/${MOZILLA_PROJECT}/browser/
-lib/${MOZILLA_PROJECT}/browser/blocklist.xml
 lib/${MOZILLA_PROJECT}/browser/chrome/
 lib/${MOZILLA_PROJECT}/browser/chrome/icons/
 lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/
