@@ -1,0 +1,26 @@
+$OpenBSD: patch-erts_emulator_nifs_common_prim_file_nif_c,v 1.1 2020/05/04 08:45:16 kmos Exp $
+
+erts: Fix warning and potential big-endian-bug in prim_file
+https://github.com/erlang/otp/commit/df0638e021eb18a4271a02fdae08aa1779867209
+
+Index: erts/emulator/nifs/common/prim_file_nif.c
+--- erts/emulator/nifs/common/prim_file_nif.c.orig
++++ erts/emulator/nifs/common/prim_file_nif.c
+@@ -933,7 +933,7 @@ static ERL_NIF_TERM set_permissions_nif(ErlNifEnv *env
+     posix_errno_t posix_errno;
+ 
+     efile_path_t path;
+-    Uint permissions;
++    unsigned int permissions;
+ 
+     if(argc != 2 || !enif_get_uint(env, argv[1], &permissions)) {
+         return enif_make_badarg(env);
+@@ -952,7 +952,7 @@ static ERL_NIF_TERM set_owner_nif(ErlNifEnv *env, int 
+     posix_errno_t posix_errno;
+ 
+     efile_path_t path;
+-    Sint uid, gid;
++    int uid, gid;
+ 
+     if(argc != 3 || !enif_get_int(env, argv[1], &uid)
+                  || !enif_get_int(env, argv[2], &gid)) {
