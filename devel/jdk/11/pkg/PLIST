@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/04/22 15:05:18 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/05/05 13:35:58 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=11v0,<12v0
@@ -618,7 +618,6 @@ jdk-11/lib/jvm.cfg
 @so jdk-11/lib/libjdwp.so
 @so jdk-11/lib/libjimage.so
 @so jdk-11/lib/libjsig.so
-@so jdk-11/lib/libjsound.so
 @so jdk-11/lib/liblcms.so
 @so jdk-11/lib/libmanagement.so
 @so jdk-11/lib/libmanagement_agent.so

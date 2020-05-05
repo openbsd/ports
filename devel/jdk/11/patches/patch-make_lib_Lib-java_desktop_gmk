@@ -1,0 +1,35 @@
+$OpenBSD: patch-make_lib_Lib-java_desktop_gmk,v 1.1 2020/05/05 13:35:58 kurt Exp $
+
+Disable building libjsound since we don't have sound support
+and it results in jdk crashes with undefined symbols currently.
+
+Index: make/lib/Lib-java.desktop.gmk
+--- make/lib/Lib-java.desktop.gmk.orig
++++ make/lib/Lib-java.desktop.gmk
+@@ -40,6 +40,7 @@ include Awt2dLibraries.gmk
+ # Create the libjsound library
+ 
+ ifneq ($(OPENJDK_TARGET_OS), aix)
++ifneq ($(OPENJDK_TARGET_OS_ENV), bsd.openbsd)
+ 
+   LIBJSOUND_CFLAGS := \
+       $(ALSA_CFLAGS) \
+@@ -63,10 +64,6 @@ ifneq ($(OPENJDK_TARGET_OS), aix)
+     LIBJSOUND_CFLAGS += $(ICONV_CFLAGS)
+   endif
+ 
+-  ifeq ($(OPENJDK_TARGET_OS_ENV), bsd.openbsd)
+-    LIBJSOUND_EXCLUDE_SRC_PATTERNS := bsd
+-  endif
+-
+   ifeq ($(OPENJDK_TARGET_OS_ENV), bsd.netbsd)
+     LIBJSOUND_EXCLUDE_SRC_PATTERNS := bsd
+   endif
+@@ -95,6 +92,7 @@ ifneq ($(OPENJDK_TARGET_OS), aix)
+ 
+   TARGETS += $(BUILD_LIBJSOUND)
+ 
++endif
+ endif
+ 
+ ################################################################################
