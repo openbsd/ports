@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2020/04/13 16:25:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2020/05/05 20:12:20 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -15,8 +15,7 @@ EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-68.7.0esr-9.0-2-build1
-REVISION =		0
+DISTNAME =		src-firefox-tor-browser-68.8.0esr-9.0-2-build1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -33,7 +32,7 @@ MOZILLA_LIBS +=		nspr4 mozsqlite3 plc4 plds4
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		https://dist.torproject.org/torbrowser/${TB_VERSION}/ \
-			https://temp.schutijser.com/~caspar/
+			https://temp.schutijser.com/~caspar/tor-browser/
 
 MODULES =		www/mozilla lang/python
 
