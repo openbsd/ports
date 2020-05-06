@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2019/11/28 19:44:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.278 2020/05/06 18:32:47 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -24,6 +24,9 @@ BUILD_DEPENDS=		textproc/xmlto \
 
 LIB_DEPENDS=		devel/json-glib \
 			x11/gtk+3
+
+# needed for ConsoleKit support
+BUILD_DEPENDS +=	x11/dbus-glib
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
