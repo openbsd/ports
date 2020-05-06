@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/02/04 06:09:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/05/06 08:12:17 bentley Exp $
 @bin bin/openscad
 @man man/man1/openscad.1
 share/applications/openscad.desktop
 share/metainfo/
 share/metainfo/org.openscad.OpenSCAD.appdata.xml
-share/mime/
-share/mime/packages/
 share/mime/packages/openscad.xml
 share/openscad/
 share/openscad/color-schemes/
