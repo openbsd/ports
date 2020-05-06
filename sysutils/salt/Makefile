@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2020/05/01 08:01:08 robert Exp $
+# $OpenBSD: Makefile,v 1.139 2020/05/06 18:54:08 robert Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
@@ -19,7 +19,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2018.3.3
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils net devel
 

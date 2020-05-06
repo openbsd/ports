@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_tokens_localfs_py,v 1.1 2020/05/01 08:01:08 robert Exp $
+$OpenBSD: patch-salt_tokens_localfs_py,v 1.2 2020/05/06 18:54:09 robert Exp $
 
 commit 7bd0ab195fbec4f34523dad11149f741c154e2b7
 Author: Daniel A. Wozniak <dwozniak@saltstack.com>
@@ -20,12 +20,12 @@ Index: salt/tokens/localfs.py
  import salt.payload
  
  from salt.ext import six
-@@ -34,6 +35,8 @@ def mk_token(opts, tdata):
-     hash_type = getattr(hashlib, opts.get('hash_type', 'md5'))
-     tok = six.text_type(hash_type(os.urandom(512)).hexdigest())
+@@ -59,6 +60,8 @@ def get_token(opts, tok):
+     :returns: Token data if successful. Empty dict if failed.
+     '''
      t_path = os.path.join(opts['token_dir'], tok)
 +    if not salt.utils.verify.clean_path(opts['token_dir'], t_path):
 +        return {}
-     while os.path.isfile(t_path):
-         tok = six.text_type(hash_type(os.urandom(512)).hexdigest())
-         t_path = os.path.join(opts['token_dir'], tok)
+     if not os.path.isfile(t_path):
+         return {}
+     serial = salt.payload.Serial(opts)

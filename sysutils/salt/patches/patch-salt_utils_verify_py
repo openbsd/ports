@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_utils_verify_py,v 1.1 2020/05/01 08:01:08 robert Exp $
+$OpenBSD: patch-salt_utils_verify_py,v 1.2 2020/05/06 18:54:09 robert Exp $
 
 commit 7bd0ab195fbec4f34523dad11149f741c154e2b7
 Author: Daniel A. Wozniak <dwozniak@saltstack.com>
@@ -56,7 +56,7 @@ Index: salt/utils/verify.py
 +    Cross platform realpath method. On Windows when python 3, this method
 +    uses the os.readlink method to resolve any filesystem links. On Windows
 +    when python 2, this method is a no-op. All other platforms and version use
-+    os.realpath
++    os.path.realpath
 +    '''
 +    if salt.utils.platform.is_darwin():
 +        return _realpath_darwin(path)
