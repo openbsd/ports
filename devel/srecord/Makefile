@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/05/07 14:24:53 sthen Exp $
+
+BROKEN-arm=	SIGBUS in ps2pdf
 
 COMMENT=		collection of tools for manipulating EPROM load files
 

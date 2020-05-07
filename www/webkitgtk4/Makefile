@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2020/04/25 20:04:50 jca Exp $
+# $OpenBSD: Makefile,v 1.121 2020/05/07 14:24:53 sthen Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -7,6 +7,7 @@ USE_WXNEEDED =		Yes
 
 BROKEN-alpha =		GCC 5.0.0 is required to build WebKitGTK+, use a newer GCC version or clang
 BROKEN-hppa =		GCC 5.0.0 is required to build WebKitGTK+, use a newer GCC version or clang
+BROKEN-arm =		JavaScriptCore/runtime/MachineContext.h, various sigcontext-related
 
 PORTROACH =		limitw:1,even
 

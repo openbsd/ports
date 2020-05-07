@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/23 14:12:31 tracey Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/07 14:24:53 sthen Exp $
+
+BROKEN-arm =	can't create dynamic relocation R_ARM_ABS32 against local symbol in readonly segment
 
 COMMENT =	gdb for ${CONFIG} cross-development
 

@@ -1,6 +1,7 @@
-#	$OpenBSD: Makefile,v 1.66 2020/02/27 14:45:50 kurt Exp $
+#	$OpenBSD: Makefile,v 1.67 2020/05/07 14:24:53 sthen Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
+BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
 
 FLAVORS=	aarch64 arm
 FLAVOR?=	arm

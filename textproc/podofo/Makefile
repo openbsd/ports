@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2020/02/03 20:40:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/05/07 14:24:53 sthen Exp $
+
+BROKEN-arm=	build stuck in main.cpp
 
 COMMENT=	library and tools to modify and parse PDF documents
 

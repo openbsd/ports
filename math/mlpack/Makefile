@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2020/02/27 18:15:25 bket Exp $
+# $OpenBSD: Makefile,v 1.15 2020/05/07 14:24:53 sthen Exp $
 
+BROKEN-arm =	llvm out of memory
 BROKEN-powerpc = virtual memory exhausted, even with -O1
 
 COMMENT-main =	 C++ machine learning library
