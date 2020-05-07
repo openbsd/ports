@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/04/27 12:27:49 okan Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/05/07 19:06:49 okan Exp $
 @pkgpath mail/mailman,postfix
 @pkgpath mail/mailman,sendmail
 @pkgpath mail/mailman,smtpd
@@ -2586,6 +2586,7 @@ lib/mailman/tests/bounces/yahoo_08.txt
 lib/mailman/tests/bounces/yahoo_09.txt
 lib/mailman/tests/bounces/yahoo_10.txt
 lib/mailman/tests/bounces/yahoo_11.txt
+lib/mailman/tests/bounces/yahoo_12.txt
 lib/mailman/tests/bounces/yale_01.txt
 lib/mailman/tests/fblast.py
 @mode 775
