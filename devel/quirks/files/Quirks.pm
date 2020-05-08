@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.952 2020/05/01 10:20:17 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.953 2020/05/08 16:44:41 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1553,7 +1553,7 @@ my $obsolete_reason = {
 	'dspam-mysql' => 3,
 	'dspam-pgsql' => 3,
 	'py-iniparse' => 5,
-	'qtdeclarative-xmllistmodel' => 3,
+	'qt5-declarative-xmllistmodel' => 3,
 	'jabberd' => 3,
 	'GeoIP' => 22,
 	'akpop3d' => 2,
