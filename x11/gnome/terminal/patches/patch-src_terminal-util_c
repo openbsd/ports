@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_terminal-util_c,v 1.3 2018/06/02 12:08:24 jasper Exp $
+$OpenBSD: patch-src_terminal-util_c,v 1.4 2020/05/14 15:29:51 jasper Exp $
 
 Use strcspn(3) instead of non-portable strchrnul(3).
 
 Index: src/terminal-util.c
 --- src/terminal-util.c.orig
 +++ src/terminal-util.c
-@@ -1181,7 +1181,7 @@ char *terminal_util_hyperlink_uri_label (const char *u
+@@ -1189,7 +1189,7 @@ char *terminal_util_hyperlink_uri_label (const char *u
        g_ascii_strncasecmp(unesc, "https://", 8) == 0) {
      gs_free char *unidn = NULL;
      char *hostname = strchr(unesc, '/') + 2;
@@ -14,3 +14,12 @@ Index: src/terminal-util.c
      char save = *hostname_end;
      *hostname_end = '\0';
      unidn = g_hostname_to_unicode(hostname);
+@@ -1583,7 +1583,7 @@ terminal_util_find_program_in_path (const char *path,
+       char *startp;
+ 
+       path = p;
+-      p = strchrnul (path, G_SEARCHPATH_SEPARATOR);
++      p = path + strcspn(path, G_SEARCHPATH_SEPARATOR);
+ 
+       if (p == path)
+         /* Two adjacent colons, or a colon at the beginning or the end
