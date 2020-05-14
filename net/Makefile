@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1197 2020/04/28 12:47:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.1198 2020/05/14 15:38:51 juanfra Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -575,6 +575,7 @@
      SUBDIR += py-ftpdlib
      SUBDIR += py-ftpdlib,python3
      SUBDIR += py-geventhttpclient
+     SUBDIR += py-geventhttpclient,python3
      SUBDIR += py-idna
      SUBDIR += py-idna,python3
      SUBDIR += py-ifaddr
