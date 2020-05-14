@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.99 2019/11/08 07:47:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2020/05/14 15:17:46 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.34.1
-REVISION=		0
+GNOME_VERSION=		3.36.0
 
 CATEGORIES=		devel
 
@@ -15,8 +14,8 @@ WANTLIB += atk-1.0 c cairo cairo-gobject clang dazzle-1.0 devhelp-3
 WANTLIB += enchant-2 fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += gladeui-2 glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
 WANTLIB += intl json-glib-1.0 jsonrpc-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre peas-1.0 template_glib-1.0 vala-0.46
-WANTLIB += vte-2.91 webkit2gtk-4.0 xml2
+WANTLIB += pangoft2-1.0 pcre peas-1.0 template_glib-1.0 vte-2.91
+WANTLIB += webkit2gtk-4.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -26,7 +25,7 @@ MODULES=		devel/dconf \
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
-			gobject-introspection vala yelp
+			gobject-introspection yelp
 
 # needs support for variadic macros (__VA_OPT__)
 # https://bugs.llvm.org/show_bug.cgi?id=40665
@@ -54,7 +53,6 @@ LIB_DEPENDS=		devel/glade \
 			devel/llvm \
 			devel/template-glib \
 			devel/vte3 \
-			lang/vala \
 			textproc/gspell \
 			x11/gnome/devhelp \
 			x11/gnome/libdazzle \
@@ -69,6 +67,7 @@ CXXFLAGS +=		-march=i586
 CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 			-Dplugin_flatpak=false \
 			-Dplugin_sysprof=false \
+			-Dplugin_update_manager=false \
 			-Dchannel=other
 
 # XXX prctl(2) or procctl(2)
@@ -76,6 +75,8 @@ CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 CONFIGURE_ARGS +=	-Dplugin_git=false
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # don't pick up llvm-config(1) from base
 pre-configure:
