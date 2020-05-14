@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/11/13 19:38:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2020/05/14 18:11:07 jasper Exp $
 
 # www/ruby-sassc contains an embedded version of libsass, please
 # update it if there are security patches to libsass
@@ -7,11 +7,10 @@ COMMENT =		C/C++ implementation of a Sass compiler
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		libsass
-GH_TAGNAME =		3.6.1
+GH_TAGNAME =		3.6.4
 EPOCH =			0
-REVISION =		1
 
-SHARED_LIBS +=  sass                      0.0 # 0.0
+SHARED_LIBS +=  sass                      0.1 # 0.0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
