@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/05/12 08:02:14 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/05/14 11:24:21 landry Exp $
 @bin bin/applygeo
 @bin bin/geotifcp
 @bin bin/listgeo
@@ -19,12 +19,13 @@ include/geo_simpletags.h
 include/geo_tiffp.h
 include/geokeys.h
 include/geokeys.inc
+include/geokeys_v1_1.inc
 include/geonames.h
 include/geotiff.h
 include/geotiffio.h
 include/geovalues.h
 include/xtiffio.h
-lib/libgeotiff.a
+@static-lib lib/libgeotiff.a
 lib/libgeotiff.la
 @lib lib/libgeotiff.so.${LIBgeotiff_VERSION}
 @man man/man1/applygeo.1
