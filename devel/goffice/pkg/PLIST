@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/06/15 11:06:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2020/05/14 12:27:33 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -182,42 +182,42 @@ lib/goffice/
 lib/goffice/${GNOME_VERSION}/
 lib/goffice/${GNOME_VERSION}/plugins/
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/
-lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/barcol.so
+@so lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/barcol.so
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/
-lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/distrib.so
+@so lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/distrib.so
 lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_pie/
-lib/goffice/${GNOME_VERSION}/plugins/plot_pie/pie.so
+@so lib/goffice/${GNOME_VERSION}/plugins/plot_pie/pie.so
 lib/goffice/${GNOME_VERSION}/plugins/plot_pie/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_pie/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_radar/
 lib/goffice/${GNOME_VERSION}/plugins/plot_radar/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_radar/plugin.xml
-lib/goffice/${GNOME_VERSION}/plugins/plot_radar/radar.so
+@so lib/goffice/${GNOME_VERSION}/plugins/plot_radar/radar.so
 lib/goffice/${GNOME_VERSION}/plugins/plot_surface/
 lib/goffice/${GNOME_VERSION}/plugins/plot_surface/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_surface/plugin.xml
-lib/goffice/${GNOME_VERSION}/plugins/plot_surface/surface.so
+@so lib/goffice/${GNOME_VERSION}/plugins/plot_surface/surface.so
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/plugin.xml
-lib/goffice/${GNOME_VERSION}/plugins/plot_xy/xy.so
+@so lib/goffice/${GNOME_VERSION}/plugins/plot_xy/xy.so
 lib/goffice/${GNOME_VERSION}/plugins/reg_linear/
-lib/goffice/${GNOME_VERSION}/plugins/reg_linear/linreg.so
+@so lib/goffice/${GNOME_VERSION}/plugins/reg_linear/linreg.so
 lib/goffice/${GNOME_VERSION}/plugins/reg_linear/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/reg_linear/reg-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/reg_logfit/
-lib/goffice/${GNOME_VERSION}/plugins/reg_logfit/logfit.so
+@so lib/goffice/${GNOME_VERSION}/plugins/reg_logfit/logfit.so
 lib/goffice/${GNOME_VERSION}/plugins/reg_logfit/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/reg_logfit/reg-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/smoothing/
 lib/goffice/${GNOME_VERSION}/plugins/smoothing/plugin.xml
-lib/goffice/${GNOME_VERSION}/plugins/smoothing/smoothing.so
+@so lib/goffice/${GNOME_VERSION}/plugins/smoothing/smoothing.so
 lib/goffice/${GNOME_VERSION}/plugins/smoothing/types.xml
-lib/libgoffice-${GOFFICE_API_VERSION}.a
+@static-lib lib/libgoffice-${GOFFICE_API_VERSION}.a
 lib/libgoffice-${GOFFICE_API_VERSION}.la
 @lib lib/libgoffice-${GOFFICE_API_VERSION}.so.${LIBgoffice-${GOFFICE_API_VERSION}_VERSION}
 lib/pkgconfig/libgoffice-${GOFFICE_API_VERSION}.pc
