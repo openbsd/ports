@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/11/01 21:31:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/05/14 15:19:14 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service
@@ -263,6 +263,20 @@ share/help/sv/gnome-clocks/timer.page
 share/help/sv/gnome-clocks/world-add.page
 share/help/sv/gnome-clocks/world-check.page
 share/help/sv/gnome-clocks/world-remove.page
+share/help/uk/gnome-clocks/
+share/help/uk/gnome-clocks/alarm-add.page
+share/help/uk/gnome-clocks/alarm-edit.page
+share/help/uk/gnome-clocks/alarm-remove.page
+share/help/uk/gnome-clocks/alarm-snooze-stop.page
+share/help/uk/gnome-clocks/figures/
+share/help/uk/gnome-clocks/figures/gnome-clocks.png
+share/help/uk/gnome-clocks/index.page
+share/help/uk/gnome-clocks/legal.xml
+share/help/uk/gnome-clocks/stopwatch.page
+share/help/uk/gnome-clocks/timer.page
+share/help/uk/gnome-clocks/world-add.page
+share/help/uk/gnome-clocks/world-check.page
+share/help/uk/gnome-clocks/world-remove.page
 share/icons/hicolor/scalable/apps/org.gnome.clocks.svg
 share/icons/hicolor/symbolic/apps/org.gnome.clocks-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-clocks.mo
@@ -275,6 +289,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-clocks.mo
 share/locale/bs/LC_MESSAGES/gnome-clocks.mo
 share/locale/ca/LC_MESSAGES/gnome-clocks.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-clocks.mo
+share/locale/ckb/LC_MESSAGES/gnome-clocks.mo
 share/locale/cs/LC_MESSAGES/gnome-clocks.mo
 share/locale/da/LC_MESSAGES/gnome-clocks.mo
 share/locale/de/LC_MESSAGES/gnome-clocks.mo
@@ -308,6 +323,7 @@ share/locale/lv/LC_MESSAGES/gnome-clocks.mo
 share/locale/mjw/LC_MESSAGES/gnome-clocks.mo
 share/locale/ml/LC_MESSAGES/gnome-clocks.mo
 share/locale/mr/LC_MESSAGES/gnome-clocks.mo
+share/locale/ms/LC_MESSAGES/gnome-clocks.mo
 share/locale/nb/LC_MESSAGES/gnome-clocks.mo
 share/locale/ne/LC_MESSAGES/gnome-clocks.mo
 share/locale/nl/LC_MESSAGES/gnome-clocks.mo
@@ -335,7 +351,7 @@ share/locale/vi/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-clocks.mo
-share/metainfo/org.gnome.clocks.appdata.xml
+share/metainfo/org.gnome.clocks.metainfo.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
