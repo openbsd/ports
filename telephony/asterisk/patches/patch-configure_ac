@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.52 2020/04/08 22:10:50 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.53 2020/05/14 11:42:49 sthen Exp $
 
 - cope with OpenBSD's nonstandard header location for Lua
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -2538,10 +2538,10 @@ fi
+@@ -2550,10 +2550,10 @@ fi
  AST_EXT_LIB_CHECK([OPUSFILE], [opusfile], [op_open_callbacks], [opus/opusfile.h], [], [$__opus_include])
  
  for ver in 5.3 5.2 5.1; do

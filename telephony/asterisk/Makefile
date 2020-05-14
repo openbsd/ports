@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.316 2020/04/08 22:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.317 2020/05/14 11:42:48 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.9.0
+VER=		16.10.0
 PJ_V=		2.9
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION-main=	0
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
@@ -17,7 +16,7 @@ USE_LLD=		No
 
 CATEGORIES=	telephony
 
-HOMEPAGE=	http://www.asterisk.org/
+HOMEPAGE=	https://www.asterisk.org/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -88,7 +87,7 @@ RUN_DEPENDS-main=	telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
 		https://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 MASTER_SITES0=	https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/$(PJ_V)/ \
-		http://www.pjsip.org/release/${PJ_V}/
+		https://www.pjsip.org/release/${PJ_V}/
 
 USE_GMAKE=		Yes
 

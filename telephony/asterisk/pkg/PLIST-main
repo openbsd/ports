@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.85 2020/04/08 22:10:51 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.86 2020/05/14 11:42:49 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -88,6 +88,7 @@ include/asterisk/dns_resolver.h
 include/asterisk/dns_srv.h
 include/asterisk/dns_test.h
 include/asterisk/dns_tlsa.h
+include/asterisk/dns_txt.h
 include/asterisk/dnsmgr.h
 include/asterisk/doxygen/
 include/asterisk/doxygen/architecture.h
