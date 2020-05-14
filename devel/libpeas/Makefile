@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.65 2019/11/01 19:44:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2020/05/14 14:57:37 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	1.24.1
+GNOME_VERSION=	1.26.0
 
 CATEGORIES=	devel
 
-SHARED_LIBS +=  peas-1.0             400.2      # 0.2400.1
-SHARED_LIBS +=  peas-gtk-1.0         400.2      # 0.2400.1
+SHARED_LIBS +=  peas-1.0             400.3      # 0.2600.0
+SHARED_LIBS +=  peas-gtk-1.0         400.3      # 0.2600.0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -16,9 +16,8 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += c gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-3 python${MODPY_DEFAULT_VERSION_2}
+WANTLIB += gtk-3 intl ${MODPY_WANTLIB}
 
 MODULES=	devel/meson \
 		lang/python \
@@ -36,11 +35,8 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS +=	-Dglade_catalog=false\
 			-Dlua51=false \
-			-Dpython2=true
+			-Dpython2=false
 
-# we need support for both python2 and python3
-BUILD_DEPENDS +=lang/python/${MODPY_DEFAULT_VERSION_2}
-RUN_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2} \
-		devel/py-gobject3
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

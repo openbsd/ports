@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/11/01 19:44:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/05/14 14:57:37 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -24,19 +24,18 @@ lib/girepository-1.0/PeasGtk-1.0.typelib
 lib/libpeas-1.0/
 @lib lib/libpeas-1.0.so.${LIBpeas-1.0_VERSION}
 lib/libpeas-1.0/loaders/
-lib/libpeas-1.0/loaders/libpython3loader.so
-lib/libpeas-1.0/loaders/libpythonloader.so
+@so lib/libpeas-1.0/loaders/libpython3loader.so
 @lib lib/libpeas-gtk-1.0.so.${LIBpeas-gtk-1.0_VERSION}
 lib/peas-demo/
 lib/peas-demo/plugins/
 lib/peas-demo/plugins/helloworld/
 lib/peas-demo/plugins/helloworld/helloworld.plugin
-lib/peas-demo/plugins/helloworld/libhelloworld.so
+@so lib/peas-demo/plugins/helloworld/libhelloworld.so
 lib/peas-demo/plugins/pythonhello/
 lib/peas-demo/plugins/pythonhello/pythonhello.plugin
 lib/peas-demo/plugins/pythonhello/pythonhello.py
 lib/peas-demo/plugins/secondtime/
-lib/peas-demo/plugins/secondtime/libsecondtime.so
+@so lib/peas-demo/plugins/secondtime/libsecondtime.so
 lib/peas-demo/plugins/secondtime/secondtime.plugin
 lib/pkgconfig/libpeas-1.0.pc
 lib/pkgconfig/libpeas-gtk-1.0.pc
@@ -87,6 +86,7 @@ share/locale/lt/LC_MESSAGES/libpeas-1.0.mo
 share/locale/lv/LC_MESSAGES/libpeas-1.0.mo
 share/locale/ml/LC_MESSAGES/libpeas-1.0.mo
 share/locale/mr/LC_MESSAGES/libpeas-1.0.mo
+share/locale/ms/LC_MESSAGES/libpeas-1.0.mo
 share/locale/nb/LC_MESSAGES/libpeas-1.0.mo
 share/locale/nds/LC_MESSAGES/libpeas-1.0.mo
 share/locale/ne/LC_MESSAGES/libpeas-1.0.mo
