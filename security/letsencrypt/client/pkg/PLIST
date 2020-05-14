@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/03/04 14:33:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.29 2020/05/14 11:48:53 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/* /var/lib/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -75,10 +75,8 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/displ
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}completer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}dummy_readline.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}enhancements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/completer.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/dummy_readline.py
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/enhancements.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/eff.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/error_handler.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/hooks.py
