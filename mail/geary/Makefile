@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2019/11/24 11:26:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2020/05/14 14:54:45 ajacoutot Exp $
 
 COMMENT=		email application built around conversations
 
 GNOME_PROJECT=		geary
-GNOME_VERSION=		3.34.2
+GNOME_VERSION=		3.36.2
 
 CATEGORIES=		mail
 
@@ -14,11 +14,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c cairo canberra enchant-2 folks gck-1 gcr-base-3 gdk-3
-WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gmime-2.6 goa-1.0
-WANTLIB += gobject-2.0 gspell-1 gtk-3 handy-0.0 intl javascriptcoregtk-4.0
-WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 secret-1 soup-2.4
-WANTLIB += sqlite3 webkit2gtk-4.0 xml2 ytnef
+WANTLIB += c cairo enchant-2 folks gck-1 gcr-base-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmime-3.0 goa-1.0 gobject-2.0
+WANTLIB += gspell-1 gtk-3 handy-0.0 intl javascriptcoregtk-4.0
+WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 peas-1.0 secret-1
+WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0 xml2 ytnef
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -36,14 +36,16 @@ RUN_DEPENDS=		devel/iso-codes
 BUILD_DEPENDS=		devel/appstream-glib \
 			devel/iso-codes
 
-LIB_DEPENDS=		audio/libcanberra \
-			converters/libytnef \
+LIB_DEPENDS=		converters/libytnef \
 			databases/sqlite3 \
 			devel/libgee \
-			mail/gmime \
+			devel/libpeas \
+			mail/gmime30 \
 			net/telepathy/folks \
 			textproc/gspell \
 			x11/gnome/online-accounts \
 			x11/libhandy
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

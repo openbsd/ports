@@ -1,8 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/11/24 11:26:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/05/14 14:54:45 ajacoutot Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
 lib/geary/
+@so lib/geary/libgeary-client-3.36.so
+lib/geary/plugins/
+lib/geary/plugins/desktop-notifications/
+lib/geary/plugins/desktop-notifications/desktop-notifications.plugin
+@so lib/geary/plugins/desktop-notifications/libdesktop-notifications.so
+lib/geary/plugins/notification-badge/
+@so lib/geary/plugins/notification-badge/libnotification-badge.so
+lib/geary/plugins/notification-badge/notification-badge.plugin
 lib/geary/web-extensions/
 @so lib/geary/web-extensions/libgeary-web-process.so
 share/applications/geary-autostart.desktop
@@ -54,6 +62,23 @@ share/help/C/geary/search.page
 share/help/C/geary/shortcuts.page
 share/help/C/geary/star.page
 share/help/C/geary/write.page
+share/help/ca/
+share/help/ca/geary/
+share/help/ca/geary/accounts.page
+share/help/ca/geary/archive.page
+share/help/ca/geary/bugs.page
+share/help/ca/geary/contributing.page
+share/help/ca/geary/figures/
+share/help/ca/geary/figures/geary.svg
+share/help/ca/geary/index.page
+share/help/ca/geary/label.page
+share/help/ca/geary/limits.page
+share/help/ca/geary/overview.page
+share/help/ca/geary/preferences.page
+share/help/ca/geary/search.page
+share/help/ca/geary/shortcuts.page
+share/help/ca/geary/star.page
+share/help/ca/geary/write.page
 share/help/cs/
 share/help/cs/geary/
 share/help/cs/geary/accounts.page
@@ -227,9 +252,12 @@ share/help/tr/geary/write.page
 share/icons/hicolor/scalable/actions/close-symbolic.svg
 share/icons/hicolor/scalable/actions/detach-symbolic.svg
 share/icons/hicolor/scalable/actions/edit-symbolic.svg
+share/icons/hicolor/scalable/actions/font-color-symbolic.svg
+share/icons/hicolor/scalable/actions/font-size-symbolic.svg
 share/icons/hicolor/scalable/actions/format-ordered-list-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/format-ordered-list-symbolic.svg
 share/icons/hicolor/scalable/actions/format-text-remove-symbolic.svg
+share/icons/hicolor/scalable/actions/format-toolbar-toggle-symbolic.svg
 share/icons/hicolor/scalable/actions/format-unordered-list-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/format-unordered-list-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-archive-symbolic.svg
