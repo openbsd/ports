@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/11/23 09:46:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/05/14 15:07:20 ajacoutot Exp $
 @conflict gtef-*
 @pkgpath x11/gnome/gtef
 include/tepl-4/
@@ -65,6 +65,7 @@ share/gtk-doc/html/tepl-4.0/api-index-1-0.html
 share/gtk-doc/html/tepl-4.0/api-index-2-0.html
 share/gtk-doc/html/tepl-4.0/api-index-3-0.html
 share/gtk-doc/html/tepl-4.0/api-index-4-0.html
+share/gtk-doc/html/tepl-4.0/api-index-4-4.html
 share/gtk-doc/html/tepl-4.0/api-index-full.html
 share/gtk-doc/html/tepl-4.0/code-folding.html
 share/gtk-doc/html/tepl-4.0/file-loading-and-saving.html
@@ -87,13 +88,17 @@ share/gtk-doc/html/tepl-4.0/tepl-4.0-Tepl-Initialization-and-Finalization.html
 share/gtk-doc/html/tepl-4.0/tepl-4.0-TeplIter.html
 share/gtk-doc/html/tepl-4.0/tepl-4.0-TeplMenuShell.html
 share/gtk-doc/html/tepl-4.0/tepl-4.0-TeplMetadataManager.html
+share/gtk-doc/html/tepl-4.0/tepl-4.0-TeplUtils.html
 share/gtk-doc/html/tepl-4.0/tepl-4.0.devhelp2
 share/gtk-doc/html/tepl-4.0/tepl-api-reference.html
 share/gtk-doc/html/tepl-4.0/up-insensitive.png
 share/gtk-doc/html/tepl-4.0/up.png
+share/locale/ca/LC_MESSAGES/tepl-4.mo
 share/locale/cs/LC_MESSAGES/tepl-4.mo
 share/locale/da/LC_MESSAGES/tepl-4.mo
 share/locale/de/LC_MESSAGES/tepl-4.mo
+share/locale/el/LC_MESSAGES/tepl-4.mo
+share/locale/en_GB/LC_MESSAGES/tepl-4.mo
 share/locale/es/LC_MESSAGES/tepl-4.mo
 share/locale/eu/LC_MESSAGES/tepl-4.mo
 share/locale/fur/LC_MESSAGES/tepl-4.mo
@@ -107,4 +112,5 @@ share/locale/ru/LC_MESSAGES/tepl-4.mo
 share/locale/sl/LC_MESSAGES/tepl-4.mo
 share/locale/sr/LC_MESSAGES/tepl-4.mo
 share/locale/sv/LC_MESSAGES/tepl-4.mo
+share/locale/tr/LC_MESSAGES/tepl-4.mo
 share/locale/uk/LC_MESSAGES/tepl-4.mo
