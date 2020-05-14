@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/14 20:34:19 ian Exp $
+bin/crossfire
+lib/crossfire/
+lib/crossfire/CrossFire.jar
+lib/crossfire/default.dict
+@man man/man1/crossfire.1
+share/examples/crossfire/
+share/examples/crossfire/ChefsSpecial.cfp
+share/examples/crossfire/StopAndGo.cfp
