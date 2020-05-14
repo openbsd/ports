@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2020/04/26 07:48:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2020/05/14 15:34:52 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		3.34.6
+GNOME_VERSION=		3.36.2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -41,8 +41,11 @@ RUN_DEPENDS +=		sysutils/polkit
 RUN_DEPENDS +=		sysutils/consolekit
 
 CONFIGURE_ARGS=		-Dcheese=disabled \
-			-Dsoftware-sources=disabled \
 			-Dsystemd=false
+
+# requires malcontent
+# https://gitlab.freedesktop.org/pwithnall/malcontent/
+CONFIGURE_ARGS +=	-Dparental_controls=disabled
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gnome-initial-setup/meson.build

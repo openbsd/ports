@@ -1,23 +1,23 @@
-$OpenBSD: patch-gnome-initial-setup_gnome-initial-setup_c,v 1.8 2019/01/06 13:41:56 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_gnome-initial-setup_c,v 1.9 2020/05/14 15:34:52 ajacoutot Exp $
 
 Disable NetworkManager.
 
 Index: gnome-initial-setup/gnome-initial-setup.c
 --- gnome-initial-setup/gnome-initial-setup.c.orig
 +++ gnome-initial-setup/gnome-initial-setup.c
-@@ -36,7 +36,6 @@
- #include "pages/region/gis-region-page.h"
+@@ -34,7 +34,6 @@
+ 
+ #include "pages/language/gis-language-page.h"
  #include "pages/keyboard/gis-keyboard-page.h"
- #include "pages/eulas/gis-eula-pages.h"
 -#include "pages/network/gis-network-page.h"
  #include "pages/timezone/gis-timezone-page.h"
  #include "pages/privacy/gis-privacy-page.h"
- #include "pages/software/gis-software-page.h"
-@@ -71,7 +70,6 @@ static PageData page_table[] = {
- #endif /* ENABLE_REGION_PAGE */
+ #include "pages/goa/gis-goa-page.h"
+@@ -65,7 +64,6 @@ typedef struct {
+ static PageData page_table[] = {
+   PAGE (language, FALSE),
    PAGE (keyboard, FALSE),
-   PAGE (eula,     FALSE),
 -  PAGE (network,  FALSE),
    PAGE (privacy,  FALSE),
    PAGE (timezone, TRUE),
-   PAGE (software, TRUE),
+   PAGE (goa,      FALSE),
