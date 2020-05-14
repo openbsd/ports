@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_ansible_modules_system_service_facts_py,v 1.1 2019/12/04 20:44:12 jasper Exp $
+$OpenBSD: patch-lib_ansible_modules_system_service_facts_py,v 1.2 2020/05/14 15:15:13 pvk Exp $
 
 Add OpenBSD support to the service_facts module
 
@@ -27,7 +27,7 @@ Index: lib/ansible/modules/system/service_facts.py
            type: str
            sample: enabled
          name:
-@@ -223,10 +223,55 @@ class SystemctlScanService(BaseService):
+@@ -224,10 +224,55 @@ class SystemctlScanService(BaseService):
          return services
  
  
