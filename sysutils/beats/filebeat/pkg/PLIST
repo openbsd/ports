@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/04/04 02:52:58 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/05/14 21:53:06 pvk Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/filebeat/{*,registry/filebeat/*}
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/filebeat/*
 @rcscript ${RCDIR}/filebeat
@@ -38,13 +38,13 @@ share/filebeat/module/apache/access/
 share/filebeat/module/apache/access/config/
 share/filebeat/module/apache/access/config/access.yml
 share/filebeat/module/apache/access/ingest/
-share/filebeat/module/apache/access/ingest/default.json
+share/filebeat/module/apache/access/ingest/pipeline.yml
 share/filebeat/module/apache/access/manifest.yml
 share/filebeat/module/apache/error/
 share/filebeat/module/apache/error/config/
 share/filebeat/module/apache/error/config/error.yml
 share/filebeat/module/apache/error/ingest/
-share/filebeat/module/apache/error/ingest/pipeline.json
+share/filebeat/module/apache/error/ingest/pipeline.yml
 share/filebeat/module/apache/error/manifest.yml
 share/filebeat/module/apache/module.yml
 share/filebeat/module/apache2/
@@ -62,40 +62,40 @@ share/filebeat/module/elasticsearch/audit/
 share/filebeat/module/elasticsearch/audit/config/
 share/filebeat/module/elasticsearch/audit/config/audit.yml
 share/filebeat/module/elasticsearch/audit/ingest/
-share/filebeat/module/elasticsearch/audit/ingest/pipeline-json.json
-share/filebeat/module/elasticsearch/audit/ingest/pipeline-plaintext.json
-share/filebeat/module/elasticsearch/audit/ingest/pipeline.json
+share/filebeat/module/elasticsearch/audit/ingest/pipeline-json.yml
+share/filebeat/module/elasticsearch/audit/ingest/pipeline-plaintext.yml
+share/filebeat/module/elasticsearch/audit/ingest/pipeline.yml
 share/filebeat/module/elasticsearch/audit/manifest.yml
 share/filebeat/module/elasticsearch/deprecation/
 share/filebeat/module/elasticsearch/deprecation/config/
 share/filebeat/module/elasticsearch/deprecation/config/log.yml
 share/filebeat/module/elasticsearch/deprecation/ingest/
-share/filebeat/module/elasticsearch/deprecation/ingest/pipeline-json.json
-share/filebeat/module/elasticsearch/deprecation/ingest/pipeline-plaintext.json
-share/filebeat/module/elasticsearch/deprecation/ingest/pipeline.json
+share/filebeat/module/elasticsearch/deprecation/ingest/pipeline-json.yml
+share/filebeat/module/elasticsearch/deprecation/ingest/pipeline-plaintext.yml
+share/filebeat/module/elasticsearch/deprecation/ingest/pipeline.yml
 share/filebeat/module/elasticsearch/deprecation/manifest.yml
 share/filebeat/module/elasticsearch/gc/
 share/filebeat/module/elasticsearch/gc/config/
 share/filebeat/module/elasticsearch/gc/config/gc.yml
 share/filebeat/module/elasticsearch/gc/ingest/
-share/filebeat/module/elasticsearch/gc/ingest/pipeline.json
+share/filebeat/module/elasticsearch/gc/ingest/pipeline.yml
 share/filebeat/module/elasticsearch/gc/manifest.yml
 share/filebeat/module/elasticsearch/module.yml
 share/filebeat/module/elasticsearch/server/
 share/filebeat/module/elasticsearch/server/config/
 share/filebeat/module/elasticsearch/server/config/log.yml
 share/filebeat/module/elasticsearch/server/ingest/
-share/filebeat/module/elasticsearch/server/ingest/pipeline-json.json
-share/filebeat/module/elasticsearch/server/ingest/pipeline-plaintext.json
-share/filebeat/module/elasticsearch/server/ingest/pipeline.json
+share/filebeat/module/elasticsearch/server/ingest/pipeline-json.yml
+share/filebeat/module/elasticsearch/server/ingest/pipeline-plaintext.yml
+share/filebeat/module/elasticsearch/server/ingest/pipeline.yml
 share/filebeat/module/elasticsearch/server/manifest.yml
 share/filebeat/module/elasticsearch/slowlog/
 share/filebeat/module/elasticsearch/slowlog/config/
 share/filebeat/module/elasticsearch/slowlog/config/slowlog.yml
 share/filebeat/module/elasticsearch/slowlog/ingest/
-share/filebeat/module/elasticsearch/slowlog/ingest/pipeline-json.json
-share/filebeat/module/elasticsearch/slowlog/ingest/pipeline-plaintext.json
-share/filebeat/module/elasticsearch/slowlog/ingest/pipeline.json
+share/filebeat/module/elasticsearch/slowlog/ingest/pipeline-json.yml
+share/filebeat/module/elasticsearch/slowlog/ingest/pipeline-plaintext.yml
+share/filebeat/module/elasticsearch/slowlog/ingest/pipeline.yml
 share/filebeat/module/elasticsearch/slowlog/manifest.yml
 share/filebeat/module/haproxy/
 share/filebeat/module/haproxy/log/
@@ -103,7 +103,7 @@ share/filebeat/module/haproxy/log/config/
 share/filebeat/module/haproxy/log/config/file.yml
 share/filebeat/module/haproxy/log/config/syslog.yml
 share/filebeat/module/haproxy/log/ingest/
-share/filebeat/module/haproxy/log/ingest/pipeline.json
+share/filebeat/module/haproxy/log/ingest/pipeline.yml
 share/filebeat/module/haproxy/log/manifest.yml
 share/filebeat/module/haproxy/module.yml
 share/filebeat/module/icinga/
@@ -111,40 +111,43 @@ share/filebeat/module/icinga/debug/
 share/filebeat/module/icinga/debug/config/
 share/filebeat/module/icinga/debug/config/debug.yml
 share/filebeat/module/icinga/debug/ingest/
-share/filebeat/module/icinga/debug/ingest/pipeline.json
+share/filebeat/module/icinga/debug/ingest/pipeline.yml
 share/filebeat/module/icinga/debug/manifest.yml
 share/filebeat/module/icinga/main/
 share/filebeat/module/icinga/main/config/
 share/filebeat/module/icinga/main/config/main.yml
 share/filebeat/module/icinga/main/ingest/
-share/filebeat/module/icinga/main/ingest/pipeline.json
+share/filebeat/module/icinga/main/ingest/pipeline.yml
 share/filebeat/module/icinga/main/manifest.yml
 share/filebeat/module/icinga/module.yml
 share/filebeat/module/icinga/startup/
 share/filebeat/module/icinga/startup/config/
 share/filebeat/module/icinga/startup/config/startup.yml
 share/filebeat/module/icinga/startup/ingest/
-share/filebeat/module/icinga/startup/ingest/pipeline.json
+share/filebeat/module/icinga/startup/ingest/pipeline.yml
 share/filebeat/module/icinga/startup/manifest.yml
+@comment share/filebeat/module/iis/access/ingest/default.json
+@comment share/filebeat/module/iis/error/ingest/default.json
+@comment share/filebeat/module/kafka/log/ingest/pipeline.json
 @comment share/filebeat/module/iis/
 @comment share/filebeat/module/iis/access/
 @comment share/filebeat/module/iis/access/config/
 @comment share/filebeat/module/iis/access/config/iis-access.yml
 @comment share/filebeat/module/iis/access/ingest/
-@comment share/filebeat/module/iis/access/ingest/default.json
+share/filebeat/module/iis/access/ingest/pipeline.yml
 @comment share/filebeat/module/iis/access/manifest.yml
 @comment share/filebeat/module/iis/error/
 @comment share/filebeat/module/iis/error/config/
 @comment share/filebeat/module/iis/error/config/iis-error.yml
 @comment share/filebeat/module/iis/error/ingest/
-@comment share/filebeat/module/iis/error/ingest/default.json
+share/filebeat/module/iis/error/ingest/pipeline.yml
 @comment share/filebeat/module/iis/error/manifest.yml
 @comment share/filebeat/module/kafka/
 @comment share/filebeat/module/kafka/log/
 @comment share/filebeat/module/kafka/log/config/
 @comment share/filebeat/module/kafka/log/config/log.yml
 @comment share/filebeat/module/kafka/log/ingest/
-@comment share/filebeat/module/kafka/log/ingest/pipeline.json
+share/filebeat/module/kafka/log/ingest/pipeline.yml
 @comment share/filebeat/module/kafka/log/manifest.yml
 @comment share/filebeat/module/kafka/module.yml
 share/filebeat/module/kibana/
@@ -152,7 +155,7 @@ share/filebeat/module/kibana/log/
 share/filebeat/module/kibana/log/config/
 share/filebeat/module/kibana/log/config/log.yml
 share/filebeat/module/kibana/log/ingest/
-share/filebeat/module/kibana/log/ingest/pipeline.json
+share/filebeat/module/kibana/log/ingest/pipeline.yml
 share/filebeat/module/kibana/log/manifest.yml
 share/filebeat/module/kibana/module.yml
 share/filebeat/module/logstash/
@@ -160,16 +163,16 @@ share/filebeat/module/logstash/log/
 share/filebeat/module/logstash/log/config/
 share/filebeat/module/logstash/log/config/log.yml
 share/filebeat/module/logstash/log/ingest/
-share/filebeat/module/logstash/log/ingest/pipeline-json.json
-share/filebeat/module/logstash/log/ingest/pipeline-plain.json
+share/filebeat/module/logstash/log/ingest/pipeline-json.yml
+share/filebeat/module/logstash/log/ingest/pipeline-plain.yml
 share/filebeat/module/logstash/log/manifest.yml
 share/filebeat/module/logstash/module.yml
 share/filebeat/module/logstash/slowlog/
 share/filebeat/module/logstash/slowlog/config/
 share/filebeat/module/logstash/slowlog/config/slowlog.yml
 share/filebeat/module/logstash/slowlog/ingest/
-share/filebeat/module/logstash/slowlog/ingest/pipeline-json.json
-share/filebeat/module/logstash/slowlog/ingest/pipeline-plain.json
+share/filebeat/module/logstash/slowlog/ingest/pipeline-json.yml
+share/filebeat/module/logstash/slowlog/ingest/pipeline-plain.yml
 share/filebeat/module/logstash/slowlog/manifest.yml
 share/filebeat/module/mongodb/
 share/filebeat/module/mongodb/log/
@@ -214,6 +217,12 @@ share/filebeat/module/nginx/error/config/nginx-error.yml
 share/filebeat/module/nginx/error/ingest/
 share/filebeat/module/nginx/error/ingest/pipeline.json
 share/filebeat/module/nginx/error/manifest.yml
+share/filebeat/module/nginx/ingress_controller/
+share/filebeat/module/nginx/ingress_controller/config/
+share/filebeat/module/nginx/ingress_controller/config/ingress_controller.yml
+share/filebeat/module/nginx/ingress_controller/ingest/
+share/filebeat/module/nginx/ingress_controller/ingest/pipeline.json
+share/filebeat/module/nginx/ingress_controller/manifest.yml
 share/filebeat/module/nginx/module.yml
 @comment share/filebeat/module/osquery/
 @comment share/filebeat/module/osquery/module.yml

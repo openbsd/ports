@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/04/04 02:57:57 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/05/14 21:53:06 pvk Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/metricbeat/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/metricbeat/*
 @rcscript ${RCDIR}/metricbeat
@@ -15,6 +15,7 @@ share/examples/metricbeat/modules.d/aerospike.yml.disabled
 share/examples/metricbeat/modules.d/apache.yml.disabled
 share/examples/metricbeat/modules.d/beat-xpack.yml.disabled
 share/examples/metricbeat/modules.d/beat.yml.disabled
+share/examples/metricbeat/modules.d/ceph-mgr.yml.disabled
 share/examples/metricbeat/modules.d/ceph.yml.disabled
 share/examples/metricbeat/modules.d/consul.yml.disabled
 share/examples/metricbeat/modules.d/couchbase.yml.disabled
@@ -48,6 +49,7 @@ share/examples/metricbeat/modules.d/postgresql.yml.disabled
 share/examples/metricbeat/modules.d/prometheus.yml.disabled
 share/examples/metricbeat/modules.d/rabbitmq.yml.disabled
 share/examples/metricbeat/modules.d/redis.yml.disabled
+share/examples/metricbeat/modules.d/system.yml
 share/examples/metricbeat/modules.d/traefik.yml.disabled
 share/examples/metricbeat/modules.d/uwsgi.yml.disabled
 share/examples/metricbeat/modules.d/vsphere.yml.disabled
@@ -139,6 +141,9 @@ share/metricbeat/module/traefik/docker-compose.yml
 share/metricbeat/module/uwsgi/
 share/metricbeat/module/uwsgi/docker-compose.yml
 share/metricbeat/module/uwsgi/module.yml
+share/metricbeat/module/vsphere/
+share/metricbeat/module/vsphere/docker-compose.yml
+share/metricbeat/module/vsphere/module.yml
 share/metricbeat/module/windows/
 share/metricbeat/module/windows/module.yml
 share/metricbeat/module/zookeeper/

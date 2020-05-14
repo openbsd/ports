@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2020/04/04 02:57:57 pvk Exp $
+# $OpenBSD: Makefile,v 1.23 2020/05/14 21:53:06 pvk Exp $
 
 COMMENT =	lightweight shipper for system metrics
 
 BEAT =		metricbeat
-VERSION =	7.6.2
+VERSION =	7.7.0
 
 GH_ACCOUNT =	elastic
 GH_PROJECT =	beats

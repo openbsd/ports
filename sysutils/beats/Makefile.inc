@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2020/04/04 02:44:37 pvk Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2020/05/14 21:53:06 pvk Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -16,7 +16,7 @@ MODGO_ENV =		PATH="${PORTPATH}" CFLAGS="${CFLAGS}"
 .if ${ELASTIC_BEAT:L} == "yes"
 HOMEPAGE ?=		https://www.elastic.co/products/beats/${BEAT}
 
-ALL_TARGET =		github.com/elastic/beats/${BEAT}
+ALL_TARGET =		github.com/elastic/beats/v7/${BEAT}
 
 WRKDIST =		${WRKDIR}/${GH_PROJECT}-${VERSION}
 MODGO_SUBDIR =		${WRKDIST}/${BEAT}
@@ -27,7 +27,7 @@ pre-build:
 		cp -R ${WRKDIST}/metricbeat/ ${WRKSRC}/../; \
 	fi
 .else
-ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${BEAT}
+ALL_TARGET ?=		github.com/${GH_ACCOUNT}/v7/${BEAT}
 .endif
 
 # XXX: requires -path.home ${PREFIX}/share/${BEAT}/module/
