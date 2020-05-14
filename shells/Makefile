@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2020/03/06 17:57:15 bket Exp $
+# $OpenBSD: Makefile,v 1.36 2020/05/14 15:28:00 jasper Exp $
 
     SUBDIR =
     SUBDIR += bash
+    SUBDIR += bash-completion
     SUBDIR += dash
     SUBDIR += dash,static
     SUBDIR += elvish
