@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.61 2019/11/21 18:31:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.62 2020/05/14 15:10:58 jasper Exp $
 @bin bin/gedit
-include/gedit-3.14/
-include/gedit-3.14/gedit/
-include/gedit-3.14/gedit/gedit-app-activatable.h
-include/gedit-3.14/gedit/gedit-app.h
-include/gedit-3.14/gedit/gedit-commands.h
-include/gedit-3.14/gedit/gedit-debug.h
-include/gedit-3.14/gedit/gedit-document.h
-include/gedit-3.14/gedit/gedit-encodings-combo-box.h
-include/gedit-3.14/gedit/gedit-menu-extension.h
-include/gedit-3.14/gedit/gedit-message-bus.h
-include/gedit-3.14/gedit/gedit-message.h
-include/gedit-3.14/gedit/gedit-progress-info-bar.h
-include/gedit-3.14/gedit/gedit-statusbar.h
-include/gedit-3.14/gedit/gedit-tab.h
-include/gedit-3.14/gedit/gedit-utils.h
-include/gedit-3.14/gedit/gedit-view-activatable.h
-include/gedit-3.14/gedit/gedit-view.h
-include/gedit-3.14/gedit/gedit-window-activatable.h
-include/gedit-3.14/gedit/gedit-window.h
+include/gedit-3.36/
+include/gedit-3.36/gedit/
+include/gedit-3.36/gedit/gedit-app-activatable.h
+include/gedit-3.36/gedit/gedit-app.h
+include/gedit-3.36/gedit/gedit-commands.h
+include/gedit-3.36/gedit/gedit-debug.h
+include/gedit-3.36/gedit/gedit-document.h
+include/gedit-3.36/gedit/gedit-encodings-combo-box.h
+include/gedit-3.36/gedit/gedit-menu-extension.h
+include/gedit-3.36/gedit/gedit-message-bus.h
+include/gedit-3.36/gedit/gedit-message.h
+include/gedit-3.36/gedit/gedit-progress-info-bar.h
+include/gedit-3.36/gedit/gedit-statusbar.h
+include/gedit-3.36/gedit/gedit-tab.h
+include/gedit-3.36/gedit/gedit-utils.h
+include/gedit-3.36/gedit/gedit-view-activatable.h
+include/gedit-3.36/gedit/gedit-view.h
+include/gedit-3.36/gedit/gedit-window-activatable.h
+include/gedit-3.36/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib
-@so lib/gedit/libgedit-3.14.so
+@so lib/gedit/libgedit-3.36.so
 lib/gedit/plugins/
 lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/externaltools/
@@ -1602,6 +1602,7 @@ share/locale/br/LC_MESSAGES/gedit.mo
 share/locale/bs/LC_MESSAGES/gedit.mo
 share/locale/ca/LC_MESSAGES/gedit.mo
 share/locale/ca@valencia/LC_MESSAGES/gedit.mo
+share/locale/ckb/LC_MESSAGES/gedit.mo
 share/locale/crh/LC_MESSAGES/gedit.mo
 share/locale/cs/LC_MESSAGES/gedit.mo
 share/locale/cy/LC_MESSAGES/gedit.mo

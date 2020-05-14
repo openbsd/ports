@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.166 2019/11/21 18:31:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.167 2020/05/14 15:10:57 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		3.36.2
 
 CATEGORIES=		editors
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 atk-1.0 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
-WANTLIB += intl m pango-1.0 peas-1.0 peas-gtk-1.0 xml2
+WANTLIB += intl m pango-1.0 peas-1.0 peas-gtk-1.0 amtk-5 tepl-4
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
@@ -29,7 +29,8 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 
 LIB_DEPENDS=		devel/libpeas \
 			textproc/gspell \
-			x11/gtksourceview4
+			x11/gtksourceview4 \
+			x11/gnome/tepl>=4.4.0
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
