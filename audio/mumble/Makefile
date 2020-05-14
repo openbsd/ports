@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2020/04/13 13:50:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2020/05/14 17:55:09 kn Exp $
 
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
@@ -7,7 +7,7 @@ VERSION =		1.3.0
 DISTNAME =		mumble-${VERSION}
 PKGNAME-main =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		6
+REVISION-main =		7
 
 CATEGORIES =		audio net
 
