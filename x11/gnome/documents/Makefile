@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.106 2019/11/01 22:03:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2020/05/14 15:25:19 ajacoutot Exp $
 
 COMMENT=		document manager application for GNOME
 
 GNOME_PROJECT=		gnome-documents
 GNOME_VERSION=		3.34.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -20,9 +21,6 @@ MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection docbook
 MODGNOME_TOOLS += 	gtk-update-icon-cache yelp
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
-
-# sync with x11/gnome/gjs
-COMPILER=		base-clang ports-gcc
 
 # GData-0.0.gir, Zpj-0.0.gir...
 BUILD_DEPENDS +=	devel/libgdata \
