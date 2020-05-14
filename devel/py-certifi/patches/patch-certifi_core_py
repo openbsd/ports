@@ -1,12 +1,16 @@
-$OpenBSD: patch-certifi_core_py,v 1.6 2019/10/24 13:33:04 pvk Exp $
+$OpenBSD: patch-certifi_core_py,v 1.7 2020/05/14 11:44:48 sthen Exp $
+
 Index: certifi/core.py
 --- certifi/core.py.orig
 +++ certifi/core.py
-@@ -10,6 +10,4 @@ import os
+@@ -21,9 +21,7 @@ except ImportError:
  
  
  def where():
 -    f = os.path.dirname(__file__)
 -
--    return os.path.join(f, 'cacert.pem')
+-    return os.path.join(f, "cacert.pem")
 +    return '/etc/ssl/cert.pem'
+ 
+ 
+ def contents():
