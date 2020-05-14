@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/11/10 15:02:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/05/14 19:19:01 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -119,6 +119,17 @@ share/doc/HTML/fr/tellico/source-options.png
 share/doc/HTML/fr/tellico/sru-options.png
 share/doc/HTML/fr/tellico/template-options.png
 share/doc/HTML/fr/tellico/z3950-options.png
+share/doc/HTML/it/tellico/
+share/doc/HTML/it/tellico/advanced.docbook
+share/doc/HTML/it/tellico/configuration.docbook
+share/doc/HTML/it/tellico/details.docbook
+share/doc/HTML/it/tellico/faqs.docbook
+share/doc/HTML/it/tellico/fundamentals.docbook
+share/doc/HTML/it/tellico/hacking.docbook
+share/doc/HTML/it/tellico/importing-exporting.docbook
+share/doc/HTML/it/tellico/index.cache.bz2
+share/doc/HTML/it/tellico/index.docbook
+share/doc/HTML/it/tellico/menus.docbook
 share/doc/HTML/nl/tellico/
 share/doc/HTML/nl/tellico/advanced.docbook
 share/doc/HTML/nl/tellico/configuration.docbook
@@ -275,7 +286,6 @@ share/tellico/
 share/tellico/MARC21slim2MODS3.xsl
 share/tellico/MARC21slimUtils.xsl
 share/tellico/UNIMARC2MODS3.xsl
-share/tellico/amazon2tellico.xsl
 share/tellico/arxiv2tellico.xsl
 share/tellico/biblioshare2tellico.xsl
 share/tellico/bibtex-translation.xml
