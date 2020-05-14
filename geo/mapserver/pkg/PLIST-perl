@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-perl,v 1.5 2020/01/02 14:54:04 landry Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+@comment $OpenBSD: PLIST-perl,v 1.6 2020/05/14 13:57:03 landry Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/mapscript/
 @so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/mapscript/mapscript.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/mapscript.pm

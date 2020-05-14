@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2020/03/23 11:46:20 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2020/05/14 13:57:03 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -8,7 +8,7 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V =		7.4.4
+V =		7.6.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -16,7 +16,7 @@ PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 PKGNAME-python=	py3-mapscript-${V}
 
-SHARED_LIBS +=	mapserver 4.0
+SHARED_LIBS +=	mapserver 5.0
 
 CATEGORIES=	geo www
 
@@ -80,11 +80,6 @@ CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 			-DWITH_SOS=1 \
 			-DWITH_PYTHON=1 \
 			-DWITH_PERL=1
-
-# https://github.com/mapserver/mapserver/issues/5766
-# mapserver builds cpp and c files so both are needed..
-CFLAGS+=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
-CXXFLAGS+=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 CONFIGURE_ARGS += -DPHP_CONFIG_EXECUTABLE=${LOCALBASE}/bin/php-config-${MODPHP_VERSION} \
 			-DWITH_PHPNG=1

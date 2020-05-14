@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.8 2019/05/23 19:24:47 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.9 2020/05/14 13:57:03 landry Exp $
 Ensure it uses our FindIconv.cmake module
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -383,9 +383,9 @@ find_package(Freetype)
+@@ -400,9 +400,9 @@ find_package(Freetype)
  if(NOT FREETYPE_FOUND)
    report_mandatory_not_found(FREETYPE)
  endif(NOT FREETYPE_FOUND)
@@ -14,8 +14,8 @@ Index: CMakeLists.txt
 +list(APPEND ALL_INCLUDE_DIRS ${FREETYPE_INCLUDE_DIRS})
  
  
- if(WITH_PROJ)
-@@ -462,7 +462,7 @@ endif( USE_FRIBIDI AND NOT(USE_HARFBUZZ) )
+ find_package(Proj)
+@@ -472,7 +472,7 @@ endif( USE_FRIBIDI AND NOT(USE_HARFBUZZ) )
  
  
  if(WITH_ICONV)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.4 2020/01/02 14:54:04 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.5 2020/05/14 13:57:03 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/mapscript/
 lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -29,6 +29,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}class_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}clone_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}cluster_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}color_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}font_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}hash_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -55,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}thread_
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}zoom_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/class_test.py
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/clone_test.py
+lib/python${MODPY_VERSION}/site-packages/mapscript/tests/cluster_test.py
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/color_test.py
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/data/
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/data/cities.csv
