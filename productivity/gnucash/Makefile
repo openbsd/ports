@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.119 2020/04/18 10:36:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2020/05/14 12:19:08 ajacoutot Exp $
+
+BROKEN =		doesn't build with GLib >=2.64
 
 COMMENT =		personal and small-business financial-accounting software
 
