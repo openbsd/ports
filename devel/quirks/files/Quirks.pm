@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.953 2020/05/08 16:44:41 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.954 2020/05/14 15:21:01 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1557,6 +1557,9 @@ my $obsolete_reason = {
 	'jabberd' => 3,
 	'GeoIP' => 22,
 	'akpop3d' => 2,
+# 6.8
+	'gnome-planner' => 3,
+	'gnome-recipes' => 3,
 };
 
 # reasons for obsolete packages
