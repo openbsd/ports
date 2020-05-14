@@ -1,22 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/11/02 10:01:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/05/14 15:12:20 jasper Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
 @bin bin/gnome-calculator
-include/gcalc-1/
-include/gcalc-1/gcalc/
-include/gcalc-1/gcalc/gcalc.h
-lib/girepository-1.0/GCalc-1.typelib
-lib/libgcalc-1.so
-@bin lib/libgcalc-1.so.0
-lib/libgcalc-1.so.0.0.0
-lib/pkgconfig/gcalc-1.pc
+include/gcalc-2/
+include/gcalc-2/gcalc/
+include/gcalc-2/gcalc/gcalc.h
+include/gci-2/
+include/gci-2/gci/
+include/gci-2/gci/gci.h
+lib/girepository-1.0/GCalc-2.typelib
+lib/girepository-1.0/GCi-1.typelib
+@so lib/libgcalc-2.so
+@bin lib/libgcalc-2.so.1
+lib/libgcalc-2.so.1.0.1
+@so lib/libgci-1.so
+@bin lib/libgci-1.so.0
+lib/libgci-1.so.0.0.0
+lib/pkgconfig/gcalc-2.pc
+lib/pkgconfig/gci-1.pc
 @bin libexec/gnome-calculator-search-provider
 @man man/man1/gcalccmd.1
 @man man/man1/gnome-calculator.1
 share/applications/org.gnome.Calculator.desktop
 share/dbus-1/services/org.gnome.Calculator.SearchProvider.service
-share/gir-1.0/GCalc-1.gir
+share/gir-1.0/GCalc-2.gir
+share/gir-1.0/GCi-1.gir
 share/glib-2.0/schemas/org.gnome.calculator.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
@@ -38,7 +47,7 @@ share/help/C/gnome-calculator/equation.page
 share/help/C/gnome-calculator/factorial.page
 share/help/C/gnome-calculator/factorize.page
 share/help/C/gnome-calculator/figures/
-share/help/C/gnome-calculator/figures/logo32.png
+share/help/C/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/C/gnome-calculator/financial.page
 share/help/C/gnome-calculator/functions.page
 share/help/C/gnome-calculator/history.page
@@ -71,7 +80,7 @@ share/help/bg/gnome-calculator/equation.page
 share/help/bg/gnome-calculator/factorial.page
 share/help/bg/gnome-calculator/factorize.page
 share/help/bg/gnome-calculator/figures/
-share/help/bg/gnome-calculator/figures/logo32.png
+share/help/bg/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/bg/gnome-calculator/financial.page
 share/help/bg/gnome-calculator/functions.page
 share/help/bg/gnome-calculator/history.page
@@ -104,7 +113,7 @@ share/help/ca/gnome-calculator/equation.page
 share/help/ca/gnome-calculator/factorial.page
 share/help/ca/gnome-calculator/factorize.page
 share/help/ca/gnome-calculator/figures/
-share/help/ca/gnome-calculator/figures/logo32.png
+share/help/ca/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/ca/gnome-calculator/financial.page
 share/help/ca/gnome-calculator/functions.page
 share/help/ca/gnome-calculator/history.page
@@ -137,7 +146,7 @@ share/help/cs/gnome-calculator/equation.page
 share/help/cs/gnome-calculator/factorial.page
 share/help/cs/gnome-calculator/factorize.page
 share/help/cs/gnome-calculator/figures/
-share/help/cs/gnome-calculator/figures/logo32.png
+share/help/cs/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/cs/gnome-calculator/financial.page
 share/help/cs/gnome-calculator/functions.page
 share/help/cs/gnome-calculator/history.page
@@ -170,7 +179,7 @@ share/help/de/gnome-calculator/equation.page
 share/help/de/gnome-calculator/factorial.page
 share/help/de/gnome-calculator/factorize.page
 share/help/de/gnome-calculator/figures/
-share/help/de/gnome-calculator/figures/logo32.png
+share/help/de/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/de/gnome-calculator/financial.page
 share/help/de/gnome-calculator/functions.page
 share/help/de/gnome-calculator/history.page
@@ -203,7 +212,7 @@ share/help/el/gnome-calculator/equation.page
 share/help/el/gnome-calculator/factorial.page
 share/help/el/gnome-calculator/factorize.page
 share/help/el/gnome-calculator/figures/
-share/help/el/gnome-calculator/figures/logo32.png
+share/help/el/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/el/gnome-calculator/financial.page
 share/help/el/gnome-calculator/functions.page
 share/help/el/gnome-calculator/history.page
@@ -236,7 +245,7 @@ share/help/es/gnome-calculator/equation.page
 share/help/es/gnome-calculator/factorial.page
 share/help/es/gnome-calculator/factorize.page
 share/help/es/gnome-calculator/figures/
-share/help/es/gnome-calculator/figures/logo32.png
+share/help/es/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/es/gnome-calculator/financial.page
 share/help/es/gnome-calculator/functions.page
 share/help/es/gnome-calculator/history.page
@@ -269,7 +278,7 @@ share/help/eu/gnome-calculator/equation.page
 share/help/eu/gnome-calculator/factorial.page
 share/help/eu/gnome-calculator/factorize.page
 share/help/eu/gnome-calculator/figures/
-share/help/eu/gnome-calculator/figures/logo32.png
+share/help/eu/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/eu/gnome-calculator/financial.page
 share/help/eu/gnome-calculator/functions.page
 share/help/eu/gnome-calculator/history.page
@@ -302,7 +311,7 @@ share/help/fi/gnome-calculator/equation.page
 share/help/fi/gnome-calculator/factorial.page
 share/help/fi/gnome-calculator/factorize.page
 share/help/fi/gnome-calculator/figures/
-share/help/fi/gnome-calculator/figures/logo32.png
+share/help/fi/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/fi/gnome-calculator/financial.page
 share/help/fi/gnome-calculator/functions.page
 share/help/fi/gnome-calculator/history.page
@@ -335,7 +344,7 @@ share/help/fr/gnome-calculator/equation.page
 share/help/fr/gnome-calculator/factorial.page
 share/help/fr/gnome-calculator/factorize.page
 share/help/fr/gnome-calculator/figures/
-share/help/fr/gnome-calculator/figures/logo32.png
+share/help/fr/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/fr/gnome-calculator/financial.page
 share/help/fr/gnome-calculator/functions.page
 share/help/fr/gnome-calculator/history.page
@@ -368,7 +377,7 @@ share/help/gl/gnome-calculator/equation.page
 share/help/gl/gnome-calculator/factorial.page
 share/help/gl/gnome-calculator/factorize.page
 share/help/gl/gnome-calculator/figures/
-share/help/gl/gnome-calculator/figures/logo32.png
+share/help/gl/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/gl/gnome-calculator/financial.page
 share/help/gl/gnome-calculator/functions.page
 share/help/gl/gnome-calculator/history.page
@@ -401,7 +410,7 @@ share/help/hu/gnome-calculator/equation.page
 share/help/hu/gnome-calculator/factorial.page
 share/help/hu/gnome-calculator/factorize.page
 share/help/hu/gnome-calculator/figures/
-share/help/hu/gnome-calculator/figures/logo32.png
+share/help/hu/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/hu/gnome-calculator/financial.page
 share/help/hu/gnome-calculator/functions.page
 share/help/hu/gnome-calculator/history.page
@@ -418,6 +427,39 @@ share/help/hu/gnome-calculator/scientific.page
 share/help/hu/gnome-calculator/superscript.page
 share/help/hu/gnome-calculator/trigonometry.page
 share/help/hu/gnome-calculator/variables.page
+share/help/id/
+share/help/id/gnome-calculator/
+share/help/id/gnome-calculator/absolute.page
+share/help/id/gnome-calculator/base.page
+share/help/id/gnome-calculator/boolean.page
+share/help/id/gnome-calculator/complex.page
+share/help/id/gnome-calculator/conv-base.page
+share/help/id/gnome-calculator/conv-character.page
+share/help/id/gnome-calculator/conv-currency.page
+share/help/id/gnome-calculator/conv-length.page
+share/help/id/gnome-calculator/conv-time.page
+share/help/id/gnome-calculator/conv-weight.page
+share/help/id/gnome-calculator/equation.page
+share/help/id/gnome-calculator/factorial.page
+share/help/id/gnome-calculator/factorize.page
+share/help/id/gnome-calculator/figures/
+share/help/id/gnome-calculator/figures/org.gnome.Calculator.svg
+share/help/id/gnome-calculator/financial.page
+share/help/id/gnome-calculator/functions.page
+share/help/id/gnome-calculator/history.page
+share/help/id/gnome-calculator/index.page
+share/help/id/gnome-calculator/keyboard.page
+share/help/id/gnome-calculator/legal.xml
+share/help/id/gnome-calculator/logarithm.page
+share/help/id/gnome-calculator/modulus.page
+share/help/id/gnome-calculator/mouse.page
+share/help/id/gnome-calculator/number-display.page
+share/help/id/gnome-calculator/percentage.page
+share/help/id/gnome-calculator/power.page
+share/help/id/gnome-calculator/scientific.page
+share/help/id/gnome-calculator/superscript.page
+share/help/id/gnome-calculator/trigonometry.page
+share/help/id/gnome-calculator/variables.page
 share/help/it/
 share/help/it/gnome-calculator/
 share/help/it/gnome-calculator/absolute.page
@@ -434,7 +476,7 @@ share/help/it/gnome-calculator/equation.page
 share/help/it/gnome-calculator/factorial.page
 share/help/it/gnome-calculator/factorize.page
 share/help/it/gnome-calculator/figures/
-share/help/it/gnome-calculator/figures/logo32.png
+share/help/it/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/it/gnome-calculator/financial.page
 share/help/it/gnome-calculator/functions.page
 share/help/it/gnome-calculator/history.page
@@ -467,7 +509,7 @@ share/help/ja/gnome-calculator/equation.page
 share/help/ja/gnome-calculator/factorial.page
 share/help/ja/gnome-calculator/factorize.page
 share/help/ja/gnome-calculator/figures/
-share/help/ja/gnome-calculator/figures/logo32.png
+share/help/ja/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/ja/gnome-calculator/financial.page
 share/help/ja/gnome-calculator/functions.page
 share/help/ja/gnome-calculator/history.page
@@ -500,7 +542,7 @@ share/help/ko/gnome-calculator/equation.page
 share/help/ko/gnome-calculator/factorial.page
 share/help/ko/gnome-calculator/factorize.page
 share/help/ko/gnome-calculator/figures/
-share/help/ko/gnome-calculator/figures/logo32.png
+share/help/ko/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/ko/gnome-calculator/financial.page
 share/help/ko/gnome-calculator/functions.page
 share/help/ko/gnome-calculator/history.page
@@ -533,7 +575,7 @@ share/help/lv/gnome-calculator/equation.page
 share/help/lv/gnome-calculator/factorial.page
 share/help/lv/gnome-calculator/factorize.page
 share/help/lv/gnome-calculator/figures/
-share/help/lv/gnome-calculator/figures/logo32.png
+share/help/lv/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/lv/gnome-calculator/financial.page
 share/help/lv/gnome-calculator/functions.page
 share/help/lv/gnome-calculator/history.page
@@ -566,7 +608,7 @@ share/help/oc/gnome-calculator/equation.page
 share/help/oc/gnome-calculator/factorial.page
 share/help/oc/gnome-calculator/factorize.page
 share/help/oc/gnome-calculator/figures/
-share/help/oc/gnome-calculator/figures/logo32.png
+share/help/oc/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/oc/gnome-calculator/financial.page
 share/help/oc/gnome-calculator/functions.page
 share/help/oc/gnome-calculator/history.page
@@ -599,7 +641,7 @@ share/help/pl/gnome-calculator/equation.page
 share/help/pl/gnome-calculator/factorial.page
 share/help/pl/gnome-calculator/factorize.page
 share/help/pl/gnome-calculator/figures/
-share/help/pl/gnome-calculator/figures/logo32.png
+share/help/pl/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/pl/gnome-calculator/financial.page
 share/help/pl/gnome-calculator/functions.page
 share/help/pl/gnome-calculator/history.page
@@ -632,7 +674,7 @@ share/help/pt/gnome-calculator/equation.page
 share/help/pt/gnome-calculator/factorial.page
 share/help/pt/gnome-calculator/factorize.page
 share/help/pt/gnome-calculator/figures/
-share/help/pt/gnome-calculator/figures/logo32.png
+share/help/pt/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/pt/gnome-calculator/financial.page
 share/help/pt/gnome-calculator/functions.page
 share/help/pt/gnome-calculator/history.page
@@ -665,7 +707,7 @@ share/help/pt_BR/gnome-calculator/equation.page
 share/help/pt_BR/gnome-calculator/factorial.page
 share/help/pt_BR/gnome-calculator/factorize.page
 share/help/pt_BR/gnome-calculator/figures/
-share/help/pt_BR/gnome-calculator/figures/logo32.png
+share/help/pt_BR/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/pt_BR/gnome-calculator/financial.page
 share/help/pt_BR/gnome-calculator/functions.page
 share/help/pt_BR/gnome-calculator/history.page
@@ -698,7 +740,7 @@ share/help/ro/gnome-calculator/equation.page
 share/help/ro/gnome-calculator/factorial.page
 share/help/ro/gnome-calculator/factorize.page
 share/help/ro/gnome-calculator/figures/
-share/help/ro/gnome-calculator/figures/logo32.png
+share/help/ro/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/ro/gnome-calculator/financial.page
 share/help/ro/gnome-calculator/functions.page
 share/help/ro/gnome-calculator/history.page
@@ -731,7 +773,7 @@ share/help/ru/gnome-calculator/equation.page
 share/help/ru/gnome-calculator/factorial.page
 share/help/ru/gnome-calculator/factorize.page
 share/help/ru/gnome-calculator/figures/
-share/help/ru/gnome-calculator/figures/logo32.png
+share/help/ru/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/ru/gnome-calculator/financial.page
 share/help/ru/gnome-calculator/functions.page
 share/help/ru/gnome-calculator/history.page
@@ -764,7 +806,7 @@ share/help/sl/gnome-calculator/equation.page
 share/help/sl/gnome-calculator/factorial.page
 share/help/sl/gnome-calculator/factorize.page
 share/help/sl/gnome-calculator/figures/
-share/help/sl/gnome-calculator/figures/logo32.png
+share/help/sl/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/sl/gnome-calculator/financial.page
 share/help/sl/gnome-calculator/functions.page
 share/help/sl/gnome-calculator/history.page
@@ -797,7 +839,7 @@ share/help/sv/gnome-calculator/equation.page
 share/help/sv/gnome-calculator/factorial.page
 share/help/sv/gnome-calculator/factorize.page
 share/help/sv/gnome-calculator/figures/
-share/help/sv/gnome-calculator/figures/logo32.png
+share/help/sv/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/sv/gnome-calculator/financial.page
 share/help/sv/gnome-calculator/functions.page
 share/help/sv/gnome-calculator/history.page
@@ -830,7 +872,7 @@ share/help/te/gnome-calculator/equation.page
 share/help/te/gnome-calculator/factorial.page
 share/help/te/gnome-calculator/factorize.page
 share/help/te/gnome-calculator/figures/
-share/help/te/gnome-calculator/figures/logo32.png
+share/help/te/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/te/gnome-calculator/financial.page
 share/help/te/gnome-calculator/functions.page
 share/help/te/gnome-calculator/history.page
@@ -863,7 +905,7 @@ share/help/zh_CN/gnome-calculator/equation.page
 share/help/zh_CN/gnome-calculator/factorial.page
 share/help/zh_CN/gnome-calculator/factorize.page
 share/help/zh_CN/gnome-calculator/figures/
-share/help/zh_CN/gnome-calculator/figures/logo32.png
+share/help/zh_CN/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/zh_CN/gnome-calculator/financial.page
 share/help/zh_CN/gnome-calculator/functions.page
 share/help/zh_CN/gnome-calculator/history.page
@@ -896,7 +938,7 @@ share/help/zh_HK/gnome-calculator/equation.page
 share/help/zh_HK/gnome-calculator/factorial.page
 share/help/zh_HK/gnome-calculator/factorize.page
 share/help/zh_HK/gnome-calculator/figures/
-share/help/zh_HK/gnome-calculator/figures/logo32.png
+share/help/zh_HK/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/zh_HK/gnome-calculator/financial.page
 share/help/zh_HK/gnome-calculator/functions.page
 share/help/zh_HK/gnome-calculator/history.page
@@ -929,7 +971,7 @@ share/help/zh_TW/gnome-calculator/equation.page
 share/help/zh_TW/gnome-calculator/factorial.page
 share/help/zh_TW/gnome-calculator/factorize.page
 share/help/zh_TW/gnome-calculator/figures/
-share/help/zh_TW/gnome-calculator/figures/logo32.png
+share/help/zh_TW/gnome-calculator/figures/org.gnome.Calculator.svg
 share/help/zh_TW/gnome-calculator/financial.page
 share/help/zh_TW/gnome-calculator/functions.page
 share/help/zh_TW/gnome-calculator/history.page
@@ -1048,5 +1090,7 @@ share/metainfo/org.gnome.Calculator.appdata.xml
 @tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/vala/vapi/gcalc-1.deps
-share/vala/vapi/gcalc-1.vapi
+share/vala/vapi/gcalc-2.deps
+share/vala/vapi/gcalc-2.vapi
+share/vala/vapi/gci-1.deps
+share/vala/vapi/gci-1.vapi
