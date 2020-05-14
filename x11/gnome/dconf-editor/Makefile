@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2020/02/16 09:17:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2020/05/14 15:21:49 ajacoutot Exp $
 
 COMMENT=		graphical dconf(1) editor
 
 GNOME_PROJECT=		dconf-editor
-GNOME_VERSION=		3.34.4
+GNOME_VERSION=		3.36.2
 
 CATEGORIES=		sysutils editors
 
@@ -19,5 +19,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala
 
 LIB_DEPENDS=		x11/gtk+3
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
