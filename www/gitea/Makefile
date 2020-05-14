@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.34 2020/04/03 09:26:28 pvk Exp $
+# $OpenBSD: Makefile,v 1.35 2020/05/14 15:19:32 pvk Exp $
 
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.11.4
+VERSION =		1.11.5
 GH_ACCOUNT =		go-gitea
 GH_PROJECT =		gitea
 GH_TAGNAME =		v${VERSION}
 
-MASTER_SITES0 =		https://distfiles.tristero.se/
-
-DISTFILES =		${GH_PROJECT}-${VERSION}${EXTRACT_SUFX} \
-			${GH_PROJECT}-${VERSION}-public${EXTRACT_SUFX}:0
+DISTFILES =		${GH_PROJECT}-src-${VERSION}${EXTRACT_SUFX}
 
 CATEGORIES =		www devel
 
@@ -33,6 +30,10 @@ ALL_TARGET =		code.gitea.io/${GH_PROJECT}
 WRKSRC =		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 
 SUBST_VARS +=		VERSION
+
+do-extract:
+	@mkdir ${WRKDIST}
+	@tar xzf ${FULLDISTDIR}/${DISTFILES} -C ${WRKDIST}
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/{custom/conf/app.ini.sample,main.go}

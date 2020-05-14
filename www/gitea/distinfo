@@ -1,4 +1,2 @@
-SHA256 (gitea-1.11.4-public.tar.gz) = gaQvK24Oq6F/uUsCSeMjBqfcXyPLZw3jQ0Z/vnGogmw=
-SHA256 (gitea-1.11.4.tar.gz) = jdkvj90WU6YtOEaTcJfhJSOhOUvqaI3HN/VZzdj53gc=
-SIZE (gitea-1.11.4-public.tar.gz) = 304627
-SIZE (gitea-1.11.4.tar.gz) = 28240336
+SHA256 (gitea-src-1.11.5.tar.gz) = SXXUTSN/4VSIzpI5ZBwjUX8VbeXOQIHvJpFLPsrjHUc=
+SIZE (gitea-src-1.11.5.tar.gz) = 68923871
