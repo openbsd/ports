@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.107 2019/11/21 18:31:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.108 2020/05/14 15:13:14 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		3.36.2
 
 CATEGORIES=		editors
 
@@ -45,5 +45,7 @@ CONFIGURE_ARGS =	-Dplugin_zeitgeist=false
 
 # vala needed by findinfile plugin
 MODGNOME_TOOLS +=	vala yelp
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

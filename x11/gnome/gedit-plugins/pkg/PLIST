@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2019/11/21 18:31:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/05/14 15:13:14 jasper Exp $
 @conflict gedit-<3.14.0
 lib/gedit/plugins/bookmarks.plugin
 lib/gedit/plugins/bracketcompletion.plugin
@@ -145,7 +145,6 @@ share/help/C/gedit/terminal.page
 share/help/C/gedit/text-size.page
 share/help/C/gedit/translate.page
 share/help/C/gedit/word-completion.page
-share/help/C/gedit/zeitgeist-dataprovider.page
 share/help/ar/gedit/bookmarks.page
 share/help/ar/gedit/bracket-comp.page
 share/help/ar/gedit/character-map.page
@@ -163,7 +162,6 @@ share/help/ar/gedit/terminal.page
 share/help/ar/gedit/text-size.page
 share/help/ar/gedit/translate.page
 share/help/ar/gedit/word-completion.page
-share/help/ar/gedit/zeitgeist-dataprovider.page
 share/help/bg/gedit/bookmarks.page
 share/help/bg/gedit/bracket-comp.page
 share/help/bg/gedit/character-map.page
@@ -181,7 +179,6 @@ share/help/bg/gedit/terminal.page
 share/help/bg/gedit/text-size.page
 share/help/bg/gedit/translate.page
 share/help/bg/gedit/word-completion.page
-share/help/bg/gedit/zeitgeist-dataprovider.page
 share/help/ca/gedit/bookmarks.page
 share/help/ca/gedit/bracket-comp.page
 share/help/ca/gedit/character-map.page
@@ -199,7 +196,6 @@ share/help/ca/gedit/terminal.page
 share/help/ca/gedit/text-size.page
 share/help/ca/gedit/translate.page
 share/help/ca/gedit/word-completion.page
-share/help/ca/gedit/zeitgeist-dataprovider.page
 share/help/cs/gedit/bookmarks.page
 share/help/cs/gedit/bracket-comp.page
 share/help/cs/gedit/character-map.page
@@ -217,7 +213,6 @@ share/help/cs/gedit/terminal.page
 share/help/cs/gedit/text-size.page
 share/help/cs/gedit/translate.page
 share/help/cs/gedit/word-completion.page
-share/help/cs/gedit/zeitgeist-dataprovider.page
 share/help/da/gedit/bookmarks.page
 share/help/da/gedit/bracket-comp.page
 share/help/da/gedit/character-map.page
@@ -235,7 +230,6 @@ share/help/da/gedit/terminal.page
 share/help/da/gedit/text-size.page
 share/help/da/gedit/translate.page
 share/help/da/gedit/word-completion.page
-share/help/da/gedit/zeitgeist-dataprovider.page
 share/help/de/gedit/bookmarks.page
 share/help/de/gedit/bracket-comp.page
 share/help/de/gedit/character-map.page
@@ -253,7 +247,6 @@ share/help/de/gedit/terminal.page
 share/help/de/gedit/text-size.page
 share/help/de/gedit/translate.page
 share/help/de/gedit/word-completion.page
-share/help/de/gedit/zeitgeist-dataprovider.page
 share/help/el/gedit/bookmarks.page
 share/help/el/gedit/bracket-comp.page
 share/help/el/gedit/character-map.page
@@ -271,7 +264,6 @@ share/help/el/gedit/terminal.page
 share/help/el/gedit/text-size.page
 share/help/el/gedit/translate.page
 share/help/el/gedit/word-completion.page
-share/help/el/gedit/zeitgeist-dataprovider.page
 share/help/es/gedit/bookmarks.page
 share/help/es/gedit/bracket-comp.page
 share/help/es/gedit/character-map.page
@@ -289,7 +281,6 @@ share/help/es/gedit/terminal.page
 share/help/es/gedit/text-size.page
 share/help/es/gedit/translate.page
 share/help/es/gedit/word-completion.page
-share/help/es/gedit/zeitgeist-dataprovider.page
 share/help/eu/gedit/bookmarks.page
 share/help/eu/gedit/bracket-comp.page
 share/help/eu/gedit/character-map.page
@@ -307,7 +298,6 @@ share/help/eu/gedit/terminal.page
 share/help/eu/gedit/text-size.page
 share/help/eu/gedit/translate.page
 share/help/eu/gedit/word-completion.page
-share/help/eu/gedit/zeitgeist-dataprovider.page
 share/help/fi/gedit/bookmarks.page
 share/help/fi/gedit/bracket-comp.page
 share/help/fi/gedit/character-map.page
@@ -325,7 +315,6 @@ share/help/fi/gedit/terminal.page
 share/help/fi/gedit/text-size.page
 share/help/fi/gedit/translate.page
 share/help/fi/gedit/word-completion.page
-share/help/fi/gedit/zeitgeist-dataprovider.page
 share/help/fr/gedit/bookmarks.page
 share/help/fr/gedit/bracket-comp.page
 share/help/fr/gedit/character-map.page
@@ -343,7 +332,6 @@ share/help/fr/gedit/terminal.page
 share/help/fr/gedit/text-size.page
 share/help/fr/gedit/translate.page
 share/help/fr/gedit/word-completion.page
-share/help/fr/gedit/zeitgeist-dataprovider.page
 share/help/gl/gedit/bookmarks.page
 share/help/gl/gedit/bracket-comp.page
 share/help/gl/gedit/character-map.page
@@ -361,7 +349,6 @@ share/help/gl/gedit/terminal.page
 share/help/gl/gedit/text-size.page
 share/help/gl/gedit/translate.page
 share/help/gl/gedit/word-completion.page
-share/help/gl/gedit/zeitgeist-dataprovider.page
 share/help/hu/gedit/bookmarks.page
 share/help/hu/gedit/bracket-comp.page
 share/help/hu/gedit/character-map.page
@@ -379,7 +366,6 @@ share/help/hu/gedit/terminal.page
 share/help/hu/gedit/text-size.page
 share/help/hu/gedit/translate.page
 share/help/hu/gedit/word-completion.page
-share/help/hu/gedit/zeitgeist-dataprovider.page
 share/help/it/gedit/bookmarks.page
 share/help/it/gedit/bracket-comp.page
 share/help/it/gedit/character-map.page
@@ -397,7 +383,6 @@ share/help/it/gedit/terminal.page
 share/help/it/gedit/text-size.page
 share/help/it/gedit/translate.page
 share/help/it/gedit/word-completion.page
-share/help/it/gedit/zeitgeist-dataprovider.page
 share/help/ja/gedit/bookmarks.page
 share/help/ja/gedit/bracket-comp.page
 share/help/ja/gedit/character-map.page
@@ -415,7 +400,6 @@ share/help/ja/gedit/terminal.page
 share/help/ja/gedit/text-size.page
 share/help/ja/gedit/translate.page
 share/help/ja/gedit/word-completion.page
-share/help/ja/gedit/zeitgeist-dataprovider.page
 share/help/ko/gedit/bookmarks.page
 share/help/ko/gedit/bracket-comp.page
 share/help/ko/gedit/character-map.page
@@ -433,7 +417,6 @@ share/help/ko/gedit/terminal.page
 share/help/ko/gedit/text-size.page
 share/help/ko/gedit/translate.page
 share/help/ko/gedit/word-completion.page
-share/help/ko/gedit/zeitgeist-dataprovider.page
 share/help/lv/gedit/bookmarks.page
 share/help/lv/gedit/bracket-comp.page
 share/help/lv/gedit/character-map.page
@@ -451,7 +434,6 @@ share/help/lv/gedit/terminal.page
 share/help/lv/gedit/text-size.page
 share/help/lv/gedit/translate.page
 share/help/lv/gedit/word-completion.page
-share/help/lv/gedit/zeitgeist-dataprovider.page
 share/help/oc/gedit/bookmarks.page
 share/help/oc/gedit/bracket-comp.page
 share/help/oc/gedit/character-map.page
@@ -469,7 +451,6 @@ share/help/oc/gedit/terminal.page
 share/help/oc/gedit/text-size.page
 share/help/oc/gedit/translate.page
 share/help/oc/gedit/word-completion.page
-share/help/oc/gedit/zeitgeist-dataprovider.page
 share/help/pl/gedit/bookmarks.page
 share/help/pl/gedit/bracket-comp.page
 share/help/pl/gedit/character-map.page
@@ -487,7 +468,6 @@ share/help/pl/gedit/terminal.page
 share/help/pl/gedit/text-size.page
 share/help/pl/gedit/translate.page
 share/help/pl/gedit/word-completion.page
-share/help/pl/gedit/zeitgeist-dataprovider.page
 share/help/pt_BR/gedit/bookmarks.page
 share/help/pt_BR/gedit/bracket-comp.page
 share/help/pt_BR/gedit/character-map.page
@@ -505,7 +485,6 @@ share/help/pt_BR/gedit/terminal.page
 share/help/pt_BR/gedit/text-size.page
 share/help/pt_BR/gedit/translate.page
 share/help/pt_BR/gedit/word-completion.page
-share/help/pt_BR/gedit/zeitgeist-dataprovider.page
 share/help/ru/gedit/bookmarks.page
 share/help/ru/gedit/bracket-comp.page
 share/help/ru/gedit/character-map.page
@@ -523,7 +502,6 @@ share/help/ru/gedit/terminal.page
 share/help/ru/gedit/text-size.page
 share/help/ru/gedit/translate.page
 share/help/ru/gedit/word-completion.page
-share/help/ru/gedit/zeitgeist-dataprovider.page
 share/help/sl/gedit/bookmarks.page
 share/help/sl/gedit/bracket-comp.page
 share/help/sl/gedit/character-map.page
@@ -541,7 +519,6 @@ share/help/sl/gedit/terminal.page
 share/help/sl/gedit/text-size.page
 share/help/sl/gedit/translate.page
 share/help/sl/gedit/word-completion.page
-share/help/sl/gedit/zeitgeist-dataprovider.page
 share/help/sv/gedit/bookmarks.page
 share/help/sv/gedit/bracket-comp.page
 share/help/sv/gedit/character-map.page
@@ -559,7 +536,6 @@ share/help/sv/gedit/terminal.page
 share/help/sv/gedit/text-size.page
 share/help/sv/gedit/translate.page
 share/help/sv/gedit/word-completion.page
-share/help/sv/gedit/zeitgeist-dataprovider.page
 share/help/te/gedit/bookmarks.page
 share/help/te/gedit/bracket-comp.page
 share/help/te/gedit/character-map.page
@@ -577,7 +553,6 @@ share/help/te/gedit/terminal.page
 share/help/te/gedit/text-size.page
 share/help/te/gedit/translate.page
 share/help/te/gedit/word-completion.page
-share/help/te/gedit/zeitgeist-dataprovider.page
 share/help/th/gedit/bookmarks.page
 share/help/th/gedit/bracket-comp.page
 share/help/th/gedit/character-map.page
@@ -595,7 +570,6 @@ share/help/th/gedit/terminal.page
 share/help/th/gedit/text-size.page
 share/help/th/gedit/translate.page
 share/help/th/gedit/word-completion.page
-share/help/th/gedit/zeitgeist-dataprovider.page
 share/help/uk/gedit/bookmarks.page
 share/help/uk/gedit/bracket-comp.page
 share/help/uk/gedit/character-map.page
@@ -613,7 +587,6 @@ share/help/uk/gedit/terminal.page
 share/help/uk/gedit/text-size.page
 share/help/uk/gedit/translate.page
 share/help/uk/gedit/word-completion.page
-share/help/uk/gedit/zeitgeist-dataprovider.page
 share/help/zh_CN/gedit/bookmarks.page
 share/help/zh_CN/gedit/bracket-comp.page
 share/help/zh_CN/gedit/character-map.page
@@ -631,7 +604,6 @@ share/help/zh_CN/gedit/terminal.page
 share/help/zh_CN/gedit/text-size.page
 share/help/zh_CN/gedit/translate.page
 share/help/zh_CN/gedit/word-completion.page
-share/help/zh_CN/gedit/zeitgeist-dataprovider.page
 share/help/zh_HK/gedit/bookmarks.page
 share/help/zh_HK/gedit/bracket-comp.page
 share/help/zh_HK/gedit/character-map.page
@@ -649,7 +621,6 @@ share/help/zh_HK/gedit/terminal.page
 share/help/zh_HK/gedit/text-size.page
 share/help/zh_HK/gedit/translate.page
 share/help/zh_HK/gedit/word-completion.page
-share/help/zh_HK/gedit/zeitgeist-dataprovider.page
 share/help/zh_TW/gedit/bookmarks.page
 share/help/zh_TW/gedit/bracket-comp.page
 share/help/zh_TW/gedit/character-map.page
@@ -667,7 +638,6 @@ share/help/zh_TW/gedit/terminal.page
 share/help/zh_TW/gedit/text-size.page
 share/help/zh_TW/gedit/translate.page
 share/help/zh_TW/gedit/word-completion.page
-share/help/zh_TW/gedit/zeitgeist-dataprovider.page
 share/locale/af/LC_MESSAGES/gedit-plugins.mo
 share/locale/am/LC_MESSAGES/gedit-plugins.mo
 share/locale/ar/LC_MESSAGES/gedit-plugins.mo
