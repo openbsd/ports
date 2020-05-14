@@ -1,0 +1,15 @@
+$OpenBSD: patch-meson_build,v 1.1 2020/05/14 15:10:25 jasper Exp $
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -275,6 +275,9 @@ foreach link_arg: test_link_args
+   endif
+ endforeach
+ 
++# XXX: undefined references to __cxa_atexit, free, et al
++release_link_args += '-lc'
++
+ configure_file(
+          output: 'config.h',
+   configuration: config_h
