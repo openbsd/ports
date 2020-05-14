@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/19 18:20:08 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2020/05/14 12:12:21 fcambus Exp $
 
 COMMENT =	hierarchical todos manager
 
 DISTNAME =	tudu-0.10.3
+REVISION =	0
 
 CATEGORIES =	productivity
 
 HOMEPAGE =	https://code.meskio.net/tudu/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3 only
 PERMIT_PACKAGE =	Yes
