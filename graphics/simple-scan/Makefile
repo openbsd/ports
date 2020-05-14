@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2020/04/29 05:13:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2020/05/14 14:53:35 ajacoutot Exp $
 
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
-GNOME_VERSION=		3.34.6
+GNOME_VERSION=		3.36.2.1
 
 CATEGORIES=		graphics
 
@@ -33,5 +33,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 # patch-src_simple-scan_vala
 MODGNOME_TOOLS +=	vala
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

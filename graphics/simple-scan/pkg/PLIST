@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/10/19 09:20:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/05/14 14:53:35 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/applications/simple-scan.desktop
@@ -344,6 +344,26 @@ share/help/ia/simple-scan/rotate.page
 share/help/ia/simple-scan/save.page
 share/help/ia/simple-scan/scanner.page
 share/help/ia/simple-scan/scanning.page
+share/help/id/
+share/help/id/simple-scan/
+share/help/id/simple-scan/adf.page
+share/help/id/simple-scan/brightness-contrast.page
+share/help/id/simple-scan/crop.page
+share/help/id/simple-scan/dpi.page
+share/help/id/simple-scan/email.page
+share/help/id/simple-scan/figures/
+share/help/id/simple-scan/figures/icon.svg
+share/help/id/simple-scan/figures/preferences.png
+share/help/id/simple-scan/figures/scan_toolbar.png
+share/help/id/simple-scan/index.page
+share/help/id/simple-scan/legal.xml
+share/help/id/simple-scan/print.page
+share/help/id/simple-scan/quality.page
+share/help/id/simple-scan/reorder.page
+share/help/id/simple-scan/rotate.page
+share/help/id/simple-scan/save.page
+share/help/id/simple-scan/scanner.page
+share/help/id/simple-scan/scanning.page
 share/help/it/
 share/help/it/simple-scan/
 share/help/it/simple-scan/adf.page
@@ -604,6 +624,26 @@ share/help/sv/simple-scan/rotate.page
 share/help/sv/simple-scan/save.page
 share/help/sv/simple-scan/scanner.page
 share/help/sv/simple-scan/scanning.page
+share/help/tr/
+share/help/tr/simple-scan/
+share/help/tr/simple-scan/adf.page
+share/help/tr/simple-scan/brightness-contrast.page
+share/help/tr/simple-scan/crop.page
+share/help/tr/simple-scan/dpi.page
+share/help/tr/simple-scan/email.page
+share/help/tr/simple-scan/figures/
+share/help/tr/simple-scan/figures/icon.svg
+share/help/tr/simple-scan/figures/preferences.png
+share/help/tr/simple-scan/figures/scan_toolbar.png
+share/help/tr/simple-scan/index.page
+share/help/tr/simple-scan/legal.xml
+share/help/tr/simple-scan/print.page
+share/help/tr/simple-scan/quality.page
+share/help/tr/simple-scan/reorder.page
+share/help/tr/simple-scan/rotate.page
+share/help/tr/simple-scan/save.page
+share/help/tr/simple-scan/scanner.page
+share/help/tr/simple-scan/scanning.page
 share/help/uk/
 share/help/uk/simple-scan/
 share/help/uk/simple-scan/adf.page
