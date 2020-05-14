@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2020/04/30 23:10:02 kn Exp $
+# $OpenBSD: Makefile,v 1.124 2020/05/14 15:22:47 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -6,8 +6,7 @@ USE_WXNEEDED=		Yes
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
-GNOME_VERSION=		3.34.0
-REVISION=		0
+GNOME_VERSION=		3.36.2
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
@@ -33,5 +32,7 @@ LIB_DEPENDS=		www/webkitgtk4 \
 
 # for convenience
 RUN_DEPENDS +=		x11/gnome/devel-docs
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
