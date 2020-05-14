@@ -1,0 +1,16 @@
+$OpenBSD: patch-libfastmint_c,v 1.1 2020/05/14 17:20:20 cwen Exp $
+
+OpenBSD/macppc is not Mac OS, we don't ship Gestalt.
+
+Index: libfastmint.c
+--- libfastmint.c.orig
++++ libfastmint.c
+@@ -6,7 +6,7 @@
+ #include <CoreServices/CoreServices.h>
+ #endif
+ 
+-#if defined(__POWERPC__) && !defined(__MACH__) && !defined(__UNIX__) && !defined(__CARBON__)
++#if defined(__POWERPC__) && !defined(__MACH__) && !defined(__unix__) && !defined(__CARBON__)
+ #include <Gestalt.h>
+ #endif
+ 
