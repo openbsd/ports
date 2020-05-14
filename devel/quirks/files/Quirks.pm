@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.955 2020/05/14 15:31:06 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.956 2020/05/14 16:25:00 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1561,6 +1561,9 @@ my $obsolete_reason = {
 # 6.8
 	'gnome-planner' => 3,
 	'gnome-recipes' => 3,
+	'shared-color-targets' => 6,
+	'argyll' => 6,
+	'libcroco' => 3,
 };
 
 # reasons for obsolete packages
