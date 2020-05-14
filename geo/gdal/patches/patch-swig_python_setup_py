@@ -1,11 +1,11 @@
-$OpenBSD: patch-swig_python_setup_py,v 1.13 2019/05/12 08:07:33 landry Exp $
+$OpenBSD: patch-swig_python_setup_py,v 1.14 2020/05/14 11:28:33 landry Exp $
 
 Index: swig/python/setup.py
 --- swig/python/setup.py.orig
 +++ swig/python/setup.py
-@@ -324,7 +324,7 @@ class gdal_ext(build_ext):
-         return build_ext.build_extension(self, ext)
- 
+@@ -350,7 +350,7 @@ if sys.version_info < (3,):
+     except:
+         pass
  
 -extra_link_args = []
 +extra_link_args = ['-fPIC']

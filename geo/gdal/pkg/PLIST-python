@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.19 2020/01/16 12:43:26 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.20 2020/05/14 11:28:34 landry Exp $
 bin/epsg_tr${MODPY_BIN_SUFFIX}.py
 bin/esri2wkt${MODPY_BIN_SUFFIX}.py
 bin/gcps2vec${MODPY_BIN_SUFFIX}.py
@@ -29,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gdal.py
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}gdal.${MODPY_PYC_MAGIC_TAG}pyc
@@ -95,6 +96,7 @@ share/examples/${MODPY_PY_PREFIX}gdal/gdal_create_pdf.py
 share/examples/${MODPY_PY_PREFIX}gdal/gdal_ls.py
 share/examples/${MODPY_PY_PREFIX}gdal/gdal_lut.py
 share/examples/${MODPY_PY_PREFIX}gdal/gdal_mkdir.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_remove_towgs84.py
 share/examples/${MODPY_PY_PREFIX}gdal/gdal_rm.py
 share/examples/${MODPY_PY_PREFIX}gdal/gdal_rmdir.py
 share/examples/${MODPY_PY_PREFIX}gdal/gdal_vrtmerge.py
@@ -120,6 +122,7 @@ share/examples/${MODPY_PY_PREFIX}gdal/ogrinfo.py
 share/examples/${MODPY_PY_PREFIX}gdal/ogrupdate.py
 share/examples/${MODPY_PY_PREFIX}gdal/rel.py
 share/examples/${MODPY_PY_PREFIX}gdal/tigerpoly.py
+share/examples/${MODPY_PY_PREFIX}gdal/tile_extent_from_raster.py
 share/examples/${MODPY_PY_PREFIX}gdal/tolatlong.py
 share/examples/${MODPY_PY_PREFIX}gdal/val_at_coord.py
 share/examples/${MODPY_PY_PREFIX}gdal/val_repl.py

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2020/02/03 08:40:11 landry Exp $
+# $OpenBSD: Makefile,v 1.85 2020/05/14 11:28:33 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		3.0.4
+V =		3.1.0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -16,7 +16,7 @@ FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
 
-SHARED_LIBS =	gdal 38.1 #26.3
+SHARED_LIBS =	gdal 39.0 #27.0
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -78,7 +78,7 @@ RUN_DEPENDS-perl =
 LIB_DEPENDS-perl =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-perl =		perl gdal # uses perl ABI
 WANTLIB-perl += c crypto curl expat freexl geos_c geotiff gif hdf5 iconv
-WANTLIB-perl += jasper jpeg json-c lzma m netcdf nghttp2 openjp2 pcre png
+WANTLIB-perl += jasper jpeg json-c m netcdf nghttp2 openjp2 pcre png
 WANTLIB-perl += pq proj pthread qhull spatialite sqlite3 ssl tiff xml2 webp z zstd
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
@@ -108,7 +108,9 @@ CONFIGURE_ARGS =--without-cfitsio \
 		--without-grass \
 		--without-idb \
 		--without-sde \
+		--without-exr \
 		--without-libgrass \
+		--with-hide-internal-symbols \
 		--with-pg \
 		--with-python=${MODPY_BIN} \
 		--with-perl \

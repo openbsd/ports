@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2020/01/14 14:05:22 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2020/05/14 11:28:34 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -6,6 +6,7 @@ bin/gdal-config
 @bin bin/gdal_grid
 @bin bin/gdal_rasterize
 @bin bin/gdal_translate
+@bin bin/gdal_viewshed
 @bin bin/gdaladdo
 @bin bin/gdalbuildvrt
 @bin bin/gdaldem
@@ -13,6 +14,8 @@ bin/gdal-config
 @bin bin/gdalinfo
 @bin bin/gdallocationinfo
 @bin bin/gdalmanage
+@bin bin/gdalmdiminfo
+@bin bin/gdalmdimtranslate
 @bin bin/gdalserver
 @bin bin/gdalsrsinfo
 @bin bin/gdaltindex
@@ -88,6 +91,7 @@ include/ogr_geometry.h
 include/ogr_p.h
 include/ogr_spatialref.h
 include/ogr_srs_api.h
+include/ogr_swq.h
 include/ogrsf_frmts.h
 include/rawdataset.h
 include/vrtdataset.h
@@ -102,7 +106,6 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal_merge.1
 @man man/man1/gdal_rasterize.1
 @man man/man1/gdal_translate.1
-@man man/man1/gdal_utilities.1
 @man man/man1/gdaladdo.1
 @man man/man1/gdalbuildvrt.1
 @man man/man1/gdaldem.1
@@ -113,12 +116,10 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdaltindex.1
 @man man/man1/gdaltransform.1
 @man man/man1/gdalwarp.1
-@man man/man1/gnm_utilities.1
 @man man/man1/gnmanalyse.1
 @man man/man1/gnmmanage.1
 @man man/man1/nearblack.1
 @man man/man1/ogr2ogr.1
-@man man/man1/ogr_utilities.1
 @man man/man1/ogrinfo.1
 @man man/man1/ogrlineref.1
 @man man/man1/ogrtindex.1
@@ -135,6 +136,7 @@ share/gdal/eedaconf.json
 share/gdal/epsg.wkt
 share/gdal/esri_StatePlane_extra.wkt
 share/gdal/gdalicon.png
+share/gdal/gdalmdiminfo_output.schema.json
 share/gdal/gdalvrt.xsd
 share/gdal/gml_registry.xml
 share/gdal/gmlasconf.xml
@@ -199,3 +201,4 @@ share/gdal/stateplane.csv
 share/gdal/trailer.dxf
 share/gdal/vdv452.xml
 share/gdal/vdv452.xsd
+share/gdal/vicar.json
