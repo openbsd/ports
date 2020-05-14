@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2020/05/14 12:36:46 jca Exp $
 
 COMMENT=	flash-card tool which optimises your learning process
 
+# Newer versions moved to Qt5 and need qtwebengine
 MODPY_EGG_VERSION = 2.3.6
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
-REVISION=	2
+REVISION=	3
 
-HOMEPAGE=	http://www.mnemosyne-proj.org/
+HOMEPAGE=	https://www.mnemosyne-proj.org/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -23,7 +24,7 @@ RUN_DEPENDS=	x11/py-qt4 \
 		textproc/py-xml \
 		graphics/py-Pillow \
 		graphics/py-matplotlib \
-		www/py-CherryPy \
+		www/py-cheroot \
 		www/py-webob>=1.3.1 \
 		devel/desktop-file-utils
 

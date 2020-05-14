@@ -1,0 +1,19 @@
+$OpenBSD: patch-openSM2sync_server_py,v 1.1 2020/05/14 12:36:46 jca Exp $
+
+The cherrypy project moved their WSGI server to py-cheroot.
+https://bugs.launchpad.net/mnemosyne-proj/+bug/1659314
+
+Index: openSM2sync/server.py
+--- openSM2sync/server.py.orig
++++ openSM2sync/server.py
+@@ -105,8 +105,8 @@ class Server(Partner):
+         self.machine_id = machine_id
+         # We only use 1 thread, such that subsequent requests don't run into
+         # SQLite access problems.
+-        from cherrypy import wsgiserver
+-        self.wsgi_server = wsgiserver.CherryPyWSGIServer\
++        from cheroot import wsgi
++        self.wsgi_server = wsgi.Server\
+             (("0.0.0.0", port), self.wsgi_app, server_name="localhost",
+             numthreads=1, timeout=1000)
+         Partner.__init__(self, ui)

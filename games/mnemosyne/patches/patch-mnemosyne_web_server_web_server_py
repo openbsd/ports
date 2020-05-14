@@ -1,0 +1,26 @@
+$OpenBSD: patch-mnemosyne_web_server_web_server_py,v 1.1 2020/05/14 12:36:46 jca Exp $
+
+The cherrypy project moved their WSGI server to py-cheroot.
+https://bugs.launchpad.net/mnemosyne-proj/+bug/1659314
+
+Index: mnemosyne/web_server/web_server.py
+--- mnemosyne/web_server/web_server.py.orig
++++ mnemosyne/web_server/web_server.py
+@@ -13,7 +13,7 @@ import threading
+ from webob import Request
+ from webob.static import FileApp
+ 
+-from cherrypy import wsgiserver
++from cheroot import wsgi
+ 
+ from mnemosyne.libmnemosyne import Mnemosyne
+ from mnemosyne.libmnemosyne.utils import localhost_IP
+@@ -69,7 +69,7 @@ class WebServer(Component):
+         self.is_just_started = True
+         self.is_mnemosyne_loaded = False
+         self.is_shutting_down = False
+-        self.wsgi_server = wsgiserver.CherryPyWSGIServer(\
++        self.wsgi_server = wsgi.Server(\
+             ("0.0.0.0", port), self.wsgi_app, server_name="localhost",
+             numthreads=1, timeout=5)
+         # We need to set the timeout relatively low, otherwise it will take
