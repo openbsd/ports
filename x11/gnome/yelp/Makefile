@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.137 2019/11/01 19:39:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2020/05/14 16:09:28 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
-GNOME_VERSION=		3.34.0
+GNOME_VERSION=		3.36.0
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
@@ -18,17 +18,16 @@ WANTLIB += expat exslt ffi fontconfig freetype fribidi gbm gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += harfbuzz-icu hyphen iconv icudata icui18n icuuc idn2
-WANTLIB += intl javascriptcoregtk-4.0 jpeg lzma m notify openjp2
-WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png psl secret-1 soup-2.4 sqlite3 tasn1
-WANTLIB += unistring webkit2gtk-4.0 webp webpdemux woff2common
-WANTLIB += woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
-WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xml2 xshmfence
-WANTLIB += xslt z
+WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu
+WANTLIB += hyphen iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
+WANTLIB += jpeg lzma m notify openjp2 orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png psl secret-1 soup-2.4
+WANTLIB += sqlite3 tasn1 unistring webkit2gtk-4.0 webp webpdemux
+WANTLIB += woff2common woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
+WANTLIB += xml2 xshmfence xslt z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -44,6 +43,8 @@ LIB_DEPENDS=		archivers/xz \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 CONFIGURE_STYLE=	gnu
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libyelp/yelp-man-parser.c
