@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/05/14 17:55:09 kn Exp $
+# $OpenBSD: Makefile,v 1.49 2020/05/14 18:50:08 kn Exp $
 
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
@@ -7,7 +7,7 @@ VERSION =		1.3.0
 DISTNAME =		mumble-${VERSION}
 PKGNAME-main =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		7
+REVISION-main =		8
 
 CATEGORIES =		audio net
 
@@ -69,6 +69,9 @@ MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			CONFIG+=release \
 			DEFINES+="LOCALE_PATH=${PREFIX}/share/mumble/locale" \
 			DEFINES+="PLUGIN_PATH=${PREFIX}/lib/mumble"
+
+# make(1) chokes on targets with escaped whitespaces (.../OSX\ Dark.qss)
+USE_GMAKE =		Yes
 
 ALL_TARGET =		release
 
