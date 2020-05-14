@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/01 19:37:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2020/05/14 14:59:03 ajacoutot Exp $
 
 COMMENT=		companion library to GObject and Gtk+
 
 GNOME_PROJECT=		libdazzle
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		3.36.0
 
 SHARED_LIBS +=  dazzle-1.0                1.2 # 0
 
@@ -23,10 +23,10 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib
-
 LIB_DEPENDS=		x11/gtk+3
 
 TEST_IS_INTERACTIVE=	x11
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
