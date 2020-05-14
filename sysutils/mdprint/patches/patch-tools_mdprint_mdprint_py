@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_mdprint_mdprint_py,v 1.1.1.1 2020/03/21 09:12:37 kn Exp $
+$OpenBSD: patch-tools_mdprint_mdprint_py,v 1.2 2020/05/14 19:12:09 kn Exp $
 
 Ensure integer typed results from integer division with the floordiv operator
 when using Python 3.  `type(int(1)/int(1))' yields "<class 'int'>" and
@@ -8,6 +8,8 @@ Decode ARC node names and string property values as UTF-8 to preserve the output
 format and fix --grep when using Python 3, e.g. print/use "value" instead of
 "b'value'".  Python 3 uses type "<class 'bytes'>" and does not decode
 automatically, Python 2 uses "<class 'str'>" already for everything.
+
+Adapt sloppy conversion of tuples into hex encoded strings likewise.
 
 Index: tools/mdprint/mdprint.py
 --- tools/mdprint/mdprint.py.orig
@@ -48,7 +50,17 @@ Index: tools/mdprint/mdprint.py
  
      def print_val_prop(self, md, node, prop_name, prop_val):
          self.p("|%s=0x%x" % (prop_name, prop_val))
-@@ -552,7 +552,7 @@ class TextPrinter(Printer):
+@@ -511,7 +511,8 @@ class ParsablePrinter(Printer):
+             self.p("\"%s\"" % strings[-1])
+ 
+         else:
+-            self.p("0x" + str(prop_val).encode("hex"))
++            from codecs import encode
++            self.p("0x" + encode(bytes(prop_val), 'hex_codec').decode('utf-8'))
+ 
+         self.p("}")
+ 
+@@ -552,7 +553,7 @@ class TextPrinter(Printer):
          else:
              print("%s {" % node.type)
      def print_str_prop(self, md, node, prop_name, prop_val):
@@ -57,7 +69,7 @@ Index: tools/mdprint/mdprint.py
      def print_val_prop(self, md, node, prop_name, prop_val):
          print("\t%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val))
      def print_data_prop(self, md, node, prop_name, prop_val):
-@@ -572,7 +572,7 @@ class TextPrinter(Printer):
+@@ -572,7 +573,7 @@ class TextPrinter(Printer):
              # Some magic to print 8 columns of bytes: for each
              # chunk of 8 bytes in the byte array, get an array
              # slice 8-long and join it with a space.
@@ -66,7 +78,7 @@ Index: tools/mdprint/mdprint.py
                  raw = "%s" % ' '.join(map(print_byte,
                      prop_val[i * bpl:(i+1) * bpl]))
                  print "\t\t%s" % raw
-@@ -623,7 +623,7 @@ class HTMLPrinter(Printer):
+@@ -623,7 +624,7 @@ class HTMLPrinter(Printer):
              md.counts[node.type], node.type))
  
      def print_str_prop(self, md, node, prop_name, prop_val):
@@ -75,7 +87,7 @@ Index: tools/mdprint/mdprint.py
  
      def print_val_prop(self, md, node, prop_name, prop_val):
          print("<br>%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val))
-@@ -642,7 +642,7 @@ class HTMLPrinter(Printer):
+@@ -642,7 +643,7 @@ class HTMLPrinter(Printer):
              # Some magic to print 8 columns of bytes: for each
              # chunk of 8 bytes in the byte array, get an array
              # slice 8-long and join it with a space.
