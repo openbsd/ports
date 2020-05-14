@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.102 2019/12/10 17:51:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.103 2020/05/14 15:01:23 jasper Exp $
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.58.3
-REVISION=		0
+GNOME_VERSION=		0.60.2
 API_V=			2.91
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
-SHARED_LIBS +=  vte-2.91              2.4      # 5800.2
+SHARED_LIBS +=  vte-2.91              2.5      # 0.6000.2
 
 CATEGORIES=		devel
 
@@ -21,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gnutls gobject-2.0 gtk-3 intl m pango-1.0
-WANTLIB += pangocairo-1.0 pcre2-8 z
+WANTLIB += pangocairo-1.0 pcre2-8 z icuuc
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=		devel/meson \
@@ -37,6 +36,7 @@ BUILD_DEPENDS+=		shells/bash
 
 LIB_DEPENDS=		devel/pcre2>=10.22p0 \
 			security/gnutls \
+			textproc/icu4c \
 			x11/gtk+3
 
 MODGNOME_TOOLS=		gobject-introspection vala
