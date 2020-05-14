@@ -8,4 +8,4 @@ in the Gromit environment, is to provide the underpinnings of the Java
 VM, more or less mapping the sys layer that Sun defines for the porting
 of the Java VM to various platforms.  NSPR does go beyond that
 requirement in some areas and since it is also the platform independent
-layer for most of the servers produced by Netscape
+layer for most of the servers produced by Netscape.
