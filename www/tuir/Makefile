@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/29 23:07:48 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/14 19:01:38 kn Exp $
 
 COMMENT =		terminal UI for Reddit
 
-MODPY_EGG_VERSION =	1.28.3
+MODPY_EGG_VERSION =	1.29.0
 
 DISTNAME =		tuir-${MODPY_EGG_VERSION}
 
