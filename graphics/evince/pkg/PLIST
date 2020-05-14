@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/02/10 18:19:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/05/14 15:30:25 jasper Exp $
 @conflict evince-djvu-*
 @conflict evince-dvi-*
 @conflict nautilus-evince-*
@@ -316,7 +316,6 @@ share/help/C/evince/figures/add-text-annotation.png
 share/help/C/evince/figures/annotations-nav-to-page.png
 share/help/C/evince/figures/evince-trail.png
 share/help/C/evince/figures/evincelogo.png
-share/help/C/evince/figures/list-add-tabs.png
 share/help/C/evince/figures/print-select.png
 share/help/C/evince/figures/reverse-collate.png
 share/help/C/evince/figures/zoom.png
@@ -398,7 +397,6 @@ share/help/bg/evince/figures/add-text-annotation.png
 share/help/bg/evince/figures/annotations-nav-to-page.png
 share/help/bg/evince/figures/evince-trail.png
 share/help/bg/evince/figures/evincelogo.png
-share/help/bg/evince/figures/list-add-tabs.png
 share/help/bg/evince/figures/print-select.png
 share/help/bg/evince/figures/reverse-collate.png
 share/help/bg/evince/figures/zoom.png
@@ -479,7 +477,6 @@ share/help/ca/evince/figures/add-text-annotation.png
 share/help/ca/evince/figures/annotations-nav-to-page.png
 share/help/ca/evince/figures/evince-trail.png
 share/help/ca/evince/figures/evincelogo.png
-share/help/ca/evince/figures/list-add-tabs.png
 share/help/ca/evince/figures/print-select.png
 share/help/ca/evince/figures/reverse-collate.png
 share/help/ca/evince/figures/zoom.png
@@ -560,7 +557,6 @@ share/help/cs/evince/figures/add-text-annotation.png
 share/help/cs/evince/figures/annotations-nav-to-page.png
 share/help/cs/evince/figures/evince-trail.png
 share/help/cs/evince/figures/evincelogo.png
-share/help/cs/evince/figures/list-add-tabs.png
 share/help/cs/evince/figures/print-select.png
 share/help/cs/evince/figures/reverse-collate.png
 share/help/cs/evince/figures/zoom.png
@@ -642,7 +638,6 @@ share/help/da/evince/figures/add-text-annotation.png
 share/help/da/evince/figures/annotations-nav-to-page.png
 share/help/da/evince/figures/evince-trail.png
 share/help/da/evince/figures/evincelogo.png
-share/help/da/evince/figures/list-add-tabs.png
 share/help/da/evince/figures/print-select.png
 share/help/da/evince/figures/reverse-collate.png
 share/help/da/evince/figures/zoom.png
@@ -723,7 +718,6 @@ share/help/de/evince/figures/add-text-annotation.png
 share/help/de/evince/figures/annotations-nav-to-page.png
 share/help/de/evince/figures/evince-trail.png
 share/help/de/evince/figures/evincelogo.png
-share/help/de/evince/figures/list-add-tabs.png
 share/help/de/evince/figures/print-select.png
 share/help/de/evince/figures/reverse-collate.png
 share/help/de/evince/figures/zoom.png
@@ -804,7 +798,6 @@ share/help/el/evince/figures/add-text-annotation.png
 share/help/el/evince/figures/annotations-nav-to-page.png
 share/help/el/evince/figures/evince-trail.png
 share/help/el/evince/figures/evincelogo.png
-share/help/el/evince/figures/list-add-tabs.png
 share/help/el/evince/figures/print-select.png
 share/help/el/evince/figures/reverse-collate.png
 share/help/el/evince/figures/zoom.png
@@ -886,7 +879,6 @@ share/help/en_GB/evince/figures/add-text-annotation.png
 share/help/en_GB/evince/figures/annotations-nav-to-page.png
 share/help/en_GB/evince/figures/evince-trail.png
 share/help/en_GB/evince/figures/evincelogo.png
-share/help/en_GB/evince/figures/list-add-tabs.png
 share/help/en_GB/evince/figures/print-select.png
 share/help/en_GB/evince/figures/reverse-collate.png
 share/help/en_GB/evince/figures/zoom.png
@@ -967,7 +959,6 @@ share/help/es/evince/figures/add-text-annotation.png
 share/help/es/evince/figures/annotations-nav-to-page.png
 share/help/es/evince/figures/evince-trail.png
 share/help/es/evince/figures/evincelogo.png
-share/help/es/evince/figures/list-add-tabs.png
 share/help/es/evince/figures/print-select.png
 share/help/es/evince/figures/reverse-collate.png
 share/help/es/evince/figures/zoom.png
@@ -1048,7 +1039,6 @@ share/help/eu/evince/figures/add-text-annotation.png
 share/help/eu/evince/figures/annotations-nav-to-page.png
 share/help/eu/evince/figures/evince-trail.png
 share/help/eu/evince/figures/evincelogo.png
-share/help/eu/evince/figures/list-add-tabs.png
 share/help/eu/evince/figures/print-select.png
 share/help/eu/evince/figures/reverse-collate.png
 share/help/eu/evince/figures/zoom.png
@@ -1129,7 +1119,6 @@ share/help/fi/evince/figures/add-text-annotation.png
 share/help/fi/evince/figures/annotations-nav-to-page.png
 share/help/fi/evince/figures/evince-trail.png
 share/help/fi/evince/figures/evincelogo.png
-share/help/fi/evince/figures/list-add-tabs.png
 share/help/fi/evince/figures/print-select.png
 share/help/fi/evince/figures/reverse-collate.png
 share/help/fi/evince/figures/zoom.png
@@ -1210,7 +1199,6 @@ share/help/fr/evince/figures/add-text-annotation.png
 share/help/fr/evince/figures/annotations-nav-to-page.png
 share/help/fr/evince/figures/evince-trail.png
 share/help/fr/evince/figures/evincelogo.png
-share/help/fr/evince/figures/list-add-tabs.png
 share/help/fr/evince/figures/print-select.png
 share/help/fr/evince/figures/reverse-collate.png
 share/help/fr/evince/figures/zoom.png
@@ -1291,7 +1279,6 @@ share/help/gl/evince/figures/add-text-annotation.png
 share/help/gl/evince/figures/annotations-nav-to-page.png
 share/help/gl/evince/figures/evince-trail.png
 share/help/gl/evince/figures/evincelogo.png
-share/help/gl/evince/figures/list-add-tabs.png
 share/help/gl/evince/figures/print-select.png
 share/help/gl/evince/figures/reverse-collate.png
 share/help/gl/evince/figures/zoom.png
@@ -1372,7 +1359,6 @@ share/help/hu/evince/figures/add-text-annotation.png
 share/help/hu/evince/figures/annotations-nav-to-page.png
 share/help/hu/evince/figures/evince-trail.png
 share/help/hu/evince/figures/evincelogo.png
-share/help/hu/evince/figures/list-add-tabs.png
 share/help/hu/evince/figures/print-select.png
 share/help/hu/evince/figures/reverse-collate.png
 share/help/hu/evince/figures/zoom.png
@@ -1454,7 +1440,6 @@ share/help/id/evince/figures/add-text-annotation.png
 share/help/id/evince/figures/annotations-nav-to-page.png
 share/help/id/evince/figures/evince-trail.png
 share/help/id/evince/figures/evincelogo.png
-share/help/id/evince/figures/list-add-tabs.png
 share/help/id/evince/figures/print-select.png
 share/help/id/evince/figures/reverse-collate.png
 share/help/id/evince/figures/zoom.png
@@ -1536,7 +1521,6 @@ share/help/it/evince/figures/add-text-annotation.png
 share/help/it/evince/figures/annotations-nav-to-page.png
 share/help/it/evince/figures/evince-trail.png
 share/help/it/evince/figures/evincelogo.png
-share/help/it/evince/figures/list-add-tabs.png
 share/help/it/evince/figures/print-select.png
 share/help/it/evince/figures/reverse-collate.png
 share/help/it/evince/figures/zoom.png
@@ -1618,7 +1602,6 @@ share/help/ja/evince/figures/add-text-annotation.png
 share/help/ja/evince/figures/annotations-nav-to-page.png
 share/help/ja/evince/figures/evince-trail.png
 share/help/ja/evince/figures/evincelogo.png
-share/help/ja/evince/figures/list-add-tabs.png
 share/help/ja/evince/figures/print-select.png
 share/help/ja/evince/figures/reverse-collate.png
 share/help/ja/evince/figures/zoom.png
@@ -1699,7 +1682,6 @@ share/help/ko/evince/figures/add-text-annotation.png
 share/help/ko/evince/figures/annotations-nav-to-page.png
 share/help/ko/evince/figures/evince-trail.png
 share/help/ko/evince/figures/evincelogo.png
-share/help/ko/evince/figures/list-add-tabs.png
 share/help/ko/evince/figures/print-select.png
 share/help/ko/evince/figures/reverse-collate.png
 share/help/ko/evince/figures/zoom.png
@@ -1781,7 +1763,6 @@ share/help/lv/evince/figures/add-text-annotation.png
 share/help/lv/evince/figures/annotations-nav-to-page.png
 share/help/lv/evince/figures/evince-trail.png
 share/help/lv/evince/figures/evincelogo.png
-share/help/lv/evince/figures/list-add-tabs.png
 share/help/lv/evince/figures/print-select.png
 share/help/lv/evince/figures/reverse-collate.png
 share/help/lv/evince/figures/zoom.png
@@ -1863,7 +1844,6 @@ share/help/nl/evince/figures/add-text-annotation.png
 share/help/nl/evince/figures/annotations-nav-to-page.png
 share/help/nl/evince/figures/evince-trail.png
 share/help/nl/evince/figures/evincelogo.png
-share/help/nl/evince/figures/list-add-tabs.png
 share/help/nl/evince/figures/print-select.png
 share/help/nl/evince/figures/reverse-collate.png
 share/help/nl/evince/figures/zoom.png
@@ -1944,7 +1924,6 @@ share/help/oc/evince/figures/add-text-annotation.png
 share/help/oc/evince/figures/annotations-nav-to-page.png
 share/help/oc/evince/figures/evince-trail.png
 share/help/oc/evince/figures/evincelogo.png
-share/help/oc/evince/figures/list-add-tabs.png
 share/help/oc/evince/figures/print-select.png
 share/help/oc/evince/figures/reverse-collate.png
 share/help/oc/evince/figures/zoom.png
@@ -2026,7 +2005,6 @@ share/help/pl/evince/figures/add-text-annotation.png
 share/help/pl/evince/figures/annotations-nav-to-page.png
 share/help/pl/evince/figures/evince-trail.png
 share/help/pl/evince/figures/evincelogo.png
-share/help/pl/evince/figures/list-add-tabs.png
 share/help/pl/evince/figures/print-select.png
 share/help/pl/evince/figures/reverse-collate.png
 share/help/pl/evince/figures/zoom.png
@@ -2107,7 +2085,6 @@ share/help/pt_BR/evince/figures/add-text-annotation.png
 share/help/pt_BR/evince/figures/annotations-nav-to-page.png
 share/help/pt_BR/evince/figures/evince-trail.png
 share/help/pt_BR/evince/figures/evincelogo.png
-share/help/pt_BR/evince/figures/list-add-tabs.png
 share/help/pt_BR/evince/figures/print-select.png
 share/help/pt_BR/evince/figures/reverse-collate.png
 share/help/pt_BR/evince/figures/zoom.png
@@ -2189,7 +2166,6 @@ share/help/ro/evince/figures/add-text-annotation.png
 share/help/ro/evince/figures/annotations-nav-to-page.png
 share/help/ro/evince/figures/evince-trail.png
 share/help/ro/evince/figures/evincelogo.png
-share/help/ro/evince/figures/list-add-tabs.png
 share/help/ro/evince/figures/print-select.png
 share/help/ro/evince/figures/reverse-collate.png
 share/help/ro/evince/figures/zoom.png
@@ -2271,7 +2247,6 @@ share/help/ru/evince/figures/add-text-annotation.png
 share/help/ru/evince/figures/annotations-nav-to-page.png
 share/help/ru/evince/figures/evince-trail.png
 share/help/ru/evince/figures/evincelogo.png
-share/help/ru/evince/figures/list-add-tabs.png
 share/help/ru/evince/figures/print-select.png
 share/help/ru/evince/figures/reverse-collate.png
 share/help/ru/evince/figures/zoom.png
@@ -2352,7 +2327,6 @@ share/help/sl/evince/figures/add-text-annotation.png
 share/help/sl/evince/figures/annotations-nav-to-page.png
 share/help/sl/evince/figures/evince-trail.png
 share/help/sl/evince/figures/evincelogo.png
-share/help/sl/evince/figures/list-add-tabs.png
 share/help/sl/evince/figures/print-select.png
 share/help/sl/evince/figures/reverse-collate.png
 share/help/sl/evince/figures/zoom.png
@@ -2433,7 +2407,6 @@ share/help/sr/evince/figures/add-text-annotation.png
 share/help/sr/evince/figures/annotations-nav-to-page.png
 share/help/sr/evince/figures/evince-trail.png
 share/help/sr/evince/figures/evincelogo.png
-share/help/sr/evince/figures/list-add-tabs.png
 share/help/sr/evince/figures/print-select.png
 share/help/sr/evince/figures/reverse-collate.png
 share/help/sr/evince/figures/zoom.png
@@ -2514,7 +2487,6 @@ share/help/sv/evince/figures/add-text-annotation.png
 share/help/sv/evince/figures/annotations-nav-to-page.png
 share/help/sv/evince/figures/evince-trail.png
 share/help/sv/evince/figures/evincelogo.png
-share/help/sv/evince/figures/list-add-tabs.png
 share/help/sv/evince/figures/print-select.png
 share/help/sv/evince/figures/reverse-collate.png
 share/help/sv/evince/figures/zoom.png
@@ -2596,7 +2568,6 @@ share/help/te/evince/figures/add-text-annotation.png
 share/help/te/evince/figures/annotations-nav-to-page.png
 share/help/te/evince/figures/evince-trail.png
 share/help/te/evince/figures/evincelogo.png
-share/help/te/evince/figures/list-add-tabs.png
 share/help/te/evince/figures/print-select.png
 share/help/te/evince/figures/reverse-collate.png
 share/help/te/evince/figures/zoom.png
@@ -2677,7 +2648,6 @@ share/help/uk/evince/figures/add-text-annotation.png
 share/help/uk/evince/figures/annotations-nav-to-page.png
 share/help/uk/evince/figures/evince-trail.png
 share/help/uk/evince/figures/evincelogo.png
-share/help/uk/evince/figures/list-add-tabs.png
 share/help/uk/evince/figures/print-select.png
 share/help/uk/evince/figures/reverse-collate.png
 share/help/uk/evince/figures/zoom.png
@@ -2758,7 +2728,6 @@ share/help/vi/evince/figures/add-text-annotation.png
 share/help/vi/evince/figures/annotations-nav-to-page.png
 share/help/vi/evince/figures/evince-trail.png
 share/help/vi/evince/figures/evincelogo.png
-share/help/vi/evince/figures/list-add-tabs.png
 share/help/vi/evince/figures/print-select.png
 share/help/vi/evince/figures/reverse-collate.png
 share/help/vi/evince/figures/zoom.png
@@ -2839,7 +2808,6 @@ share/help/zh_CN/evince/figures/add-text-annotation.png
 share/help/zh_CN/evince/figures/annotations-nav-to-page.png
 share/help/zh_CN/evince/figures/evince-trail.png
 share/help/zh_CN/evince/figures/evincelogo.png
-share/help/zh_CN/evince/figures/list-add-tabs.png
 share/help/zh_CN/evince/figures/print-select.png
 share/help/zh_CN/evince/figures/reverse-collate.png
 share/help/zh_CN/evince/figures/zoom.png
@@ -2921,7 +2889,6 @@ share/help/zh_HK/evince/figures/add-text-annotation.png
 share/help/zh_HK/evince/figures/annotations-nav-to-page.png
 share/help/zh_HK/evince/figures/evince-trail.png
 share/help/zh_HK/evince/figures/evincelogo.png
-share/help/zh_HK/evince/figures/list-add-tabs.png
 share/help/zh_HK/evince/figures/print-select.png
 share/help/zh_HK/evince/figures/reverse-collate.png
 share/help/zh_HK/evince/figures/zoom.png
@@ -3003,7 +2970,6 @@ share/help/zh_TW/evince/figures/add-text-annotation.png
 share/help/zh_TW/evince/figures/annotations-nav-to-page.png
 share/help/zh_TW/evince/figures/evince-trail.png
 share/help/zh_TW/evince/figures/evincelogo.png
-share/help/zh_TW/evince/figures/list-add-tabs.png
 share/help/zh_TW/evince/figures/print-select.png
 share/help/zh_TW/evince/figures/reverse-collate.png
 share/help/zh_TW/evince/figures/zoom.png

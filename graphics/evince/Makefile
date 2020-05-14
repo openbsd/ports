@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.174 2020/02/10 18:19:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.175 2020/05/14 15:30:25 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.34.2
-REVISION =		0
+GNOME_VERSION=		3.36.0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -29,7 +28,7 @@ WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg lcms2 lzma m openjp2 orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
 WANTLIB += poppler-glib secret-1 tiff xcb xcb-render xcb-shm xml2
-WANTLIB += z aspell enchant-2 gspell-1 synctex 
+WANTLIB += z aspell enchant-2 gspell-1 synctex zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -91,7 +90,7 @@ LIB_DEPENDS +=		graphics/djvulibre \
 			x11/gnome/desktop \
 			x11/gnome/nautilus
 WANTLIB += ICE SM avahi-common dbus-1 gmp gs hogweed idn2 nettle
-WANTLIB += p11-kit spectre tasn1 unistring zstd b2
+WANTLIB += p11-kit spectre tasn1 unistring b2
 WANTLIB += archive bz2 djvulibre gxps kpathsea charset
 WANTLIB += nautilus-extension crypto lz4 gnome-desktop-3
 
