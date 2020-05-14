@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_DkCore_DkMetaData_cpp,v 1.1 2020/05/14 19:16:24 rsadowski Exp $
+
+Missing include after exiv2 0.27.2
+
+Index: src/DkCore/DkMetaData.cpp
+--- src/DkCore/DkMetaData.cpp.orig
++++ src/DkCore/DkMetaData.cpp
+@@ -42,6 +42,8 @@
+ #include <QApplication>
+ #pragma warning(pop)		// no warnings from includes - end
+ 
++#include <iostream>
++
+ namespace nmc {
+ 
+ // DkMetaDataT --------------------------------------------------------------------

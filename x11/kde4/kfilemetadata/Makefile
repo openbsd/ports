@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/01/04 21:03:08 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/14 19:16:25 rsadowski Exp $
 
 COMMENT =	file metadata extraction library for KDE
 DISTNAME =	kfilemetadata-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils
 

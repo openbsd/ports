@@ -1,6 +1,6 @@
-Exiv2 is a C++ library and a command line utility to access image metadata. 
+Exiv2 is a C++ library and a command line utility to access image metadata.
 
-The Exiv2 library provides 
+The Exiv2 library provides
  * full read and write access to the Exif and IPTC  metadata of an
    image through Exiv2 keys and standard C++ iterators
  * a smart IPTC implementation that does not affect data that

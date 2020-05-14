@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2019/04/28 11:58:12 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/05/14 19:16:24 rsadowski Exp $
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
 @bin bin/autooptimiser
@@ -39,7 +39,7 @@ lib/hugin/
 @lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
 @lib lib/hugin/libicpfindlib.so.${LIBicpfindlib_VERSION}
 @lib lib/hugin/liblocalfeatures.so.${LIBlocalfeatures_VERSION}
-lib/python${MODPY_VERSION}/site-packages/_hsi.so
+@so lib/python${MODPY_VERSION}/site-packages/_hsi.so
 lib/python${MODPY_VERSION}/site-packages/hpi.py
 lib/python${MODPY_VERSION}/site-packages/hpi.pyc
 lib/python${MODPY_VERSION}/site-packages/hsi.py

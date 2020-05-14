@@ -1,0 +1,46 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/plain/kde-misc/krename/files/krename-5.0.0-exiv2-0.27.patch
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -1,6 +1,7 @@
+-project(krename)
+ 
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.7)
++
++project(krename VERSION "5.0.0")
+ # search packages used by KDE
+ find_package(ECM 0.0.11 REQUIRED NO_MODULE)
+ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
+@@ -39,10 +40,6 @@ add_definitions(
+     -DQT_STRICT_ITERATORS
+ )
+ 
+-set(KRENAME_VERSION "5.0.0")
+-
+-include(FindGettext)
+-
+ # Find taglib
+ set(TAGLIB_MIN_VERSION "1.5")
+ find_package(Taglib ${TAGLIB_MIN_VERSION})
+@@ -52,11 +49,12 @@ set_package_properties(Taglib PROPERTIES
+     TYPE OPTIONAL)
+ 
+ # Find exiv2
+-find_package(Exiv2 0.13) # AccessMode was added in 0.13
+-set_package_properties(Exiv2 PROPERTIES
+-    DESCRIPTION "A library to access image metadata"
+-    URL "http://www.exiv2.org"
+-    TYPE OPTIONAL)
++find_package(LibExiv2 0.13) # AccessMode was added in 0.13
++set_package_properties(LibExiv2 PROPERTIES TYPE OPTIONAL)
++
++if (LibExiv2_VERSION VERSION_GREATER_EQUAL "0.27")
++    set(HAVE_LIBEXIV2_0_27 TRUE)
++endif()
+ 
+ # Find podofo
+ find_package(PoDoFo)

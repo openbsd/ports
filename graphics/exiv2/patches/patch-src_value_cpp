@@ -1,21 +1,16 @@
-$OpenBSD: patch-src_value_cpp,v 1.9 2019/02/14 16:03:34 jca Exp $
---- src/value.cpp.orig	Sat May  2 13:55:40 2015
-+++ src/value.cpp	Thu Nov 19 19:30:30 2015
-@@ -982,7 +982,7 @@ namespace Exiv2 {
+$OpenBSD: patch-src_value_cpp,v 1.10 2020/05/14 19:16:24 rsadowski Exp $
+
+Avoid sprintf warnings when linking with libexiv2.
+
+Index: src/value.cpp
+--- src/value.cpp.orig
++++ src/value.cpp
+@@ -1012,7 +1012,7 @@ namespace Exiv2 {
          // sprintf wants to add the null terminator, so use oversized buffer
          char temp[9];
  
--        int wrote = sprintf(temp, "%04d%02d%02d",
-+        int wrote = snprintf(temp, sizeof temp, "%04d%02d%02d",
-                             date_.year, date_.month, date_.day);
+-        int wrote = sprintf(temp, "%04d%02d%02d", date_.year, date_.month, date_.day);
++        int wrote = snprintf(temp, sizeof temp, "%04d%02d%02d", date_.year, date_.month, date_.day);
          assert(wrote == 8);
-         std::memcpy(buf, temp, 8);
-@@ -1157,7 +1157,7 @@ namespace Exiv2 {
-         char plusMinus = '+';
-         if (time_.tzHour < 0 || time_.tzMinute < 0) plusMinus = '-';
- 
--        int wrote = sprintf(temp,
-+        int wrote = snprintf(temp, sizeof temp,
-                    "%02d%02d%02d%1c%02d%02d",
-                    time_.hour, time_.minute, time_.second,
-                    plusMinus, abs(time_.tzHour), abs(time_.tzMinute));
+         std::memcpy(buf, temp, wrote);
+         return wrote;

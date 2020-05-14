@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkexiv2_kexiv2_p_cpp,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
+
+Index: libkexiv2/kexiv2_p.cpp
+--- libkexiv2/kexiv2_p.cpp.orig
++++ libkexiv2/kexiv2_p.cpp
+@@ -33,6 +33,7 @@ extern "C"
+ {
+ #include <sys/stat.h>
+ #include <utime.h>
++ #include <exiv2/version.hpp>
+ }
+ 
+ namespace KExiv2Iface

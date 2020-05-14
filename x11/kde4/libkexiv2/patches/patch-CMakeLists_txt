@@ -1,7 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/12/08 19:13:32 zhuk Exp $
---- CMakeLists.txt.orig	Sun Aug 11 18:39:21 2013
-+++ CMakeLists.txt	Sun Aug 11 18:42:22 2013
-@@ -115,3 +115,17 @@ IF (EXIV2_FOUND)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/05/14 19:16:25 rsadowski Exp $
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -137,3 +137,17 @@ IF (EXIV2_FOUND)
  ENDIF (EXIV2_FOUND)
  
  MACRO_DISPLAY_FEATURE_LOG()

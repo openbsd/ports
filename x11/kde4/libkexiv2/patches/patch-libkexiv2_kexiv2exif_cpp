@@ -1,0 +1,21 @@
+$OpenBSD: patch-libkexiv2_kexiv2exif_cpp,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
+Index: libkexiv2/kexiv2exif.cpp
+--- libkexiv2/kexiv2exif.cpp.orig
++++ libkexiv2/kexiv2exif.cpp
+@@ -28,6 +28,7 @@
+ #include "kexiv2.h"
+ #include "kexiv2_p.h"
+ #include "rotationmatrix.h"
++ #include <exiv2/error.hpp>
+ 
+ // C++ includes
+ 
+@@ -986,7 +987,7 @@ bool KExiv2::setTiffThumbnail(const QImage& thumbImage
+ 
+         if (pos == d->exifMetadata().end() || pos->count() != 1 || pos->toLong() != 0)
+         {
+-            throw Exiv2::Error(1, "Exif.Image.NewSubfileType missing or not set as main image");
++            throw Exiv2::Error(Exiv2::kerErrorMessage, "Exif.Image.NewSubfileType missing or not set as main image");
+         }
+ 
+         // Remove sub-IFD tags

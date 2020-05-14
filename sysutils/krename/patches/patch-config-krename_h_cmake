@@ -1,0 +1,17 @@
+$OpenBSD: patch-config-krename_h_cmake,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/plain/kde-misc/krename/files/krename-5.0.0-exiv2-0.27.patch
+
+Index: config-krename.h.cmake
+--- config-krename.h.cmake.orig
++++ config-krename.h.cmake
+@@ -6,6 +6,9 @@
+ /* have Exiv2 */
+ #cmakedefine01 HAVE_EXIV2
+ 
++/* Defined if we have libexiv2 >= 0.27 */
++#cmakedefine HAVE_LIBEXIV2_0_27
++
+ /* have PoDoFo */
+ #cmakedefine01 HAVE_PODOFO
+ 

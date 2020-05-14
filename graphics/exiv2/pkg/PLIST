@@ -1,7 +1,42 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/02/14 16:03:34 jca Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/05/14 19:16:24 rsadowski Exp $
+@bin bin/addmoddel
+@bin bin/convert-test
+@bin bin/easyaccess-test
+@bin bin/exifcomment
+@bin bin/exifdata
+@bin bin/exifdata-test
+@bin bin/exifprint
+@bin bin/exifvalue
 @bin bin/exiv2
+@bin bin/exiv2json
+@bin bin/geotag
+@bin bin/ini-test
+@bin bin/iotest
+@bin bin/iptceasy
+@bin bin/iptcprint
+@bin bin/iptctest
+@bin bin/key-test
+@bin bin/largeiptc-test
+@bin bin/metacopy
+@bin bin/mmap-test
+@bin bin/mrwthumb
+@bin bin/path-test
+@bin bin/prevtest
+@bin bin/stringto-test
+@bin bin/taglist
+@bin bin/tiff-test
+@bin bin/werror-test
+@bin bin/write-test
+@bin bin/write2-test
+@bin bin/xmpdump
+@bin bin/xmpparse
+@bin bin/xmpparser-test
+@bin bin/xmpprint
+@bin bin/xmpsample
 include/exiv2/
+include/exiv2/asfvideo.hpp
 include/exiv2/basicio.hpp
+include/exiv2/bigtiffimage.hpp
 include/exiv2/bmpimage.hpp
 include/exiv2/config.h
 include/exiv2/convert.hpp
@@ -13,8 +48,8 @@ include/exiv2/epsimage.hpp
 include/exiv2/error.hpp
 include/exiv2/exif.hpp
 include/exiv2/exiv2.hpp
+include/exiv2/exiv2lib_export.h
 include/exiv2/exv_conf.h
-include/exiv2/exv_msvc.h
 include/exiv2/futils.hpp
 include/exiv2/gifimage.hpp
 include/exiv2/http.hpp
@@ -23,6 +58,7 @@ include/exiv2/ini.hpp
 include/exiv2/iptc.hpp
 include/exiv2/jp2image.hpp
 include/exiv2/jpgimage.hpp
+include/exiv2/matroskavideo.hpp
 include/exiv2/metadatum.hpp
 include/exiv2/mrwimage.hpp
 include/exiv2/orfimage.hpp
@@ -31,42 +67,81 @@ include/exiv2/pngimage.hpp
 include/exiv2/preview.hpp
 include/exiv2/properties.hpp
 include/exiv2/psdimage.hpp
+include/exiv2/quicktimevideo.hpp
 include/exiv2/rafimage.hpp
+include/exiv2/riffvideo.hpp
 include/exiv2/rw2image.hpp
 include/exiv2/rwlock.hpp
+include/exiv2/slice.hpp
+include/exiv2/ssh.hpp
 include/exiv2/tags.hpp
 include/exiv2/tgaimage.hpp
 include/exiv2/tiffimage.hpp
 include/exiv2/types.hpp
+include/exiv2/utilsvideo.hpp
 include/exiv2/value.hpp
 include/exiv2/version.hpp
 include/exiv2/webpimage.hpp
-include/exiv2/xmp.hpp
+include/exiv2/xmp_exiv2.hpp
 include/exiv2/xmpsidecar.hpp
-lib/libexiv2.a
-lib/libexiv2.la
+lib/cmake/
+lib/cmake/exiv2/
+lib/cmake/exiv2/exiv2Config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/exiv2/exiv2Config.cmake
+lib/cmake/exiv2/exiv2ConfigVersion.cmake
+@static-lib lib/libexiv2-xmp.a
 @lib lib/libexiv2.so.${LIBexiv2_VERSION}
 lib/pkgconfig/exiv2.pc
 @man man/man1/exiv2.1
-@man man/man1/exiv2samples.1
+share/locale/
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/exiv2.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
+share/locale/ca/LC_MESSAGES/exiv2.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/exiv2.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/exiv2.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/exiv2.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/exiv2.mo
+share/locale/gl/
+share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/exiv2.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/exiv2.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
+share/locale/nl/LC_MESSAGES/exiv2.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/exiv2.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/exiv2.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/exiv2.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/exiv2.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/exiv2.mo
 share/locale/ug/
 share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/exiv2.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/exiv2.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/exiv2.mo

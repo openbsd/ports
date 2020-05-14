@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2019/11/23 10:38:35 bket Exp $
+# $OpenBSD: Makefile,v 1.33 2020/05/14 19:16:24 rsadowski Exp $
 
 COMMENT =	document indexer
 DISTNAME =	strigi-0.7.8
-REVISION =	3
+REVISION =	4
 CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	https://www.vandenoever.info/software/strigi/

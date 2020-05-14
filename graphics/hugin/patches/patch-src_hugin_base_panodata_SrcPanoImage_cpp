@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_hugin_base_panodata_SrcPanoImage_cpp,v 1.1 2020/05/14 19:16:24 rsadowski Exp $
+
+Index: src/hugin_base/panodata/SrcPanoImage.cpp
+--- src/hugin_base/panodata/SrcPanoImage.cpp.orig
++++ src/hugin_base/panodata/SrcPanoImage.cpp
+@@ -41,6 +41,7 @@
+ #include <vigra/imageinfo.hxx>
+ #include <hugin_utils/utils.h>
+ #include <exiv2/exif.hpp>
++#include <exiv2/error.hpp>
+ #include <exiv2/image.hpp>
+ #include <exiv2/easyaccess.hpp>
+ #include <lensdb/LensDB.h>

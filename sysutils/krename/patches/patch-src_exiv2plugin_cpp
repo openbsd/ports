@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_exiv2plugin_cpp,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/plain/kde-misc/krename/files/krename-5.0.0-exiv2-0.27.patch
+
+Index: src/exiv2plugin.cpp
+--- src/exiv2plugin.cpp.orig
++++ src/exiv2plugin.cpp
+@@ -17,13 +17,19 @@
+ 
+ #include "exiv2plugin.h"
+ 
++#include "../config-krename.h"
++
+ #include <KLocalizedString>
+ 
+ #include <exiv2/error.hpp>
+ #include <exiv2/exif.hpp>
+ #include <exiv2/image.hpp>
+ #include <exiv2/iptc.hpp>
+-#include <exiv2/xmp.hpp>
++#ifdef HAVE_LIBEXIV2_0_27
++    #include <exiv2/xmp_exiv2.hpp>
++#else
++    #include <exiv2/xmp.hpp>
++#endif
+ #include <exiv2/tags.hpp>
+ 
+ #include "batchrenamer.h"

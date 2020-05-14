@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_hugin1_hugin_RawImport_cpp,v 1.1 2020/05/14 19:16:24 rsadowski Exp $
+
+Index: src/hugin1/hugin/RawImport.cpp
+--- src/hugin1/hugin/RawImport.cpp.orig
++++ src/hugin1/hugin/RawImport.cpp
+@@ -36,6 +36,7 @@
+ #define HAVE_PID_T 1
+ #endif
+ #include <exiv2/exif.hpp>
++#include <exiv2/error.hpp>
+ #include <exiv2/image.hpp>
+ #include <exiv2/easyaccess.hpp>
+ #include <exiv2/xmpsidecar.hpp>

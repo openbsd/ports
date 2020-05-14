@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/plain/kde-misc/krename/files/krename-5.0.0-exiv2-0.27.patch
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -23,7 +23,7 @@ if(FREETYPE_FOUND)
+     include_directories(${FREETYPE_INCLUDE_DIRS})
+ endif()
+ 
+-add_definitions(${TAGLIB_CFLAGS} ${EXIV2_CFLAGS})
++add_definitions(${TAGLIB_CFLAGS})
+ # Exiv2 needs exceptions
+ kde_enable_exceptions()
+ 
+@@ -67,7 +67,7 @@ set(krename_SRCS
+     snumplugin.cpp
+ )
+ 
+-if(EXIV2_FOUND)
++if(LibExiv2_FOUND)
+     set(krename_SRCS ${krename_SRCS}
+         exiv2plugin.cpp
+     )
+@@ -131,9 +131,9 @@ if(TAGLIB_FOUND)
+         ${TAGLIB_LIBRARIES}
+     )
+ endif()
+-if(EXIV2_FOUND)
++if(LibExiv2_FOUND)
+     target_link_libraries(krename
+-        ${EXIV2_LIBRARIES}
++        LibExiv2::LibExiv2
+     )
+ endif()
+ if(PoDoFo_FOUND)

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_rs-exif_cc,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
+
+unbreak with exiv2 2.27
+
+Index: src/rs-exif.cc
+--- src/rs-exif.cc.orig
++++ src/rs-exif.cc
+@@ -19,6 +19,7 @@
+ 
+ #include <iostream>
+ #include <iomanip>
++#include <exiv2/exiv2.hpp>
+ #include <exiv2/image.hpp>
+ #include <exiv2/exif.hpp>
+ #include "rs-exif.h"

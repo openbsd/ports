@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_actions_cpp,v 1.3 2019/02/14 16:03:34 jca Exp $
+$OpenBSD: patch-src_actions_cpp,v 1.4 2020/05/14 19:16:24 rsadowski Exp $
 
 XXX
 
@@ -9,12 +9,15 @@ mutex, I'll admit that it's a bit cumbersome to use." -- jca@
 Index: src/actions.cpp
 --- src/actions.cpp.orig
 +++ src/actions.cpp
-@@ -2049,7 +2049,7 @@ namespace {
-   /* This is the critical section object (statically allocated). */
-   static pthread_mutex_t cs =  PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
+@@ -2025,11 +2025,7 @@ namespace {
+     static pthread_mutex_t cs =  PTHREAD_MUTEX_INITIALIZER;
+   #endif
   #else
--  static pthread_mutex_t cs =  PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
-+  static pthread_mutex_t cs =  PTHREAD_MUTEX_INITIALIZER;
+-  #if defined(PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP)
+-    static pthread_mutex_t cs =  PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
+-   #else
+     static pthread_mutex_t cs =  PTHREAD_MUTEX_INITIALIZER;
+-  #endif
   #endif
  #endif
  

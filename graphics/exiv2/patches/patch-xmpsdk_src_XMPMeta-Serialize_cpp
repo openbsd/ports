@@ -1,7 +1,8 @@
-$OpenBSD: patch-xmpsdk_src_XMPMeta-Serialize_cpp,v 1.4 2019/02/14 16:03:34 jca Exp $
---- xmpsdk/src/XMPMeta-Serialize.cpp.orig	Thu Nov 19 19:37:14 2015
-+++ xmpsdk/src/XMPMeta-Serialize.cpp	Thu Nov 19 20:02:26 2015
-@@ -303,7 +303,7 @@ AppendNodeValue ( XMP_VarString & outputStr, const XMP
+$OpenBSD: patch-xmpsdk_src_XMPMeta-Serialize_cpp,v 1.5 2020/05/14 19:16:24 rsadowski Exp $
+Index: xmpsdk/src/XMPMeta-Serialize.cpp
+--- xmpsdk/src/XMPMeta-Serialize.cpp.orig
++++ xmpsdk/src/XMPMeta-Serialize.cpp
+@@ -302,7 +302,7 @@ AppendNodeValue ( XMP_VarString & outputStr, const XMP
  				XMP_Assert ( (ch == kTab) || (ch == kLF) || (ch == kCR) );
  
  				char hexBuf[16];

@@ -1,12 +1,16 @@
-$OpenBSD: patch-src_version_cpp,v 1.7 2019/02/14 16:03:34 jca Exp $
+$OpenBSD: patch-src_version_cpp,v 1.8 2020/05/14 19:16:24 rsadowski Exp $
+
+getProcessPath() doesn't work on OpenBSD.
+
 Index: src/version.cpp
 --- src/version.cpp.orig
 +++ src/version.cpp
-@@ -126,6 +126,7 @@ namespace Exiv2 {
-         return os.str();
-     }
- 
-+const char* version() __attribute__((visibility ("default")));
-     const char* version()
-     {
-         return EXV_PACKAGE_VERSION;
+@@ -482,7 +482,7 @@ void Exiv2::dumpLibraryInfo(std::ostream& os,const exv
+     output(os,keys,"version"        , __VERSION__);
+     output(os,keys,"date"           , __DATE__   );
+     output(os,keys,"time"           , __TIME__   );
+-    output(os,keys,"processpath"    , Exiv2::getProcessPath());
++    //output(os,keys,"processpath"    , Exiv2::getProcessPath());
+ #ifdef EXV_ENABLE_NLS
+     output(os,keys,"localedir"      , EXV_LOCALEDIR);
+ #endif

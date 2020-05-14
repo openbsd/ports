@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2020/05/14 19:16:25 rsadowski Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.22
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}
@@ -12,14 +12,15 @@ HOMEPAGE=	http://ufraw.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo cfitsio exiv2
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gimp-2.0
-WANTLIB += gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0 gimpmath-2.0
-WANTLIB += gimpmodule-2.0 gimpui-2.0 gimpwidgets-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkimageview iconv intl
-WANTLIB += jasper jpeg lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += png pthread ${COMPILER_LIBCXX} tiff z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 babl-0.1
+WANTLIB += bz2 c cairo cfitsio exiv2 fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gegl-0.4 gimp-2.0 gimpbase-2.0 gimpcolor-2.0
+WANTLIB += gimpconfig-2.0 gimpmath-2.0 gimpmodule-2.0 gimpui-2.0
+WANTLIB += gimpwidgets-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtkimageview harfbuzz intl
+WANTLIB += jasper jpeg json-glib-1.0 lcms2 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 png tiff z
 
 # don't remove unless you are sure:
 WANTLIB += lensfun
