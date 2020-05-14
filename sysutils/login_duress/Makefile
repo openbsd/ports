@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/14 21:08:01 jcs Exp $
 
 COMMENT=		BSD authentication module for duress passwords
 
 GH_ACCOUNT=		jcs
 GH_PROJECT=		login_duress
 GH_TAGNAME=		v1.1
+REVISION=		0
 
 CATEGORIES=		sysutils security
 
-MAINTAINER=		joshua stein <jcs@openbsd.org>
+MAINTAINER=		joshua stein <jcs@jcs.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

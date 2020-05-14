@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/23 19:00:17 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/14 21:08:01 jcs Exp $
 
 COMMENT=	Ruby version redirection shim
 
 DISTNAME=	ruby-shims-3
 CATEGORIES=	devel
+REVISION=	0
 
-MAINTAINER=	joshua stein <jcs@openbsd.org>
+MAINTAINER=	joshua stein <jcs@jcs.org>
 
 # ISC
 PERMIT_PACKAGE=	Yes
