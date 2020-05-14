@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.130 2020/03/29 15:36:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2020/05/14 11:41:47 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.13.5
+DISTNAME=	mutt-1.14.0
 #PGPSIGFILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 EPOCH=		3
 
@@ -36,6 +36,12 @@ CONFIGURE_STYLE=  gnu
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
+
+MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP=	No
+MODPY_BUILDDEP=	No
+MODPY_ADJ_FILES= contrib/markdown2html
 
 CONFIGURE_ARGS+= --enable-compressed \
 		--enable-external_dotlock \
@@ -90,7 +96,9 @@ CONFIGURE_ARGS+= --with-curses
 
 post-install:
 	mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
+	cd ${PREFIX}/share/examples/mutt; \
+	    chmod +x *.sh *.pl mutt_xtitle markdown2html
 	sed -i -e 's,gpg ,${LOCALBASE}/bin/gpg2 ,' \
-		${PREFIX}/share/examples/mutt/gpg.rc
+	    ${PREFIX}/share/examples/mutt/gpg.rc
 
 .include <bsd.port.mk>

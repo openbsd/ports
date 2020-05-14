@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2019/12/02 12:19:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/05/14 11:41:47 sthen Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
 @pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
 @pkgpath mail/mutt[,compressed][,idn][,sidebar]${FLAVOR_COMMA}
@@ -55,6 +55,8 @@ share/examples/mutt/Muttrc.dist
 @sample ${SYSCONFDIR}/Muttrc
 share/examples/mutt/Pine.rc
 share/examples/mutt/Tin.rc
+share/examples/mutt/bgedit-detectgui.sh
+share/examples/mutt/bgedit-screen-tmux.sh
 share/examples/mutt/ca-bundle.crt
 share/examples/mutt/colors.default
 share/examples/mutt/colors.linux
