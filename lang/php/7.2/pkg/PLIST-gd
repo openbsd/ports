@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-gd,v 1.2 2019/12/18 20:22:05 sthen Exp $
+@comment $OpenBSD: PLIST-gd,v 1.3 2020/05/14 19:34:55 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-gd->=7.2,<7.3
+@conflict php->=7.2,<7.2.31
 @so lib/php-${PV}/modules/gd.so
 share/examples/php-${PV}/gd.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/gd.ini
@@ -9,7 +10,9 @@ share/php-${PV}/include/ext/gd/
 share/php-${PV}/include/ext/gd/gd_compat.h
 share/php-${PV}/include/ext/gd/gdcache.h
 share/php-${PV}/include/ext/gd/libgd/
+share/php-${PV}/include/ext/gd/libgd/bmp.h
 share/php-${PV}/include/ext/gd/libgd/gd.h
+share/php-${PV}/include/ext/gd/libgd/gd_errors.h
 share/php-${PV}/include/ext/gd/libgd/gd_intern.h
 share/php-${PV}/include/ext/gd/libgd/gd_io.h
 share/php-${PV}/include/ext/gd/libgd/gdcache.h
