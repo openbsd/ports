@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.143 2020/04/20 06:31:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.144 2020/05/14 15:05:04 jasper Exp $
 
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
-GNOME_VERSION=	3.32.5
+GNOME_VERSION=	3.36.2
 
 CATEGORIES=	archivers
 
@@ -37,5 +37,7 @@ LIB_DEPENDS=	archivers/libarchive>=3.1.2 \
 		x11/gnome/nautilus
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
+
+DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
