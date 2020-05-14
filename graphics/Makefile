@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.504 2020/04/26 10:53:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.505 2020/05/14 16:23:04 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -10,7 +10,6 @@
      SUBDIR += amide
      SUBDIR += animorph
      SUBDIR += ansilove
-     SUBDIR += argyll
      SUBDIR += aspect-crop
      SUBDIR += asymptote
      SUBDIR += autopano-sift-c
@@ -275,7 +274,6 @@
      SUBDIR += scour
      SUBDIR += scratch
      SUBDIR += scrot
-     SUBDIR += shared-color-targets
      SUBDIR += shotwell
      SUBDIR += simgear
      SUBDIR += simple-scan
