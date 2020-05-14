@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/20 08:19:50 pvk Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/14 22:44:36 pvk Exp $
 
 # vmm(4) architecture(s)
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	vmm(4) builder engine for HashiCorp Packer
 
-VERSION =	1.0.0
-PACKER_V =	1.5.5
-PKGNAME =	packer-vmm-${VERSION}
+V =		1.5.6
+PKGNAME =	packer-vmm-${V}
 GH_ACCOUNT =	double-p
 GH_PROJECT =	packer-builder-openbsd-vmm
-GH_TAGNAME =	v${VERSION}
+GH_TAGNAME =	v${V}
 
 CATEGORIES =	sysutils
 
 MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
-MASTER_SITES0 =	https://github.com/hashicorp/packer/archive/v${PACKER_V}/
-DISTFILES +=	${GH_PROJECT}-${VERSION}${EXTRACT_SUFX} \
-		packer-${PACKER_V}${EXTRACT_SUFX}:0
+MASTER_SITES0 =	https://github.com/hashicorp/packer/archive/v${V}/
+DISTFILES +=	${GH_PROJECT}-${V}${EXTRACT_SUFX} \
+		packer-${V}${EXTRACT_SUFX}:0
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -31,10 +30,10 @@ RUN_DEPENDS =	sysutils/packer
 
 NO_TEST =	Yes
 
-post-extract:
+post-patch:
 	mkdir -p ${WRKDIR}/go/src/
-	mv ${WRKDIR}/packer-${PACKER_V}/vendor/* ${WRKDIR}/go/src/
-	mv ${WRKDIR}/packer-${PACKER_V} \
+	mv ${WRKDIR}/packer-${V}/vendor/* ${WRKDIR}/go/src/
+	mv ${WRKDIR}/packer-${V} \
 		${WRKDIR}/go/src/github.com/hashicorp/packer
 
 post-install:
