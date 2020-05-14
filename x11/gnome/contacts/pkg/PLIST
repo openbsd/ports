@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/01/06 16:32:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/05/14 15:14:30 jasper Exp $
 @bin bin/gnome-contacts
 @bin libexec/gnome-contacts-search-provider
 @man man/man1/gnome-contacts.1
@@ -9,6 +9,7 @@ share/glib-2.0/schemas/org.gnome.Contacts.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Contacts.search-provider.ini
+share/icons/hicolor/scalable/apps/org.gnome.Contacts.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Contacts.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Contacts-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-contacts.mo
