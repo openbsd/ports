@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1198 2020/05/14 15:38:51 juanfra Exp $
+# $OpenBSD: Makefile,v 1.1199 2020/05/14 18:05:14 paco Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -628,7 +628,7 @@
      SUBDIR += py-tld
      SUBDIR += py-tld,python3
      SUBDIR += py-tlslite-ng,python3
-     SUBDIR += py-transmissionrpc-ng
+     SUBDIR += py-transmissionrpc-ng,python3
      SUBDIR += py-twitter,python3
      SUBDIR += py-websocket-client
      SUBDIR += py-websocket-client,python3
