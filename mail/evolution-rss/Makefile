@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.89 2020/03/14 13:04:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2020/05/14 14:54:12 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.96
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
@@ -33,9 +33,10 @@ WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz harfbuzz-icu hyphen ical ical-glib icalss
 WANTLIB += icalvcal iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lber ldap ltdl lz4 lzma m notify
-WANTLIB += ogg openjp2 orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png psl sasl2 secret-1 soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 ssl tasn1 unistring vorbis vorbisfile
+WANTLIB += nspr4 nss3 nssutil3 ogg openjp2 orc-0.4 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png psl sasl2 secret-1 smime3 soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 ssl ssl3 tasn1 unistring vorbis vorbisfile
 WANTLIB += webkit2gtk-4.0 webp webpdemux woff2common woff2dec
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
 WANTLIB += xcb-shm xcb-sync xcb-xfixes xml2 xshmfence xslt z zstd
