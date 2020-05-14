@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/27 18:10:24 bket Exp $
+# $OpenBSD: Makefile,v 1.9 2020/05/14 19:35:05 bket Exp $
 
 COMMENT =		Python client for interacting with InfluxDB
 
-MODPY_EGG_VERSION =	5.2.3
-REVISION =		0
+MODPY_EGG_VERSION =	5.3.0
 DISTNAME =		influxdb-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -24,6 +23,7 @@ FLAVOR =		python3
 RUN_DEPENDS +=		devel/py-dateutil${MODPY_FLAVOR}>=2.6.0 \
 			devel/py-six${MODPY_FLAVOR}>=1.10.0 \
 			devel/py-tz${MODPY_FLAVOR} \
+			net/py-msgpack${MODPY_FLAVOR}>=0.6.2v0 \
 			www/py-requests${MODPY_FLAVOR}>=2.17.0
 TEST_DEPENDS +=		databases/influxdb \
 			devel/py-mock${MODPY_FLAVOR} \
@@ -34,7 +34,7 @@ TEST_DEPENDS +=		databases/influxdb \
 do-test:
 	# XXX ignore tests in client_test_with_server.py as distfile is missing
 	# server_tests/influxdb.conf.template
-	cd ${WRKSRC}/influxdb/tests && nosetests${MODPY_BIN_SUFFIX} -v \
+	cd ${WRKSRC}/influxdb/tests && nosetests${MODPY_BIN_SUFFIX} \
 		--ignore-files=client_test_with_server.py
 
 .include <bsd.port.mk>
