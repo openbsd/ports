@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session_c,v 1.21 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session_c,v 1.22 2020/05/14 15:25:54 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
@@ -15,7 +15,7 @@ Subject: session: drop session-type property
 Index: daemon/gdm-session.c
 --- daemon/gdm-session.c.orig
 +++ daemon/gdm-session.c
-@@ -3228,6 +3228,10 @@ gdm_session_bypasses_xsession (GdmSession *self)
+@@ -3238,6 +3238,10 @@ gdm_session_bypasses_xsession (GdmSession *self)
          g_return_val_if_fail (self != NULL, FALSE);
          g_return_val_if_fail (GDM_IS_SESSION (self), FALSE);
  
@@ -26,7 +26,7 @@ Index: daemon/gdm-session.c
  #ifdef ENABLE_WAYLAND_SUPPORT
          if (gdm_session_is_wayland_session (self)) {
                  bypasses_xsession = TRUE;
-@@ -3320,6 +3324,27 @@ gdm_session_select_program (GdmSession *self,
+@@ -3330,6 +3334,27 @@ gdm_session_select_program (GdmSession *self,
          g_free (self->selected_program);
  
          self->selected_program = g_strdup (text);

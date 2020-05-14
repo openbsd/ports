@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_gdm-common_c,v 1.7 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-common_gdm-common_c,v 1.8 2020/05/14 15:25:54 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
@@ -387,7 +387,7 @@ Index: common/gdm-common.c
           * since the data allocated is from libsystemd-logind, which
           * does not use GLib's g_malloc (). */
  
--        if (!gdm_find_display_session_for_uid (getuid (), &our_session, &local_error)) {
+-        if (!gdm_find_display_session (0, getuid (), &our_session, &local_error)) {
 -                g_propagate_prefixed_error (error, local_error, _("Could not identify the current session: "));
 +        res = sd_pid_get_session (0, &our_session);
 +        if (res < 0) {
@@ -435,7 +435,7 @@ Index: common/gdm-common.c
  }
  
  static void
-@@ -841,114 +1156,4 @@ gdm_shell_expand (const char *str,
+@@ -841,136 +1156,4 @@ gdm_shell_expand (const char *str,
                  }
          }
          return g_string_free (s, FALSE);
@@ -496,15 +496,37 @@ Index: common/gdm-common.c
 -}
 -
 -gboolean
--gdm_find_display_session_for_uid (const uid_t uid,
--                                  char      **out_session_id,
--                                  GError    **error)
+-gdm_find_display_session (GPid        pid,
+-                          const uid_t uid,
+-                          char      **out_session_id,
+-                          GError    **error)
 -{
 -        char *local_session_id = NULL;
 -        g_auto(GStrv) sessions = NULL;
 -        int n_sessions;
+-        int res;
 -
 -        g_return_val_if_fail (out_session_id != NULL, FALSE);
+-
+-        /* First try to look up the session using the pid. We need this
+-         * at least for the greeter, because it currently runs multiple
+-         * sessions under the same user.
+-         * See also commit 2b52d8933c8ab38e7ee83318da2363d00d8c5581
+-         * which added an explicit dbus-run-session for all but seat0.
+-         */
+-        res = sd_pid_get_session (pid, &local_session_id);
+-        if (res >= 0) {
+-                g_debug ("GdmCommon: Found session %s for PID %d, using", local_session_id, pid);
+-
+-                *out_session_id = g_strdup (local_session_id);
+-                free (local_session_id);
+-
+-                return TRUE;
+-        } else {
+-                if (res != -ENODATA)
+-                        g_warning ("GdmCommon: Failed to retrieve session information for pid %d: %s",
+-                                   pid, strerror (-res));
+-        }
 -
 -        g_debug ("Finding a graphical session for user %d", uid);
 -

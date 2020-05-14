@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_gdm-common_h,v 1.4 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-common_gdm-common_h,v 1.5 2020/05/14 15:25:54 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
@@ -27,18 +27,19 @@ Index: common/gdm-common.h
  GQuark gdm_common_error_quark (void);
  #define GDM_COMMON_ERROR gdm_common_error_quark()
  
-@@ -51,10 +56,6 @@ int            gdm_wait_on_and_disown_pid (int pid,
+@@ -51,11 +56,6 @@ int            gdm_wait_on_and_disown_pid (int pid,
  int            gdm_signal_pid            (int pid,
                                            int signal);
  
--gboolean       gdm_find_display_session_for_uid (const uid_t uid,
--                                                 char      **out_session_id,
--                                                 GError    **error);
+-gboolean       gdm_find_display_session (GPid        pid,
+-                                         const uid_t uid,
+-                                         char      **out_session_id,
+-                                         GError    **error);
 -
  gboolean       gdm_get_pwent_for_name    (const char     *name,
                                            struct passwd **pwentp);
  
-@@ -81,10 +82,6 @@ gboolean      gdm_shell_var_is_valid_char (char c,
+@@ -82,10 +82,6 @@ gboolean      gdm_shell_var_is_valid_char (char c,
  char *        gdm_shell_expand            (const char *str,
                                             GdmExpandVarFunc expand_func,
                                             gpointer user_data);

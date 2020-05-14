@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgdm_gdm-user-switching_c,v 1.3 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-libgdm_gdm-user-switching_c,v 1.4 2020/05/14 15:25:54 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
@@ -392,22 +392,20 @@ Index: libgdm/gdm-user-switching.c
  
          ret = FALSE;
          session_id = NULL;
-@@ -203,9 +507,12 @@ goto_login_session (GDBusConnection  *connection,
+@@ -203,8 +507,10 @@ goto_login_session (GDBusConnection  *connection,
          /* Note that we mostly use free () here, instead of g_free ()
           * since the data allocated is from libsystemd-logind, which
           * does not use GLib's g_malloc (). */
--        if (!gdm_find_display_session_for_uid (getuid (), &our_session, &local_error)) {
+-        if (!gdm_find_display_session (0, getuid (), &our_session, &local_error)) {
 -                g_propagate_prefixed_error (error, local_error, _("Could not identify the current session: "));
- 
 +        res = sd_pid_get_session (0, &our_session);
 +        if (res < 0) {
 +                g_debug ("failed to determine own session: %s", strerror (-res));
 +                g_set_error (error, GDM_CLIENT_ERROR, 0, _("Could not identify the current session."));
-+
+ 
                  return FALSE;
          }
- 
-@@ -236,9 +543,9 @@ goto_login_session (GDBusConnection  *connection,
+@@ -236,9 +542,9 @@ goto_login_session (GDBusConnection  *connection,
                  return FALSE;
          }
  
@@ -419,7 +417,7 @@ Index: libgdm/gdm-user-switching.c
  
                  if (res) {
                          ret = TRUE;
-@@ -257,10 +564,11 @@ goto_login_session (GDBusConnection  *connection,
+@@ -257,10 +563,11 @@ goto_login_session (GDBusConnection  *connection,
  
          return ret;
  }
@@ -432,7 +430,7 @@ Index: libgdm/gdm-user-switching.c
  {
          GDBusConnection *connection;
          gboolean retval;
-@@ -269,8 +577,23 @@ gdm_goto_login_session_sync (GCancellable  *cancellabl
+@@ -269,8 +576,23 @@ gdm_goto_login_session_sync (GCancellable  *cancellabl
          if (!connection)
                  return FALSE;
  

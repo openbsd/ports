@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.281 2019/11/02 16:34:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.282 2020/05/14 15:25:53 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		3.36.2
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -31,6 +31,9 @@ BUILD_DEPENDS=		devel/check \
 			devel/iso-codes
 
 RUN_DEPENDS=		devel/iso-codes
+
+# dbus-run-session(1)
+RUN_DEPENDS +=		x11/dbus
 
 # 'dconf compile'
 BUILD_DEPENDS +=	devel/dconf
@@ -81,6 +84,8 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-group=_gdm \
 			--with-xauth-dir=/var/run/gdm \
 			--with-initial-vt=05
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:
 	sed -i -e 's,/usr/local,${LOCALBASE},g' \

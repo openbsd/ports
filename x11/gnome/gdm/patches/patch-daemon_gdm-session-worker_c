@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.20 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.21 2020/05/14 15:25:54 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -431,13 +431,13 @@ Index: daemon/gdm-session-worker.c
  static gboolean
  set_up_for_new_vt (GdmSessionWorker *worker)
  {
-         int fd;
+         int initial_vt_fd;
          char vt_string[256], tty_string[256];
 +        struct vt_stat vt_state = { 0 };
          int session_vt = 0;
  
-         fd = open ("/dev/tty0", O_RDWR | O_NOCTTY);
-@@ -2201,6 +2444,11 @@ set_up_for_new_vt (GdmSessionWorker *worker)
+         /* open the initial vt.  We need it for two scenarios:
+@@ -2209,6 +2452,11 @@ set_up_for_new_vt (GdmSessionWorker *worker)
                  return FALSE;
          }
  
@@ -449,15 +449,15 @@ Index: daemon/gdm-session-worker.c
          if (worker->priv->display_is_initial) {
                  session_vt = GDM_INITIAL_VT;
          } else {
-@@ -2210,6 +2458,7 @@ set_up_for_new_vt (GdmSessionWorker *worker)
+@@ -2222,6 +2470,7 @@ set_up_for_new_vt (GdmSessionWorker *worker)
                  }
          }
  
 +        worker->priv->login_vt = vt_state.v_active;
          worker->priv->session_vt = session_vt;
  
-         close (fd);
-@@ -2272,6 +2521,7 @@ fail:
+         g_assert (session_vt > 0);
+@@ -2287,6 +2536,7 @@ fail:
          close (fd);
          return FALSE;
  }
@@ -465,7 +465,7 @@ Index: daemon/gdm-session-worker.c
  
  static gboolean
  set_up_for_current_vt (GdmSessionWorker  *worker,
-@@ -2339,12 +2589,14 @@ set_up_for_current_vt (GdmSessionWorker  *worker,
+@@ -2354,12 +2604,14 @@ set_up_for_current_vt (GdmSessionWorker  *worker,
           }
  #endif
  
@@ -480,7 +480,7 @@ Index: daemon/gdm-session-worker.c
  
          return TRUE;
  out:
-@@ -2370,6 +2622,7 @@ gdm_session_worker_open_session (GdmSessionWorker  *wo
+@@ -2385,6 +2637,7 @@ gdm_session_worker_open_session (GdmSessionWorker  *wo
                  break;
          case GDM_SESSION_DISPLAY_MODE_NEW_VT:
          case GDM_SESSION_DISPLAY_MODE_LOGIND_MANAGED:
@@ -488,7 +488,7 @@ Index: daemon/gdm-session-worker.c
                  if (!set_up_for_new_vt (worker)) {
                          g_set_error (error,
                                       GDM_SESSION_WORKER_ERROR,
-@@ -2377,6 +2630,7 @@ gdm_session_worker_open_session (GdmSessionWorker  *wo
+@@ -2392,6 +2645,7 @@ gdm_session_worker_open_session (GdmSessionWorker  *wo
                                       "Unable to open VT");
                          return FALSE;
                  }
@@ -496,7 +496,7 @@ Index: daemon/gdm-session-worker.c
                  break;
          }
  
-@@ -2399,8 +2653,18 @@ gdm_session_worker_open_session (GdmSessionWorker  *wo
+@@ -2414,8 +2668,18 @@ gdm_session_worker_open_session (GdmSessionWorker  *wo
          g_debug ("GdmSessionWorker: state SESSION_OPENED");
          gdm_session_worker_set_state (worker, GDM_SESSION_WORKER_STATE_SESSION_OPENED);
  
@@ -515,7 +515,7 @@ Index: daemon/gdm-session-worker.c
          if (session_id != NULL) {
                  g_free (worker->priv->session_id);
                  worker->priv->session_id = session_id;
-@@ -2508,6 +2772,19 @@ gdm_session_worker_handle_set_session_name (GdmDBusWor
+@@ -2523,6 +2787,19 @@ gdm_session_worker_handle_set_session_name (GdmDBusWor
  }
  
  static gboolean
@@ -535,7 +535,7 @@ Index: daemon/gdm-session-worker.c
  gdm_session_worker_handle_set_session_display_mode (GdmDBusWorker         *object,
                                                      GDBusMethodInvocation *invocation,
                                                      const char            *str)
-@@ -2934,6 +3211,7 @@ gdm_session_worker_handle_open (GdmDBusWorker         
+@@ -2949,6 +3226,7 @@ gdm_session_worker_handle_open (GdmDBusWorker         
          return TRUE;
  }
  
@@ -543,7 +543,7 @@ Index: daemon/gdm-session-worker.c
  static char **
  filter_extensions (const char * const *extensions)
  {
-@@ -2959,6 +3237,7 @@ filter_extensions (const char * const *extensions)
+@@ -2974,6 +3252,7 @@ filter_extensions (const char * const *extensions)
  
          return filtered_extensions;
  }
@@ -551,7 +551,7 @@ Index: daemon/gdm-session-worker.c
  
  static gboolean
  gdm_session_worker_handle_initialize (GdmDBusWorker         *object,
-@@ -2978,8 +3257,10 @@ gdm_session_worker_handle_initialize (GdmDBusWorker   
+@@ -2993,8 +3272,10 @@ gdm_session_worker_handle_initialize (GdmDBusWorker   
          while (g_variant_iter_loop (&iter, "{sv}", &key, &value)) {
                  if (g_strcmp0 (key, "service") == 0) {
                          worker->priv->service = g_variant_dup_string (value, NULL);
@@ -562,7 +562,7 @@ Index: daemon/gdm-session-worker.c
                  } else if (g_strcmp0 (key, "username") == 0) {
                          worker->priv->username = g_variant_dup_string (value, NULL);
                  } else if (g_strcmp0 (key, "is-program-session") == 0) {
-@@ -3419,6 +3700,7 @@ worker_interface_init (GdmDBusWorkerIface *interface)
+@@ -3434,6 +3715,7 @@ worker_interface_init (GdmDBusWorkerIface *interface)
          interface->handle_open = gdm_session_worker_handle_open;
          interface->handle_set_language_name = gdm_session_worker_handle_set_language_name;
          interface->handle_set_session_name = gdm_session_worker_handle_set_session_name;

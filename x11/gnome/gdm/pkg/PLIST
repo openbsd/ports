@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.95 2019/11/02 15:34:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.96 2020/05/14 15:25:54 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -23,7 +23,7 @@ include/gdm/gdm-client.h
 include/gdm/gdm-sessions.h
 include/gdm/gdm-user-switching.h
 lib/girepository-1.0/Gdm-1.0.typelib
-lib/libgdm.a
+@static-lib lib/libgdm.a
 lib/libgdm.la
 @lib lib/libgdm.so.${LIBgdm_VERSION}
 lib/pkgconfig/gdm.pc
@@ -219,6 +219,7 @@ share/locale/br/LC_MESSAGES/gdm.mo
 share/locale/bs/LC_MESSAGES/gdm.mo
 share/locale/ca/LC_MESSAGES/gdm.mo
 share/locale/ca@valencia/LC_MESSAGES/gdm.mo
+share/locale/ckb/LC_MESSAGES/gdm.mo
 share/locale/crh/LC_MESSAGES/gdm.mo
 share/locale/cs/LC_MESSAGES/gdm.mo
 share/locale/csb/LC_MESSAGES/gdm.mo
@@ -297,6 +298,7 @@ share/locale/sq/LC_MESSAGES/gdm.mo
 share/locale/sr/LC_MESSAGES/gdm.mo
 share/locale/sr@latin/LC_MESSAGES/gdm.mo
 share/locale/sv/LC_MESSAGES/gdm.mo
+share/locale/sw/LC_MESSAGES/gdm.mo
 share/locale/ta/LC_MESSAGES/gdm.mo
 share/locale/te/LC_MESSAGES/gdm.mo
 share/locale/tg/LC_MESSAGES/gdm.mo

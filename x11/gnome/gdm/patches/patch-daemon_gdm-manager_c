@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.23 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.24 2020/05/14 15:25:54 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
@@ -613,7 +613,7 @@ Index: daemon/gdm-manager.c
                  goto out;
          }
  
--        ret = gdm_find_display_session_for_uid (caller_uid, &session_id, &error);
+-        ret = gdm_find_display_session (pid, caller_uid, &session_id, &error);
 +        session_id = get_session_id_for_pid (connection, pid, &error);
  
 -        if (!ret) {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.17 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.18 2020/05/14 15:25:54 ajacoutot Exp $
 
 REVERT - Linux-PAM
 From 714b6af29b916ac7da0cdab6f83460574ed49cf2 Mon Sep 17 00:00:00 2001
@@ -56,8 +56,8 @@ Index: configure.ac
 +	AM_CONDITIONAL(SUPPORTS_PAM_EXTENSIONS, false)
  fi
  
- AC_CHECK_LIB(keyutils, keyctl_read, [
-@@ -613,14 +620,8 @@ dnl --------------------------------------------------
+ PKG_CHECK_MODULES([KEYUTILS],
+@@ -612,14 +619,8 @@ dnl --------------------------------------------------
  dnl - Check for utmp stuff
  dnl ---------------------------------------------------------------------------
  
@@ -74,7 +74,7 @@ Index: configure.ac
  AC_CHECK_LIB(util, logwtmp, [
  	  	   AC_DEFINE(HAVE_LOGWTMP, 1, [Define if have logwtmp])
  		       EXTRA_DAEMON_LIBS="$EXTRA_DAEMON_LIBS -lutil" ])
-@@ -829,12 +830,42 @@ AC_SUBST(XINERAMA_LIBS)
+@@ -828,12 +829,42 @@ AC_SUBST(XINERAMA_LIBS)
  CPPFLAGS="$xinerama_save_cppflags"
  
  dnl ---------------------------------------------------------------------------
@@ -118,7 +118,7 @@ Index: configure.ac
  AC_SUBST(SYSTEMD_CFLAGS)
  AC_SUBST(SYSTEMD_LIBS)
  
-@@ -1027,6 +1058,14 @@ fi
+@@ -1026,6 +1057,14 @@ fi
  AC_SUBST(GDM_CUSTOM_CONF)
  AC_SUBST(GDM_OLD_CONF, '${gdmconfdir}/gdm.conf')
  
@@ -133,7 +133,7 @@ Index: configure.ac
  AC_ARG_WITH(gnome-settings-daemon-directory,
                [AC_HELP_STRING([--with-gnome-settings-daemon-directory],
                                [Specify the directory of gnome-settings-daemon used by the chooser @<:@default=libexecdir@:>@])],,
-@@ -1490,6 +1529,7 @@ echo "
+@@ -1489,6 +1528,7 @@ echo "
          dmconfdir:                ${dmconfdir}
          localstatedir:            ${localstatedir}
          datadir:                  ${datadir}
@@ -141,7 +141,7 @@ Index: configure.ac
  	gnome-settings-daemon location: ${with_gnome_settings_daemon_directory}
  	gnome-session-check-accel location: ${with_check_accelerated_directory}
  	source code location:	  ${srcdir}
-@@ -1520,6 +1560,8 @@ echo \
+@@ -1519,6 +1559,8 @@ echo \
  "        Xinerama support:         ${XINERAMA_SUPPORT}
          XDMCP support:            ${XDMCP_SUPPORT}
          SELinux support:          ${use_selinux}
@@ -150,7 +150,7 @@ Index: configure.ac
          systemd unit dir:         ${with_systemdsystemunitdir}
          udev dir:                 ${with_udevdir}
          plymouth support:         ${use_plymouth}
-@@ -1529,3 +1571,4 @@ echo \
+@@ -1528,3 +1570,4 @@ echo \
          Enable documentation:     ${enable_documentation}
          Install GDM's Xsession:   ${enable_gdm_xsession}
  "
