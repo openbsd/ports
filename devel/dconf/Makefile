@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2019/11/08 07:47:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2020/05/14 14:51:08 ajacoutot Exp $
 
 COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf
-GNOME_VERSION=		0.34.0
-REVISION=		0
+GNOME_VERSION=		0.36.0
 
 SHARED_LIBS +=		dconf        1.2 # 1.0.0
 
@@ -31,6 +30,8 @@ LIB_DEPENDS=		devel/glib2
 
 # needs the bash-completion package
 CONFIGURE_ARGS +=	-Dbash_completion=false
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # needs a running DBus
 TEST_IS_INTERACTIVE=	Yes
