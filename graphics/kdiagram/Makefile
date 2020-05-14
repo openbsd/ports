@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/30 04:35:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/14 19:46:35 rsadowski Exp $
 
 COMMENT =	libraries for creating business diagrams
 
-VERSION =	2.6.2
+VERSION =	2.7.0
 DISTNAME =	kdiagram-${VERSION}
 
 CATEGORIES =	graphics
 
-SHARED_LIBS +=  KChart                    0.1 # 2.6
-SHARED_LIBS +=  KGantt                    0.0 # 2.6
+SHARED_LIBS +=  KChart                    1.0 # 2.6
+SHARED_LIBS +=  KGantt                    1.0 # 2.6
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 

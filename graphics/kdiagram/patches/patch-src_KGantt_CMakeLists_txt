@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_KGantt_CMakeLists_txt,v 1.1.1.1 2018/09/18 10:22:03 rsadowski Exp $
+$OpenBSD: patch-src_KGantt_CMakeLists_txt,v 1.2 2020/05/14 19:46:35 rsadowski Exp $
 
 Index: src/KGantt/CMakeLists.txt
 --- src/KGantt/CMakeLists.txt.orig
 +++ src/KGantt/CMakeLists.txt
-@@ -65,6 +65,7 @@ target_include_directories(KGantt
+@@ -72,6 +72,7 @@ target_include_directories(KGantt
  target_link_libraries( KGantt
  PUBLIC
      Qt5::Widgets
