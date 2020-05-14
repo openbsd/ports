@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/04/01 08:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2020/05/14 14:56:24 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -7,22 +7,20 @@
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+4 CUPS print backend
-COMMENT-cloudprint=	gtk+4 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		3.98.2
+GNOME_VERSION=		3.98.3
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
-PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     3.1 # 0.9802.0
+SHARED_LIBS += gtk-4                     3.1 # 0.9803.0
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -31,7 +29,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-MULTI_PACKAGES=		-main -cups -cloudprint -guic -media
+MULTI_PACKAGES=		-main -cups -guic -media
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -74,15 +72,6 @@ RUN_DEPENDS-cups=
 
 WANTLIB-cups += cairo cups gio-2.0 glib-2.0 gobject-2.0 gtk-4
 
-LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
-			devel/json-glib \
-			net/librest \
-			${BASE_PKGPATH},-main=${GNOME_VERSION}
-RUN_DEPENDS-cloudprint=
-
-WANTLIB-cloudprint += cairo gio-2.0 glib-2.0 gobject-2.0 gtk-4 json-glib-1.0
-WANTLIB-cloudprint += rest-0.7
-
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 
@@ -98,7 +87,7 @@ WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gtk-4
 TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_ARGS=		-Dwayland-backend=false \
-			-Dprint-backends=all \
+			-Dprint-backends=file,cups,lpr \
 			-Dvulkan=no \
 			-Dman-pages=true
 
