@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2020/01/05 20:03:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.58 2020/05/14 15:11:18 jasper Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -38,7 +38,7 @@ lib/eog/plugins/reload.plugin
 lib/eog/plugins/statusbar-date.plugin
 lib/pkgconfig/eog.pc
 share/GConf/gsettings/eog.convert
-share/applications/eog.desktop
+share/applications/org.gnome.eog.desktop
 share/eog/
 share/eog/gir-1.0/
 share/eog/gir-1.0/Eog-3.0.gir
@@ -659,6 +659,49 @@ share/help/hu/eog/slideshow.page
 share/help/hu/eog/translate.page
 share/help/hu/eog/view.page
 share/help/hu/eog/zoom.page
+share/help/id/
+share/help/id/eog/
+share/help/id/eog/bug-filing.page
+share/help/id/eog/commandline.page
+share/help/id/eog/copy-paste.page
+share/help/id/eog/default.page
+share/help/id/eog/desktop-background.page
+share/help/id/eog/develop.page
+share/help/id/eog/documentation.page
+share/help/id/eog/edit.page
+share/help/id/eog/figures/
+share/help/id/eog/figures/multiple-convert.png
+share/help/id/eog/figures/multiple-rename-count.png
+share/help/id/eog/figures/org.gnome.eog-symbolic.svg
+share/help/id/eog/figures/org.gnome.eog.svg
+share/help/id/eog/figures/plugins-all.png
+share/help/id/eog/figures/prefs-plugins.png
+share/help/id/eog/flip-rotate.page
+share/help/id/eog/format-change.page
+share/help/id/eog/formats-save.page
+share/help/id/eog/formats-view.page
+share/help/id/eog/index.page
+share/help/id/eog/introduction.page
+share/help/id/eog/legal.xml
+share/help/id/eog/license.page
+share/help/id/eog/open.page
+share/help/id/eog/plugin-exif-digital.page
+share/help/id/eog/plugin-fullscreen-background.page
+share/help/id/eog/plugin-fullscreen-double-click.page
+share/help/id/eog/plugin-picasa.page
+share/help/id/eog/plugin-python-console.page
+share/help/id/eog/plugin-send-by-mail.page
+share/help/id/eog/plugin-slideshow-shuffle.page
+share/help/id/eog/plugin-zoom-width.page
+share/help/id/eog/plugins.page
+share/help/id/eog/preferences.page
+share/help/id/eog/print.page
+share/help/id/eog/rename-multiple.page
+share/help/id/eog/shortcuts.page
+share/help/id/eog/slideshow.page
+share/help/id/eog/translate.page
+share/help/id/eog/view.page
+share/help/id/eog/zoom.page
 share/help/it/
 share/help/it/eog/
 share/help/it/eog/bug-filing.page
@@ -1444,6 +1487,7 @@ share/locale/br/LC_MESSAGES/eog.mo
 share/locale/bs/LC_MESSAGES/eog.mo
 share/locale/ca/LC_MESSAGES/eog.mo
 share/locale/ca@valencia/LC_MESSAGES/eog.mo
+share/locale/ckb/LC_MESSAGES/eog.mo
 share/locale/cs/LC_MESSAGES/eog.mo
 share/locale/cy/LC_MESSAGES/eog.mo
 share/locale/da/LC_MESSAGES/eog.mo

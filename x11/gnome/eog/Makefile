@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.155 2020/01/05 20:03:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.156 2020/05/14 15:11:18 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		3.34.2
+GNOME_VERSION=		3.36.2
 
 CATEGORIES=		graphics
 
@@ -33,5 +33,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
