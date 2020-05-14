@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.565 2020/04/19 19:57:23 pvk Exp $
+# $OpenBSD: Makefile,v 1.566 2020/05/14 18:39:31 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -257,7 +257,6 @@
      SUBDIR += py-elasticsearch-curator
      SUBDIR += py-filelock
      SUBDIR += py-filelock,python3
-     SUBDIR += py-ghmi
      SUBDIR += py-ghmi,python3
      SUBDIR += py-joblib
      SUBDIR += py-lockfile
