@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2020/02/29 16:03:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/05/14 11:49:33 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
-MODPY_EGG_VERSION=	2.17
+MODPY_EGG_VERSION=	2.18
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
-REVISION=	1
 
 CATEGORIES=	www
 
@@ -20,6 +19,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS= Yes
+MODPY_PYTEST=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
@@ -39,8 +39,5 @@ post-install:
 	mv ${PREFIX}/share/urlwatch/examples ${PREFIX}/share/examples/urlwatch
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/urlwatch/config.py.orig
 	rmdir ${PREFIX}/share/{man,urlwatch}
-
-do-test:
-	cd ${WRKSRC}; nosetests${MODPY_BIN_SUFFIX} -v
 
 .include <bsd.port.mk>

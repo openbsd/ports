@@ -1,21 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/02 13:57:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/05/14 11:49:33 sthen Exp $
 bin/urlwatch
 lib/python${MODPY_VERSION}/site-packages/urlwatch/
 lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch/__init__.py
-lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}filters.${MODPY_PYC_MAGIC_TAG}pyc
@@ -30,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}reporters.${MO
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}storage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}worker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/urlwatch/cli.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/command.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/config.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/filters.py

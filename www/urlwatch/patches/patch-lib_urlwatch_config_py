@@ -1,6 +1,8 @@
-$OpenBSD: patch-lib_urlwatch_config_py,v 1.1 2016/12/14 10:17:21 sthen Exp $
---- lib/urlwatch/config.py.orig	Tue Dec  6 14:08:12 2016
-+++ lib/urlwatch/config.py	Tue Dec  6 14:08:37 2016
+$OpenBSD: patch-lib_urlwatch_config_py,v 1.2 2020/05/14 11:49:33 sthen Exp $
+
+Index: lib/urlwatch/config.py
+--- lib/urlwatch/config.py.orig
++++ lib/urlwatch/config.py
 @@ -61,7 +61,8 @@ class CommandConfig(BaseConfig):
  
          if self.bindir == 'bin':
