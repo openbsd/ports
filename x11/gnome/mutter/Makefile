@@ -1,21 +1,15 @@
-# $OpenBSD: Makefile,v 1.105 2020/05/01 07:13:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.106 2020/05/14 15:24:22 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.34.6
+GNOME_VERSION=		3.36.2
 
-# XXX: Override libmutter_api_version because of SUBST_VARS.
-API_V =			5
-API_SUFFIX=		-${API_V}
-SUBST_VARS=		API_V API_SUFFIX
-
-SHARED_LIBS += mutter-cogl-5             0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-gles2-5       0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-path-5        0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-pango-5       0.0 # 0.0.0
-SHARED_LIBS += mutter-clutter-5          0.0 # 0.0.0
-SHARED_LIBS += mutter-5                  0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-6             0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-path-6        0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-pango-6       0.0 # 0.0.0
+SHARED_LIBS += mutter-clutter-6          0.0 # 0.0.0
+SHARED_LIBS += mutter-6                  0.0 # 0.0.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
@@ -26,7 +20,7 @@ WANTLIB += cairo-gobject canberra fontconfig fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
 WANTLIB += gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 startup-notification-1 xcb xcb-randr xcb-res
-WANTLIB += xkbcommon xkbcommon-x11 xkbfile
+WANTLIB += xkbcommon xkbcommon-x11 xkbfile graphene-1.0
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
