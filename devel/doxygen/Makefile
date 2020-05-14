@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2020/01/09 04:42:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2020/05/14 19:50:14 rsadowski Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -7,7 +7,7 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	source code documentation generator tool
 
-VERSION=	1.8.17
+VERSION=	1.8.18
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
 
