@@ -1,18 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.44 2019/11/01 19:38:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2020/05/14 15:35:20 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon
 lib/gnome-keyring/
 lib/gnome-keyring/devel/
-lib/gnome-keyring/devel/gkm-gnome2-store-standalone.so
-lib/gnome-keyring/devel/gkm-secret-store-standalone.so
-lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
-lib/gnome-keyring/devel/gkm-xdg-store-standalone.so
-lib/pkcs11/gnome-keyring-pkcs11.so
+@so lib/gnome-keyring/devel/gkm-gnome2-store-standalone.so
+@so lib/gnome-keyring/devel/gkm-secret-store-standalone.so
+@so lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
+@so lib/gnome-keyring/devel/gkm-xdg-store-standalone.so
+@so lib/pkcs11/gnome-keyring-pkcs11.so
 @man man/man1/gnome-keyring-3.1
 @man man/man1/gnome-keyring-daemon.1
 @man man/man1/gnome-keyring.1
 share/GConf/gsettings/org.gnome.crypto.cache.convert
+share/dbus-1/services/org.freedesktop.impl.portal.Secret.service
 share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service
 share/examples/gnome-keyring/
@@ -38,6 +39,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-keyring.mo
 share/locale/bs/LC_MESSAGES/gnome-keyring.mo
 share/locale/ca/LC_MESSAGES/gnome-keyring.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-keyring.mo
+share/locale/ckb/LC_MESSAGES/gnome-keyring.mo
 share/locale/cs/LC_MESSAGES/gnome-keyring.mo
 share/locale/cy/LC_MESSAGES/gnome-keyring.mo
 share/locale/da/LC_MESSAGES/gnome-keyring.mo
@@ -117,4 +119,7 @@ share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 share/p11-kit/modules/gnome-keyring.module
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/portals/
+share/xdg-desktop-portal/portals/gnome-keyring.portal
 @tag glib-compile-schemas

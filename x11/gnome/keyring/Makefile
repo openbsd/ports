@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2020/01/22 05:46:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2020/05/14 15:35:20 ajacoutot Exp $
 
 # XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
 # would create dependency loops:                                                
@@ -8,7 +8,7 @@
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		3.34.0
+GNOME_VERSION=		3.36.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -17,10 +17,9 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB += epoxy expat ffi fontconfig freetype fribidi gck-1 gcr-base-3
 WANTLIB += gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz iconv intl m p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gtk-3 harfbuzz
+WANTLIB += iconv intl m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -36,6 +35,8 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-pam \
 			--disable-valgrind
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 FAKE_FLAGS=		configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
