@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/14 17:29:44 cwen Exp $
 
 COMMENT =		handy utf8 tests for Perl
-DISTNAME =		Test-utf8-1.01
+DISTNAME =		Test-utf8-1.02
 CATEGORIES =		devel
 
-MAINTAINER =		Charlene Wendling <julianaito@posteo.jp>
+MAINTAINER =		Charlene Wendling <cwen@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
