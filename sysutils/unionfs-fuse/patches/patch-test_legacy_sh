@@ -1,12 +1,12 @@
-$OpenBSD: patch-test_sh,v 1.1.1.1 2019/11/12 15:15:09 bket Exp $
+$OpenBSD: patch-test_legacy_sh,v 1.1 2020/05/14 19:36:05 bket Exp $
 
-Index: test.sh
---- test.sh.orig
-+++ test.sh
+Index: test_legacy.sh
+--- test_legacy.sh.orig
++++ test_legacy.sh
 @@ -1,6 +1,11 @@
 -#!/bin/bash
 +#!/bin/sh
- # this is a legacy version (will be removed in the future). please use test.py.
+ # this is a legacy version (will be removed in the future). please use ./test script (which uses python).
  
 +if [ `id -u` != 0 ]; then
 +	echo "\n*** NOTE: ${0##*/} requires root privileges ***\n\n"

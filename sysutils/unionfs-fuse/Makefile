@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/12 15:15:09 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/14 19:36:05 bket Exp $
 
 COMMENT =	unionfs filesystem implementation
 
 GH_ACCOUNT =	rpodgorny
 GH_PROJECT =	unionfs-fuse
-GH_TAGNAME =	v2.0
+GH_TAGNAME =	v2.1
 
 CATEGORIES =	sysutils
 
@@ -23,6 +23,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/unionfs.8 ${PREFIX}/man/man8/
 
 do-test:
-	cd ${WRKSRC} && ./test.sh
+	cd ${WRKSRC} && ./test_legacy.sh
 
 .include <bsd.port.mk>
