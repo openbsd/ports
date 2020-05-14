@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.83 2020/03/18 22:18:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.84 2020/05/14 14:50:14 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -14,7 +14,6 @@
 @bin bin/gdbus
 bin/gdbus-codegen
 @bin bin/gio
-@bin bin/gio-launch-desktop
 @bin bin/gio-querymodules
 @bin bin/glib-compile-resources
 @bin bin/glib-compile-schemas
@@ -121,6 +120,7 @@ include/glib-2.0/gio/glistmodel.h
 include/glib-2.0/gio/gliststore.h
 include/glib-2.0/gio/gloadableicon.h
 include/glib-2.0/gio/gmemoryinputstream.h
+include/glib-2.0/gio/gmemorymonitor.h
 include/glib-2.0/gio/gmemoryoutputstream.h
 include/glib-2.0/gio/gmenu.h
 include/glib-2.0/gio/gmenuexporter.h
@@ -351,8 +351,8 @@ share/gdb/auto-load/
 share/gdb/auto-load/usr/
 share/gdb/auto-load/${PREFIX}/
 share/gdb/auto-load/${PREFIX}/lib/
-share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.6200.6-gdb.py
-share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.6200.6-gdb.py
+share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.6400.2-gdb.py
+share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.6400.2-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
