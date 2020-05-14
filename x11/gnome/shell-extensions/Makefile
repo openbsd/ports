@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2019/12/15 19:00:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2020/05/14 15:29:08 jasper Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		collection of extensions for GNOME Shell
 
 GNOME_PROJECT=		gnome-shell-extensions
-GNOME_VERSION=		3.34.2
+GNOME_VERSION=		3.36.2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
