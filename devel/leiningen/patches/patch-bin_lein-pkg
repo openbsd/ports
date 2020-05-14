@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_lein-pkg,v 1.2 2020/04/30 23:19:51 kn Exp $
+$OpenBSD: patch-bin_lein-pkg,v 1.3 2020/05/14 18:59:22 kn Exp $
 
 - fix shebang
 - set path to standalone jar
@@ -10,7 +10,7 @@ Index: bin/lein-pkg
 +++ bin/lein-pkg
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!${LOCALBASE}/bin/bash
++#!/bin/ksh
  
  # This variant of the lein script is meant for downstream packagers.
  # It has all the cross-platform stuff stripped out as well as the

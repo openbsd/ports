@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/04/30 23:19:51 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2020/05/14 18:59:22 kn Exp $
 
 COMMENT =		Clojure project automation
 
 GH_ACCOUNT =		technomancy
 GH_PROJECT =		leiningen
-GH_TAGNAME =		2.9.1
-REVISION =		0
+GH_TAGNAME =		2.9.3
 
 JAR_FILE =		${DISTNAME}-standalone.zip
 
@@ -24,8 +23,7 @@ MODULES =		java
 # upstream recommends OpenJDK 8, do not use + since JAVA_HOME is used
 MODJAVA_VER =		1.8
 
-RUN_DEPENDS =		lang/clojure \
-			shells/bash
+RUN_DEPENDS =		lang/clojure>=1.10.1.0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
