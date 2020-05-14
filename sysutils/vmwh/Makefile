@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/05/14 20:58:26 jcs Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	vmware userland helper for X
 
-V=		1.1
+V=		1.2
 DISTNAME=	v${V}
 PKGNAME=	vmwh-${V}
 EPOCH=		0
 CATEGORIES=	sysutils x11
-REVISION=	0
 
 HOMEPAGE=	https://github.com/jcs/vmwh/
-MAINTAINER=	joshua stein <jcs@openbsd.org>
+MAINTAINER=	joshua stein <jcs@jcs.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
