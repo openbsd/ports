@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/05/08 11:55:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2020/05/14 15:48:36 ajacoutot Exp $
 include/gnome-menus-3.0/
 include/gnome-menus-3.0/gmenu-tree.h
 lib/girepository-1.0/
 lib/girepository-1.0/GMenu-3.0.typelib
-lib/libgnome-menu-3.a
+@static-lib lib/libgnome-menu-3.a
 lib/libgnome-menu-3.la
 @lib lib/libgnome-menu-3.so.${LIBgnome-menu-3_VERSION}
 lib/pkgconfig/libgnome-menu-3.0.pc
@@ -52,6 +52,9 @@ share/locale/br/LC_MESSAGES/gnome-menus.mo
 share/locale/bs/LC_MESSAGES/gnome-menus.mo
 share/locale/ca/LC_MESSAGES/gnome-menus.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-menus.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/gnome-menus.mo
 share/locale/crh/
 share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gnome-menus.mo
@@ -136,6 +139,9 @@ share/locale/lt/LC_MESSAGES/gnome-menus.mo
 share/locale/lv/LC_MESSAGES/gnome-menus.mo
 share/locale/mai/LC_MESSAGES/gnome-menus.mo
 share/locale/mg/LC_MESSAGES/gnome-menus.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/gnome-menus.mo
 share/locale/mk/LC_MESSAGES/gnome-menus.mo
 share/locale/ml/LC_MESSAGES/gnome-menus.mo
 share/locale/mn/LC_MESSAGES/gnome-menus.mo
