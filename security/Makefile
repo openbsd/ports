@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.575 2020/04/21 20:42:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.576 2020/05/14 12:06:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -410,6 +410,7 @@
      SUBDIR += tempwatch
      SUBDIR += theharvester
      SUBDIR += towitoko
+     SUBDIR += uacme
      SUBDIR += vault
      SUBDIR += volatility
      SUBDIR += vpnc
