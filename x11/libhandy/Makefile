@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/13 18:29:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/14 15:00:17 jasper Exp $
 
 COMMENT =		library to help in developing UIs for mobile devices
 
-V =			0.0.11
+V =			0.0.13
 DISTNAME =		libhandy-v$V
 PKGNAME =		libhandy-$V
 CATEGORIES =		x11
 
-SHARED_LIBS += handy-0.0                 1.0 # 0
+SHARED_LIBS += handy-0.0                 2.0 # 0
 
 MASTER_SITES =		https://source.puri.sm/Librem5/libhandy/-/archive/v$V/
 
@@ -24,9 +24,9 @@ MODULES =		devel/meson
 WANTLIB += atk-1.0 cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 intl m pango-1.0
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/gobject-introspection \
+BUILD_DEPENDS =		devel/gobject-introspection \
 			lang/vala
+RUN_DEPENDS =		devel/gobject-introspection
 LIB_DEPENDS =		x11/gtk+3
 
 CONFIGURE_ARGS +=	-Dglade_catalog=disabled \
@@ -39,6 +39,8 @@ LDFLAGS =		-L${X11BASE}/lib
 .endif
 
 TEST_IS_INTERACTIVE =	X11
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/meson.build
