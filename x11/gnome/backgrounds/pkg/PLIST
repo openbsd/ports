@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/11/01 10:28:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/05/14 15:11:01 ajacoutot Exp $
 share/backgrounds/
 share/backgrounds/gnome/
 share/backgrounds/gnome/Acrylic.jpg
@@ -6,8 +6,8 @@ share/backgrounds/gnome/ColdWarm.jpg
 share/backgrounds/gnome/Dark_Ivy.jpg
 share/backgrounds/gnome/Endless-shapes.jpg
 share/backgrounds/gnome/Fabric.jpg
-share/backgrounds/gnome/Icescape.jpg
-share/backgrounds/gnome/LightWaves.png
+share/backgrounds/gnome/Icetwigs.jpg
+share/backgrounds/gnome/LightWaves.jpg
 share/backgrounds/gnome/Road.jpg
 share/backgrounds/gnome/SeaSunset.jpg
 share/backgrounds/gnome/Stripes.jpg
