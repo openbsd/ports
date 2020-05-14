@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2019/11/01 23:40:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.53 2020/05/14 15:03:49 ajacoutot Exp $
 bin/gnome-session
 bin/gnome-session-custom-session
 @bin bin/gnome-session-inhibit
@@ -35,6 +35,7 @@ share/locale/br/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/bs/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ca/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-session-3.0.mo
+share/locale/ckb/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/crh/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/cs/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/csb/LC_MESSAGES/gnome-session-3.0.mo

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.278 2020/05/06 18:32:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.279 2020/05/14 15:03:49 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		3.34.2
+GNOME_VERSION=		3.36.0
 
 CATEGORIES=		x11
 
@@ -44,5 +44,7 @@ CONFIGURE_ARGS=		-Dsystemd=false \
 			-Dsystemd_session=disable \
 			-Dsystemd_journal=false \
 			-Dconsolekit=true
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
