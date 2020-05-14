@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2019/11/22 21:11:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.51 2020/05/14 15:03:33 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
 @so lib/epiphany/libephymain.so
@@ -330,6 +330,37 @@ share/help/hu/epiphany/pref-passwords.page
 share/help/hu/epiphany/pref.page
 share/help/hu/epiphany/prob-restore-closed-page.page
 share/help/hu/epiphany/proxy.page
+share/help/id/
+share/help/id/epiphany/
+share/help/id/epiphany/browse-local.page
+share/help/id/epiphany/browse-private.page
+share/help/id/epiphany/browse-tab.page
+share/help/id/epiphany/browse-web.page
+share/help/id/epiphany/browse-webapps-del.page
+share/help/id/epiphany/browse-webapps.page
+share/help/id/epiphany/cert.page
+share/help/id/epiphany/cookies.xml
+share/help/id/epiphany/data-cookies.page
+share/help/id/epiphany/data-passwords.page
+share/help/id/epiphany/data-personal-data.page
+share/help/id/epiphany/history-delete.page
+share/help/id/epiphany/history.page
+share/help/id/epiphany/index.page
+share/help/id/epiphany/introduction.page
+share/help/id/epiphany/legal.xml
+share/help/id/epiphany/media/
+share/help/id/epiphany/media/epiphany-3-12.png
+share/help/id/epiphany/media/private-browsing-3-12.png
+share/help/id/epiphany/media/web-browser.png
+share/help/id/epiphany/pref-cookies.page
+share/help/id/epiphany/pref-css.page
+share/help/id/epiphany/pref-downloads.page
+share/help/id/epiphany/pref-font.page
+share/help/id/epiphany/pref-mouse-gestures.page
+share/help/id/epiphany/pref-passwords.page
+share/help/id/epiphany/pref.page
+share/help/id/epiphany/prob-restore-closed-page.page
+share/help/id/epiphany/proxy.page
 share/help/ko/
 share/help/ko/epiphany/
 share/help/ko/epiphany/browse-local.page

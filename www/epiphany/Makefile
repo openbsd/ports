@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.190 2020/02/15 10:45:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.191 2020/05/14 15:03:33 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.34.4
+GNOME_VERSION=	3.36.1
 
 CATEGORIES=	www
 
@@ -17,7 +17,7 @@ WANTLIB += c cairo dazzle-1.0 gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmp gobject-2.0 gtk-3 handy-0.0 hogweed
 WANTLIB += intl javascriptcoregtk-4.0 json-glib-1.0 m nettle
 WANTLIB += notify pango-1.0 secret-1 soup-2.4 sqlite3 webkit2gtk-4.0
-WANTLIB += xml2
+WANTLIB += xml2 atk-1.0
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
@@ -28,7 +28,7 @@ RUN_DEPENDS=	devel/iso-codes \
 LIB_DEPENDS=	devel/libnotify \
 		www/webkitgtk4 \
 		x11/gnome/gcr \
-		x11/gnome/libdazzle \
+		x11/gnome/libdazzle>=3.36.0 \
 		x11/libhandy>=0.0.11
 
 # webkit browsing

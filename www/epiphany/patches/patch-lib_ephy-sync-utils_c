@@ -1,0 +1,52 @@
+$OpenBSD: patch-lib_ephy-sync-utils_c,v 1.1 2020/05/14 15:03:33 jasper Exp $
+
+Revert back to /dev/urandom; should probably use arc4random_buf(3).
+
+Index: lib/ephy-sync-utils.c
+--- lib/ephy-sync-utils.c.orig
++++ lib/ephy-sync-utils.c
+@@ -23,14 +23,12 @@
+ 
+ #include "ephy-settings.h"
+ 
+-#include <errno.h>
+ #include <glib/gi18n.h>
+ #include <inttypes.h>
+ #include <json-glib/json-glib.h>
+ #include <libsoup/soup.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <sys/random.h>
+ 
+ static const char hex_digits[] = "0123456789abcdef";
+ 
+@@ -167,24 +165,21 @@ ephy_sync_utils_base64_urlsafe_decode (const char *tex
+  * This is mainly required by Nettle's RSA support.
+  * From Nettle's documentation: random_ctx and random is a randomness generator.
+  * random(random_ctx, length, dst) should generate length random octets and store them at dst.
+- * We don't use random_ctx.
++ * We don't really use random_ctx, since we have /dev/urandom available.
+  */
+ void
+ ephy_sync_utils_generate_random_bytes (void   *random_ctx,
+                                        gsize   num_bytes,
+                                        guint8 *out)
+ {
+-  gssize ret;
++  FILE *fp;
+ 
+   g_assert (num_bytes > 0);
+   g_assert (out);
+ 
+-  do {
+-    ret = getrandom (out, num_bytes, 0);
+-  } while (ret < (gssize)num_bytes && errno == EINTR);
+-
+-  if (ret != (gssize)num_bytes)
+-    g_error ("Failed to generate randomness: %s", g_strerror (errno));
++  fp = fopen ("/dev/urandom", "r");
++  fread (out, sizeof (guint8), num_bytes, fp);
++  fclose (fp);
+ }
+ 
+ char *
