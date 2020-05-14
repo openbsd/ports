@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/01/04 12:30:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/05/14 15:47:01 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -26,6 +26,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/route-button-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-car-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-pedestrian-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-reverse-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/route-transit-airplane-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-bus-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-cablecar-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-ferry-symbolic.svg
@@ -69,6 +70,7 @@ share/gnome-maps/maps-service.json
 share/gnome-maps/org.gnome.Maps
 share/gnome-maps/org.gnome.Maps.data.gresource
 share/gnome-maps/org.gnome.Maps.src.gresource
+share/icons/hicolor/scalable/apps/org.gnome.Maps.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Maps.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Maps-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-maps.mo
