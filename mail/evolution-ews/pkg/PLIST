@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2019/11/23 12:08:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/05/14 14:54:28 ajacoutot Exp $
 @so lib/evolution-data-server/addressbook-backends/libebookbackendews.so
 @so lib/evolution-data-server/calendar-backends/libecalbackendews.so
 @so lib/evolution-data-server/camel-providers/libcamelews.so
@@ -26,6 +26,7 @@ share/locale/fr/LC_MESSAGES/evolution-ews.mo
 share/locale/gl/LC_MESSAGES/evolution-ews.mo
 share/locale/gu/LC_MESSAGES/evolution-ews.mo
 share/locale/hi/LC_MESSAGES/evolution-ews.mo
+share/locale/hr/LC_MESSAGES/evolution-ews.mo
 share/locale/hu/LC_MESSAGES/evolution-ews.mo
 share/locale/id/LC_MESSAGES/evolution-ews.mo
 share/locale/ja/LC_MESSAGES/evolution-ews.mo
@@ -48,5 +49,6 @@ share/locale/sv/LC_MESSAGES/evolution-ews.mo
 share/locale/ta/LC_MESSAGES/evolution-ews.mo
 share/locale/te/LC_MESSAGES/evolution-ews.mo
 share/locale/tr/LC_MESSAGES/evolution-ews.mo
+share/locale/uk/LC_MESSAGES/evolution-ews.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-ews.mo
 share/metainfo/org.gnome.Evolution-ews.metainfo.xml
