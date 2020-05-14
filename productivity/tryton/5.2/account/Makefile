@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2020/04/10 15:22:41 semarie Exp $
+# $OpenBSD: Makefile,v 1.9 2020/05/14 17:26:44 semarie Exp $
 
-MODPY_EGG_VERSION =	5.2.7
+MODPY_EGG_VERSION =	5.2.8
 TRYTON_MODULE =		account
 
 TRYTON_DEPENDS +=	party \
