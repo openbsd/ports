@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/05/14 12:16:38 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		translate XML documents with PO files
 
 DISTNAME=		itstool-2.0.6
-EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 CATEGORIES=		textproc
 
@@ -15,6 +15,7 @@ HOMEPAGE=		http://itstool.org/
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://files.itstool.org/itstool/
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/python
 
