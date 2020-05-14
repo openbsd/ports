@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/12/10 17:08:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/05/14 14:55:05 ajacoutot Exp $
 @so lib/gio/modules/libgiognomeproxy.so
 @so lib/gio/modules/libgiognutls.so
 @so lib/gio/modules/libgiolibproxy.so
@@ -50,6 +50,7 @@ share/locale/lt/LC_MESSAGES/glib-networking.mo
 share/locale/lv/LC_MESSAGES/glib-networking.mo
 share/locale/ml/LC_MESSAGES/glib-networking.mo
 share/locale/mr/LC_MESSAGES/glib-networking.mo
+share/locale/ms/LC_MESSAGES/glib-networking.mo
 share/locale/nb/LC_MESSAGES/glib-networking.mo
 share/locale/ne/LC_MESSAGES/glib-networking.mo
 share/locale/nl/LC_MESSAGES/glib-networking.mo
