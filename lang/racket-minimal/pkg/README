@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.13 2018/09/07 20:08:15 danj Exp $
+$OpenBSD: README,v 1.14 2020/05/14 17:17:57 juanfra Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -10,7 +10,8 @@ Limitations
 - Racket's JIT only supports CPUs with SSE2 extensions, ARMv7 or PowerPC CPUs.
   There is a "no_jit" flavor for arm, amd64, i386 and powerpc.
 - DrRacket doesn't work correctly with the "no_jit" flavor.
-- Racket is slightly broken here and there on aarch64, arm and powerpc.
+- Racket is slightly broken here and there on aarch64, arm, powerpc
+  and sparc64.
 - FFI is broken on sparc64.
 - Never run "raco pkg" commands as root, even when the commands are suggested
   by upstream. You're going to break the racket package.
@@ -71,7 +72,7 @@ fi
 Where can I find a list of installable packages?
 ------------------------------------------------
 
-- http://pkgs.racket-lang.org/
+- https://pkgs.racket-lang.org/
 
 - raco pkg catalog-show --all (add --only-names if you don't want to see the
   detailed output).
@@ -83,7 +84,19 @@ Where can I find a list of installable packages?
 Can I create a port which installs a raco package?
 --------------------------------------------------
 
-Not yet. Racket's package manager is not widely tested in systems which mix
+No. Racket's package manager is not widely tested in systems which mix
 different versions of different packages in different pkg scopes. The
 integration of raco packages in OpenBSD's ports framework would make future
 updates of Racket difficult with no benefit for the users.
+
+You could modify the Racket port to change the default scope and then generate
+the raco ports you want. However, the ports wouldn't be included in the
+official ports tree and you would need to maintain a few tens of new
+dependencies.
+
+segfault / sigbus
+-----------------
+
+If your program or Racket itself crashes with a segfault or sigbus, try
+increasing the "datasize" (ulimit -d) and the "stacksize" (ulimit -s) in your
+environment limits.

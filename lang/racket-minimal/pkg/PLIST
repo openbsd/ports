@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/02/19 20:39:56 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/05/14 17:17:57 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 @bin bin/racket
@@ -285,6 +285,8 @@ share/racket/collects/ffi/unsafe/compiled/schedule_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/schedule_rkt.zo
 share/racket/collects/ffi/unsafe/compiled/try-atomic_rkt.dep
 share/racket/collects/ffi/unsafe/compiled/try-atomic_rkt.zo
+share/racket/collects/ffi/unsafe/compiled/vm_rkt.dep
+share/racket/collects/ffi/unsafe/compiled/vm_rkt.zo
 share/racket/collects/ffi/unsafe/custodian.rkt
 share/racket/collects/ffi/unsafe/cvector.rkt
 share/racket/collects/ffi/unsafe/define/
@@ -306,6 +308,7 @@ share/racket/collects/ffi/unsafe/private/compiled/win32_rkt.zo
 share/racket/collects/ffi/unsafe/private/win32.rkt
 share/racket/collects/ffi/unsafe/schedule.rkt
 share/racket/collects/ffi/unsafe/try-atomic.rkt
+share/racket/collects/ffi/unsafe/vm.rkt
 share/racket/collects/ffi/vector.rkt
 share/racket/collects/ffi/winapi.rkt
 share/racket/collects/file/
@@ -2047,5 +2050,5 @@ share/racket/pkgs/
 share/racket/pkgs/.LOCKpkgs.rktd
 share/racket/pkgs/pkgs.rktd
 share/racket/pkgs/racket-lib/
-share/racket/pkgs/racket-lib/LICENSE.txt
+share/racket/pkgs/racket-lib/LICENSE
 share/racket/pkgs/racket-lib/info.rkt

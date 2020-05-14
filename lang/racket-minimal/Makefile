@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.62 2020/03/20 16:44:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2020/05/14 17:17:56 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			7.6
+V =			7.7
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
-HOMEPAGE =		http://racket-lang.org/
+HOMEPAGE =		https://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # Racket Minimal is MIT or Apache 2, "at your option".
@@ -31,12 +31,16 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-LIB_DEPENDS =		converters/libiconv \
+LIB_DEPENDS =		archivers/lz4 \
+			converters/libiconv \
 			databases/sqlite3 \
 			devel/libffi>=3.0.9p2 \
-			devel/mpfr
+			devel/mpfr \
+			devel/uuid
 
 WANTLIB += c ffi iconv m pthread
+# Required by CS
+WANTLIB += ossp-uuid lz4
 # Loaded using FFI:
 # sqlite3 required by the documentation generator
 # mpfr required by the core tests
@@ -63,13 +67,10 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-libs \
 			--disable-shared
 
-# The signal handler used to avoid wxneeded for the JIT only works on amd64
-.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
-.	if empty(FLAVOR)
+# The signal handler used by BC to avoid wxneeded for the JIT only
+# works on amd64. CS always requires wxneeded.
 USE_WXNEEDED =		Yes
 LDFLAGS_WXNEEDED =	-Wl,-z,wxneeded
-.	endif
-.endif
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${LDFLAGS_WXNEEDED}" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
@@ -90,12 +91,17 @@ CFLAGS += -ggdb3
 #   https://github.com/racket/racket/issues/1239
 # - Racket builds fine with -O2 (and -O1 and -Os) on powerpc but
 #   it doesn't pass the tests.
+# - CS only supports OpenBSD on amd64.
 .if ${FLAVOR:Mno_jit}
 ONLY_FOR_ARCHS =	arm amd64 i386 powerpc
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
-.elif ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+.elif ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS +=	--enable-csdefault \
+			--enable-places \
+			--enable-futures
+.elif ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
