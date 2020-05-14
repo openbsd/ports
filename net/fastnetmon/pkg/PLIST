@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/05/14 11:47:32 sthen Exp $
 @newgroup _fastnetmon:814
 @newuser _fastnetmon:814:_fastnetmon:daemon:FastNetMon User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/fastnetmon/*
@@ -28,6 +28,5 @@ share/examples/fastnetmon/reformat_code_with_clang_format.sh
 share/examples/fastnetmon/reset_redis_stats
 @owner _fastnetmon
 @group _fastnetmon
-@sample /var/run/fastnetmon/
 @sample /var/log/fastnetmon/
 @sample /var/log/fastnetmon_attacks/
