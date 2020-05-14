@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2020/03/17 10:50:14 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2020/05/14 17:59:54 kirby Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -70,14 +70,6 @@ libexec/munin/plugins/apache_processes
 libexec/munin/plugins/apache_volume
 libexec/munin/plugins/apc_envunit_
 libexec/munin/plugins/apc_nis
-libexec/munin/plugins/asterisk_channels
-libexec/munin/plugins/asterisk_channelstypes
-libexec/munin/plugins/asterisk_codecs
-libexec/munin/plugins/asterisk_meetme
-libexec/munin/plugins/asterisk_meetmeusers
-libexec/munin/plugins/asterisk_sipchannels
-libexec/munin/plugins/asterisk_sippeers
-libexec/munin/plugins/asterisk_voicemail
 libexec/munin/plugins/bgpd
 libexec/munin/plugins/bind9
 libexec/munin/plugins/bind9_rndc
