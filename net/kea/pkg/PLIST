@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/26 16:33:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/05/14 11:48:08 sthen Exp $
 @newgroup _kea:763
 @newuser _kea:763:_kea:daemon:Kea user:/nonexistent:/sbin/nologin
 @mode 0750
@@ -158,6 +158,7 @@ include/kea/dhcpsrv/cfg_hosts.h
 include/kea/dhcpsrv/cfg_hosts_util.h
 include/kea/dhcpsrv/cfg_iface.h
 include/kea/dhcpsrv/cfg_mac_source.h
+include/kea/dhcpsrv/cfg_multi_threading.h
 include/kea/dhcpsrv/cfg_option.h
 include/kea/dhcpsrv/cfg_option_def.h
 include/kea/dhcpsrv/cfg_rsoo.h
@@ -208,6 +209,7 @@ include/kea/dhcpsrv/parsers/expiration_config_parser.h
 include/kea/dhcpsrv/parsers/host_reservation_parser.h
 include/kea/dhcpsrv/parsers/host_reservations_list_parser.h
 include/kea/dhcpsrv/parsers/ifaces_config_parser.h
+include/kea/dhcpsrv/parsers/multi_threading_config_parser.h
 include/kea/dhcpsrv/parsers/option_data_parser.h
 include/kea/dhcpsrv/parsers/sanity_checks_parser.h
 include/kea/dhcpsrv/parsers/shared_network_parser.h
@@ -387,6 +389,7 @@ include/kea/util/io_utilities.h
 include/kea/util/labeled_value.h
 include/kea/util/memory_segment.h
 include/kea/util/memory_segment_local.h
+include/kea/util/multi_threading_mgr.h
 include/kea/util/optional.h
 include/kea/util/pid_file.h
 include/kea/util/pointer_util.h
@@ -401,6 +404,7 @@ include/kea/util/state_model.h
 include/kea/util/stopwatch.h
 include/kea/util/stopwatch_impl.h
 include/kea/util/strutil.h
+include/kea/util/thread_pool.h
 include/kea/util/time_utilities.h
 include/kea/util/versioned_csv_file.h
 include/kea/util/watch_socket.h

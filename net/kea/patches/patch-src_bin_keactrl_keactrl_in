@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_bin_keactrl_keactrl_in,v 1.1 2019/09/26 13:23:37 sthen Exp $
+$OpenBSD: patch-src_bin_keactrl_keactrl_in,v 1.2 2020/05/14 11:48:07 sthen Exp $
 
 Index: src/bin/keactrl/keactrl.in
 --- src/bin/keactrl/keactrl.in.orig
 +++ src/bin/keactrl/keactrl.in
-@@ -333,7 +333,7 @@ run_conditional() {
+@@ -334,7 +334,7 @@ run_conditional() {
  # to the default file.
  if [ -z "${KEA_LOGGER_DESTINATION}" ]; then
      prefix=@prefix@
