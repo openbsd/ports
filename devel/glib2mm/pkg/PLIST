@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2019/11/01 19:36:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2020/05/14 14:51:32 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -452,13 +452,13 @@ lib/glibmm-${V}/proc/pm/Output.pm
 lib/glibmm-${V}/proc/pm/Property.pm
 lib/glibmm-${V}/proc/pm/Util.pm
 lib/glibmm-${V}/proc/pm/WrapParser.pm
-lib/libgiomm-${V}.a
+@static-lib lib/libgiomm-${V}.a
 lib/libgiomm-${V}.la
 @lib lib/libgiomm-${V}.so.${LIBgiomm-${V}_VERSION}
-lib/libglibmm-${V}.a
+@static-lib lib/libglibmm-${V}.a
 lib/libglibmm-${V}.la
 @lib lib/libglibmm-${V}.so.${LIBglibmm-${V}_VERSION}
-lib/libglibmm_generate_extra_defs-${V}.a
+@static-lib lib/libglibmm_generate_extra_defs-${V}.a
 lib/libglibmm_generate_extra_defs-${V}.la
 @lib lib/libglibmm_generate_extra_defs-${V}.so.${LIBglibmm_generate_extra_defs-${V}_VERSION}
 lib/pkgconfig/giomm-${V}.pc
@@ -1122,6 +1122,8 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Source__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SpawnError-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SpawnError.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SpawnError__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1StdStringView-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1StdStringView.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1StreamIOChannel-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1StreamIOChannel.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1StreamIOChannel__inherit__graph.png
@@ -1164,6 +1166,8 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1TimeoutSource.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1TimeoutSource__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Timer-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Timer.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1UStringView-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1UStringView.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueArray-members.html
@@ -1514,6 +1518,8 @@ share/doc/glibmm-${V}/reference/html/inherit_graph_111.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_112.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_113.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_114.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_115.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_116.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_12.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_13.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_14.png
@@ -1719,6 +1725,7 @@ share/doc/glibmm-${V}/reference/html/since_2_56.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
 share/doc/glibmm-${V}/reference/html/since_2_60.html
 share/doc/glibmm-${V}/reference/html/since_2_62.html
+share/doc/glibmm-${V}/reference/html/since_2_64.html
 share/doc/glibmm-${V}/reference/html/since_2_8.html
 share/doc/glibmm-${V}/reference/html/splitbar.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
