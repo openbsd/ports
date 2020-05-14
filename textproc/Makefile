@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.628 2020/04/21 20:42:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.629 2020/05/14 16:06:01 millert Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -26,6 +26,7 @@
      SUBDIR += cloc
      SUBDIR += clucene
      SUBDIR += cmark
+     SUBDIR += codespell
      SUBDIR += dblatex
      SUBDIR += diction
      SUBDIR += diffstat
