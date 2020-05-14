@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/12 12:24:08 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/14 17:14:56 cwen Exp $
 
 COMMENT =		Apple IIgs emulator
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =		digarok
 GH_PROJECT =		gsplus
 GH_COMMIT =		480572054518112647c8fae5d7ea7046a6d6ecfb
 DISTNAME =		${GH_PROJECT}-20190816
+REVISION =		0
 
 CATEGORIES =		emulators
 

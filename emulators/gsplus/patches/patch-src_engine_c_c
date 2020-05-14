@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_engine_c_c,v 1.1 2020/05/14 17:14:56 cwen Exp $
+
+Use posix timing to improve portability and avoid a build failure on
+powerpc due to `__builtin_ppc_mftb' being gcc-specific.
+
+Index: src/engine_c.c
+--- src/engine_c.c.orig
++++ src/engine_c.c
+@@ -884,6 +884,15 @@ void fixed_memory_ptrs_shut() {
+ 
+   #if defined(__i386__) ||  defined(__x86_64__)
+     #include <x86intrin.h>
++  #elif defined(_POSIX_MONOTONIC_CLOCK)
++    #include <time.h>
++    int64_t __rdtsc() {
++      struct timespec tp = {0};
++      int64_t timestamp = 0;
++      if (clock_gettime(CLOCK_MONOTONIC, &tp) == 0)
++        timestamp = tp.tv_sec * 1000000000 + tp.tv_nsec;
++      return timestamp;
++    }
+   #elif defined(__powerpc__) || defined(__ppc__)
+     #define __rdtsc() __builtin_ppc_mftb()
+   #else
