@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/05/14 19:44:34 rsadowski Exp $
 
 COMMENT =	desktop screenshot utility (make image)
 CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	maim
-GH_TAGNAME =	v5.5.3
+GH_TAGNAME =	v5.6.3
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
