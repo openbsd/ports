@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.281 2020/04/02 14:34:50 robert Exp $
+# $OpenBSD: Makefile,v 1.282 2020/05/14 15:19:44 jasper Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -81,11 +81,9 @@
      SUBDIR += online-miners
      SUBDIR += orca
      SUBDIR += photos
-     SUBDIR += planner
      SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += quadrapassel
-     SUBDIR += recipes
      SUBDIR += screenshot
      SUBDIR += seahorse
      SUBDIR += seahorse-nautilus
