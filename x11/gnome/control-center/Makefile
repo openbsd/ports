@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2020/05/01 05:42:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2020/05/14 15:20:35 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.34.6
+GNOME_VERSION=		3.36.2
 
 CATEGORIES=		x11
 
@@ -13,7 +13,7 @@ CATEGORIES=		x11
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 accountsservice atk-1.0 c cairo colord colord-gtk
-WANTLIB += colordprivate cups fontconfig gdk-3 gdk_pixbuf-2.0
+WANTLIB += colordprivate cups epoxy fontconfig gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gnome-desktop-3 goa-1.0 goa-backend-1.0
 WANTLIB += gobject-2.0 gsound gtk-3 gtop-2.0 handy-0.0 ibus-1.0
 WANTLIB += intl m pango-1.0 pangocairo-1.0 polkit-gobject-1 pulse
@@ -87,6 +87,8 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		-Dcheese=false \
 			-Dwayland=false
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/panels/printers/pp-host.c \

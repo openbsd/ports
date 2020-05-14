@@ -1,14 +1,14 @@
-$OpenBSD: patch-panels_meson_build,v 1.1 2019/11/02 13:51:04 ajacoutot Exp $
+$OpenBSD: patch-panels_meson_build,v 1.2 2020/05/14 15:20:35 ajacoutot Exp $
 
 No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 
 Index: panels/meson.build
 --- panels/meson.build.orig
 +++ panels/meson.build
-@@ -8,7 +8,6 @@ panels = [
-   'display',
-   'info',
-   'keyboard',
+@@ -14,7 +14,6 @@ panels = [
+   'location',
+   'lock',
+   'microphone',
 -  'mouse',
    'notifications',
    'online-accounts',

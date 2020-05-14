@@ -1,9 +1,9 @@
-$OpenBSD: patch-panels_printers_pp-host_c,v 1.2 2019/05/08 15:45:47 ajacoutot Exp $
+$OpenBSD: patch-panels_printers_pp-host_c,v 1.3 2020/05/14 15:20:35 ajacoutot Exp $
 
 Index: panels/printers/pp-host.c
 --- panels/printers/pp-host.c.orig
 +++ panels/printers/pp-host.c
-@@ -256,7 +256,7 @@ _pp_host_get_snmp_devices_thread (GTask        *task,
+@@ -258,7 +258,7 @@ _pp_host_get_snmp_devices_thread (GTask        *task,
    devices = g_new0 (PpDevicesList, 1);
  
    argv = g_new0 (gchar *, 3);

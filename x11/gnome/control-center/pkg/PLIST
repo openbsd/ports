@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/03/30 06:44:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/05/14 15:20:35 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -7,27 +7,33 @@
 @pkgpath x11/gnome/controlcenter
 @bin bin/gnome-control-center
 @bin libexec/cc-remote-login-helper
+@bin libexec/gnome-control-center-print-renderer
 @bin libexec/gnome-control-center-search-provider
 share/applications/gnome-applications-panel.desktop
 share/applications/gnome-background-panel.desktop
+share/applications/gnome-camera-panel.desktop
 share/applications/gnome-color-panel.desktop
 share/applications/gnome-control-center.desktop
 share/applications/gnome-datetime-panel.desktop
 share/applications/gnome-default-apps-panel.desktop
+share/applications/gnome-diagnostics-panel.desktop
 share/applications/gnome-display-panel.desktop
 share/applications/gnome-info-overview-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
+share/applications/gnome-location-panel.desktop
+share/applications/gnome-lock-panel.desktop
+share/applications/gnome-microphone-panel.desktop
 share/applications/gnome-notifications-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
 share/applications/gnome-power-panel.desktop
 share/applications/gnome-printers-panel.desktop
-share/applications/gnome-privacy-panel.desktop
 share/applications/gnome-region-panel.desktop
 share/applications/gnome-removable-media-panel.desktop
 share/applications/gnome-search-panel.desktop
 share/applications/gnome-sharing-panel.desktop
 share/applications/gnome-sound-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
+share/applications/gnome-usage-panel.desktop
 share/applications/gnome-user-accounts-panel.desktop
 share/bash-completion/completions/gnome-control-center
 share/dbus-1/services/org.gnome.ControlCenter.SearchProvider.service
@@ -78,6 +84,7 @@ share/icons/hicolor/48x48/apps/goa-panel.png
 share/icons/hicolor/48x48/apps/preferences-color.png
 share/icons/hicolor/48x48/apps/preferences-system-time.png
 share/icons/hicolor/64x64/apps/preferences-color.png
+share/icons/hicolor/scalable/apps/org.gnome.Settings.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.svg
 share/icons/hicolor/scalable/apps/preferences-color.svg
 share/icons/hicolor/scalable/apps/preferences-desktop-display.svg
@@ -110,7 +117,6 @@ share/locale/bs/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/ca/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/ckb/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/crh/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/cs/LC_MESSAGES/gnome-control-center-2.0.mo

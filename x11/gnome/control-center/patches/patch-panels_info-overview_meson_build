@@ -1,0 +1,15 @@
+$OpenBSD: patch-panels_info-overview_meson_build,v 1.1 2020/05/14 15:20:35 ajacoutot Exp $
+
+No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)
+
+Index: panels/info-overview/meson.build
+--- panels/info-overview/meson.build.orig
++++ panels/info-overview/meson.build
+@@ -42,7 +42,6 @@ sources += gnome.compile_resources(
+ )
+ 
+ deps = common_deps + [
+-  dependency('udisks2', version: '>= 2.1.8'),
+   dependency('libgtop-2.0')
+ ]
+ 
