@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/01/26 14:41:19 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/05/14 17:25:15 semarie Exp $
 @option is-branch
 share/doc/tryton-sao-${TRYTON_VERSION}/
 share/doc/tryton-sao-${TRYTON_VERSION}/CHANGELOG
@@ -162,7 +162,6 @@ share/tryton-sao-${TRYTON_VERSION}/bower_components/gettext.js/dist/gettext.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/gettext.js/dist/gettext.min.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/
-share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/core.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.min.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/jquery/dist/jquery.min.map
@@ -173,9 +172,12 @@ share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/locales.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/locales.min.js
+share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/locales.min.js.map
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/moment-with-locales.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/moment-with-locales.min.js
+share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/moment-with-locales.min.js.map
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/moment.min.js
+share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/min/moment.min.js.map
 share/tryton-sao-${TRYTON_VERSION}/bower_components/moment/moment.js
 share/tryton-sao-${TRYTON_VERSION}/bower_components/mousetrap/
 share/tryton-sao-${TRYTON_VERSION}/bower_components/mousetrap/mousetrap.js

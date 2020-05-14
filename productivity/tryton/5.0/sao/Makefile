@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/12 10:30:57 semarie Exp $
+# $OpenBSD: Makefile,v 1.19 2020/05/14 17:25:15 semarie Exp $
 
 COMMENT =		tryton web client
 
-VERSION =		5.0.20
-DEPVERSION =		12
+VERSION =		5.0.22
+DEPVERSION =		13
 DISTNAME =		tryton-sao-${VERSION}
 
 EXTRACT_SUFX =		.tgz
