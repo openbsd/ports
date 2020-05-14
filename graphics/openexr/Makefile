@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2020/02/15 15:35:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2020/05/14 12:35:07 ajacoutot Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
 COMMENT-doc=		developer documentation for OpenEXR
 
-V=			2.4.1
-GH_ACCOUNT=		openexr
+V=			2.5.1
+GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		openexr
 GH_TAGNAME=		v${V}
 
@@ -15,16 +15,11 @@ PKGNAME-doc=		OpenEXR-doc-${V}
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# XXX /!\ LIBHalf-2_4_VERSION is used for all libs in post-install
-SHARED_LIBS +=	Half-2_4               0.0  # 24.0
-SHARED_LIBS +=	Iex-2_4                0.0  # 24.0
-SHARED_LIBS +=	IexMath-2_4            0.0  # 24.0
-SHARED_LIBS +=	IlmImf-2_4             0.0  # 24.0
-SHARED_LIBS +=	IlmImfUtil-2_4         0.0  # 24.0
-SHARED_LIBS +=	IlmThread-2_4          0.0  # 24.0
-SHARED_LIBS +=	Imath-2_4              0.0  # 24.0
-SHARED_LIBS +=	PyIex_Python3_7-2_4    0.0  # 24.0
-SHARED_LIBS +=	PyImath_Python3_7-2_4  0.0  # 24.0
+# /!\ see symlinks creation in post-install (LIBHalf-2_5_VERSION is used)
+.for solib in in Half Iex IexMath IlmImf IlmImfUtil IlmThread Imath PyIex_Python3_7 PyImath_Python3_7
+SHARED_LIBS +=  ${solib} 0.0 # 24.0
+SHARED_LIBS +=  ${solib}-2_5 0.0 # 24.0
+.endfor
 
 CATEGORIES=		graphics
 
@@ -35,6 +30,7 @@ HOMEPAGE=		http://www.openexr.com/
 PERMIT_PACKAGE=		Yes
 
 MULTI_PACKAGES= 	-main -tools -doc
+DEBUG_PACKAGES=		-main -tools
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -42,8 +38,6 @@ MODULES=		devel/cmake \
 			lang/python
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS +=		-mxgot
@@ -59,22 +53,21 @@ BUILD_DEPENDS=		math/py-numpy${MODPY_FLAVOR}
 LIB_DEPENDS-main +=	${MODPY_LIB_DEPENDS} \
 			devel/boost
 
-WANTLIB-tools += ${COMPILER_LIBCXX} GL Half-2_4 ICE Iex-2_4 IexMath-2_4
-WANTLIB-tools += IlmImf-2_4 IlmThread-2_4 Imath-2_4 SM X11 Xext c fltk
-WANTLIB-tools += fltk_forms fltk_gl fltk_images m z
+WANTLIB-tools += ${COMPILER_LIBCXX} Half-2_5 Iex-2_5 IexMath-2_5 IlmImf-2_5
+WANTLIB-tools += IlmThread-2_5 Imath-2_5 c m z
 
-LIB_DEPENDS-tools=	${BASE_PKGPATH} \
-			x11/fltk
+LIB_DEPENDS-tools=	${BASE_PKGPATH}
 
 PKG_ARCH-doc=		*
 
 post-install:
-# fix links target
+# fix links target; symlinks are required for FindIlmbase.cmake etc. to find the
+# corresponding libs (e.g. find_library(ILMBASE_IMATH_LIBRARY Imath))
 	cd ${PREFIX}/lib && \
 		for i in *.so; do \
 			test -h $$i && lib=$${i#lib} && lib=$${lib%.so} && \
-			ln -sf lib$${lib}-2_4.so.${LIBHalf-2_4_VERSION} $$i ; \
+			ln -sf lib$${lib}-2_5.so.${LIBHalf-2_5_VERSION} \
+			$$i.${LIBHalf-2_5_VERSION} && rm $$i ; \
 		done
-
 
 .include <bsd.port.mk>

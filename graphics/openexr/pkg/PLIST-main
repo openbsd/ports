@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2020/02/15 15:35:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2020/05/14 12:35:07 ajacoutot Exp $
 @conflict ilmbase-*
 @pkgpath graphics/openexr
 @pkgpath graphics/ilmbase
@@ -208,34 +208,37 @@ include/OpenEXR/halfFunction.h
 include/OpenEXR/halfLimits.h
 lib/cmake/
 lib/cmake/IlmBase/
-lib/cmake/IlmBase/IlmBaseConfig${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/IlmBase/IlmBaseConfig.cmake
 lib/cmake/IlmBase/IlmBaseConfigVersion.cmake
+lib/cmake/IlmBase/IlmBaseTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/IlmBase/IlmBaseTargets.cmake
 lib/cmake/OpenEXR/
-lib/cmake/OpenEXR/OpenEXRConfig${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/OpenEXR/OpenEXRConfig.cmake
 lib/cmake/OpenEXR/OpenEXRConfigVersion.cmake
+lib/cmake/OpenEXR/OpenEXRTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/OpenEXR/OpenEXRTargets.cmake
 lib/cmake/PyIlmBase/
 lib/cmake/PyIlmBase/PyIlmBaseConfig${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/PyIlmBase/PyIlmBaseConfig.cmake
 lib/cmake/PyIlmBase/PyIlmBaseConfigVersion.cmake
-@lib lib/libHalf-2_4.so.${LIBHalf-2_4_VERSION}
-@so lib/libHalf.so
-@lib lib/libIex-2_4.so.${LIBIex-2_4_VERSION}
-@so lib/libIex.so
-@lib lib/libIexMath-2_4.so.${LIBIexMath-2_4_VERSION}
-@so lib/libIexMath.so
-@lib lib/libIlmImf-2_4.so.${LIBIlmImf-2_4_VERSION}
-@so lib/libIlmImf.so
-@lib lib/libIlmImfUtil-2_4.so.${LIBIlmImfUtil-2_4_VERSION}
-@so lib/libIlmImfUtil.so
-@lib lib/libIlmThread-2_4.so.${LIBIlmThread-2_4_VERSION}
-@so lib/libIlmThread.so
-@lib lib/libImath-2_4.so.${LIBImath-2_4_VERSION}
-@so lib/libImath.so
-@lib lib/libPyIex_Python3_7-2_4.so.${LIBPyIex_Python3_7-2_4_VERSION}
-@lib lib/libPyImath_Python3_7-2_4.so.${LIBPyImath_Python3_7-2_4_VERSION}
+@lib lib/libHalf-2_5.so.${LIBHalf-2_5_VERSION}
+@lib lib/libHalf.so.${LIBHalf_VERSION}
+@lib lib/libIex-2_5.so.${LIBIex-2_5_VERSION}
+@lib lib/libIex.so.${LIBIex_VERSION}
+@lib lib/libIexMath-2_5.so.${LIBIexMath-2_5_VERSION}
+@lib lib/libIexMath.so.${LIBIexMath_VERSION}
+@lib lib/libIlmImf-2_5.so.${LIBIlmImf-2_5_VERSION}
+@lib lib/libIlmImf.so.${LIBIlmImf_VERSION}
+@lib lib/libIlmImfUtil-2_5.so.${LIBIlmImfUtil-2_5_VERSION}
+@lib lib/libIlmImfUtil.so.${LIBIlmImfUtil_VERSION}
+@lib lib/libIlmThread-2_5.so.${LIBIlmThread-2_5_VERSION}
+@lib lib/libIlmThread.so.${LIBIlmThread_VERSION}
+@lib lib/libImath-2_5.so.${LIBImath-2_5_VERSION}
+@lib lib/libImath.so.${LIBImath_VERSION}
+@lib lib/libPyIex_Python3_7-2_5.so.${LIBPyIex_Python3_7-2_5_VERSION}
+@lib lib/libPyImath_Python3_7-2_5.so.${LIBPyImath_Python3_7-2_5_VERSION}
 lib/pkgconfig/IlmBase.pc
 lib/pkgconfig/OpenEXR.pc
+lib/pkgconfig/PyIlmBase.pc
 @so lib/python${MODPY_VERSION}/site-packages/iex.so
 @so lib/python${MODPY_VERSION}/site-packages/imath.so
