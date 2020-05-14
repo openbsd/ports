@@ -1,0 +1,54 @@
+$OpenBSD: patch-meson_build,v 1.1 2020/05/14 14:55:56 jasper Exp $
+
+In file included from /usr/include/readline/readline.h:38:
+In file included from /usr/include/readline/keymaps.h:36:
+In file included from /usr/include/readline/chardefs.h:39:
+/usr/include/c++/v1/string.h:104:13: error: functions that differ only in their return type cannot be overloaded
+const char* strstr(const char* __s1, const char* __s2) {return __libcpp_strstr(__s1, __s2);}
+      ~~~~~ ^
+      /usr/include/string.h:89:7: note: previous declaration is here
+      char    *strstr(const char *, const char *);
+      ~~~~~~~~~^
+      5 errors generated.
+
+ld.lld: error: undefined symbol: __cxa_atexit
+>>> referenced by crtbeginS.c
+>>>               /usr/bin/../lib/crtbeginS.o:(atexit)
+																       ld.lld: error: undefined symbol: free
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -140,6 +140,7 @@ readline = cxx.find_library('readline', required: get_
+ # On some systems we need to link readline to a termcap compatible library
+ readline_code = '''
+ #include <cstdio>
++#include <string>
+ #include <readline/readline.h>
+ int main(void) {
+     readline("foo");
+@@ -283,9 +284,13 @@ header_conf.set('HAVE_DTRACE', get_option('dtrace'),
+     description: 'Using dtrace probes')
+ header_conf.set('HAVE_PRINTF_ALTERNATIVE_INT', have_printf_alternative_int,
+     description: 'printf() accepts "%Id" for alternative integer output')
++readline_prefix = '''
++#include <cstdio>
++#include <string>
++'''
+ if build_readline
+     header_conf.set('HAVE_READLINE_READLINE_H',
+-        cxx.check_header('readline/readline.h', prefix: '#include <cstdio>',
++        cxx.check_header('readline/readline.h', prefix: readline_prefix,
+             required: readline.found()))
+ endif
+ header_conf.set('HAVE_SYS_SYSCALL_H', cxx.check_header('sys/syscall.h'))
+@@ -469,6 +474,9 @@ else
+     # but -undefined would also be understood as a valid argument for GNU ld!
+     link_args += cxx.get_supported_link_arguments('-Wl,-undefined,error')
+ endif
++
++# XXX: undefined references to __cxa_atexit, free, et al
++link_args += '-lc'
+ 
+ libgjs_cpp_args = ['-DGJS_COMPILATION'] + directory_defines
+ 

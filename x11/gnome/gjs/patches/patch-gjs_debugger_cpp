@@ -1,0 +1,34 @@
+$OpenBSD: patch-gjs_debugger_cpp,v 1.1 2020/05/14 14:55:56 jasper Exp $
+
+XXX:
+Moving the HAVE_READLINE_READLINE_H block until after the Mozilla
+includes suddenly toggles symbol visiblity on gjs_context_setup_debugger_console()
+which unhides it?
+
+Index: gjs/debugger.cpp
+--- gjs/debugger.cpp.orig
++++ gjs/debugger.cpp
+@@ -27,10 +27,6 @@
+ #include <stdint.h>
+ #include <stdio.h>  // for feof, fflush, fgets, stdin, stdout
+ 
+-#ifdef HAVE_READLINE_READLINE_H
+-#    include <readline/history.h>
+-#    include <readline/readline.h>
+-#endif
+ 
+ #ifdef HAVE_UNISTD_H
+ #    include <unistd.h>  // for isatty, STDIN_FILENO
+@@ -58,6 +54,12 @@
+ #include "gjs/jsapi-util-args.h"
+ #include "gjs/jsapi-util.h"
+ #include "gjs/macros.h"
++
++#ifdef HAVE_READLINE_READLINE_H
++#    include <wchar.h>
++#    include <readline/history.h>
++#    include <readline/readline.h>
++#endif
+ 
+ GJS_JSAPI_RETURN_CONVENTION
+ static bool quit(JSContext* cx, unsigned argc, JS::Value* vp) {

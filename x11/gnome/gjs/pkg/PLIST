@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/11/11 20:39:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/05/14 14:55:56 jasper Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -13,20 +13,25 @@ include/gjs-1.0/gjs/profiler.h
 lib/gjs/
 lib/gjs/girepository-1.0/
 lib/gjs/girepository-1.0/GjsPrivate-1.0.typelib
-@static-lib lib/libgjs.a
-lib/libgjs.la
 @lib lib/libgjs.so.${LIBgjs_VERSION}
 lib/pkgconfig/gjs-1.0.pc
 share/examples/gjs/
+share/examples/gjs/README
+share/examples/gjs/calc.js
 share/examples/gjs/clutter.js
+share/examples/gjs/dbus-client.js
+share/examples/gjs/dbus-service.js
+share/examples/gjs/gettext.js
 share/examples/gjs/gio-cat.js
+share/examples/gjs/gtk-application.js
 share/examples/gjs/gtk.js
+share/examples/gjs/http-client.js
 share/examples/gjs/http-server.js
 share/examples/gjs/test.jpg
+share/examples/gjs/webkit.js
+share/examples/gjs/websocket-client.js
 share/gjs-1.0/
 share/gjs-1.0/lsan/
 share/gjs-1.0/lsan/lsan.supp
 share/gjs-1.0/valgrind/
 share/gjs-1.0/valgrind/gjs.supp
-share/glib-2.0/schemas/org.gnome.GjsTest.gschema.xml
-@tag glib-compile-schemas

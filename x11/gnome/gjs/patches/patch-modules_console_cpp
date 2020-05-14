@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_console_cpp,v 1.1 2020/05/14 14:55:56 jasper Exp $
+
+Index: modules/console.cpp
+--- modules/console.cpp.orig
++++ modules/console.cpp
+@@ -44,6 +44,7 @@
+ #include <string.h>  // for strchr
+ 
+ #ifdef HAVE_READLINE_READLINE_H
++#include <wchar.h>
+ #include <readline/readline.h>
+ #include <readline/history.h>
+ #endif
