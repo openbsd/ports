@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2019/10/17 14:03:55 cwen Exp $
+# $OpenBSD: Makefile,v 1.49 2020/05/14 18:26:21 cwen Exp $
+
+BROKEN-mips64=	SIGBUS while running pbc_to_exe
 
 COMMENT=	virtual machine designed for interpreted languages
 
 V=		7.10.0
 DISTNAME=	parrot-$V
-REVISION=	8
+REVISION=	9
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	11.0
 
@@ -55,11 +57,6 @@ INSTALL_TARGET =	install install-doc
 TEST_TARGET=		fulltest
 
 SUBST_VARS +=		V
-
-# fix for error: "_CALL_ELF" is not defined, evaluates to 0
-.if ${MACHINE_ARCH:Mpowerpc}
-CFLAGS +=		-D_CALL_ELF=1
-.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config/init/hints/openbsd.pm

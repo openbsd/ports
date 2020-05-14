@@ -1,0 +1,19 @@
+$OpenBSD: patch-config_auto_warnings_pm,v 1.1 2020/05/14 18:26:21 cwen Exp $
+
+Drop all -Werror, fix the build on powerpc.
+The build breaks due to some libffi defines being undefined,
+issue that doesn't cause runtime errors.
+
+Index: config/auto/warnings.pm
+--- config/auto/warnings.pm.orig
++++ config/auto/warnings.pm
+@@ -169,9 +169,6 @@ sub _init {
+         -Werror=strict-prototypes
+     );
+ 
+-    $gcc->{'basic'} = [ @gcc_or_gpp_basic, @gcc_basic ];
+-    $gpp->{'basic'} = [ @gcc_or_gpp_basic ];
+-
+     my @gcc_or_gpp_cage = qw(
+         -std=c89
+         -Wfloat-equal
