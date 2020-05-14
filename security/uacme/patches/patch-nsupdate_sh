@@ -1,0 +1,126 @@
+$OpenBSD: patch-nsupdate_sh,v 1.1.1.1 2020/05/14 12:05:34 sthen Exp $
+
+From 7f1a11ade692a8f21a438be4a186077bf90ec6ec Mon Sep 17 00:00:00 2001
+From: Nicola Di Lieto <nicola.dilieto@gmail.com>
+Date: Mon, 11 May 2020 20:52:08 +0200
+Subject: [PATCH] Fix https://github.com/ndilieto/uacme/issues/32
+
+Index: nsupdate.sh
+--- nsupdate.sh.orig
++++ nsupdate.sh
+@@ -18,16 +18,16 @@
+ 
+ # Commands
+ DIG=dig
+-RNDC=rndc
+ NSUPDATE=nsupdate
+ 
+ # Files
+-# RNDC_KEY
++# RNDC_KEY_{NSUPDATE,DIG}
+ #   if you wish to specify an RDC key for TSIG transactions, do so
+ #   here. If you do, also make sure /etc/named.conf specifies the
+ #   key "KEYNAME"; in the zone that must be updated (and disallow
+ #   all others for safety)
+-RNDC_KEY=
++RNDC_KEY_NSUPDATE=
++RNDC_KEY_DIG=
+ 
+ # Arguments
+ METHOD=$1
+@@ -38,57 +38,20 @@ AUTH=$5
+ 
+ ns_getdomain()
+ {
+-    local fqhn="$1"
+-    local idx
+-    local ret=''
+-    OLDIFS="$IFS"
+-    IFS=.
++    local domain=$1
+ 
+-    set -- $fqhn
+-    idx=$#
++    [ -n "$domain" ] || return
++    set -- $($DIG ${RNDC_KEY_DIG:+-k ${RNDC_KEY_DIG}} +noall +authority "$domain" SOA 2>/dev/null)
+ 
+-    if [ $idx -gt 1 ]; then
+-        eval ret="\$$idx"
+-        idx=$((idx-1))
+-        eval ret="\$$idx.\$ret"
+-    fi
+-
+-    IFS="$OLDIFS"
+-    echo $ret
++    echo $1
+ }
+ 
+-ns_gethostname()
+-{
+-    local fqhn="$1"
+-    local ret=''
+-    local idx=1
+-
+-    OLDIFS="${IFS}"
+-    IFS='.'
+-    set -- ${fqhn}
+-    IFS="${OLDIFS}"
+-
+-    if [ $# -ge 2 ]; then
+-        max=$(( $# - 2 ))
+-    else
+-        max=1
+-    fi
+-
+-    while [ $idx -le $max ]; do
+-        eval ret="$ret.\$$idx"
+-        idx=$((idx + 1))
+-    done
+-
+-    echo ${ret:1}
+-}
+-
+-
+ ns_getprimary()
+ {
+     local domain=$1
+ 
+     [ -n "$domain" ] || return
+-    set -- $($DIG ${RNDC_KEY:+-k ${RNDC_KEY}} +short "$domain" SOA 2>/dev/null)
++    set -- $($DIG ${RNDC_KEY_DIG:+-k ${RNDC_KEY_DIG}} +short "$domain" SOA 2>/dev/null)
+ 
+     echo $1
+ }
+@@ -99,7 +62,7 @@ ns_getall()
+ 
+     [ -n "$domain" ] || return 1
+ 
+-    $DIG ${RNDC_KEY:+-k ${RNDC_KEY}} +short "$domain" NS 2>/dev/null
++    $DIG ${RNDC_KEY_DIG:+-k ${RNDC_KEY_DIG}} +short "$domain" NS 2>/dev/null
+ }
+ 
+ ns_ispresent()
+@@ -112,9 +75,11 @@ ns_ispresent()
+     local ret
+ 
+     for NS in $nameservers; do
+-        res=$($DIG ${RNDC_KEY:+-k ${RNDC_KEY}} +short "@$NS" "$fqhn" TXT 2>/dev/null)
+-        res="${res//\"/}"
+-        [ "$res" == "$expect" ] || return 1
++        OLDIFS="${IFS}"
++        IFS='.'
++        set -- $($DIG ${RNDC_KEY_DIG:+-k ${RNDC_KEY_DIG}} +short "@$NS" "$fqhn" TXT 2>/dev/null)
++        IFS="${OLDIFS}"
++        [ "$*" = "$expect" ] || return 1
+     done
+ 
+     return 0
+@@ -137,7 +102,7 @@ ns_doupdate()
+             action="update del ${fqhn}."
+     fi
+ 
+-    $NSUPDATE ${RNDC_KEY:+-k ${RNDC_KEY}} -v <<-EOF
++    $NSUPDATE ${RNDC_KEY_NSUPDATE:+-k ${RNDC_KEY_NSUPDATE}} -v <<-EOF
+             server ${nameserver}
+             ${action}
+             send
