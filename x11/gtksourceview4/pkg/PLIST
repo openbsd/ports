@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/11/01 20:19:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/05/14 15:05:27 jasper Exp $
 include/gtksourceview-4/
 include/gtksourceview-4/gtksourceview/
 include/gtksourceview-4/gtksourceview/completion-providers/
@@ -70,6 +70,7 @@ share/gtksourceview-4/language-specs/changelog.lang
 share/gtksourceview-4/language-specs/chdr.lang
 share/gtksourceview-4/language-specs/cmake.lang
 share/gtksourceview-4/language-specs/cobol.lang
+share/gtksourceview-4/language-specs/commonlisp.lang
 share/gtksourceview-4/language-specs/cpp.lang
 share/gtksourceview-4/language-specs/cpphdr.lang
 share/gtksourceview-4/language-specs/csharp.lang
@@ -95,6 +96,7 @@ share/gtksourceview-4/language-specs/fish.lang
 share/gtksourceview-4/language-specs/forth.lang
 share/gtksourceview-4/language-specs/fortran.lang
 share/gtksourceview-4/language-specs/fsharp.lang
+share/gtksourceview-4/language-specs/ftl.lang
 share/gtksourceview-4/language-specs/gap.lang
 share/gtksourceview-4/language-specs/gdb-log.lang
 share/gtksourceview-4/language-specs/gdscript.lang
@@ -117,8 +119,16 @@ share/gtksourceview-4/language-specs/ini.lang
 share/gtksourceview-4/language-specs/j.lang
 share/gtksourceview-4/language-specs/jade.lang
 share/gtksourceview-4/language-specs/java.lang
+share/gtksourceview-4/language-specs/javascript-expressions.lang
+share/gtksourceview-4/language-specs/javascript-functions-classes.lang
+share/gtksourceview-4/language-specs/javascript-literals.lang
+share/gtksourceview-4/language-specs/javascript-modules.lang
+share/gtksourceview-4/language-specs/javascript-statements.lang
+share/gtksourceview-4/language-specs/javascript-values.lang
 share/gtksourceview-4/language-specs/javascript.lang
+share/gtksourceview-4/language-specs/jsdoc.lang
 share/gtksourceview-4/language-specs/json.lang
+share/gtksourceview-4/language-specs/jsx.lang
 share/gtksourceview-4/language-specs/julia.lang
 share/gtksourceview-4/language-specs/kotlin.lang
 share/gtksourceview-4/language-specs/language.dtd
@@ -187,6 +197,17 @@ share/gtksourceview-4/language-specs/tera.lang
 share/gtksourceview-4/language-specs/texinfo.lang
 share/gtksourceview-4/language-specs/thrift.lang
 share/gtksourceview-4/language-specs/toml.lang
+share/gtksourceview-4/language-specs/typescript-js-expressions.lang
+share/gtksourceview-4/language-specs/typescript-js-functions-classes.lang
+share/gtksourceview-4/language-specs/typescript-js-literals.lang
+share/gtksourceview-4/language-specs/typescript-js-modules.lang
+share/gtksourceview-4/language-specs/typescript-js-statements.lang
+share/gtksourceview-4/language-specs/typescript-js-values.lang
+share/gtksourceview-4/language-specs/typescript-jsx.lang
+share/gtksourceview-4/language-specs/typescript-type-expressions.lang
+share/gtksourceview-4/language-specs/typescript-type-generics.lang
+share/gtksourceview-4/language-specs/typescript-type-literals.lang
+share/gtksourceview-4/language-specs/typescript.lang
 share/gtksourceview-4/language-specs/vala.lang
 share/gtksourceview-4/language-specs/vbnet.lang
 share/gtksourceview-4/language-specs/verilog.lang
