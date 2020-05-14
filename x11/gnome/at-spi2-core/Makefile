@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2019/12/30 15:34:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2020/05/14 14:58:05 ajacoutot Exp $
 
 COMMENT=		service interface for assistive technologies
 
 GNOME_PROJECT=		at-spi2-core
-GNOME_VERSION=		2.34.0
-REVISION=		0
+GNOME_VERSION=		2.36.0
 
-SHARED_LIBS +=  atspi                0.4      # 0.0.1
+SHARED_LIBS +=  atspi                0.5      # 0.0.1
 
 HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
