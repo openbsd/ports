@@ -1,9 +1,9 @@
-$OpenBSD: patch-conserver_group_c,v 1.9 2019/03/27 10:37:09 sthen Exp $
+$OpenBSD: patch-conserver_group_c,v 1.10 2020/05/14 11:43:24 sthen Exp $
 
 Index: conserver/group.c
 --- conserver/group.c.orig
 +++ conserver/group.c
-@@ -752,7 +752,7 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
+@@ -753,7 +753,7 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
      struct spwd *spwd;
  # endif
  

@@ -1,6 +1,8 @@
-$OpenBSD: patch-conserver_cf_conserver_cf,v 1.3 2014/10/07 15:21:42 sthen Exp $
---- conserver.cf/conserver.cf.orig	Thu Mar 11 16:51:23 2004
-+++ conserver.cf/conserver.cf	Tue Oct  7 16:19:32 2014
+$OpenBSD: patch-conserver_cf_conserver_cf,v 1.4 2020/05/14 11:43:24 sthen Exp $
+
+Index: conserver.cf/conserver.cf
+--- conserver.cf/conserver.cf.orig
++++ conserver.cf/conserver.cf
 @@ -14,9 +14,18 @@ default cisco	{ type host; portbase 2000; portinc 1; }
  default xyplex	{ type host; portbase 2000; portinc 100; }
  default iolan	{ type host; portbase 10000; portinc 1; }

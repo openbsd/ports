@@ -1,6 +1,8 @@
-$OpenBSD: patch-conserver_cf_conserver_passwd,v 1.2 2005/08/02 07:25:47 pvalchev Exp $
---- conserver.cf/conserver.passwd.orig	Thu Jun 23 23:25:24 2005
-+++ conserver.cf/conserver.passwd	Thu Jun 23 23:26:07 2005
+$OpenBSD: patch-conserver_cf_conserver_passwd,v 1.3 2020/05/14 11:43:24 sthen Exp $
+
+Index: conserver.cf/conserver.passwd
+--- conserver.cf/conserver.passwd.orig
++++ conserver.cf/conserver.passwd
 @@ -1,3 +1,2 @@
 -bryan:td1AgneGE3RsU
 -djs:*passwd*
