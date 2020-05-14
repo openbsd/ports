@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/01/26 19:14:14 bket Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/14 19:35:30 bket Exp $
 
 COMMENT =		statistical data visualization
 
-MODPY_EGG_VERSION =	0.10.0
+MODPY_EGG_VERSION =	0.10.1
 DISTNAME =		seaborn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
