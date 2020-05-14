@@ -1,10 +1,14 @@
-$OpenBSD: patch-doc_examples_cyrus_conf_normal_conf,v 1.1 2017/05/28 15:46:11 ajacoutot Exp $
+$OpenBSD: patch-doc_examples_cyrus_conf_normal_conf,v 1.2 2020/05/14 12:26:39 ajacoutot Exp $
 
 Index: doc/examples/cyrus_conf/normal.conf
 --- doc/examples/cyrus_conf/normal.conf.orig
 +++ doc/examples/cyrus_conf/normal.conf
-@@ -8,9 +8,9 @@ START {
- # UNIX sockets start with a slash and are put into /var/imap/socket
+@@ -5,12 +5,12 @@ START {
+   recover       cmd="ctl_cyrusdb -r"
+ }
+ 
+-# UNIX sockets start with a slash and are put into /run/cyrus/socket
++# UNIX sockets start with a slash and are put into /var/run/cyrus/socket
  SERVICES {
    # add or remove based on preferences
 -  imap          cmd="imapd" listen="imap" prefork=0
@@ -15,7 +19,7 @@ Index: doc/examples/cyrus_conf/normal.conf
    pop3s         cmd="pop3d -s" listen="pop3s" prefork=0
    sieve         cmd="timsieved" listen="sieve" prefork=0
  
-@@ -19,8 +19,8 @@ SERVICES {
+@@ -19,18 +19,18 @@ SERVICES {
  #  nntps         cmd="nntpd -s" listen="nntps" prefork=0
  
    # these are only necessary if using HTTP for CalDAV, CardDAV, or RSS
@@ -26,7 +30,20 @@ Index: doc/examples/cyrus_conf/normal.conf
  
    # at least one LMTP is required for delivery
  #  lmtp          cmd="lmtpd" listen="lmtp" prefork=0
-@@ -44,9 +44,12 @@ EVENTS {
+-  lmtpunix      cmd="lmtpd" listen="/run/cyrus/socket/lmtp" prefork=0
++  lmtpunix      cmd="lmtpd" listen="/var/run/cyrus/socket/lmtp" prefork=0
+ 
+   # this is requied if using socketmap
+-#  smmap         cmd="smmapd" listen="/run/cyrus/socket/smmap" prefork=0
++#  smmap         cmd="smmapd" listen="/var/run/cyrus/socket/smmap" prefork=0
+ 
+   # this is required if using notifications
+-#  notify        cmd="notifyd" listen="/run/cyrus/socket/notify" proto="udp" prefork=1
++#  notify        cmd="notifyd" listen="/var/run/cyrus/socket/notify" proto="udp" prefork=1
+ }
+ 
+ EVENTS {
+@@ -47,9 +47,12 @@ EVENTS {
  
    # this is only necessary if caching TLS sessions
    tlsprune      cmd="tls_prune" at=0400

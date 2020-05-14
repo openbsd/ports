@@ -1,11 +1,11 @@
-$OpenBSD: patch-master_master_c,v 1.1 2018/05/18 11:16:43 ajacoutot Exp $
+$OpenBSD: patch-master_master_c,v 1.2 2020/05/14 12:26:39 ajacoutot Exp $
 
 warning: format specifies type 'long' but the argument has type 'rlim_t' (aka 'unsigned long long') [-Wformat]
 
 Index: master/master.c
 --- master/master.c.orig
 +++ master/master.c
-@@ -1945,13 +1945,13 @@ static void limit_fds(rlim_t x)
+@@ -1983,13 +1983,13 @@ static void limit_fds(rlim_t x)
      }
  
      if (verbose > 1) {

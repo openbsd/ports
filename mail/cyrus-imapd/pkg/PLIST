@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/12/16 19:50:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2020/05/14 12:26:39 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -32,6 +32,7 @@ cyrus/libexec/lmtpproxyd
 @bin cyrus/libexec/notifyd
 @bin cyrus/libexec/pop3d
 cyrus/libexec/pop3proxyd
+@bin cyrus/libexec/promstatsd
 cyrus/libexec/proxyd
 @bin cyrus/libexec/smmapd
 @bin cyrus/libexec/timsieved
@@ -143,11 +144,12 @@ include/cyrus/command.h
 include/cyrus/crc32.h
 include/cyrus/crc32c.h
 include/cyrus/cyr_lock.h
+include/cyrus/cyr_qsort_r.h
 include/cyrus/cyrusdb.h
-include/cyrus/exitcodes.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
 include/cyrus/hash.h
+include/cyrus/hashset.h
 include/cyrus/hashu64.h
 include/cyrus/imapopts.h
 include/cyrus/imapurl.h
@@ -174,7 +176,6 @@ include/cyrus/sqldb.h
 include/cyrus/strarray.h
 include/cyrus/strhash.h
 include/cyrus/stristr.h
-include/cyrus/sysexits.h
 include/cyrus/times.h
 include/cyrus/tok.h
 include/cyrus/vparse.h
@@ -229,6 +230,7 @@ share/doc/cyrus-imapd/
 share/doc/cyrus-imapd/COPYING
 share/doc/cyrus-imapd/README.autocreate
 share/doc/cyrus-imapd/README.autosievefolder
+share/doc/cyrus-imapd/README.cyrusdb.md
 share/doc/cyrus-imapd/README.docs
 share/doc/cyrus-imapd/README.xapian
 share/doc/cyrus-imapd/html/
@@ -281,14 +283,32 @@ share/doc/cyrus-imapd/html/imap/concepts/features/virtual-domains.html
 share/doc/cyrus-imapd/html/imap/concepts/overview_and_concepts.html
 share/doc/cyrus-imapd/html/imap/developer/
 share/doc/cyrus-imapd/html/imap/developer.html
+share/doc/cyrus-imapd/html/imap/developer/API/
+share/doc/cyrus-imapd/html/imap/developer/API.html
+share/doc/cyrus-imapd/html/imap/developer/API/cyrusdb.html
+share/doc/cyrus-imapd/html/imap/developer/API/cyrusdb2.html
+share/doc/cyrus-imapd/html/imap/developer/API/index-api.html
+share/doc/cyrus-imapd/html/imap/developer/API/mailbox-api.html
 share/doc/cyrus-imapd/html/imap/developer/ancient-releasing.html
 share/doc/cyrus-imapd/html/imap/developer/compiling.html
 share/doc/cyrus-imapd/html/imap/developer/cyrusworks.html
 share/doc/cyrus-imapd/html/imap/developer/developer-testing.html
-share/doc/cyrus-imapd/html/imap/developer/developer-tips.html
 share/doc/cyrus-imapd/html/imap/developer/documentation.html
 share/doc/cyrus-imapd/html/imap/developer/github-guide.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/
+share/doc/cyrus-imapd/html/imap/developer/guidance.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/hacking.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/internationalization.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/locking.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/mailbox-format.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/namelocks.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/prot.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/replication_examples.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/replication_protocol.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/special_chars.html
+share/doc/cyrus-imapd/html/imap/developer/guidance/var_directory_structure.html
 share/doc/cyrus-imapd/html/imap/developer/install-xapian.html
+share/doc/cyrus-imapd/html/imap/developer/jmap.html
 share/doc/cyrus-imapd/html/imap/developer/libraries/
 share/doc/cyrus-imapd/html/imap/developer/libraries.html
 share/doc/cyrus-imapd/html/imap/developer/libraries/imclient.html
@@ -296,6 +316,15 @@ share/doc/cyrus-imapd/html/imap/developer/namespaces.html
 share/doc/cyrus-imapd/html/imap/developer/overview.html
 share/doc/cyrus-imapd/html/imap/developer/process.html
 share/doc/cyrus-imapd/html/imap/developer/releasing.html
+share/doc/cyrus-imapd/html/imap/developer/thoughts/
+share/doc/cyrus-imapd/html/imap/developer/thoughts.html
+share/doc/cyrus-imapd/html/imap/developer/thoughts/backup.html
+share/doc/cyrus-imapd/html/imap/developer/thoughts/bytecode.html
+share/doc/cyrus-imapd/html/imap/developer/thoughts/caldav_scheduling_flowchart.html
+share/doc/cyrus-imapd/html/imap/developer/thoughts/improved_mboxlist_sort.html
+share/doc/cyrus-imapd/html/imap/developer/thoughts/notes.html
+share/doc/cyrus-imapd/html/imap/developer/thoughts/prot-events.html
+share/doc/cyrus-imapd/html/imap/developer/unit-tests.html
 share/doc/cyrus-imapd/html/imap/download/
 share/doc/cyrus-imapd/html/imap/download/getcyrus.html
 share/doc/cyrus-imapd/html/imap/download/installation/
@@ -309,6 +338,7 @@ share/doc/cyrus-imapd/html/imap/download/installation/distributions/ubuntu.html
 share/doc/cyrus-imapd/html/imap/download/installation/http/
 share/doc/cyrus-imapd/html/imap/download/installation/http/caldav.html
 share/doc/cyrus-imapd/html/imap/download/installation/http/carddav.html
+share/doc/cyrus-imapd/html/imap/download/installation/http/jmap.html
 share/doc/cyrus-imapd/html/imap/download/installation/http/rss.html
 share/doc/cyrus-imapd/html/imap/download/installation/http/webdav.html
 share/doc/cyrus-imapd/html/imap/download/installation/manage-dav.html
@@ -396,7 +426,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.10.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.11.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.12.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.13.html
-share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.14.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.15.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.4.html
@@ -432,6 +462,28 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.6.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.7.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.8.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.9.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/index.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.0-dev.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.3.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.4.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.5.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.6.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.7.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.8.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.9.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/index.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-beta1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-beta2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-beta3.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-beta4.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-rc1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html
@@ -456,6 +508,7 @@ share/doc/cyrus-imapd/html/imap/reference/admin/locations/configuration-state.ht
 share/doc/cyrus-imapd/html/imap/reference/admin/locations/hashing.html
 share/doc/cyrus-imapd/html/imap/reference/admin/locations/mailspool.html
 share/doc/cyrus-imapd/html/imap/reference/admin/locations/searchtiers.html
+share/doc/cyrus-imapd/html/imap/reference/admin/monitoring.html
 share/doc/cyrus-imapd/html/imap/reference/admin/murder/
 share/doc/cyrus-imapd/html/imap/reference/admin/murder/murder-concepts.html
 share/doc/cyrus-imapd/html/imap/reference/admin/murder/murder-failure-modes.html
@@ -489,14 +542,12 @@ share/doc/cyrus-imapd/html/imap/reference/admin/sop/splitting-metadata.html
 share/doc/cyrus-imapd/html/imap/reference/admin/sop/squatter.html
 share/doc/cyrus-imapd/html/imap/reference/admin/sop/userdeny.html
 share/doc/cyrus-imapd/html/imap/reference/admin/tweaking.html
-share/doc/cyrus-imapd/html/imap/reference/administration-tools.html
 share/doc/cyrus-imapd/html/imap/reference/architecture.html
 share/doc/cyrus-imapd/html/imap/reference/faq.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/
 share/doc/cyrus-imapd/html/imap/reference/faqs/feature-database-backend.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/feature-duplicate-delivery.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/install-compilationerrors.html
-share/doc/cyrus-imapd/html/imap/reference/faqs/install-detecting-berkeley.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/install-install-help.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/install-linkerwarnings.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/interop-8bit.html
@@ -505,10 +556,8 @@ share/doc/cyrus-imapd/html/imap/reference/faqs/interop-sieve-exim.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/interop-slow-delivery.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/o-acls.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/o-annotations.html
-share/doc/cyrus-imapd/html/imap/reference/faqs/o-berkeleydb.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/o-configdir-tempfs.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/o-coredump.html
-share/doc/cyrus-imapd/html/imap/reference/faqs/o-db3-lockers.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/o-delete-mailbox.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/o-deleted-expired-expunged-purged.html
 share/doc/cyrus-imapd/html/imap/reference/faqs/o-deliverdb-size.html
@@ -651,7 +700,7 @@ share/doc/cyrus-imapd/internal/index-api.html
 share/doc/cyrus-imapd/internal/index-format-history.txt
 share/doc/cyrus-imapd/internal/index.html
 share/doc/cyrus-imapd/internal/internationalization.html
-share/doc/cyrus-imapd/internal/locking
+share/doc/cyrus-imapd/internal/locking.txt
 share/doc/cyrus-imapd/internal/mailbox-api.html
 share/doc/cyrus-imapd/internal/mailbox-format.html
 share/doc/cyrus-imapd/internal/master-state-machine.fig
@@ -681,6 +730,7 @@ share/examples/cyrus-imapd/imapd.conf
 @sample ${SYSCONFDIR}/imapd.conf
 share/examples/cyrus-imapd/imapd_conf/
 share/examples/cyrus-imapd/imapd_conf/README.md
+share/examples/cyrus-imapd/imapd_conf/imapd.conf.sample
 share/examples/cyrus-imapd/imapd_conf/murder-backend.conf
 share/examples/cyrus-imapd/imapd_conf/murder-frontend.conf
 share/examples/cyrus-imapd/imapd_conf/murder-mupdate.conf
@@ -691,7 +741,6 @@ share/examples/cyrus-imapd/tools/
 share/examples/cyrus-imapd/tools/arbitronsort.pl
 share/examples/cyrus-imapd/tools/compile_st.pl
 share/examples/cyrus-imapd/tools/config2header
-share/examples/cyrus-imapd/tools/config2man
 share/examples/cyrus-imapd/tools/config2rst
 share/examples/cyrus-imapd/tools/config2sample
 share/examples/cyrus-imapd/tools/fixsearchpath.pl
@@ -700,6 +749,7 @@ share/examples/cyrus-imapd/tools/jenkins-build.sh
 share/examples/cyrus-imapd/tools/masssievec
 share/examples/cyrus-imapd/tools/mkimap
 share/examples/cyrus-imapd/tools/mknewsgroups
+share/examples/cyrus-imapd/tools/perl2rst
 share/examples/cyrus-imapd/tools/rehash
 share/examples/cyrus-imapd/tools/translatesieve
 @mode 750

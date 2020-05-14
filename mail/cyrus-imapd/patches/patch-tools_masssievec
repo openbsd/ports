@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_masssievec,v 1.1 2017/05/28 15:46:11 ajacoutot Exp $
+$OpenBSD: patch-tools_masssievec,v 1.2 2020/05/14 12:26:39 ajacoutot Exp $
 
 Index: tools/masssievec
 --- tools/masssievec.orig
 +++ tools/masssievec
-@@ -76,7 +76,7 @@ if(!defined($imapdconf)) {
+@@ -59,7 +59,7 @@ if(!defined($imapdconf)) {
      $imapdconf = "/etc/imapd.conf";
  }
  

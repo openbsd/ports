@@ -1,18 +1,18 @@
-$OpenBSD: patch-man_imapd_conf_5,v 1.16 2019/11/17 17:54:28 ajacoutot Exp $
+$OpenBSD: patch-man_imapd_conf_5,v 1.17 2020/05/14 12:26:39 ajacoutot Exp $
 
 Index: man/imapd.conf.5
 --- man/imapd.conf.5.orig
 +++ man/imapd.conf.5
-@@ -1007,7 +1007,7 @@ resources (principals).  If not set (the default), the
- Debug command to be used by processes started with \-D option.  The string
+@@ -1174,7 +1174,7 @@ Debug command to be used by processes started with \-D
  is a C format string that gets 3 options: the first is the name of the
- executable (without path).  The second is the pid (integer) and the third
--is the service ID.  Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d
-+is the service ID.  Example: /usr/bin/gdb /usr/local/cyrus/bin/%s %d
+ executable (as specified in the cmd parameter in cyrus.conf). The second
+ is the pid (integer) and the third is the service ID.
+-Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d
++Example: /usr/bin/gdb /usr/local/cyrus/bin/%s %d
  .UNINDENT
  .UNINDENT
  .sp
-@@ -3176,7 +3176,7 @@ Allowed values: \fIflat\fP, \fIskiplist\fP, \fItwoskip
+@@ -3722,7 +3722,7 @@ Allowed values: \fIflat\fP, \fIskiplist\fP, \fItwoskip
  .UNINDENT
  .UNINDENT
  .sp
@@ -21,7 +21,7 @@ Index: man/imapd.conf.5
  .INDENT 0.0
  .INDENT 3.5
  The pathname of the sendmail executable.  Sieve invokes sendmail
-@@ -3352,7 +3352,7 @@ per draft\-ietf\-vacation\-seconds.txt .
+@@ -3933,7 +3933,7 @@ assumed.
  .UNINDENT
  .UNINDENT
  .sp

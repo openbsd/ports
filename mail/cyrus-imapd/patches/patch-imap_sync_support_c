@@ -1,11 +1,11 @@
-$OpenBSD: patch-imap_sync_support_c,v 1.3 2018/05/18 11:16:43 ajacoutot Exp $
+$OpenBSD: patch-imap_sync_support_c,v 1.4 2020/05/14 12:26:39 ajacoutot Exp $
 
 64 bit time_t
 
 Index: imap/sync_support.c
 --- imap/sync_support.c.orig
 +++ imap/sync_support.c
-@@ -4712,7 +4712,7 @@ static void log_record(const char *name, struct mailbo
+@@ -4963,7 +4963,7 @@ static void log_record(const char *name, struct mailbo
                         struct index_record *record)
  {
      syslog(LOG_NOTICE, "SYNCNOTICE: %s uid:%u modseq:" MODSEQ_FMT " "

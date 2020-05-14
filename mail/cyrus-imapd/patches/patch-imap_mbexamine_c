@@ -1,11 +1,11 @@
-$OpenBSD: patch-imap_mbexamine_c,v 1.10 2019/11/17 17:54:28 ajacoutot Exp $
+$OpenBSD: patch-imap_mbexamine_c,v 1.11 2020/05/14 12:26:39 ajacoutot Exp $
 
 64 bit time_t
 
 Index: imap/mbexamine.c
 --- imap/mbexamine.c.orig
 +++ imap/mbexamine.c
-@@ -234,7 +234,7 @@ static int do_examine(struct findall_data *data, void 
+@@ -231,7 +231,7 @@ static int do_examine(struct findall_data *data, void 
             mailbox->i.start_offset, mailbox->i.record_size);
      printf("  Number of Messages: %u  Mailbox Size: " QUOTA_T_FMT " bytes  Annotations Size: " QUOTA_T_FMT " bytes\n",
             mailbox->i.exists, mailbox->i.quota_mailbox_used, mailbox->i.quota_annot_used);
@@ -25,16 +25,16 @@ Index: imap/mbexamine.c
      printf("  Highest Mod Sequence: " MODSEQ_FMT "\n",
             mailbox->i.highestmodseq);
  
-@@ -276,10 +276,10 @@ static int do_examine(struct findall_data *data, void 
-             flag = 1;
+@@ -277,10 +277,10 @@ static int do_examine(struct findall_data *data, void 
          }
  
--        printf("%06u> UID:%08u   INT_DATE:%lu SENTDATE:%lu SIZE:%-6u\n",
-+        printf("%06u> UID:%08u   INT_DATE:%lld SENTDATE:%lld SIZE:%-6u\n",
+         printf("%06u> UID:%08u"
+-               "   INT_DATE:%lu SENTDATE:%lu SAVEDATE:%lu SIZE:%-6u\n",
++               "   INT_DATE:%lu SENTDATE:%lld SAVEDATE:%lld SIZE:%-6u\n",
                 msgno, record->uid, record->internaldate,
-                record->sentdate, record->size);
+                record->sentdate, record->savedate, record->size);
 -        printf("      > HDRSIZE:%-6u LASTUPD :%lu SYSFLAGS:%08X",
 +        printf("      > HDRSIZE:%-6u LASTUPD :%lld SYSFLAGS:%08X",
                 record->header_size, record->last_updated,
                 record->system_flags);
-         if (mailbox->i.minor_version >= 5)
+ 

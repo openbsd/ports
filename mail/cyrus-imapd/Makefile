@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.124 2019/12/16 19:50:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2020/05/14 12:26:39 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.0.13
+V=			3.2.0
 DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -21,19 +21,14 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # CMU - see COPYING file in package
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c com_err crypto icudata icuuc jansson m pcre pcreposix
-WANTLIB += pthread sasl2 sqlite3 ssl ${COMPILER_LIBCXX} uuid z
-WANTLIB += perl # uses perl ABI
+WANTLIB += ${COMPILER_LIBCXX} c com_err crypto icudata icui18n
+WANTLIB += icuuc jansson m pcre pcreposix perl sasl2 sqlite3 ssl
+WANTLIB += uuid z
+
+MASTER_SITES=		https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
 
 COMPILER=		base-clang ports-gcc base-gcc
-
-MASTER_SITES=		https://www.cyrusimap.org/releases/ \
-			ftp://ftp.cyrusimap.org/cyrus-imapd/ \
-			ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
-
 USE_GMAKE=		Yes
-
-BUILD_DEPENDS=		textproc/py-sphinx
 
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/jansson \
@@ -52,6 +47,10 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--with-sasl=${LOCALBASE} \
 			--with-cyrus-user=_cyrus \
 			--with-syslogfacility=MAIL \
+			--without-chardet \
+			--without-cld2 \
+			--without-sphinx-build \
+			--without-zeroskip \
 			--disable-gssapi \
 			--enable-autocreate \
 			--enable-idled \
@@ -65,6 +64,8 @@ CONFIGURE_ARGS +=	--without-snmp
 CONFIGURE_ARGS +=	--without-clamav \
 			--disable-http
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 # --mandir is overriden by the ports infrastructure
 FAKE_FLAGS=		mandir=${PREFIX}/cyrus/man
 
@@ -77,8 +78,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 		${PREFIX}/share/examples/cyrus-imapd/
 	rm -r ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd \
-		${PREFIX}/share/doc/cyrus-imapd/text \
-		${PREFIX}/share/examples/cyrus-imapd/tools/vzic
+		${PREFIX}/share/doc/cyrus-imapd/text
 # cleanup
 	rm -r ${PREFIX}/share/doc/cyrus-imapd/html/{_*,.buildinfo}
 	find ${PREFIX}/share/{doc,examples}/cyrus-imapd -name '.gitignore' -or \
