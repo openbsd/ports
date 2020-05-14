@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/01/19 20:49:11 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/14 19:20:27 kn Exp $
 
 # ectool requires amd64_iopl(2)
 # intelmetool requires <amd64/pio.h>
@@ -6,10 +6,9 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		utilities to work on firmware images and hardware
 
-V =			4.11
+V =			4.12
 DISTNAME =		coreboot-${V}
 PKGNAME =		coreboot-utils-${V}
-REVISION =		0
 
 CATEGORIES =		sysutils devel
 

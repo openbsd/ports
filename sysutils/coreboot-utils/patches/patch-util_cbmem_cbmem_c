@@ -1,9 +1,9 @@
-$OpenBSD: patch-util_cbmem_cbmem_c,v 1.1.1.1 2020/01/18 15:16:22 kn Exp $
+$OpenBSD: patch-util_cbmem_cbmem_c,v 1.2 2020/05/14 19:20:27 kn Exp $
 
 Index: util/cbmem/cbmem.c
 --- util/cbmem/cbmem.c.orig
 +++ util/cbmem/cbmem.c
-@@ -1325,7 +1325,7 @@ int main(int argc, char** argv)
+@@ -1311,7 +1311,7 @@ int main(int argc, char** argv)
  
  	mem_fd = open("/dev/mem", O_RDONLY, 0);
  	if (mem_fd < 0) {
