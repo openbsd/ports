@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2020/03/31 10:48:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.37 2020/05/14 15:28:46 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -7,16 +7,19 @@
 @pkgpath x11/gnome/screensaver
 @bin bin/gnome-extensions
 @bin bin/gnome-shell
-@bin bin/gnome-shell-extension-prefs
+bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
 bin/gnome-shell-perf-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
+lib/gnome-shell/girepository-1.0/
+lib/gnome-shell/girepository-1.0/Shew-0.typelib
 @so lib/gnome-shell/libgnome-shell-menu.so
 @so lib/gnome-shell/libgnome-shell.so
 @so lib/gnome-shell/libgvc.so
+@so lib/gnome-shell/libshew-0.so
 @so lib/gnome-shell/libst-1.0.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
@@ -26,8 +29,10 @@ libexec/gnome-shell-overrides-migration.sh
 @man man/man1/gnome-shell.1
 share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
-share/applications/gnome-shell-extension-prefs.desktop
+share/applications/org.gnome.Extensions.desktop
+share/applications/org.gnome.Shell.Extensions.desktop
 share/applications/org.gnome.Shell.desktop
+share/bash-completion/completions/gnome-extensions
 share/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
 share/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
 share/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
@@ -35,8 +40,11 @@ share/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
+share/dbus-1/services/org.gnome.Extensions.service
 share/dbus-1/services/org.gnome.Shell.CalendarServer.service
+share/dbus-1/services/org.gnome.Shell.Extensions.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
+share/dbus-1/services/org.gnome.Shell.Notifications.service
 share/examples/gnome-shell/
 share/examples/gnome-shell/xdg/
 share/examples/gnome-shell/xdg/autostart/
@@ -48,10 +56,24 @@ share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
 share/gnome-shell/Shell-0.1.gir
 share/gnome-shell/St-1.0.gir
+share/gnome-shell/gir-1.0/
+share/gnome-shell/gir-1.0/Shew-0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource
 share/gnome-shell/gnome-shell-osk-layouts.gresource
 share/gnome-shell/gnome-shell-theme.gresource
+share/gnome-shell/org.gnome.Extensions
+share/gnome-shell/org.gnome.Extensions.data.gresource
+share/gnome-shell/org.gnome.Extensions.src.gresource
+share/gnome-shell/org.gnome.Shell.Extensions
+share/gnome-shell/org.gnome.Shell.Extensions.src.gresource
+share/gnome-shell/org.gnome.Shell.Notifications
+share/gnome-shell/org.gnome.Shell.Notifications.src.gresource
 share/gnome-shell/perf-background.xml
+share/icons/hicolor/scalable/apps/org.gnome.Extensions.Devel.svg
+share/icons/hicolor/scalable/apps/org.gnome.Extensions.svg
+share/icons/hicolor/scalable/apps/org.gnome.Shell.Extensions.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Shell.Extensions-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-shell.mo
 share/locale/an/LC_MESSAGES/gnome-shell.mo
 share/locale/ar/LC_MESSAGES/gnome-shell.mo
@@ -134,8 +156,10 @@ share/locale/vi/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-shell.mo
+share/metainfo/org.gnome.Extensions.metainfo.xml
 share/xdg-desktop-portal/
 share/xdg-desktop-portal/portals/
 share/xdg-desktop-portal/portals/gnome-shell.portal
 @tag glib-compile-schemas
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

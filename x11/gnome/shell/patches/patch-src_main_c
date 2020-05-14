@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.5 2019/11/02 15:04:09 jasper Exp $
+$OpenBSD: patch-src_main_c,v 1.6 2020/05/14 15:28:46 jasper Exp $
 Disable broken signal handler which locks the malloc mutex recursively.
 
 What's happening here is that gnome-shell wants to print a gjs stack
@@ -37,7 +37,7 @@ not available.
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -397,6 +397,7 @@ dump_gjs_stack_on_signal_handler (int signo)
+@@ -395,6 +395,7 @@ dump_gjs_stack_on_signal_handler (int signo)
  static void
  dump_gjs_stack_on_signal (int signo)
  {
@@ -45,7 +45,7 @@ Index: src/main.c
    struct sigaction sa = {
      .sa_flags   = SA_RESETHAND | SA_NODEFER,
      .sa_handler = dump_gjs_stack_on_signal_handler,
-@@ -406,6 +407,7 @@ dump_gjs_stack_on_signal (int signo)
+@@ -404,6 +405,7 @@ dump_gjs_stack_on_signal (int signo)
  
    sigaction (signo, &sa, NULL);
    _tracked_signals[signo] = TRUE;

@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.187 2020/04/25 10:07:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.188 2020/05/14 15:28:46 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.34.5
+GNOME_VERSION=		3.36.2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo croco-0.6
-WANTLIB += ecal-2.0 edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 gjs glib-2.0 gobject-2.0 gstbase-1.0
-WANTLIB += gstreamer-1.0 gtk-3 ical-glib intl json-glib-1.0 m
-WANTLIB += mutter-5 pango-1.0 pangocairo-1.0 polkit-agent-1 polkit-gobject-1
-WANTLIB += pulse pulse-mainloop-glib gnome-autoar-0 gnome-desktop-3
-WANTLIB += lib/mutter-5/mutter-clutter-5
-WANTLIB += lib/mutter-5/mutter-cogl-5
-WANTLIB += lib/mutter-5/mutter-cogl-pango-5
+WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
+WANTLIB += edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += girepository-1.0 gjs glib-2.0 gnome-autoar-0 gnome-desktop-3
+WANTLIB += gobject-2.0 graphene-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gtk-3 ical-glib intl json-glib-1.0 m mutter-6 pango-1.0
+WANTLIB += pangocairo-1.0 polkit-agent-1 polkit-gobject-1 pulse
+WANTLIB += pulse-mainloop-glib
+WANTLIB += lib/mutter-6/mutter-clutter-6
+WANTLIB += lib/mutter-6/mutter-cogl-6
+WANTLIB += lib/mutter-6/mutter-cogl-pango-6
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -30,11 +31,12 @@ COMPILER=		base-clang ports-gcc
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection
+MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection gtk-update-icon-cache
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas \
+			shells/bash-completion \
 			textproc/asciidoc \
 			www/sassc
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
@@ -43,11 +45,10 @@ LIB_DEPENDS=		audio/pulseaudio \
 			databases/evolution-data-server \
 			multimedia/gstreamer1/core \
 			sysutils/polkit \
-			www/libcroco \
 			x11/gnome/autoar \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=3.32.0
+			x11/gnome/mutter>=3.36.0
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js

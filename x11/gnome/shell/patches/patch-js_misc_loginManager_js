@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.9 2019/11/02 15:04:09 jasper Exp $
+$OpenBSD: patch-js_misc_loginManager_js,v 1.10 2020/05/14 15:28:46 jasper Exp $
 
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
@@ -25,7 +25,7 @@ Index: js/misc/loginManager.js
      } catch (e) {
          return false;
      }
-@@ -83,7 +89,7 @@ function getLoginManager() {
+@@ -84,7 +90,7 @@ function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -34,7 +34,7 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -198,6 +204,82 @@ var LoginManagerSystemd = class {
+@@ -199,6 +205,82 @@ var LoginManagerSystemd = class {
      }
  };
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
