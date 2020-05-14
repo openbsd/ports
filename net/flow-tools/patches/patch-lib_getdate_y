@@ -1,6 +1,8 @@
-$OpenBSD: patch-lib_getdate_y,v 1.1 2013/04/19 21:32:37 sthen Exp $
---- lib/getdate.y.orig	Fri Apr 19 21:26:06 2013
-+++ lib/getdate.y	Fri Apr 19 22:18:00 2013
+$OpenBSD: patch-lib_getdate_y,v 1.2 2020/05/14 11:49:57 sthen Exp $
+
+Index: lib/getdate.y
+--- lib/getdate.y.orig
++++ lib/getdate.y
 @@ -651,9 +651,9 @@ Convert(time_t Month, time_t Day, time_t Year,
  	Year += 1900;
      DaysInMonth[1] = Year % 4 == 0 && (Year % 100 != 0 || Year % 400 == 0)

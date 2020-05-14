@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2020/05/14 11:49:57 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
-COMMENT=	cisco NetFlow utilities
+COMMENT=	utilities for dealing with NetFlow exports
 
-DISTNAME=	flow-tools-0.68.5.1
-EXTRACT_SUFX=	.tar.bz2
-REVISION=	5
+GH_ACCOUNT=	5u623l20
+GH_PROJECT=	flow-tools
+GH_TAGNAME=	v0.68.6
+
 CATEGORIES=	net
 
-# forked from:  http://www.splintered.net/sw/flow-tools/
-HOMEPAGE=	https://code.google.com/p/flow-tools/
-
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=flow-tools/}
-
+# BSD
 PERMIT_PACKAGE=	Yes
+
+WANTLIB=		c z
 
 FLAVORS=		pgsql
 FLAVOR?=
-
-WANTLIB=		c z
 
 MODULES=		lang/python
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/flow-tools
 
-CONFIGURE_STYLE=	gnu
-SEPARATE_BUILD=		Yes
+CONFIGURE_STYLE=	autoreconf
+AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION=	2.69
+BUILD_DEPENDS=		textproc/docbook-to-man
+
 SYSCONFDIR=		${BASESYSCONFDIR}/flow-tools
 
 .if !${FLAVOR:Mpgsql}
