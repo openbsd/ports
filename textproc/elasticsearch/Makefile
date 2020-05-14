@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.72 2020/04/03 09:27:02 pvk Exp $
+# $OpenBSD: Makefile,v 1.73 2020/05/14 21:38:18 pvk Exp $
 
 COMMENT =		distributed RESTful search and analytics
 
-V =			7.6.2
+V =			7.7.0
 DISTNAME =		elasticsearch-oss-$V-darwin-x86_64
 PKGNAME =		elasticsearch-$V
 CATEGORIES =		textproc
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${ES_HOME}/bin \
 		${PREFIX}/share/{doc,examples}/elasticsearch/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${ES_HOME}/bin/
-	${INSTALL_DATA} ${WRKSRC}/config/* \
+	${INSTALL_DATA} ${WRKSRC}/config/*.{options,properties,yml} \
 		${PREFIX}/share/examples/elasticsearch/
 	cp -R ${WRKSRC}/{lib,modules,plugins} ${ES_HOME}/
 	${INSTALL_DATA} ${WRKSRC}/{LICENSE,NOTICE}.txt \

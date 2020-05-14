@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2020/04/03 09:27:02 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.41 2020/05/14 21:38:19 pvk Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/elasticsearch.keystore
@@ -30,10 +30,10 @@ elasticsearch/lib/elasticsearch-plugin-classloader-${V}.jar
 elasticsearch/lib/elasticsearch-secure-sm-${V}.jar
 elasticsearch/lib/elasticsearch-x-content-${V}.jar
 elasticsearch/lib/hppc-0.8.1.jar
-elasticsearch/lib/jackson-core-2.8.11.jar
-elasticsearch/lib/jackson-dataformat-cbor-2.8.11.jar
-elasticsearch/lib/jackson-dataformat-smile-2.8.11.jar
-elasticsearch/lib/jackson-dataformat-yaml-2.8.11.jar
+elasticsearch/lib/jackson-core-2.10.4.jar
+elasticsearch/lib/jackson-dataformat-cbor-2.10.4.jar
+elasticsearch/lib/jackson-dataformat-smile-2.10.4.jar
+elasticsearch/lib/jackson-dataformat-yaml-2.10.4.jar
 elasticsearch/lib/java-version-checker-${V}.jar
 elasticsearch/lib/jna-4.5.1.jar
 elasticsearch/lib/joda-time-2.10.4.jar
@@ -41,22 +41,21 @@ elasticsearch/lib/jopt-simple-5.0.2.jar
 elasticsearch/lib/jts-core-1.15.0.jar
 elasticsearch/lib/log4j-api-2.11.1.jar
 elasticsearch/lib/log4j-core-2.11.1.jar
-elasticsearch/lib/lucene-analyzers-common-8.4.0.jar
-elasticsearch/lib/lucene-backward-codecs-8.4.0.jar
-elasticsearch/lib/lucene-core-8.4.0.jar
-elasticsearch/lib/lucene-grouping-8.4.0.jar
-elasticsearch/lib/lucene-highlighter-8.4.0.jar
-elasticsearch/lib/lucene-join-8.4.0.jar
-elasticsearch/lib/lucene-memory-8.4.0.jar
-elasticsearch/lib/lucene-misc-8.4.0.jar
-elasticsearch/lib/lucene-queries-8.4.0.jar
-elasticsearch/lib/lucene-queryparser-8.4.0.jar
-elasticsearch/lib/lucene-sandbox-8.4.0.jar
-elasticsearch/lib/lucene-spatial-8.4.0.jar
-elasticsearch/lib/lucene-spatial-extras-8.4.0.jar
-elasticsearch/lib/lucene-spatial3d-8.4.0.jar
-elasticsearch/lib/lucene-suggest-8.4.0.jar
-elasticsearch/lib/snakeyaml-1.17.jar
+elasticsearch/lib/lucene-analyzers-common-8.5.1.jar
+elasticsearch/lib/lucene-backward-codecs-8.5.1.jar
+elasticsearch/lib/lucene-core-8.5.1.jar
+elasticsearch/lib/lucene-grouping-8.5.1.jar
+elasticsearch/lib/lucene-highlighter-8.5.1.jar
+elasticsearch/lib/lucene-join-8.5.1.jar
+elasticsearch/lib/lucene-memory-8.5.1.jar
+elasticsearch/lib/lucene-misc-8.5.1.jar
+elasticsearch/lib/lucene-queries-8.5.1.jar
+elasticsearch/lib/lucene-queryparser-8.5.1.jar
+elasticsearch/lib/lucene-sandbox-8.5.1.jar
+elasticsearch/lib/lucene-spatial-extras-8.5.1.jar
+elasticsearch/lib/lucene-spatial3d-8.5.1.jar
+elasticsearch/lib/lucene-suggest-8.5.1.jar
+elasticsearch/lib/snakeyaml-1.26.jar
 elasticsearch/lib/spatial4j-0.7.jar
 elasticsearch/lib/t-digest-3.2.jar
 elasticsearch/lib/tools/
@@ -82,11 +81,11 @@ elasticsearch/modules/ingest-geoip/
 elasticsearch/modules/ingest-geoip/GeoLite2-ASN.mmdb
 elasticsearch/modules/ingest-geoip/GeoLite2-City.mmdb
 elasticsearch/modules/ingest-geoip/GeoLite2-Country.mmdb
-elasticsearch/modules/ingest-geoip/geoip2-2.9.0.jar
+elasticsearch/modules/ingest-geoip/geoip2-2.13.1.jar
 elasticsearch/modules/ingest-geoip/ingest-geoip-${V}.jar
-elasticsearch/modules/ingest-geoip/jackson-annotations-2.8.11.jar
-elasticsearch/modules/ingest-geoip/jackson-databind-2.8.11.6.jar
-elasticsearch/modules/ingest-geoip/maxmind-db-1.2.2.jar
+elasticsearch/modules/ingest-geoip/jackson-annotations-2.10.4.jar
+elasticsearch/modules/ingest-geoip/jackson-databind-2.10.4.jar
+elasticsearch/modules/ingest-geoip/maxmind-db-1.3.1.jar
 elasticsearch/modules/ingest-geoip/plugin-descriptor.properties
 elasticsearch/modules/ingest-geoip/plugin-security.policy
 elasticsearch/modules/ingest-user-agent/
@@ -98,7 +97,7 @@ elasticsearch/modules/lang-expression/asm-5.0.4.jar
 elasticsearch/modules/lang-expression/asm-commons-5.0.4.jar
 elasticsearch/modules/lang-expression/asm-tree-5.0.4.jar
 elasticsearch/modules/lang-expression/lang-expression-${V}.jar
-elasticsearch/modules/lang-expression/lucene-expressions-8.4.0.jar
+elasticsearch/modules/lang-expression/lucene-expressions-8.5.1.jar
 elasticsearch/modules/lang-expression/plugin-descriptor.properties
 elasticsearch/modules/lang-expression/plugin-security.policy
 elasticsearch/modules/lang-mustache/
@@ -145,14 +144,17 @@ elasticsearch/modules/repository-url/
 elasticsearch/modules/repository-url/plugin-descriptor.properties
 elasticsearch/modules/repository-url/plugin-security.policy
 elasticsearch/modules/repository-url/repository-url-${V}.jar
+elasticsearch/modules/tasks/
+elasticsearch/modules/tasks/plugin-descriptor.properties
+elasticsearch/modules/tasks/tasks-${V}.jar
 elasticsearch/modules/transport-netty4/
-elasticsearch/modules/transport-netty4/netty-buffer-4.1.43.Final.jar
-elasticsearch/modules/transport-netty4/netty-codec-4.1.43.Final.jar
-elasticsearch/modules/transport-netty4/netty-codec-http-4.1.43.Final.jar
-elasticsearch/modules/transport-netty4/netty-common-4.1.43.Final.jar
-elasticsearch/modules/transport-netty4/netty-handler-4.1.43.Final.jar
-elasticsearch/modules/transport-netty4/netty-resolver-4.1.43.Final.jar
-elasticsearch/modules/transport-netty4/netty-transport-4.1.43.Final.jar
+elasticsearch/modules/transport-netty4/netty-buffer-4.1.45.Final.jar
+elasticsearch/modules/transport-netty4/netty-codec-4.1.45.Final.jar
+elasticsearch/modules/transport-netty4/netty-codec-http-4.1.45.Final.jar
+elasticsearch/modules/transport-netty4/netty-common-4.1.45.Final.jar
+elasticsearch/modules/transport-netty4/netty-handler-4.1.45.Final.jar
+elasticsearch/modules/transport-netty4/netty-resolver-4.1.45.Final.jar
+elasticsearch/modules/transport-netty4/netty-transport-4.1.45.Final.jar
 elasticsearch/modules/transport-netty4/plugin-descriptor.properties
 elasticsearch/modules/transport-netty4/plugin-security.policy
 elasticsearch/modules/transport-netty4/transport-netty4-client-${V}.jar
