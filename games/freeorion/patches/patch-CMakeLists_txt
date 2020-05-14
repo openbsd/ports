@@ -1,10 +1,10 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/11/01 19:17:31 cwen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/05/14 18:14:50 kirby Exp $
 Remove hardcoded optimisation option.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -394,7 +394,6 @@ target_compile_options(freeorionparseobj
+@@ -459,7 +459,6 @@ target_compile_options(freeorionparseobj
          $<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>
          $<$<CXX_COMPILER_ID:Clang>:-ftemplate-depth=512>
          $<$<CXX_COMPILER_ID:AppleClang>:-ftemplate-depth=512>

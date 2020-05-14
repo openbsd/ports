@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/03 11:43:48 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/14 18:14:51 kirby Exp $
 @bin bin/freeorion
 @bin bin/freeorionca
 @bin bin/freeoriond
 lib/freeorion/
-lib/freeorion/libGiGi.so
-lib/freeorion/libGiGiSDL.so
-lib/freeorion/libfreeorioncommon.so
-lib/freeorion/libfreeorionparse.so
+@so lib/freeorion/libGiGi.so
+@so lib/freeorion/libGiGiSDL.so
+@so lib/freeorion/libfreeorioncommon.so
+@so lib/freeorion/libfreeorionparse.so
 share/applications/freeorion.desktop
 share/freeorion/
 share/freeorion/default/
@@ -48,7 +48,11 @@ share/freeorion/default/data/art/encyclopedia/planet_environments/pt_toxic.png
 share/freeorion/default/data/art/encyclopedia/planet_environments/pt_toxic02.png
 share/freeorion/default/data/art/encyclopedia/planet_environments/pt_tundra.png
 share/freeorion/default/data/art/fields/
-share/freeorion/default/data/art/fields/rainbow_storm.png
+share/freeorion/default/data/art/fields/accretion_disc.png
+share/freeorion/default/data/art/fields/ion_storm.png
+share/freeorion/default/data/art/fields/molecular_cloud.png
+share/freeorion/default/data/art/fields/star_forming_nebula_1.png
+share/freeorion/default/data/art/fields/star_forming_nebula_2.png
 share/freeorion/default/data/art/galaxy_decoration/
 share/freeorion/default/data/art/galaxy_decoration/blue_set/
 share/freeorion/default/data/art/galaxy_decoration/blue_set/gaseous01.png
@@ -527,6 +531,11 @@ share/freeorion/default/data/art/icons/planet/terran.png
 share/freeorion/default/data/art/icons/planet/tiny.png
 share/freeorion/default/data/art/icons/planet/toxic.png
 share/freeorion/default/data/art/icons/planet/tundra.png
+share/freeorion/default/data/art/icons/planet_status_attacked.png
+share/freeorion/default/data/art/icons/planet_status_conquered.png
+share/freeorion/default/data/art/icons/planet_status_supply.png
+share/freeorion/default/data/art/icons/planet_status_unhappy.png
+share/freeorion/default/data/art/icons/planet_status_warning.png
 share/freeorion/default/data/art/icons/ready.png
 share/freeorion/default/data/art/icons/ship_hulls/
 share/freeorion/default/data/art/icons/ship_hulls/agregate_asteroid_hull_small.png
@@ -700,6 +709,7 @@ share/freeorion/default/data/art/icons/sitrep/ship_produced.png
 share/freeorion/default/data/art/icons/sitrep/tech_researched.png
 share/freeorion/default/data/art/icons/sitrep/tech_unlocked.png
 share/freeorion/default/data/art/icons/sitrep/victory.png
+share/freeorion/default/data/art/icons/sitrep/weapon_upgrade.png
 share/freeorion/default/data/art/icons/specials_huge/
 share/freeorion/default/data/art/icons/specials_huge/abandoned-colony.png
 share/freeorion/default/data/art/icons/specials_huge/ancient_ruins.png
@@ -1990,6 +2000,34 @@ share/freeorion/default/data/art/planets/rings/rings04.png
 share/freeorion/default/data/art/planets/rings/rings05.png
 share/freeorion/default/data/art/planets/rings/rings06.png
 share/freeorion/default/data/art/planets/rings/rings07.png
+share/freeorion/default/data/art/species/
+share/freeorion/default/data/art/species/abaddoni.png
+share/freeorion/default/data/art/species/banforo.png
+share/freeorion/default/data/art/species/chato.png
+share/freeorion/default/data/art/species/eaxaw.png
+share/freeorion/default/data/art/species/gysache.png
+share/freeorion/default/data/art/species/happybirthdays.png
+share/freeorion/default/data/art/species/hhhoh.png
+share/freeorion/default/data/art/species/laenfa.png
+share/freeorion/default/data/art/species/phinnert.png
+share/freeorion/default/data/art/species/preview/
+share/freeorion/default/data/art/species/preview/abaddoni.png
+share/freeorion/default/data/art/species/preview/banforo.png
+share/freeorion/default/data/art/species/preview/chato.png
+share/freeorion/default/data/art/species/preview/eaxaw.png
+share/freeorion/default/data/art/species/preview/gysache.png
+share/freeorion/default/data/art/species/preview/happybirthdays.png
+share/freeorion/default/data/art/species/preview/hhhoh.png
+share/freeorion/default/data/art/species/preview/laenfa prev.png
+share/freeorion/default/data/art/species/preview/phinnert.png
+share/freeorion/default/data/art/species/preview/scylior.png
+share/freeorion/default/data/art/species/preview/trenchers.png
+share/freeorion/default/data/art/species/preview/trith.png
+share/freeorion/default/data/art/species/preview/ugmors.png
+share/freeorion/default/data/art/species/scylior.png
+share/freeorion/default/data/art/species/trenchers.png
+share/freeorion/default/data/art/species/trith.png
+share/freeorion/default/data/art/species/ugmors.png
 share/freeorion/default/data/art/splash.png
 share/freeorion/default/data/art/stars/
 share/freeorion/default/data/art/stars/blackhole1.png
@@ -2212,6 +2250,8 @@ share/freeorion/default/python/AI/CombatRatingsAI.py
 share/freeorion/default/python/AI/CombatRatingsAI.pyc
 share/freeorion/default/python/AI/DiplomaticCorp.py
 share/freeorion/default/python/AI/DiplomaticCorp.pyc
+share/freeorion/default/python/AI/DynamicResearchAI.py
+share/freeorion/default/python/AI/DynamicResearchAI.pyc
 share/freeorion/default/python/AI/EnumsAI.py
 share/freeorion/default/python/AI/EnumsAI.pyc
 share/freeorion/default/python/AI/EspionageAI.py
@@ -2243,6 +2283,8 @@ share/freeorion/default/python/AI/ShipDesignAI.pyc
 share/freeorion/default/python/AI/TechsListsAI.py
 share/freeorion/default/python/AI/TechsListsAI.pyc
 share/freeorion/default/python/AI/ai_debug_config.ini
+share/freeorion/default/python/AI/aistate_interface.py
+share/freeorion/default/python/AI/aistate_interface.pyc
 share/freeorion/default/python/AI/character/
 share/freeorion/default/python/AI/character/__init__.py
 share/freeorion/default/python/AI/character/__init__.pyc
@@ -2260,8 +2302,6 @@ share/freeorion/default/python/AI/freeorion_tools/_freeorion_tools.py
 share/freeorion/default/python/AI/freeorion_tools/_freeorion_tools.pyc
 share/freeorion/default/python/AI/freeorion_tools/extend_freeorion_AI_interface.py
 share/freeorion/default/python/AI/freeorion_tools/extend_freeorion_AI_interface.pyc
-share/freeorion/default/python/AI/freeorion_tools/handlers.py
-share/freeorion/default/python/AI/freeorion_tools/handlers.pyc
 share/freeorion/default/python/AI/freeorion_tools/interactive_shell.py
 share/freeorion/default/python/AI/freeorion_tools/interactive_shell.pyc
 share/freeorion/default/python/AI/freeorion_tools/timers.py
@@ -2277,14 +2317,17 @@ share/freeorion/default/python/AI/savegame_codec/_definitions.py
 share/freeorion/default/python/AI/savegame_codec/_definitions.pyc
 share/freeorion/default/python/AI/savegame_codec/_encoder.py
 share/freeorion/default/python/AI/savegame_codec/_encoder.pyc
+share/freeorion/default/python/AI/target.py
+share/freeorion/default/python/AI/target.pyc
 share/freeorion/default/python/AI/turn_state.py
 share/freeorion/default/python/AI/turn_state.pyc
-share/freeorion/default/python/AI/universe_object.py
-share/freeorion/default/python/AI/universe_object.pyc
 share/freeorion/default/python/README.md
 share/freeorion/default/python/auth/
 share/freeorion/default/python/auth/auth.py
 share/freeorion/default/python/auth/auth.pyc
+share/freeorion/default/python/chat/
+share/freeorion/default/python/chat/chat.py
+share/freeorion/default/python/chat/chat.pyc
 share/freeorion/default/python/common/
 share/freeorion/default/python/common/__init__.py
 share/freeorion/default/python/common/__init__.pyc
@@ -2293,6 +2336,8 @@ share/freeorion/default/python/common/charting/charts.py
 share/freeorion/default/python/common/charting/charts.pyc
 share/freeorion/default/python/common/configure_logging.py
 share/freeorion/default/python/common/configure_logging.pyc
+share/freeorion/default/python/common/handlers.py
+share/freeorion/default/python/common/handlers.pyc
 share/freeorion/default/python/common/listeners.py
 share/freeorion/default/python/common/listeners.pyc
 share/freeorion/default/python/common/option_tools.py
@@ -2309,6 +2354,8 @@ share/freeorion/default/python/handlers/README.md
 share/freeorion/default/python/handlers/inspect_freeOrionAIInterface.py
 share/freeorion/default/python/handlers/inspect_freeOrionAIInterface.pyc
 share/freeorion/default/python/handlers/inspect_interface_config.ini
+share/freeorion/default/python/handlers/inspect_universe_generation.py
+share/freeorion/default/python/handlers/inspect_universe_generation.pyc
 share/freeorion/default/python/stub_generator/
 share/freeorion/default/python/stub_generator/__init__.py
 share/freeorion/default/python/stub_generator/__init__.pyc
@@ -2327,6 +2374,8 @@ share/freeorion/default/python/tests/AI/character_test/character_strings_test.py
 share/freeorion/default/python/tests/AI/character_test/character_strings_test.pyc
 share/freeorion/default/python/tests/AI/character_test/character_test.py
 share/freeorion/default/python/tests/AI/character_test/character_test.pyc
+share/freeorion/default/python/tests/AI/test_assertion_fails.py
+share/freeorion/default/python/tests/AI/test_assertion_fails.pyc
 share/freeorion/default/python/tests/AI/test_parse_ai_tag_grade.py
 share/freeorion/default/python/tests/AI/test_parse_ai_tag_grade.pyc
 share/freeorion/default/python/tests/AI/test_read_only_dict.py
@@ -2442,6 +2491,7 @@ share/freeorion/default/scripting/buildings/colonies/SP_EAXAW.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_EGASSEM.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_ETTY.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_EXOBOT.focs.txt
+share/freeorion/default/scripting/buildings/colonies/SP_FULVER.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_FURTHEST.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_GEORGE.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_GYSACHE.focs.txt
@@ -2505,13 +2555,17 @@ share/freeorion/default/scripting/encyclopedia/ENC_SPECIES.focs.txt
 share/freeorion/default/scripting/encyclopedia/ENC_TECH.focs.txt
 share/freeorion/default/scripting/encyclopedia/FIELDS.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/
+share/freeorion/default/scripting/encyclopedia/game_concepts/AI_LEVELS.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/DETECTION.focs.txt
+share/freeorion/default/scripting/encyclopedia/game_concepts/FUEL.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/STOCKPILE_TRANSFER.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/SYSTEM_BLOCKADE.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/diplomacy/
-share/freeorion/default/scripting/encyclopedia/game_concepts/diplomacy/AI_LEVELS.focs.txt
+share/freeorion/default/scripting/encyclopedia/game_concepts/diplomacy/ALLIANCE.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/diplomacy/DIPLOMACY.focs.txt
+share/freeorion/default/scripting/encyclopedia/game_concepts/diplomacy/GIFTING.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/diplomacy/PEACE.focs.txt
+share/freeorion/default/scripting/encyclopedia/game_concepts/diplomacy/WAR.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/metabolism/
 share/freeorion/default/scripting/encyclopedia/game_concepts/metabolism/CATEGORY_METABOLISMS.focs.txt
 share/freeorion/default/scripting/encyclopedia/game_concepts/metabolism/GASEOUS_SPECIES.focs.txt
@@ -2887,6 +2941,7 @@ share/freeorion/default/scripting/ship_parts/Stealth/stealth.macros
 share/freeorion/default/scripting/ship_parts/Troops/
 share/freeorion/default/scripting/ship_parts/Troops/GT_TROOP_POD.focs.txt
 share/freeorion/default/scripting/ship_parts/Troops/GT_TROOP_POD_2.focs.txt
+share/freeorion/default/scripting/ship_parts/targeting.macros
 share/freeorion/default/scripting/specials/
 share/freeorion/default/scripting/specials/CONC_CAMP_MASTER.focs.txt
 share/freeorion/default/scripting/specials/CONC_CAMP_SLAVE.focs.txt
@@ -2962,6 +3017,7 @@ share/freeorion/default/scripting/species/SP_ETTY.focs.txt
 share/freeorion/default/scripting/species/SP_EXOBOT.focs.txt
 share/freeorion/default/scripting/species/SP_EXPERIMENTOR.focs.txt
 share/freeorion/default/scripting/species/SP_FIFTYSEVEN.focs.txt
+share/freeorion/default/scripting/species/SP_FULVER.focs.txt
 share/freeorion/default/scripting/species/SP_FURTHEST.focs.txt
 share/freeorion/default/scripting/species/SP_GEORGE.focs.txt
 share/freeorion/default/scripting/species/SP_GISGUSGTHRIM.focs.txt
@@ -2998,6 +3054,7 @@ share/freeorion/default/scripting/species/common/advanced_focus.macros
 share/freeorion/default/scripting/species/common/detection.macros
 share/freeorion/default/scripting/species/common/env.macros
 share/freeorion/default/scripting/species/common/focus.macros
+share/freeorion/default/scripting/species/common/fuel.macros
 share/freeorion/default/scripting/species/common/general.macros
 share/freeorion/default/scripting/species/common/happiness.macros
 share/freeorion/default/scripting/species/common/industry.macros
