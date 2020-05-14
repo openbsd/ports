@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_modules_salt_proxy_py,v 1.2 2018/04/25 10:02:48 jasper Exp $
+$OpenBSD: patch-salt_modules_salt_proxy_py,v 1.3 2020/05/14 16:47:28 florian Exp $
 
 Print the full command, this allows the grep to find a match when
 a proxy minion is running. Otherwise it incorrectly determine the
@@ -7,7 +7,7 @@ given proxy isn't running and fork off another copy repeatedly.
 Index: salt/modules/salt_proxy.py
 --- salt/modules/salt_proxy.py.orig
 +++ salt/modules/salt_proxy.py
-@@ -74,7 +74,7 @@ def _is_proxy_running(proxyname):
+@@ -75,7 +75,7 @@ def _is_proxy_running(proxyname):
      '''
      Check if proxy for this name is running
      '''

@@ -1,0 +1,8 @@
+$OpenBSD: patch-requirements_crypto_txt,v 1.1 2020/05/14 16:47:28 florian Exp $
+
+Index: requirements/crypto.txt
+--- requirements/crypto.txt.orig
++++ requirements/crypto.txt
+@@ -1,2 +1 @@
+-pycrypto>=2.6.1; sys.platform not in 'win32,darwin'
+ pycryptodomex; sys.platform == 'win32'

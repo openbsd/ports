@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.139 2020/05/06 18:54:08 robert Exp $
+# $OpenBSD: Makefile,v 1.140 2020/05/14 16:47:27 florian Exp $
 
 # optional dependencies
-# https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
+# https://github.com/saltstack/salt/blob/develop/doc/conf.py
 # libvirt-python
 # py-GitPython
 # py-croniter
@@ -17,13 +17,12 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	2018.3.3
+MODPY_EGG_VERSION =	3000.3
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		3
 
 CATEGORIES =		sysutils net devel
 
-HOMEPAGE =		http://saltstack.org/
+HOMEPAGE =		https://community.saltstack.com/
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -31,51 +30,46 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		textproc/py-yaml \
-			www/py-jinja2 \
-			www/py-requests
-			
+BUILD_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR} \
+			www/py-jinja2${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
+
 # requirements/base.txt
-RUN_DEPENDS =		devel/py-futures \
-			net/py-msgpack>=0.6.2v0 \
-			textproc/py-MarkupSafe \
-			textproc/py-yaml \
-			www/py-jinja2 \
-			www/py-requests \
-			www/py-tornado
+RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR}>=0.6.2v0 \
+			textproc/py-MarkupSafe${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR} \
+			www/py-jinja2${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 # requirements/zeromq.txt
-RUN_DEPENDS +=		net/py-zmq \
-			security/py-cryptodome
+RUN_DEPENDS +=		net/py-zmq${MODPY_FLAVOR} \
+			security/py-cryptodome${MODPY_FLAVOR}
 
 # salt/output/progress.py
-RUN_DEPENDS +=		devel/py-progressbar
+RUN_DEPENDS +=		devel/py-progressbar${MODPY_FLAVOR}
 
 # salt/modules/x509.py
-RUN_DEPENDS +=		security/py-M2Crypto
+RUN_DEPENDS +=		security/py-M2Crypto${MODPY_FLAVOR}
 
 # max openfiles, soft: 3072, hard: 4096; DBus system session running...
 TEST_IS_INTERACTIVE =	Yes
 PORTHOME =		${WRKDIST}
-TEST_DEPENDS =		databases/py-mysql \
+TEST_DEPENDS =		databases/py-mysql${MODPY_FLAVOR} \
 			devel/git \
-			devel/py-gitpython \
-			devel/py-pip \
-			devel/py-six \
-			devel/py-virtualenv \
+			devel/py-gitpython${MODPY_FLAVOR} \
+			devel/py-pip${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR} \
+			devel/py-virtualenv${MODPY_FLAVOR} \
 			devel/subversion \
+			net/py-libcloud${MODPY_FLAVOR} \
 			net/rabbitmq \
 			sysutils/salt-testing \
-			www/py-CherryPy
-# python3 only
-#TEST_DEPENDS +=	net/py-libcloud
-
-# https://github.com/saltstack/salt/pull/45164
-post-extract:
-	cp ${FILESDIR}/{pf,vmctl}.py ${WRKSRC}/salt/modules/
+			www/py-CherryPy${MODPY_FLAVOR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/salt/returners/zabbix_return.py

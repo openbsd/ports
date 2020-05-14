@@ -1,9 +1,9 @@
-$OpenBSD: patch-salt_returners_zabbix_return_py,v 1.1 2018/04/25 17:16:19 robert Exp $
+$OpenBSD: patch-salt_returners_zabbix_return_py,v 1.2 2020/05/14 16:47:28 florian Exp $
 
 Index: salt/returners/zabbix_return.py
---- salt/returners/zabbix_return.py.orig
-+++ salt/returners/zabbix_return.py
-@@ -47,8 +47,8 @@ def zbx():
+--- salt/returners/zabbix_return.py.orig	Wed Feb  5 11:27:41 2020
++++ salt/returners/zabbix_return.py	Wed Feb  5 11:28:12 2020
+@@ -40,8 +40,8 @@ def zbx():
          zabbix_sender = '/usr/local/zabbix/bin/zabbix_sender'
          zabbix_config = '/usr/local/zabbix/etc/zabbix_agentd.conf'
          return {"sender": zabbix_sender, "config": zabbix_config}
