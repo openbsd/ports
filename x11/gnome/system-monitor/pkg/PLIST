@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/05/08 13:15:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/05/14 15:11:48 jasper Exp $
 @bin bin/gnome-system-monitor
 libexec/gnome-system-monitor/
 @bin libexec/gnome-system-monitor/gsm-kill
@@ -358,6 +358,35 @@ share/help/ro/gnome-system-monitor/process-status.page
 share/help/ro/gnome-system-monitor/process-update-speed.page
 share/help/ro/gnome-system-monitor/solaris-mode.page
 share/help/ro/gnome-system-monitor/units.page
+share/help/ru/
+share/help/ru/gnome-system-monitor/
+share/help/ru/gnome-system-monitor/commandline.page
+share/help/ru/gnome-system-monitor/cpu-check.page
+share/help/ru/gnome-system-monitor/cpu-mem-normal.page
+share/help/ru/gnome-system-monitor/cpu-multicore.page
+share/help/ru/gnome-system-monitor/figures/
+share/help/ru/gnome-system-monitor/figures/monitorlogo.png
+share/help/ru/gnome-system-monitor/fs-device.page
+share/help/ru/gnome-system-monitor/fs-diskusage.page
+share/help/ru/gnome-system-monitor/fs-info.page
+share/help/ru/gnome-system-monitor/fs-showall.page
+share/help/ru/gnome-system-monitor/index.page
+share/help/ru/gnome-system-monitor/legal.xml
+share/help/ru/gnome-system-monitor/mem-check.page
+share/help/ru/gnome-system-monitor/mem-swap.page
+share/help/ru/gnome-system-monitor/memory-map-use.page
+share/help/ru/gnome-system-monitor/net-bits.page
+share/help/ru/gnome-system-monitor/process-explain.page
+share/help/ru/gnome-system-monitor/process-files.page
+share/help/ru/gnome-system-monitor/process-identify-file.page
+share/help/ru/gnome-system-monitor/process-identify-hog.page
+share/help/ru/gnome-system-monitor/process-kill.page
+share/help/ru/gnome-system-monitor/process-many.page
+share/help/ru/gnome-system-monitor/process-priority-change.page
+share/help/ru/gnome-system-monitor/process-status.page
+share/help/ru/gnome-system-monitor/process-update-speed.page
+share/help/ru/gnome-system-monitor/solaris-mode.page
+share/help/ru/gnome-system-monitor/units.page
 share/help/sv/
 share/help/sv/gnome-system-monitor/
 share/help/sv/gnome-system-monitor/commandline.page
@@ -387,6 +416,7 @@ share/help/sv/gnome-system-monitor/process-status.page
 share/help/sv/gnome-system-monitor/process-update-speed.page
 share/help/sv/gnome-system-monitor/solaris-mode.page
 share/help/sv/gnome-system-monitor/units.page
+share/icons/hicolor/scalable/apps/org.gnome.SystemMonitor.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.SystemMonitor.svg
 share/icons/hicolor/symbolic/apps/org.gnome.SystemMonitor-symbolic.svg
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
@@ -444,6 +474,9 @@ share/locale/lt/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/lv/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/mai/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/mg/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/mk/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ml/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/mn/LC_MESSAGES/gnome-system-monitor.mo
