@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/11/01 10:41:27 ajacoutot Exp $
-share/help/C/gnome-help/figures/gnome-change-wallpaper.webm
+@comment $OpenBSD: PLIST,v 1.19 2020/05/14 15:27:48 ajacoutot Exp $
 share/help/C/gnome-help/figures/gnome-launching-applications.webm
 share/help/C/gnome-help/figures/gnome-task-switching.webm
 share/help/C/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -7,7 +6,6 @@ share/help/C/gnome-help/getting-started.page
 share/help/C/gnome-help/gs-animation.xml
 share/help/C/gnome-help/gs-browse-web.page
 share/help/C/gnome-help/gs-change-date-time-timezone.page
-share/help/C/gnome-help/gs-change-wallpaper.page
 share/help/C/gnome-help/gs-connect-online-accounts.page
 share/help/C/gnome-help/gs-datetime.svg
 share/help/C/gnome-help/gs-get-online.page
@@ -24,7 +22,6 @@ share/help/C/gnome-help/gs-search-settings.svg
 share/help/C/gnome-help/gs-search1.svg
 share/help/C/gnome-help/gs-search2.svg
 share/help/C/gnome-help/gs-switch-tasks.page
-share/help/C/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/C/gnome-help/gs-thumb-launching-apps.svg
 share/help/C/gnome-help/gs-thumb-task-switching.svg
 share/help/C/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -35,7 +32,6 @@ share/help/C/gnome-help/gs-web-browser1-firefox.svg
 share/help/C/gnome-help/gs-web-browser1.svg
 share/help/C/gnome-help/gs-web-browser2-firefox.svg
 share/help/C/gnome-help/gs-web-browser2.svg
-share/help/as/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/as/gnome-help/figures/gnome-launching-applications.webm
 share/help/as/gnome-help/figures/gnome-task-switching.webm
 share/help/as/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -43,7 +39,6 @@ share/help/as/gnome-help/getting-started.page
 share/help/as/gnome-help/gs-animation.xml
 share/help/as/gnome-help/gs-browse-web.page
 share/help/as/gnome-help/gs-change-date-time-timezone.page
-share/help/as/gnome-help/gs-change-wallpaper.page
 share/help/as/gnome-help/gs-connect-online-accounts.page
 share/help/as/gnome-help/gs-datetime.svg
 share/help/as/gnome-help/gs-get-online.page
@@ -60,7 +55,6 @@ share/help/as/gnome-help/gs-search-settings.svg
 share/help/as/gnome-help/gs-search1.svg
 share/help/as/gnome-help/gs-search2.svg
 share/help/as/gnome-help/gs-switch-tasks.page
-share/help/as/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/as/gnome-help/gs-thumb-launching-apps.svg
 share/help/as/gnome-help/gs-thumb-task-switching.svg
 share/help/as/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -71,7 +65,6 @@ share/help/as/gnome-help/gs-web-browser1-firefox.svg
 share/help/as/gnome-help/gs-web-browser1.svg
 share/help/as/gnome-help/gs-web-browser2-firefox.svg
 share/help/as/gnome-help/gs-web-browser2.svg
-share/help/ca/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/ca/gnome-help/figures/gnome-launching-applications.webm
 share/help/ca/gnome-help/figures/gnome-task-switching.webm
 share/help/ca/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -79,7 +72,6 @@ share/help/ca/gnome-help/getting-started.page
 share/help/ca/gnome-help/gs-animation.xml
 share/help/ca/gnome-help/gs-browse-web.page
 share/help/ca/gnome-help/gs-change-date-time-timezone.page
-share/help/ca/gnome-help/gs-change-wallpaper.page
 share/help/ca/gnome-help/gs-connect-online-accounts.page
 share/help/ca/gnome-help/gs-datetime.svg
 share/help/ca/gnome-help/gs-get-online.page
@@ -96,7 +88,6 @@ share/help/ca/gnome-help/gs-search-settings.svg
 share/help/ca/gnome-help/gs-search1.svg
 share/help/ca/gnome-help/gs-search2.svg
 share/help/ca/gnome-help/gs-switch-tasks.page
-share/help/ca/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/ca/gnome-help/gs-thumb-launching-apps.svg
 share/help/ca/gnome-help/gs-thumb-task-switching.svg
 share/help/ca/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -107,7 +98,6 @@ share/help/ca/gnome-help/gs-web-browser1-firefox.svg
 share/help/ca/gnome-help/gs-web-browser1.svg
 share/help/ca/gnome-help/gs-web-browser2-firefox.svg
 share/help/ca/gnome-help/gs-web-browser2.svg
-share/help/cs/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/cs/gnome-help/figures/gnome-launching-applications.webm
 share/help/cs/gnome-help/figures/gnome-task-switching.webm
 share/help/cs/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -115,7 +105,6 @@ share/help/cs/gnome-help/getting-started.page
 share/help/cs/gnome-help/gs-animation.xml
 share/help/cs/gnome-help/gs-browse-web.page
 share/help/cs/gnome-help/gs-change-date-time-timezone.page
-share/help/cs/gnome-help/gs-change-wallpaper.page
 share/help/cs/gnome-help/gs-connect-online-accounts.page
 share/help/cs/gnome-help/gs-datetime.svg
 share/help/cs/gnome-help/gs-get-online.page
@@ -132,7 +121,6 @@ share/help/cs/gnome-help/gs-search-settings.svg
 share/help/cs/gnome-help/gs-search1.svg
 share/help/cs/gnome-help/gs-search2.svg
 share/help/cs/gnome-help/gs-switch-tasks.page
-share/help/cs/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/cs/gnome-help/gs-thumb-launching-apps.svg
 share/help/cs/gnome-help/gs-thumb-task-switching.svg
 share/help/cs/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -143,7 +131,6 @@ share/help/cs/gnome-help/gs-web-browser1-firefox.svg
 share/help/cs/gnome-help/gs-web-browser1.svg
 share/help/cs/gnome-help/gs-web-browser2-firefox.svg
 share/help/cs/gnome-help/gs-web-browser2.svg
-share/help/da/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/da/gnome-help/figures/gnome-launching-applications.webm
 share/help/da/gnome-help/figures/gnome-task-switching.webm
 share/help/da/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -151,7 +138,6 @@ share/help/da/gnome-help/getting-started.page
 share/help/da/gnome-help/gs-animation.xml
 share/help/da/gnome-help/gs-browse-web.page
 share/help/da/gnome-help/gs-change-date-time-timezone.page
-share/help/da/gnome-help/gs-change-wallpaper.page
 share/help/da/gnome-help/gs-connect-online-accounts.page
 share/help/da/gnome-help/gs-datetime.svg
 share/help/da/gnome-help/gs-get-online.page
@@ -168,7 +154,6 @@ share/help/da/gnome-help/gs-search-settings.svg
 share/help/da/gnome-help/gs-search1.svg
 share/help/da/gnome-help/gs-search2.svg
 share/help/da/gnome-help/gs-switch-tasks.page
-share/help/da/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/da/gnome-help/gs-thumb-launching-apps.svg
 share/help/da/gnome-help/gs-thumb-task-switching.svg
 share/help/da/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -179,7 +164,6 @@ share/help/da/gnome-help/gs-web-browser1-firefox.svg
 share/help/da/gnome-help/gs-web-browser1.svg
 share/help/da/gnome-help/gs-web-browser2-firefox.svg
 share/help/da/gnome-help/gs-web-browser2.svg
-share/help/de/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/de/gnome-help/figures/gnome-launching-applications.webm
 share/help/de/gnome-help/figures/gnome-task-switching.webm
 share/help/de/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -187,7 +171,6 @@ share/help/de/gnome-help/getting-started.page
 share/help/de/gnome-help/gs-animation.xml
 share/help/de/gnome-help/gs-browse-web.page
 share/help/de/gnome-help/gs-change-date-time-timezone.page
-share/help/de/gnome-help/gs-change-wallpaper.page
 share/help/de/gnome-help/gs-connect-online-accounts.page
 share/help/de/gnome-help/gs-datetime.svg
 share/help/de/gnome-help/gs-get-online.page
@@ -204,7 +187,6 @@ share/help/de/gnome-help/gs-search-settings.svg
 share/help/de/gnome-help/gs-search1.svg
 share/help/de/gnome-help/gs-search2.svg
 share/help/de/gnome-help/gs-switch-tasks.page
-share/help/de/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/de/gnome-help/gs-thumb-launching-apps.svg
 share/help/de/gnome-help/gs-thumb-task-switching.svg
 share/help/de/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -215,7 +197,6 @@ share/help/de/gnome-help/gs-web-browser1-firefox.svg
 share/help/de/gnome-help/gs-web-browser1.svg
 share/help/de/gnome-help/gs-web-browser2-firefox.svg
 share/help/de/gnome-help/gs-web-browser2.svg
-share/help/el/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/el/gnome-help/figures/gnome-launching-applications.webm
 share/help/el/gnome-help/figures/gnome-task-switching.webm
 share/help/el/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -223,7 +204,6 @@ share/help/el/gnome-help/getting-started.page
 share/help/el/gnome-help/gs-animation.xml
 share/help/el/gnome-help/gs-browse-web.page
 share/help/el/gnome-help/gs-change-date-time-timezone.page
-share/help/el/gnome-help/gs-change-wallpaper.page
 share/help/el/gnome-help/gs-connect-online-accounts.page
 share/help/el/gnome-help/gs-datetime.svg
 share/help/el/gnome-help/gs-get-online.page
@@ -240,7 +220,6 @@ share/help/el/gnome-help/gs-search-settings.svg
 share/help/el/gnome-help/gs-search1.svg
 share/help/el/gnome-help/gs-search2.svg
 share/help/el/gnome-help/gs-switch-tasks.page
-share/help/el/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/el/gnome-help/gs-thumb-launching-apps.svg
 share/help/el/gnome-help/gs-thumb-task-switching.svg
 share/help/el/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -254,7 +233,6 @@ share/help/el/gnome-help/gs-web-browser2.svg
 share/help/eo/
 share/help/eo/gnome-help/
 share/help/eo/gnome-help/figures/
-share/help/eo/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/eo/gnome-help/figures/gnome-launching-applications.webm
 share/help/eo/gnome-help/figures/gnome-task-switching.webm
 share/help/eo/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -262,7 +240,6 @@ share/help/eo/gnome-help/getting-started.page
 share/help/eo/gnome-help/gs-animation.xml
 share/help/eo/gnome-help/gs-browse-web.page
 share/help/eo/gnome-help/gs-change-date-time-timezone.page
-share/help/eo/gnome-help/gs-change-wallpaper.page
 share/help/eo/gnome-help/gs-connect-online-accounts.page
 share/help/eo/gnome-help/gs-datetime.svg
 share/help/eo/gnome-help/gs-get-online.page
@@ -279,7 +256,6 @@ share/help/eo/gnome-help/gs-search-settings.svg
 share/help/eo/gnome-help/gs-search1.svg
 share/help/eo/gnome-help/gs-search2.svg
 share/help/eo/gnome-help/gs-switch-tasks.page
-share/help/eo/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/eo/gnome-help/gs-thumb-launching-apps.svg
 share/help/eo/gnome-help/gs-thumb-task-switching.svg
 share/help/eo/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -290,7 +266,6 @@ share/help/eo/gnome-help/gs-web-browser1-firefox.svg
 share/help/eo/gnome-help/gs-web-browser1.svg
 share/help/eo/gnome-help/gs-web-browser2-firefox.svg
 share/help/eo/gnome-help/gs-web-browser2.svg
-share/help/es/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/es/gnome-help/figures/gnome-launching-applications.webm
 share/help/es/gnome-help/figures/gnome-task-switching.webm
 share/help/es/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -298,7 +273,6 @@ share/help/es/gnome-help/getting-started.page
 share/help/es/gnome-help/gs-animation.xml
 share/help/es/gnome-help/gs-browse-web.page
 share/help/es/gnome-help/gs-change-date-time-timezone.page
-share/help/es/gnome-help/gs-change-wallpaper.page
 share/help/es/gnome-help/gs-connect-online-accounts.page
 share/help/es/gnome-help/gs-datetime.svg
 share/help/es/gnome-help/gs-get-online.page
@@ -315,7 +289,6 @@ share/help/es/gnome-help/gs-search-settings.svg
 share/help/es/gnome-help/gs-search1.svg
 share/help/es/gnome-help/gs-search2.svg
 share/help/es/gnome-help/gs-switch-tasks.page
-share/help/es/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/es/gnome-help/gs-thumb-launching-apps.svg
 share/help/es/gnome-help/gs-thumb-task-switching.svg
 share/help/es/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -329,7 +302,6 @@ share/help/es/gnome-help/gs-web-browser2.svg
 share/help/fa/
 share/help/fa/gnome-help/
 share/help/fa/gnome-help/figures/
-share/help/fa/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/fa/gnome-help/figures/gnome-launching-applications.webm
 share/help/fa/gnome-help/figures/gnome-task-switching.webm
 share/help/fa/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -337,7 +309,6 @@ share/help/fa/gnome-help/getting-started.page
 share/help/fa/gnome-help/gs-animation.xml
 share/help/fa/gnome-help/gs-browse-web.page
 share/help/fa/gnome-help/gs-change-date-time-timezone.page
-share/help/fa/gnome-help/gs-change-wallpaper.page
 share/help/fa/gnome-help/gs-connect-online-accounts.page
 share/help/fa/gnome-help/gs-datetime.svg
 share/help/fa/gnome-help/gs-get-online.page
@@ -354,7 +325,6 @@ share/help/fa/gnome-help/gs-search-settings.svg
 share/help/fa/gnome-help/gs-search1.svg
 share/help/fa/gnome-help/gs-search2.svg
 share/help/fa/gnome-help/gs-switch-tasks.page
-share/help/fa/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/fa/gnome-help/gs-thumb-launching-apps.svg
 share/help/fa/gnome-help/gs-thumb-task-switching.svg
 share/help/fa/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -365,7 +335,6 @@ share/help/fa/gnome-help/gs-web-browser1-firefox.svg
 share/help/fa/gnome-help/gs-web-browser1.svg
 share/help/fa/gnome-help/gs-web-browser2-firefox.svg
 share/help/fa/gnome-help/gs-web-browser2.svg
-share/help/fi/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/fi/gnome-help/figures/gnome-launching-applications.webm
 share/help/fi/gnome-help/figures/gnome-task-switching.webm
 share/help/fi/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -373,7 +342,6 @@ share/help/fi/gnome-help/getting-started.page
 share/help/fi/gnome-help/gs-animation.xml
 share/help/fi/gnome-help/gs-browse-web.page
 share/help/fi/gnome-help/gs-change-date-time-timezone.page
-share/help/fi/gnome-help/gs-change-wallpaper.page
 share/help/fi/gnome-help/gs-connect-online-accounts.page
 share/help/fi/gnome-help/gs-datetime.svg
 share/help/fi/gnome-help/gs-get-online.page
@@ -390,7 +358,6 @@ share/help/fi/gnome-help/gs-search-settings.svg
 share/help/fi/gnome-help/gs-search1.svg
 share/help/fi/gnome-help/gs-search2.svg
 share/help/fi/gnome-help/gs-switch-tasks.page
-share/help/fi/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/fi/gnome-help/gs-thumb-launching-apps.svg
 share/help/fi/gnome-help/gs-thumb-task-switching.svg
 share/help/fi/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -401,7 +368,6 @@ share/help/fi/gnome-help/gs-web-browser1-firefox.svg
 share/help/fi/gnome-help/gs-web-browser1.svg
 share/help/fi/gnome-help/gs-web-browser2-firefox.svg
 share/help/fi/gnome-help/gs-web-browser2.svg
-share/help/fr/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/fr/gnome-help/figures/gnome-launching-applications.webm
 share/help/fr/gnome-help/figures/gnome-task-switching.webm
 share/help/fr/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -409,7 +375,6 @@ share/help/fr/gnome-help/getting-started.page
 share/help/fr/gnome-help/gs-animation.xml
 share/help/fr/gnome-help/gs-browse-web.page
 share/help/fr/gnome-help/gs-change-date-time-timezone.page
-share/help/fr/gnome-help/gs-change-wallpaper.page
 share/help/fr/gnome-help/gs-connect-online-accounts.page
 share/help/fr/gnome-help/gs-datetime.svg
 share/help/fr/gnome-help/gs-get-online.page
@@ -426,7 +391,6 @@ share/help/fr/gnome-help/gs-search-settings.svg
 share/help/fr/gnome-help/gs-search1.svg
 share/help/fr/gnome-help/gs-search2.svg
 share/help/fr/gnome-help/gs-switch-tasks.page
-share/help/fr/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/fr/gnome-help/gs-thumb-launching-apps.svg
 share/help/fr/gnome-help/gs-thumb-task-switching.svg
 share/help/fr/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -437,7 +401,6 @@ share/help/fr/gnome-help/gs-web-browser1-firefox.svg
 share/help/fr/gnome-help/gs-web-browser1.svg
 share/help/fr/gnome-help/gs-web-browser2-firefox.svg
 share/help/fr/gnome-help/gs-web-browser2.svg
-share/help/gl/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/gl/gnome-help/figures/gnome-launching-applications.webm
 share/help/gl/gnome-help/figures/gnome-task-switching.webm
 share/help/gl/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -445,7 +408,6 @@ share/help/gl/gnome-help/getting-started.page
 share/help/gl/gnome-help/gs-animation.xml
 share/help/gl/gnome-help/gs-browse-web.page
 share/help/gl/gnome-help/gs-change-date-time-timezone.page
-share/help/gl/gnome-help/gs-change-wallpaper.page
 share/help/gl/gnome-help/gs-connect-online-accounts.page
 share/help/gl/gnome-help/gs-datetime.svg
 share/help/gl/gnome-help/gs-get-online.page
@@ -462,7 +424,6 @@ share/help/gl/gnome-help/gs-search-settings.svg
 share/help/gl/gnome-help/gs-search1.svg
 share/help/gl/gnome-help/gs-search2.svg
 share/help/gl/gnome-help/gs-switch-tasks.page
-share/help/gl/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/gl/gnome-help/gs-thumb-launching-apps.svg
 share/help/gl/gnome-help/gs-thumb-task-switching.svg
 share/help/gl/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -473,7 +434,6 @@ share/help/gl/gnome-help/gs-web-browser1-firefox.svg
 share/help/gl/gnome-help/gs-web-browser1.svg
 share/help/gl/gnome-help/gs-web-browser2-firefox.svg
 share/help/gl/gnome-help/gs-web-browser2.svg
-share/help/gu/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/gu/gnome-help/figures/gnome-launching-applications.webm
 share/help/gu/gnome-help/figures/gnome-task-switching.webm
 share/help/gu/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -481,7 +441,6 @@ share/help/gu/gnome-help/getting-started.page
 share/help/gu/gnome-help/gs-animation.xml
 share/help/gu/gnome-help/gs-browse-web.page
 share/help/gu/gnome-help/gs-change-date-time-timezone.page
-share/help/gu/gnome-help/gs-change-wallpaper.page
 share/help/gu/gnome-help/gs-connect-online-accounts.page
 share/help/gu/gnome-help/gs-datetime.svg
 share/help/gu/gnome-help/gs-get-online.page
@@ -498,7 +457,6 @@ share/help/gu/gnome-help/gs-search-settings.svg
 share/help/gu/gnome-help/gs-search1.svg
 share/help/gu/gnome-help/gs-search2.svg
 share/help/gu/gnome-help/gs-switch-tasks.page
-share/help/gu/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/gu/gnome-help/gs-thumb-launching-apps.svg
 share/help/gu/gnome-help/gs-thumb-task-switching.svg
 share/help/gu/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -509,7 +467,6 @@ share/help/gu/gnome-help/gs-web-browser1-firefox.svg
 share/help/gu/gnome-help/gs-web-browser1.svg
 share/help/gu/gnome-help/gs-web-browser2-firefox.svg
 share/help/gu/gnome-help/gs-web-browser2.svg
-share/help/he/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/he/gnome-help/figures/gnome-launching-applications.webm
 share/help/he/gnome-help/figures/gnome-task-switching.webm
 share/help/he/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -517,7 +474,6 @@ share/help/he/gnome-help/getting-started.page
 share/help/he/gnome-help/gs-animation.xml
 share/help/he/gnome-help/gs-browse-web.page
 share/help/he/gnome-help/gs-change-date-time-timezone.page
-share/help/he/gnome-help/gs-change-wallpaper.page
 share/help/he/gnome-help/gs-connect-online-accounts.page
 share/help/he/gnome-help/gs-datetime.svg
 share/help/he/gnome-help/gs-get-online.page
@@ -534,7 +490,6 @@ share/help/he/gnome-help/gs-search-settings.svg
 share/help/he/gnome-help/gs-search1.svg
 share/help/he/gnome-help/gs-search2.svg
 share/help/he/gnome-help/gs-switch-tasks.page
-share/help/he/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/he/gnome-help/gs-thumb-launching-apps.svg
 share/help/he/gnome-help/gs-thumb-task-switching.svg
 share/help/he/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -545,7 +500,6 @@ share/help/he/gnome-help/gs-web-browser1-firefox.svg
 share/help/he/gnome-help/gs-web-browser1.svg
 share/help/he/gnome-help/gs-web-browser2-firefox.svg
 share/help/he/gnome-help/gs-web-browser2.svg
-share/help/hi/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/hi/gnome-help/figures/gnome-launching-applications.webm
 share/help/hi/gnome-help/figures/gnome-task-switching.webm
 share/help/hi/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -553,7 +507,6 @@ share/help/hi/gnome-help/getting-started.page
 share/help/hi/gnome-help/gs-animation.xml
 share/help/hi/gnome-help/gs-browse-web.page
 share/help/hi/gnome-help/gs-change-date-time-timezone.page
-share/help/hi/gnome-help/gs-change-wallpaper.page
 share/help/hi/gnome-help/gs-connect-online-accounts.page
 share/help/hi/gnome-help/gs-datetime.svg
 share/help/hi/gnome-help/gs-get-online.page
@@ -570,7 +523,6 @@ share/help/hi/gnome-help/gs-search-settings.svg
 share/help/hi/gnome-help/gs-search1.svg
 share/help/hi/gnome-help/gs-search2.svg
 share/help/hi/gnome-help/gs-switch-tasks.page
-share/help/hi/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/hi/gnome-help/gs-thumb-launching-apps.svg
 share/help/hi/gnome-help/gs-thumb-task-switching.svg
 share/help/hi/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -581,7 +533,6 @@ share/help/hi/gnome-help/gs-web-browser1-firefox.svg
 share/help/hi/gnome-help/gs-web-browser1.svg
 share/help/hi/gnome-help/gs-web-browser2-firefox.svg
 share/help/hi/gnome-help/gs-web-browser2.svg
-share/help/hr/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/hr/gnome-help/figures/gnome-launching-applications.webm
 share/help/hr/gnome-help/figures/gnome-task-switching.webm
 share/help/hr/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -589,7 +540,6 @@ share/help/hr/gnome-help/getting-started.page
 share/help/hr/gnome-help/gs-animation.xml
 share/help/hr/gnome-help/gs-browse-web.page
 share/help/hr/gnome-help/gs-change-date-time-timezone.page
-share/help/hr/gnome-help/gs-change-wallpaper.page
 share/help/hr/gnome-help/gs-connect-online-accounts.page
 share/help/hr/gnome-help/gs-datetime.svg
 share/help/hr/gnome-help/gs-get-online.page
@@ -606,7 +556,6 @@ share/help/hr/gnome-help/gs-search-settings.svg
 share/help/hr/gnome-help/gs-search1.svg
 share/help/hr/gnome-help/gs-search2.svg
 share/help/hr/gnome-help/gs-switch-tasks.page
-share/help/hr/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/hr/gnome-help/gs-thumb-launching-apps.svg
 share/help/hr/gnome-help/gs-thumb-task-switching.svg
 share/help/hr/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -617,7 +566,6 @@ share/help/hr/gnome-help/gs-web-browser1-firefox.svg
 share/help/hr/gnome-help/gs-web-browser1.svg
 share/help/hr/gnome-help/gs-web-browser2-firefox.svg
 share/help/hr/gnome-help/gs-web-browser2.svg
-share/help/hu/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/hu/gnome-help/figures/gnome-launching-applications.webm
 share/help/hu/gnome-help/figures/gnome-task-switching.webm
 share/help/hu/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -625,7 +573,6 @@ share/help/hu/gnome-help/getting-started.page
 share/help/hu/gnome-help/gs-animation.xml
 share/help/hu/gnome-help/gs-browse-web.page
 share/help/hu/gnome-help/gs-change-date-time-timezone.page
-share/help/hu/gnome-help/gs-change-wallpaper.page
 share/help/hu/gnome-help/gs-connect-online-accounts.page
 share/help/hu/gnome-help/gs-datetime.svg
 share/help/hu/gnome-help/gs-get-online.page
@@ -642,7 +589,6 @@ share/help/hu/gnome-help/gs-search-settings.svg
 share/help/hu/gnome-help/gs-search1.svg
 share/help/hu/gnome-help/gs-search2.svg
 share/help/hu/gnome-help/gs-switch-tasks.page
-share/help/hu/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/hu/gnome-help/gs-thumb-launching-apps.svg
 share/help/hu/gnome-help/gs-thumb-task-switching.svg
 share/help/hu/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -653,7 +599,6 @@ share/help/hu/gnome-help/gs-web-browser1-firefox.svg
 share/help/hu/gnome-help/gs-web-browser1.svg
 share/help/hu/gnome-help/gs-web-browser2-firefox.svg
 share/help/hu/gnome-help/gs-web-browser2.svg
-share/help/id/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/id/gnome-help/figures/gnome-launching-applications.webm
 share/help/id/gnome-help/figures/gnome-task-switching.webm
 share/help/id/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -661,7 +606,6 @@ share/help/id/gnome-help/getting-started.page
 share/help/id/gnome-help/gs-animation.xml
 share/help/id/gnome-help/gs-browse-web.page
 share/help/id/gnome-help/gs-change-date-time-timezone.page
-share/help/id/gnome-help/gs-change-wallpaper.page
 share/help/id/gnome-help/gs-connect-online-accounts.page
 share/help/id/gnome-help/gs-datetime.svg
 share/help/id/gnome-help/gs-get-online.page
@@ -678,7 +622,6 @@ share/help/id/gnome-help/gs-search-settings.svg
 share/help/id/gnome-help/gs-search1.svg
 share/help/id/gnome-help/gs-search2.svg
 share/help/id/gnome-help/gs-switch-tasks.page
-share/help/id/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/id/gnome-help/gs-thumb-launching-apps.svg
 share/help/id/gnome-help/gs-thumb-task-switching.svg
 share/help/id/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -689,7 +632,6 @@ share/help/id/gnome-help/gs-web-browser1-firefox.svg
 share/help/id/gnome-help/gs-web-browser1.svg
 share/help/id/gnome-help/gs-web-browser2-firefox.svg
 share/help/id/gnome-help/gs-web-browser2.svg
-share/help/it/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/it/gnome-help/figures/gnome-launching-applications.webm
 share/help/it/gnome-help/figures/gnome-task-switching.webm
 share/help/it/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -697,7 +639,6 @@ share/help/it/gnome-help/getting-started.page
 share/help/it/gnome-help/gs-animation.xml
 share/help/it/gnome-help/gs-browse-web.page
 share/help/it/gnome-help/gs-change-date-time-timezone.page
-share/help/it/gnome-help/gs-change-wallpaper.page
 share/help/it/gnome-help/gs-connect-online-accounts.page
 share/help/it/gnome-help/gs-datetime.svg
 share/help/it/gnome-help/gs-get-online.page
@@ -714,7 +655,6 @@ share/help/it/gnome-help/gs-search-settings.svg
 share/help/it/gnome-help/gs-search1.svg
 share/help/it/gnome-help/gs-search2.svg
 share/help/it/gnome-help/gs-switch-tasks.page
-share/help/it/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/it/gnome-help/gs-thumb-launching-apps.svg
 share/help/it/gnome-help/gs-thumb-task-switching.svg
 share/help/it/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -725,7 +665,6 @@ share/help/it/gnome-help/gs-web-browser1-firefox.svg
 share/help/it/gnome-help/gs-web-browser1.svg
 share/help/it/gnome-help/gs-web-browser2-firefox.svg
 share/help/it/gnome-help/gs-web-browser2.svg
-share/help/ja/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/ja/gnome-help/figures/gnome-launching-applications.webm
 share/help/ja/gnome-help/figures/gnome-task-switching.webm
 share/help/ja/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -733,7 +672,6 @@ share/help/ja/gnome-help/getting-started.page
 share/help/ja/gnome-help/gs-animation.xml
 share/help/ja/gnome-help/gs-browse-web.page
 share/help/ja/gnome-help/gs-change-date-time-timezone.page
-share/help/ja/gnome-help/gs-change-wallpaper.page
 share/help/ja/gnome-help/gs-connect-online-accounts.page
 share/help/ja/gnome-help/gs-datetime.svg
 share/help/ja/gnome-help/gs-get-online.page
@@ -750,7 +688,6 @@ share/help/ja/gnome-help/gs-search-settings.svg
 share/help/ja/gnome-help/gs-search1.svg
 share/help/ja/gnome-help/gs-search2.svg
 share/help/ja/gnome-help/gs-switch-tasks.page
-share/help/ja/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/ja/gnome-help/gs-thumb-launching-apps.svg
 share/help/ja/gnome-help/gs-thumb-task-switching.svg
 share/help/ja/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -761,7 +698,6 @@ share/help/ja/gnome-help/gs-web-browser1-firefox.svg
 share/help/ja/gnome-help/gs-web-browser1.svg
 share/help/ja/gnome-help/gs-web-browser2-firefox.svg
 share/help/ja/gnome-help/gs-web-browser2.svg
-share/help/kn/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/kn/gnome-help/figures/gnome-launching-applications.webm
 share/help/kn/gnome-help/figures/gnome-task-switching.webm
 share/help/kn/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -769,7 +705,6 @@ share/help/kn/gnome-help/getting-started.page
 share/help/kn/gnome-help/gs-animation.xml
 share/help/kn/gnome-help/gs-browse-web.page
 share/help/kn/gnome-help/gs-change-date-time-timezone.page
-share/help/kn/gnome-help/gs-change-wallpaper.page
 share/help/kn/gnome-help/gs-connect-online-accounts.page
 share/help/kn/gnome-help/gs-datetime.svg
 share/help/kn/gnome-help/gs-get-online.page
@@ -786,7 +721,6 @@ share/help/kn/gnome-help/gs-search-settings.svg
 share/help/kn/gnome-help/gs-search1.svg
 share/help/kn/gnome-help/gs-search2.svg
 share/help/kn/gnome-help/gs-switch-tasks.page
-share/help/kn/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/kn/gnome-help/gs-thumb-launching-apps.svg
 share/help/kn/gnome-help/gs-thumb-task-switching.svg
 share/help/kn/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -799,7 +733,6 @@ share/help/kn/gnome-help/gs-web-browser2-firefox.svg
 share/help/kn/gnome-help/gs-web-browser2.svg
 share/help/ko/gnome-help/
 share/help/ko/gnome-help/figures/
-share/help/ko/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/ko/gnome-help/figures/gnome-launching-applications.webm
 share/help/ko/gnome-help/figures/gnome-task-switching.webm
 share/help/ko/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -807,7 +740,6 @@ share/help/ko/gnome-help/getting-started.page
 share/help/ko/gnome-help/gs-animation.xml
 share/help/ko/gnome-help/gs-browse-web.page
 share/help/ko/gnome-help/gs-change-date-time-timezone.page
-share/help/ko/gnome-help/gs-change-wallpaper.page
 share/help/ko/gnome-help/gs-connect-online-accounts.page
 share/help/ko/gnome-help/gs-datetime.svg
 share/help/ko/gnome-help/gs-get-online.page
@@ -824,7 +756,6 @@ share/help/ko/gnome-help/gs-search-settings.svg
 share/help/ko/gnome-help/gs-search1.svg
 share/help/ko/gnome-help/gs-search2.svg
 share/help/ko/gnome-help/gs-switch-tasks.page
-share/help/ko/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/ko/gnome-help/gs-thumb-launching-apps.svg
 share/help/ko/gnome-help/gs-thumb-task-switching.svg
 share/help/ko/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -838,7 +769,6 @@ share/help/ko/gnome-help/gs-web-browser2.svg
 share/help/lt/
 share/help/lt/gnome-help/
 share/help/lt/gnome-help/figures/
-share/help/lt/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/lt/gnome-help/figures/gnome-launching-applications.webm
 share/help/lt/gnome-help/figures/gnome-task-switching.webm
 share/help/lt/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -846,7 +776,6 @@ share/help/lt/gnome-help/getting-started.page
 share/help/lt/gnome-help/gs-animation.xml
 share/help/lt/gnome-help/gs-browse-web.page
 share/help/lt/gnome-help/gs-change-date-time-timezone.page
-share/help/lt/gnome-help/gs-change-wallpaper.page
 share/help/lt/gnome-help/gs-connect-online-accounts.page
 share/help/lt/gnome-help/gs-datetime.svg
 share/help/lt/gnome-help/gs-get-online.page
@@ -863,7 +792,6 @@ share/help/lt/gnome-help/gs-search-settings.svg
 share/help/lt/gnome-help/gs-search1.svg
 share/help/lt/gnome-help/gs-search2.svg
 share/help/lt/gnome-help/gs-switch-tasks.page
-share/help/lt/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/lt/gnome-help/gs-thumb-launching-apps.svg
 share/help/lt/gnome-help/gs-thumb-task-switching.svg
 share/help/lt/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -874,7 +802,6 @@ share/help/lt/gnome-help/gs-web-browser1-firefox.svg
 share/help/lt/gnome-help/gs-web-browser1.svg
 share/help/lt/gnome-help/gs-web-browser2-firefox.svg
 share/help/lt/gnome-help/gs-web-browser2.svg
-share/help/lv/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/lv/gnome-help/figures/gnome-launching-applications.webm
 share/help/lv/gnome-help/figures/gnome-task-switching.webm
 share/help/lv/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -882,7 +809,6 @@ share/help/lv/gnome-help/getting-started.page
 share/help/lv/gnome-help/gs-animation.xml
 share/help/lv/gnome-help/gs-browse-web.page
 share/help/lv/gnome-help/gs-change-date-time-timezone.page
-share/help/lv/gnome-help/gs-change-wallpaper.page
 share/help/lv/gnome-help/gs-connect-online-accounts.page
 share/help/lv/gnome-help/gs-datetime.svg
 share/help/lv/gnome-help/gs-get-online.page
@@ -899,7 +825,6 @@ share/help/lv/gnome-help/gs-search-settings.svg
 share/help/lv/gnome-help/gs-search1.svg
 share/help/lv/gnome-help/gs-search2.svg
 share/help/lv/gnome-help/gs-switch-tasks.page
-share/help/lv/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/lv/gnome-help/gs-thumb-launching-apps.svg
 share/help/lv/gnome-help/gs-thumb-task-switching.svg
 share/help/lv/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -910,7 +835,6 @@ share/help/lv/gnome-help/gs-web-browser1-firefox.svg
 share/help/lv/gnome-help/gs-web-browser1.svg
 share/help/lv/gnome-help/gs-web-browser2-firefox.svg
 share/help/lv/gnome-help/gs-web-browser2.svg
-share/help/mr/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/mr/gnome-help/figures/gnome-launching-applications.webm
 share/help/mr/gnome-help/figures/gnome-task-switching.webm
 share/help/mr/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -918,7 +842,6 @@ share/help/mr/gnome-help/getting-started.page
 share/help/mr/gnome-help/gs-animation.xml
 share/help/mr/gnome-help/gs-browse-web.page
 share/help/mr/gnome-help/gs-change-date-time-timezone.page
-share/help/mr/gnome-help/gs-change-wallpaper.page
 share/help/mr/gnome-help/gs-connect-online-accounts.page
 share/help/mr/gnome-help/gs-datetime.svg
 share/help/mr/gnome-help/gs-get-online.page
@@ -935,7 +858,6 @@ share/help/mr/gnome-help/gs-search-settings.svg
 share/help/mr/gnome-help/gs-search1.svg
 share/help/mr/gnome-help/gs-search2.svg
 share/help/mr/gnome-help/gs-switch-tasks.page
-share/help/mr/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/mr/gnome-help/gs-thumb-launching-apps.svg
 share/help/mr/gnome-help/gs-thumb-task-switching.svg
 share/help/mr/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -946,7 +868,6 @@ share/help/mr/gnome-help/gs-web-browser1-firefox.svg
 share/help/mr/gnome-help/gs-web-browser1.svg
 share/help/mr/gnome-help/gs-web-browser2-firefox.svg
 share/help/mr/gnome-help/gs-web-browser2.svg
-share/help/nl/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/nl/gnome-help/figures/gnome-launching-applications.webm
 share/help/nl/gnome-help/figures/gnome-task-switching.webm
 share/help/nl/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -954,7 +875,6 @@ share/help/nl/gnome-help/getting-started.page
 share/help/nl/gnome-help/gs-animation.xml
 share/help/nl/gnome-help/gs-browse-web.page
 share/help/nl/gnome-help/gs-change-date-time-timezone.page
-share/help/nl/gnome-help/gs-change-wallpaper.page
 share/help/nl/gnome-help/gs-connect-online-accounts.page
 share/help/nl/gnome-help/gs-datetime.svg
 share/help/nl/gnome-help/gs-get-online.page
@@ -971,7 +891,6 @@ share/help/nl/gnome-help/gs-search-settings.svg
 share/help/nl/gnome-help/gs-search1.svg
 share/help/nl/gnome-help/gs-search2.svg
 share/help/nl/gnome-help/gs-switch-tasks.page
-share/help/nl/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/nl/gnome-help/gs-thumb-launching-apps.svg
 share/help/nl/gnome-help/gs-thumb-task-switching.svg
 share/help/nl/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -982,7 +901,6 @@ share/help/nl/gnome-help/gs-web-browser1-firefox.svg
 share/help/nl/gnome-help/gs-web-browser1.svg
 share/help/nl/gnome-help/gs-web-browser2-firefox.svg
 share/help/nl/gnome-help/gs-web-browser2.svg
-share/help/pa/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/pa/gnome-help/figures/gnome-launching-applications.webm
 share/help/pa/gnome-help/figures/gnome-task-switching.webm
 share/help/pa/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -990,7 +908,6 @@ share/help/pa/gnome-help/getting-started.page
 share/help/pa/gnome-help/gs-animation.xml
 share/help/pa/gnome-help/gs-browse-web.page
 share/help/pa/gnome-help/gs-change-date-time-timezone.page
-share/help/pa/gnome-help/gs-change-wallpaper.page
 share/help/pa/gnome-help/gs-connect-online-accounts.page
 share/help/pa/gnome-help/gs-datetime.svg
 share/help/pa/gnome-help/gs-get-online.page
@@ -1007,7 +924,6 @@ share/help/pa/gnome-help/gs-search-settings.svg
 share/help/pa/gnome-help/gs-search1.svg
 share/help/pa/gnome-help/gs-search2.svg
 share/help/pa/gnome-help/gs-switch-tasks.page
-share/help/pa/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/pa/gnome-help/gs-thumb-launching-apps.svg
 share/help/pa/gnome-help/gs-thumb-task-switching.svg
 share/help/pa/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1018,7 +934,6 @@ share/help/pa/gnome-help/gs-web-browser1-firefox.svg
 share/help/pa/gnome-help/gs-web-browser1.svg
 share/help/pa/gnome-help/gs-web-browser2-firefox.svg
 share/help/pa/gnome-help/gs-web-browser2.svg
-share/help/pl/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/pl/gnome-help/figures/gnome-launching-applications.webm
 share/help/pl/gnome-help/figures/gnome-task-switching.webm
 share/help/pl/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1026,7 +941,6 @@ share/help/pl/gnome-help/getting-started.page
 share/help/pl/gnome-help/gs-animation.xml
 share/help/pl/gnome-help/gs-browse-web.page
 share/help/pl/gnome-help/gs-change-date-time-timezone.page
-share/help/pl/gnome-help/gs-change-wallpaper.page
 share/help/pl/gnome-help/gs-connect-online-accounts.page
 share/help/pl/gnome-help/gs-datetime.svg
 share/help/pl/gnome-help/gs-get-online.page
@@ -1043,7 +957,6 @@ share/help/pl/gnome-help/gs-search-settings.svg
 share/help/pl/gnome-help/gs-search1.svg
 share/help/pl/gnome-help/gs-search2.svg
 share/help/pl/gnome-help/gs-switch-tasks.page
-share/help/pl/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/pl/gnome-help/gs-thumb-launching-apps.svg
 share/help/pl/gnome-help/gs-thumb-task-switching.svg
 share/help/pl/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1054,7 +967,6 @@ share/help/pl/gnome-help/gs-web-browser1-firefox.svg
 share/help/pl/gnome-help/gs-web-browser1.svg
 share/help/pl/gnome-help/gs-web-browser2-firefox.svg
 share/help/pl/gnome-help/gs-web-browser2.svg
-share/help/pt/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/pt/gnome-help/figures/gnome-launching-applications.webm
 share/help/pt/gnome-help/figures/gnome-task-switching.webm
 share/help/pt/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1062,7 +974,6 @@ share/help/pt/gnome-help/getting-started.page
 share/help/pt/gnome-help/gs-animation.xml
 share/help/pt/gnome-help/gs-browse-web.page
 share/help/pt/gnome-help/gs-change-date-time-timezone.page
-share/help/pt/gnome-help/gs-change-wallpaper.page
 share/help/pt/gnome-help/gs-connect-online-accounts.page
 share/help/pt/gnome-help/gs-datetime.svg
 share/help/pt/gnome-help/gs-get-online.page
@@ -1079,7 +990,6 @@ share/help/pt/gnome-help/gs-search-settings.svg
 share/help/pt/gnome-help/gs-search1.svg
 share/help/pt/gnome-help/gs-search2.svg
 share/help/pt/gnome-help/gs-switch-tasks.page
-share/help/pt/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/pt/gnome-help/gs-thumb-launching-apps.svg
 share/help/pt/gnome-help/gs-thumb-task-switching.svg
 share/help/pt/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1090,7 +1000,6 @@ share/help/pt/gnome-help/gs-web-browser1-firefox.svg
 share/help/pt/gnome-help/gs-web-browser1.svg
 share/help/pt/gnome-help/gs-web-browser2-firefox.svg
 share/help/pt/gnome-help/gs-web-browser2.svg
-share/help/pt_BR/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/pt_BR/gnome-help/figures/gnome-launching-applications.webm
 share/help/pt_BR/gnome-help/figures/gnome-task-switching.webm
 share/help/pt_BR/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1098,7 +1007,6 @@ share/help/pt_BR/gnome-help/getting-started.page
 share/help/pt_BR/gnome-help/gs-animation.xml
 share/help/pt_BR/gnome-help/gs-browse-web.page
 share/help/pt_BR/gnome-help/gs-change-date-time-timezone.page
-share/help/pt_BR/gnome-help/gs-change-wallpaper.page
 share/help/pt_BR/gnome-help/gs-connect-online-accounts.page
 share/help/pt_BR/gnome-help/gs-datetime.svg
 share/help/pt_BR/gnome-help/gs-get-online.page
@@ -1115,7 +1023,6 @@ share/help/pt_BR/gnome-help/gs-search-settings.svg
 share/help/pt_BR/gnome-help/gs-search1.svg
 share/help/pt_BR/gnome-help/gs-search2.svg
 share/help/pt_BR/gnome-help/gs-switch-tasks.page
-share/help/pt_BR/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/pt_BR/gnome-help/gs-thumb-launching-apps.svg
 share/help/pt_BR/gnome-help/gs-thumb-task-switching.svg
 share/help/pt_BR/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1126,7 +1033,6 @@ share/help/pt_BR/gnome-help/gs-web-browser1-firefox.svg
 share/help/pt_BR/gnome-help/gs-web-browser1.svg
 share/help/pt_BR/gnome-help/gs-web-browser2-firefox.svg
 share/help/pt_BR/gnome-help/gs-web-browser2.svg
-share/help/ro/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/ro/gnome-help/figures/gnome-launching-applications.webm
 share/help/ro/gnome-help/figures/gnome-task-switching.webm
 share/help/ro/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1134,7 +1040,6 @@ share/help/ro/gnome-help/getting-started.page
 share/help/ro/gnome-help/gs-animation.xml
 share/help/ro/gnome-help/gs-browse-web.page
 share/help/ro/gnome-help/gs-change-date-time-timezone.page
-share/help/ro/gnome-help/gs-change-wallpaper.page
 share/help/ro/gnome-help/gs-connect-online-accounts.page
 share/help/ro/gnome-help/gs-datetime.svg
 share/help/ro/gnome-help/gs-get-online.page
@@ -1151,7 +1056,6 @@ share/help/ro/gnome-help/gs-search-settings.svg
 share/help/ro/gnome-help/gs-search1.svg
 share/help/ro/gnome-help/gs-search2.svg
 share/help/ro/gnome-help/gs-switch-tasks.page
-share/help/ro/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/ro/gnome-help/gs-thumb-launching-apps.svg
 share/help/ro/gnome-help/gs-thumb-task-switching.svg
 share/help/ro/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1162,7 +1066,6 @@ share/help/ro/gnome-help/gs-web-browser1-firefox.svg
 share/help/ro/gnome-help/gs-web-browser1.svg
 share/help/ro/gnome-help/gs-web-browser2-firefox.svg
 share/help/ro/gnome-help/gs-web-browser2.svg
-share/help/ru/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/ru/gnome-help/figures/gnome-launching-applications.webm
 share/help/ru/gnome-help/figures/gnome-task-switching.webm
 share/help/ru/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1170,7 +1073,6 @@ share/help/ru/gnome-help/getting-started.page
 share/help/ru/gnome-help/gs-animation.xml
 share/help/ru/gnome-help/gs-browse-web.page
 share/help/ru/gnome-help/gs-change-date-time-timezone.page
-share/help/ru/gnome-help/gs-change-wallpaper.page
 share/help/ru/gnome-help/gs-connect-online-accounts.page
 share/help/ru/gnome-help/gs-datetime.svg
 share/help/ru/gnome-help/gs-get-online.page
@@ -1187,7 +1089,6 @@ share/help/ru/gnome-help/gs-search-settings.svg
 share/help/ru/gnome-help/gs-search1.svg
 share/help/ru/gnome-help/gs-search2.svg
 share/help/ru/gnome-help/gs-switch-tasks.page
-share/help/ru/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/ru/gnome-help/gs-thumb-launching-apps.svg
 share/help/ru/gnome-help/gs-thumb-task-switching.svg
 share/help/ru/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1201,7 +1102,6 @@ share/help/ru/gnome-help/gs-web-browser2.svg
 share/help/sk/
 share/help/sk/gnome-help/
 share/help/sk/gnome-help/figures/
-share/help/sk/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/sk/gnome-help/figures/gnome-launching-applications.webm
 share/help/sk/gnome-help/figures/gnome-task-switching.webm
 share/help/sk/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1209,7 +1109,6 @@ share/help/sk/gnome-help/getting-started.page
 share/help/sk/gnome-help/gs-animation.xml
 share/help/sk/gnome-help/gs-browse-web.page
 share/help/sk/gnome-help/gs-change-date-time-timezone.page
-share/help/sk/gnome-help/gs-change-wallpaper.page
 share/help/sk/gnome-help/gs-connect-online-accounts.page
 share/help/sk/gnome-help/gs-datetime.svg
 share/help/sk/gnome-help/gs-get-online.page
@@ -1226,7 +1125,6 @@ share/help/sk/gnome-help/gs-search-settings.svg
 share/help/sk/gnome-help/gs-search1.svg
 share/help/sk/gnome-help/gs-search2.svg
 share/help/sk/gnome-help/gs-switch-tasks.page
-share/help/sk/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/sk/gnome-help/gs-thumb-launching-apps.svg
 share/help/sk/gnome-help/gs-thumb-task-switching.svg
 share/help/sk/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1237,7 +1135,6 @@ share/help/sk/gnome-help/gs-web-browser1-firefox.svg
 share/help/sk/gnome-help/gs-web-browser1.svg
 share/help/sk/gnome-help/gs-web-browser2-firefox.svg
 share/help/sk/gnome-help/gs-web-browser2.svg
-share/help/sr/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/sr/gnome-help/figures/gnome-launching-applications.webm
 share/help/sr/gnome-help/figures/gnome-task-switching.webm
 share/help/sr/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1245,7 +1142,6 @@ share/help/sr/gnome-help/getting-started.page
 share/help/sr/gnome-help/gs-animation.xml
 share/help/sr/gnome-help/gs-browse-web.page
 share/help/sr/gnome-help/gs-change-date-time-timezone.page
-share/help/sr/gnome-help/gs-change-wallpaper.page
 share/help/sr/gnome-help/gs-connect-online-accounts.page
 share/help/sr/gnome-help/gs-datetime.svg
 share/help/sr/gnome-help/gs-get-online.page
@@ -1262,7 +1158,6 @@ share/help/sr/gnome-help/gs-search-settings.svg
 share/help/sr/gnome-help/gs-search1.svg
 share/help/sr/gnome-help/gs-search2.svg
 share/help/sr/gnome-help/gs-switch-tasks.page
-share/help/sr/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/sr/gnome-help/gs-thumb-launching-apps.svg
 share/help/sr/gnome-help/gs-thumb-task-switching.svg
 share/help/sr/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1273,7 +1168,6 @@ share/help/sr/gnome-help/gs-web-browser1-firefox.svg
 share/help/sr/gnome-help/gs-web-browser1.svg
 share/help/sr/gnome-help/gs-web-browser2-firefox.svg
 share/help/sr/gnome-help/gs-web-browser2.svg
-share/help/sr@latin/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/sr@latin/gnome-help/figures/gnome-launching-applications.webm
 share/help/sr@latin/gnome-help/figures/gnome-task-switching.webm
 share/help/sr@latin/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1281,7 +1175,6 @@ share/help/sr@latin/gnome-help/getting-started.page
 share/help/sr@latin/gnome-help/gs-animation.xml
 share/help/sr@latin/gnome-help/gs-browse-web.page
 share/help/sr@latin/gnome-help/gs-change-date-time-timezone.page
-share/help/sr@latin/gnome-help/gs-change-wallpaper.page
 share/help/sr@latin/gnome-help/gs-connect-online-accounts.page
 share/help/sr@latin/gnome-help/gs-datetime.svg
 share/help/sr@latin/gnome-help/gs-get-online.page
@@ -1298,7 +1191,6 @@ share/help/sr@latin/gnome-help/gs-search-settings.svg
 share/help/sr@latin/gnome-help/gs-search1.svg
 share/help/sr@latin/gnome-help/gs-search2.svg
 share/help/sr@latin/gnome-help/gs-switch-tasks.page
-share/help/sr@latin/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/sr@latin/gnome-help/gs-thumb-launching-apps.svg
 share/help/sr@latin/gnome-help/gs-thumb-task-switching.svg
 share/help/sr@latin/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1309,7 +1201,6 @@ share/help/sr@latin/gnome-help/gs-web-browser1-firefox.svg
 share/help/sr@latin/gnome-help/gs-web-browser1.svg
 share/help/sr@latin/gnome-help/gs-web-browser2-firefox.svg
 share/help/sr@latin/gnome-help/gs-web-browser2.svg
-share/help/sv/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/sv/gnome-help/figures/gnome-launching-applications.webm
 share/help/sv/gnome-help/figures/gnome-task-switching.webm
 share/help/sv/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1317,7 +1208,6 @@ share/help/sv/gnome-help/getting-started.page
 share/help/sv/gnome-help/gs-animation.xml
 share/help/sv/gnome-help/gs-browse-web.page
 share/help/sv/gnome-help/gs-change-date-time-timezone.page
-share/help/sv/gnome-help/gs-change-wallpaper.page
 share/help/sv/gnome-help/gs-connect-online-accounts.page
 share/help/sv/gnome-help/gs-datetime.svg
 share/help/sv/gnome-help/gs-get-online.page
@@ -1334,7 +1224,6 @@ share/help/sv/gnome-help/gs-search-settings.svg
 share/help/sv/gnome-help/gs-search1.svg
 share/help/sv/gnome-help/gs-search2.svg
 share/help/sv/gnome-help/gs-switch-tasks.page
-share/help/sv/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/sv/gnome-help/gs-thumb-launching-apps.svg
 share/help/sv/gnome-help/gs-thumb-task-switching.svg
 share/help/sv/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1345,7 +1234,6 @@ share/help/sv/gnome-help/gs-web-browser1-firefox.svg
 share/help/sv/gnome-help/gs-web-browser1.svg
 share/help/sv/gnome-help/gs-web-browser2-firefox.svg
 share/help/sv/gnome-help/gs-web-browser2.svg
-share/help/ta/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/ta/gnome-help/figures/gnome-launching-applications.webm
 share/help/ta/gnome-help/figures/gnome-task-switching.webm
 share/help/ta/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1353,7 +1241,6 @@ share/help/ta/gnome-help/getting-started.page
 share/help/ta/gnome-help/gs-animation.xml
 share/help/ta/gnome-help/gs-browse-web.page
 share/help/ta/gnome-help/gs-change-date-time-timezone.page
-share/help/ta/gnome-help/gs-change-wallpaper.page
 share/help/ta/gnome-help/gs-connect-online-accounts.page
 share/help/ta/gnome-help/gs-datetime.svg
 share/help/ta/gnome-help/gs-get-online.page
@@ -1370,7 +1257,6 @@ share/help/ta/gnome-help/gs-search-settings.svg
 share/help/ta/gnome-help/gs-search1.svg
 share/help/ta/gnome-help/gs-search2.svg
 share/help/ta/gnome-help/gs-switch-tasks.page
-share/help/ta/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/ta/gnome-help/gs-thumb-launching-apps.svg
 share/help/ta/gnome-help/gs-thumb-task-switching.svg
 share/help/ta/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1381,7 +1267,6 @@ share/help/ta/gnome-help/gs-web-browser1-firefox.svg
 share/help/ta/gnome-help/gs-web-browser1.svg
 share/help/ta/gnome-help/gs-web-browser2-firefox.svg
 share/help/ta/gnome-help/gs-web-browser2.svg
-share/help/te/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/te/gnome-help/figures/gnome-launching-applications.webm
 share/help/te/gnome-help/figures/gnome-task-switching.webm
 share/help/te/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1389,7 +1274,6 @@ share/help/te/gnome-help/getting-started.page
 share/help/te/gnome-help/gs-animation.xml
 share/help/te/gnome-help/gs-browse-web.page
 share/help/te/gnome-help/gs-change-date-time-timezone.page
-share/help/te/gnome-help/gs-change-wallpaper.page
 share/help/te/gnome-help/gs-connect-online-accounts.page
 share/help/te/gnome-help/gs-datetime.svg
 share/help/te/gnome-help/gs-get-online.page
@@ -1406,7 +1290,6 @@ share/help/te/gnome-help/gs-search-settings.svg
 share/help/te/gnome-help/gs-search1.svg
 share/help/te/gnome-help/gs-search2.svg
 share/help/te/gnome-help/gs-switch-tasks.page
-share/help/te/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/te/gnome-help/gs-thumb-launching-apps.svg
 share/help/te/gnome-help/gs-thumb-task-switching.svg
 share/help/te/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1417,10 +1300,45 @@ share/help/te/gnome-help/gs-web-browser1-firefox.svg
 share/help/te/gnome-help/gs-web-browser1.svg
 share/help/te/gnome-help/gs-web-browser2-firefox.svg
 share/help/te/gnome-help/gs-web-browser2.svg
+share/help/uk/
+share/help/uk/gnome-help/
+share/help/uk/gnome-help/figures/
+share/help/uk/gnome-help/figures/gnome-launching-applications.webm
+share/help/uk/gnome-help/figures/gnome-task-switching.webm
+share/help/uk/gnome-help/figures/gnome-windows-and-workspaces.webm
+share/help/uk/gnome-help/getting-started.page
+share/help/uk/gnome-help/gs-animation.xml
+share/help/uk/gnome-help/gs-browse-web.page
+share/help/uk/gnome-help/gs-change-date-time-timezone.page
+share/help/uk/gnome-help/gs-connect-online-accounts.page
+share/help/uk/gnome-help/gs-datetime.svg
+share/help/uk/gnome-help/gs-get-online.page
+share/help/uk/gnome-help/gs-go-online1.svg
+share/help/uk/gnome-help/gs-go-online2.svg
+share/help/uk/gnome-help/gs-go-online3.svg
+share/help/uk/gnome-help/gs-goa1.svg
+share/help/uk/gnome-help/gs-goa2.svg
+share/help/uk/gnome-help/gs-goa4.svg
+share/help/uk/gnome-help/gs-goa5.svg
+share/help/uk/gnome-help/gs-launch-applications.page
+share/help/uk/gnome-help/gs-legal.xml
+share/help/uk/gnome-help/gs-search-settings.svg
+share/help/uk/gnome-help/gs-search1.svg
+share/help/uk/gnome-help/gs-search2.svg
+share/help/uk/gnome-help/gs-switch-tasks.page
+share/help/uk/gnome-help/gs-thumb-launching-apps.svg
+share/help/uk/gnome-help/gs-thumb-task-switching.svg
+share/help/uk/gnome-help/gs-thumb-windows-and-workspaces.svg
+share/help/uk/gnome-help/gs-use-system-search.page
+share/help/uk/gnome-help/gs-use-windows-workspaces.page
+share/help/uk/gnome-help/gs-web-browser1-firefox-classic.svg
+share/help/uk/gnome-help/gs-web-browser1-firefox.svg
+share/help/uk/gnome-help/gs-web-browser1.svg
+share/help/uk/gnome-help/gs-web-browser2-firefox.svg
+share/help/uk/gnome-help/gs-web-browser2.svg
 share/help/zh_HK/
 share/help/zh_HK/gnome-help/
 share/help/zh_HK/gnome-help/figures/
-share/help/zh_HK/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/zh_HK/gnome-help/figures/gnome-launching-applications.webm
 share/help/zh_HK/gnome-help/figures/gnome-task-switching.webm
 share/help/zh_HK/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1428,7 +1346,6 @@ share/help/zh_HK/gnome-help/getting-started.page
 share/help/zh_HK/gnome-help/gs-animation.xml
 share/help/zh_HK/gnome-help/gs-browse-web.page
 share/help/zh_HK/gnome-help/gs-change-date-time-timezone.page
-share/help/zh_HK/gnome-help/gs-change-wallpaper.page
 share/help/zh_HK/gnome-help/gs-connect-online-accounts.page
 share/help/zh_HK/gnome-help/gs-datetime.svg
 share/help/zh_HK/gnome-help/gs-get-online.page
@@ -1445,7 +1362,6 @@ share/help/zh_HK/gnome-help/gs-search-settings.svg
 share/help/zh_HK/gnome-help/gs-search1.svg
 share/help/zh_HK/gnome-help/gs-search2.svg
 share/help/zh_HK/gnome-help/gs-switch-tasks.page
-share/help/zh_HK/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/zh_HK/gnome-help/gs-thumb-launching-apps.svg
 share/help/zh_HK/gnome-help/gs-thumb-task-switching.svg
 share/help/zh_HK/gnome-help/gs-thumb-windows-and-workspaces.svg
@@ -1459,7 +1375,6 @@ share/help/zh_HK/gnome-help/gs-web-browser2.svg
 share/help/zh_TW/
 share/help/zh_TW/gnome-help/
 share/help/zh_TW/gnome-help/figures/
-share/help/zh_TW/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/zh_TW/gnome-help/figures/gnome-launching-applications.webm
 share/help/zh_TW/gnome-help/figures/gnome-task-switching.webm
 share/help/zh_TW/gnome-help/figures/gnome-windows-and-workspaces.webm
@@ -1467,7 +1382,6 @@ share/help/zh_TW/gnome-help/getting-started.page
 share/help/zh_TW/gnome-help/gs-animation.xml
 share/help/zh_TW/gnome-help/gs-browse-web.page
 share/help/zh_TW/gnome-help/gs-change-date-time-timezone.page
-share/help/zh_TW/gnome-help/gs-change-wallpaper.page
 share/help/zh_TW/gnome-help/gs-connect-online-accounts.page
 share/help/zh_TW/gnome-help/gs-datetime.svg
 share/help/zh_TW/gnome-help/gs-get-online.page
@@ -1484,7 +1398,6 @@ share/help/zh_TW/gnome-help/gs-search-settings.svg
 share/help/zh_TW/gnome-help/gs-search1.svg
 share/help/zh_TW/gnome-help/gs-search2.svg
 share/help/zh_TW/gnome-help/gs-switch-tasks.page
-share/help/zh_TW/gnome-help/gs-thumb-changing-wallpaper.svg
 share/help/zh_TW/gnome-help/gs-thumb-launching-apps.svg
 share/help/zh_TW/gnome-help/gs-thumb-task-switching.svg
 share/help/zh_TW/gnome-help/gs-thumb-windows-and-workspaces.svg
