@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.98 2019/11/01 19:24:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2020/05/14 14:56:40 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.62.0
+GNOME_VERSION=		1.64.1
 GNOME_PROJECT=		gobject-introspection
 
 CATEGORIES=		devel
@@ -29,9 +29,11 @@ LIB_DEPENDS=		devel/glib2
 
 BUILD_DEPENDS=		devel/bison \
 			graphics/cairo \
+			textproc/py-markdown${MODPY_FLAVOR} \
 			www/py-mako${MODPY_FLAVOR}
 
 RUN_DEPENDS=		graphics/cairo \
+			textproc/py-markdown${MODPY_FLAVOR} \
 			www/py-mako${MODPY_FLAVOR}
 
 # XXX: tests/scanner/test_transformer.py fails otherwise

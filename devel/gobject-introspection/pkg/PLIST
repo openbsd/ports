@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/11/01 19:24:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/05/14 14:56:40 jasper Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
+bin/g-ir-doc-tool
 @bin bin/g-ir-generate
 @bin bin/g-ir-inspect
 bin/g-ir-scanner
@@ -49,7 +50,7 @@ lib/girepository-1.0/xrandr-1.3.typelib
 lib/gobject-introspection/
 lib/gobject-introspection/giscanner/
 lib/gobject-introspection/giscanner/__init__.py
-lib/gobject-introspection/giscanner/_giscanner.so
+@so lib/gobject-introspection/giscanner/_giscanner.so
 lib/gobject-introspection/giscanner/_version.py
 lib/gobject-introspection/giscanner/annotationmain.py
 lib/gobject-introspection/giscanner/annotationparser.py
