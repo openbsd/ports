@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2019/12/19 14:41:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.55 2020/05/14 15:04:21 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gsd-enums.h
@@ -18,12 +18,17 @@ lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-sharing
 @bin libexec/gsd-smartcard
 @bin libexec/gsd-sound
+@bin libexec/gsd-usb-protection
 @bin libexec/gsd-xsettings
 share/GConf/gsettings/gnome-settings-daemon.convert
 share/examples/gnome-settings-daemon/
 @sample ${SYSCONFDIR}/gnome-settings-daemon/
 @sample ${SYSCONFDIR}/gnome-settings-daemon/xrandr/
 share/examples/gnome-settings-daemon/xdg/
+share/examples/gnome-settings-daemon/xdg/Xwayland-session.d/
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/
+share/examples/gnome-settings-daemon/xdg/Xwayland-session.d/00-xrdb
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/00-xrdb
 share/examples/gnome-settings-daemon/xdg/autostart/
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.A11ySettings.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.A11ySettings.desktop
@@ -51,6 +56,8 @@ share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Smar
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Smartcard.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Sound.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Sound.desktop
+share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.UsbProtection.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.UsbProtection.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Wacom.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Wacom.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop
