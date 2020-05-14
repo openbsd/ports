@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/01/06 16:32:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/05/14 15:15:01 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/applications/org.gnome.Notes.desktop
@@ -37,7 +37,7 @@ share/help/C/bijiben/delete.page
 share/help/C/bijiben/figures/
 share/help/C/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/C/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/C/bijiben/figures/notes-3-12.png
+share/help/C/bijiben/figures/notes-3-34.png
 share/help/C/bijiben/format-list.page
 share/help/C/bijiben/format-text.page
 share/help/C/bijiben/index.page
@@ -59,7 +59,7 @@ share/help/cs/bijiben/delete.page
 share/help/cs/bijiben/figures/
 share/help/cs/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/cs/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/cs/bijiben/figures/notes-3-12.png
+share/help/cs/bijiben/figures/notes-3-34.png
 share/help/cs/bijiben/format-list.page
 share/help/cs/bijiben/format-text.page
 share/help/cs/bijiben/index.page
@@ -81,7 +81,7 @@ share/help/de/bijiben/delete.page
 share/help/de/bijiben/figures/
 share/help/de/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/de/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/de/bijiben/figures/notes-3-12.png
+share/help/de/bijiben/figures/notes-3-34.png
 share/help/de/bijiben/format-list.page
 share/help/de/bijiben/format-text.page
 share/help/de/bijiben/index.page
@@ -103,7 +103,7 @@ share/help/el/bijiben/delete.page
 share/help/el/bijiben/figures/
 share/help/el/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/el/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/el/bijiben/figures/notes-3-12.png
+share/help/el/bijiben/figures/notes-3-34.png
 share/help/el/bijiben/format-list.page
 share/help/el/bijiben/format-text.page
 share/help/el/bijiben/index.page
@@ -125,7 +125,7 @@ share/help/es/bijiben/delete.page
 share/help/es/bijiben/figures/
 share/help/es/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/es/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/es/bijiben/figures/notes-3-12.png
+share/help/es/bijiben/figures/notes-3-34.png
 share/help/es/bijiben/format-list.page
 share/help/es/bijiben/format-text.page
 share/help/es/bijiben/index.page
@@ -147,7 +147,7 @@ share/help/fr/bijiben/delete.page
 share/help/fr/bijiben/figures/
 share/help/fr/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/fr/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/fr/bijiben/figures/notes-3-12.png
+share/help/fr/bijiben/figures/notes-3-34.png
 share/help/fr/bijiben/format-list.page
 share/help/fr/bijiben/format-text.page
 share/help/fr/bijiben/index.page
@@ -169,7 +169,7 @@ share/help/hu/bijiben/delete.page
 share/help/hu/bijiben/figures/
 share/help/hu/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/hu/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/hu/bijiben/figures/notes-3-12.png
+share/help/hu/bijiben/figures/notes-3-34.png
 share/help/hu/bijiben/format-list.page
 share/help/hu/bijiben/format-text.page
 share/help/hu/bijiben/index.page
@@ -180,6 +180,28 @@ share/help/hu/bijiben/notebooks.page
 share/help/hu/bijiben/rename.page
 share/help/hu/bijiben/search.page
 share/help/hu/bijiben/share.page
+share/help/id/
+share/help/id/bijiben/
+share/help/id/bijiben/colors.page
+share/help/id/bijiben/create.page
+share/help/id/bijiben/cut-copy-paste.page
+share/help/id/bijiben/delete-permanent.page
+share/help/id/bijiben/delete-restore.page
+share/help/id/bijiben/delete.page
+share/help/id/bijiben/figures/
+share/help/id/bijiben/figures/hicolor_apps_16x16_bijiben.png
+share/help/id/bijiben/figures/hicolor_apps_48x48_bijiben.png
+share/help/id/bijiben/figures/notes-3-34.png
+share/help/id/bijiben/format-list.page
+share/help/id/bijiben/format-text.page
+share/help/id/bijiben/index.page
+share/help/id/bijiben/introduction.page
+share/help/id/bijiben/legal.xml
+share/help/id/bijiben/new-window.page
+share/help/id/bijiben/notebooks.page
+share/help/id/bijiben/rename.page
+share/help/id/bijiben/search.page
+share/help/id/bijiben/share.page
 share/help/ko/
 share/help/ko/bijiben/
 share/help/ko/bijiben/colors.page
@@ -191,7 +213,7 @@ share/help/ko/bijiben/delete.page
 share/help/ko/bijiben/figures/
 share/help/ko/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/ko/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/ko/bijiben/figures/notes-3-12.png
+share/help/ko/bijiben/figures/notes-3-34.png
 share/help/ko/bijiben/format-list.page
 share/help/ko/bijiben/format-text.page
 share/help/ko/bijiben/index.page
@@ -213,7 +235,7 @@ share/help/pl/bijiben/delete.page
 share/help/pl/bijiben/figures/
 share/help/pl/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/pl/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/pl/bijiben/figures/notes-3-12.png
+share/help/pl/bijiben/figures/notes-3-34.png
 share/help/pl/bijiben/format-list.page
 share/help/pl/bijiben/format-text.page
 share/help/pl/bijiben/index.page
@@ -235,7 +257,7 @@ share/help/pt_BR/bijiben/delete.page
 share/help/pt_BR/bijiben/figures/
 share/help/pt_BR/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/pt_BR/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/pt_BR/bijiben/figures/notes-3-12.png
+share/help/pt_BR/bijiben/figures/notes-3-34.png
 share/help/pt_BR/bijiben/format-list.page
 share/help/pt_BR/bijiben/format-text.page
 share/help/pt_BR/bijiben/index.page
@@ -257,7 +279,7 @@ share/help/sv/bijiben/delete.page
 share/help/sv/bijiben/figures/
 share/help/sv/bijiben/figures/hicolor_apps_16x16_bijiben.png
 share/help/sv/bijiben/figures/hicolor_apps_48x48_bijiben.png
-share/help/sv/bijiben/figures/notes-3-12.png
+share/help/sv/bijiben/figures/notes-3-34.png
 share/help/sv/bijiben/format-list.page
 share/help/sv/bijiben/format-text.page
 share/help/sv/bijiben/index.page
