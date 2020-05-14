@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/26 19:55:08 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/14 15:27:03 tb Exp $
 
 COMMENT =		Python SSL and TLS library
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.8.0-alpha37
 DISTNAME =		tlslite-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-alpha/alpha/}
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -27,7 +28,8 @@ MODULES =		lang/python
 
 MODPY_PYTEST =		Yes
 
-RUN_DEPENDS +=		security/py-ecdsa${MODPY_FLAVOR}
+RUN_DEPENDS +=		security/py-M2Crypto${MODPY_FLAVOR} \
+			security/py-ecdsa${MODPY_FLAVOR}
 
 TEST_DEPENDS +=		devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
