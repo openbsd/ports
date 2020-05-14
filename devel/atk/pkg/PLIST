@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/01/01 11:33:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/05/14 14:50:34 ajacoutot Exp $
 include/atk-1.0/
 include/atk-1.0/atk/
 include/atk-1.0/atk/atk-enum-types.h
@@ -56,6 +56,9 @@ share/locale/bn_IN/LC_MESSAGES/atk10.mo
 share/locale/bs/LC_MESSAGES/atk10.mo
 share/locale/ca/LC_MESSAGES/atk10.mo
 share/locale/ca@valencia/LC_MESSAGES/atk10.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/atk10.mo
 share/locale/cs/LC_MESSAGES/atk10.mo
 share/locale/cy/LC_MESSAGES/atk10.mo
 share/locale/da/LC_MESSAGES/atk10.mo
