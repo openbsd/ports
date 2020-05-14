@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/12/08 09:43:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/05/14 12:23:14 ajacoutot Exp $
 @bin bin/deja-dup
 lib/deja-dup/
 @so lib/deja-dup/libdeja.so
@@ -530,6 +530,19 @@ share/help/sr/deja-dup/restore-lost.page
 share/help/sr/deja-dup/restore-revert.page
 share/help/sr/deja-dup/restore-worst-case.page
 share/help/sr/deja-dup/support.page
+share/help/sv/deja-dup/
+share/help/sv/deja-dup/backup-auto.page
+share/help/sv/deja-dup/backup-first.page
+share/help/sv/deja-dup/contribute.page
+share/help/sv/deja-dup/credits.page
+share/help/sv/deja-dup/index.page
+share/help/sv/deja-dup/license.page
+share/help/sv/deja-dup/prefs.page
+share/help/sv/deja-dup/restore-full.page
+share/help/sv/deja-dup/restore-lost.page
+share/help/sv/deja-dup/restore-revert.page
+share/help/sv/deja-dup/restore-worst-case.page
+share/help/sv/deja-dup/support.page
 share/help/th/
 share/help/th/deja-dup/
 share/help/th/deja-dup/backup-auto.page
@@ -544,7 +557,6 @@ share/help/th/deja-dup/restore-lost.page
 share/help/th/deja-dup/restore-revert.page
 share/help/th/deja-dup/restore-worst-case.page
 share/help/th/deja-dup/support.page
-share/help/tr/
 share/help/tr/deja-dup/
 share/help/tr/deja-dup/backup-auto.page
 share/help/tr/deja-dup/backup-first.page
