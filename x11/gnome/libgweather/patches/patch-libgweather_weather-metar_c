@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgweather_weather-metar_c,v 1.1 2019/09/25 16:00:28 sthen Exp $
+$OpenBSD: patch-libgweather_weather-metar_c,v 1.2 2020/05/14 14:59:26 jasper Exp $
 
 metar_start_open():
 
@@ -12,7 +12,7 @@ gnome-shell: vfprintf %s NULL in "<raw_text>%s "
 Index: libgweather/weather-metar.c
 --- libgweather/weather-metar.c.orig
 +++ libgweather/weather-metar.c
-@@ -651,6 +651,9 @@ metar_start_open (GWeatherInfo *info)
+@@ -656,6 +656,9 @@ metar_start_open (GWeatherInfo *info)
      if (!loc->latlon_valid)
          return;
  

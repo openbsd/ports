@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.97 2019/11/01 19:43:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.98 2020/05/14 14:59:25 jasper Exp $
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		3.34.0
+GNOME_VERSION=		3.36.0
 
-SHARED_LIBS += gweather-3                3.3 # 15.0.0
+SHARED_LIBS += gweather-3                3.4 # 15.0.0
 
 CATEGORIES=		net
 
@@ -24,5 +24,7 @@ LIB_DEPENDS=		geo/geocode-glib \
 			x11/gtk+3
 
 CONFIGURE_ARGS =	-Dglade_catalog=false
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
