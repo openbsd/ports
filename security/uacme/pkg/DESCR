@@ -1,5 +1,5 @@
 uacme is a lightweight client for the RFC8555 ACMEv2 protocol used with
 certificate authorities to validate and issue X509 certificates. It is
-written in plain C with minimal dependencies (libcurl and one of GnuTLS,
-OpenSSL or mbedTLS) and can handle all authentication types via external
-hooks (examples for http-01, dns-01 via nsupdate, and tls-alpn-01).
+written in plain C with minimal dependencies (libcurl and a TLS library)
+and can handle all authentication types via external hooks (examples
+included for http-01, dns-01 via nsupdate, and tls-alpn-01).

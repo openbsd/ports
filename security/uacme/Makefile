@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/14 12:05:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/14 17:07:00 sthen Exp $
 
 COMMENT=	lightweight C ACMEv2 client, uses external authenticators
 
 V=		1.3
+REVISION=	0
 GH_ACCOUNT=	ndilieto
 GH_PROJECT=	uacme
 GH_TAGNAME=	upstream/$V
