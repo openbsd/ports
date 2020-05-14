@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/05/01 21:17:03 cwen Exp $
-
-# See https://github.com/widelands/widelands/issues/3887
-NOT_FOR_ARCHS =	powerpc
+# $OpenBSD: Makefile,v 1.30 2020/05/14 17:39:07 cwen Exp $
 
 COMMENT=	economic and military simulation game
 
@@ -10,7 +7,7 @@ DISTNAME = 	widelands-build${V}
 PKGNAME=	widelands-0.${V}
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://wl.widelands.org/
 MASTER_SITES =	https://launchpad.net/widelands/build${V}/build${V}/+download/
