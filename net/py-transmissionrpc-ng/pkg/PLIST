@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/16 13:36:25 kmos Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.2 2020/05/14 18:04:51 paco Exp $
+@pkgpath net/py-transmissionrpc-ng
 lib/python${MODPY_VERSION}/site-packages/transmissionrpc/
 lib/python${MODPY_VERSION}/site-packages/transmissionrpc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/transmissionrpc/${MODPY_PYCACHE}/
