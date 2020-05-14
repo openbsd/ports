@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2018/09/04 12:46:11 espie Exp $
+$OpenBSD: README,v 1.6 2020/05/14 15:30:46 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -29,5 +29,4 @@ int main (void)
 
 $ g++ CreateFile_test.cpp -o CreateFile_test.exe
 $ file CreateFile_test.exe
-CreateFile_test.exe: MS-DOS executable PE  for MS Windows (console)
-Intel 80386 32-bit
+CreateFile_test.exe: MS-DOS executable PE  for MS Windows (console) Intel 80386 32-bit
