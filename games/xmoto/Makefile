@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/11/06 16:19:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.37 2020/05/14 11:45:17 sthen Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -35,7 +35,8 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/libxml \
 		x11/libxdg-basedir \
 		${MODLUA_LIB_DEPENDS}
-RUN_DEPENDS = 	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
+BUILD_DEPENDS =	devel/gettext,-runtime
 
 SEPARATE_BUILD =	Yes
 
