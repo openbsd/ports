@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2019/11/23 12:08:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.57 2020/05/14 14:53:59 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -332,6 +332,7 @@ include/evolution/e-util/e-util-enums.h
 include/evolution/e-util/e-util-enumtypes.h
 include/evolution/e-util/e-util.h
 include/evolution/e-util/e-web-extension-container.h
+include/evolution/e-util/e-web-view-jsc-utils.h
 include/evolution/e-util/e-web-view-preview.h
 include/evolution/e-util/e-web-view.h
 include/evolution/e-util/e-webdav-browser.h
@@ -480,6 +481,7 @@ include/evolution/mail/e-mail-printer.h
 include/evolution/mail/e-mail-properties.h
 include/evolution/mail/e-mail-reader-utils.h
 include/evolution/mail/e-mail-reader.h
+include/evolution/mail/e-mail-remote-content-popover.h
 include/evolution/mail/e-mail-remote-content.h
 include/evolution/mail/e-mail-request.h
 include/evolution/mail/e-mail-send-account-override.h
@@ -536,7 +538,6 @@ lib/evolution-data-server/ui-modules/
 @lib lib/evolution/libecontacteditor.so.${LIBecontacteditor_VERSION}
 @lib lib/evolution/libecontactlisteditor.so.${LIBecontactlisteditor_VERSION}
 @so lib/evolution/libecontactprint.so
-@so lib/evolution/libedomutils.so
 @lib lib/evolution/libemail-engine.so.${LIBemail-engine_VERSION}
 @lib lib/evolution/libessmime.so.${LIBessmime_VERSION}
 @lib lib/evolution/libevolution-addressbook-importers.so.${LIBevolution-addressbook-importers_VERSION}
@@ -959,9 +960,6 @@ share/evolution/searchtypes.xml
 share/evolution/sounds/
 share/evolution/sounds/default_alarm.wav
 share/evolution/tasktypes.xml
-share/evolution/theme/
-share/evolution/theme/webview-print.css
-share/evolution/theme/webview.css
 share/evolution/ui/
 share/evolution/ui/contact-editor.ui
 share/evolution/ui/contact-list-editor.ui
@@ -1015,6 +1013,11 @@ share/evolution/views/tasks/Tasks.galview
 share/evolution/views/tasks/With_DueDate.galview
 share/evolution/views/tasks/With_Status.galview
 share/evolution/views/tasks/galview.xml
+share/evolution/webkit/
+share/evolution/webkit/e-convert.js
+share/evolution/webkit/e-web-view.js
+share/evolution/webkit/webview-print.css
+share/evolution/webkit/webview.css
 share/glib-2.0/schemas/org.gnome.evolution.addressbook.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.bogofilter.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.calendar.gschema.xml
@@ -1105,12 +1108,13 @@ share/help/C/evolution/figures/html-composer-insert-link.png
 share/help/C/evolution/figures/html-composer-insert-rule.png
 share/help/C/evolution/figures/html-composer-insert-table.png
 share/help/C/evolution/figures/minus-icon.png
-share/help/C/evolution/figures/new-mail-notification.png
 share/help/C/evolution/figures/new-mail-switcher.png
 share/help/C/evolution/figures/plus-icon.png
 share/help/C/evolution/figures/search-icon.png
 share/help/C/evolution/figures/window-overview-layers.png
+share/help/C/evolution/flatpak-limitations.page
 share/help/C/evolution/google-services.page
+share/help/C/evolution/import-apps-kmail.page
 share/help/C/evolution/import-apps-mozilla.page
 share/help/C/evolution/import-apps-outlook.page
 share/help/C/evolution/import-data.page
@@ -1333,12 +1337,13 @@ share/help/ca/evolution/figures/html-composer-insert-link.png
 share/help/ca/evolution/figures/html-composer-insert-rule.png
 share/help/ca/evolution/figures/html-composer-insert-table.png
 share/help/ca/evolution/figures/minus-icon.png
-share/help/ca/evolution/figures/new-mail-notification.png
 share/help/ca/evolution/figures/new-mail-switcher.png
 share/help/ca/evolution/figures/plus-icon.png
 share/help/ca/evolution/figures/search-icon.png
 share/help/ca/evolution/figures/window-overview-layers.png
+share/help/ca/evolution/flatpak-limitations.page
 share/help/ca/evolution/google-services.page
+share/help/ca/evolution/import-apps-kmail.page
 share/help/ca/evolution/import-apps-mozilla.page
 share/help/ca/evolution/import-apps-outlook.page
 share/help/ca/evolution/import-data.page
@@ -1561,12 +1566,13 @@ share/help/cs/evolution/figures/html-composer-insert-link.png
 share/help/cs/evolution/figures/html-composer-insert-rule.png
 share/help/cs/evolution/figures/html-composer-insert-table.png
 share/help/cs/evolution/figures/minus-icon.png
-share/help/cs/evolution/figures/new-mail-notification.png
 share/help/cs/evolution/figures/new-mail-switcher.png
 share/help/cs/evolution/figures/plus-icon.png
 share/help/cs/evolution/figures/search-icon.png
 share/help/cs/evolution/figures/window-overview-layers.png
+share/help/cs/evolution/flatpak-limitations.page
 share/help/cs/evolution/google-services.page
+share/help/cs/evolution/import-apps-kmail.page
 share/help/cs/evolution/import-apps-mozilla.page
 share/help/cs/evolution/import-apps-outlook.page
 share/help/cs/evolution/import-data.page
@@ -1789,12 +1795,13 @@ share/help/de/evolution/figures/html-composer-insert-link.png
 share/help/de/evolution/figures/html-composer-insert-rule.png
 share/help/de/evolution/figures/html-composer-insert-table.png
 share/help/de/evolution/figures/minus-icon.png
-share/help/de/evolution/figures/new-mail-notification.png
 share/help/de/evolution/figures/new-mail-switcher.png
 share/help/de/evolution/figures/plus-icon.png
 share/help/de/evolution/figures/search-icon.png
 share/help/de/evolution/figures/window-overview-layers.png
+share/help/de/evolution/flatpak-limitations.page
 share/help/de/evolution/google-services.page
+share/help/de/evolution/import-apps-kmail.page
 share/help/de/evolution/import-apps-mozilla.page
 share/help/de/evolution/import-apps-outlook.page
 share/help/de/evolution/import-data.page
@@ -2017,12 +2024,13 @@ share/help/el/evolution/figures/html-composer-insert-link.png
 share/help/el/evolution/figures/html-composer-insert-rule.png
 share/help/el/evolution/figures/html-composer-insert-table.png
 share/help/el/evolution/figures/minus-icon.png
-share/help/el/evolution/figures/new-mail-notification.png
 share/help/el/evolution/figures/new-mail-switcher.png
 share/help/el/evolution/figures/plus-icon.png
 share/help/el/evolution/figures/search-icon.png
 share/help/el/evolution/figures/window-overview-layers.png
+share/help/el/evolution/flatpak-limitations.page
 share/help/el/evolution/google-services.page
+share/help/el/evolution/import-apps-kmail.page
 share/help/el/evolution/import-apps-mozilla.page
 share/help/el/evolution/import-apps-outlook.page
 share/help/el/evolution/import-data.page
@@ -2246,12 +2254,13 @@ share/help/en_GB/evolution/figures/html-composer-insert-link.png
 share/help/en_GB/evolution/figures/html-composer-insert-rule.png
 share/help/en_GB/evolution/figures/html-composer-insert-table.png
 share/help/en_GB/evolution/figures/minus-icon.png
-share/help/en_GB/evolution/figures/new-mail-notification.png
 share/help/en_GB/evolution/figures/new-mail-switcher.png
 share/help/en_GB/evolution/figures/plus-icon.png
 share/help/en_GB/evolution/figures/search-icon.png
 share/help/en_GB/evolution/figures/window-overview-layers.png
+share/help/en_GB/evolution/flatpak-limitations.page
 share/help/en_GB/evolution/google-services.page
+share/help/en_GB/evolution/import-apps-kmail.page
 share/help/en_GB/evolution/import-apps-mozilla.page
 share/help/en_GB/evolution/import-apps-outlook.page
 share/help/en_GB/evolution/import-data.page
@@ -2474,12 +2483,13 @@ share/help/es/evolution/figures/html-composer-insert-link.png
 share/help/es/evolution/figures/html-composer-insert-rule.png
 share/help/es/evolution/figures/html-composer-insert-table.png
 share/help/es/evolution/figures/minus-icon.png
-share/help/es/evolution/figures/new-mail-notification.png
 share/help/es/evolution/figures/new-mail-switcher.png
 share/help/es/evolution/figures/plus-icon.png
 share/help/es/evolution/figures/search-icon.png
 share/help/es/evolution/figures/window-overview-layers.png
+share/help/es/evolution/flatpak-limitations.page
 share/help/es/evolution/google-services.page
+share/help/es/evolution/import-apps-kmail.page
 share/help/es/evolution/import-apps-mozilla.page
 share/help/es/evolution/import-apps-outlook.page
 share/help/es/evolution/import-data.page
@@ -2702,12 +2712,13 @@ share/help/eu/evolution/figures/html-composer-insert-link.png
 share/help/eu/evolution/figures/html-composer-insert-rule.png
 share/help/eu/evolution/figures/html-composer-insert-table.png
 share/help/eu/evolution/figures/minus-icon.png
-share/help/eu/evolution/figures/new-mail-notification.png
 share/help/eu/evolution/figures/new-mail-switcher.png
 share/help/eu/evolution/figures/plus-icon.png
 share/help/eu/evolution/figures/search-icon.png
 share/help/eu/evolution/figures/window-overview-layers.png
+share/help/eu/evolution/flatpak-limitations.page
 share/help/eu/evolution/google-services.page
+share/help/eu/evolution/import-apps-kmail.page
 share/help/eu/evolution/import-apps-mozilla.page
 share/help/eu/evolution/import-apps-outlook.page
 share/help/eu/evolution/import-data.page
@@ -2930,12 +2941,13 @@ share/help/fr/evolution/figures/html-composer-insert-link.png
 share/help/fr/evolution/figures/html-composer-insert-rule.png
 share/help/fr/evolution/figures/html-composer-insert-table.png
 share/help/fr/evolution/figures/minus-icon.png
-share/help/fr/evolution/figures/new-mail-notification.png
 share/help/fr/evolution/figures/new-mail-switcher.png
 share/help/fr/evolution/figures/plus-icon.png
 share/help/fr/evolution/figures/search-icon.png
 share/help/fr/evolution/figures/window-overview-layers.png
+share/help/fr/evolution/flatpak-limitations.page
 share/help/fr/evolution/google-services.page
+share/help/fr/evolution/import-apps-kmail.page
 share/help/fr/evolution/import-apps-mozilla.page
 share/help/fr/evolution/import-apps-outlook.page
 share/help/fr/evolution/import-data.page
@@ -3158,12 +3170,13 @@ share/help/gl/evolution/figures/html-composer-insert-link.png
 share/help/gl/evolution/figures/html-composer-insert-rule.png
 share/help/gl/evolution/figures/html-composer-insert-table.png
 share/help/gl/evolution/figures/minus-icon.png
-share/help/gl/evolution/figures/new-mail-notification.png
 share/help/gl/evolution/figures/new-mail-switcher.png
 share/help/gl/evolution/figures/plus-icon.png
 share/help/gl/evolution/figures/search-icon.png
 share/help/gl/evolution/figures/window-overview-layers.png
+share/help/gl/evolution/flatpak-limitations.page
 share/help/gl/evolution/google-services.page
+share/help/gl/evolution/import-apps-kmail.page
 share/help/gl/evolution/import-apps-mozilla.page
 share/help/gl/evolution/import-apps-outlook.page
 share/help/gl/evolution/import-data.page
@@ -3386,12 +3399,13 @@ share/help/hu/evolution/figures/html-composer-insert-link.png
 share/help/hu/evolution/figures/html-composer-insert-rule.png
 share/help/hu/evolution/figures/html-composer-insert-table.png
 share/help/hu/evolution/figures/minus-icon.png
-share/help/hu/evolution/figures/new-mail-notification.png
 share/help/hu/evolution/figures/new-mail-switcher.png
 share/help/hu/evolution/figures/plus-icon.png
 share/help/hu/evolution/figures/search-icon.png
 share/help/hu/evolution/figures/window-overview-layers.png
+share/help/hu/evolution/flatpak-limitations.page
 share/help/hu/evolution/google-services.page
+share/help/hu/evolution/import-apps-kmail.page
 share/help/hu/evolution/import-apps-mozilla.page
 share/help/hu/evolution/import-apps-outlook.page
 share/help/hu/evolution/import-data.page
@@ -3615,12 +3629,13 @@ share/help/mk/evolution/figures/html-composer-insert-link.png
 share/help/mk/evolution/figures/html-composer-insert-rule.png
 share/help/mk/evolution/figures/html-composer-insert-table.png
 share/help/mk/evolution/figures/minus-icon.png
-share/help/mk/evolution/figures/new-mail-notification.png
 share/help/mk/evolution/figures/new-mail-switcher.png
 share/help/mk/evolution/figures/plus-icon.png
 share/help/mk/evolution/figures/search-icon.png
 share/help/mk/evolution/figures/window-overview-layers.png
+share/help/mk/evolution/flatpak-limitations.page
 share/help/mk/evolution/google-services.page
+share/help/mk/evolution/import-apps-kmail.page
 share/help/mk/evolution/import-apps-mozilla.page
 share/help/mk/evolution/import-apps-outlook.page
 share/help/mk/evolution/import-data.page
@@ -3843,12 +3858,13 @@ share/help/oc/evolution/figures/html-composer-insert-link.png
 share/help/oc/evolution/figures/html-composer-insert-rule.png
 share/help/oc/evolution/figures/html-composer-insert-table.png
 share/help/oc/evolution/figures/minus-icon.png
-share/help/oc/evolution/figures/new-mail-notification.png
 share/help/oc/evolution/figures/new-mail-switcher.png
 share/help/oc/evolution/figures/plus-icon.png
 share/help/oc/evolution/figures/search-icon.png
 share/help/oc/evolution/figures/window-overview-layers.png
+share/help/oc/evolution/flatpak-limitations.page
 share/help/oc/evolution/google-services.page
+share/help/oc/evolution/import-apps-kmail.page
 share/help/oc/evolution/import-apps-mozilla.page
 share/help/oc/evolution/import-apps-outlook.page
 share/help/oc/evolution/import-data.page
@@ -4072,12 +4088,13 @@ share/help/ru/evolution/figures/html-composer-insert-link.png
 share/help/ru/evolution/figures/html-composer-insert-rule.png
 share/help/ru/evolution/figures/html-composer-insert-table.png
 share/help/ru/evolution/figures/minus-icon.png
-share/help/ru/evolution/figures/new-mail-notification.png
 share/help/ru/evolution/figures/new-mail-switcher.png
 share/help/ru/evolution/figures/plus-icon.png
 share/help/ru/evolution/figures/search-icon.png
 share/help/ru/evolution/figures/window-overview-layers.png
+share/help/ru/evolution/flatpak-limitations.page
 share/help/ru/evolution/google-services.page
+share/help/ru/evolution/import-apps-kmail.page
 share/help/ru/evolution/import-apps-mozilla.page
 share/help/ru/evolution/import-apps-outlook.page
 share/help/ru/evolution/import-data.page
@@ -4300,12 +4317,13 @@ share/help/sl/evolution/figures/html-composer-insert-link.png
 share/help/sl/evolution/figures/html-composer-insert-rule.png
 share/help/sl/evolution/figures/html-composer-insert-table.png
 share/help/sl/evolution/figures/minus-icon.png
-share/help/sl/evolution/figures/new-mail-notification.png
 share/help/sl/evolution/figures/new-mail-switcher.png
 share/help/sl/evolution/figures/plus-icon.png
 share/help/sl/evolution/figures/search-icon.png
 share/help/sl/evolution/figures/window-overview-layers.png
+share/help/sl/evolution/flatpak-limitations.page
 share/help/sl/evolution/google-services.page
+share/help/sl/evolution/import-apps-kmail.page
 share/help/sl/evolution/import-apps-mozilla.page
 share/help/sl/evolution/import-apps-outlook.page
 share/help/sl/evolution/import-data.page
@@ -4528,12 +4546,13 @@ share/help/sv/evolution/figures/html-composer-insert-link.png
 share/help/sv/evolution/figures/html-composer-insert-rule.png
 share/help/sv/evolution/figures/html-composer-insert-table.png
 share/help/sv/evolution/figures/minus-icon.png
-share/help/sv/evolution/figures/new-mail-notification.png
 share/help/sv/evolution/figures/new-mail-switcher.png
 share/help/sv/evolution/figures/plus-icon.png
 share/help/sv/evolution/figures/search-icon.png
 share/help/sv/evolution/figures/window-overview-layers.png
+share/help/sv/evolution/flatpak-limitations.page
 share/help/sv/evolution/google-services.page
+share/help/sv/evolution/import-apps-kmail.page
 share/help/sv/evolution/import-apps-mozilla.page
 share/help/sv/evolution/import-apps-outlook.page
 share/help/sv/evolution/import-data.page
@@ -4757,12 +4776,13 @@ share/help/te/evolution/figures/html-composer-insert-link.png
 share/help/te/evolution/figures/html-composer-insert-rule.png
 share/help/te/evolution/figures/html-composer-insert-table.png
 share/help/te/evolution/figures/minus-icon.png
-share/help/te/evolution/figures/new-mail-notification.png
 share/help/te/evolution/figures/new-mail-switcher.png
 share/help/te/evolution/figures/plus-icon.png
 share/help/te/evolution/figures/search-icon.png
 share/help/te/evolution/figures/window-overview-layers.png
+share/help/te/evolution/flatpak-limitations.page
 share/help/te/evolution/google-services.page
+share/help/te/evolution/import-apps-kmail.page
 share/help/te/evolution/import-apps-mozilla.page
 share/help/te/evolution/import-apps-outlook.page
 share/help/te/evolution/import-data.page
@@ -4985,12 +5005,13 @@ share/help/zh_CN/evolution/figures/html-composer-insert-link.png
 share/help/zh_CN/evolution/figures/html-composer-insert-rule.png
 share/help/zh_CN/evolution/figures/html-composer-insert-table.png
 share/help/zh_CN/evolution/figures/minus-icon.png
-share/help/zh_CN/evolution/figures/new-mail-notification.png
 share/help/zh_CN/evolution/figures/new-mail-switcher.png
 share/help/zh_CN/evolution/figures/plus-icon.png
 share/help/zh_CN/evolution/figures/search-icon.png
 share/help/zh_CN/evolution/figures/window-overview-layers.png
+share/help/zh_CN/evolution/flatpak-limitations.page
 share/help/zh_CN/evolution/google-services.page
+share/help/zh_CN/evolution/import-apps-kmail.page
 share/help/zh_CN/evolution/import-apps-mozilla.page
 share/help/zh_CN/evolution/import-apps-outlook.page
 share/help/zh_CN/evolution/import-data.page
