@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/05/14 20:39:10 jcs Exp $
+# $OpenBSD: Makefile,v 1.11 2020/05/14 20:59:34 jcs Exp $
 
 COMMENT=	utility to automatically hide X11 cursor when typing
 
@@ -10,7 +10,7 @@ PKGNAME=	${DIST_SUBDIR}-${V}
 CATEGORIES=	x11
 HOMEPAGE=	https://github.com/jcs/xbanish
 
-MAINTAINER=	joshua stein <jcs@openbsd.org>
+MAINTAINER=	joshua stein <jcs@jcs.org>
 
 MASTER_SITES=	${HOMEPAGE}/archive/
 
