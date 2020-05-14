@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2020/03/20 20:22:45 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2020/05/14 15:52:55 juanfra Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -33,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/hgext/${MODPY_PYCACHE}commitextras.${MO
 lib/python${MODPY_VERSION}/site-packages/hgext/${MODPY_PYCACHE}eol.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/${MODPY_PYCACHE}extdiff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/${MODPY_PYCACHE}factotum.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/${MODPY_PYCACHE}fastexport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/${MODPY_PYCACHE}fetch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/${MODPY_PYCACHE}fix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/${MODPY_PYCACHE}githelp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -131,6 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/hgext/fastannotate/formatter.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fastannotate/protocol.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fastannotate/revmap.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fastannotate/support.py
+lib/python${MODPY_VERSION}/site-packages/hgext/fastexport.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fetch.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fix.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/
@@ -156,6 +158,20 @@ lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/load.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/pybser.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/state.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/watchmanclient.py
+lib/python${MODPY_VERSION}/site-packages/hgext/git/
+lib/python${MODPY_VERSION}/site-packages/hgext/git/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hgext/git/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hgext/git/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/git/${MODPY_PYCACHE}dirstate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/git/${MODPY_PYCACHE}gitlog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/git/${MODPY_PYCACHE}gitutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/git/${MODPY_PYCACHE}index.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/git/${MODPY_PYCACHE}manifest.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/git/dirstate.py
+lib/python${MODPY_VERSION}/site-packages/hgext/git/gitlog.py
+lib/python${MODPY_VERSION}/site-packages/hgext/git/gitutil.py
+lib/python${MODPY_VERSION}/site-packages/hgext/git/index.py
+lib/python${MODPY_VERSION}/site-packages/hgext/git/manifest.py
 lib/python${MODPY_VERSION}/site-packages/hgext/githelp.py
 lib/python${MODPY_VERSION}/site-packages/hgext/gpg.py
 lib/python${MODPY_VERSION}/site-packages/hgext/graphlog.py
@@ -166,6 +182,20 @@ lib/python${MODPY_VERSION}/site-packages/hgext/highlight/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/hgext/highlight/${MODPY_PYCACHE}highlight.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/highlight/highlight.py
 lib/python${MODPY_VERSION}/site-packages/hgext/histedit.py
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/${MODPY_PYCACHE}changeset_obsoleted.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/${MODPY_PYCACHE}changeset_published.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/${MODPY_PYCACHE}enforce_draft_commits.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/${MODPY_PYCACHE}reject_merge_commits.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/${MODPY_PYCACHE}reject_new_heads.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/changeset_obsoleted.py
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/changeset_published.py
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/enforce_draft_commits.py
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/reject_merge_commits.py
+lib/python${MODPY_VERSION}/site-packages/hgext/hooklib/reject_new_heads.py
 lib/python${MODPY_VERSION}/site-packages/hgext/infinitepush/
 lib/python${MODPY_VERSION}/site-packages/hgext/infinitepush/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hgext/infinitepush/${MODPY_PYCACHE}/
