@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2020/04/30 05:55:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.171 2020/05/14 14:57:00 ajacoutot Exp $
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=590059
 #RUN_DEPENDS +=		misc/hwdata
@@ -7,16 +7,16 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		3.34.6
+GNOME_VERSION=		3.36.2
 
-SHARED_LIBS += gnome-desktop-3           2.2 # 18.0.3
+SHARED_LIBS += gnome-desktop-3           2.2 # 19.0.2
 
 CATEGORIES=		x11
 
 # LGPLv2/GFDLv1.1/GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-3 intl m
 
 MODULES=		devel/meson \
@@ -44,5 +44,7 @@ MODGNOME_TOOLS=		gobject-introspection yelp
 CONFIGURE_ARGS=		-Dgnome_distributor="OpenBSD Ports" \
 			-Dudev=disabled \
 			-Dsystemd=disabled
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
