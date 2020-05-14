@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_gcm-viewer_c,v 1.1 2020/05/14 15:20:04 ajacoutot Exp $
+
+From 66aea36411477f284fa8a379b3bde282385d281c Mon Sep 17 00:00:00 2001
+From: Jan Tojnar <jtojnar@gmail.com>
+Date: Wed, 8 Apr 2020 16:41:32 +0200
+Subject: [PATCH] Remove forgotten libcanberra include
+
+Index: src/gcm-viewer.c
+--- src/gcm-viewer.c.orig
++++ src/gcm-viewer.c
+@@ -12,7 +12,6 @@
+ #include <gdk/gdkx.h>
+ #include <glib/gstdio.h>
+ #include <locale.h>
+-#include <canberra-gtk.h>
+ #include <colord.h>
+ #include <math.h>
+ 

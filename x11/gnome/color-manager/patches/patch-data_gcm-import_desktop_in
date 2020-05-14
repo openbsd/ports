@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_gcm-import_desktop_in,v 1.1 2020/05/14 15:20:04 ajacoutot Exp $
+
+Index: data/gcm-import.desktop.in
+--- data/gcm-import.desktop.in.orig
++++ data/gcm-import.desktop.in
+@@ -2,7 +2,7 @@
+ Name=ICC Profile Installer
+ Comment=Install ICC profiles
+ Categories=System;
+-Exec=/usr/bin/gcm-import %F
++Exec=gcm-import %F
+ Terminal=false
+ Type=Application
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!

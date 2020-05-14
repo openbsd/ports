@@ -1,11 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/05/08 12:07:18 ajacoutot Exp $
-@bin bin/gcm-calibrate
+@comment $OpenBSD: PLIST,v 1.26 2020/05/14 15:20:04 ajacoutot Exp $
 @bin bin/gcm-import
 @bin bin/gcm-inspect
 @bin bin/gcm-picker
 @bin bin/gcm-viewer
-@bin libexec/gcm-helper-exiv
-share/applications/gcm-calibrate.desktop
 share/applications/gcm-import.desktop
 share/applications/gcm-picker.desktop
 share/applications/org.gnome.ColorProfileViewer.desktop
@@ -15,37 +12,6 @@ share/gnome-color-manager/figures/viewer-example-00.png
 share/gnome-color-manager/figures/viewer-example-01.png
 share/gnome-color-manager/figures/viewer-example-02.png
 share/gnome-color-manager/figures/viewer-example-03.png
-share/gnome-color-manager/icons/
-share/gnome-color-manager/icons/calibration-long.svg
-share/gnome-color-manager/icons/calibration-normal.svg
-share/gnome-color-manager/icons/calibration-short.svg
-share/gnome-color-manager/icons/clock.svg
-share/gnome-color-manager/icons/icons/
-share/gnome-color-manager/icons/icons/crt.svg
-share/gnome-color-manager/icons/icons/lcd.svg
-share/gnome-color-manager/icons/icons/projector.svg
-share/gnome-color-manager/icons/scan-target-bad.svg
-share/gnome-color-manager/icons/scan-target-good.svg
-share/gnome-color-manager/icons/scan-target.svg
-share/gnome-color-manager/targets/
-share/gnome-color-manager/targets/CMP-DigitalTarget3.png
-share/gnome-color-manager/targets/CMP_DT_003.png
-share/gnome-color-manager/targets/ColorChecker24.png
-share/gnome-color-manager/targets/ColorCheckerDC.png
-share/gnome-color-manager/targets/ColorCheckerSG.png
-share/gnome-color-manager/targets/IT872.png
-share/gnome-color-manager/targets/LaserSoftDCPro.png
-share/gnome-color-manager/targets/QPcard_201.png
-share/gnome-color-manager/targets/QPcard_202.png
-share/gnome-color-manager/targets/i1_RGB_Scan_14.png
-share/gnome-color-manager/targets/unknown.png
-share/gnome-color-manager/ti1/
-share/gnome-color-manager/ti1/display-long.ti1
-share/gnome-color-manager/ti1/display-normal.ti1
-share/gnome-color-manager/ti1/display-short.ti1
-share/gnome-color-manager/ti1/printer-long.ti1
-share/gnome-color-manager/ti1/printer-normal.ti1
-share/gnome-color-manager/ti1/printer-short.ti1
 share/help/
 share/help/C/
 share/help/C/gnome-color-manager/
@@ -119,6 +85,12 @@ share/help/hu/gnome-color-manager/color-import-linux.page
 share/help/hu/gnome-color-manager/color-import-osx.page
 share/help/hu/gnome-color-manager/color-import-windows.page
 share/help/hu/gnome-color-manager/legal.xml
+share/help/id/
+share/help/id/gnome-color-manager/
+share/help/id/gnome-color-manager/color-import-linux.page
+share/help/id/gnome-color-manager/color-import-osx.page
+share/help/id/gnome-color-manager/color-import-windows.page
+share/help/id/gnome-color-manager/legal.xml
 share/help/it/
 share/help/it/gnome-color-manager/
 share/help/it/gnome-color-manager/color-import-linux.page
@@ -219,6 +191,7 @@ share/locale/lt/LC_MESSAGES/gnome-color-manager.mo
 share/locale/lv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-color-manager.mo
 share/locale/mr/LC_MESSAGES/gnome-color-manager.mo
+share/locale/ms/LC_MESSAGES/gnome-color-manager.mo
 share/locale/nb/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ne/LC_MESSAGES/gnome-color-manager.mo
 share/locale/nl/LC_MESSAGES/gnome-color-manager.mo

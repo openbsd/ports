@@ -1,6 +1,7 @@
-$OpenBSD: patch-man_meson_build,v 1.1 2017/10/30 10:27:42 ajacoutot Exp $
+$OpenBSD: patch-man_meson_build,v 1.2 2020/05/14 15:20:04 ajacoutot Exp $
 
-../gnome-color-manager-3.26.0/man/gcm-picker.sgml:1: parser error : StartTag: invalid element name
+/usr/local/bin/docbook2man ../gnome-color-manager-3.36.0/man/gcm-picker.sgml --output man
+../gnome-color-manager-3.36.0/man/gcm-picker.sgml:1: parser error : StartTag: invalid element name
 <!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
 
 Index: man/meson.build
@@ -10,5 +11,5 @@ Index: man/meson.build
 -docbook2man = find_program('docbook2man', required : false)
 +docbook2man = find_program('disable-docbook2man', required : false)
  if docbook2man.found()
-   custom_target('gcm-calibrate-man',
-     output : 'gcm-calibrate.1',
+   custom_target('gcm-import-man',
+     output : 'gcm-import.1',
