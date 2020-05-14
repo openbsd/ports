@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2020/05/14 17:17:56 juanfra Exp $
+# $OpenBSD: Makefile,v 1.64 2020/05/14 20:03:25 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
 V =			7.7
+REVISION =		0
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -52,6 +53,7 @@ WRKSRC =		${WRKDIST}/src
 # The tests are installed from raco as a package
 NO_TEST =		Yes
 SEPARATE_BUILD =	Yes
+USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-libffi \
@@ -98,7 +100,7 @@ CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS +=	--enable-csdefault \
+CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
 .elif ${MACHINE_ARCH} == "i386"
