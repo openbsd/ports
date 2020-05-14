@@ -1,0 +1,13 @@
+$OpenBSD: patch-js_src_Makefile_in,v 1.1.1.1 2020/05/14 14:54:11 jasper Exp $
+
+Index: js/src/Makefile.in
+--- js/src/Makefile.in.orig
++++ js/src/Makefile.in
+@@ -117,7 +117,6 @@ endif
+ 
+ install::
+ 	$(MAKE) -C build install
+-	$(MAKE) -C shell install
+ 
+ ifdef HAVE_DTRACE
+ javascript-trace.h: $(srcdir)/devtools/javascript-trace.d

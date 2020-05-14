@@ -1,0 +1,25 @@
+$OpenBSD: patch-python_mozbuild_mozbuild_backend_recursivemake_py,v 1.1.1.1 2020/05/14 14:54:11 jasper Exp $
+
+From 8b2d7a77bfb4dbd513763501ed7e9722058ee9af Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Wed, 5 Jul 2017 22:45:59 -0700
+Subject: [PATCH] build: Copy headers on install instead of symlinking
+
+Index: python/mozbuild/mozbuild/backend/recursivemake.py
+--- python/mozbuild/mozbuild/backend/recursivemake.py.orig
++++ python/mozbuild/mozbuild/backend/recursivemake.py
+@@ -1522,11 +1522,11 @@ class RecursiveMakeBackend(CommonBackend):
+                                 raise Exception("Wildcards are only supported in the filename part of "
+                                                 "srcdir-relative or absolute paths.")
+ 
+-                            install_manifest.add_pattern_link(basepath, wild, path)
++                            install_manifest.add_pattern_copy(basepath, wild, path)
+                         else:
+-                            install_manifest.add_pattern_link(f.srcdir, f, path)
++                            install_manifest.add_pattern_copy(f.srcdir, f, path)
+                     else:
+-                        install_manifest.add_link(f.full_path, dest)
++                        install_manifest.add_copy(f.full_path, dest)
+                 else:
+                     install_manifest.add_optional_exists(dest)
+                     backend_file.write('%s_FILES += %s\n' % (

@@ -1,0 +1,18 @@
+$OpenBSD: patch-js_src_jit_ExecutableAllocator_h,v 1.1.1.1 2020/05/14 14:54:11 jasper Exp $
+
+Index: js/src/jit/ExecutableAllocator.h
+--- js/src/jit/ExecutableAllocator.h.orig
++++ js/src/jit/ExecutableAllocator.h
+@@ -50,6 +50,12 @@
+ #include "js/TypeDecls.h"
+ #include "js/Vector.h"
+ 
++#if defined(__mips64__)
++#if defined(__OpenBSD__)
++#include <mips64/sysarch.h>
++#endif
++#endif
++
+ #if defined(__sparc__)
+ #  ifdef __linux__  // bugzilla 502369
+ static void sync_instruction_memory(caddr_t v, u_int len) {
