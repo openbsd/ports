@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/04/15 08:43:46 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/05/14 12:16:15 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -329,10 +329,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lasso/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/liquid.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/literate_coffeescript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/literate_haskell.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/llvm/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/llvm.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/llvm/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua/builtins.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lustre.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lutin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/m68k.rb
@@ -342,10 +344,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/markdown.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mason.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica/builtins.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab/builtins.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/minizinc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/moonscript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mosel.rb
@@ -369,7 +372,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/pascal.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/perl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php/builtins.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/plain_text.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/plist.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/pony.rb
@@ -409,7 +412,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/solidity.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sparql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf/commands.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/supercollider.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/swift.rb
