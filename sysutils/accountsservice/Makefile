@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/07/12 20:49:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2020/05/14 12:21:34 ajacoutot Exp $
 
 # XXX fix change password (gnome-cc run-passwd.c: argv[0])
 
@@ -7,6 +7,8 @@ COMMENT=	D-Bus interface for user account query and manipulation
 # XXX 0.6.43: https://bugs.freedesktop.org/show_bug.cgi?id=48177
 DISTNAME=	accountsservice-0.6.42
 EXTRACT_SUFX=	.tar.xz
+
+REVISION=	0
 
 SHARED_LIBS +=  accountsservice      0.0      # 0.0
 
@@ -43,6 +45,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-introspection \
 		--disable-systemd
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/accountsservice
 

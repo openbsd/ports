@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_libaccountsservice_act-user_h,v 1.1 2020/05/14 12:21:34 ajacoutot Exp $
+
+From 8ba5a67f1d0fe867ef5569ec22e236db4d228631 Mon Sep 17 00:00:00 2001
+From: Philip Withnall <withnall@endlessm.com>
+Date: Tue, 18 Feb 2020 11:33:24 +0000
+Subject: act-user: Use G_DECLARE_FINAL_TYPE to declare ActUser
+
+Index: src/libaccountsservice/act-user.h
+--- src/libaccountsservice/act-user.h.orig
++++ src/libaccountsservice/act-user.h
+@@ -31,9 +31,8 @@
+ 
+ G_BEGIN_DECLS
+ 
+-#define ACT_TYPE_USER (act_user_get_type ())
+-#define ACT_USER(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), ACT_TYPE_USER, ActUser))
+-#define ACT_IS_USER(object) (G_TYPE_CHECK_INSTANCE_TYPE ((object), ACT_TYPE_USER))
++#define ACT_TYPE_USER (act_user_get_type())
++G_DECLARE_FINAL_TYPE (ActUser, act_user, ACT, USER, GObject)
+ 
+ typedef enum {
+         ACT_USER_ACCOUNT_TYPE_STANDARD,
+@@ -45,11 +44,6 @@ typedef enum {
+         ACT_USER_PASSWORD_MODE_SET_AT_LOGIN,
+         ACT_USER_PASSWORD_MODE_NONE,
+ } ActUserPasswordMode;
+-
+-typedef struct _ActUser ActUser;
+-typedef struct _ActUserClass ActUserClass;
+-
+-GType          act_user_get_type                  (void) G_GNUC_CONST;
+ 
+ const char    *act_user_get_object_path           (ActUser *user);
+ 

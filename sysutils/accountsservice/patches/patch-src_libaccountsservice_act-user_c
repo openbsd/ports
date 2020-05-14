@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_libaccountsservice_act-user_c,v 1.3 2020/05/14 12:21:34 ajacoutot Exp $
+
+From 8ba5a67f1d0fe867ef5569ec22e236db4d228631 Mon Sep 17 00:00:00 2001
+From: Philip Withnall <withnall@endlessm.com>
+Date: Tue, 18 Feb 2020 11:33:24 +0000
+Subject: act-user: Use G_DECLARE_FINAL_TYPE to declare ActUser
+
+Index: src/libaccountsservice/act-user.c
+--- src/libaccountsservice/act-user.c.orig
++++ src/libaccountsservice/act-user.c
+@@ -64,10 +64,6 @@
+  * Mode for setting the user's password.
+  */
+ 
+-#define ACT_USER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), ACT_TYPE_USER, ActUserClass))
+-#define ACT_IS_USER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), ACT_TYPE_USER))
+-#define ACT_USER_GET_CLASS(object) (G_TYPE_INSTANCE_GET_CLASS ((object), ACT_TYPE_USER, ActUserClass))
+-
+ #define ACCOUNTS_NAME           "org.freedesktop.Accounts"
+ #define ACCOUNTS_USER_INTERFACE "org.freedesktop.Accounts.User"
+ 
+@@ -140,11 +136,6 @@ struct _ActUser {
+         guint           system_account : 1;
+         guint           local_account : 1;
+         guint           nonexistent : 1;
+-};
+-
+-struct _ActUserClass
+-{
+-        GObjectClass parent_class;
+ };
+ 
+ static void act_user_finalize     (GObject      *object);
