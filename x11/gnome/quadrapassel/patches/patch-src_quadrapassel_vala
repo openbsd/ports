@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_quadrapassel_vala,v 1.1 2019/05/08 15:04:36 jasper Exp $
+$OpenBSD: patch-src_quadrapassel_vala,v 1.2 2020/05/14 15:29:34 jasper Exp $
 
 Drop libmanette dependency which requires libevdev/libinput
 
@@ -28,7 +28,7 @@ Index: src/quadrapassel.vala
          history = new History (Path.build_filename (Environment.get_user_data_dir (), "quadrapassel", "history"));
          history.load ();
  
-@@ -558,85 +549,6 @@ public class Quadrapassel : Gtk.Application
+@@ -576,85 +567,6 @@ public class Quadrapassel : Gtk.Application
      private void quit_cb ()
      {
          window.destroy ();
