@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.118 2019/11/01 19:42:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.119 2020/05/14 14:58:58 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.34.1
+GNOME_VERSION=	3.36.0
 
 SHARED_LIBS +=  goa-1.0              4.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      4.0      # .1.0
@@ -43,6 +43,8 @@ MODGNOME_TOOLS=	docbook gobject-introspection gtk-update-icon-cache vala
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-gudev
+
+DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 post-install:
 	rm ${PREFIX}/lib/goa-1.0/web-extensions/*.{a,la}

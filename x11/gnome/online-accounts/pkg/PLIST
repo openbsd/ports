@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2019/11/01 19:42:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/05/14 14:58:58 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -18,11 +18,11 @@ lib/goa-1.0/
 lib/goa-1.0/include/
 lib/goa-1.0/include/goaconfig.h
 lib/goa-1.0/web-extensions/
-lib/goa-1.0/web-extensions/libgoawebextension.so
-lib/libgoa-1.0.a
+@so lib/goa-1.0/web-extensions/libgoawebextension.so
+@static-lib lib/libgoa-1.0.a
 lib/libgoa-1.0.la
 @lib lib/libgoa-1.0.so.${LIBgoa-1.0_VERSION}
-lib/libgoa-backend-1.0.a
+@static-lib lib/libgoa-backend-1.0.a
 lib/libgoa-backend-1.0.la
 @lib lib/libgoa-backend-1.0.so.${LIBgoa-backend-1.0_VERSION}
 lib/pkgconfig/goa-1.0.pc
@@ -31,22 +31,24 @@ lib/pkgconfig/goa-backend-1.0.pc
 share/dbus-1/services/org.gnome.OnlineAccounts.service
 share/gir-1.0/Goa-1.0.gir
 share/glib-2.0/schemas/org.gnome.online-accounts.gschema.xml
+share/icons/hicolor/scalable/apps/goa-account-exchange.svg
 share/icons/hicolor/scalable/apps/goa-account-facebook.svg
 share/icons/hicolor/scalable/apps/goa-account-fedora.svg
 share/icons/hicolor/scalable/apps/goa-account-flickr.svg
 share/icons/hicolor/scalable/apps/goa-account-foursquare.svg
 share/icons/hicolor/scalable/apps/goa-account-google.svg
+share/icons/hicolor/scalable/apps/goa-account-lastfm.svg
 share/icons/hicolor/scalable/apps/goa-account-msn.svg
 share/icons/hicolor/scalable/apps/goa-account-owncloud.svg
-share/icons/hicolor/scalable/apps/goa-account-pocket.svg
 share/icons/hicolor/scalable/apps/goa-account.svg
+share/icons/hicolor/symbolic/apps/goa-account-exchange-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-facebook-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-flickr-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-foursquare-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-google-symbolic.svg
+share/icons/hicolor/symbolic/apps/goa-account-lastfm-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-msn-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-owncloud-symbolic.svg
-share/icons/hicolor/symbolic/apps/goa-account-pocket-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/an/LC_MESSAGES/gnome-online-accounts.mo
@@ -59,6 +61,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/bs/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ca/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-online-accounts.mo
+share/locale/ckb/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/cs/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/da/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/de/LC_MESSAGES/gnome-online-accounts.mo
