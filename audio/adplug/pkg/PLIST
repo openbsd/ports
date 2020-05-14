@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/25 21:42:09 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/05/14 12:19:48 fcambus Exp $
 @bin bin/adplugdb
 include/adplug/
 include/adplug/a2m.h
@@ -38,6 +38,7 @@ include/adplug/jbm.h
 include/adplug/kemuopl.h
 include/adplug/ksm.h
 include/adplug/lds.h
+include/adplug/load_helper.h
 include/adplug/mad.h
 include/adplug/mdi.h
 include/adplug/mid.h
@@ -73,7 +74,7 @@ include/adplug/woodyopl.h
 include/adplug/xad.h
 include/adplug/xsm.h
 @info info/libadplug.info
-lib/libadplug.a
+@static-lib lib/libadplug.a
 lib/libadplug.la
 @lib lib/libadplug.so.${LIBadplug_VERSION}
 lib/pkgconfig/adplug.pc

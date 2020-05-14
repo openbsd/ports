@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2018/04/25 21:42:09 fcambus Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2020/05/14 12:19:48 fcambus Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -857,7 +857,7 @@ src_libadplug_la_SOURCES = \
+@@ -858,7 +858,7 @@ src_libadplug_la_SOURCES = \
  	src/xad.cpp \
  	src/xsm.cpp
  
