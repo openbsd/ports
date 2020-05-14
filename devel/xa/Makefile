@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/15 14:34:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/14 12:13:52 fcambus Exp $
 
 COMMENT =	portable cross-assembler for MOS 6502 processors
 
-DISTNAME =	xa-2.3.10
-REVISION =	0
+DISTNAME =	xa-2.3.11
 
 CATEGORIES =	devel
 
