@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/01/02 20:30:04 kili Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/05/14 19:42:36 rsadowski Exp $
 
 Enforce -std=c++14 *after* -std=c++0x to let it build with poppler.
 From sthen@
@@ -6,9 +6,9 @@ From sthen@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -950,6 +950,9 @@ set(KOPAGEAPP_INCLUDES ${TEXTLAYOUT_INCLUDES}
-                     ${CMAKE_SOURCE_DIR}/libs/pageapp/commands
-                     ${CMAKE_BINARY_DIR}/libs/pageapp )
+@@ -913,6 +913,9 @@ set(KOPAGEAPP_INCLUDES ${TEXTLAYOUT_INCLUDES}
+     ${CMAKE_SOURCE_DIR}/libs/pageapp/commands
+     ${CMAKE_BINARY_DIR}/libs/pageapp )
  
 +
 +set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
