@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/05/14 19:44:08 rsadowski Exp $
 
 # icu4c namespace problem when mixing gcc 4.2 and a c++11 compiler:
 # undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		${CLANG_ARCHS}
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	slop
-GH_TAGNAME =	v7.4
+GH_TAGNAME =	v7.5
 
 COMMENT =	query for a selection and print to stdout (select operation)
 CATEGORIES =	graphics x11
