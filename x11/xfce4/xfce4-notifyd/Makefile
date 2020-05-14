@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2020/04/09 06:48:08 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2020/05/14 11:30:04 landry Exp $
 
 COMMENT=	Xfce4 notification daemon
 
-XFCE_VERSION=	0.6.0
+XFCE_VERSION=	0.6.1
 XFCE_GOODIE=	xfce4-notifyd
 
 # GPLv2
