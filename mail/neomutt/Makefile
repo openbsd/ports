@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2020/04/03 19:22:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2020/05/14 11:42:22 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20200320
+GH_TAGNAME=	20200501
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -15,9 +15,10 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto curses iconv idn2 intl ssl z
+WANTLIB+=	c crypto curses iconv idn2 intl ssl tdb z
 
-LIB_DEPENDS+=	devel/gettext,-runtime \
+LIB_DEPENDS+=	databases/tdb \
+		devel/gettext,-runtime \
 		devel/libidn2
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
@@ -37,7 +38,9 @@ CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		--idn=0 \
 		--idn2 \
 		--fmemopen \
-		--ssl --debug
+		--ssl \
+		--tdb \
+		--debug
 
 CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
@@ -59,18 +62,6 @@ WANTLIB+=	assuan gpg-error gpgme sqlite3
 CONFIGURE_ARGS+= --sasl
 LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
-.endif
-
-.include <bsd.port.arch.mk>
-
-.if ${MACHINE_ARCH} == hppa || ${MACHINE_ARCH} == powerpc
-LIB_DEPENDS+=	databases/qdbm
-WANTLIB+=	qdbm
-CONFIGURE_ARGS+= --qdbm
-.else
-LIB_DEPENDS+=	databases/kyotocabinet
-WANTLIB+=	kyotocabinet
-CONFIGURE_ARGS+= --kyotocabinet
 .endif
 
 post-install:
