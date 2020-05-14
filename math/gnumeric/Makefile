@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.143 2019/11/18 19:57:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.144 2020/05/14 12:28:03 ajacoutot Exp $
 
 GOFFICE_API_VERSION=	0.10
-GOFFICE_VERSION=	0.10.46
+GOFFICE_VERSION=	0.10.47
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.12.46
-REVISION=		0
+GNOME_VERSION=		1.12.47
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
@@ -28,7 +27,7 @@ WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl jpeg lzma m nettle p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
 WANTLIB += pthread rsvg-2 spectre tasn1 unistring xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += xcb-shm xml2 xslt z zstd
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -43,6 +42,8 @@ CONFIGURE_ARGS=		--without-gda \
 			--without-psiconv \
 			--without-paradox \
 			--without-python
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	rm ${PREFIX}/lib/goffice/${GOFFICE_API_VERSION}/plugins/gnumeric/gnumeric.{a,la}
