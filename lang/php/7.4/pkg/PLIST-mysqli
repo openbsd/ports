@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST-mysqli,v 1.1 2020/04/21 20:38:31 sthen Exp $
+@comment $OpenBSD: PLIST-mysqli,v 1.2 2020/05/14 19:34:53 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-mysqli->=7.4,<7.5
+@conflict php->=7.4,<7.4.6
 @so lib/php-${PV}/modules/mysqli.so
 share/examples/php-${PV}/mysqli.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/mysqli.ini
+share/php-${PV}/include/ext/mysqli/
+share/php-${PV}/include/ext/mysqli/mysqli_mysqlnd.h
+share/php-${PV}/include/ext/mysqli/php_mysqli_structs.h

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2020/04/21 20:38:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/05/14 19:34:53 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.4,<7.5
@@ -142,8 +142,6 @@ share/php-${PV}/include/ext/dom/
 share/php-${PV}/include/ext/dom/xml_common.h
 share/php-${PV}/include/ext/filter/
 share/php-${PV}/include/ext/filter/php_filter.h
-share/php-${PV}/include/ext/gmp/
-share/php-${PV}/include/ext/gmp/php_gmp_int.h
 share/php-${PV}/include/ext/hash/
 share/php-${PV}/include/ext/hash/php_hash.h
 share/php-${PV}/include/ext/hash/php_hash_adler32.h
@@ -199,9 +197,6 @@ share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_string.h
 share/php-${PV}/include/ext/mbstring/mbstring.h
 share/php-${PV}/include/ext/mbstring/php_mbregex.h
 share/php-${PV}/include/ext/mbstring/php_onig_compat.h
-share/php-${PV}/include/ext/mysqli/
-share/php-${PV}/include/ext/mysqli/mysqli_mysqlnd.h
-share/php-${PV}/include/ext/mysqli/php_mysqli_structs.h
 share/php-${PV}/include/ext/mysqlnd/
 share/php-${PV}/include/ext/mysqlnd/config-win.h
 share/php-${PV}/include/ext/mysqlnd/mysql_float_to_double.h

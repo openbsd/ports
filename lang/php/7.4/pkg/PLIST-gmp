@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST-gmp,v 1.1 2020/04/21 20:38:31 sthen Exp $
+@comment $OpenBSD: PLIST-gmp,v 1.2 2020/05/14 19:34:53 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-gmp->=7.4,<7.5
+@conflict php->=7.4,<7.4.6
 @so lib/php-${PV}/modules/gmp.so
 share/examples/php-${PV}/gmp.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/gmp.ini
+share/php-${PV}/include/ext/gmp/
+share/php-${PV}/include/ext/gmp/php_gmp_int.h
