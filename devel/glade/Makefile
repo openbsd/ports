@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.87 2020/04/25 10:07:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2020/05/14 15:13:34 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_PROJECT= 	glade
-GNOME_VERSION=	3.22.2
-REVISION =	0
+GNOME_VERSION=	3.36.0
 
 CATEGORIES=	devel
 
-SHARED_LIBS +=  gladeui-2                 1.0 # 0.0
+SHARED_LIBS +=  gladeui-2                 2.0 # 0.0
 
 HOMEPAGE=	http://glade.gnome.org/
 
@@ -18,14 +17,14 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += util xcb xcb-render xcb-shm xml2 z iconv intl fribidi
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gtk-3 harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread util xcb xcb-render
+WANTLIB += xcb-shm xml2 z
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=	lang/python \
 		x11/gnome
@@ -45,6 +44,8 @@ MODGNOME_TOOLS += gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS +=	--disable-webkit2gtk
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
 	rm ${PREFIX}/lib/glade/modules/*.{a,la}

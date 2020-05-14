@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2020/03/12 19:44:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2020/05/14 15:13:35 jasper Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -26,11 +26,11 @@ include/libgladeui-2.0/gladeui/glade-name-context.h
 include/libgladeui-2.0/gladeui/glade-palette.h
 include/libgladeui-2.0/gladeui/glade-placeholder.h
 include/libgladeui-2.0/gladeui/glade-project.h
-include/libgladeui-2.0/gladeui/glade-property-class.h
+include/libgladeui-2.0/gladeui/glade-property-def.h
 include/libgladeui-2.0/gladeui/glade-property-label.h
 include/libgladeui-2.0/gladeui/glade-property-shell.h
 include/libgladeui-2.0/gladeui/glade-property.h
-include/libgladeui-2.0/gladeui/glade-signal-class.h
+include/libgladeui-2.0/gladeui/glade-signal-def.h
 include/libgladeui-2.0/gladeui/glade-signal-editor.h
 include/libgladeui-2.0/gladeui/glade-signal-model.h
 include/libgladeui-2.0/gladeui/glade-signal.h
@@ -51,7 +51,7 @@ lib/libgladeui-2.la
 lib/pkgconfig/gladeui-2.0.pc
 @man man/man1/glade-previewer.1
 @man man/man1/glade.1
-share/applications/glade.desktop
+share/applications/org.gnome.Glade.desktop
 share/gir-1.0/Gladeui-2.0.gir
 share/glade/
 share/glade/catalogs/
@@ -380,33 +380,47 @@ share/gtk-doc/html/gladeui-2/
 share/gtk-doc/html/gladeui-2/GladeApp.html
 share/gtk-doc/html/gladeui-2/GladeBaseEditor.html
 share/gtk-doc/html/gladeui-2/GladeClipboard.html
+share/gtk-doc/html/gladeui-2/GladeCommand.html
 share/gtk-doc/html/gladeui-2/GladeDesignView.html
+share/gtk-doc/html/gladeui-2/GladeEditable.html
+share/gtk-doc/html/gladeui-2/GladeEditor.html
 share/gtk-doc/html/gladeui-2/GladeEditorProperty.html
 share/gtk-doc/html/gladeui-2/GladeInspector.html
 share/gtk-doc/html/gladeui-2/GladePalette.html
 share/gtk-doc/html/gladeui-2/GladePlaceholder.html
 share/gtk-doc/html/gladeui-2/GladeProject.html
 share/gtk-doc/html/gladeui-2/GladeProperty.html
+share/gtk-doc/html/gladeui-2/GladeSignal.html
+share/gtk-doc/html/gladeui-2/GladeSignalEditor.html
 share/gtk-doc/html/gladeui-2/GladeWidget.html
 share/gtk-doc/html/gladeui-2/GladeWidgetAction.html
+share/gtk-doc/html/gladeui-2/GladeWidgetAdaptor.html
+share/gtk-doc/html/gladeui-2/annotation-glossary.html
+share/gtk-doc/html/gladeui-2/api-index-full.html
 share/gtk-doc/html/gladeui-2/catalog.html
 share/gtk-doc/html/gladeui-2/catalogintro.html
 share/gtk-doc/html/gladeui-2/core.html
 share/gtk-doc/html/gladeui-2/dockables.html
 share/gtk-doc/html/gladeui-2/gladeui-2.devhelp2
 share/gtk-doc/html/gladeui-2/gladeui-Glade-Utils.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeClipboardView.html
+share/gtk-doc/html/gladeui-2/gladeui-GladeAdaptorChooser.html
+share/gtk-doc/html/gladeui-2/gladeui-GladeCatalog.html
+share/gtk-doc/html/gladeui-2/gladeui-GladeCellRendererIcon.html
 share/gtk-doc/html/gladeui-2/gladeui-GladeFixed.html
-share/gtk-doc/html/gladeui-2/gladeui-GladePropertyClass.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeSignalEditor.html
+share/gtk-doc/html/gladeui-2/gladeui-GladeNameContext.html
+share/gtk-doc/html/gladeui-2/gladeui-GladeObjectStub.html
+share/gtk-doc/html/gladeui-2/gladeui-GladePreview.html
+share/gtk-doc/html/gladeui-2/gladeui-GladePreviewer.html
+share/gtk-doc/html/gladeui-2/gladeui-GladePropertyDef.html
+share/gtk-doc/html/gladeui-2/gladeui-GladePropertyLabel.html
+share/gtk-doc/html/gladeui-2/gladeui-GladePropertyShell.html
+share/gtk-doc/html/gladeui-2/gladeui-GladeSignalDef.html
+share/gtk-doc/html/gladeui-2/gladeui-GladeSignalModel.html
+share/gtk-doc/html/gladeui-2/gladeui-GladeWidgetActionDef.html
+share/gtk-doc/html/gladeui-2/gladeui-Initializing-the-library.html
 share/gtk-doc/html/gladeui-2/gladeui-Xml-Utils.html
-share/gtk-doc/html/gladeui-2/gladeui-glade-command.html
-share/gtk-doc/html/gladeui-2/gladeui-glade-editor.html
-share/gtk-doc/html/gladeui-2/gladeui-glade-parameter.html
-share/gtk-doc/html/gladeui-2/gladeui-glade-widget-adaptor.html
 share/gtk-doc/html/gladeui-2/home.png
 share/gtk-doc/html/gladeui-2/index.html
-share/gtk-doc/html/gladeui-2/ix01.html
 share/gtk-doc/html/gladeui-2/left-insensitive.png
 share/gtk-doc/html/gladeui-2/left.png
 share/gtk-doc/html/gladeui-2/misc.html
@@ -487,6 +501,12 @@ share/help/hu/glade/figures/
 share/help/hu/glade/figures/main-window.png
 share/help/hu/glade/index.docbook
 share/help/hu/glade/legal.xml
+share/help/id/
+share/help/id/glade/
+share/help/id/glade/figures/
+share/help/id/glade/figures/main-window.png
+share/help/id/glade/index.docbook
+share/help/id/glade/legal.xml
 share/help/it/glade/
 share/help/it/glade/figures/
 share/help/it/glade/figures/main-window.png
@@ -542,14 +562,9 @@ share/help/zh_CN/glade/figures/
 share/help/zh_CN/glade/figures/main-window.png
 share/help/zh_CN/glade/index.docbook
 share/help/zh_CN/glade/legal.xml
-share/icons/hicolor/16x16/apps/glade.png
-share/icons/hicolor/22x22/apps/glade.png
-share/icons/hicolor/24x24/apps/glade.png
-share/icons/hicolor/256x256/apps/glade.png
-share/icons/hicolor/32x32/apps/glade.png
-share/icons/hicolor/48x48/apps/glade.png
-share/icons/hicolor/scalable/apps/glade-brand-symbolic.svg
-share/icons/hicolor/scalable/apps/glade-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Glade.svg
+share/icons/hicolor/symbolic/apps/glade-brand-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Glade-symbolic.svg
 share/locale/ar/LC_MESSAGES/glade.mo
 share/locale/ast/LC_MESSAGES/glade.mo
 share/locale/az/LC_MESSAGES/glade.mo
@@ -621,6 +636,6 @@ share/locale/vi/LC_MESSAGES/glade.mo
 share/locale/zh_CN/LC_MESSAGES/glade.mo
 share/locale/zh_HK/LC_MESSAGES/glade.mo
 share/locale/zh_TW/LC_MESSAGES/glade.mo
-share/metainfo/glade.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/metainfo/org.gnome.Glade.appdata.xml
