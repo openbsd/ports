@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/21 09:12:37 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/14 19:09:32 kn Exp $
 
 COMMENT =		print sun4v machine descriptions
 
@@ -22,9 +22,9 @@ BUILD_DEPENDS =		converters/rpm2cpio
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_ADJ_FILES =	tools/mdprint/mdprint.py
+MODPY_ADJ_FILES =	${MDPRINT}
 
-SEPARATE_BUILD =	Yes
+MDPRINT =		tools/mdprint/mdprint.py
 
 NO_TEST =		Yes
 
@@ -32,12 +32,12 @@ NO_TEST =		Yes
 post-extract:
 	cd ${WRKDIR} && rpm2cpio ${FULLDISTDIR}/${DISTFILES} | \
 		cpio -i ${DISTNAME}.tar
-	${TAR} -C${WRKDIR} -xf${WRKDIR}/${DISTNAME}.tar ${DISTNAME}/tools/mdprint
+	${TAR} -C${WRKDIR} -xf${WRKDIR}/${DISTNAME}.tar ${DISTNAME}/${MDPRINT}
 
 do-build:
-	2to3 --no-diffs -w -n -o${WRKBUILD} ${WRKSRC}/tools/mdprint/mdprint.py
+	2to3 --no-diffs -w ${WRKSRC}/${MDPRINT}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKBUILD}/mdprint.py ${PREFIX}/bin/mdprint
+	${INSTALL_SCRIPT} ${WRKSRC}/${MDPRINT} ${PREFIX}/bin/mdprint
 
 .include <bsd.port.mk>
