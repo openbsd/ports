@@ -1,14 +1,13 @@
-$OpenBSD: patch-ecc-random_c,v 1.1 2015/07/14 03:21:15 ajacoutot Exp $
+$OpenBSD: patch-ecc-random_c,v 1.2 2020/05/14 12:20:18 ajacoutot Exp $
 
-ecc-random.c:92: warning: implicit declaration of function 'alloca'
-
---- ecc-random.c.orig	Mon Jul 13 09:16:42 2015
-+++ ecc-random.c	Mon Jul 13 09:16:57 2015
+Index: ecc-random.c
+--- ecc-random.c.orig
++++ ecc-random.c
 @@ -36,6 +36,7 @@
  #endif
  
  #include <assert.h>
-+#include <stdlib.h>
++#include <stdlib.h>  /* alloca */
  
  #include "ecc.h"
  #include "ecc-internal.h"

@@ -1,14 +1,13 @@
-$OpenBSD: patch-ecc-point-mul-g_c,v 1.1 2015/07/14 03:21:15 ajacoutot Exp $
+$OpenBSD: patch-ecc-point-mul-g_c,v 1.2 2020/05/14 12:20:18 ajacoutot Exp $
 
-ecc-point-mul-g.c:54: warning: implicit declaration of function 'alloca'
-
---- ecc-point-mul-g.c.orig	Mon Jul 13 09:17:58 2015
-+++ ecc-point-mul-g.c	Mon Jul 13 09:18:05 2015
+Index: ecc-point-mul-g.c
+--- ecc-point-mul-g.c.orig
++++ ecc-point-mul-g.c
 @@ -36,6 +36,7 @@
  #endif
  
  #include <assert.h>
-+#include <stdlib.h>
++#include <stdlib.h>  /* alloca */
  
  #include "ecc.h"
  #include "ecc-internal.h"

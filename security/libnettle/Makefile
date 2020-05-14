@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2019/12/04 10:36:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/05/14 12:20:18 ajacoutot Exp $
 
 COMMENT=		cryptographic library
 
-DISTNAME=		nettle-3.5.1
+DISTNAME=		nettle-3.6
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
 
-SHARED_LIBS +=  hogweed                   3.0 # 6.5
-SHARED_LIBS +=  nettle                    5.0 # 4.5
+SHARED_LIBS +=  hogweed                   3.0 # unknown
+SHARED_LIBS +=  nettle                    6.0 # unknown
 
 CATEGORIES=		security devel
 
@@ -29,6 +28,13 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# fix relocation errors
+.if ${MACHINE_ARCH} == "sparc64"
+CONFIGURE_ENV +=	CCPIC=-fPIC
+.endif
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 MAKE_FLAGS=		LIBNETTLE_SONAME=libnettle.so.${LIBnettle_VERSION} \
 			LIBNETTLE_FILE=libnettle.so.${LIBnettle_VERSION} \

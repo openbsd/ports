@@ -1,0 +1,13 @@
+$OpenBSD: patch-pss-mgf1_c,v 1.1 2020/05/14 12:20:18 ajacoutot Exp $
+
+Index: pss-mgf1.c
+--- pss-mgf1.c.orig
++++ pss-mgf1.c
+@@ -38,6 +38,7 @@
+ #include "pss-mgf1.h"
+ 
+ #include <assert.h>
++#include <stdlib.h>  /* alloca */
+ #include <string.h>
+ 
+ #include "nettle-internal.h"

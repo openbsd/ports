@@ -1,14 +1,13 @@
-$OpenBSD: patch-getopt_c,v 1.1 2015/07/14 03:21:15 ajacoutot Exp $
+$OpenBSD: patch-getopt_c,v 1.2 2020/05/14 12:20:18 ajacoutot Exp $
 
-getopt.c:569: warning: implicit declaration of function 'alloca'
-
---- getopt.c.orig	Mon Jul 13 09:18:39 2015
-+++ getopt.c	Mon Jul 13 09:18:49 2015
+Index: getopt.c
+--- getopt.c.orig
++++ getopt.c
 @@ -30,6 +30,7 @@
  #endif
  
  #include <stdio.h>
-+#include <stdlib.h>
++#include <stdlib.h>  /* alloca */
  
  /* Comment out all this code if we are using the GNU C Library, and are not
     actually compiling the library itself.  This code is part of the GNU C
