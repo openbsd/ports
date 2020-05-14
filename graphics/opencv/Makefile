@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2020/04/11 12:52:29 cwen Exp $
+# $OpenBSD: Makefile,v 1.58 2020/05/14 12:35:31 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -14,8 +14,8 @@ GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-REVISION-java =		0
-REVISION-main =		0
+REVISION-java =		1
+REVISION-main =		1
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -30,8 +30,8 @@ DISTFILES =		opencv-{opencv/archive/}${V}${EXTRACT_SUFX}
 SHARED_LIBS += $i 6.0
 .endfor
 
-WANTLIB-main += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
-WANTLIB-main += Imath-2_4 atk-1.0 avcodec avformat avresample avutil
+WANTLIB-main += ${COMPILER_LIBCXX} Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
+WANTLIB-main += Imath-2_5 atk-1.0 avcodec avformat avresample avutil
 WANTLIB-main += c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0

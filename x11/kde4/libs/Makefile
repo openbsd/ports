@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2020/03/18 14:31:20 tb Exp $
+# $OpenBSD: Makefile,v 1.95 2020/05/14 12:35:32 ajacoutot Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -12,9 +12,9 @@ PKGNAME-langlist =	kde4-langlist-$V
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs-${MODKDE4_SPEC}
-REVISION-main =		20
-REVISION-en_US =	0
-REVISION-langlist =	0
+REVISION-main =		21
+REVISION-en_US =	1
+REVISION-langlist =	1
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -75,7 +75,7 @@ WANTLIB-langlist =
 WANTLIB-main += ${WANTLIB} c intl m pthread util z
 WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-main += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xrender
-WANTLIB-main += Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4 Imath-2_4
+WANTLIB-main += Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5 Imath-2_5
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB-main += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB-main += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg

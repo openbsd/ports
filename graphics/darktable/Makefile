@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2020/05/14 12:35:31 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= i386 amd64 aarch64
 
@@ -8,7 +8,7 @@ V=		2.6.3
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics x11
 
@@ -18,7 +18,7 @@ HOMEPAGE=	http://www.darktable.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
-WANTLIB += GraphicsMagick Iex-2_4 IlmImf-2_4 X11 Xrandr c cairo
+WANTLIB += GraphicsMagick Iex-2_5 IlmImf-2_5 X11 Xrandr c cairo
 WANTLIB += colord colord-gtk colordprivate cups curl exiv2 flickcurl
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gphoto2 gphoto2_port gtk-3 intl jpeg json-glib-1.0

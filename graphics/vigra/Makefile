@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/11/10 15:32:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2020/05/14 12:35:31 ajacoutot Exp $
 
 COMMENT =		image processing and analysis library
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 V = 			1-11-1
 DISTNAME =		vigra-${V:S/-/./g}-src
 PKGNAME =		vigra-${V:S/-/./g}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
@@ -21,8 +21,8 @@ MASTER_SITES = https://github.com/ukoethe/vigra/releases/download/Version-${V}/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
-WANTLIB += Imath-2_4 boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB += ${COMPILER_LIBCXX} Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
+WANTLIB += Imath-2_5 boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_system-mt boost_thread-mt fftw3 jpeg m png tiff
 WANTLIB += z
 

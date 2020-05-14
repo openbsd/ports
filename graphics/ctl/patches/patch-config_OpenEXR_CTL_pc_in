@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_OpenEXR_CTL_pc_in,v 1.1 2015/09/22 18:38:10 pascal Exp $
+$OpenBSD: patch-config_OpenEXR_CTL_pc_in,v 1.2 2020/05/14 12:35:31 ajacoutot Exp $
 --- config/OpenEXR_CTL.pc.in.orig	Tue Jun  3 03:11:24 2014
 +++ config/OpenEXR_CTL.pc.in	Fri Sep 11 14:47:59 2015
 @@ -1,11 +1,12 @@
@@ -20,5 +20,5 @@ $OpenBSD: patch-config_OpenEXR_CTL_pc_in,v 1.1 2015/09/22 18:38:10 pascal Exp $
 -Libs: -L${libdir} -lIlmImfCtl @OPENEXR_LDFLAGS@ @CTL_LDFLAGS@
 -Cflags: @CTL_CXXFLAGS_PC@ @OPENEXR_CXXFLAGS@ -I${OpenEXR_includedir}
 +Version: @CTL_VERSION@
-+Libs: -L${libdir} -lIlmImfCtl -lIlmImf -lImath -lHalf -lIex -lIexMath -lIlmThread -lIlmCtlSimd -lIlmCtlMath -lIlmCtl -pthread
++Libs: -L${libdir} -lIlmImfCtl -lIlmImf-2_5 -lImath -lHalf-2_5 -lIex-2_5 -lIexMath-2_5 -lIlmThread-2_5 -lIlmCtlSimd -lIlmCtlMath -lIlmCtl -pthread
 +Cflags: @CTL_CXXFLAGS_PC@ @OPENEXR_CXXFLAGS@ -I${OpenEXR_includedir} -I${CTL_includedir}

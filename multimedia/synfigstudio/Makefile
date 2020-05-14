@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/11/10 15:32:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2020/05/14 12:35:32 ajacoutot Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
@@ -8,7 +8,7 @@ BROKEN-sparc64 =	terminate called after throwing an instance of 'synfig::Excepti
 V =			1.2.1
 DISTNAME =		synfigstudio-$V
 API_V =			1.0
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=  synfigapp                 2.0 # 0.0
 
@@ -19,8 +19,8 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_4 ICE Iex-2_4 IexMath-2_4
-WANTLIB += IlmImf-2_4 IlmThread-2_4 Imath-2_4 Magick++-6.Q16 MagickCore-6.Q16
+WANTLIB += ${COMPILER_LIBCXX} Half-2_5 ICE Iex-2_5 IexMath-2_5
+WANTLIB += IlmImf-2_5 IlmThread-2_5 Imath-2_5 Magick++-6.Q16 MagickCore-6.Q16
 WANTLIB += MagickWand-6.Q16 SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
 WANTLIB += atkmm-1.6 bz2 c cairo cairo-gobject cairomm-1.0 db

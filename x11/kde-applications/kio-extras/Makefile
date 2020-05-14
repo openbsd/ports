@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/24 07:42:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/05/14 12:35:32 ajacoutot Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kioarchive                1.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            1.0 # 18.08
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
-WANTLIB += Imath-2_4 KF5Activities KF5ActivitiesStats KF5Archive
+WANTLIB += ${COMPILER_LIBCXX} Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
+WANTLIB += Imath-2_5 KF5Activities KF5ActivitiesStats KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5DNSSD KF5GuiAddons KF5I18n KF5IconThemes

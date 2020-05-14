@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/04/18 13:53:58 cwen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/05/14 12:35:31 ajacoutot Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -10,7 +10,7 @@ GH_PROJECT = 		oiio
 V =			1.8.6
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		6
+REVISION =		7
 
 SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5
@@ -25,8 +25,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += GL GLEW GLU Half-2_4 Iex-2_4 IlmImf-2_4 IlmThread-2_4
-WANTLIB += Imath-2_4 OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
+WANTLIB += GL GLEW GLU Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
+WANTLIB += Imath-2_5 OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
 WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_python-mt
 WANTLIB += boost_system-mt boost_thread-mt bz2 c freetype gif

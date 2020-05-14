@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/05/01 10:13:59 cwen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/05/14 12:35:31 ajacoutot Exp $
 
 BROKEN-powerpc =	colors are off and as such it is not useable
 
@@ -6,6 +6,7 @@ COMMENT =	advanced drawing and image manipulation
 
 VERSION =	4.2.9
 DISTNAME =	krita-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kritabasicflakes          2.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
@@ -44,8 +45,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_4 ICE Iex-2_4 IlmImf-2_4
-WANTLIB += IlmThread-2_4 Imath-2_4 KF5Archive KF5Completion KF5ConfigCore
+WANTLIB += ${COMPILER_LIBCXX} Half-2_5 ICE Iex-2_5 IlmImf-2_5
+WANTLIB += IlmThread-2_5 Imath-2_5 KF5Archive KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n
 WANTLIB += KF5ItemViews KF5WidgetsAddons KF5WindowSystem OpenColorIO
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia

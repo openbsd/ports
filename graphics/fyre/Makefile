@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2020/05/14 12:35:31 ajacoutot Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-REVISION=		24
+REVISION=		25
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/
@@ -10,8 +10,8 @@ HOMEPAGE=		http://fyre.navi.cx/
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_4 Iex-2_4 IexMath-2_4 IlmImf-2_4
-WANTLIB += IlmThread-2_4 Imath-2_4 X11 Xcomposite Xcursor Xdamage
+WANTLIB += ${COMPILER_LIBCXX} Half-2_5 Iex-2_5 IexMath-2_5 IlmImf-2_5
+WANTLIB += IlmThread-2_5 Imath-2_5 X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glade-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 intl m pango-1.0
