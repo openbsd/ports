@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/05/14 11:43:56 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2020/05/14 11:46:43 landry Exp $
 
 COMMENT=	Xfce4 settings daemon
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	x11/xfce4
 LIB_DEPENDS=	x11/xfce4/libxfce4util
 BUILD_DEPENDS += devel/gobject-introspection lang/vala
+MODXFCE_PURGE_LA=	lib/gio/modules
 
 CONFIGURE_ARGS=	--disable-perl-bindings --disable-linker-opts
 CONFIGURE_ARGS+=--enable-gsettings-backend

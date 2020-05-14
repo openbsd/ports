@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/05/14 11:43:56 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/05/14 11:46:43 landry Exp $
 @bin bin/xfconf-query
 include/xfce4/xfconf-0/
 include/xfce4/xfconf-0/xfconf/
@@ -7,7 +7,6 @@ include/xfce4/xfconf-0/xfconf/xfconf-channel.h
 include/xfce4/xfconf-0/xfconf/xfconf-errors.h
 include/xfce4/xfconf-0/xfconf/xfconf-types.h
 include/xfce4/xfconf-0/xfconf/xfconf.h
-lib/gio/modules/libxfconfgsettingsbackend.la
 @so lib/gio/modules/libxfconfgsettingsbackend.so
 lib/girepository-1.0/Xfconf-0.typelib
 lib/libxfconf-0.la
