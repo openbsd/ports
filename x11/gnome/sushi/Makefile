@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2019/11/01 19:40:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2020/05/14 16:03:08 ajacoutot Exp $
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.34.0
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -15,9 +16,6 @@ WANTLIB += pangocairo-1.0
 
 MODULES=	devel/meson \
 		x11/gnome
-
-# sync with x11/gnome/gjs
-COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	audio/libmusicbrainz5 \
 		evince-*-!light:graphics/evince
