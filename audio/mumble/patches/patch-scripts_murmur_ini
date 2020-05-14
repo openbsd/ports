@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_murmur_ini,v 1.1 2020/04/13 13:18:36 kn Exp $
+$OpenBSD: patch-scripts_murmur_ini,v 1.2 2020/05/14 18:01:48 kn Exp $
 
 Comment unavailable options and set default database and log locations.
 
@@ -6,12 +6,12 @@ Index: scripts/murmur.ini
 --- scripts/murmur.ini.orig
 +++ scripts/murmur.ini
 @@ -13,7 +13,7 @@
-
+ 
  ; Path to database. If blank, will search for
  ; murmur.sqlite in default locations or create it if not found.
 -database=
 +database=${LOCALSTATEDIR}/murmur/murmur.sqlite
-
+ 
  ; Murmur defaults to using SQLite with its default rollback journal.
  ; In some situations, using SQLite's write-ahead log (WAL) can be
 @@ -51,7 +51,7 @@ database=
@@ -20,7 +20,7 @@ Index: scripts/murmur.ini
  ;
 -;dbus=session
 +;dbus=system
-
+ 
  ; Alternate D-Bus service name. Only use if you are running distinct
  ; murmurd processes connected to the same D-Bus daemon.
 @@ -62,7 +62,7 @@ database=
@@ -29,16 +29,16 @@ Index: scripts/murmur.ini
  ; Please see the ICE documentation on how to specify endpoints.
 -ice="tcp -h 127.0.0.1 -p 6502"
 +;ice="tcp -h 127.0.0.1 -p 6502"
-
+ 
  ; Ice primarily uses local sockets. This means anyone who has a
  ; user account on your machine can connect to the Ice services.
 @@ -77,7 +77,7 @@ ice="tcp -h 127.0.0.1 -p 6502"
  ; access will be denied.
-
+ 
  ;icesecretread=
 -icesecretwrite=
 +;icesecretwrite=
-
+ 
  ; If you want to expose Murmur's experimental gRPC API, you
  ; need to specify an address to bind on.
 @@ -102,7 +102,7 @@ icesecretwrite=
@@ -47,7 +47,7 @@ Index: scripts/murmur.ini
  ; mode which logs to the console.
 -;logfile=murmur.log
 +logfile=${LOCALSTATEDIR}/murmur/murmur.log
-
+ 
  ; If set, Murmur will write its process ID to this file
  ; when running in daemon mode (when the -fg flag is not
 @@ -272,6 +272,6 @@ allowping=true
