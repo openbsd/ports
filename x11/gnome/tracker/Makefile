@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2020/05/15 09:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.254 2020/05/15 09:03:10 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
@@ -32,7 +32,7 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
-TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
+TEST_DEPENDS=		devel/py-gobject3,${MODPY_FLAVOR}
 
 BUILD_DEPENDS=		x11/dbus
 
