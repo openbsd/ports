@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2019/09/30 12:51:25 kili Exp $
+# $OpenBSD: Makefile,v 1.37 2020/05/15 21:50:23 kili Exp $
 
 COMMENT=		parser generator for Haskell
 
-# Dependency of meta/haskell-platform.
-# Please do *not* update without thinking.
 PORTROACH =		ignore:1
 
-DISTNAME=		happy-1.19.5
-REVISION=		1
+DISTNAME=		happy-1.19.10
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/happy/
@@ -15,7 +12,7 @@ HOMEPAGE=		http://www.haskell.org/happy/
 # BSD3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c charset ffi gmp iconv m pthread
+WANTLIB=		c ffi gmp iconv m pthread
 
 MODULES=		lang/ghc
 MODGHC_BUILD=		cabal hackage nort
@@ -29,7 +26,7 @@ BUILD_DEPENDS+=		textproc/docbook-xsl
 # Required for building the documentation and for the regression tests:
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.69
 AUTOCONF_DIR=		${WRKSRC}/doc
 WRKCONF=		${AUTOCONF_DIR}
 

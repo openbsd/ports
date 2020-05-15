@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/09/19 07:50:58 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/05/15 21:50:24 kili Exp $
 @bin bin/happy
 share/doc/happy/
 @comment share/doc/${DISTNAME}/
@@ -24,6 +24,7 @@ share/doc/happy/sec-glr.html
 share/doc/happy/sec-grammar-files.html
 share/doc/happy/sec-grammar.html
 share/doc/happy/sec-happy-ghci.html
+share/doc/happy/sec-info-files-conflicts.html
 share/doc/happy/sec-info-files.html
 share/doc/happy/sec-invoking.html
 share/doc/happy/sec-license.html
