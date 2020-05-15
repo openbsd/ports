@@ -1,4 +1,4 @@
-$OpenBSD: patch-core_showfoto_CMakeLists_txt,v 1.1 2019/06/16 15:14:56 rsadowski Exp $
+$OpenBSD: patch-core_showfoto_CMakeLists_txt,v 1.2 2020/05/15 15:54:25 rsadowski Exp $
 
 Use generated Info.plist dependency. Fixes a problem in combination with Ninja
 v1.9.0 because of duplicate rules for generating Info.plist.
@@ -6,7 +6,7 @@ v1.9.0 because of duplicate rules for generating Info.plist.
 Index: core/showfoto/CMakeLists.txt
 --- core/showfoto/CMakeLists.txt.orig
 +++ core/showfoto/CMakeLists.txt
-@@ -60,6 +60,7 @@ add_executable(showfoto ${showfoto_SRCS}
+@@ -53,6 +53,7 @@ add_executable(showfoto ${showfoto_SRCS}
  )
  
  add_dependencies(showfoto digikam-gitversion)
@@ -14,7 +14,7 @@ Index: core/showfoto/CMakeLists.txt
  
  # To fill plist XML file for OSX #####################################################
  
-@@ -68,7 +69,6 @@ set(MACOSX_APP_DESCRIPTION             "Stand alone Ph
+@@ -61,7 +62,6 @@ set(MACOSX_APP_DESCRIPTION             "Stand alone Ph
  set(MACOSX_BUNDLE_LONG_VERSION_STRING  ${DIGIKAM_VERSION_STRING})
  set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${DIGIKAM_VERSION_SHORT})
  set(MACOSX_BUNDLE_BUNDLE_VERSION       ${DIGIKAM_VERSION_STRING})

@@ -1,4 +1,4 @@
-$OpenBSD: patch-core_CMakeLists_txt,v 1.2 2019/08/07 10:44:49 rsadowski Exp $
+$OpenBSD: patch-core_CMakeLists_txt,v 1.3 2020/05/15 15:54:25 rsadowski Exp $
 
 Generate Info.plist only one time and create a dependency. Fixes a problem in
 combination with Ninja v1.9.0 because of duplicate rules for generating
@@ -7,7 +7,7 @@ Info.plist.
 Index: core/CMakeLists.txt
 --- core/CMakeLists.txt.orig
 +++ core/CMakeLists.txt
-@@ -646,6 +646,8 @@ message(STATUS "")
+@@ -653,6 +653,8 @@ message(STATUS "")
  
  if(DIGIKAM_CAN_BE_COMPILED)
  

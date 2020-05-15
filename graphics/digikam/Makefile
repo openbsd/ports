@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2020/03/23 18:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.63 2020/05/15 15:54:25 rsadowski Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		6.2.0
+V =		6.4.0
 DISTNAME =	digikam-${V}
-REVISION =	3
-
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.digikam.org/
@@ -33,7 +31,7 @@ WANTLIB += expat exslt glib-2.0 gphoto2 gphoto2_port intl jasper
 WANTLIB += jpeg lcms2 lensfun lqr-1 m marblewidget-qt5 opencv_calib3d
 WANTLIB += opencv_core opencv_features2d opencv_flann opencv_imgcodecs
 WANTLIB += opencv_imgproc opencv_objdetect png swscale tiff usb-1.0
-WANTLIB += xml2 xslt z
+WANTLIB += x265 xml2 xslt z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/${V}/}
 
@@ -77,6 +75,7 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		devel/kf5/threadweaver \
+		graphics/ImageMagick \
 		graphics/exiv2 \
 		graphics/jasper \
 		graphics/jpeg \
@@ -87,7 +86,7 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		graphics/opencv>=3 \
 		graphics/png \
 		graphics/tiff \
-		graphics/ImageMagick \
+		multimedia/x265 \
 		x11/kde-applications/libksane \
 		x11/kde-applications/marble \
 		x11/qt5/qtwebkit \
@@ -97,7 +96,8 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 .if ${FLAVOR:Mmysql}
-LIB_DEPENDS +=		databases/mariadb
+BUILD_DEPENDS +=	databases/mariadb
+RUN_DEPENDS +=		databases/mariadb
 CONFIGURE_ARGS +=	-DENABLE_MYSQLSUPPORT=ON
 .endif
 
