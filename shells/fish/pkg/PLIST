@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/14 16:31:29 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/05/15 01:36:52 abieber Exp $
 @shell bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
@@ -335,7 +335,6 @@ share/fish/completions/awk.fish
 share/fish/completions/aws.fish
 share/fish/completions/badblocks.fish
 share/fish/completions/base64.fish
-share/fish/completions/bat.fish
 share/fish/completions/bb-wrapper.fish
 share/fish/completions/bc.fish
 share/fish/completions/bd.fish
@@ -760,7 +759,6 @@ share/fish/completions/renice.fish
 share/fish/completions/resolvectl.fish
 share/fish/completions/return.fish
 share/fish/completions/rfkill.fish
-share/fish/completions/rg.fish
 share/fish/completions/rgrep.fish
 share/fish/completions/rm.fish
 share/fish/completions/rmdir.fish
