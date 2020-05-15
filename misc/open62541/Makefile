@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/01 15:32:44 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/15 09:37:15 bluhm Exp $
 
 COMMENT =	library implementation of OPC UA
 
 VERSION =	1.0.1
-REVISION =	1
+REVISION =	2
 PKGNAME =	open62541-${VERSION}
 
 GH_ACCOUNT =	open62541

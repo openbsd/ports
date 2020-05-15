@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_client_ua_client_highlevel_c,v 1.1 2020/05/15 09:37:15 bluhm Exp $
+
+https://github.com/open62541/open62541/commit/b172ae033adb5dd2aa6766b9cd6af8fc8c91453c
+
+Index: src/client/ua_client_highlevel.c
+--- src/client/ua_client_highlevel.c.orig
++++ src/client/ua_client_highlevel.c
+@@ -797,7 +797,8 @@ void ValueAttributeRead(UA_Client *client, void *userd
+ }
+ 
+ /*Read Attributes*/
+-UA_StatusCode __UA_Client_readAttribute_async(UA_Client *client,
++UA_StatusCode
++__UA_Client_readAttribute_async(UA_Client *client,
+         const UA_NodeId *nodeId, UA_AttributeId attributeId,
+         const UA_DataType *outDataType, UA_ClientAsyncServiceCallback callback,
+         void *userdata, UA_UInt32 *reqId) {
+@@ -810,20 +811,21 @@ UA_StatusCode __UA_Client_readAttribute_async(UA_Clien
+     request.nodesToRead = &item;
+     request.nodesToReadSize = 1;
+ 
+-    __UA_Client_AsyncService(client, &request, &UA_TYPES[UA_TYPES_READREQUEST],
+-                             ValueAttributeRead, &UA_TYPES[UA_TYPES_READRESPONSE],
+-                             userdata, reqId);
+-
+     CustomCallback *cc = (CustomCallback*) UA_malloc(sizeof(CustomCallback));
+     if (!cc)
+         return UA_STATUSCODE_BADOUTOFMEMORY;
+     cc->callback = callback;
+-    cc->callbackId = *reqId;
+ 
+     cc->attributeId = attributeId;
+     cc->outDataType = outDataType;
+ 
++    __UA_Client_AsyncService(client, &request, &UA_TYPES[UA_TYPES_READREQUEST],
++                             ValueAttributeRead, &UA_TYPES[UA_TYPES_READRESPONSE],
++                             userdata, &cc->callbackId);
++
+     LIST_INSERT_HEAD(&client->customCallbacks, cc, pointers);
++    if (reqId != NULL)
++        *reqId = cc->callbackId;
+ 
+     return UA_STATUSCODE_GOOD;
+ }
