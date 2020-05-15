@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/05/15 14:46:37 ajacoutot Exp $
 
 COMMENT =	LastPass command line interface tool
 
 V =		1.3.3
 DISTNAME =	lastpass-cli-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -20,7 +20,8 @@ WANTLIB =	c crypto curl kvm ssl xml2
 MASTER_SITES =	${HOMEPAGE}/releases/download/v${V}/
 
 MODULES =	devel/cmake
-BUILD_DEPENDS =	textproc/asciidoc
+BUILD_DEPENDS =	shells/bash-completion \
+		textproc/asciidoc
 LIB_DEPENDS =	net/curl \
 		textproc/libxml
 TEST_DEPENDS =	${BUILD_DEPENDS} \
