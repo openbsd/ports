@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.392 2020/04/29 15:25:45 schwarze Exp $
+# $OpenBSD: Makefile,v 1.393 2020/05/15 08:58:43 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -107,6 +107,7 @@
      SUBDIR += nmh
      SUBDIR += nmh,sasl
      SUBDIR += nmzmail
+     SUBDIR += notmuch
      SUBDIR += offlineimap
      SUBDIR += opendkim
      SUBDIR += opendmarc
