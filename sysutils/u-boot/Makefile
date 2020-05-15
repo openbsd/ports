@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.67 2020/05/07 14:24:53 sthen Exp $
+#	$OpenBSD: Makefile,v 1.68 2020/05/15 12:53:13 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
@@ -7,8 +7,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2020.01
-REVISION=	3
+VERSION=	2020.04
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}

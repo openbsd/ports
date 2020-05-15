@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_rsa_rsa-sign_c,v 1.1 2020/05/15 12:53:13 jsg Exp $
+
+don't fallback to U-Boot headers for hostcc program
+
+Index: lib/rsa/rsa-sign.c
+--- lib/rsa/rsa-sign.c.orig
++++ lib/rsa/rsa-sign.c
+@@ -4,7 +4,7 @@
+  */
+ 
+ #include "mkimage.h"
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <image.h>

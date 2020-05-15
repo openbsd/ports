@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.21 2020/01/07 07:07:08 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.22 2020/05/15 12:53:13 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -161,8 +161,8 @@ share/u-boot/mx6cuboxi/u-boot.bin
 share/u-boot/mx6cuboxi/u-boot.img
 share/u-boot/mx6qsabrelite/
 share/u-boot/mx6qsabrelite/u-boot
-share/u-boot/mx6qsabrelite/u-boot.bin
 share/u-boot/mx6qsabrelite/u-boot-dtb.imx
+share/u-boot/mx6qsabrelite/u-boot.bin
 share/u-boot/nanopi_neo/
 share/u-boot/nanopi_neo/sunxi-spl.bin
 share/u-boot/nanopi_neo/u-boot
@@ -171,8 +171,8 @@ share/u-boot/nanopi_neo/u-boot.bin
 share/u-boot/nanopi_neo/u-boot.img
 share/u-boot/nitrogen6q/
 share/u-boot/nitrogen6q/u-boot
-share/u-boot/nitrogen6q/u-boot.bin
 share/u-boot/nitrogen6q/u-boot-dtb.imx
+share/u-boot/nitrogen6q/u-boot.bin
 share/u-boot/novena/
 share/u-boot/novena/SPL
 share/u-boot/novena/u-boot

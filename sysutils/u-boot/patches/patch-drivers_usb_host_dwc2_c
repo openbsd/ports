@@ -1,0 +1,19 @@
+$OpenBSD: patch-drivers_usb_host_dwc2_c,v 1.1 2020/05/15 12:53:13 jsg Exp $
+
+usb: host: dwc2: force reset assert
+66004381661386d14183a436c5e0caeb19f4b415
+
+fixes usb on rpi3
+
+Index: drivers/usb/host/dwc2.c
+--- drivers/usb/host/dwc2.c.orig
++++ drivers/usb/host/dwc2.c
+@@ -1147,6 +1147,8 @@ static int dwc2_reset(struct udevice *dev)
+ 			return ret;
+ 	}
+ 
++	/* force reset to clear all IP register */
++	reset_assert_bulk(&priv->resets);
+ 	ret = reset_deassert_bulk(&priv->resets);
+ 	if (ret) {
+ 		reset_release_bulk(&priv->resets);

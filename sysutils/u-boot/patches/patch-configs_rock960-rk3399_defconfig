@@ -1,9 +1,9 @@
-$OpenBSD: patch-configs_rock960-rk3399_defconfig,v 1.1 2020/02/27 14:45:50 kurt Exp $
+$OpenBSD: patch-configs_rock960-rk3399_defconfig,v 1.2 2020/05/15 12:53:13 jsg Exp $
 
 Index: configs/rock960-rk3399_defconfig
 --- configs/rock960-rk3399_defconfig.orig
 +++ configs/rock960-rk3399_defconfig
-@@ -41,7 +41,7 @@ CONFIG_PMIC_RK8XX=y
+@@ -40,7 +40,7 @@ CONFIG_PMIC_RK8XX=y
  CONFIG_REGULATOR_PWM=y
  CONFIG_REGULATOR_RK8XX=y
  CONFIG_PWM_ROCKCHIP=y

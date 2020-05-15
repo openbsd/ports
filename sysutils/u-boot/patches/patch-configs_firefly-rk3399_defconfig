@@ -1,26 +1,9 @@
-$OpenBSD: patch-configs_firefly-rk3399_defconfig,v 1.5 2020/01/13 10:32:33 kettenis Exp $
+$OpenBSD: patch-configs_firefly-rk3399_defconfig,v 1.6 2020/05/15 12:53:13 jsg Exp $
 
 Index: configs/firefly-rk3399_defconfig
 --- configs/firefly-rk3399_defconfig.orig
 +++ configs/firefly-rk3399_defconfig
-@@ -8,6 +8,7 @@ CONFIG_DEBUG_UART_BASE=0xFF1A0000
- CONFIG_DEBUG_UART_CLOCK=24000000
- CONFIG_DEBUG_UART=y
- CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-firefly.dtb"
-+CONFIG_MISC_INIT_R=y
- # CONFIG_DISPLAY_CPUINFO is not set
- CONFIG_DISPLAY_BOARDINFO_LATE=y
- # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
-@@ -27,6 +28,8 @@ CONFIG_ENV_IS_IN_MMC=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MISC=y
-+CONFIG_ROCKCHIP_EFUSE=y
- CONFIG_MMC_DW=y
- CONFIG_MMC_DW_ROCKCHIP=y
- CONFIG_MMC_SDHCI=y
-@@ -39,7 +42,7 @@ CONFIG_PMIC_RK8XX=y
+@@ -42,7 +42,7 @@ CONFIG_PMIC_RK8XX=y
  CONFIG_REGULATOR_PWM=y
  CONFIG_REGULATOR_RK8XX=y
  CONFIG_PWM_ROCKCHIP=y
