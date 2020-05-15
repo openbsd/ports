@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/15 11:30:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2020/05/15 09:08:27 ajacoutot Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
 GNOME_VERSION=		2.3.3
+REVISION=		0
 
 SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
@@ -22,6 +23,12 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
+
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
+
+TEST_DEPENDS=		devel/py-gobject3,${MODPY_FLAVOR}
 
 LIB_DEPENDS=		audio/flac \
 			audio/libcue \
