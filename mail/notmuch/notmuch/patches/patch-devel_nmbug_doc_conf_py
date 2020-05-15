@@ -1,0 +1,14 @@
+$OpenBSD: patch-devel_nmbug_doc_conf_py,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: devel/nmbug/doc/conf.py
+--- devel/nmbug/doc/conf.py.orig
++++ devel/nmbug/doc/conf.py
+@@ -17,7 +17,7 @@ location = os.path.dirname(__file__)
+ 
+ dirname = location
+ while True:
+-    version_file = os.path.join(dirname, 'version')
++    version_file = os.path.join(dirname, 'version.txt')
+     if os.path.exists(version_file):
+         with open(version_file,'r') as f:
+             version = f.read().strip()

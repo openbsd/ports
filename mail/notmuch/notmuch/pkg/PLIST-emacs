@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST-emacs,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+bin/notmuch-emacs-mua
+@info info/notmuch-emacs-mua.info
+@info info/notmuch-emacs.info
+@man man/man1/notmuch-emacs-mua.1
+share/applications/notmuch-emacs-mua.desktop
+share/emacs/site-lisp/coolj.el
+share/emacs/site-lisp/coolj.elc
+share/emacs/site-lisp/notmuch-address.el
+share/emacs/site-lisp/notmuch-address.elc
+share/emacs/site-lisp/notmuch-company.el
+share/emacs/site-lisp/notmuch-company.elc
+share/emacs/site-lisp/notmuch-compat.el
+share/emacs/site-lisp/notmuch-compat.elc
+share/emacs/site-lisp/notmuch-crypto.el
+share/emacs/site-lisp/notmuch-crypto.elc
+share/emacs/site-lisp/notmuch-draft.el
+share/emacs/site-lisp/notmuch-draft.elc
+share/emacs/site-lisp/notmuch-hello.el
+share/emacs/site-lisp/notmuch-hello.elc
+share/emacs/site-lisp/notmuch-jump.el
+share/emacs/site-lisp/notmuch-jump.elc
+share/emacs/site-lisp/notmuch-lib.el
+share/emacs/site-lisp/notmuch-lib.elc
+share/emacs/site-lisp/notmuch-logo.png
+share/emacs/site-lisp/notmuch-maildir-fcc.el
+share/emacs/site-lisp/notmuch-maildir-fcc.elc
+share/emacs/site-lisp/notmuch-message.el
+share/emacs/site-lisp/notmuch-message.elc
+share/emacs/site-lisp/notmuch-mua.el
+share/emacs/site-lisp/notmuch-mua.elc
+share/emacs/site-lisp/notmuch-parser.el
+share/emacs/site-lisp/notmuch-parser.elc
+share/emacs/site-lisp/notmuch-print.el
+share/emacs/site-lisp/notmuch-print.elc
+share/emacs/site-lisp/notmuch-query.el
+share/emacs/site-lisp/notmuch-query.elc
+share/emacs/site-lisp/notmuch-show.el
+share/emacs/site-lisp/notmuch-show.elc
+share/emacs/site-lisp/notmuch-tag.el
+share/emacs/site-lisp/notmuch-tag.elc
+share/emacs/site-lisp/notmuch-tree.el
+share/emacs/site-lisp/notmuch-tree.elc
+share/emacs/site-lisp/notmuch-version.el
+share/emacs/site-lisp/notmuch-version.elc
+share/emacs/site-lisp/notmuch-wash.el
+share/emacs/site-lisp/notmuch-wash.elc
+share/emacs/site-lisp/notmuch.el
+share/emacs/site-lisp/notmuch.elc
+@tag update-desktop-database

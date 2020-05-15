@@ -1,0 +1,18 @@
+$OpenBSD: patch-test_T530-upgrade_sh,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+modify test because we don't have notmuch dump --gzip
+
+Index: test/T530-upgrade.sh
+--- test/T530-upgrade.sh.orig
++++ test/T530-upgrade.sh
+@@ -38,8 +38,8 @@ Your notmuch database has now been upgraded.
+ No new mail."
+ 
+ test_begin_subtest "tag backup matches pre-upgrade dump"
+-gunzip -c ${MAIL_DIR}/.notmuch/dump-*.gz | sort > backup-dump
+-test_expect_equal_file pre-upgrade-dump backup-dump
++<${MAIL_DIR}/.notmuch/dump-* sort > backup-dump
++test_expect_equal_file pre-upgrade-dump backup-dump 
+ 
+ test_begin_subtest "folder: no longer matches in the middle of path"
+ output=$(notmuch search folder:baz)

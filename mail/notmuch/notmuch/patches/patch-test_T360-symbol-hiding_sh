@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_T360-symbol-hiding_sh,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: test/T360-symbol-hiding.sh
+--- test/T360-symbol-hiding.sh.orig
++++ test/T360-symbol-hiding.sh
+@@ -26,7 +26,7 @@ test_begin_subtest 'checking output'
+ test_expect_equal "$result" "$output"
+ 
+ test_begin_subtest 'comparing existing to exported symbols'
+-nm -P $NOTMUCH_BUILDDIR/lib/libnotmuch.so | awk '$2 == "T" && $1 ~ "^notmuch" {print $1}' | sort | uniq > ACTUAL
++nm -P $NOTMUCH_BUILDDIR/lib/libnotmuch.so* | awk '$2 == "T" && $1 ~ "^notmuch" {print $1}' | sort | uniq > ACTUAL
+ sed -n 's/^\(notmuch_[a-zA-Z0-9_]*\)[[:blank:]]*(.*/\1/p' $NOTMUCH_SRCDIR/lib/notmuch.h | sort | uniq > EXPORTED
+ test_expect_equal_file EXPORTED ACTUAL
+ 

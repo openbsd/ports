@@ -1,0 +1,255 @@
+$OpenBSD: patch-notmuch-dump_c,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+For lack of transparent write mode in zlib, replace zlib by stdio in
+notmuch dump (the --gzip option no longer exists).
+
+Index: notmuch-dump.c
+--- notmuch-dump.c.orig
++++ notmuch-dump.c
+@@ -24,7 +24,7 @@
+ #include <zlib.h>
+ 
+ static int
+-database_dump_config (notmuch_database_t *notmuch, gzFile output)
++database_dump_config (notmuch_database_t *notmuch, FILE *output)
+ {
+     notmuch_config_list_t *list;
+     int ret = EXIT_FAILURE;
+@@ -42,7 +42,8 @@ database_dump_config (notmuch_database_t *notmuch, gzF
+ 		     notmuch_config_list_key (list));
+ 	    goto DONE;
+ 	}
+-	gzprintf (output, "#@ %s", buffer);
++	if (fprintf (output, "#@ %s", buffer) < 0)
++	    exit (1);
+ 
+ 	if (hex_encode (notmuch, notmuch_config_list_value (list),
+ 			&buffer, &buffer_size) != HEX_SUCCESS) {
+@@ -51,7 +52,8 @@ database_dump_config (notmuch_database_t *notmuch, gzF
+ 	    goto DONE;
+ 	}
+ 
+-	gzprintf (output, " %s\n", buffer);
++	if (fprintf (output, " %s\n", buffer) < 0)
++	    exit (1);
+     }
+ 
+     ret = EXIT_SUCCESS;
+@@ -67,32 +69,37 @@ database_dump_config (notmuch_database_t *notmuch, gzF
+ }
+ 
+ static void
+-print_dump_header (gzFile output, int output_format, int include)
++print_dump_header (FILE *output, int output_format, int include)
+ {
+     const char *sep = "";
+ 
+-    gzprintf (output, "#notmuch-dump %s:%d ",
+-	      (output_format == DUMP_FORMAT_SUP) ? "sup" : "batch-tag",
+-	      NOTMUCH_DUMP_VERSION);
++    if (fprintf (output, "#notmuch-dump %s:%d ",
++	         (output_format == DUMP_FORMAT_SUP) ? "sup" : "batch-tag",
++	         NOTMUCH_DUMP_VERSION) < 0)
++	exit (1);
+ 
+     if (include & DUMP_INCLUDE_CONFIG) {
+-	gzputs (output, "config");
++	if (fputs ("config", output) < 0)
++	    exit (1);
+ 	sep = ",";
+     }
+     if (include & DUMP_INCLUDE_PROPERTIES) {
+-	gzprintf (output, "%sproperties", sep);
++	if (fprintf (output, "%sproperties", sep) < 0)
++	    exit (1);
+ 	sep = ",";
+     }
+     if (include & DUMP_INCLUDE_TAGS) {
+-	gzprintf (output, "%stags", sep);
++	if (fprintf (output, "%stags", sep) < 0)
++	    exit (1);
+     }
+-    gzputs (output, "\n");
++    if (fputs ("\n", output) < 0)
++	exit (1);
+ }
+ 
+ static int
+ dump_properties_message (void *ctx,
+ 			 notmuch_message_t *message,
+-			 gzFile output,
++			 FILE *output,
+ 			 char **buffer_p, size_t *size_p)
+ {
+     const char *message_id;
+@@ -115,7 +122,8 @@ dump_properties_message (void *ctx,
+ 		fprintf (stderr, "Error: failed to hex-encode message-id %s\n", message_id);
+ 		return 1;
+ 	    }
+-	    gzprintf (output, "#= %s", *buffer_p);
++	    if (fprintf (output, "#= %s", *buffer_p) < 0)
++		exit (1);
+ 	    first = false;
+ 	}
+ 
+@@ -126,18 +134,21 @@ dump_properties_message (void *ctx,
+ 	    fprintf (stderr, "Error: failed to hex-encode key %s\n", key);
+ 	    return 1;
+ 	}
+-	gzprintf (output, " %s", *buffer_p);
++	if (fprintf (output, " %s", *buffer_p) < 0)
++	    exit (1);
+ 
+ 	if (hex_encode (ctx, val, buffer_p, size_p) != HEX_SUCCESS) {
+ 	    fprintf (stderr, "Error: failed to hex-encode value %s\n", val);
+ 	    return 1;
+ 	}
+-	gzprintf (output, "=%s", *buffer_p);
++	if (fprintf (output, "=%s", *buffer_p) < 0)
++	    exit (1);
+     }
+     notmuch_message_properties_destroy (list);
+ 
+     if (! first)
+-	gzprintf (output, "\n", *buffer_p);
++	if (fputs ("\n", output) < 0)
++	    exit (1);
+ 
+     return 0;
+ }
+@@ -145,7 +156,7 @@ dump_properties_message (void *ctx,
+ static int
+ dump_tags_message (void *ctx,
+ 		   notmuch_message_t *message, int output_format,
+-		   gzFile output,
++		   FILE *output,
+ 		   char **buffer_p, size_t *size_p)
+ {
+     int first = 1;
+@@ -165,7 +176,8 @@ dump_tags_message (void *ctx,
+     }
+ 
+     if (output_format == DUMP_FORMAT_SUP) {
+-	gzprintf (output, "%s (", message_id);
++	if (fprintf (output, "%s (", message_id) < 0)
++	    exit (1);
+     }
+ 
+     for (notmuch_tags_t *tags = notmuch_message_get_tags (message);
+@@ -174,12 +186,14 @@ dump_tags_message (void *ctx,
+ 	const char *tag_str = notmuch_tags_get (tags);
+ 
+ 	if (! first)
+-	    gzputs (output, " ");
++	    if (fputs (" ", output) < 0)
++		exit (1);
+ 
+ 	first = 0;
+ 
+ 	if (output_format == DUMP_FORMAT_SUP) {
+-	    gzputs (output, tag_str);
++	    if (fputs (tag_str, output) < 0)
++		exit (1);
+ 	} else {
+ 	    if (hex_encode (ctx, tag_str,
+ 			    buffer_p, size_p) != HEX_SUCCESS) {
+@@ -187,12 +201,14 @@ dump_tags_message (void *ctx,
+ 			 tag_str);
+ 		return EXIT_FAILURE;
+ 	    }
+-	    gzprintf (output, "+%s", *buffer_p);
++	    if (fprintf (output, "+%s", *buffer_p) < 0)
++		exit (1);
+ 	}
+     }
+ 
+     if (output_format == DUMP_FORMAT_SUP) {
+-	gzputs (output, ")\n");
++	if (fputs (")\n", output) < 0)
++	    exit (1);
+     } else {
+ 	if (make_boolean_term (ctx, "id", message_id,
+ 			       buffer_p, size_p)) {
+@@ -200,13 +216,14 @@ dump_tags_message (void *ctx,
+ 		     message_id, strerror (errno));
+ 	    return EXIT_FAILURE;
+ 	}
+-	gzprintf (output, " -- %s\n", *buffer_p);
++	if (fprintf (output, " -- %s\n", *buffer_p) < 0)
++	    exit (1);
+     }
+     return EXIT_SUCCESS;
+ }
+ 
+ static int
+-database_dump_file (notmuch_database_t *notmuch, gzFile output,
++database_dump_file (notmuch_database_t *notmuch, FILE *output,
+ 		    const char *query_str, int output_format, int include)
+ {
+     notmuch_query_t *query;
+@@ -279,8 +296,7 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+ 		       dump_include_t include,
+ 		       bool gzip_output)
+ {
+-    gzFile output = NULL;
+-    const char *mode = gzip_output ? "w9" : "wT";
++    FILE *output = NULL;
+     const char *name_for_error = output_file_name ? output_file_name : "stdout";
+ 
+     char *tempname = NULL;
+@@ -300,10 +316,10 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+ 	goto DONE;
+     }
+ 
+-    output = gzdopen (outfd, mode);
++    output = fdopen (outfd, "w");
+ 
+     if (output == NULL) {
+-	fprintf (stderr, "Error opening %s for (gzip) writing: %s\n",
++	fprintf (stderr, "Error opening %s for writing: %s\n",
+ 		 name_for_error, strerror (errno));
+ 	if (close (outfd))
+ 	    fprintf (stderr, "Error closing %s during shutdown: %s\n",
+@@ -314,9 +330,10 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+     ret = database_dump_file (notmuch, output, query_str, output_format, include);
+     if (ret) goto DONE;
+ 
+-    ret = gzflush (output, Z_FINISH);
++    ret = fflush (output);
+     if (ret) {
+-	fprintf (stderr, "Error flushing output: %s\n", gzerror (output, NULL));
++	fprintf (stderr, "Error flushing %s: %s\n",
++		 name_for_error, strerror (errno));
+ 	goto DONE;
+     }
+ 
+@@ -329,10 +346,10 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+ 	}
+     }
+ 
+-    ret = gzclose_w (output);
++    ret = fclose (output);
+     if (ret) {
+ 	fprintf (stderr, "Error closing %s: %s\n", name_for_error,
+-		 gzerror (output, NULL));
++		 strerror (errno));
+ 	ret = EXIT_FAILURE;
+ 	output = NULL;
+ 	goto DONE;
+@@ -350,7 +367,7 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+     }
+  DONE:
+     if (ret != EXIT_SUCCESS && output)
+-	(void) gzclose_w (output);
++	(void) fclose (output);
+ 
+     if (ret != EXIT_SUCCESS && output_file_name)
+ 	(void) unlink (tempname);
+@@ -388,7 +405,6 @@ notmuch_dump_command (notmuch_config_t *config, int ar
+ 				  { "properties", DUMP_INCLUDE_PROPERTIES },
+ 				  { "tags", DUMP_INCLUDE_TAGS} } },
+ 	{ .opt_string = &output_file_name, .name = "output" },
+-	{ .opt_bool = &gzip_output, .name = "gzip" },
+ 	{ .opt_inherit = notmuch_shared_options },
+ 	{ }
+     };

@@ -1,0 +1,24 @@
+$OpenBSD: patch-util_zlib-extra_c,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: util/zlib-extra.c
+--- util/zlib-extra.c.orig
++++ util/zlib-extra.c
+@@ -47,6 +47,7 @@ gz_getline (void *talloc_ctx, char **bufptr, ssize_t *
+ 	    int zlib_status = 0;
+ 	    (void) gzerror (stream, &zlib_status);
+ 	    switch (zlib_status) {
++	    case Z_STREAM_END:
+ 	    case Z_OK:
+ 		/* no data read before EOF */
+ 		if (offset == 0)
+@@ -78,8 +79,9 @@ gz_getline (void *talloc_ctx, char **bufptr, ssize_t *
+ 
+ const char *gz_error_string (util_status_t status, gzFile file)
+ {
++    int errnum;
+     if (status == UTIL_GZERROR)
+-	return gzerror (file, NULL);
++	return gzerror (file, &errnum);
+     else
+ 	return util_error_string (status);
+ }

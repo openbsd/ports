@@ -1,0 +1,14 @@
+$OpenBSD: patch-devel_RELEASING,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: devel/RELEASING
+--- devel/RELEASING.orig
++++ devel/RELEASING
+@@ -62,7 +62,7 @@ repository. From here, there are just a few steps to r
+ 	be "1.0.1" and a subsequent bug-fix release would be "1.0.2"
+ 	etc.
+ 
+-	When you are happy with the file 'version', run
++	When you are happy with the file 'version.txt', run
+ 
+ 	     make update-versions
+ 

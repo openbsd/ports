@@ -1,0 +1,9 @@
+Notmuch is a mail indexing program providing a fast tag-based email
+reader with global search to use within a text editor.
+
+"Notmuch is not much of an email program. It doesn't receive messages
+(no POP or IMAP suport). It doesn't send messages (no mail composer,
+no network code at all). And for what it does do (email search)
+that work is provided by an external library, Xapian. So if Notmuch
+provides no user interface and Xapian does all the heavy lifting,
+then what's left here? Not much."

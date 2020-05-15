@@ -1,0 +1,14 @@
+$OpenBSD: patch-bindings_python_notmuch_globals_py,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: bindings/python/notmuch/globals.py
+--- bindings/python/notmuch/globals.py.orig
++++ bindings/python/notmuch/globals.py
+@@ -27,7 +27,7 @@ try:
+     if uname()[0] == 'Darwin':
+         nmlib = CDLL("libnotmuch.{0:s}.dylib".format(SOVERSION))
+     else:
+-        nmlib = CDLL("libnotmuch.so.{0:s}".format(SOVERSION))
++        nmlib = CDLL("libnotmuch.so")
+ except:
+     raise ImportError("Could not find shared 'notmuch' library.")
+ 

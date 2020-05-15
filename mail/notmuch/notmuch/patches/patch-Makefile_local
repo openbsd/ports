@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_local,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: Makefile.local
+--- Makefile.local.orig
++++ Makefile.local
+@@ -19,7 +19,7 @@ endif
+ 
+ # Depend (also) on the file 'version'. In case of ifeq ($(IS_GIT),yes)
+ # this file may already have been updated.
+-version.stamp: $(srcdir)/version
++version.stamp: $(srcdir)/version.txt
+ 	echo $(VERSION) > $@
+ 
+ $(TAR_FILE):

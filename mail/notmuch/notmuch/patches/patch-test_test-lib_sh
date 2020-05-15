@@ -1,0 +1,31 @@
+$OpenBSD: patch-test_test-lib_sh,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+use gpg2 instead of gpg
+
+Index: test/test-lib.sh
+--- test/test-lib.sh.orig
++++ test/test-lib.sh
+@@ -112,11 +112,11 @@ add_gnupg_home ()
+     _gnupg_exit () { gpgconf --kill all 2>/dev/null || true; }
+     at_exit_function _gnupg_exit
+     mkdir -m 0700 "$GNUPGHOME"
+-    gpg --no-tty --import <$NOTMUCH_SRCDIR/test/gnupg-secret-key.asc >"$GNUPGHOME"/import.log 2>&1
++    gpg2 --no-tty --import <$NOTMUCH_SRCDIR/test/gnupg-secret-key.asc >"$GNUPGHOME"/import.log 2>&1
+     test_debug "cat $GNUPGHOME/import.log"
+-    if (gpg --quick-random --version >/dev/null 2>&1) ; then
++    if (gpg2 --quick-random --version >/dev/null 2>&1) ; then
+ 	echo quick-random >> "$GNUPGHOME"/gpg.conf
+-    elif (gpg --debug-quick-random --version >/dev/null 2>&1) ; then
++    elif (gpg2 --debug-quick-random --version >/dev/null 2>&1) ; then
+ 	echo debug-quick-random >> "$GNUPGHOME"/gpg.conf
+     fi
+     echo no-emit-version >> "$GNUPGHOME"/gpg.conf
+@@ -124,7 +124,7 @@ add_gnupg_home ()
+     # Change this if we ship a new test key
+     FINGERPRINT="5AEAB11F5E33DCE875DDB75B6D92612D94E46381"
+     SELF_USERID="Notmuch Test Suite <test_suite@notmuchmail.org> (INSECURE!)"
+-    printf '%s:6:\n' "$FINGERPRINT" | gpg --quiet --batch --no-tty --import-ownertrust
++    printf '%s:6:\n' "$FINGERPRINT" | gpg2 --quiet --batch --no-tty --import-ownertrust
+ }
+ 
+ # Each test should start with something like this, after copyright notices:

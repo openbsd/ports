@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+@bin bin/notmuch
+include/notmuch.h
+@info info/notmuch-address.info
+@info info/notmuch-compact.info
+@info info/notmuch-config.info
+@info info/notmuch-count.info
+@info info/notmuch-dump.info
+@info info/notmuch-hooks.info
+@info info/notmuch-insert.info
+@info info/notmuch-new.info
+@info info/notmuch-properties.info
+@info info/notmuch-reindex.info
+@info info/notmuch-reply.info
+@info info/notmuch-restore.info
+@info info/notmuch-search-terms.info
+@info info/notmuch-search.info
+@info info/notmuch-show.info
+@info info/notmuch-tag.info
+@info info/notmuch.info
+@lib lib/libnotmuch.so.${LIBnotmuch_VERSION}
+@man man/man1/notmuch-address.1
+@man man/man1/notmuch-compact.1
+@man man/man1/notmuch-config.1
+@man man/man1/notmuch-count.1
+@man man/man1/notmuch-dump.1
+@man man/man1/notmuch-insert.1
+@man man/man1/notmuch-new.1
+@man man/man1/notmuch-reindex.1
+@man man/man1/notmuch-reply.1
+@man man/man1/notmuch-restore.1
+@man man/man1/notmuch-search.1
+@man man/man1/notmuch-setup.1
+@man man/man1/notmuch-show.1
+@man man/man1/notmuch-tag.1
+@man man/man1/notmuch.1
+@man man/man3/notmuch.3
+@man man/man5/notmuch-hooks.5
+@man man/man7/notmuch-properties.7
+@man man/man7/notmuch-search-terms.7
+share/zsh/
+share/zsh/functions/
+share/zsh/functions/Completion/
+share/zsh/functions/Completion/Unix/
+share/zsh/functions/Completion/Unix/_email-notmuch
+share/zsh/functions/Completion/Unix/_notmuch

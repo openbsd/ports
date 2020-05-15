@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_global,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: Makefile.global
+--- Makefile.global.orig
++++ Makefile.global
+@@ -16,7 +16,7 @@ else
+ DATE:=$(shell date +%F)
+ endif
+ 
+-VERSION:=$(shell cat ${srcdir}/version)
++VERSION:=$(shell cat ${srcdir}/version.txt)
+ ELPA_VERSION:=$(subst ~,_,$(VERSION))
+ ifeq ($(filter release release-message pre-release update-versions,$(MAKECMDGOALS)),)
+ ifeq ($(IS_GIT),yes)

@@ -1,0 +1,17 @@
+$OpenBSD: patch-test_T355-smime_sh,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+OpenSSL has sha1 as default fingerprint algo
+LibreSSL has md5 as default fingerprint algo
+
+Index: test/T355-smime.sh
+--- test/T355-smime.sh.orig
++++ test/T355-smime.sh
+@@ -21,7 +21,7 @@ test_require_external_prereq gpgsm
+ 
+ cp $NOTMUCH_SRCDIR/test/smime/key+cert.pem test_suite.pem
+ 
+-FINGERPRINT=$(openssl x509 -fingerprint -in test_suite.pem -noout | sed -e 's/^.*=//' -e s/://g)
++FINGERPRINT=$(openssl x509 -fingerprint -sha1 -in test_suite.pem -noout | sed -e 's/^.*=//' -e s/://g)
+ 
+ add_gpgsm_home
+ 

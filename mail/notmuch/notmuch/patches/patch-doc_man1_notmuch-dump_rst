@@ -1,0 +1,26 @@
+$OpenBSD: patch-doc_man1_notmuch-dump_rst,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+no gzip option because OpenBSD's zlib does not have the "transparency"
+(no compression) feature when writing to a file.
+
+Index: doc/man1/notmuch-dump.rst
+--- doc/man1/notmuch-dump.rst.orig
++++ doc/man1/notmuch-dump.rst
+@@ -5,7 +5,7 @@ notmuch-dump
+ SYNOPSIS
+ ========
+ 
+-**notmuch** **dump** [--gzip] [--format=(batch-tag|sup)] [--output=<*file*>] [--] [<*search-term*> ...]
++**notmuch** **dump** [--format=(batch-tag|sup)] [--output=<*file*>] [--] [<*search-term*> ...]
+ 
+ DESCRIPTION
+ ===========
+@@ -26,8 +26,6 @@ the remaining arguments are search terms.
+ 
+ Supported options for **dump** include
+ 
+-``--gzip``
+-    Compress the output in a format compatible with **gzip(1)**.
+ 
+ ``--format=(sup|batch-tag)``
+     Notmuch restore supports two plain text dump formats, both with

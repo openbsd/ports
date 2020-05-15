@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -588,9 +588,9 @@ if ! pkg-config --exists zlib; then
+   rm -f compat/gen_zlib_pc
+ fi
+ 
+-printf "Checking for zlib (>= 1.2.5.2)... "
++printf "Checking for zlib (>= 1.2.3)... "
+ have_zlib=0
+-if pkg-config --atleast-version=1.2.5.2 zlib; then
++if pkg-config --atleast-version=1.2.3 zlib; then
+     printf "Yes.\n"
+     have_zlib=1
+     zlib_cflags=$(pkg-config --cflags zlib)

@@ -1,0 +1,24 @@
+$OpenBSD: patch-test_T240-dump-restore_sh,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+adapt tests
+
+Index: test/T240-dump-restore.sh
+--- test/T240-dump-restore.sh.orig
++++ test/T240-dump-restore.sh
+@@ -95,14 +95,14 @@ gunzip dump-gzip-outfile.gz
+ test_expect_equal_file dump.expected dump-gzip-outfile
+ 
+ test_begin_subtest "restoring gzipped stdin"
+-notmuch dump --gzip --output=backup.gz
++notmuch dump | gzip >backup.gz
+ notmuch tag +new_tag '*'
+ notmuch restore < backup.gz
+ notmuch dump --output=dump.actual
+ test_expect_equal_file dump.expected dump.actual
+ 
+ test_begin_subtest "restoring gzipped file"
+-notmuch dump --gzip --output=backup.gz
++notmuch dump | gzip >backup.gz
+ notmuch tag +new_tag '*'
+ notmuch restore --input=backup.gz
+ notmuch dump --output=dump.actual

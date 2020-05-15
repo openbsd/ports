@@ -1,0 +1,31 @@
+$OpenBSD: patch-notmuch-restore_c,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: notmuch-restore.c
+--- notmuch-restore.c.orig
++++ notmuch-restore.c
+@@ -238,6 +238,7 @@ notmuch_restore_command (notmuch_config_t *config, int
+     int opt_index;
+     int include = 0;
+     int input_format = DUMP_FORMAT_AUTO;
++    int errnum;
+ 
+     if (notmuch_database_open (notmuch_config_get_database_path (config),
+ 			       NOTMUCH_DATABASE_MODE_READ_WRITE, &notmuch))
+@@ -449,10 +450,13 @@ notmuch_restore_command (notmuch_config_t *config, int
+     if (notmuch)
+ 	notmuch_database_destroy (notmuch);
+ 
+-    if (input && gzclose_r (input)) {
+-	fprintf (stderr, "Error closing %s: %s\n",
+-		 name_for_error, gzerror (input, NULL));
+-	ret = EXIT_FAILURE;
++    if (input) {
++	errnum = gzclose (input);
++	if (errnum) {
++	    fprintf (stderr, "Error closing %s: %d\n",
++	             name_for_error, errnum);
++	    ret = EXIT_FAILURE;
++	}
+     }
+ 
+     return ret ? EXIT_FAILURE : EXIT_SUCCESS;

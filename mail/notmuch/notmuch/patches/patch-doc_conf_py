@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_conf_py,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+
+Index: doc/conf.py
+--- doc/conf.py.orig
++++ doc/conf.py
+@@ -17,7 +17,7 @@ copyright = u'2009-2019, Carl Worth and many others'
+ location = os.path.dirname(__file__)
+ 
+ for pathdir in ['.', '..']:
+-    version_file = os.path.join(location,pathdir,'version')
++    version_file = os.path.join(location,pathdir,'version.txt')
+     if os.path.exists(version_file):
+         with open(version_file,'r') as infile:
+             version=infile.read().replace('\n','')
