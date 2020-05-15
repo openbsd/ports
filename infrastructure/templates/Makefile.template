@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.87 2020/03/22 17:18:01 cwen Exp $
+# $OpenBSD: Makefile.template,v 1.88 2020/05/15 01:32:48 abieber Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -22,7 +22,13 @@ COMMENT =	???
 #
 #MODPY_EGG_VERSION =	???
 
+# MODGO_MODNAME should be set to the 'module' specified in the 'go.mod' file.
+#MODGO_MODNAME =	github.com/test/app
 #
+# Version of port if using lang/go and MODGO_MODULES
+#
+#MODGO_VERSION =	0.1.1
+
 # What port/package will be created
 #
 # DISTNAME should not include suffix (like .tar.gz .tgz .tar.bz2 etc.)
@@ -124,6 +130,15 @@ MASTER_SITES =		???
 #MODPY_SETUPTOOLS =	Yes
 # If port is python3 only
 #MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
+#
+# MODGO_ settings for when using lang/go module
+#
+# Get source from proxy.golang.org
+#MODGO_MODULES =	modulename version
+# These are needed for dependency resolution. We don't actually need the
+# coresponding code
+#MODGO_MODFILES =	modulename version
 
 # Dependencies
 #BUILD_DEPENDS =	???

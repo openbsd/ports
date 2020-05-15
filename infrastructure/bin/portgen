@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portgen,v 1.1 2016/01/18 19:01:02 tsg Exp $
+# $OpenBSD: portgen,v 1.2 2020/05/15 01:32:48 abieber Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -32,6 +32,7 @@ use lib ( "$portdir/infrastructure/lib", "$FindBin::Bin/../lib" );
 use OpenBSD::PortGen::Port::CPAN;
 use OpenBSD::PortGen::Port::PyPI;
 use OpenBSD::PortGen::Port::Ruby;
+use OpenBSD::PortGen::Port::Go;
 
 my ( $type, $module ) = @ARGV;
 
@@ -44,6 +45,8 @@ if ( $type eq 'p5' ) {
 	$o = OpenBSD::PortGen::Port::PyPI->new();
 } elsif ( $type eq 'ruby' ) {
 	$o = OpenBSD::PortGen::Port::Ruby->new();
+} elsif ( $type eq 'go' ) {
+	$o = OpenBSD::PortGen::Port::Go->new();
 } else {
 	die "unknown module type\n";
 }

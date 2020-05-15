@@ -1,8 +1,15 @@
-# $OpenBSD: go.port.mk,v 1.27 2019/11/19 09:17:06 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.28 2020/05/15 01:32:48 abieber Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
 MODGO_BUILDDEP ?=	Yes
+
+MODGO_DIST_SUBDIR ?=	go_modules
+
+MASTER_SITE_ATHENS =	https://proxy.golang.org/
+
+MODGO_MASTER_SITESN =	9
+MASTER_SITES${MODGO_MASTER_SITESN} ?= ${MASTER_SITE_ATHENS}
 
 MODGO_RUN_DEPENDS =	lang/go
 MODGO_BUILD_DEPENDS =	lang/go
@@ -33,17 +40,12 @@ MODGO_TYPE ?=		bin
 MODGO_WORKSPACE ?=	${WRKDIR}/go
 MODGO_GOCACHE ?=	${WRKDIR}/go-cache
 MODGO_GOPATH ?=		${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}
-MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}" \
-			GOPATH="${MODGO_GOPATH}" \
-			GO111MODULE=off
 # We cannot assume that the maching running the built code will have SSE,
 # even though the machine building the package has SSE. As such, we need
 # to explicitly disable SSE on i386 builds.
 MAKE_ENV +=		GO386=387
-# Ports are not allowed to fetch from the network at build time; point
-# GOPROXY at an unreachable host so that failures are also visible to
-# developers who don't have PORTS_PRIVSEP and a "deny .. _pbuild" PF rule.
-MAKE_ENV +=		GOPROXY=invalid://ports.should.not.fetch.at.buildtime/
+MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}"
+
 MODGO_CMD ?=		${SETENV} ${MAKE_ENV} go
 MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
 MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS} ${MODGO_TEST_FLAGS}
@@ -54,15 +56,34 @@ MODGO_BUILD_CMD +=	-ldflags="${MODGO_LDFLAGS}"
 MODGO_TEST_CMD +=	-ldflags="${MODGO_LDFLAGS}"
 .endif
 
-.if defined(GH_ACCOUNT) && defined(GH_PROJECT)
-ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${GH_PROJECT}
+.if defined(MODGO_MODNAME)
+EXTRACT_SUFX ?=		.zip
+PKGNAME ?=		${DISTNAME:S/-v/-/}
+ALL_TARGET ?=		${MODGO_MODNAME}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{${MODGO_VERSION}${EXTRACT_SUFX}}
+MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME}/@v/
+.  for _modpath _modver in ${MODGO_MODULES}
+SUPDISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.zip{${_modpath}/@v/${_modver}.zip}:${MODGO_MASTER_SITESN}
+.  endfor
+.  for _modpath _modver in ${MODGO_MODFILES}
+SUPDISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/${_modver}.mod}:${MODGO_MASTER_SITESN}
+.  endfor
+MAKE_ENV +=		GOPROXY=file://${DISTDIR}/${MODGO_DIST_SUBDIR}
+MAKE_ENV +=		GO111MODULE=on GOPATH="${MODGO_GOPATH}"
+.else
+# ports are not allowed to fetch from the network at build time; point
+# GOPROXY at an unreachable host so that failures are also visible to
+# developers who don't have PORTS_PRIVSEP and a "deny .. _pbuild" PF rule.
+MAKE_ENV +=		GOPROXY=invalid://ports.should.not.fetch.at.buildtime/
+MAKE_ENV +=		GO111MODULE=off GOPATH="${MODGO_GOPATH}"
+.  if defined(GH_ACCOUNT) && defined(GH_PROJECT)
+ALL_TARGET ?=          github.com/${GH_ACCOUNT}/${GH_PROJECT}
+.  endif
 .endif
-TEST_TARGET ?=		${ALL_TARGET}
+
+MODGO_TEST_TARGET ?=	cd ${WRKSRC} && ${MODGO_CMD} test ${ALL_TARGET}
 
 SEPARATE_BUILD ?=	Yes
-WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
-
-MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 
 CATEGORIES +=		lang/go
 
@@ -74,6 +95,14 @@ MODGO_FLAGS +=		-v -p ${MAKE_JOBS}
 MODGO_LDFLAGS +=	-s -w
 .else
 MODGO_FLAGS +=		-x
+.endif
+
+.if empty(MODGO_MODNAME)
+WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
+MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
+.else
+WRKSRC ?=		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
+MODGO_SETUP_WORKSPACE =	ln -sf ${WRKSRC} ${WRKDIR}/${MODGO_MODNAME}
 .endif
 
 INSTALL_STRIP =
@@ -99,14 +128,24 @@ MODGO_INSTALL_TARGET +=	${INSTALL_DATA_DIR} ${MODGO_PACKAGE_PATH} && \
 RUN_DEPENDS +=		${MODGO_RUN_DEPENDS}
 .endif
 
-MODGO_TEST_TARGET =	${MODGO_TEST_CMD} ${TEST_TARGET}
-
 .if empty(CONFIGURE_STYLE)
 MODGO_pre-configure +=	${MODGO_SETUP_WORKSPACE}
 
+
 .  if !target(do-build)
 do-build:
-	${MODGO_BUILD_TARGET}
+.    if empty(MODGO_MODNAME)
+	cd ${WRKSRC} && \
+		${MODGO_BUILD_TARGET}
+.    else
+	if [ -d ${WRKSRC}/cmd ]; then \
+		cd ${WRKSRC} && \
+			${MODGO_BUILD_CMD} ${ALL_TARGET}/cmd/... ; \
+	else \
+		cd ${WRKSRC} && \
+			${MODGO_BUILD_CMD} ${ALL_TARGET} ; \
+	fi;
+.    endif
 .  endif
 
 .  if !target(do-install)
