@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/15 09:14:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/15 11:27:28 ajacoutot Exp $
 
 COMMENT =		programmable completion functions for bash
 
 GH_PROJECT =		bash-completion
 GH_ACCOUNT =		scop
 GH_TAGNAME =		2.10
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		shells sysutils
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS =		shells/bash
 TEST_DEPENDS =		devel/dejagnu \
 			devel/py-pexpect${MODPY_FLAVOR} \
 			devel/py-test,${MODPY_FLAVOR}
-RUN_DEPENDS =		shells/bash
 
 USE_GMAKE =		Yes
 
