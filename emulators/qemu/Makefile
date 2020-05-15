@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.195 2020/04/23 04:30:35 cwen Exp $
+# $OpenBSD: Makefile,v 1.196 2020/05/15 07:26:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-4.2.0
-REVISION=	0
+DISTNAME=	qemu-5.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -22,7 +21,7 @@ WANTLIB=	SDL2 X11 atk-1.0 bz2 c cairo cairo-gobject capstone curl \
 		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-3 harfbuzz \
 		iconv intl iscsi jpeg lzo2 m nettle nfs pango-1.0 \
 		pangocairo-1.0 pixman-1 png sndio ssh usb-1.0 util \
-		vte-2.91 xkbcommon xml2 z ${COMPILER_LIBCXX}
+		vte-2.91 xkbcommon xml2 z zstd ${COMPILER_LIBCXX}
 
 # Using TLS emulation layer
 COMPILER=	base-clang ports-gcc
@@ -36,6 +35,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/py-sphinx
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
+		archivers/zstd \
 		converters/libiconv \
 		devel/capstone/main \
 		devel/dtc>=1.5.0p0 \
@@ -108,7 +108,7 @@ TEST_TARGET=	check
 
 # XXX Optimizer bug, using -O2 causes segfaults, -O1 linking errors
 .if ${MACHINE_ARCH:Mpowerpc}
-CFLAGS +=	-O0
+CFLAGS+=	-O0
 .endif
 
 post-install:

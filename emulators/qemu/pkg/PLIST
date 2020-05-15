@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2020/01/25 17:40:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2020/05/15 07:26:41 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -11,6 +11,7 @@
 @bin bin/qemu-io
 @bin bin/qemu-keymap
 @bin bin/qemu-nbd
+@bin bin/qemu-storage-daemon
 @bin bin/qemu-system-aarch64
 @bin bin/qemu-system-alpha
 @bin bin/qemu-system-arm
@@ -32,6 +33,7 @@
 @bin bin/qemu-system-ppc64
 @bin bin/qemu-system-riscv32
 @bin bin/qemu-system-riscv64
+@bin bin/qemu-system-rx
 @bin bin/qemu-system-s390x
 @bin bin/qemu-system-sh4
 @bin bin/qemu-system-sh4eb
@@ -53,6 +55,7 @@
 share/applications/qemu.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/qemu/
+share/doc/qemu/index.html
 share/doc/qemu/interop/
 share/doc/qemu/interop/.buildinfo
 share/doc/qemu/interop/_static/
@@ -77,6 +80,8 @@ share/doc/qemu/interop/_static/up-pressed.png
 share/doc/qemu/interop/_static/up.png
 share/doc/qemu/interop/_static/websupport.js
 share/doc/qemu/interop/bitmaps.html
+share/doc/qemu/interop/dbus-vmstate.html
+share/doc/qemu/interop/dbus.html
 share/doc/qemu/interop/genindex.html
 share/doc/qemu/interop/index.html
 share/doc/qemu/interop/live-block-operations.html
@@ -87,8 +92,6 @@ share/doc/qemu/interop/search.html
 share/doc/qemu/interop/searchindex.js
 share/doc/qemu/interop/vhost-user-gpu.html
 share/doc/qemu/interop/vhost-user.html
-share/doc/qemu/qemu-doc.html
-share/doc/qemu/qemu-doc.txt
 share/doc/qemu/qemu-ga-ref.html
 share/doc/qemu/qemu-ga-ref.txt
 share/doc/qemu/qemu-qmp-ref.html
@@ -124,6 +127,142 @@ share/doc/qemu/specs/ppc-spapr-xive.html
 share/doc/qemu/specs/ppc-xive.html
 share/doc/qemu/specs/search.html
 share/doc/qemu/specs/searchindex.js
+share/doc/qemu/specs/tpm.html
+share/doc/qemu/system/
+share/doc/qemu/system/.buildinfo
+share/doc/qemu/system/_static/
+share/doc/qemu/system/_static/ajax-loader.gif
+share/doc/qemu/system/_static/alabaster.css
+share/doc/qemu/system/_static/basic.css
+share/doc/qemu/system/_static/comment-bright.png
+share/doc/qemu/system/_static/comment-close.png
+share/doc/qemu/system/_static/comment.png
+share/doc/qemu/system/_static/custom.css
+share/doc/qemu/system/_static/doctools.js
+share/doc/qemu/system/_static/down-pressed.png
+share/doc/qemu/system/_static/down.png
+share/doc/qemu/system/_static/file.png
+share/doc/qemu/system/_static/jquery.js
+share/doc/qemu/system/_static/minus.png
+share/doc/qemu/system/_static/plus.png
+share/doc/qemu/system/_static/pygments.css
+share/doc/qemu/system/_static/searchtools.js
+share/doc/qemu/system/_static/underscore.js
+share/doc/qemu/system/_static/up-pressed.png
+share/doc/qemu/system/_static/up.png
+share/doc/qemu/system/_static/websupport.js
+share/doc/qemu/system/arm/
+share/doc/qemu/system/arm/cpu-features.html
+share/doc/qemu/system/arm/integratorcp.html
+share/doc/qemu/system/arm/musicpal.html
+share/doc/qemu/system/arm/nseries.html
+share/doc/qemu/system/arm/orangepi.html
+share/doc/qemu/system/arm/palm.html
+share/doc/qemu/system/arm/realview.html
+share/doc/qemu/system/arm/stellaris.html
+share/doc/qemu/system/arm/sx1.html
+share/doc/qemu/system/arm/versatile.html
+share/doc/qemu/system/arm/xscale.html
+share/doc/qemu/system/build-platforms.html
+share/doc/qemu/system/deprecated.html
+share/doc/qemu/system/gdb.html
+share/doc/qemu/system/genindex.html
+share/doc/qemu/system/images.html
+share/doc/qemu/system/index.html
+share/doc/qemu/system/invocation.html
+share/doc/qemu/system/ivshmem.html
+share/doc/qemu/system/keys.html
+share/doc/qemu/system/license.html
+share/doc/qemu/system/linuxboot.html
+share/doc/qemu/system/managed-startup.html
+share/doc/qemu/system/monitor.html
+share/doc/qemu/system/mux-chardev.html
+share/doc/qemu/system/net.html
+share/doc/qemu/system/objects.inv
+share/doc/qemu/system/qemu-block-drivers.html
+share/doc/qemu/system/qemu-cpu-models.html
+share/doc/qemu/system/qemu-manpage.html
+share/doc/qemu/system/quickstart.html
+share/doc/qemu/system/s390x/
+share/doc/qemu/system/s390x/vfio-ap.html
+share/doc/qemu/system/search.html
+share/doc/qemu/system/searchindex.js
+share/doc/qemu/system/security.html
+share/doc/qemu/system/target-arm.html
+share/doc/qemu/system/target-i386.html
+share/doc/qemu/system/target-m68k.html
+share/doc/qemu/system/target-mips.html
+share/doc/qemu/system/target-ppc.html
+share/doc/qemu/system/target-s390x.html
+share/doc/qemu/system/target-sparc.html
+share/doc/qemu/system/target-sparc64.html
+share/doc/qemu/system/target-xtensa.html
+share/doc/qemu/system/targets.html
+share/doc/qemu/system/tls.html
+share/doc/qemu/system/usb.html
+share/doc/qemu/system/vnc-security.html
+share/doc/qemu/tools/
+share/doc/qemu/tools/.buildinfo
+share/doc/qemu/tools/_static/
+share/doc/qemu/tools/_static/ajax-loader.gif
+share/doc/qemu/tools/_static/alabaster.css
+share/doc/qemu/tools/_static/basic.css
+share/doc/qemu/tools/_static/comment-bright.png
+share/doc/qemu/tools/_static/comment-close.png
+share/doc/qemu/tools/_static/comment.png
+share/doc/qemu/tools/_static/custom.css
+share/doc/qemu/tools/_static/doctools.js
+share/doc/qemu/tools/_static/down-pressed.png
+share/doc/qemu/tools/_static/down.png
+share/doc/qemu/tools/_static/file.png
+share/doc/qemu/tools/_static/jquery.js
+share/doc/qemu/tools/_static/minus.png
+share/doc/qemu/tools/_static/plus.png
+share/doc/qemu/tools/_static/pygments.css
+share/doc/qemu/tools/_static/searchtools.js
+share/doc/qemu/tools/_static/underscore.js
+share/doc/qemu/tools/_static/up-pressed.png
+share/doc/qemu/tools/_static/up.png
+share/doc/qemu/tools/_static/websupport.js
+share/doc/qemu/tools/genindex.html
+share/doc/qemu/tools/index.html
+share/doc/qemu/tools/objects.inv
+share/doc/qemu/tools/qemu-img.html
+share/doc/qemu/tools/qemu-nbd.html
+share/doc/qemu/tools/qemu-trace-stap.html
+share/doc/qemu/tools/search.html
+share/doc/qemu/tools/searchindex.js
+share/doc/qemu/tools/virtfs-proxy-helper.html
+share/doc/qemu/tools/virtiofsd.html
+share/doc/qemu/user/
+share/doc/qemu/user/.buildinfo
+share/doc/qemu/user/_static/
+share/doc/qemu/user/_static/ajax-loader.gif
+share/doc/qemu/user/_static/alabaster.css
+share/doc/qemu/user/_static/basic.css
+share/doc/qemu/user/_static/comment-bright.png
+share/doc/qemu/user/_static/comment-close.png
+share/doc/qemu/user/_static/comment.png
+share/doc/qemu/user/_static/custom.css
+share/doc/qemu/user/_static/doctools.js
+share/doc/qemu/user/_static/down-pressed.png
+share/doc/qemu/user/_static/down.png
+share/doc/qemu/user/_static/file.png
+share/doc/qemu/user/_static/jquery.js
+share/doc/qemu/user/_static/minus.png
+share/doc/qemu/user/_static/plus.png
+share/doc/qemu/user/_static/pygments.css
+share/doc/qemu/user/_static/searchtools.js
+share/doc/qemu/user/_static/underscore.js
+share/doc/qemu/user/_static/up-pressed.png
+share/doc/qemu/user/_static/up.png
+share/doc/qemu/user/_static/websupport.js
+share/doc/qemu/user/genindex.html
+share/doc/qemu/user/index.html
+share/doc/qemu/user/main.html
+share/doc/qemu/user/objects.inv
+share/doc/qemu/user/search.html
+share/doc/qemu/user/searchindex.js
 share/examples/qemu/
 share/examples/qemu/qemu-ifdown
 @mode 755
@@ -229,13 +368,13 @@ share/qemu/multiboot.bin
 share/qemu/openbios-ppc
 share/qemu/openbios-sparc32
 share/qemu/openbios-sparc64
+share/qemu/opensbi-riscv32-sifive_u-fw_jump.bin
 share/qemu/opensbi-riscv32-virt-fw_jump.bin
 share/qemu/opensbi-riscv64-sifive_u-fw_jump.bin
 share/qemu/opensbi-riscv64-virt-fw_jump.bin
 share/qemu/palcode-clipper
 share/qemu/petalogix-ml605.dtb
 share/qemu/petalogix-s3adsp1800.dtb
-share/qemu/ppc_rom.bin
 share/qemu/pvh.bin
 share/qemu/pxe-e1000.rom
 share/qemu/pxe-eepro100.rom

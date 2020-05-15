@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.64 2020/01/26 04:03:04 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.65 2020/05/15 07:26:41 ajacoutot Exp $
 
 sndio module
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -831,8 +831,8 @@ NetBSD)
+@@ -847,8 +847,8 @@ NetBSD)
  OpenBSD)
    bsd="yes"
    make="${MAKE-gmake}"
@@ -16,7 +16,7 @@ Index: configure
    HOST_VARIANT_DIR="openbsd"
    supported_os="yes"
  ;;
-@@ -3451,6 +3451,24 @@ fi
+@@ -3567,6 +3567,24 @@ fi
  ##########################################
  # Sound support libraries probe
  
@@ -41,7 +41,7 @@ Index: configure
  audio_drv_list=$(echo "$audio_drv_list" | sed -e 's/,/ /g')
  for drv in $audio_drv_list; do
      case $drv in
-@@ -3500,6 +3518,23 @@ for drv in $audio_drv_list; do
+@@ -3616,6 +3634,23 @@ for drv in $audio_drv_list; do
      fi
      ;;
  
@@ -65,10 +65,10 @@ Index: configure
      coreaudio)
        coreaudio_libs="-framework CoreAudio"
      ;;
-@@ -6094,10 +6129,6 @@ write_c_skeleton
+@@ -6260,10 +6295,6 @@ write_c_skeleton
  if test "$gcov" = "yes" ; then
-   CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
-   LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
+   QEMU_CFLAGS="-fprofile-arcs -ftest-coverage -g $QEMU_CFLAGS"
+   QEMU_LDFLAGS="-fprofile-arcs -ftest-coverage $QEMU_LDFLAGS"
 -elif test "$fortify_source" = "yes" ; then
 -  CFLAGS="-O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 $CFLAGS"
 -elif test "$debug" = "no"; then
@@ -76,7 +76,7 @@ Index: configure
  fi
  
  if test "$have_asan" = "yes"; then
-@@ -6765,7 +6796,7 @@ echo "CONFIG_AUDIO_DRIVERS=$audio_drv_list" >> $config
+@@ -6893,7 +6924,7 @@ echo "CONFIG_AUDIO_DRIVERS=$audio_drv_list" >> $config
  for drv in $audio_drv_list; do
      def=CONFIG_AUDIO_$(echo $drv | LC_ALL=C tr '[a-z]' '[A-Z]')
      case "$drv" in
@@ -85,7 +85,7 @@ Index: configure
  	    echo "$def=m" >> $config_host_mak ;;
  	*)
  	    echo "$def=y" >> $config_host_mak ;;
-@@ -6776,6 +6807,7 @@ echo "PULSE_LIBS=$pulse_libs" >> $config_host_mak
+@@ -6904,6 +6935,7 @@ echo "PULSE_LIBS=$pulse_libs" >> $config_host_mak
  echo "COREAUDIO_LIBS=$coreaudio_libs" >> $config_host_mak
  echo "DSOUND_LIBS=$dsound_libs" >> $config_host_mak
  echo "OSS_LIBS=$oss_libs" >> $config_host_mak

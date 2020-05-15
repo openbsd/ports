@@ -1,13 +1,13 @@
-$OpenBSD: patch-audio_audio_c,v 1.6 2020/01/25 17:40:29 ajacoutot Exp $
+$OpenBSD: patch-audio_audio_c,v 1.7 2020/05/15 07:26:41 ajacoutot Exp $
 
 Index: audio/audio.c
 --- audio/audio.c.orig
 +++ audio/audio.c
-@@ -1954,6 +1954,7 @@ void audio_create_pdos(Audiodev *dev)
- 
-         CASE(NONE, none, );
-         CASE(ALSA, alsa, Alsa);
-+        CASE(SNDIO, sndio, );
-         CASE(COREAUDIO, coreaudio, Coreaudio);
-         CASE(DSOUND, dsound, );
+@@ -1972,6 +1972,7 @@ void audio_create_pdos(Audiodev *dev)
          CASE(OSS, oss, Oss);
+         CASE(PA, pa, Pa);
+         CASE(SDL, sdl, );
++        CASE(SNDIO, sndio, );
+         CASE(SPICE, spice, );
+         CASE(WAV, wav, );
+ 
