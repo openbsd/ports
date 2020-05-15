@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.505 2020/05/14 16:23:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.506 2020/05/15 08:19:21 denis Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -148,6 +148,7 @@
      SUBDIR += libraw
      SUBDIR += libsixel
      SUBDIR += libvidcap
+     SUBDIR += libvips
      SUBDIR += libwebp
      SUBDIR += libwmf
      SUBDIR += libxmi
