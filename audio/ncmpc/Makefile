@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2020/02/04 18:25:00 bket Exp $
+# $OpenBSD: Makefile,v 1.51 2020/05/15 11:40:51 bket Exp $
 
 COMMENT=		curses based frontend for mpd
 
-VER=			0.37
+VER=			0.38
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
