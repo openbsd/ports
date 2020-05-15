@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-perl,v 1.9 2018/11/23 12:41:47 stsp Exp $
+@comment $OpenBSD: PLIST-perl,v 1.10 2020/05/15 14:47:40 ajacoutot Exp $
 @pkgpath devel/subversion,-perl,gnome_keyring
-lib/libsvn_swig_perl-1.a
+@static-lib lib/libsvn_swig_perl-1.a
 lib/libsvn_swig_perl-1.la
 @lib lib/libsvn_swig_perl-1.so.${LIBsvn_swig_perl-1_VERSION}
 libdata/perl5/${MACHINE_ARCH}-openbsd/
@@ -19,25 +19,25 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/_Client.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/_Client.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/_Client.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Core/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Core/_Core.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Core/_Core.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Core/_Core.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Delta/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Delta/_Delta.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Delta/_Delta.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Delta/_Delta.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Fs/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Fs/_Fs.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Fs/_Fs.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Fs/_Fs.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Ra/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Ra/_Ra.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Ra/_Ra.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Ra/_Ra.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Repos/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Repos/_Repos.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Repos/_Repos.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Repos/_Repos.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/_Wc.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/_Wc.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/_Wc.so
 @man man/man3p/SVN::Base.3p
 @man man/man3p/SVN::Client.3p
 @man man/man3p/SVN::Core.3p

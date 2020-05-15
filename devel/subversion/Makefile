@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.179 2020/05/15 14:47:40 ajacoutot Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -8,7 +8,6 @@ COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.13.0
-REVISION-main=		0
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
@@ -21,6 +20,12 @@ FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
+
+REVISION-main=		1
+REVISION-perl=		0
+REVISION-python=	0
+REVISION-ruby=		0
+REVISION-ap2=		0
 
 MODRUBY_REV ?=	2.5
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
@@ -88,7 +93,7 @@ TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
 	svnperms.py verify-po.py
 # There's also 'mailer', but we handle it separately, see post-install
 
-TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
+TOOLS_CLIENT_SIDE_SCRIPTS=	change-svn-wc-format.py \
 	mergeinfo-sanitizer.py server-version.py svn-graph.pl \
 	svn-ssl-fingerprints.sh svn-vendor.py svn-viewspec.py wcfind
 
@@ -289,6 +294,13 @@ post-install:
 .for _script in ${TOOLS_CLIENT_SIDE_SCRIPTS}
 	${INSTALL_DATA} ${WRKSRC}/tools/client-side/${_script} \
 			${PREFIX}/share/examples/subversion/client-side
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA} ${WRKSRC}/tools/client-side/bash_completion \
+		${PREFIX}/share/bash-completion/completions/subversion
+.for _completion in svn svnadmin svndumpfilter svnlook svnsync svnversion
+		cd ${PREFIX}/share/bash-completion/completions && \
+			ln -sf subversion ${_completion}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/tools/server-side/fsfs-reshard.py \
 			${PREFIX}/share/examples/subversion/server-side

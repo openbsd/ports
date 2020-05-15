@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-ap2,v 1.6 2012/02/19 12:13:39 stsp Exp $
+@comment $OpenBSD: PLIST-ap2,v 1.7 2020/05/15 14:47:40 ajacoutot Exp $
 @pkgpath devel/subversion,-ap2,gnome_keyring
 include/subversion-1/mod_authz_svn.h
 include/subversion-1/mod_dav_svn.h
-lib/apache2/mod_authz_svn.so
-lib/apache2/mod_dav_svn.so
-lib/apache2/mod_dontdothat.so
+@so lib/apache2/mod_authz_svn.so
+@so lib/apache2/mod_dav_svn.so
+@so lib/apache2/mod_dontdothat.so

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-python,v 1.10 2018/11/23 12:41:47 stsp Exp $
+@comment $OpenBSD: PLIST-python,v 1.11 2020/05/15 14:47:40 ajacoutot Exp $
 @pkgpath devel/subversion,-python,gnome_keyring
-lib/libsvn_swig_${MODPY_PY_PREFIX}1.a
+@static-lib lib/libsvn_swig_${MODPY_PY_PREFIX}1.a
 lib/libsvn_swig_${MODPY_PY_PREFIX}1.la
 @lib lib/libsvn_swig_${MODPY_PY_PREFIX}1.so.${LIBsvn_swig_${MODPY_PY_PREFIX}1_VERSION}
 lib/python${MODPY_VERSION}/site-packages/libsvn/
@@ -8,28 +8,28 @@ lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/_client.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_client.la
-lib/python${MODPY_VERSION}/site-packages/libsvn/_client.so
+@so lib/python${MODPY_VERSION}/site-packages/libsvn/_client.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_core.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_core.la
-lib/python${MODPY_VERSION}/site-packages/libsvn/_core.so
+@so lib/python${MODPY_VERSION}/site-packages/libsvn/_core.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.la
-lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.so
+@so lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.la
-lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.so
+@so lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.la
-lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.so
+@so lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.la
-lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.so
+@so lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.la
-lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.so
+@so lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.la
-lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.so
+@so lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/client.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/client.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/core.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2019/04/28 13:38:28 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2020/05/15 14:47:40 ajacoutot Exp $
 @conflict subversion-*-gnome_keyring
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
@@ -77,49 +77,49 @@ include/subversion-1/svn_wc.h
 include/subversion-1/svn_x509.h
 include/subversion-1/svn_xml.h
 @comment lib/apache2/
-lib/libsvn_client-1.a
+@static-lib lib/libsvn_client-1.a
 lib/libsvn_client-1.la
 @lib lib/libsvn_client-1.so.${LIBsvn_client-1_VERSION}
-lib/libsvn_delta-1.a
+@static-lib lib/libsvn_delta-1.a
 lib/libsvn_delta-1.la
 @lib lib/libsvn_delta-1.so.${LIBsvn_delta-1_VERSION}
-lib/libsvn_diff-1.a
+@static-lib lib/libsvn_diff-1.a
 lib/libsvn_diff-1.la
 @lib lib/libsvn_diff-1.so.${LIBsvn_diff-1_VERSION}
-lib/libsvn_fs-1.a
+@static-lib lib/libsvn_fs-1.a
 lib/libsvn_fs-1.la
 @lib lib/libsvn_fs-1.so.${LIBsvn_fs-1_VERSION}
-lib/libsvn_fs_base-1.a
+@static-lib lib/libsvn_fs_base-1.a
 lib/libsvn_fs_base-1.la
 @lib lib/libsvn_fs_base-1.so.${LIBsvn_fs_base-1_VERSION}
-lib/libsvn_fs_fs-1.a
+@static-lib lib/libsvn_fs_fs-1.a
 lib/libsvn_fs_fs-1.la
 @lib lib/libsvn_fs_fs-1.so.${LIBsvn_fs_fs-1_VERSION}
-lib/libsvn_fs_util-1.a
+@static-lib lib/libsvn_fs_util-1.a
 lib/libsvn_fs_util-1.la
 @lib lib/libsvn_fs_util-1.so.${LIBsvn_fs_util-1_VERSION}
-lib/libsvn_fs_x-1.a
+@static-lib lib/libsvn_fs_x-1.a
 lib/libsvn_fs_x-1.la
 @lib lib/libsvn_fs_x-1.so.${LIBsvn_fs_x-1_VERSION}
-lib/libsvn_ra-1.a
+@static-lib lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
 @lib lib/libsvn_ra-1.so.${LIBsvn_ra-1_VERSION}
-lib/libsvn_ra_local-1.a
+@static-lib lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
 @lib lib/libsvn_ra_local-1.so.${LIBsvn_ra_local-1_VERSION}
-lib/libsvn_ra_serf-1.a
+@static-lib lib/libsvn_ra_serf-1.a
 lib/libsvn_ra_serf-1.la
 @lib lib/libsvn_ra_serf-1.so.${LIBsvn_ra_serf-1_VERSION}
-lib/libsvn_ra_svn-1.a
+@static-lib lib/libsvn_ra_svn-1.a
 lib/libsvn_ra_svn-1.la
 @lib lib/libsvn_ra_svn-1.so.${LIBsvn_ra_svn-1_VERSION}
-lib/libsvn_repos-1.a
+@static-lib lib/libsvn_repos-1.a
 lib/libsvn_repos-1.la
 @lib lib/libsvn_repos-1.so.${LIBsvn_repos-1_VERSION}
-lib/libsvn_subr-1.a
+@static-lib lib/libsvn_subr-1.a
 lib/libsvn_subr-1.la
 @lib lib/libsvn_subr-1.so.${LIBsvn_subr-1_VERSION}
-lib/libsvn_wc-1.a
+@static-lib lib/libsvn_wc-1.a
 lib/libsvn_wc-1.la
 @lib lib/libsvn_wc-1.so.${LIBsvn_wc-1_VERSION}
 @comment lib/python${MODPY_VERSION}/
@@ -134,6 +134,15 @@ lib/libsvn_wc-1.la
 @man man/man1/svnversion.1
 @man man/man5/svnserve.conf.5
 @man man/man8/svnserve.8
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/subversion
+share/bash-completion/completions/svn
+share/bash-completion/completions/svnadmin
+share/bash-completion/completions/svndumpfilter
+share/bash-completion/completions/svnlook
+share/bash-completion/completions/svnsync
+share/bash-completion/completions/svnversion
 share/examples/subversion/
 @sample ${SYSCONFDIR}/subversion/
 share/examples/subversion/ExampleAuthn.java
@@ -152,7 +161,6 @@ share/examples/subversion/blame.py
 share/examples/subversion/cgi/
 share/examples/subversion/check-modified.py
 share/examples/subversion/client-side/
-share/examples/subversion/client-side/bash_completion
 share/examples/subversion/client-side/change-svn-wc-format.py
 share/examples/subversion/client-side/emacs/
 share/examples/subversion/client-side/mergeinfo-sanitizer.py

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-ruby,v 1.11 2018/11/23 12:41:47 stsp Exp $
+@comment $OpenBSD: PLIST-ruby,v 1.12 2020/05/15 14:47:40 ajacoutot Exp $
 @pkgpath devel/subversion,-ruby,gnome_keyring
-lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.a
+@static-lib lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.a
 lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.la
 @lib lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.so.${LIBsvn_swig_ruby${MODRUBY_BINREV}-1_VERSION}
 @comment lib/ruby/
@@ -24,25 +24,25 @@ ${MODRUBY_SITEARCHDIR}/svn/
 ${MODRUBY_SITEARCHDIR}/svn/ext/
 ${MODRUBY_SITEARCHDIR}/svn/ext/client.a
 ${MODRUBY_SITEARCHDIR}/svn/ext/client.la
-${MODRUBY_SITEARCHDIR}/svn/ext/client.so
+@so ${MODRUBY_SITEARCHDIR}/svn/ext/client.so
 ${MODRUBY_SITEARCHDIR}/svn/ext/core.a
 ${MODRUBY_SITEARCHDIR}/svn/ext/core.la
-${MODRUBY_SITEARCHDIR}/svn/ext/core.so
+@so ${MODRUBY_SITEARCHDIR}/svn/ext/core.so
 ${MODRUBY_SITEARCHDIR}/svn/ext/delta.a
 ${MODRUBY_SITEARCHDIR}/svn/ext/delta.la
-${MODRUBY_SITEARCHDIR}/svn/ext/delta.so
+@so ${MODRUBY_SITEARCHDIR}/svn/ext/delta.so
 ${MODRUBY_SITEARCHDIR}/svn/ext/diff.a
 ${MODRUBY_SITEARCHDIR}/svn/ext/diff.la
-${MODRUBY_SITEARCHDIR}/svn/ext/diff.so
+@so ${MODRUBY_SITEARCHDIR}/svn/ext/diff.so
 ${MODRUBY_SITEARCHDIR}/svn/ext/fs.a
 ${MODRUBY_SITEARCHDIR}/svn/ext/fs.la
-${MODRUBY_SITEARCHDIR}/svn/ext/fs.so
+@so ${MODRUBY_SITEARCHDIR}/svn/ext/fs.so
 ${MODRUBY_SITEARCHDIR}/svn/ext/ra.a
 ${MODRUBY_SITEARCHDIR}/svn/ext/ra.la
-${MODRUBY_SITEARCHDIR}/svn/ext/ra.so
+@so ${MODRUBY_SITEARCHDIR}/svn/ext/ra.so
 ${MODRUBY_SITEARCHDIR}/svn/ext/repos.a
 ${MODRUBY_SITEARCHDIR}/svn/ext/repos.la
-${MODRUBY_SITEARCHDIR}/svn/ext/repos.so
+@so ${MODRUBY_SITEARCHDIR}/svn/ext/repos.so
 ${MODRUBY_SITEARCHDIR}/svn/ext/wc.a
 ${MODRUBY_SITEARCHDIR}/svn/ext/wc.la
-${MODRUBY_SITEARCHDIR}/svn/ext/wc.so
+@so ${MODRUBY_SITEARCHDIR}/svn/ext/wc.so
