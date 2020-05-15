@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/10 00:32:06 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/15 22:00:37 bluhm Exp $
 
 COMMENT =	engine for Perl providing parallel processing capabilities
 
-DISTNAME =	MCE-1.865
+DISTNAME =	MCE-1.868
 CPAN_AUTHOR =	MARIOROY
 
 CATEGORIES =	devel
