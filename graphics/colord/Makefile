@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2020/05/15 10:58:52 ajacoutot Exp $
 
 # XXX newer versions hard depend on gusb and udev...
 PORTROACH=	skipv:1.4.0,1.4.1,1.4.2,1.4.3,1.4.4
@@ -8,7 +8,7 @@ COMMENT=	device color profile management daemon
 V=		1.3.5
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  colordprivate        1.1      # 2.5
 SHARED_LIBS +=  colord               1.5      # 2.5
@@ -33,6 +33,7 @@ MODULES=	devel/dconf \
 
 BUILD_DEPENDS=	devel/gobject-introspection \
 		lang/vala \
+		shells/bash-completion \
 		textproc/docbook2x \
 		x11/dbus
 
@@ -67,9 +68,6 @@ CONFIGURE_ARGS += --disable-print-profiles
 # until proven useful
 CONFIGURE_ARGS += --disable-argyllcms-sensor
 #BUILD_DEPENDS += graphics/argyll
-
-# XXX configure: error: Package requirements (bash-completion >= 2.0) were not met
-CONFIGURE_ARGS += --disable-bash-completion
 
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/colord"
 

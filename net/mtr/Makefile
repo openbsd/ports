@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2020/02/03 20:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2020/05/15 10:58:52 ajacoutot Exp $
 
 COMMENT=	network diagnostic tool, similar to ping and traceroute
 
@@ -20,6 +20,8 @@ WANTLIB += c m curses
 
 FLAVORS=	gtk
 FLAVOR?=
+
+BUILD_DEPENDS=	shells/bash-completion
 
 CONFIGURE_STYLE= autoreconf
 AUTORECONF=	${WRKSRC}/bootstrap.sh

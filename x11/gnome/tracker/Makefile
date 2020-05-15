@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.254 2020/05/15 09:03:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.255 2020/05/15 10:58:52 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		2.3.4
-REVISION=		0
+REVISION=		1
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -34,7 +34,8 @@ MODPY_RUNDEP=		No
 
 TEST_DEPENDS=		devel/py-gobject3,${MODPY_FLAVOR}
 
-BUILD_DEPENDS=		x11/dbus
+BUILD_DEPENDS=		shells/bash-completion \
+			x11/dbus
 
 LIB_DEPENDS=		devel/json-glib \
 			devel/libsoup \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/07/08 20:10:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/05/15 10:58:52 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -47,12 +47,12 @@ include/colord-1/colord/cd-spectrum.h
 include/colord-1/colord/cd-transform.h
 include/colord-1/colord/cd-version.h
 lib/colord-sensors/
-lib/colord-sensors/libcolord_sensor_dummy.so
+@so lib/colord-sensors/libcolord_sensor_dummy.so
 lib/girepository-1.0/Colord-1.0.typelib
-lib/libcolord.a
+@static-lib lib/libcolord.a
 lib/libcolord.la
 @lib lib/libcolord.so.${LIBcolord_VERSION}
-lib/libcolordprivate.a
+@static-lib lib/libcolordprivate.a
 lib/libcolordprivate.la
 @lib lib/libcolordprivate.so.${LIBcolordprivate_VERSION}
 lib/pkgconfig/colord.pc
@@ -65,6 +65,7 @@ lib/systemd/user/colord-session.service
 @man man/man1/cd-fix-profile.1
 @man man/man1/cd-it8.1
 @man man/man1/colormgr.1
+share/bash-completion/completions/colormgr
 share/color/
 share/color/icc/
 share/color/icc/colord/

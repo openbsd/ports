@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/12/08 10:16:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/05/15 10:58:52 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-stats-${API}
@@ -150,6 +150,7 @@ lib/pkgconfig/gstreamer-check-${API}.pc
 lib/pkgconfig/gstreamer-controller-${API}.pc
 lib/pkgconfig/gstreamer-net-${API}.pc
 libexec/gstreamer-${API}/
+@bin libexec/gstreamer-${API}/gst-completion-helper
 @bin libexec/gstreamer-${API}/gst-plugin-scanner
 @bin libexec/gstreamer-${API}/gst-ptp-helper
 @man man/man1/gst-inspect-${API}.1
@@ -157,6 +158,10 @@ libexec/gstreamer-${API}/
 @man man/man1/gst-stats-${API}.1
 @man man/man1/gst-typefind-${API}.1
 share/aclocal/gst-element-check-${API}.m4
+share/bash-completion/completions/gst-inspect-${API}
+share/bash-completion/completions/gst-launch-${API}
+share/bash-completion/helpers/
+share/bash-completion/helpers/gst
 share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.1602.0-gdb.py
 share/gir-${API}/
 share/gir-${API}/Gst-${API}.gir
