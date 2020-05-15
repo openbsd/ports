@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/05/15 20:46:35 bluhm Exp $
 
 COMMENT =	use Cpanel::JSON::XS or JSON::XS or JSON::PP
 
-DISTNAME =	JSON-MaybeXS-1.004000
+DISTNAME =	JSON-MaybeXS-1.004001
 
 CATEGORIES =	converters
 
