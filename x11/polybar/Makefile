@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2019/12/28 15:00:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2020/05/15 08:07:55 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
-V =		3.4.2
+V =		3.4.3
 DISTNAME =	polybar-$V
 CATEGORIES =	x11
 
