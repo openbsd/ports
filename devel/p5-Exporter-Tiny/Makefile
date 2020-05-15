@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/05/15 21:27:47 bluhm Exp $
 
 COMMENT =	exporter with the features of Sub::Exporter
 
-DISTNAME =	Exporter-Tiny-1.002001
+DISTNAME =	Exporter-Tiny-1.002002
 
 CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
@@ -16,5 +16,8 @@ TEST_DEPENDS =		devel/p5-Test-Fatal \
 			devel/p5-Test-Warnings
 
 PKG_ARCH =		*
+
+post-extract:
+	rm -rf -- ${WRKDIST}/inc
 
 .include <bsd.port.mk>
