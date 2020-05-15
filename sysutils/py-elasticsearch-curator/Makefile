@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2019/10/24 13:35:04 pvk Exp $
+# $OpenBSD: Makefile,v 1.23 2020/05/15 13:09:36 pvk Exp $
 
 COMMENT=	manage Elasticsearch indices
 
 MODPY_EGG_VERSION=5.8.1
+REVISION=	0
 DISTNAME=	elasticsearch-curator-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}elasticsearch-curator-${MODPY_EGG_VERSION}
 
@@ -30,11 +31,11 @@ RUN_DEPENDS=	devel/py-certifi${MODPY_FLAVOR}>=2019.9.11 \
 		textproc/py-elasticsearch${MODPY_FLAVOR}>=7.0.4,<8.0.0 \
 		textproc/py-yaml${MODPY_FLAVOR}>=3.13 \
 		www/py-requests${MODPY_FLAVOR}>=2.20.0 \
-		www/py-urllib3${MODPY_FLAVOR}>=1.24.2,<1.25
+		www/py-urllib3${MODPY_FLAVOR}>=1.24.2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-# Requires unported nosexcover
+# Requires elasticsearch cluster
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
