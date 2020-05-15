@@ -1,0 +1,13 @@
+$OpenBSD: patch-libgda-report_RML_trml2pdf___init___py,v 1.1 2020/05/15 11:17:42 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/libgda/-/commit/bb2e1f3867d360d510437a42cc0a6b8ca1b8dc6c
+
+Index: libgda-report/RML/trml2pdf/__init__.py
+--- libgda-report/RML/trml2pdf/__init__.py.orig
++++ libgda-report/RML/trml2pdf/__init__.py
+@@ -15,4 +15,4 @@
+ # License along with this library; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ 
+-from trml2pdf import parseString
++from .trml2pdf import parseString

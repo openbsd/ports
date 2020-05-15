@@ -1,0 +1,75 @@
+$OpenBSD: patch-libgda-report_RML_trml2html_trml2html_py,v 1.1 2020/05/15 11:17:42 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/libgda/-/commit/bb2e1f3867d360d510437a42cc0a6b8ca1b8dc6c
+
+Index: libgda-report/RML/trml2html/trml2html.py
+--- libgda-report/RML/trml2html/trml2html.py.orig
++++ libgda-report/RML/trml2html/trml2html.py
+@@ -19,11 +19,11 @@
+ # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ 
+ import sys
+-import StringIO
++import io
+ import xml.dom.minidom
+ import copy
+ 
+-import utils
++from . import utils
+ 
+ class _flowable(object):
+ 	def __init__(self, template, doc):
+@@ -62,7 +62,7 @@ class _flowable(object):
+ 	def _tag_table(self, node):
+ 		node.tagName='table'
+ 		if node.hasAttribute('colWidths'):
+-			sizes = map(lambda x: utils.unit_get(x), node.getAttribute('colWidths').split(','))
++			sizes = [utils.unit_get(x) for x in node.getAttribute('colWidths').split(',')]
+ 			tr = self.doc.createElement('tr')
+ 			for s in sizes:
+ 				td = self.doc.createElement('td')
+@@ -212,7 +212,7 @@ class _rml_draw_style(object):
+ 	def get(self,tag):
+ 		if not tag in self.style:
+ 			return ""
+-		return ';'.join(['%s:%s' % (x[0],x[1]) for x in self.style[tag].items()])
++		return ';'.join(['%s:%s' % (x[0],x[1]) for x in list(self.style[tag].items())])
+ 
+ class _rml_template(object):
+ 	def __init__(self, template):
+@@ -244,7 +244,7 @@ class _rml_template(object):
+ 							frames[(t.posy,t.posx,n.localName)] = t
+ 						else:
+ 							self.style.update(n)
+-			keys = frames.keys()
++			keys = list(frames.keys())
+ 			keys.sort()
+ 			keys.reverse()
+ 			self.page_template[id] = []
+@@ -338,20 +338,20 @@ def parseString(data, fout=None):
+ 		fp.close()
+ 		return fout
+ 	else:
+-		fp = StringIO.StringIO()
++		fp = io.StringIO()
+ 		r.render(fp)
+ 		return fp.getvalue()
+ 
+ def trml2pdf_help():
+-	print 'Usage: trml2pdf input.rml >output.html'
+-	print 'Render the standard input (RML) and output a PDF file'
++	print('Usage: trml2pdf input.rml >output.html')
++	print('Render the standard input (RML) and output a PDF file')
+ 	sys.exit(0)
+ 
+ if __name__=="__main__":
+ 	if len(sys.argv)>1:
+ 		if sys.argv[1]=='--help':
+ 			trml2pdf_help()
+-		print parseString(file(sys.argv[1], 'r').read()),
++		print(parseString(file(sys.argv[1], 'r').read()), end=' ')
+ 	else:
+-		print 'Usage: trml2pdf input.rml >output.pdf'
+-		print 'Try \'trml2pdf --help\' for more information.'
++		print('Usage: trml2pdf input.rml >output.pdf')
++		print('Try \'trml2pdf --help\' for more information.')

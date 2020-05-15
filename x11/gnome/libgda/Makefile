@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2020/05/14 15:21:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.136 2020/05/15 11:17:42 jasper Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -20,7 +20,7 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main =		1
+REVISION-main =		2
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -59,6 +59,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=	libgda-report/RML/trml2html/trml2html.py \
 			libgda-report/RML/trml2pdf/trml2pdf.py
 

@@ -1,0 +1,16 @@
+$OpenBSD: patch-libgda-report_RML_trml2pdf_color_py,v 1.1 2020/05/15 11:17:42 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/libgda/-/commit/bb2e1f3867d360d510437a42cc0a6b8ca1b8dc6c
+
+Index: libgda-report/RML/trml2pdf/color.py
+--- libgda-report/RML/trml2pdf/color.py.orig
++++ libgda-report/RML/trml2pdf/color.py
+@@ -25,7 +25,7 @@ regex_h = re.compile('#([0-9a-zA-Z][0-9a-zA-Z])([0-9a-
+ 
+ def get(col_str):
+ 	global allcols
+-	if col_str in allcols.keys():
++	if col_str in list(allcols.keys()):
+ 		return allcols[col_str]
+ 	res = regex_t.search(col_str, 0)
+ 	if res:
