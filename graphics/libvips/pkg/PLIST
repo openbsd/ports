@@ -1,0 +1,177 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/15 07:58:41 denis Exp $
+bin/batch_crop
+bin/batch_image_convert
+bin/batch_rubber_sheet
+bin/light_correct
+bin/shrink_width
+@bin bin/vips
+bin/vips-8.9
+@bin bin/vipsedit
+@bin bin/vipsheader
+bin/vipsprofile
+@bin bin/vipsthumbnail
+include/vips/
+include/vips/VConnection8.h
+include/vips/VError8.h
+include/vips/VImage8.h
+include/vips/VInterpolate8.h
+include/vips/almostdeprecated.h
+include/vips/arithmetic.h
+include/vips/basic.h
+include/vips/buf.h
+include/vips/cimg_funcs.h
+include/vips/colour.h
+include/vips/connection.h
+include/vips/conversion.h
+include/vips/convolution.h
+include/vips/create.h
+include/vips/dbuf.h
+include/vips/debug.h
+include/vips/deprecated.h
+include/vips/dispatch.h
+include/vips/draw.h
+include/vips/enumtypes.h
+include/vips/error.h
+include/vips/foreign.h
+include/vips/format.h
+include/vips/freqfilt.h
+include/vips/gate.h
+include/vips/generate.h
+include/vips/header.h
+include/vips/histogram.h
+include/vips/image.h
+include/vips/interpolate.h
+include/vips/intl.h
+include/vips/mask.h
+include/vips/memory.h
+include/vips/morphology.h
+include/vips/mosaicing.h
+include/vips/object.h
+include/vips/operation.h
+include/vips/private.h
+include/vips/rect.h
+include/vips/region.h
+include/vips/resample.h
+include/vips/sbuf.h
+include/vips/semaphore.h
+include/vips/soname.h
+include/vips/thread.h
+include/vips/threadpool.h
+include/vips/transform.h
+include/vips/type.h
+include/vips/util.h
+include/vips/vector.h
+include/vips/version.h
+include/vips/video.h
+include/vips/vips-operators.h
+include/vips/vips.h
+include/vips/vips7compat.h
+include/vips/vips8
+@static-lib lib/libvips-cpp.a
+lib/libvips-cpp.la
+@lib lib/libvips-cpp.so.${LIBvips-cpp_VERSION}
+@static-lib lib/libvips.a
+lib/libvips.la
+@lib lib/libvips.so.${LIBvips_VERSION}
+lib/pkgconfig/vips-cpp.pc
+lib/pkgconfig/vips.pc
+@man man/man1/batch_crop.1
+@man man/man1/batch_image_convert.1
+@man man/man1/batch_rubber_sheet.1
+@man man/man1/light_correct.1
+@man man/man1/vips.1
+@man man/man1/vipsedit.1
+@man man/man1/vipsheader.1
+@man man/man1/vipsprofile.1
+@man man/man1/vipsthumbnail.1
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libvips/
+share/gtk-doc/html/libvips/Cite.md.html
+share/gtk-doc/html/libvips/Combine.png
+share/gtk-doc/html/libvips/Examples.md.html
+share/gtk-doc/html/libvips/How-it-opens-files.md.html
+share/gtk-doc/html/libvips/How-it-works.md.html
+share/gtk-doc/html/libvips/Making-image-pyramids.md.html
+share/gtk-doc/html/libvips/Memtrace.png
+share/gtk-doc/html/libvips/Sequence.png
+share/gtk-doc/html/libvips/Sink.png
+share/gtk-doc/html/libvips/Using-vipsthumbnail.md.html
+share/gtk-doc/html/libvips/Vips-smp.png
+share/gtk-doc/html/libvips/VipsForeignSave.html
+share/gtk-doc/html/libvips/VipsImage.html
+share/gtk-doc/html/libvips/VipsInterpolate.html
+share/gtk-doc/html/libvips/VipsObject.html
+share/gtk-doc/html/libvips/VipsOperation.html
+share/gtk-doc/html/libvips/VipsRegion.html
+share/gtk-doc/html/libvips/VipsSbuf.html
+share/gtk-doc/html/libvips/VipsTargetCustom.html
+share/gtk-doc/html/libvips/VipsThreadState.html
+share/gtk-doc/html/libvips/annotation-glossary.html
+share/gtk-doc/html/libvips/api-index-full.html
+share/gtk-doc/html/libvips/binding.md.html
+share/gtk-doc/html/libvips/ch01.html
+share/gtk-doc/html/libvips/ch02.html
+share/gtk-doc/html/libvips/ch03.html
+share/gtk-doc/html/libvips/ch04.html
+share/gtk-doc/html/libvips/colour-management.html
+share/gtk-doc/html/libvips/compiled-language-which-can-call-c.html
+share/gtk-doc/html/libvips/cropping.html
+share/gtk-doc/html/libvips/documentation.html
+share/gtk-doc/html/libvips/dynamic-langauge-without-ffi.html
+share/gtk-doc/html/libvips/dynamic-language-with-ffi.html
+share/gtk-doc/html/libvips/extending.html
+share/gtk-doc/html/libvips/file-format.html
+share/gtk-doc/html/libvips/final-suggestion.html
+share/gtk-doc/html/libvips/full-decompression.html
+share/gtk-doc/html/libvips/func-list.html
+share/gtk-doc/html/libvips/gobject-introspection.html
+share/gtk-doc/html/libvips/home.png
+share/gtk-doc/html/libvips/index.html
+share/gtk-doc/html/libvips/interconvert.png
+share/gtk-doc/html/libvips/left-insensitive.png
+share/gtk-doc/html/libvips/left.png
+share/gtk-doc/html/libvips/libvips-arithmetic.html
+share/gtk-doc/html/libvips/libvips-basic.html
+share/gtk-doc/html/libvips/libvips-buf.html
+share/gtk-doc/html/libvips/libvips-colour.html
+share/gtk-doc/html/libvips/libvips-conversion.html
+share/gtk-doc/html/libvips/libvips-convolution.html
+share/gtk-doc/html/libvips/libvips-create.html
+share/gtk-doc/html/libvips/libvips-draw.html
+share/gtk-doc/html/libvips/libvips-error.html
+share/gtk-doc/html/libvips/libvips-freqfilt.html
+share/gtk-doc/html/libvips/libvips-generate.html
+share/gtk-doc/html/libvips/libvips-header.html
+share/gtk-doc/html/libvips/libvips-histogram.html
+share/gtk-doc/html/libvips/libvips-memory.html
+share/gtk-doc/html/libvips/libvips-morphology.html
+share/gtk-doc/html/libvips/libvips-mosaicing.html
+share/gtk-doc/html/libvips/libvips-rect.html
+share/gtk-doc/html/libvips/libvips-resample.html
+share/gtk-doc/html/libvips/libvips-semaphore.html
+share/gtk-doc/html/libvips/libvips-transform.html
+share/gtk-doc/html/libvips/libvips-type.html
+share/gtk-doc/html/libvips/libvips-util.html
+share/gtk-doc/html/libvips/libvips-version.html
+share/gtk-doc/html/libvips/libvips-vips.html
+share/gtk-doc/html/libvips/libvips.devhelp2
+share/gtk-doc/html/libvips/linear-light.html
+share/gtk-doc/html/libvips/looping.html
+share/gtk-doc/html/libvips/object-tree.html
+share/gtk-doc/html/libvips/output-directory.html
+share/gtk-doc/html/libvips/output-format-and-options.html
+share/gtk-doc/html/libvips/owl.jpg
+share/gtk-doc/html/libvips/random-access-via-load-library.html
+share/gtk-doc/html/libvips/right-insensitive.png
+share/gtk-doc/html/libvips/right.png
+share/gtk-doc/html/libvips/sequential-access.html
+share/gtk-doc/html/libvips/style.css
+share/gtk-doc/html/libvips/thumbnail-size.html
+share/gtk-doc/html/libvips/tn_owl.jpg
+share/gtk-doc/html/libvips/up-insensitive.png
+share/gtk-doc/html/libvips/up.png
+share/gtk-doc/html/libvips/using-cli.html
+share/gtk-doc/html/libvips/using-from-c.html
+share/gtk-doc/html/libvips/using-from-cpp.html
+share/gtk-doc/html/libvips/using-threads.html
