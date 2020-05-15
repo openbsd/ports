@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/04/29 05:25:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2020/05/15 17:22:28 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
-GH_TAGNAME=	v0.23.12
+GH_TAGNAME=	v0.23.18
 GH_ACCOUNT=	gruntwork-io
 GH_PROJECT=	terragrunt
 
