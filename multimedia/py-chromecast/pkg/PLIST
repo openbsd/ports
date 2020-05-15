@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/04/21 15:53:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/05/15 16:48:18 ajacoutot Exp $
 @pkgpath multimedia/py-chromecast
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}dial.${MOD
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}discovery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}logging_pb2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}quick_play.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}socket_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/authority_keys_pb2.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/cast_channel_pb2.py
@@ -34,6 +35,8 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}multizone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}plex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}spotify.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}supla.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}yleareena.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}youtube.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/dashcast.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/homeassistant.py
@@ -41,9 +44,12 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/media.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/multizone.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/plex.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/spotify.py
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/supla.py
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/yleareena.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/youtube.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/dial.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/discovery.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/error.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/logging_pb2.py
+lib/python${MODPY_VERSION}/site-packages/pychromecast/quick_play.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/socket_client.py
