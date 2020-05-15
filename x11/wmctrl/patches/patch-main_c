@@ -1,0 +1,19 @@
+$OpenBSD: patch-main_c,v 1.1 2020/05/15 16:51:26 naddy Exp $
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -1439,8 +1439,12 @@ static gchar *get_property (Display *disp, Window win,
+         return NULL;
+     }
+ 
++    /* Data returned in 32-bit format is stored as long */
++    if (ret_format == 32)
++        tmp_size = sizeof(long) * ret_nitems;
++    else
++        tmp_size = (ret_format / 8) * ret_nitems;
+     /* null terminate the result to make string handling easier */
+-    tmp_size = (ret_format / 8) * ret_nitems;
+     ret = g_malloc(tmp_size + 1);
+     memcpy(ret, ret_prop, tmp_size);
+     ret[tmp_size] = '\0';
