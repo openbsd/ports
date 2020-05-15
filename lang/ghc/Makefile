@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2020/04/30 23:16:59 kn Exp $
+# $OpenBSD: Makefile,v 1.172 2020/05/15 21:32:18 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -43,11 +43,10 @@ BUILD_DEPENDS =		archivers/bzip2 \
 			textproc/py-sphinx${MODPY_FLAVOR}
 RUN_DEPENDS =
 
-# We can't use the wrapper script, because it then gets hardcoded into
-# the packaged ghc. So we explicitly use -Wl,-z,wxneeded (see
-# CONFIGURE_ENV below)
+# GHC build uses -Wl,-z,wxneeded on OpenBSD.
+# XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
+#      loadObj_() instead.
 USE_WXNEEDED =		special
-
 
 MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/
@@ -125,15 +124,12 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 # with /usr/bin/ld.lld: error: cannot preempt symbol: memcpy
 CONFIGURE_ARGS +=	--disable-ld-override
 
-# XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
-#      loadObj_() instead.
-GHC_CC_OPTS =		-fno-pie -nopie
 CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="${GHC_CC_OPTS}" \
 			CONF_CC_OPTS_STAGE1="${GHC_CC_OPTS}" \
 			CONF_CC_OPTS_STAGE2="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
-			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS} -Wl,-z,wxneeded" \
-			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS} -Wl,-z,wxneeded"
+			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS}" \
+			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS}"
 
 CONFIGURE_ENV +=	SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
