@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2020/03/23 17:00:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.64 2020/05/15 23:49:47 bluhm Exp $
 
 COMMENT =	perl binding for libxml2
 
-DISTNAME =	XML-LibXML-2.0204
+DISTNAME =	XML-LibXML-2.0205
 EPOCH =		0
 
 CATEGORIES =	textproc
@@ -21,6 +21,8 @@ RUN_DEPENDS =		textproc/p5-XML-NamespaceSupport>=1.07 \
 LIB_DEPENDS =		converters/libiconv \
 			textproc/libxml>=2.7.6
 TEST_DEPENDS =		devel/p5-Test-LeakTrace
+
+CONFIGURE_ENV =		SKIP_SAX_INSTALL=1
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile.PL
