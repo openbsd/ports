@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2020/01/26 07:31:53 jsg Exp $
+# $OpenBSD: Makefile,v 1.26 2020/05/15 13:01:32 jsg Exp $
 
 NOT_FOR_ARCHS =		m88k
 
 COMMENT =		PCI bus configuration register access tools
 
-DISTNAME =		pciutils-3.6.3
+DISTNAME =		pciutils-3.6.4
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://mj.ucw.cz/sw/pciutils/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c z
 
 MASTER_SITES =		https://www.kernel.org/pub/software/utils/pciutils/ \
-			ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/
+			https://mj.ucw.cz/download/linux/pci/
 
 USE_GMAKE =		Yes
 
