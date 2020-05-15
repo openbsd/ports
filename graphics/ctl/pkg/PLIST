@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/12/03 13:32:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/05/15 15:44:44 ajacoutot Exp $
 @conflict openexr-ctl-*
 @pkgpath graphics/openexr-ctl
 @bin bin/ctlrender
@@ -34,7 +34,6 @@ lib/CTL/change_saturation.ctl
 lib/CTL/transform_DPX_EXR.ctl
 lib/CTL/transform_EXR_DPX.ctl
 lib/CTL/utilities.ctl
-lib/cmake/
 lib/cmake/CTL/
 lib/cmake/CTL/CTLConfig.cmake
 lib/cmake/CTL/CTLConfigVersion.cmake
