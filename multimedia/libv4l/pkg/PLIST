@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/11/02 10:10:06 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/05/15 09:55:55 feinerer Exp $
 include/libv4l-plugin.h
 include/libv4l1-videodev.h
 include/libv4l1.h
@@ -10,11 +10,11 @@ lib/libv4l/
 @bin lib/libv4l/ov518-decomp
 lib/libv4l/plugins/
 @comment lib/libv4l/plugins/libv4l-mplane.la
-lib/libv4l/plugins/libv4l-mplane.so
+@so lib/libv4l/plugins/libv4l-mplane.so
 @comment lib/libv4l/v4l1compat.la
-lib/libv4l/v4l1compat.so
+@so lib/libv4l/v4l1compat.so
 @comment lib/libv4l/v4l2convert.la
-lib/libv4l/v4l2convert.so
+@so lib/libv4l/v4l2convert.so
 lib/libv4l1.la
 @lib lib/libv4l1.so.${LIBv4l1_VERSION}
 lib/libv4l2.la
@@ -27,8 +27,8 @@ lib/pkgconfig/libv4l1.pc
 lib/pkgconfig/libv4l2.pc
 lib/pkgconfig/libv4l2rds.pc
 lib/pkgconfig/libv4lconvert.pc
-lib/v4l1compat.so
-lib/v4l2convert.so
+@so lib/v4l1compat.so
+@so lib/v4l2convert.so
 @comment share/locale/
 @comment share/locale/ca/
 @comment share/locale/ca/LC_MESSAGES/
