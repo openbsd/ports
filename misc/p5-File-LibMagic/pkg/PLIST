@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/27 19:35:55 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/05/15 20:35:10 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/File/
+${P5ARCH}/File/LibMagic/
 ${P5ARCH}/File/LibMagic.pm
+${P5ARCH}/File/LibMagic/Constants.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/File/
 ${P5ARCH}/auto/File/LibMagic/
-${P5ARCH}/auto/File/LibMagic/LibMagic.so
+@so ${P5ARCH}/auto/File/LibMagic/LibMagic.so
 @man man/man3p/File::LibMagic.3p
+@man man/man3p/File::LibMagic::Constants.3p
