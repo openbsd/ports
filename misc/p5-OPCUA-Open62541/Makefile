@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/02 09:30:23 bluhm Exp $
+# $OpenBSD: Makefile,v 1.12 2020/05/15 09:34:29 bluhm Exp $
 
 COMMENT =	Perl XS wrapper for open62541 OPC UA library
 
-DISTNAME =	OPCUA-Open62541-0.013
+DISTNAME =	OPCUA-Open62541-0.014
 CPAN_AUTHOR =	BLUHM
 
 CATEGORIES =	misc
@@ -26,7 +26,9 @@ TEST_DEPENDS =		devel/p5-Test-Deep \
 			devel/p5-Test-Perl-Critic \
 			devel/p5-Test-Pod>=1.00 \
 			devel/p5-Test-Requires \
+			devel/p5-Test-Strict \
 			devel/p5-Test-Warn \
+			devel/p5-YAML-Tiny \
 			net/p5-Test-TCP
 
 .include <bsd.port.mk>
