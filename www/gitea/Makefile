@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/05/14 15:19:32 pvk Exp $
+# $OpenBSD: Makefile,v 1.36 2020/05/15 08:13:10 pvk Exp $
 
 COMMENT =		compact self-hosted Git service
 
@@ -6,6 +6,8 @@ VERSION =		1.11.5
 GH_ACCOUNT =		go-gitea
 GH_PROJECT =		gitea
 GH_TAGNAME =		v${VERSION}
+
+MASTER_SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
 
 DISTFILES =		${GH_PROJECT}-src-${VERSION}${EXTRACT_SUFX}
 
