@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/02/02 15:33:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/05/15 06:34:13 ajacoutot Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -207,6 +207,7 @@ share/ircd-hybrid/help/connect
 share/ircd-hybrid/help/die
 share/ircd-hybrid/help/dline
 share/ircd-hybrid/help/etrace
+share/ircd-hybrid/help/extban
 share/ircd-hybrid/help/hash
 share/ircd-hybrid/help/help
 share/ircd-hybrid/help/index
