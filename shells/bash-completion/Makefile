@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/14 15:27:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/15 09:14:41 ajacoutot Exp $
 
 COMMENT =		programmable completion functions for bash
 
 GH_PROJECT =		bash-completion
 GH_ACCOUNT =		scop
 GH_TAGNAME =		2.10
+REVISION =		0
 
-CATEGORIES =		shells
+CATEGORIES =		shells sysutils
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
