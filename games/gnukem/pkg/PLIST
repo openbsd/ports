@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/04 02:00:17 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/15 19:57:34 bcallah Exp $
 bin/davegnukem
 share/gnukem/
 share/gnukem/data/
+share/gnukem/data/README.md
 share/gnukem/data/credits.tga
 share/gnukem/data/default.gam
 share/gnukem/data/editor/

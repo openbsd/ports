@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/15 19:57:34 bcallah Exp $
 
 COMMENT =	open source retro-style 2D scrolling platform shooter game
-DISTNAME =	gnukem-1.0
+DISTNAME =	gnukem-1.0.1
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://djoffe.com/gnukem/

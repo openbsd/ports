@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_djimage_cpp,v 1.1.1.1 2019/05/04 02:00:17 bcallah Exp $
+$OpenBSD: patch-src_djimage_cpp,v 1.2 2020/05/15 19:57:34 bcallah Exp $
 
 Fix big endian issue
 
@@ -6,7 +6,7 @@ Index: src/djimage.cpp
 --- src/djimage.cpp.orig
 +++ src/djimage.cpp
 @@ -264,8 +264,13 @@ int djImage::LoadTGA( const char * szFilename )
- 					for ( unsigned int j=0; j<nWidth; j++ )
+ 					for ( unsigned int j=0; j<nWidth; ++j )
  					{
  						// reverse endianness from file
 +						#if SDL_BYTEORDER==SDL_BIG_ENDIAN
