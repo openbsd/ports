@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2020/04/29 17:23:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2020/05/15 10:23:05 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -7,6 +7,7 @@ GH_PROJECT =	librenms
 GH_TAGNAME =	1.63
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	net www
 
@@ -28,7 +29,7 @@ MODPY_BUILDDEP = No
 #		sysutils/py-dotenv${MODPY_FLAVOR}	# not ported yet
 # but (at least as of 1.43), the *-wrapper.py scripts don't support py3 yet
 
-RUN_DEPENDS =	databases/py-mysql${MODPY_FLAVOR} \
+RUN_DEPENDS =	databases/py-mysqlclient${MODPY_FLAVOR} \
 		lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mysqli \
@@ -52,7 +53,6 @@ UPDATE_PLIST_ARGS += -i MODPHP_VERSION
 
 R =	s,^\#!( )?(/usr/bin/env |/bin/)bash,\#!${LOCALBASE}/bin/bash,;
 R +=	s,^\#!( )?/usr/bin/(env )?python.*,\#!${MODPY_BIN},;
-R +=	s,/usr/bin/(env )?php,${MODPHP_BIN},g;
 R +=	s,/opt/librenms,/var/www/librenms,g;
 R +=	s,/var/www/librenms,${TRUEPREFIX}/librenms,g;
 R +=	s,/usr/local,${LOCALBASE},g
@@ -76,9 +76,7 @@ do-install:
 	cd ${WRKSRC}; pax -rw . ${INSTDIR}
 	find ${INSTDIR} -name '*.orig' -delete
 	mkdir -p ${INSTDIR}/{rrd,logs}
-	cd ${INSTDIR}; \
-	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php includes/html/output/capture.inc.php scripts/composer_wrapper.php; \
-	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
+	sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' ${INSTDIR}/includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 	rm -rf ${INSTDIR}/tests
 	find ${INSTDIR} -name '.git*' -exec rm -rf {} +
