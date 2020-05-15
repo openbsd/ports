@@ -1,1 +1,8 @@
-MySQLdb is an interface to the popular MySQL database server for Python.
+mysqlclient provides an interface to MariaDB, MySQL and similar
+database servers using the standard Python database API. It is a
+fork of MySQLdb1, adding Python 3 support and bug fixes.
+
+It provides low-level bindings for parts of the C client library
+(libmariadb) and a higher-level wrapper making this compatible with
+the Python DB API interface (version 2). The DB API specification
+PEP-249 should be your primary guide for using this module.
