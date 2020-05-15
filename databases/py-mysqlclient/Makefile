@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/22 16:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/05/15 08:09:27 jasper Exp $
 
 COMMENT =		Python interface to MySQL
 
 MODPY_EGG_VERSION =	1.4.6
-# XXX beware if updating:
-# XXX "mysqlclient 1.5 will not support Django 1.11.  It is not because
-#      mysqlclient will break backward compatibility, but Django used
-#      unsupported APIs and Django 1.11 don't fix bugs including
-#      compatibility issues."
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
