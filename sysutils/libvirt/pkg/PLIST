@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/06/13 08:36:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/05/15 10:37:20 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -22,16 +22,16 @@ include/libvirt/libvirt-stream.h
 include/libvirt/libvirt.h
 include/libvirt/virterror.h
 @comment lib/charset.alias
-lib/libvirt-admin.a
+@static-lib lib/libvirt-admin.a
 lib/libvirt-admin.la
 @lib lib/libvirt-admin.so.${LIBvirt-admin_VERSION}
-lib/libvirt-lxc.a
+@static-lib lib/libvirt-lxc.a
 lib/libvirt-lxc.la
 @lib lib/libvirt-lxc.so.${LIBvirt-lxc_VERSION}
-lib/libvirt-qemu.a
+@static-lib lib/libvirt-qemu.a
 lib/libvirt-qemu.la
 @lib lib/libvirt-qemu.so.${LIBvirt-qemu_VERSION}
-lib/libvirt.a
+@static-lib lib/libvirt.a
 lib/libvirt.la
 @lib lib/libvirt.so.${LIBvirt_VERSION}
 lib/pkgconfig/libvirt-lxc.pc
