@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2020/04/25 10:07:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2020/05/15 09:17:39 gonzalo Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-SURICATA_V =	5.0.2
-SUPDATE_V =	1.1.1
+SURICATA_V =	5.0.3
+SUPDATE_V =	1.1.2
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
