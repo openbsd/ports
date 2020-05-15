@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.252 2020/03/15 11:01:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.253 2020/05/15 09:01:04 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		2.3.4
+REVISION=		0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -26,6 +27,12 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
+
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
+
+TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
 
 BUILD_DEPENDS=		x11/dbus
 
