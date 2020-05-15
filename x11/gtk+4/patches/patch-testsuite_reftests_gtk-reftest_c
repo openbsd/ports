@@ -1,10 +1,19 @@
-$OpenBSD: patch-testsuite_reftests_gtk-reftest_c,v 1.1 2020/05/14 14:56:24 ajacoutot Exp $
+$OpenBSD: patch-testsuite_reftests_gtk-reftest_c,v 1.2 2020/05/15 10:40:26 ajacoutot Exp $
 
 Don't enforce dependency on libexecinfo.
 
 Index: testsuite/reftests/gtk-reftest.c
 --- testsuite/reftests/gtk-reftest.c.orig
 +++ testsuite/reftests/gtk-reftest.c
+@@ -24,7 +24,7 @@
+ #include "reftest-module.h"
+ #include "reftest-snapshot.h"
+ 
+-#ifndef G_OS_WIN32
++#if defined G_OS_WIN32 || defined __OpenBSD__
+ #include <execinfo.h>
+ #endif
+ #include <string.h>
 @@ -393,7 +393,7 @@ log_writer (GLogLevelFlags   log_level,
              gsize            n_fields,
              gpointer         user_data)
