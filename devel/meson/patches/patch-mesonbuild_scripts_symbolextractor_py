@@ -1,0 +1,40 @@
+$OpenBSD: patch-mesonbuild_scripts_symbolextractor_py,v 1.1 2020/05/16 17:03:29 ajacoutot Exp $
+
+https://github.com/mesonbuild/meson/pull/7158
+
+Index: mesonbuild/scripts/symbolextractor.py
+--- mesonbuild/scripts/symbolextractor.py.orig
++++ mesonbuild/scripts/symbolextractor.py
+@@ -158,6 +158,23 @@ def cygwin_syms(impfilename: str, outfilename: str):
+         result.append(line.split(maxsplit=1)[0])
+     write_if_changed('\n'.join(result) + '\n', outfilename)
+ 
++def openbsd_syms(libfilename: str, outfilename: str):
++    # Get the name of the library
++    output = call_tool('readelf', ['-d', libfilename])
++    if not output:
++        dummy_syms(outfilename)
++        return
++    result = [x for x in output.split('\n') if 'SONAME' in x]
++    assert(len(result) <= 1)
++    # Get a list of all symbols exported
++    output = call_tool('nm', ['-D', '-P', '-g', libfilename])
++    if not output:
++        dummy_syms(outfilename)
++        return
++    # U = undefined (cope with the lack of --defined-only option)
++    result += [' '.join(x.split()[0:2]) for x in output.split('\n') if x and not x.endswith('U ')]
++    write_if_changed('\n'.join(result) + '\n', outfilename)
++
+ def _get_implib_dllname(impfilename: str) -> T.Tuple[T.List[str], str]:
+     all_stderr = ''
+     # First try lib.exe, which is provided by MSVC. Then llvm-lib.exe, by LLVM
+@@ -234,6 +251,8 @@ def gen_symbols(libfilename: str, impfilename: str, ou
+         linux_syms(libfilename, outfilename)
+     elif mesonlib.is_osx():
+         osx_syms(libfilename, outfilename)
++    elif mesonlib.is_openbsd():
++        openbsd_syms(libfilename, outfilename)
+     elif mesonlib.is_windows():
+         if os.path.isfile(impfilename):
+             windows_syms(impfilename, outfilename)
