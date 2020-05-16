@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_bootstrap_test_rs,v 1.8 2020/03/21 05:23:59 semarie Exp $
+$OpenBSD: patch-src_bootstrap_test_rs,v 1.9 2020/05/16 14:13:53 semarie Exp $
 Disable "Bootstrap" test by default (it requires network).
 
 Index: src/bootstrap/test.rs
 --- src/bootstrap/test.rs.orig
 +++ src/bootstrap/test.rs
-@@ -1916,7 +1916,7 @@ pub struct Bootstrap;
+@@ -1945,7 +1945,7 @@ pub struct Bootstrap;
  
  impl Step for Bootstrap {
      type Output = ();

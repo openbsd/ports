@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_bootstrap_builder_rs,v 1.9 2020/05/16 14:13:53 semarie Exp $
+Pass the information that we want to override metadata (on final stage)
+Index: src/bootstrap/builder.rs
+--- src/bootstrap/builder.rs.orig
++++ src/bootstrap/builder.rs
+@@ -1139,6 +1139,26 @@ impl<'a> Builder<'a> {
+             );
+         }
+ 
++        // Inform underline cargo that it should uses LIBR_METADATA_xxx hash if present
++        if compiler.is_final_stage(self) {
++            match mode {
++                Mode::Std => {
++                    cargo.env("OPENBSD_PORTS_LANG_RUST", "1");
++                },
++                Mode::Rustc => {
++                    cargo.env("OPENBSD_PORTS_LANG_RUST", "1");
++
++                    cargo.env_remove("LIBR_METADATA_backtrace");
++                    cargo.env_remove("LIBR_METADATA_backtrace_sys");
++                    cargo.env_remove("LIBR_METADATA_cfg_if");
++                    cargo.env_remove("LIBR_METADATA_libc");
++                    cargo.env_remove("LIBR_METADATA_rustc_demangle");
++                    cargo.env_remove("LIBR_METADATA_unicode_width");
++                },
++                _ => { },
++            }
++        }
++
+         // If Control Flow Guard is enabled, pass the `control_flow_guard=checks` flag to rustc
+         // when compiling the standard library, since this might be linked into the final outputs
+         // produced by rustc. Since this mitigation is only available on Windows, only enable it

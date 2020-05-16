@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2020/04/18 06:47:10 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2020/05/16 14:13:53 semarie Exp $
 @conflict cargo-<0.20.0
 @pkgpath devel/cargo
 @bin bin/cargo
 @bin bin/rustc
 @bin bin/rustdoc
-@so lib/librustc_driver-f738bef7171c114d.so
-@so lib/librustc_macros-3ee4e763a425b15a.so
-@so lib/libstd-e861681c11d7fc6e.so
-@so lib/libtest-b18d3ed20be013b9.so
+@so lib/librustc_driver-${LIBR_METADATA_rustc_driver}.so
+@so lib/librustc_macros-${LIBR_METADATA_rustc_macros}.so
+@so lib/libstd-${LIBR_METADATA_std}.so
+@so lib/libtest-${LIBR_METADATA_test}.so
 lib/rustlib/
 lib/rustlib/etc/
 ${MODPY_COMMENT}lib/rustlib/etc/${MODPY_PYCACHE}/
@@ -17,29 +17,29 @@ lib/rustlib/etc/debugger_pretty_printers_common.py
 @comment lib/rustlib/etc/lldb_rust_formatters.py
 lib/rustlib/${TRIPLE_ARCH}/
 lib/rustlib/${TRIPLE_ARCH}/lib/
-lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-b74634df3470a088.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libbacktrace-c6b98aaa618700aa.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libbacktrace_sys-479646c811624331.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libcfg_if-a0e640ad27fa742a.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libcompiler_builtins-5d524ca1f69deccc.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libcore-0d0b9cab3650eef0.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-08fd25418676527e.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libhashbrown-2f675a1748e16423.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-83bd2725aeb300ab.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_abort-03681643bc90267c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_unwind-d1c652fcc6828d5f.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libproc_macro-3bfd25f897068d3a.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_demangle-4a3ca830aa4d81d0.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_alloc-ad00031b6af0a0fb.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_core-59b5cab9720a754f.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_std-3f78cc00f574a321.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libstd-e861681c11d7fc6e.rlib
-@so lib/rustlib/${TRIPLE_ARCH}/lib/libstd-e861681c11d7fc6e.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libterm-7c9452c4bb66a6f9.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libtest-b18d3ed20be013b9.rlib
-@so lib/rustlib/${TRIPLE_ARCH}/lib/libtest-b18d3ed20be013b9.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-dd4c42e451354cb5.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-c117440ef90e60bd.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-${LIBR_METADATA_alloc}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libbacktrace-${LIBR_METADATA_backtrace}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libbacktrace_sys-${LIBR_METADATA_backtrace_sys}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libcfg_if-${LIBR_METADATA_cfg_if}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libcompiler_builtins-${LIBR_METADATA_compiler_builtins}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libcore-${LIBR_METADATA_core}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-${LIBR_METADATA_getopts}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libhashbrown-${LIBR_METADATA_hashbrown}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-${LIBR_METADATA_libc}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_abort-${LIBR_METADATA_panic_abort}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_unwind-${LIBR_METADATA_panic_unwind}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libproc_macro-${LIBR_METADATA_proc_macro}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_demangle-${LIBR_METADATA_rustc_demangle}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_alloc-${LIBR_METADATA_rustc_std_workspace_alloc}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_core-${LIBR_METADATA_rustc_std_workspace_core}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_std-${LIBR_METADATA_rustc_std_workspace_std}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBR_METADATA_std}.rlib
+@so lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBR_METADATA_std}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libterm-${LIBR_METADATA_term}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBR_METADATA_test}.rlib
+@so lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBR_METADATA_test}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-${LIBR_METADATA_unicode_width}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBR_METADATA_unwind}.rlib
 @man man/man1/cargo-bench.1
 @man man/man1/cargo-build.1
 @man man/man1/cargo-check.1

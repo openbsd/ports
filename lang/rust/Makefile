@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2020/04/18 06:47:10 semarie Exp $
+# $OpenBSD: Makefile,v 1.112 2020/05/16 14:13:53 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,19 +13,17 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.42.0
-CARGO_V =		0.43.0
+V =			1.43.1
+CARGO_V =		0.44.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.11
+RUSTFMT_V =		1.4.12
 DISTNAME =		rustc-${V}-src
 
-REVISION =		0
-
 # rustc bootstrap version
-BV-aarch64 =		1.42.0-20200315
-BV-amd64 =		1.42.0-20200310
-BV-i386 =		1.42.0-20200311
-BV-sparc64 =		1.42.0-20200413
+BV-aarch64 =		1.43.0-20200429
+BV-amd64 =		1.43.0-20200428
+BV-i386 =		1.43.0-20200428
+BV-sparc64 =		1.43.0-20200428
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -73,6 +71,42 @@ BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}${EXTRACT_SUFX}:0
 SUPDISTFILES +=		${BOOTSTRAP-$m}
 .endfor
 
+# list of libraries with a hash in plist
+# the second field is used to have a different hash for each library
+LIBRUST_WITH_HASHES =	alloc 				01 \
+			backtrace 			02 \
+			backtrace_sys 			03 \
+			cfg_if 				04 \
+			compiler_builtins 		05 \
+			core 				06 \
+			getopts 			07 \
+			hashbrown 			08 \
+			libc 				09 \
+			panic_abort 			0a \
+			panic_unwind 			0b \
+			proc_macro 			0c \
+			rustc_demangle 			0d \
+			rustc_driver 			0e \
+			rustc_macros 			0f \
+			rustc_std_workspace_alloc 	10 \
+			rustc_std_workspace_core 	11 \
+			rustc_std_workspace_std 	12 \
+			std 				13 \
+			term 				14 \
+			test 				15 \
+			unicode_width 			16 \
+			unwind				17
+
+# generate a stable hash mostly conforming to rust expectations
+# (it should change if anything changed)
+# and pass it to build environment
+LIBRUST_HASH !=	echo '${FULLPKGNAME}:${BOOTSTRAP}' | sha1 | cut -c1-14
+.for _name _number in ${LIBRUST_WITH_HASHES}
+LIBR_METADATA_${_name} =	${LIBRUST_HASH}${_number}
+MAKE_ENV +=	LIBR_METADATA_${_name}=${LIBRUST_HASH}${_number}
+SUBST_VARS +=	LIBR_METADATA_${_name}
+.endfor
+
 # per MACHINE_ARCH configuration
 .if "${MACHINE_ARCH}" == "aarch64"
 TRIPLE_ARCH =		aarch64-unknown-openbsd
@@ -114,8 +148,7 @@ RUN_DEPENDS-gdb +=	lang/rust,-main \
 RUN_DEPENDS-clippy +=	lang/rust,-main
 RUN_DEPENDS-rustfmt +=	lang/rust,-main
 
-MAKE_ENV +=	OPENBSD_PORTS_LANG_RUST_VERSION=${V:C/\.[0-9]*$//} \
-		CARGO_HOME=${WRKBUILD}/cargo-home \
+MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
 		TMPDIR=${WRKBUILD} \
 		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1

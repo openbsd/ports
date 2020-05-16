@@ -1,35 +1,26 @@
-$OpenBSD: patch-src_tools_cargo_src_cargo_core_compiler_context_compilation_files_rs,v 1.11 2020/03/21 05:23:59 semarie Exp $
-For port tree, use a custom metadata generation method to have stable hash between archs.
+$OpenBSD: patch-src_tools_cargo_src_cargo_core_compiler_context_compilation_files_rs,v 1.12 2020/05/16 14:13:53 semarie Exp $
+For port tree, use a custom metadata to have known-in-advance hashes.
 Use an environment variable to use alternate method.
 
 Index: src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
 --- src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs.orig
 +++ src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
-@@ -527,6 +527,27 @@ fn compute_metadata<'a, 'cfg>(
+@@ -562,6 +562,18 @@ fn compute_metadata<'a, 'cfg>(
+         return None;
+     }
  
-     let mut hasher = SipHasher::new_with_keys(0, 0);
- 
-+    // Simplified version for OpenBSD port tree
-+    if let Ok(port_version) = env::var("OPENBSD_PORTS_LANG_RUST_VERSION") {
-+        port_version.hash(&mut hasher);
-+
-+        format!("{}", unit.pkg.package_id().name()).hash(&mut hasher);
-+        format!("{}", unit.pkg.package_id().version()).hash(&mut hasher);
-+
-+        let mut unit_deps = Vec::from(cx.unit_deps(unit));
-+        unit_deps.sort();
-+        for dep in unit_deps {
-+            format!("{}", dep.unit.pkg.package_id().name()).hash(&mut hasher);
-+            format!("{}", dep.unit.pkg.package_id().version()).hash(&mut hasher);
++    // Use specified hash if requested
++    if let Ok(_) = env::var("OPENBSD_PORTS_LANG_RUST") {
++        let name = unit.pkg.package_id().name().replace("-", "_");
++        let varname = format!("LIBR_METADATA_{}", name);
++        if let Ok(value) = env::var(&varname) {
++            if let Ok(metadata) = u64::from_str_radix(&value, 16) {
++                return Some(Metadata(metadata))
++            }
++            panic!("invalid value for {} environment variable", varname);
 +        }
-+
-+        if let Ok(ref channel) = __cargo_default_lib_metadata {
-+            channel.hash(&mut hasher);
-+        }
-+
-+        return Some(Metadata(hasher.finish()));
 +    }
 +
+     let mut hasher = SipHasher::new();
+ 
      // This is a generic version number that can be changed to make
-     // backwards-incompatible changes to any file structures in the output
-     // directory. For example, the fingerprint files or the build-script
