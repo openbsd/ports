@@ -1,5 +1,4 @@
 SHA256 (qt/qt3d-everywhere-src-5.13.2.tar.xz) = 0bn8C+giZLX3bDpTMJAd/5XB8ry2eRbD+sa61P9prck=
-SHA256 (qt/qtbase-everywhere-src-5.13.2.tar.xz) = Jra2htZqetKOrKNJ5V4olOWnNfODHkXyBJ6TsdqpISE=
 SHA256 (qt/qtcharts-everywhere-src-5.13.2.tar.xz) = O62Bw8+zLPcvsM4qwnlNAxz3ijkCtHFficCbLQ4EHoc=
 SHA256 (qt/qtdoc-everywhere-src-5.13.2.tar.xz) = vglUMUPV3KmE0sLZCFdRMX56lbeP2+m2ow8vqgNUPkY=
 SHA256 (qt/qtgamepad-everywhere-src-5.13.2.tar.xz) = dRZIhUM+NqkLVXqn8xn/PWJ4w2FkafZ7Qt2m64uS524=
@@ -23,7 +22,6 @@ SHA256 (qt/qtwebsockets-everywhere-src-5.13.2.tar.xz) = /BEjbIv2myek4jeie56if8kN
 SHA256 (qt/qtx11extras-everywhere-src-5.13.2.tar.xz) = lafFww9C6VdcOheiwOsM290tidvLPuFCbNQbsH4oxRw=
 SHA256 (qt/qtxmlpatterns-everywhere-src-5.13.2.tar.xz) = HofYwATsC+6jsp0T8JZMVjqp+uUcOSyZh1DKTjhjdOI=
 SIZE (qt/qt3d-everywhere-src-5.13.2.tar.xz) = 81537856
-SIZE (qt/qtbase-everywhere-src-5.13.2.tar.xz) = 48735704
 SIZE (qt/qtcharts-everywhere-src-5.13.2.tar.xz) = 4244092
 SIZE (qt/qtdoc-everywhere-src-5.13.2.tar.xz) = 5747084
 SIZE (qt/qtgamepad-everywhere-src-5.13.2.tar.xz) = 386668
