@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2020/05/16 11:50:20 sthen Exp $
+$OpenBSD: README,v 1.3 2020/05/16 16:41:44 sthen Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -13,7 +13,7 @@ directories automatically.
 For a repository owned by the new user "cvs" stored in /home/cvs (as is common
 on a standard user's development machine), you can proceed as follows:
 
-# useradd -d /nonexistent -s /sbin/nologin cvs
+# useradd -d /nonexistent -g =uid -s /sbin/nologin cvs
 # install -d -o cvs /home/cvs /var/db/reposync
 
 For a new anoncvs server following the standard OpenBSD directory layout,
