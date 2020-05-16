@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ipc_ipc_channel_mojo_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ipc/ipc_channel_mojo.cc
+--- src/3rdparty/chromium/ipc/ipc_channel_mojo.cc.orig
++++ src/3rdparty/chromium/ipc/ipc_channel_mojo.cc
+@@ -64,7 +64,7 @@ class MojoChannelFactory : public ChannelFactory {
+ };
+ 
+ base::ProcessId GetSelfPID() {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (int global_pid = Channel::GetGlobalPid())
+     return global_pid;
+ #endif  // OS_LINUX

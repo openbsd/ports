@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_angle_src_libANGLE_renderer_driver_utils_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/driver_utils.h
+--- src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/driver_utils.h.orig
++++ src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/driver_utils.h
+@@ -107,7 +107,7 @@ inline bool IsWindows()
+ 
+ inline bool IsLinux()
+ {
+-#if defined(ANGLE_PLATFORM_LINUX)
++#if defined(ANGLE_PLATFORM_LINUX) || defined(ANGLE_PLATFORM_OPENBSD)
+     return true;
+ #else
+     return false;

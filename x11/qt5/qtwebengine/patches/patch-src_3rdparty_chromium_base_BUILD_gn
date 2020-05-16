@@ -1,0 +1,88 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/BUILD.gn
+--- src/3rdparty/chromium/base/BUILD.gn.orig
++++ src/3rdparty/chromium/base/BUILD.gn
+@@ -128,7 +128,6 @@ jumbo_component("base") {
+     # Same for ios: https://crbug.com/776313.
+     never_build_jumbo = true
+   }
+-
+   sources = [
+     "allocator/allocator_check.cc",
+     "allocator/allocator_check.h",
+@@ -1183,11 +1182,16 @@ jumbo_component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+-  if (!use_sysroot && (is_android || (is_linux && !is_chromecast && !use_qt)) &&
++  if (!use_sysroot && (is_android || (is_linux && !is_chromecast) && !is_clang) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+ 
++  # OpenBSD needs libkvm
++  if (is_openbsd) {
++    libs += [ "kvm" ]
++  }
++
+   if (use_allocator_shim) {
+     sources += [
+       "allocator/allocator_shim.cc",
+@@ -1209,7 +1213,7 @@ jumbo_component("base") {
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+       ]
+       deps += [ "//base/allocator:tcmalloc" ]
+-    } else if (is_linux && use_allocator == "none") {
++    } else if ((is_linux && !is_openbsd) && use_allocator == "none") {
+       sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
+     } else if (is_android && use_allocator == "none") {
+       sources += [
+@@ -1749,6 +1753,29 @@ jumbo_component("base") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_linux.cc",
++      "system/sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc"
++    ]
++    sources += [
++      "process/memory_stubs.cc",
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "system/sys_info_openbsd.cc",
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_stub.cc",
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     set_sources_assignment_filter([])
+@@ -1819,6 +1846,8 @@ jumbo_component("base") {
+     set_sources_assignment_filter(sources_assignment_filter)
+   }
+ 
++  libs += [ "execinfo" ]
++
+   if (dep_libevent) {
+     deps += [ "//base/third_party/libevent" ]
+   }
+@@ -2834,6 +2863,8 @@ test("base_unittests") {
+       # data += [ "$root_out_dir/base_unittests.dSYM/" ]
+     }
+   }
++
++  libs = [ "execinfo" ]
+ }
+ 
+ action("build_date") {

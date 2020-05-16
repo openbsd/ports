@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_swiftshader_src_Main_SwiftConfig_cpp,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/swiftshader/src/Main/SwiftConfig.cpp
+--- src/3rdparty/chromium/third_party/swiftshader/src/Main/SwiftConfig.cpp.orig
++++ src/3rdparty/chromium/third_party/swiftshader/src/Main/SwiftConfig.cpp
+@@ -762,7 +762,11 @@ namespace sw
+ 		struct stat status;
+ 		int lastModified = ini.getInteger("LastModified", "Time", 0);
+ 
++#if !defined(__OpenBSD__)
+ 		bool noConfig = stat("SwiftShader.ini", &status) != 0;
++#else
++		bool noConfig = false;
++#endif
+ 		newConfig = !noConfig && abs((int)status.st_mtime - lastModified) > 1;
+ 
+ 		if(disableServerOverride)

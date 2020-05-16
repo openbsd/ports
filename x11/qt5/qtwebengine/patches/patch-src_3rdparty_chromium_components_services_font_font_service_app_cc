@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_services_font_font_service_app_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/services/font/font_service_app.cc
+--- src/3rdparty/chromium/components/services/font/font_service_app.cc.orig
++++ src/3rdparty/chromium/components/services/font/font_service_app.cc
+@@ -20,7 +20,7 @@
+ #include "components/services/font/ppapi_fontconfig_matching.h"  // nogncheck
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "base/test/fontconfig_util_linux.h"
+ #endif
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_pri,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: configure.pri
+--- configure.pri.orig
++++ configure.pri
+@@ -91,7 +91,7 @@ defineTest(qtConfTest_detectNinja) {
+     !isEmpty(ninja) {
+         qtLog("Found ninja from path: $$ninja")
+         qtRunLoggedCommand("$$ninja --version", version)|return(false)
+-        contains(version, "1.[7-9].*"): return(true)
++        contains(version, "1\.([7-9]|1[0-9])\..*"): return(true)
+         qtLog("Ninja version too old")
+     }
+     qtLog("Building own ninja")

@@ -1,10 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_events_event_switches_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
-Automatically copied from www/chromium.
+$OpenBSD: patch-src_3rdparty_chromium_ui_events_event_switches_cc,v 1.3 2020/05/16 07:03:00 rsadowski Exp $
 
 Index: src/3rdparty/chromium/ui/events/event_switches.cc
 --- src/3rdparty/chromium/ui/events/event_switches.cc.orig
 +++ src/3rdparty/chromium/ui/events/event_switches.cc
-@@ -28,7 +28,7 @@ const char kTouchEventsDisabled[] = "disabled";
+@@ -14,7 +14,7 @@ namespace switches {
  const char kCompensateForUnstablePinchZoom[] =
      "compensate-for-unstable-pinch-zoom";
  

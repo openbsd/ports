@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_3rdparty_chromium_chrome_browser_extensions_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/chrome/browser/extensions/BUILD.gn
+--- src/3rdparty/chromium/chrome/browser/extensions/BUILD.gn.orig
++++ src/3rdparty/chromium/chrome/browser/extensions/BUILD.gn
+@@ -1104,6 +1104,10 @@ jumbo_static_library("extensions") {
+     deps += [ "//chrome/common:service_process_mojom" ]
+   }
+ 
++  if (is_openbsd) {
++    sources -= [ "api/image_writer_private/removable_storage_provider_linux.cc" ]
++  }
++
+   if (enable_service_discovery) {
+     sources += [
+       "api/mdns/mdns_api.cc",

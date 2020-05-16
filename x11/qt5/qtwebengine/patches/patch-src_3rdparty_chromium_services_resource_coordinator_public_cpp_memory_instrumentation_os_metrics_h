@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
+--- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig
++++ src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
+@@ -26,7 +26,7 @@ class COMPONENT_EXPORT(
+                                     mojom::RawOSMemDump*);
+   static std::vector<mojom::VmRegionPtr> GetProcessMemoryMaps(base::ProcessId);
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   static void SetProcSmapsForTesting(FILE*);
+ #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
+ 

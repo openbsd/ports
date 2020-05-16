@@ -1,0 +1,85 @@
+$OpenBSD: patch-src_core_configure_json,v 1.1 2020/05/16 07:03:01 rsadowski Exp $
+
+enable autoDetect
+
+Index: src/core/configure.json
+--- src/core/configure.json.orig
++++ src/core/configure.json
+@@ -319,7 +319,6 @@
+         },
+         "webengine-libxml2-compatible": {
+             "label" : "compatible system libxml2",
+-            "test" : "xml2",
+             "type": "compile"
+         },
+         "webengine-sanitizer": {
+@@ -489,7 +488,6 @@
+         },
+         "webengine-system-snappy" : {
+             "label": "snappy",
+-            "condition": "config.unix && tests.webengine-snappy",
+             "output": [ "privateFeature" ]
+         },
+         "webengine-winversion" : {
+@@ -534,7 +532,7 @@
+             "label": "Proprietary Codecs",
+             "purpose": "Enables the use of proprietary codecs such as h.264/h.265 and MP3.",
+             "section": "WebEngine",
+-            "autoDetect": false,
++            "autoDetect": true,
+             "output": [ "privateFeature" ]
+         },
+         "webengine-kerberos": {
+@@ -554,7 +552,7 @@
+             "label": "Native Spellchecker",
+             "purpose": "Use the system's native spellchecking engine.",
+             "section": "WebEngine",
+-            "autoDetect": false,
++            "autoDetect": true,
+             "condition": "config.macos && features.webengine-spellchecker",
+             "output": [ "publicFeature" ]
+         },
+@@ -592,20 +590,19 @@
+         },
+         "webengine-system-ffmpeg": {
+             "label": "ffmpeg",
+-            "autoDetect": false,
++            "autoDetect": true,
+             "condition": "libs.webengine-ffmpeg && features.webengine-system-opus && features.webengine-system-libwebp",
+             "output": [ "privateFeature" ]
+         },
+         "webengine-system-icu": {
+             "label": "icu",
+-            "autoDetect": false,
++            "autoDetect": true,
+             "condition": "libs.webengine-icu",
+             "output": [ "privateFeature" ]
+         },
+         "webengine-system-re2": {
+             "label": "re2",
+-            "autoDetect": "config.unix",
+-            "condition": "tests.webengine-re2",
++            "autoDetect": false,
+             "output": [ "privateFeature" ]
+         },
+         "webengine-system-ninja": {
+@@ -626,9 +623,7 @@
+         },
+         "webengine-system-libxml2": {
+             "label": "libxml2 and libxslt",
+-            "condition": "config.unix
+-                         && libs.webengine-libxml2
+-                         && tests.webengine-libxml2-compatible",
++            "autoDetect": true,
+             "output": [ "privateFeature" ]
+         },
+         "webengine-system-lcms2" : {
+@@ -696,7 +691,7 @@
+         "webengine-full-debug-info": {
+             "label": "Full debug information",
+             "purpose": "Enables debug information for Blink and V8.",
+-            "autoDetect": false,
++            "autoDetect": true,
+             "condition": "config.debug || features.debug_and_release || features.force_debug_info",
+             "output": [
+               { "type": "privateConfig", "name": "v8base_debug" },

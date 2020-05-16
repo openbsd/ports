@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_embedder_switches_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/service_manager/embedder/switches.h
+--- src/3rdparty/chromium/services/service_manager/embedder/switches.h.orig
++++ src/3rdparty/chromium/services/service_manager/embedder/switches.h
+@@ -23,6 +23,9 @@ COMPONENT_EXPORT(SERVICE_MANAGER_EMBEDDER_SWITCHES)
+ extern const char kEnableLogging[];
+ 
+ COMPONENT_EXPORT(SERVICE_MANAGER_EMBEDDER_SWITCHES)
++extern const char kDisableUnveil[];
++
++COMPONENT_EXPORT(SERVICE_MANAGER_EMBEDDER_SWITCHES)
+ extern const char kProcessType[];
+ 
+ COMPONENT_EXPORT(SERVICE_MANAGER_EMBEDDER_SWITCHES)

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_3rdparty_chromium_v8_tools_run_py,v 1.1 2020/05/16 07:03:01 rsadowski Exp $
+
+Index: src/3rdparty/chromium/v8/tools/run.py
+--- src/3rdparty/chromium/v8/tools/run.py.orig
++++ src/3rdparty/chromium/v8/tools/run.py
+@@ -9,4 +9,4 @@ scripts."""
+ import subprocess
+ import sys
+ 
+-sys.exit(subprocess.call(sys.argv[1:]))
++sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release"}))

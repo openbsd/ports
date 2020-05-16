@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_webui_resources_js_cr_js,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/webui/resources/js/cr.js
+--- src/3rdparty/chromium/ui/webui/resources/js/cr.js.orig
++++ src/3rdparty/chromium/ui/webui/resources/js/cr.js
+@@ -479,6 +479,11 @@ var cr = cr || function(global) {
+       return /CrOS/.test(navigator.userAgent);
+     },
+ 
++    /** Whether this is on *BSD. */
++    get isBSD() {
++      return /BSD/.test(navigator.userAgent);
++    },
++
+     /** Whether this is on vanilla Linux (not chromeOS). */
+     get isLinux() {
+       return /Linux/.test(navigator.userAgent);

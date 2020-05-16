@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_sandbox_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn
+--- src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn.orig
++++ src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn
+@@ -28,7 +28,7 @@ component("sandbox") {
+     "//base",
+     "//sandbox:common",
+   ]
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [
+       "linux/bpf_audio_policy_linux.cc",
+       "linux/bpf_audio_policy_linux.h",
+@@ -72,6 +72,16 @@ component("sandbox") {
+       "//sandbox/linux:seccomp_bpf",
+       "//sandbox/linux:suid_sandbox_client",
+     ]
++  }
++  if (is_openbsd) {
++    sources += [
++      "openbsd/sandbox_openbsd.cc",
++      "openbsd/sandbox_openbsd.h",
++    ]
++    deps += [
++      "//sandbox:sandbox_buildflags",
++    ]
++    libs = [ "util" ]
+   }
+   if (is_chromeos) {
+     sources += [

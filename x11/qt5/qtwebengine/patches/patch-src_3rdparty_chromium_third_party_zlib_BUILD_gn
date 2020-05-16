@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_zlib_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
+--- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
+@@ -87,7 +87,7 @@ if (use_arm_neon_optimizations) {
+   source_set("zlib_arm_crc32") {
+     visibility = [ ":*" ]
+ 
+-    if (is_clang && (!is_ios && !is_fuchsia)) {
++    if (is_clang && (!is_ios && !is_fuchsia && !is_openbsd)) {
+       include_dirs = [ "." ]
+ 
+       if (is_android) {
+@@ -338,7 +338,7 @@ static_library("bundled_minizip") {
+     ]
+   }
+ 
+-  if (is_mac || is_ios || is_android || is_nacl) {
++  if (is_mac || is_ios || is_android || is_nacl || is_openbsd) {
+     # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
+     # use fopen, ftell, and fseek instead on these systems.
+     defines = [ "USE_FILE32API" ]

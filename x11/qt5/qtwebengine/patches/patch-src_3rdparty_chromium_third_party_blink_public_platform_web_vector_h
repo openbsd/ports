@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_public_platform_web_vector_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/blink/public/platform/web_vector.h
+--- src/3rdparty/chromium/third_party/blink/public/platform/web_vector.h.orig
++++ src/3rdparty/chromium/third_party/blink/public/platform/web_vector.h
+@@ -81,7 +81,7 @@ class WebVector {
+   // The vector can be populated using reserve() and emplace_back().
+   WebVector() = default;
+ 
+-#if defined(ARCH_CPU_64_BITS)
++#if defined(ARCH_CPU_64_BITS) || defined(__OpenBSD__)
+   // Create a vector with |size| default-constructed elements. We define
+   // a constructor with size_t otherwise we'd have a duplicate define.
+   explicit WebVector(size_t size) : data_(size) {}

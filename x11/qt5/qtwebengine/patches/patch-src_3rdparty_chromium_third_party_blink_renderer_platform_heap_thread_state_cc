@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_platform_heap_thread_state_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/blink/renderer/platform/heap/thread_state.cc
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/heap/thread_state.cc.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/heap/thread_state.cc
+@@ -77,7 +77,7 @@
+ #include <sanitizer/msan_interface.h>
+ #endif
+ 
+-#if defined(OS_FREEBSD)
++#if defined(OS_BSD)
+ #include <pthread_np.h>
+ #endif
+ 

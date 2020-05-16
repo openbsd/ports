@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_3rdparty_chromium_chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
+--- src/3rdparty/chromium/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig
++++ src/3rdparty/chromium/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
+@@ -195,11 +195,11 @@
+ #include "chrome/browser/ui/webui/welcome/welcome_win10_ui.h"
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #include "chrome/browser/ui/webui/discards/discards_ui.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ #include "chrome/browser/ui/webui/sandbox_internals_ui.h"
+ #endif
+ 
+@@ -317,7 +317,7 @@ bool IsAboutUI(const GURL& url) {
+ #if !defined(OS_ANDROID)
+           || url.host_piece() == chrome::kChromeUITermsHost
+ #endif
+-#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX) || defined(OS_BSD)
+           || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
+ #endif
+ #if defined(OS_CHROMEOS)
+@@ -591,7 +591,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+   if (url.host_piece() == chrome::kChromeUINaClHost)
+     return &NewWebUI<NaClUI>;
+ #endif
+-#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
++#if ((defined(OS_BSD) || defined(OS_LINUX)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
+   if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
+     return &NewWebUI<ConstrainedWebDialogUI>;
+ #endif
+@@ -646,12 +646,12 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+     return &NewWebUI<CastUI>;
+   }
+ #endif
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   if (url.host_piece() == chrome::kChromeUISandboxHost) {
+     return &NewWebUI<SandboxInternalsUI>;
+   }
+ #endif
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   if (url.host_piece() == chrome::kChromeUIDiscardsHost)
+     return &NewWebUI<DiscardsUI>;
+ #endif

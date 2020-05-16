@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_sandbox_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/sandbox/BUILD.gn
+--- src/3rdparty/chromium/sandbox/BUILD.gn.orig
++++ src/3rdparty/chromium/sandbox/BUILD.gn
+@@ -33,7 +33,7 @@ group("sandbox") {
+       "//sandbox/mac:system_services",
+       "//sandbox/mac/mojom",
+     ]
+-  } else if (is_linux || is_android) {
++  } else if ((is_linux && !is_openbsd) || is_android) {
+     public_deps = [
+       "//sandbox/linux:sandbox",
+     ]

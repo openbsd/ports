@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_usrsctp_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/usrsctp/BUILD.gn
+--- src/3rdparty/chromium/third_party/usrsctp/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/usrsctp/BUILD.gn
+@@ -116,9 +116,14 @@ static_library("usrsctp") {
+     "-UINET6",
+   ]
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux && !is_openbsd) || is_android) {
+     defines += [
+       "__Userspace_os_Linux",
++      "_GNU_SOURCE",
++    ]
++  } else if (is_openbsd) {
++    defines += [
++      "__Userspace_os_OpenBSD",
+       "_GNU_SOURCE",
+     ]
+   } else if (is_mac || is_ios) {

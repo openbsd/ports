@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_network_session_configurator_browser_network_session_configurator_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc
+--- src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc.orig
++++ src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc
+@@ -662,7 +662,7 @@ net::URLRequestContextBuilder::HttpCacheParams::Type C
+   }
+ #endif  // #if !defined(OS_ANDROID)
+ 
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   return net::URLRequestContextBuilder::HttpCacheParams::DISK_SIMPLE;
+ #else
+   return net::URLRequestContextBuilder::HttpCacheParams::DISK_BLOCKFILE;

@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_ppapi_plugin_ppapi_plugin_main_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc
+--- src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc.orig
++++ src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc
+@@ -42,7 +42,7 @@
+ #include "base/files/file_util.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "content/public/common/sandbox_init.h"
+ #include "services/service_manager/sandbox/linux/sandbox_linux.h"
+ #endif
+@@ -51,6 +51,11 @@
+ #include "gin/v8_initializer.h"
+ #endif
+ 
++#if defined(OS_OPENBSD)
++#include "content/public/common/sandbox_init.h"
++#include "services/service_manager/sandbox/openbsd/sandbox_openbsd.h"
++#endif
++
+ #if defined(OS_POSIX) && !defined(OS_ANDROID)
+ #include <stdlib.h>
+ #endif
+@@ -121,7 +126,7 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+   gin::V8Initializer::LoadV8Natives();
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   service_manager::SandboxLinux::GetInstance()->InitializeSandbox(
+       service_manager::SandboxTypeFromCommandLine(command_line),
+       service_manager::SandboxLinux::PreSandboxHook(),

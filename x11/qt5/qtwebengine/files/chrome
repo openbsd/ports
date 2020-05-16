@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+# $OpenBSD: chrome,v 1.3 2020/05/16 07:02:59 rsadowski Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -46,5 +46,19 @@ fi
 # https://code.google.com/p/chromium/issues/detail?id=395446
 #
 [ -z ${LANG} ] && _l=en_US.UTF-8 || _l=${LANG}
+
+# Always use our versions of ffmpeg libs.
+# This also makes RPMs find the compatibly-named library symlinks.
+if [[ -n "$LD_LIBRARY_PATH" ]]; then
+	LD_LIBRARY_PATH="${TRUEPREFIX}/chrome:${TRUEPREFIX}/chrome/lib:$LD_LIBRARY_PATH"
+else
+	LD_LIBRARY_PATH="${TRUEPREFIX}/chrome:${TRUEPREFIX}/chrome/lib"
+fi
+export LD_LIBRARY_PATH
+
+[ -d ~/Downloads ] || mkdir -m 0700 ~/Downloads
+[ -d ~/.config ] || mkdir -m 0700 ~/.config
+[ -f ~/.config/user-dirs.dirs ] || \
+	echo 'XDG_DOWNLOAD_DIR="$HOME/Downloads"' > ~/.config/user-dirs.dirs
 
 LANG=${_l} exec "${TRUEPREFIX}/chrome/chrome" "${@}"

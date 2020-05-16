@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_modules_audio_device_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn
+--- src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn
+@@ -312,7 +312,7 @@ rtc_source_set("audio_device_impl") {
+     if (rtc_use_dummy_audio_file_devices) {
+       defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
+     } else {
+-      if (is_linux) {
++      if (is_linux && !is_openbsd) {
+         sources += [
+           "linux/alsasymboltable_linux.cc",
+           "linux/alsasymboltable_linux.h",

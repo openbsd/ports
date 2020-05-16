@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_3rdparty_chromium_chrome_common_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/chrome/common/BUILD.gn
+--- src/3rdparty/chromium/chrome/common/BUILD.gn.orig
++++ src/3rdparty/chromium/chrome/common/BUILD.gn
+@@ -300,6 +300,10 @@ static_library("common") {
+     public_deps += [ "//ppapi/shared_impl" ]
+   }
+ 
++  if (is_openbsd) {
++    sources -= [ "component_flash_hint_file_linux.cc" ]
++  }
++
+   if (enable_extensions) {
+     sources += [
+       "cast_messages.cc",

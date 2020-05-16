@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_renderer_media_stream_processed_local_audio_source_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/renderer/media/stream/processed_local_audio_source.cc
+--- src/3rdparty/chromium/content/renderer/media/stream/processed_local_audio_source.cc.orig
++++ src/3rdparty/chromium/content/renderer/media/stream/processed_local_audio_source.cc
+@@ -35,7 +35,7 @@ void* const kProcessedLocalAudioSourceIdentifier =
+     const_cast<void**>(&kProcessedLocalAudioSourceIdentifier);
+ 
+ bool ApmInAudioServiceEnabled() {
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   return base::FeatureList::IsEnabled(features::kWebRtcApmInAudioService);
+ #else
+   return false;

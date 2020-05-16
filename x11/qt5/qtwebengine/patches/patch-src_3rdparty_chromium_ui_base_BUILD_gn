@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_base_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/base/BUILD.gn
+--- src/3rdparty/chromium/ui/base/BUILD.gn.orig
++++ src/3rdparty/chromium/ui/base/BUILD.gn
+@@ -574,7 +574,7 @@ jumbo_component("base") {
+       "//ui/ozone:ozone_base",
+     ]
+ 
+-    if (!is_fuchsia) {
++    if (!is_fuchsia && !is_openbsd) {
+       deps += [ "//ui/events/ozone:events_ozone_evdev" ]
+     }
+   }

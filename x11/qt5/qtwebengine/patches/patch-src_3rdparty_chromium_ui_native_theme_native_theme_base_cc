@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_native_theme_native_theme_base_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/native_theme/native_theme_base.cc
+--- src/3rdparty/chromium/ui/native_theme/native_theme_base.cc.orig
++++ src/3rdparty/chromium/ui/native_theme/native_theme_base.cc
+@@ -172,7 +172,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
+     case kCheckbox:
+       PaintCheckbox(canvas, state, rect, extra.button);
+       break;
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+     case kFrameTopArea:
+       PaintFrameTopArea(canvas, state, rect, extra.frame_top_area);
+       break;

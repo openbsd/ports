@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_yasm_source_config_openbsd_libyasm-stdint_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/yasm/source/config/openbsd/libyasm-stdint.h
+--- src/3rdparty/chromium/third_party/yasm/source/config/openbsd/libyasm-stdint.h.orig
++++ src/3rdparty/chromium/third_party/yasm/source/config/openbsd/libyasm-stdint.h
+@@ -1,7 +1,7 @@
+ #ifndef _YASM_LIBYASM_STDINT_H
+ #define _YASM_LIBYASM_STDINT_H 1
+ #ifndef _GENERATED_STDINT_H
+-#define _GENERATED_STDINT_H "yasm 1.1.0"
++#define _GENERATED_STDINT_H "yasm 1.2.0"
+ /* generated using gcc -std=gnu99 */
+ #define _STDINT_HAVE_STDINT_H 1
+ #include <stdint.h>

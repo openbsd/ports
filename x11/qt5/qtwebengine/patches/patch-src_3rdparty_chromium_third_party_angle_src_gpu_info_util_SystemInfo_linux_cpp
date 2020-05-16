@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_angle_src_gpu_info_util_SystemInfo_linux_cpp,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
+--- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig
++++ src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
+@@ -71,10 +71,17 @@ bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo
+ 
+ bool GetSystemInfo(SystemInfo *info)
+ {
++#if defined(__OpenBSD__)
++    if (!CollectMesaCardInfo(&(info->gpus)))
++    {
++        return false;
++    }
++#else
+     if (!GetPCIDevicesWithLibPCI(&(info->gpus)))
+     {
+         return false;
+     }
++#endif
+ 
+     if (info->gpus.size() == 0)
+     {

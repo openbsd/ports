@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_process_memory_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/process/memory.cc
+--- src/3rdparty/chromium/base/process/memory.cc.orig
++++ src/3rdparty/chromium/base/process/memory.cc
+@@ -10,7 +10,7 @@
+ namespace base {
+ 
+ // Defined in memory_win.cc for Windows.
+-#if !defined(OS_WIN)
++#if !defined(OS_WIN) && !defined(OS_BSD)
+ 
+ namespace {
+ 
+@@ -31,7 +31,7 @@ void TerminateBecauseOutOfMemory(size_t size) {
+ #endif
+ 
+ // Defined in memory_mac.mm for Mac.
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
+ 
+ bool UncheckedCalloc(size_t num_items, size_t size, void** result) {
+   const size_t alloc_size = num_items * size;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_cookie_config_cookie_store_util_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/cookie_config/cookie_store_util.cc
+--- src/3rdparty/chromium/components/cookie_config/cookie_store_util.cc.orig
++++ src/3rdparty/chromium/components/cookie_config/cookie_store_util.cc
+@@ -11,7 +11,7 @@
+ 
+ namespace cookie_config {
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ namespace {
+ 
+ // Use the operating system's mechanisms to encrypt cookies before writing

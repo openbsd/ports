@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_native_theme_native_theme_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/native_theme/native_theme.h
+--- src/3rdparty/chromium/ui/native_theme/native_theme.h.orig
++++ src/3rdparty/chromium/ui/native_theme/native_theme.h
+@@ -48,7 +48,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
+   // The part to be painted / sized.
+   enum Part {
+     kCheckbox,
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+     kFrameTopArea,
+ #endif
+     kInnerSpinButton,

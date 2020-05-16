@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_threading_platform_thread_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/threading/platform_thread.h
+--- src/3rdparty/chromium/base/threading/platform_thread.h.orig
++++ src/3rdparty/chromium/base/threading/platform_thread.h
+@@ -220,7 +220,7 @@ class BASE_EXPORT PlatformThread {
+ 
+   static ThreadPriority GetCurrentThreadPriority();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Toggles a specific thread's priority at runtime. This can be used to
+   // change the priority of a thread in a different process and will fail
+   // if the calling process does not have proper permissions. The

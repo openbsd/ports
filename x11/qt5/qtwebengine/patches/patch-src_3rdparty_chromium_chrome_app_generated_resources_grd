@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_3rdparty_chromium_chrome_app_generated_resources_grd,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/chrome/app/generated_resources.grd
+--- src/3rdparty/chromium/chrome/app/generated_resources.grd.orig
++++ src/3rdparty/chromium/chrome/app/generated_resources.grd
+@@ -2,7 +2,7 @@
+ 
+ <!--
+ This file contains definitions of resources that will be translated for each
+-locale.  The variables is_win, is_macosx, is_linux, and is_posix are available
++locale.  The variables is_win, is_macosx, is_posix, and is_posix are available
+ for making strings OS specific.  Other platform defines such as use_titlecase
+ are declared in tools/grit/grit_rule.gni.
+ -->
+@@ -5339,7 +5339,7 @@ the Bookmarks menu.">
+         </message>
+       </if>
+ 
+-      <if expr="is_win or (is_linux and not chromeos)">
++      <if expr="is_win or (is_posix and not chromeos)">
+         <message name="IDS_QUIT_ACCELERATOR_TUTORIAL" desc="Instructions for how the user should quit using keyboard shortcuts.">
+           Press |<ph name="ACCELERATOR1">$1<ex>Ctrl</ex></ph>|+|<ph name="ACCELERATOR2">$2<ex>Shift</ex></ph>| followed by |<ph name="ACCELERATOR3">$3<ex>Q</ex></ph>| to exit
+         </message>
+@@ -6160,7 +6160,7 @@ the Bookmarks menu.">
+         Google Pay
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
+           Use system title bar and borders
+         </message>
+@@ -6946,7 +6946,7 @@ Please help our engineers fix this problem. Tell us wh
+         Set as default
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
+           Minimize
+         </message>

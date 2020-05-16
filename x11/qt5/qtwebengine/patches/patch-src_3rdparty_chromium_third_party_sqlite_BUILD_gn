@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_sqlite_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/sqlite/BUILD.gn
+--- src/3rdparty/chromium/third_party/sqlite/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/sqlite/BUILD.gn
+@@ -251,7 +251,7 @@ config("sqlite_warnings") {
+       ]
+     }
+   }
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     cflags += [
+       # SQLite doesn't believe in compiler warnings, preferring testing.
+       # http://www.sqlite.org/faq.html#q17

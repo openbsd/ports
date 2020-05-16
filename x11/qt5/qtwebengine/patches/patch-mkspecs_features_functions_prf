@@ -1,0 +1,21 @@
+$OpenBSD: patch-mkspecs_features_functions_prf,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: mkspecs/features/functions.prf
+--- mkspecs/features/functions.prf.orig
++++ mkspecs/features/functions.prf
+@@ -73,6 +73,7 @@ defineReplace(gnArgs) {
+     linux: include($$QTWEBENGINE_ROOT/src/core/config/linux.pri)
+     macos: include($$QTWEBENGINE_ROOT/src/core/config/mac_osx.pri)
+     win32: include($$QTWEBENGINE_ROOT/src/core/config/windows.pri)
++    openbsd: include($$QTWEBENGINE_ROOT/src/core/config/openbsd.pri)
+     isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
+     return($$gn_args)
+ }
+@@ -91,6 +92,7 @@ defineReplace(gnArch) {
+ defineReplace(gnOS) {
+     macos: return(mac)
+     win32: return(win)
++    openbsd: return(openbsd)
+     linux: return(linux)
+     error(Unsupported platform)
+     return(unknown)

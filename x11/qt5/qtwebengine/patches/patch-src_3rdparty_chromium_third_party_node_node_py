@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_node_node_py,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/node/node.py
+--- src/3rdparty/chromium/third_party/node/node.py.orig
++++ src/3rdparty/chromium/third_party/node/node.py
+@@ -13,6 +13,7 @@ def GetBinaryPath():
+   return os_path.join(os_path.dirname(__file__), *{
+     'Darwin': ('mac', 'node-darwin-x64', 'bin', 'node'),
+     'Linux': ('linux', 'node-linux-x64', 'bin', 'node'),
++    'OpenBSD': ('openbsd', 'node-openbsd', 'bin', 'node'),
+     'Windows': ('win', 'node.exe'),
+   }[platform.system()])
+ 

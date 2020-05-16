@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_ffmpeg_libavutil_random_seed_c,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/ffmpeg/libavutil/random_seed.c
+--- src/3rdparty/chromium/third_party/ffmpeg/libavutil/random_seed.c.orig
++++ src/3rdparty/chromium/third_party/ffmpeg/libavutil/random_seed.c
+@@ -30,6 +30,11 @@
+ #include <windows.h>
+ #include <bcrypt.h>
+ #endif
++#if HAVE_ARC4RANDOM
++#undef __BSD_VISIBLE
++#define __BSD_VISIBLE 1
++#include <stdlib.h>
++#endif
+ #include <fcntl.h>
+ #include <math.h>
+ #include <time.h>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-mkspecs_features_platform_prf,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: mkspecs/features/platform.prf
+--- mkspecs/features/platform.prf.orig
++++ mkspecs/features/platform.prf
+@@ -11,7 +11,7 @@ defineTest(isQtMinimum) {
+ 
+ defineTest(isPlatformSupported) {
+   QT_FOR_CONFIG += gui-private
+-  linux {
++  linux|openbsd {
+     if(!gcc:!clang)|intel_icc {
+       skipBuild("Qt WebEngine on Linux requires clang or GCC.")
+       return(false)

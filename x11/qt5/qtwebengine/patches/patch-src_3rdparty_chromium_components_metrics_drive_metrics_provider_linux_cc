@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_metrics_drive_metrics_provider_linux_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/metrics/drive_metrics_provider_linux.cc
+--- src/3rdparty/chromium/components/metrics/drive_metrics_provider_linux.cc.orig
++++ src/3rdparty/chromium/components/metrics/drive_metrics_provider_linux.cc
+@@ -4,7 +4,13 @@
+ 
+ #include "components/metrics/drive_metrics_provider.h"
+ 
++#if defined(OS_BSD)
++#include <sys/types.h>
++#define MAJOR(dev) major(dev)
++#define MINOR(dev) minor(dev)
++#else
+ #include <linux/kdev_t.h>  // For MAJOR()/MINOR().
++#endif
+ #include <sys/stat.h>
+ #include <string>
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_platform_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn
+@@ -129,6 +129,7 @@ executable("character_data_generator") {
+     "//build/win:default_exe_manifest",
+     "//third_party/icu",
+   ]
++  libs = [ "c++abi" ]
+ }
+ 
+ # This isn't strictly necessary since we can just add the deps to "platform",

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_chrome_app_settings_strings_grdp,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/chrome/app/settings_strings.grdp
+--- src/3rdparty/chromium/chrome/app/settings_strings.grdp.orig
++++ src/3rdparty/chromium/chrome/app/settings_strings.grdp
+@@ -580,7 +580,7 @@
+       Themes
+     </message>
+   </if>
+-  <if expr="is_linux and not chromeos">
++  <if expr="is_posix and not chromeos">
+     <message name="IDS_SETTINGS_SYSTEM_THEME" desc="Text of the label describing the system (GTK+) browser theme on Linux">
+       GTK+
+     </message>
+@@ -594,7 +594,7 @@
+       Use Classic
+     </message>
+   </if>
+-  <if expr="not is_linux or chromeos">
++  <if expr="not is_posix or chromeos">
+     <message name="IDS_SETTINGS_RESET_TO_DEFAULT_THEME" desc="Name of the control which resets the browser theme back to the default theme.">
+       Reset to default
+     </message>

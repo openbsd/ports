@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_crashpad_crashpad_util_posix_drop_privileges_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/drop_privileges.cc
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/drop_privileges.cc.orig
++++ src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/drop_privileges.cc
+@@ -23,7 +23,7 @@ void DropPrivileges() {
+   gid_t gid = getgid();
+   uid_t uid = getuid();
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_BSD)
+   // Based on the POSIX.1-2008 2013 edition documentation for setreuid() and
+   // setregid(), setreuid() and setregid() alone should be sufficient to drop
+   // privileges. The standard specifies that the saved ID should be set to the

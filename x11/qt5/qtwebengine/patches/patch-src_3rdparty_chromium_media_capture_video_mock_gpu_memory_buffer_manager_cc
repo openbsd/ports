@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_media_capture_video_mock_gpu_memory_buffer_manager_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/media/capture/video/mock_gpu_memory_buffer_manager.cc
+--- src/3rdparty/chromium/media/capture/video/mock_gpu_memory_buffer_manager.cc.orig
++++ src/3rdparty/chromium/media/capture/video/mock_gpu_memory_buffer_manager.cc
+@@ -103,7 +103,7 @@ class FakeGpuMemoryBuffer : public gfx::GpuMemoryBuffe
+     gfx::GpuMemoryBufferHandle handle;
+     handle.type = gfx::NATIVE_PIXMAP;
+     handle.id = handle_.id;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     handle.native_pixmap_handle =
+         gfx::CloneHandleForIPC(handle_.native_pixmap_handle);
+ #endif

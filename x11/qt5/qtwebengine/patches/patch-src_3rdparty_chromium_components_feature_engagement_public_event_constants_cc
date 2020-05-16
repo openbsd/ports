@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_feature_engagement_public_event_constants_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/feature_engagement/public/event_constants.cc
+--- src/3rdparty/chromium/components/feature_engagement/public/event_constants.cc.orig
++++ src/3rdparty/chromium/components/feature_engagement/public/event_constants.cc
+@@ -26,7 +26,7 @@ const char kReopenTabConditionsMet[] = "reopen_tab_con
+ const char kTabReopened[] = "tab_reopened";
+ #endif  // BUILDFLAG(ENABLE_DESKTOP_IN_PRODUCT_HELP)
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS) || defined(OS_BSD)
+ const char kNewTabOpened[] = "new_tab_opened";
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)
+ 

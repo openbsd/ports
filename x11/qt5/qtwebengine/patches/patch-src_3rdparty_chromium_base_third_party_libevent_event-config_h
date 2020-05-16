@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_third_party_libevent_event-config_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/third_party/libevent/event-config.h
+--- src/3rdparty/chromium/base/third_party/libevent/event-config.h.orig
++++ src/3rdparty/chromium/base/third_party/libevent/event-config.h
+@@ -15,6 +15,8 @@
+ #include "base/third_party/libevent/linux/event-config.h"
+ #elif defined(__FreeBSD__)
+ #include "base/third_party/libevent/freebsd/event-config.h"
++#elif defined(__OpenBSD__)
++#include "base/third_party/libevent/openbsd/event-config.h"
+ #elif defined(__sun)
+ #include "base/third_party/libevent/solaris/event-config.h"
+ #elif defined(_AIX)

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_public_cpp_service_executable_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn
+--- src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn.orig
++++ src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn
+@@ -23,7 +23,7 @@ source_set("support") {
+     "//services/service_manager/public/mojom",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     deps += [
+       "//sandbox/linux:sandbox",
+       "//sandbox/linux:sandbox_services",

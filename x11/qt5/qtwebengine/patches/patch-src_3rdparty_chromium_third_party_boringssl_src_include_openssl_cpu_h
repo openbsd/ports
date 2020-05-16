@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_boringssl_src_include_openssl_cpu_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/boringssl/src/include/openssl/cpu.h
+--- src/3rdparty/chromium/third_party/boringssl/src/include/openssl/cpu.h.orig
++++ src/3rdparty/chromium/third_party/boringssl/src/include/openssl/cpu.h
+@@ -105,7 +105,7 @@ OPENSSL_INLINE const uint32_t *OPENSSL_ia32cap_get(voi
+ 
+ #if defined(OPENSSL_ARM) || defined(OPENSSL_AARCH64)
+ 
+-#if defined(OPENSSL_APPLE)
++#if defined(OPENSSL_APPLE) || defined(OPENSSL_OPENBSD)
+ // iOS builds use the static ARM configuration.
+ #define OPENSSL_STATIC_ARMCAP
+ #endif

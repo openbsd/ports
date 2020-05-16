@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_tools_generate_stubs_rules_gni,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/tools/generate_stubs/rules.gni
+--- src/3rdparty/chromium/tools/generate_stubs/rules.gni.orig
++++ src/3rdparty/chromium/tools/generate_stubs/rules.gni
+@@ -94,7 +94,7 @@ template("generate_stubs") {
+       "${target_gen_dir}/${invoker.output_name}.cc",
+       "${target_gen_dir}/${invoker.output_name}.h",
+     ]
+-    libs = [ "dl" ]
++    #libs = [ "dl" ]
+     include_dirs = [ target_gen_dir ]
+     if (defined(invoker.configs)) {
+       configs += invoker.configs

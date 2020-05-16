@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_storage_monitor_storage_monitor_linux_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/storage_monitor/storage_monitor_linux.cc
+--- src/3rdparty/chromium/components/storage_monitor/storage_monitor_linux.cc.orig
++++ src/3rdparty/chromium/components/storage_monitor/storage_monitor_linux.cc
+@@ -6,7 +6,6 @@
+ 
+ #include "components/storage_monitor/storage_monitor_linux.h"
+ 
+-#include <mntent.h>
+ #include <stdint.h>
+ #include <stdio.h>
+ #include <sys/stat.h>

@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_rand_util_posix_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/rand_util_posix.cc
+--- src/3rdparty/chromium/base/rand_util_posix.cc.orig
++++ src/3rdparty/chromium/base/rand_util_posix.cc
+@@ -15,6 +15,7 @@
+ #include "base/logging.h"
+ #include "base/posix/eintr_wrapper.h"
+ 
++#if !defined(OS_OPENBSD)
+ namespace {
+ 
+ // We keep the file descriptor for /dev/urandom around so we don't need to
+@@ -46,18 +47,25 @@ class URandomFd {
+ base::LazyInstance<URandomFd>::Leaky g_urandom_fd = LAZY_INSTANCE_INITIALIZER;
+ 
+ }  // namespace
++#endif
+ 
+ namespace base {
+ 
+ void RandBytes(void* output, size_t output_length) {
++#if !defined(OS_OPENBSD)
+   const int urandom_fd = g_urandom_fd.Pointer()->fd();
+   const bool success =
+       ReadFromFD(urandom_fd, static_cast<char*>(output), output_length);
+   CHECK(success);
++#else
++  arc4random_buf(static_cast<char*>(output), output_length);
++#endif
+ }
+ 
++#if !defined(OS_OPENBSD)
+ int GetUrandomFD(void) {
+   return g_urandom_fd.Pointer()->fd();
+ }
++#endif
+ 
+ }  // namespace base

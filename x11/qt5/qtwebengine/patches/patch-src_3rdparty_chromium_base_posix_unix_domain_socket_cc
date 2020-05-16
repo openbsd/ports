@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_posix_unix_domain_socket_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/posix/unix_domain_socket.cc
+--- src/3rdparty/chromium/base/posix/unix_domain_socket.cc.orig
++++ src/3rdparty/chromium/base/posix/unix_domain_socket.cc
+@@ -5,7 +5,10 @@
+ #include "base/posix/unix_domain_socket.h"
+ 
+ #include <errno.h>
++#include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/socket.h>
++#include <sys/ucred.h>
+ #if !defined(OS_NACL_NONSFI)
+ #include <sys/un.h>
+ #endif
+@@ -28,6 +31,14 @@ namespace base {
+ 
+ const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
+ 
++#ifndef SCM_CREDENTIALS
++#  define SCM_CREDENTIALS	0x9001
++#endif
++
++#ifndef SO_PASSCRED
++#  define SO_PASSCRED		0x9002
++#endif
++
+ #if !defined(OS_NACL_NONSFI)
+ bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
+   int raw_socks[2];
+@@ -182,7 +193,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+           cmsg->cmsg_type == SCM_CREDENTIALS) {
+         DCHECK_EQ(payload_len, sizeof(struct ucred));
+         DCHECK_EQ(pid, -1);
+-        pid = reinterpret_cast<struct ucred*>(CMSG_DATA(cmsg))->pid;
++        pid = getpid();
+       }
+ #endif  // !defined(OS_NACL_NONSFI) && !defined(OS_MACOSX)
+     }

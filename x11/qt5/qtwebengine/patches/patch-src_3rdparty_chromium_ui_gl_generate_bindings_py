@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_gl_generate_bindings_py,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/gl/generate_bindings.py
+--- src/3rdparty/chromium/ui/gl/generate_bindings.py.orig
++++ src/3rdparty/chromium/ui/gl/generate_bindings.py
+@@ -2627,6 +2627,9 @@ GLX_FUNCTIONS = [
+   'arguments':
+       'Display* dpy, GLXDrawable drawable, int32_t* numerator, '
+       'int32_t* denominator' },
++{ 'return_type': '__GLXextFuncPtr',
++  'names': ['glXGetProcAddressARB'],
++  'arguments': 'const GLubyte* procName', },
+ { 'return_type': 'void',
+   'names': ['glXGetSelectedEvent'],
+   'arguments': 'Display* dpy, GLXDrawable drawable, unsigned long* mask', },

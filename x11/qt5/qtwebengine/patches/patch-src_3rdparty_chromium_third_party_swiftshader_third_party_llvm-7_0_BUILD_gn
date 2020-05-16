@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_swiftshader_third_party_llvm-7_0_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/swiftshader/third_party/llvm-7.0/BUILD.gn
+--- src/3rdparty/chromium/third_party/swiftshader/third_party/llvm-7.0/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/swiftshader/third_party/llvm-7.0/BUILD.gn
+@@ -65,6 +65,10 @@ config("swiftshader_llvm_private_config") {
+     cflags += [ "-Wno-defaulted-function-deleted" ]
+   }
+ 
++  if(target_cpu == "arm64") {
++    cflags += [ "-Wno-defaulted-function-deleted" ]
++  }
++
+   cflags += [
+     "-Wno-attributes",
+     "-Wno-deprecated-declarations",

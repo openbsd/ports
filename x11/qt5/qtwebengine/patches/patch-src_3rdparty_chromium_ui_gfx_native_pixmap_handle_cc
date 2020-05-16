@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_gfx_native_pixmap_handle_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc
+--- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc.orig
++++ src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc
+@@ -38,7 +38,7 @@ NativePixmapHandle::NativePixmapHandle(const NativePix
+ 
+ NativePixmapHandle::~NativePixmapHandle() {}
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ NativePixmapHandle CloneHandleForIPC(const NativePixmapHandle& handle) {
+   NativePixmapHandle clone;
+   std::vector<base::ScopedFD> scoped_fds;

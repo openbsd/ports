@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_crashpad_crashpad_client_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn
+@@ -71,7 +71,13 @@ static_library("client") {
+     sources += [ "crashpad_client_fuchsia.cc" ]
+   }
+ 
+-  if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia) {
++  if (crashpad_is_posix) {
++    sources += [
++      "crashpad_client_posix.cc",
++    ]
++  }
++
++  if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia || crashpad_is_posix) {
+     sources += [ "crash_report_database_generic.cc" ]
+   }
+ 

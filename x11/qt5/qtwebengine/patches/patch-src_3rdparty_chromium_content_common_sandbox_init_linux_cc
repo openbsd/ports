@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_common_sandbox_init_linux_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/common/sandbox_init_linux.cc
+--- src/3rdparty/chromium/content/common/sandbox_init_linux.cc.orig
++++ src/3rdparty/chromium/content/common/sandbox_init_linux.cc
+@@ -16,11 +16,15 @@ namespace content {
+ 
+ bool InitializeSandbox(std::unique_ptr<sandbox::bpf_dsl::Policy> policy,
+                        base::ScopedFD proc_fd) {
++#if !defined(OS_BSD)
+   return service_manager::SandboxSeccompBPF::StartSandboxWithExternalPolicy(
+       std::move(policy), std::move(proc_fd));
++#else
++  return false;
++#endif
+ }
+ 
+-#if !defined(OS_NACL_NONSFI)
++#if !defined(OS_NACL_NONSFI) && !defined(OS_BSD)
+ std::unique_ptr<sandbox::bpf_dsl::Policy> GetBPFSandboxBaselinePolicy() {
+   return service_manager::SandboxSeccompBPF::GetBaselinePolicy();
+ }

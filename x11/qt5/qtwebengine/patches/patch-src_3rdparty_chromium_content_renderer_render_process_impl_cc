@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_renderer_render_process_impl_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/renderer/render_process_impl.cc
+--- src/3rdparty/chromium/content/renderer/render_process_impl.cc.orig
++++ src/3rdparty/chromium/content/renderer/render_process_impl.cc
+@@ -170,7 +170,7 @@ RenderProcessImpl::RenderProcessImpl(
+ 
+   SetV8FlagIfNotFeature(features::kWebAssemblyTrapHandler,
+                         "--no-wasm-trap-handler");
+-#if defined(OS_LINUX) && defined(ARCH_CPU_X86_64)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(ARCH_CPU_X86_64)
+   if (base::FeatureList::IsEnabled(features::kWebAssemblyTrapHandler)) {
+     bool use_v8_signal_handler = false;
+     base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();

@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_browser_browser_main_loop_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/browser/browser_main_loop.cc
+--- src/3rdparty/chromium/content/browser/browser_main_loop.cc.orig
++++ src/3rdparty/chromium/content/browser/browser_main_loop.cc
+@@ -255,6 +255,13 @@
+ #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
+ #endif
+ 
++#if defined(OS_BSD)
++#include "content/browser/sandbox_host_linux.h"
++#include "services/service_manager/zygote/common/common_sandbox_support_linux.h"
++#include "content/public/common/common_sandbox_support_linux.h"
++#include "services/service_manager/sandbox/sandbox.h"
++#endif
++
+ // One of the linux specific headers defines this as a macro.
+ #ifdef DestroyAll
+ #undef DestroyAll
+@@ -590,6 +597,11 @@ int BrowserMainLoop::EarlyInitialization() {
+   // by now since a thread to start the ServiceManager has been created
+   // before the browser main loop starts.
+   DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
++#elif defined(OS_BSD)
++  SandboxHostLinux::GetInstance()->Init();
++  base::FileHandleMappingVector fds_to_map;
++  const int sfd = SandboxHostLinux::GetInstance()->GetChildSocket();
++  fds_to_map.push_back(std::make_pair(sfd, service_manager::GetSandboxFD()));
+ #endif
+ 
+ #if defined(USE_X11) && !defined(TOOLKIT_QT)

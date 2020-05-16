@@ -1,18 +1,17 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_process_process_posix_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
-Automatically copied from www/chromium.
+$OpenBSD: patch-src_3rdparty_chromium_base_process_process_posix_cc,v 1.3 2020/05/16 07:02:59 rsadowski Exp $
 
 Index: src/3rdparty/chromium/base/process/process_posix.cc
 --- src/3rdparty/chromium/base/process/process_posix.cc.orig
 +++ src/3rdparty/chromium/base/process/process_posix.cc
-@@ -8,6 +8,7 @@
+@@ -9,6 +9,7 @@
  #include <stdint.h>
  #include <sys/resource.h>
  #include <sys/wait.h>
 +#include <signal.h>
  
+ #include "base/clang_coverage_buildflags.h"
  #include "base/debug/activity_tracker.h"
- #include "base/files/scoped_file.h"
-@@ -23,6 +24,9 @@
+@@ -26,6 +27,9 @@
  
  namespace {
  
@@ -22,25 +21,25 @@ Index: src/3rdparty/chromium/base/process/process_posix.cc
  #if !defined(OS_NACL_NONSFI)
  
  bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -257,12 +261,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+@@ -264,12 +268,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
    return Process(handle);
  }
  
--#if !defined(OS_LINUX) && !defined(OS_MACOSX)
+-#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
  // static
  bool Process::CanBackgroundProcesses() {
 -  return false;
 +  return true;
  }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
+-#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
  
- bool Process::IsValid() const {
-   return process_ != kNullProcessHandle;
-@@ -361,21 +363,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
-   return WaitForExitWithTimeoutImpl(Handle(), exit_code, timeout);
- }
+ // static
+ void Process::TerminateCurrentProcessImmediately(int exit_code) {
+@@ -359,25 +361,33 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
  
--#if !defined(OS_LINUX) && !defined(OS_MACOSX)
+ void Process::Exited(int exit_code) const {}
+ 
+-#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
  bool Process::IsProcessBackgrounded() const {
    // See SetProcessBackgrounded().
    DCHECK(IsValid());
@@ -56,7 +55,7 @@ Index: src/3rdparty/chromium/base/process/process_posix.cc
 -  return false;
 +bool Process::SetProcessBackgrounded(bool background) {
 +  DCHECK(IsValid());
-+   
++
 +  if (!CanBackgroundProcesses())
 +    return false;
 +
@@ -65,7 +64,17 @@ Index: src/3rdparty/chromium/base/process/process_posix.cc
 +  DPCHECK(result == 0);
 +  return result == 0;
  }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
+-#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
  
  int Process::GetPriority() const {
    DCHECK(IsValid());
+   return getpriority(PRIO_PROCESS, process_);
++}
++
++Time Process::CreationTime() const {
++  // TODO(https://crbug.com/726484): There is no syscall providing this data.
++  NOTIMPLEMENTED();
++  return Time();
+ }
+ 
+ }  // namespace base

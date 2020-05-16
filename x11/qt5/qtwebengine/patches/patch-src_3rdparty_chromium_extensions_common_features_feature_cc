@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_extensions_common_features_feature_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/extensions/common/features/feature.cc
+--- src/3rdparty/chromium/extensions/common/features/feature.cc.orig
++++ src/3rdparty/chromium/extensions/common/features/feature.cc
+@@ -26,6 +26,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+   return MACOSX_PLATFORM;
+ #elif defined(OS_WIN)
+   return WIN_PLATFORM;
++#elif defined(OS_OPENBSD)
++  return LINUX_PLATFORM;
+ #else
+   return UNSPECIFIED_PLATFORM;
+ #endif

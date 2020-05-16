@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_embedder_switches_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/service_manager/embedder/switches.cc
+--- src/3rdparty/chromium/services/service_manager/embedder/switches.cc.orig
++++ src/3rdparty/chromium/services/service_manager/embedder/switches.cc
+@@ -31,6 +31,8 @@ const char kDisableInProcessStackTraces[] = "disable-i
+ // it's routed.
+ const char kEnableLogging[] = "enable-logging";
+ 
++const char kDisableUnveil[] = "disable-unveil";
++
+ // Indicates the type of process to run. This may be "service-manager",
+ // "service-runner", or any other arbitrary value supported by the embedder.
+ const char kProcessType[] = "type";

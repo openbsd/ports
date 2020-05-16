@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_core_html_canvas_canvas_async_blob_creator_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc
+--- src/3rdparty/chromium/third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc
+@@ -39,7 +39,7 @@ constexpr TimeDelta kEncodeRowSlackBeforeDeadline =
+     TimeDelta::FromMicroseconds(100);
+ 
+ /* The value is based on user statistics on Nov 2017. */
+-#if (defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN))
++#if (defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD))
+ const double kIdleTaskStartTimeoutDelayMs = 1000.0;
+ #else
+ const double kIdleTaskStartTimeoutDelayMs = 4000.0;  // For ChromeOS, Mobile

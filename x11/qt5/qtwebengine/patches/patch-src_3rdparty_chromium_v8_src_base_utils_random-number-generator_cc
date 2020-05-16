@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_v8_src_base_utils_random-number-generator_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/v8/src/base/utils/random-number-generator.cc
+--- src/3rdparty/chromium/v8/src/base/utils/random-number-generator.cc.orig
++++ src/3rdparty/chromium/v8/src/base/utils/random-number-generator.cc
+@@ -51,6 +51,8 @@ RandomNumberGenerator::RandomNumberGenerator() {
+   result = rand_s(&second_half);
+   DCHECK_EQ(0, result);
+   SetSeed((static_cast<int64_t>(first_half) << 32) + second_half);
++#elif V8_OS_OPENBSD
++  SetSeed(arc4random());
+ #else
+   // Gather entropy from /dev/urandom if available.
+   FILE* fp = fopen("/dev/urandom", "rb");

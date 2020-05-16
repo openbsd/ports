@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_boringssl_src_crypto_fipsmodule_rand_urandom_c,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/rand/urandom.c
+--- src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/rand/urandom.c.orig
++++ src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/rand/urandom.c
+@@ -19,7 +19,8 @@
+ #include <openssl/rand.h>
+ 
+ #if !defined(OPENSSL_WINDOWS) && !defined(OPENSSL_FUCHSIA) && \
+-    !defined(BORINGSSL_UNSAFE_DETERMINISTIC_MODE) && !defined(OPENSSL_TRUSTY)
++    !defined(BORINGSSL_UNSAFE_DETERMINISTIC_MODE) && !defined(OPENSSL_TRUSTY) && \
++    !defined(OPENSSL_ARC4RANDOM)
+ 
+ #include <assert.h>
+ #include <errno.h>

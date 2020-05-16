@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_debug_proc_maps_linux_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/debug/proc_maps_linux.cc
+--- src/3rdparty/chromium/base/debug/proc_maps_linux.cc.orig
++++ src/3rdparty/chromium/base/debug/proc_maps_linux.cc
+@@ -12,7 +12,7 @@
+ #include "base/strings/string_split.h"
+ #include "build/build_config.h"
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ #include <inttypes.h>
+ #endif
+ 

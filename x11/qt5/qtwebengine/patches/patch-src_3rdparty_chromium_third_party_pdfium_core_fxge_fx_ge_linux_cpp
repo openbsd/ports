@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp
+--- src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig
++++ src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp
+@@ -146,9 +146,8 @@ std::unique_ptr<SystemFontInfoIface> SystemFontInfoIfa
+     const char** pUserPaths) {
+   auto pInfo = pdfium::MakeUnique<CFX_LinuxFontInfo>();
+   if (!pInfo->ParseFontCfg(pUserPaths)) {
+-    pInfo->AddPath("/usr/share/fonts");
+-    pInfo->AddPath("/usr/share/X11/fonts/Type1");
+-    pInfo->AddPath("/usr/share/X11/fonts/TTF");
++    pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
++    pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
+     pInfo->AddPath("/usr/local/share/fonts");
+   }
+   return std::move(pInfo);

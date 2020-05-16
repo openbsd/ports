@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_gfx_codec_png_codec_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/gfx/codec/png_codec.cc
+--- src/3rdparty/chromium/ui/gfx/codec/png_codec.cc.orig
++++ src/3rdparty/chromium/ui/gfx/codec/png_codec.cc
+@@ -9,7 +9,7 @@
+ #include "base/logging.h"
+ #include "base/macros.h"
+ #include "base/strings/string_util.h"
+-#include "third_party/libpng/png.h"
++#include <png.h>
+ #include "third_party/skia/include/core/SkBitmap.h"
+ #include "third_party/skia/include/core/SkColorPriv.h"
+ #include "third_party/skia/include/core/SkUnPreMultiply.h"

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_autofill_core_common_autofill_util_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/autofill/core/common/autofill_util.cc
+--- src/3rdparty/chromium/components/autofill/core/common/autofill_util.cc.orig
++++ src/3rdparty/chromium/components/autofill/core/common/autofill_util.cc
+@@ -203,7 +203,7 @@ bool SanitizedFieldIsEmpty(const base::string16& value
+ }
+ 
+ bool ShouldAutoselectFirstSuggestionOnArrowDown() {
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   return true;
+ #else
+   return false;

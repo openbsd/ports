@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_threading_platform_thread_linux_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
-Automatically copied from www/chromium.
+$OpenBSD: patch-src_3rdparty_chromium_base_threading_platform_thread_linux_cc,v 1.3 2020/05/16 07:02:59 rsadowski Exp $
 
---- src/3rdparty/chromium/base/threading/platform_thread_linux.cc.orig.port	Thu Mar  9 21:04:26 2017
-+++ src/3rdparty/chromium/base/threading/platform_thread_linux.cc	Sat Mar 11 20:23:16 2017
-@@ -19,7 +19,9 @@
+Index: src/3rdparty/chromium/base/threading/platform_thread_linux.cc
+--- src/3rdparty/chromium/base/threading/platform_thread_linux.cc.orig
++++ src/3rdparty/chromium/base/threading/platform_thread_linux.cc
+@@ -18,7 +18,9 @@
  
- #if !defined(OS_NACL)
+ #if !defined(OS_NACL) && !defined(OS_AIX)
  #include <pthread.h>
 +#if !defined(OS_BSD)
  #include <sys/prctl.h>
@@ -13,12 +13,49 @@ Automatically copied from www/chromium.
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -130,7 +132,7 @@ void PlatformThread::SetName(const std::string& name) 
-   ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
-   tracked_objects::ThreadData::InitializeThreadContext(name);
+@@ -27,7 +29,7 @@
  
+ namespace base {
+ namespace {
 -#if !defined(OS_NACL)
 +#if !defined(OS_NACL) && !defined(OS_BSD)
+ const FilePath::CharType kCgroupDirectory[] =
+     FILE_PATH_LITERAL("/sys/fs/cgroup");
+ 
+@@ -99,7 +101,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
+ 
+ Optional<bool> CanIncreaseCurrentThreadPriorityForPlatform(
+     ThreadPriority priority) {
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+   // A non-zero soft-limit on RLIMIT_RTPRIO is required to be allowed to invoke
+   // pthread_setschedparam in SetCurrentThreadPriorityForPlatform().
+   struct rlimit rlim;
+@@ -112,7 +114,7 @@ Optional<bool> CanIncreaseCurrentThreadPriorityForPlat
+ }
+ 
+ bool SetCurrentThreadPriorityForPlatform(ThreadPriority priority) {
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+   SetThreadCgroupsForThreadPriority(PlatformThread::CurrentId(), priority);
+   return priority == ThreadPriority::REALTIME_AUDIO &&
+          pthread_setschedparam(pthread_self(), SCHED_RR, &kRealTimePrio) == 0;
+@@ -141,7 +143,7 @@ Optional<ThreadPriority> GetCurrentThreadPriorityForPl
+ void PlatformThread::SetName(const std::string& name) {
+   ThreadIdNameManager::GetInstance()->SetName(name);
+ 
+-#if !defined(OS_NACL) && !defined(OS_AIX)
++#if !defined(OS_NACL) && !defined(OS_AIX) && !defined(OS_BSD)
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
+@@ -170,7 +172,9 @@ void PlatformThread::SetThreadPriority(PlatformThreadI
+   // priority.
+   CHECK_NE(thread_id, getpid());
+ 
++#if !defined(OS_BSD)
+   SetThreadCgroupsForThreadPriority(thread_id, priority);
++#endif
+ 
+   const int nice_setting = internal::ThreadPriorityToNiceValue(priority);
+   if (setpriority(PRIO_PROCESS, thread_id, nice_setting)) {

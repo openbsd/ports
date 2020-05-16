@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_device_serial_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/device/serial/BUILD.gn
+--- src/3rdparty/chromium/services/device/serial/BUILD.gn.orig
++++ src/3rdparty/chromium/services/device/serial/BUILD.gn
+@@ -60,6 +60,13 @@ if (is_win || (is_linux && use_udev) || is_mac) {
+       ]
+     }
+ 
++    if (is_openbsd) {
++      sources -= [
++        "serial_device_enumerator_linux.cc",
++        "serial_device_enumerator_linux.h"
++      ]
++    }
++
+     if (use_udev) {
+       deps += [ "//device/udev_linux" ]
+     }

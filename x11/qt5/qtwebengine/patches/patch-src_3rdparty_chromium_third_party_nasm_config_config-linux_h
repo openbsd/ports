@@ -1,0 +1,140 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_nasm_config_config-linux_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/nasm/config/config-linux.h
+--- src/3rdparty/chromium/third_party/nasm/config/config-linux.h.orig
++++ src/3rdparty/chromium/third_party/nasm/config/config-linux.h
+@@ -14,7 +14,7 @@
+ /* #undef CFLAG_FFUNCTION_SECTIONS */
+ 
+ /* Define to 1 if compiled with the `-fgnu89-inline' compiler flag */
+-/* #undef CFLAG_FGNU89_INLINE */
++#define CFLAG_FGNU89_INLINE 1
+ 
+ /* Define to 1 if compiled with the `-flto' compiler flag */
+ /* #undef CFLAG_FLTO */
+@@ -89,17 +89,17 @@
+ 
+ /* Define to 1 if compiled with the `-Werror=strict-prototypes' compiler flag
+    */
+-#define CFLAG_WERROR_STRICT_PROTOTYPES 1
++/* #undef CFLAG_WERROR_STRICT_PROTOTYPES */
+ 
+ /* Define to 1 if compiled with the `-Werror=trigraphs' compiler flag */
+ #define CFLAG_WERROR_TRIGRAPHS 1
+ 
+ /* Define to 1 if compiled with the `-Werror=unknown-warning-option' compiler
+    flag */
+-#define CFLAG_WERROR_UNKNOWN_WARNING_OPTION 1
++/* #undef CFLAG_WERROR_UNKNOWN_WARNING_OPTION */
+ 
+ /* Define to 1 if compiled with the `-Werror=vla' compiler flag */
+-#define CFLAG_WERROR_VLA 1
++/* #undef CFLAG_WERROR_VLA */
+ 
+ /* Define to 1 if compiled with the `-Wlong-long' compiler flag */
+ #define CFLAG_WLONG_LONG 1
+@@ -117,7 +117,7 @@
+ #define HAVE_ACCESS 1
+ 
+ /* Define to 1 if you have the `canonicalize_file_name' function. */
+-#define HAVE_CANONICALIZE_FILE_NAME 1
++/* #undef HAVE_CANONICALIZE_FILE_NAME */
+ 
+ /* Define to 1 if you have the `cpu_to_le16' intrinsic function. */
+ /* #undef HAVE_CPU_TO_LE16 */
+@@ -183,10 +183,10 @@
+ 
+ /* Define to 1 if your compiler supports __attribute__((alloc_size)) on
+    functions */
+-#define HAVE_FUNC_ATTRIBUTE_ALLOC_SIZE 1
++/* #undef HAVE_FUNC_ATTRIBUTE_ALLOC_SIZE */
+ 
+ /* Define to 1 if your compiler supports __attribute__((cold)) on functions */
+-#define HAVE_FUNC_ATTRIBUTE_COLD 1
++/* #undef HAVE_FUNC_ATTRIBUTE_COLD */
+ 
+ /* Define to 1 if your compiler supports __attribute__((const)) on functions
+    */
+@@ -213,7 +213,7 @@
+ 
+ /* Define to 1 if your compiler supports __attribute__((returns_nonnull)) on
+    functions */
+-#define HAVE_FUNC_ATTRIBUTE_RETURNS_NONNULL 1
++/* #undef HAVE_FUNC_ATTRIBUTE_RETURNS_NONNULL */
+ 
+ /* Define to 1 if your compiler supports __attribute__((sentinel)) on
+    functions */
+@@ -247,7 +247,7 @@
+ /* #undef HAVE_IO_H */
+ 
+ /* Define to 1 if you have the <machine/endian.h> header file. */
+-/* #undef HAVE_MACHINE_ENDIAN_H */
++#define HAVE_MACHINE_ENDIAN_H 1
+ 
+ /* Define to 1 if you have the <memory.h> header file. */
+ #define HAVE_MEMORY_H 1
+@@ -271,7 +271,7 @@
+ #define HAVE_STDBOOL_H 1
+ 
+ /* Define to 1 if your compiler supports C99 extern inline */
+-#define HAVE_STDC_INLINE 1
++/* #undef HAVE_STDC_INLINE */
+ 
+ /* Define to 1 if you have the <stdint.h> header file. */
+ #define HAVE_STDINT_H 1
+@@ -280,7 +280,7 @@
+ #define HAVE_STDLIB_H 1
+ 
+ /* Define to 1 if you have the <stdnoreturn.h> header file. */
+-#define HAVE_STDNORETURN_H 1
++/* #undef HAVE_STDNORETURN_H */
+ 
+ /* Define to 1 if you have the `strcasecmp' function. */
+ #define HAVE_STRCASECMP 1
+@@ -295,7 +295,7 @@
+ #define HAVE_STRING_H 1
+ 
+ /* Define to 1 if you have the `strlcpy' function. */
+-/* #undef HAVE_STRLCPY */
++#define HAVE_STRLCPY 1
+ 
+ /* Define to 1 if you have the `strncasecmp' function. */
+ #define HAVE_STRNCASECMP 1
+@@ -322,7 +322,7 @@
+ #define HAVE_SYSCONF 1
+ 
+ /* Define to 1 if you have the <sys/endian.h> header file. */
+-/* #undef HAVE_SYS_ENDIAN_H */
++#define HAVE_SYS_ENDIAN_H 1
+ 
+ /* Define to 1 if you have the <sys/mman.h> header file. */
+ #define HAVE_SYS_MMAN_H 1
+@@ -397,22 +397,22 @@
+ /* #undef HAVE__VSNPRINTF */
+ 
+ /* Define to 1 if you have the `__bswap_16' intrinsic function. */
+-#define HAVE___BSWAP_16 1
++/* #undef HAVE___BSWAP_16 */
+ 
+ /* Define to 1 if you have the `__bswap_32' intrinsic function. */
+-#define HAVE___BSWAP_32 1
++/* #undef HAVE___BSWAP_32 */
+ 
+ /* Define to 1 if you have the `__bswap_64' intrinsic function. */
+-#define HAVE___BSWAP_64 1
++/* #undef HAVE___BSWAP_64 */
+ 
+ /* Define to 1 if you have the `__builtin_bswap16' intrinsic function. */
+-#define HAVE___BUILTIN_BSWAP16 1
++/* #undef HAVE___BUILTIN_BSWAP16 */
+ 
+ /* Define to 1 if you have the `__builtin_bswap32' intrinsic function. */
+-#define HAVE___BUILTIN_BSWAP32 1
++/* #undef HAVE___BUILTIN_BSWAP32 */
+ 
+ /* Define to 1 if you have the `__builtin_bswap64' intrinsic function. */
+-#define HAVE___BUILTIN_BSWAP64 1
++/* #undef HAVE___BUILTIN_BSWAP64 */
+ 
+ /* Define to 1 if you have the `__builtin_clz' intrinsic function. */
+ #define HAVE___BUILTIN_CLZ 1

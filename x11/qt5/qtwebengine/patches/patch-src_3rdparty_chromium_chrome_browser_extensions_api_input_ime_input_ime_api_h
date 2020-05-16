@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_chrome_browser_extensions_api_input_ime_input_ime_api_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/chrome/browser/extensions/api/input_ime/input_ime_api.h
+--- src/3rdparty/chromium/chrome/browser/extensions/api/input_ime/input_ime_api.h.orig
++++ src/3rdparty/chromium/chrome/browser/extensions/api/input_ime/input_ime_api.h
+@@ -31,7 +31,7 @@
+ 
+ #if defined(OS_CHROMEOS)
+ #include "chrome/browser/extensions/api/input_ime/input_ime_api_chromeos.h"
+-#elif defined(OS_LINUX) || defined(OS_WIN)
++#elif defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+ #include "chrome/browser/extensions/api/input_ime/input_ime_api_nonchromeos.h"
+ #endif  // defined(OS_CHROMEOS)
+ 

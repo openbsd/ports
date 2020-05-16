@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_gl_gl_bindings_api_autogen_glx_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/gl/gl_bindings_api_autogen_glx.h
+--- src/3rdparty/chromium/ui/gl/gl_bindings_api_autogen_glx.h.orig
++++ src/3rdparty/chromium/ui/gl/gl_bindings_api_autogen_glx.h
+@@ -88,6 +88,7 @@ bool glXGetMscRateOMLFn(Display* dpy,
+                         GLXDrawable drawable,
+                         int32_t* numerator,
+                         int32_t* denominator) override;
++__GLXextFuncPtr glXGetProcAddressARBFn(const GLubyte* procName) override;
+ void glXGetSelectedEventFn(Display* dpy,
+                            GLXDrawable drawable,
+                            unsigned long* mask) override;

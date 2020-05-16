@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_common_user_agent_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/common/user_agent.cc
+--- src/3rdparty/chromium/content/common/user_agent.cc.orig
++++ src/3rdparty/chromium/content/common/user_agent.cc
+@@ -131,6 +131,16 @@ std::string BuildOSCpuInfo(bool include_android_build_
+ #endif
+   );  // NOLINT
+ 
++#if defined(OS_OPENBSD)
++#if defined(__x86_64__)
++  base::StringAppendF(&os_cpu, "; Linux x86_64");
++#elif defined(__aarch64__)
++  base::StringAppendF(&os_cpu, "; Linux aarch64");
++#else
++  base::StringAppendF(&os_cpu, "; Linux i686");
++#endif
++#endif
++
+   return os_cpu;
+ }
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_build_config_c++_c++_gni,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/build/config/c++/c++.gni
+--- src/3rdparty/chromium/build/config/c++/c++.gni.orig
++++ src/3rdparty/chromium/build/config/c++/c++.gni
+@@ -12,7 +12,7 @@ declare_args() {
+   # is not supported.
+   use_custom_libcxx =
+       is_fuchsia || is_android || is_mac ||
+-      (is_linux &&
++      (is_linux && !is_openbsd &&
+        (!is_chromeos || default_toolchain != "//build/toolchain/cros:target"))
+ 
+   # Use libc++ instead of stdlibc++ when using the host_cpu toolchain, even if

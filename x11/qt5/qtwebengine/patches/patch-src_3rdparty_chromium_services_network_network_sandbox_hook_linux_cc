@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_network_network_sandbox_hook_linux_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc
+--- src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc.orig
++++ src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc
+@@ -14,6 +14,7 @@ using sandbox::syscall_broker::MakeBrokerCommandSet;
+ namespace network {
+ 
+ bool NetworkPreSandboxHook(service_manager::SandboxLinux::Options options) {
++#if !defined(OS_BSD)
+   auto* instance = service_manager::SandboxLinux::GetInstance();
+ 
+   // TODO(tsepez): remove universal permission under filesytem root.
+@@ -32,6 +33,7 @@ bool NetworkPreSandboxHook(service_manager::SandboxLin
+       service_manager::SandboxLinux::PreSandboxHook(), options);
+ 
+   instance->EngageNamespaceSandboxIfPossible();
++#endif
+   return true;
+ }
+ 

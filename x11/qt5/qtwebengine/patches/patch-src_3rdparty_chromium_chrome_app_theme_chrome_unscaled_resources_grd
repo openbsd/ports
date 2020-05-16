@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_chrome_app_theme_chrome_unscaled_resources_grd,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/chrome/app/theme/chrome_unscaled_resources.grd
+--- src/3rdparty/chromium/chrome/app/theme/chrome_unscaled_resources.grd.orig
++++ src/3rdparty/chromium/chrome/app/theme/chrome_unscaled_resources.grd
+@@ -100,7 +100,7 @@
+         <include name="IDR_PROFILE_AVATAR_2X_25" file="default_200_percent/common/profile_avatar_sun_cloud.png" type="BINDATA" />
+         <include name="IDR_PROFILE_AVATAR_2X_26" file="default_200_percent/common/profile_avatar_placeholder.png" type="BINDATA" />
+       </if>
+-      <if expr="is_linux and enable_app_list">
++      <if expr="is_posix and enable_app_list">
+         <!-- App Launcher icons for desktop icon. -->
+         <if expr="_google_chrome">
+           <then>

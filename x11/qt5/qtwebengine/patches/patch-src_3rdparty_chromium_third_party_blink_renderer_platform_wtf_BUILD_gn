@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_platform_wtf_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/BUILD.gn
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/BUILD.gn
+@@ -267,7 +267,7 @@ jumbo_component("wtf") {
+   if (is_android) {
+     libs = [ "log" ]
+   }
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     libs = [ "dl" ]
+   }
+ 

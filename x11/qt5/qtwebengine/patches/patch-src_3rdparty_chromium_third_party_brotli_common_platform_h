@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_brotli_common_platform_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/brotli/common/platform.h
+--- src/3rdparty/chromium/third_party/brotli/common/platform.h.orig
++++ src/3rdparty/chromium/third_party/brotli/common/platform.h
+@@ -29,7 +29,7 @@
+ #include <brotli/port.h>
+ #include <brotli/types.h>
+ 
+-#if defined(OS_LINUX) || defined(OS_CYGWIN)
++#if defined(OS_LINUX) || defined(OS_CYGWIN) || defined(OS_BSD)
+ #include <endian.h>
+ #elif defined(OS_FREEBSD)
+ #include <machine/endian.h>

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_skia_third_party_vulkanmemoryallocator_include_vk_mem_alloc_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
+--- src/3rdparty/chromium/third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h.orig
++++ src/3rdparty/chromium/third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
+@@ -2232,7 +2232,7 @@ remove them if not needed.
+ #include <mutex> // for std::mutex
+ #include <atomic> // for std::atomic
+ 
+-#if !defined(_WIN32) && !defined(__APPLE__)
++#if !defined(_WIN32) && !defined(__APPLE__) && !defined(__OpenBSD__)
+     #include <malloc.h> // for aligned_alloc()
+ #endif
+ 
+@@ -2241,7 +2241,7 @@ remove them if not needed.
+    #define VMA_NULL   nullptr
+ #endif
+ 
+-#if defined(__APPLE__) || defined(__ANDROID__)
++#if defined(__APPLE__) || defined(__ANDROID__) || defined(__OpenBSD__)
+ #include <cstdlib>
+ void *aligned_alloc(size_t alignment, size_t size)
+ {

@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_perfetto_src_tracing_core_tracing_service_impl_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc
+--- src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig
++++ src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc
+@@ -1494,7 +1494,8 @@ TraceBuffer* TracingServiceImpl::GetBufferByID(BufferI
+ 
+ void TracingServiceImpl::UpdateMemoryGuardrail() {
+ #if !PERFETTO_BUILDFLAG(PERFETTO_EMBEDDER_BUILD) && \
+-    !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX)
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
+   uint64_t total_buffer_bytes = 0;
+ 
+   // Sum up all the shared memory buffers.
+@@ -1545,7 +1546,8 @@ void TracingServiceImpl::SnapshotClocks(std::vector<Tr
+   protos::ClockSnapshot* clock_snapshot = packet.mutable_clock_snapshot();
+ 
+ #if !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) && \
+-    !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN)
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
+   struct {
+     clockid_t id;
+     protos::ClockSnapshot::Clock::Type type;

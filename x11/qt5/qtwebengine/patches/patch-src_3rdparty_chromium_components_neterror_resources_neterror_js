@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_neterror_resources_neterror_js,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/neterror/resources/neterror.js
+--- src/3rdparty/chromium/components/neterror/resources/neterror.js.orig
++++ src/3rdparty/chromium/components/neterror/resources/neterror.js
+@@ -166,7 +166,7 @@ function setUpCachedButton(buttonStrings) {
+ }
+ 
+ var primaryControlOnLeft = true;
+-// <if expr="is_macosx or is_ios or is_linux or is_android">
++// <if expr="is_macosx or is_ios or is_linux or is_android or is_bsd">
+ primaryControlOnLeft = false;
+ // </if>
+ 

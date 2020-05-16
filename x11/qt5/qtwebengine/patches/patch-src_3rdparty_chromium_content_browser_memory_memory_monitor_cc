@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_browser_memory_memory_monitor_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/browser/memory/memory_monitor.cc
+--- src/3rdparty/chromium/content/browser/memory/memory_monitor.cc.orig
++++ src/3rdparty/chromium/content/browser/memory/memory_monitor.cc
+@@ -22,7 +22,7 @@ void MemoryMonitorDelegate::GetSystemMemoryInfo(
+   base::GetSystemMemoryInfo(mem_info);
+ }
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_BSD)
+ // TODO(bashi,bcwhite): Remove when memory monitor for mac is available.
+ std::unique_ptr<MemoryMonitor> CreateMemoryMonitor() {
+   NOTREACHED();

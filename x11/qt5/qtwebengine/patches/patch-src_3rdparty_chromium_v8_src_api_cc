@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_v8_src_api_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/v8/src/api.cc
+--- src/3rdparty/chromium/v8/src/api.cc.orig
++++ src/3rdparty/chromium/v8/src/api.cc
+@@ -107,7 +107,7 @@
+ #include "src/wasm/wasm-result.h"
+ #include "src/wasm/wasm-serialization.h"
+ 
+-#if V8_OS_LINUX || V8_OS_MACOSX
++#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_OPENBSD
+ #include <signal.h>
+ #include "include/v8-wasm-trap-handler-posix.h"
+ #include "src/trap-handler/handler-inside-posix.h"
+@@ -5759,7 +5759,7 @@ bool v8::V8::Initialize() {
+   return true;
+ }
+ 
+-#if V8_OS_LINUX || V8_OS_MACOSX
++#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_OPENBSD
+ bool TryHandleWebAssemblyTrapPosix(int sig_code, siginfo_t* info,
+                                    void* context) {
+ #if V8_TARGET_ARCH_X64 && !V8_OS_ANDROID

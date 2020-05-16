@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_build_config_compiler_compiler_gni,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/build/config/compiler/compiler.gni
+--- src/3rdparty/chromium/build/config/compiler/compiler.gni.orig
++++ src/3rdparty/chromium/build/config/compiler/compiler.gni
+@@ -175,7 +175,7 @@ declare_args() {
+   # https://crbug.com/911658 for using lld on 32-bit linux.
+   use_lld = is_clang &&
+             (is_win || is_fuchsia || is_android ||
+-             (is_linux && target_os != "chromeos" && current_cpu != "x86"))
++             (is_linux && target_os != "chromeos"))
+ }
+ 
+ declare_args() {

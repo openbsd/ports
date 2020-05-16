@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_ffmpeg_libavutil_mem_c,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/ffmpeg/libavutil/mem.c
+--- src/3rdparty/chromium/third_party/ffmpeg/libavutil/mem.c.orig
++++ src/3rdparty/chromium/third_party/ffmpeg/libavutil/mem.c
+@@ -32,9 +32,6 @@
+ #include <stdint.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#if HAVE_MALLOC_H
+-#include <malloc.h>
+-#endif
+ 
+ #include "avassert.h"
+ #include "avutil.h"

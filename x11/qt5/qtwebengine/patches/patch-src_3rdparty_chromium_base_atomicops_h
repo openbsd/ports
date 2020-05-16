@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_atomicops_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/atomicops.h
+--- src/3rdparty/chromium/base/atomicops.h.orig
++++ src/3rdparty/chromium/base/atomicops.h
+@@ -66,7 +66,11 @@ typedef intptr_t Atomic64;
+ 
+ // Use AtomicWord for a machine-sized pointer.  It will use the Atomic32 or
+ // Atomic64 routines below, depending on your architecture.
++//#if defined(OS_OPENBSD) && defined(__i386__)
++//typedef Atomic32 AtomicWord;
++//#else
+ typedef intptr_t AtomicWord;
++//#endif
+ 
+ // Atomically execute:
+ //      result = *ptr;

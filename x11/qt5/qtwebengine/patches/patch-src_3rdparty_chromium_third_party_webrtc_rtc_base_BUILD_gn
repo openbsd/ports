@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_rtc_base_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn
+@@ -1088,8 +1088,6 @@ rtc_static_library("rtc_base") {
+ 
+   if (rtc_use_x11) {
+     libs += [
+-      "dl",
+-      "rt",
+       "Xext",
+       "X11",
+       "Xcomposite",
+@@ -1097,7 +1095,7 @@ rtc_static_library("rtc_base") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     libs += [
+       "dl",
+       "rt",

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_build_gn_run_binary_py,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/build/gn_run_binary.py
+--- src/3rdparty/chromium/build/gn_run_binary.py.orig
++++ src/3rdparty/chromium/build/gn_run_binary.py
+@@ -22,7 +22,7 @@ if not os.path.isabs(path):
+ # The rest of the arguments are passed directly to the executable.
+ args = [path] + sys.argv[2:]
+ 
+-ret = subprocess.call(args)
++ret = subprocess.call(args, env={"CHROME_EXE_PATH":"${WRKSRC}/out/Release/chrome","LD_LIBRARY_PATH":"${WRKSRC}/out/Release"})
+ if ret != 0:
+   if ret <= -100:
+     # Windows error codes such as 0xC0000005 and 0xC0000409 are much easier to

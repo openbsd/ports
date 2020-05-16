@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_public_common_content_switches_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/public/common/content_switches.h
+--- src/3rdparty/chromium/content/public/common/content_switches.h.orig
++++ src/3rdparty/chromium/content/public/common/content_switches.h
+@@ -118,6 +118,7 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
+ CONTENT_EXPORT extern const char kEnableLowResTiling[];
+ CONTENT_EXPORT extern const char kEnableLCDText[];
+ CONTENT_EXPORT extern const char kEnableLogging[];
++CONTENT_EXPORT extern const char kDisableUnveil[];
+ CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
+ CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
+ CONTENT_EXPORT extern const char kEnablePinch[];
+@@ -276,7 +277,7 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
+ CONTENT_EXPORT extern const char kDisablePanelFitting[];
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ CONTENT_EXPORT extern const char kEnableSpeechDispatcher[];
+ #endif
+ 

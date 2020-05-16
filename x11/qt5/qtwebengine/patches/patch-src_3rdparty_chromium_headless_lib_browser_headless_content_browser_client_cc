@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_headless_lib_browser_headless_content_browser_client_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc
+--- src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc.orig
++++ src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc
+@@ -187,7 +187,7 @@ HeadlessContentBrowserClient::GetGeneratedCodeCacheSet
+   return content::GeneratedCodeCacheSettings(true, 0, context->GetPath());
+ }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+ void HeadlessContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
+     const base::CommandLine& command_line,
+     int child_process_id,

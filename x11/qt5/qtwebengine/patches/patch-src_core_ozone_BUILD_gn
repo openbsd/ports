@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_core_ozone_BUILD_gn,v 1.1 2020/05/16 07:03:01 rsadowski Exp $
+
+Index: src/core/ozone/BUILD.gn
+--- src/core/ozone/BUILD.gn.orig
++++ src/core/ozone/BUILD.gn
+@@ -19,7 +19,7 @@ source_set("qt") {
+ 
+   defines = [ "OZONE_IMPLEMENTATION" ]
+ 
+-  if (is_linux && !is_desktop_linux) {
++  if (is_linux && !is_desktop_linux && !is_openbsd) {
+     deps += [ "//ui/events/ozone:events_ozone_evdev"]
+   }
+ }

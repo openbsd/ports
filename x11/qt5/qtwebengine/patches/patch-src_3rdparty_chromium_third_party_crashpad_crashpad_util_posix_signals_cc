@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_crashpad_crashpad_util_posix_signals_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/signals.cc
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/signals.cc.orig
++++ src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/signals.cc
+@@ -45,7 +45,7 @@ constexpr int kCrashSignals[] = {
+ #if defined(SIGEMT)
+     SIGEMT,
+ #endif  // defined(SIGEMT)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     SIGXCPU,
+     SIGXFSZ,
+ #endif  // defined(OS_LINUX)
+@@ -85,7 +85,7 @@ constexpr int kTerminateSignals[] = {
+     SIGXCPU,
+     SIGXFSZ,
+ #endif  // defined(OS_MACOSX)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     SIGIO,
+ #endif  // defined(OS_LINUX)
+ };
+@@ -216,8 +216,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
+          // remains. See 10.12.3 xnu-3789.41.3/bsd/kern/kern_sig.c
+          // psignal_internal().
+          (code > 0 &&
++#if defined(SI_ASYNCIO)
+           code != SI_ASYNCIO &&
++#endif
++#if defined(SI_MESGQ)
+           code != SI_MESGQ &&
++#endif
+           code != SI_QUEUE &&
+           code != SI_TIMER &&
+           code != SI_USER &&

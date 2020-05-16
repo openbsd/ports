@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_public_common_use_zoom_for_dsf_policy_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/public/common/use_zoom_for_dsf_policy.cc
+--- src/3rdparty/chromium/content/public/common/use_zoom_for_dsf_policy.cc.orig
++++ src/3rdparty/chromium/content/public/common/use_zoom_for_dsf_policy.cc
+@@ -25,7 +25,7 @@ const base::Feature kUseZoomForDsfEnabledByDefault{
+ #endif
+ 
+ bool IsUseZoomForDSFEnabledByDefault() {
+-#if defined(OS_LINUX) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+   return true;
+ #elif defined(OS_WIN) || defined(OS_ANDROID)
+   return base::FeatureList::IsEnabled(kUseZoomForDsfEnabledByDefault);

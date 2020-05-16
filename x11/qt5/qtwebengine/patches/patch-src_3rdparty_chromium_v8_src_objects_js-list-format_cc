@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_3rdparty_chromium_v8_src_objects_js-list-format_cc,v 1.1 2020/05/16 07:03:01 rsadowski Exp $
+
+XXX TODO show stopper! Fix it
+
+Index: src/3rdparty/chromium/v8/src/objects/js-list-format.cc
+--- src/3rdparty/chromium/v8/src/objects/js-list-format.cc.orig
++++ src/3rdparty/chromium/v8/src/objects/js-list-format.cc
+@@ -404,8 +404,8 @@ MaybeHandle<String> JSListFormat::FormatList(Isolate* 
+ 
+   UErrorCode status = U_ZERO_ERROR;
+   icu::UnicodeString formatted;
+-  formatter->format(array.data(), static_cast<int32_t>(array.size()), formatted,
+-                    status);
++  //formatter->format(array.data(), static_cast<int32_t>(array.size()), formatted,
++  //                  status);
+   DCHECK(U_SUCCESS(status));
+ 
+   return Intl::ToString(isolate, formatted);
+@@ -440,8 +440,8 @@ MaybeHandle<JSArray> JSListFormat::FormatListToParts(
+   UErrorCode status = U_ZERO_ERROR;
+   icu::UnicodeString formatted;
+   icu::FieldPositionIterator iter;
+-  formatter->format(array.data(), static_cast<int32_t>(array.size()), formatted,
+-                    &iter, status);
++  //formatter->format(array.data(), static_cast<int32_t>(array.size()), formatted,
++  //                  &iter, status);
+   DCHECK(U_SUCCESS(status));
+ 
+   std::vector<icu::FieldPosition> field_positions = GenerateFieldPosition(iter);

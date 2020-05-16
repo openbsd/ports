@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_3rdparty_chromium_media_audio_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/media/audio/BUILD.gn
+--- src/3rdparty/chromium/media/audio/BUILD.gn.orig
++++ src/3rdparty/chromium/media/audio/BUILD.gn
+@@ -240,8 +240,19 @@ source_set("audio") {
+     deps += [ "//media/base/android:media_jni_headers" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [ "linux/audio_manager_linux.cc" ]
++  }
++
++  if (is_openbsd) {
++    libs += [ "sndio" ]
++    sources += [
++      "openbsd/audio_manager_openbsd.cc",
++      "sndio/sndio_input.cc",
++      "sndio/sndio_input.h",
++      "sndio/sndio_output.cc",
++      "sndio/sndio_output.h"
++    ]
+   }
+ 
+   if (use_alsa) {

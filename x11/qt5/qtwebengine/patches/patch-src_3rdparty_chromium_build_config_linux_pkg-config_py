@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_build_config_linux_pkg-config_py,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/build/config/linux/pkg-config.py
+--- src/3rdparty/chromium/build/config/linux/pkg-config.py.orig
++++ src/3rdparty/chromium/build/config/linux/pkg-config.py
+@@ -107,7 +107,7 @@ def main():
+   # If this is run on non-Linux platforms, just return nothing and indicate
+   # success. This allows us to "kind of emulate" a Linux build from other
+   # platforms.
+-  if "linux" not in sys.platform:
++  if "openbsd" not in sys.platform:
+     print "[[],[],[],[],[]]"
+     return 0
+ 

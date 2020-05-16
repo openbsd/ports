@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_webrtc_gni,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/webrtc/webrtc.gni
+--- src/3rdparty/chromium/third_party/webrtc/webrtc.gni.orig
++++ src/3rdparty/chromium/third_party/webrtc/webrtc.gni
+@@ -235,7 +235,7 @@ rtc_opus_dir = "//third_party/opus"
+ 
+ # Desktop capturer is supported only on Windows, OSX and Linux.
+ rtc_desktop_capture_supported = (is_win && current_os != "winuwp") || is_mac ||
+-                                (is_linux && (rtc_use_x11 || rtc_use_pipewire))
++                                ((is_linux && !is_openbsd) && (rtc_use_x11 || rtc_use_pipewire))
+ 
+ ###############################################################################
+ # Templates

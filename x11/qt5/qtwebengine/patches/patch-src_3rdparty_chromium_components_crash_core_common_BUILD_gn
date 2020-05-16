@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_crash_core_common_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/crash/core/common/BUILD.gn
+--- src/3rdparty/chromium/components/crash/core/common/BUILD.gn.orig
++++ src/3rdparty/chromium/components/crash/core/common/BUILD.gn
+@@ -6,7 +6,7 @@ import("//build/buildflag_header.gni")
+ 
+ declare_args() {
+   # If set to true, this will stub out and disable the entire crash key system.
+-  use_crash_key_stubs = is_fuchsia
++  use_crash_key_stubs = is_fuchsia || is_openbsd
+ }
+ 
+ group("common") {
+@@ -88,8 +88,6 @@ target(crash_key_target_type, "crash_key") {
+         "crash_key_internal.h",
+       ]
+     }
+-
+-    deps += [ "//third_party/breakpad:client" ]
+   }
+ }
+ 
+@@ -144,7 +142,7 @@ source_set("unit_tests") {
+     sources += [ "objc_zombie_unittest.mm" ]
+   }
+ 
+-  if (!is_mac && !is_win && !is_fuchsia && !is_android) {
++  if (!is_mac && !is_win && !is_fuchsia && !is_android && !is_openbsd) {
+     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
+     sources += [ "crash_key_breakpad_unittest.cc" ]
+   }

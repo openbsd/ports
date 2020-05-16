@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_debug_debugger_posix_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
-Automatically copied from www/chromium.
+$OpenBSD: patch-src_3rdparty_chromium_base_debug_debugger_posix_cc,v 1.3 2020/05/16 07:02:59 rsadowski Exp $
 
---- src/3rdparty/chromium/base/debug/debugger_posix.cc.orig.port	Thu Dec 15 00:02:02 2016
-+++ src/3rdparty/chromium/base/debug/debugger_posix.cc	Tue Jan  3 20:29:54 2017
-@@ -34,6 +34,10 @@
+Index: src/3rdparty/chromium/base/debug/debugger_posix.cc
+--- src/3rdparty/chromium/base/debug/debugger_posix.cc.orig
++++ src/3rdparty/chromium/base/debug/debugger_posix.cc
+@@ -36,6 +36,10 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -14,7 +14,7 @@ Automatically copied from www/chromium.
  #if defined(OS_FREEBSD)
  #include <sys/user.h>
  #endif
-@@ -92,33 +96,38 @@ bool BeingDebugged() {
+@@ -94,33 +98,38 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.
@@ -24,7 +24,7 @@ Automatically copied from www/chromium.
 +  size_t info_size;
  
 -#if defined(OS_OPENBSD)
-   if (sysctl(mib, arraysize(mib), NULL, &info_size, NULL, 0) < 0)
+   if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
      return -1;
  
 +  info = (struct kinfo_proc *)malloc(info_size);
@@ -32,8 +32,8 @@ Automatically copied from www/chromium.
    mib[5] = (info_size / sizeof(struct kinfo_proc));
 -#endif
  
--  int sysctl_result = sysctl(mib, arraysize(mib), &info, &info_size, NULL, 0);
-+  int sysctl_result = sysctl(mib, arraysize(mib), info, &info_size, NULL, 0);
+-  int sysctl_result = sysctl(mib, base::size(mib), &info, &info_size, NULL, 0);
++  int sysctl_result = sysctl(mib, base::size(mib), info, &info_size, NULL, 0);
    DCHECK_EQ(sysctl_result, 0);
    if (sysctl_result != 0) {
      is_set = true;

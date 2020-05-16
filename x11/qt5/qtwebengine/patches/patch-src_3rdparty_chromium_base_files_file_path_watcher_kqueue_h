@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_files_file_path_watcher_kqueue_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/files/file_path_watcher_kqueue.h
+--- src/3rdparty/chromium/base/files/file_path_watcher_kqueue.h.orig
++++ src/3rdparty/chromium/base/files/file_path_watcher_kqueue.h
+@@ -5,6 +5,7 @@
+ #ifndef BASE_FILES_FILE_PATH_WATCHER_KQUEUE_H_
+ #define BASE_FILES_FILE_PATH_WATCHER_KQUEUE_H_
+ 
++#include <sys/time.h>
+ #include <sys/event.h>
+ 
+ #include <memory>

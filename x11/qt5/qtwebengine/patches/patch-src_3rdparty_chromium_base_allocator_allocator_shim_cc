@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_allocator_allocator_shim_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/allocator/allocator_shim.cc
+--- src/3rdparty/chromium/base/allocator/allocator_shim.cc.orig
++++ src/3rdparty/chromium/base/allocator/allocator_shim.cc
+@@ -70,7 +70,7 @@ inline const allocator::AllocatorDispatch* GetChainHea
+   // Unfortunately due to that bug NoBarrier_Load() is mistakenly fully
+   // barriered on Linux+Clang, and that causes visible perf regressons.
+   return reinterpret_cast<const allocator::AllocatorDispatch*>(
+-#if defined(OS_LINUX) && defined(__clang__)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(__clang__)
+       *static_cast<const volatile subtle::AtomicWord*>(&g_chain_head)
+ #else
+       subtle::NoBarrier_Load(&g_chain_head)

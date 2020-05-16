@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_process_process_handle_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/process/process_handle.cc
+--- src/3rdparty/chromium/base/process/process_handle.cc.orig
++++ src/3rdparty/chromium/base/process/process_handle.cc
+@@ -39,7 +39,7 @@ uint32_t GetUniqueIdForProcess() {
+   return g_unique_id;
+ }
+ 
+-#if defined(OS_LINUX) || defined(OS_AIX)
++#if defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+ 
+ void InitUniqueIdForProcessInPidNamespace(ProcessId pid_outside_of_namespace) {
+   g_unique_id = MangleProcessId(pid_outside_of_namespace);

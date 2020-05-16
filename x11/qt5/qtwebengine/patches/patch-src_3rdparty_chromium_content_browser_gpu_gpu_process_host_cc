@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_browser_gpu_gpu_process_host_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/browser/gpu/gpu_process_host.cc
+--- src/3rdparty/chromium/content/browser/gpu/gpu_process_host.cc.orig
++++ src/3rdparty/chromium/content/browser/gpu/gpu_process_host.cc
+@@ -218,6 +218,7 @@ static const char* const kSwitchNames[] = {
+ #endif
+     switches::kEnableGpuRasterization,
+     switches::kEnableLogging,
++    switches::kDisableUnveil,
+     switches::kEnableVizDevTools,
+     switches::kHeadless,
+     switches::kLoggingLevel,

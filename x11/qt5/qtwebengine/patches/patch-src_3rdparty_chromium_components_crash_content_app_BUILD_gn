@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_crash_content_app_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/crash/content/app/BUILD.gn
+--- src/3rdparty/chromium/components/crash/content/app/BUILD.gn.orig
++++ src/3rdparty/chromium/components/crash/content/app/BUILD.gn
+@@ -36,12 +36,12 @@ static_library("app") {
+     sources += [ "crashpad.cc" ]
+   }
+ 
+-  if (is_android || (is_linux && !is_chromeos)) {
++  if (is_android || (is_linux && !is_chromeos && !is_openbsd)) {
+     set_sources_assignment_filter([])
+     sources += [ "crashpad_linux.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [
+       "breakpad_linux.cc",
+       "breakpad_linux.h",
+@@ -58,7 +58,7 @@ static_library("app") {
+     "//base",
+   ]
+ 
+-  if (is_mac || is_win || is_android || (is_linux && !is_chromeos)) {
++  if (is_mac || is_win || is_android || (is_linux && !is_chromeos && !is_openbsd)) {
+     deps += [
+       "//third_party/crashpad/crashpad/client",
+       "//third_party/crashpad/crashpad/util",
+@@ -79,7 +79,7 @@ static_library("app") {
+       "//third_party/crashpad/crashpad/snapshot",
+     ]
+ 
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       deps += [ "//third_party/breakpad:client" ]
+     }
+   }

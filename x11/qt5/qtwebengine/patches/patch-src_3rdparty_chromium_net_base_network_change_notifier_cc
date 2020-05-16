@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_net_base_network_change_notifier_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/net/base/network_change_notifier.cc
+--- src/3rdparty/chromium/net/base/network_change_notifier.cc.orig
++++ src/3rdparty/chromium/net/base/network_change_notifier.cc
+@@ -221,7 +221,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
+ #elif defined(OS_FUCHSIA)
+   return new NetworkChangeNotifierFuchsia(0 /* required_features */);
+ #else
+-  NOTIMPLEMENTED();
+   return NULL;
+ #endif
+ }

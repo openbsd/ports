@@ -1,11 +1,10 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_process_process_handle_openbsd_cc,v 1.2 2017/07/17 08:34:39 zhuk Exp $
-Automatically copied from www/chromium.
+$OpenBSD: patch-src_3rdparty_chromium_base_process_process_handle_openbsd_cc,v 1.3 2020/05/16 07:02:59 rsadowski Exp $
 
 Index: src/3rdparty/chromium/base/process/process_handle_openbsd.cc
 --- src/3rdparty/chromium/base/process/process_handle_openbsd.cc.orig
 +++ src/3rdparty/chromium/base/process/process_handle_openbsd.cc
 @@ -6,6 +6,8 @@
- #include "base/process/process_handle.h"
+ #include "base/stl_util.h"
  
  #include <stddef.h>
 +#include <sys/param.h>
@@ -24,16 +23,16 @@ Index: src/3rdparty/chromium/base/process/process_handle_openbsd.cc
    int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process,
                  sizeof(struct kinfo_proc), 0 };
  
-   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+   if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0)
      return -1;
  
 +  info = (struct kinfo_proc *)malloc(length);
 +
    mib[5] = (length / sizeof(struct kinfo_proc));
  
--  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+-  if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
 -    return -1;
-+  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
++  if (sysctl(mib, base::size(mib), info, &length, NULL, 0) < 0) {
 +    ppid = -1;
 +    goto out;
 +  }
@@ -55,11 +54,11 @@ Index: src/3rdparty/chromium/base/process/process_handle_openbsd.cc
    int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process,
                  sizeof(struct kinfo_proc), 0 };
  
--  if (sysctl(mib, arraysize(mib), NULL, &len, NULL, 0) == -1)
-+  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) == -1)
+-  if (sysctl(mib, base::size(mib), NULL, &len, NULL, 0) == -1)
++  if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) == -1)
      return FilePath();
 -  mib[5] = (len / sizeof(struct kinfo_proc));
--  if (sysctl(mib, arraysize(mib), &kp, &len, NULL, 0) < 0)
+-  if (sysctl(mib, base::size(mib), &kp, &len, NULL, 0) < 0)
 -    return FilePath();
 -  if ((kp.p_flag & P_SYSTEM) != 0)
 -    return FilePath();
@@ -71,7 +70,7 @@ Index: src/3rdparty/chromium/base/process/process_handle_openbsd.cc
 +
 +  mib[5] = (length / sizeof(struct kinfo_proc));
 +
-+  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0)
++  if (sysctl(mib, base::size(mib), info, &length, NULL, 0) < 0)
 +    goto out;
 +
 +  if ((info->p_flag & P_SYSTEM) != 0)

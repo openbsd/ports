@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_libusb_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/libusb/BUILD.gn
+--- src/3rdparty/chromium/third_party/libusb/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/libusb/BUILD.gn
+@@ -98,7 +98,7 @@ static_library("libusb") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [
+       "src/libusb/os/linux_usbfs.c",
+       "src/libusb/os/linux_usbfs.h",
+@@ -109,6 +109,16 @@ static_library("libusb") {
+     ]
+   }
+ 
++  if (is_openbsd) {
++    sources += [
++      "src/libusb/os/openbsd_usb.c",
++    ]
++    defines += [
++      "OS_OPENBSD=1",
++      "_GNU_SOURCE=1",
++    ]
++  }
++
+   if (is_chromeos) {
+     defines += [ "USBI_TIMERFD_AVAILABLE" ]
+   }
+@@ -122,7 +132,7 @@ static_library("libusb") {
+     deps += [ "//build/linux/libudev" ]
+   }
+ 
+-  if (is_linux && !use_udev) {
++  if (is_linux && !use_udev && !is_openbsd) {
+     sources += [ "src/libusb/os/linux_netlink.c" ]
+     defines += [ "HAVE_LINUX_NETLINK_H" ]
+   }

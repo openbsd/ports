@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_3rdparty_chromium_v8_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/v8/BUILD.gn
+--- src/3rdparty/chromium/v8/BUILD.gn.orig
++++ src/3rdparty/chromium/v8/BUILD.gn
+@@ -3169,7 +3169,7 @@ v8_component("v8_libbase") {
+     }
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -3179,6 +3179,12 @@ v8_component("v8_libbase") {
+       "dl",
+       "rt",
+     ]
++  } else if (is_openbsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-openbsd.cc",
++    ]
++    libs = [ "execinfo" ]
+   } else if (current_os == "aix") {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",

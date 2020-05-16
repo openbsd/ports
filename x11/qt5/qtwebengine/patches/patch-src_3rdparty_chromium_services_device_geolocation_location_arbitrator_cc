@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_device_geolocation_location_arbitrator_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/device/geolocation/location_arbitrator.cc
+--- src/3rdparty/chromium/services/device/geolocation/location_arbitrator.cc.orig
++++ src/3rdparty/chromium/services/device/geolocation/location_arbitrator.cc
+@@ -167,7 +167,7 @@ LocationArbitrator::NewNetworkLocationProvider(
+ std::unique_ptr<LocationProvider>
+ LocationArbitrator::NewSystemLocationProvider() {
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
+   return nullptr;
+ #else
+   return device::NewSystemLocationProvider();

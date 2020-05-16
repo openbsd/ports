@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_net_third_party_quic_platform_impl_quic_ip_address_impl_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/net/third_party/quic/platform/impl/quic_ip_address_impl.cc
+--- src/3rdparty/chromium/net/third_party/quic/platform/impl/quic_ip_address_impl.cc.orig
++++ src/3rdparty/chromium/net/third_party/quic/platform/impl/quic_ip_address_impl.cc
+@@ -13,6 +13,7 @@
+ #include <ws2bth.h>
+ #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
+ #include <netinet/in.h>
++#include <sys/socket.h>
+ #endif
+ 
+ using std::string;

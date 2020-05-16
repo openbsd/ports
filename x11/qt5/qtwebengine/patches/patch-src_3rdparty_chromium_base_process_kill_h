@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_process_kill_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/process/kill.h
+--- src/3rdparty/chromium/base/process/kill.h.orig
++++ src/3rdparty/chromium/base/process/kill.h
+@@ -111,7 +111,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
+ BASE_EXPORT TerminationStatus GetKnownDeadTerminationStatus(
+     ProcessHandle handle, int* exit_code);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Spawns a thread to wait asynchronously for the child |process| to exit
+ // and then reaps it.
+ BASE_EXPORT void EnsureProcessGetsReaped(Process process);

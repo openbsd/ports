@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_3rdparty_chromium_build_toolchain_gcc_toolchain_gni,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
+--- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig
++++ src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
+@@ -47,6 +47,11 @@ analyzer_wrapper =
+     rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
+                 root_build_dir) + " --mode=clang"
+ 
++declare_args() {
++  extra_cppflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -610,12 +615,12 @@ template("clang_toolchain") {
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
++    prefix = "/usr/bin"
++    cc = "cc"
++    cxx = "c++"
+     ld = cxx
+     readelf = "${toolprefix}readelf"
+-    ar = "${prefix}/llvm-ar"
++    ar = "${prefix}/ar"
+     nm = "${toolprefix}nm"
+ 
+     forward_variables_from(invoker,

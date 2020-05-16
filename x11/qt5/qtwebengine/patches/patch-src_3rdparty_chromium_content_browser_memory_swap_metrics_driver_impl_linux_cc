@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_3rdparty_chromium_content_browser_memory_swap_metrics_driver_impl_linux_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/content/browser/memory/swap_metrics_driver_impl_linux.cc
+--- src/3rdparty/chromium/content/browser/memory/swap_metrics_driver_impl_linux.cc.orig
++++ src/3rdparty/chromium/content/browser/memory/swap_metrics_driver_impl_linux.cc
+@@ -44,9 +44,13 @@ SwapMetricsDriverImplLinux::~SwapMetricsDriverImplLinu
+ SwapMetricsDriver::SwapMetricsUpdateResult
+ SwapMetricsDriverImplLinux::UpdateMetricsInternal(base::TimeDelta interval) {
+   base::VmStatInfo vmstat;
++#if !defined(OS_BSD)
+   if (!base::GetVmStatInfo(&vmstat)) {
+     return SwapMetricsDriver::SwapMetricsUpdateResult::kSwapMetricsUpdateFailed;
+   }
++#else
++    return SwapMetricsDriver::SwapMetricsUpdateResult::kSwapMetricsUpdateFailed;
++#endif
+ 
+   uint64_t in_counts = vmstat.pswpin - last_pswpin_;
+   uint64_t out_counts = vmstat.pswpout - last_pswpout_;

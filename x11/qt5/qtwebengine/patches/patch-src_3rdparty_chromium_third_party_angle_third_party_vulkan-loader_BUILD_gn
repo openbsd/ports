@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_angle_third_party_vulkan-loader_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/BUILD.gn
+--- src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/BUILD.gn
+@@ -192,7 +192,7 @@ config("vulkan_loader_config") {
+   if (is_win) {
+     cflags = [ "/wd4201" ]
+   }
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     # assume secure_getenv() is available
+     defines += [ "HAVE_SECURE_GETENV" ]
+   }

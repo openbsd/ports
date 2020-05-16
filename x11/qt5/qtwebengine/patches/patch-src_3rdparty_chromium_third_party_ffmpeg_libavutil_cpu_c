@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_ffmpeg_libavutil_cpu_c,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/ffmpeg/libavutil/cpu.c
+--- src/3rdparty/chromium/third_party/ffmpeg/libavutil/cpu.c.orig
++++ src/3rdparty/chromium/third_party/ffmpeg/libavutil/cpu.c
+@@ -41,10 +41,7 @@
+ #if HAVE_GETPROCESSAFFINITYMASK || HAVE_WINRT
+ #include <windows.h>
+ #endif
+-#if HAVE_SYSCTL
+-#if HAVE_SYS_PARAM_H
+-#include <sys/param.h>
+-#endif
++#if HAVE_SYSCTL && !defined(__OpenBSD__)
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #endif

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_views_views_delegate_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/views/views_delegate.h
+--- src/3rdparty/chromium/ui/views/views_delegate.h.orig
++++ src/3rdparty/chromium/ui/views/views_delegate.h
+@@ -146,7 +146,7 @@ class VIEWS_EXPORT ViewsDelegate {
+   // Returns true if the window passed in is in the Windows 8 metro
+   // environment.
+   virtual bool IsWindowInMetro(gfx::NativeWindow window) const;
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   virtual gfx::ImageSkia* GetDefaultWindowIcon() const;
+ #endif
+ 

@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_linux_util_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/linux_util.cc
+--- src/3rdparty/chromium/base/linux_util.cc.orig
++++ src/3rdparty/chromium/base/linux_util.cc
+@@ -95,7 +95,7 @@ char g_linux_distro[kDistroSize] =
+ #endif
+ 
+ std::string GetLinuxDistro() {
+-#if defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#if defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+   return g_linux_distro;
+ #elif defined(OS_LINUX)
+   LinuxDistroHelper* distro_state_singleton = LinuxDistroHelper::GetInstance();
+@@ -135,6 +135,9 @@ void SetLinuxDistro(const std::string& distro) {
+ }
+ 
+ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t>* tids) {
++#if defined(OS_BSD)
++  return false;
++#else
+   // 25 > strlen("/proc//task") + strlen(std::to_string(INT_MAX)) + 1 = 22
+   char buf[25];
+   base::strings::SafeSPrintf(buf, "/proc/%d/task", pid);
+@@ -154,6 +157,7 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
+   }
+ 
+   return true;
++#endif
+ }
+ 
+ pid_t FindThreadIDWithSyscall(pid_t pid, const std::string& expected_data,

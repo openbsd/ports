@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_swiftshader_src_Common_Configurator_cpp,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/swiftshader/src/Common/Configurator.cpp
+--- src/3rdparty/chromium/third_party/swiftshader/src/Common/Configurator.cpp.orig
++++ src/3rdparty/chromium/third_party/swiftshader/src/Common/Configurator.cpp
+@@ -42,6 +42,10 @@ namespace sw
+ 
+ 	bool Configurator::readFile()
+ 	{
++#if defined(__OpenBSD__)
++		return false;
++#endif
++
+ 		#if defined(__unix__)
+ 			if(access(path.c_str(), R_OK) != 0)
+ 			{

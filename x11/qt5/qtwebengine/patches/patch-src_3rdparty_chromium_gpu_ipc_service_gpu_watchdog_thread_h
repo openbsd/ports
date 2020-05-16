@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_3rdparty_chromium_gpu_ipc_service_gpu_watchdog_thread_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/gpu/ipc/service/gpu_watchdog_thread.h
+--- src/3rdparty/chromium/gpu/ipc/service/gpu_watchdog_thread.h.orig
++++ src/3rdparty/chromium/gpu/ipc/service/gpu_watchdog_thread.h
+@@ -191,8 +191,10 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThread : publi
+   XDisplay* display_;
+   gfx::AcceleratedWidget window_;
+   XAtom atom_;
++#if !defined(OS_BSD)
+   FILE* tty_file_;
+   int host_tty_;
++#endif
+ #endif
+ 
+   base::RepeatingClosure alternative_terminate_for_testing_;

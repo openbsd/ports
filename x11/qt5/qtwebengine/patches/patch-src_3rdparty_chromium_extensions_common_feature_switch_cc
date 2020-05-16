@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_chromium_extensions_common_feature_switch_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/extensions/common/feature_switch.cc
+--- src/3rdparty/chromium/extensions/common/feature_switch.cc.orig
++++ src/3rdparty/chromium/extensions/common/feature_switch.cc
+@@ -44,11 +44,7 @@ class CommonSwitches {
+                          FeatureSwitch::DEFAULT_ENABLED),
+         load_media_router_component_extension(
+             kLoadMediaRouterComponentExtensionFlag,
+-#if defined(GOOGLE_CHROME_BUILD)
+             FeatureSwitch::DEFAULT_ENABLED)
+-#else
+-            FeatureSwitch::DEFAULT_DISABLED)
+-#endif  // defined(GOOGLE_CHROME_BUILD)
+   {
+   }
+ 

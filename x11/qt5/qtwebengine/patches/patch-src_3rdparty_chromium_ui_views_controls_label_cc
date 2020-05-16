@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_views_controls_label_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/views/controls/label.cc
+--- src/3rdparty/chromium/ui/views/controls/label.cc.orig
++++ src/3rdparty/chromium/ui/views/controls/label.cc
+@@ -542,7 +542,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
+     GetFocusManager()->SetFocusedView(this);
+   }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   if (event.IsOnlyMiddleMouseButton() && GetFocusManager() && !had_focus)
+     GetFocusManager()->SetFocusedView(this);
+ #endif
+@@ -727,7 +727,7 @@ bool Label::PasteSelectionClipboard() {
+ }
+ 
+ void Label::UpdateSelectionClipboard() {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   if (!obscured()) {
+     ui::ScopedClipboardWriter(ui::CLIPBOARD_TYPE_SELECTION)
+         .WriteText(GetSelectedText());

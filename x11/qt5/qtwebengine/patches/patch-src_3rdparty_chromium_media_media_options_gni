@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_3rdparty_chromium_media_media_options_gni,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/media/media_options.gni
+--- src/3rdparty/chromium/media/media_options.gni.orig
++++ src/3rdparty/chromium/media/media_options.gni
+@@ -104,9 +104,12 @@ declare_args() {
+   # Enables runtime selection of ALSA library for audio.
+   use_alsa = false
+ 
++  # Enable runtime selection of sndio(7)
++  use_sndio = false
++
+   # Alsa should be used on non-Android, non-Mac POSIX systems.
+   # Alsa should be used on desktop Chromecast and audio-only Chromecast builds.
+-  if (is_posix && !is_android && !is_mac &&
++  if (is_posix && !is_android && !is_mac && !is_openbsd &&
+       (!is_chromecast || is_cast_desktop_build || is_cast_audio_only)) {
+     use_alsa = true
+ 
+@@ -114,6 +117,10 @@ declare_args() {
+     if (!use_cras && !is_chromecast) {
+       use_pulseaudio = true
+     }
++  }
++  if (is_openbsd) {
++    use_sndio = true
++    use_pulseaudio = false
+   }
+ }
+ 

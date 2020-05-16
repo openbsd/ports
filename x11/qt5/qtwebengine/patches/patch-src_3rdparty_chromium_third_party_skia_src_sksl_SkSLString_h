@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_skia_src_sksl_SkSLString_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/skia/src/sksl/SkSLString.h
+--- src/3rdparty/chromium/third_party/skia/src/sksl/SkSLString.h.orig
++++ src/3rdparty/chromium/third_party/skia/src/sksl/SkSLString.h
+@@ -22,6 +22,8 @@
+     #include "SkString.h"
+ #endif
+ 
++#include <stdarg.h>
++
+ namespace SkSL {
+ 
+ // Represents a (not necessarily null-terminated) slice of a string.

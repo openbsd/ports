@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_media_base_vector_math_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/media/base/vector_math.cc
+--- src/3rdparty/chromium/media/base/vector_math.cc.orig
++++ src/3rdparty/chromium/media/base/vector_math.cc
+@@ -17,7 +17,7 @@
+ // better, which is anywhere clang is used.
+ // TODO(pcc): Linux currently uses ThinLTO which has broken auto-vectorization
+ // in clang, so use our intrinsic version for now. http://crbug.com/738085
+-#if !defined(__clang__) || defined(OS_LINUX)
++#if !defined(__clang__) || (defined(OS_BSD) || defined(OS_LINUX))
+ #define FMAC_FUNC FMAC_SSE
+ #define FMUL_FUNC FMUL_SSE
+ #else

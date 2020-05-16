@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_media_capture_video_shared_memory_handle_provider_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/media/capture/video/shared_memory_handle_provider.h
+--- src/3rdparty/chromium/media/capture/video/shared_memory_handle_provider.h.orig
++++ src/3rdparty/chromium/media/capture/video/shared_memory_handle_provider.h
+@@ -38,7 +38,7 @@ class CAPTURE_EXPORT SharedMemoryHandleProvider
+ 
+ // This requires platforms where base::SharedMemoryHandle is backed by a
+ // file descriptor.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   bool InitAsReadOnlyFromRawFileDescriptor(mojo::ScopedHandle fd_handle,
+                                            uint32_t memory_size_in_bytes);
+ #endif  // defined(OS_LINUX)

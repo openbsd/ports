@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/gfx/mojo/buffer_types_struct_traits.cc
+--- src/3rdparty/chromium/ui/gfx/mojo/buffer_types_struct_traits.cc.orig
++++ src/3rdparty/chromium/ui/gfx/mojo/buffer_types_struct_traits.cc
+@@ -14,7 +14,7 @@
+ #include "mojo/public/cpp/system/scope_to_message_pipe.h"
+ #endif
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) || defined(OS_BSD)
+ #include "base/no_destructor.h"
+ #endif
+ 
+@@ -28,7 +28,7 @@ bool StructTraits<gfx::mojom::BufferUsageAndFormatData
+   return data.ReadUsage(&out->usage) && data.ReadFormat(&out->format);
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ std::vector<mojo::ScopedHandle>
+ StructTraits<gfx::mojom::NativePixmapHandleDataView, gfx::NativePixmapHandle>::
+     fds(const gfx::NativePixmapHandle& pixmap_handle) {
+@@ -68,7 +68,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
+       return gfx::mojom::GpuMemoryBufferPlatformHandle::NewSharedMemoryHandle(
+           std::move(handle.region));
+     case gfx::NATIVE_PIXMAP:
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       return gfx::mojom::GpuMemoryBufferPlatformHandle::NewNativePixmapHandle(
+           handle.native_pixmap_handle);
+ #else
+@@ -144,7 +144,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
+       out->type = gfx::SHARED_MEMORY_BUFFER;
+       out->region = std::move(platform_handle->get_shared_memory_handle());
+       return true;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     case gfx::mojom::GpuMemoryBufferPlatformHandleDataView::Tag::
+         NATIVE_PIXMAP_HANDLE:
+       out->type = gfx::NATIVE_PIXMAP;

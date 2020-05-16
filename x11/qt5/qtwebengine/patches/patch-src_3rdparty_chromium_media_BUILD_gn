@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_3rdparty_chromium_media_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/media/BUILD.gn
+--- src/3rdparty/chromium/media/BUILD.gn.orig
++++ src/3rdparty/chromium/media/BUILD.gn
+@@ -61,6 +61,9 @@ config("media_config") {
+       defines += [ "DLOPEN_PULSEAUDIO" ]
+     }
+   }
++  if (use_sndio) {
++    defines += [ "USE_SNDIO" ]
++  }
+   if (use_cras) {
+     defines += [ "USE_CRAS" ]
+   }

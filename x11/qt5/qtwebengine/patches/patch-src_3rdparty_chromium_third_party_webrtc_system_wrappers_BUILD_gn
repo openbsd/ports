@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_system_wrappers_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn
+--- src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn
+@@ -59,8 +59,6 @@ rtc_static_library("system_wrappers") {
+     if (!build_with_chromium) {
+       deps += [ ":cpu_features_linux" ]
+     }
+-
+-    libs += [ "rt" ]
+   }
+ 
+   if (is_win) {

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_views_style_platform_style_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/views/style/platform_style.cc
+--- src/3rdparty/chromium/ui/views/style/platform_style.cc.orig
++++ src/3rdparty/chromium/ui/views/style/platform_style.cc
+@@ -18,7 +18,7 @@
+ 
+ #if defined(OS_CHROMEOS)
+ #include "ui/views/controls/scrollbar/overlay_scroll_bar.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+ #define DESKTOP_LINUX
+ #endif
+ 

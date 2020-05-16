@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_catalog_store_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/catalog/store.cc
+--- src/3rdparty/chromium/services/catalog/store.cc.orig
++++ src/3rdparty/chromium/services/catalog/store.cc
+@@ -37,6 +37,8 @@ const char Store::kRequiredFilesKey_PlatformValue_MacO
+ // static
+ const char Store::kRequiredFilesKey_PlatformValue_Android[] = "android";
+ // static
++const char Store::kRequiredFilesKey_PlatformValue_OpenBSD[] = "openbsd";
++// static
+ const char Store::kRequiredFilesKey_PlatformValue_Fuchsia[] = "fuchsia";
+ 
+ }  // namespace catalog

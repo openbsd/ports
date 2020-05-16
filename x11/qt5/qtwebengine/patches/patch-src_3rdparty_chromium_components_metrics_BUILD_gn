@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_3rdparty_chromium_components_metrics_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/components/metrics/BUILD.gn
+--- src/3rdparty/chromium/components/metrics/BUILD.gn.orig
++++ src/3rdparty/chromium/components/metrics/BUILD.gn
+@@ -120,6 +120,10 @@ jumbo_static_library("metrics") {
+     "//third_party/zlib/google:compression_utils",
+   ]
+ 
++  if (is_openbsd) {
++    sources -= [ "system_memory_stats_recorder_linux.cc" ]
++  }
++
+   if (is_chromeos) {
+     deps += [ ":serialization" ]
+   }

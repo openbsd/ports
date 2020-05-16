@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_process_process_metrics_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/base/process/process_metrics.cc
+--- src/3rdparty/chromium/base/process/process_metrics.cc.orig
++++ src/3rdparty/chromium/base/process/process_metrics.cc
+@@ -57,7 +57,7 @@ SystemMetrics SystemMetrics::Sample() {
+   SystemMetrics system_metrics;
+ 
+   system_metrics.committed_memory_ = GetSystemCommitCharge();
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   GetSystemMemoryInfo(&system_metrics.memory_info_);
+   GetVmStatInfo(&system_metrics.vmstat_info_);
+   GetSystemDiskInfo(&system_metrics.disk_info_);
+@@ -75,7 +75,7 @@ std::unique_ptr<Value> SystemMetrics::ToValue() const 
+   std::unique_ptr<DictionaryValue> res(new DictionaryValue());
+ 
+   res->SetInteger("committed_memory", static_cast<int>(committed_memory_));
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   std::unique_ptr<DictionaryValue> meminfo = memory_info_.ToValue();
+   std::unique_ptr<DictionaryValue> vmstat = vmstat_info_.ToValue();
+   meminfo->MergeDictionary(vmstat.get());
+@@ -126,7 +126,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+ }
+ #endif
+ 
+-#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX)
++#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+ int ProcessMetrics::CalculateIdleWakeupsPerSecond(
+     uint64_t absolute_idle_wakeups) {
+   return CalculateEventsPerSecond(absolute_idle_wakeups,

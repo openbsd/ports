@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ipc_ipc_message_utils_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ipc/ipc_message_utils.cc
+--- src/3rdparty/chromium/ipc/ipc_message_utils.cc.orig
++++ src/3rdparty/chromium/ipc/ipc_message_utils.cc
+@@ -348,7 +348,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
+   l->append(base::NumberToString(p));
+ }
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_FUCHSIA) || \
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD) || \
+     (defined(OS_ANDROID) && defined(ARCH_CPU_64_BITS))
+ void ParamTraits<long>::Log(const param_type& p, std::string* l) {
+   l->append(base::NumberToString(p));

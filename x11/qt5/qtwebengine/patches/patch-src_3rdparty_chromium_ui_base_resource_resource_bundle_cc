@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_base_resource_resource_bundle_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/base/resource/resource_bundle.cc
+--- src/3rdparty/chromium/ui/base/resource/resource_bundle.cc.orig
++++ src/3rdparty/chromium/ui/base/resource/resource_bundle.cc
+@@ -692,7 +692,7 @@ void ResourceBundle::ReloadFonts() {
+ }
+ 
+ ScaleFactor ResourceBundle::GetMaxScaleFactor() const {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   return max_scale_factor_;
+ #else
+   return GetSupportedScaleFactors().back();
+@@ -745,7 +745,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
+   // On platforms other than iOS, 100P is always a supported scale factor.
+   // For Windows we have a separate case in this function.
+   supported_scale_factors.push_back(SCALE_FACTOR_100P);
+-#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+   supported_scale_factors.push_back(SCALE_FACTOR_200P);
+ #endif
+ #endif

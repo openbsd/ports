@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_build_toolchain_gcc_solink_wrapper_py,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+
+Index: src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py
+--- src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py.orig
++++ src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py
+@@ -33,7 +33,7 @@ def CollectDynSym(args):
+   """Replaces: nm --format=posix -g -D $sofile | cut -f1-2 -d' '"""
+   toc = ''
+   nm = subprocess.Popen(wrapper_utils.CommandToRun([
+-      args.nm, '--format=posix', '-g', '-D', args.sofile]),
++      args.nm, '-g', '-D', args.sofile]),
+                         stdout=subprocess.PIPE, bufsize=-1)
+   for line in nm.stdout:
+     toc += ' '.join(line.split(' ', 2)[:2]) + '\n'

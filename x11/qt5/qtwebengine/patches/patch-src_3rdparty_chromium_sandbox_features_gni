@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_sandbox_features_gni,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/sandbox/features.gni
+--- src/3rdparty/chromium/sandbox/features.gni.orig
++++ src/3rdparty/chromium/sandbox/features.gni
+@@ -12,6 +12,6 @@ use_seccomp_bpf =
+     (is_linux || is_android) &&
+     (current_cpu == "x86" || current_cpu == "x64" || current_cpu == "arm" ||
+      current_cpu == "arm64" || current_cpu == "mipsel" ||
+-     current_cpu == "mips64el")
++     current_cpu == "mips64el") && !is_openbsd
+ 
+ use_seccomp_bpf = use_seccomp_bpf || is_nacl_nonsfi

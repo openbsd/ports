@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_v8_src_base_platform_platform-posix_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+
+Index: src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc
+--- src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc.orig
++++ src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc
+@@ -376,7 +376,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
+ 
+ // static
+ bool OS::HasLazyCommits() {
+-#if V8_OS_AIX || V8_OS_LINUX || V8_OS_MACOSX
++#if V8_OS_AIX || V8_OS_LINUX || V8_OS_MACOSX || V8_OS_OPENBSD
+   return true;
+ #else
+   // TODO(bbudge) Return true for all POSIX platforms.
