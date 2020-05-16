@@ -1,8 +1,17 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+$OpenBSD: patch-configure,v 1.2 2020/05/16 11:43:51 sthen Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
+@@ -533,7 +533,7 @@ EOF
+         printf 'No.\nCould not make tempdir for testing session-key support.\n'
+         errors=$((errors + 1))
+     elif ${CC} ${CFLAGS} ${gmime_cflags} _check_session_keys.c ${gmime_ldflags} -o _check_session_keys \
+-           && GNUPGHOME=${TEMP_GPG} gpg --batch --quiet --import < test/gnupg-secret-key.asc \
++           && GNUPGHOME=${TEMP_GPG} gpg2 --batch --quiet --import < test/gnupg-secret-key.asc \
+            && SESSION_KEY=$(GNUPGHOME=${TEMP_GPG} ./_check_session_keys) \
+            && [ $SESSION_KEY = 9:0BACD64099D1468AB07C796F0C0AC4851948A658A15B34E803865E9FC635F2F5 ]
+     then
 @@ -588,9 +588,9 @@ if ! pkg-config --exists zlib; then
    rm -f compat/gen_zlib_pc
  fi
