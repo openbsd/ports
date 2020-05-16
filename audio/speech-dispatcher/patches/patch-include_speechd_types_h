@@ -1,11 +1,12 @@
-$OpenBSD: patch-include_speechd_types_h,v 1.1 2013/04/17 16:26:35 ajacoutot Exp $
+$OpenBSD: patch-include_speechd_types_h,v 1.2 2020/05/16 12:00:07 ajacoutot Exp $
 
 TEMP_FAILURE_RETRY chunk taken from Debian via gnubiff
 (/usr/include/unistd.h in Debian is LGPL)
 
---- include/speechd_types.h.orig	Wed Apr 17 17:41:46 2013
-+++ include/speechd_types.h	Wed Apr 17 17:41:53 2013
-@@ -116,4 +116,17 @@ typedef struct {
+Index: include/speechd_types.h
+--- include/speechd_types.h.orig
++++ include/speechd_types.h
+@@ -115,4 +115,17 @@ typedef struct {
  	SPDVoice voice;
  } SPDMsgSettings;
  

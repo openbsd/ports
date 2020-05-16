@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_server_speechd_h,v 1.5 2016/08/27 20:44:08 ajacoutot Exp $
+$OpenBSD: patch-src_server_speechd_h,v 1.6 2020/05/16 12:00:07 ajacoutot Exp $
 
 speechd.h:63: error: redefinition of 'union semun'
 
---- src/server/speechd.h.orig	Wed Aug 10 04:12:10 2016
-+++ src/server/speechd.h	Sat Aug 27 22:41:04 2016
-@@ -57,7 +57,7 @@
+Index: src/server/speechd.h
+--- src/server/speechd.h.orig
++++ src/server/speechd.h
+@@ -55,7 +55,7 @@
  /* TODO: This fixes compilation for Mac OS X but might not be a correct
     solution for other platforms. A better check is needed, possibly including
     _POSIX_C_SOURCE and friends*/

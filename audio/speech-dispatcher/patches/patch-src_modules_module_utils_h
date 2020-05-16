@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_modules_module_utils_h,v 1.1 2020/05/16 12:00:07 ajacoutot Exp $
+
+error: invalid suffix on literal;
+C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
+
+Index: src/modules/module_utils.h
+--- src/modules/module_utils.h.orig
++++ src/modules/module_utils.h
+@@ -122,10 +122,10 @@ const char *module_name;
+ } while(0)
+ 
+ #define FATAL(msg) do { \
+-		fprintf(stderr, "FATAL ERROR in output module [%s:%d]:\n   "msg, \
++		fprintf(stderr, "FATAL ERROR in output module [%s:%d]:\n   " msg, \
+ 		        __FILE__, __LINE__); \
+ 		if (Debug > 1) \
+-			fprintf(CustomDebugFile, "FATAL ERROR in output module [%s:%d]:\n   "msg,	\
++			fprintf(CustomDebugFile, "FATAL ERROR in output module [%s:%d]:\n   " msg,	\
+ 			        __FILE__, __LINE__); \
+ 		exit(EXIT_FAILURE); \
+ } while (0)

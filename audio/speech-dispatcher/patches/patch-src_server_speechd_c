@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_server_speechd_c,v 1.4 2017/12/03 12:45:52 ajacoutot Exp $
+$OpenBSD: patch-src_server_speechd_c,v 1.5 2020/05/16 12:00:07 ajacoutot Exp $
+
 Index: src/server/speechd.c
 --- src/server/speechd.c.orig
 +++ src/server/speechd.c
-@@ -602,8 +602,10 @@ void speechd_init()
+@@ -603,8 +603,10 @@ void speechd_init()
  	if (g_module_supported() == FALSE)
  		DIE("Loadable modules not supported by current platform.\n");
  

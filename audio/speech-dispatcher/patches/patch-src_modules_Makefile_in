@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_modules_Makefile_in,v 1.1 2020/05/16 12:00:07 ajacoutot Exp $
+
+Index: src/modules/Makefile.in
+--- src/modules/Makefile.in.orig
++++ src/modules/Makefile.in
+@@ -696,7 +696,7 @@ sd_cicero_LDADD = $(top_builddir)/src/common/libcommon
+ @baratinoo_support_TRUE@sd_baratinoo_SOURCES = baratinoo.c baratinoo_compat.h $(audio_SOURCES) $(common_SOURCES)
+ @baratinoo_support_TRUE@sd_baratinoo_LDADD = $(top_builddir)/src/common/libcommon.la \
+ @baratinoo_support_TRUE@	$(audio_dlopen_modules) -lbaratinoo \
+-@baratinoo_support_TRUE@	-lpthread -ldl $(common_LDADD) \
++@baratinoo_support_TRUE@	-lpthread $(common_LDADD) \
+ @baratinoo_support_TRUE@	$(am__append_10)
+ @baratinoo_shim_TRUE@@baratinoo_support_TRUE@EXTRA_sd_baratinoo_DEPENDENCIES = libbaratinoo.so
+ @kali_support_TRUE@KALI_DIR = /usr/lib/kali

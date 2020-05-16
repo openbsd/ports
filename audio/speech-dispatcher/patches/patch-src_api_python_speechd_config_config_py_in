@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_api_python_speechd_config_config_py_in,v 1.3 2017/05/26 20:43:12 ajacoutot Exp $
+$OpenBSD: patch-src_api_python_speechd_config_config_py_in,v 1.4 2020/05/16 12:00:07 ajacoutot Exp $
+
 Index: src/api/python/speechd_config/config.py.in
 --- src/api/python/speechd_config/config.py.in.orig
 +++ src/api/python/speechd_config/config.py.in
@@ -11,7 +12,7 @@ Index: src/api/python/speechd_config/config.py.in
      parser.add_argument('-e', '--espeak', dest='use_espeak_synthesis',
              action="store_true", default=use_espeak_synthesis,
              help=_("Use espeak to synthesize messages"))
-@@ -318,6 +320,11 @@ is not installed."""))
+@@ -331,6 +333,11 @@ is not installed."""))
          report(_("Testing PULSE sound output"))
          return self.audio_try_play(type='pulse')
  
@@ -23,7 +24,7 @@ Index: src/api/python/speechd_config/config.py.in
      def diagnostics(self, speechd_running = True, output_modules=None,
              audio_output=None):
          """Perform a complete diagnostics"""
-@@ -370,6 +377,10 @@ what is wrong)"""), True):
+@@ -383,6 +390,10 @@ what is wrong)"""), True):
              if self.test_pulse():
                  working_audio += ["pulse"]
  
@@ -34,7 +35,7 @@ Index: src/api/python/speechd_config/config.py.in
          report(_("Testing whether Python Speech Dispatcher library is in path and importable"))
          python_speechd_working = self.python_speechd_in_path()
  
-@@ -616,7 +627,7 @@ Do you want to keep it?"""), False)
+@@ -632,7 +643,7 @@ Do you want to keep it?"""), False)
  
          self.default_audio_method = question_with_suggested_answers(
              "Default audio output method",
@@ -43,7 +44,7 @@ Index: src/api/python/speechd_config/config.py.in
              ["pulse", "libao", "alsa", "oss", "pulse,alsa"])
  
          default_speech_rate = question(
-@@ -780,6 +791,9 @@ def main():
+@@ -801,6 +812,9 @@ def main():
  
      elif options.test_pulse:
          test.audio_try_play(type='pulse')

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/12/03 12:45:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/05/16 12:00:08 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend
@@ -13,13 +13,13 @@ include/speech-dispatcher/speechd_types.h
 @info info/speech-dispatcher-cs.info
 @info info/speech-dispatcher.info
 @info info/ssip.info
-lib/libspeechd.a
+@static-lib lib/libspeechd.a
 lib/libspeechd.la
 @lib lib/libspeechd.so.${LIBspeechd_VERSION}
 lib/pkgconfig/speech-dispatcher.pc
 lib/python${MODPY_VERSION}/site-packages/speechd/
 lib/python${MODPY_VERSION}/site-packages/speechd/__init__.py
-lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/speechd/client.py
 lib/python${MODPY_VERSION}/site-packages/speechd/paths.py
 lib/python${MODPY_VERSION}/site-packages/speechd_config/
 lib/python${MODPY_VERSION}/site-packages/speechd_config/__init__.py
-lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -44,12 +44,15 @@ lib/python${MODPY_VERSION}/site-packages/speechd_config/config.py
 lib/python${MODPY_VERSION}/site-packages/speechd_config/paths.py
 lib/speech-dispatcher/
 lib/speech-dispatcher-modules/
+@bin lib/speech-dispatcher-modules/sd_baratinoo
 @bin lib/speech-dispatcher-modules/sd_cicero
 @bin lib/speech-dispatcher-modules/sd_dummy
 @bin lib/speech-dispatcher-modules/sd_espeak
 @bin lib/speech-dispatcher-modules/sd_festival
 @bin lib/speech-dispatcher-modules/sd_generic
-lib/speech-dispatcher/spd_libao.so
+@bin lib/speech-dispatcher-modules/sd_ibmtts
+@bin lib/speech-dispatcher-modules/sd_kali
+@so lib/speech-dispatcher/spd_libao.so
 share/examples/speech-dispatcher/
 share/examples/speech-dispatcher/speech-dispatcher/
 @sample ${SYSCONFDIR}/speech-dispatcher/
@@ -59,6 +62,7 @@ share/examples/speech-dispatcher/speech-dispatcher/clients/emacs.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/clients/emacs.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/
+share/examples/speech-dispatcher/speech-dispatcher/modules/baratinoo.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/cicero.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/cicero.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/dtk-generic.conf
@@ -69,6 +73,7 @@ share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-mbrola-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak-mbrola-generic.conf
+share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-ng-mbrola-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-ng.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak.conf
@@ -80,8 +85,10 @@ share/examples/speech-dispatcher/speech-dispatcher/modules/ibmtts.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/ibmtts.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/ivona.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/ivona.conf
+share/examples/speech-dispatcher/speech-dispatcher/modules/kali.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/llia_phon-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/llia_phon-generic.conf
+share/examples/speech-dispatcher/speech-dispatcher/modules/mary-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/pico-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/swift-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/swift-generic.conf
@@ -101,8 +108,111 @@ share/speech-dispatcher/conf/clients/emacs.conf
 share/speech-dispatcher/conf/desktop/
 share/speech-dispatcher/conf/desktop/speechd.desktop
 share/speech-dispatcher/conf/modules/
+share/speech-dispatcher/conf/modules/baratinoo.conf
 share/speech-dispatcher/conf/modules/cicero.conf
 share/speech-dispatcher/conf/modules/espeak-ng.conf
 share/speech-dispatcher/conf/modules/espeak.conf
 share/speech-dispatcher/conf/modules/festival.conf
+share/speech-dispatcher/conf/modules/kali.conf
 share/speech-dispatcher/conf/speechd.conf
+share/speech-dispatcher/locale/
+share/speech-dispatcher/locale/an/
+share/speech-dispatcher/locale/an/symbols.dic
+share/speech-dispatcher/locale/ar/
+share/speech-dispatcher/locale/ar/symbols.dic
+share/speech-dispatcher/locale/bg/
+share/speech-dispatcher/locale/bg/symbols.dic
+share/speech-dispatcher/locale/ca/
+share/speech-dispatcher/locale/ca/symbols.dic
+share/speech-dispatcher/locale/cs/
+share/speech-dispatcher/locale/cs/symbols.dic
+share/speech-dispatcher/locale/da/
+share/speech-dispatcher/locale/da/symbols.dic
+share/speech-dispatcher/locale/de/
+share/speech-dispatcher/locale/de/symbols.dic
+share/speech-dispatcher/locale/el/
+share/speech-dispatcher/locale/el/symbols.dic
+share/speech-dispatcher/locale/en/
+share/speech-dispatcher/locale/en/symbols.dic
+share/speech-dispatcher/locale/es/
+share/speech-dispatcher/locale/es/symbols.dic
+share/speech-dispatcher/locale/es_CO/
+share/speech-dispatcher/locale/es_CO/symbols.dic
+share/speech-dispatcher/locale/fa/
+share/speech-dispatcher/locale/fa/symbols.dic
+share/speech-dispatcher/locale/fi/
+share/speech-dispatcher/locale/fi/symbols.dic
+share/speech-dispatcher/locale/fr/
+share/speech-dispatcher/locale/fr/symbols.dic
+share/speech-dispatcher/locale/ga/
+share/speech-dispatcher/locale/ga/symbols.dic
+share/speech-dispatcher/locale/gl/
+share/speech-dispatcher/locale/gl/symbols.dic
+share/speech-dispatcher/locale/he/
+share/speech-dispatcher/locale/he/symbols.dic
+share/speech-dispatcher/locale/hi/
+share/speech-dispatcher/locale/hi/symbols.dic
+share/speech-dispatcher/locale/hr/
+share/speech-dispatcher/locale/hr/symbols.dic
+share/speech-dispatcher/locale/hu/
+share/speech-dispatcher/locale/hu/symbols.dic
+share/speech-dispatcher/locale/is/
+share/speech-dispatcher/locale/is/symbols.dic
+share/speech-dispatcher/locale/it/
+share/speech-dispatcher/locale/it/symbols.dic
+share/speech-dispatcher/locale/ja/
+share/speech-dispatcher/locale/ja/symbols.dic
+share/speech-dispatcher/locale/ka/
+share/speech-dispatcher/locale/ka/symbols.dic
+share/speech-dispatcher/locale/kn/
+share/speech-dispatcher/locale/kn/symbols.dic
+share/speech-dispatcher/locale/ko/
+share/speech-dispatcher/locale/ko/symbols.dic
+share/speech-dispatcher/locale/lt/
+share/speech-dispatcher/locale/lt/symbols.dic
+share/speech-dispatcher/locale/my/
+share/speech-dispatcher/locale/my/symbols.dic
+share/speech-dispatcher/locale/nb_NO/
+share/speech-dispatcher/locale/nb_NO/symbols.dic
+share/speech-dispatcher/locale/nl/
+share/speech-dispatcher/locale/nl/symbols.dic
+share/speech-dispatcher/locale/nn_NO/
+share/speech-dispatcher/locale/nn_NO/symbols.dic
+share/speech-dispatcher/locale/pa/
+share/speech-dispatcher/locale/pa/symbols.dic
+share/speech-dispatcher/locale/pl/
+share/speech-dispatcher/locale/pl/symbols.dic
+share/speech-dispatcher/locale/pt_BR/
+share/speech-dispatcher/locale/pt_BR/symbols.dic
+share/speech-dispatcher/locale/pt_PT/
+share/speech-dispatcher/locale/pt_PT/symbols.dic
+share/speech-dispatcher/locale/ro/
+share/speech-dispatcher/locale/ro/symbols.dic
+share/speech-dispatcher/locale/ru/
+share/speech-dispatcher/locale/ru/symbols.dic
+share/speech-dispatcher/locale/sk/
+share/speech-dispatcher/locale/sk/symbols.dic
+share/speech-dispatcher/locale/sl/
+share/speech-dispatcher/locale/sl/symbols.dic
+share/speech-dispatcher/locale/sq/
+share/speech-dispatcher/locale/sq/symbols.dic
+share/speech-dispatcher/locale/sr/
+share/speech-dispatcher/locale/sr/symbols.dic
+share/speech-dispatcher/locale/sv/
+share/speech-dispatcher/locale/sv/symbols.dic
+share/speech-dispatcher/locale/ta/
+share/speech-dispatcher/locale/ta/symbols.dic
+share/speech-dispatcher/locale/tr/
+share/speech-dispatcher/locale/tr/symbols.dic
+share/speech-dispatcher/locale/uk/
+share/speech-dispatcher/locale/uk/symbols.dic
+share/speech-dispatcher/locale/vi/
+share/speech-dispatcher/locale/vi/symbols.dic
+share/speech-dispatcher/locale/zh/
+share/speech-dispatcher/locale/zh/symbols.dic
+share/speech-dispatcher/locale/zh_CN/
+share/speech-dispatcher/locale/zh_CN/symbols.dic
+share/speech-dispatcher/locale/zh_HK/
+share/speech-dispatcher/locale/zh_HK/symbols.dic
+share/speech-dispatcher/locale/zh_TW/
+share/speech-dispatcher/locale/zh_TW/symbols.dic
