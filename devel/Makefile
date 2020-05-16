@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1968 2020/05/14 14:54:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.1969 2020/05/16 11:04:12 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -556,6 +556,7 @@
      SUBDIR += p5-Cache-Memcached
      SUBDIR += p5-Cache-Mmap
      SUBDIR += p5-Cache-Simple-TimedExpiry
+     SUBDIR += p5-Cairo-GObject
      SUBDIR += p5-Canary-Stability
      SUBDIR += p5-Carp-Always
      SUBDIR += p5-Carp-Assert
