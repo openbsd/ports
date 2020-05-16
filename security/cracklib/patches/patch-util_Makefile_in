@@ -1,0 +1,19 @@
+$OpenBSD: patch-util_Makefile_in,v 1.1 2020/05/16 14:03:39 ajacoutot Exp $
+
+From 77082c41f3c6fddbf973b5bf7410efc9080e8585 Mon Sep 17 00:00:00 2001
+From: Fabrice Fontaine <fontaine.fabrice@gmail.com>
+Date: Sat, 20 Apr 2019 18:43:44 +0200
+Subject: [PATCH] util/Makefile.am: fix link with lintl
+
+Index: util/Makefile.in
+--- util/Makefile.in.orig
++++ util/Makefile.in
+@@ -376,7 +376,7 @@ dist_sbin_SCRIPTS = create-cracklib-dict cracklib-form
+ LDADD = ../lib/libcrack.la
+ AM_CPPFLAGS = -I. -I.. -I$(top_srcdir)/lib '-DDEFAULT_CRACKLIB_DICT="$(DEFAULT_CRACKLIB_DICT)"' -Wall
+ cracklib_check_SOURCES = check.c
+-cracklib_check_LDADD = $(LDADD)
++cracklib_check_LDADD = $(LDADD) $(LTLIBINTL)
+ cracklib_packer_SOURCES = packer.c
+ cracklib_packer_LDADD = $(LDADD)
+ cracklib_unpacker_SOURCES = unpacker.c

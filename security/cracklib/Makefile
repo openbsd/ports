@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/05/16 14:03:39 ajacoutot Exp $
 
 COMMENT =		sensible unix password cracker
 
-DISTNAME =		cracklib-2.9.5
+V =			2.9.7
+DISTNAME =		cracklib-${V}
 SHARED_LIBS =		crack	0.4	# 11.0
 CATEGORIES =		security
-REVISION =		0
 
 HOMEPAGE =		http://sourceforge.net/projects/cracklib/
 
@@ -16,21 +16,22 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c iconv intl z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cracklib/}
+MASTER_SITES =		https://github.com/cracklib/cracklib/releases/download/v${V}/
 
-MODULES =		lang/python
+BUILD_DEPENDS =		devel/gettext,-tools
+LIB_DEPENDS =		devel/gettext,-runtime
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--without-x \
-			--with-default-dict=${PREFIX}/share/cracklib/cracklib-small
+CONFIGURE_ARGS =	--with-default-dict=${PREFIX}/share/cracklib/cracklib-small \
+			--without-python
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-  
-post-install:
-			/bin/sh ${WRKSRC}/util/cracklib-format ${WRKSRC}/dicts/cracklib-small | ${WRKSRC}/util/cracklib-packer  \
-			${WRKSRC}/dicts/cracklib-small
-			${INSTALL_DATA} ${WRKSRC}/dicts/cracklib-small.* ${PREFIX}/share/cracklib
 
 NO_TEST =		Yes
+
+post-install:
+	/bin/sh ${WRKSRC}/util/cracklib-format ${WRKSRC}/dicts/cracklib-small | \
+		${WRKSRC}/util/cracklib-packer ${WRKSRC}/dicts/cracklib-small
+	${INSTALL_DATA} ${WRKSRC}/dicts/cracklib-small.* ${PREFIX}/share/cracklib
 	
 .include <bsd.port.mk>
