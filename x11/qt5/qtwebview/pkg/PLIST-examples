@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST-examples,v 1.1 2020/05/16 07:53:22 rsadowski Exp $
+lib/qt5/examples/
+lib/qt5/examples/webview/
+lib/qt5/examples/webview/minibrowser/
+lib/qt5/examples/webview/minibrowser/+android/
+lib/qt5/examples/webview/minibrowser/+android/LoadProgressStyle.qml
+lib/qt5/examples/webview/minibrowser/LoadProgressStyle.qml
+lib/qt5/examples/webview/minibrowser/doc/
+lib/qt5/examples/webview/minibrowser/doc/images/
+lib/qt5/examples/webview/minibrowser/doc/images/webview-example.jpg
+lib/qt5/examples/webview/minibrowser/doc/src/
+lib/qt5/examples/webview/minibrowser/doc/src/minibrowser.qdoc
+lib/qt5/examples/webview/minibrowser/images/
+lib/qt5/examples/webview/minibrowser/images/left-32.png
+lib/qt5/examples/webview/minibrowser/images/refresh-32.png
+lib/qt5/examples/webview/minibrowser/images/right-32.png
+lib/qt5/examples/webview/minibrowser/images/stop-32.png
+lib/qt5/examples/webview/minibrowser/ios/
+lib/qt5/examples/webview/minibrowser/ios/Info.plist
+lib/qt5/examples/webview/minibrowser/macos/
+lib/qt5/examples/webview/minibrowser/macos/Info.plist
+lib/qt5/examples/webview/minibrowser/main.cpp
+lib/qt5/examples/webview/minibrowser/main.qml
+lib/qt5/examples/webview/minibrowser/minibrowser.pro
+lib/qt5/examples/webview/minibrowser/qml.qrc
+lib/qt5/examples/webview/webview.pro

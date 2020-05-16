@@ -1,5 +1,5 @@
 Qt WebView provides a way to display web content in a QML application without
-necessarily including a full web browser stack by using native APIs where
-it makes sense.
+necessarily including a full web browser stack by using native APIs where it
+makes sense.
 
-This package contains actual library to be used by apps.
+This package contains actual libraries to be used by apps.

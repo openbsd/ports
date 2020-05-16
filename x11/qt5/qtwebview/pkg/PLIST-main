@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2020/05/16 07:53:22 rsadowski Exp $
+include/X11/qt5/
+include/X11/qt5/QtWebView/
+include/X11/qt5/QtWebView/${VERSION}/
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qabstractwebview_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qnativeviewcontroller_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qquickviewcontroller_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qquickwebview_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qquickwebviewloadrequest_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qwebview_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qwebviewfactory_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qwebviewinterface_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qwebviewloadrequest_p.h
+include/X11/qt5/QtWebView/${VERSION}/QtWebView/private/qwebviewplugin_p.h
+include/X11/qt5/QtWebView/QtWebView
+include/X11/qt5/QtWebView/QtWebViewDepends
+include/X11/qt5/QtWebView/QtWebViewVersion
+include/X11/qt5/QtWebView/qtwebviewfunctions.h
+include/X11/qt5/QtWebView/qtwebviewversion.h
+include/X11/qt5/QtWebView/qwebview_global.h
+@lib lib/libQt5WebView.so.${LIBQt5WebView_VERSION}
+lib/pkgconfig/Qt5WebView.pc
+lib/qt5/
+lib/qt5/cmake/
+lib/qt5/cmake/Qt5WebView/
+lib/qt5/cmake/Qt5WebView/Qt5WebViewConfig.cmake
+lib/qt5/cmake/Qt5WebView/Qt5WebViewConfigVersion.cmake
+lib/qt5/cmake/Qt5WebView/Qt5WebView_QWebEngineWebViewPlugin.cmake
+lib/qt5/libQt5WebView.la
+lib/qt5/libQt5WebView.prl
+@lib lib/qt5/libQt5WebView.so.${LIBQt5WebView_VERSION}
+lib/qt5/mkspecs/
+lib/qt5/mkspecs/modules/
+lib/qt5/mkspecs/modules/qt_lib_webview.pri
+lib/qt5/mkspecs/modules/qt_lib_webview_private.pri
+lib/qt5/pkgconfig/
+lib/qt5/pkgconfig/Qt5WebView.pc
+lib/qt5/plugins/
+lib/qt5/plugins/webview/
+@so lib/qt5/plugins/webview/libqtwebview_webengine.so
+lib/qt5/qml/
+lib/qt5/qml/QtWebView/
+@so lib/qt5/qml/QtWebView/libdeclarative_webview.so
+lib/qt5/qml/QtWebView/plugins.qmltypes
+lib/qt5/qml/QtWebView/qmldir
