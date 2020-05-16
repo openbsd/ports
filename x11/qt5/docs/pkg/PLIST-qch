@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-qch,v 1.2 2017/07/29 00:07:13 zhuk Exp $
+@comment $OpenBSD: PLIST-qch,v 1.3 2020/05/16 09:43:44 rsadowski Exp $
 @conflict qt3d-qch-*
 @conflict qtactiveqt-qch-*
 @conflict qtbase-qch-*
@@ -64,62 +64,26 @@
 @pkgpath x11/qt5/qtwebsockets,-qch
 @pkgpath x11/qt5/qtx11extras,-qch
 @pkgpath x11/qt5/qtxmlpatterns,-qch
-share/doc/qt5/activeqt.qch
-share/doc/qt5/assistant.qch
-share/doc/qt5/qdoc.qch
-share/doc/qt5/qmake.qch
-share/doc/qt5/qt3d.qch
-share/doc/qt5/qtassistant.qch
-share/doc/qt5/qtbluetooth.qch
-share/doc/qt5/qtcanvas3d.qch
-share/doc/qt5/qtcharts.qch
-share/doc/qt5/qtconcurrent.qch
-share/doc/qt5/qtcore.qch
-share/doc/qt5/qtdatavis3d.qch
-share/doc/qt5/qtdbus.qch
-share/doc/qt5/qtdesigner.qch
-share/doc/qt5/qtdoc.qch
-share/doc/qt5/qtgamepad.qch
-share/doc/qt5/qtgraphicaleffects.qch
-share/doc/qt5/qtgui.qch
-share/doc/qt5/qthelp.qch
-share/doc/qt5/qtimageformats.qch
-share/doc/qt5/qtlabscalendar.qch
-share/doc/qt5/qtlabsplatform.qch
-share/doc/qt5/qtlinguist.qch
-share/doc/qt5/qtlocation.qch
-share/doc/qt5/qtmultimedia.qch
-share/doc/qt5/qtnetwork.qch
-share/doc/qt5/qtnetworkauth.qch
-share/doc/qt5/qtnfc.qch
-share/doc/qt5/qtopengl.qch
-share/doc/qt5/qtplatformheaders.qch
-share/doc/qt5/qtpositioning.qch
-share/doc/qt5/qtprintsupport.qch
-share/doc/qt5/qtpurchasing.qch
-share/doc/qt5/qtqml.qch
-share/doc/qt5/qtquick.qch
-share/doc/qt5/qtquickcontrols.qch
-share/doc/qt5/qtquickcontrols2.qch
-share/doc/qt5/qtquickdialogs.qch
-share/doc/qt5/qtquickextras.qch
-share/doc/qt5/qtremoteobjects.qch
-share/doc/qt5/qtscript.qch
-share/doc/qt5/qtscripttools.qch
-share/doc/qt5/qtscxml.qch
-share/doc/qt5/qtsensors.qch
-share/doc/qt5/qtserialbus.qch
-share/doc/qt5/qtserialport.qch
-share/doc/qt5/qtspeech.qch
-share/doc/qt5/qtsql.qch
-share/doc/qt5/qtsvg.qch
-share/doc/qt5/qttestlib.qch
-share/doc/qt5/qtuitools.qch
-share/doc/qt5/qtvirtualkeyboard.qch
-share/doc/qt5/qtwebchannel.qch
-share/doc/qt5/qtwebkit.qch
-share/doc/qt5/qtwebsockets.qch
-share/doc/qt5/qtwidgets.qch
-share/doc/qt5/qtx11extras.qch
-share/doc/qt5/qtxml.qch
 share/doc/qt5/qtxmlpatterns.qch
+share/doc/qt5/qtx11extras.qch
+share/doc/qt5/qtwebsockets.qch
+share/doc/qt5/qtwebchannel.qch
+share/doc/qt5/qtvirtualkeyboard.qch
+share/doc/qt5/qtsvg.qch
+share/doc/qt5/qtspeech.qch
+share/doc/qt5/qtserialport.qch
+share/doc/qt5/qtserialbus.qch
+share/doc/qt5/qtsensors.qch
+share/doc/qt5/qtscxml.qch
+share/doc/qt5/qtscript.qch
+share/doc/qt5/qtremoteobjects.qch
+share/doc/qt5/qtpurchasing.qch
+share/doc/qt5/qtnetworkauth.qch
+share/doc/qt5/qtmultimedia.qch
+share/doc/qt5/qtlocation.qch
+share/doc/qt5/qtimageformats.qch
+share/doc/qt5/qtgraphicaleffects.qch
+share/doc/qt5/qtgamepad.qch
+share/doc/qt5/qtdoc.qch
+share/doc/qt5/qtcharts.qch
+share/doc/qt5/qt3d.qch

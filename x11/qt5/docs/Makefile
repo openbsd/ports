@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/13 16:53:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/05/16 09:43:44 rsadowski Exp $
 
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
@@ -13,13 +13,9 @@ SUBPACKAGE ?=		-html
 WANTLIB-qch =
 WANTLIB-html =
 
-#qtbase qtquickcontrols2 qttools qtquickcontrols 
 DOC_COMPONENTS = \
 		qt3d \
 		qtcharts \
-		qtconnectivity \
-		qtdatavis3d \
-		qtdeclarative \
 		qtdoc \
 		qtgamepad \
 		qtgraphicaleffects \
@@ -38,15 +34,12 @@ DOC_COMPONENTS = \
 		qtsvg \
 		qtvirtualkeyboard \
 		qtwebchannel \
-		qtwebkit \
 		qtwebsockets \
 		qtx11extras \
 		qtxmlpatterns
 
 MASTER_SITES0 =	https://download.qt.io/community_releases/${DIST_VERSION:R}/${QT5_WEBKIT_VERSION}-final/
-MASTER_SITES1 =	https://ftp1.nluug.nl/languages/qt/community_releases/${DIST_VERSION:R}/${QT5_WEBKIT_VERSION}-final/
-DISTFILES =	${DOC_COMPONENTS:Nqtwebkit:C/$/-everywhere-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}:0
-DISTFILES +=	qtwebkit-opensource-src-${QT5_WEBKIT_VERSION}${EXTRACT_SUFX}:1
+DISTFILES =	${DOC_COMPONENTS:C/$/-everywhere-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}
 
 MODQT5_USE_CXX11 =	No
 CONFIGURE_STYLE =	none
@@ -93,17 +86,20 @@ do-build:
 	                          --outputdir ${WRKBUILD} \
 	                          --installdir ${DOCDIR} \
 	                          ${MASTER_CONF}
-	@for qhp in ${WRKBUILD}/html/*.qhp; do \
+	@for qhp in ${WRKBUILD}/*/*.qhp; do \
 		qch=${WRKBUILD}/`basename $${qhp%.qhp}.qch`; \
 		echo "building $$qch"; \
 		${SETENV} ${MAKE_ENV} \
 		${MODQT5_LIBDIR}/bin/qhelpgenerator $$qhp -o $$qch; \
 	done
-	rm -f ${WRKBUILD}/html/.index
 
 do-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	cp -R ${WRKBUILD}/*.qch ${WRKBUILD}/html ${WRKBUILD}/images \
-	      ${DOCDIR}
+	${INSTALL_DATA_DIR} ${DOCDIR}/
+	for c in ${DOC_COMPONENTS}; do \
+		${INSTALL_DATA_DIR} ${DOCDIR}/$$c; \
+		cp -R ${WRKBUILD}/$$c.qch ${DOCDIR}/; \
+		cp -R ${WRKBUILD}/$$c/*.html ${WRKBUILD}/$$c/images \
+		${WRKBUILD}/$$c/style ${DOCDIR}/$$c; \
+	done
 
 .include <bsd.port.mk>
