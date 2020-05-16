@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2020/04/06 18:30:58 bket Exp $
+# $OpenBSD: Makefile,v 1.56 2020/05/16 10:22:48 bket Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-8.08
+DISTNAME=	openconnect-8.10
 
 SHARED_LIBS +=  openconnect               4.5 # 5.6
 
@@ -43,7 +43,8 @@ LIB_DEPENDS=	archivers/lz4 \
 # further work
 TEST_DEPENDS=	net/ocserv
 
-FAKE_FLAGS=	pkgdatadir=${PREFIX}/share/doc/openconnect
+FAKE_FLAGS=	bashcompletiondir=${PREFIX}/share/examples/openconnect/bash_completion.d \
+		pkgdatadir=${PREFIX}/share/doc/openconnect
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

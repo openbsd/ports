@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/04/06 18:30:59 bket Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/05/16 10:22:48 bket Exp $
 include/openconnect.h
 @static-lib lib/libopenconnect.a
 lib/libopenconnect.la
@@ -50,6 +50,11 @@ share/doc/openconnect/tncc.html
 share/doc/openconnect/token.html
 share/doc/openconnect/tpm.html
 share/doc/openconnect/vpnc-script.html
+share/examples/openconnect/
+share/examples/openconnect/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/openconnect/bash_completion.d/openconnect
+@sample ${SYSCONFDIR}/bash_completion.d/openconnect
 share/locale/ar/LC_MESSAGES/openconnect.mo
 share/locale/bs/LC_MESSAGES/openconnect.mo
 share/locale/ca/LC_MESSAGES/openconnect.mo
