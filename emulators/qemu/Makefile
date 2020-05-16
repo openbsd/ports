@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2020/05/15 07:26:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.197 2020/05/16 09:59:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
@@ -32,7 +32,7 @@ MODPY_RUNDEP=	No
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=	devel/gettext,-tools \
-		textproc/py-sphinx
+		textproc/py-sphinx${MODPY_FLAVOR}
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
 		archivers/zstd \
