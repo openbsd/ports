@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.134 2020/04/30 06:51:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.135 2020/05/16 10:00:29 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -797,6 +797,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/macie/2017-12-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/macie/2017-12-19/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/macie/2017-12-19/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/macie/2017-12-19/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/macie2/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/macie2/2020-01-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/macie2/2020-01-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/macie2/2020-01-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/managedblockchain/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/managedblockchain/2018-09-24/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/managedblockchain/2018-09-24/paginators-1.json
