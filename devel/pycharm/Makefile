@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.26 2020/04/10 12:58:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2020/05/16 06:11:13 rsadowski Exp $
 
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2020.1
+V=			2020.1.1
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		https://www.jetbrains.com/pycharm/
 
-MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER =		Lucas Raab <tuftedocelot@fastmail.fm>
 
 # Apache v2.0
 PERMIT_PACKAGE=	Yes
