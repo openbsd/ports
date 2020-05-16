@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2020/02/17 20:33:00 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2020/05/16 18:41:15 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
 include/poppler/Annot.h
 include/poppler/Array.h
+include/poppler/BBoxOutputDev.h
 include/poppler/CMap.h
 include/poppler/CachedFile.h
 include/poppler/CairoFontEngine.h
