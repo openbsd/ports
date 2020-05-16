@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/03/13 16:53:50 rsadowski Exp $
-lib/qt5/qml/QtCanvas3D/
-lib/qt5/qml/QtCanvas3D/libqtcanvas3d.so
-lib/qt5/qml/QtCanvas3D/plugins.qmltypes
-lib/qt5/qml/QtCanvas3D/qmldir
