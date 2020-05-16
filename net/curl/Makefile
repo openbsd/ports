@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.152 2020/03/12 13:30:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.153 2020/05/16 21:47:11 naddy Exp $
 
-COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
+COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-7.69.1
-SHARED_LIBS=	curl                 26.3     # 10.0
+DISTNAME=	curl-7.70.0
+SHARED_LIBS=	curl                 26.4     # 10.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.haxx.se/
 
@@ -34,6 +34,8 @@ CONFIGURE_ENV+= \
     curl_cv_func_select_args="int,fd_set *,struct timeval *,int" \
     curl_cv_func_recv_args="int,void *,size_t,int,ssize_t" \
     curl_cv_func_send_args="int,const void *,size_t,int,ssize_t"
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # Note:
 # use ulimit -p 256 for test
