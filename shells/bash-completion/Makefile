@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/15 11:27:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/16 11:16:09 sthen Exp $
 
 COMMENT =		programmable completion functions for bash
 
@@ -19,7 +19,7 @@ MODPY_RUNDEP =		No
 BUILD_DEPENDS =		shells/bash
 TEST_DEPENDS =		devel/dejagnu \
 			devel/py-pexpect${MODPY_FLAVOR} \
-			devel/py-test,${MODPY_FLAVOR}
+			devel/py-test${MODPY_FLAVOR}
 
 USE_GMAKE =		Yes
 
