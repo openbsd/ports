@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1199 2020/05/14 18:05:14 paco Exp $
+# $OpenBSD: Makefile,v 1.1200 2020/05/16 12:42:40 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -50,6 +50,7 @@
      SUBDIR += climm
      SUBDIR += cnupm
      SUBDIR += coccinella
+     SUBDIR += coredns
      SUBDIR += cppzmq
      SUBDIR += crawl
      SUBDIR += ctrace
