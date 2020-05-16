@@ -1,4 +1,4 @@
-# $OpenBSD: Dependency.pm,v 1.3 2019/12/15 00:57:49 afresh1 Exp $
+# $OpenBSD: Dependency.pm,v 1.4 2020/05/16 21:44:23 sthen Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -100,13 +100,13 @@ sub format
 	}
 
 	if ( $self->_arr_equal( $fmt{'build'}, $fmt{'run'} ) ) {
-		@{ $fmt{'run'} } = '${BUILD_DEPENDS}';
+		@{ $fmt{'build'} } = '${RUN_DEPENDS}';
 	}
 
-	if ( $self->_arr_equal( $fmt{'test'}, $fmt{'build'} ) ) {
-		@{ $fmt{'test'} } = '${BUILD_DEPENDS}';
-	} elsif ( $self->_arr_equal( $fmt{'test'}, $fmt{'run'} ) ) {
+	if ( $self->_arr_equal( $fmt{'test'}, $fmt{'run'} ) ) {
 		@{ $fmt{'test'} } = '${RUN_DEPENDS}';
+	} elsif ( $self->_arr_equal( $fmt{'test'}, $fmt{'build'} ) ) {
+		@{ $fmt{'test'} } = '${BUILD_DEPENDS}';
 	}
 
 	return \%fmt;
