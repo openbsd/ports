@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/11/02 14:18:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2020/05/16 10:41:32 ajacoutot Exp $
 
 COMMENT =		library to generate, and check strengh of passwords
 
@@ -8,6 +8,7 @@ GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
 GH_TAGNAME =		libpwquality-${V}
 DISTNAME =		libpwquality-${V}
+REVISION =		0
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 
@@ -23,6 +24,7 @@ WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += c crack iconv intl pthread z
 
 MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 USE_GMAKE =		Yes
 
@@ -37,6 +39,8 @@ CONFIGURE_ARGS =	--with-python-binary=python${MODPY_VERSION} \
 			--with-sconfigdir=${SYSCONFDIR} \
 			--disable-pam
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 FAKE_FLAGS =		secureconfdir=${PREFIX}/share/examples/libpwquality/
 
