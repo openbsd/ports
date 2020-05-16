@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/16 11:03:30 sthen Exp $
+${P5ARCH}/Cairo/GObject/
+${P5ARCH}/Cairo/GObject.pm
+${P5ARCH}/Cairo/GObject/Install/
+${P5ARCH}/Cairo/GObject/Install/Files.pm
+${P5ARCH}/auto/Cairo/GObject/
+@so ${P5ARCH}/auto/Cairo/GObject/GObject.so
+@man man/man3p/Cairo::GObject.3p

@@ -1,0 +1,7 @@
+Cairo::GObject registers Cairo's types (Cairo::Context, Cairo::Surface,
+etc.) with Glib's type systems so that they can be used normally in
+signals and properties. If you have encountered an error akin to this:
+
+GType CairoContext (15497280) is not registered with gperl
+
+-- then you need to use Cairo::GObject.
