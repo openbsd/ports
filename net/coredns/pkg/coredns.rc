@@ -1,0 +1,17 @@
+#!/bin/ksh
+#
+# $OpenBSD: coredns.rc,v 1.1.1.1 2020/05/16 12:42:14 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/coredns"
+daemon_flags="-conf ${SYSCONFDIR}/coredns/Corefile"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} 2>&1 |
+		logger -p daemon.info -t coredns"
+}
+
+rc_cmd $1

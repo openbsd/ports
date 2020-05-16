@@ -1,0 +1,33 @@
+(base) {
+    errors
+    #log
+
+    # enable metrics: http://localhost:9153/metrics
+    prometheus
+
+    # disable IPv6
+    #template ANY AAAA . {
+    #    rcode NXDOMAIN
+    #}
+}
+
+(cache) {
+    cache {
+#        success 1024
+#        denial 0
+#        prefetch 128 30s 10%
+    }
+}
+
+.:53 {
+    import base
+    import cache
+    forward . 8.8.8.8 1.1.1.1
+    health 127.0.0.1:8080
+    #import /etc/coredns/conf.d/*.conf
+}
+
+#consul:53 {
+#    import base
+#    forward . 127.0.0.1:8600
+#}
