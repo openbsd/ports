@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2019/05/06 21:09:52 steven Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/05/16 08:08:22 steven Exp $
 bin/mkoctfile
 @bin bin/mkoctfile-${VERSION}
 bin/octave
@@ -776,13 +776,13 @@ lib/octave/${VERSION}/convhulln.a
 lib/octave/${VERSION}/dmperm.a
 lib/octave/${VERSION}/fftw.a
 lib/octave/${VERSION}/gzip.a
-lib/octave/${VERSION}/liboctave.a
+@static-lib lib/octave/${VERSION}/liboctave.a
 lib/octave/${VERSION}/liboctave.la
 @lib lib/octave/${VERSION}/liboctave.so.${LIBoctave_VERSION}
-lib/octave/${VERSION}/liboctgui.a
+@static-lib lib/octave/${VERSION}/liboctgui.a
 lib/octave/${VERSION}/liboctgui.la
 @lib lib/octave/${VERSION}/liboctgui.so.${LIBoctgui_VERSION}
-lib/octave/${VERSION}/liboctinterp.a
+@static-lib lib/octave/${VERSION}/liboctinterp.a
 lib/octave/${VERSION}/liboctinterp.la
 @lib lib/octave/${VERSION}/liboctinterp.so.${LIBoctinterp_VERSION}
 lib/octave/${VERSION}/oct/
@@ -844,6 +844,9 @@ libexec/octave/site/exec/${GNU_ARCH}/
 @man man/man1/octave-config.1
 @man man/man1/octave.1
 share/applications/org.octave.Octave.desktop
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/octave.png
 share/icons/hicolor/128x128/apps/octave.png
 share/icons/hicolor/16x16/apps/octave.png
 share/icons/hicolor/22x22/apps/octave.png
@@ -1107,6 +1110,7 @@ share/octave/${VERSION}/etc/tests/fixed/classes/@Sneetch/display.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/Snork.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/cack.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/ctranspose.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/display.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/double.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/end.m
@@ -1139,6 +1143,7 @@ share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/subsindex.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/subsref.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/tattack.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/times.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/transpose.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/uminus.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/uplus.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Snork/vertcat.m
@@ -1386,6 +1391,7 @@ share/octave/${VERSION}/etc/tests/libinterp/octave-value/ov-usr-fcn.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/octave-value/ov.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/octave.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/
+share/octave/${VERSION}/etc/tests/libinterp/parse-tree/bp-table.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/lex.ll-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/oct-parse.yy-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/pt-assign.cc-tst

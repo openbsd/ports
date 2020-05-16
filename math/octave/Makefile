@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.119 2020/05/05 18:41:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.120 2020/05/16 08:08:21 steven Exp $
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	5.1.0
+VERSION =	5.2.0
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
-REVISION =	5
 
-SHARED_LIBS +=	octave		12.0
-SHARED_LIBS +=	octgui		6.0
-SHARED_LIBS +=	octinterp	11.0
+SHARED_LIBS +=	octave		13.0
+SHARED_LIBS +=	octgui		7.0
+SHARED_LIBS +=	octinterp	12.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
@@ -17,21 +16,6 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
-
-WANTLIB += ${COMPILER_LIBCXX} FLAC GL GLU GraphicsMagick GraphicsMagick++
-WANTLIB += ICE Qt5Core Qt5Gui Qt5Help Qt5Network Qt5OpenGL Qt5PrintSupport
-WANTLIB += Qt5Sql Qt5Widgets Qt5Xml SM X11 X11-xcb Xdamage Xext
-WANTLIB += Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm amd arpack
-WANTLIB += blas btf bz2 c camd ccolamd cholmod colamd crypto curl
-WANTLIB += curses cxsparse double-conversion drm ereadline execinfo
-WANTLIB += expat fftw3 fftw3_threads fftw3f fftw3f_threads fontconfig
-WANTLIB += freetype gl2ps glapi glib-2.0 glpk glut gmp graphite2
-WANTLIB += gthread-2.0 harfbuzz hdf5 iconv icudata icui18n icuio
-WANTLIB += icuuc intl klu lapack lcms2 ltdl lzma m nghttp2 ogg
-WANTLIB += pcre pcre2-16 png portaudio qhull qrupdate qscintilla2_qt5
-WANTLIB += sndfile sndio ssl suitesparseconfig umfpack util vorbis
-WANTLIB += vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
-WANTLIB += xcb-sync xcb-xfixes xshmfence z zstd
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 
@@ -69,6 +53,23 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		net/curl \
 		print/gl2ps \
 		x11/qt5/qttools,-main
+
+WANTLIB += ${MODFORTRAN_WANTLIB}
+WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE
+WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Widgets Qt5Core
+WANTLIB += Qt5Help Qt5Xml Qt5Sql qscintilla2_qt5 SM X11 X11-xcb Xdamage
+WANTLIB += Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm amd
+WANTLIB += arpack blas bz2 c camd ccolamd cholmod colamd crypto curl
+WANTLIB += curses cxsparse double-conversion drm ereadline expat
+WANTLIB += execinfo fftw3 fftw3_threads fftw3f fftw3f_threads
+WANTLIB += fontconfig freetype gl2ps glapi glpk glut
+WANTLIB += glib-2.0 graphite2 gthread-2.0 harfbuzz icudata icuio
+WANTLIB += gmp hdf5 iconv icui18n icuuc intl lapack lcms2 ltdl lzma
+WANTLIB += m nghttp2 ogg pcre pcre2-16 png portaudio pthread qhull
+WANTLIB += qrupdate sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
+WANTLIB += umfpack util vorbis vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z zstd
+
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes

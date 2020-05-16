@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.14 2019/05/06 21:09:52 steven Exp $
+$OpenBSD: patch-configure,v 1.15 2020/05/16 08:08:22 steven Exp $
 
 Use GNU readline as our base readline lacks rl_prefer_env_winsize.
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -67197,13 +67197,13 @@ fi
+@@ -67123,13 +67123,13 @@ fi
  
      ac_octave_save_LIBS="$LIBS"
      LIBS="$TERM_LIBS"
@@ -22,7 +22,7 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -67242,7 +67242,7 @@ fi
+@@ -67168,7 +67168,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&5
  $as_echo "$ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&6; }
  if test "x$ac_cv_lib_readline_rl_set_keyboard_input_timeout" = xyes; then :
