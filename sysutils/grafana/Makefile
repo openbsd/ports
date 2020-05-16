@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2020/04/22 17:18:10 martin Exp $
+# $OpenBSD: Makefile,v 1.13 2020/05/16 11:22:13 martin Exp $
 
 COMMENT =	monitoring and metric analytics dashboards
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	grafana
-GH_TAGNAME =	v6.7.2
-REVISION =	0
+GH_TAGNAME =	v6.7.3
+BUILD_ID =	67951dc7df0e9bfd5186
 
 CATEGORIES =	sysutils
 
@@ -19,7 +19,8 @@ MASTER_SITES0 =	https://dl.grafana.com/oss/release/
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/go
-WANTLIB += c pthread
+WANTLIB +=	c pthread
+SUBST_VARS +=	BUILD_ID
 
 MODGO_FLAGS += -ldflags="-w -X main.version=${GH_TAGNAME:C/^v//}"
 
