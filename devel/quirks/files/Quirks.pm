@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.957 2020/05/15 10:24:00 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.958 2020/05/16 10:24:02 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1729,7 +1729,7 @@ my $cve = {
 	'net/lldpd' => 'lldpd-<0.7.18p0',
 	'net/mosquitto' => 'mosquitto-<1.5.6',
 	'net/ntp' => 'ntp-<4.2.8pl7',
-	'net/openconnect' => 'openconnect-<8.05',
+	'net/openconnect' => 'openconnect-<8.10',
 	'net/openvpn' => 'openvpn-<2.4.9',
 	'net/powerdns,-main' => 'powerdns-<4.1.5',
 	'net/powerdns,-mysql' => 'powerdns-mysql-<4.1.5',
