@@ -1,9 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/04/24 06:46:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/05/17 17:54:05 ajacoutot Exp $
 share/glib-2.0/schemas/99_Yaru.gschema.override
 share/gnome-shell/
-share/gnome-shell/extensions/
-share/gnome-shell/extensions/ubuntu-dock@ubuntu.com/
-share/gnome-shell/extensions/ubuntu-dock@ubuntu.com/yaru.css
 share/gnome-shell/modes/
 share/gnome-shell/modes/yaru.json
 share/gnome-shell/theme/
@@ -126,6 +123,7 @@ share/icons/Yaru/16x16/apps/
 share/icons/Yaru/16x16/apps/accessories-calculator.png
 share/icons/Yaru/16x16/apps/accessories-camera.png
 share/icons/Yaru/16x16/apps/accessories-character-map.png
+share/icons/Yaru/16x16/apps/accessories-dictionary.png
 share/icons/Yaru/16x16/apps/accessories-text-editor.png
 share/icons/Yaru/16x16/apps/address-book-app.png
 share/icons/Yaru/16x16/apps/amazon-store.png
@@ -182,7 +180,6 @@ share/icons/Yaru/16x16/apps/gnome-mines.png
 share/icons/Yaru/16x16/apps/gnome-music.png
 share/icons/Yaru/16x16/apps/gnome-photos.png
 share/icons/Yaru/16x16/apps/gnome-screenshot.png
-share/icons/Yaru/16x16/apps/gnome-software.png
 share/icons/Yaru/16x16/apps/gnome-sudoku.png
 share/icons/Yaru/16x16/apps/gnome-system-monitor.png
 share/icons/Yaru/16x16/apps/gnome-terminal.png
@@ -719,6 +716,7 @@ share/icons/Yaru/16x16@2x/apps/
 share/icons/Yaru/16x16@2x/apps/accessories-calculator.png
 share/icons/Yaru/16x16@2x/apps/accessories-camera.png
 share/icons/Yaru/16x16@2x/apps/accessories-character-map.png
+share/icons/Yaru/16x16@2x/apps/accessories-dictionary.png
 share/icons/Yaru/16x16@2x/apps/accessories-text-editor.png
 share/icons/Yaru/16x16@2x/apps/address-book-app.png
 share/icons/Yaru/16x16@2x/apps/amazon-store.png
@@ -775,7 +773,6 @@ share/icons/Yaru/16x16@2x/apps/gnome-mines.png
 share/icons/Yaru/16x16@2x/apps/gnome-music.png
 share/icons/Yaru/16x16@2x/apps/gnome-photos.png
 share/icons/Yaru/16x16@2x/apps/gnome-screenshot.png
-share/icons/Yaru/16x16@2x/apps/gnome-software.png
 share/icons/Yaru/16x16@2x/apps/gnome-sudoku.png
 share/icons/Yaru/16x16@2x/apps/gnome-system-monitor.png
 share/icons/Yaru/16x16@2x/apps/gnome-terminal.png
@@ -1316,6 +1313,7 @@ share/icons/Yaru/24x24/apps/
 share/icons/Yaru/24x24/apps/accessories-calculator.png
 share/icons/Yaru/24x24/apps/accessories-camera.png
 share/icons/Yaru/24x24/apps/accessories-character-map.png
+share/icons/Yaru/24x24/apps/accessories-dictionary.png
 share/icons/Yaru/24x24/apps/accessories-text-editor.png
 share/icons/Yaru/24x24/apps/address-book-app.png
 share/icons/Yaru/24x24/apps/amazon-store.png
@@ -1372,7 +1370,6 @@ share/icons/Yaru/24x24/apps/gnome-mines.png
 share/icons/Yaru/24x24/apps/gnome-music.png
 share/icons/Yaru/24x24/apps/gnome-photos.png
 share/icons/Yaru/24x24/apps/gnome-screenshot.png
-share/icons/Yaru/24x24/apps/gnome-software.png
 share/icons/Yaru/24x24/apps/gnome-sudoku.png
 share/icons/Yaru/24x24/apps/gnome-system-monitor.png
 share/icons/Yaru/24x24/apps/gnome-terminal.png
@@ -1913,6 +1910,7 @@ share/icons/Yaru/24x24@2x/apps/
 share/icons/Yaru/24x24@2x/apps/accessories-calculator.png
 share/icons/Yaru/24x24@2x/apps/accessories-camera.png
 share/icons/Yaru/24x24@2x/apps/accessories-character-map.png
+share/icons/Yaru/24x24@2x/apps/accessories-dictionary.png
 share/icons/Yaru/24x24@2x/apps/accessories-text-editor.png
 share/icons/Yaru/24x24@2x/apps/address-book-app.png
 share/icons/Yaru/24x24@2x/apps/amazon-store.png
@@ -1969,7 +1967,6 @@ share/icons/Yaru/24x24@2x/apps/gnome-mines.png
 share/icons/Yaru/24x24@2x/apps/gnome-music.png
 share/icons/Yaru/24x24@2x/apps/gnome-photos.png
 share/icons/Yaru/24x24@2x/apps/gnome-screenshot.png
-share/icons/Yaru/24x24@2x/apps/gnome-software.png
 share/icons/Yaru/24x24@2x/apps/gnome-sudoku.png
 share/icons/Yaru/24x24@2x/apps/gnome-system-monitor.png
 share/icons/Yaru/24x24@2x/apps/gnome-terminal.png
@@ -2497,6 +2494,7 @@ share/icons/Yaru/256x256/apps/
 share/icons/Yaru/256x256/apps/accessories-calculator.png
 share/icons/Yaru/256x256/apps/accessories-camera.png
 share/icons/Yaru/256x256/apps/accessories-character-map.png
+share/icons/Yaru/256x256/apps/accessories-dictionary.png
 share/icons/Yaru/256x256/apps/accessories-text-editor.png
 share/icons/Yaru/256x256/apps/address-book-app.png
 share/icons/Yaru/256x256/apps/amazon-store.png
@@ -2553,7 +2551,6 @@ share/icons/Yaru/256x256/apps/gnome-mines.png
 share/icons/Yaru/256x256/apps/gnome-music.png
 share/icons/Yaru/256x256/apps/gnome-photos.png
 share/icons/Yaru/256x256/apps/gnome-screenshot.png
-share/icons/Yaru/256x256/apps/gnome-software.png
 share/icons/Yaru/256x256/apps/gnome-sudoku.png
 share/icons/Yaru/256x256/apps/gnome-system-monitor.png
 share/icons/Yaru/256x256/apps/gnome-terminal.png
@@ -3081,6 +3078,7 @@ share/icons/Yaru/256x256@2x/apps/
 share/icons/Yaru/256x256@2x/apps/accessories-calculator.png
 share/icons/Yaru/256x256@2x/apps/accessories-camera.png
 share/icons/Yaru/256x256@2x/apps/accessories-character-map.png
+share/icons/Yaru/256x256@2x/apps/accessories-dictionary.png
 share/icons/Yaru/256x256@2x/apps/accessories-text-editor.png
 share/icons/Yaru/256x256@2x/apps/address-book-app.png
 share/icons/Yaru/256x256@2x/apps/amazon-store.png
@@ -3137,7 +3135,6 @@ share/icons/Yaru/256x256@2x/apps/gnome-mines.png
 share/icons/Yaru/256x256@2x/apps/gnome-music.png
 share/icons/Yaru/256x256@2x/apps/gnome-photos.png
 share/icons/Yaru/256x256@2x/apps/gnome-screenshot.png
-share/icons/Yaru/256x256@2x/apps/gnome-software.png
 share/icons/Yaru/256x256@2x/apps/gnome-sudoku.png
 share/icons/Yaru/256x256@2x/apps/gnome-system-monitor.png
 share/icons/Yaru/256x256@2x/apps/gnome-terminal.png
@@ -3665,6 +3662,7 @@ share/icons/Yaru/32x32/apps/
 share/icons/Yaru/32x32/apps/accessories-calculator.png
 share/icons/Yaru/32x32/apps/accessories-camera.png
 share/icons/Yaru/32x32/apps/accessories-character-map.png
+share/icons/Yaru/32x32/apps/accessories-dictionary.png
 share/icons/Yaru/32x32/apps/accessories-text-editor.png
 share/icons/Yaru/32x32/apps/address-book-app.png
 share/icons/Yaru/32x32/apps/amazon-store.png
@@ -3721,7 +3719,6 @@ share/icons/Yaru/32x32/apps/gnome-mines.png
 share/icons/Yaru/32x32/apps/gnome-music.png
 share/icons/Yaru/32x32/apps/gnome-photos.png
 share/icons/Yaru/32x32/apps/gnome-screenshot.png
-share/icons/Yaru/32x32/apps/gnome-software.png
 share/icons/Yaru/32x32/apps/gnome-sudoku.png
 share/icons/Yaru/32x32/apps/gnome-system-monitor.png
 share/icons/Yaru/32x32/apps/gnome-terminal.png
@@ -4252,6 +4249,7 @@ share/icons/Yaru/32x32@2x/apps/
 share/icons/Yaru/32x32@2x/apps/accessories-calculator.png
 share/icons/Yaru/32x32@2x/apps/accessories-camera.png
 share/icons/Yaru/32x32@2x/apps/accessories-character-map.png
+share/icons/Yaru/32x32@2x/apps/accessories-dictionary.png
 share/icons/Yaru/32x32@2x/apps/accessories-text-editor.png
 share/icons/Yaru/32x32@2x/apps/address-book-app.png
 share/icons/Yaru/32x32@2x/apps/amazon-store.png
@@ -4308,7 +4306,6 @@ share/icons/Yaru/32x32@2x/apps/gnome-mines.png
 share/icons/Yaru/32x32@2x/apps/gnome-music.png
 share/icons/Yaru/32x32@2x/apps/gnome-photos.png
 share/icons/Yaru/32x32@2x/apps/gnome-screenshot.png
-share/icons/Yaru/32x32@2x/apps/gnome-software.png
 share/icons/Yaru/32x32@2x/apps/gnome-sudoku.png
 share/icons/Yaru/32x32@2x/apps/gnome-system-monitor.png
 share/icons/Yaru/32x32@2x/apps/gnome-terminal.png
@@ -4836,6 +4833,7 @@ share/icons/Yaru/48x48/apps/
 share/icons/Yaru/48x48/apps/accessories-calculator.png
 share/icons/Yaru/48x48/apps/accessories-camera.png
 share/icons/Yaru/48x48/apps/accessories-character-map.png
+share/icons/Yaru/48x48/apps/accessories-dictionary.png
 share/icons/Yaru/48x48/apps/accessories-text-editor.png
 share/icons/Yaru/48x48/apps/address-book-app.png
 share/icons/Yaru/48x48/apps/amazon-store.png
@@ -4892,7 +4890,6 @@ share/icons/Yaru/48x48/apps/gnome-mines.png
 share/icons/Yaru/48x48/apps/gnome-music.png
 share/icons/Yaru/48x48/apps/gnome-photos.png
 share/icons/Yaru/48x48/apps/gnome-screenshot.png
-share/icons/Yaru/48x48/apps/gnome-software.png
 share/icons/Yaru/48x48/apps/gnome-sudoku.png
 share/icons/Yaru/48x48/apps/gnome-system-monitor.png
 share/icons/Yaru/48x48/apps/gnome-terminal.png
@@ -5453,6 +5450,7 @@ share/icons/Yaru/48x48@2x/apps/
 share/icons/Yaru/48x48@2x/apps/accessories-calculator.png
 share/icons/Yaru/48x48@2x/apps/accessories-camera.png
 share/icons/Yaru/48x48@2x/apps/accessories-character-map.png
+share/icons/Yaru/48x48@2x/apps/accessories-dictionary.png
 share/icons/Yaru/48x48@2x/apps/accessories-text-editor.png
 share/icons/Yaru/48x48@2x/apps/address-book-app.png
 share/icons/Yaru/48x48@2x/apps/amazon-store.png
@@ -5509,7 +5507,6 @@ share/icons/Yaru/48x48@2x/apps/gnome-mines.png
 share/icons/Yaru/48x48@2x/apps/gnome-music.png
 share/icons/Yaru/48x48@2x/apps/gnome-photos.png
 share/icons/Yaru/48x48@2x/apps/gnome-screenshot.png
-share/icons/Yaru/48x48@2x/apps/gnome-software.png
 share/icons/Yaru/48x48@2x/apps/gnome-sudoku.png
 share/icons/Yaru/48x48@2x/apps/gnome-system-monitor.png
 share/icons/Yaru/48x48@2x/apps/gnome-terminal.png
@@ -6561,7 +6558,6 @@ share/icons/Yaru/scalable/apps/org.gnome.Rhythmbox-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Screenshot-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Settings-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.SimpleScan-symbolic.svg
-share/icons/Yaru/scalable/apps/org.gnome.Software-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Sudoku-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.SystemMonitor-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Terminal-symbolic.svg
