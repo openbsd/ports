@@ -1,11 +1,11 @@
-$OpenBSD: patch-update-mime-database_c,v 1.9 2019/11/17 19:38:02 ajacoutot Exp $
+$OpenBSD: patch-src_update-mime-database_c,v 1.1 2020/05/17 18:16:24 ajacoutot Exp $
 
 - unveil: unveil the provided mime_dir
 - pledge: https://bugs.freedesktop.org/show_bug.cgi?id=104368
 
-Index: update-mime-database.c
---- update-mime-database.c.orig
-+++ update-mime-database.c
+Index: src/update-mime-database.c
+--- src/update-mime-database.c.orig
++++ src/update-mime-database.c
 @@ -2165,6 +2165,11 @@ static void check_in_path_xdg_data(const char *mime_pa
  
  	path = g_path_get_dirname(mime_path);

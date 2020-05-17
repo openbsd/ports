@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2019/11/18 07:09:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2020/05/17 18:16:24 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
-DISTNAME=		shared-mime-info-1.15
+DISTNAME=		shared-mime-info-2.0
 
 CATEGORIES=		misc
 
@@ -16,26 +16,22 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB += c glib-2.0 intl xml2
 
-MASTER_SITES=		https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/b27eb88e4155d8fccb8bb3cd12025d5b/
+MASTER_SITES=		https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/0440063a2e6823a4b1a6fb2f2af8350f/
 EXTRACT_SUFX=		.tar.xz
 
-MODULES=		textproc/intltool
+MODULES=		devel/meson
 
-BUILD_DEPENDS=		textproc/itstool
+BUILD_DEPENDS=		devel/gettext,-tools \
+			textproc/itstool \
+			textproc/xmlto
 
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-CONFIGURE_ARGS=		--disable-update-mimedb
+# XXX needs https://gitlab.freedesktop.org/xdg/xdgmime sources for tests
+CONFIGURE_ARGS +=	-Dxdgmime-path=${WRKSRC}/xdgmime
 
 pre-configure:
-	sed -i 's|/usr/local|${PREFIX}|g' \
-		${WRKSRC}/update-mime-database.c \
-		${WRKSRC}/shared-mime-info-spec.xml
+	sed -i 's|/usr/local|${PREFIX}|g' ${WRKSRC}/src/update-mime-database.c
 
 .include <bsd.port.mk>

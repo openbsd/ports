@@ -1,0 +1,11 @@
+$OpenBSD: patch-data_freedesktop_generate_sh,v 1.1 2020/05/17 18:16:24 ajacoutot Exp $
+
+Index: data/freedesktop_generate.sh
+--- data/freedesktop_generate.sh.orig
++++ data/freedesktop_generate.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash -e
++#!/bin/sh -e
+ 
+ src_root="$1"
+ build_root="$2"
