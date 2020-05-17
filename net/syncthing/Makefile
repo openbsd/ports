@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2020/01/03 17:57:34 edd Exp $
+# $OpenBSD: Makefile,v 1.30 2020/05/17 16:10:25 edd Exp $
 
 COMMENT =	open decentralized synchronization utility
 
-V =		1.3.2
+V =		1.5.0
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -35,6 +35,10 @@ do-build:
 		-no-upgrade install ${cmd}
 .endfor
 
+# The tests occasionally fail with a kevent(2) failure. The issue is to do with
+# the kqueue backend in the `notify` go module. We've not been unable to
+# understand the issue, but we also cannot reproduce a kevent(2) failure
+# outside of the tests. See: https://github.com/syncthing/syncthing/issues/6596
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
 
