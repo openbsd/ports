@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:48:07 afresh1 Exp $
+${P5SITE}/Twitter/
+${P5SITE}/Twitter/API/
+${P5SITE}/Twitter/API.pm
+${P5SITE}/Twitter/API/Context.pm
+${P5SITE}/Twitter/API/Error.pm
+${P5SITE}/Twitter/API/Role/
+${P5SITE}/Twitter/API/Role/RequestArgs.pm
+${P5SITE}/Twitter/API/Trait/
+${P5SITE}/Twitter/API/Trait/ApiMethods.pm
+${P5SITE}/Twitter/API/Trait/AppAuth.pm
+${P5SITE}/Twitter/API/Trait/DecodeHtmlEntities.pm
+${P5SITE}/Twitter/API/Trait/Enchilada.pm
+${P5SITE}/Twitter/API/Trait/Migration.pm
+${P5SITE}/Twitter/API/Trait/NormalizeBooleans.pm
+${P5SITE}/Twitter/API/Trait/RateLimiting.pm
+${P5SITE}/Twitter/API/Trait/RetryOnError.pm
+${P5SITE}/Twitter/API/Util.pm
+@man man/man3p/Twitter::API.3p
+@man man/man3p/Twitter::API::Context.3p
+@man man/man3p/Twitter::API::Error.3p
+@man man/man3p/Twitter::API::Role::RequestArgs.3p
+@man man/man3p/Twitter::API::Trait::ApiMethods.3p
+@man man/man3p/Twitter::API::Trait::AppAuth.3p
+@man man/man3p/Twitter::API::Trait::DecodeHtmlEntities.3p
+@man man/man3p/Twitter::API::Trait::Enchilada.3p
+@man man/man3p/Twitter::API::Trait::Migration.3p
+@man man/man3p/Twitter::API::Trait::NormalizeBooleans.3p
+@man man/man3p/Twitter::API::Trait::RateLimiting.3p
+@man man/man3p/Twitter::API::Trait::RetryOnError.3p
+@man man/man3p/Twitter::API::Util.3p
