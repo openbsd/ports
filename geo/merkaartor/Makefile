@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2020/01/25 22:57:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.42 2020/05/17 16:35:01 rsadowski Exp $
 
 COMMENT =	OpenStreetMap editor
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
@@ -22,16 +22,12 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 # spatialite is marked as non-working
 LIB_DEPENDS =	devel/proj \
-		x11/qt5/qtwebkit \
 		x11/qt5/qtsvg \
-		archivers/quazip \
 		geo/gdal
 
-MODQMAKE_ARGS = SYSTEM_QUAZIP=1 SYSTEM_QUAZIP_LDFLAGS=-lquazip5
-
-WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += c gdal m proj quazip5 z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Gui
+WANTLIB += Qt5Network Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml
+WANTLIB += c gdal m proj z
 
 # C++11
 COMPILER =		base-clang ports-gcc
