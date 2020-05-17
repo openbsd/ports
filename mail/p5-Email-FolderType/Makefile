@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/05/17 22:37:08 cwen Exp $
 
-COMMENT= 	determine email folder type
+COMMENT = 	determine email folder type
 
-MODULES=	cpan
-PKG_ARCH=	*
+MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	Email-FolderType-0.814
-CATEGORIES=	mail
+REVISION =	0
+CATEGORIES =	mail
 
 # perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS+=	devel/p5-Test-Pod
+RUN_DEPENDS =	devel/p5-Module-Pluggable
+TEST_DEPENDS =	devel/p5-Test-Pod \
+		sysutils/p5-Capture-Tiny
 
 .include <bsd.port.mk>

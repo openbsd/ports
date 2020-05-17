@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/05/17 21:30:21 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/05/17 22:37:08 cwen Exp $
 
 COMMENT = 	library for creating easy email filters
 
@@ -18,7 +18,6 @@ PKG_ARCH =	*
 CPAN_AUTHOR =	RJBS
 
 RUN_DEPENDS =	devel/p5-Class-Trigger>=0.08 \
-		devel/p5-Module-Pluggable \
 		mail/p5-Email-LocalDelivery>=0.07 \
 		mail/p5-Email-Simple>=1.91 \
 		devel/p5-IPC-Run>=0.77
