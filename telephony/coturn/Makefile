@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/17 10:14:53 feinerer Exp $
 
 COMMENT =	coturn STUN/TURN server
 
-V =		4.5.1.1
+V =		4.5.1.2
 DISTNAME =	turnserver-${V}
-REVISION =	0
 
 CATEGORIES =	telephony
 
@@ -16,7 +15,7 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
-WANTLIB += hiredis intl mysqlclient pq pthread sqlite3 ssl
+WANTLIB += hiredis intl mariadb pq pthread sqlite3 ssl
 
 MASTER_SITES =		http://turnserver.open-sys.org/downloads/v${V}/ \
 			http://coturn.net/turnserver/v${V}/

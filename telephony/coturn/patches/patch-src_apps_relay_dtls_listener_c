@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_apps_relay_dtls_listener_c,v 1.1 2020/05/17 10:14:53 feinerer Exp $
+
+src/apps/common/ns_turn_openssl.h hardcodes OPENSSL_VERSION_NUMBER as
+0x1000107FL if LibreSSL is detected, so add an explicit check here.
+
+Index: src/apps/relay/dtls_listener.c
+--- src/apps/relay/dtls_listener.c.orig
++++ src/apps/relay/dtls_listener.c
+@@ -206,7 +206,7 @@ static int generate_cookie(SSL *ssl, unsigned char *co
+ }
+ 
+ static int verify_cookie(SSL *ssl,
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L | defined(LIBRESSL_VERSION_NUMBER)
+ 		const
+ #endif
+ 		unsigned char *cookie, unsigned int cookie_len)

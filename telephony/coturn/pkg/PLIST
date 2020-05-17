@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/02 11:43:10 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/05/17 10:14:53 feinerer Exp $
 @newgroup _turnserver:795
 @newuser _turnserver:795:795:daemon:TURN Server user:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/turnserver
 @bin bin/turnadmin
 @bin bin/turnserver
 @bin bin/turnutils_natdiscovery
@@ -17,7 +18,7 @@ include/turn/client/ns_turn_msg_addr.h
 include/turn/client/ns_turn_msg_defs.h
 include/turn/client/ns_turn_msg_defs_experimental.h
 include/turn/ns_turn_defs.h
-lib/libturnclient.a
+@static-lib lib/libturnclient.a
 @man man/man1/coturn.1
 @man man/man1/turnadmin.1
 @man man/man1/turnserver.1
@@ -40,6 +41,8 @@ share/doc/turnserver/schema.stats.redis
 share/doc/turnserver/schema.userdb.redis
 share/examples/turnserver/
 share/examples/turnserver/etc/
+share/examples/turnserver/etc/cacert.pem
+share/examples/turnserver/etc/coturn.service
 share/examples/turnserver/etc/turn_client_cert.pem
 share/examples/turnserver/etc/turn_client_pkey.pem
 share/examples/turnserver/etc/turn_server_cert.pem
@@ -123,4 +126,3 @@ share/turnserver/schema.userdb.redis
 share/turnserver/testmongosetup.sh
 share/turnserver/testredisdbsetup.sh
 share/turnserver/testsqldbsetup.sql
-@rcscript ${RCDIR}/turnserver
