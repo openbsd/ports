@@ -1,0 +1,2 @@
+This module provides functions to encode and decode strings into and
+from the "application/x-www-form-urlencoded" encoding.

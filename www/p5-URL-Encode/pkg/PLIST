@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:46:05 afresh1 Exp $
+${P5SITE}/URL/
+${P5SITE}/URL/Encode/
+${P5SITE}/URL/Encode.pm
+${P5SITE}/URL/Encode.pod
+${P5SITE}/URL/Encode/PP.pm
+@man man/man3p/URL::Encode.3p
