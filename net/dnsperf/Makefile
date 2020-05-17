@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/14 11:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/05/17 13:41:22 sthen Exp $
 
 COMMENT =	DNS performance testing tools
 
-DISTNAME =	dnsperf-2.3.3
+DISTNAME =	dnsperf-2.3.4
 
 CATEGORIES =	net benchmarks
 
@@ -22,9 +22,9 @@ MASTER_SITES =		https://www.dns-oarc.net/files/dnsperf/
 
 LIB_DEPENDS =		isc-bind-*-!geoip:net/isc-bind
 
-CONFIGURE_STYLE =	autoconf
-CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include
-AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
+			LDFLAGS=-L${LOCALBASE}/lib
 
 # Drop README, Changelog etc.
 post-install:
