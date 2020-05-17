@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.47 2019/12/26 12:05:00 jca Exp $
+# $OpenBSD: Makefile,v 1.48 2020/05/17 23:04:49 cwen Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
-DISTNAME=	grace-5.1.15
-REVISION=	10
+DISTNAME=	grace-5.1.25
 CATEGORIES=	math
 
-HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
+HOMEPAGE=	https://plasma-gate.weizmann.ac.il/Grace/
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c m z
+
+WANTLIB += c fftw jpeg m netcdf png t1 z
 
 GRACE_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/ \
 		ftp://ftp.fu-berlin.de/unix/graphics/ \
@@ -29,13 +29,8 @@ CONFIGURE_ARGS+=	--with-bundled-xbae \
 LIB_DEPENDS =	devel/t1lib \
 		graphics/jpeg \
 		graphics/png \
-		graphics/tiff \
 		math/fftw \
-		math/netcdf \
-		print/pdflib
-
-WANTLIB +=	jpeg>=62 png>=2 pdf>=2 t1>=5 tiff>=35 fftw>=2 \
-		netcdf>=1
+		math/netcdf
 
 FLAVORS=	no_x11
 FLAVOR?=
