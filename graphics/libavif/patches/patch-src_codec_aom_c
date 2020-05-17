@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_codec_aom_c,v 1.3 2020/05/17 09:29:09 ajacoutot Exp $
+
+Re-enable cpu-used=7+ in codec_aom when libaom major version > 1.
+
+Index: src/codec_aom.c
+--- src/codec_aom.c.orig
++++ src/codec_aom.c
+@@ -254,7 +254,8 @@ static avifBool aomCodecEncodeImage(avifCodec * codec,
+         }
+     }
+ 
+-    if (image->depth > 8) {
++    int aomMajorVersion = aom_codec_version_major();
++    if ((aomMajorVersion < 2) && (image->depth > 8)) {
+         // Due to a known issue with libavif v1.0.0-errata1-avif, 10bpc and
+         // 12bpc image encodes will call the wrong variant of
+         // aom_subtract_block when cpu-used is 7 or 8, and crash. Until we get
