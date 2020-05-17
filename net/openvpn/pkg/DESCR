@@ -6,3 +6,6 @@ It can forward a tun(4) interface over a single UDP or TCP port with
 support for NAT, dynamic endpoints, compression, fragmentation and keep-
 alive. It uses OpenSSL's encryption, authentication, and certification
 features, with static keys, certificates or TLS-based key exchange.
+
+Flavors:
+	mbedtls     - use mbedTLS instead of LibreSSL

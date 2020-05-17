@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.100 2020/04/21 23:43:55 jca Exp $
+# $OpenBSD: Makefile,v 1.101 2020/05/17 08:53:27 jca Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.4.9
+REVISION=	0
 
 CATEGORIES=	net security
 
