@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1969 2020/05/16 11:04:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.1970 2020/05/17 18:44:09 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -612,6 +612,7 @@
      SUBDIR += p5-Class-Std-Utils
      SUBDIR += p5-Class-Throwable
      SUBDIR += p5-Class-Tiny
+     SUBDIR += p5-Class-Tiny-Chained
      SUBDIR += p5-Class-Trigger
      SUBDIR += p5-Class-Unload
      SUBDIR += p5-Class-Virtual
@@ -912,7 +913,9 @@
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Module-Which
      SUBDIR += p5-Moo
+     SUBDIR += p5-MooX-Aliases
      SUBDIR += p5-MooX-StrictConstructor
+     SUBDIR += p5-MooX-Traits
      SUBDIR += p5-MooX-Types-MooseLike
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Aliases
@@ -1169,6 +1172,7 @@
      SUBDIR += p5-Test-RequiresInternet
      SUBDIR += p5-Test-Script
      SUBDIR += p5-Test-SharedFork
+     SUBDIR += p5-Test-Spec
      SUBDIR += p5-Test-Spelling
      SUBDIR += p5-Test-Strict
      SUBDIR += p5-Test-SubCalls
