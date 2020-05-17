@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/29 22:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/05/17 06:09:40 gonzalo Exp $
 @bin bin/simple_web_server
 @bin bin/smplayer
 @man man/man1/smplayer.1
@@ -71,6 +71,7 @@ share/smplayer/translations/smplayer_en.qm
 share/smplayer/translations/smplayer_en_GB.qm
 share/smplayer/translations/smplayer_en_US.qm
 share/smplayer/translations/smplayer_es.qm
+share/smplayer/translations/smplayer_es_ES.qm
 share/smplayer/translations/smplayer_et.qm
 share/smplayer/translations/smplayer_eu.qm
 share/smplayer/translations/smplayer_fa.qm

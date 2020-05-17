@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2019/11/20 07:04:22 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.61 2020/05/17 06:09:40 gonzalo Exp $
 
 COMMENT =		complete front-end for MPlayer and MPV
 
-DISTNAME =		smplayer-19.10.2
+DISTNAME =		smplayer-20.4.2
 CATEGORIES =		multimedia x11
 
 HOMEPAGE =		https://www.smplayer.info/
@@ -13,7 +13,7 @@ MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Widgets
+WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml X11 Xext c m pthread z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
@@ -24,8 +24,6 @@ MODULES =		x11/qt5
 RUN_DEPENDS =		mpv-*|mplayer->=20090708:multimedia/mpv \
 			devel/desktop-file-utils \
 			x11/gtk+3,-guic
-
-LIB_DEPENDS =		x11/qt5/qtscript
 
 USE_GMAKE =		Yes
 
