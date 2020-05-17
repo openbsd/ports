@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2020/02/25 07:04:18 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.37 2020/05/17 05:50:01 rsadowski Exp $
 
 USE_WXNEEDED =		Yes
 
 COMMENT =		browse and download YouTube videos
 
 DISTNAME =		smtube-20.1.0
+REVISION =		0
 
 CATEGORIES =		multimedia x11
 
@@ -15,9 +16,8 @@ HOMEPAGE =		https://www.smtube.org/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5Script Qt5Widgets c
-WANTLIB += m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Script
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets c m
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smtube/}
 
