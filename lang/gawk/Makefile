@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2019/12/18 00:36:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.40 2020/05/17 20:26:40 bcallah Exp $
 
 COMMENT=	GNU awk
 
-V=		5.0.1
+V=		5.1.0
 DISTNAME=	gawk-$V
+EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
 
