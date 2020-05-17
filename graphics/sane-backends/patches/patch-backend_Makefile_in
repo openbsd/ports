@@ -1,14 +1,4 @@
-$OpenBSD: patch-backend_Makefile_in,v 1.12 2020/02/08 13:35:52 ajacoutot Exp $
-
-2nd chunk:
-From 17d760a5f848f4034fbaa19657567fae52f8c150 Mon Sep 17 00:00:00 2001
-From: Olaf Meeuwissen <paddy-hack@member.fsf.org>
-Date: Wed, 5 Feb 2020 21:30:11 +0900
-Subject: [PATCH] Remove libxml2 linker/loader flags from dependencies. Re #239
-From 7415a9f5c97acc655dae357dbffe7ff6b69ef82d Mon Sep 17 00:00:00 2001
-From: Olaf Meeuwissen <paddy-hack@member.fsf.org>
-Date: Thu, 6 Feb 2020 20:56:21 +0900
-Subject: [PATCH] Really remove libxml2 linker/loader flags from dependencies. Re #239
+$OpenBSD: patch-backend_Makefile_in,v 1.13 2020/05/17 15:30:11 ajacoutot Exp $
 
 Index: backend/Makefile.in
 --- backend/Makefile.in.orig
@@ -21,13 +11,4 @@ Index: backend/Makefile.in
 +DIST_SANELIBS_LDFLAGS = $(AM_LDFLAGS) -rpath '$(libdir)/sane' -avoid-version $(DYNAMIC_FLAG)
  DIST_LIBS_LDFLAGS = $(AM_LDFLAGS) -rpath '$(libdir)' -version-number $(V_MAJOR):$(V_MINOR):$(V_REV)
  FIRMWARE_DIRS = artec_eplus48u gt68xx snapscan epjitsu
- 
-@@ -3270,7 +3270,7 @@ libsane_la_LDFLAGS = $(DIST_LIBS_LDFLAGS)
- libsane_la_LIBADD = $(COMMON_LIBS) $(PRELOADABLE_BACKENDS_ENABLED) libdll_preload.la sane_strstatus.lo ../sanei/sanei_init_debug.lo ../sanei/sanei_constrain_value.lo ../sanei/sanei_config.lo $(PRELOADABLE_BACKENDS_LIBS) $(DL_LIBS) $(XML_LIBS)
- 
- # WARNING: Automake is getting this wrong so have to do it ourselves.
--libsane_la_DEPENDENCIES = $(COMMON_LIBS) $(PRELOADABLE_BACKENDS_ENABLED) libdll_preload.la sane_strstatus.lo ../sanei/sanei_init_debug.lo ../sanei/sanei_constrain_value.lo ../sanei/sanei_config.lo $(PRELOADABLE_BACKENDS_DEPS)
-+libsane_la_DEPENDENCIES = ../lib/liblib.la $(PRELOADABLE_BACKENDS_ENABLED) libdll_preload.la sane_strstatus.lo ../sanei/sanei_init_debug.lo ../sanei/sanei_constrain_value.lo ../sanei/sanei_config.lo $(PRELOADABLE_BACKENDS_DEPS)
- all: $(BUILT_SOURCES)
- 	$(MAKE) $(AM_MAKEFLAGS) all-am
  
