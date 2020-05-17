@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:42:47 afresh1 Exp $
+${P5SITE}/Test/Spec/
+${P5SITE}/Test/Spec.pm
+${P5SITE}/Test/Spec/Context.pm
+${P5SITE}/Test/Spec/Example.pm
+${P5SITE}/Test/Spec/Mocks.pm
+${P5SITE}/Test/Spec/SharedHash.pm
+${P5SITE}/Test/Spec/TodoExample.pm
+@man man/man3p/Test::Spec.3p
+@man man/man3p/Test::Spec::Mocks.3p
