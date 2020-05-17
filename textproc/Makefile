@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.630 2020/05/14 20:36:21 ian Exp $
+# $OpenBSD: Makefile,v 1.631 2020/05/17 23:21:26 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -237,6 +237,7 @@
      SUBDIR += p5-Sourcecode-Spellchecker
      SUBDIR += p5-String-Approx
      SUBDIR += p5-String-CamelCase
+     SUBDIR += p5-String-Escape
      SUBDIR += p5-String-Koremutake
      SUBDIR += p5-String-Random
      SUBDIR += p5-String-RewritePrefix
