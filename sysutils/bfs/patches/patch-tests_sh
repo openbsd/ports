@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_sh,v 1.1 2020/05/17 20:43:09 bcallah Exp $
+
+touch -h is a GNU extension
+
+Index: tests.sh
+--- tests.sh.orig
++++ tests.sh
+@@ -815,7 +815,7 @@ function make_times() {
+     touch -t 199112140001 "$1/b"
+     touch -t 199112140002 "$1/c"
+     ln -s a "$1/l"
+-    touch -h -t 199112140003 "$1/l"
++    touch -t 199112140003 "$1/l"
+     touch -t 199112140004 "$1"
+ }
+ make_times "$TMP/times"
