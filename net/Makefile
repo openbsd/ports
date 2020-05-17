@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1200 2020/05/16 12:42:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1201 2020/05/17 18:48:47 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -478,6 +478,7 @@
      SUBDIR += p5-Socket6
      SUBDIR += p5-Sys-Hostname-Long
      SUBDIR += p5-Test-TCP
+     SUBDIR += p5-Twitter-API
      SUBDIR += p5-Validate-Net
      SUBDIR += p5-XML-RPC
      SUBDIR += p5-Zonemaster
