@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:41:57 afresh1 Exp $
+${P5SITE}/MooX/
+${P5SITE}/MooX/Traits/
+${P5SITE}/MooX/Traits.pm
+${P5SITE}/MooX/Traits/Util.pm
+@man man/man3p/MooX::Traits.3p
+@man man/man3p/MooX::Traits::Util.3p
