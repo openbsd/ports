@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/17 13:37:47 ajacoutot Exp $
-
-BROKEN =	https://github.com/adplug/adplug/issues/112
+# $OpenBSD: Makefile,v 1.12 2020/05/17 16:42:38 fcambus Exp $
 
 COMMENT =	console-based OPL2 audio player
 
 V =		1.8
 DISTNAME =	adplay-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	audio
 
