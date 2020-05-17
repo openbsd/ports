@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/20 20:28:02 steven Exp $
-@bin bin/nipper
-@man man/man1/nipper.1

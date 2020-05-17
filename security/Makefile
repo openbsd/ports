@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.576 2020/05/14 12:06:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.577 2020/05/17 10:36:17 kn Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -123,7 +123,6 @@
      SUBDIR += libksba
      SUBDIR += libmcrypt
      SUBDIR += libnettle
-     SUBDIR += libnipper
      SUBDIR += libotr
      SUBDIR += libperseus
      SUBDIR += libpwquality
@@ -147,7 +146,6 @@
      SUBDIR += netpgp
      SUBDIR += nfsshell
      SUBDIR += nikto
-     SUBDIR += nipper
      SUBDIR += nss
      SUBDIR += oath-toolkit
      SUBDIR += ogvt
