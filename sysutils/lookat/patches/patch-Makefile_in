@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2020/03/08 19:26:38 bcallah Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2020/05/17 20:46:34 bcallah Exp $
 
 Put example configs in examples rather than doc.
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -970,9 +970,8 @@ bekijk.o: bekijk.c
+@@ -976,9 +976,8 @@ bekijk.o: bekijk.c
  	$(COMPILE) -D_NED -DCONFIGFILE=\"$(CONFIGFILE)\" -DDOCFILE=\"$(NED_DOCFILE)\" -o bekijk.o -c bekijk.c
  
  install-data-local:
