@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:46:50 afresh1 Exp $
+${P5SITE}/WWW/OAuth/
+${P5SITE}/WWW/OAuth.pm
+${P5SITE}/WWW/OAuth/Request/
+${P5SITE}/WWW/OAuth/Request.pm
+${P5SITE}/WWW/OAuth/Request/Basic.pm
+${P5SITE}/WWW/OAuth/Request/HTTP_Request.pm
+${P5SITE}/WWW/OAuth/Request/Mojo.pm
+${P5SITE}/WWW/OAuth/Util.pm
+@man man/man3p/WWW::OAuth.3p
+@man man/man3p/WWW::OAuth::Request.3p
+@man man/man3p/WWW::OAuth::Request::Basic.3p
+@man man/man3p/WWW::OAuth::Request::HTTP_Request.3p
+@man man/man3p/WWW::OAuth::Request::Mojo.3p
+@man man/man3p/WWW::OAuth::Util.3p
