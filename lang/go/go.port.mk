@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.30 2020/05/17 10:31:50 ajacoutot Exp $
+# $OpenBSD: go.port.mk,v 1.31 2020/05/17 13:08:20 ajacoutot Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -65,7 +65,6 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME}/@v/
 .  for _modpath _modver in ${MODGO_MODULES}
 DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.zip{${_modpath}/@v/${_modver}.zip}:${MODGO_MASTER_SITESN}
-EXTRACT_ONLY +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.zip
 .  endfor
 .  for _modpath _modver in ${MODGO_MODFILES}
 DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/${_modver}.mod}:${MODGO_MASTER_SITESN}
