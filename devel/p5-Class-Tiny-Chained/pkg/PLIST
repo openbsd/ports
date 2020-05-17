@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:39:54 afresh1 Exp $
+${P5SITE}/Class/Tiny/
+${P5SITE}/Class/Tiny/Chained.pm
+@man man/man3p/Class::Tiny::Chained.3p
