@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 23:21:02 afresh1 Exp $
+${P5SITE}/String/
+${P5SITE}/String/Escape.pm
+@man man/man3p/String::Escape.3p
