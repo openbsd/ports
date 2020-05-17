@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.1 2020/05/15 01:32:48 abieber Exp $
+# $OpenBSD: Go.pm,v 1.2 2020/05/17 14:33:04 abieber Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -226,8 +226,6 @@ sub fill_in_makefile
 	$self->set_other( MODGO_MODNAME => $di->{Module} );
 	$self->set_other( MODGO_VERSION => $di->{Version} );
 	$self->set_distname($di->{Name} . '-${MODGO_VERSION}');
-
-	$self->set_pkgname($di->{PkgName}) if defined $di->{PkgName};
 
 	my @parts = split("-", $di->{Version});
 	if (@parts > 1) {
