@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:41:06 afresh1 Exp $
+${P5SITE}/MooX/
+${P5SITE}/MooX/Aliases.pm
+@man man/man3p/MooX::Aliases.3p
