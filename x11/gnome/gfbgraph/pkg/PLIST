@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/07/16 04:40:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/05/17 13:42:21 ajacoutot Exp $
 include/gfbgraph-0.2/
 include/gfbgraph-0.2/gfbgraph/
 include/gfbgraph-0.2/gfbgraph/gfbgraph-album.h
@@ -13,39 +13,9 @@ include/gfbgraph-0.2/gfbgraph/gfbgraph-user.h
 include/gfbgraph-0.2/gfbgraph/gfbgraph.h
 lib/girepository-1.0/
 lib/girepository-1.0/GFBGraph-0.2.typelib
-lib/libgfbgraph-0.2.a
+@static-lib lib/libgfbgraph-0.2.a
 lib/libgfbgraph-0.2.la
 @lib lib/libgfbgraph-0.2.so.${LIBgfbgraph-0.2_VERSION}
 lib/pkgconfig/libgfbgraph-0.2.pc
 share/gir-1.0/
 share/gir-1.0/GFBGraph-0.2.gir
-share/gtk-doc/
-share/gtk-doc/html/
-share/gtk-doc/html/gfbgraph-0.2/
-share/gtk-doc/html/gfbgraph-0.2/GFBGraphAlbum.html
-share/gtk-doc/html/gfbgraph-0.2/GFBGraphGoaAuthorizer.html
-share/gtk-doc/html/gfbgraph-0.2/GFBGraphNode.html
-share/gtk-doc/html/gfbgraph-0.2/GFBGraphPhoto.html
-share/gtk-doc/html/gfbgraph-0.2/GFBGraphSimpleAuthorizer.html
-share/gtk-doc/html/gfbgraph-0.2/GFBGraphUser.html
-share/gtk-doc/html/gfbgraph-0.2/annotation-glossary.html
-share/gtk-doc/html/gfbgraph-0.2/api-index-full.html
-share/gtk-doc/html/gfbgraph-0.2/ch01.html
-share/gtk-doc/html/gfbgraph-0.2/ch02.html
-share/gtk-doc/html/gfbgraph-0.2/ch03.html
-share/gtk-doc/html/gfbgraph-0.2/deprecated-api-index.html
-share/gtk-doc/html/gfbgraph-0.2/gfbgraph-0.2.devhelp2
-share/gtk-doc/html/gfbgraph-0.2/gfbgraph-GFBGraphAuthorizer.html
-share/gtk-doc/html/gfbgraph-0.2/gfbgraph-GFBGraphConnectable.html
-share/gtk-doc/html/gfbgraph-0.2/gfbgraph-gfbgraph-common.html
-share/gtk-doc/html/gfbgraph-0.2/home.png
-share/gtk-doc/html/gfbgraph-0.2/index.html
-share/gtk-doc/html/gfbgraph-0.2/index.sgml
-share/gtk-doc/html/gfbgraph-0.2/left-insensitive.png
-share/gtk-doc/html/gfbgraph-0.2/left.png
-share/gtk-doc/html/gfbgraph-0.2/object-tree.html
-share/gtk-doc/html/gfbgraph-0.2/right-insensitive.png
-share/gtk-doc/html/gfbgraph-0.2/right.png
-share/gtk-doc/html/gfbgraph-0.2/style.css
-share/gtk-doc/html/gfbgraph-0.2/up-insensitive.png
-share/gtk-doc/html/gfbgraph-0.2/up.png
