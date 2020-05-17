@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2020/05/15 21:32:18 kili Exp $
+# $OpenBSD: Makefile,v 1.173 2020/05/17 18:06:07 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -43,7 +43,7 @@ BUILD_DEPENDS =		archivers/bzip2 \
 			textproc/py-sphinx${MODPY_FLAVOR}
 RUN_DEPENDS =
 
-# GHC build uses -Wl,-z,wxneeded on OpenBSD.
+# GHC build uses -Wl,-z,wxneeded on OpenBSD for amd64.
 # XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
 #      loadObj_() instead.
 USE_WXNEEDED =		special
@@ -107,7 +107,10 @@ USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
 .if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-fno-pie -Wl,-znotext
+CFLAGS +=		-Wl,-znotext
+# On i386, we still have to explicitely set -Wl,-z,wxneeded (in
+# addition to -Wl,-znotext).
+GHC_CC_OPTS =		-Wl,-znotext -Wl,-z,wxneeded
 .endif
 
 CONFIGURE_STYLE =	gnu
