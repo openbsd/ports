@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/05/16 12:00:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2020/05/17 09:34:23 ajacoutot Exp $
 
 COMMENT=	common interface to speech synthesis
 
@@ -43,8 +43,13 @@ USE_LIBTOOL=	gnu
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX doesn't build when help2man is installed
+CONFIGURE_ENV +=	ac_cv_prog_HELP2MAN=
+
 CONFIGURE_ARGS=	--without-pulse \
 		--without-flite
 
