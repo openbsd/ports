@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/05/14 19:42:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/05/18 19:11:30 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-l10n-bs-*
 @conflict calligra-l10n-ca-*
@@ -7507,7 +7507,9 @@ share/locale/ru/LC_MESSAGES/calligra_shape_paths.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_picture.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_plugin.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_spreadsheet.mo
+share/locale/ru/LC_MESSAGES/calligra_shape_template.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_text.mo
+share/locale/ru/LC_MESSAGES/calligra_shape_threed.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_vector.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_video.mo
 share/locale/ru/LC_MESSAGES/calligra_textediting_autocorrect.mo
