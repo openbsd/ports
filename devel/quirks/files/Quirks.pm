@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.961 2020/05/18 00:14:58 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.962 2020/05/18 15:48:07 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -420,6 +420,8 @@ my $stem_extensions = {
 	'py-libcloud' => 'py3-libcloud',
 	'gegl03' => 'gegl04',
 	'py-mysql' => 'py-mysqlclient',
+# 6.8
+	'py-cups' => 'py3-cups',
 };
 
 my $obsolete_reason = {
