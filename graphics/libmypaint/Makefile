@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/24 22:44:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/18 15:42:56 sthen Exp $
 
 COMMENT =	library for making brushstrokes
 
-V =		1.5.1
+V =		1.6.1
 DISTNAME =	libmypaint-$V
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS +=		mypaint-1.5	0.0 # 0.0
 SHARED_LIBS +=		mypaint-gegl	0.0 # 0.0
 SHARED_LIBS +=		mypaint		0.0 # 0.0
 

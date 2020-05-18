@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/24 22:44:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/05/18 15:42:56 sthen Exp $
 include/libmypaint/
 include/libmypaint-gegl/
 include/libmypaint-gegl/mypaint-gegl-glib.h
@@ -23,9 +23,8 @@ include/libmypaint/mypaint-rectangle.h
 include/libmypaint/mypaint-surface.h
 include/libmypaint/mypaint-symmetry.h
 include/libmypaint/mypaint-tiled-surface.h
-lib/girepository-1.0/MyPaint-1.5.typelib
-lib/girepository-1.0/MyPaintGegl-1.5.typelib
-@lib lib/libmypaint-1.5.so.${LIBmypaint-1.5_VERSION}
+lib/girepository-1.0/MyPaint-1.6.typelib
+lib/girepository-1.0/MyPaintGegl-1.6.typelib
 @static-lib lib/libmypaint-gegl.a
 lib/libmypaint-gegl.la
 @lib lib/libmypaint-gegl.so.${LIBmypaint-gegl_VERSION}
@@ -34,8 +33,8 @@ lib/libmypaint.la
 @lib lib/libmypaint.so.${LIBmypaint_VERSION}
 lib/pkgconfig/libmypaint-gegl.pc
 lib/pkgconfig/libmypaint.pc
-share/gir-1.0/MyPaint-1.5.gir
-share/gir-1.0/MyPaintGegl-1.5.gir
+share/gir-1.0/MyPaint-1.6.gir
+share/gir-1.0/MyPaintGegl-1.6.gir
 share/locale/af/LC_MESSAGES/libmypaint.mo
 share/locale/ar/LC_MESSAGES/libmypaint.mo
 share/locale/as/LC_MESSAGES/libmypaint.mo
