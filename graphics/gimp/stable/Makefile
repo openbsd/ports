@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.134 2020/05/14 12:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2020/05/18 15:42:59 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.18
-REVISION =	2
+REVISION =	3
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -34,7 +34,7 @@ WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4
 WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB += graphite2 gs gtk-x11-2.0 harfbuzz heif hogweed iconv
 WANTLIB += idn2 ijs intl jbig2dec jpeg json-c json-glib-1.0 lcms
-WANTLIB += lcms2 lzma m mng mypaint-1.5 nettle openjp2 p11-kit
+WANTLIB += lcms2 lzma m mng mypaint nettle openjp2 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib rsvg-2 tasn1 tiff unistring
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
