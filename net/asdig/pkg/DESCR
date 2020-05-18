@@ -1,0 +1,10 @@
+asdig is a simple tool for retrieving ASN (autonomous system number)
+match from IPv4/IPv6 published by services like Rezopole GoASMap
+(http://github.com/rezopole/goasmap) or Cymru.
+
+For a given IPv4 or IPv6 it would display current BGP anouncements
+received at the BGP-infrastructure of the queried IP-to-AS reference
+server, or Internet Exchange Point (IXP) subnets from PeeringDB,
+or reserved subnets from Internet Assigned Numbers Authority (IANA).
+For a given AS number it would display a digest of the registered
+informations from Regional Internet Registries (RIR).

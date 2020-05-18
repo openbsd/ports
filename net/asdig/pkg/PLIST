@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/18 11:00:41 denis Exp $
+@bin bin/asdig
+@man man/man1/asdig.1
