@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/10 11:10:20 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/05/18 17:02:35 cwen Exp $
 @newgroup _osrm_routed:815
 @newuser _osrm_routed:815:815:daemon:OSRM Router:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/osrm_routed
@@ -78,13 +78,13 @@ include/osrm/util/coordinate.hpp
 include/osrm/util/exception.hpp
 include/osrm/util/json_container.hpp
 include/osrm/util/typedefs.hpp
-lib/libosrm.a
-lib/libosrm_contract.a
-lib/libosrm_customize.a
-lib/libosrm_extract.a
-lib/libosrm_partition.a
-lib/libosrm_store.a
-lib/libosrm_update.a
+@static-lib lib/libosrm.a
+@static-lib lib/libosrm_contract.a
+@static-lib lib/libosrm_customize.a
+@static-lib lib/libosrm_extract.a
+@static-lib lib/libosrm_partition.a
+@static-lib lib/libosrm_store.a
+@static-lib lib/libosrm_update.a
 lib/pkgconfig/libosrm.pc
 share/osrm/
 share/osrm/profiles/

@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/05/18 17:02:35 cwen Exp $
+
+# devel/tbb does not support 64-bits atomics on ppc32, forcing them does
+# not help, see tbb's ${WRKSRC}/include/tbb/machine/mac_ppc.h
+NOT_FOR_ARCHS =	powerpc
 
 COMMENT =		high-performance road network routing engine
 
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
-GH_TAGNAME =		v5.18.0
-REVISION =		3
+GH_TAGNAME =		v5.22.0
 
 CATEGORIES =		geo
 
@@ -33,8 +36,10 @@ LIB_DEPENDS =		archivers/bzip2 \
 
 CONFIGURE_ARGS =	-DOSMIUM_INCLUDE_DIR=${LOCALBASE}/include/osmium \
 			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include/utfcpp \
-				${CXXFLAGS}"
+				${CXXFLAGS}" \
+			-DENABLE_CCACHE=Off
 
+# Requires network access, and http access to sample osrm data is 403'd
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
