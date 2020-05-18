@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/18 20:44:07 solene Exp $
+@bin bin/hyperfine
