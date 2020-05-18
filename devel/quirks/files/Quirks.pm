@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.962 2020/05/18 15:48:07 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.963 2020/05/18 16:06:20 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -421,6 +421,7 @@ my $stem_extensions = {
 	'gegl03' => 'gegl04',
 	'py-mysql' => 'py-mysqlclient',
 # 6.8
+	'py-dulwich' => 'py3-dulwich',
 	'py-cups' => 'py3-cups',
 };
 
