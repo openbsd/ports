@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.960 2020/05/17 10:36:17 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.961 2020/05/18 00:14:58 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1567,6 +1567,8 @@ my $obsolete_reason = {
 	'libcroco' => 3,
 	'libnipper' => 23,
 	'nipper' => 23,
+	'bg5pdf' => 13,
+	'pdflib' => 23,
 };
 
 # reasons for obsolete packages
@@ -1594,7 +1596,7 @@ my @msg = (
 	"merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now", #20
 	"upstream recommends to use composer to build a drupal site", #21
 	"the original GeoIP database is end of life; use libmaxminddb/GeoIP2", #22
-	"no longer mainatained upstream, became commercial over ten years ago", #23
+	"no longer maintained upstream, became commercial over ten years ago", #23
 );
 
 # ->is_base_system($handle, $state):
