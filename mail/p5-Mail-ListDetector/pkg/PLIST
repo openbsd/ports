@@ -1,0 +1,53 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/18 00:15:44 afresh1 Exp $
+${P5SITE}/Mail/ListDetector/
+${P5SITE}/Mail/ListDetector.pm
+${P5SITE}/Mail/ListDetector/Detector/
+${P5SITE}/Mail/ListDetector/Detector/AutoShare.pm
+${P5SITE}/Mail/ListDetector/Detector/Base.pm
+${P5SITE}/Mail/ListDetector/Detector/CommuniGate.pm
+${P5SITE}/Mail/ListDetector/Detector/CommuniGatePro.pm
+${P5SITE}/Mail/ListDetector/Detector/Ecartis.pm
+${P5SITE}/Mail/ListDetector/Detector/Ezmlm.pm
+${P5SITE}/Mail/ListDetector/Detector/Fml.pm
+${P5SITE}/Mail/ListDetector/Detector/GoogleGroups.pm
+${P5SITE}/Mail/ListDetector/Detector/LetterRip.pm
+${P5SITE}/Mail/ListDetector/Detector/ListSTAR.pm
+${P5SITE}/Mail/ListDetector/Detector/Listar.pm
+${P5SITE}/Mail/ListDetector/Detector/Listbox.pm
+${P5SITE}/Mail/ListDetector/Detector/Listserv.pm
+${P5SITE}/Mail/ListDetector/Detector/Lyris.pm
+${P5SITE}/Mail/ListDetector/Detector/Mailman.pm
+${P5SITE}/Mail/ListDetector/Detector/Majordomo.pm
+${P5SITE}/Mail/ListDetector/Detector/Onelist.pm
+${P5SITE}/Mail/ListDetector/Detector/RFC2369.pm
+${P5SITE}/Mail/ListDetector/Detector/RFC2919.pm
+${P5SITE}/Mail/ListDetector/Detector/Smartlist.pm
+${P5SITE}/Mail/ListDetector/Detector/Yahoogroups.pm
+${P5SITE}/Mail/ListDetector/List.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Mail/
+${P5SITE}/auto/Mail/ListDetector/
+${P5SITE}/auto/Mail/ListDetector/autosplit.ix
+@man man/man3p/Mail::ListDetector.3p
+@man man/man3p/Mail::ListDetector::Detector::AutoShare.3p
+@man man/man3p/Mail::ListDetector::Detector::Base.3p
+@man man/man3p/Mail::ListDetector::Detector::CommuniGate.3p
+@man man/man3p/Mail::ListDetector::Detector::CommuniGatePro.3p
+@man man/man3p/Mail::ListDetector::Detector::Ecartis.3p
+@man man/man3p/Mail::ListDetector::Detector::Ezmlm.3p
+@man man/man3p/Mail::ListDetector::Detector::Fml.3p
+@man man/man3p/Mail::ListDetector::Detector::GoogleGroups.3p
+@man man/man3p/Mail::ListDetector::Detector::LetterRip.3p
+@man man/man3p/Mail::ListDetector::Detector::ListSTAR.3p
+@man man/man3p/Mail::ListDetector::Detector::Listar.3p
+@man man/man3p/Mail::ListDetector::Detector::Listbox.3p
+@man man/man3p/Mail::ListDetector::Detector::Listserv.3p
+@man man/man3p/Mail::ListDetector::Detector::Lyris.3p
+@man man/man3p/Mail::ListDetector::Detector::Mailman.3p
+@man man/man3p/Mail::ListDetector::Detector::Majordomo.3p
+@man man/man3p/Mail::ListDetector::Detector::Onelist.3p
+@man man/man3p/Mail::ListDetector::Detector::RFC2369.3p
+@man man/man3p/Mail::ListDetector::Detector::RFC2919.3p
+@man man/man3p/Mail::ListDetector::Detector::Smartlist.3p
+@man man/man3p/Mail::ListDetector::Detector::Yahoogroups.3p
+@man man/man3p/Mail::ListDetector::List.3p

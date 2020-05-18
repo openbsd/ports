@@ -1,0 +1,8 @@
+This module analyzes mail objects in any of the classes handled by
+Email::Abstract. It returns a Mail::ListDetector::List object
+representing the mailing list.
+
+The RFC2369 mailing list detector is also capable of matching some
+Mailman and Ezmlm messages. It is deliberately checked last to allow
+the more specific Mailman and Ezmlm parsing to happen first, and
+more accurately identify the type of mailing list involved.
