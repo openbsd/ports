@@ -1,0 +1,42 @@
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+
+Update the user and group to _puppet
+Fix module search path to /var/puppetlabs
+
+Index: lib/puppet/defaults.rb
+--- lib/puppet/defaults.rb.orig
++++ lib/puppet/defaults.rb
+@@ -41,7 +41,7 @@ module Puppet
+       end
+       path.join(File::PATH_SEPARATOR)
+     else
+-      '$codedir/modules:/opt/puppetlabs/puppet/modules'
++      '$codedir/modules:/var/puppetlabs/puppet/modules'
+     end
+   end
+ 
+@@ -54,7 +54,7 @@ module Puppet
+         nil
+       end
+     else
+-      '/opt/puppetlabs/puppet/vendor_modules'
++      '/var/puppetlabs/puppet/vendor_modules'
+     end
+   end
+ 
+@@ -1283,13 +1283,13 @@ EOT
+ 
+   settings.define_settings(:master,
+     :user => {
+-      :default    => "puppet",
++      :default    => "_puppet",
+       :desc       => "The user Puppet Server will run as. Used to ensure
+       the agent side processes (agent, apply, etc) create files and
+       directories readable by Puppet Server when necessary.",
+     },
+     :group => {
+-      :default    => "puppet",
++      :default    => "_puppet",
+       :desc       => "The group Puppet Server will run as. Used to ensure
+       the agent side processes (agent, apply, etc) create files and
+       directories readable by Puppet Server when necessary.",

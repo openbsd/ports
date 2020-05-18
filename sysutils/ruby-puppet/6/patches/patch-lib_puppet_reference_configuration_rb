@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_puppet_reference_configuration_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+
+Update the default directory locations
+
+Index: lib/puppet/reference/configuration.rb
+--- lib/puppet/reference/configuration.rb.orig
++++ lib/puppet/reference/configuration.rb
+@@ -23,11 +23,11 @@ config = Puppet::Util::Reference.newreference(:configu
+     # Now print the data about the item.
+     val = object.default
+     if name.to_s == 'vardir'
+-      val = 'Unix/Linux: /opt/puppetlabs/puppet/cache -- Windows: C:\ProgramData\PuppetLabs\puppet\cache -- Non-root user: ~/.puppetlabs/opt/puppet/cache'
++      val = 'Unix/Linux: /var/puppetlabs/puppet/cache -- Windows: C:\ProgramData\PuppetLabs\puppet\cache -- Non-root user: ~/.puppetlabs/opt/puppet/cache'
+     elsif name.to_s == 'confdir'
+-      val = 'Unix/Linux: /etc/puppetlabs/puppet -- Windows: C:\ProgramData\PuppetLabs\puppet\etc -- Non-root user: ~/.puppetlabs/etc/puppet'
++      val = 'Unix/Linux: ${SYSCONFDIR}/puppetlabs/puppet -- Windows: C:\ProgramData\PuppetLabs\puppet\etc -- Non-root user: ~/.puppetlabs/etc/puppet'
+     elsif name.to_s == 'codedir'
+-      val = 'Unix/Linux: /etc/puppetlabs/code -- Windows: C:\ProgramData\PuppetLabs\code -- Non-root user: ~/.puppetlabs/etc/code'
++      val = 'Unix/Linux: ${SYSCONFDIR}/puppetlabs/code -- Windows: C:\ProgramData\PuppetLabs\code -- Non-root user: ~/.puppetlabs/etc/code'
+     elsif name.to_s == 'rundir'
+       val = 'Unix/Linux: /var/run/puppetlabs -- Windows: C:\ProgramData\PuppetLabs\puppet\var\run -- Non-root user: ~/.puppetlabs/var/run'
+     elsif name.to_s == 'logdir'

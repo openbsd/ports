@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_puppet_util_run_mode_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+
+Update the default directory locations
+
+
+Index: lib/puppet/util/run_mode.rb
+--- lib/puppet/util/run_mode.rb.orig
++++ lib/puppet/util/run_mode.rb
+@@ -59,15 +59,15 @@ module Puppet
+ 
+     class UnixRunMode < RunMode
+       def conf_dir
+-        which_dir("/etc/puppetlabs/puppet", "~/.puppetlabs/etc/puppet")
++        which_dir("${SYSCONFDIR}/puppetlabs/puppet", "~/.puppetlabs/etc/puppet")
+       end
+ 
+       def code_dir
+-        which_dir("/etc/puppetlabs/code", "~/.puppetlabs/etc/code")
++        which_dir("${SYSCONFDIR}/puppetlabs/code", "~/.puppetlabs/etc/code")
+       end
+ 
+       def var_dir
+-        which_dir("/opt/puppetlabs/puppet/cache", "~/.puppetlabs/opt/puppet/cache")
++        which_dir("/var/puppetlabs/puppet/cache", "~/.puppetlabs/opt/puppet/cache")
+       end
+ 
+       def run_dir

@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_puppet_gettext_config_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+
+Tell Puppet where to find locales
+
+Index: lib/puppet/gettext/config.rb
+--- lib/puppet/gettext/config.rb.orig
++++ lib/puppet/gettext/config.rb
+@@ -2,7 +2,7 @@ require 'puppet/util/platform'
+ require 'puppet/file_system'
+ 
+ module Puppet::GettextConfig
+-  LOCAL_PATH = File.absolute_path('../../../locales', File.dirname(__FILE__))
++  LOCAL_PATH = File.absolute_path('../../puppet/locales', File.dirname(__FILE__))
+   POSIX_PATH = File.absolute_path('../../../../../share/locale', File.dirname(__FILE__))
+   WINDOWS_PATH = File.absolute_path('../../../../../../puppet/share/locale', File.dirname(__FILE__))
+ 
