@@ -1,0 +1,17 @@
+$OpenBSD: patch-CMake_config_cmake,v 1.1.1.1 2020/05/18 12:28:33 espie Exp $
+
+Index: CMake/config.cmake
+--- CMake/config.cmake.orig
++++ CMake/config.cmake
+@@ -45,11 +45,6 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_LIBRARY_OU
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
+ set(CMAKE_EXECUTABLE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
+ 
+-# here we specify the installation directory
+-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+-  set(CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/install" CACHE PATH  "RTTR install prefix" FORCE)
+-endif()
+-
+ # in order to group in visual studio the targets into solution filters
+ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+ 

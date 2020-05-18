@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1.1.1 2020/05/18 12:28:33 espie Exp $
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -33,7 +33,7 @@ set(DOXYGEN_PROJECT_NAME      "${PROJECT_NAME}")
+ set(DOXYGEN_INPUT_DIRECTORY   "${CMAKE_SOURCE_DIR}/src/rttr \\
+                                ${CMAKE_CURRENT_SOURCE_DIR}" )
+ set(DOXYGEN_OUTPUT_DIRECTORY  "${CMAKE_BINARY_DIR}/doc")
+-set(DOXYGEN_DOC_INSTALL_DIR   "doc")
++set(DOXYGEN_DOC_INSTALL_DIR   "share/doc")
+ set(DOXYGEN_CONFIG_FILE_IN    "DoxyFile.cfg.in")
+ set(DOXYGEN_LAYOUT_FILE_IN    "doxygen-customization/layout/DoxygenLayout.xml.in")
+ set(DOXYGEN_EXCLUDE           "")
