@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.393 2020/05/15 08:58:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.394 2020/05/18 00:16:15 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -122,6 +122,7 @@
      SUBDIR += p5-Email-Date
      SUBDIR += p5-Email-Date-Format
      SUBDIR += p5-Email-Filter
+     SUBDIR += p5-Email-Filter-Rules
      SUBDIR += p5-Email-Folder
      SUBDIR += p5-Email-FolderType
      SUBDIR += p5-Email-LocalDelivery
@@ -158,6 +159,7 @@
      SUBDIR += p5-Mail-GnuPG
      SUBDIR += p5-Mail-IMAPClient
      SUBDIR += p5-Mail-IMAPTalk
+     SUBDIR += p5-Mail-ListDetector
      SUBDIR += p5-Mail-Mbox-MessageParser
      SUBDIR += p5-Mail-Milter-Authentication
      SUBDIR += p5-Mail-POP3Client
