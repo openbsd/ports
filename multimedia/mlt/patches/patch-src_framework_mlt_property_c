@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_framework_mlt_property_c,v 1.1 2020/05/18 10:33:17 espie Exp $
+$OpenBSD: patch-src_framework_mlt_property_c,v 1.2 2020/05/18 19:33:43 espie Exp $
+note: if/when OpenBSD gets LC_NUMERIC locale support, the code should be
+revisited to use threads locale functions (see uselocale(3)), because a
+mutex is not enough to prevent unsupported usage of non thread-safe 
+locale functions from dumping core!
 
 Index: src/framework/mlt_property.c
 --- src/framework/mlt_property.c.orig
