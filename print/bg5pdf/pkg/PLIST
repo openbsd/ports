@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/26 10:02:13 bentley Exp $
-@pkgpath chinese/bg5pdf
-@pkgpath fonts/zh-bg5pdf
-bin/bg5pdf
-lib/python${MODPY_VERSION}/site-packages/bg5pdflib.so
