@@ -1,0 +1,13 @@
+$OpenBSD: patch-tools_parse_arduino_pl,v 1.1 2020/05/18 22:11:43 tracey Exp $
+
+Index: tools/parse_arduino.pl
+--- tools/parse_arduino.pl.orig
++++ tools/parse_arduino.pl
+@@ -22,6 +22,7 @@ my $os = shift;
+ $os =~ s/Windows_NT/windows/;
+ $os =~ s/Linux/linux/;
+ $os =~ s/Darwin/macosx/;
++$os =~ s/OpenBSD/openbsd/;
+ my $lwipvariant = shift;
+ my %vars;
+ 

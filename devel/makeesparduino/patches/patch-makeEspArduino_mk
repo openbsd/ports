@@ -1,10 +1,10 @@
-$OpenBSD: patch-makeEspArduino_mk,v 1.1.1.1 2020/04/23 14:31:06 tracey Exp $
+$OpenBSD: patch-makeEspArduino_mk,v 1.2 2020/05/18 22:11:43 tracey Exp $
 
 Index: makeEspArduino.mk
 --- makeEspArduino.mk.orig
 +++ makeEspArduino.mk
-@@ -26,8 +26,13 @@ CHIP ?= esp8266
- BOARD ?= $(if $(filter $(CHIP), esp32),esp32,generic)
+@@ -26,8 +26,13 @@ __TOOLS_DIR := $(dir $(__THIS_FILE))tools
+ CHIP ?= esp8266
  
  # Serial flashing parameters
 -UPLOAD_PORT ?= $(shell ls -1tr /dev/tty*USB* 2>/dev/null | tail -1)
@@ -76,7 +76,7 @@ Index: makeEspArduino.mk
  else
    # Location defined, assume it is a git clone
    ESP_ARDUINO_VERSION = $(call git_description,$(ESP_ROOT))
-@@ -213,6 +233,8 @@ LWIP_VARIANT ?= $(shell cat $(ESP_ROOT)/boards.txt | p
+@@ -215,6 +235,8 @@ LWIP_VARIANT ?= $(shell $(BOARD_OP) $(BOARD) first_lwi
  # Handle possible changed state i.e. make command line parameters or changed git versions
  ifeq ($(OS), Darwin)
    CMD_LINE := $(shell ps $$PPID -o command | tail -1)
@@ -85,8 +85,8 @@ Index: makeEspArduino.mk
  else
    CMD_LINE := $(shell tr "\0" " " </proc/$$PPID/cmdline)
  endif
-@@ -496,6 +518,8 @@ DEFAULT_GOAL ?= all
- 
+@@ -515,6 +537,8 @@ DEFAULT_GOAL ?= all
+ # Build threads, default is using all cpus
  ifeq ($(OS), Darwin)
    BUILD_THREADS ?= $(shell sysctl -n hw.ncpu)
 +else ifeq ($(OS), OpenBSD)
@@ -94,11 +94,3 @@ Index: makeEspArduino.mk
  else
    BUILD_THREADS ?= $(shell nproc)
  endif
-@@ -516,6 +540,7 @@ my $$os = shift;
- $$os =~ s/Windows_NT/windows/;
- $$os =~ s/Linux/linux/;
- $$os =~ s/Darwin/macosx/;
-+$$os =~ s/OpenBSD/openbsd/;
- my $$lwipvariant = shift;
- my %v;
- 

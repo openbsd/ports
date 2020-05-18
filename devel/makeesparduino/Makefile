@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/23 14:31:06 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/18 22:11:43 tracey Exp $
 
 COMMENT =		makefile for ESP8266 and ESP32 Arduino projects
 
 GH_ACCOUNT =		plerup
 GH_PROJECT =		makeEspArduino
-GH_TAGNAME =		4.22.0
+GH_TAGNAME =		5.0.2
 
 PKGNAME =		makeesparduino-${GH_TAGNAME}
 
@@ -27,5 +27,6 @@ post-patch:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/makeEspArduino
 	cp -r ${WRKDIST}/*.mk ${PREFIX}/share/makeEspArduino/
+	cp -r ${WRKDIST}/tools ${PREFIX}/share/makeEspArduino/
 
 .include <bsd.port.mk>
