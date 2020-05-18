@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1971 2020/05/17 20:20:08 millert Exp $
+# $OpenBSD: Makefile,v 1.1972 2020/05/18 12:29:17 espie Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1790,6 +1790,7 @@
      SUBDIR += rgbds
      SUBDIR += riscv-elf
      SUBDIR += rlog
+     SUBDIR += rttr
      SUBDIR += ruby-abstract
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-arrayfields
