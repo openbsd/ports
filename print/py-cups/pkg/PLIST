@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/07/14 16:11:14 ajacoutot Exp $
-lib/python${MODPY_VERSION}/site-packages/cups.so
+@comment $OpenBSD: PLIST,v 1.6 2020/05/18 15:46:23 ajacoutot Exp $
+@conflict py-cups-*
+@pkgpath print/py-cups
+@so lib/python${MODPY_VERSION}/site-packages/cups.so
 lib/python${MODPY_VERSION}/site-packages/pycups-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
