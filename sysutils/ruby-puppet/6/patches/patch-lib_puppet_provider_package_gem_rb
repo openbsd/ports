@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_puppet_provider_package_gem_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+$OpenBSD: patch-lib_puppet_provider_package_gem_rb,v 1.2 2020/05/18 09:11:42 kn Exp $
 
-Use the locally installed gem26 command
+Use the locally installed gem command with explicit ruby version.
 
 Index: lib/puppet/provider/package/gem.rb
 --- lib/puppet/provider/package/gem.rb.orig
@@ -10,7 +10,7 @@ Index: lib/puppet/provider/package/gem.rb
    # Doing do defers the evaluation of provider suitability until all commands are evaluated.
  
 -  has_command(:gemcmd, 'gem') do
-+  has_command(:gemcmd, 'gem26') do
++  has_command(:gemcmd, 'gem${MODRUBY_BINREV}') do
      is_optional
    end
  
