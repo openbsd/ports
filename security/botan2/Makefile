@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/05/18 13:17:42 landry Exp $
 
 COMMENT =	crypto and TLS for C++11
 
-VERSION =	2.10.0
+VERSION =	2.14.0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
 
-SHARED_LIBS =	botan-2		10.0
+SHARED_LIBS =	botan-2		11.0
 
 CATEGORIES =	security
 
@@ -22,10 +22,11 @@ WANTLIB =		${COMPILER_LIBCXX} bz2 c crypto lzma m z
 MASTER_SITES =		${HOMEPAGE}releases/
 
 SUPDISTFILES =		${DISTFILES}.asc
-EXTRACT_SUFX =		.tgz
+EXTRACT_SUFX =		.tar.xz
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # C++11
 COMPILER =		base-clang ports-gcc

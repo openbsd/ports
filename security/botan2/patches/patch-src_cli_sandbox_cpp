@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cli_sandbox_cpp,v 1.1 2019/07/04 18:16:52 bluhm Exp $
+$OpenBSD: patch-src_cli_sandbox_cpp,v 1.2 2020/05/18 13:17:43 landry Exp $
 
 Index: src/cli/sandbox.cpp
 --- src/cli/sandbox.cpp.orig
 +++ src/cli/sandbox.cpp
-@@ -29,8 +29,8 @@ Sandbox::Sandbox()
+@@ -30,8 +30,8 @@ Sandbox::Sandbox()
  bool Sandbox::init()
     {
  #if defined(BOTAN_TARGET_OS_HAS_PLEDGE)
@@ -12,5 +12,5 @@ Index: src/cli/sandbox.cpp
 +   // Cannot use pledge(2) as Botan library calls mlock(2) and munlock(2).
 +   return true;
  #elif defined(BOTAN_TARGET_OS_HAS_CAP_ENTER)
-    return (::cap_enter() == 0);
- #else
+    cap_rights_t wt, rd;
+ 
