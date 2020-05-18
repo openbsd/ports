@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1201 2020/05/17 18:48:47 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1202 2020/05/18 11:20:35 denis Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -17,6 +17,7 @@
      SUBDIR += arpd
      SUBDIR += arping
      SUBDIR += arpwatch
+     SUBDIR += asdig
      SUBDIR += avahi,
      SUBDIR += axel
      SUBDIR += balance
