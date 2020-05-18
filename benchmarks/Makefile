@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/01/20 23:33:08 kurt Exp $
+# $OpenBSD: Makefile,v 1.30 2020/05/18 13:42:57 bluhm Exp $
 
      SUBDIR =
      SUBDIR += blogbench
@@ -11,6 +11,7 @@
      SUBDIR += netperf-wrapper
      SUBDIR += netpipe
      SUBDIR += netstrain
+     SUBDIR += nuttcp
      SUBDIR += p5-Dumbbench
      SUBDIR += randread
      SUBDIR += siege
