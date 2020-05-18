@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/05/18 10:33:17 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2020/05/18 10:54:15 espie Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
@@ -70,6 +70,7 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--disable-dv \
 			--disable-kino \
 			--disable-swfdec \
+			--disable-rubberband \
 			--enable-gpl
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/melt.1 ${PREFIX}/man/man1/
