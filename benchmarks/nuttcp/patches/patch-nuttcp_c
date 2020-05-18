@@ -1,0 +1,29 @@
+$OpenBSD: patch-nuttcp_c,v 1.1.1.1 2020/05/18 13:38:42 bluhm Exp $
+
+time_t is long long
+
+Index: nuttcp.c
+--- nuttcp.c.orig
++++ nuttcp.c
+@@ -9693,18 +9693,18 @@ prusage( register struct rusage *r0, register struct r
+ 			break;
+ 
+ 		case 'X':
+-			sprintf(outp, "%ld", t == 0 ? 0 : (r1->ru_ixrss-r0->ru_ixrss)/t);
++			sprintf(outp, "%lld", t == 0 ? 0 : (r1->ru_ixrss-r0->ru_ixrss)/t);
+ 			END(outp);
+ 			break;
+ 
+ 		case 'D':
+-			sprintf(outp, "%ld", t == 0 ? 0 :
++			sprintf(outp, "%lld", t == 0 ? 0 :
+ 			    (r1->ru_idrss+r1->ru_isrss-(r0->ru_idrss+r0->ru_isrss))/t);
+ 			END(outp);
+ 			break;
+ 
+ 		case 'K':
+-			sprintf(outp, "%ld", t == 0 ? 0 :
++			sprintf(outp, "%lld", t == 0 ? 0 :
+ 			    ((r1->ru_ixrss+r1->ru_isrss+r1->ru_idrss) -
+ 			    (r0->ru_ixrss+r0->ru_idrss+r0->ru_isrss))/t);
+ 			END(outp);
