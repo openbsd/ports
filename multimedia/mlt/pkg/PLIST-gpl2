@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-gpl2,v 1.3 2018/07/29 15:05:35 rsadowski Exp $
-lib/mlt/libmltlinsys.so
-lib/mlt/libmltmotion_est.so
-lib/mlt/libmltnormalize.so
-lib/mlt/libmltplusgpl.so
-lib/mlt/libmltqt.so
-lib/mlt/libmltresample.so
-lib/mlt/libmltsdl2.so
-lib/mlt/libmltvideostab.so
-lib/mlt/libmltxine.so
+@comment $OpenBSD: PLIST-gpl2,v 1.4 2020/05/18 10:33:17 espie Exp $
+@so lib/mlt/libmltlinsys.so
+@so lib/mlt/libmltmotion_est.so
+@so lib/mlt/libmltnormalize.so
+@so lib/mlt/libmltplusgpl.so
+@so lib/mlt/libmltqt.so
+@so lib/mlt/libmltresample.so
+@so lib/mlt/libmltsdl2.so
+@so lib/mlt/libmltvideostab.so
+@so lib/mlt/libmltxine.so
 share/mlt/linsys/
 share/mlt/linsys/consumer_sdi.yml
 share/mlt/motion_est/

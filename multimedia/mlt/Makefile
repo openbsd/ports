@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/05/18 10:33:17 espie Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
-VERSION =		6.16.0
+VERSION =		6.20.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
 
 # XXX versions should be kept in sync together
-SHARED_LIBS =		mlt		3.1
-SHARED_LIBS +=		mlt++		3.1
+SHARED_LIBS =		mlt		3.2
+SHARED_LIBS +=		mlt++		3.2
 
 CATEGORIES =		multimedia devel
 HOMEPAGE =		https://www.mltframework.org/
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -21,13 +22,10 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # file gets included, see --enable-gpl3 configure option.
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main += ${COMPILER_LIBCXX} SDL SDL2 SDL_image X11 Xcomposite
-WANTLIB-main += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB-main += atk-1.0 avcodec avdevice avfilter avformat avutil c
-WANTLIB-main += cairo exif fftw3 fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 intl jack
-WANTLIB-main += m pango-1.0 pangocairo-1.0 pangoft2-1.0 sox swresample
-WANTLIB-main += swscale xml2 z
+WANTLIB-main += ${COMPILER_LIBCXX} SDL SDL2 SDL_image X11 avcodec avdevice
+WANTLIB-main += avfilter avformat avutil c exif fftw3 fontconfig gdk-x11-2.0
+WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 jack m pango-1.0
+WANTLIB-main += pangoft2-1.0 sox swresample swscale vorbisfile xml2
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Svg Qt5Widgets
 WANTLIB += Qt5Xml SDL2 exif m mlt samplerate

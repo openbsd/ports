@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2019/04/26 13:39:16 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2020/05/18 10:33:17 espie Exp $
 @conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
@@ -41,6 +41,7 @@ include/mlt/framework/mlt_filter.h
 include/mlt/framework/mlt_frame.h
 include/mlt/framework/mlt_geometry.h
 include/mlt/framework/mlt_log.h
+include/mlt/framework/mlt_luma_map.h
 include/mlt/framework/mlt_multitrack.h
 include/mlt/framework/mlt_parser.h
 include/mlt/framework/mlt_playlist.h
@@ -60,19 +61,20 @@ include/mlt/framework/mlt_version.h
 @lib lib/libmlt++.so.${LIBmlt++_VERSION}
 @lib lib/libmlt.so.${LIBmlt_VERSION}
 lib/mlt/
-lib/mlt/libmltavformat.so
-lib/mlt/libmltcore.so
-lib/mlt/libmltdecklink.so
-lib/mlt/libmltfrei0r.so
-lib/mlt/libmltgtk2.so
-lib/mlt/libmltjackrack.so
-lib/mlt/libmltkdenlive.so
-lib/mlt/libmltoldfilm.so
-lib/mlt/libmltplus.so
-lib/mlt/libmltsdl.so
-lib/mlt/libmltsox.so
-lib/mlt/libmltvmfx.so
-lib/mlt/libmltxml.so
+@so lib/mlt/libmltavformat.so
+@so lib/mlt/libmltcore.so
+@so lib/mlt/libmltdecklink.so
+@so lib/mlt/libmltfrei0r.so
+@so lib/mlt/libmltgtk2.so
+@so lib/mlt/libmltjackrack.so
+@so lib/mlt/libmltkdenlive.so
+@so lib/mlt/libmltoldfilm.so
+@so lib/mlt/libmltplus.so
+@so lib/mlt/libmltsdl.so
+@so lib/mlt/libmltsox.so
+@so lib/mlt/libmltvmfx.so
+@so lib/mlt/libmltvorbis.so
+@so lib/mlt/libmltxml.so
 lib/pkgconfig/mlt++.pc
 lib/pkgconfig/mlt-framework.pc
 @man man/man1/melt.1
@@ -137,8 +139,10 @@ share/mlt/feeds/PAL/example.properties
 share/mlt/feeds/PAL/obscure.properties
 share/mlt/frei0r/
 share/mlt/frei0r/blacklist.txt
+share/mlt/frei0r/filter_cairoblend_mode.yml
 share/mlt/frei0r/not_thread_safe.txt
 share/mlt/frei0r/param_name_map.yaml
+share/mlt/frei0r/resolution_scale.yml
 share/mlt/gtk2/
 share/mlt/gtk2/consumer_gtk2_preview.yml
 share/mlt/gtk2/filter_rescale.yml
@@ -156,122 +160,6 @@ share/mlt/kdenlive/filter_boxblur.yml
 share/mlt/kdenlive/filter_freeze.yml
 share/mlt/kdenlive/filter_wave.yml
 share/mlt/kdenlive/producer_framebuffer.yml
-share/mlt/lumas/
-share/mlt/lumas/16_9/
-share/mlt/lumas/16_9/luma01.pgm
-share/mlt/lumas/16_9/luma02.pgm
-share/mlt/lumas/16_9/luma03.pgm
-share/mlt/lumas/16_9/luma04.pgm
-share/mlt/lumas/16_9/luma05.pgm
-share/mlt/lumas/16_9/luma06.pgm
-share/mlt/lumas/16_9/luma07.pgm
-share/mlt/lumas/16_9/luma08.pgm
-share/mlt/lumas/16_9/luma09.pgm
-share/mlt/lumas/16_9/luma10.pgm
-share/mlt/lumas/16_9/luma11.pgm
-share/mlt/lumas/16_9/luma12.pgm
-share/mlt/lumas/16_9/luma13.pgm
-share/mlt/lumas/16_9/luma14.pgm
-share/mlt/lumas/16_9/luma15.pgm
-share/mlt/lumas/16_9/luma16.pgm
-share/mlt/lumas/16_9/luma17.pgm
-share/mlt/lumas/16_9/luma18.pgm
-share/mlt/lumas/16_9/luma19.pgm
-share/mlt/lumas/16_9/luma20.pgm
-share/mlt/lumas/16_9/luma21.pgm
-share/mlt/lumas/16_9/luma22.pgm
-share/mlt/lumas/9_16/
-share/mlt/lumas/9_16/luma01.pgm
-share/mlt/lumas/9_16/luma02.pgm
-share/mlt/lumas/9_16/luma03.pgm
-share/mlt/lumas/9_16/luma04.pgm
-share/mlt/lumas/9_16/luma05.pgm
-share/mlt/lumas/9_16/luma06.pgm
-share/mlt/lumas/9_16/luma07.pgm
-share/mlt/lumas/9_16/luma08.pgm
-share/mlt/lumas/9_16/luma09.pgm
-share/mlt/lumas/9_16/luma10.pgm
-share/mlt/lumas/9_16/luma11.pgm
-share/mlt/lumas/9_16/luma12.pgm
-share/mlt/lumas/9_16/luma13.pgm
-share/mlt/lumas/9_16/luma14.pgm
-share/mlt/lumas/9_16/luma15.pgm
-share/mlt/lumas/9_16/luma16.pgm
-share/mlt/lumas/9_16/luma17.pgm
-share/mlt/lumas/9_16/luma18.pgm
-share/mlt/lumas/9_16/luma19.pgm
-share/mlt/lumas/9_16/luma20.pgm
-share/mlt/lumas/9_16/luma21.pgm
-share/mlt/lumas/9_16/luma22.pgm
-share/mlt/lumas/NTSC/
-share/mlt/lumas/NTSC/luma01.pgm
-share/mlt/lumas/NTSC/luma02.pgm
-share/mlt/lumas/NTSC/luma03.pgm
-share/mlt/lumas/NTSC/luma04.pgm
-share/mlt/lumas/NTSC/luma05.pgm
-share/mlt/lumas/NTSC/luma06.pgm
-share/mlt/lumas/NTSC/luma07.pgm
-share/mlt/lumas/NTSC/luma08.pgm
-share/mlt/lumas/NTSC/luma09.pgm
-share/mlt/lumas/NTSC/luma10.pgm
-share/mlt/lumas/NTSC/luma11.pgm
-share/mlt/lumas/NTSC/luma12.pgm
-share/mlt/lumas/NTSC/luma13.pgm
-share/mlt/lumas/NTSC/luma14.pgm
-share/mlt/lumas/NTSC/luma15.pgm
-share/mlt/lumas/NTSC/luma16.pgm
-share/mlt/lumas/NTSC/luma17.pgm
-share/mlt/lumas/NTSC/luma18.pgm
-share/mlt/lumas/NTSC/luma19.pgm
-share/mlt/lumas/NTSC/luma20.pgm
-share/mlt/lumas/NTSC/luma21.pgm
-share/mlt/lumas/NTSC/luma22.pgm
-share/mlt/lumas/PAL/
-share/mlt/lumas/PAL/luma01.pgm
-share/mlt/lumas/PAL/luma02.pgm
-share/mlt/lumas/PAL/luma03.pgm
-share/mlt/lumas/PAL/luma04.pgm
-share/mlt/lumas/PAL/luma05.pgm
-share/mlt/lumas/PAL/luma06.pgm
-share/mlt/lumas/PAL/luma07.pgm
-share/mlt/lumas/PAL/luma08.pgm
-share/mlt/lumas/PAL/luma09.pgm
-share/mlt/lumas/PAL/luma10.pgm
-share/mlt/lumas/PAL/luma11.pgm
-share/mlt/lumas/PAL/luma12.pgm
-share/mlt/lumas/PAL/luma13.pgm
-share/mlt/lumas/PAL/luma14.pgm
-share/mlt/lumas/PAL/luma15.pgm
-share/mlt/lumas/PAL/luma16.pgm
-share/mlt/lumas/PAL/luma17.pgm
-share/mlt/lumas/PAL/luma18.pgm
-share/mlt/lumas/PAL/luma19.pgm
-share/mlt/lumas/PAL/luma20.pgm
-share/mlt/lumas/PAL/luma21.pgm
-share/mlt/lumas/PAL/luma22.pgm
-share/mlt/lumas/square/
-share/mlt/lumas/square/luma01.pgm
-share/mlt/lumas/square/luma02.pgm
-share/mlt/lumas/square/luma03.pgm
-share/mlt/lumas/square/luma04.pgm
-share/mlt/lumas/square/luma05.pgm
-share/mlt/lumas/square/luma06.pgm
-share/mlt/lumas/square/luma07.pgm
-share/mlt/lumas/square/luma08.pgm
-share/mlt/lumas/square/luma09.pgm
-share/mlt/lumas/square/luma10.pgm
-share/mlt/lumas/square/luma11.pgm
-share/mlt/lumas/square/luma12.pgm
-share/mlt/lumas/square/luma13.pgm
-share/mlt/lumas/square/luma14.pgm
-share/mlt/lumas/square/luma15.pgm
-share/mlt/lumas/square/luma16.pgm
-share/mlt/lumas/square/luma17.pgm
-share/mlt/lumas/square/luma18.pgm
-share/mlt/lumas/square/luma19.pgm
-share/mlt/lumas/square/luma20.pgm
-share/mlt/lumas/square/luma21.pgm
-share/mlt/lumas/square/luma22.pgm
 share/mlt/metaschema.yaml
 share/mlt/oldfilm/
 share/mlt/oldfilm/dust1.svg
@@ -316,6 +204,8 @@ share/mlt/presets/
 share/mlt/presets/consumer/
 share/mlt/presets/consumer/avformat/
 share/mlt/presets/consumer/avformat/AAC
+share/mlt/presets/consumer/avformat/ALAC
+share/mlt/presets/consumer/avformat/FLAC
 share/mlt/presets/consumer/avformat/Flash
 share/mlt/presets/consumer/avformat/GIF
 share/mlt/presets/consumer/avformat/MJPEG
@@ -400,10 +290,12 @@ share/mlt/presets/consumer/avformat/hdv_720_50p/HDV
 share/mlt/presets/consumer/avformat/hdv_720_60p/
 share/mlt/presets/consumer/avformat/hdv_720_60p/HDV
 share/mlt/presets/consumer/avformat/intermediate/
+share/mlt/presets/consumer/avformat/intermediate/DNxHR-HQ
 share/mlt/presets/consumer/avformat/intermediate/MJPEG
 share/mlt/presets/consumer/avformat/intermediate/MPEG-2
 share/mlt/presets/consumer/avformat/intermediate/MPEG-4
 share/mlt/presets/consumer/avformat/intermediate/ProRes
+share/mlt/presets/consumer/avformat/intermediate/ProRes HQ
 share/mlt/presets/consumer/avformat/intermediate/ProRes-Kostya
 share/mlt/presets/consumer/avformat/lossless/
 share/mlt/presets/consumer/avformat/lossless/FFV1
@@ -519,6 +411,7 @@ share/mlt/profiles/vcd_ntsc
 share/mlt/profiles/vcd_pal
 share/mlt/profiles/vertical_hd_30
 share/mlt/profiles/vertical_hd_60
+share/mlt/qt/
 share/mlt/qt/filter_qtext.yml
 share/mlt/sdl/
 share/mlt/sdl/consumer_sdl.yml
@@ -535,6 +428,8 @@ share/mlt/vmfx/filter_chroma_hold.yml
 share/mlt/vmfx/filter_mono.yml
 share/mlt/vmfx/filter_shape.yml
 share/mlt/vmfx/producer_pgm.yml
+share/mlt/vorbis/
+share/mlt/vorbis/producer_vorbis.yml
 share/mlt/xml/
 share/mlt/xml/consumer_xml.yml
 share/mlt/xml/mlt-xml.dtd
