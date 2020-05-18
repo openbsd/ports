@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.114 2020/03/02 14:07:05 feinerer Exp $
+# $OpenBSD: Makefile,v 1.115 2020/05/18 05:26:13 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.6.3
+DISTNAME=	R-4.0.0
 
-SO_VERSION=	36.1
+SO_VERSION=	37.0
 .for _lib in R Rblas Rlapack
 SHARED_LIBS +=	${_lib} ${SO_VERSION}
 .endfor
@@ -19,20 +19,12 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB} ${MODFORTRAN_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo crypto curl
 WANTLIB += glib-2.0 gobject-2.0 harfbuzz iconv icui18n icuuc intl jpeg lzma m
-WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre pcre2-8 png readline ssl tiff z
+WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre2-8 png readline ssl tiff z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://cran.r-project.org/src/base/R-3/ \
-		http://cran.at.r-project.org/src/base/R-3/ \
-		http://cran.br.r-project.org/src/base/R-3/ \
-		http://cran.ch.r-project.org/src/base/R-3/ \
-		http://cran.dk.r-project.org/src/base/R-3/ \
-		http://cran.es.r-project.org/src/base/R-3/ \
-		http://cran.stat.ucla.edu/src/base/R-3/ \
-		http://cran.uk.r-project.org/src/base/R-3/ \
-		http://cran.us.r-project.org/src/base/R-3/ \
-		http://probability.ca/cran/src/base/R-3/
+MASTER_SITES=	https://cran.r-project.org/src/base/R-4/ \
+		https://cloud.r-project.org/src/base/R-4/
 
 MODULES=	fortran \
 		x11/tk

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2019/12/18 13:05:48 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.44 2020/05/18 05:26:13 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -415,6 +415,9 @@ lib/R/library/class/po/en@quot/LC_MESSAGES/R-class.mo
 lib/R/library/class/po/fr/
 lib/R/library/class/po/fr/LC_MESSAGES/
 lib/R/library/class/po/fr/LC_MESSAGES/R-class.mo
+lib/R/library/class/po/it/
+lib/R/library/class/po/it/LC_MESSAGES/
+lib/R/library/class/po/it/LC_MESSAGES/R-class.mo
 lib/R/library/class/po/ko/
 lib/R/library/class/po/ko/LC_MESSAGES/
 lib/R/library/class/po/ko/LC_MESSAGES/R-class.mo
@@ -1923,12 +1926,16 @@ share/doc/R/NEWS
 share/doc/R/NEWS.0
 share/doc/R/NEWS.1
 share/doc/R/NEWS.2
+share/doc/R/NEWS.2.rds
+share/doc/R/NEWS.3
+share/doc/R/NEWS.3.rds
 share/doc/R/NEWS.pdf
 share/doc/R/NEWS.rds
 share/doc/R/RESOURCES
 share/doc/R/THANKS
 share/doc/R/html/
 share/doc/R/html/NEWS.2.html
+share/doc/R/html/NEWS.3.html
 share/doc/R/html/NEWS.html
 share/doc/R/html/R.css
 share/doc/R/html/Rlogo.pdf

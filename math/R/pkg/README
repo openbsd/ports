@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2018/09/04 12:46:16 espie Exp $
+$OpenBSD: README,v 1.10 2020/05/18 05:26:13 feinerer Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -11,7 +11,7 @@ libraries are located.
 
 Running:
 
-# export JAVA_HOME=${LOCALBASE}/jdk-1.8.0
+# export JAVA_HOME=${LOCALBASE}/jdk-11
 # ${TRUEPREFIX}/bin/R CMD javareconf
 
 as root, will update both ${TRUEPREFIX}/lib/R/etc/Makeconf and
