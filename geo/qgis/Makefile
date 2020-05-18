@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2020/04/20 06:08:33 landry Exp $
+# $OpenBSD: Makefile,v 1.129 2020/05/18 12:18:09 landry Exp $
 
 BROKEN-powerpc =	does not build: "operand out of range"
 BROKEN-sparc64 =	undefined reference to QOpenGLExtension_ARB_tessellation_shader::QOpenGLExtension_ARB_tessellation_shader() in libQt53DRender.so.2.0 when linking qgis_3drenderingtest
@@ -7,13 +7,13 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.12.2
+DISTNAME =	qgis-3.12.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	41.0 \
-		qgis_app	25.0 \
+SHARED_LIBS =	qgis_core	42.0 \
+		qgis_app	26.0 \
 		qgis_gui	32.0 \
 		qgis_analysis	15.1 \
 		qgis_server	13.0 \
@@ -84,7 +84,7 @@ WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
 WANTLIB += c exiv2 expat fcgi gdal geos_c gsl gslcblas m mdal pq proj ${MODPY_WANTLIB}
 WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt-qt5 spatialindex
-WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z
+WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z GL
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
 WANTLIB += Qt53DRender Qt5Gamepad
 WANTLIB += Qt5DBus Qt5Qml Qt5Quick Qt5QuickWidgets Qt5SerialPort
