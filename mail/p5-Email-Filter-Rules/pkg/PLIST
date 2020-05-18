@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/18 00:14:28 afresh1 Exp $
+${P5SITE}/Email/Filter/
+${P5SITE}/Email/Filter/Rules.pm
+@man man/man3p/Email::Filter::Rules.3p

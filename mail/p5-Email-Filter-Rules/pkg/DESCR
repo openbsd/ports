@@ -1,0 +1,8 @@
+Email::Filter::Rules is a simple way to route e-mail into folders
+without having to touch your filter script. I used to edit my filter
+script often to add or remove e-mail lists and often would fat
+finger something and enter a typo. This would result in all my
+e-mail bouncing and all in all would be a real bummer.
+
+I wanted to make it syntax simple so it wouldn't end up looking
+like to awful procmail recipe or some cryptic piece of junk.
