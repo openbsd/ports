@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2017/09/25 09:16:12 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2020/05/18 18:36:18 tracey Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -297,7 +297,7 @@ if test "$GCC" = yes; then
+@@ -388,7 +388,7 @@ if test "$GCC" = yes; then
  	safe_CFLAGS=$CFLAGS
  	CFLAGS="$ENABLE_WARNINGS -Wno-pointer-sign"
  
@@ -12,7 +12,7 @@ Index: configure.ac
  		no_pointer_sign=yes
  		AC_MSG_RESULT([yes]) 
  		], [
-@@ -322,7 +322,7 @@ case $target in
+@@ -413,7 +413,7 @@ case $target in
  			safe_CFLAGS="$CFLAGS"
  			CFLAGS="$ENABLE_WARNINGS -mno-cygwin"
  

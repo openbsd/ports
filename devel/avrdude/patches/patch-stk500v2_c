@@ -1,7 +1,9 @@
-$OpenBSD: patch-stk500v2_c,v 1.5 2013/05/05 16:48:08 edd Exp $
---- stk500v2.c.orig	Fri Aug 26 21:22:10 2011
-+++ stk500v2.c	Sat May  4 10:30:28 2013
-@@ -319,6 +319,7 @@ static void stk500v2_jtagmkII_setup(PROGRAMMER * pgm)
+$OpenBSD: patch-stk500v2_c,v 1.6 2020/05/18 18:36:18 tracey Exp $
+
+Index: stk500v2.c
+--- stk500v2.c.orig
++++ stk500v2.c
+@@ -350,6 +350,7 @@ static void stk500v2_jtag3_setup(PROGRAMMER * pgm)
  void stk500v2_teardown(PROGRAMMER * pgm)
  {
    free(pgm->cookie);
@@ -9,23 +11,25 @@ $OpenBSD: patch-stk500v2_c,v 1.5 2013/05/05 16:48:08 edd Exp $
  }
  
  static void stk500v2_jtagmkII_teardown(PROGRAMMER * pgm)
-@@ -330,6 +331,7 @@ static void stk500v2_jtagmkII_teardown(PROGRAMMER * pg
+@@ -361,6 +362,7 @@ static void stk500v2_jtagmkII_teardown(PROGRAMMER * pg
    jtagmkII_teardown(pgm);
  
    free(mycookie);
 +  pgm->cookie = NULL;
  }
  
- 
-@@ -1158,12 +1160,14 @@ static int stk500hv_initialize(PROGRAMMER * pgm, AVRPA
-   if ((PDATA(pgm)->flash_pagecache = malloc(PDATA(pgm)->flash_pagesize)) == NULL) {
-     fprintf(stderr, "%s: stk500pp_initialize(): Out of memory\n",
- 	    progname);
-+    PDATA(pgm)->eeprom_pagecache = NULL;
-     return -1;
+ static void stk500v2_jtag3_teardown(PROGRAMMER * pgm)
+@@ -1477,6 +1479,8 @@ static int stk500hv_initialize(PROGRAMMER * pgm, AVRPA
    }
-   if ((PDATA(pgm)->eeprom_pagecache = malloc(PDATA(pgm)->eeprom_pagesize)) == NULL) {
-     fprintf(stderr, "%s: stk500pp_initialize(): Out of memory\n",
+   free(PDATA(pgm)->flash_pagecache);
+   free(PDATA(pgm)->eeprom_pagecache);
++  PDATA(pgm)->flash_pagecache = NULL;
++  PDATA(pgm)->eeprom_pagecache = NULL;
+   if ((PDATA(pgm)->flash_pagecache = malloc(PDATA(pgm)->flash_pagesize)) == NULL) {
+     avrdude_message(MSG_INFO, "%s: stk500hv_initialize(): Out of memory\n",
+ 	    progname);
+@@ -1486,6 +1490,7 @@ static int stk500hv_initialize(PROGRAMMER * pgm, AVRPA
+     avrdude_message(MSG_INFO, "%s: stk500hv_initialize(): Out of memory\n",
  	    progname);
      free(PDATA(pgm)->flash_pagecache);
 +    PDATA(pgm)->flash_pagecache = NULL;
