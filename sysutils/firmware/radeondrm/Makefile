@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/01/10 09:53:55 jsg Exp $
+# $OpenBSD: Makefile,v 1.8 2020/05/18 19:30:56 kn Exp $
 
 FW_DRIVER=	radeondrm
 FW_VER=		20181218
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
+EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,radeon/\*.bin}
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 

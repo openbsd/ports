@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/21 09:49:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/18 19:30:56 kn Exp $
 
 FW_DRIVER=	rtwn
 # date of the newest files in rtlwifi dir
@@ -7,6 +7,7 @@ FW_VER=		20180103
 # date of the newest files in linux-firmware checkout
 DISTNAME=	linux-firmware-20180913
 EXTRACT_SUFX=	.tar.xz
+EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,rtlwifi}
 
 do-install:
 .for s i in \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/07 00:01:27 jsg Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/18 19:30:56 kn Exp $
 
 FW_DRIVER=	inteldrm
 FW_VER=		20181218
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
+EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,i915}
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
