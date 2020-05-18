@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/14 19:20:27 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/18 18:21:00 kn Exp $
 
 # ectool requires amd64_iopl(2)
 # intelmetool requires <amd64/pio.h>
@@ -24,6 +24,8 @@ WANTLIB =		c
 MASTER_SITES =		https://coreboot.org/releases/
 
 EXTRACT_SUFX =		.tar.xz
+# utils (7M) vs. everything (205M)
+EXTRACT_FILES =		${DISTNAME}/{src/commonlib,util}
 
 USE_GMAKE =		Yes
 
