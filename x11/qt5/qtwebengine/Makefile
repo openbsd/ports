@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/16 07:02:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/05/18 15:29:08 rsadowski Exp $
 
 USE_WXNEEDED =		Yes
+
+ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
