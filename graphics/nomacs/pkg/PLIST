@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/03/23 07:28:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/05/18 19:59:58 rsadowski Exp $
 @bin bin/nomacs
 @lib lib/libnomacsCore.so.${LIBnomacsCore_VERSION}
 @man man/man1/nomacs.1
@@ -11,16 +11,25 @@ share/nomacs/Image Lounge/themes/
 share/nomacs/Image Lounge/themes/Dark-Theme.css
 share/nomacs/Image Lounge/themes/Light-Theme.css
 share/nomacs/Image Lounge/translations/
+share/nomacs/Image Lounge/translations/nomacs_af.qm
 share/nomacs/Image Lounge/translations/nomacs_als.qm
 share/nomacs/Image Lounge/translations/nomacs_ar.qm
+share/nomacs/Image Lounge/translations/nomacs_az.qm
 share/nomacs/Image Lounge/translations/nomacs_bg.qm
 share/nomacs/Image Lounge/translations/nomacs_br_pt.qm
 share/nomacs/Image Lounge/translations/nomacs_bs.qm
+share/nomacs/Image Lounge/translations/nomacs_ca.qm
 share/nomacs/Image Lounge/translations/nomacs_cs.qm
+share/nomacs/Image Lounge/translations/nomacs_da.qm
 share/nomacs/Image Lounge/translations/nomacs_de.qm
+share/nomacs/Image Lounge/translations/nomacs_el.qm
+share/nomacs/Image Lounge/translations/nomacs_en.qm
 share/nomacs/Image Lounge/translations/nomacs_es.qm
+share/nomacs/Image Lounge/translations/nomacs_et.qm
 share/nomacs/Image Lounge/translations/nomacs_fi.qm
 share/nomacs/Image Lounge/translations/nomacs_fr.qm
+share/nomacs/Image Lounge/translations/nomacs_he.qm
+share/nomacs/Image Lounge/translations/nomacs_hi.qm
 share/nomacs/Image Lounge/translations/nomacs_hr.qm
 share/nomacs/Image Lounge/translations/nomacs_hu.qm
 share/nomacs/Image Lounge/translations/nomacs_id.qm
@@ -28,16 +37,21 @@ share/nomacs/Image Lounge/translations/nomacs_it.qm
 share/nomacs/Image Lounge/translations/nomacs_ja.qm
 share/nomacs/Image Lounge/translations/nomacs_ko.qm
 share/nomacs/Image Lounge/translations/nomacs_nl.qm
+share/nomacs/Image Lounge/translations/nomacs_no.qm
 share/nomacs/Image Lounge/translations/nomacs_pl.qm
 share/nomacs/Image Lounge/translations/nomacs_pt.qm
+share/nomacs/Image Lounge/translations/nomacs_ro.qm
 share/nomacs/Image Lounge/translations/nomacs_ru.qm
 share/nomacs/Image Lounge/translations/nomacs_sk.qm
+share/nomacs/Image Lounge/translations/nomacs_sl.qm
 share/nomacs/Image Lounge/translations/nomacs_sr.qm
 share/nomacs/Image Lounge/translations/nomacs_sv.qm
 share/nomacs/Image Lounge/translations/nomacs_tr.qm
 share/nomacs/Image Lounge/translations/nomacs_tw_zh.qm
 share/nomacs/Image Lounge/translations/nomacs_uk.qm
+share/nomacs/Image Lounge/translations/nomacs_vi.qm
 share/nomacs/Image Lounge/translations/nomacs_zh.qm
+share/nomacs/Image Lounge/translations/nomacs_zh_CN.qm
 share/pixmaps/
 share/pixmaps/nomacs.svg
 @tag update-desktop-database

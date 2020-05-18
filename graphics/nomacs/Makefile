@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/05/14 19:16:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2020/05/18 19:59:58 rsadowski Exp $
 
 COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
-GH_TAGNAME =	3.12
-REVISION =	3
+GH_TAGNAME =	3.14.2
 
 CATEGORIES =	graphics
 
@@ -13,7 +12,7 @@ HOMEPAGE =	https://nomacs.org
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  nomacsCore                4.0 # 3.3
+SHARED_LIBS +=  nomacsCore                5.0 # 3.3
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
