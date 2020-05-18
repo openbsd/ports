@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 21:07:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/18 15:42:09 ajacoutot Exp $
 
 COMMENT =	multiplatform vector graphics editor
 
 VERSION =	2.0rc3
 DISTNAME =	sk1-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
@@ -33,10 +33,12 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			graphics/py-Pillow \
 			graphics/py-cairo \
-			print/py-cups \
 			print/py-reportlab \
 			x11/py-wxPython \
 			x11/wxWidgets
+
+# no more python2 support in py-cups, sk1 should move to python3
+#RUN_DEPENDS +=		print/py-cups
 
 MAKE_ENV =	APP_INSTALL_PATH=${MODPY_SITEPKG}
 
