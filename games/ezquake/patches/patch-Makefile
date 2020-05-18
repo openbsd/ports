@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2018/08/15 22:15:02 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/05/18 09:29:06 solene Exp $
 
 Skip the architecture dance.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -388,7 +388,7 @@ endif
+@@ -379,7 +379,7 @@ endif
  ifdef CONFIG_WINDOWS
      TARG_c := ezquake.exe
  else
