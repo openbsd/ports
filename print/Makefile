@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2020/05/18 00:01:28 jca Exp $
+# $OpenBSD: Makefile,v 1.132 2020/05/18 00:02:48 jca Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -47,7 +47,6 @@
     SUBDIR += openclipart
     SUBDIR += p5-Poppler
     SUBDIR += p5-PostScript-MailLabels
-    SUBDIR += pdflib
     SUBDIR += pdfshuffler
     SUBDIR += poppler,
     SUBDIR += poppler-data
