@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.104 2020/05/14 15:52:55 juanfra Exp $
+# $OpenBSD: Makefile,v 1.105 2020/05/18 16:46:10 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
 MODPY_EGG_VERSION =	5.4
+REVISION =		0
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -36,6 +37,7 @@ TEST_DEPENDS =		archivers/unzip \
 			devel/mercurial,-x11 \
 			misc/findutils \
 			sysutils/coreutils
+RUN_DEPENDS =		devel/libgit2/py-git2
 RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
 
