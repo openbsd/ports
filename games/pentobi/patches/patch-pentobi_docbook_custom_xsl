@@ -1,0 +1,49 @@
+$OpenBSD: patch-pentobi_docbook_custom_xsl,v 1.1 2020/05/18 17:11:08 bcallah Exp $
+
+runtime error: file /usr/ports/pobj/pentobi-18.0/pentobi-18.0/pentobi/docbook/custom.xsl line 40 element td
+Variable 'direction.align.start' has not been declared.
+XPath error : Undefined variable
+runtime error: file /usr/ports/pobj/pentobi-18.0/pentobi-18.0/pentobi/docbook/custom.xsl line 40 element td
+Internal error: Failed to evaluate the AVT of attribute 'align'.
+error: file /usr/ports/pobj/pentobi-18.0/pentobi-18.0/pentobi/docbook/index.docbook
+xsltRunStylesheet : run failed
+
+Index: pentobi/docbook/custom.xsl
+--- pentobi/docbook/custom.xsl.orig
++++ pentobi/docbook/custom.xsl
+@@ -37,7 +37,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  vers
+ <div class="navheader">
+ <table width="100%">
+ <tr>
+-<td width="34%" align="{$direction.align.start}">
++<td width="34%">
+ <xsl:if test="count($prev)>0">
+ <a>
+ <xsl:attribute name="href">
+@@ -69,7 +69,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  vers
+ <xsl:otherwise>&#160;</xsl:otherwise>
+ </xsl:choose>
+ </td>
+-<td width="34%" align="{$direction.align.end}">
++<td width="34%">
+ <xsl:text>&#160;</xsl:text>
+ <xsl:if test="count($next)>0">
+ <a>
+@@ -99,7 +99,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  vers
+ <hr/>
+ <table width="100%">
+ <tr>
+-<td width="34%" align="{$direction.align.start}">
++<td width="34%">
+ <xsl:if test="count($prev)>0">
+ <a>
+ <xsl:attribute name="href">
+@@ -131,7 +131,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  vers
+ <xsl:otherwise>&#160;</xsl:otherwise>
+ </xsl:choose>
+ </td>
+-<td width="34%" align="{$direction.align.end}">
++<td width="34%">
+ <xsl:text>&#160;</xsl:text>
+ <xsl:if test="count($next)>0">
+ <a>

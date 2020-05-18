@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/10/21 14:34:37 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/05/18 17:11:08 bcallah Exp $
 
 COMMENT =	free clone of Blokus board game
-DISTNAME =	pentobi-14.1
+DISTNAME =	pentobi-18.0
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
-REVISION =	4
 
 HOMEPAGE =	http://pentobi.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -12,24 +11,29 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Widgets c m pthread
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickControls2 Qt5Svg Qt5Widgets c m
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pentobi/}
 
 MODULES =	devel/cmake \
 		x11/qt5
 
-BUILD_DEPENDS =	x11/qt5/qtdeclarative \
-		x11/qt5/qtsvg \
+BUILD_DEPENDS =	devel/appstream-glib \
+		devel/gettext,-tools \
 		x11/qt5/qttools
+
+LIB_DEPENDS =	x11/qt5/qtdeclarative \
+		x11/qt5/qtquickcontrols2 \
+		x11/qt5/qtsvg
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtsvg \
 		x11/qt5/qttools
+
+CONFIGURE_ARGS =	-DMETAINFO_ITS="${LOCALBASE}/share/gettext/its/appdata.its" \
+			-DPENTOBI_OPEN_HELP_EXTERNALLY=On
 
 NO_TEST =	Yes
 

@@ -1,6 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/05/18 17:11:08 bcallah Exp $
 @bin bin/pentobi
 @bin bin/pentobi-thumbnailer
+man/de/
+man/de/man6/
+@man man/de/man6/pentobi-thumbnailer.6
+@man man/de/man6/pentobi.6
+man/es/
+man/es/man6/
+@man man/es/man6/pentobi-thumbnailer.6
+@man man/es/man6/pentobi.6
 @man man/man6/pentobi-thumbnailer.6
 @man man/man6/pentobi.6
 share/applications/io.sourceforge.pentobi.desktop
@@ -23,6 +31,7 @@ share/help/C/pentobi/index.html
 share/help/C/pentobi/junior_rules.html
 share/help/C/pentobi/license.html
 share/help/C/pentobi/nexos_rules.html
+share/help/C/pentobi/overview.html
 share/help/C/pentobi/pieces.png
 share/help/C/pentobi/pieces_callisto.png
 share/help/C/pentobi/pieces_gembloq.jpg
@@ -53,47 +62,36 @@ share/help/de/pentobi/index.html
 share/help/de/pentobi/junior_rules.html
 share/help/de/pentobi/license.html
 share/help/de/pentobi/nexos_rules.html
+share/help/de/pentobi/overview.html
 share/help/de/pentobi/shortcuts.html
 share/help/de/pentobi/system.html
 share/help/de/pentobi/trigon_rules.html
 share/help/de/pentobi/user_interface.html
 share/help/de/pentobi/window_menu.html
-share/icons/hicolor/16x16/apps/pentobi.png
-share/icons/hicolor/16x16/mimetypes/application-x-blokus-sgf.png
-share/icons/hicolor/32x32/apps/pentobi.png
-share/icons/hicolor/32x32/mimetypes/application-x-blokus-sgf.png
+share/help/es/
+share/help/es/pentobi/
+share/help/es/pentobi/become_stronger.html
+share/help/es/pentobi/callisto_rules.html
+share/help/es/pentobi/classic_rules.html
+share/help/es/pentobi/duo_rules.html
+share/help/es/pentobi/gembloq_rules.html
+share/help/es/pentobi/index.html
+share/help/es/pentobi/junior_rules.html
+share/help/es/pentobi/license.html
+share/help/es/pentobi/nexos_rules.html
+share/help/es/pentobi/overview.html
+share/help/es/pentobi/shortcuts.html
+share/help/es/pentobi/system.html
+share/help/es/pentobi/trigon_rules.html
+share/help/es/pentobi/user_interface.html
+share/help/es/pentobi/window_menu.html
 share/icons/hicolor/48x48/apps/pentobi.png
 share/icons/hicolor/48x48/mimetypes/application-x-blokus-sgf.png
-share/icons/hicolor/64x64/apps/pentobi.png
-share/icons/hicolor/64x64/mimetypes/application-x-blokus-sgf.png
 share/icons/hicolor/scalable/apps/pentobi.svg
 share/icons/hicolor/scalable/mimetypes/application-x-blokus-sgf.svg
 share/metainfo/
 share/metainfo/io.sourceforge.pentobi.appdata.xml
 share/mime/packages/pentobi-mime.xml
-share/pentobi/
-share/pentobi/books/
-share/pentobi/books/book_callisto.blksgf
-share/pentobi/books/book_callisto_2.blksgf
-share/pentobi/books/book_callisto_3.blksgf
-share/pentobi/books/book_classic.blksgf
-share/pentobi/books/book_classic_2.blksgf
-share/pentobi/books/book_classic_3.blksgf
-share/pentobi/books/book_duo.blksgf
-share/pentobi/books/book_gembloq.blksgf
-share/pentobi/books/book_gembloq_2.blksgf
-share/pentobi/books/book_gembloq_2_4.blksgf
-share/pentobi/books/book_gembloq_3.blksgf
-share/pentobi/books/book_junior.blksgf
-share/pentobi/books/book_nexos.blksgf
-share/pentobi/books/book_nexos_2.blksgf
-share/pentobi/books/book_trigon.blksgf
-share/pentobi/books/book_trigon_2.blksgf
-share/pentobi/books/book_trigon_3.blksgf
-share/pentobi/translations/
-share/pentobi/translations/libpentobi_gui_de.qm
-share/pentobi/translations/pentobi.qm
-share/pentobi/translations/pentobi_de.qm
 share/thumbnailers/pentobi.thumbnailer
 @tag update-desktop-database
 @tag update-mime-database
