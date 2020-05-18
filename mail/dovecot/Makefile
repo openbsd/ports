@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.288 2020/03/20 16:44:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.289 2020/05/18 17:45:53 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -6,9 +6,8 @@ COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.3
-V_DOVECOT=	2.3.10
+V_DOVECOT=	2.3.10.1
 EPOCH=		0
-REVISION-server=0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
