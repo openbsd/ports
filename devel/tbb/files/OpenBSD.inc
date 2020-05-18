@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD.inc,v 1.1.1.1 2018/07/05 09:14:55 bentley Exp $
+# $OpenBSD: OpenBSD.inc,v 1.2 2020/05/18 16:42:20 cwen Exp $
 # Copyright (c) 2005-2018 Intel Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,6 +23,18 @@ ifndef arch
         endif
         ifeq ($(shell uname -m),amd64)
                 export arch:=intel64
+        endif
+        ifeq ($(shell uname -m),macppc)
+                export arch:=ppc32
+        endif
+        ifeq ($(uname_p),sparc64)
+                export arch:=sparc
+        endif
+        ifeq ($(uname_p),arm)
+                export arch:=armv7
+        endif
+        ifndef arch
+                export arch:=$(uname_p)
         endif
 endif
 

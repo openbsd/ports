@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_test_test_malloc_compliance_cpp,v 1.1.1.1 2018/07/05 09:14:55 bentley Exp $
+$OpenBSD: patch-src_test_test_malloc_compliance_cpp,v 1.2 2020/05/18 16:42:20 cwen Exp $
 OpenBSD doesn't support RLIMIT_AS.
 Index: src/test/test_malloc_compliance.cpp
 --- src/test/test_malloc_compliance.cpp.orig
 +++ src/test/test_malloc_compliance.cpp
-@@ -87,7 +87,7 @@ void limitMem( size_t limit )
+@@ -83,7 +83,7 @@ void limitMem( size_t limit )
  void limitMem( size_t limit )
  {
      rlimit rlim;
@@ -12,7 +12,7 @@ Index: src/test/test_malloc_compliance.cpp
      if (0 != ret) {
          REPORT("getrlimit() returned an error: errno %d\n", errno);
          exit(1);
-@@ -95,7 +95,7 @@ void limitMem( size_t limit )
+@@ -91,7 +91,7 @@ void limitMem( size_t limit )
      if (rlim.rlim_max==(rlim_t)RLIM_INFINITY)
          rlim.rlim_cur = (limit > 0) ? limit*MByte : rlim.rlim_max;
      else rlim.rlim_cur = (limit > 0 && limit<rlim.rlim_max) ? limit*MByte : rlim.rlim_max;

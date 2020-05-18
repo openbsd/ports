@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/18 16:42:20 cwen Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 COMMENT =		threading building blocks
 
-PKGNAME =		tbb-${GH_TAGNAME:S/_U/./}
-REVISION =		0
+V =			2020.2
+GH_ACCOUNT =		oneapi-src
+GH_PROJECT =		oneTBB
+GH_TAGNAME =		v${V}
+PKGNAME =		tbb-${V}
 
-GH_ACCOUNT =		01org
-GH_PROJECT =		tbb
-GH_TAGNAME =		2018_U5
-
-SHARED_LIBS +=		tbb 0.0
-SHARED_LIBS +=		tbbmalloc 0.0
+SHARED_LIBS +=		tbb		1.0	#2020.2
+SHARED_LIBS +=		tbbmalloc	1.0	#2020.2
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://www.threadingbuildingblocks.org/
+HOMEPAGE =		https://software.intel.com/en-us/tbb
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-COMPILER =		base-clang ports-gcc base-gcc
+# We only provide configuration for base-clang (see files/)
+COMPILER =		base-clang ports-clang
 
 MAKE_FLAGS =		CONLY="${CC}" \
 			CPLUS="${CXX}" \
