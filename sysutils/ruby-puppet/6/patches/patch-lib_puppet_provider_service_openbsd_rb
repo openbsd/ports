@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.2 2020/05/18 09:07:47 kn Exp $
 
 
 * enhance initial service provisioning with regard to service_flags
@@ -27,7 +27,7 @@ Index: lib/puppet/provider/service/openbsd.rb
      [command(:rcctl), '-f', :start, @resource[:name]]
    end
  
-@@ -31,33 +41,33 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+@@ -31,35 +41,38 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
      instances = []
  
      begin
@@ -76,4 +76,9 @@ Index: lib/puppet/provider/service/openbsd.rb
 +    if output.exitstatus == 0
        self.debug("Is enabled")
        return :true
++    else
++      self.debug("Is disabled")
++      return :false
      end
+   end
+ 
