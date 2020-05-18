@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.2 2020/05/18 09:04:24 kn Exp $
 
 - Handle the flavor as a property, not as a parameter.
 - Handle errors from pkg_add
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.1.1.1 2020/05/18 08:5
 Index: lib/puppet/provider/package/openbsd.rb
 --- lib/puppet/provider/package/openbsd.rb.orig
 +++ lib/puppet/provider/package/openbsd.rb
-@@ -21,70 +21,64 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -21,70 +21,63 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    has_feature :uninstall_options
    has_feature :upgradeable
    has_feature :supports_flavors
@@ -87,7 +87,7 @@ Index: lib/puppet/provider/package/openbsd.rb
 +  end
 +
    def latest
-     parse_pkgconf
+-    parse_pkgconf
  
 -    if @resource[:source][-1,1] == ::File::SEPARATOR
 -      e_vars = { 'PKG_PATH' => @resource[:source] }
@@ -112,7 +112,7 @@ Index: lib/puppet/provider/package/openbsd.rb
      else
        # Remove all fuzzy matches first.
        output = output.split.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
-@@ -93,21 +87,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -93,21 +86,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
  
      if output =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*) \(installed\)$/
        debug "Package is already the latest available"
@@ -140,7 +140,7 @@ Index: lib/puppet/provider/package/openbsd.rb
        else
          return match[2]
        end
-@@ -118,57 +113,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -118,57 +112,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      self.install(true)
    end
  
@@ -209,7 +209,7 @@ Index: lib/puppet/provider/package/openbsd.rb
    end
  
    def get_full_name(latest = false)
-@@ -197,27 +160,28 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -197,27 +159,28 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def get_version
@@ -254,7 +254,7 @@ Index: lib/puppet/provider/package/openbsd.rb
    rescue Puppet::ExecutionFailure
      return nil
    end
-@@ -236,7 +200,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -236,7 +199,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def uninstall_options
