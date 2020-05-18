@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.47 2020/04/16 13:59:04 kn Exp $
+# $OpenBSD: Makefile.inc,v 1.48 2020/05/18 09:15:50 kn Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -23,13 +23,18 @@ SUBST_VARS +=	RUBY
 #   databases/ruby-hiera-eyaml
 #   databases/ruby-hiera-file
 #   net/ruby-msgpack
+#   sysutils/facter
 #   sysutils/mcollective
 #   sysutils/ruby-augeas
 #   sysutils/ruby-shadow
 # Puppet 4:
 #   databases/puppetdb4
 #   databases/ruby-hiera3
-#   sysutils/facter
+# Puppet 5:
+#   databases/ruby-hiera3
+# Puppet 6:
+#   devel/ruby-concurrent-ruby
+#   devel/ruby-semantic_puppet
 
 MODULES +=	lang/ruby
 
