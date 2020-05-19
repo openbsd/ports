@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/11/06 14:29:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/05/19 13:22:57 sthen Exp $
 @option is-branch
 @newgroup _radicale:672
 @newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin
@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/radicale/
 lib/python${MODPY_VERSION}/site-packages/radicale/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/__main__.py
-lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
@@ -40,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.py
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/radicale/
 share/doc/radicale/COPYING
+share/doc/radicale/DOCUMENTATION.md
 share/doc/radicale/NEWS.md
 share/doc/radicale/README.md
 share/examples/radicale/
