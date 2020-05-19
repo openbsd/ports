@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/04/11 18:51:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/05/19 19:48:02 jasper Exp $
 bin/r2
 @bin bin/r2agent
 bin/r2p
 bin/r2pm
+@bin bin/r2r
 @bin bin/rabin2
 @bin bin/radare2
 @bin bin/radiff2
@@ -220,6 +221,7 @@ lib/radare2/last
 @man man/man1/r2.1
 @man man/man1/r2agent.1
 @man man/man1/r2pm.1
+@man man/man1/r2r.1
 @man man/man1/rabin2.1
 @man man/man1/radare2.1
 @man man/man1/radiff2.1
