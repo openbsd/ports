@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.14 2019/11/26 11:32:17 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.15 2020/05/19 08:38:03 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -88,7 +88,7 @@ sub parse_dump
 			my $dir = PkgPath->new($1);
 			$dir->break("exiting with an error");
 			$h->{$dir} = $dir;
-			&$reset;
+			$h = {};
 			next;
 		}
 		if (m/^\=\=\=\>\s*(.*)/) {
