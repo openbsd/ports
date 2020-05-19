@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:50:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2020/05/19 23:14:04 bluhm Exp $
 
 COMMENT =	high-performance, dynamic web site authoring system
 
-DISTNAME =	HTML-Mason-1.58
-REVISION =	0
+DISTNAME =	HTML-Mason-1.59
 
 CATEGORIES =	www
 
