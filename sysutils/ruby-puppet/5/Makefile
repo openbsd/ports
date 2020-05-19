@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2020/03/18 18:39:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2020/05/19 07:20:45 giovanni Exp $
 
 PORTROACH=		limit:^5
 
 VERSION=		5.5.19
+REVISION=		0
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.28,<1 \
 			devel/ruby-locale,${MODRUBY_FLAVOR}>=2.1,<3 \
 			devel/ruby-rgen,${MODRUBY_FLAVOR} \
+			converters/ruby-multi_json,${MODRUBY_FLAVOR} \
 			sysutils/facter
 
 SUBST_VARS +=	MODPY_DEFAULT_VERSION_2 MODPY_DEFAULT_VERSION_3
