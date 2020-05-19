@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2020/05/14 14:56:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2020/05/19 15:17:39 jca Exp $
 
 COMMENT=		GObject Introspection
 
@@ -38,6 +38,13 @@ RUN_DEPENDS=		graphics/cairo \
 
 # XXX: tests/scanner/test_transformer.py fails otherwise
 TEST_DEPENDS+=		textproc/gsed
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+# tools/g-ir-scanner doesn't respect LDFLAGS passed through CONFIGURE_ENV
+MAKE_ENV=		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+.endif
 
 # XXX: tidy-up some GNU-isms; see above.
 pre-test:
