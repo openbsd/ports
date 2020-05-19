@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/02 18:11:46 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/19 19:34:09 thfr Exp $
 
 COMMENT =	package manager for .NET
-V =		5.0.2.5988
+V =		5.5.0.6382
 DISTNAME =	nuget-${V}.bin
 PKGNAME =	nuget-${V}
 CATEGORIES =	devel
