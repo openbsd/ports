@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/03/21 16:14:54 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2020/05/19 01:23:08 kmos Exp $
 
 COMMENT=		file manager for the MATE desktop
 
@@ -34,5 +34,7 @@ MODGNOME_TOOLS=		shared-mime-info gobject-introspection \
 			gtk-update-icon-cache
 
 CONFIGURE_STYLE=	gnu
+
+CFLAGS +=		-std=gnu99
 
 .include <bsd.port.mk>
