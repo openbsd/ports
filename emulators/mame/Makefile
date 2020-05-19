@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/04/15 13:31:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.40 2020/05/19 13:27:42 fcambus Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -7,12 +7,11 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		220
+V =		221
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
 DISTNAME =	mame-0.${V}
-REVISION =	0
 
 CATEGORIES =	emulators
 
