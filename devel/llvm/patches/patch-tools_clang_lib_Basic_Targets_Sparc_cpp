@@ -1,0 +1,20 @@
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_Sparc_cpp,v 1.1 2020/05/19 10:05:47 jca Exp $
+
+Define the appropriate __GCC_HAVE_SYNC_COMPARE_AND_SWAP_* symbols like all
+other clang platforms do.
+
+Index: tools/clang/lib/Basic/Targets/Sparc.cpp
+--- tools/clang/lib/Basic/Targets/Sparc.cpp.orig
++++ tools/clang/lib/Basic/Targets/Sparc.cpp
+@@ -241,6 +241,11 @@ void SparcV9TargetInfo::getTargetDefines(const LangOpt
+     Builder.defineMacro("__sparc_v9__");
+     Builder.defineMacro("__sparcv9__");
+   }
++
++  Builder.defineMacro("__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1");
++  Builder.defineMacro("__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2");
++  Builder.defineMacro("__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4");
++  Builder.defineMacro("__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8");
+ }
+ 
+ void SparcV9TargetInfo::fillValidCPUList(

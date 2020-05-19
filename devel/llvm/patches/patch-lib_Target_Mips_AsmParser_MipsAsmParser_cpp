@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp,v 1.1 2019/07/09 13:21:37 jca Exp $
+$OpenBSD: patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp,v 1.2 2020/05/19 10:05:47 jca Exp $
 
 - Fix a bug in memory operand handling. If a load or store uses a symbol
   as a memory operand, the assembler generates incorrect relocations in
@@ -11,6 +11,11 @@ $OpenBSD: patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp,v 1.1 2019/07/09 13:
   adds an extra instruction.
 - Implement SGE pseudo-instructions. Needed when building libcrypto.
 - Implement .cplocal directive. Needed when building libcrypto.
+- Address a few issues in the expansion of li.d and li.s:
+  - In the N64 mode, properly load the whole immediate value
+  in the destination register even if the lower 32 bits are zero.
+  - Ensure correct alignment of memory operands.
+  - Fix the endianess of memory operands.
 
 Index: lib/Target/Mips/AsmParser/MipsAsmParser.cpp
 --- lib/Target/Mips/AsmParser/MipsAsmParser.cpp.orig
@@ -134,7 +139,61 @@ Index: lib/Target/Mips/AsmParser/MipsAsmParser.cpp
                     IDLoc, STI);
      }
    } else { //!IsPicEnabled
-@@ -3605,6 +3622,10 @@ void MipsAsmParser::expandMemInst(MCInst &Inst, SMLoc 
+@@ -3350,7 +3367,7 @@ bool MipsAsmParser::expandLoadImmReal(MCInst &Inst, bo
+   if (IsGPR) {
+     if (LoImmOp64 == 0) {
+       if(isABI_N32() || isABI_N64()) {
+-        if (loadImmediate(HiImmOp64, FirstReg, Mips::NoRegister, false, true,
++        if (loadImmediate(ImmOp64, FirstReg, Mips::NoRegister, false, true,
+                           IDLoc, Out, STI))
+           return true;
+         return false;
+@@ -3378,8 +3395,8 @@ bool MipsAsmParser::expandLoadImmReal(MCInst &Inst, bo
+ 
+     getStreamer().SwitchSection(ReadOnlySection);
+     getStreamer().EmitLabel(Sym, IDLoc);
+-    getStreamer().EmitIntValue(HiImmOp64, 4);
+-    getStreamer().EmitIntValue(LoImmOp64, 4);
++    getStreamer().EmitValueToAlignment(8);
++    getStreamer().EmitIntValue(ImmOp64, 8);
+     getStreamer().SwitchSection(CS);
+ 
+     if(emitPartialAddress(TOut, IDLoc, Sym))
+@@ -3403,12 +3420,19 @@ bool MipsAsmParser::expandLoadImmReal(MCInst &Inst, bo
+         !((HiImmOp64 & 0xffff0000) && (HiImmOp64 & 0x0000ffff))) {
+       // FIXME: In the case where the constant is zero, we can load the
+       // register directly from the zero register.
++
++      if (isABI_N32() || isABI_N64()) {
++        if (loadImmediate(ImmOp64, ATReg, Mips::NoRegister, false, true, IDLoc,
++                          Out, STI))
++          return true;
++        TOut.emitRR(Mips::DMTC1, FirstReg, ATReg, IDLoc, STI);
++        return false;
++      }
++
+       if (loadImmediate(HiImmOp64, ATReg, Mips::NoRegister, true, true, IDLoc,
+                         Out, STI))
+         return true;
+-      if (isABI_N32() || isABI_N64())
+-        TOut.emitRR(Mips::DMTC1, FirstReg, ATReg, IDLoc, STI);
+-      else if (hasMips32r2()) {
++      if (hasMips32r2()) {
+         TOut.emitRR(Mips::MTC1, FirstReg, Mips::ZERO, IDLoc, STI);
+         TOut.emitRRR(Mips::MTHC1_D32, FirstReg, FirstReg, ATReg, IDLoc, STI);
+       } else {
+@@ -3432,8 +3456,8 @@ bool MipsAsmParser::expandLoadImmReal(MCInst &Inst, bo
+ 
+     getStreamer().SwitchSection(ReadOnlySection);
+     getStreamer().EmitLabel(Sym, IDLoc);
+-    getStreamer().EmitIntValue(HiImmOp64, 4);
+-    getStreamer().EmitIntValue(LoImmOp64, 4);
++    getStreamer().EmitValueToAlignment(8);
++    getStreamer().EmitIntValue(ImmOp64, 8);
+     getStreamer().SwitchSection(CS);
+ 
+     if(emitPartialAddress(TOut, IDLoc, Sym))
+@@ -3605,6 +3629,10 @@ void MipsAsmParser::expandMemInst(MCInst &Inst, SMLoc 
        TOut.emitRRR(isGP64bit() ? Mips::DADDu : Mips::ADDu, TmpReg, TmpReg,
                     BaseReg, IDLoc, STI);
      TOut.emitRRI(Inst.getOpcode(), DstReg, TmpReg, LoOffset, IDLoc, STI);
@@ -145,7 +204,7 @@ Index: lib/Target/Mips/AsmParser/MipsAsmParser.cpp
    } else {
      assert(OffsetOp.isExpr() && "expected expression operand kind");
      const MCExpr *ExprOffset = OffsetOp.getExpr();
-@@ -4934,6 +4955,72 @@ bool MipsAsmParser::expandSeqI(MCInst &Inst, SMLoc IDL
+@@ -4934,6 +4962,72 @@ bool MipsAsmParser::expandSeqI(MCInst &Inst, SMLoc IDL
    return false;
  }
  
@@ -218,7 +277,7 @@ Index: lib/Target/Mips/AsmParser/MipsAsmParser.cpp
  // Map the DSP accumulator and control register to the corresponding gpr
  // operand. Unlike the other alias, the m(f|t)t(lo|hi|acx) instructions
  // do not map the DSP registers contigously to gpr registers.
-@@ -7044,6 +7131,36 @@ bool MipsAsmParser::parseDirectiveCpLoad(SMLoc Loc) {
+@@ -7044,6 +7138,36 @@ bool MipsAsmParser::parseDirectiveCpLoad(SMLoc Loc) {
    return false;
  }
  
@@ -255,7 +314,7 @@ Index: lib/Target/Mips/AsmParser/MipsAsmParser.cpp
  bool MipsAsmParser::parseDirectiveCpRestore(SMLoc Loc) {
    MCAsmParser &Parser = getParser();
  
-@@ -7888,6 +8005,10 @@ bool MipsAsmParser::ParseDirective(AsmToken DirectiveI
+@@ -7888,6 +8012,10 @@ bool MipsAsmParser::ParseDirective(AsmToken DirectiveI
  
    if (IDVal == ".cpload") {
      parseDirectiveCpLoad(DirectiveID.getLoc());
