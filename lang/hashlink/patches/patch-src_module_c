@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_module_c,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
+$OpenBSD: patch-src_module_c,v 1.2 2020/05/19 19:36:53 thfr Exp $
 
 ignore non-matching function signature
 
 Index: src/module.c
 --- src/module.c.orig
 +++ src/module.c
-@@ -461,8 +461,10 @@ static void hl_module_init_natives( hl_module *m ) {
+@@ -474,8 +474,10 @@ static void hl_module_init_natives( hl_module *m ) {
  		p = tmp;
  		append_type(&p,n->t);
  		*p++ = 0;

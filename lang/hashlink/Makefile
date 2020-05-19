@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/11 09:59:20 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/19 19:36:53 thfr Exp $
 
 # JIT segfaults without USE_WXNEEDED
 USE_WXNEEDED =	Yes
 
 COMMENT =	virtual machine for Haxe
 
-V =		1.10
+V =		1.11
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	hashlink
 GH_TAGNAME =	${V}
-REVISION =	1
 
-SHARED_LIBS =	hl	0.0	# 1.10
+SHARED_LIBS =	hl	0.1	# 1.11
 
 CATEGORIES =	lang
 HOMEPAGE =	https://hashlink.haxe.org/
