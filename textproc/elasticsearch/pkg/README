@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2018/09/25 08:50:49 pvk Exp $
+$OpenBSD: README,v 1.9 2020/05/19 08:33:55 bentley Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -11,7 +11,7 @@ https://www.elastic.co/support/matrix
 
 Initial Node/Cluster Configuration
 ==================================
-Configuratoin files are located in ${SYSCONFDIR}/elasticsearch
+Configuration files are located in ${SYSCONFDIR}/elasticsearch
 
 By default, elasticsearch binds to localhost addresses. Since OpenBSD does not
 support IPv4 to IPv6 address mapping, either IPv4 or IPv6 can be used, but not
