@@ -1,5 +1,5 @@
 This module first checks to see if either Cpanel::JSON::XS or
-JSON::XS is already loaded, in which case it uses that module.
-Otherwise it tries to load Cpanel::JSON::XS, then JSON::XS, then
-JSON::PP in order, and either uses the first module it finds or
-throws an error.
+JSON::XS (at at least version 3.0) is already loaded, in which case
+it uses that module.  Otherwise it tries to load Cpanel::JSON::XS,
+then JSON::XS, then JSON::PP in order, and either uses the first
+module it finds or throws an error.
