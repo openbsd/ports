@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/18 12:28:33 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/19 00:17:08 sthen Exp $
 
 COMMENT = 	C++ reflection library
 V =		0.9.6
@@ -24,6 +24,6 @@ CONFIGURE_ARGS +=	-DBUILD_EXAMPLES=OFF
 CONFIGURE_ARGS +=	-DUSE_PCH=OFF
 CONFIGURE_ARGS +=	-DBUILD_DOCUMENTATION=OFF
 
-NO_TESTS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
