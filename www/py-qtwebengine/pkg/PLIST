@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/19 04:19:45 rsadowski Exp $
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngine.pyi
+@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngine.so
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineCore.pyi
+@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineCore.so
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineWidgets.pyi
+@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineWidgets.so
+lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-5.13.2.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-5.13.2.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-5.13.2.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-5.13.2.dist-info/RECORD
+lib/${QTVER}/qsci/
+lib/${QTVER}/qsci/api/
+lib/${QTVER}/qsci/api/python/
+lib/${QTVER}/qsci/api/python/PyQtWebEngine.api
+${SIPDIR}/QtWebEngine/
+${SIPDIR}/QtWebEngine/QtWebEnginemod.sip
+${SIPDIR}/QtWebEngine/qquickwebengineprofile.sip
+${SIPDIR}/QtWebEngine/qquickwebenginescript.sip
+${SIPDIR}/QtWebEngine/qtwebengineglobal.sip
+${SIPDIR}/QtWebEngineCore/
+${SIPDIR}/QtWebEngineCore/QtWebEngineCoremod.sip
+${SIPDIR}/QtWebEngineCore/qwebengineclientcertificatestore.sip
+${SIPDIR}/QtWebEngineCore/qwebenginecookiestore.sip
+${SIPDIR}/QtWebEngineCore/qwebenginehttprequest.sip
+${SIPDIR}/QtWebEngineCore/qwebenginenotification.sip
+${SIPDIR}/QtWebEngineCore/qwebenginequotarequest.sip
+${SIPDIR}/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.sip
+${SIPDIR}/QtWebEngineCore/qwebengineurlrequestinfo.sip
+${SIPDIR}/QtWebEngineCore/qwebengineurlrequestinterceptor.sip
+${SIPDIR}/QtWebEngineCore/qwebengineurlrequestjob.sip
+${SIPDIR}/QtWebEngineCore/qwebengineurlscheme.sip
+${SIPDIR}/QtWebEngineCore/qwebengineurlschemehandler.sip
+${SIPDIR}/QtWebEngineWidgets/
+${SIPDIR}/QtWebEngineWidgets/QtWebEngineWidgetsmod.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginecertificateerror.sip
+${SIPDIR}/QtWebEngineWidgets/qwebengineclientcertificateselection.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginecontextmenudata.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginedownloaditem.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginefullscreenrequest.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginehistory.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginepage.sip
+${SIPDIR}/QtWebEngineWidgets/qwebengineprofile.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginescript.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginescriptcollection.sip
+${SIPDIR}/QtWebEngineWidgets/qwebenginesettings.sip
+${SIPDIR}/QtWebEngineWidgets/qwebengineview.sip
