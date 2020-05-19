@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2019/07/17 05:27:33 otto Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2020/05/19 10:33:56 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -751,7 +751,7 @@ ACLOCAL = @ACLOCAL@
+@@ -860,7 +860,7 @@ ACLOCAL = @ACLOCAL@
  AMTAR = @AMTAR@
  AM_CPPFLAGS = $(LUA_CFLAGS) $(YAHTTP_CFLAGS) $(BOOST_CPPFLAGS) \
  	$(LIBSODIUM_CFLAGS) $(NET_SNMP_CFLAGS) $(LIBCAP_CFLAGS) \
@@ -11,4 +11,4 @@ Index: Makefile.in
 +	$(SANITIZER_FLAGS) -Wall -pthread \
  	-DSYSCONFDIR=\"${sysconfdir}\" $(SYSTEMD_CFLAGS) \
  	-I$(top_srcdir)/ext/json11 $(YAHTTP_CFLAGS) \
- 	$(LIBCRYPTO_INCLUDES) $(am__append_2)
+ 	$(LIBCRYPTO_INCLUDES) $(am__append_2) $(am__append_3)
