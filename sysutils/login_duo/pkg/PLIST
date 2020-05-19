@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/06/14 00:59:39 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/05/19 23:41:06 jturner Exp $
 include/duo/
 include/duo/common_ini_test.h
 include/duo/duo.h
@@ -9,6 +9,7 @@ include/duo/util.h
 lib/pkgconfig/libduo.pc
 @man man/man3/duo.3
 @man man/man8/login_duo.8
+@comment sbin/duo_unix_support.sh
 @mode 4555
 @owner root
 @bin sbin/login_duo
