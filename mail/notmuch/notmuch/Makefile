@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/19 20:45:49 sthen Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -27,13 +27,13 @@ RUN_DEPENDS-emacs =	devel/desktop-file-utils \
 
 BUILD_DEPENDS =		devel/doxygen \
 			editors/emacs,gtk3 \
+			security/gnupg2 \
 			shells/bash \
 			textproc/py-sphinx${MODPY_FLAVOR}
 
 TEST_DEPENDS =		archivers/gtar \
 			devel/gdb \
 			misc/dtach \
-			security/gnupg2 \
 			sysutils/coreutils \
 			${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
