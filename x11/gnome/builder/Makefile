@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.100 2020/05/14 15:17:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2020/05/19 08:28:04 sthen Exp $
+
+# ld.bfd hits a different problem, undefined reference to peas_* functions in ide-context.c:165
+BROKEN-i386=	non-ABS relocation R_386_GOTOFF against symbol '.LC74'
 
 COMMENT=		IDE for GNOME
 
