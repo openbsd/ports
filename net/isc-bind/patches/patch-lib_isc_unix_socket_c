@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_isc_unix_socket_c,v 1.19 2020/03/19 17:07:20 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.20 2020/05/19 09:32:38 sthen Exp $
 
 Index: lib/isc/unix/socket.c
 --- lib/isc/unix/socket.c.orig
 +++ lib/isc/unix/socket.c
-@@ -2402,6 +2402,7 @@ again:
+@@ -2394,6 +2394,7 @@ again:
  		}
  #endif /* if defined(SO_SNDBUF) */
  	}
@@ -11,15 +11,15 @@ Index: lib/isc/unix/socket.c
  #ifdef IPV6_RECVTCLASS
  	if ((sock->pf == AF_INET6) &&
  	    (setsockopt(sock->fd, IPPROTO_IPV6, IPV6_RECVTCLASS, (void *)&on,
-@@ -2426,6 +2427,7 @@ again:
+@@ -2418,6 +2419,7 @@ again:
  				 sock->fd, strbuf);
  	}
  #endif /* ifdef IP_RECVTOS */
 +#endif
- #endif /* defined(USE_CMSG) || defined(SO_RCVBUF) || defined(SO_SNDBUF) */
+ #endif /* defined(USE_CMSG) || defined(SET_RCVBUF) || defined(SET_SNDBUF) */
  
  setup_done:
-@@ -5143,6 +5145,13 @@ isc_socket_gettype(isc_socket_t *sock0) {
+@@ -5135,6 +5137,13 @@ isc_socket_gettype(isc_socket_t *sock0) {
  void
  isc_socket_ipv6only(isc_socket_t *sock0, bool yes) {
  	isc__socket_t *sock = (isc__socket_t *)sock0;

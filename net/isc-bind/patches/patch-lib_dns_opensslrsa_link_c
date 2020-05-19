@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.10 2020/03/19 17:07:20 sthen Exp $
+$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.11 2020/05/19 09:32:38 sthen Exp $
 
 Index: lib/dns/opensslrsa_link.c
 --- lib/dns/opensslrsa_link.c.orig
 +++ lib/dns/opensslrsa_link.c
-@@ -454,7 +454,7 @@ opensslrsa_generate(dst_key_t *key, int exp, void (*ca
+@@ -451,7 +451,7 @@ opensslrsa_generate(dst_key_t *key, int exp, void (*ca
  	} u;
  	RSA *rsa = RSA_new();
  	BIGNUM *e = BN_new();
