@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2020/05/14 14:56:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2020/05/19 12:00:40 ajacoutot Exp $
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-demo
 @bin bin/gtk4-demo-application
@@ -75,8 +75,6 @@ include/gtk-4.0/gdk/x11/gdkx11selection.h
 include/gtk-4.0/gdk/x11/gdkx11surface.h
 include/gtk-4.0/gdk/x11/gdkx11utils.h
 include/gtk-4.0/gsk/
-include/gtk-4.0/gsk/broadway/
-include/gtk-4.0/gsk/broadway/gskbroadwayrenderer.h
 include/gtk-4.0/gsk/gl/
 include/gtk-4.0/gsk/gl/gskglrenderer.h
 include/gtk-4.0/gsk/gsk-autocleanup.h
@@ -89,8 +87,6 @@ include/gtk-4.0/gsk/gskrendernode.h
 include/gtk-4.0/gsk/gskroundedrect.h
 include/gtk-4.0/gsk/gsktransform.h
 include/gtk-4.0/gsk/gsktypes.h
-include/gtk-4.0/gsk/vulkan/
-include/gtk-4.0/gsk/vulkan/gskvulkanrenderer.h
 include/gtk-4.0/gtk/
 include/gtk-4.0/gtk/a11y/
 include/gtk-4.0/gtk/a11y/gtk-a11y-autocleanups.h
@@ -100,7 +96,6 @@ include/gtk-4.0/gtk/a11y/gtkcellaccessible.h
 include/gtk-4.0/gtk/a11y/gtkcellaccessibleparent.h
 include/gtk-4.0/gtk/a11y/gtkcomboboxaccessible.h
 include/gtk-4.0/gtk/a11y/gtkcompositeaccessible.h
-include/gtk-4.0/gtk/a11y/gtkcontaineraccessible.h
 include/gtk-4.0/gtk/a11y/gtkcontainercellaccessible.h
 include/gtk-4.0/gtk/a11y/gtkentryaccessible.h
 include/gtk-4.0/gtk/a11y/gtkexpanderaccessible.h
@@ -167,7 +162,6 @@ include/gtk-4.0/gtk/gtkapplication.h
 include/gtk-4.0/gtk/gtkapplicationwindow.h
 include/gtk-4.0/gtk/gtkaspectframe.h
 include/gtk-4.0/gtk/gtkassistant.h
-include/gtk-4.0/gtk/gtkbin.h
 include/gtk-4.0/gtk/gtkbinlayout.h
 include/gtk-4.0/gtk/gtkborder.h
 include/gtk-4.0/gtk/gtkbox.h
@@ -205,7 +199,6 @@ include/gtk-4.0/gtk/gtkcomboboxtext.h
 include/gtk-4.0/gtk/gtkconstraint.h
 include/gtk-4.0/gtk/gtkconstraintguide.h
 include/gtk-4.0/gtk/gtkconstraintlayout.h
-include/gtk-4.0/gtk/gtkcontainer.h
 include/gtk-4.0/gtk/gtkcssprovider.h
 include/gtk-4.0/gtk/gtkcustomlayout.h
 include/gtk-4.0/gtk/gtkdebug.h
@@ -375,7 +368,9 @@ include/gtk-4.0/gtk/gtkvolumebutton.h
 include/gtk-4.0/gtk/gtkwidget.h
 include/gtk-4.0/gtk/gtkwidgetpaintable.h
 include/gtk-4.0/gtk/gtkwindow.h
+include/gtk-4.0/gtk/gtkwindowcontrols.h
 include/gtk-4.0/gtk/gtkwindowgroup.h
+include/gtk-4.0/gtk/gtkwindowhandle.h
 include/gtk-4.0/unix-print/
 include/gtk-4.0/unix-print/gtk/
 include/gtk-4.0/unix-print/gtk/gtkpagesetupunixdialog.h
