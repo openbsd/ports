@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1972 2020/05/18 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.1973 2020/05/19 15:34:55 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1808,7 +1808,6 @@
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-extlib
      SUBDIR += ruby-fast_gettext
-     SUBDIR += ruby-ffi,ruby25
      SUBDIR += ruby-ffi,ruby26
      SUBDIR += ruby-ffi,ruby27
      SUBDIR += ruby-flexmock
@@ -1824,10 +1823,8 @@
      SUBDIR += ruby-isolate
      SUBDIR += ruby-jeweler
      SUBDIR += ruby-json_pure
-     SUBDIR += ruby-kgio,ruby25
      SUBDIR += ruby-kgio,ruby26
      SUBDIR += ruby-kgio,ruby27
-     SUBDIR += ruby-libv8,ruby25
      SUBDIR += ruby-libv8,ruby26
      SUBDIR += ruby-libv8,ruby27
      SUBDIR += ruby-locale
@@ -1835,13 +1832,10 @@
      SUBDIR += ruby-metaclass
      SUBDIR += ruby-minitest
      SUBDIR += ruby-mocha
-     SUBDIR += ruby-narray,ruby25
      SUBDIR += ruby-narray,ruby26
      SUBDIR += ruby-narray,ruby27
-     SUBDIR += ruby-ncurses,ruby25
      SUBDIR += ruby-ncurses,ruby26
      SUBDIR += ruby-ncurses,ruby27
-     SUBDIR += ruby-nio4r,ruby25
      SUBDIR += ruby-nio4r,ruby26
      SUBDIR += ruby-nio4r,ruby27
      SUBDIR += ruby-ole
@@ -1849,17 +1843,13 @@
      SUBDIR += ruby-opt_parse_validator
      SUBDIR += ruby-optimist
      SUBDIR += ruby-polyglot
-     SUBDIR += ruby-prof,ruby25
      SUBDIR += ruby-prof,ruby26
      SUBDIR += ruby-prof,ruby27
-     SUBDIR += ruby-puppet_forge,ruby25
-     SUBDIR += ruby-puppet_forge,ruby26
-     SUBDIR += ruby-racc,ruby25
+     SUBDIR += ruby-puppet_forge
      SUBDIR += ruby-racc,ruby26
      SUBDIR += ruby-racc,ruby27
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
-     SUBDIR += ruby-rb-gsl,ruby25
      SUBDIR += ruby-rb-gsl,ruby26
      SUBDIR += ruby-rb-gsl,ruby27
      SUBDIR += ruby-ref
@@ -1874,12 +1864,10 @@
      SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-shims
-     SUBDIR += ruby-subset_sum,ruby25
      SUBDIR += ruby-subset_sum,ruby26
      SUBDIR += ruby-subset_sum,ruby27
      SUBDIR += ruby-systemu
      SUBDIR += ruby-sys-proctable
-     SUBDIR += ruby-therubyracer,ruby25
      SUBDIR += ruby-therubyracer,ruby26
      SUBDIR += ruby-therubyracer,ruby27
      SUBDIR += ruby-thor
@@ -1890,7 +1878,6 @@
      SUBDIR += ruby-uuid
      SUBDIR += ruby-uuidtools
      SUBDIR += ruby-xdg
-     SUBDIR += ruby-yajl,ruby25
      SUBDIR += ruby-yajl,ruby26
      SUBDIR += ruby-yajl,ruby27
      SUBDIR += ruby-zeitwerk
