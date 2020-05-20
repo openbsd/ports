@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.29 2020/03/27 15:59:34 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.30 2020/05/20 15:54:51 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -235,6 +235,8 @@ webapps/docs/api/org/apache/catalina/core/ApplicationFilterConfig.html
 webapps/docs/api/org/apache/catalina/core/ApplicationFilterFactory.html
 webapps/docs/api/org/apache/catalina/core/ApplicationFilterRegistration.html
 webapps/docs/api/org/apache/catalina/core/ApplicationMapping.html
+webapps/docs/api/org/apache/catalina/core/ApplicationMappingImpl.html
+webapps/docs/api/org/apache/catalina/core/ApplicationMappingMatch.html
 webapps/docs/api/org/apache/catalina/core/ApplicationPart.html
 webapps/docs/api/org/apache/catalina/core/ApplicationPushBuilder.html
 webapps/docs/api/org/apache/catalina/core/ApplicationServletRegistration.html
@@ -496,15 +498,6 @@ webapps/docs/api/org/apache/catalina/security/SecurityUtil.html
 webapps/docs/api/org/apache/catalina/security/package-frame.html
 webapps/docs/api/org/apache/catalina/security/package-summary.html
 webapps/docs/api/org/apache/catalina/security/package-tree.html
-webapps/docs/api/org/apache/catalina/servlet4preview/
-webapps/docs/api/org/apache/catalina/servlet4preview/http/
-webapps/docs/api/org/apache/catalina/servlet4preview/http/HttpServletMapping.html
-webapps/docs/api/org/apache/catalina/servlet4preview/http/HttpServletRequest.html
-webapps/docs/api/org/apache/catalina/servlet4preview/http/HttpServletRequestWrapper.html
-webapps/docs/api/org/apache/catalina/servlet4preview/http/MappingMatch.html
-webapps/docs/api/org/apache/catalina/servlet4preview/http/package-frame.html
-webapps/docs/api/org/apache/catalina/servlet4preview/http/package-summary.html
-webapps/docs/api/org/apache/catalina/servlet4preview/http/package-tree.html
 webapps/docs/api/org/apache/catalina/servlets/
 webapps/docs/api/org/apache/catalina/servlets/CGIServlet.CGIEnvironment.html
 webapps/docs/api/org/apache/catalina/servlets/CGIServlet.CGIRunner.html
@@ -925,6 +918,7 @@ webapps/docs/api/org/apache/catalina/valves/package-frame.html
 webapps/docs/api/org/apache/catalina/valves/package-summary.html
 webapps/docs/api/org/apache/catalina/valves/package-tree.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/
+webapps/docs/api/org/apache/catalina/valves/rewrite/QuotedStringTokenizer.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/Resolver.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/ResolverImpl.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/RewriteCond.Condition.html
@@ -1664,7 +1658,9 @@ webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharInputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharsetCache.html
+webapps/docs/api/org/apache/tomcat/util/buf/CharsetUtil.html
 webapps/docs/api/org/apache/tomcat/util/buf/Constants.html
+webapps/docs/api/org/apache/tomcat/util/buf/EncodedSolidusHandling.html
 webapps/docs/api/org/apache/tomcat/util/buf/HexUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.42 2020/03/27 15:59:31 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.43 2020/05/20 15:54:51 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -1929,7 +1929,9 @@ webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharInputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharsetCache.html
+webapps/docs/api/org/apache/tomcat/util/buf/CharsetUtil.html
 webapps/docs/api/org/apache/tomcat/util/buf/Constants.html
+webapps/docs/api/org/apache/tomcat/util/buf/EncodedSolidusHandling.html
 webapps/docs/api/org/apache/tomcat/util/buf/HexUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.MessageBytesFactory.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.html

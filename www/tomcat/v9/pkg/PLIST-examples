@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/27 15:59:38 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2020/05/20 15:54:51 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -1664,6 +1664,8 @@ webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharInputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharsetCache.html
+webapps/docs/api/org/apache/tomcat/util/buf/CharsetUtil.html
+webapps/docs/api/org/apache/tomcat/util/buf/EncodedSolidusHandling.html
 webapps/docs/api/org/apache/tomcat/util/buf/HexUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html
@@ -1959,7 +1961,6 @@ webapps/docs/api/org/apache/tomcat/util/net/Constants.html
 webapps/docs/api/org/apache/tomcat/util/net/ContainerThreadMarker.html
 webapps/docs/api/org/apache/tomcat/util/net/DispatchType.html
 webapps/docs/api/org/apache/tomcat/util/net/IPv6Utils.html
-webapps/docs/api/org/apache/tomcat/util/net/Nio2Channel.ClosedNio2Channel.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Channel.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.Nio2Acceptor.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.Nio2SocketWrapper.html
@@ -1970,7 +1971,6 @@ webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.BlockPoller.Runn
 webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.BlockPoller.html
 webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.KeyReference.html
 webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.html
-webapps/docs/api/org/apache/tomcat/util/net/NioChannel.ClosedNioChannel.html
 webapps/docs/api/org/apache/tomcat/util/net/NioChannel.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.NioSocketWrapper.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.Poller.html
