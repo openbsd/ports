@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2016/06/29 16:14:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/20 20:05:52 sthen Exp $
 
 VERSION =	2.69
-REVISION =	2
+REVISION =	3
 
 BUILD_DEPENDS =		devel/help2man
 
