@@ -1,0 +1,4 @@
+#! /bin/sh
+# $OpenBSD: no-strip,v 1.1 2020/05/20 12:57:10 espie Exp $
+
+echo "NOT running strip $@"

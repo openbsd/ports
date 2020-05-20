@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1535 2020/05/18 18:18:33 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1536 2020/05/20 12:57:10 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1920,6 +1920,9 @@ _check_wrkdir = :
 .for wrapper command in install install chown chown chown chgrp
 _wrap_install_commands += ${_PBUILD} install -m ${BINMODE} ${PORTSDIR}/infrastructure/bin/${wrapper}-wrapper /${WRKDIR}/bin/${command};
 .endfor
+.if !empty(DEBUG_PACKAGES)
+_wrap_install_commands += ${_PBUILD} install -m ${BINMODE} ${PORTSDIR}/infrastructure/bin/no-strip /${WRKDIR}/bin/strip;
+.endif
 
 _cat = {cat1,cat2,cat3,cat3f,cat3p,cat4,cat5,cat6,cat7,cat8,cat9,catl,catn}
 _man = ${_cat:S/cat/man/g}
@@ -3006,7 +3009,7 @@ ${_WRKDEBUG}/Makefile: ${_FAKE_COOKIE}
 _copy-debug-info: ${_FAKE_COOKIE} ${_WRKDEBUG}/Makefile
 	@cd ${WRKINST} && \
 		exec ${SETENV} ${MAKE} -r -f ${_WRKDEBUG}/Makefile \
-			PATH='${PORTPATH}' DWZ='${DWZ}' \
+			PATH='/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin' DWZ='${DWZ}' \
 			INSTALL_DATA_DIR='${INSTALL_DATA_DIR}' all
 
 show-debug-info:
