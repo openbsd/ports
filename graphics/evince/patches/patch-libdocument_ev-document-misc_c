@@ -1,11 +1,11 @@
-$OpenBSD: patch-libdocument_ev-document-misc_c,v 1.2 2018/10/27 13:28:06 jasper Exp $
+$OpenBSD: patch-libdocument_ev-document-misc_c,v 1.3 2020/05/20 11:17:53 jasper Exp $
 
 error: #pragma GCC diagnostic not allowed inside functions
 
 Index: libdocument/ev-document-misc.c
 --- libdocument/ev-document-misc.c.orig
 +++ libdocument/ev-document-misc.c
-@@ -532,8 +532,10 @@ ev_document_misc_format_date (GTime utime)
+@@ -592,8 +592,10 @@ ev_document_misc_format_date (GTime utime)
  	char s[256];
  	const char fmt_hack[] = "%c";
  	size_t len;
@@ -16,7 +16,7 @@ Index: libdocument/ev-document-misc.c
  #ifdef HAVE_LOCALTIME_R
  	struct tm t;
  	if (time == 0 || !localtime_r (&time, &t)) return NULL;
-@@ -543,7 +545,9 @@ ev_document_misc_format_date (GTime utime)
+@@ -603,7 +605,9 @@ ev_document_misc_format_date (GTime utime)
  	if (time == 0 || !(t = localtime (&time)) ) return NULL;
  	len = strftime (s, sizeof (s), fmt_hack, t);
  #endif

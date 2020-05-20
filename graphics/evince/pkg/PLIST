@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/05/20 10:14:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/05/20 11:17:53 jasper Exp $
 @conflict evince-djvu-*
 @conflict evince-dvi-*
 @conflict nautilus-evince-*
@@ -146,8 +146,6 @@ share/evince/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 share/gir-1.0/EvinceDocument-${MAJ_V}.gir
 share/gir-1.0/EvinceView-${MAJ_V}.gir
 share/glib-2.0/schemas/org.gnome.Evince.gschema.xml
-share/help/
-share/help/C/
 share/help/C/evince/
 share/help/C/evince/annotation-properties.page
 share/help/C/evince/annotations-delete.page
@@ -309,7 +307,6 @@ share/help/bg/evince/synctex-support.page
 share/help/bg/evince/synctex.page
 share/help/bg/evince/textselection.page
 share/help/bg/evince/translate.page
-share/help/ca/
 share/help/ca/evince/
 share/help/ca/evince/annotation-properties.page
 share/help/ca/evince/annotations-delete.page
@@ -390,7 +387,6 @@ share/help/ca/evince/synctex-support.page
 share/help/ca/evince/synctex.page
 share/help/ca/evince/textselection.page
 share/help/ca/evince/translate.page
-share/help/cs/
 share/help/cs/evince/
 share/help/cs/evince/annotation-properties.page
 share/help/cs/evince/annotations-delete.page
@@ -552,7 +548,6 @@ share/help/da/evince/synctex-support.page
 share/help/da/evince/synctex.page
 share/help/da/evince/textselection.page
 share/help/da/evince/translate.page
-share/help/de/
 share/help/de/evince/
 share/help/de/evince/annotation-properties.page
 share/help/de/evince/annotations-delete.page
@@ -633,7 +628,6 @@ share/help/de/evince/synctex-support.page
 share/help/de/evince/synctex.page
 share/help/de/evince/textselection.page
 share/help/de/evince/translate.page
-share/help/el/
 share/help/el/evince/
 share/help/el/evince/annotation-properties.page
 share/help/el/evince/annotations-delete.page
@@ -795,7 +789,6 @@ share/help/en_GB/evince/synctex-support.page
 share/help/en_GB/evince/synctex.page
 share/help/en_GB/evince/textselection.page
 share/help/en_GB/evince/translate.page
-share/help/es/
 share/help/es/evince/
 share/help/es/evince/annotation-properties.page
 share/help/es/evince/annotations-delete.page
@@ -876,7 +869,6 @@ share/help/es/evince/synctex-support.page
 share/help/es/evince/synctex.page
 share/help/es/evince/textselection.page
 share/help/es/evince/translate.page
-share/help/eu/
 share/help/eu/evince/
 share/help/eu/evince/annotation-properties.page
 share/help/eu/evince/annotations-delete.page
@@ -957,7 +949,6 @@ share/help/eu/evince/synctex-support.page
 share/help/eu/evince/synctex.page
 share/help/eu/evince/textselection.page
 share/help/eu/evince/translate.page
-share/help/fi/
 share/help/fi/evince/
 share/help/fi/evince/annotation-properties.page
 share/help/fi/evince/annotations-delete.page
@@ -1038,7 +1029,6 @@ share/help/fi/evince/synctex-support.page
 share/help/fi/evince/synctex.page
 share/help/fi/evince/textselection.page
 share/help/fi/evince/translate.page
-share/help/fr/
 share/help/fr/evince/
 share/help/fr/evince/annotation-properties.page
 share/help/fr/evince/annotations-delete.page
@@ -1119,7 +1109,6 @@ share/help/fr/evince/synctex-support.page
 share/help/fr/evince/synctex.page
 share/help/fr/evince/textselection.page
 share/help/fr/evince/translate.page
-share/help/gl/
 share/help/gl/evince/
 share/help/gl/evince/annotation-properties.page
 share/help/gl/evince/annotations-delete.page
@@ -1200,7 +1189,6 @@ share/help/gl/evince/synctex-support.page
 share/help/gl/evince/synctex.page
 share/help/gl/evince/textselection.page
 share/help/gl/evince/translate.page
-share/help/hu/
 share/help/hu/evince/
 share/help/hu/evince/annotation-properties.page
 share/help/hu/evince/annotations-delete.page
@@ -1524,7 +1512,6 @@ share/help/ja/evince/synctex-support.page
 share/help/ja/evince/synctex.page
 share/help/ja/evince/textselection.page
 share/help/ja/evince/translate.page
-share/help/ko/
 share/help/ko/evince/
 share/help/ko/evince/annotation-properties.page
 share/help/ko/evince/annotations-delete.page
@@ -1767,7 +1754,6 @@ share/help/nl/evince/synctex-support.page
 share/help/nl/evince/synctex.page
 share/help/nl/evince/textselection.page
 share/help/nl/evince/translate.page
-share/help/oc/
 share/help/oc/evince/
 share/help/oc/evince/annotation-properties.page
 share/help/oc/evince/annotations-delete.page
@@ -1929,7 +1915,6 @@ share/help/pl/evince/synctex-support.page
 share/help/pl/evince/synctex.page
 share/help/pl/evince/textselection.page
 share/help/pl/evince/translate.page
-share/help/pt_BR/
 share/help/pt_BR/evince/
 share/help/pt_BR/evince/annotation-properties.page
 share/help/pt_BR/evince/annotations-delete.page
@@ -2172,7 +2157,6 @@ share/help/ru/evince/synctex-support.page
 share/help/ru/evince/synctex.page
 share/help/ru/evince/textselection.page
 share/help/ru/evince/translate.page
-share/help/sl/
 share/help/sl/evince/
 share/help/sl/evince/annotation-properties.page
 share/help/sl/evince/annotations-delete.page
@@ -2253,7 +2237,6 @@ share/help/sl/evince/synctex-support.page
 share/help/sl/evince/synctex.page
 share/help/sl/evince/textselection.page
 share/help/sl/evince/translate.page
-share/help/sr/
 share/help/sr/evince/
 share/help/sr/evince/annotation-properties.page
 share/help/sr/evince/annotations-delete.page
@@ -2334,7 +2317,6 @@ share/help/sr/evince/synctex-support.page
 share/help/sr/evince/synctex.page
 share/help/sr/evince/textselection.page
 share/help/sr/evince/translate.page
-share/help/sv/
 share/help/sv/evince/
 share/help/sv/evince/annotation-properties.page
 share/help/sv/evince/annotations-delete.page
@@ -2496,7 +2478,6 @@ share/help/te/evince/synctex-support.page
 share/help/te/evince/synctex.page
 share/help/te/evince/textselection.page
 share/help/te/evince/translate.page
-share/help/uk/
 share/help/uk/evince/
 share/help/uk/evince/annotation-properties.page
 share/help/uk/evince/annotations-delete.page
@@ -2577,7 +2558,6 @@ share/help/uk/evince/synctex-support.page
 share/help/uk/evince/synctex.page
 share/help/uk/evince/textselection.page
 share/help/uk/evince/translate.page
-share/help/vi/
 share/help/vi/evince/
 share/help/vi/evince/annotation-properties.page
 share/help/vi/evince/annotations-delete.page
@@ -2658,7 +2638,6 @@ share/help/vi/evince/synctex-support.page
 share/help/vi/evince/synctex.page
 share/help/vi/evince/textselection.page
 share/help/vi/evince/translate.page
-share/help/zh_CN/
 share/help/zh_CN/evince/
 share/help/zh_CN/evince/annotation-properties.page
 share/help/zh_CN/evince/annotations-delete.page
@@ -2951,8 +2930,6 @@ share/locale/kk/LC_MESSAGES/evince.mo
 share/locale/km/LC_MESSAGES/evince.mo
 share/locale/kn/LC_MESSAGES/evince.mo
 share/locale/ko/LC_MESSAGES/evince.mo
-share/locale/ks/
-share/locale/ks/LC_MESSAGES/
 share/locale/ks/LC_MESSAGES/evince.mo
 share/locale/ku/LC_MESSAGES/evince.mo
 share/locale/lt/LC_MESSAGES/evince.mo
@@ -3001,7 +2978,6 @@ share/locale/zh_CN/LC_MESSAGES/evince.mo
 share/locale/zh_HK/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/locale/zu/LC_MESSAGES/evince.mo
-share/metainfo/
 share/metainfo/evince-pdfdocument.metainfo.xml
 share/metainfo/evince-tiffdocument.metainfo.xml
 share/metainfo/org.gnome.Evince.appdata.xml
