@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1203 2020/05/19 15:34:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1204 2020/05/20 02:12:28 jeremy Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -659,6 +659,8 @@
      SUBDIR += rtmpdump
      SUBDIR += rtorrent
      SUBDIR += ruby-agcaldav
+     SUBDIR += ruby-cbor,ruby26
+     SUBDIR += ruby-cbor,ruby27
      SUBDIR += ruby-eventmachine,ruby26
      SUBDIR += ruby-eventmachine,ruby27
      SUBDIR += ruby-macaddr
