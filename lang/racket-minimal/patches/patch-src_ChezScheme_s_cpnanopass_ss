@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ChezScheme_s_cpnanopass_ss,v 1.1 2020/05/20 16:08:29 juanfra Exp $
+
+Index: src/ChezScheme/s/cpnanopass.ss
+--- src/ChezScheme/s/cpnanopass.ss.orig
++++ src/ChezScheme/s/cpnanopass.ss
+@@ -13651,7 +13651,7 @@
+                ,(constant-case architecture
+                   [(x86_64)
+                    `(seq
+-                     (set! ,%rax (inline ,(make-info-inline) ,%popcount ,%rdi))
++                     (set! ,%rax (inline ,(make-info-inline) ,%popcount ,%rcx))
+                      (asm-c-return ,null-info ,%rax))]
+                   [else
+                    ;; Generate anything, since this should not get called

@@ -1,0 +1,20 @@
+@comment $OpenBSD: PFRAG.bc,v 1.1 2020/05/20 16:08:29 juanfra Exp $
+include/racket/escheme.h
+include/racket/ext.exp
+include/racket/mzconfig.h
+include/racket/mzscheme.exp
+include/racket/mzscheme3m.exp
+include/racket/scheme.h
+include/racket/schemef.h
+include/racket/schemegc2.h
+include/racket/schemex.h
+include/racket/schemexm.h
+include/racket/schexn.h
+include/racket/schgc2obj.h
+include/racket/schthread.h
+include/racket/schvers.h
+include/racket/sconfig.h
+include/racket/stypes.h
+include/racket/uconfig.h
+lib/racket/buildinfo
+lib/racket/mzdyn3m.o

@@ -1,33 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/05/14 17:17:57 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/05/20 16:08:29 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
+%%bc%%
+%%cs%%
 @bin bin/racket
 bin/racket-user-bin-paths
 bin/raco
 include/racket/
-include/racket/escheme.h
-include/racket/ext.exp
-include/racket/mzconfig.h
-include/racket/mzscheme.exp
-include/racket/mzscheme3m.exp
-include/racket/scheme.h
-include/racket/schemef.h
-include/racket/schemegc2.h
-include/racket/schemex.h
-include/racket/schemexm.h
-include/racket/schexn.h
-include/racket/schgc2obj.h
-include/racket/schthread.h
-include/racket/schvers.h
-include/racket/sconfig.h
-include/racket/stypes.h
-include/racket/uconfig.h
 lib/racket/
-lib/racket/buildinfo
 @bin lib/racket/gracket
 lib/racket/launchers.rktd
 lib/racket/mans.rktd
-lib/racket/mzdyn3m.o
 @bin lib/racket/starter
 lib/racket/starter-sh
 lib/racket/system.rktd

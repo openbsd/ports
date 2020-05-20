@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2020/05/14 20:03:25 juanfra Exp $
+# $OpenBSD: Makefile,v 1.65 2020/05/20 16:08:28 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
 V =			7.7
-REVISION =		0
+REVISION =		1
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -100,7 +100,7 @@ CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS +=	--enable-jit \
+CONFIGURE_ARGS +=	--enable-csdefault \
 			--enable-places \
 			--enable-futures
 .elif ${MACHINE_ARCH} == "i386"
@@ -122,6 +122,14 @@ CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
 .endif
+
+# The embedded versions of BC and CS use different files
+.if ${MACHINE_ARCH} == "amd64"
+PKG_ARGS +=		-Dbc=0 -Dcs=1
+.else
+PKG_ARGS +=		-Dbc=1 -Dcs=0
+.endif
+
 
 post-install:
 	@find ${PREFIX} -type f -name '*.orig' -delete
