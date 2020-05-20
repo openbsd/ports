@@ -1,34 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/05/20 10:03:45 espie Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
-lib/qt5/plugins/mltpreview.so
+@so lib/qt5/plugins/mltpreview.so
 @man man/man1/kdenlive.1
 @man man/man1/kdenlive_render.1
 share/applications/org.kde.kdenlive.desktop
 share/config.kcfg/
 share/config.kcfg/kdenlivesettings.kcfg
 share/doc/HTML/ca/kdenlive/
-share/doc/HTML/ca/kdenlive/Kdenlive-Quickstart-Add-Last-Clip.png
-share/doc/HTML/ca/kdenlive/Kdenlive-Quickstart-Add-Transition.png
-share/doc/HTML/ca/kdenlive/Kdenlive-Quickstart-EffectStack.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Add-Clips.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Add-Effect.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Effect-Flag.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Fadeout.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Folder-Structure.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Keyframes.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Mainwindow.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-New-Project.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Overlap-Clips.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Renderer.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Rendering.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Resize-Marker.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Save-Project.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-Timeline-Clips.png
-share/doc/HTML/ca/kdenlive/Kdenlive_Quickstart-TimelineCursor.png
 share/doc/HTML/ca/kdenlive/index.cache.bz2
 share/doc/HTML/ca/kdenlive/index.docbook
+share/doc/HTML/ca/kdenlive/kdenlive_quickstart-overlap-clips.png
+share/doc/HTML/ca/kdenlive/kdenlive_quickstart-renderer.png
+share/doc/HTML/ca/kdenlive/kdenlive_quickstart-resize-marker.png
+share/doc/HTML/ca/kdenlive/kdenlive_quickstart-save-project.png
+share/doc/HTML/ca/kdenlive/kdenlive_quickstart-timeline-clips.png
+share/doc/HTML/ca/kdenlive/kdenlive_quickstart-timelinecursor.png
 share/doc/HTML/de/kdenlive/
 share/doc/HTML/de/kdenlive/index.cache.bz2
 share/doc/HTML/de/kdenlive/index.docbook
@@ -73,6 +61,10 @@ share/doc/HTML/fr/kdenlive/Kdenlive_Quickstart-Timeline-Clips.png
 share/doc/HTML/fr/kdenlive/index.cache.bz2
 share/doc/HTML/fr/kdenlive/index.docbook
 share/doc/HTML/fr/kdenlive/section 1 - screen 2.png
+share/doc/HTML/id/
+share/doc/HTML/id/kdenlive/
+share/doc/HTML/id/kdenlive/index.cache.bz2
+share/doc/HTML/id/kdenlive/index.docbook
 share/doc/HTML/it/kdenlive/
 share/doc/HTML/it/kdenlive/index.cache.bz2
 share/doc/HTML/it/kdenlive/index.docbook
@@ -85,6 +77,27 @@ share/doc/HTML/pt/kdenlive/index.docbook
 share/doc/HTML/pt_BR/kdenlive/
 share/doc/HTML/pt_BR/kdenlive/index.cache.bz2
 share/doc/HTML/pt_BR/kdenlive/index.docbook
+share/doc/HTML/ru/kdenlive/
+share/doc/HTML/ru/kdenlive/index.cache.bz2
+share/doc/HTML/ru/kdenlive/index.docbook
+share/doc/HTML/ru/kdenlive/kdenlive-quickstart-add-last-clip.png
+share/doc/HTML/ru/kdenlive/kdenlive-quickstart-add-transition.png
+share/doc/HTML/ru/kdenlive/kdenlive-quickstart-effectstack.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-add-clips.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-add-effect.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-effect-flag.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-fadeout.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-folder-structure.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-keyframes.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-mainwindow.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-new-project.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-overlap-clips.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-renderer.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-rendering.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-resize-marker.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-save-project.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-timeline-clips.png
+share/doc/HTML/ru/kdenlive/kdenlive_quickstart-timelinecursor.png
 share/doc/HTML/sv/kdenlive/
 share/doc/HTML/sv/kdenlive/index.cache.bz2
 share/doc/HTML/sv/kdenlive/index.docbook
@@ -110,11 +123,10 @@ share/doc/HTML/uk/kdenlive/kdenlive_quickstart-timelinecursor.png
 share/doc/Kdenlive/
 share/doc/Kdenlive/AUTHORS
 share/doc/Kdenlive/COPYING
-share/doc/Kdenlive/README
+share/doc/Kdenlive/README.md
 share/examples/kdenlive/
 share/examples/kdenlive/xdg/
-share/examples/kdenlive/xdg/kdenlive.categories
-@sample ${SYSCONFDIR}/xdg/kdenlive.categories
+share/examples/kdenlive/xdg/kdenlive_keyboardschemes.knsrc
 share/examples/kdenlive/xdg/kdenlive_renderprofiles.knsrc
 @sample ${SYSCONFDIR}/xdg/kdenlive_renderprofiles.knsrc
 share/examples/kdenlive/xdg/kdenlive_titles.knsrc
@@ -213,14 +225,13 @@ share/icons/hicolor/scalable/mimetypes/application-x-kdenlivetitle.svgz
 share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 share/kdenlive/
 share/kdenlive/banner.png
-share/kdenlive/blacklisted_effects.txt
-share/kdenlive/blacklisted_transitions.txt
 share/kdenlive/effects/
 share/kdenlive/effects/acompressor.xml
 share/kdenlive/effects/aecho.xml
 share/kdenlive/effects/agate.xml
 share/kdenlive/effects/audiobalance.xml
 share/kdenlive/effects/audiopan.xml
+share/kdenlive/effects/audiospectrum.xml
 share/kdenlive/effects/audiowave.xml
 share/kdenlive/effects/audiowaveform.xml
 share/kdenlive/effects/automask.xml
@@ -233,6 +244,7 @@ share/kdenlive/effects/chroma.xml
 share/kdenlive/effects/chroma_hold.xml
 share/kdenlive/effects/crop.xml
 share/kdenlive/effects/dust.xml
+share/kdenlive/effects/dynamic_loudness.xml
 share/kdenlive/effects/dynamictext.xml
 share/kdenlive/effects/fade_from_black.xml
 share/kdenlive/effects/fade_to_black.xml
@@ -252,6 +264,7 @@ share/kdenlive/effects/frei0r_cluster.xml
 share/kdenlive/effects/frei0r_colgate.xml
 share/kdenlive/effects/frei0r_coloradj_rgb.xml
 share/kdenlive/effects/frei0r_colordistance.xml
+share/kdenlive/effects/frei0r_colorize.xml
 share/kdenlive/effects/frei0r_colortap.xml
 share/kdenlive/effects/frei0r_contrast0r.xml
 share/kdenlive/effects/frei0r_curves.xml
@@ -260,7 +273,9 @@ share/kdenlive/effects/frei0r_defish0r.xml
 share/kdenlive/effects/frei0r_delay0r.xml
 share/kdenlive/effects/frei0r_delaygrab.xml
 share/kdenlive/effects/frei0r_distort0r.xml
+share/kdenlive/effects/frei0r_dither.xml
 share/kdenlive/effects/frei0r_edgeglow.xml
+share/kdenlive/effects/frei0r_emboss.xml
 share/kdenlive/effects/frei0r_equaliz0r.xml
 share/kdenlive/effects/frei0r_facebl0r.xml
 share/kdenlive/effects/frei0r_facedetect.xml
@@ -283,13 +298,16 @@ share/kdenlive/effects/frei0r_pixeliz0r.xml
 share/kdenlive/effects/frei0r_pr0be.xml
 share/kdenlive/effects/frei0r_pr0file.xml
 share/kdenlive/effects/frei0r_primaries.xml
+share/kdenlive/effects/frei0r_rgbnoise.xml
 share/kdenlive/effects/frei0r_rgbparade.xml
 share/kdenlive/effects/frei0r_saturat0r.xml
 share/kdenlive/effects/frei0r_scale0tilt.xml
 share/kdenlive/effects/frei0r_scanline0r.xml
 share/kdenlive/effects/frei0r_select0r.xml
 share/kdenlive/effects/frei0r_sharpness.xml
+share/kdenlive/effects/frei0r_sigmoidaltransfer.xml
 share/kdenlive/effects/frei0r_sobel.xml
+share/kdenlive/effects/frei0r_softglow.xml
 share/kdenlive/effects/frei0r_sopsat.xml
 share/kdenlive/effects/frei0r_squareblur.xml
 share/kdenlive/effects/frei0r_tehroxx0r.xml
@@ -309,6 +327,7 @@ share/kdenlive/effects/greyscale.xml
 share/kdenlive/effects/invert.xml
 share/kdenlive/effects/lift_gamma_gain.xml
 share/kdenlive/effects/loudness.xml
+share/kdenlive/effects/luma.xml
 share/kdenlive/effects/mirror.xml
 share/kdenlive/effects/movit_blur.xml
 share/kdenlive/effects/movit_deconvolution_sharpen.xml
@@ -335,6 +354,7 @@ share/kdenlive/effects/rotoscoping.xml
 share/kdenlive/effects/scratchlines.xml
 share/kdenlive/effects/selectivecolor.xml
 share/kdenlive/effects/sepia.xml
+share/kdenlive/effects/shape.xml
 share/kdenlive/effects/sox_band.xml
 share/kdenlive/effects/sox_bass.xml
 share/kdenlive/effects/sox_echo.xml
@@ -343,10 +363,12 @@ share/kdenlive/effects/sox_gain.xml
 share/kdenlive/effects/sox_phaser.xml
 share/kdenlive/effects/sox_stretch.xml
 share/kdenlive/effects/speed.xml
+share/kdenlive/effects/subtitles.xml
 share/kdenlive/effects/swapchannels.xml
 share/kdenlive/effects/tcolor.xml
 share/kdenlive/effects/threshold.xml
 share/kdenlive/effects/tracker.xml
+share/kdenlive/effects/unsharp.xml
 share/kdenlive/effects/update/
 share/kdenlive/effects/update/frei0r.balanc0r.js
 share/kdenlive/effects/update/frei0r.cartoon.js
@@ -356,12 +378,14 @@ share/kdenlive/effects/update/frei0r.lightgraffiti.js
 share/kdenlive/effects/update/frei0r.select0r.js
 share/kdenlive/effects/update/frei0r.sopsat.js
 share/kdenlive/effects/update/frei0r.vertigo.js
+share/kdenlive/effects/vidstab.xml
 share/kdenlive/effects/vignette.xml
 share/kdenlive/effects/volume.xml
 share/kdenlive/effects/wave.xml
 share/kdenlive/encodingprofiles.rc
 share/kdenlive/export/
 share/kdenlive/export/profiles.xml
+share/kdenlive/externalproxies.rc
 share/kdenlive/generators/
 share/kdenlive/generators/count.xml
 share/kdenlive/generators/frei0r_test_pat_b.xml
@@ -429,9 +453,16 @@ share/kdenlive/titles/simple-scroll.kdenlivetitle
 share/kdenlive/titles/simple-with-date.kdenlivetitle
 share/kdenlive/titles/simple.kdenlivetitle
 share/kdenlive/transitions/
+share/kdenlive/transitions/affine.xml
+share/kdenlive/transitions/composite.xml
+share/kdenlive/transitions/dissolve.xml
 share/kdenlive/transitions/frei0r_cairoaffineblend.xml
 share/kdenlive/transitions/frei0r_cairoblend.xml
+share/kdenlive/transitions/luma.xml
+share/kdenlive/transitions/mix.xml
 share/kdenlive/transitions/qtblend.xml
+share/kdenlive/transitions/region.xml
+share/kdenlive/transitions/slide.xml
 share/kdenlive/transitions/wipe.xml
 share/knotifications5/kdenlive.notifyrc
 share/kservices5/mltpreview.desktop
@@ -439,6 +470,7 @@ share/kxmlgui5/
 share/kxmlgui5/kdenlive/
 share/kxmlgui5/kdenlive/kdenliveui.rc
 share/locale/ar/LC_MESSAGES/kdenlive.mo
+share/locale/ast/LC_MESSAGES/kdenlive.mo
 share/locale/bs/LC_MESSAGES/kdenlive.mo
 share/locale/ca/LC_MESSAGES/kdenlive.mo
 share/locale/ca@valencia/LC_MESSAGES/kdenlive.mo
@@ -460,6 +492,7 @@ share/locale/hu/LC_MESSAGES/kdenlive.mo
 share/locale/id/LC_MESSAGES/kdenlive.mo
 share/locale/it/LC_MESSAGES/kdenlive.mo
 share/locale/ja/LC_MESSAGES/kdenlive.mo
+share/locale/ko/LC_MESSAGES/kdenlive.mo
 share/locale/lt/LC_MESSAGES/kdenlive.mo
 share/locale/mr/LC_MESSAGES/kdenlive.mo
 share/locale/nb/LC_MESSAGES/kdenlive.mo
@@ -482,6 +515,7 @@ share/metainfo/
 share/metainfo/org.kde.kdenlive.appdata.xml
 share/mime/packages/org.kde.kdenlive.xml
 share/mime/packages/westley.xml
+share/qlogging-categories5/kdenlive.categories
 @tag update-desktop-database
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
