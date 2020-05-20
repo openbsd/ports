@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/05/20 13:56:42 bcallah Exp $
 @bin bin/connectagram
 @man man/man6/connectagram.6
 share/applications/connectagram.desktop
@@ -21,6 +21,7 @@ share/connectagram/translations/connectagram_es_PE.qm
 share/connectagram/translations/connectagram_fr.qm
 share/connectagram/translations/connectagram_hr.qm
 share/connectagram/translations/connectagram_hu.qm
+share/connectagram/translations/connectagram_it.qm
 share/connectagram/translations/connectagram_lt.qm
 share/connectagram/translations/connectagram_nl.qm
 share/connectagram/translations/connectagram_pl.qm
