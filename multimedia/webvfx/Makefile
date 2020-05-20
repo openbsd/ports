@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/20 13:49:59 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/20 15:16:26 tracey Exp $
 
 USE_WXNEEDED =	Yes
 COMMENT =	video effects library
@@ -25,8 +25,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		devel/qmake \
 			x11/qt5
 
-RUN_DEPENDS =		x11/qt5/qtbase
 LIB_DEPENDS =		multimedia/mlt \
+			x11/qt5/qtdeclarative \
  			x11/qt5/qtwebkit
 
 CONFIGURE_STYLE =	qmake

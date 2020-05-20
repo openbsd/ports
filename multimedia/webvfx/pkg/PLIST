@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/20 13:49:59 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/20 15:16:26 tracey Exp $
 @bin bin/webvfx_browser
 @bin bin/webvfx_render
 @bin bin/webvfx_viewer
 @lib lib/libwebvfx.so.${LIBwebvfx_VERSION}
+lib/mlt/
 @so lib/mlt/libmltwebvfx.so
