@@ -1,0 +1,16 @@
+$OpenBSD: patch-salt_modules_win_file_py,v 1.1 2020/05/20 12:38:20 jasper Exp $
+
+Fix deprecation warnings; from multiple upstream commits
+
+Index: salt/modules/win_file.py
+--- salt/modules/win_file.py.orig
++++ salt/modules/win_file.py
+@@ -17,7 +17,7 @@ import os.path
+ import logging
+ # pylint: disable=W0611
+ import operator  # do not remove
+-from collections import Iterable, Mapping  # do not remove
++from collections.abc import Iterable, Mapping  # do not remove
+ from functools import reduce  # do not remove
+ import datetime  # do not remove.
+ import tempfile  # do not remove. Used in salt.modules.file.__clean_tmp
