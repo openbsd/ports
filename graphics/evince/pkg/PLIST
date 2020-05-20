@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/05/14 15:30:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/05/20 10:14:26 jasper Exp $
 @conflict evince-djvu-*
 @conflict evince-dvi-*
 @conflict nautilus-evince-*
@@ -70,11 +70,7 @@ lib/evince/4/backends/pdfdocument.evince-backend
 lib/evince/4/backends/tiffdocument.evince-backend
 lib/girepository-1.0/EvinceDocument-${MAJ_V}.typelib
 lib/girepository-1.0/EvinceView-${MAJ_V}.typelib
-@static-lib lib/libevdocument3.a
-lib/libevdocument3.la
 @lib lib/libevdocument3.so.${LIBevdocument3_VERSION}
-@static-lib lib/libevview3.a
-lib/libevview3.la
 @lib lib/libevview3.so.${LIBevview3_VERSION}
 lib/pkgconfig/evince-document-${MAJ_V}.pc
 lib/pkgconfig/evince-view-${MAJ_V}.pc
@@ -150,135 +146,8 @@ share/evince/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 share/gir-1.0/EvinceDocument-${MAJ_V}.gir
 share/gir-1.0/EvinceView-${MAJ_V}.gir
 share/glib-2.0/schemas/org.gnome.Evince.gschema.xml
-share/gtk-doc/html/evince/
-share/gtk-doc/html/evince/EvFileMonitor.html
-share/gtk-doc/html/evince/EvHistory.html
-share/gtk-doc/html/evince/EvMessageArea.html
-share/gtk-doc/html/evince/EvPageActionWidget.html
-share/gtk-doc/html/evince/EvPasswordView.html
-share/gtk-doc/html/evince/EvProgressMessageArea.html
-share/gtk-doc/html/evince/EvSidebar.html
-share/gtk-doc/html/evince/EvSidebarAttachments.html
-share/gtk-doc/html/evince/EvSidebarLayers.html
-share/gtk-doc/html/evince/EvSidebarLinks.html
-share/gtk-doc/html/evince/EvSidebarPage.html
-share/gtk-doc/html/evince/EvSidebarThumbnails.html
-share/gtk-doc/html/evince/EvWindow.html
-share/gtk-doc/html/evince/api-index-full.html
-share/gtk-doc/html/evince/evince-ev-application.html
-share/gtk-doc/html/evince/evince-ev-keyring.html
-share/gtk-doc/html/evince/evince-ev-media-player-keys.html
-share/gtk-doc/html/evince/evince-ev-metadata.html
-share/gtk-doc/html/evince/evince-ev-properties-dialog.html
-share/gtk-doc/html/evince/evince-ev-properties-fonts.html
-share/gtk-doc/html/evince/evince-ev-properties-license.html
-share/gtk-doc/html/evince/evince-ev-utils.html
-share/gtk-doc/html/evince/evince-ev-window-title.html
-share/gtk-doc/html/evince/evince-frontend.html
-share/gtk-doc/html/evince/evince.devhelp2
-share/gtk-doc/html/evince/home.png
-share/gtk-doc/html/evince/index.html
-share/gtk-doc/html/evince/left-insensitive.png
-share/gtk-doc/html/evince/left.png
-share/gtk-doc/html/evince/licence.html
-share/gtk-doc/html/evince/object-tree.html
-share/gtk-doc/html/evince/right-insensitive.png
-share/gtk-doc/html/evince/right.png
-share/gtk-doc/html/evince/style.css
-share/gtk-doc/html/evince/up-insensitive.png
-share/gtk-doc/html/evince/up.png
-share/gtk-doc/html/libevdocument-${MAJ_V}/
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvAnnotation.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvAsyncRenderer.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvAttachment.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocument.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentAnnotations.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentAttachments.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentFind.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentFonts.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentForms.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentImages.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentInfo.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentLayers.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentLinks.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentPrint.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentSecurity.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentText.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentTransition.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvFileExporter.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvFormField.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvImage.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvLayer.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvPage.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvRenderContext.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/EvSelection.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-10.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-12.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-14.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-18.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-4.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-6.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-8.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-deprecated.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-full.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/document-data.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/document-helpers.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/document-interfaces.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/home.png
-share/gtk-doc/html/libevdocument-${MAJ_V}/index.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/left-insensitive.png
-share/gtk-doc/html/libevdocument-${MAJ_V}/left.png
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-${MAJ_V}.devhelp2
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-EvDocumentMisc.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-Version-checks.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-backends-manager.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-document-factory.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-file-helpers.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-init.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-link-action.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-link-dest.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-link.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-mapping.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-transition-effect.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/licence.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/object-tree.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/right-insensitive.png
-share/gtk-doc/html/libevdocument-${MAJ_V}/right.png
-share/gtk-doc/html/libevdocument-${MAJ_V}/style.css
-share/gtk-doc/html/libevdocument-${MAJ_V}/up-insensitive.png
-share/gtk-doc/html/libevdocument-${MAJ_V}/up.png
-share/gtk-doc/html/libevview-${MAJ_V}/
-share/gtk-doc/html/libevview-${MAJ_V}/EvJob.html
-share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-10.html
-share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-12.html
-share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-14.html
-share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-30.html
-share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-6.html
-share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-8.html
-share/gtk-doc/html/libevview-${MAJ_V}/api-index-deprecated.html
-share/gtk-doc/html/libevview-${MAJ_V}/api-index-full.html
-share/gtk-doc/html/libevview-${MAJ_V}/home.png
-share/gtk-doc/html/libevview-${MAJ_V}/index.html
-share/gtk-doc/html/libevview-${MAJ_V}/left-insensitive.png
-share/gtk-doc/html/libevview-${MAJ_V}/left.png
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-${MAJ_V}.devhelp2
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-annotation-window.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-document-model.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-job-scheduler.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-page-cache.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-print-operation.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-stock-icons.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view-cursor.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view-presentation.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view.html
-share/gtk-doc/html/libevview-${MAJ_V}/licence.html
-share/gtk-doc/html/libevview-${MAJ_V}/object-tree.html
-share/gtk-doc/html/libevview-${MAJ_V}/right-insensitive.png
-share/gtk-doc/html/libevview-${MAJ_V}/right.png
-share/gtk-doc/html/libevview-${MAJ_V}/style.css
-share/gtk-doc/html/libevview-${MAJ_V}/up-insensitive.png
-share/gtk-doc/html/libevview-${MAJ_V}/up.png
-share/gtk-doc/html/libevview-${MAJ_V}/view-view.html
+share/help/
+share/help/C/
 share/help/C/evince/
 share/help/C/evince/annotation-properties.page
 share/help/C/evince/annotations-delete.page
@@ -440,6 +309,7 @@ share/help/bg/evince/synctex-support.page
 share/help/bg/evince/synctex.page
 share/help/bg/evince/textselection.page
 share/help/bg/evince/translate.page
+share/help/ca/
 share/help/ca/evince/
 share/help/ca/evince/annotation-properties.page
 share/help/ca/evince/annotations-delete.page
@@ -520,6 +390,7 @@ share/help/ca/evince/synctex-support.page
 share/help/ca/evince/synctex.page
 share/help/ca/evince/textselection.page
 share/help/ca/evince/translate.page
+share/help/cs/
 share/help/cs/evince/
 share/help/cs/evince/annotation-properties.page
 share/help/cs/evince/annotations-delete.page
@@ -681,6 +552,7 @@ share/help/da/evince/synctex-support.page
 share/help/da/evince/synctex.page
 share/help/da/evince/textselection.page
 share/help/da/evince/translate.page
+share/help/de/
 share/help/de/evince/
 share/help/de/evince/annotation-properties.page
 share/help/de/evince/annotations-delete.page
@@ -761,6 +633,7 @@ share/help/de/evince/synctex-support.page
 share/help/de/evince/synctex.page
 share/help/de/evince/textselection.page
 share/help/de/evince/translate.page
+share/help/el/
 share/help/el/evince/
 share/help/el/evince/annotation-properties.page
 share/help/el/evince/annotations-delete.page
@@ -922,6 +795,7 @@ share/help/en_GB/evince/synctex-support.page
 share/help/en_GB/evince/synctex.page
 share/help/en_GB/evince/textselection.page
 share/help/en_GB/evince/translate.page
+share/help/es/
 share/help/es/evince/
 share/help/es/evince/annotation-properties.page
 share/help/es/evince/annotations-delete.page
@@ -1002,6 +876,7 @@ share/help/es/evince/synctex-support.page
 share/help/es/evince/synctex.page
 share/help/es/evince/textselection.page
 share/help/es/evince/translate.page
+share/help/eu/
 share/help/eu/evince/
 share/help/eu/evince/annotation-properties.page
 share/help/eu/evince/annotations-delete.page
@@ -1082,6 +957,7 @@ share/help/eu/evince/synctex-support.page
 share/help/eu/evince/synctex.page
 share/help/eu/evince/textselection.page
 share/help/eu/evince/translate.page
+share/help/fi/
 share/help/fi/evince/
 share/help/fi/evince/annotation-properties.page
 share/help/fi/evince/annotations-delete.page
@@ -1162,6 +1038,7 @@ share/help/fi/evince/synctex-support.page
 share/help/fi/evince/synctex.page
 share/help/fi/evince/textselection.page
 share/help/fi/evince/translate.page
+share/help/fr/
 share/help/fr/evince/
 share/help/fr/evince/annotation-properties.page
 share/help/fr/evince/annotations-delete.page
@@ -1242,6 +1119,7 @@ share/help/fr/evince/synctex-support.page
 share/help/fr/evince/synctex.page
 share/help/fr/evince/textselection.page
 share/help/fr/evince/translate.page
+share/help/gl/
 share/help/gl/evince/
 share/help/gl/evince/annotation-properties.page
 share/help/gl/evince/annotations-delete.page
@@ -1322,6 +1200,7 @@ share/help/gl/evince/synctex-support.page
 share/help/gl/evince/synctex.page
 share/help/gl/evince/textselection.page
 share/help/gl/evince/translate.page
+share/help/hu/
 share/help/hu/evince/
 share/help/hu/evince/annotation-properties.page
 share/help/hu/evince/annotations-delete.page
@@ -1645,6 +1524,7 @@ share/help/ja/evince/synctex-support.page
 share/help/ja/evince/synctex.page
 share/help/ja/evince/textselection.page
 share/help/ja/evince/translate.page
+share/help/ko/
 share/help/ko/evince/
 share/help/ko/evince/annotation-properties.page
 share/help/ko/evince/annotations-delete.page
@@ -1887,6 +1767,7 @@ share/help/nl/evince/synctex-support.page
 share/help/nl/evince/synctex.page
 share/help/nl/evince/textselection.page
 share/help/nl/evince/translate.page
+share/help/oc/
 share/help/oc/evince/
 share/help/oc/evince/annotation-properties.page
 share/help/oc/evince/annotations-delete.page
@@ -2048,6 +1929,7 @@ share/help/pl/evince/synctex-support.page
 share/help/pl/evince/synctex.page
 share/help/pl/evince/textselection.page
 share/help/pl/evince/translate.page
+share/help/pt_BR/
 share/help/pt_BR/evince/
 share/help/pt_BR/evince/annotation-properties.page
 share/help/pt_BR/evince/annotations-delete.page
@@ -2290,6 +2172,7 @@ share/help/ru/evince/synctex-support.page
 share/help/ru/evince/synctex.page
 share/help/ru/evince/textselection.page
 share/help/ru/evince/translate.page
+share/help/sl/
 share/help/sl/evince/
 share/help/sl/evince/annotation-properties.page
 share/help/sl/evince/annotations-delete.page
@@ -2370,6 +2253,7 @@ share/help/sl/evince/synctex-support.page
 share/help/sl/evince/synctex.page
 share/help/sl/evince/textselection.page
 share/help/sl/evince/translate.page
+share/help/sr/
 share/help/sr/evince/
 share/help/sr/evince/annotation-properties.page
 share/help/sr/evince/annotations-delete.page
@@ -2450,6 +2334,7 @@ share/help/sr/evince/synctex-support.page
 share/help/sr/evince/synctex.page
 share/help/sr/evince/textselection.page
 share/help/sr/evince/translate.page
+share/help/sv/
 share/help/sv/evince/
 share/help/sv/evince/annotation-properties.page
 share/help/sv/evince/annotations-delete.page
@@ -2611,6 +2496,7 @@ share/help/te/evince/synctex-support.page
 share/help/te/evince/synctex.page
 share/help/te/evince/textselection.page
 share/help/te/evince/translate.page
+share/help/uk/
 share/help/uk/evince/
 share/help/uk/evince/annotation-properties.page
 share/help/uk/evince/annotations-delete.page
@@ -2691,6 +2577,7 @@ share/help/uk/evince/synctex-support.page
 share/help/uk/evince/synctex.page
 share/help/uk/evince/textselection.page
 share/help/uk/evince/translate.page
+share/help/vi/
 share/help/vi/evince/
 share/help/vi/evince/annotation-properties.page
 share/help/vi/evince/annotations-delete.page
@@ -2771,6 +2658,7 @@ share/help/vi/evince/synctex-support.page
 share/help/vi/evince/synctex.page
 share/help/vi/evince/textselection.page
 share/help/vi/evince/translate.page
+share/help/zh_CN/
 share/help/zh_CN/evince/
 share/help/zh_CN/evince/annotation-properties.page
 share/help/zh_CN/evince/annotations-delete.page
@@ -3063,6 +2951,8 @@ share/locale/kk/LC_MESSAGES/evince.mo
 share/locale/km/LC_MESSAGES/evince.mo
 share/locale/kn/LC_MESSAGES/evince.mo
 share/locale/ko/LC_MESSAGES/evince.mo
+share/locale/ks/
+share/locale/ks/LC_MESSAGES/
 share/locale/ks/LC_MESSAGES/evince.mo
 share/locale/ku/LC_MESSAGES/evince.mo
 share/locale/lt/LC_MESSAGES/evince.mo
@@ -3111,6 +3001,7 @@ share/locale/zh_CN/LC_MESSAGES/evince.mo
 share/locale/zh_HK/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/locale/zu/LC_MESSAGES/evince.mo
+share/metainfo/
 share/metainfo/evince-pdfdocument.metainfo.xml
 share/metainfo/evince-tiffdocument.metainfo.xml
 share/metainfo/org.gnome.Evince.appdata.xml
