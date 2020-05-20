@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/15 19:57:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/20 23:46:57 bcallah Exp $
 
 COMMENT =	open source retro-style 2D scrolling platform shooter game
 DISTNAME =	gnukem-1.0.1
@@ -14,6 +14,8 @@ WANTLIB += ${COMPILER_LIBCXX} SDL SDL_mixer c m
 
 # Upstream data fetching is ugh...
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	devel/sdl-mixer
 
