@@ -1,7 +1,0 @@
-Tomcat 6 is a Servlet/JSP container that implements the Servlet 2.5
-and JavaServer Pages 2.1 specifications from the Java Community
-Process. Tomcat includes many additional features that make it a
-useful platform for developing and deploying web applications and
-web services.  Tomcat can be run as a standalone web server with
-Servlet and JSP support, or using Apache HTTP Server as its web
-server via the mod_jk Apache module (the www/mod_jk package).
