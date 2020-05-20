@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_jobs_meltjob_cpp,v 1.1.1.1 2020/05/20 14:54:23 espie Exp $
+Apparently, qmelt is a wrapper around melt with better event loop on some OSes
+and apparently we do not need that
+
+Index: src/jobs/meltjob.cpp
+--- src/jobs/meltjob.cpp.orig
++++ src/jobs/meltjob.cpp
+@@ -88,7 +88,7 @@ void MeltJob::start()
+ #ifdef Q_OS_WIN
+     QFileInfo meltPath(shotcutPath, "qmelt.exe");
+ #else
+-    QFileInfo meltPath(shotcutPath, "qmelt");
++    QFileInfo meltPath(shotcutPath, "melt");
+ #endif
+     setReadChannel(QProcess::StandardError);
+     QStringList args;

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_mainwindow_cpp,v 1.1.1.1 2020/05/20 14:54:23 espie Exp $
+
+Index: src/mainwindow.cpp
+--- src/mainwindow.cpp.orig
++++ src/mainwindow.cpp
+@@ -120,7 +120,7 @@ MainWindow::MainWindow()
+     , m_keyframesDock(0)
+ {
+ #if defined(Q_OS_UNIX) && !defined(Q_OS_MAC)
+-    QLibrary libJack("libjack.so.0");
++    QLibrary libJack("libjack.so");
+     if (!libJack.load()) {
+         QMessageBox::critical(this, qApp->applicationName(),
+             tr("Error: This program requires the JACK 1 library.\n\nPlease install it using your package manager. It may be named libjack0, jack-audio-connection-kit, jack, or similar."));
+@@ -128,7 +128,7 @@ MainWindow::MainWindow()
+     } else {
+         libJack.unload();
+     }
+-    QLibrary libSDL("libSDL2-2.0.so.0");
++    QLibrary libSDL("libSDL2.so");
+     if (!libSDL.load()) {
+         QMessageBox::critical(this, qApp->applicationName(),
+             tr("Error: This program requires the SDL 2 library.\n\nPlease install it using your package manager. It may be named libsdl2-2.0-0, SDL2, or similar."));
