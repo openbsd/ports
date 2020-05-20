@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2020/04/21 15:53:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2020/05/20 15:18:35 tracey Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -84,6 +84,7 @@
      SUBDIR += transcode,lzo,mjpegtools
      SUBDIR += upplay
      SUBDIR += vitunes
+     SUBDIR += webvfx
      SUBDIR += x264
      SUBDIR += x265
      SUBDIR += xine-lib
