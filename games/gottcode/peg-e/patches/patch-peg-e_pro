@@ -1,8 +1,8 @@
-$OpenBSD: patch-peg-e_pro,v 1.6 2019/08/08 23:23:51 bcallah Exp $
+$OpenBSD: patch-peg-e_pro,v 1.7 2020/05/20 14:03:09 bcallah Exp $
 Index: peg-e.pro
 --- peg-e.pro.orig
 +++ peg-e.pro
-@@ -105,7 +105,7 @@ macx {
+@@ -103,7 +103,7 @@ macx {
  	qm.CONFIG += no_check_exist
  
  	man.files = doc/peg-e.6
