@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/01/25 02:02:06 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/05/20 14:30:20 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -61,6 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}gnumeric.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}gzip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}haskell.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}hdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}icc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}image.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}ipk.${MODPY_PYC_MAGIC_TAG}pyc
@@ -78,6 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}odt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}ogg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}openssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}openssl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}pcap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}pdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}pgp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -127,6 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/git.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/gnumeric.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/gzip.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/haskell.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/hdf.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/icc.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/image.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/ipk.py
@@ -144,6 +147,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/ocaml.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/odt.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/ogg.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/openssh.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/openssl.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/pcap.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/pdf.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/pgp.py

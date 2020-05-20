@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_utils_tools_py,v 1.4 2019/09/09 23:35:08 bcallah Exp $
+$OpenBSD: patch-tests_utils_tools_py,v 1.5 2020/05/20 14:30:20 bcallah Exp $
 
 Our file(1) does not have a -v flag.
 Lie and produce the version number diffoscope is looking for.
@@ -6,7 +6,7 @@ Lie and produce the version number diffoscope is looking for.
 Index: tests/utils/tools.py
 --- tests/utils/tools.py.orig
 +++ tests/utils/tools.py
-@@ -32,7 +32,7 @@ from diffoscope.tools import get_package_provider
+@@ -33,7 +33,7 @@ from diffoscope.tools import get_package_provider
  
  def file_version():
      return (
