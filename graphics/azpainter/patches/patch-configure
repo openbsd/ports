@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2020/05/20 17:06:29 bcallah Exp $
+
+Don't hardcode optimization flags.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -214,8 +214,6 @@ done
+ if test -z "$CFLAGS";then
+ 	if test "$cf_debug" = yes;then
+ 		CFLAGS_ADD=`fc_add_string "$CFLAGS_ADD" "-g"`
+-	else
+-		CFLAGS_ADD=`fc_add_string "$CFLAGS_ADD" "-O2"`
+ 	fi
+ fi
+ 

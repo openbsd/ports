@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2020/05/20 17:06:29 bcallah Exp $
+
+Respect CFLAGS.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -11,7 +11,7 @@ package_full := $(package_name)-$(package_version)
+ instfile := install -m 644
+ 
+ CC := @CC@
+-CFLAGS := @CFLAGS@ -pthread -Isrc/include -Imlib/include -I. -DHAVE_CONFIG_H \
++CFLAGS += @CFLAGS@ -pthread -Isrc/include -Imlib/include -I. -DHAVE_CONFIG_H \
+  -DPACKAGE_DATA_DIR=\"$(datadir)\"
+ LDFLAGS := @LDFLAGS@ -pthread
+ LIBS := @LIBS@ -lm

@@ -1,0 +1,16 @@
+$OpenBSD: patch-mlib_Makefile_in,v 1.1 2020/05/20 17:06:29 bcallah Exp $
+
+Respect CFLAGS
+
+Index: mlib/Makefile.in
+--- mlib/Makefile.in.orig
++++ mlib/Makefile.in
+@@ -1,7 +1,7 @@
+ # mlib
+ 
+ CC := @CC@
+-CFLAGS := @CFLAGS@ -pthread -Iinclude -I.. -Isrc/private -DHAVE_CONFIG_H
++CFLAGS += @CFLAGS@ -pthread -Iinclude -I.. -Isrc/private -DHAVE_CONFIG_H
+ 
+ TARGET := libmlib.a
+ 

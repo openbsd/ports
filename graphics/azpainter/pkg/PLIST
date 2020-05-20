@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/07 02:06:45 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/20 17:06:30 bcallah Exp $
 @bin bin/azpainter
 share/applications/azpainter.desktop
 share/azpainter/
@@ -31,6 +31,13 @@ share/azpainter/brush-2.dat
 share/azpainter/brush/circle1.png
 share/azpainter/brush/ellipse.png
 share/azpainter/coltype.png
+share/azpainter/doc/
+share/azpainter/doc/AUTHORS
+share/azpainter/doc/ChangeLog
+share/azpainter/doc/GPL3
+share/azpainter/doc/README
+share/azpainter/doc/README_ja
+share/azpainter/doc/manual_ja.html
 share/azpainter/grad.dat
 share/azpainter/icon.png
 share/azpainter/palette-2.dat
