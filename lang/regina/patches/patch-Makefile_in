@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2020/05/20 15:12:03 bcallah Exp $
 
 Do not gzip manual pages.
 Properly install shlib.
@@ -6,18 +6,19 @@ Properly install shlib.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1041,10 +1041,6 @@ installbase: all
+@@ -1045,11 +1045,6 @@ installbase: all
  	$(INSTALL) -m 644 -c $(srcdir)/regina-config.1 $(DESTDIR)$(mandir)/man1/regina-config.1
  	$(INSTALL) -m 644 -c $(srcdir)/rxstack.1 $(DESTDIR)$(mandir)/man1/rxstack.1
  	$(INSTALL) -m 644 -c $(srcdir)/rxqueue.1 $(DESTDIR)$(mandir)/man1/rxqueue.1
 -	gzip -f $(DESTDIR)$(mandir)/man1/regina.1
+-	gzip -f $(DESTDIR)$(mandir)/man1/rexx.1
 -	gzip -f $(DESTDIR)$(mandir)/man1/regina-config.1
 -	gzip -f $(DESTDIR)$(mandir)/man1/rxstack.1
 -	gzip -f $(DESTDIR)$(mandir)/man1/rxqueue.1
  	$(INSTALL) -m 644 -c $(srcdir)/rexxsaa.h $(DESTDIR)$(includedir)/rexxsaa.h
  	$(INSTALL) -m 644 -c ./en.mtb $(DESTDIR)$(sharedir)/en.mtb
  	$(INSTALL) -m 644 -c ./pt.mtb $(DESTDIR)$(sharedir)/pt.mtb
-@@ -1075,7 +1071,7 @@ installregina:
+@@ -1084,7 +1079,7 @@ installregina:
  	-chmod 755 $(DESTDIR)$(examplesdir)/regutil.rexx
  
  installlib: installregina

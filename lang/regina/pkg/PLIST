@@ -1,37 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/20 15:12:03 bcallah Exp $
 @bin bin/regina
 bin/regina-config
 @bin bin/rexx
 @bin bin/rxqueue
 @bin bin/rxstack
 include/rexxsaa.h
-lib/libregina.a
+@static-lib lib/libregina.a
 @lib lib/libregina.so.${LIBregina_VERSION}
+lib/pkgconfig/libregina.pc
+lib/regina-rexx/
+lib/regina-rexx/addons/
+@so lib/regina-rexx/addons/libregutil.so
+@so lib/regina-rexx/addons/librxtest1.so
+@so lib/regina-rexx/addons/librxtest2.so
 @man man/man1/regina-config.1
 @man man/man1/regina.1
+@man man/man1/rexx.1
 @man man/man1/rxqueue.1
 @man man/man1/rxstack.1
-share/Regina-REXX/
-share/Regina-REXX/addons/
-share/Regina-REXX/addons/libregutil.so
-share/Regina-REXX/addons/librxtest1.so
-share/Regina-REXX/addons/librxtest2.so
-share/Regina-REXX/de.mtb
-share/Regina-REXX/en.mtb
-share/Regina-REXX/es.mtb
-share/Regina-REXX/examples/
-share/Regina-REXX/examples/animal.rexx
-share/Regina-REXX/examples/block.rexx
-share/Regina-REXX/examples/dateconv.rexx
-share/Regina-REXX/examples/dynfunc.rexx
-share/Regina-REXX/examples/newstr.rexx
-share/Regina-REXX/examples/regutil.rexx
-share/Regina-REXX/examples/rexxcps.rexx
-share/Regina-REXX/examples/timeconv.rexx
-share/Regina-REXX/no.mtb
-share/Regina-REXX/pl.mtb
-share/Regina-REXX/pt.mtb
-share/Regina-REXX/rxstack
-@sample ${SYSCONFDIR}/rxstack
-share/Regina-REXX/sv.mtb
-share/Regina-REXX/tr.mtb
+share/regina-rexx/
+share/regina-rexx/de.mtb
+share/regina-rexx/en.mtb
+share/regina-rexx/es.mtb
+share/regina-rexx/examples/
+share/regina-rexx/examples/animal.rexx
+share/regina-rexx/examples/block.rexx
+share/regina-rexx/examples/dateconv.rexx
+share/regina-rexx/examples/dynfunc.rexx
+share/regina-rexx/examples/newstr.rexx
+share/regina-rexx/examples/regutil.rexx
+share/regina-rexx/examples/rexxcps.rexx
+share/regina-rexx/examples/timeconv.rexx
+share/regina-rexx/no.mtb
+share/regina-rexx/pl.mtb
+share/regina-rexx/pt.mtb
+share/regina-rexx/sv.mtb
+share/regina-rexx/tr.mtb

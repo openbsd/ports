@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+$OpenBSD: patch-configure,v 1.2 2020/05/20 15:12:03 bcallah Exp $
 
 Force versioned shlib.
 Make sure 64-bit and 32-bit archs are properly discovered.
@@ -6,7 +6,7 @@ Make sure 64-bit and 32-bit archs are properly discovered.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -3492,9 +3492,11 @@ case "$target" in
+@@ -3523,9 +3523,11 @@ case "$target" in
        ;;
     *-freebsd* | *-openbsd*)
        mach="`uname -m`"
@@ -19,7 +19,7 @@ Index: configure
        fi
        ;;
     *nto-qnx*)
-@@ -8686,13 +8688,13 @@ case "$target" in
+@@ -8717,13 +8719,13 @@ case "$target" in
                     LD_RXLIB_UTILA="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
                     SHL_LD="$ac_cv_prog_CC -shared ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
                  else
@@ -33,7 +33,7 @@ Index: configure
                     LD_RXLIB_B2="-lc -L. -l${SHLFILE}"
                     LD_RXLIB_UTILB="-lc -L. -l${SHLFILE}"
 -                   SHL_LD="ld -Bdynamic -Bshareable ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
-+                   SHL_LD="$ac_cv_prog_CC -shared ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST}.0.0 "'$('SHOFILES')'
++                   SHL_LD="$ac_cv_prog_CC -shared ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST}.${LIBregina_VERSION} "'$('SHOFILES')'
                  fi
                  STATIC_LDFLAGS="-static"
                  SHLPRE="lib"

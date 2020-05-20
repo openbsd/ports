@@ -1,11 +1,11 @@
-$OpenBSD: patch-builtin_c,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+$OpenBSD: patch-builtin_c,v 1.2 2020/05/20 15:12:03 bcallah Exp $
 
 time_t requires %lld
 
 Index: builtin.c
 --- builtin.c.orig
 +++ builtin.c
-@@ -1039,7 +1039,7 @@ streng *std_time( tsd_t *TSD, cparamboxptr parms )
+@@ -1037,7 +1037,7 @@ streng *std_time( tsd_t *TSD, cparamboxptr parms )
           break ;
  
        case 'L':
@@ -14,7 +14,7 @@ Index: builtin.c
           break ;
  
        case 'M':
-@@ -1068,7 +1068,7 @@ streng *std_time( tsd_t *TSD, cparamboxptr parms )
+@@ -1066,7 +1066,7 @@ streng *std_time( tsd_t *TSD, cparamboxptr parms )
  
        case 'T':
           rnow = mktime( &tmdata );
@@ -23,7 +23,7 @@ Index: builtin.c
           break ;
  
        default:
-@@ -1308,7 +1308,7 @@ streng *std_date( tsd_t *TSD, cparamboxptr parms )
+@@ -1302,7 +1302,7 @@ streng *std_date( tsd_t *TSD, cparamboxptr parms )
        case 'T':
           tmdata.tm_year -= 1900;
           rnow = mktime( &tmdata );

@@ -1,11 +1,11 @@
-$OpenBSD: patch-regutil_regini_c,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+$OpenBSD: patch-regutil_regini_c,v 1.2 2020/05/20 15:12:03 bcallah Exp $
 
 time_t requires %lld
 
 Index: regutil/regini.c
 --- regutil/regini.c.orig
 +++ regutil/regini.c
-@@ -544,10 +544,10 @@ rxfunc(sysqueryprocess)
+@@ -547,10 +547,10 @@ rxfunc(sysqueryprocess)
        result->strlength = 6;
     }
     else if (!strcmp(arg, "PTIME")) {

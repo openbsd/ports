@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/20 15:12:03 bcallah Exp $
 
-V =		3.9.1
+V =		3.9.3
 COMMENT =	ANSI-compliant interpreter for REXX language (regina-rexx)
-DISTNAME =	Regina-REXX-${V}
+DISTNAME =	regina-rexx-${V}
 PKGNAME =	regina-${V}
 CATEGORIES =	lang
 
-SHARED_LIBS +=	regina                    0.0 # 0.0
+SHARED_LIBS +=	regina                    1.0 # 1.0
 
 HOMEPAGE =	https://regina-rexx.sourceforge.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,7 +14,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c pthread
+WANTLIB += c curses m pthread
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=regina-rexx/}
 
