@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_makefile,v 1.3 2020/05/20 14:36:14 bcallah Exp $
+
+We definitely do not want to replace system headers.
+
+Index: src/makefile
+--- src/makefile.orig
++++ src/makefile
+@@ -176,7 +176,6 @@ chkccomp.h:
+ 	echo "#define LIST_DIRECTORY_CONTENTS \"ls\"" >> chkccomp.h
+ 	echo "#define LINKER_OPT_STATIC_LINKING \"-static\"" >> chkccomp.h
+ 	echo "#define SUPPORTS_PARTIAL_LINKING" >> chkccomp.h
+-	echo "#define ALLOW_REPLACEMENT_OF_SYSTEM_HEADERS" >> chkccomp.h
+ 
+ version.h: chkccomp.h
+ 	echo "#define PATH_DELIMITER '/'" > version.h

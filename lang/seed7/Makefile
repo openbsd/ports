@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.80 2020/04/07 22:11:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.81 2020/05/20 14:36:14 bcallah Exp $
 
 COMMENT =	high-level, extensible programming language
 
-V =		20200405
+V =		20200502
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 
@@ -21,8 +21,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
 EXTRACT_SUFX =	.tgz
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	CC="${CC}" LDFLAGS="-L${X11BASE}/lib" \
-		SYSTEM_LIBS="-lm -lcurses"
+MAKE_FLAGS =	CC="${CC}" \
+		SYSTEM_LIBS="-L${X11BASE}/lib -lX11 -lm -lcurses"
 MAKE_ENV +=	S7_LIB_DIR=${TRUEPREFIX}/lib/seed7/bin \
 		SEED7_LIBRARY=${TRUEPREFIX}/lib/seed7/lib
 MAKE_FILE =	makefile

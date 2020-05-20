@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/04/07 22:11:29 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/05/20 14:36:14 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -119,6 +119,7 @@ lib/seed7/lib/filebits.s7i
 lib/seed7/lib/filesys.s7i
 lib/seed7/lib/float.s7i
 lib/seed7/lib/font.s7i
+lib/seed7/lib/font8x8.s7i
 lib/seed7/lib/forloop.s7i
 lib/seed7/lib/ftp.s7i
 lib/seed7/lib/ftpserv.s7i
