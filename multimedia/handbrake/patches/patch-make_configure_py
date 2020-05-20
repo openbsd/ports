@@ -1,4 +1,4 @@
-$OpenBSD: patch-make_configure_py,v 1.2 2019/12/16 17:23:58 bcallah Exp $
+$OpenBSD: patch-make_configure_py,v 1.3 2020/05/20 14:57:18 bcallah Exp $
 
 Add OpenBSD to the configure args we need.
 Do not look for CMake; we don't need it.
@@ -60,24 +60,22 @@ Index: make/configure.py
          python     = ToolProbe( 'PYTHON.exe',     'python',     os.path.basename(sys.executable), abort=True )
  
          gcc_tools  = ['GCC.gcc',
-@@ -1602,16 +1601,10 @@ try:
+@@ -1602,14 +1601,9 @@ try:
          else:
              gmake  = ToolProbe( 'GMAKE.exe',      'make',       'gmake', 'make', abort=True )
  
 -        autoconf   = ToolProbe( 'AUTOCONF.exe',   'autoconf',   'autoconf', abort=True, minversion=[2,69,0] )
--        automake   = ToolProbe( 'AUTOMAKE.exe',   'automake',   'automake', abort=True, minversion=[1,15,0] )
+-        automake   = ToolProbe( 'AUTOMAKE.exe',   'automake',   'automake', abort=True, minversion=[1,13,0] )
          libtool    = ToolProbe( 'LIBTOOL.exe',    'libtool',    'libtool', abort=True )
          lipo       = ToolProbe( 'LIPO.exe',       'lipo',       'lipo', abort=False )
-         pkgconfig  = ToolProbe( 'PKGCONFIG.exe',  'pkgconfig',  'pkg-config', abort=True, minversion=[0,29,0] )
- 
+         pkgconfig  = ToolProbe( 'PKGCONFIG.exe',  'pkgconfig',  'pkg-config', abort=True, minversion=[0,27,0] )
 -        meson      = ToolProbe( 'MESON.exe',      'meson',      'meson', abort=True, minversion=[0,47,0] )
 -        nasm       = ToolProbe( 'NASM.exe',       'asm',        'nasm', abort=True, minversion=[2,13,0] )
 -        ninja      = ToolProbe( 'NINJA.exe',      'ninja',      'ninja-build', 'ninja', abort=True )
--
+ 
          xcodebuild = ToolProbe( 'XCODEBUILD.exe', 'xcodebuild', 'xcodebuild', abort=(True if (build_tuple.match('*-*-darwin*') and cross is None) else False), versionopt='-version', minversion=[10,3,0] )
  
-     ## run tool probes
-@@ -1696,12 +1689,6 @@ try:
+@@ -1695,12 +1689,6 @@ try:
      if options.flatpak or host_tuple.match('*-*-darwin*', '*-*-mingw'):
          # Requires Jansson which requires CMake 3.1.0 or later
          Tools.cmake = ToolProbe('CMAKE.exe', 'cmake', 'cmake', abort=True, minversion=[3,1,0])

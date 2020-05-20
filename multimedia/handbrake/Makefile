@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/01 01:03:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2020/05/20 14:57:18 bcallah Exp $
 
-V = 		1.3.1
+V = 		1.3.2
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
@@ -27,7 +27,7 @@ WANTLIB += png postproc speex ssl swresample swscale theoradec
 WANTLIB += theoraenc vorbis vorbisenc vpx x264 x265 xcb xcb-render
 WANTLIB += xcb-shm xml2 xvidcore z
 
-MASTER_SITES =	https://download.handbrake.fr/releases/${V}/
+MASTER_SITES =	https://github.com/HandBrake/HandBrake/releases/download/${V}/
 
 COMPILER =	base-clang ports-gcc
 
