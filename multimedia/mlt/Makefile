@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/05/18 10:54:15 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2020/05/20 09:17:03 espie Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
@@ -6,6 +6,7 @@ VERSION =		6.20.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
+REVISION =		0
 
 # XXX versions should be kept in sync together
 SHARED_LIBS =		mlt		3.2
@@ -71,7 +72,9 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--disable-kino \
 			--disable-swfdec \
 			--disable-rubberband \
-			--enable-gpl
+			--enable-gpl \
+			--enable-gpl3
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/melt.1 ${PREFIX}/man/man1/
 
