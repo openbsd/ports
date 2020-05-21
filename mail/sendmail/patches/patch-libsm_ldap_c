@@ -1,0 +1,16 @@
+$OpenBSD: patch-libsm_ldap_c,v 1.1 2020/05/21 10:03:15 ajacoutot Exp $
+
+64-bit time_t
+
+Index: libsm/ldap.c
+--- libsm/ldap.c.orig
++++ libsm/ldap.c
+@@ -441,7 +441,7 @@ sm_ldap_start(name, lmap)
+ 			lmap->ldap_method);
+ 	save_errno = errno;
+ 	if (sm_debug_active(&SmLDAPTrace, 9))
+-		sm_dprintf("ldap_bind(%s)=%d, errno=%d, tmo=%ld\n", lmap->ldap_uri, msgid, save_errno, tmo.tv_sec);
++		sm_dprintf("ldap_bind(%s)=%d, errno=%d, tmo=%lld\n", lmap->ldap_uri, msgid, save_errno, tmo.tv_sec);
+ 	if (-1 == msgid)
+ 	{
+ 		r = -1;
