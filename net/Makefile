@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1204 2020/05/20 02:12:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1205 2020/05/21 09:24:25 solene Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -527,7 +527,6 @@
      SUBDIR += poco
      SUBDIR += poezio
      SUBDIR += poink
-     SUBDIR += pop3gwd
      SUBDIR += poptop
      SUBDIR += powerdns
      SUBDIR += powerdns_recursor
