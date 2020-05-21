@@ -1,0 +1,3 @@
+A Python library for creating a custom minecraft launcher. This
+library containts functions to install and execute minecraft and
+for interacting with mojang accounts.
