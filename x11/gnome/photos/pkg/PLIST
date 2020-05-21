@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/02/12 19:26:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/05/21 10:07:12 ajacoutot Exp $
 @bin bin/gnome-photos
 lib/gnome-photos/
 @so lib/gnome-photos/libgnome-photos.so
@@ -142,6 +142,18 @@ share/help/hu/gnome-photos/view-album.page
 share/help/hu/gnome-photos/view-favorites.page
 share/help/hu/gnome-photos/view-photos.page
 share/help/hu/gnome-photos/view.page
+share/help/id/
+share/help/id/gnome-photos/
+share/help/id/gnome-photos/favorites-set.page
+share/help/id/gnome-photos/favorites.page
+share/help/id/gnome-photos/index.page
+share/help/id/gnome-photos/legal.xml
+share/help/id/gnome-photos/media/
+share/help/id/gnome-photos/media/logo1.png
+share/help/id/gnome-photos/view-album.page
+share/help/id/gnome-photos/view-favorites.page
+share/help/id/gnome-photos/view-photos.page
+share/help/id/gnome-photos/view.page
 share/help/ko/
 share/help/ko/gnome-photos/
 share/help/ko/gnome-photos/favorites-set.page
@@ -211,6 +223,30 @@ share/help/sv/gnome-photos/view-album.page
 share/help/sv/gnome-photos/view-favorites.page
 share/help/sv/gnome-photos/view-photos.page
 share/help/sv/gnome-photos/view.page
+share/help/tr/
+share/help/tr/gnome-photos/
+share/help/tr/gnome-photos/favorites-set.page
+share/help/tr/gnome-photos/favorites.page
+share/help/tr/gnome-photos/index.page
+share/help/tr/gnome-photos/legal.xml
+share/help/tr/gnome-photos/media/
+share/help/tr/gnome-photos/media/logo1.png
+share/help/tr/gnome-photos/view-album.page
+share/help/tr/gnome-photos/view-favorites.page
+share/help/tr/gnome-photos/view-photos.page
+share/help/tr/gnome-photos/view.page
+share/help/uk/
+share/help/uk/gnome-photos/
+share/help/uk/gnome-photos/favorites-set.page
+share/help/uk/gnome-photos/favorites.page
+share/help/uk/gnome-photos/index.page
+share/help/uk/gnome-photos/legal.xml
+share/help/uk/gnome-photos/media/
+share/help/uk/gnome-photos/media/logo1.png
+share/help/uk/gnome-photos/view-album.page
+share/help/uk/gnome-photos/view-favorites.page
+share/help/uk/gnome-photos/view-photos.page
+share/help/uk/gnome-photos/view.page
 share/icons/hicolor/scalable/apps/org.gnome.Photos.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Photos-symbolic.svg
 share/locale/an/LC_MESSAGES/gnome-photos.mo
