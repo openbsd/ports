@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/03 14:36:59 kevlo Exp $
-@man man/man1/tircd.1
-sbin/tircd
-share/doc/tircd/
-share/examples/tircd/
-share/examples/tircd/tircd.cfg
