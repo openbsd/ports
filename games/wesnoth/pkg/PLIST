@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2020/04/07 14:26:38 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.44 2020/05/21 18:55:30 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708
@@ -37,6 +37,7 @@ man/gl/man6/
 @man man/gl/man6/wesnothd.6
 man/hu/
 man/hu/man6/
+@man man/hu/man6/wesnoth.6
 @man man/hu/man6/wesnothd.6
 man/id/
 man/id/man6/
