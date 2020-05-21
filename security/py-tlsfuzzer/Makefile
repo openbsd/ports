@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/15 05:45:03 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/21 10:21:22 tb Exp $
 
 COMMENT =		fuzzer and test suite for TLS implementations.
 
-MODPY_EGG_VERSION =	20200313
+MODPY_EGG_VERSION =	20200513
 DISTNAME =		tlsfuzzer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
 
 GH_ACCOUNT =		tomato42
 GH_PROJECT =		tlsfuzzer
-GH_COMMIT =		7f890e3b595a5e283cbbab66d04423048919b619
+GH_COMMIT =		10312923fcb002a0711f5bb02e7ea599e410a41c
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
@@ -37,7 +37,7 @@ pre-install:
 SCRIPTS_DIR = ${PREFIX}/share/tlsfuzzer/scripts
 post-install:
 	${INSTALL_DATA_DIR} ${SCRIPTS_DIR}
-	cd ${WRKSRC}/scripts && pax -rw . ${SCRIPTS_DIR}
+	pax -rw ${WRKSRC}/scripts/*.py ${SCRIPTS_DIR}
 	${MODPY_BIN} -m compileall ${SCRIPTS_DIR}
 
 .include <bsd.port.mk>
