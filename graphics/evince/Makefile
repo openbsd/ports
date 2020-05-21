@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2020/05/20 11:17:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.178 2020/05/21 19:26:58 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
@@ -59,9 +59,6 @@ CONFIGURE_ARGS +=	-Dbrowser_plugin=false
 CONFIGURE_ARGS +=	-Dt1lib=disabled \
 			-Dsystemduserunitdir=no \
 			-Dgtk_doc=false
-
-# Not much point in installing systemd service files
-FAKE_FLAGS +=		systemd_user_in_files=""
 
 # fix build with clang
 CFLAGS +=		-Wno-error=format-nonliteral
