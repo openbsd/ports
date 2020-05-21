@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.417 2020/04/10 11:16:58 thfr Exp $
+# $OpenBSD: Makefile,v 1.418 2020/05/21 21:23:34 kmos Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -233,6 +233,7 @@
      SUBDIR += prboom-plus
      SUBDIR += pushover
      SUBDIR += puzzles
+     SUBDIR += py-minecraft-launcher-lib,python3
      SUBDIR += pygame_sdl2
      SUBDIR += pyganim
      SUBDIR += pysol
