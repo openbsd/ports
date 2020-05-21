@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1205 2020/05/21 09:24:25 solene Exp $
+# $OpenBSD: Makefile,v 1.1206 2020/05/21 14:27:54 solene Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -731,7 +731,6 @@
      SUBDIR += tinc
      SUBDIR += tintin++
      SUBDIR += tinyfugue
-     SUBDIR += tircd
      SUBDIR += tircproxy
      SUBDIR += tkabber
      SUBDIR += tkirc
