@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.135 2020/05/16 12:25:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.136 2020/05/21 21:05:21 sthen Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.102.3
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -56,8 +57,9 @@ MODPY_RUNDEP=	no
 CPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include
 LDFLAGS+=	-pthread -L/usr/lib \
 		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}"
+CONFIGURE_ENV+=	CC="${CC}" OBJC="${CC}" CXX="${CXX}" \
+		LDFLAGS="${LDFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 
 # This is used for a JIT bytecode compiler. Disabling it should
