@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/05/21 10:39:26 sthen Exp $
 
 COMMENT =	Python module to handle audio metadata
 
@@ -34,10 +34,10 @@ TEST_DEPENDS =	audio/faad \
 
 .if ${FLAVOR:Mpython3}
 MODPY_3ONLY =
+TEST_DEPENDS +=	audio/py-eyed3
 .else
 MODPY_3ONLY = "@comment "
-TEST_DEPENDS +=	audio/py-eyed3 \
-		audio/py-vorbis
+TEST_DEPENDS +=	audio/py-vorbis
 
 post-install:
 	rm ${PREFIX}/bin/* ${PREFIX}/man/man1/*
