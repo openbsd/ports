@@ -1,0 +1,23 @@
+$OpenBSD: patch-libretro_Makefile,v 1.1.1.1 2020/05/22 21:49:48 bentley Exp $
+
+Index: libretro/Makefile
+--- libretro/Makefile.orig
++++ libretro/Makefile
+@@ -83,7 +83,7 @@ ifeq ($(platform), unix)
+    EXT ?= so
+    TARGET := $(TARGET_NAME)_libretro.$(EXT)
+    fpic := -fPIC
+-   SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T -Wl,--no-undefined
++   SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T
+ else ifeq ($(platform), linux-portable)
+    TARGET := $(TARGET_NAME)_libretro.$(EXT)
+    fpic := -fPIC -nostdlib
+@@ -255,7 +255,7 @@ LDFLAGS += $(LIBM)
+ ifeq ($(DEBUG), 1)
+    CFLAGS += -O0 -g
+ else
+-   CFLAGS += -O2 -DNDEBUG
++   CFLAGS += -DNDEBUG
+ endif
+ 
+ include Makefile.common

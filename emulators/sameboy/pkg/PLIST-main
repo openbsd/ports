@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2020/05/22 21:49:48 bentley Exp $
+@bin bin/sameboy
+share/sameboy/
+share/sameboy/LICENSE
+share/sameboy/Shaders/
+share/sameboy/Shaders/AAOmniScaleLegacy.fsh
+share/sameboy/Shaders/AAScale2x.fsh
+share/sameboy/Shaders/AAScale4x.fsh
+share/sameboy/Shaders/Bilinear.fsh
+share/sameboy/Shaders/CRT.fsh
+share/sameboy/Shaders/HQ2x.fsh
+share/sameboy/Shaders/LCD.fsh
+share/sameboy/Shaders/MasterShader.fsh
+share/sameboy/Shaders/NearestNeighbor.fsh
+share/sameboy/Shaders/OmniScale.fsh
+share/sameboy/Shaders/OmniScaleLegacy.fsh
+share/sameboy/Shaders/Scale2x.fsh
+share/sameboy/Shaders/Scale4x.fsh
+share/sameboy/Shaders/SmoothBilinear.fsh
+share/sameboy/agb_boot.bin
+share/sameboy/background.bmp
+share/sameboy/cgb_boot.bin
+share/sameboy/dmg_boot.bin
+share/sameboy/registers.sym
+share/sameboy/sgb2_boot.bin
+share/sameboy/sgb_boot.bin
