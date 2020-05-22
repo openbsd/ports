@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_gps_functions_c,v 1.1 2020/05/22 04:49:05 kirby Exp $
+
+add compatibility with gpsd 3.20
+https://bazaar.launchpad.net/~foxtrotgps-team/foxtrotgps/trunk/revision/320
+
+Index: src/gps_functions.c
+--- src/gps_functions.c.orig
++++ src/gps_functions.c
+@@ -753,7 +753,11 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, 
+ 	{
+ 		gpsdata->satellites_used = libgps_gpsdata.satellites_used;
+ 		gpsdata->hdop = libgps_gpsdata.dop.hdop;
+-		gpsdata->fix.time = libgps_gpsdata.fix.time;
++		#if GPSD_API_MAJOR_VERSION >= 9
++			gpsdata->fix.time = libgps_gpsdata.fix.time.tv_sec;
++		#else
++			gpsdata->fix.time = libgps_gpsdata.fix.time;
++		#endif
+ 		if (isnan(gpsdata->fix.time))
+ 		{
+ 			gpsdata->fix.time = (time_t) 0;
