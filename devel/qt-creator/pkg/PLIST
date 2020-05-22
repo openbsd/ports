@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/04/24 13:14:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/05/22 07:34:00 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
+@lib lib/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
 @lib lib/libClangsupport.so.${LIBClangsupport_VERSION}

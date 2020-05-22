@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/04/24 13:14:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.59 2020/05/22 07:34:00 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			4.12.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
+REVISION =		0
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
 SHARED_LIBS +=	CPlusPlus                 2.0 # 0.0
@@ -41,9 +42,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF5SyntaxHighlighting Qt5Concurrent
 WANTLIB += Qt5Core Qt5Designer Qt5DesignerComponents Qt5Gui Qt5Help
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Script Qt5SerialPort Qt5Sql Qt5Svg Qt5Widgets Qt5Xml
-WANTLIB += c clang m yaml-cpp
+WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick
+WANTLIB += Qt5QuickWidgets Qt5Script Qt5SerialPort Qt5Sql Qt5Svg
+WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml c clang m yaml-cpp
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
@@ -71,7 +73,7 @@ RUN_DEPENDS =	${MODGCC4_CPPDEP} \
 		lang/clazy>=1.5 \
 		x11/gtk+3,-guic \
 		x11/qt5/qtquickcontrols \
-		x11/qt5/qtwebkit
+		x11/qt5/qtwebengine
 
 LIB_DEPENDS =	devel/llvm \
 		devel/kf5/syntax-highlighting \
