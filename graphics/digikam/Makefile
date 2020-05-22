@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2020/05/15 15:54:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.64 2020/05/22 07:33:58 rsadowski Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
 V =		6.4.0
 DISTNAME =	digikam-${V}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -24,14 +25,15 @@ WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Sane KF5Service KF5Solid KF5ThreadWeaver
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Magick++-6.Q16
 WANTLIB += MagickCore-6.Q16 Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Sql Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns
-WANTLIB += SM X11 Xext avcodec avfilter avformat avutil c exiv2
-WANTLIB += expat exslt glib-2.0 gphoto2 gphoto2_port intl jasper
-WANTLIB += jpeg lcms2 lensfun lqr-1 m marblewidget-qt5 opencv_calib3d
-WANTLIB += opencv_core opencv_features2d opencv_flann opencv_imgcodecs
-WANTLIB += opencv_imgproc opencv_objdetect png swscale tiff usb-1.0
-WANTLIB += x265 xml2 xslt z
+WANTLIB += Qt5Network Qt5OpenGL Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
+WANTLIB += Qt5XmlPatterns SM X11 Xext avcodec avfilter avformat
+WANTLIB += avutil c exiv2 expat exslt glib-2.0 gphoto2 gphoto2_port
+WANTLIB += intl jasper jpeg lcms2 lensfun lqr-1 m marblewidget-qt5
+WANTLIB += opencv_calib3d opencv_core opencv_features2d opencv_flann
+WANTLIB += opencv_imgcodecs opencv_imgproc opencv_objdetect png
+WANTLIB += swscale tiff usb-1.0 x265 xml2 xslt z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/${V}/}
 
@@ -45,15 +47,17 @@ BUILD_DEPENDS =	devel/bison \
 		devel/gettext,-tools \
 		devel/git \
 		devel/kf5/kdoctools \
-		multimedia/qtav \
 		math/eigen3 \
-		misc/shared-desktop-ontologies
+		misc/shared-desktop-ontologies \
+		multimedia/qtav \
+		x11/qt5/qtwebview
 
 RUN_DEPENDS =	databases/sqlite \
 		devel/desktop-file-utils \
 		devel/kf5/kdoctools \
 		multimedia/qtav \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/qt5/qtwebview
 
 # TODO
 # - libakonadicontact
@@ -89,11 +93,13 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		multimedia/x265 \
 		x11/kde-applications/libksane \
 		x11/kde-applications/marble \
-		x11/qt5/qtwebkit \
+		x11/qt5/qtwebchannel \
+		x11/qt5/qtwebengine \
 		x11/qt5/qtx11extras \
 		x11/qt5/qtxmlpatterns
 
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DENABLE_QWEBENGINE=ON
 
 .if ${FLAVOR:Mmysql}
 BUILD_DEPENDS +=	databases/mariadb
