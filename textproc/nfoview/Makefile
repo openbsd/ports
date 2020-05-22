@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2020/04/12 14:30:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.30 2020/05/22 22:02:39 bcallah Exp $
 
 COMMENT =	simple viewer for NFO files
-MODPY_EGG_VERSION =	1.27.1
+MODPY_EGG_VERSION =	1.28
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc x11
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/py-gobject3${MODPY_FLAVOR} \
-		fonts/terminus-font \
+		fonts/cascadia-code \
 		x11/gtk+3,-guic
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
