@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.152 2020/05/15 16:57:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.153 2020/05/22 09:38:37 ajacoutot Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -17,7 +17,6 @@ google-cloud-sdk/bin/bootstrapping/dataflow_sql.py
 google-cloud-sdk/bin/bootstrapping/gsutil.py
 google-cloud-sdk/bin/bootstrapping/install.py
 google-cloud-sdk/bin/bootstrapping/java_dev_appserver.py
-google-cloud-sdk/bin/bootstrapping/schema_conversion_tool.py
 google-cloud-sdk/bin/bootstrapping/setup.py
 google-cloud-sdk/bin/bq
 google-cloud-sdk/bin/dev_appserver.py
@@ -983,6 +982,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/resourcesettings/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/resourcesettings/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/resourcesettings/service.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/resourcesettings/service.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/resourcesettings/utils.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/resourcesettings/utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/__init__.pyc
@@ -1433,6 +1434,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/code/local.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/code/local.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/code/local_files.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/code/local_files.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/code/run_subprocess.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/code/run_subprocess.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/code/yaml_helper.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/code/yaml_helper.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/
@@ -2746,6 +2749,13 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_manager/org_policies_ba
 google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_manager/org_policies_flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_manager/org_policies_flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_manager/resources.yaml
+google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_settings/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_settings/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_settings/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_settings/arguments.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_settings/arguments.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_settings/utils.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/resource_settings/utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/__init__.pyc
@@ -3289,6 +3299,8 @@ google-cloud-sdk/lib/googlecloudsdk/core/survey/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/survey/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/survey/survey_check.py
 google-cloud-sdk/lib/googlecloudsdk/core/survey/survey_check.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/transport.py
+google-cloud-sdk/lib/googlecloudsdk/core/transport.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/updater/
 google-cloud-sdk/lib/googlecloudsdk/core/updater/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/updater/__init__.pyc
@@ -7505,6 +7517,8 @@ google-cloud-sdk/lib/surface/compute/instances/detach_disk.pyc
 google-cloud-sdk/lib/surface/compute/instances/export.yaml
 google-cloud-sdk/lib/surface/compute/instances/get_guest_attributes.yaml
 google-cloud-sdk/lib/surface/compute/instances/get_iam_policy.yaml
+google-cloud-sdk/lib/surface/compute/instances/get_screenshot.py
+google-cloud-sdk/lib/surface/compute/instances/get_screenshot.pyc
 google-cloud-sdk/lib/surface/compute/instances/get_serial_port_output.py
 google-cloud-sdk/lib/surface/compute/instances/get_serial_port_output.pyc
 google-cloud-sdk/lib/surface/compute/instances/get_shielded_identity.py
@@ -10951,6 +10965,13 @@ google-cloud-sdk/lib/surface/resource_manager/org_policies/list.py
 google-cloud-sdk/lib/surface/resource_manager/org_policies/list.pyc
 google-cloud-sdk/lib/surface/resource_manager/org_policies/set_policy.py
 google-cloud-sdk/lib/surface/resource_manager/org_policies/set_policy.pyc
+google-cloud-sdk/lib/surface/resource_settings/
+google-cloud-sdk/lib/surface/resource_settings/__init__.py
+google-cloud-sdk/lib/surface/resource_settings/__init__.pyc
+google-cloud-sdk/lib/surface/resource_settings/describe.py
+google-cloud-sdk/lib/surface/resource_settings/describe.pyc
+google-cloud-sdk/lib/surface/resource_settings/list.py
+google-cloud-sdk/lib/surface/resource_settings/list.pyc
 google-cloud-sdk/lib/surface/resources/
 google-cloud-sdk/lib/surface/resources/__init__.py
 google-cloud-sdk/lib/surface/resources/__init__.pyc
@@ -12601,6 +12622,20 @@ google-cloud-sdk/lib/third_party/google/auth/
 google-cloud-sdk/lib/third_party/google/auth/LICENSE
 google-cloud-sdk/lib/third_party/google/auth/__init__.py
 google-cloud-sdk/lib/third_party/google/auth/__init__.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/__init__.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/_cloud_sdk.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/_default.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/_helpers.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/_oauth2client.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/_service_account_info.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/app_engine.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/credentials.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/environment_vars.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/exceptions.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/iam.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/impersonated_credentials.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/__pycache__/jwt.cpython-37.pyc
 google-cloud-sdk/lib/third_party/google/auth/_cloud_sdk.py
 google-cloud-sdk/lib/third_party/google/auth/_cloud_sdk.pyc
 google-cloud-sdk/lib/third_party/google/auth/_default.py
@@ -12616,6 +12651,10 @@ google-cloud-sdk/lib/third_party/google/auth/app_engine.pyc
 google-cloud-sdk/lib/third_party/google/auth/compute_engine/
 google-cloud-sdk/lib/third_party/google/auth/compute_engine/__init__.py
 google-cloud-sdk/lib/third_party/google/auth/compute_engine/__init__.pyc
+google-cloud-sdk/lib/third_party/google/auth/compute_engine/__pycache__/
+google-cloud-sdk/lib/third_party/google/auth/compute_engine/__pycache__/__init__.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/compute_engine/__pycache__/_metadata.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/compute_engine/__pycache__/credentials.cpython-37.pyc
 google-cloud-sdk/lib/third_party/google/auth/compute_engine/_metadata.py
 google-cloud-sdk/lib/third_party/google/auth/compute_engine/_metadata.pyc
 google-cloud-sdk/lib/third_party/google/auth/compute_engine/credentials.py
@@ -12625,6 +12664,14 @@ google-cloud-sdk/lib/third_party/google/auth/credentials.pyc
 google-cloud-sdk/lib/third_party/google/auth/crypt/
 google-cloud-sdk/lib/third_party/google/auth/crypt/__init__.py
 google-cloud-sdk/lib/third_party/google/auth/crypt/__init__.pyc
+google-cloud-sdk/lib/third_party/google/auth/crypt/__pycache__/
+google-cloud-sdk/lib/third_party/google/auth/crypt/__pycache__/__init__.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/crypt/__pycache__/_cryptography_rsa.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/crypt/__pycache__/_helpers.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/crypt/__pycache__/_python_rsa.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/crypt/__pycache__/base.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/crypt/__pycache__/es256.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/crypt/__pycache__/rsa.cpython-37.pyc
 google-cloud-sdk/lib/third_party/google/auth/crypt/_cryptography_rsa.py
 google-cloud-sdk/lib/third_party/google/auth/crypt/_cryptography_rsa.pyc
 google-cloud-sdk/lib/third_party/google/auth/crypt/_helpers.py
@@ -12633,6 +12680,8 @@ google-cloud-sdk/lib/third_party/google/auth/crypt/_python_rsa.py
 google-cloud-sdk/lib/third_party/google/auth/crypt/_python_rsa.pyc
 google-cloud-sdk/lib/third_party/google/auth/crypt/base.py
 google-cloud-sdk/lib/third_party/google/auth/crypt/base.pyc
+google-cloud-sdk/lib/third_party/google/auth/crypt/es256.py
+google-cloud-sdk/lib/third_party/google/auth/crypt/es256.pyc
 google-cloud-sdk/lib/third_party/google/auth/crypt/rsa.py
 google-cloud-sdk/lib/third_party/google/auth/crypt/rsa.pyc
 google-cloud-sdk/lib/third_party/google/auth/environment_vars.py
@@ -12648,10 +12697,22 @@ google-cloud-sdk/lib/third_party/google/auth/jwt.pyc
 google-cloud-sdk/lib/third_party/google/auth/transport/
 google-cloud-sdk/lib/third_party/google/auth/transport/__init__.py
 google-cloud-sdk/lib/third_party/google/auth/transport/__init__.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/__pycache__/
+google-cloud-sdk/lib/third_party/google/auth/transport/__pycache__/__init__.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/__pycache__/_http_client.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/__pycache__/_mtls_helper.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/__pycache__/grpc.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/__pycache__/mtls.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/__pycache__/requests.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/__pycache__/urllib3.cpython-37.pyc
 google-cloud-sdk/lib/third_party/google/auth/transport/_http_client.py
 google-cloud-sdk/lib/third_party/google/auth/transport/_http_client.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/_mtls_helper.py
+google-cloud-sdk/lib/third_party/google/auth/transport/_mtls_helper.pyc
 google-cloud-sdk/lib/third_party/google/auth/transport/grpc.py
 google-cloud-sdk/lib/third_party/google/auth/transport/grpc.pyc
+google-cloud-sdk/lib/third_party/google/auth/transport/mtls.py
+google-cloud-sdk/lib/third_party/google/auth/transport/mtls.pyc
 google-cloud-sdk/lib/third_party/google/auth/transport/requests.py
 google-cloud-sdk/lib/third_party/google/auth/transport/requests.pyc
 google-cloud-sdk/lib/third_party/google/auth/transport/urllib3.py
@@ -12714,6 +12775,12 @@ google-cloud-sdk/lib/third_party/google/longrunning/operations_pb2_grpc.pyc
 google-cloud-sdk/lib/third_party/google/oauth2/
 google-cloud-sdk/lib/third_party/google/oauth2/__init__.py
 google-cloud-sdk/lib/third_party/google/oauth2/__init__.pyc
+google-cloud-sdk/lib/third_party/google/oauth2/__pycache__/
+google-cloud-sdk/lib/third_party/google/oauth2/__pycache__/__init__.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/oauth2/__pycache__/_client.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/oauth2/__pycache__/credentials.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/oauth2/__pycache__/id_token.cpython-37.pyc
+google-cloud-sdk/lib/third_party/google/oauth2/__pycache__/service_account.cpython-37.pyc
 google-cloud-sdk/lib/third_party/google/oauth2/_client.py
 google-cloud-sdk/lib/third_party/google/oauth2/_client.pyc
 google-cloud-sdk/lib/third_party/google/oauth2/credentials.py
