@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/05/22 07:34:12 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kalgebra
 @bin bin/calgebra
+@bin bin/kalgebra
 @bin bin/kalgebramobile
+share/applications/org.kde.kalgebra.desktop
 share/applications/org.kde.kalgebramobile.desktop
 share/doc/HTML/ca/kalgebra/
 share/doc/HTML/ca/kalgebra/commands.docbook
@@ -93,6 +95,10 @@ share/kalgebramobile/plugins/widgets/KAlgebraMobile.qml
 share/kalgebramobile/plugins/widgets/KAlgebraPage.qml
 share/kalgebramobile/plugins/widgets/RealInput.qml
 share/kalgebramobile/plugins/widgets/qmldir
+share/katepart5/
+share/katepart5/syntax/
+share/katepart5/syntax/kalgebra.xml
+share/kservices5/graphsplasmoid.desktop
 share/locale/ar/LC_MESSAGES/kalgebra.mo
 share/locale/bg/LC_MESSAGES/kalgebra.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
@@ -208,6 +214,15 @@ share/locale/zh_TW/LC_MESSAGES/kalgebra.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebramobile.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/metainfo/
+share/metainfo/org.kde.kalgebra.appdata.xml
 share/metainfo/org.kde.kalgebramobile.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/plasma/
+share/plasma/plasmoids/
+share/plasma/plasmoids/org.kde.graphsplasmoid/
+share/plasma/plasmoids/org.kde.graphsplasmoid/contents/
+share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/
+share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
+share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
+share/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
