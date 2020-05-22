@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2020/05/22 09:56:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.61 2020/05/22 20:12:11 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			4.12.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
+REVISION =		0
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
 SHARED_LIBS +=	CPlusPlus                 2.0 # 0.0
@@ -71,17 +72,18 @@ RUN_DEPENDS =	${MODGCC4_CPPDEP} \
 		devel/qbs>=1.15.0 \
 		lang/clazy>=1.5 \
 		x11/gtk+3,-guic \
-		x11/qt5/qtquickcontrols \
-		x11/qt5/qtwebengine
+		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/llvm \
 		devel/kf5/syntax-highlighting \
 		devel/yaml-cpp \
 		x11/qt5/qtdeclarative \
-		x11/qt5/qtserialport \
 		x11/qt5/qtscript \
+		x11/qt5/qtserialport \
 		x11/qt5/qtsvg \
-		x11/qt5/qttools
+		x11/qt5/qttools \
+		x11/qt5/qtwebchannel \
+		x11/qt5/qtwebengine
 
 PORTHOME =		${WRKDIR}
 
