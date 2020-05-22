@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.965 2020/05/21 14:29:02 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.966 2020/05/22 11:42:54 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1722,7 +1722,7 @@ my $cve = {
 	'lang/ruby/2.4,-main' => 'ruby->2.4,<2.4.5p2',
 	'lang/ruby/2.5,-main' => 'ruby->2.5,<2.5.5',
 	'lang/ruby/2.6,-main' => 'ruby->2.6,<2.6.2',
-	'mail/dovecot,-main' => 'dovecot-<2.3.6',
+	'mail/dovecot,-server' => 'dovecot-<2.3.10.1',
 	'mail/exim' => 'exim-<4.83',
 	'mail/mailman' => 'mailman-<2.1.30',
 	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.4',
@@ -1734,7 +1734,7 @@ my $cve = {
 	'net/haproxy' => 'haproxy-<2.0.14',
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/irssi' => 'irssi-<1.2.1',
-	'net/isc-bind' => 'isc-bind-<9.11.5pl4v0',
+	'net/isc-bind' => 'isc-bind-<9.16.3',
 	'net/libssh2' => 'libssh2-<1.8.2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
 	'net/mosquitto' => 'mosquitto-<1.5.6',
@@ -1744,6 +1744,7 @@ my $cve = {
 	'net/powerdns,-main' => 'powerdns-<4.1.5',
 	'net/powerdns,-mysql' => 'powerdns-mysql-<4.1.5',
 	'net/powerdns,-pgsql' => 'powerdns-pgsql-<4.1.5',
+	'net/powerdns_recursor' => 'powerdns-recursor-<4.3.1',
 	'net/rsync' => 'rsync-<3.1.3p0',
 	'net/samba,-main' => 'samba-<4.8.18',
 	'net/tinc' => 'tinc-<1.0.35v0',
@@ -1790,6 +1791,9 @@ my $cve = {
 	'www/py-urllib3,python3' => 'py3-urllib3-<1.24.3',
 	'www/ruby-rack,ruby24' => 'ruby24-rack-<2.0.6',
 	'www/ruby-rack,ruby25' => 'ruby25-rack-<2.0.6',
+	'www/tomcat/v7' => 'tomcat-<7.0.104',
+	'www/tomcat/v8' => 'tomcat-<8.5.55',
+	'www/tomcat/v9' => 'tomcat-<9.0.35',
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
