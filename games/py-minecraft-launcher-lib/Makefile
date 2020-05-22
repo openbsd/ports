@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/21 21:22:45 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/22 16:47:26 kmos Exp $
 
 COMMENT =		library for creating a custom Minecraft launcher
 
-MODPY_EGG_VERSION =	0.5
+MODPY_EGG_VERSION =	1.0
 
 DISTNAME =		minecraft-launcher-lib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
