@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/23 18:01:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/05/22 07:34:47 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 PKGNAME =	marble-kf5-${VERSION}
 CATEGORIES =	geo
+REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
-
 SHARED_LIBS +=  astro                     1.0 # 0.17
 SHARED_LIBS +=  marblewidget-qt5          1.0 # 0.28
+SHARED_LIBS +=  marbledeclarative         0.0 # 0.28
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -18,7 +19,8 @@ WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Package
 WANTLIB += KF5Parts KF5Plasma KF5Runner KF5Service KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5SerialPort Qt5Sql Qt5Svg Qt5Widgets
+WANTLIB += Qt5Qml Qt5Quick Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
+WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
 WANTLIB += Qt5Xml c gps m shp z
 
 MODKDE5_DESKTOP_FILE = yes
@@ -61,6 +63,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtserialport \
+		x11/qt5/qtwebengine \
 		x11/qt5/qtsvg
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_libwlocate=ON \

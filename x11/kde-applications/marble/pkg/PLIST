@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/05/22 07:34:47 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict marble-<=4.14.3
@@ -111,11 +111,10 @@ include/marble/MarbleMap.h
 include/marble/MarbleMath.h
 include/marble/MarbleModel.h
 include/marble/MarbleNavigator.h
+include/marble/MarbleWebView.h
 include/marble/MarbleWidget.h
 include/marble/MarbleWidgetInputHandler.h
 include/marble/MarbleWidgetPopupMenu.h
-include/marble/NullMarbleWebView.h
-include/marble/NullTinyWebBrowser.h
 include/marble/OsmcSymbol.h
 include/marble/ParseRunnerPlugin.h
 include/marble/ParsingRunner.h
@@ -160,6 +159,7 @@ include/marble/TileCreator.h
 include/marble/TileCreatorDialog.h
 include/marble/TileId.h
 include/marble/TileLevelRangeWidget.h
+include/marble/TinyWebBrowser.h
 include/marble/TourControlEditWidget.h
 include/marble/TourItemDelegate.h
 include/marble/TourPlayback.h
@@ -181,7 +181,7 @@ lib/cmake/Marble/MarbleConfigVersion.cmake
 lib/cmake/Marble/MarbleTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Marble/MarbleTargets.cmake
 @lib lib/libastro.so.${LIBastro_VERSION}
-@so lib/libmarbledeclarative.so
+@lib lib/libmarbledeclarative.so.${LIBmarbledeclarative_VERSION}
 @lib lib/libmarblewidget-qt5.so.${LIBmarblewidget-qt5_VERSION}
 lib/marble/
 lib/marble/plugins/
@@ -223,10 +223,12 @@ lib/marble/plugins/
 @so lib/marble/plugins/libNominatimSearchPlugin.so
 @so lib/marble/plugins/libNotesPlugin.so
 @so lib/marble/plugins/libOSRMPlugin.so
+@so lib/marble/plugins/libOpenDesktopPlugin.so
 @so lib/marble/plugins/libOpenLocationCodeSearchPlugin.so
 @so lib/marble/plugins/libOpenRouteServicePlugin.so
 @so lib/marble/plugins/libOsmPlugin.so
 @so lib/marble/plugins/libOverviewMap.so
+@so lib/marble/plugins/libPhoto.so
 @so lib/marble/plugins/libPn2Plugin.so
 @so lib/marble/plugins/libPntPlugin.so
 @so lib/marble/plugins/libPositionMarker.so
@@ -240,6 +242,8 @@ lib/marble/plugins/
 @so lib/marble/plugins/libSpeedometer.so
 @so lib/marble/plugins/libStarsPlugin.so
 @so lib/marble/plugins/libSunPlugin.so
+@so lib/marble/plugins/libWeather.so
+@so lib/marble/plugins/libWikipedia.so
 @so lib/marble/plugins/libYoursPlugin.so
 lib/plugins/
 lib/plugins/designer/
