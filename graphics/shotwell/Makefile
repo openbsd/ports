@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.110 2020/05/14 12:29:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2020/05/22 12:29:57 ajacoutot Exp $
 
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.30.9
+GNOME_VERSION =		0.30.10
 GNOME_PROJECT =		shotwell
 
 SHARED_LIBS += shotwell-plugin-common    0.0 # 0.30.5
