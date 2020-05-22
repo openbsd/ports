@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.22 2020/05/15 12:53:13 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.23 2020/05/22 13:51:09 kurt Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -243,6 +243,7 @@ share/u-boot/rpi_3_32b/u-boot.bin
 share/u-boot/tinker-rk3288/
 share/u-boot/tinker-rk3288/idbloader.img
 share/u-boot/tinker-rk3288/u-boot
+share/u-boot/tinker-rk3288/u-boot-rockchip.bin
 share/u-boot/tinker-rk3288/u-boot.bin
 share/u-boot/tinker-rk3288/u-boot.img
 share/u-boot/turris_omnia/
