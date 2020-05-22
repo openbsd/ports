@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/28 17:56:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/05/22 19:31:20 chrisz Exp $
 
 COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
-V =			2.0.5
-REVISION =		1
+V =			2.0.7
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
 
@@ -39,16 +38,13 @@ CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 CONFIGURE_STYLE =	gnu
 
-ALL_TARGET =		lib-ext all man #doc requires odoc
+ALL_TARGET =		lib-ext all
 INSTALL_TARGET =	install
 TEST_TARGET =		tests
 
 docdir =		${PREFIX}/share/doc/opam
 
 post-install:
-	mv	${PREFIX}/doc/opam-installer \
-		${PREFIX}/share/doc/
-	rm -R	${PREFIX}/lib/opam-installer
 	${INSTALL_DATA_DIR} ${docdir}
 	${INSTALL_DATA} \
 		${WRKSRC}/{CHANGES,README.md} \
