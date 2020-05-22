@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2020/05/22 07:53:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2020/05/22 07:59:40 jasper Exp $
 
 COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	1.11.1
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
+REVISION =		0
 
 HOMEPAGE =		https://www.qutebrowser.org/
 
@@ -18,13 +19,15 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/py-attrs${MODPY_FLAVOR} \
 			textproc/py-cssutils${MODPY_FLAVOR} \
 			textproc/py-PEG2${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			x11/gtk+3,-guic \
 			x11/py-qt5${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR}
+			www/py-jinja2${MODPY_FLAVOR} \
+			www/py-qtwebengine${MODPY_FLAVOR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
