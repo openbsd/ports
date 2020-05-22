@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_pip_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+$OpenBSD: patch-lib_puppet_provider_package_pip_rb,v 1.2 2020/05/22 15:23:37 kn Exp $
 
 Allow the pip package provider to work for the default
 python2 version
@@ -7,7 +7,7 @@ python2 version
 Index: lib/puppet/provider/package/pip.rb
 --- lib/puppet/provider/package/pip.rb.orig
 +++ lib/puppet/provider/package/pip.rb
-@@ -35,7 +35,7 @@ Puppet::Type.type(:package).provide :pip, :parent => :
+@@ -39,7 +39,7 @@ Puppet::Type.type(:package).provide :pip, :parent => :
      if Puppet::Util::Platform.windows?
        ["pip.exe"]
      else

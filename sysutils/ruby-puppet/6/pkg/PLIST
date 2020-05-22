@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/18 08:59:01 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/22 15:23:37 kn Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppetlabs/*
@@ -294,6 +294,7 @@ ${MODRUBY_SITEDIR}/puppet/http/
 ${MODRUBY_SITEDIR}/puppet/http.rb
 ${MODRUBY_SITEDIR}/puppet/http/client.rb
 ${MODRUBY_SITEDIR}/puppet/http/errors.rb
+${MODRUBY_SITEDIR}/puppet/http/external_client.rb
 ${MODRUBY_SITEDIR}/puppet/http/redirector.rb
 ${MODRUBY_SITEDIR}/puppet/http/resolver/
 ${MODRUBY_SITEDIR}/puppet/http/resolver.rb
@@ -1093,7 +1094,21 @@ ${MODRUBY_SITEDIR}/puppet/util/network_device/config.rb
 ${MODRUBY_SITEDIR}/puppet/util/network_device/transport/
 ${MODRUBY_SITEDIR}/puppet/util/network_device/transport.rb
 ${MODRUBY_SITEDIR}/puppet/util/network_device/transport/base.rb
+${MODRUBY_SITEDIR}/puppet/util/package/
 ${MODRUBY_SITEDIR}/puppet/util/package.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/
+${MODRUBY_SITEDIR}/puppet/util/package/version/debian.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/gem.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/pip.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/range/
+${MODRUBY_SITEDIR}/puppet/util/package/version/range.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/range/gt.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/range/gt_eq.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/range/lt.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/range/lt_eq.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/range/min_max.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/range/simple.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/rpm.rb
 ${MODRUBY_SITEDIR}/puppet/util/pidlock.rb
 ${MODRUBY_SITEDIR}/puppet/util/platform.rb
 ${MODRUBY_SITEDIR}/puppet/util/plist.rb
@@ -1122,6 +1137,7 @@ ${MODRUBY_SITEDIR}/puppet/util/rdoc/parser/puppet_parser_rdoc2.rb
 ${MODRUBY_SITEDIR}/puppet/util/reference.rb
 ${MODRUBY_SITEDIR}/puppet/util/resource_template.rb
 ${MODRUBY_SITEDIR}/puppet/util/retry_action.rb
+${MODRUBY_SITEDIR}/puppet/util/rpm_compare.rb
 ${MODRUBY_SITEDIR}/puppet/util/rubygems.rb
 ${MODRUBY_SITEDIR}/puppet/util/run_mode.rb
 ${MODRUBY_SITEDIR}/puppet/util/selinux.rb

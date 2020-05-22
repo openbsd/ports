@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_puppet_provider_package_gem_rb,v 1.2 2020/05/18 09:11:42 kn Exp $
+$OpenBSD: patch-lib_puppet_provider_package_gem_rb,v 1.3 2020/05/22 15:23:37 kn Exp $
 
 Use the locally installed gem command with explicit ruby version.
 
 Index: lib/puppet/provider/package/gem.rb
 --- lib/puppet/provider/package/gem.rb.orig
 +++ lib/puppet/provider/package/gem.rb
-@@ -37,7 +37,7 @@ Puppet::Type.type(:package).provide :gem, :parent => P
+@@ -42,7 +42,7 @@ Puppet::Type.type(:package).provide :gem, :parent => P
    # Define the default provider package command as optional when the provider is targetable.
    # Doing do defers the evaluation of provider suitability until all commands are evaluated.
  
