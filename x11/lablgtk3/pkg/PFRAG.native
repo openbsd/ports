@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2019/08/04 19:13:19 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.2 2020/05/22 19:56:41 chrisz Exp $
 %%dynlink%%
 lib/ocaml/lablgtk3-sourceview3/gSourceView3.cmx
 lib/ocaml/lablgtk3-sourceview3/gtkSourceView3.cmx
@@ -7,6 +7,7 @@ lib/ocaml/lablgtk3-sourceview3/lablgtk3_sourceview3.a
 lib/ocaml/lablgtk3-sourceview3/lablgtk3_sourceview3.cmxa
 lib/ocaml/lablgtk3-sourceview3/ogtkSourceView3Props.cmx
 lib/ocaml/lablgtk3-sourceview3/sourceView3Enums.cmx
+lib/ocaml/lablgtk3/cairo_pango.cmx
 lib/ocaml/lablgtk3/gAction.cmx
 lib/ocaml/lablgtk3/gAssistant.cmx
 lib/ocaml/lablgtk3/gBin.cmx

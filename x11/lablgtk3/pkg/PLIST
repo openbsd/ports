@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/04 19:13:19 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/22 19:56:41 chrisz Exp $
 %%native%%
 bin/gdk_pixbuf_mlsource3
 bin/lablgladecc3
@@ -7,14 +7,14 @@ doc/lablgtk3/
 doc/lablgtk3-sourceview3/
 doc/lablgtk3-sourceview3/CHANGELOG.API
 doc/lablgtk3-sourceview3/CHANGES.md
+doc/lablgtk3-sourceview3/LICENSE
 doc/lablgtk3-sourceview3/README.dune.md
 doc/lablgtk3-sourceview3/README.md
-doc/lablgtk3-sourceview3/README.win32
 doc/lablgtk3/CHANGELOG.API
 doc/lablgtk3/CHANGES.md
+doc/lablgtk3/LICENSE
 doc/lablgtk3/README.dune.md
 doc/lablgtk3/README.md
-doc/lablgtk3/README.win32
 lib/ocaml/lablgtk3/
 lib/ocaml/lablgtk3-sourceview3/
 lib/ocaml/lablgtk3-sourceview3/META
@@ -34,7 +34,7 @@ lib/ocaml/lablgtk3-sourceview3/gtkSourceView3_types.cmi
 lib/ocaml/lablgtk3-sourceview3/gtkSourceView3_types.cmti
 lib/ocaml/lablgtk3-sourceview3/gtkSourceView3_types.mli
 lib/ocaml/lablgtk3-sourceview3/lablgtk3_sourceview3.cma
-lib/ocaml/lablgtk3-sourceview3/liblablgtk3_sourceview3_stubs.a
+@static-lib lib/ocaml/lablgtk3-sourceview3/liblablgtk3_sourceview3_stubs.a
 lib/ocaml/lablgtk3-sourceview3/ogtkSourceView3Props.cmi
 lib/ocaml/lablgtk3-sourceview3/ogtkSourceView3Props.cmt
 lib/ocaml/lablgtk3-sourceview3/ogtkSourceView3Props.ml
@@ -43,6 +43,11 @@ lib/ocaml/lablgtk3-sourceview3/sourceView3Enums.cmi
 lib/ocaml/lablgtk3-sourceview3/sourceView3Enums.cmt
 lib/ocaml/lablgtk3-sourceview3/sourceView3Enums.ml
 lib/ocaml/lablgtk3/META
+lib/ocaml/lablgtk3/cairo_pango.cmi
+lib/ocaml/lablgtk3/cairo_pango.cmt
+lib/ocaml/lablgtk3/cairo_pango.cmti
+lib/ocaml/lablgtk3/cairo_pango.ml
+lib/ocaml/lablgtk3/cairo_pango.mli
 lib/ocaml/lablgtk3/dune-package
 lib/ocaml/lablgtk3/gAction.cmi
 lib/ocaml/lablgtk3/gAction.cmt
@@ -176,6 +181,7 @@ lib/ocaml/lablgtk3/gdkPixbuf.cmt
 lib/ocaml/lablgtk3/gdkPixbuf.cmti
 lib/ocaml/lablgtk3/gdkPixbuf.ml
 lib/ocaml/lablgtk3/gdkPixbuf.mli
+lib/ocaml/lablgtk3/gdk_tags.h
 lib/ocaml/lablgtk3/glib.cmi
 lib/ocaml/lablgtk3/glib.cmt
 lib/ocaml/lablgtk3/glib.cmti
@@ -309,13 +315,21 @@ lib/ocaml/lablgtk3/gtkTreeProps.ml
 lib/ocaml/lablgtk3/gtkWindow.cmi
 lib/ocaml/lablgtk3/gtkWindow.cmt
 lib/ocaml/lablgtk3/gtkWindow.ml
+lib/ocaml/lablgtk3/gtk_tags.h
 lib/ocaml/lablgtk3/gutf8.cmi
 lib/ocaml/lablgtk3/gutf8.cmt
 lib/ocaml/lablgtk3/gutf8.cmti
 lib/ocaml/lablgtk3/gutf8.ml
 lib/ocaml/lablgtk3/gutf8.mli
 lib/ocaml/lablgtk3/lablgtk3.cma
-lib/ocaml/lablgtk3/liblablgtk3_stubs.a
+@static-lib lib/ocaml/lablgtk3/liblablgtk3_stubs.a
+lib/ocaml/lablgtk3/ml_gdk.h
+lib/ocaml/lablgtk3/ml_gdkpixbuf.h
+lib/ocaml/lablgtk3/ml_glib.h
+lib/ocaml/lablgtk3/ml_gobject.h
+lib/ocaml/lablgtk3/ml_gtk.h
+lib/ocaml/lablgtk3/ml_gtktext.h
+lib/ocaml/lablgtk3/ml_pango.h
 lib/ocaml/lablgtk3/ogtkActionProps.cmi
 lib/ocaml/lablgtk3/ogtkActionProps.cmt
 lib/ocaml/lablgtk3/ogtkActionProps.ml
@@ -369,7 +383,9 @@ lib/ocaml/lablgtk3/pangoEnums.cmi
 lib/ocaml/lablgtk3/pangoEnums.cmt
 lib/ocaml/lablgtk3/pangoEnums.ml
 @comment lib/ocaml/ld.conf
-lib/ocaml/stublibs/dlllablgtk3_sourceview3_stubs.so
-lib/ocaml/stublibs/dlllablgtk3_stubs.so
+lib/ocaml/lablgtk3/pango_tags.h
+lib/ocaml/lablgtk3/wrappers.h
+@so lib/ocaml/stublibs/dlllablgtk3_sourceview3_stubs.so
+@so lib/ocaml/stublibs/dlllablgtk3_stubs.so
 share/doc/lablgtk3/
 share/doc/lablgtk3/README.md

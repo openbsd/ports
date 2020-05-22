@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/22 19:56:40 chrisz Exp $
 
 COMMENT =	OCaml interface to GTK+3
 CATEGORIES =	x11 devel
 
 GH_ACCOUNT =	garrigue
 GH_PROJECT =	lablgtk
-GH_TAGNAME =	3.0.beta6
-REVISION =	1
+GH_TAGNAME =	3.1.0
 PKGNAME =	lablgtk3-${GH_TAGNAME}
 
 # LGPL
@@ -14,13 +13,11 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pthread z
+WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pthread z
 
 LIB_DEPENDS =	x11/gtk+3 \
 		devel/gettext,-runtime \
-		x11/gtksourceview3 \
-		x11/gnome/librsvg \
-		x11/gnome/libgnomecanvas
+		x11/gtksourceview3
 
 RUN_DEPENDS =	graphics/ocaml-cairo
 
