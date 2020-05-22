@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/06 19:25:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/22 14:54:01 jasper Exp $
 
 COMMENT =		suite for simulating common internet services
 
-DISTNAME =		inetsim-1.3.1
+DISTNAME =		inetsim-1.3.2
 CATEGORIES =		net
 
 HOMEPAGE =		https://www.inetsim.org/
