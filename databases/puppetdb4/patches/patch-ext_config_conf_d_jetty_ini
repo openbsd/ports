@@ -1,9 +1,0 @@
-$OpenBSD: patch-ext_config_conf_d_jetty_ini,v 1.1.1.1 2016/06/01 12:11:13 jasper Exp $
---- ext/config/conf.d/jetty.ini.orig	Fri Jul 17 19:09:46 2015
-+++ ext/config/conf.d/jetty.ini	Fri Jul 17 19:10:18 2015
-@@ -30,4 +30,4 @@ port = 8080
- 
- # Access logging configuration path. To turn off access logging
- # comment out the line with `access-log-config=...`
--access-log-config = /etc/puppetlabs/puppetdb/request-logging.xml
-+access-log-config = ${SYSCONFDIR}/puppetlabs/puppetdb/request-logging.xml

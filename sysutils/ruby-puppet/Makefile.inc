@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.48 2020/05/18 09:15:50 kn Exp $
+# $OpenBSD: Makefile.inc,v 1.49 2020/05/22 19:58:14 kn Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -27,9 +27,6 @@ SUBST_VARS +=	RUBY
 #   sysutils/mcollective
 #   sysutils/ruby-augeas
 #   sysutils/ruby-shadow
-# Puppet 4:
-#   databases/puppetdb4
-#   databases/ruby-hiera3
 # Puppet 5:
 #   databases/ruby-hiera3
 # Puppet 6:

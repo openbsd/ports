@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.394 2020/05/19 15:34:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.395 2020/05/22 19:58:14 kn Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -150,7 +150,6 @@
      SUBDIR += postgresql-pllua
      SUBDIR += postgresql-plr
      SUBDIR += postgresql_autodoc
-     SUBDIR += puppetdb4
      SUBDIR += puppetdb5
      SUBDIR += py-apsw
      SUBDIR += py-apsw,python3
