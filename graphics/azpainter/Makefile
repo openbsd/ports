@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/20 17:06:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/22 15:47:32 kmos Exp $
 
 V =		2.1.6
 COMMENT =	full color painting software for illustrations
@@ -28,6 +28,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 # The configure script is broken.
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	CC="${CC}"
+
+CFLAGS +=	-std=gnu99
 
 USE_GMAKE =	Yes
 
