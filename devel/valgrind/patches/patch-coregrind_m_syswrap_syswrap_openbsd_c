@@ -55,7 +55,7 @@
  PRE(sys_getsockname)
  {
     PRINT("sys_getsockname ( %ld, %#lx, %#lx )",ARG1,ARG2,ARG3);
-@@ -791,15 +791,6 @@
+@@ -780,15 +791,6 @@
     SET_STATUS_Success(0);
  }
  
@@ -71,7 +71,7 @@
  PRE(sys_getlogin)
  {
     PRINT("sys_getlogin ( %#lx, %ld )",ARG1,ARG2);
-@@ -2787,17 +2778,40 @@
+@@ -2776,17 +2778,40 @@
  
  PRE(sys___thrsleep)
  {
@@ -115,7 +115,7 @@
  }
  
  PRE(sys___thrsigdivert)
-@@ -2830,6 +2843,68 @@
+@@ -2819,6 +2844,68 @@
  // XXXTBD
  }
  
@@ -184,7 +184,7 @@
  PRE(sys_utimensat)
  {
  // XXXTBD
-@@ -3961,7 +4036,7 @@
+@@ -3950,7 +4037,7 @@
    
    GENXY(__NR_close,		sys_close),		// 6
    BSDXY(__NR_getentropy,	sys_getentropy),	// 7
@@ -193,7 +193,16 @@
    GENX_(__NR_link,		sys_link),		// 9
    GENX_(__NR_unlink,		sys_unlink),		// 10
    
-@@ -4053,7 +4128,7 @@
+@@ -4031,7 +4118,7 @@
+   GENX_(__NR_select,		sys_select),		// 71
+   BSDXY(__NR_kevent,		sys_kevent),		// 72
+   GENX_(__NR_munmap,		sys_munmap),		// 73
+-  GENX_(__NR_mprotect,		sys_mprotect),		// 74
++  GENXY(__NR_mprotect,		sys_mprotect),		// 74
+   GENX_(__NR_madvise,		sys_madvise),		// 75
+ 
+   GENX_(__NR_utimes,		sys_utimes),		// 76
+@@ -4042,7 +4129,7 @@
  
    GENX_(__NR_getpgrp,		sys_getpgrp),		// 81
    GENX_(__NR_setpgid,		sys_setpgid),		// 82
@@ -202,7 +211,7 @@
    BSDX_(__NR_utimensat,		sys_utimensat),		// 84
    BSDX_(__NR_futimens,		sys_futimens),		// 85
  
-@@ -4079,7 +4094,7 @@
+@@ -4079,7 +4166,7 @@
    BSDX_(__NR_sigsuspend,	sys_sigsuspend),	// 111
    BSDX_(__NR_sendsyslog,	sys_sendsyslog),	// 112
    // obsol orecvmsg					// 113
