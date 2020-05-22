@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2020/04/14 14:57:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.69 2020/05/22 21:57:52 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -14,6 +14,7 @@
      SUBDIR += b612-font
      SUBDIR += blockzone
      SUBDIR += cantarell-fonts
+     SUBDIR += cascadia-code
      SUBDIR += charis
      SUBDIR += chivo
      SUBDIR += clearsans
