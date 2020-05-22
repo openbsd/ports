@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/22 21:57:26 bcallah Exp $
+share/fonts/
+@fontdir share/fonts/cascadia/
+share/fonts/cascadia/CascadiaCode.otf
+share/fonts/cascadia/CascadiaCode.ttf
+share/fonts/cascadia/CascadiaCodePL.otf
+share/fonts/cascadia/CascadiaCodePL.ttf
+share/fonts/cascadia/CascadiaMono.otf
+share/fonts/cascadia/CascadiaMono.ttf
+share/fonts/cascadia/CascadiaMonoPL.otf
+share/fonts/cascadia/CascadiaMonoPL.ttf
