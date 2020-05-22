@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/05/19 07:20:45 giovanni Exp $
+# $OpenBSD: Makefile,v 1.25 2020/05/22 15:00:52 kn Exp $
 
 PORTROACH=		limit:^5
 
@@ -24,7 +24,7 @@ pre-install:
 		${WRKSRC}/ext/rack/config.ru
 
 do-install:
-	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb \
+	@cd ${WRKSRC} && ${FAKE_FLAGS} ${RUBY} install.rb \
 		--vardir=${LOCALSTATEDIR}/db/puppet/cache/ \
 		--rundir=${LOCALSTATEDIR}/run/puppetlabs/ \
                 --localedir=${TRUEPREFIX}/${MODRUBY_SITEDIR}/puppet/locales/
