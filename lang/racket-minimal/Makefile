@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2020/05/20 16:08:28 juanfra Exp $
+# $OpenBSD: Makefile,v 1.66 2020/05/22 22:31:45 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
 V =			7.7
-REVISION =		1
+REVISION =		2
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -124,7 +124,7 @@ CONFIGURE_ARGS +=	--disable-jit \
 .endif
 
 # The embedded versions of BC and CS use different files
-.if ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "amd64" && !${FLAVOR:Mno_jit}
 PKG_ARGS +=		-Dbc=0 -Dcs=1
 .else
 PKG_ARGS +=		-Dbc=1 -Dcs=0
