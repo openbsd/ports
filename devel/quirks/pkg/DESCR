@@ -1,5 +1,4 @@
 The quirks package allows unpredicted changes to the package system.
 For instance, package name changes, or stuff incorporated into base.
 
-pkg_add tests whether it's present, and whether it has a compatible
-interface. Otherwise it degrades gracefully to not using any quirks.
+pkg_add(1) always installs and updates it automatically.
