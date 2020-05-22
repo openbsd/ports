@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2020/05/14 19:34:02 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2020/05/22 04:52:24 bket Exp $
 
 COMMENT =	support library for FileZilla
 
-DISTNAME =	libfilezilla-0.21.0
+DISTNAME =	libfilezilla-0.22.0
 
-SHARED_LIBS +=  filezilla	4.0 # 6.0.0
+SHARED_LIBS +=  filezilla	4.1 # 7.0.0
 
 CATEGORIES =	net
 
