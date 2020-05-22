@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.25 2020/03/20 16:44:29 naddy Exp $
+# $OpenBSD: qt5.port.mk,v 1.26 2020/05/22 07:33:47 rsadowski Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
@@ -96,6 +96,8 @@ _MODQT5_CMAKE_PKGS = \
 	Qt5UiTools \
 	Qt5WebChannel \
 	Qt5WebKit \
+	Qt5WebEngine \
+	Qt5WebEngineWidgets \
 	Qt5WebKitWidgets \
 	Qt5WebSockets \
 	Qt5Widgets \

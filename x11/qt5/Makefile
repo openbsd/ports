@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.62 2020/03/13 16:53:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.63 2020/05/22 07:33:47 rsadowski Exp $
 
      SUBDIR =
-     #SUBDIR += docs (WIP)
+     SUBDIR += docs
      SUBDIR += qt3d
      SUBDIR += qtbase
      SUBDIR += qtcharts
@@ -30,18 +30,16 @@
      SUBDIR += qttranslations
      SUBDIR += qtvirtualkeyboard
      SUBDIR += qtwebchannel
+     SUBDIR += qtwebengine
+     SUBDIR += qtwebglplugin
      SUBDIR += qtwebkit
      SUBDIR += qtwebsockets
+     SUBDIR += qtwebview
      SUBDIR += qtx11extras
      SUBDIR += qtxmlpatterns
 
 # no support for Wayland in Xenocara
 #     SUBDIR += qtwayland
-# not ported yet
-#     SUBDIR += qtwebengine
-#     SUBDIR += qtwebglplugin
-# requires qtwebengine
-#     SUBDIR += qtwebview
 # Windows only
 #     SUBDIR += qtactiveqt
 
