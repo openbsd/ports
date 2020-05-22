@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2020/02/19 16:09:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2020/05/22 07:34:07 rsadowski Exp $
 
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 DISTNAME =	otter-browser-1.0.01
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -31,6 +32,10 @@ LIB_DEPENDS =	textproc/hunspell \
 		x11/qt5/qtsvg \
 		x11/qt5/qtwebkit>=5.212.0 \
 		x11/qt5/qtxmlpatterns
+
+# Otter is the only browser really working on macppc.
+CONFIGURE_ARGS +=	-DENABLE_QTWEBENGINE=OFF \
+			-DENABLE_QTWEBKIT=ON
 
 NO_TEST =	Yes
 
