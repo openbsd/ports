@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/12 10:24:23 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/23 21:54:05 sthen Exp $
+@pkgpath security/py-pyscard
 lib/python${MODPY_VERSION}/site-packages/pyscard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyscard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pyscard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
