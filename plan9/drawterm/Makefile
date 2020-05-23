@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/05/16 20:27:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/05/23 15:34:57 abieber Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el arm
 
 COMMENT=	Plan9 terminal emulator
 
-V=		ccc01167ee60
-DISTNAME=	drawterm-20191211
+V=		8fd96772eb02
+DISTNAME=	drawterm-20200427
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{${V}${EXTRACT_SUFX}}
 WRKDIST=	${WRKDIR}/drawterm-${V}
 EXTRACT_SUFX=	.tar.gz
