@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2020/03/20 16:44:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2020/05/23 09:16:42 landry Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
@@ -6,7 +6,7 @@ V=			3.6
 DISTNAME=		bitlbee-$V
 PKGSPEC=		bitlbee-=$V
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://bitlbee.org/
 
@@ -37,6 +37,7 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \
 			--mandir=${PREFIX}/man \
 			--config=${DB_DIR} \
+			--pidfile=${DB_DIR}/bitlbee.pid \
 			--etcdir=${ETCDIR} \
 			--ssl=openssl \
 			--pie=0
