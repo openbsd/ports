@@ -1,0 +1,24 @@
+$OpenBSD: patch-ykman_cli___main___py,v 1.3 2020/05/23 23:01:25 sthen Exp $
+
+From 14956068994f411c5631794deb8d0cca3488b1e7 Mon Sep 17 00:00:00 2001
+From: Dennis Fokin <Dennis.Fokin@yubico.com>
+Date: Fri, 31 Jan 2020 08:15:23 +0100
+Subject: [PATCH] Better error handling when failing to open CCID context
+
+Index: ykman/cli/__main__.py
+--- ykman/cli/__main__.py.orig
++++ ykman/cli/__main__.py
+@@ -131,9 +131,10 @@ def _run_cmd_for_single(ctx, cmd, transports, reader=N
+         try:
+             return descriptor.open_device(transports)
+         except FailedOpeningDeviceException:
+-            ctx.fail('Failed connecting to {} [{}]. Make sure the application have \
+-                    the required permissions.'.format(
+-                        descriptor.name, descriptor.mode))
++            ctx.fail('Failed connecting to {} [{}]. '
++                     'Make sure the application has the '
++                     'required permissions.'
++                     .format(descriptor.name, descriptor.mode))
+     else:
+         _disabled_transport(ctx, transports, cmd)
+ 
