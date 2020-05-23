@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2020/04/13 00:50:47 jca Exp $
+# $OpenBSD: Makefile,v 1.90 2020/05/23 10:46:59 sthen Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -7,10 +7,10 @@ COMMENT-otr =	OTR (off-the-record) plugin for irssi
 
 V =		1.2.2
 DISTNAME =	irssi-$V
-PKGSPEC =	irssi-=$V
+PKGSPEC-main =	irssi-=$V
 PKGNAME-main =	irssi-$V
 PKGNAME-otr =	irssi-otr-$V
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net
 
