@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/03/23 18:01:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2020/05/23 07:41:14 rsadowski Exp $
 
 COMMENT-main =	KDE file search and metadata handling framework
 COMMENT-icons =	icons for baloo
@@ -6,6 +6,8 @@ DISTNAME =	baloo-${VERSION}
 PKGNAME-main =	kf5-${DISTNAME}
 PKGNAME-icons =	kf5-icons-${DISTNAME}
 EPOCH-main =	0
+REVISION-icons =0
+REVISION-main =	0
 
 SHARED_LIBS =   KF5Baloo                  3.0
 SHARED_LIBS +=  KF5BalooXapian            3.0
@@ -35,7 +37,6 @@ RUN_DEPENDS-main =	devel/kf5/kidletime>=${MODKF5_VERSION} \
 RUN_DEPENDS-icons =	x11/gtk+3,-guic
 
 LIB_DEPENDS-main =	databases/lmdb \
-			devel/libinotify \
 			devel/kf5/kconfig>=${MODKF5_VERSION} \
 			devel/kf5/kfilemetadata>=${MODKF5_VERSION} \
 			devel/kf5/ki18n>=${MODKF5_VERSION} \
@@ -43,7 +44,6 @@ LIB_DEPENDS-main =	databases/lmdb \
 			devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 			x11/qt5/qtdeclarative
 
-MAKE_ENV =	CXXOPTS="-I${LOCALBASE}/include/inotify" \
-		LIBS="-L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify"
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Inotify=On
 
 .include <bsd.port.mk>
