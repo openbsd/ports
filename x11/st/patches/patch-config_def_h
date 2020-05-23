@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_def_h,v 1.11 2019/02/10 21:55:24 feinerer Exp $
+$OpenBSD: patch-config_def_h,v 1.12 2020/05/23 19:32:37 mestre Exp $
 Index: config.def.h
 --- config.def.h.orig
 +++ config.def.h
-@@ -92,7 +92,7 @@ static const char *colorname[] = {
+@@ -94,7 +94,7 @@ static const char *colorname[] = {
  	"blue2",
  	"magenta3",
  	"cyan3",
