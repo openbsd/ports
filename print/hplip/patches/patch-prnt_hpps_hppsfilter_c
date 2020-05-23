@@ -1,0 +1,17 @@
+$OpenBSD: patch-prnt_hpps_hppsfilter_c,v 1.3 2020/05/23 07:58:58 ajacoutot Exp $
+
+prnt/hpps/hppsfilter.c:107:13: error: void function 'open_tempbookletfile' should not return a value [-Wreturn-type]
+            return 1;
+
+Index: prnt/hpps/hppsfilter.c
+--- prnt/hpps/hppsfilter.c.orig
++++ prnt/hpps/hppsfilter.c
+@@ -104,7 +104,7 @@ static void open_tempbookletfile(char *mode)
+     if(ptempbooklet_file == NULL)
+     {
+             fprintf(stderr, "ERROR: Unable to open temp file %s\n", temp_filename);
+-            return 1;
++            return;
+     }  
+     chmod(temp_filename, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+ 

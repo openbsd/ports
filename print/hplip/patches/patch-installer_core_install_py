@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_core_install_py,v 1.29 2019/11/17 20:42:44 ajacoutot Exp $
+$OpenBSD: patch-installer_core_install_py,v 1.30 2020/05/23 07:58:58 ajacoutot Exp $
 
 Index: installer/core_install.py
 --- installer/core_install.py.orig
@@ -197,7 +197,7 @@ Index: installer/core_install.py
                      cmd = self.passwordObj.getAuthCmd() % cmd
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
-@@ -1816,11 +1811,14 @@ class CoreInstall(object):
+@@ -1818,11 +1813,14 @@ class CoreInstall(object):
          return num_opt_missing
  
      def check_wget(self):
@@ -216,7 +216,7 @@ Index: installer/core_install.py
  
      def check_avahi_utils(self):
          if utils.which("avahi-browse"):
-@@ -1927,7 +1925,7 @@ class CoreInstall(object):
+@@ -1929,7 +1927,7 @@ class CoreInstall(object):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False, distro_ver):
              cmds.append(self.passwordObj.getAuthCmd() %

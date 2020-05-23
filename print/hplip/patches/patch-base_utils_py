@@ -1,10 +1,12 @@
-$OpenBSD: patch-base_utils_py,v 1.21 2020/02/22 15:02:05 ajacoutot Exp $
+$OpenBSD: patch-base_utils_py,v 1.22 2020/05/23 07:58:58 ajacoutot Exp $
 
 From Fedora (getPhoneNum, getStationName):
 python3 - recent HP release removed encoding/decoding to utf-8 in fax/pmlfax.py -
 that results in text string going into translate function in base/utils.py, which
 expects binary string because of parameters. Remove this patch if base/utils.py
 code gets fixed.
+
+Disable download_from_network()
 
 Index: base/utils.py
 --- base/utils.py.orig
@@ -85,15 +87,15 @@ Index: base/utils.py
  def find_browser():
      if platform_avail and platform.system() == 'Darwin':
          return "open"
-@@ -2058,51 +2054,54 @@ def chunk_write(response, out_fd, chunk_size =8192, st
+@@ -2058,46 +2054,47 @@ def chunk_write(response, out_fd, chunk_size =8192, st
  def download_from_network(weburl, outputFile = None, useURLLIB=False):
      retValue = -1
  
--    if weburl is "" or weburl is None:
+-    if weburl == "" or weburl == None:
 -        log.error("URL is empty")
 -        return retValue, ""
 +    if platform.system() == "Linux":
-+        if weburl is "" or weburl is None:
++        if weburl == "" or weburl == None:
 +            log.error("URL is empty")
 +            return retValue, ""
  
@@ -156,24 +158,17 @@ Index: base/utils.py
  
 -    if not os.path.exists(outputFile):
 -        log.error("Failed to get hplip version/ %s file not found."%hplip_version_file)
+-        return retValue, ""
 +        if not os.path.exists(outputFile):
 +            log.error("Failed to get hplip version/ %s file not found."%hplip_version_file)
 +            return retValue, ""
-+
-+        return 0, outputFile
-+    else:
-         return retValue, ""
  
 -    return 0, outputFile
++        return 0, outputFile
  
  
  
- 
--
- class Sync_Lock:
-     def __init__(self, filename):
-         self.Lock_filename = filename
-@@ -2198,7 +2197,7 @@ def check_user_groups(required_grps_str, avl_grps):
+@@ -2198,7 +2195,7 @@ def check_user_groups(required_grps_str, avl_grps):
          grps =re.sub(r'\s', '', str(grps))
          exp_grp_list = grps.split(',')
      else:
