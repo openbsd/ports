@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/04/16 06:23:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2020/05/23 10:47:55 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -6,6 +6,7 @@ COMMENT=	utilities for manipulating PostScript documents
 
 V=		2.03
 DISTNAME=	psutils-${V}
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -20,7 +21,9 @@ MASTER_SITES=	https://github.com/rrthomas/psutils/releases/download/v${V}/
 
 MODULES=	perl
 
-RUN_DEPENDS=	print/libpaper
+RUN_DEPENDS=	devel/p5-IPC-Run3 \
+		print/ghostscript/gnu \
+		print/libpaper
 
 USE_GMAKE=	Yes
 
