@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/24 14:18:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/05/23 21:55:55 sthen Exp $
+@pkgpath security/py-fido2
 lib/python${MODPY_VERSION}/site-packages/fido2/
 lib/python${MODPY_VERSION}/site-packages/fido2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/fido2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -35,12 +36,14 @@ lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/${MODPY_PYCACHE}freebsd.${
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/${MODPY_PYCACHE}hidtransport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/${MODPY_PYCACHE}linux.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/${MODPY_PYCACHE}macos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/${MODPY_PYCACHE}openbsd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/base.py
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/freebsd.py
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/hidtransport.py
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/linux.py
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/macos.py
+lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/openbsd.py
 lib/python${MODPY_VERSION}/site-packages/fido2/_pyu2f/windows.py
 lib/python${MODPY_VERSION}/site-packages/fido2/_tpm.py
 lib/python${MODPY_VERSION}/site-packages/fido2/attestation.py
