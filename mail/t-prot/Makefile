@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/23 02:44:01 afresh1 Exp $
 
 COMMENT=	filter which improves readability of email and Usenet posts
 
 DISTNAME=	t-prot-3.4
-CATEGORIES=    	mail news
+CATEGORIES=	mail news
 
 MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
 
-# GPL
+# BSD
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		https://www.escape.de/~tolot/mutt/
 MASTER_SITES=		${HOMEPAGE}/t-prot/downloads/
 
-CONFIGURE_STYLE=	none
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
