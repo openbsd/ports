@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2019/03/11 07:02:13 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2020/05/23 06:47:26 rsadowski Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
@@ -13,32 +13,16 @@ Index: src/CMakeLists.txt
  
  add_definitions(-DTRANSLATION_DOMAIN=\"libkleopatra\")
  
-@@ -69,15 +71,15 @@ ki18n_wrap_ui(libkleo_ui_common_SRCS
+@@ -69,7 +71,7 @@ ki18n_wrap_ui(libkleo_ui_common_SRCS
  set(kleo_LIB_SRCS ${libkleo_core_SRCS} ${libkleo_ui_SRCS}
                                         ${libkleo_ui_common_SRCS})
  
 -set(kleo_LIB_LIBS PUBLIC QGpgme Gpgmepp PRIVATE Qt5::Widgets
--                                                KF5::I18n
--                                                KF5::Completion
--                                                KF5::ConfigCore
--                                                KF5::CoreAddons
--                                                KF5::WindowSystem
--                                                KF5::WidgetsAddons
--                                                KF5::ItemModels
--                                                KF5::Codecs)
 +set(kleo_LIB_LIBS PUBLIC gpgmepp qgpgme PRIVATE Qt5::Widgets
-+                          KF5::I18n
-+                          KF5::Completion
-+                          KF5::ConfigCore
-+                          KF5::CoreAddons
-+                          KF5::WindowSystem
-+                          KF5::WidgetsAddons
-+                          KF5::ItemModels
-+                          KF5::Codecs)
- 
- if (KF5PimTextEdit_FOUND)
-   add_definitions(-DHAVE_PIMTEXTEDIT)
-@@ -106,7 +108,7 @@ install(TARGETS
+                                                 KF5::I18n
+                                                 KF5::Completion
+                                                 KF5::ConfigCore
+@@ -105,7 +107,7 @@ install(TARGETS
  
  
  
