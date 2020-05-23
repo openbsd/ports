@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/11 07:00:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/23 06:42:24 rsadowski Exp $
 include/KF5/KIdentityManagement/
 include/KF5/KIdentityManagement/KIdentityManagement/
 include/KF5/KIdentityManagement/KIdentityManagement/Identity
@@ -23,12 +23,6 @@ lib/cmake/KF5IdentityManagement/KF5IdentityManagementTargets${MODCMAKE_BUILD_SUF
 lib/cmake/KF5IdentityManagement/KF5IdentityManagementTargets.cmake
 @lib lib/libKF5IdentityManagement.so.${LIBKF5IdentityManagement_VERSION}
 share/dbus-1/interfaces/kf5_org.kde.pim.IdentityManager.xml
-share/examples/kidentitymanagement/
-share/examples/kidentitymanagement/xdg/
-share/examples/kidentitymanagement/xdg/kidentitymanagement.categories
-@sample ${SYSCONFDIR}/xdg/kidentitymanagement.categories
-share/examples/kidentitymanagement/xdg/kidentitymanagement.renamecategories
-@sample ${SYSCONFDIR}/xdg/kidentitymanagement.renamecategories
 share/kf5/mkspecs/qt_KIdentityManagement.pri
 share/locale/ar/LC_MESSAGES/libkpimidentities5.mo
 share/locale/bs/LC_MESSAGES/libkpimidentities5.mo
@@ -76,3 +70,5 @@ share/locale/ug/LC_MESSAGES/libkpimidentities5.mo
 share/locale/uk/LC_MESSAGES/libkpimidentities5.mo
 share/locale/zh_CN/LC_MESSAGES/libkpimidentities5.mo
 share/locale/zh_TW/LC_MESSAGES/libkpimidentities5.mo
+share/qlogging-categories5/kidentitymanagement.categories
+share/qlogging-categories5/kidentitymanagement.renamecategories
