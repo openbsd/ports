@@ -1,0 +1,16 @@
+lr is a tool for generating file listings, which includes the best features
+of ls(1), find(1), stat(1) and du(1).
+
+Benefits over find:
+* friendly and logical C-style filter syntax
+* getopt is used, can mix filters and arguments in any order
+* can sort
+* compute directory sizes
+* can strip leading ./
+* can do breadth first search
+
+Benefits over ls:
+* sorts over all files, not per directory
+* copy & paste file names from the output since they are relative to pwd
+* ISO dates
+* powerful filters

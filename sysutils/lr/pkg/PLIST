@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/24 20:03:35 sthen Exp $
+@bin bin/lr
+@man man/man1/lr.1
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_lr
