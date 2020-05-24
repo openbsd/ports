@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2020/03/30 17:39:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.57 2020/05/24 11:29:47 rsadowski Exp $
 
      SUBDIR =
 
@@ -146,6 +146,7 @@
      SUBDIR += kde-dev-scripts
      SUBDIR += kde-dev-utils
      SUBDIR += kdesdk-kioslaves
+     SUBDIR += kdesdk-thumbnailers
      SUBDIR += kompare
      SUBDIR += lokalize
      SUBDIR += poxml
@@ -202,11 +203,11 @@
      #SUBDIR += kalarmcal
      #SUBDIR += kblog
      #SUBDIR += kcalcore gone in 19.12.3
-     #SUBDIR += kcalutils
+     SUBDIR += kcalutils
      #SUBDIR += kcontacts gone in 19.12.3
      #SUBDIR += kdav
      SUBDIR += kdeedu-data
-     #SUBDIR += kidentitymanagement
+     SUBDIR += kidentitymanagement
      SUBDIR += kimap
      #SUBDIR += kitinerary
      SUBDIR += kldap
@@ -229,7 +230,7 @@
      SUBDIR += libkexiv2
      #SUBDIR += libkgapi
      SUBDIR += libkipi
-     #SUBDIR += libkleo
+     SUBDIR += libkleo
      SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
      SUBDIR += libksane
