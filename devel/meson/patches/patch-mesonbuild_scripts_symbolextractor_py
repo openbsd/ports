@@ -1,6 +1,9 @@
-$OpenBSD: patch-mesonbuild_scripts_symbolextractor_py,v 1.1 2020/05/16 17:03:29 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_scripts_symbolextractor_py,v 1.2 2020/05/24 16:41:54 ajacoutot Exp $
 
-https://github.com/mesonbuild/meson/pull/7158
+From bf34b971121d46d54f8870cd1faf420d6c0bafe5 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sat, 16 May 2020 19:01:00 +0200
+Subject: [PATCH] symbolextractor: add OpenBSD support
 
 Index: mesonbuild/scripts/symbolextractor.py
 --- mesonbuild/scripts/symbolextractor.py.orig
