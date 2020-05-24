@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/04/01 20:43:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2020/05/24 03:24:54 jsg Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -52,6 +52,11 @@ CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 
 .if ${MACHINE_ARCH} == "hppa"
 CONFIGURE_ARGS+= --disable-atomic
+.endif
+
+# clang can't handle simd asm
+.if ${MACHINE_ARCH} == "arm"
+CONFIGURE_ARGS+= --disable-arm-simd
 .endif
 
 # tests in test subdir, but interactive and not hooked up to build

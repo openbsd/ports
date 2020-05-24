@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.5 2020/04/01 20:43:08 naddy Exp $
+$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.6 2020/05/24 03:24:54 jsg Exp $
 
 enable GameController API the Linux fallback way (by posing as Xbox360
 controller)
@@ -16,7 +16,7 @@ Index: src/joystick/SDL_gamecontroller.c
              SDL_memcpy(&pchGUID[0], "03000000", 8);
          }
 -#elif __MACOSX__
-+#else if(__MACOSX__) || (__OpenBSD__)
++#elif defined(__MACOSX__) || defined(__OpenBSD__)
          if (SDL_strlen(pchGUID) == 32 &&
              SDL_memcmp(&pchGUID[4], "000000000000", 12) == 0 &&
              SDL_memcmp(&pchGUID[20], "000000000000", 12) == 0) {
