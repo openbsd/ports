@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/02/14 11:11:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/05/24 21:11:00 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -9,6 +9,7 @@ GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 DISTNAME =		openmw-$V
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -27,7 +28,7 @@ WANTLIB += osgGA osgParticle osgText osgUtil osgViewer swresample
 WANTLIB += swscale unshield
 
 MODULES =		devel/cmake x11/qt5
-COMPILER =		base-clang ports-gcc
+
 BUILD_DEPENDS = 	sysutils/e2fsprogs
 LIB_DEPENDS =		audio/openal \
 			devel/bullet \
@@ -46,7 +47,8 @@ CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
 			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data"\
 			-DOPENMW_RESOURCE_FILES="${LOCALBASE}/share/openmw/resources" \
 			-DDESIRED_QT_VERSION=5 \
-			-DCMAKE_PREFIX_PATH="${LOCALBASE}/lib/qt5/cmake"
+			-DCMAKE_PREFIX_PATH="${LOCALBASE}/lib/qt5/cmake" \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 NO_TEST =		Yes
 
