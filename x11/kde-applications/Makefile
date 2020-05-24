@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2020/05/24 11:29:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.58 2020/05/24 11:31:06 rsadowski Exp $
 
      SUBDIR =
 
@@ -115,7 +115,7 @@
      SUBDIR += kdenetwork-filesharing
      #SUBDIR += kget
      SUBDIR += kio-extras
-     #SUBDIR += kmailtransport (KF5Akonadi)
+     #SUBDIR += kmailtransport
      #SUBDIR += kopete
      SUBDIR += krdc
      SUBDIR += krfb
@@ -202,9 +202,7 @@
      #SUBDIR += kaccounts-providers
      #SUBDIR += kalarmcal
      #SUBDIR += kblog
-     #SUBDIR += kcalcore gone in 19.12.3
      SUBDIR += kcalutils
-     #SUBDIR += kcontacts gone in 19.12.3
      #SUBDIR += kdav
      SUBDIR += kdeedu-data
      SUBDIR += kidentitymanagement
