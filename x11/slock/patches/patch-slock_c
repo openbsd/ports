@@ -1,33 +1,119 @@
-$OpenBSD: patch-slock_c,v 1.3 2016/08/13 14:00:00 tb Exp $
---- slock.c.orig	Fri Feb 12 20:29:02 2016
-+++ slock.c	Sat Aug 13 15:37:49 2016
-@@ -47,7 +47,7 @@ static Bool rr;
- static int rrevbase;
- static int rrerrbase;
+$OpenBSD: patch-slock_c,v 1.4 2020/05/24 17:24:24 sthen Exp $
+
+Add back bsd-auth support, removed in 04143fd68dbc
+
+Index: slock.c
+--- slock.c.orig
++++ slock.c
+@@ -19,6 +19,11 @@
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
  
--static void
-+static void __attribute__((__noreturn__, __format__(printf, 1, 2)))
- die(const char *errstr, ...)
++#if HAVE_BSD_AUTH
++#include <login_cap.h>
++#include <bsd_auth.h>
++#endif
++
+ #include "arg.h"
+ #include "util.h"
+ 
+@@ -83,6 +88,7 @@ dontkillme(void)
+ }
+ #endif
+ 
++#ifndef HAVE_BSD_AUTH
+ static const char *
+ gethash(void)
  {
- 	va_list ap;
-@@ -172,10 +172,12 @@ readpw(Display *dpy, const char *pws)
- 				break;
- 			case XK_Escape:
- 				len = 0;
-+				explicit_bzero(passwd, sizeof(passwd));
- 				break;
- 			case XK_BackSpace:
- 				if (len)
- 					--len;
-+				explicit_bzero(passwd + len, 1);
- 				break;
- 			default:
- 				if (num && !iscntrl((int)buf[0]) && (len + num < sizeof(passwd))) {
-@@ -185,6 +187,7 @@ readpw(Display *dpy, const char *pws)
- 				break;
- 			}
- 			color = len ? INPUT : (failure || failonclear ? FAILED : INIT);
-+			explicit_bzero(buf, sizeof(buf));
- 			if (running && oldc != color) {
- 				for (screen = 0; screen < nscreens; screen++) {
- 					XSetWindowBackground(dpy, locks[screen]->win, locks[screen]->colors[color]);
+@@ -123,13 +129,21 @@ gethash(void)
+ 
+ 	return hash;
+ }
++#endif /* HAVE_BSD_AUTH */
+ 
+ static void
++#ifdef HAVE_BSD_AUTH
++readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens)
++#else
+ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
+        const char *hash)
++#endif
+ {
+ 	XRRScreenChangeNotifyEvent *rre;
+-	char buf[32], passwd[256], *inputhash;
++	char buf[32], passwd[256];
++#ifndef HAVE_BSD_AUTH
++	char *inputhash;
++#endif
+ 	int num, screen, running, failure, oldc;
+ 	unsigned int len, color;
+ 	KeySym ksym;
+@@ -160,10 +174,14 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **
+ 			case XK_Return:
+ 				passwd[len] = '\0';
+ 				errno = 0;
++#ifdef HAVE_BSD_AUTH
++				running = !auth_userokay(getlogin(), NULL, "auth-slock", passwd);
++#else
+ 				if (!(inputhash = crypt(passwd, hash)))
+ 					fprintf(stderr, "slock: crypt: %s\n", strerror(errno));
+ 				else
+ 					running = !!strcmp(inputhash, hash);
++#endif
+ 				if (running) {
+ 					XBell(dpy, 100);
+ 					failure = 1;
+@@ -303,7 +321,9 @@ main(int argc, char **argv) {
+ 	struct group *grp;
+ 	uid_t duid;
+ 	gid_t dgid;
++#ifndef HAVE_BSD_AUTH
+ 	const char *hash;
++#endif
+ 	Display *dpy;
+ 	int s, nlocks, nscreens;
+ 
+@@ -331,14 +351,23 @@ main(int argc, char **argv) {
+ 	dontkillme();
+ #endif
+ 
++#ifndef HAVE_BSD_AUTH
+ 	hash = gethash();
+ 	errno = 0;
+ 	if (!crypt("", hash))
+ 		die("slock: crypt: %s\n", strerror(errno));
++#endif
+ 
+ 	if (!(dpy = XOpenDisplay(NULL)))
+ 		die("slock: cannot open display\n");
+ 
++/*
++ * don't drop groups for bsd-auth, slock runs as the user's normal
++ * uid, and requires gid auth from the setgid bit. (without bsd-auth
++ * slock needs to start with uid root or gid _shadow to read spwd.db,
++ * and is unable to use non-password methods)
++ */
++#ifndef HAVE_BSD_AUTH
+ 	/* drop privileges */
+ 	if (setgroups(0, NULL) < 0)
+ 		die("slock: setgroups: %s\n", strerror(errno));
+@@ -346,6 +375,7 @@ main(int argc, char **argv) {
+ 		die("slock: setgid: %s\n", strerror(errno));
+ 	if (setuid(duid) < 0)
+ 		die("slock: setuid: %s\n", strerror(errno));
++#endif
+ 
+ 	/* check for Xrandr support */
+ 	rr.active = XRRQueryExtension(dpy, &rr.evbase, &rr.errbase);
+@@ -381,7 +411,11 @@ main(int argc, char **argv) {
+ 	}
+ 
+ 	/* everything is now blank. Wait for the correct password */
++#ifdef HAVE_BSD_AUTH
++	readpw(dpy, &rr, locks, nscreens);
++#else
+ 	readpw(dpy, &rr, locks, nscreens, hash);
++#endif
+ 
+ 	return 0;
+ }

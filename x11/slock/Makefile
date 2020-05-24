@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/05/24 17:24:23 sthen Exp $
 
 COMMENT=		simple X screen locker
 
-# slock-1.4 drops bsd-auth support; CVE-2016-6866 doesn't affect HAVE_BSD_AUTH
-DISTNAME=		slock-1.3
-REVISION=		1
+DISTNAME=		slock-1.4
 
 CATEGORIES=		x11
 
@@ -19,9 +17,12 @@ WANTLIB=		X11 c Xext Xrandr
 
 MASTER_SITES=		http://dl.suckless.org/tools/
 
-MAKE_ENV=		CC="${CC}" \
-			LDFLAGS="${LDFLAGS}"
-FAKE_FLAGS=		DESTDIR=""
+MAKE_FLAGS=		CC="${CC}" \
+			COMPATSRC= \
+			COPTFLAGS="${CFLAGS}" \
+			MANPREFIX=${PREFIX}/man \
+			X11INC=${X11BASE}/include \
+			X11LIB=${X11BASE}/lib
 
 NO_TEST=		Yes
 

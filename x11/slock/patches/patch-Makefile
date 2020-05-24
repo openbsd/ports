@@ -1,6 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.5 2016/03/05 19:17:01 jung Exp $
---- Makefile.orig	Fri Feb 12 20:29:02 2016
-+++ Makefile	Fri Feb 26 21:06:04 2016
+$OpenBSD: patch-Makefile,v 1.6 2020/05/24 17:24:23 sthen Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -15,8 +15,7 @@ options:
  	@echo "CC       = ${CC}"
  
@@ -9,7 +11,7 @@ $OpenBSD: patch-Makefile,v 1.5 2016/03/05 19:17:01 jung Exp $
 -	@${CC} -c ${CFLAGS} $<
 +	${CC} -c ${CFLAGS} $<
  
- ${OBJ}: config.h config.mk
+ ${OBJ}: config.h config.mk arg.h util.h
  
 @@ -25,8 +24,7 @@ config.h:
  	@cp config.def.h $@

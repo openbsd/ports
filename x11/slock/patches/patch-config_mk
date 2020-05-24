@@ -1,44 +1,23 @@
-$OpenBSD: patch-config_mk,v 1.9 2016/08/13 14:00:00 tb Exp $
---- config.mk.orig	Fri Feb 12 20:29:02 2016
-+++ config.mk	Sat Aug 13 15:38:13 2016
-@@ -4,28 +4,28 @@ VERSION = 1.3
- # Customize below to fit your system
- 
- # paths
--PREFIX = /usr/local
--MANPREFIX = ${PREFIX}/share/man
-+PREFIX ?= /usr/local
-+MANPREFIX = ${PREFIX}/man
- 
--X11INC = /usr/X11R6/include
--X11LIB = /usr/X11R6/lib
-+X11INC = ${X11BASE}/include
-+X11LIB = ${X11BASE}/lib
+$OpenBSD: patch-config_mk,v 1.10 2020/05/24 17:24:24 sthen Exp $
+
+Index: config.mk
+--- config.mk.orig
++++ config.mk
+@@ -12,12 +12,13 @@ X11LIB = /usr/X11R6/lib
  
  # includes and libs
--INCS = -I. -I/usr/include -I${X11INC}
+ INCS = -I. -I/usr/include -I${X11INC}
 -LIBS = -L/usr/lib -lc -lcrypt -L${X11LIB} -lX11 -lXext -lXrandr
-+INCS = -I${X11INC}
-+LIBS = -L${X11LIB} -lX11 -lXext -lXrandr
++LIBS = -L/usr/lib -L${X11LIB} -lX11 -lXext -lXrandr
  
  # flags
--CPPFLAGS = -DVERSION=\"${VERSION}\" -DHAVE_SHADOW_H
+-CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE -DHAVE_SHADOW_H
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS = -s ${LIBS}
-+CPPFLAGS += -DVERSION=\"${VERSION}\" -DHAVE_BSD_AUTH -D_BSD_SOURCE
-+CFLAGS += -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS}
-+LDFLAGS += ${LIBS}
++COPTFLAGS = -Os
++CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE -DHAVE_BSD_AUTH -D_BSD_SOURCE
++CFLAGS = -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS} ${COPTFLAGS}
++LDFLAGS = ${LIBS}
+ COMPATSRC = explicit_bzero.c
  
- # On *BSD remove -DHAVE_SHADOW_H from CPPFLAGS and add -DHAVE_BSD_AUTH
  # On OpenBSD and Darwin remove -lcrypt from LIBS
- 
- # compiler and linker
--CC = cc
-+CC ?= cc
- 
- # Install mode. On BSD systems MODE=2755 and GROUP=auth
- # On others MODE=4755 and GROUP=root
--#MODE=2755
--#GROUP=auth
-+MODE=2755
-+GROUP=auth
