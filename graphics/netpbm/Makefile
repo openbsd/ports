@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2019/12/14 22:03:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.90 2020/05/25 19:56:40 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 c iconv jasper jbig jpeg lzma m png pthread tiff xml2 z
 
-MASTER_SITES=	http://shell.uugrn.org/~naddy/
+MASTER_SITES=	https://shell.uugrn.org/~naddy/
 EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	graphics/tiff \

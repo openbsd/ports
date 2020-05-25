@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/25 19:56:40 naddy Exp $
 
 COMMENT=	display a calendar and the date of Easter
 
@@ -10,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://shell.uugrn.org/~naddy/
+MASTER_SITES=	https://shell.uugrn.org/~naddy/
 
 WANTLIB=	c curses
 
