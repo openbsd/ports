@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/05/25 05:38:12 bentley Exp $
 
 COMMENT = 	fixed width sans font designed especially for coders
 PKG_ARCH =	*
 VERSION =	1.002
 PKGNAME =	anonymous-pro-${VERSION}
 DISTNAME =	AnonymousPro-${VERSION}
-REVISION =	3
+REVISION =	4
 EXTRACT_SUFX =	.zip
 CATEGORIES =	fonts x11
 
-MASTER_SITES =	http://www.marksimonson.com/assets/content/fonts/
-HOMEPAGE =	http://www.marksimonson.com/fonts/view/anonymous-pro
+MASTER_SITES =	https://www.marksimonson.com/assets/content/fonts/
+HOMEPAGE =	https://www.marksimonson.com/fonts/view/anonymous-pro
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =		Yes
