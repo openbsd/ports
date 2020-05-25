@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/25 03:40:08 bentley Exp $
 
 V =			2.000
 COMMENT =		Unicode Tagmukay Shifinagh script font
 DISTNAME =		Tagmukay-${V}
 PKGNAME =		tagmukay-${V}
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/tagmukay/
 MAINTAINER =		George Rosamond <george@nycbug.org>
@@ -25,7 +26,7 @@ DOCDIR =		${PREFIX}/share/doc/tagmukay
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/{*.ttf,web/*.woff} ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/*.ttf ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/README.txt ${DOCDIR}
 
 .include <bsd.port.mk>

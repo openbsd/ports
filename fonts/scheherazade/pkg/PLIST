@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/01 08:45:42 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/25 03:40:08 bentley Exp $
 share/doc/scheherazade/
 share/doc/scheherazade/FONTLOG.txt
 share/doc/scheherazade/OFL-FAQ.txt
@@ -7,6 +7,4 @@ share/doc/scheherazade/README.txt
 share/fonts/
 @fontdir share/fonts/scheherazade/
 share/fonts/scheherazade/Scheherazade-Bold.ttf
-share/fonts/scheherazade/Scheherazade-Bold.woff
 share/fonts/scheherazade/Scheherazade-Regular.ttf
-share/fonts/scheherazade/Scheherazade-Regular.woff

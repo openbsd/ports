@@ -7,5 +7,3 @@ are not recommended for normal use).
 Font smarts are implemented using OpenType and Graphite technologies.
 A number of glyph variations are accessible through font features
 available via both OpenType and Graphite technologies.
-
-This port includes both TrueType and WOFF fonts.

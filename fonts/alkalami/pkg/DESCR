@@ -11,5 +11,3 @@ height is necessary to allow for deep swashes and descenders, and
 the overall look of the page is a very black, solid rectangle.
 Diacritics are much smaller in scale, with very little distance
 from the main letters.
-
-This package contains both TrueType and web fonts.

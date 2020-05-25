@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/14 11:11:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/05/25 03:40:08 bentley Exp $
 
 PKG_ARCH =		*
 
@@ -8,6 +8,7 @@ GH_ACCOUNT =		RedHatBrand
 GH_PROJECT =		Overpass
 GH_TAGNAME =		3.0.4
 DISTNAME =		overpass-${GH_TAGNAME}
+REVISION =		0
 
 CATEGORIES =		fonts
 
@@ -25,7 +26,7 @@ FONTDIR =		${PREFIX}/share/fonts/overpass
 do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/desktop-fonts/*/*.otf \
-		${WRKSRC}/webfonts/*/*.{ttf,woff,woff2} \
+		${WRKSRC}/webfonts/*/*.ttf \
 		${PREFIX}/share/fonts/overpass
 	${INSTALL_DATA} ${WRKSRC}/{README.md,LICENSE.md} ${DOCDIR}
 

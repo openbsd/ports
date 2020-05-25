@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/25 03:40:08 bentley Exp $
 
 COMMENT =	open-source Grotesque sans-serif typeface family
 
 # version numbers listed in README.md
 DISTNAME =	chivo-1.007
+REVISION =	0
 
 CATEGORIES =	fonts
 
@@ -30,8 +31,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/fonts/otf/*.otf ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/fonts/ttf/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/fonts/webfonts/woff/*.woff ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/fonts/webfonts/woff2/*.woff2 ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/{README.md,OFL.txt} ${DOCDIR}
 
 .include <bsd.port.mk>

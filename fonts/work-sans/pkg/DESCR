@@ -6,6 +6,3 @@ well. The fonts at the extreme weights are designed more for display
 use. Overall, features are simplified and optimised for screen
 resolutions, for example, diacritic marks are larger than how they
 would be in print.
-
-This port contains both desktop (OTF) and web fonts (TTF, WOFF,
-WOFF2).

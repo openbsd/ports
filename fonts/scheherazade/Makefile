@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/25 03:40:08 bentley Exp $
 
 V =			2.100
 COMMENT =		traditional Arabic Unicode font
 DISTNAME =		Scheherazade-${V}
 PKGNAME =		scheherazade-${V}
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/scheherazade/
 MAINTAINER =		George Rosamond <george@nycbug.org>
@@ -23,7 +24,7 @@ DOCDIR =		${PREFIX}/share/doc/scheherazade
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/{*.ttf,web/*.woff} ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/*.ttf ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
 
 .include <bsd.port.mk>

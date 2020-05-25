@@ -1,20 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/18 08:07:23 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/25 03:40:08 bentley Exp $
 share/doc/stixfonts/
 share/doc/stixfonts/README.md
 share/fonts/
 @fontdir share/fonts/stixfonts/
 share/fonts/stixfonts/STIX2Math.otf
-share/fonts/stixfonts/STIX2Math.woff
-share/fonts/stixfonts/STIX2Math.woff2
 share/fonts/stixfonts/STIX2Text-Bold.otf
-share/fonts/stixfonts/STIX2Text-Bold.woff
-share/fonts/stixfonts/STIX2Text-Bold.woff2
 share/fonts/stixfonts/STIX2Text-BoldItalic.otf
-share/fonts/stixfonts/STIX2Text-BoldItalic.woff
-share/fonts/stixfonts/STIX2Text-BoldItalic.woff2
 share/fonts/stixfonts/STIX2Text-Italic.otf
-share/fonts/stixfonts/STIX2Text-Italic.woff
-share/fonts/stixfonts/STIX2Text-Italic.woff2
 share/fonts/stixfonts/STIX2Text-Regular.otf
-share/fonts/stixfonts/STIX2Text-Regular.woff
-share/fonts/stixfonts/STIX2Text-Regular.woff2

@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 23:11:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/25 03:40:08 bentley Exp $
 share/doc/tagmukay/
 share/doc/tagmukay/README.txt
 share/fonts/
 @fontdir share/fonts/tagmukay/
 share/fonts/tagmukay/Tagmukay-Bold.ttf
-share/fonts/tagmukay/Tagmukay-Bold.woff
 share/fonts/tagmukay/Tagmukay-Regular.ttf
-share/fonts/tagmukay/Tagmukay-Regular.woff

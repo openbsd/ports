@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/18 08:26:31 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2020/05/25 03:40:08 bentley Exp $
 
 COMMENT =		Firefox OS typeface
 
 V =			4.202
 PKGNAME =		fira-fonts-${V}
 EPOCH =			0
+REVISION =		0
 
 GH_ACCOUNT =		mozilla
 GH_PROJECT =		fira
@@ -31,8 +32,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/otf/*.otf ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/ttf/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/woff/*.woff ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/woff2/*.woff2 ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/{LICENSE,README.md} ${DOCDIR}
 
 .include <bsd.port.mk>

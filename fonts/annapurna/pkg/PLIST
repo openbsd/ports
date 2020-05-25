@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/01 08:42:39 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/25 03:40:08 bentley Exp $
 share/doc/annapurna/
 share/doc/annapurna/DOCUMENTATION.txt
 share/doc/annapurna/FONTLOG.txt
@@ -8,6 +8,4 @@ share/doc/annapurna/README.txt
 share/fonts/
 @fontdir share/fonts/annapurna/
 share/fonts/annapurna/AnnapurnaSIL-Bold.ttf
-share/fonts/annapurna/AnnapurnaSIL-Bold.woff
 share/fonts/annapurna/AnnapurnaSIL-Regular.ttf
-share/fonts/annapurna/AnnapurnaSIL-Regular.woff
