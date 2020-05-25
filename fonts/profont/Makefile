@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
 DISTNAME =		ProFont-2.2
 CATEGORIES =		fonts x11
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://www.fontsquirrel.com/fonts/ProFontWindows
 
@@ -20,6 +20,8 @@ EXTRACT_SUFX =		.zip
 
 NO_BUILD=		Yes
 NO_TEST =		Yes
+
+PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/profont
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/25 03:40:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/25 04:30:12 bentley Exp $
 
 V =			2.000
 COMMENT =		Unicode Tagmukay Shifinagh script font
 DISTNAME =		Tagmukay-${V}
 PKGNAME =		tagmukay-${V}
 CATEGORIES =		fonts
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://software.sil.org/tagmukay/
 MAINTAINER =		George Rosamond <george@nycbug.org>
@@ -20,6 +20,8 @@ MODULE =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/tagmukay
 DOCDIR =		${PREFIX}/share/doc/tagmukay

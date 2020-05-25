@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/02 10:05:28 edd Exp $
+# $OpenBSD: Makefile,v 1.17 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT =	monospaced bitmap fonts for consoles and terminals
 
 V =		1.7.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	spleen-${V}
 
 CATEGORIES =	fonts
@@ -19,6 +19,8 @@ MASTER_SITES =	https://github.com/fcambus/spleen/releases/download/${V}/
 
 NO_TEST =	Yes
 USE_X11 =	Yes
+
+PKG_ARCH =	*
 
 FONTDIR =	${PREFIX}/share/fonts/spleen
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/25 03:40:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/25 04:30:12 bentley Exp $
 
 V =			2.100
 COMMENT =		traditional Arabic Unicode font
 DISTNAME =		Scheherazade-${V}
 PKGNAME =		scheherazade-${V}
 CATEGORIES =		fonts
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://software.sil.org/scheherazade/
 MAINTAINER =		George Rosamond <george@nycbug.org>
@@ -18,6 +18,8 @@ EXTRACT_SUFX =		.zip
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/scheherazade
 DOCDIR =		${PREFIX}/share/doc/scheherazade

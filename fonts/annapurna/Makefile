@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/25 03:40:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT =		Unicode-based font for Devanagari script
 
 V =			1.204
 DISTNAME =		AnnapurnaSIL-$V
 PKGNAME =		annapurna-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		fonts
 
@@ -22,6 +22,8 @@ EXTRACT_SUFX =		.zip
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/annapurna
 DOCDIR =		${PREFIX}/share/doc/annapurna

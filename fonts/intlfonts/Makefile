@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT=	extra japanese fonts
 
@@ -7,6 +7,7 @@ V= 		1.2.1
 DISTNAME=	intlfonts-$V
 PKGNAME=	ja-fonts-gnu-$V
 USE_X11 =	Yes
+REVISION =	0
 
 MASTER_SITES=	${MASTER_SITE_GNU:=intlfonts/}
 
@@ -27,6 +28,8 @@ NO_TEST=		Yes
 
 CONFIGURE_ARGS= --with-fontdir='$${DESTDIR}${FONTDIR}' \
 	--enable-compress='gzip -9' --with-bdf=no
+
+PKG_ARCH =	*
 
 # Allow for several sets of fonts to be in the same directory
 post-install:

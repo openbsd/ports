@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT =	Serif Latin and Looped Thai typeface
 
 DISTNAME =	taviraj-0.20160412
+REVISION =	0
 
 GH_ACCOUNT =	cadsondemak
 GH_PROJECT =	taviraj
@@ -19,6 +20,8 @@ PERMIT_PACKAGE =	Yes
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/taviraj
 DOCDIR =		${PREFIX}/share/doc/taviraj

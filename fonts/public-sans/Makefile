@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/25 03:40:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT =		strong, neutral, principles-driven typeface
 
 V =			1.008
 DISTNAME =		public-sans-v$V
 PKGNAME =		public-sans-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		fonts
 
@@ -22,6 +22,8 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}
+
+PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/public-sans
 

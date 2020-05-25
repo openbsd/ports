@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/03 21:51:12 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT =	faithfully remade Amiga fonts
 
 GH_ACCOUNT =	rewtnull
 GH_PROJECT =	amigafonts
 GH_TAGNAME =	1.02
+REVISION =	0
 
 CATEGORIES =	fonts
 
@@ -17,6 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
+
+PKG_ARCH =	*
 
 FONTDIR =	${PREFIX}/share/fonts/amigafonts
 DOCDIR =	${PREFIX}/share/doc/amigafonts

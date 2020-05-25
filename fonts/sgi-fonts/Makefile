@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/12/01 14:55:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT =	bitmap fonts from SGI
 
 DISTNAME =	sgi-fonts
 PKGNAME =	${DISTNAME}-1.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	fonts
 
@@ -21,6 +21,8 @@ USE_X11 =	Yes
 FONTDIR=	${PREFIX}/share/fonts/sgi-fonts
 
 WRKSRC =	${WRKDIST}/sgi
+
+PKG_ARCH =	*
 
 do-build:
 	cd ${WRKSRC}; \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/25 03:40:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT =	font to increase readability for readers with dyslexia
 
 GH_ACCOUNT =	antijingoist
 GH_PROJECT =	opendyslexic
 GH_TAGNAME =	v0.9.10
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	fonts
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+PKG_ARCH =	*
 
 FONTDIR =		${PREFIX}/share/fonts/opendyslexic
 DOCDIR =		${PREFIX}/share/doc/opendyslexic

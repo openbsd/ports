@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT=	extra japanese fonts, marumoji
 
@@ -7,7 +7,7 @@ DIST_SUBDIR=	ja-fonts
 
 DISTNAME=		ja-fonts-funet
 PKGNAME=		${DISTNAME}-19911117
-REVISION=		1
+REVISION=		2
 
 MASTER_SITES=	ftp://ftp.funet.fi/pub/culture/japan/fonts/bdf/
 
@@ -30,6 +30,8 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	imake
+
+PKG_ARCH =		*
 
 FONTDIR=${PREFIX}/share/fonts/ja
 

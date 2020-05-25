@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/25 04:30:12 bentley Exp $
 
 COMMENT=	extra Korean fonts
 
 PKGNAME=	ko-hanterm-fonts-3.1
 DISTNAME=	hanterm-font-3.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	fonts korean x11
 USE_X11 =	Yes
 
@@ -30,6 +30,8 @@ do-build:
 		sed 's/\.pcf\.gz//g' > ${WRKSRC}/fonts.alias
 
 NO_TEST=	Yes
+
+PKG_ARCH =	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
