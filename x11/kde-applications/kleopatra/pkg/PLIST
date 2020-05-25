@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/11 07:05:52 rsadowski Exp $
-@conflict kde-l10n-*
-@conflict kde-i18n-*
-@conflict kdepim-*
+@comment $OpenBSD: PLIST,v 1.2 2020/05/25 07:21:03 rsadowski Exp $
 @bin bin/kleopatra
 @bin bin/kwatchgnupg
 @lib lib/libkleopatraclientcore.so.${LIBkleopatraclientcore_VERSION}
 @lib lib/libkleopatraclientgui.so.${LIBkleopatraclientgui_VERSION}
-lib/qt5/plugins/kcm_kleopatra.so
+@so lib/qt5/plugins/kcm_kleopatra.so
 share/applications/kleopatra_import.desktop
 share/applications/org.kde.kleopatra.desktop
 share/doc/HTML/ca/kleopatra/
@@ -57,6 +54,7 @@ share/doc/HTML/pt/kleopatra/index.docbook
 share/doc/HTML/pt/kwatchgnupg/
 share/doc/HTML/pt/kwatchgnupg/index.cache.bz2
 share/doc/HTML/pt/kwatchgnupg/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kleopatra/
 share/doc/HTML/pt_BR/kleopatra/index.cache.bz2
 share/doc/HTML/pt_BR/kleopatra/index.docbook
@@ -75,10 +73,6 @@ share/doc/HTML/uk/kleopatra/index.docbook
 share/doc/HTML/uk/kwatchgnupg/
 share/doc/HTML/uk/kwatchgnupg/index.cache.bz2
 share/doc/HTML/uk/kwatchgnupg/index.docbook
-share/examples/kleopatra/
-share/examples/kleopatra/xdg/
-share/examples/kleopatra/xdg/kleopatra.categories
-share/examples/kleopatra/xdg/kleopatra.renamecategories
 share/icons/hicolor/128x128/apps/kleopatra.png
 share/icons/hicolor/16x16/apps/kleopatra.png
 share/icons/hicolor/22x22/apps/kleopatra.png
@@ -86,6 +80,7 @@ share/icons/hicolor/256x256/apps/kleopatra.png
 share/icons/hicolor/32x32/apps/kleopatra.png
 share/icons/hicolor/48x48/apps/kleopatra.png
 share/icons/hicolor/64x64/apps/kleopatra.png
+share/kconf_update/
 share/kconf_update/kleopatra-15.08-kickoff.sh
 share/kconf_update/kleopatra.upd
 share/kleopatra/
@@ -94,6 +89,7 @@ share/kleopatra/pics/kleopatra_splashscreen.png
 share/kleopatra/pics/kleopatra_splashscreen.svgz
 share/kleopatra/pics/kleopatra_wizard.png
 share/kleopatra/pics/kleopatra_wizard.svgz
+share/kservices5/
 share/kservices5/kleopatra_config_appear.desktop
 share/kservices5/kleopatra_config_cryptooperations.desktop
 share/kservices5/kleopatra_config_dirserv.desktop
@@ -210,5 +206,7 @@ share/locale/zh_TW/LC_MESSAGES/kleopatra.mo
 share/locale/zh_TW/LC_MESSAGES/kwatchgnupg.mo
 share/metainfo/
 share/metainfo/org.kde.kleopatra.appdata.xml
+share/qlogging-categories5/kleopatra.categories
+share/qlogging-categories5/kleopatra.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
