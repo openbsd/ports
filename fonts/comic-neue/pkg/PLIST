@@ -1,18 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:12 espie Exp $
-share/comic-neue/
-share/comic-neue/30-comic-sans-aliases.conf
+@comment $OpenBSD: PLIST,v 1.5 2020/05/25 05:58:50 bentley Exp $
 share/doc/pkg-readmes/${PKGSTEM}
 share/fonts/
 @fontdir share/fonts/comic-neue/
-share/fonts/comic-neue/ComicNeue-Angular-Bold-Oblique.ttf
-share/fonts/comic-neue/ComicNeue-Angular-Bold.ttf
-share/fonts/comic-neue/ComicNeue-Angular-Light-Oblique.ttf
-share/fonts/comic-neue/ComicNeue-Angular-Light.ttf
-share/fonts/comic-neue/ComicNeue-Angular-Regular-Oblique.ttf
-share/fonts/comic-neue/ComicNeue-Angular-Regular.ttf
-share/fonts/comic-neue/ComicNeue-Bold-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-Bold.otf
 share/fonts/comic-neue/ComicNeue-Bold.ttf
-share/fonts/comic-neue/ComicNeue-Light-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-BoldItalic.otf
+share/fonts/comic-neue/ComicNeue-BoldItalic.ttf
+share/fonts/comic-neue/ComicNeue-Italic.otf
+share/fonts/comic-neue/ComicNeue-Italic.ttf
+share/fonts/comic-neue/ComicNeue-Light.otf
 share/fonts/comic-neue/ComicNeue-Light.ttf
-share/fonts/comic-neue/ComicNeue-Regular-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-LightItalic.otf
+share/fonts/comic-neue/ComicNeue-LightItalic.ttf
+share/fonts/comic-neue/ComicNeue-Regular.otf
 share/fonts/comic-neue/ComicNeue-Regular.ttf
+share/fonts/comic-neue/ComicNeueAngular-Bold.otf
+share/fonts/comic-neue/ComicNeueAngular-Bold.ttf
+share/fonts/comic-neue/ComicNeueAngular-BoldItalic.otf
+share/fonts/comic-neue/ComicNeueAngular-BoldItalic.ttf
+share/fonts/comic-neue/ComicNeueAngular-Italic.otf
+share/fonts/comic-neue/ComicNeueAngular-Italic.ttf
+share/fonts/comic-neue/ComicNeueAngular-Light.otf
+share/fonts/comic-neue/ComicNeueAngular-Light.ttf
+share/fonts/comic-neue/ComicNeueAngular-LightItalic.otf
+share/fonts/comic-neue/ComicNeueAngular-LightItalic.ttf
+share/fonts/comic-neue/ComicNeueAngular-Regular.otf
+share/fonts/comic-neue/ComicNeueAngular-Regular.ttf
