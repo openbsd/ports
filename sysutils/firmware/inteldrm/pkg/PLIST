@@ -1,14 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/01/07 00:01:27 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/05/25 03:10:09 jsg Exp $
 firmware/i915/
 firmware/i915/bxt_dmc_ver1_07.bin
+firmware/i915/bxt_guc_33.0.0.bin
 firmware/i915/bxt_guc_ver9_29.bin
+firmware/i915/bxt_huc_2.0.0.bin
 firmware/i915/bxt_huc_ver01_07_1398.bin
+firmware/i915/cml_guc_33.0.0.bin
+firmware/i915/cml_huc_4.0.0.bin
 firmware/i915/cnl_dmc_ver1_07.bin
+firmware/i915/ehl_guc_33.0.4.bin
+firmware/i915/ehl_huc_9.0.0.bin
 firmware/i915/glk_dmc_ver1_04.bin
+firmware/i915/glk_guc_33.0.0.bin
+firmware/i915/glk_huc_4.0.0.bin
 firmware/i915/i915-license
+firmware/i915/icl_dmc_ver1_09.bin
+firmware/i915/icl_guc_33.0.0.bin
+firmware/i915/icl_huc_9.0.0.bin
 firmware/i915/kbl_dmc_ver1_04.bin
+firmware/i915/kbl_guc_33.0.0.bin
 firmware/i915/kbl_guc_ver9_39.bin
+firmware/i915/kbl_huc_4.0.0.bin
 firmware/i915/kbl_huc_ver02_00_1810.bin
 firmware/i915/skl_dmc_ver1_27.bin
+firmware/i915/skl_guc_33.0.0.bin
 firmware/i915/skl_guc_ver9_33.bin
+firmware/i915/skl_huc_2.0.0.bin
 firmware/i915/skl_huc_ver01_07_1398.bin
+firmware/i915/tgl_dmc_ver2_06.bin
+firmware/i915/tgl_guc_35.2.0.bin
+firmware/i915/tgl_huc_7.0.12.bin
