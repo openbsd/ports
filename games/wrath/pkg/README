@@ -1,0 +1,21 @@
+$OpenBSD: README,v 1.1.1.1 2020/05/25 16:08:41 solene Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+wrath
+=====
+wrath requires the original game files from WRATH: Aeon of Ruin
+to work properly. These can come from the GOG.com or Steam versions
+of the game.
+
+If you have the GOG version, you need to use innoextract to extract
+the data:
+$ innoextract setup_wrath_aeon_of_ruin_ea_1.2.1_\(36418\).exe
+
+To start wrath, you need to run it in a directory containing the kp1
+directory of the game or you can start wrath using the -basedir=
+option with a directory containing kp1. For example, if you copy kp1
+into a $HOME/.wrath directory:
+$ wrath -basedir $HOME/.wrath
