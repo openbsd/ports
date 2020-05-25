@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.418 2020/05/21 21:23:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.419 2020/05/25 16:09:09 solene Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -327,6 +327,7 @@
      SUBDIR += wizznic
      SUBDIR += wmtictactoe
      SUBDIR += wordwarvi
+     SUBDIR += wrath
      SUBDIR += wtf
      SUBDIR += xasteroids
      SUBDIR += xbattle
