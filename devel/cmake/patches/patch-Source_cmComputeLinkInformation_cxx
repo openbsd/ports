@@ -1,8 +1,8 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.24 2020/01/11 08:01:09 rsadowski Exp $
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.25 2020/05/25 05:12:00 rsadowski Exp $
 Index: Source/cmComputeLinkInformation.cxx
 --- Source/cmComputeLinkInformation.cxx.orig
 +++ Source/cmComputeLinkInformation.cxx
-@@ -369,8 +369,9 @@ cmComputeLinkInformation::cmComputeLinkInformation(
+@@ -371,8 +371,9 @@ cmComputeLinkInformation::cmComputeLinkInformation(
    this->OrderRuntimeSearchPath->AddUserDirectories(directories);
  
    // Set up the implicit link directories.
@@ -13,83 +13,83 @@ Index: Source/cmComputeLinkInformation.cxx
    this->OrderRuntimeSearchPath->SetImplicitDirectories(this->ImplicitLinkDirs);
    if (this->OrderDependentRPath) {
      this->OrderDependentRPath->SetImplicitDirectories(this->ImplicitLinkDirs);
-@@ -485,6 +486,8 @@ cmComputeLinkInformation::GetSharedLibrariesLinked() c
+@@ -482,6 +483,7 @@ cmComputeLinkInformation::GetSharedLibrariesLinked() c
  
  bool cmComputeLinkInformation::Compute()
  {
 +  bool use_wxneeded = false;
-+
    // Skip targets that do not link.
    if (!(this->Target->GetType() == cmStateEnums::EXECUTABLE ||
          this->Target->GetType() == cmStateEnums::SHARED_LIBRARY ||
-@@ -511,10 +514,17 @@ bool cmComputeLinkInformation::Compute()
+@@ -508,10 +510,17 @@ bool cmComputeLinkInformation::Compute()
      if (linkEntry.IsSharedDep) {
        this->AddSharedDepItem(linkEntry.Item, linkEntry.Target);
      } else {
-+      std::string litem_tolower = linkEntry.Item;
++      std::string litem_tolower = linkEntry.Item.Value;
 +      transform(litem_tolower.begin(), litem_tolower.end(), litem_tolower.begin(), ::tolower);
 +      if (litem_tolower.find("webkit") != std::string::npos || litem_tolower.find("webengine") != std::string::npos)
-+        use_wxneeded = true;
++         use_wxneeded = true;
        this->AddItem(linkEntry.Item, linkEntry.Target);
      }
    }
  
 +  if (use_wxneeded == true)
-+    this->AddUserItem("-Wl,-z,wxneeded", false);
++    this->AddUserItem(std::string("-Wl,-z,wxneeded"), false);
 +
    // Restore the target link type so the correct system runtime
    // libraries are found.
    const char* lss = this->Target->GetProperty("LINK_SEARCH_END_STATIC");
-@@ -677,10 +687,16 @@ void cmComputeLinkInformation::AddItem(std::string con
+@@ -718,10 +727,16 @@ void cmComputeLinkInformation::AddItem(BT<std::string>
          // This is a directory.
-         this->AddDirectoryItem(item);
+         this->AddDirectoryItem(item.Value);
        } else {
 -        // Use the full path given to the library file.
-         this->Depends.push_back(item);
+         this->Depends.push_back(item.Value);
 -        this->AddFullItem(item);
--        this->AddLibraryRuntimeInfo(item);
+-        this->AddLibraryRuntimeInfo(item.Value);
 +        if (!this->OpenBSD) {
 +          // Use the full path given to the library file.
 +          this->AddFullItem(item);
-+          this->AddLibraryRuntimeInfo(item);
++          this->AddLibraryRuntimeInfo(item.Value);
 +        } else {
-+          std::string file = cmSystemTools::GetFilenameName(item);
++          std::string file = cmSystemTools::GetFilenameName(item.Value);
 +          this->AddUserItem(file, false);
-+          this->OrderLinkerSearchPath->AddLinkLibrary(item);
++          this->OrderLinkerSearchPath->AddLinkLibrary(item.Value);
 +        }
        }
      } else {
        // This is a library or option specified by the user.
-@@ -1012,11 +1028,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+@@ -1053,11 +1068,18 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
      this->SharedLibrariesLinked.insert(target);
    }
  
 -  // Handle case of an imported shared library with no soname.
 -  if (this->NoSONameUsesPath &&
 -      target->IsImportedSharedLibWithoutSOName(this->Config)) {
--    this->AddSharedLibNoSOName(item);
+-    this->AddSharedLibNoSOName(item.Value);
 -    return;
 +  if (this->OpenBSD) {
 +    if (target->GetType() == cmStateEnums::SHARED_LIBRARY) {
-+      this->AddSharedLibNoSOName(item);
++      this->AddSharedLibNoSOName(item.Value);
 +      return;
 +    }
 +  } else {
 +    // Handle case of an imported shared library with no soname.
 +    if (this->NoSONameUsesPath &&
 +        target->IsImportedSharedLibWithoutSOName(this->Config)) {
-+      this->AddSharedLibNoSOName(item);
++      this->AddSharedLibNoSOName(item.Value);
 +      return;
 +    }
    }
  
    // For compatibility with CMake 2.4 include the item's directory in
-@@ -1575,6 +1598,27 @@ void cmComputeLinkInformation::LoadImplicitLinkInfo()
+@@ -1616,6 +1638,28 @@ void cmComputeLinkInformation::LoadImplicitLinkInfo()
    if (const char* rpathDirs =
          (this->Makefile->GetDefinition("CMAKE_PLATFORM_RUNTIME_PATH"))) {
      cmExpandList(rpathDirs, this->RuntimeLinkDirs);
 +  }
 +}
++
 +
 +void cmComputeLinkInformation::LoadImplicitLinkInfoOpenBSD()
 +{

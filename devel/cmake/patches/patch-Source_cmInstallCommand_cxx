@@ -1,8 +1,8 @@
-$OpenBSD: patch-Source_cmInstallCommand_cxx,v 1.16 2020/01/11 08:01:09 rsadowski Exp $
+$OpenBSD: patch-Source_cmInstallCommand_cxx,v 1.17 2020/05/25 05:12:00 rsadowski Exp $
 Index: Source/cmInstallCommand.cxx
 --- Source/cmInstallCommand.cxx.orig
 +++ Source/cmInstallCommand.cxx
-@@ -379,6 +379,9 @@ bool HandleTargetsMode(std::vector<std::string> const&
+@@ -380,6 +380,9 @@ bool HandleTargetsMode(std::vector<std::string> const&
    }
  
    // Select the mode for installing symlinks to versioned shared libraries.
@@ -12,7 +12,7 @@ Index: Source/cmInstallCommand.cxx
    cmInstallTargetGenerator::NamelinkModeType namelinkMode =
      cmInstallTargetGenerator::NamelinkModeNone;
    if (libraryArgs.GetNamelinkOnly()) {
-@@ -386,6 +389,10 @@ bool HandleTargetsMode(std::vector<std::string> const&
+@@ -387,6 +390,10 @@ bool HandleTargetsMode(std::vector<std::string> const&
    } else if (libraryArgs.GetNamelinkSkip()) {
      namelinkMode = cmInstallTargetGenerator::NamelinkModeSkip;
    }

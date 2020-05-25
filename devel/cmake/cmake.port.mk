@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.65 2019/08/21 05:47:40 rsadowski Exp $
+# $OpenBSD: cmake.port.mk,v 1.66 2020/05/25 05:12:00 rsadowski Exp $
 
 BUILD_DEPENDS+=	devel/cmake
 
@@ -50,16 +50,34 @@ _MODCMAKE_GEN = "Unix Makefiles"
 DPB_PROPERTIES += nojunk
 .endif
 
-CONFIGURE_ENV +=	MODJAVA_VER=${MODJAVA_VER} \
-			MODLUA_VERSION=${MODLUA_VERSION} \
-			MODLUA_BIN=${MODLUA_BIN} \
-			MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
-			MODPY_VERSION=${MODPY_VERSION} \
-			MODPY_BIN=${MODPY_BIN} \
-			MODPY_INCDIR=${MODPY_INCDIR} \
-			MODPY_LIBDIR=${MODPY_LIBDIR} \
-			MODRUBY_REV=${MODRUBY_REV} \
-			MODTCL_VERSION=${MODTCL_VERSION} \
+# JAVA
+.if ${MODULES:Mjava}
+CONFIGURE_ENV +=	JAVA_HOME=${JAVA_HOME}
+MAKE_ENV +=	JAVA_HOME=${JAVA_HOME}
+.endif
+
+# Python
+.if ${MODULES:Mlang/python}
+# https://cmake.org/cmake/help/latest/module/FindPython3.html#artifacts-specification
+CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN}
+CONFIGURE_ARGS +=	-DPYTHON_LIBRARY_DIRS=${MODPY_LIBDIR}
+CONFIGURE_ARGS +=	-DPYTHON_INCLUDE_DIR=${MODPY_INCDIR}
+.endif
+
+# Lua
+.if ${MODULES:Mlang/lua}
+CONFIGURE_ARGS +=	-DLUA_INCLUDE_DIR=${MODLUA_INCL_DIR}
+.endif
+
+# Ruby
+.if ${MODULES:Mlang/ruby}
+# https://cmake.org/cmake/help/latest/module/FindRuby.html
+CONFIGURE_ARGS +=	-DRUBY_EXECUTABLE=${RUBY}
+.endif
+
+# XXX Remove hackish patches
+# Tcl/Tk
+CONFIGURE_ENV +=	MODTCL_VERSION=${MODTCL_VERSION} \
 			MODTK_VERSION=${MODTK_VERSION} \
 			MODTCL_INCDIR=${MODTCL_INCDIR} \
 			MODTK_INCDIR=${MODTK_INCDIR} \

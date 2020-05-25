@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_FindOpenMP_cmake,v 1.2 2020/01/11 08:01:09 rsadowski Exp $
+$OpenBSD: patch-Modules_FindOpenMP_cmake,v 1.3 2020/05/25 05:12:00 rsadowski Exp $
 
 Add libs and paths. Ensure the lib is used for the C case.
 
@@ -10,7 +10,7 @@ Index: Modules/FindOpenMP.cmake
      unset(OpenMP_FLAG_CANDIDATES)
  
 -    set(OMP_FLAG_GNU "-fopenmp")
--    set(OMP_FLAG_Clang "-fopenmp=libomp" "-fopenmp=libiomp5" "-fopenmp")
+-    set(OMP_FLAG_Clang "-fopenmp=libomp" "-fopenmp=libiomp5" "-fopenmp" "-Xclang -fopenmp")
 +    set(OMP_FLAG_GNU "-fopenmp -lgomp")
 +    set(OMP_FLAG_Clang "-fopenmp -I${LOCALBASE}/include -Wl,-L${LOCALBASE}/lib,-lomp")
      set(OMP_FLAG_AppleClang "-Xclang -fopenmp")

@@ -1,13 +1,13 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_h,v 1.5 2020/01/11 08:01:09 rsadowski Exp $
+$OpenBSD: patch-Source_cmComputeLinkInformation_h,v 1.6 2020/05/25 05:12:00 rsadowski Exp $
 
 Index: Source/cmComputeLinkInformation.h
 --- Source/cmComputeLinkInformation.h.orig
 +++ Source/cmComputeLinkInformation.h
-@@ -170,6 +170,7 @@ class cmComputeLinkInformation (private)
+@@ -176,6 +176,7 @@ class cmComputeLinkInformation (private)
  
    // Implicit link libraries and directories for linker language.
    void LoadImplicitLinkInfo();
 +  void LoadImplicitLinkInfoOpenBSD();
    void AddImplicitLinkInfo();
    void AddImplicitLinkInfo(std::string const& lang);
-   std::set<std::string> ImplicitLinkDirs;
+   void AddRuntimeLinkLibrary(std::string const& lang);

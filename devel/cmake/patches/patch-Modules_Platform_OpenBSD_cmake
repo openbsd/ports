@@ -1,0 +1,15 @@
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.16 2020/05/25 05:12:00 rsadowski Exp $
+
+Index: Modules/Platform/OpenBSD.cmake
+--- Modules/Platform/OpenBSD.cmake.orig
++++ Modules/Platform/OpenBSD.cmake
+@@ -40,4 +40,9 @@ else()
+   set(OPENBSD_X11BASE /usr/X11R6)
+ endif()
+ 
++# If DEBUG_PACKAGES set don't create install stripa rule
++if($ENV{DEBUG_PACKAGES})
++  set(CMAKE_OPENBSD_DEBUG_PACKAGES)
++endif()
++
+ list(APPEND CMAKE_SYSTEM_PREFIX_PATH ${OPENBSD_LOCALBASE})

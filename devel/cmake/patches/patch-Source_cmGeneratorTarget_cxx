@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.12 2020/01/11 08:01:09 rsadowski Exp $
+$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.13 2020/05/25 05:12:00 rsadowski Exp $
 
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -4092,9 +4092,16 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -4154,9 +4154,16 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -20,7 +20,7 @@ Index: Source/cmGeneratorTarget.cxx
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
      version = nullptr;
-@@ -4118,6 +4125,35 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -4180,6 +4187,35 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
  
    // The library name.
    targetNames.Output = prefix + targetNames.Base + suffix;

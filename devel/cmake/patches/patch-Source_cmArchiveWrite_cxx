@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmArchiveWrite_cxx,v 1.4 2020/01/11 08:01:09 rsadowski Exp $
+$OpenBSD: patch-Source_cmArchiveWrite_cxx,v 1.5 2020/05/25 05:12:00 rsadowski Exp $
 
 Get rid of cmLocaleRAII.
 
@@ -29,7 +29,7 @@ the invalid use of the interface.
 Index: Source/cmArchiveWrite.cxx
 --- Source/cmArchiveWrite.cxx.orig
 +++ Source/cmArchiveWrite.cxx
-@@ -236,9 +236,6 @@ bool cmArchiveWrite::AddFile(const char* file, size_t 
+@@ -242,9 +242,6 @@ bool cmArchiveWrite::AddFile(const char* file, size_t 
    }
    const char* out = file + skip;
  
