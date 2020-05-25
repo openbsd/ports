@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/05/25 06:48:21 bentley Exp $
 
 COMMENT=	ISIRI 6219 conforming Farsi fonts
 
@@ -6,10 +6,10 @@ TYPEFACE=	farsifonts
 V=		0.4
 DISTNAME=	farsi_fonts_$V
 PKGNAME=	${TYPEFACE}-ttf-$V
-REVISION=	2
+REVISION =	3
 CATEGORIES=	fonts x11
 
-HOMEPAGE=	http://www.arabeyes.org/project.php?proj=Khotot
+HOMEPAGE =	https://www.arabeyes.org/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
