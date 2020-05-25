@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2020/01/19 20:41:36 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2020/05/25 05:13:53 rsadowski Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_version
@@ -293,6 +293,14 @@ lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py3.py
 lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py3.pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/
 @so lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/cv2.so
+lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/
+lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/__init__.py
+lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/config-${MODPY_DEFAULT_VERSION_3}.py
+lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/config.py
+lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/load_config_py2.py
+lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/load_config_py3.py
+lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/python-${MODPY_DEFAULT_VERSION_3}/
+@so lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/python-${MODPY_DEFAULT_VERSION_3}/cv2.so
 share/licenses/
 share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt

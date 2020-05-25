@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/05/14 12:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2020/05/25 05:13:53 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -15,7 +15,7 @@ GH_TAGNAME =		${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
 REVISION-java =		1
-REVISION-main =		1
+REVISION-main =		2
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -57,10 +57,13 @@ PERMIT_PACKAGE =	Yes
 MODULES =		devel/cmake \
 			lang/python
 
-BUILD_DEPENDS =		math/py-numpy \
-			math/eigen3
+BUILD_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_3} \
+			math/eigen3 \
+			math/py-numpy \
+			math/py-numpy,python3
 
 RUN_DEPENDS-main =	math/py-numpy
+
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -121,6 +124,8 @@ CONFIG_ADJ_CMD =	perl -pi
 .for _l _v in ${SHARED_LIBS}
 CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 .endfor
+
+SUBST_VARS +=	MODPY_DEFAULT_VERSION_3
 
 NO_TEST =	Yes
 # Enable to run the regression tests
