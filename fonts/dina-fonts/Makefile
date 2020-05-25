@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/05/25 06:05:52 bentley Exp $
 
 PKG_ARCH =	*
 
@@ -6,9 +6,9 @@ COMMENT =	monospace bitmap font, primarily aimed at programmers
 
 DISTNAME =	dina-fonts-2.92
 CATEGORIES =	fonts
-REVISION =	2
+REVISION =	3
 
-HOMEPAGE =	http://www.donationcoder.com/Software/Jibz/Dina/
+HOMEPAGE =	https://www.dcmembers.com/jibsen/download/61/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
