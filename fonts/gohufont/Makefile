@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/05/25 06:55:37 bentley Exp $
 
 COMMENT = 	monospace bitmap font for programming and terminal use
 PKG_ARCH =	*
 DISTNAME =	gohufont-2.1
 CATEGORIES =	fonts x11
-REVISION =	1
+REVISION =	2
 
-HOMEPAGE =	http://font.gohu.org/
-MASTER_SITES =	http://font.gohu.org/
+HOMEPAGE =	https://font.gohu.org/
+MASTER_SITES =	https://font.gohu.org/
 
 # WTFPLv2
 PERMIT_PACKAGE =		Yes
