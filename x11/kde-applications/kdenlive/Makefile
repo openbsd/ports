@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
-
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -28,7 +28,7 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-RUN_DEPENDS +=	devel/kf5/breeze-icons \
+RUN_DEPENDS =	devel/kf5/breeze-icons \
 		devel/kf5/kinit \
 		graphics/ffmpeg \
 		misc/shared-mime-info \
@@ -38,7 +38,7 @@ RUN_DEPENDS +=	devel/kf5/breeze-icons \
 		sysutils/cdrtools \
 		x11/qt5/qtquickcontrols
 
-LIB_DEPENDS +=	devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -48,8 +48,8 @@ LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
-		devel/kf5/kdeclarative \
 		devel/kf5/kdbusaddons \
+		devel/kf5/kdeclarative \
 		devel/kf5/kfilemetadata \
 		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
@@ -70,6 +70,7 @@ LIB_DEPENDS +=	devel/kf5/attica \
 		devel/rttr \
 		multimedia/mlt,-main \
 		x11/qt5/qtdeclarative \
+		x11/qt5/qtmultimedia \
 		x11/qt5/qtsvg \
 		x11/qt5/qtwebkit
 
