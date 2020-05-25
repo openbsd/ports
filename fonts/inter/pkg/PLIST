@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/25 07:11:10 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/05/25 05:02:57 bentley Exp $
 share/doc/inter/
 share/doc/inter/LICENSE.txt
 share/fonts/
@@ -39,3 +39,4 @@ share/fonts/inter/Inter-Thin.otf
 share/fonts/inter/Inter-Thin.ttf
 share/fonts/inter/Inter-ThinItalic.otf
 share/fonts/inter/Inter-ThinItalic.ttf
+share/fonts/inter/Inter-V.otf
