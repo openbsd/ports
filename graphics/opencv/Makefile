@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2020/05/25 05:13:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2020/05/25 08:49:10 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -15,7 +15,7 @@ GH_TAGNAME =		${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
 REVISION-java =		1
-REVISION-main =		2
+REVISION-main =		3
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -62,7 +62,8 @@ BUILD_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_3} \
 			math/py-numpy \
 			math/py-numpy,python3
 
-RUN_DEPENDS-main =	math/py-numpy
+RUN_DEPENDS-main =	math/py-numpy \
+			math/py-numpy,python3
 
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
