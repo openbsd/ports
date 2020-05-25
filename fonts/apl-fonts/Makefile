@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/25 05:42:00 bentley Exp $
 
 V =		1.0
 COMMENT =	Adrian Smith's standard APL fonts
@@ -7,13 +7,14 @@ DISTFILES =	apl385-${V}{apl385}${EXTRACT_SUFX} \
 		apl333-${V}{apl333}${EXTRACT_SUFX}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	fonts x11
+REVISION =	0
 
-HOMEPAGE =	http://www.apl385.com/fonts/index.htm
+HOMEPAGE =	https://www.apl385.com/fonts/
 
 # Public Domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://www.apl385.com/fonts/
+MASTER_SITES =	https://www.apl385.com/fonts/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
