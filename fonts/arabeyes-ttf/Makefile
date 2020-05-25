@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/05/25 05:44:06 bentley Exp $
 
 COMMENT=	Arabeyes TrueType Arabic fonts
 
@@ -6,10 +6,10 @@ TYPEFACE =	arabeyes
 V=		2.0
 DISTNAME=	ttf-arabeyes_$V.orig
 PKGNAME=	${TYPEFACE}-ttf-$V
-REVISION=	2
+REVISION=	3
 CATEGORIES=	fonts x11
 
-HOMEPAGE=	http://www.arabeyes.org/project.php?proj=Khotot
+HOMEPAGE=	https://arabeyes.org/Khotot
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
