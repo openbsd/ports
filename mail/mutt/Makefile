@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.132 2020/05/17 11:36:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.133 2020/05/26 12:11:40 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.14.1
+DISTNAME=	mutt-1.14.2
 #PGPSIGFILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 EPOCH=		3
 
