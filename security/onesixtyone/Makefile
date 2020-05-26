@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/05/26 22:14:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/05/26 22:17:54 sthen Exp $
 
 COMMENT=	efficient SNMP scanner
 
 DISTNAME=	onesixtyone-0.3.2
 CATEGORIES=	security
-REVISION=	1
+REVISION=	2
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
