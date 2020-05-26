@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/23 18:01:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/05/26 05:23:51 rsadowski Exp $
 
 COMMENT =	jigsaw puzzle game
 DISTNAME =	palapeli-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/palapeli
 
@@ -11,10 +12,10 @@ SHARED_LIBS +=  pala                      1.0 # 0.2
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5Notifications KF5Service
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += KF5KDEGames KF5KIOCore KF5KIOWidgets KF5Notifications
+WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -23,7 +24,6 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS =	x11/kde-applications/libkdegames
 RUN_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS =	devel/kf5/karchive \
@@ -41,6 +41,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kservice  \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
+		x11/kde-applications/libkdegames \
 		x11/qt5/qtsvg
 
 .include <bsd.port.mk>
