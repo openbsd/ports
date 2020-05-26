@@ -1,23 +1,32 @@
-$OpenBSD: patch-src_openrct2_CMakeLists_txt,v 1.3 2018/03/19 02:59:49 bcallah Exp $
+$OpenBSD: patch-src_openrct2_CMakeLists_txt,v 1.4 2020/05/26 15:41:41 bcallah Exp $
 
 Index: src/openrct2/CMakeLists.txt
 --- src/openrct2/CMakeLists.txt.orig
 +++ src/openrct2/CMakeLists.txt
-@@ -96,7 +96,7 @@ if (NOT APPLE AND NOT MINGW)
+@@ -23,7 +23,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PREFI
+ SET_CHECK_CXX_FLAGS(${PROJECT_NAME})
+ 
+ # GCC / Clang likes us to pass the -lstdc++fs flag to link C++17 filesystem implementation.
+-if (NOT MINGW AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++if (NOT MINGW AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+     if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+         target_link_libraries(${PROJECT_NAME} stdc++fs)
+     endif()
+@@ -169,7 +169,7 @@ if (NOT APPLE AND NOT MINGW AND NOT MSVC)
      # This is ugly hack to work around https://bugs.launchpad.net/ubuntu/+source/gcc-5/+bug/1568899.
      # Once C++17 is enabled (and thus old compilers are no longer supported, this needs to be gone.
      # We cannot simply detect the _compiler_ version, as the bug exists with the C++ _library_
--    target_link_libraries(${PROJECT} gcc_s gcc)
-+    target_link_libraries(${PROJECT})
+-    target_link_libraries(${PROJECT_NAME} gcc_s gcc)
++    target_link_libraries(${PROJECT_NAME})
  endif ()
  
  if (NOT DISABLE_TTF)
-@@ -115,7 +115,7 @@ endif ()
- 
- if (UNIX OR STATIC OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
-     find_library(ICONV_LIBRARIES NAMES iconv libiconv libiconv-2 c)
--    target_link_libraries(${PROJECT} ${ICONV_LIBRARIES})
-+    target_link_libraries(${PROJECT} ${ICONV_LIBRARIES} -L${OPENBSD_X11BASE}/lib)
- endif()
- 
- if (HAVE_DISCORD_RPC)
+@@ -183,7 +183,7 @@ if (NOT DISABLE_TTF)
+         target_link_libraries(${PROJECT_NAME} ${FREETYPE_LIBRARIES})
+             
+         if (UNIX AND NOT APPLE)
+-            target_link_libraries(${PROJECT_NAME} ${FONTCONFIG_LIBRARIES})
++            target_link_libraries(${PROJECT_NAME} ${FONTCONFIG_LIBRARIES} -L${OPENBSD_X11BASE}/lib)
+         endif ()
+     endif ()
+ endif ()
