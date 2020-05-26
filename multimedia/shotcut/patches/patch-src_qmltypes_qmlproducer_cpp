@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_qmltypes_qmlproducer_cpp,v 1.1 2020/05/26 19:11:22 espie Exp $
+
+Index: src/qmltypes/qmlproducer.cpp
+--- src/qmltypes/qmlproducer.cpp.orig
++++ src/qmltypes/qmlproducer.cpp
+@@ -184,11 +184,10 @@ double QmlProducer::displayAspectRatio()
+ QString QmlProducer::get(QString name, int position)
+ {
+     if (m_producer.is_valid()) {
+-        const char* propertyName = name.toUtf8().constData();
+         if (position < 0)
+-            return QString::fromUtf8(m_producer.get(propertyName));
++            return QString::fromUtf8(m_producer.get(name.toUtf8().constData()));
+         else
+-            return QString::fromUtf8(m_producer.anim_get(propertyName, position, duration()));
++            return QString::fromUtf8(m_producer.anim_get(name.toUtf8().constData(), position, duration()));
+     } else {
+         return QString();
+     }
+@@ -197,11 +196,10 @@ QString QmlProducer::get(QString name, int position)
+ double QmlProducer::getDouble(QString name, int position)
+ {
+     if (m_producer.is_valid()) {
+-        const char* propertyName = name.toUtf8().constData();
+         if (position < 0)
+-            return m_producer.get_double(propertyName);
++            return m_producer.get_double(name.toUtf8().constData());
+         else
+-            return m_producer.anim_get_double(propertyName, position, duration());
++            return m_producer.anim_get_double(name.toUtf8().constData(), position, duration());
+     } else {
+         return 0.0;
+     }
+@@ -212,12 +210,11 @@ QRectF QmlProducer::getRect(QString name, int position
+     if (!m_producer.is_valid()) return QRectF();
+     const char* s = m_producer.get(name.toUtf8().constData());
+     if (s) {
+-        const char* propertyName = name.toUtf8().constData();
+         mlt_rect rect;
+         if (position < 0) {
+-            rect = m_producer.get_rect(propertyName);
++            rect = m_producer.get_rect(name.toUtf8().constData());
+         } else {
+-            rect = m_producer.anim_get_rect(propertyName, position, duration());
++            rect = m_producer.anim_get_rect(name.toUtf8().constData(), position, duration());
+         }
+         if (::strchr(s, '%')) {
+             return QRectF(qRound(rect.x * MLT.profile().width()),
