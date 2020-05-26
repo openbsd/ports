@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/05/26 20:01:01 rsadowski Exp $
 
 COMMENT =		infinite-world block sandbox game
 # minetest_game is still 0.4.17
@@ -7,7 +7,7 @@ GAME_V =		0.4.17
 V =			${GAME_V}.1
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://www.minetest.net/
 
@@ -50,6 +50,10 @@ LIB_DEPENDS =		audio/openal \
 			x11/irrlicht
 
 NO_TEST =		Yes
+
+# Use system cmake modules
+pre-configure:
+	rm ${WRKSRC}/cmake/Modules/FindLua*
 
 post-install:
 	mv ${WRKDIR}/minetest_game-${GAME_V}/ \
