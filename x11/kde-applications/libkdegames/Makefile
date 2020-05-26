@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/26 05:12:52 rsadowski Exp $
 
 COMMENT =	common code and data for many KDE games
 DISTNAME =	libkdegames-${VERSION}
@@ -24,6 +24,7 @@ BUILD_DEPENDS =	devel/kf5/kdbusaddons \
 		devel/kf5/kitemviews \
 		devel/kf5/kglobalaccel \
 		devel/kf5/kbookmarks \
+		devel/kf5/kjobwidgets \
 		devel/kf5/kcrash \
 		devel/kf5/ktextwidgets
 
@@ -39,14 +40,12 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kiconthemes \
 		devel/kf5/ki18n \
 		devel/kf5/knewstuff \
-		devel/kf5/kio \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/karchive \
 		devel/kf5/kdnssd \
 		devel/kf5/kdeclarative \
 		devel/kf5/kguiaddons \
-		devel/kf5/kjobwidgets \
 		devel/kf5/kxmlgui \
 		audio/openal \
 		audio/libsndfile
