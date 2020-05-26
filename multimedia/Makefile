@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2020/05/20 15:18:35 tracey Exp $
+# $OpenBSD: Makefile,v 1.125 2020/05/26 17:06:34 espie Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -71,6 +71,7 @@
      SUBDIR += qtav
      SUBDIR += regionset
      SUBDIR += sfml
+     SUBDIR += shotcut
      SUBDIR += shrip
      SUBDIR += streamdvd
      SUBDIR += streamlink
