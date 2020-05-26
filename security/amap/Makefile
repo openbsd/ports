@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/14 00:39:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2020/05/26 22:20:48 sthen Exp $
 
 COMMENT=	application protocol detection tool
 
-REVISION=	0
 DISTNAME=	amap-5.4
 CATEGORIES=	security
+REVISION=	1
 
-HOMEPAGE=	http://thc.org/thc-amap/
+HOMEPAGE=	https://github.com/vanhauser-thc/THC-Archive
 
-# GPL with changes
+# GPL with attribution requirement if used in commercial tools or to provide
+# commercial services
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://freeworld.thc.org/releases/
+WANTLIB += c crypto ssl pcre
 
-WANTLIB=	c crypto ssl pcre
+MASTER_SITES=	https://github.com/vanhauser-thc/THC-Archive/raw/master/Tools/
 
 LIB_DEPENDS=	devel/pcre
 
