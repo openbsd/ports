@@ -1,22 +1,21 @@
-$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.5 2017/02/24 08:05:34 landry Exp $
---- src/extension/implementation/script.cpp.orig	Mon Jan  2 10:44:59 2017
-+++ src/extension/implementation/script.cpp	Tue Jan 24 22:01:33 2017
-@@ -83,14 +83,14 @@ void Script::pump_events (void) {
-     the given interpreter to a custom one per user.
- */
- Script::interpreter_t const Script::interpreterTab[] = {
--        {"perl",   "perl-interpreter",   "perl"   },
-+        {"perl",   "perl-interpreter",   "/usr/bin/perl"   },
- #ifdef WIN32
-         {"python", "python-interpreter", "pythonw" },
+$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.6 2020/05/26 04:53:26 rsadowski Exp $
+Index: src/extension/implementation/script.cpp
+--- src/extension/implementation/script.cpp.orig
++++ src/extension/implementation/script.cpp
+@@ -79,12 +79,12 @@ const std::map<std::string, Script::interpreter_t> Scr
+         { "perl",    {"perl-interpreter",    {"perl"              }}},
+         { "python",  {"python-interpreter",  {"python3"           }}},
  #else
--        {"python", "python-interpreter", "python" },
-+        {"python", "python-interpreter", "${MODPY_BIN}" },
+-        { "perl",    {"perl-interpreter",    {"perl"              }}},
+-        { "python",  {"python-interpreter",  {"python3", "python" }}},
++        { "perl",    {"perl-interpreter",    {"/usr/bin/perl"              }}},
++        { "python",  {"python-interpreter",  {"${MODPY_BIN}"  }}},
  #endif
--        {"ruby",   "ruby-interpreter",   "ruby"   },
--        {"shell",  "shell-interpreter",  "sh"     },
-+        {"ruby",   "ruby-interpreter",   "${RUBY}"   },
-+        {"shell",  "shell-interpreter",  "/bin/sh"     },
-         { NULL,    NULL,                  NULL    }
+         { "python2", {"python2-interpreter", {"python2", "python" }}},
+-        { "ruby",    {"ruby-interpreter",    {"ruby"    }}},
+-        { "shell",   {"shell-interpreter",   {"sh"      }}},
++        { "ruby",    {"ruby-interpreter",    {"${RUBY}"    }}},
++        { "shell",   {"shell-interpreter",   {"/bin/sh"      }}},
  };
+ 
  

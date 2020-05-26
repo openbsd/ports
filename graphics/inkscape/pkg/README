@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:14 espie Exp $
+$OpenBSD: README,v 1.3 2020/05/26 04:53:26 rsadowski Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -10,14 +10,3 @@ Ruby Extensions
 Although there are currently no ruby extension scripts shipped with
 Inkscape, users are free to write their own. If you wish to write ruby
 extensions, then please install Ruby ${MODRUBY_REV}.
-
-Icon Bug
-========
-
-Inkscape is not very resilient to missing icon sets and can crash (for
-example when opening file->"document properties"). If you specify a custom
-icon theme in your ~/.gtkrc-2.0, then make sure that this icon set is
-actually installed.
-
-This bug has been reported:
-https://bugs.launchpad.net/inkscape/+bug/1238142

@@ -1,0 +1,36 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/05/26 04:53:26 rsadowski Exp $
+
+- Set project before include GNUInstallDirs to avoid cmake warnings
+- Fix RPATH to fix linking
+
+CMake Warning (dev) at /usr/local/share/cmake/Modules/GNUInstallDirs.cmake:225 (message):
+  Unable to determine default CMAKE_INSTALL_LIBDIR directory because no
+  target architecture is known.  Please enable at least one language before
+  including GNUInstallDirs.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -27,12 +27,12 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMa
+ 
+ # avoid having empty buildtype
+ set(CMAKE_BUILD_TYPE_INIT "Release")
++project(inkscape)
+ 
+ include(CMakeScripts/HelperFunctions.cmake)
+ include(CMakeScripts/ConfigEnv.cmake)
+ include(GNUInstallDirs) # for the CMAKE_INSTALL_LIBDIR variable
+ 
+-project(inkscape)
+ set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME inkscape) # needs to be before any install() commands
+ 
+ include(CMakeScripts/ConfigPaths.cmake)
+@@ -66,7 +66,7 @@ if(APPLE)
+     SET(CMAKE_MACOSX_RPATH TRUE)
+     SET(CMAKE_INSTALL_RPATH "@loader_path/${INKSCAPE_INSTALL_LIBDIR_RELATIVE_TO_BINDIR}")
+ else()
+-    SET(CMAKE_INSTALL_RPATH "$ORIGIN/${INKSCAPE_INSTALL_LIBDIR_RELATIVE_TO_BINDIR}")
++    SET(CMAKE_INSTALL_RPATH  ${CMAKE_INSTALL_PREFIX}/${INKSCAPE_INSTALL_LIBDIR})
+ endif()
+ 
+ # this can be removed if/when cmake 3.1 is made the minimum required version
