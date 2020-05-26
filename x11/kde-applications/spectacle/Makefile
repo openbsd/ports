@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/23 18:01:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/05/26 05:17:20 rsadowski Exp $
 
 COMMENT =	KDE screen capture and screenshot program
 VERSION =	19.04.3
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/spectacle/
 
@@ -12,7 +13,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5DBusAddons KF5Declarative KF5I18n
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5NewStuff
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Kipi KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Notifications KF5Package KF5Purpose
 WANTLIB += KF5PurposeWidgets KF5Service KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
@@ -40,16 +41,17 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kdeclarative \
 		devel/kf5/ki18n \
-		devel/kf5/kjobwidgets \
 		devel/kf5/kio \
+		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
 		devel/kf5/knotifications \
 		devel/kf5/kpackage \
-		devel/kf5/purpose \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
+		devel/kf5/purpose \
+		x11/kde-applications/libkipi \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtx11extras
 
