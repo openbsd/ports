@@ -1,0 +1,19 @@
+$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.14 2020/05/26 15:15:09 rsadowski Exp $
+
+x11/kde4 and maybe some other spooky Qt4 ports need the magic behind
+Qt4ConfigDependentSettings also for none static libraries.
+
+Index: Modules/Qt4ConfigDependentSettings.cmake
+--- Modules/Qt4ConfigDependentSettings.cmake.orig
++++ Modules/Qt4ConfigDependentSettings.cmake
+@@ -56,10 +56,6 @@ if(Q_WS_WIN  AND  NOT QT_IS_STATIC)
+   set(QT_DEFINITIONS ${QT_DEFINITIONS} -DQT_DLL)
+ endif()
+ 
+-if(NOT QT_IS_STATIC)
+-  return()
+-endif()
+-
+ # QtOpenGL dependencies
+ find_package(OpenGL)
+ set (QT_QTOPENGL_LIB_DEPENDENCIES ${OPENGL_glu_LIBRARY} ${OPENGL_gl_LIBRARY})
