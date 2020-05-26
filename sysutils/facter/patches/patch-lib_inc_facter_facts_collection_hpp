@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_inc_facter_facts_collection_hpp,v 1.1 2018/04/16 11:24:47 bluhm Exp $
+$OpenBSD: patch-lib_inc_facter_facts_collection_hpp,v 1.2 2020/05/26 21:42:17 sebastia Exp $
 
 Index: lib/inc/facter/facts/collection.hpp
 --- lib/inc/facter/facts/collection.hpp.orig
 +++ lib/inc/facter/facts/collection.hpp
-@@ -101,7 +101,7 @@ namespace facter { namespace facts {
+@@ -103,7 +103,7 @@ namespace facter { namespace facts {
          /**
           * Destructor for fact collection.
           */
