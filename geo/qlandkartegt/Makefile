@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2020/05/26 15:36:54 kirby Exp $
 
 COMMENT =	garmin GPS map management tool
 
 DISTNAME =	qlandkartegt-1.8.1
 CATEGORIES =	geo x11
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://www.qlandkarte.org/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qlandkartegt/}
