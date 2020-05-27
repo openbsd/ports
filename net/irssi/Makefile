@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2020/05/23 10:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2020/05/27 10:58:45 kn Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -10,7 +10,10 @@ DISTNAME =	irssi-$V
 PKGSPEC-main =	irssi-=$V
 PKGNAME-main =	irssi-$V
 PKGNAME-otr =	irssi-otr-$V
-REVISION =	2
+REVISION =	3
+
+PATCHFILES =	glib-2-63.patch
+PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	net
 
