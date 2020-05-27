@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.20 2019/12/01 03:19:10 lteo Exp $
+$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.21 2020/05/27 02:32:10 lteo Exp $
 Index: src/dynamic-preprocessors/Makefile.in
 --- src/dynamic-preprocessors/Makefile.in.orig
 +++ src/dynamic-preprocessors/Makefile.in
-@@ -1647,19 +1647,8 @@ clean-local:
+@@ -1649,19 +1649,8 @@ clean-local:
  	rm -rf include build
  
  install-data-local:

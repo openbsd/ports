@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.17 2019/12/01 03:19:10 lteo Exp $
+$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.18 2020/05/27 02:32:10 lteo Exp $
 Index: src/dynamic-preprocessors/dcerpc2/Makefile.in
 --- src/dynamic-preprocessors/dcerpc2/Makefile.in.orig
 +++ src/dynamic-preprocessors/dcerpc2/Makefile.in
@@ -11,7 +11,7 @@ Index: src/dynamic-preprocessors/dcerpc2/Makefile.in
  @SO_WITH_STATIC_LIB_TRUE@libsf_dce2_preproc_la_LIBADD =  \
  @SO_WITH_STATIC_LIB_TRUE@	../libsf_dynamic_preproc.la \
  @SO_WITH_STATIC_LIB_TRUE@	$(am__append_1)
-@@ -608,7 +608,7 @@ distdir-am: $(DISTFILES)
+@@ -609,7 +609,7 @@ distdir-am: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am

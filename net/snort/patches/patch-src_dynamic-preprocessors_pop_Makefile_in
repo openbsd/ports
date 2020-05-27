@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_dynamic-preprocessors_pop_Makefile_in,v 1.15 2019/12/01 03:19:10 lteo Exp $
+$OpenBSD: patch-src_dynamic-preprocessors_pop_Makefile_in,v 1.16 2020/05/27 02:32:10 lteo Exp $
 Index: src/dynamic-preprocessors/pop/Makefile.in
 --- src/dynamic-preprocessors/pop/Makefile.in.orig
 +++ src/dynamic-preprocessors/pop/Makefile.in
@@ -11,7 +11,7 @@ Index: src/dynamic-preprocessors/pop/Makefile.in
  @SO_WITH_STATIC_LIB_TRUE@libsf_pop_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_pop_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -591,7 +591,7 @@ distdir-am: $(DISTFILES)
+@@ -592,7 +592,7 @@ distdir-am: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
