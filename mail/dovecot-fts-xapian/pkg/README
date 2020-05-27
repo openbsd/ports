@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2020/02/15 08:51:23 sthen Exp $
+$OpenBSD: README,v 1.3 2020/05/27 11:27:49 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running dovecot-fts-xapian on OpenBSD
@@ -10,9 +10,11 @@ most users:
 
     mail_plugins = (...) fts fts_xapian (...)
 
-The default_vsz_limit will usually need to be increased in 10-master.conf:
+The service's vsz_limit may need to be increased (or disabled) in 10-master.conf:
 
-    default_vsz_limit = 2GB
+    service indexer-worker {
+      vsz_limit = 0 # or 1GB etc.
+    }
 
 Then configure the plugin's settings in 90-plugin.conf:
 

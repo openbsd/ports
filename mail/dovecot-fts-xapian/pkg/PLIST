@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/06 11:30:32 sthen Exp $
-lib/dovecot/
+@comment $OpenBSD: PLIST,v 1.2 2020/05/27 11:27:49 sthen Exp $
 @so lib/dovecot/lib21_fts_xapian_plugin.so
 share/doc/pkg-readmes/${PKGSTEM}

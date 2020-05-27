@@ -1,29 +1,21 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/15 15:38:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/27 11:27:49 sthen Exp $
 
 COMMENT=		full text search plugin for Dovecot using Xapian
 
-V=			1.2.9
-
 GH_ACCOUNT=		grosjo
 GH_PROJECT=		fts-xapian
-GH_TAGNAME=		${V}
-PKGNAME=		dovecot-fts-xapian-${V}
-
-# remove DISTNAME at next update; upstream rerolled the distfile
-DISTNAME=		fts-xapian-${V}-1
-REVISION=		0
+GH_TAGNAME=		1.3.1
+PKGNAME=		dovecot-${DISTNAME}
 
 CATEGORIES=		mail
-
-HOMEPAGE=		https://github.com/grosjo/fts-xapian
 
 MAINTAINER=		Tom Wong-Cornall <tom@wongcornall.com>
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuio icuuc m uuid
-WANTLIB += xapian z
+WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuio icuuc m sqlite3
+WANTLIB += uuid xapian z
 
 COMPILER=		base-clang ports-gcc
 
