@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1974 2020/05/27 09:51:53 paco Exp $
+# $OpenBSD: Makefile,v 1.1975 2020/05/27 13:28:56 paco Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1451,6 +1451,7 @@
      SUBDIR += py-fields,python3
      SUBDIR += py-filebytes
      SUBDIR += py-filebytes,python3
+     SUBDIR += py-filetype,python3
      SUBDIR += py-fixtures
      SUBDIR += py-fixtures,python3
      SUBDIR += py-flaky
