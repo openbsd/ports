@@ -1,7 +1,8 @@
-$OpenBSD: patch-WPrefs_app_Menu_c,v 1.5 2016/06/17 11:49:33 dcoppa Exp $
---- WPrefs.app/Menu.c.orig	Tue Aug 11 20:41:14 2015
-+++ WPrefs.app/Menu.c	Wed Jun  8 09:52:32 2016
-@@ -517,19 +517,19 @@ static void createPanel(_Panel * p)
+$OpenBSD: patch-WPrefs_app_Menu_c,v 1.6 2020/05/27 09:07:55 solene Exp $
+Index: WPrefs.app/Menu.c
+--- WPrefs.app/Menu.c.orig
++++ WPrefs.app/Menu.c
+@@ -518,19 +518,19 @@ static void createPanel(_Panel * p)
  		data = putNewItem(panel, pad, DirectoryInfo, _("Themes"));
  		data->param.directory.command = "setstyle";
  		data->param.directory.directory =

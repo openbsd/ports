@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2017/03/29 08:51:24 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2020/05/27 09:07:55 solene Exp $
 @pkgpath x11/windowmaker
 GNUstep/
 GNUstep/Applications/
 GNUstep/Applications/WPrefs.app
 @bin bin/WPrefs
 @bin bin/convertfonts
-bin/get-wings-flags
-bin/get-wraster-flags
-bin/get-wutil-flags
 @bin bin/geticonset
 @bin bin/getstyle
 @bin bin/seticons
@@ -31,16 +28,16 @@ include/WINGs/WINGsP.h
 include/WINGs/WUtil.h
 include/WMaker.h
 include/wraster.h
-lib/libWINGs.a
+@static-lib lib/libWINGs.a
 lib/libWINGs.la
 @lib lib/libWINGs.so.${LIBWINGs_VERSION}
-lib/libWMaker.a
+@static-lib lib/libWMaker.a
 lib/libWMaker.la
 @lib lib/libWMaker.so.${LIBWMaker_VERSION}
-lib/libWUtil.a
+@static-lib lib/libWUtil.a
 lib/libWUtil.la
 @lib lib/libWUtil.so.${LIBWUtil_VERSION}
-lib/libwraster.a
+@static-lib lib/libwraster.a
 lib/libwraster.la
 @lib lib/libwraster.so.${LIBwraster_VERSION}
 lib/pkgconfig/WINGs.pc
@@ -60,9 +57,6 @@ lib/pkgconfig/wrlib.pc
 @comment man/cs/man1/wxpaste.1
 @man man/man1/WPrefs.1
 @man man/man1/WindowMaker.1
-@man man/man1/get-wings-flags.1
-@man man/man1/get-wraster-flags.1
-@man man/man1/get-wutil-flags.1
 @man man/man1/geticonset.1
 @man man/man1/getstyle.1
 @man man/man1/seticons.1
@@ -77,7 +71,6 @@ lib/pkgconfig/wrlib.pc
 @man man/man1/wmsetbg.1
 @man man/man1/wxcopy.1
 @man man/man1/wxpaste.1
-@man man/man8/upgrade-windowmaker-defaults.8
 @comment man/ru/
 @comment man/ru/man1/
 @comment man/ru/man1/geticonset.1
@@ -266,6 +259,7 @@ share/WindowMaker/README
 share/WindowMaker/README.themes
 share/WindowMaker/Sounds/
 share/WindowMaker/Styles/
+share/WindowMaker/Styles/Adwaita.style
 share/WindowMaker/Styles/Autumn.style
 share/WindowMaker/Styles/Black.style
 share/WindowMaker/Styles/BlackTexture.style
@@ -308,8 +302,12 @@ share/WindowMaker/Themes/OpenStep.style
 share/WindowMaker/Themes/Pastel.style
 share/WindowMaker/Themes/SteelBlueSilk.style
 share/WindowMaker/appearance.menu
+share/WindowMaker/appearance.menu.fy
+share/WindowMaker/appearance.menu.nl
 share/WindowMaker/autostart.sh
 share/WindowMaker/background.menu
+share/WindowMaker/background.menu.fy
+share/WindowMaker/background.menu.nl
 share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
 share/WindowMaker/plmenu

@@ -1,10 +1,11 @@
-$OpenBSD: patch-WPrefs_app_Appearance_c,v 1.1 2016/06/17 11:49:33 dcoppa Exp $
+$OpenBSD: patch-WPrefs_app_Appearance_c,v 1.2 2020/05/27 09:07:55 solene Exp $
 
 On OpenBSD, time_t is long long.
 
---- WPrefs.app/Appearance.c.orig	Wed Jun  8 13:11:47 2016
-+++ WPrefs.app/Appearance.c	Wed Jun  8 13:13:05 2016
-@@ -923,7 +923,7 @@ static char *makeFileName(const char *prefix)
+Index: WPrefs.app/Appearance.c
+--- WPrefs.app/Appearance.c.orig
++++ WPrefs.app/Appearance.c
+@@ -926,7 +926,7 @@ static char *makeFileName(const char *prefix)
  		char buf[30];
  
  		wfree(fname);

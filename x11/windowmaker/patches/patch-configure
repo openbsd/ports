@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.5 2017/03/29 08:51:24 dcoppa Exp $
---- configure.orig	Mon Mar 13 16:26:41 2017
-+++ configure	Wed Mar 29 09:09:48 2017
-@@ -17102,7 +17102,7 @@ else
+$OpenBSD: patch-configure,v 1.6 2020/05/27 09:07:55 solene Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -17612,7 +17612,7 @@ else
    wm_cv_imgfmt_xpm=no
                             wm_save_LIBS="$LIBS"
           if wm_fn_lib_try_link "XpmCreatePixmapFromData" "$XLFLAGS $XLIBS -lXpm"; then :

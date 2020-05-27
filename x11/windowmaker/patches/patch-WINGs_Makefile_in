@@ -1,7 +1,8 @@
-$OpenBSD: patch-WINGs_Makefile_in,v 1.9 2017/03/29 08:51:24 dcoppa Exp $
---- WINGs/Makefile.in.orig	Mon Mar 13 16:26:42 2017
-+++ WINGs/Makefile.in	Wed Mar 29 09:09:48 2017
-@@ -516,6 +516,7 @@ libWUtil_la_SOURCES = \
+$OpenBSD: patch-WINGs_Makefile_in,v 1.10 2020/05/27 09:07:55 solene Exp $
+Index: WINGs/Makefile.in
+--- WINGs/Makefile.in.orig
++++ WINGs/Makefile.in
+@@ -553,6 +553,7 @@ libWUtil_la_SOURCES = \
  
  AM_CFLAGS = 
  AM_CPPFLAGS = -DRESOURCE_PATH=\"$(datadir)/WINGs\" \
