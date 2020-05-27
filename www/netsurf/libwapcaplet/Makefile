@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/11/11 03:21:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2020/05/27 11:38:19 bentley Exp $
 
 COMMENT =		string internment library
 
 NETSURF_PROJECT =	libwapcaplet
-NETSURF_VERSION =	0.4.2
-REVISION =		0
+NETSURF_VERSION =	0.4.3
 
 CATEGORIES=		devel
 SHARED_LIBS =		wapcaplet 3.0 #0.3.0

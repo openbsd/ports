@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:04:06 espie Exp $
-@bin bin/netsurf-gtk
+@comment $OpenBSD: PLIST,v 1.16 2020/05/27 11:38:18 bentley Exp $
+@bin bin/netsurf-gtk3
 @man man/man1/netsurf-gtk.1
 share/applications/netsurf.desktop
 share/netsurf/
@@ -7,27 +7,25 @@ share/netsurf/C
 share/netsurf/Messages
 share/netsurf/SearchEngines
 share/netsurf/adblock.css
-share/netsurf/arrow_down_8x32.png
 share/netsurf/ca-bundle.txt
-share/netsurf/cookies.gtk2.ui
+share/netsurf/cookies.gtk3.ui
 share/netsurf/credits.html
 share/netsurf/de/
 share/netsurf/de/Messages
 share/netsurf/de/welcome.html
 share/netsurf/default.css
 share/netsurf/default.ico
-share/netsurf/downloads.gtk2.ui
+share/netsurf/downloads.gtk3.ui
 share/netsurf/en/
 share/netsurf/en/Messages
 share/netsurf/en/credits.html
 share/netsurf/en/licence.html
-share/netsurf/en/maps.html
 share/netsurf/en/welcome.html
 share/netsurf/favicon.png
 share/netsurf/fr/
 share/netsurf/fr/Messages
-share/netsurf/globalhistory.gtk2.ui
-share/netsurf/hotlist.gtk2.ui
+share/netsurf/globalhistory.gtk3.ui
+share/netsurf/hotlist.gtk3.ui
 share/netsurf/icons/
 share/netsurf/icons/arrow-l.png
 share/netsurf/icons/content.png
@@ -35,7 +33,9 @@ share/netsurf/icons/directory.png
 share/netsurf/icons/directory2.png
 share/netsurf/icons/hotlist-add.png
 share/netsurf/icons/hotlist-rmv.png
+share/netsurf/icons/local-history.png
 share/netsurf/icons/search.png
+share/netsurf/icons/show-cookie.png
 share/netsurf/internal.css
 share/netsurf/it/
 share/netsurf/it/Messages
@@ -46,11 +46,9 @@ share/netsurf/ja/
 share/netsurf/ja/welcome.html
 share/netsurf/languages
 share/netsurf/licence.html
-share/netsurf/localhistory.gtk2.ui
-share/netsurf/login.gtk2.ui
-share/netsurf/maps.html
+share/netsurf/localhistory.gtk3.ui
 share/netsurf/netsurf-16x16.xpm
-share/netsurf/netsurf.gtk2.ui
+share/netsurf/netsurf.gtk3.ui
 share/netsurf/netsurf.png
 share/netsurf/netsurf.xpm
 share/netsurf/nl/
@@ -58,11 +56,11 @@ share/netsurf/nl/Messages
 share/netsurf/nl/credits.html
 share/netsurf/nl/licence.html
 share/netsurf/nl/welcome.html
-share/netsurf/options.gtk2.ui
-share/netsurf/password.gtk2.ui
+share/netsurf/options.gtk3.ui
+share/netsurf/pageinfo.gtk3.ui
+share/netsurf/password.gtk3.ui
 share/netsurf/quirks.css
-share/netsurf/ssl.gtk2.ui
-share/netsurf/tabcontents.gtk2.ui
+share/netsurf/tabcontents.gtk3.ui
 share/netsurf/throbber/
 share/netsurf/throbber/throbber0.png
 share/netsurf/throbber/throbber1.png
@@ -73,8 +71,8 @@ share/netsurf/throbber/throbber5.png
 share/netsurf/throbber/throbber6.png
 share/netsurf/throbber/throbber7.png
 share/netsurf/throbber/throbber8.png
-share/netsurf/toolbar.gtk2.ui
-share/netsurf/viewdata.gtk2.ui
-share/netsurf/warning.gtk2.ui
+share/netsurf/toolbar.gtk3.ui
+share/netsurf/viewdata.gtk3.ui
+share/netsurf/warning.gtk3.ui
 share/netsurf/welcome.html
 @tag update-desktop-database

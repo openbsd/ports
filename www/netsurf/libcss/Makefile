@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2019/11/11 03:21:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2020/05/27 11:38:18 bentley Exp $
 
 COMMENT =		CSS parser and selection engine
 
 NETSURF_PROJECT =	libcss
-NETSURF_VERSION =	0.9.0
-REVISION =		0
+NETSURF_VERSION =	0.9.1
 
 SHARED_LIBS =		css 6.0 #0.9.0
 

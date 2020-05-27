@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2019/11/11 03:21:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.39 2020/05/27 11:38:18 bentley Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	3.9
-REVISION =		0
+NETSURF_VERSION =	3.10
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
@@ -22,19 +21,18 @@ LIB_DEPENDS =		graphics/libwebp \
 			www/netsurf/libnspsl>=0.1.2 \
 			www/netsurf/libnsutils>=0.0.3 \
 			www/netsurf/libutf8proc>=1.3.1p0 \
-			x11/gtk+2 \
+			x11/gtk+3 \
 			x11/gnome/librsvg \
 			net/curl
 RUN_DEPENDS =		devel/desktop-file-utils
 TEST_DEPENDS =		devel/check
 
-WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 c cairo crypto css curl dom expat fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 hubbub iconv
-WANTLIB += intl jpeg m nsbmp nsgif nslog nspsl nsutils pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 parserutils png pthread rsvg-2
-WANTLIB += ssl utf8proc wapcaplet webp z
+WANTLIB += atk-1.0 c cairo cairo-gobject crypto css curl dom expat
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 harfbuzz hubbub iconv intl jpeg m
+WANTLIB += nsbmp nsgif nslog nspsl nsutils pango-1.0 pangocairo-1.0
+WANTLIB += parserutils png pthread rsvg-2 ssl utf8proc wapcaplet
+WANTLIB += webp z
 
 MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \

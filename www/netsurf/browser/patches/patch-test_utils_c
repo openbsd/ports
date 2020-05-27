@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_utils_c,v 1.1 2020/05/27 11:38:18 bentley Exp $
+
+Index: test/utils.c
+--- test/utils.c.orig
++++ test/utils.c
+@@ -30,6 +30,8 @@
+ #include <string.h>
+ #include <check.h>
+ 
++char *strcasestr(const char *, const char *little);
++
+ #include "utils/string.h"
+ #include "utils/corestrings.h"
+ 
