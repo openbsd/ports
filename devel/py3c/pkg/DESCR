@@ -1,0 +1,13 @@
+py3c helps you port C extensions to Python 3.
+
+It provides a detailed guide, and a set of macros to make porting easy
+and reduce boilerplate.
+
+Design principles
+ - Reduce chances of accidental subtle errors
+ - Minimize boilerplate
+ - Prefer the Python 3 way of doing things
+ - Minimize semantic changes under Python 2
+
+Versions
+ Projects using py3c will be compatible with CPython 2.6, 2.7, and 3.3+.
