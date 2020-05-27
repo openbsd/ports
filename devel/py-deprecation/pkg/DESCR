@@ -1,0 +1,5 @@
+deprecation is a library that enables automated deprecations. It offers the
+deprecated() decorator to wrap functions, providing proper warnings both in
+documentation and via Python's warnings system, as well as the
+deprecation.fail_if_not_removed() decorator for test methods to ensure that
+deprecated code is eventually removed.
