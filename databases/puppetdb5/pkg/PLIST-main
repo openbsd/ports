@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2018/11/12 07:15:56 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2020/05/27 21:08:00 sebastia Exp $
 @option is-branch
 @newgroup _puppetdb:719
 @newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
@@ -30,6 +30,7 @@ share/puppetdb/cli/
 share/puppetdb/cli/apps/
 share/puppetdb/cli/apps/anonymize
 share/puppetdb/cli/apps/config-migration
+share/puppetdb/cli/apps/delete-reports
 share/puppetdb/cli/apps/foreground
 share/puppetdb/cli/apps/reload
 share/puppetdb/cli/apps/ssl-setup
