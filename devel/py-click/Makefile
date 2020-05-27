@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/05/27 21:46:14 sebastia Exp $
 
 COMMENT=	command line library for Python
 
 MODPY_EGG_VERSION=6.7
 DISTNAME=	click-${MODPY_EGG_VERSION}
 PKGNAME=	py-click-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
 HOMEPAGE=	http://click.pocoo.org/6/
-
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
