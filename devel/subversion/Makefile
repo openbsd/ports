@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2020/05/15 14:47:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.180 2020/05/28 12:25:27 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -7,7 +7,7 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
-VERSION=		1.13.0
+VERSION=		1.14.0
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
@@ -21,17 +21,15 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-REVISION-main=		1
-REVISION-perl=		0
-REVISION-python=	0
-REVISION-ruby=		0
-REVISION-ap2=		0
-
-MODRUBY_REV ?=	2.5
+MODRUBY_REV ?=	2.7
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
 MODRUBY_BINREV=	${MODRUBY_REV:S/.//}
 
-SO_VERSION=	5.0
+# Subversion supports either python2 or python3 bindings. Consumers in the
+# ports tree are not yet ready for python3. So keep using python 2.7 for now.
+MODPY_VERSION ?= 2.7
+
+SO_VERSION=	6.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \
 		svn_ra-1 svn_ra_serf-1 svn_ra_local-1 \
@@ -69,7 +67,8 @@ MODULES=	lang/python
 
 WANTLIB=	expat iconv intl lz4 m pthread z
 
-BUILD_DEPENDS=	devel/gettext,-tools
+BUILD_DEPENDS=	devel/gettext,-tools \
+		devel/py3c
 
 MULTI_PACKAGES = -main -ap2 -perl -python -ruby -gnome-keyring
 
@@ -142,8 +141,15 @@ LIB_DEPENDS-gnome-keyring= ${MAINSPEC} \
 RUN_DEPENDS-gnome-keyring=
 
 MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON2=${MODPY_BIN} MKDIR="/bin/mkdir -p"
+
+# Before running ./configure we must run autogen.sh to regenerate Python3 SWIG
+# files shipped in the tarball for Python2: https://svn.apache.org/r1877960
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+AUTORECONF=		./autogen.sh
+CONFIGURE_STYLE=	autoreconf
+
+CONFIGURE_ENV=	PYTHON=${MODPY_BIN} MKDIR="/bin/mkdir -p"
 CONFIGURE_ARGS+=--with-sasl=${LOCALBASE} \
 		--without-jikes \
 		--without-jdk \
@@ -195,7 +201,7 @@ SUBST_VARS+=	LOCALBASE SO_VERSION MODRUBY_BINREV LIBsvn_swig_ruby-1_VERSION
 pre-patch:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
-pre-configure:
+post-patch:
 	@${SUBST_CMD} ${WRKSRC}/Makefile.in \
 		${WRKSRC}/subversion/libsvn_subr/auth.c
 	mv ${WRKSRC}/subversion/bindings/swig/ruby/libsvn_swig_ruby{,${MODRUBY_BINREV}}
