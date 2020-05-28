@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2020/05/27 11:38:18 bentley Exp $
+# $OpenBSD: Makefile,v 1.40 2020/05/28 15:25:26 cwen Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.10
+REVISION =		0
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
@@ -46,11 +47,11 @@ MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 
 post-patch:
 	#https://bugs.netsurf-browser.org/mantis/view.php?id=2045
-	cp ${WRKSRC}/frontends/gtk/res/options.gtk2.ui{,.unfixed}
-	cd ${WRKSRC} && egrep translatable.*preferences frontends/gtk/res/options.gtk2.ui | \
+	cp ${WRKSRC}/frontends/gtk/res/options.gtk3.ui{,.unfixed}
+	cd ${WRKSRC} && egrep translatable.*preferences frontends/gtk/res/options.gtk3.ui | \
 		sed -e 's/.*>\(.*\)<.*/\1/' | while read c ; do \
 		v=$$(egrep ^en\..*$$c: ${WRKSRC}/resources/FatMessages | cut -d : -f2 | sed -e 's/</\&lt;/g') ; \
-		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/frontends/gtk/res/options.gtk2.ui ; done
+		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/frontends/gtk/res/options.gtk3.ui ; done
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/netsurf-gtk.1 \
 		${PREFIX}/man/man1/netsurf-gtk.1
