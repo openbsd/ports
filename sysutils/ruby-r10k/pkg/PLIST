@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/12/05 07:33:41 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/05/28 21:19:43 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitattributes
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/pull_request_template.md
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/docker.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.mkd
@@ -10,7 +15,6 @@ ${GEM_LIB}/gems/${DISTNAME}/CODEOWNERS
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.mkd
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/MAINTAINERS
 ${GEM_LIB}/gems/${DISTNAME}/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/azure-pipelines.yml
@@ -40,12 +44,13 @@ ${GEM_LIB}/gems/${DISTNAME}/docker/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/docker/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/docker/README.md
-${GEM_LIB}/gems/${DISTNAME}/docker/distelli-manifest.yml
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/Dockerfile
+${GEM_LIB}/gems/${DISTNAME}/docker/r10k/adduser.sh
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.d/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.d/10-analytics.sh
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.sh
+${GEM_LIB}/gems/${DISTNAME}/docker/r10k/release.Dockerfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/spec/
 ${GEM_LIB}/gems/${DISTNAME}/docker/spec/dockerfile_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/docker/spec/fixtures/
@@ -88,16 +93,6 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/00_pe_install.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/10_git_config.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/20_pe_r10k.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/README.mkd
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/README.mkd
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_centos5.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_centos6.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_rhel7.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_sles11.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_sles12.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1004.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1204.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1404.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_affects_forge_source.rb
@@ -210,10 +205,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/deployment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/deployment/config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/bare.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/git.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/name.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/svn.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/with_modules.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/errors/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/errors/formatting.rb
@@ -273,8 +270,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/uri_definition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source/exec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source/git.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source/hash.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source/svn.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source/yaml.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/source/yamldir.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/svn/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/svn.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/svn/remote.rb
@@ -454,8 +455,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/uri_definition_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/source/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/source/base_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/source/exec_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/source/git_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/source/hash_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/source/svn_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/source/yaml_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/source_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/svn/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/svn/remote_spec.rb
