@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.657 2020/05/19 15:34:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.658 2020/05/28 08:12:45 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -115,7 +115,6 @@
      SUBDIR += gtksourceview
      SUBDIR += gtksourceview3
      SUBDIR += gtksourceview4
-     SUBDIR += gtksourceviewmm3
      SUBDIR += gxmessage
      SUBDIR += herbstluftwm
      SUBDIR += hicolor-icon-theme
