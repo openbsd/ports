@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.109 2020/05/22 12:31:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.110 2020/05/28 08:00:26 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -573,6 +573,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-rou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-vpc-link.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/export-api.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-api-mapping.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-api-mappings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-api.rst
@@ -1504,6 +1505,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/docdb/stop-db-cluster.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/docdb/wait/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/docdb/wait/db-instance-available.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/docdb/wait/db-instance-deleted.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ds/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ds/describe-directories.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ds/describe-trusts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/batch-get-item.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/batch-write-item.rst
