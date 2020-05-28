@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2020/03/01 09:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2020/05/28 18:50:52 kmos Exp $
 
 COMMENT=		atk-bridge for at-spi2
 
@@ -22,9 +22,6 @@ LIB_DEPENDS=		devel/atk \
 
 # not needed in the package, but build fails in tests/ without this
 BUILD_DEPENDS=		textproc/libxml
-
-# needed for ld.bfd(1)
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 # DBus
 TEST_IS_INTERACTIVE=	x11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2020/05/14 14:58:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2020/05/28 18:50:52 kmos Exp $
 
 COMMENT=		service interface for assistive technologies
 
@@ -19,9 +19,6 @@ MODULES=		devel/meson \
 
 LIB_DEPENDS=		devel/glib2 \
 			x11/dbus
-
-# needed for ld.bfd(1)
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 MODGNOME_TOOLS=		gobject-introspection
 
