@@ -1,7 +1,8 @@
-$OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.5 2015/07/19 23:46:08 naddy Exp $
---- gettext-runtime/intl/l10nflist.c.orig	Fri Jun  5 09:01:10 2015
-+++ gettext-runtime/intl/l10nflist.c	Sat Jul 18 19:13:09 2015
-@@ -177,6 +177,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+$OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.6 2020/05/28 19:52:35 naddy Exp $
+Index: gettext-runtime/intl/l10nflist.c
+--- gettext-runtime/intl/l10nflist.c.orig
++++ gettext-runtime/intl/l10nflist.c
+@@ -166,6 +166,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
    struct loaded_l10nfile **lastp;
    struct loaded_l10nfile *retval;
    char *cp;
@@ -9,7 +10,7 @@ $OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.5 2015/07/19 23:46:08 naddy
    size_t dirlist_count;
    size_t entries;
    int cnt;
-@@ -187,7 +188,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+@@ -176,7 +177,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
      dirlist_len = 0;
  
    /* Allocate room for the full file name.  */
@@ -18,7 +19,7 @@ $OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.5 2015/07/19 23:46:08 naddy
  				  + strlen (language)
  				  + ((mask & XPG_TERRITORY) != 0
  				     ? strlen (territory) + 1 : 0)
-@@ -198,6 +199,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+@@ -187,6 +188,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
  				  + ((mask & XPG_MODIFIER) != 0
  				     ? strlen (modifier) + 1 : 0)
  				  + 1 + strlen (filename) + 1);
@@ -26,7 +27,7 @@ $OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.5 2015/07/19 23:46:08 naddy
  
    if (abs_filename == NULL)
      return NULL;
-@@ -211,32 +213,33 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+@@ -200,32 +202,33 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
        cp += dirlist_len;
        cp[-1] = '/';
      }
@@ -71,7 +72,7 @@ $OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.5 2015/07/19 23:46:08 naddy
  
    /* Look in list of already loaded domains whether it is already
       available.  */
-@@ -360,7 +363,7 @@ _nl_normalize_codeset (const char *codeset, size_t nam
+@@ -349,7 +352,7 @@ _nl_normalize_codeset (const char *codeset, size_t nam
    if (retval != NULL)
      {
        if (only_digit)

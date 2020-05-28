@@ -1,4 +1,4 @@
-$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.10 2019/05/20 22:15:03 naddy Exp $
+$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.11 2020/05/28 19:52:35 naddy Exp $
 
 Use standard shared library versioning.
 
@@ -8,16 +8,16 @@ This was also a race if MAKE_JOBS > 1.
 Index: gettext-tools/gnulib-lib/Makefile.in
 --- gettext-tools/gnulib-lib/Makefile.in.orig
 +++ gettext-tools/gnulib-lib/Makefile.in
-@@ -2605,7 +2605,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
- 	$(ISNAND_LIBM) $(ISNANF_LIBM) $(ISNANL_LIBM) $(LIB_ACL) \
- 	$(LIB_CLOCK_GETTIME) $(LOG10_LIBM) $(LTLIBICONV) $(LTLIBINTL) \
- 	$(LTLIBTHREAD) $(LTLIBUNISTRING) $(POW_LIBM) \
--	@INTL_MACOSX_LIBS@ -release @VERSION@ $(am__append_3) \
-+	@INTL_MACOSX_LIBS@ $(am__append_3) \
- 	$(am__append_8) $(am__append_24) $(am__append_25)
+@@ -2782,7 +2782,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
+ 	$(LIB_ACL) $(LIB_CLOCK_GETTIME) $(LIB_HARD_LOCALE) \
+ 	$(LIB_MBRTOWC) $(LIB_SETLOCALE) $(LIB_SETLOCALE_NULL) \
+ 	$(LOG10_LIBM) $(LTLIBICONV) $(LTLIBINTL) $(LTLIBUNISTRING) \
+-	$(POW_LIBM) @INTL_MACOSX_LIBS@ -release @VERSION@ \
++	$(POW_LIBM) @INTL_MACOSX_LIBS@ \
+ 	$(am__append_3) $(am__append_8) $(am__append_24) \
+ 	$(am__append_25)
  
- # Use this preprocessor expression to decide whether #include_next works.
-@@ -3609,7 +3609,7 @@ getopt-cdefs.h: getopt-cdefs.in.h $(top_builddir)/conf
+@@ -3768,7 +3768,7 @@ getopt-cdefs.h: getopt-cdefs.in.h $(top_builddir)/conf
  	mv -f $@-t $@
  
  # No need to install libgettextlib.a, except on AIX.
