@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.42 2019/12/15 18:36:18 danj Exp $
+@comment $OpenBSD: PLIST-main,v 1.43 2020/05/28 20:58:36 solene Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -251,71 +251,68 @@ include/claws-mail/wizard.h
 lib/claws-mail/
 lib/claws-mail/plugins/
 lib/claws-mail/plugins/address_keeper.la
-lib/claws-mail/plugins/address_keeper.so
+@so lib/claws-mail/plugins/address_keeper.so
 lib/claws-mail/plugins/archive.la
-lib/claws-mail/plugins/archive.so
+@so lib/claws-mail/plugins/archive.so
 lib/claws-mail/plugins/att_remover.la
-lib/claws-mail/plugins/att_remover.so
+@so lib/claws-mail/plugins/att_remover.so
 lib/claws-mail/plugins/attachwarner.la
-lib/claws-mail/plugins/attachwarner.so
-lib/claws-mail/plugins/bsfilter.la
-lib/claws-mail/plugins/bsfilter.so
+@so lib/claws-mail/plugins/attachwarner.so
 lib/claws-mail/plugins/clamd.la
-lib/claws-mail/plugins/clamd.so
+@so lib/claws-mail/plugins/clamd.so
 lib/claws-mail/plugins/dillo.la
-lib/claws-mail/plugins/dillo.so
+@so lib/claws-mail/plugins/dillo.so
 lib/claws-mail/plugins/fetchinfo.la
-lib/claws-mail/plugins/fetchinfo.so
+@so lib/claws-mail/plugins/fetchinfo.so
 lib/claws-mail/plugins/libravatar.la
-lib/claws-mail/plugins/libravatar.so
+@so lib/claws-mail/plugins/libravatar.so
 lib/claws-mail/plugins/litehtml_viewer.la
-lib/claws-mail/plugins/litehtml_viewer.so
+@so lib/claws-mail/plugins/litehtml_viewer.so
 lib/claws-mail/plugins/mailmbox.la
-lib/claws-mail/plugins/mailmbox.so
+@so lib/claws-mail/plugins/mailmbox.so
 lib/claws-mail/plugins/managesieve.la
-lib/claws-mail/plugins/managesieve.so
+@so lib/claws-mail/plugins/managesieve.so
 lib/claws-mail/plugins/newmail.la
-lib/claws-mail/plugins/newmail.so
+@so lib/claws-mail/plugins/newmail.so
 lib/claws-mail/plugins/notification.la
-lib/claws-mail/plugins/notification.so
+@so lib/claws-mail/plugins/notification.so
 lib/claws-mail/plugins/perl.la
-lib/claws-mail/plugins/perl.so
+@so lib/claws-mail/plugins/perl.so
 lib/claws-mail/plugins/pgpcore.la
-lib/claws-mail/plugins/pgpcore.so
+@so lib/claws-mail/plugins/pgpcore.so
 lib/claws-mail/plugins/pgpinline.deps
 lib/claws-mail/plugins/pgpinline.la
-lib/claws-mail/plugins/pgpinline.so
+@so lib/claws-mail/plugins/pgpinline.so
 lib/claws-mail/plugins/pgpmime.deps
 lib/claws-mail/plugins/pgpmime.la
-lib/claws-mail/plugins/pgpmime.so
+@so lib/claws-mail/plugins/pgpmime.so
 lib/claws-mail/plugins/rssyl.la
-lib/claws-mail/plugins/rssyl.so
+@so lib/claws-mail/plugins/rssyl.so
 lib/claws-mail/plugins/smime.deps
 lib/claws-mail/plugins/smime.la
-lib/claws-mail/plugins/smime.so
+@so lib/claws-mail/plugins/smime.so
 lib/claws-mail/plugins/spamreport.la
-lib/claws-mail/plugins/spamreport.so
+@so lib/claws-mail/plugins/spamreport.so
 lib/claws-mail/plugins/vcalendar.la
-lib/claws-mail/plugins/vcalendar.so
+@so lib/claws-mail/plugins/vcalendar.so
 lib/pkgconfig/claws-mail.pc
 @man man/man1/claws-mail.1
 share/applications/claws-mail.desktop
 share/claws-mail/
 share/claws-mail/tools/
-share/claws-mail/tools/OOo2claws-mail.pl
 share/claws-mail/tools/README
 share/claws-mail/tools/acroread2claws-mail.pl
 share/claws-mail/tools/calypso_convert.pl
 share/claws-mail/tools/claws-mail-compose-insert-files.pl
 share/claws-mail/tools/convert_mbox.pl
 share/claws-mail/tools/csv2addressbook.pl
+share/claws-mail/tools/ddg_search.pl
 share/claws-mail/tools/eud2gc.py
 share/claws-mail/tools/filter_conv.pl
 share/claws-mail/tools/filter_conv_new.pl
 share/claws-mail/tools/fix_date.sh
 share/claws-mail/tools/gif2xface.pl
 share/claws-mail/tools/google_msgid.pl
-share/claws-mail/tools/google_search.pl
 share/claws-mail/tools/kdeservicemenu/
 share/claws-mail/tools/kdeservicemenu/README
 share/claws-mail/tools/kdeservicemenu/claws-mail-attach-files.desktop.kde4template

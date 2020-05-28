@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2020/03/12 20:08:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.127 2020/05/28 20:58:36 solene Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -6,19 +6,13 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.17.4
+V=			3.17.5
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-
-REVISION-main=		3
-REVISION-bogofilter=	0
-REVISION-pdfviewer=	1
-REVISION-spamassassin=	0
-REVISION-gdata=		1
 
 CATEGORIES=		mail news
 
@@ -110,6 +104,8 @@ CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
 			--disable-geolocation-plugin \
 			--disable-python-plugin \
 			--disable-tnef_parse-plugin \
+			--disable-bsfilter-plugin \
+			--enable-crash-dialog \
 			--enable-new-addrbook
 
 USE_GMAKE=		Yes
@@ -135,8 +131,7 @@ LIB_DEPENDS-main+=	databases/openldap
 CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
-TOOLS=		OOo2claws-mail.pl \
-		acroread2claws-mail.pl \
+TOOLS=		acroread2claws-mail.pl \
 		calypso_convert.pl \
 		claws-mail-compose-insert-files.pl \
 		convert_mbox.pl \
@@ -145,7 +140,8 @@ TOOLS=		OOo2claws-mail.pl \
 		filter_conv.pl filter_conv_new.pl \
 		fix_date.sh \
 		gif2xface.pl \
-		google_msgid.pl google_search.pl \
+		google_msgid.pl \
+		ddg_search.pl \
 		kmail-mailbox2claws-mail.pl \
 		kmail2claws-mail.pl kmail2claws-mail_v2.pl \
 		mairix.sh \
