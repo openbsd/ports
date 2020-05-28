@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2020/04/19 07:26:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2020/05/28 04:57:01 kirby Exp $
 
 COMMENT=		graphical diff and merge tool
 
 GNOME_VERSION=		3.21.0
 GNOME_PROJECT=		meld
 MODPY_EGG_VERSION=	${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		textproc
 
@@ -25,7 +26,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 MODPY_ADJ_FILES=	bin/meld
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			x11/gtksourceview3
+			x11/gtksourceview4
 
 # org.gnome.desktop.interface
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
