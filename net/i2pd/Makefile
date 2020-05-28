@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/16 22:13:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/28 20:57:30 solene Exp $
 
 COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.26.0
+GH_TAGNAME =	2.31.0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website

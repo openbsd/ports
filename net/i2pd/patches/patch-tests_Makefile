@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_Makefile,v 1.1.1.1 2019/06/16 22:13:55 sthen Exp $
+$OpenBSD: patch-tests_Makefile,v 1.2 2020/05/28 20:57:30 solene Exp $
 
 Index: tests/Makefile
 --- tests/Makefile.orig
@@ -14,7 +14,7 @@ Index: tests/Makefile
  
  test-x25519: ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndian.cpp ../libi2pd/Log.cpp ../libi2pd/Crypto.cpp  test-x25519.cpp
  	$(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
-@@ -22,11 +22,11 @@ test-x25519: ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndi
+@@ -22,14 +22,14 @@ test-x25519: ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndi
  test-aeadchacha20poly1305: ../libi2pd/Crypto.cpp ../libi2pd/ChaCha20.cpp ../libi2pd/Poly1305.cpp test-aeadchacha20poly1305.cpp
  	 $(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
  
@@ -22,6 +22,9 @@ Index: tests/Makefile
 -	 $(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
 +test-blinding: ../libi2pd/Crypto.cpp ../libi2pd/Config.cpp ../libi2pd/Blinding.cpp ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndian.cpp ../libi2pd/Log.cpp ../libi2pd/util.cpp ../libi2pd/Identity.cpp ../libi2pd/Signature.cpp ../libi2pd/Timestamp.cpp test-blinding.cpp
 +	 $(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system -lboost_program_options-mt
+ 
+ test-elligator: ../libi2pd/Elligator.cpp ../libi2pd/Crypto.cpp test-elligator.cpp
+ 	 $(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
  
  run: $(TESTS)
 -	@for TEST in $(TESTS); do ./$$TEST ; done

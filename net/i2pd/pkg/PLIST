@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/16 22:13:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/28 20:57:30 solene Exp $
 @newgroup _i2pd:838
 @newuser _i2pd:838:838:daemon:i2pd account:${LOCALSTATEDIR}/lib/i2pd:/sbin/nologin
 @rcscript ${RCDIR}/i2pd
@@ -34,12 +34,16 @@ include/i2pd/DaemonQT.cpp
 include/i2pd/DaemonWin32.cpp
 include/i2pd/Datagram.cpp
 include/i2pd/Datagram.h
+include/i2pd/DelayedSaveManager.cpp
+include/i2pd/DelayedSaveManagerImpl.cpp
 include/i2pd/Destination.cpp
 include/i2pd/Destination.h
+include/i2pd/ECIESX25519AEADRatchetSession.cpp
+include/i2pd/ECIESX25519AEADRatchetSession.h
 include/i2pd/Ed25519.cpp
 include/i2pd/Ed25519.h
-include/i2pd/Event.cpp
-include/i2pd/Event.h
+include/i2pd/Elligator.cpp
+include/i2pd/Elligator.h
 include/i2pd/FS.cpp
 include/i2pd/FS.h
 include/i2pd/Family.cpp
@@ -106,6 +110,8 @@ include/i2pd/SSUData.cpp
 include/i2pd/SSUData.h
 include/i2pd/SSUSession.cpp
 include/i2pd/SSUSession.h
+include/i2pd/Saver.cpp
+include/i2pd/SaverImpl.cpp
 include/i2pd/ServerTunnelPane.cpp
 include/i2pd/Signature.cpp
 include/i2pd/Signature.h
@@ -136,10 +142,6 @@ include/i2pd/TunnelPool.h
 include/i2pd/UPnP.cpp
 include/i2pd/UPnP.h
 include/i2pd/UnixDaemon.cpp
-include/i2pd/WebSocks.cpp
-include/i2pd/WebSocks.h
-include/i2pd/Websocket.cpp
-include/i2pd/Websocket.h
 include/i2pd/Win32App.cpp
 include/i2pd/Win32Service.cpp
 include/i2pd/api.cpp
@@ -152,6 +154,7 @@ include/i2pd/pagewithbackbutton.cpp
 include/i2pd/test-aeadchacha20poly1305.cpp
 include/i2pd/test-base-64.cpp
 include/i2pd/test-blinding.cpp
+include/i2pd/test-elligator.cpp
 include/i2pd/test-gost-sig.cpp
 include/i2pd/test-gost.cpp
 include/i2pd/test-http-merge_chunked.cpp
@@ -166,8 +169,8 @@ include/i2pd/util.h
 include/i2pd/version.h
 include/i2pd/widgetlock.cpp
 include/i2pd/widgetlockregistry.cpp
-lib/libi2pd.a
-lib/libi2pdclient.a
+@static-lib lib/libi2pd.a
+@static-lib lib/libi2pdclient.a
 @bin sbin/i2pd
 @owner _i2pd
 @group _i2pd
@@ -181,10 +184,10 @@ lib/libi2pdclient.a
 @group
 share/doc/i2pd/
 share/doc/i2pd/LICENSE
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/i2pd/
 share/examples/i2pd/certificates/
 share/examples/i2pd/certificates/family/
-@sample ${LOCALSTATEDIR}/lib/
 share/examples/i2pd/certificates/family/gostcoin.crt
 @owner _i2pd
 @group _i2pd
@@ -213,13 +216,12 @@ share/examples/i2pd/certificates/family/volatile.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/volatile.crt
-share/examples/i2pd/certificates/reseed/
 @owner
 @group
-share/examples/i2pd/certificates/reseed/backup_at_mail.i2p.crt
+share/examples/i2pd/certificates/reseed/
 @owner _i2pd
 @group _i2pd
-@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/backup_at_mail.i2p.crt
+@sample ${LOCALSTATEDIR}/lib/
 @owner
 @group
 share/examples/i2pd/certificates/reseed/bugme_at_mail.i2p.crt
@@ -241,6 +243,11 @@ share/examples/i2pd/certificates/reseed/echelon_at_mail.i2p.crt
 @owner
 @group
 share/examples/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
+@owner
+@group
 share/examples/i2pd/certificates/reseed/igor_at_novg.net.crt
 @owner _i2pd
 @group _i2pd
@@ -265,7 +272,6 @@ share/examples/i2pd/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 @owner
 @group
-share/examples/i2pd/certificates/reseed/reseedi2pnetin_at_mail.i2p.crt
 share/examples/i2pd/certificates/router/
 share/examples/i2pd/certificates/router/orignal_at_mail.i2p.crt
 @owner _i2pd

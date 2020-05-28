@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_CMakeLists_txt,v 1.1.1.1 2019/06/16 22:13:55 sthen Exp $
+$OpenBSD: patch-build_CMakeLists_txt,v 1.2 2020/05/28 20:57:30 solene Exp $
 
 Index: build/CMakeLists.txt
 --- build/CMakeLists.txt.orig
 +++ build/CMakeLists.txt
-@@ -473,7 +473,7 @@ if (WITH_BINARY)
+@@ -456,7 +456,7 @@ if (WITH_BINARY)
    target_link_libraries(libi2pd ${Boost_LIBRARIES} ${ZLIB_LIBRARY})
    target_link_libraries( "${PROJECT_NAME}" libi2pd libi2pdclient ${DL_LIB} ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${MINGW_EXTRA} ${DL_LIB} ${CMAKE_REQUIRED_LIBRARIES})
  
@@ -12,7 +12,7 @@ Index: build/CMakeLists.txt
    set (APPS "\${CMAKE_INSTALL_PREFIX}/bin/${PROJECT_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
    set (DIRS "${Boost_LIBRARY_DIR};${OPENSSL_INCLUDE_DIR}/../bin;${ZLIB_INCLUDE_DIR}/../bin;/mingw32/bin")
    if (MSVC)
-@@ -487,7 +487,7 @@ if (WITH_BINARY)
+@@ -470,7 +470,7 @@ if (WITH_BINARY)
  endif ()
  
  install(FILES ../LICENSE
@@ -21,7 +21,7 @@ Index: build/CMakeLists.txt
    COMPONENT Runtime
    )
  # Take a copy on Appveyor
-@@ -498,8 +498,8 @@ install(FILES "C:/projects/openssl-$ENV{OPENSSL}/LICEN
+@@ -481,8 +481,8 @@ install(FILES "C:/projects/openssl-$ENV{OPENSSL}/LICEN
    OPTIONAL                      # for local builds only!
    )
  
@@ -32,7 +32,7 @@ Index: build/CMakeLists.txt
  # install(DIRECTORY ../ DESTINATION src/
  #   # OPTIONAL
  #   COMPONENT Source FILES_MATCHING
-@@ -508,7 +508,7 @@ install(FILES ${I2PD_SOURCES} DESTINATION src/ COMPONE
+@@ -491,7 +491,7 @@ install(FILES ${I2PD_SOURCES} DESTINATION src/ COMPONE
  #   )
  
  file(GLOB I2PD_HEADERS "../libi2pd/*.h" "../libi2pd_client/*.h" "../daemon/*.h")

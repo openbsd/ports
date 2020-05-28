@@ -1,0 +1,26 @@
+$OpenBSD: README,v 1.1 2020/05/28 20:57:30 solene Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Resource Limits: File Descriptors
+=================================
+
+By default, the _i2pd user, and so the i2pd process runs in the login(1)
+class of "daemon". The default limits on file descriptors are
+insufficient to run i2pd; instead you should put the _i2pd user and
+process in their own login(1) class with tuned resources. You should
+also raise the system-wide maxfiles limit.
+
+1. Configure i2pd login class in the login.conf(5) file:
+
+        i2pd:\
+                :openfiles-cur=8192:\
+                :openfiles-max=8192:\
+                :tc=daemon:
+
+2. Adjust kern.maxfiles, if needed:
+
+	# sysctl kern.maxfiles=16000
+	# echo "kern.maxfiles=16000" >> /etc/sysctl.conf
