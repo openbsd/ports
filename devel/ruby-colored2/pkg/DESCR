@@ -1,0 +1,5 @@
+This is a heavily modified fork of http://github.com/defunkt/colored
+gem, with many sensible pull requests combined. Since the authors of the
+original gem no longer support it, this might, perhaps, be considered a
+good alternative. Simple gem that adds various color methods to String
+class.

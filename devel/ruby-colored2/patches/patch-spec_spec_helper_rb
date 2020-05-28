@@ -1,0 +1,11 @@
+$OpenBSD: patch-spec_spec_helper_rb,v 1.1.1.1 2020/05/28 21:16:03 sebastia Exp $
+
+Index: spec/spec_helper.rb
+--- spec/spec_helper.rb.orig
++++ spec/spec_helper.rb
+@@ -1,5 +1,2 @@
+-require 'simplecov'
+-SimpleCov.start
+-
+ require 'rspec/core'
+ 
