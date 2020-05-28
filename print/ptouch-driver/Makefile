@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/05/28 08:47:38 ajacoutot Exp $
 
 COMMENT=		Brother P-touch CUPS driver
 
-V=			1.4.2
-DISTNAME=		ptouch-driver-${V}
+GH_TAGNAME=		v1.5.1
+GH_ACCOUNT=		philpem
+GH_PROJECT=		printer-driver-ptouch
+DISTNAME=		ptouch-driver-${GH_TAGNAME:S/v//}
 
-DISTFILES=		${V}${EXTRACT_SUFX}
-DIST_SUBDIR=		ptouch-driver
-WRKDIST=		${WRKDIR}/philpem-printer-driver-ptouch-72121843b720
+WRKDIST=		${WRKDIR}/ptouch-driver-${GH_TAGNAME:S/v//}
 
 CATEGORIES=		print
-
-HOMEPAGE=		https://bitbucket.org/philpem/printer-driver-ptouch
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -20,7 +18,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cups cupsimage m
 
-MASTER_SITES=		https://bitbucket.org/philpem/printer-driver-ptouch/get/
+MASTER_SITES=		https://github.com/philpem/printer-driver-ptouch/releases/download/${GH_TAGNAME}/
+
+BUILD_DEPENDS=		textproc/p5-XML-LibXML
 
 LIB_DEPENDS=		print/cups,-libs
 
@@ -36,9 +36,11 @@ CONFIGURE_ARGS=		libdir=${PREFIX}/libexec
 CFLAGS +=		-fgnu89-inline
 
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
+AUTOMAKE_VERSION=	1.16
+
+USE_GMAKE=		Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/driver/ptouch.xml
+	${SUBST_CMD} ${WRKSRC}/driver/ptouch-pt.xml
 
 .include <bsd.port.mk>

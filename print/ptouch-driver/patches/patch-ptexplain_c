@@ -1,0 +1,14 @@
+$OpenBSD: patch-ptexplain_c,v 1.1 2020/05/28 08:47:38 ajacoutot Exp $
+
+Index: ptexplain.c
+--- ptexplain.c.orig
++++ ptexplain.c
+@@ -14,6 +14,8 @@
+ #include <assert.h>
+ #include <getopt.h>
+ 
++#include <libgen.h> /* basename(3) */
++
+ #if HAVE_LIBPNG
+ # include <png.h>
+ #endif

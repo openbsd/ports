@@ -1,15 +1,16 @@
-$OpenBSD: patch-rastertoptch_c,v 1.1 2017/12/27 13:35:48 ajacoutot Exp $
+$OpenBSD: patch-rastertoptch_c,v 1.2 2020/05/28 08:47:38 ajacoutot Exp $
 
 https://bitbucket.org/philpem/printer-driver-ptouch/commits/fee10bbccca6ff3f3d929d4c5681afa4d5058964
 
 Index: rastertoptch.c
 --- rastertoptch.c.orig
 +++ rastertoptch.c
-@@ -310,6 +310,7 @@
- #include <fcntl.h>
- #include <signal.h>
- #include <math.h>
-+#include <cups/ppd.h>
- #include <cups/raster.h>
- #include <cups/cups.h>
+@@ -273,6 +273,8 @@
+ #include <stdbool.h>
+ #include <getopt.h>
  
++#include <libgen.h> /* basename(3) */
++
+ static const char* progname;
+ 
+ /** Length of a PostScript point in mm */
