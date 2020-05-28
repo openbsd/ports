@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1976 2020/05/27 13:44:50 stsp Exp $
+# $OpenBSD: Makefile,v 1.1977 2020/05/28 21:17:29 sebastia Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1801,6 +1801,7 @@
      SUBDIR += ruby-cicphash
      SUBDIR += ruby-colorator
      SUBDIR += ruby-colored
+     SUBDIR += ruby-colored2
      SUBDIR += ruby-colorize
      SUBDIR += ruby-commander
      SUBDIR += ruby-concurrent-ruby
