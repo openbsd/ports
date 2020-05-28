@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/03/08 11:16:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/05/28 08:54:56 ajacoutot Exp $
 include/spice-1/
 include/spice-1/spice/
 include/spice-1/spice/barrier.h
-include/spice-1/spice/controller_prot.h
 include/spice-1/spice/end-packed.h
 include/spice-1/spice/enums.h
-include/spice-1/spice/foreign_menu_prot.h
 include/spice-1/spice/ipc_ring.h
 include/spice-1/spice/macros.h
 include/spice-1/spice/protocol.h
