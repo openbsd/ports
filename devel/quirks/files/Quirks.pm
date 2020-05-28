@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.966 2020/05/22 11:42:54 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.967 2020/05/28 08:14:40 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1563,7 +1563,7 @@ my $obsolete_reason = {
 	'akpop3d' => 2,
 	'gtk+4-cloudprint' => 6,
 # 6.8
-	'gnome-planner' => 3,
+	'planner' => 3,
 	'gnome-recipes' => 3,
 	'shared-color-targets' => 6,
 	'argyll' => 6,
@@ -1574,6 +1574,7 @@ my $obsolete_reason = {
 	'pdflib' => 23,
 	'pop3gwd' => 3,
 	'tircd' => 3,
+	'gtksourceviewmm3' => 6,
 };
 
 # reasons for obsolete packages
