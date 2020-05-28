@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.115 2018/12/01 13:04:41 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.116 2020/05/28 17:43:31 kmos Exp $
 #
 # Module for GNOME related ports
 
@@ -142,6 +142,11 @@ MODGNOME_BUILD_DEPENDS +=	x11/gnome/doc-utils
 MODGNOME_RUN_DEPENDS +=	x11/gnome/yelp
 .       endif
 .   endif
+.endif
+
+# ld.bfd needs to be pointed at the X11 libs
+.if !${PROPERTIES:Mlld}
+MODGNOME_LDFLAGS += -L${X11BASE}/lib
 .endif
 
 # If a port needs extra CPPFLAGS, they can just set MODGNOME_CPPFLAGS
