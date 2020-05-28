@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2020/02/15 12:38:15 bket Exp $
+# $OpenBSD: Makefile,v 1.32 2020/05/28 19:31:56 bket Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
-V =			1.4.4
-REVISION =		1
+V =			1.4.5
 DISTNAME =		zstd-${V}
 
-SHARED_LIBS =		zstd	3.1	# 1.4.4
+SHARED_LIBS =		zstd	3.2	# 1.4.5
 
 CATEGORIES =		archivers
 
@@ -29,18 +28,19 @@ COMPILER =		base-clang ports-gcc
 
 MAKE_ENV =		CC="${CC}" \
 			CFLAGS="${CFLAGS}" \
-			CPPFLAGS="-I${WRKSRC}/lib -I${WRKSRC}/lib/dictBuilder -I${LOCALBASE}/include" \
+			CPPFLAGS="-I${WRKSRC}/lib -I${WRKSRC}/lib/common -I${LOCALBASE}/include" \
 			CXX="${CXX}" \
 			CXXFLAGS="${CXXFLAGS}" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-			LIBzstd_VERSION="${LIBzstd_VERSION}"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+MAKE_FLAGS =		SHARED_EXT_VER="so.$(LIBzstd_VERSION)" \
+			SONAME_FLAGS= \
+			V=1
+FAKE_FLAGS =		PREFIX="${PREFIX}"
 
 .if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=		atomic
 LDFLAGS +=		-latomic
 .endif
-
-FAKE_FLAGS =		PREFIX="${PREFIX}"
 
 USE_GMAKE =		Yes
 
@@ -48,7 +48,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 TEST_TARGET =		check
 
-post-extract:
-	 sed -i 's,grep,ggrep,g' ${WRKSRC}/contrib/single_file_decoder/combine.sh
+pre-build:
+	ln -fs ${LOCALBASE}/bin/ggrep ${WRKDIR}/bin/grep
 
 .include <bsd.port.mk>

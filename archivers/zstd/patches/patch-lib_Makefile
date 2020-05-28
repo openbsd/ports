@@ -1,45 +1,23 @@
-$OpenBSD: patch-lib_Makefile,v 1.7 2019/11/06 10:19:15 bket Exp $
+$OpenBSD: patch-lib_Makefile,v 1.8 2020/05/28 19:31:56 bket Exp $
 
 Index: lib/Makefile
 --- lib/Makefile.orig
 +++ lib/Makefile
-@@ -135,10 +135,10 @@ ifeq ($(shell uname), Darwin)
- 	SHARED_EXT_VER = $(LIBVER).$(SHARED_EXT)
- 	SONAME_FLAGS = -install_name $(LIBDIR)/libzstd.$(SHARED_EXT_MAJOR) -compatibility_version $(LIBVER_MAJOR) -current_version $(LIBVER)
+@@ -81,7 +81,7 @@ ifneq ($(ZSTD_LIB_MINIFY), 0)
+ 	CFLAGS += -fno-stack-protector -fomit-frame-pointer -fno-ident \
+ 	          -DDYNAMIC_BMI2=0 -DNDEBUG
  else
--	SONAME_FLAGS = -Wl,-soname=libzstd.$(SHARED_EXT).$(LIBVER_MAJOR)
-+	SONAME_FLAGS =
- 	SHARED_EXT = so
- 	SHARED_EXT_MAJOR = $(SHARED_EXT).$(LIBVER_MAJOR)
--	SHARED_EXT_VER = $(SHARED_EXT).$(LIBVER)
-+	SHARED_EXT_VER = $(SHARED_EXT).$(LIBzstd_VERSION)
+-	CFLAGS += -O3
++	CFLAGS +=
  endif
  
- 
-@@ -151,7 +151,7 @@ all: lib
- libzstd.a: ARFLAGS = rcs
- libzstd.a: $(ZSTD_OBJ)
- 	@echo compiling static library
--	@$(AR) $(ARFLAGS) $@ $^
-+	$(AR) $(ARFLAGS) $@ $^
- 
- libzstd.a-mt: CPPFLAGS += -DZSTD_MULTITHREAD
- libzstd.a-mt: libzstd.a
-@@ -169,7 +169,7 @@ LIBZSTD = libzstd.$(SHARED_EXT_VER)
- $(LIBZSTD): LDFLAGS += -shared -fPIC -fvisibility=hidden
- $(LIBZSTD): $(ZSTD_FILES)
- 	@echo compiling dynamic library $(LIBVER)
--	@$(CC) $(FLAGS) $^ $(LDFLAGS) $(SONAME_FLAGS) -o $@
-+	$(CC) $(FLAGS) $^ $(LDFLAGS) $(SONAME_FLAGS) -o $@
- 	@echo creating versioned links
- 	@ln -sf $@ libzstd.$(SHARED_EXT_MAJOR)
- 	@ln -sf $@ libzstd.$(SHARED_EXT)
-@@ -263,8 +263,6 @@ install-shared: libzstd
+ # Modules
+@@ -328,8 +328,6 @@ install-shared: libzstd
  	@echo Installing shared library
- 	@$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)/
- 	@$(INSTALL_PROGRAM) $(LIBZSTD) $(DESTDIR)$(LIBDIR)
--	@ln -sf $(LIBZSTD) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_MAJOR)
--	@ln -sf $(LIBZSTD) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT)
+ 	$(Q)$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)/
+ 	$(Q)$(INSTALL_PROGRAM) $(LIBZSTD) $(DESTDIR)$(LIBDIR)
+-	$(Q)ln -sf $(LIBZSTD) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_MAJOR)
+-	$(Q)ln -sf $(LIBZSTD) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT)
  
  install-includes:
  	@echo Installing includes
