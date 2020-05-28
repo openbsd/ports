@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/22 16:48:19 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2020/05/28 12:39:58 abieber Exp $
 
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.13.0
+MODPY_EGG_VERSION =	1.14.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -61,7 +61,7 @@ RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 TEST_DEPENDS =	${RUN_DEPENDS}
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial tests
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial-3 tests
 
 post-install:
 	@mkdir ${PREFIX}/share/synapse
