@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_src_Vulkan_VkSemaphoreExternalLinux_hpp,v 1.1 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_Vulkan_VkSemaphoreExternalLinux_hpp,v 1.2 2020/05/29 20:03:24 robert Exp $
 
 Index: third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp
 --- third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp.orig
 +++ third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp
-@@ -48,13 +48,17 @@ class SharedSemaphore (public)
+@@ -49,13 +49,17 @@ class SharedSemaphore (public)
  	{
  		pthread_mutexattr_t mattr;
  		pthread_mutexattr_init(&mattr);

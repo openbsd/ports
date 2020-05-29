@@ -1,20 +1,17 @@
-$OpenBSD: patch-chromecast_media_base_monotonic_clock_cc,v 1.1 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-chromecast_media_base_default_monotonic_clock_cc,v 1.1 2020/05/29 20:03:23 robert Exp $
 
-Index: chromecast/media/base/monotonic_clock.cc
---- chromecast/media/base/monotonic_clock.cc.orig
-+++ chromecast/media/base/monotonic_clock.cc
-@@ -9,9 +9,9 @@
+Index: chromecast/media/base/default_monotonic_clock.cc
+--- chromecast/media/base/default_monotonic_clock.cc.orig
++++ chromecast/media/base/default_monotonic_clock.cc
+@@ -9,7 +9,7 @@
  #include "base/time/time.h"
  #include "build/build_config.h"
  
 -#if defined(OS_ANDROID) || defined(OS_LINUX)
 +#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
  #include "chromecast/media/base/buildflags.h"
--#endif  // defined(OS_ANDROID) || defined(OS_LINUX)
-+#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+ #endif  // defined(OS_ANDROID) || defined(OS_LINUX)
  
- #if defined(OS_FUCHSIA)
- #include <zircon/syscalls.h>
 @@ -20,7 +20,7 @@
  namespace chromecast {
  namespace media {

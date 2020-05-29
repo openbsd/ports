@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_gpu_memory_buffer_h,v 1.10 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_h,v 1.11 2020/05/29 20:03:24 robert Exp $
 
 Index: ui/gfx/gpu_memory_buffer.h
 --- ui/gfx/gpu_memory_buffer.h.orig
@@ -12,10 +12,10 @@ Index: ui/gfx/gpu_memory_buffer.h
  #include "ui/gfx/native_pixmap_handle.h"
  #elif defined(OS_MACOSX) && !defined(OS_IOS)
  #include "ui/gfx/mac/io_surface.h"
-@@ -65,7 +65,7 @@ struct GFX_EXPORT GpuMemoryBufferHandle {
+@@ -69,7 +69,7 @@ struct GFX_EXPORT GpuMemoryBufferHandle {
    base::UnsafeSharedMemoryRegion region;
-   uint32_t offset;
-   int32_t stride;
+   uint32_t offset = 0;
+   int32_t stride = 0;
 -#if defined(OS_LINUX) || defined(OS_FUCHSIA)
 +#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
    NativePixmapHandle native_pixmap_handle;

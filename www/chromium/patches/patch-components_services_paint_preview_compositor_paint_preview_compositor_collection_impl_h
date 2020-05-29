@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_services_paint_preview_compositor_paint_preview_compositor_collection_impl_h,v 1.1 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-components_services_paint_preview_compositor_paint_preview_compositor_collection_impl_h,v 1.2 2020/05/29 20:03:23 robert Exp $
 
 Index: components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h
 --- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h.orig
 +++ components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  #include "mojo/public/cpp/bindings/pending_receiver.h"
  #include "mojo/public/cpp/bindings/receiver.h"
  
@@ -12,7 +12,7 @@ Index: components/services/paint_preview_compositor/paint_preview_compositor_col
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -68,7 +68,7 @@ class PaintPreviewCompositorCollectionImpl
+@@ -74,7 +74,7 @@ class PaintPreviewCompositorCollectionImpl
                   std::unique_ptr<PaintPreviewCompositorImpl>>
        compositors_;
  

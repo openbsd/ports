@@ -1,11 +1,11 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.15 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.16 2020/05/29 20:03:24 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -21,8 +21,10 @@
- #include "content/utility/utility_thread_impl.h"
+@@ -22,8 +22,10 @@
  #include "services/service_manager/sandbox/sandbox.h"
+ #include "services/tracing/public/cpp/trace_startup.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
@@ -15,7 +15,7 @@ Index: content/utility/utility_main.cc
  #include "services/audio/audio_sandbox_hook_linux.h"
  #include "services/network/network_sandbox_hook_linux.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
-@@ -36,6 +38,10 @@
+@@ -37,6 +39,10 @@
  #include "base/message_loop/message_pump_mac.h"
  #endif
  
@@ -26,7 +26,7 @@ Index: content/utility/utility_main.cc
  #if defined(OS_WIN)
  #include "base/rand_util.h"
  #include "sandbox/win/src/sandbox.h"
-@@ -72,12 +78,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -73,12 +79,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -41,7 +41,7 @@ Index: content/utility/utility_main.cc
    if (parameters.zygote_child ||
        sandbox_type == service_manager::SandboxType::kNetwork ||
  #if defined(OS_CHROMEOS)
-@@ -101,6 +108,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -102,6 +109,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          service_manager::SandboxLinux::Options());
    }

@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_base_features_cc,v 1.1 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-net_base_features_cc,v 1.2 2020/05/29 20:03:24 robert Exp $
 
 Index: net/base/features.cc
 --- net/base/features.cc.orig
 +++ net/base/features.cc
-@@ -88,7 +88,7 @@ const base::FeatureParam<int>
+@@ -92,7 +92,7 @@ const base::Feature kBlockExternalRequestsFromNonSecur
  #if BUILDFLAG(BUILTIN_CERT_VERIFIER_FEATURE_SUPPORTED)
  const base::Feature kCertVerifierBuiltinFeature {
    "CertVerifierBuiltin",

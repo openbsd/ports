@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.5 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.6 2020/05/29 20:03:23 robert Exp $
 
 Index: components/autofill/core/common/autofill_payments_features.cc
 --- components/autofill/core/common/autofill_payments_features.cc.orig
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -121,7 +121,7 @@ const base::Feature kAutofillUpstreamEditableExpiratio
+@@ -100,7 +100,7 @@ const base::Feature kAutofillUpstreamEditableExpiratio
  };
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

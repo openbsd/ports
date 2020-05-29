@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.9 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.10 2020/05/29 20:03:24 robert Exp $
 
 Index: services/service_manager/sandbox/BUILD.gn
 --- services/service_manager/sandbox/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: services/service_manager/sandbox/BUILD.gn
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -72,6 +72,16 @@ component("sandbox") {
+@@ -74,6 +74,16 @@ component("sandbox") {
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",
      ]

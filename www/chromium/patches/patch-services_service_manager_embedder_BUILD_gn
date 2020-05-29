@@ -1,0 +1,23 @@
+$OpenBSD: patch-services_service_manager_embedder_BUILD_gn,v 1.1 2020/05/29 20:03:24 robert Exp $
+
+Index: services/service_manager/embedder/BUILD.gn
+--- services/service_manager/embedder/BUILD.gn.orig
++++ services/service_manager/embedder/BUILD.gn
+@@ -58,7 +58,7 @@ if (!is_ios) {
+       deps += [ "//ui/base" ]
+     }
+ 
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       deps += [ ":set_process_title_linux" ]
+     }
+ 
+@@ -79,7 +79,7 @@ source_set("embedder_result_codes") {
+   sources = [ "result_codes.h" ]
+ }
+ 
+-if (is_linux) {
++if (is_linux && !is_openbsd) {
+   source_set("set_process_title_linux") {
+     public = [ "set_process_title_linux.h" ]
+     sources = [ "set_process_title_linux.cc" ]

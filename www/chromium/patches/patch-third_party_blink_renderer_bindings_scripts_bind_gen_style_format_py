@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_blink_renderer_bindings_scripts_bind_gen_style_format_py,v 1.1 2020/05/29 20:03:24 robert Exp $
+
+Index: third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
+--- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig
++++ third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
+@@ -20,7 +20,7 @@ def init(root_src_dir):
+     root_src_dir = os.path.abspath(root_src_dir)
+ 
+     # Determine //buildtools/<platform>/ directory
+-    if sys.platform.startswith("linux"):
++    if sys.platform.startswith("linux") or sys.platform.startswith("openbsd"):
+         platform = "linux64"
+         exe_suffix = ""
+     elif sys.platform.startswith("darwin"):

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_download_download_item_view_cc,v 1.1 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_download_download_item_view_cc,v 1.2 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/ui/views/download/download_item_view.cc
 --- chrome/browser/ui/views/download/download_item_view.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/download/download_item_view.cc
    if (base::FeatureList::IsEnabled(safe_browsing::kUseNewDownloadWarnings))
      file_name_style = STYLE_EMPHASIZED;
  #endif
-@@ -1633,7 +1633,7 @@ void DownloadItemView::StyleFilenameInLabel(views::Sty
+@@ -1635,7 +1635,7 @@ void DownloadItemView::StyleFilenameInLabel(views::Sty
    if (!base::FeatureList::IsEnabled(safe_browsing::kUseNewDownloadWarnings))
      return;
  

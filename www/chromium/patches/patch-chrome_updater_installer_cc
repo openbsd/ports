@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_updater_installer_cc,v 1.1 2020/05/29 20:03:23 robert Exp $
+
+Index: chrome/updater/installer.cc
+--- chrome/updater/installer.cc.orig
++++ chrome/updater/installer.cc
+@@ -231,7 +231,7 @@ base::FilePath Installer::GetCurrentInstallDir() const
+   return GetAppInstallDir(app_id_).AppendASCII(pv_.GetString());
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ int Installer::RunApplicationInstaller(const base::FilePath& app_installer,
+                                        const std::string& arguments) {
+   NOTREACHED();

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_browser_proxy_js,v 1.2 2019/11/05 22:30:27 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_browser_proxy_js,v 1.3 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js
 --- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js.orig
 +++ chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js
-@@ -19,7 +19,7 @@ cr.define('settings', function() {
+@@ -24,7 +24,7 @@ cr.define('settings', function() {
  
      useDefaultTheme() {}
  
@@ -12,7 +12,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_browser_prox
      useSystemTheme() {}
  
      // </if>
-@@ -59,7 +59,7 @@ cr.define('settings', function() {
+@@ -64,7 +64,7 @@ cr.define('settings', function() {
        chrome.send('useDefaultTheme');
      }
  

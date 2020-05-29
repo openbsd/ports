@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_native_theme_native_theme_h,v 1.4 2019/11/05 22:30:28 robert Exp $
+$OpenBSD: patch-ui_native_theme_native_theme_h,v 1.5 2020/05/29 20:03:25 robert Exp $
 
 Index: ui/native_theme/native_theme.h
 --- ui/native_theme/native_theme.h.orig
 +++ ui/native_theme/native_theme.h
-@@ -49,7 +49,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
+@@ -51,7 +51,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
    // The part to be painted / sized.
    enum Part {
      kCheckbox,

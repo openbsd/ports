@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.7 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.8 2020/05/29 20:03:24 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_backing.cc
 --- gpu/command_buffer/service/external_vk_image_backing.cc.orig
 +++ gpu/command_buffer/service/external_vk_image_backing.cc
-@@ -27,7 +27,7 @@
+@@ -29,7 +29,7 @@
  #include "ui/gl/buildflags.h"
  #include "ui/gl/gl_context.h"
  
@@ -12,57 +12,57 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -35,7 +35,7 @@
+@@ -37,7 +37,7 @@
  #include "gpu/vulkan/fuchsia/vulkan_fuchsia_ext.h"
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
- #define GL_HANDLE_TYPE_OPAQUE_FD_EXT 0x9586
- #endif
- 
-@@ -630,7 +630,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ #define GL_DEDICATED_MEMORY_OBJECT_EXT 0x9581
+ #define GL_TEXTURE_TILING_EXT 0x9580
+ #define GL_TILING_TYPES_EXT 0x9583
+@@ -510,7 +510,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
  ExternalVkImageBacking::ProduceDawn(SharedImageManager* manager,
                                      MemoryTypeTracker* tracker,
                                      WGPUDevice wgpuDevice) {
 -#if defined(OS_LINUX) && BUILDFLAG(USE_DAWN)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && BUILDFLAG(USE_DAWN)
-   if (!wgpu_format_) {
-     DLOG(ERROR) << "Format not supported for Dawn";
-     return nullptr;
-@@ -660,7 +660,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
- }
+   auto wgpu_format = viz::ToWGPUFormat(format());
+ 
+   if (wgpu_format == WGPUTextureFormat_Undefined) {
+@@ -537,7 +537,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
  
  GLuint ExternalVkImageBacking::ProduceGLTextureInternal() {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
    GrVkImageInfo image_info;
    bool result = backend_texture_.getVkImageInfo(&image_info);
    DCHECK(result);
-@@ -724,7 +724,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
-     return nullptr;
+@@ -545,7 +545,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
+   gl::GLApi* api = gl::g_current_gl_context;
+   GLuint memory_object = 0;
+   if (!use_separate_gl_texture()) {
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+     auto memory_fd = image_->GetMemoryFd();
+     if (!memory_fd.is_valid()) {
+       return 0;
+@@ -623,7 +623,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
    }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
    if (!texture_) {
      GLuint texture_service_id = ProduceGLTextureInternal();
      if (!texture_service_id)
-@@ -770,7 +770,7 @@ ExternalVkImageBacking::ProduceGLTexturePassthrough(
-     return nullptr;
+@@ -667,7 +667,7 @@ ExternalVkImageBacking::ProduceGLTexturePassthrough(
    }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
    if (!texture_passthrough_) {
      GLuint texture_service_id = ProduceGLTextureInternal();
      if (!texture_service_id)
-@@ -808,7 +808,7 @@ ExternalVkImageBacking::ProduceSkia(
-                                                              tracker);
- }
- 
--#ifdef OS_LINUX
-+#if defined(OS_LINUX) || defined(OS_BSD)
- int ExternalVkImageBacking::GetMemoryFd(const GrVkImageInfo& image_info) {
-   VkMemoryGetFdInfoKHR get_fd_info;
-   get_fd_info.sType = VK_STRUCTURE_TYPE_MEMORY_GET_FD_INFO_KHR;

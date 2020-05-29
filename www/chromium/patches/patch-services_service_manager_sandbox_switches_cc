@@ -1,0 +1,14 @@
+$OpenBSD: patch-services_service_manager_sandbox_switches_cc,v 1.1 2020/05/29 20:03:24 robert Exp $
+
+Index: services/service_manager/sandbox/switches.cc
+--- services/service_manager/sandbox/switches.cc.orig
++++ services/service_manager/sandbox/switches.cc
+@@ -81,7 +81,7 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
+ // Disables the sandbox for all process types that are normally sandboxed.
+ const char kNoSandbox[] = "no-sandbox";
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Instructs the zygote to launch without a sandbox. Processes forked from this
+ // type of zygote will apply their own custom sandboxes later.
+ const char kNoZygoteSandbox[] = "no-zygote-sandbox";

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.26 2020/02/22 12:33:20 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.27 2020/05/29 20:03:22 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
@@ -9,13 +9,13 @@ Index: base/process/process_posix.cc
  
 +#if defined(OS_BSD)
 +#include <sys/types.h>
-+#include <sys/sysctl.h>
++#include <sys/sysctl.h> 
 +#endif
 +
- #if BUILDFLAG(CLANG_COVERAGE)
- #include "base/test/clang_coverage.h"
+ #if BUILDFLAG(CLANG_PROFILING)
+ #include "base/test/clang_profiling.h"
  #endif
-@@ -380,7 +385,53 @@ bool Process::SetProcessBackgrounded(bool value) {
+@@ -380,7 +385,38 @@ bool Process::SetProcessBackgrounded(bool value) {
  
  int Process::GetPriority() const {
    DCHECK(IsValid());
@@ -28,20 +28,6 @@ Index: base/process/process_posix.cc
 +}
 +
 +Time Process::CreationTime() const {
-+#if !defined(OS_BSD)
-+  int64_t start_ticks = is_current()
-+                            ? internal::ReadProcSelfStatsAndGetFieldAsInt64(
-+                                  internal::VM_STARTTIME)
-+                            : internal::ReadProcStatsAndGetFieldAsInt64(
-+                                  Pid(), internal::VM_STARTTIME);
-+  if (!start_ticks)
-+    return Time();
-+  TimeDelta start_offset = internal::ClockTicksToTimeDelta(start_ticks);
-+  Time boot_time = internal::GetBootTime();
-+  if (boot_time.is_null())
-+    return Time();
-+  return Time(boot_time + start_offset);
-+#else
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(),
 +               sizeof(struct kinfo_proc), 0 };
 +  struct kinfo_proc *info = nullptr;
@@ -65,7 +51,6 @@ Index: base/process/process_posix.cc
 +    free(info);
 +
 +  return ct;
-+#endif
  }
  
  }  // namespace base

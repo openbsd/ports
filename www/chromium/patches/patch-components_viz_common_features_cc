@@ -1,19 +1,10 @@
-$OpenBSD: patch-components_viz_common_features_cc,v 1.2 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-components_viz_common_features_cc,v 1.3 2020/05/29 20:03:23 robert Exp $
 
 Index: components/viz/common/features.cc
 --- components/viz/common/features.cc.orig
 +++ components/viz/common/features.cc
-@@ -17,7 +17,7 @@
- namespace features {
- 
- // Use Skia's readback API instead of GLRendererCopier.
--#if defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
- const base::Feature kUseSkiaForGLReadback{"UseSkiaForGLReadback",
+@@ -20,7 +20,7 @@ const base::Feature kUseSkiaForGLReadback{"UseSkiaForG
                                            base::FEATURE_ENABLED_BY_DEFAULT};
- #else
-@@ -26,7 +26,7 @@ const base::Feature kUseSkiaForGLReadback{"UseSkiaForG
- #endif
  
  // Use the SkiaRenderer.
 -#if defined(OS_LINUX) && !(defined(OS_CHROMEOS) || BUILDFLAG(IS_CHROMECAST))

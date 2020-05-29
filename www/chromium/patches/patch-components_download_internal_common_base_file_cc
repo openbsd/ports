@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_download_internal_common_base_file_cc,v 1.6 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-components_download_internal_common_base_file_cc,v 1.7 2020/05/29 20:03:23 robert Exp $
 
 Index: components/download/internal/common/base_file.cc
 --- components/download/internal/common/base_file.cc.orig
 +++ components/download/internal/common/base_file.cc
-@@ -603,7 +603,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
+@@ -604,7 +604,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
  
  }  // namespace
  
@@ -12,7 +12,7 @@ Index: components/download/internal/common/base_file.cc
  
  DownloadInterruptReason BaseFile::AnnotateWithSourceInformationSync(
      const std::string& client_guid,
-@@ -621,7 +621,7 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
+@@ -622,7 +622,7 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
  
    return QuarantineFileResultToReason(result);
  }

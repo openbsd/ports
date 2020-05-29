@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_webrtc_logging_private_webrtc_logging_private_api_cc,v 1.3 2019/11/05 22:30:26 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_webrtc_logging_private_webrtc_logging_private_api_cc,v 1.4 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc
 --- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig
@@ -8,7 +8,7 @@ Index: chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_priva
  #include "extensions/common/error_utils.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "extensions/common/permissions/permissions_data.h"
  #endif
  
@@ -17,16 +17,16 @@ Index: chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_priva
      const extensions::Extension* extension) {
    bool enabled_by_permissions = false;
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (extension) {
      enabled_by_permissions =
          extension->permissions_data()->active_permissions().HasAPIPermission(
-@@ -557,7 +557,7 @@ void WebrtcLoggingPrivateStartEventLoggingFunction::Fi
- }
+@@ -569,7 +569,7 @@ void WebrtcLoggingPrivateStartEventLoggingFunction::Fi
  
- bool WebrtcLoggingPrivateGetLogsDirectoryFunction::RunAsync() {
+ ExtensionFunction::ResponseAction
+ WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // Unlike other WebrtcLoggingPrivate functions that take a RequestInfo object,
    // this function shouldn't be called by a component extension on behalf of
    // some web code. It returns a DirectoryEntry for use directly in the calling

@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_test_BUILD_gn,v 1.13 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_test_BUILD_gn,v 1.14 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/test/BUILD.gn
 --- chrome/test/BUILD.gn.orig
 +++ chrome/test/BUILD.gn
-@@ -6042,7 +6042,7 @@ test("chrome_app_unittests") {
+@@ -6109,7 +6109,7 @@ test("chrome_app_unittests") {
+     "//components/gwp_asan/buildflags",
      "//components/safe_browsing:buildflags",
-     "//components/tracing",
    ]
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_openbsd) {

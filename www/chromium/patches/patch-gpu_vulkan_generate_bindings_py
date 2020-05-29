@@ -1,23 +1,23 @@
-$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.7 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.8 2020/05/29 20:03:24 robert Exp $
 
 Index: gpu/vulkan/generate_bindings.py
 --- gpu/vulkan/generate_bindings.py.orig
 +++ gpu/vulkan/generate_bindings.py
-@@ -165,7 +165,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -181,7 +181,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
 -    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID)',
-+    'ifdef': 'defined(OS_LINUX) || defined(OS_BSD) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)',
      'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
      'functions': [
        'vkGetSemaphoreFdKHR',
-@@ -173,7 +173,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -189,7 +189,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
--    'ifdef': 'defined(OS_LINUX)',
-+    'ifdef': 'defined(OS_LINUX) || defined(OS_BSD)',
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)',
      'extension': 'VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME',
      'functions': [
        'vkGetMemoryFdKHR',

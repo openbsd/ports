@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.14 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.15 2020/05/29 20:03:23 robert Exp $
 Index: content/browser/renderer_host/render_message_filter.h
 --- content/browser/renderer_host/render_message_filter.h.orig
 +++ content/browser/renderer_host/render_message_filter.h
-@@ -87,14 +87,14 @@ class CONTENT_EXPORT RenderMessageFilter
-                               mojo::PendingRemote<mojom::Widget> widget,
-                               CreateFullscreenWidgetCallback callback) override;
+@@ -79,14 +79,14 @@ class CONTENT_EXPORT RenderMessageFilter
+   // mojom::RenderMessageFilter:
+   void GenerateRoutingID(GenerateRoutingIDCallback routing_id) override;
    void HasGpuProcess(HasGpuProcessCallback callback) override;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

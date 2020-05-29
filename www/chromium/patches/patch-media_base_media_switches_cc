@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_base_media_switches_cc,v 1.3 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-media_base_media_switches_cc,v 1.4 2020/05/29 20:03:24 robert Exp $
 
 Index: media/base/media_switches.cc
 --- media/base/media_switches.cc.orig
 +++ media/base/media_switches.cc
-@@ -331,7 +331,7 @@ const base::Feature kFallbackAfterDecodeError{"Fallbac
+@@ -346,7 +346,7 @@ const base::Feature kGav1VideoDecoder{"Gav1VideoDecode
  const base::Feature kGlobalMediaControls {
    "GlobalMediaControls",
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

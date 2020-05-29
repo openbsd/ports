@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_base_x_x11_shm_image_pool_base_cc,v 1.5 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-ui_base_x_x11_shm_image_pool_cc,v 1.1 2020/05/29 20:03:24 robert Exp $
 
-Index: ui/base/x/x11_shm_image_pool_base.cc
---- ui/base/x/x11_shm_image_pool_base.cc.orig
-+++ ui/base/x/x11_shm_image_pool_base.cc
+Index: ui/base/x/x11_shm_image_pool.cc
+--- ui/base/x/x11_shm_image_pool.cc.orig
++++ ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/environment.h"
  #include "base/location.h"
@@ -26,7 +26,7 @@ Index: ui/base/x/x11_shm_image_pool_base.cc
  }
  
  std::size_t MaxShmSegmentSize() {
-@@ -67,6 +72,9 @@ bool IsRemoteHost(const std::string& name) {
+@@ -64,6 +69,9 @@ bool IsRemoteHost(const std::string& name) {
  }
  
  bool ShouldUseMitShm(XDisplay* display) {
@@ -36,7 +36,7 @@ Index: ui/base/x/x11_shm_image_pool_base.cc
    // MIT-SHM may be available on remote connetions, but it will be unusable.  Do
    // a best-effort check to see if the host is remote to disable the SHM
    // codepath.  It may be possible in contrived cases for there to be a
-@@ -199,7 +207,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+@@ -201,7 +209,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
          shmctl(state.shminfo_.shmid, IPC_RMID, nullptr);
          return false;
        }
@@ -45,7 +45,7 @@ Index: ui/base/x/x11_shm_image_pool_base.cc
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -209,7 +217,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+@@ -211,7 +219,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
        if (!XShmAttach(display_, &state.shminfo_))
          return false;
        state.shmem_attached_to_server_ = true;

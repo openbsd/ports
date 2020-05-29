@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_services_print_compositor_BUILD_gn,v 1.1 2020/04/19 19:11:28 robert Exp $
+$OpenBSD: patch-components_services_print_compositor_BUILD_gn,v 1.2 2020/05/29 20:03:23 robert Exp $
 
 Index: components/services/print_compositor/BUILD.gn
 --- components/services/print_compositor/BUILD.gn.orig
@@ -9,5 +9,5 @@ Index: components/services/print_compositor/BUILD.gn
      "//components/services/print_compositor/public/cpp",
 +    "//components/services/print_compositor/public/mojom",
      "//content/public/utility",
+     "//printing/buildflags",
      "//printing/common",
-     "//skia",

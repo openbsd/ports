@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_BUILD_gn,v 1.8 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_BUILD_gn,v 1.9 2020/05/29 20:03:24 robert Exp $
 
 Index: third_party/blink/renderer/platform/BUILD.gn
 --- third_party/blink/renderer/platform/BUILD.gn.orig
 +++ third_party/blink/renderer/platform/BUILD.gn
-@@ -100,6 +100,7 @@ executable("character_data_generator") {
+@@ -101,6 +101,7 @@ executable("character_data_generator") {
      "//build/win:default_exe_manifest",
      "//third_party/icu",
    ]

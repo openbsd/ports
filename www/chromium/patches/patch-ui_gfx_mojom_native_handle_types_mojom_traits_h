@@ -1,0 +1,30 @@
+$OpenBSD: patch-ui_gfx_mojom_native_handle_types_mojom_traits_h,v 1.1 2020/05/29 20:03:25 robert Exp $
+
+Index: ui/gfx/mojom/native_handle_types_mojom_traits.h
+--- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig
++++ ui/gfx/mojom/native_handle_types_mojom_traits.h
+@@ -14,13 +14,13 @@
+ #include "mojo/public/cpp/system/platform_handle.h"
+ #include "ui/gfx/mojom/native_handle_types.mojom-shared.h"
+ 
+-#if defined(OS_LINUX) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+ #include "ui/gfx/native_pixmap_handle.h"
+ #endif
+ 
+ namespace mojo {
+ 
+-#if defined(OS_LINUX) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+ template <>
+ struct COMPONENT_EXPORT(GFX_NATIVE_HANDLE_TYPES_SHARED_MOJOM_TRAITS)
+     StructTraits<gfx::mojom::NativePixmapPlaneDataView,
+@@ -48,7 +48,7 @@ struct COMPONENT_EXPORT(GFX_NATIVE_HANDLE_TYPES_SHARED
+     return pixmap_handle.planes;
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   static uint64_t modifier(const gfx::NativePixmapHandle& pixmap_handle) {
+     return pixmap_handle.modifier;
+   }

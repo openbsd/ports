@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_shell_app_shell_main_delegate_cc,v 1.1 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-content_shell_app_shell_main_delegate_cc,v 1.2 2020/05/29 20:03:23 robert Exp $
 
 Index: content/shell/app/shell_main_delegate.cc
 --- content/shell/app/shell_main_delegate.cc.orig
 +++ content/shell/app/shell_main_delegate.cc
-@@ -325,7 +325,7 @@ void ShellMainDelegate::PreSandboxStartup() {
+@@ -200,7 +200,7 @@ void ShellMainDelegate::PreSandboxStartup() {
      // Reporting for sub-processes will be initialized in ZygoteForked.
      if (process_type != service_manager::switches::kZygoteProcess) {
        crash_reporter::InitializeCrashpad(process_type.empty(), process_type);

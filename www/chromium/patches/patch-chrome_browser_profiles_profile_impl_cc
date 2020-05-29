@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_profiles_profile_impl_cc,v 1.10 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_profile_impl_cc,v 1.11 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/profiles/profile_impl.cc
 --- chrome/browser/profiles/profile_impl.cc.orig
 +++ chrome/browser/profiles/profile_impl.cc
-@@ -163,6 +163,7 @@
+@@ -165,6 +165,7 @@
  #include "services/preferences/public/mojom/preferences.mojom.h"
  #include "services/preferences/public/mojom/tracked_preference_validation_delegate.mojom.h"
  #include "services/service_manager/public/cpp/service.h"
@@ -11,7 +11,7 @@ Index: chrome/browser/profiles/profile_impl.cc
  #include "ui/base/l10n/l10n_util.h"
  
  #if defined(OS_CHROMEOS)
-@@ -732,7 +733,13 @@ void ProfileImpl::DoFinalInit() {
+@@ -752,7 +753,13 @@ void ProfileImpl::DoFinalInit() {
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

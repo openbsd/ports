@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.12 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.13 2020/05/29 20:03:23 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_plugin_main.cc
 --- content/ppapi_plugin/ppapi_plugin_main.cc.orig
 +++ content/ppapi_plugin/ppapi_plugin_main.cc
-@@ -41,7 +41,7 @@
+@@ -42,7 +42,7 @@
  #include "base/files/file_util.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: content/ppapi_plugin/ppapi_plugin_main.cc
  #include "content/public/common/sandbox_init.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
  #endif
-@@ -50,6 +50,11 @@
+@@ -51,6 +51,11 @@
  #include "gin/v8_initializer.h"
  #endif
  
@@ -24,7 +24,7 @@ Index: content/ppapi_plugin/ppapi_plugin_main.cc
  #if defined(OS_POSIX) && !defined(OS_ANDROID)
  #include <stdlib.h>
  #endif
-@@ -119,7 +124,7 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+@@ -120,7 +125,7 @@ int PpapiPluginMain(const MainFunctionParams& paramete
    gin::V8Initializer::LoadV8Snapshot();
  #endif
  

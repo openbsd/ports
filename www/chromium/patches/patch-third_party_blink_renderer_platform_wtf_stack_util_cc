@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.3 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.4 2020/05/29 20:03:24 robert Exp $
 
 Index: third_party/blink/renderer/platform/wtf/stack_util.cc
 --- third_party/blink/renderer/platform/wtf/stack_util.cc.orig
@@ -15,7 +15,7 @@ Index: third_party/blink/renderer/platform/wtf/stack_util.cc
  namespace WTF {
  
  size_t GetUnderestimatedStackSize() {
-@@ -62,6 +67,8 @@ size_t GetUnderestimatedStackSize() {
+@@ -61,6 +66,8 @@ size_t GetUnderestimatedStackSize() {
    //    low as 512k.
    //
    return 512 * 1024;
@@ -24,7 +24,7 @@ Index: third_party/blink/renderer/platform/wtf/stack_util.cc
  #elif defined(OS_MACOSX)
    // pthread_get_stacksize_np() returns too low a value for the main thread on
    // OSX 10.9,
-@@ -98,12 +105,18 @@ return Threading::ThreadStackSize();
+@@ -97,12 +104,18 @@ return Threading::ThreadStackSize();
  
  void* GetStackStart() {
  #if defined(__GLIBC__) || defined(OS_ANDROID) || defined(OS_FREEBSD) || \

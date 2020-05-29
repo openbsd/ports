@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_event_handler_cc,v 1.18 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_event_handler_cc,v 1.19 2020/05/29 20:03:23 robert Exp $
 Index: content/browser/renderer_host/render_widget_host_view_event_handler.cc
 --- content/browser/renderer_host/render_widget_host_view_event_handler.cc.orig
 +++ content/browser/renderer_host/render_widget_host_view_event_handler.cc
-@@ -611,7 +611,7 @@ bool RenderWidgetHostViewEventHandler::CanRendererHand
+@@ -641,7 +641,7 @@ bool RenderWidgetHostViewEventHandler::CanRendererHand
    if (event->type() == ui::ET_MOUSE_EXITED) {
      if (mouse_locked || selection_popup)
        return false;

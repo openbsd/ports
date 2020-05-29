@@ -1,10 +1,10 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.4 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.5 2020/05/29 20:03:25 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.h
 --- weblayer/browser/content_browser_client_impl.h.orig
 +++ weblayer/browser/content_browser_client_impl.h
-@@ -85,7 +85,7 @@ class ContentBrowserClientImpl : public content::Conte
-       service_manager::BinderMapWithContext<content::RenderFrameHost*>* map)
+@@ -91,7 +91,7 @@ class ContentBrowserClientImpl : public content::Conte
+   scoped_refptr<content::QuotaPermissionContext> CreateQuotaPermissionContext()
        override;
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_channel_info_h,v 1.1 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-chrome_common_channel_info_h,v 1.2 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/common/channel_info.h
 --- chrome/common/channel_info.h.orig
 +++ chrome/common/channel_info.h
-@@ -55,7 +55,7 @@ version_info::Channel GetChannelByName(const std::stri
+@@ -61,7 +61,7 @@ bool IsSideBySideCapable();
  std::string GetChannelSuffixForDataDir();
  #endif
  

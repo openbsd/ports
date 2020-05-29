@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_web_applications_components_web_app_file_handler_registration_h,v 1.1 2020/05/29 20:03:23 robert Exp $
+
+Index: chrome/browser/web_applications/components/web_app_file_handler_registration.h
+--- chrome/browser/web_applications/components/web_app_file_handler_registration.h.orig
++++ chrome/browser/web_applications/components/web_app_file_handler_registration.h
+@@ -38,7 +38,7 @@ void RegisterFileHandlersWithOs(const AppId& app_id,
+ // If a shim app was required, also removes the shim app.
+ void UnregisterFileHandlersWithOs(const AppId& app_id, Profile* profile);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ using RegisterMimeTypesOnLinuxCallback =
+     base::OnceCallback<bool(base::FilePath profile_path,
+                             std::string file_contents)>;

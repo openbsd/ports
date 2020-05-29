@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_shell_utility_shell_content_utility_client_cc,v 1.1 2020/05/29 20:03:23 robert Exp $
+
+Index: content/shell/utility/shell_content_utility_client.cc
+--- content/shell/utility/shell_content_utility_client.cc.orig
++++ content/shell/utility/shell_content_utility_client.cc
+@@ -34,7 +34,7 @@
+ #include "mojo/public/cpp/system/buffer.h"
+ #include "services/test/echo/echo_service.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "services/service_manager/tests/sandbox_status_service.h"
+ #endif
+ 
+@@ -139,7 +139,7 @@ void ShellContentUtilityClient::ExposeInterfacesToBrow
+   binders->Add<mojom::PowerMonitorTest>(
+       base::BindRepeating(&PowerMonitorTestImpl::MakeSelfOwnedReceiver),
+       base::ThreadTaskRunnerHandle::Get());
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (register_sandbox_status_helper_) {
+     binders->Add<service_manager::mojom::SandboxStatusService>(
+         base::BindRepeating(

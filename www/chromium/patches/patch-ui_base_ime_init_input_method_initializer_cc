@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_ime_init_input_method_initializer_cc,v 1.1 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_base_ime_init_input_method_initializer_cc,v 1.2 2020/05/29 20:03:24 robert Exp $
 
 Index: ui/base/ime/init/input_method_initializer.cc
 --- ui/base/ime/init/input_method_initializer.cc.orig
@@ -30,7 +30,7 @@ Index: ui/base/ime/init/input_method_initializer.cc
    if (!g_linux_input_method_context_factory_for_testing)
      g_linux_input_method_context_factory_for_testing =
          new FakeInputMethodContextFactory();
-@@ -67,7 +67,7 @@ void InitializeInputMethodForTesting() {
+@@ -65,7 +65,7 @@ void InitializeInputMethodForTesting() {
  void ShutdownInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Shutdown();

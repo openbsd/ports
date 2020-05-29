@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_scroll_scrollbar_theme_aura_cc,v 1.5 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_scroll_scrollbar_theme_aura_cc,v 1.6 2020/05/29 20:03:24 robert Exp $
 
 Index: third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
 --- third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc.orig
@@ -10,8 +10,8 @@ Index: third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    return false;
- #endif
- 
+ #else
+   return true;
 @@ -301,7 +301,7 @@ ScrollbarPart ScrollbarThemeAura::PartsToInvalidateOnT
  
  bool ScrollbarThemeAura::ShouldCenterOnThumb(const Scrollbar& scrollbar,

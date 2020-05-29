@@ -1,18 +1,9 @@
-$OpenBSD: patch-base_linux_util_cc,v 1.8 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-base_linux_util_cc,v 1.9 2020/05/29 20:03:22 robert Exp $
 
 Index: base/linux_util.cc
 --- base/linux_util.cc.orig
 +++ base/linux_util.cc
-@@ -164,7 +164,7 @@ BASE_EXPORT std::string GetKeyValueFromOSReleaseFileFo
- }
- 
- std::string GetLinuxDistro() {
--#if defined(OS_CHROMEOS) || defined(OS_ANDROID)
-+#if defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
-   return g_linux_distro;
- #elif defined(OS_LINUX)
-   LinuxDistroHelper* distro_state_singleton = LinuxDistroHelper::GetInstance();
-@@ -192,6 +192,9 @@ void SetLinuxDistro(const std::string& distro) {
+@@ -134,6 +134,9 @@ void SetLinuxDistro(const std::string& distro) {
  }
  
  bool GetThreadsForProcess(pid_t pid, std::vector<pid_t>* tids) {
@@ -22,7 +13,7 @@ Index: base/linux_util.cc
    // 25 > strlen("/proc//task") + strlen(std::to_string(INT_MAX)) + 1 = 22
    char buf[25];
    strings::SafeSPrintf(buf, "/proc/%d/task", pid);
-@@ -211,6 +214,7 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
+@@ -153,6 +156,7 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
    }
  
    return true;

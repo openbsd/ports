@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_message_center_public_cpp_message_center_constants_h,v 1.3 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_message_center_public_cpp_message_center_constants_h,v 1.4 2020/05/29 20:03:25 robert Exp $
 
 Index: ui/message_center/public/cpp/message_center_constants.h
 --- ui/message_center/public/cpp/message_center_constants.h.orig
 +++ ui/message_center/public/cpp/message_center_constants.h
-@@ -105,7 +105,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
+@@ -109,7 +109,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
  const int kButtonIconTopPadding = 11;      // In DIPs.
  const int kButtonIconToTitlePadding = 16;  // In DIPs.
  

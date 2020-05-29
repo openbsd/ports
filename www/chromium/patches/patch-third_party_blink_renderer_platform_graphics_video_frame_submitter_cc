@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_blink_renderer_platform_graphics_video_frame_submitter_cc,v 1.1 2020/05/29 20:03:24 robert Exp $
+
+Index: third_party/blink/renderer/platform/graphics/video_frame_submitter.cc
+--- third_party/blink/renderer/platform/graphics/video_frame_submitter.cc.orig
++++ third_party/blink/renderer/platform/graphics/video_frame_submitter.cc
+@@ -187,7 +187,7 @@ void VideoFrameSubmitter::OnBeginFrame(
+     if (viz::FrameTokenGT(pair.key, *next_frame_token_))
+       continue;
+ 
+-#ifdef OS_LINUX
++#if defined(OS_LINUX) || defined(OS_BSD)
+     // TODO: On Linux failure flag is unreliable, and perfectly rendered frames
+     // are reported as failures all the time.
+     bool presentation_failure = false;

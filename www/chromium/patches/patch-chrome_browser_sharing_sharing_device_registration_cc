@@ -1,23 +1,23 @@
-$OpenBSD: patch-chrome_browser_sharing_sharing_device_registration_cc,v 1.1 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_sharing_sharing_device_registration_cc,v 1.2 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/sharing/sharing_device_registration.cc
 --- chrome/browser/sharing/sharing_device_registration.cc.orig
 +++ chrome/browser/sharing/sharing_device_registration.cc
-@@ -326,7 +326,7 @@ bool SharingDeviceRegistration::IsSmsFetcherSupported(
+@@ -329,7 +329,7 @@ bool SharingDeviceRegistration::IsSmsFetcherSupported(
  
  bool SharingDeviceRegistration::IsRemoteCopySupported() const {
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
    return base::FeatureList::IsEnabled(kRemoteCopyReceiver);
- #endif
- 
-@@ -335,7 +335,7 @@ bool SharingDeviceRegistration::IsRemoteCopySupported(
+ #else
+   return false;
+@@ -338,7 +338,7 @@ bool SharingDeviceRegistration::IsRemoteCopySupported(
  
  bool SharingDeviceRegistration::IsPeerConnectionSupported() const {
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
    return base::FeatureList::IsEnabled(kSharingPeerConnectionReceiver);
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
-         // defined(OS_CHROMEOS)
+ #else
+   return false;

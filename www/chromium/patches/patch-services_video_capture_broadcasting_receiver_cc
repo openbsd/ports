@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_video_capture_broadcasting_receiver_cc,v 1.4 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-services_video_capture_broadcasting_receiver_cc,v 1.5 2020/05/29 20:03:24 robert Exp $
 
 Index: services/video_capture/broadcasting_receiver.cc
 --- services/video_capture/broadcasting_receiver.cc.orig
 +++ services/video_capture/broadcasting_receiver.cc
-@@ -40,7 +40,7 @@ void CloneSharedBufferHandle(const mojo::ScopedSharedB
+@@ -39,7 +39,7 @@ void CloneSharedBufferHandle(const mojo::ScopedSharedB
  void CloneSharedBufferToRawFileDescriptorHandle(
      const mojo::ScopedSharedBufferHandle& source,
      media::mojom::VideoBufferHandlePtr* target) {
@@ -12,7 +12,7 @@ Index: services/video_capture/broadcasting_receiver.cc
    // |source| is unwrapped to a |PlatformSharedMemoryRegion|, from whence a file
    // descriptor can be extracted which is then mojo-wrapped.
    base::subtle::PlatformSharedMemoryRegion platform_region =
-@@ -183,7 +183,7 @@ void BroadcastingReceiver::BufferContext::
+@@ -182,7 +182,7 @@ void BroadcastingReceiver::BufferContext::
      ConvertRawFileDescriptorToSharedBuffer() {
    DCHECK(buffer_handle_->is_shared_memory_via_raw_file_descriptor());
  

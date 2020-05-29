@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_whitelist_cc,v 1.8 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_whitelist_cc,v 1.9 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/prefs/pref_service_incognito_whitelist.cc
 --- chrome/browser/prefs/pref_service_incognito_whitelist.cc.orig
 +++ chrome/browser/prefs/pref_service_incognito_whitelist.cc
-@@ -187,7 +187,7 @@ const char* const kPersistentPrefNames[] = {
+@@ -133,7 +133,7 @@ const char* const kPersistentPrefNames[] = {
      prefs::kShowFullscreenToolbar,
  #endif
  

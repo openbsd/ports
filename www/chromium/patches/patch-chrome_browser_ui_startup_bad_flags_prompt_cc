@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.20 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.21 2020/05/29 20:03:23 robert Exp $
 Index: chrome/browser/ui/startup/bad_flags_prompt.cc
 --- chrome/browser/ui/startup/bad_flags_prompt.cc.orig
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc
-@@ -87,7 +87,7 @@ static const char* kBadFlags[] = {
+@@ -88,7 +88,7 @@ static const char* kBadFlags[] = {
      extensions::switches::kExtensionsOnChromeURLs,
  #endif
  

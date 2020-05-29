@@ -1,8 +1,8 @@
-$OpenBSD: patch-base_process_memory_cc,v 1.6 2020/04/10 18:51:30 robert Exp $
+$OpenBSD: patch-base_process_memory_cc,v 1.7 2020/05/29 20:03:22 robert Exp $
 Index: base/process/memory.cc
 --- base/process/memory.cc.orig
 +++ base/process/memory.cc
-@@ -42,7 +42,7 @@ void OnNoMemoryInternal(size_t size) {
+@@ -42,7 +42,7 @@ NOINLINE void OnNoMemoryInternal(size_t size) {
  }  // namespace internal
  
  // Defined in memory_win.cc for Windows.

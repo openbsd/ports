@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_network_service_h,v 1.13 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-services_network_network_service_h,v 1.14 2020/05/29 20:03:24 robert Exp $
 
 Index: services/network/network_service.h
 --- services/network/network_service.h.orig
 +++ services/network/network_service.h
-@@ -150,7 +150,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -156,7 +156,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
        base::span<const uint8_t> config,
        mojom::NetworkService::UpdateLegacyTLSConfigCallback callback) override;
    void OnCertDBChanged() override;

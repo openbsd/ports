@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_renderer_chrome_content_renderer_client_cc,v 1.12 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_renderer_chrome_content_renderer_client_cc,v 1.13 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/renderer/chrome_content_renderer_client.cc
 --- chrome/renderer/chrome_content_renderer_client.cc.orig
 +++ chrome/renderer/chrome_content_renderer_client.cc
-@@ -1053,7 +1053,7 @@ WebPlugin* ChromeContentRendererClient::CreatePlugin(
+@@ -1059,7 +1059,7 @@ WebPlugin* ChromeContentRendererClient::CreatePlugin(
        }
  
        case chrome::mojom::PluginStatus::kRestartRequired: {

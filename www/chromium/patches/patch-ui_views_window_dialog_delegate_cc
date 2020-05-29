@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.22 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.23 2020/05/29 20:03:25 robert Exp $
 
 Index: ui/views/window/dialog_delegate.cc
 --- ui/views/window/dialog_delegate.cc.orig
@@ -11,4 +11,4 @@ Index: ui/views/window/dialog_delegate.cc
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && BUILDFLAG(ENABLE_DESKTOP_AURA)
    // The new style doesn't support unparented dialogs on Linux desktop.
    return parent != nullptr;
- #elif defined(OS_WIN)
+ #else

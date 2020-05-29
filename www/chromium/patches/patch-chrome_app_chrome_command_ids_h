@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.8 2020/02/22 12:33:20 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.9 2020/05/29 20:03:22 robert Exp $
 Index: chrome/app/chrome_command_ids.h
 --- chrome/app/chrome_command_ids.h.orig
 +++ chrome/app/chrome_command_ids.h
-@@ -62,7 +62,7 @@
- #define IDC_VISIT_DESKTOP_OF_LRU_USER_2 34049
- #define IDC_VISIT_DESKTOP_OF_LRU_USER_3 34050
+@@ -60,7 +60,7 @@
+ #define IDC_MAXIMIZE_WINDOW             34047
+ #define IDC_ALL_WINDOWS_FRONT           34048
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)

@@ -1,10 +1,10 @@
-$OpenBSD: patch-third_party_angle_third_party_vulkan-validation-layers_src_layers_vk_loader_platform_h,v 1.1 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-third_party_angle_third_party_vulkan-validation-layers_src_layers_vk_loader_platform_h,v 1.2 2020/05/29 20:03:24 robert Exp $
 
 Index: third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h
 --- third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h.orig
 +++ third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h
-@@ -31,7 +31,7 @@
- #include "vulkan/vk_platform.h"
+@@ -33,7 +33,7 @@
+ #undef NOMINMAX
  #include "vulkan/vk_sdk_platform.h"
  
 -#if defined(__linux__) || defined(__APPLE__)

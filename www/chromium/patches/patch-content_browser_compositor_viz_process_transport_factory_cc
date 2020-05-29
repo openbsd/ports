@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_browser_compositor_viz_process_transport_factory_cc,v 1.1 2020/05/29 20:03:23 robert Exp $
+
+Index: content/browser/compositor/viz_process_transport_factory.cc
+--- content/browser/compositor/viz_process_transport_factory.cc.orig
++++ content/browser/compositor/viz_process_transport_factory.cc
+@@ -109,7 +109,7 @@ class HostDisplayClient : public viz::HostDisplayClien
+   HostDisplayClient& operator=(const HostDisplayClient&) = delete;
+ 
+   // viz::HostDisplayClient:
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   void DidCompleteSwapWithNewSize(const gfx::Size& size) override {
+     compositor_->OnCompleteSwapWithNewSize(size);
+   }

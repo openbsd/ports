@@ -1,6 +1,8 @@
-$OpenBSD: patch-chrome_browser_resources_safe_browsing_gen_file_type_proto_py,v 1.4 2017/03/14 12:18:53 robert Exp $
---- chrome/browser/resources/safe_browsing/gen_file_type_proto.py.orig.port	Fri Mar 10 08:44:31 2017
-+++ chrome/browser/resources/safe_browsing/gen_file_type_proto.py	Fri Mar 10 08:45:03 2017
+$OpenBSD: patch-components_safe_browsing_core_resources_gen_file_type_proto_py,v 1.1 2020/05/29 20:03:23 robert Exp $
+
+Index: components/safe_browsing/core/resources/gen_file_type_proto.py
+--- components/safe_browsing/core/resources/gen_file_type_proto.py.orig
++++ components/safe_browsing/core/resources/gen_file_type_proto.py
 @@ -31,6 +31,7 @@ def PlatformTypes():
      "android": download_file_types_pb2.DownloadFileType.PLATFORM_ANDROID,
      "chromeos": download_file_types_pb2.DownloadFileType.PLATFORM_CHROME_OS,

@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_resources_remoting_strings_grd,v 1.3 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-remoting_resources_remoting_strings_grd,v 1.4 2020/05/29 20:03:24 robert Exp $
 
 Index: remoting/resources/remoting_strings.grd
 --- remoting/resources/remoting_strings.grd.orig
 +++ remoting/resources/remoting_strings.grd
-@@ -1393,7 +1393,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
+@@ -880,7 +880,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
            Open Screen Recording Preferences
          </message>
        </if>
@@ -12,7 +12,7 @@ Index: remoting/resources/remoting_strings.grd
          <message name="IDS_SESSION_DIALOG_MESSAGE" desc="The message to show at the top of the session-selection dialog.">
            Select a session to launch within your Chrome Remote Desktop environment. (Note that some session types may not support running within Chrome Remote Desktop and on the local console simultaneously.)
          </message>
-@@ -1409,7 +1409,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
+@@ -896,7 +896,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
          <message name="IDS_SESSION_DIALOG_DEFAULT_SESSION_COMMENT" desc="The comment for the entry to launch the default session.">
            Launch the default XSession
          </message>

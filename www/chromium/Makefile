@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.512 2020/05/06 18:50:44 robert Exp $
+# $OpenBSD: Makefile,v 1.513 2020/05/29 20:03:22 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			81.0.4044.138
+V=			83.0.4103.61
 
 DISTNAME=		chromium-${V}
 
@@ -40,7 +40,8 @@ MODULES=	lang/python
 
 COMPILER =	base-clang ports-clang ports-gcc
 
-MODPY_RUNDEP=	No
+MODPY_RUNDEP=		No
+MODPY_SETUPTOOLS=	Yes
 
 PATCHORIG=	.orig.port
 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_native_file_system_chrome_native_file_system_permission_context_cc,v 1.3 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_native_file_system_chrome_native_file_system_permission_context_cc,v 1.4 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/native_file_system/chrome_native_file_system_permission_context.cc
 --- chrome/browser/native_file_system/chrome_native_file_system_permission_context.cc.orig
 +++ chrome/browser/native_file_system/chrome_native_file_system_permission_context.cc
-@@ -144,7 +144,7 @@ const struct {
+@@ -150,7 +150,7 @@ const struct {
      {base::DIR_APP_DATA, nullptr, true},
      {base::DIR_HOME, FILE_PATH_LITERAL("Library"), true},
  #endif

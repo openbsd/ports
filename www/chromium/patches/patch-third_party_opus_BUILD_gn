@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_opus_BUILD_gn,v 1.3 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-third_party_opus_BUILD_gn,v 1.4 2020/05/29 20:03:24 robert Exp $
 
 Index: third_party/opus/BUILD.gn
 --- third_party/opus/BUILD.gn.orig
 +++ third_party/opus/BUILD.gn
-@@ -39,7 +39,6 @@ config("opus_private_config") {
+@@ -40,7 +40,6 @@ config("opus_private_config") {
      # Prefer alloca() over variable length arrays which are often inefficient;
      # the opus code will automatically handle this correctly per-platform.
      "USE_ALLOCA",

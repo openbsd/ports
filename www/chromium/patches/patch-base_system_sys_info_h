@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_system_sys_info_h,v 1.2 2020/04/10 18:51:30 robert Exp $
+$OpenBSD: patch-base_system_sys_info_h,v 1.3 2020/05/29 20:03:22 robert Exp $
 
 Index: base/system/sys_info.h
 --- base/system/sys_info.h.orig
 +++ base/system/sys_info.h
-@@ -194,6 +194,8 @@ class BASE_EXPORT SysInfo {
+@@ -197,6 +197,8 @@ class BASE_EXPORT SysInfo {
    // On Desktop this returns true when memory <= 512MB.
    static bool IsLowEndDevice();
  

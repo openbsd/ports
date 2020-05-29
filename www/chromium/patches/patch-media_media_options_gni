@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_media_options_gni,v 1.22 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-media_media_options_gni,v 1.23 2020/05/29 20:03:24 robert Exp $
 
 Index: media/media_options.gni
 --- media/media_options.gni.orig
@@ -17,8 +17,8 @@ Index: media/media_options.gni
        (!is_chromecast || is_cast_desktop_build || is_cast_audio_only)) {
      use_alsa = true
  
-@@ -129,6 +132,10 @@ declare_args() {
-     if (!use_cras && !is_chromecast) {
+@@ -136,6 +139,10 @@ declare_args() {
+     if (!use_cras && !is_chromecast && !is_asan && !is_tsan) {
        use_pulseaudio = true
      }
 +  }

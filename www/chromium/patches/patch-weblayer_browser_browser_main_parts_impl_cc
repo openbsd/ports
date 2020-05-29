@@ -1,9 +1,9 @@
-$OpenBSD: patch-weblayer_browser_browser_main_parts_impl_cc,v 1.4 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-weblayer_browser_browser_main_parts_impl_cc,v 1.5 2020/05/29 20:03:25 robert Exp $
 
 Index: weblayer/browser/browser_main_parts_impl.cc
 --- weblayer/browser/browser_main_parts_impl.cc.orig
 +++ weblayer/browser/browser_main_parts_impl.cc
-@@ -41,7 +41,7 @@
+@@ -47,7 +47,7 @@
  #if defined(USE_AURA) && defined(USE_X11)
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
@@ -12,7 +12,7 @@ Index: weblayer/browser/browser_main_parts_impl.cc
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -109,7 +109,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
+@@ -121,7 +121,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
  #if defined(USE_X11)
    ui::SetDefaultX11ErrorHandlers();
  #endif

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_sharing_shared_clipboard_feature_flags_h,v 1.1 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-chrome_browser_sharing_shared_clipboard_feature_flags_h,v 1.2 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/sharing/shared_clipboard/feature_flags.h
 --- chrome/browser/sharing/shared_clipboard/feature_flags.h.orig
 +++ chrome/browser/sharing/shared_clipboard/feature_flags.h
-@@ -18,13 +18,13 @@ extern const base::Feature kSharedClipboardReceiver;
+@@ -15,7 +15,7 @@
  extern const base::Feature kSharedClipboardUI;
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -12,10 +12,3 @@ Index: chrome/browser/sharing/shared_clipboard/feature_flags.h
  // Feature to enable handling remote copy messages.
  extern const base::Feature kRemoteCopyReceiver;
  
- // List of allowed origins to fetch images from, comma separated.
- extern const base::FeatureParam<std::string> kRemoteCopyAllowedOrigins;
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #endif  // CHROME_BROWSER_SHARING_SHARED_CLIPBOARD_FEATURE_FLAGS_H_

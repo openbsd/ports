@@ -1,8 +1,8 @@
-$OpenBSD: patch-net_dns_dns_util_cc,v 1.8 2019/11/05 22:30:28 robert Exp $
+$OpenBSD: patch-net_dns_dns_util_cc,v 1.9 2020/05/29 20:03:24 robert Exp $
 Index: net/dns/dns_util.cc
 --- net/dns/dns_util.cc.orig
 +++ net/dns/dns_util.cc
-@@ -38,6 +38,8 @@ const uint16_t kFlagNamePointer = 0xc000;
+@@ -39,6 +39,8 @@ const uint16_t kFlagNamePointer = 0xc000;
  
  }  // namespace
  

@@ -1,0 +1,14 @@
+$OpenBSD: patch-services_service_manager_sandbox_switches_h,v 1.1 2020/05/29 20:03:24 robert Exp $
+
+Index: services/service_manager/sandbox/switches.h
+--- services/service_manager/sandbox/switches.h.orig
++++ services/service_manager/sandbox/switches.h
+@@ -52,7 +52,7 @@ SERVICE_MANAGER_SANDBOX_EXPORT extern const char kEnab
+ SERVICE_MANAGER_SANDBOX_EXPORT extern const char kGpuSandboxAllowSysVShm[];
+ SERVICE_MANAGER_SANDBOX_EXPORT extern const char kGpuSandboxFailuresFatal[];
+ SERVICE_MANAGER_SANDBOX_EXPORT extern const char kNoSandbox[];
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ SERVICE_MANAGER_SANDBOX_EXPORT extern const char kNoZygoteSandbox[];
+ #endif
+ #if defined(OS_WIN)

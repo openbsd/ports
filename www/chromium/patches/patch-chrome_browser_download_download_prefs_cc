@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.20 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.21 2020/05/29 20:03:23 robert Exp $
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig
@@ -86,7 +86,7 @@ Index: chrome/browser/download/download_prefs.cc
 @@ -514,9 +517,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
    // Fall back to the default download directory for all other paths.
    return GetDefaultDownloadDirectoryForProfile();
- #endif
+ #else
 +  // If unveil(2) is used, force the file dialog directory to something we
 +  // know is available.
 +  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();

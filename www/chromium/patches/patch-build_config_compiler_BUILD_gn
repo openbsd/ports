@@ -1,18 +1,18 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.38 2020/04/10 18:51:30 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.39 2020/05/29 20:03:22 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -298,7 +298,7 @@ config("compiler") {
+@@ -66,7 +66,7 @@ declare_args() {
  
-     # Linker warnings.
-     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
--        !is_mac && !is_ios && current_os != "aix") {
-+        !is_mac && !is_ios && current_os != "aix" && current_os != "openbsd") {
-       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
-       ldflags += [ "-Wl,--fatal-warnings" ]
-     }
-@@ -383,6 +383,7 @@ config("compiler") {
+   # Enable fatal linker warnings. Building Chromium with certain versions
+   # of binutils can cause linker warning.
+-  fatal_linker_warnings = true
++  fatal_linker_warnings = false
+ 
+   # Build with C++ RTTI enabled. Chromium builds without RTTI by default,
+   # but some sanitizers are known to require it, like CFI diagnostics
+@@ -382,6 +382,7 @@ config("compiler") {
      }
  
      ldflags += [
@@ -20,7 +20,7 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,noexecstack",
        "-Wl,-z,relro",
      ]
-@@ -391,13 +392,8 @@ config("compiler") {
+@@ -390,13 +391,8 @@ config("compiler") {
        ldflags += [ "-Wl,-z,now" ]
      }
  
@@ -36,7 +36,7 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -486,7 +482,7 @@ config("compiler") {
+@@ -485,7 +481,7 @@ config("compiler") {
      }
    }
  
@@ -45,7 +45,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" +
                  rebase_path("//tools/clang/crashreports", root_build_dir) ]
  
-@@ -753,7 +749,7 @@ config("compiler_cpu_abi") {
+@@ -741,7 +737,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -54,7 +54,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -767,7 +763,7 @@ config("compiler_cpu_abi") {
+@@ -755,7 +751,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -63,18 +63,16 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1515,24 +1511,6 @@ config("default_warnings") {
+@@ -1495,24 +1491,6 @@ config("default_warnings") {
+           # Ignore warnings about MSVC optimization pragmas.
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
- 
+-
 -          # TODO(https://crbug.com/989932): Evaluate and possibly enable.
 -          "-Wno-implicit-int-float-conversion",
 -
 -          # TODO(https://crbug.com/999886): Clean up, enable.
 -          "-Wno-final-dtor-non-final-class",
--
--          # TODO(https://crbug.com/1016947) Clean up, enable.
--          "-Wno-bitwise-conditional-parentheses",
 -
 -          # TODO(https://crbug.com/1016945) Clean up, enable.
 -          "-Wno-builtin-assume-aligned-alignment",
@@ -82,13 +80,24 @@ Index: build/config/compiler/BUILD.gn
 -          # TODO(https://crbug.com/1028110): Evaluate and possible enable.
 -          "-Wno-deprecated-copy",
 -
--          # TODO(https://crbug.com/1031169): Clean up and enable.
--          "-Wno-misleading-indentation",
+-          # TODO(https://crbug.com/1050281): Clean up, enable.
+-          "-Wno-non-c-typedef-for-linkage",
 -
-           # TODO(https://crbug.com/1039697): Evaluate and possibly enable.
-           "-Wno-range-loop-analysis",
+-          # TODO(https://crbug.com/1059231): Clean up, enable.
+-          "-Wno-pointer-to-int-cast",
          ]
-@@ -1741,7 +1719,7 @@ config("thin_archive") {
+ 
+         if (is_android) {
+@@ -1660,7 +1638,7 @@ config("no_chromium_code") {
+       # suppressing them individually, we just blanket suppress them here.
+       "-Wno-unused-variable",
+     ]
+-    if (!is_nacl && (current_toolchain == host_toolchain || !use_xcode_clang)) {
++    if (!is_nacl && (current_toolchain == host_toolchain || !use_xcode_clang) && !is_openbsd) {
+       cflags += [
+         # TODO(https://crbug.com/1031169): Clean up and enable.
+         "-Wno-misleading-indentation",
+@@ -1738,7 +1716,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -97,7 +106,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2212,7 +2190,7 @@ config("afdo_optimize_size") {
+@@ -2151,7 +2129,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -106,7 +115,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2227,7 +2205,7 @@ config("afdo") {
+@@ -2166,7 +2144,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -115,12 +124,16 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2334,7 +2312,7 @@ config("symbols") {
+@@ -2262,10 +2240,10 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
 -      cflags += [ "-g2" ]
-+      cflags += [ "${DEBUGFLAG}" ]
++      cflags += [ "-g0" ]
      }
  
-     if (use_debug_fission && !is_nacl && !is_android) {
+-    if (is_clang && !is_nacl && !use_xcode_clang) {
++    if (is_clang && !is_nacl && !use_xcode_clang && !is_openbsd) {
+       cflags += [
+         "-Xclang",
+         "-debug-info-kind=constructor",

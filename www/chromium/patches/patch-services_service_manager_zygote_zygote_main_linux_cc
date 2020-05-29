@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_zygote_zygote_main_linux_cc,v 1.3 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-services_service_manager_zygote_zygote_main_linux_cc,v 1.4 2020/05/29 20:03:24 robert Exp $
 
 Index: services/service_manager/zygote/zygote_main_linux.cc
 --- services/service_manager/zygote/zygote_main_linux.cc.orig
@@ -45,7 +45,7 @@ Index: services/service_manager/zygote/zygote_main_linux.cc
    sandbox::SetAmZygoteOrRenderer(true, GetSandboxFD());
  
    auto* linux_sandbox = service_manager::SandboxLinux::GetInstance();
-@@ -238,6 +245,9 @@ bool ZygoteMain(
+@@ -240,6 +247,9 @@ bool ZygoteMain(
  
    // This function call can return multiple times, once per fork().
    return zygote.ProcessRequests();

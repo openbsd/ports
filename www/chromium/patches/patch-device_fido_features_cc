@@ -1,9 +1,9 @@
-$OpenBSD: patch-device_fido_features_cc,v 1.1 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-device_fido_features_cc,v 1.2 2020/05/29 20:03:24 robert Exp $
 
 Index: device/fido/features.cc
 --- device/fido/features.cc.orig
 +++ device/fido/features.cc
-@@ -23,7 +23,7 @@ extern const base::Feature kWebAuthPhoneSupport{
+@@ -27,7 +27,7 @@ extern const base::Feature kWebAuthPhoneSupport{
  extern const base::Feature kWebAuthFeaturePolicy{
      "WebAuthenticationFeaturePolicy", base::FEATURE_DISABLED_BY_DEFAULT};
  
