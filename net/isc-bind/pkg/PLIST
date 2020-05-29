@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/05/19 09:32:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/05/29 20:05:37 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -281,25 +281,18 @@ include/pk11/result.h
 include/pk11/site.h
 include/pkcs11/
 include/pkcs11/pkcs11.h
-@static-lib lib/libbind9.a
 lib/libbind9.la
 @lib lib/libbind9.so.${LIBbind9_VERSION}
-@static-lib lib/libdns.a
 lib/libdns.la
 @lib lib/libdns.so.${LIBdns_VERSION}
-@static-lib lib/libirs.a
 lib/libirs.la
 @lib lib/libirs.so.${LIBirs_VERSION}
-@static-lib lib/libisc.a
 lib/libisc.la
 @lib lib/libisc.so.${LIBisc_VERSION}
-@static-lib lib/libisccc.a
 lib/libisccc.la
 @lib lib/libisccc.so.${LIBisccc_VERSION}
-@static-lib lib/libisccfg.a
 lib/libisccfg.la
 @lib lib/libisccfg.so.${LIBisccfg_VERSION}
-@static-lib lib/libns.a
 lib/libns.la
 @lib lib/libns.so.${LIBns_VERSION}
 lib/named/
@@ -395,32 +388,21 @@ sbin/named-compilezone
 @bin sbin/rndc
 @bin sbin/rndc-confgen
 sbin/tsig-keygen
-share/examples/bind9/
 @sample ${LOCALSTATEDIR}/named/
-@sample ${LOCALSTATEDIR}/named/master/
-@sample ${LOCALSTATEDIR}/named/standard/
 @mode 750
 @group _bind
 @sample ${LOCALSTATEDIR}/named/etc/
 @mode 775
-@sample ${LOCALSTATEDIR}/named/slave/
 @sample ${LOCALSTATEDIR}/named/tmp/
 @mode
 @group
+share/doc/bind9/
+share/doc/bind9/Bv9ARM.pdf
+share/doc/bind9/notes.pdf
+share/doc/bind9/notes.txt
+share/examples/bind9/
 share/examples/bind9/bind.keys
-@sample ${LOCALSTATEDIR}/named/etc/bind.keys
-share/examples/bind9/localhost
-@sample ${LOCALSTATEDIR}/named/standard/localhost
-share/examples/bind9/loopback
-@sample ${LOCALSTATEDIR}/named/standard/loopback
-share/examples/bind9/loopback6.arpa
-@sample ${LOCALSTATEDIR}/named/standard/loopback6.arpa
 share/examples/bind9/named.conf
 @mode 640
 @group _bind
 @sample ${LOCALSTATEDIR}/named/etc/named.conf
-@mode
-@group
-share/examples/bind9/root.hint
-@group wheel
-@sample ${LOCALSTATEDIR}/named/etc/root.hint

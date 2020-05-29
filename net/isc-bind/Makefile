@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2020/05/19 09:32:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2020/05/29 20:05:37 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -8,6 +8,7 @@ V=		9.16.3
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		0
+REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -33,9 +34,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto iconv idn2 json-c lzma m pthread unistring uv xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
-#MASTER_SITES0=	${MASTER_SITES:=patches/}
-#PATCHFILES=	bind-v9.16.0-tcp_quota_fix.patch:0
-#PATCH_DIST_STRIP= -p1
 
 MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
@@ -51,6 +49,7 @@ LIB_DEPENDS=	converters/libiconv \
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
+LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_ARGS=	--enable-full-report \
 		--with-libtool \
 		--with-libidn2 \
@@ -100,10 +99,12 @@ post-test:
 	cd ${WRKSRC}/bin/tests/system && ${SUDO} ./ifconfig.sh down
 
 post-install:
-	cd ${FILESDIR}; ${INSTALL_DATA} localhost loopback loopback6.arpa \
-	    named.conf root.hint ${PREFIX}/share/examples/bind9/
 .for i in dig nslookup host
 	ln -fs $i ${PREFIX}/bin/e$i; ln -fs $i.1 ${PREFIX}/man/man1/e$i.1
 .endfor
+	${INSTALL_DATA} ${FILESDIR}/named.conf ${PREFIX}/share/examples/bind9
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bind9
+	cd ${WRKSRC}/doc/arm; ${INSTALL_DATA} Bv9ARM.pdf notes.pdf \
+	    notes.txt ${PREFIX}/share/doc/bind9/
 
 .include <bsd.port.mk>

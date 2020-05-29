@@ -1,3 +1,0 @@
-BIND: named 9.12+ insists that the "working directory" (inside the
-/var/named chroot) is writable. Simplest fix if upgrading is probably
-to add 'directory "/tmp";' to the options section of named.conf.
