@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/02 19:23:13 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/05/29 21:17:20 bcallah Exp $
 @bin bin/dibuja
 @comment lib/gegl-0.4/dibuja-insta-curve.a
 @comment lib/gegl-0.4/dibuja-insta-curve.la
-lib/gegl-0.4/dibuja-insta-curve.so
+@so lib/gegl-0.4/dibuja-insta-curve.so
 share/applications/dibuja.desktop
 share/dibuja/
 share/dibuja/brushes/
