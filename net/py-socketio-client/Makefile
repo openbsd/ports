@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/05/29 22:48:41 sthen Exp $
 
 COMMENT =		python socket.io client library
 
 MODPY_EGG_VERSION =	0.6.7
 DISTNAME =		socketIO_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-socketIO-client-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
 
