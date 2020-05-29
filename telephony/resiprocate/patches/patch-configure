@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+
+Follow OpenBSD shared library naming scheme
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -2573,7 +2573,6 @@ SO_RELEASE=`echo $PACKAGE_VERSION | cut -f1,2 -d.`
+ 
+ 
+ #LIBTOOL_VERSION_RELEASE="-version-info 0:0:0 -release @SO_RELEASE@"
+-LIBTOOL_VERSION_RELEASE="-release $SO_RELEASE"
+ 
+ 
+ 

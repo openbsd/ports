@@ -1,0 +1,10 @@
+#!/bin/ksh
+#
+# $OpenBSD: repro.rc,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+
+daemon="${TRUEPREFIX}/sbin/repro"
+daemon_flags="${SYSCONFDIR}/repro/repro.config"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

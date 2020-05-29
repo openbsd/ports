@@ -1,0 +1,3 @@
+reTurn is a highly efficient C++ open-source STUN/TURN server and client
+library. It is an implementation of the latest STUN/TURN RFCs: RFC5389 (STUN),
+and RFC5766 (TURN).

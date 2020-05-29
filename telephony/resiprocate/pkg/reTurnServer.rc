@@ -1,0 +1,10 @@
+#!/bin/ksh
+#
+# $OpenBSD: reTurnServer.rc,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+
+daemon="${TRUEPREFIX}/sbin/reTurnServer"
+daemon_flags="${SYSCONFDIR}/reTurn/reTurnServer.config"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

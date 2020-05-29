@@ -1,0 +1,101 @@
+$OpenBSD: patch-repro_repro_config,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+
+Index: repro/repro.config
+--- repro/repro.config.orig
++++ repro/repro.config
+@@ -11,16 +11,16 @@
+ # Note:  Logging to cout can negatively effect performance.
+ #        When repro is placed into production 'file' or
+ #        'syslog' should be used.
+-LoggingType = cout
++LoggingType = file
+ 
+ # For syslog, also specify the facility, default is LOG_DAEMON
+ SyslogFacility = LOG_DAEMON
+ 
+ # Logging level: NONE|CRIT|ERR|WARNING|INFO|DEBUG|STACK
+-LogLevel = INFO
++LogLevel = WARNING
+ 
+ # Log Filename. This setting is only applicable when LoggingType is set to file.
+-LogFilename = repro.log
++LogFilename = /var/log/repro/repro.log
+ 
+ # Log file Max Bytes.  This setting is only applicable when LoggingType is set to file.
+ LogFileMaxBytes = 5242880
+@@ -172,7 +172,7 @@ TLSUseEmailAsSIP = false
+ #
+ #     openssl dhparam -outform PEM -out dh2048.pem 2048
+ #
+-TlsDHParamsFilename = dh2048.pem
++TlsDHParamsFilename = ${SYSCONFDIR}/repro/dh2048.pem
+ 
+ # Alternate and more flexible method to specify transports to bind to.  If specified here
+ # then IPAddress, and port settings above are ignored.
+@@ -212,8 +212,8 @@ TlsDHParamsFilename = dh2048.pem
+ # Transport3Interface = 192.168.1.106:5061
+ # Transport3Type = TLS
+ # Transport3TlsDomain = sipdomain.com
+-# Transport3TlsCertificate = /etc/ssl/crt/sipdomain.com.crt
+-# Transport3TlsPrivateKey = /etc/ssl/private/sipdomain.com.key
++# Transport3TlsCertificate = ${SYSCONFDIR}/repro/sipdomain.com.crt
++# Transport3TlsPrivateKey = ${SYSCONFDIR}/repro/sipdomain.com.key
+ # Transport3TlsPrivateKeyPassPhrase = password
+ # Transport3TlsClientVerification = Mandatory
+ # Transport3RecordRouteUri = sip:h1.sipdomain.com;transport=TLS
+@@ -266,12 +266,12 @@ HttpAdminRealm = repro
+ #
+ #   user = admin
+ #   realm = the value from HttpAdminRealm
+-#   HA1 = `echo -n user:realm:password | md5sum`
++#   HA1 = `echo -n user:realm:password | md5`
+ #
+ # You can use the htdigest utility from Apache to create and
+ # manage this file
+ #
+-HttpAdminUserFile = users.txt
++HttpAdminUserFile = ${SYSCONFDIR}/repro/users.txt
+ 
+ # Comma separated list of IP addresses used for binding the Command Server listeners.
+ # If left blank it will bind to all adapters.
+@@ -327,7 +327,7 @@ EnablePublicationReplication = true
+ # The default is determined at build time depending upon the
+ # target environment and the installation prefix passed to
+ # the configure script
+-#PluginDirectory = /usr/lib/repro/plugins
++#PluginDirectory = ${LOCALBASE}/lib/repro/plugins
+ 
+ # List of plugins to load (comma-separated list)
+ # These are the names of the plugins and not the full filenames
+@@ -345,11 +345,11 @@ EnablePublicationReplication = true
+ # the specified user
+ # If neither option is specified, then no attempt will be made
+ # to call setuid/setgid (there is no default value)
+-#RunAsUser = repro
+-#RunAsGroup = repro
++RunAsUser = _repro
++RunAsGroup = _repro
+ 
+ # Must be true or false, default = false, not supported on Windows
+-Daemonize = false
++Daemonize = true
+ 
+ # On UNIX it is normal to create a PID file
+ # if unspecified, no attempt will be made to create a PID file
+@@ -398,6 +398,7 @@ Daemonize = false
+ #CAFile = /etc/ssl/certs/ca-certificates.crt
+ # Uncomment for Fedora, Red Hat, CentOS:
+ #CAFile = /etc/pki/tls/cert.pem
++CAFile = /etc/ssl/cert.pem
+ 
+ # Certificates in this location have to match one of the filename
+ # patterns expected by the legacy reSIProcate SSL code:
+@@ -465,7 +466,7 @@ DefaultDatabase = 1
+ 
+ # Defines a BerkeleyDB storing the files in Database1Path:
+ Database1Type = BerkeleyDB
+-Database1Path = ./
++Database1Path = /var/db/repro
+ 
+ # Alternatively, define an SQL database
+ #

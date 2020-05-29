@@ -1,0 +1,11 @@
+$OpenBSD: patch-reTurn_users_txt,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+
+Index: reTurn/users.txt
+--- reTurn/users.txt.orig
++++ reTurn/users.txt
+@@ -18,4 +18,4 @@
+ #
+ # Comments can be inserted by starting a line with #
+ #
+-test:1234:reTurn:authorized
++#test:1234:reTurn:authorized

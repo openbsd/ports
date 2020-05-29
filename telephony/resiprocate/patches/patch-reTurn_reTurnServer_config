@@ -1,0 +1,90 @@
+$OpenBSD: patch-reTurn_reTurnServer_config,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+
+Index: reTurn/reTurnServer.config
+--- reTurn/reTurnServer.config.orig
++++ reTurn/reTurnServer.config
+@@ -84,10 +84,10 @@ LoggingType = file
+ SyslogFacility = LOG_DAEMON
+ 
+ # Logging level: NONE|CRIT|ERR|WARNING|INFO|DEBUG|STACK
+-LoggingLevel = DEBUG
++LoggingLevel = WARNING
+ 
+ # Log Filename
+-LogFilename = reTurnServer.log
++LogFilename = /var/log/reTurnServer/reTurnServer.log
+ 
+ # Log file Max Size
+ LogFileMaxLines = 50000
+@@ -98,15 +98,15 @@ LogFileMaxLines = 50000
+ ########################################################
+ 
+ # Must be true or false, default = false, not supported on Windows
+-Daemonize = false
++Daemonize = true
+ 
+ # On UNIX it is normal to create a PID file
+ # if unspecified, no attempt will be made to create a PID file
+ #PidFile = /var/run/reTurnServer/reTurnServer.pid
+ 
+ # UNIX account information to run process as
+-#RunAsUser = return
+-#RunAsGroup = return
++RunAsUser = _return
++RunAsGroup = _return
+ 
+ 
+ ########################################################
+@@ -132,7 +132,7 @@ AuthenticationRealm = reTurn
+ #
+ # This file format is interchangeable with TurnServer.org's user database
+ #
+-UserDatabaseFile = users.txt
++UserDatabaseFile = ${SYSCONFDIR}/reTurn/users.txt
+ 
+ # Hashed passwords in the user database file
+ # This option specifies whether the passwords are plain text
+@@ -150,7 +150,7 @@ UserDatabaseFile = users.txt
+ #
+ # you can issue a command such as:
+ #
+-#      echo -n bob:example.org:foobar | md5sum
++#      echo -n bob:example.org:foobar | md5
+ #
+ # WARNING: the hashing scheme prevents recovery of the plain text
+ # password.  However, H(A1) hash values must still be kept
+@@ -158,7 +158,7 @@ UserDatabaseFile = users.txt
+ # Therefore, the user database file should always be readable
+ # only by the reTurn process and no other regular users.
+ #
+-UserDatabaseHashedPasswords = false
++UserDatabaseHashedPasswords = true
+ 
+ # How frequently to check the user database file for changes
+ # Set to 0 to only load the file once at startup
+@@ -207,14 +207,14 @@ MaxAllocationLifetime = 3600
+ # certificates should also be appened to this file.
+ # The private key may optionally be included in this file
+ # or in a separate key file specified by TlsServerPrivateKeyFilename
+-TlsServerCertificateFilename = server.pem
++TlsServerCertificateFilename = ${SYSCONFDIR}/reTurn/server.pem
+ 
+ # TLS Server Private Key Filename (loaded from working directory)
+ # The PEM formated file that contains the private key of the certificate
+ # that will be presented to clients connecting over TLS.
+ # If not specified, reTurn will also try to find the private key
+ # in the file specified by TlsServerCertificateFilename
+-TlsServerPrivateKeyFilename = server.key
++TlsServerPrivateKeyFilename = ${SYSCONFDIR}/reTurn/server.key
+ 
+ # TLS temporary Diffie-Hellman parameters file (loaded from working directory)
+ # It's strongly recommended to generated own Diffie-Hellman parameters with
+@@ -222,7 +222,7 @@ TlsServerPrivateKeyFilename = server.key
+ #
+ #     openssl dhparam -outform PEM -out dh2048.pem 2048
+ #
+-TlsTempDhFilename = dh2048.pem
++TlsTempDhFilename = ${SYSCONFDIR}/reTurn/dh2048.pem
+ 
+ # TLS server private key certificate password required to read
+ # from PEM file.  Leave blank if key is not encrypted.

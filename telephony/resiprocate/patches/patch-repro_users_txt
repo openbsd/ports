@@ -1,0 +1,9 @@
+$OpenBSD: patch-repro_users_txt,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+
+Index: repro/users.txt
+--- repro/users.txt.orig
++++ repro/users.txt
+@@ -1,2 +1,2 @@
+ # default user admin with password admin
+-admin:repro:587c67fddee5b46eef47c36d93016965
++#admin:repro:587c67fddee5b46eef47c36d93016965

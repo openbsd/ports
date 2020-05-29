@@ -1,0 +1,65 @@
+@comment $OpenBSD: PLIST-return,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+@newgroup _return:856
+@newuser _return:856:856:daemon:reTurnServer user:/var/empty:/sbin/nologin
+@extraunexec rm -f /var/log/reTurnServer/*
+@rcscript ${RCDIR}/reTurnServer
+include/reTurn/
+include/reTurn/AsyncSocketBase.hxx
+include/reTurn/AsyncSocketBaseHandler.hxx
+include/reTurn/AsyncTcpSocketBase.hxx
+include/reTurn/AsyncTlsSocketBase.hxx
+include/reTurn/AsyncUdpSocketBase.hxx
+include/reTurn/ChannelManager.hxx
+include/reTurn/ConnectionManager.hxx
+include/reTurn/DataBuffer.hxx
+include/reTurn/ReTurnConfig.hxx
+include/reTurn/ReTurnSubsystem.hxx
+include/reTurn/RemotePeer.hxx
+include/reTurn/RequestHandler.hxx
+include/reTurn/StunAuth.hxx
+include/reTurn/StunMessage.hxx
+include/reTurn/StunTuple.hxx
+include/reTurn/TcpConnection.hxx
+include/reTurn/TcpServer.hxx
+include/reTurn/TlsConnection.hxx
+include/reTurn/TlsServer.hxx
+include/reTurn/TurnAllocation.hxx
+include/reTurn/TurnAllocationKey.hxx
+include/reTurn/TurnAllocationManager.hxx
+include/reTurn/TurnManager.hxx
+include/reTurn/TurnPermission.hxx
+include/reTurn/UdpRelayServer.hxx
+include/reTurn/UdpServer.hxx
+include/reTurn/UserAuthData.hxx
+include/reTurn/client/
+include/reTurn/client/ErrorCode.hxx
+include/reTurn/client/TurnAsyncSocket.hxx
+include/reTurn/client/TurnAsyncSocketHandler.hxx
+include/reTurn/client/TurnAsyncTcpSocket.hxx
+include/reTurn/client/TurnAsyncTlsSocket.hxx
+include/reTurn/client/TurnAsyncUdpSocket.hxx
+include/reTurn/client/TurnSocket.hxx
+include/reTurn/client/TurnTcpSocket.hxx
+include/reTurn/client/TurnTlsSocket.hxx
+include/reTurn/client/TurnUdpSocket.hxx
+include/reTurn/reTurnServer.hxx
+lib/libreTurnClient.la
+@lib lib/libreTurnClient.so.${LIBreTurnClient_VERSION}
+lib/libreTurnCommon.la
+@lib lib/libreTurnCommon.so.${LIBreTurnCommon_VERSION}
+lib/resiprocate/reTurnServer/
+lib/resiprocate/reTurnServer/psql-user-extract
+@man man/man8/reTurnServer.8
+@bin sbin/reTurnServer
+share/examples/resiprocate/
+share/examples/resiprocate/reTurn/
+@sample ${SYSCONFDIR}/reTurn/
+share/examples/resiprocate/reTurn/reTurnServer.config
+@sample ${SYSCONFDIR}/reTurn/reTurnServer.config
+share/examples/resiprocate/reTurn/users.txt
+@mode 640
+@group _return
+@sample ${SYSCONFDIR}/reTurn/users.txt
+@mode 0750
+@owner _return
+@sample /var/log/reTurnServer/

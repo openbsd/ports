@@ -1,0 +1,122 @@
+@comment $OpenBSD: PLIST-repro,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+@newgroup _repro:855
+@newuser _repro:855:855:daemon:repro user:/var/db/repro:/sbin/nologin
+@extraunexec rm -f /var/db/repro/*
+@extraunexec rm -f /var/log/repro/*
+@rcscript ${RCDIR}/repro
+include/repro/
+include/repro/AbstractDb.hxx
+include/repro/AccountingCollector.hxx
+include/repro/Ack200DoneMessage.hxx
+include/repro/AclStore.hxx
+include/repro/AsyncProcessor.hxx
+include/repro/AsyncProcessorMessage.hxx
+include/repro/AsyncProcessorWorker.hxx
+include/repro/AuthenticatorFactory.hxx
+include/repro/BasicWsConnectionValidator.hxx
+include/repro/BerkeleyDb.hxx
+include/repro/CommandServer.hxx
+include/repro/CommandServerThread.hxx
+include/repro/ConfigStore.hxx
+include/repro/FilterStore.hxx
+include/repro/ForkControlMessage.hxx
+include/repro/HttpBase.hxx
+include/repro/HttpConnection.hxx
+include/repro/MySqlDb.hxx
+include/repro/OutboundTarget.hxx
+include/repro/PersistentMessageQueue.hxx
+include/repro/Plugin.hxx
+include/repro/PostgreSqlDb.hxx
+include/repro/Processor.hxx
+include/repro/ProcessorChain.hxx
+include/repro/ProcessorMessage.hxx
+include/repro/Proxy.hxx
+include/repro/ProxyConfig.hxx
+include/repro/QValueTarget.hxx
+include/repro/RRDecorator.hxx
+include/repro/RegSyncClient.hxx
+include/repro/RegSyncServer.hxx
+include/repro/RegSyncServerThread.hxx
+include/repro/Registrar.hxx
+include/repro/ReproAuthenticatorFactory.hxx
+include/repro/ReproRADIUSServerAuthManager.hxx
+include/repro/ReproRunner.hxx
+include/repro/ReproServerAuthManager.hxx
+include/repro/ReproTlsPeerAuthManager.hxx
+include/repro/ReproVersion.hxx
+include/repro/RequestContext.hxx
+include/repro/ResponseContext.hxx
+include/repro/RouteStore.hxx
+include/repro/SiloStore.hxx
+include/repro/SqlDb.hxx
+include/repro/StaticRegStore.hxx
+include/repro/Store.hxx
+include/repro/Target.hxx
+include/repro/TimerCMessage.hxx
+include/repro/TlsPeerIdentityInfo.hxx
+include/repro/TlsPeerIdentityStore.hxx
+include/repro/UserAuthGrabber.hxx
+include/repro/UserInfoMessage.hxx
+include/repro/UserStore.hxx
+include/repro/WebAdmin.hxx
+include/repro/WebAdminThread.hxx
+include/repro/XmlRpcConnection.hxx
+include/repro/XmlRpcServerBase.hxx
+include/repro/monkeys/
+include/repro/monkeys/AmIResponsible.hxx
+include/repro/monkeys/CertificateAuthenticator.hxx
+include/repro/monkeys/ConstantLocationMonkey.hxx
+include/repro/monkeys/CookieAuthenticator.hxx
+include/repro/monkeys/DigestAuthenticator.hxx
+include/repro/monkeys/GeoProximityTargetSorter.hxx
+include/repro/monkeys/GruuMonkey.hxx
+include/repro/monkeys/IsTrustedNode.hxx
+include/repro/monkeys/LocationServer.hxx
+include/repro/monkeys/MessageSilo.hxx
+include/repro/monkeys/OutboundTargetHandler.hxx
+include/repro/monkeys/QValueTargetHandler.hxx
+include/repro/monkeys/RADIUSAuthenticator.hxx
+include/repro/monkeys/RecursiveRedirect.hxx
+include/repro/monkeys/RequestFilter.hxx
+include/repro/monkeys/SimpleStaticRoute.hxx
+include/repro/monkeys/SimpleTargetHandler.hxx
+include/repro/monkeys/StaticRoute.hxx
+include/repro/monkeys/StrictRouteFixup.hxx
+include/repro/reproInfo.hxx
+include/repro/stateAgents/
+include/repro/stateAgents/CertPublicationHandler.hxx
+include/repro/stateAgents/CertServer.hxx
+include/repro/stateAgents/CertSubscriptionHandler.hxx
+include/repro/stateAgents/PresencePublicationHandler.hxx
+include/repro/stateAgents/PresenceServer.hxx
+include/repro/stateAgents/PresenceSubscriptionHandler.hxx
+include/repro/stateAgents/PrivateKeyPublicationHandler.hxx
+include/repro/stateAgents/PrivateKeySubscriptionHandler.hxx
+lib/librepro.la
+@lib lib/librepro.so.${LIBrepro_VERSION}
+lib/resiprocate/repro/
+lib/resiprocate/repro/plugins/
+@so lib/resiprocate/repro/plugins/libexample.so
+@man man/man8/repro.8
+@man man/man8/reprocmd.8
+@bin sbin/queuetostream
+@bin sbin/repro
+@bin sbin/reprocmd
+share/doc/resiprocate/
+share/doc/resiprocate/repro/
+share/doc/resiprocate/repro/README_MySQL.txt
+share/doc/resiprocate/repro/README_PostgreSQL.txt
+share/doc/resiprocate/repro/create_mysql_reprodb.sql
+share/doc/resiprocate/repro/create_postgresql_reprodb.sql
+share/examples/resiprocate/repro/
+@sample ${SYSCONFDIR}/repro/
+share/examples/resiprocate/repro/repro.config
+@sample ${SYSCONFDIR}/repro/repro.config
+share/examples/resiprocate/repro/users.txt
+@mode 640
+@group _repro
+@sample ${SYSCONFDIR}/repro/users.txt
+@mode 0750
+@owner _repro
+@sample /var/log/repro/
+@sample /var/db/repro/
