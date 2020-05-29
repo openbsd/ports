@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2020/05/28 19:31:56 bket Exp $
+# $OpenBSD: Makefile,v 1.33 2020/05/29 20:39:12 bket Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
@@ -46,6 +46,7 @@ USE_GMAKE =		Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+ALL_TARGET =		allmost
 TEST_TARGET =		check
 
 pre-build:
