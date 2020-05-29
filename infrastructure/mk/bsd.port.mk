@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1536 2020/05/20 12:57:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1537 2020/05/29 19:38:09 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3640,7 +3640,7 @@ show-fake-size:
 
 verbose-show:
 .for _s in ${verbose-show}
-. if defined(${_s})
+. if defined(${_s:C/\:.*//})
 	@echo ${_s}=${${_s}:Q}
 . endif
 .endfor
