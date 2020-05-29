@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.369 2020/04/29 15:25:45 schwarze Exp $
+$OpenBSD: user.list,v 1.370 2020/05/29 20:52:28 feinerer Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -363,3 +363,5 @@ id  user		group		port
 852 _inetsim		_inetsim	net/inetsim
 853 _sniproxy		_sniproxy	net/sniproxy
 854 _murmurd		_murmurd	audio/mumble,-server
+855 _repro		_repro		telephony/resiprocate
+856 _return		_return		telephony/resiprocate
