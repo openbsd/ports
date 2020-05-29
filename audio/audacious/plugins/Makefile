@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/16 11:01:10 bket Exp $
+# $OpenBSD: Makefile,v 1.3 2020/05/29 04:24:21 bket Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -58,7 +58,6 @@ CONFIGURE_ARGS +=	--disable-alsa \
 			--disable-qt \
 			--disable-sdlout \
 			--disable-sid \
-			--disable-streamtuner \
 			--enable-gtk
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
