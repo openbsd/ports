@@ -1,9 +1,9 @@
-$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.9 2019/11/16 20:01:20 robert Exp $
+$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.10 2020/05/29 20:00:22 robert Exp $
 
 Index: provider/libserver/ECAttachmentStorage.cpp
 --- provider/libserver/ECAttachmentStorage.cpp.orig
 +++ provider/libserver/ECAttachmentStorage.cpp
-@@ -1129,7 +1129,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
+@@ -1137,7 +1137,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
  	m_basepath(basepath), m_l1(l1), m_l2(l2)
  {
  	if (m_basepath.empty())

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_am,v 1.5 2020/04/19 12:44:22 robert Exp $
+$OpenBSD: patch-Makefile_am,v 1.6 2020/05/29 20:00:21 robert Exp $
 
 Index: Makefile.am
 --- Makefile.am.orig
@@ -21,7 +21,7 @@ Index: Makefile.am
  	${clock_LIBS} ${CRYPTO_LIBS} ${DL_LIBS} ${libHX_LIBS} ${icu_uc_LIBS} \
  	${icu_i18n_LIBS} \
  	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
-@@ -679,6 +679,7 @@ libkcutil_la_LIBADD = \
+@@ -680,6 +680,7 @@ libkcutil_la_LIBADD = \
  if HAVE_TIDY
  libkcutil_la_LIBADD += -ltidy
  endif
@@ -29,7 +29,7 @@ Index: Makefile.am
  libkcutil_la_SYFLAGS = -Wl,--version-script=common/libkcutil.sym
  libkcutil_la_LDFLAGS = ${AM_LDFLAGS} -no-undefined \
  	${libkcutil_la_SYFLAGS${NO_VSYM}}
-@@ -800,7 +801,7 @@ tests_rosie_LDADD = libkcutil.la
+@@ -803,7 +804,7 @@ tests_rosie_LDADD = libkcutil.la
  tests_ustring_SOURCES = tests/ustring.cpp
  tests_ustring_LDADD = libkcutil.la ${icu_uc_LIBS}
  tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
@@ -38,7 +38,7 @@ Index: Makefile.am
  
  
  #
-@@ -957,7 +958,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
+@@ -960,7 +961,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
  
  .PHONY: source-moved-check
  source-moved-check:

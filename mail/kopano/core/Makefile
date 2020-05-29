@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/04/20 15:31:47 robert Exp $
+# $OpenBSD: Makefile,v 1.56 2020/05/29 20:00:21 robert Exp $
 
 BROKEN-sparc64=	Cannot find libc with ld.lld, more library problems without lld
 
@@ -10,8 +10,6 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
-
-REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 

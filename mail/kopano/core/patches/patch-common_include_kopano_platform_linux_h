@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_include_kopano_platform_linux_h,v 1.5 2020/04/19 12:44:22 robert Exp $
+$OpenBSD: patch-common_include_kopano_platform_linux_h,v 1.6 2020/05/29 20:00:21 robert Exp $
 
 Index: common/include/kopano/platform.linux.h
 --- common/include/kopano/platform.linux.h.orig
@@ -15,14 +15,23 @@ Index: common/include/kopano/platform.linux.h
  #include <cerrno>
  #include <clocale>
  
-@@ -34,6 +38,10 @@
- 
- #ifndef UNUSED_VAR
+@@ -36,6 +40,10 @@
  #define UNUSED_VAR __attribute__((unused))
-+#endif
-+
-+#ifdef __OpenBSD__
-+#define POLLRDHUP 0
  #endif
  
++#ifdef __OpenBSD__
++#define POLLRDHUP 0
++#endif
++
  #include <cassert>
+ #define _vsnprintf vsnprintf
+ #ifdef HAVE_VSNPRINTF_L
+@@ -392,6 +400,8 @@ extern KC_EXPORT void Sleep(unsigned int usec);
+ /* because the flags are not used linux, they do not match the windows flags! */
+ #define GPTR 0
+ extern KC_EXPORT void *GlobalAlloc(unsigned int flags, unsigned int size);
++
++extern char **environ;
+ 
+ } /* extern "C" */
+ 
