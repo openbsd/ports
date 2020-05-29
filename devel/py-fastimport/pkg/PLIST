@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/14 13:55:31 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/29 22:51:12 juanfra Exp $
+@conflict py-fastimport-*
+@pkgpath devel/py-fastimport
+bin/fast-import-filter
+bin/fast-import-info
+bin/fast-import-query
 lib/python${MODPY_VERSION}/site-packages/fastimport/
 lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/fastimport/__init__.py
@@ -10,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/fastimport/${MODPY_PYCACHE}errors.${MOD
 lib/python${MODPY_VERSION}/site-packages/fastimport/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/${MODPY_PYCACHE}processor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fastimport/${MODPY_PYCACHE}reftracker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/commands.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/dates.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/errors.py
@@ -21,9 +27,12 @@ lib/python${MODPY_VERSION}/site-packages/fastimport/processors/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fastimport/processors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fastimport/processors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/processors/${MODPY_PYCACHE}filter_processor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fastimport/processors/${MODPY_PYCACHE}info_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/processors/${MODPY_PYCACHE}query_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/processors/filter_processor.py
+lib/python${MODPY_VERSION}/site-packages/fastimport/processors/info_processor.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/processors/query_processor.py
+lib/python${MODPY_VERSION}/site-packages/fastimport/reftracker.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fastimport/tests/${MODPY_PYCACHE}/
@@ -33,10 +42,12 @@ lib/python${MODPY_VERSION}/site-packages/fastimport/tests/${MODPY_PYCACHE}test_d
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/${MODPY_PYCACHE}test_errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/${MODPY_PYCACHE}test_filter_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/${MODPY_PYCACHE}test_helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fastimport/tests/${MODPY_PYCACHE}test_info_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/${MODPY_PYCACHE}test_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/test_commands.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/test_dates.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/test_errors.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/test_filter_processor.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/test_helpers.py
+lib/python${MODPY_VERSION}/site-packages/fastimport/tests/test_info_processor.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/test_parser.py

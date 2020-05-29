@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1977 2020/05/28 21:17:29 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1978 2020/05/29 22:51:12 juanfra Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1445,7 +1445,6 @@
      SUBDIR += py-extras,python3
      SUBDIR += py-fasteners
      SUBDIR += py-fasteners,python3
-     SUBDIR += py-fastimport
      SUBDIR += py-fastimport,python3
      SUBDIR += py-faulthandler
      SUBDIR += py-fields
