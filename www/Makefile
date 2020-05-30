@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.962 2020/05/22 07:47:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.963 2020/05/30 17:33:36 paco Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -62,6 +62,7 @@
      SUBDIR += http_ping
      SUBDIR += httrack
      SUBDIR += hugo
+     SUBDIR += hugo,extended
      SUBDIR += icedtea-web
      SUBDIR += igal
      SUBDIR += igal2
