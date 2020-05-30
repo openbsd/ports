@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2019/11/01 20:19:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2020/05/30 12:52:57 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}
@@ -17,6 +17,7 @@ include/vte-${API_V}/vte/vteversion.h
 lib/girepository-1.0/Vte-${API_V}.typelib
 @lib lib/libvte-${API_V}.so.${LIBvte-${API_V}_VERSION}
 lib/pkgconfig/vte-${API_V}.pc
+@bin libexec/vte-urlencode-cwd
 share/gir-1.0/Vte-${API_V}.gir
 share/locale/am/LC_MESSAGES/vte-${API_V}.mo
 share/locale/an/LC_MESSAGES/vte-${API_V}.mo
@@ -33,6 +34,7 @@ share/locale/bn_IN/LC_MESSAGES/vte-${API_V}.mo
 share/locale/bs/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ca/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ca@valencia/LC_MESSAGES/vte-${API_V}.mo
+share/locale/ckb/LC_MESSAGES/vte-${API_V}.mo
 share/locale/cs/LC_MESSAGES/vte-${API_V}.mo
 share/locale/cy/LC_MESSAGES/vte-${API_V}.mo
 share/locale/da/LC_MESSAGES/vte-${API_V}.mo
