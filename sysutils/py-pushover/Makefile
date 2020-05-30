@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/05 13:01:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/05/30 12:02:59 jasper Exp $
 
 COMMENT =	send messages via Pushover
 
-MODPY_EGG_VERSION =	0.5
+MODPY_EGG_VERSION =	0.4
+EPOCH =		0
 
-DISTNAME =	pushover-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+DISTNAME =	python-pushover-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME:S/python-//}
 
 CATEGORIES =	sysutils
-
-HOMEPAGE =	http://github.com/laprice/pushover
 
 # BSD
 PERMIT_PACKAGE =	Yes

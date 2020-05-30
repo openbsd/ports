@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/05 13:01:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/05/30 12:02:59 jasper Exp $
 @conflict pushover-*
 bin/pushover
-lib/python${MODPY_VERSION}/site-packages/pushover/
-lib/python${MODPY_VERSION}/site-packages/pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/pushover/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pushover/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/pushover/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pushover/${MODPY_PYCACHE}pushover.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pushover/pushover.py
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pushover.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pushover.py
+lib/python${MODPY_VERSION}/site-packages/python_pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/python_pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/python_pushover-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
