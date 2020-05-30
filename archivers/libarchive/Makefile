@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2020/02/21 22:18:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2020/05/30 15:50:38 naddy Exp $
 
 COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-3.4.2
-SHARED_LIBS=	archive		11.1	# 17.2
+DISTNAME=	libarchive-3.4.3
+SHARED_LIBS=	archive		11.1	# 17.3
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.libarchive.org/
 
