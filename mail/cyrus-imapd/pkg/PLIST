@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2020/05/14 12:26:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2020/05/30 10:09:27 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -484,6 +484,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-beta3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-beta4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html
@@ -629,6 +630,7 @@ share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/nntpd.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/notifyd.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/pop3d.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/pop3proxyd.html
+share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/promstatsd.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/proxyd.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/ptdump.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/ptexpire.html

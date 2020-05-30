@@ -1,4 +1,4 @@
-$OpenBSD: patch-man_imapd_conf_5,v 1.17 2020/05/14 12:26:39 ajacoutot Exp $
+$OpenBSD: patch-man_imapd_conf_5,v 1.18 2020/05/30 10:09:27 ajacoutot Exp $
 
 Index: man/imapd.conf.5
 --- man/imapd.conf.5.orig
@@ -12,7 +12,7 @@ Index: man/imapd.conf.5
  .UNINDENT
  .UNINDENT
  .sp
-@@ -3722,7 +3722,7 @@ Allowed values: \fIflat\fP, \fIskiplist\fP, \fItwoskip
+@@ -3688,7 +3688,7 @@ Allowed values: \fIflat\fP, \fIskiplist\fP, \fItwoskip
  .UNINDENT
  .UNINDENT
  .sp
@@ -21,7 +21,7 @@ Index: man/imapd.conf.5
  .INDENT 0.0
  .INDENT 3.5
  The pathname of the sendmail executable.  Sieve invokes sendmail
-@@ -3933,7 +3933,7 @@ assumed.
+@@ -3899,7 +3899,7 @@ assumed.
  .UNINDENT
  .UNINDENT
  .sp
