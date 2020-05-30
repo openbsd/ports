@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2020/05/19 15:17:39 jca Exp $
+# $OpenBSD: Makefile,v 1.101 2020/05/30 08:05:03 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
@@ -41,7 +41,6 @@ TEST_DEPENDS+=		textproc/gsed
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 # tools/g-ir-scanner doesn't respect LDFLAGS passed through CONFIGURE_ENV
 MAKE_ENV=		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .endif
