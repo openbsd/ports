@@ -4,3 +4,7 @@ Hugo takes a directory with content and templates and renders
 them into a full HTML website.
 
 Hugo relies on Markdown files with front matter for metadata.
+
+Flavors:
+	extended	- build hugo extended version with Sass/SCSS
+				  support amongst others

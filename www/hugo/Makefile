@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/05/21 16:37:44 paco Exp $
+# $OpenBSD: Makefile,v 1.21 2020/05/30 17:33:00 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
@@ -25,6 +25,16 @@ NO_TEST =	Yes
 ALL_TARGET =	github.com/gohugoio/hugo
 
 SEPARATE_BUILD =	Yes
+
+FLAVORS =	extended
+FLAVOR ?=
+
+.if ${FLAVOR:Mextended}
+MODGO_FLAGS +=	--tags extended
+LIB_DEPENDS +=	www/libsass
+WANTLIB +=	sass
+MAKE_ENV +=	CGO_CPPFLAGS='-I${LOCALBASE}/include -DUSE_LIBSASS_SRC' CGO_LDFLAGS='-L${LOCALBASE}/lib -lsass'
+.endif
 
 post-build:
 	cd ${MODGO_WORKSPACE}/bin/ && ./hugo gen man
