@@ -50,7 +50,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -34028,7 +34028,7 @@ $as_echo "internal" >&6; }
+@@ -34033,7 +34033,7 @@ $as_echo "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB="${WORKDIR}/LinkTarget/StaticLibrary/hyphen.lib"
      else
@@ -59,7 +59,7 @@ Index: configure
      fi
  fi
  
-@@ -34221,7 +34221,7 @@ $as_echo "internal" >&6; }
+@@ -34226,7 +34226,7 @@ $as_echo "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"
      else
@@ -68,7 +68,7 @@ Index: configure
      fi
  fi
  
-@@ -35032,7 +35032,7 @@ else
+@@ -35037,7 +35037,7 @@ else
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  $as_echo_n "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -77,7 +77,7 @@ Index: configure
          as_fn_error $? "failed ($FLEX $_flex_version found, but need at least 2.6.0)" "$LINENO" 5
      fi
  fi
-@@ -37348,7 +37348,8 @@ $as_echo "$qt5_incdir" >&6; }
+@@ -37353,7 +37353,8 @@ $as_echo "$qt5_incdir" >&6; }
  $as_echo_n "checking for Qt5 libraries... " >&6; }
      qt5_libdir="no"
      for lib_dir in $qt5_libdirs; do
@@ -87,7 +87,7 @@ Index: configure
              qt5_libdir="$lib_dir"
              break
          fi
-@@ -37755,7 +37756,7 @@ $as_echo "$kf5_incdir" >&6; }
+@@ -37760,7 +37761,7 @@ $as_echo "$kf5_incdir" >&6; }
  $as_echo_n "checking for KF5 libraries... " >&6; }
      kf5_libdir="no"
      for kf5_check in $kf5_libdirs; do
@@ -96,7 +96,7 @@ Index: configure
              kf5_libdir="$kf5_check"
              break
          fi
-@@ -39367,7 +39368,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -39372,7 +39373,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then

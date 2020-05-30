@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2020/04/17 18:14:37 robert Exp $
+# $OpenBSD: Makefile,v 1.228 2020/05/30 13:34:23 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -26,7 +26,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.10 # 4.10
 
 BV=		6.4
-VERSION=	${BV}.3.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -107,7 +107,7 @@ DISTFILES += e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0
 DISTFILES += edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0
 DISTFILES += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0
 DISTFILES += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0
-DISTFILES += language-subtag-registry-2019-09-16.tar.bz2:0
+DISTFILES += language-subtag-registry-2020-04-01.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.5.tar.xz:0
 DISTFILES += libcdr-0.1.3.tar.bz2:0
