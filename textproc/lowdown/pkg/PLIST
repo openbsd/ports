@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/02/22 11:29:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/05/30 17:06:38 paco Exp $
 @bin bin/lowdown
 @bin bin/lowdown-diff
 include/lowdown.h
 @static-lib lib/liblowdown.a
+lib/pkgconfig/lowdown.pc
 @man man/man1/lowdown.1
 @man man/man3/lowdown.3
 @man man/man3/lowdown_buf.3
