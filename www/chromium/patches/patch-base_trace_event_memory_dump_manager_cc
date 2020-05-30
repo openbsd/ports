@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_trace_event_memory_dump_manager_cc,v 1.1 2020/05/30 05:39:15 robert Exp $
+
+Index: base/trace_event/memory_dump_manager.cc
+--- base/trace_event/memory_dump_manager.cc.orig
++++ base/trace_event/memory_dump_manager.cc
+@@ -77,7 +77,7 @@ const char* const MemoryDumpManager::kSystemAllocatorP
+ #if defined(MALLOC_MEMORY_TRACING_SUPPORTED)
+     MallocDumpProvider::kAllocatedObjects;
+ #else
+-    nullptr;
++    "";
+ #endif
+ 
+ // static
