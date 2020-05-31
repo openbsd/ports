@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/06/15 10:24:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2020/05/31 08:04:37 ajacoutot Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
@@ -10,6 +10,10 @@ DISTNAME=		heimdal-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-devel-docs=	heimdal-devel-docs-${V}
 PKGNAME-libs=		heimdal-libs-${V}
+
+REVISION-main=		0
+REVISION-devel-docs=	0
+REVISION-libs=		0
 
 CATEGORIES=		security net
 
@@ -30,7 +34,7 @@ SHARED_LIBS +=  kadm5srv             3.0      # 8.1
 SHARED_LIBS +=  kadm5clnt            3.0      # 7.1
 SHARED_LIBS +=  kdc                  3.0      # 2.0
 
-HOMEPAGE=		http://www.h5l.org/
+HOMEPAGE=		https://www.heimdal.software/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
