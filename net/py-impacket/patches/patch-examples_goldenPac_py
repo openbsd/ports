@@ -1,6 +1,7 @@
-$OpenBSD: patch-examples_goldenPac_py,v 1.4 2016/09/01 12:21:05 dcoppa Exp $
---- examples/goldenPac.py.orig	Tue Jun 28 19:26:31 2016
-+++ examples/goldenPac.py	Thu Sep  1 08:05:39 2016
+$OpenBSD: patch-examples_goldenPac_py,v 1.5 2020/05/31 12:05:22 jasper Exp $
+Index: examples/goldenPac.py
+--- examples/goldenPac.py.orig
++++ examples/goldenPac.py
 @@ -20,10 +20,10 @@
  #   5) Use WMIEXEC approach instead
  #
@@ -14,22 +15,22 @@ $OpenBSD: patch-examples_goldenPac_py,v 1.4 2016/09/01 12:21:05 dcoppa Exp $
  #
  #       if domain.net and/or domain-host do not resolve, add them
  #       to the hosts file or use the -dc-ip and -target-ip parameters
-@@ -1290,14 +1290,14 @@ if __name__ == '__main__':
+@@ -1093,14 +1093,14 @@ if __name__ == '__main__':
      if len(sys.argv)==1:
          parser.print_help()
-         print "\nExamples: "
--        print "\tpython goldenPac domain.net/normaluser@domain-host\n"
-+        print "\t${MODPY_BIN} goldenPac domain.net/normaluser@domain-host\n"
-         print "\tthe password will be asked, or\n"
--        print "\tpython goldenPac.py domain.net/normaluser:mypwd@domain-host\n"
-+        print "\t${MODPY_BIN} goldenPac.py domain.net/normaluser:mypwd@domain-host\n"
-         print "\tif domain.net and/or domain-machine do not resolve, add them"
-         print "\tto the hosts file or explicity specify the domain IP (e.g. 1.1.1.1) and target IP:\n"
--        print "\tpython goldenPac.py -dc-ip 1.1.1.1 -target-ip 2.2.2.2 domain.net/normaluser:mypwd@domain-host\n"
-+        print "\t${MODPY_BIN} goldenPac.py -dc-ip 1.1.1.1 -target-ip 2.2.2.2 domain.net/normaluser:mypwd@domain-host\n"
-         print "\tThis will upload the xxx.exe file and execute it as: xxx.exe param1 param2 paramn"
--        print "\tpython goldenPac.py -c xxx.exe domain.net/normaluser:mypwd@domain-host param1 param2 paramn\n"
-+        print "\t${MODPY_BIN} goldenPac.py -c xxx.exe domain.net/normaluser:mypwd@domain-host param1 param2 paramn\n"
+         print("\nExamples: ")
+-        print("\tpython goldenPac domain.net/normaluser@domain-host\n")
++        print("\t${MODPY_BIN} goldenPac domain.net/normaluser@domain-host\n")
+         print("\tthe password will be asked, or\n")
+-        print("\tpython goldenPac.py domain.net/normaluser:mypwd@domain-host\n")
++        print("\t${MODPY_BIN} goldenPac.py domain.net/normaluser:mypwd@domain-host\n")
+         print("\tif domain.net and/or domain-machine do not resolve, add them")
+         print("\tto the hosts file or explicitly specify the domain IP (e.g. 1.1.1.1) and target IP:\n")
+-        print("\tpython goldenPac.py -dc-ip 1.1.1.1 -target-ip 2.2.2.2 domain.net/normaluser:mypwd@domain-host\n")
++        print("\${MODPY_BIN} goldenPac.py -dc-ip 1.1.1.1 -target-ip 2.2.2.2 domain.net/normaluser:mypwd@domain-host\n")
+         print("\tThis will upload the xxx.exe file and execute it as: xxx.exe param1 param2 paramn")
+-        print("\tpython goldenPac.py -c xxx.exe domain.net/normaluser:mypwd@domain-host param1 param2 paramn\n")
++        print("\${MODPY_BIN} goldenPac.py -c xxx.exe domain.net/normaluser:mypwd@domain-host param1 param2 paramn\n")
          sys.exit(1)
   
      options = parser.parse_args()

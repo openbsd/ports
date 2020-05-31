@@ -1,7 +1,8 @@
-$OpenBSD: patch-examples_nmapAnswerMachine_py,v 1.6 2016/05/26 09:29:23 dcoppa Exp $
---- examples/nmapAnswerMachine.py.orig	Sun May 24 17:21:17 2015
-+++ examples/nmapAnswerMachine.py	Thu May 26 02:34:28 2016
-@@ -15,11 +15,11 @@ from impacket.examples import logger
+$OpenBSD: patch-examples_nmapAnswerMachine_py,v 1.7 2020/05/31 12:05:22 jasper Exp $
+Index: examples/nmapAnswerMachine.py
+--- examples/nmapAnswerMachine.py.orig
++++ examples/nmapAnswerMachine.py
+@@ -16,11 +16,11 @@ from impacket.examples import os_ident
  
  MAC = "01:02:03:04:05:06"
  IP  = "192.168.67.254"
@@ -15,7 +16,7 @@ $OpenBSD: patch-examples_nmapAnswerMachine_py,v 1.6 2016/05/26 09:29:23 dcoppa E
  
  # Fingerprint = 'Adtran NetVanta 3200 router' # CD=Z TOSI=Z <----------- NMAP detects it as Linux!!!
  # Fingerprint = 'ADIC Scalar 1000 tape library remote management unit' # DFI=S
-@@ -1122,5 +1122,5 @@ if __name__ == '__main__':
+@@ -1114,5 +1114,5 @@ if __name__ == '__main__':
  # [-] ??? (TOS) Type of Service
  # [-] ??? (RUL) Length of return UDP packet is correct
  

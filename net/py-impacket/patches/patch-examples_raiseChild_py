@@ -1,25 +1,36 @@
-$OpenBSD: patch-examples_raiseChild_py,v 1.4 2016/09/01 12:21:05 dcoppa Exp $
---- examples/raiseChild.py.orig	Tue Jun 28 19:26:31 2016
-+++ examples/raiseChild.py	Thu Sep  1 08:05:39 2016
-@@ -1443,16 +1443,16 @@ if __name__ == '__main__':
+$OpenBSD: patch-examples_raiseChild_py,v 1.5 2020/05/31 12:05:22 jasper Exp $
+Index: examples/raiseChild.py
+--- examples/raiseChild.py.orig
++++ examples/raiseChild.py
+@@ -1248,18 +1248,18 @@ if __name__ == '__main__':
      if len(sys.argv)==1:
          parser.print_help()
-         print "\nExamples: "
--        print "\tpython raiseChild.py childDomain.net/adminuser\n"
-+        print "\t${MODPY_BIN} raiseChild.py childDomain.net/adminuser\n"
-         print "\tthe password will be asked, or\n"
--        print "\tpython raiseChild.py childDomain.net/adminuser:mypwd\n"
-+        print "\t${MODPY_BIN} raiseChild.py childDomain.net/adminuser:mypwd\n"
-         print "\tor if you just have the hashes\n"
--        print "\tpython raiseChild.py -hashes LMHASH:NTHASH childDomain.net/adminuser\n"
-+        print "\t${MODPY_BIN} raiseChild.py -hashes LMHASH:NTHASH childDomain.net/adminuser\n"
+         print("\nExamples: ")
+-        print("\tpython raiseChild.py childDomain.net/adminuser\n")
++        print("\t${MODPY_BIN} raiseChild.py childDomain.net/adminuser\n")
+         print("\tthe password will be asked, or\n")
+-        print("\tpython raiseChild.py childDomain.net/adminuser:mypwd\n")
++        print("\t${MODPY_BIN} raiseChild.py childDomain.net/adminuser:mypwd\n")
+         print("\tor if you just have the hashes\n")
+-        print("\tpython raiseChild.py -hashes LMHASH:NTHASH childDomain.net/adminuser\n")
++        print("\t${MODPY_BIN} raiseChild.py -hashes LMHASH:NTHASH childDomain.net/adminuser\n")
  
-         print "\tThis will perform the attack and then psexec against target-exec as Enterprise Admin"
--        print "\tpython raiseChild.py -target-exec targetHost childDomainn.net/adminuser\n"
-+        print "\t${MODPY_BIN} raiseChild.py -target-exec targetHost childDomainn.net/adminuser\n"
-         print "\tThis will save the final goldenTicket generated in the ccache target file"
--        print "\tpython raiseChild.py -w ccache childDomain.net/adminuser\n"
-+        print "\t${MODPY_BIN} raiseChild.py -w ccache childDomain.net/adminuser\n"
+         print("\tThis will perform the attack and then psexec against target-exec as Enterprise Admin")
+-        print("\tpython raiseChild.py -target-exec targetHost childDomainn.net/adminuser\n")
++        print("\t${MODPY_BIN} raiseChild.py -target-exec targetHost childDomainn.net/adminuser\n")
+         print("\tThis will perform the attack and then psexec against target-exec as User with RID 1101")
+-        print("\tpython raiseChild.py -target-exec targetHost -targetRID 1101 childDomainn.net/adminuser\n")
++        print("\t${MODPY_BIN} raiseChild.py -target-exec targetHost -targetRID 1101 childDomainn.net/adminuser\n")
+         print("\tThis will save the final goldenTicket generated in the ccache target file")
+-        print("\tpython raiseChild.py -w ccache childDomain.net/adminuser\n")
++        print("\t${MODPY_BIN} raiseChild.py -w ccache childDomain.net/adminuser\n")
          sys.exit(1)
   
      options = parser.parse_args()
+@@ -1311,4 +1311,4 @@ if __name__ == '__main__':
+         logging.critical(str(e))
+         if hasattr(e, 'error_code'):
+             if e.error_code == 0xc0000073:
+-                logging.info("Account not found in domain. (RID:%s)", options.targetRID)
+\ No newline at end of file
++                logging.info("Account not found in domain. (RID:%s)", options.targetRID)
