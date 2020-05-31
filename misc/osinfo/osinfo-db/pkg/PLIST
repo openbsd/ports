@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/05/17 10:51:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/05/31 10:36:37 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -65,6 +65,8 @@ share/osinfo/device/pcisig.com/pci-1af4-1050.d/
 share/osinfo/device/pcisig.com/pci-1af4-1050.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1052.d/
 share/osinfo/device/pcisig.com/pci-1af4-1052.d/class.xml
+share/osinfo/device/pcisig.com/pci-1af4-105a.d/
+share/osinfo/device/pcisig.com/pci-1af4-105a.d/class.xml
 share/osinfo/device/pcisig.com/pci-1b36-0004.d/
 share/osinfo/device/pcisig.com/pci-1b36-0004.d/class.xml
 share/osinfo/device/pcisig.com/pci-1b36-0100.d/
@@ -554,6 +556,7 @@ share/osinfo/os/openbsd.org/openbsd-6.3.xml
 share/osinfo/os/openbsd.org/openbsd-6.4.xml
 share/osinfo/os/openbsd.org/openbsd-6.5.xml
 share/osinfo/os/openbsd.org/openbsd-6.6.xml
+share/osinfo/os/openbsd.org/openbsd-6.7.xml
 share/osinfo/os/opensuse.org/
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -679,6 +682,7 @@ share/osinfo/os/redhat.com/rhel-7.5.xml
 share/osinfo/os/redhat.com/rhel-7.6.xml
 share/osinfo/os/redhat.com/rhel-7.7.xml
 share/osinfo/os/redhat.com/rhel-7.8.xml
+share/osinfo/os/redhat.com/rhel-7.9.xml
 share/osinfo/os/redhat.com/rhel-8-unknown.xml
 share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-8.1.xml

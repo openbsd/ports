@@ -1,0 +1,63 @@
+<libosinfo version="0.0.1">
+<!-- Licensed under the GNU General Public License version 2 or later.
+     See http://www.gnu.org/licenses/ for a copy of the license text -->
+  <os id="http://openbsd.org/openbsd/6.7">
+    <short-id>openbsd6.7</short-id>
+    <_name>OpenBSD 6.7</_name>
+    <version>6.7</version>
+    <family>openbsd</family>
+    <distro>openbsd</distro>
+    <_vendor>OpenBSD Project</_vendor>
+    <upgrades id='http://openbsd.org/openbsd/6.6'/>
+    <derives-from id='http://openbsd.org/openbsd/6.6'/>
+
+    <release-date>2020-05-19</release-date>
+    <eol-date>2021-05-01</eol-date>
+
+    <variant id="netinst">
+      <_name>OpenBSD 6.7</_name>
+    </variant>
+
+    <media arch="i686">
+      <url>https://cdn.openbsd.org/pub/OpenBSD/6.7/i386/install67.iso</url>
+      <iso>
+        <publisher-id>Copyright \(c\) 2020 Theo de Raadt, The OpenBSD project</publisher-id>
+        <system-id>OpenBSD</system-id>
+        <volume-id>OpenBSD/i386    6.7 Install CD</volume-id>
+        <application-id>OpenBSD 6.7 i386 Install CD</application-id>
+      </iso>
+    </media>
+
+    <media arch="x86_64">
+      <url>https://cdn.openbsd.org/pub/OpenBSD/6.7/amd64/install67.iso</url>
+      <iso>
+        <publisher-id>Copyright \(c\) 2020 Theo de Raadt, The OpenBSD project</publisher-id>
+        <system-id>OpenBSD</system-id>
+        <volume-id>OpenBSD/amd64   6.7 Install CD</volume-id>
+        <application-id>OpenBSD 6.7 amd64 Install CD</application-id>
+      </iso>
+    </media>
+
+    <media arch="i686">
+      <variant id="netinst"/>
+      <url>https://cdn.openbsd.org/pub/OpenBSD/6.7/i386/cd67.iso</url>
+      <iso>
+        <publisher-id>Copyright \(c\) 2020 Theo de Raadt, The OpenBSD project</publisher-id>
+        <volume-id>OpenBSD/i386    6.7 boot-only CD</volume-id>
+        <system-id>OpenBSD</system-id>
+        <application-id>OpenBSD 6.7 i386 bootonly CD</application-id>
+      </iso>
+    </media>
+
+    <media arch="x86_64">
+      <variant id="netinst"/>
+      <url>https://cdn.openbsd.org/pub/OpenBSD/6.7/amd64/cd67.iso</url>
+      <iso>
+        <publisher-id>Copyright \(c\) 2020 Theo de Raadt, The OpenBSD project</publisher-id>
+        <volume-id>OpenBSD/amd64   6.7 boot-only CD</volume-id>
+        <system-id>OpenBSD</system-id>
+        <application-id>OpenBSD 6.7 amd64 bootonly CD</application-id>
+      </iso>
+    </media>
+  </os>
+</libosinfo>
