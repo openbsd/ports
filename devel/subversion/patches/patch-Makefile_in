@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.19 2020/05/28 12:25:27 stsp Exp $
+$OpenBSD: patch-Makefile_in,v 1.20 2020/05/31 19:29:32 sthen Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
@@ -24,7 +24,7 @@ Index: Makefile.in
 -SWIG_PY_LINK = @SWIG_PY_LINK@
 -SWIG_PY_LIBS = @SWIG_PY_LIBS@
 +SWIG_PY_LINK = @SWIG_PY_LINK@ -L@libdir@
-+SWIG_PY_LIBS = -lpython${MODPY_VERSION}
++SWIG_PY_LIBS = -l${MODPY_WANTLIB}
  SWIG_PY_ERRMSG = @SWIG_PY_ERRMSG@
  SWIG_PL_INCLUDES = @SWIG_PL_INCLUDES@
  SWIG_PL_ERRMSG = @SWIG_PL_ERRMSG@

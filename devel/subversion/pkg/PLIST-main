@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2020/05/15 14:47:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2020/05/31 19:29:32 sthen Exp $
 @conflict subversion-*-gnome_keyring
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
@@ -122,8 +122,6 @@ lib/libsvn_subr-1.la
 @static-lib lib/libsvn_wc-1.a
 lib/libsvn_wc-1.la
 @lib lib/libsvn_wc-1.so.${LIBsvn_wc-1_VERSION}
-@comment lib/python${MODPY_VERSION}/
-@comment lib/python${MODPY_VERSION}/site-packages/
 @man man/man1/svn.1
 @man man/man1/svnadmin.1
 @man man/man1/svndumpfilter.1

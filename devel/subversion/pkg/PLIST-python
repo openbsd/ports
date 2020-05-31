@@ -1,11 +1,21 @@
-@comment $OpenBSD: PLIST-python,v 1.11 2020/05/15 14:47:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-python,v 1.12 2020/05/31 19:29:32 sthen Exp $
+@conflict ${PY_CONFLICT}
 @pkgpath devel/subversion,-python,gnome_keyring
-@static-lib lib/libsvn_swig_${MODPY_PY_PREFIX}1.a
-lib/libsvn_swig_${MODPY_PY_PREFIX}1.la
-@lib lib/libsvn_swig_${MODPY_PY_PREFIX}1.so.${LIBsvn_swig_${MODPY_PY_PREFIX}1_VERSION}
+@static-lib lib/libsvn_swig_py-1.a
+lib/libsvn_swig_py-1.la
+@lib lib/libsvn_swig_py-1.so.${LIBsvn_swig_py-1_VERSION}
 lib/python${MODPY_VERSION}/site-packages/libsvn/
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}delta.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}fs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}ra.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}repos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}wc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/_client.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_client.la
 @so lib/python${MODPY_VERSION}/site-packages/libsvn/_client.so
@@ -31,37 +41,30 @@ lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.la
 @so lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/client.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/client.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/core.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/core.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/delta.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/delta.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/diff.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/diff.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/fs.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/fs.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/ra.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/ra.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/repos.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/repos.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/wc.py
-lib/python${MODPY_VERSION}/site-packages/libsvn/wc.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/
 lib/python${MODPY_VERSION}/site-packages/svn/__init__.py
-lib/python${MODPY_VERSION}/site-packages/svn/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}delta.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}fs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}ra.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}repos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}wc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/svn/client.py
-lib/python${MODPY_VERSION}/site-packages/svn/client.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/core.py
-lib/python${MODPY_VERSION}/site-packages/svn/core.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/delta.py
-lib/python${MODPY_VERSION}/site-packages/svn/delta.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/diff.py
-lib/python${MODPY_VERSION}/site-packages/svn/diff.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/fs.py
-lib/python${MODPY_VERSION}/site-packages/svn/fs.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/ra.py
-lib/python${MODPY_VERSION}/site-packages/svn/ra.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/repos.py
-lib/python${MODPY_VERSION}/site-packages/svn/repos.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/wc.py
-lib/python${MODPY_VERSION}/site-packages/svn/wc.pyc

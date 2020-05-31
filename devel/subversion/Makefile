@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2020/05/28 12:25:27 stsp Exp $
+# $OpenBSD: Makefile,v 1.181 2020/05/31 19:29:32 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -8,12 +8,13 @@ COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.14.0
+REVISION=		0
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
+FULLPKGNAME-main=	subversion-${VERSION}${FLAVOR_EXT:S/-python3//}
+FULLPKGPATH-main=	devel/subversion,-main${FLAVOR_EXT:S/-python3//:S/-/,/g}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
 FULLPKGPATH-perl=	devel/subversion,-perl
-FULLPKGNAME-python=	py-subversion-${VERSION}
-FULLPKGPATH-python=	devel/subversion,-python
 FULLPKGNAME-ruby=	ruby${MODRUBY_BINREV}-subversion-${VERSION}
 FULLPKGPATH-ruby=	devel/subversion,-ruby
 FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
@@ -24,10 +25,6 @@ FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 MODRUBY_REV ?=	2.7
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
 MODRUBY_BINREV=	${MODRUBY_REV:S/.//}
-
-# Subversion supports either python2 or python3 bindings. Consumers in the
-# ports tree are not yet ready for python3. So keep using python 2.7 for now.
-MODPY_VERSION ?= 2.7
 
 SO_VERSION=	6.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -57,10 +54,22 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby no_gnome-keyring
-FLAVORS=	maintainer_mode
+FLAVORS=	maintainer_mode python3
 FLAVOR?=
 .if ${FLAVOR:Mno_bindings}
 FLAVOR += no_perl no_python no_ruby
+.endif
+
+.if ${FLAVOR:Mpython3}
+FULLPKGNAME-python=	py3-subversion-${VERSION}
+FULLPKGPATH-python=	devel/subversion,python3,-python
+# py-subversion and py3-subversion both install libsvn_swig_py-1;
+# conflict with the other flavour
+PY_CONFLICT=		py-subversion-*
+.else
+FULLPKGNAME-python=	py-subversion-${VERSION}
+FULLPKGPATH-python=	devel/subversion,-python
+PY_CONFLICT=		py3-subversion-*
 .endif
 
 MODULES=	lang/python
@@ -196,7 +205,8 @@ CONFIGURE_ARGS+=--without-gnome-keyring
 
 TEST_DEPENDS=${MODPY_RUN_DEPENDS}
 TEST_DEPENDS+=	${FULLPKGNAME-gnome-keyring}:${BUILD_PKGPATH},-gnome-keyring
-SUBST_VARS+=	LOCALBASE SO_VERSION MODRUBY_BINREV LIBsvn_swig_ruby-1_VERSION
+SUBST_VARS+=	LOCALBASE SO_VERSION MODRUBY_BINREV
+SUBST_VARS+=	LIBsvn_swig_ruby-1_VERSION MODPY_WANTLIB PY_CONFLICT
 
 pre-patch:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
