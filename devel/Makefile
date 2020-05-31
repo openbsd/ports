@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1979 2020/05/31 11:48:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.1980 2020/05/31 19:01:19 kili Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -199,10 +199,8 @@
      SUBDIR += harfbuzz
      SUBDIR += hasktags
      SUBDIR += help2man
-     SUBDIR += hs-ConfigFile
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
-     SUBDIR += hs-MissingH
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-ansi-wl-pprint
