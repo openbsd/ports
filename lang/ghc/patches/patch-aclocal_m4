@@ -1,0 +1,19 @@
+$OpenBSD: patch-aclocal_m4,v 1.3 2020/05/31 19:25:48 kili Exp $
+
+Index: aclocal.m4
+--- aclocal.m4.orig
++++ aclocal.m4
+@@ -691,6 +691,13 @@ AC_DEFUN([FPTOOLS_SET_C_LD_FLAGS],
+         $4="$$4 -z wxneeded"
+         ;;
+ 
++    i386-*-openbsd*)
++        # On i386, we also need -z notext in addition to -z wxneeded.
++        $2="$$2 -Wl,-z,notext"
++        $3="$$3 -Wl,-z,wxneeded -Wl,-z,notext"
++        $4="$$4 -z wxneeded -z notext"
++        ;;
++
+     esac
+ 
+     # If gcc knows about the stack protector, turn it off.

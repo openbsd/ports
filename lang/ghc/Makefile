@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2020/05/17 18:06:07 kili Exp $
+# $OpenBSD: Makefile,v 1.174 2020/05/31 19:25:48 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -43,7 +43,7 @@ BUILD_DEPENDS =		archivers/bzip2 \
 			textproc/py-sphinx${MODPY_FLAVOR}
 RUN_DEPENDS =
 
-# GHC build uses -Wl,-z,wxneeded on OpenBSD for amd64.
+# GHC build uses -Wl,-z,wxneeded on OpenBSD.
 # XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
 #      loadObj_() instead.
 USE_WXNEEDED =		special
@@ -106,14 +106,8 @@ SUBST_VARS +=	${_i}_VER
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
-.if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-Wl,-znotext
-# On i386, we still have to explicitely set -Wl,-z,wxneeded (in
-# addition to -Wl,-znotext).
-GHC_CC_OPTS =		-Wl,-znotext -Wl,-z,wxneeded
-.endif
-
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu autoconf no-autoheader
 CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 			--with-ffi-libraries=${LOCALBASE}/lib \
 			--with-gmp-includes=${LOCALBASE}/include \
@@ -126,13 +120,6 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 # Don't autodetect ld.lld. It fails at some point during the build
 # with /usr/bin/ld.lld: error: cannot preempt symbol: memcpy
 CONFIGURE_ARGS +=	--disable-ld-override
-
-CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="${GHC_CC_OPTS}" \
-			CONF_CC_OPTS_STAGE1="${GHC_CC_OPTS}" \
-			CONF_CC_OPTS_STAGE2="${GHC_CC_OPTS}" \
-			CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
-			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS}" \
-			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS}"
 
 CONFIGURE_ENV +=	SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
@@ -170,6 +157,11 @@ post-patch:
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
+	# HACK for i386 until we have new bootstrappers. This is needed
+	# to let the bootstrapper use -Wl,-znotext building things like
+	# utils/hsc2hs.
+	sed -ie '/"C compiler flags"/s/-U__i686/-Wl,-znotext &/' \
+	    ${WRKDIR}/bootstrap/lib/ghc/settings
 # - Create some wrapper scripts setting LD_LIBRARY_PATH
 	cd ${WRKDIR}/bin && \
 	for f in $$(ls ../bootstrap/bin); do \
@@ -248,12 +240,3 @@ _bootstrap_finish:
 	pax -wzf ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s){.tar.gz,}
 
 .include <bsd.port.mk>
-
-# Silence clang when used by ghc to process assembler files and gets
-# flags chat don't make sense for assembly mode. Also, silence warnings
-# about macro expansions producing 'defined' (occuring in
-# includes/rts/storage/ClosureMacros.h, which has already been fixed
-# upstream)
-.if ${PROPERTIES:Mclang}
-GHC_CC_OPTS += -Wno-unused-command-line-argument -Wno-expansion-to-defined
-.endif
