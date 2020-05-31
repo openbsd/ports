@@ -1,0 +1,19 @@
+$OpenBSD: patch-contrib_shell_utils_afpstats,v 1.1 2020/05/31 08:01:19 ajacoutot Exp $
+
+From d2262267537fbe301e218901656b582f021bf67f Mon Sep 17 00:00:00 2001
+From: Andrew Bauer <knnniggett@hotmail.com>
+Date: Wed, 12 Dec 2018 10:19:29 -0600
+Subject: [PATCH] make afpstats python 3 compatible
+
+Index: contrib/shell_utils/afpstats
+--- contrib/shell_utils/afpstats.orig
++++ contrib/shell_utils/afpstats
+@@ -23,7 +23,7 @@ def main():
+ 
+     reply = iface.GetUsers()
+     for name in reply:
+-        print name
++        print(name)
+ 
+ if __name__ == '__main__':
+     main()

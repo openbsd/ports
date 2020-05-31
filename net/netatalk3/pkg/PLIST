@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/21 14:07:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/05/31 08:01:19 ajacoutot Exp $
 @option is-branch
 @conflict jday-*
 @rcscript ${RCDIR}/netatalk
@@ -42,14 +42,14 @@ include/atalk/volume.h
 lib/libatalk.la
 @lib lib/libatalk.so.${LIBatalk_VERSION}
 lib/netatalk/
-lib/netatalk/uams_clrtxt.so
-lib/netatalk/uams_dhx.so
-lib/netatalk/uams_dhx2.so
-lib/netatalk/uams_dhx2_passwd.so
-lib/netatalk/uams_dhx_passwd.so
-lib/netatalk/uams_guest.so
-lib/netatalk/uams_passwd.so
-lib/netatalk/uams_randnum.so
+@so lib/netatalk/uams_clrtxt.so
+@so lib/netatalk/uams_dhx.so
+@so lib/netatalk/uams_dhx2.so
+@so lib/netatalk/uams_dhx2_passwd.so
+@so lib/netatalk/uams_dhx_passwd.so
+@so lib/netatalk/uams_guest.so
+@so lib/netatalk/uams_passwd.so
+@so lib/netatalk/uams_randnum.so
 @man man/man1/ad.1
 @man man/man1/afpldaptest.1
 @man man/man1/afppasswd.1
