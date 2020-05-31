@@ -1,0 +1,18 @@
+$OpenBSD: patch-meson_build,v 1.1 2020/05/31 10:36:21 ajacoutot Exp $
+
+XXX
+ld: error: undefined symbol: _Unwind_Resume
+>>> referenced by osinfo-db-util.c
+>>>               tools/f9d35d4@@osinfo-db-validate@exe/osinfo-db-util.c.o:(osinfo_db_get_system_path)
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -202,7 +202,6 @@ osinfo_db_tools_check_cflags = [
+   '-Wno-overlength-strings',
+   '-Wp,-D_FORTIFY_SOURCE=2',
+   '--param=ssp-buffer-size=4',
+-  '-fexceptions',
+   '-fasynchronous-unwind-tables',
+   '-fdiagnostics-show-option',
+   '-funit-at-a-time',
