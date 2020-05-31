@@ -1,0 +1,20 @@
+$OpenBSD: patch-osinfo_meson_build,v 1.1 2020/05/31 10:36:47 ajacoutot Exp $
+
+1st chunk: should default to the value of b_lundef.
+
+Index: osinfo/meson.build
+--- osinfo/meson.build.orig
++++ osinfo/meson.build
+@@ -130,11 +130,8 @@ libosinfo_private_headers = [
+ ]
+ 
+ libosinfo_link_args = []
+-if meson.get_compiler('c').has_link_argument('-Wl,--no-undefined')
+-    libosinfo_link_args += ['-Wl,--no-undefined']
+-endif
+ 
+-if host_machine.system() == 'linux'
++if host_machine.system() == 'linux' or host_machine.system() == 'openbsd'
+     libosinfo_link_args += [
+         '-Wl,--version-script,@0@/@1@'.format(
+             meson.current_source_dir(),
