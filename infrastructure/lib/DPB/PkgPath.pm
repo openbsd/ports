@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.62 2020/05/28 20:53:40 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.63 2020/05/31 19:24:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -49,8 +49,12 @@ sub path
 sub clone_properties
 {
 	my ($n, $o) = @_;
-	$n->{has} //= $o->{has};
-	$n->{info} //= $o->{info};
+	if (defined $o->{has} && !defined $n->{has}) {
+		$n->{has} = $o->{has};
+	}
+	if (defined $o->{info} && !defined $n->{info}) {
+		$n->{info} = $o->{info};
+	}
 }
 
 my $lock_bypkgname = {};
@@ -87,7 +91,7 @@ sub sanity_check
 		next if defined $p->{category};
 		next unless defined $p->{info};
 		for my $w ($p->build_path_list) {
-			next if $w->{info} eq DPB::PortInfo->stub;
+			next if $w->{info}->is_stub;
 			my $reason = $class->check_path($w, $p);
 			if (defined $reason) {
 				$reason = $w->fullpkgpath.$reason;
@@ -123,7 +127,11 @@ sub has_fullpkgname
 sub flavor
 {
 	my $self = shift;
-	return $self->{info}{FLAVOR};
+	if (defined $self->{info}) {
+		return $self->{info}{FLAVOR};
+	} else {
+		return undef;
+	}
 }
 
 sub subpackage
