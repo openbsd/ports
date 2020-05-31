@@ -1,0 +1,4 @@
+This package implements the crc32c checksum algorithm. It automatically
+chooses between a hardware-based implementation (using the CRC32C SSE
+4.2 instruction of Intel CPUs), or a software-based one when no hardware
+support can be found.
