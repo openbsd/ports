@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/28 16:21:40 dcoppa Exp $
-@bin bin/hpodder
-@man man/man1/hpodder.1
-@comment share/doc/${DISTNAME}/
-@comment share/doc/${DISTNAME}/COPYRIGHT
