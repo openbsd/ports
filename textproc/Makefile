@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.633 2020/05/31 18:59:34 kili Exp $
+# $OpenBSD: Makefile,v 1.634 2020/05/31 20:35:52 juanfra Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -421,6 +421,7 @@
      SUBDIR += py-ofxparse,python3
      SUBDIR += py-pandocfilters
      SUBDIR += py-pandocfilters,python3
+     SUBDIR += py-patiencediff,python3
      SUBDIR += py-pdf
      SUBDIR += py-pdfminer
      SUBDIR += py-podcastparser
