@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/01/09 11:16:50 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/06/01 17:01:07 juanfra Exp $
 bin/cygdb${MODPY_BIN_SUFFIX}
 bin/cython${MODPY_BIN_SUFFIX}
 bin/cythonize${MODPY_BIN_SUFFIX}
@@ -250,10 +250,12 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/dict.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/exc.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/float.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/function.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/genobject.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/getargs.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/instance.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/int.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/iterator.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/iterobject.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/list.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/long.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/longintrepr.pxd
