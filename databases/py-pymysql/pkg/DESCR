@@ -1,0 +1,6 @@
+PyMySQL is a pure-Python MySQL client library, based on PEP 249.
+Most public APIs are compatible with mysqlclient and MySQLdb.
+
+If you would like to use "sha256_password" or "caching_sha2_password"
+for authentication, you need to also install the ${MODPY_PY_PREFIX}cryptography
+package.
