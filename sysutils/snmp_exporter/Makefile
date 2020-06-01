@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/01 13:57:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/01 20:44:22 sthen Exp $
 
 COMMENT =		Prometheus exporter for SNMP metrics
 
-# updating: bump V version, make patch (fix patches if needed), make mibs, update M version
+# updating: bump V version, "make patch" (fix patches if needed),
+# "make mibs", update M version, "make makesum".
 V =			0.18.0
 M =			0.18.0
 GH_ACCOUNT =		prometheus
