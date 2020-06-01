@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/18 23:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/01 13:57:56 sthen Exp $
 
 COMMENT =		Prometheus exporter for SNMP metrics
 
-V =			0.17.0
+# updating: bump V version, make patch (fix patches if needed), make mibs, update M version
+V =			0.18.0
+M =			0.18.0
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		snmp_exporter
 GH_TAGNAME =		v$V
@@ -22,7 +24,7 @@ WANTLIB =		c netsnmp pthread
 # reenable DISTFILES, make makesum/etc.
 MASTER_SITES0 =		https://spacehopper.org/mirrors/
 DISTFILES =		snmp_exporter-$V.tar.gz \
-			snmp_exporter_mibs-$V.tar.xz:0
+			snmp_exporter_mibs-$M.tar.xz:0
 
 LIB_DEPENDS =		net/net-snmp
 BUILD_DEPENDS =		devel/promu
@@ -32,7 +34,7 @@ USE_GMAKE =		Yes
 MODULES=		lang/go
 MODGO_GOPATH=		${MODGO_WORKSPACE}
 
-.ifdef DISTFILES
+.if $V == $M
 post-extract:
 	mv ${WRKDIR}/mibs ${WRKDIST}/generator/
 .endif
@@ -65,10 +67,12 @@ do-test:
 
 mibs: patch
 	cd ${WRKDIR}/*/generator; \
-	    ${SUDO} chmod 777 .; \
+	    ${_PBUILD} chmod 777 .; \
 	    gmake; \
 	    mibs=`mktemp /tmp/mibs.XXXXXXXX`; \
 	    tar cf - mibs | xz > $$mibs; \
-	    scp $$mibs naiad:mirrors/snmp_exporter_mibs-$V.tar.xz
+	    chmod 644 $$mibs; \
+	    scp $$mibs naiad:mirrors/snmp_exporter_mibs-$V.tar.xz; \
+	    rm $$mibs
 
 .include <bsd.port.mk>
