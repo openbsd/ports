@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2020/06/01 15:01:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2020/06/01 20:56:22 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -7,6 +7,7 @@ GH_PROJECT =	librenms
 GH_TAGNAME =	1.64
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	net www
 
@@ -27,9 +28,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 # librenms-service.py (currently in beta) will want py3 and the following:
 #		databases/py-redis${MODPY_FLAVOR}	# optional
 #		sysutils/py-dotenv${MODPY_FLAVOR}	# not ported yet
-# can switch to pure-python db client when imported (and drop patches/*_py):
-#		databases/py-pymysql${MODPY_FLAVOR}
-RUN_DEPENDS =	databases/py-mysqlclient${MODPY_FLAVOR} \
+RUN_DEPENDS =	databases/py-pymysql${MODPY_FLAVOR} \
 		lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mysqli \
