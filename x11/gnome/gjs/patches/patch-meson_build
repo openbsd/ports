@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2020/05/14 14:55:56 jasper Exp $
+$OpenBSD: patch-meson_build,v 1.2 2020/06/01 06:37:04 ajacoutot Exp $
 
 In file included from /usr/include/readline/readline.h:38:
 In file included from /usr/include/readline/keymaps.h:36:
@@ -11,10 +11,7 @@ const char* strstr(const char* __s1, const char* __s2) {return __libcpp_strstr(_
       ~~~~~~~~~^
       5 errors generated.
 
-ld.lld: error: undefined symbol: __cxa_atexit
->>> referenced by crtbeginS.c
->>>               /usr/bin/../lib/crtbeginS.o:(atexit)
-																       ld.lld: error: undefined symbol: free
+XXX last chunk: should default to the value of b_lundef.
 
 Index: meson.build
 --- meson.build.orig
@@ -42,13 +39,17 @@ Index: meson.build
              required: readline.found()))
  endif
  header_conf.set('HAVE_SYS_SYSCALL_H', cxx.check_header('sys/syscall.h'))
-@@ -469,6 +474,9 @@ else
-     # but -undefined would also be understood as a valid argument for GNU ld!
-     link_args += cxx.get_supported_link_arguments('-Wl,-undefined,error')
+@@ -462,13 +467,6 @@ if build_profiler
  endif
-+
-+# XXX: undefined references to __cxa_atexit, free, et al
-+link_args += '-lc'
+ 
+ link_args = []
+-if cxx.has_link_argument('-Wl,-no-undefined')
+-    link_args += '-Wl,-no-undefined'
+-else
+-    # -undefined error is the equivalent of -no-undefined for the macOS linker,
+-    # but -undefined would also be understood as a valid argument for GNU ld!
+-    link_args += cxx.get_supported_link_arguments('-Wl,-undefined,error')
+-endif
  
  libgjs_cpp_args = ['-DGJS_COMPILATION'] + directory_defines
  
