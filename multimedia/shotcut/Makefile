@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/26 19:11:22 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/01 15:48:28 sthen Exp $
 
 USE_WXNEEDED =	Yes
 COMMENT =	video editor
 
 V =		20.04.12
 DISTNAME =	shotcut-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	multimedia
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 GH_ACCOUNT =	mltframework
-GH_PROJECT = 	shotcut
+GH_PROJECT =	shotcut
 GH_TAGNAME =	v$V
 
 WANTLIB += ${COMPILER_LIBCXX}
@@ -32,6 +32,7 @@ RUN_DEPENDS =		audio/jack \
 			devel/desktop-file-utils \
 			devel/sdl2 \
 			misc/shared-mime-info \
+			multimedia/mlt,-gpl2 \
 			x11/gtk+3,-guic \
 			x11/qt5/qtgraphicaleffects \
 			x11/qt5/qtquickcontrols
