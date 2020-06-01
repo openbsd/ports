@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2019/10/16 06:40:03 daniel Exp $
+# $OpenBSD: Makefile,v 1.49 2020/06/01 06:04:50 chrisz Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-V=			8.10.0
+V=			8.11.1
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}
@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pthread z
+WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pthread z
 
 MODULES=	lang/ocaml
 
