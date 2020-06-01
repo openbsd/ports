@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2019/07/08 09:46:54 giovanni Exp $
+$OpenBSD: patch-Makefile_in,v 1.9 2020/06/01 07:17:28 giovanni Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -688,7 +688,7 @@ CLEANFILES = authldaprc.h authmysqlrc.h authsqliterc.h
+@@ -725,7 +725,7 @@ CLEANFILES = authldaprc.h authmysqlrc.h authsqliterc.h
  
  DISTCLEANFILES = dbobj.config README_authlib.html
  commonlibdep = libcourierauthcommon.la
@@ -11,7 +11,7 @@ Index: Makefile.in
  commonlibadd = libcourierauthcommon.la
  libcourierauthcommon_t = @CRYPTLIBS@
  libcourierauthcommon_la_SOURCES = \
-@@ -706,7 +706,7 @@ libcourierauthcommon_la_SOURCES = \
+@@ -743,7 +743,7 @@ libcourierauthcommon_la_SOURCES = \
  
  libcourierauthcommon_la_DEPENDENCIES = libcourierauth.la
  libcourierauthcommon_la_LIBADD = libcourierauth.la
@@ -20,7 +20,7 @@ Index: Makefile.in
  libcourierauth_la_SOURCES = authdaemon.c authdaemonlib.c preauthdaemon.c \
  	authmoduser2.c authmoduser3.c debug.c \
  	courierauthdebug.h \
-@@ -715,7 +715,7 @@ libcourierauth_la_SOURCES = authdaemon.c authdaemonlib
+@@ -752,7 +752,7 @@ libcourierauth_la_SOURCES = authdaemon.c authdaemonlib
  libcourierauth_la_LIBADD = libs/libhmac/libhmac.la libs/md5/libmd5.la libs/sha1/libsha1.la libs/numlib/libnumlib.la \
  	libs/random128/librandom128.la libs/rfc822/libencode.la
  
@@ -29,7 +29,7 @@ Index: Makefile.in
  
  # The userdb module
  libauthuserdb_t = userdb/libuserdb.la @dblibrary@ @LIBGDBM@ @LIBDB@
-@@ -817,7 +817,7 @@ libcourierauthsasl_la_SOURCES = \
+@@ -854,7 +854,7 @@ libcourierauthsasl_la_SOURCES = \
  	authsaslfrombase64.c authsasltobase64.c
  
  libcourierauthsasl_la_LIBADD = libcourierauthcommon.la libcourierauth.la
@@ -38,7 +38,7 @@ Index: Makefile.in
  libcourierauthsaslclient_la_SOURCES = courierauthsaslclient.h \
  	authsaslclient.c authsaslclient.h authsaslclientcram.c \
  	authsaslclientcrammd5.c authsaslclientcramsha1.c \
-@@ -826,7 +826,7 @@ libcourierauthsaslclient_la_SOURCES = courierauthsaslc
+@@ -863,7 +863,7 @@ libcourierauthsaslclient_la_SOURCES = courierauthsaslc
  	authsaslfrombase64.c authsasltobase64.c
  
  libcourierauthsaslclient_la_LIBADD = libcourierauth.la
@@ -47,7 +47,7 @@ Index: Makefile.in
  include_HEADERS = courier_auth_config.h courierauth.h courierauthsasl.h \
  	courierauthsaslclient.h courierauthdebug.h courierauthstaticlist.h
  
-@@ -860,7 +860,7 @@ authdaemondprog_LDADD = $(LIBLTDL) libcourierauthcommo
+@@ -897,7 +897,7 @@ authdaemondprog_LDADD = $(LIBLTDL) libcourierauthcommo
  	libs/libhmac/libhmac.la libs/md5/libmd5.la libs/sha1/libsha1.la \
  	libs/rfc822/libencode.la libs/numlib/libnumlib.la
  
