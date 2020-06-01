@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/14 15:27:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/01 16:33:05 naddy Exp $
 share/bash-completion/
 share/bash-completion/bash_completion
 share/bash-completion/completions/
@@ -739,7 +739,7 @@ share/cmake/bash-completion/bash-completion-config-version.cmake
 share/cmake/bash-completion/bash-completion-config.cmake
 share/examples/bash-completion/
 share/examples/bash-completion/profile.d/
-@sample ${SYSCONFIDR}/profile.d/
+@sample ${SYSCONFDIR}/profile.d/
 share/examples/bash-completion/profile.d/bash_completion.sh
-@sample ${SYSCONFIDR}/profile.d/bash_completion.sh
+@sample ${SYSCONFDIR}/profile.d/bash_completion.sh
 share/pkgconfig/bash-completion.pc

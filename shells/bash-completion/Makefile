@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/16 11:16:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/01 16:33:05 naddy Exp $
 
 COMMENT =		programmable completion functions for bash
 
 GH_PROJECT =		bash-completion
 GH_ACCOUNT =		scop
 GH_TAGNAME =		2.10
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		shells sysutils
 
