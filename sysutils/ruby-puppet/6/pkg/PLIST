@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/22 15:23:37 kn Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/01 16:23:29 kn Exp $
+@option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppetlabs/*
