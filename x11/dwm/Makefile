@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.35 2020/05/31 11:46:46 kn Exp $
+# $OpenBSD: Makefile,v 1.36 2020/06/01 20:35:35 jung Exp $
 
 COMMENT=		dynamic window manager
 
 V=			6.2
 DISTNAME=		dwm-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
 HOMEPAGE=		https://dwm.suckless.org/
+
+MAINTAINER=		Joerg Jung <jung@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE=	Yes
