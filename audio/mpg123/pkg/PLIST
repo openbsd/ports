@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/04/11 20:25:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/06/01 21:59:54 naddy Exp $
 @bin bin/mpg123
 @bin bin/mpg123-id3dump
 @bin bin/mpg123-strip
@@ -6,16 +6,21 @@
 include/fmt123.h
 include/mpg123.h
 include/out123.h
-lib/libmpg123.a
+include/syn123.h
+@static-lib lib/libmpg123.a
 lib/libmpg123.la
 @lib lib/libmpg123.so.${LIBmpg123_VERSION}
-lib/libout123.a
+@static-lib lib/libout123.a
 lib/libout123.la
 @lib lib/libout123.so.${LIBout123_VERSION}
+@static-lib lib/libsyn123.a
+lib/libsyn123.la
+@lib lib/libsyn123.so.${LIBsyn123_VERSION}
 lib/mpg123/
-lib/mpg123/output_dummy.so
-lib/mpg123/output_sndio.so
+@so lib/mpg123/output_dummy.so
+@so lib/mpg123/output_sndio.so
 lib/pkgconfig/libmpg123.pc
 lib/pkgconfig/libout123.pc
+lib/pkgconfig/libsyn123.pc
 @man man/man1/mpg123.1
 @man man/man1/out123.1

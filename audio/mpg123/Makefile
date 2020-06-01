@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.101 2019/10/29 22:06:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.102 2020/06/01 21:59:54 naddy Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
-DISTNAME=	mpg123-1.25.13
-SHARED_LIBS=	mpg123		6.2	# 44.8
-SHARED_LIBS+=	out123		1.0	# 2.2
+DISTNAME=	mpg123-1.26.1
+SHARED_LIBS=	mpg123		7.0	# 45.1
+SHARED_LIBS+=	out123		2.0	# 3.0
+SHARED_LIBS+=	syn123		0.0	# 1.0
 CATEGORIES=	audio
-HOMEPAGE=	https://www.mpg123.de/
+HOMEPAGE=	https://mpg123.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,7 +15,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg123/} \
-		https://www.mpg123.de/download/
+		https://mpg123.org/download/
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	c m sndio
@@ -24,15 +25,9 @@ CONFIGURE_ARGS=	--enable-static \
 		--disable-lfs-alias \
 		--with-audio=sndio \
 		--with-optimization=0
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
 
-.if   ${MACHINE_ARCH} == "amd64"
-# no support for AVX instructions in as(1)
-USE_GMAKE=	Yes
-BUILD_DEPENDS+=	devel/yasm
-.endif
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # Do not build static modules
 pre-patch:
