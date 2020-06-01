@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/01 08:04:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/01 13:42:19 sthen Exp $
 @bin bin/uriparse
 include/uriparser/
 include/uriparser/Uri.h
@@ -8,10 +8,10 @@ include/uriparser/UriDefsConfig.h
 include/uriparser/UriDefsUnicode.h
 include/uriparser/UriIp4.h
 lib/cmake/
-lib/cmake/uriparser-0.9.4/
-lib/cmake/uriparser-0.9.4/uriparser-config-version.cmake
-lib/cmake/uriparser-0.9.4/uriparser-config.cmake
-lib/cmake/uriparser-0.9.4/uriparser${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/uriparser-0.9.4/uriparser.cmake
+lib/cmake/${GH_TAGNAME}/
+lib/cmake/${GH_TAGNAME}/uriparser-config-version.cmake
+lib/cmake/${GH_TAGNAME}/uriparser-config.cmake
+lib/cmake/${GH_TAGNAME}/uriparser${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/${GH_TAGNAME}/uriparser.cmake
 @lib lib/liburiparser.so.${LIBuriparser_VERSION}
 lib/pkgconfig/liburiparser.pc

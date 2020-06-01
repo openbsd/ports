@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2020/06/01 08:04:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2020/06/01 13:42:19 sthen Exp $
 
 COMMENT =		URI parsing library
 
-DISTNAME =		uriparser-0.9.4
-WRKDIST =		${WRKDIR}/uriparser-${DISTNAME}
+GH_ACCOUNT =		uriparser
+GH_PROJECT =		uriparser
+GH_TAGNAME =		uriparser-0.9.4
+PKGNAME =		${GH_TAGNAME}
 
-SHARED_LIBS +=  uriparser                 3.0 # 1.0
+SHARED_LIBS +=  uriparser                 3.1 # 1.0
 
 CATEGORIES =		www
 
@@ -16,9 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		https://github.com/uriparser/uriparser/archive/
-
 MODULES =		devel/cmake
+SUBST_VARS +=		GH_TAGNAME
 
 CONFIGURE_ARGS =	-DURIPARSER_BUILD_DOCS=off
 
