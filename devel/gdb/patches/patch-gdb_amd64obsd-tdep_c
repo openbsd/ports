@@ -1,0 +1,107 @@
+$OpenBSD: patch-gdb_amd64obsd-tdep_c,v 1.3 2020/06/01 21:44:49 kurt Exp $
+
+Index: gdb/amd64obsd-tdep.c
+--- gdb/amd64obsd-tdep.c.orig
++++ gdb/amd64obsd-tdep.c
+@@ -76,8 +76,40 @@ amd64obsd_iterate_over_regset_sections (struct gdbarch
+ /* Support for signal handlers.  */
+ 
+ /* Default page size.  */
+-static const int amd64obsd_page_size = 4096;
++static const CORE_ADDR amd64obsd_page_size = 4096;
+ 
++/* Offset & instructions for sigreturn(2).  */
++
++#define SIGRETURN_INSN_LEN 9
++
++struct amd64obsd_sigreturn_info_t {
++  int offset;
++  gdb_byte sigreturn[SIGRETURN_INSN_LEN];
++}; 
++
++static const amd64obsd_sigreturn_info_t
++  amd64obsd_sigreturn_info[] = {
++  /* OpenBSD 6.4 */
++  { 9, { 0x48, 0xc7, 0xc0,
++         0x67, 0x00, 0x00, 0x00, /* movq $SYS_sigreturn, %rax */
++         0x0f, 0x05 } },         /* syscall */
++  /* OpenBSD 5.1 */
++  { 6, { 0x48, 0xc7, 0xc0,
++         0x67, 0x00, 0x00, 0x00, /* movq $SYS_sigreturn, %rax */
++         0x0f, 0x05 } },         /* syscall */
++  { 7, { 0x48, 0xc7, 0xc0,
++         0x67, 0x00, 0x00, 0x00, /* movq $SYS_sigreturn, %rax */
++         0x0f, 0x05 } },         /* syscall */
++  /* OpenBSD 5.0 */
++  { 6, { 0x48, 0xc7, 0xc0,
++         0x67, 0x00, 0x00, 0x00, /* movq $SYS_sigreturn, %rax */
++         0xcd, 0x80 } },         /* int $0x80 */
++  { 7, { 0x48, 0xc7, 0xc0,
++         0x67, 0x00, 0x00, 0x00, /* movq $SYS_sigreturn, %rax */
++         0xcd, 0x80 } },         /* int $0x80 */
++  { -1, {} }
++};
++
+ /* Return whether THIS_FRAME corresponds to an OpenBSD sigtramp
+    routine.  */
+ 
+@@ -86,20 +118,8 @@ amd64obsd_sigtramp_p (struct frame_info *this_frame)
+ {
+   CORE_ADDR pc = get_frame_pc (this_frame);
+   CORE_ADDR start_pc = (pc & ~(amd64obsd_page_size - 1));
+-  const gdb_byte osigreturn[] =
+-  {
+-    0x48, 0xc7, 0xc0,
+-    0x67, 0x00, 0x00, 0x00,	/* movq $SYS_sigreturn, %rax */
+-    0xcd, 0x80			/* int $0x80 */
+-  };
+-  const gdb_byte sigreturn[] =
+-  {
+-    0x48, 0xc7, 0xc0,
+-    0x67, 0x00, 0x00, 0x00,	/* movq $SYS_sigreturn, %rax */
+-    0x0f, 0x05			/* syscall */
+-  };
+-  size_t buflen = (sizeof sigreturn) + 1;
+-  gdb_byte *buf;
++  const amd64obsd_sigreturn_info_t *info;
++  gdb_byte buf[SIGRETURN_INSN_LEN];
+   const char *name;
+ 
+   /* If the function has a valid symbol name, it isn't a
+@@ -113,22 +133,22 @@ amd64obsd_sigtramp_p (struct frame_info *this_frame)
+   if (find_pc_section (pc) != NULL)
+     return 0;
+ 
+-  /* If we can't read the instructions at START_PC, return zero.  */
+-  buf = (gdb_byte *) alloca ((sizeof sigreturn) + 1);
+-  if (!safe_frame_unwind_memory (this_frame, start_pc + 6, buf, buflen))
+-    return 0;
++  for (info = amd64obsd_sigreturn_info; info->offset != -1; info++)
++    {
+ 
+-  /* Check for sigreturn(2).  Depending on how the assembler encoded
+-     the `movq %rsp, %rdi' instruction, the code starts at offset 6 or
+-     7.  OpenBSD 5.0 and later use the `syscall' instruction.  Older
+-     versions use `int $0x80'.  Check for both.  */
+-  if (memcmp (buf, sigreturn, sizeof sigreturn)
+-      && memcmp (buf + 1, sigreturn, sizeof sigreturn)
+-      && memcmp (buf, osigreturn, sizeof osigreturn)
+-      && memcmp (buf + 1, osigreturn, sizeof osigreturn))
+-    return 0;
++      /* If we can't read the instructions at return zero.  */
++      if (!safe_frame_unwind_memory (this_frame,
++        start_pc + info->offset, buf, sizeof buf))
++        continue;
+ 
+-  return 1;
++      /* Check for sigreturn(2).  */
++      if (memcmp (buf, info->sigreturn, sizeof buf))
++        continue;
++
++      return 1;
++    }
++
++  return 0;
+ }
+ 
+ /* Assuming THIS_FRAME is for a BSD sigtramp routine, return the
