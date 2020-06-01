@@ -1,0 +1,14 @@
+$OpenBSD: patch-code_qcommon_q_platform_h,v 1.1 2020/06/01 16:07:05 cwen Exp $
+
+Index: code/qcommon/q_platform.h
+--- code/qcommon/q_platform.h.orig
++++ code/qcommon/q_platform.h
+@@ -223,6 +223,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+
+ #ifdef __i386__
+ #define ARCH_STRING "x86"
++#elif defined __ppc__
++#define ARCH_STRING "ppc"
+ #elif defined __amd64__
+ #undef idx64
+ #define idx64 1

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/06/01 16:07:05 cwen Exp $
 
 BROKEN-i386=	need to free up a register
-ONLY_FOR_ARCHS= amd64 i386
+ONLY_FOR_ARCHS= amd64 i386 macppc
 
 COMMENT=	clone of the original Quake III Arena
 
 DISTNAME=	ioquake3-2019.04.08
+REVISION=	0
 
 GH_ACCOUNT=	ioquake
 GH_PROJECT=	ioq3
@@ -33,7 +34,11 @@ ALL_TARGET=	"release"
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
-QUAKE_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/x86/}
+QUAKE_ARCH-amd64 = 	x86_64
+QUAKE_ARCH-i386 = 	x86
+QUAKE_ARCH-powerpc = 	ppc
+QUAKE_ARCH-${MACHINE_ARCH} ?= ${MACHINE_ARCH}
+QUAKE_ARCH =		${QUAKE_ARCH-${MACHINE_ARCH}}
 SUBST_VARS+=	QUAKE_ARCH
 
 do-install:

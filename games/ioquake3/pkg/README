@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2018/09/04 12:46:13 espie Exp $
+$OpenBSD: README,v 1.6 2020/06/01 16:07:05 cwen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -19,3 +19,44 @@ rcctl enable ioq3ded && rcctl set ioq3ded flags +map q3dm16
 
 For more information on the dedicated server see here:
 http://wiki.ioquake3.org/Sys_Admin_Guide#Configuration_Files
+
+Macppc specifics
+================
+
+Additional configuration may be required, as noted below.
+
+OpenGL renderer
+---------------
+
+The opengl2 renderer is not available on many of the supported graphics cards
+and will prevent ioquake3 from starting with the default configuration.
+Specifiying seta cl_renderer "opengl1" in the config file will allow use of the
+opengl1 renderer.
+
+16-bit textures 
+---------------
+
+Graphical issues occur when using 16-bit textures on the Radeon 9200, 9600, and
+9700. 32-bit textures should be used if this happens.
+
+Radeon 9700
+-----------
+
+Weapons and fonts will not appear without specifying seta r_hdr "0" in the
+config file. The Radeon 9200 and 9600 do not have this issue.
+
+Extensions should also be turned off by specifying seta r_allowExtensions "0"
+in the config file.
+
+Radeon 9200
+-----------
+
+Fullscreen requires the X11 resolution to match the one specified in the
+ioquake3 config file. This has been tested in FVWM and Window Maker, and only
+Window Maker displays fullscreen correctly out of the 2.
+
+The fastest graphics preset should be used in ioquake3. Resolution can then be
+modified from there for a playable game.
+
+The main menu in ioquake3 has poor performance that other parts of the game do
+not suffer from.
