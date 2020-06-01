@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1537 2020/05/29 19:38:09 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1538 2020/06/01 08:41:36 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2069,6 +2069,7 @@ fix-permissions:
 	fi
 .  for d in ${LOCKDIR} ${PACKAGE_REPOSITORY} \
 		${PACKAGE_REPOSITORY}/${MACHINE_ARCH} \
+		${BULK_COOKIES_DIR} ${UPDATE_COOKIES_DIR} \
 		${PLIST_REPOSITORY} ${WRKOBJDIR}
 	@b=`id -gn ${BUILD_USER}`; \
 	echo "give $d to ${BUILD_USER}:$$b"; \
@@ -2156,7 +2157,7 @@ ${_pkg_cookie${_S}}:
 		${_PBUILD} mv ${_TMP_REPO}$$pkgname ${_PKG_REPO${_S}}$$p; \
 	done
 # End of PACKAGE.
-	@-rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
+	@-${_PBUILD} rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
 .  endif
 
 
@@ -2179,9 +2180,9 @@ ${_INSTALL_COOKIE${_S}}:
 ${_UPDATE_COOKIE${_S}}:
 	@${_MAKE} _internal-package
 .  if empty(UPDATE_COOKIES_DIR)
-	@${_MAKE} ${WRKDIR}
+	@test -d ${WRKDIR} || ${_MAKE} ${_WRKDIR_COOKIE}
 .  else
-	@mkdir -p ${UPDATE_COOKIES_DIR}
+	@${_PBUILD} mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
 	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${_S}}"
 	@b=$$(cd ${.CURDIR} && SUBPACKAGE=${_S} ${MAKE} print-plist|sed -ne '/^@pkgpath /s,,-e ,p'); \
@@ -2193,20 +2194,20 @@ ${_UPDATE_COOKIE${_S}}:
 		   ${ECHO_MSG} "Upgrading from $$a"; \
 		   ${SETENV} ${_TERM_ENV} ${_SUDO_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
-	@${_MAKE_COOKIE} $@
+	@${_PBUILD} ${_MAKE_COOKIE} $@
 
 ${_FUPDATE_COOKIE${_S}}:
 	@${_MAKE} _internal-package
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
 		exec ${MAKE} _internal-install-depends
 .  if empty(UPDATE_COOKIES_DIR)
-	@${_MAKE} ${WRKDIR}
+	@test -d ${WRKDIR} || ${_MAKE} ${_WRKDIR_COOKIE}
 .  else
-	@mkdir -p ${UPDATE_COOKIES_DIR}
+	@${_PBUILD} mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
 	@${ECHO_MSG} "===> Updating/installing for ${FULLPKGNAME${_S}}"
 	@${SETENV} ${_TERM_ENV} ${_SUDO_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}}
-	@${_MAKE_COOKIE} $@
+	@${_PBUILD} ${_MAKE_COOKIE} $@
 .endfor
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIES}
@@ -2612,7 +2613,7 @@ _internal-package:
 
 ${_BULK_COOKIE}:
 	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-package-only
-	@mkdir -p ${BULK_COOKIES_DIR}
+	@${_PBUILD} mkdir -p ${BULK_COOKIES_DIR}
 .for _i in ${BULK_TARGETS_${PKGPATH}}
 	@${ECHO_MSG} "===> Running ${_i}"
 	@${_MAKE} ${_i} ${BULK_FLAGS}
@@ -2621,7 +2622,7 @@ ${_BULK_COOKIE}:
 	@${BULK_DO_${PKGPATH}}
 .endif
 	@${_MAKE} _internal-clean
-	@${_MAKE_COOKIE} $@
+	@${_PBUILD} ${_MAKE_COOKIE} $@
 
 # The real targets. Note that some parts always get run, some parts can be
 # disabled, and there are hooks to override behavior.
@@ -3249,13 +3250,13 @@ _internal-clean:
 .if ${_clean:Mpackages} || ${_clean:Mpackage} && ${_clean:Msub}
 	${_PBUILD} rm -f ${_PACKAGE_COOKIES} ${_WRKDEBUG}/Makefile
 	${_PFETCH} rm -f ${_CACHE_PACKAGE_COOKIES}
-	rm -f ${_UPDATE_COOKIES} 
+	${_PBUILD} rm -f ${_UPDATE_COOKIES} 
 .elif ${_clean:Mpackage}
 	${_PBUILD} rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}} ${_DBG_PACKAGE_COOKIE${SUBPACKAGE}}
-	rm -f ${_UPDATE_COOKIE${SUBPACKAGE}}
+	${_PBUILD} rm -f ${_UPDATE_COOKIE${SUBPACKAGE}}
 .endif
 .if ${_clean:Mbulk}
-	rm -f ${_BULK_COOKIE}
+	${_PBUILD} rm -f ${_BULK_COOKIE}
 .endif
 .if ${_clean:Mplist}
 .  if !empty(_PLIST_DB)
