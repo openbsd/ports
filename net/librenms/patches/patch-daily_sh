@@ -1,4 +1,4 @@
-$OpenBSD: patch-daily_sh,v 1.27 2020/02/06 22:42:29 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.28 2020/06/01 15:01:25 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
@@ -6,9 +6,9 @@ Index: daily.sh
 @@ -125,7 +125,7 @@ set_notifiable_result() {
  #   Exit-Code: 0 >= min ver, 1 < min ver
  #######################################
- check_php_ver() {
+ check_dependencies() {
 -    local branch=$(git rev-parse --abbrev-ref HEAD)
 +    local branch=master
+     scripts/check_requirements.py > /dev/null 2>&1 || pip3 install -r requirements.txt > /dev/null 2>&1
+ 
      local ver_56=$(php -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
-     local ver_71=$(php -r "echo (int)version_compare(PHP_VERSION, '7.1.3', '<');")
-     if [[ "$branch" == "php53" ]] && [[ "$ver_56" == "0" ]]; then

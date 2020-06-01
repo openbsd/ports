@@ -1,0 +1,52 @@
+$OpenBSD: patch-LibreNMS_service_py,v 1.1 2020/06/01 15:01:25 sthen Exp $
+
+handle mysqlclient *or* pymysql
+
+Index: LibreNMS/service.py
+--- LibreNMS/service.py.orig
++++ LibreNMS/service.py
+@@ -3,7 +3,6 @@ import LibreNMS
+ import json
+ import logging
+ import os
+-import pymysql
+ import subprocess
+ import threading
+ import sys
+@@ -18,6 +17,18 @@ from socket import gethostname
+ from signal import signal, SIGTERM
+ from uuid import uuid1
+ 
++try:
++    import MySQLdb
++except ImportError:
++    try:
++        import pymysql
++        pymysql.install_as_MySQLdb()
++        import MySQLdb
++    except ImportError as exc:
++        print('ERROR: missing the mysql python module please run:')
++        print('pip install -r requirements.txt')
++        print('ERROR: %s' % exc)
++        sys.exit(2)
+ 
+ class ServiceConfig:
+     def __init__(self):
+@@ -341,7 +352,7 @@ class Service:
+                 ORDER BY `last_polled_timetaken` DESC''', (poller_find_time, discovery_find_time, poller_find_time, discovery_find_time))
+             self.db_failures = 0
+             return result
+-        except pymysql.err.Error:
++        except MySQLdb.err.Error:
+             self.db_failures += 1
+             if self.db_failures > self.config.max_db_failures:
+                 warning("Too many DB failures ({}), attempting to release master".format(self.db_failures))
+@@ -526,7 +537,7 @@ class Service:
+                                        getattr(self.config, worker_type).workers,
+                                        getattr(self.config, worker_type).frequency)
+                                )
+-        except pymysql.err.Error:
++        except MySQLdb.err.Error:
+             exception("Unable to log performance statistics - is the database still online?")
+ 
+     def logfile_watchdog(self):
