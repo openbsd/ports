@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/11/09 22:31:55 fcambus Exp $
+# $OpenBSD: Makefile,v 1.15 2020/06/01 21:24:48 jung Exp $
 
 COMMENT=		count lines of code
 
-V=			1.84
+V=			1.86
 DISTNAME=		cloc-${V}
 
 CATEGORIES=		textproc devel
