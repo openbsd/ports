@@ -1,8 +1,8 @@
-$OpenBSD: patch-prosody_cfg_lua_dist,v 1.8 2019/02/07 19:23:39 danj Exp $
+$OpenBSD: patch-prosody_cfg_lua_dist,v 1.9 2020/06/02 07:22:46 landry Exp $
 Index: prosody.cfg.lua.dist
 --- prosody.cfg.lua.dist.orig
 +++ prosody.cfg.lua.dist
-@@ -23,6 +23,14 @@
+@@ -23,6 +23,13 @@
  -- Example: admins = { "user1@example.com", "user2@example.net" }
  admins = { }
  
@@ -11,13 +11,12 @@ Index: prosody.cfg.lua.dist
 +prosody_group = "_prosody"
 +
 +-- Enable POSIX-only options
-+daemonize = true
 +pidfile = "/var/prosody/prosody.pid"
 +
  -- Enable use of libevent for better performance under high load
  -- For more information see: https://prosody.im/doc/libevent
  --use_libevent = true
-@@ -153,8 +161,8 @@ archive_expires_after = "1w" -- Remove archived messag
+@@ -153,8 +160,8 @@ archive_expires_after = "1w" -- Remove archived messag
  -- Logging configuration
  -- For advanced logging see https://prosody.im/doc/logging
  log = {

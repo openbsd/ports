@@ -1,23 +1,19 @@
 #!/bin/ksh
 #
-# $OpenBSD: prosody.rc,v 1.4 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: prosody.rc,v 1.5 2020/06/02 07:22:46 landry Exp $
 
-daemon="${TRUEPREFIX}/sbin/prosodyctl"
-daemon_flags="start"
+daemon="${TRUEPREFIX}/sbin/prosody -D"
 daemon_user="_prosody"
 
 . /etc/rc.d/rc.subr
 
-rc_reload=NO
+pexp="${MODLUA_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+
 rc_usercheck=NO
 
 rc_check() {
 	# return 1 is needed: prosodyctl returns a higher error code on failure
 	${TRUEPREFIX}/sbin/prosodyctl status || return 1
-}
-
-rc_stop() {
-	${TRUEPREFIX}/sbin/prosodyctl stop
 }
 
 rc_cmd $1
