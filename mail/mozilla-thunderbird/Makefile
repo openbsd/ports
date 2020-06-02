@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.320 2020/05/26 06:27:46 landry Exp $
+# $OpenBSD: Makefile,v 1.321 2020/06/02 15:23:35 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -11,6 +11,7 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
+REVISION =	0
 
 # XXX badly formed debug in libxul ?
 DWZ = :
