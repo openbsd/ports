@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.16 2019/05/02 01:03:11 sthen Exp $
+@comment $OpenBSD: PLIST-lang,v 1.17 2020/06/02 20:09:55 sthen Exp $
 @conflict vim-<7.4
 man/da/
 man/da.ISO8859-1/
@@ -279,6 +279,54 @@ man/ru.UTF-8/man1/
 @man man/ru.UTF-8/man1/vimdiff.1
 @man man/ru.UTF-8/man1/vimtutor.1
 @man man/ru.UTF-8/man1/xxd.1
+man/tr/
+man/tr.ISO8859-9/
+man/tr.ISO8859-9/man1/
+@man man/tr.ISO8859-9/man1/eview.1
+@man man/tr.ISO8859-9/man1/evim.1
+@man man/tr.ISO8859-9/man1/ex.1
+@man man/tr.ISO8859-9/man1/gview.1
+@man man/tr.ISO8859-9/man1/gvim.1
+@man man/tr.ISO8859-9/man1/gvimdiff.1
+@man man/tr.ISO8859-9/man1/rgview.1
+@man man/tr.ISO8859-9/man1/rgvim.1
+@man man/tr.ISO8859-9/man1/rview.1
+@man man/tr.ISO8859-9/man1/rvim.1
+@man man/tr.ISO8859-9/man1/view.1
+@man man/tr.ISO8859-9/man1/vim.1
+@man man/tr.ISO8859-9/man1/vimdiff.1
+@man man/tr.ISO8859-9/man1/vimtutor.1
+man/tr.UTF-8/
+man/tr.UTF-8/man1/
+@man man/tr.UTF-8/man1/eview.1
+@man man/tr.UTF-8/man1/evim.1
+@man man/tr.UTF-8/man1/ex.1
+@man man/tr.UTF-8/man1/gview.1
+@man man/tr.UTF-8/man1/gvim.1
+@man man/tr.UTF-8/man1/gvimdiff.1
+@man man/tr.UTF-8/man1/rgview.1
+@man man/tr.UTF-8/man1/rgvim.1
+@man man/tr.UTF-8/man1/rview.1
+@man man/tr.UTF-8/man1/rvim.1
+@man man/tr.UTF-8/man1/view.1
+@man man/tr.UTF-8/man1/vim.1
+@man man/tr.UTF-8/man1/vimdiff.1
+@man man/tr.UTF-8/man1/vimtutor.1
+man/tr/man1/
+@man man/tr/man1/eview.1
+@man man/tr/man1/evim.1
+@man man/tr/man1/ex.1
+@man man/tr/man1/gview.1
+@man man/tr/man1/gvim.1
+@man man/tr/man1/gvimdiff.1
+@man man/tr/man1/rgview.1
+@man man/tr/man1/rgvim.1
+@man man/tr/man1/rview.1
+@man man/tr/man1/rvim.1
+@man man/tr/man1/view.1
+@man man/tr/man1/vim.1
+@man man/tr/man1/vimdiff.1
+@man man/tr/man1/vimtutor.1
 share/vim/${P}/lang/af/
 share/vim/${P}/lang/af/LC_MESSAGES/
 share/vim/${P}/lang/af/LC_MESSAGES/vim.mo

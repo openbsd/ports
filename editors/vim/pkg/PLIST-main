@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.36 2020/04/09 20:07:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.37 2020/06/02 20:09:55 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -110,6 +110,7 @@ share/vim/${P}/compiler/decada.vim
 share/vim/${P}/compiler/dot.vim
 share/vim/${P}/compiler/erlang.vim
 share/vim/${P}/compiler/eruby.vim
+share/vim/${P}/compiler/eslint.vim
 share/vim/${P}/compiler/fortran_F.vim
 share/vim/${P}/compiler/fortran_cv.vim
 share/vim/${P}/compiler/fortran_elf90.vim
@@ -156,6 +157,7 @@ share/vim/${P}/compiler/sass.vim
 share/vim/${P}/compiler/se.vim
 share/vim/${P}/compiler/splint.vim
 share/vim/${P}/compiler/stack.vim
+share/vim/${P}/compiler/standard.vim
 share/vim/${P}/compiler/tcl.vim
 share/vim/${P}/compiler/tex.vim
 share/vim/${P}/compiler/tidy.vim
@@ -433,6 +435,7 @@ share/vim/${P}/ftplugin/make.vim
 share/vim/${P}/ftplugin/man.vim
 share/vim/${P}/ftplugin/manconf.vim
 share/vim/${P}/ftplugin/markdown.vim
+share/vim/${P}/ftplugin/masm.vim
 share/vim/${P}/ftplugin/matlab.vim
 share/vim/${P}/ftplugin/meson.vim
 share/vim/${P}/ftplugin/mf.vim
@@ -645,6 +648,7 @@ share/vim/${P}/indent/sh.vim
 share/vim/${P}/indent/sml.vim
 share/vim/${P}/indent/sql.vim
 share/vim/${P}/indent/sqlanywhere.vim
+share/vim/${P}/indent/sshconfig.vim
 share/vim/${P}/indent/systemd.vim
 share/vim/${P}/indent/systemverilog.vim
 share/vim/${P}/indent/tcl.vim
@@ -1256,6 +1260,7 @@ share/vim/${P}/syntax/openroad.vim
 share/vim/${P}/syntax/opl.vim
 share/vim/${P}/syntax/ora.vim
 share/vim/${P}/syntax/pamconf.vim
+share/vim/${P}/syntax/pamenv.vim
 share/vim/${P}/syntax/papp.vim
 share/vim/${P}/syntax/pascal.vim
 share/vim/${P}/syntax/passwd.vim

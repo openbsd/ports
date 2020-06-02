@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_syntax_make_vim,v 1.11 2020/04/09 20:07:47 sthen Exp $
+$OpenBSD: patch-runtime_syntax_make_vim,v 1.12 2020/06/02 20:09:55 sthen Exp $
 
 Index: runtime/syntax/make.vim
 --- runtime/syntax/make.vim.orig
@@ -16,25 +16,13 @@ Index: runtime/syntax/make.vim
  	\ contains=makeIdent,makeComment
  	\ skipnl nextgroup=makeCommands,makeCommandError
  
-@@ -74,15 +74,18 @@ syn match makeInclude	"^ *[-s]\=include\s.*$"
+@@ -74,6 +74,9 @@ syn match makeInclude	"^ *[-s]\=include\s.*$"
  syn match makeStatement	"^ *vpath"
  syn match makeExport    "^ *\(export\|unexport\)\>"
- syn match makeOverride	"^ *override"
+ syn match makeOverride	"^ *override\>"
 +" BSD directives
-+syn match makePreCondit	"^\. *\(if\|else\|endif\|ifdef\|ifndef\|ifmake\|ifnmake\|elif\|elifdef\|for\|endfor\|undef\)\>"
-+syn match makeInclude	"^ *\. *include"
++syn match makePreCondit "^\. *\(if\|else\|endif\|ifdef\|ifndef\|ifmake\|ifnmake\|elif\|elifdef\|for\|endfor\|undef\)\>"
++syn match makeInclude  "^ *\. *include"
  " Statements / Functions (GNU make)
  syn match makeStatement contained "(\(abspath\|addprefix\|addsuffix\|and\|basename\|call\|dir\|error\|eval\|file\|filter-out\|filter\|findstring\|firstword\|flavor\|foreach\|guile\|if\|info\|join\|lastword\|notdir\|or\|origin\|patsubst\|realpath\|shell\|sort\|strip\|subst\|suffix\|value\|warning\|wildcard\|word\|wordlist\|words\)\>"ms=s+1
- 
- " Comment
- if exists("make_microsoft")
--   syn match  makeComment "#.*" contains=@Spell,makeTodo
-+   syn match  makeComment "#.*" contains=makeTodo
- elseif !exists("make_no_comments")
--   syn region  makeComment	start="#" end="^$" end="[^\\]$" keepend contains=@Spell,makeTodo
--   syn match   makeComment	"#$" contains=@Spell
-+   syn region  makeComment	start="#" end="^$" end="[^\\]$" keepend contains=makeTodo
-+   syn match   makeComment	"#$"
- endif
- syn keyword makeTodo TODO FIXME XXX contained
  
