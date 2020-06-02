@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/02 09:22:26 jsg Exp $
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 macppc
 
 COMMENT-main=	sauerbraten client
 COMMENT-data=	sauerbraten data
