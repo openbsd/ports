@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.130 2020/01/09 20:43:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2020/06/02 12:44:19 sthen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.93.0.4
+VERSION =		4.94
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -35,7 +35,7 @@ LIB_DEPENDS-main =	converters/libiconv \
 RUN_DEPENDS-eximon =	${PKGPATH},-main
 LIB_DEPENDS-eximon =	devel/pcre
 
-MAKE_FLAGS +=		FULLECHO=
+MAKE_FLAGS +=		FULLECHO= CC="${CC}" CFLAGS="${CFLAGS}"
 
 PSEUDO_FLAVORS =	no_eximon
 FLAVORS =		mysql postgresql sqlite3 ldap sasl

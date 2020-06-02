@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_lookups_spf_c,v 1.2 2019/12/10 23:21:37 sthen Exp $
+$OpenBSD: patch-src_lookups_spf_c,v 1.3 2020/06/02 12:44:19 sthen Exp $
 
 Index: src/lookups/spf.c
 --- src/lookups/spf.c.orig
 +++ src/lookups/spf.c
-@@ -25,9 +25,6 @@ static void dummy(int x) { dummy2(x-1); }
+@@ -24,9 +24,6 @@ static void dummy(int x) { dummy2(x-1); }
  #else
  
  #include "lf_functions.h"
