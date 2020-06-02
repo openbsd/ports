@@ -1,0 +1,25 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2020/06/02 14:07:40 jturner Exp $
+
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -9,16 +9,15 @@ all: hexify build
+ hexify:
+ 	echo "// Hexified internal microscheme files." > src/assembly_hex.c
+ 	xxd -i src/preamble.s >> src/assembly_hex.c
+-
+ 	echo "// Hexified internal microscheme files." > src/microscheme_hex.c
+ 	xxd -i src/primitives.ms >> src/microscheme_hex.c
+ 	xxd -i src/stdlib.ms >> src/microscheme_hex.c
+ 
+ build:
+-	gcc -ggdb -std=gnu99 -Wall -Wextra -o microscheme src/*.c
++	$(CC) $(CFLAGS) -o microscheme src/*.c
+ 
+ install:
+ 	install -d $(PREFIX)/bin/
+ 	install -m755 ./microscheme $(PREFIX)/bin/microscheme
+-	install -d $(PREFIX)/share/microscheme/
+-	cp -r examples/ $(PREFIX)/share/microscheme/
++	install -d $(PREFIX)/share/examples/microscheme/
++	cp -R examples/* $(PREFIX)/share/examples/microscheme/
