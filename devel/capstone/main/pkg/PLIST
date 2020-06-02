@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/04/01 02:28:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/02 11:47:10 jasper Exp $
 @pkgpath devel/capstone
 @bin bin/cstool
 include/capstone/
@@ -16,6 +16,6 @@ include/capstone/systemz.h
 include/capstone/tms320c64x.h
 include/capstone/x86.h
 include/capstone/xcore.h
-lib/libcapstone.a
+@static-lib lib/libcapstone.a
 @lib lib/libcapstone.so.${LIBcapstone_VERSION}
 lib/pkgconfig/capstone.pc

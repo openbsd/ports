@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.5 2019/07/12 20:44:05 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2020/06/02 11:47:10 jasper Exp $
 
-GH_TAGNAME =	4.0.1
+GH_TAGNAME =	4.0.2
 GH_ACCOUNT =	aquynh
 GH_PROJECT =	capstone
 

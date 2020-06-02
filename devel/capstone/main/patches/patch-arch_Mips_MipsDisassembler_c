@@ -1,9 +1,9 @@
-$OpenBSD: patch-arch_Mips_MipsDisassembler_c,v 1.1 2019/04/01 02:28:20 jasper Exp $
+$OpenBSD: patch-arch_Mips_MipsDisassembler_c,v 1.2 2020/06/02 11:47:10 jasper Exp $
 
 Index: arch/Mips/MipsDisassembler.c
 --- arch/Mips/MipsDisassembler.c.orig
 +++ arch/Mips/MipsDisassembler.c
-@@ -412,7 +412,7 @@ static DecodeStatus MipsDisassembler_getInstruction(in
+@@ -413,7 +413,7 @@ static DecodeStatus MipsDisassembler_getInstruction(in
  	DecodeStatus Result;
  
  	if (instr->flat_insn->detail) {
