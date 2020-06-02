@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2020/02/25 02:38:04 thfr Exp $
+# $OpenBSD: Makefile,v 1.243 2020/06/02 14:09:16 jturner Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -66,6 +66,7 @@
      SUBDIR += luajit
      SUBDIR += lucee
      SUBDIR += mawk
+     SUBDIR += microscheme
      SUBDIR += moarvm
      SUBDIR += mono
      SUBDIR += mruby
