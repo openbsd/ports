@@ -1,0 +1,17 @@
+$OpenBSD: patch-data_org_kde_kdeconnect_open_desktop,v 1.1 2020/06/02 12:48:47 feinerer Exp $
+
+Fix '"*/*" is an invalid MIME type' error
+https://bugs.kde.org/show_bug.cgi?id=420431
+
+Index: data/org.kde.kdeconnect_open.desktop
+--- data/org.kde.kdeconnect_open.desktop.orig
++++ data/org.kde.kdeconnect_open.desktop
+@@ -77,7 +77,7 @@ Comment[uk]=Відкрити на з'єднаному 
+ Comment[x-test]=xxOpen on a connected device using KDE Connectxx
+ Comment[zh_CN]=通过 KDE Connect 在已连接的设备上打开
+ Comment[zh_TW]=使用 KDE 連線於連線裝置中開啟
+-MimeType=*/*;
++MimeType=application/octet-stream;
+ Exec=kdeconnect-handler --open %U
+ Icon=kdeconnect
+ Type=Service
