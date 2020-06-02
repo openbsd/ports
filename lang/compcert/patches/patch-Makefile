@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.5 2019/08/18 01:15:12 daniel Exp $
+$OpenBSD: patch-Makefile,v 1.6 2020/06/02 12:58:22 daniel Exp $
 
 Convenience test target
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -173,7 +173,7 @@ runtime:
+@@ -181,7 +181,7 @@ runtime:
  
  FORCE:
  
@@ -14,8 +14,8 @@ Index: Makefile
  
  documentation: $(FILES)
  	mkdir -p doc/html
-@@ -255,6 +255,10 @@ ifeq ($(INSTALL_COQDEV),true)
- 	install -m 0644 ./VERSION $(DESTDIR)$(COQDEVDIR)
+@@ -277,6 +277,10 @@ ifeq ($(INSTALL_COQDEV),true)
+ 	install -m 0644 ./compcert.config $(DESTDIR)$(COQDEVDIR)
  	@(echo "To use, pass the following to coq_makefile or add the following to _CoqProject:"; echo "-R $(COQDEVDIR) compcert") > $(DESTDIR)$(COQDEVDIR)/README
  endif
 +
