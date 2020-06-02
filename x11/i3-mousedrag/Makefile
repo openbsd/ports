@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/16 20:50:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/02 21:55:14 sthen Exp $
 
 # see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
 COMMENT =	improved dynamic tiling window manager, fork with mouse drag
@@ -23,7 +23,7 @@ WANTLIB += xcb xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
 WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
 WANTLIB += yajl
 
-DEBUG_PACKAGS =	${BUILD_PACKAGES}
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 BUILD_DEPENDS =	textproc/asciidoc \
 		textproc/xmlto
