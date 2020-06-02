@@ -1,3 +1,4 @@
+# $OpenBSD: unveil.content,v 1.2 2020/06/02 15:27:27 landry Exp $
 /dev/drm0 rw
 
 /etc/fonts r
