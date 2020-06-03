@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/04/13 16:12:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/06/03 12:32:33 sthen Exp $
 @newgroup _dhcpcd:846
 @newuser _dhcpcd:846:_dhcpcd:daemon:dhcpcd user:/var/dhcpcd:/sbin/nologin
 @extraunexec rm ${LOCALSTATEDIR}/db/dhcpcd/*
+@owner root
+@group wheel
+@sample /var/dhcpcd/
+@owner
+@group
 @rcscript ${RCDIR}/dhcpcd
 libexec/dhcpcd-hooks/
 libexec/dhcpcd-hooks/01-test
@@ -30,3 +35,5 @@ share/examples/dhcpcd/dhcpcd.conf
 @exec-update [[ ! -f ${LOCALSTATEDIR}/db/dhcpcd/duid ]] && [[ -r ${SYSCONFDIR}/dhcpcd.duid ]] && cp ${SYSCONFDIR}/dhcpcd.duid ${LOCALSTATEDIR}/db/dhcpcd/duid; true
 @comment fix dir ownership - 9.x starts using privsep
 @exec-update [[ -d ${LOCALSTATEDIR}/db/dhcpcd ]] && chown -R _dhcpcd:_dhcpcd ${LOCALSTATEDIR}/db/dhcpcd
+@comment warn if the user installed the package in the short window when this was set to /var/empty
+@exec-update getent passwd _dhcpcd | grep -q /var/empty && echo Please update _dhcpcd home directory to /var/dhcpcd.
