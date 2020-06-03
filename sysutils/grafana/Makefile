@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2020/05/16 11:22:13 martin Exp $
+# $OpenBSD: Makefile,v 1.14 2020/06/03 14:42:20 sthen Exp $
 
 COMMENT =	monitoring and metric analytics dashboards
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	grafana
-GH_TAGNAME =	v6.7.3
-BUILD_ID =	67951dc7df0e9bfd5186
+GH_TAGNAME =	v6.7.4
+BUILD_ID =	cd0b9771548369c04f01
 
 CATEGORIES =	sysutils
 
