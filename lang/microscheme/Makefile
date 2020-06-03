@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/02 14:07:40 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/03 12:58:08 jturner Exp $
 
 COMMENT =	scheme subset for atmel microcontrollers
 DISTNAME =	microscheme-0.9.4
@@ -16,6 +16,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
+# vim is needed for xxd
+BUILD_DEPENDS =	editors/vim,-main
 MAKE_FILE =	makefile
 
 .include <bsd.port.mk>
