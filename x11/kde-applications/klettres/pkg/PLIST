@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:22 rsadowski Exp $
-@conflict kde-l10n-*
+@comment $OpenBSD: PLIST,v 1.4 2020/06/03 05:13:40 rsadowski Exp $
 @conflict kde-i18n-*
 @pkgpath x11/kde4/klettres
 @bin bin/klettres

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/26 05:23:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:45 rsadowski Exp $
 
 COMMENT =	jigsaw puzzle game
 DISTNAME =	palapeli-${VERSION}
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/games/palapeli
 
@@ -20,6 +20,7 @@ WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

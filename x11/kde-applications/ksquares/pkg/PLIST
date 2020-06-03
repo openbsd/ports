@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:25 rsadowski Exp $
-@conflict kde-l10n-*
+@comment $OpenBSD: PLIST,v 1.3 2020/06/03 05:13:43 rsadowski Exp $
 @pkgpath x11/kde4/ksquares
 @bin bin/ksquares
 share/applications/org.kde.ksquares.desktop

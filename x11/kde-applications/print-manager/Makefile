@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/03 05:13:45 rsadowski Exp $
 
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
 CATEGORIES =	sysutils print
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.print-manager
 
@@ -18,6 +19,7 @@ WANTLIB += Qt5Xml c cups m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/24 07:43:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2020/06/03 05:13:35 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  dolphinprivate            1.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                1.0 # 5.0
@@ -22,6 +22,7 @@ WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications \

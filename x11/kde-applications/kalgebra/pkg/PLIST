@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/05/22 07:34:12 rsadowski Exp $
-@conflict kde-l10n-*
+@comment $OpenBSD: PLIST,v 1.8 2020/06/03 05:13:36 rsadowski Exp $
 @pkgpath x11/kde4/kalgebra
 @bin bin/calgebra
 @bin bin/kalgebra

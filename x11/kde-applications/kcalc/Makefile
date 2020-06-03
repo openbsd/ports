@@ -3,6 +3,7 @@
 COMMENT =	KDE versatile math calculator
 DISTNAME =	kcalc-${VERSION}
 CATEGORIES =	x11 math
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
@@ -12,6 +13,7 @@ WANTLIB += c gmp m mpfr
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 18:01:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/06/03 05:13:35 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
+REVISION =	0
 
 SHARED_LIBS +=  cantorlibs                52.0 # 17.08
 
@@ -34,6 +35,7 @@ COMPILER =	base-clang ports-clang ports-gcc
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 LIB_DEPENDS =	devel/kf5/kconfig \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/29 17:21:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/06/03 05:13:41 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
 
@@ -22,6 +22,7 @@ MODULES +=	x11/kde-applications \
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 BUILD_DEPENDS =	devel/kf5/kinit

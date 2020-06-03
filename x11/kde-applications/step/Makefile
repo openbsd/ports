@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:45 rsadowski Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
 CATEGORIES =	education math
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/education/step
 
@@ -16,6 +17,7 @@ WANTLIB += Qt5OpenGL Qt5Widgets Qt5Xml c cln gsl gslcblas m qalculate
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 ODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

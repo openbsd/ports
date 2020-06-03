@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/31 05:01:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/06/03 05:13:45 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://okular.kde.org/
 
@@ -25,6 +25,7 @@ WANTLIB += qmobipocket tiff z zip
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications \

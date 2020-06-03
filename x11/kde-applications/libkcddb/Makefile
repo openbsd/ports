@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:44 rsadowski Exp $
 
 COMMENT =	KDE CDDB library
 DISTNAME =	libkcddb-${VERSION}
 PKGNAME =	libkcddb-kf5-${VERSION}
 CATEGORIES =	devel multimedia
+REVISION =	0
 
 SHARED_LIBS +=  KF5Cddb                   1.0 # 5.0
 SHARED_LIBS +=  KF5CddbWidgets            1.0 # 5.0
@@ -15,6 +16,7 @@ WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets Qt5Xml m musicbrainz5
 
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

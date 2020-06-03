@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/25 07:21:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/03 05:13:40 rsadowski Exp $
 
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
 CATEGORIES =	security x11
+REVISION =	0
 
 SHARED_LIBS +=  kleopatraclientcore     0.0 # 1.3.0
 SHARED_LIBS +=  kleopatraclientgui      0.0 # 1.3.0
@@ -18,6 +19,7 @@ WANTLIB += Qt5Xml assuan c gpg-error gpgmepp m qgpgme
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

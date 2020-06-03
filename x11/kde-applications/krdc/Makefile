@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/03 05:13:42 rsadowski Exp $
 
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
 CATEGORIES =	net x11
+REVISION =	0
 
 SHARED_LIBS +=  krdccore               1.0 # 5.0
 
@@ -19,6 +20,7 @@ MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 LIB_DEPENDS =	devel/kf5/kauth \

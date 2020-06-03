@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/03 05:13:42 rsadowski Exp $
 @conflict kdebase-<4
-@conflict kde-l10n-*
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
 bin/konsoleprofile

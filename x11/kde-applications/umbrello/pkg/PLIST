@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:29 rsadowski Exp $
-@conflict kde-l10n-*
+@comment $OpenBSD: PLIST,v 1.7 2020/06/03 05:13:46 rsadowski Exp $
 @conflict kde-i18n-*
 @pkgpath x11/kde4/umbrello
 @bin bin/po2xmi5

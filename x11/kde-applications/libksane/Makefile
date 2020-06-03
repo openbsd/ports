@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:44 rsadowski Exp $
 
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${VERSION}
 PKGNAME =	libksane-kf5-${VERSION}
 CATEGORIES =	graphics devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5Sane                   1.0 # 5.1
 
@@ -13,6 +14,7 @@ WANTLIB += m sane
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 

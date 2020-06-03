@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/23 18:01:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/03 05:13:41 rsadowski Exp $
 
 COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${VERSION}
 CATEGORIES =	x11 inputmethods
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
@@ -14,6 +15,7 @@ WANTLIB += m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications \

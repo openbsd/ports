@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/03 05:13:35 rsadowski Exp $
 
 COMMENT =	Dolphin plugins
 DISTNAME =	dolphin-plugins-${VERSION}
 PKGNAME  =	dolphin-plugins-kf5-${VERSION}
 CATEGORIES =	x11
+REVISION  =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -15,6 +16,7 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += dolphinvcs m
 
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 

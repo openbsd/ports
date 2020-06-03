@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/03 05:13:38 rsadowski Exp $
 
 COMMENT =	KDE Filesharing via Samba
 DISTNAME =	kdenetwork-filesharing-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service
@@ -10,6 +11,7 @@ WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets m
 
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 

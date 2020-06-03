@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/23 18:01:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/03 05:13:44 rsadowski Exp $
 
 COMMENT =	library to compare files and strings
 DISTNAME =	libkomparediff2-${VERSION}
 PKGNAME =	libkomparediff2-kf5-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  komparediff2              1.0 # 5.2
 
@@ -14,6 +15,7 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 

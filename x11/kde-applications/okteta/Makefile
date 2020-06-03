@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/03 05:13:45 rsadowski Exp $
 
 COMMENT =	Hex Editor
 VERSION =	0.26.3
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
+REVISION =	0
 
 EPOCH =		0
 
@@ -31,6 +32,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/okteta/${VERSION}/src/}
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

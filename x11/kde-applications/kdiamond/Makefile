@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/23 18:01:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/03 05:13:39 rsadowski Exp $
 
 COMMENT =	three-in-a-row game
 DISTNAME =	kdiamond-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kdiamond
 
@@ -16,6 +17,7 @@ WANTLIB += Qt5Widgets Qt5Xml c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

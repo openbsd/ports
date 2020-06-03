@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
-@conflict kde-l10n-*
+@comment $OpenBSD: PLIST,v 1.4 2020/06/03 05:13:42 rsadowski Exp $
 @conflict kde-i18n-*
 @pkgpath x11/kde4/konquest
 @bin bin/konquest

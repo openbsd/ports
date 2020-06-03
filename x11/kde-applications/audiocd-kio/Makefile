@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:35 rsadowski Exp $
 
 COMMENT =	Kio slave for accessing audio CDs
 DISTNAME =	audiocd-kio-${VERSION}
 PKGNAME =	audiocd-kio-kf5-${VERSION}
 CATEGORIES =	devel audio
+REVISION =	0
 
 SHARED_LIBS +=  audiocdplugins            1.0 # 5.0
 
@@ -16,6 +17,7 @@ WANTLIB += cdda_interface cdda_paranoia m ogg phonon4qt5 vorbis
 WANTLIB += vorbisenc vorbisfile
 
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

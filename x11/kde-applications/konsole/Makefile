@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/23 18:01:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/03 05:13:42 rsadowski Exp $
 
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
+REVISION =	0
 
 SHARED_LIBS +=  konsoleprivate            1.0 # 17.08
 
@@ -18,6 +19,7 @@ WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

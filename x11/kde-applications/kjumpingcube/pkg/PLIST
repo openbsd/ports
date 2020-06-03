@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:21 rsadowski Exp $
-@conflict kde-l10n-*
+@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:40 rsadowski Exp $
 @pkgpath x11/kde4/kjumpingcube
 @bin bin/kjumpingcube
 share/applications/org.kde.kjumpingcube.desktop

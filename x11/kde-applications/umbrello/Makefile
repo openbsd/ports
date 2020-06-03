@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/23 18:01:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/06/03 05:13:46 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
+REVISION =	0
 
 HOMEPAGE =	https://umbrello.kde.org/
 
@@ -20,6 +21,7 @@ WANTLIB += Qt5Xml c m xml2 xslt
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications \

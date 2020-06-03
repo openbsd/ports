@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/03 05:13:37 rsadowski Exp $
 
 COMMENT =	app template generator for KDE development
 DISTNAME =	kapptemplate-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kapptemplate
 
@@ -15,6 +16,7 @@ WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications

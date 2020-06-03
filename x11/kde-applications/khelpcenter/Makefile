@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/23 18:01:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/03 05:13:39 rsadowski Exp $
 
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -15,6 +16,7 @@ WANTLIB += c m xapian xml2
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
