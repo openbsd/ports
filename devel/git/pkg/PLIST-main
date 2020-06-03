@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.96 2020/04/24 23:22:38 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.97 2020/06/03 09:28:54 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -33,6 +33,7 @@ libexec/git/git-bisect
 @bin libexec/git/git-bisect--helper
 @bin libexec/git/git-blame
 @bin libexec/git/git-branch
+@bin libexec/git/git-bugreport
 @bin libexec/git/git-bundle
 @bin libexec/git/git-cat-file
 @bin libexec/git/git-check-attr
@@ -91,7 +92,6 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-init-db
 libexec/git/git-instaweb
 @bin libexec/git/git-interpret-trailers
-libexec/git/git-legacy-stash
 @bin libexec/git/git-log
 @bin libexec/git/git-ls-files
 @bin libexec/git/git-ls-remote
@@ -226,6 +226,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-bisect.1
 @man man/man1/git-blame.1
 @man man/man1/git-branch.1
+@man man/man1/git-bugreport.1
 @man man/man1/git-bundle.1
 @man man/man1/git-cat-file.1
 @man man/man1/git-check-attr.1
@@ -381,6 +382,7 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gitcvs-migration.7
 @man man/man7/gitdiffcore.7
 @man man/man7/giteveryday.7
+@man man/man7/gitfaq.7
 @man man/man7/gitglossary.7
 @man man/man7/gitnamespaces.7
 @man man/man7/gitremote-helpers.7

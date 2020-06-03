@@ -1,11 +1,11 @@
-$OpenBSD: patch-config_mak_uname,v 1.11 2019/11/03 11:50:23 ajacoutot Exp $
+$OpenBSD: patch-config_mak_uname,v 1.12 2020/06/03 09:28:53 kn Exp $
 
 OpenBSD wants DIR_HAS_BSD_GROUP_SEMANTICS, just like FreeBSD
 
 Index: config.mak.uname
 --- config.mak.uname.orig
 +++ config.mak.uname
-@@ -245,8 +245,7 @@ ifeq ($(uname_S),FreeBSD)
+@@ -253,8 +253,7 @@ ifeq ($(uname_S),FreeBSD)
  	FILENO_IS_A_MACRO = UnfortunatelyYes
  endif
  ifeq ($(uname_S),OpenBSD)
