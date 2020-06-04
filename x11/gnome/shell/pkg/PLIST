@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/05/14 15:28:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/06/04 07:34:31 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -6,6 +6,7 @@
 @pkgpath x11/gnome/panel
 @pkgpath x11/gnome/screensaver
 @bin bin/gnome-extensions
+bin/gnome-extensions-app
 @bin bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
