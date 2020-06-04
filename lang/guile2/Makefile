@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/12/14 15:45:01 cwen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/06/04 07:36:10 ajacoutot Exp $
 
 # When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
 # proper guile2 includes directory
@@ -11,7 +11,7 @@ DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
 V=			${VERSION:R}
 SUBST_VARS=		V
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		lang
 
@@ -58,6 +58,5 @@ post-install:
 	install -d ${PREFIX}/share/guile/site/${V}/
 	# fix conflict with devel/guile
 	mv ${PREFIX}/share/aclocal/guile{,${V}}.m4
-	rm -rf ${PREFIX}/info
 
 .include <bsd.port.mk>

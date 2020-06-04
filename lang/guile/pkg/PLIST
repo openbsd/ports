@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/03/16 18:07:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/06/04 07:36:10 ajacoutot Exp $
 @conflict slib-guile-*
 @pkgpath devel/slib-guile
 @bin bin/guile
@@ -116,26 +116,22 @@ include/libguile/vectors.h
 include/libguile/version.h
 include/libguile/vports.h
 include/libguile/weaks.h
-@info info/goops.info
-@info info/guile-tut.info
-@info info/guile.info
-@comment @info info/r5rs.info
-lib/libguile-srfi-srfi-1-v-3.a
+@static-lib lib/libguile-srfi-srfi-1-v-3.a
 lib/libguile-srfi-srfi-1-v-3.la
 @lib lib/libguile-srfi-srfi-1-v-3.so.${LIBguile-srfi-srfi-1-v-3_VERSION}
-lib/libguile-srfi-srfi-13-14-v-3.a
+@static-lib lib/libguile-srfi-srfi-13-14-v-3.a
 lib/libguile-srfi-srfi-13-14-v-3.la
 @lib lib/libguile-srfi-srfi-13-14-v-3.so.${LIBguile-srfi-srfi-13-14-v-3_VERSION}
-lib/libguile-srfi-srfi-4-v-3.a
+@static-lib lib/libguile-srfi-srfi-4-v-3.a
 lib/libguile-srfi-srfi-4-v-3.la
 @lib lib/libguile-srfi-srfi-4-v-3.so.${LIBguile-srfi-srfi-4-v-3_VERSION}
-lib/libguile-srfi-srfi-60-v-2.a
+@static-lib lib/libguile-srfi-srfi-60-v-2.a
 lib/libguile-srfi-srfi-60-v-2.la
 @lib lib/libguile-srfi-srfi-60-v-2.so.${LIBguile-srfi-srfi-60-v-2_VERSION}
-lib/libguile.a
+@static-lib lib/libguile.a
 lib/libguile.la
 @lib lib/libguile.so.${LIBguile_VERSION}
-lib/libguilereadline-v-17.a
+@static-lib lib/libguilereadline-v-17.a
 lib/libguilereadline-v-17.la
 @lib lib/libguilereadline-v-17.so.${LIBguilereadline-v-17_VERSION}
 lib/pkgconfig/guile-${V}.pc

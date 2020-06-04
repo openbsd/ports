@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/18 10:14:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/06/04 07:36:10 ajacoutot Exp $
 bin/guild${V}
 bin/guile-config${V}
 bin/guile-snarf${V}
@@ -132,6 +132,8 @@ include/guile/${V}/libguile/weak-set.h
 include/guile/${V}/libguile/weak-table.h
 include/guile/${V}/libguile/weak-vector.h
 include/guile/${V}/readline.h
+@info info/guile.info
+@info info/r5rs.info
 @comment lib/charset.alias
 lib/guile/
 lib/guile/${V}/
@@ -475,7 +477,7 @@ lib/guile/${V}/extensions/
 lib/guile/${V}/extensions/guile-readline.a
 lib/guile/${V}/extensions/guile-readline.la
 lib/guile/${V}/extensions/guile-readline.so.0.0
-lib/libguile-${V}.a
+@static-lib lib/libguile-${V}.a
 lib/libguile-${V}.la
 @lib lib/libguile-${V}.so.${LIBguile-${V}_VERSION}
 lib/libguile-${V}.so.0.2-gdb.scm
