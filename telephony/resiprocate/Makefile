@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/04 20:50:39 naddy Exp $
 
 COMMENT-main =		reSIProcate SIP stack
 COMMENT-repro =		reSIProcate SIP proxy/registrar server
@@ -6,6 +6,7 @@ COMMENT-return =	reSIProcate STUN/TURN client and server
 
 V =			1.12.0
 DISTNAME =		resiprocate-${V}
+REVISION =		0
 PKGNAME-main =		resiprocate-${V}
 PKGNAME-repro =		resiprocate-repro-${V}
 PKGNAME-return =	resiprocate-return-${V}
