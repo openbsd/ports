@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_features_cc,v 1.11 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.12 2020/06/04 15:01:53 robert Exp $
 
 WebUSB is bad and it makes the chrome process spin the CPU anyway
 
@@ -14,7 +14,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -737,7 +737,7 @@ const base::Feature kWebAuth{"WebAuthentication",
+@@ -741,7 +741,7 @@ const base::Feature kWebAuth{"WebAuthentication",
  // https://w3c.github.io/webauthn
  const base::Feature kWebAuthCable {
    "WebAuthenticationCable",
@@ -23,7 +23,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -797,7 +797,7 @@ const base::Feature kWebRtcUseGpuMemoryBufferVideoFram
+@@ -801,7 +801,7 @@ const base::Feature kWebRtcUseGpuMemoryBufferVideoFram
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

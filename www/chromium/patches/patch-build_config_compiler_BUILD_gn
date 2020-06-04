@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.39 2020/05/29 20:03:22 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.40 2020/06/04 15:01:53 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: build/config/compiler/BUILD.gn
  
    # Build with C++ RTTI enabled. Chromium builds without RTTI by default,
    # but some sanitizers are known to require it, like CFI diagnostics
-@@ -382,6 +382,7 @@ config("compiler") {
+@@ -391,6 +391,7 @@ config("compiler") {
      }
  
      ldflags += [
@@ -20,7 +20,7 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,noexecstack",
        "-Wl,-z,relro",
      ]
-@@ -390,13 +391,8 @@ config("compiler") {
+@@ -399,13 +400,8 @@ config("compiler") {
        ldflags += [ "-Wl,-z,now" ]
      }
  
@@ -36,8 +36,8 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -485,7 +481,7 @@ config("compiler") {
-     }
+@@ -500,7 +496,7 @@ config("compiler") {
+     ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
 -  if (is_clang && !is_nacl && !use_xcode_clang) {
@@ -45,7 +45,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" +
                  rebase_path("//tools/clang/crashreports", root_build_dir) ]
  
-@@ -741,7 +737,7 @@ config("compiler_cpu_abi") {
+@@ -756,7 +752,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -54,7 +54,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -755,7 +751,7 @@ config("compiler_cpu_abi") {
+@@ -770,7 +766,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -63,7 +63,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1495,24 +1491,6 @@ config("default_warnings") {
+@@ -1510,24 +1506,6 @@ config("default_warnings") {
            # Ignore warnings about MSVC optimization pragmas.
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
@@ -88,7 +88,7 @@ Index: build/config/compiler/BUILD.gn
          ]
  
          if (is_android) {
-@@ -1660,7 +1638,7 @@ config("no_chromium_code") {
+@@ -1675,7 +1653,7 @@ config("no_chromium_code") {
        # suppressing them individually, we just blanket suppress them here.
        "-Wno-unused-variable",
      ]
@@ -97,7 +97,7 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # TODO(https://crbug.com/1031169): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1738,7 +1716,7 @@ config("thin_archive") {
+@@ -1753,7 +1731,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -106,7 +106,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2151,7 +2129,7 @@ config("afdo_optimize_size") {
+@@ -2166,7 +2144,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -115,7 +115,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2166,7 +2144,7 @@ config("afdo") {
+@@ -2181,7 +2159,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -124,7 +124,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2262,10 +2240,10 @@ config("symbols") {
+@@ -2277,10 +2255,10 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
