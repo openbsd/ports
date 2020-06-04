@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/02/20 20:16:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/06/04 07:19:25 jasper Exp $
 @conflict py-netmiko-*
 @pkgpath net/py-netmiko
 lib/python${MODPY_VERSION}/site-packages/netmiko/
@@ -137,6 +137,12 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/dell/dell_force10_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/dell/dell_isilon_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/dell/dell_os10_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/dell/dell_powerconnect.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/dlink/
+lib/python${MODPY_VERSION}/site-packages/netmiko/dlink/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/dlink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netmiko/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/dlink/${MODPY_PYCACHE}dlink_ds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/dlink/dlink_ds.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/
 lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/${MODPY_PYCACHE}/
@@ -208,7 +214,9 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/${MODPY_PYCACHE}huawei.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/${MODPY_PYCACHE}huawei_smartax.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/huawei.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/huawei_smartax.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/ipinfusion/
 lib/python${MODPY_VERSION}/site-packages/netmiko/ipinfusion/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/ipinfusion/${MODPY_PYCACHE}/
@@ -321,6 +329,12 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/ruijie/ruijie_os.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/scp_functions.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/scp_handler.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/snmp_autodetect.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/sophos/
+lib/python${MODPY_VERSION}/site-packages/netmiko/sophos/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/sophos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netmiko/sophos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/sophos/${MODPY_PYCACHE}sophos_sfos_ssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/sophos/sophos_sfos_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/ssh_autodetect.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/ssh_dispatcher.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/ssh_exception.py
@@ -335,7 +349,9 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/ubiquiti/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/ubiquiti/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netmiko/ubiquiti/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/ubiquiti/${MODPY_PYCACHE}edge_ssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/ubiquiti/${MODPY_PYCACHE}unifiswitch_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/ubiquiti/edge_ssh.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/ubiquiti/unifiswitch_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/utilities.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/vyos/
 lib/python${MODPY_VERSION}/site-packages/netmiko/vyos/__init__.py
@@ -343,3 +359,9 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/vyos/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/netmiko/vyos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/vyos/${MODPY_PYCACHE}vyos_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/vyos/vyos_ssh.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/watchguard/
+lib/python${MODPY_VERSION}/site-packages/netmiko/watchguard/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/watchguard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netmiko/watchguard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/watchguard/${MODPY_PYCACHE}fireware_ssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/watchguard/fireware_ssh.py
