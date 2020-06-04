@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.113 2020/04/09 19:22:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.114 2020/06/04 19:43:35 naddy Exp $
 
 COMMENT=	simple editor, inspired by Pico
 
-DISTNAME=	nano-4.9.2
+DISTNAME=	nano-4.9.3
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
@@ -23,6 +23,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-libmagic
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # configure tests for groff -Thtml, but assumes the existence of groff
 pre-configure:
