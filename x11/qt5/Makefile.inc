@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.15 2020/03/20 16:44:29 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2020/06/04 14:14:27 sthen Exp $
 
-ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
+ONLY_FOR_ARCHS ?=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 .include "Makefile.version"
 
