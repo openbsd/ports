@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/25 11:51:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/04 14:18:57 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
+BROKEN-i386 = 		long hangs; uses too much RAM to build
+
 .if ${MACHINE_ARCH} == "i386"
 DPB_PROPERTIES =	lonesome
 .endif
