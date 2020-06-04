@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2020/05/14 11:48:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/06/04 15:39:09 sthen Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	1.7.7
+VERSION=	1.7.8
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
@@ -11,7 +11,7 @@ PKGNAME-main=	kea-${VERSION:S/-P/pl/}
   kea-cryptolink kea-dns++ kea-asiolink kea-cc kea-database kea-hooks \
   kea-dhcp++ kea-cfgclient kea-stats kea-asiodns kea-dhcp_ddns \
   kea-eval kea-process kea-dhcpsrv kea-http kea-mysql kea-pgsql
-SHARED_LIBS +=  $i 5.0
+SHARED_LIBS +=  $i 6.0
 .endfor
 
 CATEGORIES=	net
