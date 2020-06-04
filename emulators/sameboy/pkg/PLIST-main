@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2020/05/22 21:49:48 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/06/04 07:50:07 bentley Exp $
 @bin bin/sameboy
 share/sameboy/
 share/sameboy/LICENSE
@@ -11,6 +11,7 @@ share/sameboy/Shaders/CRT.fsh
 share/sameboy/Shaders/HQ2x.fsh
 share/sameboy/Shaders/LCD.fsh
 share/sameboy/Shaders/MasterShader.fsh
+share/sameboy/Shaders/MonoLCD.fsh
 share/sameboy/Shaders/NearestNeighbor.fsh
 share/sameboy/Shaders/OmniScale.fsh
 share/sameboy/Shaders/OmniScaleLegacy.fsh

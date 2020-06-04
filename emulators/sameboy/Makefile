@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/22 21:49:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/04 07:50:07 bentley Exp $
 
 COMMENT-main =		accurate Nintendo Game Boy emulator
 COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
@@ -6,7 +6,7 @@ COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
 PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
 
-V =		0.12.3
+V =		0.13.1
 GH_ACCOUNT =	LIJI32
 GH_PROJECT =	SameBoy
 GH_TAGNAME =	v$V
