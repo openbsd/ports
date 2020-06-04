@@ -1,23 +1,14 @@
-# $OpenBSD: Makefile,v 1.164 2020/06/01 14:38:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2020/06/04 09:08:22 ajacoutot Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.6.13
+V=			3.6.14
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
-
-# https://gitlab.com/gnutls/gnutls/-/issues/1008
-# _gnutls_pkcs11_verify_crt_status: check validity against system cert
-# x509: trigger fallback verification path when cert is expired
-# tests: add test case for certificate chain superseding
-MASTER_SITES0=		https://gitlab.com/gnutls/gnutls/-/merge_requests/
-PATCHFILES=		1271.patch:0
-PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gnutls               46.5     # 57.0
+SHARED_LIBS +=  gnutls               46.6     # 58.0
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-dane          0.0      # 4.1
 

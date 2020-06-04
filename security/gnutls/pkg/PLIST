@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2020/04/01 07:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.54 2020/06/04 09:08:22 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -273,6 +273,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_ext_get_current_msg.3
 @man man/man3/gnutls_ext_get_data.3
 @man man/man3/gnutls_ext_get_name.3
+@man man/man3/gnutls_ext_get_name2.3
 @man man/man3/gnutls_ext_raw_parse.3
 @man man/man3/gnutls_ext_register.3
 @man man/man3/gnutls_ext_set_data.3
@@ -535,6 +536,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pkcs7_import.3
 @man man/man3/gnutls_pkcs7_init.3
 @man man/man3/gnutls_pkcs7_print.3
+@man man/man3/gnutls_pkcs7_print_signature_info.3
 @man man/man3/gnutls_pkcs7_set_crl.3
 @man man/man3/gnutls_pkcs7_set_crl_raw.3
 @man man/man3/gnutls_pkcs7_set_crt.3
