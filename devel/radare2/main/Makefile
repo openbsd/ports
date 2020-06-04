@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/05/19 19:48:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2020/06/04 08:00:34 jasper Exp $
 
 COMMENT =		libre and portable reverse engineering framework
 
@@ -47,6 +47,12 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV =		HOST_CC="${CC}"
+
+# Requires downloading a number of test binaries
+TEST_DEPENDS =		devle/git \
+			textproc/jq
+TEST_IS_INTERACTIVE =	Yes
+TEST_TARGET =		tests
 
 post-extract:
 	mv ${WRKDIR}/tree-sitter-${TREESITTER_COMMIT}* ${WRKSRC}/shlr/tree-sitter

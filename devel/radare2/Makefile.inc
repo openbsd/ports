@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2020/05/19 19:48:01 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2020/06/04 08:00:34 jasper Exp $
 
 # Arches suggested by upstream, unsure which work on OpenBSD for sure.
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -17,5 +17,3 @@ GH_ACCOUNT =		radare
 
 USE_GMAKE ?=		Yes
 CONFIGURE_STYLE ?=	simple
-
-NO_TEST ?=		Yes
