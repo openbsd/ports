@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/05 19:51:29 sthen Exp $
 
 COMMENT=		Microsoft Azure Linux Agent
 
@@ -18,9 +18,6 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
 MODPY_ADJ_FILES=	bin/waagent
-
-# LibreSSL has removed CMS support
-RUN_DEPENDS=		security/openssl/1.0.2
 
 NO_TEST=		Yes
 

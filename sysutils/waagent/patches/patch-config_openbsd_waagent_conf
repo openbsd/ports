@@ -1,10 +1,19 @@
-$OpenBSD: patch-config_openbsd_waagent_conf,v 1.1.1.1 2017/06/23 12:37:09 reyk Exp $
+$OpenBSD: patch-config_openbsd_waagent_conf,v 1.2 2020/06/05 19:51:29 sthen Exp $
 
 disable extensions and autoupdate
 
 Index: config/openbsd/waagent.conf
 --- config/openbsd/waagent.conf.orig
 +++ config/openbsd/waagent.conf
+@@ -61,7 +61,7 @@ OS.EnableFIPS=n
+ OS.RootDeviceScsiTimeout=300
+ 
+ # If "None", the system default version is used.
+-OS.OpensslPath=/usr/local/bin/eopenssl
++OS.OpensslPath=/usr/bin/openssl
+ 
+ # Set the path to SSH keys and configuration files
+ OS.SshDir=/etc/ssh
 @@ -84,6 +84,9 @@ OS.PasswordPath=/etc/master.passwd
  #
  # Pid.File=/var/run/waagent.pid
