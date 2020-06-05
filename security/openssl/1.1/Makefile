@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2020/04/22 04:31:53 tb Exp $
+# $OpenBSD: Makefile,v 1.16 2020/06/05 16:47:57 tb Exp $
 
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
 V=		1.1.1g
+REVISION=	0
 
 SHLIBVER=	11.5
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 
 WANTLIB=	c
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
