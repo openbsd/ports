@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/05/21 21:23:01 bcallah Exp $
+# $OpenBSD: Makefile,v 1.17 2020/06/05 06:08:27 ajacoutot Exp $
 
 COMMENT =	free clone of Blokus board game
 DISTNAME =	pentobi-18.0
@@ -22,6 +22,7 @@ MODULES =	devel/cmake \
 
 BUILD_DEPENDS =	devel/appstream-glib \
 		devel/gettext,-tools \
+		textproc/docbook-xsl \
 		textproc/itstool \
 		x11/qt5/qttools
 
