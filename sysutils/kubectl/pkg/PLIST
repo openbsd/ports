@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/05 13:35:10 kn Exp $
+@bin bin/kubectl
