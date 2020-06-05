@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/03 05:13:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/05 05:40:27 rsadowski Exp $
 
 COMMENT =	mathematical function plotter for KDE
 DISTNAME =	kmplot-${VERSION}
 CATEGORIES =	education math
-REVISION =	1
+REVISION =	2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
@@ -15,6 +15,7 @@ WANTLIB += Qt5Xml c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_DESKTOP_FILE = yes

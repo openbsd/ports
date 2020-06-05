@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/03 05:13:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/05 05:40:25 rsadowski Exp $
 
 COMMENT =	profile data visualization tool
 DISTNAME =	kcachegrind-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kcachegrind
 
@@ -17,6 +17,7 @@ WANTLIB += Qt5Xml c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 

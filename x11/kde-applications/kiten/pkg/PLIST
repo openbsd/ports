@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/03 05:13:40 rsadowski Exp $
-@conflict kde-i18n-*
+@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:27 rsadowski Exp $
 @pkgpath x11/kde4/kiten
 @bin bin/kiten
 @bin bin/kitengen

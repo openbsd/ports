@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/05 05:40:25 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	letter order game
 DISTNAME =	kanagram-${VERSION}
 CATEGORIES =	education x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://edu.kde.org/kanagram/
 
@@ -20,6 +20,7 @@ WANTLIB += m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 

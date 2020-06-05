@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/03 05:13:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:30 rsadowski Exp $
 
 COMMENT =	single player puzzle game for KDE
 DISTNAME =	picmi-${VERSION}
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/games/picmi
 
@@ -18,6 +18,7 @@ WANTLIB += c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/03 05:13:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/05 05:40:29 rsadowski Exp $
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
@@ -20,6 +20,7 @@ WANTLIB += Qt5Widgets Qt5Xml c hunspell-1.6 m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 

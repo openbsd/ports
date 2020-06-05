@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/03 05:13:45 rsadowski Exp $
-@conflict kde-i18n-*
+@comment $OpenBSD: PLIST,v 1.7 2020/06/05 05:40:29 rsadowski Exp $
 @conflict marble-<=4.14.3
 @bin bin/marble
 @bin bin/marble-qt

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/05 05:40:26 rsadowski Exp $
 
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${VERSION}
 CATEGORIES =	games education
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -15,6 +15,7 @@ WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 

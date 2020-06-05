@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/03 05:13:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/05 05:40:27 rsadowski Exp $
 
 COMMENT =	KDE screen magnifier
 DISTNAME =	kmag-${VERSION}
 CATEGORIES =	x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.kde.org/applications/utilities/kmag/
 
@@ -15,6 +15,7 @@ WANTLIB += Qt5Xml c m qaccessibilityclient-qt5
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_DESKTOP_FILE = yes

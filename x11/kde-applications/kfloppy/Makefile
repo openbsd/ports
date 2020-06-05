@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/03 05:13:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:26 rsadowski Exp $
 
 COMMENT =	graphical floppy format utility for KDE
 DISTNAME =	kfloppy-${VERSION}
 CATEGORIES =	x11 sysutils
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kfloppy
 
@@ -15,6 +15,7 @@ WANTLIB += Qt5DBus Qt5Gui Qt5Widgets Qt5Xml c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 

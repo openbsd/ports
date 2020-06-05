@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/03 05:13:37 rsadowski Exp $
-@conflict kde-i18n-*
+@comment $OpenBSD: PLIST,v 1.3 2020/06/05 05:40:25 rsadowski Exp $
 @pkgpath x11/kde4/kapptemplate
 @bin bin/kapptemplate
 share/applications/org.kde.kapptemplate.desktop

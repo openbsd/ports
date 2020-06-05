@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/03 05:13:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:24 rsadowski Exp $
 
 COMMENT =	grantlee theme library
 DISTNAME =	grantleetheme-${VERSION}
 CATEGORIES =	devel x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KF5GrantleeTheme          1.0 # 5.9
 
@@ -15,6 +15,7 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications

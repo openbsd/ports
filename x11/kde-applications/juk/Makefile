@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/03 05:13:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/05 05:40:24 rsadowski Exp $
 
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${VERSION}
 CATEGORIES =	audio
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.juk
 
@@ -23,6 +23,7 @@ MODULES +=	x11/kde-applications \
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
