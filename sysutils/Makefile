@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.569 2020/06/04 07:24:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.570 2020/06/05 13:35:55 kn Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -129,6 +129,7 @@
      SUBDIR += jefferson
      SUBDIR += krename
      SUBDIR += ktsuss
+     SUBDIR += kubectl
      SUBDIR += libburn
      SUBDIR += libesedb
      SUBDIR += libevt
