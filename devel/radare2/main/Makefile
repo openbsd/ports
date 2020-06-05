@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/06/04 08:00:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2020/06/05 06:41:46 ajacoutot Exp $
 
 COMMENT =		libre and portable reverse engineering framework
 
@@ -49,7 +49,7 @@ CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV =		HOST_CC="${CC}"
 
 # Requires downloading a number of test binaries
-TEST_DEPENDS =		devle/git \
+TEST_DEPENDS =		devel/git \
 			textproc/jq
 TEST_IS_INTERACTIVE =	Yes
 TEST_TARGET =		tests
