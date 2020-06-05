@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/04/05 11:04:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2020/06/05 12:07:59 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules
@@ -70,7 +70,7 @@ SUBDIR += kded
 SUBDIR += kxmlrpcclient
 SUBDIR += kdeclarative
 SUBDIR += kcmutils
-SUBDIR += baloo	
+SUBDIR += baloo
 SUBDIR += knotifyconfig
 SUBDIR += ktexteditor
 SUBDIR += plasma-framework
