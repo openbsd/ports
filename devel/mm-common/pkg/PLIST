@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/11/01 09:02:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/06/05 08:02:41 ajacoutot Exp $
 bin/mm-common-get
 bin/mm-common-prepare
 @man man/man1/mm-common-get.1
@@ -17,6 +17,7 @@ share/doc/mm-common/README
 share/doc/mm-common/skeletonmm.tar.xz
 share/mm-common/
 share/mm-common/build/
+share/mm-common/build/check-dllexport-usage.py
 share/mm-common/build/compile-binding.am
 share/mm-common/build/dist-build-scripts.py
 share/mm-common/build/dist-changelog.am
