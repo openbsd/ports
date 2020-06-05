@@ -1,4 +1,4 @@
-# $OpenBSD: kf5.port.mk,v 1.12 2020/03/23 18:01:03 rsadowski Exp $
+# $OpenBSD: kf5.port.mk,v 1.13 2020/06/05 05:28:13 rsadowski Exp $
 
 MODKF5_VERSION =	5.68.0
 
@@ -78,6 +78,18 @@ PKG_ARGS +=	-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
 MODKF5_L10N_CONFLICT${_s} ?=	no
 . if ${MODKF5_L10N_CONFLICT${_s}:L} != "no"
 PKG_ARGS${_s} +=-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
+. endif
+.endfor
+
+# if needed, mark conflicts with kde-i18n-* packages from KDE 3
+MODKF5_I18N_CONFLICT ?=	no
+.if ${MODKF5_I18N_CONFLICT:L} != "no"
+PKG_ARGS +=	-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.i18n
+.endif
+.for _s in ${MULTI_PACKAGES}
+MODKF5_I18N_CONFLICT${_s} ?=	no
+. if ${MODKF5_I18N_CONFLICT${_s}:L} != "no"
+PKG_ARGS${_s} +=-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.i18n
 . endif
 .endfor
 
