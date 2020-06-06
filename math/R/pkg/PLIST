@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2020/05/18 05:26:13 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.45 2020/06/06 21:57:17 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -125,6 +125,9 @@ lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES/R-KernSmooth.mo
 lib/R/library/KernSmooth/po/fr/
 lib/R/library/KernSmooth/po/fr/LC_MESSAGES/
 lib/R/library/KernSmooth/po/fr/LC_MESSAGES/R-KernSmooth.mo
+lib/R/library/KernSmooth/po/it/
+lib/R/library/KernSmooth/po/it/LC_MESSAGES/
+lib/R/library/KernSmooth/po/it/LC_MESSAGES/R-KernSmooth.mo
 lib/R/library/KernSmooth/po/ko/
 lib/R/library/KernSmooth/po/ko/LC_MESSAGES/
 lib/R/library/KernSmooth/po/ko/LC_MESSAGES/R-KernSmooth.mo
@@ -174,6 +177,9 @@ lib/R/library/MASS/po/en@quot/LC_MESSAGES/R-MASS.mo
 lib/R/library/MASS/po/fr/
 lib/R/library/MASS/po/fr/LC_MESSAGES/
 lib/R/library/MASS/po/fr/LC_MESSAGES/R-MASS.mo
+lib/R/library/MASS/po/it/
+lib/R/library/MASS/po/it/LC_MESSAGES/
+lib/R/library/MASS/po/it/LC_MESSAGES/R-MASS.mo
 lib/R/library/MASS/po/ko/
 lib/R/library/MASS/po/ko/LC_MESSAGES/
 lib/R/library/MASS/po/ko/LC_MESSAGES/R-MASS.mo
@@ -368,6 +374,9 @@ lib/R/library/boot/po/en@quot/LC_MESSAGES/R-boot.mo
 lib/R/library/boot/po/fr/
 lib/R/library/boot/po/fr/LC_MESSAGES/
 lib/R/library/boot/po/fr/LC_MESSAGES/R-boot.mo
+lib/R/library/boot/po/it/
+lib/R/library/boot/po/it/LC_MESSAGES/
+lib/R/library/boot/po/it/LC_MESSAGES/R-boot.mo
 lib/R/library/boot/po/ko/
 lib/R/library/boot/po/ko/LC_MESSAGES/
 lib/R/library/boot/po/ko/LC_MESSAGES/R-boot.mo
@@ -597,6 +606,10 @@ lib/R/library/foreign/po/fr/
 lib/R/library/foreign/po/fr/LC_MESSAGES/
 lib/R/library/foreign/po/fr/LC_MESSAGES/R-foreign.mo
 lib/R/library/foreign/po/fr/LC_MESSAGES/foreign.mo
+lib/R/library/foreign/po/it/
+lib/R/library/foreign/po/it/LC_MESSAGES/
+lib/R/library/foreign/po/it/LC_MESSAGES/R-foreign.mo
+lib/R/library/foreign/po/it/LC_MESSAGES/foreign.mo
 lib/R/library/foreign/po/pl/
 lib/R/library/foreign/po/pl/LC_MESSAGES/
 lib/R/library/foreign/po/pl/LC_MESSAGES/R-foreign.mo
@@ -1099,6 +1112,9 @@ lib/R/library/nnet/po/en@quot/LC_MESSAGES/R-nnet.mo
 lib/R/library/nnet/po/fr/
 lib/R/library/nnet/po/fr/LC_MESSAGES/
 lib/R/library/nnet/po/fr/LC_MESSAGES/R-nnet.mo
+lib/R/library/nnet/po/it/
+lib/R/library/nnet/po/it/LC_MESSAGES/
+lib/R/library/nnet/po/it/LC_MESSAGES/R-nnet.mo
 lib/R/library/nnet/po/ko/
 lib/R/library/nnet/po/ko/LC_MESSAGES/
 lib/R/library/nnet/po/ko/LC_MESSAGES/R-nnet.mo
@@ -1244,6 +1260,9 @@ lib/R/library/spatial/po/en@quot/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/po/fr/
 lib/R/library/spatial/po/fr/LC_MESSAGES/
 lib/R/library/spatial/po/fr/LC_MESSAGES/R-spatial.mo
+lib/R/library/spatial/po/it/
+lib/R/library/spatial/po/it/LC_MESSAGES/
+lib/R/library/spatial/po/it/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/po/ko/
 lib/R/library/spatial/po/ko/LC_MESSAGES/
 lib/R/library/spatial/po/ko/LC_MESSAGES/R-spatial.mo
