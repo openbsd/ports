@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2020/06/01 15:01:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.68 2020/06/06 19:02:24 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -248,6 +248,7 @@ librenms/LibreNMS/OS/Aprisa.php
 librenms/LibreNMS/OS/ArrisDsr4410md.php
 librenms/LibreNMS/OS/ArubaInstant.php
 librenms/LibreNMS/OS/Arubaos.php
+librenms/LibreNMS/OS/AviatWtm.php
 librenms/LibreNMS/OS/Boss.php
 librenms/LibreNMS/OS/Ceraos.php
 librenms/LibreNMS/OS/CienaSds.php
@@ -1496,6 +1497,7 @@ librenms/html/images/os/atal.png
 librenms/html/images/os/ats.png
 librenms/html/images/os/audiocodes.png
 librenms/html/images/os/avaya.svg
+librenms/html/images/os/aviat.png
 librenms/html/images/os/avocent.svg
 librenms/html/images/os/avtech.svg
 librenms/html/images/os/axis.svg
@@ -2038,6 +2040,7 @@ librenms/includes/definitions/asyncos.yaml
 librenms/includes/definitions/ats.yaml
 librenms/includes/definitions/audiocodes.yaml
 librenms/includes/definitions/avaya-ipo.yaml
+librenms/includes/definitions/aviat-wtm.yaml
 librenms/includes/definitions/avocent.yaml
 librenms/includes/definitions/avr-hd.yaml
 librenms/includes/definitions/avtech.yaml
@@ -2146,6 +2149,7 @@ librenms/includes/definitions/discovery/arubaos.yaml
 librenms/includes/definitions/discovery/asa.yaml
 librenms/includes/definitions/discovery/ats.yaml
 librenms/includes/definitions/discovery/audiocodes.yaml
+librenms/includes/definitions/discovery/aviat-wtm.yaml
 librenms/includes/definitions/discovery/avocent.yaml
 librenms/includes/definitions/discovery/avtech.yaml
 librenms/includes/definitions/discovery/awplus.yaml
@@ -5524,9 +5528,10 @@ librenms/librenms.nonroot.cron
 librenms/licenses/
 librenms/licenses/GPLv3-LICENSE.txt
 librenms/licenses/MIT-LICENSE
+@mode 555
+@owner _librenms
 librenms/lnms
 @mode 775
-@owner _librenms
 @group www
 librenms/logs/
 @mode
@@ -6094,6 +6099,16 @@ librenms/mibs/avaya/AVAYAGEN-MIB.mib
 librenms/mibs/avaya/IPO-MIB.mib
 librenms/mibs/avaya/IPO-PHONES-MIB.mib
 librenms/mibs/avaya/IPO-PROD-MIB.mib
+librenms/mibs/aviat-wtm/
+librenms/mibs/aviat-wtm/AVIAT-ALARM-REPORTING-MIB
+librenms/mibs/aviat-wtm/AVIAT-G826-MIB
+librenms/mibs/aviat-wtm/AVIAT-MODEM-MIB
+librenms/mibs/aviat-wtm/AVIAT-RF-MIB
+librenms/mibs/aviat-wtm/AVIAT-RXPERFORMANCE-EX-MIB
+librenms/mibs/aviat-wtm/AVIAT-RXPERFORMANCE-MIB
+librenms/mibs/aviat-wtm/AVIAT-SWMANAGEMENT-MIB
+librenms/mibs/aviat-wtm/AVIAT-TEXTCONVENTION-MIB
+librenms/mibs/aviat-wtm/STXN-GLOBALREGISTER-MIB
 librenms/mibs/avocent/
 librenms/mibs/avocent/PM-MIB
 librenms/mibs/avtech/

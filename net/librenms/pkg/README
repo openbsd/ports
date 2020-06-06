@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.13 2020/02/06 22:42:29 sthen Exp $
+$OpenBSD: README,v 1.14 2020/06/06 19:02:25 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -28,7 +28,9 @@ Database configuration
 ======================
 If the database will be running on the same host as LibreNMS, install
 mariadb-server and follow MariaDB's pkg-readmes documentation to create
-and secure an initial database.
+and secure an initial database. It is recommended that you set
+"innodb_file_per_table=1" in the [mysqld] section of my.cnf before
+creating the database.
 
 On the database server, create a database and user account for LibreNMS:
 
