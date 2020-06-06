@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_test-openssl-3712_py,v 1.1 2020/05/21 10:21:22 tb Exp $
+$OpenBSD: patch-scripts_test-openssl-3712_py,v 1.2 2020/06/06 19:30:00 tb Exp $
 
 *** Sorry: IndentationError: unindent does not match any outer indentation level (test-openssl-3712.py, line 182)
 *** Sorry: IndentationError: unindent does not match any outer indentation level (test-openssl-3712.py, line 197)
@@ -6,7 +6,7 @@ $OpenBSD: patch-scripts_test-openssl-3712_py,v 1.1 2020/05/21 10:21:22 tb Exp $
 Index: scripts/test-openssl-3712.py
 --- scripts/test-openssl-3712.py.orig
 +++ scripts/test-openssl-3712.py
-@@ -179,7 +179,7 @@ def main():
+@@ -187,7 +187,7 @@ def main():
              print(traceback.format_exc())
              res = False
  
@@ -15,7 +15,7 @@ Index: scripts/test-openssl-3712.py
              if res:
                  xpass += 1
                  xpassed.append(c_name)
-@@ -194,7 +194,7 @@ def main():
+@@ -202,7 +202,7 @@ def main():
                  else:
                      xfail += 1
                      print("OK-expected failure\n")
