@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/09/22 09:25:27 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/06/06 20:22:47 sthen Exp $
 bin/perltidy
 ${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy/
@@ -24,7 +24,6 @@ ${P5SITE}/Perl/Tidy/VerticalAligner/Alignment.pm
 ${P5SITE}/Perl/Tidy/VerticalAligner/Line.pm
 @man man/man1/perltidy.1
 @man man/man3p/Perl::Tidy.3p
-@man man/man3p/Perl::Tidy::Formatter.3p
 share/doc/perltidy/
 share/doc/perltidy/stylekey.html
 share/doc/perltidy/tutorial.html
