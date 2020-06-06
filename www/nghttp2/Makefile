@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2019/11/18 11:41:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2020/06/06 20:21:30 sthen Exp $
 
 COMMENT=	library for HTTP/2
 
-V=		1.40.0
+V=		1.41.0
 DISTNAME=	nghttp2-$V
 
-SHARED_LIBS +=	nghttp2              0.16     # 33.0
+SHARED_LIBS +=	nghttp2              0.17     # 33.0
 
 CATEGORIES=	www
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://github.com/tatsuhiro-t/nghttp2/releases/download/v$V/
 
 SEPARATE_BUILD=		Yes
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CONFIGURE_STYLE=	gnu
 # - examples have conflicts (libevent, libevent2, libev)
