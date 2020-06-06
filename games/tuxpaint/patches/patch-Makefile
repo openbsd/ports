@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.9 2018/09/02 08:31:28 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.10 2020/06/06 10:13:29 ajacoutot Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -14,23 +14,23 @@ Index: Makefile
    endif
 @@ -98,7 +98,7 @@ ARCH_LIBS:=$($(OS)_ARCH_LIBS)
  windows_ARCH_CFLAGS:=
- osx_ARCH_CFLAGS:=-mmacosx-version-min=10.7 -isystem /opt/local/include -DHAVE_STRCASESTR -w -headerpad_max_install_names
+ osx_ARCH_CFLAGS:=-mmacosx-version-min=10.8 -isystem /opt/local/include -DHAVE_STRCASESTR -w -headerpad_max_install_names
  beos_ARCH_CFLAGS:=
 -linux_ARCH_CFLAGS:=
 +#linux_ARCH_CFLAGS:=
  ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
  
  windows_ARCH_LDFLAGS:=
-@@ -133,7 +133,7 @@ windows_PREFIX:=/usr/local
+@@ -132,7 +132,7 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
+ windows_PREFIX:=/usr/local
  osx_PREFIX:=Resources
- beos_PREFIX=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
  linux_PREFIX:=/usr/local
 -PREFIX:=$($(OS)_PREFIX)
 +PREFIX:=${TRUEPREFIX}
  
  # Root directory to place files when creating packages.
  # PKG_ROOT is the old name for this, and should be undefined.
-@@ -167,19 +167,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+@@ -166,19 +166,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
  MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
@@ -55,7 +55,7 @@ Index: Makefile
  endif
  
  ifeq ($(SYSNAME),Haiku)
-@@ -645,18 +645,16 @@ uninstall:	uninstall-i18n
+@@ -646,18 +646,16 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -78,7 +78,7 @@ Index: Makefile
  
  
  # Install example stamps
-@@ -664,7 +662,7 @@ install-bash-completion:
+@@ -665,7 +663,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -87,7 +87,7 @@ Index: Makefile
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -711,7 +709,10 @@ $(THUMB_STARTERS):
+@@ -715,7 +713,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
@@ -99,7 +99,7 @@ Index: Makefile
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -837,12 +838,9 @@ install-kde-icons:
+@@ -847,12 +848,9 @@ install-xdg:
  install-icon:
  	@echo
  	@echo "...Installing launcher icon graphics..."
@@ -115,7 +115,7 @@ Index: Makefile
  
  
  # Install the program:
-@@ -850,9 +848,8 @@ install-icon:
+@@ -860,9 +858,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -127,7 +127,7 @@ Index: Makefile
  
  # Install the required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -929,8 +926,7 @@ install-haiku:
+@@ -939,8 +936,7 @@ install-haiku:
  install-importscript:
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -137,7 +137,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -938,12 +934,14 @@ install-importscript:
+@@ -948,12 +944,14 @@ install-importscript:
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -154,7 +154,7 @@ Index: Makefile
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -963,7 +961,7 @@ install-osk:
+@@ -973,7 +971,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
@@ -163,7 +163,7 @@ Index: Makefile
  	@cp -R docs/* $(DOC_PREFIX)
  	@# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
  	@install -d $(DOC_PREFIX)/en/magic-docs
-@@ -977,25 +975,13 @@ install-man:
+@@ -987,25 +985,13 @@ install-man:
  	@echo
  	@echo "...Installing man pages..."
  	@# man1 directory...
@@ -193,7 +193,7 @@ Index: Makefile
  
  
  # Install the support files for macOS application bundle
-@@ -1030,7 +1016,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/curso
+@@ -1040,7 +1026,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/curso
  	@echo "...Linking Tux Paint..."
  	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
  		-o tuxpaint $^ \

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/06/06 10:13:29 ajacoutot Exp $
 
 COMMENT=		drawing program for children
 
-DISTNAME=		tuxpaint-0.9.23
+DISTNAME=		tuxpaint-0.9.24
 CATEGORIES=		games graphics
 
 HOMEPAGE=		http://www.tuxpaint.org/
@@ -20,7 +20,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
 
 BUILD_DEPENDS=		devel/gettext,-tools \
-			devel/gperf
+			devel/gperf \
+			graphics/ImageMagick
 
 LIB_DEPENDS=		devel/sdl-image \
 			devel/sdl-mixer \

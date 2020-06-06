@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/09/02 08:31:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/06/06 10:13:29 ajacoutot Exp $
 bin/tp-magic-config
 @bin bin/tuxpaint
 bin/tuxpaint-import
@@ -6,53 +6,52 @@ include/tuxpaint/
 include/tuxpaint/tp_magic_api.h
 lib/tuxpaint/
 lib/tuxpaint/plugins/
-lib/tuxpaint/plugins/alien.so
-lib/tuxpaint/plugins/blind.so
-lib/tuxpaint/plugins/blocks_chalk_drip.so
-lib/tuxpaint/plugins/blur.so
-lib/tuxpaint/plugins/bricks.so
-lib/tuxpaint/plugins/calligraphy.so
-lib/tuxpaint/plugins/cartoon.so
-lib/tuxpaint/plugins/confetti.so
-lib/tuxpaint/plugins/distortion.so
-lib/tuxpaint/plugins/emboss.so
-lib/tuxpaint/plugins/fade_darken.so
-lib/tuxpaint/plugins/fill.so
-lib/tuxpaint/plugins/fisheye.so
-lib/tuxpaint/plugins/flower.so
-lib/tuxpaint/plugins/foam.so
-lib/tuxpaint/plugins/fold.so
-lib/tuxpaint/plugins/fretwork.so
-lib/tuxpaint/plugins/glasstile.so
-lib/tuxpaint/plugins/grass.so
-lib/tuxpaint/plugins/halftone.so
-lib/tuxpaint/plugins/kalidescope.so
-lib/tuxpaint/plugins/light.so
-lib/tuxpaint/plugins/metalpaint.so
-lib/tuxpaint/plugins/mirror_flip.so
-lib/tuxpaint/plugins/mosaic.so
-lib/tuxpaint/plugins/mosaic_shaped.so
-lib/tuxpaint/plugins/negative.so
-lib/tuxpaint/plugins/noise.so
-lib/tuxpaint/plugins/perspective.so
-lib/tuxpaint/plugins/puzzle.so
-lib/tuxpaint/plugins/rails.so
-lib/tuxpaint/plugins/rain.so
-lib/tuxpaint/plugins/rainbow.so
-lib/tuxpaint/plugins/realrainbow.so
-lib/tuxpaint/plugins/ripples.so
-lib/tuxpaint/plugins/rosette.so
-lib/tuxpaint/plugins/sharpen.so
-lib/tuxpaint/plugins/shift.so
-lib/tuxpaint/plugins/smudge.so
-lib/tuxpaint/plugins/snow.so
-lib/tuxpaint/plugins/string.so
-lib/tuxpaint/plugins/tint.so
-lib/tuxpaint/plugins/toothpaste.so
-lib/tuxpaint/plugins/tornado.so
-lib/tuxpaint/plugins/tv.so
-lib/tuxpaint/plugins/waves.so
-lib/tuxpaint/plugins/xor.so
+@so lib/tuxpaint/plugins/alien.so
+@so lib/tuxpaint/plugins/blind.so
+@so lib/tuxpaint/plugins/blocks_chalk_drip.so
+@so lib/tuxpaint/plugins/blur.so
+@so lib/tuxpaint/plugins/bricks.so
+@so lib/tuxpaint/plugins/calligraphy.so
+@so lib/tuxpaint/plugins/cartoon.so
+@so lib/tuxpaint/plugins/confetti.so
+@so lib/tuxpaint/plugins/distortion.so
+@so lib/tuxpaint/plugins/emboss.so
+@so lib/tuxpaint/plugins/fade_darken.so
+@so lib/tuxpaint/plugins/fisheye.so
+@so lib/tuxpaint/plugins/flower.so
+@so lib/tuxpaint/plugins/foam.so
+@so lib/tuxpaint/plugins/fold.so
+@so lib/tuxpaint/plugins/fretwork.so
+@so lib/tuxpaint/plugins/glasstile.so
+@so lib/tuxpaint/plugins/grass.so
+@so lib/tuxpaint/plugins/halftone.so
+@so lib/tuxpaint/plugins/kalidescope.so
+@so lib/tuxpaint/plugins/light.so
+@so lib/tuxpaint/plugins/metalpaint.so
+@so lib/tuxpaint/plugins/mirror_flip.so
+@so lib/tuxpaint/plugins/mosaic.so
+@so lib/tuxpaint/plugins/mosaic_shaped.so
+@so lib/tuxpaint/plugins/negative.so
+@so lib/tuxpaint/plugins/noise.so
+@so lib/tuxpaint/plugins/perspective.so
+@so lib/tuxpaint/plugins/puzzle.so
+@so lib/tuxpaint/plugins/rails.so
+@so lib/tuxpaint/plugins/rain.so
+@so lib/tuxpaint/plugins/rainbow.so
+@so lib/tuxpaint/plugins/realrainbow.so
+@so lib/tuxpaint/plugins/ripples.so
+@so lib/tuxpaint/plugins/rosette.so
+@so lib/tuxpaint/plugins/sharpen.so
+@so lib/tuxpaint/plugins/shift.so
+@so lib/tuxpaint/plugins/smudge.so
+@so lib/tuxpaint/plugins/snow.so
+@so lib/tuxpaint/plugins/string.so
+@so lib/tuxpaint/plugins/tint.so
+@so lib/tuxpaint/plugins/toothpaste.so
+@so lib/tuxpaint/plugins/tornado.so
+@so lib/tuxpaint/plugins/tv.so
+@so lib/tuxpaint/plugins/waves.so
+@so lib/tuxpaint/plugins/xor.so
 @man man/man1/tp-magic-config.1
 @man man/man1/tuxpaint-import.1
 @man man/man1/tuxpaint.1
@@ -101,6 +100,7 @@ share/doc/tuxpaint/COPYING/html/COPYING-zh_cn.html
 share/doc/tuxpaint/COPYING/html/COPYING-zh_tw_GNU_GPL_Chinese.html
 share/doc/tuxpaint/Makefile
 share/doc/tuxpaint/README.txt
+share/doc/tuxpaint/RELEASE.txt
 share/doc/tuxpaint/de/
 share/doc/tuxpaint/de/ANBRINGEN.txt
 share/doc/tuxpaint/de/AUTOREN.txt
@@ -117,6 +117,7 @@ share/doc/tuxpaint/en/INSTALL.txt
 share/doc/tuxpaint/en/OPTIONS.txt
 share/doc/tuxpaint/en/PNG.txt
 share/doc/tuxpaint/en/README.txt
+share/doc/tuxpaint/en/SIGNALS.txt
 share/doc/tuxpaint/en/SVG.txt
 share/doc/tuxpaint/en/html/
 share/doc/tuxpaint/en/html/ADVANCED-STAMPS-HOWTO.html
@@ -369,6 +370,7 @@ share/doc/tuxpaint/html/images/selector.jpg
 share/doc/tuxpaint/html/images/stamp_edit.png
 share/doc/tuxpaint/html/images/tips.jpg
 share/doc/tuxpaint/html/images/tool_eraser.png
+share/doc/tuxpaint/html/images/tool_fill.png
 share/doc/tuxpaint/html/images/tool_lines.png
 share/doc/tuxpaint/html/images/tool_magic.png
 share/doc/tuxpaint/html/images/tool_new.png
@@ -856,7 +858,6 @@ share/tuxpaint/images/magic/drip.png
 share/tuxpaint/images/magic/edges.png
 share/tuxpaint/images/magic/emboss.png
 share/tuxpaint/images/magic/fade.png
-share/tuxpaint/images/magic/fill.png
 share/tuxpaint/images/magic/fisheye.png
 share/tuxpaint/images/magic/flip.png
 share/tuxpaint/images/magic/flower.png
@@ -960,6 +961,7 @@ share/tuxpaint/images/title.png
 share/tuxpaint/images/tools/
 share/tuxpaint/images/tools/brush.png
 share/tuxpaint/images/tools/eraser.png
+share/tuxpaint/images/tools/fill.png
 share/tuxpaint/images/tools/label.png
 share/tuxpaint/images/tools/label_select.png
 share/tuxpaint/images/tools/lines.png
@@ -1066,6 +1068,7 @@ share/tuxpaint/sounds/bubble.wav
 share/tuxpaint/sounds/click.wav
 share/tuxpaint/sounds/eraser1.wav
 share/tuxpaint/sounds/eraser2.wav
+share/tuxpaint/sounds/fill.wav
 share/tuxpaint/sounds/flip.wav
 share/tuxpaint/sounds/giggle.wav
 share/tuxpaint/sounds/grow.wav
@@ -1091,7 +1094,6 @@ share/tuxpaint/sounds/magic/drip.wav
 share/tuxpaint/sounds/magic/edges.ogg
 share/tuxpaint/sounds/magic/emboss.ogg
 share/tuxpaint/sounds/magic/fade.wav
-share/tuxpaint/sounds/magic/fill.wav
 share/tuxpaint/sounds/magic/fisheye.ogg
 share/tuxpaint/sounds/magic/flip.wav
 share/tuxpaint/sounds/magic/flower_click.ogg
@@ -1174,8 +1176,6 @@ share/tuxpaint/stamps/cartoon/tux/tux-yes1.png
 share/tuxpaint/stamps/cartoon/tux/tux-yes2.dat
 share/tuxpaint/stamps/cartoon/tux/tux-yes2.png
 share/tuxpaint/starters/
-share/tuxpaint/starters/Jigsaw_3x3.png
-share/tuxpaint/starters/Jigsaw_5x5.png
 share/tuxpaint/starters/bald_eagle.svg
 share/tuxpaint/starters/car2.svg
 share/tuxpaint/starters/carcassone.png
@@ -1203,6 +1203,8 @@ share/tuxpaint/starters/hat.svg
 share/tuxpaint/starters/jetplane.png
 share/tuxpaint/starters/jigsaw.png
 share/tuxpaint/starters/jigsaw.svg
+share/tuxpaint/starters/jigsaw_3x3.png
+share/tuxpaint/starters/jigsaw_5x5.png
 share/tuxpaint/starters/manatee.svg
 share/tuxpaint/starters/mosaic.svg
 share/tuxpaint/starters/nagasaki.png
@@ -1236,6 +1238,26 @@ share/tuxpaint/starters/worldmap_canada.png
 share/tuxpaint/starters/worldmap_europe.png
 share/tuxpaint/starters/worldmap_japan.png
 share/tuxpaint/templates/
+share/tuxpaint/templates/.thumbs/
+share/tuxpaint/templates/.thumbs/burnt_bark-t.png
+share/tuxpaint/templates/.thumbs/cliff-t.png
+share/tuxpaint/templates/.thumbs/corn_maze-t.png
+share/tuxpaint/templates/.thumbs/jellyfish-t.png
+share/tuxpaint/templates/.thumbs/lighthouse-t.png
+share/tuxpaint/templates/.thumbs/mossy_bark-t.png
+share/tuxpaint/templates/.thumbs/mossy_log-t.png
+share/tuxpaint/templates/.thumbs/mudstone-t.png
+share/tuxpaint/templates/.thumbs/ocean_splash-t.png
+share/tuxpaint/templates/.thumbs/ocean_waves-t.png
+share/tuxpaint/templates/.thumbs/redwoods_above-t.png
+share/tuxpaint/templates/.thumbs/rocks-t.png
+share/tuxpaint/templates/.thumbs/sheep-t.png
+share/tuxpaint/templates/.thumbs/spiders_web-t.png
+share/tuxpaint/templates/.thumbs/sun_behind_clouds-t.png
+share/tuxpaint/templates/.thumbs/sun_behind_leaves-t.png
+share/tuxpaint/templates/.thumbs/trees_above-t.png
+share/tuxpaint/templates/.thumbs/trees_at_dusk-t.png
+share/tuxpaint/templates/.thumbs/wool_mill_machine-t.png
 share/tuxpaint/templates/burnt_bark.jpg
 share/tuxpaint/templates/cliff.jpg
 share/tuxpaint/templates/corn_maze.jpg
