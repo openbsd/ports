@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2020/01/30 23:19:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/06/06 20:40:49 sthen Exp $
 
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
-V=		2.2.1
+V=		2.3.0
 DISTNAME=	xca-$V
 PORTROACH=	skipv:RELEASE.$V
 CATEGORIES=	security x11

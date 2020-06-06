@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/01/30 23:19:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/06/06 20:40:49 sthen Exp $
 @ask-update xca-<2 .xdb format changes in XCA 2.x. Upgrade is automatic, but backup your old files.
 @bin bin/xca
 @man man/man1/xca.1
@@ -20,9 +20,12 @@ share/doc/xca/xca-7.html
 share/doc/xca/xca-8.html
 share/doc/xca/xca-9.html
 share/doc/xca/xca.html
+share/icons/hicolor/16x16/apps/xca.png
+share/icons/hicolor/32x32/apps/xca.png
+share/icons/hicolor/64x64/apps/xca.png
 share/mime/packages/xca.xml
 share/pixmaps/
-share/pixmaps/xca-32x32.xpm
+share/pixmaps/xca.xpm
 share/xca/
 share/xca/CA.xca
 share/xca/TLS_client.xca
@@ -45,3 +48,4 @@ share/xca/xca_tr.qm
 share/xca/xca_zh_CN.qm
 @tag update-desktop-database
 @tag update-mime-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
