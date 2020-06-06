@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/03/11 23:21:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/06/06 20:30:49 sthen Exp $
 include/freeipmi/
 include/freeipmi/api/
 include/freeipmi/api/ipmi-api.h
@@ -268,16 +268,12 @@ include/ipmi_monitoring_offsets.h
 include/ipmiconsole.h
 include/ipmidetect.h
 @info info/freeipmi-faq.info
-lib/libfreeipmi.a
 lib/libfreeipmi.la
 @lib lib/libfreeipmi.so.${LIBfreeipmi_VERSION}
-lib/libipmiconsole.a
 lib/libipmiconsole.la
 @lib lib/libipmiconsole.so.${LIBipmiconsole_VERSION}
-lib/libipmidetect.a
 lib/libipmidetect.la
 @lib lib/libipmidetect.so.${LIBipmidetect_VERSION}
-lib/libipmimonitoring.a
 lib/libipmimonitoring.la
 @lib lib/libipmimonitoring.so.${LIBipmimonitoring_VERSION}
 lib/pkgconfig/libfreeipmi.pc

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2019/08/23 20:18:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/06/06 20:30:48 sthen Exp $
 
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
-DISTNAME=	freeipmi-1.6.4
+DISTNAME=	freeipmi-1.6.5
 
 SHARED_LIBS +=  freeipmi             7.0      # 19.3
 SHARED_LIBS +=  ipmiconsole          3.1      # 5.5
@@ -36,6 +36,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 FAKE_FLAGS=	localstatedir=${PREFIX}/share/examples/freeipmi \
 		sysconfdir=${PREFIX}/share/examples/freeipmi \
 		FREEIPMI_SYSCONFDIR=${PREFIX}/share/examples/freeipmi
+LIBTOOL_FLAGS=	--tag=disable-static
 
 post-install:
 	cd ${PREFIX}/share/examples/freeipmi && \
