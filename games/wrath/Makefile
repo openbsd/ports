@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/25 16:08:41 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/06 19:14:15 sthen Exp $
 
 COMMENT =		client of wrath-darkplaces engine
 
@@ -23,6 +23,10 @@ LIB_DEPENDS =		devel/sdl2 \
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS_LIBJPEG="-I${LOCALBASE}/include -DLINK_TO_LIBJPEG" \
 			CPUOPTIMIZATIONS="${CFLAGS}"
+
+.if !(${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == i386)
+MAKE_FLAGS +=		CFLAGS_SSE= CFLAGS_SSE2=
+.endif
 
 USE_GMAKE =		Yes
 
