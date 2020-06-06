@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_check-symbols_py,v 1.1 2020/06/06 09:54:45 ajacoutot Exp $
+
+Index: src/check-symbols.py
+--- src/check-symbols.py.orig
++++ src/check-symbols.py
+@@ -22,7 +22,7 @@ tested = False
+ stat = 0
+ 
+ for soname in ['harfbuzz', 'harfbuzz-subset', 'harfbuzz-icu', 'harfbuzz-gobject']:
+-	for suffix in ['so', 'dylib']:
++	for suffix in ['so.${LIBharfbuzz_VERSION}', 'dylib']:
+ 		so = os.path.join (builddir, libs, 'lib%s.%s' % (soname, suffix))
+ 		if not os.path.exists (so): continue
+ 

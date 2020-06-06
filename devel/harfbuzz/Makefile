@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.119 2020/05/14 12:17:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2020/06/06 09:54:45 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			2.6.6
+V=			2.6.7
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.xz
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             15.2     # 20600.6
-SHARED_LIBS +=  harfbuzz-icu         1.2      # 20600.6
-SHARED_LIBS +=  harfbuzz-gobject     0.3      # 20600.6
-SHARED_LIBS +=  harfbuzz-subset      0.2      # 20600.6
+SHARED_LIBS +=  harfbuzz             15.2     # 20600.7
+SHARED_LIBS +=  harfbuzz-icu         1.2      # 20600.7
+SHARED_LIBS +=  harfbuzz-gobject     0.3      # 20600.7
+SHARED_LIBS +=  harfbuzz-subset      0.2      # 20600.7
 
 CATEGORIES=		devel graphics textproc
 
@@ -46,6 +46,13 @@ USE_GMAKE=		Yes
 # C++11
 COMPILER=		base-clang ports-gcc ports-clang
 
+# XXX temporary until the move to meson(1)
+MODULES=		lang/python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP=		No
+MODPY_BUILDDEP=		No
+TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
+
 BUILD_DEPENDS=		devel/gobject-introspection
 
 # LIB_DEPENDS needed for estdc++ in WANTLIB on non-clang archs
@@ -62,7 +69,6 @@ CONFIGURE_ARGS=		--enable-introspection \
 			--with-gobject
 
 pre-configure:
-	sed -i 's,for suffix in so,for suffix in so.${LIBharfbuzz_VERSION},' \
-		${WRKSRC}/src/check-symbols.sh
+	${SUBST_CMD} ${WRKSRC}/src/check-symbols.py
 
 .include <bsd.port.mk>
