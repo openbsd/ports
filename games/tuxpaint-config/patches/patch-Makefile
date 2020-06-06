@@ -1,8 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.6 2018/09/02 08:31:44 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.7 2020/06/06 10:21:20 ajacoutot Exp $
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -20,7 +20,6 @@ endif
+@@ -21,7 +21,6 @@ endif
  
  # Where to install things:
  
@@ -10,7 +11,7 @@ Index: Makefile
  
  
  # Program:
-@@ -37,16 +36,12 @@ DATA_PREFIX=$(PREFIX)/share/tuxpaint-config/
+@@ -38,16 +37,12 @@ DATA_PREFIX=$(PREFIX)/share/tuxpaint-config/
  # Docs and man page:
  
  DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
@@ -29,7 +30,16 @@ Index: Makefile
  
  
  # Icons and launchers:
-@@ -84,7 +79,6 @@ FLTK_LIBS=`fltk-config --ldflags`
+@@ -61,7 +56,7 @@ KDE_ICON_PREFIX=$(shell kde-config --install icon --ex
+ 
+ # Locale files
+ 
+-LOCALE_PREFIX=${DESTDIR}/$(PREFIX)/share/locale/
++LOCALE_PREFIX=$(PREFIX)/share/locale/
+ # LOCALE_PREFIX=/usr/share/locale/
+ 
+ 
+@@ -80,7 +75,6 @@ FLTK_LIBS=`fltk-config --ldflags`
  PAPER_LIB=-lpaper
  
  # Default CFLAGS:
@@ -37,7 +47,7 @@ Index: Makefile
  
  # The entire set of CFLAGS:
  ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-@@ -96,11 +90,6 @@ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(
+@@ -92,11 +86,6 @@ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(
  # "make" with no arguments builds the program and man page from sources:
  
  all:	tuxpaint-config translations
@@ -49,7 +59,7 @@ Index: Makefile
  
  releaseclean:
  	@echo
-@@ -183,16 +172,9 @@ install-win32:
+@@ -179,16 +168,9 @@ install-win32:
  # (depending on the *PREFIX variables at the top, you probably need
  # to do this as superuser ("root"))
  
@@ -68,18 +78,18 @@ Index: Makefile
  
  
  # "make clean" deletes the program, the compiled objects and the
-@@ -271,23 +253,15 @@ install-kde-icons:
+@@ -267,24 +249,15 @@ install-kde-icons:
  # and the 24-color 32x32 XPM (for other Window managers):
  
  install-icon:
 -	@echo
 -	@echo "...Installing launcher icon graphics..."
--	@install -d $(ICON_PREFIX)
--	@cp data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
--	@chmod 644 $(ICON_PREFIX)tuxpaint-config.png
--	@install -d $(X11_ICON_PREFIX)
--	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)tuxpaint-config.xpm
--	@chmod 644 $(X11_ICON_PREFIX)tuxpaint-config.xpm
+-	@install -d ${DESTDIR}/$(ICON_PREFIX)
+-	@cp data/images/icon.png ${DESTDIR}/$(ICON_PREFIX)tuxpaint-config.png
+-	@chmod 644 ${DESTDIR}/$(ICON_PREFIX)tuxpaint-config.png
+-	@install -d ${DESTDIR}/$(X11_ICON_PREFIX)
+-	@cp data/images/icon32x32.xpm ${DESTDIR}/$(X11_ICON_PREFIX)tuxpaint-config.xpm
+-	@chmod 644 ${DESTDIR}/$(X11_ICON_PREFIX)tuxpaint-config.xpm
 +	${BSD_INSTALL_DATA_DIR} $(ICON_PREFIX)
 +	${BSD_INSTALL_DATA} data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
 +	${BSD_INSTALL_DATA} data/images/icon32x32.xpm $(ICON_PREFIX)tuxpaint-config.xpm
@@ -90,29 +100,30 @@ Index: Makefile
  install-bin:
 -	@echo
 -	@echo "...Installing program itself..."
--	@cp tuxpaint-config $(BIN_PREFIX)
--	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint-config$(EXE_EXT)
+-	@install -d ${DESTDIR}/${BIN_PREFIX}
+-	@cp tuxpaint-config ${DESTDIR}/$(BIN_PREFIX)
+-	@chmod a+rx,g-w,o-w ${DESTDIR}$(BIN_PREFIX)/tuxpaint-config$(EXE_EXT)
 +	${BSD_INSTALL_PROGRAM} tuxpaint-config $(BIN_PREFIX)
  
  
  # Install the data (sound, graphics, fonts):
-@@ -303,31 +277,15 @@ install-data:
+@@ -300,31 +273,15 @@ install-data:
  # Install the text documentation:
  
  install-doc:
 -	@echo
 -	@echo "...Installing documentation..."
 -	@echo "(English)"
--	@install -d $(DOC_PREFIX)
--	@install -d $(DOC_PREFIX)/html
--	@cp docs/AUTHORS.txt $(DOC_PREFIX)
--	@cp docs/CHANGES.txt $(DOC_PREFIX)
--	@cp docs/COPYING.txt $(DOC_PREFIX)
--	@cp docs/README.txt $(DOC_PREFIX)
--	@cp docs/html/README.html $(DOC_PREFIX)/html
--	@cp docs/TODO.txt $(DOC_PREFIX)
+-	@install -d ${DESTDIR}/$(DOC_PREFIX)
+-	@install -d ${DESTDIR}/$(DOC_PREFIX)/html
+-	@cp docs/AUTHORS.txt ${DESTDIR}/$(DOC_PREFIX)
+-	@cp docs/CHANGES.txt ${DESTDIR}/$(DOC_PREFIX)
+-	@cp docs/COPYING.txt ${DESTDIR}/$(DOC_PREFIX)
+-	@cp docs/README.txt ${DESTDIR}/$(DOC_PREFIX)
+-	@cp docs/html/README.html ${DESTDIR}/$(DOC_PREFIX)/html
+-	@cp docs/TODO.txt ${DESTDIR}/$(DOC_PREFIX)
 -	@echo "(...Setting permissions)"
--	@chmod -R a+rx,g-w,o-w $(DOC_PREFIX)
+-	@chmod -R a+rx,g-w,o-w ${DESTDIR}/$(DOC_PREFIX)
 +	${BSD_INSTALL_DATA_DIR} $(DOC_PREFIX)
 +	${BSD_INSTALL_DATA} docs/README.txt $(DOC_PREFIX)
  
@@ -122,17 +133,17 @@ Index: Makefile
  install-man:
 -	@echo "...Installing man pages..."
 -	# man1 directory...
--	@install -d $(MAN_PREFIX)/man1/
+-	@install -d ${DESTDIR}/$(MAN_PREFIX)/man1/
 -	# tuxpaint-config.1
--	@cp src/tuxpaint-config.1 $(MAN_PREFIX)/man1/
--	@gzip -9f $(MAN_PREFIX)/man1/tuxpaint-config.1
--	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-config.1.gz
+-	@cp src/tuxpaint-config.1 ${DESTDIR}/$(MAN_PREFIX)/man1/
+-	@gzip -9f ${DESTDIR}/$(MAN_PREFIX)/man1/tuxpaint-config.1
+-	@chmod a+rx,g-w,o-w ${DESTDIR}/$(MAN_PREFIX)/man1/tuxpaint-config.1.gz
 +	${BSD_INSTALL_MAN_DIR} $(MAN_PREFIX)/man1/
 +	${BSD_INSTALL_MAN} src/tuxpaint-config.1 $(MAN_PREFIX)/man1/
  
  
  # Build the program!
-@@ -335,22 +293,22 @@ install-man:
+@@ -332,22 +289,22 @@ install-man:
  tuxpaint-config:	obj/tuxpaint-config.o obj/tuxpaint-config2.o	\
  			obj/defaults.o $(ARCH_LIBS)
  	@echo Linking

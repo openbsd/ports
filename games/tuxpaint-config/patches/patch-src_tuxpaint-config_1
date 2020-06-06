@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_tuxpaint-config_1,v 1.4 2009/12/17 17:11:00 ajacoutot Exp $
+$OpenBSD: patch-src_tuxpaint-config_1,v 1.5 2020/06/06 10:21:20 ajacoutot Exp $
+
 --- src/tuxpaint-config.1.orig	Tue Jul 15 08:04:10 2008
 +++ src/tuxpaint-config.1	Thu Dec 17 16:40:44 2009
 @@ -48,7 +48,7 @@ to determine langauge to use, if \fIsetlocale(3)\fP re
@@ -10,10 +11,3 @@ $OpenBSD: patch-src_tuxpaint-config_1,v 1.4 2009/12/17 17:11:00 ajacoutot Exp $
  System-wide configuration file.
  .RS
  .PP
-@@ -82,5 +82,5 @@ Martin Fuhrer.
- .SH "SEE ALSO"
- .BR tuxpaint (1)
- .PP
--And documentation within /usr/[local/]share/doc/tuxpaint-config/.
-+And documentation within ${PREFIX}/share/doc/tuxpaint-config/.
- 

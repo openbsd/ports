@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/06/06 10:21:20 ajacoutot Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 #'
 
-DISTNAME=	tuxpaint-config-0.0.14
+DISTNAME=	tuxpaint-config-0.0.15
 CATEGORIES=	games graphics
-REVISION=	0
 
 HOMEPAGE=	http://www.tuxpaint.org/
 
@@ -34,7 +33,6 @@ NO_TEST=	Yes
 
 pre-configure:
 	rm -r ${WRKSRC}/obj
-	sed -i 's,@\$$\(CXX\),\$$\(CXX\),g' ${WRKSRC}/Makefile
 	${SUBST_CMD} ${WRKSRC}/src/tuxpaint-config.1
 
 .include <bsd.port.mk>
