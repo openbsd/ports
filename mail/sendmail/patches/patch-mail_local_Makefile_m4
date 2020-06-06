@@ -1,5 +1,7 @@
-$OpenBSD: patch-mail_local_Makefile_m4,v 1.1.1.1 2014/09/16 17:09:32 jca Exp $
+$OpenBSD: patch-mail_local_Makefile_m4,v 1.2 2020/06/06 10:28:09 ajacoutot Exp $
+
 really install this bit
+
 --- mail.local/Makefile.m4.orig	Mon Apr  8 07:37:49 2013
 +++ mail.local/Makefile.m4	Mon Apr  8 07:38:29 2013
 @@ -21,13 +21,13 @@ define(`bldSOURCES', `mail.local.8')

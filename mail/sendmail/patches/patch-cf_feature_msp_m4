@@ -1,4 +1,5 @@
-$OpenBSD: patch-cf_feature_msp_m4,v 1.2 2016/03/07 14:19:50 matthieu Exp $
+$OpenBSD: patch-cf_feature_msp_m4,v 1.3 2020/06/06 10:28:09 ajacoutot Exp $
+
 --- cf/feature/msp.m4.orig	Wed Mar  5 01:59:45 2014
 +++ cf/feature/msp.m4	Mon Mar  7 09:55:28 2016
 @@ -20,7 +20,7 @@ define(`confPRIVACY_FLAGS', `goaway,noetrn,restrictqru

@@ -1,6 +1,8 @@
-$OpenBSD: patch-cf_cf_Makefile,v 1.1.1.1 2014/09/16 17:09:32 jca Exp $
+$OpenBSD: patch-cf_cf_Makefile,v 1.2 2020/06/06 10:28:09 ajacoutot Exp $
+
 - hook .mc files from the OpenBSD tree
-- don\'t install submit.cf, thanks
+- don't install submit.cf
+
 --- cf/cf/Makefile.orig	Tue Jun 14 04:16:34 2005
 +++ cf/cf/Makefile	Fri Apr  5 14:31:36 2013
 @@ -51,7 +51,9 @@ BERKELEY=cs-hpux9.cf cs-hpux10.cf cs-osf1.cf cs-solari
