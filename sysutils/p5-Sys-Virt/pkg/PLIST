@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/07/23 09:58:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/06/07 15:59:49 ajacoutot Exp $
 ${P5ARCH}/Sys/
 ${P5ARCH}/Sys/Virt/
 ${P5ARCH}/Sys/Virt.pm
 ${P5ARCH}/Sys/Virt/Domain.pm
+${P5ARCH}/Sys/Virt/DomainCheckpoint.pm
 ${P5ARCH}/Sys/Virt/DomainSnapshot.pm
 ${P5ARCH}/Sys/Virt/Error.pm
 ${P5ARCH}/Sys/Virt/Event.pm
 ${P5ARCH}/Sys/Virt/Interface.pm
 ${P5ARCH}/Sys/Virt/NWFilter.pm
+${P5ARCH}/Sys/Virt/NWFilterBinding.pm
 ${P5ARCH}/Sys/Virt/Network.pm
+${P5ARCH}/Sys/Virt/NetworkPort.pm
 ${P5ARCH}/Sys/Virt/NodeDevice.pm
 ${P5ARCH}/Sys/Virt/Secret.pm
 ${P5ARCH}/Sys/Virt/StoragePool.pm
@@ -16,47 +19,52 @@ ${P5ARCH}/Sys/Virt/StorageVol.pm
 ${P5ARCH}/Sys/Virt/Stream.pm
 ${P5ARCH}/auto/Sys/
 ${P5ARCH}/auto/Sys/Virt/
-${P5ARCH}/auto/Sys/Virt/Virt.so
+${P5ARCH}/auto/Sys/Virt/Virt.bs
+@so ${P5ARCH}/auto/Sys/Virt/Virt.so
 @man man/man3p/Sys::Virt.3p
 @man man/man3p/Sys::Virt::Domain.3p
+@man man/man3p/Sys::Virt::DomainCheckpoint.3p
 @man man/man3p/Sys::Virt::DomainSnapshot.3p
 @man man/man3p/Sys::Virt::Error.3p
 @man man/man3p/Sys::Virt::Event.3p
 @man man/man3p/Sys::Virt::Interface.3p
 @man man/man3p/Sys::Virt::NWFilter.3p
+@man man/man3p/Sys::Virt::NWFilterBinding.3p
 @man man/man3p/Sys::Virt::Network.3p
+@man man/man3p/Sys::Virt::NetworkPort.3p
 @man man/man3p/Sys::Virt::NodeDevice.3p
 @man man/man3p/Sys::Virt::Secret.3p
 @man man/man3p/Sys::Virt::StoragePool.3p
 @man man/man3p/Sys::Virt::StorageVol.3p
 @man man/man3p/Sys::Virt::Stream.3p
-share/examples/p5-Sys-Virt/
-share/examples/p5-Sys-Virt/auth.pl
-share/examples/p5-Sys-Virt/devices.pl
-share/examples/p5-Sys-Virt/dhcp-leases.pl
-share/examples/p5-Sys-Virt/dom-fsinfo.pl
-share/examples/p5-Sys-Virt/dom-ifinfo.pl
-share/examples/p5-Sys-Virt/dom-migrate.pl
-share/examples/p5-Sys-Virt/dom-stats.pl
-share/examples/p5-Sys-Virt/dump-info.pl
-share/examples/p5-Sys-Virt/dump-xml.pl
-share/examples/p5-Sys-Virt/emulator-pin.pl
-share/examples/p5-Sys-Virt/events.pl
-share/examples/p5-Sys-Virt/fs-freeze.pl
-share/examples/p5-Sys-Virt/hv-stat.pl
-share/examples/p5-Sys-Virt/iothreadinfo.pl
-share/examples/p5-Sys-Virt/node-alloc.pl
-share/examples/p5-Sys-Virt/node-cpu.pl
-share/examples/p5-Sys-Virt/node-devlist.pl
-share/examples/p5-Sys-Virt/node-info.pl
-share/examples/p5-Sys-Virt/node-ksm.pl
-share/examples/p5-Sys-Virt/open-console.pl
-share/examples/p5-Sys-Virt/save-restore.pl
-share/examples/p5-Sys-Virt/send-key.pl
-share/examples/p5-Sys-Virt/vcpuinfo.pl
-share/examples/p5-Sys-Virt/vol-download-all.pl
-share/examples/p5-Sys-Virt/vol-download-nonblock.pl
-share/examples/p5-Sys-Virt/vol-download.pl
-share/examples/p5-Sys-Virt/vol-upload-all.pl
-share/examples/p5-Sys-Virt/vol-upload-nonblock.pl
-share/examples/p5-Sys-Virt/vol-upload.pl
+share/examples/p5-Sys-Virt-v6.3.0/
+share/examples/p5-Sys-Virt-v6.3.0/auth.pl
+share/examples/p5-Sys-Virt-v6.3.0/devices.pl
+share/examples/p5-Sys-Virt-v6.3.0/dhcp-leases.pl
+share/examples/p5-Sys-Virt-v6.3.0/dom-fsinfo.pl
+share/examples/p5-Sys-Virt-v6.3.0/dom-ifinfo.pl
+share/examples/p5-Sys-Virt-v6.3.0/dom-migrate.pl
+share/examples/p5-Sys-Virt-v6.3.0/dom-stats.pl
+share/examples/p5-Sys-Virt-v6.3.0/dump-info.pl
+share/examples/p5-Sys-Virt-v6.3.0/dump-xml.pl
+share/examples/p5-Sys-Virt-v6.3.0/emulator-pin.pl
+share/examples/p5-Sys-Virt-v6.3.0/events.pl
+share/examples/p5-Sys-Virt-v6.3.0/fs-freeze.pl
+share/examples/p5-Sys-Virt-v6.3.0/hv-stat.pl
+share/examples/p5-Sys-Virt-v6.3.0/iothreadinfo.pl
+share/examples/p5-Sys-Virt-v6.3.0/node-alloc.pl
+share/examples/p5-Sys-Virt-v6.3.0/node-cpu.pl
+share/examples/p5-Sys-Virt-v6.3.0/node-devlist.pl
+share/examples/p5-Sys-Virt-v6.3.0/node-info.pl
+share/examples/p5-Sys-Virt-v6.3.0/node-ksm.pl
+share/examples/p5-Sys-Virt-v6.3.0/open-console.pl
+share/examples/p5-Sys-Virt-v6.3.0/save-restore.pl
+share/examples/p5-Sys-Virt-v6.3.0/send-key.pl
+share/examples/p5-Sys-Virt-v6.3.0/vcpuinfo.pl
+share/examples/p5-Sys-Virt-v6.3.0/vol-download-all.pl
+share/examples/p5-Sys-Virt-v6.3.0/vol-download-nonblock.pl
+share/examples/p5-Sys-Virt-v6.3.0/vol-download.pl
+share/examples/p5-Sys-Virt-v6.3.0/vol-sparse.pl
+share/examples/p5-Sys-Virt-v6.3.0/vol-upload-all.pl
+share/examples/p5-Sys-Virt-v6.3.0/vol-upload-nonblock.pl
+share/examples/p5-Sys-Virt-v6.3.0/vol-upload.pl

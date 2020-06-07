@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/06/07 15:59:49 ajacoutot Exp $
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
-V=			1.3.5
-DISTNAME=		Sys-Virt-$V
-REVISION=		1
+V=			6.3.0
+DISTNAME=		Sys-Virt-v${V}
+PKGNAME=		p5-Sys-Virt-${V}
+
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://libvirt.org/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # perl
 PERMIT_PACKAGE=	Yes
@@ -18,10 +21,16 @@ MODULES=		cpan
 
 MODCPAN_EXAMPLES=	Yes
 
-LIB_DEPENDS=		sysutils/libvirt>=$V
+CONFIGURE_STYLE=	modbuild
+
+BUILD_DEPENDS=		devel/p5-Module-Build
+
+LIB_DEPENDS=		sysutils/libvirt
 
 RUN_DEPENDS=		textproc/p5-XML-XPath
 
-MAKE_ENV+=		TEST_POD=1
+# needs Test::CPAN::Changes
+TEST_DEPENDS=		devel/p5-Test-Pod \
+			devel/p5-Test-Pod-Coverage
 
 .include <bsd.port.mk>
