@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.95 2020/03/31 04:37:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.96 2020/06/07 12:03:44 kn Exp $
 
-ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 powerpc
+ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 powerpc sparc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -126,8 +126,8 @@ BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 		--with-python-root=${LOCALBASE}
 
 # 'context' and 'coroutine' use MD bits and miss support for Alpha,
-# PA-RISC, SPARC and SuperH. The author does not care
-# about adding support for Alpha and PA-RISC.
+# PA-RISC and SuperH. The author does not care about adding support
+# for Alpha and PA-RISC.
 .if !${BUILD_PACKAGES:M-md}
 BOOTSTRAP+=	--without-libraries=context,coroutine,fiber,stacktrace
 .endif
