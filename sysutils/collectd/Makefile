@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/07/12 20:49:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2020/06/07 15:57:48 ajacoutot Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -35,17 +35,17 @@ CATEGORIES =		sysutils
 REVISION-main =		0
 REVISION-memcachec =	0
 REVISION-mqtt =		0
-REVISION-mysql =	0
+REVISION-mysql =	1
 REVISION-nut =		0
 REVISION-pgsql =	0
 REVISION-ping =		0
-REVISION-prometheus =	0
-REVISION-python =	0
+REVISION-prometheus =	1
+REVISION-python =	1
 REVISION-redis =	0
-REVISION-riemann =	0
-REVISION-rrdtool =	0
+REVISION-riemann =	1
+REVISION-rrdtool =	1
 REVISION-snmp =		0
-REVISION-virt =		0
+REVISION-virt =		1
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -61,7 +61,7 @@ MODPY_RUNDEP =		No
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -mqtt -nut -riemann -redis -prometheus -ping
 
-WANTLIB-mysql =		crypto m ssl mysqlclient_r pthread
+WANTLIB-mysql =		mariadb pthread
 LIB_DEPENDS-mysql =	databases/mariadb
 RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 
@@ -69,10 +69,10 @@ WANTLIB-pgsql =		pq pthread
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-rrdtool =	X11 Xext Xrender c cairo expat ffi fontconfig \
-			freetype fribidi glib-2.0 gobject-2.0 \
-			graphite2 gthread-2.0 harfbuzz iconv intl lzma m \
-			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+WANTLIB-rrdtool =	X11 Xext Xrender cairo expat fontconfig \
+			freetype glib-2.0 gobject-2.0 \
+			graphite2 harfbuzz iconv intl lzma m \
+			pango-1.0 pangocairo-1.0 \
 			pixman-1 png pthread rrd xcb \
 			xcb-render xcb-shm xml2 z
 LIB_DEPENDS-rrdtool =	net/rrdtool
@@ -83,13 +83,14 @@ WANTLIB-snmp =		crypto netsnmp pthread c kvm m netsnmpagent perl
 RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-virt =	sysutils/libvirt
-WANTLIB-virt =		avahi-client avahi-common c dbus-1 ffi gmp gnutls hogweed \
+WANTLIB-virt =		dbus-1 ffi gmp gnutls hogweed gio-2.0 glib-2.0 gobject-2.0 \
 			nettle p11-kit ssh2 tasn1 util virt crypto curl iconv \
-			idn2 intl lzma m nghttp2 pthread ssl unistring xml2 z
+			idn2 intl lzma m nghttp2 pthread ssl unistring xml2 z \
+			sasl2
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS}
-WANTLIB-python =	${MODPY_WANTLIB} pthread m util
+WANTLIB-python =	${MODPY_WANTLIB} pthread m util iconv intl
 RUN_DEPENDS-python =	collectd-$V:${BASE_PKGPATH},-main \
 			${MODPY_RUN_DEPENDS}
 
@@ -102,9 +103,9 @@ RUN_DEPENDS-nut =	collectd-$V:${BASE_PKGPATH},-main
 WANTLIB-nut =		crypto pthread ssl upsclient
 
 LIB_DEPENDS-riemann =	sysutils/riemann-c-client
-WANTLIB-riemann =	c gmp gnutls ffi hogweed intl iconv idn2 nettle \
+WANTLIB-riemann =	gmp gnutls ffi hogweed intl iconv idn2 nettle \
 			protobuf-c p11-kit pthread riemann-client tasn1 \
-			unistring z
+			unistring
 RUN_DEPENDS-riemann =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-mqtt =	net/mosquitto
@@ -114,8 +115,8 @@ WANTLIB-mqtt =		mosquitto pthread
 LIB_DEPENDS-prometheus =	www/libmicrohttpd \
 				devel/protobuf-c
 RUN_DEPENDS-prometheus =	collectd-$V:${BASE_PKGPATH},-main
-WANTLIB-prometheus =	c ffi gmp gnutls hogweed iconv idn2 intl microhttpd \
-			nettle p11-kit protobuf-c pthread tasn1 unistring z
+WANTLIB-prometheus =	ffi gmp gnutls hogweed iconv idn2 intl microhttpd \
+			nettle p11-kit protobuf-c pthread tasn1 unistring
 
 LIB_DEPENDS-redis =	databases/libhiredis
 RUN_DEPENDS-redis =	collectd-$V:${BASE_PKGPATH},-main
