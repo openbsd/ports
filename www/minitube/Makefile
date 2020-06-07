@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2020/05/01 02:56:11 kn Exp $
+# $OpenBSD: Makefile,v 1.66 2020/06/07 11:25:31 rsadowski Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
 V =		3.3
 DISTNAME =	minitube-$V
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www multimedia
 
@@ -24,7 +24,7 @@ EXTRACT_CASES += minitube*.tar.bz2) ${GZIP_CMD} -d <${FULLDISTDIR}/$$archive | $
 WANTLIB +=	GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Sql
 WANTLIB +=	Qt5Widgets Qt5X11Extras c m mpv ${COMPILER_LIBCXX}
 
-MODULES =	devel/qmake x11/qt5 multimedia/phonon
+MODULES =	devel/qmake x11/qt5
 
 LIB_DEPENDS +=	multimedia/mpv \
 		x11/qt5/qtx11extras
