@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2019/11/19 22:36:09 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2020/06/07 16:01:39 ajacoutot Exp $
+
+BROKEN=			requires py3-libxml2
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
-DISTNAME=		virt-manager-1.5.1
+DISTNAME=		virt-manager-2.2.1
 CATEGORIES=		sysutils x11
-REVISION=		4
 
 HOMEPAGE=		http://virt-manager.org/
 
@@ -13,43 +14,41 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/download/sources/virt-manager/
+MASTER_SITES=		http://virt-manager.org/download/sources/virt-manager/
 
 MODULES=		devel/dconf \
 			lang/python \
 			textproc/intltool
 
+MODPY_BUILDDEP=		Yes
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+NO_BUILD=		Yes
+
+# XXX textproc/libxml,-python${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/libvirt-glib \
-			devel/py-gobject3 \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/vte3 \
 			misc/osinfo/libosinfo \
-			net/py-ipaddr \
-			sysutils/libvirt-python \
-			textproc/libxml,-python \
-			www/py-requests \
+			sysutils/libvirt-python${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR} \
 			x11/gtk-vnc \
+			x11/gtksourceview4 \
 			x11/spice-gtk
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
 
-NO_BUILD=		Yes
-MODPY_BUILDDEP=		Yes
-
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-MODPY_ADJ_FILES=	virt-clone virt-convert virt-install virt-manager \
-			virt-xml
-
-MODPY_SETUP_ARGS =	--no-update-icon-cache \
+MODPY_SETUP_ARGS=	--no-update-icon-cache \
 			--no-compile-schemas
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/virtcli/cliconfig.py \
-		${WRKSRC}/virtinst/capabilities.py
+	${SUBST_CMD} ${WRKSRC}/virtinst/buildconfig.py
 
 do-test:
-	@${MODPY_TEST_TARGET}
+	${MODPY_TEST_TARGET} ${TEST_TARGET}
 
 .include <bsd.port.mk>

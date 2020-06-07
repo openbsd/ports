@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.8 2018/06/23 15:08:09 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.9 2020/06/07 16:01:39 ajacoutot Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -638,7 +638,7 @@ distutils.core.setup(
-          ["data/org.virt-manager.virt-manager.convert"]),
+@@ -686,7 +686,7 @@ distutils.core.setup(
+          ["data/org.virt-manager.virt-manager.gschema.xml"]),
          ("share/virt-manager/ui", glob.glob("ui/*.ui")),
  
 -        ("share/man/man1", [

@@ -1,0 +1,14 @@
+$OpenBSD: patch-virtinst_buildconfig_py,v 1.1 2020/06/07 16:01:39 ajacoutot Exp $
+
+Index: virtinst/buildconfig.py
+--- virtinst/buildconfig.py.orig
++++ virtinst/buildconfig.py
+@@ -62,7 +62,7 @@ class _BuildConfig(object):
+         self.icon_dir = None
+         self.gsettings_dir = None
+         self.running_from_srcdir = _running_from_srcdir
+-        self._set_paths_by_prefix(_get_param("prefix", "/usr"))
++        self._set_paths_by_prefix(_get_param("prefix", "${PREFIX}"))
+ 
+ 
+     def _set_paths_by_prefix(self, prefix):
