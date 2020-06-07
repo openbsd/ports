@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1981 2020/05/31 19:29:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.1982 2020/06/07 23:30:33 thfr Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -479,6 +479,7 @@
      SUBDIR += monotone
      SUBDIR += mowgli
      SUBDIR += mpfr
+     SUBDIR += msbuild
      SUBDIR += msgpack
      SUBDIR += msp430
      SUBDIR += mspdebug
