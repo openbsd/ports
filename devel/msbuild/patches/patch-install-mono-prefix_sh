@@ -1,0 +1,13 @@
+$OpenBSD: patch-install-mono-prefix_sh,v 1.1.1.1 2020/06/07 23:28:15 thfr Exp $
+
+disable color output
+
+Index: install-mono-prefix.sh
+--- install-mono-prefix.sh.orig
++++ install-mono-prefix.sh
+@@ -16,4 +16,4 @@ fi
+ 
+ MONO_PREFIX=$1
+ 
+-msbuild mono/build/install.proj /p:MonoInstallPrefix=$MONO_PREFIX /p:Configuration=$CONFIG
++msbuild mono/build/install.proj /clp:DisableConsoleColor /p:DESTDIR=$DESTDIR /p:MonoInstallPrefix=$MONO_PREFIX /p:Configuration=$CONFIG

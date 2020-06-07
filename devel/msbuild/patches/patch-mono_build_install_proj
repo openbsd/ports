@@ -1,0 +1,23 @@
+$OpenBSD: patch-mono_build_install_proj,v 1.1.1.1 2020/06/07 23:28:15 thfr Exp $
+
+fix man path
+fix wrapper path
+
+Index: mono/build/install.proj
+--- mono/build/install.proj.orig
++++ mono/build/install.proj
+@@ -134,12 +134,12 @@
+             WorkingDirectory="$(MSBuildInstallBinDir)"
+             Command="ln -s Roslyn/System.Reflection.Metadata.dll System.Reflection.Metadata.dll" />
+ 
+-        <Exec Command="$(RepoRoot)\mono\build\gen_msbuild_wrapper.sh $(MonoInstallPrefix) $(MonoInstallPrefix)\bin" />
++        <Exec Command="$(RepoRoot)\mono\build\gen_msbuild_wrapper.sh ${TRUEPREFIX} $(MonoInstallPrefix)\bin" />
+         <ItemGroup>
+             <CopiedFiles Include="$(MonoInstallPrefix)\bin\msbuild" />
+         </ItemGroup>
+ 
+-        <Copy SourceFiles="$(RepoRoot)\mono\msbuild.1" DestinationFolder="$(MonoInstallPrefix)\share\man\man1">
++        <Copy SourceFiles="$(RepoRoot)\mono\msbuild.1" DestinationFolder="$(MonoInstallPrefix)\man\man1">
+             <Output TaskParameter="CopiedFiles" ItemName="CopiedFiles" />
+         </Copy>
+ 

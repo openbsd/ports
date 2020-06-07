@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Build_OM_UnitTests_Definition_ProjectCollection_Tests_cs,v 1.1.1.1 2020/06/07 23:28:15 thfr Exp $
+
+Index: src/Build.OM.UnitTests/Definition/ProjectCollection_Tests.cs
+--- src/Build.OM.UnitTests/Definition/ProjectCollection_Tests.cs.orig
++++ src/Build.OM.UnitTests/Definition/ProjectCollection_Tests.cs
+@@ -1427,6 +1427,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
+             Assert.True(dirtyRaised);
+         }
+ 
++#if THISASSEMBLY
+         /// <summary>
+         /// Verifies that the <see cref="ProjectCollection.Version"/> is correct.
+         /// </summary>
+@@ -1442,6 +1443,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
+             ProjectCollection.Version.Major.ShouldBe(expectedVersion.Major);
+             ProjectCollection.Version.Minor.ShouldBe(expectedVersion.Minor);
+         }
++#endif
+ 
+         /// <summary>
+         /// Create an empty project file and return the path

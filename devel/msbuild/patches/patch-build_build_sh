@@ -1,0 +1,34 @@
+$OpenBSD: patch-build_build_sh,v 1.1.1.1 2020/06/07 23:28:15 thfr Exp $
+
+disable colored output
+
+Index: build/build.sh
+--- build/build.sh.orig
++++ build/build.sh
+@@ -151,7 +151,7 @@ function ExitIfError {
+   then
+     echo "$2"
+ 
+-    if [[ "$ci" != "true" && "$dotnetBuildFromSource" != "true" ]]; # kill command not permitted on CI machines or in source-build
++    if [[ "$ci" != "true" && "$dotnetBuildFromSource" != "true" && "$hostType" != "mono" ]]; # kill command not permitted on CI machines or in source-build
+     then
+       StopProcesses
+     fi
+@@ -297,7 +297,7 @@ function InstallRepoToolset {
+   if [ ! -d "$RepoToolsetBuildProj" ]
+   then
+     ToolsetProj="$ScriptRoot/Toolset.proj"
+-    CallMSBuild $(QQ $ToolsetProj) /t:restore /m /clp:Summary /warnaserror /v:$verbosity $logCmd $properties
++    CallMSBuild $(QQ $ToolsetProj) /clp:DisableConsoleColor /t:restore /m /clp:Summary /warnaserror /v:$verbosity $logCmd $properties
+   fi
+ }
+ 
+@@ -343,7 +343,7 @@ function Build {
+ 
+   local logCmd=$(GetLogCmd Build)
+ 
+-  commonMSBuildArgs="/m /clp:Summary /v:$verbosity /p:Configuration=$configuration /p:SolutionPath=$(QQ $MSBuildSolution) /p:CIBuild=$ci /p:DisableNerdbankVersioning=$dotnetBuildFromSource"
++  commonMSBuildArgs="/m /clp:DisableConsoleColor /v:$verbosity /p:Configuration=$configuration /p:SolutionPath=$(QQ $MSBuildSolution) /p:CIBuild=$ci /p:DisableNerdbankVersioning=true"
+ 
+   # Only enable warnaserror on CI runs.
+   if $ci
