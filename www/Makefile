@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.963 2020/05/30 17:33:36 paco Exp $
+# $OpenBSD: Makefile,v 1.964 2020/06/07 23:29:33 thfr Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -66,6 +66,7 @@
      SUBDIR += icedtea-web
      SUBDIR += igal
      SUBDIR += igal2
+     SUBDIR += ipynb-py-convert
      SUBDIR += iridium
      SUBDIR += japana
      SUBDIR += jesred
