@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.230 2020/04/27 20:00:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.231 2020/06/07 16:08:17 ajacoutot Exp $
 
+# XXX never versions require pango>=1.45
 # XXX add support for libcloudproviders?
 
 PORTROACH=		skipv:3.90.0,3.92.1,3.93.0,3.94.0
