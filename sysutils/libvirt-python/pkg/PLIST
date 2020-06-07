@@ -1,12 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/11/19 22:31:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/07 15:59:18 ajacoutot Exp $
 @conflict libvirt-python-*
+@conflict py-libvirt-*
+@pkgpath sysutils/libvirt-python
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirt_lxc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirt_qemu.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirtaio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libvirt.py
-lib/python${MODPY_VERSION}/site-packages/libvirt.pyc
 lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.py
-lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.pyc
 lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.py
-lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.pyc
-lib/python${MODPY_VERSION}/site-packages/libvirtmod.so
-lib/python${MODPY_VERSION}/site-packages/libvirtmod_lxc.so
-lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.so
+lib/python${MODPY_VERSION}/site-packages/libvirtaio.py
+@so lib/python${MODPY_VERSION}/site-packages/libvirtmod.so
+@so lib/python${MODPY_VERSION}/site-packages/libvirtmod_lxc.so
+@so lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.so
