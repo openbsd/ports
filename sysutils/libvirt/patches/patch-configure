@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2020/06/07 15:57:11 ajacoutot Exp $
+
+ld: error: undefined symbol: _Unwind_Resume
+>>> referenced by glib-autocleanups.h:0 (/usr/local/include/glib-2.0/glib/glib-autocleanups.h:0)
+>>>               virt_admin-virt-admin.o:(cmdSrvList)
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -15930,7 +15930,6 @@ fi
+        wantwarn="$wantwarn -Wno-unused-command-line-argument"
+        ;;
+     esac
+-    wantwarn="$wantwarn -fexceptions"
+     wantwarn="$wantwarn -fasynchronous-unwind-tables"
+ 
+     # Need -fipa-pure-const in order to make -Wsuggest-attribute=pure

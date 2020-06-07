@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_rpc_virnettlscontext_c,v 1.1 2016/06/13 08:36:34 jasper Exp $
---- src/rpc/virnettlscontext.c.orig	Fri May 27 15:17:45 2016
-+++ src/rpc/virnettlscontext.c	Fri May 27 15:22:22 2016
-@@ -45,9 +45,15 @@
+$OpenBSD: patch-src_rpc_virnettlscontext_c,v 1.2 2020/06/07 15:57:11 ajacoutot Exp $
+
+Index: src/rpc/virnettlscontext.c
+--- src/rpc/virnettlscontext.c.orig
++++ src/rpc/virnettlscontext.c
+@@ -40,9 +40,15 @@
  
  #define DH_BITS 2048
  
