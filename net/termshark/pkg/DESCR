@@ -1,0 +1,6 @@
+Termshark is a terminal UI for tshark, inspired by Wireshark.
+
+- Read pcap files or sniff live interfaces
+- Use Wireshark's display filters
+- Reassemble TCP and UDP streams
+- View conversations by protocol
