@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/07 15:56:09 rsadowski Exp $
 
 COMMENT =	KDE software for music education
 DISTNAME =	minuet-${VERSION}
 CATEGORIES =	audio education
+REVISION =	0
 
 HOMEPAGE =	https://minuet.kde.org/
 
@@ -17,8 +18,7 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 RUN_DEPENDS =	x11/qt5/qtquickcontrols
