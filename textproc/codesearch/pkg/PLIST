@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/07 08:06:42 sthen Exp $
+@bin bin/cgrep
+@bin bin/cindex
+@bin bin/csearch
