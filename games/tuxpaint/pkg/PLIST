@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/06/06 10:13:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/06/07 11:41:05 ajacoutot Exp $
 bin/tp-magic-config
 @bin bin/tuxpaint
 bin/tuxpaint-import
@@ -56,6 +56,7 @@ lib/tuxpaint/plugins/
 @man man/man1/tuxpaint-import.1
 @man man/man1/tuxpaint.1
 share/applications/tuxpaint.desktop
+share/bash-completion/completions/tuxpaint
 share/doc/tuxpaint/
 share/doc/tuxpaint/AUTHORS.txt
 share/doc/tuxpaint/CHANGES.txt
@@ -469,12 +470,16 @@ share/doc/tuxpaint/zh_tw/mkTuxpaintIM.py
 share/doc/tuxpaint/zh_tw/phone.cin
 share/examples/tuxpaint/
 @sample ${SYSCONFDIR}/tuxpaint/
-share/examples/tuxpaint/bash_completion.d/
-@sample ${SYSCONFDIR}/tuxpaint/bash_completion.d/
-share/examples/tuxpaint/bash_completion.d/tuxpaint
-@sample ${SYSCONFDIR}/bash_completion.d/tuxpaint
 share/examples/tuxpaint/tuxpaint.conf
 @sample ${SYSCONFDIR}/tuxpaint/tuxpaint.conf
+share/icons/hicolor/128x128/apps/tux4kids-tuxpaint.png
+share/icons/hicolor/16x16/apps/tux4kids-tuxpaint.png
+share/icons/hicolor/192x192/apps/tux4kids-tuxpaint.png
+share/icons/hicolor/22x22/apps/tux4kids-tuxpaint.png
+share/icons/hicolor/32x32/apps/tux4kids-tuxpaint.png
+share/icons/hicolor/48x48/apps/tux4kids-tuxpaint.png
+share/icons/hicolor/64x64/apps/tux4kids-tuxpaint.png
+share/icons/hicolor/96x96/apps/tux4kids-tuxpaint.png
 share/locale/ach/
 share/locale/ach/LC_MESSAGES/
 share/locale/ach/LC_MESSAGES/tuxpaint.mo
@@ -1278,3 +1283,4 @@ share/tuxpaint/templates/trees_above.jpg
 share/tuxpaint/templates/trees_at_dusk.jpg
 share/tuxpaint/templates/wool_mill_machine.jpg
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

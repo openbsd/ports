@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2020/06/06 10:13:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2020/06/07 11:41:05 ajacoutot Exp $
 
 COMMENT=		drawing program for children
 
 DISTNAME=		tuxpaint-0.9.24
+REVISION=		0
+
 CATEGORIES=		games graphics
 
 HOMEPAGE=		http://www.tuxpaint.org/
@@ -31,7 +33,7 @@ LIB_DEPENDS=		devel/sdl-image \
 			x11/gnome/librsvg
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			graphics/netpbm
+			x11/gtk+3,-guic
 
 USE_GMAKE=		Yes
 
@@ -40,9 +42,9 @@ MAKE_ENV=		linux_ARCH_CFLAGS="${CFLAGS} -DHAVE_STRCASESTR \
 
 NO_TEST=		Yes
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 pre-configure:
-	ln -sf /usr/bin/true ${WRKDIR}/bin/kbuildsycoca4
-	sed -i 's,@\$$\(CC\),\$$\(CC\),g' ${WRKSRC}/Makefile
 	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/src/manpage/tuxpaint.1
 
 .include <bsd.port.mk>
