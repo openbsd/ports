@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/07 12:47:39 martin Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/07 11:26:07 martin Exp $
 
-V =		1.18.1
+V =		1.19.0
 COMMENT =	blocking, shuffling, fast and lossless compression library
 PKGNAME =	blosc-${V}
 CATEGORIES =	archivers
