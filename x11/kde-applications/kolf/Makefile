@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/03 05:13:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/07 14:49:59 rsadowski Exp $
 
 COMMENT =	miniature golf
 DISTNAME =	kolf-${VERSION}
 CATEGORIES =	games
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.kde.org/applications/games/kolf
 
@@ -23,8 +23,7 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
 		devel/kf5/kitemviews \
