@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 11:58:21 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/07 15:36:11 abieber Exp $
 @newgroup _go-ipfs:825
 @newuser _go-ipfs:825:825:daemon:IPFS Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/go_ipfs
@@ -10,4 +10,6 @@
 @owner
 @group
 @bin bin/ipfs
+@bin bin/ipfswatch
+@bin bin/seccat
 share/doc/pkg-readmes/${PKGSTEM}
