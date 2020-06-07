@@ -1,0 +1,7 @@
+Atom/Hydrogen or VSCode/Python allows creating a python files split into cells
+with # %% separators with the ability to run cells via backend Jupyter session
+and interactively show results back. ipynb-py-convert python module converts
+files: .ipynb to .py and .py to .ipynb.
+
+This can assist in version controlling ipynb projects, as .py doesn't include
+output data.

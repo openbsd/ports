@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/07 23:24:57 thfr Exp $
+bin/ipynb-py-convert
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert/
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ipynb_py_convert/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
