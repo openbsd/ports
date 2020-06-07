@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1207 2020/05/31 18:57:39 kili Exp $
+# $OpenBSD: Makefile,v 1.1208 2020/06/07 11:23:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -725,6 +725,7 @@
      SUBDIR += tcptraceroute
      SUBDIR += telegram-purple
      SUBDIR += telepathy
+     SUBDIR += termshark
      SUBDIR += thcrut
      SUBDIR += thingsd
      SUBDIR += tinc
