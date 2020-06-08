@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/11/23 18:10:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/06/08 16:46:10 ajacoutot Exp $
 include/babl-${API_VERSION}/
 include/babl-${API_VERSION}/babl/
 include/babl-${API_VERSION}/babl/babl-introspect.h
@@ -41,3 +41,7 @@ lib/girepository-1.0/Babl-${API_VERSION}.typelib
 lib/pkgconfig/babl.pc
 share/gir-1.0/
 share/gir-1.0/Babl-${API_VERSION}.gir
+share/vala/
+share/vala/vapi/
+share/vala/vapi/babl-${API_VERSION}.deps
+share/vala/vapi/babl-${API_VERSION}.vapi
