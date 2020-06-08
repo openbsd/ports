@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/22 07:02:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2020/06/08 11:05:59 jasper Exp $
 
     SUBDIR =
     SUBDIR += core
@@ -8,6 +8,5 @@
     SUBDIR += plugins-good
     SUBDIR += plugins-ugly
     SUBDIR += plugins-bad
-    SUBDIR += py-gstreamer
 
 .include <bsd.port.subdir.mk>
