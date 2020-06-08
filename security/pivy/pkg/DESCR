@@ -1,0 +1,9 @@
+Pivy is an implementation of a simple PIV client with minimal dependencies.
+It contains a pivy-tool binary which can conduct basic operations using
+PIV cards, and the pivy-agent, which implements the SSH agent protocol as
+a drop-in replacement for the OpenSSH ssh-agent command (except that the
+keys it contains are always on a PIV card).
+
+"PIV cards" notably includes Yubico Yubikey devices such as the NEO and
+Yubikey4, which can store up to 24 keys by using the "retired key" slots
+(which this agent supports).
