@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.4 2020/01/13 19:59:26 rsadowski Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2020/06/08 20:32:55 rsadowski Exp $
 
 We already uses PIE as default. Unbreak with lld
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -761,7 +761,6 @@ if test x$use_hardening != xno; then
+@@ -748,7 +748,6 @@ if test x$use_hardening != xno; then
    AX_CHECK_LINK_FLAG([[-Wl,--high-entropy-va]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,--high-entropy-va"])
    AX_CHECK_LINK_FLAG([[-Wl,-z,relro]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,relro"])
    AX_CHECK_LINK_FLAG([[-Wl,-z,now]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,now"])
