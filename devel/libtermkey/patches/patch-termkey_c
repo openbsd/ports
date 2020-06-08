@@ -1,0 +1,17 @@
+$OpenBSD: patch-termkey_c,v 1.1 2020/06/08 21:07:17 edd Exp $
+
+unibi_from_term requires term to be non-NULL
+
+Index: termkey.c
+--- termkey.c.orig
++++ termkey.c
+@@ -420,6 +420,9 @@ TermKey *termkey_new(int fd, int flags)
+   termkey_set_flags(tk, flags);
+ 
+   const char *term = getenv("TERM");
++  if (!term) {
++	  term = "xterm";
++  }
+ 
+   if(!termkey_init(tk, term))
+     goto abort;

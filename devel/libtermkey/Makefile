@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/08 21:07:16 edd Exp $
 
 COMMENT =	library for processing of keyboard entry from a terminal
-DISTNAME =	libtermkey-0.20
-REVISION =	0
+DISTNAME =	libtermkey-0.22
 
-SHARED_LIBS +=	termkey		0.1 # 15.0
+SHARED_LIBS +=	termkey		0.2 # 15.2
 
 CATEGORIES =	devel
 HOMEPAGE =	http://www.leonerd.org.uk/code/libtermkey/

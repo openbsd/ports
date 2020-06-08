@@ -1,11 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2017/01/19 20:34:04 edd Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/06/08 21:07:17 edd Exp $
 
 Don't compresss manuals and remove odd symlinking scheme to alias man pages. As
 it happens mandoc is clever enough to figure out the aliases.
 
---- Makefile.orig	Fri Dec 16 16:08:07 2016
-+++ Makefile	Tue Jan 17 23:15:29 2017
-@@ -120,12 +120,9 @@ install-man:
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -122,12 +122,9 @@ install-man:
  	install -d $(DESTDIR)$(MAN3DIR)
  	install -d $(DESTDIR)$(MAN7DIR)
  	for F in man/*.3; do \
