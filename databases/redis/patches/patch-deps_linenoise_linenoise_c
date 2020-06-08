@@ -1,12 +1,15 @@
-$OpenBSD: patch-deps_linenoise_linenoise_c,v 1.1 2020/02/11 08:11:13 tb Exp $
+$OpenBSD: patch-deps_linenoise_linenoise_c,v 1.2 2020/06/08 07:32:47 tb Exp $
 
 Fix an occurrence where char is considered signed on all platforms,
 it's not the case on powerpc and arm.
 
+https://github.com/antirez/redis/pull/7132
+https://github.com/antirez/linenoise/pull/188
+
 Index: deps/linenoise/linenoise.c
 --- deps/linenoise/linenoise.c.orig
 +++ deps/linenoise/linenoise.c
-@@ -793,7 +793,7 @@ static int linenoiseEdit(int stdin_fd, int stdout_fd, 
+@@ -819,7 +819,7 @@ static int linenoiseEdit(int stdin_fd, int stdout_fd, 
  
      if (write(l.ofd,prompt,l.plen) == -1) return -1;
      while(1) {

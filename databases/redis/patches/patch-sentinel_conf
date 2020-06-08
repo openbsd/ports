@@ -1,4 +1,4 @@
-$OpenBSD: patch-sentinel_conf,v 1.7 2020/02/11 08:11:13 tb Exp $
+$OpenBSD: patch-sentinel_conf,v 1.8 2020/06/08 07:32:47 tb Exp $
 Index: sentinel.conf
 --- sentinel.conf.orig
 +++ sentinel.conf
@@ -20,7 +20,7 @@ Index: sentinel.conf
  
  # Specify the log file name. Also the empty string can be used to force
  # Sentinel to log on the standard output. Note that if you use standard
-@@ -182,7 +182,7 @@ sentinel failover-timeout mymaster 180000
+@@ -202,7 +202,7 @@ sentinel failover-timeout mymaster 180000
  #
  # Example:
  #
@@ -29,7 +29,7 @@ Index: sentinel.conf
  
  # CLIENTS RECONFIGURATION SCRIPT
  #
-@@ -207,7 +207,7 @@ sentinel failover-timeout mymaster 180000
+@@ -227,7 +227,7 @@ sentinel failover-timeout mymaster 180000
  #
  # Example:
  #

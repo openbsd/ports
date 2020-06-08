@@ -1,22 +1,13 @@
-$OpenBSD: patch-src_server_h,v 1.4 2020/02/11 08:11:13 tb Exp $
+$OpenBSD: patch-src_server_h,v 1.5 2020/06/08 07:32:47 tb Exp $
 Index: src/server.h
 --- src/server.h.orig
 +++ src/server.h
-@@ -101,7 +101,7 @@ typedef long long ustime_t; /* microsecond time type. 
- #define AOF_READ_DIFF_INTERVAL_BYTES (1024*10)
- #define CONFIG_DEFAULT_SLOWLOG_LOG_SLOWER_THAN 10000
- #define CONFIG_DEFAULT_SLOWLOG_MAX_LEN 128
--#define CONFIG_DEFAULT_MAX_CLIENTS 10000
-+#define CONFIG_DEFAULT_MAX_CLIENTS 96
- #define CONFIG_AUTHPASS_MAX_LEN 512
- #define CONFIG_DEFAULT_SLAVE_PRIORITY 100
- #define CONFIG_DEFAULT_REPL_TIMEOUT 60
-@@ -112,7 +112,7 @@ typedef long long ustime_t; /* microsecond time type. 
- #define CONFIG_DEFAULT_REPL_BACKLOG_TIME_LIMIT (60*60)  /* 1 hour */
+@@ -106,7 +106,7 @@ typedef long long ustime_t; /* microsecond time type. 
+ #define RDB_EOF_MARK_SIZE 40
  #define CONFIG_REPL_BACKLOG_MIN_SIZE (1024*16)          /* 16k */
  #define CONFIG_BGSAVE_RETRY_DELAY 5 /* Wait a few secs before trying again. */
 -#define CONFIG_DEFAULT_PID_FILE "/var/run/redis.pid"
 +#define CONFIG_DEFAULT_PID_FILE "/var/run/redis/redis.pid"
- #define CONFIG_DEFAULT_SYSLOG_IDENT "redis"
  #define CONFIG_DEFAULT_CLUSTER_CONFIG_FILE "nodes.conf"
- #define CONFIG_DEFAULT_CLUSTER_ANNOUNCE_IP NULL         /* Auto detect. */
+ #define CONFIG_DEFAULT_UNIX_SOCKET_PERM 0
+ #define CONFIG_DEFAULT_LOGFILE ""

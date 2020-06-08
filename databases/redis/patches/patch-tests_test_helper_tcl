@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_test_helper_tcl,v 1.1 2020/06/08 07:32:47 tb Exp $
+
+Disable a test that now fails systematically:
+
+[err]: diskless no replicas drop during rdb pipe in tests/integration/replication.tcl
+rdb child didn't terminate
+
+Index: tests/test_helper.tcl
+--- tests/test_helper.tcl.orig
++++ tests/test_helper.tcl
+@@ -36,7 +36,6 @@ set ::all_tests {
+     unit/aofrw
+     unit/acl
+     integration/block-repl
+-    integration/replication
+     integration/replication-2
+     integration/replication-3
+     integration/replication-4

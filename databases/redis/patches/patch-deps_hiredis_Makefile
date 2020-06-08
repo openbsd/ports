@@ -1,13 +1,22 @@
-$OpenBSD: patch-deps_hiredis_Makefile,v 1.8 2018/04/24 14:35:29 kn Exp $
+$OpenBSD: patch-deps_hiredis_Makefile,v 1.9 2020/06/08 07:32:47 tb Exp $
 Index: deps/hiredis/Makefile
 --- deps/hiredis/Makefile.orig
 +++ deps/hiredis/Makefile
-@@ -181,7 +181,7 @@ $(PKGCONFNAME): hiredis.h
- 	@echo Cflags: -I\$${includedir} -D_FILE_OFFSET_BITS=64 >> $@
+@@ -71,7 +71,7 @@ ifeq ($(USE_SSL),1)
+   CFLAGS+=-DHIREDIS_TEST_SSL
+ endif
+ 
+-ifeq ($(uname_S),Linux)
++ifneq (,filter Linux OpenBSD,$(uname_S))
+   SSL_LDFLAGS=-lssl -lcrypto
+ else
+   OPENSSL_PREFIX?=/usr/local/opt/openssl
+@@ -236,7 +236,7 @@ $(SSL_PKGCONFNAME): hiredis.h
+ 	@echo Libs.private: -lssl -lcrypto >> $@
  
  install: $(DYLIBNAME) $(STLIBNAME) $(PKGCONFNAME)
--	mkdir -p $(INSTALL_INCLUDE_PATH) $(INSTALL_LIBRARY_PATH)
-+	$(INSTALL_DIR) $(INSTALL_INCLUDE_PATH) $(INSTALL_LIBRARY_PATH)
- 	$(INSTALL) hiredis.h async.h read.h sds.h adapters $(INSTALL_INCLUDE_PATH)
+-	mkdir -p $(INSTALL_INCLUDE_PATH) $(INSTALL_INCLUDE_PATH)/adapters $(INSTALL_LIBRARY_PATH)
++	$(INSTALL_DIR) $(INSTALL_INCLUDE_PATH) $(INSTALL_INCLUDE_PATH)/adapters $(INSTALL_LIBRARY_PATH)
+ 	$(INSTALL) hiredis.h async.h read.h sds.h $(INSTALL_INCLUDE_PATH)
+ 	$(INSTALL) adapters/*.h $(INSTALL_INCLUDE_PATH)/adapters
  	$(INSTALL) $(DYLIBNAME) $(INSTALL_LIBRARY_PATH)/$(DYLIB_MINOR_NAME)
- 	cd $(INSTALL_LIBRARY_PATH) && ln -sf $(DYLIB_MINOR_NAME) $(DYLIBNAME)

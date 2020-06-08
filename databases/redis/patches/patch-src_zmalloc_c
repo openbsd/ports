@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_zmalloc_c,v 1.1 2020/02/11 08:11:13 tb Exp $
+$OpenBSD: patch-src_zmalloc_c,v 1.2 2020/06/08 07:32:47 tb Exp $
 
 zmalloc_size() returns a lie based on the following assumption:
 
@@ -50,12 +50,13 @@ Index: src/zmalloc.c
      if (!ptr) zmalloc_oom_handler(size);
  #ifdef HAVE_MALLOC_SIZE
      update_zmalloc_stat_alloc(zmalloc_size(ptr));
-@@ -147,6 +160,8 @@ void *zrealloc(void *ptr, size_t size) {
- #endif
-     size_t oldsize;
-     void *newptr;
+@@ -152,6 +165,9 @@ void *zrealloc(void *ptr, size_t size) {
+         zfree(ptr);
+         return NULL;
+     }
 +
 +    size = zmalloc_roundsize(size);
- 
++
      if (ptr == NULL) return zmalloc(size);
  #ifdef HAVE_MALLOC_SIZE
+     oldsize = zmalloc_size(ptr);

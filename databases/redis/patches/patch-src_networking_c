@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_networking_c,v 1.1 2020/03/17 04:51:28 tb Exp $
+$OpenBSD: patch-src_networking_c,v 1.2 2020/06/08 07:32:47 tb Exp $
+
+time_t is long long, so use llabs to avoid truncation
 
 Index: src/networking.c
 --- src/networking.c.orig
 +++ src/networking.c
-@@ -1939,7 +1939,7 @@ void securityWarningCommand(client *c) {
+@@ -2554,7 +2554,7 @@ void securityWarningCommand(client *c) {
      static time_t logged_time;
      time_t now = time(NULL);
  
