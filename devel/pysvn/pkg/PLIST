@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/29 13:47:53 stsp Exp $
-lib/python${MODPY_VERSION}/site-packages/pysvn/
-lib/python${MODPY_VERSION}/site-packages/pysvn/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pysvn/_pysvn_${_PYSVN_PYVERSION}.so
