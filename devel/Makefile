@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1982 2020/06/07 23:30:33 thfr Exp $
+# $OpenBSD: Makefile,v 1.1983 2020/06/08 10:58:19 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1546,6 +1546,8 @@
      SUBDIR += py-more-itertools
      SUBDIR += py-more-itertools,python3
      SUBDIR += py-mox
+     SUBDIR += py-mox3
+     SUBDIR += py-mox3,python3
      SUBDIR += py-mulpyplexer
      SUBDIR += py-mulpyplexer,python3
      SUBDIR += py-munch
