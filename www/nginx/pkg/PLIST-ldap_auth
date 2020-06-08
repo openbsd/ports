@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-ldap_auth,v 1.1 2018/09/28 14:36:17 sthen Exp $
-ngx_http_auth_ldap_module.so
+@comment $OpenBSD: PLIST-ldap_auth,v 1.2 2020/06/08 06:03:50 landry Exp $
+@so ngx_http_auth_ldap_module.so

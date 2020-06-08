@@ -2,8 +2,8 @@ SHA256 (headers-more-nginx-module-v0.33.tar.gz) = o9y6sRepwQO8HqUgD8AKe30q+X/3/V
 SHA256 (lua-nginx-module-v0.10.11.tar.gz) = wPuR/P0cbn3sNMpkgm74H/66/e9hdNJURnY284BWZiY=
 SHA256 (naxsi-0.55.3.tar.gz) = CzyV0lB3Lcia2LSeR8HgJMWuLHbAz/pEXp/gXE3RNJU=
 SHA256 (nginx-1.16.1-chroot.patch) = ohNkspocgL7QnBX7q8Kgv2lgrN0ndgLKd0v5nSCLQRU=
-SHA256 (nginx-1.16.1.tar.gz) = 8RwqbdHTUVc28DJIV5V9st6YvoYkYbWlQqOsYYjb4ys=
-SHA256 (nginx-auth-ldap-42d195d7a7575ebab1c369ad3fc5d78dc2c2669c.tar.gz) = gNbM6amHfVHewvhaEc580l7b0tYFwovChofsxWlSKe4=
+SHA256 (nginx-1.18.0.tar.gz) = TDc+erW/kdNKTxGgyUllYQYbpe7mAg2ycqF6cijTX5k=
+SHA256 (nginx-auth-ldap-83c059b73566c2ee9cbda920d91b66657cf120b7.tar.gz) = aQxOW9sq4ZsP7nXNNW0YATRo20cmFrYJeloLvjRshGQ=
 SHA256 (nginx-rtmp-module-v1.2.1.tar.gz) = h6pZdACwtaBSdO4tI9jLgiThJoYiegq+MdeDs6ZF6jc=
 SHA256 (ngx_devel_kit-v0.3.0.tar.gz) = iOBamainQZBm9a51lm+x78QJutRSLRSYbaB0VUrmFhk=
 SHA256 (ngx_http_geoip2_module-3.3.tar.gz) = QTeEOMgz4xOhiGnQxKcnBLSDXDCsr3/WgBOrZzL/eKc=
@@ -11,8 +11,8 @@ SIZE (headers-more-nginx-module-v0.33.tar.gz) = 28130
 SIZE (lua-nginx-module-v0.10.11.tar.gz) = 616653
 SIZE (naxsi-0.55.3.tar.gz) = 187416
 SIZE (nginx-1.16.1-chroot.patch) = 8220
-SIZE (nginx-1.16.1.tar.gz) = 1032630
-SIZE (nginx-auth-ldap-42d195d7a7575ebab1c369ad3fc5d78dc2c2669c.tar.gz) = 18457
+SIZE (nginx-1.18.0.tar.gz) = 1039530
+SIZE (nginx-auth-ldap-83c059b73566c2ee9cbda920d91b66657cf120b7.tar.gz) = 18542
 SIZE (nginx-rtmp-module-v1.2.1.tar.gz) = 519919
 SIZE (ngx_devel_kit-v0.3.0.tar.gz) = 66455
 SIZE (ngx_http_geoip2_module-3.3.tar.gz) = 8509

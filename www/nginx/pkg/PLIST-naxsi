@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-naxsi,v 1.2 2019/04/25 14:56:32 landry Exp $
+@comment $OpenBSD: PLIST-naxsi,v 1.3 2020/06/08 06:03:51 landry Exp $
 share/nginx/naxsi_core.rules
 @sample ${SYSCONFDIR}/nginx/naxsi_core.rules
 @cwd ${NGINX_DIR}/modules
-ngx_http_naxsi_module.so
+@so ngx_http_naxsi_module.so

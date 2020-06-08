@@ -1,10 +1,11 @@
-$OpenBSD: patch-man_nginx_8,v 1.4 2015/06/19 05:41:35 robert Exp $
---- man/nginx.8.orig	Tue Jun 16 10:49:41 2015
-+++ man/nginx.8	Tue Jun 16 19:38:14 2015
-@@ -91,6 +91,23 @@ referenced in the configuration file.
- Same as
- .Fl t ,
- but additionally dump configuration files to standard output.
+$OpenBSD: patch-man_nginx_8,v 1.5 2020/06/08 06:03:50 landry Exp $
+Index: man/nginx.8
+--- man/nginx.8.orig
++++ man/nginx.8
+@@ -92,6 +92,23 @@ Do not run, just test the configuration file.
+ .Nm
+ checks the configuration file syntax and then tries to open files
+ referenced in the configuration file.
 +.It Fl u
 +By default
 +.Nm

@@ -1,4 +1,4 @@
-$OpenBSD: patch-nginx-auth-ldap_ngx_http_auth_ldap_module_c,v 1.1 2018/09/28 14:36:16 sthen Exp $
+$OpenBSD: patch-nginx-auth-ldap_ngx_http_auth_ldap_module_c,v 1.2 2020/06/08 06:03:50 landry Exp $
 
 conn->sockaddr is NULL in ngx_http_auth_ldap_ssl_handshake_handler(),
 remove support for bare IPs with certs to workaround.
@@ -6,7 +6,7 @@ remove support for bare IPs with certs to workaround.
 Index: nginx-auth-ldap/ngx_http_auth_ldap_module.c
 --- nginx-auth-ldap/ngx_http_auth_ldap_module.c.orig
 +++ nginx-auth-ldap/ngx_http_auth_ldap_module.c
-@@ -1333,23 +1333,12 @@ ngx_http_auth_ldap_ssl_handshake_handler(ngx_connectio
+@@ -1337,23 +1337,12 @@ ngx_http_auth_ldap_ssl_handshake_handler(ngx_connectio
            char *hostname = c->server->ludpp->lud_host;
            addr_verified = X509_check_host(cert, hostname, 0, 0, 0);
  

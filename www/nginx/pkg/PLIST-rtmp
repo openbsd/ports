@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-rtmp,v 1.1 2019/08/25 12:22:04 solene Exp $
-ngx_rtmp_module.so
+@comment $OpenBSD: PLIST-rtmp,v 1.2 2020/06/08 06:03:51 landry Exp $
+@so ngx_rtmp_module.so
