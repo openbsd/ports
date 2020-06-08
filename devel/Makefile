@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1983 2020/06/08 10:58:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.1984 2020/06/08 11:19:22 stsp Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1772,7 +1772,6 @@
      SUBDIR += pylint
      SUBDIR += pylint,python3
      SUBDIR += pyrex
-     SUBDIR += pysvn
      SUBDIR += pyusb
      SUBDIR += qbs
      SUBDIR += qgit
