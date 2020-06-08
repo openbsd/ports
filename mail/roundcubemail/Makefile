@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.151 2020/06/08 08:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.152 2020/06/08 13:48:19 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
-V=		1.4.5
+V=		1.4.6
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-rc/rc/}
 EXTRACT_SUFX=	-complete.tar.gz
