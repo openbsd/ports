@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_defaults_inc_php,v 1.13 2020/01/03 11:29:59 sthen Exp $
+$OpenBSD: patch-config_defaults_inc_php,v 1.14 2020/06/08 08:46:08 sthen Exp $
 
 Index: config/defaults.inc.php
 --- config/defaults.inc.php.orig
 +++ config/defaults.inc.php
-@@ -792,10 +792,10 @@ $config['spellcheck_dictionary'] = false;
+@@ -796,10 +796,10 @@ $config['spellcheck_dictionary'] = false;
  // - 'pspell'  - requires the PHP Pspell module and aspell installed
  // - 'enchant' - requires the PHP Enchant module
  // - 'atd'     - install your own After the Deadline server or check with the people at http://www.afterthedeadline.com before using their API
