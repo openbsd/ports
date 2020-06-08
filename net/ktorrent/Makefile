@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2020/03/23 18:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.51 2020/06/08 19:41:52 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
-VERSION =	5.1.2
+VERSION =	5.2.0
 DISTNAME =	ktorrent-${VERSION}
-REVISION =	1
 
-SHARED_LIBS +=  ktcore                    1.0 # 0.0
+SHARED_LIBS +=  ktcore                    1.1 # 0.0
 
 CATEGORIES =	net
 
@@ -23,11 +22,12 @@ WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5DNSSD KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
 WANTLIB += KF5KrossCore KF5Notifications KF5NotifyConfig KF5Parts
-WANTLIB += KF5Plotting KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5Torrent KF5WebKit KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5Plotting KF5Service KF5Solid KF5SonnetUi KF5Syndication
+WANTLIB += KF5TextWidgets KF5Torrent KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += c gcrypt gmp m tag
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5Script
+WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml c gcrypt gmp m tag
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/${VERSION}/}
 
@@ -51,7 +51,6 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kcrash \
 			devel/kf5/kdbusaddons \
-			devel/kf5/kdewebkit \
 			devel/kf5/kdnssd \
 			devel/kf5/ki18n \
 			devel/kf5/kiconthemes \
@@ -70,9 +69,13 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf5/kxmlgui \
 			devel/kf5/solid \
 			devel/kf5/sonnet \
-			net/libktorrent \
+			devel/kf5/syndication \
+			net/libktorrent>=2.2.0 \
+			x11/qt5/qtdeclarative \
+			x11/qt5/qtlocation \
 			x11/qt5/qtscript \
-			x11/qt5/qtwebkit
+			x11/qt5/qtwebchannel \
+			x11/qt5/qtwebengine
 
 .include <bsd.port.mk>
 

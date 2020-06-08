@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/01/09 04:34:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/06/08 19:41:52 rsadowski Exp $
 @conflict ktorrent-kde4-*
 @pkgpath net/ktorrent-kde4
 @bin bin/ktmagnetdownloader
@@ -17,55 +17,78 @@ lib/qt5/plugins/ktorrent/
 @so lib/qt5/plugins/ktorrent/ktorrent_scripting.so
 @so lib/qt5/plugins/ktorrent/ktorrent_search.so
 @so lib/qt5/plugins/ktorrent/ktorrent_stats.so
+@so lib/qt5/plugins/ktorrent/ktorrent_syndication.so
 @so lib/qt5/plugins/ktorrent/ktorrent_upnp.so
 @so lib/qt5/plugins/ktorrent/ktorrent_zeroconf.so
 share/applications/org.kde.ktorrent.desktop
+share/doc/HTML/
+share/doc/HTML/ca/
 share/doc/HTML/ca/ktorrent/
 share/doc/HTML/ca/ktorrent/index.cache.bz2
 share/doc/HTML/ca/ktorrent/index.docbook
+share/doc/HTML/de/
 share/doc/HTML/de/ktorrent/
 share/doc/HTML/de/ktorrent/index.cache.bz2
 share/doc/HTML/de/ktorrent/index.docbook
+share/doc/HTML/en/
 share/doc/HTML/en/ktorrent/
 share/doc/HTML/en/ktorrent/index.cache.bz2
 share/doc/HTML/en/ktorrent/index.docbook
+share/doc/HTML/es/
 share/doc/HTML/es/ktorrent/
 share/doc/HTML/es/ktorrent/index.cache.bz2
 share/doc/HTML/es/ktorrent/index.docbook
+share/doc/HTML/et/
 share/doc/HTML/et/ktorrent/
 share/doc/HTML/et/ktorrent/index.cache.bz2
 share/doc/HTML/et/ktorrent/index.docbook
+share/doc/HTML/fr/
 share/doc/HTML/fr/ktorrent/
 share/doc/HTML/fr/ktorrent/index.cache.bz2
 share/doc/HTML/fr/ktorrent/index.docbook
+share/doc/HTML/it/
 share/doc/HTML/it/ktorrent/
 share/doc/HTML/it/ktorrent/index.cache.bz2
 share/doc/HTML/it/ktorrent/index.docbook
+share/doc/HTML/nl/
 share/doc/HTML/nl/ktorrent/
 share/doc/HTML/nl/ktorrent/index.cache.bz2
 share/doc/HTML/nl/ktorrent/index.docbook
+share/doc/HTML/pt/
 share/doc/HTML/pt/ktorrent/
 share/doc/HTML/pt/ktorrent/index.cache.bz2
 share/doc/HTML/pt/ktorrent/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/ktorrent/
 share/doc/HTML/pt_BR/ktorrent/index.cache.bz2
 share/doc/HTML/pt_BR/ktorrent/index.docbook
+share/doc/HTML/ru/
 share/doc/HTML/ru/ktorrent/
 share/doc/HTML/ru/ktorrent/index.cache.bz2
 share/doc/HTML/ru/ktorrent/index.docbook
+share/doc/HTML/sv/
 share/doc/HTML/sv/ktorrent/
 share/doc/HTML/sv/ktorrent/index.cache.bz2
 share/doc/HTML/sv/ktorrent/index.docbook
+share/doc/HTML/uk/
 share/doc/HTML/uk/ktorrent/
 share/doc/HTML/uk/ktorrent/index.cache.bz2
 share/doc/HTML/uk/ktorrent/index.docbook
 share/icons/hicolor/128x128/apps/ktorrent.png
+share/icons/hicolor/16x16/actions/kt-add-feeds.png
+share/icons/hicolor/16x16/actions/kt-add-filters.png
+share/icons/hicolor/16x16/actions/kt-remove-feeds.png
+share/icons/hicolor/16x16/actions/kt-remove-filters.png
 share/icons/hicolor/16x16/actions/kt-stop-all.png
 share/icons/hicolor/16x16/actions/kt-stop.png
 share/icons/hicolor/16x16/actions/kt-upnp.png
 share/icons/hicolor/16x16/apps/ktorrent.png
+share/icons/hicolor/22x22/actions/kt-add-feeds.png
+share/icons/hicolor/22x22/actions/kt-add-filters.png
 share/icons/hicolor/22x22/actions/kt-magnet.png
 share/icons/hicolor/22x22/actions/kt-pause.png
+share/icons/hicolor/22x22/actions/kt-remove-feeds.png
+share/icons/hicolor/22x22/actions/kt-remove-filters.png
 share/icons/hicolor/22x22/actions/kt-remove.png
 share/icons/hicolor/22x22/actions/kt-set-max-download-speed.png
 share/icons/hicolor/22x22/actions/kt-set-max-upload-speed.png
@@ -75,10 +98,14 @@ share/icons/hicolor/22x22/actions/kt-start.png
 share/icons/hicolor/22x22/actions/kt-stop-all.png
 share/icons/hicolor/22x22/actions/kt-stop.png
 share/icons/hicolor/22x22/apps/ktorrent.png
+share/icons/hicolor/32x32/actions/kt-add-feeds.png
+share/icons/hicolor/32x32/actions/kt-add-filters.png
 share/icons/hicolor/32x32/actions/kt-info-widget.png
 share/icons/hicolor/32x32/actions/kt-magnet.png
 share/icons/hicolor/32x32/actions/kt-pause.png
 share/icons/hicolor/32x32/actions/kt-queue-manager.png
+share/icons/hicolor/32x32/actions/kt-remove-feeds.png
+share/icons/hicolor/32x32/actions/kt-remove-filters.png
 share/icons/hicolor/32x32/actions/kt-remove.png
 share/icons/hicolor/32x32/actions/kt-set-max-download-speed.png
 share/icons/hicolor/32x32/actions/kt-set-max-upload-speed.png
@@ -117,6 +144,7 @@ share/icons/hicolor/scalable/actions/kt-magnet.svgz
 share/icons/hicolor/scalable/actions/kt-set-max-download-speed.svgz
 share/icons/hicolor/scalable/actions/kt-set-max-upload-speed.svgz
 share/icons/hicolor/scalable/actions/kt-speed-limits.svgz
+share/knotifications5/
 share/knotifications5/ktorrent.notifyrc
 share/ktorrent/
 share/ktorrent/opensearch/
@@ -172,10 +200,10 @@ share/kxmlgui5/ktorrent/ktorrent_magnetgeneratorui.rc
 share/kxmlgui5/ktorrent/ktorrent_mediaplayerui.rc
 share/kxmlgui5/ktorrent/ktorrent_scriptingui.rc
 share/kxmlgui5/ktorrent/ktorrent_searchui.rc
+share/kxmlgui5/ktorrent/ktorrent_syndicationui.rc
 share/kxmlgui5/ktorrent/ktorrentui.rc
 share/kxmlgui5/ktorrent/kttorrentactivityui.rc
 share/locale/ar/LC_MESSAGES/ktorrent.mo
-share/locale/ast/LC_MESSAGES/ktorrent.mo
 share/locale/be/LC_MESSAGES/ktorrent.mo
 share/locale/bg/LC_MESSAGES/ktorrent.mo
 share/locale/bs/LC_MESSAGES/ktorrent.mo
@@ -196,6 +224,8 @@ share/locale/ga/LC_MESSAGES/ktorrent.mo
 share/locale/gl/LC_MESSAGES/ktorrent.mo
 share/locale/he/LC_MESSAGES/ktorrent.mo
 share/locale/hi/LC_MESSAGES/ktorrent.mo
+share/locale/hne/
+share/locale/hne/LC_MESSAGES/
 share/locale/hne/LC_MESSAGES/ktorrent.mo
 share/locale/hr/LC_MESSAGES/ktorrent.mo
 share/locale/hu/LC_MESSAGES/ktorrent.mo
