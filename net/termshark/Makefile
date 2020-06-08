@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/07 11:22:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/08 19:37:35 kn Exp $
 
 COMMENT =	terminal UI for tshark, inspired by Wireshark
 
@@ -7,6 +7,9 @@ MODGO_MODNAME =	github.com/gcla/termshark
 MODGO_VERSION =	v1.0.0
 
 DISTNAME =	termshark-${MODGO_VERSION}
+REVISION =	0
+
+HOMEPAGE =	https://termshark.io
 
 CATEGORIES =	net
 
