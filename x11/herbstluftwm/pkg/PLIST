@@ -1,56 +1,56 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/01/04 00:25:47 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/08 03:18:15 bket Exp $
+@tag update-desktop-database
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/herbstluftwm/
 bin/dmenu_run_hlwm
 @bin bin/herbstclient
 @bin bin/herbstluftwm
 @man man/man1/herbstclient.1
 @man man/man1/herbstluftwm.1
 @man man/man7/herbstluftwm-tutorial.7
-share/applications/herbstluftwm.desktop
+share/bash-completion/completions/herbstclient
 share/doc/herbstluftwm/
 share/doc/herbstluftwm/BUGS
-share/doc/herbstluftwm/INSTALL
 share/doc/herbstluftwm/LICENSE
 share/doc/herbstluftwm/NEWS
-share/doc/herbstluftwm/herbstclient.html
-share/doc/herbstluftwm/herbstluftwm-tutorial.html
-share/doc/herbstluftwm/herbstluftwm.html
+share/doc/herbstluftwm/examples/
+share/doc/herbstluftwm/examples/README
+share/doc/herbstluftwm/examples/dmenu.sh
+share/doc/herbstluftwm/examples/dumpbeautify.sh
+share/doc/herbstluftwm/examples/exec_on_tag.sh
+share/doc/herbstluftwm/examples/execwith.sh
+share/doc/herbstluftwm/examples/float-maximize.sh
+share/doc/herbstluftwm/examples/floatmon.sh
+share/doc/herbstluftwm/examples/herbstcommander.sh
+share/doc/herbstluftwm/examples/keychain.sh
+share/doc/herbstluftwm/examples/lasttag.sh
+share/doc/herbstluftwm/examples/layout.sh
+share/doc/herbstluftwm/examples/loadstate.sh
+share/doc/herbstluftwm/examples/maximize.sh
+share/doc/herbstluftwm/examples/q3terminal.sh
+share/doc/herbstluftwm/examples/savestate.sh
+share/doc/herbstluftwm/examples/scratchpad.sh
+share/doc/herbstluftwm/examples/toggledualhead.sh
+share/doc/herbstluftwm/examples/windowmenu.sh
+share/doc/herbstluftwm/examples/wselect.sh
 share/examples/herbstluftwm/
-share/examples/herbstluftwm/README
-share/examples/herbstluftwm/bash_completion.d/
-@sample ${SYSCONFDIR}/bash_completion.d/
-share/examples/herbstluftwm/bash_completion.d/herbstclient-completion
-@sample ${SYSCONFDIR}/bash_completion.d/herbstclient-completion
-share/examples/herbstluftwm/dmenu.sh
-share/examples/herbstluftwm/dumpbeautify.sh
-share/examples/herbstluftwm/exec_on_tag.sh
-share/examples/herbstluftwm/execwith.sh
-share/examples/herbstluftwm/float-maximize.sh
-share/examples/herbstluftwm/floatmon.sh
-share/examples/herbstluftwm/herbstcommander.sh
-share/examples/herbstluftwm/keychain.sh
-share/examples/herbstluftwm/lasttag.sh
-share/examples/herbstluftwm/layout.sh
-share/examples/herbstluftwm/loadstate.sh
-share/examples/herbstluftwm/maximize.sh
-share/examples/herbstluftwm/q3terminal.sh
-share/examples/herbstluftwm/savestate.sh
-share/examples/herbstluftwm/scratchpad.sh
-share/examples/herbstluftwm/toggledualhead.sh
-share/examples/herbstluftwm/windowmenu.sh
-share/examples/herbstluftwm/wselect.sh
-share/examples/herbstluftwm/xdg/
-share/examples/herbstluftwm/xdg/herbstluftwm/
-@sample ${SYSCONFDIR}/xdg/herbstluftwm/
-share/examples/herbstluftwm/xdg/herbstluftwm/autostart
+share/examples/herbstluftwm/autostart
 @mode 755
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/autostart
-share/examples/herbstluftwm/xdg/herbstluftwm/panel.sh
+@mode
+share/examples/herbstluftwm/panel.sh
+@mode 755
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/panel.sh
-share/examples/herbstluftwm/xdg/herbstluftwm/restartpanels.sh
+@mode
+share/examples/herbstluftwm/restartpanels.sh
+@mode 755
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/restartpanels.sh
-share/examples/herbstluftwm/zsh/
-share/examples/herbstluftwm/zsh/functions/
-share/examples/herbstluftwm/zsh/functions/Completion/
-share/examples/herbstluftwm/zsh/functions/Completion/X/
-share/examples/herbstluftwm/zsh/functions/Completion/X/_herbstclient
-@tag update-desktop-database
+@mode
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/herbstclient.fish
+share/xsessions/
+share/xsessions/herbstluftwm.desktop
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_herbstclient

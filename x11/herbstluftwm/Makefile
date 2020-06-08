@@ -1,39 +1,53 @@
-# $OpenBSD: Makefile,v 1.15 2019/10/17 20:23:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2020/06/08 03:18:15 bket Exp $
 
-COMMENT =	manual tiling window manager
-DISTNAME =	herbstluftwm-0.7.2
-CATEGORIES =	x11
+COMMENT =		manual tiling window manager
+DISTNAME =		herbstluftwm-0.8.3
+CATEGORIES =		x11
 
-HOMEPAGE =	https://herbstluftwm.org/
+HOMEPAGE =		https://herbstluftwm.org/
+
+MAINTAINER =		Lucas <lucas@sexy.is>, \
+			Florian Viehweger <openbsd@out-of-creativity.de>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += X11 Xext Xinerama c glib-2.0 intl m pthread ${COMPILER_LIBCXX}
+WANTLIB +=		X11 Xext Xinerama Xrandr c m pthread ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://herbstluftwm.org/tarballs/
+MASTER_SITES =		https://herbstluftwm.org/tarballs/
 
 # c++11
-COMPILER =	base-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
-LIB_DEPENDS +=	devel/glib2
+MODULES +=		devel/cmake
 
-RUN_DEPENDS +=	devel/desktop-file-utils \
-		shells/bash \
-		x11/dzen2,-gadgets
+RUN_DEPENDS +=		devel/desktop-file-utils \
+			shells/bash \
+			x11/dmenu \
+			x11/dzen2,-gadgets
 
-CPPFLAGS +=	-I${LOCALBASE}/include
-USE_GMAKE =	Yes
-MAKE_FLAGS =	LDFLAGS= VERBOSE= COLOR=0 CC='${CC}' LDXX='${CXX}' CXX='${CXX}'
+# tarball already includes generated manpages
+# saves depend on asciidoc
+CONFIGURE_ARGS +=	-DWITH_DOCUMENTATION=NO
 
-BASEDIR =	${PREFIX}/share/examples/herbstluftwm
-FAKE_FLAGS =	SYSCONFDIR="${BASEDIR}" \
-		EXAMPLESDIR="${BASEDIR}" \
-		ZSHCOMPLETIONDIR="${BASEDIR}/zsh/functions/Completion/X" \
-		MANDIR="${PREFIX}/man" \
-		PREFIX="${PREFIX}" \
-		XSESSIONSDIR="${PREFIX}/share/applications"
+# requires unported pyewmh, pytest-xvfb and maybe more
+NO_TEST =		Yes
 
-NO_TEST =	Yes
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/herbstluftwm
+	${INSTALL_SCRIPT} ${WRKINST}/etc/xdg/herbstluftwm/autostart \
+		${PREFIX}/share/examples/herbstluftwm/
+	mv ${WRKINST}/etc/xdg/herbstluftwm/dmenu_run_hlwm \
+		${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKINST}/etc/xdg/herbstluftwm/panel.sh \
+		${PREFIX}/share/examples/herbstluftwm/
+	${INSTALL_SCRIPT} ${WRKINST}/etc/xdg/herbstluftwm/restartpanels.sh \
+		${PREFIX}/share/examples/herbstluftwm/
+	${INSTALL_MAN} ${WRKSRC}/doc/herbstclient.1 \
+		${PREFIX}/man/man1/herbstclient.1
+	${INSTALL_MAN} ${WRKSRC}/doc/herbstluftwm.1 \
+		${PREFIX}/man/man1/herbstluftwm.1
+	${INSTALL_MAN} ${WRKSRC}/doc/herbstluftwm-tutorial.7 \
+		${PREFIX}/man/man7/herbstluftwm-tutorial.7
 
 .include <bsd.port.mk>
