@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1538 2020/06/01 08:41:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1539 2020/06/08 13:16:26 paco Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -166,6 +166,7 @@ _PLIST_DB = ${PLIST_REPOSITORY}/${MACHINE_ARCH}
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 
 FIX_EXTRACT_PERMISSIONS ?= No
+FIX_CLEANUP_PERMISSIONS ?= No
 
 .if !exists(${X11BASE}/man/mandoc.db)
 .  if exists(${X11BASE}/man/whatis.db)
@@ -3222,6 +3223,9 @@ _internal-clean:
 .  for l in ${_WRKDIRS}
 .    if "$l" != ""
 	@if [ -L $l ]; then ${_PBUILD} rm -rf `readlink $l`; fi
+.      if ${FIX_CLEANUP_PERMISSIONS:L} == "yes"
+		@if [ -e $l ]; then ${_PBUILD} chmod -R +rwX $l; fi
+.      endif
 	@if [ -e $l ]; then ${_PBUILD} rm -rf $l; fi
 .    endif
 .  endfor
