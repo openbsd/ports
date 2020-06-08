@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.972 2020/06/07 16:00:16 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.973 2020/06/08 11:07:41 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1585,6 +1585,7 @@ my $obsolete_reason = {
 	'hs-ConfigFile' => 5,
 	'hs-MissingH' => 5,
 	'hs-HaXml' => 5,
+	'py-gstreamer' => 5,
 };
 
 # reasons for obsolete packages
