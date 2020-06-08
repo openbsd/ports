@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2020/06/07 15:57:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2020/06/08 12:13:58 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -34,6 +34,7 @@ MODPY_RUNDEP=		No
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/flake8 \
+			textproc/libxslt \
 			textproc/py-docutils${MOPY_FLAVOR}
 
 LIB_DEPENDS=		devel/glib2 \
