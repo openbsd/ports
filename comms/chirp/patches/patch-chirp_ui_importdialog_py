@@ -1,0 +1,25 @@
+$OpenBSD: patch-chirp_ui_importdialog_py,v 1.1 2020/06/08 09:07:33 sthen Exp $
+
+Based on https://chirp.danplanet.com/projects/chirp/repository/revisions/dc8d5ce1ae54/diff
+
+Index: chirp/ui/importdialog.py
+--- chirp/ui/importdialog.py.orig
++++ chirp/ui/importdialog.py
+@@ -19,7 +19,6 @@ import pango
+ import logging
+ 
+ from chirp import errors, chirp_common, import_logic
+-from chirp.drivers import generic_xml
+ from chirp.ui import common
+ 
+ LOG = logging.getLogger(__name__)
+@@ -238,8 +237,7 @@ class ImportDialog(gtk.Dialog):
+             LOG.error("One or more of the radios doesn't support banks")
+             return
+ 
+-        if not isinstance(self.dst_radio, generic_xml.XMLRadio) and \
+-                len(dst_banks) != len(src_banks):
++        if len(dst_banks) != len(src_banks):
+             LOG.warn("Source and destination radios have "
+                      "a different number of banks")
+         else:

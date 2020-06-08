@@ -1,0 +1,18 @@
+$OpenBSD: patch-chirp_ui_mainapp_py,v 1.1 2020/06/08 09:07:33 sthen Exp $
+
+generic_xml is the only thing needing py-libxml which is moving to py3-only
+https://chirp.danplanet.com/projects/chirp/repository/revisions/49d2862932d4
+https://chirp.danplanet.com/issues/495 etc
+
+Index: chirp/ui/mainapp.py
+--- chirp/ui/mainapp.py.orig
++++ chirp/ui/mainapp.py
+@@ -29,7 +29,7 @@ import sys
+ 
+ from chirp.ui import inputdialog, common
+ from chirp import platform, directory, util
+-from chirp.drivers import generic_xml, generic_csv, repeaterbook
++from chirp.drivers import generic_csv, repeaterbook
+ from chirp.drivers import ic9x, kenwood_live, idrp, vx7, vx5, vx6
+ from chirp.drivers import icf, ic9x_icf
+ from chirp import CHIRP_VERSION, chirp_common, detect, errors
