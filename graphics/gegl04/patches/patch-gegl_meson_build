@@ -1,4 +1,4 @@
-$OpenBSD: patch-gegl_meson_build,v 1.2 2020/01/28 17:37:35 ajacoutot Exp $
+$OpenBSD: patch-gegl_meson_build,v 1.3 2020/06/08 16:46:26 ajacoutot Exp $
 
 Fix non deterministic build:
 ../gegl-0.4.18/gegl/opencl/gegl-cl-color.c:32:10: fatal error: 'opencl/colors.cl.h' file not found
@@ -9,7 +9,7 @@ Fix non deterministic build:
 Index: gegl/meson.build
 --- gegl/meson.build.orig
 +++ gegl/meson.build
-@@ -84,6 +84,7 @@ gegl_ldflags = os_osx ? ['-framework', 'OpenCL'] : []
+@@ -91,6 +91,7 @@ gegl_ldflags = os_osx ? ['-framework', 'OpenCL'] : []
  
  gegl_lib = library(api_name,
    gegl_sources,
