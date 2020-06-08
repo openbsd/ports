@@ -1,10 +1,10 @@
-$OpenBSD: patch-xl_main_py,v 1.5 2017/07/09 10:03:05 bcallah Exp $
+$OpenBSD: patch-xl_main_py,v 1.6 2020/06/08 11:01:10 jasper Exp $
 Index: xl/main.py
 --- xl/main.py.orig
 +++ xl/main.py
-@@ -698,6 +698,8 @@ class Exaile(object):
+@@ -864,6 +864,8 @@ class Exaile(object):
                  context.iteration(True)
-             except:
+             except Exception:
                  pass
 +            finally:
 +                gtk.gdk.threads_leave()

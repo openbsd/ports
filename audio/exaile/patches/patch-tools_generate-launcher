@@ -1,19 +1,21 @@
-$OpenBSD: patch-tools_generate-launcher,v 1.3 2013/01/11 10:17:19 giovanni Exp $
---- tools/generate-launcher.orig	Thu Nov 15 18:28:50 2012
-+++ tools/generate-launcher	Thu Jan  3 18:21:13 2013
-@@ -27,14 +27,14 @@ cat <<EOF > exaile
+$OpenBSD: patch-tools_generate-launcher,v 1.4 2020/06/08 11:01:10 jasper Exp $
+Index: tools/generate-launcher
+--- tools/generate-launcher.orig
++++ tools/generate-launcher
+@@ -5,7 +5,7 @@
+ printf "Generating launcher script\n"
  
- # Exaile launcher script (automatically generated)
- 
--EXAILE_PREFIX=${PREFIX}
-+EXAILE_PREFIX=${TRUEPREFIX}
- 
- if test -z "\${XDG_DATA_DIRS}"; then
- 	XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
+ DESTDIR=${1:-}
+-PREFIX=${2:-/usr/local}
++PREFIX=${2:-${TRUEPREFIX}}
+ EPREFIX=${3:-${PREFIX}}
+ LIBDIR=${4:-${EPREFIX}/lib}
+ PYTHON2_CMD=${5:-python2}
+@@ -25,7 +25,7 @@ if test -z "\${XDG_DATA_DIRS}"; then
  fi
  XDG_DATA_DIRS="\${EXAILE_PREFIX}/share/:\${XDG_DATA_DIRS}"
  export XDG_DATA_DIRS
--exec ${PYTHON2_CMD} \${EXAILE_PREFIX}${LIBDIR}/exaile/exaile.py --datadir=\${EXAILE_PREFIX}/share/exaile/data --startgui ${DEFAULTARGS} "\$@"
+-exec ${PYTHON2_CMD} \${EXAILE_LIBDIR}/exaile/exaile.py --datadir=\${EXAILE_PREFIX}/share/exaile/data --startgui ${DEFAULTARGS} "\$@"
 +exec ${PYTHON2_CMD} \${MODPY_SITEPKG}/exaile/exaile.py --datadir=\${EXAILE_PREFIX}/share/exaile/data --startgui ${DEFAULTARGS} "\$@"
  exit \$?
  

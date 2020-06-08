@@ -1,21 +1,22 @@
-$OpenBSD: patch-tests_xl_trax_test_track_py,v 1.1 2010/04/21 07:02:42 giovanni Exp $
---- tests/xl/trax/test_track.py.orig	Mon Apr 12 12:00:02 2010
-+++ tests/xl/trax/test_track.py	Mon Apr 12 12:00:12 2010
-@@ -188,7 +188,7 @@ class TestTrack(unittest.TestCase):
-                 shutil.copyfileobj(open(tr_url, 'r'), temp_copy)
-                 tr = track.Track(temp_copy.name)
-                 del tr
--                os.chmod(temp_copy.name, 0o000)
-+                os.chmod(temp_copy.name, 0x000)
-                 tr = track.Track(temp_copy.name)
-                 # Remove the artist tag and reread from file. This is done
-                 # because of the whole flyweight thing
-@@ -214,7 +214,7 @@ class TestTrack(unittest.TestCase):
-             with tempfile.NamedTemporaryFile(suffix=suffix) as temp_copy:
-                 # Copy and write new file
-                 shutil.copyfileobj(open(tr_url, 'r'), temp_copy)
--                os.chmod(temp_copy.name, 0o444)
-+                os.chmod(temp_copy.name, 0x444)
-                 tr = track.Track(temp_copy.name)
-                 tr.set_tag_raw('artist', 'Delerium')
-                 self.assertFalse(tr.write_tags())
+$OpenBSD: patch-tests_xl_trax_test_track_py,v 1.2 2020/06/08 11:01:10 jasper Exp $
+Index: tests/xl/trax/test_track.py
+--- tests/xl/trax/test_track.py.orig
++++ tests/xl/trax/test_track.py
+@@ -185,7 +185,7 @@ class TestTrack(object):
+         # first, ensure that we can actually read the tags to begin with
+         assert tr.read_tags()
+ 
+-        os.chmod(test_track_fp.name, 0o000)
++        os.chmod(test_track_fp.name, 0x000)
+ 
+         # opening the file should fail...
+         with pytest.raises(IOError):
+@@ -197,7 +197,7 @@ class TestTrack(object):
+ 
+     def test_write_tags_no_perms(self, test_track_fp):
+ 
+-        os.chmod(test_track_fp.name, 0o444)
++        os.chmod(test_track_fp.name, 0x444)
+ 
+         tr = track.Track(test_track_fp.name)
+         tr.set_tag_raw('artist', random_str())

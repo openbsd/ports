@@ -1,78 +1,51 @@
-$OpenBSD: patch-Makefile,v 1.9 2017/11/10 11:07:44 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.10 2020/06/08 11:01:10 jasper Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1,17 +1,17 @@
- PYTHON2_CMD	?= `command -v python2`
+@@ -2,15 +2,14 @@ PYTHON2_CMD   ?= python2
+ PYTEST        ?= py.test
+ BLACK         ?= black
  
--PREFIX 		?= /usr/local
-+PREFIX 		?= ${TRUEPREFIX}
- LIBINSTALLDIR 	?= /lib
--XDGCONFDIR 	?= /etc/xdg
-+XDGCONFDIR 	?= ${PREFIX}/share/exaile/xdg
+-PREFIX         = /usr/local
++PREFIX         = ${TRUEPREFIX}
+ EPREFIX        = $(PREFIX)
  
- EXAILEBINDIR  = ${DESTDIR}${PREFIX}/bin
--EXAILELIBDIR 	= ${DESTDIR}${PREFIX}${LIBINSTALLDIR}/exaile
--EXAILESHAREDIR 	= ${DESTDIR}${PREFIX}/share/exaile
-+EXAILELIBDIR 	= ${DESTDIR}${MODPY_SITEPKG}/exaile
-+EXAILESHAREDIR 	= ${DESTDIR}${TRUEPREFIX}/share/exaile
- EXAILECONFDIR 	= ${DESTDIR}${XDGCONFDIR}/exaile
+ LIBINSTALLDIR  = $(EPREFIX)/lib
+ DATADIR        = $(PREFIX)/share
+-MANPREFIX      = $(PREFIX)/share
+-# /etc if PREFIX is /usr, $PREFIX/etc otherwise.
+-ETCDIR        := $(shell [ "$(PREFIX)" = "/usr" ] && echo /etc || echo "$(PREFIX)/etc")
+-XDGCONFDIR     = $(ETCDIR)/xdg
++MANPREFIX      = $(PREFIX)
++ETCDIR         = ${SYSCONFDIR}
++XDGCONFDIR     = ${DATADIR}/exaile/xdg/
  
- .PHONY: dist test coverage clean sanitycheck
+ # Find bash-completion's completions directory, first by checking pkg-config,
+ # then using a hard-coded path. Override BASHCOMPDIR if it's still wrong for
+@@ -25,7 +24,7 @@ FISHCOMPDIR   := $(shell pkg-config \
+   || echo "$(PREFIX)/share/fish/vendor_completions.d")
  
--all: compile locale manpage
-+all: compile locale
- 	@echo "Ready to install..."
- 
- # The no_locale stuff is by request of BSD people, please ensure
-@@ -53,11 +53,10 @@ make-install-dirs:
- 	mkdir -p ${EXAILESHAREDIR}/data/ui/widgets
- 	mkdir -p ${EXAILESHAREDIR}/data/migrations
- 	mkdir -p ${EXAILESHAREDIR}/data/migrations/migration_200907100931
--	mkdir -p ${DESTDIR}${PREFIX}/share/pixmaps
--	mkdir -p ${DESTDIR}${PREFIX}/share/appdata
--	mkdir -p ${DESTDIR}${PREFIX}/share/applications
--	mkdir -p ${DESTDIR}${PREFIX}/share/man/man1
--	mkdir -p ${DESTDIR}${PREFIX}/share/dbus-1/services
-+	mkdir -p ${DESTDIR}${TRUEPREFIX}/share/pixmaps
-+	mkdir -p ${DESTDIR}${TRUEPREFIX}/share/appdata
-+	mkdir -p ${DESTDIR}${TRUEPREFIX}/share/applications
-+	mkdir -p ${DESTDIR}${TRUEPREFIX}/share/dbus-1/services
- 	mkdir -p ${EXAILECONFDIR}
- 
- uninstall:
-@@ -110,7 +109,7 @@ install-target: make-install-dirs
- 	install -m 644 data/images/scalable/*.svg ${EXAILESHAREDIR}/data/images/scalable
- 	install -m 644 data/images/*.png ${EXAILESHAREDIR}/data/images
- 	install -m 644 data/images/128x128/exaile.png \
--		${DESTDIR}${PREFIX}/share/pixmaps/exaile.png
-+		${DESTDIR}${TRUEPREFIX}/share/pixmaps/exaile.png
- 	install -m 644 data/ui/*.ui ${EXAILESHAREDIR}/data/ui
- 	install -m 644 data/ui/panel/*.ui ${EXAILESHAREDIR}/data/ui/panel
- 	install -m 644 data/ui/preferences/*.ui ${EXAILESHAREDIR}/data/ui/preferences
-@@ -119,10 +118,10 @@ install-target: make-install-dirs
- 	install -m 644 data/migrations/migration_200907100931/*.py \
- 	    	${EXAILESHAREDIR}/data/migrations/migration_200907100931/
- 	install -m 644 data/exaile.desktop \
--		${DESTDIR}${PREFIX}/share/applications/
-+		${DESTDIR}${TRUEPREFIX}/share/applications/
+ EXAILEBINDIR   = $(DESTDIR)$(EPREFIX)/bin
+-EXAILELIBDIR   = $(DESTDIR)$(LIBINSTALLDIR)/exaile
++EXAILELIBDIR   = $(DESTDIR)${MODPY_SITEPKG}/exaile
+ EXAILESHAREDIR = $(DESTDIR)$(DATADIR)/exaile
+ EXAILECONFDIR  = $(DESTDIR)$(XDGCONFDIR)/exaile
+ EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
+@@ -155,7 +154,7 @@ install-target: make-install-dirs
+ 		$(DESTDIR)$(DATADIR)/applications/
  	install -m 644 data/exaile.appdata.xml \
- 		${DESTDIR}${PREFIX}/share/appdata/	
--	-install -m 644 exaile.1.gz ${DESTDIR}${PREFIX}/share/man/man1/
-+	-install -m 644 exaile.1.gz ${DESTDIR}${TRUEPREFIX}/share/man/man1/
- 	install -m 644 data/config/settings.ini ${EXAILECONFDIR}
- 	tools/generate-launcher "${DESTDIR}" "${PREFIX}" "${LIBINSTALLDIR}" \
- 		"${PYTHON2_CMD}" && \
-@@ -137,10 +136,10 @@ locale:
- install-locale:
- 	for f in `find po -name exaile.mo` ; do \
- 	  install -d -m 755 \
--	    `echo $$f | sed "s|^po|${DESTDIR}${PREFIX}/share/locale|" | \
-+	    `echo $$f | sed "s|^po|${DESTDIR}${TRUEPREFIX}/share/locale|" | \
- 	      xargs dirname` && \
- 	  install -m 644 $$f \
--	    `echo $$f | sed "s|^po|${DESTDIR}${PREFIX}/share/locale|"` ; \
-+	    `echo $$f | sed "s|^po|${DESTDIR}${TRUEPREFIX}/share/locale|"` ; \
- 	  done
+ 		$(DESTDIR)$(DATADIR)/appdata/
+-	-install -m 644 build/exaile.1.gz $(EXAILEMANDIR)/man1/
++	-install -m 644 build/exaile.1 $(EXAILEMANDIR)/man1/
+ 	-install -m 644 build/exaile.bash-completion $(DESTDIR)$(BASHCOMPDIR)/exaile
+ 	-install -m 644 build/exaile.fish-completion $(DESTDIR)$(FISHCOMPDIR)/exaile.fish
+ 	install -m 644 data/config/settings.ini $(EXAILECONFDIR)
+@@ -198,7 +197,7 @@ plugins_dist:
  
- plugins_dist:
+ manpage: builddir
+ 	LC_ALL=C help2man -n "music manager and player" -N ./exaile \
+-	  | gzip -9 > build/exaile.1.gz
++	  > build/exaile.1
+ 
+ completion: builddir
+ 	$(PYTHON2_CMD) tools/generate-completion.py bash > build/exaile.bash-completion
