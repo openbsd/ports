@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2020/06/09 16:31:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2020/06/09 16:51:45 ajacoutot Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
 V =			0.16.1
-REVISION=		9
+REVISION=		10
 CATEGORIES =		games
 HOMEPAGE =		http://rhino.sourceforge.net/
 FIX_EXTRACT_PERMISSIONS=Yes

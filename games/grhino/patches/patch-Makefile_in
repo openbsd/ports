@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2020/06/09 16:51:45 ajacoutot Exp $
+
+No more gnome-doc-utils / rarian / scrollkeeper
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -476,10 +476,6 @@ install_mkdir :
+ 		mkdir -p "$(DESTDIR)$(theme_dir)/small";	\
+ 		chmod 755 "$(DESTDIR)$(theme_dir)/small";	\
+ 	fi
+-	if [ ! -e "$(DESTDIR)$(omfdir)" ]; then		\
+-		mkdir -p "$(DESTDIR)$(omfdir)";		\
+-		chmod 755 "$(DESTDIR)$(omfdir)";		\
+-	fi
+ 	if [ ! -e "$(DESTDIR)$(helpdir)" ]; then		\
+ 		mkdir -p "$(DESTDIR)$(helpdir)";		\
+ 		chmod 755 "$(DESTDIR)$(helpdir)";		\

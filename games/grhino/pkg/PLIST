@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/09 16:31:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/09 16:51:46 ajacoutot Exp $
 @bin bin/grhino
 @bin bin/gtp-rhino
 share/applications/grhino.desktop
@@ -48,7 +48,5 @@ share/grhino-0.16.1/theme/small/top.xpm
 share/grhino-0.16.1/theme/small/white.xpm
 share/grhino-0.16.1/theme/small/white_last.xpm
 share/locale/en_GB/LC_MESSAGES/grhino.mo
-share/omf/
-share/omf/grhino/
 share/pixmaps/grhino.png
 @tag update-desktop-database
