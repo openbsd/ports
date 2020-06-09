@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.507 2020/05/19 15:34:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.508 2020/06/09 16:07:14 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -7,7 +7,6 @@
      SUBDIR += aalib
      SUBDIR += agg
      SUBDIR += allegropng
-     SUBDIR += amide
      SUBDIR += animorph
      SUBDIR += ansilove
      SUBDIR += aspect-crop
@@ -311,7 +310,6 @@
      SUBDIR += xbmbrowser
      SUBDIR += xdot
      SUBDIR += xfig
-     SUBDIR += xmedcon
      SUBDIR += xoris
      SUBDIR += xpaint
      SUBDIR += xsane
