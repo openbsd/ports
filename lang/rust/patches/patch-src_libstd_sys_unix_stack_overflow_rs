@@ -1,15 +1,14 @@
-$OpenBSD: patch-src_libstd_sys_unix_stack_overflow_rs,v 1.7 2020/05/16 14:13:53 semarie Exp $
+$OpenBSD: patch-src_libstd_sys_unix_stack_overflow_rs,v 1.8 2020/06/09 06:39:30 semarie Exp $
 Use MAP_STACK for stack allocation.
 Index: src/libstd/sys/unix/stack_overflow.rs
 --- src/libstd/sys/unix/stack_overflow.rs.orig
 +++ src/libstd/sys/unix/stack_overflow.rs
-@@ -138,7 +138,8 @@ mod imp {
- 
-     unsafe fn get_stackp() -> *mut libc::c_void {
-         let stackp =
--            mmap(ptr::null_mut(), SIGSTKSZ, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0);
-+            mmap(ptr::null_mut(), SIGSTKSZ, PROT_READ | PROT_WRITE,
-+                MAP_PRIVATE | MAP_ANON | libc::MAP_STACK, -1, 0);
-         if stackp == MAP_FAILED {
-             panic!("failed to allocate an alternative stack");
-         }
+@@ -143,7 +143,7 @@ mod imp {
+             ptr::null_mut(),
+             SIGSTKSZ + page_size(),
+             PROT_READ | PROT_WRITE,
+-            MAP_PRIVATE | MAP_ANON,
++            MAP_PRIVATE | MAP_ANON | libc::MAP_STACK,
+             -1,
+             0,
+         );

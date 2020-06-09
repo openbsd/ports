@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2020/05/16 14:13:53 semarie Exp $
+# $OpenBSD: Makefile,v 1.113 2020/06/09 06:39:30 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,17 +13,17 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.43.1
-CARGO_V =		0.44.0
+V =			1.44.0
+CARGO_V =		0.45.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.12
+RUSTFMT_V =		1.4.14
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.43.0-20200429
-BV-amd64 =		1.43.0-20200428
-BV-i386 =		1.43.0-20200428
-BV-sparc64 =		1.43.0-20200428
+BV-aarch64 =		1.44.0-20200605
+BV-amd64 =		1.44.0-20200602
+BV-i386 =		1.44.0-20200602
+BV-sparc64 =		1.44.0-20200602
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -43,7 +43,7 @@ MAINTAINER =		Sebastien Marie <semarie@online.fr>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl git2 m pthread ssh2 ssl z
+WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssh2 ssl z
 WANTLIB-gdb =
 WANTLIB-clippy =	c c++abi m pthread
 WANTLIB-rustfmt =	c c++abi m pthread
@@ -139,7 +139,6 @@ BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
 
@@ -150,7 +149,6 @@ RUN_DEPENDS-rustfmt +=	lang/rust,-main
 
 MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
 		TMPDIR=${WRKBUILD} \
-		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 TEST_ENV +=	RUST_BACKTRACE=0
 

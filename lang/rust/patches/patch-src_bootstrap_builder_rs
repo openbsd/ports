@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_bootstrap_builder_rs,v 1.9 2020/05/16 14:13:53 semarie Exp $
+$OpenBSD: patch-src_bootstrap_builder_rs,v 1.10 2020/06/09 06:39:30 semarie Exp $
 Pass the information that we want to override metadata (on final stage)
 Index: src/bootstrap/builder.rs
 --- src/bootstrap/builder.rs.orig
 +++ src/bootstrap/builder.rs
-@@ -1139,6 +1139,26 @@ impl<'a> Builder<'a> {
+@@ -1155,6 +1155,27 @@ impl<'a> Builder<'a> {
              );
          }
  
@@ -19,6 +19,7 @@ Index: src/bootstrap/builder.rs
 +                    cargo.env_remove("LIBR_METADATA_backtrace");
 +                    cargo.env_remove("LIBR_METADATA_backtrace_sys");
 +                    cargo.env_remove("LIBR_METADATA_cfg_if");
++                    cargo.env_remove("LIBR_METADATA_getopts");
 +                    cargo.env_remove("LIBR_METADATA_libc");
 +                    cargo.env_remove("LIBR_METADATA_rustc_demangle");
 +                    cargo.env_remove("LIBR_METADATA_unicode_width");

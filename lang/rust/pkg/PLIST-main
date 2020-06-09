@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2020/05/16 14:13:53 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2020/06/09 06:39:30 semarie Exp $
 @conflict cargo-<0.20.0
 @pkgpath devel/cargo
 @bin bin/cargo
@@ -64,6 +64,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBR_METADATA_unwind}.rlib
 @man man/man1/cargo-rustdoc.1
 @man man/man1/cargo-search.1
 @man man/man1/cargo-test.1
+@man man/man1/cargo-tree.1
 @man man/man1/cargo-uninstall.1
 @man man/man1/cargo-update.1
 @man man/man1/cargo-vendor.1

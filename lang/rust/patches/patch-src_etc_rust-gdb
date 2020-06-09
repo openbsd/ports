@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_etc_rust-gdb,v 1.8 2019/03/11 19:13:40 semarie Exp $
+$OpenBSD: patch-src_etc_rust-gdb,v 1.9 2020/06/09 06:39:30 semarie Exp $
 use egdb (gdb from ports)
 Index: src/etc/rust-gdb
 --- src/etc/rust-gdb.orig
 +++ src/etc/rust-gdb
-@@ -9,7 +9,7 @@ GDB_PYTHON_MODULE_DIRECTORY="$RUSTC_SYSROOT/lib/rustli
+@@ -17,7 +17,7 @@ GDB_PYTHON_MODULE_DIRECTORY="$RUSTC_SYSROOT/lib/rustli
  # Run GDB with the additional arguments that load the pretty printers
  # Set the environment variable `RUST_GDB` to overwrite the call to a
  # different/specific command (defaults to `gdb`).
