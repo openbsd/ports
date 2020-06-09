@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2019/04/29 15:55:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.165 2020/06/09 07:14:46 jasper Exp $
 
 # if this port is removed, please rename imagetops back to the normal
 # filename in graphics/leptonica
@@ -15,8 +15,8 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		51
-REVISION-langlist =	3
+REVISION-main =		52
+REVISION-langlist =	4
 
 MODKDE_VERSION =	3.5.8
 

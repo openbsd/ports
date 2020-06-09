@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/06/09 07:14:45 jasper Exp $
 
 COMMENT =	XML parser for Tcl
 
 DISTNAME =	tclxml-3.2
-REVISION =	4
+REVISION =	5
 CATEGORIES =	textproc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tclxml/}

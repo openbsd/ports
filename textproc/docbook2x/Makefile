@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 21:15:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/09 07:14:45 jasper Exp $
 
 COMMENT =	convert DocBook to man pages and Texinfo
 
 DISTNAME =	docbook2X-0.8.8
 PKGNAME =	${DISTNAME:L}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	textproc
 

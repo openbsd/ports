@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2019/10/20 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2020/06/09 07:14:46 jasper Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.26.0
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	gnustep-base 10.2
 CATEGORIES=	devel

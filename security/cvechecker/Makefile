@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/11/17 19:50:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2020/06/09 07:14:45 jasper Exp $
 
 COMMENT=	local CVE checker tool
 
 GH_ACCOUNT=	sjvermeu
 GH_PROJECT=	cvechecker
 GH_TAGNAME=	v3.9
+REVISION=	0
 
 CATEGORIES=	security sysutils
 

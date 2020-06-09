@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2020/04/26 11:42:32 robert Exp $
+# $OpenBSD: Makefile,v 1.103 2020/06/09 07:14:46 jasper Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -13,7 +13,7 @@ DPB_PROPERTIES=		lonesome
 COMMENT=		Iridium browser
 
 V=			2020.04.81
-REVISION=		1
+REVISION=		2
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}

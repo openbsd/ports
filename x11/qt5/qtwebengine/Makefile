@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/04 14:18:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/06/09 07:14:46 jasper Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -11,6 +11,7 @@ DPB_PROPERTIES =	lonesome
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
+REVISION =		0
 
 COMMENT =		Chromium-based web engine for Qt5
 
