@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/06/09 07:14:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2020/06/09 17:35:12 ajacoutot Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -9,7 +9,8 @@ CATEGORIES =		www
 DPB_PROPERTIES =	parallel
 
 DISTNAME =		qtwebkit-${QT5_WEBKIT_VERSION:C/alpha4v0/-alpha4/}
-PKGNAME =		qtwebkit-${QT5_WEBKIT_VERSION}
+PKGNAME =		qtwebkit-${QT5_WEBKIT_VERSION:S/v0//}
+EPOCH=			0
 REVISION =		0
 
 
