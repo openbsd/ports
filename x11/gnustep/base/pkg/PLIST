@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/02/12 19:15:13 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/06/09 21:11:02 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @rcscript ${RCDIR}/gdomap
 @bin bin/HTMLLinker
@@ -23,12 +23,18 @@
 include/Foundation/
 include/Foundation/Foundation.h
 include/Foundation/FoundationErrors.h
+include/Foundation/FoundationLegacySwiftCompatibility.h
 include/Foundation/NSAffineTransform.h
+include/Foundation/NSAppleEventDescriptor.h
+include/Foundation/NSAppleEventManager.h
+include/Foundation/NSAppleScript.h
 include/Foundation/NSArchiver.h
 include/Foundation/NSArray.h
 include/Foundation/NSAttributedString.h
 include/Foundation/NSAutoreleasePool.h
+include/Foundation/NSBackgroundActivityScheduler.h
 include/Foundation/NSBundle.h
+include/Foundation/NSByteCountFormatter.h
 include/Foundation/NSByteOrder.h
 include/Foundation/NSCache.h
 include/Foundation/NSCalendar.h
@@ -41,7 +47,10 @@ include/Foundation/NSCompoundPredicate.h
 include/Foundation/NSConnection.h
 include/Foundation/NSData.h
 include/Foundation/NSDate.h
+include/Foundation/NSDateComponentsFormatter.h
 include/Foundation/NSDateFormatter.h
+include/Foundation/NSDateInterval.h
+include/Foundation/NSDateIntervalFormatter.h
 include/Foundation/NSDebug.h
 include/Foundation/NSDecimal.h
 include/Foundation/NSDecimalNumber.h
@@ -49,35 +58,50 @@ include/Foundation/NSDictionary.h
 include/Foundation/NSDistantObject.h
 include/Foundation/NSDistributedLock.h
 include/Foundation/NSDistributedNotificationCenter.h
+include/Foundation/NSEnergyFormatter.h
 include/Foundation/NSEnumerator.h
 include/Foundation/NSError.h
 include/Foundation/NSErrorRecoveryAttempting.h
 include/Foundation/NSException.h
 include/Foundation/NSExpression.h
+include/Foundation/NSExtensionContext.h
+include/Foundation/NSExtensionItem.h
+include/Foundation/NSExtensionRequestHandling.h
 include/Foundation/NSFileCoordinator.h
 include/Foundation/NSFileHandle.h
 include/Foundation/NSFileManager.h
 include/Foundation/NSFilePresenter.h
 include/Foundation/NSFileVersion.h
+include/Foundation/NSFileWrapper.h
 include/Foundation/NSFormatter.h
 include/Foundation/NSGarbageCollector.h
 include/Foundation/NSGeometry.h
+include/Foundation/NSHFSFileTypes.h
 include/Foundation/NSHTTPCookie.h
 include/Foundation/NSHTTPCookieStorage.h
 include/Foundation/NSHashTable.h
 include/Foundation/NSHost.h
+include/Foundation/NSISO8601DateFormatter.h
 include/Foundation/NSIndexPath.h
 include/Foundation/NSIndexSet.h
 include/Foundation/NSInvocation.h
 include/Foundation/NSInvocationOperation.h
+include/Foundation/NSItemProvider.h
+include/Foundation/NSItemProviderReadingWriting.h
 include/Foundation/NSJSONSerialization.h
 include/Foundation/NSKeyValueCoding.h
 include/Foundation/NSKeyValueObserving.h
 include/Foundation/NSKeyedArchiver.h
+include/Foundation/NSLengthFormatter.h
+include/Foundation/NSLinguisticTagger.h
 include/Foundation/NSLocale.h
 include/Foundation/NSLock.h
 include/Foundation/NSMapTable.h
+include/Foundation/NSMassFormatter.h
+include/Foundation/NSMeasurement.h
+include/Foundation/NSMeasurementFormatter.h
 include/Foundation/NSMetadata.h
+include/Foundation/NSMetadataAttributes.h
 include/Foundation/NSMethodSignature.h
 include/Foundation/NSNetServices.h
 include/Foundation/NSNotification.h
@@ -86,8 +110,13 @@ include/Foundation/NSNull.h
 include/Foundation/NSNumberFormatter.h
 include/Foundation/NSObjCRuntime.h
 include/Foundation/NSObject.h
+include/Foundation/NSObjectScripting.h
 include/Foundation/NSOperation.h
+include/Foundation/NSOrderedSet.h
+include/Foundation/NSOrthography.h
 include/Foundation/NSPathUtilities.h
+include/Foundation/NSPersonNameComponents.h
+include/Foundation/NSPersonNameComponentsFormatter.h
 include/Foundation/NSPointerArray.h
 include/Foundation/NSPointerFunctions.h
 include/Foundation/NSPort.h
@@ -96,6 +125,7 @@ include/Foundation/NSPortMessage.h
 include/Foundation/NSPortNameServer.h
 include/Foundation/NSPredicate.h
 include/Foundation/NSProcessInfo.h
+include/Foundation/NSProgress.h
 include/Foundation/NSPropertyList.h
 include/Foundation/NSProtocolChecker.h
 include/Foundation/NSProxy.h
@@ -103,6 +133,15 @@ include/Foundation/NSRange.h
 include/Foundation/NSRegularExpression.h
 include/Foundation/NSRunLoop.h
 include/Foundation/NSScanner.h
+include/Foundation/NSScriptClassDescription.h
+include/Foundation/NSScriptCoercionHandler.h
+include/Foundation/NSScriptCommand.h
+include/Foundation/NSScriptCommandDescription.h
+include/Foundation/NSScriptExecutionContext.h
+include/Foundation/NSScriptKeyValueCoding.h
+include/Foundation/NSScriptObjectSpecifiers.h
+include/Foundation/NSScriptStandardSuiteCommands.h
+include/Foundation/NSScriptSuiteRegistry.h
 include/Foundation/NSScriptWhoseTests.h
 include/Foundation/NSSerialization.h
 include/Foundation/NSSet.h
@@ -130,9 +169,13 @@ include/Foundation/NSURLRequest.h
 include/Foundation/NSURLResponse.h
 include/Foundation/NSURLSession.h
 include/Foundation/NSUUID.h
+include/Foundation/NSUbiquitousKeyValueStore.h
 include/Foundation/NSUndoManager.h
+include/Foundation/NSUnit.h
+include/Foundation/NSUserActivity.h
 include/Foundation/NSUserDefaults.h
 include/Foundation/NSUserNotification.h
+include/Foundation/NSUserScriptTask.h
 include/Foundation/NSUtilities.h
 include/Foundation/NSValue.h
 include/Foundation/NSValueTransformer.h
@@ -143,6 +186,7 @@ include/Foundation/NSXMLElement.h
 include/Foundation/NSXMLNode.h
 include/Foundation/NSXMLNodeOptions.h
 include/Foundation/NSXMLParser.h
+include/Foundation/NSXPCConnection.h
 include/Foundation/NSZone.h
 include/GNUstepBase/
 include/GNUstepBase/Additions.h
@@ -157,6 +201,7 @@ include/GNUstepBase/GSLocale.h
 include/GNUstepBase/GSLock.h
 include/GNUstepBase/GSMime.h
 include/GNUstepBase/GSObjCRuntime.h
+include/GNUstepBase/GSTLS.h
 include/GNUstepBase/GSUnion.h
 include/GNUstepBase/GSVersionMacros.h
 include/GNUstepBase/GSXML.h
@@ -555,6 +600,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Phnom_Penh
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Pontianak
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Pyongyang
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Qatar
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Qostanay
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Qyzylorda
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Rangoon
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Riyadh
@@ -1196,6 +1242,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/posix/Asia/Phnom_Penh
 ${LIBDIR}/Resources/NSTimeZones/zones/posix/Asia/Pontianak
 ${LIBDIR}/Resources/NSTimeZones/zones/posix/Asia/Pyongyang
 ${LIBDIR}/Resources/NSTimeZones/zones/posix/Asia/Qatar
+${LIBDIR}/Resources/NSTimeZones/zones/posix/Asia/Qostanay
 ${LIBDIR}/Resources/NSTimeZones/zones/posix/Asia/Qyzylorda
 ${LIBDIR}/Resources/NSTimeZones/zones/posix/Asia/Rangoon
 ${LIBDIR}/Resources/NSTimeZones/zones/posix/Asia/Riyadh
@@ -1809,6 +1856,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/right/Asia/Phnom_Penh
 ${LIBDIR}/Resources/NSTimeZones/zones/right/Asia/Pontianak
 ${LIBDIR}/Resources/NSTimeZones/zones/right/Asia/Pyongyang
 ${LIBDIR}/Resources/NSTimeZones/zones/right/Asia/Qatar
+${LIBDIR}/Resources/NSTimeZones/zones/right/Asia/Qostanay
 ${LIBDIR}/Resources/NSTimeZones/zones/right/Asia/Qyzylorda
 ${LIBDIR}/Resources/NSTimeZones/zones/right/Asia/Rangoon
 ${LIBDIR}/Resources/NSTimeZones/zones/right/Asia/Riyadh
