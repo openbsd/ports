@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/05/16 09:43:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/06/09 22:41:43 sthen Exp $
 
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
@@ -38,7 +38,6 @@ DOC_COMPONENTS = \
 		qtx11extras \
 		qtxmlpatterns
 
-MASTER_SITES0 =	https://download.qt.io/community_releases/${DIST_VERSION:R}/${QT5_WEBKIT_VERSION}-final/
 DISTFILES =	${DOC_COMPONENTS:C/$/-everywhere-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}
 
 MODQT5_USE_CXX11 =	No
