@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/09 03:58:35 bentley Exp $
 
 COMMENT =	mixture of M+ and IPA Gothic fonts, focused on kanji
 
-V =		20150712
+V =		20200307
 PKGNAME =	migu-$V
 
 CATEGORIES =	fonts
@@ -14,7 +14,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # IPA Font License Agreement v1.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_OSDN_JP:=mix-mplus-ipa/63545/}
+MASTER_SITES =	${MASTER_SITE_OSDN_JP:=mix-mplus-ipa/72511/}
 
 DISTFILES =	migu-1c-$V.zip \
 		migu-1m-$V.zip \
