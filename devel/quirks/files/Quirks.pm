@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.976 2020/06/09 14:10:56 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.977 2020/06/09 16:10:13 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1589,6 +1589,8 @@ my $obsolete_reason = {
 	'py-gstreamer' => 5,
 	'py-libxslt' => 3,
 	'gconf-editor' => 3,
+	'amide' => 3,
+	'xmedcon' => 3,
 };
 
 # reasons for obsolete packages
