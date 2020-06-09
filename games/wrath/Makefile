@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/06 19:14:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/09 16:14:49 solene Exp $
 
 COMMENT =		client of wrath-darkplaces engine
 
-DISTNAME =		wrath-0.0.0.20200228
+DISTNAME =		wrath-0.0.0.20200530
 
 GH_ACCOUNT =		KillPixelGames
 GH_PROJECT =		wrath-darkplaces
-GH_COMMIT =		ae8a4c06f2b2b088a537bb75c439817f4a009d6a
+GH_COMMIT =		7fa67fed66335554160a7c6d8b599c69b316e027
 
 CATEGORIES =		games
 

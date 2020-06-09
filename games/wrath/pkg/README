@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2020/05/25 16:08:41 solene Exp $
+$OpenBSD: README,v 1.2 2020/06/09 16:14:49 solene Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -12,7 +12,7 @@ of the game.
 
 If you have the GOG version, you need to use innoextract to extract
 the data:
-$ innoextract setup_wrath_aeon_of_ruin_ea_1.2.1_\(36418\).exe
+$ innoextract setup_wrath_aeon_of_ruin_ea_1.3.1_\(64bit\)_\(38633\).exe
 
 To start wrath, you need to run it in a directory containing the kp1
 directory of the game or you can start wrath using the -basedir=
