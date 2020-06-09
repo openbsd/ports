@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/06/08 11:01:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2020/06/09 16:11:50 ajacoutot Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
@@ -28,7 +28,9 @@ COMMON_DEPENDS = audio/py-cddb>=1.4${MODPY_FLAVOR} \
 		x11/dbus-python>=0.82.1${MODPY_FLAVOR}
 
 BUILD_DEPENDS =	${COMMON_DEPENDS} \
-		devel/gettext,-tools
+		devel/gettext,-tools \
+		devel/help2man
+
 RUN_DEPENDS =	${COMMON_DEPENDS} \
 		${MODPY_RUN_DEPENDS},-bsddb \
 	     	devel/desktop-file-utils
