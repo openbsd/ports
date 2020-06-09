@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/28 18:41:28 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/09 21:13:18 sebastia Exp $
 bin/Gorm
 include/GormCore/
 include/GormCore/GormBoxEditor.h
@@ -8,6 +8,7 @@ include/GormCore/GormClassManager.h
 include/GormCore/GormClassPanelController.h
 include/GormCore/GormConnectionInspector.h
 include/GormCore/GormControlEditor.h
+include/GormCore/GormCore.h
 include/GormCore/GormCustomClassInspector.h
 include/GormCore/GormCustomView.h
 include/GormCore/GormDocument.h
@@ -65,6 +66,7 @@ include/GormCore/NSColorWell+GormExtensions.h
 include/GormCore/NSFontManager+GormExtensions.h
 include/GormCore/NSView+GormExtensions.h
 include/GormObjCHeaderParser/
+include/GormObjCHeaderParser/GormObjCHeaderParser.h
 include/GormObjCHeaderParser/NSScanner+OCHeaderParser.h
 include/GormObjCHeaderParser/OCClass.h
 include/GormObjCHeaderParser/OCHeaderParser.h
@@ -79,6 +81,7 @@ include/GormPrefs/GormHeadersPref.h
 include/GormPrefs/GormPalettesPref.h
 include/GormPrefs/GormPluginsPref.h
 include/GormPrefs/GormPrefController.h
+include/GormPrefs/GormPrefs.h
 include/GormPrefs/GormShelfPref.h
 include/InterfaceBuilder/
 include/InterfaceBuilder/IBApplicationAdditions.h
