@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST-python,v 1.8 2020/02/01 20:35:32 bluhm Exp $
+@comment $OpenBSD: PLIST-python,v 1.9 2020/06/09 07:17:20 jasper Exp $
+@conflict py-libxml-*
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}drv_libxml2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libxml2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/drv_libxml2.py
-lib/python${MODPY_VERSION}/site-packages/drv_libxml2.pyc
 lib/python${MODPY_VERSION}/site-packages/libxml2.py
-lib/python${MODPY_VERSION}/site-packages/libxml2.pyc
 @static-lib lib/python${MODPY_VERSION}/site-packages/libxml2mod.a
 lib/python${MODPY_VERSION}/site-packages/libxml2mod.la
 @so lib/python${MODPY_VERSION}/site-packages/libxml2mod.so
