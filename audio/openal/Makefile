@@ -1,27 +1,28 @@
-# $OpenBSD: Makefile,v 1.53 2019/07/12 20:43:37 sthen Exp $
-
-BROKEN-hppa =	undefined reference to __sync atomic ops
+# $OpenBSD: Makefile,v 1.54 2020/06/09 13:22:42 ajacoutot Exp $
 
 COMMENT =	cross-platform 3D audio API
 
-V =		1.19.1
+V =		1.20.1
 EPOCH =		0
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 CATEGORIES =	audio
-SHARED_LIBS =	openal	3.1
 
-HOMEPAGE =	http://kcat.strangesoft.net/openal.html
+SHARED_LIBS =	openal	4.0
+
+HOMEPAGE =	https://kcat.strangesoft.net/openal.html
 
 MAINTAINER =	David Carlier <devnexen@gmail.com>
 
 # LGPLv2+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
-WANTLIB +=	c m pthread sndio
+WANTLIB +=	c m mysofa pthread sndio z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${HOMEPAGE:S,.html,-releases/,}
 EXTRACT_SUFX =	.tar.bz2
+
+LIB_DEPENDS +=	audio/libmysofa
 
 CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
 		-DALSOFT_CONFIG=share/examples/openal \
@@ -29,7 +30,6 @@ CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
 		-DALSOFT_UTILS=On \
 		-DALSOFT_EXAMPLES=Off \
 		-DALSOFT_REQUIRE_SNDIO=On \
-		-DALSOFT_BACKEND_DSOUND=Off \
 		-DALSOFT_BACKEND_WAVE=Off \
 		-DALSOFT_CPUEXT_SSE=Off \
 		-DALSOFT_CPUEXT_SSE2=Off \
@@ -52,6 +52,6 @@ COMPILER =	base-clang ports-clang ports-gcc
 NO_TEST =	Yes
 
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/Alc/alconfig.c ${WRKSRC}/alsoftrc.sample
+	@${SUBST_CMD} ${WRKSRC}/alc/alconfig.cpp ${WRKSRC}/alsoftrc.sample
 
 .include <bsd.port.mk>

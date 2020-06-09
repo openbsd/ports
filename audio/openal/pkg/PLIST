@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/02/13 16:10:38 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/06/09 13:22:43 ajacoutot Exp $
 @bin bin/altonegen
-@bin bin/makehrtf
+@bin bin/makemhr
 @bin bin/openal-info
 include/AL/
 include/AL/al.h
@@ -21,8 +21,7 @@ share/examples/openal/alsoftrc.sample
 @sample ${SYSCONFDIR}/openal/alsoft.conf
 share/openal/
 share/openal/hrtf/
-share/openal/hrtf/default-44100.mhr
-share/openal/hrtf/default-48000.mhr
+share/openal/hrtf/Default HRTF.mhr
 share/openal/presets/
 share/openal/presets/3D7.1.ambdec
 share/openal/presets/hexagon.ambdec

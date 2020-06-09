@@ -1,0 +1,14 @@
+$OpenBSD: patch-alc_alconfig_cpp,v 1.1 2020/06/09 13:22:43 ajacoutot Exp $
+
+Index: alc/alconfig.cpp
+--- alc/alconfig.cpp.orig
++++ alc/alconfig.cpp
+@@ -326,7 +326,7 @@ void ReadALConfig()
+ 
+ void ReadALConfig()
+ {
+-    const char *str{"/etc/openal/alsoft.conf"};
++    const char *str{"${SYSCONFDIR}/openal/alsoft.conf"};
+ 
+     TRACE("Loading config %s...\n", str);
+     al::ifstream f{str};

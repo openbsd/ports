@@ -1,14 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.8 2019/02/13 16:10:38 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.9 2020/06/09 13:22:42 ajacoutot Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -1536,7 +1536,7 @@ endif()
+@@ -1347,7 +1347,7 @@ endif()
  # Install alsoft.conf configuration file
  IF(ALSOFT_CONFIG)
      INSTALL(FILES alsoftrc.sample
--            DESTINATION ${CMAKE_INSTALL_DATADIR}/openal
-+            DESTINATION ${CMAKE_INSTALL_DATADIR}/examples/openal
-     )
+-        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal)
++        DESTINATION ${CMAKE_INSTALL_DATADIR}/examples/openal)
      MESSAGE(STATUS "Installing sample configuration")
      MESSAGE(STATUS "")
+ ENDIF()
