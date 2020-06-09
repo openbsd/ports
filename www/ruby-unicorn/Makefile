@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2020/03/27 15:57:07 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2020/06/09 19:39:06 jeremy Exp $
 
 COMMENT =	ruby-rack HTTP server for Unix and fast clients
 
-DISTNAME =	unicorn-5.5.4
+DISTNAME =	unicorn-5.5.5
 CATEGORIES =	www
 
 HOMEPAGE =	https://yhbt.net/unicorn/
