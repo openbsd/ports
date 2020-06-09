@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.22 2019/05/28 19:41:48 espie Exp $
+# $OpenBSD: register-plist,v 1.23 2020/06/09 21:00:33 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -603,7 +603,7 @@ sub compare_versions
 
 my $state = OpenBSD::State->new('register-plist');
 $state->{signature_style} = 'unsigned';
-$state->handle_options('tp', '[-t p1 p2] dir pkg ...');
+$state->handle_options('tpn', '[-n] [-t p1 p2] dir pkg ...');
 if (@ARGV < 2 && !$state->opt('p')) {
 	$state->usage;
 }
@@ -669,7 +669,7 @@ for my $pkgfile (@ARGV) {
 		}
 		$error += compare_versions($dir, $plist, $state);
 	}
-	if (!$error) {
+	if (!$error && !$state->opt('n')) {
 		my $result = $dirs[0].'/'.$plist->pkgname;
 		if (!-f $result || -z _) {
 			$plist->tofile($result);
