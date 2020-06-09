@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.397 2020/06/01 20:54:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.398 2020/06/09 18:42:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -9,7 +9,6 @@
      SUBDIR += freetds
      SUBDIR += gdbm
      SUBDIR += gnats
-     SUBDIR += gq
      SUBDIR += influxdb
      SUBDIR += iodbc
      SUBDIR += jxplorer
