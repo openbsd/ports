@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2019/11/01 15:38:04 jasper Exp $
-@pkgpath textproc/libxslt
+@comment $OpenBSD: PLIST,v 1.28 2020/06/09 07:13:56 jasper Exp $
+@pkgpath textproc/libxslt,-main
 bin/xslt-config
 @bin bin/xsltproc
 include/libexslt/
