@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/06/09 04:41:47 bentley Exp $
 
 COMMENT =		unicode sans-serif/monospace TrueType fonts from Ubuntu
 
 V =			0.83
-DISTNAME =		fad7939b-ubuntu-font-family-$V
+DISTNAME =		0cef8205-ubuntu-font-family-$V
 PKGNAME =		ubuntu-fonts-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		fonts
 
