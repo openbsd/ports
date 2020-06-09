@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1984 2020/06/08 11:19:22 stsp Exp $
+# $OpenBSD: Makefile,v 1.1985 2020/06/09 14:09:57 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -148,7 +148,6 @@
      SUBDIR += frama-c
      SUBDIR += fribidi
      SUBDIR += gas
-     SUBDIR += gconf-editor
      SUBDIR += gconf2
      SUBDIR += gdb
      SUBDIR += geany
