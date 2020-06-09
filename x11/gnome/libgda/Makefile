@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2020/06/09 07:14:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.138 2020/06/09 21:50:55 ajacoutot Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -19,12 +19,12 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-REVISION-ldap=		0
-REVISION-mysql=		0
-REVISION-pgsql=		0
-REVISION-ui=		0
 
-REVISION-main =		3
+REVISION-main =		4
+REVISION-ldap=		1
+REVISION-mysql=		1
+REVISION-pgsql=		1
+REVISION-ui=		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -45,7 +45,7 @@ HOMEPAGE=		http://www.gnome-db.org/
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma
-WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread
+WANTLIB += gthread-2.0 xml2 secret-1 gpg-error ffi pthread
 WANTLIB += iconv intl sqlite3
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -100,6 +100,7 @@ MULTI_PACKAGES=		-main -ui -mysql -pgsql -ldap
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c curses gcrypt gpg-error idn2 psl unistring
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 xslt
+WANTLIB-main += brotlicommon brotlidec
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main=	databases/sqlite3 \
@@ -115,7 +116,7 @@ WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo atk-bridge-2.0
 WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += xcb xcb-render xcb-shm epoxy harfbuzz fribidi
+WANTLIB-ui += xcb xcb-render xcb-shm epoxy harfbuzz fribidi gcrypt
 
 LIB_DEPENDS-ui=		graphics/goocanvas2 \
 			x11/gnome/libgda \
@@ -125,7 +126,7 @@ RUN_DEPENDS-ui=		${RUN_DEPENDS} \
 
 ### -mysql
 WANTLIB-mysql += ${WANTLIB}
-WANTLIB-mysql += crypto gda-${GDA_MAJOR} mysqlclient ssl ${COMPILER_LIBCXX}
+WANTLIB-mysql += crypto gda-${GDA_MAJOR} mariadb ssl
 
 RUN_DEPENDS-mysql=	# empty
 LIB_DEPENDS-mysql=	x11/gnome/libgda \
@@ -141,7 +142,7 @@ LIB_DEPENDS-pgsql=	x11/gnome/libgda \
 
 ### -ldap
 WANTLIB-ldap += ${WANTLIB}
-WANTLIB-ldap += crypto gda-${GDA_MAJOR} lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB-ldap += crypto gda-${GDA_MAJOR} lber ldap sasl2 ssl
 
 RUN_DEPENDS-ldap=	# empty
 LIB_DEPENDS-ldap=	x11/gnome/libgda \

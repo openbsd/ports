@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-mysql,v 1.5 2012/09/21 13:23:06 ajacoutot Exp $
-lib/libgda-${GDA_MAJOR}/providers/libgda-mysql.so
+@comment $OpenBSD: PLIST-mysql,v 1.6 2020/06/09 21:50:55 ajacoutot Exp $
+@so lib/libgda-${GDA_MAJOR}/providers/libgda-mysql.so
 lib/pkgconfig/libgda-mysql-${GDA_MAJOR}.pc
 share/libgda-${GDA_MAJOR}/mysql_specs_add_column.xml
 share/libgda-${GDA_MAJOR}/mysql_specs_comment_column.xml

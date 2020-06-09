@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2018/12/07 14:06:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2020/06/09 21:50:55 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @conflict libgda-ui-<5.1.1
@@ -129,10 +129,10 @@ lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-${GDA_MAJOR}_VERSION}
 lib/libgda-${GDA_MAJOR}/plugins/
 lib/libgda-${GDA_MAJOR}/providers/
-lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.so
-lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.so
-lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.so
-lib/libgda-${GDA_MAJOR}/providers/libgda-web.so
+@so lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.so
+@so lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.so
+@so lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.so
+@so lib/libgda-${GDA_MAJOR}/providers/libgda-web.so
 lib/libgda-report-${GDA_MAJOR}.la
 @lib lib/libgda-report-${GDA_MAJOR}.so.${LIBgda-report-${GDA_MAJOR}_VERSION}
 lib/libgda-xslt-${GDA_MAJOR}.la
