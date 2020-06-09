@@ -1,0 +1,16 @@
+$OpenBSD: patch-xml2po_xml2po_modes_xhtml_py,v 1.1 2020/06/09 07:19:28 jasper Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/tree/app-text/gnome-doc-utils/files/gnome-doc-utils-0.20.10-python3.patch
+
+Index: xml2po/xml2po/modes/xhtml.py
+--- xml2po/xml2po/modes/xhtml.py.orig
++++ xml2po/xml2po/modes/xhtml.py
+@@ -21,7 +21,7 @@
+ # This implements special instructions for handling XHTML documents
+ # in a better way, particularly to extract some attributes in HTML tags
+ 
+-from basic import basicXmlMode
++from .basic import basicXmlMode
+ 
+ class xhtmlXmlMode(basicXmlMode):
+     """Class for special handling of XHTML document types."""

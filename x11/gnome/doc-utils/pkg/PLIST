@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/05/22 11:36:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/06/09 07:19:28 jasper Exp $
 bin/gnome-doc-prepare
 bin/gnome-doc-tool
 bin/xml2po
@@ -6,10 +6,20 @@ lib/python${MODPY_VERSION}/site-packages/xml2po/
 lib/python${MODPY_VERSION}/site-packages/xml2po/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/xml2po/__init__.pyo
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xml2po/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xml2po/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/__init__.pyo
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xml2po/modes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/${MODPY_PYCACHE}basic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/${MODPY_PYCACHE}docbook.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/${MODPY_PYCACHE}gs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/${MODPY_PYCACHE}mallard.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/${MODPY_PYCACHE}ubuntu.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/${MODPY_PYCACHE}xhtml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/basic.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/basic.pyc
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/basic.pyo
@@ -159,8 +169,6 @@ share/locale/ar/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gnome-doc-utils.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/be/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/be@latin/
@@ -228,6 +236,8 @@ share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ko/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/lv/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/mai/
@@ -285,6 +295,8 @@ share/locale/ta/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/te/
 share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/tr/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ug/

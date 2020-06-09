@@ -1,0 +1,16 @@
+$OpenBSD: patch-xml2po_xml2po_modes_ubuntu_py,v 1.1 2020/06/09 07:19:28 jasper Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/tree/app-text/gnome-doc-utils/files/gnome-doc-utils-0.20.10-python3.patch
+
+Index: xml2po/xml2po/modes/ubuntu.py
+--- xml2po/xml2po/modes/ubuntu.py.orig
++++ xml2po/xml2po/modes/ubuntu.py
+@@ -2,7 +2,7 @@
+ 
+ import libxml2
+ 
+-from docbook import docbookXmlMode
++from .docbook import docbookXmlMode
+ 
+ class ubuntuXmlMode (docbookXmlMode):
+     """Special-casing Ubuntu DocBook website documentation."""
