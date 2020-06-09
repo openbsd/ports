@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/08/25 13:47:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/06/09 07:41:20 jasper Exp $
 include/telepathy-1.0/
 include/telepathy-1.0/telepathy-glib/
 include/telepathy-1.0/telepathy-glib/_gen/
@@ -168,7 +168,7 @@ include/telepathy-1.0/telepathy-glib/verify.h
 include/telepathy-1.0/telepathy-glib/version.h
 lib/girepository-1.0/
 lib/girepository-1.0/TelepathyGLib-0.12.typelib
-lib/libtelepathy-glib.a
+@static-lib lib/libtelepathy-glib.a
 lib/libtelepathy-glib.la
 @lib lib/libtelepathy-glib.so.${LIBtelepathy-glib_VERSION}
 lib/pkgconfig/telepathy-glib.pc

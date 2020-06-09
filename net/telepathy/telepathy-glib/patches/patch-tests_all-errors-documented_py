@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_all-errors-documented_py,v 1.3 2020/06/09 07:41:20 jasper Exp $
+
+https://github.com/TelepathyIM/telepathy-glib/commit/fd7626ee3cc965f15fe78d9f45e713ebefd83a99
+
+Index: tests/all-errors-documented.py
+--- tests/all-errors-documented.py.orig
++++ tests/all-errors-documented.py
+@@ -24,7 +24,7 @@ def check_all_errors_documented(abs_top_srcdir):
+                 error.getAttribute('name').replace('.', '_').replace(' ', '_').upper())
+ 
+         if '%s\n' % name not in sections:
+-            print "'%s' is missing in %s" % (name, sections_path)
++            print("'%s' is missing in %s" % (name, sections_path))
+             sys.exit(1)
+ 
+ if __name__ == '__main__':
