@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.16 2020/03/16 10:55:36 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.17 2020/06/09 06:51:59 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -173,7 +173,8 @@ MODCARGO_post-patch += \
 .endfor
 
 # configure hook. Place a config file for overriding crates-io index by
-# local source directory. Enabled by use of "CONFIGURE_STYLE=cargo".
+# local source directory, and set compilation options (based on release).
+# Enabled by use of "CONFIGURE_STYLE=cargo".
 MODCARGO_configure = \
 	mkdir -p ${WRKDIR}/.cargo; \
 	\
@@ -182,14 +183,24 @@ MODCARGO_configure = \
 		>>${WRKDIR}/.cargo/config; \
 	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config; \
 	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config; \
-	\
-	if ! grep -qF '[profile.release]' ${MODCARGO_CARGOTOML}; then \
-		echo "" >>${MODCARGO_CARGOTOML}; \
-		echo "[profile.release]" >>${MODCARGO_CARGOTOML}; \
-		echo "opt-level = 2" >>${MODCARGO_CARGOTOML}; \
-		echo "debug = false" >>${MODCARGO_CARGOTOML}; \
-	fi ;
 
+# set profile (based on 'release' profile) for 'build' and 'test'
+# see https://doc.rust-lang.org/cargo/reference/profiles.html#release
+# only 'opt-level' differs from default
+.for _profile in release bench
+MODCARGO_configure += \
+	echo "" >>${WRKDIR}/.cargo/config; \
+	echo "[profile.${_profile}]" >>${WRKDIR}/.cargo/config; \
+	echo "opt-level = 2" >>${WRKDIR}/.cargo/config; \
+	echo "debug = 0" >>${WRKDIR}/.cargo/config; \
+	echo "debug-assertions = false" >>${WRKDIR}/.cargo/config; \
+	echo "overflow-checks = false" >>${WRKDIR}/.cargo/config; \
+	echo "lto = 'thin'" >>${WRKDIR}/.cargo/config; \
+	echo "panic = 'unwind'" >>${WRKDIR}/.cargo/config; \
+	echo "incremental = false" >>${WRKDIR}/.cargo/config; \
+	echo "codegen-units = 4" >>${WRKDIR}/.cargo/config; \
+	echo "rpath = false" >>${WRKDIR}/.cargo/config;
+.endfor
 
 # Update crates: place all crates on the same command line.
 .if !empty(MODCARGO_CRATES_UPDATE)
