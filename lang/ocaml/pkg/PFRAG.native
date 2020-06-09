@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.17 2019/09/26 09:46:11 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.18 2020/06/09 17:34:14 chrisz Exp $
 %%dynlink%%
 @bin bin/ocamlc.opt
 @bin bin/ocamlcp.opt
@@ -20,6 +20,18 @@ lib/ocaml/camlinternalFormatBasics.cmx
 lib/ocaml/camlinternalLazy.cmx
 lib/ocaml/camlinternalMod.cmx
 lib/ocaml/camlinternalOO.cmx
+lib/ocaml/compiler-libs/closure_middle_end.cmi
+lib/ocaml/compiler-libs/closure_middle_end.cmt
+lib/ocaml/compiler-libs/closure_middle_end.cmti
+lib/ocaml/compiler-libs/closure_middle_end.mli
+lib/ocaml/compiler-libs/cmm_helpers.cmi
+lib/ocaml/compiler-libs/cmm_helpers.cmt
+lib/ocaml/compiler-libs/cmm_helpers.cmti
+lib/ocaml/compiler-libs/cmm_helpers.mli
+lib/ocaml/compiler-libs/linear.cmi
+lib/ocaml/compiler-libs/linear.cmt
+lib/ocaml/compiler-libs/linear.cmti
+lib/ocaml/compiler-libs/linear.mli
 lib/ocaml/compiler-libs/CSE.cmi
 lib/ocaml/compiler-libs/CSE.cmt
 lib/ocaml/compiler-libs/CSE.cmx
@@ -149,6 +161,7 @@ lib/ocaml/compiler-libs/closure_id.cmt
 lib/ocaml/compiler-libs/closure_id.cmti
 lib/ocaml/compiler-libs/closure_id.cmx
 lib/ocaml/compiler-libs/closure_id.mli
+lib/ocaml/compiler-libs/closure_middle_end.cmx
 lib/ocaml/compiler-libs/closure_offsets.cmi
 lib/ocaml/compiler-libs/closure_offsets.cmt
 lib/ocaml/compiler-libs/closure_offsets.cmti
@@ -165,6 +178,7 @@ lib/ocaml/compiler-libs/cmm.cmt
 lib/ocaml/compiler-libs/cmm.cmti
 lib/ocaml/compiler-libs/cmm.cmx
 lib/ocaml/compiler-libs/cmm.mli
+lib/ocaml/compiler-libs/cmm_helpers.cmx
 lib/ocaml/compiler-libs/cmmgen.cmi
 lib/ocaml/compiler-libs/cmmgen.cmt
 lib/ocaml/compiler-libs/cmmgen.cmti
@@ -226,6 +240,7 @@ lib/ocaml/compiler-libs/debuginfo.cmx
 lib/ocaml/compiler-libs/depend.cmx
 lib/ocaml/compiler-libs/dll.cmx
 lib/ocaml/compiler-libs/docstrings.cmx
+lib/ocaml/compiler-libs/domainstate.cmx
 lib/ocaml/compiler-libs/effect_analysis.cmi
 lib/ocaml/compiler-libs/effect_analysis.cmt
 lib/ocaml/compiler-libs/effect_analysis.cmti
@@ -407,6 +422,7 @@ lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmt
 lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmti
 lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmx
 lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.mli
+lib/ocaml/compiler-libs/linear.cmx
 lib/ocaml/compiler-libs/linearize.cmi
 lib/ocaml/compiler-libs/linearize.cmt
 lib/ocaml/compiler-libs/linearize.cmti
@@ -453,6 +469,8 @@ lib/ocaml/compiler-libs/ocamlbytecomp.a
 lib/ocaml/compiler-libs/ocamlbytecomp.cmxa
 lib/ocaml/compiler-libs/ocamlcommon.a
 lib/ocaml/compiler-libs/ocamlcommon.cmxa
+lib/ocaml/compiler-libs/ocamlmiddleend.a
+lib/ocaml/compiler-libs/ocamlmiddleend.cmxa
 lib/ocaml/compiler-libs/ocamloptcomp.a
 lib/ocaml/compiler-libs/ocamloptcomp.cma
 lib/ocaml/compiler-libs/ocamloptcomp.cmxa
@@ -705,6 +723,7 @@ lib/ocaml/compiler-libs/traverse_for_exported_symbols.cmt
 lib/ocaml/compiler-libs/traverse_for_exported_symbols.cmti
 lib/ocaml/compiler-libs/traverse_for_exported_symbols.cmx
 lib/ocaml/compiler-libs/traverse_for_exported_symbols.mli
+lib/ocaml/compiler-libs/type_immediacy.cmx
 lib/ocaml/compiler-libs/typeclass.cmx
 lib/ocaml/compiler-libs/typecore.cmx
 lib/ocaml/compiler-libs/typedecl.cmx
@@ -776,12 +795,12 @@ lib/ocaml/dynlink_common.cmx
 lib/ocaml/dynlink_compilerlibs.cmx
 lib/ocaml/dynlink_platform_intf.cmx
 lib/ocaml/dynlink_types.cmx
-lib/ocaml/libasmrun.a
-lib/ocaml/libasmrun_pic.a
-lib/ocaml/libasmrun_shared.so
-lib/ocaml/libasmrund.a
-lib/ocaml/libasmruni.a
-lib/ocaml/libthreadsnat.a
+@static-lib lib/ocaml/libasmrun.a
+@static-lib lib/ocaml/libasmrun_pic.a
+@so lib/ocaml/libasmrun_shared.so
+@static-lib lib/ocaml/libasmrund.a
+@static-lib lib/ocaml/libasmruni.a
+@static-lib lib/ocaml/libthreadsnat.a
 lib/ocaml/ocamldoc/odoc.cmx
 lib/ocaml/ocamldoc/odoc_analyse.cmx
 lib/ocaml/ocamldoc/odoc_args.cmx

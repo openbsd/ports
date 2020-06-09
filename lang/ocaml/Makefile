@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.85 2019/09/26 09:46:11 chrisz Exp $
+# $OpenBSD: Makefile,v 1.86 2020/06/09 17:34:14 chrisz Exp $
 
 COMMENT =	   ML language with complete class-based objective system
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
-VERSION=		4.09.0
+VERSION=		4.10.0
 
 PKGNAME =		ocaml-${VERSION:C/\+//}
 
@@ -30,6 +30,7 @@ CONFIGURE_STYLE =	gnu autoconf no-autoheader
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
 			CPPFLAGS="${CFLAGS} ${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS +=	--disable-force-safe-string
 
 CFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib

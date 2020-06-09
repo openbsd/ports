@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/26 09:33:14 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/09 17:34:14 chrisz Exp $
 
 COMMENT =	graphics library providing basic drawing primitives
 CATEGORIES =	graphics
 
 V =		5.0.0
+REVISION =	0
 DISTNAME =	graphics-$V
 PKGNAME =	ocaml-graphics-$V
 

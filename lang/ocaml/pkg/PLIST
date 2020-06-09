@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2019/09/26 09:46:11 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/06/09 17:34:14 chrisz Exp $
 @pkgpath lang/ocaml,-main
 %%native%%
 bin/ocaml
@@ -66,6 +66,9 @@ lib/ocaml/caml/compatibility.h
 lib/ocaml/caml/config.h
 lib/ocaml/caml/custom.h
 lib/ocaml/caml/debugger.h
+lib/ocaml/caml/domain.h
+lib/ocaml/caml/domain_state.h
+lib/ocaml/caml/domain_state.tbl
 lib/ocaml/caml/dynlink.h
 lib/ocaml/caml/exec.h
 lib/ocaml/caml/fail.h
@@ -87,6 +90,7 @@ lib/ocaml/caml/m.h
 lib/ocaml/caml/major_gc.h
 lib/ocaml/caml/md5.h
 lib/ocaml/caml/memory.h
+lib/ocaml/caml/memprof.h
 lib/ocaml/caml/minor_gc.h
 lib/ocaml/caml/misc.h
 lib/ocaml/caml/mlvalues.h
@@ -282,6 +286,10 @@ lib/ocaml/compiler-libs/docstrings.cmi
 lib/ocaml/compiler-libs/docstrings.cmt
 lib/ocaml/compiler-libs/docstrings.cmti
 lib/ocaml/compiler-libs/docstrings.mli
+lib/ocaml/compiler-libs/domainstate.cmi
+lib/ocaml/compiler-libs/domainstate.cmt
+lib/ocaml/compiler-libs/domainstate.cmti
+lib/ocaml/compiler-libs/domainstate.mli
 lib/ocaml/compiler-libs/emitcode.cmi
 lib/ocaml/compiler-libs/emitcode.cmt
 lib/ocaml/compiler-libs/emitcode.cmti
@@ -387,6 +395,7 @@ lib/ocaml/compiler-libs/numbers.cmti
 lib/ocaml/compiler-libs/numbers.mli
 lib/ocaml/compiler-libs/ocamlbytecomp.cma
 lib/ocaml/compiler-libs/ocamlcommon.cma
+lib/ocaml/compiler-libs/ocamlmiddleend.cma
 lib/ocaml/compiler-libs/ocamltoplevel.cma
 lib/ocaml/compiler-libs/opcodes.cmi
 lib/ocaml/compiler-libs/opcodes.cmt
@@ -567,6 +576,10 @@ lib/ocaml/compiler-libs/translprim.cmi
 lib/ocaml/compiler-libs/translprim.cmt
 lib/ocaml/compiler-libs/translprim.cmti
 lib/ocaml/compiler-libs/translprim.mli
+lib/ocaml/compiler-libs/type_immediacy.cmi
+lib/ocaml/compiler-libs/type_immediacy.cmt
+lib/ocaml/compiler-libs/type_immediacy.cmti
+lib/ocaml/compiler-libs/type_immediacy.mli
 lib/ocaml/compiler-libs/typeclass.cmi
 lib/ocaml/compiler-libs/typeclass.cmt
 lib/ocaml/compiler-libs/typeclass.cmti
@@ -660,16 +673,16 @@ lib/ocaml/lazy.mli
 lib/ocaml/ld.conf
 lib/ocaml/lexing.ml
 lib/ocaml/lexing.mli
-lib/ocaml/libcamlrun.a
-lib/ocaml/libcamlrun_pic.a
-lib/ocaml/libcamlrun_shared.so
-lib/ocaml/libcamlrund.a
-lib/ocaml/libcamlruni.a
-lib/ocaml/libcamlstr.a
+@static-lib lib/ocaml/libcamlrun.a
+@static-lib lib/ocaml/libcamlrun_pic.a
+@so lib/ocaml/libcamlrun_shared.so
+@static-lib lib/ocaml/libcamlrund.a
+@static-lib lib/ocaml/libcamlruni.a
+@static-lib lib/ocaml/libcamlstr.a
 @comment raw_spacetime is not built on all archs
 @comment lib/ocaml/libraw_spacetime_lib.a
-lib/ocaml/libthreads.a
-lib/ocaml/libunix.a
+@static-lib lib/ocaml/libthreads.a
+@static-lib lib/ocaml/libunix.a
 lib/ocaml/list.ml
 lib/ocaml/list.mli
 lib/ocaml/listLabels.ml
@@ -963,11 +976,11 @@ lib/ocaml/string.mli
 lib/ocaml/stringLabels.ml
 lib/ocaml/stringLabels.mli
 lib/ocaml/stublibs/
-lib/ocaml/stublibs/dllcamlstr.so
+@so lib/ocaml/stublibs/dllcamlstr.so
 @comment raw_spacetime is not built on all archs
 @comment lib/ocaml/stublibs/dllraw_spacetime_lib.so
-lib/ocaml/stublibs/dllthreads.so
-lib/ocaml/stublibs/dllunix.so
+@so lib/ocaml/stublibs/dllthreads.so
+@so lib/ocaml/stublibs/dllunix.so
 lib/ocaml/sys.ml
 lib/ocaml/sys.mli
 lib/ocaml/threads/
@@ -1127,6 +1140,7 @@ lib/ocaml/weak.mli
 @man man/man3/Digest.3o
 @man man/man3/Docstrings.3o
 @man man/man3/Docstrings.WithMenhir.3o
+@man man/man3/Domainstate.3o
 @man man/man3/Dynlink.3o
 @man man/man3/Ephemeron.3o
 @man man/man3/Ephemeron.GenHashTable.3o
@@ -1335,6 +1349,10 @@ lib/ocaml/weak.mli
 @man man/man3/Strongly_connected_components.S.Id.3o
 @man man/man3/Syntaxerr.3o
 @man man/man3/Sys.3o
+@man man/man3/Sys.Immediate64.3o
+@man man/man3/Sys.Immediate64.Immediate.3o
+@man man/man3/Sys.Immediate64.Make.3o
+@man man/man3/Sys.Immediate64.Non_immediate.3o
 @man man/man3/Targetint.3o
 @man man/man3/Terminfo.3o
 @man man/man3/Thread.3o
@@ -1355,6 +1373,10 @@ share/doc/ocaml/LICENSE
 share/doc/ocaml/html/
 share/doc/ocaml/html/advexamples.html
 share/doc/ocaml/html/afl-fuzz.html
+share/doc/ocaml/html/alerts.html
+share/doc/ocaml/html/attributes.html
+share/doc/ocaml/html/bigarray.html
+share/doc/ocaml/html/bindingops.html
 share/doc/ocaml/html/browser.html
 share/doc/ocaml/html/classes.html
 share/doc/ocaml/html/comp.html
@@ -1365,14 +1387,26 @@ share/doc/ocaml/html/core.html
 share/doc/ocaml/html/coreexamples.html
 share/doc/ocaml/html/debugger.html
 share/doc/ocaml/html/depend.html
+share/doc/ocaml/html/doccomments.html
+share/doc/ocaml/html/emptyvariants.html
 share/doc/ocaml/html/expr.html
+share/doc/ocaml/html/extensiblevariants.html
+share/doc/ocaml/html/extensionnodes.html
+share/doc/ocaml/html/extensionsyntax.html
 share/doc/ocaml/html/extn.html
+share/doc/ocaml/html/firstclassmodules.html
 share/doc/ocaml/html/flambda.html
 share/doc/ocaml/html/foreword.html
+share/doc/ocaml/html/gadts.html
+share/doc/ocaml/html/generalizedopens.html
+share/doc/ocaml/html/generativefunctors.html
 share/doc/ocaml/html/index.html
+share/doc/ocaml/html/indexops.html
+share/doc/ocaml/html/inlinerecords.html
 share/doc/ocaml/html/intfc.html
 share/doc/ocaml/html/lablexamples.html
 share/doc/ocaml/html/language.html
+share/doc/ocaml/html/letrecvalues.html
 share/doc/ocaml/html/lex.html
 share/doc/ocaml/html/lexyacc.html
 share/doc/ocaml/html/libbigarray.html
@@ -1557,6 +1591,10 @@ share/doc/ocaml/html/libref/Str.html
 share/doc/ocaml/html/libref/Stream.html
 share/doc/ocaml/html/libref/String.html
 share/doc/ocaml/html/libref/StringLabels.html
+share/doc/ocaml/html/libref/Sys.Immediate64.Immediate.html
+share/doc/ocaml/html/libref/Sys.Immediate64.Make.html
+share/doc/ocaml/html/libref/Sys.Immediate64.Non_immediate.html
+share/doc/ocaml/html/libref/Sys.Immediate64.html
 share/doc/ocaml/html/libref/Sys.html
 share/doc/ocaml/html/libref/Thread.html
 share/doc/ocaml/html/libref/ThreadUnix.html
@@ -1757,6 +1795,10 @@ share/doc/ocaml/html/libref/type_Str.html
 share/doc/ocaml/html/libref/type_Stream.html
 share/doc/ocaml/html/libref/type_String.html
 share/doc/ocaml/html/libref/type_StringLabels.html
+share/doc/ocaml/html/libref/type_Sys.Immediate64.Immediate.html
+share/doc/ocaml/html/libref/type_Sys.Immediate64.Make.html
+share/doc/ocaml/html/libref/type_Sys.Immediate64.Non_immediate.html
+share/doc/ocaml/html/libref/type_Sys.Immediate64.html
 share/doc/ocaml/html/libref/type_Sys.html
 share/doc/ocaml/html/libref/type_Thread.html
 share/doc/ocaml/html/libref/type_ThreadUnix.html
@@ -1772,49 +1814,32 @@ share/doc/ocaml/html/libref/type_Weak.html
 share/doc/ocaml/html/libstr.html
 share/doc/ocaml/html/libthreads.html
 share/doc/ocaml/html/libunix.html
+share/doc/ocaml/html/locallyabstract.html
 share/doc/ocaml/html/manual.css
 share/doc/ocaml/html/manual.html
 share/doc/ocaml/html/manual001.html
-share/doc/ocaml/html/manual023.html
 share/doc/ocaml/html/manual024.html
-share/doc/ocaml/html/manual025.html
-share/doc/ocaml/html/manual026.html
-share/doc/ocaml/html/manual027.html
-share/doc/ocaml/html/manual028.html
-share/doc/ocaml/html/manual029.html
-share/doc/ocaml/html/manual030.html
-share/doc/ocaml/html/manual031.html
-share/doc/ocaml/html/manual032.html
-share/doc/ocaml/html/manual033.html
-share/doc/ocaml/html/manual034.html
-share/doc/ocaml/html/manual035.html
-share/doc/ocaml/html/manual036.html
-share/doc/ocaml/html/manual037.html
-share/doc/ocaml/html/manual038.html
-share/doc/ocaml/html/manual039.html
-share/doc/ocaml/html/manual040.html
-share/doc/ocaml/html/manual041.html
-share/doc/ocaml/html/manual042.html
-share/doc/ocaml/html/manual043.html
-share/doc/ocaml/html/manual044.html
-share/doc/ocaml/html/manual045.html
-share/doc/ocaml/html/manual046.html
-share/doc/ocaml/html/manual057.html
-share/doc/ocaml/html/manual072.html
+share/doc/ocaml/html/manual056.html
+share/doc/ocaml/html/manual071.html
 share/doc/ocaml/html/modtypes.html
+share/doc/ocaml/html/modulealias.html
 share/doc/ocaml/html/moduleexamples.html
 share/doc/ocaml/html/modules.html
+share/doc/ocaml/html/moduletypeof.html
 share/doc/ocaml/html/names.html
 share/doc/ocaml/html/native.html
 share/doc/ocaml/html/next_motif.gif
 share/doc/ocaml/html/objectexamples.html
 share/doc/ocaml/html/ocamldoc.html
+share/doc/ocaml/html/overridingopen.html
 share/doc/ocaml/html/parsing.html
 share/doc/ocaml/html/patterns.html
 share/doc/ocaml/html/polymorphism.html
 share/doc/ocaml/html/previous_motif.gif
+share/doc/ocaml/html/privatetypes.html
 share/doc/ocaml/html/profil.html
 share/doc/ocaml/html/runtime.html
+share/doc/ocaml/html/signaturesubstitution.html
 share/doc/ocaml/html/spacetime.html
 share/doc/ocaml/html/stdlib.html
 share/doc/ocaml/html/toplevel.html

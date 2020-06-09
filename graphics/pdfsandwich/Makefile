@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/09 17:34:14 chrisz Exp $
 
 # configure looks for ocamlopt
 ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 COMMENT =	generator for sandwich OCR pdf files
 
 DISTNAME =	pdfsandwich-0.1.7
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 

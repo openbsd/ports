@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/09 17:34:14 chrisz Exp $
 
 COMMENT =	optimized parsing and printing library for the JSON format
 CATEGORIES =	devel
@@ -6,7 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocaml-community
 GH_PROJECT =	yojson
 GH_TAGNAME =	1.7.0
-REVISION =	2
+REVISION =	3
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD

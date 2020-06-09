@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/09 17:34:13 chrisz Exp $
 
 COMMENT =	interface to the OCaml stdlib Format module
 CATEGORIES =	devel
@@ -6,7 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	mjambon
 GH_PROJECT =	easy-format
 GH_TAGNAME =	v1.3.1
-REVISION =	1
+REVISION =	2
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD

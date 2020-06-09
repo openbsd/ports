@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/04 12:51:13 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/09 17:34:13 chrisz Exp $
 %%native%%
 @bin bin/ocamlbuild
 bin/ocamlbuild.byte
@@ -6,9 +6,12 @@ lib/ocaml/ocamlbuild/
 lib/ocaml/ocamlbuild/META
 lib/ocaml/ocamlbuild/ocamlbuild.cmo
 lib/ocaml/ocamlbuild/ocamlbuild_executor.cmi
+lib/ocaml/ocamlbuild/ocamlbuild_executor.cmo
 lib/ocaml/ocamlbuild/ocamlbuild_pack.cmi
 lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmi
+lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmo
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmi
+lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmo
 lib/ocaml/ocamlbuild/ocamlbuildlib.cma
 lib/ocaml/ocamlbuild/signatures.cmi
 lib/ocaml/ocamlbuild/signatures.cmti

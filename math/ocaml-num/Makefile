@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/09 17:34:14 chrisz Exp $
 
 COMMENT =	library for arithmetic on big integers and rationals
 CATEGORIES =	math
 
 V =		1.1
-REVISION =	1
+REVISION =	2
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	num
 #GH_TAGNAME =	v${V}

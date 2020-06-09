@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/18 22:59:50 daniel Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/09 17:34:13 chrisz Exp $
 
 COMMENT =	binary data format designed for speed, safety, usability
 CATEGORIES =	devel
@@ -6,6 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocaml-community
 GH_PROJECT =	biniou
 GH_TAGNAME =	1.2.1
+REVISION =	0
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.31 2020/06/09 17:34:15 chrisz Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pthread
 
 DISTNAME =	hevea-2.32
-REVISION =	1
+REVISION =	2
 MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/ \
 		https://spacehopper.org/mirrors/
 
