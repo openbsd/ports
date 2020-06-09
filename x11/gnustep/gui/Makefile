@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.55 2019/10/20 08:03:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2020/06/09 21:12:17 sebastia Exp $
 
 COMMENT=	GNUstep gui library
 
-DISTNAME =	gnustep-gui-0.27.0
-REVISION =	2
+DISTNAME =	gnustep-gui-0.28.0
 
 CATEGORIES=	devel
 
 # needs to follow gnustep-back backend versioning
 # cf. gnustep_backend_bundle() in ${WRKSRC}/Source/NSApplication.m
-SHARED_LIBS =	gnustep-gui 0.29
+SHARED_LIBS =	gnustep-gui 0.30
 
 HOMEPAGE=	http://www.gnustep.org/
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Tools_speech_FliteSpeechEngine_m,v 1.1 2019/02/12 19:17:22 sebastia Exp $
+$OpenBSD: patch-Tools_speech_FliteSpeechEngine_m,v 1.2 2020/06/09 21:12:17 sebastia Exp $
 
 use register_cmu_us_kal instead of register_cmu_us_kal16
 
@@ -15,11 +15,11 @@ Index: Tools/speech/FliteSpeechEngine.m
  /**
   * Implementation of a speech engine using flite.  This should be the default
 @@ -30,7 +30,7 @@ cst_voice *register_cmu_us_kal16();
- 	if (nil == (self = [super init])) { return nil; }
- 
- 	// Only one voice supported by flite unless others are compiled in.
--	v = register_cmu_us_kal16();
-+	v = register_cmu_us_kal();
- 	if (NULL == v)
- 	{
- 		[self release];
+   if (nil == (self = [super init])) { return nil; }
+   
+   // Only one voice supported by flite unless others are compiled in.
+-  v = register_cmu_us_kal16();
++  v = register_cmu_us_kal();
+   if (NULL == v)
+     {
+       [self release];

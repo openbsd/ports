@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/02/12 19:16:17 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/06/09 21:12:17 sebastia Exp $
 bin/GSSpeechServer
 @bin bin/gclose
 @bin bin/gcloseall
@@ -23,6 +23,7 @@ include/AppKit/GSHbox.h
 include/AppKit/GSHelpAttachment.h
 include/AppKit/GSHelpManagerPanel.h
 include/AppKit/GSHorizontalTypesetter.h
+include/AppKit/GSImageMagickImageRep.h
 include/AppKit/GSInfoPanel.h
 include/AppKit/GSInstantiator.h
 include/AppKit/GSLayoutManager.h
@@ -53,7 +54,6 @@ include/AppKit/GSXibElement.h
 include/AppKit/GSXibKeyedUnarchiver.h
 include/AppKit/GSXibLoading.h
 include/AppKit/GSXibObjectContainer.h
-include/AppKit/GSXibParser.h
 include/AppKit/IMConnectors.h
 include/AppKit/IMCustomObject.h
 include/AppKit/IMLoading.h
@@ -64,6 +64,7 @@ include/AppKit/NSAffineTransform.h
 include/AppKit/NSAlert.h
 include/AppKit/NSAnimation.h
 include/AppKit/NSAnimationContext.h
+include/AppKit/NSAppearance.h
 include/AppKit/NSApplication.h
 include/AppKit/NSArrayController.h
 include/AppKit/NSAttributedString.h
@@ -74,8 +75,12 @@ include/AppKit/NSBrowser.h
 include/AppKit/NSBrowserCell.h
 include/AppKit/NSButton.h
 include/AppKit/NSButtonCell.h
+include/AppKit/NSButtonTouchBarItem.h
+include/AppKit/NSCIImageRep.h
 include/AppKit/NSCachedImageRep.h
+include/AppKit/NSCandidateListTouchBarItem.h
 include/AppKit/NSCell.h
+include/AppKit/NSClickGestureRecognizer.h
 include/AppKit/NSClipView.h
 include/AppKit/NSCollectionView.h
 include/AppKit/NSCollectionViewItem.h
@@ -83,7 +88,9 @@ include/AppKit/NSColor.h
 include/AppKit/NSColorList.h
 include/AppKit/NSColorPanel.h
 include/AppKit/NSColorPicker.h
+include/AppKit/NSColorPickerTouchBarItem.h
 include/AppKit/NSColorPicking.h
+include/AppKit/NSColorSampler.h
 include/AppKit/NSColorSpace.h
 include/AppKit/NSColorWell.h
 include/AppKit/NSComboBox.h
@@ -92,17 +99,25 @@ include/AppKit/NSControl.h
 include/AppKit/NSController.h
 include/AppKit/NSCursor.h
 include/AppKit/NSCustomImageRep.h
+include/AppKit/NSCustomTouchBarItem.h
+include/AppKit/NSDataAsset.h
 include/AppKit/NSDataLink.h
 include/AppKit/NSDataLinkManager.h
 include/AppKit/NSDataLinkPanel.h
+include/AppKit/NSDatePicker.h
+include/AppKit/NSDatePickerCell.h
+include/AppKit/NSDockTile.h
 include/AppKit/NSDocument.h
 include/AppKit/NSDocumentController.h
 include/AppKit/NSDragging.h
 include/AppKit/NSDrawer.h
 include/AppKit/NSEPSImageRep.h
+include/AppKit/NSErrors.h
 include/AppKit/NSEvent.h
 include/AppKit/NSFileWrapper.h
+include/AppKit/NSFileWrapperExtensions.h
 include/AppKit/NSFont.h
+include/AppKit/NSFontCollection.h
 include/AppKit/NSFontDescriptor.h
 include/AppKit/NSFontManager.h
 include/AppKit/NSFontPanel.h
@@ -113,6 +128,7 @@ include/AppKit/NSGlyphGenerator.h
 include/AppKit/NSGradient.h
 include/AppKit/NSGraphics.h
 include/AppKit/NSGraphicsContext.h
+include/AppKit/NSGroupTouchBarItem.h
 include/AppKit/NSHelpManager.h
 include/AppKit/NSHelpPanel.h
 include/AppKit/NSImage.h
@@ -126,6 +142,7 @@ include/AppKit/NSKeyValueBinding.h
 include/AppKit/NSLayoutManager.h
 include/AppKit/NSLevelIndicator.h
 include/AppKit/NSLevelIndicatorCell.h
+include/AppKit/NSMagnificationGestureRecognizer.h
 include/AppKit/NSMatrix.h
 include/AppKit/NSMenu.h
 include/AppKit/NSMenuItem.h
@@ -135,27 +152,41 @@ include/AppKit/NSMovie.h
 include/AppKit/NSMovieView.h
 include/AppKit/NSNib.h
 include/AppKit/NSNibConnector.h
+include/AppKit/NSNibControlConnector.h
 include/AppKit/NSNibDeclarations.h
 include/AppKit/NSNibLoading.h
+include/AppKit/NSNibOutletConnector.h
 include/AppKit/NSObjectController.h
 include/AppKit/NSOpenGL.h
 include/AppKit/NSOpenGLView.h
 include/AppKit/NSOpenPanel.h
 include/AppKit/NSOutlineView.h
+include/AppKit/NSPDFImageRep.h
+include/AppKit/NSPDFInfo.h
+include/AppKit/NSPDFPanel.h
+include/AppKit/NSPICTImageRep.h
 include/AppKit/NSPageLayout.h
+include/AppKit/NSPanGestureRecognizer.h
 include/AppKit/NSPanel.h
 include/AppKit/NSParagraphStyle.h
 include/AppKit/NSPasteboard.h
 include/AppKit/NSPasteboardItem.h
+include/AppKit/NSPickerTouchBarItem.h
 include/AppKit/NSPopUpButton.h
 include/AppKit/NSPopUpButtonCell.h
 include/AppKit/NSPopover.h
+include/AppKit/NSPopoverTouchBarItem.h
+include/AppKit/NSPredicateEditor.h
+include/AppKit/NSPredicateEditorRowTemplate.h
+include/AppKit/NSPressGestureRecognizer.h
 include/AppKit/NSPrintInfo.h
 include/AppKit/NSPrintOperation.h
 include/AppKit/NSPrintPanel.h
 include/AppKit/NSPrinter.h
 include/AppKit/NSProgressIndicator.h
 include/AppKit/NSResponder.h
+include/AppKit/NSRotationGestureRecognizer.h
+include/AppKit/NSRuleEditor.h
 include/AppKit/NSRulerMarker.h
 include/AppKit/NSRulerView.h
 include/AppKit/NSRunningApplication.h
@@ -171,9 +202,12 @@ include/AppKit/NSSegmentedControl.h
 include/AppKit/NSSelection.h
 include/AppKit/NSShadow.h
 include/AppKit/NSSharingService.h
+include/AppKit/NSSharingServicePickerTouchBarItem.h
 include/AppKit/NSSlider.h
 include/AppKit/NSSliderCell.h
+include/AppKit/NSSliderTouchBarItem.h
 include/AppKit/NSSound.h
+include/AppKit/NSSpeechRecognizer.h
 include/AppKit/NSSpeechSynthesizer.h
 include/AppKit/NSSpellChecker.h
 include/AppKit/NSSpellProtocol.h
@@ -183,6 +217,7 @@ include/AppKit/NSStatusBar.h
 include/AppKit/NSStatusItem.h
 include/AppKit/NSStepper.h
 include/AppKit/NSStepperCell.h
+include/AppKit/NSStepperTouchBarItem.h
 include/AppKit/NSStringDrawing.h
 include/AppKit/NSTabView.h
 include/AppKit/NSTabViewItem.h
@@ -205,6 +240,9 @@ include/AppKit/NSTokenFieldCell.h
 include/AppKit/NSToolbar.h
 include/AppKit/NSToolbarItem.h
 include/AppKit/NSToolbarItemGroup.h
+include/AppKit/NSTouch.h
+include/AppKit/NSTouchBar.h
+include/AppKit/NSTouchBarItem.h
 include/AppKit/NSTrackingArea.h
 include/AppKit/NSTreeController.h
 include/AppKit/NSTreeNode.h
@@ -234,6 +272,7 @@ include/GNUstepGUI/GSHbox.h
 include/GNUstepGUI/GSHelpAttachment.h
 include/GNUstepGUI/GSHelpManagerPanel.h
 include/GNUstepGUI/GSHorizontalTypesetter.h
+include/GNUstepGUI/GSImageMagickImageRep.h
 include/GNUstepGUI/GSInfoPanel.h
 include/GNUstepGUI/GSInstantiator.h
 include/GNUstepGUI/GSLayoutManager.h
@@ -264,7 +303,6 @@ include/GNUstepGUI/GSXibElement.h
 include/GNUstepGUI/GSXibKeyedUnarchiver.h
 include/GNUstepGUI/GSXibLoading.h
 include/GNUstepGUI/GSXibObjectContainer.h
-include/GNUstepGUI/GSXibParser.h
 include/GNUstepGUI/IMConnectors.h
 include/GNUstepGUI/IMCustomObject.h
 include/GNUstepGUI/IMLoading.h
@@ -281,6 +319,7 @@ include/gnustep/gui/GSHbox.h
 include/gnustep/gui/GSHelpAttachment.h
 include/gnustep/gui/GSHelpManagerPanel.h
 include/gnustep/gui/GSHorizontalTypesetter.h
+include/gnustep/gui/GSImageMagickImageRep.h
 include/gnustep/gui/GSInfoPanel.h
 include/gnustep/gui/GSInstantiator.h
 include/gnustep/gui/GSLayoutManager.h
@@ -311,7 +350,6 @@ include/gnustep/gui/GSXibElement.h
 include/gnustep/gui/GSXibKeyedUnarchiver.h
 include/gnustep/gui/GSXibLoading.h
 include/gnustep/gui/GSXibObjectContainer.h
-include/gnustep/gui/GSXibParser.h
 include/gnustep/gui/IMConnectors.h
 include/gnustep/gui/IMCustomObject.h
 include/gnustep/gui/IMLoading.h
@@ -381,6 +419,12 @@ lib/GNUstep/ColorPickers/WheelPicker.bundle/stamp.make
 lib/GNUstep/Images/
 lib/GNUstep/Images/GNUstep.tiff
 lib/GNUstep/Images/GNUstepMenuImage.tiff
+lib/GNUstep/Images/GSContextualMenuCursor.tiff
+lib/GNUstep/Images/GSDisappearingItemCursor.tiff
+lib/GNUstep/Images/GSDragCopyCursor.tiff
+lib/GNUstep/Images/GSDragLinkCursor.tiff
+lib/GNUstep/Images/GSGreenArrowCursor.tiff
+lib/GNUstep/Images/GSOperationNotAllowedCursor.tiff
 lib/GNUstep/Images/GSSearch.tiff
 lib/GNUstep/Images/GSStop.tiff
 lib/GNUstep/Images/LogoGNUstep.tiff

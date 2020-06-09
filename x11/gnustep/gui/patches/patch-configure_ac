@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.5 2019/02/12 19:16:17 sebastia Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2020/06/09 21:12:17 sebastia Exp $
 
 use register_cmu_us_kal instead of register_cmu_us_kal16
 
@@ -30,4 +30,4 @@ Index: configure.ac
 +LDFLAGS="${orig_LDFLAGS}"
  
  #--------------------------------------------------------------------
- # Find CUPS
+ # NSSpeechRecognizer
