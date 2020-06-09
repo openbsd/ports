@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/09 04:39:53 bentley Exp $
 
 COMMENT =	sans-serif typeface family of Android OS
 
-# 2013-10-31 Version 1.2 (the date in the specimen filename in the website)
-V =		1.2
+FIX_EXTRACT_PERMISSIONS =	Yes
+
+V =		2.138
 EPOCH =		0
-REVISION =	2
-DISTNAME =	roboto-${V}
+DISTNAME =	roboto-unhinted
 PKGNAME =	roboto-fonts-${V}
 
 CATEGORIES =	fonts x11
@@ -16,21 +16,23 @@ HOMEPAGE =	https://developer.android.com/design/style/typography.html
 # Apache 2 License
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	https://developer.android.com/downloads/design/
+MASTER_SITES =	https://github.com/googlefonts/roboto/releases/download/v$V/
 EXTRACT_SUFX =	.zip
+
+DIST_SUBDIR =	roboto-$V
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
 PKG_ARCH =	*
-WRKDIST =	${WRKDIR}/Roboto_v${V}
+WRKDIST =	${WRKDIR}
 
 FONTDIR =	${PREFIX}/share/fonts/roboto
 DOCDIR =	${PREFIX}/share/doc/roboto-fonts
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.pdf ${WRKDIST}/Roboto/*.txt ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/*.ttf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/LICENSE ${DOCDIR}
 
 .include <bsd.port.mk>
