@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2020/04/05 15:43:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/06/09 22:43:16 sthen Exp $
 
 QT5NAME =		QtTools
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin
 PKGNAME-webview =	qwebview-${VERSION}
-REVISON-webview =	0
+REVISION-webview =	0
 
 DPB_PROPERTIES =	parallel
 
@@ -34,7 +34,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 
 LIB_DEPENDS-webview =	${LIB_DEPENDS} \
 			${BUILD_PKGPATH}>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
-			x11/qt5/qtwebkit>=${QT5_WEBKIT_VERSION}
+			x11/qt5/qtwebkit
 
 FLAVORS =		debug
 PSEUDO_FLAVORS =	bootstrap no_examples no_webview

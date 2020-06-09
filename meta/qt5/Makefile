@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/04/05 15:43:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/06/09 22:43:16 sthen Exp $
 
 COMMENT-main =		C++ general-purpose toolkit, meta-package
 COMMENT-examples =	examples for Qt5, meta-package
@@ -6,7 +6,7 @@ COMMENT-examples =	examples for Qt5, meta-package
 PKGNAME =		qt5-${MODQT5_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
-REVISION-main =		0
+REVISION-main =		1
 
 MULTI_PACKAGES =	-main -examples
 
@@ -44,7 +44,7 @@ RUN_DEPENDS-main =	\
 			x11/qt5/qttranslations=${MODQT5_VERSION} \
 			x11/qt5/qtvirtualkeyboard,-main=${MODQT5_VERSION} \
 			x11/qt5/qtwebchannel,-main=${MODQT5_VERSION} \
-			x11/qt5/qtwebkit=${MODQT5_WEBKIT_VERSION} \
+			x11/qt5/qtwebkit \
 			x11/qt5/qtwebsockets,-main=${MODQT5_VERSION} \
 			x11/qt5/qtx11extras=${MODQT5_VERSION} \
 			x11/qt5/qtxmlpatterns,-main=${MODQT5_VERSION} \
