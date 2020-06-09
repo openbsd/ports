@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2020/05/22 21:57:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.70 2020/06/09 03:42:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -42,6 +42,7 @@
      SUBDIR += ibm-plex
      SUBDIR += inter
      SUBDIR += inconsolata-font
+     SUBDIR += inconsolata-new
      SUBDIR += intlfonts
      SUBDIR += iosevka-fonts
      SUBDIR += ja-funetfonts
