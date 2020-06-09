@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.17 2020/06/09 06:51:59 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.18 2020/06/09 06:57:58 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -195,7 +195,7 @@ MODCARGO_configure += \
 	echo "debug = 0" >>${WRKDIR}/.cargo/config; \
 	echo "debug-assertions = false" >>${WRKDIR}/.cargo/config; \
 	echo "overflow-checks = false" >>${WRKDIR}/.cargo/config; \
-	echo "lto = 'thin'" >>${WRKDIR}/.cargo/config; \
+	echo "lto = 'false'" >>${WRKDIR}/.cargo/config; \
 	echo "panic = 'unwind'" >>${WRKDIR}/.cargo/config; \
 	echo "incremental = false" >>${WRKDIR}/.cargo/config; \
 	echo "codegen-units = 4" >>${WRKDIR}/.cargo/config; \
