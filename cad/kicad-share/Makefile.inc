@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/12/10 23:09:48 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2020/06/09 17:09:24 cwen Exp $
+
+NOT_FOR_ARCHS =		powerpc
 
 PKG_ARCH ?=		*
 
