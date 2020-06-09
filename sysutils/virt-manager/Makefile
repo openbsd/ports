@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2020/06/07 16:01:39 ajacoutot Exp $
-
-BROKEN=			requires py3-libxml2
+# $OpenBSD: Makefile,v 1.33 2020/06/09 07:30:55 ajacoutot Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
@@ -25,12 +23,12 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 NO_BUILD=		Yes
 
-# XXX textproc/libxml,-python${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/libvirt-glib \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/vte3 \
 			misc/osinfo/libosinfo \
 			sysutils/libvirt-python${MODPY_FLAVOR} \
+			textproc/libxml,-python \
 			www/py-requests${MODPY_FLAVOR} \
 			x11/gtk-vnc \
 			x11/gtksourceview4 \
