@@ -1,12 +1,16 @@
-$OpenBSD: patch-src_gwaei_Makefile_in,v 1.2 2013/03/27 18:02:51 ajacoutot Exp $
+$OpenBSD: patch-src_gwaei_Makefile_in,v 1.3 2020/06/10 07:15:55 ajacoutot Exp $
 
 Remove -DGTK_DISABLE_DEPRECATED: fix build with gtk+3>=3.8.0 (XXX check on next update)
 
---- src/gwaei/Makefile.in.orig	Mon Dec 19 22:49:58 2011
-+++ src/gwaei/Makefile.in	Wed Mar 27 17:50:23 2013
-@@ -321,7 +321,7 @@ top_builddir = @top_builddir@
+Index: src/gwaei/Makefile.in
+--- src/gwaei/Makefile.in.orig
++++ src/gwaei/Makefile.in
+@@ -319,9 +319,9 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- SUBDIRS = include/gwaei help
+-SUBDIRS = include/gwaei help
++SUBDIRS = include/gwaei
  ACLOCAL_AMFLAGS = -I m4
 -DEFINITIONS = -DDATADIR2=\"$(datadir)\" -DLIBDIR=\"$(libdir)\" -DENCHANT=\"$(ENCHANT)\" -DGWAEI_LOCALEDIR=\"$(GWAEI_LOCALEDIR)\" -DGTK_DISABLE_DEPRECATED -DG_SEAL_ENABLE -Wall
 +DEFINITIONS = -DDATADIR2=\"$(datadir)\" -DLIBDIR=\"$(libexecdir)\" -DENCHANT=\"$(ENCHANT)\" -DGWAEI_LOCALEDIR=\"$(GWAEI_LOCALEDIR)\" -DG_SEAL_ENABLE -Wall

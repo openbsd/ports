@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/06 06:04:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/06/10 07:15:55 ajacoutot Exp $
 @bin bin/gwaei
 @bin bin/waei
 include/libwaei/
@@ -18,7 +18,7 @@ include/libwaei/regex.h
 include/libwaei/resultline.h
 include/libwaei/searchitem.h
 include/libwaei/utilities.h
-lib/libwaei.a
+@static-lib lib/libwaei.a
 lib/libwaei.la
 @lib lib/libwaei.so.${LIBwaei_VERSION}
 libexec/gwaei/
@@ -31,12 +31,6 @@ share/doc/gwaei/COPYING
 share/doc/gwaei/ChangeLog
 share/doc/gwaei/NEWS
 share/glib-2.0/schemas/org.gnome.gwaei.gschema.xml
-share/gnome/
-share/gnome/help/
-share/gnome/help/gwaei/
-share/gnome/help/gwaei/C/
-share/gnome/help/gwaei/C/glossary.xml
-share/gnome/help/gwaei/C/gwaei.xml
 share/gwaei/
 share/gwaei/book_green.png
 share/gwaei/dictionaryinstallwindow.ui
@@ -72,9 +66,6 @@ share/locale/it/LC_MESSAGES/gwaei.mo
 share/locale/ja/LC_MESSAGES/gwaei.mo
 share/locale/tr/LC_MESSAGES/gwaei.mo
 share/locale/vi/LC_MESSAGES/gwaei.mo
-share/omf/
-share/omf/gwaei/
-share/omf/gwaei/gwaei-C.omf
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag glib-compile-schemas

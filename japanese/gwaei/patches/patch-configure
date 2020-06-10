@@ -1,0 +1,159 @@
+$OpenBSD: patch-configure,v 1.1 2020/06/10 07:15:55 ajacoutot Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -11528,33 +11528,8 @@ $as_echo "no" >&6; }
+ 	fi
+ fi
+ 
+-gdu_cv_version_required=0.3.2
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking gnome-doc-utils >= $gdu_cv_version_required" >&5
+-$as_echo_n "checking gnome-doc-utils >= $gdu_cv_version_required... " >&6; }
+-if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gnome-doc-utils >= \$gdu_cv_version_required\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "gnome-doc-utils >= $gdu_cv_version_required") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  gdu_cv_have_gdu=yes
+-else
+-  gdu_cv_have_gdu=no
+-fi
+ 
+-if test "$gdu_cv_have_gdu" = "yes"; then
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-	:
+-else
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-	:
+-fi
+-
+-
+-
+ # Check whether --with-help-dir was given.
+ if test "${with_help_dir+set}" = set; then :
+   withval=$with_help_dir;
+@@ -11902,16 +11877,14 @@ if test -n "$GWAEI_CFLAGS"; then
+                            gio-2.0            >= \$GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= \$GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= \$GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= \$LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= \$GDU_REQUIRED_VERSION           \""; } >&5
++                           libcurl            >= \$LIBCURL_REQUIRED_VERSION       \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "gtk+-3.0           >= $GTK3_REQUIRED_VERSION
+                            glib-2.0           >= $GLIB_REQUIRED_VERSION
+                            gobject-2.0        >= $GLIB_REQUIRED_VERSION
+                            gio-2.0            >= $GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= $GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= $GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= $LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= $GDU_REQUIRED_VERSION           ") 2>&5
++                           libcurl            >= $LIBCURL_REQUIRED_VERSION       ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+@@ -11921,8 +11894,7 @@ if test -n "$GWAEI_CFLAGS"; then
+                            gio-2.0            >= $GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= $GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= $GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= $LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= $GDU_REQUIRED_VERSION           " 2>/dev/null`
++                           libcurl            >= $LIBCURL_REQUIRED_VERSION       " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -11940,16 +11912,14 @@ if test -n "$GWAEI_LIBS"; then
+                            gio-2.0            >= \$GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= \$GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= \$GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= \$LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= \$GDU_REQUIRED_VERSION           \""; } >&5
++                           libcurl            >= \$LIBCURL_REQUIRED_VERSION       \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "gtk+-3.0           >= $GTK3_REQUIRED_VERSION
+                            glib-2.0           >= $GLIB_REQUIRED_VERSION
+                            gobject-2.0        >= $GLIB_REQUIRED_VERSION
+                            gio-2.0            >= $GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= $GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= $GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= $LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= $GDU_REQUIRED_VERSION           ") 2>&5
++                           libcurl            >= $LIBCURL_REQUIRED_VERSION       ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+@@ -11959,8 +11929,7 @@ if test -n "$GWAEI_LIBS"; then
+                            gio-2.0            >= $GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= $GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= $GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= $LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= $GDU_REQUIRED_VERSION           " 2>/dev/null`
++                           libcurl            >= $LIBCURL_REQUIRED_VERSION       " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -11987,8 +11956,7 @@ fi
+                            gio-2.0            >= $GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= $GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= $GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= $LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= $GDU_REQUIRED_VERSION           " 2>&1`
++                           libcurl            >= $LIBCURL_REQUIRED_VERSION       " 2>&1`
+         else
+ 	        GWAEI_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtk+-3.0           >= $GTK3_REQUIRED_VERSION
+                            glib-2.0           >= $GLIB_REQUIRED_VERSION
+@@ -11996,8 +11964,7 @@ fi
+                            gio-2.0            >= $GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= $GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= $GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= $LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= $GDU_REQUIRED_VERSION           " 2>&1`
++                           libcurl            >= $LIBCURL_REQUIRED_VERSION       " 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$GWAEI_PKG_ERRORS" >&5
+@@ -12008,8 +11975,7 @@ fi
+                            gio-2.0            >= $GIO_REQUIRED_VERSION
+                            gmodule-2.0        >= $GMODULE_EXPORT_REQUIRED_VERSION
+                            gthread-2.0        >= $GTHREAD_REQUIRED_VERSION
+-                           libcurl            >= $LIBCURL_REQUIRED_VERSION
+-                           gnome-doc-utils    >= $GDU_REQUIRED_VERSION           ) were not met:
++                           libcurl            >= $LIBCURL_REQUIRED_VERSION       ) were not met:
+ 
+ $GWAEI_PKG_ERRORS
+ 
+@@ -12043,31 +12009,6 @@ $as_echo "yes" >&6; }
+ fi
+ 
+ 
+-
+-gdu_cv_version_required=0.3.2
+-
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking gnome-doc-utils >= $gdu_cv_version_required" >&5
+-$as_echo_n "checking gnome-doc-utils >= $gdu_cv_version_required... " >&6; }
+-if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gnome-doc-utils >= \$gdu_cv_version_required\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "gnome-doc-utils >= $gdu_cv_version_required") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  gdu_cv_have_gdu=yes
+-else
+-  gdu_cv_have_gdu=no
+-fi
+-
+-if test "$gdu_cv_have_gdu" = "yes"; then
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-	:
+-else
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-	as_fn_error $? "gnome-doc-utils >= $gdu_cv_version_required not found" "$LINENO" 5
+-fi
+ 
+ 
+ 
