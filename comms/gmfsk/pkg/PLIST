@@ -1,20 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/05/12 14:29:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/06/10 07:17:32 ajacoutot Exp $
 @bin bin/gmfsk
-share/gnome/
-share/gnome/help/
-share/gnome/help/gmfsk/
-share/gnome/help/gmfsk/C/
-share/gnome/help/gmfsk/C/fdl-appendix.xml
-share/gnome/help/gmfsk/C/figures/
-share/gnome/help/gmfsk/C/figures/gmfsk_start_window.png
-share/gnome/help/gmfsk/C/figures/note.png
-share/gnome/help/gmfsk/C/figures/tip.png
-share/gnome/help/gmfsk/C/figures/warning.png
-share/gnome/help/gmfsk/C/gmfsk.xml
-share/gnome/help/gmfsk/C/legal.xml
-share/omf/
-share/omf/gmfsk/
-share/omf/gmfsk/gmfsk-C.omf
 share/pixmaps/gmfsk/
 share/pixmaps/gmfsk/gnome-screenshot.png
 share/pixmaps/gmfsk/mfsk.png
