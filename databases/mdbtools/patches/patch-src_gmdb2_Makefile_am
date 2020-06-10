@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gmdb2_Makefile_am,v 1.1 2020/06/10 07:18:35 ajacoutot Exp $
+
+Index: src/gmdb2/Makefile.am
+--- src/gmdb2/Makefile.am.orig
++++ src/gmdb2/Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = help gladefiles pixmaps
++SUBDIRS = gladefiles pixmaps
+ bin_PROGRAMS	= gmdb2 
+ include_HEADERS = gmdb.h
+ 
