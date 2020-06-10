@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.978 2020/06/09 18:43:09 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.979 2020/06/10 07:24:28 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1592,6 +1592,8 @@ my $obsolete_reason = {
 	'amide' => 3,
 	'xmedcon' => 3,
 	'gq' => 3,
+	'gnome-doc-utils' => 3,
+	'rarian' => 3,
 };
 
 # reasons for obsolete packages
