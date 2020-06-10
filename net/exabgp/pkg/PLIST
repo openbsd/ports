@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/01/15 22:32:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/10 21:42:56 sthen Exp $
 @newgroup _exabgp:839
 @newuser _exabgp:839:_exabgp:daemon:exabgp user:/nonexistent:/sbin/nologin
 @extraunexec rm /var/log/exabgp/exabgp.log*
@@ -25,10 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/exabgp.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/exabgp.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/exabgp.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/exabgp/__init__.py
-lib/python${MODPY_VERSION}/site-packages/exabgp/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
@@ -41,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}cli.
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}flow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}healthcheck.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}netlink.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}tojson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/bgp.py
@@ -48,6 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/application/cli.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/control.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/flow.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/healthcheck.py
+lib/python${MODPY_VERSION}/site-packages/exabgp/application/main.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/netlink.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/tojson.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/

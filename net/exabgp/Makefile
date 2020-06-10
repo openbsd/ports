@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2020/02/14 11:11:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/06/10 21:42:56 sthen Exp $
 
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
-MODPY_EGG_VERSION=	4.2.6
+MODPY_EGG_VERSION=	4.2.7
 GH_ACCOUNT=		exa-networks
 GH_PROJECT=		exabgp
 GH_TAGNAME=		${MODPY_EGG_VERSION}

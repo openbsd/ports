@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.5 2020/01/15 22:32:39 sthen Exp $
+$OpenBSD: patch-setup_py,v 1.6 2020/06/10 21:42:56 sthen Exp $
 
 Index: setup.py
 --- setup.py.orig
@@ -7,8 +7,8 @@ Index: setup.py
  
  
  data_files = [
--	('etc/exabgp/examples', filesOf('etc/exabgp')),
-+	('share/examples/exabgp', filesOf('etc/exabgp')),
+-    ('etc/exabgp/examples', filesOf('etc/exabgp')),
++    ('share/examples/exabgp', filesOf('etc/exabgp')),
  ]
  
  if platform.system() != 'NetBSD':

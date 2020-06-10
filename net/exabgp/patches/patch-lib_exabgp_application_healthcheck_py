@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_exabgp_application_healthcheck_py,v 1.2 2020/01/15 22:32:39 sthen Exp $
+$OpenBSD: patch-lib_exabgp_application_healthcheck_py,v 1.3 2020/06/10 21:42:56 sthen Exp $
 
 Index: lib/exabgp/application/healthcheck.py
 --- lib/exabgp/application/healthcheck.py.orig
@@ -16,7 +16,7 @@ Index: lib/exabgp/application/healthcheck.py
      }
  
  Use :option:`--help` to get options accepted by this program. A
-@@ -240,6 +240,8 @@ def setup_logging(debug, silent, name, syslog_facility
+@@ -262,6 +262,8 @@ def setup_logging(debug, silent, name, syslog_facility
              return "/var/run/log"
          if sys.platform.startswith("netbsd"):
              return "/var/run/log"
@@ -24,4 +24,4 @@ Index: lib/exabgp/application/healthcheck.py
 +            return "/dev/log"
          if sys.platform.startswith("linux"):
              return "/dev/log"
-         raise EnvironmentError("Unable to guess syslog address for your "
+         raise EnvironmentError("Unable to guess syslog address for your " "platform, try to disable syslog")
