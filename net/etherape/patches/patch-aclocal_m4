@@ -1,12 +1,16 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2019/05/22 11:54:37 naddy Exp $
+$OpenBSD: patch-aclocal_m4,v 1.2 2020/06/10 07:13:55 ajacoutot Exp $
+
+gnome-doc-utils is deprecated; update to a new etherape version
+See https://bitbucket.org/bchiara/etherape/commits/5f1aca28c0db04358af626c3b02bee95a4b4e9f4/raw
 
 Index: aclocal.m4
 --- aclocal.m4.orig
 +++ aclocal.m4
-@@ -1393,6 +1393,7 @@ AC_SUBST([am__untar])
+@@ -1392,7 +1392,7 @@ AC_SUBST([am__untar])
+ ]) # _AM_PROG_TAR
  
  m4_include([m4/gettext.m4])
- m4_include([m4/gnome-doc-utils.m4])
+-m4_include([m4/gnome-doc-utils.m4])
 +m4_include([m4/host-cpu-c-abi.m4])
  m4_include([m4/iconv.m4])
  m4_include([m4/lib-ld.m4])
