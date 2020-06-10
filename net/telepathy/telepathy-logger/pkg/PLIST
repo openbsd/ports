@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/07/06 06:04:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/06/10 07:14:35 ajacoutot Exp $
 include/telepathy-logger-0.2/
 include/telepathy-logger-0.2/telepathy-logger/
 include/telepathy-logger-0.2/telepathy-logger/call-event.h
@@ -9,7 +9,7 @@ include/telepathy-logger-0.2/telepathy-logger/log-walker.h
 include/telepathy-logger-0.2/telepathy-logger/telepathy-logger.h
 include/telepathy-logger-0.2/telepathy-logger/text-event.h
 lib/girepository-1.0/TelepathyLogger-0.2.typelib
-lib/libtelepathy-logger.a
+@static-lib lib/libtelepathy-logger.a
 lib/libtelepathy-logger.la
 @lib lib/libtelepathy-logger.so.${LIBtelepathy-logger_VERSION}
 lib/pkgconfig/telepathy-logger-0.2.pc
