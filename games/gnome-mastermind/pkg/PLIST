@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/06/10 07:16:52 ajacoutot Exp $
 @bin bin/gnome-mastermind
 share/applications/gnome-mastermind.desktop
-share/gnome/
 share/gnome-mastermind/
 share/gnome-mastermind/AUTHORS
 share/gnome-mastermind/BUGS
@@ -21,48 +20,6 @@ share/gnome-mastermind/themes/tango-flat.svg
 share/gnome-mastermind/themes/tango.svg
 share/gnome-mastermind/ui/
 share/gnome-mastermind/ui/ui.xml
-share/gnome/help/
-share/gnome/help/gnome-mastermind/
-share/gnome/help/gnome-mastermind/C/
-share/gnome/help/gnome-mastermind/C/figures/
-share/gnome/help/gnome-mastermind/C/figures/mainwindow.png
-share/gnome/help/gnome-mastermind/C/figures/row1.png
-share/gnome/help/gnome-mastermind/C/figures/row2.png
-share/gnome/help/gnome-mastermind/C/figures/row3.png
-share/gnome/help/gnome-mastermind/C/figures/row4.png
-share/gnome/help/gnome-mastermind/C/figures/row5.png
-share/gnome/help/gnome-mastermind/C/gnome-mastermind.xml
-share/gnome/help/gnome-mastermind/C/legal.xml
-share/gnome/help/gnome-mastermind/fr/
-share/gnome/help/gnome-mastermind/fr/figures/
-share/gnome/help/gnome-mastermind/fr/figures/mainwindow.png
-share/gnome/help/gnome-mastermind/fr/figures/row1.png
-share/gnome/help/gnome-mastermind/fr/figures/row2.png
-share/gnome/help/gnome-mastermind/fr/figures/row3.png
-share/gnome/help/gnome-mastermind/fr/figures/row4.png
-share/gnome/help/gnome-mastermind/fr/figures/row5.png
-share/gnome/help/gnome-mastermind/fr/gnome-mastermind.xml
-share/gnome/help/gnome-mastermind/fr/legal.xml
-share/gnome/help/gnome-mastermind/id/
-share/gnome/help/gnome-mastermind/id/figures/
-share/gnome/help/gnome-mastermind/id/figures/mainwindow.png
-share/gnome/help/gnome-mastermind/id/figures/row1.png
-share/gnome/help/gnome-mastermind/id/figures/row2.png
-share/gnome/help/gnome-mastermind/id/figures/row3.png
-share/gnome/help/gnome-mastermind/id/figures/row4.png
-share/gnome/help/gnome-mastermind/id/figures/row5.png
-share/gnome/help/gnome-mastermind/id/gnome-mastermind.xml
-share/gnome/help/gnome-mastermind/id/legal.xml
-share/gnome/help/gnome-mastermind/it/
-share/gnome/help/gnome-mastermind/it/figures/
-share/gnome/help/gnome-mastermind/it/figures/mainwindow.png
-share/gnome/help/gnome-mastermind/it/figures/row1.png
-share/gnome/help/gnome-mastermind/it/figures/row2.png
-share/gnome/help/gnome-mastermind/it/figures/row3.png
-share/gnome/help/gnome-mastermind/it/figures/row4.png
-share/gnome/help/gnome-mastermind/it/figures/row5.png
-share/gnome/help/gnome-mastermind/it/gnome-mastermind.xml
-share/gnome/help/gnome-mastermind/it/legal.xml
 share/icons/hicolor/16x16/apps/gnome-mastermind.png
 share/icons/hicolor/16x16/apps/gnome-mastermind.svg
 share/icons/hicolor/22x22/apps/gnome-mastermind.png
@@ -82,12 +39,6 @@ share/locale/it/LC_MESSAGES/gnome-mastermind.mo
 share/locale/pl/LC_MESSAGES/gnome-mastermind.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-mastermind.mo
 share/locale/sv/LC_MESSAGES/gnome-mastermind.mo
-share/omf/
-share/omf/gnome-mastermind/
-share/omf/gnome-mastermind/gnome-mastermind-C.omf
-share/omf/gnome-mastermind/gnome-mastermind-fr.omf
-share/omf/gnome-mastermind/gnome-mastermind-id.omf
-share/omf/gnome-mastermind/gnome-mastermind-it.omf
 share/pixmaps/
 share/pixmaps/gnome-mastermind.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure,v 1.1 2020/06/10 07:16:52 ajacoutot Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -24202,27 +24202,6 @@ ALL_LINGUAS="it pl fr sv de en_GB eu id ar pt_BR es"
+ 
+ 
+ 
+-gdu_cv_version_required=0.3.2
+-
+-if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gnome-doc-utils >= \$gdu_cv_version_required\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "gnome-doc-utils >= $gdu_cv_version_required") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  gdu_cv_have_gdu=yes
+-else
+-  gdu_cv_have_gdu=no
+-fi
+-
+-if test "$gdu_cv_have_gdu" = "yes"; then
+-	:
+-else
+-	{ { echo "$as_me:$LINENO: error: gnome-doc-utils >= $gdu_cv_version_required not found" >&5
+-echo "$as_me: error: gnome-doc-utils >= $gdu_cv_version_required not found" >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-
+ 
+ 
+ # Check whether --with-help-dir was given.

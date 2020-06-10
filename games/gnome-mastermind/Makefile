@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/06/10 07:16:52 ajacoutot Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind
 GNOME_VERSION =	0.3.1
-REVISION =	19
+REVISION =	20
 
 CATEGORIES =	games
 
@@ -29,8 +29,9 @@ MODULES =	x11/gnome
 LIB_DEPENDS =	x11/gtk+2 \
 		devel/gconf2
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
-CONFIGURE_STYLE =	gnu
+MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--disable-scrollkeeper
 
 .include <bsd.port.mk>

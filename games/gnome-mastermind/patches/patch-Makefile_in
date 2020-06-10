@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2020/06/10 07:16:52 ajacoutot Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -244,7 +244,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = src themes ui po desktop icons help
++SUBDIRS = src themes ui po desktop icons
+ EXTRA_DIST = config.rpath 	\
+ 	    AUTHORS	\
+ 	    BUGS	\
