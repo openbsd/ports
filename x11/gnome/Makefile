@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.282 2020/05/14 15:19:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.283 2020/06/10 07:20:04 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -27,7 +27,6 @@
      SUBDIR += devel-docs
      SUBDIR += devhelp
      SUBDIR += dictionary
-     SUBDIR += doc-utils
      SUBDIR += documents
      SUBDIR += eog
      SUBDIR += eog-plugins
