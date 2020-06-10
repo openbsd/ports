@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/14 12:19:48 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2020/06/10 08:15:25 fcambus Exp $
 
 COMMENT =	AdLib sound player library
 
-V =		2.3.2
+V =		2.3.3
 DISTNAME =	adplug-${V}
 SHARED_LIBS +=	adplug	2.0
 
