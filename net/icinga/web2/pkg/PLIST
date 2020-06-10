@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/10/17 17:15:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/06/10 13:14:24 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
 @extraunexec rm -rf %D/icinga-web2/tmp/*
 icinga-web2/
 icinga-web2/.mailmap
-icinga-web2/.travis.yml
 icinga-web2/AUTHORS
 icinga-web2/CHANGELOG.md
 icinga-web2/CONTRIBUTING.md
@@ -167,7 +166,6 @@ icinga-web2/application/views/helpers/FormDate.php
 icinga-web2/application/views/helpers/FormDateTime.php
 icinga-web2/application/views/helpers/FormNumber.php
 icinga-web2/application/views/helpers/FormTime.php
-icinga-web2/application/views/helpers/FormTriStateCheckbox.php
 icinga-web2/application/views/helpers/ProtectId.php
 icinga-web2/application/views/helpers/Util.php
 icinga-web2/application/views/scripts/
@@ -600,7 +598,6 @@ icinga-web2/library/Icinga/Web/Form/Element/Note.php
 icinga-web2/library/Icinga/Web/Form/Element/Number.php
 icinga-web2/library/Icinga/Web/Form/Element/Textarea.php
 icinga-web2/library/Icinga/Web/Form/Element/Time.php
-icinga-web2/library/Icinga/Web/Form/Element/TriStateCheckbox.php
 icinga-web2/library/Icinga/Web/Form/ErrorLabeller.php
 icinga-web2/library/Icinga/Web/Form/FormElement.php
 icinga-web2/library/Icinga/Web/Form/InvalidCSRFTokenException.php
@@ -611,7 +608,6 @@ icinga-web2/library/Icinga/Web/Form/Validator/InArray.php
 icinga-web2/library/Icinga/Web/Form/Validator/InternalUrlValidator.php
 icinga-web2/library/Icinga/Web/Form/Validator/ReadablePathValidator.php
 icinga-web2/library/Icinga/Web/Form/Validator/TimeFormatValidator.php
-icinga-web2/library/Icinga/Web/Form/Validator/TriStateValidator.php
 icinga-web2/library/Icinga/Web/Form/Validator/UrlValidator.php
 icinga-web2/library/Icinga/Web/Form/Validator/WritablePathValidator.php
 icinga-web2/library/Icinga/Web/Helper/
@@ -665,7 +661,6 @@ icinga-web2/library/Icinga/Web/View/helpers/format.php
 icinga-web2/library/Icinga/Web/View/helpers/generic.php
 icinga-web2/library/Icinga/Web/View/helpers/string.php
 icinga-web2/library/Icinga/Web/View/helpers/url.php
-icinga-web2/library/Icinga/Web/ViewStream.php
 icinga-web2/library/Icinga/Web/Widget/
 icinga-web2/library/Icinga/Web/Widget.php
 icinga-web2/library/Icinga/Web/Widget/AbstractWidget.php
@@ -2288,6 +2283,7 @@ icinga-web2/modules/monitoring/application/views/scripts/list/servicegroups.phtm
 icinga-web2/modules/monitoring/application/views/scripts/list/services.phtml
 icinga-web2/modules/monitoring/application/views/scripts/object/
 icinga-web2/modules/monitoring/application/views/scripts/object/detail-history.phtml
+icinga-web2/modules/monitoring/application/views/scripts/object/detail-tabhook.phtml
 icinga-web2/modules/monitoring/application/views/scripts/partials/
 icinga-web2/modules/monitoring/application/views/scripts/partials/command/
 icinga-web2/modules/monitoring/application/views/scripts/partials/command/object-command-form.phtml
@@ -2453,6 +2449,7 @@ icinga-web2/modules/monitoring/library/Monitoring/Command/Instance/ToggleInstanc
 icinga-web2/modules/monitoring/library/Monitoring/Command/Object/
 icinga-web2/modules/monitoring/library/Monitoring/Command/Object/AcknowledgeProblemCommand.php
 icinga-web2/modules/monitoring/library/Monitoring/Command/Object/AddCommentCommand.php
+icinga-web2/modules/monitoring/library/Monitoring/Command/Object/CommandAuthor.php
 icinga-web2/modules/monitoring/library/Monitoring/Command/Object/DeleteCommentCommand.php
 icinga-web2/modules/monitoring/library/Monitoring/Command/Object/DeleteDowntimeCommand.php
 icinga-web2/modules/monitoring/library/Monitoring/Command/Object/ObjectCommand.php
@@ -2526,9 +2523,11 @@ icinga-web2/modules/monitoring/library/Monitoring/Exception/UnsupportedBackendEx
 icinga-web2/modules/monitoring/library/Monitoring/Hook/
 icinga-web2/modules/monitoring/library/Monitoring/Hook/DataviewExtensionHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/DetailviewExtensionHook.php
+icinga-web2/modules/monitoring/library/Monitoring/Hook/EventDetailsExtensionHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/HostActionsHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/IdoQueryExtensionHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/ObjectActionsHook.php
+icinga-web2/modules/monitoring/library/Monitoring/Hook/ObjectDetailsTabHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/PluginOutputHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/ServiceActionsHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/TimelineProviderHook.php
@@ -2675,6 +2674,7 @@ icinga-web2/modules/setup/library/Setup/Requirement/OSRequirement.php
 icinga-web2/modules/setup/library/Setup/Requirement/PhpConfigRequirement.php
 icinga-web2/modules/setup/library/Setup/Requirement/PhpModuleRequirement.php
 icinga-web2/modules/setup/library/Setup/Requirement/PhpVersionRequirement.php
+icinga-web2/modules/setup/library/Setup/Requirement/WebModuleRequirement.php
 icinga-web2/modules/setup/library/Setup/RequirementSet.php
 icinga-web2/modules/setup/library/Setup/RequirementsRenderer.php
 icinga-web2/modules/setup/library/Setup/Setup.php
@@ -2776,6 +2776,7 @@ icinga-web2/public/css/icinga/login.less
 icinga-web2/public/css/icinga/main.less
 icinga-web2/public/css/icinga/menu.less
 icinga-web2/public/css/icinga/mixins.less
+icinga-web2/public/css/icinga/modal.less
 icinga-web2/public/css/icinga/nav.less
 icinga-web2/public/css/icinga/print.less
 icinga-web2/public/css/icinga/responsive.less
@@ -2803,6 +2804,7 @@ icinga-web2/public/font/ifont.woff
 icinga-web2/public/font/ifont.woff2
 icinga-web2/public/img/
 icinga-web2/public/img/favicon.png
+icinga-web2/public/img/icinga-loader.gif
 icinga-web2/public/img/icinga-logo-big-dark.png
 icinga-web2/public/img/icinga-logo-big-dark.svg
 icinga-web2/public/img/icinga-logo-big.png
@@ -2929,10 +2931,10 @@ icinga-web2/public/js/icinga/behavior/expandable.js
 icinga-web2/public/js/icinga/behavior/filtereditor.js
 icinga-web2/public/js/icinga/behavior/flyover.js
 icinga-web2/public/js/icinga/behavior/form.js
+icinga-web2/public/js/icinga/behavior/modal.js
 icinga-web2/public/js/icinga/behavior/navigation.js
 icinga-web2/public/js/icinga/behavior/selectable.js
 icinga-web2/public/js/icinga/behavior/sparkline.js
-icinga-web2/public/js/icinga/behavior/tristate.js
 icinga-web2/public/js/icinga/eventlistener.js
 icinga-web2/public/js/icinga/events.js
 icinga-web2/public/js/icinga/history.js

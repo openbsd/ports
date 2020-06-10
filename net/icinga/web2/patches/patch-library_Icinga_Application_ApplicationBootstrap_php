@@ -1,11 +1,11 @@
-$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.4 2017/11/28 21:01:42 sthen Exp $
+$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.5 2020/06/10 13:14:24 sthen Exp $
 
 Use /var/www/etc/icingaweb2.
 
 Index: library/Icinga/Application/ApplicationBootstrap.php
 --- library/Icinga/Application/ApplicationBootstrap.php.orig
 +++ library/Icinga/Application/ApplicationBootstrap.php
-@@ -152,7 +152,7 @@ abstract class ApplicationBootstrap
+@@ -159,7 +159,7 @@ abstract class ApplicationBootstrap
              if ($configDir === false) {
                  $configDir = Platform::isWindows()
                      ? $baseDir . '/config'
