@@ -1,15 +1,14 @@
-$OpenBSD: patch-lib_socks_mosq_c,v 1.3 2019/02/12 19:18:41 jasper Exp $
+$OpenBSD: patch-lib_socks_mosq_c,v 1.4 2020/06/10 07:39:56 jasper Exp $
 
 Index: lib/socks_mosq.c
 --- lib/socks_mosq.c.orig
 +++ lib/socks_mosq.c
-@@ -25,6 +25,9 @@ Contributors:
- #  include <sys/socket.h>
- #  include <netinet/in.h>
+@@ -27,7 +27,7 @@ Contributors:
  #else
-+#  include <sys/types.h>
-+#  include <sys/socket.h>
-+#  include <netinet/in.h>
  #  include <arpa/inet.h>
  #endif
- #ifdef __FreeBSD__
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  include <sys/socket.h>
+ #  include <netinet/in.h>
+ #endif

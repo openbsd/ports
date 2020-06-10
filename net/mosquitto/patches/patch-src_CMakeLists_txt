@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.10 2020/03/13 12:41:03 jasper Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.11 2020/06/10 07:39:56 jasper Exp $
+
+ld: error: unable to find library -ldl
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -151,6 +151,8 @@ endif (HAVE_GETADDRINFO_A AND WITH_ADNS)
+@@ -150,6 +150,8 @@ endif (HAVE_GETADDRINFO_A AND WITH_ADNS)
  if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)

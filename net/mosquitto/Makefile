@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2020/03/13 12:41:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2020/06/10 07:39:56 jasper Exp $
 
 COMMENT =		opensource MQTT broker
 
-DISTNAME =		mosquitto-1.6.9
+DISTNAME =		mosquitto-1.6.10
 
 SHARED_LIBS +=  mosquitto                 1.0 # 1.5
 SHARED_LIBS +=  mosquittopp               1.0 # 1.5
@@ -26,6 +26,7 @@ MODULES =		devel/cmake \
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/uthash
 
