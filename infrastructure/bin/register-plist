@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.23 2020/06/09 21:00:33 espie Exp $
+# $OpenBSD: register-plist,v 1.24 2020/06/10 06:54:29 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -526,6 +526,7 @@ sub act_on_compare
 {
 	my ($r, $p1, $p2, $result, $state) = @_;
 
+	my $verb = $state->opt('n') ? "would be" : "was";
 	if ($r == Result::Different) {
 		more_mogrified($p1, $p2, $state);
 		error_blurb($state, $p2);
@@ -533,8 +534,8 @@ sub act_on_compare
 		return 1;
 	}
 	if ($r == Result::Updatable) {
-		$p1->tofile($result);
-		$state->errsay("#1 was updated", $result);
+		$p1->tofile($result) if !$state->opt('n');
+		$state->errsay("#1 #2 updated", $result, $verb);
 		for my $i (@{$state->{updates}}) {
 			$state->errsay("#1 -> #2",
 			    $i->[0]->fullstring, 
@@ -542,9 +543,9 @@ sub act_on_compare
 		}
 	}
 	if ($r == Result::UpdatableButShowDiff) {
-		$state->errsay("#1 was updated", $result);
+		$state->errsay("#1 #2 updated", $result, $verb);
 		write_out_diff($p1, $p2, $result, $state);
-		$p1->tofile($result);
+		$p1->tofile($result) if !$state->opt('n');
 	}
 	return 0;
 }
@@ -669,10 +670,12 @@ for my $pkgfile (@ARGV) {
 		}
 		$error += compare_versions($dir, $plist, $state);
 	}
-	if (!$error && !$state->opt('n')) {
-		my $result = $dirs[0].'/'.$plist->pkgname;
-		if (!-f $result || -z _) {
-			$plist->tofile($result);
+	if (!$error) {
+		if (!$state->opt('n')) {
+			my $result = $dirs[0].'/'.$plist->pkgname;
+			if (!-f $result || -z _) {
+				$plist->tofile($result);
+			}
 		}
 	}
 }
