@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.116 2020/05/28 17:43:31 kmos Exp $
+# $OpenBSD: gnome.port.mk,v 1.117 2020/06/10 07:19:20 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -76,10 +76,8 @@ MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python;
 # * vala: Enable vala bindings and/or building from vala source files.
 # * yelp: Use this if there are any files under share/gnome/help/
 #         or "page" files under share/help/ in the PLIST that are opened
-#         with yelp -- gnome-doc-utils is here to make sure we have a
-#         dependency on rarian (and legacy scrollkeeper-*) and have
-#         access to the gnome-doc-* tools (legacy);
-#         same goes with yelp-tools which gives us itstool.
+#         with yelp -- yelp-tools is here to make sure we have a
+#         dependency on itstool and libxslt
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
 MODGNOME_CONFIGURE_ARGS_gi=	--disable-introspection
@@ -136,7 +134,6 @@ MODGNOME_BUILD_DEPENDS +=	lang/vala
 
 .   if ${MODGNOME_TOOLS:Myelp}
 MODGNOME_BUILD_DEPENDS +=	x11/gnome/yelp-tools
-MODGNOME_BUILD_DEPENDS +=	x11/gnome/doc-utils
 # automatically try to detect GUI applications
 .       if ${MODGNOME_TOOLS:Mdesktop-file-utils}
 MODGNOME_RUN_DEPENDS +=	x11/gnome/yelp
