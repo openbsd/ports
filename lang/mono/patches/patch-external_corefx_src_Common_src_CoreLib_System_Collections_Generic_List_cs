@@ -1,4 +1,4 @@
-$OpenBSD: patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_List_cs,v 1.1 2019/11/11 17:05:02 thfr Exp $
+$OpenBSD: patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_List_cs,v 1.2 2020/06/10 22:11:15 thfr Exp $
 
 add MONO_FORCE_COMPAT env var for backwards compatibility with some
 routines that were abandoned with the update to mono 5 upstream
@@ -8,17 +8,25 @@ well-defined cases.
 Index: external/corefx/src/Common/src/CoreLib/System/Collections/Generic/List.cs
 --- external/corefx/src/Common/src/CoreLib/System/Collections/Generic/List.cs.orig
 +++ external/corefx/src/Common/src/CoreLib/System/Collections/Generic/List.cs
-@@ -578,8 +578,11 @@ namespace System.Collections.Generic
-                 action(_items[i]);
+@@ -579,7 +579,10 @@ namespace System.Collections.Generic
              }
  
--            if (version != _version)
+             if (version != _version)
 -                ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion();
-+            if (Environment.GetEnvironmentVariable ("MONO_FORCE_COMPAT") == null)
 +            {
-+                if (version != _version)
++                if (Environment.GetEnvironmentVariable ("MONO_FORCE_COMPAT") == null)
 +                    ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion();
 +            }
          }
  
          // Returns an enumerator for this list with the given
+@@ -1160,7 +1163,8 @@ namespace System.Collections.Generic
+             {
+                 if (_version != _list._version)
+                 {
+-                    ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion();
++                    if (Environment.GetEnvironmentVariable ("MONO_FORCE_COMPAT") == null)
++                        ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion();
+                 }
+ 
+                 _index = _list._size + 1;

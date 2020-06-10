@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.136 2020/04/14 14:43:21 robert Exp $
+# $OpenBSD: Makefile,v 1.137 2020/06/10 22:11:15 thfr Exp $
 
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
 V=		6.8.0.105
-REVISION=	1
+REVISION=	2
 
 DISTNAME=	mono-${V}
 

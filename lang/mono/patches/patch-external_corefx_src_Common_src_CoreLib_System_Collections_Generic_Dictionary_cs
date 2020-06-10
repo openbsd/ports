@@ -1,0 +1,17 @@
+$OpenBSD: patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_Dictionary_cs,v 1.1 2020/06/10 22:11:15 thfr Exp $
+
+More MONO_FORCE_COMPAT where it may be needed.
+
+Index: external/corefx/src/Common/src/CoreLib/System/Collections/Generic/Dictionary.cs
+--- external/corefx/src/Common/src/CoreLib/System/Collections/Generic/Dictionary.cs.orig
++++ external/corefx/src/Common/src/CoreLib/System/Collections/Generic/Dictionary.cs
+@@ -1610,7 +1610,8 @@ namespace System.Collections.Generic
+                 {
+                     if (_version != _dictionary._version)
+                     {
+-                        ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion();
++                        if (Environment.GetEnvironmentVariable ("MONO_FORCE_COMPAT") == null)
++                            ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion();
+                     }
+ 
+                     while ((uint)_index < (uint)_dictionary._count)
