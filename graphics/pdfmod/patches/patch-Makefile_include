@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_include,v 1.1 2020/06/10 07:26:04 ajacoutot Exp $
+
+Index: Makefile.include
+--- Makefile.include.orig
++++ Makefile.include
+@@ -64,7 +64,8 @@ EXTRA_DIST += $(build_sources) $(build_resx_files) $(b
+ CLEANFILES += $(ASSEMBLY) $(ASSEMBLY).mdb $(BINARIES) $(build_resx_resources) $(build_satellite_assembly_list)
+ DISTCLEANFILES = $(GENERATED_FILES) $(pc_files) $(BUILD_DIR)/*
+ 
+-pkglib_SCRIPTS = $(ASSEMBLY)
++monolibdir = $(pkglibdir)/
++monolib_DATA = $(ASSEMBLY)
+ bin_SCRIPTS = $(BINARIES)
+ 
+ programfilesdir = @libdir@/@PACKAGE@

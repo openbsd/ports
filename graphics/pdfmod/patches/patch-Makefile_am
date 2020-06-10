@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2020/06/10 07:26:04 ajacoutot Exp $
+
+Don't use deprecated gnome-doc-utils
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -34,7 +34,6 @@ clean-local:
+ 
+ EXTRA_DIST = \
+ 	lib/poppler-sharp/poppler-sharp/poppler-sharp.dll.config \
+-	gnome-doc-utils.make \
+ 	icon-theme-installer \
+ 	intltool-extract.in \
+ 	intltool-merge.in \
+@@ -48,7 +47,6 @@ CLEANFILES = \
+ 	intltool-merge
+ 
+ DISTCLEANFILES = \
+-	gnome-doc-utils.make \
+ 	*.bak \
+ 	*~ \
+ 	*.pidb

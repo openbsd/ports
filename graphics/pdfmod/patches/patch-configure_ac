@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/06/10 07:26:04 ajacoutot Exp $
+
+Don't use deprecated gnome-doc-utils
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -12,7 +12,7 @@ if test "x$PKG_CONFIG" = "xno"; then
+         AC_MSG_ERROR([You need to install pkg-config])
+ fi
+ 
+-GNOME_DOC_INIT
++YELP_HELP_INIT
+ 
+ AC_DEFUN([SHAMROCK_EXPAND_LIBDIR],
+ [	
+@@ -72,9 +72,9 @@ SHAMROCK_EXPAND_DATADIR
+ IT_PROG_INTLTOOL([0.35.0])
+ AC_PROG_INSTALL
+ 
+-AC_PATH_PROG(MCS, gmcs, no)
++AC_PATH_PROG(MCS, dmcs, no)
+ if test "x$MCS" = "xno"; then
+-        AC_MSG_ERROR([gmcs Not found])
++        AC_MSG_ERROR([dmcs Not found])
+ fi
+ 
+ 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/06/10 07:26:04 ajacoutot Exp $
 
 COMMENT=	simple application for modifying PDF documents
 
 GNOME_PROJECT=	pdfmod
 GNOME_VERSION=	0.9.1
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	graphics print
 
@@ -24,7 +24,10 @@ RUN_DEPENDS=	print/poppler \
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+
+CONFIGURE_STYLE=autoreconf
 CONFIGURE_ARGS=	--enable-release \
 		--disable-external-poppler-sharp
 
@@ -36,8 +39,9 @@ PATCH_DIST_STRIP=	-p1
 MASTER_SITES0=		https://distfiles.bsdfrog.org/
 BUILD_DEPENDS +=	devel/gpatch
 PATCH=			${LOCALBASE}/bin/gpatch
-pre-configure:
-	sed -i 's,gmcs,dmcs,g' ${WRKSRC}/configure
 ###
+
+post-extract:
+	mv ${WRKSRC}/docs/C/{pdfmod.xml,index.docbook}
 
 .include <bsd.port.mk>

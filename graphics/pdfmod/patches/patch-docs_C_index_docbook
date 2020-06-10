@@ -1,0 +1,16 @@
+$OpenBSD: patch-docs_C_index_docbook,v 1.1 2020/06/10 07:26:04 ajacoutot Exp $
+
+Don't use deprecated gnome-doc-utils
+
+Index: docs/C/index.docbook
+--- docs/C/index.docbook.orig
++++ docs/C/index.docbook
+@@ -2,7 +2,7 @@
+ <?db.chunk.max_depth 1?>
+ <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML 4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+ <book id="pdfmod" lang="C">
+-	<bookinfo>
++	<bookinfo id="index">
+ 		<title>The PDF Mod Manual</title>
+ 		<abstract role="description">
+ 			<para>This is the user's manual for PDF Mod, a simple tool for manipulating PDF documents.</para>

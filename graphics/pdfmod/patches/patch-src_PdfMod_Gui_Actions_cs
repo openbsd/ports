@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_PdfMod_Gui_Actions_cs,v 1.1 2020/06/10 07:26:04 ajacoutot Exp $
+
+Don't use deprecated gnome-doc-utils
+
+Index: src/PdfMod/Gui/Actions.cs
+--- src/PdfMod/Gui/Actions.cs.orig
++++ src/PdfMod/Gui/Actions.cs
+@@ -485,15 +485,15 @@ namespace PdfMod.Gui
+                 var langs = GLib.Marshaller.NullTermPtrToStringArray (lang_ptr, false);
+ 
+                 string help_dir = null;
+-                foreach (var dir in new string [] { Core.Defines.PREFIX + "/share/gnome/help/", "/usr/local/share/gnome/help/", "docs/" }) {
++                foreach (var dir in new string [] { Core.Defines.PREFIX + "/share/help/", "/usr/local/share/help/", "docs/" }) {
+                     help_dir = dir;
+-                    if (System.IO.Directory.Exists (dir + "pdfmod/")) {
++                    if (System.IO.Directory.Exists (dir + "C/pdfmod/")) {
+                         break;
+                     }
+                 }
+ 
+                 foreach (var lang in langs) {
+-                    var help_path = CombinePaths (help_dir, "pdfmod", lang, "pdfmod.xml");
++                    var help_path = CombinePaths (help_dir, lang, "pdfmod", "index.docbook");
+                     if (System.IO.File.Exists (help_path)) {
+                         System.Diagnostics.Process.Start (String.Format ("ghelp://{0}", help_path));
+                         shown = true;

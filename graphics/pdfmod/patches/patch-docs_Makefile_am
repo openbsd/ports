@@ -1,0 +1,22 @@
+$OpenBSD: patch-docs_Makefile_am,v 1.1 2020/06/10 07:26:04 ajacoutot Exp $
+
+Don't use deprecated gnome-doc-utils
+
+Index: docs/Makefile.am
+--- docs/Makefile.am.orig
++++ docs/Makefile.am
+@@ -1,9 +1,7 @@
+-include $(top_srcdir)/gnome-doc-utils.make
+-dist-hook: doc-dist-hook
++@YELP_HELP_RULES@
+ 
+-DOC_MODULE = pdfmod
+-DOC_ENTITIES = 
+-DOC_INCLUDES = 
+-DOC_FIGURES =
++HELP_ID = pdfmod
+ 
+-DOC_LINGUAS = ca cs da de es fr hr pl sl sv zh_CN
++HELP_FILES = index.docbook
++
++HELP_LINGUAS = ca cs da de es fr hr pl sl sv zh_CN
