@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/06/10 19:29:53 rsadowski Exp $
 @bin bin/musique
 share/applications/musique.desktop
 share/icons/hicolor/128x128/apps/musique.png
@@ -15,6 +15,7 @@ share/musique/locale/
 share/musique/locale/ast.qm
 share/musique/locale/be.qm
 share/musique/locale/bg.qm
+share/musique/locale/br.qm
 share/musique/locale/ca.qm
 share/musique/locale/ca_ES.qm
 share/musique/locale/cs_CZ.qm
@@ -33,7 +34,9 @@ share/musique/locale/gl.qm
 share/musique/locale/hu_HU.qm
 share/musique/locale/ia.qm
 share/musique/locale/it.qm
+share/musique/locale/ko.qm
 share/musique/locale/ky.qm
+share/musique/locale/lt_LT.qm
 share/musique/locale/ms_MY.qm
 share/musique/locale/nb.qm
 share/musique/locale/nl.qm
@@ -45,7 +48,6 @@ share/musique/locale/ru.qm
 share/musique/locale/sk.qm
 share/musique/locale/sr.qm
 share/musique/locale/tr.qm
-share/musique/locale/tt.qm
 share/musique/locale/uk.qm
 share/musique/locale/vi.qm
 share/musique/locale/zh_CN.qm
