@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/31 12:07:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/10 07:13:13 jasper Exp $
 
 COMMENT =	extensible network protocol fuzzer
 
-MODPY_EGG_VERSION =	0.1.6
+MODPY_EGG_VERSION =	0.2.0
 DISTNAME =	boofuzz-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -21,8 +20,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS = 		databases/py-ldap3${MODPY_FLAVOR} \
-			devel/py-attrs${MODPY_FLAVOR} \
+RUN_DEPENDS = 		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
 			devel/py-colorama${MODPY_FLAVOR} \
 			devel/py-crc32c${MODPY_FLAVOR} \
@@ -35,10 +33,8 @@ RUN_DEPENDS = 		databases/py-ldap3${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/boofuzz/requests
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/boofuzz
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py \
 			${PREFIX}/share/examples/boofuzz/
-	${INSTALL_DATA} ${WRKSRC}/requests/*.py \
-		${PREFIX}/share/examples/boofuzz/requests/
 
 .include <bsd.port.mk>
