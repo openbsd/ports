@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/06/10 07:39:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2020/06/10 10:05:20 jasper Exp $
 
 COMMENT =		opensource MQTT broker
 
@@ -39,16 +39,17 @@ CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
 CFLAGS +=		-I${LOCALBASE}/include
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
+			devel/cunit \
 			devel/gmake
 
 pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -fs ${WRKBUILD}/src/mosquitto ${WRKSRC}/src/
+	${SUBST_CMD} ${WRKSRC}/test/unit/Makefile
 
 do-test:
 	cd ${WRKSRC}/test; env ${MAKE_ENV} \
 	    WRKLIB=${WRKBUILD}/lib/libmosquitto.so.${LIBmosquitto_VERSION} \
 	    WRKLIBPP=${WRKBUILD}/lib/cpp/libmosquittopp.so.${LIBmosquittopp_VERSION} \
-	    gmake WITH_TLS_PSK=no test
+	    LDFLAGS="-L${LOCALBASE}/lib" gmake WITH_TLS_PSK=no test
 
 .include <bsd.port.mk>

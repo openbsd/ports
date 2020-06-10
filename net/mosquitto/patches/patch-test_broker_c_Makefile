@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_broker_c_Makefile,v 1.6 2020/06/10 10:05:20 jasper Exp $
+
+Index: test/broker/c/Makefile
+--- test/broker/c/Makefile.orig
++++ test/broker/c/Makefile
+@@ -30,7 +30,7 @@ ${PLUGINS} : %.so: %.c
+ 
+ 
+ ${TESTS} : %.test: %.c
+-	$(CC) ${CFLAGS} $< -o $@ ../../../lib/libmosquitto.so.1
++	$(CC) ${CFLAGS} $< -o $@ ${WRKLIB}
+ 
+ 
+ reallyclean : clean
