@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_mt63_dsp_h,v 1.1 2010/05/23 17:05:36 espie Exp $
---- src/mt63/dsp.h.orig	Sun May 23 19:03:49 2010
-+++ src/mt63/dsp.h	Sun May 23 19:03:32 2010
+$OpenBSD: patch-src_mt63_dsp_h,v 1.2 2020/06/10 22:21:47 ajacoutot Exp $
+Index: src/mt63/dsp.h
+--- src/mt63/dsp.h.orig
++++ src/mt63/dsp.h
 @@ -551,6 +551,7 @@ template <class typeInp, class typeOut, class typeW>
  { double Sum, Diff;
    Sum=Mid+Out; Diff=Mid-Out; Mid+=W2*Inp-W1*Sum; Out+=W5*Diff; }
@@ -9,7 +10,7 @@ $OpenBSD: patch-src_mt63_dsp_h,v 1.1 2010/05/23 17:05:36 espie Exp $
  template <class typeInp, class typeW>
   inline void LowPass2(typeInp Inp, LowPass2elem &Elem,
  		typeW W1, typeW W2, typeW W5)
-@@ -565,6 +566,7 @@ template <class typeInp>
+@@ -564,6 +565,7 @@ template <class typeInp>
    Diff=Elem.Mid-Elem.Out;
    Elem.Mid+=Weight.W2*Inp-Weigth.W1*Sum;
    Out+=Weight.W5*Diff; }

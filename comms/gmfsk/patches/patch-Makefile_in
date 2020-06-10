@@ -1,6 +1,17 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2007/07/29 14:40:58 ajacoutot Exp $
---- Makefile.in.orig	Mon Jul 23 20:47:40 2007
-+++ Makefile.in	Mon Jul 23 20:47:54 2007
+$OpenBSD: patch-Makefile_in,v 1.2 2020/06/10 22:21:47 ajacoutot Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -145,7 +145,7 @@ target_alias = @target_alias@
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ 
+-SUBDIRS = m4 src po help
++SUBDIRS = m4 src po
+ 
+ EXTRA_DIST = \
+ 	COPYING-DOCS	\
 @@ -598,8 +598,6 @@ install-data-local:
  	    fi \
  	  done \
