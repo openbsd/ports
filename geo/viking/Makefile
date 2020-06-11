@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2020/02/04 11:53:28 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2020/06/11 07:08:26 ajacoutot Exp $
 
 COMMENT =	GPS track manager
 
 DISTNAME =	viking-1.8
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -29,14 +30,15 @@ COMPILER =	base-clang ports-gcc
 CONFIGURE_STYLE =	gnu
 # to ensure X11 libs are found when checking for -lmapnik
 # CONFIGURE_ENV +=	CXXFLAGS="-L${X11BASE}/lib"
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache
 
 USE_GMAKE =	Yes
 
 # until mapnik is fixed..
 CONFIGURE_ARGS +=	--disable-mapnik \
 			--disable-oauth \
-			--disable-zip
+			--disable-zip \
+			--disable-scrollkeeper
 LIB_DEPENDS =	archivers/bzip2 \
 		databases/sqlite3 \
 		devel/libmagic \

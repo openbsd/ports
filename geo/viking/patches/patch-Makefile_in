@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2020/06/11 07:08:26 ajacoutot Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -390,7 +390,7 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = src test data po windows help tools doc
++SUBDIRS = src test data po windows tools doc
+ INTLTOOL = \
+ 	intltool-extract.in \
+ 	intltool-merge.in \
