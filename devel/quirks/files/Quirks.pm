@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.979 2020/06/10 07:24:28 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.980 2020/06/11 06:49:30 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -428,6 +428,7 @@ my $stem_extensions = {
 	'py-pynetbox' => 'py3-pynetbox',
 	'py-libvirt' => 'py3-libvirt',
 	'py-libxml' => 'py3-libxml',
+	'py-rsa' => 'py3-rsa',
 };
 
 my $obsolete_reason = {
