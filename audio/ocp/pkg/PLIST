@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/16 12:54:30 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/11 10:39:43 fcambus Exp $
 @bin bin/ocp
 bin/ocp-curses
 bin/ocp-sdl2
@@ -8,7 +8,6 @@ lib/ocp/autoload/
 @so lib/ocp/autoload/10-devi.so
 @so lib/ocp/autoload/10-hardware.so
 @so lib/ocp/autoload/10-mchasm.so
-@so lib/ocp/autoload/10-mixclip.so
 @so lib/ocp/autoload/10-sets.so
 @so lib/ocp/autoload/11-framelock.so
 @so lib/ocp/autoload/12-poutput.so
