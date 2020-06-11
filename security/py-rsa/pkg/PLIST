@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/18 11:06:22 ajacoutot Exp $
-bin/pyrsa-decrypt${MODPY_BIN_SUFFIX}
-bin/pyrsa-encrypt${MODPY_BIN_SUFFIX}
-bin/pyrsa-keygen${MODPY_BIN_SUFFIX}
-bin/pyrsa-priv2pub${MODPY_BIN_SUFFIX}
-bin/pyrsa-sign${MODPY_BIN_SUFFIX}
-bin/pyrsa-verify${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.3 2020/06/11 06:48:45 ajacoutot Exp $
+@conflict py-rsa-*
+@pkgpath security/py-rsa
+bin/pyrsa-decrypt
+bin/pyrsa-encrypt
+bin/pyrsa-keygen
+bin/pyrsa-priv2pub
+bin/pyrsa-sign
+bin/pyrsa-verify
 lib/python${MODPY_VERSION}/site-packages/rsa/
 lib/python${MODPY_VERSION}/site-packages/rsa-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/rsa-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -22,7 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/rsa/${MODPY_PYCACHE}cli.${MODPY_PYC_MAG
 lib/python${MODPY_VERSION}/site-packages/rsa/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rsa/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rsa/${MODPY_PYCACHE}key.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/rsa/${MODPY_PYCACHE}machine_size.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rsa/${MODPY_PYCACHE}parallel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rsa/${MODPY_PYCACHE}pem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rsa/${MODPY_PYCACHE}pkcs1.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,7 +38,6 @@ lib/python${MODPY_VERSION}/site-packages/rsa/cli.py
 lib/python${MODPY_VERSION}/site-packages/rsa/common.py
 lib/python${MODPY_VERSION}/site-packages/rsa/core.py
 lib/python${MODPY_VERSION}/site-packages/rsa/key.py
-lib/python${MODPY_VERSION}/site-packages/rsa/machine_size.py
 lib/python${MODPY_VERSION}/site-packages/rsa/parallel.py
 lib/python${MODPY_VERSION}/site-packages/rsa/pem.py
 lib/python${MODPY_VERSION}/site-packages/rsa/pkcs1.py

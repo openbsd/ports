@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/06/11 06:48:45 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
 COMMENT=		Python RSA implementation
 
-MODPY_EGG_VERSION=	4.0
+MODPY_EGG_VERSION=	4.1
 DISTNAME=		rsa-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		security
 
@@ -25,11 +24,6 @@ MODPY_PYTEST =		Yes
 RUN_DEPENDS=		devel/py-asn1${MODPY_FLAVOR}
 
 FLAVORS=		python3
-FLAVOR ?=
-
-post-install:
-	for i in ${PREFIX}/bin/*; do \
-		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
-	done
+FLAVOR ?=		python3
 
 .include <bsd.port.mk>
