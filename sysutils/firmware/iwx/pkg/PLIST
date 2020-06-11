@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/11 16:14:33 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/11 08:13:48 stsp Exp $
 firmware/iwx-cc-a0-46
+firmware/iwx-cc-a0-48
 firmware/iwx-license
