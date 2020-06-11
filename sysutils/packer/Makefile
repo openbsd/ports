@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/05/14 22:30:48 pvk Exp $
+# $OpenBSD: Makefile,v 1.32 2020/06/11 07:17:16 ajacoutot Exp $
 
 # [...]/network/mgmt/2018-01-01/network/expressroutecircuitpeerings.go:53:159:
 # constant 4294967295 overflows int
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		${LP64_ARCHS}
 
 COMMENT=		tool for building machine images
 
-GH_TAGNAME=		v1.5.6
+GH_TAGNAME=		v1.6.0
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		packer
 
