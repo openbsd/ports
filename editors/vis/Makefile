@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/10 10:53:16 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/11 16:56:34 kn Exp $
 
 COMMENT =		vi-like editor with sam-style structural regex support
 
@@ -36,12 +36,11 @@ RUN_DEPENDS =		devel/lpeg,${MODLUA_FLAVOR}>=0.12
 
 TEST_DEPENDS =		editors/vim
 
-# libtermkey dumps core when TERM is unset
-TEST_ENV =		TERM=${TERM}
-
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--mandir=${PREFIX}/man
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # for test/core/Makefile
 USE_GMAKE =		Yes
