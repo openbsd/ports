@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2019/04/01 03:53:04 jasper Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2020/06/11 19:48:41 jasper Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -442,7 +442,7 @@ endif()
+@@ -436,7 +436,7 @@ endif()
  find_path(HIREDIS_INCLUDES_FOLDER NAMES hiredis/hiredis.h PATHS "${HIREDIS_CUSTOM_INSTALL_PATH}/include" NO_DEFAULT_PATH)
  
  # Try to find hiredis library path
@@ -12,7 +12,7 @@ Index: src/CMakeLists.txt
  
  if (HIREDIS_INCLUDES_FOLDER AND HIREDIS_LIBRARY_PATH) 
      message(STATUS "We found hiredis library and will build Redis support ${HIREDIS_INCLUDES_FOLDER} ${HIREDIS_LIBRARY_PATH}")
-@@ -495,7 +495,7 @@ endif()
+@@ -489,7 +489,7 @@ endif()
  find_path(LOG4CPP_INCLUDES_FOLDER NAMES log4cpp/Appender.hh PATHS "${LOG4CPP_CUSTOM_INSTALL_PATH}/include" NO_DEFAULT_PATH)
  
  # Try to find log4cpp library path
@@ -21,7 +21,7 @@ Index: src/CMakeLists.txt
  
  if (LOG4CPP_INCLUDES_FOLDER AND LOG4CPP_LIBRARY_PATH)
      include_directories(${LOG4CPP_INCLUDES_FOLDER})
-@@ -507,7 +507,7 @@ endif()
+@@ -501,7 +501,7 @@ endif()
  ### Look for jsonc
  
  find_path(JSONC_INCLUDES_FOLDER NAMES json-c/json.h PATHS "${JSONC_CUSTOM_INSTALL_PATH}/include" NO_DEFAULT_PATH)
@@ -30,7 +30,7 @@ Index: src/CMakeLists.txt
  
  if (JSONC_INCLUDES_FOLDER AND JSONC_LIBRARY_PATH)
      include_directories(${JSONC_INCLUDES_FOLDER}) 
-@@ -641,9 +641,9 @@ if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD" OR ${CMAKE
+@@ -635,9 +635,9 @@ if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD" OR ${CMAKE
      set(CMAKE_INSTALL_SBINDIR "bin")
      set(CMAKE_INSTALL_SYSCONFDIR "etc")
  else()
@@ -43,7 +43,7 @@ Index: src/CMakeLists.txt
  endif()
  
  install(TARGETS fastnetmon DESTINATION "${CMAKE_INSTALL_SBINDIR}")
-@@ -651,17 +651,15 @@ install(TARGETS fastnetmon_client DESTINATION "${CMAKE
+@@ -645,13 +645,9 @@ install(TARGETS fastnetmon_client DESTINATION "${CMAKE
  
  install(FILES fastnetmon.conf DESTINATION "${CMAKE_INSTALL_SYSCONFDIR}")
  
@@ -57,14 +57,5 @@ Index: src/CMakeLists.txt
 +install(FILES man/fastnetmon.1 DESTINATION ${PREFIX}/man/man1)
 +install(FILES man/fastnetmon_client.1 DESTINATION ${PREFIX}/man/man1)
  
--# service files
--configure_file(fastnetmon.service.in "${CMAKE_CURRENT_BINARY_DIR}/fastnetmon.service" @ONLY)
--install(FILES "${CMAKE_CURRENT_BINARY_DIR}/fastnetmon.service" DESTINATION ${CMAKE_INSTALL_SYSTEMD_SERVICEDIR})
-+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+  # service files
-+  configure_file(fastnetmon.service.in "${CMAKE_CURRENT_BINARY_DIR}/fastnetmon.service" @ONLY)
-+  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/fastnetmon.service" DESTINATION ${CMAKE_INSTALL_SYSTEMD_SERVICEDIR})
-+endif()
- 
- if (${OS_ID} MATCHES debian|ubuntu)
- install(FILES fastnetmon_init_script_debian_6_7 DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/init.d RENAME fastnetmon)
+ # service files
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
