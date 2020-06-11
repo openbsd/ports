@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_bindings_build_py,v 1.1.1.1 2018/02/16 15:28:42 jasper Exp $
+$OpenBSD: patch-src_bindings_build_py,v 1.2 2020/06/11 20:00:56 jasper Exp $
 Index: src/bindings/build.py
 --- src/bindings/build.py.orig
 +++ src/bindings/build.py
-@@ -52,4 +52,4 @@ else:
+@@ -60,4 +60,4 @@ else:
      libraries = ["sodium"]
  
  # Set our source so that we can actually build our bindings to sodium.

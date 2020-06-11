@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/01/08 18:48:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/11 20:00:56 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/PyNaCl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyNaCl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyNaCl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -18,13 +18,14 @@ lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}public.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}secret.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}signing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nacl/_sodium${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/nacl/_sodium${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}crypto_aead.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}crypto_box.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}crypto_core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}crypto_generichash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}crypto_hash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}crypto_kx.${MODPY_PYC_MAGIC_TAG}pyc
@@ -39,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}sodium_co
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/crypto_aead.py
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/crypto_box.py
+lib/python${MODPY_VERSION}/site-packages/nacl/bindings/crypto_core.py
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/crypto_generichash.py
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/crypto_hash.py
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/crypto_kx.py
