@@ -1,2 +1,5 @@
 GNU Unifont is a font that contains glyphs for every printable code
 point in the Unicode Basic Multilingual Plane (BMP).
+
+There is also growing coverage of the Supplementary Multilingual Plane
+(SMP), and of Michael Everson's ConScript Unicode Registry (CSUR).
