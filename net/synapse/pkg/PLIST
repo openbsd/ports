@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/05/28 12:39:58 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/06/11 15:24:29 landry Exp $
 @newgroup _synapse:849
 @newuser _synapse:849:849:daemon:Matrix.org Daemon:/var/synapse:/sbin/nologin
 @rcscript ${RCDIR}/synapse
@@ -567,6 +567,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}groups.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}purge_room_servlet.${MODPY_PYC_MAGIC_TAG}pyc
@@ -574,6 +575,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}room
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}server_notice_servlet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}users.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/_base.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/devices.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/groups.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/media.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/purge_room_servlet.py
