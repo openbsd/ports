@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: show-reverse-deps,v 1.9 2020/06/11 16:05:52 espie Exp $
+# $OpenBSD: show-reverse-deps,v 1.10 2020/06/11 19:55:15 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -30,7 +30,8 @@ fi
 set -e
 
 db=${TRUEPREFIX}/share/sqlports
-type="type!=3"
+type_root="root.type!=3"
+type_child="child.type!=3"
 fuzzy=false
 verbose=false
 
@@ -48,7 +49,8 @@ do
 			shift
 			;;
 		-t)
-			type=true
+			type_root=true
+			type_child=true
 			shift
 			;;
 		-v)
@@ -76,7 +78,7 @@ else
 fi
 if $verbose
 then
-	adj=", _paths2.fullpkgpath"
+	adj=", _paths2.fullpkgpath, case d.type when 0 then 'LIB_DEPENDS' when 1 then 'RUN_DEPENDS' when 2 then 'BUILD_DEPENDS' when 3 then 'TEST_DEPENDS' end"
 	join_adj="join _paths _paths2 on _paths2.id=d.dependspath"
 else
 	adj=""
@@ -84,18 +86,18 @@ else
 fi
 
 sqlite3 "$db" <<EOSQL
-with recursive d (fullpkgpath, dependspath) as
-	(select root.fullpkgpath, root.dependspath 
+with recursive d (fullpkgpath, dependspath, type) as
+	(select root.fullpkgpath, root.dependspath, root.type
 		from _canonical_depends root
 			join _paths 
 			    on root.dependspath=_paths.canonical
 			join _paths p2 
 			    on $query and p2.id=_paths.pkgpath
-			where $type
+			where $type_root
 	    union
-	    select child.fullpkgpath, child.dependspath
+	    select child.fullpkgpath, child.dependspath, child.type
 	    from d parent, _canonical_depends child  
-	    	where parent.fullpkgpath=child.dependspath and $type)
+	    	where parent.fullpkgpath=child.dependspath and $type_child)
 select distinct _paths.fullpkgpath $adj from d 
     join _paths 
 	on _paths.id=d.fullpkgpath

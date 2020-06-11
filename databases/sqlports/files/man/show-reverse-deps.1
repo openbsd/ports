@@ -1,4 +1,4 @@
-.\"	$OpenBSD: show-reverse-deps.1,v 1.2 2020/06/11 16:05:52 espie Exp $
+.\"	$OpenBSD: show-reverse-deps.1,v 1.3 2020/06/11 19:55:15 espie Exp $
 .\"
 .\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
 .\"
@@ -49,7 +49,9 @@ Also include test dependencies.
 By default, only other types of dependencies are considered.
 .It Fl v
 Show verbose results: instead of a list of pkgpath, show every
-dependency in the form "fullpkgpath|dependspath".
+dependency in the form "fullpkgpath|dependspath|TYPE", where TYPE
+is one of 
+.Ev LIB_DEPENDS , RUN_DEPENDS , BUILD_DEPENDS , TEST_DEPENDS .
 Results can be rather large!
 .El
 .Sh SEE ALSO
