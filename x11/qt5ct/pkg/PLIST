@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/06/11 04:37:33 rsadowski Exp $
 @bin bin/qt5ct
-lib/qt5/plugins/platformthemes/libqt5ct.so
+@so lib/qt5/plugins/platformthemes/libqt5ct.so
 lib/qt5/plugins/styles/
-lib/qt5/plugins/styles/libqt5ct-style.so
+@so lib/qt5/plugins/styles/libqt5ct-style.so
 share/applications/qt5ct.desktop
 share/qt5ct/
 share/qt5ct/colors/
 share/qt5ct/colors/airy.conf
 share/qt5ct/colors/darker.conf
 share/qt5ct/colors/dusk.conf
+share/qt5ct/colors/ia_ora.conf
 share/qt5ct/colors/sand.conf
 share/qt5ct/colors/simple.conf
 share/qt5ct/colors/waves.conf
