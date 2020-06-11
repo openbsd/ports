@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/05/14 15:28:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2020/06/11 04:30:26 rsadowski Exp $
 
     SUBDIR =
     SUBDIR += bash
@@ -20,5 +20,6 @@
     SUBDIR += yash
     SUBDIR += zoidberg
     SUBDIR += zsh
+    SUBDIR += zsh-syntax-highlighting
 
 .include <bsd.port.subdir.mk>
