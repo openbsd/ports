@@ -1,9 +1,9 @@
-$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.1 2020/04/21 20:38:31 sthen Exp $
+$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.2 2020/06/11 13:59:03 sthen Exp $
 
 Index: sapi/cgi/cgi_main.c
 --- sapi/cgi/cgi_main.c.orig
 +++ sapi/cgi/cgi_main.c
-@@ -1752,6 +1752,7 @@ int main(int argc, char *argv[])
+@@ -1756,6 +1756,7 @@ int main(int argc, char *argv[])
  	char *orig_optarg = php_optarg;
  	char *script_file = NULL;
  	size_t ini_entries_len = 0;
@@ -11,7 +11,7 @@ Index: sapi/cgi/cgi_main.c
  	/* end of temporary locals */
  
  	int max_requests = 500;
-@@ -1801,7 +1802,12 @@ int main(int argc, char *argv[])
+@@ -1805,7 +1806,12 @@ int main(int argc, char *argv[])
  
  	sapi_startup(&cgi_sapi_module);
  	fastcgi = fcgi_is_fastcgi();
