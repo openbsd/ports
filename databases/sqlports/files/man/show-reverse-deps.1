@@ -1,4 +1,4 @@
-.\"	$OpenBSD: show-reverse-deps.1,v 1.1 2020/06/11 15:40:41 espie Exp $
+.\"	$OpenBSD: show-reverse-deps.1,v 1.2 2020/06/11 16:05:52 espie Exp $
 .\"
 .\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
 .\"
@@ -22,7 +22,7 @@
 .Nd show reverse dependencies for a given port
 .Sh SYNOPSIS
 .Nm show-reverse-deps
-.Op Fl ft
+.Op Fl ftv
 .Op Fl d Ar database
 .Ar pkgpath
 .Sh DESCRIPTION
@@ -47,6 +47,10 @@ parameter.
 .It Fl t
 Also include test dependencies.
 By default, only other types of dependencies are considered.
+.It Fl v
+Show verbose results: instead of a list of pkgpath, show every
+dependency in the form "fullpkgpath|dependspath".
+Results can be rather large!
 .El
 .Sh SEE ALSO
 .Xr sqlite3 1
