@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.122 2020/05/19 08:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.123 2020/06/11 15:40:41 espie Exp $
 
 CATEGORIES =		databases
-V =			7.28
+V =			7.29
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -31,6 +31,7 @@ STRICT =-s
 .endif
 
 SCRIPTS = print-ports-index show-reverse-deps rebuild-sqlports-cache
+MANS = show-reverse-deps.1
 
 do-build:
 	@PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v -V $V -p ${WRKBUILD}/ouch ${STRICT} -C ${WRKBUILD}/${SQLCACHE} -w ${WRKBUILD}/${SQLVIEWS} ${WRKBUILD}/${DBNAME}
@@ -53,6 +54,9 @@ do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
 .for s in ${SCRIPTS}
 	@${SUBST_PROGRAM} ${FILESDIR}/scripts/$s ${PREFIX}/bin/$s
+.endfor
+.for s in ${MANS}
+	@${SUBST_MAN} ${FILESDIR}/man/$s ${PREFIX}/man/man${s:E}/$s
 .endfor
 	@for i in ${DBS}; do \
 		${INSTALL_DATA} ${WRKBUILD}/$$i ${PREFIX}/share; \

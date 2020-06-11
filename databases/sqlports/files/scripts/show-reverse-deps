@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: show-reverse-deps,v 1.7 2019/10/03 12:41:22 kn Exp $
+# $OpenBSD: show-reverse-deps,v 1.8 2020/06/11 15:40:41 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -21,30 +21,68 @@
 # actually doing it.
 # we just require a few more views for that.
 
+usage="Usage: show-reverse-deps [-ft] [-d sqlite_db] pkgpath"
+args=`getopt d:ft $*`
+if [ $? -ne 0 ]
+then
+    echo 2>&1 $usage
+fi
 set -e
-if [ $# -eq 0 ]
+
+db=${TRUEPREFIX}/share/sqlports
+type="type!=3"
+fuzzy=false
+
+set -- $args
+while [ $# -ne 0 ]
+do
+	case "$1" in
+		-t)
+			type=true
+			shift
+			;;
+		-f)
+			fuzzy=true
+			shift
+			;;
+		-d)
+			db="$2"
+			shift
+			shift
+			;;
+		--)
+			shift
+			break
+			;;
+	esac
+done
+
+if [ $# -ne 1 ]
 then
-    echo 2>&1 "Usage: show-reverse-deps pkgpath [sqlite_db]"
-    exit 1
+	echo 2>&1 $usage
+	exit 1
 fi
-if [ $# -ge 2 ]
+
+if $fuzzy
 then
-    file=$2
+	query="p2.fullpkgpath like \"%$1%\""
 else
-    file=${TRUEPREFIX}/share/sqlports
+	query="p2.fullpkgpath=\"$1\""
 fi
-sqlite3 "$file" <<EOSQL
+
+sqlite3 "$db" <<EOSQL
 with recursive d (fullpkgpath, dependspath) as
 	(select root.fullpkgpath, root.dependspath 
 		from _canonical_depends root
 			join _paths 
 			    on root.dependspath=_paths.canonical
 			join _paths p2 
-			    on p2.fullpkgpath="$1" and p2.id=_paths.pkgpath
+			    on $query and p2.id=_paths.pkgpath
+			where $type
 	    union
 	    select child.fullpkgpath, child.dependspath
 	    from d parent, _canonical_depends child  
-	    	where parent.fullpkgpath=child.dependspath)
+	    	where parent.fullpkgpath=child.dependspath and $type)
 select distinct(_paths.fullpkgpath) from d 
     join _paths 
 	on _paths.id=d.fullpkgpath
