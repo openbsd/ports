@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-bat,v 1.17 2020/02/28 23:26:53 sthen Exp $
+@comment $OpenBSD: PLIST-bat,v 1.18 2020/06/11 14:38:51 sthen Exp $
 @man man/man1/bat.1
 @bin sbin/bacula-tray-monitor
 @bin sbin/bat
@@ -16,7 +16,12 @@ share/doc/bacula/media.html
 share/doc/bacula/restore.html
 share/doc/bacula/status.png
 share/doc/bacula/storage.html
-@mode 644
+share/examples/bacula/bacula-tray-monitor.conf
+@mode 640
+@group _bacula
+@sample ${SYSCONFDIR}/bacula-tray-monitor.conf
+@mode
+@group
 share/examples/bacula/bat.conf
 @mode 640
 @group _bacula

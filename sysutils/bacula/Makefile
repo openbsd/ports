@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2020/03/10 15:58:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2020/06/11 14:38:51 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -10,7 +10,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			9.6.3
+V=			9.6.4
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -166,10 +166,6 @@ pre-configure:
 		${WRKSRC}/src/qt-console/main.cpp
 
 post-install:
-# Qt5 linking is broken with base libtool, with GNU libtool for some reason
-# the wrappers get installed rather than the object code, so ¯\_(ツ)_/¯
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/tray-monitor/.libs/bacula-tray-monitor ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bacula
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/bacula/updatedb
 	${INSTALL_SCRIPT} ${WRKSRC}/updatedb/* ${PREFIX}/libexec/bacula/updatedb
@@ -184,6 +180,11 @@ post-install:
 		update_sqlite_tables_5_to_6 update_sqlite_tables_6_to_7 \
 		update_sqlite_tables_7_to_8 update_sqlite_tables_8_to_9
 .if ${BUILD_PACKAGES:M-bat}
+# Qt5 linking is broken with base libtool, with GNU libtool for some reason
+# the wrappers get installed rather than the object code, so ¯\_(ツ)_/¯
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/tray-monitor/.libs/bacula-tray-monitor ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin
+
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/qt-console/images/bat_icon.png \
 	    ${PREFIX}/share/pixmaps

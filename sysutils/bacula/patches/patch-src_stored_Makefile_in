@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_stored_Makefile_in,v 1.6 2017/07/07 16:01:58 sthen Exp $
+$OpenBSD: patch-src_stored_Makefile_in,v 1.7 2020/06/11 14:38:51 sthen Exp $
 
 Index: src/stored/Makefile.in
 --- src/stored/Makefile.in.orig
 +++ src/stored/Makefile.in
-@@ -136,7 +136,7 @@ libbacsd.la: Makefile $(LIBBACSD_LOBJS)
+@@ -139,17 +139,17 @@ libbacsd.la: Makefile $(LIBBACSD_LOBJS)
  	@echo "Making $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ \
  	  $(TOKYOCABINET_LIBS) $(LIBBACSD_LOBJS) \
@@ -12,9 +12,7 @@ Index: src/stored/Makefile.in
  
  #
  # Loadable driver
-@@ -144,11 +144,11 @@ libbacsd.la: Makefile $(LIBBACSD_LOBJS)
- drivers: bacula-sd-cloud-driver.la bacula-sd-aligned-driver.la
- 
+ #
  bacula-sd-cloud-driver.la: Makefile $(CLOUD_LOBJS)
 -	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_LOBJS) -o $@ $(S3_LIBS) -rpath $(libdir) -module -export-dynamic -release $(LIBBACSD_LT_RELEASE)
 +	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_LOBJS) -o $@ $(S3_LIBS) -rpath $(libdir) -module -export-dynamic
