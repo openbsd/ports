@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2020/05/14 12:15:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2020/06/11 06:43:54 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			3.1.3
+V=			3.1.4
 DISTNAME=		zeek-${V}
 
 SHARED_LIBS +=	binpac                    0.0 # 0.54
@@ -31,10 +31,10 @@ MODULES=		lang/python
 # c++11
 COMPILER =		base-clang ports-gcc
 
-MODPY_ADJ_FILES=	aux/broctl/bin/stats-to-csv \
-			aux/broctl/bin/zeekctl.in \
-			aux/btest/btest \
-			aux/broctl/aux/trace-summary/trace-summary
+MODPY_ADJ_FILES=	aux/btest/btest \
+			aux/zeekctl/bin/stats-to-csv \
+			aux/zeekctl/bin/zeekctl.in \
+			aux/zeekctl/aux/trace-summary/trace-summary
 
 BUILD_DEPENDS=		devel/bison \
 			devel/cmake \
