@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/01/02 00:35:49 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/06/12 12:32:41 bluhm Exp $
 @conflict p5-Net-DNS-SEC-<1.01
 ${P5SITE}/Net/
 ${P5SITE}/Net/DNS/
@@ -17,6 +17,7 @@ ${P5SITE}/Net/DNS/RR.pm
 ${P5SITE}/Net/DNS/RR/A.pm
 ${P5SITE}/Net/DNS/RR/AAAA.pm
 ${P5SITE}/Net/DNS/RR/AFSDB.pm
+${P5SITE}/Net/DNS/RR/AMTRELAY.pm
 ${P5SITE}/Net/DNS/RR/APL.pm
 ${P5SITE}/Net/DNS/RR/CAA.pm
 ${P5SITE}/Net/DNS/RR/CDNSKEY.pm
@@ -100,6 +101,7 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::RR::A.3p
 @man man/man3p/Net::DNS::RR::AAAA.3p
 @man man/man3p/Net::DNS::RR::AFSDB.3p
+@man man/man3p/Net::DNS::RR::AMTRELAY.3p
 @man man/man3p/Net::DNS::RR::APL.3p
 @man man/man3p/Net::DNS::RR::CAA.3p
 @man man/man3p/Net::DNS::RR::CDNSKEY.3p
