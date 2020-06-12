@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.101 2020/05/19 08:28:04 sthen Exp $
-
-# ld.bfd hits a different problem, undefined reference to peas_* functions in ide-context.c:165
-BROKEN-i386=	non-ABS relocation R_386_GOTOFF against symbol '.LC74'
+# $OpenBSD: Makefile,v 1.102 2020/06/12 22:09:09 cwen Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.36.0
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -65,6 +63,8 @@ LIB_DEPENDS=		devel/glade \
 .if ${ARCH:Mi386} # needs 64-bit atomic ops
 CFLAGS +=		-march=i586
 CXXFLAGS +=		-march=i586
+# Doesn't build with lld: non-ABS relocation R_386_GOTOFF against symbol '.LC74'
+USE_LLD =		No
 .endif
 
 CONFIGURE_ARGS=		-Dplugin_valgrind=false \
@@ -80,6 +80,13 @@ CONFIGURE_ARGS +=	-Dplugin_git=false
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+# disable meson's default of using "-Wl,--as-needed" with ld.bfd;
+# build failures due to undefined references are often seen.
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld} || ${ARCH:Mi386}
+CONFIGURE_ARGS +=	-Db_asneeded=false
+.endif
 
 # don't pick up llvm-config(1) from base
 pre-configure:
