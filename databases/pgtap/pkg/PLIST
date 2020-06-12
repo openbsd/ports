@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/12 08:12:08 landry Exp $
+share/doc/postgresql/
+share/doc/postgresql/extension/
+share/doc/postgresql/extension/pgtap.mmd
+share/postgresql/extension/pgtap--0.90.0--0.91.0.sql
+share/postgresql/extension/pgtap--0.91.0--0.92.0.sql
+share/postgresql/extension/pgtap--0.92.0--0.93.0.sql
+share/postgresql/extension/pgtap--0.93.0--0.94.0.sql
+share/postgresql/extension/pgtap--0.94.0--0.95.0.sql
+share/postgresql/extension/pgtap--0.95.0--0.96.0.sql
+share/postgresql/extension/pgtap--0.96.0--0.97.0.sql
+share/postgresql/extension/pgtap--0.97.0--0.98.0.sql
+share/postgresql/extension/pgtap--0.98.0--0.99.0.sql
+share/postgresql/extension/pgtap--0.99.0--1.0.0.sql
+share/postgresql/extension/pgtap--1.0.0--${V}.sql
+share/postgresql/extension/pgtap--${V}.sql
+share/postgresql/extension/pgtap--unpackaged--0.91.0.sql
+share/postgresql/extension/pgtap-core--${V}.sql
+share/postgresql/extension/pgtap-core.sql
+share/postgresql/extension/pgtap-schema--${V}.sql
+share/postgresql/extension/pgtap-schema.sql
+share/postgresql/extension/pgtap.control
+share/postgresql/extension/pgtap.sql
+share/postgresql/extension/uninstall_pgtap.sql

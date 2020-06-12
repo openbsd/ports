@@ -1,0 +1,4 @@
+pgTAP is a unit testing framework for PostgreSQL written in PL/pgSQL and
+PL/SQL. It includes a comprehensive collection of TAP-emitting assertion
+functions, as well as the ability to integrate with other TAP-emitting test
+frameworks. It can also be used in the xUnit testing style.
