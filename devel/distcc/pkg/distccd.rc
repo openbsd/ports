@@ -1,10 +1,10 @@
 #!/bin/ksh
 #
-# $OpenBSD: distccd.rc,v 1.3 2018/04/26 16:25:15 jasper Exp $
+# $OpenBSD: distccd.rc,v 1.4 2020/06/12 14:19:11 sthen Exp $
 
-daemon="${PREFIX}/bin/distccd"
+daemon="${PREFIX}/bin/distccd --daemon"
 daemon_user="_distcc"
-daemon_flags="--daemon --allow 127.0.0.1"
+daemon_flags="--allow 127.0.0.1"
 
 . /etc/rc.d/rc.subr
 

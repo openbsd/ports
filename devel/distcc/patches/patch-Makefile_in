@@ -1,22 +1,22 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2018/04/26 16:25:15 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2020/06/12 14:19:11 sthen Exp $
 
 Don't install gzip'd manpages
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1104,16 +1104,8 @@ install-include-server: include-server pump
+@@ -1101,16 +1101,7 @@ install-include-server: include-server pump
  install-man: $(man1_MEN)
  	$(mkinstalldirs) "$(DESTDIR)$(man1dir)"
  	for p in $(man1_MEN); do \
--	  if $(GZIP_BIN) --help >/dev/null; then \
+-	  if $(GZIP_BIN) --help >/dev/null 2>&1; then \
 -	    mkdir -p "`dirname $$p`"; \
 -	    if [ -e "$(DESTDIR)$(man1dir)$$p" ]; then rm -fv "$(DESTDIR)$(man1dir)$$p"; fi; \
 -	    $(GZIP_BIN) < "$(srcdir)/$$p" > "$$p.gz"; \
 -	    $(INSTALL_DATA) "$$p.gz" "$(DESTDIR)$(man1dir)" || exit 1; \
 -	  else \
 -	    echo "Warning: no working gzip, installing man pages uncompressed" 1>&2; \
- 	    if [ -e "$(DESTDIR)$(man1dir)$$p.gz" ]; then rm -fv "$(DESTDIR)$(man1dir)$$p.gz"; fi; \
+-	    if [ -e "$(DESTDIR)$(man1dir)$$p.gz" ]; then rm -fv "$(DESTDIR)$(man1dir)$$p.gz"; fi; \
  	    $(INSTALL_DATA) "$(srcdir)/$$p" "$(DESTDIR)$(man1dir)" || exit 1; \
 -	  fi; \
  	done

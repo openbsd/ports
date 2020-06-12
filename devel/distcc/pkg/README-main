@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2018/09/04 12:46:10 espie Exp $
+$OpenBSD: README-main,v 1.5 2020/06/12 14:19:11 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -25,8 +25,6 @@ This feature is called masquerading and it's enabled by default. See
 the MASQUERADING section in distcc(1) how to set this up.
 If you wish to disable it and fallback to the old behaviour, use the
 `--make-me-a-botnet` parameter for distccd.
-Note, update-distcc-symlinks is not included in the package as it's
-not adjusted yet to handle the different compilers on OpenBSD.
 
 References
 ==========

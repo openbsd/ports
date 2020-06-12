@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2018/09/04 12:46:10 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/06/12 14:19:11 sthen Exp $
 @bin bin/distcc
 @bin bin/distccmon-text
 @bin bin/lsdistcc
 bin/pump
 lib/python${MODPY_VERSION}/site-packages/include_server/
-lib/python${MODPY_VERSION}/site-packages/include_server${MODPY_BIN_SUFFIX}.3-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/include_server-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}basics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}basics_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/include_server/c_extensions_test.py
 lib/python${MODPY_VERSION}/site-packages/include_server/cache_basics.py
 lib/python${MODPY_VERSION}/site-packages/include_server/compiler_defaults.py
 lib/python${MODPY_VERSION}/site-packages/include_server/compress_files.py
-lib/python${MODPY_VERSION}/site-packages/include_server/distcc_pump_c_extensions.so
+@so lib/python${MODPY_VERSION}/site-packages/include_server/distcc_pump_c_extensions.so
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer.py
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node.py
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node_test.py
@@ -58,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/include_server/statistics.py
 @man man/man1/include_server.1
 @man man/man1/lsdistcc.1
 @man man/man1/pump.1
+sbin/update-distcc-symlinks
 share/doc/distcc/
 share/doc/distcc/AUTHORS
 share/doc/distcc/COPYING
