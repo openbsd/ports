@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.21 2020/02/15 15:55:51 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.22 2020/06/12 13:02:35 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -2106,7 +2106,7 @@ info: info-recursive
+@@ -2147,7 +2147,7 @@ info: info-recursive
  
  info-am:
  
