@@ -1,20 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/22 13:26:59 ajacoutot Exp $
-@extraunexec rm -f /var/log/tinyproxy/tinyproxy.log
+@comment $OpenBSD: PLIST,v 1.10 2020/06/12 12:35:51 sthen Exp $
 @newgroup _tinyproxy:617
 @newuser _tinyproxy:617:_tinyproxy:daemon:tinyproxy:/nonexistent:/sbin/nologin
-@man man/man5/tinyproxy.conf.5
-@man man/man8/tinyproxy.8
-@bin sbin/tinyproxy
-share/examples/tinyproxy/
-share/examples/tinyproxy/tinyproxy.conf
-@sample ${SYSCONFDIR}/
-@sample ${SYSCONFDIR}/tinyproxy.conf
-share/tinyproxy/
-share/tinyproxy/debug.html
-share/tinyproxy/default.html
-share/tinyproxy/stats.html
+@extraunexec rm -f /var/log/tinyproxy/tinyproxy.log
 @rcscript ${RCDIR}/tinyproxy
 @mode 700
 @owner _tinyproxy
 @group _tinyproxy
 @sample /var/log/tinyproxy/
+@mode
+@owner
+@group
+@bin bin/tinyproxy
+@man man/man5/tinyproxy.conf.5
+@man man/man8/tinyproxy.8
+share/doc/tinyproxy/
+share/doc/tinyproxy/AUTHORS
+share/doc/tinyproxy/NEWS
+share/doc/tinyproxy/README
+share/doc/tinyproxy/README.md
+share/examples/tinyproxy/
+share/examples/tinyproxy/tinyproxy.conf
+@sample ${SYSCONFDIR}/tinyproxy/
+@sample ${SYSCONFDIR}/tinyproxy/tinyproxy.conf
+share/tinyproxy/
+share/tinyproxy/debug.html
+share/tinyproxy/default.html
+share/tinyproxy/stats.html

@@ -1,8 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: tinyproxy.rc,v 1.3 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: tinyproxy.rc,v 1.4 2020/06/12 12:35:51 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/tinyproxy"
+daemon="${TRUEPREFIX}/bin/tinyproxy"
 
 . /etc/rc.d/rc.subr
 

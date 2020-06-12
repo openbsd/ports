@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/06/12 12:35:51 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -161,6 +161,8 @@ if test -n "${MAINTAINER_MODE_FALSE}"; then
+    DESIRED_FLAGS="-Werror $DESIRED_FLAGS"
+ fi
+ 
++DESIRED_FLAGS="-Wall -Wextra"
++
+ for flag in $DESIRED_FLAGS; do
+   AS_COMPILER_FLAG([$flag], [CFLAGS="$CFLAGS $flag"])
+ done
