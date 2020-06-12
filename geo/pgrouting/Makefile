@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/02/05 20:46:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2020/06/12 08:35:01 landry Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
-V =		2.6.3
+V =		3.0.0
 DISTNAME =	pgrouting-${V}
 MASTER_SITES =	https://github.com/pgRouting/pgrouting/releases/download/v${V}/
-REVISION =	0
 
 CATEGORIES =	geo databases
 
@@ -16,21 +15,22 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	CGAL boost_system-mt boost_thread-mt gmp m pthread
-WANTLIB +=	boost_atomic-mt boost_chrono-mt boost_date_time-mt ${COMPILER_LIBCXX}
+WANTLIB +=	m pthread ${COMPILER_LIBCXX}
 
 MODULES =	databases/postgresql devel/cmake
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	math/cgal \
-		devel/boost
 RUN_DEPENDS =	geo/postgis
-BUILD_DEPENDS =	databases/postgresql,-server
-TEST_DEPENDS =	${BUILD_PKGPATH}
+BUILD_DEPENDS =	databases/postgresql,-server \
+		devel/boost
+
+TEST_DEPENDS =	${BUILD_PKGPATH} \
+		databases/pgtap
 TEST_ENV =	LD_PRELOAD=libpthread.so
 SUBST_VARS =	V
+MODPOSTGRESQL_TEST_DBNAME =	___pgr___test___
 MODPOSTGRESQL_TEST_CMD = \
 	cd ${WRKSRC}; \
-	./tools/testers/algorithm-tester.pl
+	sh ./tools/testers/pg_prove_tests.sh postgres
 
 .include <bsd.port.mk>
