@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/12/11 16:08:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/12 14:27:47 sthen Exp $
 @conflict pecl-memcached-*
 ${MODPECL_DEFAULTV}@pkgpath www/pecl56-memcached
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php70
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php71
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
-lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
+@so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
