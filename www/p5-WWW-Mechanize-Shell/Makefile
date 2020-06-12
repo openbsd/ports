@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/02 12:37:32 bluhm Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/12 13:57:36 bluhm Exp $
 
 COMMENT =	interactive shell for WWW::Mechanize
 
-DISTNAME =	WWW-Mechanize-Shell-0.58
+DISTNAME =	WWW-Mechanize-Shell-0.59
 
 CATEGORIES =	www
 
