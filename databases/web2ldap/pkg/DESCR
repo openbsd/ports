@@ -1,0 +1,6 @@
+web2ldap is a generic Web-based LDAP client which does not make any assumptions
+about the tree structure or LDAP schema, kind of a swiss-army knife for
+accessing/manipulating LDAP servers without having to configure anything.
+It provides a schema browser which displays references/dependencies within an
+LDAPv3 schema, and a customizable platform for prototyping LDAP administration
+use-cases.

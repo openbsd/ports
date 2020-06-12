@@ -1,0 +1,17 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/web2ldap"
+daemon_user="_web2ldap"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+rc_bg=YES
+
+rc_start() {
+	${rcexec} "${daemon}"
+}
+
+pexp="${MODPY_BIN} ${daemon}"
+
+rc_cmd $1

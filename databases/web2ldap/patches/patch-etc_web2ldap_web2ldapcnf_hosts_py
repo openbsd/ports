@@ -1,0 +1,16 @@
+$OpenBSD: patch-etc_web2ldap_web2ldapcnf_hosts_py,v 1.1.1.1 2020/06/12 11:28:30 landry Exp $
+
+point at OpenBSD default cert store
+
+Index: etc/web2ldap/web2ldapcnf/hosts.py
+--- etc/web2ldap/web2ldapcnf/hosts.py.orig
++++ etc/web2ldap/web2ldapcnf/hosts.py
+@@ -771,7 +771,7 @@ GLOBAL_DEFAULTS = Web2LDAPConfig(
+         #ldap0.OPT_X_TLS_CACERTDIR: '/var/lib/ca-certificates/pem',
+         #ldap0.OPT_X_TLS_CACERTDIR: os.path.join(etc_dir, 'tls', 'cacerts'),
+         # File containing all the trusted root CA certs
+-        #ldap0.OPT_X_TLS_CACERTFILE: '/etc/ssl/ca-bundle.pem',
++        ldap0.OPT_X_TLS_CACERTFILE: '/etc/ssl/cert.pem',
+         #ldap0.OPT_X_TLS_CACERTFILE: '/var/lib/ca-certificates/ca-bundle.pem',
+         #ldap0.OPT_X_TLS_CIPHER_SUITE: 'HIGH',
+         ldap0.OPT_X_TLS_PROTOCOL_MIN: 3,
