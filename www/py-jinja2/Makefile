@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.30 2020/06/10 11:19:21 kn Exp $
+# $OpenBSD: Makefile,v 1.31 2020/06/12 04:43:27 kn Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
 MODPY_EGG_VERSION =	2.11.2
 DISTNAME =		Jinja2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		www devel
 
 HOMEPAGE =		https://jinja.palletsprojects.com
 
-MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

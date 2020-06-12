@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/06/12 04:43:27 kn Exp $
 
 COMMENT =		command line interface tools for Python
 
@@ -6,9 +6,8 @@ MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		clint-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
-MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

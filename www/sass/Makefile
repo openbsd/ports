@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/12 04:43:27 kn Exp $
 
 COMMENT =		extension language for CSS
 
 DISTNAME =		sass-3.4.22
-REVISION =		2
+REVISION =		3
 CATEGORIES =		www devel
 
 HOMEPAGE =		http://sass-lang.com
 
-MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

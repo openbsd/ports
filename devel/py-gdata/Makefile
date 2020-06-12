@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/06/12 04:43:27 kn Exp $
 
 COMMENT =	Python client library for Google data APIs
 
 MODPY_EGG_VERSION = 2.0.18
-REVISION =	0
+REVISION =	1
 DISTNAME =	gdata-${MODPY_EGG_VERSION}
 PKGNAME =	py-gdata-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/google/gdata-python-client
-MAINTAINER =	frantisek holop <minusf@obiit.org>
 
 # Apache License 2.0
 PERMIT_PACKAGE =	Yes

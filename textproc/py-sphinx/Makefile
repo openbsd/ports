@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/06/12 04:43:27 kn Exp $
 
 COMMENT =		python documentation generator
 
 MODPY_EGG_VERSION =	1.4.8
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://sphinx-doc.org/
 
-MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
