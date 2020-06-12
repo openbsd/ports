@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/06/12 14:57:07 robert Exp $
 
 COMMENT=	GDI+ comptible API
 
-DISTNAME=	libgdiplus-4.2
-REVISION=	4
+DISTNAME=	libgdiplus-6.0.5
 
 CATEGORIES=	x11 devel
 
@@ -21,6 +20,7 @@ WANTLIB += gif glib-2.0
 WANTLIB += iconv intl jpeg m
 WANTLIB += pcre pixman-1 png pthread tiff xcb xcb-render
 WANTLIB += xcb-shm z
+WANTLIB += lzma zstd
 
 MASTER_SITES=	http://download.mono-project.com/sources/libgdiplus/
 

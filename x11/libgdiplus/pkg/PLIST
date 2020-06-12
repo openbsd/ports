@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/18 16:00:28 ajacoutot Exp $
-lib/libgdiplus.a
+@comment $OpenBSD: PLIST,v 1.3 2020/06/12 14:57:07 robert Exp $
+@static-lib lib/libgdiplus.a
 lib/libgdiplus.la
 @lib lib/libgdiplus.so.${LIBgdiplus_VERSION}
 lib/pkgconfig/libgdiplus.pc
