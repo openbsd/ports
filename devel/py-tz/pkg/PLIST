@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/06/13 03:37:04 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/06/12 12:49:18 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -201,6 +201,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/North_Dakota/
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/North_Dakota/Beulah
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/North_Dakota/Center
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/North_Dakota/New_Salem
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Nuuk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Ojinaga
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Panama
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Pangnirtung
