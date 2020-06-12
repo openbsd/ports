@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.56 2020/05/29 20:00:21 robert Exp $
+# $OpenBSD: Makefile,v 1.57 2020/06/12 15:54:49 cwen Exp $
 
-BROKEN-sparc64=	Cannot find libc with ld.lld, more library problems without lld
-
-# undefined ref's to libicon*, libintl*
+# undefined ref's to libicon*, libintl* with ld.bfd
+ONLY_FOR_ARCHS=	${LLD_ARCHS}
 USE_LLD=	Yes
 
 COMMENT-main=	MS Exchange groupware suite replacement
