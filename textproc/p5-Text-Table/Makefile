@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/06/12 07:23:41 benoit Exp $
 
 COMMENT=	organize data in tables
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Text-Table-1.133
+DISTNAME =	Text-Table-1.134
 CATEGORIES=	textproc
 
 # Perl
@@ -16,7 +16,5 @@ TEST_DEPENDS=		devel/p5-Test-TrailingSpace
 
 # let empty, it would require a port for Pod::Coverage::TrustPod
 MAKE_ENV+=		TEST_POD= AUTHOR_TESTING=
-
-CONFIGURE_STYLE=	modbuild
 
 .include <bsd.port.mk>
