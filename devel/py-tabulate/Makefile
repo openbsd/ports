@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/06/12 13:36:16 kn Exp $
 
 COMMENT =	pretty-print tabular data
 
-MODPY_EGG_VERSION =	0.8.2
+MODPY_EGG_VERSION =	0.8.7
 DISTNAME =	tabulate-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
-HOMEPAGE =	https://bitbucket.org/astanin/python-tabulate
+HOMEPAGE =	https://github.com/astanin/python-tabulate
 
 # MIT
 PERMIT_PACKAGE =	Yes
