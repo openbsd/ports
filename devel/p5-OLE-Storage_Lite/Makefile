@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/20 16:44:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2020/06/12 06:42:30 benoit Exp $
 
 COMMENT=	simple class for OLE document interface
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=       OLE-Storage_Lite-0.19
-REVISION=	0
+DISTNAME =       OLE-Storage_Lite-0.20
 CATEGORIES=	devel perl5
 
 # perl
