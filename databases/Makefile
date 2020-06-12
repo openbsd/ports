@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2020/06/09 18:42:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.399 2020/06/12 08:13:11 landry Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -117,6 +117,7 @@
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-SQL-Translator
      SUBDIR += p5-Sort-SQL
+     SUBDIR += p5-TAP-Parser-SourceHandler-pgTAP
      SUBDIR += p5-Tangram
      SUBDIR += p5-Tie-DBI
      SUBDIR += p5-ldap
@@ -137,6 +138,7 @@
      SUBDIR += pgloader
      SUBDIR += pgmodeler
      SUBDIR += pgpool
+     SUBDIR += pgtap
      SUBDIR += pgtcl
      SUBDIR += pkglocatedb
      SUBDIR += ports-readmes
