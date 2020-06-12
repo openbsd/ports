@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2020/05/16 06:09:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.43 2020/06/12 20:01:05 rsadowski Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -613,14 +613,14 @@ intellij/plugins/gradle-java/lib/gradle-java.jar
 intellij/plugins/gradle-java/lib/gradle-jps-plugin.jar
 intellij/plugins/gradle-java/lib/resources_en.jar
 intellij/plugins/gradle/lib/
-intellij/plugins/gradle/lib/gradle-api-6.1.jar
-intellij/plugins/gradle/lib/gradle-api-impldep-6.1.jar
+intellij/plugins/gradle/lib/gradle-api-6.1.1.jar
+intellij/plugins/gradle/lib/gradle-api-impldep-6.1.1.jar
 intellij/plugins/gradle/lib/gradle-common.jar
-intellij/plugins/gradle/lib/gradle-launcher-6.1.jar
+intellij/plugins/gradle/lib/gradle-launcher-6.1.1.jar
 intellij/plugins/gradle/lib/gradle-tooling-extension-api.jar
 intellij/plugins/gradle/lib/gradle-tooling-extension-impl.jar
 intellij/plugins/gradle/lib/gradle-toolingLoaderRt.jar
-intellij/plugins/gradle/lib/gradle-wrapper-6.1.jar
+intellij/plugins/gradle/lib/gradle-wrapper-6.1.1.jar
 intellij/plugins/gradle/lib/gradle.jar
 intellij/plugins/grazie/
 intellij/plugins/grazie/lib/
