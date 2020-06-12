@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/11/07 17:23:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/06/12 12:26:18 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -2304,7 +2304,9 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-res
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-revoked-no-next-update.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-revoked-reason.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-revoked.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-sct-extension.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-sha256.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-single-extension-reason.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-unauthorized.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/rapidssl_sha256_ca_g3.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/
