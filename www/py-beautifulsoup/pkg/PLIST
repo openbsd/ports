@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/02 01:20:28 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/12 13:22:20 sthen Exp $
 @conflict py-BeautifulSoup-*
-lib/python${MODPY_VERSION}/site-packages/BeautifulSoup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/BeautifulSoup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/BeautifulSoup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/BeautifulSoup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/BeautifulSoup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/BeautifulSoup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/BeautifulSoup.py
 lib/python${MODPY_VERSION}/site-packages/BeautifulSoup.pyc
 lib/python${MODPY_VERSION}/site-packages/BeautifulSoupTests.py

@@ -1,5 +1,14 @@
-Previous official release of Beautiful Soup until March 2012.
-The current release is Beautiful Soup 4 (py-beautifulsoup4).
-Beautiful Soup parses arbitrarily invalid SGML and provides
-a variety of methods and Pythonic idioms for iterating and
-searching the parse tree.
+Beautiful Soup is a library that makes it easy to scrape information
+from web pages. It sits atop an HTML or XML parser, providing Pythonic
+idioms for iterating, searching, and modifying the parse tree.
+
+# Discontinuation notice
+
+You should use the 'beautifulsoup4' package instead of this package.
+
+Development on the 3.x release of Beautiful Soup ended in 2011. With
+the sunsetting of Python 2 in 2020, the 3.x release of Beautiful Soup
+will be discontinued so that the 'beautifulsoup' package name can be
+used by a more recent release that supports Python 3.
+
+January 1, 2021 is the cutoff date.
