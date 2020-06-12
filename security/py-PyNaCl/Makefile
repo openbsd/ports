@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/11 20:00:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/12 12:00:43 ajacoutot Exp $
 
 COMMENT =		Python binding to the NaCl library
 
 MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		PyNaCl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -26,7 +27,8 @@ FLAVOR ?=
 WANTLIB += ${MODPY_WANTLIB} pthread sodium
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR} \
+			devel/py-wheel${MODPY_FLAVOR}
 
 LIB_DEPENDS =		security/libsodium
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
