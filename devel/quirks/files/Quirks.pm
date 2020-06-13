@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.982 2020/06/13 09:27:59 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.983 2020/06/13 10:54:39 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1598,6 +1598,8 @@ my $obsolete_reason = {
 	'rarian' => 3,
 	'qtcanvas3d' => 3,
 	'qtcanvas3d-examples' => 3,
+	'gtkparasite' => 3,
+	'gutenpy' => 3,
 };
 
 # reasons for obsolete packages
