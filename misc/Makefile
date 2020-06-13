@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2020/03/22 17:44:52 kn Exp $
+# $OpenBSD: Makefile,v 1.195 2020/06/13 10:54:28 jasper Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -37,7 +37,6 @@
      SUBDIR += gpsd
      SUBDIR += gramps
      SUBDIR += gtk3mm-documentation
-     SUBDIR += gutenpy
      SUBDIR += hfsplus
      SUBDIR += hwdata
      SUBDIR += ietf-cli

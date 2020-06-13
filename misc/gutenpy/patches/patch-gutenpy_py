@@ -1,9 +1,0 @@
-$OpenBSD: patch-gutenpy_py,v 1.2 2006/07/30 15:19:28 jasper Exp $
---- gutenpy.py.orig	Fri Jul 21 06:10:36 2006
-+++ gutenpy.py	Thu Jul 27 18:27:26 2006
-@@ -1,4 +1,4 @@
--#!/usr/bin/python2.4
-+#!!!PYTHON!!
- '''GutenPy
- 
- A comfortable reader and catalog browser for Project Gutenberg.'''
