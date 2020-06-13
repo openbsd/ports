@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_saslplugin_plugin_common_c,v 1.1.1.1 2020/06/13 06:33:13 rsadowski Exp $
+
+add missing define (from netdb.h)
+
+Index: src/saslplugin/plugin_common.c
+--- src/saslplugin/plugin_common.c.orig
++++ src/saslplugin/plugin_common.c
+@@ -73,6 +73,8 @@
+ 
+ #include "plugin_common.h"
+ 
++#define NI_MAXHOST 256     /* max host name from getnameinfo (MAXHOSTNAMELEN) */
++
+ /* translate IPv4 mapped IPv6 address to IPv4 address */
+ static void sockaddr_unmapped(
+ #ifdef IN6_IS_ADDR_V4MAPPED
