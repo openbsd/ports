@@ -1,4 +1,4 @@
-$OpenBSD: patch-htmldoc_file_c,v 1.6 2020/02/16 08:30:08 benoit Exp $
+$OpenBSD: patch-htmldoc_file_c,v 1.7 2020/06/13 15:11:39 benoit Exp $
 Index: htmldoc/file.c
 --- htmldoc/file.c.orig
 +++ htmldoc/file.c
@@ -11,7 +11,7 @@ Index: htmldoc/file.c
  #  define OPENPERM	0600
  #endif /* WIN32 */
  
-@@ -140,7 +140,7 @@ file_cleanup(void)
+@@ -141,7 +141,7 @@ file_cleanup(void)
    }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
@@ -20,7 +20,7 @@ Index: htmldoc/file.c
  #endif /* WIN32 */
  
   /*
-@@ -1106,7 +1106,7 @@ file_temp(char *name,			/* O - Filename */
+@@ -1094,7 +1094,7 @@ file_temp(char *name,			/* O - Filename */
    }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
