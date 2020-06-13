@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.89 2020/02/25 05:39:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.90 2020/06/13 16:22:53 rsadowski Exp $
 
      SUBDIR =
-     SUBDIR += akonadi
+     #SUBDIR += akonadi
      SUBDIR += aqbanking
-     SUBDIR += attica
+     #SUBDIR += attica
      SUBDIR += baikal
      SUBDIR += bruce
      SUBDIR += calcurse
@@ -23,9 +23,9 @@
      SUBDIR += khard
      SUBDIR += kmymoney
      SUBDIR += ledger
-     SUBDIR += libalkimia
-     SUBDIR += libkfbapi
-     SUBDIR += libkgapi
+     #SUBDIR += libalkimia
+     #SUBDIR += libkfbapi
+     #SUBDIR += libkgapi
      SUBDIR += librcps
      SUBDIR += lifeograph
      SUBDIR += mcds

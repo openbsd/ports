@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2020/06/12 11:29:08 landry Exp $
+# $OpenBSD: Makefile,v 1.402 2020/06/13 16:22:52 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -230,7 +230,7 @@
      SUBDIR += ruby-tiny_tds,ruby27
      SUBDIR += sharedance
      SUBDIR += skytools
-     SUBDIR += soprano
+     #SUBDIR += soprano
      SUBDIR += sqlbox
      SUBDIR += sqlite
      SUBDIR += sqlite3
@@ -239,7 +239,7 @@
      SUBDIR += sqlitebrowser
      SUBDIR += sqlports
      SUBDIR += sqsh
-     SUBDIR += strigi
+     #SUBDIR += strigi
      SUBDIR += tdb
      SUBDIR += tdbc
      SUBDIR += tdbc-mysql

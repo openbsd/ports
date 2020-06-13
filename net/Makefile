@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1208 2020/06/07 11:23:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.1209 2020/06/13 16:22:52 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -41,7 +41,7 @@
      SUBDIR += btpd
      SUBDIR += bwm-ng
      SUBDIR += cadaver
-     SUBDIR += cagibi
+     #SUBDIR += cagibi
      SUBDIR += castget
      SUBDIR += cftp
      SUBDIR += cgo
@@ -200,7 +200,7 @@
      SUBDIR += libgadu
      SUBDIR += libircclient
      SUBDIR += libktorrent
-     SUBDIR += libkvkontakte
+     #SUBDIR += libkvkontakte
      SUBDIR += libmaxminddb
      SUBDIR += libmesode
      SUBDIR += libmygpo-qt

@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/17 14:46:34 danj Exp $
+# $OpenBSD: Makefile,v 1.33 2020/06/13 16:22:53 rsadowski Exp $
+BROKEN =		KDE4 deleted, update is coming
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/

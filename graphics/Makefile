@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.508 2020/06/09 16:07:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.509 2020/06/13 16:22:52 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -233,7 +233,7 @@
      SUBDIR += potrace
      SUBDIR += povray
      SUBDIR += pqiv
-     SUBDIR += prison
+     #SUBDIR += prison
      SUBDIR += pstoedit
      SUBDIR += py-Pillow
      SUBDIR += py-Pillow,python3
@@ -257,7 +257,7 @@
      SUBDIR += py-sane,python3
      SUBDIR += py-seaborn
      SUBDIR += pycha
-     SUBDIR += qimageblitz
+     #SUBDIR += qimageblitz
      SUBDIR += qiv
      SUBDIR += quesoglc
      SUBDIR += quirc

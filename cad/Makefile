@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/31 15:04:47 kmos Exp $
+# $OpenBSD: Makefile,v 1.40 2020/06/13 16:22:52 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -10,7 +10,7 @@
      SUBDIR += gtkwave
      SUBDIR += kicad
      SUBDIR += kicad-share
-     SUBDIR += klogic
+     #SUBDIR += klogic
      SUBDIR += librecad
      SUBDIR += magic
      SUBDIR += necpp

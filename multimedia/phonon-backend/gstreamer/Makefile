@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/09/01 18:56:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2020/06/13 16:22:52 rsadowski Exp $
 
 COMMENT-main =	GStreamer-based Phonon backend
 COMMENT-icons =	GStreamer-based Phonon backend icons
@@ -36,7 +36,7 @@ WANTLIB-main +=	gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB-main +=	gstreamer-1.0 gstvideo-1.0 gstapp-1.0
 
 FLAVORS =	qt5
-FLAVOR ?=
+FLAVOR =	qt5
 .if ${FLAVOR:Mqt5}
 LIB_DEPENDS-main +=	x11/qt5/qtx11extras
 WANTLIB-main +=		Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets Qt5X11Extras

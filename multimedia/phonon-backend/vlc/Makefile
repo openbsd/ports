@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/09/01 18:56:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/06/13 16:22:52 rsadowski Exp $
 
 COMMENT =	VLC-based Phonon backend
 VERSION =	0.10.3
@@ -13,7 +13,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		x11/vlc>=2
 
 FLAVORS =	qt5
-FLAVOR ?=
+FLAVOR =	qt5
 
 .if ${FLAVOR:Mqt5}
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets
