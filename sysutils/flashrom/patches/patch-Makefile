@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.4 2019/07/05 16:01:57 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.5 2020/06/13 14:04:53 kn Exp $
 
 use patched pciutils.
 
@@ -7,7 +7,7 @@ fix clock_gettime detection.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1075,7 +1075,6 @@ FEATURE_CFLAGS += $(call debug_shell,grep -q "UTSNAME 
+@@ -1120,7 +1120,6 @@ FEATURE_CFLAGS += $(call debug_shell,grep -q "UTSNAME 
  FEATURE_LIBS += $(call debug_shell,grep -q "NEEDLIBZ := yes" .libdeps && printf "%s" "-lz")
  
  FEATURE_CFLAGS += $(call debug_shell,grep -q "CLOCK_GETTIME := yes" .features && printf "%s" "-D'HAVE_CLOCK_GETTIME=1'")
@@ -15,7 +15,7 @@ Index: Makefile
  
  LIBFLASHROM_OBJS = $(CHIP_OBJS) $(PROGRAMMER_OBJS) $(LIB_OBJS)
  OBJS = $(CLI_OBJS) $(LIBFLASHROM_OBJS)
-@@ -1153,11 +1152,7 @@ endif
+@@ -1198,11 +1197,7 @@ endif
  define LIBPCI_TEST
  /* Avoid a failing test due to libpci header symbol shadowing breakage */
  #define index shadow_workaround_index
@@ -28,7 +28,7 @@ Index: Makefile
  struct pci_access *pacc;
  int main(int argc, char **argv)
  {
-@@ -1172,11 +1167,7 @@ export LIBPCI_TEST
+@@ -1217,11 +1212,7 @@ export LIBPCI_TEST
  define PCI_GET_DEV_TEST
  /* Avoid a failing test due to libpci header symbol shadowing breakage */
  #define index shadow_workaround_index
@@ -41,7 +41,7 @@ Index: Makefile
  struct pci_access *pacc;
  struct pci_dev *dev = {0};
  int main(int argc, char **argv)
-@@ -1490,8 +1481,8 @@ endif
+@@ -1529,8 +1520,8 @@ endif
  		( echo "not found."; echo "UTSNAME := no" >> .features.tmp ) } 2>>$(BUILD_DETAILS_FILE) | tee -a $(BUILD_DETAILS_FILE)
  	@printf "Checking for clock_gettime support... " | tee -a $(BUILD_DETAILS_FILE)
  	@echo "$$CLOCK_GETTIME_TEST" >.featuretest.c

@@ -1,9 +1,9 @@
-$OpenBSD: patch-hwaccess_c,v 1.4 2019/07/05 16:01:57 sthen Exp $
+$OpenBSD: patch-hwaccess_c,v 1.5 2020/06/13 14:04:53 kn Exp $
 
 Index: hwaccess.c
 --- hwaccess.c.orig
 +++ hwaccess.c
-@@ -120,8 +120,8 @@ int rget_io_perms(void)
+@@ -121,8 +121,8 @@ int rget_io_perms(void)
  		msg_perr("ERROR: Could not get I/O privileges (%s).\n", strerror(errno));
  		msg_perr("You need to be root.\n");
  #if defined (__OpenBSD__)
