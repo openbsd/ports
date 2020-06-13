@@ -1,7 +1,3 @@
-This script is a Nagios plugin to monitor the hardware of ESX and ESXi
-servers. It can also be used as standalone script to check the hardware -
-Nagios isn't necessary to run it.
-
-N.B. ESXi 5.0u1 hosts respond very slowly to hardware status queries
-(http://kb.vmware.com/kb/2016538), as a workaround you may increase the
-service_check_timeout in Nagios or Icinga.
+This is a monitoring plugin to check the hardware state of VMware ESXi
+servers. It can be used with Icinga, Nagios and similar programs, or as a
+standalone script to check the hardware.
