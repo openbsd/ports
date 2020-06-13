@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makerules,v 1.22 2019/07/30 13:41:14 sthen Exp $
+$OpenBSD: patch-Makerules,v 1.23 2020/06/13 15:53:36 sthen Exp $
 
 Index: Makerules
 --- Makerules.orig
 +++ Makerules
-@@ -24,8 +24,8 @@ ifeq ($(build),debug)
+@@ -26,8 +26,8 @@ ifeq ($(build),debug)
    CFLAGS += -pipe -g
    LDFLAGS += -g
  else ifeq ($(build),release)
@@ -14,7 +14,7 @@ Index: Makerules
  else ifeq ($(build),small)
    CFLAGS += -pipe -Os -DNDEBUG -fomit-frame-pointer
    LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
-@@ -85,8 +85,8 @@ else ifeq ($(OS),MACOS)
+@@ -91,8 +91,8 @@ else ifeq ($(OS),MACOS)
    LD = xcrun ld
    RANLIB = xcrun ranlib
  
@@ -25,7 +25,7 @@ Index: Makerules
  
    ifeq ($(shell pkg-config --exists freetype2 && echo yes),yes)
  	SYS_FREETYPE_CFLAGS := $(shell pkg-config --cflags freetype2)
-@@ -131,10 +131,10 @@ else ifeq ($(OS),Linux)
+@@ -137,10 +137,10 @@ else ifeq ($(OS),Linux)
  	X11_LIBS := $(shell pkg-config --libs x11 xext)
    endif
  

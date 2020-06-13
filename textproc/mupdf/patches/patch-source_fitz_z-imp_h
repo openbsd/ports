@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_fitz_z-imp_h,v 1.1 2020/06/13 15:53:36 sthen Exp $
+
+cope with old zlib
+
+Index: source/fitz/z-imp.h
+--- source/fitz/z-imp.h.orig
++++ source/fitz/z-imp.h
+@@ -1,6 +1,7 @@
+ #ifndef FITZ_Z_IMP_H
+ #define FITZ_Z_IMP_H
+ 
++#include <sys/limits.h>
+ #include <zlib.h>
+ 
+ void *fz_zlib_alloc(void *ctx, unsigned int items, unsigned int size);

@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_tools_pdfposter_c,v 1.3 2018/04/23 11:55:54 sthen Exp $
+$OpenBSD: patch-source_tools_pdfposter_c,v 1.4 2020/06/13 15:53:36 sthen Exp $
 
 add pledge(2) to "mutool poster"
 
@@ -14,7 +14,7 @@ Index: source/tools/pdfposter.c
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
-@@ -188,6 +190,12 @@ int pdfposter_main(int argc, char **argv)
+@@ -204,6 +206,12 @@ int pdfposter_main(int argc, char **argv)
  		(strstr(argv[fz_optind], ".pdf") || strstr(argv[fz_optind], ".PDF")))
  	{
  		outfile = argv[fz_optind++];

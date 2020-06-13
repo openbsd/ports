@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/08/01 12:16:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/06/13 15:53:36 sthen Exp $
 bin/mupdf
 %%js%%
 @bin bin/mupdf-x11
@@ -31,6 +31,7 @@ include/mupdf/fitz/glyph.h
 include/mupdf/fitz/hash.h
 include/mupdf/fitz/image.h
 include/mupdf/fitz/link.h
+include/mupdf/fitz/log.h
 include/mupdf/fitz/outline.h
 include/mupdf/fitz/output-svg.h
 include/mupdf/fitz/output.h
@@ -74,8 +75,8 @@ include/mupdf/pdf/parse.h
 include/mupdf/pdf/resource.h
 include/mupdf/pdf/xref.h
 include/mupdf/ucdn.h
-lib/libmupdf-third.a
-lib/libmupdf.a
+@static-lib lib/libmupdf-third.a
+@static-lib lib/libmupdf.a
 @man man/man1/mupdf.1
 @man man/man1/mutool.1
 share/applications/mupdf.desktop

@@ -1,4 +1,6 @@
-$OpenBSD: patch-docs_man_mupdf_1,v 1.4 2019/07/30 13:41:14 sthen Exp $
+$OpenBSD: patch-docs_man_mupdf_1,v 1.5 2020/06/13 15:53:36 sthen Exp $
+
+espie@ added feature
 
 Index: docs/man/mupdf.1
 --- docs/man/mupdf.1.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_tools_pdfinfo_c,v 1.5 2019/06/25 22:03:46 sthen Exp $
+$OpenBSD: patch-source_tools_pdfinfo_c,v 1.6 2020/06/13 15:53:36 sthen Exp $
 
 add pledge(2) to "mutool info"
 
@@ -14,7 +14,7 @@ Index: source/tools/pdfinfo.c
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
-@@ -1029,6 +1031,12 @@ int pdfinfo_main(int argc, char **argv)
+@@ -1030,6 +1032,12 @@ int pdfinfo_main(int argc, char **argv)
  
  	if (fz_optind == argc)
  		infousage();

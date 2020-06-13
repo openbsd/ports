@@ -1,9 +1,11 @@
-$OpenBSD: patch-platform_x11_pdfapp_c,v 1.14 2019/09/17 09:22:51 tb Exp $
+$OpenBSD: patch-platform_x11_pdfapp_c,v 1.15 2020/06/13 15:53:36 sthen Exp $
+
+espie@ added feature
 
 Index: platform/x11/pdfapp.c
 --- platform/x11/pdfapp.c.orig
 +++ platform/x11/pdfapp.c
-@@ -52,11 +52,21 @@ static void pdfapp_sleep(int ms)
+@@ -119,11 +119,21 @@ static void pdfapp_sleep(int ms)
  static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repaint, int transition, int searching);
  
  static const int zoomlist[] = {
@@ -28,24 +30,24 @@ Index: platform/x11/pdfapp.c
  static int zoom_in(int oldres)
  {
  	int i;
-@@ -1471,6 +1481,7 @@ void pdfapp_onkey(pdfapp_t *app, int c, int modifiers)
+@@ -1565,6 +1575,7 @@ void pdfapp_onkey(pdfapp_t *app, int c, int modifiers)
  			app->pageno++;
  		break;
  
 +	case '\b': /* backspace */
  	case 'b':
- 		if (app->pany >= 0)
  		{
-@@ -1503,7 +1514,7 @@ void pdfapp_onkey(pdfapp_t *app, int c, int modifiers)
- 		{
- 			if (app->imgw + app->panx <= app->winw)
- 			{
--				if (app->pageno + 1 < app->pagecount)
-+				if (app->pageno < app->pagecount)
+ 			int number = 1;
+@@ -1611,7 +1622,7 @@ void pdfapp_onkey(pdfapp_t *app, int c, int modifiers)
  				{
- 					app->panx = 0;
- 					app->pany = 0;
-@@ -1613,9 +1624,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
+ 					if (app->imgw + app->panx <= app->winw + app->imgw/20)
+ 					{
+-						if (app->pageno + 1 <= app->pagecount)
++						if (app->pageno <= app->pagecount)
+ 						{
+ 							app->panx = 0;
+ 							app->pany = 0;
+@@ -1723,9 +1734,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
  	{
  		/* zoom in/out if ctrl is pressed */
  		if (dir > 0)

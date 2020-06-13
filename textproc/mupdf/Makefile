@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.95 2020/01/03 16:29:25 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2020/06/13 15:53:36 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.16.1
+V =		1.17.0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
-REVISION =	1
 
 CATEGORIES =	textproc x11
 
@@ -43,8 +42,6 @@ LIB_DEPENDS =	devel/harfbuzz \
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes
-
-ALL_TARGET =	all
 
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		XCFLAGS="${CFLAGS} -fPIC -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps -I${X11BASE}/include" \
