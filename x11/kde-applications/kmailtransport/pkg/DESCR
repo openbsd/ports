@@ -1,0 +1,5 @@
+The mailtransport module provides the following functionality:
+
+- Shared mail transport settings
+- GUI elements to configure mail transport settings
+- Job classes for mail sending
