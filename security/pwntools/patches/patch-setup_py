@@ -1,12 +1,14 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2019/05/08 21:15:44 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.2 2020/06/13 09:24:29 jasper Exp $
 
 - remove enduser script with too generic names
 - remove dependencies not required within ports
+- XXX: currently we have unicorn-1.0.1 in ports, so this means that the upstream commit
+ "Fix gadget caching for ROP objects with multiple ELFs (#1115)" effectively remains unfixed.
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -31,17 +31,7 @@ if flag in sys.argv:
+@@ -34,17 +34,7 @@ if flag in sys.argv:
  else:
      flag = False
  
@@ -24,22 +26,20 @@ Index: setup.py
  install_requires     = ['paramiko>=1.15.2',
                          'mako>=1.0.0',
                          'pyelftools>=0.2.4',
-@@ -49,16 +39,12 @@ install_requires     = ['paramiko>=1.15.2',
+@@ -52,7 +42,6 @@ install_requires     = ['paramiko>=1.15.2',
                          'ropgadget>=5.3',
                          'pyserial>=2.7',
                          'requests>=2.0',
 -                        'pip>=6.0.8',
--                        'tox>=1.8.1',
                          'pygments>=2.0',
                          'pysocks',
                          'python-dateutil',
--                        'pypandoc',
--                        'packaging',
+@@ -60,7 +49,7 @@ install_requires     = ['paramiko>=1.15.2',
                          'psutil>=3.3.0',
--                        'intervaltree<3.0', # See Gallopsled/pwntools#1238
--                        'sortedcontainers<2.0', # See Gallopsled/pwntools#1154
-+                        'intervaltree',
-+                        'sortedcontainers',
-                         'unicorn']
+                         'intervaltree>=3.0',
+                         'sortedcontainers',
+-                        'unicorn>=1.0.2rc1,<1.0.2rc4', # see unicorn-engine/unicorn#1100, unicorn-engine/unicorn#1170, Gallopsled/pwntools#1538
++                        'unicorn',
+                         'six>=1.12.0',
+ ]
  
- # Check that the user has installed the Python development headers

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/06/13 09:24:29 jasper Exp $
 
 COMMENT =	Pwntools CTF framework and exploit development library
 
-MODPY_EGG_VERSION =	3.12.2
+MODPY_EGG_VERSION =	4.1.2
 DISTNAME =	pwntools-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -16,27 +15,32 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		devel/capstone/python \
-			devel/py-dateutil \
-			devel/py-elftools \
-			devel/py-intervaltree \
-			devel/py-serial \
-			devel/py-sortedcontainers \
-			devel/py-unicorn \
-			net/py-socks \
+RUN_DEPENDS =		devel/capstone/python${MODPY_FLAVOR} \
+			devel/py-dateutil${MODPY_FLAVOR} \
+			devel/py-elftools${MODPY_FLAVOR} \
+			devel/py-intervaltree${MODPY_FLAVOR} \
+			devel/py-serial${MODPY_FLAVOR} \
+			devel/py-sortedcontainers${MODPY_FLAVOR} \
+			devel/py-unicorn${MODPY_FLAVOR} \
+			net/py-socks${MODPY_FLAVOR} \
 			security/ROPgadget \
-			security/py-paramiko \
-			sysutils/py-psutil \
-			textproc/py-pygments \
-			www/py-mako \
-			www/py-requests
+			security/py-paramiko${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR} \
+			sysutils/py-psutil${MODPY_FLAVOR} \
+			textproc/py-pygments${MODPY_FLAVOR} \
+			www/py-mako${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 # Remove code to check for and apply updates
 post-extract:
 	rm ${WRKSRC}/pwnlib/update.py
+
+# ???
+post-install:
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/{requirements,robots}.txt
 
 .include <bsd.port.mk>

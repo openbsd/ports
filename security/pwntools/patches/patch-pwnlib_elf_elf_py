@@ -1,22 +1,11 @@
-$OpenBSD: patch-pwnlib_elf_elf_py,v 1.2 2019/05/08 21:27:29 jasper Exp $
+$OpenBSD: patch-pwnlib_elf_elf_py,v 1.3 2020/06/13 09:24:29 jasper Exp $
 
-- Adjust to intervaltree 3.0 API
-  https://github.com/Gallopsled/pwntools/issues/1238
 - Add support for checking for retguard
 
 Index: pwnlib/elf/elf.py
 --- pwnlib/elf/elf.py.orig
 +++ pwnlib/elf/elf.py
-@@ -1114,7 +1114,7 @@ class ELF(ELFFile):
-         start = address
-         stop = address + count
- 
--        overlap = self.memory.search(start, stop)
-+        overlap = self.memory.overlap(start, stop)
- 
-         # Create a new view of memory, for just what we need
-         memory = intervaltree.IntervalTree(overlap)
-@@ -1497,6 +1497,15 @@ class ELF(ELFFile):
+@@ -1671,6 +1671,15 @@ class ELF(ELFFile):
      aslr=pie
  
      @property
@@ -32,7 +21,7 @@ Index: pwnlib/elf/elf.py
      def rpath(self):
          """:class:`bool`: Whether the current binary has an ``RPATH``."""
          dt_rpath = self.dynamic_by_tag('DT_RPATH')
-@@ -1554,6 +1563,10 @@ class ELF(ELFFile):
+@@ -1729,6 +1738,10 @@ class ELF(ELFFile):
                  True: green("PIE enabled"),
                  False: red("No PIE (%#x)" % self.address)
              }[self.pie],
