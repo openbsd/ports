@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/16 23:39:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/13 02:09:32 bcallah Exp $
 
 COMMENT =	lightweight Qt5 notes manager
 DISTNAME =	feathernotes-${GH_TAGNAME:S/^V//}
@@ -6,7 +6,7 @@ CATEGORIES =	misc x11
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherNotes
-GH_TAGNAME =	V0.6.0
+GH_TAGNAME =	V0.7.0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
