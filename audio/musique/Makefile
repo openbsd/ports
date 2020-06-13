@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2020/06/10 19:29:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2020/06/13 04:50:31 rsadowski Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 V =		1.7
 DISTNAME =	musique-${V}
 CATEGORIES =	audio
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 HOMEPAGE =	http://flavio.tordini.org/musique/
 
@@ -12,7 +13,7 @@ HOMEPAGE =	http://flavio.tordini.org/musique/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Sql Qt5Widgets c m tag
+WANTLIB += Qt5Sql Qt5Widgets c m mpv tag
 
 # https://github.com/flaviotordini/musique/issues/25
 #MASTER_SITES =	https://www.sizeofvoid.org/pub/OpenBSD/distfiles/
@@ -26,13 +27,14 @@ EXTRACT_CASES += musique*.tar.bz2) ${GZIP_CMD} -d <${FULLDISTDIR}/$$archive | ${
 MODULES =	devel/qmake \
 		x11/qt5
 
-LIB_DEPENDS =	audio/taglib
+LIB_DEPENDS =	audio/taglib \
 
 BUILD_DEPENDS =	multimedia/qtav
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-good \
+		multimedia/mpv \
 		multimedia/qtav \
 		x11/gtk+3,-guic
 
