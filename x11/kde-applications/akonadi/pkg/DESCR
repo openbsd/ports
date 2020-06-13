@@ -1,0 +1,6 @@
+Akonadi is a PIM layer, which provides an asynchronous API to access all kind
+of PIM data (e.g. mails, contacts, events, todos etc.).
+
+It consists of several processes (generally called the Akonadi server) and a
+library (called client library) which encapsulates the communication between
+the client and the server.
