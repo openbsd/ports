@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/12/06 14:29:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/06/13 17:38:49 cwen Exp $
 
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.5.2
@@ -52,10 +52,10 @@ PKG_ARGS+=              -Dx86=0
 #.else
 PKG_ARGS+=              -Darm=0
 #.endif
+# XXX AltiVec optimizations can't be built with clang, and POWER8 ones
+# are useless on powerpc
 .if ${MACHINE_ARCH} == "powerpc"
-PKG_ARGS+=              -Dppc=1
-.else
-PKG_ARGS+=              -Dppc=0
+MAKE_ENV+=              ALTIVEC=false POWER8=false
 .endif
 
 

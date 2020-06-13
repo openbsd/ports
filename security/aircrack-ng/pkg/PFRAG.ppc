@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.ppc,v 1.2 2019/08/12 14:40:04 cwen Exp $
-lib/libaircrack-crypto-ppc-altivec-1.3.0.so
-lib/libaircrack-crypto-ppc-altivec.la
-lib/libaircrack-crypto-ppc-altivec.so
