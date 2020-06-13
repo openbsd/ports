@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/06/13 12:07:22 cwen Exp $
 
 BROKEN-i386=		various errors from gplc during build (segv, "fatal error", etc at various different points)
+BROKEN-powerpc=		ld.so: pl2wam: relocation failed
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
 
