@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/13 09:26:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2020/06/13 10:12:53 jasper Exp $
 
 BROKEN-sparc64 = multiple definition of use_vis3_instructions
 
 COMMENT =	Unicorn CPU emulator engine
 
-MODPY_EGG_VERSION =	1.0.1
+MODPY_EGG_VERSION =	1.0.2rc3
 DISTNAME =	unicorn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
 
 CATEGORIES =	devel
 
