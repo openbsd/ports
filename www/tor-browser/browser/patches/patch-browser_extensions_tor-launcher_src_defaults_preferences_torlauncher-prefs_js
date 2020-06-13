@@ -1,11 +1,11 @@
-$OpenBSD: patch-browser_extensions_tor-launcher_src_defaults_preferences_torlauncher-prefs_js,v 1.2 2020/02/16 10:45:59 landry Exp $
+$OpenBSD: patch-browser_extensions_tor-launcher_src_defaults_preferences_torlauncher-prefs_js,v 1.3 2020/06/13 06:26:01 landry Exp $
 
 Set all path-related prefs to minimize patching of tl-util.jsm/tl-process.js
 
 Index: browser/extensions/tor-launcher/src/defaults/preferences/torlauncher-prefs.js
 --- browser/extensions/tor-launcher/src/defaults/preferences/torlauncher-prefs.js.orig
 +++ browser/extensions/tor-launcher/src/defaults/preferences/torlauncher-prefs.js
-@@ -43,14 +43,17 @@ pref("extensions.torlauncher.socks_port_flags", "IPv6T
+@@ -43,14 +43,17 @@ pref("extensions.torlauncher.socks_port_flags", "Exten
  // The tor_path is relative to the application directory. On Linux and
  // Windows this is the Browser/ directory that contains the firefox
  // executables, and on Mac OS it is the TorBrowser.app directory.

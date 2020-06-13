@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/09/04 12:46:16 espie Exp $
+$OpenBSD: README,v 1.5 2020/06/13 06:26:01 landry Exp $
 
 +-----------------------------------------------------------------------
 | ${PKGSTEM} on OpenBSD
@@ -41,7 +41,7 @@ Transports (PT).  This means that not all features are yet available,
 such as using obfsproxy to get to Tor.  A future update will include
 ports for PT components.  Pluggable Transports have a web page
 worth reading:
-  https://www.torproject.org/docs/pluggable-transports.html.en
+  https://2019.www.torproject.org/docs/pluggable-transports.html.en
 
 For more information about Tor Browser and the Tor anonymity network
 in general please visit http://www.torproject.org

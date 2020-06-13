@@ -1,4 +1,4 @@
-$OpenBSD: patch-browser_extensions_tor-launcher_src_modules_tl-util_jsm,v 1.1 2020/02/13 07:41:53 landry Exp $
+$OpenBSD: patch-browser_extensions_tor-launcher_src_modules_tl-util_jsm,v 1.2 2020/06/13 06:26:01 landry Exp $
 
 Force DataOutsideOfAppDir on OpenBSD since it will always be true
 (turned on in ../browser/patches/patch-patch-xpcom_io_TorFileUtils_cpp)
@@ -6,7 +6,7 @@ Force DataOutsideOfAppDir on OpenBSD since it will always be true
 Index: browser/extensions/tor-launcher/src/modules/tl-util.jsm
 --- browser/extensions/tor-launcher/src/modules/tl-util.jsm.orig
 +++ browser/extensions/tor-launcher/src/modules/tl-util.jsm
-@@ -810,7 +810,7 @@ let TLUtilInternal =  // Private
+@@ -821,7 +821,7 @@ let TLUtilInternal =  // Private
    mStringBundle : null,
    mOS : "",
    // mIsUserDataOutsideOfAppDir is true when TorBrowser-Data is used.
