@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/06/13 18:50:20 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -45,7 +45,7 @@ set(KMAILTRANSPORT_LIB_VERSION "5.13.3")
+ set(MAILIMPORTER_LIB_VERSION "5.13.3")
+ set(LIBKDEPIM_LIB_VERSION "5.13.3")
+ set(PIMCOMMON_LIB_VERSION "5.13.3")
+-set(PHONON_LIB_VERSION "4.10.60")
++set(PHONON_LIB_VERSION "4.10.3")
+ set(AKONADI_VERSION "5.13.3")
+ 
+ find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets DBus Test Xml)
