@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1987 2020/06/13 09:27:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.1988 2020/06/13 10:52:33 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -190,7 +190,6 @@
      SUBDIR += gsl
      SUBDIR += gsoap
      SUBDIR += gtest
-     SUBDIR += gtkparasite
      SUBDIR += guilib
      SUBDIR += gwenhywfar
      SUBDIR += gyp
