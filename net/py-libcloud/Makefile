@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2020/04/16 06:25:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2020/06/13 08:17:30 ajacoutot Exp $
 
 COMMENT=		unified interface for interacting with cloud services
 
-MODPY_EGG_VERSION=	3.0.0
+MODPY_EGG_VERSION=	3.1.0
 DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
 PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
 
