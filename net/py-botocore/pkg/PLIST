@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.135 2020/05/16 10:00:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.136 2020/06/13 10:24:10 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -293,6 +293,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudwatch/2010-08-01/exa
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudwatch/2010-08-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudwatch/2010-08-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudwatch/2010-08-01/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codeartifact/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codeartifact/2018-09-22/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codeartifact/2018-09-22/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codeartifact/2018-09-22/paginators-1.sdk-extras.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codeartifact/2018-09-22/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codebuild/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codebuild/2016-10-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codebuild/2016-10-06/examples-1.json
@@ -658,6 +663,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector/2016-02-16/serv
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/2015-05-28/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/2015-05-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/2015-05-28/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/
