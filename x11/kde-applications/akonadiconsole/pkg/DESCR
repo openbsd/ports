@@ -1,0 +1,7 @@
+Akonadi Console is a tool for developers working with Akonadi or on Akonadi
+itself. It provides GUI for:
+
+ - Managing agents and resources.
+ - Retrieving, checking and even manipulating data.
+ - Monitoring communication between Akonadi server and its clients.
+ - Convenience access to the database used by the server.

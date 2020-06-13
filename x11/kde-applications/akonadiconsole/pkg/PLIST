@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 19:13:08 rsadowski Exp $
+@conflict kdepimlibs-<=4
+@bin bin/akonadiconsole
+@lib lib/libakonadiconsole.so.${LIBakonadiconsole_VERSION}
+share/applications/org.kde.akonadiconsole.desktop
+share/icons/hicolor/128x128/apps/akonadiconsole.png
+share/icons/hicolor/16x16/apps/akonadiconsole.png
+share/icons/hicolor/22x22/apps/akonadiconsole.png
+share/icons/hicolor/256x256/apps/akonadiconsole.png
+share/icons/hicolor/32x32/apps/akonadiconsole.png
+share/icons/hicolor/48x48/apps/akonadiconsole.png
+share/icons/hicolor/64x64/apps/akonadiconsole.png
+share/kconf_update/akonadiconsole-15.08-kickoff.sh
+share/kconf_update/akonadiconsole.upd
+share/qlogging-categories5/akonadiconsole.categories
+share/qlogging-categories5/akonadiconsole.renamecategories
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
