@@ -1,0 +1,16 @@
+Konqueror is KDE's Webbrowser and swiss-army-knife for any kind of
+file-management and file previewing.
+
+Features:
+
+-  Webbrowsing using Qt WebEngine as rendering engines
+-  File management using most of Dolphin's features (including version-control,
+   service menus and the basic UI)
+-  File management on ftp and sftp servers
+-  Full featured FTP-client (you can split views to display local and remote
+   folders and previews in the same window)
+-  Embedded applications to preview files (e.g. Okular and Calligra for
+   documents, Gwenview for pictures, KTextEditor for text-files)
+-  Different kinds of plugins: Service-menus, KParts (embedded applications),
+   KIO (accessing files using special protocols like http or ftp) and
+   KPart-plugins (like AdBlocker...)
