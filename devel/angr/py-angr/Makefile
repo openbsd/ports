@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/15 18:36:18 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/14 10:14:14 ajacoutot Exp $
 
 COMMENT =	multi-architecture binary analysis toolkit
 
 ANGR_PYTHON_MODULE =	angr
+REVISION =	0
 
 HOMEPAGE =	https://angr.io/
 
@@ -37,7 +38,7 @@ RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
 		devel/py-progressbar${MODPY_FLAVOR} \
 		devel/py-protobuf${MODPY_FLAVOR}>=3.9.1 \
 		devel/py-sortedcontainers${MODPY_FLAVOR} \
-		math/py-networkx \
+		math/py-networkx${MODPY_FLAVOR} \
 		net/py-dpkt${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR}
 

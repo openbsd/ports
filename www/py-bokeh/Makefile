@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/11/07 11:05:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.28 2020/06/14 10:14:14 ajacoutot Exp $
 
 COMMENT=		statistical and novel interactive HTML plots for Python
 
@@ -39,7 +39,7 @@ TEST_DEPENDS=	 	devel/ipython${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nbconvert${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \
-			math/py-networkx \
+			math/py-networkx${MODPY_FLAVOR} \
 			math/py-pandas${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			www/py-selenium${MODPY_FLAVOR}
