@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.989 2020/06/14 12:50:55 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.990 2020/06/14 13:02:42 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -433,6 +433,7 @@ my $stem_extensions = {
 	'prison' => 'prison-kf5',
 	'kdegraphics-mobipocket' => 'kdegraphics-mobipocket-kf5',
 	'kdegraphics-thumbnailers' => 'kdegraphics-thumbnailers-kf5',
+	'svgpart' => 'svgpart-kf5',
 };
 
 my $obsolete_reason = {
