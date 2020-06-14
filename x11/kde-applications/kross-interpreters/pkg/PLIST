@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 05:13:56 rsadowski Exp $
+@conflict kross-interpreters-<=4
+@pkgpath x11/kde4/kross-interpreters
+@so lib/qt5/plugins/krosspython.so
+@so lib/qt5/plugins/krossruby.so
