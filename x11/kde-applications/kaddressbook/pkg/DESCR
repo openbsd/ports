@@ -1,0 +1,18 @@
+KAddressBook stores all the personal details of your family, friends and other
+contacts. It supports large variety of services, including NextCloud, Kolab,
+Google Contacts, Microsoft Exchange (EWS) or any standard CalDAV server.
+
+Features:
+
+ - Powerful search - KAddressBook has configurable filters and powerful search
+   capabilities.
+ - Duplicate detection and merging - KAddressBook can find duplicated contacts
+   from multiple sources and can merge them into a single contact.
+ - Good standard support - KAddressBook can import and export from and to
+   nearly every address book standard.
+ - LDAP integration - Can connect to multiple LDAP servers, which can then be
+   used for contact autocompletion when composing emails in KMail.
+ - Integration - Integrates with other Kontact components, e.g. exporting
+   birthday reminders to KOrganizer
+ - QR codes - KAddressBook can display a QR code for each contact to quickly
+   scan it into your phone or send to someone.
