@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.1.1.1 2019/03/11 07:05:52 rsadowski Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1.1.2 2020/06/14 04:39:36 rsadowski Exp $
 
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
