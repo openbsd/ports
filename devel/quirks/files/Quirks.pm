@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.984 2020/06/14 10:07:26 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.985 2020/06/14 10:18:15 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1617,6 +1617,19 @@ my $obsolete_reason = {
 	'phonon-gstreamer' => 3,
 	'phonon-gstreamer-icons' => 3,
 	'phonon-vlc' => 3,
+	'kde4-minimal' => 3,
+	'kde4' => 3,
+	'kde4-extras' => 3,
+	'kdeadmin' => 3,
+	'kdegames' => 3,
+	'kdenetwork' => 3,
+	'kdesdk' => 3,
+	'kdetoys' => 3,
+	'kdeadmin' => 3,
+	'kdegames' => 3,
+	'kdenetwork' => 3,
+	'kdesdk' => 3,
+	'kdetoys' => 3,
 };
 
 # reasons for obsolete packages
