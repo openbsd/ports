@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.29 2020/02/12 13:20:34 sthen Exp $
+$OpenBSD: README-server,v 1.30 2020/06/14 10:19:46 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -196,5 +196,5 @@ Clients/Frontends
 Many applications can use the PostgreSQL database right away.  To facilitate
 administration of a PostgreSQL database, two clients are notable:
 
-www/phppgadmin		A web based user interface that uses PHP5
+www/phppgadmin		A web based user interface that uses PHP
 databases/pgadmin3	A graphical user interface that uses wxWidgets
