@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2020/06/13 16:22:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.91 2020/06/14 19:23:09 kirby Exp $
 
      SUBDIR =
      #SUBDIR += akonadi
@@ -11,7 +11,6 @@
      SUBDIR += deskzilla
      SUBDIR += devtodo
      SUBDIR += fet
-     SUBDIR += gbirthday
      SUBDIR += glabels
      SUBDIR += gnucash
      SUBDIR += grisbi
@@ -34,6 +33,7 @@
      SUBDIR += p5-Business-Tax-VAT-Validation
      SUBDIR += projectlibre
      SUBDIR += py-carddav
+     SUBDIR += qbirthday
      SUBDIR += radicale
      SUBDIR += radicale2
      SUBDIR += rednotebook
