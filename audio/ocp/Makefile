@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/06/11 10:39:43 fcambus Exp $
+# $OpenBSD: Makefile,v 1.19 2020/06/14 08:19:31 fcambus Exp $
 
 BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.c:2077
 BROKEN-i386 =	mixasm.c:94: this directive must appear between .cfi_startproc and .cfi_endproc directives
@@ -23,10 +23,11 @@ MASTER_SITES =	https://stian.cubic.org/ocp/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS =	devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
 		fonts/unifont
 
-RUN_DEPENDS =	${BUILD_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS} \
+		devel/xa
 
 LIB_DEPENDS =	audio/adplug \
 		audio/flac \
