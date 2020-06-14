@@ -1,0 +1,14 @@
+$OpenBSD: patch-arch_arm_dts_rk3399-rock-pi-4_dts,v 1.1 2020/06/14 01:49:02 jsg Exp $
+
+Index: arch/arm/dts/rk3399-rock-pi-4.dts
+--- arch/arm/dts/rk3399-rock-pi-4.dts.orig
++++ arch/arm/dts/rk3399-rock-pi-4.dts
+@@ -15,7 +15,7 @@
+ 	compatible = "radxa,rockpi4", "rockchip,rk3399";
+
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+
+ 	clkin_gmac: external-gmac-clock {

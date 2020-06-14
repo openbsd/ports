@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_rock-pi-4-rk3399_defconfig,v 1.1 2020/06/14 01:49:02 jsg Exp $
+
+Index: configs/rock-pi-4-rk3399_defconfig
+--- configs/rock-pi-4-rk3399_defconfig.orig
++++ configs/rock-pi-4-rk3399_defconfig
+@@ -40,7 +40,7 @@ CONFIG_REGULATOR_PWM=y
+ CONFIG_REGULATOR_RK8XX=y
+ CONFIG_PWM_ROCKCHIP=y
+ CONFIG_RAM_RK3399_LPDDR4=y
+-CONFIG_BAUDRATE=1500000
++CONFIG_BAUDRATE=115200
+ CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_SYSRESET=y
+ CONFIG_USB=y

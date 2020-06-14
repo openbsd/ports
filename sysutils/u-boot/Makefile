@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.70 2020/06/11 03:13:29 jsg Exp $
+#	$OpenBSD: Makefile,v 1.71 2020/06/14 01:49:02 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
@@ -8,7 +8,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2020.04
-REVISION=	1
+REVISION=	2
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -74,6 +74,7 @@ BOARDS=\
 	qemu_arm64 \
 	rock64-rk3328 \
 	rock960-rk3399 \
+	rock-pi-4-rk3399 \
 	rockpro64-rk3399 \
 	rpi_3 \
 	rpi_4
