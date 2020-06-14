@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/10/31 03:22:07 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/14 00:52:25 afresh1 Exp $
 
 COMMENT =	driver to format LaTeX documents
 
-DISTNAME =	LaTeX-Driver-0.300.2
+DISTNAME =	LaTeX-Driver-1.0.0
 CATEGORIES =	textproc
 
 MODULES =	cpan
@@ -20,6 +20,8 @@ RUN_DEPENDS =	print/texlive/base \
 		devel/p5-File-pushd>=0 \
 		devel/p5-Readonly>=0
 
-TEST_DEPENDS=          print/texlive/texmf,-full
+TEST_DEPENDS =	devel/p5-Test-Exception \
+		print/texlive/texmf,-full \
+		sysutils/p5-Capture-Tiny
 
 .include <bsd.port.mk>
