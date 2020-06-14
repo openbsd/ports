@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.983 2020/06/13 10:54:39 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.984 2020/06/14 10:07:26 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1600,6 +1600,23 @@ my $obsolete_reason = {
 	'qtcanvas3d-examples' => 3,
 	'gtkparasite' => 3,
 	'gutenpy' => 3,
+	'klogic' => 3,
+	'soprano' => 3,
+	'automoc' => 3,
+	'qimageblitz' => 3,
+	'cagibi' => 3,
+	'libkvkontakte' => 3,
+	'libkfbapi' => 3,
+	'libkgapi' => 3,
+	'akonadi' => 3,
+	'attica' => 3,
+	'kwebkitpart' => 3,
+	'grantlee' => 3,
+	'libkscreen' => 3,
+	'polkit-qt' => 3,
+	'phonon-gstreamer' => 3,
+	'phonon-gstreamer-icons' => 3,
+	'phonon-vlc' => 3,
 };
 
 # reasons for obsolete packages
