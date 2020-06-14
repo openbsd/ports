@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/14 20:35:48 rsadowski Exp $
 @conflict kdepim-*
 @bin bin/kleopatra
 @bin bin/kwatchgnupg

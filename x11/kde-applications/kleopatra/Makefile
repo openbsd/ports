@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/05 05:40:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1.1.2 2020/06/14 04:39:36 rsadowski Exp 
 
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
