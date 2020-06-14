@@ -1,0 +1,37 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/06/14 03:52:06 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -138,7 +138,10 @@ include_directories(
+     ${CMAKE_CURRENT_SOURCE_DIR}
+     ${CMAKE_CURRENT_SOURCE_DIR}/core/
+     ${CMAKE_CURRENT_BINARY_DIR}/core/
+-    ${CMAKE_CURRENT_BINARY_DIR}
++    ${Boost_INCLUDE_DIRS}
++    ${CMAKE_INSTALL_PREFIX}/include/
++    ${CMAKE_INSTALL_PREFIX}/include/gpgme++/
++    ${CMAKE_INSTALL_PREFIX}/include/qgpgme/
+ )
+ 
+ if(SQLITE_FOUND)
+@@ -221,7 +224,8 @@ if (Qca-qt5_FOUND)
+ endif ()
+ 
+ if (Gpgmepp_FOUND)
+-    target_link_libraries(kgetcore QGpgme Gpgmepp)
++    target_include_directories(kgetcore PRIVATE "$<BUILD_INTERFACE:${CMAKE_INSTALL_PREFIX}/lib>")
++    target_link_libraries(kgetcore gpgmepp qgpgme)
+     kde_enable_exceptions()
+ endif()
+ 
+@@ -322,7 +326,8 @@ if(CMAKE_BUILD_TYPE MATCHES debugfull)
+ endif()
+ 
+ if (QGpgme_FOUND)
+-  target_link_libraries(kget QGpgme)
++  target_include_directories(kget PRIVATE "$<BUILD_INTERFACE:${CMAKE_INSTALL_PREFIX}/lib>")
++  target_link_libraries(kget qgpgme)
+ endif()
+ 
+ install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})

@@ -1,0 +1,14 @@
+$OpenBSD: patch-transfer-plugins_mmsthreads_mmsthread_h,v 1.1.1.1 2020/06/14 03:52:06 rsadowski Exp $
+
+Index: transfer-plugins/mmsthreads/mmsthread.h
+--- transfer-plugins/mmsthreads/mmsthread.h.orig
++++ transfer-plugins/mmsthreads/mmsthread.h
+@@ -19,7 +19,7 @@
+ 
+ #ifndef MMSTHREAD_HPP
+ #define MMSTHREAD_HPP
+-#include <libmms/mmsx.h>
++#include <mmsx.h>
+ #include <QThread>
+ #include <QFile>
+ #include <QMutex>

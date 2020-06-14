@@ -1,0 +1,15 @@
+$OpenBSD: patch-transfer-plugins_kio_CMakeLists_txt,v 1.1.1.1 2020/06/14 03:52:06 rsadowski Exp $
+
+Index: transfer-plugins/kio/CMakeLists.txt
+--- transfer-plugins/kio/CMakeLists.txt.orig
++++ transfer-plugins/kio/CMakeLists.txt
+@@ -1,6 +1,9 @@
+ include_directories(
+    ../../
+     ${CMAKE_CURRENT_BINARY_DIR}/../../
++    ${CMAKE_INSTALL_PREFIX}/include/
++    ${CMAKE_INSTALL_PREFIX}/include/gpgme++/
++    ${CMAKE_INSTALL_PREFIX}/include/qgpgme/
+ )
+ 
+ set(kget_kiofactory_PART_SRCS

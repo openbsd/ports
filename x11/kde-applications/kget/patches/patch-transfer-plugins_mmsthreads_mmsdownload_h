@@ -1,0 +1,14 @@
+$OpenBSD: patch-transfer-plugins_mmsthreads_mmsdownload_h,v 1.1.1.1 2020/06/14 03:52:06 rsadowski Exp $
+
+Index: transfer-plugins/mmsthreads/mmsdownload.h
+--- transfer-plugins/mmsthreads/mmsdownload.h.orig
++++ transfer-plugins/mmsthreads/mmsdownload.h
+@@ -20,7 +20,7 @@
+ #ifndef MMSDOWNLOAD_H
+ #define MMSDOWNLOAD_H
+ 
+-#include <libmms/mmsx.h>
++#include <mmsx.h>
+ #include <QString>
+ #include <QTimer>
+ #include <QMap>
