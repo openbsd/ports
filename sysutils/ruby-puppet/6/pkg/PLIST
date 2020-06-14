@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/06/01 16:23:29 kn Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/06/14 15:47:39 kn Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -484,6 +484,7 @@ ${MODRUBY_SITEDIR}/puppet/network/http/api/master/v3/environments.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/base_pool.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/compression.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/connection.rb
+${MODRUBY_SITEDIR}/puppet/network/http/connection_adapter.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/error.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/factory.rb
 ${MODRUBY_SITEDIR}/puppet/network/http/handler.rb
@@ -1103,6 +1104,7 @@ ${MODRUBY_SITEDIR}/puppet/util/package/version/gem.rb
 ${MODRUBY_SITEDIR}/puppet/util/package/version/pip.rb
 ${MODRUBY_SITEDIR}/puppet/util/package/version/range/
 ${MODRUBY_SITEDIR}/puppet/util/package/version/range.rb
+${MODRUBY_SITEDIR}/puppet/util/package/version/range/eq.rb
 ${MODRUBY_SITEDIR}/puppet/util/package/version/range/gt.rb
 ${MODRUBY_SITEDIR}/puppet/util/package/version/range/gt_eq.rb
 ${MODRUBY_SITEDIR}/puppet/util/package/version/range/lt.rb
