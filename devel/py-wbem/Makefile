@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/06/13 16:17:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/06/14 09:08:00 ajacoutot Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
@@ -18,6 +18,8 @@ MODPY_PI=		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
+
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 RUN_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}>=1.10.0 \
 			devel/py-ply${MODPY_FLAVOR} \
