@@ -1,0 +1,19 @@
+$OpenBSD: patch-kaddressbook_editorpages_CMakeLists_txt,v 1.1.1.1 2020/06/14 04:48:06 rsadowski Exp $
+
+Index: kaddressbook/editorpages/CMakeLists.txt
+--- kaddressbook/editorpages/CMakeLists.txt.orig
++++ kaddressbook/editorpages/CMakeLists.txt
+@@ -5,6 +5,12 @@ add_definitions(-DTRANSLATION_DOMAIN=\"cryptopageplugi
+ set(cryptopageplugin_SRCS cryptopageplugin.cpp )
+ 
+ add_library(cryptopageplugin MODULE ${cryptopageplugin_SRCS})
+-target_link_libraries(cryptopageplugin KF5::Contacts KF5::ContactEditor KF5::Libkleo KF5::IconThemes KF5::I18n KF5::Completion Gpgmepp)
++target_include_directories(cryptopageplugin PUBLIC "${CMAKE_INSTALL_PREFIX}/include"
++                    "${CMAKE_INSTALL_PREFIX}/include/inotify"
++                    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
++                    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
++
++
++target_link_libraries(cryptopageplugin KF5::Contacts KF5::ContactEditor KF5::Libkleo KF5::IconThemes KF5::I18n KF5::Completion gpgmepp)
+ 
+ install(TARGETS cryptopageplugin DESTINATION ${KDE_INSTALL_LIBDIR}/contacteditor/editorpageplugins/)
