@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2020/06/14 13:07:04 solene Exp $
+
+Remove optimization flags for debug or release builds
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -12,11 +12,9 @@ endif
+ 
+ ifeq ($(debug),yes)
+     CPPFLAGS += -DKAK_DEBUG
+-    CXXFLAGS += -O0
+     suffix := .debug
+ else
+     ifeq ($(debug),no)
+-        CXXFLAGS += -O3
+         suffix := .opt
+     else
+         $(error debug should be either yes or no)
