@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.985 2020/06/14 10:18:15 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.986 2020/06/14 10:28:26 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1630,6 +1630,59 @@ my $obsolete_reason = {
 	'kdenetwork' => 3,
 	'kdesdk' => 3,
 	'kdetoys' => 3,
+	'kde-l10n-ar' => 3,
+	'kde-l10n-bg' => 3,
+	'kde-l10n-bs' => 3,
+	'kde-l10n-ca' => 3,
+	'kde-l10n-ca@valencia' => 3,
+	'kde-l10n-cs' => 3,
+	'kde-l10n-da' => 3,
+	'kde-l10n-de' => 3,
+	'kde-l10n-el' => 3,
+	'kde-l10n-en_GB' => 3,
+	'kde-l10n-es' => 3,
+	'kde-l10n-et' => 3,
+	'kde-l10n-eu' => 3,
+	'kde-l10n-fa' => 3,
+	'kde-l10n-fi' => 3,
+	'kde-l10n-fr' => 3,
+	'kde-l10n-ga' => 3,
+	'kde-l10n-gl' => 3,
+	'kde-l10n-he' => 3,
+	'kde-l10n-hi' => 3,
+	'kde-l10n-hr' => 3,
+	'kde-l10n-hu' => 3,
+	'kde-l10n-ia' => 3,
+	'kde-l10n-id' => 3,
+	'kde-l10n-is' => 3,
+	'kde-l10n-it' => 3,
+	'kde-l10n-ja' => 3,
+	'kde-l10n-kk' => 3,
+	'kde-l10n-km' => 3,
+	'kde-l10n-ko' => 3,
+	'kde-l10n-lt' => 3,
+	'kde-l10n-lv' => 3,
+	'kde-l10n-mr' => 3,
+	'kde-l10n-nb' => 3,
+	'kde-l10n-nds' => 3,
+	'kde-l10n-nl' => 3,
+	'kde-l10n-nn' => 3,
+	'kde-l10n-pa' => 3,
+	'kde-l10n-pl' => 3,
+	'kde-l10n-pt' => 3,
+	'kde-l10n-pt_BR' => 3,
+	'kde-l10n-ro' => 3,
+	'kde-l10n-ru' => 3,
+	'kde-l10n-sk' => 3,
+	'kde-l10n-sl' => 3,
+	'kde-l10n-sr' => 3,
+	'kde-l10n-sv' => 3,
+	'kde-l10n-tr' => 3,
+	'kde-l10n-ug' => 3,
+	'kde-l10n-uk' => 3,
+	'kde-l10n-wa' => 3,
+	'kde-l10n-zh_CN' => 3,
+	'kde-l10n-zh_TW' => 3,
 };
 
 # reasons for obsolete packages
