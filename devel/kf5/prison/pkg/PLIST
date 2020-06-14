@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:12 rsadowski Exp $
-@option no-default-conflict
-@conflict prison->=5
+@comment $OpenBSD: PLIST,v 1.7 2020/06/14 11:54:49 rsadowski Exp $
+@conflict prison-<=5.68.0
+@pkgpath graphics/prison
 include/KF5/
 include/KF5/prison/
 include/KF5/prison/AbstractBarcode

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.986 2020/06/14 10:28:26 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.987 2020/06/14 11:54:49 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -430,6 +430,7 @@ my $stem_extensions = {
 	'py-libxml' => 'py3-libxml',
 	'py-rsa' => 'py3-rsa',
 	'py-unicorn' => 'py3-unicorn',
+	'prison' => 'prison-kf5',
 };
 
 my $obsolete_reason = {
