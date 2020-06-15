@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/15 11:43:22 cwen Exp $
 
 COMMENT =		forces the unavailability of specified Perl modules
 
-DISTNAME =		Devel-Hide-0.0010
+DISTNAME =		Devel-Hide-0.0013
 CATEGORIES =		devel
 
-MAINTAINER =		Charlene Wendling <julianaito@posteo.jp>
+MAINTAINER =		Charlene Wendling <cwen@openbsd.org>
 
 MODULES =		cpan
 PKG_ARCH =		*
