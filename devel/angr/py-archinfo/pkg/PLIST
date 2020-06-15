@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/15 08:49:02 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/archinfo/
 lib/python${MODPY_VERSION}/site-packages/archinfo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/archinfo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -35,4 +35,5 @@ lib/python${MODPY_VERSION}/site-packages/archinfo/arch_soot.py
 lib/python${MODPY_VERSION}/site-packages/archinfo/arch_x86.py
 lib/python${MODPY_VERSION}/site-packages/archinfo/archerror.py
 lib/python${MODPY_VERSION}/site-packages/archinfo/defines.py
+lib/python${MODPY_VERSION}/site-packages/archinfo/py.typed
 lib/python${MODPY_VERSION}/site-packages/archinfo/tls.py

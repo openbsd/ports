@@ -1,0 +1,29 @@
+$OpenBSD: patch-angr_procedures_definitions___init___py,v 1.1 2020/06/15 08:49:02 kn Exp $
+
+Drop itanium_demangler dependency
+
+Index: angr/procedures/definitions/__init__.py
+--- angr/procedures/definitions/__init__.py.orig
++++ angr/procedures/definitions/__init__.py
+@@ -5,8 +5,6 @@ from collections import defaultdict
+ import logging
+ import inspect
+ 
+-import itanium_demangler
+-
+ from ...calling_conventions import DEFAULT_CC
+ from ...misc import autoimport
+ from ...sim_type import parse_file
+@@ -261,10 +259,12 @@ class SimCppLibrary(SimLibrary):
+ 
+     @staticmethod
+     def _try_demangle(name):
++        """
+         if name[0:2] == "_Z":
+             ast = itanium_demangler.parse(name)
+             if ast:
+                 return str(ast)
++        """
+         return name
+ 
+     def get(self, name, arch):

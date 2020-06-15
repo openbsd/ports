@@ -1,4 +1,4 @@
-$OpenBSD: patch-pyvex_c_Makefile,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+$OpenBSD: patch-pyvex_c_Makefile,v 1.2 2020/06/15 08:49:02 kn Exp $
 
 - Add support for OpenBSD
 - Don't overwrite CC/CFLAGS
@@ -18,7 +18,7 @@ Index: pyvex_c/Makefile
  ifeq ($(findstring MINGW,$(UNAME)), MINGW)
  	LIBRARY_FILE=pyvex.dll
  	STATIC_LIBRARY_FILE=libpyvex.a
-@@ -27,21 +31,20 @@ sp +=
+@@ -26,21 +30,20 @@ sp =$(null) $(null)
  qs = $(subst ?,$(sp),$1)
  sq = $(subst $(sp),?,$1)
  

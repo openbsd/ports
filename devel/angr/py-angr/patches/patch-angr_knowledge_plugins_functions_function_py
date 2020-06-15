@@ -1,20 +1,20 @@
-$OpenBSD: patch-angr_knowledge_plugins_functions_function_py,v 1.3 2019/11/10 09:29:32 kn Exp $
+$OpenBSD: patch-angr_knowledge_plugins_functions_function_py,v 1.4 2020/06/15 08:49:02 kn Exp $
 
 Drop itanium_demangler dependency
 
 Index: angr/knowledge_plugins/functions/function.py
 --- angr/knowledge_plugins/functions/function.py.orig
 +++ angr/knowledge_plugins/functions/function.py
-@@ -6,8 +6,6 @@ import itertools
- from collections import defaultdict
- from typing import Union
+@@ -7,8 +7,6 @@ from collections import defaultdict
+ from typing import Union, Optional, Iterable
+ from typing import Type # For some reasons the linter doesn't recognize the use in apply_definition but PyCharm needs it imported to correctly recognize it # pylint: disable=unused-import
  
 -from itanium_demangler import parse
 -
  from cle.backends.symbol import Symbol
  from archinfo.arch_arm import get_real_address_if_arm
  import claripy
-@@ -1272,10 +1270,12 @@ class Function(Serializable):
+@@ -1449,10 +1447,12 @@ class Function(Serializable):
      @property
      def demangled_name(self):
  
@@ -26,4 +26,4 @@ Index: angr/knowledge_plugins/functions/function.py
 +        """
          return self.name
  
-     def copy(self):
+     def apply_definition(self, definition, calling_convention=None):

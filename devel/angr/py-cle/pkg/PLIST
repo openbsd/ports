@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/15 18:36:18 kn Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/15 08:49:02 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/cle/
 lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -28,7 +28,9 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}named_regi
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}region.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}regions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}relocation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}static_archive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}symbol.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}xbe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/binja.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/blob.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/
@@ -46,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}elf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}elfcore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}hashtable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}lsda.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}metaelf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}regions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}symbol.${MODPY_PYC_MAGIC_TAG}pyc
@@ -53,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}symbol
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/elf.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/elfcore.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/hashtable.py
+lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/lsda.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/metaelf.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/regions.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/
@@ -164,15 +168,21 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/symbol.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/region.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/regions.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/relocation.py
+lib/python${MODPY_VERSION}/site-packages/cle/backends/static_archive.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/symbol.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}elf_tls.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}elfcore_tls.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}minidump_tls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}pe_tls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/elf_tls.py
+lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/elfcore_tls.py
+lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/minidump_tls.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/pe_tls.py
+lib/python${MODPY_VERSION}/site-packages/cle/backends/xbe.py
 lib/python${MODPY_VERSION}/site-packages/cle/errors.py
 lib/python${MODPY_VERSION}/site-packages/cle/gdb.py
 lib/python${MODPY_VERSION}/site-packages/cle/loader.py

@@ -1,4 +1,4 @@
-$OpenBSD: patch-native_Makefile,v 1.1.1.1 2019/07/23 19:22:23 jasper Exp $
+$OpenBSD: patch-native_Makefile,v 1.2 2020/06/15 08:49:02 kn Exp $
 
 - Support OpenBSD
 - honour compiler environment
@@ -16,20 +16,20 @@ Index: native/Makefile
 +endif
  
 -CC := gcc
--C++C := g++
+-CXX := g++
 +CC ?= gcc
-+C++C ?= g++
- CFLAGS := -I "${UNICORN_INCLUDE_PATH}" -I "${PYVEX_INCLUDE_PATH}" \
++CXX ?= g++
+ CXXFLAGS := -I "${UNICORN_INCLUDE_PATH}" -I "${PYVEX_INCLUDE_PATH}" \
  	-L "${UNICORN_LIB_PATH}" -L "${PYVEX_LIB_PATH}" \
 -	-O3 -fPIC -std=c++11
 -ifneq ($(DEBUG), )
--	CFLAGS := $(CFLAGS) -O0 -g
+-	CXXFLAGS := $(CXXFLAGS) -O0 -g
 -endif
 +	-fPIC -std=c++11 ${CFLAGS}
  
  OBJS := log.o
- LIBS := -lunicorn -lpyvex
-@@ -21,7 +21,7 @@ LIBS := -lunicorn -lpyvex
+ LDLIBS := -lunicorn -lpyvex
+@@ -24,7 +24,7 @@ endif
  all: ${LIB_ANGR_NATIVE}
  
  log.o: log.c log.h
@@ -37,4 +37,4 @@ Index: native/Makefile
 +	${CC} -fPIC -c -o $@ $<
  
  ${LIB_ANGR_NATIVE}: ${OBJS} sim_unicorn.cpp
- 	${C++C} ${CFLAGS} -shared -o $@ $^ ${LIBS}
+ 	${CXX} ${CXXFLAGS} -shared -o $@ $^ ${LDLIBS} ${LDFLAGS}

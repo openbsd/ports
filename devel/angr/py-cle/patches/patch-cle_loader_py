@@ -1,11 +1,11 @@
-$OpenBSD: patch-cle_loader_py,v 1.4 2020/02/15 18:36:18 kn Exp $
+$OpenBSD: patch-cle_loader_py,v 1.5 2020/06/15 08:49:02 kn Exp $
 
 Set library search path.
 
 Index: cle/loader.py
 --- cle/loader.py.orig
 +++ cle/loader.py
-@@ -913,6 +913,9 @@ class Loader:
+@@ -961,6 +961,9 @@ class Loader:
                  dirs.extend(self.main_object.extra_load_path)
                  if sys.platform.startswith('linux'):
                      dirs.extend(self.main_object.arch.library_search_path())
