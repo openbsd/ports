@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.993 2020/06/15 10:29:06 kirby Exp $
+# $OpenBSD: Quirks.pm,v 1.994 2020/06/15 19:13:09 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1710,7 +1710,7 @@ my $obsolete_reason = {
 	'kdenetwork' => 3,
 	'kdenetwork-strigi-analyzers' => 3,
 	'kdepim' => 3,
-	'kdepim-runtim' => 3,e
+	'kdepim-runtim' => 3,
 	'kdepimlibs' => 3,
 	'kdeplasma-addons' => 3,
 	'kdesdk-strigi-analyzers' => 3,
