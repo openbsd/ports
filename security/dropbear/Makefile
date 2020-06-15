@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/15 19:09:17 sthen Exp $
 
 COMMENT=	small SSH server and client
 
-DISTNAME=	dropbear-2019.78
+DISTNAME=	dropbear-2020.79
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security net
@@ -17,9 +17,10 @@ WANTLIB += c util z
 
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+CONFIGURE_STYLE= gnu
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=	gnu
-#NO_TEST=	Yes
+NO_TEST=	Yes
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/default_options.h
