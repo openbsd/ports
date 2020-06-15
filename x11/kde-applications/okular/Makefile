@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/06/05 05:40:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/06/15 20:21:17 sthen Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://okular.kde.org/
 
