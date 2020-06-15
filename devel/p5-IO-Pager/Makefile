@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/06/15 11:10:15 sthen Exp $
 
 COMMENT =	select a pager if destination is a TTY
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	IO-Pager-0.39
+DISTNAME =	IO-Pager-1.03
 CATEGORIES =	devel
 
 # Perl

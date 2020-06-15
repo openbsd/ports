@@ -1,11 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/14 19:54:42 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/15 11:10:15 sthen Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/Pager/
 ${P5SITE}/IO/Pager.pm
 ${P5SITE}/IO/Pager/Buffered.pm
 ${P5SITE}/IO/Pager/Page.pm
+${P5SITE}/IO/Pager/Perl.pm
 ${P5SITE}/IO/Pager/Unbuffered.pm
+${P5SITE}/IO/Pager/less.pm
+${P5SITE}/IO/Pager/tp
 @man man/man3p/IO::Pager.3p
 @man man/man3p/IO::Pager::Buffered.3p
 @man man/man3p/IO::Pager::Page.3p
+@man man/man3p/IO::Pager::Perl.3p
 @man man/man3p/IO::Pager::Unbuffered.3p
+@man man/man3p/IO::Pager::less.3p
