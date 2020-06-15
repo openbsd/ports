@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2020/06/08 12:13:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2020/06/15 16:03:37 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-6.4.0
+REVISION=		0
 
 CATEGORIES=		sysutils devel emulators
 
@@ -21,7 +22,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto curl dbus-1 ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gnutls gobject-2.0 hogweed iconv idn2 intl lzma
 WANTLIB += m nettle nghttp2 p11-kit pcre pthread sasl2 ssh2 ssl
-WANTLIB += tasn1 unistring util xml2 z
+WANTLIB += tasn1 unistring util xml2 yajl z
 
 MASTER_SITES=		https://libvirt.org/sources/
 EXTRACT_SUFX=		.tar.xz
@@ -38,6 +39,7 @@ BUILD_DEPENDS=		devel/flake8 \
 			textproc/py-docutils${MOPY_FLAVOR}
 
 LIB_DEPENDS=		devel/glib2 \
+			devel/libyajl \
 			net/curl \
 			security/cyrus-sasl2 \
 			security/gnutls \
