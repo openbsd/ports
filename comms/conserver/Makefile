@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2020/05/14 11:43:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2020/06/15 11:49:14 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
@@ -18,7 +18,7 @@ WANTLIB += c util
 FLAVORS=	ipmi net
 FLAVOR?=
 
-MASTER_SITES=	https://github.com/conserver/conserver/releases/download/v$V/
+MASTER_SITES=	https://github.com/bstansell/conserver/releases/download/v$V/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-master=localhost \
