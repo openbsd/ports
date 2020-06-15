@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_OSTargets_h,v 1.1 2020/06/15 21:34:58 gkoehler Exp $
+
+Powerpc64 should use the same _mcount profiling as powerpc 32bit.
+
+Index: tools/clang/lib/Basic/Targets/OSTargets.h
+--- tools/clang/lib/Basic/Targets/OSTargets.h.orig
++++ tools/clang/lib/Basic/Targets/OSTargets.h
+@@ -446,6 +446,7 @@ class LLVM_LIBRARY_VISIBILITY OpenBSDTargetInfo : publ
+     case llvm::Triple::mips64:
+     case llvm::Triple::mips64el:
+     case llvm::Triple::ppc:
++    case llvm::Triple::ppc64:
+     case llvm::Triple::sparcv9:
+       this->MCountName = "_mcount";
+       break;
