@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2020/06/02 20:09:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2020/06/16 16:45:15 chrisz Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -295,6 +295,7 @@ share/vim/${P}/doc/usr_42.txt
 share/vim/${P}/doc/usr_43.txt
 share/vim/${P}/doc/usr_44.txt
 share/vim/${P}/doc/usr_45.txt
+share/vim/${P}/doc/usr_46.txt
 share/vim/${P}/doc/usr_90.txt
 share/vim/${P}/doc/usr_toc.txt
 share/vim/${P}/doc/various.txt
@@ -325,6 +326,7 @@ share/vim/${P}/ftplugin/alsaconf.vim
 share/vim/${P}/ftplugin/ant.vim
 share/vim/${P}/ftplugin/arch.vim
 share/vim/${P}/ftplugin/art.vim
+share/vim/${P}/ftplugin/asm.vim
 share/vim/${P}/ftplugin/aspvbs.vim
 share/vim/${P}/ftplugin/automake.vim
 share/vim/${P}/ftplugin/awk.vim
@@ -370,6 +372,7 @@ share/vim/${P}/ftplugin/dtrace.vim
 share/vim/${P}/ftplugin/dune.vim
 share/vim/${P}/ftplugin/eiffel.vim
 share/vim/${P}/ftplugin/elinks.vim
+share/vim/${P}/ftplugin/elm.vim
 share/vim/${P}/ftplugin/erlang.vim
 share/vim/${P}/ftplugin/eruby.vim
 share/vim/${P}/ftplugin/eterm.vim
@@ -578,6 +581,7 @@ share/vim/${P}/indent/dtd.vim
 share/vim/${P}/indent/dtrace.vim
 share/vim/${P}/indent/dylan.vim
 share/vim/${P}/indent/eiffel.vim
+share/vim/${P}/indent/elm.vim
 share/vim/${P}/indent/erlang.vim
 share/vim/${P}/indent/eruby.vim
 share/vim/${P}/indent/eterm.vim
@@ -1052,6 +1056,7 @@ share/vim/${P}/syntax/edif.vim
 share/vim/${P}/syntax/eiffel.vim
 share/vim/${P}/syntax/elf.vim
 share/vim/${P}/syntax/elinks.vim
+share/vim/${P}/syntax/elm.vim
 share/vim/${P}/syntax/elmfilt.vim
 share/vim/${P}/syntax/erlang.vim
 share/vim/${P}/syntax/eruby.vim
