@@ -1,0 +1,15 @@
+$OpenBSD: patch-anki_utils_py,v 1.1 2020/06/16 22:18:46 sthen Exp $
+
+Index: anki/utils.py
+--- anki/utils.py.orig
++++ anki/utils.py
+@@ -366,7 +366,8 @@ def call(argv, wait=True, **kwargs):
+ 
+ isMac = sys.platform.startswith("darwin")
+ isWin = sys.platform.startswith("win32")
+-isLin = not isMac and not isWin
++isOpenBSD = sys.platform.startswith("openbsd")
++isLin = not isMac and not isWin and not isOpenBSD
+ devMode = os.getenv("ANKIDEV", "")
+ 
+ invalidFilenameChars = ":*?\"<>|"
