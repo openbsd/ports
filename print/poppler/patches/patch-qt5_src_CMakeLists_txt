@@ -1,0 +1,15 @@
+$OpenBSD: patch-qt5_src_CMakeLists_txt,v 1.1 2020/06/16 20:24:05 kili Exp $
+
+- Remove hardcoded SOVERSION
+
+Index: qt5/src/CMakeLists.txt
+--- qt5/src/CMakeLists.txt.orig
++++ qt5/src/CMakeLists.txt
+@@ -40,7 +40,6 @@ set(poppler_qt5_SRCS
+   poppler-version.cpp
+ )
+ add_library(poppler-qt5 ${poppler_qt5_SRCS})
+-set_target_properties(poppler-qt5 PROPERTIES VERSION 1.24.0 SOVERSION 1)
+ if(MINGW AND BUILD_SHARED_LIBS)
+     get_target_property(POPPLER_QT5_SOVERSION poppler-qt5 SOVERSION)
+     set_target_properties(poppler-qt5 PROPERTIES SUFFIX "-${POPPLER_QT5_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")

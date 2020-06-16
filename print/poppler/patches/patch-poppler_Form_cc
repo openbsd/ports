@@ -1,9 +1,9 @@
-$OpenBSD: patch-poppler_Form_cc,v 1.6 2020/02/17 20:33:00 kili Exp $
+$OpenBSD: patch-poppler_Form_cc,v 1.7 2020/06/16 20:24:05 kili Exp $
 
 Index: poppler/Form.cc
 --- poppler/Form.cc.orig
 +++ poppler/Form.cc
-@@ -33,6 +33,7 @@
+@@ -34,6 +34,7 @@
  #include <config.h>
  
  #include <set>
