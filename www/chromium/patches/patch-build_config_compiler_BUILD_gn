@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.40 2020/06/04 15:01:53 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.41 2020/06/16 19:21:53 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -129,7 +129,7 @@ Index: build/config/compiler/BUILD.gn
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
 -      cflags += [ "-g2" ]
-+      cflags += [ "-g0" ]
++      cflags += [ "${DEBUGFLAG}" ]
      }
  
 -    if (is_clang && !is_nacl && !use_xcode_clang) {
