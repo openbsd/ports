@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/26 12:46:34 bket Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/16 15:02:51 kmos Exp $
 
 COMMENT =		the missing terminal file browser for X
 
@@ -18,6 +18,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c curses readline
 
 MASTER_SITES =		https://github.com/jarun/nnn/releases/download/v${V}/
+
+# Uses -std=c11 so cannot use base-gcc
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MAKE_FLAGS =		CFLAGS_OPTIMIZATION=
 FAKE_FLAGS =		MANPREFIX="$(PREFIX)/man" \
