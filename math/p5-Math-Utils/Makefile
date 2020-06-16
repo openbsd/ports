@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/19 19:48:14 cwen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/16 08:56:18 benoit Exp $
 
 COMMENT =	useful mathematical functions not in Perl
 
-DISTNAME =	Math-Utils-1.13
+DISTNAME =	Math-Utils-1.14
 
 CATEGORIES =	math
 
