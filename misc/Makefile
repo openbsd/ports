@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2020/06/13 10:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.196 2020/06/16 20:38:02 bluhm Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -28,6 +28,7 @@
      SUBDIR += feathernotes
      SUBDIR += figlet
      SUBDIR += findutils
+     SUBDIR += freeopcua
      SUBDIR += ftdi-eeprom
      SUBDIR += garmin-utils
      SUBDIR += geekcode
