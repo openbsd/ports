@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_scripts_symbolextractor_py,v 1.2 2020/05/24 16:41:54 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_scripts_symbolextractor_py,v 1.3 2020/06/16 07:01:02 ajacoutot Exp $
 
 From bf34b971121d46d54f8870cd1faf420d6c0bafe5 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -33,7 +33,7 @@ Index: mesonbuild/scripts/symbolextractor.py
      all_stderr = ''
      # First try lib.exe, which is provided by MSVC. Then llvm-lib.exe, by LLVM
 @@ -234,6 +251,8 @@ def gen_symbols(libfilename: str, impfilename: str, ou
-         linux_syms(libfilename, outfilename)
+         gnu_syms(libfilename, outfilename)
      elif mesonlib.is_osx():
          osx_syms(libfilename, outfilename)
 +    elif mesonlib.is_openbsd():
