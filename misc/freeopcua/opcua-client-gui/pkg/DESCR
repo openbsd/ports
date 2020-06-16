@@ -1,0 +1,4 @@
+Simple OPC-UA GUI client.  Written using freeopcua python api and
+pyqt.  Most needed functionalities are implemented including
+subscribing for data changes and events, write variable values
+listing attributes and references, and call methods.

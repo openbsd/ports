@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/16 20:30:05 bluhm Exp $
+bin/opcua-client
+lib/python${MODPY_VERSION}/site-packages/opcua_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/opcua_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/opcua_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/opcua_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/opcua_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/opcua_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/opcua_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/uaclient/
+lib/python${MODPY_VERSION}/site-packages/uaclient/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}connection_dialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}connection_ui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}graphwidget.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}mainwindow.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}mainwindow_ui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uaclient/${MODPY_PYCACHE}uaclient.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uaclient/connection_dialog.py
+lib/python${MODPY_VERSION}/site-packages/uaclient/connection_ui.py
+lib/python${MODPY_VERSION}/site-packages/uaclient/graphwidget.py
+lib/python${MODPY_VERSION}/site-packages/uaclient/mainwindow.py
+lib/python${MODPY_VERSION}/site-packages/uaclient/mainwindow_ui.py
+lib/python${MODPY_VERSION}/site-packages/uaclient/resources.py
+lib/python${MODPY_VERSION}/site-packages/uaclient/uaclient.py

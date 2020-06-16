@@ -1,0 +1,8 @@
+Pure Python OPC UA / IEC 62541 Client and Server Python 2, 3 and
+pypy.  OPC UA binary protocol implementation is quasi complete and
+has been tested against many different OPC UA stacks.  API offers
+both a low level interface to send and receive all UA defined
+structures and high level classes allowing to write a server or a
+client in a few lines.  It is easy to mix high level objects and
+low level UA calls in one application.
+
