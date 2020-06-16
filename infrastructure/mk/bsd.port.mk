@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1540 2020/06/09 11:01:08 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1541 2020/06/16 13:41:42 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2758,6 +2758,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@${_MAKE} _internal-distpatch
 .  endif
 	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M/*}" != x"" ]; then \
+		failed_patches=''; \
 		error=false; \
 		for i in ${PATCH_LIST}; do \
 			case $$i in \
@@ -2773,6 +2774,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 						if [ -s $$i ]; then \
 							${_PBUILD} ${PATCH} ${PATCH_ARGS} < $$i || \
 								{ echo "***>   $$i did not apply cleanly"; \
+								failed_patches="$$failed_patches\n    $$i"; \
 								error=true; }; \
 						else \
 							${ECHO_MSG} "===>   Ignoring empty patchfile $$i"; \
@@ -2786,7 +2788,12 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 					;; \
 			esac; \
 		done;\
-		if $$error; then exit 1; fi; \
+		if $$error; then \
+			if [ -n "$$failed_patches" ]; then \
+				echo "===>   Failed patches: $$failed_patches\n"; \
+			fi; \
+			exit 1; \
+		fi; \
 	fi
 # End of PATCH.
 .endif
