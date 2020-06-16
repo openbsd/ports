@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_murmur_ini,v 1.2 2020/05/14 18:01:48 kn Exp $
+$OpenBSD: patch-scripts_murmur_ini,v 1.3 2020/06/16 10:16:20 kn Exp $
 
 Comment unavailable options and set default database and log locations.
 
@@ -41,7 +41,7 @@ Index: scripts/murmur.ini
  
  ; If you want to expose Murmur's experimental gRPC API, you
  ; need to specify an address to bind on.
-@@ -102,7 +102,7 @@ icesecretwrite=
+@@ -93,7 +93,7 @@ icesecretwrite=
  ; logs to the file 'murmur.log'. If you leave this field blank
  ; on Unix-like systems, Murmur will force itself into foreground
  ; mode which logs to the console.
@@ -50,7 +50,7 @@ Index: scripts/murmur.ini
  
  ; If set, Murmur will write its process ID to this file
  ; when running in daemon mode (when the -fg flag is not
-@@ -272,6 +272,6 @@ allowping=true
+@@ -375,6 +375,6 @@ allowping=true
  ; leave the defaults as they are.
  ; Please note that this section has to be last in the configuration file.
  ;

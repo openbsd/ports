@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.50 2020/05/21 11:28:05 kn Exp $
+# $OpenBSD: Makefile,v 1.51 2020/06/16 10:16:20 kn Exp $
 
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
 
-VERSION =		1.3.0
+VERSION =		1.3.1
 DISTNAME =		mumble-${VERSION}
 PKGNAME-main =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		9
 
 CATEGORIES =		audio net
 
 HOMEPAGE =		https://www.mumble.info/
 
-MASTER_SITES =		https://github.com/mumble-voip/mumble/releases/download/1.3.0/
+MASTER_SITES =		https://github.com/mumble-voip/mumble/releases/download/${VERSION}/
 
 # BSD3
 PERMIT_PACKAGE =	Yes
+
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB-main += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xi c crypto
