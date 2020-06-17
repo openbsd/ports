@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_core_install_py,v 1.30 2020/05/23 07:58:58 ajacoutot Exp $
+$OpenBSD: patch-installer_core_install_py,v 1.31 2020/06/17 07:35:05 ajacoutot Exp $
 
 Index: installer/core_install.py
 --- installer/core_install.py.orig
@@ -144,7 +144,7 @@ Index: installer/core_install.py
  
      def check_policykit(self):
          log.debug("Checking for PolicyKit...")
-@@ -1291,7 +1286,7 @@ class CoreInstall(object):
+@@ -1293,7 +1288,7 @@ class CoreInstall(object):
  
      def check_hpaio(self):
          found = False
@@ -153,7 +153,7 @@ Index: installer/core_install.py
              log.debug("'Checking for hpaio' in '%s'..." % path)
              try:
                  f = open(path, 'r')
-@@ -1320,13 +1315,13 @@ class CoreInstall(object):
+@@ -1322,13 +1317,13 @@ class CoreInstall(object):
          if pat.match(home_dir) is not None:
              usrlib_dir = pat.match(home_dir).group(1) + "lib/"
              if os.path.exists(usrlib_dir + 'sane/libsane-hpaio.so.1'):
@@ -171,7 +171,7 @@ Index: installer/core_install.py
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
                  else:
-@@ -1339,20 +1334,20 @@ class CoreInstall(object):
+@@ -1341,20 +1336,20 @@ class CoreInstall(object):
                      f.close()
  
                  if not found:
@@ -197,7 +197,7 @@ Index: installer/core_install.py
                      cmd = self.passwordObj.getAuthCmd() % cmd
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
-@@ -1818,11 +1813,14 @@ class CoreInstall(object):
+@@ -1820,11 +1815,14 @@ class CoreInstall(object):
          return num_opt_missing
  
      def check_wget(self):
@@ -216,7 +216,7 @@ Index: installer/core_install.py
  
      def check_avahi_utils(self):
          if utils.which("avahi-browse"):
-@@ -1929,7 +1927,7 @@ class CoreInstall(object):
+@@ -1931,7 +1929,7 @@ class CoreInstall(object):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False, distro_ver):
              cmds.append(self.passwordObj.getAuthCmd() %

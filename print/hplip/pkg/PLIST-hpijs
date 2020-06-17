@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.63 2020/05/23 07:58:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.64 2020/06/17 07:35:05 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -190,6 +190,9 @@ share/foomatic/db/source/PPD/HP/hp-color_laserjet_m855-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-color_laserjet_m856-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-color_laserjet_mfp_e77422-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-color_laserjet_mfp_e77428-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-color_laserjet_mfp_e78223-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-color_laserjet_mfp_e78228-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-color_laserjet_mfp_e78323-25-30-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-color_laserjet_mfp_m178-m181-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-color_laserjet_mfp_m274-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-color_laserjet_mfp_m278-m281-ps.ppd.gz
@@ -486,9 +489,9 @@ share/foomatic/db/source/PPD/HP/hp-envy_pro_6400_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-ink_tank_110_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-ink_tank_310_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-ink_tank_wireless_410_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserJet_m610_m611_m612-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laser_ns_1020.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laser_ns_mfp_1005.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-laserJet_m610_m611_m612-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_1000.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_1005_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_100_color_mfp_m175-ps.ppd.gz
