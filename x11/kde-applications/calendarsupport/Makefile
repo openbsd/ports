@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 19:01:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:22 rsadowski Exp $
 
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
@@ -20,6 +20,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
+
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcalendarcore \

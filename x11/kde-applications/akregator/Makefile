@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/14 04:04:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:22 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
@@ -36,6 +36,7 @@ BUILD_DEPENDS =	x11/kde-applications/kimap \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	x11/kde-applications/kimap \
+		x11/kde-applications/kdepim-runtime \
 		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/kf5/kauth \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/14 05:08:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:22 rsadowski Exp $
 
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
@@ -38,6 +38,12 @@ MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
+
+RUN_DEPENDS =	x11/kde-applications/akonadi-import-wizard \
+		x11/kde-applications/kdepim-runtime \
+		x11/kde-applications/kmail-account-wizard \
+		x11/kde-applications/mbox-importer \
+		x11/kde-applications/pim-sieve-editor
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \

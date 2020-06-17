@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/14 04:21:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:22 rsadowski Exp $
 
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
@@ -30,7 +30,8 @@ MODKF5_I18N_CONFLICT = yes
 MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
-RUN_DEPENDS =	x11/dbus,-suid
+RUN_DEPENDS =	x11/dbus,-suid \
+		x11/kde-applications/kdepim-runtime
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \

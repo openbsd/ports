@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 19:33:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:22 rsadowski Exp $
 
 COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
@@ -23,6 +23,8 @@ MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost
+
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcalendarcore \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/14 04:04:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:22 rsadowski Exp $
 
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
@@ -27,6 +27,8 @@ MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
+
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcmutils \
