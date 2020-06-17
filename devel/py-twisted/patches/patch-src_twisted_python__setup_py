@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_twisted_python__setup_py,v 1.4 2018/11/10 20:52:35 pvk Exp $
+$OpenBSD: patch-src_twisted_python__setup_py,v 1.5 2020/06/17 07:49:59 landry Exp $
 
 Add suffix for py3 FLAVOR
 
@@ -8,7 +8,7 @@ https://github.com/twisted/twisted/commit/80e67a6775a190cba77e0d4229d12b9859ba12
 Index: src/twisted/python/_setup.py
 --- src/twisted/python/_setup.py.orig
 +++ src/twisted/python/_setup.py
-@@ -139,15 +139,15 @@ _EXTRAS_REQUIRE['osx_platform'] = _EXTRAS_REQUIRE['mac
+@@ -146,15 +146,15 @@ _EXTRAS_REQUIRE['osx_platform'] = _EXTRAS_REQUIRE['mac
  
  # Scripts provided by Twisted on Python 2 and 3.
  _CONSOLE_SCRIPTS = [

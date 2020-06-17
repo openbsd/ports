@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/08/20 21:35:11 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/17 07:49:59 landry Exp $
 @conflict py-twisted-core-*
 @conflict py-twisted-conch-*
 @conflict py-twisted-lore-*
@@ -31,6 +31,8 @@ bin/tkconch${MODPY_BIN_SUFFIX}
 bin/trial${MODPY_BIN_SUFFIX}
 bin/twist${MODPY_BIN_SUFFIX}
 bin/twistd${MODPY_BIN_SUFFIX}
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/Twisted-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Twisted-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Twisted-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -179,14 +181,10 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/${MODPY_PYCACHE}insults.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/${MODPY_PYCACHE}window.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/client.py
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/colors.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/helper.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/insults.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/text.py
@@ -422,6 +420,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/internet/${MODPY_PYCACHE}ssl.${
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/${MODPY_PYCACHE}stdio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/${MODPY_PYCACHE}task.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/${MODPY_PYCACHE}tcp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/internet/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/${MODPY_PYCACHE}threads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/${MODPY_PYCACHE}tksupport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/${MODPY_PYCACHE}udp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -519,6 +518,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}t
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_default.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_endpoints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_epollreactor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_fdset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_filedescriptor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_gireactor.${MODPY_PYC_MAGIC_TAG}pyc
@@ -540,6 +540,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}t
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_socket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_stdio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_tcp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_threads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/${MODPY_PYCACHE}test_tls.${MODPY_PYC_MAGIC_TAG}pyc
@@ -576,6 +577,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_coroutines.p
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_default.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_endpoints.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_epollreactor.py
+lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_error.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_fdset.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_filedescriptor.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_gireactor.py
@@ -597,6 +599,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_sigchld.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_socket.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_stdio.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_tcp.py
+lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_testing.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_threads.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_time.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_tls.py
@@ -605,6 +608,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_udp_internal
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_unix.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_win32events.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/test/test_win32serialport.py
+lib/python${MODPY_VERSION}/site-packages/twisted/internet/testing.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/threads.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/tksupport.py
 lib/python${MODPY_VERSION}/site-packages/twisted/internet/udp.py
@@ -618,6 +622,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/logger/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}_buffer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}_capture.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}_filter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}_flatten.${MODPY_PYC_MAGIC_TAG}pyc
@@ -632,6 +637,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}_observe
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}_stdlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/_buffer.py
+lib/python${MODPY_VERSION}/site-packages/twisted/logger/_capture.py
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/_file.py
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/_filter.py
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/_flatten.py
@@ -650,6 +656,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}test_buffer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}test_capture.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}test_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}test_filter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}test_flatten.${MODPY_PYC_MAGIC_TAG}pyc
@@ -664,6 +671,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}test_stdlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/test_buffer.py
+lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/test_capture.py
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/test_file.py
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/test_filter.py
 lib/python${MODPY_VERSION}/site-packages/twisted/logger/test/test_flatten.py
@@ -1284,6 +1292,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_main.
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_memcache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_modules.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_monkey.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_news.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_nooldstyle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_paths.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_pcp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1306,7 +1315,6 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_sslve
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_stateful.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_stdio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_strerror.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_stringtransport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_strports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_task.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/${MODPY_PYCACHE}test_tcp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1345,7 +1353,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/process_tester.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/process_tty.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/process_twisted.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/proto_helpers.py
-lib/python${MODPY_VERSION}/site-packages/twisted/test/raiser.so
+@so lib/python${MODPY_VERSION}/site-packages/twisted/test/raiser.so
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_IE.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_VE.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_ZDE.py
@@ -1367,6 +1375,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/test_compat.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_context.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_cooperator.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_defer.py
+lib/python${MODPY_VERSION}/site-packages/twisted/test/test_defer.py.3only
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_defgen.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_dict.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_dirdbm.py
@@ -1391,6 +1400,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/test_main.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_memcache.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_modules.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_monkey.py
+lib/python${MODPY_VERSION}/site-packages/twisted/test/test_news.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_nooldstyle.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_paths.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_pcp.py
@@ -1413,7 +1423,6 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/test_sslverify.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_stateful.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_stdio.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_strerror.py
-lib/python${MODPY_VERSION}/site-packages/twisted/test/test_stringtransport.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_strports.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_task.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/test_tcp.py
@@ -1523,6 +1532,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/trial/test/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/twisted/trial/test/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/trial/test/${MODPY_PYCACHE}test_warning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/trial/test/${MODPY_PYCACHE}weird.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/trial/test/_assertiontests.py.3only
 lib/python${MODPY_VERSION}/site-packages/twisted/trial/test/detests.py
 lib/python${MODPY_VERSION}/site-packages/twisted/trial/test/erroneous.py
 lib/python${MODPY_VERSION}/site-packages/twisted/trial/test/mockcustomsuite.py
@@ -1635,6 +1645,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/web/test/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}injectionhelpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}requesthelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}test_agent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}test_cgi.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1665,6 +1676,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}test_w
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}test_xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/${MODPY_PYCACHE}test_xmlrpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/_util.py
+lib/python${MODPY_VERSION}/site-packages/twisted/web/test/injectionhelpers.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/requesthelper.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_agent.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_cgi.py

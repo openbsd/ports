@@ -1,21 +1,18 @@
-$OpenBSD: patch-src_twisted_conch_test_test_ckeygen_py,v 1.1 2018/05/25 10:42:38 pvk Exp $
+$OpenBSD: patch-src_twisted_conch_test_test_ckeygen_py,v 1.2 2020/06/17 07:49:59 landry Exp $
 
 Index: src/twisted/conch/test/test_ckeygen.py
 --- src/twisted/conch/test/test_ckeygen.py.orig
 +++ src/twisted/conch/test/test_ckeygen.py
-@@ -68,9 +68,9 @@ class KeyGenTests(TestCase):
-     def _testrun(self, keyType, keySize=None):
+@@ -66,7 +66,7 @@ class KeyGenTests(TestCase):
+ 
+     def _testrun(self, keyType, keySize=None, privateKeySubtype=None):
          filename = self.mktemp()
-         if keySize is None:
--            subprocess.call(['ckeygen', '-t', keyType, '-f', filename, '--no-passphrase'])
-+            subprocess.call(['ckeygen${MODPY_BIN_SUFFIX}', '-t', keyType, '-f', filename, '--no-passphrase'])
-         else:
--            subprocess.call(['ckeygen', '-t', keyType, '-f', filename, '--no-passphrase',
-+            subprocess.call(['ckeygen${MODPY_BIN_SUFFIX}', '-t', keyType, '-f', filename, '--no-passphrase',
-                 '-b', keySize])
-         privKey = Key.fromFile(filename)
-         pubKey = Key.fromFile(filename + '.pub')
-@@ -94,7 +94,7 @@ class KeyGenTests(TestCase):
+-        args = ['ckeygen', '-t', keyType, '-f', filename, '--no-passphrase']
++        args = ['ckeygen${MODPY_BIN_SUFFIX}', '-t', keyType, '-f', filename, '--no-passphrase']
+         if keySize is not None:
+             args.extend(['-b', keySize])
+         if privateKeySubtype is not None:
+@@ -100,7 +100,7 @@ class KeyGenTests(TestCase):
      def test_runBadKeytype(self):
          filename = self.mktemp()
          with self.assertRaises(subprocess.CalledProcessError):
