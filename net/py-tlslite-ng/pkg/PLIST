@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/28 09:18:41 tb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/17 13:01:17 tb Exp $
 bin/tls.py
 bin/tlsdb.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/
@@ -102,6 +102,8 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}format_ou
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}keyfactory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}lists.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}openssl_aes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}openssl_aesccm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}openssl_aesgcm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}openssl_rc4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}openssl_rsakey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}openssl_tripledes.${MODPY_PYC_MAGIC_TAG}pyc
@@ -149,6 +151,8 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/utils/format_output.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/keyfactory.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/lists.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/openssl_aes.py
+lib/python${MODPY_VERSION}/site-packages/tlslite/utils/openssl_aesccm.py
+lib/python${MODPY_VERSION}/site-packages/tlslite/utils/openssl_aesgcm.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/openssl_rc4.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/openssl_rsakey.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/openssl_tripledes.py
@@ -179,4 +183,4 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/utils/x25519.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/verifierdb.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/x509.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/x509certchain.py
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0_alpha37-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0_alpha38-py${MODPY_VERSION}.egg-info
