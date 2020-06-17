@@ -1,12 +1,10 @@
-$OpenBSD: patch-libpurple_purple-remote,v 1.7 2018/04/28 16:58:39 ajacoutot Exp $
+$OpenBSD: patch-libpurple_purple-remote,v 1.8 2020/06/17 11:30:03 landry Exp $
 Index: libpurple/purple-remote
 --- libpurple/purple-remote.orig
 +++ libpurple/purple-remote
-@@ -1,6 +1,6 @@
- #!/usr/bin/env python
- 
--from __future__ import absolute_import, division, print_function
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
 +#!${MODPY_BIN}
  
- import codecs
- import dbus
+ from __future__ import absolute_import, division, print_function
+ 
