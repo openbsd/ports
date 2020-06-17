@@ -1,27 +1,25 @@
-$OpenBSD: patch-OpenRA_Game_Network_GeoIP_cs,v 1.1 2019/04/28 03:34:16 thfr Exp $
+$OpenBSD: patch-OpenRA_Game_Network_GeoIP_cs,v 1.2 2020/06/17 15:24:30 thfr Exp $
 
-get geoip from the net/libmaxminddb,-db port per sthen@'s recommendation
+get geoip from the net/libmaxminddb,-db port
 
 Index: OpenRA.Game/Network/GeoIP.cs
 --- OpenRA.Game/Network/GeoIP.cs.orig
 +++ OpenRA.Game/Network/GeoIP.cs
-@@ -55,9 +55,9 @@ namespace OpenRA.Network
+@@ -113,7 +113,7 @@ namespace OpenRA.Network
+ 
+ 		static IP2LocationReader database;
+ 
+-		public static void Initialize(string databasePath = "IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP")
++		public static void Initialize(string databasePath = "${LOCALSTATEDIR}/db/GeoIP/GeoLite2-Country.mmdb")
  		{
- 			try
+ 			if (!File.Exists(databasePath))
+ 				return;
+@@ -122,7 +122,7 @@ namespace OpenRA.Network
  			{
--				using (var fileStream = new FileStream("GeoLite2-Country.mmdb.gz", FileMode.Open, FileAccess.Read))
--					using (var gzipStream = new GZipInputStream(fileStream))
--						database = new Reader(gzipStream);
-+				using (var fileStream = new FileStream("${LOCALSTATEDIR}/db/GeoIP/GeoLite2-Country.mmdb", FileMode.Open, FileAccess.Read))
-+					//using (var gzipStream = new GZipInputStream(fileStream))
-+						database = new Reader(fileStream);
+ 				using (var z = new ZipFile(databasePath))
+ 				{
+-					var entry = z.FindEntry("IP2LOCATION-LITE-DB1.IPV6.BIN", false);
++					var entry = z.FindEntry("${LOCALSTATEDIR}/db/GeoIP/GeoLite2-Country.mmdb", false);
+ 					database = new IP2LocationReader(z.GetInputStream(entry));
+ 				}
  			}
- 			catch (Exception e)
- 			{
-@@ -84,4 +84,4 @@ namespace OpenRA.Network
- 			}
- 		}
- 	}
--}
-\ No newline at end of file
-+}

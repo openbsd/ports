@@ -1,12 +1,12 @@
-$OpenBSD: patch-launch-dedicated_sh,v 1.1.1.1 2019/03/31 05:09:06 thfr Exp $
+$OpenBSD: patch-launch-dedicated_sh,v 1.2 2020/06/17 15:24:30 thfr Exp $
 
 full path for the assembly
 
 Index: launch-dedicated.sh
 --- launch-dedicated.sh.orig
 +++ launch-dedicated.sh
-@@ -20,7 +20,7 @@ EnableSingleplayer="${EnableSingleplayer:-"False"}"
- EnableSyncReports="${EnableSyncReports:-"False"}"
+@@ -24,7 +24,7 @@ ShareAnonymizedIPs="${ShareAnonymizedIPs:-"True"}"
+ SupportDir="${SupportDir:-""}"
  
  while true; do
 -     mono --debug OpenRA.Server.exe Game.Mod="$Mod" \

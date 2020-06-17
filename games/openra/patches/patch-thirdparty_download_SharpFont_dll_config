@@ -1,13 +1,17 @@
-$OpenBSD: patch-thirdparty_download_SharpFont_dll_config,v 1.3 2019/04/28 03:34:16 thfr Exp $
+$OpenBSD: patch-thirdparty_download_SharpFont_dll_config,v 1.4 2020/06/17 15:24:30 thfr Exp $
 
 add openbsd to dllmap
 
 Index: thirdparty/download/SharpFont.dll.config
 --- thirdparty/download/SharpFont.dll.config.orig
 +++ thirdparty/download/SharpFont.dll.config
-@@ -3,4 +3,5 @@
- 	<dllmap dll="freetype6" os="linux" target="libfreetype.so.6" />
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="utf-8" ?>
+ <configuration>
+-	<dllmap dll="freetype6" os="linux" target="libfreetype.so.6" />
++	<dllmap dll="freetype6" os="linux" target="libfreetype.so" />
  	<dllmap dll="freetype6" os="osx" target="/Library/Frameworks/Mono.framework/Libraries/libfreetype.6.dylib" />
- 	<dllmap dll="freetype6" os="freebsd" target="libfreetype.so.6" />
-+	<dllmap dll="freetype6" os="openbsd" target="libfreetype.so.6" />
+-	<dllmap dll="freetype6" os="freebsd" target="libfreetype.so.6" />
++	<dllmap dll="freetype6" os="freebsd" target="libfreetype.so" />
++	<dllmap dll="freetype6" os="openbsd" target="libfreetype.so" />
  </configuration>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/04/28 03:34:17 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/17 15:24:30 thfr Exp $
 bin/openra
 bin/openra-cnc
 bin/openra-cnc-server
@@ -36,19 +36,18 @@ share/openra/Eluant.dll
 share/openra/Eluant.dll.config
 share/openra/FuzzyLogicLibrary.dll
 share/openra/ICSharpCode.SharpZipLib.dll
-share/openra/MaxMind.Db.dll
 share/openra/Open.Nat.dll
 share/openra/OpenAL-CS.dll
 share/openra/OpenAL-CS.dll.config
 share/openra/OpenRA.Game.exe
 share/openra/OpenRA.Platforms.Default.dll
+share/openra/OpenRA.Platforms.Default.dll.config
 share/openra/OpenRA.Server.exe
 share/openra/OpenRA.Utility.exe
 share/openra/SDL2-CS.dll
 share/openra/SDL2-CS.dll.config
-share/openra/SharpFont.dll
-share/openra/SharpFont.dll.config
 share/openra/VERSION
+share/openra/fetch-geoip.sh
 share/openra/global mix database.dat
 share/openra/glsl/
 share/openra/glsl/combined.frag
@@ -387,7 +386,6 @@ share/openra/mods/cnc/bits/nuyell11.aud
 share/openra/mods/cnc/bits/nuyell12.aud
 share/openra/mods/cnc/bits/nuyell6.aud
 share/openra/mods/cnc/bits/nuyell7.aud
-share/openra/mods/cnc/bits/overlay.shp
 share/openra/mods/cnc/bits/pdigits.shp
 share/openra/mods/cnc/bits/pip-hazmat.shp
 share/openra/mods/cnc/bits/pip-heal.shp
@@ -425,6 +423,8 @@ share/openra/mods/cnc/bits/rtib8.tem
 share/openra/mods/cnc/bits/rtib9.des
 share/openra/mods/cnc/bits/rtib9.tem
 share/openra/mods/cnc/bits/sandbag2.aud
+share/openra/mods/cnc/bits/scripts/
+share/openra/mods/cnc/bits/scripts/campaign-global.lua
 share/openra/mods/cnc/bits/silo.shp
 share/openra/mods/cnc/bits/silomake.shp
 share/openra/mods/cnc/bits/snow.mix
@@ -464,8 +464,11 @@ share/openra/mods/cnc/chrome/connection.yaml
 share/openra/mods/cnc/chrome/credits.yaml
 share/openra/mods/cnc/chrome/dialogs.yaml
 share/openra/mods/cnc/chrome/editor.yaml
+share/openra/mods/cnc/chrome/gamesave-browser.yaml
+share/openra/mods/cnc/chrome/gamesave-loading.yaml
 share/openra/mods/cnc/chrome/ingame-chat.yaml
 share/openra/mods/cnc/chrome/ingame-debug.yaml
+share/openra/mods/cnc/chrome/ingame-debuginfo.yaml
 share/openra/mods/cnc/chrome/ingame-info.yaml
 share/openra/mods/cnc/chrome/ingame-infobriefing.yaml
 share/openra/mods/cnc/chrome/ingame-infochat.yaml
@@ -473,7 +476,6 @@ share/openra/mods/cnc/chrome/ingame-infoobjectives.yaml
 share/openra/mods/cnc/chrome/ingame-infoscripterror.yaml
 share/openra/mods/cnc/chrome/ingame-infostats.yaml
 share/openra/mods/cnc/chrome/ingame-menu.yaml
-share/openra/mods/cnc/chrome/ingame-observerstats.yaml
 share/openra/mods/cnc/chrome/ingame.yaml
 share/openra/mods/cnc/chrome/lobby-kickdialogs.yaml
 share/openra/mods/cnc/chrome/lobby-mappreview.yaml
@@ -482,6 +484,7 @@ share/openra/mods/cnc/chrome/lobby-options.yaml
 share/openra/mods/cnc/chrome/lobby-players.yaml
 share/openra/mods/cnc/chrome/lobby-servers.yaml
 share/openra/mods/cnc/chrome/lobby.yaml
+share/openra/mods/cnc/chrome/mainmenu-prompts.yaml
 share/openra/mods/cnc/chrome/mainmenu.yaml
 share/openra/mods/cnc/chrome/mapchooser.yaml
 share/openra/mods/cnc/chrome/missionbrowser.yaml
@@ -496,6 +499,8 @@ share/openra/mods/cnc/chrome/settings.yaml
 share/openra/mods/cnc/chrome/tooltips.yaml
 share/openra/mods/cnc/cursors.yaml
 share/openra/mods/cnc/hotkeys.yaml
+share/openra/mods/cnc/icon-2x.png
+share/openra/mods/cnc/icon-3x.png
 share/openra/mods/cnc/icon.png
 share/openra/mods/cnc/installer/
 share/openra/mods/cnc/installer/covertops.yaml
@@ -631,6 +636,21 @@ share/openra/mods/cnc/maps/gdi07/map.png
 share/openra/mods/cnc/maps/gdi07/map.yaml
 share/openra/mods/cnc/maps/gdi07/rules.yaml
 share/openra/mods/cnc/maps/gdi07/sequences.yaml
+share/openra/mods/cnc/maps/gdi08a/
+share/openra/mods/cnc/maps/gdi08a/gdi08a-AI.lua
+share/openra/mods/cnc/maps/gdi08a/gdi08a.lua
+share/openra/mods/cnc/maps/gdi08a/map.bin
+share/openra/mods/cnc/maps/gdi08a/map.png
+share/openra/mods/cnc/maps/gdi08a/map.yaml
+share/openra/mods/cnc/maps/gdi08a/rules.yaml
+share/openra/mods/cnc/maps/gdi09/
+share/openra/mods/cnc/maps/gdi09/gdi09-AI.lua
+share/openra/mods/cnc/maps/gdi09/gdi09.lua
+share/openra/mods/cnc/maps/gdi09/map.bin
+share/openra/mods/cnc/maps/gdi09/map.png
+share/openra/mods/cnc/maps/gdi09/map.yaml
+share/openra/mods/cnc/maps/gdi09/rules.yaml
+share/openra/mods/cnc/maps/gdi09/weapons.yaml
 share/openra/mods/cnc/maps/haos-ridges-cnc.oramap
 share/openra/mods/cnc/maps/hattrix.oramap
 share/openra/mods/cnc/maps/hegemony-or-survival.oramap
@@ -844,9 +864,9 @@ share/openra/mods/cnc/tilesets/snow.yaml
 share/openra/mods/cnc/tilesets/temperat.yaml
 share/openra/mods/cnc/tilesets/winter.yaml
 share/openra/mods/cnc/uibits/
+share/openra/mods/cnc/uibits/chrome-2x.png
+share/openra/mods/cnc/uibits/chrome-3x.png
 share/openra/mods/cnc/uibits/chrome.png
-share/openra/mods/cnc/uibits/reticle.png
-share/openra/mods/cnc/uibits/strategic.png
 share/openra/mods/cnc/weapons/
 share/openra/mods/cnc/weapons/ballistics.yaml
 share/openra/mods/cnc/weapons/explosions.yaml
@@ -858,9 +878,9 @@ share/openra/mods/common/
 share/openra/mods/common/FreeSans.ttf
 share/openra/mods/common/FreeSansBold.ttf
 share/openra/mods/common/OpenRA.Mods.Cnc.dll
-share/openra/mods/common/OpenRA.Mods.Cnc.dll.mdb
+share/openra/mods/common/OpenRA.Mods.Cnc.pdb
 share/openra/mods/common/OpenRA.Mods.Common.dll
-share/openra/mods/common/OpenRA.Mods.Common.dll.mdb
+share/openra/mods/common/OpenRA.Mods.Common.pdb
 share/openra/mods/common/chrome/
 share/openra/mods/common/chrome/assetbrowser.yaml
 share/openra/mods/common/chrome/color-picker.yaml
@@ -869,8 +889,11 @@ share/openra/mods/common/chrome/connection.yaml
 share/openra/mods/common/chrome/credits.yaml
 share/openra/mods/common/chrome/dropdowns.yaml
 share/openra/mods/common/chrome/editor.yaml
+share/openra/mods/common/chrome/gamesave-browser.yaml
+share/openra/mods/common/chrome/gamesave-loading.yaml
 share/openra/mods/common/chrome/ingame-chat.yaml
 share/openra/mods/common/chrome/ingame-debug.yaml
+share/openra/mods/common/chrome/ingame-debuginfo.yaml
 share/openra/mods/common/chrome/ingame-fmvplayer.yaml
 share/openra/mods/common/chrome/ingame-info.yaml
 share/openra/mods/common/chrome/ingame-infobriefing.yaml
@@ -880,7 +903,6 @@ share/openra/mods/common/chrome/ingame-infoscripterror.yaml
 share/openra/mods/common/chrome/ingame-infostats.yaml
 share/openra/mods/common/chrome/ingame-menu.yaml
 share/openra/mods/common/chrome/ingame-observer.yaml
-share/openra/mods/common/chrome/ingame-observerstats.yaml
 share/openra/mods/common/chrome/ingame-perf.yaml
 share/openra/mods/common/chrome/ingame.yaml
 share/openra/mods/common/chrome/lobby-kickdialogs.yaml
@@ -890,6 +912,7 @@ share/openra/mods/common/chrome/lobby-options.yaml
 share/openra/mods/common/chrome/lobby-players.yaml
 share/openra/mods/common/chrome/lobby-servers.yaml
 share/openra/mods/common/chrome/lobby.yaml
+share/openra/mods/common/chrome/mainmenu-prompts.yaml
 share/openra/mods/common/chrome/mainmenu.yaml
 share/openra/mods/common/chrome/map-chooser.yaml
 share/openra/mods/common/chrome/missionbrowser.yaml
@@ -913,7 +936,7 @@ share/openra/mods/common/metrics.yaml
 share/openra/mods/d2k/
 share/openra/mods/d2k/Dune2k.ttf
 share/openra/mods/d2k/OpenRA.Mods.D2k.dll
-share/openra/mods/d2k/OpenRA.Mods.D2k.dll.mdb
+share/openra/mods/d2k/OpenRA.Mods.D2k.pdb
 share/openra/mods/d2k/audio/
 share/openra/mods/d2k/audio/music.yaml
 share/openra/mods/d2k/audio/notifications.yaml
@@ -926,6 +949,7 @@ share/openra/mods/d2k/bits/assaultmove.shp
 share/openra/mods/d2k/bits/attackmove.shp
 share/openra/mods/d2k/bits/camera.shp
 share/openra/mods/d2k/bits/clock.shp
+share/openra/mods/d2k/bits/concfoot.shp
 share/openra/mods/d2k/bits/flagfly.shp
 share/openra/mods/d2k/bits/fpls.shp
 share/openra/mods/d2k/bits/fullshroud.shp
@@ -1064,6 +1088,7 @@ share/openra/mods/d2k/chrome.yaml
 share/openra/mods/d2k/chrome/dropdowns.yaml
 share/openra/mods/d2k/chrome/ingame-infostats.yaml
 share/openra/mods/d2k/chrome/ingame-menu.yaml
+share/openra/mods/d2k/chrome/ingame-observer.yaml
 share/openra/mods/d2k/chrome/ingame-player.yaml
 share/openra/mods/d2k/chrome/lobby-players.yaml
 share/openra/mods/d2k/chrome/mainmenu.yaml
@@ -1072,6 +1097,8 @@ share/openra/mods/d2k/chrome/multiplayer-browserpanels.yaml
 share/openra/mods/d2k/chrome/tooltips.yaml
 share/openra/mods/d2k/cursors.yaml
 share/openra/mods/d2k/hotkeys.yaml
+share/openra/mods/d2k/icon-2x.png
+share/openra/mods/d2k/icon-3x.png
 share/openra/mods/d2k/icon.png
 share/openra/mods/d2k/installer/
 share/openra/mods/d2k/installer/d2k-a.yaml
@@ -1321,6 +1348,13 @@ share/openra/mods/d2k/maps/ordos-05/map.yaml
 share/openra/mods/d2k/maps/ordos-05/ordos05-AI.lua
 share/openra/mods/d2k/maps/ordos-05/ordos05.lua
 share/openra/mods/d2k/maps/ordos-05/rules.yaml
+share/openra/mods/d2k/maps/ordos-06a/
+share/openra/mods/d2k/maps/ordos-06a/map.bin
+share/openra/mods/d2k/maps/ordos-06a/map.png
+share/openra/mods/d2k/maps/ordos-06a/map.yaml
+share/openra/mods/d2k/maps/ordos-06a/ordos06a-AI.lua
+share/openra/mods/d2k/maps/ordos-06a/ordos06a.lua
+share/openra/mods/d2k/maps/ordos-06a/rules.yaml
 share/openra/mods/d2k/maps/pasty-mesa/
 share/openra/mods/d2k/maps/pasty-mesa/map.bin
 share/openra/mods/d2k/maps/pasty-mesa/map.png
@@ -1375,9 +1409,13 @@ share/openra/mods/d2k/sequences/vehicles.yaml
 share/openra/mods/d2k/tilesets/
 share/openra/mods/d2k/tilesets/arrakis.yaml
 share/openra/mods/d2k/uibits/
-share/openra/mods/d2k/uibits/buttons.png
 share/openra/mods/d2k/uibits/chrome.png
 share/openra/mods/d2k/uibits/dialog.png
+share/openra/mods/d2k/uibits/glyphs-2x.png
+share/openra/mods/d2k/uibits/glyphs-3x.png
+share/openra/mods/d2k/uibits/glyphs.png
+share/openra/mods/d2k/uibits/loadscreen-2x.png
+share/openra/mods/d2k/uibits/loadscreen-3x.png
 share/openra/mods/d2k/uibits/loadscreen.png
 share/openra/mods/d2k/weapons/
 share/openra/mods/d2k/weapons/debris.yaml
@@ -1386,11 +1424,12 @@ share/openra/mods/d2k/weapons/missiles.yaml
 share/openra/mods/d2k/weapons/other.yaml
 share/openra/mods/d2k/weapons/smallguns.yaml
 share/openra/mods/modcontent/
+share/openra/mods/modcontent/chrome-2x.png
+share/openra/mods/modcontent/chrome-3x.png
 share/openra/mods/modcontent/chrome.png
 share/openra/mods/modcontent/chrome.yaml
 share/openra/mods/modcontent/content.yaml
-share/openra/mods/modcontent/cursor.pal
-share/openra/mods/modcontent/cursor.shp
+share/openra/mods/modcontent/cursor.png
 share/openra/mods/modcontent/cursors.yaml
 share/openra/mods/modcontent/metrics.yaml
 share/openra/mods/modcontent/mod.yaml
@@ -1676,6 +1715,8 @@ share/openra/mods/ra/bits/mbTSLA.sno
 share/openra/mods/ra/bits/mbTSLA.tem
 share/openra/mods/ra/bits/mcvhusk.shp
 share/openra/mods/ra/bits/mgg.shp
+share/openra/mods/ra/bits/mh60.shp
+share/openra/mods/ra/bits/mh60icon.shp
 share/openra/mods/ra/bits/mine.int
 share/openra/mods/ra/bits/missmake.shp
 share/openra/mods/ra/bits/mpspawn.shp
@@ -1684,7 +1725,6 @@ share/openra/mods/ra/bits/msloicon2.shp
 share/openra/mods/ra/bits/napalm1.shp
 share/openra/mods/ra/bits/nopower.shp
 share/openra/mods/ra/bits/oilb.shp
-share/openra/mods/ra/bits/overlay.shp
 share/openra/mods/ra/bits/parach-shadow.shp
 share/openra/mods/ra/bits/pdoficon.shp
 share/openra/mods/ra/bits/pip-disguise.shp
@@ -1743,6 +1783,7 @@ share/openra/mods/ra/bits/snowhut.shp
 share/openra/mods/ra/bits/stnkicon.shp
 share/openra/mods/ra/bits/tanktrap1.shp
 share/openra/mods/ra/bits/tanktrap2.shp
+share/openra/mods/ra/bits/tenficon.shp
 share/openra/mods/ra/bits/tent.sno
 share/openra/mods/ra/bits/tent.tem
 share/openra/mods/ra/bits/tentmake.sno
@@ -1766,14 +1807,18 @@ share/openra/mods/ra/bits/xcrateb.shp
 share/openra/mods/ra/bits/xcratec.shp
 share/openra/mods/ra/bits/xcrated.shp
 share/openra/mods/ra/bits/yak.shp
+share/openra/mods/ra/bits/yrotorlg.shp
 share/openra/mods/ra/bits/zombicon.shp
 share/openra/mods/ra/bits/zombie.shp
 share/openra/mods/ra/chrome/
 share/openra/mods/ra/chrome.yaml
+share/openra/mods/ra/chrome/gamesave-loading.yaml
 share/openra/mods/ra/chrome/ingame-observer.yaml
 share/openra/mods/ra/chrome/ingame-player.yaml
 share/openra/mods/ra/cursors.yaml
 share/openra/mods/ra/hotkeys.yaml
+share/openra/mods/ra/icon-2x.png
+share/openra/mods/ra/icon-3x.png
 share/openra/mods/ra/icon.png
 share/openra/mods/ra/installer/
 share/openra/mods/ra/installer/aftermath.yaml
@@ -1902,6 +1947,7 @@ share/openra/mods/ra/maps/center-of-attention-redux-2/map.png
 share/openra/mods/ra/maps/center-of-attention-redux-2/map.yaml
 share/openra/mods/ra/maps/center-of-attention-redux-2/rules.yaml
 share/openra/mods/ra/maps/chaos-canyon.oramap
+share/openra/mods/ra/maps/climax-rev15.oramap
 share/openra/mods/ra/maps/coastal-influence.oramap
 share/openra/mods/ra/maps/cold-front.oramap
 share/openra/mods/ra/maps/countercross.oramap
@@ -2037,6 +2083,12 @@ share/openra/mods/ra/maps/sarin-gas-1-crackdown/map.bin
 share/openra/mods/ra/maps/sarin-gas-1-crackdown/map.png
 share/openra/mods/ra/maps/sarin-gas-1-crackdown/map.yaml
 share/openra/mods/ra/maps/sarin-gas-1-crackdown/rules.yaml
+share/openra/mods/ra/maps/sarin-gas-2-down-under/
+share/openra/mods/ra/maps/sarin-gas-2-down-under/downunder.lua
+share/openra/mods/ra/maps/sarin-gas-2-down-under/map.bin
+share/openra/mods/ra/maps/sarin-gas-2-down-under/map.png
+share/openra/mods/ra/maps/sarin-gas-2-down-under/map.yaml
+share/openra/mods/ra/maps/sarin-gas-2-down-under/rules.yaml
 share/openra/mods/ra/maps/shattered-mountain/
 share/openra/mods/ra/maps/shattered-mountain/map.bin
 share/openra/mods/ra/maps/shattered-mountain/map.png
@@ -2049,16 +2101,16 @@ share/openra/mods/ra/maps/six-below-zero/map.bin
 share/openra/mods/ra/maps/six-below-zero/map.png
 share/openra/mods/ra/maps/six-below-zero/map.yaml
 share/openra/mods/ra/maps/six-below-zero/rules.yaml
-share/openra/mods/ra/maps/snow town/
-share/openra/mods/ra/maps/snow town/map.bin
-share/openra/mods/ra/maps/snow town/map.png
-share/openra/mods/ra/maps/snow town/map.yaml
-share/openra/mods/ra/maps/snow town/rules.yaml
 share/openra/mods/ra/maps/snow-off/
 share/openra/mods/ra/maps/snow-off/map.bin
 share/openra/mods/ra/maps/snow-off/map.png
 share/openra/mods/ra/maps/snow-off/map.yaml
 share/openra/mods/ra/maps/snow-off/rules.yaml
+share/openra/mods/ra/maps/snow-town/
+share/openra/mods/ra/maps/snow-town/map.bin
+share/openra/mods/ra/maps/snow-town/map.png
+share/openra/mods/ra/maps/snow-town/map.yaml
+share/openra/mods/ra/maps/snow-town/rules.yaml
 share/openra/mods/ra/maps/soviet-01/
 share/openra/mods/ra/maps/soviet-01/map.bin
 share/openra/mods/ra/maps/soviet-01/map.png
@@ -2167,6 +2219,13 @@ share/openra/mods/ra/maps/tabula-rasa.oramap
 share/openra/mods/ra/maps/tainted-peak.oramap
 share/openra/mods/ra/maps/tandem.oramap
 share/openra/mods/ra/maps/temperal.oramap
+share/openra/mods/ra/maps/top-o-the-world/
+share/openra/mods/ra/maps/top-o-the-world/map.bin
+share/openra/mods/ra/maps/top-o-the-world/map.png
+share/openra/mods/ra/maps/top-o-the-world/map.yaml
+share/openra/mods/ra/maps/top-o-the-world/rules.yaml
+share/openra/mods/ra/maps/top-o-the-world/scu36ea.lua
+share/openra/mods/ra/maps/top-o-the-world/weapons.yaml
 share/openra/mods/ra/maps/tournament-island.oramap
 share/openra/mods/ra/maps/unconventional-warfare.oramap
 share/openra/mods/ra/maps/union-sacree.oramap
@@ -2213,10 +2272,14 @@ share/openra/mods/ra/tilesets/interior.yaml
 share/openra/mods/ra/tilesets/snow.yaml
 share/openra/mods/ra/tilesets/temperat.yaml
 share/openra/mods/ra/uibits/
-share/openra/mods/ra/uibits/buttons.png
-share/openra/mods/ra/uibits/chrome.png
 share/openra/mods/ra/uibits/dialog.png
+share/openra/mods/ra/uibits/glyphs-2x.png
+share/openra/mods/ra/uibits/glyphs-3x.png
+share/openra/mods/ra/uibits/glyphs.png
+share/openra/mods/ra/uibits/loadscreen-2x.png
+share/openra/mods/ra/uibits/loadscreen-3x.png
 share/openra/mods/ra/uibits/loadscreen.png
+share/openra/mods/ra/uibits/sidebar.png
 share/openra/mods/ra/weapons/
 share/openra/mods/ra/weapons/ballistics.yaml
 share/openra/mods/ra/weapons/explosions.yaml

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/17 15:24:30 thfr Exp $
 
 COMMENT =		open-source real-time strategy game engine
-V =			20190314
+V =			20200503
 DISTNAME =		openra-${V}
 CATEGORIES =		games x11
 HOMEPAGE =		https://www.openra.net
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		2
 
 # GPLv3 (openra)
 # MIT (StyleCopPlus, StyleCop, SharpZipLib, NUnit, NUnit.Console, Open.Nat,
@@ -31,7 +30,8 @@ DLLMAP_FILES =		thirdparty/download/OpenAL-CS.dll.config \
 
 MODLUA_VERSION =	5.1
 MODLUA_SA =		Yes
-BUILD_DEPENDS =		net/curl
+BUILD_DEPENDS =		devel/msbuild \
+			net/curl
 RUN_DEPENDS =		devel/desktop-file-utils \
 			net/libmaxminddb,-db \
 			x11/gtk+3,-guic
@@ -40,6 +40,7 @@ LIB_DEPENDS =		audio/openal \
 USE_GMAKE =		Yes
 # Target 'test' only checks the official mods for erroneous yaml files
 NO_TEST =		Yes
+ALL_TARGET =	version all
 
 SUBST_VARS +=		LOCALSTATEDIR
 
