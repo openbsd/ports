@@ -3,5 +3,8 @@ BIND is open source software that implements the Domain Name System
 of those protocols, but it is also production-grade software,
 suitable for use in high-volume and high-reliability applications.
 
+The BIND 9 Administrator Reference Manual is available online at
+https://bind9.readthedocs.io/.
+
 Flavours:
 	geoip - include support for geolocation using GeoIP2 (libmaxminddb)

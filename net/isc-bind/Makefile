@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.118 2020/05/29 20:05:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2020/06/17 20:46:54 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # Odd numbers devel, even numbers stable, ESV branched occasionally.
 # 9.16.x is ESV.
-V=		9.16.3
+V=		9.16.4
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		0
-REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
 # in shared_libs.log but not installed: isc-nosymtbl, t_api
-SHARED_LIBS +=  isc                  5.1
+SHARED_LIBS +=  isc                  6.0
 SHARED_LIBS +=  isccc                3.0
-SHARED_LIBS +=  dns                  9.1
+SHARED_LIBS +=  dns                  9.2
 SHARED_LIBS +=  isccfg               4.1
 SHARED_LIBS +=  bind9                1.0
 SHARED_LIBS +=  irs                  3.0
@@ -102,9 +101,6 @@ post-install:
 .for i in dig nslookup host
 	ln -fs $i ${PREFIX}/bin/e$i; ln -fs $i.1 ${PREFIX}/man/man1/e$i.1
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/named.conf ${PREFIX}/share/examples/bind9
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bind9
-	cd ${WRKSRC}/doc/arm; ${INSTALL_DATA} Bv9ARM.pdf notes.pdf \
-	    notes.txt ${PREFIX}/share/doc/bind9/
+	${INSTALL_DATA} ${FILESDIR}/[a-z]* ${PREFIX}/share/examples/bind9/
 
 .include <bsd.port.mk>

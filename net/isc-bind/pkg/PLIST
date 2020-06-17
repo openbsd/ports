@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/05/29 20:05:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/06/17 20:46:54 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -67,6 +67,7 @@ include/dns/keytable.h
 include/dns/keyvalues.h
 include/dns/lib.h
 include/dns/librpz.h
+include/dns/lmdb.h
 include/dns/log.h
 include/dns/lookup.h
 include/dns/master.h
@@ -233,6 +234,7 @@ include/isc/time.h
 include/isc/timer.h
 include/isc/tm.h
 include/isc/types.h
+include/isc/utf8.h
 include/isc/util.h
 include/isc/version.h
 include/isccc/
@@ -333,6 +335,7 @@ lib/python${MODPY_VERSION}/site-packages/isc/utils.py
 @man man/man1/arpaname.1
 @man man/man1/delv.1
 @man man/man1/dig.1
+@man man/man1/dnstap-read.1
 @man man/man1/edig.1
 @man man/man1/ehost.1
 @man man/man1/enslookup.1
@@ -359,13 +362,12 @@ lib/python${MODPY_VERSION}/site-packages/isc/utils.py
 @man man/man8/filter-aaaa.8
 @man man/man8/named-checkconf.8
 @man man/man8/named-checkzone.8
-@man man/man8/named-compilezone.8
 @man man/man8/named-journalprint.8
+@man man/man8/named-nzd2nzf.8
 @man man/man8/named.8
 @man man/man8/nsec3hash.8
 @man man/man8/rndc-confgen.8
 @man man/man8/rndc.8
-@man man/man8/tsig-keygen.8
 @bin sbin/ddns-confgen
 @bin sbin/dnssec-cds
 sbin/dnssec-checkds
@@ -396,10 +398,6 @@ sbin/tsig-keygen
 @sample ${LOCALSTATEDIR}/named/tmp/
 @mode
 @group
-share/doc/bind9/
-share/doc/bind9/Bv9ARM.pdf
-share/doc/bind9/notes.pdf
-share/doc/bind9/notes.txt
 share/examples/bind9/
 share/examples/bind9/bind.keys
 share/examples/bind9/named.conf
