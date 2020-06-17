@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/18 18:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/17 21:48:16 kurt Exp $
 
 FW_DRIVER=	bwfm
-FW_VER=		20200316
-SUP_VER=	1.0
-DISTNAME=	linux-firmware-${FW_VER}
+LINUX_VER=	20200316
+SUP_VER=	1.2
+FW_VER=		${LINUX_VER}.${SUP_VER}
+DISTNAME=	linux-firmware-${LINUX_VER}
 EXTRACT_SUFX=	.tar.xz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		brcm-supplemental-${SUP_VER}.tar.gz:1

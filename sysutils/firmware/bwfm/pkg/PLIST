@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/04/10 14:45:43 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/06/17 21:48:16 kurt Exp $
 firmware/bcm4329-fullmac-4.bin
 firmware/brcmfmac43143-sdio.bin
 firmware/brcmfmac43143.bin
@@ -10,6 +10,7 @@ firmware/brcmfmac43242a.bin
 firmware/brcmfmac4329-sdio.bin
 firmware/brcmfmac4330-sdio.Prowise-PT301.txt
 firmware/brcmfmac4330-sdio.bin
+firmware/brcmfmac4330-sdio.solidrun,cubox-i.txt
 firmware/brcmfmac4334-sdio.bin
 firmware/brcmfmac43340-sdio.bin
 firmware/brcmfmac43340-sdio.meegopad-t08.txt
