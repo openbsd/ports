@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.26 2019/07/25 22:07:47 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.27 2020/06/18 17:42:56 sthen Exp $
 @option is-branch
 @conflict openldap-client-<=2.4.45p0
 @pkgpath databases/openldap,-server,bdb
@@ -71,7 +71,7 @@ sbin/slapindex
 sbin/slappasswd
 sbin/slapschema
 sbin/slaptest
-share/examples/openldap/DB_CONFIG
+share/examples/openldap/DB_CONFIG.example
 @mode 600
 @owner _openldap
 @group _openldap
@@ -81,33 +81,49 @@ share/examples/openldap/DB_CONFIG
 @group
 share/examples/openldap/schema/
 @sample ${SYSCONFDIR}/openldap/schema/
+share/examples/openldap/schema/README
+share/examples/openldap/schema/collective.ldif
 share/examples/openldap/schema/collective.schema
 @sample ${SYSCONFDIR}/openldap/schema/collective.schema
+share/examples/openldap/schema/corba.ldif
 share/examples/openldap/schema/corba.schema
 @sample ${SYSCONFDIR}/openldap/schema/corba.schema
+share/examples/openldap/schema/core.ldif
 share/examples/openldap/schema/core.schema
 @sample ${SYSCONFDIR}/openldap/schema/core.schema
+share/examples/openldap/schema/cosine.ldif
 share/examples/openldap/schema/cosine.schema
 @sample ${SYSCONFDIR}/openldap/schema/cosine.schema
+share/examples/openldap/schema/duaconf.ldif
 share/examples/openldap/schema/duaconf.schema
 @sample ${SYSCONFDIR}/openldap/schema/duaconf.schema
+share/examples/openldap/schema/dyngroup.ldif
 share/examples/openldap/schema/dyngroup.schema
 @sample ${SYSCONFDIR}/openldap/schema/dyngroup.schema
+share/examples/openldap/schema/inetorgperson.ldif
 share/examples/openldap/schema/inetorgperson.schema
 @sample ${SYSCONFDIR}/openldap/schema/inetorgperson.schema
+share/examples/openldap/schema/java.ldif
 share/examples/openldap/schema/java.schema
 @sample ${SYSCONFDIR}/openldap/schema/java.schema
+share/examples/openldap/schema/misc.ldif
 share/examples/openldap/schema/misc.schema
 @sample ${SYSCONFDIR}/openldap/schema/misc.schema
+share/examples/openldap/schema/nis.ldif
 share/examples/openldap/schema/nis.schema
 @sample ${SYSCONFDIR}/openldap/schema/nis.schema
+share/examples/openldap/schema/openldap.ldif
 share/examples/openldap/schema/openldap.schema
 @sample ${SYSCONFDIR}/openldap/schema/openldap.schema
+share/examples/openldap/schema/pmi.ldif
 share/examples/openldap/schema/pmi.schema
 @sample ${SYSCONFDIR}/openldap/schema/pmi.schema
+share/examples/openldap/schema/ppolicy.ldif
 share/examples/openldap/schema/ppolicy.schema
 @sample ${SYSCONFDIR}/openldap/schema/ppolicy.schema
 share/examples/openldap/slapd.conf
+@comment -- slapd.conf is intentionally not @sampled -- see commit r1.22
+share/examples/openldap/slapd.ldif
 @mode 0750
 @group _openldap
 @sample ${SYSCONFDIR}/openldap/slapd.d/
