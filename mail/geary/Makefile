@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2020/05/14 14:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2020/06/18 07:30:15 kmos Exp $
 
 COMMENT=		email application built around conversations
 
@@ -30,6 +30,11 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 CONFIGURE_ARGS=		-Dlibunwind_optional=true \
 			-Diso_639_xml=${LOCALBASE}/share/xml/iso-codes/iso_639.xml \
 			-Diso_3166_xml=${LOCALBASE}/share/xml/iso-codes/iso_3166.xml
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=		-std=gnu99
+.endif
 
 RUN_DEPENDS=		devel/iso-codes
 
