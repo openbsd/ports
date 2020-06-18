@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/10 05:56:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/18 20:44:16 rsadowski Exp $
 @bin bin/profanity
+include/profapi.h
+@static-lib lib/libprofanity.a
+lib/libprofanity.la
+@lib lib/libprofanity.so.${LIBprofanity_VERSION}
 @man man/man1/profanity.1
 share/examples/profanity/
 share/examples/profanity/profrc.example
@@ -20,6 +24,7 @@ share/profanity/themes/gruvbox
 share/profanity/themes/hacker
 share/profanity/themes/headache
 share/profanity/themes/joker
+share/profanity/themes/jubalian
 share/profanity/themes/mono
 share/profanity/themes/orange
 share/profanity/themes/original
