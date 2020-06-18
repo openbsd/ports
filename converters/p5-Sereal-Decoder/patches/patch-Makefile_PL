@@ -1,17 +1,17 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2018/04/04 21:57:58 fcambus Exp $
+$OpenBSD: patch-Makefile_PL,v 1.2 2020/06/18 19:42:30 fcambus Exp $
 
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -81,9 +81,9 @@ inc::Sereal::BuildTools::WriteMakefile(
-     LICENSE => 'perl',
+@@ -78,9 +78,9 @@ inc::Sereal::BuildTools::WriteMakefile(
+     LICENSE       => 'perl',
      ABSTRACT_FROM => 'lib/Sereal/Decoder.pm',
-     AUTHOR => 'Steffen Mueller <smueller@cpan.org>, Yves Orton <yves@cpan.org>',
--    LIBS              => [$libs], # e.g., '-lm'
-+    LIBS              => ["-L${LOCALBASE}/lib $libs"], # e.g., '-lm'
-     DEFINE            => $defines,
--    INC               => '-I.', # e.g., '-I. -I/usr/include/other'
-+    INC               => "-I. -I${LOCALBASE}/include", # e.g., '-I. -I/usr/include/other'
-     OPTIMIZE          => $optimize,
-     OBJECT            => $objects,
-     DIR               => $subdirs,
+     AUTHOR        => 'Steffen Mueller <smueller@cpan.org>, Yves Orton <yves@cpan.org>',
+-    LIBS          => [$libs],                                                          # e.g., '-lm'
++    LIBS          => ["-L${LOCALBASE}/lib $libs"], # e.g., '-lm'
+     DEFINE        => $defines,
+-    INC      => '-I.',                            # e.g., '-I. -I/usr/include/other'
++    INC      => "-I. -I${LOCALBASE}/include", # e.g., '-I. -I/usr/include/other'
+     OPTIMIZE => $optimize,
+     OBJECT   => $objects,
+     DIR      => $subdirs,
