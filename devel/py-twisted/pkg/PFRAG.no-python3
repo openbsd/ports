@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-python3,v 1.3 2018/05/25 10:42:38 pvk Exp $
+@comment $OpenBSD: PFRAG.no-python3,v 1.4 2020/06/18 05:54:06 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/alias.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/alias.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/bounce.py
@@ -11,10 +11,10 @@ lib/python${MODPY_VERSION}/site-packages/twisted/mail/pb.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/pb.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/relaymanager.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/relaymanager.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/mail/tap.py
-lib/python${MODPY_VERSION}/site-packages/twisted/mail/tap.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/scripts/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/scripts/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/mail/tap.py
+lib/python${MODPY_VERSION}/site-packages/twisted/mail/tap.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/test_bounce.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/test_bounce.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/test_mail.py
@@ -47,16 +47,11 @@ lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_mail.py
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_mail.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_news.py
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_news.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/protocols/mice/
-lib/python${MODPY_VERSION}/site-packages/twisted/protocols/mice/__init__.py
-lib/python${MODPY_VERSION}/site-packages/twisted/protocols/mice/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/protocols/mice/mouseman.py
-lib/python${MODPY_VERSION}/site-packages/twisted/protocols/mice/mouseman.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/protocols/shoutcast.py
 lib/python${MODPY_VERSION}/site-packages/twisted/protocols/shoutcast.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/python/_pydoctor.py
 lib/python${MODPY_VERSION}/site-packages/twisted/python/_pydoctor.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/python/_sendmsg.so
+@so lib/python${MODPY_VERSION}/site-packages/twisted/python/_sendmsg.so
 lib/python${MODPY_VERSION}/site-packages/twisted/python/finalize.py
 lib/python${MODPY_VERSION}/site-packages/twisted/python/finalize.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/python/hook.py
