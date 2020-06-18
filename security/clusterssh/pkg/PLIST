@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/05/01 10:40:56 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/06/18 20:44:26 steven Exp $
 bin/ccon
 bin/crsh
 bin/csftp
@@ -17,6 +17,9 @@ ${P5SITE}/App/ClusterSSH/L10N/
 ${P5SITE}/App/ClusterSSH/L10N.pm
 ${P5SITE}/App/ClusterSSH/L10N/en.pm
 ${P5SITE}/App/ClusterSSH/Range.pm
+${P5SITE}/App/ClusterSSH/Window/
+${P5SITE}/App/ClusterSSH/Window.pm
+${P5SITE}/App/ClusterSSH/Window/Tk.pm
 @man man/man1/ccon.1
 @man man/man1/crsh.1
 @man man/man1/csftp.1
@@ -32,5 +35,7 @@ ${P5SITE}/App/ClusterSSH/Range.pm
 @man man/man3p/App::ClusterSSH::L10N.3p
 @man man/man3p/App::ClusterSSH::L10N::en.3p
 @man man/man3p/App::ClusterSSH::Range.3p
+@man man/man3p/App::ClusterSSH::Window.3p
+@man man/man3p/App::ClusterSSH::Window::Tk.3p
 share/bash-completion/
 share/bash-completion/clusterssh
