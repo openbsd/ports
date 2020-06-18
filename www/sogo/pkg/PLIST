@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2020/03/16 06:59:37 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.45 2020/06/18 21:02:20 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:${VARBASE}/sogo:/bin/sh
 @rcscript ${RCDIR}/sogod
@@ -103,7 +103,6 @@ ${SOGOLIBDIR}/Headers/SOGoDefaultsSource.h
 ${SOGOLIBDIR}/Headers/SOGoDomainDefaults.h
 ${SOGOLIBDIR}/Headers/SOGoFolder.h
 ${SOGOLIBDIR}/Headers/SOGoGCSFolder.h
-${SOGOLIBDIR}/Headers/SOGoGroup.h
 ${SOGOLIBDIR}/Headers/SOGoLDAPDefaults.h
 ${SOGOLIBDIR}/Headers/SOGoMailer.h
 ${SOGOLIBDIR}/Headers/SOGoObject.h
@@ -2638,6 +2637,7 @@ lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastefromword/fil
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastetools/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastetools/filter/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastetools/filter/common.js
+lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastetools/filter/image.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/LICENSE.md
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/dialogs/
