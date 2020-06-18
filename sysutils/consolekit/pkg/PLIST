@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/02/25 17:52:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/06/18 22:39:16 ajacoutot Exp $
 @conflict consolekit-*
 @extra /var/log/ConsoleKit/history
 @bin bin/ck-history
@@ -18,10 +18,10 @@ lib/ConsoleKit/scripts/ck-system-restart
 lib/ConsoleKit/scripts/ck-system-stop
 lib/ConsoleKit/scripts/ck-system-suspend
 lib/girepository-1.0/libconsolekit-1.0.typelib
-lib/libck-connector.a
+@static-lib lib/libck-connector.a
 lib/libck-connector.la
 @lib lib/libck-connector.so.${LIBck-connector_VERSION}
-lib/libconsolekit.a
+@static-lib lib/libconsolekit.a
 lib/libconsolekit.la
 @lib lib/libconsolekit.so.${LIBconsolekit_VERSION}
 lib/pkgconfig/ck-connector.pc
