@@ -1,4 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2018/10/01 11:39:44 denis Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/06/18 11:24:29 kn Exp $
+
+Honour CFLAGS, do not strip during build.
 
 Index: Makefile
 --- Makefile.orig

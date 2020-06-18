@@ -1,0 +1,16 @@
+$OpenBSD: patch-ssss_c,v 1.1 2020/06/18 11:24:29 kn Exp $
+
+Transpose memset(3) arguments, noted by clang.
+
+Index: ssss.c
+--- ssss.c.orig
++++ ssss.c
+@@ -171,7 +171,7 @@ void field_print(FILE* stream, const mpz_t x, int hexm
+     size_t t;
+     unsigned int i;
+     int printable, warn = 0;
+-    memset(buf, degree / 8 + 1, 0);
++    memset(buf, 0, degree / 8 + 1);
+     mpz_export(buf, &t, 1, 1, 0, 0, x);
+     for(i = 0; i < t; i++) {
+       printable = (buf[i] >= 32) && (buf[i] < 127);
