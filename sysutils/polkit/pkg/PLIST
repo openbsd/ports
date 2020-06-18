@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/04/27 08:08:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/06/18 07:49:37 ajacoutot Exp $
 @comment Error switching to user _polkitd: Error changing to home directory /nonexistent
 @newgroup _polkitd:701
 @newuser _polkitd:701:_polkitd:daemon:Polkit Daemon User:/var/empty:/sbin/nologin
@@ -45,10 +45,10 @@ include/polkit-1/polkitagent/polkitagenttypes.h
 lib/girepository-1.0/
 lib/girepository-1.0/Polkit-1.0.typelib
 lib/girepository-1.0/PolkitAgent-1.0.typelib
-lib/libpolkit-agent-1.a
+@static-lib lib/libpolkit-agent-1.a
 lib/libpolkit-agent-1.la
 @lib lib/libpolkit-agent-1.so.${LIBpolkit-agent-1_VERSION}
-lib/libpolkit-gobject-1.a
+@static-lib lib/libpolkit-gobject-1.a
 lib/libpolkit-gobject-1.la
 @lib lib/libpolkit-gobject-1.so.${LIBpolkit-gobject-1_VERSION}
 lib/pkgconfig/polkit-agent-1.pc

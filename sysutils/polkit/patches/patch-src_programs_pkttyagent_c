@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_programs_pkttyagent_c,v 1.1 2020/06/18 07:49:37 ajacoutot Exp $
+
+From 270da3e17c2aeca5d251a49b000b79f1a7b0a44f Mon Sep 17 00:00:00 2001
+From: Jan Rybar <jrybar@redhat.com>
+Date: Mon, 27 Jan 2020 18:08:37 +0000
+Subject: [PATCH] Restoring terminal setting erases unread input
+
+
+From 76aae4fce586b400f5fe08df31497db19d624609 Mon Sep 17 00:00:00 2001
+From: Jan Rybar <jrybar@redhat.com>
+Date: Thu, 1 Aug 2019 06:46:10 +0000
+Subject: [PATCH] pkttyagent: process stopped by SIGTTOU if run in background job
+
+Index: src/programs/pkttyagent.c
+--- src/programs/pkttyagent.c.orig
++++ src/programs/pkttyagent.c
+@@ -56,7 +56,7 @@ static void tty_handler(int signal)
+ 
+   if (tty_flags_saved)
+   {
+-    tcsetattr (fileno (tty), TCSAFLUSH, &ts);
++    tcsetattr (fileno (tty), TCSADRAIN, &ts);
+   }
+ 
+   kill(getpid(), signal);
+@@ -264,6 +264,12 @@ main (int argc, char *argv[])
+ 
+   memset (&sa, 0, sizeof (sa));
+   sa.sa_handler = &tty_handler;
++/* If tty_handler() resets terminal while pkttyagent is run in background job,
++   the process gets stopped by SIGTTOU. This impacts systemctl, hence it must
++   be blocked for a while and then the process gets killed anyway.
++ */
++  sigemptyset(&sa.sa_mask);
++  sigaddset(&sa.sa_mask, SIGTTOU);
+   sigaction (SIGTERM, &sa, &savesigterm);
+   sigaction (SIGINT, &sa, &savesigint);
+   sigaction (SIGTSTP, &sa, &savesigtstp);
