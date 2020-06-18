@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.166 2020/02/21 17:48:38 tracey Exp $
+# $OpenBSD: OpenBSD,v 1.167 2020/06/18 09:02:31 mvs Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -179,6 +179,7 @@
 59.33		18.07		"anton"		# Anton Lindqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
+59.95		30.31		"mvs"		# Vitaliy Makkoveev
 
 #-27.48         153.20          "d"             # David Leonard
 #-33.536466     151.093514      "dons"          # Don Stewart
