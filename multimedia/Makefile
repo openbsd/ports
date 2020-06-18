@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2020/05/26 17:06:34 espie Exp $
+# $OpenBSD: Makefile,v 1.126 2020/06/18 10:31:19 sthen Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -77,6 +77,7 @@
      SUBDIR += streamlink
      SUBDIR += subrip
      SUBDIR += subtitleripper
+     SUBDIR += svt-av1
      SUBDIR += swfmill
      SUBDIR += swftools
      SUBDIR += synfig
