@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/07 21:15:24 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/18 21:26:12 sebastia Exp $
 
 COMMENT =	convert pcap dumps to hashcat or John the Ripper input
 
 GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
-GH_TAGNAME =	6.0.2
+GH_TAGNAME =	6.0.3
 DISTNAME =	hcxtools-${GH_TAGNAME}
 
 CATEGORIES =	security
@@ -23,6 +23,7 @@ ALL_TARGET =
 MAKE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include
 MAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
 MAKE_FLAGS =	PREFIX='${LOCALBASE}'
+FAKE_FLAGS =	MANDIR=${DESTDIR}${PREFIX}/man
 
 pre-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
