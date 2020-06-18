@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/18 06:18:13 benoit Exp $
 
 COMMENT =	renames multiple files
 
-DISTNAME =	File-Rename-1.10
+DISTNAME =	File-Rename-1.13
 CATEGORIES =	sysutils
 
 MODULES =	cpan
