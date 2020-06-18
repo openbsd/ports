@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/18 10:30:51 sthen Exp $
+@bin bin/SvtAv1DecApp
+@bin bin/SvtAv1EncApp
+include/svt-av1/
+include/svt-av1/EbSvtAv1.h
+include/svt-av1/EbSvtAv1Dec.h
+include/svt-av1/EbSvtAv1Enc.h
+include/svt-av1/EbSvtAv1ErrorCodes.h
+include/svt-av1/EbSvtAv1ExtFrameBuf.h
+include/svt-av1/EbSvtAv1Formats.h
+@lib lib/libSvtAv1Dec.so.${LIBSvtAv1Dec_VERSION}
+@lib lib/libSvtAv1Enc.so.${LIBSvtAv1Enc_VERSION}
+lib/pkgconfig/SvtAv1Dec.pc
+lib/pkgconfig/SvtAv1Enc.pc
