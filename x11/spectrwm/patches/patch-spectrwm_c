@@ -1,9 +1,9 @@
-$OpenBSD: patch-spectrwm_c,v 1.14 2019/12/19 17:34:10 bket Exp $
+$OpenBSD: patch-spectrwm_c,v 1.15 2020/06/18 09:18:39 gonzalo Exp $
 
 Index: spectrwm.c
 --- spectrwm.c.orig
 +++ spectrwm.c
-@@ -296,7 +296,7 @@ uint32_t		swm_debug = 0
+@@ -310,7 +310,7 @@ uint32_t		swm_debug = 0
  #define SWM_CONF_KEYMAPPING	(1)
  
  #ifndef SWM_LIB
