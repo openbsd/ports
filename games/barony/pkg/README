@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2018/10/01 12:00:12 solene Exp $
+$OpenBSD: README,v 1.4 2020/06/18 21:37:44 solene Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,10 +8,11 @@ Barony
 ======
 Barony requires the original game files from Barony: Blessed Edition
 (e.g. 3.2.x) to work properly.  These can come from the GOG.com or the
-Steam versions of the game.
+Steam versions of the game. The game version should exactly match the
+package version.
 
 If using the GOG.com version, you should download the Linux version
-barony_cursed_edition_3_2_2_24038.sh and use the unzip package to
+barony_blessed_addition_3_2_3_hotfix_1_30730.sh and use the unzip package to
 extract the data.
 
 The files will be in a directory named data/noarch/game. You can move
@@ -20,7 +21,7 @@ directory for a global install. You will also need to fix the
 permissions on the files.
 
 The easiest way to do this is to follow these steps:
-$ unzip barony_cursed_edition_3_2_2_24038.sh
+$ unzip barony_blessed_addition_3_2_3_hotfix_1_30730.sh
 $ doas cp -R data/noarch/game/* ${TRUEPREFIX}/share/barony
 $ doas find ${TRUEPREFIX}/share/barony -type d ! -perm 755 -exec chmod 755 {} \;
 

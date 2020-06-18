@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/18 21:37:44 solene Exp $
 
-V =		3.2.2
+V =		3.2.3
 COMMENT =	3D, first person roguelike
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
