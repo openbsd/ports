@@ -1,0 +1,2 @@
+Python module and command-line tool to write and read .env-like files,
+commonly used with Procfile-based applications.

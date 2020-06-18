@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/18 09:50:00 sthen Exp $
+bin/dotenv
+lib/python${MODPY_VERSION}/site-packages/dotenv/
+lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/dotenv/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dotenv/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc

@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2020/06/18 09:50:00 sthen Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -19,6 +19,5 @@ setup(name='dotenv',
+       test_suite='nose.collector',
+       packages=['dotenv'],
+       tests_require=['nose'],
+-      setup_requires=['distribute'],
+       scripts=['scripts/dotenv']
+      )
