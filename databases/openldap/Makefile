@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2020/06/18 20:38:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.176 2020/06/18 21:36:10 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,7 +8,7 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.50
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION =		2
+REVISION =		3
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
@@ -104,14 +104,13 @@ WANTLIB +=		pthread sasl2
 CPPFLAGS +=		-I${LOCALBASE}/include/sasl
 
 LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
-			sysutils/e2fsprogs \
 			databases/db/v4,no_java,no_tcl \
 			databases/openldap,-main
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
 
-WANTLIB-server +=	${WANTLIB} lber ldap_r lib/db4/db>=4 m perl uuid
+WANTLIB-server +=	${WANTLIB} lber ldap_r lib/db4/db>=4 m perl
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openldap
 

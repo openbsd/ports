@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure_in,v 1.7 2020/06/18 21:36:11 sthen Exp $
+
+OpenLDAP's first choice uuid functions are close to but not quite the same
+as we have in libc, differences being that we don't have uuid_to_str() (in
+fact I don't see which other OS might have it either, no other software in
+debian codesearch uses this), and it needs uuid.h not sys/uuid.h.
+
+Patch to use it, avoiding the need for Linux libuuid.
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -1018,11 +1018,11 @@ dnl --------------------------------------------------
+ dnl UUID Support
+ 
+ have_uuid=no
+-AC_CHECK_HEADERS(sys/uuid.h)
++AC_CHECK_HEADERS(uuid.h)
+ dnl The HAVE_UUID_TO_STR code path also needs uuid_create
+-if test $ac_cv_header_sys_uuid_h = yes ; then
++if test $ac_cv_header_uuid_h = yes ; then
+ 	save_LIBS="$LIBS"
+-	AC_SEARCH_LIBS([uuid_to_str], [uuid], [have_uuid=yes], :)
++	AC_SEARCH_LIBS([uuid_to_string], [uuid], [have_uuid=yes], :)
+ 	AC_SEARCH_LIBS([uuid_create], [uuid], :, [have_uuid=no])
+ 	LIBS="$save_LIBS"
+ 
