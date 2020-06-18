@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1991 2020/06/17 16:15:16 paco Exp $
+# $OpenBSD: Makefile,v 1.1992 2020/06/18 17:54:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1914,7 +1914,6 @@
      SUBDIR += sparsehash
      SUBDIR += spe
      SUBDIR += spice-protocol
-     SUBDIR += spidermonkey60
      SUBDIR += spidermonkey68
      SUBDIR += splint
      SUBDIR += spyder
