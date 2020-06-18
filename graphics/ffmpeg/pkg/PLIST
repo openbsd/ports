@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/01/01 10:56:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/06/18 07:03:15 ajacoutot Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -9,12 +9,18 @@ include/libavcodec/adts_parser.h
 include/libavcodec/avcodec.h
 include/libavcodec/avdct.h
 include/libavcodec/avfft.h
+include/libavcodec/bsf.h
+include/libavcodec/codec.h
+include/libavcodec/codec_desc.h
+include/libavcodec/codec_id.h
+include/libavcodec/codec_par.h
 include/libavcodec/d3d11va.h
 include/libavcodec/dirac.h
 include/libavcodec/dv_profile.h
 include/libavcodec/dxva2.h
 include/libavcodec/jni.h
 include/libavcodec/mediacodec.h
+include/libavcodec/packet.h
 include/libavcodec/qsv.h
 include/libavcodec/vaapi.h
 include/libavcodec/vdpau.h
@@ -61,6 +67,7 @@ include/libavutil/crc.h
 include/libavutil/des.h
 include/libavutil/dict.h
 include/libavutil/display.h
+include/libavutil/dovi_meta.h
 include/libavutil/downmix_info.h
 include/libavutil/encryption_info.h
 include/libavutil/error.h
@@ -78,10 +85,12 @@ include/libavutil/hwcontext_d3d11va.h
 include/libavutil/hwcontext_drm.h
 include/libavutil/hwcontext_dxva2.h
 include/libavutil/hwcontext_mediacodec.h
+include/libavutil/hwcontext_opencl.h
 include/libavutil/hwcontext_qsv.h
 include/libavutil/hwcontext_vaapi.h
 include/libavutil/hwcontext_vdpau.h
 include/libavutil/hwcontext_videotoolbox.h
+include/libavutil/hwcontext_vulkan.h
 include/libavutil/imgutils.h
 include/libavutil/intfloat.h
 include/libavutil/intreadwrite.h
@@ -119,6 +128,7 @@ include/libavutil/tree.h
 include/libavutil/twofish.h
 include/libavutil/tx.h
 include/libavutil/version.h
+include/libavutil/video_enc_params.h
 include/libavutil/xtea.h
 include/libpostproc/
 include/libpostproc/postprocess.h
@@ -215,7 +225,7 @@ share/ffmpeg/
 share/ffmpeg/examples/
 share/ffmpeg/examples/Makefile
 share/ffmpeg/examples/README
-share/ffmpeg/examples/avio_dir_cmd.c
+share/ffmpeg/examples/avio_list_dir.c
 share/ffmpeg/examples/avio_reading.c
 share/ffmpeg/examples/decode_audio.c
 share/ffmpeg/examples/decode_video.c

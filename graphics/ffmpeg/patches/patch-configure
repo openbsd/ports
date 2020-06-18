@@ -1,22 +1,17 @@
-$OpenBSD: patch-configure,v 1.62 2020/03/08 22:37:04 ajacoutot Exp $
-
-- section_data_rel_ro: required by NEON support
+$OpenBSD: patch-configure,v 1.63 2020/06/18 07:03:15 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5253,9 +5253,9 @@ case $target_os in
-         ;;
-     openbsd|bitrig)
-         disable symver
-+        enable section_data_rel_ro
+@@ -5339,7 +5339,6 @@ case $target_os in
+         enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
 -        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBMAJOR).$(LIBMINOR)'
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5606,7 +5606,7 @@ set_default libdir
+@@ -5695,7 +5694,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
