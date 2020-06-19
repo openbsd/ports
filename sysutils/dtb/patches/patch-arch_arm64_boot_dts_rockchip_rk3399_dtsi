@@ -1,0 +1,17 @@
+$OpenBSD: patch-arch_arm64_boot_dts_rockchip_rk3399_dtsi,v 1.1 2020/06/19 10:08:01 kettenis Exp $
+
+Index: arch/arm64/boot/dts/rockchip/rk3399.dtsi
+--- arch/arm64/boot/dts/rockchip/rk3399.dtsi.orig
++++ arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -852,6 +852,11 @@
+ 		status = "disabled";
+ 	};
+ 
++	rng: rng@ff8b8000 {
++		compatible = "rockchip,cryptov1-rng";
++		reg = <0x0 0xff8b8000 0x0 0x1000>;
++	};
++
+ 	qos_emmc: qos@ffa58000 {
+ 		compatible = "syscon";
+ 		reg = <0x0 0xffa58000 0x0 0x20>;
