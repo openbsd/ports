@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_impex_jpeg_krita_jpeg_desktop,v 1.1 2020/06/19 19:49:17 rsadowski Exp $
+
+Fix MimeType
+
+Index: plugins/impex/jpeg/krita_jpeg.desktop
+--- plugins/impex/jpeg/krita_jpeg.desktop.orig
++++ plugins/impex/jpeg/krita_jpeg.desktop
+@@ -2,7 +2,7 @@
+ Categories=Qt;KDE;Office;Graphics;
+ Exec=krita %F
+ Icon=krita
+-MimeType=image/jpeg;jpeg/jfif
++MimeType=image/jpeg
+ Name=Krita
+ Name[af]=Krita
+ Name[ar]=كريتا
