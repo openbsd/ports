@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/06/19 19:54:24 kn Exp $
 @bin bin/sqlitebrowser
-share/appdata/
-share/appdata/sqlitebrowser.desktop.appdata.xml
 share/applications/sqlitebrowser.desktop
 share/icons/hicolor/256x256/apps/sqlitebrowser.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/metainfo/
+share/metainfo/sqlitebrowser.desktop.appdata.xml
