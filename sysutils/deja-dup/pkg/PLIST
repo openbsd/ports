@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/05/14 12:23:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/06/19 11:13:50 ajacoutot Exp $
 @bin bin/deja-dup
 lib/deja-dup/
 @so lib/deja-dup/libdeja.so
@@ -619,6 +619,8 @@ share/locale/az/LC_MESSAGES/deja-dup.mo
 share/locale/be/LC_MESSAGES/deja-dup.mo
 share/locale/bg/LC_MESSAGES/deja-dup.mo
 share/locale/bn/LC_MESSAGES/deja-dup.mo
+share/locale/bo/
+share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/deja-dup.mo
 share/locale/bs/LC_MESSAGES/deja-dup.mo
 share/locale/ca/LC_MESSAGES/deja-dup.mo
