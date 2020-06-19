@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2020/03/21 11:07:38 kn Exp $
+# $OpenBSD: Makefile,v 1.18 2020/06/19 00:14:35 kn Exp $
 
 COMMENT=	convert .rpm files to cpio format
 
 DISTNAME=	rpm2cpio-1.4
 CATEGORIES=	converters archivers
+REVISION=	0
 
-HOMEPAGE=	https://svnweb.freebsd.org/ports/archivers/rpm2cpio/
+HOMEPAGE=	https://svnweb.freebsd.org/ports/head/archivers/rpm2cpio/
 
 # BSD
 PERMIT_PACKAGE=	Yes
