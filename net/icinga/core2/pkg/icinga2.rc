@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: icinga2.rc,v 1.11 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: icinga2.rc,v 1.12 2020/06/19 21:55:17 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/icinga2 daemon -d"
 daemon_user="_icinga"
@@ -12,6 +12,7 @@ pexp="${TRUEPREFIX}/lib/icinga2/sbin/icinga2 daemon.*"
 rc_pre() {
 	install -d -o ${daemon_user} -g _icingaweb2 /var/www/var/run/icinga2{,/cmd}
 	ln -fs /var/www/var/run/icinga2 /var/run/icinga2
+	${TRUEPREFIX}/sbin/icinga2 daemon --validate
 }
 
 rc_cmd $1
