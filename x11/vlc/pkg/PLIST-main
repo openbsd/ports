@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.46 2020/04/20 08:35:41 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.47 2020/06/19 09:19:51 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -167,10 +167,10 @@ lib/vlc/plugins/audio_filter/
 @so lib/vlc/plugins/audio_filter/libnormvol_plugin.so
 @so lib/vlc/plugins/audio_filter/libparam_eq_plugin.so
 @so lib/vlc/plugins/audio_filter/libremap_plugin.so
-@so lib/vlc/plugins/audio_filter/libsamplerate_plugin.so
 @so lib/vlc/plugins/audio_filter/libscaletempo_pitch_plugin.so
 @so lib/vlc/plugins/audio_filter/libscaletempo_plugin.so
 @so lib/vlc/plugins/audio_filter/libsimple_channel_mixer_plugin.so
+@so lib/vlc/plugins/audio_filter/libsoxr_plugin.so
 @so lib/vlc/plugins/audio_filter/libspatializer_plugin.so
 @so lib/vlc/plugins/audio_filter/libspeex_resampler_plugin.so
 @so lib/vlc/plugins/audio_filter/libstereo_widen_plugin.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2020/06/18 07:04:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.243 2020/06/19 09:19:51 ajacoutot Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -7,6 +7,7 @@ V=		3.0.11
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
+REVISION-main=	0
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -37,7 +38,7 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		intl jpeg lcms2 lz4 lzma m matroska mp3lame nettle \
 		nfs notify ogg opus p11-kit pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pcre2-16 pixman-1 placebo png postproc \
-		rsvg-2 samplerate smb2 sndio speex speexdsp ssl swresample \
+		rsvg-2 smb2 sndio soxr speex speexdsp ssl swresample \
 		swscale tag tar tasn1 theoradec theoraenc tiff unistring \
 		usbhid vorbis vorbisenc vpx webp x264 x265 xcb xcb-composite \
 		xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr \
@@ -64,7 +65,7 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		archivers/libarchive \
 		archivers/libtar \
 		audio/libcddb \
-		audio/libsamplerate \
+		audio/libsoxr \
 		audio/libvorbis \
 		audio/opus \
 		audio/speex \
@@ -156,6 +157,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-opencv \
 		--disable-projectm \
 		--disable-pulse \
+		--disable-samplerate \
 		--disable-schroedinger \
 		--disable-secret \
 		--disable-sftp \
@@ -163,7 +165,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-shout \
 		--disable-sid \
 		--disable-smbclient \
-		--disable-soxr \
 		--disable-spatialaudio \
 		--disable-srt \
 		--disable-svg \
