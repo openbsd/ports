@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/16 20:30:05 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/19 16:14:58 bluhm Exp $
 bin/uabrowse
 bin/uacall
 bin/uaclient
@@ -113,7 +113,11 @@ lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${M
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part10.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part11.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part12.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part13.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part14.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part17.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part19.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${MODPY_PYCACHE}standard_address_space_part5.${MODPY_PYC_MAGIC_TAG}pyc
@@ -122,7 +126,11 @@ lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/${M
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space.py
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part10.py
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part11.py
+lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part12.py
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part13.py
+lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part14.py
+lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part17.py
+lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part19.py
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part3.py
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part4.py
 lib/python${MODPY_VERSION}/site-packages/opcua/server/standard_address_space/standard_address_space_part5.py
