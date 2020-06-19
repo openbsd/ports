@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/05/24 11:31:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.59 2020/06/19 04:13:33 rsadowski Exp $
 
      SUBDIR =
 
@@ -19,7 +19,7 @@
      SUBDIR += keditbookmarks
      SUBDIR += kfind
      SUBDIR += khelpcenter
-     #SUBDIR += konqueror
+     SUBDIR += konqueror
      SUBDIR += konsole
 
      # education
@@ -113,30 +113,30 @@
 
      # internet / network
      SUBDIR += kdenetwork-filesharing
-     #SUBDIR += kget
+     SUBDIR += kget
      SUBDIR += kio-extras
-     #SUBDIR += kmailtransport
+     SUBDIR += kmailtransport
      #SUBDIR += kopete
      SUBDIR += krdc
      SUBDIR += krfb
      SUBDIR += zeroconf-ioslave
 
      # pim
-     #SUBDIR += akregator
-     #SUBDIR += calendarsupport
-     #SUBDIR += eventviews
-     #SUBDIR += grantlee-editor
-     #SUBDIR += kaddressbook
-     #SUBDIR += kalarm
-     #SUBDIR += kdepim-addons
-     #SUBDIR += kdepim-apps-libs
-     #SUBDIR += kdepim-runtime
-     #SUBDIR += kleopatra
-     #SUBDIR += kmail
-     #SUBDIR += kmail-account-wizard
-     #SUBDIR += knotes
-     #SUBDIR += kontact
-     #SUBDIR += korganizer
+     SUBDIR += akregator
+     SUBDIR += calendarsupport
+     SUBDIR += eventviews
+     SUBDIR += grantlee-editor
+     SUBDIR += kaddressbook
+     SUBDIR += kalarm
+     SUBDIR += kdepim-addons
+     SUBDIR += kdepim-apps-libs
+     SUBDIR += kdepim-runtime
+     SUBDIR += kleopatra
+     SUBDIR += kmail
+     SUBDIR += kmail-account-wizard
+     SUBDIR += knotes
+     SUBDIR += kontact
+     SUBDIR += korganizer
      SUBDIR += kpimtextedit
 
      # kdesdk
@@ -161,7 +161,7 @@
      SUBDIR += kdebugsettings
      SUBDIR += kdf
      SUBDIR += kfloppy
-     #SUBDIR += kgpg
+     SUBDIR += kgpg
      SUBDIR += kteatime
      SUBDIR += ktimer
      SUBDIR += kwalletmanager
@@ -169,7 +169,7 @@
      SUBDIR += sweeper
 
      # webdev
-     #SUBDIR += kimagemapeditor
+     SUBDIR += kimagemapeditor
 
      # KDE-Telepathy
      #SUBDIR += ktp-accounts-kcm
@@ -186,60 +186,60 @@
      #SUBDIR += ktp-text-ui
 
      # development environment
-     #SUBDIR += akonadi
-     #SUBDIR += akonadi-calendar
-     #SUBDIR += akonadi-calendar-tools
-     #SUBDIR += akonadi-contacts
-     #SUBDIR += akonadi-import-wizard
-     #SUBDIR += akonadi-mime
-     #SUBDIR += akonadi-notes
-     #SUBDIR += akonadi-search
-     #SUBDIR += akonadiconsole
-     #SUBDIR += baloo-widgets
+     SUBDIR += akonadi
+     SUBDIR += akonadi-calendar
+     SUBDIR += akonadi-calendar-tools
+     SUBDIR += akonadi-contacts
+     SUBDIR += akonadi-import-wizard
+     SUBDIR += akonadi-mime
+     SUBDIR += akonadi-notes
+     SUBDIR += akonadi-search
+     SUBDIR += akonadiconsole
+     SUBDIR += baloo-widgets
      SUBDIR += grantleetheme
-     #SUBDIR += incidenceeditor
+     SUBDIR += incidenceeditor
      #SUBDIR += kaccounts-integration
      #SUBDIR += kaccounts-providers
-     #SUBDIR += kalarmcal
-     #SUBDIR += kblog
+     SUBDIR += kalarmcal
+     SUBDIR += kblog
      SUBDIR += kcalutils
-     #SUBDIR += kdav
+     SUBDIR += kdav
      SUBDIR += kdeedu-data
      SUBDIR += kidentitymanagement
      SUBDIR += kimap
-     #SUBDIR += kitinerary
+     SUBDIR += kitinerary
      SUBDIR += kldap
      SUBDIR += kmbox
      SUBDIR += kmime
-     #SUBDIR += kontactinterface
+     SUBDIR += kontactinterface
      #SUBDIR += kpat
-     #SUBDIR += kpkpass
+     SUBDIR += kpkpass
      SUBDIR += kqtquickcharts
-     #SUBDIR += kross-interpreters
-     #SUBDIR += ksmtp
-     #SUBDIR += ktnef
-     #SUBDIR += libgravatar
+     SUBDIR += kross-interpreters
+     SUBDIR += ksmtp
+     SUBDIR += ktnef
+     SUBDIR += libgravatar
      SUBDIR += libkcddb
      SUBDIR += libkcompactdisc
      SUBDIR += libkdcraw
      SUBDIR += libkdegames
-     #SUBDIR += libkdepim
+     SUBDIR += libkdepim
      SUBDIR += libkeduvocdocument
      SUBDIR += libkexiv2
-     #SUBDIR += libkgapi
+     SUBDIR += libkgapi
      SUBDIR += libkipi
      SUBDIR += libkleo
      SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
      SUBDIR += libksane
-     #SUBDIR += libksieve
-     #SUBDIR += mailcommon
-     #SUBDIR += mailimporter
-     #SUBDIR += mbox-importer
-     #SUBDIR += messagelib
-     #SUBDIR += pim-data-exporter
-     #SUBDIR += pim-sieve-editor
-     #SUBDIR += pimcommon
+     SUBDIR += libksieve
+     SUBDIR += mailcommon
+     SUBDIR += mailimporter
+     SUBDIR += mbox-importer
+     SUBDIR += messagelib
+     SUBDIR += pim-data-exporter
+     SUBDIR += pim-sieve-editor
+     SUBDIR += pimcommon
      #SUBDIR += signon-kwallet-extension
 
      # Former projects under the hat of KDE Applications
