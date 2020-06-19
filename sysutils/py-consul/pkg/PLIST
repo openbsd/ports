@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/19 14:51:39 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/consul/
+lib/python${MODPY_VERSION}/site-packages/consul/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}aio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}std.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}tornado.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}twisted.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/consul/aio.py
+lib/python${MODPY_VERSION}/site-packages/consul/base.py
+lib/python${MODPY_VERSION}/site-packages/consul/std.py
+lib/python${MODPY_VERSION}/site-packages/consul/tornado.py
+lib/python${MODPY_VERSION}/site-packages/consul/twisted.py
+lib/python${MODPY_VERSION}/site-packages/python_consul-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_consul-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_consul-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_consul-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_consul-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/python_consul-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
