@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/12/22 15:55:06 martin Exp $
+# $OpenBSD: Makefile,v 1.23 2020/06/19 18:39:01 martin Exp $
 
 COMMENT=	lightweight CalDAV and CardDAV server
 
-VERSION=	0.6.1
+VERSION=	0.7.1
 DISTNAME=	baikal-${VERSION}
 MASTER_SITES=	https://github.com/sabre-io/Baikal/releases/download/${VERSION}/
 DISTFILES=	${DISTNAME}.zip
@@ -17,6 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/php
 
+WRKDIST=	${WRKDIR}/baikal
 NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*

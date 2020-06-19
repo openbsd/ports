@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2019/10/16 20:17:28 remi Exp $
+$OpenBSD: README,v 1.9 2020/06/19 18:39:01 martin Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -48,9 +48,6 @@ Post-installation
 =================
 To finish the installation go to http://<hostname>/baikal/ and follow
 the instructions.
-
-To make the above httpd.conf work you need to go to "System settings"
-in the admin interface and set the 3 base URIs to "/baikal/XXX.php/".
 
 Baikal administration
 =====================
