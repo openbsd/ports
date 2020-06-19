@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2020/05/23 20:57:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/06/19 11:28:54 ajacoutot Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
 GNOME_VERSION=		0.12.1
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -36,10 +37,6 @@ LIB_DEPENDS=		devel/glib2 \
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
-# we need support for both python2 and python3
-BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2} \
-			devel/py-gobject3
-RUN_DEPENDS +=		lang/python/${MODPY_DEFAULT_VERSION_2} \
-			devel/py-gobject3
+CONFIGURE_ARGS=		-Dpython2_girdir=no
 
 .include <bsd.port.mk>
