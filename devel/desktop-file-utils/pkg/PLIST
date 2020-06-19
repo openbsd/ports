@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/07/27 09:34:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/06/19 08:18:08 ajacoutot Exp $
 @define-tag update-desktop-database at-end %D/bin/update-desktop-database
 @tag update-desktop-database
 @unexec-delete rm -f %D/share/applications/mimeinfo.cache
@@ -6,11 +6,11 @@ bin/desktop-file-edit
 @bin bin/desktop-file-install
 @bin bin/desktop-file-validate
 @bin bin/update-desktop-database
-share/emacs/
-share/emacs/site-lisp/
-share/emacs/site-lisp/desktop-entry-mode.el
 @man man/man1/desktop-file-edit.1
 @man man/man1/desktop-file-install.1
 @man man/man1/desktop-file-validate.1
 @man man/man1/update-desktop-database.1
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/desktop-entry-mode.el
 @sample share/applications/

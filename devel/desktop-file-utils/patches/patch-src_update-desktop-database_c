@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.18 2019/08/03 22:58:42 tb Exp $
+$OpenBSD: patch-src_update-desktop-database_c,v 1.19 2020/06/19 08:18:08 ajacoutot Exp $
 
 Unveil the required directory with .desktop files and where the cache file needs
 to be written out to.
@@ -6,12 +6,14 @@ to be written out to.
 Index: src/update-desktop-database.c
 --- src/update-desktop-database.c.orig
 +++ src/update-desktop-database.c
-@@ -452,7 +452,7 @@ main (int    argc,
+@@ -451,8 +451,8 @@ main (int    argc,
+      { NULL }
     };
  
- #if HAVE_PLEDGE
+-#if HAVE_PLEDGE
 -  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
-+  if (pledge("stdio rpath wpath cpath fattr unveil", NULL) == -1) {
++#ifdef HAVE_PLEDGE
++  if (pledge ("stdio rpath wpath cpath fattr unveil", NULL) == -1) {
      g_printerr ("pledge\n");
      return 1;
    }
@@ -19,13 +21,13 @@ Index: src/update-desktop-database.c
  
    print_desktop_dirs (desktop_dirs);
  
-+  if (unveil("${LOCALBASE}/share/locale/locale.alias", "r") == -1) {
++  if (unveil ("${LOCALBASE}/share/locale/locale.alias", "r") == -1) {
 +    g_printerr ("Can't unveil '${LOCALBASE}/share/locale/locale.alias': %s\n", g_strerror(errno));
 +  }
    found_processable_dir = FALSE;
    for (i = 0; desktop_dirs[i] != NULL; i++)
      {
-+      if (unveil(desktop_dirs[i], "rwc") == -1) {
++      if (unveil (desktop_dirs[i], "rwc") == -1) {
 +        g_printerr ("Can't unveil '%s' directory: %s\n", desktop_dirs[i], g_strerror(errno));
 +      }
        error = NULL;
@@ -36,7 +38,7 @@ Index: src/update-desktop-database.c
      }
    g_option_context_free (context);
 +
-+  if (unveil(NULL, NULL) == -1) {
++  if (unveil (NULL, NULL) == -1) {
 +    g_printerr ("unveil\n");
 +  }
  

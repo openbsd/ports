@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2020/06/19 08:18:08 ajacoutot Exp $
+
+https://gitlab.freedesktop.org/xdg/desktop-file-utils/-/issues/58
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -24,7 +24,7 @@ executable('desktop-file-install',
+   install: true,
+ )
+ 
+-executable('desktop-file-update',
++executable('update-desktop-database',
+   'update-desktop-database.c',
+   link_with: desktop_file_lib,
+   dependencies: glib,
