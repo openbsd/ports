@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/19 14:51:39 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/19 22:27:44 naddy Exp $
 
 COMMENT =	python client for consul
 
@@ -26,6 +26,6 @@ RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
 
 # requires pytest-twisted
-NO_TESTS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
