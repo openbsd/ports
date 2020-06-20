@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_install_c,v 1.3 2020/06/19 08:18:08 ajacoutot Exp $
+$OpenBSD: patch-src_install_c,v 1.4 2020/06/20 11:39:36 ajacoutot Exp $
 
-https://gitlab.freedesktop.org/xdg/desktop-file-utils/-/merge_requests/8
+From 1926ae7021a2f8e842ad566a49f3a947c02cec92 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 19 Jun 2020 10:12:04 +0200
+Subject: [PATCH] pledge: add support to remaining utilities
 
 Index: src/install.c
 --- src/install.c.orig
