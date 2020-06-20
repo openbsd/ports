@@ -1,0 +1,57 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/06/20 11:12:50 ajacoutot Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -10,17 +10,8 @@ if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CUR
+                     "Please use the Build folder or create your own.")
+ endif()
+ 
+-option(YASM "Use yasm (if present in PATH)" ON)
+-if(YASM)
+-    find_program(YASM_EXE yasm)
+-    if(YASM_EXE AND NOT CMAKE_ASM_NASM_COMPILER MATCHES "yasm")
+-        set(CMAKE_ASM_NASM_COMPILER ${YASM_EXE})
+-        message(STATUS "Found YASM: ${YASM_EXE}")
+-    endif()
+-endif()
+-
+ project(svt-av1 VERSION 0.8.3
+-    LANGUAGES C CXX ASM_NASM)
++    LANGUAGES C CXX)
+ 
+ # Default build type to release if the generator does not has its own set of build types
+ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+@@ -29,6 +20,32 @@ endif()
+ 
+ if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+     message(WARNING "32-bit is not supported")
++endif()
++
++if(CMAKE_SYSTEM_PROCESSOR MATCHES "(x86)|(X86)|(amd64)|(AMD64)")
++    set(X86 TRUE)
++    find_program(YASM_EXE yasm)
++    option(ENABLE_NASM "Use nasm if available (Uses yasm by default if found)" OFF)
++    if(YASM_EXE AND NOT CMAKE_ASM_NASM_COMPILER MATCHES "yasm" AND NOT ENABLE_NASM)
++        set(CMAKE_ASM_NASM_COMPILER "${YASM_EXE}" CACHE FILEPATH "Path to nasm compatible compiler" FORCE)
++    else()
++        set(NASM_VERSION "0.0.0")
++        include(CheckLanguage)
++        check_language(ASM_NASM)
++        execute_process(COMMAND ${CMAKE_ASM_NASM_COMPILER} -v
++            OUTPUT_VARIABLE NASM_VERSION
++            ERROR_QUIET
++            OUTPUT_STRIP_TRAILING_WHITESPACE)
++        string(REGEX MATCH "([.0-9])+" NASM_VERSION "${NASM_VERSION}")
++        # NASM_VERSION should now contain something like 2.14.02
++        # Needs to error out on a version less than 2.14
++        if(NASM_VERSION VERSION_LESS "2.14" AND CMAKE_ASM_NASM_COMPILER MATCHES "nasm")
++            message(FATAL_ERROR "Found nasm is too old (requires at least 2.14, found ${NASM_VERSION})!")
++        endif()
++    endif()
++    enable_language(ASM_NASM)
++else()
++    set(X86 FALSE)
+ endif()
+ 
+ include(GNUInstallDirs)
