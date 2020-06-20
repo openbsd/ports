@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2020/06/19 15:01:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2020/06/20 19:45:36 kmos Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
@@ -19,6 +19,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c glib-2.0 intl
 
 MASTER_SITES=	https://freedesktop.org/software/desktop-file-utils/releases/
+
+# -std=gnu11
+COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/meson
 
