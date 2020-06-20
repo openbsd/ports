@@ -1,4 +1,4 @@
-$OpenBSD: patch-RunGrepTest,v 1.3 2020/02/13 11:05:11 sthen Exp $
+$OpenBSD: patch-RunGrepTest,v 1.4 2020/06/20 06:55:46 kn Exp $
 
 Our sed(1) doesn't cope with NUL bytes and \x00-style notation.
 
@@ -12,8 +12,8 @@ Index: RunGrepTest
 -  Linux)
 +  OpenBSD)
      printf 'abc\0def' >testNinputgrep
--    $valgrind $vjs $pcre2grep -na --newline=nul "^(abc|def)" testNinputgrep | sed 's/\x00/ZERO/' >>testtrygrep
-+    $valgrind $vjs $pcre2grep -na --newline=nul "^(abc|def)" testNinputgrep | gsed 's/\x00/ZERO/' >>testtrygrep
+-    $valgrind $vjs $pcre2grep -na --newline=nul "^(abc|def)" testNinputgrep | sed 's/\x00/ZERO/g' >>testtrygrep
++    $valgrind $vjs $pcre2grep -na --newline=nul "^(abc|def)" testNinputgrep | gsed 's/\x00/ZERO/g' >>testtrygrep
      echo "" >>testtrygrep
      ;;
    *)
